@@ -1,0 +1,39 @@
+---
+title: "為什麼我 Xamarin.Forms.Maps Android 專案與 COMPILETODALVIK 未預期的最高層級錯誤失敗？"
+ms.topic: article
+ms.prod: xamarin
+ms.assetid: C0251EB1-F509-47AD-98D6-846AF46425E5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/25/2017
+ms.openlocfilehash: 41cb955ba22a83d0ae2a11ac5c5a114b465ca9b2
+ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 02/28/2018
+---
+# <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik-unexpected-top-level-error"></a>為什麼我 Xamarin.Forms.Maps Android 專案與 COMPILETODALVIK 未預期的最高層級錯誤失敗？
+
+可能會出現此錯誤在錯誤輸入板中的 Visual Studio for Mac，或在建置輸出視窗中的 Visual Studio;在使用 Xamarin.Forms.Maps Android 專案。
+
+這最常見的解決方式增加 Xamarin.Android 專案 Java 堆積大小。 遵循下列步驟，以提高的堆積大小：
+
+## <a name="visual-studio"></a>Visual Studio
+
+1. 以滑鼠右鍵按一下 Android 專案 （& s) 開啟的專案選項。
+2. 移至**Android 選項]-> [進階**
+3. 在 Java 堆積大小 文字方塊中輸入 1 G。
+4. 重建專案。
+
+![Visual Studio 專案選項的螢幕擷取畫面](maps-compiletodalvik-error-images/vsjavaheap.png "Android 建置 Visual Studio 中的選項")
+
+## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
+
+1.  以滑鼠右鍵按一下 Android 專案 （& s) 開啟的專案選項。
+2.  移至**組建]-> [Android 建置]-> [進階**
+3.  在 Java 堆積大小 文字方塊中輸入 1 G。
+4.  重建專案。  
+
+![Visual Studio for Mac 專案選項的螢幕擷取畫面](maps-compiletodalvik-error-images/xsjavaheap.png "Android 建置選項在 Visual Studio for Mac")
+
