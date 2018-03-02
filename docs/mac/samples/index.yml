@@ -1,0 +1,20 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: "Xamarin.Mac 範例"
+metadata:
+  description: "適用於行動裝置開發人員的跨平台 Xamarin.Android 範例應用程式。"
+  author: conceptdev
+  ms.author: crdun
+  ms.date: 02/17/2018
+  ms.topic: article
+  ms.openlocfilehash: 839a4df38f8d297a90d6d7b202bf0f20c76588b7
+  ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+  ms.translationtype: HT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 02/27/2018
+abstract:
+  description: "Xamarin 跨平台範例應用程式和程式碼示範，可協助您使用 C# 和 Xamarin 開始建置行動裝置應用程式。"
+  menu:
+    items:
+    - href: https://developer.xamarin.com/samples/mac/all/
+      text: "所有 Xamarin.Mac 範例"

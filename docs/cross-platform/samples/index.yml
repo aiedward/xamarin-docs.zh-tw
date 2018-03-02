@@ -1,0 +1,69 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: "跨平台範例"
+metadata:
+  description: "適用於行動裝置開發人員的跨平台 Xamarin 範例應用程式。"
+  author: conceptdev
+  ms.author: crdun
+  ms.date: 02/17/2018
+  ms.topic: article
+  ms.openlocfilehash: c5e8c04dcc5a9bf18af0dd9ce2dcd85b6b760836
+  ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+  ms.translationtype: HT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 02/27/2018
+abstract:
+  description: "Xamarin 跨平台範例應用程式和程式碼示範，可協助您使用 C# 和 Xamarin 開始建置行動裝置應用程式。"
+  menu:
+    items:
+    - href: https://developer.xamarin.com/samples/
+      text: "所有 Xamarin 範例"
+sections:
+- title: 
+  items:
+  - type: list
+    style: cards
+    className: cardsW
+    items:
+    - href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
+      html: "此範例示範待辦事項清單應用程式，資料將儲存在本機 SQLite 資料庫並從其中存取。"
+      image:
+        src: images/todo.png
+        href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
+      title: "代辦事項"
+    - href: https://developer.xamarin.com/samples/mobile/LivePlayer/BugSweeperLP/
+      html: "這是加入新變化的常見遊戲。 十隻蟲藏在 9 乘 9 的方格中。 若要獲勝，您必須找到所有十隻蟲並加上旗標。"
+      image:
+        src: images/bugsweeper.png
+        href: https://developer.xamarin.com/samples/mobile/LivePlayer/BugSweeperLP/
+      title: BugSweeper
+    - href: https://developer.xamarin.com/samples/xamarin-forms/RpnCalculator/
+      html: "RPN (反波蘭記法) 計算機允許輸入數字和運算而不包含括號或相等鍵。"
+      image:
+        src: images/rpncalc.png
+        href: https://developer.xamarin.com/samples/xamarin-forms/RpnCalculator/
+      title: "RPN 計算機"
+    - href: https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/
+      html: "該程式模擬旋轉盤，您可以觸碰並移動您的手指來在上面繪製。 SpinPaint 藉由在您的手指底下繪製線條來回應觸碰，但它也會在圓盤其他四分之三的區域將該線條複製成三個鏡像影像。"
+      image:
+        src: images/spinpaint.png
+        href: https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/
+      title: SpinPaint
+    - href: https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/
+      html: "XAML (eXtensible Application Markup Language) 讓開發人員可以在 Xamarin.Forms 應用程式中使用標記定義使用者介面，而不是使用程式碼。"
+      image:
+        src: images/xaml.png
+        href: https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/
+      title: "XAML 範例"
+    - href: https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/
+      html: "XAML (eXtensible Application Markup Language) 讓開發人員可以在 Xamarin.Forms 應用程式中使用標記定義使用者介面，而不是使用程式碼。"
+      image:
+        src: images/xuzzle.png
+        href: https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/
+      title: Xuzzle
+    - href: https://developer.xamarin.com/samples/
+      html: "存取一組完整的 Xamarin 跨平台範例應用程式和程式碼示範。"
+      image:
+        src: ~/media/shared/sample-download.svg
+        href: https://developer.xamarin.com/samples/
+      title: "所有 Xamarin 範例"

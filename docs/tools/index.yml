@@ -1,0 +1,89 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: "Xamarin 工具"
+metadata:
+  description: "讓r Xamarin 開發體驗更棒的工具。"
+  author: conceptdev
+  ms.author: crdun
+  ms.date: 02-17-2018
+  ms.topic: landing-page
+  ms.openlocfilehash: 8e2ba81dbfc573678fa58e01809f7bcd5b3130a4
+  ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+  ms.translationtype: HT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 02/27/2018
+abstract:
+  description: "讓r Xamarin 開發體驗更棒的工具。"
+  menu:
+    items:
+    - href: https://visualstudio.com/
+      text: Visual Studio
+    - href: https://developer.xamarin.com/releases/#mac
+      text: "版本資訊"
+sections:
+- title: "工具"
+  items:
+  - type: list
+    style: cards
+    className: cardsC
+    items:
+    - href: ~/tools/live-player/index.md
+      html: "使用 Live Player 應用程式搭配 Visual Studio，在幾分鐘內開始使用 Xamarin。"
+      image:
+        src: ~/media/index/xamarin-tools-live-player.svg?branch=master
+        href: ~/tools/live-player/index.md
+      title: Xamarin Live Player
+    - href: ~/tools/inspector/index.md
+      html: "了解及針對您的使用者介面進行偵錯。"
+      image:
+        src: ~/media/index/xamarin-tools-inspector.svg?branch=master
+        href: ~/tools/inspector/index.md
+      title: Xamarin Inspector
+    - href: ~/tools/workbooks/index.md
+      html: "以互動方式了解 C# 和 Xamarin 平台。"
+      image:
+        src: https://review.docs.microsoft.com/en-us//media/illustrations/dynamics-resource-library.svg?branch=master
+        href: ~/tools/workbooks/index.md
+      title: Xamarin Workbooks
+    - href: ~/tools/ios-simulator.md
+      html: "在 Windows 上使用 Visual Studio 與 iOS 模擬器互動。"
+      image:
+        src: ~/media/index/xamarin-tools-windows-simulator.svg?branch=master
+        href: ~/tools/ios-simulator.md
+      title: "適用於 Windows 的 iOS 模擬器"
+    - href: ~/tools/profiler/index.md
+      html: "識別並修正效能問題。"
+      image:
+        src: ~/media/index/xamarin-tools-profiler.svg?branch=master
+        href: ~/tools/profiler/index.md
+      title: Xamarin Profiler
+    - href: ~/tools/dotnet-embedding/index.md
+      html: "可從其他程式設計語言取用您現有的 .NET 程式碼。"
+      image:
+        src: https://docs.microsoft.com/en-us/media/illustrations/bcs-partner-advanced-management-settings-8.svg
+        href: ~/tools/dotnet-embedding/index.md
+      title: ".NET 內嵌"
+    - href: https://developer.xamarin.com/testcloud/
+      html: "在任何裝置上測試您的應用程式。"
+      image:
+        src: https://docs.microsoft.com/en-us/media/illustrations/team-services-agile-track.svg
+        href: https://developer.xamarin.com/testcloud/
+      title: Xamarin Test Cloud
+- title: "平台"
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: Xamarin.Forms
+      href: ~/xamarin-forms/index.md
+      html: "<p><a href=\"~/xamarin-forms/get-started/index.md\">開始使用</a><br /><a href=\"~/xamarin-forms/app-fundamentals/index.md\">應用程式基本概念</a><br /><a href=\"~/xamarin-forms/user-interface/index.md\">使用者介面</a><br /><a href=\"~/xamarin-forms/platform/index.md\">平台功能</a><br /><a href=\"~/xamarin-forms/deploy-test/index.md\">部署與測試</a><br /><a href=\"~/xamarin-forms/xaml/index.md\">XAML</a><br /><a href=\"~/xamarin-forms/data-cloud/index.md\">資料與雲端服務</a><br /><a href=\"~/xamarin-forms/internals/index.md\">進階概念與內部項目</a></p>"
+    - title: Android
+      href: ~/android/index.md
+      html: "<p><a href=\"~/android/get-started/index.md\">開始使用</a><br /><a href=\"~/android/app-fundamentals/index.md\">應用程式基本概念</a><br /><a href=\"~/android/user-interface/index.md\">使用者介面</a><br /><a href=\"~/android/platform/index.md\">平台功能</a><br /><a href=\"~/android/deploy-test/index.md\">部署與測試</a><br /><a href=\"~/android/data-cloud/index.md\">資料與雲端服務</a><br /><a href=\"~/android/internals/index.md\">進階概念與內部項目</a></p>"
+    - title: iOS
+      href: ~/ios/index.md
+      html: "<p><a href=\"~/ios/get-started/index.md\">開始使用</a><br /><a href=\"~/ios/app-fundamentals/index.md\">應用程式基本概念</a><br /><a href=\"~/ios/user-interface/index.md\">使用者介面</a><br /><a href=\"~/ios/platform/index.md\">平台功能</a><br /><a href=\"~/ios/deploy-test/index.md\">部署與測試</a><br /><a href=\"~/ios/data-cloud/index.md\">資料與雲端服務</a><br /><a href=\"~/ios/internals/index.md\">進階概念與內部項目</a></p>"
+    - title: Mac
+      href: ~/mac/index.md
+      html: "<p><a href=\"~/mac/get-started/index.md\">開始使用</a><br /><a href=\"~/mac/app-fundamentals/index.md\">應用程式基本概念</a><br /><a href=\"~/mac/user-interface/index.md\">使用者介面</a><br /><a href=\"~/mac/platform/index.md\">平台功能</a><br /><a href=\"~/mac/deploy-test/index.md\">部署與測試</a><br /><a href=\"~/mac/internals/index.md\">進階概念與內部項目</a></p>"

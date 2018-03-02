@@ -1,0 +1,124 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Xamarin.Forms
+metadata:
+  description: "Xamarin.Forms 會公開適用於 .NET 開發人員的完整跨平台 UI 工具組，以建置行動裝置、平板電腦以及桌面應用程式。"
+  author: conceptdev
+  ms.author: crdun
+  ms.date: 02/17/2018
+  ms.topic: landing-page
+  ms.openlocfilehash: ff86846ded6ca9dffce616a4e0e3415b58fc20da
+  ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+  ms.translationtype: HT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 02/27/2018
+abstract:
+  description: "Xamarin.Forms 會公開適用於 .NET 開發人員的完整跨平台 UI 工具組。 在 Visual Studio 中使用 C# 建置完整的原生 Android、iOS 與 Windows 應用程式。"
+  menu:
+    items:
+    - href: ~/xamarin-forms/samples/
+      text: "Xamarin.Forms 範例"
+    - href: https://developer.xamarin.com/releases/xamarin-forms/
+      text: "版本資訊"
+    - href: https://developers.google.com/
+      text: "Google 的開發人員文件"
+    - href: https://developer.apple.com/documentation/
+      text: "Apple 的開發人員文件"
+    - href: /visualstudio/
+      text: Visual Studio
+sections:
+- title: "開始使用"
+  items:
+  - type: paragraph
+    text: "了解如何使用 Xamarin 和 C#，以 Android, iOS, 和 Windows 為目標，建置您的第一個 Xamarin.Forms 應用程式。"
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: https://docs.microsoft.com/media/common/i_setup.svg
+      text: "安裝程式"
+      href: ~/xamarin-forms/get-started/installation.md
+    - image:
+        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
+      text: Hello, Xamarin.Forms
+      href: ~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md
+    - image:
+        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
+      text: "多重畫面應用程式"
+      href: ~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/quickstart.md
+- title: "輔助線"
+  items:
+  - type: grid
+    style: columns
+    className: column50
+    items:
+    - type: list
+      style: cards
+      className: cardsB
+      items:
+      - href: ~/xamarin-forms/get-started/index.md
+        html: "帶您動手操作 Xamarin.Forms 的教學課程。 請確定一切都已正確安裝，並建置您的第一個 Xamarin.Forms 應用程式。"
+        image:
+          src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
+          href: ~/xamarin-forms/get-started/index.md
+        title: "快速入門"
+      - href: ~/xamarin-forms/user-interface
+        html: "了解 Xamarin.Forms XAML 中的一組完整使用者介面控制項。"
+        image:
+          src: ~/media/icons/i_user-interface.svg
+          href: ~/xamarin-forms/user-interface/
+        title: "使用者介面"
+      - href: ~/xamarin-forms/deploy-test/
+        html: "建置及部署應用程式的指示，以及事先測試它們的祕訣！"
+        image:
+          src: ~/media/icons/i_deploy-test.svg
+          href: ~/xamarin-forms/deploy-test/
+        title: "部署及測試"
+      - href: ~/xamarin-forms/data-cloud/
+        html: "本機和遠端資料儲存體及擷取，以及其他雲端式服務。"
+        image:
+          src: ~/media/icons/i_data-cloud.svg
+          href: ~/xamarin-forms/data-cloud/
+        title: "資料與雲端服務"
+    - type: list
+      style: cards
+      className: cardsB
+      items:
+      - href: ~/xamarin-forms/app-fundamentals/
+        html: "您要建置 Xamarin.Forms 應用程式所需知道的一切，例如使用檔案、影像、資料庫等等。"
+        image:
+          src: ~/media/icons/i_app-build.svg
+          href: ~/xamarin-forms/app-fundamentals/
+        title: "應用程式基本概念"
+      - href: ~/
+        html: "使用 Xamarin.Forms 平台功能，例如自訂轉譯器，以及各版本的其他重要功能。"
+        image:
+          src: ~/media/icons/i_platform.svg
+          href: ~/
+        title: "平台功能"
+      - href: ~/xamarin-forms/xaml/
+        html: "以宣告方式建置使用者介面，並在行動裝置和桌面平台之間共用。"
+        image:
+          src: ~/media/icons/i_xaml-forms.svg
+          href: ~/xamarin-forms/xaml/
+        title: XAML
+      - href: ~/xamarin-forms/internals/
+        html: "關於 Xamarin.Forms 內部的詳細資訊，以及透過如當地語系化和協助工具之類的功能協助。"
+        image:
+          src: https://docs.microsoft.com/en-us/media/common/i_config-tools.svg
+          href: ~/xamarin-forms/internals/
+        title: "進階概念與內部項目"
+- title: "參考資料"
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: API
+      html: "<p><a href=\"https://developer.xamarin.com/api/root/Xamarin.Forms/\">Xamarin.Forms API 文件</a></p>"
+    - title: "範例"
+      html: "<p><a href=\"https://developer.xamarin.com/samples/xamarin-forms/all/\">Xamarin.Forms 範例</a></p>"
+    - title: "活頁簿"
+      html: <p><a href="https://developer.xamarin.com/workbooks#xamarin-forms">Xamarin.Forms Workbooks</a></p>
+    - title: "書籍"
+      html: "<p><a href=\"~/xamarin-forms/creating-mobile-apps-xamarin-forms\">建立行動裝置應用程式的電子書</a></p><p><a href=\"~/xamarin-forms/enterprise-application-patterns\">企業應用程式模式電子書</a></p>"
