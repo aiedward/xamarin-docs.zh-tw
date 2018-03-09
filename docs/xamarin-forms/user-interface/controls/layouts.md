@@ -10,7 +10,7 @@ ms.author: dabritch
 ms.date: 01/12/2016
 ms.openlocfilehash: ecea0f55360fcde7a50c52bb33c45a2c5fff5eeb
 ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/28/2018
 ---
@@ -22,7 +22,7 @@ _Xamarin.Forms 版面配置用來撰寫使用者介面控制項至邏輯結構�
 
 ## <a name="layouts"></a>版面配置
 
-[ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout) Xamarin.Forms 中的類別是特製化的檢視，配置或檢視表，做為容器的其他子類型。 它通常會包含邏輯 Xamarin.Forms 應用程式中設定的位置和大小的子項目。
+[`Layout`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout) Xamarin.Forms 中的類別是特製化的檢視，配置或檢視表，做為容器的其他子類型。 它通常會包含邏輯 Xamarin.Forms 應用程式中設定的位置和大小的子項目。
 
  [ ![](layouts-images/layouts-sml.png "Xamarin.Forms 版面配置類型")](layouts-images/layouts.png "Xamarin.Forms 版面配置類型")
 
