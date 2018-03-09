@@ -10,7 +10,7 @@ ms.author: mamcle
 ms.date: 02/08/2018
 ms.openlocfilehash: 225662fe64c92b77af3e75cbee865561118692a4
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/27/2018
 ---
@@ -86,7 +86,7 @@ Google[註冊用戶端應用程式](https://developers.google.com/cloud-messagin
 
 當應用程式伺服器會將下游訊息傳送至用戶端應用程式時，它會遵循下列圖表中所述的步驟：
 
-[![下游訊息存放區] 和 [正向的圖表](google-cloud-messaging-images/03-downstream-sml.png)](google-cloud-messaging-images/03-downstream.png)
+[![下游訊息存放區 和 正向的圖表](google-cloud-messaging-images/03-downstream-sml.png)](google-cloud-messaging-images/03-downstream.png)
 
 1.  應用程式伺服器至 GCM 傳送訊息。
 

@@ -43,7 +43,7 @@ _本指南將逐步解說如何設定 Xamarin.Mac 應用程式以供發行。_
 
 [專案選項] 對話方塊的 [Mac 簽署] 區段可讓開發人員簽署 Xamarin.Mac 應用程式以進行測試、自行發行或透過 Apple App Store 發行：
 
-[![[Mac 簽署] 編輯器](app-configuration-images/config02.png "[Mac 簽署] 視窗")](app-configuration-images/config02-large.png)
+[![Mac 簽署 編輯器](app-configuration-images/config02.png "Mac 簽署 視窗")](app-configuration-images/config02-large.png)
 
 在此處選取身分識別、佈建設定檔，以及在編譯完成後要用來簽署應用程式的任何自訂權利。 開發人員可選擇性地簽署用來在其他 Mac 上安裝應用程式的安裝程式。
 
