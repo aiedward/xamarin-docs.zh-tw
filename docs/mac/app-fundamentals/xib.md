@@ -10,7 +10,7 @@ ms.author: brumbaug
 ms.date: 03/14/2017
 ms.openlocfilehash: 8ca187b86126c9a0f2d9931f63d75e99ac4d2b23
 ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/28/2018
 ---
@@ -23,7 +23,7 @@ _本文涵蓋.xib 檔案 Xcode 的建立和維護 Xamarin.Mac 應用程式的使
 
 ## <a name="overview"></a>總覽
 
-當 Xamarin.Mac 應用程式中使用 C# 和.NET，您可以存取相同的使用者介面項目與工具工作的開發人員*OBJECTIVE-C*和*Xcode*沒有。 由於直接與 Xcode 整合 Xamarin.Mac，您可以使用 Xcode 的_介面產生器_建立，並維護您的使用者介面 （或您可以選擇直接在 C# 程式碼中建立它們）。
+當 Xamarin.Mac 應用程式中使用 C# 和.NET，您可以存取相同的使用者介面項目與工具工作的開發人員*Objective-C*和*Xcode*沒有。 由於直接與 Xcode 整合 Xamarin.Mac，您可以使用 Xcode 的_介面產生器_建立，並維護您的使用者介面 （或您可以選擇直接在 C# 程式碼中建立它們）。
 
 .Xib 檔案正由 macOS Xcode 的介面產生器中以圖形方式定義應用程式的使用者介面 （例如功能表、 Windows、 檢視、 標籤、 文字欄位），建立和維護的項目。
 
@@ -31,12 +31,12 @@ _本文涵蓋.xib 檔案 Xcode 的建立和維護 Xamarin.Mac 應用程式的使
 
 在本文中，我們將討論使用.xib Xamarin.Mac 應用程式中的檔案的基本概念。 強烈建議您逐步[Hello、 Mac](~/mac/get-started/hello-mac.md)文件編號第一次，因為它涵蓋了重要概念和技術，我們將在本文中使用。
 
-您可能想要看看[公開 C# 類別 / Objective C 的方法](~/mac/internals/how-it-works.md)區段[Xamarin.Mac 內部](~/mac/internals/how-it-works.md)文件，它會說明`Register`和`Export`屬性用來連接您的 C# 類別 OBJECTIVE-C 物件和 UI 項目。
+您可能想要看看[公開 C# 類別 / Objective C 的方法](~/mac/internals/how-it-works.md)區段[Xamarin.Mac 內部](~/mac/internals/how-it-works.md)文件，它會說明`Register`和`Export`屬性用來連接您的 C# 類別 Objective-C 物件和 UI 項目。
 
 
 ## <a name="introduction-to-xcode-and-interface-builder"></a>Xcode 和 Interface Builder 簡介
 
-Xcode 的一部分，Apple 已建立名為介面產生器，可讓您以視覺化方式設計工具中建立您的使用者介面的工具。 Xamarin.Mac fluently 整合介面產生器中，可讓您利用 OBJECTIVE-C 使用者執行的相同工具建立 UI。
+Xcode 的一部分，Apple 已建立名為介面產生器，可讓您以視覺化方式設計工具中建立您的使用者介面的工具。 Xamarin.Mac fluently 整合介面產生器中，可讓您利用 Objective-C 使用者執行的相同工具建立 UI。
 
 
 ### <a name="components-of-xcode"></a>Xcode 的元件
@@ -134,9 +134,9 @@ Xcode 的一部分，Apple 已建立名為介面產生器，可讓您以視覺�
 15. 選取**檔案的擁有者**從**介面階層架構**，切換至**連接偵測器**與拖曳一條線從要委派`AppDelegate` **物件**剛加入至專案：
 
     [![連接應用程式委派](xib-images/setup08.png "連接應用程式委派")](xib-images/setup08-large.png)
-16. 儲存變更並返回 Visual Studio for mac。
+16. 儲存變更並返回 Visual Studio for Mac。
 
-在進行這些變更，編輯**d**檔案，並讓它看起來如下所示：
+在進行這些變更，編輯**AppDelegate.cs**檔案，並讓它看起來如下所示：
 
 ```csharp
 using AppKit;
@@ -168,7 +168,7 @@ namespace MacXib
 }
 ```
 
-現在.xib 中所定義的應用程式的主視窗 (OS **X*- **我**介面**B**uilder) 加入視窗時，會自動包含在專案中的檔案控制站。 若要編輯您的 windows 設計中**方案板**，按兩下  **MainWindow.xib**檔案：
+現在.xib 中所定義的應用程式的主視窗 (OS **X*- **我**介面**B**uilder) 加入視窗時，會自動包含在專案中的檔案控制站。 若要編輯您的 windows 設計中**方案板**，按兩下 **MainWindow.xib**檔案：
 
 ![選取 MainWindow.xib 檔案](xib-images/edit01.png "選取 MainWindow.xib 檔案")
 
@@ -276,7 +276,7 @@ namespace MacXib
 
 在 Xcode 中，插座和動作會直接在程式碼，透過加入*控制項拖曳*。 更具體來說，這表示若要建立的輸出或動作，您選擇您想要新增輸出或動作，請按住哪些控制項項目**控制項**鍵盤上的按鈕，然後將該控制項拖曳直接插入程式碼。
 
-Xamarin.Mac 開發人員而言，這表示，您拖曳至對應 OBJECTIVE-C stub 檔至您要建立輸出或動作的 C# 檔案。 Visual Studio for Mac 建立檔案，稱為**MainWindow.h**它產生填充碼的 Xcode 專案的一部分使用的介面產生器：
+Xamarin.Mac 開發人員而言，這表示，您拖曳至對應 Objective-C stub 檔至您要建立輸出或動作的 C# 檔案。 Visual Studio for Mac 建立檔案，稱為**MainWindow.h**它產生填充碼的 Xcode 專案的一部分使用的介面產生器：
 
 [![在 Xcode 中的.h 檔案的範例](xib-images/xcode16.png "在 Xcode 中的.h 檔案的範例")](xib-images/xcode16-large.png)
 
@@ -453,7 +453,7 @@ partial void ClickedButton (Foundation.NSObject sender);
     [![設計 windows 配置](xib-images/new03.png "設計視窗版面配置")](xib-images/new03-large.png)
 6. 儲存變更並返回 Visual Studio for Mac 使用 Xcode 進行同步處理。
 
-將下列程式碼加入**d**以顯示新的視窗：
+將下列程式碼加入**AppDelegate.cs**以顯示新的視窗：
 
 ```csharp
 [Export("applicationPreferences:")]

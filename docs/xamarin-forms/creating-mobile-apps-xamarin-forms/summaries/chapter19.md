@@ -8,7 +8,7 @@ ms.author: chape
 ms.date: 11/07/2017
 ms.openlocfilehash: 37afa3a54fd20745a65312fb5a24d958c8ec405f
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/27/2018
 ---
@@ -30,7 +30,7 @@ Xamarin.Forms 會定義三個檢視的維護集合並顯示其項目：
 
 [ **PickerDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerDemo)範例示範如何使用 XAML 設定`Picker` [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Title/)屬性並新增`string`項目[ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/)集合。 當使用者選取`Picker`，它會顯示中的項目`Items`平台相關的方式的集合。
 
-[ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/)事件表示當使用者選取項目。 以零為起始[ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/)屬性則表示選取的項目。 如果未不選取任何項目，則`SelectedIndex`等於 & #x 2013; 1。
+[ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/)事件表示當使用者選取項目。 以零為起始[ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/)屬性則表示選取的項目。 如果未不選取任何項目，則`SelectedIndex`等於 &#x2013; 1。
 
 您也可以使用`SelectedIndex`初始化 選取的項目，但它必須設定為晚`Items`填滿集合。 在 XAML 中，這表示您可能會使用屬性項目來設定`SelectedIndex`。
 
@@ -81,11 +81,11 @@ Xamarin.Forms 會定義三個檢視的維護集合並顯示其項目：
 
 `ListView` 需要範本以顯示這些項目。 在程式碼中，您可以設定[ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemTemplate/)屬性所定義`ItemsView<TVisual>`至[ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)物件使用[`DataTemplate`建構函式](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/)，參考的衍生[ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/)類別。 `Cell` 有五個衍生項目：
 
-- [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) （& c) 2014; #x包含兩個`Label`（概念上來說） 的檢視
-- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) （& c) 2014; #x新增`Image`檢視 `TextCell`
-- [`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/) （& c) 2014; #x包含`Entry`與檢視 `Label`
-- [`SwitchCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/) （& c) 2014; #x包含`Switch`與 `Label`
-- [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) （& c) 2014; #x可以是任何`View`（可能含有子系）
+- [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) &#x2014;包含兩個`Label`（概念上來說） 的檢視
+- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) &#x2014;新增`Image`檢視 `TextCell`
+- [`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/) &#x2014;包含`Entry`與檢視 `Label`
+- [`SwitchCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/) &#x2014;包含`Switch`與 `Label`
+- [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) &#x2014;可以是任何`View`（可能含有子系）
 
 然後呼叫[ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.DataTemplate.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/)和[ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.DataTemplate.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/)上`DataTemplate`要產生關聯的值物件`Cell`屬性，或是為資料繫結設定的`Cell`屬性參考中的項目屬性`ItemsSource`集合。 這示範於[ **TextCellListCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListCode)範例。
 

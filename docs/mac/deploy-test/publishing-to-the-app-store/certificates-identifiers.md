@@ -26,11 +26,11 @@ _本指南將逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要
 
 按一下 [Certificates, Identifiers & Profiles] \(憑證、識別碼及設定檔\) 連結：
 
-[![選取 \[Certificates, Identifiers & Profiles\] \(憑證、識別碼及設定檔\)](certificates-identifiers-images/devcenter02.png "選取 \[Certificates, Identifiers & Profiles\] \(憑證、識別碼及設定檔\)")](certificates-identifiers-images/devcenter02-large.png)
+[![選取 Certificates, Identifiers & Profiles 憑證、識別碼及設定檔](certificates-identifiers-images/devcenter02.png "選取 Certificates, Identifiers & Profiles 憑證、識別碼及設定檔")](certificates-identifiers-images/devcenter02-large.png)
 
 接著，按一下 [Mac Apps] \(Mac 應用程式\) 區段下的 [Certificates] \(憑證\) 連結：
 
-[![選取 \[Certificates\] \(憑證\) 連結](certificates-identifiers-images/devcenter03.png "選取 \[Certificates\] \(憑證\) 連結")](certificates-identifiers-images/devcenter03-large.png)
+[![選取 Certificates 憑證 連結](certificates-identifiers-images/devcenter03.png "選取 Certificates 憑證 連結")](certificates-identifiers-images/devcenter03-large.png)
 
 按一下 [All] \(全部\) 連結，然後按一下 [+] 按鈕：
 
@@ -167,7 +167,7 @@ _本指南將逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要
      [![Developer Certificate Utility (開發人員憑證公用程式)](certificates-identifiers-images/image29.png "Developer Certificate Utility (開發人員憑證公用程式)")](certificates-identifiers-images/image29-large.png)
 11. 現在可在 [鑰匙圈] 中看到這兩個新憑證： 
 
-     [![\[鑰匙圈存取\] 中的憑證](certificates-identifiers-images/image30.png "\[鑰匙圈存取\] 中的憑證")](certificates-identifiers-images/image30-large.png)
+     [![鑰匙圈存取 中的憑證](certificates-identifiers-images/image30.png "鑰匙圈存取 中的憑證")](certificates-identifiers-images/image30-large.png)
 
 #### <a name="developer-id-certificates"></a>開發人員識別碼憑證
 
@@ -209,7 +209,7 @@ _本指南將逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要
      [![Developer Certificate Utility (開發人員憑證公用程式)](certificates-identifiers-images/certif12.png "Developer Certificate Utility (開發人員憑證公用程式)")](certificates-identifiers-images/certif12-large.png)
 13. 您可在 [鑰匙圈] 中看到下列項目： 
 
-     [![\[鑰匙圈存取\] 中的憑證](certificates-identifiers-images/image43.png "\[鑰匙圈存取\] 中的憑證")](certificates-identifiers-images/image43-large.png)
+     [![鑰匙圈存取 中的憑證](certificates-identifiers-images/image43.png "鑰匙圈存取 中的憑證")](certificates-identifiers-images/image43-large.png)
 
 
 ## <a name="related-links"></a>相關連結

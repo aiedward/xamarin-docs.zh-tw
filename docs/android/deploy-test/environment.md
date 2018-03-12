@@ -106,7 +106,7 @@ Xamarin.Android 支援下列系統屬性，可透過 `adb shell setprop` 或 `$(
 `debug.mono.max_grefc` 系統屬性的值為一個整數。
 它的值會「覆寫」針對目標裝置預設偵測到的最大 GRF 計數。
 
-注意：**這僅在使用 `adb shell setprop
+注意：這僅在使用 `adb shell setprop
 debug.mono.max_grefc` 時可用，因為該值在使用 **environment.txt** 檔案時將無法及時可用。
 
 ### `debug.mono.profile`

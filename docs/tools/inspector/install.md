@@ -133,7 +133,7 @@ Visual Studio
 - Mac: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows: `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
-1.4.x 也提供功能的能力，從主功能表中選取 [記錄檔中搜尋 (macOS) 或檔案總管] (Windows) 直接：
+1.4.x 也提供功能的能力，從主功能表中選取記錄檔中搜尋 (macOS) 或檔案總管 (Windows) 直接：
 
 - **說明 → 顯示記錄檔**
 

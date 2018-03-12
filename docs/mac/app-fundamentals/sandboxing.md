@@ -114,7 +114,7 @@ public override void AwakeFromNib ()
     [![登入 Apple 開發人員入口網站](sandboxing-images/sign01.png "登入 Apple 開發人員入口網站")](sandboxing-images/sign01-large.png)
 2. 選取**憑證、 識別項與設定檔**: 
 
-    [![選取 \[Certificates, Identifiers & Profiles\] \(憑證、識別碼及設定檔\)](sandboxing-images/sign02.png "選取 \[Certificates, Identifiers & Profiles\] \(憑證、識別碼及設定檔\)")](sandboxing-images/sign02-large.png)
+    [![選取 Certificates, Identifiers & Profiles 憑證、識別碼及設定檔](sandboxing-images/sign02.png "選取 Certificates, Identifiers & Profiles 憑證、識別碼及設定檔")](sandboxing-images/sign02-large.png)
 3. 在下**Mac 應用程式**，選取**識別碼**: 
 
     [![選取識別項](sandboxing-images/sign03.png "選取識別項")](sandboxing-images/sign03-large.png)
