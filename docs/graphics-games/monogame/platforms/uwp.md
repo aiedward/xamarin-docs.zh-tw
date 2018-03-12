@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 3990b226b74c17fb5cccc907dd50b46578c3ef6b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d8f805d8a3fcadd9c2a6758f1dc5592c03fe3ed4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-a-monogame-uwp-project"></a>建立 MonoGame UWP 專案
 
@@ -45,15 +45,11 @@ Xbox One 的遊戲可以在零售 Xbox One 硬體上進行開發。 開發 PC �
 1. 選取**檔案** > **新** > **專案...**
 1. 選取**已安裝** > **範本** > **Visual C#** > **MonoGame**類別： 
 
-
     ![](uwp-images/image1.png "MonoGame 類別")
-
 
 1. 選取**MonoGame Windows 10 的通用專案**選項： 
 
-
     ![](uwp-images/image2.png "選取 MonoGame Windows 10 的通用專案選項")
-
 
 1. 輸入新專案的名稱，然後按一下**確定**。
 如果 Visual Studio 會顯示任何錯誤，按一下 [確定] 之後，請確認 Windows 10 工具會安裝，而且裝置處於開發人員模式。 

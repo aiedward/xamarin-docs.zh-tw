@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: e78b76a531e9f8ea88adca46fc59b2063fce14cc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e12e33b254e58759043ed838d5c34dd7bd024fd
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>逐步解說-使用 Xamarin 設計工具中的自訂控制項，適用於 iOS
 
@@ -33,13 +33,13 @@ _本文章提供逐步解說顯示如何建立自訂控制項，以及適用於 
 1. 建立新的方案從**iOS > 應用程式 > 單一檢視應用程式 > C#**範本，其命名`ScratchTicket`，然後繼續進行 [新增專案] 精靈：
 
 
-    [![](ios-designable-controls-walkthrough-images/01new.png "建立新的方案")](ios-designable-controls-walkthrough-images/01new.png)
+    [![](ios-designable-controls-walkthrough-images/01new.png "建立新的方案")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
 
 
 1. 建立新的空的類別檔案命名為`ScratchTicketView`:
 
 
-    [![](ios-designable-controls-walkthrough-images/02new.png "建立新的 ScratchTicketView 類別")](ios-designable-controls-walkthrough-images/02new.png)
+    [![](ios-designable-controls-walkthrough-images/02new.png "建立新的 ScratchTicketView 類別")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
 
 
 1. 加入下列程式碼`ScratchTicketView`類別：
@@ -168,63 +168,50 @@ _本文章提供逐步解說顯示如何建立自訂控制項，以及適用於 
     
 1. 按兩下`Main.storyboard`在設計工具中開啟的檔案：
 
-    
-    [![](ios-designable-controls-walkthrough-images/03new.png "IOS 設計工具")](ios-designable-controls-walkthrough-images/03new.png)
-
+    [![](ios-designable-controls-walkthrough-images/03new.png "IOS 設計工具")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
 
 
 1. 拖放**影像檢視**從**工具箱**到分鏡腳本中的檢視。
 
-    
-    [![](ios-designable-controls-walkthrough-images/04new.png "影像檢視加入至配置")](ios-designable-controls-walkthrough-images/04new.png)
+    [![](ios-designable-controls-walkthrough-images/04new.png "影像檢視加入至配置")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
 
 
 1. 選取**影像檢視**並變更其**映像**屬性`Monkey.png`。
 
-    
-    [![](ios-designable-controls-walkthrough-images/05new.png "將映像 [檢視] 影像屬性設定為 Monkey.png")](ios-designable-controls-walkthrough-images/05new.png)
+    [![] (ios-設計-控制項的逐步解說-映像/05new.png Monkey.png 至 「 設定映像檢視映像屬性)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
     
 1. 當我們使用大小類別我們需要以限制此映像的檢視。 按兩次，將它放入條件約束模式映像上。 讓我們來限制它中央按一下 center 固定控制代碼，並將其對齊垂直和水平：
-    
-    
-    [![](ios-designable-controls-walkthrough-images/06new.png "置中顯示的影像")](ios-designable-controls-walkthrough-images/06new.png)
 
-    
+    [![](ios-designable-controls-walkthrough-images/06new.png "置中顯示的影像")](ios-designable-controls-walkthrough-images/06new.png#lightbox)
+
 1. 若要限制的高度和寬度，按一下大小釘選的控制代碼 （'骨' 形狀控點），分別選取寬度和高度：
 
-    
-    [![](ios-designable-controls-walkthrough-images/07new.png "加入條件約束")](ios-designable-controls-walkthrough-images/07new.png)
+    [![](ios-designable-controls-walkthrough-images/07new.png "加入條件約束")](ios-designable-controls-walkthrough-images/07new.png#lightbox)
 
 
 1. 更新依據條件約束，依序按一下 [更新] 按鈕，在工具列上的框架：
 
-
-    [![](ios-designable-controls-walkthrough-images/08new.png "條件約束工具列")](ios-designable-controls-walkthrough-images/08new.png)
+    [![](ios-designable-controls-walkthrough-images/08new.png "條件約束工具列")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
 
 1. 接下來，建置專案，讓**Scratch 票證檢視**會出現在**「 自訂 」 元件**工具箱中：
 
-    
-    [![](ios-designable-controls-walkthrough-images/09new.png "「 自訂 」 元件工具箱")](ios-designable-controls-walkthrough-images/09new.png)
+    [![](ios-designable-controls-walkthrough-images/09new.png "「 自訂 」 元件工具箱")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
 
 
 1. 將拖放**Scratch 票證檢視**使其顯示透過猴子映像。 調整拖曳控點，讓 Scratch 票證檢視涵蓋猴子完全，如下所示：
 
-    
-    [![](ios-designable-controls-walkthrough-images/10new.png "在影像檢視可用的票證檢視")](ios-designable-controls-walkthrough-images/10new.png)
-
+    [![](ios-designable-controls-walkthrough-images/10new.png "在影像檢視可用的票證檢視")](ios-designable-controls-walkthrough-images/10new.png#lightbox)
 
 1. 限制在影像檢視 Scratch 票證檢視藉由繪製以選取這兩個檢視的周框。 選取選項，以限制它根據條件約束、 寬度、 高度、 中央和中介和更新的畫面格，如下所示：
- 
-    
-    [![](ios-designable-controls-walkthrough-images/11new.png "置中和加入條件約束")](ios-designable-controls-walkthrough-images/11new.png)
+
+    [![](ios-designable-controls-walkthrough-images/11new.png "置中和加入條件約束")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
 
 
 1. 執行應用程式，「 scratch 關閉 」 以顯示猴子映像。
 
-
- [ ![](ios-designable-controls-walkthrough-images/10-app.png "執行範例應用程式")](ios-designable-controls-walkthrough-images/10-app.png)
+    [![](ios-designable-controls-walkthrough-images/10-app.png "執行範例應用程式")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="adding-design-time-properties"></a>將設計階段屬性
 
@@ -286,7 +273,7 @@ public override void Draw(CGRect rect)
 
 包括`ExportAttribute`和`BrowsableAttribute`引數設定為與`true`在設計工具中顯示的屬性會導致**屬性**面板。 屬性變更為另一個映像包含的專案，例如`FillTexture2.png`，導致控制項更新在設計階段，如下所示：
 
- [ ![](ios-designable-controls-walkthrough-images/11-customproperty.png "編輯設計階段屬性")](ios-designable-controls-walkthrough-images/10-app.png)
+ [![](ios-designable-controls-walkthrough-images/11-customproperty.png "編輯設計階段屬性")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="summary"></a>總結
 
