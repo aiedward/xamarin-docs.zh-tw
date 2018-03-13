@@ -2,16 +2,16 @@
 title: SpriteKit
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 19049ED5-B68E-4A0E-9D57-B7FAE3BB8987
+ms.assetid: 93971DAE-ED6B-48A8-8E61-15C0C79786BB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 79f7fbf52b544416223d225457d3148d68bc29e2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c533e38fcd8775fd6b9a49c2e14de76673641553
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="spritekit"></a>SpriteKit
 

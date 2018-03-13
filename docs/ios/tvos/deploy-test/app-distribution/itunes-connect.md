@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5db53bef0f62937f7be0a5e5fb6f64f1bf3ca007
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b6fad9eadbff272f86f9e426e3f6eb5d48847127
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="configure-your-tvos-app-in-itunes-connect"></a>在 iTunes Connect 中設定您 tvOS 應用程式
 
@@ -39,11 +39,11 @@ _本文章提供 iOS 應用程式，在 iTunes Connect tvOS 特定組態中設�
 
 所有已完成上述步驟中，開啟您的應用程式 iTunes Connect 記錄並選取来加入 tvOS 支援使用左提要欄位：
 
-[ ![](itunes-connect-images/connect01.png "加入 tvOS 支援使用資訊看板左手")](itunes-connect-images/connect01.png)
+[![](itunes-connect-images/connect01.png "加入 tvOS 支援使用資訊看板左手")](itunes-connect-images/connect01.png#lightbox)
 
 TvOS 特定資訊畫面然後可供指定的連入 iTunes Connect 記錄：
 
-[ ![](itunes-connect-images/connect02.png "[TvOS 特定資訊] 畫面")](itunes-connect-images/connect02.png)
+[![](itunes-connect-images/connect02.png "[TvOS 特定資訊] 畫面")](itunes-connect-images/connect02.png#lightbox)
 
 <a name="tvOS-Version-Information" />
 
@@ -51,7 +51,7 @@ TvOS 特定資訊畫面然後可供指定的連入 iTunes Connect 記錄：
 
 在左提要欄位中，選取 [ **1.0 準備送出**tvOS 應用程式] 區段下方：
 
-[ ![](itunes-connect-images/connect03.png "tvOS 版本資訊")](itunes-connect-images/connect03.png)
+[![](itunes-connect-images/connect03.png "tvOS 版本資訊")](itunes-connect-images/connect03.png#lightbox)
 
 在這個畫面上提供下列資訊：
 
@@ -63,7 +63,7 @@ TvOS 特定資訊畫面然後可供指定的連入 iTunes Connect 記錄：
 
 當您輸入必要的資訊之後時，按一下**儲存**以儲存變更螢幕的右上角的按鈕：
 
-[ ![](itunes-connect-images/connect04.png "tvOS 準備送出的版本資訊")](itunes-connect-images/connect04.png)
+[![](itunes-connect-images/connect04.png "tvOS 準備送出的版本資訊")](itunes-connect-images/connect04.png#lightbox)
 
 <a name="Submitting-for-Review" />
 
@@ -71,7 +71,7 @@ TvOS 特定資訊畫面然後可供指定的連入 iTunes Connect 記錄：
 
 最後送出您的 Apple TV App Store 審核 Xamarin.tvOS 應用程式準備好時，返回 應用程式的 iTunes Connect 記錄，然後按一下**提交檢閱**螢幕右上角的按鈕：
 
-[ ![](itunes-connect-images/connect05.png "提交的檢閱")](itunes-connect-images/connect05.png)
+[![](itunes-connect-images/connect05.png "提交的檢閱")](itunes-connect-images/connect05.png#lightbox)
 
 <a name="Summary" />
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9073d64c43c6817b45dca02b870fcfe093ebf46d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 446db5c04849ac6fa320f3fe3b7e22b3d10bf9cf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="building-modern-macos-apps"></a>建置現代化 macOS 應用程式
 
@@ -24,7 +24,7 @@ _本文涵蓋幾個秘訣、 功能和技術的開發人員可以使用建置中
 
 現代化外觀，將包含例如如下所示的範例應用程式的視窗和工具列現代化外觀：
 
-[ ![](modern-cocoa-apps-images/content08.png "現代的 Mac 應用程式 UI 的範例")](modern-cocoa-apps-images/content08.png)
+[![](modern-cocoa-apps-images/content08.png "現代的 Mac 應用程式 UI 的範例")](modern-cocoa-apps-images/content08.png#lightbox)
 
 <a name="Enabling-Full-Sized-Content-Views" />
 
@@ -64,7 +64,7 @@ namespace MacModern
 
 這項功能也可以啟用在 Xcode 的介面產生器中選取視窗，並檢查**完整大小的內容檢視**:
 
-[ ![](modern-cocoa-apps-images/content01.png "編輯在 Xcode 的介面產生器中主要的分鏡腳本")](modern-cocoa-apps-images/content01.png)
+[![](modern-cocoa-apps-images/content01.png "編輯在 Xcode 的介面產生器中主要的分鏡腳本")](modern-cocoa-apps-images/content01.png#lightbox)
 
 如果使用完整的大小內容檢視，開發人員可能需要位移下方的標題和工具列區域的內容，使其下的特定內容 （例如標籤） 不投影片。
 
@@ -145,11 +145,11 @@ topConstraint.Active = true;
 
 一般 macOS 視窗包含位於標題列執行視窗頂端的標準。 如果視窗也會包含的工具列，它將會顯示此標題列區域底下：
 
-[ ![](modern-cocoa-apps-images/content02.png "標準的 Mac 工具列")](modern-cocoa-apps-images/content02.png)
+[![](modern-cocoa-apps-images/content02.png "標準的 Mac 工具列")](modern-cocoa-apps-images/content02.png#lightbox)
 
 當使用簡化的工具列，標題區會消失，工具列向上移動至標題列的位置，內建的視窗關閉、 最小化和最大化按鈕：
 
-[ ![](modern-cocoa-apps-images/content03.png "簡化的 Mac 工具列")](modern-cocoa-apps-images/content03.png)
+[![](modern-cocoa-apps-images/content03.png "簡化的 Mac 工具列")](modern-cocoa-apps-images/content03.png#lightbox)
 
 藉由覆寫啟用簡化工具列`ViewWillAppear`方法`NSViewController`並讓它看起來像下面這樣：
 
@@ -171,7 +171,7 @@ public override void ViewWillAppear ()
 
 根據應用程式的設計、 開發人員也可能想要補充區域右邊提供區分內容控制項加入該活動會根據使用者他們標題/工具列區域下方任一附屬應用程式檢視控制器會在標題列目前參與：
 
-[ ![](modern-cocoa-apps-images/content04.png "範例附屬應用程式檢視控制器")](modern-cocoa-apps-images/content04.png)
+[![](modern-cocoa-apps-images/content04.png "範例附屬應用程式檢視控制器")](modern-cocoa-apps-images/content04.png#lightbox)
 
 附屬應用程式檢視控制站會自動模糊並調整大小，系統不需要開發人員介入。
 
@@ -180,13 +180,13 @@ public override void ViewWillAppear ()
 1. 在方案總管中按兩下 `Main.storyboard` 檔案將其開啟以進行編輯。
 2. 拖曳**自訂檢視控制器**到視窗的階層： 
 
-    [ ![](modern-cocoa-apps-images/content05.png "加入新的自訂檢視控制器")](modern-cocoa-apps-images/content05.png)
+    [![](modern-cocoa-apps-images/content05.png "加入新的自訂檢視控制器")](modern-cocoa-apps-images/content05.png#lightbox)
 3. 版面配置 [配件] 檢視的 UI: 
 
-    [ ![](modern-cocoa-apps-images/content06.png "設計新的檢視")](modern-cocoa-apps-images/content06.png)
+    [![](modern-cocoa-apps-images/content06.png "設計新的檢視")](modern-cocoa-apps-images/content06.png#lightbox)
 4. 公開配件檢視**插座**和任何其他**動作**或**插座**其 ui: 
 
-    [ ![](modern-cocoa-apps-images/content07.png "加入必要的輸出")](modern-cocoa-apps-images/content07.png)
+    [![](modern-cocoa-apps-images/content07.png "加入必要的輸出")](modern-cocoa-apps-images/content07.png#lightbox)
 5. 儲存變更。
 6. 返回 Visual Studio for Mac 同步處理變更。
 
@@ -248,7 +248,7 @@ accessoryView.LayoutAttribute = NSLayoutAttribute.Bottom;
 
 此外，macOS 系統可能會將附屬應用程式檢視控制站新增至應用程式的視窗。 例如，若要建立索引標籤式視窗的數個應用程式的 Windows 會合併到一個虛擬視窗：
 
-[ ![](modern-cocoa-apps-images/content08.png "索引標籤式的 Mac 視窗的範例")](modern-cocoa-apps-images/content08.png)
+[![](modern-cocoa-apps-images/content08.png "索引標籤式的 Mac 視窗的範例")](modern-cocoa-apps-images/content08.png#lightbox)
 
 一般而言，開發人員必須採取有限的動作使用其 Xamarin.Mac 應用程式中的索引標籤式視窗，系統將它們會自動處理，如下所示：
 
@@ -430,7 +430,7 @@ A`CALayer`物件提供數個屬性，可讓開發人員控制功能呈現給使�
 
 可以藉由設定啟用備份的層`WantsLayer`的`NSView`至`true`或 Xcode 的介面產生器，在內部**檢視效果 Inspector**藉由檢查**核心動畫層**:
 
-[ ![](modern-cocoa-apps-images/content09.png "檢視效果偵測器")](modern-cocoa-apps-images/content09.png)
+[![](modern-cocoa-apps-images/content09.png "檢視效果偵測器")](modern-cocoa-apps-images/content09.png#lightbox)
 
 <a name="Redrawing-Views-with-Layers" />
 
@@ -792,7 +792,7 @@ Apple 的建議執行下列動作：
 
 Apple 已提供開發人員可以在設計或編輯應用程式的 UI 使用來支援當地語系化 Xcode 的介面產生器中的數個功能。 **文字方向**區段**屬性偵測器**可讓開發人員提供應該如何使用和更新的文字為基礎的檢視選取方向上的提示 (例如`NSTextField`):
 
-[ ![](modern-cocoa-apps-images/content10.png "文字方向選項")](modern-cocoa-apps-images/content10.png)
+[![](modern-cocoa-apps-images/content10.png "文字方向選項")](modern-cocoa-apps-images/content10.png#lightbox)
 
 有三個可能的值為**文字方向**:
 
@@ -851,7 +851,7 @@ var button2 = NSButton.CreateButton (myTitle, myImage, () => {
 
 現代 macOS 應用程式可以採用新的深色介面外觀，很適合映像建立、 編輯或簡報應用程式：
 
-[ ![](modern-cocoa-apps-images/content11.png "深色的 Mac 視窗 UI 的範例")](modern-cocoa-apps-images/content11.png)
+[![](modern-cocoa-apps-images/content11.png "深色的 Mac 視窗 UI 的範例")](modern-cocoa-apps-images/content11.png#lightbox)
 
 視窗會顯示之前加入一行程式碼可以完成此動作。 例如: 
 
@@ -898,7 +898,7 @@ Apple 已使用系統顯示狀態的下列建議：
 
 控制站將允許開發人員的構成要素和 Segues 抽象單位將收集項目，並移除一般 「 黏附追蹤程式碼 」，才能移動階層中的檢視：
 
-[ ![](modern-cocoa-apps-images/content12.png "編輯 Xcode 的介面產生器中的 UI")](modern-cocoa-apps-images/content12.png)
+[![](modern-cocoa-apps-images/content12.png "編輯 Xcode 的介面產生器中的 UI")](modern-cocoa-apps-images/content12.png#lightbox)
 
 如需詳細資訊，請參閱我們[簡介分鏡腳本](~/mac/platform/storyboards/index.md)文件。
 

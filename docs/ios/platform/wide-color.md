@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ab6124e2b11d26d4c10330e7b824e4761ebf4603
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 95098cd5c97ccc8357531feb79e55600f53a4be5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="wide-color"></a>寬的色彩
 
@@ -38,19 +38,19 @@ Apple 的硬體，例如依序顯示，新 P3 顯示和顯示 P3 色彩空間 �
 
 色彩空間是在其中色彩可以表示和比較的環境。 它可以是其色彩元件的濃度所定義的一到四個維度空間。 
 
-[ ![](wide-color-images/color00.png "色彩空間")](wide-color-images/color00.png)
+[![](wide-color-images/color00.png "色彩空間")](wide-color-images/color00.png#lightbox)
 
 ### <a name="color-channels"></a>色彩色板
 
 色彩元件可以也稱為色頻。 某些常見的表示法將 RGB 空格、 灰色空格、 CMYK 空格或裝置獨立空格。 
 
-[ ![](wide-color-images/color02.png "色彩元件可以也稱為色彩頻道")](wide-color-images/color02.png)
+[![](wide-color-images/color02.png "色彩元件可以也稱為色彩頻道")](wide-color-images/color02.png#lightbox)
 
 ### <a name="color-primaries"></a>色彩混雜
 
 色彩主要複本會提供用來比較和運算色彩座標系統。 色彩主要複本會通常落在最密集指定色彩可能會產生色彩通道內的版本。
 
-[ ![](wide-color-images/color01.png "色彩主要複本會提供用來比較和運算色彩座標系統")](wide-color-images/color01.png)
+[![](wide-color-images/color01.png "色彩主要複本會提供用來比較和運算色彩座標系統")](wide-color-images/color01.png#lightbox)
 
 在上述表示 RGB 色彩空間，色彩的主要複本會位於何處`1.0`座標錨定 (例如`[1.0, 0.0, 0.0]`紅色)。
 
@@ -58,7 +58,7 @@ Apple 的硬體，例如依序顯示，新 P3 顯示和顯示 P3 色彩空間 �
 
 色彩範圍是指所有可以定義為提供色彩空間內的個別色彩通道組合的色彩。
 
-[ ![](wide-color-images/color03.png "色彩色域圖範例")](wide-color-images/color03.png)
+[![](wide-color-images/color03.png "色彩色域圖範例")](wide-color-images/color03.png#lightbox)
 
 ## <a name="what-is-wide-color"></a>什麼是寬的色彩
 
@@ -80,7 +80,7 @@ SRGB 因此廣泛使用在產業中，開發人員可以做出，因為指定的
 
 2015，Apple 發行提供新顯示 P3 色彩空間來處理問題 sRGB 色彩空間所建立的新產品 （iMac 和 iPad Pro 9.7"）。
 
-[ ![](wide-color-images/color04.png "新的顯示 P3 色彩空間")](wide-color-images/color04.png)
+[![](wide-color-images/color04.png "新的顯示 P3 色彩空間")](wide-color-images/color04.png#lightbox)
 
 顯示 P3 色彩空間具有下列屬性：
 
@@ -112,7 +112,7 @@ SRGB 因此廣泛使用在產業中，開發人員可以做出，因為指定的
 
 零，另一個之外的值擴充範圍 sRGB 色彩空間中的運作方式，請採取下列範例會顯示 P3 色彩空間中可用的最飽和紅色：
 
-[ ![](wide-color-images/color05.png "零，另一個之外的值擴充範圍 sRGB 色彩空間中的運作方式")](wide-color-images/color05.png)
+[![](wide-color-images/color05.png "零，另一個之外的值擴充範圍 sRGB 色彩空間中的運作方式")](wide-color-images/color05.png#lightbox)
 
 在顯示 P3 這個色彩則表示為`[1.0, 0.0, 0.0]`在將擴充範圍 sRGB `[1.358, -0.074, -0.012]`。 因為 sRGB 值是完整自主內顯示 P3 和顯示 P3 值版面配置設定 「 外部 」 的 sRGB 範圍。
 

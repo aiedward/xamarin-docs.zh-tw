@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 951de7c134e6882d621b015456d5d40a7cf2b8d2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6512387738217259067e7b9ae8076f73b4fbeb07
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-new-platform-specific-library-projects-for-nuget"></a>建立新的平台特定程式庫專案的 NuGet
 
@@ -27,11 +27,11 @@ NuGet 可包含特定 iOS 及 Android 程式碼，以及同時.NET 程式碼。
 
 2. 選擇**多平台程式庫**從**多平台 > 程式庫**> 一節：
 
-  [ ![](platform-specific-images/mulitplatform-library-sml.png "設定單一程式碼基底的多平台程式庫")](platform-specific-images/multiplatform-library.png)
+  [![](platform-specific-images/mulitplatform-library-sml.png "設定單一程式碼基底的多平台程式庫")](platform-specific-images/multiplatform-library.png#lightbox)
 
 3. 輸入**名稱**和**描述**，然後選擇 **特定平台**:
 
-  [ ![](platform-specific-images/specific-configure-sml.png "設定適用於 iOS 和 Android 平台特定程式庫")](platform-specific-images/specific-configure.png)
+  [![](platform-specific-images/specific-configure-sml.png "設定適用於 iOS 和 Android 平台特定程式庫")](platform-specific-images/specific-configure.png#lightbox)
 
 4. 完成精靈。 下列專案會加入至方案：
 
@@ -42,7 +42,7 @@ NuGet 可包含特定 iOS 及 Android 程式碼，以及同時.NET 程式碼。
 
 5. NuGet 的專案上按一下滑鼠右鍵，然後選擇 **選項**，然後開啟**NuGet 封裝 > 中繼資料**區段，並輸入[必要的中繼資料](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)（為以及任何選擇性中繼資料）：
 
-  [ ![](platform-specific-images/specific-metadata-sml.png "輸入必要的中繼資料")](platform-specific-images/specific-metadata.png)
+  [![](platform-specific-images/specific-metadata-sml.png "輸入必要的中繼資料")](platform-specific-images/specific-metadata.png#lightbox)
 
 6. 此外，在**專案選項**視窗中，開啟**參考組件**區段，然後選擇 共用的程式庫將透過上鉤 and 的交換器 」 支援哪些 PCL 設定檔：
 
@@ -67,4 +67,4 @@ NuGet 封裝也是套件的 ZIP 檔案，所以有可能檢查產生的內部結
 
 ## <a name="related-links"></a>相關連結
 
-- [中繼資料的指南](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)
+- [中繼資料指南](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)

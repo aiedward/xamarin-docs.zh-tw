@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: a6749ca9d8a793372ec088433780d622f2f05b41
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7ca863b92d8d7af46f4ce18f5d088347b9ca04ee
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-and-home-screen-widget-enhancements"></a>搜尋和主畫面 Widget 增強功能
 
@@ -25,7 +25,7 @@ Apple 已引進了數個增強功能 Widget 系統，以確保 widget 看起來�
 
 Widget 進行大幅度的自訂，而且可能包含 UI 項目，例如文字、 影像、 按鈕等等。此外，開發人員可以進一步自訂其小工具的版面配置。
 
-[ ![](widgets-images/widgets01.png "範例 widget")](widgets-images/widgets01.png)
+[![](widgets-images/widgets01.png "範例 widget")](widgets-images/widgets01.png#lightbox)
 
 有兩個主要的地方，使用者可以檢視並與其互動的應用程式的 Widget:
 

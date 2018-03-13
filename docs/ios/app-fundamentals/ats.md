@@ -3,16 +3,16 @@ title: "應用程式的傳輸安全性"
 description: "應用程式的傳輸安全性 (ATS) 會強制執行 （例如應用程式的後端伺服器） 的網際網路資源與您的應用程式之間的安全連線。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
+ms.assetid: F8C5E444-2D05-4D9B-A2EF-EB052CD6F007
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/13/2017
-ms.openlocfilehash: 60858e05e222725f05eb67bd7aaa4e56d2ff3880
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a4491f550369bbb8515635ecbb7c1c2b74de48cf
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="app-transport-security"></a>應用程式的傳輸安全性
 
@@ -69,7 +69,7 @@ AT 將會強制執行所有的網際網路連線的下列需求：
 
 如果 Xamarin.iOS 應用程式或程式庫或它正在使用的服務會建立連線到網際網路，則在 iOS 9 和 OS X El Capitan，預設會啟用 AT，因為您必須採取某些動作，或您的連線會導致擲回例外狀況。
 
-現有的應用程式，建議您支援 Apple`HTTPS`儘速通訊協定。 如果您是因為無法連接到第 3 合作對象不支援的 web 服務`HTTPS`或如果支援`HTTPS`就不太實用，您可以退出 AT。 請參閱[Opting 外 AT](#Opting-Out-of-ATS)下面章節以取得詳細資料。
+現有的應用程式，建議您支援 Apple`HTTPS`儘速通訊協定。 如果您是因為無法連接到第 3 合作對象不支援的 web 服務`HTTPS`或如果支援`HTTPS`就不太實用，您可以退出 AT。 請參閱[Opting 外 AT](#optout)下面章節以取得詳細資料。
 
 新的 Xamarin.iOS 應用程式中，您應該使用`HTTPS`與網際網路資源進行通訊時，以獨佔方式。 同樣地，可能會有情況 （例如使用第 3 個合作對象 web 服務） 無法這樣做，您將需要 AT 退出。
 
@@ -144,7 +144,7 @@ IOS9，應用程式傳輸安全性 (ATS) 會強制執行 （例如應用程式�
 
 因為在建置適用於 iOS 9 和 OS X 10.11 (El Capitan) 使用的所有連接的應用程式預設會啟用 AT `NSURLConnection`，`CFURL`或`NSURLSession`都會受到 AT 安全性需求。 如果您的連線不符合這些需求，它們將會失敗並發生例外狀況。
 
-也提供 Apple [TLSTool 範例應用程式](https://developer.apple.com/library/mac/samplecode/sc1236/Introduction/Intro.html#//apple_ref/doc/uid/DTS40014927-Intro-DontLinkElementID_2)編譯的 （或選擇性地轉碼 Xamarin 和 C#） 和用來診斷問題 AT/TLS。 請參閱[Opting 外 AT](#Opting-Out_of_ATS)下面章節，如需如何解決此問題的資訊。
+也提供 Apple [TLSTool 範例應用程式](https://developer.apple.com/library/mac/samplecode/sc1236/Introduction/Intro.html#//apple_ref/doc/uid/DTS40014927-Intro-DontLinkElementID_2)編譯的 （或選擇性地轉碼 Xamarin 和 C#） 和用來診斷問題 AT/TLS。 請參閱[Opting 外 AT](#optout)下面章節，如需如何解決此問題的資訊。
 
 
 <a name="config" />
@@ -215,7 +215,7 @@ Xamarin.iOS 應用程式必須提出要求，以不安全的網域，如果您�
 
 在 Visual Studio for Mac，按兩下`Info.plist`檔案**方案總管 中**，切換至**來源**檢視和加入上述機碼：
 
-[ ![](ats-images/ats01.png "Info.plist 檔案的原始碼檢視")](ats-images/ats01.png)
+[![](ats-images/ats01.png "Info.plist 檔案的原始碼檢視")](ats-images/ats01.png#lightbox)
 
 
 如果您的應用程式必須載入並顯示從非安全的站台的網頁內容，您的應用程式中加入下列**Info.plist**檔案，以允許正確載入，而其餘部分仍啟用 Apple 傳輸安全性 (ATS) 保護的網頁應用程式：
@@ -240,7 +240,7 @@ Xamarin.iOS 應用程式必須提出要求，以不安全的網域，如果您�
 
 在 Visual Studio for Mac，按兩下`Info.plist`檔案**方案總管 中**，切換至**來源**檢視和加入上述機碼：
 
-[ ![](ats-images/ats02.png "Info.plist 檔案的原始碼檢視")](ats-images/ats02.png)
+[![](ats-images/ats02.png "Info.plist 檔案的原始碼檢視")](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
 > **注意：**如果您的應用程式都必須連接至不安全的網站，您應該將**一律**使用例外狀況的形式輸入網域`NSExceptionDomains`而不是完全使用時，關閉 AT `NSAllowsArbitraryLoads`。 `NSAllowsArbitraryLoads` 應該只用在極端的緊急情況下。

@@ -7,11 +7,11 @@ ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 19e20015d1872cbaea21dd8b8e5431981e463c33
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 19e1ab4000e473aa773bf75015ff520a1f9a96d8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---creating-an-application-using-the-elements-api"></a>逐步解說-建立使用項目 API 的應用程式
 
@@ -19,7 +19,7 @@ _本文章根據 MonoTouch 對話方塊文章簡介 > 中所呈現的資訊。�
 
 在此逐步解說中，我們將使用機動D 項目來建立主從式樣式顯示工作清單中的應用程式的 API。 當使用者選取<span class="ui"> + </span>按鈕在導覽列中，新的資料列會加入至工作表。 選取的資料列會巡覽至 [詳細資料] 畫面，讓我們為更新的工作描述和到期日，如下所示：
 
- [ ![](elements-api-walkthrough-images/01-task-list-app.png "選取的資料列會導覽至詳細資料畫面，讓我們為更新的工作描述和到期日")](elements-api-walkthrough-images/01-task-list-app.png)
+ [![](elements-api-walkthrough-images/01-task-list-app.png "選取的資料列會導覽至詳細資料畫面，讓我們為更新的工作描述和到期日")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
  <a name="Elements_API_Walkthrough" />
 
@@ -72,7 +72,7 @@ public override bool FinishedLaunching (UIApplication app,
 
 上述程式碼建立的執行個體`RootElement`並將資料傳遞到`DialogViewController`。 `DialogViewController`必定`RootElement`在其階層的頂端。 在此範例中，`RootElement`會透過 「 待辦清單"會做為導覽控制站的導覽列中的標題的字串。 此時，執行應用程式會呈現畫面如下所示：
 
- [ ![](elements-api-walkthrough-images/02-to-do-list-screen-.png "執行應用程式將會顯示如下所示的畫面")](elements-api-walkthrough-images/02-to-do-list-screen-.png)
+ [![](elements-api-walkthrough-images/02-to-do-list-screen-.png "執行應用程式將會顯示如下所示的畫面")](elements-api-walkthrough-images/02-to-do-list-screen-.png#lightbox)
 
 我們來看看如何使用 MonoTouch.Dialog 的階層式結構`Sections`和`Elements`新增更多的螢幕。
 
@@ -148,11 +148,11 @@ public class Task
 
 工作詳細資料畫面本身組成兩個區段。下列各節包含單一項目。 第一個項目從建立`EntryElement`提供工作的可編輯的資料列`Description`屬性。 選取的項目時，文字編輯鍵盤會如下所示：
 
- [ ![](elements-api-walkthrough-images/03-create-task.png "顯示選取項目時，呈現鍵盤文字編輯")](elements-api-walkthrough-images/03-create-task.png)
+ [![](elements-api-walkthrough-images/03-create-task.png "顯示選取項目時，呈現鍵盤文字編輯")](elements-api-walkthrough-images/03-create-task.png#lightbox)
 
 第二節包含`DateElement`，讓我們能夠管理的工作`DueDate`屬性。 選取日期，會自動載入日期選擇器，如所示：
 
- [ ![](elements-api-walkthrough-images/04-date-picker.png "選取的日期會自動載入做為日期選擇器")](elements-api-walkthrough-images/04-date-picker.png)
+ [![](elements-api-walkthrough-images/04-date-picker.png "選取的日期會自動載入做為日期選擇器")](elements-api-walkthrough-images/04-date-picker.png#lightbox)
 
 在這兩`EntryElement`和`DateElement`案例 （或任何資料輸入中的項目 MonoTouch.Dialog），會自動保留為值的任何變更。 我們可以編輯的日期，然後巡覽根畫面和各種工作詳細資料，其中保留詳細資料畫面中的值之間來回進行示範。
 

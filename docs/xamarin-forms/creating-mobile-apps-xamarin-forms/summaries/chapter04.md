@@ -3,14 +3,15 @@ title: "第 4 章的摘要。 捲動堆疊"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 59d51c48cee30a242f5e1adcb1c886169334e9b2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5ad53d7bc8c4ee54a47c4b327fb6f07bc1906ab9
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章的摘要。 捲動堆疊
 
@@ -94,7 +95,7 @@ ms.lasthandoff: 02/27/2018
 
 您可以使用數個執行個體`StackLayout`結合`BoxView`和數個`Label`中執行個體`Frame`來顯示特定的色彩，，然後放置每個檢視中`StackLayout`中`ScrollView`建立具吸引力清單中顯示的色彩[ **ColorBlocks** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorBlocks)範例：
 
-[![三個螢幕擷取畫面的色彩區塊](images/ch04fg11-small.png "的色彩清單")](images/ch04fg11-large.png "色彩的清單")
+[![三個螢幕擷取畫面的色彩區塊](images/ch04fg11-small.png "的色彩清單")](images/ch04fg11-large.png#lightbox "色彩的清單")
 
 ## <a name="a-scrollview-in-a-stacklayout"></a>在 StackLayout ScrollView 嗎？
 

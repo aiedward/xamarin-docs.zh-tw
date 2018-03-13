@@ -8,15 +8,15 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/03/2016
-ms.openlocfilehash: b6054b4037b14a73cb5bfe50b619e805fdcf1737
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: caee0d685838f7c0a54e19611fdf72df5730c037
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book-first-edition"></a>使用 Xamarin.Forms 活頁簿第一版中建立行動裝置應用程式
 
-<p><img src="Images/Cover-sml.png" title="使用 Xamarin.Forms 活頁簿中建立行動裝置應用程式" align="left"/>最新書籍 Charles Petzold-<i>建立行動應用程式使用 Xamarin.Forms</i> -已傳送 （電子） 按下，現在已可供下載 ！</p>
+<p><img src="Images/Cover-sml.png" title="使用 Xamarin.Forms 活頁簿中建立行動裝置應用程式" align="left" />最新書籍 Charles Petzold-<i>建立行動應用程式使用 Xamarin.Forms</i> -已傳送 （電子） 按下，現在已可供下載 ！</p>
 
 這*第一版*有 27 章節，並涵蓋了 Xamarin.Forms&nbsp;2.x 包括動畫、 MVVM、 觸發程序、 行為、 自訂版面配置、 自訂轉譯器，以及執行更多。
 章 28 也會立即提供線上之間下面所列的個別章節。

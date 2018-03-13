@@ -6,15 +6,13 @@ ms.assetid: 386C9030-8865-48DE-8AF7-42909C7055E9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 8a603cb0791e14b1a1bbe4e15548ce1234e42f61
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8b9c8774a7fda28b7d8f106970958e3b0dd8f125
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
-# <a name="can-i-use-a-mac-vm-with-xamarin"></a>可以使用 Mac VM 使用 Xamarin 嗎？
-
-#<a name="can-i-use-a-mac-vm-with-xamarin"></a>可以使用 Mac VM 使用 Xamarin 嗎？ 
+# <a name="can-i-use-a-mac-vm-with-xamarin"></a>可以使用 Mac VM 使用 Xamarin 嗎？ 
 
 ## <a name="mac-hardware"></a>Mac 硬體
 [否]。請小心遵循 Apple 的使用規定。

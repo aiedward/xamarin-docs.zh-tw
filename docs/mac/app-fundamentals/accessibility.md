@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 0117364f02302add1f8788de1a79e4c4210fd07b
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 4363258a9047ee4e2de4f53595a6eedc5dfe5861
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="accessibility-on-macos"></a>MacOS 上的協助工具
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 02/28/2018
 Xamarin.Mac 使用 Xcode 介面產生器來編輯分鏡腳本檔案。
 協助工具資訊可以在中編輯**識別 inspector**時選取控制項的設計介面上 （如下面的螢幕擷取畫面所示）：
 
-[![在 Xcode 的介面產生器中加入協助工具](accessibility-images/xcode.png "加入 Xcode 的介面產生器中的協助工具")](accessibility-images/xcode-large.png)
+[![在 Xcode 的介面產生器中加入協助工具](accessibility-images/xcode.png "加入 Xcode 的介面產生器中的協助工具")](accessibility-images/xcode-large.png#lightbox)
 
 ### <a name="code"></a>程式碼
 
@@ -80,7 +80,7 @@ Apple 提供[可及性方針](https://developer.apple.com/library/mac/documentat
 
 啟用之後，偵測器會顯示為可在螢幕上移動的浮動視窗中。 下列螢幕擷取畫面顯示旁邊範例 Mac 應用程式執行的偵測器。 由於將游標移到視窗時，偵測器會顯示所有可存取的屬性，每個控制項：
 
-[![協助工具偵測器執行的範例](accessibility-images/accessibility-example.png "範例的協助工具偵測器正在執行")](accessibility-images/accessibility-example-large.png)
+[![協助工具偵測器執行的範例](accessibility-images/accessibility-example.png "範例的協助工具偵測器正在執行")](accessibility-images/accessibility-example-large.png#lightbox)
 
 如需詳細資訊，請參閱[測試協助工具的 OS X 指南](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html)。
 

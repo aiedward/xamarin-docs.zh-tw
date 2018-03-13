@@ -8,17 +8,17 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 4af76a37e5fd42ff1d6344f60642425c73e9d733
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f5383465f7bc5c4529eebefca02718c83a653e9f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-opentk"></a>OpenTK 簡介
 
 OpenTK (開啟 Toolkit) 是進階、 低階 C# 程式庫，使處理 OpenGL、 OpenCL 與 OpenAL 更容易。 OpenTK 可以用於遊戲、 科學應用程式或其他專案需要 3D 圖形、 聲音或計算功能。 本文提供使用 OpenTK Xamarin.Mac 應用程式中的簡介。
 
-[ ![](opentk-images/intro01.png "執行範例應用程式")](opentk-images/intro01.png)
+[![](opentk-images/intro01.png "執行範例應用程式")](opentk-images/intro01.png#lightbox)
 
 在本文中，我們將討論 OpenTK Xamarin.Mac 應用程式中的基本概念。 強烈建議您逐步[Hello、 Mac](~/mac/get-started/hello-mac.md)發行項的第一次，具體來說[Xcode 和介面產生器簡介](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)和[插座和動作](~/mac/get-started/hello-mac.md#Outlets_and_Actions)區段中的，因為它涵蓋重要概念和技術，我們將在本文中使用。
 
@@ -54,11 +54,11 @@ OpenTK 可以用於遊戲、 科學應用程式或其他專案需要 3D 圖形�
 
 啟動 Visual Studio for Mac 並建立新的 Xamarin.Mac 方案。 選取**Mac** > **應用程式** > **一般** > **Cocoa 應用程式**:
 
-[ ![](opentk-images/sample01.png "加入新的 Cocoa 應用程式")](opentk-images/sample01.png)
+[![](opentk-images/sample01.png "加入新的 Cocoa 應用程式")](opentk-images/sample01.png#lightbox)
 
 輸入`MacOpenTK`如**專案名稱**:
 
-[ ![](opentk-images/sample02.png "設定專案名稱")](opentk-images/sample02.png)
+[![](opentk-images/sample02.png "設定專案名稱")](opentk-images/sample02.png#lightbox)
 
 按一下**建立**按鈕，建立新的專案。
 
@@ -70,7 +70,7 @@ OpenTK 可以用於遊戲、 科學應用程式或其他專案需要 3D 圖形�
 
 透過核取`OpenTK`按一下**確定**按鈕：
 
-[ ![](opentk-images/sample03.png "編輯專案參考")](opentk-images/sample03.png)
+[![](opentk-images/sample03.png "編輯專案參考")](opentk-images/sample03.png#lightbox)
 
 <a name="Using_OpenTK" />
 
@@ -296,7 +296,7 @@ Game.Run(60.0);
 
 讓我們執行我們的應用程式，並查看 輸出：
 
-[ ![](opentk-images/intro01.png "應用程式的輸出範例")](opentk-images/intro01.png)
+[![](opentk-images/intro01.png "應用程式的輸出範例")](opentk-images/intro01.png#lightbox)
 
 如果我們調整我們視窗，遊戲檢視也會位於，而且將會調整大小與一併更新即時三角形。
 
@@ -329,5 +329,5 @@ OpenTK 實作更複雜 Xamarin.Mac 範例中，請參閱我們[MonoMacGameView](
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [使用視窗](~/mac/user-interface/window.md)
 - [開啟工具組](http://www.opentk.com)
-- [OS X 人們介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [OS X 人性化介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) \(英文\)
 - [簡介 Windows](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)

@@ -7,11 +7,11 @@ ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: a10dcbbdcd7792cb7c54c883566911264b6d81e6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4a8f1632076a12b1737ba8294ac8b2f28f19dc77
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="document-picker"></a>文件選擇器
 
@@ -54,7 +54,7 @@ _文件選擇器檢視控制器授與使用者存取應用程式的沙箱以外�
 
 從數個不同的位置，就可以修改檔案，因為協調必須可用來防止資料遺失。
 
- [ ![](document-picker-images/image1.png "使用檔案協調")](document-picker-images/image1.png)
+ [![](document-picker-images/image1.png "使用檔案協調")](document-picker-images/image1.png#lightbox)
 
 讓我們看一下上圖中：
 
@@ -193,7 +193,7 @@ fileCoordinator.CoordinateAccess (intents, queue, (err) => {
 
 在 iOS 8 之前,`NSMetadataQuery`很慢收取的本機檔案變更例如： 刪除、 建立並重新命名。
 
- [ ![](document-picker-images/image2.png "NSMetadataQuery 本機檔案變更概觀")](document-picker-images/image2.png)
+ [![](document-picker-images/image2.png "NSMetadataQuery 本機檔案變更概觀")](document-picker-images/image2.png#lightbox)
 
 上圖中：
 
@@ -208,7 +208,7 @@ fileCoordinator.CoordinateAccess (intents, queue, (err) => {
 
 在 iOS 8，`NSMetadataQuery`更輕鬆地使用直接與稱為連結的新功能：
 
- [ ![](document-picker-images/image3.png "與新的功能 NSMetadataQuery 呼叫連結")](document-picker-images/image3.png)
+ [![](document-picker-images/image3.png "與新的功能 NSMetadataQuery 呼叫連結")](document-picker-images/image3.png#lightbox)
 
 使用上圖中的連結：
 
@@ -824,7 +824,7 @@ public AppDelegate ThisApp {
 
 ### <a name="existing-behavior"></a>現有的行為
 
- [ ![](document-picker-images/image31.png "現有的行為概觀")](document-picker-images/image31.png)
+ [![](document-picker-images/image31.png "現有的行為概觀")](document-picker-images/image31.png#lightbox)
 
 讓我們看看存取 iOS 8 之前的外部文件：
 
@@ -839,7 +839,7 @@ public AppDelegate ThisApp {
 
 在 iOS 8 中，應用程式是可以輕鬆存取自己的應用程式容器之外的文件：
 
- [ ![](document-picker-images/image32.png "探索應用程式的容器之外的文件")](document-picker-images/image32.png)
+ [![](document-picker-images/image32.png "探索應用程式的容器之外的文件")](document-picker-images/image32.png#lightbox)
 
 使用新的文件選擇器 iCloud ( `UIDocumentPickerViewController`)、 iOS 應用程式可以直接找出並存取其應用程式容器之外。 `UIDocumentPickerViewController`提供的機制，讓使用者存取權授與和編輯這些權限透過找到的文件。
 
@@ -910,16 +910,16 @@ if (presentationPopover!=null) {
 
 1.  使用者啟動應用程式，並顯示的主要介面：   
  
-    [ ![](document-picker-images/image33.png "顯示的主要介面")](document-picker-images/image33.png)
+    [![](document-picker-images/image33.png "顯示的主要介面")](document-picker-images/image33.png#lightbox)
 1.  使用者點選**動作**螢幕頂端的按鈕，並要求選取**文件提供者**從可用的提供者的清單：   
  
-    [ ![](document-picker-images/image34.png "從可用的提供者清單中選取文件提供者")](document-picker-images/image34.png)
+    [![](document-picker-images/image34.png "從可用的提供者清單中選取文件提供者")](document-picker-images/image34.png#lightbox)
 1.  **文件選擇器檢視控制器**會顯示選定**文件提供者**:   
  
-    [ ![](document-picker-images/image35.png "顯示文件選擇器檢視控制器")](document-picker-images/image35.png)
+    [![](document-picker-images/image35.png "顯示文件選擇器檢視控制器")](document-picker-images/image35.png#lightbox)
 1.  使用者在點選**文件資料夾**以顯示其內容：   
  
-    [ ![](document-picker-images/image36.png "文件資料夾內容")](document-picker-images/image36.png)
+    [![](document-picker-images/image36.png "文件資料夾內容")](document-picker-images/image36.png#lightbox)
 1.  使用者選取**文件**和**文件選擇器**已關閉。
 1.  主要介面會重新顯示，**文件**取自載入外部的容器，並顯示其內容。
 
@@ -930,7 +930,7 @@ if (presentationPopover!=null) {
 
 如上所述前 8、 iOS, 應用程式無法只能存取其應用程式容器的一部分的文件。 在 iOS 8 應用程式可以存取文件，從外部來源：
 
- [ ![](document-picker-images/image37.png "管理外部文件概觀")](document-picker-images/image37.png)
+ [![](document-picker-images/image37.png "管理外部文件概觀")](document-picker-images/image37.png#lightbox)
 
 當使用者選取從外部來源的文件時，參考文件會寫入至應用程式容器所指原始文件。
 
@@ -1021,10 +1021,10 @@ if (Bookmark != null) {
 
 1.  **開啟模式**-在此模式中，當使用者選取外部的文件，文件選擇器會建立一個安全性範圍的書籤應用程式容器中。   
  
-    [ ![](document-picker-images/image37.png "安全性範圍的應用程式容器中的書籤")](document-picker-images/image37.png)
+    [![](document-picker-images/image37.png "安全性範圍的應用程式容器中的書籤")](document-picker-images/image37.png#lightbox)
 1.  **匯入模式**-在此模式中，當使用者選取和外部文件、 文件選擇器將不建立書籤，但相反地，複製到暫存位置的檔案以及提供應用程式存取此位置處的文件：   
  
-    [ ![](document-picker-images/image38.png "文件選擇器會將檔案複製到暫存位置，並提供此位置的文件的應用程式存取")](document-picker-images/image38.png)   
+    [![](document-picker-images/image38.png "文件選擇器會將檔案複製到暫存位置，並提供此位置的文件的應用程式存取")](document-picker-images/image38.png#lightbox)   
  一旦應用程式結束，因為任何原因，會清空暫存位置，並移除檔案。 如果應用程式需要維護檔案的存取權，它應該製作複本，並將它放在其應用程式容器中。
 
 
@@ -1069,7 +1069,7 @@ if (Bookmark != null) {
 
 下圖顯示典型的資料流程，使用文件提供者擴充功能時：
 
- [ ![](document-picker-images/image39.png "使用文件提供者延伸模組時，此圖表會顯示一般資料流程")](document-picker-images/image39.png)
+ [![](document-picker-images/image39.png "使用文件提供者延伸模組時，此圖表會顯示一般資料流程")](document-picker-images/image39.png#lightbox)
 
 下列程序：
 
@@ -1095,7 +1095,7 @@ if (Bookmark != null) {
 
 使用書籤與文件提供者延伸模組時下, 圖顯示資料流程中的資料：
 
- [ ![](document-picker-images/image40.png "使用書籤與文件提供者延伸模組時，此圖表會顯示資料流程中的資料")](document-picker-images/image40.png)
+ [![](document-picker-images/image40.png "使用書籤與文件提供者延伸模組時，此圖表會顯示資料流程中的資料")](document-picker-images/image40.png#lightbox)
 
 下列程序：
 

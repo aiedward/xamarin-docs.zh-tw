@@ -4,14 +4,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: C10FD999-7A91-4708-B642-0C1B0901BD24
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 857c7fe47ad5fa0f50fce95672bc8ffbf6771dc9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: topgenorth
+ms.author: toopge
+ms.date: 03/09/2018
+ms.openlocfilehash: 96e8d1a3658a515b6b1d37cf0fdd93157954c01d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="foreground-services"></a>前景服務
 
@@ -85,5 +85,5 @@ StopForeground(true);
 
 - [Android.App.Service](https://developer.xamarin.com/api/type/Android.App.Service/)
 - [Android.App.Service.StartForegrond](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/)
-- [本機的通知](~/android/app-fundamentals/notifications/local-notifications.md)
+- [本機通知](~/android/app-fundamentals/notifications/local-notifications.md)
 - [ForegroundServiceDemo (sample)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/ServiceSamples/ForegroundServiceDemo/)

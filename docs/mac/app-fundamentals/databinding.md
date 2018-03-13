@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 2c01a36eabb15fbe9b975c91328dfa7cfd651896
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: b7ffd069a8c99c2cdfd0ecb58fe7ef762e5a46f3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="data-binding-and-key-value-coding"></a>資料繫結和索引鍵-值撰寫程式碼
 
@@ -24,7 +24,7 @@ _本文說明如何使用索引鍵-值編碼並觀察以便進行資料繫結至
 
 使用索引鍵-值撰寫程式碼和資料繫結 Xamarin.Mac 應用程式中的技術，您可以大幅減少您必須撰寫和維護以填入和 UI 項目所使用的程式碼數量。 您也可以進一步減少您的備份資料的優點 (_資料模型_) 從您的前端結束使用者介面 (_模型-檢視-控制器_)，而導致更輕鬆地維護，更有彈性的應用程式設計。
 
-[![執行中應用程式的範例](databinding-images/intro01.png "執行的應用程式的範例")](databinding-images/intro01-large.png)
+[![執行中應用程式的範例](databinding-images/intro01.png "執行的應用程式的範例")](databinding-images/intro01-large.png#lightbox)
 
 在本文中，我們會使用索引鍵-值程式碼撰寫和 Xamarin.Mac 應用程式中的資料繫結的基本概念。 強烈建議您逐步[Hello、 Mac](~/mac/get-started/hello-mac.md)發行項的第一次，具體來說[Xcode 和介面產生器簡介](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)和[插座和動作](~/mac/get-started/hello-mac.md#Outlets_and_Actions)區段中的，因為它涵蓋重要概念和技術，我們將在本文中使用。
 
@@ -421,7 +421,7 @@ public bool isManager {
 
 首先，我們將加入新**檢視控制器**至我們**Main.storyboard**介面產生器中的檔案，並命名為其類別`SimpleViewController`: 
 
-[![加入新的檢視控制器](databinding-images/simple01.png "加入新的檢視控制器")](databinding-images/simple01-large.png)
+[![加入新的檢視控制器](databinding-images/simple01.png "加入新的檢視控制器")](databinding-images/simple01-large.png#lightbox)
 
 接下來，回到 Visual Studio for Mac，編輯**SimpleViewController.cs**檔案 （檔案已自動加入至受測專案） 和公開的執行個體`PersonModel`我們會在資料繫結到表單。 加入下列程式碼：
 
@@ -461,27 +461,27 @@ public override void ViewDidLoad ()
 
 現在我們要建立表單，請按兩下**Main.storyboard**檔案以開啟介面產生器中進行編輯。 版面配置表單看起來像下面這樣：
 
-[![編輯在 Xcode 中的分鏡腳本](databinding-images/simple02.png "編輯在 Xcode 中的分鏡腳本")](databinding-images/simple02-large.png)
+[![編輯在 Xcode 中的分鏡腳本](databinding-images/simple02.png "編輯在 Xcode 中的分鏡腳本")](databinding-images/simple02-large.png#lightbox)
 
 資料繫結到表單`PersonModel`，我們透過公開`Person`索引鍵，執行下列動作：
 
 1. 選取**員工姓名**文字欄位並切換到**繫結 Inspector**。
 2. 請檢查**繫結至**方塊，然後選取**簡單檢視控制器**從下拉式清單。 接著輸入`self.Person.Name`如**金鑰路徑**: 
 
-    [![輸入此金鑰路徑](databinding-images/simple03.png "輸入機碼路徑")](databinding-images/simple03-large.png)
+    [![輸入此金鑰路徑](databinding-images/simple03.png "輸入機碼路徑")](databinding-images/simple03-large.png#lightbox)
 3. 選取**職業**文字欄位，然後核取**繫結至**方塊，然後選取**簡單檢視控制器**從下拉式清單。 接著輸入`self.Person.Occupation`如**金鑰路徑**:  
 
-    [![輸入此金鑰路徑](databinding-images/simple04.png "輸入機碼路徑")](databinding-images/simple04-large.png)
+    [![輸入此金鑰路徑](databinding-images/simple04.png "輸入機碼路徑")](databinding-images/simple04-large.png#lightbox)
 4. 選取**員工是管理員**核取方塊，並檢查**繫結至**方塊，然後選取**簡單檢視控制器**從下拉式清單。 接著輸入`self.Person.isManager`如**金鑰路徑**:  
 
-    [![輸入此金鑰路徑](databinding-images/simple05.png "輸入機碼路徑")](databinding-images/simple05-large.png)
+    [![輸入此金鑰路徑](databinding-images/simple05.png "輸入機碼路徑")](databinding-images/simple05-large.png#lightbox)
 5. 選取**受管理的員工數目**文字欄位，然後核取**繫結至**方塊，然後選取**簡單檢視控制器**從下拉式清單。 接著輸入`self.Person.NumberOfEmployees`如**金鑰路徑**:  
 
-    [![輸入此金鑰路徑](databinding-images/simple06.png "輸入機碼路徑")](databinding-images/simple06-large.png)
+    [![輸入此金鑰路徑](databinding-images/simple06.png "輸入機碼路徑")](databinding-images/simple06-large.png#lightbox)
 6. 如果員工不是管理員，我們想要隱藏的員工管理標籤的數字和文字欄位。
 7. 選取**受管理的員工數目**標籤，展開 **隱藏**turndown 並檢查**繫結至**方塊，然後選取**簡單檢視控制器**從下拉式清單。 接著輸入`self.Person.isManager`如**金鑰路徑**:  
 
-    [![輸入此金鑰路徑](databinding-images/simple07.png "輸入機碼路徑")](databinding-images/simple07-large.png)
+    [![輸入此金鑰路徑](databinding-images/simple07.png "輸入機碼路徑")](databinding-images/simple07-large.png#lightbox)
 8. 選取`NSNegateBoolean`從**值轉換器**下拉式清單中：  
 
     ![選取 NSNegateBoolean 索引鍵轉換](databinding-images/simple08.png "選取 NSNegateBoolean 索引鍵轉換")
@@ -491,11 +491,11 @@ public override void ViewDidLoad ()
 
 如果您執行應用程式中，將值從`Person`屬性便會自動填入表單：
 
-[![顯示自動填入表單](databinding-images/simple09.png "顯示自動填入的表單")](databinding-images/simple09-large.png)
+[![顯示自動填入表單](databinding-images/simple09.png "顯示自動填入的表單")](databinding-images/simple09-large.png#lightbox)
 
 使用者對表單的任何變更將會回寫至`Person`檢視控制器中的屬性。 例如，取消選取**員工是管理員**更新`Person`的執行個體我們`PersonModel`和**受管理的員工數目**不見自動 （透過 標籤和文字欄位資料繫結）：
 
-[![隱藏非主管的員工人數](databinding-images/simple10.png "隱藏非主管的員工人數")](databinding-images/simple10-large.png)
+[![隱藏非主管的員工人數](databinding-images/simple10.png "隱藏非主管的員工人數")](databinding-images/simple10-large.png#lightbox)
 
 <a name="Table_View_Data_Binding" />
 
@@ -505,7 +505,7 @@ public override void ViewDidLoad ()
 
 首先，我們將加入新**檢視控制器**至我們**Main.storyboard**介面產生器中的檔案，並命名為其類別`TableViewController`:
 
-[![加入新的檢視控制器](databinding-images/table01.png "加入新的檢視控制器")](databinding-images/table01-large.png)
+[![加入新的檢視控制器](databinding-images/table01.png "加入新的檢視控制器")](databinding-images/table01-large.png#lightbox)
 
 接下來，讓編輯**TableViewController.cs**檔案 （檔案已自動加入至受測專案），並公開陣列 (`NSArray`) 的`PersonModel`我們會在資料繫結至表單的類別。 加入下列程式碼：
 
@@ -572,7 +572,7 @@ public override void AwakeFromNib ()
 
 現在我們需要建立我們資料表檢視表，請按兩下**Main.storyboard**檔案以開啟介面產生器中進行編輯。 配置的資料表看起來如下所示：
 
-[![新的資料表檢視表的版面配置](databinding-images/table02.png "配置新的資料表檢視")](databinding-images/table02-large.png)
+[![新的資料表檢視表的版面配置](databinding-images/table02.png "配置新的資料表檢視")](databinding-images/table02-large.png#lightbox)
 
 我們需要加入**陣列控制器**，提供繫結的資料的資料表，執行下列動作：
 
@@ -581,7 +581,7 @@ public override void AwakeFromNib ()
     ![從程式庫選取陣列控制器](databinding-images/table03.png "從程式庫選取陣列控制器")
 2. 選取**陣列控制器**中**介面階層架構**並切換至**屬性偵測器**:  
 
-    [![選取的屬性偵測器](databinding-images/table04.png "選取屬性偵測器")](databinding-images/table04-large.png)
+    [![選取的屬性偵測器](databinding-images/table04.png "選取屬性偵測器")](databinding-images/table04-large.png#lightbox)
 3. 輸入`PersonModel`如**類別名稱**，按一下 **加上**按鈕，然後新增三個索引鍵。 它們的名稱`Name`，`Occupation`和`isManager`:  
 
     ![新增必要的金鑰路徑](databinding-images/table05.png "加入必要的機碼路徑")
@@ -595,22 +595,22 @@ public override void AwakeFromNib ()
 
 1. 選取 [資料表] 檢視和**繫結 Inspector**:  
 
-    [![選取繫結檢查](databinding-images/table07.png "選取繫結器")](databinding-images/table07-large.png)
+    [![選取繫結檢查](databinding-images/table07.png "選取繫結器")](databinding-images/table07-large.png#lightbox)
 2. 在下**目錄**turndown 選取**繫結至**和**陣列控制器**。 輸入`arrangedObjects`如**控制器金鑰**欄位：  
 
     ![定義控制器索引鍵](databinding-images/table08.png "定義控制站的索引鍵")
 3. 選取**資料表檢視儲存格**下**員工**資料行。 在**繫結器**下**值**turndown 選取**繫結至**和**資料表資料格檢視**。 輸入`objectValue.Name`如**模型機碼路徑**:  
 
-    [![設定模型的機碼路徑](databinding-images/table09.png "設定模型的機碼路徑")](databinding-images/table09-large.png)
+    [![設定模型的機碼路徑](databinding-images/table09.png "設定模型的機碼路徑")](databinding-images/table09-large.png#lightbox)
 4. `objectValue` 為目前`PersonModel`受陣列控制器的陣列中。
 5. 選取**資料表檢視儲存格**下**職業**資料行。 在**繫結器**下**值**turndown 選取**繫結至**和**資料表資料格檢視**。 輸入`objectValue.Occupation`如**模型機碼路徑**:  
 
-    [![設定模型的機碼路徑](databinding-images/table10.png "設定模型的機碼路徑")](databinding-images/table10-large.png)
+    [![設定模型的機碼路徑](databinding-images/table10.png "設定模型的機碼路徑")](databinding-images/table10-large.png#lightbox)
 6. 儲存變更並返回 Visual Studio for Mac 使用 Xcode 進行同步處理。
 
 當我們執行應用程式時，資料表將會填入的陣列`PersonModels`:
 
-[![執行應用程式](databinding-images/table11.png "執行應用程式")](databinding-images/table11-large.png)
+[![執行應用程式](databinding-images/table11.png "執行應用程式")](databinding-images/table11-large.png#lightbox)
 
 <a name="Outline_View_Data_Binding" />
 
@@ -620,7 +620,7 @@ public override void AwakeFromNib ()
 
 首先，我們將加入新**檢視控制器**至我們**Main.storyboard**介面產生器中的檔案，並命名為其類別`OutlineViewController`: 
 
-[![加入新的檢視控制器](databinding-images/outline01.png "加入新的檢視控制器")](databinding-images/outline01-large.png)
+[![加入新的檢視控制器](databinding-images/outline01.png "加入新的檢視控制器")](databinding-images/outline01-large.png#lightbox)
 
 接下來，讓編輯**OutlineViewController.cs**檔案 （檔案已自動加入至受測專案），並公開陣列 (`NSArray`) 的`PersonModel`我們會在資料繫結至表單的類別。 加入下列程式碼：
 
@@ -690,7 +690,7 @@ public override void AwakeFromNib ()
 
 現在，我們必須建立我們大綱檢視中，按兩下**Main.storyboard**檔案以開啟介面產生器中進行編輯。 配置的資料表看起來如下所示：
 
-[![建立大綱檢視](databinding-images/outline02.png "建立大綱檢視")](databinding-images/outline02-large.png)
+[![建立大綱檢視](databinding-images/outline02.png "建立大綱檢視")](databinding-images/outline02-large.png#lightbox)
 
 我們需要加入**樹狀控制器**繫結的資料提供給我們的外框，執行下列動作：
 
@@ -699,7 +699,7 @@ public override void AwakeFromNib ()
     ![從程式庫選取樹狀目錄中控制站](databinding-images/outline03.png "選取樹狀目錄中控制站從程式庫")
 2. 選取**樹狀控制器**中**介面階層架構**並切換至**屬性偵測器**:  
 
-    [![選取的屬性偵測器](databinding-images/outline04.png "選取屬性偵測器")](databinding-images/outline04-large.png)
+    [![選取的屬性偵測器](databinding-images/outline04.png "選取屬性偵測器")](databinding-images/outline04-large.png#lightbox)
 3. 輸入`PersonModel`如**類別名稱**，按一下 **加上**按鈕，然後新增三個索引鍵。 它們的名稱`Name`，`Occupation`和`isManager`:  
 
     ![新增必要的金鑰路徑](databinding-images/outline05.png "加入必要的機碼路徑")
@@ -717,22 +717,22 @@ public override void AwakeFromNib ()
 
 1. 選取的大綱檢視和**繫結的偵測器**選取：  
 
-    [![選取繫結檢查](databinding-images/outline07.png "選取繫結器")](databinding-images/outline07-large.png)
+    [![選取繫結檢查](databinding-images/outline07.png "選取繫結器")](databinding-images/outline07-large.png#lightbox)
 2. 下**大綱檢視內容**turndown 選取**繫結至**和**樹狀控制器**。 輸入`arrangedObjects`如**控制器金鑰**欄位：  
 
     ![設定控制器的機碼](databinding-images/outline08.png "設定控制器的機碼")
 3. 選取**資料表檢視儲存格**下**員工**資料行。 在**繫結器**下**值**turndown 選取**繫結至**和**資料表資料格檢視**。 輸入`objectValue.Name`如**模型機碼路徑**:  
 
-    [![輸入模型的機碼路徑](databinding-images/outline09.png "輸入模型的機碼路徑")](databinding-images/outline09-large.png)
+    [![輸入模型的機碼路徑](databinding-images/outline09.png "輸入模型的機碼路徑")](databinding-images/outline09-large.png#lightbox)
 4. `objectValue` 為目前`PersonModel`由樹狀目錄中控制站所管理的陣列中。
 5. 選取**資料表檢視儲存格**下**職業**資料行。 在**繫結器**下**值**turndown 選取**繫結至**和**資料表資料格檢視**。 輸入`objectValue.Occupation`如**模型機碼路徑**:  
 
-    [![輸入模型的機碼路徑](databinding-images/outline10.png "輸入模型的機碼路徑")](databinding-images/outline10-large.png)
+    [![輸入模型的機碼路徑](databinding-images/outline10.png "輸入模型的機碼路徑")](databinding-images/outline10-large.png#lightbox)
 6. 儲存變更並返回 Visual Studio for Mac 使用 Xcode 進行同步處理。
 
 外框如果我們執行應用程式時，將會填入的陣列`PersonModels`:
 
-[![執行應用程式](databinding-images/outline11.png "執行應用程式")](databinding-images/outline11-large.png)
+[![執行應用程式](databinding-images/outline11.png "執行應用程式")](databinding-images/outline11-large.png#lightbox)
 
 ### <a name="collection-view-data-binding"></a>集合檢視的資料繫結
 
@@ -860,7 +860,7 @@ For more information on working with Collection Views, please see our [Collectio
 
 在您的資料繫結進行錯誤可能會導致_原生損毀_在 unmanaged 程式碼，並且造成 Xamarin.Mac 應用程式完全失敗，並`SIGABRT`錯誤：
 
-[![原生的損毀的對話方塊中的範例](databinding-images/debug01.png "的原生的損毀對話方塊範例")](databinding-images/debug01-large.png)
+[![原生的損毀的對話方塊中的範例](databinding-images/debug01.png "的原生的損毀對話方塊範例")](databinding-images/debug01-large.png#lightbox)
 
 資料繫結期間通常有四個的原生的損毀的主要原因：
 
@@ -873,15 +873,15 @@ For more information on working with Collection Views, please see our [Collectio
 
 讓我們，我們可以顯示如何尋找及修正此問題，請在我們的資料繫結造成原生損毀。 在介面產生器中，我們來變更我們的繫結的集合檢視範例中的第一個標籤的`Name`至`Title`:
 
-[![編輯繫結索引鍵](databinding-images/debug02.png "編輯繫結索引鍵")](databinding-images/debug02-large.png)
+[![編輯繫結索引鍵](databinding-images/debug02.png "編輯繫結索引鍵")](databinding-images/debug02-large.png#lightbox)
 
 讓我們來儲存變更，請切換回到 Visual Studio for Mac 同步 Xcode，並執行我們的應用程式。 顯示集合檢視時，應用程式將會立刻顯示損毀與`SIGABRT`錯誤 (如中所示**應用程式輸出**適用於 Mac 的 Visual Studio 中) 因為`PersonModel`不會公開與索引鍵屬性`Title`:
 
-[![繫結錯誤的範例](databinding-images/debug03.png "繫結錯誤的範例")](databinding-images/debug03-large.png)
+[![繫結錯誤的範例](databinding-images/debug03.png "繫結錯誤的範例")](databinding-images/debug03-large.png#lightbox)
 
 如果我們捲動至最上方的中的錯誤**應用程式輸出**我們可以看到要解決此問題的索引鍵：
 
-[![在錯誤記錄檔中尋找問題](databinding-images/debug04.png "錯誤記錄檔中尋找問題")](databinding-images/debug04-large.png)
+[![在錯誤記錄檔中尋找問題](databinding-images/debug04.png "錯誤記錄檔中尋找問題")](databinding-images/debug04-large.png#lightbox)
 
 這一行會告訴我們，金鑰`Title`我們要繫結的物件上不存在。 若我們變更繫結回`Name`介面產生器中，儲存、 同步處理，在重建並執行，應用程式將會如預期般執行不會發生問題。
 

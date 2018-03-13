@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/18/2017
-ms.openlocfilehash: 54b6809b7e27dc87be6d510e4a4b6071e4ae22e7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f976d798ae1b1279fc8f82d3cf1d738bb2c93911
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="popup-menu"></a>快顯功能表
 
 `PopupMenu`類別加入顯示快顯功能表連接至特定檢視的支援。 下圖顯示與第二個項目反白顯示就如同它選取顯示按鈕，從快顯功能表：
 
- [ ![三個項目具有三個 PopopMenu 的範例](popup-menu-images/20-popupmenu.png)](popup-menu-images/20-popupmenu.png)
+ [![三個項目具有三個 PopopMenu 的範例](popup-menu-images/20-popupmenu.png)](popup-menu-images/20-popupmenu.png#lightbox)
 
 Android 4 中加入幾個新功能，可`PopupMenu`，讓比較容易使用，也就是：
 
@@ -26,9 +26,8 @@ Android 4 中加入幾個新功能，可`PopupMenu`，讓比較容易使用，�
 
 讓我們看看這些增強功能。 在此範例中，有包含按鈕的活動。 當使用者按一下按鈕時，快顯功能表會顯示如下所示：
 
- [ ![按鈕和 3 個項目的快顯功能表的模擬器中執行應用程式的範例](popup-menu-images/06-popupmenu.png)](popup-menu-images/06-popupmenu.png)
+ [![按鈕和 3 個項目的快顯功能表的模擬器中執行應用程式的範例](popup-menu-images/06-popupmenu.png)](popup-menu-images/06-popupmenu.png#lightbox)
 
-<a name="Creating_a_Popup_Menu" />
 
 ## <a name="creating-a-popup-menu"></a>建立快顯功能表
 
@@ -62,7 +61,6 @@ showPopupMenu.Click += (s, arg) => {
 
 上述程式碼，因而誇大功能表之後接著呼叫`menu.Show`顯示在螢幕上。
 
-<a name="Handling_Menu_Events" />
 
 ## <a name="handling-menu-events"></a>處理功能表事件
 

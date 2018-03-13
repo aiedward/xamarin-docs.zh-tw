@@ -4,14 +4,15 @@ description: "瀏覽 SkiaSharp 座標和 Xamarin.Forms 座標之間的差異"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 2643e06474ffe0fd60830db3f315bf525c2f84eb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e07377584996694aa8597af79317957c51050ec
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>像素與裝置無關的單位
 
@@ -98,7 +99,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 以下是所有三個平台上執行的程式：
 
-[![](pixels-images/surfacesize-small.png "介面大小頁面的三個螢幕擷取畫面")](pixels-images/surfacesize-large.png "介面大小頁面的三個螢幕擷取畫面")
+[![](pixels-images/surfacesize-small.png "介面大小頁面的三個螢幕擷取畫面")](pixels-images/surfacesize-large.png#lightbox "介面大小頁面的三個螢幕擷取畫面")
 
 如您所見，`CanvasSize`屬性`SKCanvasView`和`Size`屬性`SKImageInfo`值都是一致 reporting 像素維度中。 `Height`和`Width`屬性`SKCanvasView`Xamarin.Forms 屬性和報表平台所定義的裝置獨立單位檢視的大小。
 
@@ -141,7 +142,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 這裡與其執行所在的三個平台：
 
-[![](pixels-images/ellipsefill-small.png "介面大小頁面的三個螢幕擷取畫面")](pixels-images/ellipsefill-large.png "介面大小頁面的三個螢幕擷取畫面")
+[![](pixels-images/ellipsefill-small.png "介面大小頁面的三個螢幕擷取畫面")](pixels-images/ellipsefill-large.png#lightbox "介面大小頁面的三個螢幕擷取畫面")
 
 [其他`DrawOval`方法](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawOval/p/SkiaSharp.SKRect/SkiaSharp.SKPaint/)具有[ `SGRect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRect/)引數，這是根據其左上角和右下角的 X 和 Y 座標所定義的矩形。 Oval 填滿的矩形，這表示，它可能是可以使用在**填滿橢圓形**頁面如下：
 

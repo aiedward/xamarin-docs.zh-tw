@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: c70e4c9ec49b48c3bf6ecc6a4944d992f8ae930a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 160dd4b2326529abbb456e77391f0f73ee374f50
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-behaviors"></a>Xamarin.Forms Behaviors
 
@@ -85,7 +85,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 `NumericValidationBehavior`衍生自[ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/)類別，其中`T`是[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)。 [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/)方法註冊的事件處理常式[ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/)事件，與[ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/)方法取消註冊`TextChanged`事件以避免記憶體流失。 所提供的核心功能的行為`OnEntryTextChanged`方法，它會剖析成使用者所輸入的值`Entry`，並設定[ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/)屬性為紅色，如果此值不`double`。
 
 > [!NOTE]
-> **請注意**: Xamarin.Forms 不會設定`BindingContext`的行為，因為可以共用行為，而且套用至多個控制項所有樣式。
+> Xamarin.Forms 不會設定`BindingContext`的行為，因為可以共用行為，而且套用至多個控制項所有樣式。
 
 ## <a name="consuming-a-xamarinforms-behavior"></a>使用 Xamarin.Forms 行為
 
@@ -108,10 +108,10 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 在執行階段行為會根據行為實作回應與控制項互動。 下列螢幕擷取畫面會示範回應輸入無效的行為：
 
-[ ![](creating-images/screenshots-sml.png "範例應用程式與 Xamarin.Forms 行為")](creating-images/screenshots.png "範例應用程式與 Xamarin.Forms 行為")
+[![](creating-images/screenshots-sml.png "範例應用程式與 Xamarin.Forms 行為")](creating-images/screenshots.png#lightbox "範例應用程式與 Xamarin.Forms 行為")
 
 > [!NOTE]
-> **請注意**： 行為撰寫特定的控制項類型 （或超級類別，以套用至許多控制項），並只應加入至相容的控制項。 嘗試附加至不相容的控制項的行為會導致擲回例外狀況。
+> 行為會寫入特定控制項類型 （或超級類別，以套用至許多控制項），而且只應加入至相容的控制項。 嘗試附加至不相容的控制項的行為會導致擲回例外狀況。
 
 ### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>使用 Xamarin.Forms 行為的樣式
 
@@ -181,7 +181,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 如需有關樣式的詳細資訊，請參閱[樣式](~/xamarin-forms/user-interface/styles/index.md)。
 
 > [!NOTE]
-> **請注意**： 雖然您可以新增至行為設定，或如果您建立行為，在 XAML 中，查詢可繫結內容具有狀態應該不能共用它們中的控制項之間`Style`中`ResourceDictionary`。
+> 雖然您可以新增至行為設定，或如果您建立行為，在 XAML 中，查詢可繫結內容具有狀態應該不能共用它們中的控制項之間`Style`中`ResourceDictionary`。
 
 ### <a name="removing-a-behavior-from-a-control"></a>從控制項移除的行為
 

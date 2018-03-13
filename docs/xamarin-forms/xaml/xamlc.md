@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/21/2016
-ms.openlocfilehash: 3afb7608838a2c34f143d0563b50f03ad7f6ecf4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c6fb404919621e1b22217b4461597ae07a5624c4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xaml-compilation"></a>XAML 編譯
 
@@ -56,7 +56,7 @@ public class HomePage : ContentPage
 在此範例中，在編譯時間檢查適用於 XAML 的`HomePage`類別將會執行，而錯誤報告為編譯處理程序的一部分。
 
 > [!NOTE]
-> **請注意**:`XamlCompilation`屬性和`XamlCompilationOptions`列舉位於`Xamarin.Forms.Xaml0`命名空間，必須先將它們匯入。
+> `XamlCompilation`屬性和`XamlCompilationOptions`列舉位於`Xamarin.Forms.Xaml0`命名空間，必須先將它們匯入。
 
 
 ## <a name="related-links"></a>相關連結

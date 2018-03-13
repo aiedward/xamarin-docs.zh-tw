@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 55a9e56585521a0a7b89a7b881dfecd4e1c14b08
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b970ff3570079c0e9fba10718ddcd75fbe857f2c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="new-user-interface-styles"></a>新的使用者介面樣式
 
@@ -29,11 +29,11 @@ tvOS 10 現在支援所有內建 UIKit 控制項將會自動同時深色和淺�
 
 使用者可以切換此佈景主題，請前往**設定** > **一般** > **外觀**和切換**Light**和**深色**:
 
-[ ![](user-interface-styles-images/theme01.png "設定應用程式")](user-interface-styles-images/theme01.png)
+[![](user-interface-styles-images/theme01.png "設定應用程式")](user-interface-styles-images/theme01.png#lightbox)
 
 當**深色**佈景主題選取，則所有的使用者介面項目就會切換成深色背景的淺文字：
 
-[ ![](user-interface-styles-images/theme02.png "深色佈景主題")](user-interface-styles-images/theme02.png)
+[![](user-interface-styles-images/theme02.png "深色佈景主題")](user-interface-styles-images/theme02.png#lightbox)
 
 使用者可以選擇隨時切換佈景主題，並因此根據目前的活動，Apple TV 所在的位置或一天的時間可能會執行。
 
@@ -51,10 +51,10 @@ Light UI 是以預設佈景主題和任何現有的 tvOS 應用程式仍會使�
 2. 選取**來源**檢視 （從編輯器的底部）。
 3. 加入新的金鑰，並呼叫它`UIUserInterfaceStyle`: 
 
-    [ ![](user-interface-styles-images/theme03.png "UIUserInterfaceStyle 金鑰")](user-interface-styles-images/theme03.png)
+    [![](user-interface-styles-images/theme03.png "UIUserInterfaceStyle 金鑰")](user-interface-styles-images/theme03.png#lightbox)
 4. 保持類型設定為`String`和輸入的值為`Automatic`: 
 
-    [ ![](user-interface-styles-images/theme04.png "輸入自動")](user-interface-styles-images/theme04.png)
+    [![](user-interface-styles-images/theme04.png "輸入自動")](user-interface-styles-images/theme04.png#lightbox)
 5. 將變更儲存到檔案。
 
 有三個可能的值為`UIUserInterfaceStyle`機碼：
@@ -173,13 +173,13 @@ SetOverrideTraitCollection (trait, this);
 
 1. 以滑鼠右鍵按一下中的分鏡腳本檔案**方案總管 中**選取**開啟** > **Xcode 介面產生器**: 
 
-    [ ![](user-interface-styles-images/theme05.png "Xcode 介面產生器開啟")](user-interface-styles-images/theme05.png) 
+    [![](user-interface-styles-images/theme05.png "Xcode 介面產生器開啟")](user-interface-styles-images/theme05.png#lightbox) 
 2. 若要啟用特性集合支援，請切換到**檔案 Inspector**並檢查**使用特性變化**屬性**介面產生器文件**> 一節： 
 
-    [ ![](user-interface-styles-images/theme06.png "啟用特性集合支援")](user-interface-styles-images/theme06.png)
+    [![](user-interface-styles-images/theme06.png "啟用特性集合支援")](user-interface-styles-images/theme06.png#lightbox)
 3. 確認變更為使用特性變化： 
 
-    [ ![](user-interface-styles-images/theme07.png "使用特性變化警示")](user-interface-styles-images/theme07.png)
+    [![](user-interface-styles-images/theme07.png "使用特性變化警示")](user-interface-styles-images/theme07.png#lightbox)
 4. 儲存分鏡腳本檔案的變更。
 
 編輯 tvOS 介面產生器中的分鏡腳本時，Apple 已新增下列功能：
@@ -188,20 +188,20 @@ SetOverrideTraitCollection (trait, this);
     
     * 現在有數個屬性 **+** 旁邊按一下就可加入 UI 佈景主題特定版本的： 
 
-        [ ![](user-interface-styles-images/theme08.png "加入 UI 佈景主題特定版本")](user-interface-styles-images/theme08.png) 
+        [![](user-interface-styles-images/theme08.png "加入 UI 佈景主題特定版本")](user-interface-styles-images/theme08.png#lightbox) 
     
     * 開發人員可以指定新的屬性，或按一下**x**按鈕將它移除： 
 
-        [ ![](user-interface-styles-images/theme09.png "指定新的屬性，或按一下 [x] 按鈕，將它移除")](user-interface-styles-images/theme09.png)
+        [![](user-interface-styles-images/theme09.png "指定新的屬性，或按一下 [x] 按鈕，將它移除")](user-interface-styles-images/theme09.png#lightbox)
 * 開發人員可以預覽的淺 」 或 「 暗色調佈景主題的介面產生器中的 UI 設計：
     
     * 在設計介面底部可讓開發人員若要切換目前的 UI 佈景主題： 
 
-        [ ![](user-interface-styles-images/theme10.png "設計介面底部")](user-interface-styles-images/theme10.png)
+        [![](user-interface-styles-images/theme10.png "設計介面底部")](user-interface-styles-images/theme10.png#lightbox)
         
     * 介面產生器中會顯示新的佈景主題和任何特定特性集合的調整將會顯示： 
 
-        [ ![](user-interface-styles-images/theme11.png "佈景主題的介面產生器中顯示")](user-interface-styles-images/theme11.png)
+        [![](user-interface-styles-images/theme11.png "佈景主題的介面產生器中顯示")](user-interface-styles-images/theme11.png#lightbox)
 
 此外，tvOS 模擬器現在皆具有鍵盤快速鍵可讓開發人員在淺色調和暗色調佈景主題當中 tvOS 應用程式進行偵錯時之間快速切換。 使用**命令 Shift D**鍵盤來切換淺色調和暗色調的順序。
 

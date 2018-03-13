@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/22/2018
-ms.openlocfilehash: 677d672b3f00d4c3f3505ab2adf977f16fca4de5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 730cc1f815641d79350784790e3b33b743d1aebe
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-the-contacts-contentprovider"></a>使用連絡人 ContentProvider
 
@@ -40,7 +40,6 @@ ms.lasthandoff: 02/27/2018
 -  **SortOrder** &ndash;排序所依據的資料行。
 
 
-<a name="Creating_Inputs_for_a_Query" />
 
 ## <a name="creating-inputs-for-a-query"></a>建立查詢的輸入
 
@@ -60,14 +59,12 @@ string[] projection = {
 例如， `selection`，`selectionArgs`和`sortOrder`將設定為忽略`null`。
 
 
-<a name="Creating_a_Cursor_from_a_Content_Provider_Uri" />
 
 ## <a name="creating-a-cursor-from-a-content-provider-uri"></a>建立資料指標從內容提供者 Uri
 
 一旦建立參數物件，就可以使用下列三種方式之一：
 
 
-<a name="Using_a_Managed_Query" />
 
 ### <a name="using-a-managed-query"></a>使用受管理的查詢
 
@@ -80,7 +77,6 @@ var cursor = activity.ManagedQuery(uri, projection, null, null, null);
 這個資料指標會受 Android，因此您不需要將它關閉。
 
 
-<a name="Using_ContentResolver" />
 
 ### <a name="using-contentresolver"></a>使用 ContentResolver
 
@@ -100,7 +96,6 @@ cursor.Close();
 或者，您可以呼叫`StartManagingCursor()`和`StopManagingCursor()`來管理資料指標。 受管理的資料指標會自動停用並重新查詢活動會停止並重新啟動時。
 
 
-<a name="Using_CursorLoader" />
 
 ### <a name="using-cursorloader"></a>使用 CursorLoader
 
@@ -116,7 +111,6 @@ var cursor = (ICursor)loader.LoadInBackground();
 也可以使用 Android 舊版`CursorLoader`類別使用[v4 支援程式庫](http://developer.android.com/tools/support-library/index.html)。
 
 
-<a name="Displaying_the_Cursor_Data_with_a_Custom_Adapter" />
 
 ## <a name="displaying-the-cursor-data-with-a-custom-adapter"></a>顯示自訂配接器的資料指標資料
 
@@ -189,13 +183,12 @@ public override View GetView (int position, View convertView, ViewGroup parent)
 
 顯示的影像 （如果有） 使用裝置上的映像檔案的 Uri。 應用程式看起來像這樣：
 
-[![螢幕擷取畫面顯示連絡人 ListView; 中的應用程式左邊的一個項目會顯示影像](contacts-contentprovider-images/contactsprovider.png)](contacts-contentprovider-images/contactsprovider.png)
+[![螢幕擷取畫面顯示連絡人 ListView; 中的應用程式左邊的一個項目會顯示影像](contacts-contentprovider-images/contactsprovider.png)](contacts-contentprovider-images/contactsprovider.png#lightbox)
 
 您的應用程式可以使用類似的程式碼模式，來存取各種不同的系統資料，包括使用者的相片、 影片和音樂。
 某些資料類型需要特殊權限可要求在專案的**AndroidManifest.xml**。
 
 
-<a name="Displaying_the_Cursor_Data_with_a_SimpleCursorAdapter" />
 
 ## <a name="displaying-the-cursor-data-with-a-simplecursoradapter"></a>顯示資料指標資料與 SimpleCursorAdapter
 

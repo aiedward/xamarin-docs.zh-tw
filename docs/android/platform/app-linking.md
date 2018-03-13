@@ -3,16 +3,16 @@ title: "在 Android 應用程式連結"
 description: "本指南將討論如何 Android 6.0 支援應用程式連結，可讓行動裝置應用程式回應 Url 在網站上的技術。 它將會討論哪些應用程式連結是、 如何實作應用程式連結，在 Android 6.0 應用程式，以及如何設定網站要授與權限的網域中的行動應用程式。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
+ms.assetid: 48174E39-19FD-43BC-B54C-9AF11D4B1F91
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 726890e48407dd26f52c5aeaecf4eab51dcc5182
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 78fef780728ba1c2a3b9978504058f7a386b0e7d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="app-linking-in-android"></a>在 Android 應用程式連結
 
@@ -84,7 +84,7 @@ Android 將會驗證由之前的預設處理常式註冊應用程式 uri 的意�
 Android 6.0 應用程式連結需要 Android 確認應用程式和網站之間的關聯，才能設定為預設處理常式的應用程式 uri。 第一次安裝應用程式時，會發生這項驗證。 *數位資產連結*檔案是由相關 webdomain(s) 的 JSON 檔案。
 
 > [!NOTE]
-> **注意：** `android:autoVerify`意圖篩選必須設定此屬性&ndash;否則 Android 將不會執行驗證。
+> `android:autoVerify`意圖篩選必須設定此屬性&ndash;否則 Android 將不會執行驗證。
 
 檔案放置位置的網域管理員**https://domain/.well-known/assetlinks.json**。
 

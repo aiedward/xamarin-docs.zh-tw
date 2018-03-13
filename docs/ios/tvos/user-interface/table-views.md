@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 26a73c2536bf4b4959928bfb27958b1a10734bf5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: af562ac03f2cd5f293f99c7509000499ad5deaa4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-table-views"></a>使用 資料表檢視
 
@@ -22,7 +22,7 @@ TvOS，在資料表檢視表會顯示成捲動可以選擇性地組織到群組�
 
 資料表檢視通常會顯示一個方[分割檢視](~/ios/tvos/user-interface/split-views.md)為巡覽邊中顯示選取之項目的詳細資料：
 
-[ ![](table-views-images/intro01.png "範例資料表檢視")](table-views-images/intro01.png)
+[![](table-views-images/intro01.png "範例資料表檢視")](table-views-images/intro01.png#lightbox)
 
 <a name="About-Table-Views" />
 
@@ -30,7 +30,7 @@ TvOS，在資料表檢視表會顯示成捲動可以選擇性地組織到群組�
 
 A`UITableView`可以選擇性地組織到群組或章節的資訊的階層式清單以顯示可捲動的資料列的單一資料行： 
 
-[ ![](table-views-images/table01.png "選取的項目")](table-views-images/table01.png)
+[![](table-views-images/table01.png "選取的項目")](table-views-images/table01.png#lightbox)
 
 Apple 已使用資料表的下列建議：
 
@@ -72,86 +72,86 @@ Xamarin.tvOS 應用程式中使用的資料表檢視的最簡單方式是建立�
     
 1. 在適用於 Mac 的 Visual Studio 中啟動新的 tvOS 應用程式專案，然後選取**tvOS** > **應用程式** > **單一檢視應用程式**按一下**下一步**按鈕： 
 
-    [ ![](table-views-images/table02.png "選取單一檢視應用程式")](table-views-images/table02.png)
+    [![](table-views-images/table02.png "選取單一檢視應用程式")](table-views-images/table02.png#lightbox)
 1. 輸入**名稱**應用程式並按一下**下一步**: 
 
-    [ ![](table-views-images/table03.png "輸入應用程式的名稱")](table-views-images/table03.png)
+    [![](table-views-images/table03.png "輸入應用程式的名稱")](table-views-images/table03.png#lightbox)
 1. 請調整**專案名稱**和**方案名稱**或接受預設值，然後按一下**建立**按鈕以建立新的方案： 
 
-    [ ![](table-views-images/table04.png "專案名稱和方案名稱")](table-views-images/table04.png)
+    [![](table-views-images/table04.png "專案名稱和方案名稱")](table-views-images/table04.png#lightbox)
 1. 在**方案板**，連按兩下`Main.storyboard`iOS 設計工具中開啟的檔案： 
 
-    [ ![](table-views-images/table05.png "Main.storyboard 檔案")](table-views-images/table05.png)
+    [![](table-views-images/table05.png "Main.storyboard 檔案")](table-views-images/table05.png#lightbox)
 1. 選取並刪除**預設檢視控制器**: 
 
-    [ ![](table-views-images/table06.png "選取並刪除在預設檢視控制站")](table-views-images/table06.png)
+    [![](table-views-images/table06.png "選取並刪除在預設檢視控制站")](table-views-images/table06.png#lightbox)
 1. 選取**分割檢視控制器**從**工具箱**並將它拖曳到設計介面上。
 1. 根據預設，您會取得[分割檢視](~/ios/tvos/user-interface/split-views.md)與**瀏覽檢視控制器**和**資料表檢視控制器**在左手邊與**檢視控制器**右手邊中。 這是資料表中之檢視的 tvOS Apple 的建議的用法： 
 
-    [ ![](table-views-images/table08.png "新增 分割檢視")](table-views-images/table08.png)
+    [![](table-views-images/table08.png "新增 分割檢視")](table-views-images/table08.png#lightbox)
 1. 您必須選取 資料表 檢視的每個組件，並將它指派自訂**類別名稱**中**Widget**  索引標籤**屬性總管**，讓您可以稍後在 C# 中存取程式碼。 例如，**資料表檢視控制器**: 
 
-    [ ![](table-views-images/table09.png "指定類別名稱")](table-views-images/table09.png)
+    [![](table-views-images/table09.png "指定類別名稱")](table-views-images/table09.png#lightbox)
 1. 請確定您建立的自訂類別**資料表檢視控制器**、**資料表檢視**和任何**原型儲存格**。 Visual Studio for Mac 將自訂類別加入專案樹狀結構建立時： 
 
-    [ ![](table-views-images/table10.png "在專案樹狀結構中的自訂類別")](table-views-images/table10.png)
+    [![](table-views-images/table10.png "在專案樹狀結構中的自訂類別")](table-views-images/table10.png#lightbox)
 1. 接下來，在設計介面中選取 [資料表] 檢視，並視需要調整它的屬性。 例如，數目**原型儲存格**和**樣式**（「 純 」 或 「 群組 」）： 
 
-    [ ![](table-views-images/table11.png "[小工具] 索引標籤")](table-views-images/table11.png)
+    [![](table-views-images/table11.png "[小工具] 索引標籤")](table-views-images/table11.png#lightbox)
 1. 每個**原型儲存格**、 選取它，然後指派一個唯一**識別碼**中**Widget**  索引標籤**屬性總管**。 這是步驟_非常重要_因為您稍後會需要此識別碼時您填入的資料表。 例如`AttrCell`: 
 
-    [ ![](table-views-images/table12.png "[小工具] 索引標籤")](table-views-images/table12.png)
+    [![](table-views-images/table12.png "[小工具] 索引標籤")](table-views-images/table12.png#lightbox)
 1. 您也可以選取顯示做為其中一個儲存格[資料表檢視儲存格類型](#Table-View-Cell-Types)透過**樣式**下拉式清單或將它設定為**自訂**並使用設計介面來配置儲存格從其他 UI widgets 中拖曳**工具箱**: 
 
-    [ ![](table-views-images/table13.png "資料格的版面配置")](table-views-images/table13.png)
+    [![](table-views-images/table13.png "資料格的版面配置")](table-views-images/table13.png#lightbox)
 1. 指派一個唯一**名稱**中的原型儲存格設計中的每個 UI 項目**Widget**  索引標籤**屬性總管**以便稍後在 C# 程式碼中存取： 
 
-    [ ![](table-views-images/table14.png "指派的名稱")](table-views-images/table14.png)
+    [![](table-views-images/table14.png "指派的名稱")](table-views-images/table14.png#lightbox)
 1. 原型中的資料格資料表檢視表的所有重複上述步驟。
 1. 接下來，將自訂類別指派給 UI 設計、 版面配置詳細資料檢視和指派唯一的其餘部分**名稱**詳細資料中每個 UI 項目檢視，以便您可以同時在 C# 中存取它們。 例如： 
 
-    [ ![](table-views-images/table15.png "UI 配置")](table-views-images/table15.png)
+    [![](table-views-images/table15.png "UI 配置")](table-views-images/table15.png#lightbox)
 1. 將您的變更儲存到分鏡腳本。
     
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
     
 1. 在 Visual Studio 中，啟動新的 tvOS 應用程式專案，然後選取**tvOS** > **單一檢視應用程式**並輸入您的應用程式的名稱。 按一下**好**按鈕以建立新的方案： 
 
-    [ ![](table-views-images/table02-vs.png "選取單一檢視應用程式")](table-views-images/table02-vs.png)
+    [![](table-views-images/table02-vs.png "選取單一檢視應用程式")](table-views-images/table02-vs.png#lightbox)
 1. 在**方案總管 中**，連按兩下`Main.storyboard`iOS 設計工具中開啟的檔案： 
 
-    [ ![](table-views-images/table05-vs.png "Main.storyboard 檔案")](table-views-images/table05-vs.png)
+    [![](table-views-images/table05-vs.png "Main.storyboard 檔案")](table-views-images/table05-vs.png#lightbox)
 1. 選取並刪除**預設檢視控制器**: 
 
-    [ ![](table-views-images/table06-vs.png "選取並刪除在預設檢視控制站")](table-views-images/table06-vs.png)
+    [![](table-views-images/table06-vs.png "選取並刪除在預設檢視控制站")](table-views-images/table06-vs.png#lightbox)
 1. 選取**分割檢視控制器**從**工具箱**並將它拖曳到設計介面上： 
 
-    [ ![](table-views-images/table07-vs.png "分割檢視控制器")](table-views-images/table07-vs.png)
+    [![](table-views-images/table07-vs.png "分割檢視控制器")](table-views-images/table07-vs.png#lightbox)
 1. 根據預設，您會取得[分割檢視](~/ios/tvos/user-interface/split-views.md)與**瀏覽檢視控制器**和**資料表檢視控制器**在左手邊與**檢視控制器**右手邊中。 這是資料表中之檢視的 tvOS Apple 的建議的用法： 
 
-    [ ![](table-views-images/table08-vs.png "UI 的版面配置")](table-views-images/table08-vs.png)
+    [![](table-views-images/table08-vs.png "UI 的版面配置")](table-views-images/table08-vs.png#lightbox)
 1. 您必須選取 資料表 檢視的每個組件，並將它指派自訂**類別名稱**中**Widget**  索引標籤**屬性總管**，讓您可以稍後在 C# 中存取程式碼。 例如，**資料表檢視控制器**: 
 
-    [ ![](table-views-images/table09-vs.png "[小工具] 索引標籤")](table-views-images/table09-vs.png)
+    [![](table-views-images/table09-vs.png "[小工具] 索引標籤")](table-views-images/table09-vs.png#lightbox)
 1. 請確定您建立的自訂類別**資料表檢視控制器**、**資料表檢視**和任何**原型儲存格**。 Visual Studio for Mac 將自訂類別加入專案樹狀結構建立時： 
 
-    [ ![](table-views-images/table10-vs.png "在專案樹狀結構中的自訂類別")](table-views-images/table10-vs.png)
+    [![](table-views-images/table10-vs.png "在專案樹狀結構中的自訂類別")](table-views-images/table10-vs.png#lightbox)
 1. 接下來，在設計介面中選取 [資料表] 檢視，並視需要調整它的屬性。 例如，數目**原型儲存格**和**樣式**（「 純 」 或 「 群組 」）： 
 
-    [ ![](table-views-images/table11-vs.png "[小工具] 索引標籤")](table-views-images/table11-vs.png)
+    [![](table-views-images/table11-vs.png "[小工具] 索引標籤")](table-views-images/table11-vs.png#lightbox)
 1. 每個**原型儲存格**、 選取它，然後指派一個唯一**識別碼**中**Widget**  索引標籤**屬性總管**。 這是步驟_非常重要_因為您稍後會需要此識別碼時您填入的資料表。 例如`AttrCell`: 
 
-    [ ![](table-views-images/table12-vs.png "識別項指派")](table-views-images/table12-vs.png)
+    [![](table-views-images/table12-vs.png "識別項指派")](table-views-images/table12-vs.png#lightbox)
 1. 您也可以選取顯示做為其中一個儲存格[資料表檢視儲存格類型](#Table-View-Cell-Types)透過**樣式**下拉式清單或將它設定為**自訂**並使用設計介面來配置儲存格從其他 UI widgets 中拖曳**工具箱**: 
 
-    [ ![](table-views-images/table13-vs.png "[樣式] 下拉式清單")](table-views-images/table13-vs.png)
+    [![](table-views-images/table13-vs.png "[樣式] 下拉式清單")](table-views-images/table13-vs.png#lightbox)
 1. 指派一個唯一**名稱**中的原型儲存格設計中的每個 UI 項目**Widget**  索引標籤**屬性總管**以便稍後在 C# 程式碼中存取： 
 
-    [ ![](table-views-images/table14-vs.png "[小工具] 索引標籤")](table-views-images/table14-vs.png)
+    [![](table-views-images/table14-vs.png "[小工具] 索引標籤")](table-views-images/table14-vs.png#lightbox)
 1. 原型中的資料格資料表檢視表的所有重複上述步驟。
 1. 接下來，將自訂類別指派給 UI 設計、 版面配置詳細資料檢視和指派唯一的其餘部分**名稱**詳細資料中每個 UI 項目檢視，以便您可以同時在 C# 中存取它們。 例如： 
 
-    [ ![](table-views-images/table15.png "UI 配置")](table-views-images/table15.png)
+    [![](table-views-images/table15.png "UI 配置")](table-views-images/table15.png#lightbox)
 1. 將您的變更儲存到分鏡腳本。
     
 -----
@@ -168,13 +168,13 @@ Xamarin.tvOS 應用程式中使用的資料表檢視的最簡單方式是建立�
 
 若要建立資料模型**引力**中的專案名稱上按一下滑鼠右鍵**方案板**選取**新增** > **新的檔案...**.輸入`AttractionInformation`如**名稱**按一下**新增**按鈕： 
 
-[ ![](table-views-images/data01.png "請輸入名稱 AttractionInformation")](table-views-images/data01.png)
+[![](table-views-images/data01.png "請輸入名稱 AttractionInformation")](table-views-images/data01.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 若要建立資料模型**引力**中的專案名稱上按一下滑鼠右鍵**方案總管 中**選取**新增** > **新項目...**.選取**類別**輸入`AttractionInformation`如**名稱**按一下**新增**按鈕： 
 
-[ ![](table-views-images/data01-vs.png "選取類別，並輸入名稱 AttractionInformation")](table-views-images/data01-vs.png)
+[![](table-views-images/data01-vs.png "選取類別，並輸入名稱 AttractionInformation")](table-views-images/data01-vs.png#lightbox)
 
 -----
 
@@ -216,13 +216,13 @@ namespace tvTable
 
 接下來，以滑鼠右鍵按一下 專案名稱中**方案板**再次選取**新增** > **新的檔案...**.輸入`CityInformation`如**名稱**按一下**新增**按鈕： 
 
-[ ![](table-views-images/data02.png "請輸入名稱 CityInformation")](table-views-images/data02.png)
+[![](table-views-images/data02.png "請輸入名稱 CityInformation")](table-views-images/data02.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 接下來，以滑鼠右鍵按一下 [專案名稱中**方案總管] 中**再次選取**新增** > **新項目...**.輸入`CityInformation`如**名稱**按一下**新增**按鈕： 
 
-[ ![](table-views-images/data02-vs.png "請輸入名稱 CityInformation")](table-views-images/data02-vs.png)
+[![](table-views-images/data02-vs.png "請輸入名稱 CityInformation")](table-views-images/data02-vs.png#lightbox)
 
 -----
 
@@ -733,7 +733,7 @@ namespace tvTable
 
 資料表檢視如同本文開頭所述，通常會顯示一個方[分割檢視](~/ios/tvos/user-interface/split-views.md)為巡覽邊中顯示選取之項目的詳細資料。 例如:  
 
-[ ![](table-views-images/intro01.png "執行範例應用程式")](table-views-images/intro01.png)
+[![](table-views-images/intro01.png "執行範例應用程式")](table-views-images/intro01.png#lightbox)
 
 因為這是 tvOS 的標準模式，讓我們看看將所有項目結合在一起的最後一個步驟，並具有彼此互動的分割檢視左右側邊。
 

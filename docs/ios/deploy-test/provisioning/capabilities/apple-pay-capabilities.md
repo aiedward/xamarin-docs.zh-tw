@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 88db45135104f14ca3a4b18e466e95288853a6df
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cc2c12ce2826f0b66cdf49a9a4df84d7f67f7713
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="apple-pay-capabilities"></a>Apple Pay 功能
 
@@ -79,8 +79,8 @@ Merchant ID (商家識別碼) 可用來讓 Apple Pay 知道您可以接受付款
 7.  向下捲動到這個已展開區段的底部，然後按一下 [Edit] \(編輯\)。
 8.  將清單向下捲動到 Apple Pay，然後按一下 [Edit] \(編輯\) 按鈕：  
     
-    
     ![編輯 Apple Pay App ID (應用程式識別碼) 詳細資料](apple-pay-capabilities-images/image39.png)
+
 9.  選取要與此 App ID (應用程式識別碼) 搭配使用的 Merchant ID (商家識別碼)，然後按一下 [Continue] \(繼續\)：  
     
     ![選取要用於 App ID (應用程式識別碼) 的 Merchant ID (商家識別碼)](apple-pay-capabilities-images/image40.png)

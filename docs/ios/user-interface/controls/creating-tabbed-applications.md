@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 2a10c161c49e7cd0d45d29522a98c0dc78f7adb7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 702a5986c9249eec38868895f55ef6f63b534b9b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tab-bars-and-tab-bar-controllers"></a>索引標籤列和索引標籤列的控制站
 
@@ -42,7 +42,7 @@ _使用 tab 導覽 UI 的 iOS 應用程式會使用 UITabBarController 類別建
 
 此逐步解說中，我們要建立下列應用程式：
 
-[ ![](creating-tabbed-applications-images/00-app.png "範例索引標籤式的應用程式")](creating-tabbed-applications-images/00-app.png)
+[![](creating-tabbed-applications-images/00-app.png "範例索引標籤式的應用程式")](creating-tabbed-applications-images/00-app.png#lightbox)
 
 雖然有索引標籤式的應用程式範本中已經提供 Visual Studio for Mac，此範例中，我們將從空白的專案，以取得進一步了解如何建構應用程式的工作。
 
@@ -55,9 +55,9 @@ _使用 tab 導覽 UI 的 iOS 應用程式會使用 UITabBarController 類別建
 
 選取**檔案 > 新增 > 方案**用於 Mac 和選取的 Visual Studio 中的功能表項目**iOS > 應用程式 > 空專案**範本，將專案`TabbedApplication`，如下所示：
 
-[ ![](creating-tabbed-applications-images/newsolution1.png "選取空白專案範本")](creating-tabbed-applications-images/newsolution1.png)
+[![](creating-tabbed-applications-images/newsolution1.png "選取空白專案範本")](creating-tabbed-applications-images/newsolution1.png#lightbox)
 
-[ ![](creating-tabbed-applications-images/newsolution2.png "將專案 TabbedApplication")](creating-tabbed-applications-images/newsolution2.png)
+[![](creating-tabbed-applications-images/newsolution2.png "將專案 TabbedApplication")](creating-tabbed-applications-images/newsolution2.png#lightbox)
 
 
 
@@ -65,7 +65,7 @@ _使用 tab 導覽 UI 的 iOS 應用程式會使用 UITabBarController 類別建
 
 接下來，加入空的類別，方式是選取**檔案 > 新的檔案**，然後選擇**一般： 空的類別**範本。 將檔案命名`TabController`如下所示：
 
-[ ![](creating-tabbed-applications-images/02-newclass.png "加入 TabController 類別")](creating-tabbed-applications-images/02-newclass.png)
+[![](creating-tabbed-applications-images/02-newclass.png "加入 TabController 類別")](creating-tabbed-applications-images/02-newclass.png#lightbox)
 
 `TabController`類別所包含的實作`UITabBarController`可用於將管理的陣列`UIViewControllers`。 當使用者選取索引標籤上，`UITabBarController`會負責的呈現適當的檢視控制站的檢視。
 
@@ -113,7 +113,7 @@ namespace TabbedApplication {
 
 請注意，對於每個`UIViewController`執行個體，我們設定`Title`屬性`UIViewController`。 當控制器加入至`UITabBarController`、`UITabBarController`會讀取`Title`每個控制站，並顯示相關聯的索引標籤上，如下所示：
 
-[ ![](creating-tabbed-applications-images/00-app.png "執行範例應用程式")](creating-tabbed-applications-images/00-app.png)
+[![](creating-tabbed-applications-images/00-app.png "執行範例應用程式")](creating-tabbed-applications-images/00-app.png#lightbox)
 
 #### <a name="setting-the-tabcontroller-as-the-rootviewcontroller"></a>設定為 RootViewController TabController
 
@@ -144,7 +144,7 @@ namespace TabbedApplication {
 
 當我們執行應用程式現在，`UITabBarController`便會載入預設選取第一個索引標籤。 選取任何其他索引標籤相關聯的控制器會導致檢視所呈現`UITabBarController,`使用者已在其中選取第二個索引標籤，如下所示：
 
-[ ![](creating-tabbed-applications-images/03-secondtab.png "顯示在第二個索引標籤")](creating-tabbed-applications-images/03-secondtab.png)
+[![](creating-tabbed-applications-images/03-secondtab.png "顯示在第二個索引標籤")](creating-tabbed-applications-images/03-secondtab.png#lightbox)
 
  <a name="Modifying_TabBarItems" />
 
@@ -185,7 +185,7 @@ tab2.View.BackgroundColor = UIColor.Orange;
 
 上述程式碼會假設名為映像`second.png`已加入至 Visual Studio 中專案的根目錄 for mac。 我們實際上已新增三個映像至受測專案，以涵蓋所有裝置解析度，如下所示：
 
- [ ![](creating-tabbed-applications-images/tabbedimages7new.png "新增至專案的映像")](creating-tabbed-applications-images/tabbedimages7new.png)
+ [![](creating-tabbed-applications-images/tabbedimages7new.png "新增至專案的映像")](creating-tabbed-applications-images/tabbedimages7new.png#lightbox)
 
 索引標籤影像應該是一般的解決方法，為高解析度的 60 和 90 x 90 適用於 iPhone 6 x 60 透明度與 30 x 30 個 png 再加上解析。 在我們的程式碼中，我們只需要載入名為的檔案`second.png`，iOS 會自動載入高解析度 Retina 顯示器的裝置上。 閱讀更多相關內容位於[處理映像](~/ios/app-fundamentals/images-icons/index.md)輔助線。 預設索引標籤列項目會以灰色顯示，以藍色濃淡時選取。
 
@@ -193,13 +193,13 @@ tab2.View.BackgroundColor = UIColor.Orange;
 
 上述的映像也可以加入至**資源**其內容將會自動複製到應用程式套件的根目錄是特殊目錄的目錄：
 
-[ ![](creating-tabbed-applications-images/tabbedapplication8.png "為資源映像")](creating-tabbed-applications-images/tabbedapplication8.png)
+[![](creating-tabbed-applications-images/tabbedapplication8.png "為資源映像")](creating-tabbed-applications-images/tabbedapplication8.png#lightbox)
 
 此外，當我們將`Title`屬性直接依據`TabBarItem`，它就會覆寫設定的任何值`Title`本身的控制站上。
 
 當我們執行應用程式現在時，第二個索引標籤會顯示我們的自訂標題和映像如下所示：
 
-[ ![](creating-tabbed-applications-images/05-customtab.png "第二個索引標籤，以正方形的圖示")](creating-tabbed-applications-images/05-customtab.png)
+[![](creating-tabbed-applications-images/05-customtab.png "第二個索引標籤，以正方形的圖示")](creating-tabbed-applications-images/05-customtab.png#lightbox)
 
  <a name="Setting_the_Badge_Value" />
 
@@ -214,7 +214,7 @@ tab3.TabBarItem.BadgeValue = "Hi";
 
 執行這個結果中包含的索引標籤，如下所示的左上角的"Hi"字串的紅色標籤：
 
-[ ![](creating-tabbed-applications-images/06-badge.png "具有 Hi 徽章的第二個索引標籤")](creating-tabbed-applications-images/06-badge.png)
+[![](creating-tabbed-applications-images/06-badge.png "具有 Hi 徽章的第二個索引標籤")](creating-tabbed-applications-images/06-badge.png#lightbox)
 
 徽章通常用於顯示數字指示未讀郵件，新的項目。 若要移除徽章，設定`BadgeValue`為 null，如下所示：
 
@@ -236,7 +236,7 @@ tab3.TabBarItem.BadgeValue = null;
 
 此案例中，初始畫面上載入的控制站，不是`UITabBarController`。 當使用者互動與螢幕藉由點選按鈕時，都會載入至相同檢視控制器`UITabBarController`，接著會呈現給使用者。 下列螢幕擷取畫面顯示應用程式流程：
 
-[ ![](creating-tabbed-applications-images/inital-screen-application.png "這個螢幕擷取畫面顯示應用程式流程")](creating-tabbed-applications-images/inital-screen-application.png)
+[![](creating-tabbed-applications-images/inital-screen-application.png "這個螢幕擷取畫面顯示應用程式流程")](creating-tabbed-applications-images/inital-screen-application.png#lightbox)
 
 讓我們開始新的應用程式，此範例中。 同樣地，我們將使用**iPhone > 應用程式 > 空專案 (C#)**範本，此時命名專案`InitialScreenDemo`。
 
@@ -249,14 +249,14 @@ tab3.TabBarItem.BadgeValue = null;
 
 讓我們來呼叫此新分鏡腳本**MainStoryboard** ，如下所示： 
 
-[ ![](creating-tabbed-applications-images/new-file-dialog.png "MainStoryboard 檔案加入專案")](creating-tabbed-applications-images/new-file-dialog.png)
+[![](creating-tabbed-applications-images/new-file-dialog.png "MainStoryboard 檔案加入專案")](creating-tabbed-applications-images/new-file-dialog.png#lightbox)
 
 有幾個重要的步驟，請注意，當加入分鏡腳本先前非腳本檔案，將涵蓋的[簡介分鏡腳本](~/ios/user-interface/storyboards/index.md)指南。 這些是：
 
  
 1. 加入您的分鏡腳本名稱**主要介面**區段`Info.plist`:
 
-    [![](creating-tabbed-applications-images/project-options.png "主要介面設 MainStoryboard")](creating-tabbed-applications-images/project-options.png)
+    [![](creating-tabbed-applications-images/project-options.png "主要介面設 MainStoryboard")](creating-tabbed-applications-images/project-options.png#lightbox)
 1. 在您`App Delegate`，覆寫視窗方法，以下列程式碼：
 
     ```csharp
@@ -270,11 +270,11 @@ tab3.TabBarItem.BadgeValue = null;
 
 開啟設計工具 MainStoryboard.storyboard 檔案中，按兩下和拖曳到設計介面的三個檢視控制器。 我們想要每個有自己的類別對應至名稱上述項目，這些檢視控制站，請在下**識別 > 類別**，輸入名稱，如以下螢幕擷取畫面所示：
 
-[ ![](creating-tabbed-applications-images/class-name.png "將類別設 ViewController1")](creating-tabbed-applications-images/class-name.png)
+[![](creating-tabbed-applications-images/class-name.png "將類別設 ViewController1")](creating-tabbed-applications-images/class-name.png#lightbox)
 
 適用於 Mac 的 visual Studio 會自動產生的類別和設計工具所需的檔案，這可以看到在方案板，如下所示：
 
-[ ![](creating-tabbed-applications-images/solution-pad2.png "專案中自動產生的檔案")](creating-tabbed-applications-images/solution-pad2.png)
+[![](creating-tabbed-applications-images/solution-pad2.png "專案中自動產生的檔案")](creating-tabbed-applications-images/solution-pad2.png#lightbox)
 
  <a name="Creating_the_UI" />
 
@@ -291,11 +291,11 @@ tab3.TabBarItem.BadgeValue = null;
 
 我們會控制在我們按鈕是否可見`TouchUpInside`事件，所以我們需要在後面的程式碼中參考它。 讓我們識別與**名稱**`aButton`屬性輸入板，如下列螢幕擷取畫面所示：
 
-[ ![](creating-tabbed-applications-images/abutton-properties.png "將名稱設定為 aButton 屬性輸入板中")](creating-tabbed-applications-images/abutton-properties.png)
+[![](creating-tabbed-applications-images/abutton-properties.png "將名稱設定為 aButton 屬性輸入板中")](creating-tabbed-applications-images/abutton-properties.png#lightbox)
 
 設計介面現在看起來類似下面的螢幕擷取畫面：
 
-[ ![](creating-tabbed-applications-images/design-surface1.png "設計介面現在看起來應該類似這個螢幕擷取畫面")](creating-tabbed-applications-images/design-surface1.png)
+[![](creating-tabbed-applications-images/design-surface1.png "設計介面現在看起來應該類似這個螢幕擷取畫面")](creating-tabbed-applications-images/design-surface1.png#lightbox)
 
 讓我們加入更詳細的資訊來`ViewController2`和`ViewController3`、 將標籤新增至每個，並分別將文字變更為 '兩個' 和 'Three'。 這會反白顯示給使用者我們查看哪一個索引標籤/檢視表。
 
@@ -305,7 +305,7 @@ tab3.TabBarItem.BadgeValue = null;
 
 當使用者放開`aButton`，我們想要觸發 TouchUpInside 事件。 讓我們來選取 按鈕，然後在**事件 索引標籤**的屬性輸入板中，宣告此事件處理常式 – `InitialActionCompleted` – 讓它可以參考程式碼中。 下列螢幕擷取畫面所示：
 
-[ ![](creating-tabbed-applications-images/event-handler.png "當使用者放開 aButton 時，觸發 TouchUpInside 事件")](creating-tabbed-applications-images/event-handler.png)
+[![](creating-tabbed-applications-images/event-handler.png "當使用者放開 aButton 時，觸發 TouchUpInside 事件")](creating-tabbed-applications-images/event-handler.png#lightbox)
 
 我們現在需要讓檢視在控制器事件引發時，隱藏按鈕`InitialActionCompleted`。 在`ViewController1`，加入下列的部分方法：
 
@@ -324,7 +324,7 @@ partial void InitialActionCompleted (UIButton sender)
 
 在**工具箱**，搜尋 **索引標籤列控制器**控制站和物件下這拖曳到設計介面上。 您可以看到下面的螢幕擷取畫面中，索引標籤列控制器是無 UI，並因此使兩個檢視控制站與其預設：
 
-[ ![](creating-tabbed-applications-images/tabbarcontroller.png "加入至配置的索引標籤列控制器")](creating-tabbed-applications-images/tabbarcontroller.png)
+[![](creating-tabbed-applications-images/tabbarcontroller.png "加入至配置的索引標籤列控制器")](creating-tabbed-applications-images/tabbarcontroller.png#lightbox)
 
 選取 黑色列底部，然後按下 delete 鍵刪除這些新的檢視控制站。
 
@@ -334,15 +334,15 @@ partial void InitialActionCompleted (UIButton sender)
  
 若要設定每個索引標籤中， **Ctrl** TabBarController 我們檢視中控制站的順序的每一到三個，並選取關聯性從 **索引標籤**從內容功能表中，如下所示：
 
-[ ![](creating-tabbed-applications-images/context-menu.png "選取索引標籤關聯性")](creating-tabbed-applications-images/context-menu.png)
+[![](creating-tabbed-applications-images/context-menu.png "選取索引標籤關聯性")](creating-tabbed-applications-images/context-menu.png#lightbox)
 
 將分鏡腳本應該類似下面的螢幕擷取畫面：
 
-[ ![](creating-tabbed-applications-images/segue-layout.png "分鏡腳本應該類似這個螢幕擷取畫面")](creating-tabbed-applications-images/segue-layout.png)
+[![](creating-tabbed-applications-images/segue-layout.png "分鏡腳本應該類似這個螢幕擷取畫面")](creating-tabbed-applications-images/segue-layout.png#lightbox)
 
 如果我們按一下其中一個索引標籤列項目，並瀏覽屬性 面板，您可以看到有多種不同的選項，如下所示：
 
-[ ![](creating-tabbed-applications-images/properties-panel.png "在 [屬性總管] 中設定索引標籤選項")](creating-tabbed-applications-images/properties-panel.png)
+[![](creating-tabbed-applications-images/properties-panel.png "在 [屬性總管] 中設定索引標籤選項")](creating-tabbed-applications-images/properties-panel.png#lightbox)
 
 我們可以用這個來編輯某些屬性，例如徽章、 標題和 iOS[識別碼](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/UIKitUICatalog/TabBarItem.html)，和其他項目
 
@@ -360,11 +360,11 @@ public override void ViewDidLoad ()
 
 當應用程式執行，而使用者按下按鈕時的第一個畫面 UITabBarController 載入時，從第一個放置在第一個索引標籤，如下所示的畫面檢視：
 
-[ ![](creating-tabbed-applications-images/first-view.png "範例應用程式輸出")](creating-tabbed-applications-images/first-view.png)
+[![](creating-tabbed-applications-images/first-view.png "範例應用程式輸出")](creating-tabbed-applications-images/first-view.png#lightbox)
 
 <!--Save the files and run the application:
 
-[ ![](creating-tabbed-applications-images/inital-screen-application.png "Save the files and run the application")](creating-tabbed-applications-images/inital-screen-application.png)-->
+[![](creating-tabbed-applications-images/inital-screen-application.png "Save the files and run the application")](creating-tabbed-applications-images/inital-screen-application.png#lightbox)-->
 
 ## <a name="summary"></a>總結
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: 6aee83cd07a52d667c24c3e70fced2e291ed99c8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b076c7a71d81a474ca80ac32771d5512c21c167c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>逐步解說-使用 WCF
 
@@ -158,7 +158,7 @@ _這個逐步解說將說明如何使用 Xamarin 建置行動應用程式可以�
 
 1. 讓我們先設定 IIS Express 接聽外部的要求。 我們這樣可以編輯組態檔的 IIS Express 在`[solutiondirectory]\.vs\config\applicationhost.config`，如下列螢幕擷取畫面所示：
 
-    [![](walkthrough-working-with-wcf-images/image05.png "我們這樣可以編輯組態檔在 solutiondirectory.vsconfigapplicationhost.config，IIS Express 中這個螢幕擷取畫面所示")](walkthrough-working-with-wcf-images/image05.png)
+    [![](walkthrough-working-with-wcf-images/image05.png "我們這樣可以編輯組態檔在 solutiondirectory.vsconfigapplicationhost.config，IIS Express 中這個螢幕擷取畫面所示")](walkthrough-working-with-wcf-images/image05.png#lightbox)
 
 
     找出`site`名稱項目`HelloWorldWcfHost`。 它看起來應該類似下列的 XML 程式碼片段：
@@ -270,7 +270,7 @@ WCF 服務 proxy 以供 Xamarin.Android 應用程式，如下所示：
 
     下列螢幕擷取畫面顯示在設計工具中的 UI:
 
-    [![](walkthrough-working-with-wcf-images/image09.png "這是此 UI 設計工具中的外觀的螢幕擷取畫面")](walkthrough-working-with-wcf-images/image09.png)
+    [![](walkthrough-working-with-wcf-images/image09.png "這是此 UI 設計工具中的外觀的螢幕擷取畫面")](walkthrough-working-with-wcf-images/image09.png#lightbox)
 
 1. 在**方案總管 中**，開啟`Resources/values/Strings.xml`並加入下列 XML:
 
@@ -382,7 +382,7 @@ WCF 服務 proxy 以供 Xamarin.Android 應用程式，如下所示：
 
 1. 執行應用程式，請確定 WCF 服務正在執行，然後按一下兩個按鈕。 應用程式將 WCF 以非同步方式呼叫，但前提是`Endpoint`欄位已正確設定：
 
-  [![](walkthrough-working-with-wcf-images/image08.png "應該收到郵件 30 秒內回應，從每個 WCF 方法，和我們的應用程式看起來應該類似這個螢幕擷取畫面")](walkthrough-working-with-wcf-images/image08.png)
+  [![](walkthrough-working-with-wcf-images/image08.png "應該收到郵件 30 秒內回應，從每個 WCF 方法，和我們的應用程式看起來應該類似這個螢幕擷取畫面")](walkthrough-working-with-wcf-images/image08.png#lightbox)
 
 <a name="Creating_a_Xamarin_iOS_Application" />
 
@@ -428,7 +428,7 @@ WCF 服務 proxy 以供 Xamarin.iOS 應用程式，如下所示：
 
     在之後加入的控制項，UI 應類似於下列螢幕擷取畫面：
 
-    [![](walkthrough-working-with-wcf-images/image12.png "在之後加入的控制項，UI 應該類似這個螢幕擷取畫面")](walkthrough-working-with-wcf-images/image12.png)
+    [![](walkthrough-working-with-wcf-images/image12.png "在之後加入的控制項，UI 應該類似這個螢幕擷取畫面")](walkthrough-working-with-wcf-images/image12.png#lightbox)
 
 1. 在**方案總管 中**，開啟`ViewController.cs`並加入下列程式碼：
 
@@ -515,7 +515,7 @@ WCF 服務 proxy 以供 Xamarin.iOS 應用程式，如下所示：
 
 1. 執行應用程式，請確定 WCF 服務正在執行，然後按一下兩個按鈕。 應用程式將 WCF 以非同步方式呼叫，但前提是`Endpoint`欄位已正確設定：
 
-    [![](walkthrough-working-with-wcf-images/image10.png "應該收到郵件 30 秒內回應，從每個 WCF 方法，和我們的應用程式應該看起來像下列螢幕擷取畫面")](walkthrough-working-with-wcf-images/image10.png)
+    [![](walkthrough-working-with-wcf-images/image10.png "應該收到郵件 30 秒內回應，從每個 WCF 方法，和我們的應用程式應該看起來像下列螢幕擷取畫面")](walkthrough-working-with-wcf-images/image10.png#lightbox)
 
 <a name="Summary" />
 

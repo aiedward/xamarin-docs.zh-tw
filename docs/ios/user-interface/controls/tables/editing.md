@@ -7,30 +7,22 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 1ea4489cd6f9839d5d32c97aa7ded41e4f15538a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: eb8bae676a4b5c682cdb204c6d38ffc1112b483a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="editing"></a>編輯
 
 藉由覆寫方法中的啟用資料表的編輯功能`UITableViewSource`子類別。 最簡單的編輯行為是可以用單一方法覆寫來實作撥動至刪除筆勢。
 編輯模式中的資料表可以完成更複雜的編輯 （包括移動資料列）。
 
-本指南是由下列項目所查看：
-
-- [若要刪除的撥動](#Swipe_to_Delete)
-- [編輯模式](#Edit_Mode)
-- [資料列插入編輯樣式](#row_insertion_editing_style)
-
-<a name="Swipe_to_delete" />
-
 ## <a name="swipe-to-delete"></a>要刪除的撥動
 
 若要刪除功能撥動是自然軌跡中的使用者預期的 iOS。 
 
- [ ![](editing-images/image10.png "刪除撥動的範例")](editing-images/image10.png)
+ [![](editing-images/image10.png "刪除撥動的範例")](editing-images/image10.png#lightbox)
 
 有三個影響撥動手勢，以顯示的方法覆寫**刪除**在資料格中的按鈕：
 
@@ -68,14 +60,13 @@ public override string TitleForDeleteConfirmation (UITableView tableView, NSInde
 
 此範例中`UITableViewSource`已更新為使用`List<TableItem>`（而不是字串陣列） 做為資料來源，因為它支援加入和刪除項目集合。
 
-<a name="Edit_mode" />
 
 ## <a name="edit-mode"></a>編輯模式
 
 資料表處於編輯模式時使用者會看到紅色的 'stop' widget 會顯示 [刪除] 按鈕時接觸到每個資料列上。 資料表也會顯示 '控制代碼' 圖示，以表示資料列，可以拖曳來變更順序。
 **TableEditMode**範例會實作這些功能所示。
 
- [ ![](editing-images/image11.png "TableEditMode 範例所示，實作這些功能")](editing-images/image11.png)
+ [![](editing-images/image11.png "TableEditMode 範例所示，實作這些功能")](editing-images/image11.png#lightbox)
 
 有多種不同的方法上`UITableViewSource`會影響資料表的編輯模式的行為：
 
@@ -136,13 +127,12 @@ table.SetEditing (true, true);
 table.SetEditing (false, true);
 ```
 
-<a name="Edit_mode_–_row_insertion_editing_style" />
 
 ## <a name="row-insertion-editing-style"></a>資料列插入編輯樣式
 
 從資料表中的資料列插入是不常見的使用者介面-標準的 iOS 應用程式中的主要範例是**編輯連絡人**螢幕。 這個螢幕擷取畫面顯示資料列插入功能的運作方式，在編輯模式，沒有其他資料列的 （當按下） 將額外的資料列插入至資料。 編輯完成時，暫存**（新增）**移除資料列。
 
- [ ![](editing-images/image12.png "當編輯完成時，暫存加入新資料列會移除")](editing-images/image12.png)
+ [![](editing-images/image12.png "當編輯完成時，暫存加入新資料列會移除")](editing-images/image12.png#lightbox)
 
 有多種不同的方法上`UITableViewSource`會影響資料表的編輯模式行為。 這些方法已實作，如下所示的範例程式碼：
 

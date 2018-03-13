@@ -3,16 +3,16 @@ title: "TvOS 9 簡介"
 description: "本文介紹的所有新的及修改應用程式開發介面和功能中 tvOS 9 Xamarin.tvOS 開發人員。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
+ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: c1fafe85fb7f5c30dca0dff6fe3dff5172e0b9aa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55e83658e09bc7e5c12bb3ef3f508497651ec46c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="introduction-to-tvos-9"></a>TvOS 9 簡介
 
@@ -91,7 +91,7 @@ Siri 遠端下列國家 （地區） 是目前可用的：
 
 所有其他國家/地區會收到 Apple TV 遠端，就會出現預設搜尋畫面，以用於搜尋的文字輸入 [搜尋] 按鈕以取代 Siri 按鈕：
 
-[ ![](tvos9-images/remote02.png "Siri 遠端")](tvos9-images/remote02.png)
+[![](tvos9-images/remote02.png "Siri 遠端")](tvos9-images/remote02.png#lightbox)
 
 如需詳細資訊，請參閱我們[Siri 遠端和藍芽控制器](~/ios/tvos/platform/remote-bluetooth.md)文件。
 
@@ -155,7 +155,7 @@ Apple TV 應用程式有 200 MB 的大小上限，並且可以下載內容使用
 
 Apple TV 主畫面會顯示所有的應用程式會安裝並提供存取使用者喜好設定的方法：
 
-[ ![](tvos9-images/home01.png "主畫面")](tvos9-images/home01.png)
+[![](tvos9-images/home01.png "主畫面")](tvos9-images/home01.png#lightbox)
 
 使用者瀏覽應用程式圖示上以選取應用程式，然後啟動它使用焦點 Siri 遠端使用觸控筆勢的方格。 應用程式圖示，則您的第一個可能發生的潛在使用者進行絕佳的印象就和應該要能傳達一眼您的應用程式用途。
 
@@ -169,7 +169,7 @@ Apple TV 主畫面會顯示所有的應用程式會安裝並提供存取使用�
 
 如果使用者具有 Xamarin.tvOS 應用程式置於頂端列，在 Apple TV 主畫面上，當使用者選取您的應用程式時將顯示大型的上架映像。 此映像應該反白顯示您的應用程式的功能，或提供其內容的直接連結。
 
-[ ![](tvos9-images/topshelf01.png "高層貨架")](tvos9-images/topshelf01.png)
+[![](tvos9-images/topshelf01.png "高層貨架")](tvos9-images/topshelf01.png#lightbox)
 
 可以為單一靜態提供上架映像`.png`或`.lsr`檔案，或者它可以動態建立在執行階段為單一資料列的可設定焦點的項目。
 

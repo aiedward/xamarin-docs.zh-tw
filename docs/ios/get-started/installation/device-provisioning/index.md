@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/15/2017
-ms.openlocfilehash: 1a5120f088fca6997eef3a1bc27126b442380cac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b54adc28e318b263052bb6073390556a198cffe7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="device-provisioning"></a>裝置佈建
 
@@ -22,7 +22,7 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 
 下圖中醒目提示的區段說明 iOS 佈建所需的設定步驟：
 
-[![](images/provisioningdiagram.png "此圖中醒目提示的區段說明 iOS 佈建所需的設定步驟")](images/provisioningdiagram.png)
+[![](images/provisioningdiagram.png "此圖中醒目提示的區段說明 iOS 佈建所需的設定步驟")](images/provisioningdiagram.png#lightbox)
 
 在這之後，下一步就是散發應用程式。 如需有關部署的詳細資訊，請參閱[應用程式散發](~/ios/deploy-test/app-distribution/index.md)指南。
 

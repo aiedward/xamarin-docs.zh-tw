@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 4c61a588eafdf0a86f4124d264c41cabef3e7a14
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 159bd2435a1d2b5252e0fd1b9d525cdf6cfa7207
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android 多重畫面：快速入門
 
@@ -22,7 +22,7 @@ _這份含有兩部分的指南會擴充 Phoneword 應用程式來處理第二�
 
 在本指南的逐步解說部分，您會在 [Phoneword](https://developer.xamarin.com/samples/monodroid/Phoneword/) 應用程式中新增第二個畫面，以便持續追蹤使用應用程式翻譯之號碼的記錄。 [最終應用程式](https://developer.xamarin.com/samples/monodroid/PhonewordMultiscreen/)將具有第二個畫面來顯示「已翻譯」的號碼，如右邉螢幕擷取畫面所示：
 
-[![範例應用程式螢幕擷取畫面](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png)
+[![範例應用程式螢幕擷取畫面](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 所附的[深入剖析](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)會檢閱建置的內容並討論架構、導覽和在過程中遇到的其他新 Android 概念。
 
@@ -44,15 +44,15 @@ _這份含有兩部分的指南會擴充 Phoneword 應用程式來處理第二�
 
 從 [工具箱]，將**按鈕**拖曳至設計介面，並將它放置於 **TranslatedPhoneWord** 文字檢視下方。 在 [屬性] 窗格中，將按鈕 **Id** 變更為 `@+id/TranslationHistoryButton` 
 
-[![拖曳新按鈕](hello-android-multiscreen-quickstart-images/vs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/vs/02-new-button.png)
+[![拖曳新按鈕](hello-android-multiscreen-quickstart-images/vs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/vs/02-new-button.png#lightbox)
 
 將按鈕的 **Text** 屬性設為 `@string/translationHistory`。 Android Designer 會按字面解譯它，但您要進行一些變更，讓按鈕的文字可正確顯示：
 
-[![設定翻譯記錄按鈕文字](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string-sml.png)](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string.png)
+[![設定翻譯記錄按鈕文字](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string-sml.png)](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string.png#lightbox)
 
 在方案總管中，展開 [資源] 資料夾下的 [值] 節點，然後連按兩下字串資源檔 **Strings.xml**：
 
-[![開啟 Strings.xml](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file.png)
+[![開啟 Strings.xml](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file.png#lightbox)
 
 將 `translationHistory` 字串名稱和值新增至 **Strings.xml** 檔案，並加以儲存：
 
@@ -66,17 +66,17 @@ _這份含有兩部分的指南會擴充 Phoneword 應用程式來處理第二�
 
 [Translation History] (翻譯記錄) 按鈕文字應該更新以反映新的字串值：
 
-[![按鈕會反映新的字串值](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png)](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png)
+[![按鈕會反映新的字串值](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png)](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png#lightbox)
 
 在設計介面上選取 [Translation History] (翻譯記錄) 按鈕、在 [屬性] 窗格尋找 `enabled` 設定，並將其值設定為 `false` 來停用按鈕。 這會導致按鈕在設計介面上變得較暗：
 
-[![停用翻譯記錄按鈕](hello-android-multiscreen-quickstart-images/vs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/vs/06-enabled-false.png)
+[![停用翻譯記錄按鈕](hello-android-multiscreen-quickstart-images/vs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/vs/06-enabled-false.png#lightbox)
 
 ### <a name="creating-the-second-activity"></a>建立第二個活動
 
 建立第二個活動，以啟動第二個畫面。 在方案總管中，以滑鼠右鍵按一下 **Phoneword** 專案，然後選取 [新增] > [新增項目...]：
 
-[![新增檔案](hello-android-multiscreen-quickstart-images/vs/07-add-new-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/07-add-new-file.png)
+[![新增檔案](hello-android-multiscreen-quickstart-images/vs/07-add-new-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/07-add-new-file.png#lightbox)
 
 在 [新增項目] 對話方塊中，選擇 [Visual C#] > [活動]，並將活動檔案命名為 **TranslationHistoryActivity.cs**。
 
@@ -171,7 +171,7 @@ translateButton.Click += (sender, e) =>
 
 將應用程式部署到模擬器或裝置。 下列螢幕擷取畫面說明執行中的 **Phoneword** 應用程式：
 
-[![螢幕擷取畫面範例](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png)
+[![螢幕擷取畫面範例](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -181,16 +181,16 @@ translateButton.Click += (sender, e) =>
 
 從 [工具箱]，將**按鈕**拖曳至設計介面，並將它放置於 **TranslatedPhoneWord** 文字檢視下方。 在 **Properties** Pad 中，將按鈕 **Id** 變更為 `@+id/TranslationHistoryButton` 
 
-[![拖曳新按鈕](hello-android-multiscreen-quickstart-images/xs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/xs/02-new-button.png)
+[![拖曳新按鈕](hello-android-multiscreen-quickstart-images/xs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/xs/02-new-button.png#lightbox)
 
 將按鈕的 **Text** 屬性設為 `@string/translationHistory`。 Android Designer 會按字面解譯它，但您要進行一些變更，讓按鈕的文字可正確顯示：
 
-[![設定翻譯記錄按鈕文字](hello-android-multiscreen-quickstart-images/xs/03-call-history-string-sml.png)](hello-android-multiscreen-quickstart-images/xs/03-call-history-string.png)
+[![設定翻譯記錄按鈕文字](hello-android-multiscreen-quickstart-images/xs/03-call-history-string-sml.png)](hello-android-multiscreen-quickstart-images/xs/03-call-history-string.png#lightbox)
 
 
 在 **Solution Pad** 中，展開 [資源] 資料夾下的 [值] 節點，然後連按兩下字串資源檔 **Strings.xml**：
 
-[![開啟字串](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file.png)
+[![開啟字串](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file.png#lightbox)
 
 
 將 `translationHistory` 字串名稱和值新增至 **Strings.xml** 檔案，並加以儲存：
@@ -205,12 +205,12 @@ translateButton.Click += (sender, e) =>
 
 [Translation History] (翻譯記錄) 按鈕文字應該更新以反映新的字串值：
 
-[![按鈕會反映新的字串值](hello-android-multiscreen-quickstart-images/xs/05-new-string-value-sml.png)](hello-android-multiscreen-quickstart-images/xs/05-new-string-value.png)
+[![按鈕會反映新的字串值](hello-android-multiscreen-quickstart-images/xs/05-new-string-value-sml.png)](hello-android-multiscreen-quickstart-images/xs/05-new-string-value.png#lightbox)
 
 
 在設計介面上選取 [Translation History] (翻譯記錄) 按鈕，在  **Properties Pad** 中開啟 [行為] 索引標籤，然後按兩下 [已啟用] 核取方塊以停用按鈕。 這會導致按鈕在設計介面上變得較暗：
 
-[![停用翻譯記錄按鈕](hello-android-multiscreen-quickstart-images/xs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/xs/06-enabled-false.png)
+[![停用翻譯記錄按鈕](hello-android-multiscreen-quickstart-images/xs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/xs/06-enabled-false.png#lightbox)
 
 ### <a name="creating-the-second-activity"></a>建立第二個活動
 
@@ -304,7 +304,7 @@ translateButton.Click += (sender, e) =>
 
 將應用程式部署到模擬器或裝置。 下列螢幕擷取畫面說明執行中的 **Phoneword** 應用程式：
 
-[![螢幕擷取畫面範例](hello-android-multiscreen-quickstart-images/screenshot.png)](hello-android-multiscreen-quickstart-images/screenshot.png)
+[![螢幕擷取畫面範例](hello-android-multiscreen-quickstart-images/screenshot.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 -----
 

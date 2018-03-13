@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f5fbd2282dc2f1d5e9a3fa6d29e7b74fde89fc42
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 43aceca2eb86616fd6c9f51eb10c680e8cee9800
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="purchasing-non-consumable-products"></a>購買非可使用產品
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 02/27/2018
    
    
    
- [ ![](purchasing-non-consumable-products-images/image34.png "採購程序會顯示這一系列的螢幕擷取畫面")](purchasing-non-consumable-products-images/image34.png)   
+ [![](purchasing-non-consumable-products-images/image34.png "採購程序會顯示這一系列的螢幕擷取畫面")](purchasing-non-consumable-products-images/image34.png#lightbox)   
    
    
    
@@ -40,7 +40,7 @@ ms.lasthandoff: 02/27/2018
    
    
    
- [ ![](purchasing-non-consumable-products-images/image35.png "類別和應用程式存放區伺服器來執行非可使用產品之間的互動購買")](purchasing-non-consumable-products-images/image35.png)   
+ [![](purchasing-non-consumable-products-images/image35.png "類別和應用程式存放區伺服器來執行非可使用產品之間的互動購買")](purchasing-non-consumable-products-images/image35.png#lightbox)   
    
    
    

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e138fc1176c646a2e4e9caf94462028dd7c68e9f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 77365d5ed62b2ef2e81407ab1fa5aef55c592d0b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="bundle-for-mac-app-store"></a>Mac App Store 的套件組合
 
@@ -25,11 +25,11 @@ ms.lasthandoff: 02/27/2018
 
 在更新程式碼簽署與封裝選項之前，請將 [組態] 變更為 [發行]。 簽署應用程式以供在 App Store 中發行時，開發人員必須確定他們使用自己公司的 [身分識別] 與上述建立的佈建設定檔。
 
- [![編輯程式碼簽署選項](bundling-images/config02.png "編輯程式碼簽署選項")](bundling-images/config02-large.png)
+ [![編輯程式碼簽署選項](bundling-images/config02.png "編輯程式碼簽署選項")](bundling-images/config02-large.png#lightbox)
 
 請務必勾選 [Mac 組建] 設定中建立安裝程式套件的選項：
 
-[![編輯組建選項](bundling-images/config03.png "編輯組建選項")](bundling-images/config03-large.png)
+[![編輯組建選項](bundling-images/config03.png "編輯組建選項")](bundling-images/config03-large.png#lightbox)
 
 ## <a name="build"></a>組建
 

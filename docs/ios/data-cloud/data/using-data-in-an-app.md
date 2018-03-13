@@ -2,16 +2,16 @@
 title: "應用程式中使用資料"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: D5932AEB-0B6E-4F37-8B32-9BE4775AEE85
+ms.assetid: 2CB8150E-CD2C-4E97-8605-1EE8CBACFEEC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: b9892ce129beaf168d8a091ff9b894db8bf66cf5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: aefec1992a5f061f9d50d499b3594601a2651b17
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="using-data-in-an-app"></a>應用程式中使用資料
 

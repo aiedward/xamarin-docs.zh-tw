@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 67caa11b23f5651a6b851c1e9baf16c2adca422a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7a077a3dcc47de8416abb0c51b23dc07fc1f1f12
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="webview"></a>網頁檢視
 
@@ -38,7 +38,8 @@ WebView 隨附支援下列類型的內容：
 - HTML 字串&ndash;WebView 可以顯示從記憶體的 HTML 字串。
 - 本機檔案&ndash;WebView 可以呈現內嵌於應用程式中任何上述的內容類型。
 
-**請注意**: `WebView` Windows 和 Windows Phone 上不支援 Silverlight、 Flash 或任何 ActiveX 控制項，即使該平台上支援 Internet explorer。
+> [!NOTE]
+> `WebView` 在 Windows 和 Windows Phone 上不支援 Silverlight、 Flash 或任何 ActiveX 控制項，即使該平台上支援 Internet explorer。
 
 ### <a name="websites"></a>網站
 
@@ -50,14 +51,15 @@ var browser = new WebView {
 };
 ```
 
-**請注意**: Url 必須完全正確與指定的通訊協定 （也就是它必須有"http://"或"https://"前面會加上）。
+> [!NOTE]
+> Url 必須完全正確與指定的通訊協定 （也就是它必須有"http://"或"https://"前面會加上）。
 
 #### <a name="ios-and-ats"></a>iOS 和 AT
 
 自 9 版 iOS 將只允許您的應用程式的預設實作最佳安全性的伺服器進行通訊。 值必須在設定`Info.plist`才能與不安全的伺服器進行通訊。
 
 > [!NOTE]
-> **注意：**如果您的應用程式需要的連接不安全的網站，您應該一律使用例外狀況的形式輸入網域`NSExceptionDomains`而不是完全使用時，關閉 AT `NSAllowsArbitraryLoads`。 `NSAllowsArbitraryLoads` 應該只用在極端的緊急情況下。
+> 如果您的應用程式需要的連接不安全的網站，您應該一律使用例外狀況的形式輸入網域`NSExceptionDomains`而不是完全使用時，關閉 AT `NSAllowsArbitraryLoads`。 `NSAllowsArbitraryLoads` 應該只用在極端的緊急情況下。
 
 下列示範如何啟用特定網域中 （在此案例的 xamarin.com)，略過 AT 需求：
 
@@ -221,10 +223,10 @@ namespace WorkingWithWebview.Android {
 }
 ```
 
-在 Android 上，檔案中**資產**資料夾也可以透過存取`Forms.Context.Assets`屬性，如下列程式碼範例所示：
+在 Android 上，檔案中**資產**資料夾也可以存取目前的 Android 內容，由透過`MainActivity.Instance`屬性：
 
 ```csharp
-var assetManager = Xamarin.Forms.Forms.Context.Assets;
+var assetManager = MainActivity.Instance.Assets;
 using (var streamReader = new StreamReader (assetManager.Open ("local.html"))) {
   var html = streamReader.ReadToEnd ();
 }

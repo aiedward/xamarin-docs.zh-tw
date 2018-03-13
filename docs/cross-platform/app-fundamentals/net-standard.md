@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/12/2017
-ms.openlocfilehash: 294d28c57978218986d62d1ee6579e8d283b8f72
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f448a3ee9c018aa475775a5ac2c614f3e7ddc324
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -29,12 +29,12 @@ ms.lasthandoff: 02/27/2018
 
 Xamarin Studio 6.2，可以建立標準的.NET 程式庫專案藉由先建立可攜式程式庫專案：
 
-[ ![](net-standard-images/xs01-sml.png "建立新的可攜式程式庫專案")](net-standard-images/xs01.png)
+[![](net-standard-images/xs01-sml.png "建立新的可攜式程式庫專案")](net-standard-images/xs01.png#lightbox)
 
 一旦建立專案之後，以滑鼠右鍵按一下，然後開啟**專案選項**視窗。
 在**一般**專案可以轉換成.NET 標準和設定為使用中的特定版本的區段**平台**下拉式清單：
 
-[ ![](net-standard-images/xs02-sml.png "將轉換成.NET 標準一般選項")](net-standard-images/xs02.png)
+[![](net-standard-images/xs02-sml.png "將轉換成.NET 標準一般選項")](net-standard-images/xs02.png#lightbox)
 
 您可以接著[建立 NuGet 套件](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library.md)與其他開發人員共用文件庫。
 

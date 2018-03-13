@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c4a88f875b4082f85b1c5565de2a24548e7b8874
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8e90bc3974247066a714cb44b6648a83cdb58cf5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="push-notifications-in-ios"></a>在 iOS 中的推播通知
 
@@ -45,37 +45,37 @@ Apple 會維護兩種環境的 APNS:*沙箱*和*生產*環境。 沙箱環境適
 
 1.  若要建立憑證移至 iOS 佈建入口網站在 Apple 網站上下列螢幕擷取畫面 （請注意在左邊的應用程式識別碼功能表項目） 中所示：
 
-    [ ![](remote-notifications-in-ios-images/image5new.png "IOS 蘋果網站上的佈建入口網站")](remote-notifications-in-ios-images/image5new.png)
+    [![](remote-notifications-in-ios-images/image5new.png "IOS 蘋果網站上的佈建入口網站")](remote-notifications-in-ios-images/image5new.png#lightbox)
 
 2.  接下來，瀏覽至 [應用程式識別碼] 區段，並建立新的應用程式識別碼，如下列螢幕擷取畫面所示：
 
-    [ ![](remote-notifications-in-ios-images/image6new.png "瀏覽至 [應用程式識別碼] 區段，並建立新的應用程式識別碼")](remote-notifications-in-ios-images/image6new.png)
+    [![](remote-notifications-in-ios-images/image6new.png "瀏覽至 [應用程式識別碼] 區段，並建立新的應用程式識別碼")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
 3.  當您按一下 [  **+**  ] 按鈕，您將能夠輸入的應用程式識別碼、 描述和配套識別碼中的下一個螢幕擷取畫面所示：
 
-    [ ![](remote-notifications-in-ios-images/image7new.png "輸入描述和套件組合識別碼的應用程式識別碼")](remote-notifications-in-ios-images/image7new.png)
+    [![](remote-notifications-in-ios-images/image7new.png "輸入描述和套件組合識別碼的應用程式識別碼")](remote-notifications-in-ios-images/image7new.png#lightbox)
 
 4. 請務必選取**明確的應用程式識別碼**和套件組合識別碼不是以結尾`*`。 這會建立適用於多個應用程式，識別項和推播通知憑證必須是單一應用程式。
 
 1. 在 [應用程式服務] 下選取**推播通知**:
 
-    [ ![](remote-notifications-in-ios-images/image8new.png "選取 推播通知")](remote-notifications-in-ios-images/image8new.png)
+    [![](remote-notifications-in-ios-images/image8new.png "選取 推播通知")](remote-notifications-in-ios-images/image8new.png#lightbox)
 
 2. 按**送出**以確認註冊新的應用程式識別碼：
 
-    [ ![](remote-notifications-in-ios-images/image9new.png "確認註冊新的應用程式識別碼")](remote-notifications-in-ios-images/image9new.png)
+    [![](remote-notifications-in-ios-images/image9new.png "確認註冊新的應用程式識別碼")](remote-notifications-in-ios-images/image9new.png#lightbox)
 
 3.  接下來，您必須將憑證建立的應用程式識別碼。 在左側導覽中，瀏覽至**憑證 > 所有**選取`+`按鈕，如下列螢幕擷取畫面所示：
 
-    [ ![](remote-notifications-in-ios-images/image10new.png "建立憑證之應用程式識別碼")](remote-notifications-in-ios-images/image8.png)
+    [![](remote-notifications-in-ios-images/image10new.png "建立憑證之應用程式識別碼")](remote-notifications-in-ios-images/image8.png#lightbox)
 
 4.  選取您想要使用的開發或實際執行憑證是否：
 
-    [ ![](remote-notifications-in-ios-images/image11new.png "選取開發或實際執行憑證")](remote-notifications-in-ios-images/image11new.png)
+    [![](remote-notifications-in-ios-images/image11new.png "選取開發或實際執行憑證")](remote-notifications-in-ios-images/image11new.png#lightbox)
 
 5. 然後選取 新我們剛才建立的應用程式識別碼：
 
-    [ ![](remote-notifications-in-ios-images/image12new.png "選取剛才建立的新應用程式 ID")](remote-notifications-in-ios-images/image12new.png)
+    [![](remote-notifications-in-ios-images/image12new.png "選取剛才建立的新應用程式 ID")](remote-notifications-in-ios-images/image12new.png#lightbox)
 
 6.  這將會顯示將引導您建立的程序的指示*憑證簽署要求*使用**金鑰鏈存取**mac 上的應用程式
 
@@ -85,11 +85,11 @@ Apple 會維護兩種環境的 APNS:*沙箱*和*生產*環境。 沙箱環境適
 
 9.  一旦您已建立佈建設定檔，開啟**Xcode 召集人**和重新整理。 如果您建立佈建設定檔不會顯示可能需要從 iOS 佈建入口網站下載的設定檔，並以手動方式將它匯入。 下列螢幕擷取畫面顯示召集人的範例，以佈建的設定檔加入：
 
-    [ ![](remote-notifications-in-ios-images/image13new.png "這個螢幕擷取畫面顯示佈建設定檔加入範例的 [組合管理]")](remote-notifications-in-ios-images/image13new.png)
+    [![](remote-notifications-in-ios-images/image13new.png "這個螢幕擷取畫面顯示佈建設定檔加入範例的 [組合管理]")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
 10.  此時，我們需要設定 Xamarin.iOS 專案以使用這個新建立的佈建設定檔。 這是從**專案選項**對話方塊下方**iOS 套件組合簽署**索引標籤上，如下列螢幕擷取畫面：
 
-    [ ![](remote-notifications-in-ios-images/image11.png "使用這個新建立的佈建設定檔將 Xamarin.iOS 專案設定")](remote-notifications-in-ios-images/image11.png)
+    [![](remote-notifications-in-ios-images/image11.png "使用這個新建立的佈建設定檔將 Xamarin.iOS 專案設定")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 
 

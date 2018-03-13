@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 2d9c2b27de7addc0ed1faeed038db81e2470087f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: da9b9230a466c70cd584a00af848ffe87dacbc5b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="coreimage"></a>CoreImage
 
@@ -214,7 +214,7 @@ foreach (var filter in filters){
 
 模擬器上列示分類輸出看起來像這樣，您可以捲動清單，以查看所有篩選條件和它們的參數。
 
- [ ![](introduction-to-coreimage-images/coreimage05.png "在模擬器上列示分類輸出看起來像這樣")](introduction-to-coreimage-images/coreimage05.png)
+ [![](introduction-to-coreimage-images/coreimage05.png "在模擬器上列示分類輸出看起來像這樣")](introduction-to-coreimage-images/coreimage05.png#lightbox)
 
 因此您也可以瀏覽 Xamarin.iOS.CoreImage API，在組件的瀏覽器，或是使用 Visual Studio for Mac 或 Visual Studio 中的自動完成列出每個篩選條件已公開為 Xamarin.iOS 中的類別。 
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: bf9d292acf43bbbe3e4ba76b5a264a11288b7225
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 732f60a413077bc15018679fe8f8bc0a18227246
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-architecture"></a>iOS 架構
 
@@ -20,7 +20,7 @@ Xamarin.iOS 應用程式內單聲道執行環境、 執行，並使用完整的�
 
 下圖顯示這個架構的基本概觀：
 
-[ ![](architecture-images/ios-arch-small.png "這個圖表會顯示前的時間 (AOT) 編譯架構的基本概觀")](architecture-images/ios-arch.png)
+[ ![](architecture-images/ios-arch-small.png "這個圖表會顯示前的時間 (AOT) 編譯架構的基本概觀")](architecture-images/ios-arch.png#lightbox)
 
 ## <a name="native-and-managed-code-an-explanation"></a>原生和 Managed 程式碼： 的說明
 
@@ -36,7 +36,7 @@ Xamarin 開發時條款*原生和 managed*通常會使用程式碼。 [Managed �
 不過，沒有在 iOS、 Apple，就不允許在裝置上動態產生的程式碼執行所設定的安全性限制。
 若要確保我們遵守這些安全性通訊協定，Xamarin.iOS 改為使用前的時間 (AOT) 編譯器來編譯 managed 程式碼。 這會產生二進位，原生 iOS 的裝置，可以部署 Apple 的 arm 處理器選擇性地最佳化 LLVM。 下圖說明這如何搭配運用的概略圖表：
 
-[ ![](architecture-images/aot.png "這如何搭配運用概略圖表")](architecture-images/aot-large.png)
+[![](architecture-images/aot.png "這如何搭配運用概略圖表")](architecture-images/aot-large.png#lightbox)
 
 使用 AOT 有幾項限制，詳述於[限制](~/ios/internals/limitations.md)指南。 它也提供許多改進功能透過 JIT 透過減少啟動時間，以及各種效能最佳化
 
@@ -101,7 +101,7 @@ Managed 程式碼可包含屬性，`[Register]`和`[Export]`，知道需要公�
 
 - **靜態註冊機構**– 靜態註冊機構然後編譯成靜態程式庫並連結到可執行檔在建置期間產生 Objective C 程式碼。 這允許更快速啟動時，但所花費的時間建置時間期間。 這會使用預設針對裝置組建。 靜態註冊機構也可搭配 iOS 模擬器藉由傳遞`--registrar:static`為`mtouch`屬性在專案的組建選項，如下所示：
 
-    [ ![](architecture-images/image1.png "設定其他 mtouch 引數")](architecture-images/image1.png)
+    [![](architecture-images/image1.png "設定其他 mtouch 引數")](architecture-images/image1.png#lightbox)
 
 更多細節 iOS Xamarin.iOS 所使用的型別註冊系統的詳細資訊，請參閱[類型註冊機構](~/ios/internals/registrar.md)指南。
 
@@ -179,7 +179,7 @@ public interface UIToolbar : UIBarPositioning {
 ## <a name="related-links"></a>相關連結
 
 - [限制](~/ios/internals/limitations.md)
-- [繫結 Objective C](~/cross-platform/macios/binding/overview.md)
+- [繫結 Objective-C](~/cross-platform/macios/binding/overview.md)
 - [Objective C 的選取器](~/ios/internals/objective-c-selectors.md)
 - [類型的註冊機構](~/ios/internals/registrar.md)
-- [Linker](~/ios/deploy-test/linker.md)
+- [連結器](~/ios/deploy-test/linker.md)

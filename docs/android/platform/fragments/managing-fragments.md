@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: 33f8b44a1213df4a8a1c75e2df66cc0b007a5749
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: aa7c6eb2435be473049f0799a70a6eb37e678c78
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="managing-fragments"></a>管理的片段
 
@@ -59,7 +59,6 @@ fragmentTx.AddToBackStack(null);
 fragmentTx.Commit();
 ```
 
-<a name="Communicating_with_Fragments" />
 
 ## <a name="communicating-with-fragments"></a>與片段通訊
 
@@ -78,7 +77,6 @@ var emailList = FragmentManager.FindFragmentById<EmailListFragment>(Resource.Id.
 emailList.SomeCustomMethod(parameter1, parameter2);
 ```
 
-<a name="Communicating_with_the_Activity" />
 
 ### <a name="communicating-with-the-activity"></a>活動與通訊
 

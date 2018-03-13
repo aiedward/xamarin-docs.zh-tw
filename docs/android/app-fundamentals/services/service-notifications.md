@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 6C06FDE7-6385-40EF-AC7C-8EFB54E29F45
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: topgenorth
+ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: a5309b46b67a79225611aafb546b35e73d891b38
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3c06fca9c6d8c3cd91889007bd1879149771622b
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="service-notifications"></a>服務通知
 
@@ -48,7 +48,7 @@ public class MyService: Service
 
 這個螢幕擷取畫面會顯示通知的範例：
 
-[![在狀態列中顯示通知圖示](service-notifications-images/01-notification-sml.png)](service-notifications-images/01-notification.png)
+[![在狀態列中顯示通知圖示](service-notifications-images/01-notification-sml.png)](service-notifications-images/01-notification.png#lightbox)
 
 當使用者投影片向下從頂端的 [通知] 畫面時，會顯示完整的通知：
 

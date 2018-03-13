@@ -5,18 +5,25 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 65030DA3-C7C1-4A02-B478-811073C39139
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 1fe290983bf7b130dee6f1a1878a32dce3efc4c4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0ede9bbb47f398a82d6eae5d827122f469ad6ea4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layouts"></a>版面配置
 
-Xamarin.Forms 會有數個配置和功能來組織螢幕上的內容。 如下所述的每個版面配置控制項，以及如何處理螢幕方向變更的詳細資訊。
+Xamarin.Forms 會有數個配置和功能來組織螢幕上的內容。 
+
+> [!VIDEO https://youtube.com/embed/4HlLjTZQzjM]
+
+**Xamarin.Forms 版面配置、 藉由[Xamarin 大學](https://university.xamarin.com/)**
+
+如下所述的每個版面配置控制項，以及如何處理螢幕方向變更的詳細資訊。
 
 * **[StackLayout](stack-layout.md)**  &ndash;用來排列檢視，以線性方式，水平或垂直。 StackLayout 中的檢視可以對齊中央左或向右的版面配置。
 * **[AbsoluteLayout](absolute-layout.md)**  &ndash;用來排列檢視，藉由設定座標 （& s） 方面絕對值或比例調整大小。 AbsoluteLayout 可以用於圖層的檢視，以及錨定在其左、 右邊或中間。
@@ -35,7 +42,7 @@ Xamarin.Forms 會有數個配置和功能來組織螢幕上的內容。 如下�
 
 下圖中視覺化版面配置控制項：
 
-[ ![](images/layouts-sml.png "Xamarin.Forms 配置")](images/layouts.png "Xamarin.Forms 版面配置")
+[![](images/layouts-sml.png "Xamarin.Forms 配置")](images/layouts.png#lightbox "Xamarin.Forms 版面配置")
 
 ## <a name="choosing-the-right-layout"></a>選擇右邊的版面配置
 
@@ -176,7 +183,7 @@ Xamarin.Forms 和內建的版面配置是能夠處理變更裝置方向。 您�
 
 iOS、 Android 和 Windows 平台所有支援較大的螢幕大小平板裝置 （以及膝上型電腦和 Windows 的桌上型電腦）。 Xamarin.Forms 可讓您藉由偵測裝置類型和調整頁面配置，或完全使用完全不同的頁面，針對較大的螢幕最佳化您的應用程式，針對較大的螢幕。
 
-### <a name="creating-a-custom-layoutcustommd"></a>[建立自訂的版面配置](custom.md)
+### <a name="creating-a-custom-layoutcustommd"></a>[建立自訂版面配置](custom.md)
 
 Xamarin.Forms 會定義四個配置類別- [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)， [ `AbsoluteLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/)， [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/)，和[ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/)，和每個不同的方式排列子系。 不過，有時候其組織未使用的版面配置的頁面內容的必要提供 Xamarin.Forms。 本文說明如何撰寫自訂版面配置的類別，並示範方向區分`WrapLayout`類別，在頁面上，水平排列子系，並繞著額外的資料列的後續子系的顯示。
 

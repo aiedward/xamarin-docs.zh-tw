@@ -3,14 +3,15 @@ title: "使用 Xamarin.Forms 建立行動裝置應用程式的章節摘要"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 14A1A56C-CE91-4F86-BCF2-A4CB055A861E
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b88d227b272c34dd1c4d22fc707edce4df6dd91f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7e2cf6033958848f0c1b16e78fbc3a3d18a6b4fd
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="chapter-summaries-for-creating-mobile-apps-with-xamarinforms"></a>使用 Xamarin.Forms 建立行動裝置應用程式的章節摘要
 
@@ -26,23 +27,23 @@ ms.lasthandoff: 02/27/2018
 
 ## <a name="contents"></a>內容
 
-[第 1。Xamarin.Forms 納入如何？](chapter01.md)
+[第 1。Xamarin.Forms 如何適應？](chapter01.md)
 
-[第 2 章。應用程式的結構](chapter02.md)
+[第 2 章。應用程式剖析](chapter02.md)
 
-[第 3 章。更深入成文字](chapter03.md)
+[第 3 章。Deeper into text](chapter03.md)
 
 [第 4 章。捲動堆疊](chapter04.md)
 
-[第 5 章。處理大小](chapter05.md)
+[第 5 章。因應大小](chapter05.md)
 
-[第 6 章。按一下按鈕](chapter06.md)
+[第 6 章。按鈕點擊](chapter06.md)
 
 [第 7 章。XAML 與程式碼](chapter07.md)
 
-[第 8 章。程式碼和 XAML 中互聯](chapter08.md)
+[第 8 章。程式碼和 XAML 搭配](chapter08.md)
 
-[第 9 章。平台專屬的 API 呼叫](chapter09.md)
+[第 9 章。平台特定 API 呼叫](chapter09.md)
 
 [章 10。XAML 標記延伸](chapter10.md)
 
@@ -58,13 +59,13 @@ ms.lasthandoff: 02/27/2018
 
 [第 16 章。資料繫結](chapter16.md)
 
-[第 17 章。主控方格](chapter17.md)
+[第 17 章。掌控格線](chapter17.md)
 
 [第 18 章。MVVM](chapter18.md)
 
 [第 19 章。集合檢視](chapter19.md)
 
-[第 20。非同步和檔案 I/O](chapter20.md)
+[第 20。非同步與檔案 I/O](chapter20.md)
 
 [第 21。Transforms](chapter21.md)
 
@@ -74,13 +75,13 @@ ms.lasthandoff: 02/27/2018
 
 [章 24。頁面巡覽](chapter24.md)
 
-[第 25 章。頁面須](chapter25.md)
+[第 25 章。頁面變化](chapter25.md)
 
 [章 26。自訂配置](chapter26.md)
 
 [章 27。自訂轉譯器](chapter27.md)
 
-[章 28。位置和對應](chapter28.md)
+[章 28。位置與地圖](chapter28.md)
 
 
 

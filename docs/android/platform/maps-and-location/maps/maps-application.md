@@ -7,21 +7,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/05/2017
-ms.openlocfilehash: a6bfebb5272da3fd50f4f165fc25bb75574a0b63
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4bcbd14b88f19dc48dc9d0694fb30aed31708153
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="maps-application"></a>對應應用程式
 
 將對應中 Xamarin.Android 最簡單的方式是利用內建的對應應用程式，如下所示：
 
-[![內建 Google 地圖應用程式的範例螢幕擷取畫面](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png)
+[![內建 Google 地圖應用程式的範例螢幕擷取畫面](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
 
 當您使用對應的應用程式時，對應不會應用程式的一部分。 相反地，您的應用程式會啟動對應的應用程式，並載入外部的地圖。 下一節探討如何使用 Xamarin.Android 啟動如同上面的對應。
 
-<a name="Creating_the_Intent" />
 
 ## <a name="creating-the-intent"></a>建立目的
 
@@ -35,7 +34,6 @@ StartActivity (mapIntent);
 
 此程式碼是只需要啟動上一個螢幕擷取畫面所示的對應。 除了指定緯度和經度，對應的 URI 配置支援數個其他選項。
 
-<a name="Geo_Uri_Scheme" />
 
 ## <a name="geo-uri-scheme"></a>地理 URI 配置
 
@@ -52,10 +50,9 @@ StartActivity (mapIntent);
 
 URI 的版本採取查詢 （也就是街道地址或搜尋詞彙） 使用 Google geocoder 服務擷取接著會顯示在地圖的位置。 例如，URI`geo:0,0?q=coop+Cambridge`產生的對應如下所示：
 
-[![顯示與搜尋詞彙的 Google 地圖的範例螢幕擷取畫面](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png)
+[![顯示與搜尋詞彙的 Google 地圖的範例螢幕擷取畫面](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
 
 
-<a name="Street_View" />
 
 如需地理 URI 配置的詳細資訊，請參閱[map 上顯示位置](http://developer.android.com/guide/components/intents-common.html#Maps)。
 
@@ -64,7 +61,7 @@ URI 的版本採取查詢 （也就是街道地址或搜尋詞彙） 使用 Goog
 
 除了異地配置中，Android 也支援從意圖載入街道地檢視。 從 Xamarin.Android 啟動街道地檢視應用程式的範例如下所示：
 
-[![街道地檢視的範例螢幕擷取畫面](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png)
+[![街道地檢視的範例螢幕擷取畫面](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
 
 若要啟動的街道地檢視，只要使用`google.streetview`URI 配置，如下列程式碼所示：
 

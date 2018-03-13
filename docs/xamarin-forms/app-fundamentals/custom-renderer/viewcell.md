@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 2c65bce7ae468ef07c6d898e3f532aa95580f2ba
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9e980dd428ec0efab8578a25f9191dbc71bbaf6c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-viewcell"></a>自訂 ViewCell
 
@@ -160,7 +160,7 @@ Xamarin.Forms [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Form
 1. 新增`ExportRenderer`屬性來指定，它會用來呈現 Xamarin.Forms 自訂儲存格的自訂轉譯器類別。 此屬性用來向 Xamarin.Forms 中的自訂轉譯器。
 
 > [!NOTE]
-> **請注意**： 對於大部分的 Xamarin.Forms 項目，是選擇性的以提供每個平台專案中的自訂轉譯器。 如果未登錄的自訂轉譯器，將使用預設的產生器控制項的基底類別。 不過，自訂轉譯器所需每個平台專案中時呈現[ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)項目。
+> 大部分的 Xamarin.Forms 項目，則是選擇性的以提供每個平台專案中的自訂轉譯器。 如果未登錄的自訂轉譯器，將使用預設的產生器控制項的基底類別。 不過，自訂轉譯器所需每個平台專案中時呈現[ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)項目。
 
 下圖說明範例應用程式，以及它們之間的關聯性中的每一個專案的責任：
 

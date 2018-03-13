@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: a891e5bf797742ceb1bb45bb8144fa77dec99b2c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0e271fb78cfd225f9ccdae9a515685e89bfd7ac2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-sirikit"></a>實作 SiriKit
 
@@ -35,7 +35,7 @@ Siri 搭配的概念**網域**，群組的知道相關工作的動作。 每個�
 
 本指南將會顯示簡單的範例包括 SiriKit 到現有應用程式的支援。 這是因為此範例中，我們將使用假 MonkeyChat 應用程式：
 
-[ ![](implementing-sirikit-images/monkeychat01.png "MonkeyChat 圖示")](implementing-sirikit-images/monkeychat01.png)
+[![](implementing-sirikit-images/monkeychat01.png "MonkeyChat 圖示")](implementing-sirikit-images/monkeychat01.png#lightbox)
 
 MonkeyChat 會保留自己的使用者的好友連絡活頁簿，每個螢幕名稱 （例如 Bobo 例如) 相關聯，並可讓使用者在其顯示名稱，將文字聊天室傳送至每個 friend。
 
@@ -43,7 +43,7 @@ MonkeyChat 會保留自己的使用者的好友連絡活頁簿，每個螢幕名
 
 中所示[了解 SiriKit 概念](~/ios/platform/sirikit/understanding-sirikit.md)指南中，有三個主要部分以擴充應用程式，但 SiriKit:
 
-[ ![](implementing-sirikit-images/elements01.png "擴充應用程式與 SiriKit 圖表")](implementing-sirikit-images/elements01.png)
+[![](implementing-sirikit-images/elements01.png "擴充應用程式與 SiriKit 圖表")](implementing-sirikit-images/elements01.png#lightbox)
 
 它們包括：
 
@@ -75,20 +75,20 @@ SiriKit 建置在擴充功能，不過，將任何擴充功能加入至應用程
 1. 啟動 Visual Studio for Mac 並開啟 MonkeyChat 應用程式。
 2. 以滑鼠右鍵按一下方案名稱在**方案板**選取**新增** > **新的專案...**: 
 
-    [ ![](implementing-sirikit-images/prep01.png "加入新的專案")](implementing-sirikit-images/prep01.png)
+    [![](implementing-sirikit-images/prep01.png "加入新的專案")](implementing-sirikit-images/prep01.png#lightbox)
 3. 選取**iOS** > **文件庫** > **類別庫**按一下**下一步**按鈕： 
 
-    [ ![](implementing-sirikit-images/prep02.png "選取 類別庫")](implementing-sirikit-images/prep02.png)
+    [![](implementing-sirikit-images/prep02.png "選取 類別庫")](implementing-sirikit-images/prep02.png#lightbox)
 4. 輸入`MonkeyChatCommon`如**名稱**按一下**建立**按鈕： 
 
-    [ ![](implementing-sirikit-images/prep03.png "請輸入名稱 MonkeyChatCommon")](implementing-sirikit-images/prep03.png)
+    [![](implementing-sirikit-images/prep03.png "請輸入名稱 MonkeyChatCommon")](implementing-sirikit-images/prep03.png#lightbox)
 5. 以滑鼠右鍵按一下**參考**資料夾中的主應用程式**方案總管 中**選取**編輯參考...**.請檢查**MonkeyChatCommon**專案，然後按一下**確定**按鈕： 
 
-    [ ![](implementing-sirikit-images/prep05.png "MonkeyChatCommon 專案簽入")](implementing-sirikit-images/prep05.png)
+    [![](implementing-sirikit-images/prep05.png "MonkeyChatCommon 專案簽入")](implementing-sirikit-images/prep05.png#lightbox)
 6. 在**方案總管 中**，從主應用程式將通用的共用程式碼拖曳至原生程式庫。
 7. 如果 MonkeyChat，拖曳**DataModels**和**處理器**從主應用程式至原生程式庫資料夾： 
 
-    [ ![](implementing-sirikit-images/prep06.png "在 [方案總管] 中的 [DataModels 和處理器] 資料夾")](implementing-sirikit-images/prep06.png)
+    [![](implementing-sirikit-images/prep06.png "在 [方案總管] 中的 [DataModels 和處理器] 資料夾")](implementing-sirikit-images/prep06.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -96,11 +96,11 @@ SiriKit 建置在擴充功能，不過，將任何擴充功能加入至應用程
 2. 以滑鼠右鍵按一下方案名稱在**方案總管 中**選取**新增** > **新的專案...**.
 3. 選取**Visual C#** > **共用專案**按一下**下一步**按鈕： 
 
-    [ ![](implementing-sirikit-images/prep02w.png "選取 類別庫")](implementing-sirikit-images/prep02w.png)
+    [![](implementing-sirikit-images/prep02w.png "選取 類別庫")](implementing-sirikit-images/prep02w.png#lightbox)
 4. 輸入`MonkeyChatCommon`如**名稱**按一下**建立** 按鈕。
 5. 以滑鼠右鍵按一下**參考**資料夾中的主應用程式**方案總管 中**選取**編輯參考...**.請檢查**MonkeyChatCommon**專案，然後按一下**確定**按鈕： 
 
-    [ ![](implementing-sirikit-images/prep05w.png "MonkeyChatCommon 專案簽入")](implementing-sirikit-images/prep05w.png)
+    [![](implementing-sirikit-images/prep05w.png "MonkeyChatCommon 專案簽入")](implementing-sirikit-images/prep05w.png#lightbox)
 6. 在**方案總管 中**，共用通用程式碼拖曳至共用專案的主要應用程式。
 7. 如果 MonkeyChat，拖曳**DataModels**和**處理器**從主應用程式至原生程式庫的資料夾。
 
@@ -172,12 +172,12 @@ namespace MonkeyChat
 2. 切換至**來源** 索引標籤。
 3. 新增`com.apple.developer.siri`**屬性**，將**類型**至`Boolean`和**值**至`Yes`: 
 
-    [ ![](implementing-sirikit-images/setup01.png "加入 com.apple.developer.siri 屬性")](implementing-sirikit-images/setup01.png)
+    [![](implementing-sirikit-images/setup01.png "加入 com.apple.developer.siri 屬性")](implementing-sirikit-images/setup01.png#lightbox)
 4. 將變更儲存到檔案。
 5. 按兩下**專案檔**中**方案總管 中**開啟進行編輯。
 6. 選取**iOS 套件組合簽署**，並確定`Entitlements.plist`中選取檔案**自訂權利**欄位： 
 
-    [ ![](implementing-sirikit-images/setup02.png "自訂權利欄位中選取 Entitlements.plist 檔案")](implementing-sirikit-images/setup02.png)
+    [![](implementing-sirikit-images/setup02.png "自訂權利欄位中選取 Entitlements.plist 檔案")](implementing-sirikit-images/setup02.png#lightbox)
 7. 按一下 [確定] 按鈕以儲存所做的變更。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -185,7 +185,7 @@ namespace MonkeyChat
 1. 按兩下`Entitlements.plist`檔案**方案總管 中**開啟進行編輯。
 3. 新增`com.apple.developer.siri`**屬性**，將**類型**至`Boolean`和**值**至`Yes`: 
 
-    [ ![](implementing-sirikit-images/setup01w.png "加入 com.apple.developer.siri 屬性")](implementing-sirikit-images/setup01w.png)
+    [![](implementing-sirikit-images/setup01w.png "加入 com.apple.developer.siri 屬性")](implementing-sirikit-images/setup01w.png#lightbox)
 4. 將變更儲存到檔案。
 5. 按兩下**專案檔**中**方案總管 中**開啟進行編輯。
 6. 選取**iOS 套件組合簽署**，並確定`Entitlements.plist`中選取檔案**自訂權利**欄位。
@@ -218,7 +218,7 @@ namespace MonkeyChat
 5. 輸入**套件組合識別碼**遵循 Apple 的命名建議。
 6. 向下捲動至**應用程式服務**區段中，選取**SiriKit**按一下**繼續**按鈕： 
 
-    [ ![](implementing-sirikit-images/setup03.png "選取 SiriKit")](implementing-sirikit-images/setup03.png)
+    [![](implementing-sirikit-images/setup03.png "選取 SiriKit")](implementing-sirikit-images/setup03.png#lightbox)
 7. 驗證所有的設定，然後**送出**應用程式識別碼。
 8. 選取**佈建的設定檔** > **開發**，按一下   **+** 按鈕，選取**Apple ID**，然後按一下 **繼續**。
 9. 按一下 選取**所有**，然後按一下 **繼續**。
@@ -228,21 +228,21 @@ namespace MonkeyChat
 13. 從 [Xcode] 功能表選取**喜好設定...**
 14. 選取**帳戶**，然後按一下 **檢視詳細資料...** 按鈕： 
 
-    [ ![](implementing-sirikit-images/setup04.png "選取帳戶")](implementing-sirikit-images/setup04.png)
+    [![](implementing-sirikit-images/setup04.png "選取帳戶")](implementing-sirikit-images/setup04.png#lightbox)
 15. 按一下**下載所有設定檔**在左下角的按鈕： 
 
-    [ ![](implementing-sirikit-images/setup05.png "下載的所有設定檔")](implementing-sirikit-images/setup05.png)
+    [![](implementing-sirikit-images/setup05.png "下載的所有設定檔")](implementing-sirikit-images/setup05.png#lightbox)
 16. 請確認**佈建設定檔**建立更新版本已安裝在 Xcode 中。
 17. 開啟專案，以便將 Visual Studio 中的 SiriKit 支援以 for mac。
 18. 按兩下`Info.plist`檔案**方案總管 中**。
 18. 請確認**配套識別碼**符合上述的 Apple 開發人員入口網站中建立： 
 
-    [ ![](implementing-sirikit-images/setup06.png "套件組合識別碼")](implementing-sirikit-images/setup06.png)
+    [![](implementing-sirikit-images/setup06.png "套件組合識別碼")](implementing-sirikit-images/setup06.png#lightbox)
 18. 在**方案總管 中**，選取**專案**。
 19. 以滑鼠右鍵按一下專案，然後選取**選項**。
 21. 選取**iOS 套件組合簽署**，選取**簽署識別**和**佈建設定檔**上面所建立： 
 
-    [ ![](implementing-sirikit-images/setup07.png "選取的簽署識別和佈建設定檔")](implementing-sirikit-images/setup07.png)
+    [![](implementing-sirikit-images/setup07.png "選取的簽署識別和佈建設定檔")](implementing-sirikit-images/setup07.png#lightbox)
 22. 按一下 [確定] 按鈕以儲存所做的變更。
 
 > [!IMPORTANT]
@@ -256,13 +256,13 @@ namespace MonkeyChat
 
 編輯應用程式的`Info.plist`檔案中，切換至**來源**檢視和加入`NSSiriUsageDescription`索引鍵的字串值，描述應用程式如何使用 Siri，以及將傳送的資料類型。 例如，MonkeyChat 應用程式可能是說: 「 MonkeyChat 連絡人將會傳送至 Siri":
 
-[ ![](implementing-sirikit-images/request01.png "Info.plist 編輯器中 NSSiriUsageDescription")](implementing-sirikit-images/request01.png)
+[![](implementing-sirikit-images/request01.png "Info.plist 編輯器中 NSSiriUsageDescription")](implementing-sirikit-images/request01.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 編輯應用程式的`Info.plist`檔案，然後加入`NSSiriUsageDescription`索引鍵的字串值，描述應用程式如何使用 Siri，以及將傳送的資料類型。 例如，MonkeyChat 應用程式可能是說: 「 MonkeyChat 連絡人將會傳送至 Siri":
 
-[ ![](implementing-sirikit-images/request01w.png "Info.plist 編輯器中 NSSiriUsageDescription")](implementing-sirikit-images/request01w.png)
+[![](implementing-sirikit-images/request01w.png "Info.plist 編輯器中 NSSiriUsageDescription")](implementing-sirikit-images/request01w.png#lightbox)
 
 -----
 
@@ -460,128 +460,128 @@ namespace MonkeyChat
 
 1. 以滑鼠右鍵按一下專案名稱中**方案總管 中**選取**新增** > **新的檔案...**  >  **iOS**:
 
-    [ ![](implementing-sirikit-images/plist01.png "加入屬性清單")](implementing-sirikit-images/plist01.png) 
+    [![](implementing-sirikit-images/plist01.png "加入屬性清單")](implementing-sirikit-images/plist01.png#lightbox) 
 2. 按兩下`AppIntentVocabulary.plist`檔案**方案總管 中**開啟進行編輯。
 3. 按一下 **+** 新增機碼，設定**名稱**至`ParameterVocabularies`和**類型**至`Array`:
 
-    [ ![](implementing-sirikit-images/plist02.png "將名稱設定為 ParameterVocabularies 和陣列類型")](implementing-sirikit-images/plist02.png)
+    [![](implementing-sirikit-images/plist02.png "將名稱設定為 ParameterVocabularies 和陣列類型")](implementing-sirikit-images/plist02.png#lightbox)
 4. 展開`ParameterVocabularies`按一下 **+** 按鈕，然後設定**類型**至`Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist03.png "將類型設為字典")](implementing-sirikit-images/plist03.png)
+    [![](implementing-sirikit-images/plist03.png "將類型設為字典")](implementing-sirikit-images/plist03.png#lightbox)
 5. 按一下 **+** 若要加入新的金鑰，請設定**名稱**至`ParameterNames`和**類型**至`Array`:
 
-    [ ![](implementing-sirikit-images/plist04.png "將名稱設定為 ParameterNames 和陣列類型")](implementing-sirikit-images/plist04.png)
+    [![](implementing-sirikit-images/plist04.png "將名稱設定為 ParameterNames 和陣列類型")](implementing-sirikit-images/plist04.png#lightbox)
 6. 按一下 **+** 要加入的新金鑰**類型**的`String`和做為其中一個可用的參數名稱的值。 例如， `INStartWorkoutIntent.workoutName`:
 
-    [ ![](implementing-sirikit-images/plist05.png "INStartWorkoutIntent.workoutName 金鑰")](implementing-sirikit-images/plist05.png)
+    [![](implementing-sirikit-images/plist05.png "INStartWorkoutIntent.workoutName 金鑰")](implementing-sirikit-images/plist05.png#lightbox)
 7. 新增`ParameterVocabulary`鍵`ParameterVocabularies`索引鍵**類型**的`Array`:
 
-    [ ![](implementing-sirikit-images/plist06.png "新增 ParameterVocabulary 金鑰 ParameterVocabularies 索引鍵的陣列類型")](implementing-sirikit-images/plist06.png)
+    [![](implementing-sirikit-images/plist06.png "新增 ParameterVocabulary 金鑰 ParameterVocabularies 索引鍵的陣列類型")](implementing-sirikit-images/plist06.png#lightbox)
 8. 加入新的金鑰與**類型**的`Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist07.png "加入新的金鑰與字典的型別")](implementing-sirikit-images/plist07.png)
+    [![](implementing-sirikit-images/plist07.png "加入新的金鑰與字典的型別")](implementing-sirikit-images/plist07.png#lightbox)
 9. 新增`VocabularyItemIdentifier`索引鍵**類型**的`String`和詞彙指定唯一的識別碼：
 
-    [ ![](implementing-sirikit-images/plist08.png "加入 VocabularyItemIdentifier 鍵字串類型，並指定唯一識別碼")](implementing-sirikit-images/plist08.png)
+    [![](implementing-sirikit-images/plist08.png "加入 VocabularyItemIdentifier 鍵字串類型，並指定唯一識別碼")](implementing-sirikit-images/plist08.png#lightbox)
 10. 新增`VocabularyItemSynonyms`索引鍵**類型**的`Array`:
 
-    [ ![](implementing-sirikit-images/plist09.png "加入 VocabularyItemSynonyms 鍵，類型的陣列")](implementing-sirikit-images/plist09.png)
+    [![](implementing-sirikit-images/plist09.png "加入 VocabularyItemSynonyms 鍵，類型的陣列")](implementing-sirikit-images/plist09.png#lightbox)
 11. 加入新的金鑰與**類型**的`Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist10.png "加入新的金鑰與字典的型別")](implementing-sirikit-images/plist10.png)
+    [![](implementing-sirikit-images/plist10.png "加入新的金鑰與字典的型別")](implementing-sirikit-images/plist10.png#lightbox)
 12. 新增`VocabularyItemPhrase`索引鍵**類型**的`String`而且詞彙定義應用程式：
 
-    [ ![](implementing-sirikit-images/plist11.png "新增 VocabularyItemPhrase 機碼與字串類型和應用程式定義的詞彙")](implementing-sirikit-images/plist11.png)
+    [![](implementing-sirikit-images/plist11.png "新增 VocabularyItemPhrase 機碼與字串類型和應用程式定義的詞彙")](implementing-sirikit-images/plist11.png#lightbox)
 13. 新增`VocabularyItemPronunciation`索引鍵**類型**的`String`和語音發音的詞彙：
 
-    [ ![](implementing-sirikit-images/plist12.png "新增具有字串類型和詞彙的語音發音 VocabularyItemPronunciation 機碼")](implementing-sirikit-images/plist12.png)
+    [![](implementing-sirikit-images/plist12.png "新增具有字串類型和詞彙的語音發音 VocabularyItemPronunciation 機碼")](implementing-sirikit-images/plist12.png#lightbox)
 14. 新增`VocabularyItemExamples`索引鍵**類型**的`Array`:
 
-    [ ![](implementing-sirikit-images/plist13.png "加入 VocabularyItemExamples 鍵，類型的陣列")](implementing-sirikit-images/plist13.png)
+    [![](implementing-sirikit-images/plist13.png "加入 VocabularyItemExamples 鍵，類型的陣列")](implementing-sirikit-images/plist13.png#lightbox)
 15. 加入一些`String`範例會使用詞彙的索引鍵：
 
-    [ ![](implementing-sirikit-images/plist14.png "新增詞彙的範例會使用與少數的 String 索引鍵")](implementing-sirikit-images/plist14.png)
+    [![](implementing-sirikit-images/plist14.png "新增詞彙的範例會使用與少數的 String 索引鍵")](implementing-sirikit-images/plist14.png#lightbox)
 16. 重複上述步驟的其他應用程式需要定義的自訂詞彙。
 17. 摺疊`ParameterVocabularies`索引鍵。
 18. 新增`IntentPhrases`索引鍵**類型**的`Array`:
 
-    [ ![](implementing-sirikit-images/plist15.png "加入 IntentPhrases 鍵，類型的陣列")](implementing-sirikit-images/plist15.png)
+    [![](implementing-sirikit-images/plist15.png "加入 IntentPhrases 鍵，類型的陣列")](implementing-sirikit-images/plist15.png#lightbox)
 19. 加入新的金鑰與**類型**的`Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist16.png "加入新的金鑰與字典的型別")](implementing-sirikit-images/plist16.png)
+    [![](implementing-sirikit-images/plist16.png "加入新的金鑰與字典的型別")](implementing-sirikit-images/plist16.png#lightbox)
 20. 新增`IntentName`索引鍵**類型**的`String`和意圖範例：
 
-    [ ![](implementing-sirikit-images/plist17.png "加入 IntentName 鍵 String 型別與意圖，範例")](implementing-sirikit-images/plist17.png)
+    [![](implementing-sirikit-images/plist17.png "加入 IntentName 鍵 String 型別與意圖，範例")](implementing-sirikit-images/plist17.png#lightbox)
 21. 新增`IntentExamples`索引鍵**類型**的`Array`:
 
-    [ ![](implementing-sirikit-images/plist18.png "加入 IntentExamples 鍵，類型的陣列")](implementing-sirikit-images/plist18.png)
+    [![](implementing-sirikit-images/plist18.png "加入 IntentExamples 鍵，類型的陣列")](implementing-sirikit-images/plist18.png#lightbox)
 22. 加入一些`String`範例會使用詞彙的索引鍵：
 
-    [ ![](implementing-sirikit-images/plist19.png "新增詞彙的範例會使用與少數的 String 索引鍵")](implementing-sirikit-images/plist19.png)
+    [![](implementing-sirikit-images/plist19.png "新增詞彙的範例會使用與少數的 String 索引鍵")](implementing-sirikit-images/plist19.png#lightbox)
 23. 重複上述步驟的任何應用程式必須提供的範例使用方式的對應方式。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 以滑鼠右鍵按一下專案名稱中**方案總管 中**選取**新增** > **新的檔案...**  >  **iOS**:
 
-    [ ![](implementing-sirikit-images/plist01w.png "加入新的 Info.plist")](implementing-sirikit-images/plist01w.png) 
+    [![](implementing-sirikit-images/plist01w.png "加入新的 Info.plist")](implementing-sirikit-images/plist01w.png#lightbox) 
 2. 按兩下`AppIntentVocabulary.plist`檔案**方案總管 中**開啟進行編輯。
 3. 按一下 **+** 新增機碼，設定**名稱**至`ParameterVocabularies`和**類型**至`Array`:
 
-    [ ![](implementing-sirikit-images/plist02w.png "將名稱設定為 ParameterVocabularies 和陣列類型")](implementing-sirikit-images/plist02w.png)
+    [![](implementing-sirikit-images/plist02w.png "將名稱設定為 ParameterVocabularies 和陣列類型")](implementing-sirikit-images/plist02w.png#lightbox)
 4. 展開`ParameterVocabularies`按一下 **+** 按鈕，然後設定**類型**至`Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist03w.png "將類型設為字典")](implementing-sirikit-images/plist03w.png)
+    [![](implementing-sirikit-images/plist03w.png "將類型設為字典")](implementing-sirikit-images/plist03w.png#lightbox)
 5. 按一下 **+** 若要加入新的金鑰，請設定**名稱**至`ParameterNames`和**類型**至`Array`:
 
-    [ ![](implementing-sirikit-images/plist04w.png "將名稱設定為 ParameterNames 和陣列類型")](implementing-sirikit-images/plist04w.png)
+    [![](implementing-sirikit-images/plist04w.png "將名稱設定為 ParameterNames 和陣列類型")](implementing-sirikit-images/plist04w.png#lightbox)
 6. 按一下 **+** 要加入的新金鑰**類型**的`String`和做為其中一個可用的參數名稱的值。 例如， `INStartWorkoutIntent.workoutName`:
 
-    [ ![](implementing-sirikit-images/plist05w.png "INStartWorkoutIntent.workoutName 金鑰")](implementing-sirikit-images/plist05w.png)
+    [![](implementing-sirikit-images/plist05w.png "INStartWorkoutIntent.workoutName 金鑰")](implementing-sirikit-images/plist05w.png#lightbox)
 7. 新增`ParameterVocabulary`鍵`ParameterVocabularies`索引鍵**類型**的`Array`:
 
-    [ ![](implementing-sirikit-images/plist06w.png "新增 ParameterVocabulary 金鑰 ParameterVocabularies 索引鍵的陣列類型")](implementing-sirikit-images/plist06w.png)
+    [![](implementing-sirikit-images/plist06w.png "新增 ParameterVocabulary 金鑰 ParameterVocabularies 索引鍵的陣列類型")](implementing-sirikit-images/plist06w.png#lightbox)
 8. 加入新的金鑰與**類型**的`Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist07w.png "加入新的金鑰與字典的型別")](implementing-sirikit-images/plist07w.png)
+    [![](implementing-sirikit-images/plist07w.png "加入新的金鑰與字典的型別")](implementing-sirikit-images/plist07w.png#lightbox)
 9. 新增`VocabularyItemIdentifier`索引鍵**類型**的`String`和詞彙指定唯一的識別碼：
 
-    [ ![](implementing-sirikit-images/plist08w.png "加入 VocabularyItemIdentifier 鍵字串類型，並指定詞彙的唯一識別碼")](implementing-sirikit-images/plist08w.png)
+    [![](implementing-sirikit-images/plist08w.png "加入 VocabularyItemIdentifier 鍵字串類型，並指定詞彙的唯一識別碼")](implementing-sirikit-images/plist08w.png#lightbox)
 10. 新增`VocabularyItemSynonyms`索引鍵**類型**的`Array`:
 
-    [ ![](implementing-sirikit-images/plist09w.png "加入 VocabularyItemSynonyms 鍵，類型的陣列")](implementing-sirikit-images/plist09w.png)
+    [![](implementing-sirikit-images/plist09w.png "加入 VocabularyItemSynonyms 鍵，類型的陣列")](implementing-sirikit-images/plist09w.png#lightbox)
 11. 加入新的金鑰與**類型**的`Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist10w.png "加入新的金鑰與字典的型別")](implementing-sirikit-images/plist10w.png)
+    [![](implementing-sirikit-images/plist10w.png "加入新的金鑰與字典的型別")](implementing-sirikit-images/plist10w.png#lightbox)
 12. 新增`VocabularyItemPhrase`索引鍵**類型**的`String`而且詞彙定義應用程式：
 
-    [ ![](implementing-sirikit-images/plist11w.png "新增 VocabularyItemPhrase 機碼與字串類型和應用程式定義的詞彙")](implementing-sirikit-images/plist11w.png)
+    [![](implementing-sirikit-images/plist11w.png "新增 VocabularyItemPhrase 機碼與字串類型和應用程式定義的詞彙")](implementing-sirikit-images/plist11w.png#lightbox)
 13. 新增`VocabularyItemPronunciation`索引鍵**類型**的`String`和語音發音的詞彙：
 
-    [ ![](implementing-sirikit-images/plist12w.png "新增具有字串類型和詞彙的語音發音 VocabularyItemPronunciation 機碼")](implementing-sirikit-images/plist12w.png)
+    [![](implementing-sirikit-images/plist12w.png "新增具有字串類型和詞彙的語音發音 VocabularyItemPronunciation 機碼")](implementing-sirikit-images/plist12w.png#lightbox)
 14. 新增`VocabularyItemExamples`索引鍵**類型**的`Array`:
 
-    [ ![](implementing-sirikit-images/plist13w.png "加入 VocabularyItemExamples 鍵，類型的陣列")](implementing-sirikit-images/plist13w.png)
+    [![](implementing-sirikit-images/plist13w.png "加入 VocabularyItemExamples 鍵，類型的陣列")](implementing-sirikit-images/plist13w.png#lightbox)
 15. 加入一些`String`範例會使用詞彙的索引鍵：
 
-    [ ![](implementing-sirikit-images/plist14w.png "新增詞彙的範例會使用與少數的 String 索引鍵")](implementing-sirikit-images/plist14w.png)
+    [![](implementing-sirikit-images/plist14w.png "新增詞彙的範例會使用與少數的 String 索引鍵")](implementing-sirikit-images/plist14w.png#lightbox)
 16. 重複上述步驟的其他應用程式需要定義的自訂詞彙。
 17. 摺疊`ParameterVocabularies`索引鍵。
 18. 新增`IntentPhrases`索引鍵**類型**的`Array`:
 
-    [ ![](implementing-sirikit-images/plist15w.png "加入 IntentPhrases 鍵，類型的陣列")](implementing-sirikit-images/plist15w.png)
+    [![](implementing-sirikit-images/plist15w.png "加入 IntentPhrases 鍵，類型的陣列")](implementing-sirikit-images/plist15w.png#lightbox)
 19. 加入新的金鑰與**類型**的`Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist16w.png "加入新的金鑰與字典的型別")](implementing-sirikit-images/plist16w.png)
+    [![](implementing-sirikit-images/plist16w.png "加入新的金鑰與字典的型別")](implementing-sirikit-images/plist16w.png#lightbox)
 20. 新增`IntentName`索引鍵**類型**的`String`和意圖範例：
 
-    [ ![](implementing-sirikit-images/plist17w.png "加入 IntentName 鍵 String 型別與意圖，範例")](implementing-sirikit-images/plist17w.png)
+    [![](implementing-sirikit-images/plist17w.png "加入 IntentName 鍵 String 型別與意圖，範例")](implementing-sirikit-images/plist17w.png#lightbox)
 21. 新增`IntentExamples`索引鍵**類型**的`Array`:
 
-    [ ![](implementing-sirikit-images/plist18w.png "加入 IntentExamples 鍵，類型的陣列")](implementing-sirikit-images/plist18w.png)
+    [![](implementing-sirikit-images/plist18w.png "加入 IntentExamples 鍵，類型的陣列")](implementing-sirikit-images/plist18w.png#lightbox)
 22. 加入一些`String`範例會使用詞彙的索引鍵：
 
-    [ ![](implementing-sirikit-images/plist19w.png "新增詞彙的範例會使用與少數的 String 索引鍵")](implementing-sirikit-images/plist19w.png)
+    [![](implementing-sirikit-images/plist19w.png "新增詞彙的範例會使用與少數的 String 索引鍵")](implementing-sirikit-images/plist19w.png#lightbox)
 23. 重複上述步驟的任何應用程式必須提供的範例使用方式的對應方式。
 
 -----
@@ -612,27 +612,27 @@ namespace MonkeyChat
 1. 以滑鼠右鍵按一下**方案名稱**中**方案板**選取**新增** > **加入新的專案...**.
 2. 從對話方塊中選取**iOS** > **延伸** > **意圖延伸**按一下**下一步**按鈕： 
 
-    [ ![](implementing-sirikit-images/intents05.png "選取轉譯延伸模組")](implementing-sirikit-images/intents05.png)
+    [![](implementing-sirikit-images/intents05.png "選取轉譯延伸模組")](implementing-sirikit-images/intents05.png#lightbox)
 3. 接著輸入**名稱**意圖延伸模組，然後按一下**下一步**按鈕： 
 
-    [ ![](implementing-sirikit-images/intents06.png "輸入的轉譯延伸模組的名稱")](implementing-sirikit-images/intents06.png)
+    [![](implementing-sirikit-images/intents06.png "輸入的轉譯延伸模組的名稱")](implementing-sirikit-images/intents06.png#lightbox)
 4. 最後，按一下 **建立**按鈕，將意圖擴充功能加入至應用程式的方案： 
 
-    [ ![](implementing-sirikit-images/intents07.png "將意圖擴充功能加入至應用程式方案")](implementing-sirikit-images/intents07.png)
+    [![](implementing-sirikit-images/intents07.png "將意圖擴充功能加入至應用程式方案")](implementing-sirikit-images/intents07.png#lightbox)
 5. 在**方案總管 中**，以滑鼠右鍵按一下**參考**新建的意圖擴充功能資料夾。 檢查通用的共用程式碼程式庫專案 （也就上面所建立的應用程式） 的名稱，然後按一下**確定**按鈕： 
 
-    [ ![](implementing-sirikit-images/intents08.png "選取通用的共用程式碼程式庫專案的名稱")](implementing-sirikit-images/intents08.png)
+    [![](implementing-sirikit-images/intents08.png "選取通用的共用程式碼程式庫專案的名稱")](implementing-sirikit-images/intents08.png#lightbox)
     
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 以滑鼠右鍵按一下**方案名稱**中**方案總管 中**選取**新增** > **加入新的專案...**.
 2. 從對話方塊中選取**iOS** > **延伸** > **意圖延伸**按一下**下一步**按鈕： 
 
-    [ ![](implementing-sirikit-images/intents05w.png "選取轉譯延伸模組")](implementing-sirikit-images/intents05w.png)
+    [![](implementing-sirikit-images/intents05w.png "選取轉譯延伸模組")](implementing-sirikit-images/intents05w.png#lightbox)
 3. 接著輸入**名稱**意圖延伸模組，然後按一下**確定** 按鈕。
 5. 在**方案總管 中**，以滑鼠右鍵按一下**參考**新建的意圖擴充功能資料夾。 檢查通用的共用程式碼程式庫專案 （也就上面所建立的應用程式） 的名稱，然後按一下**確定**按鈕： 
 
-    [ ![](implementing-sirikit-images/intents08w.png "選取通用的共用程式碼程式庫專案的名稱")](implementing-sirikit-images/intents08w.png)
+    [![](implementing-sirikit-images/intents08w.png "選取通用的共用程式碼程式庫專案的名稱")](implementing-sirikit-images/intents08w.png#lightbox)
     
 -----
 
@@ -644,7 +644,7 @@ namespace MonkeyChat
 
 就像任何一般的應用程式擴充功能，應用程式將會有現有的索引鍵`NSExtension`和`NSExtensionAttributes`。 對應方式延伸有兩個新的屬性必須設定：
 
-[ ![](implementing-sirikit-images/intents01.png "您必須設定兩個新屬性")](implementing-sirikit-images/intents01.png)
+[![](implementing-sirikit-images/intents01.png "您必須設定兩個新屬性")](implementing-sirikit-images/intents01.png#lightbox)
 
 - **IntentsSupported** -需要，而想要從意圖延伸模組支援的應用程式的意圖類別名稱的陣列所組成。
 - **IntentsRestrictedWhileLocked** -是指定的延伸模組的鎖定螢幕行為的應用程式的選擇性索引鍵。 其中包含應用程式想要要求使用者在登入，若要使用來自意圖延伸模組的意圖類別名稱的陣列。
@@ -653,11 +653,11 @@ namespace MonkeyChat
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](implementing-sirikit-images/intents02.png "在編輯器中 NSExtension 和 NSExtensionAttributes 索引鍵")](implementing-sirikit-images/intents02.png)
+[![](implementing-sirikit-images/intents02.png "在編輯器中 NSExtension 和 NSExtensionAttributes 索引鍵")](implementing-sirikit-images/intents02.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](implementing-sirikit-images/intents02w.png "在編輯器中 NSExtension 和 NSExtensionAttributes 索引鍵")](implementing-sirikit-images/intents02w.png)
+[![](implementing-sirikit-images/intents02w.png "在編輯器中 NSExtension 和 NSExtensionAttributes 索引鍵")](implementing-sirikit-images/intents02w.png#lightbox)
 
 -----
 
@@ -665,11 +665,11 @@ namespace MonkeyChat
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](implementing-sirikit-images/intents09.png "INSendMessageIntent 金鑰")](implementing-sirikit-images/intents09.png)
+[![](implementing-sirikit-images/intents09.png "INSendMessageIntent 金鑰")](implementing-sirikit-images/intents09.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](implementing-sirikit-images/intents09w.png "INSendMessageIntent 金鑰")](implementing-sirikit-images/intents09w.png)
+[![](implementing-sirikit-images/intents09w.png "INSendMessageIntent 金鑰")](implementing-sirikit-images/intents09w.png#lightbox)
 
 -----
 
@@ -677,11 +677,11 @@ namespace MonkeyChat
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](implementing-sirikit-images/intents10.png "加入的 INSendMessageIntent 機碼")](implementing-sirikit-images/intents10.png)
+[![](implementing-sirikit-images/intents10.png "加入的 INSendMessageIntent 機碼")](implementing-sirikit-images/intents10.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](implementing-sirikit-images/intents10w.png "加入的 INSendMessageIntent 機碼")](implementing-sirikit-images/intents10w.png)
+[![](implementing-sirikit-images/intents10w.png "加入的 INSendMessageIntent 機碼")](implementing-sirikit-images/intents10w.png#lightbox)
 
 -----
 
@@ -857,7 +857,7 @@ public void HandleSetMessageAttribute (INSetMessageAttributeIntent intent, Actio
 
 選擇性的對應方式 UI 延伸模組呈現的機會，讓應用程式的 UI 和商標 Siri 體驗，並讓使用者覺得已連線到應用程式。 這個延伸的品牌與文字記錄 visual 和其他資訊，可以讓應用程式。
 
-[ ![](implementing-sirikit-images/intentsui01.png "對應 UI 延伸模組的輸出範例")](implementing-sirikit-images/intentsui01.png)
+[![](implementing-sirikit-images/intentsui01.png "對應 UI 延伸模組的輸出範例")](implementing-sirikit-images/intentsui01.png#lightbox)
 
 如同對應方式擴充功能，開發人員將會執行下列步驟的對應方式 UI 延伸模組：
 
@@ -876,16 +876,16 @@ public void HandleSetMessageAttribute (INSetMessageAttributeIntent intent, Actio
 1. 以滑鼠右鍵按一下**方案名稱**中**方案板**選取**新增** > **加入新的專案...**.
 2. 從對話方塊選取**iOS** > **延伸** > **意圖 UI 延伸模組**按一下**下一步**按鈕： 
 
-    [ ![](implementing-sirikit-images/intents11.png "選取的意圖 UI 延伸模組")](implementing-sirikit-images/intents11.png)
+    [![](implementing-sirikit-images/intents11.png "選取的意圖 UI 延伸模組")](implementing-sirikit-images/intents11.png#lightbox)
 3. 接著輸入**名稱**意圖延伸模組，然後按一下**下一步**按鈕： 
 
-    [ ![](implementing-sirikit-images/intents12.png "輸入的轉譯延伸模組的名稱")](implementing-sirikit-images/intents12.png)
+    [![](implementing-sirikit-images/intents12.png "輸入的轉譯延伸模組的名稱")](implementing-sirikit-images/intents12.png#lightbox)
 4. 最後，按一下 **建立**按鈕，將意圖擴充功能加入至應用程式的方案： 
 
-    [ ![](implementing-sirikit-images/intents13.png "將意圖擴充功能加入至應用程式方案")](implementing-sirikit-images/intents13.png)
+    [![](implementing-sirikit-images/intents13.png "將意圖擴充功能加入至應用程式方案")](implementing-sirikit-images/intents13.png#lightbox)
 5. 在**方案總管 中**，以滑鼠右鍵按一下**參考**新建的意圖擴充功能資料夾。 檢查通用的共用程式碼程式庫專案 （也就上面所建立的應用程式） 的名稱，然後按一下**確定**按鈕： 
 
-    [ ![](implementing-sirikit-images/intents14.png "選取通用的共用程式碼程式庫專案的名稱")](implementing-sirikit-images/intents14.png)
+    [![](implementing-sirikit-images/intents14.png "選取通用的共用程式碼程式庫專案的名稱")](implementing-sirikit-images/intents14.png#lightbox)
     
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -902,7 +902,7 @@ public void HandleSetMessageAttribute (INSetMessageAttributeIntent intent, Actio
 
 就像任何一般的應用程式擴充功能，應用程式將會有現有的索引鍵`NSExtension`和`NSExtensionAttributes`。 對應方式擴充功能還有一個新的屬性必須設定：
 
-[ ![](implementing-sirikit-images/intents03.png "您必須設定一個新屬性")](implementing-sirikit-images/intents03.png)
+[![](implementing-sirikit-images/intents03.png "您必須設定一個新屬性")](implementing-sirikit-images/intents03.png#lightbox)
 
 **IntentsSupported**需要，而想要從意圖延伸模組支援的應用程式的意圖類別名稱的陣列所組成。
 
@@ -910,13 +910,13 @@ public void HandleSetMessageAttribute (INSetMessageAttributeIntent intent, Actio
 
 若要設定意圖 UI 延伸模組`Info.plist`檔案中，請在**方案總管 中**開啟進行編輯。 接下來，切換至**來源**檢視，然後展開`NSExtension`和`NSExtensionAttributes`在編輯器中的索引鍵：
 
-[ ![](implementing-sirikit-images/intents04.png "在編輯器中 NSExtension 和 NSExtensionAttributes 索引鍵")](implementing-sirikit-images/intents04.png)
+[![](implementing-sirikit-images/intents04.png "在編輯器中 NSExtension 和 NSExtensionAttributes 索引鍵")](implementing-sirikit-images/intents04.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 若要設定意圖 UI 延伸模組`Info.plist`檔案中，請在**方案總管 中**開啟進行編輯。 展開`NSExtension`和`NSExtensionAttributes`在編輯器中的索引鍵：
 
-[ ![](implementing-sirikit-images/intents04w.png "在編輯器中的 t NSExtension 和 NSExtensionAttributes 金鑰")](implementing-sirikit-images/intents04w.png)
+[![](implementing-sirikit-images/intents04w.png "在編輯器中的 t NSExtension 和 NSExtensionAttributes 金鑰")](implementing-sirikit-images/intents04w.png#lightbox)
 
 -----
 
@@ -924,11 +924,11 @@ public void HandleSetMessageAttribute (INSetMessageAttributeIntent intent, Actio
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](implementing-sirikit-images/intents15.png "INSendMessageIntent 金鑰")](implementing-sirikit-images/intents15.png)
+[![](implementing-sirikit-images/intents15.png "INSendMessageIntent 金鑰")](implementing-sirikit-images/intents15.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](implementing-sirikit-images/intents15w.png "INSendMessageIntent 金鑰")](implementing-sirikit-images/intents15w.png)
+[![](implementing-sirikit-images/intents15w.png "INSendMessageIntent 金鑰")](implementing-sirikit-images/intents15w.png#lightbox)
 
 -----
 

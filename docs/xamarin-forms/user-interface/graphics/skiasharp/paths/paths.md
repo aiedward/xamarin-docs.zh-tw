@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: f02c5cfd75fd9d9cd97d28ca276b32808f7a45ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f1ce6b62ef13d24148048253700d7b3bff805fad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="path-basics"></a>路徑的基本概念
 
@@ -99,7 +99,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 第一個分佈所組成的呼叫[ `MoveTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.MoveTo/p/System.Single/System.Single/)使用 X 和 Y 座標，而非`SKPoint`值，後面接著三次呼叫[ `LineTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.LineTo/p/System.Single/System.Single/)繪製的三個邊三角形。 第二個分佈都有只有兩個呼叫`LineTo`但在完成呼叫分佈[ `Close` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Close()/)，這會關閉分佈。 差異十分重要：
 
-[![](paths-images/twotrianglecontours-small.png "三個螢幕擷取畫面的兩個三角形分佈頁面")](paths-images/twotrianglecontours-large.png "的兩個三角形分佈頁面的三個螢幕擷取畫面")
+[![](paths-images/twotrianglecontours-small.png "三個螢幕擷取畫面的兩個三角形分佈頁面")](paths-images/twotrianglecontours-large.png#lightbox "的兩個三角形分佈頁面的三個螢幕擷取畫面")
 
 如您所見，第一個分佈顯然是一系列的三個連接的直線，但並不會起始連接結束。 上方，重疊兩行。 第二個分佈會很明顯地關閉，並使用較少的其中一個已完成`LineTo`呼叫因為`Close`方法會自動將關閉分佈的最後一行。
 
@@ -189,7 +189,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 以下是三個平台上執行的程式：
 
-[![](paths-images/strokejoins-small.png "筆觸加入頁面的三個螢幕擷取畫面")](paths-images/strokejoins-large.png "筆劃加入頁面的三個螢幕擷取畫面")
+[![](paths-images/strokejoins-small.png "筆觸加入頁面的三個螢幕擷取畫面")](paths-images/strokejoins-large.png#lightbox "筆劃加入頁面的三個螢幕擷取畫面")
 
 斜接角聯結尖點，其中線條的連接所組成。 當兩行程式碼加入小角時，斜接角聯結可能會變得很冗長。 若要避免過長斜接角聯結時，斜接角聯結的長度會受到值[ `StrokeMiter` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeMiter/)屬性`SKPaint`。 超過此長度斜接角聯結砍變成斜面聯結。
 

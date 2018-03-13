@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 2b16fd970e724228215fd0dd1c9022227ab84435
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c40e9291e81770435535de7b0c83d6c865cbed58
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-stacked-view"></a>使用堆疊檢視
 
@@ -23,7 +23,7 @@ _本文涵蓋設計和 Xamarin.tvOS 應用程式內使用堆疊檢視。_
 
 它會根據開發人員定義的屬性，例如軸、 發佈、 對齊和間距管理附加至堆疊檢視所有 subviews 的版面配置：
 
-[ ![](stacked-views-images/stacked01.png "子檢視配置圖表")](stacked-views-images/stacked01.png)
+[![](stacked-views-images/stacked01.png "子檢視配置圖表")](stacked-views-images/stacked01.png#lightbox)
 
 當使用`UIStackView`是 Xamarin.tvOS 應用程式中，開發人員可以定義 subviews 分鏡腳本設計工具中，在 iOS 中或透過加入和移除 subviews C# 程式碼內。
 
@@ -103,21 +103,21 @@ _本文涵蓋設計和 Xamarin.tvOS 應用程式內使用堆疊檢視。_
 1. 在**方案板**，按兩下`Main.storyboard`檔案，並開啟它進行編輯。
 1. 設計您的個別項目所要新增到 堆疊檢視的配置： 
 
-    [ ![](stacked-views-images/layout01.png "項目配置範例")](stacked-views-images/layout01.png)
+    [![](stacked-views-images/layout01.png "項目配置範例")](stacked-views-images/layout01.png#lightbox)
 1. 將任何必要的條件約束加入至元素，以確保它們正確縮放。 項目新增到 堆疊檢視後，這個步驟很重要。
 1. 進行所需的複本 （在此情況下四） 數目： 
 
-    [ ![](stacked-views-images/layout02.png "所需的複本數目")](stacked-views-images/layout02.png)
+    [![](stacked-views-images/layout02.png "所需的複本數目")](stacked-views-images/layout02.png#lightbox)
 1. 拖曳**堆疊檢視**從**工具箱**並將它放在檢視上： 
 
-    [ ![](stacked-views-images/layout03.png "堆疊檢視")](stacked-views-images/layout03.png)
+    [![](stacked-views-images/layout03.png "堆疊檢視")](stacked-views-images/layout03.png#lightbox)
 1. 選取 堆疊檢視 中**Widget 索引標籤**的**屬性板**選取**填滿**如**對齊**，**填滿同樣**如**發佈**輸入`25`如**間距**: 
 
-    [ ![](stacked-views-images/layout04.png "[小工具] 索引標籤")](stacked-views-images/layout04.png)
+    [![](stacked-views-images/layout04.png "[小工具] 索引標籤")](stacked-views-images/layout04.png#lightbox)
 1. 將 堆疊檢視，其中它並將條件約束，以將它保存在必要位置在螢幕上。
 1. 選取的個別項目，並將它們拖曳至 堆疊檢視： 
 
-    [ ![](stacked-views-images/layout05.png "堆疊檢視中的個別項目")](stacked-views-images/layout05.png)
+    [![](stacked-views-images/layout05.png "堆疊檢視中的個別項目")](stacked-views-images/layout05.png#lightbox)
 1. 將會調整版面配置和項目會排列在根據您設定上述屬性 堆疊檢視。
 1. 指派**名稱**中**Widget 索引標籤**的**屬性總管**使用 C# 程式碼將 UI 控制項。
 1. 儲存您的變更。
@@ -127,21 +127,21 @@ _本文涵蓋設計和 Xamarin.tvOS 應用程式內使用堆疊檢視。_
 1. 在**方案總管 中**，按兩下`Main.storyboard`檔案，並開啟它進行編輯。
 1. 設計您的個別項目所要新增到 堆疊檢視的配置： 
 
-    [ ![](stacked-views-images/layout01.png "範例項目配置")](stacked-views-images/layout01.png)
+    [![](stacked-views-images/layout01.png "範例項目配置")](stacked-views-images/layout01.png#lightbox)
 1. 將任何必要的條件約束加入至元素，以確保它們正確縮放。 項目新增到 堆疊檢視後，這個步驟很重要。
 1. 進行所需的複本 （在此情況下四） 數目： 
 
-    [ ![](stacked-views-images/layout02.png "所需的複本數目")](stacked-views-images/layout02.png)
+    [![](stacked-views-images/layout02.png "所需的複本數目")](stacked-views-images/layout02.png#lightbox)
 1. 拖曳**堆疊檢視**從**工具箱**並將它放在檢視上： 
 
-    [ ![](stacked-views-images/layout03-vs.png "堆疊檢視")](stacked-views-images/layout03-vs.png)
+    [![](stacked-views-images/layout03-vs.png "堆疊檢視")](stacked-views-images/layout03-vs.png#lightbox)
 1. 選取 堆疊檢視 中**Widget 索引標籤**的**屬性總管**選取**填滿**如**對齊**，**填滿同樣**如**發佈**輸入`25`如**間距**: 
 
-    [ ![](stacked-views-images/layout04-vs.png "[小工具] 索引標籤")](stacked-views-images/layout04-vs.png)
+    [![](stacked-views-images/layout04-vs.png "[小工具] 索引標籤")](stacked-views-images/layout04-vs.png#lightbox)
 1. 將 堆疊檢視，其中它並將條件約束，以將它保存在必要位置在螢幕上。
 1. 選取的個別項目，並將它們拖曳至 堆疊檢視： 
 
-    [ ![](stacked-views-images/layout05-vs.png "堆疊檢視中的個別項目")](stacked-views-images/layout05-vs.png)
+    [![](stacked-views-images/layout05-vs.png "堆疊檢視中的個別項目")](stacked-views-images/layout05-vs.png#lightbox)
 1. 將會調整版面配置和項目會排列在根據您設定上述屬性 堆疊檢視。
 1. 指派**名稱**中**Widget 索引標籤**的**屬性總管**使用 C# 程式碼將 UI 控制項。
 1. 儲存您的變更。
@@ -190,11 +190,11 @@ partial void PlayerCountChanged (Foundation.NSObject sender) {
 
 執行應用程式時，四個項目會平均分散我們堆疊檢視中：
 
-[ ![](stacked-views-images/layout06.png "執行應用程式時，四個項目會平均散發我們堆疊檢視中")](stacked-views-images/layout06.png)
+[![](stacked-views-images/layout06.png "執行應用程式時，四個項目會平均散發我們堆疊檢視中")](stacked-views-images/layout06.png#lightbox)
 
 就會減少的播放程式數目，如果未使用的檢視會隱藏起來，並堆疊檢視調整配置以符合：
 
-[ ![](stacked-views-images/layout07.png "就會減少的播放程式數目，如果未使用的檢視會隱藏和堆疊檢視調整以符合的版面配置")](stacked-views-images/layout07.png)
+[![](stacked-views-images/layout07.png "就會減少的播放程式數目，如果未使用的檢視會隱藏和堆疊檢視調整以符合的版面配置")](stacked-views-images/layout07.png#lightbox)
 
 <a name="Populate-a-Stack-View-from-Code" />
 

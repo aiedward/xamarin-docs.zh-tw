@@ -7,18 +7,17 @@ ms.assetid: 58CB7B34-3140-4BEB-BE2E-209928C1878C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 5a8b51f6c63d8632e71d1cddabb0c37758ee02f0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 907af0948e9d081f05cc201c49f94629a513c935
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="understanding-android-api-levels"></a>了解 Android API 層級
 
 _Xamarin.Android 的數個 Android API 層級設定會決定使用多個版本的 Android 應用程式的相容性。本指南說明這些設定代表什麼意思，如何進行設定，以及效果為何他們對您的應用程式在執行階段。_
 
-<a name="quick" />
 
 ## <a name="quick-start"></a>快速入門
 
@@ -37,30 +36,30 @@ Xamarin.Android 會公開三個 Android API 層級的專案設定：
 一般來說，所有三個 Xamarin.Android API 層級會設定為相同的值。 在**應用程式**頁面上，設定**使用 Android 版本 (目標 Framework) 編譯**最新穩定的 API 版本 （或至少具有所有所需的功能的 Android 版本）。
 在下列螢幕擷取畫面中，目標 Framework 設定為**Android 7.1 (API 層級 25-Nougat)**:
 
-[![目標 Framework 版本預設為使用 Android 版本編譯](android-api-levels-images/vs-defaults-sml.png)](android-api-levels-images/vs-defaults.png)
+[![目標 Framework 版本預設為使用 Android 版本編譯](android-api-levels-images/vs-defaults-sml.png)](android-api-levels-images/vs-defaults.png#lightbox)
 
 在**Android 資訊清單**頁面上，設定 Android 最低版本為**使用 SDK 版本編譯使用**和相同的值 （在下列程式碼的目標 Framework 版本設定的目標 Android 版本螢幕擷取畫面，Android 目標架構設為**Android 7.1 (Nougat)**):
 
-[![最小值和目標 Android 版本設為目標的 Framework 版本](android-api-levels-images/vs-manifest-defaults-sml.png)](android-api-levels-images/vs-manifest-defaults.png)
+[![最小值和目標 Android 版本設為目標的 Framework 版本](android-api-levels-images/vs-manifest-defaults-sml.png)](android-api-levels-images/vs-manifest-defaults.png#lightbox)
 
 如果您想要維持回溯相容性的較舊版本的 Android，設定**Android 最小版本到目標**Android 的最舊版本，您想要支援您的應用程式。 (請注意，應用程式開發介面層級 14 所需的最低 API 層級[Google Play 服務和 Firebase 支援](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html)。)下列範例組態中可支援應用程式開發介面層級 14 到 25 的 API 層級的 Android 版本：
 
-[![使用 API 層級 25 編譯 Nougat，設為應用程式開發介面層級 14 的 Android 最低版本](android-api-levels-images/vs-minimum-sml.png)](android-api-levels-images/vs-minimum.png)
+[![使用 API 層級 25 編譯 Nougat，設為應用程式開發介面層級 14 的 Android 最低版本](android-api-levels-images/vs-minimum-sml.png)](android-api-levels-images/vs-minimum.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 一般來說，所有三個 Xamarin.Android API 層級會設定為相同的值。 設定**目標 framework**最新穩定的 API 版本 （或至少具有所有所需的功能的 Android 版本）。 若要設定**目標 framework**，瀏覽至**建置 > 一般**中**專案選項**。 在下列螢幕擷取畫面中，目標 Framework 設定為**使用最新安裝的平台 (8.0)**:
 
-[![預設為使用最新安裝的平台的目標 framework](android-api-levels-images/xs-default-target-sml.png)](android-api-levels-images/xs-default-target.png)
+[![預設為使用最新安裝的平台的目標 framework](android-api-levels-images/xs-default-target-sml.png)](android-api-levels-images/xs-default-target.png#lightbox)
 
 您可以找到的最小值和目標 Android 版本設定**建置 > Android 應用程式**中**專案選項**。 設定 Android 最低版本為**Automatic-使用目標 framework 版本**和相同的值的目標 Framework 版本設定的目標 Android 版本。 在下列螢幕擷取畫面中，Android 目標架構設為**Android 8.0 (API level 26)**以符合上述的目標 Framework 設定：
 
-[![專案選項中設定的目標和架構層級](android-api-levels-images/xs-default-app-sml.png)](android-api-levels-images/xs-default-app.png)
+[![專案選項中設定的目標和架構層級](android-api-levels-images/xs-default-app-sml.png)](android-api-levels-images/xs-default-app.png#lightbox)
 
 如果您想要維持回溯相容性的較舊版本的 Android，變更**Android 最小版本**Android 的最舊版本，您想要支援您的應用程式。 請注意，應用程式開發介面層級 14 所需的最低 API 層級[Google Play 服務和 Firebase 支援](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html)。
 例如，下列組態支援 Android 版本早 API 層級 14:
 
-[ ![最小值和目標版本設為 Automatic-使用目標 framework 版本](android-api-levels-images/xs-minimum-sml.png)](android-api-levels-images/xs-minimum.png)
+[![最小值和目標版本設為 Automatic-使用目標 framework 版本](android-api-levels-images/xs-minimum-sml.png)](android-api-levels-images/xs-minimum.png#lightbox)
 
 -----
 
@@ -68,13 +67,11 @@ Xamarin.Android 會公開三個 Android API 層級的專案設定：
 如果您的應用程式支援多個的 Android 版本，您的程式碼必須包含執行階段檢查，以確保您的應用程式使用的 Android 最低的版本設定 (請參閱[Android 版本的執行階段會檢查](#runtimechecks)下方如需詳細資訊)。 如果您要使用或建立程式庫，請參閱[API 層級和文件庫](#libraries)以下的最佳作法設定應用程式開發介面層級的文件庫設定。
 
 
-<a name="verslevels" />
 
 ## <a name="android-versions-and-api-levels"></a>Android 版本和應用程式開發介面層級
 
 每個 Android 版本 Android 平台發展，並有新的 Android 版本發行時，會指派唯一整數識別碼，稱為*API 層級*。 因此，每個 Android 版本會對應至單一的 Android API 層級。 使用者會安裝較舊的以及最新版本的 Android 應用程式，因為真實世界的 Android 應用程式必須設計成使用多個 Android API 層級。
 
-<a name="versions" />
 
 ### <a name="android-versions"></a>Android 版本
 
@@ -145,7 +142,6 @@ Android 的程式碼名稱可能對應到多個版本與應用程式開發介面
 
 因為此清單指出，經常發行新版的 Android&ndash;有時每年的數個版本。 如此一來，可能會執行您的應用程式的 Android 裝置的 universe 包含的各種不同的舊版和新版的 Android 版本。 您要如何保證您的應用程式將會一致且可靠地執行這麼多的不同版本的 Android？ Android 的應用程式開發介面層級可以協助您管理這個問題。
 
-<a name="apilevels" />
 
 ### <a name="android-api-levels"></a>Android API 層級
 
@@ -159,13 +155,11 @@ Android 的程式碼名稱可能對應到多個版本與應用程式開發介面
 
 這些設定會用來確保在安裝期間，正確地執行應用程式所需的功能是 Android 裝置上的可用。 如果沒有，則會封鎖該裝置上執行應用程式。 例如，如果 Android 裝置的應用程式開發介面層級低於您指定應用程式的最小 API 層級，在 Android 裝置會防止使用者安裝應用程式。
 
-<a name="settings" />
 
 ## <a name="project-api-level-settings"></a>應用程式開發介面層級的專案設定
 
 下列各節將說明如何使用 SDK Manager 準備您的開發環境的應用程式開發介面層級做為目標，後面接著詳細說明如何設定*目標 Framework*，*最小值Android 版本*，和*目標 Android 版本*Xamarin.Android 中的設定。
 
-<a name="sdk" />
 
 ### <a name="android-sdk-platforms"></a>Android SDK 平台
 
@@ -182,7 +176,7 @@ Xamarin.Android 中選取的目標或最小 API 層級之前，您必須安裝�
 我們建議，您一律使用編譯*最新*可用的目標 Framework 版本。 如此一來您提供很有幫助的警告訊息的任何已被取代的 Api，可能會由您的程式碼呼叫。 當您使用最新的支援程式庫版本時使用的最新的目標 Framework 版本是特別重要&ndash;每個程式庫預期您的應用程式是編譯該支援程式庫的最小 API 層級或更高。 
 
 > [!NOTE]
-> **注意：**從 8 月 2018年，Google 播放主控台將會需要新的應用程式目標應用程式開發介面層級 26 (Android 8.0) 或更高版本。
+> 從 8 月 2018年，Google 播放主控台將會需要新的應用程式目標應用程式開發介面層級 26 (Android 8.0) 或更高版本。
 現有的應用程式必須以 API 層級 26 或更高版本在 11 月版 2018年開頭為目標。 如需詳細資訊，請參閱[改善應用程式安全性和效能返回年的 Google Play 上](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html)。
 
 
@@ -190,7 +184,7 @@ Xamarin.Android 中選取的目標或最小 API 層級之前，您必須安裝�
 
 若要存取 Visual Studio 中的目標 Framework 設定，開啟 [專案屬性中的**方案總管] 中**選取**應用程式**頁面：
 
-[![應用程式專案屬性 頁面](android-api-levels-images/vs-target-framework-sml.png)](android-api-levels-images/vs-target-framework.png)
+[![應用程式專案屬性 頁面](android-api-levels-images/vs-target-framework-sml.png)](android-api-levels-images/vs-target-framework.png#lightbox)
 
 在下拉式功能表中選取應用程式開發介面層級設定目標 Framework**使用 Android 版本編譯**如上所示。
 
@@ -198,7 +192,7 @@ Xamarin.Android 中選取的目標或最小 API 層級之前，您必須安裝�
 
 若要存取 Visual Studio 中的目標 Framework 設定適用於 Mac，以滑鼠右鍵按一下專案名稱，然後選取**選項**; 這會開啟**專案選項**對話方塊。 在這個對話方塊中，瀏覽至**建置 > 一般**如下所示：
 
-[![建立 [一般] 區段中的 [專案選項] 頁面](android-api-levels-images/xs-target-framework-sml.png)](android-api-levels-images/xs-target-framework.png)
+[![建立 [一般] 區段中的 [專案選項] 頁面](android-api-levels-images/xs-target-framework-sml.png)](android-api-levels-images/xs-target-framework.png#lightbox)
 
 目標 Framework 設定右邊的下拉式選單中選取的應用程式開發介面層級**目標 framework**如上所示。
 
@@ -219,7 +213,7 @@ Xamarin.Android 中選取的目標或最小 API 層級之前，您必須安裝�
 
 若要存取 Visual Studio 中的最小值 Android 版本設定，開啟 [專案屬性中的**方案總管] 中**選取**Android 資訊清單**頁面。 在底下的下拉式清單功能表**Android 最小版本**您可以為您的應用程式選取 Android 最小版本：
 
-[![目標選項設定為使用 SDK 版本編譯的最小 Android](android-api-levels-images/vs-minimum-version-sml.png)](android-api-levels-images/vs-minimum-version.png)
+[![目標選項設定為使用 SDK 版本編譯的最小 Android](android-api-levels-images/vs-minimum-version-sml.png)](android-api-levels-images/vs-minimum-version.png#lightbox)
 
 如果您選取**使用 SDK 版本編譯使用**，最小值 Android 版本會做為目標架構設定相同。
 
@@ -228,7 +222,7 @@ Xamarin.Android 中選取的目標或最小 API 層級之前，您必須安裝�
 若要存取 Visual Studio 中的目標 Framework 設定適用於 Mac，以滑鼠右鍵按一下專案名稱，然後選取**選項**; 這會開啟**專案選項**對話方塊。 瀏覽至**建置 > Android 應用程式**。
 使用右邊的下拉式選單**Android 最小版本**，您可以設定您的應用程式的 Android 最低版本：
 
-[ ![最低的 Android 版本設為 Automatic-使用目標 framework 版本](android-api-levels-images/xs-minimum-version-sml.png)](android-api-levels-images/xs-minimum-version.png)
+[![最低的 Android 版本設為 Automatic-使用目標 framework 版本](android-api-levels-images/xs-minimum-version-sml.png)](android-api-levels-images/xs-minimum-version.png#lightbox)
 
 如果您選取**自動&ndash;使用目標 framework 版本**，最小值 Android 版本會做為目標架構設定相同。
 
@@ -247,7 +241,7 @@ Xamarin.Android 中選取的目標或最小 API 層級之前，您必須安裝�
 
 若要存取這項設定 Visual Studio 中的，開啟 [專案屬性中的**方案總管] 中**選取**Android 資訊清單**頁面。 在底下的下拉式清單功能表**目標 Android 版本**您可以為您的應用程式選取的目標 Android 版本：
 
-[![設定為使用 SDK 版本編譯的目標 Android 版本](android-api-levels-images/vs-target-version-sml.png)](android-api-levels-images/vs-target-version.png)
+[![設定為使用 SDK 版本編譯的目標 Android 版本](android-api-levels-images/vs-target-version-sml.png)](android-api-levels-images/vs-target-version.png#lightbox)
 
 我們建議您明確設定為最新版的 Android 您用來測試您的應用程式的目標 Android 版本。 在理想情況下，它應該設定為最新版的 Android SDK&ndash;這可讓您使用新的 Api，透過的行為變更的工作之前。 大部分的開發人員，我們*不*建議您將設定的目標 Android 版本**使用 SDK 版本編譯使用**。
 
@@ -256,7 +250,7 @@ Xamarin.Android 中選取的目標或最小 API 層級之前，您必須安裝�
 若要存取 Visual Studio 中的目標 Framework 設定適用於 Mac，以滑鼠右鍵按一下專案名稱，然後選取**選項**; 這會開啟**專案選項**對話方塊。 瀏覽至**建置 > Android 應用程式**。
 使用右邊的下拉式選單**目標 Android 版本**，您可以設定您的應用程式的目標 Android 版本：
 
-[![目標 Android 版本設為 Automatic-使用目標 framework 版本](android-api-levels-images/xs-target-version-sml.png)](android-api-levels-images/xs-target-version.png)
+[![目標 Android 版本設為 Automatic-使用目標 framework 版本](android-api-levels-images/xs-target-version-sml.png)](android-api-levels-images/xs-target-version.png#lightbox)
 
 我們建議您明確設定為最新版的 Android 您用來測試您的應用程式的目標 Android 版本。 在理想情況下，它應該設定為最新可用的 Android SDK 版本&ndash;這可讓您使用新的 Api，透過的行為變更的工作之前。 大部分的開發人員，我們不建議設定的 Android 目標版本為**Automatic-使用目標 framework 版本**。
 
@@ -311,14 +305,14 @@ else
 
 當您建立 Xamarin.Android 程式庫專案 （例如類別庫或繫結的程式庫） 時，您可以設定目標 Framework 設定&ndash;不提供 Android 最小版本和目標 Android 版本設定。 這是因為沒有任何**Android 資訊清單**頁面：
 
-[![只有在編譯使用 Android 版本 選項可供](android-api-levels-images/vs-library-options-sml.png)](android-api-levels-images/vs-library-options.png)
+[![只有在編譯使用 Android 版本 選項可供](android-api-levels-images/vs-library-options-sml.png)](android-api-levels-images/vs-library-options.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 當您建立的 Xamarin.Android 程式庫專案時，沒有任何**Android 應用程式**頁面，您可以在其中設定 Android 最小版本和目標 Android 版本&ndash;Android 最小版本和目標無法使用 android 版本設定。
 這是因為沒有任何**建置 > Android 應用程式**頁面):
 
-[ ![建立沒有最小值和目標版本選項 [一般] 頁面](android-api-levels-images/xs-library-options-sml.png)](android-api-levels-images/xs-library-options.png)
+[![建立沒有最小值和目標版本選項 [一般] 頁面](android-api-levels-images/xs-library-options-sml.png)](android-api-levels-images/xs-library-options.png#lightbox)
 
 -----
 

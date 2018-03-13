@@ -6,12 +6,12 @@ ms.assetid: 405A1FA0-4EFA-4AEB-B672-F36307B9CF16
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 83997018f4e08567a9150bf1e21374a98c8ddb4e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 1d9cf345aa971c40f4132cc7970ed1244640da14
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="touch-in-android"></a>在 Android 觸控
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 02/27/2018
 
 
 > [!NOTE]
-> **注意：**並非所有的 Android 裝置支援觸控式螢幕。 
+> 並非所有的 Android 裝置支援觸控式螢幕。 
 
 將下列標記加入至您的資訊清單檔案會造成 Google Play 只顯示您的應用程式啟用觸控式裝置：
 
@@ -90,11 +90,11 @@ public override bool OnTouchEvent(MotionEvent e)
 
 自 Android 1.6，Android SDK 會隨附預先安裝模擬器呼叫筆勢產生器上的應用程式。 此應用程式可讓開發人員建立可內嵌於應用程式的預先定義的手勢。 下列螢幕擷取畫面顯示筆勢產生器的範例：
 
-[![螢幕擷取畫面的筆勢產生器與範例的筆勢](touch-in-android-images/image11.png)](touch-in-android-images/image11.png)
+[![螢幕擷取畫面的筆勢產生器與範例的筆勢](touch-in-android-images/image11.png)](touch-in-android-images/image11.png#lightbox)
 
 此應用程式稱為筆勢工具的改良的版本可以找到 Google Play。 筆勢工具非常類似筆勢產生器不同之處在於它可讓您測試之後已建立的筆勢。 這個下一個螢幕擷取畫面顯示筆勢產生器：
 
-[![筆勢工具的螢幕擷取畫面以範例手勢](touch-in-android-images/image12.png)](touch-in-android-images/image12.png)
+[![筆勢工具的螢幕擷取畫面以範例手勢](touch-in-android-images/image12.png)](touch-in-android-images/image12.png#lightbox)
 
 筆勢工具更適用於建立自訂軌跡，因為它可讓它們正在建立要測試手勢，並輕鬆地透過 Google Play 取得。
 

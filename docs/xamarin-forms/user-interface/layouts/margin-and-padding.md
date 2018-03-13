@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 7bab512ef11f8e0f553a00f0240d82f860fe2676
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 461430ba27b5d6008338019e5feaebed7b09d4cb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="margin-and-padding"></a>邊界和邊框距離
 
@@ -27,7 +27,7 @@ _邊界和邊框間距屬性控制版面配置時的行為項目會呈現使用�
 
 下圖說明兩個概念：
 
-[![](margin-and-padding-images/margins-and-padding-sml.png "邊界和邊框距離概念")](margin-and-padding-images/margins-and-padding.png "邊界和邊框距離概念")
+[![](margin-and-padding-images/margins-and-padding-sml.png "邊界和邊框距離概念")](margin-and-padding-images/margins-and-padding.png#lightbox "邊界和邊框距離概念")
 
 請注意， [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/)的值為加總。 因此，如果兩個相鄰的項目指定 20 像素的邊界，項目之間的距離會 40 像素為單位。 此外，邊界和邊框距離會同時套用時，邊界和邊框距離，將會是項目及任何內容之間的距離，加法。
 
@@ -63,7 +63,7 @@ var stackLayout = new StackLayout {
 ```
 
 > [!NOTE]
-> **請注意**:`Thickness`值可以是負數，這通常會裁剪，或物件內容。
+> `Thickness` 值可以是負數，，這通常會裁剪，或物件內容。
 
 ## <a name="summary"></a>總結
 

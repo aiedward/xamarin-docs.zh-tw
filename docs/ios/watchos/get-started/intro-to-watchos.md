@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 55d692fa92dd08dd9c0887ed10013589afc98ec6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2276b67fc29f2752e4b178168a12e6e980b788d0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-watchos"></a>WatchOS 簡介
 
@@ -29,11 +29,11 @@ WatchOS 應用程式方案有 3 的專案：
 
 在 watchOS 1 應用程式，在 iPhone 上執行的擴充功能中的程式碼-Apple Watch 是有效的外部顯示器。 完全在 Apple Watch 上執行 watchOS 2 和 3 的應用程式。 下圖顯示這項差異：
 
-[ ![](intro-to-watchos-images/arch-sml.png "在此圖中顯示 watchOS 1 和 2 （和大於） watchOS 之間的差異")](intro-to-watchos-images/arch.png)
+[ ![](intro-to-watchos-images/arch-sml.png "在此圖中顯示 watchOS 1 和 2 （和大於） watchOS 之間的差異")](intro-to-watchos-images/arch.png#lightbox)
 
 不論 watchOS 的版本為目標，在 Visual Studio for Mac 的方案板的完整解決方案看起來像這樣：
 
-[ ![](intro-to-watchos-images/projectstructure-sml.png "方案填補")](intro-to-watchos-images/projectstructure.png)
+[![](intro-to-watchos-images/projectstructure-sml.png "方案填補")](intro-to-watchos-images/projectstructure.png#lightbox)
 
 *父應用程式*watchOS 中解決方案是一般的 iOS 應用程式。 這是唯一的專案，在方案中，會顯示**電話**。 此應用程式的使用案例包括教學課程、 系統管理畫面和中介層篩選 cacheing 等等。不過，可能會安裝及執行監看式應用程式/擴充功能不含使用者**曾經**具有開啟父應用程式，因此如果您需要父應用程式執行一次初始化或系統管理，您需要程式設計您監看式要告訴使用者的應用程式/擴充功能的。
 
@@ -139,4 +139,4 @@ Apple Watch 有兩個圖示的大小： 38 公釐，42 公釐，都具有 5:4 �
 - [第一個監看式應用程式的視訊](http://blog.xamarin.com/your-first-watch-kit-app/)
 - [Apple 的開發的監看式組件指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html)
 - [Apple 的 WatchKit 秘訣](https://developer.apple.com/watchkit/tips/)
-- [WatchOS 3 簡介](~/ios/watchos/platform/introduction-to-watchos3/index.md)
+- [watchOS 3 簡介](~/ios/watchos/platform/introduction-to-watchos3/index.md)

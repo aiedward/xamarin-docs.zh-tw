@@ -5,20 +5,24 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2016
-ms.openlocfilehash: b2decf1331764ed6b1696126d8b23318e329e0c7
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 38d3b6da0dd33e038f2d50209280f2983faf6013
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-indexing-and-deep-linking"></a>應用程式編製索引和深層連結
 
 _應用程式編製索引，可讓會後一些使用搜尋結果中出現的停留相關否則忘記的應用程式。深層連結，可讓應用程式來瀏覽至頁面，參考從深層連結通常包含應用程式資料的搜尋結果的回應。本文示範如何使用應用程式的索引，以及讓 iOS 和 Android 裝置上搜尋 Xamarin.Forms 應用程式內容的深層連結。_
 
-## <a name="overview"></a>總覽
+> [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
+
+**深層連結 Xamarin.Forms 和 Azure 中，藉由[Xamarin 大學](https://university.xamarin.com/)**
+
 
 Xamarin.Forms 應用程式編製索引和深層連結應用程式開發介面提供應用程式編製索引，當使用者瀏覽應用程式的發行中繼資料。 索引的內容則如搜尋，Spotlight 搜尋、 在 Google 搜尋中，或是在 web 搜尋。 點選搜尋結果，其中包含深層連結會引發事件，可以由應用程式，並通常用來瀏覽至參照從深層連結的頁面。
 
@@ -31,7 +35,7 @@ Xamarin.Forms 應用程式編製索引和深層連結應用程式開發介面提
 如需使用 SQLite 資料庫的詳細資訊，請參閱[使用本機資料庫](~/xamarin-forms/app-fundamentals/databases.md)。
 
 > [!NOTE]
-> **請注意**: Xamarin.Forms 應用程式編製索引和深度連結功能僅適用於 iOS 和 Android 平台，而且分別需要 iOS 9 和 API 23。
+> Xamarin.Forms 應用程式編製索引及深層連結功能僅適用於 iOS 和 Android 平台，而且分別需要 iOS 9 和 API 23。
 
 ## <a name="setup"></a>安裝程式
 
@@ -106,7 +110,7 @@ Application.Current.AppLinks.RegisterLink (appLink);
 這樣會加入[ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/)應用程式的執行個體[ `AppLinks` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.AppLinks/)集合。
 
 > [!NOTE]
-> **請注意**:`RegisterLink`方法也可用來更新已編製索引的頁面內容。
+> `RegisterLink`方法也可用來更新已編製索引的頁面內容。
 
 一次[ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/)執行個體已註冊的索引，它可以出現在搜尋結果。 下列螢幕擷取畫面顯示索引在 iOS 平台上的搜尋結果中出現的內容：
 
@@ -123,7 +127,7 @@ Application.Current.AppLinks.DeregisterLink (appLink);
 這會移除[ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/)從應用程式的執行個體[ `AppLinks` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.AppLinks/)集合。
 
 > [!NOTE]
-> **請注意**： 在 Android 上就不可能從搜尋結果中移除索引的內容。
+> 在 Android 上不可以從搜尋結果中移除索引的內容。
 
 <a name="responding" />
 
@@ -211,7 +215,7 @@ pageLink.KeyValues.Add("companyName", "Xamarin");
 - `shouldAddToPublicIndex` –`string`的其中一個`true`或`false`可控制是否要將索引的內容加入至 Apple 的公用雲端索引，然後向未在其 iOS 裝置安裝的應用程式的使用者。 不過，內容已設定公用編製索引，因為它並不表示，它就會自動加入至 Apple 的公用雲端的索引。 如需詳細資訊，請參閱[公用搜尋索引](~/ios/platform/search/nsuseractivity.md)。 請注意，這個金鑰應該設定為`false`時新增至個人資料[ `KeyValues` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.KeyValues/)集合。
 
 > [!NOTE]
-> **請注意**:`KeyValues`集合不會在 Android 平台上使用。
+> `KeyValues`集合不會在 Android 平台上使用。
 
 如需遞移式的詳細資訊，請參閱[簡介遞交](~/ios/platform/handoff.md)。
 

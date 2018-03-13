@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 14345503-1742-41F5-B2EF-EE31AB7C3516
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: 8c40472f794be9a21045da4f4477d4104c3ddbdd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7246379fbe5918671de68cd4af10d1ce497e7c4e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-tvos"></a>TvOS 簡介
 
@@ -23,6 +24,10 @@ Apple 已發行的第 5 個層代 Apple TV 硬體，Apple TV 4 K 執行 tvOS 作
 Apple TV 平台會開啟開發人員，讓它們來建立豐富、 沈浸式應用程式，並釋放它們透過 Apple 電視遙控器的內建應用程式市集。
 
 如需有關 tvOS 的詳細資訊，請參閱[入門](~/ios/tvos/get-started/index.md)文件。
+
+> [!VIDEO https://youtube.com/embed/Q04oIYymfGM]
+
+**使用 Xamarin，tvOS 由[Xamarin 大學](https://university.xamarin.com/)**
 
 ## <a name="documentation"></a>文件
 

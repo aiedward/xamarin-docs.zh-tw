@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 0486b9e4371a1bcab02921da42bcb929f00a782f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8595ecb63e49a4768120e98f41826b74c2dd43e4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="fragments"></a>片段
 
@@ -28,13 +28,13 @@ _Android 3.0 引進了片段，示範如何以更具彈性的設計支援在手�
 
 例如下, 圖說明單一應用程式如何跨不同裝置的表單係數使用片段。
 
-[![片段平板電腦和話筒中的使用方式的圖表](images/00.png)](images/00.png)
+[![片段平板電腦和話筒中的使用方式的圖表](images/00.png)](images/00.png#lightbox)
 
 *片段的*包含清單，而*片段 B*包含該清單中選取之項目的詳細資料。 平板電腦上執行應用程式時，它可以顯示兩個片段上相同的活動。 話筒 （具有較小的螢幕大小） 上執行相同的應用程式時，片段會裝載於兩個不同的活動。 片段 A 和 B 片段上是相同的這兩種尺寸，但不同裝載它們的活動。
 
 為了幫助協調和管理所有這些片段的活動，Android 導入了新的類別稱為*FragmentManager*。 每個活動都有自己的執行個體`FragmentManager`新增、 刪除和尋找裝載片段。 下圖說明片段與活動之間的關聯性：
 
-[![說明活動、 片段管理員 中，與片段之間的關聯性的圖表](images/01.png)](images/01.png)
+[![說明活動、 片段管理員 中，與片段之間的關聯性的圖表](images/01.png)](images/01.png#lightbox)
 
 在某些方面，片段可以想像為複合控制項或迷你活動。 這些組合向上 UI 段為可重複使用的模組可以使用獨立開發人員在活動中。 片段沒有檢視階層架構，就像活動 — 但不同於活動，它可以共用跨螢幕。 檢視不同片段，片段會有自己的週期。檢視則否。
 
@@ -51,11 +51,11 @@ _Android 3.0 引進了片段，示範如何以更具彈性的設計支援在手�
 
 片段是可在 Android SDK API 層級 11 (Android 3.0) 為開頭，如下列螢幕擷取畫面所示：
 
-[![Android SDK Manager 中選取的應用程式開發介面層級](images/02.png)](images/02.png)
+[![Android SDK Manager 中選取的應用程式開發介面層級](images/02.png)](images/02.png#lightbox)
 
 片段是 Xamarin.Android 4.0 和更新版本。 Xamarin.Android 應用程式必須至少為目標 API 層級 11 (Android 3.0) 或更高版本，才能使用片段。 目標 Framework 可能會設定專案選項 中，如下所示：
 
-[![專案選項中設定的目標 Framework 應用程式開發介面層級](images/03.png)](images/03.png)
+[![專案選項中設定的目標 Framework 應用程式開發介面層級](images/03.png)](images/03.png#lightbox)
 
 很可能在使用的 Android 支援封裝和 Xamarin.Android 4.2 Android 或更高版本的舊版本中使用片段。 在這一節的文件中的更詳細地討論如何執行此動作。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 7566ebac0f487ef321c512c988c79f34e50777ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f13515326bd75f2b2c15e2b6059e6f829814ea5c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="local-notifications"></a>本機的通知
 
@@ -28,7 +28,7 @@ Android 提供兩個系統控制區域向使用者顯示通知圖示和通知資
 
 若要取得有關該通知的詳細資料，使用者可以開啟通知抽屜 （這會展開以顯示通知內容的每個通知圖示），並執行與通知相關聯的任何動作。 下列螢幕擷取畫面顯示*通知抽屜*對應至上方顯示的通知區域：
 
-[![範例顯示三個通知的通知抽屜](local-notifications-images/02-notification-drawer-sml.png)](local-notifications-images/02-notification-drawer.png)
+[![範例顯示三個通知的通知抽屜](local-notifications-images/02-notification-drawer-sml.png)](local-notifications-images/02-notification-drawer.png#lightbox)
 
 Android 的通知使用兩種類型的配置：
 
@@ -38,7 +38,6 @@ Android 的通知使用兩種類型的配置：
 
 下列各節將說明每個配置類型 （以及如何建立它們）。
 
-<a name="base-layout" />
 
 ### <a name="base-layout"></a>基底的版面配置
 
@@ -54,7 +53,7 @@ Android 的通知使用兩種類型的配置：
 
 這些項目會顯示下列圖表所示：
 
-[![通知元素的位置](local-notifications-images/03-notification-callouts-sml.png)](local-notifications-images/03-notification-callouts.png)
+[![通知元素的位置](local-notifications-images/03-notification-callouts-sml.png)](local-notifications-images/03-notification-callouts.png#lightbox)
 
 基底的配置會限制為 64 密度無關的像素 (dp) 的高度。 Android 會預設建立這個基本通知樣式。
 
@@ -64,13 +63,13 @@ Android 的通知使用兩種類型的配置：
 
 從 Android 5.0 開始，通知也會出現在鎖定畫面上：
 
-[![範例鎖定畫面通知](local-notifications-images/05-lockscreen-notification-sml.png)](local-notifications-images/05-lockscreen-notification.png)
+[![範例鎖定畫面通知](local-notifications-images/05-lockscreen-notification-sml.png)](local-notifications-images/05-lockscreen-notification.png#lightbox)
 
 使用者可以點選鎖定畫面通知，若要解除鎖定裝置並跳至的應用程式引發通知，或若要關閉通知撥動。 應用程式可以設定來控制在鎖定畫面，顯示的內容通知的可視性層級和使用者可以選擇是否允許敏感的內容會顯示在鎖定畫面通知。
 
 Android 5.0 引進稱為高優先權的告知呈現格式*抬頭*。 平視通知向下滑動從畫面頂端數秒鐘，然後撤退備份至通知區域：
 
-[![範例 heads-up 通知](local-notifications-images/06-heads-up-notification-sml.png)](local-notifications-images/06-heads-up-notification.png)
+[![範例 heads-up 通知](local-notifications-images/06-heads-up-notification-sml.png)](local-notifications-images/06-heads-up-notification.png#lightbox)
 
 平視通知可讓系統將不會中斷目前正在執行的活動狀態的重要資訊的 UI。
 
@@ -84,7 +83,6 @@ Android 包含通知中繼資料的支援，因此可以排序和以聰明的方
 
 **注意：** **可視性**和**類別**在 Android 5.0 和無法使用在舊版的 Android 中推出。 從 Android 8.0、[通知通道](#notif-chan)用來控制向使用者顯示通知的方式。
 
-<a name="expanded-layouts" />
 
 ### <a name="expanded-layouts"></a>展開的版面配置
 
@@ -106,7 +104,6 @@ Android 支援單一事件通知的三種擴充版面配置樣式：
 
 [除了基本通知](#beyond-the-basic-notification)（本文稍後） 說明如何建立*大文字*，*收件匣*，和*映像*通知。
 
-<a name="notification-creation" />
 
 ## <a name="notification-creation"></a>建立通知
 
@@ -127,7 +124,6 @@ Android 支援單一事件通知的三種擴充版面配置樣式：
 
 產生器中設定這些選項之後，您就會產生通知物件，包含的設定。 若要發行通知，您傳遞到此通知物件*通知管理員*。 Android 提供[NotificationManager](https://developer.xamarin.com/api/type/Android.App.NotificationManager/)類別，這是負責發行通知，並向使用者顯示它們。 可以從任何內容，例如活動或服務取得這個類別的參考。
 
-<a name="how-to-generate" />
 
 ### <a name="how-to-generate-a-notification"></a>如何產生通知
 
@@ -185,7 +181,6 @@ notificationManager.Notify (notificationId, notification);
 ```csharp
 builder.SetWhen (Java.Lang.JavaSystem.CurrentTimeMillis());
 ```
-<a name="sound-and-vibr" />
 
 ### <a name="enabling-sound-and-vibration"></a>啟用聲音和震動
 
@@ -265,7 +260,6 @@ notificationManager.Notify (notificationId, notification);
 
 如需有關更新 Android 的通知，請參閱[修改通知](http://developer.android.com/training/notify-user/managing.html#Updating)。
 
-<a name="starting-an-activity" />
 
 ### <a name="starting-an-activity-from-a-notification"></a>從通知開始活動
 
@@ -380,11 +374,11 @@ string message = Intent.Extras.GetString ("message", "");
 
 **YouTube**與 Android Oreo 一起安裝的應用程式會列出兩個通知類別：**下載通知**和**一般通知**:
 
-[![在 Android Oreo YouTube 通知螢幕](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png)
+[![在 Android Oreo YouTube 通知螢幕](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
 
 每個類別對應至在通知通道。 YouTube 應用程式實作**下載通知**通道和**一般通知**通道。 使用者可以點選**下載通知**，如應用程式的下載通知通道，其中會顯示 [設定] 畫面：
 
-[![下載 YouTube 應用程式的通知螢幕](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png)
+[![下載 YouTube 應用程式的通知螢幕](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png#lightbox)
 
 在此畫面中，使用者可以修改的行為**下載**通知通道，方法如下：
 
@@ -400,14 +394,13 @@ string message = Intent.Extras.GetString ("message", "");
 
 **一般通知**通道具有類似的設定：
 
-[![YouTube 應用程式的一般通知螢幕](local-notifications-images/29-yt-general-sml.png)](local-notifications-images/29-yt-general.png)
+[![YouTube 應用程式的一般通知螢幕](local-notifications-images/29-yt-general-sml.png)](local-notifications-images/29-yt-general.png#lightbox)
 
 請注意，您並沒有絕對通知通道與使用者之間的互動方式控制&ndash;使用者可以修改的任何裝置上的通知通道設定，如上面的螢幕擷取畫面所示。 不過，您可以設定預設值 （如下所述將是）。 如這些範例所示，則 新的通知通道功能可讓您為使用者提供更細微的控制不同種類的通知。
 
 您應該加入應用程式的通知通道支援？ 如果您的目標 Android 8.0、 您的應用程式*必須*實作通知通道。
 針對嘗試傳送給使用者的本機通知，而不使用的通知通道的 Oreo 應用程式將無法在 Oreo 裝置上顯示通知。 如果您不要的目標 Android 8.0，您的應用程式仍會執行 Android 8.0、 但具有相同的通知行為，因為它會在執行 Android 7.1 或更早版本時表現。
 
-<a name="notif-chan-create" />
 
 ### <a name="creating-a-notification-channel"></a>建立通知通道
 
@@ -448,7 +441,6 @@ string message = Intent.Extras.GetString ("message", "");
     notificationManager.CreateNotificationChannel (chan);
     ```
 
-<a name="notif-chan-post" />
 
 ### <a name="posting-to-a-notifications-channel"></a>張貼到通知通道
 
@@ -507,7 +499,6 @@ builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable
 這個程式碼範例會開啟在映像檔**Resources/drawable/monkey_icon.png**、 將它轉換成點陣圖，並將傳遞至產生的點陣圖`Notification.Builder`。 一般而言，來源影像解析度大於小圖示&ndash;但更大。 影像太大，可能會導致不必要的調整大小作業，可能會延遲與張貼的通知。
 如需有關在 Android 的通知圖示大小，請參閱[通知圖示](http://developer.android.com/design/style/iconography.html#notification)。
 
-<a name="big-text-style" />
 
 ### <a name="big-text-style"></a>大文字樣式
 
@@ -544,7 +535,6 @@ builder.SetStyle (textStyle);
 
 在此範例中，訊息文字和摘要文字會儲存在`BigTextStyle`物件 (`textStyle`) 傳遞至之前 `Notification.Builder.`
 
-<a name="image-style" />
 
 ### <a name="image-style"></a>影像樣式
 
@@ -609,7 +599,6 @@ builder.SetStyle (picStyle);
 
 如需有關載入和解碼大型點陣圖影像，請參閱[負載大型點陣圖有效率地](https://developer.xamarin.com/recipes/android/resources/general/load_large_bitmaps_efficiently)。
 
-<a name="inbox-style" />
 
 ### <a name="inbox-style"></a>收件匣樣式
 
@@ -645,13 +634,11 @@ builder.SetStyle (inboxStyle);
 
 您也可以使用*收件匣*樣式需要個別的程式碼行的文字顯示在擴充格式中任何通知。 例如，*收件匣*通知樣式可以用來結合多個暫止的通知至摘要通知&ndash;您可以更新單一*收件匣*樣式以新的通知通知內容各行 (請參閱[更新通知](#updating-a-notification)上面)，而不是比產生新的大部分類似通知的連續資料流。 如需這種方法的詳細資訊，請參閱[摘要說明您的通知](http://developer.android.com/design/patterns/notifications.html#summarize_your_notifications)。
 
-<a name="configuring-metadata" />
 
 ## <a name="configuring-metadata"></a>設定中繼資料
 
 `Notification.Builder` 包含您可以呼叫以設定您的通知，例如優先順序、 可見性和類別目錄的相關中繼資料的方法。 Android 使用這項資訊&mdash;使用者喜好設定以及&mdash;來判斷如何及何時要顯示通知。
 
-<a name="priority-settings" />
 
 ### <a name="priority-settings"></a>優先順序設定
 
@@ -694,7 +681,6 @@ builder.SetPriority (NotificationPriority.High);
 
 因為 「 一天的思考 」 通知是低優先權的通知，則 Android 不會顯示它 Heads-up 格式。
 
-<a name="visibility-settings" />
 
 ### <a name="visibility-settings"></a>可見性設定
 
@@ -719,7 +705,6 @@ builder.SetVisibility (NotificationVisibility.Private);
 
 在此範例中， **NotificationsLab**是原始的應用程式的名稱。 鎖定畫面時才安全顯示通知此 redacted 的版本 （亦即，透過 PIN、 模式或密碼保護）&ndash;鎖定畫面並不安全，通知的完整內容是否在鎖定畫面。
 
-<a name="category-settings" />
 
 ### <a name="category-settings"></a>類別目錄設定
 
@@ -791,7 +776,6 @@ Notification notification = builder.Build();
 
 [LocalNotifications](https://developer.xamarin.com/samples/monodroid/LocalNotifications)範例示範如何使用`NotificationCompat.Builder`啟動通知的第二個活動。 此範例程式碼中會說明[Xamarin.Android 中使用本機通知](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md)逐步解說。
 
-<a name="notification-styles" />
 
 ### <a name="notification-styles"></a>通知樣式
 
@@ -806,7 +790,6 @@ builder.SetStyle (textStyle);
 
 同樣地，您的應用程式可以使用`NotificationCompat.InboxStyle`和`NotificationCompat.BigPictureStyle`如*收件匣*和*映像*分別樣式。
 
-<a name="priority-and-category" />
 
 ### <a name="notification-priority-and-category"></a>通知優先順序和分類
 
@@ -823,7 +806,6 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 在此範例中，應用程式的**目標 Framework**設為 Android 5.0 和**最低的 Android 版本**設**Android 4.1 (API 層級 16)**。 因為`SetCategory`是可用應用程式開發介面層級 21 和更新版本中，此程式碼範例會呼叫`SetCategory`它時才可用&ndash;不會呼叫`SetCategory`時的應用程式開發介面層級小於
 21.
 
-<a name="lockscreen-visibility" />
 
 ### <a name="lockscreen-visibility"></a>鎖定畫面可見性
 
@@ -835,7 +817,6 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 }
 ```
 
-<a name="summary" />
 
 ## <a name="summary"></a>總結
 

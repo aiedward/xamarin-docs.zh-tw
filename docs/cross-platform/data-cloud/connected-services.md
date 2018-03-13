@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: cc2deb11d544bc4e933e690d6089eb001a186c79
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c9ae8d65a2bfdd035cccb6b911448ea047f8c40
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="connected-services-walkthrough"></a>已連接的服務的逐步解說
 
@@ -24,22 +24,22 @@ ms.lasthandoff: 02/27/2018
 1.  按兩下，即可啟動**已連接服務**節點在解決方案中，將會出現**服務組件庫**。
   這是一份所有可用的服務，此應用程式類型。 選取服務 (例如**使用 Azure App Service 行動後的端**) 在其上按一下。
 
-  [ ![](connected-services-images/image001-sml.png "適用於 Mac 連接 Visual Studio 中的 [服務] 節點")](connected-services-images/image001.png)
+  [![](connected-services-images/image001-sml.png "適用於 Mac 連接 Visual Studio 中的 [服務] 節點")](connected-services-images/image001.png#lightbox)
 
 2. 服務詳細資料頁面有服務和安裝的相依性的描述。
   按一下**新增**按鈕以加入應用程式的相依性：
 
-  [ ![](connected-services-images/image002-sml.png "使用 Azure 行動後端")](connected-services-images/image002.png)
+  [![](connected-services-images/image002-sml.png "使用 Azure 行動後端")](connected-services-images/image002.png#lightbox)
 
 3. 相依性必須將加入 PCL 和平台專屬專案工作。
   選取核取方塊，將服務加入至每個會參考它 （直接或間接） 的專案：
 
-  [ ![](connected-services-images/image003-sml.png "檢查應該參考服務的所有專案")](connected-services-images/image003.png)
+  [![](connected-services-images/image003-sml.png "檢查應該參考服務的所有專案")](connected-services-images/image003.png#lightbox)
 
 4. 選擇**接受**上**授權接受**對話的 NuGet 封裝。
   有時可能會接受，一個用於 MobileClient 和相依性，和另一個用於 SQLiteStore，所需之離線的資料同步的兩個對話方塊：
 
-  [ ![](connected-services-images/image004-sml.png "接受授權合約")](connected-services-images/image004.png)
+  [![](connected-services-images/image004-sml.png "接受授權合約")](connected-services-images/image004.png#lightbox)
 
   ![](connected-services-images/image005.png "授權接受視窗")
 
@@ -48,7 +48,7 @@ ms.lasthandoff: 02/27/2018
 
 6. 從清單中選取的應用程式服務。 這將會填滿的範本程式碼`MobileServiceClient`物件相對應的 Azure 上的應用程式服務 url:
 
-  [ ![](connected-services-images/image006-sml.png "從清單選取應用程式服務")](connected-services-images/image006.png)
+  [![](connected-services-images/image006-sml.png "從清單選取應用程式服務")](connected-services-images/image006.png#lightbox)
 
   如果不沒有列出任何服務，按一下**新增**按鈕 （請參閱步驟 9）。
 
@@ -59,12 +59,12 @@ ms.lasthandoff: 02/27/2018
 
 8. 請依照下列中的文件**接下來的步驟**加入資料、 離線同步處理、 驗證和推播通知給您的應用程式：
 
-  [ ![](connected-services-images/image008-sml.png "檢閱下一個步驟的指示")](connected-services-images/image008.png)
+  [![](connected-services-images/image008-sml.png "檢閱下一個步驟的指示")](connected-services-images/image008.png#lightbox)
 
 10. 如果您沒有任何現有的應用程式服務，您可以建立新服務從 Visual studio for mac。
   按一下**新增**左下角開啟 [服務] 清單中的按鈕**新應用程式服務**對話方塊：
 
-  [ ![](connected-services-images/image009-sml.png "Visual Studio 中建立新的應用程式服務，適用於 Mac")](connected-services-images/image009.png)
+  [![](connected-services-images/image009-sml.png "Visual Studio 中建立新的應用程式服務，適用於 Mac")](connected-services-images/image009.png#lightbox)
 
 新的服務需要下列參數：
 

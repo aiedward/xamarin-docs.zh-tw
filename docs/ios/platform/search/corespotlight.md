@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 20b18cd79eeaabab8019c367e241a4975dc37b0e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b7db9082f05ea4db41ddb84d34be2ec9113f2ad5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-with-core-spotlight"></a>使用核心 Spotlight 搜尋
 
@@ -46,7 +46,7 @@ CSSearchableIndex.DefaultSearchableIndex.Index (new CSSearchableItem[]{ item }, 
 
 這項資訊會出現在搜尋結果如下：
 
-[ ![](corespotlight-images/corespotlight01.png "核心 Spotlight 搜尋結果概觀")](corespotlight-images/corespotlight01.png)
+[![](corespotlight-images/corespotlight01.png "核心 Spotlight 搜尋結果概觀")](corespotlight-images/corespotlight01.png#lightbox)
 
 ## <a name="restoring-an-item"></a>還原項目
 
@@ -80,7 +80,7 @@ public override bool ContinueUserActivity (UIApplication application,
 有些時候可能會當我們建立與核心精選的索引項目需要加以修改，例如 title 或縮圖影像中的變更是必要項。 若要讓這項變更，我們會使用相同的方法，一開始建立索引所使用。
 我們會建立新`CSSearchableItem`使用相同的識別碼，與用來建立項目，並附加新`CSSearchableItemAttributeSet`包含已修改的屬性：
 
-[ ![](corespotlight-images/corespotlight02.png "更新項目概觀")](corespotlight-images/corespotlight02.png)
+[![](corespotlight-images/corespotlight02.png "更新項目概觀")](corespotlight-images/corespotlight02.png#lightbox)
 
 當這個項目會寫入可搜尋的索引時，新的資訊會更新現有的項目。
 

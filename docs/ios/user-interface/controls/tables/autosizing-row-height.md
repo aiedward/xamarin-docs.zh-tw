@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: c5deb294aac679d60535f3f3bd6c9745e8bff358
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c8d66ff8199d451ce7469fa893b7673589c9e320
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="auto-sizing-row-height"></a>自動調整大小的資料列高度
 
@@ -23,25 +23,25 @@ iOS 11 已新增的功能會自動擴展的資料列。 頁首、 頁尾和資�
 
 開啟分鏡腳本，您想要在 iOS 設計工具中，資料列的自動調整的資料表檢視選取的儲存格*原型*和設計儲存格的版面配置。 例如: 
 
-[ ![](autosizing-row-height-images/table01.png "儲存格的原型設計")](autosizing-row-height-images/table01.png)
+[![](autosizing-row-height-images/table01.png "儲存格的原型設計")](autosizing-row-height-images/table01.png#lightbox)
 
 每個項目在原型中，加入條件約束，以將項目保存在正確的位置，因為資料表檢視旋轉或不同的 iOS 裝置的螢幕大小重新調整大小。 例如，釘選`Title`儲存格的左上和右側*內容檢視*:
 
-[ ![](autosizing-row-height-images/table02.png "釘選的標題上方、 左邊與右邊的儲存格的內容檢視")](autosizing-row-height-images/table02.png)
+[![](autosizing-row-height-images/table02.png "釘選的標題上方、 左邊與右邊的儲存格的內容檢視")](autosizing-row-height-images/table02.png#lightbox)
 
 如果我們的範例資料表，小型`Label`(下`Title`) 是可以壓縮和成長來增加或減少資料列高度的欄位。 若要達成這個效果，加入左、 右邊、 上方和標籤的底部釘選的下列條件約束：
 
-[ ![](autosizing-row-height-images/table03.png "若要釘選左、 右邊、 上方和標籤的底部這些條件約束")](autosizing-row-height-images/table03.png)
+[![](autosizing-row-height-images/table03.png "若要釘選左、 右邊、 上方和標籤的底部這些條件約束")](autosizing-row-height-images/table03.png#lightbox)
 
 既然我們已經完全，限制在資料格中的項目，我們需要釐清哪些項目自動縮放。 若要這樣做，請設定**內容 Hugging 優先順序**和**內容壓縮抵抗優先順序**視需要在**配置**屬性板區段：
 
-[ ![](autosizing-row-height-images/table03a.png "之配置區段的內容填補")](autosizing-row-height-images/table03a.png)
+[![](autosizing-row-height-images/table03a.png "之配置區段的內容填補")](autosizing-row-height-images/table03a.png#lightbox)
 
 您想要將展開的元素設定**低**Hugging 優先順序值，和**低**壓縮抵抗優先權值。
 
 接下來，我們必須以選取儲存格原型，並賦予獨特**識別碼**:
 
-[ ![](autosizing-row-height-images/table04.png "提供資料格原型的唯一識別碼")](autosizing-row-height-images/table04.png)
+[![](autosizing-row-height-images/table04.png "提供資料格原型的唯一識別碼")](autosizing-row-height-images/table04.png#lightbox)
 
 在我們的範例， `GrowCell`。 稍後當我們填入的資料表時，我們將使用此值。
 
@@ -50,19 +50,19 @@ iOS 11 已新增的功能會自動擴展的資料列。 頁首、 頁尾和資�
 
 對於我們的儲存格原型的每個項目，將指派**名稱**將它公開至 C# 程式碼。 例如: 
 
-[ ![](autosizing-row-height-images/table05.png "指定要將它公開至 C# 程式碼的名稱")](autosizing-row-height-images/table05.png)
+[![](autosizing-row-height-images/table05.png "指定要將它公開至 C# 程式碼的名稱")](autosizing-row-height-images/table05.png#lightbox)
 
 接下來，新增自訂類別`UITableViewController`、`UITableView`和`UITableCell`(Prototype)。 例如:  
 
-[ ![](autosizing-row-height-images/table06.png "將自訂類別加入 UITableViewController、 UITableView 和 UITableCell")](autosizing-row-height-images/table06.png)
+[![](autosizing-row-height-images/table06.png "將自訂類別加入 UITableViewController、 UITableView 和 UITableCell")](autosizing-row-height-images/table06.png#lightbox)
 
 最後，為了確定所有預期的內容會顯示在我們的標籤，請設定**行**屬性`0`:
 
-[ ![](autosizing-row-height-images/table06.png "行數屬性設定為 0")](autosizing-row-height-images/table06a.png)
+[![](autosizing-row-height-images/table06.png "行數屬性設定為 0")](autosizing-row-height-images/table06a.png#lightbox)
 
 與定義 UI，讓我們加入的程式碼，以啟用自動的資料列高度調整大小。
 
-##<a name="enabling-auto-resizing-height"></a>啟用自動調整大小的高度
+## <a name="enabling-auto-resizing-height"></a>啟用自動調整大小的高度
 
 在我們的資料表檢視的資料來源 (`UITableViewDatasource`) 或來源 (`UITableViewSource`)，當我們清除佇列我們要使用的資料格`Identifier`我們在設計工具中定義。 例如: 
 
@@ -106,7 +106,7 @@ public override void ViewWillAppear (bool animated)
 
 此位置的程式碼，執行應用程式時，每個資料列會壓縮及成長根據在資料格的原型中的最後一個標籤的高度。 例如: 
 
-[ ![](autosizing-row-height-images/table07.png "執行範例資料表")](autosizing-row-height-images/table07.png)
+[![](autosizing-row-height-images/table07.png "執行範例資料表")](autosizing-row-height-images/table07.png#lightbox)
 
 
 ## <a name="related-links"></a>相關連結

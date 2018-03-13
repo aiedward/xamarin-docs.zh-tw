@@ -6,11 +6,11 @@ ms.assetid: EE3D45BD-8091-4C04-BA83-371371D8BEB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 38a2e8b8cd5932bf96c1e0032a6f47627c3ea592
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 98cd780a29abdbeaab02483e4b6ed01a218f88e5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-icons"></a>使用圖示
 
@@ -97,7 +97,7 @@ Apple Watch 主畫面上會出現 </td>
 
 3. 將所有 watchOS 映像，都加入這個螢幕擷取畫面所示：
 
-  [ ![](icons-images/appicons-sml.png "加入所有 watchOS 映像，這個螢幕擷取畫面所示")](icons-images/appicons.png)
+  [![](icons-images/appicons-sml.png "加入所有 watchOS 映像，這個螢幕擷取畫面所示")](icons-images/appicons.png#lightbox)
 
   請參閱[Apple 圖示指導方針](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/IconandImageSizes.html)的所需的大小 （維度也會顯示在螢幕）。 請記住，這些圖示會自動裁剪的圓形呈現。
 

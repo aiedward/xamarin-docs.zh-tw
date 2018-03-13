@@ -3,16 +3,16 @@ title: "影像"
 description: "本文涵蓋了使用映像和 Xamarin.Mac 應用程式中的圖示。 它說明建立和維護的映像，才能建立您的應用程式圖示，並使用 C# 程式碼和 Xcode 的介面產生器中的映像。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: f12b2af0c9325796db63fcd65af135f54277ece0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d8098afea87765166db8318b76adf250818a0a6f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="images"></a>影像
 
@@ -34,7 +34,7 @@ _本文涵蓋了使用映像和 Xamarin.Mac 應用程式中的圖示。它說明
 
 此外，macOS 提供一組預先定義可在整個應用程式的映像。
 
-[![範例執行的應用程式](image-images/intro01.png "範例執行的應用程式")](image-images/intro01-large.png)
+[![範例執行的應用程式](image-images/intro01.png "範例執行的應用程式")](image-images/intro01-large.png#lightbox)
 
 在本文中，我們會在 Xamarin.Mac 應用程式中使用的影像和圖示的基本概念。 強烈建議您逐步[Hello、 Mac](~/mac/get-started/hello-mac.md)發行項的第一次，具體來說[Xcode 和介面產生器簡介](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)和[插座和動作](~/mac/get-started/hello-mac.md#Outlets_and_Actions)區段中的，因為它涵蓋重要概念和技術，我們將在本文中使用。
 
@@ -59,18 +59,18 @@ _本文涵蓋了使用映像和 Xamarin.Mac 應用程式中的圖示。它說明
     ![選取 Assets.xcassets](image-images/imageset01.png "選取 Assets.xcassets")
 2. 以滑鼠右鍵按一下**資產清單**選取**新映像設定**: 
 
-    [![加入新的映像集](image-images/imageset02.png "加入一組新映像")](image-images/imageset02-large.png)
+    [![加入新的映像集](image-images/imageset02.png "加入一組新映像")](image-images/imageset02-large.png#lightbox)
 3. 選取新的映像集，編輯器會隨即出現： 
 
-    [![選取 新的映像設定](image-images/imageset03.png "選取新的映像集")](image-images/imageset03-large.png)
+    [![選取 新的映像設定](image-images/imageset03.png "選取新的映像集")](image-images/imageset03-large.png#lightbox)
 4. 從這裡我們可以針對每個不同的裝置與需要的解析度來拖曳映像中。 
 5. 按兩下新的映像集**名稱**中**資產清單**對其進行編輯： 
 
-    [![編輯影像設定名稱](image-images/imageset04.png "編輯影像設定名稱")](image-images/imageset04-large.png)
+    [![編輯影像設定名稱](image-images/imageset04.png "編輯影像設定名稱")](image-images/imageset04-large.png#lightbox)
     
 特殊**向量**類別也已經加入至**映像集**，可讓我們包含_PDF_格式化 casset 改為包括在個別的點陣圖檔案中的向量影像不同的解決方法。 使用這個方法時提供的單一向量檔案 **@1x** 解析度 （向量 PDF 檔案格式） 和 **@2x** 和 **@3x** 會產生編譯時期，應用程式的組合中所包含檔案的版本。
 
-[![映像設定編輯器介面](image-images/imageset05.png "映像設定編輯器介面")](image-images/imageset05-large.png)
+[![映像設定編輯器介面](image-images/imageset05.png "映像設定編輯器介面")](image-images/imageset05-large.png#lightbox)
 
 例如，如果您包含`MonkeyIcon.pdf`檔案儲存為資產類別 」 的向量 150px x 150px，編譯時，會在最終的應用程式套件組合中包含資產的下列點陣圖的解析度：
 
@@ -115,7 +115,7 @@ _本文涵蓋了使用映像和 Xamarin.Mac 應用程式中的圖示。它說明
     ![若要加入檔案](image-images/add01.png "加入檔案")
 2. 從**加入檔案**對話方塊中，選取影像的檔案加入專案中，選取`BundleResource`如**覆寫的建置動作**按一下**開啟**按鈕：
 
-    [![選取要加入的檔案](image-images/add02.png "選取要加入的檔案")](image-images/add02-large.png)
+    [![選取要加入的檔案](image-images/add02.png "選取要加入的檔案")](image-images/add02-large.png#lightbox)
 3. 如果檔案已不在**資源**資料夾中，您將需要在您想要**複製**，**移動**或**連結**檔案。 挑選其中每個花色您的需求，通常可**複製**:
 
     ![選取 [新增] 動作](image-images/add04.png "選取 [新增] 動作")
@@ -164,13 +164,13 @@ _本文涵蓋了使用映像和 Xamarin.Mac 應用程式中的圖示。它說明
      ![方案板中的影像資源](image-images/ib00.png "方案板中的影像資源")
 2. 按兩下**Main.storyboard**開啟介面產生器中進行編輯的檔案： 
 
-     [![編輯主要腳本](image-images/ib01.png "編輯主要腳本")](image-images/ib01-large.png)
+     [![編輯主要腳本](image-images/ib01.png "編輯主要腳本")](image-images/ib01-large.png#lightbox)
 3. 拖曳採用影像拖曳至設計介面的 UI 項目 (例如，**影像的工具列項目**): 
 
      ![編輯工具列項目](image-images/ib02.png "編輯工具列項目")
 4. 選取您加入的映像**資源**資料夾中的**映像名稱**下拉式清單中： 
 
-     [![選取影像的工具列項目](image-images/ib03.png "選取影像的工具列項目")](image-images/ib03-large.png)
+     [![選取影像的工具列項目](image-images/ib03.png "選取影像的工具列項目")](image-images/ib03-large.png#lightbox)
 5. 在設計介面中，將會顯示所選映像： 
 
      ![工具列編輯器中所顯示的影像](image-images/ib04.png "工具列編輯器中所顯示的影像")
@@ -205,7 +205,7 @@ NSImage image = new NSImage("/Users/KMullins/Documents/photo.jpg")
 
 若要達成這個效果，切換_呈現模式_的影像資產到**範本映像**:
 
-[![設定範本映像](image-images/templateimage01.png "設定範本映像")](image-images/templateimage01-large.png)
+[![設定範本映像](image-images/templateimage01.png "設定範本映像")](image-images/templateimage01-large.png#lightbox)
 
 從 Xcode 的介面產生器中，將指派到 UI 控制項的影像資產：
 
@@ -337,7 +337,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 範例輸出：
 
-[![範例應用程式中顯示影像](image-images/tables01.png "範例應用程式中顯示的影像")](image-images/tables01-large.png)
+[![範例應用程式中顯示影像](image-images/tables01.png "範例應用程式中顯示的影像")](image-images/tables01-large.png#lightbox)
 
 如需使用的資料表檢視的詳細資訊，請參閱我們[資料表檢視](~/mac/user-interface/table-view.md)文件。
 
@@ -440,7 +440,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 範例輸出：
 
-[![大綱檢視中所顯示之影像的範例](image-images/outline01.png "大綱檢視中所顯示之影像的範例")](image-images/outline01-large.png)
+[![大綱檢視中所顯示之影像的範例](image-images/outline01.png "大綱檢視中所顯示之影像的範例")](image-images/outline01-large.png#lightbox)
 
 如需有關使用大綱檢視的詳細資訊，請參閱我們[大綱檢視](~/mac/user-interface/outline-view.md)文件。
 

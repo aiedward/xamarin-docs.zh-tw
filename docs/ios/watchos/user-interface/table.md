@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 4887b9a42c5a855353b5a4e422559aafcdc68173
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0b8d8d08db15959a47093f255a891605a089ea00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="table-control"></a>表格控制項
 
@@ -24,7 +24,7 @@ WatchOS`WKInterfaceTable`控制會比其 iOS 對應項目，更簡單，但會�
 
 拖曳**資料表**至場景的控制項。 根據預設，它看起來像此 （顯示未指定的單一資料列版面配置）：
 
-[ ![](table-images/add-table-sml.png "加入資料表")](table-images/add-table.png)
+[![](table-images/add-table-sml.png "加入資料表")](table-images/add-table.png#lightbox)
 
 資料表的名稱命名在**屬性**填補的**名稱**方塊，以便它可以參考程式碼中。
 
@@ -34,7 +34,7 @@ WatchOS`WKInterfaceTable`控制會比其 iOS 對應項目，更簡單，但會�
 
 若要設定**類別**針對資料列控制站中，選取中的資料列**文件大綱**輸入中的類別名稱**屬性**板：
 
-[ ![](table-images/add-row-controller-sml.png "輸入屬性輸入板中的類別名稱")](table-images/add-row-controller.png)
+[![](table-images/add-row-controller-sml.png "輸入屬性輸入板中的類別名稱")](table-images/add-row-controller.png#lightbox)
 
 一旦設定資料列的控制站的類別，IDE 就會在專案中建立對應的 C# 檔案。 控制項 （例如標籤） 上拖曳資料列，並提供名稱給它們，因此，可以參考這些程式碼中。
 

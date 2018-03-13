@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 0846dc8bdb3ac722838faa4173f5d30233912ecc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 86514dbd6b40e9d59ea9a598395cf6f0a3f4889a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-app-store"></a>發佈至 App Store
 
@@ -32,7 +32,7 @@ Xamarin.Mac 應用程式可以兩種方式散發：
 
 當您加入 [Mac 開發人員計劃](https://developer.apple.com/devcenter/mac/) \(英文\) 時，開發人員可選擇要以 [Individual] \(個人\) 或 [Company] \(公司\) 的身分加入，如下列螢幕擷取畫面所示：
 
-[![Apple 開發人員入口網站](images/image1.png "Apple 開發人員入口網站")](images/image1-large.png)
+[![Apple 開發人員入口網站](images/image1.png "Apple 開發人員入口網站")](images/image1-large.png#lightbox)
 
 請依據您的情況選擇正確的註冊類型。
 

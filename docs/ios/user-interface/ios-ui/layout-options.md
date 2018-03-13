@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 1e3139eb4c94264c91307f6f8a69b183f3bf7fa6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f4917eafff020bb0e2d14a27d3c1a44d1d4087d7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layout-options"></a>配置選項
 
@@ -25,11 +25,11 @@ ms.lasthandoff: 02/27/2018
 
 當使用者調整視窗中，例如當裝置旋轉和方向的變更，系統將自動調整大小根據其調整規則該視窗內的檢視。 可以設定這些規則在 C# 中使用`AutoresizingMask`屬性`UIView`或**屬性板**的 ios 設計工具，如下所示：
 
- [ ![](layout-options-images/image41.png "Visual Studio for Mac 設計工具")](layout-options-images/image41.png)
+ [![](layout-options-images/image41.png "Visual Studio for Mac 設計工具")](layout-options-images/image41.png#lightbox)
 
 選取控制項時，這可讓您以手動方式指定的位置和維度的控制項，以及選擇**調整**行為。 以下螢幕擷取畫面所示，我們可以使用 springs 和 struts 調整控制項中選取的檢視關聯性定義其父代：
 
- [ ![](layout-options-images/image42.png "Visual Studio for Mac 設計工具")](layout-options-images/image42.png)
+ [![](layout-options-images/image42.png "Visual Studio for Mac 設計工具")](layout-options-images/image42.png#lightbox)
 
 調整*spring*會造成檢視調整大小的寬度或高度的父檢視為基礎。 調整*strut*會維護固定的距離本身和其父檢視，在該特定邊緣之間的檢視。
 
@@ -43,7 +43,7 @@ textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAut
 
 若要測試的自動調整設定，讓不同**支援裝置方向**中專案的選項：
 
- [ ![](layout-options-images/image43a.png "自動調整設定")](layout-options-images/image43a.png)
+ [![](layout-options-images/image43a.png "自動調整設定")](layout-options-images/image43a.png#lightbox)
 
 在程式碼後置我們可以使用下列程式碼，使水平調整大小的兩個文字控制項：
 
@@ -56,11 +56,11 @@ imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutor
 
 我們也可以調整使用設計工具的控制項。 選取 struts，如展現下方將會導致要保持要裁剪的檢視底部的 靠右對齊的映像：
 
- [ ![](layout-options-images/autoresize.png "將自動旋轉")](layout-options-images/autoresize.png)
+ [![](layout-options-images/autoresize.png "Autorotation")](layout-options-images/autoresize.png#lightbox)
 
 這些螢幕擷取畫面顯示控制項調整大小或旋轉螢幕時調整本身的方式：
 
- [ ![](layout-options-images/image44a.png "將自動旋轉")](layout-options-images/image44a.png)
+ [![](layout-options-images/image44a.png "Autorotation")](layout-options-images/image44a.png#lightbox)
 
 請注意，文字檢視和文字欄位同時自動縮放以保留相同的保留並因為以下原因，邊界，以滑鼠右鍵`FlexibleWidth`設定。 該映像包含的上方和左方邊界彈性，這表示它會保留的下和右邊界 – 映像時保留檢視中螢幕旋轉。 複雜配置通常會需要這些設定在每一個可見的控制項上保持一致的使用者介面，以及時 （因旋轉或其他調整大小事件），變更檢視的界限重疊時，防止控制項的組合。
 

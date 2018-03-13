@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 523d79adbc5d4f88d4a2670b6422a58fb9256ab2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e40fd215d23e7da6f1356bba17fac84ce91007ae
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="polylines-and-parametric-equations"></a>聚合線條和參數化的方程式
 
@@ -109,7 +109,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 也稱為結果*算術老舊*因為每個迴圈之間的位移是常數：
 
-[![](polylines-images/archimedeanspiral-small.png "三個螢幕擷取畫面的 Archimedean 老舊頁面")](polylines-images/archimedeanspiral-large.png "Archimedean 老舊頁面的三個螢幕擷取畫面")
+[![](polylines-images/archimedeanspiral-small.png "三個螢幕擷取畫面的 Archimedean 老舊頁面")](polylines-images/archimedeanspiral-large.png#lightbox "Archimedean 老舊頁面的三個螢幕擷取畫面")
 
 請注意，`SKPath`中建立`using`區塊。 這`SKPath`會消耗更多的記憶體比`SKPath`物件在先前的程式中，建議`using`區塊會更適當地處置任何 unmanaged 的資源。
 

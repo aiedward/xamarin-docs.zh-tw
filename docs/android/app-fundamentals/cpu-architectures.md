@@ -7,12 +7,12 @@ ms.assetid: D4BC889D-9164-49BB-9B7B-F6C4E4E109F1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 6139b5e27e9689da6366a2107acc14a6adcfc928
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 3df6dc72eaed74ad335596d55db8b1295b16f3c2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cpu-architectures"></a>CPU 架構
 
@@ -32,7 +32,7 @@ _Xamarin.Android 支援數個 CPU 架構，包括 32 位元和 64 位元的裝�
 
 在 Visual Studio 中，按兩下**屬性**您專案下**方案總管 中**選取**Android 選項**頁面。 按一下**封裝**索引標籤上，確認**使用共用的執行階段**已停用 （關閉此功能可讓您明確地選取 支援哪些 ABIs）。 按一下**進階** 索引標籤上和下**進階屬性**，檢查您想要支援的架構：
 
-[ ![選取 armeabi 和 armeabi v7a](cpu-architectures-images/vs/01-abi-selections-sml.png)](cpu-architectures-images/vs/01-abi-selections.png)
+[![選取 armeabi 和 armeabi v7a](cpu-architectures-images/vs/01-abi-selections-sml.png)](cpu-architectures-images/vs/01-abi-selections.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -40,7 +40,7 @@ _Xamarin.Android 支援數個 CPU 架構，包括 32 位元和 64 位元的裝�
 
 在 Visual Studio for Mac，找出您的專案中**方案**填補中，按一下您專案旁邊的齒輪圖示，然後選取**選項**。 在**專案選項**] 對話方塊中，按一下 [ **Android 建置**。 按一下**一般**索引標籤上，確認**使用共用單聲道的執行階段**已停用 （關閉此功能可讓您明確地選取 支援哪些 ABIs）。 按一下**進階** 索引標籤上和下**支援 ABIs**，檢查您想要支援的架構 ABIs:
 
-[ ![選取 armeabi 和 armeabi v7a](cpu-architectures-images/xs/01-abi-selections-sml.png)](cpu-architectures-images/xs/01-abi-selections.png)
+[![選取 armeabi 和 armeabi v7a](cpu-architectures-images/xs/01-abi-selections-sml.png)](cpu-architectures-images/xs/01-abi-selections.png#lightbox)
 
 -----
 
@@ -66,7 +66,7 @@ Xamarin.Android 預設為`armeabi-v7a`如**發行**建置。 此設定會提供�
 您沒有選取**arm64 v8a**或**x86_64**為目標的 64 位元裝置; 在 64 位元硬體上執行您的應用程式不需要 64 位元支援。 例如，64 位元 ARM 裝置 (例如[Nexus 9](http://www.google.com/nexus/9/)) 可以執行應用程式設定為`armeabi-v7a`。 64 位元支援的主要優點是可讓您的應用程式處理更多記憶體。
 
 > [!NOTE]
-> **注意：**: 64 位元執行階段支援目前是實驗性功能。 請記住，64 位元執行階段會*不*64 位元裝置上執行您的應用程式所需。 
+> 實驗性功能的目前 64 位元執行階段支援。 請記住，64 位元執行階段會*不*64 位元裝置上執行您的應用程式所需。 
 
 ## <a name="additional-information"></a>其他資訊
 

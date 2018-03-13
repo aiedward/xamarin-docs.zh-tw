@@ -3,16 +3,16 @@ title: "對應"
 description: "Xamarin.Forms 會在每個平台上使用原生對應應用程式開發介面。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 22288ABF-57BE-47A9-ACC3-AC604D787C46
+ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 98e6cade952e656046c6c0981a0b73ff0894c9d6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 2f0ad800ed1ab3a336f10dd4431e234ac4ff9675
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="map"></a>對應
 
@@ -28,7 +28,7 @@ Xamarin.Forms.Maps 會在每個平台上使用原生的對應應用程式開發�
 
 地圖控制項用於[MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/)範例，如下所示。
 
- [ ![MobileCRM 範例中的對應](map-images/maps-zoom-sml.png "地圖控制項範例")](map-images/maps-zoom.png "地圖控制項範例")
+ [![MobileCRM 範例中的對應](map-images/maps-zoom-sml.png "地圖控制項範例")](map-images/maps-zoom.png#lightbox "地圖控制項範例")
 
 地圖功能可以藉由建立進一步增強[對應自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)。
 
@@ -103,7 +103,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 沒有有效的 API 金鑰地圖控制項顯示為灰色方塊在 Android 上。
 
 > [!NOTE]
-> **請注意**： 記得產生另一個索引鍵使用的金鑰存放區檔案，用來簽署發行任何的版本應用程式上傳至 Google Play 存放區。 索引鍵產生的程式開發和偵錯將無法運作，從 Google Play 下載應用程式就會中斷地圖顯示。 也請記得要重新產生鍵，如果應用程式的**封裝名稱**變更。
+> 請記得要產生另一個索引鍵使用的金鑰存放區檔案，用來簽署發行任何的版本應用程式上傳至 Google Play 存放區。 索引鍵產生的程式開發和偵錯將無法運作，從 Google Play 下載應用程式就會中斷地圖顯示。 也請記得要重新產生鍵，如果應用程式的**封裝名稱**變更。
 
 您也必須啟用適當的權限的 Android 專案上按一下滑鼠右鍵，然後選取**選項 > 建置 > Android 應用程式**和計時下列：
 
@@ -185,7 +185,7 @@ slider.ValueChanged += (sender, e) => {
 };
 ```
 
- [ ![與縮放地圖](map-images/maps-zoom-sml.png "地圖控制項縮放")](map-images/maps-zoom.png "地圖控制項縮放")
+ [![與縮放地圖](map-images/maps-zoom-sml.png "地圖控制項縮放")](map-images/maps-zoom.png#lightbox "地圖控制項縮放")
 
 ### <a name="map-pins"></a>對應的 Pin
 

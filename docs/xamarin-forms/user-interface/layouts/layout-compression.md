@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 15f198465c544989b347fe534978956741478ed2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e03acbbac737bffd21ee3b592ab017d227f822ad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layout-compression"></a>版面配置壓縮
 
@@ -60,7 +60,7 @@ Xamarin.Forms 會執行使用遞迴方法呼叫的兩個系列的版面配置：
 版面配置壓縮，也就是適用於 iOS 和 Android 平台上的 Xamarin.Forms 應用程式，以外的工具來檢視巢狀方式置於 視覺化樹狀目錄中，以改善網頁呈現效能，移除指定的版面配置壓平合併。 傳遞的效能優勢會根據頁面、 所使用的作業系統版本和應用程式執行所在裝置的複雜性而有所不同。 然而，較舊裝置將能獲得較大的效能提升。
 
 > [!NOTE]
-> **請注意**： 雖然本文著重在將配置壓縮套用在 Android 上的結果，但是這同樣適用於 iOS。
+> 雖然本文著重在將配置壓縮套用在 Android 上的結果，但是這同樣適用於 iOS。
 
 ## <a name="layout-compression"></a>版面配置壓縮
 

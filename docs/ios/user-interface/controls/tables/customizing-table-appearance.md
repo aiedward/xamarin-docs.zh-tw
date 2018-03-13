@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 12314e6ec5951a5a094ed8b0a5536b450853c5fb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4a3f8ca8f4502b9585536815aef81f66cacd214f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-tables-appearance"></a>自訂資料表的外觀
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 02/27/2018
 
 這些螢幕擷取畫面會顯示每個樣式的顯示方式：
 
- [ ![](customizing-table-appearance-images/image7.png "這些螢幕擷取畫面顯示每個樣式的顯示方式")](customizing-table-appearance-images/image7.png)
+ [![](customizing-table-appearance-images/image7.png "這些螢幕擷取畫面顯示每個樣式的顯示方式")](customizing-table-appearance-images/image7.png#lightbox)
 
 此範例**CellDefaultTable**包含程式碼以產生這些畫面。 儲存格樣式中設定`UITableViewCell`建構函式，就像這樣：
 
@@ -60,7 +60,7 @@ cell.ImageView.Image = UIImage.FromFile("Images/" + tableItems[indexPath.Row].Im
 
 這是什麼樣子：
 
- [ ![](customizing-table-appearance-images/image8.png "範例 附屬應用程式")](customizing-table-appearance-images/image8.png)
+ [![](customizing-table-appearance-images/image8.png "範例 附屬應用程式")](customizing-table-appearance-images/image8.png#lightbox)
 
 若要顯示這些 附屬應用程式，您可以設定的其中一個`Accessory`屬性`GetCell`方法：
 
@@ -119,7 +119,7 @@ TableView.SeparatorInset.InsetRect(new CGRect(4, 4, 150, 2));
 
 CellCustomTable 範例會實作`UITableViewCell`子類別，定義的自訂配置`UILabel`s 和`UIImage`以不同的字型和色彩。 產生的資料格看起來像這樣：
 
- [ ![](customizing-table-appearance-images/image9.png "自訂儲存格的版面配置")](customizing-table-appearance-images/image9.png)
+ [![](customizing-table-appearance-images/image9.png "自訂儲存格的版面配置")](customizing-table-appearance-images/image9.png#lightbox)
 
 自訂儲存格類別包含只有三個方法：
 

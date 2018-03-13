@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/24/2017
-ms.openlocfilehash: d8fa54f23dfea063fa25f6e26e2df2c2ed82101e
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9aa66a531b723f176b940ba35ee4e86eae711f7d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="collection-views"></a>集合檢視
 
@@ -22,7 +22,7 @@ _這篇文章描述 Xamarin.Mac 應用程式中的集合檢視使用。其中涵
 
 A`NSCollectionView`顯示的組織使用 subviews 方格`NSCollectionViewLayout`。 在方格中的每一個子檢視由`NSCollectionViewItem`它負責管理檢視的內容載入`.xib`檔案。
 
-[ ![執行範例應用程式](collection-view-images/intro01.png)](collection-view-images/intro01.png)
+[![執行範例應用程式](collection-view-images/intro01.png)](collection-view-images/intro01.png#lightbox)
 
 本文涵蓋在 Xamarin.Mac 應用程式中使用的集合檢視的基本概念。 強烈建議您逐步[Hello、 Mac](~/mac/get-started/hello-mac.md)發行項的第一次，具體來說[Xcode 和介面產生器簡介](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)和[插座和動作](~/mac/get-started/hello-mac.md#Outlets_and_Actions)區段中的，因為它涵蓋重要概念和技巧，整篇文章。
 

@@ -257,7 +257,7 @@
 ## [部署與測試](deploy-test/index.md)
 ### [效能](deploy-test/performance.md)
 ### [Xamarin.UITest 和測試雲端](deploy-test/uitest-and-test-cloud.md)
-## [深入探討](internals/index.md)
+## [進階概念與內部項目](internals/index.md)
 ### [快速轉譯器](internals/fast-renderers.md)
 ### [.NET Standard](internals/net-standard.md)
 ## [疑難排解](troubleshooting/index.md)

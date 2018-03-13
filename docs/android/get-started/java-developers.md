@@ -7,17 +7,17 @@ ms.assetid: A3B6C041-4052-4E7D-999C-C4FA10BE3D67
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.openlocfilehash: fb74e0efd62c6347534e6f301953325bd4d378d2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: 240fc917a154085a459c6612f68c8b71e3ef01bb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarin-for-java-developers"></a>適用於 Java 開發人員的 Xamarin
 
 _如果您是 Java 開發人員，您應該已經開始在 Xamarin 平台上運用自己的技巧和現有的程式碼，並享受 C# 的程式碼重複使用優勢。您將會發現 C# 語法與 Java 語法非常類似，而且這兩種語言提供非常類似的功能。此外，您將探索可讓開發工作更容易的 C# 特有功能。_
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -91,7 +91,6 @@ C# 會將許多重要功能帶入 Xamarin.Android，Android 上的 Java 開發�
 下列各節將概述 C# 和 Java 之間的基本「入門」差異；更後面的小節則會描述這些語言之間的物件導向差異。
 
 
-<a name="assemblies" />
 
 ### <a name="libraries-vs-assemblies"></a>程式庫與組件
 
@@ -99,7 +98,6 @@ Java 通常會在 **.jar** 檔案中封裝相關的類別。 不過，在 C# 和
 
 如需組件的詳細資訊，請參閱 MSDN [組件和全域組件快取](https://msdn.microsoft.com/en-us/library/ms173099.aspx) \(機器翻譯\) 主題。
 
-<a name="namespaces" />
 
 ### <a name="packages-vs-namespaces"></a>封裝與命名空間
 
@@ -111,7 +109,6 @@ namespace WeatherApp
     ...
 ```
 
-<a name="imports" />
 
 ### <a name="importing-types"></a>匯入類型
 
@@ -146,7 +143,6 @@ using System.Threading.Tasks;
 這些陳述式會從 `System`、`Android.App`、`Android.Content` 等命名空間匯入功能。
 
 
-<a name="generics" />
 
 ### <a name="generics"></a>泛型
 
@@ -197,7 +193,6 @@ Java 和 C# 所使用的物件導向程式設計慣用語非常類似：
 -   C# 使用 C++ 樣式的解構函式語法來表達完成項。 此語法與 Java 的 `finalize` 方法不同，但語意幾乎完全相同 (請注意，在 C# 中，解構函式會自動呼叫基底類別解構函式 &ndash; 與明確呼叫 `super.finalize` 的 Java 相反)。
 
 
-<a name="inheritance" />
 
 ### <a name="class-inheritance"></a>類別繼承
 
@@ -251,7 +246,6 @@ rulerView.DrawingCacheEnabled = true;
 如需 C# 屬性的詳細資訊，請參閱 MSDN [屬性](https://msdn.microsoft.com/en-us/library/x9fsa0sw.aspx)主題。
 
 
-<a name="basemethods" />
 
 ### <a name="calling-base-class-methods"></a>呼叫基底類別方法
 
@@ -287,7 +281,6 @@ public class MainActivity : Activity
 在此情況下，衍生類別 (`MainActivity`) 所定義的 `OnCreate` 方法會呼叫基底類別 (`Activity`) 的 `OnCreate` 方法。
 
 
-<a name="accessmodifiers" />
 
 ### <a name="access-modifiers"></a>存取修飾詞
 
@@ -300,7 +293,6 @@ Java 和 C# 均支援 `public`、`private` 和 `protected` 存取修飾詞。 �
 如需 C# 存取修飾詞的詳細資訊，請參閱 MSDN [存取修飾詞](https://msdn.microsoft.com/en-us/library/ms173121.aspx)主題。
 
 
-<a name="virtualoverride" />
 
 ### <a name="virtual-and-override-methods"></a>虛擬和覆寫方法
 
@@ -792,7 +784,6 @@ Java 中使用的許多語言關鍵字也會在 C# 中使用。 另外有些 Jav
 如需這些技術的詳細資訊，請參閱 [Java 整合概觀](~/android/platform/java-integration/index.md)。
 
 
-<a name="further" />
 
 ## <a name="for-further-reading"></a>進一步閱讀
 
@@ -803,7 +794,6 @@ MSDN [C# 程式設計手冊](https://msdn.microsoft.com/en-us/library/67ef8sbd.a
 當您準備好要在 C# 中處理第一個 Xamarin.Android 專案時，我們的 [Hello, Android](~/android/get-started/hello-android/index.md) 系列可協助您建置第一個 Xamarin.Android 應用程式，並進一步了解使用 Xamarin 進行 Android 應用程式開發的基本知識。
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>總結
 

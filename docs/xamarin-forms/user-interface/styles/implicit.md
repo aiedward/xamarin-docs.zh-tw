@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 0600a4ca1f26fd034679619c1427821e9c7a12b8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b96b306c882eb30aaf8c81604afb9b6a547d715b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implicit-styles"></a>隱含的樣式
 
@@ -51,7 +51,7 @@ _隱含樣式是一種由所有控制項都使用的相同的 TargetType，而�
 
 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)定義單一*隱含*樣式套用至網頁的[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)執行個體。 `Style`用來顯示背景為黃色，藍色文字，也可以將其他外觀選項。 `Style`加入至網頁的[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)但未指定`x:Key`屬性。 因此，`Style`套用至所有`Entry`它們符合隱含執行個體[ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/)屬性`Style`完全。 不過，`Style`不會套用到`CustomEntry`執行個體，也就是子類別化`Entry`。 這會導致下列螢幕擷取畫面所示的外觀：
 
-[![](implicit-images/implicit-styles.png "隱含樣式範例")](implicit-images/implicit-styles-large.png "隱含樣式範例")
+[![](implicit-images/implicit-styles.png "隱含樣式範例")](implicit-images/implicit-styles-large.png#lightbox "隱含樣式範例")
 
 此外，第四個[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)會覆寫[ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/)和[ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/)不同隱含樣式屬性`Color`值。
 
@@ -82,7 +82,7 @@ _隱含樣式是一種由所有控制項都使用的相同的 TargetType，而�
 
 如需建立應用程式中的樣式資訊[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)，請參閱[全域樣式](~/xamarin-forms/user-interface/styles/application.md)。
 
-## <a name="creating-an-implicit-style-in-c35"></a>在 C# 35; 建立隱含的樣式
+## <a name="creating-an-implicit-style-in-c35"></a>在 C 中建立隱含的樣式&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) 執行個體可以新增到網頁的[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) C# 中建立新的集合[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)，再以加入`Style`執行個體來`ResourceDictionary`，如下所示下列程式碼範例：
 

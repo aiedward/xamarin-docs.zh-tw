@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7da0f52816d4efc102e830411589e0ac38a73574
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d9b6b5a778e0e4d5092d1036109f82896acf639b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="message-app-extension-basics"></a>訊息應用程式擴充功能的基本概念
 
@@ -121,13 +121,13 @@ Apple 建議測試以確保它們在所有可能的情況下尋找最佳的貼�
 2. 開啟方案，以新增至訊息應用程式擴充功能。 
 3. 選取**iOS** > **延伸** > **iMessage 延伸**按一下**下一步**按鈕： 
 
-    [ ![](intro-to-message-app-extensions-images/message01.png "選取 iMessage 延伸模組")](intro-to-message-app-extensions-images/message01.png)
+    [![](intro-to-message-app-extensions-images/message01.png "選取 iMessage 延伸模組")](intro-to-message-app-extensions-images/message01.png#lightbox)
 4. 輸入**副檔名**按一下**下一步**按鈕： 
 
-    [ ![](intro-to-message-app-extensions-images/message02.png "輸入的擴充功能名稱")](intro-to-message-app-extensions-images/message02.png)
+    [![](intro-to-message-app-extensions-images/message02.png "輸入的擴充功能名稱")](intro-to-message-app-extensions-images/message02.png#lightbox)
 5. 按一下**建立**按鈕建置延伸模組： 
 
-    [ ![](intro-to-message-app-extensions-images/message03.png "按一下 [建立] 按鈕")](intro-to-message-app-extensions-images/message03.png)
+    [![](intro-to-message-app-extensions-images/message03.png "按一下 [建立] 按鈕")](intro-to-message-app-extensions-images/message03.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -135,7 +135,7 @@ Apple 建議測試以確保它們在所有可能的情況下尋找最佳的貼�
 2. 開啟方案，以新增至訊息應用程式擴充功能。 
 3. 選取**iOS** > **延伸** > **iMessage 延伸**按一下**下一步**按鈕： 
 
-    [ ![](intro-to-message-app-extensions-images/message01w.png "選取 iMessage 延伸模組")](intro-to-message-app-extensions-images/message01.png)
+    [![](intro-to-message-app-extensions-images/message01w.png "選取 iMessage 延伸模組")](intro-to-message-app-extensions-images/message01.png#lightbox)
 4. 輸入**副檔名**按一下**確定**按鈕
 
 -----
@@ -159,7 +159,7 @@ Apple 建議測試以確保它們在所有可能的情況下尋找最佳的貼�
 1. 在**方案板**，擴充功能的專案名稱上按一下滑鼠右鍵，然後選取**新增** > **新的檔案...**  >  **iOS |Apple Watch** > **介面控制器**。
 2. 輸入`StickerBrowserViewController`如**名稱**按一下**新增**按鈕： 
 
-    [ ![](intro-to-message-app-extensions-images/browser01.png "請輸入名稱 StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.png)
+    [![](intro-to-message-app-extensions-images/browser01.png "請輸入名稱 StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.png#lightbox)
 3. 開啟`StickerBrowserViewController.cs`檔案進行編輯。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -167,7 +167,7 @@ Apple 建議測試以確保它們在所有可能的情況下尋找最佳的貼�
 1. 在**方案總管 中**，擴充功能的專案名稱上按一下滑鼠右鍵，然後選取**新增** > **新的檔案...**  >  **iOS |Apple Watch** > **介面控制器**。
 2. 輸入`StickerBrowserViewController`如**名稱**按一下**新增**按鈕： 
 
-    [ ![](intro-to-message-app-extensions-images/browser01w.png "請輸入名稱 StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.png)
+    [![](intro-to-message-app-extensions-images/browser01w.png "請輸入名稱 StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.png#lightbox)
 3. 開啟`StickerBrowserViewController.cs`檔案進行編輯。
 
 -----

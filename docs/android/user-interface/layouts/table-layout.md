@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 80147de0f639b4b597e11b41a6854f550edd61a9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 31713937f9423bacdee83620a7e852ea6f141ee6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tablelayout"></a>TableLayout
 
@@ -116,10 +116,9 @@ protected override void OnCreate (Bundle savedInstanceState)
 
 執行應用程式。 您應該會看到下列：
 
-[![顯示多個資料表資料列的 TableLayout 應用程式的範例螢幕擷取畫面](table-layout-images/helloviews3.png)](table-layout-images/helloviews3.png)
+[![顯示多個資料表資料列的 TableLayout 應用程式的範例螢幕擷取畫面](table-layout-images/helloviews3.png)](table-layout-images/helloviews3.png#lightbox)
 
 
-<a name="References" />
 
 ## <a name="references"></a>參考
 

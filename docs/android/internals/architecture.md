@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 9579acc6c070bf692b0db1bd444a31c9ea4aa7ca
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 47f90af1ed68e6c3aea5710b7181b4787fc0895c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="architecture"></a>架構
 
@@ -22,15 +22,14 @@ ms.lasthandoff: 02/27/2018
 
 在 Android 上，大部分系統設備，像是音訊、 圖形、 OpenGL 和電話語音的不是直接適用於原生應用程式，只能透過位於其中一個 Android 執行階段 Java Api [Java](https://developer.xamarin.com/api/namespace/Java.Lang/)。 *命名空間或[Android](https://developer.xamarin.com/api/namespace/Android/)。 * 命名空間。 架構是大致如下：
 
-[![單聲道和圖表封面核心上方和下方.NET/Java + 繫結](architecture-images/architecture1.png)](architecture-images/architecture1.png)
+[![單聲道和圖表封面核心上方和下方.NET/Java + 繫結](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
 
 Xamarin.Android 開發人員存取作業系統藉由呼叫.NET Api 時，才會知道 （適用於低層級的存取），或使用 Android 的命名空間提供 Java api 所公開的橋接器中公開的類別中的各種功能Android 的執行階段。
 
 如需 Android 類別如何與 Android 的執行階段類別進行通訊的詳細資訊請參閱[API 設計](~/android/internals/api-design.md)文件。
 
-<a name="Application_Packages" />
 
-## <a name="application-packages"></a>應用程式封裝
+## <a name="application-packages"></a>應用程式套件
 
 Android 應用程式封裝是以 ZIP 容器*.apk*檔案副檔名。 Xamarin.Android 應用程式封裝擁有相同的結構與配置一般 Android 套件的詳細資訊，具有下列功能：
 
@@ -44,7 +43,6 @@ Android 應用程式封裝是以 ZIP 容器*.apk*檔案副檔名。 Xamarin.Andr
 Xamarin.Android 應用程式也包含*Android 可呼叫包裝函式*允許 Android 呼叫 managed 程式碼。
 
 
-<a name="Android_Callable_Wrappers" />
 
 ## <a name="android-callable-wrappers"></a>Android 的可呼叫包裝函式
 
@@ -67,7 +65,6 @@ Xamarin.Android 應用程式也包含*Android 可呼叫包裝函式*允許 Andro
 執行時必須小心時處置的受管理的可呼叫包裝函式，如果執行個體可以在不小心執行緒之間共用，做為處理這些執行個體將會影響任何其他執行緒的參考。 最大值，僅限 safety`Dispose()`的執行個體已透過配置`new`*或*方法從您*知道*一律配置新的執行個體和其可能未快取執行個體造成意外執行緒之間共用的執行個體。
 
 
-<a name="Managed_Callable_Wrapper_Subclasses" />
 
 ## <a name="managed-callable-wrapper-subclasses"></a>受管理的子類別可呼叫包裝函式
 
@@ -76,7 +73,6 @@ Xamarin.Android 應用程式也包含*Android 可呼叫包裝函式*允許 Andro
 Like managed 可呼叫包裝函式，管理可呼叫包裝函式的子類別也包含全域參考，可透過存取[Java.Lang.Object.Handle](https://developer.xamarin.com/api/property/Java.Lang.Object.Handle/)屬性。 如同 managed 可呼叫包裝函式，以參考全域可以明確地釋放藉由呼叫[Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/)。
 不同於受管理的可呼叫包裝函式，*十分小心*之前處置做為這類情況下，應該採取*dispose （)*正執行之執行個體將會中斷 Java 執行個體之間的對應 (執行個體Android 的可呼叫包裝函式） 和受管理的執行個體。
 
-<a name="Java_Activation" />
 
 ### <a name="java-activation"></a>Java 啟用
 
@@ -182,7 +178,6 @@ I/mono-stdout( 2993): [Managed: Value=]
 只有*dispose （)*的 managed 可呼叫包裝函式的子類別，當您知道不會再，使用 Java 物件，或子類別未包含任何執行個體資料和*（IntPtr、 JniHandleOwnership）*已提供建構函式。
 
 
-<a name="Application_Startup" />
 
 ## <a name="application-startup"></a>應用程式啟動
 

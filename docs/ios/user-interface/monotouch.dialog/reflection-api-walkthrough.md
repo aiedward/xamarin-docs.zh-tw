@@ -7,11 +7,11 @@ ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 44df6fce4ec6d667c096da01cfc339ec2afdb077
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ec5ca2883c6e109a67ee8a4ecb25fe938d0df4ec
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough-creating-an-application-using-the-reflection-api"></a>逐步解說： 建立使用反映 API 的應用程式
 
@@ -34,7 +34,7 @@ _除了項目 API，MonoTouch.Dialog （機動D） 也包含屬性為基礎的�
 
 讓我們看看範例來說明如何使用反映 API。 在此範例中，我們將建立簡單的資料輸入螢幕如下所示：
 
- [ ![](reflection-api-walkthrough-images/01-expense-entry.png "在此範例中，我們將建立簡單的資料輸入螢幕如下所示")](reflection-api-walkthrough-images/01-expense-entry.png)
+ [![](reflection-api-walkthrough-images/01-expense-entry.png "在此範例中，我們將建立簡單的資料輸入螢幕如下所示")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
  <a name="Creating_a_Class_with_MT.D_Attributes" />
 
@@ -119,7 +119,7 @@ window.RootViewController = nav;
 
 現在當我們執行應用程式時，標題會出現在`UINavigationController’s`導覽列做為螢幕擷取畫面所示：
 
- [ ![](reflection-api-walkthrough-images/02-create-task.png "現在當我們執行應用程式時，標題會出現在 UINavigationControllers 導覽列")](reflection-api-walkthrough-images/02-create-task.png)
+ [![](reflection-api-walkthrough-images/02-create-task.png "現在當我們執行應用程式時，標題會出現在 UINavigationControllers 導覽列")](reflection-api-walkthrough-images/02-create-task.png#lightbox)
 
 藉由`UINavigationController`，我們現在能夠利用機動的其他功能的優點瀏覽是必要的 D。 比方說，我們可以將列舉型別`Expense`類別定義的費用和機動的類別目錄D 將會自動建立的選取畫面。 若要進行示範，請修改`Expense`類別，以包含`ExpenseCategory`欄位，如下所示：
 
@@ -142,11 +142,11 @@ public class Expense
 
 執行應用程式現在會導致類別目錄資料表中新的資料列所示：
 
- [ ![](reflection-api-walkthrough-images/03-set-details.png "如所示，執行應用程式現在導致類別目錄資料表中新的資料列")](reflection-api-walkthrough-images/03-set-details.png)
+ [![](reflection-api-walkthrough-images/03-set-details.png "如所示，執行應用程式現在導致類別目錄資料表中新的資料列")](reflection-api-walkthrough-images/03-set-details.png#lightbox)
 
 選取的資料列會產生應用程式瀏覽至新螢幕的資料列對應至列舉型別，如下所示：
 
- [ ![](reflection-api-walkthrough-images/04-set-category.png "選取的資料列會導致應用程式瀏覽至新螢幕的資料列對應至列舉")](reflection-api-walkthrough-images/04-set-category.png)
+ [![](reflection-api-walkthrough-images/04-set-category.png "選取的資料列會導致應用程式瀏覽至新螢幕的資料列對應至列舉")](reflection-api-walkthrough-images/04-set-category.png#lightbox)
 
  <a name="Summary" />
 

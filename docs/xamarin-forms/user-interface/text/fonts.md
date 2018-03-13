@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 22a0b0f5df5a44f2409a59b26eb841b97c920d8b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 771e1607bc4e6be8f0991e159b5d34f6d4ea9c02
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="fonts"></a>字型
 
@@ -181,7 +181,7 @@ Xamarin.Forms 控制顯示文字全都有`Font`可以在 Xaml 中設定的屬性
 
 使用內建的字體以外字型需要某些平台專屬程式碼撰寫。 這個螢幕擷取畫面顯示自訂字型**洛貝斯特**從[Google 的開放原始碼字型](https://www.google.com/fonts)呈現在 iOS、 Android 和 Windows Phone 使用 Xamarin.Forms。
 
- [ ![IOS 和 Android 上的自訂字型](fonts-images/custom-sml.png "自訂字型範例")](fonts-images/custom.png "自訂字型範例")
+ [![IOS 和 Android 上的自訂字型](fonts-images/custom-sml.png "自訂字型範例")](fonts-images/custom.png#lightbox "自訂字型範例")
 
 每個平台所需的步驟如下所述。 包含自訂字型檔案與應用程式時，請務必確認字型的授權可允許發佈。
 
@@ -229,7 +229,7 @@ new Label
 > [!NOTE]
 > 請注意，字型檔名和字型名稱可能不同。 若要探索 Windows 上的字型名稱，以滑鼠右鍵按一下.ttf 檔案，然後選取**預覽**。 然後您可以從預覽視窗判斷字型名稱。
 
-應用程式的通用程式碼現在已完成。 平台專屬的電話撥號員程式碼現在會當作 [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md) 實作。
+現已完成應用程式的通用程式碼。 平台專屬的電話撥號員程式碼現在會當作 [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md) 實作。
 
 ### <a name="xaml"></a>XAML
 

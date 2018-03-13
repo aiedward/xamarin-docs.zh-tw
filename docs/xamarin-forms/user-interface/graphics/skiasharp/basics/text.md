@@ -4,14 +4,15 @@ description: "請參閱如何判斷要整合 SkiaSharp 圖形中的文字呈現�
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9a8cfac8911b1a8a13a4b6f149d02cd2f2c78453
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1cb6b6fcd8a9d02910842eb3eba966fce281d977
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="integrating-text-and-graphics"></a>將文字和圖形的整合
 
@@ -113,7 +114,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 接下來，此方法的其餘部分是直接的。 它會建立另一個`SKPaint`框線和呼叫物件`DrawRoundRect`兩次。 第二個呼叫會使用另一個 10 個像素膨脹的矩形。 第一次呼叫指定圓角半徑 20 像素。第二個具有圓角半徑 30 像素，讓它們看起來是平行：
 
- [![](text-images/framedtext-small.png "已框架處理文字頁面的三個螢幕擷取畫面")](text-images/framedtext-large.png "框架的文字頁面的三個螢幕擷取畫面")
+ [![](text-images/framedtext-small.png "已框架處理文字頁面的三個螢幕擷取畫面")](text-images/framedtext-large.png#lightbox "框架的文字頁面的三個螢幕擷取畫面")
 
 您可以開啟您的電話或模擬器側邊，若要查看文字和框架大小增加。
 
@@ -121,7 +122,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 文字本身可以被視為更圖形化選項。 若要顯示的文字字元，而不是一般的填滿的顯示外框是一個簡單的選項：
 
-[![](text-images/outlinedtext-small.png "螢幕擷取畫面所述的文字頁面的三倍")](text-images/outlinedtext-large.png "三倍所述的文字頁面的螢幕擷取畫面")
+[![](text-images/outlinedtext-small.png "螢幕擷取畫面所述的文字頁面的三倍")](text-images/outlinedtext-large.png#lightbox "三倍所述的文字頁面的螢幕擷取畫面")
 
 這是由變更一般`Style`屬性`SKPaint`物件從其預設值為`SKPaintStyle.Fill`至`SKPaintStyle.Stroke`並指定筆劃寬度。 `PaintSurface`處理常式的**概述文字**頁面會顯示如何進行：
 

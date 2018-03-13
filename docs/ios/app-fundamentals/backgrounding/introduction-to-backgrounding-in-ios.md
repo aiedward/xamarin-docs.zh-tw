@@ -6,11 +6,11 @@ ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e46520122b54fabfe27f73370e2ab736a349f7f4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c4eed99533ba1aca1bd5ba23078866909330b542
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>在 iOS 中 Backgrounding 簡介
 
@@ -27,7 +27,7 @@ iOS 規定背景非常緊密地處理，並提供三種實作該類別的方法�
 
 IOS 應用程式生命週期是應用程式狀態及兩者之間移動的方法的集合。 應用程式之間的轉換取決於使用者的行為以及 backgrounding 需求的應用程式的狀態。 下圖說明移動：
 
- [ ![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "應用程式狀態和應用程式的委派方法的圖表")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png)
+ [![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "應用程式狀態和應用程式的委派方法的圖表")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png#lightbox)
 
 -  **未執行**-應用程式不尚未已啟動的裝置上。
 -  **執行/主動**-應用程式是在畫面上，並在前景執行的程式碼。
@@ -52,7 +52,7 @@ IOS 應用程式生命週期是應用程式狀態及兩者之間移動的方法�
 
 下圖說明如何在應用程式狀態和存留週期方法搭配：
 
- [ ![](introduction-to-backgrounding-in-ios-images/image2.png "此圖說明如何在應用程式狀態和存留週期方法搭配")](introduction-to-backgrounding-in-ios-images/image2.png)
+ [![](introduction-to-backgrounding-in-ios-images/image2.png "此圖說明如何在應用程式狀態和存留週期方法搭配")](introduction-to-backgrounding-in-ios-images/image2.png#lightbox)
 
 ## <a name="user-controls-for-backgrounding-in-ios"></a>在 iOS 中 Backgrounding 的使用者控制項
 
@@ -62,7 +62,7 @@ iOS 7 導入了幾種功能可以讓使用者更充分掌控應用程式的 back
 
 應用程式切換器是 iOS 7 中引進的重要控制項功能。 啟動雙點選**首頁**按鈕，並顯示其處理程序會保持運作的應用程式：
 
- [ ![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "使用應用程式切換器的應用程式之間移動")](introduction-to-backgrounding-in-ios-images/app-switcher-.png)
+ [![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "使用應用程式切換器的應用程式之間移動")](introduction-to-backgrounding-in-ios-images/app-switcher-.png#lightbox)
 
 使用應用程式切換器，使用者可以捲動瀏覽所有 backgrounded 和暫停的應用程式的快照集。 點選應用程式啟動到前景。 向上撥動，是在背景中，正在終止其處理序中移除應用程式。 我們要探討中應用程式切換器[iOS 應用程式生命週期的示範](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md)下一節。
 
@@ -77,7 +77,7 @@ iOS 7 增加使用者應用程式生命週期的控制權，讓使用者能夠�
 
 使用者可以變更此設定，請瀏覽至<span class="uiitem">設定 > 一般 > 背景應用程式重新整理</span>和編輯選取的應用程式的 backgrounding 權限。 如果設為 off 的背景重新整理應用程式，會立即遭到暫停時輸入背景，並封鎖任何背景處理應用程式：
 
- [ ![](introduction-to-backgrounding-in-ios-images/settings-.png "背景應用程式重新整理設定")](introduction-to-backgrounding-in-ios-images/settings-.png)
+ [![](introduction-to-backgrounding-in-ios-images/settings-.png "背景應用程式重新整理設定")](introduction-to-backgrounding-in-ios-images/settings-.png#lightbox)
 
 開發人員可以檢查背景重新整理應用程式狀態與`BackgroundRefreshStatus`應用程式開發介面。 如需範例，請參閱[檢查背景重新整理設定配方](https://developer.xamarin.com/recipes/ios/multitasking/check_background_refresh_setting/)。
 

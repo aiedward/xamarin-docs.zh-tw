@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 234bd79754ae7f328d3207757156089441fc588c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0d418786a7364946e4e20100157fa0907b66deeb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="web-view"></a>網頁檢視
 
@@ -96,7 +96,7 @@ protected override void OnCreate (Bundle bundle)
 
 建置和執行應用程式。 簡單的網頁檢視器應用程式應該會看到與下列螢幕擷取畫面所示：
 
-[![顯示 WebView 應用程式的範例](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png)
+[![顯示 WebView 應用程式的範例](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png#lightbox)
 
 若要處理**回**按鈕按下按鍵，加入下列 using 陳述式：
 
@@ -122,7 +122,7 @@ public override bool OnKeyDown (Android.Views.Keycode keyCode, Android.Views.Key
 
 再次執行應用程式。 您現在應該能夠遵循連結，並瀏覽網頁歷程記錄：
 
-[![作用中的 [上一頁] 按鈕的範例螢幕擷取畫面](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png)
+[![作用中的 [上一頁] 按鈕的範例螢幕擷取畫面](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png#lightbox)
 
 
 *此頁面上的部分是修改依據工作建立及 Android 的開放原始碼專案所共用，並依據條款中所述來使用*

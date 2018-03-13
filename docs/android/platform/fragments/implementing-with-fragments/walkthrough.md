@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 7441fbe1fc686dc4fa5cb67cbfc5ae6353f32c93
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e5c058f173f64efe4a5c777872e9ea67120115f0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough"></a>逐步解說
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 02/27/2018
 
 建立新的 Xamarin.Android 專案，稱為**FragmentSample**。 **最小值 Android**版本應該被設定至 Android 3.1 或更新版本，如圖所示：
 
-[![設定 Android 最小版本](walkthrough-images/00.png)](walkthrough-images/00.png)
+[![設定 Android 最小版本](walkthrough-images/00.png)](walkthrough-images/00.png#lightbox)
 
 
 ## <a name="2-create-the-mainactivity"></a>2.建立 MainActivity
@@ -47,7 +47,7 @@ public class MainActivity : Activity
 
 兩個不同的螢幕大小需要兩個不同的版面配置檔案。 現在讓我們來建立新的資料夾，**資源/配置大型**，並建立新的版面配置，稱為**activity_main.axml**。 我們也將重新命名預設配置檔案，做為**Resources/Layout/activity_main.axml**。 這些變更之後，請配置資料夾應該類似下列的螢幕擷取畫面：
 
-[![在 IDE 中的配置資料夾的螢幕擷取畫面](walkthrough-images/01.png)](walkthrough-images/01.png)
+[![在 IDE 中的配置資料夾的螢幕擷取畫面](walkthrough-images/01.png)](walkthrough-images/01.png#lightbox)
 
 
 所有的裝置將會載入並使用中的配置檔案**資源/配置**。
@@ -92,7 +92,7 @@ Android 3.2 導入了新的方法，來指定畫面配置。 這些新的辨識�
 
 `TitlesFragment` 會顯示各種所扮演的標題，請讓我們將加入新專案的片段稱為`TitlesFragment`:
 
-[![TitlesFragment 專案中加入新的片段](walkthrough-images/02.png)](walkthrough-images/02.png)
+[![TitlesFragment 專案中加入新的片段](walkthrough-images/02.png)](walkthrough-images/02.png#lightbox)
 
 之後`TitlesFragment`已經加入，我們必須變更類別，使它繼承自`Android.App.ListFragment`。 `ListFragment` 是特製化的片段類型，包括清單功能。
 `TitlesFragment` 也會覆寫`OnActivityCreated`（另一個片段存留週期方法），並提供`Adapter`，`ListFragment`用以填入清單：
@@ -162,7 +162,6 @@ private void ShowDetails(int playId)
 
 程式碼會判斷從裝置如何格式化並顯示選取的播放引號。 在平板電腦的情況下`_isDualPane`旗標會設為`true`，使其旁邊會顯示引號， `TitlesFragment`。 如果選取的播放`id`尚未顯示，然後新`DetailsFragment`時建立，並接著載入至`FrameLayout`活動上。 針對沒有大型顯示其他裝置&ndash;手機，例如&ndash;`isDualPane`會設定為`false`讓新`DetailsActivity`會啟動。
 
-<a name="5. Create_the_DetailsActivity" />
 
 ## <a name="5-create-the-detailsactivity"></a>5.建立 DetailsActivity
 
@@ -187,7 +186,6 @@ public class DetailsActivity : Activity
 
 請注意，沒有配置檔已載入來`DetailsActivity`。 相反地，`DetailsFragment`會載入至活動的 [根] 檢視。 此根檢視具有特殊的識別碼`Android.Resource.Id.Content`。 新`DetailFragment`已建立並再加入到這個根目錄內的檢視`FragmentTransaction`，它由活動的`FragmentManager`。
 
-<a name="6. Create_the_DetailsFragment" />
 
 ## <a name="6-create-the-detailsfragment"></a>6.建立 DetailsFragment
 

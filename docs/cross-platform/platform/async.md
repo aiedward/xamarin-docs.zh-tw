@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 3de0e09b15b704db5e67fbbee6ba9bac86f58557
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4762612075a866581339b198552b8e26c9a1f6fa
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="async-support-overview"></a>非同步支援概觀
 
@@ -28,7 +28,7 @@ Xamarin 的非同步支援單聲道 3.0 基礎上建置，並從正在行動設�
 
 範例應用程式提出簡單非同步的 web 要求 （而不會封鎖主執行緒），然後以下載的 html 和字元計數更新 UI。
 
- [ ![](async-images/AsyncAwait_427x368.png "範例應用程式而不會封鎖主執行緒會簡單非同步的 web 要求，然後以下載的 html 和字元計數更新 UI")](async-images/AsyncAwait.png)
+ [![](async-images/AsyncAwait_427x368.png "範例應用程式而不會封鎖主執行緒會簡單非同步的 web 要求，然後以下載的 html 和字元計數更新 UI")](async-images/AsyncAwait.png#lightbox)
 
 Xamarin 的非同步支援單聲道 3.0 基礎上建置，並從正在行動設備友善的 Silverlight 版本是.NET 4.5 的行動設備友善版本升級應用程式開發介面的設定檔。
 

@@ -3,16 +3,16 @@ title: "Hello, Android 多重畫面：深度剖析"
 description: "在這份含有兩部分的指南中，會擴充在 Hello, Android 指南中所建立的 Phoneword 應用程式來處理第二個畫面。 過程中，會介紹基本 Android 應用程式建置組塊。 包含 Android 架構深入剖析，以協助您進一步了解 Android 應用程式結構和功能。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: AD3BAE9A-963C-4CF7-9733-111033034289
+ms.assetid: E4150036-7760-4023-BD33-B7BDE7B7AF5B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: a47dea43b1fb1e84a0cd3dffc07b483497edbe09
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: acced081daa9416c5c8dcf90f769aaacd584ec9a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="hello-android-multiscreen-deep-dive"></a>Hello, Android 多重畫面：深度剖析
 
@@ -30,7 +30,6 @@ _在這份含有兩部分的指南中，會擴充在《Hello, Android》指南�
 
 在 [Hello, Android 深度剖析](~/android/get-started/hello-android/hello-android-deepdive.md)中，您已了解 Android 應用程式是唯一的程式，因為它們缺少單一進入點。 相反地，作業系統 (或另一個應用程式) 會啟動任何一個應用程式的已註冊活動，接著啟動應用程式的程序。 這項對於 Android 架構的深入探討會藉由介紹 Android 應用程式建置組塊和其功能，加強您對於 Android 應用程式建構方式的了解。
 
-<a name="AndroidApplicationBlocks" />
 
 ### <a name="android-application-blocks"></a>Android 應用程式區塊
 
@@ -52,7 +51,6 @@ Android 的設計圍繞著「最低權限原則」 &ndash; 應用程式只具有
 
 為了進行通訊，應用程式區塊會來回傳送稱為「意圖」的非同步訊息。 意圖包含接收區塊的相關資訊，有時還會有某些資料。 從一個應用程式元件傳送的意圖會觸發在另一個應用程式元件中發生某件事，因而繫結兩個應用程式元件，並且允許使用者進行通訊。 藉由來回傳送意圖，您可以讓區塊協調複雜的動作，例如啟動相機應用程式以拍攝並儲存、收集位置資訊，或從一個螢幕巡覽至下一個螢幕。
 
-<a name="AndroidManifestXML" />
 
 ### <a name="androidmanifestxml"></a>AndroidManifest.XML
 

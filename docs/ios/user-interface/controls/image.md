@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 71f3774c12add26e818b0859cf90c17ab6358538
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 716189fbf1518e9100a78cc5ae64e9e63a24c949
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="displaying-images"></a>顯示影像
 
@@ -25,7 +25,7 @@ Visual Studio for Mac 也支援特殊的目錄稱為也可以包含映像檔案�
 
 這個螢幕擷取畫面顯示**建置動作**檔案時，會出現的選項是右鍵：
 
- [ ![](image-images/image30a.png "建置動作 功能表")](image-images/image30a.png)
+ [![](image-images/image30a.png "建置動作 功能表")](image-images/image30a.png#lightbox)
 
 Visual Studio for Mac 通常會選擇正確**建置動作**自動，但是您應該留意這些設定，特別是當您在專案中移動檔案。
 
@@ -33,15 +33,15 @@ Visual Studio for Mac 通常會選擇正確**建置動作**自動，但是您應
 
 若要將影像檔加入至您的專案，第一次滑鼠右鍵按一下專案，然後選擇**加入檔案...**
 
- [ ![](image-images/image31a.png "新增檔案 功能表")](image-images/image31a.png)
+ [![](image-images/image31a.png "新增檔案 功能表")](image-images/image31a.png#lightbox)
 
 選取映像 （或影像） 您要包含在標準檔案對話方塊中。 預設的建置動作將會是映像**BundleResource** – 不要覆寫此值，除非您有特定原因。
 
- [ ![](image-images/image32a.png "加入檔案對話方塊")](image-images/image32a.png)
+ [![](image-images/image32a.png "加入檔案對話方塊")](image-images/image32a.png#lightbox)
 
 映像將電腦新增至您的專案，且可載入並顯示在程式碼中。 這個螢幕擷取畫面顯示新增至 iOS 應用程式專案的影像：
 
- [ ![](image-images/image33a.png "在專案中的映像")](image-images/image33a.png)
+ [![](image-images/image33a.png "在專案中的映像")](image-images/image33a.png#lightbox)
 
 ### <a name="what-is-the-resources-directory"></a>什麼是資源目錄？
 
@@ -61,11 +61,11 @@ Visual Studio for Mac 通常會選擇正確**建置動作**自動，但是您應
 
 若要顯示映像使用設計工具，影像檢視應該做為容器，並可以顯示的單一映像或映像的動畫。 **影像檢視**從 [工具箱] 的圖示如下所示：
 
- [ ![](image-images/image35a.png "ImageView 工具箱中")](image-images/image35.png)
+ [![](image-images/image35a.png "ImageView 工具箱中")](image-images/image35.png#lightbox)
 
 拖曳**影像檢視**從**Toobox**到檢視的控制器。 然後在 * * 影像檢視 > 映像 * * 下拉式清單將提供您的專案中的所有可用的映像檔案的清單。 選取要在其中新增至您的映像檢視任何。
 
- [ ![](image-images/image36a.png "ImageView 工具箱中")](image-images/image36.png)
+ [![](image-images/image36a.png "ImageView 工具箱中")](image-images/image36.png#lightbox)
 
 ### <a name="displaying-the-image-programmatically"></a>以程式設計方式顯示的影像
 

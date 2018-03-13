@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 1a49c3a3181b477b777de74b0eb53f5e0da6f041
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ea51dc2c7dadc5cc430df990c9ce79eac6e941da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="homekit"></a>HomeKit
 
 _HomeKit 是 Apple 的架構控制擸裝置。本文介紹 HomeKit，並涵蓋 HomeKit 附屬應用程式模擬器和撰寫簡單的 Xamarin.iOS 應用程式，這些附屬應用程式與互動中設定測試附屬應用程式。_
 
-[ ![](homekit-images/accessory01.png "範例 HomeKit 啟用應用程式")](homekit-images/accessory01.png)
+[![](homekit-images/accessory01.png "範例 HomeKit 啟用應用程式")](homekit-images/accessory01.png#lightbox)
 
 Apple iOS 8 中引進 HomeKit，來順暢地將來自各種不同廠商的多個擸裝置整合到單一且一致的單位。 升級，將用來探索一般通訊協定、 設定及控制擸裝置 HomeKit 允許裝置從非相關的廠商，以搭配使用，而不需個別供應商需要協調工作。
 
@@ -57,21 +57,21 @@ HomeKit 會組織成首頁集合某一特定位置中的所有自動化裝置。
 3. 如果您尚未這樣做，請按一下 上**識別碼**並建立您的應用程式的識別碼 (例如`com.company.appname`)，否則請編輯您現有的識別碼。
 4. 請確認**HomeKit**已核取指定之識別碼的服務： 
 
-    [ ![](homekit-images/provision01.png "啟用指定之識別碼的 HomeKit 服務")](homekit-images/provision01.png)
+    [![](homekit-images/provision01.png "啟用指定之識別碼的 HomeKit 服務")](homekit-images/provision01.png#lightbox)
 5. 儲存您的變更。
 4. 按一下**佈建的設定檔** > **開發**並建立新的開發，佈建您的應用程式設定檔： 
 
-    [ ![](homekit-images/provision02.png "建立新的開發佈建設定檔的應用程式")](homekit-images/provision02.png)
+    [![](homekit-images/provision02.png "建立新的開發佈建設定檔的應用程式")](homekit-images/provision02.png#lightbox)
 5. 請下載並安裝新的佈建設定檔或使用 Xcode 下載及安裝設定檔。
 6. 編輯您 Xamarin.iOS 專案選項，並確保您使用您剛才建立的佈建設定檔： 
 
-    [ ![](homekit-images/provision03.png "選取剛才建立的佈建設定檔")](homekit-images/provision03.png)
+    [![](homekit-images/provision03.png "選取剛才建立的佈建設定檔")](homekit-images/provision03.png#lightbox)
 7. 接著，編輯您**Info.plist**檔案，並確定您使用的用來建立佈建設定檔的應用程式識別碼： 
 
-    [ ![](homekit-images/provision04.png "設定應用程式識別碼 ")](homekit-images/provision04.png)
+    [![](homekit-images/provision04.png "設定應用程式識別碼 ")](homekit-images/provision04.png#lightbox)
 8. 最後，編輯您**Entitlements.plist**檔案，並確定**HomeKit**已選取權限： 
 
-    [ ![](homekit-images/provision05.png "啟用 HomeKit 權利")](homekit-images/provision05.png)
+    [![](homekit-images/provision05.png "啟用 HomeKit 權利")](homekit-images/provision05.png#lightbox)
 9. 儲存所有檔案的變更。
 
 這些設定，應用程式現在已準備好存取 HomeKit 架構應用程式開發介面。 如需佈建的詳細資訊，請參閱我們[裝置佈建](~/ios/get-started/installation/device-provisioning/index.md)和[佈建您的應用程式](~/ios/get-started/installation/device-provisioning/index.md)輔助線。
@@ -92,7 +92,7 @@ Apple HomeKit 附屬應用程式模擬器會隨著提供個別下載 Xcode，因
 1. 在網頁瀏覽器中瀏覽[Apple 開發人員下載](https://developer.apple.com/download/more/?name=for%20Xcode)
 2. 下載**Xcode xxx 的其他工具**（xxx 是您已安裝 Xcode 的版本）： 
 
-    [ ![](homekit-images/simulator01.png "下載 Xcode 的其他工具")](homekit-images/simulator01.png)
+    [![](homekit-images/simulator01.png "下載 Xcode 的其他工具")](homekit-images/simulator01.png#lightbox)
 3. 開啟磁碟映像和安裝的工具，在您**應用程式**目錄。
 
 與安裝 HomeKit 附屬應用程式的模擬器，可以建立虛擬附屬應用程式進行測試。
@@ -103,22 +103,22 @@ Apple HomeKit 附屬應用程式模擬器會隨著提供個別下載 Xcode，因
 
 1. 從應用程式 資料夾中，啟動 HomeKit 附屬應用程式模擬器： 
 
-    [ ![](homekit-images/simulator02.png "HomeKit 附屬應用程式模擬器")](homekit-images/simulator02.png)
+    [![](homekit-images/simulator02.png "HomeKit 附屬應用程式模擬器")](homekit-images/simulator02.png#lightbox)
 2. 按一下 **+** 按鈕，然後選取**新附屬應用程式...**: 
 
-    [ ![](homekit-images/simulator03.png "加入新的附屬應用程式")](homekit-images/simulator03.png)
+    [![](homekit-images/simulator03.png "加入新的附屬應用程式")](homekit-images/simulator03.png#lightbox)
 3. 新的附屬應用程式的相關資訊，然後按一下**完成**按鈕： 
 
-    [ ![](homekit-images/simulator04.png "填寫新附屬應用程式的相關資訊")](homekit-images/simulator04.png)
+    [![](homekit-images/simulator04.png "填寫新附屬應用程式的相關資訊")](homekit-images/simulator04.png#lightbox)
 4. 按一下**新增服務...** 按鈕，然後從下拉式清單中選取服務類型： 
 
-    [ ![](homekit-images/simulator05.png "從下拉式清單中選取服務類型")](homekit-images/simulator05.png)
+    [![](homekit-images/simulator05.png "從下拉式清單中選取服務類型")](homekit-images/simulator05.png#lightbox)
 5. 提供**名稱**服務並按一下**完成**按鈕： 
 
-    [ ![](homekit-images/simulator06.png "輸入服務的名稱")](homekit-images/simulator06.png)
+    [![](homekit-images/simulator06.png "輸入服務的名稱")](homekit-images/simulator06.png#lightbox)
 6. 您也可以按一下 服務提供選擇性的特性**新增特性**按鈕和設定必要的設定： 
 
-    [ ![](homekit-images/simulator07.png "設定必要的設定")](homekit-images/simulator07.png)
+    [![](homekit-images/simulator07.png "設定必要的設定")](homekit-images/simulator07.png#lightbox)
 7. 重複上述步驟，以建立每個虛擬擸裝置 HomeKit 支援類型的其中一個。
 
 使用一些範例虛擬 HomeKit 附屬應用程式建立及設定，現在可以使用，並從 Xamarin.iOS 應用程式中控制這些裝置。
@@ -127,7 +127,7 @@ Apple HomeKit 附屬應用程式模擬器會隨著提供個別下載 Xcode，因
 
 IOS 10 的新功能 （和更高），開發人員必須加入`NSHomeKitUsageDescription`應用程式的金鑰`Info.plist`檔案，並提供字串，宣告應用程式想要存取使用者的 HomeKit 資料庫的原因。 這個字串會顯示在使用者第一次執行應用程式：
 
-[ ![](homekit-images/info01.png "HomeKit 權限對話方塊")](homekit-images/info01.png)
+[![](homekit-images/info01.png "HomeKit 權限對話方塊")](homekit-images/info01.png#lightbox)
 
 若要設定此機碼，執行下列作業：
 
@@ -136,10 +136,10 @@ IOS 10 的新功能 （和更高），開發人員必須加入`NSHomeKitUsageDes
 3. 加入新**項目**至清單。
 4. 從下拉式清單中，選取**隱私權-HomeKit 使用方式描述**: 
 
-    [ ![](homekit-images/info02.png "選取隱私權-HomeKit 使用方式描述")](homekit-images/info02.png)
+    [![](homekit-images/info02.png "選取隱私權-HomeKit 使用方式描述")](homekit-images/info02.png#lightbox)
 5. 輸入應用程式想要存取使用者的 HomeKit 資料庫的原因的描述： 
 
-    [ ![](homekit-images/info03.png "輸入的描述")](homekit-images/info03.png)
+    [![](homekit-images/info03.png "輸入的描述")](homekit-images/info03.png#lightbox)
 6. 將變更儲存到檔案。
 
 > [!IMPORTANT]
@@ -189,7 +189,7 @@ public override void FinishedLaunching (UIApplication application)
 
 第一次執行應用程式時，使用者將會要求您是否要允許使用它來存取其 HomeKit 資訊：
 
-[ ![](homekit-images/home01.png "如果要允許使用它來存取其 HomeKit 資訊將會要求使用者")](homekit-images/home01.png)
+[![](homekit-images/home01.png "如果要允許使用它來存取其 HomeKit 資訊將會要求使用者")](homekit-images/home01.png#lightbox)
 
 如果使用者回答**確定**，則應用程式將能夠使用其 HomeKit 附屬應用程式否則不會和 HomeKit 的任何呼叫將會失敗，發生錯誤。
 
@@ -283,7 +283,7 @@ ThisApp.HomeManager.AddHome(HomeName.Text,(home,error) =>{
 
 一旦找到新的附屬應用程式，應該呈現給使用者，因此它們選取它，將它加入至首頁。 範例：
 
-[ ![](homekit-images/accessory01.png "尋找新的附屬應用程式")](homekit-images/accessory01.png)
+[![](homekit-images/accessory01.png "尋找新的附屬應用程式")](homekit-images/accessory01.png#lightbox)
 
 呼叫`AddAccessory`方法，將選取的附屬應用程式加入至家中的集合。 例如: 
 
@@ -300,11 +300,11 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 如果`err`屬性不是`null`、 發生錯誤，以及應該呈現給使用者。 否則，將需要使用者輸入來新增裝置的安裝程式碼：
 
-[ ![](homekit-images/accessory02.png "輸入要新增裝置的安裝程式碼")](homekit-images/accessory02.png)
+[![](homekit-images/accessory02.png "輸入要新增裝置的安裝程式碼")](homekit-images/accessory02.png#lightbox)
 
 HomeKit 附屬應用程式模擬器中可以找到這個數字下**設定程式碼**欄位：
 
-[ ![](homekit-images/accessory03.png "安裝程式碼中的欄位 HomeKit 附屬應用程式模擬器")](homekit-images/accessory03.png)
+[![](homekit-images/accessory03.png "安裝程式碼中的欄位 HomeKit 附屬應用程式模擬器")](homekit-images/accessory03.png#lightbox)
 
 實際 HomeKit 附屬應用程式，安裝程式碼可能是裝置本身，在 [產品] 方塊或附屬應用程式的使用者手冊中的標籤上列印。
 
@@ -320,7 +320,7 @@ HomeKit 附屬應用程式模擬器中可以找到這個數字下**設定程式�
 
 `HMHome`物件包含一份指派任一附屬應用程式中的使用者可以看到其`Accessories`屬性。 例如: 
 
-[ ![](homekit-images/accessory04.png "範例附屬應用程式")](homekit-images/accessory04.png)
+[![](homekit-images/accessory04.png "範例附屬應用程式")](homekit-images/accessory04.png#lightbox)
 
 在此表單中，使用者可以選取指定的附屬應用程式，並使用它所提供的服務。
 
@@ -368,7 +368,7 @@ HomeKit 附屬應用程式模擬器中可以找到這個數字下**設定程式�
 
 載入之後`HMAccessory`您可以查詢個別`HNService`物件，它提供，並向使用者顯示該資訊：
 
-[ ![](homekit-images/accessory05.png "顯示服務資訊")](homekit-images/accessory05.png)
+[![](homekit-images/accessory05.png "顯示服務資訊")](homekit-images/accessory05.png#lightbox)
 
 您應該永遠應該檢查`Reachable`屬性`HMAccessory`再嘗試使用它。 無法連線到使用者不在範圍內，或如果已經拔除，可以是裝置的附屬應用程式。
 
@@ -658,7 +658,7 @@ Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
 
 與**HomeKitIntro**真實的 iOS 裝置的硬體特性值的變更上執行的應用程式應該幾乎立即看到 HomeKit 附屬應用程式模擬器中。 例如，變更 iOS 應用程式中的燈號的狀態：
 
-[ ![](homekit-images/test01.png "IOS 應用程式中的燈號狀態變更")](homekit-images/test01.png)
+[![](homekit-images/test01.png "IOS 應用程式中的燈號狀態變更")](homekit-images/test01.png#lightbox)
 
 應該變更的淺 HomeKit 附屬應用程式模擬器中的狀態。 如果值不會變更，撰寫新的特性值時，請檢查錯誤訊息的狀態，並確定 附屬應用程式時仍可連線。
 

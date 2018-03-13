@@ -8,13 +8,15 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 06/12/2017
-ms.openlocfilehash: d4fce635b26b0c367e836e4ec41d4f51a10b9c35
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: eff096b1dca15b9b11038a599987f632bca2352f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
-# <a name="httpclient-stack-selector"></a>HttpClient 堆疊選取器
+# <a name="httpclient-stack-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient 堆疊和 iOS/macOS SSL/TLS 實作選取器
+
+## <a name="httpclient-stack-selector"></a>HttpClient 堆疊選取器
 
 適用於 Xamarin.iOS、 Xamarin.tvOS 和 Xamarin.Mac： 這會控制其`HttpClient`使用實作。 預設值仍然是功能由 HttpClient `HttpWebRequest`，而您可以現在選擇性地切換使用原生 iOS、 tvOS 或 macOS 傳輸的實作 (`NSUrlSession`或`CFNetwork`視作業系統而定)。 其優點是較小的二進位檔，以及較快速的下載的缺點是它需要事件迴圈執行的非同步作業執行。
 
@@ -22,7 +24,7 @@ ms.lasthandoff: 02/27/2018
 
 <a name="Selecting-a-HttpClient-Stack" />
 
-## <a name="selecting-a-httpclient-stack"></a>選取 HttpClient 堆疊
+### <a name="selecting-a-httpclient-stack"></a>選取 HttpClient 堆疊
 
 若要調整您的應用程式正在使用 HttpClient:
 
@@ -30,19 +32,19 @@ ms.lasthandoff: 02/27/2018
 2. 切換至**建置**專案的設定 (例如， **iOS 建置**Xamarin.iOS 應用程式)。
 3. 從**HttpClient 實作**下拉式清單中，選取 HttpClient 輸入做為下列其中之一： **Managed**， **CFNetwork**或**NSUrlSession**.
 
-[ ![從受管理、 CFNetwork 或 NSUrlSession 選擇 HttpClient 實作](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png)
+[![從受管理、 CFNetwork 或 NSUrlSession 選擇 HttpClient 實作](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png#lightbox)
 
 <a name="Managed" />
 
-## <a name="managed-default"></a>受管理的 （預設值）
+### <a name="managed-default"></a>受管理的 （預設值）
 
 Managed 處理常式是隨附的 Xamarin 的上一個版本的管理完善 HttpClient 處理常式。
 
-### <a name="pros"></a>優點：
+#### <a name="pros"></a>優點：
 
  - 它有最適合的功能集 Microsoft.NET 和舊版 Xamarin。
 
-### <a name="cons"></a>缺點：
+#### <a name="cons"></a>缺點：
 
  - 它無法與 Apple 作業系統完全整合，且僅限於 TLS 1.0。
  - 它通常比慢很多之類的加密在原生 Api。
@@ -50,16 +52,16 @@ Managed 處理常式是隨附的 Xamarin 的上一個版本的管理完善 HttpC
 
 <a name="CFNetwork" />
 
-## <a name="cfnetwork"></a>CFNetwork
+### <a name="cfnetwork"></a>CFNetwork
 
 CFNetwork 為基礎的處理常式根據原生`CFNetwork`用於 iOS 6 和更新版本的架構。
 
-### <a name="pros"></a>優點：
+#### <a name="pros"></a>優點：
 
  - 它會使用原生應用程式開發介面進行更好的效能和較小的可執行檔大小。
  - 較新的標準，例如 TLS 1.2 的支援。
 
-### <a name="cons"></a>缺點：
+#### <a name="cons"></a>缺點：
 
  - 需要 iOS 6 或更新版本。
  - WatchOS 上無法使用。
@@ -67,22 +69,21 @@ CFNetwork 為基礎的處理常式根據原生`CFNetwork`用於 iOS 6 和更新�
 
 <a name="NSUrlSession" />
 
-## <a name="nsurlsession"></a>NSUrlSession
+### <a name="nsurlsession"></a>NSUrlSession
 
 NSURLSession 為基礎的處理常式根據原生`NSURLSession`用於 iOS 7 及更新版本的架構。
 
-### <a name="pros"></a>優點：
+#### <a name="pros"></a>優點：
 
  - 它會使用原生應用程式開發介面進行更好的效能和較小的可執行檔大小。
  - 最新的標準，例如 TLS 1.2 的支援。
 
-### <a name="cons"></a>缺點：
+#### <a name="cons"></a>缺點：
 
  - 需要 iOS 7 或更新版本。
  - 無法使用某些 HttpClient/選項功能。
 
-
-## <a name="programmatically-setting-the-httpmessagehandler"></a>以程式設計方式設定 HttpMessageHandler
+### <a name="programmatically-setting-the-httpmessagehandler"></a>以程式設計方式設定 HttpMessageHandler
 
 除了上述的整個專案的組態，您可以也具現化`HttpClient`，以及將所需`HttpMessageHandler`透過建構函式，如下列程式碼片段所示：
 
@@ -104,7 +105,7 @@ HttpClient client = new HttpClient(new NSUrlSessionHandler());
 <a name="Selecting-a-SSL-TLS-implementation" />
 <a name="Apple-TLS" />
 
-# <a name="ssltls-implementation-build"></a>SSL/TLS 實作組建
+## <a name="ssltls-implementation-build"></a>SSL/TLS 實作組建
 
 SSL （安全通訊端層） 和 TLS （傳輸層安全性），後續提供支援 HTTP 和其他網路連線，透過`System.Net.Security.SslStream`。 Xamarin.iOS、 Xamarin.tvOS 或 Xamarin.Mac 的`System.Net.Security.SslStream`實作會呼叫 Apple 的原生 SSL/TLS 實作，而不要使用 單聲道所提供的 managed 的實作。 Apple 的原生實作支援 TLS 1.2。
 
@@ -114,7 +115,7 @@ SSL （安全通訊端層） 和 TLS （傳輸層安全性），後續提供支�
 
 <a name="App-Transport-Security" />
 
-# <a name="app-transport-security"></a>應用程式的傳輸安全性
+## <a name="app-transport-security"></a>應用程式的傳輸安全性
 
 Apple 的_應用程式的傳輸安全性_(ATS) 會強制執行 （例如應用程式的後端伺服器） 的網際網路資源與您的應用程式之間的安全連線。 AT 可確保所有的網際網路通訊符合要保障連線安全的最佳作法，因此可以防止意外洩漏機密資訊直接透過您的應用程式或它正在使用的程式庫。
 
@@ -141,10 +142,8 @@ Xamarin.iOS 9.8 導入了一些新的設定包含**.csproj** Xamarin.iOS 應用�
 ```xml
 <MtouchTlsProvider>Default</MtouchTlsProvider>
 ```
-秒
-
 
 ## <a name="related-links"></a>相關連結
 
 - [傳輸層安全性 (TLS)](~/cross-platform/app-fundamentals/transport-layer-security.md)
-- [應用程式的傳輸安全性](~/ios/app-fundamentals/ats.md)
+- [應用程式傳輸安全性](~/ios/app-fundamentals/ats.md)

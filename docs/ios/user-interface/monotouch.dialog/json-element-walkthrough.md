@@ -7,11 +7,11 @@ ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 63faa0c46abfb509a6834efa647f23ad0ed7f454
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1a5e4ab73c9090cbb743dc8cb339d6f50c5ff527
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough-using-a-json-element-to-create-a-user-interface"></a>逐步解說： 建立使用者介面使用 JSON 項目
 
@@ -22,7 +22,7 @@ _MonoTouch.Dialog （機動D） 包含支援 JSON 資料透過動態 UI 產生�
 
 周D 支援當使用 JSON 時，項目 API 中可用功能的完整範圍。 例如，下列螢幕擷取畫面中的應用程式的完全宣告使用 JSON 中：
 
-[ ![](json-element-walkthrough-images/01-load-from-file.png "例如，下列螢幕擷取畫面中的應用程式完全宣告使用 JSON") ](json-element-walkthrough-images/01-load-from-file.png) [ ![ ](json-element-walkthrough-images/02-load-from-file-details.png "比方說，此螢幕擷取畫面中的應用程式完全使用宣告JSON")](json-element-walkthrough-images/02-load-from-file-details.png)
+[![](json-element-walkthrough-images/01-load-from-file.png "例如，下列螢幕擷取畫面中的應用程式完全宣告使用 JSON") ](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ ](json-element-walkthrough-images/01-load-from-file.png "比方說，此螢幕擷取畫面中的應用程式完全使用宣告JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
 讓我們重新瀏覽的範例中[元素 API 逐步解說](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)教學課程中，顯示如何加入 工作詳細資料螢幕使用 JSON。
 
@@ -30,7 +30,7 @@ _MonoTouch.Dialog （機動D） 包含支援 JSON 資料透過動態 UI 產生�
 
 本逐步解說的範例可讓您建立的工作。 工作的第一個畫面選取時，詳細資料螢幕會看見所示：
 
- [ ![](json-element-walkthrough-images/03-task-list.png "如所示，工作的第一個畫面選取時，就會呈現詳細資料畫面")](json-element-walkthrough-images/03-task-list.png)
+ [![](json-element-walkthrough-images/03-task-list.png "如所示，工作的第一個畫面選取時，就會呈現詳細資料畫面")](json-element-walkthrough-images/03-task-list.png#lightbox)
 
 ## <a name="creating-the-json"></a>建立 JSON
 
@@ -166,7 +166,7 @@ _rootElement = new RootElement ("Json Example"){
 
 在執行階段，檔案會擷取並剖析機動當使用者巡覽至第二個檢視，如以下螢幕擷取畫面所示的 D:
 
- [ ![](json-element-walkthrough-images/04-json-web-example.png "檔案會擷取並剖析機動當使用者巡覽至第二個檢視的 D")](json-element-walkthrough-images/04-json-web-example.png)
+ [![](json-element-walkthrough-images/04-json-web-example.png "檔案會擷取並剖析機動當使用者巡覽至第二個檢視的 D")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
 
  <a name="Summary" />
 

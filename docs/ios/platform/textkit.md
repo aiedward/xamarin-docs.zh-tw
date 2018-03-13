@@ -3,16 +3,16 @@ title: TextKit
 description: "文字套件 API 提供功能強大的文字 Xamarin.iOS 配置和轉譯功能。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 2C33018F-D64A-4BAA-A34E-082EF311D162
+ms.assetid: 1D0477E8-CD1E-48A9-B7C8-7CA892069EFF
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 6b065c4b695edc3c88c5aed8c407c53fa6bbc578
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7ae41e99d20f0e8f3cad6b933e415002903a3294
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="text-kit"></a>文字套件
 
@@ -171,4 +171,4 @@ TextContainer.ExclusionPaths = new UIBezierPath[] { bezierPath };
 
 - [IOS 7 （範例） 的簡介](https://developer.xamarin.com/samples/monotouch/IntroToiOS7)
 - [iOS 7 使用者介面概觀](~/ios/platform/introduction-to-ios7/ios7-ui.md)
-- [Backgrounding](~/ios/app-fundamentals/backgrounding/index.md)
+- [背景](~/ios/app-fundamentals/backgrounding/index.md)

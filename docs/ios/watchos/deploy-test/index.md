@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: fdd4311072efd5571724fbe00d12a96921054fa2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4c5b9fcbfaabbfc78da1064396dc3fec2d3fde8d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="deployment-and-testing"></a>部署及測試
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 02/27/2018
 - 在**iOS 開發人員中心**:
   - [應用程式識別碼](#App_IDs)已建立。
   - [應用程式群組](#App_Groups)設定 （如有必要）。
-  - [*發佈*佈建的設定檔](#Provisioning_Profiles)建立。
+  - 發佈提供設定檔建立
 
 - 在您的方案：
 
@@ -36,6 +36,7 @@ ms.lasthandoff: 02/27/2018
   - [為測試部署 Apple Watch](~/ios/watchos/deploy-test/device.md)，或
   - [上傳的應用程式市集](~/ios/watchos/deploy-test/appstore.md)。
 
+<a name="App_IDs"/>
 
 ## <a name="app-ids"></a>應用程式識別碼
 
@@ -65,7 +66,7 @@ ms.lasthandoff: 02/27/2018
 
 針對分佈，您只需要建立一個佈建的散發設定檔萬用字元應用程式識別碼。
 
-<a name="app-groups" />
+<a name="App_Groups" />
 
 ## <a name="app-groups"></a>應用程式群組
 
@@ -102,8 +103,6 @@ ms.lasthandoff: 02/27/2018
 。![Entitlements.plist 編輯器](images/entitlements-plist-sml.png)
 
 請勿**不**啟用監看式應用程式專案中的權利。 您不需要在 監看式本身上啟用。
-
-
 
 ## <a name="related-links"></a>相關連結
 

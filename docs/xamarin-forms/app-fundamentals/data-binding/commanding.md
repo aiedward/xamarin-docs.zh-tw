@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 0bc039385a6b2077c3b5fa5114b35b586a14a150
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b75bc7e4ccf53e82ff107c867c5ba01813960ea5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="the-command-interface"></a>命令介面
 
@@ -279,7 +279,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 之前輸入有效的存留期，左邊的 [iOS] 畫面會顯示配置。 Android 和 UWP 螢幕顯示**送出**啟用設定 [age] 按鈕：
 
-[![人員的項目](commanding-images/personentry-small.png "人員項目")](commanding-images/personentry-large.png "人員項目")
+[![人員的項目](commanding-images/personentry-small.png "人員項目")](commanding-images/personentry-large.png#lightbox "人員項目")
 
 程式不會儲存項目，當您離開頁面時，就不需要任何設備編輯現有的項目。
 
@@ -531,7 +531,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 以下是程式中的動作：
 
-[![十進位鍵盤](commanding-images/decimalkeyboard-small.png "十進位鍵盤")](commanding-images/decimalkeyboard-large.png "十進位鍵盤")
+[![十進位鍵盤](commanding-images/decimalkeyboard-small.png "十進位鍵盤")](commanding-images/decimalkeyboard-large.png#lightbox "十進位鍵盤")
 
 請注意，所有三個螢幕擷取畫面中小數點的按鈕已停用，因為輸入的數字已經包含小數點。 
 

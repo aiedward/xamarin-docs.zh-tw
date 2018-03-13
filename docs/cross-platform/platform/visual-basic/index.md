@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: c8f66ac8532d6926fe8280b5687135dc3df53289
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 978d9e569825e20b40e963f590049eaab1d4e752
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="portable-visual-basicnet"></a>移植 Visual basic.net
 
@@ -24,7 +24,8 @@ Xamarin.Android 4.10.1 Xamarin.iOS 7.0.4 和 Xamarin Studio 4.2，這表示使�
 
 若要建立及編譯 Visual Basic 可攜式類別庫中，您必須使用 Visual Studio Windows (Visual Studio 2012 或更新版本) 上。
 
-> ℹ️ **注意：** Visual Basic 程式庫只能建立和使用 Visual Studio 編譯。 Xamarin.iOS 和 Xamarin.Android 不支援 Visual Basic 語言。
+> [!NOTE]
+> Visual Basic 程式庫只能建立和使用 Visual Studio 編譯。 Xamarin.iOS 和 Xamarin.Android 不支援 Visual Basic 語言。
 >
 > 如果您在 Visual Studio 中您可以從 Xamarin.iOS 和 Xamarin.Android 專案參考 Visual Basic 專案。
 >
@@ -44,15 +45,15 @@ Xamarin.Android 4.10.1 Xamarin.iOS 7.0.4 和 Xamarin Studio 4.2，這表示使�
 
 1.  在**新專案**畫面上，選取**Visual Basic > 類別庫 （可攜式）**選項：
 
-  [ ![](images/image1-sml.png "建立新的 Visual Basic 可攜式程式庫")](images/image1.png)
+    [![](images/image1-sml.png "建立新的 Visual Basic 可攜式程式庫")](images/image1.png#lightbox)
 
 1.  Visual Studio 會立即出現提示，以下列**加入可攜式類別庫**對話方塊，讓您可以設定設定檔。 刻度的平台，您需要支援，並按下**確定**。
 
-  [ ![](images/image2-sml.png "藉由選擇平台選取 PCL 設定檔")](images/image2.png)
+    [![](images/image2-sml.png "藉由選擇平台選取 PCL 設定檔")](images/image2.png#lightbox)
 
 1.  Visual Basic PCL 專案中所示，會顯示**方案總管 中**如下所示：
 
-  [ ![](images/image3-sml.png "空白的 Visual Studio PCL 專案")](images/image3.png)
+    [![](images/image3-sml.png "空白的 Visual Studio PCL 專案")](images/image3.png#lightbox)
 
 
 PCL 現在已準備好要加入的 Visual Basic 程式碼的。 PCL 專案可以參考其他專案 （應用程式專案、 程式庫專案和甚至是其他 PCL 專案）。
@@ -61,7 +62,7 @@ PCL 現在已準備好要加入的 Visual Basic 程式碼的。 PCL 專案可以
 
 PCL 設定檔 （可控制哪些 PCL 是相容的平台） 可以檢視和變更專案上按一下滑鼠右鍵，然後選擇**屬性 > 文件庫 > 變更...**.在這個螢幕擷取畫面顯示產生的對話方塊：
 
- [ ![](images/image4-sml.png "在專案屬性中編輯 PCL 設定檔")](images/image4.png)
+ [![](images/image4-sml.png "在專案屬性中編輯 PCL 設定檔")](images/image4.png#lightbox)
 
 如果在設定檔之後加入 PCL 已新增過程式碼變更，，很可能如果程式碼會參考不屬於新選取的設定檔的功能，將不再編譯程式庫。
 

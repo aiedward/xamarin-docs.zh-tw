@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 0c4b0571d9254edba15177d5f98fd6718f1c6bcb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6e233d83eb9c5cb360add36da100963b95e54514
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="architecture-changes"></a>架構變更
 
@@ -34,7 +34,7 @@ _瀏覽 iOS 11 的新功能_
 
 5. 將設定變更為**版本 | iPhone**並設定**支援的架構**下拉式清單可**ARM64**。
 
-如需有關 32 位元和 64 位元架構的詳細資訊，請參閱[32/64 位元平台考量](~/cross-platform/macios/32-and-64.md#ios)指南。
+如需有關 32 位元和 64 位元架構的詳細資訊，請參閱[32/64 位元平台考量](~/cross-platform/macios/32-and-64/index.md#ios)指南。
 
 ## <a name="related-links"></a>相關連結
 

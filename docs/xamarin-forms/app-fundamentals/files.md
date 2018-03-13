@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/22/2017
-ms.openlocfilehash: 605374c0f2bfe656e564e48d14ffe18ce5b7dfe5
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c6d10025ccc038ba160fe3c09f6ce92e97d916d2
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="files"></a>檔案
 
@@ -40,18 +40,18 @@ Xamarin.Forms 程式碼會在多個平台上執行 - 每一個都有自己的檔
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![設定內嵌資源建置動作](files-images/vs-embeddedresource-sml.png "設定 EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png "設定 EmbeddedResource 建置動作")
+[![設定內嵌資源建置動作](files-images/vs-embeddedresource-sml.png "設定 EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png#lightbox "設定 EmbeddedResource 建置動作")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![文字檔案內嵌在 PCL 中，設定內嵌的資源建置動作](files-images/xs-embeddedresource-sml.png "設定 EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png "設定 EmbeddedResource 建置動作")
+[![文字檔案內嵌在 PCL 中，設定內嵌的資源建置動作](files-images/xs-embeddedresource-sml.png "設定 EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png#lightbox "設定 EmbeddedResource 建置動作")
 
 -----
 
 `GetManifestResourceStream` 用來存取內嵌的檔案使用其**資源識別碼**。 根據預設，資源識別碼是內嵌在專案的預設命名空間的前置詞的檔案名稱在此情況下組件是**WorkingWithFiles**和檔名**PCLTextResource.txt**，資源識別碼是讓`WorkingWithFiles.PCLTextResource.txt`。
 
 ```csharp
-var assembly = typeof(LoadResourceText).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
 Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLTextResource.txt");
 string text = "";
 using (var reader = new System.IO.StreamReader (stream)) {
@@ -61,12 +61,12 @@ using (var reader = new System.IO.StreamReader (stream)) {
 
 `text`然後顯示文字，或使用它在程式碼中使用變數。 下列螢幕擷取畫面[範例應用程式](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)中呈現的文字會顯示`Label`控制項。
 
- [ ![文字檔案內嵌在 PCL](files-images/pcltext-sml.png "內嵌的文字檔案，在應用程式中顯示的 PCL")](files-images/pcltext.png "PCL 顯示在應用程式中內嵌的文字檔案")
+ [![文字檔案內嵌在 PCL](files-images/pcltext-sml.png "內嵌的文字檔案，在應用程式中顯示的 PCL")](files-images/pcltext.png#lightbox "PCL 顯示在應用程式中內嵌的文字檔案")
 
 載入及還原序列化 XML 也一樣簡單。 下列程式碼會示範 XML 檔案被載入並還原序列化的資源，然後繫結至`ListView`供顯示。 XML 檔案包含的陣列`Monkey`物件 （已定義類別的範例程式碼）。
 
 ```csharp
-var assembly = typeof(LoadResourceText).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
 Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLXmlResource.xml");
 List<Monkey> monkeys;
 using (var reader = new System.IO.StreamReader (stream)) {
@@ -77,7 +77,7 @@ var listView = new ListView ();
 listView.ItemsSource = monkeys;
 ```
 
- [ ![Xml 檔案內嵌在 PCL 中，顯示在 ListView 中](files-images/pclxml-sml.png "內嵌的 XML 檔案，在清單檢視中顯示的 PCL")](files-images/pclxml.png "PCL 顯示在清單檢視中的內嵌 XML 檔案")
+ [![Xml 檔案內嵌在 PCL 中，顯示在 ListView 中](files-images/pclxml-sml.png "內嵌的 XML 檔案，在清單檢視中顯示的 PCL")](files-images/pclxml.png#lightbox "PCL 顯示在清單檢視中的內嵌 XML 檔案")
 
 <a name="Embedding_in_Shared_Projects" />
 
@@ -106,7 +106,7 @@ var resourcePrefix = "WorkingWithFiles.WinPhone.";
 
 Debug.WriteLine("Using this resource prefix: " + resourcePrefix);
 // note that the prefix includes the trailing period '.' that is required
-var assembly = typeof(SharedPage).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(SharedPage)).Assembly;
 Stream stream = assembly.GetManifestResourceStream
     (resourcePrefix + "SharedTextResource.txt");
 ```
@@ -129,7 +129,7 @@ Stream stream = assembly.GetManifestResourceStream
 using System.Reflection;
 // ...
 // use for debugging, not in released app code!
-var assembly = typeof(SharedPage).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(SharedPage)).Assembly;
 foreach (var res in assembly.GetManifestResourceNames()) {
     System.Diagnostics.Debug.WriteLine("found resource: " + res);
 }
@@ -141,7 +141,7 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 
 Xamarin.Forms 會執行多個平台上，每個都有它自己的檔案系統，因為載入及儲存使用者所建立的檔案沒有單一方法。 若要示範如何儲存和載入文字檔案範例應用程式包含一個畫面，將儲存並載入某些使用者輸入的 [完成] 畫面如下所示：
 
- [ ![儲存及載入文字](files-images/saveandload-sml.png "儲存和載入應用程式中的檔案")](files-images/saveandload.png "儲存和載入應用程式中的檔案")
+ [![儲存及載入文字](files-images/saveandload-sml.png "儲存和載入應用程式中的檔案")](files-images/saveandload.png#lightbox "儲存和載入應用程式中的檔案")
 
 每個平台都有稍微不同的目錄結構和其他檔案系統功能-例如 Xamarin.iOS 和 Xamarin.Android 支援大部分`System.IO`功能，但 Windows Phone 只支援`IsolatedStorage`和[`Windows.Storage` ](http://msdn.microsoft.com/library/windowsphone/develop/jj681698(v=vs.105).aspx)應用程式開發介面。
 

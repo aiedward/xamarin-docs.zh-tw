@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/01/2016
-ms.openlocfilehash: 4c6928af364870541581b784b7c4e9e7717eb2db
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 94963e92f8372316a982bbe38f1fb653d38b2a3b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-arkit-with-urhosharp"></a>使用 UrhoSharp ARKit
 
@@ -106,7 +106,7 @@ ARKit API 是很簡單，您建立及設定[ARSession](https://developer.apple.c
 
 下圖顯示項目正在進行`ArkitApp`類別：
 
-[ ![類別和 ArkitApp 螢幕的圖表](urhosharp-images/image2.png)](urhosharp-images/image2.png)
+[![類別和 ArkitApp 螢幕的圖表](urhosharp-images/image2.png)](urhosharp-images/image2.png#lightbox)
 
 ### <a name="rendering-the-frames"></a>轉譯畫面格
 

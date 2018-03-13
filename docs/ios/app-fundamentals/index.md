@@ -3,27 +3,27 @@ title: "應用程式基本概念"
 description: "應用程式的核心概念"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
+ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/21/2017
-ms.openlocfilehash: 9cace37a9e762a49a90963591931793d30d05453
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f6c0bb75327f0c14d314a0e7ad9d114fd17c2a57
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="application-fundamentals"></a>應用程式基本概念
 
 此章節提供一些較常見的工作項目或概念，開發人員需要開發 Xamarin.iOS (先前稱為 MonoTouch) 應用程式時應該注意的指南。
 
-## <a name="app-transport-securityiosapp-fundamentalsatsmd"></a>[應用程式的傳輸安全性](~/ios/app-fundamentals/ats.md)
+## <a name="app-transport-securityiosapp-fundamentalsatsmd"></a>[應用程式傳輸安全性](~/ios/app-fundamentals/ats.md)
 
 本文將介紹應用程式傳輸安全性會強制執行 iOS 9 應用程式，這表示 Xamarin.iOS 專案的安全性變更會涵蓋 AT 組態選項，它將討論如何 AT，退出，視需要。 因為預設會啟用 AT，任何不安全的網際網路連線將會引發 9 的 iOS 應用程式中的例外狀況 （除非您已明確地允許它）。
 
 
-## <a name="backgroundingiosapp-fundamentalsbackgroundingindexmd"></a>[Backgrounding](~/ios/app-fundamentals/backgrounding/index.md)
+## <a name="backgroundingiosapp-fundamentalsbackgroundingindexmd"></a>[背景](~/ios/app-fundamentals/backgrounding/index.md)
 
 背景處理或 backgrounding 是讓應用程式在前景執行另一個應用程式時，在背景中執行工作的程序。 本指南可做為背景處理在 iOS 中的簡介。
 

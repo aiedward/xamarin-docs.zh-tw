@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: d81776dcb48d33927ffde4087ceb3f408b38d16f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 036e1ddc95f8eabec3e87c13c25cad972c29a5d1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-macos-sierra"></a>MacOS 利也簡介
 
@@ -52,7 +52,7 @@ macOS 利也包含新的 ApplePay Javascript 架構，可讓開發人員併入 A
 
 現代 macOS 應用程式，例如 Apple Safari 網頁瀏覽器、 頁面文書處理器，並顯示與傳統的 UI 項目，例如浮動面板的 離開沒有統一且即時的使用者介面的許多新技術，以及多個開啟的數字模式工作表使用windows。
 
-[ ![索引標籤式的 Mac 視窗的範例](images/content08.png)](images/content08.png)
+[![索引標籤式的 Mac 視窗的範例](images/content08.png)](images/content08.png#lightbox)
 
 我們[建置現代化 macOS 應用程式](~/mac/platform/introduction-to-macos-sierra/modern-cocoa-apps.md)指南涵蓋了幾個秘訣、 功能和技術的開發人員可以使用建置中 Xamarin.Mac macOS 現代應用程式。
 

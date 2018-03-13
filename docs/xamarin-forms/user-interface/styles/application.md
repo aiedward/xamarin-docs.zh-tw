@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: d258d993d8452c0c93c53d875d81683a294f80d3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dc728e5817a7d1d61d7745120bca7f05641ce76f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="global-styles"></a>全域樣式
 
@@ -60,7 +60,7 @@ _樣式可供全域將它們新增至應用程式的資源字典。這有助於�
 
 這會導致下列螢幕擷取畫面所示的外觀：
 
-[![](application-images/application-styles-1.png "全域樣式範例")](application-images/application-styles-1-large.png "全域樣式範例")
+[![](application-images/application-styles-1.png "全域樣式範例")](application-images/application-styles-1-large.png#lightbox "全域樣式範例")
 
 如需有關建立頁面的樣式資訊[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)，請參閱[明確樣式](~/xamarin-forms/user-interface/styles/explicit.md)和[隱含樣式](~/xamarin-forms/user-interface/styles/implicit.md)。
 
@@ -98,9 +98,9 @@ _樣式可供全域將它們新增至應用程式的資源字典。這有助於�
 
 原始`buttonStyle`、 定義應用程式層級時，會覆寫`buttonStyle`在頁面層級定義的執行個體。 此外，網頁層級的樣式會覆寫控制層級`buttonStyle`。 因此， [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)藍色文字，會顯示執行個體，如下列螢幕擷取畫面所示：
 
-[![](application-images/application-styles-2.png "覆寫樣式範例")](application-images/application-styles-2-large.png "覆寫樣式範例")
+[![](application-images/application-styles-2.png "覆寫樣式範例")](application-images/application-styles-2-large.png#lightbox "覆寫樣式範例")
 
-## <a name="creating-a-global-style-in-c35"></a>&#35; 中建立全域的樣式
+## <a name="creating-a-global-style-in-c35"></a>在 C 中建立全域的樣式&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) 執行個體可以新增到應用程式的[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) C# 中建立新的集合[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)，再以加入`Style`執行個體來`ResourceDictionary`，做為下列程式碼範例所示：
 

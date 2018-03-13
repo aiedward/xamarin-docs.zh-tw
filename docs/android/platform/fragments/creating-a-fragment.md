@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: c1dd3495b0d7f76197126094cfd10e50d0ca760d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 415c3a5e9446c5db545b62272f3b90a9ac73e401
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-a-fragment"></a>建立的片段
 
@@ -28,7 +28,7 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 
 
 > [!NOTE]
-> **注意：**片段子類別沒有引數建構函式都必須有公用的預設值。
+> 沒有引數建構函式時，片段子類別必須有公用的預設值。
 
 ## <a name="adding-a-fragment-to-an-activity"></a>加入到活動中的片段
 
@@ -108,7 +108,7 @@ OR
 片段有稍微獨立的但仍受自己週期[裝載活動的生命週期](~/android/app-fundamentals/activity-lifecycle/index.md)。
 比方說，當活動暫停時，其相關聯的片段的所有已暫停。 下圖概述片段的生命週期。
 
-[![說明片段生命週期的流程圖](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png)
+[![說明片段生命週期的流程圖](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png#lightbox)
 
 
 ### <a name="fragment-creation-lifecycle-methods"></a>片段建立存留週期方法
@@ -238,4 +238,4 @@ public override void OnCreate(Bundle savedState)
 
 下列畫面顯示此功能表的外觀：
 
-[![我的往返應用程式顯示功能表項目範例螢幕擷取畫面](creating-a-fragment-images/fragment-menu-example.png)](creating-a-fragment-images/fragment-menu-example.png)
+[![我的往返應用程式顯示功能表項目範例螢幕擷取畫面](creating-a-fragment-images/fragment-menu-example.png)](creating-a-fragment-images/fragment-menu-example.png#lightbox)

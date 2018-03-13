@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: ac4644f65486d70fcbb7da1a03574fb238348313
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f657fc3dd87d5c39d442a863e4acc00ac320b00d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="target-framework"></a>目標 Framework
 
@@ -44,7 +44,7 @@ _本文涵蓋的目標架構 （基底類別程式庫） 可供 Xamarin.Mac 和 
 2. 在 [方案總管] 中，按兩下專案檔以開啟 [專案選項] 對話方塊。
 3. 從**一般**索引標籤上，選取的類型**目標 Framework** ，符合您的應用程式需求：
 
-  [![使用專案選項 視窗中選擇目標 framework](target-framework-images/select-target-full.png "使用選擇的目標 framework 專案選項視窗")](target-framework-images/select-target-full-large.png)
+  [![使用專案選項 視窗中選擇目標 framework](target-framework-images/select-target-full.png "使用選擇的目標 framework 專案選項視窗")](target-framework-images/select-target-full-large.png#lightbox)
 
 4. 按一下 [確定] 按鈕以儲存您的變更。
 

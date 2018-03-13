@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 51cc7a4700e8cb3ece556b0ada841d70d5f2bb8b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 486df3bbee3f8af511140e2d287f9f95571c7b3d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-sdk-emulator-troubleshooting"></a>Android SDK 模擬器疑難排解
 
@@ -83,7 +83,7 @@ SERVICE_NAME: intelhaxm
 
 如果您不想要看到效能警告，您可以將其停用。 在 Visual Studio 中，按一下 [工具] > [選項] > [Xamarin] > [Android 設定]，然後停用 [若不支援 AVD 加速即發出警告 (HAXM)] 選項：
 
-[![停用 AVD 加速警告](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png)
+[![停用 AVD 加速警告](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -110,13 +110,11 @@ SERVICE_NAME: intelhaxm
 
 -----
 
-<a name="solutions" />
 
 ## <a name="solutions-to-common-problems"></a>常見問題的解決方案
 
 許多常見的「Android SDK 模擬器」問題都可透過對電腦進行設定變更或安裝額外軟體來解決。 下列各節將說明這些問題並提供解決方案。
 
-<a name="deployment" />
 
 ### <a name="deployment-issues"></a>部署問題
 
@@ -142,7 +140,6 @@ SERVICE_NAME: intelhaxm
 5. 如果模擬器未出現在此清單中，請啟動 [Android SDK 管理員]、套用所有更新，然後重新嘗試啟動模擬器。
 
 
-<a name="haxm-issues" />
 
 ### <a name="haxm-issues"></a>HAXM 問題
 
@@ -162,7 +159,6 @@ HAXM 可能與其他使用虛擬化的技術發生衝突，例如 Hyper-V、Wind
 
 - **防毒軟體** &ndash; 如果您正在執行使用硬體輔助虛擬化的防毒軟體 (例如 Avast)，請將此軟體停用或解除安裝、重新開機，然後重試「Android SDK 模擬器」。
 
-<a name="bios" />
 
 #### <a name="incorrect-bios-settings"></a>不正確的 BIOS 設定
 

@@ -7,18 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: de4683ca660224aa3cf17398ac649086b7e4ad88
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6c0f2b92b34ce4d446e51b0aafa56f6283701dd1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="extending-the-recyclerview-example"></a>擴充 RecyclerView 範例
 
 
 基本應用程式中所述[基本 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)實際上不會執行大部分&ndash;只要捲動，然後顯示固定的臉正面相片項目，以便瀏覽清單。 在真實世界的應用程式，使用者應該能夠藉由點選中顯示的項目與應用程式互動。 此外，在基礎資料來源可以變更 （或變更應用程式），並顯示的內容必須維持一致，這些變更。 在下列章節中，您將學習如何處理項目按一下事件，並更新`RecyclerView`當基礎資料來源變更。
 
-<a name="itemclick" />
 
 ### <a name="handling-item-click-events"></a>處理項目按一下事件
 
@@ -91,7 +90,7 @@ PhotoViewHolder vh = new PhotoViewHolder (itemView, OnClick);
 
 現在當您建置及執行範例相片檢視應用程式，點選在顯示的相片會導致出現報表已觸及的臉正面相片的快顯通知：
 
-[ ![點選當相片卡時所顯示的範例快顯通知](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png)
+[![點選當相片卡時所顯示的範例快顯通知](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png#lightbox)
 
 這個範例會示範一個方法，實作事件處理常式取代`RecyclerView`。 無法在這裡使用的另一種方法是將事件放在檢視持有者，並讓配接器，訂閱這些事件。 如果範例相片應用程式提供相片編輯功能，會需要不同的事件`ImageView`和`TextView`內每個`CardView`： 會牽涉到`TextView`會啟動`EditView`對話方塊可讓使用者編輯標題和在修飾`ImageView`會啟動相片 touchup 工具，可讓使用者裁剪或旋轉相片。 根據您的應用程式需求，您必須設計處理，而且回應觸控事件的最佳方法。
 
@@ -159,7 +158,7 @@ randomPickBtn.Click += delegate
 
 現在，當**隨機挑選**點選按鈕，`RecyclerView`更新以顯示該相片進一步向下集合中已交換與集合中第一張相片的顯示：
 
-[ ![第一個螢幕擷取畫面之前交換，交換之後的第二個螢幕擷取畫面](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png)
+[![第一個螢幕擷取畫面之前交換，交換之後的第二個螢幕擷取畫面](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png#lightbox)
 
 當然，`NotifyDataSetChanged`無法呼叫而不是兩個呼叫`NotifyItemChanged`，因此可能會強制這樣做，但`RecyclerView`重新整理整個集合，即使只有兩個集合中的項目已變更。 呼叫`NotifyItemChanged`是更具效率比呼叫`NotifyDataSetChanged`。
 

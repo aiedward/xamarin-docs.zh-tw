@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 670c990fb4f2e4d2a01ada83ea98e8e589b5c473
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d1052695bb7337a18d1a2f1f7015e9079f86f6f5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-icons-and-images"></a>使用圖示和映像
 
@@ -67,13 +67,13 @@ Apple 會進行下列建議來設計您的應用程式啟動映像：
 
 1. 在**方案總管 中**，連按兩下`Assets.xcassets`開啟進行編輯： 
 
-    [ ![](icons-images-images/asset01.png "Assets.xcassets 檔案")](icons-images-images/asset01.png)
+    [![](icons-images-images/asset01.png "Assets.xcassets 檔案")](icons-images-images/asset01.png#lightbox)
 2. 在**資產編輯器**，按一下`LaunchImages`資產： 
 
-    [ ![](icons-images-images/asset02.png "LaunchImages 資產")](icons-images-images/asset02.png)
+    [![](icons-images-images/asset02.png "LaunchImages 資產")](icons-images-images/asset02.png#lightbox)
 3. 按一下**1 x Apple TV**項目和選取啟動映像，或從檔案系統 （選擇性） 拖曳中的新映像： 
 
-    [ ![](icons-images-images/asset03.png "選取啟動映像")](icons-images-images/asset03.png)
+    [![](icons-images-images/asset03.png "選取啟動映像")](icons-images-images/asset03.png#lightbox)
 4. 儲存您的變更。
 
 <a name="Layered-Images" />
@@ -84,7 +84,7 @@ Apple 會進行下列建議來設計您的應用程式啟動映像：
 
 分層的映像包含來自兩個 （2） 若要五 （5） 個別結合以形成完整的映像的圖層。 除了背景圖層，每個圖層會使用其疊置順序以及透明度建立深度的幻影。 當使用者互動的分層式映像時，較高的 Z 排序層會調整，而且建立這種效果重疊。
 
-[ ![](icons-images-images/layered01.png "分層的映像 Z 排序圖表")](icons-images-images/layered01.png)
+[![](icons-images-images/layered01.png "分層的映像 Z 排序圖表")](icons-images-images/layered01.png#lightbox)
 
 > [!IMPORTANT]
 > **注意：**分層映像所需的應用程式的圖示和其他選擇性[可設定焦點的項目](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection)（例如上架映像）。 不過，Apple 建議使用分層的映像可以取得焦點，在您的應用程式中的任何映像。
@@ -109,7 +109,7 @@ Apple 會進行下列建議來設計您分層的映像：
 
 請務必記得納入_安全區域_到每個圖層構成層疊影像的框線。 因為個別的圖層可以調整及裁剪視差效果時，圖層的內容可以從掉，如果它是圖層的邊緣太靠近：
 
-[ ![](icons-images-images/layered02.png "35 像素框線")](icons-images-images/layered02.png)
+[![](icons-images-images/layered02.png "35 像素框線")](icons-images-images/layered02.png#lightbox)
 
 <a name="Creating-Layered-Images" />
 
@@ -128,7 +128,7 @@ tvOS 運作方式與分層映像中，格式如下：
 
 建立 Apple[視差預覽程式](http://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg)預覽和建立分層映像所需的應用程式圖示和選擇性可設定焦點的項目。 預覽程式顯示 form 完成分層映像的每個圖層：
 
-[ ![](icons-images-images/layered03.png "視差預覽程式")](icons-images-images/layered03.png)
+[![](icons-images-images/layered03.png "視差預覽程式")](icons-images-images/layered03.png#lightbox)
 
 同時預覽分層映像，您可以使用滑鼠來將影像旋轉，以及預覽視差效果。 使用 **+**  （加號） 和 **-**  （減號） 按鈕來新增和移除圖層。
 
@@ -142,7 +142,7 @@ tvOS 運作方式與分層映像中，格式如下：
 
 Xamarin.tvOS 應用程式將需要不只一個應用程式圖示，首頁 Apple TV 螢幕，但也在應用程式存放區的圖示。 應用程式圖示，則您的第一個變更，使上潛在使用者的絕佳的印象就和應該要能傳達一眼您的應用程式用途。
 
-[ ![](icons-images-images/icon01.png "應用程式圖示")](icons-images-images/icon01.png)
+[![](icons-images-images/icon01.png "應用程式圖示")](icons-images-images/icon01.png#lightbox)
 
 每個應用程式必須提供一個小型和大型應用程式圖示的版本。 安裝應用程式時，將首頁 Apple TV 螢幕上使用小圖示。 大型版本會使用應用程式市集。 大型應用程式圖示應該模擬小型圖示版本的外觀與風格。
 
@@ -202,16 +202,16 @@ Apple 提供建立應用程式圖示的下列建議：
 
 1. 在**方案總管 中**，連按兩下`Assets.xcassets`開啟進行編輯： 
 
-    [ ![](icons-images-images/asset01.png "Assets.xcassets fileg")](icons-images-images/asset01.png)
+    [![](icons-images-images/asset01.png "Assets.xcassets fileg")](icons-images-images/asset01.png#lightbox)
 2. 在**資產編輯器**，依序展開`App Icon & Top Shelf Image`資產： 
 
-    [ ![](icons-images-images/asset04.png "展開 靠上架影像資產")](icons-images-images/asset04.png)
+    [![](icons-images-images/asset04.png "展開 靠上架影像資產")](icons-images-images/asset04.png#lightbox)
 3. 接下來，依序展開`App Icon - Small`資產： 
 
-    [ ![](icons-images-images/asset05.png "展開 應用程式圖示為小資產")](icons-images-images/asset05.png)
+    [![](icons-images-images/asset05.png "展開 應用程式圖示為小資產")](icons-images-images/asset05.png#lightbox)
 4. 然後展開`Back`資產和中的，按一下 `Contents`項目： 
 
-    [ ![](icons-images-images/asset06.png "然後展開 上一步資產")](icons-images-images/asset06.png)
+    [![](icons-images-images/asset06.png "然後展開 上一步資產")](icons-images-images/asset06.png#lightbox)
 5. 按一下**1 x Apple TV 項目**選取映像檔。
 6. 重複上述步驟`Front`和`Middle`資產。
 7. 然後重複相同步驟，以定義`App Icon - Large`資產。
@@ -223,7 +223,7 @@ Apple 提供建立應用程式圖示的下列建議：
 
 如果使用者具有 Xamarin.tvOS 應用程式置於頂端列，在 Apple TV 主畫面上，當使用者選取您的應用程式時將顯示大型的上架映像。 此映像應該反白顯示您的應用程式的功能，或提供其內容的直接連結。
 
-[ ![](icons-images-images/topshelf01.png "上架影像範例")](icons-images-images/topshelf01.png)
+[![](icons-images-images/topshelf01.png "上架影像範例")](icons-images-images/topshelf01.png#lightbox)
 
 可以為單一靜態提供上架映像`.png`或`.lsr`檔案 (請參閱[建立分層映像](#Creating-Layered-Images)) 或它可以動態建立在執行階段為單一資料列的可設定焦點的項目 (請參閱[動態高層貨架內容](#Dynamic-Top-Shelf-Content)下方)。
 
@@ -253,13 +253,13 @@ Apple 提供下列建議來建立您的上架映像：
 
 1. 在**方案總管 中**，連按兩下`Assets.xcassets`開啟進行編輯： 
 
-    [ ![](icons-images-images/asset01.png "Assets.xcassets 檔案")](icons-images-images/asset01.png)
+    [![](icons-images-images/asset01.png "Assets.xcassets 檔案")](icons-images-images/asset01.png#lightbox)
 2. 在**資產編輯器**，依序展開`App Icon & Top Shelf Image`資產： 
 
-    [ ![](icons-images-images/asset04.png "展開 靠上架影像資產")](icons-images-images/asset04.png)
+    [![](icons-images-images/asset04.png "展開 靠上架影像資產")](icons-images-images/asset04.png#lightbox)
 3. 按一下`Top Shelf Image`資產： 
 
-    [ ![](icons-images-images/asset07.png "上架影像資產")](icons-images-images/asset07.png)
+    [![](icons-images-images/asset07.png "上架影像資產")](icons-images-images/asset07.png#lightbox)
 5. 按一下**1 x Apple TV 項目**選取映像檔。
 6. 儲存您的變更。
 
@@ -423,10 +423,10 @@ Apple 提供捲動內凹橫幅下列的建議：
 
 1. 在**方案總管 中**，連按兩下`Info.plist`開啟進行編輯： 
 
-    [ ![](icons-images-images/info01.png "Info.plist 檔案")](icons-images-images/info01.png)
+    [![](icons-images-images/info01.png "Info.plist 檔案")](icons-images-images/info01.png#lightbox)
 2. 在**Info.Plist 編輯器**，選取 Assets Catalog (中設定上面[設定應用程式圖示](#Setting-the-App-Icons)區段) 的**應用程式圖示**: 
 
-    [ ![](icons-images-images/info02.png "Info.Plist 編輯器")](icons-images-images/info02.png)
+    [![](icons-images-images/info02.png "Info.Plist 編輯器")](icons-images-images/info02.png#lightbox)
 3. 接下來，選取 Assets Catalog (中設定上面[設定啟動映像](#Setting-the-Launch-Image)區段) 的**啟動映像**。
 4. 儲存您的變更。
 

@@ -7,19 +7,17 @@ ms.assetid: 22EE5FBD-3240-4308-AF76-EF45D72936DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/22/2018
-ms.openlocfilehash: cf2211a572d45b7c29018d00f36cb8408484483f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 30b1cb280c2817f55d73e10ff8b4d7942011bf2c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbar"></a>工具列
 
 _工具列會提供更大的彈性比預設動作列的動作列元件： 它可以放在中的應用程式，可以變更其大小，而且它可以使用不同的應用程式佈景主題色彩配置。此外，每個應用程式畫面上可以有多個工具列。_
 
-
-<a name="overview" />
  
 ## <a name="overview"></a>總覽
 
@@ -27,7 +25,7 @@ _工具列會提供更大的彈性比預設動作列的動作列元件： 它可
 
 `Toolbar` Widget （Android 5.0 棒棒糖符號中引進） 可以視為動作列介面的一般化&ndash;它用來取代動作列。 `Toolbar`可以用於應用程式版面配置的任何位置，而且它可更自訂比動作列。 下列螢幕擷取畫面說明自訂`Toolbar`本指南中所建立的範例： 
 
-[![使用 [編輯]，工具列的範例螢幕擷取畫面儲存和溢位功能表項目](images/01-toolbar-sml.png)](images/01-toolbar.png)
+[![使用 [編輯]，工具列的範例螢幕擷取畫面儲存和溢位功能表項目](images/01-toolbar-sml.png)](images/01-toolbar.png#lightbox)
 
 有某些重要差異`Toolbar`和動作列： 
 
@@ -72,7 +70,6 @@ Google[材料設計指導方針](https://material.google.com/)建議利用這些
 -   使用**Android 支援程式庫 v7 AppCompat**程式庫 (稱為*AppCompat*本指南的其餘部分) 來部署`Toolbar`較早版本的 Android 上。 
 
  
-<a name="requirements" />
  
 ## <a name="requirements"></a>需求
 

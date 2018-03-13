@@ -4,14 +4,15 @@ description: "您可以使用手指在畫布上繪製。"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: c9894cac0064b91049b0142971896d7dd67dec5f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b4213d71c2eca6c2552ac674a0203d7a2cc36e1b
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="finger-painting"></a>手指繪製
 
@@ -162,7 +163,7 @@ public partial class FingerPaintPage : ContentPage
 
 您的手指圖畫只會受到您 talent:
 
-[![](finger-paint-images/fingerpaint-small.png "手指 [小畫家] 頁面的三個螢幕擷取畫面")](finger-paint-images/fingerpaint-large.png "手指 [小畫家] 頁面的三個螢幕擷取畫面")
+[![](finger-paint-images/fingerpaint-small.png "手指 [小畫家] 頁面的三個螢幕擷取畫面")](finger-paint-images/fingerpaint-large.png#lightbox "手指 [小畫家] 頁面的三個螢幕擷取畫面")
 
 
 ## <a name="related-links"></a>相關連結

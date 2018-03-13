@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: a16f72e6aaee93aa313aff0aba23887b51acf701
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 10c4a1e3355263722d170dff0a5e2707eb794818
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>驗證使用者以 Azure Cosmos DB 文件資料庫
 
@@ -81,7 +81,7 @@ Azure 應用程式服務擁有 Cosmos DB 帳戶的主要金鑰中裝載的中間
 
     下列螢幕擷取畫面會示範這項設定：
 
-    [![](authentication-images/azure-web-app-settings.png "App Service Web 應用程式設定")](authentication-images/azure-web-app-settings-large.png "App Service Web 應用程式設定")
+    [![](authentication-images/azure-web-app-settings.png "App Service Web 應用程式設定")](authentication-images/azure-web-app-settings-large.png#lightbox "App Service Web 應用程式設定")
 
 1. 將資源語彙基元 broker 方案發行至 Azure App Service web 應用程式。
 
@@ -117,7 +117,7 @@ Azure 應用程式服務擁有 Cosmos DB 帳戶的主要金鑰中裝載的中間
 
   下列螢幕擷取畫面會示範這項設定：
 
-  [![](authentication-images/app-service-authentication-settings.png "App Service Web 應用程式驗證設定")](authentication-images/app-service-authentication-settings-large.png "App Service Web 應用程式驗證設定")
+  [![](authentication-images/app-service-authentication-settings.png "App Service Web 應用程式驗證設定")](authentication-images/app-service-authentication-settings-large.png#lightbox "App Service Web 應用程式驗證設定")
 
 App Service web 應用程式也應該設定為與 Facebook 應用程式，以啟用驗證流程通訊。 這可藉由選取 Facebook 身分識別提供者，並輸入**應用程式識別碼**和**應用程式秘鑰**從 Facebook 開發人員中心的 Facebook 應用程式設定的值。 如需詳細資訊，請參閱[新增 Facebook 應用程式的資訊](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application)。
 

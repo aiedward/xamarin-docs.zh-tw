@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: c59ddde44b0e47122865c55a7964707f106d2691
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e46038b21327fe8847d2c04ee1ba16960f6a059b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>在 iOS 設計工具中使用的資料表
 
@@ -40,7 +40,7 @@ A`UITableView`與原型內容通常用於顯示資料的清單其中原型儲存
 
 StoryboardTable 範例包含簡單的主從式應用程式中，使用這兩種 UITableView 分鏡腳本。 本章節的其餘部分描述如何建置完成時，看起來像這樣的小型的待辦事項清單範例：
 
- [ ![範例的螢幕](creating-tables-in-a-storyboard-images/image13a.png)](creating-tables-in-a-storyboard-images/image13a.png)
+ [![範例的螢幕](creating-tables-in-a-storyboard-images/image13a.png)](creating-tables-in-a-storyboard-images/image13a.png#lightbox)
 
 將分鏡腳本中，以建置使用者介面，而這兩個螢幕會使用 UITableView。 使用主畫面*原型內容*版面配置資料列，並詳細資料螢幕使用*靜態內容*建立使用自訂儲存格的版面配置，將資料輸入表單。
 
@@ -48,7 +48,7 @@ StoryboardTable 範例包含簡單的主從式應用程式中，使用這兩種 
 
 建立新的方案在 Visual Studio 使用**（建立） 新增專案 > 單一檢視 App(C#)**，並呼叫它_StoryboardTables_。
 
- [ ![建立新的專案 對話方塊](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png)
+ [![建立新的專案 對話方塊](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
 
 某些 C# 檔案即會開啟方案和`Main.storyboard`已經建立的檔案。 按兩下`Main.storyboard`iOS 設計工具中開啟的檔案。
 
@@ -75,24 +75,24 @@ StoryboardTable 範例包含簡單的主從式應用程式中，使用這兩種 
 2.  拖曳**導覽控制站**和**資料表檢視控制器**到分鏡腳本從 [工具箱]。 
 3.  從根檢視控制站建立 segue，剛加入的第二個資料表檢視控制站。 若要建立 segue，控制 + 拖曳*從詳細資料的儲存格*至新加入的 UITableViewController。 選擇**顯示*** 下**話題選取**。 
 4.  選取新的話題您所建立，並指定其識別碼，這話題程式碼中的參考。 按一下 segue 並輸入`TaskSegue`的**識別碼**中**屬性板**，如下所示：    
-  [ ![在 [屬性] 面板命名話題](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png) 
+  [![在 [屬性] 面板命名話題](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 
 5. 接下來，設定兩個資料表的檢視由選取並使用屬性填補。 請務必選取 檢視和檢視的控制器不 – 您可以使用文件大綱，以便選取項目。
 
 6.  變更根檢視控制站當做**內容： 動態原型**(在設計介面上的檢視將會標示為**原型內容**):
 
-    [ ![將內容屬性設定為動態的原型](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png)
+    [![將內容屬性設定為動態的原型](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
 
 7.  變更新**UITableViewController**是**內容： 靜態的資料格**。 
 
 
 8. 新 UITableViewController 必須有類別名稱和設定的識別項。 選取的檢視控制器 」 和 「 類型_TaskDetailViewController_如**類別**中**屬性板**– 這會建立新`TaskDetailViewController.cs`方案中的檔案填補。 輸入**StoryboardID**為_詳細_，如下列範例所示。 這將會稍後可用於載入此檢視的 C# 程式碼：  
 
-    [ ![設定分鏡腳本識別碼](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png)
+    [![設定分鏡腳本識別碼](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png#lightbox)
 
 9. 分鏡腳本設計介面現在看起來應該像這樣 （在根檢視控制器的導覽項目標題已變更為"例行工作面板"）：
 
-    [ ![設計介面](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png)  
+    [![設計介面](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png#lightbox)  
 
 
 
@@ -106,11 +106,11 @@ StoryboardTable 範例包含簡單的主從式應用程式中，使用這兩種 
 
 首先，選取主版檢視控制器中的原型儲存格，並設定**識別碼**為_taskcell_，如下所示。 這會用稍後在程式碼來擷取此 UITableViewCell 的執行個體：
 
- [ ![設定資料格識別碼](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png)
+ [![設定資料格識別碼](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png#lightbox)
 
 接下來，您將需要建立一個按鈕，將會加入新的工作，如下所示：
 
-[ ![列在導覽列中的按鈕項目](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png)
+[![列在導覽列中的按鈕項目](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png#lightbox)
 
 請執行下列動作： 
 
@@ -123,7 +123,7 @@ StoryboardTable 範例包含簡單的主從式應用程式中，使用這兩種 
 
 詳細資料檢視需要更多的工作。 資料表檢視儲存格需要拖曳至檢視，然後填入標籤、 文字檢視和按鈕。 以下螢幕擷取畫面顯示兩個區段的 [完成] UI。 一個區段具有三個資料格、 三個標籤，這兩個文字欄位和一個切換，而第二個區段有一個資料格包含兩個按鈕：
 
- [ ![詳細資料檢視的配置](creating-tables-in-a-storyboard-images/image24a-sml.png)](creating-tables-in-a-storyboard-images/image24a.png)
+ [![詳細資料檢視的配置](creating-tables-in-a-storyboard-images/image24a-sml.png)](creating-tables-in-a-storyboard-images/image24a.png#lightbox)
 
 若要建立完整的版面配置的步驟如下：
 
@@ -137,7 +137,7 @@ StoryboardTable 範例包含簡單的主從式應用程式中，使用這兩種 
 選取頂部區段，並在**屬性 > 資料表的檢視區段**變更**資料列**至_3_，如下所示：
 
 
- [ ![將設定為三個資料列的上方區段](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png)
+ [![將設定為三個資料列的上方區段](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png#lightbox)
 
 每個資料格開啟**屬性板**和設定：
 
@@ -152,7 +152,7 @@ StoryboardTable 範例包含簡單的主從式應用程式中，使用這兩種 
 -  **設定背景**:_清除色彩_。
 -  兩個按鈕拖曳至資料格，適當地設定其標題 (也就是_儲存_和_刪除_)，如下所示：
 
-   [ ![在底部區段中設定兩個按鈕](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png)
+   [![在底部區段中設定兩個按鈕](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png#lightbox)
 
 此時您可能也要設定您的儲存格和控制項，以確保自動調整的版面配置上的條件約束。
 
@@ -342,7 +342,7 @@ AddButton.Clicked += (sender, e) => CreateTask ();
 
 您已完成的分鏡腳本範例-完成的應用程式看起來像是這樣：
 
-[ ![完成的應用程式](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png)
+[![完成的應用程式](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png#lightbox)
 
 此範例示範：
 
@@ -356,4 +356,4 @@ AddButton.Clicked += (sender, e) => CreateTask ();
 ## <a name="related-links"></a>相關連結
 
 - [StoryboardTable （範例）](https://developer.xamarin.com/samples/monotouch/StoryboardTable/)
-- [分鏡腳本的簡介](~/ios/user-interface/storyboards/index.md)
+- [Storyboard 簡介](~/ios/user-interface/storyboards/index.md)

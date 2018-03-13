@@ -6,14 +6,13 @@ ms.assetid: 156D6D1C-83CA-4088-BA08-40B22312269C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: a470314097342e9c2e068a6015664074540d0ddd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 06c2fbe7537df004641a2c1bd6e7d4e420fef1c7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="watchos-application-fundamentals"></a>watchOS 應用程式基本概念
-
 
 ##  <a name="parent-applicationioswatchosapp-fundamentalsparent-appmd"></a>[父應用程式](~/ios/watchos/app-fundamentals/parent-app.md)
 
@@ -35,7 +34,7 @@ ms.lasthandoff: 02/27/2018
 
 為轉譯 Apple Watch 應用程式內容來支援多種語言的指南。
 
-##  <a name="navigationioswatchosapp-fundamentalsnavigationmd"></a>[瀏覽](~/ios/watchos/app-fundamentals/navigation.md)
+##  <a name="navigationioswatchosapp-fundamentalsnavigationmd"></a>[巡覽](~/ios/watchos/app-fundamentals/navigation.md)
 
 深入了解適用於監看式應用程式的兩個瀏覽選項： 階層式或頁面為基礎的導覽。
 

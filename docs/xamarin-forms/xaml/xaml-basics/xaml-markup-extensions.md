@@ -4,14 +4,15 @@ description: "XAML 標記延伸會構成一項重要功能在 XAML 中，可將�
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 7aea7b1536efc952378c6a1df63640af191f1ebe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1c5c4c30a7e506e19fc4dc0728fb55851ec4911f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 標記延伸
 
@@ -298,7 +299,7 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
 
 螢幕擷取畫面會確認一致的樣式，平台相依樣式：
 
-[ ![](xaml-markup-extensions-images/sharedresources.png "樣式的控制項")](xaml-markup-extensions-images/sharedresources-large.png "樣式的控制項")
+[![](xaml-markup-extensions-images/sharedresources.png "樣式的控制項")](xaml-markup-extensions-images/sharedresources-large.png#lightbox "樣式的控制項")
 
 雖然它是最常用來定義`Resources`集合頂端的頁面上，請記住，`Resources`屬性由定義`VisualElement`，而且可以有`Resources`在頁面上的其他項目上的集合。 例如，再次嘗試新增一個`StackLayout`在此範例中：
 
@@ -436,7 +437,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 結果的大小`BoxView`與相對螢幕會因平台而異：
 
- [ ![](xaml-markup-extensions-images/staticconstants.png "控制項使用 X:static 標記延伸")](xaml-markup-extensions-images/staticconstants-large.png "控制項使用 X:static 標記延伸")
+ [![](xaml-markup-extensions-images/staticconstants.png "控制項使用 X:static 標記延伸")](xaml-markup-extensions-images/staticconstants-large.png#lightbox "控制項使用 X:static 標記延伸")
 
 ## <a name="other-standard-markup-extensions"></a>其他標準的標記延伸
 
@@ -552,7 +553,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 以下是執行的程式：
 
-[ ![](xaml-markup-extensions-images/relativelayout.png "使用條件約束的相對配置")](xaml-markup-extensions-images/relativelayout-large.png "相對的版面配置使用條件約束")
+[![](xaml-markup-extensions-images/relativelayout.png "使用條件約束的相對配置")](xaml-markup-extensions-images/relativelayout-large.png#lightbox "相對的版面配置使用條件約束")
 
 ## <a name="summary"></a>總結
 

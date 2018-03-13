@@ -3,16 +3,16 @@ title: "第 2 部分。 基本 XAML 語法"
 description: "XAML 是大部分針對具現化，並初始化物件。 通常，屬性必須設定為複雜的物件無法輕鬆地表示為 XML 字串，但有時一個類別所定義的屬性必須設定子類別。 這些兩個需求所需的屬性項目和附加的屬性的基本 XAML 語法功能。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
+ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: f99d4b177f5957b2e5f8c22171fe92799af8505a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 77ed7c49a901a877d822c2274263bcb8dbe19ac6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分。 基本 XAML 語法
 
@@ -253,7 +253,7 @@ _XAML 是大部分針對具現化，並初始化物件。通常，屬性必須�
 
 以下是什麼樣子上所有的三個平台：
 
-[ ![](essential-xaml-syntax-images/griddemo.png "格線版面配置")](essential-xaml-syntax-images/griddemo-large.png "格線版面配置")
+[![](essential-xaml-syntax-images/griddemo.png "格線版面配置")](essential-xaml-syntax-images/griddemo-large.png#lightbox "格線版面配置")
 
 可完全語法，從這些`Grid.Row`， `Grid.Column`， `Grid.RowSpan`，和`Grid.ColumnSpan`屬性看起來像是靜態欄位或屬性的`Grid`，但有趣，`Grid`並未定義任何名為的項目`Row`， `Column`， `RowSpan`，或`ColumnSpan`。
 
@@ -310,7 +310,7 @@ _XAML 是大部分針對具現化，並初始化物件。通常，屬性必須�
 
 並在這個範例中：
 
-[ ![](essential-xaml-syntax-images/absolutedemo-large.png "絕對配置")](essential-xaml-syntax-images/absolutedemo-large.png "絕對版面配置")
+[![](essential-xaml-syntax-images/absolutedemo-large.png "絕對配置")](essential-xaml-syntax-images/absolutedemo-large.png#lightbox "絕對版面配置")
 
 結果類似這樣，您可能問題的常識使用 XAML。 當然，重複和規律的`LayoutBounds`矩形建議，可能會在程式碼中進一步實現。
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: de37fd1e014938edcacec187ceeed572e573b379
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8376ce2ccff6732fa0c89d6030b9af36d29c5085
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-with-nsuseractivity"></a>具有 NSUserActivity 搜尋
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 02/27/2018
 
 Ios 9，新`NSUserActivity`可以編製索引 （公開和私人），並從 Spotlight 搜尋和 Safari 搜尋。 標示`NSUserActivity`為可搜尋和新增索引的中繼資料，活動會列在 iOS 裝置上的搜尋結果中。
 
-[ ![](nsuseractivity-images/apphistory01.png "應用程式記錄概觀")](nsuseractivity-images/apphistory01.png)
+[![](nsuseractivity-images/apphistory01.png "應用程式記錄概觀")](nsuseractivity-images/apphistory01.png#lightbox)
 
 如果使用者選取從您的應用程式所屬的活動搜尋結果，就會啟動應用程式和活動所描述`NSUserActivity`會重新啟動，並向使用者顯示。
 
@@ -58,7 +58,7 @@ Apple 建議使用的活動類型識別項的反向 dns 標記法，避免發生
 
 若要建立必要的活動型別識別碼，以支援這個行為，請編輯**Info.plist**檔案，並切換至**來源**檢視。 新增`NSUserActivityTypes`鍵，然後建立識別項，格式如下：
 
-[ ![](nsuseractivity-images/type01.png "NSUserActivityTypes 索引鍵和 plist 編輯器中所需的識別項")](nsuseractivity-images/type01.png)
+[![](nsuseractivity-images/type01.png "NSUserActivityTypes 索引鍵和 plist 編輯器中所需的識別項")](nsuseractivity-images/type01.png#lightbox)
 
 在上述範例中，我們建立一個新活動類型的識別碼搜尋活動 (`com.xamarin.platform`)。 當建立您自己的應用程式，來取代原始的內容`NSUserActivityTypes`陣列活動類型識別碼的活動特定應用程式支援。
 
@@ -87,7 +87,7 @@ activity.BecomeCurrent();
 
 我們無法將進一步詳細資料設定`ContentAttributeSet`屬性我們`NSUserActivity`，如下所示：
 
-[ ![](nsuseractivity-images/apphistory02.png "新增搜尋詳細資料概觀")](nsuseractivity-images/apphistory02.png)
+[![](nsuseractivity-images/apphistory02.png "新增搜尋詳細資料概觀")](nsuseractivity-images/apphistory02.png#lightbox)
 
 使用`ContentAttributeSet`您可以建立一項誘使使用者與其互動的豐富的搜尋結果。
 
@@ -114,7 +114,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 請注意，這是用來回應遞交要求相同的方法覆寫。 現在如果使用者按一下連結，以從我們 Spotlight 搜尋結果中的應用程式時，我們的應用程式，將前景 （或啟動如果尚未執行） 和內容、 瀏覽或功能，由該連結將顯示：
 
-[ ![](nsuseractivity-images/apphistory03.png "搜尋從還原先前的狀態")](nsuseractivity-images/apphistory03.png)
+[![](nsuseractivity-images/apphistory03.png "搜尋從還原先前的狀態")](nsuseractivity-images/apphistory03.png#lightbox)
 
 <a name="indexing" />
 

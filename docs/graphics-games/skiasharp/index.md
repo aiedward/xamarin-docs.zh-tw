@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: 03089e4760ebf19849cd4d34cafb7047d8915a4d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ee0625f22062fef3c27a697ce33488274abc24d9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="2d-drawing"></a>2D 繪圖
 
 SkiaSharp 提供功能強大的 C# API 進行 2D 圖形。 它由[Google Skia 程式庫](http://skia.org)，提供 Google Chrome、 Firefox 和 Android 的圖形的堆疊相同文件庫。
 
-[ ![](images/ide-sml.png "SkiaSharp 提供功能強大的 C# API，以進行 2D 圖形")](images/ide.png)
+[![](images/ide-sml.png "SkiaSharp 提供功能強大的 C# API，以進行 2D 圖形")](images/ide.png#lightbox)
 
 SkiaSharp 是可攜式程式庫，並方便地隨附[跨平台的 NuGet 封裝](https://www.nuget.org/packages/SkiaSharp)，並支援下列平台現成： macOS Xamarin.Android、 Xamarin.iOS、 及 Windows 桌面。
 
@@ -32,7 +32,7 @@ SkiaSharp 和範例的核心概念的概觀來呈現圖形、 文字、 點陣�
 
 - [繪圖基本概念](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md)
   * [繪製簡單的圓形](~/xamarin-forms/user-interface/graphics/skiasharp/basics/circle.md)
-  * [使用 Xamarin.Forms 整合](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)
+  * [整合 Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)
   * [像素與裝置無關的單位](~/xamarin-forms/user-interface/graphics/skiasharp/basics/pixels.md)
   * [基本動畫](~/xamarin-forms/user-interface/graphics/skiasharp/basics/animation.md)
   * [將文字和圖形的整合](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md)
@@ -57,12 +57,12 @@ SkiaSharp 和範例的核心概念的概觀來呈現圖形、 文字、 點陣�
   * [繪製弧形的三種方式](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)
   * [三種類型的貝茲曲線](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)
   * [SVG 路徑資料](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)
-  * [使用路徑和地區的裁剪部分](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)
-  * [路徑的效果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)
-  * [路徑和文字](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)
-  * [路徑資訊和列舉](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
+  * [使用路徑和地區裁剪](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)
+  * [路徑效果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)
+  * [路徑及文字](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)
+  * [路徑資訊與列舉](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
 
-## <a name="platform-specific-notesgraphics-gamesskiasharpplatformmd"></a>[平台特定備註](~/graphics-games/skiasharp/platform.md)
+## <a name="platform-specific-notesgraphics-gamesskiasharpplatformmd"></a>[平台專用備註](~/graphics-games/skiasharp/platform.md)
 
 此頁面描述 SkiaSharp 的安裝指示，包括 iOS、 Android、 macOS 和 Windows 的不同平台上。
 

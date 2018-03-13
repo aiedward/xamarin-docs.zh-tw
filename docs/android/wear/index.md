@@ -1,5 +1,5 @@
 ---
-title: "Android 損耗"
+title: Android Wear
 description: "建置 Android 穿戴裝置的應用程式。"
 ms.topic: article
 ms.prod: xamarin
@@ -8,15 +8,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1dad5e859efdf69e7003b45724f718b16faffd62
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ac83b74f39497333de7aa80079784adf61bf2e65
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
-# <a name="android-wear"></a>Android 損耗
-
-## <a name="android-wear"></a>Android 損耗
+# <a name="android-wear"></a>Android Wear
 
 Android 損耗是 android 的可供穿戴的裝置，例如智慧型的監看版本。 本節包含有關如何安裝和設定工具損耗程式開發，建立第一個損耗裝置，以及一份範例，您可以參考建立您自己有應用程式的逐步解說所需的指示。
 
@@ -36,12 +34,11 @@ Android 損耗是 android 的可供穿戴的裝置，例如智慧型的監看版
 
 預覽並最佳化您的使用者介面，可用的螢幕大小。
 
-##  <a name="deployment--testingandroidweardeploy-testindexmd"></a>[部署和測試](~/android/wear/deploy-test/index.md)
+##  <a name="deployment--testingandroidweardeploy-testindexmd"></a>[部署與測試](~/android/wear/deploy-test/index.md)
 
 說明如何將穿 Android 應用程式部署戴上的 Android 裝置或設定損耗的 Android 模擬器。 它也包含偵錯秘訣及如何設定開發電腦和 Android 裝置之間的藍芽連線資訊。
 
 
-<a name="Samples" />
 
 ## <a name="samples"></a>範例
 
@@ -53,7 +50,7 @@ Android 損耗是 android 的可供穿戴的裝置，例如智慧型的監看版
           <strong>範例</strong>
       </th>
       <th>
-          <strong>描述</strong>
+          <strong>說明</strong>
       </th>
       <th>
           <strong>螢幕擷取畫面</strong>
@@ -137,21 +134,21 @@ GridViewPager 實作的 2D 瀏覽模式，其中使用者 swipes 垂直和水平
 <table align="center" border="0" cellpadding="1" cellspacing="1">
     <tr>
         <td>
-        <a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/"><img src="Images/video-android-l.png" border="0"/ /></td>
+        <a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/"><img src="Images/video-android-l.png" border="0" /></td>
         <td><a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/">Android L 等等</a>
         <br />
 Android L Developer Preview 導入的新應用程式開發介面，讓開發人員充分利用，包括材料設計、 通知和新的動畫，等等。</td>
     </tr>
     <tr>
         <td>
-        <a href="https://www.youtube.com/watch?v=80H8tXByZQc"><img src="Images/video-eyes-ears.png" border="0" / /></td>
+        <a href="https://www.youtube.com/watch?v=80H8tXByZQc"><img src="Images/video-eyes-ears.png" border="0" /></td>
         <td><a href="https://www.youtube.com/watch?v=80H8tXByZQc">C# 中是在消息和我的眼睛： Google 玻璃和 Android 戴上</a>
         <br />
 穿戴計算看起來像是項目從以後的將來 （或偵測器小工具時段），但有許多人都已採用此未來今天 ！ C# 開發人員知道這項資訊，並已經有工具和技術來操控穿戴 （從 Evolve 2014) 的裝置。</td>
     </tr>
     <tr>
         <td>
-        <a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU"><img src="Images/video-whats-new.png" border="0" / /></td>
+        <a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU"><img src="Images/video-whats-new.png" border="0" /></td>
         <td><a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU">Xamarin.Android 中最新消息</a>
         <br />
         <i>Android L、 Android 損耗、 Android 的電視、 Android 自動、 材料設計和圖案。這代表什麼您身為 Xamarin 開發人員？</i>從發展 2014年。</td>

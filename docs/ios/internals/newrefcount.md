@@ -6,11 +6,11 @@ ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: dd4aff683b0cfb797147d32f282be1aab4c30667
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 43b357eecb0974884db645a0b2e5c8467ddf3b5d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="new-reference-counting-system"></a>新的參考計數系統
 
@@ -36,7 +36,7 @@ Xamarin.iOS 7.2.1 和上述功能增強的預覽，我們新的參考計數系�
 
 若要啟用此新參考計數 」 的系統，請檢查**使用參考計數延伸**核取方塊位於**進階**] 索引標籤的 [您的專案**iOS 建置選項**如下所示： 
 
-[ ![](newrefcount-images/image1.png "啟用新的參考計數系統")](newrefcount-images/image1.png)
+[![](newrefcount-images/image1.png "啟用新的參考計數系統")](newrefcount-images/image1.png#lightbox)
 
 請注意，這些選項中已移除較新版本的 Visual Studio for mac。
 

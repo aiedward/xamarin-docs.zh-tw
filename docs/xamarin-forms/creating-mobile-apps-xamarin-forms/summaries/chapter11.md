@@ -3,14 +3,15 @@ title: "第 11 章的摘要。 可繫結基礎結構"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 34671C48-0ED4-4B76-A33D-D6505390DC5B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 3e3cfb55f7b96751979d14b489e892bc07817780
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6e0f1abf04695dfb5348b631a9fbdbd2c81bc431
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>第 11 章的摘要。 可繫結基礎結構
 
@@ -22,7 +23,7 @@ Xamarin.Forms 會定義稱為增強的屬性定義*可繫結屬性*由封裝[ `B
 
 [ **ClassHierarchy** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/ClassHierarchy)範例使用反映來顯示類別階層架構的 Xamarin.Forms，並示範所扮演重要角色`BindableObject`此階層中。 `BindableObject` 衍生自`Object`是父類別和[ `Element` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/)從中[ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/)衍生。 這是父類別[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)和[ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)，這是父類別[ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/):
 
-[![共用的類別階層的三個螢幕擷取畫面](images/ch11fg01-small.png "類別階層架構共用")](images/ch11fg01-large.png "共用的類別階層")
+[![共用的類別階層的三個螢幕擷取畫面](images/ch11fg01-small.png "類別階層架構共用")](images/ch11fg01-large.png#lightbox "共用的類別階層")
 
 ## <a name="a-peek-into-bindableobject-and-bindableproperty"></a>瀏覽到 BindableObject 和 BindableProperty
 

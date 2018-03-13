@@ -3,14 +3,15 @@ title: "章 23 的摘要。 觸發程序和行為"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 72158cac683e46a37d2cbd537cdfd72bea78a336
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9a53cddcf216efd2bb86c838e280d599ff26c191
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>章 23 的摘要。 觸發程序和行為
 
@@ -99,7 +100,7 @@ ms.lasthandoff: 02/27/2018
 
 [ **GenderColors** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/GenderColors)範例需要[ **SchoolOfFineArt** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/SchoolOfFineArt)程式庫和集合名稱為藍色學生的色彩或粉紅色根據`Sex`屬性：
 
-[![三個螢幕擷取畫面的性別色彩](images/ch23fg04-small.png "性別色彩")](images/ch23fg04-large.png "性別色彩")
+[![三個螢幕擷取畫面的性別色彩](images/ch23fg04-small.png "性別色彩")](images/ch23fg04-large.png#lightbox "性別色彩")
 
 [ **ButtonEnabler** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ButtonEnabler)範例集`IsEnabled`屬性`Entry`至`False`如果`Length`屬性`Text`屬性`Entry`等於 0。 請注意，`Text`屬性會初始化為空字串，則依預設它是`null`，而`DataTrigger`不會正確運作。
 
@@ -170,7 +171,7 @@ A [ `RotateAction` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/
 
 [ **RadioLabels** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioLabels)程式使用其選項按鈕的文字字串。 [ **RadioStyle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioStyle)範例會使用`Style`外觀 checked 與 unchecked 按鈕之間的差異。 [ **RadioImages** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioImages)範例會使用其選項按鈕的 boxed 的映像：
 
-[![三個螢幕擷取畫面的電台映像](images/ch23fg17-small.png "選項按鈕影像")](images/ch23fg17-large.png "選項按鈕的影像")
+[![三個螢幕擷取畫面的電台映像](images/ch23fg17-small.png "選項按鈕影像")](images/ch23fg17-large.png#lightbox "選項按鈕的影像")
 
 [ **TraditionalRadios** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalRadios)範例繪製傳統的顯示選項按鈕，以點號的圓圈。
 

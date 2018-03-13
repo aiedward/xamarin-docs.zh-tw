@@ -2,15 +2,15 @@
 title: "類型的註冊機構"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4C1669A4-C12B-9C49-4A39-9046576D10DC
+ms.assetid: 610A0834-1141-4D09-A05E-B7ADF99462C5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 32d29456b9880914f728b9e24fc0bfadb2f5efde
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 57ebffc2bd195a37240ab4fe3d397566a9a70bd0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="type-registrar"></a>類型的註冊機構
 

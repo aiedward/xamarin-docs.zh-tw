@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/25/2017
-ms.openlocfilehash: e9d3e2eecd4c03e7b3046e1ad86dd8a0d70a7f73
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 23a8fcd0633757bfffdb1761c3fc811268341b96
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-row-actions"></a>使用資料列的動作
 
@@ -177,7 +177,7 @@ table.Delegate = tableDelegate;
 
 當執行上述程式碼，且使用者 swipes 剩餘的資料表資料列， **Hi**按鈕將會顯示，而不是**刪除**預設會顯示的按鈕：
 
-[ ![](row-action-images/action01.png "而不是 [刪除] 按鈕顯示 [Hi] 按鈕")](row-action-images/action01.png)
+[![](row-action-images/action01.png "而不是 [刪除] 按鈕顯示 [Hi] 按鈕")](row-action-images/action01.png#lightbox)
 
 如果在使用者點選**Hi**  按鈕，`Hello World!`會寫出至 Visual Studio 中的主控台 Mac 或 Visual Studio 中偵錯模式執行應用程式時。
 

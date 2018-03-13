@@ -8,13 +8,13 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 676bd443d2f45c6ed502c2f94feec3599b068341
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 74911f583a2e28a99ceb7c087a8542d0a8cab71d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
-# <a name="getting-started-with-ff35"></a>開始使用 FF & #35。
+# <a name="getting-started-with-f35"></a>開始使用 F&#35;
 
 ## <a name="requirements"></a>需求
 
@@ -22,30 +22,30 @@ F # 是預設隨附於 Visual Studio for mac。
 
 在 Windows 中，您必須上安裝獨立 F # 編譯器工具，每個指示[FSharp.org 網站](http://fsharp.org/use/windows/)。
 
-## <a name="creating-an-f35-project"></a>建立 & #35。專案
+## <a name="creating-an-f35-project"></a>建立 F&#35;專案
 
 建立新的 F # 應用程式為了在同一個**新專案**用 C# 的視窗。
 
 在 Visual Studio for Mac 選擇**檔案 > 新的方案**。 在**新專案** 對話方塊中，選取專案範本。 使用範本的右側下拉式清單選擇您想要使用的語言：
 
- [ ![](overview-images/choosefsharp.png "使用範本的右側下拉式清單選擇您想要使用的語言")](overview-images/choosefsharp.png)
+ [![](overview-images/choosefsharp.png "使用範本的右側下拉式清單選擇您想要使用的語言")](overview-images/choosefsharp.png#lightbox)
 
 選取您的專案類型，然後按一下**下一步**來命名和建立它。
 
 
 您現在已經準備好要開始建立一些很棒的 F # 應用程式 ！
 
-## <a name="learning-to-use-f35"></a>學習使用 & #35。
+## <a name="learning-to-use-f35"></a>學習使用 F&#35;
 
 F # 教學課程也可以建立從**新方案**對話方塊，在 Visual Studio for mac。 瀏覽至**其他 >.NET > F # 教學課程**下, 圖中所詳述：
 
- [ ![](overview-images/fsharptutorial.png "瀏覽至其他 /.NET / F # 教學課程")](overview-images/fsharptutorial.png)
+ [![](overview-images/fsharptutorial.png "瀏覽至其他 /.NET / F # 教學課程")](overview-images/fsharptutorial.png#lightbox)
 
 這會開啟新的互動式解決方案。 瀏覽這是取得語言的基本概念玩的好方法。
 
- [ ![](overview-images/newtutorial-sml.png "瀏覽這是取得語言的基本概念玩的好方法")](overview-images/newtutorial.png)
+ [![](overview-images/newtutorial-sml.png "瀏覽這是取得語言的基本概念玩的好方法")](overview-images/newtutorial.png#lightbox)
 
-簽出[範例清單](/guides/cross-platform/fsharp/samples/)若要查看 F # 中的動作。
+簽出[範例清單](~/cross-platform/platform/fsharp/samples.md)若要查看 F # 中的動作。
 
 ## <a name="references"></a>參考
 

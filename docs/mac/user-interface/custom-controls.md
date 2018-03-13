@@ -3,16 +3,16 @@ title: "建立自訂控制項"
 description: "本文說明如何建立自訂控制項，並在介面產生器中使用它們。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f3d6301bc2c0237a268669fff437801bfb2657d1
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 3ea88810384dfe8b1a08080953db19caddf25d6a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-custom-controls"></a>建立自訂控制項
 
@@ -22,7 +22,7 @@ _本文說明如何建立自訂控制項，並在介面產生器中使用它們�
 
 雖然 macOS 提供豐富的內建的使用者控制項，可能會有您需要建立自訂控制項來提供功能未提供的方塊外或是比對自訂 UI 佈景主題 （例如遊戲的介面） 的時間。
 
-[ ![](custom-controls-images/intro01.png "自訂的 UI 控制項的範例")](custom-controls-images/intro01.png)
+[![](custom-controls-images/intro01.png "自訂的 UI 控制項的範例")](custom-controls-images/intro01.png#lightbox)
 
 在本文中，我們會建立可重複使用的自訂使用者介面控制項 Xamarin.Mac 應用程式中的基礎。 強烈建議您逐步[Hello、 Mac](~/mac/get-started/hello-mac.md)發行項的第一次，具體來說[Xcode 和介面產生器簡介](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)和[插座和動作](~/mac/get-started/hello-mac.md#Outlets_and_Actions)區段中的，因為它涵蓋重要概念和技術，我們將在本文中使用。
 
@@ -50,7 +50,7 @@ _本文說明如何建立自訂控制項，並在介面產生器中使用它們�
 
 在適用於 Mac 的 Visual Studio 中開啟您想要建立的自訂使用者介面控制項 （或另外新建一個） Xamarin.Mac 專案。 加入新的類別並呼叫它`NSFlipSwitch`:
 
-[ ![](custom-controls-images/custom01.png "加入新類別")](custom-controls-images/custom01.png)
+[![](custom-controls-images/custom01.png "加入新類別")](custom-controls-images/custom01.png#lightbox)
 
 接著，編輯`NSFlipSwitch.cs`類別，並讓它看起來如下所示：
 
@@ -336,19 +336,19 @@ if (this.Action !=null)
 
 若要加入的控制項使用介面產生器，第一次執行乾淨的組建 Xamarin.Mac 專案，然後按兩下`Main.storyboard`介面產生器中開啟進行編輯的檔案：
 
-[ ![](custom-controls-images/custom02.png "編輯在 Xcode 中的分鏡腳本")](custom-controls-images/custom02.png)
+[![](custom-controls-images/custom02.png "編輯在 Xcode 中的分鏡腳本")](custom-controls-images/custom02.png#lightbox)
 
 下一步，拖曳`Custom View`在使用者介面設計：
 
-[ ![](custom-controls-images/custom03.png "從程式庫中選取自訂檢視")](custom-controls-images/custom03.png)
+[![](custom-controls-images/custom03.png "從程式庫中選取自訂檢視")](custom-controls-images/custom03.png#lightbox)
 
 仍然選取 自訂檢視，切換至**識別 Inspector**將檢視變更**類別**至`NSFlipSwitch`:
 
-[ ![](custom-controls-images/custom04.png "設定檢視的類別")](custom-controls-images/custom04.png)
+[![](custom-controls-images/custom04.png "設定檢視的類別")](custom-controls-images/custom04.png#lightbox)
 
 切換至**助理編輯器**並建立**插座**自訂控制項 (務必要將它在繫結`ViewControler.h`檔案而非`.m`檔案):
 
-[ ![](custom-controls-images/custom05.png "設定新的輸出")](custom-controls-images/custom05.png)
+[![](custom-controls-images/custom05.png "設定新的輸出")](custom-controls-images/custom05.png#lightbox)
 
 儲存變更，回到 Visual Studio for Mac，並讓這些變更同步處理。編輯`ViewController.cs`檔案並製作`ViewDidLoad`方法看起來像下列：
 
@@ -369,7 +369,7 @@ public override void ViewDidLoad ()
 
 選擇性地，我們無法返回介面產生器，並定義**動作**控制項上：
 
-[ ![](custom-controls-images/custom06.png "設定新的動作")](custom-controls-images/custom06.png)
+[![](custom-controls-images/custom06.png "設定新的動作")](custom-controls-images/custom06.png#lightbox)
 
 同樣地，編輯`ViewController.cs`檔案，然後加入下列方法：
 

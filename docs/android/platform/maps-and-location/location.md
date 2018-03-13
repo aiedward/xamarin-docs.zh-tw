@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: beb690fe495d142bb4b0424ad752101fc46da590
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 28cfb4cda27446b914c23a2ce4e8e9f845876107
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="location-services"></a>位置服務
 
@@ -54,7 +54,7 @@ Android 存取各種不同的位置技術，例如儲存格塔台位置、 Wi-fi
 
 若要設定權限，展開**屬性**資料夾中的**方案板**按兩下**AndroidManifest.xml**。 權限將會列在**必要的使用權限**:
 
-[![Android 資訊清單所需權限設定的螢幕擷取畫面](location-images/location-01-xs.png)](location-images/location-01-xs.png)
+[![Android 資訊清單所需權限設定的螢幕擷取畫面](location-images/location-01-xs.png)](location-images/location-01-xs.png#lightbox)
 
 設定這些權限時，會告訴 Android 應用程式需要從使用者的權限，才能存取的位置提供者。 裝置，執行應用程式開發介面層級 22 (Android 5.1) 或更低會要求使用者安裝應用程式每次授與這些權限。 上執行應用程式開發介面裝置層級 23 (Android 6.0) 或更高版本，應用程式應該執行前提出要求的位置提供者的執行階段權限檢查。 
 
@@ -334,11 +334,11 @@ else
 > [!NOTE]
 >  如果使用者已經停用所有位置提供者，`GetBestProvider`會傳回`null`。 若要查看此程式碼在實際裝置上的運作方式，請務必啟用 GPS、 Wi-fi、 以及在行動電話通訊網路**Google 設定 > 位置 > 模式**這個螢幕擷取畫面所示：
 
-[![在 Android 手機上的設定位置模式畫面](location-images/location-02.png)](location-images/location-02.png)
+[![在 Android 手機上的設定位置模式畫面](location-images/location-02.png)](location-images/location-02.png#lightbox)
 
 下列螢幕擷取畫面示範位置應用程式正在執行使用`GetBestProvider`:
 
-[![GetBestProvider 應用程式顯示緯度、 經度和提供者](location-images/location-03.png)](location-images/location-03.png)
+[![GetBestProvider 應用程式顯示緯度、 經度和提供者](location-images/location-03.png)](location-images/location-03.png#lightbox)
 
 請注意，`GetBestProvider`不會動態變更提供者。 相反地，它會判斷最佳可用的提供者的活動生命週期當中，一次。 如果提供者狀態變更已設定之後，應用程式會要求額外的程式碼中`ILocationListener`方法&ndash; `OnProviderEnabled`， `OnProviderDisabled`，和`OnStatusChanged`&ndash;來處理每個相關的可能性提供者參數。
 

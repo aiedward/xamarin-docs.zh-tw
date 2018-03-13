@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: d75c1393f2b5701226433235010a41da9c1aeb03
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 78528c750c6350d113b34a07d166a03773119a8b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-store-changes"></a>變更應用程式市集
 
@@ -87,6 +87,7 @@ Apple 已在應用程式內購買更容易找到應用程式存放區中。 您�
 
 如需詳細資訊，請參閱 Apple[回應檢閱](https://developer.apple.com/app-store/responding-to-reviews/)頁面。
 
+<a name="Phased_Release"/>
 
 ## <a name="phased-release"></a>分階段的版本
 

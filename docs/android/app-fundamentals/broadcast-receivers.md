@@ -1,20 +1,20 @@
 ---
-title: "廣播中 Xamarin.Android 接收者"
+title: "廣播 Xamarin.Android 接收器"
 description: "本節討論如何使用廣播的接收者。"
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: B2727160-12F2-43EE-84B5-0B15C8FCF4BD
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 7ea280e11e4051b51da8c20eb9ac5a4e298547f3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: topgenorth
+ms.author: toopge
+ms.date: 03/09/2018
+ms.openlocfilehash: b2da136ddfa6aab4121ba21d0e6f83b2390ba10b
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
-# <a name="broadcast-receiver-in-xamarinandroid"></a>廣播中 Xamarin.Android 接收者
+# <a name="broadcast-receivers-in-xamarinandroid"></a>廣播 Xamarin.Android 接收器
 
 _本節討論如何使用廣播的接收者。_
 

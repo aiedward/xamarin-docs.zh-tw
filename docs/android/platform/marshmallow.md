@@ -7,12 +7,12 @@ ms.assetid: E4D6F183-98D2-460A-9D65-937639A899E0
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: b28ca68701394a8b7b0b543a5ae646910e7c8361
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: c9ff9eb0b8d013485f0437d470ec49f1c1795d7a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="marshmallow-features"></a>Marshmallow 功能
 
@@ -20,7 +20,6 @@ _這篇文章可協助您開始使用 Xamarin.Android 使用 Android 6.0 Marshma
 
 本文概述在 Android 6.0 Marshmallow 的新功能、 說明如何準備 Xamarin.Android Android Marshmallow 開發和提供的連結，說明如何使用新的 Android Marshmallow 的範例應用程式Xamarin.Android 應用程式中的功能。 
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -29,7 +28,7 @@ Xamarin.Android 支援 Android Marshmallow，並包括：
 
 -   **API 23/Android 6.0 繫結** &ndash; Android 6.0 加入許多新的 Api，如下所述的新功能，則目標 API 層級 23 時，這些 API 可供 Xamarin.Android 應用程式使用。 如需 Android 6.0 Api 的詳細資訊，請參閱[Android 6.0 Api](http://developer.android.com/preview/api-overview.html)。 
 
-[![平板電腦和電話執行 Marshmallow 的英雄映像](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png)
+[![平板電腦和電話執行 Marshmallow 的英雄映像](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png#lightbox)
 
 雖然 Marshmallow 版本主要著重於 「 波蘭文和品質 」，它也會提供許多新的功能感興趣的 Xamarin.Android 開發人員。 這些功能包括： 
 
@@ -57,9 +56,6 @@ Xamarin.Android 支援 Android Marshmallow，並包括：
 
 此外，許多核心 Android 程式庫更新發行與 Android Marshmallow，而且這些更新能提供 Android Marshmallow 和舊版的 Android 的新功能。 這篇文章說明如何開始使用 Android Marshmallow，建立應用程式，並提供新功能的概觀會反白顯示在 Android 6.0。 
 
-
-<a name="requirements" />
-
 ## <a name="requirements"></a>需求
 
 需要下列項目在 Xamarin 應用程式中使用 Android Marshmallow 的新功能： 
@@ -74,7 +70,6 @@ Xamarin.Android 支援 Android Marshmallow，並包括：
 
 您可以繼續使用[JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)如果您是開發應用程式開發介面層級 23 專為或更早版本。 
 
-<a name="gettingstarted" />
 
 ## <a name="getting-started"></a>快速入門
 
@@ -90,13 +85,11 @@ Xamarin.Android 支援 Android Marshmallow，並包括：
 
 下列各節說明每個步驟：
 
-<a name="updates" />
 
 ### <a name="install-xamarin-updates"></a>安裝 Xamarin 更新
 
 若要使其包含支援 Android 6.0 Marshmallow 的更新 Xamarin，變更更新通道**穩定**並安裝所有更新。 如需有關從更新通道安裝更新的詳細資訊，請參閱[變更更新通道](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/)。 
 
-<a name="sdkpreview" />
 
 ### <a name="install-the-android-60-sdk"></a>Android 6.0 sdk
 
@@ -104,17 +97,16 @@ Xamarin.Android 支援 Android Marshmallow，並包括：
 
 -   啟動 Android SDK Manager (在 Visual Studio for Mac 使用**工具 > SDK Manager**; 在 Visual Studio 中，使用**工具 > Android > Android SDK Manager**) 並安裝最新版的 Android SDK 工具：
 
-    [![選取 Android SDK Manager 中的 Android SDK 工具](marshmallow-images/mnc-preview-tools.png)](marshmallow-images/mnc-preview-tools.png)
+    [![選取 Android SDK Manager 中的 Android SDK 工具](marshmallow-images/mnc-preview-tools.png)](marshmallow-images/mnc-preview-tools.png#lightbox)
 
 -   此外，安裝最新**Android 6.0** SDK 封裝：
 
-    [![選取 Android 6.0 SDK 封裝 Android SDK Manager 中](marshmallow-images/mnc-preview-packages.png)](marshmallow-images/mnc-preview-packages.png)
+    [![選取 Android 6.0 SDK 封裝 Android SDK Manager 中](marshmallow-images/mnc-preview-packages.png)](marshmallow-images/mnc-preview-packages.png#lightbox)
 
 您必須安裝 Android SDK 工具修訂 24.3.4 或更新版本。
 如需使用 Android SDK 管理員來安裝 Android 6.0 SDK 的詳細資訊，請參閱[SDK Manager](http://developer.android.com/tools/help/sdk-manager.html)。
 
 
-<a name="xaproject" />
 
 ### <a name="start-a-xamarinandroid-project"></a>啟動 Xamarin.Android 專案
 
@@ -123,7 +115,6 @@ Xamarin.Android 支援 Android Marshmallow，並包括：
 當您建立 Android 專案時，您必須設定目標 Android 6.0 MarshMallow 的版本設定。 Marshmallow 的目標專案，您必須設定專案方便進行**API 層級 23 (Xamarin.Android v6.0 支援)**。 如需設定 Android API 層級的層級相關資訊，請參閱[了解 Android API 層級](~/android/app-fundamentals/android-api-levels.md)。
 
 
-<a name="emudev" />
 
 ### <a name="configure-an-emulator-or-device"></a>設定模擬器或裝置
 
@@ -135,19 +126,17 @@ Xamarin.Android 支援 Android Marshmallow，並包括：
 
 例如，此虛擬裝置設定為模擬 Nexus 5:
 
-[![設定使用 Nexus 5 裝置、 Android 6.0 目標，而且 Intel Atom (x86) AVD](marshmallow-images/android-m-avd.png)](marshmallow-images/android-m-avd.png)
+[![設定使用 Nexus 5 裝置、 Android 6.0 目標，而且 Intel Atom (x86) AVD](marshmallow-images/android-m-avd.png)](marshmallow-images/android-m-avd.png#lightbox)
 
 如果您使用的實體裝置，例如 Nexus 5，6，或 9，您可以安裝 Android Marshmallow 的預覽圖像。 如需更新您的裝置 Android Marshmallow 的詳細資訊，請參閱[硬體系統映像](http://developer.android.com/preview/download.html#images)。
 
 
-<a name="newfeatures" />
 
 ## <a name="new-features"></a>新功能
 
 許多 Android Marshmallow 中導入的變更將焦點放在改善 Android 使用者經驗、 增加效能，並修正的 bug。 不過，Marshmallow 也導入了某些大規模的變更以 Android 平台的基本概念。 下列各節會反白顯示這些增強功能，並提供連結可幫助您開始在應用程式中使用 Android Marshmallow 的新功能。 
 
 
-<a name="permissions" />
 
 ### <a name="runtime-permissions"></a>執行階段權限
 
@@ -169,7 +158,6 @@ Xamarin 也會提供說明如何在 Android Marshmallow （和更新版本），
 如需 Android Marshmallow 的新執行階段權限功能的詳細資訊，請參閱[系統權限使用](https://developer.android.com/preview/features/runtime-permissions.html)。
 
 
-<a name="authentication" />
 
 ### <a name="authentication-enhancements"></a>驗證的增強功能
 
@@ -181,8 +169,6 @@ Android Marshmallow 包含兩個驗證增強功能，可避免需要密碼：
 
 連結和一節所說明的範例應用程式會協助您熟悉這些新功能。
 
-
-<a name="fingerprint" />
 
 #### <a name="fingerprint-authentication"></a>指紋驗證
 
@@ -200,7 +186,6 @@ Xamarin 提供範例應用程式，說明如何使用已註冊的指紋，來驗
 此應用程式不會儲存您的指紋 （或您的密碼）。
 
 
-<a name="voice" />
 
 #### <a name="voice-interactions"></a>語音互動
 
@@ -210,7 +195,6 @@ Android Marshmallow 中引進的新語音的互動功能可讓您的應用程式
 範例應用程式已使用，說明如何使用 Xamarin.Android 應用程式中的語音互動 API:[語音互動](https://github.com/jamesmontemagno/MarshmallowSamples/tree/master/VoiceInteractions)。
 
 
-<a name="confirmcred" />
 
 #### <a name="confirm-credential"></a>確認認證
 
@@ -225,7 +209,6 @@ Xamarin 提供說明如何在您的應用程式中使用的裝置認證 （例�
 2.  點選**購買**按鈕，然後確認安全鎖定螢幕認證。
 
 
-<a name="chrometabs" />
 
 ### <a name="chrome-custom-tabs"></a>Chrome 自訂索引標籤
 
@@ -245,7 +228,6 @@ Xamarin 提供說明如何在您的應用程式中使用的裝置認證 （例�
 如需有關這項功能的詳細資訊，請參閱[Chrome 自訂索引標籤](https://developer.chrome.com/multidevice/android/customtabs)。
 
 
-<a name="designlib" />
 
 ### <a name="material-design-support-library"></a>材料設計支援程式庫
 
@@ -280,8 +262,6 @@ Xamarin 提供範例應用程式，示範新的 Android 設計程式庫上 Xamar
 
 如需設計文件庫的詳細資訊，請參閱[Android 的設計支援程式庫](http://android-developers.blogspot.co.at/2015/05/android-design-support-library.html)Android 開發人員部落格。
 
-
-<a name="libraries" />
 
 ### <a name="additional-library-updates"></a>其他程式庫的更新
 

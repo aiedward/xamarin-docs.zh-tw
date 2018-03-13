@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/22/2016
-ms.openlocfilehash: c305075d37a25bfe828f16d4e69955437a591f9a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 648125ca8bd2c7c8a015b4c29195dc75c0bbf0a0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="scrollview"></a>ScrollView
 
 [`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) 包含配置，並可讓他們幕後的捲軸。 `ScrollView` 也用來允許檢視來顯示鍵盤時，會自動移至螢幕的可見部分。
 
-[ ![](scroll-view-images/layouts-sml.png "Xamarin.Forms 配置")](scroll-view-images/layouts.png "Xamarin.Forms 版面配置")
+[![](scroll-view-images/layouts-sml.png "Xamarin.Forms 配置")](scroll-view-images/layouts.png#lightbox "Xamarin.Forms 版面配置")
 
 本文涵蓋：
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 02/27/2018
 ## <a name="usage"></a>使用量
 
 > [!NOTE]
-> **請注意**: `ScrollView`s 應該不巢狀。 此外，`ScrollView`應該不使用其他控制項，可提供向下捲動，例如巢狀 s`ListView`和`WebView`。
+> `ScrollView`s 不是巢狀。 此外，`ScrollView`應該不使用其他控制項，可提供向下捲動，例如巢狀 s`ListView`和`WebView`。
 
 `ScrollView` 公開`Content`內容可以在單一檢視或版面配置設定。 請考量以下範例使用非常大的 boxView，後面加上配置的`Entry`:
 

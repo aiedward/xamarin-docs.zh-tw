@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 55864073aecb48176d650da6edefad24c3248767
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0c4014ecda0501e9309a17901c439444e4b48e86
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="native-views-in-c"></a>在 C# 中的原生檢視
 
@@ -24,7 +24,7 @@ _原生 iOS、 Android 和 UWP 從檢視可以從使用 C# 建立 Xamarin.Forms 
 
 下列螢幕擷取畫面示範平台專屬檢視具有已新增至 Xamarin.Forms [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/):
 
-[![](code-images/screenshots-sml.png "包含平台專屬檢視 StackLayout")](code-images/screenshots.png "StackLayout 包含平台專屬檢視")
+[![](code-images/screenshots-sml.png "包含平台專屬檢視 StackLayout")](code-images/screenshots.png#lightbox "StackLayout 包含平台專屬檢視")
 
 將平台專屬的檢視加入至 Xamarin.Forms 版面配置功能會啟用在每個平台上的兩種擴充方法：
 
@@ -64,7 +64,7 @@ contentView.Content = uiLabel.ToView();
 下列程式碼範例示範如何將`TextView`至[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)和[ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
 
 ```csharp
-var textView = new TextView (Forms.Context) { Text = originalText, TextSize = 14 };
+var textView = new TextView (MainActivity.Instance) { Text = originalText, TextSize = 14 };
 stackLayout.Children.Add (textView);
 contentView.Content = textView.ToView();
 ```
@@ -188,7 +188,7 @@ public class CustomControl : TextView
 此檢視執行個體加入至[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)，如下列程式碼範例所示：
 
 ```csharp
-var customControl = new CustomControl (Forms.Context) {
+var customControl = new CustomControl (MainActivity.Instance) {
   Text = "This control has incorrect sizing - it doesn't occupy the available width of the device.",
   TextSize = 14
 };

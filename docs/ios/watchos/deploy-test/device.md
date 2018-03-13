@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: fab2092837f9b9ca8ada53274c9644f131fb5659
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 211f8c7066e86dac3a8351b913da0185093dcb70
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="testing-on-watch-devices"></a>在 監看式裝置上測試
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 02/27/2018
 
 監看並無不同-您現在需要加入您的 Apple Watch 裝置再將應用程式部署至它。 尋找 監看式 UDID 使用**Xcode** (**Windows > 裝置**清單)。 配對的電話連線時也會顯示監看式的資訊：
 
-[ ![](device-images/xcode-devices-sml.png "配對的監看式資訊")](device-images/xcode-devices.png)
+[![](device-images/xcode-devices-sml.png "配對的監看式資訊")](device-images/xcode-devices.png#lightbox)
 
 如果您知道監看式 UDID，將它新增至裝置清單中，開發人員中心：
 
@@ -99,12 +99,12 @@ ms.lasthandoff: 02/27/2018
 
 若要*暫時*暫時解決此問題，請停用**累加建置**Watch 擴充功能中**專案選項 > 建置 > watchOS 組建**視窗：
 
-[ ![](device-images/disable-incremental-sml.png "累加建置的核取方塊")](device-images/disable-incremental.png)
+[![](device-images/disable-incremental-sml.png "累加建置的核取方塊")](device-images/disable-incremental.png#lightbox)
 
 這將在未來的版本中，其後累加建置可以重新啟用利用建置時間更短的修正。
 
 
-#<a name="3-watch-app-fails-to-start-while-debugging-on-device"></a>若要在裝置上偵錯時啟動 &#3; 監看式應用程式失敗
+### <a name="watch-app-fails-to-start-while-debugging-on-device"></a>監看式應用程式無法在裝置上偵錯時啟動
 
 當嘗試進行偵錯只圖示 （& s） 載入微調在實體裝置上的監看式應用程式會出現 （與最終逾時）。 這將會解決未來的版本;因應措施是執行 （而不會允許偵錯） 的發行組建。
 

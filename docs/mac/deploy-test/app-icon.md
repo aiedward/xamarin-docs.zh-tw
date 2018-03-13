@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 742780ad87672bd8a3e2bb3cb66ca582a680d44f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 28218bcbf6527c818fdf2988375d1c353e9f1d27
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-icon"></a>應用程式圖示
 
@@ -122,7 +122,7 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
     ![編輯 AppIcons.appiconset](app-icon-images/intro01.png "編輯 AppIcons.appiconset")
 2. 對於必要的各種圖示大小，按一下該圖示，然後選取依上述建立的對應影像檔案： 
 
-    [![選取圖示影像](app-icon-images/intro02.png "選取圖示影像")](app-icon-images/intro02-large.png)
+    [![選取圖示影像](app-icon-images/intro02.png "選取圖示影像")](app-icon-images/intro02-large.png#lightbox)
 3. 儲存您的變更。
 
 
@@ -135,7 +135,7 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 1. 在 [Solution Pad] 中，按兩下 [Info.plist] 以開啟 [專案選項]。
 2. 在 [Mac OS X 應用程式目標] 區段中，按一下 [應用程式圖示] 以選取 `AppIcons.appiconset` 檔案： 
 
-    [![設定圖示集](app-icon-images/icon01.png "設定圖示集")](app-icon-images/icon01-large.png)
+    [![設定圖示集](app-icon-images/icon01.png "設定圖示集")](app-icon-images/icon01-large.png#lightbox)
 3. 儲存變更。
 
 當應用程式執行時，即會在 Dock 中顯示新圖示：

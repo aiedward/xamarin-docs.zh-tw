@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 2a636a5ee2b027a2b2889c375f1fef5be67c379b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bafada037f912007201fd5e81b17302b21de3092
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="store-kit-overview-and-retrieving-product-information"></a>儲存組件概觀和擷取產品資訊
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 02/27/2018
 任何交易發生之前，應用程式必須擷取產品的價格和顯示的描述。 然後當使用者按**購買**，應用程式對 StoreKit 可管理的確認對話方塊和 Apple ID 登入進行要求。 假設，之後交易又成功，StoreKit 通知的應用程式程式碼中，必須儲存的交易結果以及讓使用者存取其購買。   
 
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image14.png "StoreKit 通知的應用程式程式碼必須儲存的交易結果並提供使用者存取他們購買")](store-kit-overview-and-retreiving-product-information-images/image14.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image14.png "StoreKit 通知的應用程式程式碼必須儲存的交易結果並提供使用者存取他們購買")](store-kit-overview-and-retreiving-product-information-images/image14.png#lightbox)
 
 ## <a name="classes"></a>類別
 
@@ -41,7 +41,7 @@ ms.lasthandoff: 02/27/2018
    
    
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image15.png "必須在應用程式中實作各種 StoreKit 類別抽象類別之間的關聯性")](store-kit-overview-and-retreiving-product-information-images/image15.png)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image15.png "必須在應用程式中實作各種 StoreKit 類別抽象類別之間的關聯性")](store-kit-overview-and-retreiving-product-information-images/image15.png#lightbox)   
    
    
    
@@ -64,7 +64,7 @@ ms.lasthandoff: 02/27/2018
 
 測試 StoreKit 程式碼，您必須登出規則 iTunes 測試帳戶的登入連結至測試存放區的特殊測試帳戶 （在 iTunes Connect 中建立）。 若要登出目前的帳戶，請造訪**設定 > iTunes App Store 和**如下所示：
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image16.png "若要登出目前的帳戶，請造訪設定 iTunes 和應用程式市集")](store-kit-overview-and-retreiving-product-information-images/image16.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image16.png "若要登出目前的帳戶，請造訪設定 iTunes 和應用程式市集")](store-kit-overview-and-retreiving-product-information-images/image16.png#lightbox)
  
 然後使用測試帳戶登入*StoreKit 要求應用程式內時*:
 
@@ -72,19 +72,19 @@ ms.lasthandoff: 02/27/2018
 
 若要建立測試使用者，在 iTunes Connect 中的按一下**使用者和角色**主頁面上。
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image17.png "若要建立測試使用者，在 iTunes Connect 按一下使用者和角色的主頁面上")](store-kit-overview-and-retreiving-product-information-images/image17.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image17.png "若要建立測試使用者，在 iTunes Connect 按一下使用者和角色的主頁面上")](store-kit-overview-and-retreiving-product-information-images/image17.png#lightbox)
 
 選取**沙箱測試人員**
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image18.png "選取沙箱測試人員")](store-kit-overview-and-retreiving-product-information-images/image18.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image18.png "選取沙箱測試人員")](store-kit-overview-and-retreiving-product-information-images/image18.png#lightbox)
 
 現有使用者的清單隨即顯示。 您可以將新使用者加入或刪除現有的記錄。 並不會在入口網站 （目前） 可讓您檢視或編輯現有的測試使用者，所以建議您保持良好的記錄，每個測試使用者所建立 （特別是在您指派的密碼）。 一旦您刪除的測試使用者電子郵件地址不得重複使用另一個測試帳戶。  
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image19.png "會顯示現有使用者的清單")](store-kit-overview-and-retreiving-product-information-images/image19.png)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image19.png "會顯示現有使用者的清單")](store-kit-overview-and-retreiving-product-information-images/image19.png#lightbox)   
    
  新的測試使用者有類似的屬性，以實際的 Apple ID （例如名稱、 密碼、 秘密提示問題和解答）。 保留在此處輸入的所有詳細資料的記錄。 **選取 iTunes Store**欄位將會決定哪些貨幣，並使用應用程式內購買的語言時已登入之使用者的身分。
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image20.png "選取 iTunes Store 欄位將會決定使用者的貨幣和應用程式內購買行為的語言")](store-kit-overview-and-retreiving-product-information-images/image20.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image20.png "選取 iTunes Store 欄位將會決定使用者的貨幣和應用程式內購買行為的語言")](store-kit-overview-and-retreiving-product-information-images/image20.png#lightbox)
 
 ## <a name="retrieving-product-information"></a>擷取產品資訊
 
@@ -102,7 +102,7 @@ ms.lasthandoff: 02/27/2018
 
 整體的互動如下所示 ( **StoreKit**是內建到 iOS、 和**App Store**代表 Apple 的伺服器):
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image21.png "擷取產品資訊的圖形")](store-kit-overview-and-retreiving-product-information-images/image21.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image21.png "擷取產品資訊的圖形")](store-kit-overview-and-retreiving-product-information-images/image21.png#lightbox)
 
 ### <a name="displaying-product-information-example"></a>顯示產品資訊範例
 
@@ -110,7 +110,7 @@ ms.lasthandoff: 02/27/2018
    
    
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image23.png "主畫面會顯示從應用程式存放區擷取的資訊產品")](store-kit-overview-and-retreiving-product-information-images/image23.png)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image23.png "主畫面會顯示從應用程式存放區擷取的資訊產品")](store-kit-overview-and-retreiving-product-information-images/image23.png#lightbox)   
    
    
    
@@ -235,7 +235,7 @@ public override void RequestFailed (SKRequest request, NSError error)
 
 這個螢幕擷取畫面顯示範例應用程式之後立即載入 （當產品不未提供任何資訊）：
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image24.png "在載入時不未提供任何產品資訊之後，立即以範例應用程式")](store-kit-overview-and-retreiving-product-information-images/image24.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image24.png "在載入時不未提供任何產品資訊之後，立即以範例應用程式")](store-kit-overview-and-retreiving-product-information-images/image24.png#lightbox)
 
 ## <a name="invalid-products"></a>無效的產品
 
@@ -296,7 +296,7 @@ buy5Button.SetTitle(String.Format(Buy, product.LocalizedPrice()), UIControlState
    
    
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image25.png "兩個不同 iTunes 測試帳戶的顯示語言特定的結果")](store-kit-overview-and-retreiving-product-information-images/image25.png)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image25.png "兩個不同 iTunes 測試帳戶的顯示語言特定的結果")](store-kit-overview-and-retreiving-product-information-images/image25.png#lightbox)   
    
    
    

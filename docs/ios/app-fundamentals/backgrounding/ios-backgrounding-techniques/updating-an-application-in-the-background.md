@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d878f922b74ea3e95fd0e1ebce9e7445063a2946
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f4a18bf8f35d1a6c615c819ea90433d1eb123422
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="updating-an-application-in-the-background"></a>在背景中的將應用程式更新
 
@@ -44,7 +44,7 @@ iOS 提供兩個位置感知應用程式開發介面與 backgrounding 功能：
 
 若要實作背景擷取，請編輯*Info.plist*並檢查**啟用背景模式**和**背景擷取**核取方塊：
 
- [ ![](updating-an-application-in-the-background-images/fetch.png "編輯 Info.plist，並檢查啟用背景模式，以及背景提取的核取方塊")](updating-an-application-in-the-background-images/fetch.png)
+ [![](updating-an-application-in-the-background-images/fetch.png "編輯 Info.plist，並檢查啟用背景模式，以及背景提取的核取方塊")](updating-an-application-in-the-background-images/fetch.png#lightbox)
 
 接下來，在`AppDelegate`，覆寫`FinishedLaunching`方法來設定最小的擷取間隔。 在此範例中，我們會讓作業系統決定如何通常提取新的內容：
 
@@ -106,7 +106,7 @@ public override void PerformFetch (UIApplication application, Action<UIBackgroun
 
 若要實作遠端通知，請編輯*Info.plist*並檢查**啟用背景模式**和**遠端通知**核取方塊：
 
- [ ![](updating-an-application-in-the-background-images/remote.png "背景模式設定為啟用背景模式與遠端的通知")](updating-an-application-in-the-background-images/remote.png)
+ [![](updating-an-application-in-the-background-images/remote.png "背景模式設定為啟用背景模式與遠端的通知")](updating-an-application-in-the-background-images/remote.png#lightbox)
 
 接下來，設定`content-available`推播通知給 1 上的旗標。 這可讓應用程式知道顯示警示之前擷取新的內容：
 
@@ -153,7 +153,7 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 
 不過，APNs 會讓無訊息 」 藉由 「 連同一般遠端通知或保持回應的通知。 因為規則的通知沒有速率限制，所以可以使用來自 APNs 的總預存的無訊息通知推送至裝置，如下列圖表所示：
 
- [ ![](updating-an-application-in-the-background-images/silent.png "規則的通知可用來從 APNs 的預存的無訊息通知推播至裝置，如這個圖表所示")](updating-an-application-in-the-background-images/silent.png)
+ [![](updating-an-application-in-the-background-images/silent.png "規則的通知可用來從 APNs 的預存的無訊息通知推播至裝置，如這個圖表所示")](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
 > **請注意**: Apple 鼓勵開發人員需要應用程式，並讓 APNs 排程傳送時，傳送無訊息的推播通知。

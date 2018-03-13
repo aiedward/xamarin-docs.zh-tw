@@ -3,16 +3,16 @@ title: "第 1 部分。 開始使用 XAML"
 description: "Xamarin.Forms 應用程式中 XAML 大多用來定義頁面的視覺內容。 永遠提供標記的程式碼支援的 C# 程式碼檔案與相關聯的 XAML 檔案。 在一起，這兩個檔案會構成新的類別定義，其中包含子檢視和內容初始化。 在 XAML 檔案中，類別和屬性所參考 XML 項目和屬性，以及建立標記和程式碼之間的連結。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
+ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 8e02dbd8687fc10582874710db7ca6848f546751
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55c4fa73044b1c37e879ed7731161269bdbf8ba8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 開始使用 XAML
 
@@ -195,7 +195,7 @@ namespace XamlSamples
 
 當您編譯和執行此程式，`Label`如所示的 XAML 項目會出現在頁面的中央。 從左到右的三個平台為 iOS、 Android 和 Windows 10 行動裝置版：
 
-[![](get-started-with-xaml-images/xamlsamples.png "預設 Xamarin.Forms 顯示")](get-started-with-xaml-images/xamlsamples-large.png "預設 Xamarin.Forms 顯示")
+[![](get-started-with-xaml-images/xamlsamples.png "預設 Xamarin.Forms 顯示")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "預設 Xamarin.Forms 顯示")
 
 更有趣的視覺效果，您只需要為更多有趣的 XAML。
 
@@ -354,7 +354,7 @@ public MainPage()
 
 設定`Content`頁的屬性會取代的設定`Content`XAML 檔案中的屬性。 當您編譯和部署此程式的新版本時，按鈕會出現在螢幕上。 按下它瀏覽至`HelloXamlPage`。 以下是 [結果] 頁面上 iPhone、 Android 和 Windows 10 行動裝置：
 
-[ ![](get-started-with-xaml-images/helloxaml1.png "旋轉標籤文字")](get-started-with-xaml-images/helloxaml1-large.png "旋轉標籤文字")
+[![](get-started-with-xaml-images/helloxaml1.png "旋轉標籤文字")](get-started-with-xaml-images/helloxaml1-large.png#lightbox "旋轉標籤文字")
 
 您可以瀏覽回到`MainPage`使用**< 回**在 iOS 上，使用向左箭號，在頁面頂端或底部的電話，在 Android 上，或在頁面底部的 Windows 10 行動裝置上使用向左箭號按鈕。
 
@@ -364,7 +364,7 @@ public MainPage()
 
 看起來如下：
 
-[ ![](get-started-with-xaml-images/helloxaml2.png "使用 Unicode 字元的標籤文字的旋轉")](get-started-with-xaml-images/helloxaml2-large.png "旋轉標籤文字使用 Unicode 字元")
+[![](get-started-with-xaml-images/helloxaml2.png "使用 Unicode 字元的標籤文字的旋轉")](get-started-with-xaml-images/helloxaml2-large.png#lightbox "旋轉標籤文字使用 Unicode 字元")
 
 ## <a name="xaml-and-code-interactions"></a>XAML 和程式碼互動
 
@@ -392,7 +392,7 @@ public MainPage()
 
 此 XAML 檔案語法完成，且它起來：
 
-[ ![](get-started-with-xaml-images/xamlpluscode1.png "在頁面上的多個控制項")](get-started-with-xaml-images/xamlpluscode1-large.png "頁面上的多個控制項")
+[![](get-started-with-xaml-images/xamlpluscode1.png "在頁面上的多個控制項")](get-started-with-xaml-images/xamlpluscode1-large.png#lightbox "頁面上的多個控制項")
 
 不過，您可能會考慮此程式會在功能上缺點。 可能是`Slider`應該會造成`Label`來顯示目前的值，而`Button`可能會執行在程式內的項目。
 
@@ -483,7 +483,7 @@ void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
 
 當您第一次執行程式時，`Label`不會顯示`Slider`值，因為`ValueChanged`尚未還會引發事件。 但操作`Slider`會使顯示值：
 
-[ ![](get-started-with-xaml-images/xamlpluscode2.png "顯示的滑桿值")](get-started-with-xaml-images/xamlpluscode2-large.png "滑桿顯示的值")
+[![](get-started-with-xaml-images/xamlpluscode2.png "顯示的滑桿值")](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox "滑桿顯示的值")
 
 現在針對`Button`。 讓我們來模擬的回應`Clicked`所顯示之警示的事件`Text` 按鈕。 此事件處理常式可以安全地轉型`sender`引數`Button`，然後存取其屬性：
 

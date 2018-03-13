@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 2727d83e55e305af1372ece35bdf22abfc653fe7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d82a1391feca9187cf2aca4394509447aeac6a18
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="reusable-eventtocommandbehavior"></a>可重複使用 EventToCommandBehavior
 
@@ -182,7 +182,7 @@ selectedItemLabel.SetBinding (Label.TextProperty, "SelectedItemText");
 
 在執行階段，行為會回應與控制項互動。 當選取的項目[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)、 [ `ItemSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemSelected/)會引發事件，會同時執行`OutputAgeCommand`ViewModel 中。 這會依次更新 ViewModel`SelectedItemText`屬性， [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)繫結到，如下列螢幕擷取畫面所示：
 
-[ ![](event-to-command-behavior-images/screenshots-sml.png "範例應用程式與 EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png "範例 EventToCommandBehavior 與應用程式")
+[![](event-to-command-behavior-images/screenshots-sml.png "範例應用程式與 EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png#lightbox "範例 EventToCommandBehavior 與應用程式")
 
 執行命令，當事件引發時，使用這種行為的優點是，命令可能會與未設計成與命令互動控制項相關聯。 此外，這會移除鍋爐調色盤事件處理程式碼程式碼後置檔案。
 

@@ -7,11 +7,11 @@ ms.assetid: 55834877-757B-4860-AF2F-933A948BE38D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 4dde338a7c289f228f877fa4d968d156a941ba16
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9ad3499a232e5f2b2ef362f772ed0197e71e6bee
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-localization"></a>使用當地語系化
 
@@ -67,7 +67,7 @@ iOS 和 OS 監看式會自動使用使用者的語言選擇來載入正確的字
 
 當您編輯分鏡腳本時，選取每個項目，請注意**當地語系化 ID** ，會出現在**屬性**板：
 
-  [ ![](localization-images/storyboard-sml.png "會出現在屬性板當地語系化 ID")](localization-images/storyboard.png)
+  [![](localization-images/storyboard-sml.png "會出現在屬性板當地語系化 ID")](localization-images/storyboard.png#lightbox)
 
 在**Base.lproj**資料夾中，建立索引鍵-值組，如下所示的機碼由所構成**當地語系化 ID**和屬性名稱的控制項上，加入接一個點 (`.`)。
 

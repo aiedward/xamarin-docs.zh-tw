@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: aaa4c93eda9edb0eb5d568b3470c02352bdb7467
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: df6a0afe18b6929f8e03ce4d9bf35198034508bf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-value-converters"></a>繫結值轉換器
 
@@ -95,7 +95,7 @@ public class IntToBoolConverter : IValueConverter
 
 **啟用按鈕**頁面示範一般需要時`Button`執行到的使用者輸入的文字為基礎的作業`Entry`檢視。 如果執行任何動作已輸入到`Entry`、`Button`應該停用。 每個`Button`包含在資料繫結其`IsEnabled`屬性。 資料繫結來源是`Length`屬性`Text`對應`Entry`。 如果該`Length`屬性不是 0，值轉換器會傳回`true`和`Button`已啟用：
 
-[![啟用按鈕](converters-images/enablebuttons-small.png "啟用按鈕")](converters-images/enablebuttons-large.png "啟用按鈕")
+[![啟用按鈕](converters-images/enablebuttons-small.png "啟用按鈕")](converters-images/enablebuttons-large.png#lightbox "啟用按鈕")
 
 請注意，`Text`中每個屬性`Entry`會初始化為空字串。 `Text`屬性是`null`根據預設，資料繫結將無法在此情況下。
 
@@ -236,7 +236,7 @@ public class BoolToObjectConverter<T> : IValueConverter
 
 在過去，這三個`Switch`和`Label`組，泛型引數設定為`Style`，以及整個`Style`物件所提供的值`TrueObject`和`FalseObject`。 這些覆寫隱含樣式`Label`資源字典中設定，因此該樣式中的屬性明確指派給`Label`。 切換`Switch`會導致對應`Label`以反映變更：
 
-[![切換指標](converters-images/switchindicators-small.png "切換指標")](converters-images/switchindicators-large.png "切換指標")
+[![切換指標](converters-images/switchindicators-small.png "切換指標")](converters-images/switchindicators-large.png#lightbox "切換指標")
 
 它也可使用[ `Triggers` ](~/xamarin-forms/app-fundamentals/triggers.md)根據其他檢視使用者介面中實作類似的變更。
 
@@ -460,7 +460,7 @@ binding.ConverterParameter = 255;
 
 以下是結果：
 
-[![RGB 色彩選取器](converters-images/rgbcolorselector-small.png "RGB 色彩選取器")](converters-images/rgbcolorselector-large.png "RGB 色彩選取器")
+[![RGB 色彩選取器](converters-images/rgbcolorselector-small.png "RGB 色彩選取器")](converters-images/rgbcolorselector-large.png#lightbox "RGB 色彩選取器")
 
 
 ## <a name="related-links"></a>相關連結

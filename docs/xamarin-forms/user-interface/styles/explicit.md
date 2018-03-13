@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 43a1a5ee6a8bd9d53f6fd44be935ae7573db6812
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1fbc12288527c053a24041aa6c49cc1a4abdde55
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="explicit-styles"></a>明確的樣式
 
@@ -64,7 +64,7 @@ _明確樣式是藉由設定其樣式屬性選擇性地套用到控制項。_
 
 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)定義三個*明確*樣式套用至網頁的[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)執行個體。 每個`Style`用來在不同的色彩顯示文字，也可以將字型的大小和水平及垂直版面配置選項。 每個`Style`套用到不同`Label`藉由設定其[ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/)屬性使用`StaticResource`標記延伸。 這會導致下列螢幕擷取畫面所示的外觀：
 
-[![](explicit-images/explicit-styles.png "明確的樣式範例")](explicit-images/explicit-styles-large.png "明確樣式範例")
+[![](explicit-images/explicit-styles.png "明確的樣式範例")](explicit-images/explicit-styles-large.png#lightbox "明確樣式範例")
 
 此外，最終[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)具有[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)套用至其中，但也會覆寫[ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/)屬性，以不同的`Color`值。
 
@@ -95,7 +95,7 @@ _明確樣式是藉由設定其樣式屬性選擇性地套用到控制項。_
 
 如需建立應用程式中的樣式資訊[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)，請參閱[全域樣式](~/xamarin-forms/user-interface/styles/application.md)。
 
-## <a name="creating-an-explicit-style-in-c35"></a>&#35; 中建立明確的樣式
+## <a name="creating-an-explicit-style-in-c35"></a>在 C 中建立明確的樣式&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) 執行個體可以新增到網頁的[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) C# 中建立新的集合[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)，再以加入`Style`執行個體來`ResourceDictionary`，如下所示下列程式碼範例：
 

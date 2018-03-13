@@ -2,16 +2,16 @@
 title: "實作影片播放器"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
+ms.assetid: 0CE9BEE7-4F81-4A00-B9B3-5E2535CD3050
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: e818bc3fa9793f093c10ac2617c5a822d08213d4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a889be5ee31f667117d2c36859e667980f0e6610
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="implementing-a-video-player"></a>實作影片播放器
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 02/27/2018
 
 需要視訊播放程式*傳輸控制*，這是按鈕，以播放並暫停視訊，和定位的列，顯示視訊的進度，並且可讓使用者快速跳到不同的位置。 `VideoPlayer` 可以使用傳輸控制及定位列提供的平台 （如下所示），或者您可以提供自訂傳輸控制項和定位列。 以下是程式執行 iOS、 Android 和通用 Windows 平台：
 
-[![播放網頁的視訊](web-videos-images/playwebvideo-small.png "播放的視訊 Web")](web-videos-images/playwebvideo-large.png "播放網頁的視訊")
+[![播放網頁的視訊](web-videos-images/playwebvideo-small.png "播放的視訊 Web")](web-videos-images/playwebvideo-large.png#lightbox "播放網頁的視訊")
 
 當然，您可以將電話轉向側邊，以放大。
 

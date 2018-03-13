@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 3b862f03a81364594f33d82ebf02d75440d7bc4c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5d64c7c1dbc502acd3876c2442f9bae1c46eeb74
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authenticating-users-with-azure-active-directory-b2c"></a>驗證使用者與 Azure Active Directory B2C
 
@@ -21,7 +21,7 @@ _Azure Active Directory B2C 是消費者導向 web 與行動應用程式的雲�
 ![](~/media/shared/preview.png "這個 API 已發行目前前")
 
 > [!NOTE]
-> **請注意**: [Microsoft 驗證程式庫](https://www.nuget.org/packages/Microsoft.Identity.Client)仍處於 preview 階段，但適合在生產環境中使用。 不過，那里可能重大變更 API、 內部快取格式，可能會影響您的應用程式的程式庫的其他機制。
+> [Microsoft 驗證程式庫](https://www.nuget.org/packages/Microsoft.Identity.Client)仍處於 preview 階段，但適合在生產環境中使用。 不過，那里可能重大變更 API、 內部快取格式，可能會影響您的應用程式的程式庫的其他機制。
 
 ## <a name="overview"></a>總覽
 
@@ -38,12 +38,12 @@ Azure Active Directory B2C 是可讓取用者登入您的應用程式的身分�
 1. 使用[Microsoft 驗證程式庫](https://www.nuget.org/packages/Microsoft.Identity.Client)(MSAL) 行動裝置應用程式與 Azure Active Directory B2C 租用戶起始驗證工作流程中。
 
 > [!NOTE]
-> **請注意**： 將 Azure Active Directory B2C 身分識別管理整合到行動裝置應用程式，以及 MSAL 也可用來將 Azure Active Directory 身分識別管理整合到行動裝置應用程式。 這可以透過行動應用程式向 Azure Active Directory 在[應用程式註冊入口網站](https://apps.dev.microsoft.com/)。 註冊程序將指派**應用程式識別碼**可唯一識別，使用 MSAL 時應指定此應用程式。 如需詳細資訊，請參閱[如何註冊應用程式與 v2.0 端點](/azure/active-directory/develop/active-directory-v2-app-registration/)，和[驗證您行動應用程式使用 Microsoft 驗證程式庫](https://blog.xamarin.com/authenticate-mobile-apps-using-microsoft-authentication-library/)Xamarin 部落格上。
+> 將 Azure Active Directory B2C 身分識別管理整合到行動裝置應用程式，以及 MSAL 也可用來將 Azure Active Directory 身分識別管理整合到行動裝置應用程式。 這可以透過行動應用程式向 Azure Active Directory 在[應用程式註冊入口網站](https://apps.dev.microsoft.com/)。 註冊程序將指派**應用程式識別碼**可唯一識別，使用 MSAL 時應指定此應用程式。 如需詳細資訊，請參閱[如何註冊應用程式與 v2.0 端點](/azure/active-directory/develop/active-directory-v2-app-registration/)，和[驗證您行動應用程式使用 Microsoft 驗證程式庫](https://blog.xamarin.com/authenticate-mobile-apps-using-microsoft-authentication-library/)Xamarin 部落格上。
 
 MSAL 使用裝置的網頁瀏覽器來執行驗證。 這會改善應用程式的可用性，因為使用者只需要登入之後的每個裝置，改善匯率的登入和授權流程應用程式中。 裝置瀏覽器也提供改善的安全性。 使用者完成驗證程序之後，控制會傳回至應用程式，從 web 瀏覽器 索引標籤。達到此目的，請註冊自訂的 URL 配置所傳回的驗證程序，然後偵測並一旦傳送時，處理自訂的 URL 重新導向 URL。 如需有關如何選擇自訂 URL 配置的詳細資訊，請參閱[選擇原生應用程式重新導向 URI](/azure/active-directory-b2c/active-directory-b2c-app-registration#choosing-a-native-app-redirect-uri/)。
 
 > [!NOTE]
-> **請注意**： 向作業系統註冊自訂的 URL 配置和處理的配置的機制是每個平台專屬。
+> 向作業系統註冊自訂的 URL 配置，以及處理結構描述的機制是每個平台專屬的。
 
 每個要求傳送至 Azure Active Directory B2C 租用戶指定*原則*。 原則描述取用者身分識別體驗，例如註冊，或登入。 例如，註冊原則可讓透過下列設定來設定 Azure Active Directory B2C 租用戶的行為：
 
@@ -127,7 +127,7 @@ namespace TodoAzure.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             LoadApplication(new App());
-            App.UiParent = new UIParent(Xamarin.Forms.Forms.Context as Activity);
+            App.UiParent = new UIParent(this);
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)

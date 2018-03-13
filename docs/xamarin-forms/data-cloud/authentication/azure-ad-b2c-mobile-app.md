@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 3a7d89d9b0f383d365b18364e5d902ee0642f395
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c28ddc09b07066de67f5c974cf5c2128726c6932
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="integrating-azure-active-directory-b2c-with-azure-mobile-apps"></a>Azure 行動應用程式與整合 Azure Active Directory B2C
 
@@ -21,7 +21,7 @@ _Azure Active Directory B2C 是消費者導向 web 與行動應用程式的雲�
 ![](~/media/shared/preview.png "這個 API 已發行目前前")
 
 > [!NOTE]
-> **請注意**: [Microsoft 驗證程式庫](https://www.nuget.org/packages/Microsoft.Identity.Client)仍處於 preview 階段，但適合在生產環境中使用。 不過，那里可能重大變更 API、 內部快取格式，可能會影響您的應用程式的程式庫的其他機制。
+> [Microsoft 驗證程式庫](https://www.nuget.org/packages/Microsoft.Identity.Client)仍處於 preview 階段，但適合在生產環境中使用。 不過，那里可能重大變更 API、 內部快取格式，可能會影響您的應用程式的程式庫的其他機制。
 
 ## <a name="overview"></a>總覽
 
@@ -72,7 +72,7 @@ Azure Active Directory B2C 可以用來管理 Azure 行動應用程式的驗證�
 
 下列螢幕擷取畫面會示範這項設定：
 
-[![](azure-ad-b2c-mobile-app-images/client-flow-config-sml.png "Azure Active Directory B2C Configuration")](azure-ad-b2c-mobile-app-images/client-flow-config.png "Azure Active Directory B2C Configuration")
+[![](azure-ad-b2c-mobile-app-images/client-flow-config-sml.png "Azure Active Directory B2C Configuration")](azure-ad-b2c-mobile-app-images/client-flow-config.png#lightbox "Azure Active Directory B2C Configuration")
 
 使用中，回覆 URL 設為相同的自訂 URL 配置，以便租用戶也必須設定 Azure Active Directory B2C 的原則後面`://auth/`。 下列螢幕擷取畫面會示範這項設定：
 
@@ -158,7 +158,7 @@ public async Task<bool> LogoutAsync()
 
 下列螢幕擷取畫面會示範這項設定：
 
-[![](azure-ad-b2c-mobile-app-images/server-flow-config-sml.png "Azure Active Directory B2C Configuration")](azure-ad-b2c-mobile-app-images/server-flow-config.png "Azure Active Directory B2C Configuration")
+[![](azure-ad-b2c-mobile-app-images/server-flow-config-sml.png "Azure Active Directory B2C Configuration")](azure-ad-b2c-mobile-app-images/server-flow-config.png#lightbox "Azure Active Directory B2C Configuration")
 
 使用中租用戶也必須設定，讓 Azure 行動應用程式的位址設定回覆 URL 是 Azure Active Directory B2C 的原則後面`/.auth/login/aad/callback`。 下列螢幕擷取畫面會示範這項設定：
 

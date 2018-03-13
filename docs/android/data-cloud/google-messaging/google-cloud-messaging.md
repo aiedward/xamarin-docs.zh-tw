@@ -8,34 +8,32 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 225662fe64c92b77af3e75cbee865561118692a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: f44899ecf5ba2d904333b71226cdd6c7dcea8db0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="google-cloud-messaging"></a>Google 雲端訊息
 
 _Google Cloud Messaging (GCM) 是一種服務，可促進行動裝置應用程式與伺服器應用程式之間的傳訊。本文提供的 GCM 的運作方式概觀，並說明如何設定 Google 服務，因此您的應用程式可以使用 GCM。_
 
-[![Google Cloud Messaging 標誌](google-cloud-messaging-images/preview-sml.png)](google-cloud-messaging-images/preview.png)
+[![Google Cloud Messaging 標誌](google-cloud-messaging-images/preview-sml.png)](google-cloud-messaging-images/preview.png#lightbox)
 
 本主題提供如何 Google Cloud Messaging 將訊息路由傳送應用程式伺服器，您的應用程式之間的高階概觀，並取得認證，好讓您的應用程式可以使用 GCM 服務提供的逐步程序。
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽
 
 Google Cloud Messaging (GCM) 是處理傳送、 路由和伺服器應用程式和行動用戶端應用程式之間的訊息佇列服務。 A*用戶端應用程式*裝置上執行的 GCM 啟用應用程式。 *應用程式伺服器*（由您或您的公司所提供） 是用戶端應用程式與通訊透過 GCM GCM 啟用伺服器：
 
-[![GCM 位於用戶端應用程式與應用程式伺服器之間](google-cloud-messaging-images/01-server-gcm-app-sml.png)](google-cloud-messaging-images/01-server-gcm-app.png)
+[![GCM 位於用戶端應用程式與應用程式伺服器之間](google-cloud-messaging-images/01-server-gcm-app-sml.png)](google-cloud-messaging-images/01-server-gcm-app.png#lightbox)
 
 使用 GCM，應用程式伺服器就可以將訊息傳送至單一裝置、 裝置、 群組或主題訂閱的裝置數目。 您的用戶端應用程式可以使用 GCM 訂閱 （例如，若要接收遠端通知） 的應用程式伺服器的下游訊息。 此外，GCM 使得上游訊息傳送至應用程式伺服器的用戶端應用程式。
 
 適用於 GCM 實作應用程式伺服器的詳細資訊，請參閱[GCM 連線伺服器的相關](https://developers.google.com/cloud-messaging/server)。
 
 
-<a name="inaction" />
 
 ## <a name="google-cloud-messaging-in-action"></a>Google 雲端訊息的動作
 
@@ -58,13 +56,12 @@ GCM 使用下列認證來識別應用程式伺服器和用戶端應用程式，�
 下列各節說明透過 GCM 的應用程式伺服器與通訊的用戶端應用程式時，如何使用這些認證。
 
 
-<a name="registration" />
 
 ### <a name="registration-with-gcm"></a>GCM 註冊
 
 在裝置上安裝用戶端應用程式必須先向 GCM 之前訊息發生的情況。 用戶端應用程式必須完成註冊步驟，如下圖所示：
 
-[![應用程式註冊步驟](google-cloud-messaging-images/02-app-registration-sml.png)](google-cloud-messaging-images/02-app-registration.png)
+[![應用程式註冊步驟](google-cloud-messaging-images/02-app-registration-sml.png)](google-cloud-messaging-images/02-app-registration.png#lightbox)
 
 1.  用戶端應用程式會連絡 GCM 來取得寄件者識別碼傳遞至 GCM 註冊語彙基元。
 
@@ -80,13 +77,12 @@ GCM 使用下列認證來識別應用程式伺服器和用戶端應用程式，�
 Google[註冊用戶端應用程式](https://developers.google.com/cloud-messaging/registration)說明註冊程序，在更多詳細資料; 它會說明取消註冊及取消訂閱，並說明取消註冊的程序解除安裝用戶端應用程式時。
 
 
-<a name="downstream" />
 
 ### <a name="downstream-messaging"></a>下游訊息處理
 
 當應用程式伺服器會將下游訊息傳送至用戶端應用程式時，它會遵循下列圖表中所述的步驟：
 
-[![下游訊息存放區 和 正向的圖表](google-cloud-messaging-images/03-downstream-sml.png)](google-cloud-messaging-images/03-downstream.png)
+[![下游訊息存放區 和 正向的圖表](google-cloud-messaging-images/03-downstream-sml.png)](google-cloud-messaging-images/03-downstream.png#lightbox)
 
 1.  應用程式伺服器至 GCM 傳送訊息。
 
@@ -101,27 +97,22 @@ Google[註冊用戶端應用程式](https://developers.google.com/cloud-messagin
 如需詳細資訊 （包括程式碼範例） 接收下游 GCM 訊息在 Android 上的，請參閱[遠端通知](~/android/data-cloud/google-messaging/remote-notifications-with-gcm.md)。
 
 
-<a name="topic" />
-
 #### <a name="topic-messaging"></a>主題的訊息
 
 *主題傳訊*是一種下游傳訊應用程式伺服器到多個訂閱的主題 （例如，天氣預報） 的用戶端應用程式裝置傳送單一訊息的位置。 主題訊息可保留長度，最多為 2 KB 並主題傳訊支援最多 100 萬個訂用帳戶每個應用程式。 如果 GCM 只會用於訊息的主題，用戶端應用程式不需要註冊權杖傳送到應用程式伺服器。 Google[實作主題傳訊](https://developers.google.com/cloud-messaging/topic-messaging)說明如何從應用程式伺服器傳送訊息至訂閱特定主題的多個裝置。
 
 
-<a name="group" />
 
 #### <a name="group-messaging"></a>訊息群組
 
 *群組傳訊*是一種下游訊息讓應用程式伺服器會傳送單一訊息到屬於群組 （例如，屬於單一使用者的裝置群組） 的多個用戶端應用程式裝置。 群組訊息可在 iOS 裝置的長度上限為 2 KB，最多 4 KB 的長度，適用於 Android 裝置。 群組是限制為最多 20 個成員。 Google[裝置群組傳訊](https://developers.google.com/cloud-messaging/notifications)說明如何應用程式伺服器時，可以隸屬於某個群組的裝置上執行的多個用戶端應用程式執行個體傳送單一訊息。
 
 
-<a name="upstream" />
-
 ### <a name="upstream-messaging"></a>上游傳訊
 
 如果您的用戶端應用程式會連接到伺服器來支援[XMPP](https://developers.google.com/cloud-messaging/ccs)，它可以傳送訊息至應用程式伺服器，如下列圖表所示：
 
-[![上游傳訊的圖表](google-cloud-messaging-images/04-upstream-sml.png)](google-cloud-messaging-images/04-upstream.png)
+[![上游傳訊的圖表](google-cloud-messaging-images/04-upstream-sml.png)](google-cloud-messaging-images/04-upstream.png#lightbox)
 
 1.  用戶端應用程式傳送訊息至 GCM XMPP 連接伺服器。
 
@@ -143,50 +134,47 @@ Google[上游訊息](https://developers.google.com/cloud-messaging/ccs#upstream)
 您可以在應用程式中使用 GCM 服務之前，您必須先取得 Google 的 GCM 伺服器的存取權的認證。 下列章節說明完成此程序所需的步驟：
 
 
-<a name="googleservices" />
 
 ### <a name="enable-google-services-for-your-app"></a>啟用您的應用程式的 Google 服務
 
 1.  登入[Google 開發人員主控台](https://developers.google.com/mobile/add?platform=android)與您的 Google 帳戶 （亦即，您 gmail 的地址），並建立新專案。 如果您有現有的專案，選擇您想要成為 GCM 啟用的專案。 在下列範例中，新的專案呼叫**XamarinGCM**建立：
 
-    [![建立 XamarinGCM 專案](google-cloud-messaging-images/05-create-gcm-app-sml.png)](google-cloud-messaging-images/05-create-gcm-app.png)
+    [![建立 XamarinGCM 專案](google-cloud-messaging-images/05-create-gcm-app-sml.png)](google-cloud-messaging-images/05-create-gcm-app.png#lightbox)
 
 2.  接下來，輸入您的應用程式的封裝名稱 (在此範例中，封裝名稱是**com.xamarin.gcmexample**) 按一下**繼續選擇瀏覽和設定服務**:
 
-    [![輸入封裝名稱](google-cloud-messaging-images/06-package-name-sml.png)](google-cloud-messaging-images/06-package-name.png)
+    [![輸入封裝名稱](google-cloud-messaging-images/06-package-name-sml.png)](google-cloud-messaging-images/06-package-name.png#lightbox)
 
     請注意，此封裝的名稱也是您的應用程式的應用程式識別碼。
 
 3.  **選擇和設定服務**區段會列出您可以將它加入至您的應用程式的 Google 服務。 按一下**雲端傳訊**:
 
-    [![選擇雲端訊息](google-cloud-messaging-images/07-choose-gcm-service-sml.png)](google-cloud-messaging-images/07-choose-gcm-service.png)
+    [![選擇雲端訊息](google-cloud-messaging-images/07-choose-gcm-service-sml.png)](google-cloud-messaging-images/07-choose-gcm-service.png#lightbox)
 
 4.  接下來，按一下**啟用 GOOGLE CLOUD MESSAGING**:
 
-    [![啟用 Google 雲端訊息](google-cloud-messaging-images/08-enable-gcm-sml.png)](google-cloud-messaging-images/08-enable-gcm.png)
+    [![啟用 Google 雲端訊息](google-cloud-messaging-images/08-enable-gcm-sml.png)](google-cloud-messaging-images/08-enable-gcm.png#lightbox)
 
 5.  A**伺服器 API 金鑰**和**寄件者識別碼**為您的應用程式所產生。 記錄這些值，然後按一下**關閉**:
 
-    [![伺服器 API 金鑰與顯示的寄件者識別碼](google-cloud-messaging-images/09-get-api-key-and-id-sml.png)](google-cloud-messaging-images/09-get-api-key-and-id.png)
+    [![伺服器 API 金鑰與顯示的寄件者識別碼](google-cloud-messaging-images/09-get-api-key-and-id-sml.png)](google-cloud-messaging-images/09-get-api-key-and-id.png#lightbox)
 
     保護 API 金鑰&ndash;不適合公用用途。 如果遭到入侵的 API 金鑰，未經授權的伺服器無法發佈訊息，用戶端應用程式。
     [安全地使用 API 金鑰的最佳做法](https://support.google.com/cloud/answer/6310037?hl=en)提供實用的方針來保護您的 API 金鑰。
 
 
-<a name="projectsettings" />
 
 ### <a name="view-your-project-settings"></a>檢視您的專案設定
 
 您可以隨時檢視您的專案設定，登入[Google 雲端主控台](https://console.cloud.google.com/)，然後選取您的專案。 例如，您可以檢視**寄件者識別碼**在頁面頂端的功能表提取中選取您的專案 (在此範例中，稱為專案**XamarinGCM**)。 寄件者識別碼是專案中這個螢幕擷取畫面所示 (這裡的寄件者識別碼是**9349932736**):
 
-[![檢視 寄件者識別碼](google-cloud-messaging-images/10-view-server-id-sml.png)](google-cloud-messaging-images/10-view-server-id.png)
+[![檢視 寄件者識別碼](google-cloud-messaging-images/10-view-server-id-sml.png)](google-cloud-messaging-images/10-view-server-id.png#lightbox)
 
 若要檢視**API 金鑰**，按一下  **API Manager** ，然後按一下 **認證**:
 
-[![檢視 API 金鑰](google-cloud-messaging-images/11-view-credentials-sml.png)](google-cloud-messaging-images/11-view-credentials.png)
+[![檢視 API 金鑰](google-cloud-messaging-images/11-view-credentials-sml.png)](google-cloud-messaging-images/11-view-credentials.png#lightbox)
 
 
-<a name="furtherreading" />
 
 ## <a name="for-further-reading"></a>進一步閱讀
 
@@ -195,7 +183,6 @@ Google[上游訊息](https://developers.google.com/cloud-messaging/ccs#upstream)
 -   [RFC 6120](https://tools.ietf.org/html/rfc6120)和[RFC 6121](https://tools.ietf.org/html/rfc6121)說明，並定義可延伸的傳訊和目前狀態通訊協定 (XMPP)。
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>總結
 

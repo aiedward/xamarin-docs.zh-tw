@@ -3,16 +3,16 @@ title: PhotoKit
 description: "相片套件可讓應用程式查詢系統映像庫，並建立自訂使用者介面來檢視和修改其內容。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 19049ED5-B68E-4A0E-9D57-B7FAE3BB8987
+ms.assetid: 7FDEE394-3787-40FA-8372-76A05BF184B3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 6f6858f36c30f45225417c78225926906481eb8d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1f316979c3262883fc58df93de1afb1167fd36ce
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="photokit"></a>PhotoKit
 

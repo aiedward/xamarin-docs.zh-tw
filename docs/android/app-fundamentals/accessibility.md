@@ -6,12 +6,12 @@ ms.assetid: 157F0899-4E3E-4538-90AF-B59B8A871204
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/31/2018
-ms.openlocfilehash: 0cf1557cea8d5adb3678ba5e424f9f23375e32bc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 02/28/2018
+ms.openlocfilehash: 2dea77b4c52db0c032aba9bde471e76eb36ba3ad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="accessibility-on-android"></a>在 Android 上的協助工具
 
@@ -171,14 +171,12 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 
 將文字儲存在個別檔案的優點是多個語言翻譯的檔案可供您的應用程式。 請參閱[Android 當地語系化指南](~/android/app-fundamentals/localization.md)若要了解如何將當地語系化的字串的檔案新增至應用程式專案。
 
-<a name="testing" />
 
 ## <a name="testing-accessibility"></a>測試協助工具
 
 請遵循[步驟](http://developer.android.com/training/accessibility/testing.html#how-to)啟用 TalkBack 和觸控的瀏覽測試在 Android 裝置上的協助工具。
 
 您可能需要安裝[TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)從 Google Play，如果它不會顯示在**設定 > 協助工具**。
-
 
 
 ## <a name="related-links"></a>相關連結

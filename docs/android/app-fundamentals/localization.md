@@ -7,12 +7,12 @@ ms.assetid: D1277939-A1E8-468E-B136-820D816AF853
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: adfc0da404c6b9df79c3b2be51f8cafa302a6bc3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: c4800c1fe844a03c20b28079640a5ddab8046b1f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-localization"></a>Android 的當地語系化
 
@@ -81,7 +81,7 @@ Android 應用程式管理資源資料夾中的大部分內容，例如：
 ![資源/drawable 和資源/值的多個文化特性識別項的資料夾的螢幕擷取畫面](localization-images/resources.png)
 
 > [!NOTE]
-> **注意：**指定這類的上層語言時`es`只有兩個字元是必要項; 不過，在指定完整的地區設定時，目錄名稱格式需要虛線和小寫**r**來分隔兩個組件，例如**pt rBR**或**zh-chs 和 rCN**。 傳回在程式碼中 （例如有底線的值相比較 `pt_BR`)。 這些都是不同的值.NET`CultureInfo`類別使用，其中包含破折號只能 （例如 `pt-BR`)。 Xamarin 平台上使用時，請記住這些差異。
+> 指定這類的上層語言時`es`只有兩個字元是必要項; 不過，在指定完整的地區設定時，目錄名稱格式需要虛線和小寫**r**來分隔兩個部分，例如**pt rBR**或**zh-chs 和 rCN**。 傳回在程式碼中 （例如有底線的值相比較 `pt_BR`)。 這些都是不同的值.NET`CultureInfo`類別使用，其中包含破折號只能 （例如 `pt-BR`)。 Xamarin 平台上使用時，請記住這些差異。
 
 #### <a name="stringsxml-file-format"></a>Strings.xml 檔案格式
 
@@ -164,13 +164,13 @@ Android 的字串資源也可讓您建立*數量字串*能夠將轉譯程式來�
 
 ```xml
 <plurals name="numberOfTasks">
-         <!--
-                    As a developer, you should always supply "one" and "other"
-                    strings. Your translators will know which strings are actually
-                    needed for their language.
-             -->
-         <item quantity="one">There is %d task left.</item>
-         <item quantity="other">There are %d tasks still to do.</item>
+   <!--
+      As a developer, you should always supply "one" and "other"
+      strings. Your translators will know which strings are actually
+      needed for their language.
+    -->
+   <item quantity="one">There is %d task left.</item>
+   <item quantity="other">There are %d tasks still to do.</item>
  </plurals>
 ```
 
@@ -229,15 +229,13 @@ Android 4.2 和更新版本提供完整支援 RTL 配置中有詳細, 說明[原
 
 下列螢幕擷取畫面顯示[當地語系化**Tasky**範例](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)以阿拉伯數字：
 
-[![阿拉伯 Tasky 應用程式的螢幕擷取畫面](localization-images/rtl-ar-sml.png)](localization-images/rtl-ar.png) 
+[![阿拉伯 Tasky 應用程式的螢幕擷取畫面](localization-images/rtl-ar-sml.png)](localization-images/rtl-ar.png#lightbox) 
 
 下一步 的螢幕擷取畫面顯示[當地語系化**Tasky**範例](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)希伯來文：
 
-[![希伯來文 Tasky 應用程式的螢幕擷取畫面](localization-images/rtl-he-sml.png)](localization-images/rtl-he.png)
+[![希伯來文 Tasky 應用程式的螢幕擷取畫面](localization-images/rtl-he-sml.png)](localization-images/rtl-he.png#lightbox)
 
 使用當地語系化從右至左文字**Strings.xml**方式與從左至右文字相同的檔案。
-
-<a name="testing" />
 
 ## <a name="testing"></a>測試
 

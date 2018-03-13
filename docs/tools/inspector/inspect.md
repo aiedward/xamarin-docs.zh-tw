@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: bd6d47f98435cc68ecf4156423526c31dbac09da
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c923208b7ca4d41914504b4b0aa0687db1d49f01
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="inspecting-live-applications"></a>檢查應用程式
 
@@ -27,11 +27,11 @@ ms.lasthandoff: 02/27/2018
 
 
 
-[ ![](inspect-images/mac-heres-the-button.png "按一下 [檢查] 按鈕，IDE 工具列中")](inspect-images/mac-heres-the-button.png)
+[![](inspect-images/mac-heres-the-button.png "按一下 [檢查] 按鈕，IDE 工具列中")](inspect-images/mac-heres-the-button.png#lightbox)
 
 隨即會開啟新的 Xamarin 偵測器用戶端視窗，以全新的 REPL 提示。
 
-[ ![](inspect-images/inspector-0.7.0-map-inspect-small.png "隨即會開啟新的 Xamarin 偵測器用戶端視窗，以全新的 REPL 提示")](inspect-images/inspector-0.7.0-map-inspect.png)
+[![](inspect-images/inspector-0.7.0-map-inspect-small.png "隨即會開啟新的 Xamarin 偵測器用戶端視窗，以全新的 REPL 提示")](inspect-images/inspector-0.7.0-map-inspect.png#lightbox)
 
 此視窗隨即出現，您便可以互動式 C# 提示可用來執行，C# 陳述式和運算式評估。 唯一的是，目標處理序的內容中評估程式碼。 在此情況下，我們會說明根據顯示的 iOS 應用程式執行的程式碼。
 

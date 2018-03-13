@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/18/2017
-ms.openlocfilehash: 88e8c66d36956649f0a996046f038d89a7267cf5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 213702d289adefe966f07c3ad0174156cbc69ee1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="java-integration-overview"></a>Java 整合概觀
 
 _Java 生態系統包含元件的各種及廣大的集合。這些元件的許多可用來減少開發 Android 應用程式所花費的時間。本文件將介紹，並提供一些開發人員可以使用這些現有的 Java 元件，以改善其 Xamarin.Android 應用程式開發體驗的方式的高層級概觀。_
 
-<a name="Overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -41,7 +40,6 @@ _Java 生態系統包含元件的各種及廣大的集合。這些元件的許�
 第三種方法是從先前的兩個截然不同： 移植到 C# 程式碼從 Java。 移植至另一個程式碼從一種語言是非常耗費人力的程序，但它有可能降低投入時間的協助工具的呼叫*銳利*。 銳利化是 Java 開放原始碼工具-到-C# 轉換子。 
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>總結
 

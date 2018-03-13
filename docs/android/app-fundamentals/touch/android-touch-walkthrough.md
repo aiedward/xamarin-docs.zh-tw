@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/02/2018
-ms.openlocfilehash: c02ad78cc15f2d71f19d605f7a4d6889bbe3ca01
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ec8d000f235a8e0da5198e425f9f1e630b2c662a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---using-touch-in-android"></a>逐步解說-Android 中使用觸控
 
 讓我們了解如何使用上一節中可用的應用程式的概念。 我們將建立應用程式的四個活動。 第一個活動將功能表或切換表單，將會啟動，以示範各種應用程式開發介面的其他活動。 下列螢幕擷取畫面顯示主要的活動：
 
-[![範例螢幕擷取畫面與觸控我按鈕](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png)
+[![範例螢幕擷取畫面與觸控我按鈕](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png#lightbox)
 
 第一個活動，觸控範例中，會顯示如何使用事件處理常式碰觸的檢視。 筆勢辨識器活動將示範如何以子類別`Android.View.Views`和處理事件，以及如何處理捏合手勢。 第三個和最後一個活動，**自訂軌跡**，將會顯示如何使用自訂的筆勢。 若要讓您更輕鬆地遵循和吸收概念，我們會分割此逐步解說分成區段，每個章節將焦點放在其中一個活動。
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 02/27/2018
 
 -   開啟專案**TouchWalkthrough\_啟動**。 **MainActivity**是全部設定為移&ndash;負責我們實作觸控行為的活動。 如果您執行應用程式，然後按一下**觸控範例**，應該啟動下列活動：
 
-    [![活動的接觸開始顯示的螢幕擷取畫面](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png)
+    [![活動的接觸開始顯示的螢幕擷取畫面](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
 -   既然我們已經確認活動啟動，請開啟檔案**TouchActivity.cs**和加入的處理常式`Touch`事件`ImageView`:
 
@@ -63,11 +63,11 @@ ms.lasthandoff: 02/27/2018
 
 每次使用者修飾`ImageView`、`Touch`會引發事件，並會顯示訊息，我們的處理常式**觸控開始**在畫面上，如下列螢幕擷取畫面所示：
 
-[![活動的接觸開始的螢幕擷取畫面](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png)
+[![活動的接觸開始的螢幕擷取畫面](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
 只要使用者會接觸`ImageView`，**觸控開始**將顯示在`TextView`。 當使用者不再碰觸`ImageView`，訊息**觸控結束**將顯示在`TextView`，如下列螢幕擷取畫面所示：
 
-[![活動的接觸結束的螢幕擷取畫面](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png)
+[![活動的接觸結束的螢幕擷取畫面](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png#lightbox)
 
 
 ## <a name="gesture-recognizer-activity"></a>筆勢辨識器活動
@@ -234,11 +234,11 @@ ms.lasthandoff: 02/27/2018
 -   現在，執行應用程式，並啟動筆勢辨識器活動。
     在啟動時的畫面看起來應該像下列螢幕擷取畫面：
 
-    [![筆勢辨識器開始畫面與 Android 的圖示](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png)
+    [![筆勢辨識器開始畫面與 Android 的圖示](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
 
 -   現在觸控圖示，並將它拖曳到螢幕上。 請嘗試縮小-放大手勢。 在某個時間點您的畫面可能看起來像下列螢幕擷取畫面：
 
-    [![在螢幕上的手勢移動圖示](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png)
+    [![在螢幕上的手勢移動圖示](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
 
 此時，您應該提供您自己 pat 背面： 您只在 Android 應用程式中實作捏合以縮放 ！ 快速休息一下，可讓您移至本逐步解說的第三個和最後一個活動&ndash;使用自訂的筆勢。
 
@@ -341,17 +341,17 @@ ms.lasthandoff: 02/27/2018
 
 -   執行應用程式和啟動自訂的筆勢辨識器活動。 看起來應該像下列螢幕擷取畫面：
 
-    [![螢幕擷取畫面，以檢查我映像](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png)
+    [![螢幕擷取畫面，以檢查我映像](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png#lightbox)
 
     現在螢幕上繪製一個核取記號，並不會再顯示點陣圖看起來應該類似的下一個螢幕擷取畫面所示：
 
-    [![繪製核取記號](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png)
-    [![Recognized 核取記號](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png)
+    [![繪製核取記號](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
+    [![Recognized 核取記號](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
 
     最後，在螢幕上繪製徒手畫。 核取方塊應該變更回其原始映像，如下列螢幕擷取畫面所示：
 
-    [![在螢幕上 scribble](android-touch-walkthrough-images/image22.png)](android-touch-walkthrough-images/image22.png)
-    [![會顯示原始的映像](android-touch-walkthrough-images/image23.png)](android-touch-walkthrough-images/image23.png)
+    [![在螢幕上 scribble](android-touch-walkthrough-images/image22.png)](android-touch-walkthrough-images/image22.png#lightbox)
+    [![會顯示原始的映像](android-touch-walkthrough-images/image23.png)](android-touch-walkthrough-images/image23.png#lightbox)
 
 您現在有了解如何整合觸控與手勢使用 Xamarin.Android Android 應用程式中。
 

@@ -7,18 +7,14 @@ ms.assetid: DC4CDBD0-3DF9-4B7E-B876-29128985E2A7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/22/2018
-ms.openlocfilehash: ba73e03d6bdeea64918e0232b2188bf8e3b65084
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 479abf7fef695be156d4447592bc59dceabe3f03
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="material-theme"></a>材料佈景主題
-
-<a name="overview" />
-
-## <a name="overview"></a>總覽
 
 *材料佈景主題*是決定外觀與風格的檢視和活動的開頭為 Android 5.0 （棒棒糖符號） 的使用者介面樣式。 材料佈景主題是內建 Android 5.0 版，因此它會使用由系統 UI 以及由應用程式。 材料佈景主題不是 「 主題 」 中的使用者可以動態地選擇設定 功能表中的全系統外觀選項的意義。 相反地，資料的佈景主題可以視為一組相關內建的基底樣式可讓您自訂您的應用程式的外觀與風格。
 
@@ -32,7 +28,7 @@ Android 提供三個材料佈景主題類別：
 
 這些資料的佈景主題類別的範例會顯示在這裡：
 
-[![深色佈景主題淺色佈景主題及深色動作列佈景主題的範例螢幕擷取畫面](material-theme-images/three-flavors-sml.png)](material-theme-images/three-flavors.png)
+[![深色佈景主題淺色佈景主題及深色動作列佈景主題的範例螢幕擷取畫面](material-theme-images/three-flavors-sml.png)](material-theme-images/three-flavors.png#lightbox)
 
 您可以從其中材料佈景主題，以建立您自己的佈景主題，覆寫部分或所有色彩屬性。 例如，您可以建立衍生自的佈景主題`Theme.Material.Light`，但是會覆寫應用程式狀態列色彩，以符合您的品牌的色彩。 您也可以設定樣式的個別檢視;例如，您可以建立的樣式[CardView](~/android/user-interface/controls/card-view.md) ，更有圓角，並使用較深的背景色彩。
 
@@ -40,7 +36,6 @@ Android 提供三個材料佈景主題類別：
 
 只有在 Android 5.0 及更新版本支援材料佈景主題，因為您無法使用 （或衍生自材料佈景主題的自訂佈景主題） 佈景主題您的應用程式在舊版的 Android 上執行。 不過，您可以設定您的應用程式在 Android 5.0 裝置上使用資料的佈景主題和依正常程序切換回先前的佈景主題在舊版的 Android 上執行時 (請參閱[相容性](#compatibility)本文，如需詳細資訊一節)。
 
-<a name="requirements" />
 
 ## <a name="requirements"></a>需求
 
@@ -54,13 +49,11 @@ Android 提供三個材料佈景主題類別：
 
 若要了解如何設定 Android 5.0 應用程式專案，請參閱[設定 Android 5.0 專案](~/android/platform/lollipop.md)。
 
-<a name="builtinthemes" />
 
 ## <a name="using-the-built-in-themes"></a>使用內建的佈景主題
 
 使用材料佈景主題的最簡單方式是設定您的應用程式使用沒有自訂內建的佈景主題。 如果您不要明確設定佈景主題，您的應用程式將會預設為`Theme.Material`（深色的佈景主題）。 如果您的應用程式有一個活動，您可以在應用程式層級設定佈景主題。 如果您的應用程式有多個活動，您可以設定佈景主題，應用程式層級，讓它會針對所有活動，使用相同的佈景主題，或者您可以指派不同的佈景主題不同活動即可。 下列各節說明如何在應用程式層級，與在活動層級中設定佈景主題。
 
-<a name="themeanapp" />
 
 ### <a name="theming-an-application"></a>主題設定應用程式
 
@@ -88,7 +81,6 @@ Android 提供三個材料佈景主題類別：
 
 當應用程式佈景主題設為`@android:style/Theme.Material.Light`，在每個活動*MyApp*就會使用顯示`Theme.Material.Light`。
 
-<a name="activitytheme" />
 
 ### <a name="theming-an-activity"></a>設定活動主題
 
@@ -125,11 +117,10 @@ Android 提供三個材料佈景主題類別：
 
 下圖中標示為這些螢幕區域：
 
-[ ![屬性和其相關聯之的螢幕區域的圖表](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png)
+[![屬性和其相關聯之的螢幕區域的圖表](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png#lightbox)
 
 根據預設，`statusBarColor`設定的值為`colorPrimaryDark`。 您可以設定`statusBarColor`為純色，或將它設定為`@android:color/transparent`讓狀態列變成透明。 導覽列也可以設定為透明藉由設定`navigationBarColor`至`@android:color/transparent`。
 
-<a name="customapptheme" />
 
 ### <a name="creating-a-custom-app-theme"></a>建立自訂應用程式佈景主題
 
@@ -151,7 +142,7 @@ Android 提供三個材料佈景主題類別：
 
 -   建立**資源/值-v21**資料夾。 在這個資料夾中建立**styles.xml**檔案：
 
-    [ ![Styles.xml 資源/值-21.xml 資料夾中的位置](material-theme-images/values-v21-sml.png)](material-theme-images/values-v21.png)
+    [![Styles.xml 資源/值-21.xml 資料夾中的位置](material-theme-images/values-v21-sml.png)](material-theme-images/values-v21.png#lightbox)
 
     請注意，**資源/值-v21**特有 Android 5.0 &ndash; Android 的舊版本將不會讀取此資料夾中的檔案。
 
@@ -169,7 +160,7 @@ Android 提供三個材料佈景主題類別：
 
 -   此時，應用程式使用*MyCustomTheme*會顯示股票`Theme.Material.Light`沒有自訂的佈景主題：
 
-    [ ![自訂的佈景主題之前自訂的外觀](material-theme-images/custom-theme-before-sml.png)](material-theme-images/custom-theme-before.png)
+    [![自訂的佈景主題之前自訂的外觀](material-theme-images/custom-theme-before-sml.png)](material-theme-images/custom-theme-before.png#lightbox)
 
 -   新增自訂色彩**styles.xml**藉由定義您想要變更的版面配置屬性的色彩。 例如，若要變更的應用程式列色彩`my_blue`和變更的 UI 控制項加入至色彩`my_purple`，加入色彩覆寫**styles.xml** ，請參閱中設定色彩資源**colors.xml**:
 
@@ -188,7 +179,7 @@ Android 提供三個材料佈景主題類別：
 
 這些變更之後，應用程式，會使用*MyCustomTheme*會顯示在應用程式狀態列色彩`my_blue`和 UI 控制項`my_purple`，但使用`Theme.Material.Light`其他位置的色彩配置：
 
-[ ![自訂佈景主題的自訂之後的外觀](material-theme-images/custom-theme-after-sml.png)](material-theme-images/custom-theme-after.png)
+[![自訂佈景主題的自訂之後的外觀](material-theme-images/custom-theme-after-sml.png)](material-theme-images/custom-theme-after.png#lightbox)
 
 在此範例中， *MyCustomTheme*借用的色彩`Theme.Material.Light`背景色彩、 狀態列和文字色彩，但變更的應用程式列的色彩`my_blue`和設定的選項按鈕以色彩`my_purple`.
 
@@ -225,11 +216,10 @@ Android 5.0 也可讓您設定個別的檢視的樣式。 在建立之後**color
 
 下列螢幕擷取畫面會提供預設值的範例`CardView`（顯示於左邊） 相較於為`CardView`，已使用的自訂樣式`CardView.MyBlue`佈景主題 （在右側顯示）：
 
-[ ![預設 CardView 和自訂 CardView 的範例](material-theme-images/custom-cardview-sml.png)](material-theme-images/custom-cardview.png)
+[![預設 CardView 和自訂 CardView 的範例](material-theme-images/custom-cardview-sml.png)](material-theme-images/custom-cardview.png#lightbox)
 
 在此範例中，自訂`CardView`以背景色彩顯示`my_blue`和 18dp 圓角半徑。
 
-<a name="compatibility" />
 
 ## <a name="compatibility"></a>相容性
 
@@ -287,7 +277,7 @@ Android 5.0 也可讓您設定個別的檢視的樣式。 在建立之後**color
 - [ThemeSwitcher （範例）](https://developer.xamarin.com/samples/monodroid/android5.0/ThemeSwitcher)
 - [棒棒糖符號簡介](~/android/platform/lollipop.md)
 - [CardView](~/android/user-interface/controls/card-view.md)
-- [其他資源](~/android/app-fundamentals/resources-in-android/alternate-resources.md)
+- [替代資源](~/android/app-fundamentals/resources-in-android/alternate-resources.md)
 - [L android 開發人員預覽](http://developer.android.com/preview/index.html)
 - [材料設計](http://developer.android.com/preview/material/index.html)
 - [材料設計原則](http://static.googleusercontent.com/media/www.google.com/en/us/design/material-design.pdf)

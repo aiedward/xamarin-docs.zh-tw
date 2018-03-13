@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 69ab69efd60c486255164987795db1937b36b97d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9c40d99d80766c5d32a76e424e902bd1b7d141ba
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="colors"></a>色彩
 
@@ -47,7 +47,7 @@ var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accen
 
 這些色彩會顯示下列每個平台上。 請注意的完稿色彩- `Accent` -為 iOS 和 Android; blue-ish 色彩這個值由 Xamarin.Forms 所定義。 在 Windows Phone 上`Accent`顯示為紅色*因為這是該裝置的使用者選取的輔色*; 此值的變更取決於使用者的喜好設定。
 
- [ ![色彩示範](colors-images/colors-sml.png "色彩示範")](colors-images/colors.png "色彩示範")
+ [![色彩示範](colors-images/colors-sml.png "色彩示範")](colors-images/colors.png#lightbox "色彩示範")
 
 ## <a name="colordefault"></a>Color.Default
 

@@ -7,32 +7,31 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/12/2017
-ms.openlocfilehash: f1567815ec342a958b48ec4801e2918f2981de3d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 670ec465843bbe819b41a53fff71b01ab78b0059
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>提供回溯相容性的 Android 支援封裝
 
 片段的用處會受限於而不向後與預先 Android 3.0 (API 層級 11) 裝置的相容性。 為了提供這項功能，Google 導入了[支援程式庫](http://developer.android.com/sdk/compatibility-library.html)(原先稱為*Android Compatibility Library*發行時) 哪些 backports 一些較新版本的應用程式開發介面較舊版本的 Android android。 它是 Android 支援套件，可讓執行 Android 2.3.3 Android 1.6 （API 層級 4） 的裝置。 （API 層級 10）。
 
 > [!NOTE]
-> **請注意**： 只有`ListFragment`和`DialogFragment`可透過 Android 的支援封裝。 沒有其他片段子類別，例如`PreferenceFragment,`支援 Android 支援封裝中。 它們不適用於預先 Android 3.0 的應用程式。 
+> 只有`ListFragment`和`DialogFragment`可透過 Android 的支援封裝。 沒有其他片段子類別，例如`PreferenceFragment,`支援 Android 支援封裝中。 它們不適用於預先 Android 3.0 的應用程式。 
 
-<a name="Adding_the_Support_Package" /> 
 
 ## <a name="adding-the-support-package"></a>新增支援套件
 
 Android 支援封裝不會自動加入至 Xamarin.Android 應用程式。 Xamarin 提供[Android 支援的程式庫 v4 NuGet 封裝](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)來簡化支援程式庫加入 Xamarin.Android 應用程式。若要將支援封裝包含您的應用程式包含的 Xamarin.Android [Android 支援的程式庫 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)元件到 Xamarin.Android 專案中，如下列螢幕擷取畫面所示： 
 
-[![螢幕擷取畫面的 Android 支援程式庫 v4 封裝加入至專案](providing-backwards-compatibility-images/02.png)](providing-backwards-compatibility-images/02.png)
+[![螢幕擷取畫面的 Android 支援程式庫 v4 封裝加入至專案](providing-backwards-compatibility-images/02.png)](providing-backwards-compatibility-images/02.png#lightbox)
 
 在執行這些步驟後，就能夠在舊版的 Android 使用片段。 片段 Api 運作相同現在在這些舊的版本，但有下列例外狀況： 
 
 -   **變更最低的 Android 版本**&ndash;應用程式不再需要為目標 Android 3.0 或更新版本，如下所示： 
 
-    [![正在設定應用程式屬性底下的螢幕擷取畫面的最小值 Android 目標](providing-backwards-compatibility-images/03.png)](providing-backwards-compatibility-images/03.png)
+    [![正在設定應用程式屬性底下的螢幕擷取畫面的最小值 Android 目標](providing-backwards-compatibility-images/03.png)](providing-backwards-compatibility-images/03.png#lightbox)
 
 -   **擴充 FragmentActivity** &ndash;裝載片段的活動必須現在是繼承自`Android.Support.V4.App.FragmentActivity`，而不是從`Android.App.Activity`。 
 

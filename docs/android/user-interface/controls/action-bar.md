@@ -7,28 +7,26 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: cdbdf7195daf9add01052df8fc0f0cf4c7a0cb0e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64a5ac7e0c448205da66f9790a506ca34a944140
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="actionbar"></a>ActionBar
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽
 
 當使用`TabActivity`，建立索引標籤圖示的程式碼已針對 Android 4.0 framework 執行時沒有作用。 雖然功能上的 Android 2.3 之前, 的版本中一樣`TabActivity`類別本身在 4.0 中已被取代。 若要建立索引標籤式的介面的新方式引入使用動作列中，我們將在接下來討論。
 
-<a name="Action_Bar_Tabs" />
 
 ## <a name="action-bar-tabs"></a>動作列索引標籤
 
 在動作列包含 Android 4.0 中加入索引標籤式的介面的支援。
 下列螢幕擷取畫面顯示這類介面的範例。
 
-[![在模擬器中; 中執行的應用程式的螢幕擷取畫面會顯示兩個索引標籤](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png)
+[![在模擬器中; 中執行的應用程式的螢幕擷取畫面會顯示兩個索引標籤](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png#lightbox)
 
 若要建立索引標籤，在動作列中，我們需要將其`NavigationMode`屬性，以支援索引標籤。 在 Android 4 中，`ActionBar`屬性會使用活動類別可用來設定`NavigationMode`如下所示：
 
@@ -84,26 +82,23 @@ this.ActionBar.AddTab (tab);
 
 完整的範例，請參閱*HelloTabsICS*這份文件的範例程式碼中的專案。
 
-<a name="ShareActionProvider" />
 
 ## <a name="shareactionprovider"></a>ShareActionProvider
 
 `ShareActionProvider`類別可讓動作列之間的共用動作。 它會負責建立動作檢視與應用程式可以處理共用意圖，並且會保留先前使用的應用程式，以方便存取這些稍後從動作列清單。 這可讓應用程式共用資料透過整個 Android 都是一致的使用者體驗。
 
-<a name="Image_Sharing_Example" />
 
 ### <a name="image-sharing-example"></a>映像共用的範例
 
 例如，以下是與功能表項目動作列共用映像的螢幕擷取畫面 (取自[ShareActionProvider](https://developer.xamarin.com/samples/monodroid/ShareActionProviderDemo/)範例)。 當使用者點選 [動作] 列上的功能表項目時，ShareActionProvider 載入應用程式來處理相關聯的意圖`ShareActionProvider`。 在此範例中，訊息的應用程式已先前使用，因此它會顯示在 [動作] 列上。
 
-[![訊息在動作列中的應用程式圖示的螢幕擷取畫面](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png)
+[![訊息在動作列中的應用程式圖示的螢幕擷取畫面](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
 
 
 當使用者按一下 [動作] 列中的項目時，且包含共用的映像傳訊應用程式啟動時，如下所示：
 
-[![顯示猴子影像的郵件應用程式的螢幕擷取畫面](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png)
+[![顯示猴子影像的郵件應用程式的螢幕擷取畫面](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png#lightbox)
 
-<a name="Specifying_the_action_Provider_Class" />
 
 ### <a name="specifying-the-action-provider-class"></a>指定動作提供者類別
 
@@ -119,7 +114,6 @@ this.ActionBar.AddTab (tab);
 </menu>
 ```
 
-<a name="Inflating_the_Menu" />
 
 ### <a name="inflating-the-menu"></a>因而誇大功能表
 
@@ -137,7 +131,6 @@ public override bool OnCreateOptionsMenu (IMenu menu)
 }
 ```
 
-<a name="Creating_the_Intent" />
 
 ### <a name="creating-the-intent"></a>建立目的
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 9751b39987819428f93e09d4bfb6bee261604bb5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 84e60e8ce698e3d87db3e1bdc61613325ad831c8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="attached-behaviors"></a>附加的行為
 
@@ -101,10 +101,10 @@ NumericValidationBehavior.SetAttachBehavior (entry, true);
 
 在執行階段，行為會根據行為實作回應與控制項互動。 下列螢幕擷取畫面會示範回應輸入無效的連接的行為：
 
-[ ![](attached-images/screenshots-sml.png "範例應用程式與附加行為")](attached-images/screenshots.png "範例具有附加行為的應用程式")
+[![](attached-images/screenshots-sml.png "範例應用程式與附加行為")](attached-images/screenshots.png#lightbox "範例具有附加行為的應用程式")
 
 > [!NOTE]
-> **請注意**： 附加的行為撰寫特定的控制項類型 （或超級類別，以套用至許多控制項），並只應加入至相容的控制項。 嘗試附加行為至不相容的控制項將會產生未知的行為以及行為實作而定。
+> 附加的行為會寫入特定控制項類型 （或超級類別，以套用至許多控制項），而且只應加入至相容的控制項。 嘗試附加行為至不相容的控制項將會產生未知的行為以及行為實作而定。
 
 ### <a name="removing-an-attached-behavior-from-a-control"></a>從控制項移除附加的行為
 

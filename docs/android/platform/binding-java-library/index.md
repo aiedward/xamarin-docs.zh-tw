@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/01/2017
-ms.openlocfilehash: 01708f12340ec57bf1cb0e2bd076b680c99dff39
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f336767cb6aea8bd8c7ce44f6479850a63d473a6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-a-java-library"></a>繫結的 Java 程式庫
 
@@ -30,7 +30,7 @@ _Android 的社群有許多您可能想要使用您的應用程式; 中的 Java 
 
 Xamarin.Android 實作繫結使用*管理可呼叫包裝函式*(*MCW*)。 MCW 是 JNI 橋接器時，managed 程式碼可以叫用的 Java 程式碼使用。 子類別化 Java 類型及覆寫虛擬方法，在 Java 型別上的受管理的可呼叫包裝函式也會提供支援。 同樣地，每當 Android 的執行階段 （圖案） 程式碼想要叫用 managed 程式碼，它會以透過另一個 JNI 橋接器已知為 Android 的可呼叫包裝函式 (ACW)。 這[架構](~/android/internals/architecture.md)如下圖所示：
 
-[ ![Android JNI 橋接器架構](images/architecture.png)](images/architecture.png)
+[![Android JNI 橋接器架構](images/architecture.png)](images/architecture.png#lightbox)
 
 包含受管理的可呼叫包裝函式的 Java 類型的組件繫結程式庫。 例如，以下是 Java 型別`MyClass`，我們想要繫結的文件庫中自動換行：
 
@@ -74,7 +74,6 @@ using Com.Company.Package;
 
 * **用來編譯程式庫的 JDK 什麼版本？** &ndash; 如果 Android 程式庫所建置 Xamarin.Android JDK 比使用中的不同版本，可能發生繫結錯誤。 可能的話，請重新編譯使用相同版本的 JDK，以供您安裝的 Xamarin.Android Android 程式庫。
 
-<a name="BUILD_ACTIONS" />
 
 ## <a name="build-actions"></a>建置動作
 
@@ -127,7 +126,6 @@ Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 -   _內部類別_在 Java 中為_巢狀類別_與 C# 中的執行個體建構函式。
 
 
-<a name="BINDING_SCENARIOS" />
 
 ## <a name="binding-scenarios"></a>繫結案例
 

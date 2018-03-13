@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/25/2017
-ms.openlocfilehash: 43d1ef53933ca7867b834dbf118ec730ccbf71ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5cadaf5f41d940a0255113178d018b59b780eabc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-cursoradapters"></a>使用 CursorAdapters
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -27,7 +26,6 @@ Android 提供特別以顯示來自 SQLite 資料庫查詢資料的配接器類�
 
 資料指標的配接器提供高效能用來在捲動 SQLite 中儲存資料的詳細清單。 使用的程式碼必須定義在 SQL 查詢`Cursor`物件，並接著說明如何建立和填入每個資料列的檢視。
 
-<a name="Creating_an_SQLite_Database" />
 
 ## <a name="creating-an-sqlite-database"></a>建立 SQLite 資料庫
 
@@ -63,7 +61,6 @@ class VegetableDatabase  : SQLiteOpenHelper {
 
 資料指標查詢*必須*有整數資料行`_id`如`CursorAdapter`運作。 如果基礎資料表沒有名為整數資料行`_id`然後使用另一個唯一的整數，在資料行別名`RawQuery`組成資料指標。 請參閱[Android 文件](https://developer.xamarin.com/api/type/Android.Widget.CursorAdapter/)以取得詳細資訊。
 
-<a name="Creating_the_Cursor" />
 
 ### <a name="creating-the-cursor"></a>建立資料指標
 
@@ -85,7 +82,6 @@ cursor.Close();
 
 一旦應用程式有 SQLite 資料庫可用，且已建立的游標物件，如下所示，它可以利用 `SimpleCursorAdapter`或的子類別`CusorAdapter`顯示中的資料列`ListView`。
 
-<a name="Using_SimpleCursorAdapter" />
 
 ## <a name="using-simplecursoradapter"></a>使用 SimpleCursorAdapter
 
@@ -119,7 +115,6 @@ listView.Adapter = new SimpleCursorAdapter (this, Android.Resource.Layout.Simple
 
 `SimpleCursorAdapter` 是既快速又簡單的方式，來顯示 SQLite 資料`ListView`。 主要限制是，它只能繫結控制項顯示的資料行值，不允許您變更資料列配置 （例如，顯示/隱藏控制項或變更屬性） 的其他層面。
 
-<a name="Subclassing_CursorAdapter" />
 
 ## <a name="subclassing-cursoradapter"></a>子類別化 CursorAdapter
 
@@ -133,7 +128,6 @@ A`CursorAdapter`子類別具有相同的效能優點，做為`SimpleCursorAdapte
 
 配接器子類別，先前範例中的方法傳回的資料列數目，以及擷取目前的項目 –`CursorAdapter`不需要這些方法，因為該資訊可以證明資料指標本身。 藉由分割的建立和擴展這兩種方法，每個檢視`CursorAdapter`會強制檢視重複使用。 這是相較之下一般配接器就可以略過`convertView`參數`BaseAdapter.GetView`方法。
 
-<a name="Implementing_the_CursorAdapter" />
 
 ### <a name="implementing-the-cursoradapter"></a>實作 CursorAdapter
 
@@ -159,7 +153,6 @@ public class HomeScreenCursorAdapter : CursorAdapter {
 }
 ```
 
-<a name="Assigning_the_CursorAdapter" />
 
 ### <a name="assigning-the-cursoradapter"></a>指派 CursorAdapter
 

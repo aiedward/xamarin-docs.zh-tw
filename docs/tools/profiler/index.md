@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 9c95a1b71f83ee810b775420aab3ceafeeca0379
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e5c17c53c154eb4da4ec76e567c1c73695de7e35
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -212,11 +212,11 @@ Xamarin 分析工具是由五個區段如下所示：
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![](images/profiler-mac-sml.png "適用於 Mac 的 Visual Studio 中的程式碼剖析工具章節")](images/profiler-mac.png) 
+[![](images/profiler-mac-sml.png "適用於 Mac 的 Visual Studio 中的程式碼剖析工具章節")](images/profiler-mac.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/profiler-vs.png "在 Visual Studio 中的程式碼剖析工具章節")](images/profiler-vs.png)
+[![](images/profiler-vs.png "在 Visual Studio 中的程式碼剖析工具章節")](images/profiler-vs.png#lightbox)
 
 -----
 
@@ -234,11 +234,11 @@ Xamarin 分析工具是由五個區段如下所示：
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![](images/allocations1.png "配置檢測")](images/allocations1.png) 
+[![](images/allocations1.png "配置檢測")](images/allocations1.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/allocations1-vs.png "配置檢測")](images/allocations1-vs.png)
+[![](images/allocations1-vs.png "配置檢測")](images/allocations1-vs.png#lightbox)
 
 -----
 
@@ -248,11 +248,11 @@ Xamarin 分析工具是由五個區段如下所示：
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-  [![](images/allocations3.png "配置 索引標籤")](images/allocations3.png) 
+  [![](images/allocations3.png "配置 索引標籤")](images/allocations3.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations2-vs.png "配置 索引標籤")](images/allocations2-vs.png)
+  [![](images/allocations2-vs.png "配置 索引標籤")](images/allocations2-vs.png#lightbox)
 
 -----
 
@@ -264,11 +264,11 @@ Xamarin 分析工具是由五個區段如下所示：
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-  [![](images/allocations2.png "呼叫樹狀結構 索引標籤")](images/allocations2.png) 
+  [![](images/allocations2.png "呼叫樹狀結構 索引標籤")](images/allocations2.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations3-vs.png "呼叫樹狀結構 索引標籤")](images/allocations3-vs.png)
+  [![](images/allocations3-vs.png "呼叫樹狀結構 索引標籤")](images/allocations3-vs.png#lightbox)
 
 -----
 
@@ -276,11 +276,11 @@ Xamarin 分析工具是由五個區段如下所示：
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-  [![](images/allocations4.png "快照集 索引標籤")](images/allocations4.png) 
+  [![](images/allocations4.png "快照集 索引標籤")](images/allocations4.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations4-vs.png "快照集 索引標籤")](images/allocations4-vs.png)
+  [![](images/allocations4-vs.png "快照集 索引標籤")](images/allocations4-vs.png#lightbox)
 
 -----
 
@@ -292,15 +292,15 @@ Xamarin 分析工具是由五個區段如下所示：
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![時間程式碼剖析工具檢測](images/time1.png)](images/time1.png) 
+[![時間程式碼剖析工具檢測](images/time1.png)](images/time1.png#lightbox) 
 
-[![時間程式碼剖析工具檢測 – 範例清單](images/time3.png)](images/time3.png) 
+[![時間程式碼剖析工具檢測 – 範例清單](images/time3.png)](images/time3.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![時間程式碼剖析工具檢測](images/time1-vs.png)](images/time1-vs.png) 
+[![時間程式碼剖析工具檢測](images/time1-vs.png)](images/time1-vs.png#lightbox) 
 
-[![時間程式碼剖析工具檢測 – 範例清單](images/time3-vs.png)](images/time3-vs.png) 
+[![時間程式碼剖析工具檢測 – 範例清單](images/time3-vs.png)](images/time3-vs.png#lightbox) 
 
 -----
 
@@ -309,11 +309,11 @@ Xamarin 分析工具是由五個區段如下所示：
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-  [![](images/time2.png "時間程式碼剖析工具檢測 – 呼叫樹狀圖")](images/time2.png) 
+  [![](images/time2.png "時間程式碼剖析工具檢測 – 呼叫樹狀圖")](images/time2.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/time2-vs.png "時間程式碼剖析工具檢測 – 呼叫樹狀圖")](images/time2-vs.png) 
+  [![](images/time2-vs.png "時間程式碼剖析工具檢測 – 呼叫樹狀圖")](images/time2-vs.png#lightbox) 
 
 -----
 
@@ -325,7 +325,7 @@ Xamarin 分析工具是由五個區段如下所示：
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![循環檢測](images/cycles-vs.png)](images/time1-vs.png) 
+[![循環檢測](images/cycles-vs.png)](images/time1-vs.png#lightbox) 
 
 -----
 
@@ -338,11 +338,11 @@ Xamarin 分析工具是由五個區段如下所示：
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![程式碼剖析錯誤對話方塊](images/image001.png)](images/image001.png) 
+[![程式碼剖析錯誤對話方塊](images/image001.png)](images/image001.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/image1vs.png "程式碼剖析錯誤對話方塊")](images/image1vs.png) 
+[![](images/image1vs.png "程式碼剖析錯誤對話方塊")](images/image1vs.png#lightbox) 
 
 -----
 
@@ -350,7 +350,7 @@ Xamarin 分析工具是由五個區段如下所示：
 選取**更新**才能繼續。
 
 <!---
-##Profiling Android Applications
+## Profiling Android Applications
 
 
 Due to the recent inclusion of the profiling libraries into any new Android project template, you will find that when profiling any legacy applications you are greeted with the message dialog above.
@@ -358,7 +358,7 @@ Due to the recent inclusion of the profiling libraries into any new Android proj
 You will need to enable this to make sure that the profiling libraries are included in your Android application, for debug builds. This should not be checked for release builds as it creates overhead.
 
 
-##Profiling iOS Applications
+## Profiling iOS Applications
 
 ### Profiling tvOS
 

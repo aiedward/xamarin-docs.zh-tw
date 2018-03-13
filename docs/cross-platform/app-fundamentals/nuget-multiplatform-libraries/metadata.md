@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 8afce6021c2816f354e26ccecd7d0c40ceb2a9bd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: babbe0344130dc0ce38023eabe7479d2b464276b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="editing-nuget-metadata"></a>編輯 NuGet 中繼資料
 
@@ -26,7 +26,7 @@ _若要編輯多平台程式庫 NuGet 中繼資料中使用專案選項_
 
 **一般** 索引標籤包含四個欄位，必須輸入要產生的 NuGet 封裝：
 
-[ ![](metadata-images/metadata-general-sml.png "NuGet 封裝所需的中繼資料視窗")](metadata-images/metadata-general.png)
+[![](metadata-images/metadata-general-sml.png "NuGet 封裝所需的中繼資料視窗")](metadata-images/metadata-general.png#lightbox)
 
 - **識別碼**– 封裝識別碼，這應該是唯一 Nuget.org （或套件發佈的任一處）。 後面要接著[指引](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)而且只會使用在 URL 中的字元 (沒有空格，並避免大部分的特殊字元)。
 - **版本**– 選擇版本號碼與一致[NuGet 的版本控制規則](https://docs.microsoft.com/en-us/nuget/create-packages/dependency-versions)。
@@ -45,7 +45,7 @@ _若要編輯多平台程式庫 NuGet 中繼資料中使用專案選項_
 
 **詳細資料** 索引標籤包含要包含在 NuGet 封裝資訊清單檔中的選擇性欄位。
 
-[ ![](metadata-images/metadata-detail-sml.png "NuGet 套件的選擇性中繼資料視窗")](metadata-images/metadata-detail.png)
+[![](metadata-images/metadata-detail-sml.png "NuGet 套件的選擇性中繼資料視窗")](metadata-images/metadata-detail.png#lightbox)
 
 請參閱[選擇性項目參考](https://docs.microsoft.com/en-us/nuget/schema/nuspec#optional-metadata-elements)如需有關必要和選擇性欄位。
 

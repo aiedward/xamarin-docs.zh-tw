@@ -6,12 +6,12 @@ ms.assetid: 54F999BE-2732-4BC7-A466-D17373961C48
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: b1ddcca25fd83a806e8383a5717462b518b46d0b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 89679f7d825422ab34dd77b31a7a3fde60f36e99
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="recyclerview-parts-and-functionality"></a>RecyclerView 組件和功能
 
@@ -57,7 +57,7 @@ ms.lasthandoff: 02/27/2018
 
 `RecyclerView` 不會為資料來源中的每個項目配置的項目檢視。 相反地，配置在螢幕上的項目檢視的數目，它會重複使用捲動這些項目配置。 當檢視第一次捲動使時，它將經歷回收處理程序，如下圖所示：
 
-[ ![圖表檢視回收的六個步驟的說明](parts-and-functionality-images/02-view-recycling-sml.png)](parts-and-functionality-images/02-view-recycling.png)
+[![圖表檢視回收的六個步驟的說明](parts-and-functionality-images/02-view-recycling-sml.png)](parts-and-functionality-images/02-view-recycling.png#lightbox)
 
 1.  當檢視使捲動，並不會再顯示時，它會變成*放棄檢視*。
 
@@ -75,7 +75,6 @@ ms.lasthandoff: 02/27/2018
 項目檢視重複使用，除了`RecyclerView`也會使用另一個效率最佳化： 檢視持有者。 A*檢視持有者*是簡單的快取檢視參考的類別。 配接器 「 充氣 」 項目配置的檔案，每次它也會建立對應的檢視擁有者。 檢視擁有者使用`FindViewById`擴大的項目配置檔案內取得檢視的參考。 這些參考用來檢視新資料載入，每次配置是可以回收，以顯示新的資料。
  
 
-<a name="layoutmanager" />
 
 ### <a name="the-layout-manager"></a>配置管理員
 
@@ -96,7 +95,6 @@ ms.lasthandoff: 02/27/2018
 
 如需有關配置管理員的詳細資訊，請參閱[RecyclerView.LayoutManager 類別參考](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html)。
 
-<a name="viewholder" />
 
 ### <a name="the-view-holder"></a>檢視持有者
 
@@ -109,7 +107,6 @@ ms.lasthandoff: 02/27/2018
 詳細的範例`ViewHolder`實作會以[基本 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)。
 如需有關`RecyclerView.ViewHolder`，請參閱[RecyclerView.ViewHolder 類別參考](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html)。
 
-<a name="adapter" />
 
 ### <a name="the-adapter"></a>配接器
 
@@ -118,7 +115,7 @@ ms.lasthandoff: 02/27/2018
 
 欞迶飹晱配接器如何將透過檢視持有者的資料來源中的內容對應到每個資料列項目內的個別檢視`RecyclerView`:
 
-[ ![圖表說明 ViewHolders 來連接資料來源的配接器](parts-and-functionality-images/03-recyclerviewer-adapter-sml.png)](parts-and-functionality-images/03-recyclerviewer-adapter.png)
+[![圖表說明 ViewHolders 來連接資料來源的配接器](parts-and-functionality-images/03-recyclerviewer-adapter-sml.png)](parts-and-functionality-images/03-recyclerviewer-adapter.png#lightbox)
 
 配接器會載入每個`RecyclerView`與特定資料列項目的資料列。 資料列位置的*P*，比方說，配接器會找出相關聯的資料位置*P*內的資料來源和複製這項資料給資料列項目位置*P*中`RecyclerView`集合。
 在上述的繪圖，例如，配接器使用檢視持有者查閱的參考，`ImageView`和`TextView`在該位置，因此不需要重複呼叫`FindViewById`這些檢視表，為使用者捲動集合和會重複使用的檢視。
@@ -134,7 +131,6 @@ ms.lasthandoff: 02/27/2018
 配置管理員呼叫這些方法，而它會定位項目內`RecyclerView`。 
 
 
-<a name="datachanges" />
 
 ### <a name="notifying-recyclerview-of-data-changes"></a>資料變更的通知 RecyclerView
 

@@ -4,14 +4,15 @@ description: "特定領域，以及建立區域使用美工圖形的路徑"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: b1c5b64725a163e15f07d2aecaea4e56b7ecec2e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bb99984f93f494cfb5ad3d37ccb25f0b91d0b489
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="clipping-with-paths-and-regions"></a>使用路徑和地區的裁剪部分
 
@@ -98,7 +99,7 @@ canvas.ClipPath(keyholePath);
 
 `PaintSurface`處理常式則重設呼叫轉換`ResetMatrix`，繪製點陣圖延伸到全螢幕的高度。 此程式碼會假設點陣圖是方形，也就是這類點陣圖。 只有在裁剪路徑所定義的區域內呈現點陣圖：
 
-[![](clipping-images/monkeythroughkeyhole-small.png "透過 Keyhole 頁面猴子的三個螢幕擷取畫面")](clipping-images/monkeythroughkeyhole-large.png "透過 Keyhole 頁面猴子的三個螢幕擷取畫面")
+[![](clipping-images/monkeythroughkeyhole-small.png "透過 Keyhole 頁面猴子的三個螢幕擷取畫面")](clipping-images/monkeythroughkeyhole-large.png#lightbox "透過 Keyhole 頁面猴子的三個螢幕擷取畫面")
 
 裁剪路徑是在轉換受限於作用中時`ClipPath`呼叫方法時，並不到轉換作用中時的圖形化物件 （例如點陣圖） 顯示。 裁剪路徑是以儲存畫布狀態的一部分`Save`方法和還原與`Restore`方法。
 
@@ -165,7 +166,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 什麼是這些四個圓圈的交集：
 
-[![](clipping-images//fourcircleintersectclip-small.png "三個螢幕擷取畫面的四個圓形交集剪輯頁面")](clipping-images/fourcircleintersectclip-large.png "的四個圓形交集剪輯頁面的三個螢幕擷取畫面")
+[![](clipping-images//fourcircleintersectclip-small.png "三個螢幕擷取畫面的四個圓形交集剪輯頁面")](clipping-images/fourcircleintersectclip-large.png#lightbox "的四個圓形交集剪輯頁面的三個螢幕擷取畫面")
 
 [ `SKClipOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKClipOperation/)列舉型別的只有兩個成員：
 
@@ -175,13 +176,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 如果您取代四個`SKClipOperation.Intersect`中的引數`FourCircleIntersectClipPage`類別`SKClipOperation.Difference`，您會看到下列訊息：
 
-[![](clipping-images//fourcircledifferenceclip-small.png "差異作業四個圓形交集剪輯頁面的三個螢幕擷取畫面")](clipping-images/fourcircledifferenceclip-large.png "四個圓形交集剪輯頁面差異作業的三個螢幕擷取畫面")
+[![](clipping-images//fourcircledifferenceclip-small.png "差異作業四個圓形交集剪輯頁面的三個螢幕擷取畫面")](clipping-images/fourcircledifferenceclip-large.png#lightbox "四個圓形交集剪輯頁面差異作業的三個螢幕擷取畫面")
 
 已從裁剪區域設定了四個重疊圓形。
 
 **裁剪作業**頁面說明這兩項操作以只對圓形之間的差異。 在左側的第一個圓形會加入至預設裁剪作業的裁剪區域`Intersect`，而右邊的第二個圓圈會指示的文字標籤裁剪作業一起新增至裁剪區域：
 
-[![](clipping-images//clipoperations-small.png "[裁剪作業] 頁面的三個螢幕擷取畫面")](clipping-images/clipoperations-large.png "裁剪作業 頁面的三個螢幕擷取畫面")
+[![](clipping-images//clipoperations-small.png "[裁剪作業] 頁面的三個螢幕擷取畫面")](clipping-images/clipoperations-large.png#lightbox "裁剪作業 頁面的三個螢幕擷取畫面")
 
 [ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs)類別會定義兩個`SKPaint`物件做為欄位，然後將螢幕分成兩個矩形區域。 這些區域是電話是否處於直向或橫向模式而有所不同。 `DisplayClipOp`類別，然後顯示的文字和呼叫`ClipPath`與兩個圓形路徑來說明每一個剪輯作業：
 
@@ -282,7 +283,7 @@ public void ClipRegion(SKRegion region, SKClipOperation operation = SKClipOperat
 
 下列螢幕擷取畫面顯示六個區域作業為基礎的裁剪區域。 左邊的圓形是地區，`Op`上，呼叫方法，而右邊的圓形是傳遞至該區域`Op`方法：
 
-[![](clipping-images//regionoperations-small.png "區域操作頁面的三個螢幕擷取畫面")](clipping-images/regionoperations-large.png "區域操作頁面的三個螢幕擷取畫面")
+[![](clipping-images//regionoperations-small.png "區域操作頁面的三個螢幕擷取畫面")](clipping-images/regionoperations-large.png#lightbox "區域操作頁面的三個螢幕擷取畫面")
 
 是這些所有可能性結合這些兩個圓形的嗎？ 產生的影像中視為組合的三個元件，會出現在它自己本身全部放`Difference`， `Intersect`，和`ReverseDifference`作業。 第三方，兩個或 8 個組合的總數。 遺失兩個是原始的地區 (因而不呼叫`Op`完全) 與完全空白的區域。
 
@@ -423,7 +424,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `DrawRegion`呼叫填滿的區域以橘色表示，雖然`DrawPath`呼叫 strokes 的原始路徑，以藍色進行比較：
 
-[![](clipping-images//regionpaint-small.png "區域 [小畫家] 頁面的三個螢幕擷取畫面")](clipping-images/regionpaint-large.png "區域 [小畫家] 頁面的三個螢幕擷取畫面")
+[![](clipping-images//regionpaint-small.png "區域 [小畫家] 頁面的三個螢幕擷取畫面")](clipping-images/regionpaint-large.png#lightbox "區域 [小畫家] 頁面的三個螢幕擷取畫面")
 
 區域顯然是一系列的不連續的座標。
 
@@ -509,7 +510,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 它實際上不像是四-分葉苜蓿 」，但是可能會難以呈現，而不裁剪影像：
 
-[![](clipping-images//fourleafclover-small.png "三個螢幕擷取畫面的四個-分葉苜蓿頁面")](clipping-images/fourleafclover-large.png "四-分葉苜蓿頁面的三個螢幕擷取畫面")
+[![](clipping-images//fourleafclover-small.png "三個螢幕擷取畫面的四個-分葉苜蓿頁面")](clipping-images/fourleafclover-large.png#lightbox "四-分葉苜蓿頁面的三個螢幕擷取畫面")
 
 
 ## <a name="related-links"></a>相關連結

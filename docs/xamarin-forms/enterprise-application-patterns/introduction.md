@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: b8d8aed397f72df53fdca7e455b8ef723e48e0a3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5334465905817336df91f5816596dc5723071811
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction"></a>簡介
 
@@ -88,7 +88,7 @@ Web 應用程式的相關資訊，請參閱[Architecting 和開發現代化 Web 
 
 本指南著重於建置跨平台企業應用程式使用 Xamarin.Forms，並使用 eShopOnContainers 行動裝置應用程式為例。 圖 1-2 顯示 eShopOnContainers 行動應用程式中的頁面，以提供之前所述的功能。
 
-[![](introduction-images/screenshots.png "EShopOnContainers 行動裝置應用程式")](introduction-images/screenshots-large.png "eShopOnContainers 行動裝置應用程式")
+[![](introduction-images/screenshots.png "EShopOnContainers 行動裝置應用程式")](introduction-images/screenshots-large.png#lightbox "eShopOnContainers 行動裝置應用程式")
 
 **圖 1-2**: eShopOnContainers 行動裝置應用程式
 

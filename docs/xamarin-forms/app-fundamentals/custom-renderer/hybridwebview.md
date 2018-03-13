@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ef016d963f710ff54fc57b5e6e57181df030c8f6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e67646e5072f703af71fc3f0a7901fd8485f9710
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-a-hybridwebview"></a>實作 HybridWebView
 
@@ -151,7 +151,7 @@ public partial class HybridWebViewPage : ContentPage
 1. 新增`ExportRenderer`屬性來指定它將會用來呈現 Xamarin.Forms 自訂控制項的自訂轉譯器類別。 此屬性用來向 Xamarin.Forms 中的自訂轉譯器。
 
 > [!NOTE]
-> **請注意**： 對於大部分的 Xamarin.Forms 項目，是選擇性的以提供每個平台專案中的自訂轉譯器。 如果未登錄的自訂轉譯器，將使用預設的產生器控制項的基底類別。 不過，自訂轉譯器所需每個平台專案中時呈現[檢視](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)項目。
+> 大部分的 Xamarin.Forms 項目，則是選擇性的以提供每個平台專案中的自訂轉譯器。 如果未登錄的自訂轉譯器，將使用預設的產生器控制項的基底類別。 不過，自訂轉譯器所需每個平台專案中時呈現[檢視](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)項目。
 
 下圖說明範例應用程式，以及它們之間的關聯性中的每一個專案的責任：
 
@@ -316,7 +316,7 @@ namespace CustomRenderer.iOS
   - 會釋放資源。
 
 > [!NOTE]
-> **請注意**: `WKWebView` iOS 8 及更新版本中才支援類別。
+> `WKWebView` IOS 8 及更新版本中才支援類別。
 
 ### <a name="creating-the-custom-renderer-on-android"></a>在 Android 上建立的自訂轉譯器
 
@@ -411,7 +411,7 @@ public class JSBridge : Java.Lang.Object
 類別必須衍生自`Java.Lang.Object`，並公開給 JavaScript 的方法必須使用裝飾`[JavascriptInterface]`和`[Export]`屬性。 因此，當`invokeCSharpAction`JavaScript 函式插入至網頁，並執行，它會呼叫`JSBridge.InvokeAction`方法，因為正在使用裝飾`[JavascriptInterface]`和`[Export("invokeAction")]`屬性。 接著，`InvokeAction`方法會叫用`HybridWebView.InvokeAction`將叫用已註冊的動作，以顯示快顯視窗中的方法。
 
 > [!NOTE]
-> **請注意**： 專案使用`[Export]`屬性必須包含的參考`Mono.Android.Export`，否則會產生編譯器錯誤。
+> 專案使用`[Export]`屬性必須包含的參考`Mono.Android.Export`，否則會產生編譯器錯誤。
 
 請注意，`JSBridge`類別會維護`WeakReference`至`HybridWebViewRenderer`類別。 這是為了避免建立兩個類別之間的循環參考。 如需詳細資訊，請參閱[弱式參考](https://msdn.microsoft.com/library/ms404247(v=vs.110).aspx)MSDN 上。
 

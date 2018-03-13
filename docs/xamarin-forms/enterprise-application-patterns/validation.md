@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 5a5072d7f07fa7e426a14d3ac841e775d872acff
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: cb87593b63e28c01beacdea479cc9d6ec4aceb9b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="validation"></a>驗證
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 02/28/2018
 
 在內容的模型 ViewModel 模型 (MVVM) 模式，檢視模型或模型通常需要執行資料驗證，並發出訊號檢視任何驗證錯誤，以便讓使用者更正。 EShopOnContainers 行動裝置應用程式執行的檢視模型內容的同步用戶端驗證，並反白顯示的控制項，包含無效的資料，並顯示錯誤訊息，通知使用者，通知使用者的任何驗證錯誤資料不正確的原因。 圖 6-1 會顯示 eShopOnContainers 行動應用程式中執行驗證所需的類別。
 
-[![](validation-images/validation.png "EShopOnContainers 行動應用程式中的驗證類別")](validation-images/validation-large.png "eShopOnContainers 行動應用程式中的驗證類別")
+[![](validation-images/validation.png "EShopOnContainers 行動應用程式中的驗證類別")](validation-images/validation-large.png#lightbox "eShopOnContainers 行動應用程式中的驗證類別")
 
 **圖 6-1**: eShopOnContainers 行動應用程式中的驗證類別
 

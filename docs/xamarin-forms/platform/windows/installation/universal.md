@@ -3,16 +3,16 @@ title: "新增通用 Windows 平台 (UWP) 應用程式"
 description: "這篇文章說明如何將 UWP 應用程式專案加入至 Xamarin.Forms 方案，其中是在 Visual Studio for mac。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: ADF99B78-F1BC-48DF-9128-01B93C4411C1
+ms.assetid: 34AAA045-64B8-4FDE-BB49-3FF0B4FFA17C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/16/2016
-ms.openlocfilehash: a3746165db83b5b8adba9adb862f9ea09f7069b9
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 36865dac6bd2ad13b9d3e286ab18a035c1edb3d8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="adding-a-universal-windows-platform-uwp-app"></a>新增通用 Windows 平台 (UWP) 應用程式
 
@@ -38,7 +38,7 @@ UWP 可用 Xamarin.Forms 2.1 和更新版本，而且 Xamarin.Forms.Maps 都支�
 
  4 . 請確定將建立新的 UWP 專案**建置 > 組態管理員**視窗 （這可能不是依預設）。 刻度**建置**和**部署**方塊通用專案：
 
-  [ ![](universal-images/configuration-sml.png "組態管理員視窗")](universal-images/configuration.png "組態管理員視窗")
+  [![](universal-images/configuration-sml.png "組態管理員視窗")](universal-images/configuration.png#lightbox "組態管理員視窗")
 
  5 . 以滑鼠右鍵按一下專案，然後選取**新增 > 參考**並建立 Xamarin.Forms 應用程式專案 （PCL、.NET 標準或共用專案） 的參考。
 

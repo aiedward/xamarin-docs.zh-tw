@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/11/2017
-ms.openlocfilehash: a49c442fcce31fb6b853359ddfafc9a43d0a2114
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: eaebd8cbae996e9a5792d0a4898fafb72bdded47
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-skiasharp-in-xamarinforms"></a>使用 Xamarin.Forms 中 SkiaSharp
 
@@ -22,10 +22,9 @@ SkiaSharp 是.NET 和 C# 由廣泛使用在 Google 產品的開放原始碼 Skia
 
 本指南假設您熟悉 Xamarin.Forms 程式設計。
 
-## <a name="webinar"></a>網路研討會
+> [!VIDEO https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms/player]
 
-[![](images/skiasharpwebinarscreen.png "Xamarin.Forms 網路研討會的 SkiaSharp")](https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms)  
-[觀賞網路研討會"SkiaSharp 的 Xamarin.Forms"](https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms)
+**Xamarin.Forms 的網路研討會： SkiaSharp**
 
 ## <a name="skiasharp-preliminaries"></a>SkiaSharp 準備工作
 

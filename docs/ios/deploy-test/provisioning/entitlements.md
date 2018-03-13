@@ -3,16 +3,16 @@ title: "使用權利"
 description: "權利是特殊的應用程式功能和安全性權限，其授與對象是已正確設定來使用這些功能和權限的應用程式。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
+ms.assetid: 8A3961A2-02AB-4228-A41D-06CB4108D9D0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: b470eb7450b18c25e1a6aa58095dce90f36cbe8e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 837a18fa09b7b1da3cf2d16d6e3e350250ae0829
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="working-with-entitlements"></a>使用權利
 

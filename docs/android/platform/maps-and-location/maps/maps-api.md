@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: eddd723c07919db4749c63c5b4f1d05e9be81022
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 48e8827895001d2b1887816a9368fcc5bbc50bbf
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="maps-api"></a>Maps API
 
@@ -25,7 +25,6 @@ ms.lasthandoff: 02/27/2018
 不同於目前已被取代的 Google 地圖 Android API v1、 Google 地圖 Android API v2 屬於[Google Play 服務](http://developer.android.com/google/play-services/index.html)。
 因此，它是為了符合某些必要的必要條件，很可能在 Xamarin.Android 應用程式中使用 Google 地圖 Android API。
 
-<a name="Configuring_Maps_API_Prerequisites" />
 
 ## <a name="google-maps-api-prerequisites"></a>Google 對應 API 必要條件
 
@@ -37,7 +36,6 @@ ms.lasthandoff: 02/27/2018
 -  指定必要的權限
 
 
-<a name="Google_APIs_Add-On" />
 
 ### <a name="install-the-google-play-services-sdk"></a>安裝 Google Play 服務 SDK
 
@@ -53,9 +51,8 @@ Xamarin.Android 應用程式可以使用 Maps API 之前，Google 播放服務 S
 ![Google Play 服務之下 Extras Android SDK Manager 中](maps-api-images/image01.png)
 
 > [!NOTE]
-> **注意：** APK 是可能不提供授權的產品的 Google Play 服務出現在所有裝置上。 如果未安裝，然後 Google 地圖不適用於裝置。
+> Google Play 服務 APK 是可能不會出現在所有裝置上提供授權的產品。 如果未安裝，然後 Google 地圖不適用於裝置。
 
-<a name="Binding_Google_Play_Services" />
 
 #### <a name="binding-google-play-services"></a>繫結 Google Play 服務
 
@@ -68,7 +65,6 @@ Xamarin.Android 應用程式可以使用 Maps API 之前，Google 播放服務 S
 -  **以手動方式將繫結 Google Play 服務的用戶端程式庫**-這是更複雜的方式，是 Xamarin.Android 4.4 或 Xamarin.Android 4.6 Google 播放服務 SDK 將繫結的唯一方式。
    手動繫結 Google Play 服務的用戶端程式庫已超出本文件中，範圍，但若要這樣做的範例，請參閱[地圖與位置示範 v3 範例](https://github.com/xamarin/monodroid-samples/tree/master/MapsAndLocationDemo_v3)Github 上。
 
-<a name="Adding_the_Google_Play_Services_Component" />
 
 #### <a name="adding-the-google-play-services-map-package"></a>新增 Google Play 服務對應套件
 
@@ -78,7 +74,7 @@ Xamarin.Android 應用程式可以使用 Maps API 之前，Google 播放服務 S
 
 這會開啟**NuGet 套件管理員**。 按一下**瀏覽**輸入**Xamarin Google 播放服務對應**搜尋 欄位中。 選取**Xamarin.GooglePlayServices.Maps**按一下**安裝**。 (如果之前有未安裝此套件，請按一下**更新**。):
 
-[![所選取的 Xamarin.GooglePlayServices.Maps 封裝使用的 NuGet 封裝管理員](maps-api-images/image03-sml.png)](maps-api-images/image03.png)
+[![所選取的 Xamarin.GooglePlayServices.Maps 封裝使用的 NuGet 封裝管理員](maps-api-images/image03-sml.png)](maps-api-images/image03.png#lightbox)
 
 請注意下列相依性套件也會安裝：
 
@@ -87,7 +83,6 @@ Xamarin.Android 應用程式可以使用 Maps API 之前，Google 播放服務 S
 -   **Xamarin.GooglePlayServices.Tasks**
 
 
-<a name="Creating_an_Emulator_with_Google_APIs" />
 
 ### <a name="create-an-emulator-with-google-apis"></a>使用 Google Api 建立模擬器
 
@@ -96,14 +91,12 @@ Xamarin.Android 應用程式可以使用 Maps API 之前，Google 播放服務 S
 ![Android 模擬器管理員，以設定 API Level 19 AVD](maps-api-images/image04.png)
 
 
-<a name="apikey" />
 
 ### <a name="obtain-a-google-maps-api-key"></a>取得 Google 地圖服務 API 金鑰
 
 最後一個步驟是取得 Google Maps API 金鑰 （請注意，您無法重複使用舊版 Google 地圖 v1 API 金鑰）。 如需如何取得及 Xamarin.Android 搭配使用的 API 金鑰資訊，請參閱[取得 Google 地圖 API 金鑰](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)。
  
 
-<a name="Specify_Permissions" />
 
 ### <a name="specify-the-required-permissions"></a>指定必要的權限
 
@@ -167,7 +160,6 @@ Xamarin.Android 應用程式可以使用 Maps API 之前，Google 播放服務 S
 </manifest>
 ```
 
-<a name="The_GoogleMap" />
 
 ## <a name="the-googlemap-class"></a>GoogleMap 類別
 
@@ -190,13 +182,12 @@ Xamarin.Android 應用程式可以使用 Maps API 之前，Google 播放服務 S
 
 每個容器公開`Map`傳回的執行個體的屬性`GoogleMap`。 喜好設定應該授予[MapFragment](http://developer.android.com/reference/com/google/android/gms/maps/MapFragment.html)類別，如它是一個簡單的 API，可降低開發人員必須以手動方式實作量未定案程式碼。
 
-<a name="Adding_GoogleMap_To_An_Activity" />
 
 ### <a name="adding-a-mapfragment-to-an-activity"></a>MapFragment 加入活動
 
 下列螢幕擷取畫面是非常簡單的範例`MapFragment`:
 
-[![顯示對應片段裝置的螢幕擷取畫面](maps-api-images/image05-sml.png)](maps-api-images/image05.png)
+[![顯示對應片段裝置的螢幕擷取畫面](maps-api-images/image05-sml.png)](maps-api-images/image05.png#lightbox)
 
 類似於其他片段類別，有兩種方式加入`MapFragment`活動：
 
@@ -255,7 +246,6 @@ public void OnMapReady (GoogleMap map)
 如何使用此結果中，例如當`OnResume`是呼叫，它可以檢查，看看是否`_map`為非 null。 如果`_map`設`GoogleMap`物件`OnResume`上加入標記並將其相機移至指定的經度和緯度可呼叫的方法。 如需完整的程式碼範例，請參閱[SimpleMapDemo](https://github.com/xamarin/monodroid-samples/tree/master/MapsAndLocationDemo_v3/SimpleMapDemo)。
 
 
-<a name="Map_Types" />
 
 ### <a name="map-types"></a>將型別對應
 
@@ -274,7 +264,7 @@ public void OnMapReady (GoogleMap map)
 
 下圖顯示三種不同的地圖，從左到右 （一般的混合，地形）：
 
-[![三個對應範例螢幕擷取畫面： Normal、 混合式和地形](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png)
+[![三個對應範例螢幕擷取畫面： Normal、 混合式和地形](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
 
 `GoogleMap.MapType`屬性用來設定或變更之地圖的類型會顯示。 下列程式碼片段示範如何顯示附屬對應。
 
@@ -287,7 +277,6 @@ if (_map != null) {
 }
 ```
 
-<a name="GoogleMap_Properties" />
 
 ### <a name="googlemap-properties"></a>GoogleMap 屬性
 
@@ -317,7 +306,6 @@ if (_map != null) {
 }
 ```
 
-<a name="Interacting_with_the_Map" />
 
 ## <a name="interacting-with-the-map"></a>與地圖互動
 
@@ -363,9 +351,8 @@ if (_map != null) {
 
 在先前的程式碼片段中，在地圖上的特定位置由[LatLng](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/LatLng)類別。 縮放層級設定為 18。 並無影響是順時針方向從 North 羅盤的度量。 傾斜屬性會控制將檢視角度，而且是指定垂直 25 度角度。 下列螢幕擷取畫面顯示`GoogleMap`之後執行上述程式碼：
 
-[![顯示指定的位置與傾斜範例 Google 地圖檢視的角度](maps-api-images/image06-sml.png)](maps-api-images/image06.png)
+[![顯示指定的位置與傾斜範例 Google 地圖檢視的角度](maps-api-images/image06-sml.png)](maps-api-images/image06.png#lightbox)
 
-<a name="Adding_Overlays_to_a_Map" />
 
 ### <a name="drawing-on-the-map"></a>在地圖上的繪圖
 
@@ -377,13 +364,11 @@ Android Maps API 提供應用程式開發介面的繪製地圖上的下列項目
 
 -  **線條、 多邊形和圓形**-這些是允許活動圖形新增至對應的 Api。
 
-<a name="markers" />
 
 #### <a name="markers"></a>Markers
 
 Maps API 提供[標記](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker)類別會封裝所有地圖上的單一位置的相關資料。 根據預設，它們會使用 Google 地圖所提供的標準圖示。 您可自訂的標記外觀以及回應使用者按鍵動作。
 
-<a name="AddingAMarker" />
 
 ##### <a name="adding-a-marker"></a>加入標記
 
@@ -403,9 +388,8 @@ if (_map != null) {
 
 標記的標題會顯示在*資訊視窗*當使用者點選標記上。 下列螢幕擷取畫面顯示此標記的外觀：
 
-[![範例 Google 地圖標記與 Vimy 立體浮凸 [資訊] 視窗](maps-api-images/image07-sml.png)](maps-api-images/image07.png)
+[![範例 Google 地圖標記與 Vimy 立體浮凸 [資訊] 視窗](maps-api-images/image07-sml.png)](maps-api-images/image07.png#lightbox)
 
-<a name="Customizing_A_Marker" />
 
 ##### <a name="customizing-a-marker"></a>自訂標記
 
@@ -437,7 +421,6 @@ if (_map != null)
 }
 ```
 
-<a name="Info_Windows" />
 
 #### <a name="info-windows"></a>Windows 資訊
 
@@ -455,13 +438,11 @@ if (_map != null)
 
 ![範例標記為墨爾本，包括圖示和母體擴展的的視窗。 右側視窗具有圓角。](maps-api-images/marker-infowindows.png)
 
-<a name="Adding_an_overlay" />
 
 #### <a name="ground-overlays"></a>地面覆疊
 
 不同於標記，找出在地圖上的特定位置， [GroundOverlay](http://developer.android.com/reference/com/google/android/gms/maps/model/GroundOverlay.html)是用來識別的位置或在地圖上的區域集合的映像。
 
-<a name="AddingAGroundOverlay" />
 
 ##### <a name="adding-a-groundoverlay"></a>加入 GroundOverlay
 
@@ -477,9 +458,8 @@ GroundOverlay myOverlay = _map.AddGroundOverlay(groundOverlayOptions);
 
 下列螢幕擷取畫面會顯示在地圖上此重疊：
 
-[![北極熊的重疊映像的範例圖](maps-api-images/image09-sml.png)](maps-api-images/image09.png)
+[![北極熊的重疊映像的範例圖](maps-api-images/image09-sml.png)](maps-api-images/image09.png#lightbox)
 
-<a name="Lines_Circles_and_Polygons" />
 
 #### <a name="lines-circles-and-polygons"></a>線條、 圓形和多邊形
 
@@ -492,7 +472,6 @@ GroundOverlay myOverlay = _map.AddGroundOverlay(groundOverlayOptions);
 -  **圓形**-這會在地圖上繪製圓形。
 
 
-<a name="Polylines" />
 
 ##### <a name="polylines"></a>聚合線條
 
@@ -508,7 +487,6 @@ rectOptions.Add(new LatLng(37.35, -122.0)); // close the polyline - this makes a
 myMap.AddPolyline(rectOptions);
 ```
 
-<a name="Polygons" />
 
 ##### <a name="polygons"></a>多邊形
 
@@ -527,7 +505,6 @@ rectOptions.Add(new LatLng(37.35, -122.2));
 myMap.AddPolygon(rectOptions);
 ```
 
-<a name="Circles" />
 
 ##### <a name="circles"></a>圓形
 
@@ -541,7 +518,6 @@ circleOptions.InvokeRadius (1000);
 _map.AddCircle (CircleOptions);
 ```
 
-<a name="RespondingToClicks" />
 
 ## <a name="responding-to-events"></a>回應事件
 
@@ -555,7 +531,6 @@ _map.AddCircle (CircleOptions);
 
 將以下更詳細討論每個事件。
 
-<a name="Marker_Click_Events" />
 
 ### <a name="marker-click-events"></a>按一下 [事件] 標記
 
@@ -584,7 +559,6 @@ private void MapOnMarkerClick(object sender, GoogleMap.MarkerClickEventArgs mark
 }
 ```
 
-<a name="Marker_Drag_Events" />
 
 ### <a name="marker-drag-events"></a>標記拖曳事件
 
@@ -602,7 +576,6 @@ private void MapOnMarkerClick(object sender, GoogleMap.MarkerClickEventArgs mark
 
 每個`EventArgs`包含單一屬性呼叫`P0`也就是參考`Marker`正在拖曳的物件。
 
-<a name="Info_Window_Click_Events" />
 
 ### <a name="info-window-click-events"></a>資訊視窗中按一下 事件
 

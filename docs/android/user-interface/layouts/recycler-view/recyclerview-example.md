@@ -7,22 +7,21 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: a8de515563d9b9e38f049fd92c94b95e75239eb2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 44ebc8098250da26762538cddf5a89ffac709d8e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="a-basic-recyclerview-example"></a>基本的 RecyclerView 範例
 
 
 若要了解如何`RecyclerView`一般應用程式的運作方式，本主題探討[RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/)範例應用程式、 使用的簡單程式碼範例`RecyclerView`顯示相片的大型集合： 
 
-[ ![用來顯示相片的 CardViews RecyclerView 應用程式的兩個螢幕擷取畫面](recyclerview-example-images/01-recyclerviewer-sml.png)](recyclerview-example-images/01-recyclerviewer.png)
+[![用來顯示相片的 CardViews RecyclerView 應用程式的兩個螢幕擷取畫面](recyclerview-example-images/01-recyclerviewer-sml.png)](recyclerview-example-images/01-recyclerviewer.png#lightbox)
 
 **RecyclerViewer**使用[CardView](~/android/user-interface/controls/card-view.md)實作中的每個相片項目`RecyclerView`版面配置。 因為`RecyclerView`的效能優點，此範例應用程式是可以順暢且不會明顯造成延遲，快速地捲動大量相片的集合。
 
-<a name="datasource" />
 
 ### <a name="an-example-data-source"></a>範例資料來源
 
@@ -48,7 +47,6 @@ mPhotoAlbum.RandomSwap ();
 
 因為的實作詳細資料`PhotoAlbum`不了解相關`RecyclerView`、`PhotoAlbum`原始程式碼未提及。 原始程式碼`PhotoAlbum`位於[PhotoAlbum.cs](https://github.com/xamarin/monodroid-samples/blob/master/android5.0/RecyclerViewer/RecyclerViewer/PhotoAlbum.cs)中[RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/)範例應用程式。
 
-<a name="preliminaries" />
 
 ### <a name="layout-and-initialization"></a>版面配置和初始化
 
@@ -128,7 +126,7 @@ mRecyclerView.SetLayoutManager (mLayoutManager);
 
 檢視持有者類別稱為`PhotoViewHolder`。 每個`PhotoViewHolder`執行個體會保留參考`ImageView`和`TextView`相關聯的資料列的項目中已配置版面的`CardView`這裡訂位如下：
 
-[ ![包含 ImageView 和 TextView CardView 的圖表](recyclerview-example-images/02-cardview-layout-sml.png)](recyclerview-example-images/02-cardview-layout.png)
+[![包含 ImageView 和 TextView CardView 的圖表](recyclerview-example-images/02-cardview-layout-sml.png)](recyclerview-example-images/02-cardview-layout.png#lightbox)
 
 `PhotoViewHolder` 衍生自`RecyclerView.ViewHolder`，並包含參考屬性`ImageView`和`TextView`上述配置所示。
 `PhotoViewHolder` 兩個屬性和一個建構函式組成：
@@ -181,7 +179,6 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 
 配置管理員呼叫這些方法，而它會定位項目內`RecyclerView`。 這些方法的實作會檢查下列各節。
 
-<a name="oncreateviewholder" />
 
 #### <a name="oncreateviewholder"></a>OnCreateViewHolder
 
@@ -245,7 +242,6 @@ public override RecyclerView.ViewHolder
 
 產生的檢視擁有者執行個體， `vh`，傳回至呼叫端 （配置管理員）。
 
-<a name="onbindviewholder" />
 
 #### <a name="onbindviewholder"></a>OnBindViewHolder
 
@@ -270,7 +266,6 @@ public override void
 
 請注意，`OnBindViewHolder`是直接處理的資料結構的程式碼。 在此情況下，`OnBindViewHolder`了解如何將對應`RecyclerView`項目至其相關聯的資料項目中的資料來源的位置。 對應是直接在此情況下因為位置可以做為陣列索引的相簿。不過，更複雜的資料來源可能需要額外的程式碼來建立這類對應。
 
-<a name="itemcount" />
 
 #### <a name="itemcount"></a>ItemCount
 
@@ -285,7 +280,6 @@ public override int ItemCount
 
 如需有關`RecyclerView.Adapter`，請參閱[RecyclerView.Adapter 類別參考](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html)。
 
-<a name="together" />
 
 ### <a name="putting-it-all-together"></a>加以整合
 
@@ -372,11 +366,10 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 
 當此程式碼會編譯並執行時，它會建立基本的相片，檢視應用程式，如下列螢幕擷取畫面所示：
 
-[ ![檢視應用程式與垂直捲動相片卡張相片的兩個螢幕擷取畫面](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png)
+[![檢視應用程式與垂直捲動相片卡張相片的兩個螢幕擷取畫面](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png#lightbox)
 
 此基本應用程式只支援瀏覽的相簿。 它不會回應項目觸控事件，也不會處理基礎資料中的變更。 這項功能加入在[延伸 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/extending-the-example.md)。
 
-<a name="layoutmanagerchange" />
 
 ### <a name="changing-the-layoutmanager"></a>變更 LayoutManager
 
@@ -388,7 +381,7 @@ mLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.Horizontal, fa
 
 此程式碼變更會取代垂直`LinearLayoutManager`與`GridLayoutManager`呈現的水平方向捲動的兩個資料列所組成的方格。 當您編譯，然後再次執行應用程式時，您會看到所拍攝的相片會顯示在方格中，並捲動水平，而不是垂直：
 
-[ ![具有水平捲動方格中的相片應用程式的範例螢幕擷取畫面](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png)
+[![具有水平捲動方格中的相片應用程式的範例螢幕擷取畫面](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png#lightbox)
 
 藉由變更只有一行的程式碼，是可以修改相片檢視應用程式使用不同的版面配置與不同的行為。
 請注意，配接器程式碼都配置 XML 必須修改，以變更配置樣式。 

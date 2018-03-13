@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: 74d8533d0a757a307d88125701a482dfefd5eec2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 12197d238ddc6ddc2bd8f48f77aa15f5eff22a0a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="populating-a-listview-with-data"></a>填入資料的 ListView
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -23,7 +22,6 @@ ms.lasthandoff: 02/27/2018
 
 內建配接器需要檢視資源識別碼做為取得每個資料列所用的參數。 您可以使用內建的資源，例如中`Android.Resource.Layout`因此您不需要撰寫您自己。
 
-<a name="Using_ListActivity_and_ArrayAdapterString" />
 
 ## <a name="using-listactivity-and-arrayadapterltstringgt"></a>使用 ListActivity 和 ArrayAdapter&lt;字串&gt;
 
@@ -43,13 +41,12 @@ public class HomeScreen : ListActivity {
 }
 ```
 
-<a name="Handling_Row_Clicks" />
 
 ### <a name="handling-row-clicks"></a>按一下 處理資料列
 
 通常`ListView`也可讓使用者修改資料列來執行某些動作 （例如播放歌曲，或呼叫連絡人，或顯示另一個螢幕）。 若要回應使用者工作需要有一個方法中實作`ListActivity` &ndash; `OnListItemClick` &ndash;如下所示：
 
-[![SimpleListItem 的螢幕擷取畫面](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png)
+[![SimpleListItem 的螢幕擷取畫面](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png#lightbox)
 
 ```csharp
 protected override void OnListItemClick(ListView l, View v, int position, long id)
@@ -61,9 +58,8 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 
 現在使用者可以修改資料列和`Toast`會出現警示：
 
-[![螢幕擷取畫面的快顯會接觸到一個資料列時顯示](populating-images/basictable2.png)](populating-images/basictable2.png)
+[![螢幕擷取畫面的快顯會接觸到一個資料列時顯示](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
 
-<a name="Implementing_a_ListAdapter" />
 
 ## <a name="implementing-a-listadapter"></a>實作 ListAdapter
 
@@ -110,7 +106,6 @@ public class HomeScreenAdapter : BaseAdapter<string> {
 }
 ```
 
-<a name="Using_a_Custom_Adapter" />
 
 ### <a name="using-a-custom-adapter"></a>使用自訂的配接器
 
@@ -122,7 +117,6 @@ ListAdapter = new HomeScreenAdapter(this, items);
 
 由於這個範例使用相同的資料列配置 (`SimpleListItem1`) 產生的應用程式看起來與上一個範例相同。
 
-<a name="Row_View_Re-Use" />
 
 ### <a name="row-view-re-use"></a>資料列檢視重複使用
 
@@ -147,13 +141,12 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 
 某些配接器實作 (例如`CursorAdapter`) 沒有`GetView`方法，而是它們需要兩個不同方法`NewView`和`BindView`的重複使用資料列，藉以強制執行分隔責任`GetView`分成兩個方法。 沒有`CursorAdapter`文件中稍後的範例。
 
-<a name="Enabling_Fast_Scrolling" />
 
 ## <a name="enabling-fast-scrolling"></a>啟用快速捲動
 
 快速捲動可協助使用者捲動詳細清單，藉由提供其他 '控制代碼' 做為捲軸來直接存取清單的一部分。 這個螢幕擷取畫面顯示快速捲動控制代碼：
 
-[![快速捲動捲軸的控制代碼的螢幕擷取畫面](populating-images/fastscroll.png)](populating-images/fastscroll.png)
+[![快速捲動捲軸的控制代碼的螢幕擷取畫面](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
 
 導致快速捲動的控制代碼，才會出現很簡單，只設定`FastScrollEnabled`屬性`true`:
 
@@ -161,13 +154,12 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 ListView.FastScrollEnabled = true;
 ```
 
-<a name="Adding_a_Section_Index" />
 
 ### <a name="adding-a-section-index"></a>新增區段索引
 
 區段索引提供其他意見反應使用者何時可快速瀏覽一長串&ndash;它會顯示它們捲到哪些 'section'。 若要造成顯示配接器的子類別必須實作的區段索引`ISectionIndexer`介面，以提供根據所顯示的資料列索引文字：
 
-[![螢幕擷取畫面 H H 為開頭的區段上方出現](populating-images/sectionindex.png)](populating-images/sectionindex.png)
+[![螢幕擷取畫面 H H 為開頭的區段上方出現](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
 
 若要實作`ISectionIndexer`您要新增到配接器的三種方法：
 

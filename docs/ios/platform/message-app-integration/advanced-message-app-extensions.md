@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7e6621dc580e478873ce2db7139b04284bee355c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fcfd1fd2ec9271bb5e8d9e09b43b7dc4cf3b3f12
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="advanced-message-app-extensions"></a>進階的訊息應用程式擴充功能
 
@@ -50,11 +50,11 @@ IOS 10 只支援訊息應用程式擴充功能，不過，這些擴充功能所�
 
 互動式訊息顯示自訂訊息泡泡，也所提供的訊息應用程式擴充功能。 它們可讓使用者建立互動式訊息內容，將其插入訊息的 [輸入] 欄位中並將它送出。
 
-[ ![](advanced-message-app-extensions-images/interactive01.png "建立互動式訊息內容")](advanced-message-app-extensions-images/interactive01.png)
+[![](advanced-message-app-extensions-images/interactive01.png "建立互動式訊息內容")](advanced-message-app-extensions-images/interactive01.png#lightbox)
 
 接收的使用者可以藉由點選訊息歷程，以建立訊息應用程式擴充功能載入其訊息泡泡回覆互動的訊息。 延伸模組將可啟動的全螢幕，並允許使用者撰寫回覆，並將它傳送回原始的使用者。
 
-[ ![](advanced-message-app-extensions-images/interactive02.png "副檔名啟動全螢幕")](advanced-message-app-extensions-images/interactive02.png)
+[![](advanced-message-app-extensions-images/interactive02.png "副檔名啟動全螢幕")](advanced-message-app-extensions-images/interactive02.png#lightbox)
 
 
 將下面將詳細涵蓋下列主題：
@@ -68,7 +68,7 @@ IOS 10 只支援訊息應用程式擴充功能，不過，這些擴充功能所�
 
 當使用者叫用，訊息應用程式擴充功能將會顯示底部的精簡檢視模式中的訊息記錄：
 
-[ ![](advanced-message-app-extensions-images/interactive03.png "訊息 API 概觀")](advanced-message-app-extensions-images/interactive03.png)
+[![](advanced-message-app-extensions-images/interactive03.png "訊息 API 概觀")](advanced-message-app-extensions-images/interactive03.png#lightbox)
 
 1. `MSMessageAppViewController`訊息應用程式擴充功能中的物件是延伸模組檢視會顯示給使用者時所呼叫的主要類別。
 2. 交談會呈現給使用者，作為`MSConversation`物件執行個體。
@@ -80,7 +80,7 @@ IOS 10 只支援訊息應用程式擴充功能，不過，這些擴充功能所�
 
 看看訊息應用程式的延伸模組，無法成為使用中的程序：
 
-[ ![](advanced-message-app-extensions-images/interactive04.png "訊息應用程式的延伸模組，無法成為使用中的程序")](advanced-message-app-extensions-images/interactive04.png)
+[![](advanced-message-app-extensions-images/interactive04.png "訊息應用程式的延伸模組，無法成為使用中的程序")](advanced-message-app-extensions-images/interactive04.png#lightbox)
 
 1. 擴充功能 （例如，從應用程式服務） 啟動時，訊息應用程式將會啟動處理程序。
 2. `DidBecomeActive`方法呼叫，並傳遞`MSConversation`代表交談訊息應用程式擴充功能中執行。
@@ -88,7 +88,7 @@ IOS 10 只支援訊息應用程式擴充功能，不過，這些擴充功能所�
 
 接下來，看看變成停用的訊息應用程式擴充功能的程序：
 
-[ ![](advanced-message-app-extensions-images/interactive05.png "變成停用的訊息應用程式擴充功能的程序")](advanced-message-app-extensions-images/interactive05.png)
+[![](advanced-message-app-extensions-images/interactive05.png "變成停用的訊息應用程式擴充功能的程序")](advanced-message-app-extensions-images/interactive05.png#lightbox)
 
 1. 正在停用訊息的應用程式擴充功能，當`ViewWillDisappear`會先呼叫的方法。
 2. 然後在`ViewDidDisappear`會呼叫的方法。
@@ -128,7 +128,7 @@ MSMessage ComposeMessage (IceCream iceCream, string caption, MSSession session =
 
 `AccessibilityLabel`屬性用於螢幕助讀程式讀取文字記錄交談的使用者。 `Layout`屬性會指定訊息的顯示方式，目前只`MSMessageTemplateLayout`支援，而且看起來如下：
 
-[ ![](advanced-message-app-extensions-images/interactive06.png "MSMessageTemplateLayout 範本")](advanced-message-app-extensions-images/interactive06.png)
+[![](advanced-message-app-extensions-images/interactive06.png "MSMessageTemplateLayout 範本")](advanced-message-app-extensions-images/interactive06.png#lightbox)
 
 `Image`屬性`MSMessageTemplateLayout`MessageBubble 螢幕上的主要本文提供內容。 `MediaFileUrl`屬性也會提供訊息泡泡圖中，主體的內容，但不是支援的內容可讓`UIImage`（例如，會在背景中執行迴圈的視訊檔案）。 如果兩個`Image`和`MediaFileUrl`會提供屬性，`Image`屬性更高的優先順序。 `MediaFileUrl`支援 PNG、 JPEG、 GIF 和視訊 （在可以播放 Media Player framework 的任何格式） 的媒體格式。
 
@@ -140,7 +140,7 @@ MSMessage ComposeMessage (IceCream iceCream, string caption, MSSession session =
 
 `Caption`， `SubCaption`，`TrailingCaption`和`TrailingSubcaption`屬性進一步描述映像，並將影像下方區段中轉譯。 設定所有這些屬性，以設定`null`會建立訊息泡泡沒有標題區域：
 
-[ ![](advanced-message-app-extensions-images/interactive07.png "沒有標題區域的訊息泡泡圖")](advanced-message-app-extensions-images/interactive07.png)
+[![](advanced-message-app-extensions-images/interactive07.png "沒有標題區域的訊息泡泡圖")](advanced-message-app-extensions-images/interactive07.png#lightbox)
 
 請注意最後一個項目是訊息 」 應用程式將會繪製訊息應用程式擴充功能圖示，訊息泡泡左上角。
 
@@ -181,7 +181,7 @@ public void SendMessage (MSMessage message)
 
 訊息應用程式擴充功能可以顯示在兩個不同的檢視模式的其中一個：
 
-[ ![](advanced-message-app-extensions-images/interactive08.png "兩個不同的檢視模式中顯示的訊息應用程式擴充功能： 壓縮和展開")](advanced-message-app-extensions-images/interactive08.png)
+[![](advanced-message-app-extensions-images/interactive08.png "兩個不同的檢視模式中顯示的訊息應用程式擴充功能： 壓縮和展開")](advanced-message-app-extensions-images/interactive08.png#lightbox)
 
 - **Compact** -這是訊息的應用程式擴充功能會佔用下 25%的 [訊息] 檢視的預設模式。 精簡模式，應用程式沒有存取鍵盤、 水平捲動或撥動筆勢辨識器。 應用程式沒有存取輸入欄位，並呼叫`InsertMessage`立即向使用者顯示。
 - **展開**-訊息應用程式擴充功能會填滿整個 [訊息] 檢視。 它並沒有存取至輸入欄位，但並沒有鍵盤、 水平捲軸及撥動筆勢辨識器的存取。
@@ -384,7 +384,7 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 
 有兩個訊息的應用程式擴充功能需要處理回覆訊息時的情況：
 
-[ ![](advanced-message-app-extensions-images/interactive09.png "訊息應用程式擴充功能的非作用中與現用模式")](advanced-message-app-extensions-images/interactive09.png)
+[![](advanced-message-app-extensions-images/interactive09.png "訊息應用程式擴充功能的非作用中與現用模式")](advanced-message-app-extensions-images/interactive09.png#lightbox)
 
 - **擴充功能為非作用中**-有一個使用者可以點選以啟用擴充功能，並繼續互動式交談的訊息文字記錄的訊息應用程式擴充功能的訊息 （泡泡）。
 - **擴充功能為 「 作用中**-使用者可以點選輸入展開檢視模式，並繼續從而中斷的地方互動式程序的訊息文字記錄中的訊息應用程式擴充功能的訊息泡泡。
@@ -393,7 +393,7 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 
 當使用者在訊息文字記錄中點選訊息泡泡，而非使用中訊息應用程式擴充功能時，會發生下列處理序：
 
-[ ![](advanced-message-app-extensions-images/interactive10.png "處理非使用中的訊息泡泡圖")](advanced-message-app-extensions-images/interactive10.png)
+[![](advanced-message-app-extensions-images/interactive10.png "處理非使用中的訊息泡泡圖")](advanced-message-app-extensions-images/interactive10.png#lightbox)
 
 1. 在使用者點選擴充功能的訊息泡泡。
 2. 當啟動擴充功能時，訊息應用程式會啟動處理程序。
@@ -406,7 +406,7 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 
 當使用者在訊息文字記錄中點選訊息泡泡並且作用中的訊息應用程式擴充功能時，將會發生下列處理序：
 
-[ ![](advanced-message-app-extensions-images/interactive11.png "處理作用中的訊息泡泡圖")](advanced-message-app-extensions-images/interactive11.png)
+[![](advanced-message-app-extensions-images/interactive11.png "處理作用中的訊息泡泡圖")](advanced-message-app-extensions-images/interactive11.png#lightbox)
 
 1. 在使用者點選擴充功能的訊息泡泡。
 2. 訊息應用程式擴充功能已在使用中，因為`WillTransition`方法`MSMessagesAppViewController`呼叫以處理從精簡型切換至展開檢視模式。
@@ -457,11 +457,11 @@ namespace MessageExtension
 
 正在傳送之不同步驟的互動式交談的兩個使用者之間的交談中，部分完成的訊息 （泡泡） 就可以開始弄亂訊息文字記錄：
 
-[ ![](advanced-message-app-extensions-images/interactive12.png "部分完成的訊息 （泡泡） 可以佔用訊息文字記錄")](advanced-message-app-extensions-images/interactive12.png)
+[![](advanced-message-app-extensions-images/interactive12.png "部分完成的訊息 （泡泡） 可以佔用訊息文字記錄")](advanced-message-app-extensions-images/interactive12.png#lightbox)
 
 相反地，訊息應用程式擴充功能應該成簡潔的註解訊息文字記錄中摺疊先前的訊息 （泡泡）：
 
-[ ![](advanced-message-app-extensions-images/interactive13.png "摺疊訊息文字記錄中先前的訊息 （泡泡）")](advanced-message-app-extensions-images/interactive13.png)
+[![](advanced-message-app-extensions-images/interactive13.png "摺疊訊息文字記錄中先前的訊息 （泡泡）")](advanced-message-app-extensions-images/interactive13.png#lightbox)
 
 這可處理使用`MSSession`摺疊所有現有的步驟。 所以`DidSelectMessage`方法`MSMessagesAppViewController`類別可以修改成如下所示：
 
@@ -516,7 +516,7 @@ public override void DidSelectMessage (MSMessage message, MSConversation convers
 
 查看下列互動與三個使用者群組交談中：
 
-[ ![](advanced-message-app-extensions-images/interactive14.png "有三個使用者群組交談中的互動")](advanced-message-app-extensions-images/interactive14.png)
+[![](advanced-message-app-extensions-images/interactive14.png "有三個使用者群組交談中的互動")](advanced-message-app-extensions-images/interactive14.png#lightbox)
 
 1. 使用者 1 傳送群組互動訊息詢問使用者 2，以及使用者 3 選擇漢堡配料。
 2. 使用者 2 選擇 tomatoes。
@@ -531,7 +531,7 @@ public override void DidSelectMessage (MSMessage message, MSConversation convers
 
 若要討論存取訊息的寄件者的識別項、 採用群組交談，上述的範例：
 
-[ ![](advanced-message-app-extensions-images/interactive15.png "傳送的識別項的群組交談")](advanced-message-app-extensions-images/interactive15.png)
+[![](advanced-message-app-extensions-images/interactive15.png "傳送的識別項的群組交談")](advanced-message-app-extensions-images/interactive15.png#lightbox)
 
 1. 同樣地，使用者 1 會傳送一組互動式訊息詢問使用者 2，以及使用者 3 選擇漢堡配料。
 2. 「 使用者 3 會挑選酸黃瓜。

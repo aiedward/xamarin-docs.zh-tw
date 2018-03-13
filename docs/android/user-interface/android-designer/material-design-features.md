@@ -8,17 +8,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: c0b5fa3e7eacb9f7fd8aa133a290d0e7654972ce
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9c1797398fba580ab7f34526b10e1da455eb2dc5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="material-design-features"></a>材料設計功能
 
 _本主題描述設計工具功能，讓開發人員建立相容材料設計版面配置，更容易。本節介紹，並說明如何使用資料方格、 材質色彩調色盤、 印刷樣式的小數位數和佈景主題編輯器。_
 
-<a name="overview" />
+
+> [!Video https://youtube.com/embed/E3_ZjIOzVzY]
+
+**發展 2016年： 每個人都可以建立美觀的應用程式具有材料設計**
 
 ## <a name="overview"></a>總覽
 
@@ -37,7 +40,6 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 我們將看一下這些功能，並提供使用方式的範例。
 
 
-<a name="material_grid" />
 
 ## <a name="material-design-grid"></a>材料設計格線
 
@@ -45,11 +47,11 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![材料設計格線](material-design-features-images/vs/01-material-design-grid-sml.png)](material-design-features-images/vs/01-material-design-grid.png)
+[![材料設計格線](material-design-features-images/vs/01-material-design-grid-sml.png)](material-design-features-images/vs/01-material-design-grid.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![材料設計格線](material-design-features-images/xs/01-material-design-grid-sml.png)](material-design-features-images/xs/01-material-design-grid.png)
+[![材料設計格線](material-design-features-images/xs/01-material-design-grid-sml.png)](material-design-features-images/xs/01-material-design-grid.png#lightbox)
 
 -----
 
@@ -65,11 +67,11 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Keyline、 間距及方格](material-design-features-images/vs/02-grid-and-keylines-sml.png)](material-design-features-images/vs/02-grid-and-keylines.png)
+[![Keyline、 間距及方格](material-design-features-images/vs/02-grid-and-keylines-sml.png)](material-design-features-images/vs/02-grid-and-keylines.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Keyline、 間距及方格](material-design-features-images/xs/02-grid-and-keylines-sml.png)](material-design-features-images/xs/02-grid-and-keylines.png)
+[![Keyline、 間距及方格](material-design-features-images/xs/02-grid-and-keylines-sml.png)](material-design-features-images/xs/02-grid-and-keylines.png#lightbox)
 
 -----
 
@@ -89,7 +91,7 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 
 每一個重疊項目是設定的。 當您按一下 [資料設計格線] 功能表旁邊的向下三角形時，就會開啟對話方塊 popover，可讓您停用/啟用方格、 設定 keylines、 位置及設定的間距。 請注意，所有值均以都表示`dp`（密度無關的像素）：
 
-[![方格、 keyline 和間距組態](material-design-features-images/xs/03-grid-configuration-sml.png)](material-design-features-images/xs/03-grid-configuration.png)
+[![方格、 keyline 和間距組態](material-design-features-images/xs/03-grid-configuration-sml.png)](material-design-features-images/xs/03-grid-configuration.png#lightbox)
 
 若要加入新 keyline，輸入新的位移的值，在**位移**方塊中，選取的位置 (**左**，**頂端**，**右**，或**底部**)，按一下 [+] 圖示新增新 keyline。
 
@@ -102,20 +104,20 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 
 現在接受一個色彩每一個屬性面板項目具有額外圖示可讓您以開啟 資料設計色彩調色盤，如下列螢幕擷取畫面所示：
 
-[![色彩圖示](material-design-features-images/xs/04-new-color-icon-sml.png)](material-design-features-images/xs/04-new-color-icon.png)
+[![色彩圖示](material-design-features-images/xs/04-new-color-icon-sml.png)](material-design-features-images/xs/04-new-color-icon.png#lightbox)
 
 當您按一下這個圖示時，就會開啟對話方塊 popover，可讓您設定該屬性從 資料設計色彩調色盤的色彩：
 
-[![材料設計色彩調色盤](material-design-features-images/xs/05-material-palette-sml.png)](material-design-features-images/xs/05-material-palette.png)
+[![材料設計色彩調色盤](material-design-features-images/xs/05-material-palette-sml.png)](material-design-features-images/xs/05-material-palette.png#lightbox)
 
 色彩調色盤的頂端顯示主要材料設計色彩調色盤的底部會顯示所選取的主要色彩色調的範圍。 例如，當您選取**Indigo**，集合**Indigo**色調顯示在對話方塊底部。
 當您選取的色調時，會將屬性的色彩變更為選取的色調。 在下列範例中，`Background Tint`按鈕會變更為*Indigo 500*:
 
-[![選擇 Indigo 500](material-design-features-images/xs/06-indigo-sml.png)](material-design-features-images/xs/06-indigo.png)
+[![選擇 Indigo 500](material-design-features-images/xs/06-indigo-sml.png)](material-design-features-images/xs/06-indigo.png#lightbox)
 
 `Background Tint` 設定色彩代碼，以*Indigo 500* (`#ff3f51b5`)，並在設計工具更新以反映這項變更按鈕的背景色彩：
 
-[![背景濃淡變更](material-design-features-images/xs/07-background-tint-sml.png)](material-design-features-images/xs/07-background-tint.png)
+[![背景濃淡變更](material-design-features-images/xs/07-background-tint-sml.png)](material-design-features-images/xs/07-background-tint.png#lightbox)
 
 如需材料設計色彩調色盤的詳細資訊，請參閱材料設計[色彩調色盤指南](http://www.google.com/design/spec/style/color.html#color-color-palette)。
 
@@ -123,24 +125,23 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 
 **的文字外觀**區段**屬性**板**樣式** 索引標籤有一個圖示，可讓您選取從`TextAppearance`符合資料的設計樣式規格：
 
-[![樣式索引標籤](material-design-features-images/xs/08-typo-scale-icon-sml.png)](material-design-features-images/xs/08-typo-scale-icon.png)
+[![樣式索引標籤](material-design-features-images/xs/08-typo-scale-icon-sml.png)](material-design-features-images/xs/08-typo-scale-icon.png#lightbox)
 
 當您按一下這個圖示時，它會開啟**印刷樣式的標尺**對話方塊 popover，列出您可以選擇從預先設定的文字樣式：
 
-[![文字樣式選擇器](material-design-features-images/xs/09-text-appearance-sml.png)](material-design-features-images/xs/09-text-appearance.png)
+[![文字樣式選擇器](material-design-features-images/xs/09-text-appearance-sml.png)](material-design-features-images/xs/09-text-appearance.png#lightbox)
 
 在下列範例中，按一下**顯示 1**按鈕的文字變成較大的字型**顯示 1**:
 
-[![顯示 1 樣式](material-design-features-images/xs/10-display-1-sml.png)](material-design-features-images/xs/10-display-1.png)
+[![顯示 1 樣式](material-design-features-images/xs/10-display-1-sml.png)](material-design-features-images/xs/10-display-1.png#lightbox)
 
 中的文字樣式**印刷樣式的標尺**對話遵照**佈景主題**設定。 例如，如果**Light**佈景主題會在設計工具，可用的文字樣式鏡像的清單中選擇**Light**佈景主題：
 
-[![淺色佈景主題](material-design-features-images/xs/11-light-theme-sml.png)](material-design-features-images/xs/11-light-theme.png)
+[![淺色佈景主題](material-design-features-images/xs/11-light-theme-sml.png)](material-design-features-images/xs/11-light-theme.png#lightbox)
 
 -----
 
 
-<a name="theme_editor" />
 
 ## <a name="theme-editor"></a>佈景主題編輯器
 
@@ -152,7 +153,7 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![佈景主題編輯器圖示](material-design-features-images/xs/12a-theme-editor-icon-sml.png)](material-design-features-images/xs/12a-theme-editor-icon.png)
+[![佈景主題編輯器圖示](material-design-features-images/xs/12a-theme-editor-icon-sml.png)](material-design-features-images/xs/12a-theme-editor-icon.png#lightbox)
 
 -----
 
@@ -162,11 +163,11 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![佈景主題編輯器](material-design-features-images/vs/05-theme-editor-sml.png)](material-design-features-images/vs/05-theme-editor.png)
+[![佈景主題編輯器](material-design-features-images/vs/05-theme-editor-sml.png)](material-design-features-images/vs/05-theme-editor.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![佈景主題編輯器](material-design-features-images/xs/12b-theme-editor-sml.png)](material-design-features-images/xs/12b-theme-editor.png)
+[![佈景主題編輯器](material-design-features-images/xs/12b-theme-editor-sml.png)](material-design-features-images/xs/12b-theme-editor.png#lightbox)
 
 -----
 
@@ -183,7 +184,6 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 讓我們看看每個詳細資料中的這些索引標籤。
 
 
-<a name="theme_edit_inherit_tab" />
 
 ### <a name="inherit-tab"></a>繼承 索引標籤
 
@@ -191,11 +191,11 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![繼承 索引標籤](material-design-features-images/vs/06-inherit-tab-sml.png)](material-design-features-images/vs/06-inherit-tab.png)
+[![繼承 索引標籤](material-design-features-images/vs/06-inherit-tab-sml.png)](material-design-features-images/vs/06-inherit-tab.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![繼承 索引標籤](material-design-features-images/xs/13-inherit-sml.png)](material-design-features-images/xs/13-inherit.png)
+[![繼承 索引標籤](material-design-features-images/xs/13-inherit-sml.png)](material-design-features-images/xs/13-inherit.png#lightbox)
 
 -----
 
@@ -203,7 +203,6 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 如需樣式繼承的詳細資訊，請參閱[樣式和主題](http://developer.android.com/guide/topics/ui/themes.html#Inheritance)。
 
 
-<a name="theme_edit_color_picker" />
 
 ### <a name="color-picker"></a>色彩選擇器
 
@@ -211,11 +210,11 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![色彩選擇器](material-design-features-images/vs/07-color-picker-sml.png)](material-design-features-images/vs/07-color-picker.png)
+[![色彩選擇器](material-design-features-images/vs/07-color-picker-sml.png)](material-design-features-images/vs/07-color-picker.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![色彩選擇器](material-design-features-images/xs/14-color-picker-sml.png)](material-design-features-images/xs/14-color-picker.png)
+[![色彩選擇器](material-design-features-images/xs/14-color-picker-sml.png)](material-design-features-images/xs/14-color-picker.png#lightbox)
 
 -----
 
@@ -229,7 +228,6 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 
 您在 色彩選擇器中選擇的色彩就是*不*限制材料設計指導方針或可用的色彩資源的集合。
 
-<a name="theme_edit_resources" />
 
 ### <a name="resources"></a>資源
 
@@ -237,18 +235,17 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![資源](material-design-features-images/vs/08-resources-sml.png)](material-design-features-images/vs/08-resources.png)
+[![資源](material-design-features-images/vs/08-resources-sml.png)](material-design-features-images/vs/08-resources.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![資源](material-design-features-images/xs/15-resources-sml.png)](material-design-features-images/xs/15-resources.png)
+[![資源](material-design-features-images/xs/15-resources-sml.png)](material-design-features-images/xs/15-resources.png#lightbox)
 
 -----
 
 使用**資源** 索引標籤會限制您的選擇，此色彩的清單。 請記住，如果您選擇已指派給另一個組件的佈景主題色彩資源時，UI 的兩個相鄰的項目可能 」 一起執行 」 （因為它們有相同的色彩） 而且變得難以區別使用者。
 
 
-<a name="theme_edit_material_pallette" />
 
 ### <a name="material-palette"></a>材料調色盤
 
@@ -256,7 +253,7 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 
 **材料調色盤**索引標籤隨即開啟**材料設計色彩調色盤**。 從這個調色盤選取色彩值會限制色彩選擇，使其與材料設計指導方針一致。
 
-[![材料調色盤](material-design-features-images/vs/09-material-palette-sml.png)](material-design-features-images/vs/09-material-palette.png)
+[![材料調色盤](material-design-features-images/vs/09-material-palette-sml.png)](material-design-features-images/vs/09-material-palette.png#lightbox)
 
 色彩調色盤的頂端顯示主要材料設計色彩調色盤的底部會顯示所選取的主要色彩色調的範圍。 例如，當您選取**Indigo**，集合**Indigo**色調顯示在對話方塊底部。
 當您選取的色調時，會將屬性的色彩變更為選取的色調。 在下列範例中，`Background Tint`按鈕會變更為*Indigo 500*:
@@ -265,7 +262,7 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 
 `Background Tint` 設定色彩代碼，以*Indigo 500* (`#ff3f51b5`)，並在設計工具更新以反映這項變更的背景色彩：
 
-[![變更背景濃淡](material-design-features-images/vs/11-background-tint-sml.png)](material-design-features-images/vs/11-background-tint.png)
+[![變更背景濃淡](material-design-features-images/vs/11-background-tint-sml.png)](material-design-features-images/vs/11-background-tint.png#lightbox)
 
 如需材料設計色彩調色盤的詳細資訊，請參閱材料設計[色彩調色盤指南](http://www.google.com/design/spec/style/color.html#color-color-palette)。
 
@@ -273,12 +270,11 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 
 **材料調色盤**索引標籤隨即開啟**材料設計色彩調色盤**描述[早](#material_palette)。 從這個調色盤選取色彩值會限制色彩選擇，使其與材料設計指導方針一致。
 
-[![材料調色盤](material-design-features-images/xs/16-material-palette-sml.png)](material-design-features-images/xs/16-material-palette.png)
+[![材料調色盤](material-design-features-images/xs/16-material-palette-sml.png)](material-design-features-images/xs/16-material-palette.png#lightbox)
 
 -----
 
 
-<a name="theme_create" />
 
 ### <a name="creating-a-new-theme"></a>建立新的佈景主題
 
@@ -290,7 +286,7 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![將背景變更為藍色 900](material-design-features-images/xs/17-change-background-to-blue-sml.png)](material-design-features-images/xs/17-change-background-to-blue.png)
+[![將背景變更為藍色 900](material-design-features-images/xs/17-change-background-to-blue-sml.png)](material-design-features-images/xs/17-change-background-to-blue.png#lightbox)
 
 -----
 
@@ -299,11 +295,11 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![警告未儲存的變更](material-design-features-images/vs/13-unsaved-changes-sml.png)](material-design-features-images/vs/13-unsaved-changes.png)
+[![警告未儲存的變更](material-design-features-images/vs/13-unsaved-changes-sml.png)](material-design-features-images/vs/13-unsaved-changes.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![警告未儲存的變更](material-design-features-images/xs/18-unsaved-changes-sml.png)](material-design-features-images/xs/18-unsaved-changes.png)
+[![警告未儲存的變更](material-design-features-images/xs/18-unsaved-changes-sml.png)](material-design-features-images/xs/18-unsaved-changes.png#lightbox)
 
 -----
 
@@ -327,18 +323,17 @@ Xamarin.Android 設計工具包含可讓您更輕鬆地建立材料設計的標�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![新增自訂佈景主題](material-design-features-images/vs/14-custom-theme-sml.png)](material-design-features-images/vs/14-custom-theme.png)
+[![新增自訂佈景主題](material-design-features-images/vs/14-custom-theme-sml.png)](material-design-features-images/vs/14-custom-theme.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![新增自訂佈景主題](material-design-features-images/xs/19-custom-theme-sml.png)](material-design-features-images/xs/19-custom-theme.png)
+[![新增自訂佈景主題](material-design-features-images/xs/19-custom-theme-sml.png)](material-design-features-images/xs/19-custom-theme.png#lightbox)
 
 -----
 
 
 目前選取的佈景主題是專案佈景主題，因為沒有任何對話方塊更新選取的佈景主題，或指定新位置。
 
-<a name="summary" />
 
 ## <a name="summary"></a>總結
 

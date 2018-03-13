@@ -7,12 +7,12 @@ ms.assetid: A6090101-67C6-4BDD-9416-F2FB74805A87
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 36cabddc2439d64ad2d1135bbd0d453a7f411750
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: d8b44fb7f0e60db407271fd84899489bf8e65694
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---saving-the-activity-state"></a>逐步解說-儲存活動狀態
 
@@ -22,7 +22,7 @@ _我們已涵蓋背後活動的生命週期指南; 中儲存狀態的理論現�
 
 讓我們來開啟**ActivityLifecycle_Start**專案 (在[ActivityLifecycle](https://developer.xamarin.com/samples/monodroid/ActivityLifecycle)範例)，建置它，並執行它。 這是非常簡單的專案具有兩個活動，以示範活動的生命週期與各種存留週期方法呼叫的方式。 當您啟動應用程式的螢幕`MainActivity`會顯示： 
 
-[ ![活動的畫面](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png)
+[![活動的畫面](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png#lightbox)
 
 ### <a name="viewing-state-transitions"></a>檢視狀態轉換
 
@@ -48,7 +48,7 @@ _我們已涵蓋背後活動的生命週期指南; 中儲存狀態的理論現�
 
 如此一來，*活動 B*已啟動並顯示取代*活動 A*: 
 
-[ ![活動 B 畫面](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png)
+[![活動 B 畫面](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png#lightbox)
 
 當我們按一下**回** 按鈕，*活動 B*終結和*活動 A*繼續： 
 
@@ -62,7 +62,7 @@ _我們已涵蓋背後活動的生命週期指南; 中儲存狀態的理論現�
 ```
 ### <a name="adding-a-click-counter"></a>加入按一下計數器
 
-接下來，我們變更應用程式，讓我們有會計算並顯示的次數已按下的按鈕。 首先，讓我們加入`_counter`執行個體變數`MainActivity`: 
+接下來，我們變更應用程式，讓我們有會計算並顯示的次數已按下的按鈕。 首先，讓我們加入`_counter`執行個體變數`MainActivity`:
 
 ```csharp
 int _counter = 0;
@@ -105,11 +105,11 @@ clickbutton.Click += (object sender, System.EventArgs e) =>
 
 當我們建置並再次執行應用程式，新按鈕會出現並遞增，並顯示的值`_counter`每按一下上：
 
-[![新增觸控計數](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png)
+[![新增觸控計數](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png#lightbox)
 
 但是，當我們旋轉橫向模式裝置時，此計數會遺失：
 
-[ ![旋轉橫印設定設回零的計數](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png)
+[![旋轉橫印設定設回零的計數](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png#lightbox)
 
 檢查應用程式輸出，我們看到*活動 A*已暫停、 停止、 終結，重新建立、 重新啟動，然後繼續期間從直向旋轉橫向模式： 
 
@@ -152,7 +152,7 @@ if (bundle != null)
 
 建置並再次執行應用程式，然後按一下第二個按鈕幾次。 當我們旋轉橫向模式裝置時，會保留計數 ！
 
-[ ![旋轉螢幕顯示的四個保留的計數](saving-state-images/06-rotate-save-sml.png)](saving-state-images/06-rotate-save.png)
+[![旋轉螢幕顯示的四個保留的計數](saving-state-images/06-rotate-save-sml.png)](saving-state-images/06-rotate-save.png#lightbox)
 
 
 讓我們看看 [輸出] 視窗，以查看發生了什麼事：

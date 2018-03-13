@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9e64f1962e35372a6058f4b515efa5a61c1c9e45
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: HT
+ms.openlocfilehash: 9cf9cb2e4773b90ecdd9321c6627003be3fa1b8b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>沙箱 Xamarin.Mac 應用程式
 
@@ -22,7 +22,7 @@ _本文涵蓋沙箱 Xamarin.Mac 應用程式，App Store 上的版本。它涵�
 
 當 Xamarin.Mac 應用程式中使用 C# 和.NET，就像是使用 OBJECTIVE-C 或 Swift 時有沙箱應用程式的相同功能。
 
-[![執行中應用程式的範例](sandboxing-images/intro01.png "執行的應用程式的範例")](sandboxing-images/intro01-large.png)
+[![執行中應用程式的範例](sandboxing-images/intro01.png "執行的應用程式的範例")](sandboxing-images/intro01-large.png#lightbox)
 
 在本文中，我們會使用沙箱 Xamarin.Mac 應用程式和所有進入沙箱化處理的項目中的基本概念： 容器目錄、 權利，決定使用者的權限、 權限分隔和核心強制執行。 強烈建議您逐步[Hello、 Mac](~/mac/get-started/hello-mac.md)發行項的第一次，具體來說[Xcode 和介面產生器簡介](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)和[插座和動作](~/mac/get-started/hello-mac.md#Outlets_and_Actions)區段中的，因為它涵蓋重要概念和技術，我們將在本文中使用。
 
@@ -70,19 +70,19 @@ _本文涵蓋沙箱 Xamarin.Mac 應用程式，App Store 上的版本。它涵�
 1. 啟動 Visual Studio 用於 Mac 和按一下**新方案...** 連結，將該帳戶加入 [檔案] > [帳戶設定] 對話方塊左側的 [所有帳戶] 清單中。
 2. 從**新專案**對話方塊中，選取**Mac** > **應用程式** > **Cocoa 應用程式**: 
 
-    [![建立新的應用程式 Cocoa](sandboxing-images/sample01.png "建立新的 Cocoa 應用程式")](sandboxing-images/sample01-large.png)
+    [![建立新的應用程式 Cocoa](sandboxing-images/sample01.png "建立新的 Cocoa 應用程式")](sandboxing-images/sample01-large.png#lightbox)
 3. 按一下**下一步**按鈕，輸入`MacSandbox`專案名稱，然後按一下**建立**按鈕： 
 
-    [![輸入應用程式名稱](sandboxing-images/sample02.png "輸入應用程式名稱")](sandboxing-images/sample02-large.png)
+    [![輸入應用程式名稱](sandboxing-images/sample02.png "輸入應用程式名稱")](sandboxing-images/sample02-large.png#lightbox)
 4. 在**方案板**，連按兩下**Main.storyboard**檔案將它開啟在 Xcode 中進行編輯： 
 
-    [![編輯主要腳本](sandboxing-images/sample03.png "編輯主要腳本")](sandboxing-images/sample03-large.png)
+    [![編輯主要腳本](sandboxing-images/sample03.png "編輯主要腳本")](sandboxing-images/sample03-large.png#lightbox)
 5. 拖曳**Web 檢視**拖曳到視窗中，調整大小以填滿內容區域，並將它設定為擴增和縮減與視窗： 
 
-    [![加入 web 檢視](sandboxing-images/sample04.png "加入 web 檢視")](sandboxing-images/sample04-large.png)
+    [![加入 web 檢視](sandboxing-images/sample04.png "加入 web 檢視")](sandboxing-images/sample04-large.png#lightbox)
 6. 建立 web 檢視呼叫插座`webView`: 
 
-    [![建立新的輸出](sandboxing-images/sample05.png "建立新的輸出")](sandboxing-images/sample05-large.png)
+    [![建立新的輸出](sandboxing-images/sample05.png "建立新的輸出")](sandboxing-images/sample05-large.png#lightbox)
 7. 返回 Visual Studio，針對 Mac 和按兩下**ViewController.cs**檔案**方案板**開啟進行編輯。
 8. 加入下列 using 陳述式： `using WebKit;`
 9. 請`ViewDidLoad`方法看起來像下列： 
@@ -99,7 +99,7 @@ public override void AwakeFromNib ()
 
 執行應用程式，並確保 Apple 網站將顯示在視窗中，如下所示：
 
-[![顯示範例應用程式執行](sandboxing-images/sample06.png "顯示範例應用程式執行")](sandboxing-images/sample06-large.png)
+[![顯示範例應用程式執行](sandboxing-images/sample06.png "顯示範例應用程式執行")](sandboxing-images/sample06-large.png#lightbox)
 
 <a name="Signing_and_Provisioning_the_App" />
 
@@ -111,34 +111,34 @@ public override void AwakeFromNib ()
 
 1. 登入 Apple 開發人員入口網站： 
 
-    [![登入 Apple 開發人員入口網站](sandboxing-images/sign01.png "登入 Apple 開發人員入口網站")](sandboxing-images/sign01-large.png)
+    [![登入 Apple 開發人員入口網站](sandboxing-images/sign01.png "登入 Apple 開發人員入口網站")](sandboxing-images/sign01-large.png#lightbox)
 2. 選取**憑證、 識別項與設定檔**: 
 
-    [![選取 Certificates, Identifiers & Profiles 憑證、識別碼及設定檔](sandboxing-images/sign02.png "選取 Certificates, Identifiers & Profiles 憑證、識別碼及設定檔")](sandboxing-images/sign02-large.png)
+    [![選取 Certificates, Identifiers & Profiles 憑證、識別碼及設定檔](sandboxing-images/sign02.png "選取 Certificates, Identifiers & Profiles 憑證、識別碼及設定檔")](sandboxing-images/sign02-large.png#lightbox)
 3. 在下**Mac 應用程式**，選取**識別碼**: 
 
-    [![選取識別項](sandboxing-images/sign03.png "選取識別項")](sandboxing-images/sign03-large.png)
+    [![選取識別項](sandboxing-images/sign03.png "選取識別項")](sandboxing-images/sign03-large.png#lightbox)
 4. 建立新的應用程式識別碼： 
 
-    [![建立新的應用程式識別碼](sandboxing-images/sign04.png "建立新的應用程式識別碼")](sandboxing-images/sign04-large.png)
+    [![建立新的應用程式識別碼](sandboxing-images/sign04.png "建立新的應用程式識別碼")](sandboxing-images/sign04-large.png#lightbox)
 5. 在下**佈建的設定檔**，選取**開發**: 
 
-    [![選取開發](sandboxing-images/sign05.png "選取開發")](sandboxing-images/sign05-large.png)
+    [![選取開發](sandboxing-images/sign05.png "選取開發")](sandboxing-images/sign05-large.png#lightbox)
 6. 建立新的設定檔，並選取**Mac 應用程式開發**: 
 
-    [![建立新的設定檔](sandboxing-images/sign06.png "建立新的設定檔")](sandboxing-images/sign06-large.png)
+    [![建立新的設定檔](sandboxing-images/sign06.png "建立新的設定檔")](sandboxing-images/sign06-large.png#lightbox)
 7. 選取我們在上方建立的應用程式識別碼： 
 
-    [![選取的應用程式識別碼](sandboxing-images/sign07.png "選取的應用程式識別碼")](sandboxing-images/sign07-large.png)
+    [![選取的應用程式識別碼](sandboxing-images/sign07.png "選取的應用程式識別碼")](sandboxing-images/sign07-large.png#lightbox)
 8. 選取此設定檔的開發人員： 
 
-    [![加入開發人員](sandboxing-images/sign08.png "加入開發人員")](sandboxing-images/sign08-large.png)
+    [![加入開發人員](sandboxing-images/sign08.png "加入開發人員")](sandboxing-images/sign08-large.png#lightbox)
 9. 選取此設定檔的電腦： 
 
-    [![選取 允許的電腦](sandboxing-images/sign09.png "選取允許的電腦")](sandboxing-images/sign09-large.png)
+    [![選取 允許的電腦](sandboxing-images/sign09.png "選取允許的電腦")](sandboxing-images/sign09-large.png#lightbox)
 10. 指定設定檔的名稱： 
 
-    [![為設定檔命名](sandboxing-images/sign10.png "為設定檔指定的名稱")](sandboxing-images/sign10-large.png)
+    [![為設定檔命名](sandboxing-images/sign10.png "為設定檔指定的名稱")](sandboxing-images/sign10-large.png#lightbox)
 11. 按一下**完成** 按鈕。
 
 > [!IMPORTANT]
@@ -160,10 +160,10 @@ public override void AwakeFromNib ()
 1. 在**方案板**，連按兩下**Info.plist**檔案，以開啟它進行編輯。
 2. 請確認**配套識別碼**符合我們前面所建立的應用程式識別碼 (範例： `com.appracatappra.MacSandbox`): 
 
-    [![編輯套件組合識別碼](sandboxing-images/sign13.png "編輯配套識別碼")](sandboxing-images/sign13-large.png)
+    [![編輯套件組合識別碼](sandboxing-images/sign13.png "編輯配套識別碼")](sandboxing-images/sign13-large.png#lightbox)
 3. 接下來，按兩下**Entitlements.plist**檔案，並確定我們**iCloud 鍵值存放區**和**iCloud 容器**全部都會相符我們前面所建立的應用程式識別碼 (範例：`com.appracatappra.MacSandbox`): 
 
-    [![編輯 Entitlements.plist 檔案](sandboxing-images/sign17.png "編輯 Entitlements.plist 檔案")](sandboxing-images/sign17-large.png)
+    [![編輯 Entitlements.plist 檔案](sandboxing-images/sign17.png "編輯 Entitlements.plist 檔案")](sandboxing-images/sign17-large.png#lightbox)
 3. 儲存您的變更。
 4. 在**方案板**，按兩下專案檔，以開啟它進行編輯的選項：  
 
@@ -180,7 +180,7 @@ public override void AwakeFromNib ()
 
 此時您應該嘗試執行應用程式，並確定所有項目是用來簽署，並正確佈建。 如果應用程式仍如常執行，所有項目是很好。 如果發生故障，您可能會收到與下列類似的對話方塊：
 
-[![佈建問題 對話方塊範例](sandboxing-images/sign16.png "佈建問題 對話方塊範例")](sandboxing-images/sign16-large.png)
+[![佈建問題 對話方塊範例](sandboxing-images/sign16.png "佈建問題 對話方塊範例")](sandboxing-images/sign16-large.png#lightbox)
 
 以下是最常見的原因的佈建和簽章的問題：
 
@@ -197,12 +197,12 @@ public override void AwakeFromNib ()
 1. 在**方案板**，連按兩下**Entitlements.plist**檔案，以開啟它進行編輯。
 2. 同時檢查**啟用權利**和**啟用應用程式沙箱**: 
 
-    [![編輯權利，以及啟用沙箱](sandboxing-images/sign17.png "編輯權利，以及啟用沙箱")](sandboxing-images/sign17-large.png)
+    [![編輯權利，以及啟用沙箱](sandboxing-images/sign17.png "編輯權利，以及啟用沙箱")](sandboxing-images/sign17-large.png#lightbox)
 3. 儲存您的變更。
 
 此時，您已啟用應用程式沙箱，但您先前未提供必要的網路存取 Web 檢視。 如果您執行應用程式現在，您應該取得空白視窗：
 
-[![顯示 web 存取的封鎖](sandboxing-images/sample08.png "顯示被封鎖的 web 存取")](sandboxing-images/sample08-large.png)
+[![顯示 web 存取的封鎖](sandboxing-images/sample08.png "顯示被封鎖的 web 存取")](sandboxing-images/sample08-large.png#lightbox)
 
 ### <a name="verifying-that-the-app-is-sandboxed"></a>正在驗證應用程式為沙箱化
 
@@ -210,25 +210,25 @@ public override void AwakeFromNib ()
 
 1. 在 尋找工具中，核取的內容`~/Library/Containers/`資料夾-如果應用程式為沙箱化，會有類似您的應用程式配套識別碼名為的資料夾 (範例： `com.appracatappra.MacSandbox`): 
 
-    [![開啟應用程式套件組合](sandboxing-images/sample09.png "開啟應用程式套件組合")](sandboxing-images/sample09-large.png)
+    [![開啟應用程式套件組合](sandboxing-images/sample09.png "開啟應用程式套件組合")](sandboxing-images/sample09-large.png#lightbox)
 2. 系統會為沙箱化 活動監視器中看到應用程式：
     - 啟動 活動監視器 (下`/Applications/Utilities`)。 
     - 選擇**檢視** > **資料行**，並確定**沙箱**勾選功能表項目。
     - 請確定沙箱的資料行讀取`Yes`應用程式： 
 
-    [![檢查應用程式中，活動監視器](sandboxing-images/sample10.png "檢查活動監視器中的應用程式")](sandboxing-images/sample10-large.png)
+    [![檢查應用程式中，活動監視器](sandboxing-images/sample10.png "檢查活動監視器中的應用程式")](sandboxing-images/sample10-large.png#lightbox)
 3. 請檢查應用程式二進位為沙箱化：
     - 啟動終端機應用程式。
     - 瀏覽至應用程式`bin`目錄。
     - 發出此命令： `codesign -dvvv --entitlements :- executable_path` (其中`executable_path`是您的應用程式的路徑): 
 
-    [![檢查命令列上的應用程式](sandboxing-images/sample11.png "檢查命令列上的應用程式")](sandboxing-images/sample11-large.png)
+    [![檢查命令列上的應用程式](sandboxing-images/sample11.png "檢查命令列上的應用程式")](sandboxing-images/sample11-large.png#lightbox)
 
 ### <a name="debugging-a-sandboxed-app"></a>偵錯的沙箱化應用程式
 
 偵錯工具連接到 Xamarin.Mac 應用程式，透過 TCP，這表示，依預設啟用沙箱，當它是無法連線到應用程式，因此如果您嘗試執行應用程式沒有啟用適當的權限，您會收到錯誤*「 無法連接到偵錯工具 」*。 
 
-[![設定所需的選項](sandboxing-images/debug01.png "設定所需的選項")](sandboxing-images/debug01-large.png)
+[![設定所需的選項](sandboxing-images/debug01.png "設定所需的選項")](sandboxing-images/debug01-large.png#lightbox)
 
 **允許傳出網路連線 （用戶端）**權限就是所需的偵錯工具，啟用此選項將允許正常地偵錯。 您無法偵錯，而它，因為我們已更新`CompileEntitlements`目標`msbuild`為沙箱化針對偵錯任何應用程式只建置的自動將該權限新增至權利。 發行組建應該使用未經修改的權利檔案中指定的權利。
 
@@ -248,7 +248,7 @@ public override void AwakeFromNib ()
 2. 開啟**主控台**應用程式 (從`/Applications/Utilties/`)。
 3. 選取**所有訊息**提要欄位中，輸入`sandbox`在搜尋中： 
 
-    [![在主控台中的沙箱化處理問題的範例](sandboxing-images/resolve01.png "沙箱化處理問題，在主控台中的範例")](sandboxing-images/resolve01-large.png)
+    [![在主控台中的沙箱化處理問題的範例](sandboxing-images/resolve01.png "沙箱化處理問題，在主控台中的範例")](sandboxing-images/resolve01-large.png#lightbox)
 
 對於我們上述的範例應用程式，您可以查看正在封鎖 Kernal`network-outbound`流量，因為應用程式的沙箱，因為我們不要求要有該權限。
 
@@ -261,7 +261,7 @@ public override void AwakeFromNib ()
 1. 在**方案板**，連按兩下**Entitlements.plist**檔案，以開啟它進行編輯。
 2. 在下**權利**區段中，按一下**允許傳出網路連線 （用戶端）**核取方塊： 
 
-    [![編輯權利](sandboxing-images/sign17.png "編輯權利")](sandboxing-images/sign17-large.png)
+    [![編輯權利](sandboxing-images/sign17.png "編輯權利")](sandboxing-images/sign17-large.png#lightbox)
 3. 將變更儲存至應用程式。
 
 如果我們執行上述針對我們的範例應用程式，然後建置並執行它，如預期般現在會顯示 web 內容。
@@ -284,7 +284,7 @@ public override void AwakeFromNib ()
 
 您可以修改應用程式的應用程式沙箱資源藉由編輯其**Entitlements.plist**檔案和檢查，或選取編輯器的下拉式清單方塊中所需的權限：
 
-[![編輯權利](sandboxing-images/sign17.png "編輯權利")](sandboxing-images/sign17-large.png)
+[![編輯權利](sandboxing-images/sign17.png "編輯權利")](sandboxing-images/sign17-large.png#lightbox)
 
 ### <a name="container-directories-and-file-system-access"></a>容器的目錄和檔案系統存取
 

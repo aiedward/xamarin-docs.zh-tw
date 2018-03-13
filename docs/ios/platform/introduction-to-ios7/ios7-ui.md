@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 6df47bd54611feedd0d355a976a055d62f37afeb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1ad37cb4a794ac47e0e2f184a730949f14e85572
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 使用者介面概觀
 
@@ -146,7 +146,7 @@ iOS 7 被為了讓應用程式利用整個螢幕。 檢視控制器現在會出�
 
  `TopLayoutGuide` 和`BottomLayoutGuide`做為檢視應開始或結束，其中的參考，使內容不重疊的半透明`UIKit`列中的，如下列範例所示：
 
- [ ![](ios7-ui-images/clipped.png "不重疊的半透明的 UIKit 列的範例內容")](ios7-ui-images/clipped.png)
+ [![](ios7-ui-images/clipped.png "不重疊的半透明的 UIKit 列的範例內容")](ios7-ui-images/clipped.png#lightbox)
 
 這些 Api 可以用來計算的頂端或底部的畫面上，從檢視表的位移，並據以調整內容的位置：
 
@@ -166,7 +166,7 @@ public override void ViewDidLayoutSubviews ()
 
 我們可以使用設定上面計算出值我們`ImageView`的位移，從畫面上，因此整個影像是可見的頂端：
 
- [ ![](ios7-ui-images/good2.png "從畫面頂端的範例 ImageViews 位移")](ios7-ui-images/good2.png)
+ [![](ios7-ui-images/good2.png "從畫面頂端的範例 ImageViews 位移")](ios7-ui-images/good2.png#lightbox)
 
 請參閱[ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates)如需實用範例。
 
@@ -179,15 +179,15 @@ public override void ViewDidLayoutSubviews ()
 
 這個 API 會指定檢視的哪些邊緣應該延伸到全螢幕，不論列半透明。 IOS 7，在導覽列和工具列會顯示置於之上控制站的檢視-不像在先前的 iOS 版本中，其中未佔用相同的空間。 IOS 7 相片應用程式示範預設`UIViewController.EdgesForExtendedLayout`值`UIRectEdge.All`。 這項設定會填入內容，檢視中的所有四個邊建立的重疊和全螢幕的效果：
 
- [ ![](ios7-ui-images/photos.png "Sample EdgesForExtendedLayout")](ios7-ui-images/photos.png)
+ [![](ios7-ui-images/photos.png "Sample EdgesForExtendedLayout")](ios7-ui-images/photos.png#lightbox)
 
 點選映像移除橫條圖，並顯示影像全螢幕：
 
- [ ![](ios7-ui-images/photos2.png "與移除的橫條 EdgesForExtendedLayout")](ios7-ui-images/photos2.png)
+ [![](ios7-ui-images/photos2.png "與移除的橫條 EdgesForExtendedLayout")](ios7-ui-images/photos2.png#lightbox)
 
 全螢幕的內容是預設值，因為設定適用於 iOS 6 的應用程式都需要顯示在檢視裁剪，如以下螢幕擷取畫面所示：
 
- [ ![](ios7-ui-images/clipped.png "設定適用於 iOS 6 應用程式會有裁剪，如下列螢幕擷取畫面所示檢視的一部分")](ios7-ui-images/clipped.png)
+ [![](ios7-ui-images/clipped.png "設定適用於 iOS 6 應用程式會有裁剪，如下列螢幕擷取畫面所示檢視的一部分")](ios7-ui-images/clipped.png#lightbox)
 
 修改`UIViewController.EdgesForExtendedLayout`屬性調整為這個行為。 我們可以指定，檢視填滿任何邊緣，因此我們檢視將會避免在瀏覽或 （在每個方向） 的工具列所佔用的空間中顯示內容：
 
@@ -199,7 +199,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 
 在我們的應用程式中，我們會看到檢視再次重新調整位置，讓整個影像會顯示：
 
- [ ![](ios7-ui-images/good.png "使用可見的整個映像的範例")](ios7-ui-images/good.png)
+ [![](ios7-ui-images/good.png "使用可見的整個映像的範例")](ios7-ui-images/good.png#lightbox)
 
 請注意，雖然的效果`TopLayoutGuide/BottomLayoutGuide`和`EdgesForExtendedLayout`Api 非常類似，它們一定會以填滿不同的目標。 變更`EdgesForExtendedLayout`設定設成預設值可能會修正裁剪的檢視適用於 iOS 6、 設計的應用程式中，但是應該接受全螢幕美觀良好 iOS 7 設計，並提供全螢幕檢視經驗，同時依賴`TopLayoutGuide`和`BottomLayoutGuide`正確，將目的在於到舒適位置，以讓使用者可操作的內容。
 

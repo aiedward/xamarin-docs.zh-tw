@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 95f7ad5069abfe4dff82659c0fbc79eef2125e15
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: af124c2ae0390c5321e9dd34158c7b53b33b2c48
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-search-enhancements"></a>應用程式搜尋的增強功能
 
@@ -54,17 +54,15 @@ iOS 10 提供一個機制，計數頻率到應用程式的熱門深層連結後�
 
 若要實作這項功能，請編輯 應用程式的`Info.plist`file、 add`CoreSpotlightContinuation`索引鍵的型別**布林**並將其值設定為`YES`:
 
-[[ide name="xs]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](app-search-enhancements-images/search01.png "編輯 CoreSpotlightContinuation Info.plist 檔案中")](app-search-enhancements-images/search01.png)
+[![](app-search-enhancements-images/search01.png "編輯 CoreSpotlightContinuation Info.plist 檔案中")](app-search-enhancements-images/search01.png#lightbox)
 
-[[/ide]]
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[[ide name="vs]]
+[![](app-search-enhancements-images/searchw01.png "編輯 CoreSpotlightContinuation Info.plist 檔案中")](app-search-enhancements-images/search01.png#lightbox)
 
-[ ![](app-search-enhancements-images/searchw01.png "編輯 CoreSpotlightContinuation Info.plist 檔案中")](app-search-enhancements-images/search01.png)
-
-[[/ide]]
+-----
 
 若要回應使用者繼續搜尋結果 (`NSUserActivity`)，編輯`AppDelegate.cs`檔案，並覆寫`ContinueUserActivity`方法。 例如: 
 

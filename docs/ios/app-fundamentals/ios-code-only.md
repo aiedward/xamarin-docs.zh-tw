@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5e4b0e7bbad94976b23e58d4248cb2ea1a6f2b0f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b50c4bbef1510b739c4f7da7d732a4f4c66f13f3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>在程式碼中建立 iOS 使用者介面
 
@@ -24,7 +24,7 @@ IOS 應用程式的使用者介面就像 storefront – 應用程式通常會取
 
 下圖說明視窗、檢視、子檢視及檢視控制器之間的關聯性，以在裝置畫面中顯示使用者介面： 
 
-[ ![](ios-code-only-images/image9.png "此圖說明 視窗、 檢視、 Subviews 及檢視控制器之間的關聯性")](ios-code-only-images/image9.png)
+[![](ios-code-only-images/image9.png "此圖說明 視窗、 檢視、 Subviews 及檢視控制器之間的關聯性")](ios-code-only-images/image9.png#lightbox)
 
 這些檢視階層可以使用建構[Xamarin 設計工具，適用於 iOS](~/ios/user-interface/designer/index.md)在 Visual Studio 中，不過最好是有基本了解如何使用完全以程式碼。 本文逐步解說一些基本的點，才能啟動和執行僅限程式碼使用者介面開發人員。
 
@@ -32,7 +32,7 @@ IOS 應用程式的使用者介面就像 storefront – 應用程式通常會取
 
 下圖說明視窗、檢視、子檢視及檢視控制器之間的關聯性，以在裝置畫面中顯示使用者介面： 
 
-[ ![](ios-code-only-images/image9.png "此圖說明 視窗、 檢視、 Subviews 及檢視控制器之間的關聯性")](ios-code-only-images/image9.png)
+[![](ios-code-only-images/image9.png "此圖說明 視窗、 檢視、 Subviews 及檢視控制器之間的關聯性")](ios-code-only-images/image9.png#lightbox)
 
 
 這些檢視階層可以使用建構[Xamarin 設計工具，適用於 iOS](~/ios/user-interface/designer/index.md)在 Visual Studio for Mac，不過最好是有基本了解如何在程式碼中完全處理。 本文逐步解說一些基本的點，才能啟動和執行僅限程式碼使用者介面開發人員。
@@ -49,13 +49,13 @@ IOS 應用程式的使用者介面就像 storefront – 應用程式通常會取
 首先，建立在 Visual Studio 中使用 iPhone 的 iOS 專案**空白專案**範本，如下所示將擴充新增控制器和檢視。
 
 
-[ ![](ios-code-only-images/blankapp-vs.png "新增專案 對話方塊")](ios-code-only-images/blankapp-vs.png)
+[![](ios-code-only-images/blankapp-vs.png "新增專案 對話方塊")](ios-code-only-images/blankapp-vs.png#lightbox)
 
 
 空白專案範本會將 4 個檔案加入專案：
 
 
-[ ![](ios-code-only-images/empty-project.png "專案檔")](ios-code-only-images/empty-project.png)
+[![](ios-code-only-images/empty-project.png "專案檔")](ios-code-only-images/empty-project.png#lightbox)
 
 
 1. **D** -包含`UIApplicationDelegate`子類別， `AppDelegate` ，用來處理從 iOS 應用程式事件。 應用程式視窗中建立`AppDelegate`的`FinishedLaunching`方法。
@@ -76,16 +76,16 @@ Visual Studio for Mac 不提供空白的範本。 所有範本都隨附的分鏡
 
 1. 使用的單一檢視應用程式範本建立新的 iOS 專案：
     
-    [ ![](ios-code-only-images/single-view-app.png "使用單一檢視應用程式範本")](ios-code-only-images/single-view-app.png)
+    [![](ios-code-only-images/single-view-app.png "使用單一檢視應用程式範本")](ios-code-only-images/single-view-app.png#lightbox)
 
 1. 刪除`Main.Storyboard`和`ViewController.cs`檔案。 請勿**不**刪除`LaunchScreen.Storyboard`。 應該刪除檢視控制器，因為它是建立在分鏡腳本檢視控制器背後的程式碼：
 1. 請務必選取**刪除**從快顯的對話方塊：
     
-    [ ![](ios-code-only-images/delete.png "從快顯對話方塊中選取 刪除")](ios-code-only-images/delete.png)
+    [![](ios-code-only-images/delete.png "從快顯對話方塊中選取 刪除")](ios-code-only-images/delete.png#lightbox)
 
 1. 在 Info.plist 中刪除內部資訊**部署資訊 > 主要介面**選項：
     
-    [ ![](ios-code-only-images/main-interface.png "刪除內部的主要介面選項的資訊")](ios-code-only-images/main-interface.png)
+    [![](ios-code-only-images/main-interface.png "刪除內部的主要介面選項的資訊")](ios-code-only-images/main-interface.png#lightbox)
 
 1. 最後，加入下列程式碼加入您`FinishedLaunching`AppDelegate 類別中的方法：
         
@@ -176,7 +176,7 @@ public class AppDelegate : UIApplicationDelegate
 
 每個控制站具有相關聯的檢視，也就是從存取`View`屬性。 上述程式碼變更的檢視`BackgroundColor`屬性`UIColor.LightGray`，因此它會顯示，如下所示：
 
- [ ![](ios-code-only-images/image1.png "檢視的背景是可見的淺灰色")](ios-code-only-images/image1.png)
+ [![](ios-code-only-images/image1.png "檢視的背景是可見的淺灰色")](ios-code-only-images/image1.png#lightbox)
 
 我們無法設定任何`UIViewController`子類別為`RootViewController`以這種方式，包括從 UIKit 以及我們可以撰寫自己的控制站。 例如，下列程式碼加入`UINavigationController`為`RootViewController`:
 
@@ -214,7 +214,7 @@ public class AppDelegate : UIApplicationDelegate
 
 這會產生如下所示的巢狀瀏覽控制器內的控制站：
 
- [ ![](ios-code-only-images/image2.png "導覽控制站內變成巢狀控制站")](ios-code-only-images/image2.png)
+ [![](ios-code-only-images/image2.png "導覽控制站內變成巢狀控制站")](ios-code-only-images/image2.png#lightbox)
 
 ## <a name="creating-a-view-controller"></a>建立檢視控制站
 
@@ -224,11 +224,11 @@ public class AppDelegate : UIApplicationDelegate
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](ios-code-only-images/customviewcontroller.png "新增名為 CustomViewController 類別")](ios-code-only-images/customviewcontroller.png)
+[![](ios-code-only-images/customviewcontroller.png "新增名為 CustomViewController 類別")](ios-code-only-images/customviewcontroller.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](ios-code-only-images/new-file.png "新增名為 CustomViewController 類別")](ios-code-only-images/new-file.png)
+[![](ios-code-only-images/new-file.png "新增名為 CustomViewController 類別")](ios-code-only-images/new-file.png#lightbox)
 
 -----
 
@@ -245,6 +245,8 @@ namespace CodeOnlyDemo
     }
 }
 ```
+
+<a name="Initializing_the_View"/>
 
 ## <a name="initializing-the-view"></a>初始化檢視
 
@@ -302,11 +304,11 @@ Window.RootViewController = navController;
 
 現在應用程式載入，`CustomViewController`載入內導覽控制站：
 
- [ ![](ios-code-only-images/customvc.png "CustomViewController 載入內導覽控制站")](ios-code-only-images/customvc.png)
+ [![](ios-code-only-images/customvc.png "CustomViewController 載入內導覽控制站")](ios-code-only-images/customvc.png#lightbox)
  
 按一下按鈕，將_發送_新檢視控制站至瀏覽堆疊：
 
-[ ![](ios-code-only-images/customvca.png "在巡覽堆疊推入新的檢視控制器")](ios-code-only-images/customvca.png)
+[![](ios-code-only-images/customvca.png "在巡覽堆疊推入新的檢視控制器")](ios-code-only-images/customvca.png#lightbox)
 
 ## <a name="building-the-view-hierarchy"></a>建立檢視階層架構
 
@@ -352,7 +354,7 @@ class CustomViewController : UIViewController
 
 應用程式與`UITextField`包含如下所示：
 
- [ ![](ios-code-only-images/image4.png "包含 UITextField 應用程式")](ios-code-only-images/image4.png)
+ [![](ios-code-only-images/image4.png "包含 UITextField 應用程式")](ios-code-only-images/image4.png#lightbox)
 
 我們可以加入`UITextField`密碼以類似的方式，不過此時我們設定`SecureTextEntry`屬性設定為 true，如下所示：
 
@@ -380,7 +382,7 @@ public class CustomViewController : UIViewController
 
 設定`SecureTextEntry = true`隱藏在文字方塊中輸入`UITextField`使用者如下所示：
 
- [ ![](ios-code-only-images/image4a.png "設定 SecureTextEntry true 會隱藏使用者所輸入的文字")](ios-code-only-images/image4a.png)
+ [![](ios-code-only-images/image4a.png "設定 SecureTextEntry true 會隱藏使用者所輸入的文字")](ios-code-only-images/image4a.png#lightbox)
 
 ### <a name="adding-the-button"></a>加入按鈕
 
@@ -403,7 +405,7 @@ View.AddSubview(submitButton);
 
 這個之後，登入畫面現在看起來如下所示：
 
- [ ![](ios-code-only-images/image5.png "登入畫面")](ios-code-only-images/image5.png)
+ [![](ios-code-only-images/image5.png "登入畫面")](ios-code-only-images/image5.png#lightbox)
 
 不同於在舊版的 iOS、 預設按鈕的背景是透明的。 變更按鈕的`BackgroundColor`屬性變更此：
 
@@ -419,7 +421,7 @@ submitButton.Layer.CornerRadius = 5f;
 
 這些變更，檢視看起來像這樣：
 
-[ ![](ios-code-only-images/image6.png "在檢視執行的範例")](ios-code-only-images/image6.png)
+[![](ios-code-only-images/image6.png "在檢視執行的範例")](ios-code-only-images/image6.png#lightbox)
  
 ## <a name="adding-multiple-views-to-the-view-hierarchy"></a>將多個檢視加入至檢視階層架構
 
@@ -452,7 +454,7 @@ submitButton.TouchUpInside += (sender, e) => {
 
 瀏覽如下所示：
 
-[ ![](ios-code-only-images/navigation.png "瀏覽如下所示此圖表")](ios-code-only-images/navigation.png)
+[![](ios-code-only-images/navigation.png "瀏覽如下所示此圖表")](ios-code-only-images/navigation.png#lightbox)
 
 請注意，根據預設，當您使用瀏覽控制站，iOS 應用程式提供導覽列和上一頁按鈕，以讓您向後移動堆疊。
 
@@ -477,7 +479,7 @@ foreach(var subview in View.Subviews)
 
 如果使用者旋轉裝置變成橫向，控制項不調整大小適當，如下列螢幕擷取畫面所示：
 
- [ ![](ios-code-only-images/image7.png "如果使用者旋轉裝置變成橫向，控制項不調整大小適當地")](ios-code-only-images/image7.png)
+ [![](ios-code-only-images/image7.png "如果使用者旋轉裝置變成橫向，控制項不調整大小適當地")](ios-code-only-images/image7.png#lightbox)
 
 若要修正此問題的一個方法是設定`AutoresizingMask`上每個檢視的屬性。 在此情況下我們想要的水平縮放控制項，我們會設定每個`AutoresizingMask`。 下列範例是針對`usernameField`，但相同會想要套用至檢視階層中每個小工具。
 
@@ -487,7 +489,7 @@ usernameField.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 
 現在我們旋轉的裝置或模擬器，當所有項目會自動縮放以填滿額外的空間，如下所示：
 
- [ ![](ios-code-only-images/image8.png "所有控制項都伸展以填滿額外的空間")](ios-code-only-images/image8.png)
+ [![](ios-code-only-images/image8.png "所有控制項都伸展以填滿額外的空間")](ios-code-only-images/image8.png#lightbox)
 
 ## <a name="creating-custom-views"></a>建立自訂檢視
 
@@ -592,7 +594,7 @@ submitButton.TouchUpInside += delegate
 
 現在，當我們執行應用程式，並點選 [提交] 按鈕，就會顯示為一個圓圈新的檢視：
 
- [ ![](ios-code-only-images/circles.png "會顯示新檢視的圓圈")](ios-code-only-images/circles.png)
+ [![](ios-code-only-images/circles.png "會顯示新檢視的圓圈")](ios-code-only-images/circles.png#lightbox)
 
 ## <a name="creating-a-launch-screen"></a>建立啟動螢幕
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 7ee2af392a00e045b1992d189a15d7a0ee04b02f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: a2378cb439ceed94751e61fd44b54aae3a65bebd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="touch-id"></a>Touch ID
 
@@ -29,7 +29,7 @@ IOS 7 已引入 touch ID 來驗證使用者的密碼類似。 不過，它是限
 Keychain 是特殊的資料庫，其中每個資料列就所謂_Keychain 項目_。 每個項目 keychain 屬性所描述，並且是加密的值所組成。 若要允許有效率地使用金鑰鏈，它適合小項目，或_密碼_。
 每個金鑰鏈項目受到使用者密碼和唯一的裝置密碼。 Keychain 的項目應該受到保護，即使使用者不使用他們的裝置。 這藉由在 iOS 中只允許裝置鎖定時變成可用的項目，當裝置鎖定而無法使用。 它們也可以儲存在加密的備份。 Keychain 的重要功能之一是強制執行存取控制。應用程式可以存取它的 keychain 的部分，將會防止所有其他應用程式。 下圖說明應用程式互動 keychain 的方式：
 
-[![](touchid-images/image1.png "此圖說明應用程式如何與 keychain 互動")](touchid-images/image1.png)
+[![](touchid-images/image1.png "此圖說明應用程式如何與 keychain 互動")](touchid-images/image1.png#lightbox)
 
 ### <a name="secure-enclave"></a>安全 Enclave
 
@@ -49,7 +49,7 @@ Keychain 無法解密的金鑰鏈項目本身;而是在中完成*安全 Enclave*
 
 存取控制清單是描述發生什麼事必須設為允許執行特定作業的相關資訊的 iOS 8 中的新金鑰鏈項目屬性。 這可能是格式為顯示 [警示] 對話方塊，或要求新的密碼。 ACL 可讓您設定的協助工具和驗證金鑰鏈項目。 下圖顯示這個新屬性如何結合其餘 keychain 項目：
 
-[![](touchid-images/image2.png "這個圖表會顯示這個新屬性如何結合其餘 keychain 項目")](touchid-images/image2.png)
+[![](touchid-images/image2.png "這個圖表會顯示這個新屬性如何結合其餘 keychain 項目")](touchid-images/image2.png#lightbox)
 
 從 iOS 8，開始有現在是新的使用者是否存在原則`SecAccessControl`，這會強制執行安全的 enclave 和更新版本上 iPhone 5 秒。 我們可以看到下面只如何裝置組態可能會影響原則評估資料表中：
 
@@ -94,7 +94,7 @@ Keychain 無法解密的金鑰鏈項目本身;而是在中完成*安全 Enclave*
 雖然這兩個功能會提供本機驗證，但不提供的機制來驗證遠端伺服器的 應用程式或使用者。
 本機驗證會提供新的標準使用者介面進行驗證。 在 Touch ID，這是具有兩個按鈕，如下所示的警示檢視。 一個按鈕，以 [取消]，以及一到使用後援驗證-密碼的方式。 另外還有必須設定的自訂訊息。 它是很好的作法，這可以用來說明為何需要 Touch ID 驗證使用者。
 
-[![](touchid-images/image12.png "Touch ID 驗證警示")](touchid-images/image12.png)
+[![](touchid-images/image12.png "Touch ID 驗證警示")](touchid-images/image12.png#lightbox)
 
 ### <a name="with-keychain-services"></a>Keychain 服務
 
@@ -116,7 +116,7 @@ Keychain 無法解密的金鑰鏈項目本身;而是在中完成*安全 Enclave*
 
 若要這樣做應用程式會呼叫本機驗證，就會開始內安全 Enclave 作業內的原則評估。 您可以利用這驗證提供給您的應用程式，而不需直接查詢/存取安全的 Enclave。
 
-[![](touchid-images/image13a.png "使用本機不使用金鑰鏈服務驗證")](touchid-images/image13a.png)
+[![](touchid-images/image13a.png "使用本機不使用金鑰鏈服務驗證")](touchid-images/image13a.png#lightbox)
 
 應用程式中使用本機驗證提供簡單的方式來實作使用者驗證，例如若要解除鎖定僅供裝置擁有者，例如銀行應用程式，或以利家長監護的眼睛功能的人應用程式。 您也可以使用它做為延伸已經存在的驗證方法 – 使用者要其資訊安全，但他們也想要有選項。
 
@@ -150,16 +150,16 @@ Keychain 無法解密的金鑰鏈項目本身;而是在中完成*安全 Enclave*
 2.  按兩下`MainStoryboard.Storyboard`iOS 設計工具中開啟範例。 在此範例中，我們想要將新的畫面加入至我們的應用程式，這會控制驗證。 這將會移目前`MasterViewController`。
 3.  拖曳新**檢視控制器**從**工具箱**至**設計介面**。 設定為**根檢視控制器**由**Ctrl + 拖曳**從**導覽控制站**:
 
-    [![](touchid-images/image4.png "設定根檢視控制站")](touchid-images/image4.png)
+    [![](touchid-images/image4.png "設定根檢視控制站")](touchid-images/image4.png#lightbox)
 4.  新的檢視控制器`AuthenticationViewController`。
 5.  下一步，拖曳按鈕，並將它放在`AuthenticationViewController`。 呼叫這個`AuthenticateButton`，並為它提供文字`Add a Chore`。
 6.  在建立事件`AuthenticateButton`呼叫`AuthenticateMe`。
 7.  建立手動從話題`AuthenticationViewController`按一下黑色列底部和**Ctrl + 拖曳**列從`MasterViewController`，然後選擇**發送**(或**顯示**如果使用大小類別）：
 
-    [![](touchid-images/image5.png "從列拖曳至 MasterViewController 並選擇推入，或顯示")](touchid-images/image6.png)
+    [![](touchid-images/image5.png "從列拖曳至 MasterViewController 並選擇推入，或顯示")](touchid-images/image6.png#lightbox)
 8.  按一下新建立的話題並予以識別項`AuthenticationSegue`，如下所示：
 
-    [![](touchid-images/image7.png "設 AuthenticationSegue segue 識別碼")](touchid-images/image7.png)
+    [![](touchid-images/image7.png "設 AuthenticationSegue segue 識別碼")](touchid-images/image7.png#lightbox)
 9.  將下列程式碼新增至 `AuthenticationViewController`：
 
     ```
@@ -191,19 +191,19 @@ Keychain 無法解密的金鑰鏈項目本身;而是在中完成*安全 Enclave*
 
 這是您需要實作使用本機驗證 Touch ID 驗證的程式碼。 下圖中反白顯示的線條顯示使用本機驗證：
 
-[![](touchid-images/image8.png "反白顯示的線會顯示使用本機驗證")](touchid-images/image8.png)
+[![](touchid-images/image8.png "反白顯示的線會顯示使用本機驗證")](touchid-images/image8.png#lightbox)
 
 首先，我們需要建立裝置是否可接受輸入時，使用 Touch ID 的能力`CanEvaluatePolicy`並傳入原則`DeviceOwnerAuthenticationWithBiometrics`。 如果這是 true，則我們可以使用，以顯示 Touch ID UI `EvaluatePolicy`。 有三組資訊，我們必須將傳遞至`EvaluatePolicy`– 原則本身、 字串，用以說明為何需要，驗證和回覆的處理常式。 回覆處理常式會告訴應用程式，因此應該在成功，或不成功，驗證的情況下執行的。 讓我們來看靠近回覆處理常式：
 
-[![](touchid-images/image9.png "回應處理常式")](touchid-images/image9.png)
+[![](touchid-images/image9.png "回應處理常式")](touchid-images/image9.png#lightbox)
 
 回應處理常式會指定型別的`LAContextReplyHandler`，其可接受的參數成功 –`bool`值，和`NSError`呼叫`error`。 如果成功，這是我們實際執行的地方不論它是我們想要進行驗證-在此情況下顯示畫面，讓我們將加入新的例行工作。 請記住的本機驗證警告的其中一個是，必須在前景執行，因此請務必使用`InvokeOnMainThread`:
 
-[![](touchid-images/image10.png "用於本機驗證 InvokeOnMainThread")](touchid-images/image10.png)
+[![](touchid-images/image10.png "用於本機驗證 InvokeOnMainThread")](touchid-images/image10.png#lightbox)
 
 最後，當驗證是否已順利完成，我們想要轉換為`MasterViewController`。 `PerformSegue`方法可以用來執行這項操作：
 
-[![](touchid-images/image11.png "呼叫轉換至 MasterViewController PerformSegue 方法")](touchid-images/image11.png)
+[![](touchid-images/image11.png "呼叫轉換至 MasterViewController PerformSegue 方法")](touchid-images/image11.png#lightbox)
 
 ## <a name="summary"></a>總結
 本指南中我們探討了鑰匙圈，這在 iOS 中的運作方式。 我們也已探索 keychain ACL，並變更這在 iOS 中的。 接下來，我們採用查看本機驗證架構，其 iOS 8 的新功能，並查看我們的應用程式中實作 Touch ID 的驗證。

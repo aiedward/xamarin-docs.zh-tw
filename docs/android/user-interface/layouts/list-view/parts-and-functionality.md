@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: a963922dfdc07164b7c20f84be4f0b87440bff13
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4a7947c40d80c0ff8cb35dab54a11907280335d9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="listview-parts-and-functionality"></a>ListView 組件和功能
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -31,41 +30,36 @@ A`ListView`包含下列部分：
 
 這些螢幕擷取畫面使用基本`ListView`控制項以顯示快速捲動和區段索引的呈現方式：
 
-[![使用一般舊資料列，應用程式的螢幕擷取畫面快速捲動和區段索引](parts-and-functionality-images/listviewparts.png)](parts-and-functionality-images/listviewparts.png)
+[![使用一般舊資料列，應用程式的螢幕擷取畫面快速捲動和區段索引](parts-and-functionality-images/listviewparts.png)](parts-and-functionality-images/listviewparts.png#lightbox)
 
 構成項目`ListView`以下更詳細說明：
 
-<a name="Rows" />
 
 ## <a name="rows"></a>列
 
 每個資料列都有它自己`View`。 檢視可以是內建的檢視中定義的其中一個`Android.Resources`，或自訂的檢視。 每個資料列可以使用相同的檢視配置或它們都可以不同。 使用內建的配置和其他項目以說明如何定義自訂版面配置的這份文件中有範例。
 
-<a name="Adapter" />
 
 ## <a name="adapter"></a>配接器
 
 `ListView`控制項需要`Adapter`提供格式化`View`每個資料列。 Android 具有內建配接器以及檢視，可以使用，或您可以建立自訂類別。
 
-<a name="Fast_Scrolling" />
 
 ## <a name="fast-scrolling"></a>快速捲動
 
 當`ListView`包含多個資料列資料的快速捲動也能夠幫助使用者瀏覽至清單的任何部分。 快速捲動捲' 可以選擇性地啟用 （和自訂應用程式開發介面層級 11 和更高版本）。
 
-<a name="Section_Index" />
 
 ## <a name="section-index"></a>區段索引
 
 捲動詳細清單，同時選擇性區段索引提供意見反應與使用者清單的哪個部分它們目前正在檢視。 只適合在較長的清單，通常是在配合快速捲動。
 
-<a name="Classes_Overview" />
 
 ## <a name="classes-overview"></a>類別概觀
 
 主要的類別，用來顯示`ListViews`如下所示：
 
-[![UML 圖表說明 ListView 和相關的類別之間的關聯性](parts-and-functionality-images/image2.png)](parts-and-functionality-images/image2.png)
+[![UML 圖表說明 ListView 和相關的類別之間的關聯性](parts-and-functionality-images/image2.png)](parts-and-functionality-images/image2.png#lightbox)
 
 下面會描述每個類別的用途：
 

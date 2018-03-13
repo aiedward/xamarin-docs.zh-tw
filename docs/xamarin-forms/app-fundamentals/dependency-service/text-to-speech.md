@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2017
-ms.openlocfilehash: c5bd753aaa3a9e807a03a9fb05b233cfa39d0dc3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6ac9ca7bae517602c33729134eb0bd48359afbc7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-text-to-speech"></a>實作文字轉換語音
 
@@ -44,7 +44,7 @@ public interface ITextToSpeech
 撰寫程式碼中的共用程式碼是此介面可讓 Xamarin.Forms 應用程式存取每個平台上的語音應用程式開發介面。
 
 > [!NOTE]
-> **請注意**： 實作介面的類別都必須有參數的建構函式，才能使用`DependencyService`。
+> 實作介面的類別都必須有參數的建構函式，才能使用`DependencyService`。
 
 <a name="iOS_Implementation" />
 
@@ -84,15 +84,12 @@ namespace DependencyServiceSample.iOS
 
 ## <a name="android-implementation"></a>Android 的實作
 
-Android 程式碼是 iOS 版本比更為複雜： 它需要實作的類別繼承自特定的 Android`Java.Lang.Object`並實作`IOnInitListener`以及介面。
-
-Xamarin.Forms 也有提供`Forms.Context`物件，它是 Android 的內容目前的執行個體。 許多的 Android SDK 方法都需要，要能夠呼叫的例子`StartActivity()`。
+Android 程式碼是 iOS 版本比更為複雜： 它需要實作的類別繼承自特定的 Android`Java.Lang.Object`並實作`IOnInitListener`以及介面。 它也需要存取目前的 Android 內容，由`MainActivity.Instance`屬性。
 
 ```csharp
 [assembly: Dependency(typeof(TextToSpeechImplementation))]
 namespace DependencyServiceSample.Droid
 {
-
     public class TextToSpeechImplementation : Java.Lang.Object, ITextToSpeech, TextToSpeech.IOnInitListener
     {
         TextToSpeech speaker;
@@ -103,7 +100,7 @@ namespace DependencyServiceSample.Droid
             toSpeak = text;
             if (speaker == null)
             {
-                speaker = new TextToSpeech(Forms.Context, this);
+                speaker = new TextToSpeech(MainActivity.Instance, this);
             }
             else
             {

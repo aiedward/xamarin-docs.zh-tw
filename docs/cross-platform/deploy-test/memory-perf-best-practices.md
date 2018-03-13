@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 56d868f64de009d01930ec34ee2cb436276006ef
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 287f564ba74050aa8a06e5a582ae8db6657e440e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cross-platform-performance"></a>跨平台效能
 
@@ -20,23 +20,6 @@ _有許多技巧可增加利用 Xamarin 平台建置之應用程式的效能。�
 
 不佳的應用程式效能會以許多方式表現。 它可能會讓應用程式看起來沒有回應、造成捲動緩慢，以及減少電池壽命。 不過，最佳化效能不僅僅只牽涉到實作有效率的程式碼而已。 同時也必須考量使用者對於應用程式效能的體驗。 例如，確保作業能在不封鎖使用者執行其他活動的情況下執行，將可以協助改善使用者體驗。
 
-有一些技巧可以用來增加利用 Xamarin 平台建置之應用程式的效能與認知效能。 包括：
-
-- [使用分析工具](#profiler)
-- [釋放 IDisposable 資源](#idisposable)
-- [取消訂閱事件](#events)
-- [使用弱式參考以防止 Immortal 物件](#weakreferences)
-- [延遲建立物件的成本](#lazy)
-- [實作非同步作業](#async)
-- [使用 SGen 記憶體回收行程](#sgen)
-- [減少應用程式的大小](#linker)
-- [最佳化影像資源](#optimizeimages)
-- [減少應用程式的啟用期間](#activationperiod)
-- [減少 Web 服務通訊](#webservicecommunication)
-
-此免費 [Xamarin University 影片](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)也包含了設計 Xamarin 應用程式的實用技巧。
-
-[![](memory-perf-best-practices-images/clancey-sml.png "關於避免常見錯誤的免費 Xamarin University 影片")](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)
 
 <a name="profiler" />
 

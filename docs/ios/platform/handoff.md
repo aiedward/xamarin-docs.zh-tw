@@ -7,11 +7,11 @@ ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0b3471f607bbde6560af597b6b901e6fbd1ec0b0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 25220f37433037b55f13c4de5a07c0c09173a269
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="handoff"></a>遞交
 
@@ -19,7 +19,7 @@ _本文章涵蓋在要傳送的 Xamarin.iOS 應用程式中使用的遞移式使
 
 Apple 在 iOS 8 和 OS X Yosemite (10.10) 提供通用的機制，使用者要傳送活動啟動他們的裝置，其中引進遞交到執行相同的應用程式或支援相同活動的另一個應用程式的另一個裝置。
 
-[ ![](handoff-images/handoff02.png "執行遞移式運算的一個範例")](handoff-images/handoff02.png)
+[![](handoff-images/handoff02.png "執行遞移式運算的一個範例")](handoff-images/handoff02.png#lightbox)
 
 這篇文章會採用快速查看啟用共用 Xamarin.iOS 應用程式中的活動，並涵蓋遞移式中的架構詳細資料：
 
@@ -45,7 +45,7 @@ Apple 在 iOS 8 和 OS X Yosemite (10.10) 提供通用的機制，使用者要�
 
 在接收裝置上，使用者會收到通知提供接續的活動。 如果使用者選擇繼續該活動執行新的裝置上，指定的應用程式啟動 （如果尚未執行），從裝載`NSUserActivity`用來重新啟動活動。
 
-[ ![](handoff-images/handoffinteractions.png "繼續使用者活動的概觀")](handoff-images/handoffinteractions.png)
+[![](handoff-images/handoffinteractions.png "繼續使用者活動的概觀")](handoff-images/handoffinteractions.png#lightbox)
 
 只有應用程式可共用相同的開發人員小組 ID 及回應特定_活動型別_適合接續。 應用程式定義活動支援的類型，它在`NSUserActivityTypes`索引鍵及其**Info.plist**檔案。 根據這點，持續的裝置選擇要執行接續小組 ID，活動型別為基礎的應用程式並選擇性地_活動標題_。
 
@@ -114,21 +114,21 @@ OS X 上`NSUserActivity`受`AppKit`自動與回應相關聯，主視窗的文件
 3. 如果您尚未這樣做，請按一下 上**識別碼**並建立您的應用程式的識別碼 (例如`com.company.appname`)，否則請編輯您現有的識別碼。
 4. 請確認**iCloud**已核取指定之識別碼的服務： 
 
-    [ ![](handoff-images/provision01.png "啟用指定之識別碼的 iCloud 服務")](handoff-images/provision01.png)
+    [![](handoff-images/provision01.png "啟用指定之識別碼的 iCloud 服務")](handoff-images/provision01.png#lightbox)
 5. 儲存您的變更。
 4. 按一下**佈建的設定檔** > **開發**並建立新的開發工作，讓您佈建設定檔的應用程式： 
 
-    [ ![](handoff-images/provision02.png "建立新的開發佈建設定檔的應用程式")](handoff-images/provision02.png)
+    [![](handoff-images/provision02.png "建立新的開發佈建設定檔的應用程式")](handoff-images/provision02.png#lightbox)
 5. 請下載並安裝新的佈建設定檔或使用 Xcode 下載及安裝設定檔。
 6. 編輯您 Xamarin.iOS 專案選項，並確保您使用您剛才建立的佈建設定檔： 
 
-    [ ![](handoff-images/provision03.png "選取剛才建立的佈建設定檔")](handoff-images/provision03.png)
+    [![](handoff-images/provision03.png "選取剛才建立的佈建設定檔")](handoff-images/provision03.png#lightbox)
 7. 接著，編輯您**Info.plist**檔案，並確定您使用的用來建立佈建設定檔的應用程式識別碼： 
 
-    [ ![](handoff-images/provision04.png "設定應用程式識別碼")](handoff-images/provision04.png)
+    [![](handoff-images/provision04.png "設定應用程式識別碼")](handoff-images/provision04.png#lightbox)
 8. 捲動到**背景模式**區段，並檢查下列項目： 
 
-    [ ![](handoff-images/provision05.png "啟用所需的背景模式")](handoff-images/provision05.png)
+    [![](handoff-images/provision05.png "啟用所需的背景模式")](handoff-images/provision05.png#lightbox)
 9. 儲存所有檔案的變更。
 
 這些設定，應用程式現在已準備好存取遞移式架構應用程式開發介面。 如需佈建的詳細資訊，請參閱我們[裝置佈建](~/ios/get-started/installation/device-provisioning/index.md)和[佈建您的應用程式](~/ios/get-started/installation/device-provisioning/index.md)輔助線。
@@ -155,7 +155,7 @@ _活動型別識別項_短字串加入至`NSUserActivityTypes`陣列的應用程
 
 若要建立必要的活動型別識別碼，以支援這個行為，請編輯**Info.plist**檔案，並切換至**來源**檢視。 新增`NSUserActivityTypes`鍵，然後建立下列識別碼：
 
-[ ![](handoff-images/type01.png "NSUserActivityTypes 索引鍵和 plist 編輯器中所需的識別項")](handoff-images/type01.png)
+[![](handoff-images/type01.png "NSUserActivityTypes 索引鍵和 plist 編輯器中所需的識別項")](handoff-images/type01.png#lightbox)
 
 我們建立四個新活動類型識別項，各供一個範例中的索引標籤**MonkeyBrowser**應用程式。 當建立您自己的應用程式，來取代原始的內容`NSUserActivityTypes`陣列活動類型識別碼的活動特定應用程式支援。
 
@@ -610,15 +610,15 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 任何索引標籤上，當使用者輸入新的 URL 和點選**移**按鈕，新`NSUserActivity`建立該索引標籤，其中包含使用者目前瀏覽的 URL:
 
-[ ![](handoff-images/handoff01.png "範例遞移式應用程式")](handoff-images/handoff01.png)
+[![](handoff-images/handoff01.png "範例遞移式應用程式")](handoff-images/handoff01.png#lightbox)
 
 如果其他使用者的裝置有**MonkeyBrowser**安裝，應用程式登入 icloud 的功能使用相同的使用者帳戶，是在同一個網路，而且非常接近上述的裝置，遞移式活動將會顯示在首頁（在較低的左下角） 畫面中：
 
-[ ![](handoff-images/handoff02.png "在左下角的 [首頁] 螢幕上顯示的遞移式活動")](handoff-images/handoff02.png)
+[![](handoff-images/handoff02.png "在左下角的 [首頁] 螢幕上顯示的遞移式活動")](handoff-images/handoff02.png#lightbox)
 
 如果使用者向上拖曳遞交圖示上，而且會啟動應用程式中指定的使用者活動`NSUserActivity`繼續在新的裝置上：
 
-[ ![](handoff-images/handoff03.png "繼續新的裝置上的使用者活動")](handoff-images/handoff03.png)
+[![](handoff-images/handoff03.png "繼續新的裝置上的使用者活動")](handoff-images/handoff03.png#lightbox)
 
 當使用者活動成功傳送到其他 Apple 裝置、 傳送裝置的`NSUserActivity`會接收呼叫`UserActivityWasContinued`方法上的其`NSUserActivityDelegate`，讓它知道使用者活動具有已成功地轉移到另一個裝置。
 

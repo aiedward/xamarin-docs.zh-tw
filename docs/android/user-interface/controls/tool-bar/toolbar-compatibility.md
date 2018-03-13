@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: d4d6e93bf3a755d9b48c9e096de87b4c89f2831f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a17ad79d3f3b537332494fc368c878f2733d5db2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbar-compatibility"></a>工具列相容性
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -36,7 +35,6 @@ ms.lasthandoff: 02/27/2018
 下列各節中詳細說明每個步驟。
 
 
-<a name="android_version" />
 
 ## <a name="set-the-minimum-and-target-android-version"></a>設定最小值和目標 Android 版本
 
@@ -44,23 +42,20 @@ ms.lasthandoff: 02/27/2018
 
 目標 Framework 設定為應用程式開發介面層級 21 層級或更高，然後設定 Android API 層級的專案設定，應用程式是要支援的最小 Android 版本。 如需有關設定 Android API 層級的詳細資訊，請參閱[了解 Android API 層級](~/android/app-fundamentals/android-api-levels.md)。 在`ToolbarFun`範例中，最低的 Android 版本設為 KitKat (4.4 API 層級)。 
 
-<a name="install_nuget" />
 
 ## <a name="install-the-appcompat-nuget-package"></a>安裝 AppCompat NuGet 套件
 
 接下來，加入[Android 支援程式庫 v7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)專案的封裝。 在 Visual Studio 中，以滑鼠右鍵按一下**參考**選取**管理 NuGet 封裝...**.按一下**瀏覽**並搜尋**Android 支援程式庫 v7 AppCompat**。 選取**Xamarin.Android.Support.v7.AppCompat**按一下**安裝**: 
 
-[![在 管理 NuGet 封裝中所選取的螢幕擷取畫面 V7 Appcompat 封裝](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png)
+[![在 管理 NuGet 封裝中所選取的螢幕擷取畫面 V7 Appcompat 封裝](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png#lightbox)
 
 安裝此 NuGet 時，數個其他的 NuGet 封裝也會安裝如果尚不存在 (例如**Xamarin.Android.Support.Animated.Vector.Drawable**， **Xamarin.Android.Support.v4**，和**Xamarin.Android.Support.Vector.Drawable**)。 如需安裝 NuGet 封裝的詳細資訊，請參閱[逐步解說： 在您的專案包括 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。 
 
-<a name="appcompat_theme" />
 
 ## <a name="use-an-appcompat-theme-and-toolbar"></a>使用 AppCompat 佈景主題和工具列
 
 AppCompat 程式庫隨附數個`Theme.AppCompat`可用在任何版本的 Android AppCompat 程式庫所支援的佈景主題。 `ToolbarFun`範例應用程式佈景主題衍生自`Theme.Material.Light.DarkActionBar`，這並不適用於棒棒糖符號比之前的 Android 版本。 因此，`ToolbarFun`必須改寫以使用 AppCompat 對應項目為佈景主題， `Theme.AppCompat.Light.DarkActionBar`。 此外，因為`Toolbar`是不適用於 Android 的版本早於棒棒糖符號，我們必須使用 AppCompat 版本`Toolbar`。 因此，必須使用配置`android.support.v7.widget.Toolbar`而不是`Toolbar`。 
 
-<a name="update_layouts" />
 
 ### <a name="update-layouts"></a>更新的版面配置
 
@@ -91,7 +86,6 @@ AppCompat 程式庫隨附數個`Theme.AppCompat`可用在任何版本的 Android
 
 請注意，`?attr`值不再前面會加上`android:`(請記得，`?`標記法參考目前的佈景主題中的資源)。 如果`?android:attr`仍用在這裡，Android 應該要參考的屬性值從目前正在執行的平台，而不是從 AppCompat 程式庫。 由於這個範例使用`actionBarSize`AppCompat 程式庫所定義`android:`卸除前置詞。 同樣地，`@android:style`變更為`@style`以便`android:theme`屬性設為佈景主題 AppCompat 文件庫中&ndash;`ThemeOverlay.AppCompat.Dark.ActionBar`此處使用佈景主題，而非`ThemeOverlay.Material.Dark.ActionBar`。 
 
-<a name="update_style" />
 
 ### <a name="update-the-style"></a>更新樣式
 
@@ -113,7 +107,6 @@ AppCompat 程式庫隨附數個`Theme.AppCompat`可用在任何版本的 Android
 項目名稱和父佈景主題，在此範例中會不會再加上`android:`因為我們使用 AppCompat 程式庫。 此外，父佈景主題變更為 AppCompat 版本`Light.DarkActionBar`。 
 
 
-<a name="update_menus" />
 
 ### <a name="update-menus"></a>更新功能表
 
@@ -180,7 +173,6 @@ local:showAsAction="ifRoom"
 
 這個命名空間參數如何提供支援`showAsAction`Android API 層級 11 以前的版本上的屬性？ 自訂屬性`showAsAction`和 AppCompat NuGet 安裝時，應用程式中包含所有可能的值。 
 
-<a name="subclass" />
 
 ## <a name="subclass-appcompatactivity"></a>子類別 AppCompatActivity
 
@@ -208,7 +200,7 @@ SupportActionBar.Title = "My AppCompat Toolbar";
 
 建置應用程式和裝置前的棒棒糖符號或 Android 模擬器上執行。 下列螢幕擷取畫面顯示 AppCompat 版本**ToolbarFun** Nexus 4 的執行 KitKat (應用程式開發介面 19) 上： 
 
-[![這兩個工具列會顯示的 KitKat 裝置上執行的應用程式的完整螢幕擷取畫面，](toolbar-compatibility-images/02-running-on-kitkat-sml.png)](toolbar-compatibility-images/02-running-on-kitkat.png)
+[![這兩個工具列會顯示的 KitKat 裝置上執行的應用程式的完整螢幕擷取畫面，](toolbar-compatibility-images/02-running-on-kitkat-sml.png)](toolbar-compatibility-images/02-running-on-kitkat.png#lightbox)
 
 AppCompat 程式庫時，主題不需要切換為基礎的 Android 版本&ndash;AppCompat 程式庫會讓您能夠在所有支援的 Android 版本之間提供一致的使用者體驗。 
 

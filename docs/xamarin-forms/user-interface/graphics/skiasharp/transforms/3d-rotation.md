@@ -4,14 +4,15 @@ description: "使用非仿射轉換旋轉 2D 在 3D 空間中的物件。"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 1341cde32778358fbeb7b65045616d5d81623d37
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: a959278b5de72792b23e46372b1333362bed91c8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="3d-rotations"></a>3D 旋轉
 
@@ -27,7 +28,7 @@ _使用非仿射轉換旋轉 2D 在 3D 空間中的物件。_
 
 三維的座標系統新增隨後在概念上呼叫第三個軸，Z 軸是直角至螢幕。 在 3D 空間中的座標點會以三個數字來表示: （x，y，z）。 以 3D 本文中，增加的 X 值中使用的座標系統是權限，以及增加 Y 的值會跟著中斷，如同兩個維度。 增加正數的 Z 值送出螢幕。 原點是左上角，就像 2D 圖形一樣。 您可以將螢幕的視為直角到此平面在 Z 軸 XY 平面。
 
-這稱為左邊的座標系統。 如果您指向左手正數 X 方向的食指協調 （至右邊），並中間手指朝其方向的遞增的 Y 座標 （下），然後在增加 Z 座標 &#x2014; 的方向的捲動方塊點從螢幕，以延伸出。
+這稱為左邊的座標系統。 如果您指向左手朝其方向的 X 座標 （至右邊），正如食指中間手指方向增加 Y 座標 （下），然後您捲動方塊中的點增加 Z 座標的方向，從出延伸畫面。
 
 在 3D 圖形中，轉換取決於 4-4 矩陣。 以下是 4-4 身分識別矩陣：
 
@@ -109,7 +110,7 @@ X 的值保持不變時進行這項轉換。 繞 Y 軸旋轉會保留不變的 Y
 |    0       0     0  1  |
 </pre>
 
-座標系統的慣用右手或左手所隱含的方向旋轉。 這是慣用左手系統，因此，如果您指向的左手朝向遞增的特定軸 &#x2014; 的值軸之捲動方塊繞 X 軸旋轉右邊繞 Z 軸 &#x2014; 旋轉繞著 Y 軸，並朝向您的向下然後其他手指曲線表示旋轉正面角度的方向。
+座標系統的慣用右手或左手所隱含的方向旋轉。 這是慣用左手系統，因此，如果您指向的左手朝向增加特定的座標軸值軸之捲動方塊 — 繞 X 軸旋轉右邊繞 Z 軸旋轉旋轉繞著 Y 軸，並朝向您的向下 — 的曲線 yo其他手指表示旋轉正面角度的方向。
 
 `SKMatrix44` 已經一般化靜態[ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/)和[ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/)方法可讓您指定的軸的旋轉角度，就會發生：
 
@@ -408,7 +409,7 @@ public partial class Rotation3DPage : ContentPage
 
 當您試驗第四個滑桿時，您會注意到不同的深度設定不將物件移進一步遠離檢視器中，但改為 alter 的觀點來看效果範圍：
 
-[![](3d-rotation-images/rotation3d-small.png "旋轉的 3D 頁面的三個螢幕擷取畫面")](3d-rotation-images/rotation3d-large.png "旋轉的 3D 頁面的三個螢幕擷取畫面")
+[![](3d-rotation-images/rotation3d-small.png "旋轉的 3D 頁面的三個螢幕擷取畫面")](3d-rotation-images/rotation3d-large.png#lightbox "旋轉的 3D 頁面的三個螢幕擷取畫面")
 
 **3D 動畫的旋轉**也會使用`SKMatrix44`以動畫方式顯示在 3D 空間中的文字字串。 `textPaint`物件設定為建構函式中使用欄位來決定文字的界限：
 
@@ -442,7 +443,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-`OnAppearing`覆寫定義三個 Xamarin.Forms`Animation`以動畫方式顯示物件`xRotationDegrees`， `yRotationDegrees`，和`zRotationDegrees`欄位不同的速率。 請注意，這些動畫的週期設為質數 &#x2014;5 秒，7 秒，和 11 秒 &#x2014;讓每個 385 秒或超過 10 分鐘，只會重複整體組合：
+`OnAppearing`覆寫定義三個 Xamarin.Forms`Animation`以動畫方式顯示物件`xRotationDegrees`， `yRotationDegrees`，和`zRotationDegrees`欄位不同的速率。 請注意這些動畫的週期設為主要數字-5 秒，7 秒和 11 秒，讓每個 385 秒或超過 10 分鐘，只會重複整體組合：
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -532,7 +533,7 @@ public class AnimatedRotation3DPage : ContentPage
 
 這個 3D 旋轉是括住數個 2D 轉換將旋轉的中心點移至螢幕的中央，並調整文字字串的大小，使其與螢幕的寬度相同：
 
-[![](3d-rotation-images/animatedrotation3d-small.png "三個螢幕擷取畫面的動畫旋轉的 3D 頁面")](3d-rotation-images/animatedrotation3d-large.png "的動畫旋轉的 3D 頁面的三個螢幕擷取畫面")
+[![](3d-rotation-images/animatedrotation3d-small.png "三個螢幕擷取畫面的動畫旋轉的 3D 頁面")](3d-rotation-images/animatedrotation3d-large.png#lightbox "的動畫旋轉的 3D 頁面的三個螢幕擷取畫面")
 
 
 ## <a name="related-links"></a>相關連結

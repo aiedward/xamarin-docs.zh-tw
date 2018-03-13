@@ -7,23 +7,22 @@ ms.assetid: E5314D7F-2AAC-40DA-BEBA-27C834F078DD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/29/2017
-ms.openlocfilehash: 9f084899f44e0104d0aa2d4b3c0509812bd3fdd2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: ef073999e10e184806089bed3ef9ab93e2f28dd6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="firebase-cloud-messaging"></a>Firebase 雲端訊息
 
 _Firebase 雲端傳訊 (FCM) 是一種服務，可促進行動裝置應用程式與伺服器應用程式之間的傳訊。本文章提供 FCM 的運作方式的概觀並說明如何設定 Google 服務，好讓您的應用程式可以使用 FCM。_
 
-[![Firebase Cloud Messaging 英雄映像](firebase-cloud-messaging-images/preview.png)](firebase-cloud-messaging-images/preview.png)
+[![Firebase Cloud Messaging 英雄映像](firebase-cloud-messaging-images/preview.png)](firebase-cloud-messaging-images/preview.png#lightbox)
 
 本主題提供如何 Firebase Cloud Messaging 將訊息路由傳送 Xamarin.Android 應用程式和應用程式伺服器之間的高階概觀，並取得認證，好讓您的應用程式可以使用 FCM 服務提供的逐步程序。
 
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -31,12 +30,11 @@ Firebase 雲端傳訊 (FCM) 是一種跨平台服務會處理傳送、 路由及
 
 下圖所示，FCM 會做為訊息寄件者和用戶端之間的媒介。 A*用戶端應用程式*是裝置執行的 FCM 啟用應用程式。 *應用程式伺服器*（由您或您的公司所提供） 是用戶端應用程式與通訊透過 FCM FCM 啟用伺服器。 不同於 GCM，FCM 它可讓您將訊息傳送至用戶端應用程式直接透過 Firebase 主控台通知 GUI:
 
-[![FCM 位於用戶端應用程式和應用程式伺服器之間](firebase-cloud-messaging-images/01-server-fcm-app-sml.png)](firebase-cloud-messaging-images/01-server-fcm-app.png)
+[![FCM 位於用戶端應用程式和應用程式伺服器之間](firebase-cloud-messaging-images/01-server-fcm-app-sml.png)](firebase-cloud-messaging-images/01-server-fcm-app.png#lightbox)
 
 使用 FCM，應用程式伺服器可以將訊息傳送至單一裝置、 裝置、 群組或主題訂閱的裝置數目。 用戶端應用程式可以使用 FCM 訂閱 （例如，若要接收遠端通知） 的應用程式伺服器的下游訊息。 如需不同類型的 Firebase 訊息的詳細資訊，請參閱[關於 FCM 訊息](https://firebase.google.com/docs/cloud-messaging/concept-options)。
 
 
-<a name="inaction" />
 
 ## <a name="firebase-cloud-messaging-in-action"></a>Firebase 雲端訊息的動作
 
@@ -64,7 +62,7 @@ FCM 使用下列認證來識別應用程式伺服器和用戶端應用程式，�
 
 用戶端應用程式必須先向 FCM 之前訊息發生的情況。 用戶端應用程式必須完成註冊步驟，如下圖所示：
 
-[![應用程式註冊步驟圖表](firebase-cloud-messaging-images/02-app-registration-sml.png)](firebase-cloud-messaging-images/02-app-registration.png)
+[![應用程式註冊步驟圖表](firebase-cloud-messaging-images/02-app-registration-sml.png)](firebase-cloud-messaging-images/02-app-registration.png#lightbox)
 
 1.  用戶端應用程式會連絡以取得註冊語彙基元，寄件者識別碼、 API 金鑰和應用程式識別碼傳遞至 FCM FCM。
 
@@ -77,13 +75,12 @@ FCM 使用下列認證來識別應用程式伺服器和用戶端應用程式，�
 當用戶端應用程式不再想要從應用程式伺服器接收訊息時，它可以傳送要求到應用程式伺服器，以刪除註冊語彙基元。 從裝置解除安裝用戶端應用程式時，如果 FCM 偵測此項，並自動通知 要刪除的註冊憑證之應用程式伺服器。
 
 
-<a name="downstream" />
 
 ### <a name="downstream-messaging"></a>下游訊息處理
 
 下圖說明如何 Firebase Cloud Messaging 儲存和轉送下游訊息：
 
-[![FCM 用於儲存與轉送下游訊息處理](firebase-cloud-messaging-images/03-downstream-sml.png)](firebase-cloud-messaging-images/03-downstream.png)
+[![FCM 用於儲存與轉送下游訊息處理](firebase-cloud-messaging-images/03-downstream-sml.png)](firebase-cloud-messaging-images/03-downstream.png#lightbox)
 
 當應用程式伺服器會將下游訊息傳送至用戶端應用程式時，它會為列舉上圖中使用下列步驟：
 
@@ -99,14 +96,11 @@ FCM 使用下列認證來識別應用程式伺服器和用戶端應用程式，�
 
 如需接收下游 FCM 訊息在 Android 上的詳細資訊，請參閱[遠端通知 FCM](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)。
 
-
-<a name="topic" />
-
 ### <a name="topic-messaging"></a>主題的訊息
 
 *主題傳訊*可讓應用程式伺服器將訊息傳送到選擇加入特定主題的多個裝置。 您也可以撰寫和傳送主題訊息透過 Firebase 主控台通知 GUI。 FCM 處理路由與主題訊息傳遞至訂閱用戶端。 這項功能可以用於訊息，例如警示天氣、 股票報價及頭條新聞。
 
-[![主題傳訊圖表](firebase-cloud-messaging-images/04-topic-messaging-sml.png)](firebase-cloud-messaging-images/04-topic-messaging.png)
+[![主題傳訊圖表](firebase-cloud-messaging-images/04-topic-messaging-sml.png)](firebase-cloud-messaging-images/04-topic-messaging.png#lightbox)
 
 （在用戶端應用程式會取得稍早所述的註冊憑證） 之後的主題訊息使用下列步驟：
 
@@ -127,28 +121,28 @@ FCM 使用下列認證來識別應用程式伺服器和用戶端應用程式，�
 
 1.  登入[Firebase 主控台](https://console.firebase.google.com/)與您的 Google 帳戶 （也就是您 Gmail 的地址） 按一下**建立新專案**:
 
-    [![建立新專案 按鈕](firebase-cloud-messaging-images/05-firebase-console-sml.png)](firebase-cloud-messaging-images/05-firebase-console.png)
+    [![建立新專案 按鈕](firebase-cloud-messaging-images/05-firebase-console-sml.png)](firebase-cloud-messaging-images/05-firebase-console.png#lightbox)
 
     如果您有現有的專案，按一下**Google 專案匯入**。
 
 2.  在**建立專案** 對話方塊中，輸入您的專案名稱，然後按一下**建立專案**。 在下列範例中，新的專案呼叫**XamarinFCM**建立：
 
-    [![建立專案 對話方塊](firebase-cloud-messaging-images/06-create-a-project-sml.png)](firebase-cloud-messaging-images/06-create-a-project.png)
+    [![建立專案 對話方塊](firebase-cloud-messaging-images/06-create-a-project-sml.png)](firebase-cloud-messaging-images/06-create-a-project.png#lightbox)
 
 3.  在主控台中 Firebase**概觀**，按一下**加入您的 Android 應用程式的 Firebase**:
 
-    [![Firebase 加入您的 Android 應用程式](firebase-cloud-messaging-images/07-add-firebase-sml.png)](firebase-cloud-messaging-images/07-add-firebase.png)
+    [![Firebase 加入您的 Android 應用程式](firebase-cloud-messaging-images/07-add-firebase-sml.png)](firebase-cloud-messaging-images/07-add-firebase.png#lightbox)
 
 4.  在下一個畫面中，輸入您的應用程式的封裝名稱。 在此範例中，封裝名稱是**com.xamarin.fcmexample**。 此值必須符合您的 Android 應用程式的封裝名稱。 也可以在 輸入應用程式暱稱**應用程式的暱稱**欄位：
 
-    [![為應用程式的暱稱輸入 FCM 範例](firebase-cloud-messaging-images/08-package-name-sml.png)](firebase-cloud-messaging-images/08-package-name.png)
+    [![為應用程式的暱稱輸入 FCM 範例](firebase-cloud-messaging-images/08-package-name-sml.png)](firebase-cloud-messaging-images/08-package-name.png#lightbox)
 
 5.  如果您的應用程式使用動態連結，邀請或 Google 驗證，您也必須輸入您的偵錯簽署憑證。 如需有關如何尋找您的簽署憑證的詳細資訊，請參閱[尋找金鑰存放區的 MD5 或 SHA1 簽章](~/android/deploy-test/signing/keystore-signature.md)。
     在此範例中，簽章的憑證會保留空白。
 
 6.  按一下**新增應用程式**:
 
-    [![按一下 新增應用程式按鈕](firebase-cloud-messaging-images/09-add-app-sml.png)](firebase-cloud-messaging-images/09-add-app.png)
+    [![按一下 新增應用程式按鈕](firebase-cloud-messaging-images/09-add-app-sml.png)](firebase-cloud-messaging-images/09-add-app.png#lightbox)
 
     為應用程式自動產生伺服器 API 金鑰與用戶端識別碼。 這項資訊會封裝在**google services.json**檔案，當您按一下 自動下載**新增應用程式**。
     請務必將此檔案儲存在安全的地方。
@@ -156,7 +150,6 @@ FCM 使用下列認證來識別應用程式伺服器和用戶端應用程式，�
 如需詳細的範例將加入的**google services.json**來接收 FCM 推播通知訊息，在 Android 上的應用程式專案，請參閱[遠端通知 FCM](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)。
 
 
-<a name="furtherreading" />
 
 ## <a name="for-further-reading"></a>進一步閱讀
 
@@ -167,7 +160,6 @@ FCM 使用下列認證來識別應用程式伺服器和用戶端應用程式，�
 -   [RFC 6120](https://tools.ietf.org/html/rfc6120)和[RFC 6121](https://tools.ietf.org/html/rfc6121)說明，並定義可延伸的傳訊和目前狀態通訊協定 (XMPP)。
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>總結
 

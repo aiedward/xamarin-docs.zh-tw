@@ -3,14 +3,15 @@ title: "第 15 章的摘要。 互動的介面"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: e6c61f9a6ba66db2b9a5c7b217c7da952607e709
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 37bbbf2b89048db175ddc1b3b1a24cea92b898a7
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>第 15 章的摘要。 互動的介面
 
@@ -105,7 +106,7 @@ Xamarin.Forms 包含 20 的可具現化類別衍生自`View`但不是`Layout`。
 
 [ **RgbSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/RgbSliders)程式包含三種`Slider`可讓您以互動方式指定其 RGB 值，藉以選取色彩的項目：
 
-[![三個螢幕擷取畫面的 R G B 滑桿](images/ch15fg03-small.png "RGB 滑桿")](images/ch15fg03-large.png "RGB 滑桿")
+[![三個螢幕擷取畫面的 R G B 滑桿](images/ch15fg03-small.png "RGB 滑桿")](images/ch15fg03-large.png#lightbox "RGB 滑桿")
 
 [ **TextFade** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/TextFade)範例會使用兩個`Slider`項目移動兩個`Label`項目跨越`AbsoluteLayout`和淡入另一個。
 

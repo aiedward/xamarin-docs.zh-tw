@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: a2c3ce9e19340067d77a8bc131b5a247806ecfa1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 36c793e7a9b7b30bcb0cdf2c7959fd2df36c8775
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-the-file-system"></a>使用檔案系統
 
@@ -26,7 +26,7 @@ iOS 也有一些檔案系統的特定功能： 特定目錄需要特殊處理相
 
 這篇文章討論的功能和限制的 ios 檔案系統中的詳細資料，並包括範例應用程式，示範如何使用 Xamarin.iOS 執行一些簡單的檔案系統作業：
 
- [ ![](file-system-images/05-sampleapp.png "IOS 執行一些簡單的檔案系統作業的範例")](file-system-images/05-sampleapp.png)
+ [![](file-system-images/05-sampleapp.png "IOS 執行一些簡單的檔案系統作業的範例")](file-system-images/05-sampleapp.png#lightbox)
 
  <a name="General_File_Access" />
 
@@ -110,7 +110,7 @@ Directory.CreateDirectory(directoryname);
 
 搭配使用 Json Xamarin.iOS 應用程式中的資料是很容易使用[Json.NET](http://www.newtonsoft.com/json)高效能 JSON framework for.NET NuGet Package。 只要加入 NuGet 套件加入您的應用程式專案： 
 
-[ ![](file-system-images/json01.png "將 NuGet 封裝加入至應用程式專案")](file-system-images/json01.png)
+[![](file-system-images/json01.png "將 NuGet 封裝加入至應用程式專案")](file-system-images/json01.png#lightbox)
 
 接下來，將類別加入做為序列化/還原序列化的資料模型 (在此情況下`Account.cs`):
 
@@ -217,11 +217,11 @@ iOS 會使用正斜線 '/' 做為路徑分隔符號 (不同於 Windows，會使�
 
 若要檢視的範例程式碼應用程式套件組合，以滑鼠右鍵按一下 Visual Studio 中的專案上的 Mac，並選取**開啟包含資料夾**。 瀏覽至**bin/Debug/**您應該在此找到應用程式圖示 （類似於以下螢幕擷取畫面）。
 
- [ ![](file-system-images/40-bundle.png "巡覽至 bin/Debug 尋找應用程式圖示類似這個螢幕擷取畫面")](file-system-images/40-bundle.png)
+ [![](file-system-images/40-bundle.png "巡覽至 bin/Debug 尋找應用程式圖示類似這個螢幕擷取畫面")](file-system-images/40-bundle.png#lightbox)
 
 此圖示上按一下滑鼠右鍵，然後選擇 **檢視封裝內容**瀏覽應用程式套件組合目錄的內容。 內容顯示如同一般的目錄中，內容如下所示：
 
- [ ![](file-system-images/45-bundle.png "應用程式套件組合的內容")](file-system-images/45-bundle.png)
+ [![](file-system-images/45-bundle.png "應用程式套件組合的內容")](file-system-images/45-bundle.png#lightbox)
 
 應用程式配套就是在模擬器或裝置上安裝在測試期間，以及最終仍是以包含在應用程式市集提交 Apple。
 
@@ -313,7 +313,7 @@ Directory </td>
 
 這個螢幕擷取畫面會顯示目錄結構中尋找工具視窗：
 
- [ ![](file-system-images/08-library-directory.png "這個螢幕擷取畫面顯示的目錄結構中尋找工具視窗")](file-system-images/08-library-directory.png)
+ [![](file-system-images/08-library-directory.png "這個螢幕擷取畫面顯示的目錄結構中尋找工具視窗")](file-system-images/08-library-directory.png#lightbox)
 
  <a name="Accessing_Other_Directories_Programmatically" />
 
@@ -352,11 +352,11 @@ var tmp = Path.Combine (documents, "..", "tmp");
 
 使用者可以存取您的應用程式的文件目錄中的檔案，藉由編輯`Info.plist`和建立**應用程式支援 iTunes 共用**(`UIFileSharingEnabled`) 中的項目**來源** 檢視中，為如下所示：
 
- [ ![](file-system-images/09-uifilesharingenabled-plist.png "新增應用程式支援 iTunes 共用屬性")](file-system-images/09-uifilesharingenabled-plist.png)
+ [![](file-system-images/09-uifilesharingenabled-plist.png "新增應用程式支援 iTunes 共用屬性")](file-system-images/09-uifilesharingenabled-plist.png#lightbox)
 
 這些檔案可以存取在 iTunes，當裝置連線，並在使用者選擇`Apps` 索引標籤。例如，下列螢幕擷取畫面顯示選取的應用程式可透過 iTunes 共用檔案：
 
- [ ![](file-system-images/10-itunes-file-sharing.png "這個螢幕擷取畫面顯示選取的應用程式可透過 iTunes 共用檔案")](file-system-images/10-itunes-file-sharing.png)
+ [![](file-system-images/10-itunes-file-sharing.png "這個螢幕擷取畫面顯示選取的應用程式可透過 iTunes 共用檔案")](file-system-images/10-itunes-file-sharing.png#lightbox)
 
 使用者只能存取透過 iTunes 此目錄中的最上層項目。 （不過它們可以將它們複製到他們的電腦，或刪除） 無法查看的任何子目錄的內容。 例如，與 GoodReader，PDF 和 EPUB 檔案可共用與應用程式，讓使用者可以讀取它們在其 iOS 裝置上。
 
@@ -364,7 +364,7 @@ var tmp = Path.Combine (documents, "..", "tmp");
 
 這篇文章的範例程式碼文件資料夾中建立檔案和資料夾 (在**SampleCode.cs**)，並讓檔案共用中**Info.plist**檔案。 這個螢幕擷取畫面顯示這些 iTunes 中顯示的方式：
 
- [ ![](file-system-images/15-itunes-file-sharing-example.png "這個螢幕擷取畫面顯示如何將檔案出現在 iTunes")](file-system-images/15-itunes-file-sharing-example.png)
+ [![](file-system-images/15-itunes-file-sharing-example.png "這個螢幕擷取畫面顯示如何將檔案出現在 iTunes")](file-system-images/15-itunes-file-sharing-example.png#lightbox)
 
 請參閱[處理映像](~/ios/app-fundamentals/images-icons/index.md)文件以取得您所建立的資訊關於如何設定應用程式的任何自訂的文件類型的圖示。
 

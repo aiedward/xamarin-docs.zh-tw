@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/17/2017
-ms.openlocfilehash: 0c2765551c16be605bc78d9ef32a91fd2c4ead8c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9602e4d99e8f5c004fe75ab724bb3746aca46003
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="resource-dictionaries"></a>資源字典
 
@@ -83,10 +83,10 @@ A [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.
 
 第一個[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)擷取執行個體，並取用`LabelPageHeadingStyle`應用程式層級中定義的資源[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)，第二個`Label`執行個體擷取和取用`LabelNormalStyle`控制層級中定義的資源`ResourceDictionary`。 同樣地， [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)擷取執行個體，並取用`NormalTextColor`應用程式層級中定義的資源`ResourceDictionary`，而`MediumBoldText`控制層級中定義的資源`ResourceDictionary`。 這會導致下列螢幕擷取畫面所示的外觀：
 
-[![](resource-dictionaries-images/screenshots-sml.png "耗用 ResourceDictionary 資源")](resource-dictionaries-images/screenshots.png "耗用 ResourceDictionary 資源")
+[![](resource-dictionaries-images/screenshots-sml.png "耗用 ResourceDictionary 資源")](resource-dictionaries-images/screenshots.png#lightbox "耗用 ResourceDictionary 資源")
 
 > [!NOTE]
-> **請注意**： 專屬於單一頁面的資源不應該包含在應用程式層級的資源字典中，因此資源將然後時加以剖析而不是應用程式啟動時所需的頁面。 如需詳細資訊，請參閱[減少應用程式資源字典的大小](~/xamarin-forms/deploy-test/performance.md)。
+> 應用程式層級的資源字典中，因此資源將會在應用程式啟動，而不是剖析，所需的頁面時，不應該併入專屬於單一頁面的資源。 如需詳細資訊，請參閱[減少應用程式資源字典的大小](~/xamarin-forms/deploy-test/performance.md)。
 
 ## <a name="overriding-resources"></a>覆寫資源
 
@@ -118,7 +118,7 @@ A [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.
 
 原始`PageBackgroundColor`和`NormalTextColor`定義的執行個體，應用程式層級，會覆寫`PageBackgroundColor`和`NormalTextColor`在頁面層級定義的執行個體。 因此，網頁的背景色彩會變成藍色，且頁面上的文字變成黃色，如下列螢幕擷取畫面所示：
 
-[![](resource-dictionaries-images/overridding-screenshots-sml.png "覆寫 ResourceDictionary 資源")](resource-dictionaries-images/overridding-screenshots.png "覆寫 ResourceDictionary 資源")
+[![](resource-dictionaries-images/overridding-screenshots-sml.png "覆寫 ResourceDictionary 資源")](resource-dictionaries-images/overridding-screenshots.png#lightbox "覆寫 ResourceDictionary 資源")
 
 但請注意，背景列[ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)仍黃色，因為[ `BarBackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.NavigationPage.BarBackgroundColor/)屬性設定的值為`PageBackgroundColor`應用程式中定義的資源層級[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)。
 
@@ -175,7 +175,7 @@ A [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.
 1. 透過合併資源字典中所包含的資源`MergedDictionaries`集合，它們會列在順序`MergedDictionaries`屬性。
 
 > [!NOTE]
-> **請注意**： 搜尋資源字典可能是密集的工作，如果應用程式包含多個大型的資源字典。 因此，請確定應用程式中的每個頁面只會使用適用於頁面上，若要避免不必要的搜尋資源字典。
+> 搜尋資源字典可能是密集的工作，如果應用程式包含多個大型的資源字典。 因此，請確定應用程式中的每個頁面只會使用適用於頁面上，若要避免不必要的搜尋資源字典。
 
 ## <a name="summary"></a>總結
 

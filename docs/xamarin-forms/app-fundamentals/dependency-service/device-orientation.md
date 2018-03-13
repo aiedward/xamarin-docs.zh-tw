@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: ee91f0ebdc07f03831ae95a4b8ae6f85c3eb549e
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d23f29fbfb51473ff5f89f27c0bfd621cfffbce0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="checking-device-orientation"></a>檢查裝置方向
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 02/28/2018
 ![](device-orientation-images/orientation-diagram.png "DependencyService 應用程式結構")
 
 > [!NOTE]
-> **注意：**可能偵測裝置是否在縱向或橫向中，在共用的程式碼所示，它是在 [裝置 Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation). 本文章中所述的方法會使用原生功能，來取得詳細資訊包括裝置是否面朝下的方向。
+> 您可偵測裝置是否在縱向或橫向中，共用的程式碼中所示的 [裝置 Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation)。 本文章中所述的方法會使用原生功能，來取得詳細資訊包括裝置是否面朝下的方向。
 
 <a name="Creating_the_Interface" />
 
@@ -57,7 +57,7 @@ namespace DependencyServiceSample.Abstractions
 撰寫程式碼中的共用程式碼是此介面可讓 Xamarin.Forms 應用程式存取裝置方向應用程式開發介面，以在每個平台上。
 
 > [!NOTE]
-> **請注意**： 實作介面的類別都必須有參數的建構函式，才能使用`DependencyService`。
+> 實作介面的類別都必須有參數的建構函式，才能使用`DependencyService`。
 
 <a name="iOS_Implementation" />
 

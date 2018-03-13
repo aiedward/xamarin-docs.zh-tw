@@ -4,14 +4,15 @@ description: "了解如何使用 SkiaSharp 繪製曲線，並使用路徑功能"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 781937AA-AA1C-469C-AA92-D42D08B58635
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 0e3a9d0e4bedb2e4321c3c846eddeee8b36cb3e4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9daea43ea09f7acaa2f3cd1300785391f69c4746
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="skiasharp-curves-and-paths"></a>SkiaSharp 曲線和路徑
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: c276352bc0ef1478c5145089277183b774bd9bff
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 55d13589e4241e9f4e29aea9a55346a8f514f208
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="text"></a>Text
 
@@ -26,6 +26,8 @@ Xamarin.Forms 有三個主要的檢視，使用文字的：
 
 可以使用內建或自訂變更文字的外觀[樣式](#Styles)和有些控制項支援自訂[字型](#Fonts)。
 
+<a name="Label" />
+
 ## <a name="labellabelmd"></a>[Label](label.md)
 
 `Label`檢視用來顯示文字。 它可以顯示多行文字 」 或 「 單行文字。 `Label` 可以有多個用於內嵌的格式化選項呈現文字。 [標籤] 檢視可以換行，或截斷時它無法放在一行的文字。
@@ -35,6 +37,8 @@ Xamarin.Forms 有三個主要的檢視，使用文字的：
 請參閱[標籤](label.md)文件如需詳細資訊。
 
 如需自訂標籤中所使用的字型，請參閱[字型](fonts.md)。
+
+<a name="Entry" />
 
 ## <a name="entryentrymd"></a>[Entry](entry.md)
 
@@ -46,6 +50,8 @@ Xamarin.Forms 有三個主要的檢視，使用文字的：
 
 請注意，不同於`Label`，`Entry`不能有自訂的字型設定。
 
+<a name="Editor" />
+
 ## <a name="editoreditormd"></a>[編輯器](editor.md)
 
 `Editor` 用來接受多行文字輸入。 `Editor` 可以具有自訂背景色彩，但文字色彩和字型無法改變。
@@ -54,9 +60,13 @@ Xamarin.Forms 有三個主要的檢視，使用文字的：
 
 請參閱[編輯器](editor.md)文件以取得詳細資訊。
 
+<a name="Fonts" />
+
 ## <a name="fontsfontsmd"></a>[字型](fonts.md)
 
 `Label`控制項支援以不同的字型設定每個平台或自訂的字型包含在您的應用程式上使用內建的字型。 請參閱[字型](fonts.md)文件如需詳細資訊。
+
+<a name="Styles" />
 
 ## <a name="stylesstylesmd"></a>[樣式](styles.md)
 

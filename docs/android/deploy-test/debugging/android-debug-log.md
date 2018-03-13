@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 99b9ed9e3c71766f483f7b00996137aae7a247d1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 26ac42e4b7acbe19dee746130fc335fdf18ffc46
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-debug-log"></a>Android 偵錯記錄檔
 
@@ -36,7 +36,6 @@ Visual Studio 的新 [裝置記錄檔] 工具視窗會顯示 Android 和 iOS 裝
 此工具視窗會提供：記錄項目表、可選取裝置的下拉式方塊、清除記錄項目的方式、搜尋方塊，以及播放/停止/暫停按鈕。 
 
 
-<a name="Accessing_from_the_Command_Line" />
 
 ## <a name="accessing-from-the-command-line"></a>從命令列存取
 
@@ -52,7 +51,6 @@ $ adb logcat
 
 如需了解更多命令，只要執行 **adb** 即可。
 
-<a name="Writing_to_the_Debug_Log" />
 
 
 ## <a name="writing-to-the-debug-log"></a>寫入至偵錯記錄檔
@@ -75,7 +73,6 @@ W/myapp   (11103): this is a warning message
 E/myapp   (11103): this is an error message
 ```
 
-<a name="Interesting_Messages" />
 
 ## <a name="interesting-messages"></a>有趣的訊息
 

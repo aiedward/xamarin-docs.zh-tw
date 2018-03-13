@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 30b7e322d618492164fac5e439c5187616d61717
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 32326eb472b1bb8b4fbaf4066edc36255f5948ca
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="dots-and-dashes"></a>句點和連字號
 
@@ -155,7 +155,7 @@ float[] GetPickerArray(Picker picker)
 
 在下列螢幕擷取畫面中，最左邊的 [iOS] 畫面會顯示點線：
 
-[![](dots-images/dotsanddashes-small.png "句點和連字號 頁面的三個螢幕擷取畫面")](dots-images/dotsanddashes-large.png "句點和連字號 頁面的三個螢幕擷取畫面")
+[![](dots-images/dotsanddashes-small.png "句點和連字號 頁面的三個螢幕擷取畫面")](dots-images/dotsanddashes-large.png#lightbox "句點和連字號 頁面的三個螢幕擷取畫面")
 
 不過，[Android] 畫面也應該顯示使用陣列 {10，10} 虛線，但改為在列是可靠。 發生什麼情況？ 問題在於 [Android] 畫面也具有筆劃 cap 值`Square`。 這會擴充的筆劃寬度的一半，讓他們填滿間距的所有連字號。
 
@@ -213,7 +213,7 @@ protected override void OnAppearing()
 
 當然，您必須實際執行程式，請參閱動畫：
 
-[![](dots-images/animatedspiral-small.png "三個螢幕擷取畫面顯示動畫老舊頁面的")](dots-images/animatedspiral-large.png "動畫老舊頁面的三個螢幕擷取畫面")
+[![](dots-images/animatedspiral-small.png "三個螢幕擷取畫面顯示動畫老舊頁面的")](dots-images/animatedspiral-large.png#lightbox "動畫老舊頁面的三個螢幕擷取畫面")
 
 您現在已經瞭解如何繪製線條，以及如何定義使用參數化的方程式的曲線。 等以後再發行一節將討論各種類型的曲線，`SKPath`支援。
 

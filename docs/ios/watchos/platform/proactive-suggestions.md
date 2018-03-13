@@ -3,16 +3,16 @@ title: "主動式建議"
 description: "本文示範如何在磁碟機 engagement watchOS 3 應用程式中使用主動式建議，藉由使用系統自動向使用者主動顯示有用的資訊。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
+ms.assetid: 10CC9F16-963C-44F1-8B98-F09FB2310DFF
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ca2476eef120c7d86b939934ec4b286e871d6a78
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f9711cc39662a7e77d926551a0d2b49363d8ec4d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="proactive-suggestions"></a>主動式建議
 
@@ -61,7 +61,7 @@ _本文示範如何在磁碟機 engagement watchOS 3 應用程式中使用主動
 
 如上所述，`NSUserActivity`有助於了解哪些使用者目前正在使用螢幕的資訊系統。 `NSUserActivity` 輕量級狀態快取機制來擷取使用者的活動，當它們瀏覽應用程式。 例如，查看餐廳應用程式：
 
-[ ![](proactive-suggestions-images/activity02.png "餐廳應用程式")](proactive-suggestions-images/activity02.png)
+[![](proactive-suggestions-images/activity02.png "餐廳應用程式")](proactive-suggestions-images/activity02.png#lightbox)
 
 使用下列的互動：
 
@@ -71,7 +71,7 @@ _本文示範如何在磁碟機 engagement watchOS 3 應用程式中使用主動
 
 採取的最後一個畫面詳述：
 
-[ ![](proactive-suggestions-images/activity03.png "NSUserActivity 裝載")](proactive-suggestions-images/activity03.png)
+[![](proactive-suggestions-images/activity03.png "NSUserActivity 裝載")](proactive-suggestions-images/activity03.png#lightbox)
 
 應用程式中，建立以下`NSUserActivity`並填入相關資訊，以便稍後重新建立狀態。 應用程式也有包含某些中繼資料，例如位置的名稱和地址。 建立此活動，應用程式可讓 iOS 知道它代表使用者的目前狀態。
 

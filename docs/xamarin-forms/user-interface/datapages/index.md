@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 10c473656947dfea8bf832ae5a5704897ef4ce63
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 60973068b56ea4160c3e5ae53d387b063c601afe
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="datapages"></a>DataPages
 
@@ -26,7 +26,7 @@ DataPages 提供 API，以快速且輕鬆地資料來源繫結至預先建立的
 
 若要查看 Evolve 專題示範的運作方式，請參閱[入門指南](get-started.md)。
 
-[ ![](images/demo-sml.png "DataPages 範例應用程式")](images/demo.png "DataPages 範例應用程式")
+[![](images/demo-sml.png "DataPages 範例應用程式")](images/demo.png#lightbox "DataPages 範例應用程式")
 
 ## <a name="introduction"></a>簡介
 

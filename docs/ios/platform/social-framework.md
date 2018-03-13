@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: da096c8575896bc9f522a92b3fb94b81f9e772df
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9892577d7e0ed3d3f622f881cc51db09eb44a8fd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="social-framework"></a>社交架構
 
@@ -30,7 +30,7 @@ _社交 Framework 會提供統一的 API，來與社交網路包括 Twitter 與 
 
 若要連線到 Twitter 使用社交架構，帳戶必須設定裝置設定中，如下所示：
 
- [ ![](social-framework-images/twitter01.png "Twitter 帳戶設定")](social-framework-images/twitter01.png)
+ [![](social-framework-images/twitter01.png "Twitter 帳戶設定")](social-framework-images/twitter01.png#lightbox)
 
 一旦已輸入並確認與 Twitter 帳戶，用以存取 Twitter 社交架構類別的裝置上的任何應用程式會使用此帳戶。
 
@@ -38,7 +38,7 @@ _社交 Framework 會提供統一的 API，來與社交網路包括 Twitter 與 
 
 社交 Framework 包含多個呼叫的控制站`SLComposeViewController`呈現來編輯及傳送推文中提供的系統檢視表。 下列螢幕擷取畫面顯示此檢視的範例：
 
- [ ![](social-framework-images/twitter02.png "這個螢幕擷取畫面顯示 SLComposeViewController 範例")](social-framework-images/twitter02.png)
+ [![](social-framework-images/twitter02.png "這個螢幕擷取畫面顯示 SLComposeViewController 範例")](social-framework-images/twitter02.png#lightbox)
 
 若要使用`SLComposeViewController`與 Twitter，必須建立控制器執行個體藉由呼叫`FromService`方法`SLServiceType.Twitter`如下所示：
 
@@ -284,7 +284,7 @@ request.PerformRequest ((data, response, error) => {
 
 如果成功載入的資料，就會顯示未經處理的 JSON 資料 （如同在以下的範例輸出）：
 
-[ ![](social-framework-images/twitter03.png "未經處理的 JSON 資料顯示的範例")](social-framework-images/twitter03.png)
+[![](social-framework-images/twitter03.png "未經處理的 JSON 資料顯示的範例")](social-framework-images/twitter03.png#lightbox)
 
 實際的應用程式，在 JSON 結果會無法剖析做為正常並向使用者顯示的結果。 請參閱[簡介 Web 服務](~/cross-platform/data-cloud/web-services/index.md)如需有關如何將 JSON 剖析資訊。
 
@@ -294,7 +294,7 @@ request.PerformRequest ((data, response, error) => {
 
 連接到 Facebook 社交架構是 Twitter 如上所示的處理序幾乎完全相同的。 Facebook 使用者帳戶必須設定裝置設定中，如下所示：
 
-[ ![](social-framework-images/facebook01.png "Facebook 帳戶設定")](social-framework-images/facebook01.png)
+[![](social-framework-images/facebook01.png "Facebook 帳戶設定")](social-framework-images/facebook01.png#lightbox)
 
 一旦設定之後，會使用社交架構，在裝置上的任何應用程式會使用此帳戶連接至 Facebook。
 
@@ -368,7 +368,7 @@ namespace SocialFrameworkDemo
 
 當搭配 Facebook、`SLComposeViewController`顯示看起來幾乎完全相同 Twitter 範例中，顯示的檢視**Facebook**為標題在此情況下：
 
-[ ![](social-framework-images/facebook02.png "SLComposeViewController 顯示")](social-framework-images/facebook02.png)
+[![](social-framework-images/facebook02.png "SLComposeViewController 顯示")](social-framework-images/facebook02.png#lightbox)
 
 ### <a name="calling-facebook-graph-api"></a>呼叫 Facebook 圖形 API
 

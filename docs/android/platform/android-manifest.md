@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 0f270111ad4e10f035a3cb695564d789f40097fd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: aa2d2ce6cabe9c394b9807ca3d6328da5b4ba311
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-the-android-manifest"></a>使用 Android 資訊清單
 
-<a name="Overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -24,7 +23,6 @@ ms.lasthandoff: 02/27/2018
 **AndroidManifest.xml**產生為建置流程中，與 XML 中找到的一部分**Properties/AndroidManifest.xml**合併以產生從自訂屬性的 XML。 產生的合併**AndroidManifest.xml**位於**obj**子目錄; 例如，它位於在**obj/Debug/android/AndroidManifest.xml**偵錯組建. 合併處理序是 trivial： 它來產生 XML 項目，使用程式碼內的自訂屬性和*插入*這些項目**AndroidManifest.xml**。 
 
 
-<a name="The_Basics" />
 
 ## <a name="the-basics"></a>基本概念
 
@@ -60,7 +58,6 @@ namespace Demo
 `[Activity]`屬性沒有任何作用`abstract`類型;`abstract`類型會被忽略。
 
 
-<a name="Activity_Name" />
 
 ### <a name="activity-name"></a>活動名稱
 
@@ -83,7 +80,6 @@ public class MyActivity : Activity
 
 *請注意*： 您應該使用`Name`僅基於回溯相容性，因此重新命名的屬性可能會降低在執行階段的型別查閱。 如果您有舊版的程式碼預期小寫的命名空間是根據活動的預設型別名稱和類別名稱，請參閱[Android 可呼叫包裝函式命名](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming)維護相容性的秘訣。 
 
-<a name="Activity_Title_Bar" />
 
 ### <a name="activity-title-bar"></a>活動標題列
 
@@ -104,7 +100,6 @@ public class MyActivity : Activity
           android:name="md5a7a3c803e481ad8926683588c7e9031b.MainActivity" />
 ```
 
-<a name="Launchable_from_Application_Chooser" />
 
 ### <a name="launchable-from-application-chooser"></a>從 應用程式選擇器
 
@@ -130,7 +125,6 @@ public class MyActivity : Activity
 ```
 
 
-<a name="Activity_Icon" />
 
 ### <a name="activity-icon"></a>活動圖示
 
@@ -155,7 +149,6 @@ public class MyActivity : Activity
 </activity>
 ```
 
-<a name="Permissions" />
 
 ### <a name="permissions"></a>權限
 
@@ -178,11 +171,9 @@ public class MyActivity : Activity
 
 
 
-<a name="Advanced_Features" />
 
 ## <a name="advanced-features"></a>進階的功能
 
-<a name="Intent_Actions_and_Features" />
 
 ### <a name="intent-actions-and-features"></a>意圖動作與功能
 
@@ -214,7 +205,6 @@ public class MyActivity : Activity
 </activity>
 ```
 
-<a name="Application_Element" />
 
 ### <a name="application-element"></a>應用程式項目
 
@@ -243,7 +233,6 @@ Android 資訊清單也可讓您宣告為整個應用程式的屬性。 這是�
 有許多您可以在設定的全應用程式屬性`<application>`項目; 如需有關這些設定的詳細資訊，請參閱[公用屬性](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/#Public_Properties)區段[ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/). 
 
 
-<a name="List_of_Custom_Attributes" />
 
 ## <a name="list-of-custom-attributes"></a>自訂屬性的清單
 

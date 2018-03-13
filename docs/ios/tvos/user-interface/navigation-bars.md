@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 3d5b4b0d3e6e9388906efa3bff2db0ea38fa8605
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9c6bbf27d4c8227d96e372e91e1ccf2c9e841ff8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-navigation-controllers"></a>使用 瀏覽控制站
 
@@ -20,7 +20,7 @@ _本文涵蓋設計和 Xamarin.tvOS 應用程式內使用導覽列。_
 
 可以檢視以顯示標題和選擇性的導覽列按鈕的頂端加入導覽列。 通常這些用於當使用者巡覽從主要頁面上，例如資料表檢視表、 集合或功能表來顯示選取之項目的詳細資料子檢視。
 
-[ ![](navigation-bars-images/navbar01.png "範例的導覽列")](navigation-bars-images/navbar01.png)
+[![](navigation-bars-images/navbar01.png "範例的導覽列")](navigation-bars-images/navbar01.png#lightbox)
 
 除了標題 （也就顯示在中央），在巡覽列可以包含一或多個導覽列按鈕 (`UIBarButtonItem`) 左邊和右邊的列。
 
@@ -42,16 +42,16 @@ Xamarin.tvOS 應用程式中使用導覽列的最簡單方式是將它們新增�
 1. 在**方案板**，連按兩下`Main.storyboard`檔案，並開啟它進行編輯。
 1. 拖曳**導覽列**從**工具箱**並放在畫面頂端的檢視： 
 
-    [ ![](navigation-bars-images/navbar02.png "瀏覽列")](navigation-bars-images/navbar02.png)
+    [![](navigation-bars-images/navbar02.png "瀏覽列")](navigation-bars-images/navbar02.png#lightbox)
 1. 按兩下**導覽列**選取**瀏覽項目**。 在**Widget**  索引標籤**屬性板**，您可以設定**標題**: 
 
-    [ ![](navigation-bars-images/navbar03.png "設定標題")](navigation-bars-images/navbar03.png)
+    [![](navigation-bars-images/navbar03.png "設定標題")](navigation-bars-images/navbar03.png#lightbox)
 1. 接下來，您可以在其中加入一個或多個**列按鈕項目**至列的任一端點： 
 
-    [ ![](navigation-bars-images/navbar04.png "橫條按鈕項目")](navigation-bars-images/navbar04.png)
+    [![](navigation-bars-images/navbar04.png "橫條按鈕項目")](navigation-bars-images/navbar04.png#lightbox)
 1. 最後，網路向上**列按鈕項目**中的動作**事件** 索引標籤**屬性總管**: 
 
-    [ ![](navigation-bars-images/navbar05.png "橫條按鈕項目動作")](navigation-bars-images/navbar05.png)
+    [![](navigation-bars-images/navbar05.png "橫條按鈕項目動作")](navigation-bars-images/navbar05.png#lightbox)
 1. 儲存您的變更。
 
 
@@ -61,16 +61,16 @@ Xamarin.tvOS 應用程式中使用導覽列的最簡單方式是將它們新增�
 1. 在**方案總管 中**，連按兩下`Main.storyboard`檔案，並開啟它進行編輯。
 1. 拖曳**導覽列**從**工具箱**並放在畫面頂端的檢視： 
 
-    [ ![](navigation-bars-images/navbar02-vs.png "瀏覽列")](navigation-bars-images/navbar02-vs.png)
+    [![](navigation-bars-images/navbar02-vs.png "瀏覽列")](navigation-bars-images/navbar02-vs.png#lightbox)
 1. 按兩下**導覽列**選取**瀏覽項目**。 在**Widget**  索引標籤**屬性總管**，您可以設定**標題**: 
 
-    [ ![](navigation-bars-images/navbar03-vs.png "設定標題")](navigation-bars-images/navbar03-vs.png)
+    [![](navigation-bars-images/navbar03-vs.png "設定標題")](navigation-bars-images/navbar03-vs.png#lightbox)
 1. 接下來，您可以在其中加入一個或多個**列按鈕項目**至列的任一端點： 
 
-    [ ![](navigation-bars-images/navbar04-vs.png "橫條按鈕項目")](navigation-bars-images/navbar04-vs.png)
+    [![](navigation-bars-images/navbar04-vs.png "橫條按鈕項目")](navigation-bars-images/navbar04-vs.png#lightbox)
 1. 最後，網路向上**列按鈕項目**中的動作**事件** 索引標籤**屬性總管**: 
 
-    [ ![](navigation-bars-images/navbar05-vs.png "橫條按鈕項目動作")](navigation-bars-images/navbar05-vs.png)
+    [![](navigation-bars-images/navbar05-vs.png "橫條按鈕項目動作")](navigation-bars-images/navbar05-vs.png#lightbox)
 1. 儲存您的變更。
 
 

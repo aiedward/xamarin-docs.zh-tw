@@ -3,14 +3,15 @@ title: "第 8 章的摘要。 程式碼和 XAML 中互聯"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: e95d6a20e828c92deb0e03fe1bcbcf18aac9e508
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 452a7835bcb54501edffe7a2467544c6677616ba
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>第 8 章的摘要。 程式碼和 XAML 中互聯
 
@@ -69,7 +70,7 @@ ms.lasthandoff: 02/27/2018
 
 [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)產生[ `Tapped` ](https://developer.xamarin.com/api/event/Xamarin.Forms.TapGestureRecognizer.Tapped/)事件。 [ **MonkeyTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/MonkeyTap)程式示範如何附加`TapGestureRecognizer`物件以四個`BoxView`建立販售遊戲的項目：
 
-[![猴子點選的三個螢幕擷取畫面](images/ch08fg07-small.png "Imitation 遊戲")](images/ch08fg07-large.png "Imitation 遊戲")
+[![猴子點選的三個螢幕擷取畫面](images/ch08fg07-small.png "Imitation 遊戲")](images/ch08fg07-large.png#lightbox "Imitation 遊戲")
 
 但是**MonkeyTap**程式真正需要的聲音。 (請參閱[下一章](chapter09.md)。)
 

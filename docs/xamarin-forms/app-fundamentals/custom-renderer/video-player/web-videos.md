@@ -2,16 +2,16 @@
 title: "播放網頁視訊"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
+ms.assetid: 75781A10-865D-4BA8-8D6B-E3DA012922BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 2e44d32f199d5c85bbae242d9168a43e028c73d9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a5a98df4346c8720ae25fae4f27b5294993111c4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="playing-a-web-video"></a>播放網頁視訊
 
@@ -462,7 +462,7 @@ namespace FormsVideoLibrary.UWP
 
 `VideoSourceConverter`類別將字串轉換成`UriVideoSource`。 當您瀏覽至**播放 Web 視訊** 頁面上，視訊會開始載入和啟動播放已下載並緩衝處理足夠數量的資料。 視訊是長度約 10 分鐘：
 
-[![播放網頁的視訊](web-videos-images/playwebvideo-small.png "播放的視訊 Web")](web-videos-images/playwebvideo-large.png "播放網頁的視訊")
+[![播放網頁的視訊](web-videos-images/playwebvideo-small.png "播放的視訊 Web")](web-videos-images/playwebvideo-large.png#lightbox "播放網頁的視訊")
 
 每個三個平台上傳輸控制淡出，如果它們被使用，但是可以藉由點選視訊檢視還原。
 

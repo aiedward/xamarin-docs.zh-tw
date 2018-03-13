@@ -7,21 +7,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: 6b4958c6a82b824f19cc041b124e79034eba4c86
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9bae3c56c5f6c445618f41d877c3188a86167be1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>發行至 Amazon App Store
 
 Amazon Mobile App Distribution Program (Amazon 行動應用程式散發計劃) 可讓行動應用程式開發人員在 Amazon 上散發其應用程式。 本節將簡要說明 Amazon App Store for Android。 
 
-[![Amazon App Store 畫面](publishing-to-amazon-images/amazon-app-store.png)](publishing-to-amazon-images/amazon-app-store.png)
+[![Amazon App Store 畫面](publishing-to-amazon-images/amazon-app-store.png)](publishing-to-amazon-images/amazon-app-store.png#lightbox)
 
 Amazon 並無限制 APK 大小。 不過，如果 APK 大於 30 MB，就會使用 FTP 來散發，而不會使用「Amazon 行動應用程式散發入口網站」。
 
-<a name="Submitting_Apps:_Binary_Info" />
 
 ## <a name="submitting-apps-binary-info"></a>提交應用程式：二進位檔資訊
 
@@ -34,7 +33,6 @@ Amazon 並無限制 APK 大小。 不過，如果 APK 大於 30 MB，就會使�
 -  可以提供五個影片的更新。
 
 
-<a name="Approval_Process" />
 
 ## <a name="approval-process"></a>核准流程
 

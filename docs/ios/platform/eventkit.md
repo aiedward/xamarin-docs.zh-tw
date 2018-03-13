@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: db3662db50d8f3538f16f2af1f9e7880957dc25c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a08bc67a9af653a9a646ad62071df0400ce58c12
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="eventkit"></a>EventKit
 
@@ -30,7 +30,7 @@ EventKit framework 提供方法來存取*行事曆*，*行事曆事件*，和*�
 
 本指南中的所有工作都可在隨附的範例應用程式：
 
- [ ![](eventkit-images/01.png "隨附的範例應用程式畫面")](eventkit-images/01.png)
+ [![](eventkit-images/01.png "隨附的範例應用程式畫面")](eventkit-images/01.png#lightbox)
 
 ## <a name="requirements"></a>需求
 
@@ -148,7 +148,7 @@ App.Current.EventStore.GetCalendars ( EKEntityType.Event );
 
 *EKEventEditViewController*為您執行許多繁重的工作，如果您想要建立或編輯具有相同的 UI 呈現給使用者時使用的行事曆應用程式的事件：
 
- [ ![](eventkit-images/02.png "使用行事曆應用程式時，向使用者顯示的 UI")](eventkit-images/02.png)
+ [![](eventkit-images/02.png "使用行事曆應用程式時，向使用者顯示的 UI")](eventkit-images/02.png#lightbox)
 
 若要使用它，您會想要將它宣告為類別層級變數，讓它不會取得回收如果它在方法中宣告：
 

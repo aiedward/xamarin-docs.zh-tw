@@ -7,18 +7,17 @@ ms.assetid: 48B20C9A-B2A2-AE82-76B2-A3C1E5A4050D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: b2ed48ae9df7e950525fdc0cb97181ebe5a44dfb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: d9342dc3a8d324f03cd31e1d03600449bfcf23f1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="designer-basics"></a>設計工具的基本概念
 
 _本主題導入了設計工具功能，說明如何啟動設計工具、 說明設計介面，並詳細說明如何使用 [屬性] 窗格來編輯 widget 屬性。_
 
-<a name="Launching_the_Designer" />
 
 ## <a name="launching-the-designer"></a>啟動設計工具
 
@@ -26,11 +25,11 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![在 Visual Studio 中設計工具的螢幕](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png)
+[![在 Visual Studio 中設計工具的螢幕](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![適用於 Mac 的 Visual Studio 中設計工具的螢幕](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png)
+[![適用於 Mac 的 Visual Studio 中設計工具的螢幕](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png#lightbox)
 
 -----
 
@@ -39,20 +38,19 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 
 同樣地，您可以加入新的版面配置，以滑鼠右鍵按一下**配置**資料夾中的**方案總管 中**，然後選取**新增 > 新項目 > Android 配置**:
 
-[![加入新項目 對話方塊](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png)
+[![加入新項目 對話方塊](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 同樣地，您可以加入新的版面配置，以滑鼠右鍵按一下**配置**資料夾中的**方案板**，然後選取**新增 > 新的檔案 > Android > 配置**:
 
-[![加入新檔案 對話方塊](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png)
+[![加入新檔案 對話方塊](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png#lightbox)
 
 -----
 
 這會建立新.axml 檔案，並將其載入至設計介面。
 
 
-<a name="Designer_Features" />
 
 ## <a name="designer-features"></a>設計工具功能
 
@@ -60,11 +58,11 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![設計工具窗格的圖形](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png)
+[![設計工具窗格的圖形](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![設計工具窗格的圖形](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png)
+[![設計工具窗格的圖形](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png#lightbox)
 
 -----
 
@@ -97,7 +95,6 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 -----
 
 
-<a name="Toolbar" />
 
 ## <a name="toolbar"></a>工具列
 
@@ -105,11 +102,11 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![設計工具工具列的圖表](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png)
+[![設計工具工具列的圖表](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![設計工具工具列的圖表](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png)
+[![設計工具工具列的圖表](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png#lightbox)
 
 -----
 
@@ -143,7 +140,6 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 [材料設計功能](~/android/user-interface/android-designer/material-design-features.md)提供全面的概觀**佈景主題編輯器**和**材料設計格線**。
 
 
-<a name="Design_Surface" />
 
 ## <a name="design-surface"></a>設計介面
 
@@ -151,17 +147,16 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![在設計介面上的範例插入行](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png)
+[![在設計介面上的範例插入行](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![在設計介面上的範例插入行](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png)
+[![在設計介面上的範例插入行](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png#lightbox)
 
 -----
 
 此外，可以複製 widget： 您可以使用複製和貼上複製 widget 中，或者您可以拖放時按下現有 widget <kbd>Ctrl</kbd>索引鍵。
 
-<a name="Context_Menu_Commands" />
 
 ### <a name="context-menu-commands"></a>內容功能表命令
 
@@ -169,7 +164,7 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![以滑鼠右鍵按一下設計介面時，範例操作功能表](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png)
+[![以滑鼠右鍵按一下設計介面時，範例操作功能表](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png#lightbox)
 
 在此範例中，以滑鼠右鍵按一下`TextView`開啟內容功能表提供數個選項：
 
@@ -179,7 +174,7 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![以滑鼠右鍵按一下設計介面時，範例操作功能表](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png)
+[![以滑鼠右鍵按一下設計介面時，範例操作功能表](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png#lightbox)
 
 在此範例中，以滑鼠右鍵按一下`TextView`開啟內容功能表提供數個選項：
 
@@ -198,7 +193,6 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 -   **刪除**，**複製**，和**剪下**&ndash;作業套用至右鍵`TextView`。
 
 
-<a name="Zoom_Controls" />
 
 ### <a name="zoom-controls"></a>縮放控制項
 
@@ -206,11 +200,11 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![設計介面縮放控制項的圖表](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png)
+[![設計介面縮放控制項的圖表](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![設計介面縮放控制項的圖表](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png)
+[![設計介面縮放控制項的圖表](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png#lightbox)
 
 -----
 
@@ -228,7 +222,6 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 
 請注意，所選的縮放設定不會影響在執行階段應用程式的使用者介面。
 
-<a name="property_pad" />
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -238,11 +231,10 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 
 設計工具支援透過 widget 內容的編輯**屬性板**。 屬性板變更依據 widget 已選取設計工具介面中列出的屬性。 當`Button`選取前一個範例中時，該屬性`Button`widget 會顯示：
 
-[![屬性板的螢幕擷取畫面](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png)
+[![屬性板的螢幕擷取畫面](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png#lightbox)
 
 -----
 
-<a name="Property_Pad_Sections" />
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -272,7 +264,6 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 -----
 
 
-<a name="Default_Values" />
 
 ### <a name="default-values"></a>預設值
 
@@ -287,7 +278,6 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 
 -----
 
-<a name="Referencing_resources" />
 
 ### <a name="referencing-resources"></a>參考的資源
 
@@ -299,13 +289,13 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 
 例如，下列螢幕擷取畫面顯示可用的資源時按下的文字欄位右邊的省略符號時`Button`widget 中的**屬性**視窗：
 
-[![範例資源與列出的兩個資源的螢幕擷取畫面](designer-basics-images/vs/09-resources-sml.png)](designer-basics-images/vs/09-resources.png)
+[![範例資源與列出的兩個資源的螢幕擷取畫面](designer-basics-images/vs/09-resources-sml.png)](designer-basics-images/vs/09-resources.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 例如，下列螢幕擷取畫面顯示可用的資源時按下的文字欄位右邊的省略符號時`Button`widget 中的**屬性板**:
 
-[![範例資源與列出的兩個資源的螢幕擷取畫面](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png)
+[![範例資源與列出的兩個資源的螢幕擷取畫面](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png#lightbox)
 
 -----
 
@@ -313,16 +303,15 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![ImageView 清單圖示資源的資源選擇器](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png)
+[![ImageView 清單圖示資源的資源選擇器](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![ImageView 清單圖示資源的資源選擇器](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png)
+[![ImageView 清單圖示資源的資源選擇器](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png#lightbox)
 
 -----
 
 
-<a name="Boolean_Property_References" />
 
 ### <a name="boolean-property-references"></a>布林值屬性參考
 
@@ -336,25 +325,21 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 
 *布林*屬性通常會顯示為屬性輸入板中的核取方塊。 當`Boolean`屬性支援資源參考、 小型的核取方塊出現在內容旁。 已核取核取方塊表示`true`和空白的方塊表示`false`。 您可以也會直接輸入值，例如`true`或`false`。 您的滑鼠停留輸入顯示小型文字欄位圖示。 如果您想要以手動方式輸入值，您可以按一下它。
 
-[![設定布林值屬性的範例](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png)
+[![設定布林值屬性的範例](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png#lightbox)
 
-<a name="Grouped_Properties" />
 
 ## <a name="grouped-properties"></a>群組的屬性
 
 有些小工具具有群組在一起的多重值屬性 (例如`Padding`，例如)。 這些屬性值會列在**屬性板**單一的可展開的資料列中。 其中一些屬性可以直接在編輯群組的資料列，例如`Padding`屬性如下所示：
 
-[![Padding 屬性的範例設定](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png)
+[![Padding 屬性的範例設定](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png#lightbox)
 
 -----
 
-<a name="Editing_Properties_Inline" />
 
 ## <a name="editing-properties-inline"></a>編輯內容內嵌
 
 Android 設計工具支援直接編輯某些屬性在設計介面上 （因此不需要搜尋屬性清單中的這些屬性）。 可以直接編輯的屬性包括文字、 邊界和大小。
-
-<a name="Text" />
 
 ### <a name="text"></a>Text
 
@@ -366,7 +351,7 @@ Android 設計工具支援直接編輯某些屬性在設計介面上 （因此�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Hello 字串資源](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png)
+[![Hello 字串資源](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png#lightbox)
 
 -----
 
@@ -378,7 +363,7 @@ Android 設計工具支援直接編輯某些屬性在設計介面上 （因此�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Shift + Enter，以自動連結到新的資源的文字](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png)
+[![Shift + Enter，以自動連結到新的資源的文字](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png#lightbox)
 
 -----
 
@@ -386,7 +371,6 @@ Android 設計工具支援直接編輯某些屬性在設計介面上 （因此�
 新的文字字串中時，您可以按<kbd>Shift</kbd> +
 <kbd>Enter</kbd>自動連結到新的資源的 輸入的文字。
 
-<a name="Margin" />
 
 ### <a name="margin"></a>邊界
 
@@ -400,7 +384,7 @@ Android 設計工具支援直接編輯某些屬性在設計介面上 （因此�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![在設計工具中處理螢幕擷取畫面顯示邊界](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png)
+[![在設計工具中處理螢幕擷取畫面顯示邊界](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png#lightbox)
 
 -----
 
@@ -412,12 +396,11 @@ Android 設計工具支援直接編輯某些屬性在設計介面上 （因此�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![範例中的虛線標記按鈕周圍的空間](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png)
+[![範例中的虛線標記按鈕周圍的空間](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png#lightbox)
 
 -----
 
 
-<a name="Size" />
 
 ### <a name="size"></a>大小
 
@@ -429,7 +412,7 @@ Android 設計工具支援直接編輯某些屬性在設計介面上 （因此�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![自動換行內容和調整大小控點](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png)
+[![自動換行內容和調整大小控點](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png#lightbox)
 
 -----
 
@@ -443,7 +426,7 @@ Android 設計工具支援直接編輯某些屬性在設計介面上 （因此�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![比對父控制代碼](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png)
+[![比對父控制代碼](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png#lightbox)
 
 -----
 
@@ -457,7 +440,7 @@ Android 設計工具支援直接編輯某些屬性在設計介面上 （因此�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![循環的調整大小控點](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png)
+[![循環的調整大小控點](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png#lightbox)
 
 -----
 
@@ -469,12 +452,11 @@ Android 設計工具支援直接編輯某些屬性在設計介面上 （因此�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![沒有調整大小控點](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png)
+[![沒有調整大小控點](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png#lightbox)
 
 -----
 
 
-<a name="Outline_View" />
 
 ## <a name="document-outline"></a>文件大綱
 
@@ -487,7 +469,7 @@ Android 設計工具支援直接編輯某些屬性在設計介面上 （因此�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![文件大綱](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png)
+[![文件大綱](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png#lightbox)
 
 -----
 

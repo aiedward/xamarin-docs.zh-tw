@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 66cc67b38d70992fe815732407317fab3dc52528
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d544647a2718d6b511551f4341dee51b2c68941f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-3d-touch"></a>3D Touch 簡介
 
 _本文將說明如何使用新 iPhone 6s 和 iPhone 6s Plus 3D 觸控筆勢應用程式中。_
 
-[ ![](3d-touch-images/info01.png "啟用應用程式的 3D Touch 的範例")](3d-touch-images/info01.png)
+[![](3d-touch-images/info01.png "啟用應用程式的 3D Touch 的範例")](3d-touch-images/info01.png#lightbox)
 
 這篇文章會提供和不足的壓力機密筆勢加入您正在新 iPhone 6s 和 iPhone 6s 的 Xamarin.iOS 應用程式使用新的 3D Touch Api 簡介再加上裝置。
 
@@ -29,7 +29,7 @@ _本文將說明如何使用新 iPhone 6s 和 iPhone 6s Plus 3D 觸控筆勢應�
 - [壓力敏感度](#Pressure-Sensitivity)-應用程式現在可以手動測量或 light 使用者接觸該資訊的螢幕，並採取優點。
   例如，繪製應用程式可以進行線條較粗或 thinner 根據使用者已手動觸控螢幕。
 - [查看和 Pop](#Peek-and-Pop) -您的應用程式現在可讓使用者與資料互動，而不必巡覽超出其目前的內容。 按下螢幕的螢幕上的硬碟，它們可以查看他們感興趣 （例如預覽訊息） 的項目。 按下更困難，他們可以取出到項目。
-- [快速動作](#Quick-Action)-認為的快速之類的動作，不可以是快顯總當使用者以滑鼠右鍵按一下桌面應用程式中的項目內容功能表。
+- [快速動作](#Quick-Actions)-認為的快速之類的動作，不可以是快顯總當使用者以滑鼠右鍵按一下桌面應用程式中的項目內容功能表。
   使用 快速動作，您可以新增捷徑函式在您的應用程式直接從 首頁 螢幕上的應用程式圖示。
 - [在模擬器中測試 3D Touch](#Testing-3D-Touch-in-the-Simulator) -與正確的 Mac 硬體上，您可以在 iOS 模擬器中測試 3D Touch 啟用應用程式。
 
@@ -39,7 +39,7 @@ _本文將說明如何使用新 iPhone 6s 和 iPhone 6s Plus 3D 觸控筆勢應�
 
 如上所述，所使用的新屬性[UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/)類別，您可以衡量的壓力使用者所套用到 iOS 裝置的螢幕大小，並在您的使用者介面中使用這項資訊。 例如，讓筆刷筆觸更半透明或不透明根據數量不足的壓力。
 
-[ ![](3d-touch-images/pressure01.png "呈現為更半透明或不透明的筆刷筆觸為基礎的數量不足的壓力")](3d-touch-images/pressure01.png)
+[![](3d-touch-images/pressure01.png "呈現為更半透明或不透明的筆刷筆觸為基礎的數量不足的壓力")](3d-touch-images/pressure01.png#lightbox)
 
 由於 3D Touch，如果您的應用程式正在執行 iOS 9 （或以上） 上，而且能夠支援 3D Touch，iOS 裝置中變更不足的壓力會使`TouchesMoved`會引發事件。
 
@@ -80,7 +80,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 
 例如，如果您的應用程式會顯示訊息的表格，使用者可以按硬碟上預覽覆疊的檢視，其內容的項目 (它會做為參考 Apple*查看*)。
 
-[ ![](3d-touch-images/peekandpop01.png "舉例來說，查看在內容")](3d-touch-images/peekandpop01.png)
+[![](3d-touch-images/peekandpop01.png "舉例來說，查看在內容")](3d-touch-images/peekandpop01.png#lightbox)
 
 如果使用者按下更困難，他們將輸入一般訊息檢視 (也就是為*Pop*-ping 到檢視)。
 
@@ -208,9 +208,8 @@ public override void ViewDidLoad ()
 
 如前所述，您可以將的快速動作類似關聯式功能表，可以是快顯總當使用者以滑鼠右鍵按一下桌面應用程式中的項目。 您應該使用的快速動作，以提供最常見的函數或功能的應用程式的捷徑。
 
-[ ![](3d-touch-images/quickactions01.png "快速動作 功能表的範例")](3d-touch-images/quickactions01.png)
+[![](3d-touch-images/quickactions01.png "快速動作 功能表的範例")](3d-touch-images/quickactions01.png#lightbox)
 
-<a name="Defining-Static-Quick-Actions" />
 
 ### <a name="defining-static-quick-actions"></a>定義靜態的快速動作
 
@@ -287,7 +286,6 @@ public override void ViewDidLoad ()
 
 
 
-<a name="Identifying-Quick-Action-Items" />
 
 ### <a name="identifying-quick-action-items"></a>識別的快速動作項目
 
@@ -389,7 +387,6 @@ public override void PerformActionForShortcutItem (UIApplication application, UI
 
 最後，如果您的應用程式已在執行，`PerformActionForShortcutItem`方法會呼叫以處理的快速動作項目，因此我們需要覆寫它，然後呼叫我們`HandleShortcutItem`方法以及這裡。
 
-<a name="Creating-Dynamic-Quick-Action-Items" />
 
 ### <a name="creating-dynamic-quick-action-items"></a>建立動態的快速動作項目
 
@@ -442,7 +439,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 
 若要啟用這項功能，執行任何應用程式中支援 3D Touch 的模擬的 iPhone 硬體 (iPhone 6s 和更新版本)。 接下來，選取**硬體**在 iOS 模擬器和啟用功能表**3D touch 的使用 Trackpad Force**功能表項目：
 
-[ ![](3d-touch-images/simulator01.png "在 iOS 模擬器中選取 [硬體] 功能表，並啟用 3D touch 功能表項目的使用 Trackpad Force")](3d-touch-images/simulator01.png)
+[![](3d-touch-images/simulator01.png "在 iOS 模擬器中選取 [硬體] 功能表，並啟用 3D touch 功能表項目的使用 Trackpad Force")](3d-touch-images/simulator01.png#lightbox)
 
 使用這項功能，您可以按難以上的 Mac trackpad 啟用 3D Touch 就像真正的 iPhone 硬體。
 

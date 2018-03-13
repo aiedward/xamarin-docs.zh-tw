@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: bac9402df544a57cceb98e816e268eb2dcb99c72
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8eed2d6b825a6e6dd7e956bf901246b9a630081a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-wear"></a>Hello 損耗
 
@@ -30,11 +30,11 @@ _建立第一個 Android 戴上應用程式和損耗模擬器或裝置上執行�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![在 [新增專案] 對話方塊建立新 Android 戴上的應用程式](hello-wear-images/vs/new-solution-sml.png)](hello-wear-images/vs/new-solution.png)
+[![在 [新增專案] 對話方塊建立新 Android 戴上的應用程式](hello-wear-images/vs/new-solution-sml.png)](hello-wear-images/vs/new-solution.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![建立新方案對話方塊中的新 Android 戴上的應用程式](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png)
+[![建立新方案對話方塊中的新 Android 戴上的應用程式](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png#lightbox)
 
 -----
 
@@ -47,13 +47,13 @@ _建立第一個 Android 戴上應用程式和損耗模擬器或裝置上執行�
 
 請確認**最小值 Android 目標**設**Android 5.0 （棒棒糖符號）**或更新版本： 
 
-[![將目標 Framework 設定為 Visual Studio 中的 Android 5.0](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png)
+[![將目標 Framework 設定為 Visual Studio 中的 Android 5.0](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 請確定目標架構設為**Android 5.0 （棒棒糖符號）**或更新版本：
 
-[ ![設定 Android 5.0 Visual Studio 中的目標 Framework for Mac](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png)
+[![設定 Android 5.0 Visual Studio 中的目標 Framework for Mac](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png#lightbox)
 
 -----
 
@@ -144,11 +144,11 @@ Android 穿裝置應該會出現在裝置下拉式功能表。 請務必選擇�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![在 Visual Studio 裝置功能表中選擇穿 AVD](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png)
+[![在 Visual Studio 裝置功能表中選擇穿 AVD](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![在 Visual Studio 中選擇穿 AVD Mac 裝置功能表](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png)
+[![在 Visual Studio 中選擇穿 AVD Mac 裝置功能表](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png#lightbox)
 
 -----
 
@@ -160,11 +160,11 @@ Android 穿裝置應該會出現在裝置下拉式功能表。 請務必選擇�
 
 應用程式已成功部署之後，損耗裝置的畫面應該會顯示螢幕，如下所示：
 
-[![損耗應用程式的初始畫面](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png)
+[![損耗應用程式的初始畫面](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
 
 點選**按一下 我 ！** 按鈕表面損耗裝置和每個點選計數遞增值，請參閱：
 
-[![有螢幕擷取畫面 3 按下後的應用程式](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png)
+[![有螢幕擷取畫面 3 按下後的應用程式](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
 
 
 ## <a name="next-steps"></a>後續步驟

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c096e211bc29e94dbff0202c50ca69780cb6849e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a9e3842611aab86d23a2b0c2a832efce18c22465
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="multi-touch-finger-tracking"></a>多點觸控手指追蹤
 
@@ -184,7 +184,7 @@ public override void TouchesCancelled(NSSet touches, UIEvent evt)
 
 這項處理，讓[FingerPaint](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)程式以追蹤個別手指和繪製在螢幕上的結果：
 
-[ ![](touch-tracking-images/image01.png "追蹤個別手指與螢幕上繪製結果")](touch-tracking-images/image01.png)
+[![](touch-tracking-images/image01.png "追蹤個別手指與螢幕上繪製結果")](touch-tracking-images/image01.png#lightbox)
 
 您現在已經瞭解如何追蹤個別隻手指放在畫面上，並加以區別。
 

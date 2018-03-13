@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: 1689736ce3f2a8e20ceaa23edf410d3892038522
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e5422d3f0a68f99790617fe534b30389aae2563c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tinyrenderer-workbooks"></a>TinyRenderer 活頁簿
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 02/27/2018
 -    [第 7 課： 陰影對應](https://developer.xamarin.com/workbooks/graphics/tiny-renderer/lesson7.workbook)
 -    [第 8 課： 環境阻擋](https://developer.xamarin.com/workbooks/graphics/tiny-renderer/lesson8.workbook)
 
-[ ![](tinyrenderer-images/tinyrenderer-sml.png "框線轉譯範例")](tinyrenderer-images/tinyrenderer.png)
+[![](tinyrenderer-images/tinyrenderer-sml.png "框線轉譯範例")](tinyrenderer-images/tinyrenderer.png#lightbox)
 
 這些活頁簿中的 C# 程式碼根據此開放原始碼[c + + 程式碼](https://github.com/ssloy/tinyrenderer)而且文字是從這個[wiki](https://github.com/ssloy/tinyrenderer/wiki/)。 我們非常感謝原始工作可允許我們變成活頁簿的一組授權。
 

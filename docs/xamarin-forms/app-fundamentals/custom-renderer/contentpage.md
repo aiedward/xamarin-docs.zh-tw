@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: f1f420641691e700894687fef8ea3bd44fd60ff2
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d7f7e031d91cd1505ee255bbf0d25198bd9ae82a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-contentpage"></a>自訂 ContentPage
 
@@ -99,7 +99,7 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 1. 新增`ExportRenderer`屬性來指定它將會用來呈現 Xamarin.Forms 頁面的頁面轉譯器類別。 此屬性用來向 Xamarin.Forms 中的自訂轉譯器。
 
 > [!NOTE]
-> **請注意**： 它是選擇性的以提供每個平台專案中的頁面轉譯器。 如果未登錄頁面轉譯器，將使用預設的產生器頁面。
+> 它是選擇性的以提供每個平台專案中的頁面轉譯器。 如果未登錄頁面轉譯器，將使用預設的產生器頁面。
 
 下圖說明範例應用程式，以及它們之間的關聯性中的每一個專案的責任：
 
@@ -248,7 +248,7 @@ namespace CustomRenderer.WinPhone81
 實作衍生自的自訂轉譯器時`PageRenderer`對 Windows 執行階段，`ArrangeOverride`方法應該也排列頁面控制項實作，因為基底的轉譯器不知道該如何處理它們。 否則，會產生空白頁面。 因此，在此範例`ArrangeOverride`方法呼叫`Arrange`方法`Page`執行個體。
 
 > [!NOTE]
-> **請注意**： 請務必停止與處置的物件可提供存取的相機中的 Windows Phone 8.1 WinRT 應用程式。 這樣可能會干擾其他應用程式嘗試存取裝置的相機。 如需詳細資訊，請參閱`CleanUpCaptureResourcesAsync`範例方案中，在 Windows Phone 專案中的方法和[快速入門： 使用 MediaCapture 應用程式開發介面擷取視訊](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx)。
+> 請務必停止與處置的物件可提供存取的相機中的 Windows Phone 8.1 WinRT 應用程式。 這樣可能會干擾其他應用程式嘗試存取裝置的相機。 如需詳細資訊，請參閱`CleanUpCaptureResourcesAsync`範例方案中，在 Windows Phone 專案中的方法和[快速入門： 使用 MediaCapture 應用程式開發介面擷取視訊](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx)。
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>在 UWP 上建立頁面轉譯器
 
@@ -297,7 +297,7 @@ namespace CustomRenderer.UWP
 實作衍生自的自訂轉譯器時`PageRenderer`上 UWP、`ArrangeOverride`方法應該也排列頁面控制項實作，因為基底的轉譯器不知道該如何處理它們。 否則，會產生空白頁面。 因此，在此範例`ArrangeOverride`方法呼叫`Arrange`方法`Page`執行個體。
 
 > [!NOTE]
-> **請注意**： 請務必停止與處置的物件可提供存取的相機 UWP 應用程式中。 這樣可能會干擾其他應用程式嘗試存取裝置的相機。 如需詳細資訊，請參閱[顯示相機預覽](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access)。
+> 請務必停止與處置的物件可提供存取的相機 UWP 應用程式中。 這樣可能會干擾其他應用程式嘗試存取裝置的相機。 如需詳細資訊，請參閱[顯示相機預覽](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access)。
 
 ## <a name="summary"></a>總結
 

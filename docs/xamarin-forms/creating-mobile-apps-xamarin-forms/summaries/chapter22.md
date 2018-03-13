@@ -3,14 +3,15 @@ title: "章 22 的摘要。 動畫"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 47C2B9AB-E688-4412-8AF5-9F633B3DA695
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0ee99881a43b625cc8a70fb59e54710705c2d07a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: df0647e869fcf37a3a1dfdeb6f3dbf1e7d07ad95
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-22-animation"></a>章 22 的摘要。 動畫
 
@@ -110,7 +111,7 @@ ms.lasthandoff: 02/27/2018
 
 [**RotatingSpokes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotatingSpokes)涉及`BoxView`支點周圍螢幕的中央，然後將每個支點本身建立有趣的模式：
 
-[![三個螢幕擷取畫面的旋轉 Spokes](images/ch22fg21-small.png "旋轉 Spokes")](images/ch22fg21-large.png "旋轉 Spokes")
+[![三個螢幕擷取畫面的旋轉 Spokes](images/ch22fg21-small.png "旋轉 Spokes")](images/ch22fg21-large.png#lightbox "旋轉 Spokes")
 
 不過，逐漸增加`Rotation`某個項目的屬性可能不適用於長期來看，做為[ **RotationBreakdown** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotationBreakdown)範例將示範如何。
 
@@ -124,7 +125,7 @@ ms.lasthandoff: 02/27/2018
 
 [ **XamagonXuzzle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)範例會使用`LayoutTo`移動磚的傳統實作 15-16 個謎題，會顯示變碼的映像，而不是已編號的磚：
 
-[![三個螢幕擷取畫面的 Xamarin Xuzzle](images/ch22fg26-small.png "Xuzzle 拼圖遊戲")](images/ch22fg26-large.png "Xuzzle 拼圖遊戲")
+[![三個螢幕擷取畫面的 Xamarin Xuzzle](images/ch22fg26-small.png "Xuzzle 拼圖遊戲")](images/ch22fg26-large.png#lightbox "Xuzzle 拼圖遊戲")
 
 ### <a name="your-own-awaitable-animations"></a>Awaitable 動畫
 

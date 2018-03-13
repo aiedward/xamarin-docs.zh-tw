@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: d5f9f86447886e2cea46a6317d05506cdbed90bb
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 30ee40272b5f7a6f5863dccf4dcae7431f6f536f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-a-view"></a>實作檢視
 
@@ -115,7 +115,7 @@ public class MainPageCS : ContentPage
 1. 新增`ExportRenderer`屬性來指定它將會用來呈現 Xamarin.Forms 自訂控制項的自訂轉譯器類別。 此屬性用來向 Xamarin.Forms 中的自訂轉譯器。
 
 > [!NOTE]
-> **請注意**： 對於大部分的 Xamarin.Forms 項目，是選擇性的以提供每個平台專案中的自訂轉譯器。 如果未登錄的自訂轉譯器，將使用預設的產生器控制項的基底類別。 不過，自訂轉譯器所需每個平台專案中時呈現[檢視](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)項目。
+> 大部分的 Xamarin.Forms 項目，則是選擇性的以提供每個平台專案中的自訂轉譯器。 如果未登錄的自訂轉譯器，將使用預設的產生器控制項的基底類別。 不過，自訂轉譯器所需每個平台專案中時呈現[檢視](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)項目。
 
 下圖說明範例應用程式，以及它們之間的關聯性中的每一個專案的責任：
 
@@ -318,7 +318,7 @@ namespace CustomRenderer.WinPhone81
 前提是`Control`屬性是`null`，新`CaptureElement`具現化和`InitializeAsync`呼叫方法時，它會使用`MediaCapture`API 用於提供從相機的預覽資料流。 `SetNativeControl`方法接著會呼叫指定的參考`CaptureElement`執行個體`Control`屬性。 `CaptureElement`控制公開`Tapped`由處理的事件`OnCameraPreviewTapped`來停止及啟動預覽視訊時它所點選的方法。 `Tapped`自訂轉譯器已連接到新的 Xamarin.Forms 項目，並取消訂閱只當轉譯器的項目附加至變更時要訂閱事件。
 
 > [!NOTE]
-> **請注意**： 請務必停止與處置的物件可提供存取的相機中的 Windows Phone 或 UWP 應用程式。 這樣可能會干擾其他應用程式嘗試存取裝置的相機。 如需詳細資訊，請參閱和[快速入門： 使用 MediaCapture 應用程式開發介面擷取視訊](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx)Windows 執行階段應用程式，以及[顯示相機預覽](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access)UWP 應用程式。
+> 請務必停止與處置的物件可提供存取的相機中的 Windows Phone 或 UWP 應用程式。 這樣可能會干擾其他應用程式嘗試存取裝置的相機。 如需詳細資訊，請參閱和[快速入門： 使用 MediaCapture 應用程式開發介面擷取視訊](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx)Windows 執行階段應用程式，以及[顯示相機預覽](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access)UWP 應用程式。
 
 ## <a name="summary"></a>總結
 

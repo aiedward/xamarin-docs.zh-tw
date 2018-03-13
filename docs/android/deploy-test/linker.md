@@ -6,11 +6,12 @@ ms.assetid: 3528E195-AA74-90AF-B5F3-3B65FB4F0BB8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.openlocfilehash: 01a45f02d340effe69d1cb0cff7f0d8e5ca7bef6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: bfbd95d33e442d31e94bd8c6ed888741f88d1188
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="linking-on-android"></a>在 Android 上連結
 
@@ -52,7 +53,6 @@ Xamarin.Android 應用程式會使用「連結器」來縮小應用程式的大�
 
 連結可將套件的大小縮小至原始 (未連結) 套件的 30% (1.2.0) 及 18% (4.0.1)。
 
- <a name="Control" />
 
 
 ## <a name="control"></a>控制項
@@ -77,7 +77,6 @@ public class MyActivity {
 }
 ```
 
-<a name="Linker_Behavior" />
 
 ### <a name="linker-behavior"></a>連結器行為
 
@@ -115,7 +114,6 @@ E/mono    (17755):   at Android.App.Activity.n_OnCreate_Landroid_os_Bundle_ (Int
 E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-ca83a5d7a124 (intptr,intptr,intptr)
 ```
 
-<a name="PreserveAttribute" />
 
 ### <a name="preserving-code"></a>保留程式碼
 
@@ -177,7 +175,6 @@ namespace Android.Runtime
 ```
 
 
-<a name="falseflag" />
 
 ### <a name="falseflag"></a>falseflag
 
@@ -202,7 +199,6 @@ class MyActivity {
 ```
 
 
-<a name="linkskip" />
 
 ### <a name="linkskip"></a>linkskip
 
@@ -214,7 +210,6 @@ class MyActivity {
 </PropertyGroup>
 ```
 
-<a name="LinkDescription" />
 
 ### <a name="linkdescription"></a>LinkDescription
 
@@ -223,7 +218,6 @@ class MyActivity {
 檔的 SSDL 區段。 為保留需保留的 `internal` 或 `private` 成員，自訂連結器組態檔可能為必要項目。
 
 
-<a name="Custom_Attributes" />
 
 ### <a name="custom-attributes"></a>自訂屬性
 
@@ -254,5 +248,5 @@ class MyActivity {
 
 ## <a name="related-links"></a>相關連結
 
-- [自訂連結器組態](~/cross-platform/deploy-test/linker.md)
+- [自訂連結器設定](~/cross-platform/deploy-test/linker.md)
 - [在 iOS 上連結](~/ios/deploy-test/linker.md)

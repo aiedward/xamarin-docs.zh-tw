@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 09/25/2017
-ms.openlocfilehash: e71d497201cc2d8f2b3e2b8b252e5f963806a75b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 14372c3ca42d1ba4a8ade1248f3c5f3210cc7e46
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-bindings"></a>自訂繫結
 
 _您可以編輯控制項繫結程序的中繼資料，以自訂 Xamarin.Android 繫結。這些手動修改通常會需要解決建置錯誤，並可用來形成產生的應用程式開發介面，使其更一致，使用 C# /.NET。這些指南將說明此中繼資料的結構、 如何修改中繼資料，以及如何使用 JavaDoc 復原的方法參數的名稱。_
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽
  
@@ -34,7 +33,6 @@ Xamarin.Android 自動化大部分的繫結程序。不過，在某些情況下�
 
 您可以修改控制繫結程序的中繼資料，以讓部分或所有的這些變更。
 
-<a name="guides" />
 
 ## <a name="guides"></a>輔助線
 

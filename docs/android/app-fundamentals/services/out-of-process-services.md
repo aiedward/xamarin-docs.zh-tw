@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 27A2E972-A690-480B-B31D-5EF1F74F673C
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: topgenorth
+ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: 26609043e872241a2ec4f878086b97b12b064e87
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0f018aa666f08792a1693a79e22da150f82712f6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="running-android-services-in-remote-processes"></a>遠端處理序中執行 Android 的服務
 
@@ -470,7 +470,7 @@ Android 裝置上執行的所有應用程式所存取的通用程序中執行的
 
 若要檢視應用程式已被授與的權限，開啟 Android 設定應用程式，然後選取**應用程式**。 尋找並選取清單中的應用程式。 從**應用程式資訊**畫面上，點選**權限**這將會出現 顯示所有應用程式授與的權限的檢視：
 
-[![從 Android 裝置，顯示如何尋找應用程式授與的權限的螢幕擷取畫面](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png)
+[![從 Android 裝置，顯示如何尋找應用程式授與的權限的螢幕擷取畫面](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
 
 ## <a name="summary"></a>總結
 

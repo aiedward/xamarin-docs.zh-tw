@@ -2,20 +2,19 @@
 title: "可偵錯的屬性"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
+ms.assetid: 1ABF90F1-6A70-45AE-9271-D90DC42807D0
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: db09ebe29b6c404bac892fd76389faf0b9e03d5b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 65037029d01d499421fd825f72347ae1bebd9966
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="debuggable-attribute"></a>可偵錯的屬性
 
-<a name="Overview" />
 
 
 為了進行偵錯，Android 支援 Java 偵錯連線通訊協定 (Java Debug Wire Protocol, JDWP, JDWP)。 這是一項允許如 ADB 的工具與 JVM 進行通訊的技術。 雖然 JDWP 在開發過程中很重要，但在發佈應用程式之前應停用它。

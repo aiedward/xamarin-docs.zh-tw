@@ -3,14 +3,15 @@ title: "第 1 的摘要。 Xamarin.Forms 納入如何？"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c0f3313fa3c4d1075be7deeb871e303006c533e8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b60a45cc998743d34d5cadb7750f35e7b965579
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 的摘要。 Xamarin.Forms 納入如何？
 
@@ -44,7 +45,7 @@ Xamarin 目前提供工具以原生 Mac、 iOS 和 Android 的應用程式開發
 
 Xamarin.Forms 程式大量存在於 PCL 或 SAP。 每個平台所組成的小型應用程式的虛設常式會呼叫 PCL。 Xamarin.Forms 應用程式開發介面的對應為原生控制項，每個平台上，讓每個平台會維護其特性的外觀及操作：
 
-[![平台共用的視覺效果的三個螢幕擷取畫面](images/ch01fg03-small.png "每個平台上的 Xamarin.Forms 控制項")](images/ch01fg03-large.png "Xamarin.Forms 每個平台上的控制項")
+[![平台共用的視覺效果的三個螢幕擷取畫面](images/ch01fg03-small.png "每個平台上的 Xamarin.Forms 控制項")](images/ch01fg03-large.png#lightbox "Xamarin.Forms 每個平台上的控制項")
 
 從左到右顯示 iPhone、 Android phone 和 Windows 10 行動電話螢幕擷取畫面。 在每個畫面上，此頁面包含 Xamarin.Forms [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)顯示文字， [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)來起始動作， [ `Switch` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/)的選擇為開啟/關閉的值，和[ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/)指定連續範圍內的值。 這些檢視的所有四個屬性的子系[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)上[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)。
 

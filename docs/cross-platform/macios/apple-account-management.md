@@ -2,16 +2,16 @@
 title: "Apple 帳戶管理"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
+ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/05/2017
-ms.openlocfilehash: 0cf7456cec2e934516e15ac6cbc57109e6b57a79
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 465ba4822a1004100160703f1607d99199f28a16
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="apple-account-management"></a>Apple 帳戶管理
 
@@ -44,7 +44,7 @@ Apple 帳戶管理位於 Visual Studio for mac。 它不是目前可用在 Visua
 - 請確定您有最新 fastlane 工具從[https://download.fastlane.tools](https://download.fastlane.tools)。
 - 在開始之前，請務必接受任何使用者的授權合約[開發人員入口網站](https://developer.apple.com/account/)。
 
-# <a name="adding-an-apple-developer-account"></a>新增 Apple 開發人員帳戶
+## <a name="adding-an-apple-developer-account"></a>新增 Apple 開發人員帳戶
 
 1. 若要開啟 [帳戶管理] 對話方塊，請移至**Visual Studio > 喜好設定 > Apple 開發人員帳戶**:
 
@@ -68,8 +68,11 @@ Apple 帳戶管理位於 Visual Studio for mac。 它不是目前可用在 Visua
 
     ![](apple-account-management-images/image6.png)
 
-<a name="managing">
+
+<a name="managing"/>
     
+
+
 ## <a name="managing-signing-identities-and-provisioning-profiles"></a>管理的簽署識別和佈建設定檔
 
 小組的詳細資料 對話方塊顯示的簽署識別，依類型的清單。 **狀態**欄會提示您是否憑證： 
@@ -84,7 +87,7 @@ Apple 帳戶管理位於 Visual Studio for mac。 它不是目前可用在 Visua
 
   ![](apple-account-management-images/image7.png)
 
-### <a name="create-a-signing-identities"></a>建立的簽署識別
+## <a name="create-a-signing-identities"></a>建立的簽署識別
 
 若要建立新的簽署識別，請選取**建立新憑證**下拉式按鈕，然後選取您需要的類型。 如果您有正確的權限新的簽署身分識別會出現幾秒之後。
 
@@ -92,7 +95,7 @@ Apple 帳戶管理位於 Visual Studio for mac。 它不是目前可用在 Visua
 
 ![](apple-account-management-images/image8.png)
 
-### <a name="download-provisioning-profiles"></a>下載佈建設定檔
+## <a name="download-provisioning-profiles"></a>下載佈建設定檔
 
 小組的詳細資料 對話方塊也會顯示一份所有連接到您的開發人員帳戶的佈建設定檔。 您也可以按到本機電腦下載所有的佈建設定檔**下載所有設定檔**按鈕
 
@@ -102,29 +105,28 @@ Apple 帳戶管理位於 Visual Studio for mac。 它不是目前可用在 Visua
 
 您的應用程式部署至裝置的資訊，請參閱[裝置佈建](~/ios/get-started/installation/device-provisioning/index.md)指南。
 
-
 ## <a name="troubleshooting"></a>疑難排解
 
-#### <a name="view-details-dialog-is-empty"></a>是空的檢視詳細資料 對話方塊
+### <a name="view-details-dialog-is-empty"></a>是空的檢視詳細資料 對話方塊
 
 這是目前已知的問題，與 bug 相關[#53906](https://bugzilla.xamarin.com/show_bug.cgi?id=53906)。 請確定您使用最新穩定版本的 Visual Studio for Mac
 
-#### <a name="if-you-are-experiencing-issues-logging-in-your-account-please-try-the-following"></a>如果您遇到的問題登入您的帳戶，請嘗試下列方法：
+### <a name="if-you-are-experiencing-issues-logging-in-your-account-please-try-the-following"></a>如果您遇到的問題登入您的帳戶，請嘗試下列方法：
 
 * 開啟金鑰鏈應用程式，然後在 類別目錄選取*密碼*。 搜尋`deliver.`，並刪除所有項目。
 
-#### <a name="error-adding-account-please-sign-in-with-an-app-specific-password"></a>「 新增帳戶時發生錯誤。 請使用應用程式專用密碼登入 」
+### <a name="error-adding-account-please-sign-in-with-an-app-specific-password"></a>「 新增帳戶時發生錯誤。 請使用應用程式專用密碼登入 」
 
 這是因為 2 authentication 已啟用您的帳戶。 請確定您使用最新穩定版本的 Visual Studio for Mac
 
-#### <a name="failed-to-create-new-certificate"></a>無法建立新的憑證
+### <a name="failed-to-create-new-certificate"></a>無法建立新的憑證
 「 您已達到這種憑證的限制 」
 
 ![](apple-account-management-images/image10.png)
 
 已產生的憑證，允許的數目上限。 若要修正此問題，瀏覽至[Apple 開發人員中心](https://developer.apple.com/account/ios/certificate/distribution)及一個實際執行憑證撤銷。
 
-#### <a name="known-issues"></a>已知問題：
+## <a name="known-issues"></a>已知問題
 
 * 有時 [檢視詳細資料] 對話方塊可能需要相當長的時間來擷取簽署識別和設定檔。
 * 通常焦點不會傳回至 Visual Studio for Mac 之後輸入詳細資料，您不是要加入的帳戶。 如果這種情況，再試一次程序。

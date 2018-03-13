@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/29/2017
-ms.openlocfilehash: e3416b0551bafcd7ab87b21eafbe56b733f359a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cfbe2df23317ee3ad11c9970ab892ddcc251b9d6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="installing-xamarinios-on-windows"></a>在 Windows 上安裝 Xamarin.iOS
 
@@ -34,7 +34,7 @@ Xamarin.iOS for Visual Studio 支援的組態包括 Visual Studio 在 Mac 上的
 
 下圖顯示一個簡單的 Xamarin.iOS 開發工作流程概觀：
 
-[![Xamarin.iOS 開發工作流程](images/xma2.png)](images/xma2.png)
+[![Xamarin.iOS 開發工作流程](images/xma2.png)](images/xma2.png#lightbox)
 
 > [!IMPORTANT]
 >  Visual Studio 實際上會啟動個別的 MSBuild 處理序來建置專案。 此處理序會建立與 Mac 的新連線，也就是說當 Visual Studio 進行組建時，實際上有兩個從 Windows 到 Mac 的 SSH 連線。 從[命令列](~/ios/get-started/installation/windows/connecting-to-mac/index.md)進行組建只會建立一個 MSBuild 處理序。 為了簡單起見，此圖表的所有連線都只由一個箭號代表。
@@ -44,7 +44,7 @@ Xamarin.iOS for Visual Studio 支援的組態包括 Visual Studio 在 Mac 上的
 Xamarin.iOS for Visual Studio 實現卓越的技術：不僅可讓開發人員在 Windows 電腦上使用 Visual Studio IDE 來建立、組建 iOS 應用程式，還可針對這些應用程式進行偵錯。 它無法單獨完成這些工作 – 在沒有 Apple 編譯器的情況下，無法建立 iOS 應用程式，而在沒有 Apple 憑證及程式碼簽署工具的情況下，也無法部署這些應用程式。 這意謂著 Xamarin.iOS for Visual Studio 安裝必須連線到已連上網路的 Mac OS X 電腦，才能執行這些工作。 設定好之後，Xamarin 的工具將會儘可能讓程序無縫接軌。
 
 
-<a name="system-requirements">
+<a name="system-requirements"/>
 
 ### <a name="system-requirements"></a>系統需求
 
@@ -72,13 +72,9 @@ Xamarin 工具無法與 Visual Studio Express 版搭配使用，因為缺少外�
 
 **Windows 電腦必須要能夠透過網路連線到 Mac。**
 
-<a name="appleaccount" />
-
 ### <a name="apple-developer-account"></a>Apple 開發人員帳戶
 
 若要將應用程式部署至裝置，或將應用程式提交給 App Store，必須要有「Apple 開發人員」帳戶。 必須在已連上網路的 Mac 上建立及安裝相關的開發人員憑證和佈建設定檔，Xamarin.iOS for Visual Studio 才能運作。 如需了解取得開發憑證和佈建裝置的步驟，請參閱[裝置佈建](~/ios/get-started/installation/device-provisioning/index.md)一文。
-
-<a name="features" />
 
 ## <a name="features"></a>功能 
 
@@ -100,6 +96,7 @@ Xamarin.iOS for Visual Studio 可讓您從 Windows 建立、編輯、組建及�
 
 ## <a name="configuring-your-mac"></a>設定 Mac
 
+<a name="installation"/>
 
 ### <a name="installation"></a>安裝
 
@@ -148,7 +145,7 @@ Xamarin.iOS for Visual Studio 可讓您從 Windows 建立、編輯、組建及�
 
 設定好 Mac 之後，接著即可設定 Windows 電腦。
 
-<a name="windowsinstallation">
+<a name="windowsinstallation"/>
 
 ## <a name="windows-installation"></a>Windows 安裝
 
@@ -159,7 +156,7 @@ Xamarin 可以隨著 Visual Studio 2017 或 2015 安裝一起安裝。 若要安
 安裝程序完成之後，仍然還需要進行一些步驟，才能讓所有項目運作：
 
 - [將 Visual Studio 連線到 Mac](#connectingtomac) – Visual Studio 必須先連線到 Mac 組建主機，才能組建 Xamarin.iOS 專案。
-- [設定 Visual Studio 工具列](#Visual_Studio_Toolbar_Overview) – 這將可讓您在 Visual Studio 中輕鬆存取 Xamarin.iOS 功能。
+- [設定 Visual Studio 工具列](#toolbar) – 這將可讓您在 Visual Studio 中輕鬆存取 Xamarin.iOS 功能。
 
 <a name="connectingtomac" /> 
 
@@ -171,19 +168,19 @@ Xamarin.iOS for Visual Studio 會透過電腦間的 SSH 連線，建立與 Mac �
 
 - 瀏覽至 [工具] > [選項]，然後在 [Xamarin] 底下，選取 [iOS 設定]：
 
-  [ ![[iOS 設定] 畫面](images/image2.png)](images/image2.png)
+  [ ![[iOS 設定] 畫面](images/image2.png)](images/image2.png#lightbox)
 
 - 如果已正確地[設定](#configuration) Mac 來允許**遠端登入**，您應該就能在清單中選取您的 Mac：
 
-  [![[遠端主機] 對話方塊](images/xma3.png)](images/xma3.png)
+  [![[遠端主機] 對話方塊](images/xma3.png)](images/xma3.png#lightbox)
 
 - 這會提示您輸入 Mac 主機的系統管理認證：
 
-  [![登入對話方塊](images/xma4.png)](images/xma4.png)
+  [![登入對話方塊](images/xma4.png)](images/xma4.png#lightbox)
 
 - 當您已連線時，電腦名稱的旁邊會顯示 [連接成功] 圖示：
 
-  [![電腦名稱旁邊顯示 [連接成功] 圖示的 [遠端主機] 對話方塊](images/image6.png)](images/image6.png)
+  [![電腦名稱旁邊顯示 [連接成功] 圖示的 [遠端主機] 對話方塊](images/image6.png)](images/image6.png#lightbox)
 
 每次您啟動 Visual Studio 時，都會重新連線。
 
@@ -197,7 +194,7 @@ Xamarin.iOS for Visual Studio 會透過電腦間的 SSH 連線，建立與 Mac �
 
 若要設定此工具列，請先開啟 [檢視] > [工具列] 功能表，然後確定已選取 [iOS] 項目。 請選擇此螢幕擷取畫面中顯示的功能表項目，應該勾選此項目來指示顯示工具列：
 
-[![選擇 [工具列] > [iOS]](images/image31.png)](images/image31.png)
+[![選擇 [工具列] > [iOS]](images/image31.png)](images/image31.png#lightbox)
 
 ### <a name="visual-studio-2015"></a>Visual Studio 2015
 
@@ -208,11 +205,11 @@ Xamarin.iOS for Visual Studio 會透過電腦間的 SSH 連線，建立與 Mac �
 - 選擇 [新增或移除按鈕]
 - 選取 [方案平台]
 
-[![選取 [方案平台]](images/image35.png)](images/image35.png)
+[![選取 [方案平台]](images/image35.png)](images/image35.png#lightbox)
 
 **標準**和 **iOS** 工具列現在應該會像這個螢幕擷取畫面：
 
-[![標準和 iOS 工具列現在應該會像這個螢幕擷取畫面](images/image36.png)](images/image36.png)
+[![標準和 iOS 工具列現在應該會像這個螢幕擷取畫面](images/image36.png)](images/image36.png#lightbox)
 
 完成工具列組態之後，您即可開始使用 Xamarin.iOS for Visual Studio。
 

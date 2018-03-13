@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/03/2017
-ms.openlocfilehash: a13de7fbb4b6e1f9fa2853ce599f3a038a5e4040
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: affe58d9276bd0b687089fb42a14ca964c570c9c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="complications"></a>複雜性
 
@@ -24,7 +24,7 @@ _watchOS 可讓開發人員撰寫自訂的監看式字體的複雜性_
 
 請先閱讀[Apple 文件](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html)來判斷您的應用程式是否適用於複雜的功能。 有 5`CLKComplicationFamily`顯示可從中選擇的型別：
 
-[ ![](complications-images/all-complications-sml.png "5 的 CLKComplicationFamily 類型： 小循環、 模組化小型、 模組化大型、 頂小型的實際大型")](complications-images/all-complications.png)
+[![](complications-images/all-complications-sml.png "5 的 CLKComplicationFamily 類型： 小循環、 模組化小型、 模組化大型、 頂小型的實際大型")](complications-images/all-complications.png#lightbox)
 
 應用程式可以實作一個樣式，或全部五個，根據所顯示的資料。
 您也可以支援時間移動，為使用者開啟數位皇冠過去及/或未來的時間提供值。
@@ -83,7 +83,7 @@ public class ComplicationController : CLKComplicationDataSource
 
 監看式擴充功能的**Info.plist**檔案應該指定的名稱`CLKComplicationDataSource`和您想要支援的複雜功能系列：
 
-[ ![](complications-images/complications-config-sml.png "複雜功能系列類型")](complications-images/complications-config.png)
+[![](complications-images/complications-config-sml.png "複雜功能系列類型")](complications-images/complications-config.png#lightbox)
 
 **資料來源類別**項目清單會顯示類別名稱的子類別`CLKComplicationDataSource`包含複雜邏輯的子類別。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 6e8a37816e28120392f550376807e91fb3b5d458
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cee93f082386e78a643b8c07dd48d0196e8ecd6c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="the-path-fill-types"></a>路徑填滿類型
 
@@ -164,7 +164,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 一般而言，路徑填滿類型應該只填滿和不筆觸，但這兩個會影響`Inverse`模式會影響填滿和筆劃。 填滿，兩個`Inverse`類型填滿區域的號，以便填滿星形外面的區域。 如筆劃，兩個`Inverse`類型色彩筆劃以外的所有內容。 使用這些反向填滿類型可能會產生一些奇怪的效果，如 iOS 螢幕擷取畫面所示：
 
-[![](fill-types-images/fivepointedstar-small.png "Five-Pointed 星狀頁面的三個螢幕擷取畫面")](fill-types-images/fivepointedstar-large.png "Five-Pointed 星狀頁面的三個螢幕擷取畫面")
+[![](fill-types-images/fivepointedstar-small.png "Five-Pointed 星狀頁面的三個螢幕擷取畫面")](fill-types-images/fivepointedstar-large.png#lightbox "Five-Pointed 星狀頁面的三個螢幕擷取畫面")
 
 Android 和 Windows 行動裝置的螢幕擷取畫面顯示一般奇偶和捲繞效果，但筆觸與填滿的順序也會影響結果。
 
@@ -217,7 +217,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 它會建立最少的程式碼的有趣影像：
 
-[![](fill-types-images/overlappingcircles-small.png "三個重疊圓形頁面螢幕擷取畫面")](fill-types-images/overlappingcircles-large.png "重疊圓形頁面的三個螢幕擷取畫面")
+[![](fill-types-images/overlappingcircles-small.png "三個重疊圓形頁面螢幕擷取畫面")](fill-types-images/overlappingcircles-large.png#lightbox "重疊圓形頁面的三個螢幕擷取畫面")
 
 
 ## <a name="related-links"></a>相關連結

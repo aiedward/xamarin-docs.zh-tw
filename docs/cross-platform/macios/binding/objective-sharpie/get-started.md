@@ -7,23 +7,20 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 01c390af08e59f3b10888a183df7fa6758c2609c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5d1de42a398affc1b6b6c9b863df5bc86a016c08
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started"></a>快速入門
-
-<style type="text/css"> .terminal 藍色 {色彩： rgb(10,96,254);}.terminal 綠色 {色彩： rgb(12,156,26);}.terminal 洋紅 {色彩： rgb(152,12,103);} </style>
-
 
 > [!IMPORTANT]
 > **警告：**目標 Sharpie 是有經驗的 Xamarin 開發人員了解 OBJECTIVE-C （而且藉由擴充，C） 的進階的工具。 然後再嘗試將繫結 Objective C 程式庫中，您應該具備如何建立命令列 （以及充分了解原生程式庫的運作方式） 的原生程式庫的實心知識。
 
 <a name="installing" />
 
-# <a name="installing-objective-sharpie"></a>安裝目標 Sharpie
+## <a name="installing-objective-sharpie"></a>安裝目標 Sharpie
 
 目標 Sharpie 目前是獨立的命令列工具的 Mac OS X 10.10 和更新版本中，且_不完全支援的 Xamarin 產品_。 它應該只能由進階開發人員可協助建立繫結專案第 3 合作對象 Objective C 程式庫。
 
@@ -34,9 +31,10 @@ ms.lasthandoff: 02/27/2018
   - [下載最新版本](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
   - [論壇公告](https://forums.xamarin.com/discussion/104800/objective-sharpie-3-4)
 
-> 💡 **提示：**使用`sharpie update`命令，更新為最新版本。
+> [!TIP]
+> 使用`sharpie update`命令，更新為最新版本。
 
-# <a name="basic-walkthrough"></a>基本的逐步解說
+## <a name="basic-walkthrough"></a>基本的逐步解說
 
 目標 Sharpie 係由可協助建立的 Xamarin 定義繫結所需的第 3 個合作對象 Objective C 程式庫 C# 命令列工具。
 即使是使用目標 Sharpie，開發人員*將*需要目標 Sharpie 完成來解決任何問題，無法自動處理此工具之後，修改產生的檔案。

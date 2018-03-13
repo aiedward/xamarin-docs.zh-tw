@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/01/2017
-ms.openlocfilehash: 396ed31cba336976342a8dfb26f31eeda20cf494
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fe76c93afc149553e44b5e8fa29a21767becf5c5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="navigation-bar"></a>巡覽列
 
 Android 4 導入新系統使用者介面功能，稱為*導覽列*，這樣會提供不想加入的硬體按鈕的裝置上的導覽控制項**首頁**，**回**，和**功能表**。
 下列螢幕擷取畫面顯示導覽列，從 Nexus 質數裝置：
 
- [ ![Android 的導覽列的範例](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png)
+ [![Android 的導覽列的範例](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png#lightbox)
 
 有數個新旗標所控制的可見性的導覽列及其子控制項，以及 Android 3 中導入系統軸的可見度。 中所定義的旗標`Android.View.View`類別，並如下所示：
 
@@ -31,7 +31,7 @@ Android 4 導入新系統使用者介面功能，稱為*導覽列*，這樣會�
 
 下列範例顯示簡單的應用程式，按一下按鈕的任何變更`SystemUiVisibility`:
 
- [ ![示範看得見、 低設定檔，以及隱藏 SystemUiVisibility 螢幕擷取畫面](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png)
+ [![示範看得見、 低設定檔，以及隱藏 SystemUiVisibility 螢幕擷取畫面](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png#lightbox)
 
 若要變更的程式碼`SystemUiVisibility`中設定屬性`TextView`從每個按鈕的 click 事件處理常式如下所示：
 

@@ -3,16 +3,16 @@ title: "IOS 8 的簡介"
 description: "使用 iOS 8，Apple 提供的新架構和 Api 來激發和天堂開發人員。 本指南中我們將介紹這些新的 Api，並請參閱如何開發人員和使用者有哪些好處 iOS 8。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 19049ED5-B68E-4A0E-9D57-B7FAE3BB8987
+ms.assetid: 33AD66C0-3743-49FE-9DCE-88ED3A16BA63
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 3a77d1a3b597667d8944156b040c2819a5c79ca2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8a4fabd5cc63434950f4646336b06676f6eb915b
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="introduction-to-ios-8"></a>IOS 8 的簡介
 

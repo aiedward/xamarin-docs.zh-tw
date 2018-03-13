@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 3cc5db39280c72f0de9dbdae07a49b56416c90a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fc6bc9e1d4625f8f45887b0a144a31383046b296
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="linearlayout"></a>LinearLayout
 
@@ -116,11 +116,10 @@ protected override void OnCreate (Bundle savedInstanceState)
 
 執行應用程式。 您應該會看到下列：
 
-[ ![螢幕擷取畫面的第一個線性水平排列的應用程式，第二個垂直](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png)
+[![螢幕擷取畫面的第一個線性水平排列的應用程式，第二個垂直](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png#lightbox)
 
 請注意，XML 屬性如何定義每個檢視的行為。 嘗試使用不同的值`android:layout_weight`以查看實際螢幕面積散發方式根據每個項目的權數。 請參閱[一般的版面配置物件](http://developer.android.com/guide/topics/ui/declaring-layout.html)文件，如需有關如何[ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)控點`android:layout_weight`屬性。
 
-<a name="References" />
 
 ## <a name="references"></a>參考
 

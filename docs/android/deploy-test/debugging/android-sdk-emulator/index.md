@@ -8,23 +8,21 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: d1cb0f6a329604dcac4943eaf39f838bcba38793
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 956b9e4e280545c8e11925697fced4b9d4e40693
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-sdk-emulator"></a>Android SDK Emulator
 
 本指南將說明如何搭配 Visual Studio 使用「Google Android SDK 模擬器」。
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽
 
 Google Android SDK Android 模擬器可在各種不同的組態中執行，以模擬不同的裝置。 這其中每一種組態都會建立為「虛擬裝置」。 在本指南中，您將了解如何從 Visual Studio 啟動模擬器，以及如何針對常見問題進行疑難排解。
 
-<a name="sections" />
 
 ## <a name="sections"></a>章節
 
@@ -39,7 +37,6 @@ Google Android SDK Android 模擬器可在各種不同的組態中執行，以�
 如需有關設定「Android SDK 模擬器」及建立新虛擬裝置的資訊，請參閱 [Android 模擬器設定](~/android/get-started/installation/android-emulator/index.md)。
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>總結
 

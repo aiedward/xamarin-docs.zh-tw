@@ -2,16 +2,16 @@
 title: "使用 ADO.NET"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: F6ABCEF1-951E-40D8-9EA9-DD79123C2650
+ms.assetid: 79078A4D-2D24-44F3-9543-B50418A7A000
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 45d7b3e844501f8aa97d75f2fc8af27a961290b3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b53f98206c100ed76f601937844bf182a6dc146c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="using-adonet"></a>使用 ADO.NET
 

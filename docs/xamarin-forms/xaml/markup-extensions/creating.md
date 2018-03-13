@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: eb7189226e4f5d7eb2b55bf61728e65db44ba57b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 737c55aea087094ceb5e6070261d0a3d724e8a01
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-xaml-markup-extensions"></a>建立 XAML 標記延伸
 
@@ -117,7 +117,7 @@ public class HslColorExtension : IMarkupExtension<Color>
 
 請注意，當`HslColorExtension`XML 標記，四個屬性的設定屬性，但是當似乎大括號之間，會以不加引號的逗號分隔的四個屬性。 預設值`H`， `S`，和`L`0，且預設值的`A`為 1，因此可以省略這些屬性，如果要將它們設為預設值。 最後一個範例顯示的範例其中亮度為 0，這通常會以黑色，但是 alpha 色板 0.5，因此它是半透明的並顯示灰色白色背景的頁面：
 
-[![HSL Color Demo](creating-images/hslcolordemo-small.png "HSL Color Demo")](creating-images/hslcolordemo-large.png "HSL Color Demo")
+[![HSL Color Demo](creating-images/hslcolordemo-small.png "HSL Color Demo")](creating-images/hslcolordemo-large.png#lightbox "HSL Color Demo")
 
 ## <a name="a-markup-extension-for-accessing-bitmaps"></a>標記延伸來存取的點陣圖
 
@@ -180,7 +180,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 
 以下是所有三個平台上執行的程式：
 
-[![映像資源示範](creating-images/imageresourcedemo-small.png "映像資源示範")](creating-images/imageresourcedemo-large.png "映像資源示範")
+[![映像資源示範](creating-images/imageresourcedemo-small.png "映像資源示範")](creating-images/imageresourcedemo-large.png#lightbox "映像資源示範")
 
 ## <a name="service-providers"></a>服務提供者
 

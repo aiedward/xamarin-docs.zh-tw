@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 63bc1f0ed13fe65b36e95978da9ccc2ea8d4481c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8812c6a234e05e4d651effbeb83a7bcad38dc683
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-with-web-markup"></a>搜尋以 Web 標記
 
@@ -20,12 +20,12 @@ ms.lasthandoff: 02/27/2018
 
 如果您的 iOS 應用程式已經可以支援行動裝置的深層連結，以及您的網站提出深層連結應用程式內，Apple 的內容_Applebot_ web 編目程式會建立此內容索引並自動將它加入至其雲端索引：
 
-[ ![](web-markup-images/webmarkup01.png "雲端索引概觀")](web-markup-images/webmarkup01.png)
+[![](web-markup-images/webmarkup01.png "雲端索引概觀")](web-markup-images/webmarkup01.png#lightbox)
 
 Apple 就會出現在 Spotlight 搜尋和 Safari 搜尋結果中的這些結果。
 如果使用者在點選下列其中一種結果 （和它們已安裝的應用程式） 則會前往應用程式中的內容：
 
-[ ![](web-markup-images/webmarkup02.png "深層連結從搜尋結果中的網站")](web-markup-images/webmarkup02.png)
+[![](web-markup-images/webmarkup02.png "深層連結從搜尋結果中的網站")](web-markup-images/webmarkup02.png#lightbox)
 
 ## <a name="enabling-web-content-indexing"></a>啟用 Web 內容索引
 
@@ -154,7 +154,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 下列顯示您的網站提供豐富的搜尋結果給終端使用者從中繼資料的範例：
 
-[ ![](web-markup-images/deeplink01.png "許多搜尋結果，透過結構化資料標記")](web-markup-images/deeplink01.png)
+[![](web-markup-images/deeplink01.png "許多搜尋結果，透過結構化資料標記")](web-markup-images/deeplink01.png#lightbox)
 
 Apple 目前支援下列結構描述類型從 schema.org:
 

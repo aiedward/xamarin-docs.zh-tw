@@ -3,16 +3,17 @@ title: "繫結 iOS 的程式庫"
 description: "如何讓 iOS 原生程式庫 （CocoaPods） 中的 Xamarin 應用程式存取。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
+ms.assetid: EBDC50DC-B44B-4003-AB2B-1EEB868A5E01
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 3afe1a03299e600502d49b1db039af4c6642e131
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: eb3edb007885d9fe839c2407a2581c9824e109c9
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="binding-ios-libraries"></a>繫結 iOS 的程式庫
 
@@ -39,7 +40,11 @@ _如何讓 iOS 原生程式庫 （CocoaPods） 中的 Xamarin 應用程式存取
 此頁面提供的逐步解說使用開放原始碼 iOS 繫結專案建立[ **InfColorPicker** ](https://github.com/InfinitApps/InfColorPicker) Objective C 專案做為範例。 **InfColorPicker**程式庫提供可重複使用的檢視控制站可讓使用者選取根據其 HSB 表示法，讓更方便使用的色彩選擇的色彩。
 目標 Sharpie 將用來協助進行繫結程序。
 
+## <a name="xamarin-university-lightning-lecture"></a>Xamarin 大學閃電課程
 
+> [!VIDEO https://youtube.com/embed/ZUoPLcmnf1o]
+
+**iOS C/c + + 中的繫結所[Xamarin 大學](https://university.xamarin.com/)**
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,18 +7,17 @@ ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: 9acb1ad6ab1425edb98b938e8c03edc3704f50ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 9f88899d390f7f268f1b2f435617dc952f9eb205
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="splash-screen"></a>啟動顯示畫面
 
 _Android 應用程式需要一些時間才啟動，特別是應用程式第一次啟動時在裝置上。啟動顯示畫面可能會顯示開始向上進行使用者或指示商標。_
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -32,10 +31,8 @@ Android 應用程式需要一些時間，以啟動，尤其是在第一次在裝
 
 3.  會使用先前步驟中建立的主題所定義的啟動顯示畫面作為應用程式中加入新的活動。
 
-[![後面接著應用程式畫面範例 Xamarin 標誌啟動顯示畫面](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png)
+[![後面接著應用程式畫面範例 Xamarin 標誌啟動顯示畫面](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
-
-<a name="requirements" />
 
 ## <a name="requirements"></a>需求
 
@@ -43,7 +40,6 @@ Android 應用程式需要一些時間，以啟動，尤其是在第一次在裝
 
 所有的程式碼和本指南中的 XML，請參閱[啟動顯示畫面](https://developer.xamarin.com/samples/monodroid/SplashScreen)本指南中的範例專案。
 
-<a name="implement" />
 
 ## <a name="implementing-a-splash-screen"></a>實作的啟動顯示畫面
 
@@ -51,7 +47,6 @@ Android 應用程式需要一些時間，以啟動，尤其是在第一次在裝
 
 啟動顯示畫面會實作為活動顯示加上品牌 drawable，會執行任何初始設定，並啟動任何工作。 一旦應用程式具有引導，啟動顯示畫面活動啟動主要的活動，並移除本身應用程式的上一頁堆疊。
 
-<a name="drawable" />
 
 ### <a name="creating-a-drawable-for-the-splash-screen"></a>正在建立 「 Drawable 啟動顯示畫面
 
@@ -79,7 +74,6 @@ Android 應用程式需要一些時間，以啟動，尤其是在第一次在裝
 
 啟動顯示畫面 drawable 建立之後下, 一個步驟是建立啟動顯示畫面的佈景主題。
 
-<a name="theme" />
 
 ### <a name="implementing-a-theme"></a>實作佈景主題
 
@@ -103,7 +97,6 @@ Android 應用程式需要一些時間，以啟動，尤其是在第一次在裝
 
 **MyTheme.Splash**是非常斯巴達&ndash;它宣告視窗背景、 明確移除標題列視窗中，然後將宣告它是全螢幕。 如果您想要建立啟動顯示畫面，來模擬您的應用程式的 UI 活動 「 充氣 」 的第一個配置之前，您可以使用`windowContentOverlay`而不是`windowBackground`樣式定義中。 在此情況下，您也必須修改**splash_screen.xml** drawable，使其顯示您的 UI 的模擬。
 
-<a name="activity" />
 
 ### <a name="create-a-splash-activity"></a>建立啟動顯示活動
 
@@ -161,7 +154,6 @@ public class MainActivity : AppCompatActivity
 }
 ```
 
-<a name="summary" />
 
 ## <a name="summary"></a>總結
 

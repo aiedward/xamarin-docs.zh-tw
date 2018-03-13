@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 75a8e807a68a3fccfa76fc7ba1f260818b25174d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bf93744914a0caf4f6599fc333ae200468d66e48
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="quick-interaction-techniques-for-watchos-3"></a>快速互動技術 watchOS 3
 
@@ -77,7 +77,7 @@ watchOS 3 支援下列四個筆勢辨識器：
 
 離散的筆勢辨識出筆勢時與狀態，呼叫的動作 (`WKGestureRecognizerState`) 指派做為：
 
-[ ![](quick-interaction-techniques-images/quick01.png "分隔的筆勢狀態")](quick-interaction-techniques-images/quick01.png)
+[![](quick-interaction-techniques-images/quick01.png "分隔的筆勢狀態")](quick-interaction-techniques-images/quick01.png#lightbox)
 
 開始所有離散筆勢`Possible`狀態和轉換至`Failed`或`Recognized`狀態。 當使用不連續的筆勢，開發人員通常不會直接處理狀態。 相反地，他們依賴只辨識出筆勢時呼叫的動作。
 
@@ -85,7 +85,7 @@ watchOS 3 支援下列四個筆勢辨識器：
 
 連續的筆勢是離散的筆勢，其中的動作稱為多次如筆勢辨識出與稍有不同：
 
-[ ![](quick-interaction-techniques-images/quick02.png "連續的筆勢狀態")](quick-interaction-techniques-images/quick02.png)
+[![](quick-interaction-techniques-images/quick02.png "連續的筆勢狀態")](quick-interaction-techniques-images/quick02.png#lightbox)
 
 同樣地，連續的筆勢一開始為`Possible`狀態，但它們透過多個更新的進度。 此處，開發人員將需要考慮辨識器的狀態，並更新期間的應用程式的 UI`Changed`之前的動作是最後階段`Recognized`或`Canceled`。
 
@@ -168,7 +168,7 @@ Apple 已離開其開發人員可以決定旋轉計數如何對應至要更新�
 
 符號 (`+/-`) 旋轉差異表示使用者已開啟數位皇冠的方向：
 
-[ ![](quick-interaction-techniques-images/quick03.png "旋轉差異的正負號表示使用者已開啟數位皇冠方向")](quick-interaction-techniques-images/quick03.png)
+[![](quick-interaction-techniques-images/quick03.png "旋轉差異的正負號表示使用者已開啟數位皇冠方向")](quick-interaction-techniques-images/quick03.png#lightbox)
 
 
 如果使用者向上捲動，WatchKit 會傳回正差異且如果向下捲動，然後負差異將會傳回，無論何種方向使用者穿中的監看式。
@@ -189,15 +189,15 @@ Apple 已離開其開發人員可以決定旋轉計數如何對應至要更新�
 
 使用者瀏覽 watchOS 應用程式中的資料表檢視的標準方式，就是捲動到所需資料片段，請點選上特定資料列顯示詳細的檢視，請點選 [上一頁] 按鈕時完成檢視詳細資料並重複此程序的任何其他資訊，y 有興趣從資料表中：
 
-[ ![](quick-interaction-techniques-images/quick04.png "資料表與詳細資料檢視之間移動")](quick-interaction-techniques-images/quick04.png)
+[![](quick-interaction-techniques-images/quick04.png "資料表與詳細資料檢視之間移動")](quick-interaction-techniques-images/quick04.png#lightbox)
 
 新增至 watchOS 3，開發人員可以垂直分頁上啟用其資料表檢視表的控制項。 啟用這項功能，使用者可以向上捲動以尋找資料表 檢視的資料列，並點選要檢視其詳細資料與之前的資料列。 不過，它們可以現在向上撥動以選取下一個資料列，資料表中或下移來選取上一個資料列 （或使用數位皇冠），完全不必返回資料表檢視第一次：
 
-[ ![](quick-interaction-techniques-images/quick05.png "資料表與詳細資料檢視之間移動和撥動向上和向下的其他資料列之間移動")](quick-interaction-techniques-images/quick05.png)
+[![](quick-interaction-techniques-images/quick05.png "資料表與詳細資料檢視之間移動和撥動向上和向下的其他資料列之間移動")](quick-interaction-techniques-images/quick05.png#lightbox)
 
 若要啟用此模式中，在 Xcode 中開啟 watchOS 應用程式的分鏡腳本，進行編輯，選取 [資料表] 檢視並檢查**垂直詳細分頁**核取方塊：
 
-[ ![](quick-interaction-techniques-images/quick06.png "選取垂直分頁的詳細資料的核取方塊")](quick-interaction-techniques-images/quick06.png)
+[![](quick-interaction-techniques-images/quick06.png "選取垂直分頁的詳細資料的核取方塊")](quick-interaction-techniques-images/quick06.png#lightbox)
 
 請確定資料表使用 Segues 來顯示詳細的檢視，然後儲存變更到分鏡腳本並返回 Visual Studio for Mac 同步處理。
 
@@ -313,7 +313,7 @@ Apple 建議找尋結合所有 watchOS 3 提供豐富、 方便而快速使用 w
 
 這特別會變成其中一個問題就時監看式應用程式會執行任何類型的網路連線或使用其附屬 iPhone 應用程式共用資訊。 這可以通常會導致等候指標進行交易時，快速互動期間不需要這樣做。 請使用以下範例：
 
-[ ![](quick-interaction-techniques-images/quick07.png "監看式應用程式進行網路連線，並且使用其附屬 iPhone 應用程式共用資訊的圖表")](quick-interaction-techniques-images/quick07.png)
+[![](quick-interaction-techniques-images/quick07.png "監看式應用程式進行網路連線，並且使用其附屬 iPhone 應用程式共用資訊的圖表")](quick-interaction-techniques-images/quick07.png#lightbox)
 
 1. 使用者選擇要監看式上購買的項目。
 2. 他們點選 [購買] 按鈕。
@@ -325,7 +325,7 @@ Apple 建議找尋結合所有 watchOS 3 提供豐富、 方便而快速使用 w
 
 使用 Apple 的建議的模型，看看相同快速互動一次：
 
-[ ![](quick-interaction-techniques-images/quick08.png "蘋果建議的模型圖表")](quick-interaction-techniques-images/quick08.png)
+[![](quick-interaction-techniques-images/quick08.png "蘋果建議的模型圖表")](quick-interaction-techniques-images/quick08.png#lightbox)
 
 1. 使用者選擇要監看式上購買的項目。
 2. 他們點選 [購買] 按鈕。

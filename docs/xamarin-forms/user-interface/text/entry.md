@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 288cb4bd782c041e6dc91f1a40b7080e7859fad3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 88b133a803aa74324e60a4f7610a2c0f0d31a807
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="entry"></a>進入
 
@@ -43,7 +43,7 @@ var text = MyEntry.Text;
 ```
 
 > [!NOTE]
-> **請注意**： 寬度`Entry`可以藉由設定定義其`WidthRequest`屬性。 請不要依賴的寬度`Entry`被定義為基礎的值及其`Text`屬性。
+> 寬度`Entry`可以藉由設定定義其`WidthRequest`屬性。 請不要依賴的寬度`Entry`被定義為基礎的值及其`Text`屬性。
 
 ### <a name="keyboards"></a>鍵盤
 

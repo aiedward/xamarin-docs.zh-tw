@@ -5,11 +5,11 @@ title: "Xamarin 文件"
 description: "Xamarin 可讓您使用 .NET 程式碼和平台專屬的使用者介面，來建置 Android、iOS 和 macOS 原生應用程式。 Xamarin.Forms 可讓您透過以 C# 或 XAML 撰寫的共用 UI 程式碼，來建置原生應用程式。"
 featureFlags:
 - clicktale
-ms.openlocfilehash: e81c8b860f202efb0bc7ab795f54b32eecc3cf6d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 162d608d6eeaf0da0120308168f88fcc805b5406
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -955,7 +955,7 @@ ms.lasthandoff: 02/27/2018
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img src="~/media/index/xamarin-graphics-urhosharp.svg?branch=master" alt="UrhoSharp" />
+                                                        <img src="~/media/index/xamarin-graphics-urho.svg?branch=master" alt="UrhoSharp" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">

@@ -8,13 +8,15 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5ae7753fe7d12fd41b39f9429fa4a3ee97a22a5d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f781e0ad889415d75f22e7dd5fb3eae75d080a8f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
-# <a name="app-distributioniostvosdeploy-testapp-distributionindexmd"></a>[應用程式散發](~/ios/tvos/deploy-test/app-distribution/index.md)
+# <a name="deployment-and-testing"></a>部署及測試
+
+## <a name="app-distributioniostvosdeploy-testapp-distributionindexmd"></a>[應用程式散發](~/ios/tvos/deploy-test/app-distribution/index.md)
 
 這篇文章會示範如何設定、 建置及發行 Xamarin.tvOS 應用程式進行發佈，透過各種不同的方式，包括：
 
@@ -23,8 +25,6 @@ ms.lasthandoff: 02/27/2018
 - 臨機操作的通訊群組。
 
 如果您有提交至 Apple TV 應用程式市集應用程式 Xamarin.tvOS 的問題，請參閱我們[疑難排解](~/ios/tvos/troubleshooting.md)指南。 它包含許多可能會遇到的已知的問題及如何解決 Xamarin.tvOS。
-
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -4,14 +4,15 @@ description: "了解如何使用三種不同的方式定義弧形 SkiaSharp"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 236f5da78022d6f6482ed66ffd439c4cd15766a3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 390c8f4634ea38ecb93e3f21175db00fef27b8e4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>繪製弧形的三種方式
 
@@ -100,7 +101,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 當您所見，開始角度和掃掠角度可能要花在負值上：
 
-[![](arcs-images/anglearc-small.png "三個螢幕擷取畫面的角度弧線頁面")](arcs-images/anglearc-large.png "角度弧線頁面的三個螢幕擷取畫面")
+[![](arcs-images/anglearc-small.png "三個螢幕擷取畫面的角度弧線頁面")](arcs-images/anglearc-large.png#lightbox "角度弧線頁面的三個螢幕擷取畫面")
 
 這個方法來產生弧形是以演算法最簡單，所以可以輕鬆地衍生參數描述弧線的方程式。了解的大小和位置的橢圓形和開始和掃掠角度，開始和結束點弧線的計算使用簡單的三角函數：
 
@@ -205,11 +206,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 新`SKPath`物件建立的每個圓形圖配量。 路徑包含中心中的行則`ArcTo`中心結果回繪製弧形，而另一條`Close`呼叫。 這個程式會顯示 「 分裂 」 的圓形圖扇區移動它們所有中央 50 像素。 這項工作需要掃掠角度的中點方向的向量的每個配量：
 
-[![](arcs-images/explodedpiechart-small.png "分裂式圓形圖圖表頁面的三個螢幕擷取畫面")](arcs-images/explodedpiechart-large.png "分裂式圓形圖圖表頁面的三個螢幕擷取畫面")
+[![](arcs-images/explodedpiechart-small.png "分裂式圓形圖圖表頁面的三個螢幕擷取畫面")](arcs-images/explodedpiechart-large.png#lightbox "分裂式圓形圖圖表頁面的三個螢幕擷取畫面")
 
 若要查看看起來沒有"爆炸 」，只是標記為註解`Translate`呼叫：
 
-[![](arcs-images/explodedpiechartunexploded-small.png "三個螢幕擷取畫面的分裂式圓形圖沒有頁面爆炸")](arcs-images/explodedpiechartunexploded-large.png "的分裂式圓形圖沒有頁面爆炸 Triple 螢幕擷取畫面")
+[![](arcs-images/explodedpiechartunexploded-small.png "三個螢幕擷取畫面的分裂式圓形圖沒有頁面爆炸")](arcs-images/explodedpiechartunexploded-large.png#lightbox "的分裂式圓形圖沒有頁面爆炸 Triple 螢幕擷取畫面")
 
 ## <a name="the-tangent-arc"></a>正切函數的弧形
 
@@ -413,7 +414,7 @@ public partial class TangentArcPage : InteractivePage
 
 以下是**正切弧線**所有三個平台上執行的頁面：
 
-[![](arcs-images/tangentarc-small.png "三個螢幕擷取畫面的正切函數弧線頁面")](arcs-images/tangentarc-large.png "正切弧線頁面的三個螢幕擷取畫面")
+[![](arcs-images/tangentarc-small.png "三個螢幕擷取畫面的正切函數弧線頁面")](arcs-images/tangentarc-large.png#lightbox "正切弧線頁面的三個螢幕擷取畫面")
 
 在 Windows Mobile 裝置上，三個點幾乎 colinear，而且弧線便相當小。
 
@@ -490,7 +491,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 以下是三個平台上執行的程式：
 
-[![](arcs-images/roundedheptagon-small.png "三個螢幕擷取畫面的捨入 Heptagon 頁面")](arcs-images/roundedheptagon-large.png "四捨五入 Heptagon 頁面的三個螢幕擷取畫面")
+[![](arcs-images/roundedheptagon-small.png "三個螢幕擷取畫面的捨入 Heptagon 頁面")](arcs-images/roundedheptagon-large.png#lightbox "四捨五入 Heptagon 頁面的三個螢幕擷取畫面")
 
 ## <a name="the-elliptical-arc"></a>橢圓形弧線
 
@@ -585,7 +586,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 這裡與其執行所在的三個平台：
 
-[![](arcs-images/ellipticalarc-small.png "三個螢幕擷取畫面的橢圓形弧線頁面")](arcs-images/ellipticalarc-large.png "橢圓形弧線頁面的三個螢幕擷取畫面")
+[![](arcs-images/ellipticalarc-small.png "三個螢幕擷取畫面的橢圓形弧線頁面")](arcs-images/ellipticalarc-large.png#lightbox "橢圓形弧線頁面的三個螢幕擷取畫面")
 
 **弧線無限大**頁面使用橢圓形弧線来繪製無限大符號。 無限大符號根據兩個具有 100 個單位，並以 100 為單位的半徑圓形：
 
@@ -653,7 +654,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 程式碼會使用`Bounds`屬性`SKPath`來判斷它在畫布的大小調整無限大正弦值的維度：
 
-[![](arcs-images/arcinfinity-small.png "弧線無限大頁面的三個螢幕擷取畫面")](arcs-images/arcinfinity-large.png "弧線無限大頁面的三個螢幕擷取畫面")
+[![](arcs-images/arcinfinity-small.png "弧線無限大頁面的三個螢幕擷取畫面")](arcs-images/arcinfinity-large.png#lightbox "弧線無限大頁面的三個螢幕擷取畫面")
 
 結果看起來更小，這表示`Bounds`屬性`SKPath`報告大於路徑的大小。
 
@@ -661,7 +662,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 若要取得更緊密地調整，請使用`TightBounds`屬性，排除的控點。 以下是程式執行以橫向模式，並且使用`TightBounds`屬性取得路徑界限：
 
-[![](arcs-images/arcinfinitytightbounds-small.png "弧線無限大頁面緊密的繫結的三個螢幕擷取畫面")](arcs-images/arcinfinitytightbounds-large.png "弧線無限大頁面緊密的繫結的三個螢幕擷取畫面")
+[![](arcs-images/arcinfinitytightbounds-small.png "弧線無限大頁面緊密的繫結的三個螢幕擷取畫面")](arcs-images/arcinfinitytightbounds-large.png#lightbox "弧線無限大頁面緊密的繫結的三個螢幕擷取畫面")
 
 雖然數學 smooth 弧形和直線之間的連線，但似乎有點突然弧線直線的變更。 更好的無限大符號會呈現於下一個頁面。
 

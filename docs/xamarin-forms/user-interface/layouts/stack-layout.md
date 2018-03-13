@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: b2d89fd6f9030864931395db00bd6f6321b7fbf9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 14982fc5cb3e05243c819cbc8b37349d872bd24c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="stacklayout"></a>StackLayout
 
 `StackLayout` 水平或垂直組織中的一維的行 （「 堆疊 」） 的檢視。 在中檢視`StackLayout`可以使用版面配置中的空間大小。 位置是由檢視加入至版面配置和檢視的配置選項順序來決定。
 
-[ ![](stack-layout-images/layouts-sml.png "Xamarin.Forms 配置")](stack-layout-images/layouts.png "Xamarin.Forms 版面配置")
+[![](stack-layout-images/layouts-sml.png "Xamarin.Forms 配置")](stack-layout-images/layouts.png#lightbox "Xamarin.Forms 版面配置")
 
 ## <a name="purpose"></a>用途
 

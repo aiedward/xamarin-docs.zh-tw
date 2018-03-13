@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: cc4407be9dee7e19dbf1f3cc03b3b88191717e6f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0c68d2cfd43eb535fe2e02b5662250cb6e453ddd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 標記延伸
 
@@ -137,7 +137,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 以下是所有三個平台上執行的範例：
 
-[![X:static 示範](consuming-images/staticdemo-small.png "X:static 示範")](consuming-images/staticdemo-large.png "X:static 示範")
+[![X:static 示範](consuming-images/staticdemo-small.png "X:static 示範")](consuming-images/staticdemo-large.png#lightbox "X:static 示範")
 
 <a name="reference" />
 
@@ -181,7 +181,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 同時`x:Reference`運算式使用的縮寫的版本`ReferenceExtension`類別名稱，並消除`Name=`運算式的一部分。 在第一個範例中，`x:Reference`標記延伸會內嵌在`Binding`標記延伸。 請注意，`Source`和`StringFormat`設定會以逗號分隔。 以下是所有三個平台上執行的程式：
 
-[![X:reference 示範](consuming-images/referencedemo-small.png "X:reference 示範")](consuming-images/referencedemo-large.png "X:reference 示範")
+[![X:reference 示範](consuming-images/referencedemo-small.png "X:reference 示範")](consuming-images/referencedemo-large.png#lightbox "X:reference 示範")
 
 <a name="type" />
 
@@ -236,7 +236,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 以下是開啟主頁面**標記延伸**:
 
-[![主頁面](consuming-images/mainpage-small.png "主要頁面")](consuming-images/mainpage-large.png "主頁面")
+[![主頁面](consuming-images/mainpage-small.png "主要頁面")](consuming-images/mainpage-large.png#lightbox "主頁面")
 
 每個`CommandParameter`屬性設定為`x:Type`參考其中一個其他頁面的標記延伸。 `Command`屬性繫結至具名屬性`NavigateCommand`。 這個屬性定義在`MainPage`程式碼後置檔案：
 
@@ -319,7 +319,7 @@ public partial class TypeDemoPage : ContentPage
 
 方法時執行`Button`按下的引數的新執行個體、 設定其`VerticalOptions`屬性，並將它加入`StackLayout`。 三個`Button`項目然後分享頁面具有動態建立的檢視：
 
-[![x:Type Demo](consuming-images/typedemo-small.png "x:Type Demo")](consuming-images/typedemo-large.png "x:Type Demo")
+[![x:Type Demo](consuming-images/typedemo-small.png "x:Type Demo")](consuming-images/typedemo-large.png#lightbox "x:Type Demo")
 
 <a name="array" />
 
@@ -376,7 +376,7 @@ public partial class TypeDemoPage : ContentPage
 
 `ViewCell`建立簡單`BoxView`每個色彩項目：
 
-[![x:Array Demo](consuming-images/arraydemo-small.png "x:Array Demo")](consuming-images/arraydemo-large.png "x:Array Demo")
+[![x:Array Demo](consuming-images/arraydemo-small.png "x:Array Demo")](consuming-images/arraydemo-large.png#lightbox "x:Array Demo")
 
 有數種方法來指定個別`Color`此陣列中的項目。 您可以使用`x:Static`標記延伸：
 
@@ -449,7 +449,7 @@ public partial class TypeDemoPage : ContentPage
 
 以下是三個平台上執行的程式：
 
-[![X:null 示範](consuming-images/nulldemo-small.png "X:null 示範")](consuming-images/nulldemo-large.png "X:null 示範")
+[![X:null 示範](consuming-images/nulldemo-small.png "X:null 示範")](consuming-images/nulldemo-large.png#lightbox "X:null 示範")
 
 通知的四個`Label`元素具有新細明體字型，但在中心`Label`預設 sans serif 字型。
 

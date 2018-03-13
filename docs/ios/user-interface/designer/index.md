@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 20f1e7fe7e0042ec2d4ae3f5ae1299ef0ef9c9e4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 884811e4035aabd831f851015db098a0243a2388
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-designer"></a>iOS 設計工具
 
@@ -21,13 +21,13 @@ _適用於 iOS Xamarin 設計工具是完全整合適用於 Mac 和 Visual Studi
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 
-[![](images/designer-new1.png "IOS 設計工具")](images/designer-new1.png)
+[![](images/designer-new1.png "IOS 設計工具")](images/designer-new1.png#lightbox)
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 
-[![](images/designer-vs.png "IOS 設計工具")](images/designer-vs.png)
+[![](images/designer-vs.png "IOS 設計工具")](images/designer-vs.png#lightbox)
 
 
 -----

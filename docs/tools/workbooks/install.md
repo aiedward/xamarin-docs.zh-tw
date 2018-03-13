@@ -2,15 +2,15 @@
 title: "安裝與需求"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
+ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: dffea94b309b3c945a37a116668486f404f544b3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: abc9f9402b55a11e313b9938f07f37e5329b55b6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="installation-and-requirements"></a>安裝與需求
 
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", inspectorOnLoad);
 - Mac: `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
 - Windows: `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
-1.4.x 也提供功能的能力，從主功能表中選取 [記錄檔中搜尋 (macOS) 或檔案總管] (Windows) 直接：
+1.4.x 也提供功能的能力，從主功能表中選取記錄檔中搜尋 (macOS) 或檔案總管 (Windows) 直接：
 
 - **說明 → 顯示記錄檔**
 

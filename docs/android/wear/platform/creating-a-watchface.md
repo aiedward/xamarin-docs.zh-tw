@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 004f7c815a1629310ba4c0f4c6f4219581a12366
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fb3a2a9e60bda2a99a719bf75d23c29d42a94bdb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-watch-face"></a>建立 Watch 錶面
 
@@ -22,11 +22,11 @@ _本指南說明如何實作自訂監看式朝服務針對 Android 戴上。關�
 
 在本逐步解說中，以說明必要的建立自訂的 Android 穿 watch 錶面建立基本監看式朝服務。 初始監看式朝服務會顯示簡單數位監看式，以小時和分鐘為單位顯示目前的時間： 
 
-[![數位 watch 錶面](creating-a-watchface-images/01-initial-face.png "的初始數位錶範例螢幕擷取畫面")](creating-a-watchface-images/01-initial-face.png)
+[![數位 watch 錶面](creating-a-watchface-images/01-initial-face.png "的初始數位錶範例螢幕擷取畫面")](creating-a-watchface-images/01-initial-face.png#lightbox)
 
 此數位 watch 錶面是開發及測試之後，將其升級為更複雜的三種指針的類比 watch 錶面加入更多程式碼： 
 
-[ ![類比 watch 錶面](creating-a-watchface-images/02-example-watchface.png "的最終類比錶範例螢幕擷取畫面")](creating-a-watchface-images/02-example-watchface.png)
+[![類比 watch 錶面](creating-a-watchface-images/02-example-watchface.png "的最終類比錶範例螢幕擷取畫面")](creating-a-watchface-images/02-example-watchface.png#lightbox)
 
 監看式朝服務結合在一起，損耗應用程式一併安裝。 在下列範例中，`MainActivity`只包含損耗應用程式範本中的程式碼，讓監看式朝服務可以封裝，並隨應用程式部署至智慧監看式。 作用中，此應用程式將偵錯和測試做純粹做為一種載具，用於取得監看式朝服務載入損耗裝置 （或模擬器）。 
 
@@ -47,11 +47,11 @@ _本指南說明如何實作自訂監看式朝服務針對 Android 戴上。關�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![新增專案 對話方塊](creating-a-watchface-images/03-wear-project-vs-sml.png "新增專案 對話方塊中選取有應用程式")](creating-a-watchface-images/03-wear-project-vs.png)
+[![新增專案 對話方塊](creating-a-watchface-images/03-wear-project-vs-sml.png "新增專案 對話方塊中選取有應用程式")](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![新增專案 對話方塊](creating-a-watchface-images/03-wear-project-xs-sml.png "新增專案 對話方塊中選取有應用程式")](creating-a-watchface-images/03-wear-project-xs.png)
+[![新增專案 對話方塊](creating-a-watchface-images/03-wear-project-xs-sml.png "新增專案 對話方塊中選取有應用程式")](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
 
 -----
 
@@ -60,11 +60,11 @@ _本指南說明如何實作自訂監看式朝服務針對 Android 戴上。關�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![封裝名稱設定](creating-a-watchface-images/04-package-name-vs.png "設 com.xamarin.watchface 封裝名稱")](creating-a-watchface-images/04-package-name-vs.png)
+[![封裝名稱設定](creating-a-watchface-images/04-package-name-vs.png "設 com.xamarin.watchface 封裝名稱")](creating-a-watchface-images/04-package-name-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![封裝名稱設定](creating-a-watchface-images/04-package-name-xs.png "設 com.xamarin.watchface 封裝名稱")](creating-a-watchface-images/04-package-name-xs.png)
+[![封裝名稱設定](creating-a-watchface-images/04-package-name-xs.png "設 com.xamarin.watchface 封裝名稱")](creating-a-watchface-images/04-package-name-xs.png#lightbox)
 
 -----
 
@@ -72,13 +72,13 @@ _本指南說明如何實作自訂監看式朝服務針對 Android 戴上。關�
 
 此外，向下捲動並啟用**網際網路**和**WAKE_LOCK**權限： 
 
-[ ![必要的權限](creating-a-watchface-images/05-required-permissions-vs.png "啟用網際網路和 WAKE_LOCK 權限")](creating-a-watchface-images/05-required-permissions-vs.png)
+[![必要的權限](creating-a-watchface-images/05-required-permissions-vs.png "啟用網際網路和 WAKE_LOCK 權限")](creating-a-watchface-images/05-required-permissions-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 設定 Android 最低版本為**Android 5.1 （API 層級 22）**。 此外，啟用**網際網路**和**WakeLock**權限：
 
-[ ![必要的權限](creating-a-watchface-images/05-required-permissions-xs.png "啟用網際網路和 WakeLock 權限")](creating-a-watchface-images/05-required-permissions-xs.png)
+[![必要的權限](creating-a-watchface-images/05-required-permissions-xs.png "啟用網際網路和 WakeLock 權限")](creating-a-watchface-images/05-required-permissions-xs.png#lightbox)
 
 -----
 
@@ -91,24 +91,24 @@ _本指南說明如何實作自訂監看式朝服務針對 Android 戴上。關�
 
 啟動 NuGet 封裝管理員 (在 Visual Studio 中，以滑鼠右鍵按一下**參考**中**方案總管 中**選取**管理 NuGet 封裝...**).專案更新到最新穩定版本**Xamarin.Android.Wear**: 
 
-[ ![NuGet 封裝管理員新增](creating-a-watchface-images/06-add-wear-pkg-vs-sml.png "新增 Xamarin.Android.Wear 封裝")](creating-a-watchface-images/06-add-wear-pkg-vs.png)
+[![NuGet 封裝管理員新增](creating-a-watchface-images/06-add-wear-pkg-vs-sml.png "新增 Xamarin.Android.Wear 封裝")](creating-a-watchface-images/06-add-wear-pkg-vs.png#lightbox)
 
 接下來，如果**Xamarin.Android.Support.v13**已安裝，請將它解除安裝：
 
-[ ![NuGet 套件管理員移除](creating-a-watchface-images/07-uninstall-v13-sml.png "移除 Xamarin.Support.v13")](creating-a-watchface-images/07-uninstall-v13.png)
+[![NuGet 套件管理員移除](creating-a-watchface-images/07-uninstall-v13-sml.png "移除 Xamarin.Support.v13")](creating-a-watchface-images/07-uninstall-v13.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 啟動 NuGet 封裝管理員 (在 Visual Studio for Mac，以滑鼠右鍵按一下**封裝**中**方案窗格**選取**新增封裝...**).專案更新到最新穩定版本**Xamarin.Android.Wear**: 
 
-[ ![NuGet 封裝管理員新增](creating-a-watchface-images/06-add-wear-pkg-xs-sml.png "新增 Xamarin.Android.Wear 封裝")](creating-a-watchface-images/06-add-wear-pkg-xs.png)
+[![NuGet 封裝管理員新增](creating-a-watchface-images/06-add-wear-pkg-xs-sml.png "新增 Xamarin.Android.Wear 封裝")](creating-a-watchface-images/06-add-wear-pkg-xs.png#lightbox)
 
 -----
 
 
 建置和損耗裝置或模擬器上執行應用程式 (如需如何執行這項操作的詳細資訊，請參閱[入門](~/android/wear/get-started/index.md)指南)。 您應該會看到下列應用程式畫面損耗裝置上：
 
-[ ![應用程式螢幕擷取畫面](creating-a-watchface-images/08-app-screen.png "損耗裝置上的應用程式畫面")](creating-a-watchface-images/08-app-screen.png)
+[![應用程式螢幕擷取畫面](creating-a-watchface-images/08-app-screen.png "損耗裝置上的應用程式畫面")](creating-a-watchface-images/08-app-screen.png#lightbox)
 
 此時，基本損耗應用程式沒有監看式朝功能因為它尚未提供監看式朝服務實作。 接下來將會加入此服務。 
 
@@ -117,7 +117,7 @@ _本指南說明如何實作自訂監看式朝服務針對 Android 戴上。關�
 
 Android 損耗實作觀賞透過字體`CanvasWatchFaceService`類別。 `CanvasWatchFaceService` 衍生自`WatchFaceService`，而其本身衍生自`WallpaperService`下圖所示： 
 
-[ ![繼承圖表](creating-a-watchface-images/09-inheritance-diagram-sml.png "CanvasWatchFaceService 繼承圖表")](creating-a-watchface-images/09-inheritance-diagram.png)
+[![繼承圖表](creating-a-watchface-images/09-inheritance-diagram-sml.png "CanvasWatchFaceService 繼承圖表")](creating-a-watchface-images/09-inheritance-diagram.png#lightbox)
 
 `CanvasWatchFaceService` 包含巢狀`CanvasWatchFaceService.Engine`; 它會具現化`CanvasWatchFaceService.Engine`真正的繪圖 watch 錶面工作的物件。 `CanvasWatchFaceService.Engine` 衍生自`WallpaperService.Engine`上圖所示。 
 
@@ -317,11 +317,11 @@ public override void OnTimeTick()
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![建置動作](creating-a-watchface-images/10-android-resource-vs.png "組建置 AndroidResource 的動作")](creating-a-watchface-images/10-android-resource-vs.png)
+[![建置動作](creating-a-watchface-images/10-android-resource-vs.png "組建置 AndroidResource 的動作")](creating-a-watchface-images/10-android-resource-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![建置動作](creating-a-watchface-images/10-android-resource-xs.png "組建置 AndroidResource 的動作")](creating-a-watchface-images/10-android-resource-xs.png)
+[![建置動作](creating-a-watchface-images/10-android-resource-xs.png "組建置 AndroidResource 的動作")](creating-a-watchface-images/10-android-resource-xs.png#lightbox)
 
 -----
 
@@ -342,13 +342,13 @@ public override void OnTimeTick()
 
 4.  選取**Xamarin 範例**觀賞字體 （顯示在右側）： 
 
-    [ ![Watchface 選擇器](creating-a-watchface-images/11-watchface-picker.png "撥動，找到 Xamarin 範例 watch 錶面")](creating-a-watchface-images/11-watchface-picker.png)
+    [![Watchface 選擇器](creating-a-watchface-images/11-watchface-picker.png "撥動，找到 Xamarin 範例 watch 錶面")](creating-a-watchface-images/11-watchface-picker.png#lightbox)
 
 5.  點選**Xamarin 範例**觀賞圖示來選取它。 
 
 這會變更監看式表面之損耗裝置使用到目前為止所實作的自訂監看式朝服務： 
 
-[ ![數位 watch 錶面](creating-a-watchface-images/12-digital-watchface.png "損耗裝置上執行自訂數位監看式")](creating-a-watchface-images/12-digital-watchface.png)
+[![數位 watch 錶面](creating-a-watchface-images/12-digital-watchface.png "損耗裝置上執行自訂數位監看式")](creating-a-watchface-images/12-digital-watchface.png#lightbox)
 
 這是相當粗糙 watch 錶面因為是因此最小的應用程式實作 (例如，它不會包含監看式表面背景，而不會呼叫`Paint`反別名方法，以改善外觀)。 不過，它實作的基本功能所需建立自訂 watch 錶面。 
 
@@ -476,7 +476,7 @@ Application.Context.UnregisterReceiver (timeZoneReceiver);
 
 建置並重新部署到損耗裝置的應用程式。 監看式朝選擇器為之前選取 watch 錶面。 監看式選擇器中的預覽會顯示在左邊，並在右側顯示新的 watch 錶面：
 
-[ ![類比 watch 錶面](creating-a-watchface-images/13-analog-watchface.png "改善類比朝選擇器中，並在裝置上")](creating-a-watchface-images/13-analog-watchface.png)
+[![類比 watch 錶面](creating-a-watchface-images/13-analog-watchface.png "改善類比朝選擇器中，並在裝置上")](creating-a-watchface-images/13-analog-watchface.png#lightbox)
 
 在這個螢幕擷取畫面，秒針移動秒一次。 當您損耗裝置上執行此程式碼時，監看式進入環境的模式時，就會消失秒針。
 

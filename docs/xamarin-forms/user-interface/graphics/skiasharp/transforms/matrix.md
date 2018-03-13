@@ -4,14 +4,15 @@ description: "深入 SkiaSharp 多用途的轉換矩陣的轉換"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 85402768990869a2121cdea5ab7d232d80d64ed2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9d5e65abe675ded48e9239f2cd10ceed4a7c3a52
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="matrix-transforms"></a>矩陣轉換
 
@@ -401,7 +402,7 @@ public class PathTransformPage : ContentPage
 
 它會出現在畫布左上角：
 
-[![](matrix-images/pathtransform-small.png "[路徑轉換] 頁面上的三個螢幕擷取畫面")](matrix-images/pathtransform-large.png "路徑轉換頁面的三個螢幕擷取畫面")
+[![](matrix-images/pathtransform-small.png "[路徑轉換] 頁面上的三個螢幕擷取畫面")](matrix-images/pathtransform-large.png#lightbox "路徑轉換頁面的三個螢幕擷取畫面")
 
 此程式的建構函式適用於矩陣的路徑與下列呼叫：
 
@@ -588,7 +589,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 
 第一次載入的頁面，而其他兩個螢幕所顯示的是它後一些操作時，下方的 [iOS] 畫面會顯示點陣圖：
 
-[![](matrix-images/showaffinematrix-small.png "三個螢幕擷取畫面顯示仿射矩陣頁面的")](matrix-images/showaffinematrix-large.png "顯示仿射矩陣頁面的三個螢幕擷取畫面")
+[![](matrix-images/showaffinematrix-small.png "三個螢幕擷取畫面顯示仿射矩陣頁面的")](matrix-images/showaffinematrix-large.png#lightbox "顯示仿射矩陣頁面的三個螢幕擷取畫面")
 
 雖然似乎觸控點如同拖曳邊角的點陣圖，是只視覺效果。 從觸控點計算出來的矩陣轉換點陣圖，以便與觸控點一致的邊角。
 

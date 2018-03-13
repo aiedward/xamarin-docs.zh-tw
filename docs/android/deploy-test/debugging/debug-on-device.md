@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 5e9874fba52b576494be5ac42ff13fdd0be4d9e7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d340c3da220deacdb5606547a084e55d80c817e7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="debug-on-device"></a>在裝置上進行偵錯
 
@@ -22,7 +22,6 @@ _本文說明如何在實體 Android 裝置上進行 Xamarin.Android 應用程�
 
 您可以使用 Visual Studio for Mac 或 Visual Studio 在 Android 裝置上進行 Xamarin.Android 偵錯。 在於裝置上進行偵錯之前，必須[設定裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md)，並連接至 PC 或 Mac。
 
-<a name="Debug_Application" />
 
 ## <a name="debug-application"></a>進行應用程式偵錯
 
@@ -55,7 +54,6 @@ _本文說明如何在實體 Android 裝置上進行 Xamarin.Android 應用程�
 -----
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>總結
 

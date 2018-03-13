@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: a5f98fc351c879be55475808b5ab412449dadc7d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 11b693193b36a80b55a61308d98b76f4f6984e8a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>如何自動執行的 Android NUnit 測試專案？
 
 > [!NOTE]
-> **注意：**本指南涵蓋 Android NUnit 測試專案中，非 Xamarin.UITest 專案所設定的步驟。 您可以找到 Xamarin.UITest 指南[這裡](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)。
+> 本指南涵蓋 Android NUnit 測試專案中，非 Xamarin.UITest 專案所設定的步驟。 您可以找到 Xamarin.UITest 指南[這裡](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)。
 
 當您建立 Android 的單元測試專案 [Visual Studio for Mac] 或單元測試應用程式 (Android) [Visual Studio] 時，依預設它將不會自動執行測試。
 若要自動化 android 的單元測試： 若要在目標裝置上執行 NUnit 測試，我們使用`Android.App.Instrumentation`子類別，可建立和執行使用`adb shell am instrument`命令。

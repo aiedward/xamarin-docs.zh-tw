@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 015bce612f369797f0540a0cb55f71f420f007a2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d5a8baec164eb5c70f6dae5b2fa4fd5271afbd1c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---using-background-transfer-service-and-nsurlsession"></a>逐步解說-使用背景傳送服務和 NSURLSession
 
@@ -20,7 +20,7 @@ _在本逐步解說中，使用背景傳送的服務和 NSURLSession API 開始�
 
 藉由設定背景起始背景傳送`NSURLSession`和上傳或下載工作的佇列。 如果工作完成時 backgrounded、 暫止，或結束應用程式時，iOS 會通知應用程式藉由在應用程式中呼叫完成處理常式*AppDelegate*。 下圖示範中的動作：
 
- [ ![](background-transfer-walkthrough-images/transfer.png "藉由設定背景 NSURLSession 起始背景傳送，並將上傳或下載工作")](background-transfer-walkthrough-images/transfer.png)
+ [![](background-transfer-walkthrough-images/transfer.png "藉由設定背景 NSURLSession 起始背景傳送，並將上傳或下載工作")](background-transfer-walkthrough-images/transfer.png#lightbox)
 
 我們來看看什麼這看起來像在程式碼中。
 

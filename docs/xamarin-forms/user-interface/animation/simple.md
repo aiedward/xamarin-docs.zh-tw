@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: d1d91804c11d2e944bb618fadb3d659b512c5905
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fb7ca216978e4c890349a44b07d5a383e9ca2384
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="simple-animations"></a>簡單的動畫
 
@@ -130,7 +130,7 @@ await image.TranslateTo (-100, -100, 1000);
 ![](simple-images/translateto.png "轉譯動畫")
 
 > [!NOTE]
-> **請注意**： 如果項目一開始配置關閉螢幕，然後轉譯在螢幕上轉譯後的項目輸入螢幕的配置會維持，使用者無法互動。 因此，建議，應該配置檢視中的最後一個位置，而且任何需要執行的轉譯。
+> 如果項目一開始配置關閉螢幕，然後轉譯在螢幕上轉譯後的項目輸入的配置會保持關閉螢幕，而且使用者無法互動。 因此，建議，應該配置檢視中的最後一個位置，而且任何需要執行的轉譯。
 
 ### <a name="fading"></a>淡出
 

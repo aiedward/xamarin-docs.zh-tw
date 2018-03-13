@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 2088ae055fb18b3b00712f063d2178f759021088
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9710e322460058902d89ec1a57c374b93beb82fb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="dynamic-styles"></a>動態樣式
 
@@ -81,8 +81,8 @@ public partial class DynamicStylesPage : ContentPage
 
 當`OnButtonClicked`執行事件處理常式時，`searchBarStyle`會之間切換`blueSearchBarStyle`和`greenSearchBarStyle`。 這會導致下列螢幕擷取畫面所示的外觀：
 
-[![](dynamic-images/dynamic-style-blue.png "藍色動態樣式範例")](dynamic-images/dynamic-style-blue-large.png "藍色動態樣式範例")
-[![](dynamic-images/dynamic-style-green.png "綠色動態樣式範例")](dynamic-images/dynamic-style-green-large.png "綠色動態樣式範例")
+[![](dynamic-images/dynamic-style-blue.png "藍色動態樣式範例")](dynamic-images/dynamic-style-blue-large.png#lightbox "藍色動態樣式範例")
+[![](dynamic-images/dynamic-style-green.png "綠色動態樣式範例")](dynamic-images/dynamic-style-green-large.png#lightbox "綠色動態樣式範例")
 
 下列程式碼範例會示範 C# 中的對等頁：
 
@@ -162,8 +162,8 @@ public class DynamicStylesPageCS : ContentPage
 
 在程式碼後置檔案中，建構函式會建立[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)具有索引鍵的項目`searchBarStyle`、 每個之前的範例中示範動態的樣式。 當`OnButtonClicked`執行事件處理常式時，`searchBarStyle`會之間切換`blueSearchBarStyle`和`greenSearchBarStyle`。 這會導致下列螢幕擷取畫面所示的外觀：
 
-[![](dynamic-images/dynamic-style-inheritance-blue.png "藍色動態樣式繼承範例")](dynamic-images/dynamic-style-inheritance-blue-large.png "藍色動態樣式繼承範例")
-[![](dynamic-images/dynamic-style-inheritance-green.png "綠色動態樣式繼承範例")](dynamic-images/dynamic-style-inheritance-green-large.png "綠色動態樣式繼承範例")
+[![](dynamic-images/dynamic-style-inheritance-blue.png "藍色動態樣式繼承範例")](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox "藍色動態樣式繼承範例")
+[![](dynamic-images/dynamic-style-inheritance-green.png "綠色動態樣式繼承範例")](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox "綠色動態樣式繼承範例")
 
 下列程式碼範例會示範 C# 中的對等頁：
 

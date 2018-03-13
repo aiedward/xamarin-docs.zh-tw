@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/30/2017
-ms.openlocfilehash: 9c65672ef2c3f968e76c6180da07f5daf9f5b68a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a8d25d8780a62e54780d7aa03d81f89fa0f668a4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-localization-and-string-resources"></a>應用程式的當地語系化和字串資源
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 02/27/2018
 
 例如下, 圖顯示三個不同裝置的地區設定，以執行相同的應用程式，但是中每個按鈕顯示的文字會設為每個裝置的地區設定所特有：
 
-[![三個不同的地區設定的範例](application-localization-images/01-click-me-sml.png)](application-localization-images/01-click-me.png)
+[![三個不同的地區設定的範例](application-localization-images/01-click-me-sml.png)](application-localization-images/01-click-me.png#lightbox)
 
 在此範例中，配置檔案，內容**Main.axml**看起來像這樣：
 

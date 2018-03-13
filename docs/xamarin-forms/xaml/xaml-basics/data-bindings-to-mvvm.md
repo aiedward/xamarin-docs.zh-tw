@@ -3,16 +3,16 @@ title: "第 5 部分。 從資料繫結至 MVVM"
 description: "請注意，使用 XAML 發明模型-檢視-ViewModel (MVVM) 架構模式。 此模式會強制執行三個軟體層之間的區隔 — XAML 使用者介面，稱為檢視;基礎資料，稱為模型;而在檢視和模型之間的媒介稱為 ViewModel。 檢視和 ViewModel 通常是透過定義在 XAML 檔案中的資料繫結連接。 檢視 Bindingparameters 通常是 ViewModel 的執行個體。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
+ms.assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: b16aa2456cdae7a08f8f9ee8adbc32c124e78e18
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 207bf7649d588f973b400cb452d9d8b246955cdb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分。 從資料繫結至 MVVM
 
@@ -59,7 +59,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 當然，大問題是它的日期和時間設定，當頁面第一次建置之後，而且永遠不會變更：
 
-[ ![](data-bindings-to-mvvm-images/oneshotdatetime.png "顯示日期和時間 檢視")](data-bindings-to-mvvm-images/oneshotdatetime-large.png "檢視顯示日期和時間")
+[![](data-bindings-to-mvvm-images/oneshotdatetime.png "顯示日期和時間 檢視")](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "檢視顯示日期和時間")
 
 XAML 檔案後可以顯示 clock 永遠會顯示目前的時間，但它需要幫助的一些程式碼。當 MVVM、 模型和 ViewModel 方面的想法是完全以程式碼撰寫的類別。 檢視通常是參考中定義的屬性 ViewModel 透過資料繫結的 XAML 檔案。
 
@@ -142,7 +142,7 @@ namespace XamlSamples
 
 `Binding`標記延伸上的`Text`屬性`Label`格式`DateTime`屬性。 以下是顯示：
 
-[ ![](data-bindings-to-mvvm-images/clock.png "檢視顯示日期和時間透過 ViewModel")](data-bindings-to-mvvm-images/clock-large.png "檢視顯示日期和時間透過 ViewModel")
+[![](data-bindings-to-mvvm-images/clock.png "檢視顯示日期和時間透過 ViewModel")](data-bindings-to-mvvm-images/clock-large.png#lightbox "檢視顯示日期和時間透過 ViewModel")
 
 它也可存取的個別屬性`DateTime`以句號分隔屬性 ViewModel 屬性：
 
@@ -292,7 +292,7 @@ namespace XamlSamples
 
 在每個繫結`Label`是預設值`OneWay`。 它只需要顯示的值。 但在每個繫結`Slider`是`TwoWay`。 這可讓`Slider`從 ViewModel 初始化。 請注意，`Color`屬性設定為`Blue`ViewModel 具現化。 而是在變更`Slider`也需要在 ViewModel，然後計算新的色彩中設定屬性的新值。
 
-[ ![](data-bindings-to-mvvm-images/hslcolorscroll.png "使用雙向資料繫結 MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png "MVVM 使用雙向資料繫結")
+[![](data-bindings-to-mvvm-images/hslcolorscroll.png "使用雙向資料繫結 MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "MVVM 使用雙向資料繫結")
 
 ## <a name="commanding-with-viewmodels"></a>與 ViewModels 指揮
 
@@ -553,7 +553,7 @@ namespace XamlSamples
 
 `Command`屬性的第一個`Button`出現在這個標記會繫結至`DeleteCharCommand`; 其餘部分會繫結至`AddCharCommand`與`CommandParameter`出現的字元也就是相同`Button`字體。 以下是程式中的動作：
 
-[ ![](data-bindings-to-mvvm-images/keypad.png "MVVM 與命令所使用的計算機")](data-bindings-to-mvvm-images/keypad-large.png "MVVM 與命令所使用的計算機")
+[![](data-bindings-to-mvvm-images/keypad.png "MVVM 與命令所使用的計算機")](data-bindings-to-mvvm-images/keypad-large.png#lightbox "MVVM 與命令所使用的計算機")
 
 ### <a name="invoking-asynchronous-methods"></a>叫用非同步方法
 
@@ -678,7 +678,7 @@ XAML 檔案`MainPage`定義`ListBox`其`ItemsSource`屬性設定為，`All`屬�
 
 頁面會顯示可捲動的清單：
 
-[ ![](data-bindings-to-mvvm-images/mainpage.png "可捲動的頁面清單")](data-bindings-to-mvvm-images/mainpage-large.png "可捲動的頁面清單")
+[![](data-bindings-to-mvvm-images/mainpage.png "可捲動的頁面清單")](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "可捲動的頁面清單")
 
 當使用者選取項目時，會觸發程式碼後置檔案中的處理常式。 處理常式設定`SelectedItem`屬性`ListBox`回到`null`然後具現化選取的頁面，並瀏覽至它：
 
@@ -695,6 +695,12 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
     }
 }
 ```
+
+## <a name="video"></a>視訊
+
+> [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
+
+**Xamarin 發展 2016年： 變得簡單角柱 Xamarin.Forms 與 MVVM**
 
 ## <a name="summary"></a>總結
 

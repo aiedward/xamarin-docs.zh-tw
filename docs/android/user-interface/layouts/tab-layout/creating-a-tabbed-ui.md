@@ -8,25 +8,24 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 99a35705c408d16f5b4b0e71e53dd453ae377341
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2dd397e824ce7735be4421c3f258852de3f77ecb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="walkthrough---creating-a-tabbed-ui-with-tabhost"></a>逐步解說-使用 TabHost 建立索引標籤式的 UI
 
 _本文將逐步引導 Xamarin.Android 使用 TabHost API 中建立索引標籤式的 UI。_
 
 > [!NOTE]
-> **注意：** `TabHost`是舊的 API，可由 Google 已被取代。 開發人員都建置索引標籤式的應用程式使用[項](~/android/user-interface/controls/action-bar.md)。 `ActionBar`用於所有的 Android 版本。 它引進 Android 3.0 （API 層級 11） 和回已移植到 Android 2.2 (API level 8) 和中的 Android 2.3 （API 層級 10） [V7 AppCompat 程式庫](http://developer.android.com/tools/support-library/features.html#v7-appcompat)，這是可透過 Xamarin.Android [XamarinAndroid 支援程式庫-V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)封裝。
+> `TabHost` 是由 Google 已被取代的舊 API。 開發人員都建置索引標籤式的應用程式使用[項](~/android/user-interface/controls/action-bar.md)。 `ActionBar`用於所有的 Android 版本。 它引進 Android 3.0 （API 層級 11） 和回已移植到 Android 2.2 (API level 8) 和中的 Android 2.3 （API 層級 10） [V7 AppCompat 程式庫](http://developer.android.com/tools/support-library/features.html#v7-appcompat)，這是可透過 Xamarin.Android [XamarinAndroid 支援程式庫-V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)封裝。
 
 本文將逐步引導 Xamarin.Android 中建立索引標籤式的 UI 使用`TabHost`應用程式開發介面。 這是適用於 Android 的所有版本的舊版 API。 這個範例會建立三個索引標籤，在活動中封裝每個索引標籤的邏輯與應用程式。
 下列螢幕擷取畫面是我們將建立的應用程式的範例：
 
 ![具有多個索引標籤的應用程式的範例螢幕擷取畫面](creating-a-tabbed-ui-images/image02.png)
 
-<a name="Creating_the_Application" />
 
 ## <a name="creating-the-application"></a>建立應用程式
 
@@ -61,7 +60,7 @@ _本文將逐步引導 Xamarin.Android 使用 TabHost API 中建立索引標籤�
 
 下列螢幕擷取畫面顯示 Xamarin 設計工具中的配置：
 
-[![TabHost 配置 Xamarin 設計工具中的螢幕擷取畫面](creating-a-tabbed-ui-images/image04-sml.png)](creating-a-tabbed-ui-images/image04.png)
+[![TabHost 配置 Xamarin 設計工具中的螢幕擷取畫面](creating-a-tabbed-ui-images/image04-sml.png)](creating-a-tabbed-ui-images/image04.png#lightbox)
 
 TabHost 必須有兩個內文中的子檢視：`TabWidget`和`FrameLayout`。 位置`TabWidget`和`FrameLayout`垂直內部`TabHost`、`LinearLayout`用。 每個索引標籤內容的地方，這是空的 FrameLayout 是因為`TabHost`會自動內嵌在執行階段的每個活動。 有數個建立的索引標籤式的使用者介面版面配置時，必須遵守的規則：
 
@@ -203,7 +202,6 @@ protected override void OnCreate(Bundle bundle)
 就這麼容易！ 我們已經建立索引標籤式的應用程式，讓的使用者可以輕鬆地瀏覽應用程式的不同部分。
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>總結
 

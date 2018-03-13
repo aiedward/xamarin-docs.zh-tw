@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 716555c2456663cb2be24498348240c571849c24
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7048eb9c478d7ae10787e158f18b764b258da171
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="collection-views"></a>集合檢視
 
@@ -36,7 +36,7 @@ iOS 提供一種配置類別稱為`UICollectionViewFlowLayout`，可讓以線條
 
 資料格是物件，表示集合檢視要呈現的資料集內的單一項目。 每個資料格是的執行個體`UICollectionViewCell`類別，由所組成的三種不同檢視下, 圖所示：
 
- [ ![](uicollectionview-images/01-uicollectionviewcell.png "每個儲存格組成三個不同的檢視，如下所示")](uicollectionview-images/01-uicollectionviewcell.png)
+ [![](uicollectionview-images/01-uicollectionviewcell.png "每個儲存格組成三個不同的檢視，如下所示")](uicollectionview-images/01-uicollectionviewcell.png#lightbox)
 
 `UICollectionViewCell`類別具有下列屬性的每個檢視：
 
@@ -47,7 +47,7 @@ iOS 提供一種配置類別稱為`UICollectionViewFlowLayout`，可讓以線條
 
 藉由設定`ContentView`使得小於`BackgroundView`和`SelectedBackgroundView`、`BackgroundView`可用來以視覺方式框架的內容，while`SelectedBackgroundView`時將顯示為選取的資料格，如下所示：
 
- [ ![](uicollectionview-images/02-cells.png "不同的資料格元素")](uicollectionview-images/02-cells.png)
+ [![](uicollectionview-images/02-cells.png "不同的資料格元素")](uicollectionview-images/02-cells.png#lightbox)
 
 上述螢幕擷取畫面中的資料格由繼承自`UICollectionViewCell`和設定`ContentView`，`SelectedBackgroundView`和`BackgroundView`屬性，分別，如下列程式碼所示：
 
@@ -92,7 +92,7 @@ public class AnimalCell : UICollectionViewCell
 
 例如，補充檢視可用來呈現特定區段中，標頭下圖所示：
 
- [ ![](uicollectionview-images/02a-supplementary-view.png "補充檢視用來呈現特定區段中，標頭如下所示")](uicollectionview-images/02a-supplementary-view.png)
+ [![](uicollectionview-images/02a-supplementary-view.png "補充檢視用來呈現特定區段中，標頭如下所示")](uicollectionview-images/02a-supplementary-view.png#lightbox)
 
 若要使用補充的檢視，就必須先註冊在`ViewDidLoad`方法：
 
@@ -122,7 +122,7 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
 
 裝飾檢視是純粹視覺化檢視可以顯示在`UICollectionView`。 不同於資料格和增補的檢視，它們不是資料導向。 它們一定會在版面配置的子類別內建立，而且後續可以做為內容的配置變更。 例如，裝飾檢視無法用來呈現使用中的內容捲動的背景檢視`UICollectionView`，如下所示：
 
- [ ![](uicollectionview-images/02c-decoration-view.png "具有紅色背景的裝飾檢視")](uicollectionview-images/02c-decoration-view.png)
+ [![](uicollectionview-images/02c-decoration-view.png "具有紅色背景的裝飾檢視")](uicollectionview-images/02c-decoration-view.png#lightbox)
 
  下列程式碼片段會變成樣本中的紅色背景`CircleLayout`類別：
 
@@ -153,7 +153,7 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
 如同`UITableView`、`UICollectionView`類別只會呼叫其資料來源，以取得儲存格是在螢幕上的項目。
 捲動超出螢幕的資料格位於到佇列，以便重複使用，如下列影像所示：
 
- [ ![](uicollectionview-images/03-cell-reuse.png "捲動超出螢幕的資料格位於到佇列，以便重複使用如下所示")](uicollectionview-images/03-cell-reuse.png)
+ [![](uicollectionview-images/03-cell-reuse.png "捲動超出螢幕的資料格位於到佇列，以便重複使用如下所示")](uicollectionview-images/03-cell-reuse.png#lightbox)
 
 儲存格重複使用簡化了`UICollectionView`和`UITableView`。 您不再需要直接在資料來源中建立儲存格，若其中一個不可重複使用的佇列中，因為資料格會向系統。 如果資料格不進行呼叫，以清除佇列重複使用佇列的儲存格時，iOS 會建立會自動根據類型或已註冊的 nib 它。
 也可用於補充檢視相同的技巧。
@@ -207,7 +207,7 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, F
 
 當資料格中按下時，資料格會轉換成反白顯示的狀態，且未選取直到使用者會取消其指從儲存格。 這可以讓暫存的變更儲存格的外觀之前它實際上已選取。 在選取項目，儲存格的`SelectedBackgroundView`隨即出現。 下圖中反白顯示的狀態之前選取項目，就會發生：
 
- [ ![](uicollectionview-images/04-cell-highlight.png "選取項目，就會發生之前，此圖顯示反白顯示的狀態")](uicollectionview-images/04-cell-highlight.png)
+ [![](uicollectionview-images/04-cell-highlight.png "選取項目，就會發生之前，此圖顯示反白顯示的狀態")](uicollectionview-images/04-cell-highlight.png#lightbox)
 
 若要實作反白顯示，`ItemHighlighted`和`ItemUnhighlighted`方法`UICollectionViewDelegate`可用。 例如，下列程式碼會套用的黃色背景`ContentView`資料格會反白顯示，當和白色背景時未反白顯示，在上圖中所示：
 
@@ -257,7 +257,7 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
 長按下儲存格時，下列螢幕擷取畫面會顯示功能表：
 
- [ ![](uicollectionview-images/04a-menu.png "長按下儲存格時，此螢幕擷取畫面會顯示功能表")](uicollectionview-images/04a-menu.png)
+ [![](uicollectionview-images/04a-menu.png "長按下儲存格時，此螢幕擷取畫面會顯示功能表")](uicollectionview-images/04a-menu.png#lightbox)
 
  <a name="Layout" />
 
@@ -303,7 +303,7 @@ simpleCollectionViewController = new SimpleCollectionViewController (layout);
 
 這所需要的是在方格中的配置內容。 此外，當方向變更時，`UICollectionViewFlowLayout`處理重新排列內容正確，如下所示：
 
- [ ![](uicollectionview-images/05-layout-orientation.png "方向變更的範例")](uicollectionview-images/05-layout-orientation.png)
+ [![](uicollectionview-images/05-layout-orientation.png "方向變更的範例")](uicollectionview-images/05-layout-orientation.png#lightbox)
 
  <a name="Section_Inset" />
 
@@ -319,7 +319,7 @@ layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 
 這會導致間距區段如下所示：
 
- [ ![](uicollectionview-images/06-sectioninset.png "如下所示區段周圍的間距")](uicollectionview-images/06-sectioninset.png)
+ [![](uicollectionview-images/06-sectioninset.png "如下所示區段周圍的間距")](uicollectionview-images/06-sectioninset.png#lightbox)
 
  <a name="Subclassing_UICollectionViewFlowLayout" />
 
@@ -328,7 +328,7 @@ layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 
 若要使用的版本`UICollectionViewFlowLayout`直接，它可以也進行子類別化來進一步自訂內容對齊的配置。 比方說，這可以用來建立的版面配置，不會換行的資料格方格，但改為建立單一資料列，以水平捲動效果，如下所示：
 
- [ ![](uicollectionview-images/07-line-layout.png "單一資料列的水平捲動的效果")](uicollectionview-images/07-line-layout.png)
+ [![](uicollectionview-images/07-line-layout.png "單一資料列的水平捲動的效果")](uicollectionview-images/07-line-layout.png#lightbox)
 
 若要透過子類別化實作此`UICollectionViewFlowLayout`需要：
 
@@ -423,7 +423,7 @@ namespace SimpleCollectionView
 
 例如，相同的內容會以循環配置呈現，如下所示：
 
- [ ![](uicollectionview-images/08-circle-layout.png "循環的自訂版面配置，如下所示")](uicollectionview-images/08-circle-layout.png)
+ [![](uicollectionview-images/08-circle-layout.png "循環的自訂版面配置，如下所示")](uicollectionview-images/08-circle-layout.png#lightbox)
 
 版面配置功能強大的好處，如果要從類似格線版面配置變更為水平捲動的配置，而且後續至此循環配置需要只提供給版面配置類別`UICollectionView`變更。 在中為 nothing `UICollectionView`，其委派或資料來源的程式碼變更完全。
 
@@ -435,7 +435,7 @@ namespace SimpleCollectionView
 
 使用這些新方法，您可以輕鬆地實作拖放到集合檢視中重新排序，並讓自訂項目外觀，期間重新排列的程序的任何階段的選項。
 
-[ ![](uicollectionview-images/intro01.png "重新排列的程序的範例")](uicollectionview-images/intro01.png)
+[![](uicollectionview-images/intro01.png "重新排列的程序的範例")](uicollectionview-images/intro01.png#lightbox)
 
 在本文中，我們將探討 Xamarin.iOS 應用程式，以及某些其他變更 iOS 9 對集合檢視控制項中實作拖放到要重新排序：
 
@@ -468,7 +468,7 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 
 簡單的範例，以啟動新的 Xamarin.iOS 專案，並編輯**Main.storyboard**檔案。 拖曳`UICollectionViewController`拖曳至設計介面：
 
-[ ![](uicollectionview-images/quick01.png "加入 UICollectionViewController")](uicollectionview-images/quick01.png)
+[![](uicollectionview-images/quick01.png "加入 UICollectionViewController")](uicollectionview-images/quick01.png#lightbox)
 
 選取 （它可能是最簡單的方式在文件大綱） 的集合檢視。 屬性填補 [配置] 索引標籤中設定下列的大小，如以下螢幕擷取畫面所示：
 
@@ -478,28 +478,28 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 - **最小間距**： 資料格 – 8 |線條 – 8
 - **區段內凹**: Top – 16 |底部 – 16 |左 – 16 |右 – 16
 
-[ ![](uicollectionview-images/quick04.png "設定集合檢視的大小")](uicollectionview-images/quick04.png)
+[![](uicollectionview-images/quick04.png "設定集合檢視的大小")](uicollectionview-images/quick04.png#lightbox)
 
 接著，編輯儲存格的預設值：
     - 變更為藍色其背景色彩
     - 加入標籤以便做為資料格的標題
     - 若要設定重複使用識別項**資料格**
 
-[ ![](uicollectionview-images/quick02.png "編輯預設儲存格")](uicollectionview-images/quick02.png)
+[![](uicollectionview-images/quick02.png "編輯預設儲存格")](uicollectionview-images/quick02.png#lightbox)
 
 加入條件約束，以保留在儲存格中置中，因為它會變更大小的標籤：
 
 在**屬性板**如_CollectionViewCell_並設定**類別**至`TextCollectionViewCell`:
 
-[ ![](uicollectionview-images/quick05.png "將類別設 TextCollectionViewCell")](uicollectionview-images/quick05.png)
+[![](uicollectionview-images/quick05.png "將類別設 TextCollectionViewCell")](uicollectionview-images/quick05.png#lightbox)
 
 設定**集合可重複使用檢視**至`Cell`:
 
-[ ![](uicollectionview-images/quick06.png "將設定儲存格集合的可重複使用檢視")](uicollectionview-images/quick06.png)
+[![](uicollectionview-images/quick06.png "將設定儲存格集合的可重複使用檢視")](uicollectionview-images/quick06.png#lightbox)
 
 最後，選取 [標籤] 並將其命名`TextLabel`:
 
-[ ![](uicollectionview-images/quick07.png "名稱標籤 TextLabel")](uicollectionview-images/quick07.png)
+[![](uicollectionview-images/quick07.png "名稱標籤 TextLabel")](uicollectionview-images/quick07.png#lightbox)
 
 編輯`TextCollectionViewCell`類別，然後將下列屬性。:
 
@@ -695,7 +695,7 @@ namespace CollectionView
 如果使用者從清單中選取項目，並將它拖曳至新位置，其他項目會以動畫顯示自動將移開的項目。
 當使用者在新位置放開項目時，它會留在那裡至該位置。 例如: 
 
-[ ![](uicollectionview-images/intro01.png "舉例來說，拖曳至新位置的項目")](uicollectionview-images/intro01.png)
+[![](uicollectionview-images/intro01.png "舉例來說，拖曳至新位置的項目")](uicollectionview-images/intro01.png#lightbox)
 
 <a name="Using-a-Custom-Gesture-Recognizer" />
 
@@ -1205,7 +1205,7 @@ public override void AwakeFromNib ()
 
 我們一次執行 Xamarin.iOS 應用程式時，如果集合檢視現在看起來如下所示：
 
-[ ![](uicollectionview-images/custom01.png "集合檢視現在看起來像這樣")](uicollectionview-images/custom01.png)
+[![](uicollectionview-images/custom01.png "集合檢視現在看起來像這樣")](uicollectionview-images/custom01.png#lightbox)
 
 我們可以仍然拖曳來排列項目之前，但會立即變更大小以配合其新位置時就會卸除的項目。
 

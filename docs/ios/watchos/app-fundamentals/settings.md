@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 3ff8800f4e8690069f5394193d11552d917baffe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e699fdc2092d17834c348c07f2440e40441ad86
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-settings"></a>使用的設定
 
@@ -27,7 +27,7 @@ Apple Watch 應用程式可以使用相同的設定功能為 iOS 應用程式-�
 
 1. 以滑鼠右鍵按一下**新增 > 新的檔案...**選擇**Settings.bundle** (您無法編輯中的名稱**新檔案**對話方塊):
 
-   [ ![](settings-images/settings-add-sml.png "加入新的設定組合")](settings-images/settings-add.png)
+   [![](settings-images/settings-add-sml.png "加入新的設定組合")](settings-images/settings-add.png#lightbox)
 
 2. 將名稱變更為**設定 Watch.bundle** (選取，然後輸入**命令 + R**重新命名):
 
@@ -35,12 +35,12 @@ Apple Watch 應用程式可以使用相同的設定功能為 iOS 應用程式-�
 
 3. 加入新機碼`ApplicationGroupContainerIdentifier`至**Root.plist**值設為您設定，（例如應用程式群組 `group.com.xamarin.WatchSettings` 在範例中）：
 
-   [ ![](settings-images/settings-appgroup-sml.png "新增 Root.plist ApplicationGroupContainerIdentifier 機碼")](settings-images/settings-appgroup.png)
+   [ ![](settings-images/settings-appgroup-sml.png "新增 Root.plist ApplicationGroupContainerIdentifier 機碼")](settings-images/settings-appgroup.png#lightbox)
 
 4. 編輯**Settings-Watch.bundle/Root.plist**範本檔案包含您想要使用的選項包含群組。
   textfield、 切換開關和滑桿的預設值 （您可以刪除和取代您自己的設定）：
 
-  [ ![](settings-images/rootplist-sml.png "編輯 Settings-Watch.bundle/Root.plist")](settings-images/rootplist.png)
+  [![](settings-images/rootplist-sml.png "編輯 Settings-Watch.bundle/Root.plist")](settings-images/rootplist.png#lightbox)
 
 
 ## <a name="use-settings-in-the-watch-app"></a>監看式應用程式中使用的設定
@@ -58,7 +58,7 @@ var userName = shared.StringForKey ("name_preference");
 
 ## <a name="apple-watch-app"></a>Apple Watch 應用程式
 
-[ ![](settings-images/settings-app-sml.png "在 iPhone 上新的 Apple Watch 應用程式")](settings-images/settings-app.png)
+[![](settings-images/settings-app-sml.png "在 iPhone 上新的 Apple Watch 應用程式")](settings-images/settings-app.png#lightbox)
 
 使用者透過新的設定與互動**Apple Watch**其 iPhone 上的應用程式。 此應用程式可讓使用者顯示/隱藏應用程式在監看式，以及設定公開使用的編輯**設定 Watch.bundle**。
 

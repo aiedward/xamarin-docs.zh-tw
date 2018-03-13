@@ -7,18 +7,17 @@ ms.assetid: BB81FCCF-F7BF-4C78-884E-F02C49AA819A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: 84ef87f5ed84fcd0a9aa2504c52a0fec17404e1f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 6d31e2a22c63f8d46893dd1928b561e1a06b19b4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="troubleshooting-bindings"></a>疑難排解繫結
 
 _本文摘要說明許多常見的錯誤時產生繫結，以及可能的原因和建議的方法來解決它們可能會發生。_
 
-<a name="OVERVIEW" />
 
 ## <a name="overview"></a>總覽
 
@@ -38,7 +37,6 @@ _本文摘要說明許多常見的錯誤時產生繫結，以及可能的原因�
 
 它也可以證明有助於反編譯 Android 程式庫，並檢查的類型和 Xamarin.Android 嘗試繫結的方法。 這是以便稍後在本指南的更詳細地討論。
 
-<a name="DECOMPILING_AN_ANDROID_LIBRARY" />
 
 ## <a name="decompiling-an-android-library"></a>Decompiling Android 程式庫
 
@@ -59,9 +57,8 @@ _本文摘要說明許多常見的錯誤時產生繫結，以及可能的原因�
 - **`import` 陳述式未參考的程式庫**&ndash;未參考的文件庫識別，並將這些相依性加入至具有的 Xamarin.Android 繫結專案**建置動作**的**ReferenceJar**或**EmbedddedReferenceJar**。
 
 > [!NOTE]
-> **注意：** Decompiling Java 程式庫可能會禁止或合法限制根據用戶所在地法律或發行 Java 程式庫時的授權。 必要時，編列合法 professional 的服務之前嘗試反編譯 Java 文件庫，並檢查來源的程式碼。
+> Decompiling Java 程式庫可能禁止或合法限制根據 用戶所在地法律或發行 Java 程式庫時的授權。 必要時，編列合法 professional 的服務之前嘗試反編譯 Java 文件庫，並檢查來源的程式碼。
 
-<a name="INSPECTING_API_XML" />
 
 ## <a name="inspect-apixml"></a>檢查應用程式開發介面。XML
 
@@ -71,19 +68,16 @@ _本文摘要說明許多常見的錯誤時產生繫結，以及可能的原因�
 
 此檔案會提供一份所有 Java Api Xamarin.Android 正嘗試繫結。 此檔案的內容可協助找出遺漏的類型或方法，重複的繫結。 雖然檢查這個檔案是冗長且耗時，但它可以提供什麼可能會造成任何繫結問題的線索。 例如， **api.xml**屬性所傳回的是不適當的類型，或有兩個型別共用相同的 managed 名稱可能會顯示。
 
-<a name="KNOWN_ISSUES" />
 
 ## <a name="known-issues"></a>已知問題
 
 本節會列出一些常見的錯誤訊息或徵兆是，我嘗試繫結 Android 程式庫時，會發生。
 
-<a name="PROBLEM_JAVA_VERSION_MISMATCH" />
 
 ### <a name="problem-java-version-mismatch"></a>問題： Java 版本不符
 
 有時不會產生型別，或因為您使用的新或舊的 Java 版本相較於程式庫已編譯的可能會發生未預期的當機。 重新編譯版本的 Xamarin.Android 專案使用的 jdk 版本相同的 Android 程式庫。
 
-<a name="PROBLEM_AT_LEAST_ONE_JAVA_LIBRARY_IS_REQUIRED" />
 
 ### <a name="problem-at-least-one-java-library-is-required"></a>問題： 至少一個 Java 文件庫無須
 
@@ -93,7 +87,6 @@ _本文摘要說明許多常見的錯誤時產生繫結，以及可能的原因�
 
 請確認建置動作設定為`EmbeddedJar`。 因為有多個組建動作。JAR 檔案 (例如`InputJar`， `EmbeddedJar`，`ReferenceJar`和`EmbeddedReferenceJar`)，繫結產生器無法自動猜測要依預設會使用哪一個。 如需建置動作的詳細資訊，請參閱[建置動作](~/android/platform/binding-java-library/index.md)。
 
-<a name="PROBLEM_BINDING_TOOLS_CANNOT_LOAD_THE_JAR_LIBRARY" />
 
 ### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>問題： 繫結工具無法載入。JAR 程式庫
 
@@ -104,7 +97,6 @@ _本文摘要說明許多常見的錯誤時產生繫結，以及可能的原因�
 部分。無法載入 JAR 程式庫 （透過 [工具]，例如 Proguard） 的程式碼混淆的 Java 工具。 使用 Java 反映和 ASM 位元組碼工程文件庫，可讓我們的工具，因為這些相依工具可能會在 Android 的執行階段工具，可以傳遞時拒絕混亂的程式庫。 因應措施是手動繫結這些程式庫，而不是使用繫結產生器。
 
 
-<a name="PROBLEM_MISSING_C_TYPES_IN_GENERATED_OUTPUT_" />
 
 ### <a name="problem-missing-c-types-in-generated-output"></a>問題： 遺漏 C# 中產生的輸出型別。
 
@@ -253,8 +245,6 @@ return type of 'Java.Lang.Object'
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 ```
-
-<a name=summary />
 
 ## <a name="summary"></a>總結
 

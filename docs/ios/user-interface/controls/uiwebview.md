@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 83e01bba82713b55a0a69858c2a83aa243f71588
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 70703797792a2f667a2eb20cbc45d1736e5e6b9d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="web-views"></a>網頁檢視
 
@@ -40,7 +40,7 @@ webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 
 這會產生下列 web 檢視：
 
-[ ![](uiwebview-images/webview.png "ScalesPagesToFit 效果")](uiwebview-images/webview.png)
+[![](uiwebview-images/webview.png "ScalesPagesToFit 效果")](uiwebview-images/webview.png#lightbox)
 
 如需有關使用`UIWebView`，請參閱下列的配方：
 
@@ -68,7 +68,7 @@ webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 
 這會產生下列 web 檢視：
 
-[ ![](uiwebview-images/wkwebview.png "未提供 ScalesPagesToFit 範例 web 檢視")](uiwebview-images/wkwebview.png)
+[![](uiwebview-images/wkwebview.png "未提供 ScalesPagesToFit 範例 web 檢視")](uiwebview-images/wkwebview.png#lightbox)
 
 請務必注意`WKWebView`是 WebKit 命名空間中，因此您必須加入下列 using 指示詞加入您的類別的頂端。
 
@@ -98,7 +98,7 @@ PresentViewController(sfViewController, true, null);
 
 這會產生下列 web 檢視：
 
-[ ![](uiwebview-images/sfsafariviewcontroller.png "SFSafariViewController 範例 web 檢視")](uiwebview-images/sfsafariviewcontroller.png)
+[![](uiwebview-images/sfsafariviewcontroller.png "SFSafariViewController 範例 web 檢視")](uiwebview-images/sfsafariviewcontroller.png#lightbox)
 
 ## <a name="safari"></a>Safari
 
@@ -113,7 +113,7 @@ UIApplication.SharedApplication.OpenUrl(url);
 
 這會產生下列 web 檢視：
 
-[ ![](uiwebview-images/safari.png "在 Safari 中顯示網頁")](uiwebview-images/safari.png)
+[![](uiwebview-images/safari.png "在 Safari 中顯示網頁")](uiwebview-images/safari.png#lightbox)
 
 瀏覽使用者遠離您的應用程式到 Safari 通常應該一律避免。 大部分的使用者將不預期瀏覽您的應用程式之外，如果您離開您的應用程式時，使用者可能永遠不會傳回，基本上終止 engagement。
 

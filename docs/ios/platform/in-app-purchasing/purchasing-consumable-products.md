@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7366a4ce5cbb6a3026a7445a03f03b45d89d9210
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e5875249d7a84412b1c30580c3a8038cb53892f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="purchasing-consumable-products"></a>您可以使用產品的購買
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 02/27/2018
 
 隨附的這份文件的程式碼範例會示範內建的產品，產品識別碼是在應用程式的硬式編碼，因為它們會緊密結合 '解除鎖定' payment 之後的 「 功能的程式碼。 採購程序可以視覺化像這樣：   
    
-[ ![採購程序視覺效果](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png)     
+[![採購程序視覺效果](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png#lightbox)     
    
  基本工作流程是︰   
    
@@ -49,7 +49,7 @@ ms.lasthandoff: 02/27/2018
    
    
    
- [ ![每項採購新增更多猴子信用額度使用者平衡](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png)   
+ [![每項採購新增更多猴子信用額度使用者平衡](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
    
    
    
@@ -57,7 +57,7 @@ ms.lasthandoff: 02/27/2018
    
    
    
- [ ![StoreKit 和應用程式存放區的自訂類別之間的互動](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png)
+ [![StoreKit 和應用程式存放區的自訂類別之間的互動](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png#lightbox)
 
 &nbsp;
 
@@ -214,7 +214,7 @@ public void CompleteTransaction (SKPaymentTransaction transaction)
 
 在使用者購買多個數量，StoreKit 確認警示將會反映出數量、 單價和總價他們將需要支付費用，如下列螢幕擷取畫面所示：
 
-[ ![確認購買](purchasing-consumable-products-images/image30.png)](purchasing-consumable-products-images/image30.png)
+[![確認購買](purchasing-consumable-products-images/image30.png)](purchasing-consumable-products-images/image30.png#lightbox)
 
 ## <a name="handling-network-outages"></a>處理網路中斷
 
@@ -328,7 +328,7 @@ public bool CanMakePayments()
    
    
    
- [ ![使用 iOS 的限制功能停用應用程式內購買](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png)   
+ [![使用 iOS 的限制功能停用應用程式內購買](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png#lightbox)   
    
    
    
@@ -352,7 +352,7 @@ if (iap.CanMakePayments()) {
    
    
    
- [ ![應用程式看起來像這樣，當功能是在應用程式購買限制的購買按鈕已停用](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png)   
+ [![應用程式看起來像這樣，當功能是在應用程式購買限制的購買按鈕已停用](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
    
    
    
@@ -361,7 +361,7 @@ if (iap.CanMakePayments()) {
    
    
    
- [ ![不允許在應用程式內購買](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png)   
+ [![不允許在應用程式內購買](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
    
    
    

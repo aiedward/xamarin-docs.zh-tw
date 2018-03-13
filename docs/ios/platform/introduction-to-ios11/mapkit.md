@@ -2,16 +2,16 @@
 title: "在 iOS 11 MapKit 的新功能"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 22C38EA6-6DA9-4B92-B41B-814E589033F6
+ms.assetid: 304AE5A3-518F-422F-BE24-92D62CE30F34
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/30/2016
-ms.openlocfilehash: 747c316b38d3b74f1e741e5e34deea56fb53091c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7d21d4ff8960a113cb79582d5cb0849d09f8aaa7
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="new-features-in-mapkit-on-ios-11"></a>在 iOS 11 MapKit 的新功能
 

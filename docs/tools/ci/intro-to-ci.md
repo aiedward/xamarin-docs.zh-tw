@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 94d88246090208913c4b340eaed221ab64b78f19
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2a8849a75f3c26a83a030700878a3195fde7515f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>使用 Xamarin 的連續整合簡介
 
@@ -33,13 +33,13 @@ _持續整合是軟體工程作法自動化的組建會編譯並新增或變更�
 
 下圖說明此程序：
 
-[![](intro-to-ci-images/intro01-small.png "此圖說明此程序")](intro-to-ci-images/intro01.png)
+[![](intro-to-ci-images/intro01-small.png "此圖說明此程序")](intro-to-ci-images/intro01.png#lightbox)
 
 行動裝置應用程式會導入連續整合唯一的挑戰。 應用程式可能需要如 GPS 或相機，才可以使用實體裝置上的感應器。 此外，模擬器只可約略估算的硬體且可能會隱藏或遮蔽的問題。 在結束時，就需要測試確信是真正可供客戶使用實際的硬體上的行動裝置應用程式。
 
 [應用程式中心測試](https://docs.microsoft.com/en-us/appcenter/test-cloud)解決此特定問題的方式來測試應用程式，直接在數百個實體裝置上的。 開發人員撰寫自動化的 acceptances 測試，可讓功能強大的 UI 測試。 一旦這些測試上傳至應用程式中心，CI 伺服器可以自動執行 CI 程序如下列圖表所示：
 
-[![](intro-to-ci-images/intro02-small.png "一旦這些測試上傳至應用程式中心，CI 伺服器可以自動執行 CI 程序的一部分此圖表中所示")](intro-to-ci-images/intro02.png)
+[![](intro-to-ci-images/intro02-small.png "一旦這些測試上傳至應用程式中心，CI 伺服器可以自動執行 CI 程序的一部分此圖表中所示")](intro-to-ci-images/intro02.png#lightbox)
 
 # <a name="components-of-continuous-integration"></a>持續整合的元件
 
@@ -72,7 +72,7 @@ Visual Studio Team 服務的建置系統可直接支援 Xamarin 專案中，您�
 
 Git 可完全透過網頁瀏覽器或進行操作[GUI 用戶端](http://git-scm.com/downloads/guis)Linux、 Mac OSX 及 Windows 上執行。 它是免費的公用儲存機制;私用儲存機制需要[付費計劃](https://github.com/pricing)。
 
-Visual Studio 2015 和 Visual Studio for Mac 提供原生支援 Git。Microsoft Visual Studio 2013 和舊版中，提供[可下載副檔名 Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)。 如先前所述，Visual Studio Team Services 與 TFS 可以使用 Git 進行版本控制，而不是 TFVC。
+Visual Studio 2015 和 Visual Studio for Mac 提供原生支援 Git。對於較舊版本中，Microsoft 提供[可下載副檔名 Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)。 如先前所述，Visual Studio Team Services 與 TFS 可以使用 Git 進行版本控制，而不是 TFVC。
 
 
 ### <a name="subversion"></a>Subversion
@@ -102,7 +102,7 @@ Visual Studio Team Services 和 Team Foundation Server 所述，提供兩個版�
 
 下圖說明此拓撲：
 
-[![](intro-to-ci-images/intro03-small.png "此圖說明此拓撲")](intro-to-ci-images/intro03.png)
+[![](intro-to-ci-images/intro03-small.png "此圖說明此拓撲")](intro-to-ci-images/intro03.png#lightbox)
 
 它也可將本機的 TFS 伺服器連結至 Visual Studio Team Services 專案，以便 VSTS 組建會委派給本機伺服器。 如需詳細資訊，請參閱[部署和設定組建伺服器](http://msdn.microsoft.com/en-us/library/ms181712.aspx)MSDN 上。
 
@@ -110,13 +110,13 @@ Visual Studio Team Services 和 Team Foundation Server 所述，提供兩個版�
 
 如果您使用 Jenkins 建置您的應用程式時，您可以在 Visual Studio Team Services 或 Team Foundation Server 中儲存您的程式碼，並繼續使用 Jenkins CI 組建。 您可以在程式碼推送至您的 team 專案的 Git 儲存機制或當您檢查程式碼 TFVC 時觸發 Jenkins 組建。 如需詳細資訊，請參閱[與 Visual Studio Team Services Jenkins](https://www.visualstudio.com/en-us/docs/marketplace/integrate/service-hooks/services/jenkins)。
 
-[![](intro-to-ci-images/intro04-small.png "如果您使用 Jenkins 建置您的應用程式時，您可以在 Visual Studio Team Services 或 Team Foundation Server 中儲存您的程式碼，並繼續使用 Jenkins CI 組建")](intro-to-ci-images/intro04.png)
+[![](intro-to-ci-images/intro04-small.png "如果您使用 Jenkins 建置您的應用程式時，您可以在 Visual Studio Team Services 或 Team Foundation Server 中儲存您的程式碼，並繼續使用 Jenkins CI 組建")](intro-to-ci-images/intro04.png#lightbox)
 
 ### <a name="git-and-jenkins"></a>Git 和 Jenkins
 
 另一個常見的 CI 環境可以完全是 OS X 基礎。 此案例牽涉到使用 Git 的原始程式碼控制和 Jenkins 組建伺服器。 這兩種電腦上執行單一 Mac OS X 與 Visual Studio 一起安裝的 mac。 這是非常類似於 Visual Studio Team Services + Jenkins 環境上一節所述：
 
-[![](intro-to-ci-images/intro05-small.png "這是非常類似於 Visual Studio Team Services + 上一節中所討論的 Jenkins 環境")](intro-to-ci-images/intro05.png)
+[![](intro-to-ci-images/intro05-small.png "這是非常類似於 Visual Studio Team Services + 上一節中所討論的 Jenkins 環境")](intro-to-ci-images/intro05.png#lightbox)
 
 > [!IMPORTANT]
 > **注意： Jenkins 是[不支援 Xamarin](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md)。**

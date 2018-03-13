@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9a3090873569db2466db9ab25cc105ea59401df3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: abcda680f6cfbde802f7b666cf2aade2c6e11093
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="lines-and-stroke-caps"></a>線條和筆觸端點
 
@@ -92,7 +92,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 針對每個成員`SKStrokeCap`列舉型別，此處理常式繪製兩行，一個 50 像素和另一個位於頂端，使用 2 個像素的筆劃粗細的線條的筆劃粗細。 此第二行僅供示範幾何的開始與結束線條的粗細和筆觸端點獨立的一行：
 
-[![](lines-images/strokecaps-small.png "三個螢幕擷取畫面的筆觸端點頁面")](lines-images/strokecaps-large.png "筆觸端點頁面的三個螢幕擷取畫面")
+[![](lines-images/strokecaps-small.png "三個螢幕擷取畫面的筆觸端點頁面")](lines-images/strokecaps-large.png#lightbox "筆觸端點頁面的三個螢幕擷取畫面")
 
 如您所見，`Square`和`Round`筆觸端點有效地擴充行長度的筆劃寬度的一半在一行的開頭和結尾一次。 需要判斷呈現的圖形物件的維度時，這項擴充功能變得很重要。
 
@@ -230,7 +230,7 @@ T GetPickerItem<T>(Picker picker)
 
 螢幕擷取畫面顯示各種`Picker`三個平台上的選取項目：
 
-[![](lines-images/multiplelines-small.png "多行網頁的三個螢幕擷取畫面")](lines-images/multiplelines-large.png "多行網頁的三個螢幕擷取畫面")
+[![](lines-images/multiplelines-small.png "多行網頁的三個螢幕擷取畫面")](lines-images/multiplelines-large.png#lightbox "多行網頁的三個螢幕擷取畫面")
 
 在左邊顯示 iPhone 如何`SKPointMode.Points`列舉成員會造成`DrawPoints`來呈現每個在點`SKPoint`線條端點是否為方形陣列`Butt`或`Square`。 線條端點時，會轉譯圓形`Round`。
 

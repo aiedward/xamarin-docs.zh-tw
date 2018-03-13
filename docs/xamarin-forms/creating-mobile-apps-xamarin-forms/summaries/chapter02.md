@@ -3,14 +3,15 @@ title: "第 2 章的摘要。 應用程式的結構"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 893030170175403c7f7d6885e924e425b4f73c05
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f1569911eb47f28ea6aee2313d01e07c801746df
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第 2 章的摘要。 應用程式的結構
 
@@ -186,7 +187,7 @@ PCL 中，您會發現在本章稍後，可以判斷您在執行階段，在執�
 
 以下是結果與`HorizontalOptions`和`VerticalOptions`屬性`Label`都設定為`LayoutOptions.Center`:
 
-[![三個螢幕擷取畫面的 greetings 程式](images/ch02fg05-small.png "水平及垂直置中加上標籤")](images/ch02fg05-large.png "水平及垂直置中加上標籤")
+[![三個螢幕擷取畫面的 greetings 程式](images/ch02fg05-small.png "水平及垂直置中加上標籤")](images/ch02fg05-large.png#lightbox "水平及垂直置中加上標籤")
 
 ## <a name="solution-5-center-the-text-within-the-label"></a>5 的方案。 在標籤內文字置中對齊
 

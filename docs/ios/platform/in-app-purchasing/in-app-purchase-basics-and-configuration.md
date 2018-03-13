@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 8e0f5b24ff6790aa3bf63eb9112790e0a62ce0a3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 302bb1225067ad401f97ee6bad88b4cd16c6dc95
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="in-app-purchase-basics-and-configuration"></a>在應用程式內購買基本概念和組態
 
 實作在應用程式內購買需要利用 StoreKit API，在裝置上的應用程式。 StoreKit 管理所有與 Apple iTunes 伺服器以取得產品資訊並執行交易的通訊。 佈建設定檔必須設定應用程式內購買，並在 iTunes Connect 中必須輸入產品資訊。
 
- [ ![](in-app-purchase-basics-and-configuration-images/image1.png "這個圖表中所示，StoreKit 管理所有與 Apple 的通訊")](in-app-purchase-basics-and-configuration-images/image1.png)
+ [![](in-app-purchase-basics-and-configuration-images/image1.png "這個圖表中所示，StoreKit 管理所有與 Apple 的通訊")](in-app-purchase-basics-and-configuration-images/image1.png#lightbox)
 
 使用以提供應用程式內購買的應用程式存放區需要下列安裝及設定：
 
@@ -58,11 +58,11 @@ Apple 必須核准每個產品之前它就會在銷售 – name、 description �
 
 建立和分配給可用的應用程式需要在組態設定很少[iTunes Connect](https://itunesconnect.apple.com)，但是銷售付費的應用程式或應用程式內購買要求您提供 Apple 銀行與課稅資訊。 按一下**合約、 稅金和銀行**從主功能表如下所示：
 
- [ ![](in-app-purchase-basics-and-configuration-images/image2.png "按一下 在協議、 稅金和銀行從主功能表")](in-app-purchase-basics-and-configuration-images/image2.png)
+ [![](in-app-purchase-basics-and-configuration-images/image2.png "按一下 在協議、 稅金和銀行從主功能表")](in-app-purchase-basics-and-configuration-images/image2.png#lightbox)
 
 開發人員帳戶應擁有**iOS 付費的應用程式**合約作用中，此螢幕擷取畫面所示：
 
- [ ![](in-app-purchase-basics-and-configuration-images/image3.png "應有付費的應用程式作用中合約的 iOS 開發人員帳戶。")](in-app-purchase-basics-and-configuration-images/image3.png)
+ [![](in-app-purchase-basics-and-configuration-images/image3.png "應有付費的應用程式作用中合約的 iOS 開發人員帳戶。")](in-app-purchase-basics-and-configuration-images/image3.png#lightbox)
 
 您不能測試任何 StoreKit 功能，直到您有**iOS 付費的應用程式**合約： StoreKit 呼叫程式碼中的將會失敗 Apple 已處理完之前您**合約、 稅金和銀行**資訊。
 
@@ -75,7 +75,7 @@ Apple 必須核准每個產品之前它就會在銷售 – name、 description �
 
  看起來像這樣：
 
- [ ![](in-app-purchase-basics-and-configuration-images/image4.png "表單的表單建立新的應用程式識別碼")](in-app-purchase-basics-and-configuration-images/image4.png)
+ [![](in-app-purchase-basics-and-configuration-images/image4.png "表單的表單建立新的應用程式識別碼")](in-app-purchase-basics-and-configuration-images/image4.png#lightbox)
 
 輸入的內容適用於*描述*，因此您可以輕鬆地識別此清單中的應用程式識別碼。 如*應用程式識別碼首碼*，選取 小組的識別碼。
 
@@ -90,7 +90,7 @@ Apple 必須核准每個產品之前它就會在銷售 – name、 description �
 
 請注意，**中應用程式內購買**將會自動啟用服務 清單中：
 
- [ ![](in-app-purchase-basics-and-configuration-images/image5.png "在 [服務] 清單中將自動啟用應用程式內購買")](in-app-purchase-basics-and-configuration-images/image5.png)
+ [![](in-app-purchase-basics-and-configuration-images/image5.png "在 [服務] 清單中將自動啟用應用程式內購買")](in-app-purchase-basics-and-configuration-images/image5.png#lightbox)
 
 #### <a name="provisioning-profiles"></a>佈建設定檔
 
@@ -100,16 +100,16 @@ Apple 必須核准每個產品之前它就會在銷售 – name、 description �
 
 按一下**我的應用程式**在 iTunes Connect 來建立或編輯的 iOS 應用程式項目中。 應用程式的 [概觀] 頁面將如下所示：
 
- [ ![](in-app-purchase-basics-and-configuration-images/image6.png "應用程式的 [概觀] 頁面")](in-app-purchase-basics-and-configuration-images/image6.png)
+ [![](in-app-purchase-basics-and-configuration-images/image6.png "應用程式的 [概觀] 頁面")](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
 
 按一下**應用程式內購買**來建立或編輯您的產品銷售。 這個螢幕擷取畫面顯示已加入數個產品範例應用程式：
 
- [ ![](in-app-purchase-basics-and-configuration-images/image7.png "有幾項產品已經加入範例應用程式")](in-app-purchase-basics-and-configuration-images/image7.png)
+ [![](in-app-purchase-basics-and-configuration-images/image7.png "有幾項產品已經加入範例應用程式")](in-app-purchase-basics-and-configuration-images/image7.png#lightbox)
 
 將新的產品的程序有兩個步驟：
 
-1.   選擇的產品類型： [ ![ ](in-app-purchase-basics-and-configuration-images/image8.png "選擇的產品類型")](in-app-purchase-basics-and-configuration-images/image8.png) 
-2.   輸入產品的屬性，包括產品識別碼、 定價層和當地語系化的描述： [ ![ ](in-app-purchase-basics-and-configuration-images/image9.png "輸入的產品屬性")](in-app-purchase-basics-and-configuration-images/image9.png)
+1.   選擇的產品類型： [ ![ ](in-app-purchase-basics-and-configuration-images/image8.png "選擇的產品類型")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2.   輸入產品的屬性，包括產品識別碼、 定價層和當地語系化的描述： [ ![ ](in-app-purchase-basics-and-configuration-images/image9.png "輸入的產品屬性")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
 每個應用程式內購買的產品所需的欄位如下所示：
 
@@ -158,13 +158,13 @@ com.xamarin.storekit.testing.greyscale
 
 Apple 提供價格矩陣，以協助您選取正確的層次，針對您想要貨幣/價格。 價格矩陣 (年 8 月 2012) 的摘錄，如下所示：
 
- [ ![](in-app-purchase-basics-and-configuration-images/image10.png "摘錄自價格矩陣 2012 年 8 月")](in-app-purchase-basics-and-configuration-images/image10.png)
+ [![](in-app-purchase-basics-and-configuration-images/image10.png "摘錄自價格矩陣 2012 年 8 月")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
 
 在撰寫 (2013) 時有從 USD 87 層以 USD 999.99 0.99。 定價矩陣顯示價格，您的客戶將付費和也的量，您會收到來自 Apple – 這是其 30%的電量小於以及任何本機稅金這些需要收集 （請注意，在美國和加拿大地區的銷售，接收 99 的 c p 70 c 範例roduct，而澳洲的銷售接收僅 63 c，因為 '貨物&amp;服務稅' levied 銷售價格上)。
 
 在任何時間，包括排程的價格變更才會生效，在未來的日期可以更新您的產品價格。 這個螢幕擷取畫面顯示新增的未來日期的價格變更的方式 – 價格會被暫時從變成第 1 層第 3 層年 9 月的月只：
 
- [ ![](in-app-purchase-basics-and-configuration-images/image11.png "其中價格已經暫時變更從第 1 層到第 3 層年 9 月的月份只未來日期的價格變動")](in-app-purchase-basics-and-configuration-images/image11.png)
+ [![](in-app-purchase-basics-and-configuration-images/image11.png "其中價格已經暫時變更從第 1 層到第 3 層年 9 月的月份只未來日期的價格變動")](in-app-purchase-basics-and-configuration-images/image11.png#lightbox)
 
 ### <a name="free-products-not-supported"></a>不支援免費產品
 
@@ -174,7 +174,7 @@ Apple 提供價格矩陣，以協助您選取正確的層次，針對您想要�
 
 在 iTunes Connect 中，您可以輸入任意數目的受支援的語言不同的名稱和描述文字。 每一種語言可以加入/編輯中透過快顯視窗：
 
- [ ![](in-app-purchase-basics-and-configuration-images/image12.png "每一種語言可以加入/編輯中透過快顯視窗")](in-app-purchase-basics-and-configuration-images/image12.png)   
+ [![](in-app-purchase-basics-and-configuration-images/image12.png "每一種語言可以加入/編輯中透過快顯視窗")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
    
    
    
@@ -186,7 +186,7 @@ Apple 提供價格矩陣，以協助您選取正確的層次，針對您想要�
 
 第一次應用程式送出應用程式內購買啟用 （不論它是新的應用程式或功能已經加入至現有） 您也必須選擇與它送出某些產品。 在 iTunes Connect 入口網站會提示您這樣做，請如下列螢幕擷取畫面所示：
 
- [ ![](in-app-purchase-basics-and-configuration-images/image13.png "在 iTunes Connect 入口網站會提示您送出某些產品以及")](in-app-purchase-basics-and-configuration-images/image13.png)   
+ [![](in-app-purchase-basics-and-configuration-images/image13.png "在 iTunes Connect 入口網站會提示您送出某些產品以及")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
    
    
    

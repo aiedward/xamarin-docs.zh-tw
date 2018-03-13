@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 3362744d0d201ef82c846c80b0e1a87426953c85
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 3ddf481a2356d49f11b96f5a8a6b7f7a492fefc9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-an-aspnet-web-service-asmx"></a>使用 ASP.NET Web 服務 (ASMX)
 
@@ -74,7 +74,7 @@ ASMX 服務提供下列作業：
 如需使用應用程式中的資料模型的詳細資訊，請參閱[將資料模型化](~/xamarin-forms/data-cloud/walkthrough.md)。
 
 > [!NOTE]
-> **請注意**： 範例應用程式使用 Xamarin 裝載 ASMX 服務，提供唯讀存取 web 服務。 因此，建立、 更新和刪除資料的作業不會改變應用程式中使用的資料。 不過，可裝載的 ASMX 服務版本，可以在**TodoASMXService**隨附的範例應用程式中的資料夾。 這一版可裝載 ASMX 服務允許完整的建立、 更新、 讀取和刪除資料的存取權。
+> 範例應用程式使用 Xamarin 裝載 ASMX 服務，提供唯讀存取 web 服務。 因此，建立、 更新和刪除資料的作業不會改變應用程式中使用的資料。 不過，可裝載的 ASMX 服務版本，可以在**TodoASMXService**隨附的範例應用程式中的資料夾。 這一版可裝載 ASMX 服務允許完整的建立、 更新、 讀取和刪除資料的存取權。
 
 A *proxy*耗用 ASMX 服務，可讓應用程式連接到服務，必須產生。 Proxy 的建構方式取用的服務中繼資料定義的方法和相關聯的服務組態。 產生 web 服務的 Web 服務描述語言 (WSDL) 文件的形式公開此中繼資料。 建置平台專屬專案中加入 web 參考 web 服務 proxy。
 

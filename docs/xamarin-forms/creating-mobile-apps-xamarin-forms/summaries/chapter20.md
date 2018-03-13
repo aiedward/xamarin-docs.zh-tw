@@ -3,14 +3,15 @@ title: "第 20 的摘要。 非同步和檔案 I/O"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: f7c81cfb77772af219fe28f081e7f8636e118fb1
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 86ae56fc2baac3eab0fbf375c5f67f7b2327721a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第 20 的摘要。 非同步和檔案 I/O
 
@@ -150,7 +151,7 @@ Windows 執行階段執行的程式使用中的類別[ `Windows.Storage` ](https
 
 [ **MandelbrotXF** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotXF)範例具有更廣泛的使用者介面，而且它主要基礎[ `MandelbrotModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/MandelbrotXF/MandelbrotXF/MandelbrotXF/MandelbrotModel.cs)和[ `MandelbrotViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/MandelbrotXF/MandelbrotXF/MandelbrotXF/MandelbrotViewModel.cs)類別：
 
-[![Mandelbrot X F 的三個螢幕擷取畫面](images/ch20fg13-small.png "MVVM Mandelbrot")](images/ch20fg13-large.png "MVVM Mandelbrot")
+[![Mandelbrot X F 的三個螢幕擷取畫面](images/ch20fg13-small.png "MVVM Mandelbrot")](images/ch20fg13-large.png#lightbox "MVVM Mandelbrot")
 
 ## <a name="back-to-the-web"></a>回到網站
 

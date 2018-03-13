@@ -3,16 +3,16 @@ title: "主動式建議簡介"
 description: "本文示範如何在磁碟機 engagement Xamarin.iOS 應用程式中使用主動式建議，藉由使用系統自動向使用者主動顯示有用的資訊。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
+ms.assetid: 8DDD084A-0D1E-4DF7-B686-6309DCEFF5D3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 2762487d25befd15d8b57a002c5da4e9dcb15bb8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 15f649440b2a855189acff33afcef5e8272a0769
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="introduction-to-proactive-suggestions"></a>主動式建議簡介
 
@@ -63,7 +63,7 @@ UIKit 已展開於 iOS 包含 10 [TextContentType](https://developer.apple.com/r
 
 ## <a name="ride-sharing-based-suggestions"></a>寫共用架構的建議
 
-如果騎共用應用程式使用[MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) API，iOS 10 會加以呈現在應用程式切換器的選項有時候使用者可能要騎時。 應用程式必須也登錄為騎共用應用程式藉由指定`MKDirectionsModeRideShare`如[MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW33)中的索引鍵及其`Info.plist`檔案。
+如果騎共用應用程式使用[MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) API，iOS 10 會加以呈現在應用程式切換器的選項有時候使用者可能要騎時。 應用程式必須也登錄為騎共用應用程式藉由指定`MKDirectionsModeRideShare`如[MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html)中的索引鍵及其`Info.plist`檔案。
 
 如果應用程式只支援騎共用，會從系統建議*> 的 < 取得，以及到...*，如果支援其他類型的路由 （例如 Walking 或自行車） 的方向，系統會使用*> 的 < 取得指示...*
 
@@ -95,7 +95,7 @@ UIKit 已展開於 iOS 包含 10 [TextContentType](https://developer.apple.com/r
 
 如上所述，`NSUserActivity`有助於了解哪些使用者目前正在使用螢幕的資訊系統。 `NSUserActivity` 輕量級狀態快取機制來擷取使用者的活動，當它們瀏覽應用程式。 例如，查看餐廳應用程式：
 
-[ ![](proactive-suggestions-images/activity02.png "快取機制 NSUserActivity 輕量的狀態")](proactive-suggestions-images/activity02.png)
+[![](proactive-suggestions-images/activity02.png "快取機制 NSUserActivity 輕量的狀態")](proactive-suggestions-images/activity02.png#lightbox)
 
 使用下列的互動：
 
@@ -105,7 +105,7 @@ UIKit 已展開於 iOS 包含 10 [TextContentType](https://developer.apple.com/r
 
 採取的最後一個畫面詳述：
 
-[ ![](proactive-suggestions-images/activity03.png "NSUserActivity 詳細資料")](proactive-suggestions-images/activity03.png)
+[![](proactive-suggestions-images/activity03.png "NSUserActivity 詳細資料")](proactive-suggestions-images/activity03.png#lightbox)
 
 應用程式中，建立以下`NSUserActivity`並填入相關資訊，以便稍後重新建立狀態。 應用程式也有包含某些中繼資料，例如位置的名稱和地址。 建立此活動，應用程式可讓 iOS 知道它代表使用者的目前狀態。
 
@@ -324,7 +324,7 @@ attributes.SupportsNavigation = true;
 
 看看如何應用程式可以捐贈互動：
 
-[ ![](proactive-suggestions-images/activity04.png "捐贈互動概觀")](proactive-suggestions-images/activity04.png)
+[![](proactive-suggestions-images/activity04.png "捐贈互動概觀")](proactive-suggestions-images/activity04.png#lightbox)
 
 應用程式會建立`INInteraction`物件，其中包含**意圖**(`INIntent`)，**參與者**和**中繼資料**。 **意圖**代表的使用者動作，例如視訊電話或傳送簡訊。 **參與者**包含接收通訊的人員。 **中繼資料**定義其他資訊，例如成功傳送訊息等等。
 
@@ -334,7 +334,7 @@ attributes.SupportsNavigation = true;
 
 當使用者與連絡人卡片應用程式互動時，取得會與搭配互動`NSUserActivity`，然後用來啟動應用程式：
 
-[ ![](proactive-suggestions-images/activity05.png "互動取得隨同 NSUserActivity 用來啟動應用程式")](proactive-suggestions-images/activity05.png)
+[![](proactive-suggestions-images/activity05.png "互動取得隨同 NSUserActivity 用來啟動應用程式")](proactive-suggestions-images/activity05.png#lightbox)
 
 看看下列範例會將傳送的訊息對應方式：
 
@@ -449,7 +449,7 @@ Schema.org 可以提供相同的網站的位置基礎互動類型。 Apple 設�
 - 有超過 500 個結構描述表示可用的各種概念。
 - 開發人員可以藉由實作該網站上，取得一些優點使用`NSUserActivity`原生應用程式中。
 
-結構描述會排列在樹狀結構，其中特定類型例如像*餐廳*，例如繼承自更泛型型別*本機商務*。 如需詳細資訊，請參閱[Schema.org](#http://schema.org)。
+結構描述會排列在樹狀結構，其中特定類型例如像*餐廳*，例如繼承自更泛型型別*本機商務*。 如需詳細資訊，請參閱[Schema.org](http://schema.org)。
 
 例如，如果網頁上包含下列資料：
 

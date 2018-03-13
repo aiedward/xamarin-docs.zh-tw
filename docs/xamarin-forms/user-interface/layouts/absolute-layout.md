@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 227a636db370b2dd3d132c49ad7c39ef42c5f30c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 90f1394103b5a3996029355a8ef260817b14a697
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="absolutelayout"></a>AbsoluteLayout
 
 [`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) 放置並調整大小成正比到其本身的大小和位置，或由絕對值的子項目。 子檢視可能定位和調整大小成比例的值或靜態值，使用比例，並可以混合靜態值。
 
-[ ![](absolute-layout-images/layouts-sml.png "Xamarin.Forms 配置")](absolute-layout-images/layouts.png "Xamarin.Forms 版面配置")
+[![](absolute-layout-images/layouts-sml.png "Xamarin.Forms 配置")](absolute-layout-images/layouts.png#lightbox "Xamarin.Forms 版面配置")
 
 本文將說明如何：
 

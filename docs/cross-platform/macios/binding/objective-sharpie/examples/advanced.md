@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 67bd1caf26c441e2a89def41ce3189b0dd67d7b1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dc41c70495e40235d7acffa56c1255bfd074ca0a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="advanced-manual-real-world-example"></a>進階 （手動） 的真實世界範例
 
@@ -130,7 +130,7 @@ Done.
 
 此外，我們指定`-c -Ibuild/headers`。 首先，`-c`引數會指示停止解譯命令列引數，並將任何後續的引數傳遞至目標 Sharpie_直接到 clang 編譯器_。 因此， `-Ibuild/Headers` clang 編譯器引數，它會指示要搜尋的 clang 包括下`build/Headers`，也就是居住 POP 標頭。 沒有這個引數，clang 就不知道要到哪裡尋找檔案，`POP.h`是`#import`ing。 _幾乎所有 「 問題 」 使用目標 Sharpie 歸結找出要傳遞給 clang_。
 
-###<a name="completing-the-binding"></a>完成繫結
+### <a name="completing-the-binding"></a>完成繫結
 
 現在已產生目標 Sharpie`Binding/ApiDefinitions.cs`和`Binding/StructsAndEnums.cs`檔案。
 

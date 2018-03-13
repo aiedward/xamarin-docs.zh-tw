@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: acdcdc2b76a995ca324532c6a034b2fdf8e21db5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4747fb73358a60d10832a1e650acd90a5a4274d1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS 的安全性和隱私權功能
 
@@ -76,7 +76,7 @@ Apple 已進行數個增強功能的安全性和隱私權中 iOS 10 （和大於
 
 下列範例會在 10 （和大於） iOS 上存取 HomeKit，開發人員必須將`NSHomeKitUsageDescription`應用程式的金鑰`Info.plist`檔案，並提供字串，宣告應用程式想要存取使用者的 HomeKit 資料庫的原因。 這個字串會顯示在使用者第一次執行應用程式：
 
-[ ![](security-privacy-images/info01.png "範例 NSHomeKitUsageDescription 警示")](security-privacy-images/info01.png)
+[![](security-privacy-images/info01.png "範例 NSHomeKitUsageDescription 警示")](security-privacy-images/info01.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -87,7 +87,7 @@ Xamarin.iOS for Visual Studio 目前不支援編輯的安全性增強功能`Info
 3. 加入下列節點以提供必要的描述： `<string>Allows the app to control HomeKit enabled devices.</string>`
 4. `Info.plist`檔案應該看起來如下所示： 
 
-    [ ![](security-privacy-images/info02vs.png "Info.plist 檔案應該如下所示")](security-privacy-images/info02vs.png)
+    [![](security-privacy-images/info02vs.png "Info.plist 檔案應該如下所示")](security-privacy-images/info02vs.png#lightbox)
 4. 將變更儲存到檔案。
 5. 返回 Visual Studio 並重新編譯的應用程式。
 
@@ -100,10 +100,10 @@ Xamarin.iOS for Visual Studio 目前不支援編輯的安全性增強功能`Info
 3. 加入新**項目**至清單。
 4. 從下拉式清單中，選取 隱私金鑰 (例如**隱私權-HomeKit 使用方式描述**): 
 
-    [ ![](security-privacy-images/info02.png "選取隱私金鑰")](security-privacy-images/info02.png)
+    [![](security-privacy-images/info02.png "選取隱私金鑰")](security-privacy-images/info02.png#lightbox)
 5. 輸入應用程式想要存取指定的功能或使用者資訊的原因的描述： 
 
-    [ ![](security-privacy-images/info03.png "輸入的描述")](security-privacy-images/info03.png)
+    [![](security-privacy-images/info03.png "輸入的描述")](security-privacy-images/info03.png#lightbox)
 6. 將變更儲存到檔案。
 
 -----

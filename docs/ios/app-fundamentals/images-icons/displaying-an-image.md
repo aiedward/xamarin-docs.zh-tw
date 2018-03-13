@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c54cb71b0cab653eee52e3773a5233d536412e7b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1ca537ef47f48886483e99bb33b0d524d16593f8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="displaying-an-image"></a>顯示影像
 
@@ -135,11 +135,11 @@ MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](displaying-an-image-images/templateimage01.png "轉譯模式設定為範本映像")](displaying-an-image-images/templateimage01.png)
+[![](displaying-an-image-images/templateimage01.png "轉譯模式設定為範本映像")](displaying-an-image-images/templateimage01.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](displaying-an-image-images/templateimage01vs.png "轉譯模式設定為範本")](displaying-an-image-images/templateimage01vs.png)
+[![](displaying-an-image-images/templateimage01vs.png "轉譯模式設定為範本")](displaying-an-image-images/templateimage01vs.png#lightbox)
 
 -----
 
@@ -147,11 +147,11 @@ MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](displaying-an-image-images/templateimage03.png "設定來標示影像濃淡")](displaying-an-image-images/templateimage03.png)
+[![](displaying-an-image-images/templateimage03.png "設定來標示影像濃淡")](displaying-an-image-images/templateimage03.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](displaying-an-image-images/templateimage03vs.png "設定來標示影像濃淡")](displaying-an-image-images/templateimage03vs.png)
+[![](displaying-an-image-images/templateimage03vs.png "設定來標示影像濃淡")](displaying-an-image-images/templateimage03vs.png#lightbox)
 
 -----
 
@@ -319,5 +319,5 @@ View.AddSubview (imageView);
 ## <a name="related-links"></a>相關連結
 
 - [使用映像 （範例）](https://developer.xamarin.com/samples/WorkingWithImages/)
-- [Hello iPhone](~/ios/get-started/hello-ios/index.md)
+- [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
 - [自訂圖示和映像建立指導方針](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

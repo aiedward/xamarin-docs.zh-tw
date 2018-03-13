@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 641f62d5e646607b2ff61db412a5defce63a211d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 92b90f8d4655ea89b67e81f3235b6fd9b6d92833
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbars"></a>工具列
 
@@ -82,7 +82,7 @@ MacOS 應用程式中的任何視窗可包含的工具列：
 2. 選取設計介面上的視窗控制站。
 3. 切換至**識別 Inspector**並輸入"WindowController"做為**類別名稱**: 
 
-    [![設定視窗的控制站的自訂類別名稱](toolbar-images/windowcontroller01.png "設定視窗的控制站的自訂類別名稱")](toolbar-images/windowcontroller01-large.png) 
+    [![設定視窗的控制站的自訂類別名稱](toolbar-images/windowcontroller01.png "設定視窗的控制站的自訂類別名稱")](toolbar-images/windowcontroller01-large.png#lightbox) 
 
 4. 儲存變更並返回 Visual Studio for Mac 同步處理。
 5. A **WindowController.cs**檔案會加入至您的專案中**方案板**適用於 Mac 的 Visual Studio 中： 
@@ -92,7 +92,7 @@ MacOS 應用程式中的任何視窗可包含的工具列：
 6. 重新開啟分鏡腳本 Xcode 的介面產生器中。
 7. **WindowController.h**檔案可供使用： 
 
-    [![WindowController.h 檔案](toolbar-images/windowcontroller03.png "WindowController.h 檔案")](toolbar-images/windowcontroller03-large.png)
+    [![WindowController.h 檔案](toolbar-images/windowcontroller03.png "WindowController.h 檔案")](toolbar-images/windowcontroller03-large.png#lightbox)
 
 ## <a name="creating-and-maintaining-toolbars-in-xcode"></a>建立和維護在 Xcode 中的工具列
 
@@ -188,7 +188,7 @@ MacOS 應用程式中的任何視窗可包含的工具列：
 
 根據預設數個 Cocoa UI 項目 [標準] 工具列項目互動。 例如，拖曳**文字檢視**到應用程式的視窗，並將它填滿內容區域：
 
-[![應用程式中加入文字檢視](toolbar-images/edit09.png "應用程式中加入文字檢視")](toolbar-images/edit09-large.png)
+[![應用程式中加入文字檢視](toolbar-images/edit09.png "應用程式中加入文字檢視")](toolbar-images/edit09-large.png#lightbox)
 
 儲存文件 Visual studio for Mac 與 Xcode 同步，執行應用程式，輸入一些文字，、 選取它，然後按一下傳回**色彩**工具列項目。 請注意，[文字] 檢視使用色彩選擇器：
 
@@ -201,7 +201,7 @@ MacOS 應用程式中的任何視窗可包含的工具列：
 1. 在 Visual Studio for Mac 中**方案板**，以滑鼠右鍵按一下**資源**資料夾，然後選取**新增** > **加入檔案**.
 2. 從**加入檔案**對話方塊方塊中，瀏覽至所需的映像、 加以選取，然後按一下**開啟**按鈕： 
 
-    [![選取要加入的映像](toolbar-images/edit11.png "選取要加入的映像")](toolbar-images/edit11-large.png)
+    [![選取要加入的映像](toolbar-images/edit11.png "選取要加入的映像")](toolbar-images/edit11-large.png#lightbox)
 
 3. 選取**複製**，檢查**針對所有選取的檔案使用相同的動作**，然後按一下**確定**:
 
@@ -225,7 +225,7 @@ MacOS 應用程式中的任何視窗可包含的工具列：
 
 9. 拖曳**分隔符號工具列項目**從**程式庫偵測器**工具列**允許工具列項目**區域： 
 
-    [![分隔符號的工具列項目加入至允許的工具列項目區域](toolbar-images/edit17.png "分隔符號工具列項目加入至允許的工具列項目區域")](toolbar-images/edit17-large.png)
+    [![分隔符號的工具列項目加入至允許的工具列項目區域](toolbar-images/edit17.png "分隔符號工具列項目加入至允許的工具列項目區域")](toolbar-images/edit17-large.png#lightbox)
 
 10. 分隔符號項目和 「 資源回收筒 」 項目拖曳**預設工具列項目**區域和工具列的順序從項目的集由左到右，如下所示 （色彩、 字型、 分隔符號、 資源回收筒、 有彈性的空間、 列印）： 
 
@@ -244,7 +244,7 @@ MacOS 應用程式中的任何視窗可包含的工具列：
 1. 在**方案板**，連按兩下**Main.storyboard**在 Xcode 中開啟它。
 2. 請確認自訂的類別中的主視窗控制站已指派 」 WindowController"**識別 Inspector**:
 
-    [![使用身分識別的偵測器視窗的控制站設定為自訂類別](toolbar-images/edit20a.png "使用識別偵測器視窗的控制站設定的自訂類別")](toolbar-images/edit20a-large.png)
+    [![使用身分識別的偵測器視窗的控制站設定為自訂類別](toolbar-images/edit20a.png "使用識別偵測器視窗的控制站設定的自訂類別")](toolbar-images/edit20a-large.png#lightbox)
 
 3. 接下來，選取中的工具列項目**介面階層架構**: 
 
@@ -253,11 +253,11 @@ MacOS 應用程式中的任何視窗可包含的工具列：
 4. 開啟**助理檢視**，選取**WindowController.h**檔案，並從工具列項目控制項拖曳**WindowController.h**檔案。
 5. 設定**連接**類型**動作**，輸入 「 trashDocument"**名稱**，然後按一下**連接**按鈕： 
 
-    [![設定的動作是工具列項目](toolbar-images/edit23.png "設定的動作是工具列項目")](toolbar-images/edit23-large.png)
+    [![設定的動作是工具列項目](toolbar-images/edit23.png "設定的動作是工具列項目")](toolbar-images/edit23-large.png#lightbox)
 
 6. 公開**文字檢視**稱為 「 documentEditor"插座為**ViewController.h**檔案： 
 
-    [![設定文字檢視插座](toolbar-images/edit24.png "設定輸出的文字檢視")](toolbar-images/edit24-large.png)
+    [![設定文字檢視插座](toolbar-images/edit24.png "設定輸出的文字檢視")](toolbar-images/edit24-large.png#lightbox)
 
 7. 儲存變更並返回 Visual Studio for Mac 使用 Xcode 進行同步處理。
 

@@ -7,17 +7,17 @@ ms.assetid: E38C9AD9-56AA-B983-8B21-E1F466C4DB36
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.openlocfilehash: c06dab9bf280a2543585d36147c7c3311f6445ad
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: 90dc37612f36eb914c3aaa140200762945ac4516
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="android-designer"></a>Android 設計工具
 
 _本文涵蓋 Xamarin.Android 設計工具的功能。它涵蓋了設計工具的基本概念，顯示如何使用設計工具以視覺化方式配置 widget 及如何編輯內容。此外，它也會示範如何使用設計工具來處理跨不同的組態，例如佈景主題、 語言和裝置組態使用者介面和資源，以及如何設計的替代檢視，例如橫向和縱向。_
 
-<a name="Overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -37,7 +37,6 @@ Xamarin.Android 支援這兩種宣告式方法的基礎 XML 檔案，以及在�
 9.  如何使用資料設計工具來建置相容材料設計的應用程式。
 
 
-<a name="Sections" />
 
 ## <a name="sections"></a>章節
 
@@ -52,7 +51,6 @@ Xamarin.Android 支援這兩種宣告式方法的基礎 XML 檔案，以及在�
  [材料設計功能](~/android/user-interface/android-designer/material-design-features.md)
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>總結
 

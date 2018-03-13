@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: ad621fa093379d5ad2dd81c81ce42dcaaa9bd923
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3d915191e24b5238d5165237f6ede74635b31e08
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
 `RelativeLayout` 用來位置和大小檢視相對於版面配置頁或同層級檢視的內容。 不同於`AbsoluteLayout`，`RelativeLayout`沒有移動錨點的概念，而且沒有定位項目相對於底部或版面配置的右邊緣的機能。 `RelativeLayout` 支援定位的項目，其本身的範圍之外。
 
-[ ![](relative-layout-images/layouts-sml.png "Xamarin.Forms 配置")](relative-layout-images/layouts.png "Xamarin.Forms 版面配置")
+[![](relative-layout-images/layouts-sml.png "Xamarin.Forms 配置")](relative-layout-images/layouts.png#lightbox "Xamarin.Forms 版面配置")
 
 ## <a name="purpose"></a>用途
 
@@ -76,7 +76,7 @@ layout.Children.Add(box, Constraint.RelativeToParent((parent) =>
 - 方塊的`y`座標會定義為父代，-100 的高度的一半。
 
 > [!NOTE]
-> **請注意**： 因條件約束所定義的方式，而是可以在 C# 中可以使用 XAML 來指定比做出更複雜的配置。
+> 由於條件約束所定義的方式，是可以在 C# 中可以使用 XAML 來指定比做出更複雜的配置。
 
 這兩個以上的範例定義條件約束當做`RelativeToParent` &ndash; ，其值是相對於父項目。 它也可定義相對於另一個檢視的條件約束。 這允許更直覺 （向開發人員） 的配置，並可以讓您的版面配置程式碼意圖更明顯。
 

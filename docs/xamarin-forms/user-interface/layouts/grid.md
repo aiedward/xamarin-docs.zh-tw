@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 4d074dce06d5737bd6589efbc559c611425e5f19
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 18df6082f634d633d3f1ca8ea1e8d3f493532f47
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="grid"></a>Grid
 
 [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) 排列成資料列和資料行的檢視表的支援。 資料列和資料行，都可以設定成比例的大小或絕對大小。 `Grid`配置不能與傳統資料表混淆，而不是呈現表格式資料。 `Grid` 沒有資料列、 資料行或資料格格式化的概念。 不同於 HTML 表格`Grid`純粹供配置內容。
 
-[ ![](grid-images/layouts-sml.png "Xamarin.Forms 配置")](grid-images/layouts.png "Xamarin.Forms 版面配置")
+[![](grid-images/layouts-sml.png "Xamarin.Forms 配置")](grid-images/layouts.png#lightbox "Xamarin.Forms 版面配置")
 
 本文將說明如何：
 
@@ -54,7 +54,7 @@ ms.lasthandoff: 02/28/2018
 - **絕對**&ndash;調整資料行和特定的固定高度和寬度的值的資料列的大小。 指定為值和`GridUnitType.Absolute`C# 中以及`#`在 XAML 中，與`#`所需要的值。
 
 > [!NOTE]
-> **請注意**： 資料行的寬度值會設定為 '*' 依預設，在 Xamarin.Forms，並確保資料行，將會填滿可用空間。
+> 資料行的寬度值會設定為 '*' 依預設，在 Xamarin.Forms，並確保資料行，將會填滿可用空間。
 
 請考慮需要三個資料列和兩個資料行的應用程式。 下方的資料列必須是完全 200px 高而且上方資料列必須是兩次中間的資料列的高度。 左側資料行必須是寬度不足以容納內容，右邊的資料行必須以填滿剩餘的空間。
 

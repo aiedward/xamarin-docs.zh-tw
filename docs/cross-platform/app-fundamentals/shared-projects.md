@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 0ab1daa9ce76900067f374cda58040354688c7be
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e77c5653171ec6c69608858805de28843fc0db56
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="shared-projects"></a>共用的專案
 
@@ -25,20 +25,8 @@ _共用的專案可讓您撰寫正由許多不同的應用程式專案的通用�
 如果您已經使用過檔案連結專案之間共用程式碼，以類似的方式，但很多改良的 IDE 支援，適用於共用專案。
 
 
-# <a name="requirements"></a>需求
 
-共用的專案 Xamarin Studio 5 和 Visual Studio 2013 Update 2 （請參閱附註） 已加入支援。
-
-> [!IMPORTANT]
->  Microsoft 已發行的這個新的專案類型-**共用專案 ([下載 Visual Studio 擴充功能預覽](http://visualstudiogallery.msdn.microsoft.com/315c13a7-2787-4f57-bdf7-adae6ed54450))** ： 適用於 Visual Studio 2013 Update 2 (年 4 月 2014)。 請參閱 Microsoft [Windows Phone 8.1](http://blogs.msdn.com/b/visualstudio/archive/2014/04/08/building-windows-phone-8-1-apps-in-html.aspx)和[Microsoft Store](http://msdn.microsoft.com/en-us/library/windows/apps/dn609832.aspx#CrossPlatform)如需有關如何將它用於這些平台的文件。
-
-
-
-
- <a name="Walkthrough" />
-
-
-# <a name="what-is-a-shared-project"></a>什麼是共用專案？
+## <a name="what-is-a-shared-project"></a>什麼是共用專案？
 
 不像其他大部分的專案類型共用的專案沒有任何輸出 （以 DLL 的形式），而程式碼會編譯到每個參考的專案。 下圖說明這種-共用專案的整個內容在概念上是 「 複製到 「 每個參考的專案，並編譯如同它是的一部分。
 
@@ -54,9 +42,7 @@ _共用的專案可讓您撰寫正由許多不同的應用程式專案的通用�
 
 
 
-<a name="Xamarin_Studio_Walkthrough" />
-
-# <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac 逐步解說
+## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac 逐步解說
 
 
 本節逐步解說如何建立及使用共用專案，使用 Visual Studio for mac。 參考到[共用專案範例](#Shared_Project_Example)完成完整的範例 > 一節。
@@ -109,15 +95,13 @@ _共用的專案可讓您撰寫正由許多不同的應用程式專案的通用�
 
 
 
-<a name="Visual_Studio_Walkthrough" />
-
-# <a name="visual-studio-walkthrough"></a>Visual Studio 逐步解說
+## <a name="visual-studio-walkthrough"></a>Visual Studio 逐步解說
 
 
 本節逐步解說如何建立及使用共用專案，使用 Visual Studio。 參考到[共用專案範例](#Shared_Project_Example)> 一節的完整實作。
 
 
-## <a name="creating-a-shared-project"></a>建立共用的專案
+### <a name="creating-a-shared-project"></a>建立共用的專案
 
 
 若要建立新的共用專案巡覽至**檔案 > 新的方案...** ，然後選擇 專案和方案的名稱。
@@ -145,7 +129,7 @@ _共用的專案可讓您撰寫正由許多不同的應用程式專案的通用�
 共用專案參考其他文件庫或應用程式之後您可以建置此方案，並檢視程式碼中的任何錯誤。 當共用專案參考_兩個或多個_其他專案中，功能表會出現在左上方的來源的程式碼編輯器，以查看哪些專案參考目前的程式碼檔案。
 
 
-## <a name="shared-project-properties"></a>共用的專案屬性
+### <a name="shared-project-properties"></a>共用的專案屬性
 
 
 當您選取共用專案那里較少的設定與其他專案類型中的 [屬性] 面板中。 共用專案 （自行） 未編譯，因為您無法設定專案組態輸出或編譯器選項、 組件簽署或自訂命令。 有效率地共用的專案中的程式碼會從任何參考這些繼承這些值。
@@ -161,10 +145,9 @@ _共用的專案可讓您撰寫正由許多不同的應用程式專案的通用�
 
 -----
 
- <a name="Shared_Project_Example" />
+<a name="Shared_Project_Example"/>
 
-
-# <a name="shared-project-example"></a>共用的專案範例
+## <a name="shared-project-example"></a>共用的專案範例
 
 [Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)共用專案，以包含常見的程式碼就會使用這兩個 iOS、 Android 和 Windows Phone 應用程式所使用的範例。 同時`SQLite.cs`和`TaskRepository.cs`原始程式碼檔 utilise 編譯器指示詞 （例如。 `#if __ANDROID__`) 來產生參考它們的應用程式的每個不同的輸出。
 
@@ -186,10 +169,9 @@ Windows Phone 專案可以巡覽 Visual Studio 中適用於 Mac，即使該專�
 
  ![](shared-projects-images/example.png "iOS、 Android、 Windows Phone 範例")
 
- <a name="Summary" />
 
 
-# <a name="summary"></a>總結
+## <a name="summary"></a>總結
 
 本文件描述共用專案的運作方式、 如何它們可以建立和使用 Visual Studio for Mac 和 Visual Studio，並導入示範共用中的專案動作的簡單範例應用程式。
 

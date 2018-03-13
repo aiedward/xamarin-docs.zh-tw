@@ -4,14 +4,15 @@ description: "使用矩陣轉換實作拖曳觸控、 就，和旋轉"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: b418e0179c95a424c88d5f5063a09f984bb13ec0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 16e9423c84e591e15a703b4d5bb204a8b642bb40
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="touch-manipulations"></a>觸控操作
 
@@ -545,7 +546,7 @@ public partial class TouchManipulationPage : ContentPage
 
 `PaintSurface`處理常式結束時，會顯示`MatrixDisplay`物件顯示累積的觸控矩陣：
 
-[![](touch-images/touchmanipulation-small.png "觸控操作頁面的三個螢幕擷取畫面")](touch-images/touchmanipulation-large.png "接觸的管理頁面的三個螢幕擷取畫面")
+[![](touch-images/touchmanipulation-small.png "觸控操作頁面的三個螢幕擷取畫面")](touch-images/touchmanipulation-large.png#lightbox "接觸的管理頁面的三個螢幕擷取畫面")
 
 ## <a name="manipulating-multiple-bitmaps"></a>操作多個點陣圖
 
@@ -684,7 +685,7 @@ public partial class BitmapScatterViewPage : ContentPage
 
 程式碼集合執行迴圈，並顯示一堆集合的開頭到結尾的點陣圖：
 
-[![](touch-images/bitmapscatterview-small.png "點陣圖 [散佈圖檢視] 頁面的三個螢幕擷取畫面")](touch-images/bitmapscatterview-large.png "點陣圖散佈檢視頁面的三個螢幕擷取畫面")
+[![](touch-images/bitmapscatterview-small.png "點陣圖 [散佈圖檢視] 頁面的三個螢幕擷取畫面")](touch-images/bitmapscatterview-large.png#lightbox "點陣圖散佈檢視頁面的三個螢幕擷取畫面")
 
 
 ## <a name="related-links"></a>相關連結

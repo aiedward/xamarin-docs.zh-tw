@@ -3,14 +3,15 @@ title: "章 27 的摘要。 自訂轉譯器"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 49961953-9336-4FD4-A42F-6D9B05FF52E7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0c1dc9ba5cf382551a1142110c68d16421db07e4
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6d7c2b17e9596b7d2dd26aaf77cf13f7f8086cd5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-27-custom-renderers"></a>章 27 的摘要。 自訂轉譯器
 
@@ -66,7 +67,7 @@ Windows 執行階段[ `ViewRenderer<TElement, TNativeElement>` ](https://github.
 
 所有`ViewRenderer`衍生項目包含`ExportRenderer`屬性產生關聯的組件層級上`HelloView`特定類別`HelloViewRenderer`類別。 這是 Xamarin.Forms 個別的平台專案中所找到的轉譯器：
 
-[![三個螢幕擷取畫面的 Hello 檢視](images/ch27fg02-small.png "自訂轉譯器")](images/ch27fg02-large.png "自訂轉譯器")
+[![三個螢幕擷取畫面的 Hello 檢視](images/ch27fg02-small.png "自訂轉譯器")](images/ch27fg02-large.png#lightbox "自訂轉譯器")
 
 ## <a name="renderers-and-properties"></a>轉譯器與屬性
 
@@ -89,7 +90,7 @@ Windows 執行階段[ `ViewRenderer<TElement, TNativeElement>` ](https://github.
 
 [ **EllipseDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/EllipseDemo)類別會顯示其中數`EllipseView`物件：
 
-[![三個螢幕擷取畫面的橢圓形示範](images/ch27fg03-small.png "EllipseView 自訂轉譯器")](images/ch27fg03-large.png "EllipseView 自訂轉譯器")
+[![三個螢幕擷取畫面的橢圓形示範](images/ch27fg03-small.png "EllipseView 自訂轉譯器")](images/ch27fg03-large.png#lightbox "EllipseView 自訂轉譯器")
 
 [ **BouncingBall** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/BouncingBall)退`EllipseView`關閉螢幕側邊。
 

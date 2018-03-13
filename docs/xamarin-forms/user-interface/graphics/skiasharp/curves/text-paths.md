@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: bf382f380876e85db46226fb3586382f20d630f2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b22cebf8ca5804884c559da687fe90236c7af44d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="paths-and-text"></a>路徑和文字
 
@@ -44,7 +44,7 @@ public SKPath GetTextPath (String text, Single x, Single y)
 
 其中一個工作裁剪。 **裁剪文字**頁面會建立裁剪路徑根據字元外框的文字 「 程式碼 」。 此路徑會延伸來裁剪包含影像的點陣圖頁面大小以**裁剪文字**原始程式碼：
 
-[![](text-paths-images/clippingtext-small.png "三個螢幕擷取畫面的結束時間裁剪文字頁面")](text-paths-images/clippingtext-large.png "裁剪文字頁面的三個螢幕擷取畫面")
+[![](text-paths-images/clippingtext-small.png "三個螢幕擷取畫面的結束時間裁剪文字頁面")](text-paths-images/clippingtext-large.png#lightbox "裁剪文字頁面的三個螢幕擷取畫面")
 
 [ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs)類別建構函式載入點陣圖儲存為內嵌資源中**媒體**方案的資料夾：
 
@@ -125,7 +125,7 @@ public class ClippingTextPage : ContentPage
 
 **文字路徑效果**頁面將單一連字號字元轉換成路徑，以建立 1d 路徑效果。 小畫家物件並且將此路徑的影響會被用來繪製外框的較大的相同字元的版本：
 
-[![](text-paths-images/textpatheffect-small.png "文字路徑效果頁面的三個螢幕擷取畫面")](text-paths-images/textpatheffect-large.png "文字路徑效果頁面的三個螢幕擷取畫面")
+[![](text-paths-images/textpatheffect-small.png "文字路徑效果頁面的三個螢幕擷取畫面")](text-paths-images/textpatheffect-large.png#lightbox "文字路徑效果頁面的三個螢幕擷取畫面")
 
 中的工作更[ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs)類別中的欄位和建構函式，就會發生。 這兩個`SKPaint`物件定義欄位適用於兩個不同的用途如下： 第一個 (名為`textPathPaint`) 用來轉換以連字號`TextSize`的 50%到 1d 路徑效果的路徑。 第二個 (`textPaint`) 用來顯示的連字號，並且將該路徑的影響較大的版本。 基於這個原因，`Style`這個第二個 [小畫家] 的物件設定為`Stroke`，但`StrokeWidth`屬性沒有設定，因為該屬性就不需要使用 1d 路徑效果時：
 
@@ -270,7 +270,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `PaintSurface`處理常式接著會建立名為的新路徑`outlinePath`。 這會變成目的地路徑的呼叫中`GetFillPath`。 `StrokeWidth`屬性 25 原因`outlinePath`來描述 25 像素寬路徑繪製文字字元的外框。 此路徑然後筆劃寬度為 5 的紅色顯示：
 
-[![](text-paths-images/characteroutlineoutlines-small.png "字元大綱外框輪廓頁面的三個螢幕擷取畫面")](text-paths-images/characteroutlineoutlines-large.png "字元大綱外框輪廓頁面的三個螢幕擷取畫面")
+[![](text-paths-images/characteroutlineoutlines-small.png "字元大綱外框輪廓頁面的三個螢幕擷取畫面")](text-paths-images/characteroutlineoutlines-large.png#lightbox "字元大綱外框輪廓頁面的三個螢幕擷取畫面")
 
 請仔細查看，您會看到重疊項目路徑外框，使尖角。 這些是標準的成品，此程序。
 
@@ -323,7 +323,7 @@ public class CircularTextPage : ContentPage
 
 `TextSize`屬性`textPaint`再調整，讓文字寬度符合圓形的圓周：
 
-[![](text-paths-images/circulartext-small.png "三個螢幕擷取畫面的循環的文字頁面")](text-paths-images/circulartext-large.png "循環的文字頁面的三個螢幕擷取畫面")
+[![](text-paths-images/circulartext-small.png "三個螢幕擷取畫面的循環的文字頁面")](text-paths-images/circulartext-large.png#lightbox "循環的文字頁面的三個螢幕擷取畫面")
 
 選擇文字本身也是有些循環： word"circle"是兩者的句子的主旨和前置詞片語的物件。 
 

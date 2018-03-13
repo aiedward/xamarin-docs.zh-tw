@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 5ce20322b576b12ff9dfe56ef0bc9d2e1ca27792
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 530e53230e9f0dea165b083fa6795558025a293f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 延伸模組支援
 
@@ -42,7 +42,7 @@ Xamarin.Mac 2.10 預覽中新增多個 macOS 擴充點的支援：
 - 任何無法攔截的例外狀況將會損毀提供只有少量的有用資訊的延伸模組程序**系統記錄檔**。 有問題的程式碼中自動換行`try/catch`（例外狀況） 區塊`NSLog`的之前重新擲回可能會很有用。
 - **系統記錄檔**可以存取從**主控台**待測應用程式**應用程式** > **公用程式**:
 
-    [ ![](extensions-images/extension02.png "系統記錄檔")](extensions-images/extension02.png)
+    [![](extensions-images/extension02.png "系統記錄檔")](extensions-images/extension02.png#lightbox)
 - 如先前所述，執行擴充主應用程式會向系統。 刪除應用程式資源存放區中取消登錄該。 
 - 如果已登錄的應用程式擴充功能的 「 偏離 」 版本，請使用下列命令來找到這些服務 （以便它們可以被刪除）： `plugin kit -mv`
 
@@ -65,4 +65,4 @@ Xamarin.Mac 2.10 預覽中新增多個 macOS 擴充點的支援：
 
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [ExtensionSamples](https://developer.xamarin.com/samples/mac/ExtensionSamples/)
-- [OS X 人們介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [OS X 人性化介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) \(英文\)

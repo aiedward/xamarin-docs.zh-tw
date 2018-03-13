@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d4446d30491ee796ca93eadf2e107fc9d74748df
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e7f2ad9e94d68007b1b7d0cca212cd51515a0108
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-video-positioning"></a>自訂視訊定位
 
@@ -472,7 +472,7 @@ if (newPosition.Seconds != Position.Seconds)
 
 第一個的省略符號 （···） 會隱藏`ActivityIndicator`; 它會與先前相同**自訂傳輸**頁面。 請注意兩個`Label`顯示的項目`Position`和`TimeToEnd`屬性。 這兩者之間的省略符號`Label`項目會隱藏兩個`Button`中顯示的項目**自訂傳輸**頁面播放、 暫停和停止。 程式碼後置邏輯也是相同**自訂傳輸**頁面。
 
-[![自訂定位](custom-positioning-images/custompositioning-small.png "自訂定位")](custom-positioning-images/custompositioning-large.png "自訂定位")
+[![自訂定位](custom-positioning-images/custompositioning-small.png "自訂定位")](custom-positioning-images/custompositioning-large.png#lightbox "自訂定位")
 
 以上總結的討論`VideoPlayer`。
 

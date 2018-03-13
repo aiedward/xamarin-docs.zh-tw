@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: a219a5ed4045bff639f29fd49ef5288139140135
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0eec51a6c95894482a57bfe3bb1f95aec2045af4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="accessing-remote-data"></a>存取遠端資料
 
@@ -52,7 +52,7 @@ EShopOnContainers 行動裝置應用程式會使用`HttpClient`提出要求，�
 
 圖 10-1 顯示從顯示的類別目錄微服務讀取目錄資料的類別互動`CatalogView`。
 
-[![](accessing-remote-data-images/catalogdata.png "從類別目錄的微服務擷取資料")](accessing-remote-data-images/catalogdata-large.png "從類別目錄的微服務擷取資料")
+[![](accessing-remote-data-images/catalogdata.png "從類別目錄的微服務擷取資料")](accessing-remote-data-images/catalogdata-large.png#lightbox "從類別目錄的微服務擷取資料")
 
 **圖 10 1**： 從目錄微服務擷取資料
 
@@ -157,7 +157,7 @@ public async Task<IActionResult> Items(
 
 圖 10-2 顯示的傳送所顯示的購物籃資料的類別互動`BasketView`，以購物籃微服務。
 
-[![](accessing-remote-data-images/basketdata.png "將資料傳送至購物籃微服務")](accessing-remote-data-images/basketdata-large.png "將資料傳送至購物籃微服務")
+[![](accessing-remote-data-images/basketdata.png "將資料傳送至購物籃微服務")](accessing-remote-data-images/basketdata-large.png#lightbox "將資料傳送至購物籃微服務")
 
 **圖 10 2**： 將資料傳送至購物籃微服務
 

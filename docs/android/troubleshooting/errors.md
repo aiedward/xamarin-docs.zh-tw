@@ -2,16 +2,16 @@
 title: "Xamarin.Android 錯誤矩陣"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 6992C4FF-ECBB-3493-AEE6-3E063C1A8C54
+ms.assetid: 7EBE4C01-8EFC-4B7E-97BA-D879994F59AB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: c3aab44fcb0522b762aaa101de0aeba08016b641
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1c9284f3db1c503b5c88f0d310f916f4c9e3363d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarinandroid-errors-matrix"></a>Xamarin.Android 錯誤矩陣
 
@@ -209,7 +209,6 @@ ms.lasthandoff: 02/27/2018
 
 這個錯誤碼是授權和啟用的錯誤。
 
- <a name="xa9000" />
 
 
 #### <a name="xa9000"></a>XA9000
@@ -239,7 +238,6 @@ ms.lasthandoff: 02/27/2018
     </tbody>
 </table>
 
- <a name="XA9001" />
 
 
 #### <a name="xa9001"></a>XA9001
@@ -269,7 +267,6 @@ ms.lasthandoff: 02/27/2018
     </tbody>
 </table>
 
- <a name="XA9002" />
 
 
 #### <a name="xa9002"></a>XA9002
@@ -351,7 +348,6 @@ ms.lasthandoff: 02/27/2018
     </tbody>
 </table>
 
- <a name="XA9003" />
 
 
 #### <a name="xa9003"></a>XA9003
@@ -458,7 +454,6 @@ ms.lasthandoff: 02/27/2018
     </tbody>
 </table>
 
- <a name="XA9004" />
 
 
 #### <a name="xa9004"></a>XA9004
@@ -488,7 +483,6 @@ ms.lasthandoff: 02/27/2018
     </tbody>
 </table>
 
- <a name="XA9005" />
 
 
 #### <a name="xa9005"></a>XA9005
@@ -518,7 +512,6 @@ ms.lasthandoff: 02/27/2018
     </tbody>
 </table>
 
- <a name="XA9006" />
 
 
 #### <a name="xa9006"></a>XA9006
@@ -548,7 +541,6 @@ ms.lasthandoff: 02/27/2018
     </tbody>
 </table>
 
- <a name="XA9008" />
 
 
 #### <a name="xa9008"></a>XA9008
@@ -578,7 +570,6 @@ ms.lasthandoff: 02/27/2018
     </tbody>
 </table>
 
- <a name="XA9009" />
 
 
 #### <a name="xa9009"></a>XA9009
@@ -608,7 +599,6 @@ ms.lasthandoff: 02/27/2018
     </tbody>
 </table>
 
- <a name="XA9010" />
 
 
 #### <a name="xa9010"></a>XA9010
@@ -640,7 +630,6 @@ ms.lasthandoff: 02/27/2018
 
 相當於 XA9018
 
- <a name="XA9011" />
 
 
 #### <a name="xa9011"></a>XA9011
@@ -670,7 +659,6 @@ ms.lasthandoff: 02/27/2018
     </tbody>
 </table>
 
- <a name="XA9012" />
 
 
 #### <a name="xa9012"></a>XA9012
@@ -700,7 +688,6 @@ ms.lasthandoff: 02/27/2018
     </tbody>
 </table>
 
- <a name="XA9013" />
 
 
 #### <a name="xa9013"></a>XA9013
@@ -730,7 +717,6 @@ ms.lasthandoff: 02/27/2018
     </tbody>
 </table>
 
- <a name="XA9014" />
 
 
 #### <a name="xa9014"></a>XA9014
@@ -760,7 +746,6 @@ ms.lasthandoff: 02/27/2018
     </tbody>
 </table>
 
- <a name="XA9017" />
 
 
 #### <a name="xa9017"></a>XA9017
@@ -790,7 +775,6 @@ ms.lasthandoff: 02/27/2018
     </tbody>
 </table>
 
-<a name="XA9018" />
 
 #### <a name="xa9018"></a>XA9018
 

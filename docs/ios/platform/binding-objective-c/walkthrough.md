@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 210a6b45c144de3a0663658d8b33132e39c75ae7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e4619f5b1d3f888b2557cf894aaa83106504766f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>逐步解說： 繫結 iOS Objective C 程式庫
 
@@ -30,7 +30,7 @@ _本文章提供逐步解說動手建立現有的 Objective C 程式庫，InfCol
 
 本文章提供建立繫結專案使用開放原始碼的逐步解說[InfColorPicker](https://github.com/InfinitApps/InfColorPicker) Objective C 專案為例，不過本指南中的所有資訊可以都為任何適用於第三方 Objective C 程式庫。 InfColorPicker 程式庫提供可重複使用的檢視控制站，可讓使用者選取根據其 HSB 表示法，讓更方便使用的色彩選擇的色彩。
 
-[ ![](walkthrough-images/run01.png "在 iOS 上執行的 InfColorPicker 程式庫的範例")](walkthrough-images/run01.png)
+[![](walkthrough-images/run01.png "在 iOS 上執行的 InfColorPicker 程式庫的範例")](walkthrough-images/run01.png#lightbox)
 
 我們會使用這個特定 Objective C 中的 API Xamarin.iOS 所有必要的步驟：
 
@@ -49,6 +49,8 @@ _本文章提供逐步解說動手建立現有的 Objective C 程式庫，InfCol
 -  **[Xcode 命令列工具](#Installing_the_Xcode_Command_Line_Tools)** -Xcode 命令列工具必須安裝目前已安裝 Xcode （請參閱下方的安裝詳細資料） 的版本。
 -  **Visual Studio for Mac 或 Visual Studio** -最新版的 Visual Studio for Mac 或 Visual Studio 應該安裝和設定開發電腦上。 Apple Mac 做是為了開發 Xamarin.iOS 應用程式，而且使用 Visual Studio 時您必須連接到[Xamarin.iOS 組建主機](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
 -  **最新版的目標 Sharpie** -從目前的目標 Sharpie 工具複本下載[這裡](~/cross-platform/macios/binding/objective-sharpie/get-started.md)。 如果您已經安裝的目標 Sharpie，您可以更新它的最新版本使用 `sharpie update`
+
+<a name="Installing_the_Xcode_Command_Line_Tools"/>
 
 ## <a name="installing-the-xcode-command-line-tools"></a>安裝 Xcode 命令列工具
 
@@ -79,11 +81,11 @@ _本文章提供逐步解說動手建立現有的 Objective C 程式庫，InfCol
     Europa:~ kmullins$ xcode-select --install
     ```
 
-    - 系統會詢問安裝命令列工具，請按一下 **安裝**按鈕： [ ![ ](walkthrough-images/xcode01.png "安裝命令列工具")](walkthrough-images/xcode01.png)
+    - 系統會詢問安裝命令列工具，請按一下 **安裝**按鈕： [ ![ ](walkthrough-images/xcode01.png "安裝命令列工具")](walkthrough-images/xcode01.png#lightbox)
 
-    - 下載並安裝從 Apple 伺服器工具： [ ![ ](walkthrough-images/xcode02.png "下載工具")](walkthrough-images/xcode02.png)
+    - 下載並安裝從 Apple 伺服器工具： [ ![ ](walkthrough-images/xcode02.png "下載工具")](walkthrough-images/xcode02.png#lightbox)
 
-- **下載適用於 Apple 開發人員**-命令列工具封裝可[Apple 開發人員下載]()網頁。 登入您的 Apple ID，然後搜尋和下載命令列工具： [ ![ ](walkthrough-images/xcode03.png "尋找命令列工具")](walkthrough-images/xcode03.png)
+- **下載適用於 Apple 開發人員**-命令列工具封裝可[Apple 開發人員下載]()網頁。 登入您的 Apple ID，然後搜尋和下載命令列工具： [ ![ ](walkthrough-images/xcode03.png "尋找命令列工具")](walkthrough-images/xcode03.png#lightbox)
 
 安裝程式命令列工具，我們就可以繼續在此逐步解說。
 
@@ -98,11 +100,13 @@ _本文章提供逐步解說動手建立現有的 Objective C 程式庫，InfCol
 
 既然我們了解哪些步驟，讓我們移至本逐步解說的其餘部分。
 
+<a name="Creating_A_Static_Library"/>
+
 ## <a name="creating-a-static-library"></a>建立靜態程式庫
 
 如果我們在 Github 中 InfColorPicker 檢查程式碼：
 
-[ ![](walkthrough-images/image02.png "檢查針對 InfColorPicker Github 中的程式碼")](walkthrough-images/image02.png)
+[![](walkthrough-images/image02.png "檢查針對 InfColorPicker Github 中的程式碼")](walkthrough-images/image02.png#lightbox)
 
 我們可以看到在專案中的下列三個目錄：
 
@@ -112,7 +116,7 @@ _本文章提供逐步解說動手建立現有的 Objective C 程式庫，InfCol
 
 讓我們 InfColorPicker 從下載專案[GitHub](https://github.com/InfinitApps/InfColorPicker/archive/master.zip)並將它解壓縮我們選擇的目錄中。 開啟 Xcode 目標`PickerSamplePhone`專案中，我們看到 Xcode 導覽中的下列專案結構：
 
-[ ![](walkthrough-images/image03.png "在 Xcode 導覽中的專案結構")](walkthrough-images/image03.png)
+[![](walkthrough-images/image03.png "在 Xcode 導覽中的專案結構")](walkthrough-images/image03.png#lightbox)
 
 這個專案會進行重複使用程式碼直接加入到每個範例專案的 InfColorPicker 原始碼 （以紅色方塊中）。 這個範例專案的程式碼是在藍色方塊內。 因為這個特定的專案不提供我們的靜態程式庫，則需要我們建立 Xcode 專案，以編譯靜態程式庫。
 
@@ -121,47 +125,47 @@ _本文章提供逐步解說動手建立現有的 Objective C 程式庫，InfCol
 1. 啟動 Xcode。
 2. 從**檔案**功能表中選取**新增** > **專案...**:
 
-    [ ![](walkthrough-images/image04.png "在新專案起始")](walkthrough-images/image04.png)
+    [![](walkthrough-images/image04.png "在新專案起始")](walkthrough-images/image04.png#lightbox)
 3. 選取**架構和程式庫**、 **Cocoa 觸控靜態程式庫**範本，然後按一下**下一步**按鈕：
 
-    [ ![](walkthrough-images/image05.png "選取 Cocoa 觸控靜態程式庫範本")](walkthrough-images/image05.png)
+    [![](walkthrough-images/image05.png "選取 Cocoa 觸控靜態程式庫範本")](walkthrough-images/image05.png#lightbox)
 4. 輸入`InfColorPicker`如**專案名稱**按一下**下一步**按鈕：
 
-    [ ![](walkthrough-images/image06.png "針對專案名稱輸入 InfColorPicker")](walkthrough-images/image06.png)
+    [![](walkthrough-images/image06.png "針對專案名稱輸入 InfColorPicker")](walkthrough-images/image06.png#lightbox)
 5. 選取要儲存專案，然後按一下位置**確定** 按鈕。
 6. 現在我們需要將來源從 InfColorPicker 專案加入至靜態程式庫專案。 因為**InfColorPicker.h**檔案已經在我們的靜態程式庫 （依預設）、 Xcode 將不允許我們覆寫它。 從**Finder**，InfColorPicker 原始碼的原始專案中，我們將工具解壓縮從 GitHub 瀏覽、 複製所有 InfColorPicker 檔案並將它們貼至我們新的靜態程式庫專案：
 
-    [ ![](walkthrough-images/image12.png "複製所有 InfColorPicker 檔案")](walkthrough-images/image12.png)
+    [![](walkthrough-images/image12.png "複製所有 InfColorPicker 檔案")](walkthrough-images/image12.png#lightbox)
 
 7. 返回 Xcode，請以滑鼠右鍵按一下**InfColorPicker**資料夾，然後選取**將檔案新增至 「 InfColorPicker...」**:
 
-    [ ![](walkthrough-images/image08.png "新增檔案")](walkthrough-images/image08.png)
+    [![](walkthrough-images/image08.png "新增檔案")](walkthrough-images/image08.png#lightbox)
 
 8. 從 [新增檔案] 對話方塊中，瀏覽至 InfColorPicker 原始程式碼檔案我們剛才複製全部選取，按一下**新增**按鈕：
 
-    [ ![](walkthrough-images/image09.png "所有選取，然後按一下 [新增] 按鈕")](walkthrough-images/image09.png)
+    [![](walkthrough-images/image09.png "所有選取，然後按一下 [新增] 按鈕")](walkthrough-images/image09.png#lightbox)
 
 9. 原始程式碼會複製到專案：
 
-    [ ![](walkthrough-images/image10.png "原始程式碼會複製到專案")](walkthrough-images/image10.png)
+    [![](walkthrough-images/image10.png "原始程式碼會複製到專案")](walkthrough-images/image10.png#lightbox)
 
 10. 從 Xcode 專案導覽器 中，選取**InfColorPicker.m**檔案，並標記為註解的最後兩行 （因為寫入此媒體櫃，不會使用這個檔案的方式）：
 
-    [ ![](walkthrough-images/image14.png "編輯 InfColorPicker.m 檔案")](walkthrough-images/image14.png)
+    [![](walkthrough-images/image14.png "編輯 InfColorPicker.m 檔案")](walkthrough-images/image14.png#lightbox)
 
 11. 我們現在需要檢查是否有任何程式庫所需的架構。 讀我檔案，或透過開啟其中一個提供的範例專案，您可以找到這項資訊。 這個範例會使用`Foundation.framework`， `UIKit.framework`，和`CoreGraphics.framework`讓我們將其加入。
 
 12. 選取**InfColorPicker 目標 > 建置階段**展開**連結二進位的程式庫**> 一節：
 
-    [ ![](walkthrough-images/image16b.png "展開連結二進位的程式庫區段")](walkthrough-images/image16b.png)
+    [![](walkthrough-images/image16b.png "展開連結二進位的程式庫區段")](walkthrough-images/image16b.png#lightbox)
 
 13. 使用 **+** 按鈕，即可開啟對話方塊，可讓您將新增所需的框架架構上面所列：
 
-    [ ![](walkthrough-images/image16c.png "加入上面所列的必要的框架架構")](walkthrough-images/image16c.png)
+    [![](walkthrough-images/image16c.png "加入上面所列的必要的框架架構")](walkthrough-images/image16c.png#lightbox)
 
 14. **連結二進位的程式庫**區段現在看起來應該像下面的影像：
 
-    [ ![](walkthrough-images/image16d.png "連結二進位的程式庫 > 一節")](walkthrough-images/image16d.png)
+    [![](walkthrough-images/image16d.png "連結二進位的程式庫 > 一節")](walkthrough-images/image16d.png#lightbox)
 
 此時我們關閉，但我們不正確完成。 建立靜態程式庫之後，但我們需要建立，以便建立 Fat 二進位，其中包含所有 iOS 裝置和 iOS 模擬器需要的架構。
 
@@ -212,16 +216,15 @@ clean:
 
 名稱儲存檔案**Makefile**至 InfColorPicker Xcode 靜態程式庫前面所建立的相同位置：
 
-
-[ ![](walkthrough-images/lib00.png "Makefile 的名稱儲存檔案")](walkthrough-images/lib00.png)
+[![](walkthrough-images/lib00.png "Makefile 的名稱儲存檔案")](walkthrough-images/lib00.png#lightbox)
 
 開啟 Mac 上 Terminal 應用程式，並瀏覽至您的 Makefile 的位置。 型別`make`到終端機中，按**Enter**和**Makefile**將會執行：
 
-[ ![](walkthrough-images/lib01.png "範例 makefile 輸出")](walkthrough-images/lib01.png)
+[![](walkthrough-images/lib01.png "範例 makefile 輸出")](walkthrough-images/lib01.png#lightbox)
 
 當您執行建立時，您會看到大量捲動文字。 如果一切正常運作，您會看到文字**建置成功**和`libInfColorPicker-armv7.a`，`libInfColorPicker-i386.a`和`libInfColorPickerSDK.a`檔案會複製到相同的位置**Makefile**:
 
-[ ![](walkthrough-images/lib02.png "LibInfColorPicker armv7.a、 libInfColorPicker i386.a 和 libInfColorPickerSDK.a 檔案產生的 Makefile")](walkthrough-images/lib02.png)
+[![](walkthrough-images/lib02.png "LibInfColorPicker armv7.a、 libInfColorPicker i386.a 和 libInfColorPickerSDK.a 檔案產生的 Makefile")](walkthrough-images/lib02.png#lightbox)
 
 您可以使用下列命令，您 Fat 的二進位檔中確認架構：
 
@@ -236,6 +239,8 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 ```
 
 此時，我們已經完成我們的 iOS 繫結的第一個步驟，建立靜態程式庫使用 Xcode 和 Xcode 命令列工具`make`和`lipo`。 讓我們移至下一個步驟，並使用**目標 Sharpie**自動為我們的 API 繫結的建立。
+
+<a name="Create_a_Xamarin.iOS_Binding_Project"/>
 
 ## <a name="create-a-xamarinios-binding-project"></a>建立繫結專案 Xamarin.iOS
 
@@ -344,6 +349,8 @@ using ObjCRuntime;
 
 
 我們必須進行下一件事是建立 InfColorPicker 專案的應用程式開發介面定義。 基於本逐步解說的目的，我們將使用目標 Sharpie 產生檔**ApiDefinition.cs**。
+
+<a name="Using_Objective_Sharpie"/>
 
 ## <a name="using-objective-sharpie"></a>使用目標 Sharpie
 
@@ -455,7 +462,7 @@ Europa:Resources kmullins$
 
 和**InfColorPicker.enums.cs**和**InfColorPicker.cs**我們目錄中建立檔案：
 
-[ ![](walkthrough-images/os06.png "InfColorPicker.enums.cs 和 InfColorPicker.cs 檔案")](walkthrough-images/os06.png)
+[![](walkthrough-images/os06.png "InfColorPicker.enums.cs 和 InfColorPicker.cs 檔案")](walkthrough-images/os06.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -473,6 +480,8 @@ Europa:Resources kmullins$
 
 -----
 
+<a name="Normalize_the_API_Definitions"/>
+
 ## <a name="normalize-the-api-definitions"></a>將標準化的 API 定義
 
 目標 Sharpie 有時會有問題轉譯`Delegates`，因此我們必須將修改的定義`InfColorPickerControllerDelegate`介面，並取代`[Protocol, Model]`為下列行：
@@ -483,11 +492,11 @@ Europa:Resources kmullins$
 ```
 因此，定義如下：
 
-[ ![](walkthrough-images/os11.png "定義")](walkthrough-images/os11.png)
+[![](walkthrough-images/os11.png "定義")](walkthrough-images/os11.png#lightbox)
 
 接下來，我們的內容同樣的步驟`InfColorPicker.enums.cs`檔案，複製並貼上在`StructsAndEnums.cs`檔案離開`using`保持不變的陳述式：
 
-[ ![](walkthrough-images/os09.png "內容 StructsAndEnums.cs 檔案 ")](walkthrough-images/os09.png)
+[![](walkthrough-images/os09.png "內容 StructsAndEnums.cs 檔案 ")](walkthrough-images/os09.png#lightbox)
 
 您也可能會發現目標 Sharpie 已標註的繫結`[Verify]`屬性。 這些屬性會指出您應該確認目標 Sharpie 未正確的做法，藉由比較原始 C/Objective C 宣告 （這會提供繫結的宣告上方的註解） 的繫結。 一旦確認繫結，您應該移除驗證屬性。 如需詳細資訊，請參閱[確認](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md)指南。
 
@@ -506,6 +515,8 @@ Europa:Resources kmullins$
 
 
 -----
+
+<a name="Using_the_Binding"/>
 
 ## <a name="using-the-binding"></a>使用繫結
 
@@ -669,7 +680,7 @@ private void HandleTouchUpInsideWithStrongDelegate (object sender, EventArgs e)
 
 **執行應用程式**-此時我們完成所有的程式碼。 如果您執行應用程式，您應該能夠變更的背景色彩`InfColorColorPickerSampleView`中的下列螢幕擷取畫面所示：
 
-[ ![](walkthrough-images/run01.png "執行應用程式")](walkthrough-images/run01.png)
+[![](walkthrough-images/run01.png "執行應用程式")](walkthrough-images/run01.png#lightbox)
 
 恭喜您！ 此時您已成功建立並繫結 Xamarin.iOS 應用程式中使用 Objective C 程式庫。 接下來，讓我們了解如何使用弱式委派。
 

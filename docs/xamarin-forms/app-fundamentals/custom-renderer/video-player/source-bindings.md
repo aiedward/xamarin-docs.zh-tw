@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d0842a54f725e5a9504668f977ba06648a96ee6d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 209b301c44da9bbb52ad8bf7fe867811a9b7617f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-video-sources-to-the-player"></a>繫結到播放程式的視訊來源
 
@@ -72,7 +72,7 @@ namespace VideoPlayerDemos
 
 當第一次載入頁面時，選取任何項目`ListView`，因此您必須選取一個開始播放的視訊：
 
-[![選取 Web 視訊](source-bindings-images/selectwebvideo-small.png "選取 Web 視訊")](source-bindings-images/selectwebvideo-large.png "選取 Web 視訊")
+[![選取 Web 視訊](source-bindings-images/selectwebvideo-small.png "選取 Web 視訊")](source-bindings-images/selectwebvideo-large.png#lightbox "選取 Web 視訊")
 
 `Source`屬性`VideoPlayer`受到可繫結的屬性，表示它可以是資料繫結的目標。 這示範**繫結至 VideoPlayer**頁面。 中的標記**BindToVideoPlayer.xaml**檔案會受到下列類別會封裝的視訊和對應的標題`VideoSource`物件：
 

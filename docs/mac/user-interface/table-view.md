@@ -3,16 +3,16 @@ title: "資料表檢視"
 description: "本文件涵蓋使用 Xamarin.Mac 應用程式中的資料表檢視。 它會描述 Xcode 介面產生器及與其互動的程式碼中建立的資料表檢視表。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: 3B55B858-4769-4331-966A-7F53B3B7C720
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: dfac551bbb7e6fd9214fe488170455c5916318ae
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 4764a4babc9f6b06c7a9299feab1320971b0bf75
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="table-views"></a>資料表檢視
 
@@ -22,7 +22,7 @@ _本文件涵蓋使用 Xamarin.Mac 應用程式中的資料表檢視。它會描
 
 資料表檢視中包含一或多個資料行的多個資料列中的資訊以表格格式顯示資料。 根據正在建立的資料表檢視的類型，使用者可以排序資料行、 重新組織資料行、 加入資料行、 移除資料行或編輯在資料表中所包含的資料。
 
-[ ![](table-view-images/intro01.png "範例資料表")](table-view-images/intro01.png)
+[![](table-view-images/intro01.png "範例資料表")](table-view-images/intro01.png#lightbox)
 
 在本文中，我們將涵蓋在 Xamarin.Mac 應用程式中使用的資料表檢視的基本概念。 強烈建議您逐步[Hello、 Mac](~/mac/get-started/hello-mac.md)發行項的第一次，具體來說[Xcode 和介面產生器簡介](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)和[插座和動作](~/mac/get-started/hello-mac.md#Outlets_and_Actions)區段中的，因為它涵蓋重要概念和技術，我們將在本文中使用。
 
@@ -51,23 +51,23 @@ _本文件涵蓋使用 Xamarin.Mac 應用程式中的資料表檢視。它會描
 
 當您建立新的 Xamarin.Mac Cocoa 應用程式時，預設會取得標準的空白，視窗。 此 windows 中所定義`.storyboard`自動包含在專案中的檔案。 若要編輯您的 windows 設計中**方案總管] 中**，按兩下 [`Main.storyboard`檔案：
 
-[ ![](table-view-images/edit01.png "選取 主要腳本")](table-view-images/edit01.png)
+[![](table-view-images/edit01.png "選取 主要腳本")](table-view-images/edit01.png#lightbox)
 
 這會在 Xcode 的介面產生器中開啟視窗設計：
 
-[ ![](table-view-images/edit02.png "編輯在 Xcode 中 UI")](table-view-images/edit02.png)
+[![](table-view-images/edit02.png "編輯在 Xcode 中 UI")](table-view-images/edit02.png#lightbox)
 
 型別`table`到**程式庫偵測器**搜尋方塊讓您更輕鬆地尋找資料表 檢視的控制項：
 
-[ ![](table-view-images/edit03.png "從程式庫中選取的資料表檢視")](table-view-images/edit03.png)
+[![](table-view-images/edit03.png "從程式庫中選取的資料表檢視")](table-view-images/edit03.png#lightbox)
 
 資料表檢視表拖曳中的檢視控制站**介面編輯器**，使其填滿的內容區域的檢視控制器，並將它設定為它壓縮和中的視窗會隨著**條件約束編輯器**:
 
-[ ![](table-view-images/edit04.png "編輯條件約束")](table-view-images/edit04.png)
+[![](table-view-images/edit04.png "編輯條件約束")](table-view-images/edit04.png#lightbox)
 
 資料表中選取檢視**介面階層架構**和下列屬性可用於**屬性偵測器**:
 
-[ ![](table-view-images/edit05.png "屬性偵測器")](table-view-images/edit05.png)
+[![](table-view-images/edit05.png "屬性偵測器")](table-view-images/edit05.png#lightbox)
 
 - **內容模式**-可讓您使用其中一個檢視 (`NSView`) 或資料格 (`NSCell`) 來顯示資料列和資料行中的資料。 從 macOS 10.7 開始，您應該使用的檢視。
 - **群組資料列會浮動**-如果`true`，如同它們浮動資料表檢視表時，會繪製群組資料格。
@@ -97,7 +97,7 @@ _本文件涵蓋使用 Xamarin.Mac 應用程式中的資料表檢視。它會描
 
 選取資料表資料行中**介面階層架構**和下列屬性可用於**屬性偵測器**:
 
-[ ![](table-view-images/edit06.png "屬性偵測器")](table-view-images/edit06.png)
+[![](table-view-images/edit06.png "屬性偵測器")](table-view-images/edit06.png#lightbox)
 
 - **標題**-設定資料行的標題。
 - **對齊**-設定儲存格內的文字對齊方式。
@@ -115,19 +115,19 @@ _本文件涵蓋使用 Xamarin.Mac 應用程式中的資料表檢視。它會描
 
 選取資料表資料格檢視 (`NSTableViewCell`) 中**介面階層架構**和下列屬性可用於**屬性偵測器**:
 
-[ ![](table-view-images/edit07.png "屬性偵測器")](table-view-images/edit07.png)
+[![](table-view-images/edit07.png "屬性偵測器")](table-view-images/edit07.png#lightbox)
 
 這些是所有的標準檢視的屬性。 您也可以調整大小的資料列，這個資料行的選擇。
 
 選取的資料表檢視儲存格 (根據預設，這是`NSTextField`) 中**介面階層架構**和下列屬性可用於**屬性偵測器**:
 
-[ ![](table-view-images/edit08.png "屬性偵測器")](table-view-images/edit08.png)
+[![](table-view-images/edit08.png "屬性偵測器")](table-view-images/edit08.png#lightbox)
 
 您必須在此處設定的標準文字欄位的所有屬性。 根據預設，標準的文字欄位用來顯示資料行中的資料格的資料。
 
 選取資料表資料格檢視 (`NSTableFieldCell`) 中**介面階層架構**和下列屬性可用於**屬性偵測器**:
 
-[ ![](table-view-images/edit09.png "屬性偵測器")](table-view-images/edit09.png)
+[![](table-view-images/edit09.png "屬性偵測器")](table-view-images/edit09.png#lightbox)
 
 最重要的設定如下：
 
@@ -141,7 +141,7 @@ _本文件涵蓋使用 Xamarin.Mac 應用程式中的資料表檢視。它會描
 
 選取的資料表資料格檢視 (`NSTableFieldCell`) 中的資料表資料行底部**介面階層架構**:
 
-[ ![](table-view-images/edit10.png "選取的資料表資料格檢視")](table-view-images/edit10.png)
+[![](table-view-images/edit10.png "選取的資料表資料格檢視")](table-view-images/edit10.png#lightbox)
 
 這可讓您編輯用做為基底資料表資料格檢視_模式_針對給定的資料行建立的所有儲存格。
 
@@ -155,14 +155,14 @@ _本文件涵蓋使用 Xamarin.Mac 應用程式中的資料表檢視。它會描
 
 1. 切換至**助理編輯器**，並確定`ViewController.h`選取檔案： 
 
-    [ ![](table-view-images/edit11.png "小幫手編輯器")](table-view-images/edit11.png)
+    [![](table-view-images/edit11.png "小幫手編輯器")](table-view-images/edit11.png#lightbox)
 2. 選取 [資料表] 檢視，從**介面階層架構**，控制按一下並拖曳至`ViewController.h`檔案。
 3. 建立**插座**資料表檢視表稱為`ProductTable`: 
 
-    [ ![](table-view-images/edit13.png "設定輸出")](table-view-images/edit13.png)
+    [![](table-view-images/edit13.png "設定輸出")](table-view-images/edit13.png#lightbox)
 4. 建立**插座**資料表資料行稱為`ProductColumn`和`DetailsColumn`: 
 
-    [ ![](table-view-images/edit14.png "設定輸出")](table-view-images/edit14.png)
+    [![](table-view-images/edit14.png "設定輸出")](table-view-images/edit14.png#lightbox)
 5. 儲存變更並返回 Visual Studio for Mac 使用 Xcode 進行同步處理。
 
 接下來，我們要撰寫程式碼顯示此資料表的某些資料執行應用程式時。
@@ -175,7 +175,7 @@ _本文件涵蓋使用 Xamarin.Mac 應用程式中的資料表檢視。它會描
 
 首先，我們來建立新`Product`類別以包裝為個別的資料列的資訊。 在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...**選取**一般** > **空類別**，輸入`Product`如**名稱**按一下**新增**按鈕：
 
-[ ![](table-view-images/populate01.png "建立空的類別")](table-view-images/populate01.png)
+[![](table-view-images/populate01.png "建立空的類別")](table-view-images/populate01.png#lightbox)
 
 請`Product.cs`檔案外觀如下所示：
 
@@ -333,7 +333,7 @@ public override void AwakeFromNib ()
 
 如果我們執行應用程式時，會顯示下列：
 
-[ ![](table-view-images/populate02.png "執行範例應用程式")](table-view-images/populate02.png)
+[![](table-view-images/populate02.png "執行範例應用程式")](table-view-images/populate02.png#lightbox)
 
 <a name="Sorting_by_Column" />
 
@@ -341,11 +341,11 @@ public override void AwakeFromNib ()
 
 讓我們可讓使用者按一下資料行標頭排序資料表中的資料。 首先，按兩下`Main.storyboard`檔案以開啟介面產生器中進行編輯。 選取`Product`資料行中，輸入`Title`如**排序索引鍵**，`compare:`的**選取器**選取`Ascending`如**順序**:
 
-[ ![](table-view-images/sort01.png "設定排序索引鍵")](table-view-images/sort01.png)
+[![](table-view-images/sort01.png "設定排序索引鍵")](table-view-images/sort01.png#lightbox)
 
 選取`Details`資料行中，輸入`Description`如**排序索引鍵**，`compare:`的**選取器**選取`Ascending`如**順序**:
 
-[ ![](table-view-images/sort02.png "設定排序索引鍵")](table-view-images/sort02.png)
+[![](table-view-images/sort02.png "設定排序索引鍵")](table-view-images/sort02.png#lightbox)
 
 儲存變更並返回 Visual Studio for Mac 使用 Xcode 進行同步處理。
 
@@ -395,7 +395,7 @@ public override void SortDescriptorsChanged (NSTableView tableView, NSSortDescri
 
 如果我們執行應用程式，然後按一下資料行標頭中，會依據該資料行排序資料列：
 
-[ ![](table-view-images/sort03.png "執行範例應用程式")](table-view-images/sort03.png)
+[![](table-view-images/sort03.png "執行範例應用程式")](table-view-images/sort03.png#lightbox)
 
 <a name="Row_Selection" />
 
@@ -403,7 +403,7 @@ public override void SortDescriptorsChanged (NSTableView tableView, NSSortDescri
 
 如果您想要允許使用者選取單一資料列中，按兩下`Main.storyboard`檔案以開啟介面產生器中進行編輯。 資料表中選取檢視**介面階層架構**並取消核取**多個**中的核取方塊**屬性偵測器**:
 
-[ ![](table-view-images/select01.png "屬性偵測器")](table-view-images/select01.png)
+[![](table-view-images/select01.png "屬性偵測器")](table-view-images/select01.png#lightbox)
 
 儲存變更並返回 Visual Studio for Mac 使用 Xcode 進行同步處理。
 
@@ -432,7 +432,7 @@ public override bool ShouldSelectRow (NSTableView tableView, nint row)
 
 如果您想要允許使用者選取多個資料列中，按兩下`Main.storyboard`檔案以開啟介面產生器中進行編輯。 資料表中選取檢視**介面階層架構**並檢查**多個**中的核取方塊**屬性偵測器**:
 
-[ ![](table-view-images/select02.png "屬性偵測器")](table-view-images/select02.png)
+[![](table-view-images/select02.png "屬性偵測器")](table-view-images/select02.png#lightbox)
 
 儲存變更並返回 Visual Studio for Mac 使用 Xcode 進行同步處理。
 
@@ -466,7 +466,7 @@ public override bool ShouldSelectRow (NSTableView tableView, nint row)
 
 如果您想要允許使用者使用選取的資料表檢視中輸入字元，並選取第一個資料列具有該字元中，按兩下`Main.storyboard`檔案以開啟介面產生器中進行編輯。 資料表中選取檢視**介面階層架構**並檢查**類型選取**中的核取方塊**屬性偵測器**:
 
-[ ![](table-view-images/type01.png "設定選取項目類型")](table-view-images/type01.png)
+[![](table-view-images/type01.png "設定選取項目類型")](table-view-images/type01.png#lightbox)
 
 儲存變更並返回 Visual Studio for Mac 使用 Xcode 進行同步處理。
 
@@ -492,7 +492,7 @@ public override nint GetNextTypeSelectMatch (NSTableView tableView, nint startRo
 
 如果我們執行應用程式，並輸入字元，將選取的資料列：
 
-[ ![](table-view-images/type02.png "執行範例應用程式")](table-view-images/type02.png)
+[![](table-view-images/type02.png "執行範例應用程式")](table-view-images/type02.png#lightbox)
 
 <a name="Reordering_Columns" />
 
@@ -500,7 +500,7 @@ public override nint GetNextTypeSelectMatch (NSTableView tableView, nint startRo
 
 如果您想要允許使用者在拖曳重新排列資料表檢視表中的資料行中，按兩下`Main.storyboard`檔案以開啟介面產生器中進行編輯。 資料表中選取檢視**介面階層架構**並檢查**排序**中的核取方塊**屬性偵測器**:
 
-[ ![](table-view-images/reorder01.png "屬性偵測器")](table-view-images/reorder01.png)
+[![](table-view-images/reorder01.png "屬性偵測器")](table-view-images/reorder01.png#lightbox)
 
 如果我們提供的值**自動儲存**屬性，然後核取**資料行資訊**欄位中，我們對資料表的配置進行任何變更將自動為我們儲存和還原下一次應用程式會執行。
 
@@ -519,7 +519,7 @@ public override bool ShouldReorder (NSTableView tableView, nint columnIndex, nin
 
 如果我們執行應用程式時，我們可以拖曳資料行標頭周圍我們的資料行重新排列：
 
-[ ![](table-view-images/reorder02.png "Reordered 資料行的範例")](table-view-images/reorder02.png)
+[![](table-view-images/reorder02.png "Reordered 資料行的範例")](table-view-images/reorder02.png#lightbox)
 
 <a name="Editing_Cells" />
 
@@ -575,7 +575,7 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 
 現在如果我們執行應用程式時，使用者可以編輯的表格檢視中的資料格：
 
-[ ![](table-view-images/editing01.png "舉例來說，在編輯儲存格")](table-view-images/editing01.png)
+[![](table-view-images/editing01.png "舉例來說，在編輯儲存格")](table-view-images/editing01.png#lightbox)
 
 <a name="Using_Images_in_Table_Views" />
 
@@ -650,7 +650,7 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 
 首先，編輯`Main.storyboard`在 Xcode 的介面產生器中，選取 [資料表] 檢視和增加的資料行數目 （3)。 接下來，變更**標題**新的資料行的`Action`:
 
-[ ![](table-view-images/delete01.png "編輯資料行名稱")](table-view-images/delete01.png)
+[![](table-view-images/delete01.png "編輯資料行名稱")](table-view-images/delete01.png#lightbox)
 
 儲存變更到分鏡腳本，並返回 Visual Studio for Mac 同步處理變更。
 
@@ -897,15 +897,15 @@ case "Action":
 
 這些變更之後，當應用程式會執行每個資料列，將有**刪除**按鈕：
 
-[ ![](table-view-images/delete02.png "[資料表] 檢視刪除按鈕")](table-view-images/delete02.png)
+[![](table-view-images/delete02.png "[資料表] 檢視刪除按鈕")](table-view-images/delete02.png#lightbox)
 
 當使用者按一下**刪除** 按鈕，將會要求他們刪除給定的資料列會出現警示：
 
-[ ![](table-view-images/delete03.png "刪除資料列警示")](table-view-images/delete03.png)
+[![](table-view-images/delete03.png "刪除資料列警示")](table-view-images/delete03.png#lightbox)
 
 如果使用者選擇刪除，將會移除資料列，資料表將會重繪：
 
-[ ![](table-view-images/delete04.png "資料表刪除資料列之後")](table-view-images/delete04.png)
+[![](table-view-images/delete04.png "資料表刪除資料列之後")](table-view-images/delete04.png#lightbox)
 
 <a name="Data_Binding_Table_Views" />
 

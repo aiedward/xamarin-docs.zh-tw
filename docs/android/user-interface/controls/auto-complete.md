@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 857cafa475f24357b39da0640eb81c37f5a8634c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f4118881272bb605607d528007064ada561cf7fc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="auto-complete"></a>自動完成
 
-<a name="Overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -43,7 +42,6 @@ ms.lasthandoff: 02/27/2018
 
 [ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/)標籤，將會介紹[ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/) widget。
 
-<a name="tutorial" />
 
 ## <a name="tutorial"></a>教學課程
 
@@ -156,10 +154,9 @@ static string[] COUNTRIES = new string[] {
 
 執行應用程式。 當您輸入時，您應該會看到類似這樣：
 
-[![範例自動完成螢幕擷取畫面列出名稱包含"ca"](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png)
+[![範例自動完成螢幕擷取畫面列出名稱包含"ca"](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
 
 
-<a name="More_Information" />
 
 ## <a name="more-information"></a>更多資訊
 
@@ -187,7 +184,6 @@ string[] countries = Resources.GetStringArray (Resource.array.countries_array);
 var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countries);
 ```
 
-<a name="References" />
 
 ### <a name="references"></a>參考
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: dddd1ad4ae70b97f17ba71a7e96b553759e35695
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5fcb41f4f60adc8ca5be761c2b9a7449387a89d0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="registering-applications-to-run-in-the-background"></a>註冊在背景中執行的應用程式
 
@@ -34,7 +34,7 @@ ms.lasthandoff: 02/27/2018
 
 應用程式可以藉由設定註冊**需要背景模式**屬性在應用程式的*Info.plist*。 應用程式可以在許多類別，因為它需要註冊：
 
- [ ![](registering-applications-to-run-in-background-images/bgmodes.png "設定背景模式")](registering-applications-to-run-in-background-images/bgmodes.png)
+ [![](registering-applications-to-run-in-background-images/bgmodes.png "設定背景模式")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
 
 登錄背景位置更新應用程式的逐步指引，請參閱[背景位置逐步解說](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md)。
 
@@ -42,7 +42,7 @@ ms.lasthandoff: 02/27/2018
 
 另一個屬性可在設定*Info.plist*是*應用程式不會在背景中執行*，或`UIApplicationExitsOnSuspend`屬性：
 
- [ ![](registering-applications-to-run-in-background-images/plist.png "停用執行的背景")](registering-applications-to-run-in-background-images/plist.png)
+ [![](registering-applications-to-run-in-background-images/plist.png "停用執行的背景")](registering-applications-to-run-in-background-images/plist.png#lightbox)
 
 這有完全相同的效果設定為在 iOS 7 +、 關閉，只不過它只在開發人員端，變更的背景重新整理應用程式設定，可適用於 iOS 4 和更新版本。 應用程式會將輸入背景之後，立即擱置，並不能進行任何處理。
 

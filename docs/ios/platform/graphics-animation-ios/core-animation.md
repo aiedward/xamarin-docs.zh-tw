@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 80fe298f3dd24aac7f84213aee96499dd369d16d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f0cb4e00abffead854c2590bde6df45c200ff0bb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="core-animation"></a>核心動畫
 
@@ -23,12 +23,16 @@ iOS 包含[*核心動畫*](https://developer.apple.com/library/ios/documentation
 
 核心動畫和核心圖形架構可一起運作來建立美觀、 展示動畫 2D 圖形。 事實上核心動畫甚至可以轉換 2D 圖形 3D 空間中，建立令人讚嘆的影片體驗。 不過，若要建立，則為 true 的 3D 圖形，您必須使用的項目，例如 OpenGL ES 或遊戲回合 MonoGame，例如應用程式開發介面雖然 3D 超出本文的範圍。
 
+<a name="Using_Core_Animation" />
+
 ## <a name="core-animation"></a>核心動畫
 
 iOS 會使用核心動畫架構建立動畫效果，例如檢視表之間轉換、 滑動功能表和捲動等等的效果。 有兩種方式可處理動畫：
 
--  [透過 UIKit](#Using_UIKit_Animation)，其中包含檢視為基礎的動畫，以及動畫控制站之間的轉換。
--   [透過核心動畫](#Using_Core_Animation)，哪些圖層，以進行更精細的控制。
+- [透過 UIKit](#Using_UIKit_Animation)，其中包含檢視為基礎的動畫，以及動畫控制站之間的轉換。
+- [透過核心動畫](#Using_Core_Animation)，哪些圖層，以進行更精細的控制。
+
+<a name="Using_UIKit_Animation" />
 
 ## <a name="using-uikit-animation"></a>使用 UIKit 動畫
 

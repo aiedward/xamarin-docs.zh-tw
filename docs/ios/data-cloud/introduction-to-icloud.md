@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: 7e02c92f9c1aafeb97da4905c17898b02362c960
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce2130985eb954abc4b4a1f4022eec97341eb902
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="icloud"></a>iCloud
 
@@ -48,7 +48,7 @@ IOS 5 iCloud 儲存體 API 可讓應用程式，將使用者文件和應用程�
 
 -   **建立新的應用程式識別碼**-若要建立應用程式識別碼，請依照下列所述的步驟[佈建的存放區技術指南中的章節裝置佈建](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)，一定要檢查和**iCloud**為允許的服務：
 
- [ ![](introduction-to-icloud-images/icloud-sml.png "為允許服務的核取 iCloud")](introduction-to-icloud-images/icloud.png)
+ [![](introduction-to-icloud-images/icloud-sml.png "為允許服務的核取 iCloud")](introduction-to-icloud-images/icloud.png#lightbox)
 
 - **建立新的佈建設定檔**-若要建立佈建設定檔，請依照下列所述的步驟[裝置佈建指南](~/ios/get-started/installation/device-provisioning/index.md#Provisioning_Profile)。
 
@@ -83,7 +83,7 @@ IOS 5 iCloud 儲存體 API 可讓應用程式，將使用者文件和應用程�
 
 
 
- [ ![](introduction-to-icloud-images/icloud-kv-arrows.png "裝置之間的訊息流程")](introduction-to-icloud-images/icloud-kv-arrows.png)
+ [![](introduction-to-icloud-images/icloud-kv-arrows.png "裝置之間的訊息流程")](introduction-to-icloud-images/icloud-kv-arrows.png#lightbox)
 
 ### <a name="setting-and-retrieving-data"></a>設定和擷取資料
 
@@ -151,13 +151,13 @@ NSNotificationCenter.DefaultCenter.AddObserver (
 
 這個圖表可顯示所有它如何搭配運用。 每個裝置都儲存在本機儲存體 (UbiquityContainer) 和作業系統的 iCloud 服務精靈會負責傳送和接收資料在雲端上的資料。 所有的檔案存取權 UbiquityContainer 必須透過 FilePresenter/FileCoordinator 以防止並行存取。 `UIDocument`類別實作的您，此範例示範如何使用 UIDocument。
 
- [ ![](introduction-to-icloud-images/icloud-overview.png "文件儲存體概觀")](introduction-to-icloud-images/icloud-overview.png)
+ [![](introduction-to-icloud-images/icloud-overview.png "文件儲存體概觀")](introduction-to-icloud-images/icloud-overview.png#lightbox)
 
 ICloudUIDoc 範例實作簡單`UIDocument`子類別，其中包含一個文字欄位。 在呈現文字`UITextView`和編輯以紅色顯示的通知訊息傳播到其他裝置 iCloud。 範例程式碼不會處理更多進階 iCloud 的功能，例如衝突解決。
 
 這個螢幕擷取畫面顯示範例應用程式-將文字變更後按**UpdateChangeCount**透過 iCloud 到其他裝置同步處理文件。
 
- [ ![](introduction-to-icloud-images/iclouduidoc.png "這個螢幕擷取畫面顯示變更的文字，並按下 UpdateChangeCount 之後的範例應用程式")](introduction-to-icloud-images/iclouduidoc.png)
+ [![](introduction-to-icloud-images/iclouduidoc.png "這個螢幕擷取畫面顯示變更的文字，並按下 UpdateChangeCount 之後的範例應用程式")](introduction-to-icloud-images/iclouduidoc.png#lightbox)
 
 有五個部分 iCloudUIDoc 範例：
 
@@ -403,15 +403,15 @@ doc.UpdateChangeCount (UIDocumentChangeKind.Done);
 
 使用者可以管理 icloud 的功能中的文件**文件**"普遍性而益發嚴重容器 」 之外的 via 設定; 您的應用程式的目錄他們可以檢視檔案清單和要刪除的撥動。 應用程式程式碼應能處理這種情況的文件刪除使用者的位置。 無法儲存內部應用程式中的資料**文件**目錄。
 
- [ ![](introduction-to-icloud-images/icloudstorage.png "管理 iCloud 文件工作流程")](introduction-to-icloud-images/icloudstorage.png)
+ [![](introduction-to-icloud-images/icloudstorage.png "管理 iCloud 文件工作流程")](introduction-to-icloud-images/icloudstorage.png#lightbox)
 
 
 
 當他們嘗試移除 icloud 的功能啟用應用程式從其裝置，通知他們與該應用程式相關的 iCloud 文件的狀態時，使用者也會收到不同的警告。
 
- [ ![](introduction-to-icloud-images/icloud-delete1.png "當使用者嘗試從他們的裝置移除啟用 icloud 的功能的應用程式的範例對話方塊")](introduction-to-icloud-images/icloud-delete1.png)
+ [![](introduction-to-icloud-images/icloud-delete1.png "當使用者嘗試從他們的裝置移除啟用 icloud 的功能的應用程式的範例對話方塊")](introduction-to-icloud-images/icloud-delete1.png#lightbox)
 
- [ ![](introduction-to-icloud-images/icloud-delete2.png "當使用者嘗試從他們的裝置移除啟用 icloud 的功能的應用程式的範例對話方塊")](introduction-to-icloud-images/icloud-delete2.png)
+ [![](introduction-to-icloud-images/icloud-delete2.png "當使用者嘗試從他們的裝置移除啟用 icloud 的功能的應用程式的範例對話方塊")](introduction-to-icloud-images/icloud-delete2.png#lightbox)
 
 ## <a name="icloud-backup"></a>iCloud 備份
 

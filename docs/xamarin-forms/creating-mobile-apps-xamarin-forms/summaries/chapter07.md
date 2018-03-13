@@ -3,14 +3,15 @@ title: "第 7 章的摘要。 XAML 與程式碼"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 1263328a748ac0bacd368da361aeaff57c4cfa20
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1104f7576cabfed9988154f3b6a8beb429136fb3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>第 7 章的摘要。 XAML 與程式碼
 
@@ -68,7 +69,7 @@ Property 元素的`Label`是`Text`。
 
  當多行字串設定為`Text`屬性，行結尾字元都轉換成空格字元，但是多行字串中出現的內容時，會保留行結尾字元`Label`或`Label.Text`標記：
 
- [![共用的文字變化的三個螢幕擷取畫面](images/ch07fg03-small.png "格式化文字變化")](images/ch07fg03-large.png "格式化文字變化")
+ [![共用的文字變化的三個螢幕擷取畫面](images/ch07fg03-small.png "格式化文字變化")](images/ch07fg03-large.png#lightbox "格式化文字變化")
 
 
 

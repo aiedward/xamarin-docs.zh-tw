@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 4e640979305a568649c59f6c75033296153b99de
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 838a11f078d735759eda1d45a082ccbad51e2779
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="touch-in-ios"></a>在 iOS 中觸控
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 02/27/2018
 
 不過，許多中檢視的`UIKit`沒有觸控式預設會啟用。 有兩種方式可啟用觸控在控制項上。 第一種方式是選取啟用的使用者互動的核取方塊在屬性輸入板中的 ios 設計工具中，如下列螢幕擷取畫面所示：
 
- [ ![](touch-in-ios-images/image1.png "檢查屬性板的 ios 設計工具中的使用者互動啟用核取方塊")](touch-in-ios-images/image1.png)
+ [![](touch-in-ios-images/image1.png "檢查屬性板的 ios 設計工具中的使用者互動啟用核取方塊")](touch-in-ios-images/image1.png#lightbox)
 
 我們也可以使用控制站來設定`UserInteractionEnabled`屬性設定為 true，在`UIView`類別。 如果程式碼中建立 UI，這是必要的。
 
@@ -81,7 +81,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 
 預設會在控制項上未啟用多點觸控。 可以在 iOS 設計工具中，啟用多點觸控，如下列螢幕擷取畫面所示：
 
- [ ![](touch-in-ios-images/image2.png "啟用 iOS 設計工具中的多點觸控")](touch-in-ios-images/image2.png)
+ [![](touch-in-ios-images/image2.png "啟用 iOS 設計工具中的多點觸控")](touch-in-ios-images/image2.png#lightbox)
 
 也可以藉由設定，以程式設計方式設定多點觸控`MultipleTouchEnabled`屬性，如下列程式碼所示：
 

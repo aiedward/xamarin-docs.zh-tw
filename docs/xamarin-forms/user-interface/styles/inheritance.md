@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 482358b0ccbedf926cd9182065a1eb8f4c12683c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e57f19d1eb66e22badb418d4584f5654904c7ade
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="style-inheritance"></a>樣式繼承
 
@@ -62,10 +62,10 @@ _樣式可以繼承自其他樣式來減少重複，並允許重複使用。_
 
 `baseStyle`目標[ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)例項，並設定[ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/)和[ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/)屬性。 `baseStyle`未設定任何控制項上直接。 相反地，`labelStyle`和`buttonStyle`從它繼承，設定其他可繫結的屬性值。 `labelStyle`和`buttonStyle`接著會套用到[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)執行個體和[ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)執行個體，藉由設定其[ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/)屬性。 這會導致下列螢幕擷取畫面所示的外觀：
 
-[![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png)
+[![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
 > [!NOTE]
-> **請注意**： 隱含樣式可以衍生自明確樣式，但明確樣式不能衍生自隱含樣式。
+> 隱含樣式可以衍生自明確樣式，但明確樣式不能衍生自隱含樣式。
 
 ### <a name="respecting-the-inheritance-chain"></a>尊重繼承鏈結
 
@@ -106,7 +106,7 @@ _樣式可以繼承自其他樣式來減少重複，並允許重複使用。_
 
 在此範例中，`labelStyle`和`buttonStyle`會控制層級的資源，而`baseStyle`為頁面層級的資源。 但是，當`labelStyle`和`buttonStyle`繼承自`baseStyle`，不可能`baseStyle`繼承自`labelStyle`或`buttonStyle`，因為檢視階層中其各自的位置。
 
-## <a name="style-inheritance-in-c35"></a>&#35; 中的樣式繼承
+## <a name="style-inheritance-in-c35"></a>在 C 中的樣式繼承&#35;
 
 對等的 C# 頁面上，其中[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)直接指派給執行個體[ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/)屬性的所需的控制項，顯示在下列程式碼範例：
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 36d8e27ce06e38e1cf652558bfb5a83f572e4403
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 202df615f1b35504f1fe5c9fd64c9c4b4db77a2d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="understanding-sirikit-concepts"></a>了解 SiriKit 概念
 
@@ -57,7 +57,7 @@ Siri 和對應管理所有使用者互動，並顯示結果使用標準系統介
 
 本節將提供概觀 SiriKit 如何讓使用者能夠使用 Siri 的應用程式互動。 這是因為此範例中，我們將使用假 MonkeyChat 應用程式：
 
-[ ![](understanding-sirikit-images/monkeychat01.png "MonkeyChat 圖示")](understanding-sirikit-images/monkeychat01.png)
+[![](understanding-sirikit-images/monkeychat01.png "MonkeyChat 圖示")](understanding-sirikit-images/monkeychat01.png#lightbox)
 
 MonkeyChat 會保留自己的使用者的好友連絡活頁簿，每個螢幕名稱 （例如 Bobo 例如) 相關聯，並可讓使用者在其顯示名稱，將文字聊天室傳送至每個 friend。
 
@@ -179,7 +179,7 @@ Siri 也會調整為符合使用者的協助工具需求，以及將互動和回
 
 當使用者使用 Siri 口頭要求時，這些是 Siri 會遵循的步驟：
 
-[ ![](understanding-sirikit-images/monkeychat02.png "Siri 將遵循的步驟")](understanding-sirikit-images/monkeychat02.png)
+[![](understanding-sirikit-images/monkeychat02.png "Siri 將遵循的步驟")](understanding-sirikit-images/monkeychat02.png#lightbox)
 
 1. 首先，使用 Siri 會採用使用者的音訊**語音**並將它轉換成文字。
 2. 接下來，將文字轉換成**意圖**、 結構化使用者要求表示法。
@@ -188,7 +188,7 @@ Siri 也會調整為符合使用者的協助工具需求，以及將互動和回
 
 有三種主要方式，應用程式可以參與使用者的交談，並使用 Siri:
 
-[ ![](understanding-sirikit-images/monkeychat03.png "應用程式可以參與使用者交談，並使用 Siri 三種主要方法")](understanding-sirikit-images/monkeychat03.png)
+[![](understanding-sirikit-images/monkeychat03.png "應用程式可以參與使用者交談，並使用 Siri 三種主要方法")](understanding-sirikit-images/monkeychat03.png#lightbox)
 
 1. **詞彙**-這是如何應用程式會告知 Siri 需要知道要與之互動的單字。
 2. **應用程式邏輯**-這些是動作和回應，應用程式會根據指定的對應方式。
@@ -219,7 +219,7 @@ Siri 也會調整為符合使用者的協助工具需求，以及將互動和回
 
 應用程式會在交談中的第一個角色是要協助了解使用者的語音 Siri:
 
-[ ![](understanding-sirikit-images/monkeychat04.png "協助了解使用者語音 Siri")](understanding-sirikit-images/monkeychat04.png)
+[![](understanding-sirikit-images/monkeychat04.png "協助了解使用者語音 Siri")](understanding-sirikit-images/monkeychat04.png#lightbox)
 
 Siri 沒有名稱"Bobo 」 在其資料庫中，但在應用程式無法與已經與透過其詞彙 Siri 共用這項資訊。 應用程式也可協助辨識，Bobo 是收件者，因為它以做為 Siri 指定 Siri*連絡人*。
 
@@ -227,7 +227,7 @@ Siri 知道更多，就需要比只收件者，將訊息傳送，因此它會快
 
 在上述範例中，使用者已經回應， *「 請傳送多個香蕉 」*，Siri 會配套成結構化的**意圖**:
 
-[ ![](understanding-sirikit-images/monkeychat05.png "Siri 會配套成結構化的意圖的使用者的回應")](understanding-sirikit-images/monkeychat05.png)
+[![](understanding-sirikit-images/monkeychat05.png "Siri 會配套成結構化的意圖的使用者的回應")](understanding-sirikit-images/monkeychat05.png#lightbox)
 
 結構化的意圖將會包含下列資訊：
 
@@ -248,7 +248,7 @@ Siri 自動建置適當`NSUserActivity`使用者離開的地方 Siri 環境中�
 
 在處理目的應用程式，並將其傳回的回應 Siri 之後，然後呈現結果給使用者 （口頭和以視覺化方式）：
 
-[ ![](understanding-sirikit-images/monkeychat06.png "口頭且視覺化的方式，向使用者顯示結果")](understanding-sirikit-images/monkeychat06.png)
+[![](understanding-sirikit-images/monkeychat06.png "口頭且視覺化的方式，向使用者顯示結果")](understanding-sirikit-images/monkeychat06.png#lightbox)
 
 Siri 針對每個應用程式可用的網域有數個內建回應使用者介面。 不過，由於 MonkeyChat 已經提供選擇性的意圖 UI 延伸模組，它用來在上述範例中對使用者顯示結果的交談。
 
@@ -256,7 +256,7 @@ Siri 針對每個應用程式可用的網域有數個內建回應使用者介面
 
 有三個應用程式擴充功能會需要執行對應方式處理時的主要工作：
 
-[ ![](understanding-sirikit-images/monkeychat07.png "意圖生命週期")](understanding-sirikit-images/monkeychat07.png)
+[![](understanding-sirikit-images/monkeychat07.png "意圖生命週期")](understanding-sirikit-images/monkeychat07.png#lightbox)
 
 1. 應用程式必須**解決**事件中的每個參數。 如此一來，應用程式將會解決多次 （每個每個參數），有時多次針對相同的參數之後才能呼叫應用程式和使用者同意要求的功能。
 2. 應用程式必須**確認**它可以用來處理要求的意圖，和 Siri 告訴獲得預期的結果。
@@ -329,7 +329,7 @@ SiriKit iOS 10 中，與 Apple 已建立兩個新的擴充點：
 
 對應方式延伸會負責處理應用程式與 Siri 之間的主要互動，如下所示：
 
-[ ![](understanding-sirikit-images/intents01.png "對應方式擴充功能")](understanding-sirikit-images/intents01.png)
+[![](understanding-sirikit-images/intents01.png "對應方式擴充功能")](understanding-sirikit-images/intents01.png#lightbox)
 
 意圖延伸模組可支援一個或多個對應方式，是開發人員可以決定他們想要在應用程式中實作 SiriKit 的方式。 開發人員也可以新增每個需要處理的意圖個別的意圖擴充功能。  話雖如此，Apple，要求開發人員限制意圖擴充功能數目，如此 Siri 不需要開啟對應用程式，而這需要更多記憶體和時間，以處理多個處理序。
 
@@ -355,7 +355,7 @@ Apple 已設計，以實現自然流暢交談與使用者，而這是因為 Siri
 
 對應 UI 延伸模組呈現的機會，讓應用程式的 UI 和商標 Siri 體驗，並讓使用者覺得已連線到應用程式。 與此延伸模組，應用程式可以讓品牌與文字記錄 visual 和其他資訊。
 
-[ ![](understanding-sirikit-images/intents02.png "範例對應方式 UI 延伸模組的輸出")](understanding-sirikit-images/intents02.png)
+[![](understanding-sirikit-images/intents02.png "範例對應方式 UI 延伸模組的輸出")](understanding-sirikit-images/intents02.png#lightbox)
 
 一律會傳回對應方式 UI 延伸模組`UIViewController`和應用程式可以加入其所偏好內檢視控制器，例如顯示超出初始回應的其他資訊的任何項目。 對應 UI 也可以更新使用者長時間執行的事件，例如多少花愈共用到達其位置的汽車的賽車的狀態。
 

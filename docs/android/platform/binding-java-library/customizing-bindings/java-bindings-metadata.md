@@ -7,18 +7,17 @@ ms.assetid: 27CB3C16-33F3-F580-E2C0-968005A7E02E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 91e27fcaef0ef1b262eceecd4d3c71bac34e328d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: edf25ebd089994c01b2fa45e77b35fad9a51e350
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="java-bindings-metadata"></a>Java 繫結中繼資料
 
 _C# 程式碼中 Xamarin.Android 繫結，是一種機制，以區隔會指定在 Java 原生介面 (JNI) 的低層級詳細資料會透過呼叫 Java 文件庫。Xamarin.Android 提供一種工具，會產生這些繫結。此工具可讓開發人員控制項繫結使用的中繼資料，可讓程序，例如修改命名空間，以及重新命名成員的建立方式。本文件討論中繼資料的運作方式，該中繼資料摘要的屬性支援，並說明如何藉由修改這個中繼資料來解決繫結的問題。_
 
-<a name="Overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -74,7 +73,6 @@ Xamarin.Android **Java 繫結的程式庫**來自動化許多現有的 Android �
 
 可讓您移至討論**Metadata.xml**中更多詳細資料。
 
-<a name="Metadata.xml_Transform_File" />
 
 ## <a name="metadataxml-transform-file"></a>Metadata.xml 轉換檔
 
@@ -114,7 +112,6 @@ Xamarin.Android **Java 繫結的程式庫**來自動化許多現有的 Android �
 -   `parameter` &ndash; 找出方法的參數。 例如： `/parameter[@name='p0']`
 
 
-<a name="ADDING_TYPES" />
 
 ### <a name="adding-types"></a>加入型別
 
@@ -129,7 +126,6 @@ Xamarin.Android **Java 繫結的程式庫**來自動化許多現有的 Android �
 </add-node>
 ```
 
-<a name="REMOVING_TYPES" />
 
 ### <a name="removing-types"></a>移除型別
 
@@ -138,8 +134,6 @@ Xamarin.Android **Java 繫結的程式庫**來自動化許多現有的 Android �
 ```xml
 <remove-node path="/api/package[@name='{package_name}']/class[@name='{name}']" />
 ```
-
-<a name="Renaming_Members" />
 
 ### <a name="renaming-members"></a>重新命名成員
 
@@ -169,6 +163,8 @@ public class NewName : Java.Lang.Object { ... }
     name="managedName">NewName</attr>
 ```
 
+<a name="Renaming_EventArg_Wrapper_Classes" />
+
 #### <a name="renaming-eventarg-wrapper-classes"></a>重新命名`EventArg`包裝函式類別
 
 Xamarin.Android 繫結產生器時識別`onXXX`setter 方法_接聽項型別_，C# 事件和`EventArgs`子類別將會產生以支援.NET flavoured API 的 Java 為基礎的接聽程式模式。 例如，請考慮下列的 Java 類別和方法：
@@ -193,7 +189,6 @@ NavigationManager.2DSignNextManueverEventArgs
 ```
 
  
-<a name="Supported_Attributes" />
 
 ## <a name="supported-attributes"></a>支援的屬性
 
@@ -341,7 +336,6 @@ NavigationManager.2DSignNextManueverEventArgs
 realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 ```
 
-<a name="Summary" />
 
 ## <a name="summary"></a>總結
 

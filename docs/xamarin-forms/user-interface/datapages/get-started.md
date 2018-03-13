@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 79ce4a1393b2affade3422f73e1c3d4680d199df
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 1e65207e987dbdab8bf2fe5f48f0b0a500dd27bc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started-with-datapages"></a>開始使用 DataPages
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 02/28/2018
 
 若要開始建置簡單的資料磁碟機頁面使用 DataPages Preview，請遵循下列步驟。 此示範會使用硬式編碼中的樣式 （「 事件 」） 預覽組建，只能搭配特定程式碼中的 JSON 格式。
 
-[ ![](get-started-images/demo-sml.png "DataPages 範例應用程式")](get-started-images/demo.png "DataPages 範例應用程式")
+[![](get-started-images/demo-sml.png "DataPages 範例應用程式")](get-started-images/demo.png#lightbox "DataPages 範例應用程式")
 
 ## <a name="1-add-nuget-packages"></a>1.新增 NuGet 封裝
 
@@ -134,7 +134,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 上述的步驟應該產生的工作資料頁：
 
-[ ![](get-started-images/demo-sml.png "DataPages 範例應用程式")](get-started-images/demo.png "DataPages 範例應用程式")
+[![](get-started-images/demo-sml.png "DataPages 範例應用程式")](get-started-images/demo.png#lightbox "DataPages 範例應用程式")
 
 因為預先建立的樣式**「 事件 」**淺色佈景主題的 Nuget 封裝中存在，而且有定義符合資料來源 （例如，樣式 "title"、"image"、"展示器 」）。
 
@@ -163,7 +163,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 藉由提供`DataTemplate`這段程式碼會覆寫`StyleClass`而改為使用預設的配置`ListItemControl`。
 
-[ ![](get-started-images/custom-sml.png "DataPages 範例應用程式")](get-started-images/custom.png "DataPages 範例應用程式")
+[![](get-started-images/custom-sml.png "DataPages 範例應用程式")](get-started-images/custom.png#lightbox "DataPages 範例應用程式")
 
 開發人員偏好 C# xaml 可以建立資料來源繫結太 (請記得以`using Xamarin.Forms.Pages;`陳述式):
 

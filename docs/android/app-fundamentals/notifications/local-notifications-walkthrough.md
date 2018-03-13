@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/30/2018
-ms.openlocfilehash: 4728b50446033c02d33ccf8273f1dc2e50d66906
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b8642a1c96ee525fbd6950616fbc6da0ad0e2337
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>逐步解說-Xamarin.Android 中使用本機的通知
 
 _本逐步解說示範如何在 Xamarin.Android 應用程式中使用本機的通知。它會示範建立和發佈本機通知的基本概念。當使用者按一下通知區域中的通知時，它會啟動第二個活動。_
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -26,16 +25,14 @@ _本逐步解說示範如何在 Xamarin.Android 應用程式中使用本機的�
 
 下列螢幕擷取畫面說明此應用程式的一些範例：
 
-[![具有通知的範例螢幕擷取畫面](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png)
+[![具有通知的範例螢幕擷取畫面](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png#lightbox)
 
 
-<a name="walkthrough" />
 
 ## <a name="walkthrough"></a>逐步解說
 
 若要開始，我們來建立新的 Android 專案使用**Android 應用程式**範本。 這個專案，我們稱為**LocalNotifications**。 (如果您不熟悉如何建立 Xamarin.Android 專案，請參閱[Hello，Android](~/android/get-started/hello-android/hello-android-quickstart.md)。)
 
-<a name="add-v4-support" />
 
 ### <a name="add-the-androidsupportv4app-component"></a>新增 Android.Support.V4.App 元件
 
@@ -53,7 +50,6 @@ using Android.Support.V4.App;
 using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 ```
 
-<a name="define-id" />
 
 ### <a name="define-the-notification-id"></a>定義通知識別碼
 
@@ -63,7 +59,6 @@ using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 private static readonly int ButtonClickNotificationId = 1000;
 ```
 
-<a name="add-code" />
 
 ### <a name="add-code-to-generate-the-notification"></a>加入程式碼產生的通知
 
@@ -117,7 +112,6 @@ private void ButtonOnClick (object sender, EventArgs eventArgs)
 button.Click += ButtonOnClick;
 ```
 
-<a name="second-activity" />
 
 ### <a name="create-a-second-activity"></a>建立第二個活動
 
@@ -174,36 +168,33 @@ namespace LocalNotifications
 </LinearLayout>
 ```
 
-<a name="add-icon" />
 
 ### <a name="add-a-notification-icon"></a>加入通知圖示
 
 最後，讓我們加入我們的通知啟動時，會出現在通知區域中的小圖示。 您可以複製[這個圖示](local-notifications-walkthrough-images/ic-stat-button-click.png)至您的專案或建立您自己自訂的圖示。 圖示檔案**ic\_stat\_按鈕\_click.png**並將它複製到**資源/drawable**資料夾。 請務必使用**新增 > 現有項目...**專案中包含這個圖示檔。
 
-<a name="run-app" />
 
 ### <a name="run-the-application"></a>執行應用程式
 
 讓我們來建置並執行應用程式。 您應該會看到第一個活動，類似於下列螢幕擷取畫面：
 
-[ ![第一個活動螢幕擷取畫面](local-notifications-walkthrough-images/2-start-screen-sml.png)](local-notifications-walkthrough-images/2-start-screen.png)
+[![第一個活動螢幕擷取畫面](local-notifications-walkthrough-images/2-start-screen-sml.png)](local-notifications-walkthrough-images/2-start-screen.png#lightbox)
 
 當您按一下按鈕時，您應該注意到在通知區域中顯示之小圖示的通知：
 
-[ ![通知圖示會出現](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png)
+[![通知圖示會出現](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png#lightbox)
 
 如果您上下並公開 （expose） 通知抽屜，您應該會看到通知：
 
-[ ![通知訊息](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png)
+[![通知訊息](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png#lightbox)
 
 當您按一下通知時，應該就會消失，而其他活動，我們應該啟動&ndash;尋找類似以下的螢幕擷取畫面：
 
-[ ![第二個活動的螢幕擷取畫面](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png)
+[![第二個活動的螢幕擷取畫面](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png#lightbox)
 
 恭喜您！ 此時您已經完成 Android 本機通知逐步解說，並可讓您可以使用參照的工作範例。 有很多個通知要比我們已在這裡顯示，因此如果您想要的詳細資訊，看看[Google 的文件通知](http://developer.android.com/guide/topics/ui/notifiers/notifications.html)和 Android[通知](http://developer.android.com/design/patterns/notifications.html)設計指南。
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>總結
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2017
-ms.openlocfilehash: 66bf9c215e3d30687fa8037220b8b35409ca285d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 49e7c00feb697d25d61a5e09b051c41945c260c6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="nuget-projects-nugetizer-3000"></a>NuGet 的專案 (Nugetizer 3000)
 
@@ -21,14 +21,18 @@ _自動建立 NuGet 套件，以跨平台使用 Nugetizer 3000 共用程式碼 �
 可自動建立跨平台使用共用的程式碼的 NuGet 封裝_Nugetizer 3000_。 如此便可利用建立從現有的程式庫專案，或藉由建立新的 NuGet 封裝**多平台程式庫專案**。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
 Nugetizer 3000 隨附於 Visual Studio for Mac 6.2。
+
+[![](images/mulitplatform-library-sml.png "建立新的多平台程式庫視窗")](images/mulitplatform-library.png#lightbox)
+
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-<a name="to-use-the-nugetizer-3000-in-visual-studio-please-download-and-run-the-vsix-installerhttpbitlynugetizer-2017"></a>若要使用 Nugetizer 3000 Visual Studio 中，請[下載並執行 VSIX 安裝程式](http://bit.ly/nugetizer-2017)。
+
+若要使用 Nugetizer 3000 Visual Studio 中，請[下載並執行 VSIX 安裝程式](http://bit.ly/nugetizer-2017)。
+
 -----
 
-
-
-[ ![](images/mulitplatform-library-sml.png "建立新的多平台程式庫視窗")](images/mulitplatform-library.png)
+## <a name="building-nuget-packages"></a>建置 NuGet 封裝
 
 一旦設定之後，每次建置專案的輸出完整的 NuGet 封裝，可以用來與其他應用程式內部共用程式碼，或上傳至[NuGet.org](https://www.nuget.org)。
 

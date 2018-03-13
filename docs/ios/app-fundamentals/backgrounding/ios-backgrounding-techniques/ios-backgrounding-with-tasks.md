@@ -6,11 +6,11 @@ ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0be4e7f1d8719fdd174d51399178eb1bc000c4b3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e05cf0f13512478b3957070e7fa6329ea84337f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS Backgrounding 與工作
 
@@ -114,11 +114,11 @@ Task.Factory.StartNew( () => {
 
 前文提過，iOS 7 前，在背景執行的工作有 600 秒才能完成。 此限制的其中一個原因是工作的，在背景執行的工作會讓裝置醒著的持續時間:
 
- [ ![](ios-backgrounding-with-tasks-images/ios6.png "讓應用程式保持喚醒狀態前 iOS 7 的工作的圖形")](ios-backgrounding-with-tasks-images/ios6.png)
+ [![](ios-backgrounding-with-tasks-images/ios6.png "讓應用程式保持喚醒狀態前 iOS 7 的工作的圖形")](ios-backgrounding-with-tasks-images/ios6.png#lightbox)
 
 iOS 7 背景處理適合用於較長的電池壽命。 在 iOS 7，backgrounding 會成為隨機： 工作尊重當裝置進入睡眠狀態，並改為處理撥打電話、 通知、 內送電子郵件，以及其他裝置甦醒時，請勿以區塊及其處理而不是讓裝置保持喚醒狀態，常見的中斷。 下圖提供深入了解如何工作可能會損毀組成：
 
- [ ![](ios-backgrounding-with-tasks-images/ios7.png "工作分解成區塊後的 iOS 7 的圖表")](ios-backgrounding-with-tasks-images/ios7.png)
+ [![](ios-backgrounding-with-tasks-images/ios7.png "工作分解成區塊後的 iOS 7 的圖表")](ios-backgrounding-with-tasks-images/ios7.png#lightbox)
 
 因為工作執行階段不會再連續，執行網路傳輸的工作必須先在 iOS 7 以不同的方式處理。 開發人員都使用`NSURlSession`API 來處理網路傳輸。 下一節是背景傳送的概觀。
 

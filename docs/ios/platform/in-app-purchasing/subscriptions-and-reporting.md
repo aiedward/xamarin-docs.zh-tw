@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 8bf47f1edfd4256e25c7af8ce2970ad1918b8027
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 237a986d6db2fb6984e99c6265fbbc212b35a351
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="subscriptions-and-reporting"></a>訂用帳戶和報表
 
@@ -53,17 +53,17 @@ ms.lasthandoff: 02/27/2018
 
 從 iTunes Connect 首頁選取**我的應用程式**:   
    
- [ ![](subscriptions-and-reporting-images/image2.png "選取 [我的應用程式]")](subscriptions-and-reporting-images/image2.png)  
+ [![](subscriptions-and-reporting-images/image2.png "選取 我的應用程式")](subscriptions-and-reporting-images/image2.png#lightbox)  
  
 選取的應用程式，然後按一下**應用程式內購買** 索引標籤：
 
-[ ![](subscriptions-and-reporting-images/image6.png "在應用程式內購買 索引標籤上按一下")](subscriptions-and-reporting-images/image6.png)
+[![](subscriptions-and-reporting-images/image6.png "在應用程式內購買 索引標籤上按一下")](subscriptions-and-reporting-images/image6.png#lightbox)
 
 從頁面底部，選取**檢視，或產生共用的密碼**:
    
- [ ![](subscriptions-and-reporting-images/image40.png "選取檢視，或產生共用的密碼")](subscriptions-and-reporting-images/image40.png)
+ [![](subscriptions-and-reporting-images/image40.png "選取檢視，或產生共用的密碼")](subscriptions-and-reporting-images/image40.png#lightbox)
 
- [ ![](subscriptions-and-reporting-images/image41.png "產生共用的密碼")](subscriptions-and-reporting-images/image41.png)   
+ [![](subscriptions-and-reporting-images/image41.png "產生共用的密碼")](subscriptions-and-reporting-images/image41.png#lightbox)   
    
    
    
@@ -115,9 +115,9 @@ iTunes Connect ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) 提�
 
 銷售和趨勢報表範例如下所示：   
 
- [ ![](subscriptions-and-reporting-images/image42.png "銷售和趨勢報表範例")](subscriptions-and-reporting-images/image42.png)   
+ [![](subscriptions-and-reporting-images/image42.png "銷售和趨勢報表範例")](subscriptions-and-reporting-images/image42.png#lightbox)   
    
  另外還有[**細明體連接行動**iOS 應用程式 （iTunes 連結）](http://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8)。
 iPhone 螢幕擷取畫面的一些可用的統計資料如下所示：   
    
- [ ![](subscriptions-and-reporting-images/image43.png "可用的統計資料的某些 iPhone 螢幕擷取畫面")](subscriptions-and-reporting-images/image43.png)
+ [![](subscriptions-and-reporting-images/image43.png "可用的統計資料的某些 iPhone 螢幕擷取畫面")](subscriptions-and-reporting-images/image43.png#lightbox)

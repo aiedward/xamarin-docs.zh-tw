@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 142ef16606bbf47de073122791fa2509ed6b6353
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7802988833563469fcc25e03ee1bda2046591681
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="how-content-providers-work"></a>如何在內容提供者工作
 
@@ -23,14 +23,12 @@ ms.lasthandoff: 02/27/2018
 
 內容提供者通常受到所支援 SQLite 資料庫中，但 API 表示，使用程式碼不需要有任何了解基礎 SQL。 查詢會透過 Uri 參考 （以減少的相依性的基礎資料結構） 的資料行名稱，使用常數和`ICursor`就會傳回使用的程式碼來反覆查看。
 
-<a name="Consuming_a_ContentProvider" />
 
 ## <a name="consuming-a-contentprovider"></a>耗用 ContentProvider
 
 `ContentProviders` 公開其功能，透過在中註冊的 Uri **AndroidManifest.xml**發行之資料的應用程式。 沒有一項慣例，其中 Uri 和公開的資料行應該是可做為常數，以便於繫結至資料。 Android 的內建`ContentProviders`所有提供方便類別具有參考中的資料結構的常數[ `Android.Providers` ](https://developer.xamarin.com/api/namespace/Android.Provider/)命名空間。
 
 
-<a name="Built-In_Providers" />
 
 ### <a name="built-in-providers"></a>內建提供者
 
@@ -51,13 +49,12 @@ Android 提供存取各種系統和使用者資料使用`ContentProviders`:
 - *語音信箱*&ndash;語音郵件訊息的歷程記錄。
 
 
-<a name="Classes_Overview" />
 
 ## <a name="classes-overview"></a>類別概觀
 
 使用時使用的主要類別`ContentProvider`如下所示：
 
-[![內容提供者應用程式和 Consuming 應用程式互動的類別圖表](how-it-works-images/classdiagram1.png)](how-it-works-images/classdiagram1.png)
+[![內容提供者應用程式和 Consuming 應用程式互動的類別圖表](how-it-works-images/classdiagram1.png)](how-it-works-images/classdiagram1.png#lightbox)
 
 在此圖中，`ContentProvider`實作查詢，並註冊 URI 的其他應用程式用來尋找資料。 `ContentResolver`來作為 'proxy' `ContentProvider` （查詢、 插入、 更新和刪除的方法）。 `SQLiteOpenHelper`包含所使用的資料`ContentProvider`，但不是直接公開給使用應用程式。
 `CursorAdapter`傳遞所傳回的資料指標`ContentResolver`中顯示`ListView`。 `UriMatcher`會處理查詢時，會剖析 Uri 的協助程式類別。

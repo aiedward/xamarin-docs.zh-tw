@@ -7,18 +7,17 @@ ms.assetid: EAEF99F0-8FBE-47E4-8644-E7244CFAF464
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: c334e78793f90b4f349f87e12e6b0093fe5cacf8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 4f6cfe61b5f91fb6703fdcdd20513ce6bc2dc161
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-android-wear"></a>Android 損耗簡介
 
 _Google Android 穿問世，您不再僅限於手機和平板電腦來開發很棒的 Android 應用程式時。Xamarin.Android 的支援 Android 有可讓您能夠在手腕上執行 C# 程式碼 ！本簡介提供 Android 戴上的基本概觀、 說明其重要功能，並提供 Android 穿 2.0 中提供的功能的概觀。它會列出一些常見的 Android 穿裝置，並提供基本的 Google Android 穿文件，如需進一步閱讀的連結。_
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -29,47 +28,40 @@ Android 損耗執行各種不同的裝置，包括第一代 Motorola 360、 LG �
 Xamarin.Android 5.0 及更新版本支援 Android 戴上透過我們的 Android 4.4W (應用程式開發介面 20) 支援，並新增其他的 NuGet 封裝損耗特定 UI 控制項。 Xamarin.Android 5.0 及更新版本也包含封裝損耗應用程式的功能。 NuGet 封裝也可供 Android 穿 2.0 稍後在本指南所述。
 
 
-<a name="basics" />
-
 ## <a name="android-wear-basics"></a>Android 損耗基本概念
 
 Android 損耗有不同的 Android 掌上型應用程式的使用者介面典範。 第一波的損耗應用程式都是設計來擴充隨附掌上型應用程式中某些方法，但 Android 損耗 2.0 開頭、 損耗應用程式可以使用的獨立。 當您部署損耗應用程式時，它被封裝與掌上型附屬應用程式。 由於大部分穿掌上型附屬應用程式取決於應用程式，它們需要某種方式來與掌上型應用程式溝通。 下列各節描述這些使用案例，並概述必要的 Android 戴上功能。 
 
 
-<a name="scenarios" />
 
 ### <a name="usage-scenarios"></a>使用案例
 
 Android 戴上的第一個版本被著重於擴充目前的掌上型應用程式，以增強通知及手持式應用程式和穿戴應用程式之間同步處理資料。 因此，這些案例會相當容易實作。
 
-<a name="notifications" />
 
 #### <a name="wearable-notifications"></a>穿戴通知
 
 支援 Android 戴上最簡單的方式是本質的利用共用通知掌上型與穿戴裝置之間。 使用支援 v4 通知應用程式開發介面和`WearableExtender`類別 (用於[Xamarin Android 支援程式庫](https://www.nuget.org/packages/Xamarin.Android.Support.v4/))，您可以點選不同的平台，例如收件匣樣式卡的原生功能或語音輸入。 [RecipeAssistant](https://developer.xamarin.com/samples/monodroid/wear/RecipeAssistant/)範例提供示範如何將穿 Android 裝置傳送的通知清單的範例程式碼。 
 
 
-<a name="companion" />
 
 #### <a name="companion-applications"></a>附屬應用程式
 
 另一個策略是建立的完整應用程式，穿戴的裝置上執行的原生組附屬掌上型應用程式。 這種方法的一個好範例就是[測驗](https://developer.xamarin.com/samples/monodroid/wear/Quiz/)範例應用程式，示範如何建立一項測驗掌上型裝置上執行，並詢問測驗問題穿戴裝置上。 
 
 
-<a name="ui" />
 
 ### <a name="user-interface"></a>使用者介面
 
 損耗的主瀏覽模式是一系列垂直排列的卡片。 每個這些卡片可以有關聯的同一個資料列層級時的動作。 `GridViewPager`類別會提供這項功能，而且符合配接器概念與相同`ListView`。 通常關聯`GridViewPager`與`FragmentGridPagerAdaptor`(或`GridPagerAdaptor`)，可讓您代表做為每個資料列和資料行儲存格`Fragment`: 
 
-[ ![戴上瀏覽](intro-to-wear-images/2d-picker-sml.png "戴上瀏覽")](intro-to-wear-images/2d-picker.png)
+[![戴上瀏覽](intro-to-wear-images/2d-picker-sml.png "戴上瀏覽")](intro-to-wear-images/2d-picker.png#lightbox)
 
 也有可讓 big 所組成的動作按鈕使用不同色彩圓形其下方的小型的描述文字 （如上面所示）。  [GridViewPager](https://developer.xamarin.com/samples/monodroid/wear/GridViewPager/)範例示範如何使用`GridViewPager`和`GridPagerAdapter`損耗應用程式中。
 
 Android 穿 2.0 會將瀏覽抽屜、 動作抽屜和內嵌動作按鈕加入至損耗使用者介面。 如需 Android 穿 2.0 使用者介面項目相關資訊，請參閱 Android[剖析](https://www.google.com/design/spec-wear/system-overview/anatomy.html)主題。 
 
 
-<a name="comm" />
 
 ### <a name="communications"></a>通訊
 
@@ -86,7 +78,6 @@ Android 損耗提供兩個不同的通訊以便穿戴應用程式和附屬掌上
 [FindMyPhone](https://developer.xamarin.com/samples/monodroid/wear/FindMyPhoneSample/)範例說明如何實作`WearableListenerService`。
 
 
-<a name="deploy" />
 
 ### <a name="deployment"></a>部署
 
@@ -94,7 +85,6 @@ Android 損耗提供兩個不同的通訊以便穿戴應用程式和附屬掌上
 [使用封裝](~/android/wear/deploy-test/packaging.md)說明詳細的部署。 
 
 
-<a name="further" />
 
 ## <a name="going-further"></a>繼續進行 
 
@@ -114,34 +104,30 @@ Android 損耗提供兩個不同的通訊以便穿戴應用程式和附屬掌上
 [建立 Watch 錶面](~/android/wear/platform/creating-a-watchface.md)提供關閉數位監看式朝服務，後面接著增強到額外的功能與類比樣式 watch 錶面的更多程式碼開發已移除的逐步指示和範例程式碼。 
 
 
-<a name="wear2" />
 
 ## <a name="android-wear-20"></a>Android Wear 2.0
 
 Android 穿 2.0 導入了各種不同的新特色與功能，例如*複雜性*，彎曲的版面配置、 導覽和動作抽屜，並展開的通知。 此外，有 2.0 可讓您建置工作與掌上型應用程式分開的獨立應用程式。 新*腕帶筆勢*功能可讓您的應用程式的只用互動。 下列章節會反白顯示這些功能，並提供連結可幫助您開始在您的應用程式中使用它們。
 
 
-<a name="install2" />
 
 ### <a name="install-wear-20-packages"></a>安裝有 2.0 封裝
 
 若要建置的 Xamarin.Android 穿 2.0 應用程式，您必須新增**Xamarin.Android.Wear v2.0**封裝至您的專案 (按一下**瀏覽索引標籤**):
 
-[![Xamarin.Android.Wear v2.0](intro-to-wear-images/wear-nuget-2.0-sml.png "安裝 Xamarin.Android.Wear v2.0 NuGet")](intro-to-wear-images/wear-nuget-2.0.png)
+[![Xamarin.Android.Wear v2.0](intro-to-wear-images/wear-nuget-2.0-sml.png "安裝 Xamarin.Android.Wear v2.0 NuGet")](intro-to-wear-images/wear-nuget-2.0.png#lightbox)
 
 此 NuGet 封裝包含 Android 支援穿戴和有相容的程式庫的繫結。
 
 除了**Xamarin.Android.Wear**，我們建議您安裝**Xamarin.GooglePlayServices.Wearable** NuGet: 
 
-[![Xamarin.GooglePlayServices.Wearable](intro-to-wear-images/gpsw-nuget-sml.png "安裝 Xamarin.GooglePlayServices.Wearable NuGet")](intro-to-wear-images/gpsw-nuget.png)
+[![Xamarin.GooglePlayServices.Wearable](intro-to-wear-images/gpsw-nuget-sml.png "安裝 Xamarin.GooglePlayServices.Wearable NuGet")](intro-to-wear-images/gpsw-nuget.png#lightbox)
 
-<a name="wear2feat" />
 
 ### <a name="key-features-of-wear-20"></a>主要功能有 2.0
 
 Android 穿 2.0 是最大更新 Android 穿自初始 2014年中。 下列各節反白顯示的 Android 穿 2.0 時，重要的功能，並提供連結，可協助您開始在您的應用程式中使用這些新功能。 
 
-<a name="compl" />
 
 #### <a name="complications"></a>複雜性
 
@@ -152,7 +138,6 @@ Android 穿 2.0 是最大更新 Android 穿自初始 2014年中。 下列各節�
 如需詳細資訊的複雜性，請參閱 Android[監看式朝複雜性](https://developer.android.com/wear/preview/features/complications.html)主題。 
 
 
-<a name="drawers" />
 
 #### <a name="navigation-and-action-drawers"></a>瀏覽和動作抽屜 
 
@@ -163,7 +148,6 @@ Android 穿 2.0 是最大更新 Android 穿自初始 2014年中。 下列各節�
 如需這些兩個新的互動式抽屜的詳細資訊，請參閱 Android[戴上瀏覽和動作](https://developer.android.com/wear/preview/features/ui-nav-actions.html)主題。 
 
 
-<a name="curved" />
 
 #### <a name="curved-layouts"></a>有個小曲形版面配置 
 
@@ -174,14 +158,12 @@ Android 穿 2.0 是最大更新 Android 穿自初始 2014年中。 下列各節�
 `WearableRecyclerView` 擴充`RecyclerView`類別，以支援曲線的配置和循環捲動的筆勢。 如需詳細資訊，請參閱 Android [WearableRecyclerView](https://developer.android.com/reference/android/support/wearable/view/WearableRecyclerView.html) API 文件。 
 
 
-<a name="standalone" />
 
 #### <a name="standalone-apps"></a>獨立應用程式 
 
 Android 穿 2.0 應用程式可與掌上型應用程式無關。 這表示，例如，智慧監看式可以繼續提供完整功能，即使附屬掌上型裝置已關閉或遠穿戴裝置。 如需有關這項功能的詳細資訊，請參閱 Android[獨立應用程式](https://developer.android.com/wear/preview/features/standalone-apps.html)主題。
 
 
-<a name="wrist" />
 
 #### <a name="wrist-gestures"></a>腕帶筆勢 
 
@@ -196,7 +178,6 @@ Android 穿 2.0 應用程式可與掌上型應用程式無關。 這表示，例
 有許多的多個有 2.0 功能，例如內嵌動作、 智慧型回覆、 遠端輸入、 展開的通知和新的橋接模式，通知。 如需新穿 2.0 功能的詳細資訊，請參閱 Android [API 概觀](https://developer.android.com/wear/preview/api-overview.html)。 
 
 
-<a name="devices" />
 
 ## <a name="devices"></a>裝置
 
@@ -210,7 +191,6 @@ Android 穿 2.0 應用程式可與掌上型應用程式無關。 這表示，例
 * [ASUS ZenWatch](http://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
 
 
-<a name="reading" />
 
 ## <a name="further-reading"></a>進一步閱讀
 
@@ -222,7 +202,6 @@ Android 穿 2.0 應用程式可與掌上型應用程式無關。 這表示，例
 * [Android 損耗 2.0](https://developer.android.com/wear/preview/index.html)
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>總結
 

@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 14abb7a4b85b493bb0ab96a982d989fad783fabd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: afaa02168dcac54115e8fca53683725926e4baed
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>索引標籤式的配置與項
 
 _本指南介紹，並說明如何使用 Xamarin.Android 應用程式中建立索引標籤式的使用者介面項應用程式開發介面。_
 
-<a name="Overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -27,7 +26,6 @@ _本指南介紹，並說明如何使用 Xamarin.Android 應用程式中建立�
 請注意，`Toolbar`是較新且更通用的動作列元件，您應該使用而不是`ActionBar`(`Toolbar`設計用來取代`ActionBar`)。 如需詳細資訊，請參閱[工具列](~/android/user-interface/controls/tool-bar/index.md)。 
 
 
-<a name="Requirements" />
 
 ## <a name="requirements"></a>需求
 
@@ -36,7 +34,6 @@ _本指南介紹，並說明如何使用 Xamarin.Android 應用程式中建立�
 部分項應用程式開發介面已回移植到應用程式開發介面層級 7 (Android 2.1)，且可透過[V7 AppCompat 程式庫](http://developer.android.com/tools/support-library/features.html#v7-appcompat)，這供透過 Xamarin.Android 應用程式[Xamarin Android 支援程式庫-V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)封裝。
 
 
-<a name="Introducing_tabs_in_the_ActionBar" />
 
 ## <a name="introducing-tabs-in-the-actionbar"></a>簡介項中的索引標籤
 
@@ -63,7 +60,6 @@ Xamarin.Android 包裝`ActionBar.ITabListener`上的事件與`ActionBar.Tab`類�
 -  TabUnselected
 
 
-<a name="Adding_Tabs_to_the_ActionBar" />
 
 ### <a name="adding-tabs-to-the-actionbar"></a>將索引標籤加入至項
 
@@ -111,7 +107,6 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-<a name="Event_Handlers_vs_ActionBar.ITabListener" />
 
 #### <a name="event-handlers-vs-actionbaritablistener"></a>事件處理常式與 ActionBar.ITabListener
 
@@ -120,7 +115,6 @@ protected override void OnCreate(Bundle bundle)
 當處理多個索引標籤上，共用通用項 索引標籤之間的功能，也可以更有效率的記憶體和效能，以建立自訂的類別，實作`ActionBar.ITabListener`，及共用單一類別的執行個體。 這會降低 GREF 的 Xamarin.Android 應用程式所使用的數目。 
 
 
-<a name="Backwards_Compatibility_for_Older_Devices" />
 
 ### <a name="backwards-compatibility-for-older-devices"></a>回溯相容性較舊的裝置
 
@@ -177,7 +171,6 @@ public class MainActivity : ActionBarActivity, ActionBar.ITabListener
 }
 ```
 
-<a name="Summary" />
 
 ## <a name="summary"></a>總結
 

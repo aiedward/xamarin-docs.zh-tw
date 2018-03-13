@@ -4,14 +4,15 @@ description: "探索 SkiaSharp 標尺轉換縮放至各種大小的物件"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 3ea498b3672c0b9ef4efeff7ec5981dca5a36912
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: feecfc923903a20332bf3a1a188ab9d7cd2ce1c0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-scale-transform"></a>小數位數轉換
 
@@ -103,7 +104,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 您可以看到，所有項目後繪製`Scale`按比例呼叫增加：
 
-[![](scale-images/basicscale-small.png "基本的小數位數頁的三個螢幕擷取畫面")](scale-images/basicscale-large.png "基本調整 頁面的三個螢幕擷取畫面")
+[![](scale-images/basicscale-small.png "基本的小數位數頁的三個螢幕擷取畫面")](scale-images/basicscale-large.png#lightbox "基本調整 頁面的三個螢幕擷取畫面")
 
 文字、 虛線的長度的角落和 10 個像素間之邊界的左端和頂端邊緣的畫布和圓角的矩形的圓的該行中連字號的寬度受限於所有相同的縮放比例。
 
@@ -165,7 +166,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 圓角矩形的左上角位於`margin`畫布左側的像素和`margin`像素。 最後兩個引數`Scale`方法設定為這些值再加上高度與寬度的文字，這也是圓角矩形的寬度和高度。 這表示所有縮放比例是相對於該矩形的中心：
 
-[![](scale-images/centeredscale-small.png "置中的小數位數頁的三個螢幕擷取畫面")](scale-images/centeredscale-large.png "的置中調整 頁面的三個螢幕擷取畫面")
+[![](scale-images/centeredscale-small.png "置中的小數位數頁的三個螢幕擷取畫面")](scale-images/centeredscale-large.png#lightbox "的置中調整 頁面的三個螢幕擷取畫面")
 
 `Slider`此程式中的項目有各種 & #x 2013; 10 到 10。 如您所見，垂直調整 （例如在 Android 上畫面中央） 的負值會導致物件翻轉通過縮放的中心水平軸。 水平縮放比例 （例如 Windows 上的螢幕右邊） 的負值會導致翻轉通過縮放中心的垂直軸周圍的物件。
 
@@ -246,7 +247,7 @@ using (SKPaint strokePaint = new SKPaint
 
 `pathBounds`矩形是取得最上方的 這個程式碼，並再搭配稍後在畫布上的高度與寬度`Scale`呼叫。 單獨使用時的呼叫會調整路徑的座標所呈現時`DrawPath`呼叫但星形將置於畫布的右上角。 它需要往下及往左移位。 這是作業的`Translate`呼叫。 這兩個屬性的`pathBounds`位於大約 – 100，因此轉譯因素約 100 個。 因為`Translate`呼叫之後`Scale`呼叫時，這些值會有效地縮放調整的因素，使其在畫布的正移動星形的中心：
 
-[![](scale-images/anisotropicscaling-small.png "非等向性調整頁面的三個螢幕擷取畫面")](scale-images/anisotropicscaling-large.png "非等向性調整頁面的三個螢幕擷取畫面")
+[![](scale-images/anisotropicscaling-small.png "非等向性調整頁面的三個螢幕擷取畫面")](scale-images/anisotropicscaling-large.png#lightbox "非等向性調整頁面的三個螢幕擷取畫面")
 
 另一種方式可以思考`Scale`和`Translate`呼叫是要判斷在反向序列的效果：`Translate`呼叫移位路徑，讓它成為完整可見但導向畫布左上角。 `Scale`方法然後讓該星號左上角相對較大。
 
@@ -289,7 +290,7 @@ using (SKPaint textPaint = new SKPaint
 
 它是類似的邏輯，而且文字會展開，以根據從傳回的文字範圍矩形的頁面大小`MeasureText`（此為稍微大於實際的文字）：
 
-[![](scale-images/anisotropictext-small.png "非等向性測試頁的三個螢幕擷取畫面")](scale-images/anisotropictext-large.png "非等向性測試頁的三個螢幕擷取畫面")
+[![](scale-images/anisotropictext-small.png "非等向性測試頁的三個螢幕擷取畫面")](scale-images/anisotropictext-large.png#lightbox "非等向性測試頁的三個螢幕擷取畫面")
 
 如果您需要保留外觀比例的圖形物件，您要使用等方向性的比例。 **等方向性調整**頁面示範如何執行這 11 星形。 就概念而言，等方向性調整頁面的中央顯示圖形物件的步驟如下：
 
@@ -338,7 +339,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 程式碼也會顯示星號十次，每次減少縮放因數 10%，並逐漸將色彩變更為藍色的紅色從：
 
-[![](scale-images/isotropicscaling-small.png "等方向性調整頁面的三個螢幕擷取畫面")](scale-images/isotropicscaling-large.png "等方向性調整頁面的三個螢幕擷取畫面")
+[![](scale-images/isotropicscaling-small.png "等方向性調整頁面的三個螢幕擷取畫面")](scale-images/isotropicscaling-large.png#lightbox "等方向性調整頁面的三個螢幕擷取畫面")
 
 
 ## <a name="related-links"></a>相關連結

@@ -3,16 +3,16 @@ title: "XAML 即時預覽"
 description: "測試您的 iOS 或 Android 裝置上的即時應用程式程式碼變更"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 19B1F126-866E-4672-92D2-BE2B70ACF0F1
+ms.assetid: 86E9A179-21F8-4F3A-A9CE-36F0FC5DB4A8
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 12/21/2017
-ms.openlocfilehash: 0982818556eb3aac55b30343075017c3773199ec
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f5c1649d625f2094fb710066f79a4ae89a696266
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xaml-live-previewing"></a>XAML 即時預覽
 

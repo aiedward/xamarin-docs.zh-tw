@@ -4,14 +4,15 @@ description: "請參閱如何傾斜轉換時，可以在 SkiaSharp 中建立傾�
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: charlespetzold
 ms.author: chape
 ms.date: 03/20/2017
-ms.openlocfilehash: b8bb4db49d3800d694724d6be8fe949b55060c21
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a18b60d486a911e4a76298fd20a70f16ac392881
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-skew-transform"></a>傾斜轉換
 
@@ -69,7 +70,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 值`xSkew`引數移位右正數值的文字或負數值的左邊的底部。 值`ySkew`向下移動文字的右邊，正值或負值註冊：
 
-[![](skew-images/skewexperiment-small.png "三個螢幕擷取畫面的扭曲實驗頁面")](skew-images/skewexperiment-large.png "扭曲實驗頁面的三個螢幕擷取畫面")
+[![](skew-images/skewexperiment-small.png "三個螢幕擷取畫面的扭曲實驗頁面")](skew-images/skewexperiment-large.png#lightbox "扭曲實驗頁面的三個螢幕擷取畫面")
 
 如果`xSkew`為負`ySkew`，結果是旋轉，但也稍微調整為顯示表示視窗。
 
@@ -152,7 +153,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 角度接近正數或負數 90 度時，將正切函數接近無限大，但最多約 80 度或相當的角度可用：
 
-[![](skew-images/skewangleexperiment-small.png "扭曲角度實驗頁面的三個螢幕擷取畫面")](skew-images/skewangleexperiment-large.png "扭曲角度實驗頁面的三個螢幕擷取畫面")
+[![](skew-images/skewangleexperiment-small.png "扭曲角度實驗頁面的三個螢幕擷取畫面")](skew-images/skewangleexperiment-large.png#lightbox "扭曲角度實驗頁面的三個螢幕擷取畫面")
 
 小負數水平傾斜可以模擬傾斜或斜體文字，做為**傾斜的文字**頁面示範。 [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs)類別示範如何進行：
 
@@ -188,7 +189,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 `TextAlign`屬性`SKPaint`設`Center`。 沒有任何轉換，`DrawText`呼叫的座標為 （0，0） 會在左上角位置上的文字與基準水平中央。 `SkewDegrees`扭曲文字水平相對於基準的 20 度。 `Translate`呼叫會將文字的基準的水平中央移到畫布的正中央：
 
-[![](skew-images/obliquetext-small.png "三個螢幕擷取畫面的傾斜的文字頁面")](skew-images/obliquetext-large.png "傾斜的文字頁面的三個螢幕擷取畫面")
+[![](skew-images/obliquetext-small.png "三個螢幕擷取畫面的傾斜的文字頁面")](skew-images/obliquetext-large.png#lightbox "傾斜的文字頁面的三個螢幕擷取畫面")
 
 **扭曲陰影文字**頁面會示範如何使用 45 度誤差平和垂直縮放比例的組合，請將遠離文字的文字陰影。 以下是相關一部分`PaintSurface`處理常式：
 
@@ -221,11 +222,11 @@ using (SKPaint textPaint = new SKPaint())
 
 陰影會先顯示和文字：
 
-[![](skew-images/skewshadowtext1-small.png "三個螢幕擷取畫面的扭曲陰影效果的文字頁面")](skew-images/skewshadowtext1-large.png "扭曲陰影效果的文字頁面的三個螢幕擷取畫面")
+[![](skew-images/skewshadowtext1-small.png "三個螢幕擷取畫面的扭曲陰影效果的文字頁面")](skew-images/skewshadowtext1-large.png#lightbox "扭曲陰影效果的文字頁面的三個螢幕擷取畫面")
 
 垂直座標傳遞至`DrawText`方法表示相對於基準文字的位置。 這是為中心的扭曲使用相同的垂直座標。 如果文字字串包含容納，這項技術將無法運作。 例如，subsitute 「 陰影 」 和這裡的 「 古怪"這個字的結果：
 
-[![](skew-images/skewshadowtext2-small.png "三個螢幕擷取畫面的扭曲陰影效果的文字頁面，以容納與替代字")](skew-images/skewshadowtext2-large.png "扭曲陰影效果的文字頁面高度了替代字組的三個螢幕擷取畫面")
+[![](skew-images/skewshadowtext2-small.png "三個螢幕擷取畫面的扭曲陰影效果的文字頁面，以容納與替代字")](skew-images/skewshadowtext2-large.png#lightbox "扭曲陰影效果的文字頁面高度了替代字組的三個螢幕擷取畫面")
 
 陰影和文字仍然在基準對齊但效果就看起來不正確。 若要修正此問題，您需要取得文字範圍：
 
@@ -245,7 +246,7 @@ canvas.Translate(-xText, -yText - textBounds.Bottom);
 
 現在從那些容納底部延伸陰影：
 
-[![](skew-images/skewshadowtext3-small.png "調整以容納扭曲陰影效果的文字頁面的三個螢幕擷取畫面")](skew-images/skewshadowtext3-large.png "調整以容納扭曲陰影效果的文字頁面的三個螢幕擷取畫面")
+[![](skew-images/skewshadowtext3-small.png "調整以容納扭曲陰影效果的文字頁面的三個螢幕擷取畫面")](skew-images/skewshadowtext3-large.png#lightbox "調整以容納扭曲陰影效果的文字頁面的三個螢幕擷取畫面")
 
 
 ## <a name="related-links"></a>相關連結

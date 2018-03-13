@@ -4,14 +4,15 @@ description: "定義可縮放的向量圖形格式使用文字字串的路徑"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: feb4c5f4c7e7ad3fc5f762786001be9aa57ae718
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: cc21f789d96f9375655766916f80c6f3f524c29d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="svg-path-data"></a>SVG 路徑資料
 
@@ -216,7 +217,7 @@ public class PathDataHelloPage : ContentPage
 
 路徑填滿畫布，看起來更合理地以橫向模式檢視時：
 
-[![](path-data-images/pathdatahello-small.png "路徑資料 Hello 頁面的三個螢幕擷取畫面")](path-data-images/pathdatahello-large.png "路徑資料 Hello 頁面的三個螢幕擷取畫面")
+[![](path-data-images/pathdatahello-small.png "路徑資料 Hello 頁面的三個螢幕擷取畫面")](path-data-images/pathdatahello-large.png#lightbox "路徑資料 Hello 頁面的三個螢幕擷取畫面")
 
 **路徑資料 Cat**頁面是類似。 路徑和小畫家物件兩者都定義為中的欄位[ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs)類別：
 
@@ -287,7 +288,7 @@ public class PathDataCatPage : ContentPage
 
 以下是所有三個平台上執行的程式：
 
-[![](path-data-images/pathdatacat-small.png "路徑資料 Cat 頁面的三個螢幕擷取畫面")](path-data-images/pathdatacat-large.png "路徑資料 Cat 頁面的三個螢幕擷取畫面")
+[![](path-data-images/pathdatacat-small.png "路徑資料 Cat 頁面的三個螢幕擷取畫面")](path-data-images/pathdatacat-large.png#lightbox "路徑資料 Cat 頁面的三個螢幕擷取畫面")
 
 通常，當`SKPath`物件會定義為欄位，必須定義路徑的輪廓，建構函式或另一個方法中。 當使用 SVG 路徑的資料，不過，您就已經看到可以完全在欄位定義中指定的路徑。
 
@@ -424,7 +425,7 @@ public class PrettyAnalogClockPage : ContentPage
 
 特殊項目是第二個手中，不過。 因為時鐘會更新每隔 16 毫秒，`Millisecond`屬性`DateTime`值可能用第二個手動動畫掃掠，而不是一個不連續的跳躍點移動至第二個第二個。 但是，這段程式碼不允許順暢移動。 相反地，它會使用 Xamarin.Forms [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/)和[ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/)動畫的 easing 函式的不同種類的移動。 這些 easing 函式會導致秒針 jerkier 方式 & #x 2014; 中移動提取回很小之前它會移動，然後稍微過度疑難排解不幸的，其目的地，效果無法重現這些靜態螢幕擷取畫面中：
 
-[![](path-data-images/prettyanalogclock-small.png "很類比時鐘頁面的三個螢幕擷取畫面")](path-data-images/prettyanalogclock-large.png "的非常類比時鐘頁面 Triple 螢幕擷取畫面")
+[![](path-data-images/prettyanalogclock-small.png "很類比時鐘頁面的三個螢幕擷取畫面")](path-data-images/prettyanalogclock-large.png#lightbox "的非常類比時鐘頁面 Triple 螢幕擷取畫面")
 
 
 ## <a name="related-links"></a>相關連結

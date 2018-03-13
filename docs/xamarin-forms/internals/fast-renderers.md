@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 92a11ebe983840270d3679fd11f5faa0b8222cfe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 956fa919ef9aa994fea92a9a64ca1325819f3ffc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="fast-renderers"></a>快速轉譯器
 
@@ -40,7 +40,7 @@ Forms.SetFlags("FastRenderers_Experimental");
 ```
 
 > [!NOTE]
-> **請注意**： 快速的轉譯器僅適用於應用程式相容 Android 後端，因此會忽略此設定前應用程式相容性活動。
+> 因此會忽略此設定前應用程式相容性的活動，都只適用於應用程式相容 Android 後端，快速轉譯器。
 
 效能改進會每個應用程式，根據配置的複雜度而有所不同。 例如，效能會提升 x2 可能會捲動時[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)包含數千個資料列，其中每個資料列中的資料格的控制項，使用快速的轉譯器進行，這會導致明顯地平滑捲動。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: eed12c84b9952ef5c3dd27847071f05392bc16c4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dfbc976da109a3813b8d7abd85adafbc9bb94fa0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="deploying-to-the-app-store"></a>部署的應用程式市集
 
@@ -62,6 +62,8 @@ ms.lasthandoff: 02/27/2018
 **佈建設定檔**清單會顯示所有相符的設定檔-您應該會看到您已建立此下拉式清單中的比對設定檔。
 
 ![](appstore-images/options-selectprofile-sml.png "IOS 套件組合簽署 對話方塊")
+
+<a name="iTunes_Connect"/>
 
 ## <a name="itunes-connect"></a>iTunes Connect
 
@@ -123,7 +125,7 @@ Xcode 會自動顯示封存建立在 Visual Studio for mac。
 
 5. 請瀏覽 iTunes Connect 一次，以查看已上傳二進位檔。 移至您的應用程式設定 頁面，然後選擇**發行前版本**從頂端功能表中看到**建置**清單：
 
-  [ ![](appstore-images/itc-prerelease-sml.png "在 iTunes Connect 中的 [應用程式組態] 頁面")](appstore-images/itc-prerelease.png)
+  [![](appstore-images/itc-prerelease-sml.png "在 iTunes Connect 中的 [應用程式組態] 頁面")](appstore-images/itc-prerelease.png#lightbox)
 
 您就可以提交核准的應用程式上**版本**頁面。 請參閱[iOS 應用程式發佈概觀](~/ios/deploy-test/app-distribution/index.md)如需詳細資訊。
 

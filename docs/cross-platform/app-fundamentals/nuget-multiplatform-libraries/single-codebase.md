@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e95cf18c281732c85c2029e4ff35e8dd8be0f5e2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a56cc080ac04c45ef3f0fcc6c7c89096a08beddf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>Nuget 在建立新的多平台程式庫
 
@@ -30,21 +30,21 @@ ms.lasthandoff: 02/27/2018
 
 2. 選擇**多平台程式庫**從**多平台 > 程式庫**> 一節：
 
-  [ ![](single-codebase-images/mulitplatform-library-sml.png "設定單一程式碼基底的多平台程式庫")](single-codebase-images/mulitplatform-library.png)
+  [![](single-codebase-images/mulitplatform-library-sml.png "設定單一程式碼基底的多平台程式庫")](single-codebase-images/mulitplatform-library.png#lightbox)
 
 3. 輸入**名稱**和**描述**，然後選擇 **所有平台的單一**:
 
-  [ ![](single-codebase-images/single-configure-sml.png "設定單一程式碼基底的多平台程式庫")](single-codebase-images/single-configure.png)
+  [![](single-codebase-images/single-configure-sml.png "設定單一程式碼基底的多平台程式庫")](single-codebase-images/single-configure.png#lightbox)
 
 4. 完成精靈。 在方案中建立單一程式庫專案。
 
 5. 以滑鼠右鍵按一下新的程式庫專案，然後選取**選項**。 **建置 > 一般** 區段可讓**目標 Framework**設定 – 選擇.NET 可攜式 PCL 設定檔或標準的.NET 版本：
 
-  [ ![](single-codebase-images/single-choose-type-sml.png "選擇 PCL 或.NET 標準程式庫類型")](single-codebase-images/single-choose-type.png)
+  [![](single-codebase-images/single-choose-type-sml.png "選擇 PCL 或.NET 標準程式庫類型")](single-codebase-images/single-choose-type.png#lightbox)
 
 6. 此外，在**專案選項**視窗中，開啟**NuGet 封裝 > 中繼資料**區段，並輸入[必要的中繼資料](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)（以及任何選擇性的中繼資料）：
 
-  [ ![](single-codebase-images/single-metadata-sml.png "輸入必要的中繼資料")](single-codebase-images/single-metadata.png)
+  [![](single-codebase-images/single-metadata-sml.png "輸入必要的中繼資料")](single-codebase-images/single-metadata.png#lightbox)
 
 7. 以滑鼠右鍵按一下程式庫專案，然後選擇 **建立 NuGet 封裝**（或建置或部署解決方案） 和**.nupkg** NuGet 封裝檔案會儲存在**/bin/**資料夾 （偵錯或發行，視組態而定）：
 
@@ -61,17 +61,17 @@ NuGet 封裝也是套件的 ZIP 檔案，所以有可能檢查產生的內部結
 
 <a name="add-platforms" />
 
-# <a name="adding-platform-specific-code"></a>加入平台專屬程式碼
+## <a name="adding-platform-specific-code"></a>加入平台專屬程式碼
 
 PCL 為基礎的專案和.NET 標準為基礎的專案不能包含特定平台 （例如 iOS 或 android 本身功能） 的參考。
 
 如果現有的 PCL 專案或標準.NET 專案需要擴展成包含特定平台程式碼，即可啟用此專案上按一下滑鼠右鍵，然後選取**新增 > 加入平台實作...**:
 
-[ ![](single-codebase-images/add-later-sml.png "加入平台實作功能表")](single-codebase-images/add-later.png)
+[![](single-codebase-images/add-later-sml.png "加入平台實作功能表")](single-codebase-images/add-later.png#lightbox)
 
 一或多個平台專案中可以加入至方案中，與現有的 PCL 或.NET 標準程式庫可以選擇性地轉換成共用的專案：
 
-[ ![](single-codebase-images/add-later-platforms-sml.png "加入平台的選項，例如 iOS、 Android 和共用專案")](single-codebase-images/add-later-platforms-sml.png)
+[![](single-codebase-images/add-later-platforms-sml.png "加入平台的選項，例如 iOS、 Android 和共用專案")](single-codebase-images/add-later-platforms-sml.png#lightbox)
 
 轉換為共用的專案之後, 請瀏覽**專案選項 > NuGet 封裝 > 參考組件**
 [區段](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md)，並確定所有必要的設定檔已選取 (以便NuGet 會繼續與先前已在中使用的專案）。
@@ -79,4 +79,4 @@ PCL 為基礎的專案和.NET 標準為基礎的專案不能包含特定平台 �
 
 ## <a name="related-links"></a>相關連結
 
-- [中繼資料的指南](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)
+- [中繼資料指南](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)

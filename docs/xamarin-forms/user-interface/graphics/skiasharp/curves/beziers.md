@@ -4,14 +4,15 @@ description: "探索如何使用 SkiaSharp 轉譯三次方、 二次方，和 co
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 8fdebd00b0b33c184337eacd0836dd81a19f161b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2b48667d90bf994deca5c41080e002974b0ded91
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>三種類型的貝茲曲線
 
@@ -88,7 +89,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 這裡執行所有三個平台上：
 
-[![](beziers-images/beziercurve-small.png "頁面貝茲曲線的三個螢幕擷取畫面")](beziers-images/beziercurve-large.png "頁面貝茲曲線的三個螢幕擷取畫面")
+[![](beziers-images/beziercurve-small.png "頁面貝茲曲線的三個螢幕擷取畫面")](beziers-images/beziercurve-large.png#lightbox "頁面貝茲曲線的三個螢幕擷取畫面")
 
 在數學上，曲線是三次方多項式。 曲線最相交直線在 3 個點。 開始處曲線永遠是正切函數，然後在與相同的方向，從一開始為直線指向第一個控制點。 結束點曲線永遠是正切函數，然後在與相同的方向，從第二個控制項的直線指向結束點。
 
@@ -206,7 +207,7 @@ float Magnitude(SKPoint v)
 
 以下是具有三個不同的角度的三個平台上執行的程式：
 
-[![](beziers-images/beziercirculararc-small.png "三重螢幕擷取畫面的頁面貝茲圓弧")](beziers-images/beziercirculararc-large.png "貝茲圓弧頁面的三個螢幕擷取畫面")
+[![](beziers-images/beziercirculararc-small.png "三重螢幕擷取畫面的頁面貝茲圓弧")](beziers-images/beziercirculararc-large.png#lightbox "貝茲圓弧頁面的三個螢幕擷取畫面")
 
 仔細查看 Windows 行動裝置版 畫面中，而且您會看到的貝茲曲線值得注意的是偏離半圓形角度 180 度，但它看起來以角度為 90 度符合季圓形正常顯示 iOS 畫面時。
 
@@ -288,7 +289,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 根據 sinusoidally 穩定值的插補點`t`。 插補的點再用來建構一系列的四個連接的貝茲曲線。 以下是動畫顯示為正方形從圓形進度的三個平台上執行：
 
-[![](beziers-images/squaringthecircle-small.png "3 倍的螢幕擷取畫面的 Squaring 圓形頁面")](beziers-images/squaringthecircle-large.png "Squaring 的三個螢幕擷取畫面 [圓形] 頁面")
+[![](beziers-images/squaringthecircle-small.png "3 倍的螢幕擷取畫面的 Squaring 圓形頁面")](beziers-images/squaringthecircle-large.png#lightbox "Squaring 的三個螢幕擷取畫面 [圓形] 頁面")
 
 沒有以演算法有足夠的彈性來呈現為圓弧及直線的曲線就無法使用這類動畫。
 
@@ -337,7 +338,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 以下是所有三個平台上的無限大符號：
 
-[![](beziers-images/bezierinfinity-small.png "三個螢幕擷取畫面的貝茲無限大頁面")](beziers-images/bezierinfinity-large.png "頁面貝茲無限大的三個螢幕擷取畫面")
+[![](beziers-images/bezierinfinity-small.png "三個螢幕擷取畫面的貝茲無限大頁面")](beziers-images/bezierinfinity-large.png#lightbox "頁面貝茲無限大的三個螢幕擷取畫面")
 
 它是稍微順暢朝中央所呈現的無限大符號**弧線無限大**頁面[**三個方法可以繪製弧形**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)發行項。
 
@@ -400,7 +401,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 和以下所有的三個平台上執行它：
 
-[![](beziers-images/quadraticcurve-small.png "三個螢幕擷取畫面的二次方曲線頁面")](beziers-images/quadraticcurve-large.png "二次方曲線頁面的三個螢幕擷取畫面")
+[![](beziers-images/quadraticcurve-small.png "三個螢幕擷取畫面的二次方曲線頁面")](beziers-images/quadraticcurve-large.png#lightbox "二次方曲線頁面的三個螢幕擷取畫面")
 
 點線在曲線開始點和結束點的正切函數，且符合在控制項控點。
 
@@ -478,7 +479,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 這裡執行所有三個平台上：
 
-[![](beziers-images/coniccurve-small.png "三個螢幕擷取畫面的 Conic 曲線頁面")](beziers-images/coniccurve-large.png "Conic 曲線頁面的三個螢幕擷取畫面")
+[![](beziers-images/coniccurve-small.png "三個螢幕擷取畫面的 Conic 曲線頁面")](beziers-images/coniccurve-large.png#lightbox "Conic 曲線頁面的三個螢幕擷取畫面")
 
 如您所見，控制項控點，就好像的加權就更高版本時提取更接近曲線。 加權值是零，當曲線就會變成直線從起始點的結束點。
 
@@ -542,7 +543,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 如您所見，有無差別 visual`ConicTo`路徑顯示為紅色，且基礎圓圈顯示參考：
 
-[![](beziers-images/coniccirculararc-small.png "三個螢幕擷取畫面的 Conic 圓弧頁面")](beziers-images/coniccirculararc-large.png "Conic 圓弧頁面的三個螢幕擷取畫面")
+[![](beziers-images/coniccirculararc-small.png "三個螢幕擷取畫面的 Conic 圓弧頁面")](beziers-images/coniccirculararc-large.png#lightbox "Conic 圓弧頁面的三個螢幕擷取畫面")
 
 但是設 180 度和數學失敗的角度。
 

@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1625fe15d76ffe2bd3712d9126d9bd217bf60085
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f47fded9c09849f6d5f1329a4efd652df80816d5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="manually-signing-the-apk"></a>手動簽署 APK
 
-<a name="signing_legacy" />
 
 建置要發行的應用程式之後，必須先簽署 APK 後再進行散發，這樣它才能在 Android 裝置上執行。 此程序通常會使用 IDE 來處理，不過，在某些情況下，需要在命令列手動簽署 APK。 以下是簽署 APK 的相關步驟：
 
@@ -29,7 +28,6 @@ ms.lasthandoff: 02/27/2018
 步驟的順序很重要，而且取決於用來簽署 APK 的工具。 使用 **apksigner** 時，務必先針對應用程式進行 **zipalign**，然後使用 **apksigner** 來簽署它。  如果需要使用 **jarsigner** 簽署 APK，則務必先簽署 APK，然後執行 **zipalign**。 
 
 
-<a name="Prerequisites" />
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -38,7 +36,6 @@ ms.lasthandoff: 02/27/2018
 使用舊版 Android SDK 建置工具所建置的應用程式必須使用 **jarsigner**，如以下的[使用 jarsigner 簽署 APK](#Sign_the_APK_with_jarsigner) 所述。
 
 
-<a name="Creating_a_Private_Keystore" />
 
 ## <a name="create-a-private-keystore"></a>建立私密金鑰儲存區
 
@@ -53,7 +50,6 @@ ms.lasthandoff: 02/27/2018
 遺失金鑰儲存區所造成問題的唯一解決方式是建立新的金鑰儲存區、使用新的金鑰重新簽署 APK，然後提交新的應用程式。 接著，必須從 Google Play 移除舊的應用程式。 同樣地，如果這個新的金鑰儲存區遭到洩漏或公開散發，則可能會散發應用程式的非官方或惡意版本。
 
 
-<a name="Create_a_New_Keystore" />
 
 ### <a name="create-a-new-keystore"></a>建立新的金鑰儲存區
 
@@ -99,7 +95,6 @@ Re-enter new password:
 $ keytool -list -keystore xample.keystore
 ```
 
-<a name="Zipalign_the_APK" />
 
 ## <a name="zipalign-the-apk"></a>針對 APK 進行 Zipalign
 
@@ -111,7 +106,6 @@ $ keytool -list -keystore xample.keystore
 $ zipalign -f -v 4 mono.samples.helloworld-unsigned.apk helloworld.apk
 ```
 
-<a name="Manually_Signing_the_APK" />
 
 ## <a name="sign-the-apk"></a>簽署 APK
 

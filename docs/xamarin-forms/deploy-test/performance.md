@@ -8,19 +8,19 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: b7b5093f9a564c0711ddc8a711f9b609d44e7dad
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a750167cb9e6bde3a4a9abe11c5386497f9a12ae
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-performance"></a>Xamarin.Forms 效能
 
 _有許多技巧可增加 Xamarin.Forms 應用程式的效能。這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。本文將描述並討論這些技巧。_
 
-[![ ] (performance-images/evolve-jason-perf-sml.png "使用 Xamarin.Forms 最佳化應用程式效能")](https://evolve.xamarin.com/session/56e205b0bad314273ca4d817) \(英文\)
+> [!VIDEO https://youtube.com/embed/RZvdql3Ev0E]
 
-[Evolve 2016：使用 Xamarin.Forms 最佳化應用程式效能](https://evolve.xamarin.com/session/56e205b0bad314273ca4d817) \(英文\)
+**Evolve 2016：使用 Xamarin.Forms 最佳化應用程式效能** \(英文\)
 
 ## <a name="overview"></a>總覽
 

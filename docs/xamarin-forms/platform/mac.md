@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: bda207796d1019f8188176acce055d782cb9e32d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e8487dc06b3512a0ec0bb1b30393faeab506df60
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="mac-platform-setup"></a>Mac 平台設定
 
@@ -20,6 +21,10 @@ ms.lasthandoff: 02/27/2018
 
 開始之前，建立 （或使用現有的） Xamarin.Forms 專案。
 您只能新增 Mac 應用程式使用 Visual Studio for mac。
+
+> [!VIDEO https://youtube.com/embed/mvQ7jzaNseM]
+
+**藉由將 macOS 專案加入透過 Xamarin.Forms， [Xamarin 大學](https://university.xamarin.com/)**
 
 ## <a name="adding-a-mac-app"></a>新增 Mac 應用程式
 
@@ -92,7 +97,7 @@ ms.lasthandoff: 02/27/2018
 
 9. 按兩下**Main.storyboard**在 Xcode 中編輯。 選取**視窗**和_取消核取_**是初始控制器**核取方塊 （這是因為上述程式碼會建立一個視窗）：
 
-  [ ![取消核取 在 Xcode 中的是初始控制器核取方塊](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png)
+  [![取消核取 在 Xcode 中的是初始控制器核取方塊](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
 
   您可以編輯功能表系統中移除不必要的項目分鏡腳本。
 

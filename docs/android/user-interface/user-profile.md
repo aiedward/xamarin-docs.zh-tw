@@ -2,16 +2,16 @@
 title: "使用者設定檔"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1C58E12B-4634-4691-BF59-D5A3F6B0E6F7
+ms.assetid: 6BB01F75-5E98-49A1-BBA0-C2680905C59D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/21/2017
-ms.openlocfilehash: 53ac30abea05095583fcac5ddc315f93ce7024f2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf8230c5832104fd17b14532f1d32822a1fc0097
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="user-profile"></a>使用者設定檔
 
@@ -38,13 +38,11 @@ if (cursor.MoveToFirst ()) {
 
 Android 4 (API 層級 14) 的新`ContactsContact.Profile`類別是可透過 ContactsContract 提供者。 `ContactsContact.Profile`可存取個人的設定檔之裝置，包括裝置擁有者的名稱和電話號碼等連絡資料擁有者。
 
-<a name="Required_Permissions" />
 
 ## <a name="required-permissions"></a>必要的權限
 
 若要讀取和寫入連絡資料，應用程式必須要求`Read_Contacts`和`Write_Contacts`權限，分別。 此外，若要閱讀和編輯使用者設定檔，應用程式必須要求`Read_Profile`和`Write_Profile`權限。
 
-<a name="Updating_Profile_Data" />
 
 ## <a name="updating-profile-data"></a>更新設定檔資料
 
@@ -60,7 +58,6 @@ ContentResolver.Update (ContactsContract.Profile.ContentRawContactsUri,
     values, null, null);
 ```
 
-<a name="Reading_Profile_Data" />
 
 ## <a name="reading-profile-data"></a>讀取設定檔資料
 
@@ -78,7 +75,6 @@ if (cursor.MoveToFirst ()) {
 }
 ```
 
-<a name="Navigating_to_the_People_App" />
 
 ## <a name="navigating-to-the-people-app"></a>瀏覽至使用者應用程式
 
@@ -92,7 +88,7 @@ StartActivity (intent);
 
 當執行上述程式碼，人員應用程式會載入使用者設定檔，如下列螢幕擷取畫面所示：
 
-[![人員的螢幕擷取畫面顯示 John Doe 的使用者設定檔的應用程式](user-profile-images/15-people-app.png)](user-profile-images/15-people-app.png)
+[![人員的螢幕擷取畫面顯示 John Doe 的使用者設定檔的應用程式](user-profile-images/15-people-app.png)](user-profile-images/15-people-app.png#lightbox)
 
 使用使用者設定檔現在是類似於與 Android 中的其他資料互動，而且提供一層額外的裝置個人化。
 

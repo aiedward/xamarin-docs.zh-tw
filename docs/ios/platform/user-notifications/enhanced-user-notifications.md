@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ba5249a275d3aa695ccc6527805c56907bbda0ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a5dbd65cc32ed63c0fa6f8abe3a13ffee4e9df63
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="enhanced-user-notifications"></a>加強的使用者通知
 
@@ -168,11 +168,11 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 1. 按兩下`Entitlements.plist`檔案**方案板**開啟進行編輯。
 2. 切換至**來源**檢視： 
 
-    [ ![](enhanced-user-notifications-images/setup01.png "原始碼檢視")](enhanced-user-notifications-images/setup01.png)
+    [![](enhanced-user-notifications-images/setup01.png "原始碼檢視")](enhanced-user-notifications-images/setup01.png#lightbox)
 3. 按一下 **+** 按鈕即可加入新的金鑰。
 4. 輸入`aps-environment`如**屬性**，保留**類型**為`String`並輸入 `development`或`production`如**值**: 
 
-    [ ![](enhanced-user-notifications-images/setup02.png "Aps 環境屬性")](enhanced-user-notifications-images/setup02.png)
+    [![](enhanced-user-notifications-images/setup02.png "Aps 環境屬性")](enhanced-user-notifications-images/setup02.png#lightbox)
 5. 將變更儲存到檔案。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -181,7 +181,7 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 3. 按一下 **+** 按鈕即可加入新的金鑰。
 4. 輸入`aps-environment`如**屬性**，保留**類型**為`String`並輸入 `development`或`production`如**值**: 
 
-    [ ![](enhanced-user-notifications-images/setup02w.png "Aps 環境屬性")](enhanced-user-notifications-images/setup02.png)
+    [![](enhanced-user-notifications-images/setup02w.png "Aps 環境屬性")](enhanced-user-notifications-images/setup02.png#lightbox)
 5. 將變更儲存到檔案。
 
 -----
@@ -190,7 +190,7 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 
 如果應用程式會同時傳送和接收遠端的通知，它仍然需要執行_語彙基元註冊_使用現有`UIApplication`應用程式開發介面。 此註冊需要裝置才能存取即時網路連線 APNs，將會產生將傳送至應用程式的必要語彙基元。 應用程式必須將此權杖來註冊遠端通知開發人員的伺服器端應用程式：
 
-[ ![](enhanced-user-notifications-images/token01.png "語彙基元註冊概觀")](enhanced-user-notifications-images/token01.png)
+[![](enhanced-user-notifications-images/token01.png "語彙基元註冊概觀")](enhanced-user-notifications-images/token01.png#lightbox)
 
 您可以使用下列程式碼來初始化必要的登錄：
 
@@ -200,7 +200,7 @@ UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 
 取得傳送到開發人員的伺服器端應用程式的權杖必須是包含通知裝載該 get 的一部分從伺服器傳送至 APNs 傳送遠端通知時：
 
-[ ![](enhanced-user-notifications-images/token02.png "通知裝載中包含的語彙基元")](enhanced-user-notifications-images/token02.png)
+[![](enhanced-user-notifications-images/token02.png "通知裝載中包含的語彙基元")](enhanced-user-notifications-images/token02.png#lightbox)
 
 語彙基元做為通知和用來開啟或回應通知的應用程式緊密整合的索引鍵。
 
@@ -519,7 +519,7 @@ namespace MonkeyNotification
 
 使用遠端的通知時_服務延伸_提供一個方式來啟用通知裝載內的端對端加密。 服務延伸模組是通知的非使用者介面執行的擴充功能 （適用於 iOS 10） 在背景以加強或取代可見內容，它會呈現給使用者之前的主要用途。 
 
-[ ![](enhanced-user-notifications-images/extension01.png "服務延伸模組概觀")](enhanced-user-notifications-images/extension01.png)
+[![](enhanced-user-notifications-images/extension01.png "服務延伸模組概觀")](enhanced-user-notifications-images/extension01.png#lightbox)
 
 服務延伸模組的用意是要快速地執行，並只可以在短一段時間的系統執行。 確認服務延伸模組無法在分配的時間內完成其工作，會呼叫後援方法。 如果後援的失敗，原始的通知內容將會顯示給使用者。
 
@@ -538,13 +538,13 @@ namespace MonkeyNotification
 2. 以滑鼠右鍵按一下方案名稱在**方案板**選取**新增** > **加入新的專案**。
 3. 選取**iOS** > **延伸** > **通知服務延伸**按一下**下一步**按鈕： 
 
-    [ ![](enhanced-user-notifications-images/extension02.png "選取通知服務延伸模組")](enhanced-user-notifications-images/extension02.png)
+    [![](enhanced-user-notifications-images/extension02.png "選取通知服務延伸模組")](enhanced-user-notifications-images/extension02.png#lightbox)
 4. 輸入**名稱**延伸模組，然後按一下**下一步**按鈕： 
 
-    [ ![](enhanced-user-notifications-images/extension03.png "輸入副檔名的名稱")](enhanced-user-notifications-images/extension03.png)
+    [![](enhanced-user-notifications-images/extension03.png "輸入副檔名的名稱")](enhanced-user-notifications-images/extension03.png#lightbox)
 5. 調整**專案名稱**及/或**方案名稱**如果需要，然後按一下 **建立**按鈕： 
 
-    [ ![](enhanced-user-notifications-images/extension04.png "調整的專案名稱和/或方案名稱")](enhanced-user-notifications-images/extension04.png) 
+    [![](enhanced-user-notifications-images/extension04.png "調整的專案名稱和/或方案名稱")](enhanced-user-notifications-images/extension04.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -552,7 +552,7 @@ namespace MonkeyNotification
 2. 以滑鼠右鍵按一下方案名稱在**方案總管 中**選取**新增** > **加入新的專案**。
 3. 選取**iOS** > **延伸** > **通知服務延伸**: 
 
-    [ ![](enhanced-user-notifications-images/extension01w.png "選取通知服務延伸模組")](enhanced-user-notifications-images/extension01w.png)
+    [![](enhanced-user-notifications-images/extension01w.png "選取通知服務延伸模組")](enhanced-user-notifications-images/extension01w.png#lightbox)
 4. 輸入**名稱**延伸模組，然後按一下**確定** 按鈕。
 
 -----

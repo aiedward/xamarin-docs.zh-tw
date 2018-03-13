@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: fb0e4341d8d8ad0719f35c691add9bad1d3f85a8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fe62b917946dda4cf669f5b15c91a5e3b596a0fc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="populating-a-table-with-data"></a>使用資料填入資料表
 
@@ -88,7 +88,7 @@ public override void ViewDidLoad ()
 
 產生的資料表看起來像這樣：
 
- [ ![](populating-a-table-with-data-images/image3.png "執行範例資料表")](populating-a-table-with-data-images/image3.png)
+ [![](populating-a-table-with-data-images/image3.png "執行範例資料表")](populating-a-table-with-data-images/image3.png#lightbox)
 
 大多數的資料表允許使用者修改資料列來選取它，並執行其他動作 （例如播放歌曲，或呼叫連絡人，或顯示另一個螢幕）。 若要達成此目的，有幾件事，我們需要如何做。 首先，讓我們來建立 顯示訊息，當使用者按一下的資料列加入至下列 AlertController`RowSelected`方法：
 
@@ -140,7 +140,7 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 
 
 
- [ ![](populating-a-table-with-data-images/image4.png "資料列選取的警示")](populating-a-table-with-data-images/image4.png)
+ [![](populating-a-table-with-data-images/image4.png "資料列選取的警示")](populating-a-table-with-data-images/image4.png#lightbox)
 
 
 ## <a name="cell-reuse"></a>儲存格重複使用
@@ -220,7 +220,7 @@ public class MyCell : UITableViewCell
 
 索引可協助使用者捲動較長的清單，雖然您可以建立索引通常會依字母順序的排序您希望任何準則。 **BasicTableIndex**範例從示範索引檔案載入長清單的項目。 在索引中的每個項目會對應到資料表 'section'。
 
- [ ![](populating-a-table-with-data-images/image5.png "索引顯示")](populating-a-table-with-data-images/image5.png)
+ [![](populating-a-table-with-data-images/image5.png "索引顯示")](populating-a-table-with-data-images/image5.png#lightbox)
 
 若要支援資料表背後的資料必須分組，因此 BasicTableIndex 範例會建立 ' sections'`Dictionary<>`使用每個項目中的第一個字母做為字典索引鍵的字串陣列中：
 
@@ -270,7 +270,7 @@ public override string[] SectionIndexTitles (UITableView tableView)
 頁首和頁尾可以用來以視覺方式分組的資料表資料列。 所需的資料結構是非常類似於將索引 –`Dictionary<>`可以運作順暢。 而不是使用字母順序來分組資料格，此範例會分組蔬菜 botanical 型別。
 輸出顯示如下：
 
- [ ![](populating-a-table-with-data-images/image6.png "範例頁首和頁尾")](populating-a-table-with-data-images/image6.png)
+ [![](populating-a-table-with-data-images/image6.png "範例頁首和頁尾")](populating-a-table-with-data-images/image6.png#lightbox)
 
 若要顯示頁首和頁尾`UITableViewSource`子類別需要這些額外的方法：
 

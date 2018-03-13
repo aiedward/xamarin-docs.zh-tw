@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1b0b1db6bf73b03eed99c5ede038d07bb3ccf284
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 23aa944b88fe3e743b6b29810c29d1843f2efc29
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="api-design"></a>應用程式開發介面設計
 
-<a name="Overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -23,7 +22,6 @@ ms.lasthandoff: 02/27/2018
 
 核心 Xamarin.Android 有 interop 的引擎與 Java 世界該橋接器的 C# 世界，提供開發人員存取 Java api 從 C# 或其他.NET 語言。
 
-<a name="Design_Principles" />
 
 ## <a name="design-principles"></a>設計原則
 
@@ -64,7 +62,6 @@ ms.lasthandoff: 02/27/2018
     - 提供機制來呼叫任意的 Java 程式庫 ( [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/))。
 
 
-<a name="Assemblies" />
 
 ## <a name="assemblies"></a>組件
 
@@ -72,11 +69,9 @@ Xamarin.Android 包含組成組件數*MonoMobile 設定檔*。 [組件](~/cross-
 
 中所包含的繫結以 Android 平台`Mono.Android.dll`組件。 這個組件包含使用 Android 應用程式開發介面的整個繫結以及與 Android 的執行階段 VM 通訊。
 
-<a name="Binding_Design" />
 
 ## <a name="binding-design"></a>繫結設計
 
-<a name="Collections" />
 
 ### <a name="collections"></a>集合
 
@@ -112,7 +107,6 @@ if (goodSource.Count != 4) // false
     throw new InvalidOperationException ("should not be reached.");
 ```
 
-<a name="Properties" />
 
 ### <a name="properties"></a>屬性
 
@@ -127,7 +121,6 @@ Java 方法會轉換成時適當的屬性：
 -  屬性是*不*產生如果屬性型別陣列。
 
 
-<a name="Events_and_Listeners" />
 
 ### <a name="events-and-listeners"></a>事件與接聽程式
 
@@ -177,7 +170,6 @@ button.Click += (sender, e) => {
 
 所有接聽程式介面實作[ `Android.Runtime.IJavaObject` ](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/)介面，因為繫結，讓接聽程式類別必須實作這個介面的實作詳細資料。 這可藉由接聽程式介面實作上的子類別[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)或任何其他包裝 Java 物件，例如 Android 的活動。
 
-<a name="Runnables" />
 
 ### <a name="runnables"></a>Runnables
 
@@ -188,7 +180,6 @@ button.Click += (sender, e) => {
 
 我們留[IRunnable](https://developer.xamarin.com/api/type/Java.Lang.IRunnable/)直接傳遞為 runnables 備妥，而不是取代它們，因為數種類型實作介面，因此可以多載。
 
-<a name="Inner_Classes" />
 
 ### <a name="inner-classes"></a>內部類別
 
@@ -227,7 +218,6 @@ class CubeWallpaper : WallpaperService {
 
 請注意如何`CubeWallpaper.CubeEngine`內變成巢狀`CubeWallpaper`，`CubeWallpaper`包含的類別會繼承`WallpaperService.Engine`，和`CubeWallpaper.CubeEngine`已宣告的型別-的建構函式`CubeWallpaper`all 視為本範例中使用上述指定。
 
-<a name="Interfaces" />
 
 ### <a name="interfaces"></a>介面
 
@@ -254,7 +244,7 @@ Java 介面會轉譯成兩種類型：
 
 
 > [!NOTE]
-> **注意：**起 Xamarin.Android 1.9，Java 介面常數是<em>重複</em>為了簡化移植 Java 程式碼。 這有助於改善 Java 程式碼移植依賴[android 的提供者](http://developer.android.com/reference/android/provider/package-summary.html)常數的介面。
+> 從開始 Xamarin.Android 1.9，Java 介面常數是<em>重複</em>為了簡化移植 Java 程式碼。 這有助於改善 Java 程式碼移植依賴[android 的提供者](http://developer.android.com/reference/android/provider/package-summary.html)常數的介面。
 
 除了上述的類型，有四個所做的變更：
 
@@ -277,7 +267,6 @@ Java 介面會轉譯成兩種類型：
 
 最後，類型*常數*例如尾碼*Android.OS.ParcelableConsts*現在已過時，而不是新引入 InterfaceConsts 巢狀型別。 在 Xamarin.Android 3.0 中，將移除它們。
 
-<a name="Resources" />
 
 ## <a name="resources"></a>資源
 
@@ -323,7 +312,6 @@ public class Resource {
 
 您可使用`Resource.Drawable.icon`參考`drawable/icon.png`檔案，或`Resource.Layout.main`參考`layout/main.xml`檔案，或`Resource.String.first_string`參考字典檔中的第一個字串`values/strings.xml`。
 
-<a name="Constants_and_Enumerations" />
 
 ## <a name="constants-and-enumerations"></a>常數和列舉
 

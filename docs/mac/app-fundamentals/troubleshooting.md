@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f7ded8fdc1274f7c98d8f7134f6a87c7ba767646
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b0d757c951f9244beb093a0a9b13ac1d069b507
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="reporting-bugs"></a>回報 bug
 
@@ -70,7 +70,7 @@ ms.lasthandoff: 02/27/2018
 
 偵錯工具連接到 Xamarin.Mac 應用程式，透過 TCP，這表示，依預設啟用沙箱，當它是無法連線到應用程式，因此如果您嘗試執行應用程式沒有啟用適當的權限，您會收到錯誤*「 無法連接到偵錯工具 」*。 
 
-[![編輯權利](troubleshooting-images/debug01.png "編輯權利")](troubleshooting-images/debug01-large.png)
+[![編輯權利](troubleshooting-images/debug01.png "編輯權利")](troubleshooting-images/debug01-large.png#lightbox)
 
 **允許傳出網路連線 （用戶端）**權限就是所需的偵錯工具，啟用此選項將允許正常地偵錯。 您無法偵錯，而它，因為我們已更新`CompileEntitlements`目標`msbuild`為沙箱化針對偵錯任何應用程式只建置的自動將該權限新增至權利。 發行組建應該使用未經修改的權利檔案中指定的權利。
 
@@ -80,7 +80,7 @@ ms.lasthandoff: 02/27/2018
 
 這可以藉由開啟 Xamarin.Mac 專案中，移至的選項來解決**Mac 建置** > **國際化**和檢查**西**國際化：
 
-[![編輯建置選項](troubleshooting-images/issue01.png "編輯建置選項")](troubleshooting-images/issue01-large.png)
+[![編輯組建選項](troubleshooting-images/issue01.png "編輯組建選項")](troubleshooting-images/issue01-large.png#lightbox)
 
 ### <a name="failed-to-compile-mm5103"></a>無法編譯 (mm5103)
 
@@ -100,7 +100,7 @@ ms.lasthandoff: 02/27/2018
 
 如果您按兩下**Entitlements.plist**權利編輯器的檔案將會顯示：
 
-[![編輯權利](troubleshooting-images/entitlements02.png "編輯權利")](troubleshooting-images/entitlements02-large.png)
+[![編輯權利](troubleshooting-images/entitlements02.png "編輯權利")](troubleshooting-images/entitlements02-large.png#lightbox)
 
 對於現有 Xamarin.Mac 專案，您必須手動建立**Entitlements.plist**檔案中的專案上按一下滑鼠右鍵**方案板**，然後選取**新增**  > **新的檔案...**.接下來，選取**Xamarin.Mac** > **空白屬性清單**:
 
@@ -108,7 +108,7 @@ ms.lasthandoff: 02/27/2018
 
 輸入`Entitlements`的名稱，然後按一下**新增** 按鈕。 如果您的專案先前包含權利檔案中，系統會提示您將它加入至專案，而不是建立新的檔案：
 
-[![正在驗證檔案的覆寫](troubleshooting-images/entitlements04.png "驗證檔案的覆寫")](troubleshooting-images/entitlements04-large.png)
+[![正在驗證檔案的覆寫](troubleshooting-images/entitlements04.png "驗證檔案的覆寫")](troubleshooting-images/entitlements04-large.png#lightbox)
 
 ## <a name="contacting-support-business-or-enterprise-licenses"></a>連絡支援服務 （商務或企業授權）
 
@@ -124,14 +124,14 @@ ms.lasthandoff: 02/27/2018
 
 您的意見反應對我們很重要。 如果您發現任何 Xamarin.Mac 的問題：
 
-- 搜尋[問題儲存機制](https://github.com/xamarin/xamarin-macios/issues) 
-- 在切換之前 GitHub 問題，Xamarin 問題追蹤上[Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi)。 請搜尋那里相符的問題。
-- 如果找不到相符的問題，請檔案中的新問題[GitHub 問題儲存機制](https://github.com/xamarin/xamarin-macios/issues/new)。
+- 搜尋[問題存放庫](https://github.com/xamarin/xamarin-macios/issues) \(英文\) 
+- 在切換到 GitHub 問題之前，Xamarin 問題的追蹤是在 [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) \(英文\) 上進行的。 請從該處搜尋相符的問題。
+- 如果您找不到相符的問題，請在 [GitHub 問題存放庫](https://github.com/xamarin/xamarin-macios/issues/new) \(英文\) 中提出新的問題。
 
-GitHub 問題是所有公用的。 您不可以隱藏註解或附件。 
+GitHub 問題全都是公開的。 無法隱藏意見或附件。 
 
-請提供下盡量：                                                                                                                                          
+請儘量包含下列資訊：                                                                                                                                          
 
-- 重現問題的簡單範例。 這是**一兩**盡可能。 
-- 當機的完整的堆疊追蹤。
-- C# 程式碼周圍的損毀。 
+- 一個可重現問題的簡單範例。 這是**非常寶貴的**，請盡您所能提供。 
+- 損毀狀況的完整堆疊追蹤。
+- 損毀狀況周圍的 C# 程式碼。 

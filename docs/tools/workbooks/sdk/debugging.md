@@ -6,11 +6,11 @@ ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 4a83afca753d1131e3486004443f9c4a895f6fbc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a0873c6b902e29174da5e27a09e8f580d6d69eb7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="debugging-integrations"></a>偵錯的整合
 
@@ -43,11 +43,11 @@ defaults write com.xamarin.Inspector WebKitDeveloperExtras -bool true
 
 然後再重新啟動 Xamarin 活頁簿。 一旦您這樣做，您應該會看到**檢查項目**出現在您以滑鼠右鍵按一下內容功能表上，以及新**開發人員**窗格將可在活頁簿喜好設定。 此選項可讓您選擇要在啟動時開啟開發人員工具：
 
-[![開發人員 窗格](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png)
+[![開發人員 窗格](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png#lightbox)
 
 這個喜好設定也僅限重新啟動時，您必須重新啟動，才能讓它才會生效，新的活頁簿上的活頁簿用戶端。 啟用開發人員工具，透過操作功能表或喜好設定，將會顯示在熟悉的 Safari UI:
 
-[![Safari 開發人員工具](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png)
+[![Safari 開發人員工具](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png#lightbox)
 
 如需使用 Safari 開發人員工具的資訊，請參閱[WebKit 偵測器文件][webkit-docs]。
 
@@ -61,6 +61,6 @@ C:\Windows\System32\F12\F12Chooser.exe
 
 執行的 F12 選擇器，而且您應該會看到可提供簡單的活頁簿用戶端介面，在清單中的內嵌執行個體。 選擇它，並從 Internet Explorer 的偵錯工具隨即出現，熟悉 F12 附加至用戶端：
 
-[![F12 工具](debugging-images/windows-dev-tools.png)](debugging-images/windows-dev-tools.png)
+[![F12 工具](debugging-images/windows-dev-tools.png)](debugging-images/windows-dev-tools.png#lightbox)
 
 [webkit-docs]: https://trac.webkit.org/wiki/WebInspector

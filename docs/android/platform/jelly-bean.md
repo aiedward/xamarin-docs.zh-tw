@@ -7,18 +7,17 @@ ms.assetid: 23F57634-2EF9-5C15-C710-B3E19A5AF7E1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/14/2017
-ms.openlocfilehash: 2e54bfc4bea3955dc80a747c4ecce485b78ada1d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 136484644779ac40e661f50ff19cf15884c864c2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="jelly-bean-features"></a>軟糖 Bean 功能
 
 _本文件將適用於 Android 4.1 中導入的開發人員提供的新功能的高階概觀。這些功能包括： 增強式 Android 資料交換 」 共用大型檔案、 多媒體、 對等網路探索、 動畫、 新的權限更新至更新的通知。_
 
-<a name="Overview" />
 
 
 ## <a name="overview"></a>總覽
@@ -31,21 +30,18 @@ Android 4.1 (API 層級 16)，也稱為 「 軟糖 Bean，「 已於 2012 年 7 
 
 最後 Android 4.1 已加入數個新的權限。
 
- <a name="Requirements" />
 
 
 ## <a name="requirements"></a>需求
 
 若要開發 Xamarin.Android 應用程式使用軟糖 Bean 需要 Xamarin.Android 4.2.6 或較高和 Android 4.1 (API 層級 16) 安裝透過 Android SDK Manager 中的下列螢幕擷取畫面所示：
 
-[![在 Android SDK Manager 中選取 Android 4.1](jelly-bean-images/image1.png)](jelly-bean-images/image1.png)
+[![在 Android SDK Manager 中選取 Android 4.1](jelly-bean-images/image1.png)](jelly-bean-images/image1.png#lightbox)
 
- <a name="What's_New" />
 
 
 ## <a name="whats-new"></a>新功能
 
- <a name="Animations" />
 
 
 ### <a name="animations"></a>Animations
@@ -79,7 +75,6 @@ animator.Start();
 
 做為`TimeAnimator`執行個體正在執行，將會叫用`ITimeAnimator.ITimeListener`，哪個然後將記錄檔如何長動畫已經執行，而且多久它已在上次方法時叫用。
 
- <a name="Application_Stack_Navigation" />
 
 
 ### <a name="application-stack-navigation"></a>應用程式堆疊巡覽
@@ -98,7 +93,6 @@ Android 4.1 改善應用程式堆疊瀏覽 Android 3.0 中引進。 藉由指定
 -   `OnCreateNavigateUpTaskStack` – 需要對具有完整控制權綜合堆疊的建立方式時，會覆寫此方法。
 
 
- <a name="Camera" />
 
 
 ### <a name="camera"></a>觀景窗
@@ -149,19 +143,16 @@ button.Click += (sender, args) => mediaActionPlayer.Play(MediaActionSoundType.Sh
 mediaActionPlayer.Release();
 ```
 
- <a name="Connectivity" />
 
 
 ### <a name="connectivity"></a>連線能力
 
- <a name="Android_Beam" />
 
 
 #### <a name="android-beam"></a>Android 資料交換
 
 Android 資料交換是一種 NFC 基礎技術，可讓兩個的 Android 裝置，來與對方進行通訊。 Android 4.1 傳送大型檔案提供更好的支援。 使用新的方法時`NfcAdapter.SetBeamPushUris()`Android 會替代傳輸機制 （例如藍芽） 之間切換以達到快速傳輸速度。
 
- <a name="Network_Services_Discovery" />
 
 
 #### <a name="network-services-discovery"></a>網路服務探索
@@ -173,14 +164,12 @@ Android 4.1 包含新的 API 的 DNS 為基礎的多點傳送的服務探索。
 
 若要探索網路，與實作服務`Nsd.DiscoveryListener`傳遞至`NsdManager.discoverServices()`。
 
- <a name="Network_Usage" />
 
 
 #### <a name="network-usage"></a>網路使用量
 
 新的方法，`ConnectivityManager.IsActiveNetworkMetered`可讓裝置檢查是否已連接到計量付費網路。 這個方法可以用來協助管理資料使用量是精確地通知使用者，可能昂貴的費用資料作業。
 
- <a name="WiFi_Direct_Service_Discovery" />
 
 
 #### <a name="wifi-direct-service-discovery"></a>WiFi 直接服務探索
@@ -195,14 +184,12 @@ Android 4.1 包含新的 API 的 DNS 為基礎的多點傳送的服務探索。
 -   `SetUpnpServiceResponseListener()` – 此方法用來註冊要接收的回應探索要求 Upnp 上叫用的回呼。
 
 
- <a name="Content_Providers" />
 
 
 ### <a name="content-providers"></a>內容提供者
 
 `ContentResolver`類別已收到新的方法， `AcquireUnstableContentProvider`。 這個方法可讓應用程式來取得 「 不穩定"的內容提供者。 一般來說，當應用程式取得內容提供者，且該內容提供者會損毀，因此將應用程式。 使用這個方法呼叫中，應用程式將不會損毀如果損毀的內容提供者。 相反地，`Android.OS.DeadObjectionException`從內容提供者上的呼叫以通知離開內容的提供者的應用程式將會擲回。 「 不穩定"的內容提供者時，與從其他應用程式內容提供者互動而言較不可能有問題的程式碼，從另一個應用程式將會影響另一個應用程式。
 
- <a name="Copy_and_Paste_With_Intents" />
 
 
 ### <a name="copy-and-paste-with-intents"></a>複製和貼上的對應方式
@@ -214,14 +201,11 @@ Android 4.1 包含新的 API 的 DNS 為基礎的多點傳送的服務探索。
 -   **Uri** – 這可以是任何 URI，例如 HTTP 書籤或內容提供者的 URI。
 
 
- <a name="Isolated_Services" />
 
 
 ### <a name="isolated-services"></a>隔離的服務
 
 外掛式主控的服務是自己特殊的處理序下執行，並具有自己的任何權限的服務。 只與服務通訊時，啟動服務，並透過服務 API 繫結至它。 它是可以宣告為外掛式主控服務的屬性設定`IsolatedProcess="true"`中`ServiceAttribute`，adorns 服務類別。
-
- <a name="Media" />
 
 
 ### <a name="media"></a>媒體
@@ -245,7 +229,6 @@ Android 4.1 包含新的 API 的 DNS 為基礎的多點傳送的服務探索。
 -   `MediaRouterActionProvider` 和`MediaRouteButton`– 這些類別可提供一致的 UI 選取和播放媒體。
 
 
- <a name="Notifications" />
 
 
 ### <a name="notifications"></a>通知
@@ -255,26 +238,25 @@ Android 4.1 允許應用程式更具靈活性和控制項時顯示通知。 應�
 -   `Notification.BigPictureStyle` – 這是一個 helper 類別，也會產生中會有影像的通知。 下圖顯示一則通知大映像的範例：
 
 
- [ ![BigPictureStyle 通知的範例螢幕擷取畫面](jelly-bean-images/image2.png)](jelly-bean-images/image2.png)
+ [![BigPictureStyle 通知的範例螢幕擷取畫面](jelly-bean-images/image2.png)](jelly-bean-images/image2.png#lightbox)
 
 -   `Notification.BigTextStyle` – 這是會產生將會有多行文字，例如電子郵件通知的協助程式類別。 下列螢幕擷取畫面中，可以看到這個新的通知樣式的範例：
 
 
- [ ![BigTextStyle 通知的範例螢幕擷取畫面](jelly-bean-images/image3.png)](jelly-bean-images/image3.png)
+ [![BigTextStyle 通知的範例螢幕擷取畫面](jelly-bean-images/image3.png)](jelly-bean-images/image3.png#lightbox)
 
 -   `Notification.InboxStyle` – 這是一個 helper 類別，也會產生包含的字串，例如電子郵件訊息，從程式碼片段清單的通知，此螢幕擷取畫面所示：
 
 
- [ ![Notification.InboxStyle 通知的範例螢幕擷取畫面](jelly-bean-images/image4.png)](jelly-bean-images/image4.png)
+ [![Notification.InboxStyle 通知的範例螢幕擷取畫面](jelly-bean-images/image4.png)](jelly-bean-images/image4.png#lightbox)
 
 您可新增最多兩個動作按鈕底部的通知訊息，通知使用標準或更大的樣式時。
 顯示底部的通知動作按鈕的下列螢幕擷取畫面中，可以看到此動作的範例：
 
- [ ![範例螢幕擷取畫面顯示下列通知訊息的動作按鈕](jelly-bean-images/image5.png)](jelly-bean-images/image5.png)
+ [![範例螢幕擷取畫面顯示下列通知訊息的動作按鈕](jelly-bean-images/image5.png)](jelly-bean-images/image5.png#lightbox)
 
 `Notification`類別已收到新的常數，可讓開發人員指定為通知的五個優先權層級的其中一個。 這些可以設定通知使用`Priority`屬性。
 
- <a name="Permissions" />
 
 
 ### <a name="permissions"></a>權限
@@ -290,7 +272,6 @@ Android 4.1 允許應用程式更具靈活性和控制項時顯示通知。 應�
 
 要注意的重大變更`READ_EXTERNAL_STORAGE`– 目前這個權限會自動授與 android。 Android 的未來版本將需要應用程式要求此權限，才能授與權限。
 
- <a name="Summary" />
 
 
 ## <a name="summary"></a>總結

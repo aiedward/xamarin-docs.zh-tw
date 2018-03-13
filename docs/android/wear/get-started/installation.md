@@ -7,18 +7,16 @@ ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/24/2018
-ms.openlocfilehash: 5f583fa78674b1b07d362e5171877e4ec3c861a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 012f563dcdaa70e33d641a4d8fb52df1622c260a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="setup-and-installation"></a>設定與安裝
 
 _本文逐步解說的安裝步驟及準備您的電腦和裝置的 Android 戴上開發所需的組態詳細資料。這篇文章結束時，您必須可運作的 Xamarin.Android 損耗安裝整合至 Visual Studio for Mac 及/或 Microsoft Visual Studio 中，及您就可以開始建置 Xamarin.Android 損耗應用程式第一次。_
-
-<a name="requirements" />
 
 ## <a name="requirements"></a>需求
 
@@ -35,9 +33,7 @@ _本文逐步解說的安裝步驟及準備您的電腦和裝置的 Android 戴�
 您可以繼續使用[JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)如果您是開發應用程式開發介面層級 23 專為或更早版本。
 
 > [!IMPORTANT]
-> **注意：**Xamarin.Android 不支援 JDK 9。
-
-<a name="installation" />
+> Xamarin.Android 不支援 JDK 9。
 
 ## <a name="installation"></a>安裝
 
@@ -49,7 +45,6 @@ _本文逐步解說的安裝步驟及準備您的電腦和裝置的 Android 戴�
 
 下列各節說明這些步驟。
 
-<a name="sdktools" />
 
 ### <a name="install-android-sdk-and-tools"></a>安裝 Android SDK 和工具 
 

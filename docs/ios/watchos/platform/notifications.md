@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 0f1d968dcee0cb9b6cd0cee8fa60be4f4dbb2833
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 600d651eae1f470f17511afaf9bc86c80ffc1a75
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="notifications"></a>通知
 
@@ -99,17 +99,17 @@ Short 外觀 UI 是由應用程式圖示，應用程式名稱及通知的標題�
 Visual Studio for Mac 將會顯示其他選項，當 watch 擴充功能會設定為**啟始專案**。
 監看式擴充功能專案上按一下滑鼠右鍵，然後選擇 **執行與 > 自訂參數...**:
     
-[![](notifications-images/runwith-customparams-sml.png "執行含有自訂內容")](notifications-images/runwith-customparams.png)
+[![](notifications-images/runwith-customparams-sml.png "執行含有自訂內容")](notifications-images/runwith-customparams.png#lightbox)
     
 這會開啟**執行引數**視窗，其中包含**WatchKit**  索引標籤。選取**通知**並提供 JSON 承載，然後按下**Execute**在模擬器中啟動監看式應用程式：
     
-[![](notifications-images/runwith-execargs-sml.png "選取通知裝載的預設值")](notifications-images/runwith-execargs.png)
+[![](notifications-images/runwith-execargs-sml.png "選取通知裝載的預設值")](notifications-images/runwith-execargs.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 若要設定測試通知裝載在 Visual Studio 以滑鼠右鍵按一下来編輯的監看式延伸**專案屬性**。 移至**偵錯**區段，然後從清單中 （它會自動將會列出所有包含在專案中的 JSON 檔案） 選取通知 JSON 檔案。
     
-[![](notifications-images/runwith-execargs-sml-vs.png "選取通知 JSON 檔案")](notifications-images/runwith-execargs-vs.png)
+[![](notifications-images/runwith-execargs-sml-vs.png "選取通知 JSON 檔案")](notifications-images/runwith-execargs-vs.png#lightbox)
 
 監看式延伸模組時**啟始專案**，Visual Studio 會顯示其他選項，如下所示。 選擇其中一個**通知**監看式應用程式的啟動選項**通知**模式 （使用 [屬性] 視窗中選取之 JSON 檔案）：
     

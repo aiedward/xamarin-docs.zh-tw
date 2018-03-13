@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: b606773b44d32b724fe7f4dfa2ef18fe34b85cae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 170131a2449b37acfa411eeca54f7aa921b0d9e4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-text-input"></a>使用文字輸入
 
@@ -62,7 +62,7 @@ PresentTextInputController (suggest, WatchKit.WKTextInputMode.AllowEmoji, (resul
 - Scribble，或
 - 從應用程式提供的預先定義清單。
 
-[ ![](text-input-images/plain-scribble-sml.png "聽寫手繪多邊形，或從應用程式提供的預先定義清單")](text-input-images/plain-scribble.png)
+[![](text-input-images/plain-scribble-sml.png "聽寫手繪多邊形，或從應用程式提供的預先定義清單")](text-input-images/plain-scribble.png#lightbox)
 
 結果一律會傳回做為`NSObject`可轉換成`string`。
 
@@ -106,4 +106,4 @@ PresentTextInputController (new string[0], WatchKit.WKTextInputMode.Plain, (resu
 ## <a name="related-links"></a>相關連結
 
 - [Apple 的文字和標籤的文件](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/TextandLabels.html)
-- [WatchOS 3 簡介](~/ios/watchos/platform/introduction-to-watchos3/index.md)
+- [watchOS 3 簡介](~/ios/watchos/platform/introduction-to-watchos3/index.md)

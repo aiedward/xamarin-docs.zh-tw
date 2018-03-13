@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 8b1715c8e7c3e9bb296577acd3d09a0f22488250
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5f27c1acefa63ee26184b8997594630e24cb0acc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authentication-and-authorization"></a>驗證和授權
 
@@ -48,7 +48,7 @@ EShopOnContainers 行動裝置應用程式會識別微服務，來使用 Identit
 -   存取與 IdentityServer 資源達成方式是行動裝置應用程式要求*存取*語彙基元，可讓應用程式開發介面資源的存取權。 用戶端要求存取權杖，並將其轉寄給應用程式開發介面。 存取權杖會包含用戶端和使用者的相關資訊 （如果有的話）。 然後，應用程式開發介面會使用該資訊來授權存取其資料。
 
 > [!NOTE]
-> **請注意**： 用戶端必須向 IdentityServer 才能要求語彙基元。
+> 必須先使用 IdentityServer 登錄用戶端，它可以要求權杖。
 
 ### <a name="adding-identityserver-to-a-web-application"></a>IdentityServer 加入 Web 應用程式
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 82151599b92094b816f4763c533ed7746db37920
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 489f3bd43ff4515000127ac29de197435493d5a9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-navigation-and-focus"></a>使用導覽和焦點
 
@@ -21,7 +21,7 @@ _本文涵蓋的概念焦點時，使用處理 Xamarin.tvOS 應用程式內瀏�
 
 本文件涵蓋的概念[焦點](#Focus-and-Selection)如何用來處理和[瀏覽](#Navigation)Xamarin.tvOS 應用程式的使用者介面中。 我們將檢驗內建 tvOS 導覽控制項如何使用焦點、 反白顯示和選取項目來提供 Xamarin.tvOS 應用程式的使用者介面導覽。
 
-[ ![](navigation-focus-images/intro01.png "tvOS 應用程式使用者介面功能")](navigation-focus-images/intro01.png)
+[![](navigation-focus-images/intro01.png "tvOS 應用程式使用者介面功能")](navigation-focus-images/intro01.png#lightbox)
 
 接下來，我們將探討如何焦點可以搭配[視差](#Focus-and-Parallax)和*分層映像*目前導覽狀態的視覺提示提供給使用者。
 
@@ -35,7 +35,7 @@ Xamarin.tvOS 應用程式的使用者不會互動的介面直接做為使用 iOS
 
 成功 tvOS 應用程式以順利支援應用程式的目的，而不需要呼叫本身的瀏覽注意它會呈現的資料結構的方式實作瀏覽。 設計您的瀏覽，讓不含支配使用者介面或繪製焦點離開內容和應用程式的使用者經驗的感覺自然且熟悉。
 
-[ ![](navigation-focus-images/nav01.png "TvOS 設定應用程式")](navigation-focus-images/nav01.png)
+[![](navigation-focus-images/nav01.png "TvOS 設定應用程式")](navigation-focus-images/nav01.png#lightbox)
 
 雖然使用 Apple TV，使用者通常巡覽堆疊的螢幕，一組每個呈現指定的內容的集合。 接著，每個新的畫面可能會導致一個或多個子螢幕的內容使用標準的 UI 控制項，例如[按鈕](~/ios/tvos/user-interface/buttons.md)， [ 索引標籤列](~/ios/tvos/user-interface/tab-bars.md)，資料表、[集合檢視](~/ios/tvos/user-interface/collection-views.md)或[分割檢視](~/ios/tvos/user-interface/split-views.md)。
 
@@ -58,7 +58,7 @@ Apple 建議記住下列幾點，設計 tvOS 應用程式瀏覽時：
 
 Apple 電視、 影像、 按鈕或其他 UI 項目會被視為_焦點_時的目前的巡覽目標。
 
-[ ![](navigation-focus-images/focus01.png "焦點和選取範圍的範例")](navigation-focus-images/focus01.png)
+[![](navigation-focus-images/focus01.png "焦點和選取範圍的範例")](navigation-focus-images/focus01.png#lightbox)
 
 不同於，iOS 裝置在使用者直接互動上裝置的觸控螢幕，項目時使用 Siri 遙控器的遙控器輕鬆 tvOS 項目從與使用者互動。 若要顯示和處理這種使用者互動，使用 Apple TV_焦點_基礎模型。
 
@@ -138,7 +138,7 @@ playButton.PreferredFocusedView = true;
 
 採用下列 UI 配置的範例：
 
- [ ![](navigation-focus-images/guide01.png "使用焦點指南範例")](navigation-focus-images/guide01.png)
+ [![](navigation-focus-images/guide01.png "使用焦點指南範例")](navigation-focus-images/guide01.png#lightbox)
  
 因為**更多資訊**按鈕未落在水平及垂直格線，內含**購買**它會導致無法存取使用者的按鈕。 但是，這可以輕鬆地修正使用_焦點指南_對焦點引擎提供移動提示。 
 
@@ -170,7 +170,7 @@ public override void ViewDidLoad ()
 
 接下來，相對於調整焦點指南的頂端、 左邊、 寬度和高度起點**更多資訊**和**購買**放在它們之間的按鈕。 請參閱：
 
-[ ![](navigation-focus-images/guide02.png "範例焦點指南")](navigation-focus-images/guide02.png)
+[![](navigation-focus-images/guide02.png "範例焦點指南")](navigation-focus-images/guide02.png#lightbox)
 
 它也是很重要的一點藉由設定建立時，會被啟動新的條件約束及其`Active`屬性`true`:
 

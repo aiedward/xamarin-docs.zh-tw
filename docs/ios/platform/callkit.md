@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: c78396ce55c776c615f3b3027a97b5a334c0b7f8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf519cb964bf852c74249c874b9a934d4a6cf5c3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="callkit"></a>CallKit
 
@@ -52,11 +52,11 @@ CallKit 提供額外的功能來 MonkeyCall，允許其 VOIP 呼叫與其他類�
 
 在 iOS 10 中，Apple 已採用 CallKit 中的所有系統服務，使呼叫，例如對 CarPlay，已知透過 CallKit 系統 UI。 在此範例中，如下所示，因為 MonkeyCall 採用 CallKit，它系統識別為這些內建的系統服務相同的方式，並取得所有相同功能：
 
-[ ![](callkit-images/callkit01.png "CallKit 服務堆疊")](callkit-images/callkit01.png)
+[![](callkit-images/callkit01.png "CallKit 服務堆疊")](callkit-images/callkit01.png#lightbox)
 
 需要進一步 MonkeyCall 應用程式上, 圖中查看。 應用程式包含的程式碼，以與它自己的網路通訊，與包含它自己的使用者介面。 它會連結 CallKit 與系統進行通訊：
 
-[ ![](callkit-images/callkit02.png "MonkeyCall 應用程式架構")](callkit-images/callkit02.png)
+[![](callkit-images/callkit02.png "MonkeyCall 應用程式架構")](callkit-images/callkit02.png#lightbox)
 
 應用程式中使用的 CallKit 有兩個主要的介面：
 
@@ -75,7 +75,7 @@ CallKit 提供額外的功能來 MonkeyCall，允許其 VOIP 呼叫與其他類�
 
 當應用程式想要對系統進行通訊時，它會使用`CXCallUpdate`類別，並在系統需要時與應用程式通訊，它會使用`CXAction`類別：
 
-[ ![](callkit-images/callkit03.png "與透過 CXProvider 系統通訊")](callkit-images/callkit03.png)
+[![](callkit-images/callkit03.png "與透過 CXProvider 系統通訊")](callkit-images/callkit03.png#lightbox)
 
 ### <a name="the-cxcallcontroller"></a>CXCallController
 
@@ -89,7 +89,7 @@ CallKit 提供額外的功能來 MonkeyCall，允許其 VOIP 呼叫與其他類�
 
 當應用程式想要傳達系統的本機使用者動作時，它會使用`CXTransaction`類別：
 
-[ ![](callkit-images/callkit04.png "使用 CXCallController 之系統報告")](callkit-images/callkit04.png)
+[![](callkit-images/callkit04.png "使用 CXCallController 之系統報告")](callkit-images/callkit04.png#lightbox)
 
 ## <a name="implementing-callkit"></a>實作 CallKit
 
@@ -748,7 +748,7 @@ namespace MonkeyCall
 
 當遠端使用者已開始 VOIP 交談與本機使用者，則發生下列情況：
 
-[ ![](callkit-images/callkit05.png "遠端使用者已開始 VOIP 交談")](callkit-images/callkit05.png)
+[![](callkit-images/callkit05.png "遠端使用者已開始 VOIP 交談")](callkit-images/callkit05.png#lightbox)
 
 1. 應用程式取得通知從其通訊網路是網路電話來電。
 2. 應用程式會使用`CXProvider`傳送`CXCallUpdate`系統通知它的呼叫。
@@ -783,7 +783,7 @@ public void ReportIncomingCall (NSUuid uuid, string handle)
 
 如果使用者想要回答 VOIP 來電時，發生下列情況：
 
-[ ![](callkit-images/callkit06.png "使用者接聽連入 VOIP 電話")](callkit-images/callkit06.png)
+[![](callkit-images/callkit06.png "使用者接聽連入 VOIP 電話")](callkit-images/callkit06.png#lightbox)
 
 1. 系統 UI 會通知系統使用者想要回答 VOIP 呼叫。
 2. 系統會傳送`CXAnswerCallAction`應用程式的`CXProvider`通知它的回應意圖。
@@ -824,7 +824,7 @@ public override void PerformAnswerCallAction (CXProvider provider, CXAnswerCallA
 
 如果使用者想要終止的呼叫應用程式的 UI 中，發生下列情況：
 
-[ ![](callkit-images/callkit07.png "使用者終止來自應用程式的 UI 中的呼叫")](callkit-images/callkit07.png)
+[![](callkit-images/callkit07.png "使用者終止來自應用程式的 UI 中的呼叫")](callkit-images/callkit07.png#lightbox)
 
 1. 應用程式會建立`CXEndCallAction`，取得配套到`CXTransaction`系統傳送通知到結束時呼叫。
 2. 系統會驗證結束呼叫意圖，並將傳送`CXEndCallAction`回應用程式透過`CXProvider`。
@@ -874,7 +874,7 @@ public override void PerformEndCallAction (CXProvider provider, CXEndCallAction 
 
 如果在使用者點選最近清單 （依電話應用程式） 的項目，例如，而且從呼叫屬於應用程式時，便會傳送_開始呼叫意圖_系統：
 
-[ ![](callkit-images/callkit08.png "接收開始呼叫意圖")](callkit-images/callkit08.png)
+[![](callkit-images/callkit08.png "接收開始呼叫意圖")](callkit-images/callkit08.png#lightbox)
 
 1. 應用程式會建立_開始呼叫動作_根據開始呼叫用途它收到來自系統。 
 2. 應用程式會使用`CXCallController`向系統要求起始呼叫動作。
@@ -1119,7 +1119,7 @@ CallKit 處理 iOS 10 VOIP 應用程式需要即時 VOIP 呼叫期間的音訊�
 
 典型的 VOIP 生命週期期間使用 CallKit 呼叫，應用程式將需要設定 CallKit 會提供它的音訊資料流。 看看下列範例：
 
-[ ![](callkit-images/callkit09.png "開始呼叫動作順序")](callkit-images/callkit09.png)
+[![](callkit-images/callkit09.png "開始呼叫動作順序")](callkit-images/callkit09.png#lightbox)
 
 1. 接聽連入呼叫應用程式收到啟動呼叫動作。
 2. 應用程式可完成此動作之前，它提供之組態的需要來執行其`AVAudioSession`。
@@ -1140,13 +1140,13 @@ Xamarin.iOS 應用程式中實作呼叫目錄延伸模組，執行下列作業�
 2. 以滑鼠右鍵按一下方案名稱在**方案總管 中**選取**新增** > **加入新的專案**。
 3. 選取**iOS** > **延伸** > **呼叫目錄延伸模組**按一下**下一步**按鈕： 
 
-    [ ![](callkit-images/calldir01.png "建立新的呼叫目錄擴充功能")](callkit-images/calldir01.png)
+    [![](callkit-images/calldir01.png "建立新的呼叫目錄擴充功能")](callkit-images/calldir01.png#lightbox)
 4. 輸入**名稱**延伸模組，然後按一下**下一步**按鈕： 
 
-    [ ![](callkit-images/calldir02.png "輸入副檔名的名稱")](callkit-images/calldir02.png)
+    [![](callkit-images/calldir02.png "輸入副檔名的名稱")](callkit-images/calldir02.png#lightbox)
 5. 調整**專案名稱**及/或**方案名稱**如果需要，然後按一下 **建立**按鈕： 
 
-    [ ![](callkit-images/calldir03.png "建立專案")](callkit-images/calldir03.png) 
+    [![](callkit-images/calldir03.png "建立專案")](callkit-images/calldir03.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -1154,7 +1154,7 @@ Xamarin.iOS 應用程式中實作呼叫目錄延伸模組，執行下列作業�
 2. 以滑鼠右鍵按一下方案名稱在**方案總管 中**選取**新增** > **加入新的專案**。
 3. 選取**iOS** > **延伸** > **呼叫目錄延伸模組**按一下**下一步**按鈕： 
 
-    [ ![](callkit-images/calldir01w.png "建立新的呼叫目錄擴充功能")](callkit-images/calldir01.png)
+    [![](callkit-images/calldir01w.png "建立新的呼叫目錄擴充功能")](callkit-images/calldir01.png#lightbox)
 4. 輸入**名稱**延伸模組，然後按一下**確定**按鈕
 
 -----

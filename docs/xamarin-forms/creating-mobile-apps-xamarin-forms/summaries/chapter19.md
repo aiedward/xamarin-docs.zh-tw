@@ -3,14 +3,15 @@ title: "第 19 章的摘要。 集合檢視"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 37afa3a54fd20745a65312fb5a24d958c8ec405f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: 73b3ec3e60a8fca5c48f515eab2cbb8359618dbb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>第 19 章的摘要。 集合檢視
 
@@ -97,7 +98,7 @@ Xamarin.Forms 會定義三個檢視的維護集合並顯示其項目：
 
 在 XAML 中是可以設定[ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)至`DataTemplate`然後定義自訂的視覺化樹狀結構當做[ `View` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ViewCell.View/)屬性`ViewCell`。 (`View`內容屬性的`ViewCell`所以`ViewCell.View`標記不需要。)[ **CustomNamedColorList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/CustomNamedColorList)範例會示範這項技術：
 
-[![三個螢幕擷取畫面的自訂具名色彩清單](images/ch19fg11-small.png "自訂具名色彩清單")](images/ch19fg11-large.png "自訂具名色彩清單")
+[![三個螢幕擷取畫面的自訂具名色彩清單](images/ch19fg11-small.png "自訂具名色彩清單")](images/ch19fg11-large.png#lightbox "自訂具名色彩清單")
 
 取得權限的所有平台的大小可能很困難。 [ `RowHeight` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RowHeight/)屬性非常實用，但是在某些情況下，您會想求助於[ `HasUnevenRows` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.HasUnevenRows/)比較沒有效率的內容，但強制`ListView`調整資料列的大小。 適用於 iOS 和 Android，您必須使用這兩個屬性的其中一個以取得適當的資料列大小。
 
@@ -127,7 +128,7 @@ Xamarin.Forms 會定義三個檢視的維護集合並顯示其項目：
 
 [ **StudentList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/StudentList)程式使用`ImageCell`顯示學生版和其映像中的`ListView`:
 
-[![三個螢幕擷取畫面的學生清單](images/ch19fg18-small.png "學生清單")](images/ch19fg18-large.png "學生清單")
+[![三個螢幕擷取畫面的學生清單](images/ch19fg18-small.png "學生清單")](images/ch19fg18-large.png#lightbox "學生清單")
 
 [ **ListViewHeader** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewHeader)範例會將[ `Header` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.Header/)的內容，但只在 Android 上會出現。
 

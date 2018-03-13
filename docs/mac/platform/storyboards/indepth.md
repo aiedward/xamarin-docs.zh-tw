@@ -8,21 +8,21 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: effa527b330fb6ca75800392e557289a326f17aa
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 388744d48799e84587a4f554a4eb67cd677d8c9a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="storyboards"></a>分鏡腳本
 
 分鏡腳本定義所有已細分成其檢視控制站的功能概觀給定應用程式的使用者介面。 在 Xcode 的介面產生器中，每一個這些控制器存在於它自己的場景。
 
-[ ![](indepth-images/intro01.png "在 Xcode 的介面產生器中的分鏡腳本")](indepth-images/intro01.png)
+[![](indepth-images/intro01.png "在 Xcode 的介面產生器中的分鏡腳本")](indepth-images/intro01.png#lightbox)
 
 分鏡腳本是資源檔 (副檔名是`.storyboard`)，取得包含在 Xamarin.Mac 應用程式套件組合時進行編譯和出貨。 若要定義您的應用程式起始的分鏡腳本，編輯它的`Info.plist`檔案，然後選取**主要介面**從下拉式清單方塊： 
 
-[ ![](indepth-images/sb01.png "Info.plist 編輯器")](indepth-images/sb01.png)
+[![](indepth-images/sb01.png "Info.plist 編輯器")](indepth-images/sb01.png#lightbox)
 
 <a name="Loading-from-Code" />
 
@@ -41,11 +41,11 @@ controller.ShowWindow(this);
 
 `FromName`載入分鏡腳本檔案，具有給定名稱的已包含在應用程式套件組合。 `InstantiateControllerWithIdentifier`建立檢視控制器執行個體使用指定的身分識別。 設計 UI 時，您可以設定在 Xcode 的介面產生器中的身分識別：
 
-[ ![](indepth-images/sb02.png "設定分鏡腳本識別碼")](indepth-images/sb02.png)
+[![](indepth-images/sb02.png "設定分鏡腳本識別碼")](indepth-images/sb02.png#lightbox)
 
 或者，您可以使用`InstantiateInitialController`方法以載入已被指派初始控制器介面產生器中檢視控制器：
 
-[ ![](indepth-images/sb03.png "設定初始的控制站")](indepth-images/sb03.png)
+[![](indepth-images/sb03.png "設定初始的控制站")](indepth-images/sb03.png#lightbox)
 
 所標示**分鏡腳本進入點**和上述開啟結束箭號。
 
@@ -76,7 +76,7 @@ controller.ShowWindow(this);
 
 此外，`NSViewControllers`現在已納入 視窗_回應鏈結_:
 
-[ ![](indepth-images/vc01.png "回應者鏈結")](indepth-images/vc01.png)
+[![](indepth-images/vc01.png "回應者鏈結")](indepth-images/vc01.png#lightbox)
 
 而且在這種情況是有線向上來接收和回應事件，例如剪下、 複製和貼上的功能表項目選項。 此自動檢視控制器連線總才會發生在 macOS 利也 (10.12) 上執行的應用程式和更新版本。
 
@@ -86,13 +86,13 @@ controller.ShowWindow(this);
 
 在腳本檢視控制器 （例如分割檢視控制器和索引標籤檢視控制器） 現在可以實作_內含項目_，好讓它們可以 「 包含 」 其他子檢視控制器：
 
-[ ![](indepth-images/vc02.png "檢視控制站的內含項目範例")](indepth-images/vc02.png)
+[![](indepth-images/vc02.png "檢視控制站的內含項目範例")](indepth-images/vc02.png#lightbox)
 
 子檢視控制器包含方法和屬性，以將它們繫結回至其父檢視控制站，以及搭配顯示並移除從螢幕檢視。
 
 MacOS 內建的所有容器檢視控制器都有 Apple 建議您遵循是否建立您自己的自訂容器檢視控制器的特定配置：
 
-[ ![](indepth-images/vc03.png "檢視控制器版面配置")](indepth-images/vc03.png)
+[![](indepth-images/vc03.png "檢視控制器版面配置")](indepth-images/vc03.png#lightbox)
 
 集合檢視控制器包含集合檢視包含項目，其中每一個都包含自己的檢視表的一個或多個檢視控制器的陣列。
 
@@ -131,7 +131,7 @@ PerformSegue("MyNamedSegue", this);
 
 當應用程式的 UI 以配置話題識別碼定義內 Xcode 的介面產生器：
 
-[ ![](indepth-images/sg02.png "輸入話題名稱")](indepth-images/sg02.png)
+[![](indepth-images/sg02.png "輸入話題名稱")](indepth-images/sg02.png#lightbox)
 
 在做為來源的 Segue 檢視控制器，您應該覆寫`PrepareForSegue`方法執行之前執行 Segue 所需任何初始設定和指定的檢視控制器會顯示：
 
@@ -215,7 +215,7 @@ namespace OnCardMac
 
 若要使用這個新的 Segue 類型 Xcode 的介面產生器中，我們需要編譯應用程式第一次，然後切換到 Xcode 並加入新 Segue 之間兩個場景。 設定**樣式**至**自訂**和**話題類別**至`ReplaceViewSegue`（我們的自訂 Segue 類別名稱）：
 
-[ ![](indepth-images/sg01.png "設定 Segue 類別")](indepth-images/sg01.png)
+[![](indepth-images/sg01.png "設定 Segue 類別")](indepth-images/sg01.png#lightbox)
 
 <a name="Triggered-Segues" />
 
@@ -271,21 +271,21 @@ MacOS 的筆勢辨識器是與其在 iOS 中幾乎相同，且您的應用程式
 
 1. 在**方案總管 中**，以滑鼠右鍵按一下專案名稱，然後選取**新增** > **新的檔案...**  >  **Mac** > **分鏡腳本**。 輸入**名稱**新分鏡腳本並按一下**新增**按鈕： 
 
-    [ ![](indepth-images/ref01.png "加入新的分鏡腳本")](indepth-images/ref01.png)
+    [![](indepth-images/ref01.png "加入新的分鏡腳本")](indepth-images/ref01.png#lightbox)
 2. 在**方案總管 中**，按兩下要開啟它進行編輯 Xcode 的介面產生器中的新分鏡腳本名稱。
 2. 設計新分鏡腳本場景的版面配置，以及您通常會儲存您的變更： 
 
-    [ ![](indepth-images/ref02.png "設計介面")](indepth-images/ref02.png)
+    [![](indepth-images/ref02.png "設計介面")](indepth-images/ref02.png#lightbox)
 3. 切換至您要加入的參考介面產生器中的分鏡腳本。
 4. 拖曳**分鏡腳本參考**從**物件程式庫**拖曳至設計介面： 
 
-    [ ![](indepth-images/ref03.png "選取程式庫中的分鏡腳本的參考")](indepth-images/ref03.png)
+    [![](indepth-images/ref03.png "選取程式庫中的分鏡腳本的參考")](indepth-images/ref03.png#lightbox)
 5. 在**屬性偵測器**，選取名稱**分鏡腳本**先前建立的： 
 
-    [ ![](indepth-images/ref04.png "設定參考")](indepth-images/ref04.png)
+    [![](indepth-images/ref04.png "設定參考")](indepth-images/ref04.png#lightbox)
 6. 控制項按一下 UI 上的小工具 （例如按鈕） 現有的場景，並建立以新 Segue**分鏡腳本參考**您剛建立。  從快顯功能表選取**顯示**完成 Segue: 
 
-    [ ![](indepth-images/ref06.png "設定 Segue 類型")](indepth-images/ref06.png) 
+    [![](indepth-images/ref06.png "設定 Segue 類型")](indepth-images/ref06.png#lightbox) 
 8. 將您的變更儲存到分鏡腳本。
 9. 返回 Visual Studio for Mac 同步您的變更。
 
@@ -300,20 +300,20 @@ MacOS 的筆勢辨識器是與其在 iOS 中幾乎相同，且您的應用程式
 1. 在**方案總管 中**，連按兩下以開啟檔案進行編輯 Xcode 的介面產生器中的外部分鏡腳本。
 2. 加入新的場景，並設計其版面配置，像平常一樣： 
 
-    [ ![](indepth-images/ref07.png "設計版面配置在 Xcode 中")](indepth-images/ref07.png)
+    [![](indepth-images/ref07.png "設計版面配置在 Xcode 中")](indepth-images/ref07.png#lightbox)
 3. 在**識別 Inspector**，輸入**分鏡腳本識別碼**新場景的視窗控制站： 
 
-    [ ![](indepth-images/ref08.png "設定分鏡腳本識別碼")](indepth-images/ref08.png)
+    [![](indepth-images/ref08.png "設定分鏡腳本識別碼")](indepth-images/ref08.png#lightbox)
 3. 開啟您要在介面產生器中的參考加入分鏡腳本。
 4. 拖曳**分鏡腳本參考**從**物件程式庫**拖曳至設計介面： 
 
-    [ ![](indepth-images/ref03.png "從程式庫中選取 分鏡腳本參考")](indepth-images/ref03.png)
+    [![](indepth-images/ref03.png "從程式庫中選取 分鏡腳本參考")](indepth-images/ref03.png#lightbox)
 5. 在**識別 Inspector**，選取名稱**分鏡腳本**和**參考識別碼**（分鏡腳本識別碼） 先前建立的場景： 
 
-    [ ![](indepth-images/ref09.png "設定參考識別碼")](indepth-images/ref09.png)
+    [![](indepth-images/ref09.png "設定參考識別碼")](indepth-images/ref09.png#lightbox)
 6. 控制項按一下 UI 上的小工具 （例如按鈕） 現有的場景，並建立以新 Segue**分鏡腳本參考**您剛建立。 從快顯功能表選取**顯示**完成 Segue: 
 
-    [ ![](indepth-images/ref06.png "設定 Segue 類型")](indepth-images/ref06.png) 
+    [![](indepth-images/ref06.png "設定 Segue 類型")](indepth-images/ref06.png#lightbox) 
 8. 將您的變更儲存到分鏡腳本。
 9. 返回 Visual Studio for Mac 同步您的變更。
 
@@ -328,19 +328,19 @@ MacOS 的筆勢辨識器是與其在 iOS 中幾乎相同，且您的應用程式
 1. 在**方案總管 中**，連按兩下以開啟檔案進行編輯分鏡腳本。
 2. 加入新的場景，並設計其版面配置，像平常一樣： 
 
-    [ ![](indepth-images/ref11.png "編輯在 Xcode 中的分鏡腳本")](indepth-images/ref11.png)
+    [![](indepth-images/ref11.png "編輯在 Xcode 中的分鏡腳本")](indepth-images/ref11.png#lightbox)
 3. 在**識別 Inspector**，輸入**分鏡腳本識別碼**新場景的視窗控制站： 
 
-    [ ![](indepth-images/ref12.png "設定分鏡腳本識別碼")](indepth-images/ref12.png)
+    [![](indepth-images/ref12.png "設定分鏡腳本識別碼")](indepth-images/ref12.png#lightbox)
 3. 拖曳**分鏡腳本參考**從**工具箱**拖曳至設計介面： 
 
-    [ ![](indepth-images/ref03.png "從程式庫中選取 分鏡腳本參考")](indepth-images/ref03.png)
+    [![](indepth-images/ref03.png "從程式庫中選取 分鏡腳本參考")](indepth-images/ref03.png#lightbox)
 5. 在**屬性偵測器**，選取**參考識別碼**（分鏡腳本識別碼） 先前建立的場景： 
 
-    [ ![](indepth-images/ref13.png "設定參考識別碼")](indepth-images/ref13.png)
+    [![](indepth-images/ref13.png "設定參考識別碼")](indepth-images/ref13.png#lightbox)
 6. 控制項按一下 UI 上的小工具 （例如按鈕） 現有的場景，並建立以新 Segue**分鏡腳本參考**您剛建立。 從快顯功能表選取**顯示**完成 Segue: 
 
-    [ ![](indepth-images/ref06.png "選取 Segue 類型")](indepth-images/ref06.png) 
+    [![](indepth-images/ref06.png "選取 Segue 類型")](indepth-images/ref06.png#lightbox) 
 8. 將您的變更儲存到分鏡腳本。
 9. 返回 Visual Studio for Mac 同步您的變更。
 

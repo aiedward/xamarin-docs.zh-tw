@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8787913c04b11a84828cd98960407f0cc27aa391
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 86a7690d4cf7291a4e44507a6250e3469c8f7ed2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-split-view-controllers"></a>使用分割檢視控制器
 
@@ -21,7 +21,7 @@ _本文涵蓋設計和 Xamarin.tvOS 應用程式內使用分割檢視的控制�
 
 分割檢視控制器呈現，並管理 Master 和詳細資料檢視控制器的並行，同時在螢幕上。 分割檢視的控制器是用來呈現主版檢視 （左邊的較小區段） 中的持續性、 可設定焦點的內容和相關的詳細資料檢視 （在右側較大的區段） 的詳細資料。
 
-[ ![](split-views-images/intro01.png "分割檢視範例")](split-views-images/intro01.png)
+[![](split-views-images/intro01.png "分割檢視範例")](split-views-images/intro01.png#lightbox)
 
 <a name="About-Split-View-Controllers" />
 
@@ -31,7 +31,7 @@ _本文涵蓋設計和 Xamarin.tvOS 應用程式內使用分割檢視的控制�
 
 此外，將主版檢視控制器已隱藏或顯示視需要而定： 
 
-[ ![](split-views-images/intro02.png "隱藏主版檢視控制器")](split-views-images/intro02.png)
+[![](split-views-images/intro02.png "隱藏主版檢視控制器")](split-views-images/intro02.png#lightbox)
 
 分割檢視控制器通常會使用主版檢視中的分類和篩選的結果的詳細資料檢視提供一份可篩選的內容。 這通常會顯示成資料表檢視的左側，而[集合檢視](~/ios/tvos/user-interface/collection-views.md)右邊。
 
@@ -54,18 +54,18 @@ Xamarin.tvOS 應用程式中使用分割檢視控制站的最簡單方式是將�
 1. 在**方案板**，連按兩下`Main.storyboard`檔案，並開啟它進行編輯。
 1. 拖曳**分割檢視控制器**從**工具箱**並將它放在檢視上： 
 
-    [ ![](split-views-images/activity01.png "分割檢視控制器")](split-views-images/activity01.png)
+    [![](split-views-images/activity01.png "分割檢視控制器")](split-views-images/activity01.png#lightbox)
 1. 根據預設，iOS 設計工具會安裝瀏覽控制器和檢視控制器在主版檢視。 如果這不符合您的應用程式需求，只刪除它們。
 1. 如果您沒有移除預設的主要檢視中，將新的檢視控制器拖曳至設計介面： 
 
-    [ ![](split-views-images/activity02.png "檢視控制器")](split-views-images/activity02.png)
+    [![](split-views-images/activity02.png "檢視控制器")](split-views-images/activity02.png#lightbox)
 1. 控制項按一下並拖曳至新的主要檢視控制器的分割檢視控制器。 
 1. 選取**Master**從**快顯功能表**: 
 
-    [ ![](split-views-images/activity03.png "從快顯功能表中選取主機")](split-views-images/activity03.png)
+    [![](split-views-images/activity03.png "從快顯功能表中選取主機")](split-views-images/activity03.png#lightbox)
 1. 設計您的主要和詳細資料檢視的內容： 
 
-    [ ![](split-views-images/activity04.png "版面配置範例")](split-views-images/activity04.png)
+    [![](split-views-images/activity04.png "版面配置範例")](split-views-images/activity04.png#lightbox)
 1. 指派**名稱**中**Widget 索引標籤**的**屬性板**使用 C# 程式碼將 UI 控制項。
 1. 儲存變更並返回 Visual Studio for mac。
 
@@ -74,18 +74,18 @@ Xamarin.tvOS 應用程式中使用分割檢視控制站的最簡單方式是將�
 1. 在**方案總管 中**，連按兩下`Main.storyboard`檔案，並開啟它進行編輯。
 1. 拖曳**分割檢視控制器**從**工具箱**並將它放在檢視上： 
 
-    [ ![](split-views-images/activity01-vs.png "分割檢視控制器")](split-views-images/activity01-vs.png)
+    [![](split-views-images/activity01-vs.png "分割檢視控制器")](split-views-images/activity01-vs.png#lightbox)
 1. 根據預設，iOS 設計工具會將瀏覽控制器和檢視控制器中主版檢視。 如果這不符合您的應用程式需求，只刪除它們。
 1. 如果您沒有移除預設的主要檢視中，將新的檢視控制器拖曳至設計介面： 
 
-    [ ![](split-views-images/activity02-vs.png "檢視控制器")](split-views-images/activity02-vs.png)
+    [![](split-views-images/activity02-vs.png "檢視控制器")](split-views-images/activity02-vs.png#lightbox)
 1. 控制項按一下並拖曳至新的主要檢視控制器的分割檢視控制器。 
 1. 選取**Master**從**快顯功能表**: 
 
-    [ ![](split-views-images/activity03-vs.png "從快顯功能表中選取主機")](split-views-images/activity03-vs.png)
+    [![](split-views-images/activity03-vs.png "從快顯功能表中選取主機")](split-views-images/activity03-vs.png#lightbox)
 1. 設計您的主要和詳細資料檢視的內容： 
 
-    [ ![](split-views-images/activity04.png "內容配置")](split-views-images/activity04.png)
+    [![](split-views-images/activity04.png "內容配置")](split-views-images/activity04.png#lightbox)
 1. 指派**名稱**中**Widget 索引標籤**的**屬性總管**使用 C# 程式碼將 UI 控制項。
 1. 儲存您的變更。
     

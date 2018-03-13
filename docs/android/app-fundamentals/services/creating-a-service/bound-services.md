@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 809ECE88-EF08-4E9A-B389-A2DC08C51A6E
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: topgenorth
+ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: a299969e6251bcea59ea2ec52db90d59cf0461ad
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 04307eab1bc8dc28fa69315809e254c920fb6d56
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Xamarin.Android 中繫結的服務
 
@@ -36,7 +36,7 @@ _繫結的服務是 Android 提供用戶端-伺服器介面 （例如 Android �
 
 本指南將說明如何延伸`Service`類別來實作繫結的服務。 它也會說明實作`IServiceConnection`和擴充`Binder`以允許用戶端與服務通訊。 範例應用程式隨附本指南中，其中包含呼叫的單一 Xamarin.Android 專案的方案 **[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)**  。 這是非常基本的應用程式示範如何實作服務，以及如何將活動連結到它。 繫結的服務有只有一個方法，非常簡單 API `GetFormattedTimestamp`，它會傳回已啟動服務時，會告知使用者字串和多久已執行。 應用程式也可讓使用者以手動方式解除繫結和繫結至服務。
 
-[![在 Android 手機上執行的應用程式的螢幕擷取畫面](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png)
+[![在 Android 手機上執行的應用程式的螢幕擷取畫面](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png#lightbox)
 
 ## <a name="implementing-and-consuming-a-bound-service"></a>實作及使用繫結的服務
 

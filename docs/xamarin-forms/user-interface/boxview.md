@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 78ccb117e621b89d85e701b2ea027115f8681dc9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4d50ea5c3db0f5a141f1b48cf0a948c10b63f7f0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="boxview"></a>BoxView
 
@@ -68,7 +68,7 @@ A`BoxView`可以限制一個維度中，並在其他未受限。 例如，如果
 
 以下是結果：
 
-[![基本 BoxView](boxview-images/basicboxview-small.png "基本 BoxView")](boxview-images/basicboxview-large.png "BasicBoxView")
+[![基本 BoxView](boxview-images/basicboxview-small.png "基本 BoxView")](boxview-images/basicboxview-large.png#lightbox "BasicBoxView")
 
 如果`VerticalOptions`和`HorizontalOptions`屬性會從`BoxView`標記，或設為`Fill`，然後在`BoxView`變成的頁面上，大小限制，並展開以填滿頁面。
 
@@ -113,7 +113,7 @@ A`BoxView`也可以是子系`AbsoluteLayout`。 在此情況下，位置和大�
 
 所有後面的標記都是子系`StackLayout`。 這個標記包含數種類型的裝飾`BoxView`搭配使用的項目`Label`項目：
 
-[![文字裝飾](boxview-images/textdecoration-small.png "文字裝飾")](boxview-images/textdecoration-large.png "文字裝飾")
+[![文字裝飾](boxview-images/textdecoration-small.png "文字裝飾")](boxview-images/textdecoration-large.png#lightbox "文字裝飾")
 
 在頁面頂端的風格的標頭達成與`AbsoluteLayout`，其子系有四個`BoxView`項目和`Label`，則所有的可指派的特定位置和大小：
 
@@ -168,7 +168,7 @@ A`BoxView`也可以是子系`AbsoluteLayout`。 在此情況下，位置和大�
 
 `BoxView`是方便顯示色彩。 此程式會使用`ListView`列出所有的公用靜態唯讀欄位 Xamarin.Forms`Color`結構：
 
-[![ListView 色彩](boxview-images/listviewcolors-small.png "ListView 色彩")](boxview-images/listviewcolors-large.png "ListView 色彩")
+[![ListView 色彩](boxview-images/listviewcolors-small.png "ListView 色彩")](boxview-images/listviewcolors-large.png#lightbox "ListView 色彩")
 
 [ **ListViewColors** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ListViewColors/)程式包含類別，名為`NamedColor`。 靜態建構函式會使用反映來存取所有的欄位`Color`結構，並建立`NamedColor`針對每個物件。 這些儲存在靜態`All`屬性：
 
@@ -350,7 +350,7 @@ class LifeCell : BoxView
 
 **GameOfLife**程式也包含`LifeGrid`類別，將封裝很多，遊戲邏輯和`MainPage`處理程式的視覺效果的類別。 這些包括描述遊戲的規則覆疊。 以下是程式中顯示幾個數百動作`LifeCell`頁面上的物件：
 
-[![遊戲的使用壽命到期](boxview-images/gameoflife-small.png "遊戲的使用壽命到期")](boxview-images/gameoflife-large.png "生命週期的遊戲")
+[![遊戲的使用壽命到期](boxview-images/gameoflife-small.png "遊戲的使用壽命到期")](boxview-images/gameoflife-large.png#lightbox "生命週期的遊戲")
 
 <a name="digitalclock" />
 
@@ -358,7 +358,7 @@ class LifeCell : BoxView
 
 [ **DotMatrixClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock/)程式建立 210`BoxView`模擬的舊式的 5-7 點矩陣顯示點的項目。 您可以讀取的時間，以直向或橫向模式，但是它是大橫印：
 
-[![Dot-Matrix Clock](boxview-images/dotmatrixclock-small.png "Dot-Matrix Clock")](boxview-images/dotmatrixclock-large.png "Dot-Matrix Clock")
+[![Dot-Matrix Clock](boxview-images/dotmatrixclock-small.png "Dot-Matrix Clock")](boxview-images/dotmatrixclock-large.png#lightbox "Dot-Matrix Clock")
 
 XAML 檔案稍微大於未執行個體化`AbsoluteLayout`用於時鐘：
 
@@ -594,7 +594,7 @@ public partial class MainPage : ContentPage
 
 點陣時鐘可能看似明顯應用程式的`BoxView`，但`BoxView`項目也都能實現類比時鐘：
 
-[![BoxView 時鐘](boxview-images/boxviewclock-small.png "BoxView 時鐘")](boxview-images/boxviewclock-large.png "BoxView 時鐘")
+[![BoxView 時鐘](boxview-images/boxviewclock-small.png "BoxView 時鐘")](boxview-images/boxviewclock-large.png#lightbox "BoxView 時鐘")
 
 中的所有視覺效果[ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/)程式是子系`AbsoluteLayout`。 這些項目調整大小使用`LayoutBounds`附加屬性，並使用`Rotation`屬性。 
 

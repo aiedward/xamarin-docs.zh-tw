@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: d2298cf3edcadcc8a4d781e3e121852886fbf1d2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 05443bb341b2355c9e7a72f46b70214fb169e598
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="garbage-collection"></a>記憶體回收
 
@@ -21,7 +21,7 @@ Xamarin.Android 使用單聲道的[層代簡單式記憶體回收行程](http://
 -   主要 （收集 Gen1 和大型物件空間堆積） 的集合。 
 
 > [!NOTE]
-> **注意：**沒有明確的集合，透過[GC。Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/)集合*視*、 根據堆積配置。 *這不是參考計數系統*; 物件*將不會收集因為沒有未完成參考*，或當範圍已結束。 次要的堆積的新配置的記憶體不足時，將會執行 GC。 如果有任何配置，不會執行它。
+> 如果沒有明確的集合，透過[GC。Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/)集合*視*、 根據堆積配置。 *這不是參考計數系統*; 物件*將不會收集因為沒有未完成參考*，或當範圍已結束。 次要的堆積的新配置的記憶體不足時，將會執行 GC。 如果有任何配置，不會執行它。
 
 
 次要集合廉價頻繁，，用來收集最近配置並無作用物件。 次要集合每幾 MB 的配置的物件之後執行。 次要的集合可能會以手動方式執行藉由呼叫[GC。收集 (0)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32/) 
@@ -29,7 +29,6 @@ Xamarin.Android 使用單聲道的[層代簡單式記憶體回收行程](http://
 主要集合昂貴且較不頻繁，，用來回收無作用的所有物件。 一旦目前的堆積大小 （在之前調整大小的堆積） 耗盡記憶體，則會執行主要的集合。 主要的集合可能會以手動方式執行藉由呼叫[GC。收集 （）](https://developer.xamarin.com/api/member/System.GC.Collect/)或藉由呼叫[GC。收集 (int)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32)與引數[GC。MaxGeneration](https://developer.xamarin.com/api/property/System.GC.MaxGeneration/)。 
 
 
-<a name="Cross-VM_Object_Collections" />
 
 ## <a name="cross-vm-object-collections"></a>跨 VM 物件的集合
 
@@ -67,7 +66,6 @@ Android 的執行階段集合運作正常，但要注意： JNI 全域的參考�
 
 最終結果，這是會即時對等物件的執行個體，只要它正由所有的 managed 程式碼 (例如儲存在`static`變數) 或 Java 程式碼所參考。 此外，原生的對等的存留期會擴充到什麼一樣否則 live、 原生的對等可回收之前無法用原生的對等和受管理的對等電腦都是可收集。
 
-<a name="Object_Cycles" />
 
 ## <a name="object-cycles"></a>物件循環
 
@@ -77,7 +75,6 @@ Android 的執行階段集合運作正常，但要注意： JNI 全域的參考�
 
 若要縮短物件存留期， [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/)應叫用。 這將會手動"斷絕"兩個 Vm 藉由釋放全域的參考，如此可讓要收集更快的物件之間的物件上的連線。 
 
-<a name="Automatic_Collections" />
 
 ## <a name="automatic-collections"></a>自動集合
 
@@ -135,7 +132,6 @@ MONO_GC_PARAMS=bridge-implementation=tarjan
 有多個方式來幫助減少記憶體使用與收集時間的 GC。
 
 
-<a name="Disposing_of_Peer_instances" />
 
 ### <a name="disposing-of-peer-instances"></a>處置的對等執行個體
 
@@ -148,7 +144,7 @@ GC 有不完整的處理程序，可能無法執行時記憶體不足因為 GC �
 
 
 > [!NOTE]
-> **注意：**必須是*極*處置時請小心`Java.Lang.Object`子類別的執行個體。
+> 您必須是*極*處置時請小心`Java.Lang.Object`子類別的執行個體。
 
 記憶體損毀的可能性降到最低，觀察呼叫時的下列指導方針`Dispose()`。
 
@@ -243,7 +239,6 @@ class MyClass : Java.Lang.Object, ISomeInterface
 }
 ```
 
-<a name="Reduce_Referenced_Instances" />
 
 ### <a name="reduce-referenced-instances"></a>減少受參考的執行個體
 
@@ -316,7 +311,6 @@ class BetterActivity : Activity {
 }
 ```
 
-<a name="Minor_Collections" />
 
 ## <a name="minor-collections"></a>次要的集合
 
@@ -329,7 +323,6 @@ class BetterActivity : Activity {
 -  此群組的網路要求，以重新整理/同步處理應用程式資料。
 
 
-<a name="Major_Collections" />
 
 ## <a name="major-collections"></a>主要的集合
 
@@ -344,14 +337,12 @@ class BetterActivity : Activity {
 -   透過覆寫[Android.App.Activity.OnLowMemory()](https://developer.xamarin.com/api/member/Android.App.Activity.OnLowMemory/)方法。 
 
 
-<a name="Diagnostics" />
 
 ## <a name="diagnostics"></a>診斷
 
 若要追蹤時建立和終結全域的參考，您可以設定[debug.mono.log](~/android/troubleshooting/index.md)系統屬性，以包含[ *gref* ](~/android/troubleshooting/index.md)及/或[ *gc*](~/android/troubleshooting/index.md)。 
 
 
-<a name="Configuration" />
 
 ## <a name="configuration"></a>組態
 

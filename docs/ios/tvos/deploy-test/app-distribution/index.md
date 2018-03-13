@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c0cfe437b03a1f0dea05a506b1dfce62a4658bb4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e96e98f90c7f4c849a9f679b2de819ccaabfec0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-distribution-overview"></a>應用程式散發概觀
 
@@ -22,7 +22,7 @@ _這份文件可供 Xamarin.tvOS 應用程式的通訊技術的概觀，並做�
 一旦開發 Xamarin.tvOS 應用程式後，軟體開發生命週期的下一個步驟是散發給使用者，應用程式中的下圖反白顯示的區段所示：
 
 
-[![軟體開發生命週期概觀](images/publishingdiagram.png)](images/publishingdiagram.png)
+[![軟體開發生命週期概觀](images/publishingdiagram.png)](images/publishingdiagram.png#lightbox)
 
 
 Apple 提供下列方式來發佈 tvOS 應用程式支援的 Xamarin.tvOS:
@@ -70,7 +70,7 @@ Apple 提供下列方式來發佈 tvOS 應用程式支援的 Xamarin.tvOS:
 
 如需有關如何取得設定及內部發佈您的應用程式的詳細資訊，請參閱[內部發佈指南](~/ios/deploy-test/app-distribution/in-house-distribution.md)。 這份文件為 iOS 專屬，但是相同的技術會使用 tvOS 應用程式。
 
-<a name="Ad-Hoc-Distribution" />
+<a name="Ad_Hoc_Distribution"/>
 
 ## <a name="ad-hoc-distribution"></a>臨機操作散發
 

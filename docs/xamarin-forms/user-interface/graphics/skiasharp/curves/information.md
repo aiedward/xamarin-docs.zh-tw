@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 992e6583d64f078c0cd693765a1512c3e41a620a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c7edf0c8e563dad25693d184d3a44a3e66466126
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="path-information-and-enumeration"></a>路徑資訊和列舉
 
@@ -110,7 +110,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `Length`屬性新建的`SKPathMeasure`物件取得路徑的長度。 這除以`baseTextWidth`值 （此為根據的文字大小 10 文字的寬度），並接著會乘以 10 的基底的文字大小。 結果會是新的文字大小來顯示文字沿該路徑：
 
-[![](information-images/pathlength-small.png "路徑長度頁面的三個螢幕擷取畫面")](information-images/pathlength-large.png "的路徑長度的頁面上的三個螢幕擷取畫面")
+[![](information-images/pathlength-small.png "路徑長度頁面的三個螢幕擷取畫面")](information-images/pathlength-large.png#lightbox "的路徑長度的頁面上的三個螢幕擷取畫面")
 
 貝茲曲線越長或短，您可以看到文字大小變更。
 
@@ -136,7 +136,7 @@ Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlag
 
 **獨半管道**頁面上似乎寫來回沿著三次方貝茲曲線獨桿狀圖形以動畫方式顯示：
 
-[![](information-images/unicyclehalfpipe-small.png "獨半管道頁面的三個螢幕擷取畫面")](information-images/unicyclehalfpipe-large.png "獨半管道頁面的三個螢幕擷取畫面")
+[![](information-images/unicyclehalfpipe-small.png "獨半管道頁面的三個螢幕擷取畫面")](information-images/unicyclehalfpipe-large.png#lightbox "獨半管道頁面的三個螢幕擷取畫面")
 
 `SKPaint`用來繪製半管道和獨物件定義中的欄位為[ `UnicycleHalfPipePage` ]()類別。 也定義是`SKPath`獨物件：
 
@@ -425,7 +425,7 @@ static class PathExtensions
 
 **GlobularText**範例會使用此擴充方法看似繞半球 3D 作用中：
 
-[![](information-images/globulartext-small.png "三個螢幕擷取畫面的 Globular 文字頁面")](information-images/globulartext-large.png "Globular 文字頁面的三個螢幕擷取畫面")
+[![](information-images/globulartext-small.png "三個螢幕擷取畫面的 Globular 文字頁面")](information-images/globulartext-large.png#lightbox "Globular 文字頁面的三個螢幕擷取畫面")
 
 [ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs)類別建構函式會執行這項轉換。 它會建立`SKPaint`物件的文字，並接著取得`SKPath`物件從`GetTextPath`方法。 這是傳遞至的路徑`CloneWithTransform`擴充方法，以及轉換函式： 
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 372ea9a20e9f67c41c74fb01afb8110ee741a709
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5cf194dce9bf4d0af23ba663ab00cf94a8a1766c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation (WCF) Web 服務
 
@@ -76,7 +76,7 @@ WCF 服務提供下列作業：
 如需使用應用程式中的資料模型的詳細資訊，請參閱[將資料模型化](~/xamarin-forms/data-cloud/walkthrough.md)。
 
 > [!NOTE]
-> **請注意**： 範例應用程式使用 Xamarin 裝載的 WCF 服務，提供唯讀存取 web 服務。 因此，建立、 更新和刪除資料的作業不會改變應用程式中使用的資料。 不過，可裝載的 ASMX 服務版本，可以在**TodoWCFService**隨附的範例應用程式中的資料夾。 這一版可裝載 WCF 服務允許完整的建立、 更新、 讀取和刪除資料的存取權。
+> 範例應用程式使用 Xamarin 裝載的 WCF 服務，提供唯讀存取 web 服務。 因此，建立、 更新和刪除資料的作業不會改變應用程式中使用的資料。 不過，可裝載的 ASMX 服務版本，可以在**TodoWCFService**隨附的範例應用程式中的資料夾。 這一版可裝載 WCF 服務允許完整的建立、 更新、 讀取和刪除資料的存取權。
 
 A *proxy*取用 WCF 服務，允許應用程式連接到服務，必須產生。 Proxy 的建構方式取用的服務中繼資料定義的方法和相關聯的服務組態。 產生 web 服務的 Web 服務描述語言 (WSDL) 文件的形式公開此中繼資料。 在 Visual Studio 2017 使用 Microsoft WCF Web 服務參考提供者，將 web 服務的服務參考新增至.NET 標準程式庫，您可以建立 proxy。 建立使用 Microsoft WCF Web 服務參考提供者，在 Visual Studio 2017 proxy 的替代方式是使用 ServiceModel Metadata Utility Tool (svcutil.exe)。 如需詳細資訊，請參閱[ServiceModel Metadata Utility Tool (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: cbabaf36ba8bfaa74ec17b0af0cd97e29f72d270
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 996723db83a1f972cce26090d1253f97b6c818d3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="contacts-and-contactsui"></a>連絡人和 ContactsUI
 
@@ -27,7 +27,7 @@ IOS 9 的簡介，與 Apple 已釋放這兩個新的架構，`Contacts`和`Conta
 
 - [**ContactsUI** ](#contactsui) -提供 Xamarin.iOS UI 項目，若要顯示，編輯、 選取和 iOS 裝置上建立的連絡人。
 
-[ ![](contacts-images/add01.png "IOS 裝置上縮圖工作表範例")](contacts-images/add01.png)
+[![](contacts-images/add01.png "IOS 裝置上縮圖工作表範例")](contacts-images/add01.png#lightbox)
 
 > [!IMPORTANT]
 > **注意：**現有`AddressBook`和`AddressBookUI`架構使用 iOS 8 （且之前） iOS 9 中已被取代，並應該取代成新`Contacts`和`ContactsUI`儘速的任何現有的 Xamarin.iOS 架構應用程式。 新的應用程式應撰寫針對新的架構。
@@ -43,11 +43,13 @@ IOS 9 的簡介，與 Apple 已釋放這兩個新的架構，`Contacts`和`Conta
 
 連絡人架構提供 Xamarin.iOS 存取使用者的連絡資訊。 因為大部分的應用程式只需要唯讀存取權，此架構已經過最佳化的執行緒安全的唯讀存取。
 
+<a name="Contact_Objects" />
+
 ### <a name="contact-objects"></a>連絡人物件
 
 `CNContact`類別提供執行緒安全的唯讀存取連絡人的內容，例如名稱、 地址或電話號碼。 `CNContact` 之類的函式`NSDictionary`且包含多個唯讀集合的屬性 （例如地址或電話號碼）：
 
-[ ![](contacts-images/contactobjects.png "連絡人物件概觀")](contacts-images/contactobjects.png)
+[![](contacts-images/contactobjects.png "連絡人物件概觀")](contacts-images/contactobjects.png#lightbox)
 
 可以有多個值 （例如電子郵件地址或電話號碼） 的所有屬性，它們會表示為陣列`NSLabeledValue`物件。 `NSLabeledValue` 是唯讀組標籤所組成的執行緒安全的 tuple，值標籤用來定義使用者 （例如家用或工作電子郵件） 的值。 連絡人 framework 提供的預先定義的標籤 (透過`CNLabelKey`和`CNLabelPhoneNumberKey`靜態類別)，您可以使用您的應用程式中，或您已選擇定義自訂標籤，針對您的需求。
 
@@ -111,7 +113,7 @@ else
 
 如果 iOS 9 裝置上執行此程式碼時，新的連絡人會加入至使用者的集合。 例如: 
 
-[ ![](contacts-images/add01.png "新的連絡人新增至使用者的集合")](contacts-images/add01.png)
+[![](contacts-images/add01.png "新的連絡人新增至使用者的集合")](contacts-images/add01.png#lightbox)
 
 ### <a name="contact-formatting-and-localization"></a>連絡人的格式化和當地語系化
 
@@ -194,7 +196,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 
 使用者可能會有不同 （例如 iCloud，Facebook 或 Google 郵件) 及其連絡資料庫中的單一人員連絡資訊的來源。 在 iOS 和 OS X 應用程式中，此連絡人的資訊自動會連結在一起並顯示以單一使用者_統一連絡_:
 
-[ ![](contacts-images/unified01.png "統一的連絡人概觀")](contacts-images/unified01.png)
+[![](contacts-images/unified01.png "統一的連絡人概觀")](contacts-images/unified01.png#lightbox)
 
 此整合連絡是的暫存記憶體中檢視會提供它自己唯一的識別項 （這應該用來重新擷取連絡人，視需要） 的連結連絡資訊。 根據預設，連絡人 framework 將會傳回統一連絡盡可能。
 
@@ -259,11 +261,11 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 
 使用者的連絡人可以存在，或在本機使用者的裝置上為從一或多個伺服器帳戶 （例如 Facebook 或 Google） 同步處理到裝置的連絡人。 連絡人的每個集區都有它自己_容器_和指定的連絡人只能存在一個容器中。
 
-[ ![](contacts-images/containers01.png "容器和群組概觀")](contacts-images/containers01.png)
+[![](contacts-images/containers01.png "容器和群組概觀")](contacts-images/containers01.png#lightbox)
 
 某些容器允許的排列到一或多個連絡人_群組_或_子群組_。 這個行為會視指定容器的備份存放區。 例如，icloud 的功能有只有一個容器，但可以有多個群組 （但有任何子群組）。 相反地，Microsoft Exchange 不支援群組，但可以有多個容器 （一個用於每個 Exchange 資料夾）。
 
-[ ![](contacts-images/containers02.png "在中容器和群組重疊")](contacts-images/containers02.png)
+[![](contacts-images/containers02.png "在中容器和群組重疊")](contacts-images/containers02.png#lightbox)
 
 <a name="contactsui" />
 

@@ -7,21 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: b471742ae9fb365d75e8dd3ca0f93f5e55208f19
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 343694163c79ab4d7e8b78875282e7077db979e5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="adding-a-second-toolbar"></a>新增第二個工具列
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽 
 
 `Toolbar`可以執行多個取代動作列&ndash;它可以活動中使用多次，它可以是自訂螢幕上的任何位置的放置，它可以設定成跨越只有部分螢幕的寬度。 以下範例說明如何建立第二個`Toolbar`並將它放在畫面底部。 這`Toolbar`實作**複製**，**剪下**，和**貼上**功能表項目。 
 
-<a name="define_second" />
 
 ## <a name="define-the-second-toolbar"></a>定義第二個工具列 
 
@@ -78,10 +76,9 @@ android:background="?android:attr/colorAccent
 
 這可讓底部工具列深色琥珀色。 建置和執行應用程式會顯示空白的第二個工具列，在畫面底部： 
 
-[![在畫面底部的黃色第二個工具列的應用程式的螢幕擷取畫面](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png)
+[![在畫面底部的黃色第二個工具列的應用程式的螢幕擷取畫面](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png#lightbox)
 
 
-<a name="second_menus" />
  
 ## <a name="add-edit-menu-items"></a>加入編輯功能表項目 
 
@@ -100,7 +97,6 @@ android:background="?android:attr/colorAccent
 下列章節將說明此程序的詳細資料：**剪下**，**複製**，和**貼上**功能表項目加入至下方`Toolbar`。 
 
 
-<a name="second_resource" />
 
 ### <a name="define-the-edit-menu-resource"></a>定義編輯功能表資源
 
@@ -130,7 +126,6 @@ android:background="?android:attr/colorAccent
 這段 XML 會建立**剪下**，**複製**，和**貼上**功能表項目 (使用圖示新增至`mipmap-`資料夾中的[取代動作列](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md)).
 
 
-<a name="inflate_menus" />
 
 ### <a name="inflate-the-menus"></a>擴大功能表
 
@@ -149,18 +144,17 @@ editToolbar.MenuItemClick += (sender, e) => {
 
 建置和執行應用程式。 當應用程式執行時，文字和上述新增的圖示將會出現如下所示： 
 
-[![使用剪下、 複製和貼上的圖示的工具列下方的圖表](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png)
+[![使用剪下、 複製和貼上的圖示的工具列下方的圖表](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png#lightbox)
 
 點選**剪下**功能表圖示會顯示下列快顯通知： 
 
-[![螢幕擷取畫面的快顯通知，指出已點選剪下 功能表圖示](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png)
+[![螢幕擷取畫面的快顯通知，指出已點選剪下 功能表圖示](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png#lightbox)
 
 點選 [任一] 工具列上的功能表項目會顯示產生的快顯通知： 
 
-[![螢幕擷取畫面的快顯通知的儲存，請複製和貼上所點選的功能表項目](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png)
+[![螢幕擷取畫面的快顯通知的儲存，請複製和貼上所點選的功能表項目](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png#lightbox)
 
 
-<a name="up_button" />
 
 ## <a name="the-up-button"></a>向上按鈕 
 
@@ -187,7 +181,7 @@ SupportActionBar.SetHomeButtonEnabled (true);
 
 當使用者瀏覽從`MainActivity`至`DetailActivity`、`DetailActivity`顯示**向上**螢幕擷取畫面所示的按鈕 （左邊指標箭號）：
 
-[![螢幕擷取畫面的向上按鈕向左箭號工具列中的範例](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png)
+[![螢幕擷取畫面的向上按鈕向左箭號工具列中的範例](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
 
 點選此**向上**按鈕會導致應用程式以返回`MainActivity`。 在具有多個階層層級的更複雜應用程式，點選此按鈕會傳回使用者的應用程式中的下一個最高等級，而不是上一個螢幕。 
 

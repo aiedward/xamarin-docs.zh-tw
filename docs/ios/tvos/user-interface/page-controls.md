@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d4da50dac901628b9baf10a07650d232a977a653
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f77eac8179f9e368e767bb4b586ccaa3f93e40a3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-page-control"></a>使用頁面控制項
 
@@ -20,7 +20,7 @@ _本文涵蓋設計和 Xamarin.tvOS 應用程式內使用網頁控制項。_
 
 有時候您可能需要顯示 Xamarin.tvOS 應用程式中的一系列的網頁或影像。 分頁控制項的設計可以清楚地顯示哪些使用者會在超出最大頁數的頁面。 分頁控制項顯示一連串的點，針對在深色、 oval 形狀背景。 目前的頁面會顯示填滿的點中，所有其他頁面會顯示為空心的點。 如果有太多而無法容納它的背景區域網頁控制項將會裁剪外部大部分的點。
 
-[ ![](page-controls-images/page01.png "範例頁面控制項")](page-controls-images/page01.png)
+[![](page-controls-images/page01.png "範例頁面控制項")](page-controls-images/page01.png#lightbox)
 
 提供意見反應給僅限的使用者而設計的非互動式項目中分頁控制項。 您必須加入其他控制項，以變更 （例如筆勢或按鈕） 的目前頁碼。
 
@@ -41,14 +41,14 @@ Xamarin.tvOS 應用程式中使用的頁面控制項的最簡單方式是將它�
 1. 在**方案板**，連按兩下`Main.storyboard`檔案，並開啟它進行編輯。
 1. 拖曳**網頁控制項**從**工具箱**並將它放在檢視上： 
 
-    [ ![](page-controls-images/page02.png "頁面控制項")](page-controls-images/page02.png)
+    [![](page-controls-images/page02.png "頁面控制項")](page-controls-images/page02.png#lightbox)
 1. 在**Widget 索引標籤**的**屬性板**，您可以調整控制項的數個屬性，例如其**本頁**和**頁數**: 
 
-    [ ![](page-controls-images/page03.png "[小工具] 索引標籤")](page-controls-images/page03.png)
+    [![](page-controls-images/page03.png "[小工具] 索引標籤")](page-controls-images/page03.png#lightbox)
 1. 接下來，加入要移向後和向前逐步執行的頁面集合的檢視控制項或手勢。
 1. 最後，指派**名稱**控制項，讓您可以在 C# 程式碼回應給他們。 例如:  
 
-    [ ![](page-controls-images/page04.png "控制項名稱")](page-controls-images/page04.png)
+    [![](page-controls-images/page04.png "控制項名稱")](page-controls-images/page04.png#lightbox)
 1. 儲存您的變更。
     
 
@@ -58,14 +58,14 @@ Xamarin.tvOS 應用程式中使用的頁面控制項的最簡單方式是將它�
 1. 在**方案總管 中**，連按兩下`Main.storyboard`檔案，並開啟它進行編輯。
 1. 拖曳**網頁控制項**從**工具箱**並將它放在檢視上： 
 
-    [ ![](page-controls-images/page02-vs.png "頁面控制項")](page-controls-images/page02-vs.png)
+    [![](page-controls-images/page02-vs.png "頁面控制項")](page-controls-images/page02-vs.png#lightbox)
 1. 在**Widget 索引標籤**的**屬性總管**，您可以調整控制項的數個屬性，例如其**本頁**和**頁數**: 
 
-    [ ![](page-controls-images/page03-vs.png "[小工具] 索引標籤")](page-controls-images/page03-vs.png)
+    [![](page-controls-images/page03-vs.png "[小工具] 索引標籤")](page-controls-images/page03-vs.png#lightbox)
 1. 接下來，加入要移向後和向前逐步執行的頁面集合的檢視控制項或手勢。
 1. 最後，指派**名稱**控制項，讓您可以在 C# 程式碼回應給他們。 例如:  
 
-    [ ![](page-controls-images/page04-vs.png "控制項名稱")](page-controls-images/page04-vs.png)
+    [![](page-controls-images/page04-vs.png "控制項名稱")](page-controls-images/page04-vs.png#lightbox)
 1. 儲存您的變更。
     
 

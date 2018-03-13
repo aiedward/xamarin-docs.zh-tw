@@ -3,14 +3,15 @@ title: "第 12 的摘要。 樣式"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 3EAE6BDC-8EFB-464B-A87B-1C35B8387BB3
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 168ad0bc2f59f0afd5b457dba38ae39cfa148c89
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9563bc811250038e8932067280a8e5292a379077
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-12-styles"></a>第 12 的摘要。 樣式
 
@@ -30,7 +31,7 @@ A`Style`要求其[ `TargetType` ](https://developer.xamarin.com/api/property/Xam
 
 [ **BasicStyle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/BasicStyle)程式示範基本語法，並示範如何參考`Style`與`StaticResource`標記延伸：
 
-[![基本樣式的三個螢幕擷取畫面](images/ch12fg01-small.png "基本樣式")](images/ch12fg01-large.png "基本樣式")
+[![基本樣式的三個螢幕擷取畫面](images/ch12fg01-small.png "基本樣式")](images/ch12fg01-large.png#lightbox "基本樣式")
 
 `Style`物件和中建立任何物件`Style`物件當做`Value`設定所參考的所有檢視表共用`Style`。 `Style`不能包含任何項目不能共用，例如`View`衍生項目。
 

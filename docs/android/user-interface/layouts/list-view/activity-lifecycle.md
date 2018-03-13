@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 009e8fa78e0e9405cf264054ad79dcdf91e6d7c5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b8ee113a321dbc84cf12a7ef4bb5084c5307115b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="listview-and-the-activity-lifecycle"></a>ListView 和活動的生命週期
 
@@ -24,7 +24,6 @@ ms.lasthandoff: 02/27/2018
 
 如果配接器使用的資源，例如記憶體或受管理的資料指標，請記住，釋放這些資源中扮演互補的方法，以其中它們被具現化 （例如 在中建立物件`OnStart`可以中處置`OnStop`)。
 
-<a name="Configuration_Changes" />
 
 ## <a name="configuration-changes"></a>設定變更
 

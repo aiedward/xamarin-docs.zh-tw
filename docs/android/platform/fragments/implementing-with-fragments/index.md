@@ -8,23 +8,22 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: ebb53398edba64e255f1a534556836df8734ba6f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2ed67eac51f6edcfda16caf73e4667c49124082c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-with-fragments"></a>實作以片段
 
 _Android 3.0 引進了片段。片段是獨立的模組元件，可針對在不同大小螢幕上執行的應用程式，協助處理撰寫此類應用程式時所面臨的複雜性。本文逐步解說如何使用片段來開發 Xamarin.Android 應用程式，以及如何預先 Android 3.0 版的裝置上支援片段。_
 
-<a name="Overview" />
 
 ## <a name="overview"></a>總覽
 
 本節中，我們將逐步解說如何建立應用程式將會顯示一份的所扮演的每個選取的播放引號。 我們的應用程式會利用片段，以便我們可以定義在一個地方，我們的 UI 元件，但使用不同的尺寸上。 例如，下列螢幕擷取畫面顯示電話以及 10"平板電腦上執行的應用程式：
 
-[![平板電腦和手機上執行的範例應用程式的螢幕擷取畫面](images/intro-screenshot-sml.png)](images/intro-screenshot.png)
+[![平板電腦和手機上執行的範例應用程式的螢幕擷取畫面](images/intro-screenshot-sml.png)](images/intro-screenshot.png#lightbox)
 
 本節將討論下列主題：
 
@@ -34,13 +33,11 @@ _Android 3.0 引進了片段。片段是獨立的模組元件，可針對在不�
 
 - **使用 Android 的支援封裝**&ndash;實作 Android 的支援套件，則一些微幅變更對應用程式，允許它在舊版的 Android 上執行的活動。
 
-<a name="Requirements" />
 
 ## <a name="requirements"></a>需求
 
 本逐步解說需要 Xamarin.Android 4.0 或更新版本。 它也會安裝 Android 支援封裝中，所需的片段文件中所述。
 
-<a name="Introduction" />
 
 ## <a name="introduction"></a>簡介
 

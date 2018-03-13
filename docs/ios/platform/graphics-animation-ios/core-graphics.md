@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: fe1796839524a271760a9beb82895fd6e93c7ad0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d53494e61d702b83a28534c644f33fb5327b5958
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="core-graphics"></a>核心圖形
 
@@ -40,6 +40,7 @@ iOS 包含[*核心圖形*](https://developer.apple.com/library/prerelease/ios/do
 -  減少應用程式配套中的靜態影像，可以減少應用程式的大小。
 -  圖形會變成更彈性地回應解析度變更裝置上。
 
+<a name="Drawing_in_a_UIView_Subclass"/>
 
 ## <a name="drawing-in-a-uiview-subclass"></a>UIView 子類別中的繪圖
 
@@ -182,6 +183,8 @@ g.SetLineDash (0, new nfloat[] { 10, 4 * (nfloat)Math.PI });
  ![](core-graphics-images/02-dashed-stroke.png "新增任何繪圖作業的結果之前這段程式碼中虛線的筆劃")
  
 請注意，當使用統一的 API Xamarin.iOS 中，陣列型別必須是`nfloat`，而且還需要明確轉換成 Math.PI。
+
+<a name="Drawing_Images_and_Text"/>
 
 ## <a name="drawing-images-and-text"></a>繪圖影像和文字
 

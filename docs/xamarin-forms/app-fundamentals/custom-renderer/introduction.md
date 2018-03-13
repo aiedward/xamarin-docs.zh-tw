@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: a9908429994f4575a9e41936d500bfd8906a843b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 837d75bd4ecde92d4c375c680a5f5e7ff231f825
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>自訂轉譯器簡介
 
@@ -52,7 +52,7 @@ public class MyEntry : Entry
 `local`命名空間前置詞可以是任何項目。 不過，`namespace`和`assembly`值必須符合自訂控制項的詳細資料。 一旦宣告命名空間，前置詞用來參考自訂控制項。
 
 > [!NOTE]
-> **請注意**： 定義`xmlns`PCLs 中共用專案比來得簡單。 PCL 已編譯的組件，所以可以輕鬆地判斷何種`assembly=CustomRenderer`值應該是。 當使用共用專案時，所有共用的資產 （包括 XAML） 都會編譯成每個參考的專案，這表示，如果 iOS、 Android 和 Windows Phone 專案具有自己*組件名稱*是不可能若要撰寫`xmlns`宣告因為此值必須為每個應用程式不同。 共用專案的 XAML 中的自訂控制項將需要使用相同的組件名稱來設定每個應用程式專案。
+> 定義`xmlns`PCLs 中共用專案比來得簡單。 PCL 已編譯的組件，所以可以輕鬆地判斷何種`assembly=CustomRenderer`值應該是。 當使用共用專案時，所有共用的資產 （包括 XAML） 都會編譯成每個參考的專案，這表示，如果 iOS、 Android 和 Windows Phone 專案具有自己*組件名稱*是不可能若要撰寫`xmlns`宣告因為此值必須為每個應用程式不同。 共用專案的 XAML 中的自訂控制項將需要使用相同的組件名稱來設定每個應用程式專案。
 
 `MyEntry`中的下列螢幕擷取畫面所示，每個平台上，以灰色背景，然後呈現自訂控制項：
 
@@ -69,7 +69,7 @@ public class MyEntry : Entry
 1. 新增`ExportRenderer`屬性來指定它將會用來呈現 Xamarin.Forms 控制項的自訂轉譯器類別。 此屬性用來向 Xamarin.Forms 中的自訂轉譯器。
 
 > [!NOTE]
-> **請注意**： 對於大部分的 Xamarin.Forms 項目，是選擇性的以提供每個平台專案中的自訂轉譯器。 如果未登錄的自訂轉譯器，將使用預設的產生器控制項的基底類別。 不過，自訂轉譯器所需每個平台專案中時呈現[檢視](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)或[ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)項目。
+> 大部分的 Xamarin.Forms 項目，則是選擇性的以提供每個平台專案中的自訂轉譯器。 如果未登錄的自訂轉譯器，將使用預設的產生器控制項的基底類別。 不過，自訂轉譯器所需每個平台專案中時呈現[檢視](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)或[ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)項目。
 
 在這一系列的主題將提供示範與說明此程序的不同 Xamarin.Forms 項目。
 

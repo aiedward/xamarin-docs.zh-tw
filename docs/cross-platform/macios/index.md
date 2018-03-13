@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: a5711b5ac8332ac518ba5b639f05de557229af6e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1491e6ec36a9ced9460e083769b2148386d1d518
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-and-mac"></a>iOS 和 Mac
 
@@ -56,7 +56,7 @@ Xamarin 可讓您帶入您的應用程式中的原生程式庫，以繫結。 �
 
 為了支援 32 和 64 位元會明確地從 C# 和 F # 的程式碼，我們引進新的資料類型。   資訊，請在這裡了解。
 
-##  <a name="building-32-and-64-bit-apps32-and-64md"></a>[建置 32 和 64 位元應用程式](32-and-64.md)
+##  <a name="building-32-and-64-bit-apps32-and-64indexmd"></a>[建置 32 和 64 位元應用程式](32-and-64/index.md)
 
 您需要知道支援 32 和 64 位元應用程式。
 

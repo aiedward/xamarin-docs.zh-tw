@@ -7,19 +7,15 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 695d02c5fa0477053cd95d73e1b738332d14f0f9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0fdeecc4465aa5709b452ef0b591ec4e5c262e3d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="labels"></a>標籤
 
-`UILabel`控制項用來顯示單一和多行，唯讀文字。 本文涵蓋下列主題：
-
-- [實作標籤](#Implementing_a_Label)
-- [截斷和換行](#Truncating_and_Wrapping)
-- [格式化文字和標籤](#Formatting_Text_and_Label)
+`UILabel`控制項用來顯示單一和多行，唯讀文字。 
 
 ## <a name="implementing-a-label"></a>實作標籤
 
@@ -52,6 +48,8 @@ UILabel label = new UILabel();
 ## <a name="truncating-and-wrapping"></a>截斷和換行
 
 在 iOS 中會中斷使用列的詳細資訊，參閱[截斷，並將文字換行](https://developer.xamarin.com/recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text/)配方。
+
+<a name="Formatting_Text_and_Label"/>
 
 ## <a name="formatting-text-and-label"></a>格式化文字和標籤
 

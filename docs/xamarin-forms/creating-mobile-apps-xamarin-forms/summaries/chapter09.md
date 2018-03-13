@@ -3,14 +3,15 @@ title: "第 9 章的摘要。 平台專屬的 API 呼叫"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 637096d3ebb7fb90321f7f459e0ca9e51572d935
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 84650c930445172d27520129123d493253851642
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-9-platform-specific-api-calls"></a>第 9 章的摘要。 平台專屬的 API 呼叫
 
@@ -20,7 +21,7 @@ ms.lasthandoff: 02/27/2018
 
 Xamarin.Forms 共用資產專案可以執行不同的程式碼，每個平台使用的 C# 前置處理器指示詞`#if`， `#elif`，和`endif`。 這示範於[ **PlatInfoSap1**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/PlatInfoSap1):
 
-[![變數的三個螢幕擷取畫面格式化段落](images/ch09fg01-small.png "裝置型號和作業系統")](images/ch09fg01-large.png "裝置型號和作業系統")
+[![變數的三個螢幕擷取畫面格式化段落](images/ch09fg01-small.png "裝置型號和作業系統")](images/ch09fg01-large.png#lightbox "裝置型號和作業系統")
 
 但是，產生的程式碼很雜亂，難以閱讀。
 

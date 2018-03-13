@@ -7,18 +7,17 @@ ms.assetid: CF12FE85-D03A-4E64-95D2-D7115061A500
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: b8f643c8158c5a3a849a3d8ee3dd8d0e7e30addf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 46eec10bbabec74719affabce1e8033a083680be
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cardview"></a>CardView
 
 _Cardview widget 會顯示文字和映像內容的檢視，類似於卡片的 UI 元件。本指南說明如何使用和自訂 CardView Xamarin.Android 應用程式中，同時維持與舊版的 Android 回溯相容性。_
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -59,7 +58,6 @@ _Cardview widget 會顯示文字和映像內容的檢視，類似於卡片的 UI
 若要了解如何設定 Android 5.0 應用程式專案，請參閱[設定 Android 5.0 專案](~/android/platform/lollipop.md)。
 如需安裝 NuGet 封裝的詳細資訊，請參閱[逐步解說： 在您的專案包括 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。
 
-<a name="basic" />
 
 ## <a name="introducing-cardview"></a>介紹 CardView
 
@@ -94,11 +92,10 @@ _Cardview widget 會顯示文字和映像內容的檢視，類似於卡片的 UI
 
 這個版面配置範例會建立預設`CardView`與單行文字，如下列螢幕擷取畫面所示：
 
-[![螢幕擷取畫面的白色背景和文字行 CardView](card-view-images/02-basic-cardview-sml.png)](card-view-images/02-basic-cardview.png)
+[![螢幕擷取畫面的白色背景和文字行 CardView](card-view-images/02-basic-cardview-sml.png)](card-view-images/02-basic-cardview.png#lightbox)
 
 在此範例中，應用程式樣式設定為淺材料佈景主題 (`Theme.Material.Light`) 以便`CardView`陰影和邊緣是看得更清楚。 如需主題 Android 5.0 應用程式的詳細資訊，請參閱[材料佈景主題](~/android/user-interface/material-theme.md)。 在下一步 區段中，我們將了解如何自訂`CardView`應用程式。
 
-<a name="customizing" />
 
 ## <a name="customizing-cardview"></a>自訂 CardView
 
@@ -159,30 +156,28 @@ _Cardview widget 會顯示文字和映像內容的檢視，類似於卡片的 UI
 
 這個版面配置範例使用在相片檢視應用程式中，顯示影像時`CardView`具有相片快照集的外觀，如下列螢幕擷取畫面所示：
 
-[![使用影像和影像下方的標題 CardView](card-view-images/03-photo-cardview-sml.png)](card-view-images/03-photo-cardview.png)
+[![使用影像和影像下方的標題 CardView](card-view-images/03-photo-cardview-sml.png)](card-view-images/03-photo-cardview.png#lightbox)
 
 這個螢幕擷取畫面取自[RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer)範例應用程式，會使用`RecyclerView`widget 來呈現捲動清單`CardView`映像，以檢視相片。 如需有關`RecyclerView`，請參閱[RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)指南。
 
 請注意，`CardView`可以在其內容區域中顯示一個以上的子檢視。 例如，在上述的相片，瀏覽應用程式範例，內容區域組成`ListView`包含`ImageView`和`TextView`。 雖然`CardView`執行個體通常會以垂直方式排列，您也可以排列它們水平 (請參閱[建立自訂檢視樣式](~/android/user-interface/material-theme.md#customview)的範例螢幕擷取畫面)。
 
-<a name="layout" />
 
 ### <a name="cardview-layout-options"></a>CardView 版面配置選項
 
 `CardView` 您可以自訂版面配置設定的一或多個會影響其邊框距離、 提高權限、 圓角半徑和背景色彩的屬性：
 
-[![CardView 屬性的圖表](card-view-images/04-attributes-sml.png)](card-view-images/04-attributes.png)
+[![CardView 屬性的圖表](card-view-images/04-attributes-sml.png)](card-view-images/04-attributes.png#lightbox)
 
 每個屬性也可動態變更藉由呼叫對應的`CardView`方法 (如需有關`CardView`方法，請參閱[CardView 類別參考](https://developer.android.com/reference/android/support/v7/widget/CardView.html))。
 請注意，這些屬性 （除了背景色彩） 會接受維度的值，也就是十進位數字後面的單位。 例如，`11.5dp`指定 11.5 密度無關的像素。
 
-<a name="padding" />
 
 #### <a name="padding"></a>與邊框距離
 `
 CardView` 提供五個填補屬性，將卡片中的內容。 您可以在您配置的 XML 中進行設定，或您可以在程式碼中呼叫的類似方法：
 
-[![Padding 屬性 CardView 的圖表](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png)
+[![Padding 屬性 CardView 的圖表](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png#lightbox)
 
 填補屬性說明，如下所示：
 
@@ -200,13 +195,12 @@ CardView` 提供五個填補屬性，將卡片中的內容。 您可以在您配
 例如，如果`contentPadding`相片檢視應用程式中充分增加`CardView`會裁剪影像和卡片上顯示的文字。
 
 
-<a name="elevation" />
 
 #### <a name="elevation"></a>提高權限
 
 `CardView` 提供兩個提高權限屬性來控制其權限提高，如此一來，其陰影的大小：
 
-[![CardView 提高權限屬性的圖表](card-view-images/06-elevation-sml.png)](card-view-images/06-elevation.png)
+[![CardView 提高權限屬性的圖表](card-view-images/06-elevation-sml.png)](card-view-images/06-elevation.png#lightbox)
 
 說明的提高權限屬性，如下所示：
 
@@ -217,13 +211,12 @@ CardView` 提供五個填補屬性，將卡片中的內容。 您可以在您配
 較大的值的`cardElevation`增加陰影的大小，以讓`CardView`似乎背景上更高的浮點數。 `cardElevation`屬性也會決定重疊檢視的繪製順序; 也就是說，`CardView`會繪製在另一個重疊檢視較高的權限提高設定和上述任何重疊的檢視設定較低權限提高。
 `cardMaxElevation`設定適用於當您的應用程式提升權限會動態變更&ndash;會防止您定義這項設定的上限延伸陰影。
 
-<a name="radius" />
 
 #### <a name="corner-radius-and-background-color"></a>圓角半徑和背景色彩
 
 `CardView` 提供屬性，您可以用來控制其圓角半徑和它的背景色彩。 這兩個屬性可讓您變更整體樣式`CardView`:
 
-[![CardView 角 radious 和背景色彩屬性的圖表](card-view-images/07-radius-bgcolor-sml.png)](card-view-images/07-radius-bgcolor.png)
+[![CardView 角 radious 和背景色彩屬性的圖表](card-view-images/07-radius-bgcolor-sml.png)](card-view-images/07-radius-bgcolor.png#lightbox)
 
 說明這些屬性，如下所示：
 
@@ -233,8 +226,6 @@ CardView` 提供五個填補屬性，將卡片中的內容。 您可以在您配
 
 在此圖中，`cardCornerRadius`設為更圓角 10dp 和`cardBackgroundColor`設`"#FFFFCC"`（淺黃色）。
 
-
-<a name="compatibility" />
 
 ## <a name="compatibility"></a>相容性
 
@@ -255,7 +246,6 @@ CardView` 提供五個填補屬性，將卡片中的內容。 您可以在您配
 
 如需有關如何維護與舊版的 Android 相容性的詳細資訊，請參閱[維護相容性](https://developer.android.com/training/material/compatibility.html)。
 
-<a name="summary" />
 
 ## <a name="summary"></a>總結
 

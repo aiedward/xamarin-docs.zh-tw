@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/02/2017
-ms.openlocfilehash: b7756c63901d3b4fbfea70587b3fdf8e5cf9df72
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 965d4987c154acc5a2f95d4ca622266ebdc2a1c2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="synchronizing-offline-data-with-azure-mobile-apps"></a>同步處理離線資料與 Azure 行動應用程式
 
@@ -133,7 +133,7 @@ public async Task SyncAsync()
 由執行提取`IMobileServiceSyncTable.PullAsync`單一資料表上的方法。 第一個參數`PullAsync`方法是使用僅在行動裝置的查詢名稱。 提供非 null 查詢名稱導致 Azure 行動用戶端 SDK 執行*增量同步處理*，其中每次提取作業會傳回結果，最新版`updatedAt`從結果的時間戳記會儲存在本機系統資料表。 後續的提取作業，然後只擷取記錄的時間戳記之後。 或者，*完整同步處理*可藉由傳遞`null`為查詢名稱時，這會導致在每個提取作業擷取的所有記錄。 下列任何同步處理作業時，收到的資料會插入至本機存放區。
 
 > [!NOTE]
-> **請注意**： 提取如果針對具有暫止的本機更新的資料表執行提取時，會先執行推入同步處理內容上。 這會將已排入佇列的變更和新的資料從 Azure 行動應用程式執行個體之間的衝突降到最低。
+> 如果針對具有暫止的本機更新的資料表執行提取時，提取將第一次同步處理內容上執行推入。 這會將已排入佇列的變更和新的資料從 Azure 行動應用程式執行個體之間的衝突降到最低。
 
 `SyncAsync`方法也會包含這兩個在本機存放區及 Azure 行動應用程式執行個體中變更同一筆記錄時，處理衝突的基本實作。 當衝突是在本機存放區和 Azure 行動應用程式執行個體中，已更新資料`SyncAsync`方法會更新儲存在 Azure 行動應用程式執行個體中的資料從本機存放區中的資料。 任何其他衝突發生時，`SyncAsync`方法會捨棄本機變更。 這個方法會處理此案例會從 Azure 行動應用程式執行個體中刪除的資料所在的本機變更。
 
@@ -150,7 +150,7 @@ await todoTable.PurgeAsync(todoTable.Where(item => item.Done));
 呼叫`PurgeAsync`也會觸發推入作業。 因此，會標示為完成本機的任何項目會從本機存放區移除之前傳送至 Azure 行動應用程式執行個體。 不過，如果有暫止與 Azure 行動應用程式執行個體的同步處理的作業，，將會擲回清除`InvalidOperationException`除非`force`參數設定為`true`。 替代的策略是檢查`IMobileServiceSyncContext.PendingOperations`屬性，它會傳回暫止的作業尚未推入到 Azure 行動應用程式執行個體，才執行清除的屬性為零的數目。
 
 > [!NOTE]
-> **請注意**： 叫用`PurgeAsync`與`force`參數設定為`true`將會遺失任何暫止的變更。
+> 叫用`PurgeAsync`與`force`參數設定為`true`將會遺失任何暫止的變更。
 
 ## <a name="initiating-synchronization"></a>初始同步處理
 

@@ -6,17 +6,13 @@ ms.assetid: E4EF7E0F-ED86-44C9-9F98-38ECF881C7E2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 165313fb0150c2d9832566d5bc32842722b0a039
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6ca5b4d70669909b952752f7d600fcac37e9f557
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="what-support-options-are-available-for-xamarin"></a>適用於 Xamarin 支援選項？
-
-## <a name="overview"></a>總覽
-- [支援選項摘要](#Summary_of_Support_Options)
-- [詳細的建議](#Detailed_Recommendations)
 
 ## <a name="summary-of-support-options"></a>支援選項摘要
 
@@ -46,6 +42,8 @@ ms.lasthandoff: 02/27/2018
 </table>
 
 Xamarin 支援小組可協助您監視每個選項。  我們鼓勵其仔細考量的問題和報表，以充分利用，並協助成長了 Xamarin 開發人員社群參與的所有使用者。  可能的缺失，務必送出 bug 報告，以確保問題由 Xamarin 工程團隊正式追蹤時。
+
+<a name="Visual_Studio_email_support_incidents_for_Xamarin_topics"/>
 
 ### <a name="visual-studio-email-support-incidents-for-xamarin-topics"></a>Visual Studio 電子郵件事件支援 Xamarin 主題
 
@@ -95,7 +93,7 @@ Xamarin 是[現在的 Visual Studio 訂閱黀](https://blog.xamarin.com/xamarin-
 
 如需已知的問題和可能的因應措施的社群討論，您可以在對應的預覽論壇中張貼問題：
 
--   [Xamarin 即時 Player](https://forums.xamarin.com/categories/live-player)
+-   [Xamarin Live Player](https://forums.xamarin.com/categories/live-player)
 -   SDK 繫結 （預覽） for Android、 iOS 和 macOS Sdk 的新版本，找出在對應的預覽版本公告[Xamarin.Android](http://forums.xamarin.com/categories/android)， [Xamarin.iOS](http://forums.xamarin.com/categories/ios)，或[Xamarin.Mac](http://forums.xamarin.com/categories/mac)論壇。
 -   為對應的發行通知，在瀏覽其他預覽功能，[發行前版本 （& s) beta 版](http://forums.xamarin.com/categories/xamarin-prerelease)論壇。  或如果沒有任何相符的宣告，則可以自由來引發您自己的執行緒在論壇中的問題。
 

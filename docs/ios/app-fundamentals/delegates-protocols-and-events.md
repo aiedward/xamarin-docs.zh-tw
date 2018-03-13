@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5df7c2bbc7be1089795c94b6f639bd4556b49366
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 69296992c503d536a4160f172022c7ce5578812f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="events-protocols-and-delegates"></a>事件、 通訊協定與委派
 
@@ -32,7 +32,7 @@ Xamarin.iOS 使用控制項來公開大部分的使用者互動的事件。
 
 為了說明通訊協定與委派，我們會建置一個簡單的對應應用程式，將註解加入至地圖，如下所示：
 
- [ ![](delegates-protocols-and-events-images/01-map.png "將註解加入至對應的簡單的對應應用程式的範例")](delegates-protocols-and-events-images/01-map.png) [ ![ ](delegates-protocols-and-events-images/04-annotation-with-callout.png "範例註解加入至地圖")](delegates-protocols-and-events-images/04-annotation-with-callout.png)
+ [![](delegates-protocols-and-events-images/01-map.png "將註解加入至對應的簡單的對應應用程式的範例")](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ](delegates-protocols-and-events-images/04-annotation-with-callout.png "範例註解加入至地圖")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 之前解決這個應用程式，讓我們開始吧藉由查看下 UIKit.NET 事件。
 
@@ -59,15 +59,15 @@ aButton.TouchUpInside += delegate {
 
 上述程式碼固定 UIViewContoller ViewDidLoad 方法中。 AButton 變數參考一個按鈕，您可以加入 iOS 設計工具中，或以程式碼。 下圖顯示此按鈕將它加入 iOS 設計工具中，取自範例本文章中：
 
- [ ![](delegates-protocols-and-events-images/02-interface-builder-outlet.png "在 iOS 設計工具中加入按鈕")](delegates-protocols-and-events-images/02-interface-builder-outlet.png)
+ [![](delegates-protocols-and-events-images/02-interface-builder-outlet.png "在 iOS 設計工具中加入按鈕")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
 
 Xamarin.iOS 也支援連接您的程式碼就會發生與控制項互動的目標動作樣式。 若要建立 Hello 按鈕目標動作，按兩下 iOS 設計工具中。 將顯示 UIViewController 的程式碼後置檔案，並將要求開發人員選取要插入的連線方法的位置：
 
- [ ![](delegates-protocols-and-events-images/03-interface-builder-action.png "UIViewControllers 程式碼後置檔案")](delegates-protocols-and-events-images/03-interface-builder-action.png)
+ [![](delegates-protocols-and-events-images/03-interface-builder-action.png "UIViewControllers 程式碼後置檔案")](delegates-protocols-and-events-images/03-interface-builder-action.png#lightbox)
 
 系統會選取位置之後，新的方法建立並有線向上至控制項。 在下列範例中，訊息會寫入至主控台按一下按鈕時：
 
- [ ![](delegates-protocols-and-events-images/05-interface-builder-action.png "訊息將寫入至主控台，按一下按鈕時")](delegates-protocols-and-events-images/05-interface-builder-action.png)
+ [![](delegates-protocols-and-events-images/05-interface-builder-action.png "訊息將寫入至主控台，按一下按鈕時")](delegates-protocols-and-events-images/05-interface-builder-action.png#lightbox)
 
 如需 iOS 目標動作模式的詳細資訊，請參閱目標動作的 「[核心適用於 iOS 的應用程式能力](http://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)「 Apple iOS 開發人員文件庫中。
 
@@ -170,7 +170,7 @@ Apple 會使用整個 iOS 的通訊協定來定義類別，以採用抽離從呼
 
 如此一來，`MKAnnotation`通訊協定用來提供附註解的相關資料。 會採用物件中的資料建置本身的註釋的實際檢視`MKAnnotation`通訊協定。 例如，當使用者點選註解 （如以下螢幕擷取畫面所示） 時所顯示的圖說文字的文字來自`Title`實作通訊協定的類別中的屬性：
 
- [ ![](delegates-protocols-and-events-images/04-annotation-with-callout.png "當使用者點選註解圖說文字的範例文字")](delegates-protocols-and-events-images/04-annotation-with-callout.png)
+ [![](delegates-protocols-and-events-images/04-annotation-with-callout.png "當使用者點選註解圖說文字的範例文字")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 下一節，深入了解通訊協定中, 所述 Xamarin.iOS 將通訊協定繫結到抽象類別。 如`MKAnnotation`通訊協定，名為繫結的 C# 類別`MKAnnotation`模仿通訊協定，和它的名稱為的子類別`NSObject`，CocoaTouch 根基底類別。 通訊協定需要 getter 和 setter 必須實作的座標。不過，標題和副標題是選擇性的。 因此，在`MKAnnotation`類別`Coordinate`屬性是*抽象*，便會實作要求和`Title`和`Subtitle`屬性會標示*虛擬*使其選擇性的如下所示：
 

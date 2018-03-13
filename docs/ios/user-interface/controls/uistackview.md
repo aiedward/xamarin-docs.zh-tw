@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 20246E87-2A49-438A-9BD7-756A1B50A617
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 4555906512ecc36e3387f1b2483753e7f50a51ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 82bcd29a201be01bc8123e313e5a76b82668cb85
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="stack-view"></a>堆疊檢視
 
@@ -25,11 +26,15 @@ _本文說明如何使用新 UIStackView 控制項 Xamarin.iOS 應用程式中�
 
 它會根據開發人員定義的屬性，例如軸、 發佈、 對齊和間距管理附加至堆疊檢視所有 subviews 的版面配置：
 
-[ ![](uistackview-images/stacked01.png "堆疊配置圖檢視")](uistackview-images/stacked01.png)
+[![](uistackview-images/stacked01.png "堆疊配置圖檢視")](uistackview-images/stacked01.png#lightbox)
 
 當使用`UIStackView`是 Xamarin.iOS 應用程式中，開發人員可以定義 subviews 分鏡腳本設計工具中，在 iOS 中或透過加入和移除 subviews C# 程式碼內。
 
 這份文件是由兩個部分所組成： 快速入門可協助您檢視您的第一個堆疊，請實作，然後一些有關其運作方式的詳細技術資訊。
+
+> [!VIDEO https://youtube.com/embed/p3po6507Ip8]
+
+**UIStackView、 藉由[Xamarin 大學](https://university.xamarin.com/)**
 
 ## <a name="uistackview-quickstart"></a>UIStackView 快速入門
 
@@ -39,11 +44,11 @@ _本文說明如何使用新 UIStackView 控制項 Xamarin.iOS 應用程式中�
 
 啟動新的 Xamarin.iOS 專案和編輯**Main.storyboard** Xcode 的介面產生器中的檔案。 首先，將單一**垂直堆疊檢視**上**檢視控制器**:
 
-[ ![](uistackview-images/quick01.png "拖曳檢視控制器上的單一垂直堆疊檢視")](uistackview-images/quick01.png)
+[![](uistackview-images/quick01.png "拖曳檢視控制器上的單一垂直堆疊檢視")](uistackview-images/quick01.png#lightbox)
 
 在**屬性偵測器**，設定下列選項：
 
-[ ![](uistackview-images/quick02.png "設定堆疊檢視選項")](uistackview-images/quick02.png)
+[![](uistackview-images/quick02.png "設定堆疊檢視選項")](uistackview-images/quick02.png#lightbox)
 
 其中：
 
@@ -61,17 +66,17 @@ _本文說明如何使用新 UIStackView 控制項 Xamarin.iOS 應用程式中�
 
 繼續配置應用程式的介面加入標籤、 ImageView、 兩個按鈕和水平堆疊檢視，讓它類似下列：
 
-[ ![](uistackview-images/quick03.png "堆疊檢視 UI 的版面配置")](uistackview-images/quick03.png)
+[![](uistackview-images/quick03.png "堆疊檢視 UI 的版面配置")](uistackview-images/quick03.png#lightbox)
 
 設定水平堆疊檢視下列選項：
 
-[ ![](uistackview-images/quick04.png "設定水平堆疊檢視選項")](uistackview-images/quick04.png)
+[![](uistackview-images/quick04.png "設定水平堆疊檢視選項")](uistackview-images/quick04.png#lightbox)
 
 因為我們不要加以延展分級代表每個 「 點 」 的圖示，當它加入水平堆疊檢視中，我們設定**對齊**至**Center**和**發佈**至**平均填滿**。
 
 最後，下列連接**插座**和**動作**:
 
-[ ![](uistackview-images/quick05.png "堆疊檢視插座和動作")](uistackview-images/quick05.png)
+[![](uistackview-images/quick05.png "堆疊檢視插座和動作")](uistackview-images/quick05.png#lightbox)
 
 ### <a name="populate-a-uistackview-from-code"></a>填入 UIStackView 從程式碼
 
@@ -168,7 +173,7 @@ icon.RemoveFromSuperview();
 
 當使用者點選**增加分級** 按鈕，另一個 「 星星 」 加入至畫面 （最多為 5）：
 
-[ ![](uistackview-images/intro01.png "執行範例應用程式")](uistackview-images/intro01.png)
+[![](uistackview-images/intro01.png "執行範例應用程式")](uistackview-images/intro01.png#lightbox)
 
 「 星星 」 將自動置中，平均分散到水平堆疊檢視中。 當使用者點選**減少分級**按鈕，「 星星 」 移除 （直到無會保留）。
 

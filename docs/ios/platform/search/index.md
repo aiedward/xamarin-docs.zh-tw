@@ -7,11 +7,11 @@ ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 2d802a96fcc8dad1d610b99a1cddffdc4398da38
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6ec8cb9b6fdb391afcb8f9baaa641da5aec38f6d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="new-search-apis"></a>新的搜尋應用程式開發介面
 
@@ -21,7 +21,7 @@ _本文涵蓋使用 iOS 9 所提供的新應用程式搜尋 Api 可讓使用者�
 
 此外，新的搜尋應用程式開發介面讓您更輕鬆地整合應用程式不在前一個搜尋實作體驗中的搜尋。 因為這個緣故，Apple 的宣告，通常需要花費幾小時的時間讓通用搜尋使用應用程式搜尋 iOS 9 應用程式的內容。
 
-[ ![](images/intro01.png "IOS 9 通用搜尋使用的搜尋應用程式的應用程式內容的範例")](images/intro01.png)
+[![](images/intro01.png "IOS 9 通用搜尋使用的搜尋應用程式的應用程式內容的範例")](images/intro01.png#lightbox)
 
 應用程式內搜尋是三個不同的應用程式開發介面所組成：
 

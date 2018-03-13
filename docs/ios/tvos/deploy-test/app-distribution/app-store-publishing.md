@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: a3c9c76ce173606d206166b2bcfb9760eb5634ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: abb8ee30828e5d9856b9fd72cca8adb669959818
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>發行至 Apple TV 應用程式市集
 
@@ -154,12 +154,12 @@ Xamarin.tvOS 應用程式正確設定，現在您已經準備好進行最終發�
     ![](app-store-publishing-images/buildxs01new.png "選取 [發行] 組態")
 2. 從 [建置] 功能表選取 [Archive for Publishing] (封存以供發行)：
 
-    [ ![](app-store-publishing-images/buildxs02new.png "選取 [封存以供發行]")](app-store-publishing-images/buildxs02new.png)
+    [![](app-store-publishing-images/buildxs02new.png "選取發行的封存")](app-store-publishing-images/buildxs02new.png#lightbox)
 3. 建立封存後，[封存] 檢視會隨即顯示：
 
-    [ ![](app-store-publishing-images/buildxs03new.png "封存檢視")](app-store-publishing-images/buildxs03new.png)
+    [![](app-store-publishing-images/buildxs03new.png "封存檢視")](app-store-publishing-images/buildxs03new.png#lightbox)
 
-#<a name="3-sign-and-distribute-your-app"></a>&#3; # 登入並發佈您的應用程式
+### <a name="sign-and-distribute-your-app"></a>簽署並散發應用程式
 
 每次建置應用程式進行封存，都會自動開啟 [封存] 檢視，顯示依解決方案分組的所有已封存專案。 根據預設，此檢視只會顯示目前開啟的解決方案。 若要查看所有具有封存的解決方案，請按一下 [Show all archives] (顯示所有封存) 選項。
 
@@ -169,19 +169,19 @@ Xamarin.tvOS 應用程式正確設定，現在您已經準備好進行最終發�
 
 1. 選取**簽署並散發...**，如下所示：
 
-    [ ![](app-store-publishing-images/buildxs04new.png "選取 theSign 與分佈...")](app-store-publishing-images/buildxs04new.png)
+    [![](app-store-publishing-images/buildxs04new.png "選取 theSign 與分佈...")](app-store-publishing-images/buildxs04new.png#lightbox)
 2. 如此將開啟發行精靈。 選取 **App Store** 散發管道以建立套件，然後開啟應用程式載入器：
 
-    [ ![](app-store-publishing-images/distribute01.png "選取的應用程式市集發佈頻道")](app-store-publishing-images/distribute01.png)
+    [![](app-store-publishing-images/distribute01.png "選取的應用程式市集發佈頻道")](app-store-publishing-images/distribute01.png#lightbox)
 3. 在佈建設定檔畫面上，選取您簽署識別和對應佈建設定檔，或使用其他身分識別重新簽署：
 
-    [ ![](app-store-publishing-images/distribute02.png "選取的簽署識別和對應佈建設定檔")](app-store-publishing-images/distribute02.png)
+    [![](app-store-publishing-images/distribute02.png "選取的簽署識別和對應佈建設定檔")](app-store-publishing-images/distribute02.png#lightbox)
 4. 驗證套件的詳細資料，然後按一下 [發佈]  以儲存您的 `.ipa` 套件：
 
-    [ ![](app-store-publishing-images/distribute03.png "請確認封裝的詳細資料")](app-store-publishing-images/distribute03.png)
+    [![](app-store-publishing-images/distribute03.png "請確認封裝的詳細資料")](app-store-publishing-images/distribute03.png#lightbox)
 5. 儲存 `.ipa` 後，即可準備透過應用程式載入器將應用程式上傳至 iTunes Connect：
 
-    [ ![](app-store-publishing-images/distribute04.png "上傳至 iTunes Connect 透過應用程式載入器")](app-store-publishing-images/distribute04.png)
+    [![](app-store-publishing-images/distribute04.png "上傳至 iTunes Connect 透過應用程式載入器")](app-store-publishing-images/distribute04.png#lightbox)
 
 建立與封存散發組建後，即可準備將您的應用程式提交至 iTunes Connect。
 
@@ -196,15 +196,15 @@ Xamarin.tvOS 應用程式正確設定，現在您已經準備好進行最終發�
 
 2. 選取 [Deliver Your App] (傳遞您的應用程式)，並按一下 [選擇] 按鈕：
 
-    [ ![](app-store-publishing-images/publishvs01.png "選取 [Deliver Your App] (傳遞您的應用程式)")](app-store-publishing-images/publishvs01.png)
+    [![](app-store-publishing-images/publishvs01.png "選取傳遞您的應用程式")](app-store-publishing-images/publishvs01.png#lightbox)
 
 3. 在上方選取您建立的 ZIP 或 IPA 檔案，並按一下 [確定] 按鈕。
 4. 應用程式載入器將會驗證檔案：
 
-    [ ![](app-store-publishing-images/publishvs02.png "應用程式載入器驗證畫面")](app-store-publishing-images/publishvs02.png)
+    [![](app-store-publishing-images/publishvs02.png "應用程式載入器驗證畫面")](app-store-publishing-images/publishvs02.png#lightbox)
 5. 按一下 [下一步] 按鈕後，就會對 App Store 驗證應用程式：
 
-    [ ![](app-store-publishing-images/publishvs03.png "正在驗證應用程式市集應用程式")](app-store-publishing-images/publishvs03.png)
+    [![](app-store-publishing-images/publishvs03.png "正在驗證應用程式市集應用程式")](app-store-publishing-images/publishvs03.png#lightbox)
 6. 按一下 [傳送] 按鈕將應用程式傳送至 Apple 進行審查。
 7. 當檔案已成功上傳時，應用程式載入器會通知您。
 
@@ -214,7 +214,7 @@ Xamarin.tvOS 應用程式正確設定，現在您已經準備好進行最終發�
 
 如果您重新登入 iTunes Connect，並從可用的應用程式清單中選取您的應用程式，在 iTunes Connect 中的狀態現在應該會顯示它是**等待檢閱**(它可能會暫時讀取**上傳收到**它處理時）：
 
-[ ![](app-store-publishing-images/image21.png "在 iTunes 狀態連線顯示等候檢閱")](app-store-publishing-images/image21.png)
+[![](app-store-publishing-images/image21.png "在 iTunes 狀態連線顯示等候檢閱")](app-store-publishing-images/image21.png#lightbox)
 
 <a name="Troubleshooting" />
 

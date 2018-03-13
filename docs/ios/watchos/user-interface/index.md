@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/19/2016
-ms.openlocfilehash: 34063be728f8a13bbe5d68440d9aceba417c5627
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0717b8484c6094bb1d9589c44df37745d9e21900
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="watchos-user-interface"></a>watchOS 使用者介面
 
 [ **WatchKitCatalog** ](https://github.com/xamarin/monotouch-samples/tree/master/watchOS/WatchKitCatalog)範例會示範各種 watchOS 控制項。 應用程式的分鏡腳本如下所示 （按一下以顯示比例）：
 
-[ ![](images/storyboard-sml.png "範例 watchOS 版面配置")](images/storyboard.png)
+[![](images/storyboard-sml.png "範例 watchOS 版面配置")](images/storyboard.png#lightbox)
 
 所有控制項的程式設計名稱前面會加上`WKInterface`（例如。 `WKInterfaceLabel`, `WKInterfaceButton`).
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 02/27/2018
         <strong>控制項</strong>
       </th>
       <th>
-        <strong>描述</strong>
+        <strong>說明</strong>
       </th>
       <th>
         <strong>螢幕擷取畫面</strong>

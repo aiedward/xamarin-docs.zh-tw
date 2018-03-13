@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: 6de57e9523ff336c2e06e39903280db9c9ab95fa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: df9059b0e64b4a05b554f25b5f9d7f6031406633
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-icons"></a>應用程式圖示
 
@@ -32,13 +32,13 @@ UI 控制項，以及文件圖示 Xamarin.iOS 應用程式可以使用影像資�
 
 - **應用程式圖示**-每個 iOS 應用程式必須定義應用程式圖示。 這是使用者會點選圖示從 [iOS] 主畫面啟動應用程式。 此外，使用這個圖示是由遊戲中心的話。 範例： 
 
-    [ ![](app-icons-images/000.png "應用程式圖示")](app-icons-images/000-full.png)
+    [![](app-icons-images/000.png "應用程式圖示")](app-icons-images/000-full.png#lightbox)
 - **醒目圖示**-每當使用者在 Spotlight 搜尋中，輸入應用程式的名稱會顯示這個圖示。 範例： 
 
-    [ ![](app-icons-images/000a.png "焦點圖示")](app-icons-images/000a-full.png)
+    [![](app-icons-images/000a.png "焦點圖示")](app-icons-images/000a-full.png#lightbox)
 - **設定圖示**-如果使用者輸入**設定**其 iOS 裝置，此圖示上的應用程式將會顯示在結尾**設定**應用程式的清單。 範例： 
 
-    [ ![](app-icons-images/000b.png "設定圖示")](app-icons-images/000b-full.png)
+    [![](app-icons-images/000b.png "設定圖示")](app-icons-images/000b-full.png#lightbox)
 
 下列影像資產的大小和解析度需要支援所有目標 iOS 9 （或更高） 到 iOS 5 Xamarin.iOS 應用程式所需的圖示類型：
 
@@ -251,5 +251,5 @@ UI 控制項，以及文件圖示 Xamarin.iOS 應用程式可以使用影像資�
 ## <a name="related-links"></a>相關連結
 
 - [使用映像 （範例）](https://developer.xamarin.com/samples/WorkingWithImages/)
-- [Hello iPhone](~/ios/get-started/hello-ios/index.md)
+- [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
 - [自訂圖示和映像建立指導方針](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html))

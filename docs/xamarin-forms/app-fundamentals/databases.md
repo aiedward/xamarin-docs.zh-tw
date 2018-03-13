@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2017
-ms.openlocfilehash: afbd2d8f25cdf51c7c7c33f72f10e3b5ce8762ef
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 29686b29a18fe409a1f778d54266cbeedea40eda
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="local-databases"></a>本機資料庫
 
@@ -24,7 +24,7 @@ Xamarin.Forms 應用程式可以使用[SQLite.NET PCL NuGet](https://www.nuget.o
 
 隨附[範例應用程式](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo)是簡單的待辦事項清單應用程式。 下列螢幕擷取畫面顯示此範例顯示每個平台上的方式：
 
-[ ![Xamarin.Forms 資料庫範例螢幕擷取畫面](databases-images/todo-list-sml.png "TodoList 第一個頁面的螢幕擷取畫面")](databases-images/todo-list.png "TodoList 第一個頁面的螢幕擷取畫面") [ ![Xamarin.Forms 資料庫範例螢幕擷取畫面](databases-images/todo-detail-sml.png "TodoList 第二個頁面的螢幕擷取畫面")](databases-images/todo-detail.png "TodoList 第二個頁面的螢幕擷取畫面")
+[![Xamarin.Forms 資料庫範例螢幕擷取畫面](databases-images/todo-list-sml.png "TodoList 第一個頁面的螢幕擷取畫面")](databases-images/todo-list.png#lightbox "TodoList 第一個頁面的螢幕擷取畫面") [ ![Xamarin.Forms 資料庫範例螢幕擷取畫面](databases-images/todo-list-sml.png "TodoList 第一個頁面的螢幕擷取畫面")](databases-images/todo-list.png#lightbox "TodoList 第一個頁面的螢幕擷取畫面")
 
 <a name="Using_SQLite_with_PCL" />
 

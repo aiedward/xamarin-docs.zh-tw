@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 590e39deb7972df9e45064bb1a96e533a1fc9856
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5604477ff182711a63ba2b0e6bbcbbcc082a76ed
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-an-amazon-simpledb-service"></a>使用 Amazon SimpleDB 服務
 
@@ -141,7 +141,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 `SelectAsync`方法會接受`SelectRequest`做為參數，指定執行個體`Select`查詢運算式中的`SelectExpression`屬性。 查詢運算式的格式會類似於標準 SQL 格式`SELECT`陳述式。 如需查詢運算式的詳細資訊，請參閱[建立 Amazon SimpleDB 查詢使用 選取](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/UsingSelect.html)Amazon 網站上。
 
 > [!NOTE]
-> **請注意**： 請小心建構查詢運算式時，請依照下列引號的規則。 如需詳細資訊，請參閱[選取用引號括住規則](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html)Amazon 網站上。
+> 請小心建構查詢運算式時，請依照下列引號的規則。 如需詳細資訊，請參閱[選取用引號括住規則](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html)Amazon 網站上。
 
 `SelectAsync`方法會傳回包含集合的項目和相關聯的屬性符合之查詢運算式的回應。 這個集合接著會轉換為`List`的`TodoItem`顯示執行個體。
 

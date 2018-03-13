@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d37c2c9dbb12668680b5813e9e083d2ebb184c66
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: HT
+ms.openlocfilehash: b0d871068f42a03b2aba3c1482a9236b19fe0db9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-video-transport-controls"></a>自訂的視訊傳輸控制
 
@@ -646,11 +646,11 @@ namespace VideoPlayerDemos
 
 因為`AutoPlay`設`false`中**CustomTransport.xaml**檔案中，您必須按**播放**按鈕時，它會變成啟用開始視訊。 按鈕的定義，因此上面所討論的 Unicode 字元就會隨附其文字對等用法。 當播放視訊的按鈕在每個平台上有一致的外觀：
 
-[![自訂傳輸播放](custom-transport-images/customtransportplaying-small.png "自訂傳輸播放")](custom-transport-images/customtransportplaying-large.png "自訂傳輸播放")
+[![自訂傳輸播放](custom-transport-images/customtransportplaying-small.png "自訂傳輸播放")](custom-transport-images/customtransportplaying-large.png#lightbox "自訂傳輸播放")
 
 但在 Android 和 UWP、**播放**暫停視訊時按鈕看起來非常不同：
 
-[![自訂傳輸暫停](custom-transport-images/customtransportpaused-small.png "自訂傳輸暫停")](custom-transport-images/customtransportpaused-large.png "自訂傳輸暫停")
+[![自訂傳輸暫停](custom-transport-images/customtransportpaused-small.png "自訂傳輸暫停")](custom-transport-images/customtransportpaused-large.png#lightbox "自訂傳輸暫停")
 
 在實際執行應用程式中，您可能會想要達到一致的視覺化使用點陣圖影像的按鈕。
 

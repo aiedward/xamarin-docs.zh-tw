@@ -4,14 +4,15 @@ description: "使用 iOS 11 讀取附近欄位距離無線通訊 (NFC) 標記"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-ios
+ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/25/2016
-ms.openlocfilehash: 4975b4008c635ad2355ca2806ba867636dd50201
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 72c19ef09843c137514983b1d7ee7104e3cb32c5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="core-nfc"></a>核心 NFC
 
@@ -62,7 +63,7 @@ NFC 標記讀取器，在 iOS 裝置支援所有的 NFC 標記類型 1 至 5 包
 
 建立新**應用程式識別碼**，並確定**NFC 標記讀取**核服務是：
 
-[ ![開發人員入口網站的新應用程式識別碼頁面以選取 NFC 標記讀取](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png)
+[![開發人員入口網站的新應用程式識別碼頁面以選取 NFC 標記讀取](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png#lightbox)
 
 您應該再為此應用程式識別碼，建立新的佈建設定檔，然後下載並將它安裝在您開發 mac
 

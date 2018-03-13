@@ -3,14 +3,15 @@ title: "第 25 章摘要。 頁面須"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: bbe960357d9180df90a4423d6acfdf3f869d1b77
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 30642709519fc809d30da9a437728112f56a64d6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>第 25 章摘要。 頁面須
 
@@ -54,7 +55,7 @@ Windows 8.1 和 Windows Phone 8.1 的平台需要點陣圖設為`Icon`主版頁�
 
 XAML 檔案也設定[ `IsPresented` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsPresented/)屬性`MasterDetailPage`至`True`。 這會導致要顯示在啟動; 主版頁面根據預設，會顯示詳細資料頁面。 [SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs)檔案集`IsPresented`至`false`從選取項目時`ListView`主版頁面中。 這時會顯示詳細資料頁面：
 
-[![三個螢幕擷取畫面的學校和詳細資料](images/ch25fg09-small.png "詳細資料頁面從 MasterDetailPage")](images/ch25fg09-large.png "MasterDetailPage 從詳細資料頁面")
+[![三個螢幕擷取畫面的學校和詳細資料](images/ch25fg09-small.png "詳細資料頁面從 MasterDetailPage")](images/ch25fg09-large.png#lightbox "MasterDetailPage 從詳細資料頁面")
 
 ### <a name="your-own-user-interface"></a>使用者介面
 
@@ -98,7 +99,7 @@ Xamarin.Forms 提供使用者介面，用於 master 和詳細資料檢視之間�
 
 會出現在每個頁面`TabbedPage`、`Title`屬性是否需要在索引標籤中指定的文字和 Apple Store 需要圖示可用，所以`Icon`屬性會設為 iOS:
 
-[![個別索引標籤式色彩的三個螢幕擷取畫面](images/ch25fg13-small.png "TabbedPage")](images/ch25fg13-large.png "TabbedPage")
+[![個別索引標籤式色彩的三個螢幕擷取畫面](images/ch25fg13-small.png "TabbedPage")](images/ch25fg13-large.png#lightbox "TabbedPage")
 
 [ **StudentNotes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/StudentNotes)範例已列出所有學生的首頁。 當一位學生點選時，這會巡覽至`TabbedPage`衍生作品， [ `StudentNotesDataPage` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/StudentNotes/StudentNotes/StudentNotes/StudentNotesDataPage.xaml)，可結合三個`ContentPage`物件在其視覺化樹狀結構，其中可讓您輸入該學生的注意事項。
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 035956f5c39a77c625a6f4cb92cbfa67a42f2402
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e7a61dcf2cf2fabf575e30ef402121db3bea7912
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-user-interface-objects"></a>建立使用者介面物件
 
@@ -42,17 +42,17 @@ using UIKit;
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
- [ ![](creating-ui-objects-images/image2b.png "工具箱的鍵台")](creating-ui-objects-images/image2b.png)
+ [![](creating-ui-objects-images/image2b.png "工具箱的鍵台")](creating-ui-objects-images/image2b.png#lightbox)
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
- [ ![](creating-ui-objects-images/image2b-vs.png "工具箱板-Visual Studio")](creating-ui-objects-images/image2b.png)
+ [![](creating-ui-objects-images/image2b-vs.png "工具箱板-Visual Studio")](creating-ui-objects-images/image2b.png#lightbox)
  
 -----
 
 在設計介面上選取控制項時**屬性板**會顯示該控制項的屬性。 **Widget > 識別 > 名稱**欄位，下列螢幕擷取畫面中已填入，當做*插座*名稱。 這是您可以在如何參考 C# 中的控制項：
 
- [ ![](creating-ui-objects-images/image3b.png "屬性的小工具板")](creating-ui-objects-images/image3b.png)
+ [![](creating-ui-objects-images/image3b.png "屬性的小工具板")](creating-ui-objects-images/image3b.png#lightbox)
 
 使用 iOS 設計工具深入剖析，請參閱[iOS 設計工具簡介](~/ios/user-interface/designer/introduction.md)指南。
 
@@ -64,27 +64,27 @@ using UIKit;
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
- [ ![](creating-ui-objects-images/imagexcode.png "分鏡腳本操作功能表： Xcode")](creating-ui-objects-images/imagexcode.png)
+ [![](creating-ui-objects-images/imagexcode.png "分鏡腳本操作功能表： Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](creating-ui-objects-images/imagexcode-vs.png "分鏡腳本操作功能表： Xcode")](creating-ui-objects-images/imagexcode-vs.png)
+[![](creating-ui-objects-images/imagexcode-vs.png "分鏡腳本操作功能表： Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
 
 -----
 
 控制項可以拖曳至設計介面，從**物件程式庫**下圖說明：
 
- [ ![](creating-ui-objects-images/image5a.png "Xcode 物件程式庫")](creating-ui-objects-images/image5a.png)
+ [![](creating-ui-objects-images/image5a.png "Xcode 物件程式庫")](creating-ui-objects-images/image5a.png#lightbox)
 
 當您設計您的 UI 使用介面產生器，您必須建立**插座**針對每個您想要在 C# 中參考的控制項。 這是藉由開啟**助理編輯器**使用管理中心**編輯器**Xcode 工具列按鈕上的按鈕：
 
- [ ![](creating-ui-objects-images/image6a.png "小幫手編輯器 按鈕")](creating-ui-objects-images/image6a.png)
+ [![](creating-ui-objects-images/image6a.png "小幫手編輯器 按鈕")](creating-ui-objects-images/image6a.png#lightbox)
 
 按一下 在使用者介面物件。然後**控制項拖曳**到.h 檔案。 若要 * * 控制項拖曳 * *，按住 control 鍵然後按住透過使用者介面物件的建立輸出 （或動作）。 繼續按住 Control 鍵，而您將拖曳到標頭檔。 完成下面拖曳`@interface`定義。 藍線應該會出現標題插入輸出或輸出集合，如以下螢幕擷取畫面所示。
 
 當您放開按一下將提示您提供的輸出，將程式碼中建立 C# 屬性可以參考使用的名稱：
 
- [ ![](creating-ui-objects-images/image8a.png "建立輸出")](creating-ui-objects-images/image8a.png)
+ [![](creating-ui-objects-images/image8a.png "建立輸出")](creating-ui-objects-images/image8a.png#lightbox)
 
 如需有關如何 Xcode 的介面產生器整合與 Visual Studio for Mac 的詳細資訊，請參閱[Xib 程式碼產生](~/ios/internals/xib-code-generation.md#generated)文件。
 
@@ -118,7 +118,7 @@ public override void ViewDidLoad () {
 
 當檢視控制器加入至設計介面時，會在專案中建立兩個對應 C# 檔案。 在此範例中，`ControlsViewController.cs`和`ControlsViewController.designer.cs`自動建立：
 
- [ ![](creating-ui-objects-images/image9b.png "ViewController 部分類別")](creating-ui-objects-images/image9b.png)
+ [![](creating-ui-objects-images/image9b.png "ViewController 部分類別")](creating-ui-objects-images/image9b.png#lightbox)
 
 `MainViewController.cs`檔案僅供*您的程式碼*。 這是 where`View`存留週期方法，例如`ViewDidLoad`和`ViewWillAppear`實作也可以新增您自己的屬性、 欄位和方法。
 

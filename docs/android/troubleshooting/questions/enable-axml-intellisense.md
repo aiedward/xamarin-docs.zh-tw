@@ -6,11 +6,12 @@ ms.assetid: 84850CB2-1CE2-4D3F-BD01-6B3B033F5A4C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.openlocfilehash: ea5c4e9f7e7f1c487d4f53650b10f88afc1b41e6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: c68ec5a6d369e8673c8764e01943e513489775b0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="how-do-i-enable-intellisense-in-android-axml-files"></a>如何啟用 Android.axml 檔案中的 Intellisense
 

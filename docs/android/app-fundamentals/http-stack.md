@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: D7ABAFAB-5CA2-443D-B902-2C7F3AD69CE2
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: bcb6f033c7fad76a17a7a5aa82f48a76b1ae501d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: topgenorth
+ms.author: toopge
+ms.date: 03/09/2018
+ms.openlocfilehash: 5c63bda11a57c0f27efa1db6f0455b25f7da531b
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>HttpClient 堆疊與 SSL/TLS 實作適用於 Android 的選取器
 
@@ -23,34 +23,31 @@ _HttpClient 堆疊與 SSL/TLS 實作器決定 Xamarin.Android 應用程式將使
 Xamarin.Android 提供會控制 TLS 設定的 Android 應用程式的兩個下拉式方塊。 一個下拉式方塊將會找出哪些`HttpMessageHandler`具現化時，將會使用`HttpClient`物件，而其他識別哪些 TLS 實作將會使用 web 要求。
 
 > [!NOTE]
-> **注意：**專案必須參考**System.Net.Http**組件。
+> 專案必須參考**System.Net.Http**組件。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 HttpClient 堆疊的設定存在於 Xamarin.Android 專案的專案選項。 按一下**Android 選項**索引標籤，然後再按一下**進階選項** 按鈕。 這會顯示**進階 Android 選項**對話方塊具有兩個下拉式方塊，一個用於 HttpClient 實作，一個用於 SSL/TLS 實作：
 
 
-[ ![Visual Studio Android 選項](http-stack-images/tls07-vs-sml.png)](http-stack-images/tls07-vs.png)
+[![Visual Studio Android 選項](http-stack-images/tls07-vs-sml.png)](http-stack-images/tls07-vs.png#lightbox)
+
+## <a name="httpclient-stack-selector"></a>HttpClient 堆疊選取器
+
+此專案選項會控制其`HttpMessageHandler`實作會在每次`HttpClient`物件具現化。 根據預設，這是 managed `HttpClientHandler`。
+
+[![在 Visual Studio 中 android HttpClient 實作下拉式方塊](http-stack-images/tls04-vs-sml.png)](http-stack-images/tls04-vs.png#lightbox) 
 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 HttpClient 堆疊的設定存在於 Xamarin.Android 專案專案選項。 按一下**建置 > Android 建置**設定並按一下**一般** 索引標籤：
 
-[ ![Visual Studio for Mac Android 選項](http-stack-images/tls07-xs-sml.png)](http-stack-images/tls07-xs.png)
-
-
------
+[![Visual Studio for Mac Android 選項](http-stack-images/tls07-xs-sml.png)](http-stack-images/tls07-xs.png#lightbox)
 
 ## <a name="httpclient-stack-selector"></a>HttpClient 堆疊選取器
 
 此專案選項會控制其`HttpMessageHandler`實作會在每次`HttpClient`物件具現化。 根據預設，這是 managed `HttpClientHandler`。
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[ ![在 Visual Studio 中 android HttpClient 實作下拉式方塊](http-stack-images/tls04-vs-sml.png)](http-stack-images/tls04-vs.png) 
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 ![適用於 Mac 的 Visual Studio 中 android HttpClient 實作下拉式方塊](http-stack-images/tls04-xs.png )
 
@@ -84,10 +81,32 @@ AndroidClientHandler 是新處理常式委派給原生 Java/OS 的程式碼，�
 - 需要 Android 5.0 或更新版本。
 - 無法使用某些 HttpClient/選項功能。
 
+### <a name="choosing-a-handler"></a>選擇處理常式
+
+選擇`AndroidClientHandler`和`HttpClientHandler`應用程式的需求而定。 `AndroidClientHandler` 如果下列所有動作套用是不錯的選擇：
+
+-   您需要支援 TLS 1.2 +。
+-   您的應用程式的目標 Android 5.0 (API 21) 或更新版本。
+-   您需要 TLS 1.2 + 支援`HttpClient`。
+-   您不需要支援 TLS 1.2 + `WebClient`。
+
+`HttpClientHandler` 如果您需要 TLS 1.2 + 是不錯的選擇支援，但必須支援早於 Android 5.0 的 Android 版本。 它是也不錯的選擇，如果您需要 TLS 1.2 + 支援`WebClient`。
+
+開頭為 Xamarin.Android 8.3`HttpClientHandler`無聊 ssl 的預設值 (`btls`) 為基礎的 TLS 提供者。 無聊 SSL TLS 提供者會提供下列優點：
+
+-   它支援 TLS 1.2。
+-   它支援所有的 Android 版本。
+-   它提供兩個的 TLS 1.2 支援`HttpClient`和`WebClient`。
+
+做為從基礎 TLS 提供者使用無聊 SSL 的缺點是它可以增加產生的 APK （新增的每個支援的 ABI 額外 APK 大小約 1 MB） 的大小。
+
+從開始 Xamarin.Android 8.3，預設 TLS 提供者是無聊 SSL (`btls`)。 如果您不想要使用無聊 SSL，您可以藉由設定還原至受管理的歷程記錄 SSL 實作`$(AndroidTlsProvider)`屬性`legacy`(如需設定建置屬性的詳細資訊，請參閱[建置流程](~/android/deploy-test/building-apps/build-process.md))。
+
 
 ### <a name="programatically-using-androidclienthandler"></a>以程式設計方式使用 `AndroidClientHandler`
 
-`Xamarin.Android.Net.AndroidClientHandler`是`HttpMessageHandler`Xamarin.Android 特別針對實作。 這個類別的執行個體將會使用原生`java.net.URLConnection`實作所有的 HTTP 連接。 理論上來說，這會提供 HTTP 效能和較小的 APK 大小增加。
+`Xamarin.Android.Net.AndroidClientHandler`是`HttpMessageHandler`Xamarin.Android 特別針對實作。
+這個類別的執行個體將會使用原生`java.net.URLConnection`實作所有的 HTTP 連接。 理論上來說，這會提供 HTTP 效能和較小的 APK 大小增加。
 
 此程式碼片段是如何明確地為單一執行個體的範例`HttpClient`類別：
 
@@ -97,7 +116,7 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 ```
 
 > [!NOTE]
->  **請注意**： 基礎的 Android 裝置必須支援 TLS 1.2 （即Android 5.0 及更新版本)
+> 基礎的 Android 裝置必須支援 TLS 1.2 （即Android 5.0 及更新版本)
 
 
 ## <a name="ssltls-implementation-build-option"></a>SSL/TLS 實作建置選項
@@ -106,11 +125,11 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![TLS/SSL 實作 Visual Studio 中的下拉式方塊](http-stack-images/tls06-vs.png)](http-stack-images/tls05-vs.png)
+[![TLS/SSL 實作 Visual Studio 中的下拉式方塊](http-stack-images/tls06-vs.png)](http-stack-images/tls05-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![TLS/SSL 實作適用於 Mac 的 Visual Studio 中的下拉式方塊](http-stack-images/tls06-xs.png)](http-stack-images/tls05-xs.png)
+[![TLS/SSL 實作適用於 Mac 的 Visual Studio 中的下拉式方塊](http-stack-images/tls06-xs.png)](http-stack-images/tls05-xs.png#lightbox)
 
 -----
 
@@ -132,8 +151,7 @@ var client = new HttpClient();
 2. 以程式設計方式使用`Xamarin.Android.Net.AndroidClientHandler`。
 3. 環境變數宣告 （選擇性）。
 
-三個選項中，建議的方法是使用來宣告預設的 Xamarin.Android 專案選項`HttpMessageHandler`和整個應用程式的 TLS。 然後，如有必要，以程式設計方式具現化`Xamarin.Android.Net.AndroidClientHandler`物件。
-這些選項是上面所述。
+三個選項中，建議的方法是使用來宣告預設的 Xamarin.Android 專案選項`HttpMessageHandler`和整個應用程式的 TLS。 然後，如有必要，以程式設計方式具現化`Xamarin.Android.Net.AndroidClientHandler`物件。 這些選項是上面所述。
 
 第三個選項&ndash;使用環境變數&ndash;解釋如下。
 

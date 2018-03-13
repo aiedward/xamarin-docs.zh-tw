@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 44775853a29a384216af308a607cfddd18c9c192
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b7c850d0ea06d69c3601081c1e9cde193903eb27
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="spinner"></a>Spinner
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 02/27/2018
 
 在本教學課程的第一個部分中，您將建立簡單的微調 widget 顯示行星的清單。 選取憑藉時，快顯通知訊息會顯示選取的項目：
 
-[![HelloSpinner 應用程式的範例螢幕擷取畫面](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png)
+[![HelloSpinner 應用程式的範例螢幕擷取畫面](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
 
 啟動新的專案，名為**HelloSpinner**。
 
@@ -120,7 +120,7 @@ private void spinner_ItemSelected (object sender, AdapterView.ItemSelectedEventA
 
 執行應用程式。它看起來應該像這樣：
 
-[![選取為世界各地的 mars 微調按鈕的螢幕擷取畫面範例](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png)
+[![選取為世界各地的 mars 微調按鈕的螢幕擷取畫面範例](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png#lightbox)
 
 ## <a name="spinner-using-keyvalue-pairs"></a>使用索引鍵/值組的微調按鈕
 
@@ -188,10 +188,9 @@ private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventAr
 
 執行應用程式。快顯通知看起來應該像這樣：
 
-[![地球選取顯示溫度的範例](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png)
+[![地球選取顯示溫度的範例](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
    
   
-<a name="Resources" />
 
 ## <a name="resources"></a>資源
 

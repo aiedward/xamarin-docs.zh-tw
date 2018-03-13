@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: ea91dbcf7148651cb5d10acae4ada8bb6758c39e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cc7643d89b4a45b6f6fb87bb027edb1c339a20ec
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="ios-localization"></a>iOS 當地語系化
 
@@ -26,48 +26,39 @@ _本文件涵蓋 iOS SDK 的當地語系化功能以及如何使用 Xamarin 存�
 
 ### <a name="language"></a>語言
 
-使用者選擇其語言**設定**應用程式。 這個設定會影響的語言字串和作業系統，以及偵測語言設定的應用程式所顯示的影像。
+使用者選擇其語言**設定**應用程式。 這個設定會影響的語言字串和顯示依作業系統和應用程式中的影像。 
 
-這是使用者會決定是否要顯示英文、 西班牙文、 日文、 法文或其他應用程式中顯示的語言。
-
-實際的 iOS 7 中支援的語言清單： 英文 （美國）、 英文 （英國）、 中文 （簡體）、 中文 （繁體）、 法文、 德文、 義大利文、 日文、 韓文、 西班牙文、 阿拉伯文、 卡達隆尼亞、 克羅埃西亞文、 捷克文、 丹麥文、 荷蘭文、 芬蘭文、 希臘文、 希伯來文匈牙利文、 印尼文、 馬來文、 挪威文、 波蘭文、 葡萄牙文、 葡萄牙文 （巴西）、 羅馬尼亞文、 俄文、 斯洛伐克文、 瑞典文、 泰文、 土耳其文、 烏克蘭文、 越南文、 英文 （澳大利亞）、 西班牙文 （墨西哥）。
-
-目前的語言可以查詢所存取的第一個元素`PreferredLanguages`陣列：
+若要判斷應用程式中所使用的語言，取得的第一個項目`NSBundle.MainBundle.PreferredLocalizations`:
 
 ```csharp
 var lang = NSBundle.MainBundle.PreferredLocalizations[0];
 ```
 
-這個值是語言代碼的例如`en`英文`es`西班牙文，`ja`日文等等。_傳回的值僅限於應用程式 （使用後援規則決定最符合項目） 所支援的當地語系化資源的其中一個。_
+這個值是語言代碼的例如`en`英文`es`西班牙文，`ja`日文等等。傳回的值僅限於應用程式 （使用後援規則決定最符合項目） 所支援的當地語系化資源的其中一個。
 
-應用程式程式碼不一定需要檢查此值-Xamarin 並 iOS 這兩個提供的功能是為了自動提供使用者的語言正確的字串或資源。 這份文件的其餘部分將詳述這些功能。
+應用程式程式碼不一定需要檢查此值 – Xamarin 並 iOS 這兩個提供的功能是為了自動提供使用者的語言正確的字串或資源。 這份文件的其餘部分將詳述這些功能。
 
 > [!NOTE]
-> **注意：** iOS 9 之前, 是建議的程式碼`var lang = NSLocale.PreferredLanguages [0];`。
->
-> 在 iOS 9-變更這個程式碼所傳回的結果看到[技術附註 TN2418](https://developer.apple.com/library/content/technotes/tn2418/_index.html)如需詳細資訊。
->
-> 您可以繼續使用`NSLocale.PreferredLanguages [0]`來判斷使用者所選的實際值 （不論當地語系化您的應用程式支援）。
+> 使用`NSLocale.PreferredLanguages`來判斷使用者的語言喜好設定，不論應用程式支援當地語系化資源。 在 iOS 9; 中變更這個方法所傳回的值請參閱[技術附註 TN2418](https://developer.apple.com/library/content/technotes/tn2418/_index.html)如需詳細資訊。
 
 ### <a name="locale"></a>地區設定
 
 使用者選擇其地區設定中的**設定**應用程式。 這項設定會影響格式化日期、 時間、 數字和貨幣的方式。
 
-這可讓使用者選擇他們是否看到 12 小時或 24 小時的時間格式，其小數分隔符號是逗號或點，以及一天、 月份和年份的日期顯示中的順序。
+這可讓使用者選擇他們是否看到 12 小時制或 24 小時制的時間格式，其小數分隔符號是逗號或點，以及一天、 月份和年份的日期顯示中的順序。
 
-使用 Xamarin，您可以存取這兩個 Apple iOS 類別 (`NSNumberFormatter`) 以及在 System.Globalization 將.NET 類別。 開發人員應評估這是更適合他們的需求，因為在每個不同的功能。 特別的是，如果您會擷取並顯示在應用程式內購買的價格使用 StoreKit 應該明確地用於 Apple 的格式類別傳回的價格資訊。
+使用 Xamarin，您可以存取這兩個 Apple iOS 類別 (`NSNumberFormatter`) 以及在 System.Globalization 將.NET 類別。 開發人員應評估這是更適合他們的需求，因為在每個不同的功能。 特別是，如果您會擷取並顯示在應用程式內購買的價格使用 StoreKit 應該用於 Apple 的格式類別傳回的價格資訊。
 
-您可以透過其中一種查詢目前的地區設定：
+兩個方式可以查詢目前的地區設定：
 
 - `NSLocale.CurrentLocale.LocaleIdentifier`
 - `NSLocale.AutoUpdatingCurrentLocale.LocaleIdentifier`
 
 第一個值可以快取的作業系統，因此可能不一定會反映使用者的目前選取的地區設定。 您可以使用第二個值，取得目前選取的地區設定。
 
-
 ### <a name="nscurrentlocaledidchangenotification"></a>NSCurrentLocaleDidChangeNotification
 
-iOS 會產生`NSCurrentLocaleDidChangeNotification`當使用者更新其地區設定。 雖然它們正在執行，以及對 UI 進行適當的變更，應用程式可以接聽此通知。
+iOS 會產生`NSCurrentLocaleDidChangeNotification`當使用者更新其地區設定。 雖然它們正在執行，並可以對 UI 進行適當的變更，應用程式可以接聽此通知。
 
 <a name="basics" />
 
@@ -75,24 +66,47 @@ iOS 會產生`NSCurrentLocaleDidChangeNotification`當使用者更新其地區�
 
 在 Xamarin 顯示當地語系化的資源提供給使用者，可輕鬆利用 iOS 的下列功能。 請參閱[TaskyL10n 範例](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)以了解如何實作這些概念。
 
-### <a name="infoplist"></a>Info.plist
+### <a name="specifying-default-and-supported-languages-in-infoplist"></a>指定的預設值而且 Info.plist 中支援的語言
 
-在開始之前，設定**Info.plist**檔案具有下列索引鍵：
+在[技術問與答 QA1828: iOS 如何決定語言的應用程式](https://developer.apple.com/library/content/qa/qa1828/_index.html)，Apple 描述 iOS 如何選取要在應用程式中使用的語言。 下列因素會影響在顯示的語言：
 
-- `CFBundleDevelopmentRegion` -應用程式 （通常的語言，說出由開發人員，以及使用分鏡腳本與字串與影像資源） 的預設語言。 在下列範例中， **en**指定 （適用於英文）。
-- `CFBundleLocalizations` -其他的應用程式，同時也使用的語言代碼，例如支援的當地語系化資源的陣列**es** （西班牙文） 和**PT-PT** （葡萄牙說出葡萄牙文）。
+- 使用者偏好的語言 (位於**設定**應用程式)
+- 當地語系化資源隨同應用程式 （.lproj 資料夾）
+- `CFBundleDevelopmentRegion` (**Info.plist**值，指定應用程式的預設語言)
+- `CFBundleLocalizations` (**Info.plist**陣列，指定所有支援的當地語系化資源)
+
+如同在技術問與答、`CFBundleDevelopmentRegion`代表應用程式的預設地區和語言。 如果應用程式明確不支援任何使用者的慣用語言，則會使用此欄位所指定的語言。 
+
+> [!IMPORTANT]
+> iOS 11 會比更舊版作業系統的嚴格套用此語言工作階段機制。 因為這個緣故，未明確宣告其支援的當地語系化資源 – 依包括.lproj 資料夾，或設定值的任何 iOS 11 應用程式`CFBundleLocalizations`– 與之前在 iOS 10 中，可能會顯示不同的語言中 iOS 11。
+
+如果`CFBundleDevelopmentRegion`中尚未指定**Info.plist**檔案，Xamarin.iOS 建置工具目前使用的預設值為`en_US`。 雖然這可能會在未來版本中變更，這表示預設語言是英文。
+
+若要確保您的應用程式選取預期的語言，請採取下列步驟：
+
+- 指定預設語言。 開啟**Info.plist**並用**來源**檢視設定的值`CFBundleDevelopmentRegion`金鑰，在 XML 中，它看起來應該類似下列：
 
 ```xml
 <key>CFBundleDevelopmentRegion</key>
-<string>en</string>
+<string>es</string>
+```
+
+這個範例會使用"es"來指定當沒有任何使用者的慣用語言都支援，預設為西班牙文。
+
+- 宣告所有支援的當地語系化資源。 在**Info.plist**，使用**來源**設定陣列，以便檢視`CFBundleLocalizations`金鑰，在 XML 中，它看起來應該類似下列：
+
+```xml
 <key>CFBundleLocalizations</key>
 <array>
-  <string>de</string>
-  <string>es</string>
-  <string>ja</string>
-  ...
+    <string>en</string>
+    <string>es</string>
+    ...
 </array>
 ```
+
+Xamarin.iOS 應用程式使用.NET 機制，例如.resx 檔必須提供這些當地語系化的**Info.plist**以及值。
+
+如需有關這些**Info.plist**索引鍵，看看 Apple[資訊屬性清單索引鍵參考](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html)。
 
 ### <a name="localizedstring-method"></a>LocalizedString 方法
 
@@ -106,9 +120,9 @@ iOS 會產生`NSCurrentLocaleDidChangeNotification`當使用者更新其地區�
 
 可以是不同的數字**.strings**每個語言目錄中的檔案：
 
-- **Localizable.strings** -當地語系化文字的主要清單。
-- **InfoPlist.strings** -某些特定金鑰允許在這個檔案中轉譯之類的應用程式名稱。
-- **< 分鏡腳本名稱 >.strings** -選用的檔案，其中包含使用者介面項目的分鏡腳本中的翻譯。
+- **Localizable.strings** – 當地語系化文字的主要清單。
+- **InfoPlist.strings** – 某些特定金鑰允許這個檔案中轉譯項目，例如應用程式名稱。
+- **< 分鏡腳本名稱 >.strings** – 選擇性檔案，其中包含使用者介面項目的分鏡腳本中的翻譯。
 
 **建置動作**這些檔案應該是**配套資源**。
 
@@ -116,7 +130,7 @@ iOS 會產生`NSCurrentLocaleDidChangeNotification`當使用者更新其地區�
 
 當地語系化的字串值的語法是：
 
-```csharp
+```console
 /* comment */
 "key"="localized-value";
 ```
@@ -129,7 +143,7 @@ iOS 會產生`NSCurrentLocaleDidChangeNotification`當使用者更新其地區�
 
 這是範例**es/Localizable.strings** （即西班牙文） 檔案的範例：
 
-```csharp
+```console
 "<new task>" = "<new task>";
 "Task Details" = "Detalles de la tarea";
 "Name" = "Nombre";
@@ -162,7 +176,7 @@ iOS 會產生`NSCurrentLocaleDidChangeNotification`當使用者更新其地區�
 
 使用標準命名慣例啟動映像 （和 XIB 或分鏡腳本 iPhone 6 機型） 放置在時**.lproj**每種語言的目錄。
 
-```csharp
+```console
 Default.png
 Default@2x.png
 Default-568h@2x.png
@@ -173,7 +187,7 @@ LaunchScreen.xib
 
 放置**InfoPlist.strings**檔案**.lproj**目錄可讓您覆寫從應用程式的某些值**Info.plist**，包括應用程式名稱：
 
-```csharp
+```console
 "CFBundleDisplayName" = "LeónTodo";
 ```
 
@@ -182,23 +196,6 @@ LaunchScreen.xib
 - CFBundleName
 - CFBundleShortVersionString
 - NSHumanReadableCopyright
-
-
-<!--
-## App icon
-
-Does not seem to be possible (although it definitely used to be!).
--->
-
-### <a name="localization-native-development-region"></a>當地語系化原生開發區域
-
-預設字串 (位於**Base.lproj**資料夾) 會假設為 '後援' 語言。 這表示，如果轉譯要求的程式碼中，並且找不到目前的語言， **Base.lproj**資料夾將會搜尋使用的預設字串 （如果找到相符項目，轉譯的識別項字串本身是顯示）。
-
-開發人員可以選擇不同的語言，以進行後援設定 plist 機碼`CFBundleDevelopmentRegionKey`。 它的值應設為原生開發語言的語言代碼。 這個螢幕擷取畫面顯示 plist Xamarin Studio 中使用原生開發區域設定為西班牙文 (es):
-
-![](images/cfbundledevelopmentregion.png "InfoPList.strings 屬性")
-
-如果使用在分鏡腳本，並在整個程式碼的預設語言不是英文，設定此值以反映在整個應用程式程式碼所使用的原生語言。
 
 ### <a name="dates-and-times"></a>日期和時間
 
@@ -222,7 +219,7 @@ Debug.WriteLine ("Medium,None: " + df.StringFor(date));
 
 在美國英文的結果：
 
-```csharp
+```console
 Full,Long: Friday, August 7, 2015 at 10:29:32 AM PDT
 Short,Short: 8/7/15, 10:29 AM
 Medium,None: Aug 7, 2015
@@ -230,7 +227,7 @@ Medium,None: Aug 7, 2015
 
 西班牙文，西班牙中的結果：
 
-```csharp
+```console
 Full,Long: viernes, 7 de agosto de 2015, 10:26:58 GMT-7
 Short,Short: 7/8/15 10:26
 Medium,None: 7/8/2015
@@ -244,20 +241,19 @@ Medium,None: 7/8/2015
 
 iOS 提供許多功能，協助您建立從右至左感知應用程式：
 
-* 使用**自動配置**`leading`和`trailing`控制項 aligment 屬性 (對應於*左*和*右*英文，比方說，但卻是反轉 RTL 語言）。
+* 使用自動配置的`leading`和`trailing`控制項 aligment （其對應至 left 和 right 的英文，但已反轉 RTL 語言） 的屬性。
   [ `UIStackView` ](~/ios/user-interface/controls/uistackview.md)控制項特別適用於 RTL 注意控制項的版面配置。
-* 使用`TextAlignment = UITextAlignment.Natural`文字對齊方式 (這將成為*左*大部分語言但*右*為從右至左)。
+* 使用`TextAlignment = UITextAlignment.Natural`（這會保留對大多數語言而言，但適合從右至左） 的文字對齊方式。
 * `UINavigationController` 會自動翻轉上一頁按鈕及反轉撥動方向。
 
-下列螢幕擷取畫面顯示[當地語系化**Tasky**範例](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)阿拉伯文和希伯來文 （雖然已在欄位中輸入英文版）：
+下列螢幕擷取畫面顯示[當地語系化 Tasky 範例](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)阿拉伯文和希伯來文 （雖然已在欄位中輸入英文版）：
 
-[ ![](images/rtl-ar-sml.png "阿拉伯當地語系化")](images/rtl-ar.png "Arabic") 
+[![](images/rtl-ar-sml.png "阿拉伯當地語系化")](images/rtl-ar.png#lightbox "Arabic") 
 
-[ ![](images/rtl-he-sml.png "當地語系化希伯來文")](images/rtl-he.png "Hebrew")
+[![](images/rtl-he-sml.png "當地語系化希伯來文")](images/rtl-he.png#lightbox "Hebrew")
 
 iOS 會自動反轉`UINavigationController`，和其他控制項放置於`UIStackView`或使用自動配置對齊。
 使用當地語系化從右至左文字**.strings**方式與從左至右文字相同的檔案。
-
 
 <a name="code"/>
 
@@ -267,17 +263,15 @@ iOS 會自動反轉`UINavigationController`，和其他控制項放置於`UIStac
 
 ### <a name="project-structure"></a>專案結構
 
-
-
 ![](images/solution-code.png "樹狀目錄中的資源")
 
 ### <a name="localizablestrings-file"></a>Localizable.strings 檔案
 
-如上所述， **Localizable.strings**組成索引鍵 / 值組，其中索引鍵是使用者選取的字串表示的檔案格式
+如上所述， **Localizable.strings**檔案格式是由索引鍵-值組所組成。 索引鍵描述字串的意圖，而且值是要用於應用程式翻譯的文字。
 
 西班牙文 (**es**) 範例的當地語系化資源如下所示：
 
-```csharp
+```console
 "<new task>" = "<new task>";
 "Task Details" = "Detalles de la tarea";
 "Name" = "Nombre";
@@ -318,10 +312,10 @@ someControl.Text = localizedString;
 
 當建立和編輯控制項中的分鏡腳本中，選取每個控制項，並檢查使用當地語系化的識別碼：
 
-* 在 Visual Studio for Mac，它具有屬性輸入板中，呼叫**當地語系化 ID**。
+* 在 Visual Studio for Mac 位於**屬性板**稱為**當地語系化 ID**。
 * 在 Xcode 中，它會呼叫**物件識別碼**。
 
-它是字串值，通常會有的表單**"NF3-h 8-xmR"**:
+此字串值通常會有的形式，例如，"NF3-h 8-xmR"，如下列螢幕擷取畫面所示：
 
 ![](images/xs-designer-localization-id.png "分鏡腳本當地語系化的 [Xcode] 檢視")
 
@@ -333,7 +327,7 @@ someControl.Text = localizedString;
 
 在範例**Mainstoryboard.strings**以下您可以看見`UITextField`有`placeholder`可當地語系化; text 屬性`UILabel`有`text`屬性; 和`UIButton`s 預設文字使用設定`normalTitle`:
 
-```csharp
+```console
 "SXg-TT-IwM.placeholder" = "nombre de la tarea";
 "Pqa-aa-ury.placeholder"= "otra información de tarea";
 "zwR-D9-hM1.text" = "Detalles de la tarea";
@@ -344,33 +338,9 @@ someControl.Text = localizedString;
 ```
 
 > [!IMPORTANT]
-> **使用分鏡腳本以大小的類別**可能會導致未顯示的翻譯。 這可能與[此問題](http://stackoverflow.com/questions/24989208/xcode-6-does-not-localize-interface-builder)其中 Apple 文件的指示： 當地語系化的分鏡腳本或 XIB 將未當地語系化正確所有下列三種情況時： 分鏡腳本或 XIB 使用大小類別。 基底的當地語系化和 「 建置 」 目標會設定為通用。 建置目標 iOS 7.0。
-修正為您分鏡腳本字串檔案複製到兩個相同的檔案： **MainStoryboard~iphone.strings**和**MainStoryboard~ipad.strings**:
-
+> 使用分鏡腳本以大小的類別，可能會導致不會出現在應用程式的翻譯。 [Apple 的 Xcode 版本資訊](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html)表示的分鏡腳本或 XIB 將未當地語系化正確是否三件事是，則為 true： 它會使用大小的類別、 基底的當地語系化和 「 建置 」 目標會設定為萬用、 而建置的目標 iOS 7.0。 修正為您分鏡腳本字串檔案複製到兩個相同的檔案： **MainStoryboard~iphone.strings**和**MainStoryboard~ipad.strings**，如下列螢幕擷取畫面所示：
+> 
 > ![](images/xs-dup-strings.png "字串的檔案")
-
-
-<!--
-# Native Formatting
-
-Xamarin.iOS applications can take advantage of the .NET framework's formatting options for localizing
-numbers and dates.
-
-### Date string formatting
-
-https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html#//apple_ref/doc/uid/TP40002369-SW1
-
-
-NSDateFormatter formatter = new NSDateFormatter ();
-formatter.DateFormat = "MMMM/dd/yyyy";
-NSString dateString = new NSString (formatter.ToString (d));
-
-
-### Number formatting
-
-https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfNumberFormatting10_4.html#//apple_ref/doc/uid/TP40002368-SW1
-
--->
 
 <a name="appstore" />
 
@@ -378,26 +348,11 @@ https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/DataForma
 
 遵循 Apple 的常見問題集的[應用程式存放區當地語系化](https://itunespartner.apple.com/en/apps/faq/App%20Store_Localization)輸入您的應用程式會在銷售每個國家/地區的翻譯。 請注意如果您的應用程式也包含當地語系化翻譯只會顯示其警告**.lproj**目錄的語言。
 
-<!--
-
-Once you’ve entered your application into iTunes Connect the default language
-metadata and screenshots will appear as shown:
-
-![]( "itunes connect 1")
-
-Use the language list on the right to select other languages to provide
-translated application name, description, search keywords, URLs and screenshots.
-The complete list of languages is shown in this screenshot:
-
-![]( "itunes connect 2")
--->
-
 ## <a name="summary"></a>總結
 
 本文涵蓋當地語系化使用內建資源的處理和分鏡腳本功能的 iOS 應用程式基本的概念。
 
 您可以了解更多關於 i18n 和 L10n iOS、 Android 和跨平台應用程式 （包括 Xamarin.Forms） 中[本跨平台指南](~/cross-platform/app-fundamentals/localization.md)。
-
 
 ## <a name="related-links"></a>相關連結
 

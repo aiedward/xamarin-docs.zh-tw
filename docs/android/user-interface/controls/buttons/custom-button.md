@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: f77a9b8d3bb69bb47d973a56aed5ad1d49f9a02d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5131b4d09f01af6a6e8bed28a2df27bc801dfb80
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="custom-button"></a>自訂按鈕
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 02/27/2018
 
 以滑鼠右鍵按一下並下載的三個圖像下方，然後將其複製到**資源/drawable**專案的目錄。 這些將用於不同按鈕狀態。
 
- [![狀態為 normal 的 Android 綠色圖示](custom-button-images/android-normal.png)](custom-button-images/android-normal.png) [![橙色 Android 焦點狀態圖示](custom-button-images/android-focused.png)](custom-button-images/android-focused.png) [![黃色 Android 已按下狀態圖示](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png)
+ [![狀態為 normal 的 Android 綠色圖示](custom-button-images/android-normal.png)](custom-button-images/android-normal.png#lightbox) [![橙色 Android 焦點狀態圖示](custom-button-images/android-focused.png)](custom-button-images/android-focused.png#lightbox) [![黃色 Android 已按下狀態圖示](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png#lightbox)
 
 建立新的檔案中**資源/drawable**名為目錄**android_button.xml**。 插入下列 XML:
 
@@ -38,7 +38,7 @@ ms.lasthandoff: 02/27/2018
 
 
 > [!NOTE]
-> **注意：**順序`<item>`項目是很重要。 此 drawable 參考時， `<item>`s 會周遊中順序來判斷哪一個是適用於目前的按鈕狀態。
+> 順序`<item>`項目是很重要。 此 drawable 參考時， `<item>`s 會周遊中順序來判斷哪一個是適用於目前的按鈕狀態。
 > 「 標準 」 影像是最後一個項目，因為它套用的時，才會在條件`android:state_pressed`和`android:state_focused`都評估為 false。
 
 開啟**Resources/layout/Main.axml**檔案，然後加入[ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/)項目：

@@ -7,19 +7,18 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 8bfa599ce0a85897ecaf655c1d4da00fe898bc68
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0cf1c4d749eb85a7e0f4c035e10e2e7a40e0c711
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="switch"></a>參數
 
 `Switch` Widget （如下所示） 可讓使用者切換兩種狀態，例如，在或 [關閉]。 `Switch`預設值是 OFF。 如下所示的小工具，在其 ON 和 OFF 的狀態：
 
-[ ![交換器 widget 處於關閉狀態的螢幕擷取畫面](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png)
+[![交換器 widget 處於關閉狀態的螢幕擷取畫面](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png#lightbox)
 
-<a name="Creating_a_Switch" />
 
 ## <a name="creating-a-switch"></a>建立參數
 
@@ -32,9 +31,8 @@ ms.lasthandoff: 02/27/2018
 
 這會建立基本參數，如下所示：
 
-[ ![在關閉狀態中顯示參數的示範應用程式的螢幕擷取畫面](switch-images/07-switch.png)](switch-images/07-switch.png)
+[![在關閉狀態中顯示參數的示範應用程式的螢幕擷取畫面](switch-images/07-switch.png)](switch-images/07-switch.png#lightbox)
 
-<a name="Changing_Default_Values" />
 
 ## <a name="changing-default-values"></a>變更預設值
 
@@ -48,7 +46,6 @@ ms.lasthandoff: 02/27/2018
         android:textOff="NO" />
 ```
 
- <a name="Providing_a_Title" />
 
 
 ## <a name="providing-a-title"></a>提供標題
@@ -66,7 +63,7 @@ ms.lasthandoff: 02/27/2018
 
 這個標記會產生在執行階段的下列螢幕擷取畫面：
 
-[![示範應用程式文字的水平前面 Switch 小工具的螢幕擷取畫面](switch-images/08-switch.png)](switch-images/08-switch.png)
+[![示範應用程式文字的水平前面 Switch 小工具的螢幕擷取畫面](switch-images/08-switch.png)](switch-images/08-switch.png#lightbox)
 
 當`Switch`的值變更，便會產生`CheckedChange`事件。
 例如，下列程式碼我們擷取此事件並呈現`Toast`widget 以訊息為基礎`isChecked`值`Switch`，傳遞給事件處理常式的一部分`CompoundButton.CheckedChangeEventArg`引數。

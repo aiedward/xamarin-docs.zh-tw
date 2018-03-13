@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2017
-ms.openlocfilehash: 44a97114e7d325a1fa196d2c9828855ad1a30c94
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ef34b1be5f993a3be819cd4ae1a9dcd5dfc27715
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-nuget-from-existing-library-projects"></a>建立從現有的程式庫專案的 NuGet
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 02/27/2018
 
 2. 移至**NuGet 封裝 > 中繼資料**區段，並輸入所有[必要資訊](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)中**一般** 索引標籤：
 
-  [ ![](existing-library-images/existing-metadata-sml.png "輸入必要的中繼資料")](existing-library-images/existing-metadata.png)
+  [![](existing-library-images/existing-metadata-sml.png "輸入必要的中繼資料")](existing-library-images/existing-metadata.png#lightbox)
 
 3. （選擇性）[新增其他中繼資料](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)中**詳細資料** 索引標籤。
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 02/27/2018
 
 5. 在建立 NuGet 封裝_每_建置或部署，請移至**NuGet 封裝 > 建置**區段和刻度**建置專案時建立 NuGet 封裝**:
 
-    [ ![](existing-library-images/existing-tickbox-sml.png "若要建立 NuGet 套件的刻度")](existing-library-images/existing-tickbox.png)
+    [![](existing-library-images/existing-tickbox-sml.png "若要建立 NuGet 套件的刻度")](existing-library-images/existing-tickbox.png#lightbox)
 
 > [!NOTE]
 > 建置 NuGet 封裝會減慢建置程序。 如果此方塊不的話，您可以仍然產生 NuGet 套件以手動方式隨時從 專案內容功能表 （如上述步驟 4 所示）。
@@ -47,4 +47,4 @@ NuGet 封裝也是套件的 ZIP 檔案，所以有可能檢查產生的內部結
 
 ## <a name="related-links"></a>相關連結
 
-- [中繼資料的指南](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)
+- [中繼資料指南](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)

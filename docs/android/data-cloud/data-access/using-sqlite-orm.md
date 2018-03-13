@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: b1eb886685597e671dccf70063c34e102ce2cac9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b9523d76c04dae97b74744fbe2bd6bc7022c3194
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-sqlitenet"></a>使用 SQLite.NET
 
@@ -21,7 +21,7 @@ Xamarin 會建議 SQLite.NET 程式庫是非常基本的 ORM，可讓您輕鬆�
 
 若要包含 SQLite.NET 程式庫中的 Xamarin 應用程式，新增[SQLite.net PCL NuGet 封裝](https://www.nuget.org/packages/sqlite-net-pcl/)專案使用**SQLite net PCL** NuGet 封裝：
 
-[ ![SQLite.NET NuGet 封裝](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet 封裝")](using-sqlite-orm-images/image1a.png)
+[![SQLite.NET NuGet 封裝](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet 封裝")](using-sqlite-orm-images/image1a.png#lightbox)
 
 一旦您擁有可用 SQLite.NET 文件庫，請依照下列這三個步驟，使用它來存取資料庫：
 
@@ -185,7 +185,7 @@ foreach (var s in stocksStartingWithA) {
 ```
 
 > [!NOTE]
-> **注意：**時撰寫 SQL 陳述式，直接在您建立的相依性的資料表和資料行在資料庫中，從您的類別和其屬性已產生的名稱。 如果您變更這些名稱在程式碼中您必須記得更新任何手動撰寫的 SQL 陳述式。
+> 直接撰寫 SQL 陳述式時您可以建立相依性的資料表和資料行在資料庫中，從您的類別和其屬性已產生的名稱。 如果您變更這些名稱在程式碼中您必須記得更新任何手動撰寫的 SQL 陳述式。
 
 ### <a name="deleting-an-object"></a>刪除物件
 

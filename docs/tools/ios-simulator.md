@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/07/2017
-ms.openlocfilehash: 707ba5874c939fbd25f4e25a7cefd3dc5fc75131
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0ea6528ce3523ab5d829342e99ccf35ca3d69aa2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>遠端 iOS 模擬器 （適用於 Windows)
 
 _在 Windows 上的 Visual Studio 中的測試及偵錯 iOS 應用程式_
 
-[ ![](ios-simulator-images/hero-sml.png "iOS 模擬器在 Windows 上執行")](ios-simulator-images/hero.png)
+[![](ios-simulator-images/hero-sml.png "iOS 模擬器在 Windows 上執行")](ios-simulator-images/hero.png#lightbox)
 
 ## <a name="download-and-install"></a>下載並安裝
 
@@ -36,7 +36,7 @@ _在 Windows 上的 Visual Studio 中的測試及偵錯 iOS 應用程式_
 
 您可以停用遠端 iOS 模擬器**工具 > 選項 > Xamarin > iOS 設定**取消核取方塊**遠端 windows 模擬器**如下所示：
 
-[ ![](ios-simulator-images/options-sml.png "核取方塊以使用模擬器")](ios-simulator-images/options.png)
+[![](ios-simulator-images/options-sml.png "核取方塊以使用模擬器")](ios-simulator-images/options.png#lightbox)
 
 IOS 模擬器，然後會開啟連接的 Mac 電腦上。 勾選此選項可開啟遠端 iOS 模擬器。
 
@@ -54,14 +54,14 @@ IOS 模擬器，然後會開啟連接的 Mac 電腦上。 勾選此選項可開�
 - [**設定**](#settings) – 設定鍵盤和位置。
  - 其他[**選項**](#options) – 各種不同的模擬器選項可用，例如旋轉、 搖晃，或叫用在模擬器中的其他狀態。 有些選項模糊，當從出現在工具列上，或以滑鼠右鍵按一下視窗上的省略符號圖示就可以存取它們。
 
-    [ ![](ios-simulator-images/maps-app-sml.png "iOS 模擬器對應範例")](ios-simulator-images/maps-app.png)
+    [![](ios-simulator-images/maps-app-sml.png "iOS 模擬器對應範例")](ios-simulator-images/maps-app.png#lightbox)
 
 
 ### <a name="settings"></a>設定
 
 「 齒輪 」 圖示會開啟**設定**視窗：
 
-[ ![](ios-simulator-images/settings-sml.png "iOS 模擬器設定")](ios-simulator-images/settings.png)
+[![](ios-simulator-images/settings-sml.png "iOS 模擬器設定")](ios-simulator-images/settings.png#lightbox)
 
 這可讓您啟用硬體鍵盤上的模擬器，並選擇哪些位置會回報給裝置 （包括靜態位置或其他移動的位置選項）。
 
@@ -71,7 +71,7 @@ IOS 模擬器，然後會開啟連接的 Mac 電腦上。 勾選此選項可開�
 
 若要檢視所有可用的模擬器，例如旋轉、 觸發搖晃手勢，並重新啟動模擬器中的選項 [模擬器] 視窗中按一下滑鼠右鍵：
 
-[ ![](ios-simulator-images/more-sml.png "iOS 模擬器中的其他設定")](ios-simulator-images/more.png)
+[![](ios-simulator-images/more-sml.png "iOS 模擬器中的其他設定")](ios-simulator-images/more.png#lightbox)
 
 ### <a name="touchscreen-support"></a>觸控螢幕支援
 

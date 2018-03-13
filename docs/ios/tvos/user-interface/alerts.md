@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 593e17096d92d9a9764545149991817fa616e2fc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6dabba30c5242d6e7e9ef42a4025f87826a5b89e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-alerts"></a>使用警示
 
@@ -21,7 +21,7 @@ _本文件涵蓋使用 UIAlertController Xamarin.tvOS 中對使用者顯示的�
 
 如果您需要取得 tvOS 使用者注意或要求執行破壞性動作 （例如刪除檔案） 的權限，您可以呈現警示訊息使用`UIAlertViewController`:
 
-[ ![](alerts-images/alert01.png "範例 UIAlertViewController")](alerts-images/alert01.png)
+[![](alerts-images/alert01.png "範例 UIAlertViewController")](alerts-images/alert01.png#lightbox)
 
 如果除了顯示訊息，您可以加入按鈕和文字欄位，讓使用者回應動作，以及提供意見反應警示。
 
@@ -31,7 +31,7 @@ _本文件涵蓋使用 UIAlertController Xamarin.tvOS 中對使用者顯示的�
 
 如前所述，警示可用來取得使用者注意並告知您的應用程式或要求意見反應的狀態。 警示必須出示標題，或者可以有一則訊息和一個或多個按鈕或文字欄位。
 
-[ ![](alerts-images/alert04.png "範例警示")](alerts-images/alert04.png)
+[![](alerts-images/alert04.png "範例警示")](alerts-images/alert04.png#lightbox)
 
 Apple 已使用警示的下列建議：
 
@@ -118,11 +118,11 @@ UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
 
 除了加入警示中的動作 （按鈕），您可以加入文字欄位，讓使用者以使用者識別碼和密碼等資訊填滿警示：
 
-[ ![](alerts-images/alert02.png "文字欄位中警示")](alerts-images/alert02.png)
+[![](alerts-images/alert02.png "文字欄位中警示")](alerts-images/alert02.png#lightbox)
 
 如果使用者選取的文字欄位，將允許使用者輸入欄位的值顯示標準 tvOS 鍵盤：
 
-[ ![](alerts-images/alert03.png "輸入文字")](alerts-images/alert03.png)
+[![](alerts-images/alert03.png "輸入文字")](alerts-images/alert03.png#lightbox)
 
 下列程式碼會顯示 [確定] / [取消] 警示與單一的文字欄位的輸入值：
 

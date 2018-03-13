@@ -2,16 +2,16 @@
 title: NSString
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: BB99EBD7-308A-C865-1829-4DFFDB1BBCA4
+ms.assetid: 785744B3-42E2-4590-8F41-435325E609B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: b52a9e926f5ec907746d2a2dd8ee7a6a6212742f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 87cc1a95f250069310941e051dabe9ea588b4709
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="nsstring"></a>NSString
 

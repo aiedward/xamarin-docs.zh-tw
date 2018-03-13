@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 332ce13b08f3d021553be5747b21b05d62aba6ea
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 21f8c6738c00d5738c02962ee95b415e3855d740
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="transactions-and-verification"></a>交易和驗證
 
@@ -148,7 +148,7 @@ public override void RestoreCompletedTransactionsFailedWithError (SKPaymentQueue
    
    
    
- [ ![](transactions-and-verification-images/image38.png "取得伺服器傳遞產品的價格")](transactions-and-verification-images/image38.png)   
+ [![](transactions-and-verification-images/image38.png "取得伺服器傳遞產品的價格")](transactions-and-verification-images/image38.png#lightbox)   
    
    
    
@@ -170,7 +170,7 @@ public override void RestoreCompletedTransactionsFailedWithError (SKPaymentQueue
 
 因為遠端伺服器需要驗證內容的要求有效的某些方面 (ie。 付費的部份)，隨著傳遞回條資訊進行驗證。 遠端伺服器轉送至 iTunes 驗證該資料，而如果成功的話，包含產品內容回應至應用程式中。   
    
- [ ![](transactions-and-verification-images/image39.png "購買伺服器傳遞產品")](transactions-and-verification-images/image39.png)   
+ [![](transactions-and-verification-images/image39.png "購買伺服器傳遞產品")](transactions-and-verification-images/image39.png#lightbox)   
    
  1. 應用程式將`SKPayment`至佇列。 如果需要使用者將會提示您輸入其 Apple ID，並要求確認付款。   
    

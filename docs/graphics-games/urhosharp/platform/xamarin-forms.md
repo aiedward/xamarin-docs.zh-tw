@@ -1,17 +1,17 @@
 ---
 title: "UrhoSharp Xamarin.Forms 支援"
-description: "Xamarin.Forms 特定安裝程式"
+description: "UrhoSharp Xamarin.Forms 特定設定。"
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: B630B8BE-3D8D-4CDB-BDB0-9709052AA46C
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 2836e12a5a5b687f46f910e8aa53c1ee1ea0d240
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ec44ec40091324d9127d795476869ef2bf51c9cc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="urhosharp-xamarinforms-support"></a>UrhoSharp Xamarin.Forms 支援
 

@@ -6,11 +6,11 @@ ms.assetid: 5E72869D-3541-408B-AB64-D34C777AFB79
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 2801fd74e9f5f8f2927b06dc7b68cdf004faa104
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5a1e28bc9a8a17b4b06ec45746a6ce60ddd129ad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cocossharp"></a>CocosSharp
 
@@ -22,9 +22,9 @@ CocosSharp 是使用 C# 和 F # 的 2D 遊戲容易使用程式庫。 它是.NET
 
 這個實際操作的影片示範如何建立簡單的跨平台 CocosSharp 遊戲。
 
-<iframe src="//channel9.msdn.com/Shows/Visual-Studio-Toolbox/Developing-Cross-platform-2D-Games-in-C-and-CocosSharp/player" width="800" height="450" allowFullScreen frameBorder="0"></iframe>
+> [!Video https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Developing-Cross-platform-2D-Games-in-C-and-CocosSharp/player]
 
-###  <a name="introduction-to-game-development-with-cocossharpgraphics-gamescocossharpfirst-gameindexmd"></a>[與 CocosSharp 遊戲應用程式開發簡介](~/graphics-games/cocossharp/first-game/index.md)
+###  <a name="introduction-to-game-development-with-cocossharpgraphics-gamescocossharpfirst-gameindexmd"></a>[使用 CocosSharp 的遊戲開發簡介](~/graphics-games/cocossharp/first-game/index.md)
 
 ![](images/first-game.png "使用 CocosSharp 簡單 2D 遊戲")
 
@@ -32,7 +32,7 @@ CocosSharp 是使用 C# 和 F # 的 2D 遊戲容易使用程式庫。 它是.NET
 
 
 
-##  <a name="fruity-falls-game-detailsgraphics-gamescocossharpfruity-fallsmd"></a>[Fruity 便在 2007 年遊戲詳細資料](~/graphics-games/cocossharp/fruity-falls.md)
+##  <a name="fruity-falls-game-detailsgraphics-gamescocossharpfruity-fallsmd"></a>[Fruity Falls 遊戲詳細資料](~/graphics-games/cocossharp/fruity-falls.md)
 
 ![](images/fruity-falls.png "本指南會檢閱 Fruity 落遊戲")
 
@@ -56,7 +56,7 @@ CCDrawNode 提供繪圖基本的物件，例如線條、 圓形和三角形的�
 
 
 
-## <a name="animating-with-ccactiongraphics-gamescocossharpccactionmd"></a>[與 CCAction 建立動畫](~/graphics-games/cocossharp/ccaction.md)
+## <a name="animating-with-ccactiongraphics-gamescocossharpccactionmd"></a>[使用 CCAction 建立動畫](~/graphics-games/cocossharp/ccaction.md)
 
 ![](images/ccaction.png "CCAction 是可以用來建立動畫 CocosSharp 物件的基底類別")
 
@@ -64,7 +64,7 @@ CCDrawNode 提供繪圖基本的物件，例如線條、 圓形和三角形的�
 
 
 
-## <a name="using-tiled-with-cocossharpgraphics-gamescocossharptiledmd"></a>[使用與 CocosSharp 並排顯示](~/graphics-games/cocossharp/tiled.md)
+## <a name="using-tiled-with-cocossharpgraphics-gamescocossharptiledmd"></a>[搭配 CocosSharp 使用 Tiled](~/graphics-games/cocossharp/tiled.md)
 
 ![](images/tiled.png "並排顯示是一個功能強大、 有彈性，以及建立垂直及等磚的完整應用程式對應之遊戲")並排顯示是一個功能強大、 有彈性，並建立垂直及等磚的完整應用程式對應的遊戲。 CocosSharp 提供內建整合磚塊的原生檔案格式。
 
@@ -78,7 +78,7 @@ CCDrawNode 提供繪圖基本的物件，例如線條、 圓形和三角形的�
 
 
 
-##  <a name="handling-multiple-resolutions-in-cocossharpgraphics-gamescocossharpresolutionsmd"></a>[處理 CocosSharp 在多種解析度](~/graphics-games/cocossharp/resolutions.md)
+##  <a name="handling-multiple-resolutions-in-cocossharpgraphics-gamescocossharpresolutionsmd"></a>[處理 CocosSharp 中的多種解析度](~/graphics-games/cocossharp/resolutions.md)
 
 ![](images/resolutions.png "本指南示範如何使用 CocosSharp 開發會正確顯示不同解析度的裝置的遊戲")
 
@@ -110,7 +110,7 @@ CocosSharp 的 CCTextureCache 類別提供的標準方式來組織，快取，�
 
 
 
-## <a name="2d-math-with-cocossharpgraphics-gamescocossharpmathmd"></a>[與 CocosSharp 2D 數學運算](~/graphics-games/cocossharp/math.md)
+## <a name="2d-math-with-cocossharpgraphics-gamescocossharpmathmd"></a>[使用 CocosSharp 的 2D 數學運算](~/graphics-games/cocossharp/math.md)
 
 ![](images/math.png "本指南涵蓋開發遊戲的 2D 數學")
 

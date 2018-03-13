@@ -6,15 +6,23 @@ ms.assetid: C29B69F5-08E4-4DCC-831E-7FD692AB0886
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 06/26/2017
-ms.openlocfilehash: 7cf627f369b666bb54d0f512dc1361d2a685a057
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/06/2018
+ms.openlocfilehash: c7dc63cbed0dbdc13dfd2d32a0859c0fe7a29196
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinios-analysis-rules"></a>Xamarin.iOS 分析規則
 
+Xamarin.iOS 分析是一組規則，請檢查您的專案設定，可協助您判斷是否會提供更好/最佳化的設定。
+
+儘可能及早找出可能的增強功能，並儲存開發時間通常執行分析規則。
+
+若要執行規則，在 Visual Studio for Mac 的功能表中，選取**專案 > 執行程式碼分析**。
+
+> [!NOTE]
+> 您目前所選組態上僅執行 Xamarin.iOS 分析。 我們強烈建議您執行偵錯工具**和**發行組態。
 
 ## <a name="a-namexia0001xia0001-disabledlinkerrule"></a><a name="XIA0001"/>XIA0001: DisabledLinkerRule
 
@@ -39,5 +47,10 @@ ms.lasthandoff: 02/27/2018
 
 ## <a name="a-namexia0005xia0005-float32rule"></a><a name="XIA0005"/>XIA0005: Float32Rule
 
-- **問題：**不使用 float32 選項 (-aot 選項 = O = float32) 通往沈效能成本，特別是在行動裝置、 雙精確度數學所在適當地變慢。 請注意，.NET 使用雙精確度就內部而言，即使的浮點數，所以啟用此選項會影響有效位數和可能的相容性。
+- **問題：**不使用 float32 選項 (-aot 選項 = O = float32) 通往沈效能成本，尤其是在行動裝置、 雙精確度數學所在適當地變慢。 請注意，.NET 使用雙精確度就內部而言，即使的浮點數，所以啟用此選項會影響有效位數和可能的相容性。
 - **修正：** Double iOS 專案上按一下，請移至組建 > iOS 建置，並取消核取 「 與 64 位元浮點數中執行所有的 32 位元浮點作業 」。
+
+## <a name="a-namexia0006xia0006-httpclientavoidmanaged"></a><a name="XIA0006"/>XIA0006: HttpClientAvoidManaged
+
+- **問題：**建議使用原生 HttpClient 處理常式，而不受管理的其中一個，以提升效能、 較小的可執行檔大小，並輕鬆地支援較新的標準。
+- **修正：** Double iOS 專案上按一下，請移至組建 > iOS 建置和 HttpClient 實作變更 NSUrlSession (iOS 7 +) 或 CFNetwork 支援前面 iOS 7 的版本。

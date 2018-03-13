@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: e599c56f732f918d2a9c82255bc01182651d506c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 74b22f31fabf70885eca732ef021232124df71bb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-dependencyservice"></a>DependencyService 簡介
 
@@ -129,10 +129,10 @@ DependencyService.Get<ITextToSpeech>().Speak("Hello from Xamarin Forms");
 
 [範例 UsingDependencyService 方案](https://developer.xamarin.com/samples/UsingDependencyService/)是適用於 iOS 和 Android，如下所示，上述程式碼變更反白顯示。
 
- [ ![iOS 和 Android 的方案](introduction-images/solution-sml.png "DependencyService 範例方案結構")](introduction-images/solution.png "DependencyService 範例方案結構")
+ [![iOS 和 Android 的方案](introduction-images/solution-sml.png "DependencyService 範例方案結構")](introduction-images/solution.png#lightbox "DependencyService 範例方案結構")
 
 > [!NOTE]
-> **注意：**您**必須**提供每個平台專案中的實作。 如果介面未不註冊任何實作，則`DependencyService`無法解析`Get<T>()`方法在執行階段。
+> 您**必須**提供每個平台專案中的實作。 如果介面未不註冊任何實作，則`DependencyService`無法解析`Get<T>()`方法在執行階段。
 
 
 ## <a name="related-links"></a>相關連結

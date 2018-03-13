@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 2904a7da73f5bf6e8960f65239d1f8dc52ab1aba
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d66d8cd722aa9a7b6fe27db3f6128ee24309a1de
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="visual-design-updates"></a>視覺化設計的更新
 
@@ -51,7 +51,7 @@ iOS 11 變成您更輕鬆地瀏覽列中直接加入搜尋控制站。 當您建
 NavigationItem.SearchController = searchController;
 ```
 
-[![使用搜尋列中的大型瀏覽標題](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png)
+[![使用搜尋列中的大型瀏覽標題](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png#lightbox)
 
 根據您的應用程式的功能，您可能會或可能不想在使用者捲動清單時，要隱藏的 [搜尋] 列。 您可以調整這個設定使用`HidesSearchBarWhenScrolling`屬性。
 
@@ -75,7 +75,7 @@ iOS 7[導入](~/ios/platform/introduction-to-ios7/ios7-ui.md#fullscreen)`topLayo
 
 安全的區域是新的方式來思考應用程式的方式檢視和超級檢視之間加入條件約束可見的空間。 例如，請考慮下列影像：
 
-[![安全區域 vs 頂端和底部的版面配置輔助](visual-design-images/image10-sml.png)](visual-design-images/image10.png)
+[![安全區域 vs 頂端和底部的版面配置輔助](visual-design-images/image10-sml.png)](visual-design-images/image10.png#lightbox)
 
 過去，如果您加入檢視，它會顯示在上方的綠色區域想，您會限制它_底部_的`TopLayoutGuide`和_頂端_的`BottomLayoutGuide`。 在 iOS 11 中，您會改為限制它_頂端_和_底部_的安全區域。 範例如下：
 

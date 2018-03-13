@@ -4,26 +4,22 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 ms.technology: xamarin-cross-platform
-author: asb3993
-ms.author: amburns
-ms.date: 06/26/2017
-ms.openlocfilehash: c79b2277073996a580b455bde519ea959795d7ef
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: bradumbaugh
+ms.author: brumbaug
+ms.date: 03/06/2018
+ms.openlocfilehash: 6042ab9aa861a08da421140857459b02a78f7c70
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-types-reference-guide"></a>繫結型別參考指南
-
-[//]: # (原始檔位於 https://github.com/xamarin/xamarin-macios/tree/master/docs/website/ 之下)
-[//]: （這可讓所有參與者 （包括外部） 提交，請使用 PR，符合工具變更的文件更新） 的 # [ // ]: # （xamarin macios/master 以外的修改將會遺失未來更新）)
 
 本文件說明屬性，您可以用來加上註解您的 API 合約檔案到磁碟機繫結，以及產生的程式碼的清單
 
 Xamarin.iOS 和 Xamarin.Mac API 合約是在 C# 中大部分寫入為定義的方式的介面定義 Objective C 程式碼會顯示為 C#。 程序包含混合的介面宣告再加上 API 合約可能需要一些基本的類型定義。 如需繫結類型的簡介，請參閱我們的附屬指南[繫結 Objective C 程式庫](~/cross-platform/macios/binding/objective-c-libraries.md)。
 
-
-# <a name="type-definitions"></a>類型定義
+## <a name="type-definitions"></a>型別定義
 
 語法：
 
@@ -41,7 +37,7 @@ Xamarin.iOS 介面型別會採用一種通訊協定是透過的方式內嵌的�
 
 下列示範如何 Objective C 宣告`UITextField`Xamarin.iOS 合約中，都會定義：
 
-```csharp
+```objc
 @interface UITextField : UIControl <UITextInput> {
 
 }
@@ -57,10 +53,8 @@ interface UITextField : UITextInput {
 
 您可以將其他屬性套用至介面，以及設定 BaseType 屬性來控制其他許多方面的程式碼產生。
 
- <a name="Generating_Events" />
 
-
-## <a name="generating-events"></a>產生事件
+### <a name="generating-events"></a>產生事件
 
 Xamarin.iOS 和 Xamarin.Mac API 設計一項功能是我們將 OBJECTIVE-C 委派類別對應為 C# 事件和回撥。 使用者可以選擇每個執行個體為基礎他們是否想要採用 Objective C 程式設計模式，藉由指定屬性，例如**委派**實作的各種方法的類別的執行個體，Objective C執行階段會呼叫，或是選擇 C#-樣式事件和屬性。
 
@@ -162,10 +156,8 @@ public interface UIScrollViewDelegate {
 
 除了`DefaultValue`屬性，您也可以使用`DefaultValueFromArgument`的指示來呼叫中傳回指定之參數的值產生器或`NoDefaultValue`指示產生器沒有預設值的參數。
 
- <a name="BaseTypeAttribute" />
 
-
-## <a name="basetypeattribute"></a>BaseTypeAttribute
+### <a name="basetypeattribute"></a>BaseTypeAttribute
 
 語法：
 
@@ -182,7 +174,7 @@ public class BaseTypeAttribute : Attribute {
 }
 ```
 
-### <a name="basetypename"></a>BaseType.Name
+#### <a name="basetypename"></a>BaseType.Name
 
 您使用`Name`屬性，即可控制這種類型會將繫結至 OBJECTIVE-C 世界中的名稱。 這通常用來指定 C# 類型的名稱與.NET Framework 設計方針、 相容，但其對應至未遵循這個慣例的 Objective C 中的名稱。
 
@@ -196,8 +188,7 @@ interface NSUrlConnection {
 
 指定的名稱會指定產生做為值`[Register]`繫結中的屬性。 如果`Name`未指定，類型的簡短名稱做為值`Register`中產生的輸出屬性。
 
-
-### <a name="basetypeevents-and-basetypedelegates"></a>BaseType.Events 和 BaseType.Delegates
+#### <a name="basetypeevents-and-basetypedelegates"></a>BaseType.Events 和 BaseType.Delegates
 
 這些屬性用於磁碟機的 C# 產生的事件樣式中產生的類別。 它們用來連結其 OBJECTIVE-C 委派類別的指定的類別。 您將會遇到許多情況下，類別使用委派類別來傳送通知和事件的位置。 例如`BarcodeScanner`必須隨附`BardodeScannerDelegate`類別。 `BarcodeScanner`類別通常會有您所要指派的執行個體的 「 委派 」 屬性`BarcodeScannerDelegate`，而此運作方式，您可能要公開給您的使用者以 C#-像樣式事件介面，並在這些情況下，您會使用`Events`和`Delegates`屬性`BaseType`屬性。
 
@@ -216,10 +207,8 @@ public interface UIAccelerometerDelegate {
 }
 ```
 
- <a name="BaseType.KeepRefUntil" />
 
-
-### <a name="basetypekeeprefuntil"></a>BaseType.KeepRefUntil
+#### <a name="basetypekeeprefuntil"></a>BaseType.KeepRefUntil
 
 如果建立此類別的新執行個體時，您可以套用這個屬性，該物件的執行個體將會保留之前所參考之方法`KeepRefUntil`已叫用。 這是有助於提升您的應用程式開發介面的可用性時不想讓使用者將使用您的程式碼周圍物件的參考。 這個屬性的值是在方法名稱`Delegate`類別，因此您必須使用此事件搭配和`Delegates`以及屬性。
 
@@ -242,25 +231,20 @@ public interface UIActionSheetDelegate {
 }
 ```
 
- <a name="DisableDefaultCtorAttribute" />
 
-
-## <a name="disabledefaultctorattribute"></a>DisableDefaultCtorAttribute
+### <a name="disabledefaultctorattribute"></a>DisableDefaultCtorAttribute
 
 當這個屬性會套用至介面定義將會使產生器無法產生預設建構函式。
 
 當您需要使用其中一個類別中的其他建構函式初始化物件時，請使用這個屬性。
 
- <a name="PrivateDefaultCtorAttribute" />
 
-
-## <a name="privatedefaultctorattribute"></a>PrivateDefaultCtorAttribute
+### <a name="privatedefaultctorattribute"></a>PrivateDefaultCtorAttribute
 
 當這個屬性套用至介面定義，它會為私用的旗標的預設建構函式。 這表示您可以仍具現化此類別的物件在內部從延伸模組檔案，但它不會只可讓您類別的使用者。
 
-<a name="CategoryAttribute" />
 
-## <a name="categoryattribute"></a>CategoryAttribute
+### <a name="categoryattribute"></a>CategoryAttribute
 
 繫結 OBJECTIVE-C 類別，以及公開以 C# 擴充方法，以鏡像處理 OBJECTIVE-C 公開功能的方式，請在類型定義上使用這個屬性。
 
@@ -268,7 +252,7 @@ public interface UIActionSheetDelegate {
 
 這是類別在目標 c： 會尋找
 
-```csharp
+```objc
 @interface UIView (MyUIViewExtension)
 -(void) makeBackgroundRed;
 @end
@@ -335,9 +319,8 @@ interface FooObject {
 
 如果發現，我們會發出警告 (BI1117)`[Static]`成員內`[Category]`定義。 如果您真的想要有`[Static]`成員內您`[Category]`定義您可以使用 play 警告`[Category (allowStaticMembers: true)]`或而是將您的成員或`[Category]`介面定義與`[Internal]`。
 
-<a name="StaticAttribute" />
 
-## <a name="staticattribute"></a>StaticAttribute
+### <a name="staticattribute"></a>StaticAttribute
 
 當這個屬性會套用至類別只會產生靜態類別，一個不是衍生自`NSObject`所以`[BaseType]`屬性會被忽略。 靜態類別用來裝載您要公開的 C 公用變數。
 
@@ -358,11 +341,8 @@ public partial class CBAdvertisement  {
 }
 ```
 
-<a name="Model_Definitions" />
 
-# <a name="model-definitions"></a>模型定義
-
-###<a name="protocol-definitionsmodel"></a>通訊協定定義模型
+## <a name="protocol-definitionsmodel"></a>通訊協定定義模型
 
 模型通常會使用通訊協定的實作。
 它們不同於執行階段會將只登錄 OBJECTIVE-C 實際上已覆寫的方法。
@@ -370,9 +350,8 @@ public partial class CBAdvertisement  {
 
 這通常表示當您子類別的類別，已標示為與`ModelAttribute`，您不應該呼叫基底方法。   呼叫該方法會擲回例外狀況，您應該要在您覆寫任何方法的子類別上實作的整個行為。
 
-<a name="AbstractAttribute" />
 
-## <a name="abstractattribute"></a>AbstractAttribute
+### <a name="abstractattribute"></a>AbstractAttribute
 
 根據預設，是一種通訊協定的一部分的成員是不必要的。 這可讓使用者建立的子類別`Model`物件只會在 C# 類別衍生並覆寫他們很關心的方法。 Objective C 合約有時需要使用者提供這個方法的實作 (那些標幟@requiredObjective C 中的指示詞)。 在這些情況下，您應該加上旗標與那些方法`Abstract`屬性。
 
@@ -390,10 +369,9 @@ public interface UITableViewDataSource {
 }
 ```
 
- <a name="DefaultValueAttribute" />
+<a name="DefaultValueAttribute" />
 
-
-## <a name="defaultvalueattribute"></a>DefaultValueAttribute
+### <a name="defaultvalueattribute"></a>DefaultValueAttribute
 
 指定要傳回之模型方法中，如果使用者未提供一種方法中的模型物件，這個特定方法的預設值
 
@@ -424,12 +402,11 @@ var camera = new Camera ();
 camera.ShouldUploadToServer = (camera, action) => return SomeDecision ();
 ```
 
-
-
 另請參閱： [NoDefaultValueAttribute](#NoDefaultValueAttribute)， [DefaultValueFromArgumentAttribute](#DefaultValueFromArgumentAttribute)。
 
+<a name="DefaultValueFromArgumentAttribute" />
 
-## <a name="defaultvaluefromargumentattribute"></a>DefaultValueFromArgumentAttribute
+### <a name="defaultvaluefromargumentattribute"></a>DefaultValueFromArgumentAttribute
 
 語法：
 
@@ -455,11 +432,9 @@ public interface NSAnimationDelegate {
 
 在上述案例如果使用者`NSAnimation`類別選擇要使用的任何 C# 事件/屬性，而且未設定`NSAnimation.ComputeAnimationCurve`方法或 lambda 的傳回值會進行參數中傳遞的值。
 
-
-
 另請參閱： [NoDefaultValueAttribute](#NoDefaultValueAttribute)， [DefaultValueAttribute](#DefaultValueAttribute)
 
-## <a name="ignoredindelegateattribute"></a>IgnoredInDelegateAttribute
+### <a name="ignoredindelegateattribute"></a>IgnoredInDelegateAttribute
 
 有時道理不公開事件時，或委派屬性從模型類別，到主機類別讓加入此屬性會指示以避免任何以其裝飾的方法產生的產生器。
 
@@ -475,8 +450,7 @@ public interface UIImagePickerControllerDelegate {
 }
 ```
 
-
-## <a name="delegatenameattribute"></a>DelegateNameAttribute
+### <a name="delegatenameattribute"></a>DelegateNameAttribute
 
 這個屬性用於模型方法的傳回值來設定要使用的委派簽章的名稱。
 
@@ -497,7 +471,7 @@ public interface NSAnimationDelegate {
 public delegate float NSAnimationProgress (MonoMac.AppKit.NSAnimation animation, float progress);
 ```
 
-## <a name="delegateapinameattribute"></a>DelegateApiNameAttribute
+### <a name="delegateapinameattribute"></a>DelegateApiNameAttribute
 
 這個屬性用來允許變更產生的裝載類別中的屬性名稱的產生器。 有時候會很有用時 FooDelegate 類別方法的名稱對於委派類別，但會有點奇怪中做為屬性的主控類別。
 
@@ -520,8 +494,7 @@ public interface NSAnimationDelegate {
 public Func<NSAnimation, float, float> ComputeAnimationCurve { get; set; }
 ```
 
-
-## <a name="eventargsattribute"></a>EventArgsAttribute
+### <a name="eventargsattribute"></a>EventArgsAttribute
 
 接受一個以上參數的事件 （Objective C 中的慣例是委派類別中的第一個參數是寄件者物件的執行個體） 您必須提供您想要產生的 EventArgs 類別需要名稱。 做法是使用`EventArgs`屬性中的方法宣告上您`Model`類別。
 
@@ -552,9 +525,8 @@ public partial class UIImagePickerImagePickedEventArgs : EventArgs {
 public event EventHandler<UIImagePickerImagePickedEventArgs> FinishedPickingImage { add; remove; }
 ```
 
-<a name="EventNameAttribute" />
 
-## <a name="eventnameattribute"></a>EventNameAttribute
+### <a name="eventnameattribute"></a>EventNameAttribute
 
 這個屬性用來允許變更的事件或在類別中產生的屬性名稱的產生器。 有時候會很有用時名稱`Model`類別方法適合模型類別，但看起來會奇數原始類別中的事件或屬性。
 
@@ -572,19 +544,14 @@ var webView = new UIWebView (...);
 webView.LoadFinished += delegate { Console.WriteLine ("done!"); }
 ```
 
- <a name="ModelAttribute" />
 
-
-## <a name="modelattribute"></a>ModelAttribute
+### <a name="modelattribute"></a>ModelAttribute
 
 當您將套用`Model`您應用程式開發介面，執行階段的合約中的類型定義的屬性會產生特殊的程式碼，將只叫用到的類別中的方法如果使用者已覆寫類別中的方法。 這個屬性通常會套用至包裝 OBJECTIVE-C 委派類別的所有 Api。
 
- <a name="NoDefaultValueAttribute" />
+<a name="NoDefaultValueAttribute" />
 
-
-## <a name="nodefaultvalueattribute"></a>NoDefaultValueAttribute
-
-
+### <a name="nodefaultvalueattribute"></a>NoDefaultValueAttribute
 
 指定在模型上的方法不會提供預設的傳回值。
 
@@ -601,8 +568,7 @@ interface CameraDelegate {
 
 另請參閱： [DefaultValueAttribute](#DefaultValueAttribute)和[DefaultValueAttribute](#DefaultValueAttribute)。
 
-
-# <a name="protocols"></a>通訊協定
+## <a name="protocols"></a>通訊協定
 
 在 C# 中確實存在 OBJECTIVE-C 通訊協定概念。 通訊協定類似於 C# 介面但它們的不同處在於會採用該類別必須實作所有的方法和屬性宣告使用通訊協定。 而是一些方法和屬性是選擇性的。
 
@@ -680,7 +646,7 @@ interface MyTool {
 
 上述需要處理，因為在繫結時`IMyProtocol`就不存在，也就是為什麼您需要提供空的介面。
 
-## <a name="adopting-protocol-generated-interfaces"></a>採用通訊協定產生介面
+### <a name="adopting-protocol-generated-interfaces"></a>採用通訊協定產生的介面
 
 每當您實作其中一個介面產生的通訊協定，像這樣：
 
@@ -705,7 +671,7 @@ class MyDelegate : NSObject, IUITableViewDelegate {
 
 並不重要隱含或明確地實作介面。
 
-## <a name="protocol-inlining"></a>內嵌通訊協定
+### <a name="protocol-inlining"></a>內嵌通訊協定
 
 當您繫結已宣告為採用一種通訊協定的現有 Objective C 類型時，您會想要內嵌通訊協定直接。 若要這樣做，只是宣告您的通訊協定 」 為不含任何介面`[BaseType]`屬性，並列出基底介面的介面清單中的通訊協定。
 
@@ -724,17 +690,13 @@ interface Robot : SpeakProtocol {
 }
 ```
 
- <a name="Member_Definitions" />
 
-
-# <a name="member-definitions"></a>成員的定義
+## <a name="member-definitions"></a>成員的定義
 
 本節中的屬性會套用至類型的個別成員： 屬性和方法宣告。
 
- <a name="AlignAttribute" />
 
-
-## <a name="alignattribute"></a>AlignAttribute
+### <a name="alignattribute"></a>AlignAttribute
 
 用來指定屬性的傳回類型的對齊值。 某些屬性接受指標必須在特定界限對齊的位址 (在發生這種情況，例如某些 Xamarin.iOS`GLKBaseEffect`屬性必須為 16 位元組對齊)。 您可以使用這個屬性來裝飾 getter，並使用對齊值。 這通常會搭配`OpenTK.Vector4`和`OpenTK.Matrix4`Objective C 應用程式開發介面與整合時，型別。
 
@@ -747,10 +709,8 @@ public interface GLKBaseEffect {
 }
 ```
 
- <a name="AppearanceAttribute" />
 
-
-## <a name="appearanceattribute"></a>AppearanceAttribute
+### <a name="appearanceattribute"></a>AppearanceAttribute
 
 `Appearance`屬性僅限於 iOS5 引進外觀管理員。
 
@@ -785,8 +745,7 @@ public partial class UIToolbar {
 }
 ```
 
-
-## <a name="autoreleaseattribute-xamarinios-54"></a>AutoReleaseAttribute (Xamarin.iOS 5.4)
+### <a name="autoreleaseattribute-xamarinios-54"></a>AutoReleaseAttribute (Xamarin.iOS 5.4)
 
 使用`AutoReleaseAttribute`方法和屬性，以包裝方法引動過程的方法上`NSAutoReleasePool`。
 
@@ -794,8 +753,7 @@ Objective C 中有某些方法會傳回新增到預設的值`NSAutoReleasePool`�
 
 大量的屬性，例如套用這個屬性 (例如`UIImage.FromFile`) 加入預設的物件傳回`NSAutoReleasePool`。 若沒有這個屬性，只要您的執行緒未將控制權傳回主迴圈會保留映像。 Uf 執行緒某種背景程式下載程式會永遠保持運作，等候工作，影像就永遠不會釋放。
 
-
-## <a name="forcedtypeattribute"></a>ForcedTypeAttribute
+### <a name="forcedtypeattribute"></a>ForcedTypeAttribute
 
 `ForcedTypeAttribute`用來強制執行的 managed 型別建立，即使傳回 unmanaged 的物件不符合繫結定義中所描述的類型。
 
@@ -821,9 +779,7 @@ interface NSUrlSession {
 
 `ForcedTypeAttribute`只適用於在`parameters`，`properties`和`return value`。
 
-
-
-## <a name="bindasattribute"></a>BindAsAttribute
+### <a name="bindasattribute"></a>BindAsAttribute
 
 `BindAsAttribute`允許繫結`NSNumber`，`NSValue`和`NSString`（列舉） 到更精確的 C# 類型。 屬性可以用來建立更好、 更正確透過原生 API 的.NET API。
 
@@ -852,7 +808,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 * `NSNumber`
 * `NSString`
 
-### <a name="nsvalue"></a>NSValue
+#### <a name="nsvalue"></a>NSValue
 
 下列 C# 支援的資料類型要封裝從/到`NSValue`:
 
@@ -874,7 +830,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 * CMTimeMapping
 * CATransform3D
 
-### <a name="nsnumber"></a>NSNumber
+#### <a name="nsnumber"></a>NSNumber
 
 下列 C# 支援的資料類型要封裝從/到`NSNumber`:
 
@@ -894,7 +850,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 * nuint
 * 列舉
 
-### <a name="nsstring"></a>NSString
+#### <a name="nsstring"></a>NSString
 
 `[BindAs]` 適用於與 conjuntion[列舉揭開 NSString 常數](#enum-attributes)讓您可以建立較佳的.NET API，例如：
 
@@ -913,7 +869,7 @@ CAScroll SupportedScrollMode { get; set; }
 
 我們將會處理`enum`  <->  `NSString`才提供的列舉類型的轉換`[BindAs]`是[揭開 NSString 常數](#enum-attributes)。
 
-### <a name="arrays"></a>陣列
+#### <a name="arrays"></a>陣列
 
 `[BindAs]` 也支援陣列的任何支援的型別，您可以有下列 API 定義做為範例：
 
@@ -932,8 +888,7 @@ CAScroll? [] GetScrollModes (CGRect [] rects) { ... }
 
 `rects`參數將會封裝成`NSArray`包含`NSValue`每個`CGRect`就會傳回的陣列和`CAScroll?`的已建立使用傳回的值`NSArray`包含`NSStrings`。
 
-
-## <a name="bindattribute"></a>BindAttribute
+### <a name="bindattribute"></a>BindAttribute
 
 `Bind`屬性有兩個用途一個套用至方法或屬性宣告，並套用至個別 getter 或 setter 屬性中的另一個。
 
@@ -963,10 +918,8 @@ bool Active { get; set; }
 bool Visible { [Bind ("isVisible")] get; set; }
 ```
 
- <a name="AsyncAttribute" />
 
-
-## <a name="asyncattribute"></a>AsyncAttribute
+### <a name="asyncattribute"></a>AsyncAttribute
 
 只用於 Xamarin.iOS 6.3 及更新版本。
 
@@ -1018,26 +971,19 @@ Task<string> UploadAsync (string file);
 
 錯誤時，產生的工作必須設定為例外狀況和`NSErrorException`包裝產生`NSError`。
 
-### <a name="asyncattributeresulttype"></a>AsyncAttribute.ResultType
-
-
+#### <a name="asyncattributeresulttype"></a>AsyncAttribute.ResultType
 
 使用這個屬性來指定傳回的值`Task`物件。   這個參數會使用現有的類型，因此它必須其中一個核心應用程式開發介面定義中定義。
 
-
-### <a name="asyncattributeresulttypename"></a>AsyncAttribute.ResultTypeName
+#### <a name="asyncattributeresulttypename"></a>AsyncAttribute.ResultTypeName
 
 使用這個屬性來指定傳回的值`Task`物件。   這個參數會採用所需的類型名稱的名稱，產生器會產生一系列的屬性，其中一個回呼會針對每個參數。
 
-
-### <a name="asyncattributemethodname"></a>AsyncAttribute.MethodName
-
-
+#### <a name="asyncattributemethodname"></a>AsyncAttribute.MethodName
 
 使用此屬性來自訂產生的非同步方法的名稱。   預設值是使用方法的名稱，並將文字"Async"附加，您可以使用這個選項變更此預設值。
 
-
-## <a name="disablezerocopyattribute"></a>DisableZeroCopyAttribute
+### <a name="disablezerocopyattribute"></a>DisableZeroCopyAttribute
 
 這個屬性會套用至字串參數或字串的屬性和指示以不使用零複製字串的這個參數，封送處理程式碼產生器，以及 C# 字串改為建立新的 NSString 執行個體。
 如果您指示使用零複製字串封送處理使用產生器，在字串上才需要此屬性`--zero-copy`命令列選項或設定組件層級屬性`ZeroCopyStringsAttribute`。
@@ -1051,10 +997,8 @@ Task<string> UploadAsync (string file);
 @property(nonatomic,assign) NSString *name2;
 ```
 
- <a name="DisposeAttribute" />
 
-
-## <a name="disposeattribute"></a>DisposeAttribute
+### <a name="disposeattribute"></a>DisposeAttribute
 
 當您將套用`DisposeAttribute`至類別時，您會提供將加入的程式碼片段`Dispose()`類別的方法實作。
 
@@ -1069,10 +1013,8 @@ interface DatabaseConnection {
 }
 ```
 
- <a name="ExportAttribute" />
 
-
-## <a name="exportattribute"></a>ExportAttribute
+### <a name="exportattribute"></a>ExportAttribute
 
 `Export`屬性用來在方法或屬性，以公開成 Objective C 執行階段旗標。 這個屬性會繫結工具與實際的 Xamarin.iOS 和 Xamarin.Mac 執行階段之間共用。 方法中，參數會傳遞逐字產生的程式碼，屬性的 getter 和 setter 匯出會產生與基底宣告為基礎 (請參閱節`BindAttribute`如需如何變更繫結工具的行為)。
 
@@ -1095,15 +1037,11 @@ public class ExportAttribute : Attribute {
 
 [選取器](http://developer.apple.com/library/ios/#documentation/cocoa/conceptual/objectivec/Chapters/ocSelectors.html)，代表基礎 OBJECTIVE-C 方法或屬性的名稱進行繫結。
 
- <a name="ExportAttribute.ArgumentSemantic" />
+
+#### <a name="exportattributeargumentsemantic"></a>ExportAttribute.ArgumentSemantic
 
 
-### <a name="exportattributeargumentsemantic"></a>ExportAttribute.ArgumentSemantic
-
- <a name="FieldAttribute" />
-
-
-## <a name="fieldattribute"></a>FieldAttribute
+### <a name="fieldattribute"></a>FieldAttribute
 
 此屬性用來做為欄位，會視需要載入，並公開至 C# 程式碼公開 C 全域變數。 通常這必要取得 C 或 Objective C 中所定義，可能是用於某些應用程式開發介面，其中一個語彙基元或其值為不透明和必須做的常數值層是由使用者程式碼。
 
@@ -1122,7 +1060,19 @@ public class FieldAttribute : Attribute {
 
 產生的屬性一定是靜態的。
 
-標示的欄位屬性的屬性可以屬於型別`NSString`， `NSArray`， `nint`， `double`，`nfloat`或`System.IntPtr`。
+標示的欄位屬性的屬性可以是下列類型：
+
+* `NSString`
+* `NSArray`
+* `nint` / `int` / `long`
+* `nuint` / `uint` / `ulong`
+* `nfloat` / `float`
+* `double`
+* `CGSize`
+* `System.IntPtr`
+* 列舉
+
+不支援 setter[列舉揭開 NSString 常數](#enum-attributes)，但它們可以手動繫結必要。
 
 範例：
 
@@ -1134,14 +1084,11 @@ interface CameraEffects {
 }
 ```
 
-
-
-
-## <a name="internalattribute"></a>InternalAttribute
+### <a name="internalattribute"></a>InternalAttribute
 
 `Internal`屬性可以套用至方法或屬性，但是加上旗標以 「 內部 」 C# 關鍵字讓產生的組件中的程式碼只存取程式碼的產生的程式碼作用。 這通常用來隱藏太低層級的 Api 或提供您想要改善時，或產生器不支援的 api 的次佳的公用 API，需要進行一些手動編碼。
 
-當您設計的繫結時，您通常會隱藏方法或屬性使用這個屬性，提供不同的名稱的方法或屬性，而然後在您的 C# 互補的支援檔案，您會加入的強類型包裝函式，會公開基礎這項功能。
+當設計的繫結，您通常會隱藏方法或屬性使用這個屬性，提供不同的名稱的方法或屬性，而然後在您的 C# 互補的支援檔案，您會加入的強類型包裝函式公開基礎功能。
 
 例如: 
 
@@ -1168,36 +1115,28 @@ public NSObject this [NSObject idx] {
 }
 ```
 
-
-## <a name="isthreadstaticattribute"></a>IsThreadStaticAttribute
+### <a name="isthreadstaticattribute"></a>IsThreadStaticAttribute
 
 這個屬性旗標的支援欄位的屬性來標註具有.NET`[ThreadStatic]`屬性。 這非常有用，如果欄位是執行緒的靜態變數。
 
- <a name="MarshalNativeExceptions_(Xamarin.iOS_6.0.6)" />
-
-
-## <a name="marshalnativeexceptions-xamarinios-606"></a>MarshalNativeExceptions (Xamarin.iOS 6.0.6)
+### <a name="marshalnativeexceptions-xamarinios-606"></a>MarshalNativeExceptions (Xamarin.iOS 6.0.6)
 
 這個屬性會使方法支援原生 (ObjectiveC) 例外狀況。
 而不是呼叫`objc_msgSend`引動過程會直接進行自訂的 trampoline 攔截 ObjectiveC 例外狀況，並將其封送處理成 managed 例外狀況。
 
 目前只有少數`objc_msgSend`支援簽章 (是否不支援簽章，當應用程式使用之繫結的原生連結失敗且遺失 monotouch_ 找出*_objc_msgSend*符號)，但更多可在要求中加入。
 
- <a name="NewAttribute" />
 
-
-## <a name="newattribute"></a>NewAttribute
+### <a name="newattribute"></a>NewAttribute
 
 這個屬性會套用至方法和屬性具有產生器產生的"new"關鍵字宣告之前。
 
 它用來避免編譯器警告時導入的子類別的基底類別中已經有相同的方法或屬性的名稱。
 
- <a name="NotificationAttribute" />
 
+### <a name="notificationattribute"></a>NotificationAttribute
 
-## <a name="notificationattribute"></a>NotificationAttribute
-
-您可以將此屬性套用至欄位產生器產生的強型別 helper 通知類別。
+您可以將此屬性套用至欄位產生器產生強型別協助程式通知類別。
 
 這個屬性可以使用不含引數不包含任何承載的通知，或者您可以指定`System.Type`參考另一個介面，在應用程式開發介面定義中，通常名稱結尾"EventArgs"。 產生器會變成介面類別的子類別`EventArgs`，而且將包含所有列出的屬性。 `[Export]`屬性應該用於`EventArgs`類別，以列出用來查閱 OBJECTIVE-C 字典擷取值的索引鍵的名稱。
 
@@ -1244,7 +1183,6 @@ var token = MyClass.Notifications.ObserverDidStart (objectToObserve, (notificati
 ```csharp
 token.Dispose ();
 ```
-
 
 您可以呼叫[NSNotification.DefaultCenter.RemoveObserver](https://developer.xamarin.com/api/member/Foundation.NSNotificationCenter.RemoveObserver/p/Foundation.NSObject//)和將語彙基元。 如果您的通知中包含參數，您應該指定 helper`EventArgs`介面，像這樣：
 
@@ -1306,8 +1244,7 @@ interface MyClass {
 }
 ```
 
-
-## <a name="nullallowedattribute"></a>NullAllowedAttribute
+### <a name="nullallowedattribute"></a>NullAllowedAttribute
 
 這套用至屬性時它會標示為允許 null 指派給它值的屬性。 這是唯一有效的參考型別。
 
@@ -1327,14 +1264,14 @@ UIImage IconFile { get; set; }
 void SetImage ([NullAllowed] UIImage image, State forState);
 ```
 
-## <a name="overrideattribute"></a>OverrideAttribute
+<a name="OverrideAttribute"/>
+
+### <a name="overrideattribute"></a>OverrideAttribute
 
 使用這個屬性，指示繫結產生器的繫結這個特定的方法應該標幟"覆寫 」 關鍵字。
 
- <a name="PreSnippetAttribute" />
 
-
-## <a name="presnippetattribute"></a>PreSnippetAttribute
+### <a name="presnippetattribute"></a>PreSnippetAttribute
 
 您可以使用這個屬性將要插入的輸入的參數已驗證之後，但之前 Objective C 程式碼呼叫某些程式碼
 
@@ -1346,10 +1283,8 @@ void SetImage ([NullAllowed] UIImage image, State forState);
 void Demo ();
 ```
 
- <a name="PrologueSnippetAttribute" />
 
-
-## <a name="prologuesnippetattribute"></a>PrologueSnippetAttribute
+### <a name="prologuesnippetattribute"></a>PrologueSnippetAttribute
 
 您可以使用這個屬性將一些程式碼來插入之前的任何參數來驗證所產生的方法。
 
@@ -1361,10 +1296,8 @@ void Demo ();
 void Demo ();
 ```
 
- <a name="PostGetAttribute" />
 
-
-## <a name="postgetattribute"></a>PostGetAttribute
+### <a name="postgetattribute"></a>PostGetAttribute
 
 指示要叫用指定的屬性，這個類別，以從中提取的值從繫結產生器。
 
@@ -1389,10 +1322,8 @@ public interface NSOperation {
 
 在此情況下，`Dependencies`屬性將會叫用後新增或移除相依性從`NSOperation`載入物件，以防止記憶體流失以及記憶體損毀的物件，確保我們代表實際的圖形。
 
- <a name="PostSnippetAttribute" />
 
-
-## <a name="postsnippetattribute"></a>PostSnippetAttribute
+### <a name="postsnippetattribute"></a>PostSnippetAttribute
 
 您可以使用這個屬性將某些 C# 原始程式碼的程式碼已叫用基礎 OBJECTIVE-C 方法之後插入
 
@@ -1404,17 +1335,13 @@ public interface NSOperation {
 void Demo ();
 ```
 
- <a name="ProxyAttribute" />
 
-
-## <a name="proxyattribute"></a>ProxyAttribute
+### <a name="proxyattribute"></a>ProxyAttribute
 
 這個屬性會套用至傳回值，將它們標示為 proxy 物件。 不可以從使用者繫結區分某些 OBJECTIVE-C Api 傳回 proxy 物件。 這個屬性的影響是加上旗標的物件為`DirectBinding`物件。 對於 Xamarin.Mac 案例，您可以看到[討論這個 bug](https://bugzilla.novell.com/show_bug.cgi?id=670844)。
 
- <a name="RetainListAttribute" />
 
-
-## <a name="retainlistattribute"></a>RetainListAttribute
+### <a name="retainlistattribute"></a>RetainListAttribute
 
 指示要保留的受管理的參考參數或移除參數的內部參考的產生器。 這用來保留物件參考。
 
@@ -1430,10 +1357,7 @@ public class RetainListAttribute: Attribute {
 
 如需範例，請參閱[foundation.cs](https://github.com/mono/maccore/blob/master/src/foundation.cs)和[NSNotificationCenter.cs](https://github.com/mono/maccore/blob/master/src/Foundation/NSNotificationCenter.cs)
 
- <a name="ReleaseAttribute_(Xamarin.iOS_6.0)" />
-
-
-## <a name="releaseattribute-xamarinios-60"></a>ReleaseAttribute (Xamarin.iOS 6.0)
+### <a name="releaseattribute-xamarinios-60"></a>ReleaseAttribute (Xamarin.iOS 6.0)
 
 這可以套用至傳回類型以指出產生器應該呼叫`Release`上的物件，再加以傳回。 只有時才需要一種方法可讓您保留物件 （而不是最常見的案例 autoreleased 物件）
 
@@ -1447,35 +1371,27 @@ NSObject GetAndRetainObject ();
 
 此外這個屬性會傳播至產生的程式碼，以便 Xamarin.iOS 執行階段可讓您知道它必須保留時從這類函式返回 Objective C 的物件。
 
- <a name="SealedAttribute" />
 
-
-## <a name="sealedattribute"></a>SealedAttribute
+### <a name="sealedattribute"></a>SealedAttribute
 
 指示加上旗標所產生的方法，為已密封的產生器。 如果未指定此屬性，預設值是產生的虛擬方法 （虛擬方法、 抽象方法或根據其他屬性如何用覆寫）。
 
- <a name="StaticAttribute" />
 
-
-## <a name="staticattribute"></a>StaticAttribute
+### <a name="staticattribute"></a>StaticAttribute
 
 當`Static`屬性套用至方法或屬性這會產生靜態方法或屬性。 如果未指定此屬性，產生器會產生執行個體方法或屬性。
 
- <a name="TransientAttribute" />
 
-
-## <a name="transientattribute"></a>TransientAttribute
+### <a name="transientattribute"></a>TransientAttribute
 
 使用此屬性為旗標屬性的值是暫時性的也就是建立暫時的 Io，但長時間不存在的物件。 當這個屬性會套用至屬性時，產生器不會建立為此屬性，這表示 managed 的類別不會保留物件參考支援欄位。
 
- <a name="WrapAttribute" />
 
+### <a name="wrapattribute"></a>WrapAttribute
 
-## <a name="wrapattribute"></a>WrapAttribute
+在 Xamarin.iOS/Xamarin.Mac 繫結，設計`Wrap`屬性用來包裝的強型別物件的弱式型別的物件。 此派上用場大部分利用 OBJECTIVE-C 「 委派 」 物件通常為型別宣告`id`或`NSObject`。 公開的委派或資料來源為型別是使用 Xamarin.iOS 和 Xamarin.Mac 的慣例`NSObject`和使用的慣例"Weak"+ 所公開的名稱來命名。 從 Objective C 的 「 識別碼委派 」 屬性會公開為`NSObject WeakDelegate { get; set; }`API 合約檔案中的屬性。
 
-在 Xamarin.iOS/Xamarin.Mac 繫結，設計`Wrap`屬性用來包裝的強類型物件的弱型別的的物件。 此派上用場大部分利用 OBJECTIVE-C 「 委派 」 物件通常為型別宣告`id`或`NSObject`。 公開的委派或資料來源為型別是使用 Xamarin.iOS 和 Xamarin.Mac 的慣例`NSObject`和使用的慣例"Weak"+ 所公開的名稱來命名。 從 Objective C 的 「 識別碼委派 」 屬性會公開為`NSObject WeakDelegate { get; set; }`API 合約檔案中的屬性。
-
-但通常的值指派給此委派是強型別，因此我們介面的強型別，並套用`Wrap`屬性，也就是說，使用者可以選擇使用弱式型別，如果他們需要某些 fine 控制項，或必須求助於低階 tricks，或它們可以用於強型別的屬性的運作。
+但通常的值指派給此委派是強型別，因此我們介面的強型別，並套用`Wrap`屬性，也就是說，使用者可以選擇使用弱式型別，如果他們需要某些 fine 控制項，或必須求助於低階 tricks，或者也可以使用強型別屬性的運作。
 
 範例：
 
@@ -1511,7 +1427,7 @@ var demo = new Demo ();
 demo.WeakDelegate = new SomeObject ();
 ```
 
-這是使用者會使用強類型的版本，請注意，使用者利用 C# 類型系統，並使用覆寫關鍵字來宣告其意圖，他不需要以手動方式裝飾的方法和`Export`，因為我們該 w使用者的繫結中的網路：
+這是使用者會使用強類型版本，請注意，使用者利用 C# 類型系統，並使用覆寫關鍵字來宣告其意圖，他不需要以手動方式裝飾的方法和`Export`，因為我們適用於使用者的繫結：
 
 ```csharp
 // This is the strong case,
@@ -1519,14 +1435,12 @@ class MyDelegate : DemoDelegate {
    override void Demo DoDemo () {}
 }
 
-
 var strongDemo = new Demo ();
 demo.Delegate = new MyDelegate ();
 ```
 
- <a name="Parameter_Attributes" />
 
-另一個用途`Wrap`屬性是要支援強類型的版本的方法。   例如: 
+另一個用途`Wrap`屬性是要支援強類型版本的方法。   例如: 
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -1552,14 +1466,13 @@ interface FooExplorer {
 }
 ```
 
-# <a name="parameter-attributes"></a>參數屬性
+## <a name="parameter-attributes"></a>參數屬性
 
 本章節描述您可以套用到方法定義中的參數屬性，以及`NullAttribute`，套用至整個屬性。
 
+<a name="BlockCallback" />
 
-## <a name="blockcallback"></a>BlockCallback
-
-
+### <a name="blockcallback"></a>BlockCallback
 
 這個屬性會套用至 C# 委派宣告中有問題的參數符合呼叫慣例的 OBJECTIVE-C 區塊，而且應該封送處理它以這種方式通知繫結器的參數型別。
 
@@ -1571,10 +1484,9 @@ typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 
 另請參閱： [CCallback](#CCallback)。
 
+<a name="CCallback" />
 
-## <a name="ccallback"></a>CCallback
-
-
+### <a name="ccallback"></a>CCallback
 
 這個屬性會套用至 C# 委派宣告中有問題的參數符合 C ABI 函式指標呼叫慣例，而且應該封送處理它以這種方式通知繫結器的參數型別。
 
@@ -1584,10 +1496,7 @@ typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 
 另請參閱： [BlockCallback](#BlockCallback)。
 
-
-## <a name="params"></a>Params
-
-
+### <a name="params"></a>Params
 
 您可以使用`[Params]`屬性能夠插入定義中的 「 參數 」 的產生器的方法定義的最後一個陣列參數。   這可讓繫結，以便輕鬆地進行選擇性參數。
 
@@ -1605,7 +1514,7 @@ typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 
 <a name="plainstring" />
 
-## <a name="plainstring"></a>PlainString
+### <a name="plainstring"></a>PlainString
 
 您可以使用`[PlainString]`屬性字串參數，指示繫結產生器，若要為 C 字串，而不是傳遞做為參數傳遞的字串前面`NSString`。
 
@@ -1629,10 +1538,8 @@ void SetText (string theText);
 void LogMessage ([PlainString] string theText);
 ```
 
- <a name="RetainAttribute" />
 
-
-## <a name="retainattribute"></a>RetainAttribute
+### <a name="retainattribute"></a>RetainAttribute
 
 指示要保留指定的參數參考的產生器。 產生器會為此欄位提供的備份存放區，或您可以指定名稱 ( `WrapName`) 來儲存的值。 這是用來存放做為參數傳遞至 Objective C，而且當您知道 Objective C 則只會讓此物件的複本的 managed 物件的參考。 比方說，像是 API`SetDisplay (SomeObject)`會使用這個屬性，因為它可能 SetDisplay，無法只顯示一個物件一次。 如果您要追蹤的多個物件 （例如，適用於類似堆疊的應用程式開發介面） 會使用`RetainList`屬性。
 
@@ -1646,10 +1553,8 @@ public class RetainAttribute {
 }
 ```
 
- <a name="RetainListAttribute" />
 
-
-## <a name="retainlistattribute"></a>RetainListAttribute
+### <a name="retainlistattribute"></a>RetainListAttribute
 
 指示要保留的受管理的參考參數或移除參數的內部參考的產生器。 這用來保留物件參考。
 
@@ -1665,12 +1570,8 @@ public class RetainListAttribute: Attribute {
 
 如需範例，請參閱[foundation.cs](https://github.com/mono/maccore/blob/master/src/foundation.cs)和[NSNotificationCenter.cs](https://github.com/mono/maccore/blob/master/src/Foundation/NSNotificationCenter.cs)
 
- <a name="TransientAttribute" />
 
-
-## <a name="transientattribute"></a>TransientAttribute
-
-
+### <a name="transientattribute"></a>TransientAttribute
 
 此屬性會套用至參數，並從 Objective C 轉換成 C# 時，才會使用。  在各種 OBJECTIVE-C NSObjects 這些轉換期間包裝參數至受管理物件的表示法。
 
@@ -1682,11 +1583,12 @@ public class RetainListAttribute: Attribute {
 
 規則很簡單： 如果執行階段必須建立新的 managed 的表示從原生的物件，則函式結尾的原生物件的保留天數計數皆會予以捨棄，並受管理物件的控制代碼屬性將進行清除。   這表示如果您保留 managed 物件的參考，該參考將會變成無用 （其上叫用方法將會擲回例外狀況）。
 
-如果不是傳遞的物件，或如果已有未處理受管理的物件的表示，強制的 dispose 不會發生。 <a name="Global_Attributes" />
+如果不是傳遞的物件，或如果已有未處理受管理的物件的表示，強制的 dispose 不會發生。 
 
-# <a name="property-attributes"></a>Property 屬性
 
-## <a name="notimplementedattribute"></a>NotImplementedAttribute
+## <a name="property-attributes"></a>屬性的屬性
+
+### <a name="notimplementedattribute"></a>NotImplementedAttribute
 
 這個屬性用來支援 OBJECTIVE-C 慣用語，其中具有 getter 的屬性在基底類別引進並處於可變動的子類別介紹 setter。
 
@@ -1719,7 +1621,9 @@ interface MyMutableString {
 }
 ```
 
-# <a name="enum-attributes"></a>Enum 屬性
+<a name="enum-attributes"/>
+
+## <a name="enum-attributes"></a>Enum 屬性
 
 對應`NSString`列舉值的常數是用來建立較佳的.NET API。 它：
 
@@ -1760,7 +1664,7 @@ var constant = CallApiReturningAnNSString ();
 CallApiWithEnum (NSRunLoopModeExtensions.GetValue (constant));
 ```
 
-## <a name="defaultenumvalueattribute"></a>DefaultEnumValueAttribute
+### <a name="defaultenumvalueattribute"></a>DefaultEnumValueAttribute
 
 您可以裝飾**一個**以這個屬性的列舉值。 這會成為所傳回的列舉值已不在已知的常數。
 
@@ -1773,7 +1677,7 @@ Call (x.GetConstant ()); // NSDefaultRunLoopMode will be used
 
 如果沒有列舉值裝飾時則`NotSupportedException`就會擲回。
 
-## <a name="errordomainattribute"></a>ErrorDomainAttribute
+### <a name="errordomainattribute"></a>ErrorDomainAttribute
 
 錯誤碼是繫結為列舉值。 通常是相關的錯誤網域，所以不一定可以輕鬆地尋找適用於哪一個 （或其中一個即使存在）。
 
@@ -1793,8 +1697,7 @@ Call (x.GetConstant ()); // NSDefaultRunLoopMode will be used
 
 然後，您可以呼叫擴充方法`GetDomain`取得網域的任何錯誤的常數。
 
-
-## <a name="fieldattribute"></a>FieldAttribute
+### <a name="fieldattribute"></a>FieldAttribute
 
 這是相同`[Field]`屬性用於型別內的常數。 它也可用在列舉內部對應具有特定常數的值。
 
@@ -1809,14 +1712,12 @@ Call (NSRunLoopModeExtensions.GetValue (constant)); // will return 1000
 
 如果沒有`null`值存在於則`ArgumentNullException`就會擲回。
 
-# <a name="global-attributes"></a>全域屬性
+## <a name="global-attributes"></a>全域屬性
 
 全域屬性可能會套用使用`[assembly:]`屬性修飾詞，像`LinkWithAttribute`，也可使用任何地方，例如`Lion`和`Since`屬性。
 
- <a name="LinkWithAttribute" />
 
-
-## <a name="linkwithattribute"></a>LinkWithAttribute
+### <a name="linkwithattribute"></a>LinkWithAttribute
 
 這是可讓開發人員指定的連結不需要手動設定 gcc_flags 文件庫的取用者重複使用的繫結的程式庫所需的旗標和額外 mtouch 引數傳遞至文件庫的組件層級屬性。
 
@@ -1864,10 +1765,8 @@ public class LinkWithAttribute : Attribute {
 [assembly: LinkWith (LinkerFlags = "-lsqlite3")]
  ```
 
- <a name="LinkWithAttribute_Constructors" />
 
-
-### <a name="linkwithattribute-constructors"></a>LinkWithAttribute 建構函式
+#### <a name="linkwithattribute-constructors"></a>LinkWithAttribute 建構函式
 
 這些建構函式可讓您指定要與連結和嵌入您產生的組件，支援程式庫支援的目標以及任何選擇性的程式庫旗標所需的程式庫連結的媒體櫃。
 
@@ -1889,69 +1788,51 @@ public class LinkWithAttribute : Attribute {
 [assembly: LinkWith ("libDemo.a", LinkTarget.Thumb | LinkTarget.Simulator, SmartLink = true, ForceLoad = true, IsCxx = true);
 ```
 
- <a name="LinkWithAttribute.ForceLoad" />
 
-
-### <a name="linkwithattributeforceload"></a>LinkWithAttribute.ForceLoad
+#### <a name="linkwithattributeforceload"></a>LinkWithAttribute.ForceLoad
 
 `ForceLoad`屬性用來決定是否`-force_load`連結旗標用來連結原生程式庫。 現在，這應該一律是 true。
 
- <a name="LinkWithAttribute.Frameworks" />
 
-
-### <a name="linkwithattributeframeworks"></a>LinkWithAttribute.Frameworks
+#### <a name="linkwithattributeframeworks"></a>LinkWithAttribute.Frameworks
 
 要繫結的程式庫是否有任何架構上的硬碟需求 (以外`Foundation`和`UIKit`)，您應該設定`Frameworks`屬性設為字串，其中包含一個必要的平台架構以空格分隔的清單。 例如，如果您要繫結的程式庫需要`CoreGraphics`和`CoreText`，您會設定`Frameworks`屬性`"CoreGraphics CoreText"`。
 
- <a name="LinkWithAttribute.IsCxx" />
 
-
-### <a name="linkwithattributeiscxx"></a>LinkWithAttribute.IsCxx
+#### <a name="linkwithattributeiscxx"></a>LinkWithAttribute.IsCxx
 
 設定此屬性設定為 true，如果產生的可執行檔必須使用 c + + 編譯器，而不預設值，這是 C 編譯器進行編譯。 如果您要繫結的程式庫以 c + + 撰寫，請使用此選項。
 
- <a name="LinkWithAttribute.LibraryName" />
 
-
-### <a name="linkwithattributelibraryname"></a>LinkWithAttribute.LibraryName
+#### <a name="linkwithattributelibraryname"></a>LinkWithAttribute.LibraryName
 
 包裝的 unmanaged 程式庫名稱。 這是 「.a"副檔名的檔案，而且它可以包含多個平台 （例如 ARM 和 x86 模擬器） 的物件程式碼。
 
 舊版的 Xamarin.iOS 檢查`LinkTarget`屬性來判斷平台程式庫支援，但這是現在自動偵測和`LinkTarget`屬性會被忽略。
 
- <a name="LinkWithAttribute.LinkerFlags" />
 
-
-### <a name="linkwithattributelinkerflags"></a>LinkWithAttribute.LinkerFlags
+#### <a name="linkwithattributelinkerflags"></a>LinkWithAttribute.LinkerFlags
 
 `LinkerFlags`字串為提供的方式來指定原生程式庫連結至應用程式時，任何其他連結器旗標所需的繫結作者。
 
 例如，如果原生程式庫需要 libxml2 和 zlib，您可以將`LinkerFlags`字串至`"-lxml2 -lz"`。
 
- <a name="LinkWithAttribute.LinkTarget" />
 
-
-### <a name="linkwithattributelinktarget"></a>LinkWithAttribute.LinkTarget
+#### <a name="linkwithattributelinktarget"></a>LinkWithAttribute.LinkTarget
 
 舊版的 Xamarin.iOS 檢查`LinkTarget`屬性來判斷平台程式庫支援，但這是現在自動偵測和`LinkTarget`屬性會被忽略。
 
-
-
-### <a name="linkwithattributeneedsgccexceptionhandling"></a>LinkWithAttribute.NeedsGccExceptionHandling
+#### <a name="linkwithattributeneedsgccexceptionhandling"></a>LinkWithAttribute.NeedsGccExceptionHandling
 
 設定此屬性設定為 true，如果您要連結程式庫需要 GCC 例外狀況處理程式庫 (gcc_eh)
 
- <a name="LinkWithAttribute.SmartLink" />
 
-
-### <a name="linkwithattributesmartlink"></a>LinkWithAttribute.SmartLink
+#### <a name="linkwithattributesmartlink"></a>LinkWithAttribute.SmartLink
 
 `SmartLink`屬性應該設定為 true，讓 Xamarin.iOS 判斷是否`ForceLoad`是否為必要。
 
- <a name="LinkWithAttribute.WeakFrameworks" />
 
-
-### <a name="linkwithattributeweakframeworks"></a>LinkWithAttribute.WeakFrameworks
+#### <a name="linkwithattributeweakframeworks"></a>LinkWithAttribute.WeakFrameworks
 
 `WeakFrameworks`屬性的運作方式的相同方式`Frameworks`屬性，但在連結階段`-weak_framework`規範時，會傳遞至 gcc 上，針對每個列出的架構。
 
@@ -1959,10 +1840,7 @@ public class LinkWithAttribute : Attribute {
 
 非常適合以弱式連結會`Frameworks`喜歡帳戶`CoreBluetooth`， `CoreImage`， `GLKit`，`NewsstandKit`和`Twitter`因為只會出現在 iOS 5。
 
- <a name="SinceAttribute_(iOS)_and_LionAttribute_(MacOS_X)" />
-
-
-## <a name="sinceattribute-ios-and-lionattribute-macos-x"></a>SinceAttribute (iOS) 和 LionAttribute (MacOS X)
+### <a name="sinceattribute-ios-and-lionattribute-macos"></a>SinceAttribute (iOS) 和 LionAttribute (macOS)
 
 您使用`Since`為具有時間引入在某個時點的屬性旗標的 Api。 屬性應該只用來加上旗標類型和方法可能會導致執行階段問題，如果基礎類別、 方法或屬性無法使用。
 
@@ -2004,19 +1882,14 @@ public interface UITableViewController {
 
 `Lion`屬性會套用相同的方式，但用於 Lion 導入的型別。 若要使用的原因`Lion`與更特定的版本號碼，可在 iOS 中是主要 OS X 版本鮮少發生，而且很容易記住作業系統的版本比其 codename 時經常修改該 iOS
 
- <a name="AdviceAttribute" />
 
+### <a name="adviceattribute"></a>AdviceAttribute
 
-## <a name="adviceattribute"></a>AdviceAttribute
+使用這個屬性，讓開發人員可能會比較方便，才能使用其他 Api 的相關的提示。   例如，如果您提供應用程式開發介面的強類型版本，您可以使用這個屬性弱型別屬性引導開發人員更好的應用程式開發介面。
 
+這個屬性的資訊會顯示文件中，並可以為了給使用者的建議如何改善開發工具
 
-
-使用這個屬性，讓開發人員可能會比較方便，才能使用其他 Api 的相關的提示。   例如，如果您提供的應用程式開發介面的強類型的版本，您可以使用這個屬性弱型別的屬性上引導開發人員更好的應用程式開發介面。
-
-這個屬性的資訊會顯示文件中，而且可以為了給使用者的建議來改善其程式碼的方式開發工具。 <a name="ZeroCopyStringsAttribute" />
-
-
-## <a name="zerocopystringsattribute"></a>ZeroCopyStringsAttribute
+### <a name="zerocopystringsattribute"></a>ZeroCopyStringsAttribute
 
 只用於 Xamarin.iOS 5.4 及更新版本。
 
@@ -2047,17 +1920,16 @@ interface MyBinding {
 
     [assembly:ZeroCopyStrings]
 
-# <a name="strongly-typed-dictionaries"></a>強類型的字典
+## <a name="strongly-typed-dictionaries"></a>強型別字典
 
-與 Xamarin.iOS 8.0 我們引進了輕鬆地建立該換行強類型類別的支援`NSDictionaries`。
+與 Xamarin.iOS 8.0 我們引進了輕鬆地建立該換行強型別類別支援`NSDictionaries`。
 
 雖然它一直都可使用[DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/)資料類型與手動的 API，它現在是更容易執行這項操作。  如需詳細資訊，請參閱[面對強式型別](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types)。
 
-<a name="StrongDictionar"/>
 
-## <a name="strongdictionary"></a>StrongDictionary
+### <a name="strongdictionary"></a>StrongDictionary
 
-當這個屬性會套用至介面時，產生器會產生具有相同名稱做為衍生自介面類別[DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/)並將轉換成強類型的 getter 介面中定義的每一個屬性和字典的 setter。
+當這個屬性會套用至介面時，產生器會產生具有相同名稱做為衍生自介面類別[DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/)並將轉換成強類型介面中定義的每一個屬性getter 和 setter 的字典。
 
 這會自動產生的類別可以具現化，從現有`NSDictionary`或已新建立的。
 
@@ -2111,7 +1983,7 @@ interface MyColoringKeys {
 }
 ```
 
-### <a name="strong-dictionary-types"></a>強式的字典類型
+#### <a name="strong-dictionary-types"></a>強式的字典類型
 
 支援下列資料型別`StrongDictionary`定義：
 

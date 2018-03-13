@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/20/2017
-ms.openlocfilehash: 84dfe88e912241eb0024143bca568ae75e5bfa28
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d83135aa9c101e06a680b458cce8c12dcdddd947
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="naming-parameters-with-javadoc"></a>與 Javadoc 命名參數
 
 _本文說明如何使用 Java 專案所產生的 Javadoc 復原 Java 繫結專案中的參數名稱。_
 
-<a name="Overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -38,9 +37,8 @@ _本文說明如何使用 Java 專案所產生的 Javadoc 復原 Java 繫結專�
 
 
 > [!NOTE]
-> **注意：**沒有更多的 JavaDoc 輸出中的變異數。 。JAR 繫結工具鏈不支援每一個可能的排列，因此某些參數不正確的名稱可能。
+> 沒有更多的 JavaDoc 輸出中的變異數。 。JAR 繫結工具鏈不支援每一個可能的排列，因此某些參數不正確的名稱可能。
 
-<a name="Summary" />
 
 ## <a name="summary"></a>總結
 

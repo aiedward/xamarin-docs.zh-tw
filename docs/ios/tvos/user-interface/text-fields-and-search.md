@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: cb6917f9cd0dc22cc32a2d32c203328f1d6d963b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7d58c30e745e26d1076e75470e527cbe95e85eb6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-text-and-search-fields"></a>處理文字與搜尋欄位
 
@@ -22,11 +22,11 @@ _本文涵蓋設計和處理文字與搜尋欄位內 Xamarin.tvOS 應用程式�
 
 在必要時 Xamarin.tvOS 應用程式可以小型的文字，向使用者要求 （例如使用者識別碼和密碼） 使用的文字欄位和螢幕小鍵盤：
 
-[ ![](text-fields-and-search-images/intro01.png "範例搜尋欄位")](text-fields-and-search-images/intro01.png)
+[![](text-fields-and-search-images/intro01.png "範例搜尋欄位")](text-fields-and-search-images/intro01.png#lightbox)
 
 您可以選擇提供應用程式的內容使用 [搜尋] 欄位中的關鍵字搜尋功能：
 
-[ ![](text-fields-and-search-images/intro02.png "範例搜尋結果")](text-fields-and-search-images/intro02.png)
+[![](text-fields-and-search-images/intro02.png "範例搜尋結果")](text-fields-and-search-images/intro02.png#lightbox)
 
 本文件將涵蓋在 Xamarin.tvOS 應用程式中使用的文字和搜尋欄位的詳細資料。
 
@@ -44,7 +44,7 @@ _本文涵蓋設計和處理文字與搜尋欄位內 Xamarin.tvOS 應用程式�
 
 TvOS，在文字欄位會以固定高度、 圓角的項目 方塊中，畫面上隨即顯示螢幕小鍵盤，當使用者按一下它：
 
-[ ![](text-fields-and-search-images/text01.png "文字欄位中 tvOS")](text-fields-and-search-images/text01.png)
+[![](text-fields-and-search-images/text01.png "文字欄位中 tvOS")](text-fields-and-search-images/text01.png#lightbox)
 
 當使用者移[焦點](~/ios/tvos/app-fundamentals/navigation-focus.md)到指定的文字欄位，則會大幅成長，並顯示深的陰影。 您必須謹記這在設計您的使用者介面文字欄位可以重疊其他 UI 元素為焦點時。
 
@@ -61,7 +61,7 @@ Apple 已使用的文字欄位的下列建議：
 
 每當使用者在文字欄位中的使用者介面，線性螢幕上會顯示鍵盤。 使用者使用觸控介面[Siri 遠端](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)從鍵盤選取個別的字母，然後輸入要求的資訊：
 
-[ ![](text-fields-and-search-images/keyboard01.png "Siri 遠端鍵盤")](text-fields-and-search-images/keyboard01.png)
+[![](text-fields-and-search-images/keyboard01.png "Siri 遠端鍵盤")](text-fields-and-search-images/keyboard01.png#lightbox)
 
 如果目前的檢視上有多個文字欄位**下一步**来採取的下一個文字欄位的使用者，會自動顯示按鈕。 A**完成**按鈕會顯示最後一個文字欄位，將會結束文字項目，並回到上一個畫面中的使用者。 
 
@@ -80,7 +80,7 @@ Apple 有螢幕小鍵盤來處理下列建議：
 
 搜尋欄位呈現提供文字欄位的特定的畫面和螢幕小鍵盤，可讓使用者篩選集合中的下面鍵盤所顯示的項目：
 
-[ ![](text-fields-and-search-images/search01.png "範例搜尋結果")](text-fields-and-search-images/search01.png)
+[![](text-fields-and-search-images/search01.png "範例搜尋結果")](text-fields-and-search-images/search01.png#lightbox)
 
 當使用者在搜尋欄位中輸入字母，以下的結果將會自動反映搜尋的結果。 在任何時間，使用者可以焦點轉移到結果，並選取其中一個呈現的項目。
 
@@ -105,16 +105,16 @@ Xamarin.tvOS 應用程式中使用的文字欄位的最簡單方式是將它們�
 1. 在**方案板**，連按兩下`Main.storyboard`檔案，以開啟它進行編輯。
 1. 拖放到一個或多個**文字欄位**int 設計介面拖曳至檢視： 
 
-    [ ![](text-fields-and-search-images/text02.png "文字欄位")](text-fields-and-search-images/text02.png)
+    [![](text-fields-and-search-images/text02.png "文字欄位")](text-fields-and-search-images/text02.png#lightbox)
 1. 選取**文字欄位**並提供每個唯一**名稱**中**Widget**  索引標籤**屬性板**: 
 
-    [ ![](text-fields-and-search-images/text03.png "屬性輸入板的小工具 索引標籤")](text-fields-and-search-images/text03.png)
+    [![](text-fields-and-search-images/text03.png "屬性輸入板的小工具 索引標籤")](text-fields-and-search-images/text03.png#lightbox)
 1. 在**文字欄位** 區段中，您可以定義元素，例如**預留位置**提示和預設**值**: 
 
-    [ ![](text-fields-and-search-images/text04.png "文字欄位區段")](text-fields-and-search-images/text04.png)
+    [![](text-fields-and-search-images/text04.png "文字欄位區段")](text-fields-and-search-images/text04.png#lightbox)
 1. 向下捲動來定義屬性，例如**拼字檢查**，**大寫**和預設**鍵盤類型**: 
 
-    [ ![](text-fields-and-search-images/text05.png "檢查拼字、 大小寫和預設鍵盤類型")](text-fields-and-search-images/text05.png) 
+    [![](text-fields-and-search-images/text05.png "檢查拼字、 大小寫和預設鍵盤類型")](text-fields-and-search-images/text05.png#lightbox) 
 1. 將變更儲存至分鏡腳本。
     
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -122,16 +122,16 @@ Xamarin.tvOS 應用程式中使用的文字欄位的最簡單方式是將它們�
 1. 在方案總管中按兩下 `Main.storyboard` 檔案將其開啟以進行編輯。
 1. 拖放到一個或多個**文字欄位**int 設計介面拖曳至檢視： 
 
-    [ ![](text-fields-and-search-images/text02-vs.png "文字欄位")](text-fields-and-search-images/text02-vs.png)
+    [![](text-fields-and-search-images/text02-vs.png "文字欄位")](text-fields-and-search-images/text02-vs.png#lightbox)
 1. 選取**文字欄位**並提供每個唯一**名稱**中**Widget**  索引標籤**屬性總管**: 
 
-    [ ![](text-fields-and-search-images/text03-vs.png "[小工具] 索引標籤")](text-fields-and-search-images/text03-vs.png)
+    [![](text-fields-and-search-images/text03-vs.png "[小工具] 索引標籤")](text-fields-and-search-images/text03-vs.png#lightbox)
 1. 在**文字欄位** 區段中，您可以定義元素，例如**預留位置**提示和預設**值**: 
 
-    [ ![](text-fields-and-search-images/text04-vs.png "文字欄位區段")](text-fields-and-search-images/text04-vs.png)
+    [![](text-fields-and-search-images/text04-vs.png "文字欄位區段")](text-fields-and-search-images/text04-vs.png#lightbox)
 1. 向下捲動來定義屬性，例如**拼字檢查**，**大寫**和預設**鍵盤類型**: 
 
-    [ ![](text-fields-and-search-images/text05-vs.png "檢查拼字、 大小寫和預設鍵盤類型")](text-fields-and-search-images/text05-vs.png) 
+    [![](text-fields-and-search-images/text05-vs.png "檢查拼字、 大小寫和預設鍵盤類型")](text-fields-and-search-images/text05-vs.png#lightbox) 
 1. 將變更儲存至分鏡腳本。
     
 -----
@@ -157,17 +157,17 @@ Console.WriteLine ("User ID {0} and Password {1}", UserId.Text, Password.Text);
 1. 在**方案板**，連按兩下`Main.storyboard`檔案，以開啟它進行編輯。
 1. 將新的集合檢視控制器拖曳到分鏡腳本來呈現使用者搜尋的結果： 
 
-    [ ![](text-fields-and-search-images/search02.png "集合檢視控制器")](text-fields-and-search-images/search02.png)
+    [![](text-fields-and-search-images/search02.png "集合檢視控制器")](text-fields-and-search-images/search02.png#lightbox)
 1. 在**Widget**  索引標籤**屬性板**，使用`SearchResultsViewController`如**類別**和`SearchResults`的**分鏡腳本識別碼**: 
 
-    [ ![](text-fields-and-search-images/search03.png "[小工具] 索引標籤")](text-fields-and-search-images/search03.png)
+    [![](text-fields-and-search-images/search03.png "[小工具] 索引標籤")](text-fields-and-search-images/search03.png#lightbox)
 1. 選取**儲存格原型**設計介面上。
 1. 在**Widget**  索引標籤**屬性總管**，使用`SearchResultCell`的**類別**和`ImageCell`如**識別碼**: 
 
-    [ ![](text-fields-and-search-images/search04.png "[小工具] 索引標籤")](text-fields-and-search-images/search04.png)
+    [![](text-fields-and-search-images/search04.png "[小工具] 索引標籤")](text-fields-and-search-images/search04.png#lightbox)
 1. 設計版面配置的**儲存格原型**和公開每個項目具有唯一**名稱**中**Widget**  索引標籤**屬性總管**: 
 
-    [ ![](text-fields-and-search-images/search05.png "版面配置的儲存格原型設計")](text-fields-and-search-images/search05.png)
+    [![](text-fields-and-search-images/search05.png "版面配置的儲存格原型設計")](text-fields-and-search-images/search05.png#lightbox)
 1. 將變更儲存至分鏡腳本。
     
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -175,17 +175,17 @@ Console.WriteLine ("User ID {0} and Password {1}", UserId.Text, Password.Text);
 1. 在方案總管中按兩下 `Main.storyboard` 檔案將其開啟以進行編輯。
 1. 將新的集合檢視控制器拖曳到分鏡腳本來呈現使用者搜尋的結果： 
 
-    [ ![](text-fields-and-search-images/seach02-vs.png "集合檢視控制器")](text-fields-and-search-images/seach02-vs.png)
+    [![](text-fields-and-search-images/seach02-vs.png "集合檢視控制器")](text-fields-and-search-images/seach02-vs.png#lightbox)
 1. 在**Widget**  索引標籤**屬性總管**，使用`SearchResultsViewController`如**類別**和`SearchResults`如**分鏡腳本識別碼**: 
 
-    [ ![](text-fields-and-search-images/search03-vs.png "[小工具] 索引標籤")](text-fields-and-search-images/search03-vs.png)
+    [![](text-fields-and-search-images/search03-vs.png "[小工具] 索引標籤")](text-fields-and-search-images/search03-vs.png#lightbox)
 1. 選取**儲存格原型**設計介面上。
 1. 在**Widget**  索引標籤**屬性總管**，使用`SearchResultCell`的**類別**和`ImageCell`如**識別碼**: 
 
-    [ ![](text-fields-and-search-images/search04-vs.png "[小工具] 索引標籤")](text-fields-and-search-images/search04-vs.png)
+    [![](text-fields-and-search-images/search04-vs.png "[小工具] 索引標籤")](text-fields-and-search-images/search04-vs.png#lightbox)
 1. 設計版面配置的**儲存格原型**和公開每個項目具有唯一**名稱**中**Widget**  索引標籤**屬性總管**: 
 
-    [ ![](text-fields-and-search-images/search05-vs.png "版面配置的儲存格原型設計")](text-fields-and-search-images/search05-vs.png)
+    [![](text-fields-and-search-images/search05-vs.png "版面配置的儲存格原型設計")](text-fields-and-search-images/search05-vs.png#lightbox)
 1. 將變更儲存至分鏡腳本。
     
 -----
@@ -198,13 +198,13 @@ Console.WriteLine ("User ID {0} and Password {1}", UserId.Text, Password.Text);
 
 接下來，您必須提供類別以做為使用者將會搜尋的資料模型的結果。 在**方案總管 中**，以滑鼠右鍵按一下專案名稱，然後選取**新增** > **新的檔案...**  > **一般** > **空類別**並提供**名稱**: 
 
-[ ![](text-fields-and-search-images/search06.png "選取空類別，並提供名稱")](text-fields-and-search-images/search06.png)
+[![](text-fields-and-search-images/search06.png "選取空類別，並提供名稱")](text-fields-and-search-images/search06.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 接下來，您必須提供類別以做為使用者將會搜尋的資料模型的結果。 在**方案總管 中**，以滑鼠右鍵按一下專案名稱，然後選取**新增** > **新項目...**  >  **Apple** > **其他** > **類別**並提供**名稱**: 
 
-[ ![](text-fields-and-search-images/search06-vs.png "選取類別並提供名稱")](text-fields-and-search-images/search06-vs.png)
+[![](text-fields-and-search-images/search06-vs.png "選取類別並提供名稱")](text-fields-and-search-images/search06-vs.png#lightbox)
 
 -----
 
@@ -772,11 +772,11 @@ public override void ViewDidAppear (bool animated)
 
 當應用程式執行時，使用者選取的搜尋 索引標籤，將會向使用者顯示的項目未篩選的完整清單：
 
-[ ![](text-fields-and-search-images/intro02.png "預設搜尋結果")](text-fields-and-search-images/intro02.png)
+[![](text-fields-and-search-images/intro02.png "預設搜尋結果")](text-fields-and-search-images/intro02.png#lightbox)
 
 當使用者開始輸入搜尋字詞，結果清單會篩選由該詞彙並自動更新：
 
-[ ![](text-fields-and-search-images/intro03.png "篩選的搜尋結果")](text-fields-and-search-images/intro03.png)
+[![](text-fields-and-search-images/intro03.png "篩選的搜尋結果")](text-fields-and-search-images/intro03.png#lightbox)
 
 在任何時間，使用者可以將焦點切換至搜尋結果中的項目，並按一下觸控 Siri 遙控器來選取它的介面。
 

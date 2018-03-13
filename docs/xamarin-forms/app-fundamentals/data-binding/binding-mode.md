@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: e85bc98b5da4c6e529f150c6e7945a8556e2c60f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 887dc3cf710fb75d05d02af179bc218c15d31f97
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-mode"></a>繫結模式
 
@@ -45,7 +45,7 @@ ms.lasthandoff: 02/27/2018
 
 如您所料，`Slider`會初始化為值 1，從初始`Opacity`值`Label`。 在左側 iOS 螢幕擷取畫面所示：
 
-[![反轉繫結](binding-mode-images/reversebinding-small.png "反向繫結")](binding-mode-images/reversebinding-large.png "反向繫結")
+[![反轉繫結](binding-mode-images/reversebinding-small.png "反向繫結")](binding-mode-images/reversebinding-large.png#lightbox "反向繫結")
 
 但您可能會感到驚訝，`Slider`會繼續運作，如的 Android 和 UWP 螢幕擷取畫面所示。 這似乎建議更好時才能運作的資料繫結`Slider`是繫結目標而不是`Label`因為初始化可以運作，我們可能預期一樣。
 
@@ -250,7 +250,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 
 第一次執行此程式， `BoxView`， `Label`，和三個`Slider`項目都從根據初始 ViewModel 設`Color`ViewModel 未具現化時設定的屬性。 在左側 iOS 螢幕擷取畫面所示：
 
-[![簡單的色彩選取器](binding-mode-images/simplecolorselector-small.png "簡單色彩選取器")](binding-mode-images/simplecolorselector-large.png "簡單色彩選取器")
+[![簡單的色彩選取器](binding-mode-images/simplecolorselector-small.png "簡單色彩選取器")](binding-mode-images/simplecolorselector-large.png#lightbox "簡單色彩選取器")
 
 以操作滑桿，`BoxView`和`Label`據以更新，如的 Android 和 UWP 螢幕擷取畫面所示。
 
@@ -661,7 +661,7 @@ public partial class SampleSettingsPage : ContentPage
 
 第一次執行時，左側 iOS 螢幕擷取畫面會顯示程式。 在建構函式`SampleSettingsViewModel`初始化的背景色彩為白色，而這就是在選取的項目`ListView`:
 
-[![範例設定](binding-mode-images/samplesettings-small.png "範例設定")](binding-mode-images/samplesettings-large.png "範例設定")
+[![範例設定](binding-mode-images/samplesettings-small.png "範例設定")](binding-mode-images/samplesettings-large.png#lightbox "範例設定")
 
 其他兩個螢幕擷取畫面顯示變更後的設定。 當實驗此頁面，請記得將進入睡眠狀態，或終止上裝置或模擬器正在執行的程式。 結束 Visual Studio 偵錯工具中的程式不會造成`OnSleep`中覆寫`App`呼叫類別。
 

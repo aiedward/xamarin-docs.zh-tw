@@ -7,12 +7,12 @@ ms.assetid: 05B34788-F2D2-4347-B66B-40AFD7B1D167
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: ccd55d4d7f1aea55110e109bed1fbd4ebc90b93f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 02/28/2018
+ms.openlocfilehash: 335e63ce5a36cbd0172744a35c82920853b82e5c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="activity-lifecycle"></a>活動開發週期
 
@@ -44,7 +44,7 @@ Android 的活動生命週期包含活動類別內所公開的方法，為開發
 
 Android OS arbitrates 其狀態為基礎的活動。 這有助於 Android 識別出不再使用時，允許 OS 回收記憶體和資源的活動。 下圖說明活動可以瀏覽在其存留期間的狀態：
 
-[ ![活動狀態圖](images/image1-sml.png)](images/image1.png)
+[![活動狀態圖](images/image1-sml.png)](images/image1.png#lightbox)
 
 這些狀態可以拆成 4 個主要群組，如下所示：
 
@@ -69,7 +69,7 @@ Android OS arbitrates 其狀態為基礎的活動。 這有助於 Android 識別
 
 Android SDK，藉由擴充，Xamarin.Android 架構提供了功能強大的模型管理的應用程式內的活動狀態。 活動的狀態已變更時，活動會收到的作業系統，該活動呼叫特有的方法。 下圖將說明這些活動的生命週期的關聯性中的方法：
 
-[ ![活動生命週期的流程圖](images/image2-sml.png)](images/image2.png)
+[![活動生命週期的流程圖](images/image2-sml.png)](images/image2.png#lightbox)
 
 身為開發人員，您可以藉由覆寫這些方法，活動中的處理狀態變更。 請務必注意，不過，所有的存留週期方法 UI 執行緒上呼叫，且將會封鎖從執行下一個片段的 UI 工作，例如隱藏目前的活動，顯示新的活動等作業系統。因此，這些方法中的程式碼應越簡短越好，以讓覺得也執行應用程式。 背景執行緒上應該執行任何長時間執行的工作。
 
@@ -205,7 +205,7 @@ public void OnPause()
 
 許多的 Android 裝置有兩個不同的按鈕: [上一頁] 按鈕和 「 家用 」 按鈕。 Android 4.0.3 的下列螢幕擷取畫面中，可以看到此動作的範例：
 
-[ ![上一步和首頁按鈕](images/image4-sml.png)](images/image4.png)
+[![上一步和首頁按鈕](images/image4-sml.png)](images/image4.png#lightbox)
 
 即使它們有相同的效果，在背景中放置應用程式便會顯示沒有兩個按鈕，細微的差異。 當使用者按一下 [上一頁] 按鈕時，它們會告知 Android 它們與活動完成。 Android 將會損毀的活動。 相反地，當使用者按一下 [首頁] 按鈕活動只是將放入背景&ndash;Android 不會終止活動。
 
@@ -225,7 +225,6 @@ public void OnPause()
 
 本指南涵蓋前兩個選項。
 
- <a name="Bundle_State" />
 
 
 ### <a name="bundle-state"></a>組合狀態
@@ -241,7 +240,7 @@ public void OnPause()
 
 下圖說明如何使用這些方法：
 
-[ ![組合狀態的流程圖](images/image3-sml.png)](images/image3.png)
+[![組合狀態的流程圖](images/image3-sml.png)](images/image3.png#lightbox)
 
 #### <a name="onsaveinstancestate"></a>OnSaveInstanceState
 
@@ -276,7 +275,7 @@ protected override void OnCreate (Bundle bundle)
 
 上述程式碼遞增整數名為`c`時按鈕名為`incrementCounter`按一下時，顯示在結果`TextView`名為`output`。 組態變更會-例如，當裝置旋轉-上述程式碼會失去值`c`因為`bundle`會`null`下圖, 所示：
 
-[ ![顯示不會顯示先前的值](images/07-sml.png)](images/07.png)
+[![顯示不會顯示先前的值](images/07-sml.png)](images/07.png#lightbox)
 
 若要保留的值`c`在此範例中，活動可以覆寫`OnSaveInstanceState`，配套中儲存值，如下所示：
 
@@ -295,10 +294,9 @@ c = bundle.GetInt ("counter", -1);
 ```
 
 > [!NOTE]
-> **注意：**很重要一律呼叫的基底實作`OnSaveInstanceState`這樣也可以儲存的檢視階層架構的狀態。
+> 它是一個重要一律呼叫的基底實作`OnSaveInstanceState`這樣也可以儲存的檢視階層架構的狀態。
 
 
-<a name="View_State" />
 
 ##### <a name="view-state"></a>檢視狀態
 
@@ -312,7 +310,7 @@ c = bundle.GetInt ("counter", -1);
 
 因為`EditText`控制項有`id`指派，當使用者輸入一些資料，並旋轉裝置時，資料仍會顯示，如下所示：
 
-[ ![資料會保留在橫向模式](images/08-sml.png)](images/08.png)
+[![資料會保留在橫向模式](images/08-sml.png)](images/08.png#lightbox)
 
 #### <a name="onrestoreinstancestate"></a>OnRestoreInstanceState
 
@@ -334,8 +332,6 @@ protected override void OnRestoreInstanceState(Bundle savedState)
 如需的儲存狀態的使用範例`Bundle`，請參閱[逐步解說-將儲存的活動狀態](saving-state.md)。
 
 
-<a name="Bundle_Limitations" />
-
 #### <a name="bundle-limitations"></a>配套的限制
 
 雖然`OnSaveInstanceState`使得簡單儲存暫時性資料，它會有一些限制：
@@ -348,7 +344,6 @@ protected override void OnRestoreInstanceState(Bundle savedState)
 
 組合狀態是適用於簡單的資料不會使用太多記憶體，而*非設定執行個體資料*適用於更複雜的資料，或是會高度耗費資源擷取的資料，例如 web 服務呼叫或複雜資料庫查詢。 視需要取得會在物件中儲存非組態執行個體資料。 下一節將介紹`OnRetainNonConfigurationInstance`保留更複雜的資料類型，透過組態變更的方式。
 
-<a name="Persisting_Complex_Data" />
 
 ### <a name="persisting-complex-data"></a>保存的複雜資料
 
@@ -407,7 +402,7 @@ public class NonConfigInstanceActivity : ListActivity
 
 這段程式碼擷取結果從格式化為 JSON web、 會剖析，並再呈現結果清單，如下列螢幕擷取畫面所示：
 
-[ ![在螢幕上顯示的結果](images/06-sml.png)](images/06.png)
+[![在螢幕上顯示的結果](images/06-sml.png)](images/06.png#lightbox)
 
 設定發生變更時-比方說，當裝置旋轉-程式碼重複此程序。 若要重複使用原始擷取的結果並不會造成不必要、 備援的網路呼叫，我們可以使用`OnRetainNonconfigurationInstance`來儲存結果，如下所示：
 

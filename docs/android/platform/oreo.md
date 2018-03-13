@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: EAEF7341-7A00-4439-9FAF-43882637BEF8
 ms.technology: xamarin-android
+ms.custom: video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 478a285dc326b62bf2fc186599bfb7515988f9ee
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 03be7b624ffa9dd8774f291b96be27499cccab2b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="oreo-features"></a>Oreo 功能
 
@@ -20,12 +21,10 @@ _如何開始使用 Xamarin.Android 開發最新版的 Android 應用程式。_
 
 [Android 8.0 Oreo](https://developer.android.com/index.html)位於 Google Android 的最新版本。 Android Oreo Xamarin.Android 開發人員提供感興趣的許多新功能。 這些功能包括 XML、 可下載的字型、 自動填滿及圖片 (PIP) 中的圖片中的通知通道、 通知徽章、 自訂字型。 Android Oreo 包含新的 Api，針對這些新功能，而這些應用程式開發介面供 Xamarin.Android 應用程式，當您使用 Xamarin.Android 8.0 和更新版本。
 
-[![Android Oreo 英雄映像](oreo-images/01-android-o-logo-sml.png)](oreo-images/01-android-o-logo.png)
+[![Android Oreo 英雄映像](oreo-images/01-android-o-logo-sml.png)](oreo-images/01-android-o-logo.png#lightbox)
 
 這份文件結構可協助您開始開發 Android 8.0 Oreo Xamarin.Android 應用程式。 它說明如何安裝必要的更新、 設定 SDK，以及為測試建立模擬器 （或裝置）。 它也說明如何使用 Android Oreo 功能 Xamarin.Android 應用程式中的範例應用程式的連結提供 Android 8.0 Oreo 中的新功能的外框。
 
-
-<a name="requirements" />
 
 ## <a name="requirements"></a>需求
 
@@ -38,7 +37,6 @@ _如何開始使用 Xamarin.Android 開發最新版的 Android 應用程式。_
 -   **Android SDK** &ndash; Android SDK 8.0 (應用程式開發介面 26) 或更新版本必須安裝 Android SDK Manager 透過。
 
 
-<a name="gettingstarted" />
 
 ## <a name="getting-started"></a>快速入門
 
@@ -55,7 +53,6 @@ _如何開始使用 Xamarin.Android 開發最新版的 Android 應用程式。_
 下列各節說明每個步驟：
 
 
-<a name="updates" />
 
 ### <a name="update-visual-studio-and-xamarinandroid"></a>更新 Visual Studio 和 Xamarin.Android
 
@@ -81,7 +78,6 @@ _如何開始使用 Xamarin.Android 開發最新版的 Android 應用程式。_
 如需 Xamarin Android Oreo 支援的詳細資訊，請參閱[Xamarin.Android 8.0 版本資訊](https://developer.xamarin.com/releases/android/xamarin.android_8/xamarin.android_8.0/)。
 
 
-<a name="sdk" />
 
 ### <a name="install-the-android-sdk"></a>安裝 Android SDK
 
@@ -93,11 +89,11 @@ _如何開始使用 Xamarin.Android 開發最新版的 Android 應用程式。_
 
 2. 安裝**Android 8.0-Oreo**封裝。 如果您使用 Android SDK 模擬器，請務必包含**x86**系統映像，您將需要：
 
-    [![選取 Android 8.0 封裝 Android SDK Manager 中](oreo-images/win/01-android-o-packages.png)](oreo-images/win/01-android-o-packages.png)
+    [![選取 Android 8.0 封裝 Android SDK Manager 中](oreo-images/win/01-android-o-packages.png)](oreo-images/win/01-android-o-packages.png#lightbox)
 
 3. 安裝**Android SDK 工具 26.0.2**或更新版本， **Android 的 SDK 平台工具 26.0.0**或更新版本，和**Android 的 SDK 建置工具 26.0.0** （或更新版本）：
 
-    [![在 Android SDK Manager 中選取 Android SDK 工具 26](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png)
+    [![在 Android SDK Manager 中選取 Android SDK 工具 26](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -105,16 +101,15 @@ _如何開始使用 Xamarin.Android 開發最新版的 Android 應用程式。_
 
 2. 安裝**Android 8.0-Oreo** SDK 封裝。 如果您使用 Android SDK 模擬器，請務必包含**x86**系統映像，您將需要：
 
-    [![選取封裝 Android 8.0 SDK Manager 中](oreo-images/mac/01-android-o-packages.png)](oreo-images/mac/01-android-o-packages.png)
+    [![選取封裝 Android 8.0 SDK Manager 中](oreo-images/mac/01-android-o-packages.png)](oreo-images/mac/01-android-o-packages.png#lightbox)
 
 3. 安裝**Android SDK 工具 26.0.2**或更新版本， **Android 的 SDK 平台工具 26.0.0**或更新版本，和**Android 的 SDK 建置工具 26.0.0** （或更新版本）：
 
-    [![在 SDK Manager 中選取 Android SDK 工具 26](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png)
+    [![在 SDK Manager 中選取 Android SDK 工具 26](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png#lightbox)
 
 -----
 
 
-<a name="xaproject" />
 
 ### <a name="start-a-xamarinandroid-project"></a>啟動 Xamarin.Android 專案
 
@@ -122,7 +117,6 @@ _如何開始使用 Xamarin.Android 開發最新版的 Android 應用程式。_
 
 當您建立 Android 專案時，您必須設定目標 Android 8.0 或更新版本的版本設定。 例如，適用於 Android 8.0 針對您的專案，您必須設定您的專案的目標 Android API 層級**Android 8.0 (應用程式開發介面 26)**。 建議您也設定您的目標架構層級 API 26 或更新版本。 如需設定 Android API 層級的層級相關資訊，請參閱[了解 Android API 層級](~/android/app-fundamentals/android-api-levels.md)。
 
-<a name="emudev" />
 
 ### <a name="configure-an-emulator-or-device"></a>設定模擬器或裝置
 
@@ -173,7 +167,7 @@ _如何開始使用 Xamarin.Android 開發最新版的 Android 應用程式。_
 
 之後您**avdmanager**若要建立虛擬裝置，它將會包含在裝置下拉功能表：
 
-[![新 AVD 加入裝置下拉式功能表](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png)
+[![新 AVD 加入裝置下拉式功能表](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -193,7 +187,7 @@ _如何開始使用 Xamarin.Android 開發最新版的 Android 應用程式。_
 
 使用之後**avdmanager**若要建立虛擬裝置，它將會包含在裝置下拉功能表：
 
-[![新 AVD 加入裝置下拉式功能表](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png)
+[![新 AVD 加入裝置下拉式功能表](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png#lightbox)
 
 -----
 
@@ -202,14 +196,12 @@ _如何開始使用 Xamarin.Android 開發最新版的 Android 應用程式。_
 如果您使用的實體裝置，例如管道或像素，您可以透過自動更新您的裝置，透過無線方式 (OTA) 更新或下載系統映像並直接快閃裝置。 如需手動更新 Android Oreo 您裝置的詳細資訊，請參閱[Nexus 和像素裝置的原廠映像](https://developers.google.com/android/images)。
 
 
-<a name="newfeatures" />
 
 ## <a name="new-features"></a>新功能
 
 Android Oreo 介紹各種不同的新特色與功能，例如通知通道、 通知徽章、 在 XML 中的自訂字型、 可下載的字型、 自動填滿和圖片的圖片。 下列各節會反白顯示這些功能，並提供連結，協助您開始在您的應用程式中使用它們。
 
 
-<a name="notifchan" />
 
 ### <a name="notification-channels"></a>通知通道
 
@@ -219,20 +211,18 @@ Android Oreo 介紹各種不同的新特色與功能，例如通知通道、 通
 [通知通道](~/android/app-fundamentals/notifications/local-notifications.md#notif-chan)說明如何建立通知通道，並將它用於公佈本機的通知。 實際程式碼範例，請參閱[NotificationChannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels)範例; 此範例應用程式管理兩個通道，並設定其他通知選項。
 
 
-<a name="notifbadge" />
 
 ### <a name="notification-badges"></a>通知徽章
 
 通知徽章是這個螢幕擷取畫面所示，在應用程式的圖示上顯示的小點：
 
-[![範例應用程式圖示上的通知徽章](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png)
+[![範例應用程式圖示上的通知徽章](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
 
 這些點表示有一或多個通知通道，該應用程式圖示相關聯的應用程式中的新通知&ndash;這些是使用者尚未解除或作用時的通知。 使用者可以長時間的按下的圖示解除或代表該 appeaars 通知從長時間按下功能表一下通知徽章，相關聯的通知。
 
 如需通知徽章的詳細資訊，請參閱 Android 開發人員[通知徽章](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#Badges)主題。
 
 
-<a name="customfonts" />
 
 ### <a name="custom-fonts-in-xml"></a>自訂 XML 中有多種字型
 
@@ -256,7 +246,6 @@ Android Oreo 導入了*XML 中的有多種字型*，這可讓您將自訂字型�
 
 您也可以建立一個字型家族 XML 檔案，描述多個字型以及樣式和加權詳細資料。 如需詳細資訊，請參閱 Android 開發人員[XML 中的有多種字型](https://developer.android.com/guide/topics/ui/look-and-feel/fonts-in-xml.html)主題。
 
-<a name="dlfonts" />
 
 ### <a name="downloadable-fonts"></a>可下載的字型
 
@@ -281,7 +270,6 @@ Android Oreo 導入了*XML 中的有多種字型*，這可讓您將自訂字型�
 如需下載字型的詳細資訊，請參閱 Android 開發人員[可下載的字型](https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts.html)主題。
 
 
-<a name="autofill" />
 
 ### <a name="autofill"></a>自動填滿
 
@@ -292,7 +280,6 @@ Android Oreo 導入了*XML 中的有多種字型*，這可讓您將自訂字型�
 如需新的自動填寫功能以及如何最佳化您的應用程式的自動填滿的詳細資訊，請參閱 Android 開發人員[自動填滿 Framework](https://developer.android.com/guide/topics/text/autofill.html)主題。
 
 
-<a name="pip" />
 
 ### <a name="picture-in-picture-pip"></a>圖片 (PIP) 中的圖片
 
@@ -313,20 +300,17 @@ android:supportsPictureInPicture
 [PictureInPicture](https://developer.xamarin.com/samples/monodroid/android-o/PictureInPicture)範例示範基本的使用方式的掌上型裝置 Oreo 中導入的圖片中圖片 (PiP) 模式。 此範例會播放視訊就會繼續不會中斷時顯示模式或其他活動之間來回切換。
 
 
-<a name="other" />
 
 ### <a name="other-features"></a>其他功能
 
 Android Oreo 包含許多其他新功能，例如 Emoji 支援文件庫位置 API 背景限制、 應用程式、 新的音訊轉碼器、 WebView 增強功能、 改善的鍵盤巡覽支援，與新的 AAudio （pro 音訊） API 的整個範圍色彩高效能低度延遲的音訊，如需有關這些功能，請參閱 Android 開發人員[Android Oreo 功能和 Api](https://developer.android.com/about/versions/oreo/android-8.0.html)主題。
 
 
-<a name="behavior" />
 
 ## <a name="behavior-changes"></a>行為變更
 
 Android Oreo 包含各種系統和應用程式開發介面可能會影響現有的應用程式的功能的行為變更。 將說明這些變更，如下所示。
 
-<a name="bgsl" />
 
 ### <a name="background-execution-limits"></a>背景執行限制
 
@@ -338,7 +322,6 @@ Android Oreo 包含各種系統和應用程式開發介面可能會影響現有�
 
 如需有關新的背景執行限制的詳細資訊，請參閱 Android 開發人員[背景執行限制](https://developer.android.com/about/versions/oreo/background.html)主題。
 
-<a name="breaking" />
 
 ### <a name="breaking-changes"></a>重大變更
 
@@ -348,7 +331,6 @@ Android Oreo 包含各種系統和應用程式開發介面可能會影響現有�
 
 - 應用程式的目標 Android Oreo，`PendingIntent.GetService()`無法運作因為放在服務在背景中啟動新的限制。 如果您的目標 Android Oreo，您應該使用[PendingIntent.GetBroadcast](https://developer.xamarin.com/api/member/Android.App.PendingIntent.GetBroadcast/p/Android.Content.Context/System.Int32/Android.Content.Intent/Android.App.PendingIntentFlags/)改為。  
 
-<a name="sample_code" />
 
 ## <a name="sample-code"></a>程式碼範例
 
@@ -369,8 +351,12 @@ Android Oreo 包含各種系統和應用程式開發介面可能會影響現有�
 -   [位置更新前景服務](https://developer.xamarin.com/samples/monodroid/android-o/AndroidPlayLocation/LocUpdFgService)示範如何使用位置 API 來取得裝置的位置使用的繫結和啟動前景服務相關的更新。
 
 
+## <a name="video"></a>視訊
 
-<a name="summary" />
+> [!VIDEO https://youtube.com/embed/OuvEcaMO-Ho]
+
+**Android 8.0 Oreo 開發使用 C#**
+
 
 ## <a name="summary"></a>總結
 

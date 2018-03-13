@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: 21d5478c7e8317510a6f46b72a261582c9432301
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9918c7e54f443477006ad40931c24d814f7171ea
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="light-theme"></a>淺色佈景主題
 
@@ -50,7 +50,7 @@ XAML 檔案的範例如下所示：
 
 以下是範例的按鈕和淺色佈景主題，以及產生它們的標記中的標籤。
 
-[ ![](light-images/light-theme-sml.png "按鈕和淺色佈景主題標籤")](light-images/light-theme.png "按鈕和標籤淺色佈景主題")
+[![](light-images/light-theme-sml.png "按鈕和淺色佈景主題標籤")](light-images/light-theme.png#lightbox "按鈕和標籤淺色佈景主題")
 
 ```xaml
 <StackLayout Padding="20">

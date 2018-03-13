@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 2302f5f9cc24ec3eab6c84c20a37a93d687d692d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b3827d05ae9e563ae04dd4ab1e303577f6c9d82a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="coin-time-implementation-details"></a>參考階段實作詳細資料
 
@@ -172,7 +172,7 @@ private void CreateLevelButtons()
     for (int i = levelIndex0Based; i < maxLevelExclusive; i++)
     {
         ...
-}
+    }
 }
 ```
 

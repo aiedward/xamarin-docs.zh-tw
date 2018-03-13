@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 9c9032b3206fa35d264bd69c94b7882e877b334f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce850b7890265b82774534ca0daaf25bed7e0c2d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 疑難排解
 
@@ -61,7 +61,7 @@ ms.lasthandoff: 02/27/2018
 - 您無法加入兩個`WKNotificationControllers`分鏡腳本。
     因應措施：`notificationCategory`分鏡腳本 XML 中的項目一律已插入具有相同`id`。 若要解決這個問題，您可以加入兩個 （或以上） 的通知控制站、 文字編輯器中開啟分鏡腳本檔案，然後手動變更`id`是唯一的項目。
 
-    [ ![](troubleshooting-images/duplicate-id-sml.png "開啟分鏡腳本檔案的文字編輯器中，並手動變更是唯一的 id 項目")](troubleshooting-images/duplicate-id.png)
+    [![](troubleshooting-images/duplicate-id-sml.png "開啟分鏡腳本檔案的文字編輯器中，並手動變更是唯一的 id 項目")](troubleshooting-images/duplicate-id.png#lightbox)
 
 - 您可能會看到錯誤 「 應用程式尚未建置 」 時，嘗試啟動應用程式。 這會發生**清除**當啟始專案設定為 監看式擴充功能專案中。
     修正方法是選取**建置 > 全部重建**，然後重新啟動應用程式。

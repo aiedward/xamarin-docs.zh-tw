@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/22/2018
-ms.openlocfilehash: 3de935fd407524d7ba62a93205e333c7dd7adde0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b62af404ce0d3f5dacc479682a3002af49e968d1
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="date-picker"></a>日期選擇器
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 02/27/2018
 
 本指南將示範如何使用`DatePickerDialog`、 包裝在`DialogFragment`。 範例應用程式會顯示`DatePickerDialog`為強制回應對話方塊，當使用者按一下活動上的按鈕。 當日期會設定由使用者`TextView`會更新以所選取的日期。
 
-[![選取日期的螢幕擷取畫面 按鈕，後面接著日期選擇器對話方塊](date-picker-images/image-01-sml.png)](date-picker-images/image-01.png)
+[![選取日期的螢幕擷取畫面 按鈕，後面接著日期選擇器對話方塊](date-picker-images/image-01-sml.png)](date-picker-images/image-01.png#lightbox)
 
 ## <a name="requirements"></a>需求
 
@@ -49,7 +49,6 @@ ms.lasthandoff: 02/27/2018
 3. **使用`Action`**  &ndash; `DialogFragment`可以叫用`Action<DateTime>`活動中顯示的日期。 活動會提供`Action<DateTime`具現化時`DialogFragment`。 這個範例會使用第三種方法，並要求活動提供`Action<DateTime>`至`DialogFragment`。
 
 
-<a name="extending_dialogfragment" />
 
 ### <a name="extending-dialogfragment"></a>擴充 DialogFragment
 
@@ -99,10 +98,9 @@ Android 顯示片段時，會呼叫方法`OnCreateDialog`。 這個方法會建�
 
 
 > [!NOTE]
-> **注意：**注意，月份值時`IOnDateSetListener.OnDateSet`叫用在 0 到 11，並不是 1 到 12 的範圍內。 月份天數會在 1 到 31，（依據月份已選取） 的範圍內。
+> 請注意，月份值時`IOnDateSetListener.OnDateSet`叫用在 0 到 11，並不是 1 到 12 的範圍內。 月份天數會在 1 到 31，（依據月份已選取） 的範圍內。
 
 
-<a name="date_picker_fragment" />
 
 ### <a name="showing-the-datepickerfragment"></a>顯示 DatePickerFragment
 
@@ -136,7 +134,6 @@ public class MainActivity : Activity
 }
 ```
 
-<a name="summary" />
 
 ## <a name="summary"></a>總結
 

@@ -3,14 +3,15 @@ title: "第 21 的摘要。 轉換"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 378ce3fb39cfb5c42d5ec7611415f5420146a9cc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: afb8e2fff58583dc8648c55839649c96cb68b6ba
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-21-transforms"></a>第 21 的摘要。 轉換
 
@@ -49,7 +50,7 @@ Xamarin.Forms 可支援三個基本類型的轉換：
 
 轉譯內容的常見用法之一是文字的稍微位移呈現。 這示範於[ **TextOffsets** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/TextOffsets)範例：
 
-[![三個螢幕擷取畫面的文字位移](images/ch21fg03-small.png "文字位移")](images/ch21fg03-large.png "文字位移")
+[![三個螢幕擷取畫面的文字位移](images/ch21fg03-small.png "文字位移")](images/ch21fg03-large.png#lightbox "文字位移")
 
 另一個是可以呈現多個副本`Label`類似 3D 的區塊，如中所示範[ **BlockText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BlockText)範例。
 
@@ -101,7 +102,7 @@ Xamarin.Forms 可支援三個基本類型的轉換：
 
 [ **BoxViewClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BoxViewClock)使用`BoxView`更廣泛的圖形，包括刻度周圍的時鐘，圖示會標示並將該旋轉小距離從其結束：
 
-[![BoxView 時鐘的三個螢幕擷取畫面](images/ch21fg17-small.png "類比時鐘")](images/ch21fg17-large.png "類比時鐘")
+[![BoxView 時鐘的三個螢幕擷取畫面](images/ch21fg17-small.png "類比時鐘")](images/ch21fg17-large.png#lightbox "類比時鐘")
 
 此外[ `SecondBackEaseConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondBackEaseConverter.cs)類別**Xamarin.FormsBook.Toolkit**導致秒針看起來像撤回有點之前，先繼續進行，然後再將移回正確的位置。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: b5d3a03324e73b06bd3defe7e6610163c3d1b26d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c021550e17cf8206d59102856a11c72000ad06aa
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-progress-indicators"></a>使用進度指標
 
@@ -21,7 +21,7 @@ _本文涵蓋設計與進度指標 Xamarin.tvOS 應用程式內使用。_
 
 可能會有有時候 Xamarin.tvOS 應用程式需要載入新的內容或執行時間較長的處理作業。 在這段時間，您應該提供將活動指示器或進度列，讓使用者知道應用程式仍在執行，以及讓他們工作正在執行的一些指示。
 
-[ ![](progress-indicators-images/intro01.png "範例進度指標")](progress-indicators-images/intro01.png)
+[![](progress-indicators-images/intro01.png "範例進度指標")](progress-indicators-images/intro01.png#lightbox)
 
 <a name="About-Activity-Indicators" />
 
@@ -57,19 +57,19 @@ Apple 具有進度列所使用的下列建議：
 1. 在**方案板**，連按兩下`Main.storyboard`檔案，並開啟它進行編輯。
 1. 拖曳**活動指示器**從**工具箱**並將它放在檢視上： 
 
-    [ ![](progress-indicators-images/activity01.png "活動指示器")](progress-indicators-images/activity01.png)
+    [![](progress-indicators-images/activity01.png "活動指示器")](progress-indicators-images/activity01.png#lightbox)
 1. 在**Widget 索引標籤**的**屬性板**，您可以調整活動指示器的數個屬性，例如其**樣式**和**行為**: 
 
-    [ ![](progress-indicators-images/activity02.png "[小工具] 索引標籤 ")](progress-indicators-images/activity02.png)
+    [![](progress-indicators-images/activity02.png "[小工具] 索引標籤 ")](progress-indicators-images/activity02.png#lightbox)
 1. 拖曳**進行檢視**從**工具箱**並將它放在檢視上： 
 
-    [ ![](progress-indicators-images/activity03.png "進行檢視")](progress-indicators-images/activity03.png)
+    [![](progress-indicators-images/activity03.png "進行檢視")](progress-indicators-images/activity03.png#lightbox)
 1. 在**Widget 索引標籤**的**屬性總管**，您可以調整進行檢視的數個屬性，例如其**樣式**和**進度**（完成百分比）： 
 
-    [ ![](progress-indicators-images/activity04.png "[小工具] 索引標籤")](progress-indicators-images/activity04.png)
+    [![](progress-indicators-images/activity04.png "[小工具] 索引標籤")](progress-indicators-images/activity04.png#lightbox)
 1. 最後，指派**名稱**控制項，讓您可以在 C# 程式碼回應給他們。 例如:  
 
-    [ ![](progress-indicators-images/activity05.png "指派的名稱")](progress-indicators-images/activity05.png)
+    [![](progress-indicators-images/activity05.png "指派的名稱")](progress-indicators-images/activity05.png#lightbox)
 1. 儲存您的變更。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -77,19 +77,19 @@ Apple 具有進度列所使用的下列建議：
 1. 在**方案總管 中**，連按兩下`Main.storyboard`檔案，並開啟它進行編輯。
 1. 拖曳**活動指示器**從**工具箱**並將它放在檢視上： 
 
-    [ ![](progress-indicators-images/activity01-vs.png "活動指示器")](progress-indicators-images/activity01-vs.png)
+    [![](progress-indicators-images/activity01-vs.png "活動指示器")](progress-indicators-images/activity01-vs.png#lightbox)
 1. 在**Widget 索引標籤**的**屬性總管**，您可以調整活動指示器的數個屬性，例如其**樣式**和**行為**: 
 
-    [ ![](progress-indicators-images/activity02-vs.png "[小工具] 索引標籤")](progress-indicators-images/activity02-vs.png)
+    [![](progress-indicators-images/activity02-vs.png "[小工具] 索引標籤")](progress-indicators-images/activity02-vs.png#lightbox)
 1. 拖曳**進行檢視**從**工具箱**並將它放在檢視上： 
 
-    [ ![](progress-indicators-images/activity03-vs.png "進行檢視")](progress-indicators-images/activity03-vs.png)
+    [![](progress-indicators-images/activity03-vs.png "進行檢視")](progress-indicators-images/activity03-vs.png#lightbox)
 1. 在**Widget 索引標籤**的**屬性總管**，您可以調整進行檢視的數個屬性，例如其**樣式**和**進度**（完成百分比）： 
 
-    [ ![](progress-indicators-images/activity04-vs.png "[小工具] 索引標籤")](progress-indicators-images/activity04-vs.png)
+    [![](progress-indicators-images/activity04-vs.png "[小工具] 索引標籤")](progress-indicators-images/activity04-vs.png#lightbox)
 1. 最後，指派**名稱**控制項，讓您可以在 C# 程式碼回應給他們。 例如:  
 
-    [ ![](progress-indicators-images/activity05-vs.png "指派的名稱")](progress-indicators-images/activity05-vs.png)
+    [![](progress-indicators-images/activity05-vs.png "指派的名稱")](progress-indicators-images/activity05-vs.png#lightbox)
 1. 儲存您的變更。
 
 -----

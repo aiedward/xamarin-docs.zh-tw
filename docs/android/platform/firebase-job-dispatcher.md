@@ -7,12 +7,12 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 6b55e525849d57f2ad9e40ea64b75cfc65ef0727
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: fd5b2f8c758d8e1e9bb9276da96a410c61478d4a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase 作業發送器
 
@@ -138,7 +138,7 @@ Job myJob = dispatcher.NewJobBuilder()
 * A`Job`的_存留期_（多久它將會排定執行） 在裝置重新開機後，才是&ndash;裝置重新開機之後`Job`都會遺失。
 * A`Job`不週期性&ndash;它將只執行一次。
 * A`Job`會儘速執行排程。
-* 預設重試策略`Job`是使用_指數型輪詢_(上一節中會更詳細探討討論[設定 RetryStrategy](#Setting_a_RestryStrategy))
+* 預設重試策略`Job`是使用_指數型輪詢_(上一節中會更詳細探討討論[設定 RetryStrategy](#Setting_a_RetryStrategy))
 
 ### <a name="scheduling-a-job"></a>排程 `Job`
 
@@ -171,6 +171,8 @@ int scheduleResult = dispatcher.Schedule(myJob);
 
 每個主題都將在下列各節中更討論。
 
+<a name="Passing_Parameters_to_a_Job" />
+
 #### <a name="passing-parameters-to-a-job"></a>將參數傳遞至作業
 
 參數傳遞至作業建立`Bundle`連同傳遞`Job.Builder.SetExtras`方法：
@@ -197,6 +199,7 @@ public override bool OnStartJob(IJobParameters jobParameters)
 } 
 ```
 
+<a name="Setting_Constraints" />
 
 #### <a name="setting-constraints"></a>設定條件約束
 
@@ -215,6 +218,8 @@ Job myJob = dispatcher.NewJobBuilder()
                       .Build();
 ```
 
+<a name="Setting_Job_Triggers" />
+
 #### <a name="setting-job-triggers"></a>設定工作觸發程序
 
 `JobTrigger`相關指引提供給作業系統的相關作業應該開始的時間。 A`JobTrigger`具有_執行視窗_定義時的排程的時間`Job`應該執行。 執行視窗有_啟動視窗_值和_結束視窗_值。 開始視窗裝置應執行工作之前等待的秒數，而結束視窗值的執行之前要等待的秒數上限`Job`。 
@@ -230,6 +235,8 @@ Job myJob = dispatcher.NewJobBuilder()
 ```
 
 預設值`JobTrigger`的作業由值`Trigger.Now`，以指定的工作會執行排程之後，儘速...
+
+<a name="Setting_a_RetryStrategy" />
 
 #### <a name="setting-a-retrystrategy"></a>設定 RetryStrategy
 

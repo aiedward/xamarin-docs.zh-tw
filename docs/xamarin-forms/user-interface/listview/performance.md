@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: 2acaef5fd42b867e88fb9b81d401ea752480124a
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 81d4aec3153a4cb7bbb0f3577c5a67acd430f279
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="listview-performance"></a>ListView 效能
 
@@ -45,7 +45,7 @@ public enum ListViewCachingStrategy
 ```
 
 > [!NOTE]
-> **請注意**: 通用 Windows 平台 (UWP) 會忽略[ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/)快取策略，因為它一律會使用快取來改善效能。 因此依預設它的行為如同[ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/)快取策略會套用。
+> 通用 Windows 平台 (UWP) 會忽略[ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/)快取策略，因為它一律會使用快取來改善效能。 因此依預設它的行為如同[ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/)快取策略會套用。
 
 ### <a name="retainelement"></a>RetainElement
 
@@ -101,14 +101,14 @@ public class CustomCell : ViewCell
 當[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)使用[ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/)選取[ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)、 [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/)快取並不會快取策略`DataTemplate`s。 相反地，`DataTemplate`選取每個項目的清單中的資料。
 
 > [!NOTE]
-> **請注意**: [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/)快取策略有必要，Xamarin.Forms 2.4 中導入，當[ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/)提示選取[ `DataTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)每個`DataTemplate`必須傳回相同[ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)型別。 例如，假設[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)與`DataTemplateSelector`，可傳回`MyDataTemplateA`(其中`MyDataTemplateA`傳回`ViewCell`型別的`MyViewCellA`)，或`MyDataTemplateB`(其中`MyDataTemplateB`傳回`ViewCell`型別的`MyViewCellB`)，當`MyDataTemplateA`會傳回它必須傳回`MyViewCellA`，否則會擲回例外狀況。
+> [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/)快取策略有必要，Xamarin.Forms 2.4 中導入，當[ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/)提示選取[ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)每個`DataTemplate`必須傳回相同[ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)型別。 例如，假設[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)與`DataTemplateSelector`，可傳回`MyDataTemplateA`(其中`MyDataTemplateA`傳回`ViewCell`型別的`MyViewCellA`)，或`MyDataTemplateB`(其中`MyDataTemplateB`傳回`ViewCell`型別的`MyViewCellB`)，當`MyDataTemplateA`會傳回它必須傳回`MyViewCellA`，否則會擲回例外狀況。
 
 ### <a name="recycleelementanddatatemplate"></a>RecycleElementAndDataTemplate
 
 [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/)快取策略是根據[ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/)此外確保，當快取策略[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)使用[`DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/)選取[ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)， `DataTemplate`s 所快取的清單中的項目類型。 因此， `DataTemplate`s 每個項目類型，而不是每個項目執行個體一次選取一次。
 
 > [!NOTE]
-> **請注意**: [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/)快取策略具有必要的`DataTemplate`所傳回的 s [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/)必須使用[ `DataTemplate`](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/)建構函式`Type`。
+> [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/)快取策略具有必要的`DataTemplate`所傳回的 s [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/)必須使用[ `DataTemplate` ](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/)使用建構函式`Type`。
 
 ### <a name="setting-the-caching-strategy"></a>設定快取策略
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: d7965c5d4d65dd6bf7aa4128f467acd3e2d39e60
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c383808d443685c1561113e418aed62467f1d5bd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-class"></a>應用程式類別
 
@@ -98,7 +98,7 @@ if (Application.Current.Properties.ContainsKey("id"))
 一定要檢查存在的機碼才能存取，以避免發生意外的錯誤。
 
 > [!NOTE]
-> **注意：** `Properties`字典只能序列化存放裝置的基本類型。 嘗試儲存其他類型 (例如`List<string>`) 可能會以無訊息模式失敗。
+> `Properties`字典只能序列化存放裝置的基本類型。 嘗試儲存其他類型 (例如`List<string>`) 可能會以無訊息模式失敗。
 
 <!-- bugzilla 28657 -->
 
@@ -196,7 +196,7 @@ public class MainActivity :
 ```
 
 > [!NOTE]
-> **注意：**沒有在較新[ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md)基底類別，可用來更妥善支援 Android 材料設計。
+> 沒有在較新[ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md)基底類別，可用來更妥善支援 Android 材料設計。
 > 這會在未來，成為預設 Android 範本，但是您可以依照[這些指示](~/xamarin-forms/platform/android/appcompat.md)更新現有的 Android 應用程式。
 
 

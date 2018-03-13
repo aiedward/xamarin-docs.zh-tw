@@ -2,16 +2,16 @@
 title: "簡介"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: FDAC0771-4749-4758-865A-F1BD190CA54B
+ms.assetid: B1994468-FD06-4FD9-96B3-FCEBB13A972A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: f270248ad3b43d7a4c818b29390b3391d89ddd14
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bd3f02ab4fd5b6e96db8bd986e5a698ce30a6b74
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="introduction"></a>簡介
 

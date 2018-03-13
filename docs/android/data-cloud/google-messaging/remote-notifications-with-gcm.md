@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: dda7597456421aa4ae401f56ed6cfc7983df29c5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64961e9c45c28ede4cc84f7b978da565be4426d9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>遠端使用 Google 雲端訊息的通知
 
@@ -53,7 +53,7 @@ _本逐步解說 Xamarin.Android 應用程式中提供的逐步說明如何使�
 
 在 Visual Studio 中，以滑鼠右鍵按一下**參考 > 管理 NuGet 封裝...**; 在 Visual Studio for Mac，以滑鼠右鍵按一下**封裝 > 新增套件...**.搜尋**Xamarin Google Play 服務-GCM**並安裝此套件的**ClientApp**專案： 
 
-[ ![安裝 Google Play 服務](remote-notifications-with-gcm-images/1-google-play-services-sml.png)](remote-notifications-with-gcm-images/1-google-play-services.png)
+[![安裝 Google Play 服務](remote-notifications-with-gcm-images/1-google-play-services-sml.png)](remote-notifications-with-gcm-images/1-google-play-services.png#lightbox)
 
 當您安裝**Xamarin Google Play 服務-GCM**， **Xamarin Google Play 服務的基底**會自動安裝。 如果您收到錯誤，請變更專案的*最小值 Android 目標*以外的值設定**使用 SDK 版本編譯**，然後再試一次 NuGet 安裝。 
 
@@ -76,7 +76,7 @@ using Android.Util;
 
 在[Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md)，我們指定我們 GCM 啟用的應用程式的封裝名稱 (此封裝的名稱也可做為*應用程式識別碼*與我們的 API 金鑰與傳送者識別碼相關聯)。 讓我們來開啟的內容**ClientApp**專案，並設定封裝名稱，這個字串。 在此範例中，設定封裝名稱為`com.xamarin.gcmexample`:
 
-[ ![設定封裝名稱](remote-notifications-with-gcm-images/2-package-name-sml.png)](remote-notifications-with-gcm-images/2-package-name.png)
+[![設定封裝名稱](remote-notifications-with-gcm-images/2-package-name-sml.png)](remote-notifications-with-gcm-images/2-package-name.png#lightbox)
 
 請注意，用戶端應用程式將無法接收來自 GCM 註冊語彙基元，如果此封裝的名稱並不會*完全*符合我們輸入 Google 開發人員主控台中的封裝名稱。 
 
@@ -192,7 +192,7 @@ protected override void OnCreate (Bundle bundle)
 
 讓我們完全重新建置並執行應用程式。 您應該會看到的畫面看起來像下列螢幕擷取畫面： 
 
-[ ![Google Play 服務為可用](remote-notifications-with-gcm-images/3-first-screen-sml.png)](remote-notifications-with-gcm-images/3-first-screen.png)
+[![Google Play 服務為可用](remote-notifications-with-gcm-images/3-first-screen-sml.png)](remote-notifications-with-gcm-images/3-first-screen.png#lightbox)
 
 如果您沒有得到此結果，確認 Google 播放服務 APK 已安裝您的裝置，而且該**Xamarin Google Play 服務-GCM**封裝加入至您**ClientApp**所述的專案稍早。 如果您收到建置錯誤，請嘗試清除方案，並再次建置專案。 
 
@@ -271,11 +271,11 @@ namespace ClientApp
 
 1.  登入[Google 雲端主控台](https://console.cloud.google.com/)從提取下功能表中選取您的專案名稱。 在**專案資訊**為您的專案，顯示] 窗格中按一下**移至 [專案設定**:
 
-    [![選取 XamarinGCM 專案](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png)
+    [![選取 XamarinGCM 專案](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png#lightbox)
 
 2.  在**設定**頁面上，尋找**專案編號**&ndash;這是寄件者識別碼，為您的專案：
 
-    [![顯示的專案數目](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png)
+    [![顯示的專案數目](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png#lightbox)
 
 我們想要啟動我們`RegistrationIntentService`我們的應用程式開始執行時。 編輯**Weatherapp**和修改`OnCreate`方法，讓我們`RegistrationIntentService`後，我們會檢查是否存在的 Google Play 服務啟動時： 
 
@@ -548,7 +548,7 @@ SendNotification (message);
 
 我們來搜尋**Json.NET**封裝，並將它安裝在專案中： 
 
-[ ![安裝 Json.NET 封裝](remote-notifications-with-gcm-images/4-add-json.net-sml.png)](remote-notifications-with-gcm-images/4-add-json.net.png)
+[![安裝 Json.NET 封裝](remote-notifications-with-gcm-images/4-add-json.net-sml.png)](remote-notifications-with-gcm-images/4-add-json.net.png#lightbox)
 
 
 #### <a name="add-a-reference-to-systemnethttp"></a>將參考加入 System.Net.Http
@@ -630,7 +630,6 @@ namespace MessageSender
 GCM，依次轉送至用戶端應用程式此訊息。 讓我們來建置**MessageSender**開啟主控台視窗，我們可以從命令列執行它。
 
 
-<a name="tryit" />
 
 ### <a name="try-it"></a>請嘗試
 
@@ -666,11 +665,11 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 此外，您應該會注意到新的通知圖示已出現在通知紙匣： 
 
-[ ![Notiication 圖示會出現在裝置上](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png)
+[![Notiication 圖示會出現在裝置上](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
 
 當您開啟檢視的通知的通知紙匣時，您應該會看到我們遠端通知：
 
-[ ![會顯示通知訊息](remote-notifications-with-gcm-images/6-notification-in-tray-sml.png)](remote-notifications-with-gcm-images/6-notification-in-tray.png)
+[![會顯示通知訊息](remote-notifications-with-gcm-images/6-notification-in-tray-sml.png)](remote-notifications-with-gcm-images/6-notification-in-tray.png#lightbox)
 
 恭喜，您的應用程式接收到其第一個遠端通知 ！
 

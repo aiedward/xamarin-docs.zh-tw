@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 76934b56503c381b40081d2ac82a785a7bb86fa2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 48489ca7dc28dcc14a7810b15dc1ffa1fd4f7cf4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-web-services"></a>Web 服務簡介
 
@@ -305,7 +305,7 @@ Web 服務 URL 可以是裝載遠端來源或可透過存取本機檔案系統�
 file:///Users/myUserName/projects/MyProjectName/service.wsdl
 ```
 
-[ ![](images/add-webreference-dialog.png "Web 服務 URL 可以是裝載遠端來源或 1 tb 的檔案路徑前置詞的本機檔案系統資源")](images/add-webreference-dialog.png)
+[![](images/add-webreference-dialog.png "Web 服務 URL 可以是裝載遠端來源或 1 tb 的檔案路徑前置詞的本機檔案系統資源")](images/add-webreference-dialog.png#lightbox)
 
 此專案的 Web 或服務參考 資料夾中產生的 proxy。 由於產生 proxy 程式碼，它不能修改。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 6d2a454665691c028fe8307940a5662a98ab9c98
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f35256529d6d72a3f5e563dc88b9d5883a9724d4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="appearance-api"></a>應用程式開發介面的外觀
 
@@ -32,7 +32,7 @@ iOS 可讓您自訂許多 UIKit 控制項，以便符合您要套用到您的應
 
 外觀的範例應用程式會示範這三個方法，這些螢幕擷取畫面所示：
 
- [ ![](introduction-to-the-appearance-api-images/appearance01.png "外觀的範例應用程式將示範三種方法")](introduction-to-the-appearance-api-images/appearance01.png)
+ [![](introduction-to-the-appearance-api-images/appearance01.png "外觀的範例應用程式將示範三種方法")](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
 
 從 iOS 8，開始外觀 proxy 已擴充到 TraitCollections。
  `AppearanceForTraitCollection` 可用來設定特定特性集合上的預設外觀。 閱讀更多相關內容位於[簡介分鏡腳本](~/ios/user-interface/storyboards/unified-storyboards.md)指南。
@@ -87,11 +87,11 @@ sg1.TintColor = UIColor.Magenta;
 
 或者，屬性板設計工具中設定的值： 
 
-[ ![](introduction-to-the-appearance-api-images/propertiespadtint.png "屬性板濃淡")](introduction-to-the-appearance-api-images/propertiespadtint.png)
+[![](introduction-to-the-appearance-api-images/propertiespadtint.png "屬性板濃淡")](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
 
 下圖說明處理，這只在名為 'sg1' 的控制項上設定濃淡。
 
- [ ![](introduction-to-the-appearance-api-images/image53.png "設定個別控制項濃淡")](introduction-to-the-appearance-api-images/image53.png)
+ [![](introduction-to-the-appearance-api-images/image53.png "設定個別控制項濃淡")](introduction-to-the-appearance-api-images/image53.png#lightbox)
 
 若要設定許多控制項以這種方式就是完全沒有效率，因此我們可以改為設定靜態`Appearance`類別本身的屬性。 下列程式碼所示：
 
@@ -101,7 +101,7 @@ UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 
 下圖現在會說明兩個不同客層之的控制項設為洋紅的外觀：
 
- [ ![](introduction-to-the-appearance-api-images/image54.png "設定外觀控制濃淡")](introduction-to-the-appearance-api-images/image54.png)
+ [![](introduction-to-the-appearance-api-images/image54.png "設定外觀控制濃淡")](introduction-to-the-appearance-api-images/image54.png#lightbox)
 
 `Appearance` 屬性設定在應用程式生命週期的早期例如 AppDelegate`FinishedLaunching`事件，或在 ViewController 才能顯示受影響的控制項。
 

@@ -3,21 +3,21 @@ title: "其他 iOS 9 架構變更"
 description: "本文涵蓋了其他的次要變更或現有的架構，適用於 iOS 9 的增強功能。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
+ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 82c6c2451deafb8a4314254a8138804d927c9bbf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 773df1eec7c8694143ad6c31044ce281c1265282
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>其他 iOS 9 架構變更
 
 _本文涵蓋了其他的次要變更或現有的架構，適用於 iOS 9 的增強功能。_
 
-[ ![](additional-framework-changes-images/ios9-sml.png "iOS 9 Logo")](additional-framework-changes-images/ios9.png)
+[![](additional-framework-changes-images/ios9-sml.png "iOS 9 Logo")](additional-framework-changes-images/ios9.png#lightbox)
 
 IOS 的重大變更，除了 Apple 已進行修改，以及數個現有架構的增強功能中 iOS 9。
 

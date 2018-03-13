@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 73b0a3292d7b1681b4086e8366e8b813194969a9
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 8901bb57ace4f05e8c26fdc43dfe8c476927903a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="alerts"></a>警示
 
@@ -22,7 +22,7 @@ _本文件涵蓋使用 Xamarin.Mac 應用程式中的警示。它說明建立和
 
 警示是一種特殊的錯誤） （例如，就會發生嚴重的問題時出現的對話方塊或警告 （例如準備要刪除的檔案）。 因為警示是一個對話方塊，它也需要使用者回應可被關閉前。
 
-[ ![](alert-images/alert06.png "範例警示")](alert-images/alert06.png)
+[![](alert-images/alert06.png "範例警示")](alert-images/alert06.png#lightbox)
 
 在本文中，我們將討論 Xamarin.Mac 應用程式中使用警示的基本概念。 
 
@@ -60,7 +60,7 @@ alert.RunModal ();
 
 上述程式碼會顯示警示與應用程式圖示上的警告圖示、 標題、 一則警告訊息和單一重疊**確定**按鈕：
 
-[ ![](alert-images/alert01.png "具有 [確定] 按鈕的警示")](alert-images/alert01.png)
+[![](alert-images/alert01.png "具有 [確定] 按鈕的警示")](alert-images/alert01.png#lightbox)
 
 Apple 提供數個屬性，可以用來自訂警示：
 
@@ -92,7 +92,7 @@ alert.RunModal ();
 ```
 如果執行此程式碼時，會顯示下列：
 
-[ ![](alert-images/alert02.png "一個簡單的警示")](alert-images/alert02.png)
+[![](alert-images/alert02.png "一個簡單的警示")](alert-images/alert02.png#lightbox)
 
 下列程式碼會以工作表顯示的相同警示：
 
@@ -107,7 +107,7 @@ alert.BeginSheet (this);
 
 如果執行此程式碼，則下列將會顯示：
 
-[ ![](alert-images/alert03.png "警示顯示為工作表")](alert-images/alert03.png)
+[![](alert-images/alert03.png "警示顯示為工作表")](alert-images/alert03.png#lightbox)
 
 
 <a name="Working_with_Alert_Buttons" />
@@ -136,7 +136,7 @@ var result = alert.RunModal ();
 
 當我們執行程式碼，將會顯示下列：
 
-[ ![](alert-images/alert04.png "具有三個按鈕選項的警示")](alert-images/alert04.png)
+[![](alert-images/alert04.png "具有三個按鈕選項的警示")](alert-images/alert04.png#lightbox)
 
 以下是相同的警示，以工作表的程式碼：
 
@@ -155,7 +155,7 @@ alert.BeginSheetForResponse (this, (result) => {
 ```
 如果執行此程式碼，則下列將會顯示：
 
-[ ![](alert-images/alert05.png "以工作表顯示三個按鈕警示")](alert-images/alert05.png)
+[![](alert-images/alert05.png "以工作表顯示三個按鈕警示")](alert-images/alert05.png#lightbox)
 
 > [!IMPORTANT]
 > 您不應該將三個以上的按鈕新增至警示。
@@ -184,7 +184,7 @@ Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.Suppression
 
 如果程式碼執行時，以下將會顯示：
 
-[ ![](alert-images/alert06.png "具有隱藏按鈕的警示")](alert-images/alert06.png)
+[![](alert-images/alert06.png "具有隱藏按鈕的警示")](alert-images/alert06.png#lightbox)
 
 以下是相同的警示，以工作表的程式碼：
 
@@ -205,7 +205,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 如果執行此程式碼，則下列將會顯示：
 
-[ ![](alert-images/alert07.png "警示隱藏按鈕顯示的工作表")](alert-images/alert07.png)
+[![](alert-images/alert07.png "警示隱藏按鈕顯示的工作表")](alert-images/alert07.png#lightbox)
 
 <a name="Adding_a_Custom_SubView" />
 
@@ -235,7 +235,7 @@ Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.Suppression
 
 當我們執行程式碼，將會顯示下列：
 
-[ ![](alert-images/alert08.png "當我們執行程式碼時，會顯示下列")](alert-images/alert08.png)
+[![](alert-images/alert08.png "當我們執行程式碼時，會顯示下列")](alert-images/alert08.png#lightbox)
 
 以下是以工作表的相同警示：
 
@@ -260,7 +260,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 當我們執行此程式碼，將會顯示下列：
 
-[ ![](alert-images/alert09.png "使用自訂的檢視警示")](alert-images/alert09.png)
+[![](alert-images/alert09.png "使用自訂的檢視警示")](alert-images/alert09.png#lightbox)
 
 <a name="Summary" />
 

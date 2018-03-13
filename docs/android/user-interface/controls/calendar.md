@@ -7,27 +7,24 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 8075473464472c5a830f62ebfc91c00ad54d1b98
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b744f4c8582aa9295645b2bdc22e6fddf2bedc3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="calendar"></a>行事曆
 
-<a name="Calendar_API" />
 
 ## <a name="calendar-api"></a>行事曆應用程式開發介面
 
 一組新的行事曆 Android 4 中導入的應用程式開發介面支援設計用來讀取或寫入資料到行事曆提供者的應用程式。 這些應用程式開發介面支援豐富的互動選項與行事曆資料，包括讀取和寫入事件、 出席者，以及提醒的能力。 使用行事曆提供者應用程式中，您將透過 API 的資料會出現在 Android 4 隨附內建的行事曆應用程式。
 
-<a name="Adding_Permissions" />
 
 ## <a name="adding-permissions"></a>新增權限
 
 使用新的行事曆應用程式開發介面應用程式中，的首先您必須進行時加入 Android 資訊清單中的適當的權限。 您要新增的權限`android.permisson.READ_CALENDAR`和`android.permission.WRITE_CALENDAR`，視是否您讀取和/或寫入行事曆資料而定。
 
-<a name="Using_the_Calendar_Contract" />
 
 ## <a name="using-the-calendar-contract"></a>使用行事曆合約
 
@@ -35,7 +32,6 @@ ms.lasthandoff: 02/27/2018
 
 讓我們看看使用行事曆 API 的範例。 在此範例中，我們將檢驗如何列舉行事曆和它們的事件，以及如何將新的事件新增至行事曆。
 
-<a name="Listing_Calendars" />
 
 ## <a name="listing-calendars"></a>列出行事曆
 
@@ -122,10 +118,9 @@ ListAdapter = adapter;
 
 以下是螢幕擷取畫面的最終結果，以顯示在行事曆資訊`ListView`:
 
-[![在模擬器中，顯示兩個行事曆項目執行 CalendarDemo](calendar-images/11-calendar.png)](calendar-images/11-calendar.png)
+[![在模擬器中，顯示兩個行事曆項目執行 CalendarDemo](calendar-images/11-calendar.png)](calendar-images/11-calendar.png#lightbox)
 
 
-<a name="Listing_Calendar_Events" />
 
 ## <a name="listing-calendar-events"></a>列出行事曆事件
 
@@ -221,10 +216,9 @@ class ViewBinder : Java.Lang.Object, SimpleCursorAdapter.IViewBinder
 
 這會顯示事件的清單，如下所示：
 
-[![顯示三個行事曆事件的範例應用程式的螢幕擷取畫面](calendar-images/12-events.png)](calendar-images/12-events.png)
+[![顯示三個行事曆事件的範例應用程式的螢幕擷取畫面](calendar-images/12-events.png)](calendar-images/12-events.png#lightbox)
 
 
-<a name="Adding_a_Calendar_Event" />
 
 ## <a name="adding-a-calendar-event"></a>新增行事曆事件
 
@@ -280,11 +274,11 @@ long GetDateTimeMS (int yr, int month, int day, int hr, int min)
 
 如果我們將按鈕加入至 UI 的 [事件] 清單並執行上述程式碼中按鈕的 click 事件處理常式，加入行事曆事件，並更新清單中，如下所示：
 
-[![使用行事曆事件後面加入範例事件按鈕的範例應用程式的螢幕擷取畫面](calendar-images/13.png)](calendar-images/13.png)
+[![使用行事曆事件後面加入範例事件按鈕的範例應用程式的螢幕擷取畫面](calendar-images/13.png)](calendar-images/13.png#lightbox)
 
 如果我們開啟行事曆應用程式時，我們會看到此事件會寫入那里以及：
 
-[![顯示選取的行事曆事件的行事曆應用程式的螢幕擷取畫面](calendar-images/14.png)](calendar-images/14.png)
+[![顯示選取的行事曆事件的行事曆應用程式的螢幕擷取畫面](calendar-images/14.png)](calendar-images/14.png#lightbox)
 
 如您所見，Android 讓來擷取，並保存行事曆資料的功能強大且容易存取行事曆功能緊密整合的應用程式。
 

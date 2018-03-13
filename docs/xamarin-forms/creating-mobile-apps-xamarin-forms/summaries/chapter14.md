@@ -3,14 +3,15 @@ title: "第 14 的摘要。 絕對版面配置"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: ac4c41ebd70b58e95a3fa4fa7a391a473361b1db
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 394e1722c79bac5f034e9ad88eb1fed7e5090f8c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>第 14 的摘要。 絕對版面配置
 
@@ -91,7 +92,7 @@ layoutBounds.Y = (fractionalChildCoordinate.Y / (1-layoutBounds.Height))
 
 [ **DotMatrixClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/DotMatrixClock)範例會顯示目前的時間以模擬的 5 x 7 點矩陣顯示。 每個點`BoxView`（有 228 個） 的大小和位置上`AbsoluteLayout`。
 
-[![點陣式時鐘的三個螢幕擷取畫面](images/ch14fg08-small.png "點陣式時鐘")](images/ch14fg08-large.png "點陣式時鐘")
+[![點陣式時鐘的三個螢幕擷取畫面](images/ch14fg08-small.png "點陣式時鐘")](images/ch14fg08-large.png#lightbox "點陣式時鐘")
 
 [ **BouncingText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/BouncingText)程式繪製兩個`Label`可以水平及垂直在畫面上的物件。
 

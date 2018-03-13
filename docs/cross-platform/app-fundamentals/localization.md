@@ -1,5 +1,5 @@
 ---
-title: "當地語系化"
+title: "應用程式使用者介面當地語系化"
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 38b74c9f50ac0b61eecaa952367d41ef6242e8ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 510e8a6b0b2839a1a191538e7fb4e49bd005b450
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="localization"></a>當地語系化
 
@@ -60,7 +60,7 @@ ms.lasthandoff: 02/27/2018
 
 比較的字串長度在英文、 德文與日文的 iOS 主畫面的一些項目：
 
-[ ![](localization-images/language-compare-sml.png "德文 vs 日文的字串長度")](localization-images/language-compare.png)
+[![](localization-images/language-compare-sml.png "德文 vs 日文的字串長度")](localization-images/language-compare.png#lightbox)
 
 請注意，**設定**英文 （8 個字元） 為德文的轉譯，但在日文中只有 2 個字元需要 13 個字元。
 
@@ -264,13 +264,16 @@ IOS 和 Android 支援由右至左配置和字型呈現時，使用內建功能�
 
 例如： 假設您有應用程式中的 on/off 開關，而且交換器控制項需要的文字 'on' 和 'off' 當地語系化。 您也會顯示該設定的值其他位置中的文字標籤中的應用程式。 您應該與參數的狀態 （即使它們是相同的字串，在您的預設語言） – 切換顯示使用不同的字串，例如所示：
 
-• 「 開啟 」 – 顯示在本身的交換器 • 「 關閉 」 – 顯示在本身的交換器 • 「 開啟 」 – 在標籤 • 顯示 「 關閉 」 – 在標籤中顯示
+-   「 On 」 – 顯示在本身的交換器
+-   「 關閉 」 – 顯示在本身的交換器
+-   「 On 」 – 在標籤中顯示
+-   「 關閉 」 – 在標籤中顯示
 
 這會提供最大的彈性的轉譯器：
 
-• 基於設計考量，可能是參數本身會 「 開啟 」 和 「 關閉 」 時，會使用小寫，但顯示標籤 「 開啟 」 和 「 關閉 」 時，請使用大寫。
-• 某些語言可能需要縮寫成符合使用者介面控制項，同時完整單字 （轉譯） 可以出現在標籤中的參數值。
-• 或者，可能會呈現您的交換器某些語言使用"I"及"O"的文化特性的熟悉度，但是您仍然可以讀取 「 開啟 」 或 「 關閉 」 標籤。
+-   基於設計考量，可能是本身的交換器會使用小寫 「 開啟 」 和 「 關閉 」，但顯示標籤 「 開啟 」 和 「 關閉 」 時，請使用大寫。
+-   某些語言可能需要縮寫成符合使用者介面控制項，同時完整單字 （轉譯） 可以出現在標籤中的參數值。
+-   或者，對於某些語言呈現您可能是交換器的使用"I"及"O"的文化特性的熟悉度，但是您仍然可以讀取 「 開啟 」 或 「 關閉 」 標籤。
 
 <!--
 # Testing
@@ -307,28 +310,24 @@ or
 
 When you are testing on the emulator, you can navigate using the settings app as above, or you can reset the locale using the ADB tool command. Using Command Prompt on Windows or Terminal on OS X, start `adb shell` then send commands to set the emulator’s locale. **adb** can usually be found on the Mac in `/Users/YOURNAME/Library/Developer/Xamarin/android-sdk-mac_x86/platform-tools/adb`
 
-###Spanish (Mexico)
+### Spanish (Mexico)
 setprop persist.sys.language es;setprop persist.sys.country MX;stop;sleep 5;start
 
-###French (France)
+### French (France)
 setprop persist.sys.language fr;setprop persist.sys.country FR;stop;sleep 5;start
 
-###Japanese (Japan)
+### Japanese (Japan)
 setprop persist.sys.language ja;setprop persist.sys.country JP;stop;sleep 5;start
 
-###Portuguese (Brazil)
+### Portuguese (Brazil)
 setprop persist.sys.language pt;setprop persist.sys.country BR;stop;sleep 5;start
 
-###English (USA)
+### English (USA)
 setprop persist.sys.language en;setprop persist.sys.country US;stop;sleep 5;start
 
 **TIP:** the default location of ADB on Mac OS X is
 `/Users/[USERNAME]/Library/Developer/Xamarin/android-sdk-mac_x86/platform-tools/adb shell`
 
-
-## Windows Phone
-
-Refer to Microsoft’s instructions for [How to test region settings for Windows Phone Emulator](http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh394014(v=vs.105).aspx).
 -->
 
 
@@ -336,13 +335,16 @@ Refer to Microsoft’s instructions for [How to test region settings for Windows
 
 #### <a name="machine-translation"></a>機器轉譯
 
-基於測試的目的，是可協助應用程式中納入某些當地語系化的文字，在開發期間使用許多線上翻譯工具中。
+若要建置到應用程式的轉譯功能，請考慮[Azure 轉譯程式文字 API](https://azure.microsoft.com/en-au/services/cognitive-services/translator-text-api/)。
 
-- [Bing 翻譯](https://www.bing.com/translator/) <!--Microsoft's Multilingual Application Toolkit helps you automatically translate strings, and is demonstrated with Xamarin.Forms in [this sample]().-->
+基於測試目的您可以使用許多線上轉譯工具在開發期間，包含應用程式中的某些當地語系化的文字：
 
-- [Google 翻譯](http://translate.google.com)
+- [Bing 翻譯](https://www.bing.com/translator/)
+- [Google 翻譯](http://translate.google.com/)
 
 還有許多其他可用。 機器翻譯品質通常不被視為夠好要發行應用程式沒有先檢閱並測試的專業的轉譯器或原生喇叭。
+
+ <!--Microsoft's Multilingual Application Toolkit helps you automatically translate strings, and is demonstrated with Xamarin.Forms in [this sample]().-->
 
 #### <a name="professional-translation"></a>專業轉譯
 

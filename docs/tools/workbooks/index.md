@@ -3,16 +3,16 @@ title: Xamarin Workbooks
 description: "Xamarin 活頁簿提供的 blend 文件，以及實驗，最適合的程式碼，學習和建立指南及教導輔助工具。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: A5CCD63C-18E5-4D19-AFEA-301FE4F8538A
+ms.assetid: 04275482-0488-4F1C-8808-D03A8E21BE62
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: 3d01d157fde1e69c7180c07adfd52e259cdddf14
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 04d6110ea9d0f2c10cf0c3d17182cd06b88e7708
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarin-workbooks"></a>Xamarin Workbooks
 
@@ -26,7 +26,7 @@ Xamarin 活頁簿是開放原始碼軟體。 開發在 GitHub 上就會發生在
 
 請稍候再試一次，讓我們知道您的想法，或者如果您[遇到任何錯誤](~/tools/workbooks/install.md#reporting-bugs)。 我們有[論壇](https://forums.xamarin.com/categories/inspector)太 ！
 
-[ ![](images/interactive-1.0.0-urho-planet-earth-small.png "範例基礎 UrhoSharp 活頁簿")](images/interactive-1.0.0-urho-planet-earth.png)
+[![](images/interactive-1.0.0-urho-planet-earth-small.png "範例基礎 UrhoSharp 活頁簿")](images/interactive-1.0.0-urho-planet-earth.png#lightbox)
 
 ## <a name="installation-and-requirementsinstallmd"></a>[安裝與需求](install.md)
 

@@ -3,27 +3,26 @@ title: "TabHost 配置 索引標籤"
 description: "本文將提供的高層級概觀 TabHost，較舊的 API 用來建立索引標籤式的配置 Xamarin.Android 應用程式中。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1CFF590A-AC86-C3B3-36CA-A70248BC7F97
+ms.assetid: 77B890A4-27A6-41DF-81BA-22C6116A8FB2
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/25/2017
-ms.openlocfilehash: ff61ca0a2bca466da3e33c93a17944915328b70c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e27557c65d2b3049457640a3492d090c5fa26a43
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="tab-layout-with-tabhost"></a>TabHost 配置 索引標籤
 
 _本文將提供的高層級概觀 TabHost，較舊的 API 用來建立索引標籤式的配置 Xamarin.Android 應用程式中。_
 
-<a name="Overview" />
 
 ## <a name="overview"></a>總覽
 
 > [!NOTE]
-> **注意：** `TabHost`是舊的 API，可由 Google 已被取代。 開發人員都建置索引標籤式的應用程式使用[項](~/android/user-interface/controls/action-bar.md)。 `ActionBar`用於所有的 Android 版本。 它引進 Android 3.0 （API 層級 11） 和回已移植到 Android 2.2 (API level 8) 和中的 Android 2.3 （API 層級 10） [V7 AppCompat 程式庫](http://developer.android.com/tools/support-library/features.html#v7-appcompat)，這是可透過 Xamarin.Android [XamarinAndroid 支援程式庫-V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)封裝。
+> `TabHost` 是由 Google 已被取代的舊 API。 開發人員都建置索引標籤式的應用程式使用[項](~/android/user-interface/controls/action-bar.md)。 `ActionBar`用於所有的 Android 版本。 它引進 Android 3.0 （API 層級 11） 和回已移植到 Android 2.2 (API level 8) 和中的 Android 2.3 （API 層級 10） [V7 AppCompat 程式庫](http://developer.android.com/tools/support-library/features.html#v7-appcompat)，這是可透過 Xamarin.Android [XamarinAndroid 支援程式庫-V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)封裝。
 
 `TabHost`是舊版的原始 API 來建立索引標籤式的使用者 interfacesIt 最適合 Xamarin.Android 應用程式必須支援 Android 2.2 和 Android 2.3，但不能使用**ActionBarSherlock**。
 下列五個元件是與所有參與`TabHost`API:
@@ -44,7 +43,6 @@ _本文將提供的高層級概觀 TabHost，較舊的 API 用來建立索引標
 
 索引標籤內容可能活動或檢視表。 檢視相當輕量且簡單的但可能會導致許多無關的程式碼共同-habitating 活動中。 這會導致不佳的考量和分隔繁雜難以維護的類別。 相較之下，活動需要系統資源，但使用的邏輯封裝在它本身的不同類別的每個索引標籤允許更模組化的方法。
 
-<a name="Summary" />
 
 ## <a name="summary"></a>總結
 

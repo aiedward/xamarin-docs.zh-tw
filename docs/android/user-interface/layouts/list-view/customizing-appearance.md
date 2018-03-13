@@ -7,21 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 18c53ed6428eff911420c696d45b341d8e0fa5c1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1bf481e4999365f4afc52cb9dda83c6e627950e1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-listviews-appearance"></a>自訂 ListView 的外觀
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽
 
 ListView 的外觀取決於所顯示的資料列的配置。 若要變更的外觀`ListView`，使用不同的資料列配置。
 
-<a name="Built-in_Row_Views" />
 
 ## <a name="built-in-row-views"></a>內建的資料列檢視
 
@@ -53,11 +51,11 @@ ListView 的外觀取決於所顯示的資料列的配置。 若要變更的外�
 
 每個內建的資料列檢視都有與其相關聯的內建的樣式。 這些螢幕擷取畫面會顯示每個檢視的顯示方式：
 
-[![TestListItem、 SimpleSelectableListItem、 SimpleListitem1 和 SimpleListItem2 的螢幕擷取畫面](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png)
+[![TestListItem、 SimpleSelectableListItem、 SimpleListitem1 和 SimpleListItem2 的螢幕擷取畫面](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png#lightbox)
 
-[![SimpleListItemActivated1、 SimpleListItemActivated2、 SimpleListItemChecked 和 SimpleListItemMultipleChecked 的螢幕擷取畫面](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png)
+[![SimpleListItemActivated1、 SimpleListItemActivated2、 SimpleListItemChecked 和 SimpleListItemMultipleChecked 的螢幕擷取畫面](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png#lightbox)
 
-[![SimpleListItemSingleChoice、 TwoLineListItem、 ActivityListItem 和 SimpleExpandableListItem 的螢幕擷取畫面](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png)
+[![SimpleListItemSingleChoice、 TwoLineListItem、 ActivityListItem 和 SimpleExpandableListItem 的螢幕擷取畫面](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png#lightbox)
 
 **BuiltInViews/HomeScreenAdapter.cs**範例檔案 (在**BuiltInViews**方案) 包含要產生的非可展開清單項目畫面的程式碼。 在檢視中設定`GetView`方法如下：
 
@@ -88,7 +86,6 @@ view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableLi
 [群組] 檢視和子檢視的屬性可以設定參考標準`Text1`和`Text2`控制識別項，如上所示。 SimpleExpandableListItem 螢幕擷取畫面 （如上所示） 提供一列的群組檢視 (SimpleExpandableListItem1) 和兩行子檢視 (SimpleExpandableListItem2) 的範例。 或者，可以設定兩行程式碼 (SimpleExpandableListItem2) 的群組檢視和子檢視可以設定的一行 (SimpleExpandableListItem1)，或群組檢視和子檢視可以有相同的行數。 
 
 
-<a name="Accessories" />
 
 ## <a name="accessories"></a>附屬應用程式
 
@@ -102,7 +99,7 @@ view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableLi
 
 在下列畫面中，在其各自的順序說明上述的附屬應用程式：
 
-[![螢幕擷取畫面的 SimpleListItemChecked、 SimpleListItemSingleChoice 和 SimpleListItemMultipleChoice 與附屬應用程式](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png)
+[![螢幕擷取畫面的 SimpleListItemChecked、 SimpleListItemSingleChoice 和 SimpleListItemMultipleChoice 與附屬應用程式](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png#lightbox)
 
 若要顯示其中一個這些附屬應用程式傳遞至配接器的必要的配置資源識別碼然後手動設定需要的資料列的選取狀態。 這行程式碼示範如何建立並指派`Adapter`使用其中一種配置：
 
@@ -112,7 +109,6 @@ ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListI
 
 `ListView`本身支援不同的選取模式，不論所顯示的裝飾。 若要避免混淆，請使用`Single`具有選取範圍模式`Checked`和`SingleChoice`附屬應用程式和`Multiple`模式搭配`MultipleChoice`樣式。 選取模式由`ChoiceMode`屬性`ListView`。
 
-<a name="Handling_API_Level" />
 
 ### <a name="handling-api-level"></a>處理應用程式開發介面層級
 
@@ -137,7 +133,6 @@ lv.ChoiceMode = Android.Widget.ChoiceMode.Single; // Single
 */
 ```
 
-<a name="Selecting_Items_Programmatically" />
 
 ### <a name="selecting-items-programmatically"></a>以程式設計方式選取項目
 
@@ -165,7 +160,6 @@ for (var i = 0; i < sparseArray.Size(); i++ )
 Console.WriteLine();
 ```
 
-<a name="Creating_Custom_Row_Layouts" />
 
 ## <a name="creating-custom-row-layouts"></a>建立自訂的資料列版面配置
 
@@ -188,7 +182,6 @@ Console.WriteLine();
 
 這些變更如下所述，開始建立活動的檢視和自訂資料列檢視，然後涵蓋修改配接器與活動加以轉譯。
 
-<a name="Adding_a_ListView_to_an_Activity_Layout" />
 
 ### <a name="adding-a-listview-to-an-activity-layout"></a>加入活動配置的 ListView
 
@@ -220,7 +213,6 @@ Console.WriteLine();
 
 使用的好處`Activity`與自訂版面配置 (而不是`ListActivity`) 在於能夠將其他控制項加入至畫面中，例如標題`TextView`在此範例中。
 
-<a name="Creating_a_Custom_Row_Layout" />
 
 ### <a name="creating-a-custom-row-layout"></a>建立自訂的資料列版面配置
 
@@ -267,7 +259,6 @@ Console.WriteLine();
 
 雖然自訂資料列配置可以包含許多不同的控制項，捲動效能可能會受到複雜的設計，並使用映像 （尤其是當它們有要載入透過網路）。 在處理捲動效能問題，請參閱 Google 的文件，如需詳細資訊。
 
-<a name="Referencing_a_Custom_Row_View" />
 
 ### <a name="referencing-a-custom-row-view"></a>參考自訂資料列檢視
 
@@ -309,7 +300,6 @@ public class HomeScreenAdapter : BaseAdapter<TableItem> {
 }
 ```
 
-<a name="Referencing_the_Custom_ListView_in_the_Activity" />
 
 ### <a name="referencing-the-custom-listview-in-the-activity"></a>參考自訂活動中 ListView
 
@@ -343,10 +333,9 @@ void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 
 產生螢幕看起來像這樣：
 
-[![產生 CustomRowView 的螢幕擷取畫面](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png)
+[![產生 CustomRowView 的螢幕擷取畫面](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png#lightbox)
 
 
-<a name="Customizing_the_Row_Selector_Color" />
 
 ### <a name="customizing-the-row-selector-color"></a>自訂的資料列選取器的色彩
 
@@ -386,10 +375,9 @@ android:background="@drawable/CustomSelector"
 
 選取的資料列和對應`Toast`訊息現在看起來像這樣：
 
-[![選取的資料列，以橙色，並顯示所選資料列的名稱的快顯通知訊息](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png)
+[![選取的資料列，以橙色，並顯示所選資料列的名稱的快顯通知訊息](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png#lightbox)
 
 
-<a name="Preventing_Flickering_on_Custom_Layouts" />
 
 ### <a name="preventing-flickering-on-custom-layouts"></a>防止閃爍自訂版面配置上
 
