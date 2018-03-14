@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: d18cf055bb206099eecea0d9f417af571f3819e0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 8b266640bb0e1aa2bc584197e5fd7cbf4ab48e88
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="device-orientation"></a>裝置方向
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 02/28/2018
 使用 Xamarin.Forms 時，控制裝置方向的支援的方法時使用的設定，針對每個個別的專案。
 
 > [!NOTE]
-> **請注意**: As of Xamarin.Forms 1.5.0 的 bug 會阻止自訂轉譯器為基礎的嘗試，來控制方向失敗。 請參閱[討論](https://forums.xamarin.com/discussion/46653/forcing-landscape-for-a-single-page-in-ios#latest)如需詳細資訊的 Xamarin 論壇中討論。
+> Xamarin.Forms 沒有錯誤會阻止的 1.5.0 為準，轉譯器為基礎的自訂會試圖控制失敗的方向。 請參閱[討論](https://forums.xamarin.com/discussion/46653/forcing-landscape-for-a-single-page-in-ios#latest)如需詳細資訊的 Xamarin 論壇中討論。
 
 ### <a name="ios"></a>iOS
 
@@ -123,7 +123,7 @@ SupportedOrientations = SupportedPageOrientation.Landscape; // landscape only
 Xamarin.Forms 不提供任何原生事件通知的共用程式碼中的方向變更您的應用程式。 不過，`SizeChanged`事件`Page`時引發寬度或高度`Page`變更。 當的寬度`Page`大於高度，裝置會以橫向模式。 如需詳細資訊，請參閱[顯示根據影像](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)。
 
 > [!NOTE]
-> **請注意**： 沒有現有的、 可用的 NuGet 封裝共用的程式碼中接收通知的方向變更。 請參閱[GitHub 儲存機制](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)如需詳細資訊。
+> 沒有現有的、 可用的 NuGet 封裝共用的程式碼中接收通知的方向變更。 請參閱[GitHub 儲存機制](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)如需詳細資訊。
 
 另外，它是可以覆寫[ `OnSizeAllocated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnSizeAllocated(System.Double,System.Double)/)方法`Page`，插入所有版面配置變更那里邏輯。 `OnSizeAllocated`方法呼叫時`Page`會配置新的大小，這種的 whenver 裝置旋轉。 請注意的基底實作`OnSizeAllocated`執行重要的配置函式，所以請務必呼叫基底實作，在覆寫：
 
@@ -176,7 +176,7 @@ protected override void OnSizeAllocated(double width, double height)
 通常實作介面的多個螢幕大小和都視為最佳作法，也適用於上述規則。 本指南的其餘部分將說明特定的回應使用 Xamarin.Forms 中的每個主要的版面配置的版面配置範例。
 
 > [!NOTE]
-> **請注意**： 為了清楚起見，下列各節將示範如何實作使用一種回應版面配置`Layout`一次。 在實務上，它通常是較簡單混合`Layout`來達成所需的版面配置，使用簡單或很直覺式 s`Layout`每個元件。
+> 為了清楚起見，下列各節將示範如何實作使用一種回應版面配置`Layout`一次。 在實務上，它通常是較簡單混合`Layout`來達成所需的版面配置，使用簡單或很直覺式 s`Layout`每個元件。
 
 ### <a name="stacklayout"></a>StackLayout
 

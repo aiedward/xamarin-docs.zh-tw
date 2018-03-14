@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: fc44b2a6080832d11c610661244172ad4a6a0716
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f4345e107a32c3a583c246fe5dbe24590960c870
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="native-views-in-xaml"></a>在 XAML 中的原生檢視
 
@@ -51,13 +51,13 @@ _原生 iOS、 Android 和通用 Windows 平台從檢視可以從 Xamarin.Forms 
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         xmlns:ios="clr-namespace:UIKit;assembly=Xamarin.iOS;targetPlatform=iOS"
         xmlns:androidWidget="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android"
-        xmlns:formsAndroid="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Platform.Android;targetPlatform=Android"
+        xmlns:androidLocal="clr-namespace:SimpleColorPicker.Droid;assembly=SimpleColorPicker.Droid;targetPlatform=Android"
         xmlns:win="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows, Version=255.255.255.255,
             Culture=neutral, PublicKeyToken=null, ContentType=WindowsRuntime;targetPlatform=Windows"
         x:Class="NativeViews.NativeViewDemo">
     <StackLayout Margin="20">
         <ios:UILabel Text="Hello World" TextColor="{x:Static ios:UIColor.Red}" View.HorizontalOptions="Start" />
-        <androidWidget:TextView Text="Hello World" x:Arguments="{x:Static formsandroid:Forms.Context}" />
+        <androidWidget:TextView Text="Hello World" x:Arguments="{x:Static androidLocal:MainActivity.Instance}" />
         <win:TextBlock Text="Hello World" />
     </StackLayout>
 </ContentPage>
@@ -72,7 +72,7 @@ _原生 iOS、 Android 和通用 Windows 平台從檢視可以從 Xamarin.Forms 
 > [!NOTE]
 > 請注意樣式無法搭配原生的檢視，因為樣式可以只為目標屬性，都由`BindableProperty`物件。
 
-Android 的 widget 建構函式通常需要在 Android`Context`物件做為引數，而這是透過`Xamarin.Forms.Platform.Android.Forms.Context`物件。 因此，當在 XAML 中，建立 Android 的 widget`Context`物件通常必須傳遞給 widget 的建構函式使用`x:Arguments`屬性附帶`x:Static`標記延伸。 如需詳細資訊，請參閱[傳遞的引數至原生檢視](#passing_arguments)。
+Android 的 widget 建構函式通常需要在 Android`Context`物件引數，而這可透過靜態屬性`MainActivity`類別。 因此，當在 XAML 中，建立 Android 的 widget`Context`物件通常必須傳遞給 widget 的建構函式使用`x:Arguments`屬性附帶`x:Static`標記延伸。 如需詳細資訊，請參閱[傳遞的引數至原生檢視](#passing_arguments)。
 
 > [!NOTE]
 > 請注意命名的原生檢視`x:Name`不可能在可攜式類別程式庫 (PCL) 專案或共用資產專案 (SAP)。 這樣會產生原生類型，這會造成編譯錯誤的變數。 不過，原生的檢視可能會包裝在`ContentView`執行個體，並擷取在程式碼後置檔案中，前提是正在使用 SAP。 如需詳細資訊，請參閱[參考從程式碼的原生檢視](#native_view_code)。
@@ -90,7 +90,7 @@ Android 的 widget 建構函式通常需要在 Android`Context`物件做為引�
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         xmlns:ios="clr-namespace:UIKit;assembly=Xamarin.iOS;targetPlatform=iOS"
         xmlns:androidWidget="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android"
-        xmlns:formsAndroid="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Platform.Android;targetPlatform=Android"
+        xmlns:androidLocal="clr-namespace:SimpleColorPicker.Droid;assembly=SimpleColorPicker.Droid;targetPlatform=Android"
         xmlns:win="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows, Version=255.255.255.255,
             Culture=neutral, PublicKeyToken=null, ContentType=WindowsRuntime;targetPlatform=Windows"
         xmlns:local="clr-namespace:NativeSwitch"
@@ -101,7 +101,7 @@ Android 的 widget 建構函式通常需要在 Android`Context`物件做為引�
         <ios:UISwitch On="{Binding Path=IsSwitchOn, Mode=TwoWay, UpdateSourceEventName=ValueChanged}"
             OnTintColor="{x:Static ios:UIColor.Red}"
             ThumbTintColor="{x:Static ios:UIColor.Blue}" />
-        <androidWidget:Switch x:Arguments="{x:Static formsAndroid:Forms.Context}"
+        <androidWidget:Switch x:Arguments="{x:Static androidLocal:MainActivity.Instance}"
             Checked="{Binding Path=IsSwitchOn, Mode=TwoWay, UpdateSourceEventName=CheckedChange}"
             Text="Enable Entry?" />
         <win:ToggleSwitch Header="Enable Entry?"
@@ -135,7 +135,7 @@ Android 的 widget 建構函式通常需要在 Android`Context`物件做為引�
         xmlns:ios="clr-namespace:UIKit;assembly=Xamarin.iOS;targetPlatform=iOS"
         xmlns:androidWidget="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android"
         xmlns:androidGraphics="clr-namespace:Android.Graphics;assembly=Mono.Android;targetPlatform=Android"
-        xmlns:formsAndroid="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Platform.Android;targetPlatform=Android"
+        xmlns:androidLocal="clr-namespace:SimpleColorPicker.Droid;assembly=SimpleColorPicker.Droid;targetPlatform=Android"
         xmlns:winControls="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows, Version=255.255.255.255, Culture=neutral, PublicKeyToken=null, ContentType=WindowsRuntime;targetPlatform=Windows"
         xmlns:winMedia="clr-namespace:Windows.UI.Xaml.Media;assembly=Windows, Version=255.255.255.255, Culture=neutral, PublicKeyToken=null, ContentType=WindowsRuntime;targetPlatform=Windows"
         xmlns:winText="clr-namespace:Windows.UI.Text;assembly=Windows, Version=255.255.255.255, Culture=neutral, PublicKeyToken=null, ContentType=WindowsRuntime;targetPlatform=Windows"
@@ -151,7 +151,7 @@ Android 的 widget 建構函式通常需要在 Android`Context`物件做為引�
                 </ios:UIFont>
             </ios:UILabel.Font>
         </ios:UILabel>
-        <androidWidget:TextView x:Arguments="{x:Static formsAndroid:Forms.Context}"
+        <androidWidget:TextView x:Arguments="{x:Static androidLocal:MainActivity.Instance}"
                     Text="Simple Native Color Picker"
                     TextSize="24"
                     View.HorizontalOptions="Center">
@@ -187,7 +187,7 @@ Android 的 widget 建構函式通常需要在 Android`Context`物件做為引�
 [ `FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.fontfamily)建構函式用來設定[ `TextBlock.FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.fontfamily)屬性至新`FontFamily`通用 Windows 平台 (UWP) 上。 `FontFamily`名稱由子系的方法引數指定`x:Arguments`屬性。
 
 > [!NOTE]
-> **請注意**： 引數必須符合的建構函式或 factory 方法所需的類型。
+> 引數必須符合的建構函式或 factory 方法所需的類型。
 
 下列螢幕擷取畫面顯示指定不同的原生檢視上設定的字型 factory 方法和建構函式引數的結果：
 
@@ -211,7 +211,7 @@ Android 的 widget 建構函式通常需要在 Android`Context`物件做為引�
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         xmlns:ios="clr-namespace:UIKit;assembly=Xamarin.iOS;targetPlatform=iOS"
         xmlns:androidWidget="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android"
-        xmlns:formsAndroid="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Platform.Android;targetPlatform=Android"
+        xmlns:androidLocal="clr-namespace:SimpleColorPicker.Droid;assembly=SimpleColorPicker.Droid;targetPlatform=Android"
         xmlns:winControls="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows, Version=255.255.255.255,
             Culture=neutral, PublicKeyToken=null, ContentType=WindowsRuntime;targetPlatform=Windows"
         xmlns:local="clr-namespace:NativeViewInsideContentView"
@@ -219,20 +219,19 @@ Android 的 widget 建構函式通常需要在 Android`Context`物件做為引�
     <StackLayout Margin="20">
         <ContentView x:Name="contentViewTextParent" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
             <ios:UILabel Text="Text in a UILabel" TextColor="{x:Static ios:UIColor.Red}" />
-            <androidWidget:TextView x:Arguments="{x:Static formsAndroid:Forms.Context}"
+            <androidWidget:TextView x:Arguments="{x:Static androidLocal:MainActivity.Instance}"
                 Text="Text in a TextView" />
             <winControls:TextBlock Text="Text in a TextBlock" />
         </ContentView>
         <ContentView x:Name="contentViewButtonParent" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
             <ios:UIButton TouchUpInside="OnButtonTap" View.HorizontalOptions="Center" View.VerticalOptions="Center" />
-            <androidWidget:Button x:Arguments="{x:Static formsAndroid:Forms.Context}"
+            <androidWidget:Button x:Arguments="{x:Static androidLocal:MainActivity.Instance}"
                 Text="Scale and Rotate Text"
                 Click="OnButtonTap" />
             <winControls:Button Content="Scale and Rotate Text" />
         </ContentView>
     </StackLayout>
 </ContentPage>
-
 ```
 
 上述範例中，每個平台的原生檢視都的子系[ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)控制項，與`x:Name`被用來擷取屬性值`ContentView`中程式碼後置：
@@ -297,7 +296,7 @@ IOS 和 Android 的原生按鈕共用相同`OnButtonTap`事件處理常式，因
         xmlns:ios="clr-namespace:UIKit;assembly=Xamarin.iOS;targetPlatform=iOS"
         xmlns:iosLocal="clr-namespace:SubclassedNativeControls.iOS;assembly=SubclassedNativeControls.iOS;targetPlatform=iOS"
         xmlns:android="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android"
-        xmlns:formsAndroid="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Platform.Android;targetPlatform=Android"
+        xmlns:androidLocal="clr-namespace:SimpleColorPicker.Droid;assembly=SimpleColorPicker.Droid;targetPlatform=Android"
         xmlns:androidLocal="clr-namespace:SubclassedNativeControls.Droid;assembly=SubclassedNativeControls.Droid;targetPlatform=Android"
         xmlns:winControls="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows, Version=255.255.255.255,
             Culture=neutral, PublicKeyToken=null, ContentType=WindowsRuntime;targetPlatform=Windows"
@@ -311,7 +310,7 @@ IOS 和 Android 的原生按鈕共用相同`OnButtonTap`事件處理常式，因
         </StackLayout>
         <iosLocal:MyUIPickerView ItemsSource="{Binding Fruits}"
             SelectedItem="{Binding SelectedFruit, Mode=TwoWay, UpdateSourceEventName=SelectedItemChanged}" />
-        <androidLocal:MySpinner x:Arguments="{x:Static formsAndroid:Forms.Context}"
+        <androidLocal:MySpinner x:Arguments="{x:Static androidLocal:MainActivity.Instance}"
             ItemsSource="{Binding Fruits}"
             SelectedObject="{Binding SelectedFruit, Mode=TwoWay, UpdateSourceEventName=ItemSelected}" />
         <winControls:ComboBox ItemsSource="{Binding Fruits}"
@@ -330,7 +329,7 @@ IOS 和 Android 的原生按鈕共用相同`OnButtonTap`事件處理常式，因
 
 ### <a name="ios"></a>iOS
 
-IOS 實作子類別[ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/)檢視中，並公開屬性，屬性可以從 XAML 輕鬆地取用的事件：
+IOS 實作子類別[ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/) 檢視中，並公開屬性，屬性可以從 XAML 輕鬆地取用的事件：
 
 ```csharp
 public class MyUIPickerView : UIPickerView
@@ -422,7 +421,7 @@ class PickerModel : UIPickerViewModel
 
 ### <a name="android"></a>Android
 
-Android 的實作子類別[ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/)檢視中，並公開屬性，屬性可以從 XAML 輕鬆地取用的事件：
+Android 的實作子類別[ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) 檢視中，並公開屬性，屬性可以從 XAML 輕鬆地取用的事件：
 
 ```csharp
 class MySpinner : Spinner

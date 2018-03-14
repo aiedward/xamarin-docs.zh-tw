@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: f375f58215fbef13298e31b03b969c9388d2bfa2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 77bad4c31ad0cb11476c656aa495707d2a94aa8f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="workout-apps"></a>健身應用程式
 
@@ -29,7 +29,7 @@ _本文件涵蓋的增強功能蘋果對健身 watchOS 3，以及如何將它們
 
 設計良好的適用性或健身應用程式可協助使用者連線到其適用性的目標活動的圖表。 使用 Apple Watch，適用性和健身應用程式需要立即存取核心比率卡路里 burn 和活動偵測。
 
-[ ![](workout-apps-images/workout01.png "適用性和健身應用程式範例")](workout-apps-images/workout01.png)
+[![](workout-apps-images/workout01.png "適用性和健身應用程式範例")](workout-apps-images/workout01.png#lightbox)
 
 新手 watchOS 3，_背景執行_提供健身相關的應用程式在 Apple Watch 背景中執行，並取得 HealthKit 資料的存取權的能力。
 
@@ -60,20 +60,20 @@ _本文件涵蓋的增強功能蘋果對健身 watchOS 3，以及如何將它們
 1. 在**方案總管] 中**，連按兩下 [監看式擴充功能的附屬 iPhone 應用程式的`Info.plist`檔案，以開啟它進行編輯。
 2. 切換至**來源**檢視： 
 
-    [ ![](workout-apps-images/plist01.png "原始碼檢視")](workout-apps-images/plist01.png)
+    [![](workout-apps-images/plist01.png "原始碼檢視")](workout-apps-images/plist01.png#lightbox)
 3. 加入新的金鑰呼叫`WKBackgroundModes`並設定**類型**至`Array`: 
 
-    [ ![](workout-apps-images/plist02.png "加入新的金鑰呼叫 WKBackgroundModes")](workout-apps-images/plist02.png)
+    [![](workout-apps-images/plist02.png "加入新的金鑰呼叫 WKBackgroundModes")](workout-apps-images/plist02.png#lightbox)
 4. 具有陣列中加入新項目**類型**的`String`以及值`workout-processing`: 
 
-    [ ![](workout-apps-images/plist03.png "將新的項目加入至字串類型和值的健身處理陣列")](workout-apps-images/plist03.png)
+    [![](workout-apps-images/plist03.png "將新的項目加入至字串類型和值的健身處理陣列")](workout-apps-images/plist03.png#lightbox)
 5. 將變更儲存到檔案。
 
 ## <a name="starting-a-workout-session"></a>啟動健身工作階段
 
 有三個啟動健身工作階段的主要步驟：
 
-[ ![](workout-apps-images/workout02.png "若要啟動健身工作階段的三個主要步驟")](workout-apps-images/workout02.png)
+[![](workout-apps-images/workout02.png "若要啟動健身工作階段的三個主要步驟")](workout-apps-images/workout02.png#lightbox)
 
 1. 應用程式必須要求授權存取 HealthKit 中的資料。
 2. 正在啟動健身類型建立健身組態物件。
@@ -97,7 +97,7 @@ _本文件涵蓋的增強功能蘋果對健身 watchOS 3，以及如何將它們
 1. 在方案總管中按兩下 `Entitlements.plist` 檔案將其開啟以進行編輯。
 2. 捲動到底部，並檢查**啟用 HealthKit**: 
 
-    [ ![](workout-apps-images/auth01.png "核取啟用 HealthKit")](workout-apps-images/auth01.png)
+    [![](workout-apps-images/auth01.png "核取啟用 HealthKit")](workout-apps-images/auth01.png#lightbox)
 3. 將變更儲存到檔案。
 4. 請依照下列中的指示[明確的應用程式識別碼和佈建設定檔](~/ios/platform/healthkit.md)和[相關聯的應用程式識別碼和佈建的設定檔與 Xamarin.iOS 應用程式](~/ios/platform/healthkit.md)區段[簡介HealthKit](~/ios/platform/healthkit.md)正確佈建應用程式的發行項。
 5. 最後，使用中的指示[程式設計健全狀況套件](~/ios/platform/healthkit.md)和[要求權限從 使用者](~/ios/platform/healthkit.md)區段[簡介 HealthKit](~/ios/platform/healthkit.md)要求文件若要存取使用者的 HealthKit 資料存放區的授權。
@@ -273,7 +273,7 @@ private void StartOutdoorRun ()
 
 如果應用程式啟動此健身工作階段，使用者切換回其 watch 錶面微小的綠色 「 執行中攔截 」 圖示將會顯示圖示上方：
 
-[ ![](workout-apps-images/workout03.png "表面上方顯示的小綠色執行 man 圖示")](workout-apps-images/workout03.png)
+[![](workout-apps-images/workout03.png "表面上方顯示的小綠色執行 man 圖示")](workout-apps-images/workout03.png#lightbox)
 
 如果在使用者點選此圖示，它們將會進入回應用程式。
 
@@ -281,7 +281,7 @@ private void StartOutdoorRun ()
 
 一旦已經設定和啟動健身工作階段，應用程式需要收集 （例如使用者的核心速率） 工作階段的相關資料，並控制工作階段的狀態：
 
-[ ![](workout-apps-images/workout04.png "資料收集和控制圖表")](workout-apps-images/workout04.png)
+[![](workout-apps-images/workout04.png "資料收集和控制圖表")](workout-apps-images/workout04.png#lightbox)
 
 1. **觀察範例**-應用程式必須擷取 HealthKit 將作用時，並向使用者顯示的資訊。
 2. **觀察事件**-應用程式必須回應 HealthKit 或從應用程式的 UI （例如，暫停健身使用者） 所產生的事件。
@@ -502,7 +502,7 @@ public override void DidGenerateEvent (HKWorkoutSession workoutSession, HKWorkou
 
 若要結束並儲存健身工作階段需要下列步驟：
 
-[ ![](workout-apps-images/workout05.png "結束並儲存健身工作階段的圖表")](workout-apps-images/workout05.png)
+[![](workout-apps-images/workout05.png "結束並儲存健身工作階段的圖表")](workout-apps-images/workout05.png#lightbox)
 
 1. 首先，應用程式必須結束健身工作階段。
 2. 健身工作階段會儲存到 HealthKit。
@@ -642,7 +642,7 @@ WatchOS 應用程式執行時，它可以使用 WatchConnectivity 傳訊和與�
 
 看看此程序的運作方式：
 
-[ ![](workout-apps-images/workout06.png "iPhone 和 Apple Watch 通訊圖表")](workout-apps-images/workout06.png)
+[![](workout-apps-images/workout06.png "iPhone 和 Apple Watch 通訊圖表")](workout-apps-images/workout06.png#lightbox)
 
 1. IPhone app 建立`HKWorkoutConfiguration`物件，並設定健身類型和位置。
 2. `HKWorkoutConfiguration`物件傳送 Apple Watch 新版應用程式，以及如果未執行，其啟動系統。

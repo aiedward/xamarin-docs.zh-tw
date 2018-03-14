@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 6b4d63637eae7c1719f3f6e525327d416ddff59d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce5a7976f5bac68ca01b30a8d437aa83b8360580
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-styles"></a>Introduction to 樣式
 
@@ -84,7 +84,7 @@ public class NoStylesPageCS : ContentPage
 
 每個[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)執行個體具有相同的屬性值，來控制顯示之文字的外觀`Label`。 這會導致下列螢幕擷取畫面所示的外觀：
 
-[![](introduction-images/no-styles.png "標籤外觀沒有樣式")](introduction-images/no-styles-large.png "標籤外觀沒有樣式")
+[![](introduction-images/no-styles.png "標籤外觀沒有樣式")](introduction-images/no-styles-large.png#lightbox "標籤外觀沒有樣式")
 
 設定每個個別控制項的外觀可能重複而且容易產生錯誤。 相反地，樣式可以建立所定義的外觀，並套用至所需的控制項。
 
@@ -94,7 +94,7 @@ public class NoStylesPageCS : ContentPage
 
 雖然樣式主要的設計以 XAML 為基礎的應用程式，也在 C# 中建立它們：
 
-- [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) 在 XAML 中建立的執行個體通常定義在[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) ，指派給[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/)控制項的集合頁面上，或[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Resources/)應用程式集合。
+- [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) 在 XAML 中建立的執行個體通常定義在[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) ，指派給[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/)控制項的集合 頁面上，或[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Resources/)應用程式集合。
 - [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) 在頁面的類別中，或可全域存取的類別中，通常被定義在 C# 中建立的執行個體。
 
 選擇要定義在何處[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)可以用它的影響：

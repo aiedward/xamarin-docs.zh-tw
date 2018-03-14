@@ -6,19 +6,18 @@ ms.assetid: 9F76162B-D622-45DA-996B-2FBF8017E208
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 06/26/2017
-ms.openlocfilehash: 5a11ca19de7ce06088478f1a39dae5a246d701a8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/06/2018
+ms.openlocfilehash: 32a73232667e54eef7536f0bb0d1baa190269d8e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinios-errors"></a>Xamarin.iOS 錯誤
 
-
 ## <a name="mt0xxx-mtouch-error-messages"></a>MT0xxx: mtouch 錯誤訊息
 
-例如： 參數、 遺漏工具的環境。
+例如， 參數、 遺漏工具的環境。
 
 <!--
  MT0xxx mtouch itself, e.g. parameters, environment (e.g. missing tools)
@@ -102,7 +101,6 @@ SGen (-sgen)，程式碼剖析，則必須啟用 (-程式碼剖析) 已啟用。
 *  ARMv6 已啟用，且已安裝 Xcode 4.5 或更新版本。
 *  ARMv7s 已啟用，且已安裝 Xcode 4.4 或更早版本。
 
-
 請確認已安裝的 Xcode 版本支援選取的架構。
 
 ### <a name="a-namemt0015mt0015-invalid-abi--supported-abis-are-i386-x8664--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a><a name="MT0015"/>MT0015： 無效的 ABI: *。 會支援的 ABIs: i386、 x86_64、 armv7，armv7 + llvm、 armv7 + llvm + thumb2、 armv7s、 armv7s + llvm、 armv7s + llvm + thumb2、 arm64 和 arm64 + llvm。
@@ -132,16 +130,9 @@ Mtouch 無法辨識的錯誤訊息中所述的命令列引數。
 -  -launchdebug
 -  -launchsim
 
-
-
-
 ### <a name="a-namemt0020mt0020-the-valid-options-for--are-"></a><a name="MT0020"/>MT0020 的有效選項 '\*'是'\*'。
 
-
-
 ### <a name="a-namemt0021mt0021-cannot-compile-using-gccg---use-gcc-when-using-the-static-registrar-this-is-the-default-when-compiling-for-device-either-remove-the---use-gcc-flag-or-use-the-dynamic-registrar---registrardynamic"></a><a name="MT0021"/>使用 gcc MT0021 無法編譯 / g + + (-使用 gcc) 時使用靜態的註冊機構 （的裝置進行編譯時，這是預設值）。 請移除--使用 gcc 旗標，或使用動態註冊機構 (-註冊機構： 動態)。
-
-
 
 ### <a name="a-namemt0022mt0022-the-options---unsupported--enable-generics-in-registrar-and---registrar-are-not-compatible"></a><a name="MT0022"/>MT0022 選項 '-不支援-啟用-泛型-中的註冊機構' 和 '-註冊機構 ' 不相容。
 
@@ -155,23 +146,13 @@ Mtouch 無法辨識的錯誤訊息中所述的命令列引數。
 
 ### <a name="a-namemt0024mt0024-could-not-find-required-file-"></a><a name="MT0024"/>MT0024 找不到必要的檔案 ' *'。
 
-
-
 ### <a name="a-namemt0025mt0025-no-sdk-version-was-provided-please-add---sdkxy-to-specify-which-ios-sdk-should-be-used-to-build-your-application"></a><a name="MT0025"/>提供 MT0025 否 SDK 版本。 請新增`--sdk=X.Y`來指定哪些 iOS SDK 應該用來建置應用程式。
-
-
 
 ### <a name="a-namemt0026mt0026-could-not-parse-the-command-line-argument--"></a><a name="MT0026"/>MT0026 無法剖析命令列引數 ' *': *
 
-
-
 ### <a name="a-namemt0027mt0027-the-options--and--are-not-compatible"></a><a name="MT0027"/>MT0027 選項\*'和'\*' 不相容。
 
-
-
 ### <a name="a-namemt0028mt0028-cannot-enable-pie--pie-when-targeting-ios-41-or-earlier-please-disable-pie--piefalse-or-set-the-deployment-target-to-at-least-ios-42"></a><a name="MT0028"/>MT0028 無法啟用圓形圖 (-圓形圖) 為目標 iOS 4.1 或更早版本時。 請停用圓形圖 (-圓形圖： false) 或至少將部署目標設定為 iOS 4.2
-
-
 
 ### <a name="a-namemt0029mt0029-repl---enable-repl-is-only-supported-in-the-simulator---sim"></a><a name="MT0029"/>MT0029: REPL (-啟用 repl) 僅適用於在模擬器 (-sim)。
 
@@ -486,7 +467,6 @@ Bitcode 已啟用自動因為 Xamarin.iOS 這個版本不支援建置 watchOS �
 
 原生程式碼共用需要不支援受管理的連結器使用自訂 xml 定義的專案。
 
-
 ### <a name="a-namemt0113mt0113-native-code-sharing-has-been-disabled-for-the-extension--because-"></a><a name="MT0113"/>MT0113： 原生程式碼共用已停用擴充功能 ' *' 因為 *。
 
 * 因為 bitcode 選項不同容器應用程式之間 (\*) 和延伸模組 (\*)。
@@ -561,6 +541,49 @@ Xamarin.iOS 已實作替代方案： 我們產生額外的原生程式碼會參�
 
 <!-- 0116 - 0124: free to use -->
 
+### <a name="a-namemt0116mt0116-invalid-architecture-arch-32-bit-architectures-are-not-supported-when-deployment-target-is-11-or-later-make-sure-the-project-does-not-build-for-a-32-bit-architecture"></a><a name="MT0116"/>MT0116： 無效的架構: {arch}。 當部署目標是 11 或更新版本不支援 32 位元架構。 請確定專案未建置的 32 位元架構。
+
+iOS 11 不包含支援 32 位元應用程式，所以它不支援部署目標是 iOS 11 或更新版本時，建置為 32 位元應用程式。
+
+變更專案的 iOS 組建選項中的目標架構 arm64，或在專案的 Info.plist 中部署目標變更為較早的 iOS 版本。
+
+### <a name="a-namemt0117mt0117-cant-launch-a-32-bit-app-on-a-simulator-that-only-supports-64-bit"></a><a name="MT0117"/>MT0117： 無法啟動模擬器僅支援 64 位元上的 32 位元應用程式。
+
+### <a name="a-namemt0118mt0118-aot-files-could-not-be-found-at-the-expected-directory-msymdir"></a><a name="MT0118"/>MT0118： 在 '{msymdir}' 的預期目錄找不到 Aot 檔案。
+
+<!-- 0119 - 0123: free to use -->
+
+### <a name="a-namemt0123mt0123-the-executable-assembly--does-not-reference-"></a><a name="MT0123"/>MT0123: 可執行組件 * 未參考 *。
+
+找不到參考平台組件 (Xamarin.iOS.dll / Xamarin.TVOS.dll / Xamarin.WatchOS.dll) 中執行的組件。
+
+這通常發生在使用任何項目從平台組件; 可執行檔專案中沒有程式碼執行個體的空白 Main 方法 （和其他程式碼） 會顯示這個錯誤：
+
+```csharp
+class Program {
+    void Main (string[] args)
+    {
+    }
+}
+```
+
+使用平台組件的 API，將會解決錯誤：
+
+```csharp
+class Program {
+    void Main (string[] args)
+    {
+        System.Console.WriteLine (typeof (UIKit.UIWindow));
+    }
+}
+```
+
+### <a name="a-namemt0124mt0124-could-not-set-the-current-language-to-lang-according-to-langlang-exception"></a><a name="MT0124"/>MT0124： 無法將目前的語言設定為 '{lang}' （根據 LANG = {LANG}）: {例外狀況。
+
+這是警告，表示目前的語言無法設定中的錯誤訊息的語言。
+
+目前的語言會預設為系統語言。
+
 ### <a name="a-namemt0125mt0125-the---assembly-build-target-command-line-argument-is-ignored-in-the-simulator"></a><a name="MT0125"/>MT0125:--組件的建置目標在模擬器中的命令列引數會被忽略。
 
 不不需要任何動作，此訊息僅供參考。
@@ -577,6 +600,12 @@ Xamarin.iOS 已實作替代方案： 我們產生額外的原生程式碼會參�
 
 如進一步資訊，請參閱錯誤 #[52727](https://bugzilla.xamarin.com/show_bug.cgi?id=52727)。
 
+### <a name="a-namemt0128mt0128-could-not-touch-the-file--"></a><a name="MT0128"/>MT0128： 未碰觸的檔案 ' *': *
+
+碰觸的檔案 （這為了確保正確地完成部分的組建） 時發生失敗。
+
+最有可能可以忽略此警告。發生任何問題提報 bug (https://bugzilla.xamarin.com] (https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS))，它將會加以調查。
+
 ## <a name="mt1xxx-project-related-error-messages"></a>MT1xxx： 專案相關的錯誤訊息
 
 ### <a name="mt10xx-installer--mtouch"></a>MT10xx: Installer / mtouch
@@ -588,35 +617,19 @@ Xamarin.iOS 已實作替代方案： 我們產生額外的原生程式碼會參�
 
 ### <a name="a-namemt1001mt1001-could-not-find-an-application-at-the-specified-directory"></a><a name="MT1001"/>MT1001 找不到應用程式在指定的目錄
 
-
-
 ### <a name="a-namemt1002mt1002-could-not-create-symlinks-files-were-copied"></a><a name="MT1002"/>MT1002 無法建立符號連結，已複製檔案
-
-
 
 ### <a name="a-namemt1003mt1003-could-not-kill-the-application--you-may-have-to-kill-the-application-manually"></a><a name="MT1003"/>MT1003 可能不會終止應用程式 ' *'。 您可能必須手動終止應用程式。
 
-
-
 ### <a name="a-namemt1004mt1004-could-not-get-the-list-of-installed-applications"></a><a name="MT1004"/>MT1004 無法取得已安裝的應用程式的清單。
-
-
 
 ### <a name="a-namemt1005mt1005-could-not-kill-the-application--on-the-device----you-may-have-to-kill-the-application-manually"></a><a name="MT1005"/>MT1005 可能不會終止應用程式 '\*'上的裝置 」\*': *-您可能必須手動清除應用程式。
 
-
-
 ### <a name="a-namemt1006mt1006-could-not-install-the-application--on-the-device--"></a><a name="MT1006"/>MT1006 無法安裝應用程式 '\*'上的裝置 」\*': *。
-
-
 
 ### <a name="a-namemt1007mt1007-failed-to-launch-the-application--on-the-device---you-can-still-launch-the-application-manually-by-tapping-on-it"></a><a name="MT1007"/>無法啟動應用程式 MT1007 '\*'上的裝置 」\*': *。 您仍然可以在其上的點選以手動方式啟動應用程式。
 
-
-
 ### <a name="a-namemt1008mt1008-failed-to-launch-the-simulator"></a><a name="MT1008"/>MT1008： 無法啟動模擬器
-
-
 
 如果 mtouch 無法啟動模擬器時，會報告此錯誤。   這種情形有時因為已經執行的已停用或無作用的模擬器處理序。
 
@@ -632,7 +645,7 @@ $ launchctl list|grep UIKitApplication|awk '{print $3}'|xargs launchctl remove
 
 如果您發生此問題，請嘗試下列因應措施：
 
-```csharp
+```bash
 sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/*/*.mdb
 ```
 
@@ -640,23 +653,15 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 ### <a name="a-namemt1010mt1010-could-not-load-the-assembly--"></a><a name="MT1010"/>MT1010 無法載入組件 ' *': *
 
-
-
 ### <a name="a-namemt1011mt1011-could-not-add-missing-resource-file-"></a><a name="MT1011"/>MT1011 無法加入遺漏的資源檔: ' *'
 
-
-
 ### <a name="a-namemt1012mt1012-failed-to-list-the-apps-on-the-device--"></a><a name="MT1012"/>列出在裝置上的應用程式失敗 MT1012 ' *': *
-
-
 
 ### <a name="a-namemt1013mt1013-dependency-tracking-error-no-files-to-compare-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a><a name="MT1013"/>MT1013 相依性追蹤時發生錯誤： 沒有要比較的檔案。 請在與測試案例 http://bugzilla.xamarin.com 檔案錯誤報告。
 
 這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試 caes。
 
 ### <a name="a-namemt1014mt1014-failed-to-re-use-cached-version-of--"></a><a name="MT1014"/>無法重複使用的快取的版本 MT1014 ' *': *。
-
-
 
 ### <a name="a-namemt1015mt1015--failed-to-create-the-executable--"></a><a name="MT1015"/>無法建立可執行檔 MT1015 ' *': *
 
@@ -681,7 +686,6 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
   可能的解決方案：
   - 在 Xcode 中的範本建立新的應用程式，選取相同的佈建設定檔，並部署至相同的裝置。 有時 Xcode 可以自動重新整理佈建設定檔 （在其他情況下，Xcode 會詢問您要執行的工作） 的新裝置。
   -移至 iOS 開發人員中心和佈建設定檔更新與新的裝置，然後更新的佈建設定檔下載到電腦。
-
 
 在 iOS 裝置記錄檔將會顯示有關失敗的詳細資訊的大部分情況下，這可以幫助診斷問題。
 
@@ -784,27 +788,15 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 ### <a name="a-namemt1101mt1101-could-not-start-app"></a><a name="MT1101"/>MT1101 無法啟動應用程式
 
-
-
 ### <a name="a-namemt1102mt1102-could-not-attach-to-the-app-to-kill-it-"></a><a name="MT1102"/>MT1102 無法附加至應用程式 （若要刪除該）: *
-
-
 
 ### <a name="a-namemt1103mt1103-could-not-detach"></a><a name="MT1103"/>MT1103 無法中斷連接
 
-
-
 ### <a name="a-namemt1104mt1104-failed-to-send-packet-"></a><a name="MT1104"/>無法傳送封包 MT1104: *
-
-
 
 ### <a name="a-namemt1105mt1105-unexpected-response-type"></a><a name="MT1105"/>MT1105 未預期的回應類型
 
-
-
 ### <a name="a-namemt1106mt1106-could-not-get-list-of-applications-on-the-device-request-timed-out"></a><a name="MT1106"/>MT1106 無法取得裝置上的應用程式清單： 要求已逾時。
-
-
 
 ### <a name="a-namemt1107mt1107-application-failed-to-launch-"></a><a name="MT1107"/>MT1107： 無法啟動應用程式: *
 
@@ -818,7 +810,6 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 這個錯誤可能會發生是因為您不需要符合您已經連接之裝置 DeveloperDiskImage.dmg。
 
-
 ### <a name="a-namemt1109mt1109-application-failed-to-launch-because-the-device-is-locked-please-unlock-the-device-and-try-again"></a><a name="MT1109"/>MT1109： 應用程式無法啟動，因為裝置已鎖定。 請解除鎖定裝置，然後再試一次。
 
 請檢查您的裝置是否鎖定。
@@ -826,6 +817,8 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 ### <a name="a-namemt1110mt1110-application-failed-to-launch-because-of-ios-security-restrictions-please-ensure-the-developer-is-trusted"></a><a name="MT1110"/>MT1110： 應用程式無法啟動，因為 iOS 安全性限制。 請確定開發人員是受信任。
 
 如果您要部署企業應用程式，或使用可用的佈建設定檔，您可能會對信任的開發人員 (說明<a href="http://stackoverflow.com/a/30726375/183422">這裡</a>)。
+
+### <a name="a-namemt1111mt1111-application-launched-successfully-but-its-not-possible-to-wait-for-the-app-to-exit-as-requested-because-its-not-possible-to-detect-app-termination-when-launching-using-gdbserver"></a><a name="MT1111"/>MT1111： 應用程式啟動成功，但不可能在等候結束，因為無法偵測應用程式終止時啟動使用 gdbserver 要求應用程式。
 
 ### <a name="mt12xx-simulator"></a>MT12xx： 模擬器
 
@@ -874,10 +867,7 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
   MT13xx [LinkWith]
   -->
 
-
 ### <a name="a-namemt1301mt1301-native-library---was-ignored-since-it-does-not-match-the-current-build-architectures-"></a><a name="MT1301"/>MT1301 原生程式庫`*`(\*) 已略過，因為它不符合目前組建 architecture(s) (\*)
-
-
 
 ### <a name="a-namemt1302mt1302-could-not-extract-the-native-library--from--please-ensure-the-native-library-was-properly-embedded-in-the-managed-assembly-if-the-assembly-was-built-using-a-binding-project-the-native-library-must-be-included-in-the-project-and-its-build-action-must-be-objcbindingnativelibrary"></a><a name="MT1302"/>MT1302 無法擷取原生程式庫 ' *' 從 '+'。 請確定原生程式庫已正確地內嵌的 managed 組件中 （如果使用繫結專案建置組件，原生程式庫必須包含在專案中，且其 建置動作必須是 'ObjcBindingNativeLibrary'）。
 
@@ -1058,7 +1048,7 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 此錯誤表示受管理的連結器遇到意外的錯誤，例如例外狀況，並無法完成或儲存正在處理的組件。 確切的錯誤的詳細資訊將為組建記錄檔的一部分例如
 
-``` 
+```
 error MT2001: Could not link assemblies.
     Method: `System.Void Todo.TodoListPageCS/<<-ctor>b__1_0>d::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)`
     Assembly: `QuickTodo, Version=1.0.6297.28241, Culture=neutral, PublicKeyToken=null`
@@ -1068,22 +1058,13 @@ Parameter name: instruction
 
 請務必檔案這類問題的錯誤報告。 在大部分情況下發行適當的修正程式之前可以提供因應措施。 上述資訊是很重要 （以及測試案例和/或組件 binairy） 解決問題。
 
-
 ### <a name="a-namemt2002mt2002-can-not-resolve-reference-"></a><a name="MT2002"/>MT2002 可以解析參考: *
-
-
 
 ### <a name="a-namemt2003mt2003-option--will-be-ignored-since-linking-is-disabled"></a><a name="MT2003"/>MT2003 選項 ' *' 將被忽略，因為連結已停用
 
-
-
 ### <a name="a-namemt2004mt2004-extra-linker-definitions-file--could-not-be-located"></a><a name="MT2004"/>MT2004 額外連結器定義檔 ' *' 找不到。
 
-
-
 ### <a name="a-namemt2005mt2005-definitions-from--could-not-be-parsed"></a><a name="MT2005"/>來自 MT2005 定義 ' *' 無法剖析。
-
-
 
 ### <a name="a-namemt2006mt2006-can-not-load-mscorlibdll-from--please-reinstall-xamarinios"></a><a name="MT2006"/>MT2006： 無法載入從 mscorlib.dll: *。 請重新安裝 Xamarin.iOS。
 
@@ -1168,9 +1149,17 @@ Parameter name: instruction
 
 嘗試將標記時，發生無法預期發生`NSObject`從應用程式的子類別。 錯誤訊息中名為造成問題的組件。 若要修正此問題的組件必須在中提供[bug 報表](http://bugzilla.xamarin.com)以及完成的組建記錄檔，具有已啟用的詳細資訊 (也就是`-v -v -v -v`中**其他 mtouch 引數**)。
 
+### <a name="a-namemt2090mt2090-inliner-failed-processing-"></a><a name="MT2090"/>MT2090： 內嵌者的失敗處理`...`。
+
+發生無法預期發生時，對內嵌程式碼嘗試從應用程式。 錯誤訊息中名為造成問題的組件。 若要修正此問題的組件將需要在中提供[bug 報表](https://bugzilla.xamarin.com)以及完成的組建記錄檔，具有已啟用的詳細資訊 (也就是`-v -v -v -v`中**其他 mtouch 引數**)。
+
 <!-- MT21xx: more linker errors -->
 
 <!--- 2100 used by mmp -->
+
+### <a name="a-namemt2100mt2100-smart-enum-conversion-preserver-failed-processing-"></a><a name="MT2100"/>MT2100： 智慧列舉轉換守護者無法處理`...`。
+
+當嘗試將轉換方法，從應用程式的智慧列舉標記時發生發生無法預期。 錯誤訊息中名為造成問題的組件。 若要修正此問題的組件將需要在中提供[bug 報表](https://bugzilla.xamarin.com)以及完成的組建記錄檔，具有已啟用的詳細資訊 (也就是`-v -v -v -v`中**其他 mtouch 引數**)。
 
 ### <a name="a-namemt2101mt2101-cant-resolve-the-reference--referenced-from-the-method--in-"></a><a name="MT2101"/>MT2101： 無法解析參考 '\*'，參考從方法'\*' 在 ' *'。
 
@@ -1183,6 +1172,18 @@ Parameter name: instruction
 當嘗試將錯誤訊息中所述方法標記時發生發生無法預期。
 
 錯誤訊息中名為造成問題的組件。 若要修正此問題的組件必須在中提供[bug 報表](https://bugzilla.xamarin.com)以及完成的組建記錄檔，具有已啟用的詳細資訊 (也就是`-v -v -v -v`中**其他 mtouch 引數**)。
+
+### <a name="a-namemt2103mt2103-error-processing-assembly--"></a><a name="MT2103"/>MT2103： 錯誤處理組件 '\*': *
+
+處理組件時，就會發生未預期的錯誤。
+
+錯誤訊息中名為造成問題的組件。 若要修正此問題的組件將需要在中提供[bug 報表](https://bugzilla.xamarin.com)以及完成的組建記錄檔，具有已啟用的詳細資訊 (也就是`-v -v -v -v`中**其他 mtouch 引數**)。
+
+### <a name="a-namemt2104mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a><a name="MT2104"/>MM2104： 無法將連結組件 '{0}'，因為它是混合模式。
+
+連結器無法處理混合模式組件。
+
+混合模式組件，請參閱 https://msdn.microsoft.com/en-us/library/x0w2664k.aspx 如需詳細資訊。
 
 ## <a name="mt3xxx-aot-error-messages"></a>MT3xxx: AOT 錯誤訊息
 
@@ -1201,15 +1202,11 @@ Parameter name: instruction
 
 這則錯誤訊息是來自 AOT 編譯器。
 
-
-
 ### <a name="a-namemt3003mt3003-conflicting---debug-and---llvm-options-soft-debugging-is-disabled"></a><a name="MT3003"/>MT3003 衝突-偵錯和-llvm 選項。 軟偵錯已停用。
 
 偵錯時，不支援 LLVM 已啟用。 如果您需要偵錯應用程式，請先停用 LLVM。
 
 ### <a name="a-namemt3004mt3004-could-not-aot-the-assembly--because-it-doesnt-exist"></a><a name="MT3004"/>MT3004 無法 AOT 組件 ' *' 因為它不存在。
-
-
 
 ### <a name="a-namemt3005mt3005-the-dependency--of-the-assembly--was-not-found-please-review-the-projects-references"></a><a name="MT3005"/>MT3005 相依性 '\*'的組件'\*' 找不到。 請檢閱專案的參考。
 
@@ -1305,39 +1302,21 @@ Bitcode 支援需要 LLVM AOT 後端使用 (-llvm)。
 
 ### <a name="a-namemt4110mt4110-the-registrar-cannot-marshal-the-out-parameter-of-type--in-signature-for-method-"></a><a name="MT4110"/>MT4110 登錄器無法封送處理類型的 out 參數`*`中方法的簽章`*`。
 
-
-
 ### <a name="a-namemt4111mt4111-the-registrar-cannot-build-a-signature-for-type--in-method-"></a><a name="MT4111"/>MT4111 登錄器無法建立類型的簽章`*`方法中`*`。
-
-
 
 ### <a name="a-namemt4112mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvancedtopicsregistrarhttpsdeveloperxamarincomguidesiosadvancedtopicsregistrar-for-more-information"></a><a name="MT4112"/>MT4112 登錄器找到無效的型別`*`。 向 Objective C 中的泛型型別不支援，並可能導致隨機的行為及/或損毀 (針對回溯相容性與舊版本的 Xamarin.iOS 便可忽略此錯誤，藉由傳遞`--unsupported--enable-generics-in-registrar`做為額外的 mtouch專案的 iOS 組建選項 頁面中的引數。 請參閱[developer.xamarin.com/guides/ios/advanced_topics/registrar](https://developer.xamarin.com/guides/ios/advanced_topics/registrar)如需詳細資訊)。
 
-
-
 ### <a name="a-namemt4113mt4113-the-registrar-found-a-generic-method--exporting-generic-methods-is-not-supported-and-will-lead-to-random-behavior-andor-crashes"></a><a name="MT4113"/>MT4113 登錄器找到泛型的方法: '\*。\*'。 匯出泛型方法不支援，而將會導致隨機的行為及/或當機。
-
-
 
 ### <a name="a-namemt4114mt4114-unexpected-error-in-the-registrar-for-the-method----please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT4114"/>方法的註冊機構 MT4114 未預期的錯誤 '\*。\*'-請在 http://bugzilla.xamarin.com 檔案錯誤報告
 
-
-
 ### <a name="a-namemt4116mt4116-could-not-register-the-assembly--"></a><a name="MT4116"/>MT4116 無法註冊組件 ' *': *
-
-
 
 ### <a name="a-namemt4117mt4117-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-method-takes--parameters-while-the-managed-method-has--parameters"></a><a name="MT4117"/>MT4117 註冊機構不相符簽章中找到方法 '*。*'-選取器指出此方法採用 * 參數，而受管理的方法有 * 參數。
 
-
-
 ### <a name="a-namemt4118mt4118-cannot-register-two-managed-types--and--with-the-same-native-name-"></a><a name="MT4118"/>MT4118 無法註冊兩個受管理的類型 ('\*'和'\*') 與原始同名 ('* ')。
 
-
-
 ### <a name="a-namemt4119mt4119-could-not-register-the-selector--of-the-member--because-the-selector-is-already-registered-on-a-different-member"></a><a name="MT4119"/>MT4119 無法註冊選取器 '\*'的成員'\*。 *' 因為選取器已經註冊在不同的成員。
-
-
 
 ### <a name="a-namemt4120mt4120-the-registrar-found-an-unknown-field-type--in-field--please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT4120"/>MT4120 登錄器找到未知的欄位型別 '\*'中欄位'\*。 *'。 請在 http://bugzilla.xamarin.com 檔案錯誤報告
 
@@ -1345,15 +1324,9 @@ Bitcode 支援需要 LLVM AOT 後端使用 (-llvm)。
 
 ### <a name="a-namemt4121mt4121-cannot-use-gccg-to-compile-the-generated-code-from-the-static-registrar-when-using-the-accounts-framework-the-header-files-provided-by-apple-used-during-the-compilation-require-clang-either-use-clang---compilerclang-or-the-dynamic-registrar---registrardynamic"></a><a name="MT4121"/>MT4121 不能使用 GCC / G + + 編譯靜態註冊機構所產生的程式碼時使用帳戶架構 （編譯期間使用的 Apple 提供的標頭檔需要 Clang）。 請使用 Clang (-編譯器： clang) 或動態的註冊機構 (-註冊機構： 動態)。
 
-
-
 ### <a name="a-namemt4122mt4122-cannot-use-the-clang-compiler-provided-in-the--sdk-to-compile-the-generated-code-from-the-static-registrar-when-non-ascii-type-names--are-present-in-the-application-either-use-gccg---compilergccg-the-dynamic-registrar---registrardynamic-or-a-newer-sdk"></a><a name="MT4122"/>MT4122 不能使用 Clang 編譯器中提供*。* SDK，以編譯靜態註冊機構非 ASCII 時從產生的程式碼型別名稱 ('* ') 會在應用程式。 請使用 GCC / G + + (-gcc 編譯器: | g + +)，動態註冊機構 (-註冊機構： 動態) 或更新版本的 SDK。
 
-
-
 ### <a name="a-namemt4123mt4123-the-type-of-the-variadic-parameter-in-the-variadic-function--must-be-systemintptr"></a><a name="MT4123"/>MT4123 Variadic 函式的 variadic 參數類型 ' *' 必須是 System.IntPtr。
-
-
 
 ### <a name="a-namemt4124mt4124-invalid--found-on--please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT4124"/>MT4124 無效 * 上找到 ' *'。 請在 http://bugzilla.xamarin.com 檔案錯誤報告
 
@@ -1361,15 +1334,9 @@ Bitcode 支援需要 LLVM AOT 後端使用 (-llvm)。
 
 ### <a name="a-namemt4125mt4125-the-registrar-found-an-invalid-type--in-signature-for-method--the-interface-must-have-a-protocol-attribute-specifying-its-wrapper-type"></a><a name="MT4125"/>MT4125 登錄器找到無效的型別 '\*'中方法的簽章'\*': 介面必須要有通訊協定屬性，指定其包裝函式型別。
 
-
-
 ### <a name="a-namemt4126mt4126-cannot-register-two-managed-protocols--and--with-the-same-native-name-"></a><a name="MT4126"/>MT4126 無法註冊兩個受管理的通訊協定 ('\*'和'\*') 與原始同名 ('* ')。
 
-
-
 ### <a name="a-namemt4127mt4127-cannot-register-more-than-one-interface-method-for-the-method--which-is-implementing-"></a><a name="MT4127"/>MT4127 無法註冊之方法的多個介面方法 '\*' (這實作 '\*')。
-
-
 
 ### <a name="a-namemt4128mt4128--the-registrar-found-an-invalid-generic-parameter-type--in-the-method--the-generic-parameter-must-have-an-nsobject-constraint"></a><a name="MT4128"/>MT4128 登錄器找到無效的泛型參數型別 '\*'中方法'\*'。 泛型參數必須要有 'NSObject' 條件約束。
 
@@ -1506,6 +1473,30 @@ Objective C 的名稱有問題的類型不是有效的 Objective C 識別項。
 
 請使用有效的 Objective C 識別項。
 
+### <a name="a-namemt4169mt4169-failed-to-generate-a-pinvoke-wrapper-for-method-message"></a><a name="MT4169"/>MT4169： 無法產生的 P/Invoke 包裝函式 {方法}: {message}
+
+Xamarin.iOS 無法產生 P/Invoke 包裝函式的函式所述。
+請檢查的根本原因的報告的錯誤訊息。
+
+### <a name="a-namemt4170mt4170-the-registrar-cant-convert-from-managed-type-to-native-type-for-the-return-value-in-the-method-method"></a><a name="MT4170"/>MT4170: 註冊機構無法從轉換 '{managed 型別}' '{原生型別}' 中方法 {方法} 傳回值。
+
+請參閱錯誤的描述<a href="#MT4172">MT4172</a>。
+
+### <a name="a-namemt4171mt4171-the-bindas-attribute-on-the-member-member-is-invalid-the-bindas-type-type-is-different-from-the-property-type-type"></a><a name="MT4171"/>MT4171: BindAs 上的屬性成員 {member} 是無效： BindAs 類型 {type} 為 {type} 屬性型別不同。
+
+請確定 BindAs 屬性中的型別符合它附加到成員的型別。
+
+### <a name="a-namemt4172mt4172-the-registrar-cant-convert-from-native-type-to-managed-type-for-the-parameter-parameter-name-in-the-method-method"></a><a name="MT4172"/>MT4172: 註冊機構無法從轉換 '{原生類型}' 到 '{managed type}' 中方法 {方法} 的參數 '{parameter name}'。
+
+在註冊機構不支援所述的類型之間轉換。
+
+如果有問題的 API Xamarin.iOS; 所提供，這會是 Xamarin.iOS 中的 bug請將 bug 歸檔在[http://bugzilla.xamarin.com][1]。
+
+如果您遇到此開發原生程式庫的繫結專案時，我們開啟新增新類型組合的支援。 如果這種情況，請檔案的增強功能要求 ([http://bugzilla.xamarin.com][2]) 與測試案例，我們會評估它。
+
+[1]: https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS
+[2]: https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS&component=General&bug_severity=enhancement
+
 ## <a name="mt5xxx-gcc-and-toolchain-error-messages"></a>MT5xxx: GCC 和工具鏈錯誤訊息
 
 ### <a name="mt51xx-compilation"></a>MT51xx： 編譯
@@ -1517,15 +1508,9 @@ Objective C 的名稱有問題的類型不是有效的 Objective C 識別項。
 
 ### <a name="a-namemt5101mt5101-missing--compiler-please-install-xcode-command-line-tools-component"></a><a name="MT5101"/>MT5101 遺漏 ' *' 編譯器。 請安裝 Xcode '命令列工具' 元件
 
-
-
 ### <a name="a-namemt5102mt5102-failed-to-assemble-the-file--please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT5102"/>無法組合檔案 MT5102 ' *'。 請在 http://bugzilla.xamarin.com 檔案錯誤報告
 
-
-
 ### <a name="a-namemt5103mt5103-failed-to-compile-the-file--please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT5103"/>無法將檔案編譯 MT5103 ' *'。 請在 http://bugzilla.xamarin.com 檔案錯誤報告
-
-
 
 ### <a name="a-namemt5104mt5104-could-not-find-neither-the--nor-the--compiler-please-install-xcode-command-line-tools-component"></a><a name="MT5104"/>MT5104 找不到兩者皆非 '\*'或'\*' 編譯器。 請安裝 Xcode '命令列工具' 元件
 
@@ -1572,8 +1557,6 @@ Objective C 的名稱有問題的類型不是有效的 Objective C 識別項。
 
   - 如果您不能修改的第三方繫結，或您以手動方式連結的協力廠商程式庫，您可以藉由傳遞設定對等的旗標<code>-cxx</code>至 mtouch （這是藉由修改專案的 iOS 組建選項 頁面中的其他 mtouch 引數. 請記住這必須完成每個專案組態）。
 
-
-
 ### <a name="a-namemt5211mt5211-native-linking-failed-undefined-objective-c-class--the-symbol--could-not-be-found-in-any-of-the-libraries-or-frameworks-linked-with-your-application"></a><a name="MT5211"/>MT5211： 原生連結失敗，未定義的 Objective C 類別： \*。 符號 '\*' 找不到的任何程式庫或連結到您的應用程式的架構。
 
 這會發生原生連結器找不到某個位置參考 OBJECTIVE-C 類別。 發生此情形的原因如下： 一樣[MT5210](#MT5210)和此外：
@@ -1587,12 +1570,9 @@ Objective C 的名稱有問題的類型不是有效的 Objective C 識別項。
               {
               }
 
-
-
 ### <a name="a-namemt5212mt5212-native-linking-failed-duplicate-symbol-"></a><a name="MT5212"/>MT5212： 原生連結失敗，重複的符號: *。
 
 這會發生原生連結器在遇到重複的符號之間的所有原生程式庫。 下列這個錯誤可能有一或多個[MT5213](#MT5213)錯誤的每個項目符號的位置。 此錯誤的可能原因：
-
 
 * 相同的原生程式庫則包含兩次。
 * 若要定義相同的符號，就可能發生兩個不同的原生程式庫。
@@ -1616,7 +1596,6 @@ Objective C 的名稱有問題的類型不是有效的 Objective C 識別項。
   - 要求的原生程式庫提供者修正此問題，並提供更新的版本。
   - 修正問題，請自行移除額外的物件檔案 （這只適用於問題實際上是重複的目的檔）
 
-
             # Find out if the library is a fat library, and which
             # architectures it contains.
             lipo -info libNative.a
@@ -1638,7 +1617,6 @@ Objective C 的名稱有問題的類型不是有效的 Objective C 識別項。
             # Reassemble the fat library
             lipo *.a -create -output libNative.a
 
-
   - 要求連結器，以移除未使用的程式碼。 Xamarin.iOS 會自動執行此動作如果符合所有下列條件：
     - 所有協力廠商繫結`[LinkWith]`屬性已啟用 SmartLink:
 
@@ -1646,7 +1624,6 @@ Objective C 的名稱有問題的類型不是有效的 Objective C 識別項。
 
     - 否`-gcc_flags`傳遞至 mtouch （在專案的 iOS 建置選項的其他 mtouch 引數欄位）。
     - 您也可向連結器直接新增移除未使用的程式碼`-gcc_flags -dead_strip`成其他 mtouch 引數，在專案的 iOS 建置選項。
-
 
 ### <a name="a-namemt5213mt5213-duplicate-symbol-in--location-related-to-previous-error"></a><a name="MT5213"/>MT5213： 重複的符號: * （先前的錯誤相關的位置）
 
@@ -1723,11 +1700,7 @@ Xamarin.iOS 專案會經常參考原生符號，以動態方式表示原生連�
 
 ### <a name="a-namemt5301mt5301-missing-strip-tool-please-install-xcode-command-line-tools-component"></a><a name="MT5301"/>MT5301： 遺漏 '帶狀' 工具。 請安裝 Xcode '命令列工具' 元件
 
-
-
 ### <a name="a-namemt5302mt5302-missing-dsymutil-tool-please-install-xcode-command-line-tools-component"></a><a name="MT5302"/>MT5302： 遺漏 'dsymutil' 工具。 請安裝 Xcode '命令列工具' 元件
-
-
 
 ### <a name="a-namemt5303mt5303-failed-to-generate-the-debug-symbols-dsym-directory-please-review-the-build-log"></a><a name="MT5303"/>MT5303： 無法產生偵錯符號 （dSYM 目錄）。 請檢閱組建記錄檔。
 
@@ -1738,8 +1711,6 @@ Xamarin.iOS 專案會經常參考原生符號，以動態方式表示原生連�
 執行 '帶狀' 工具來移除應用程式的偵錯資訊時，就會發生錯誤。
 
 ### <a name="a-namemt5305mt5305-missing-lipo-tool-please-install-xcode-command-line-tools-component"></a><a name="MT5305"/>MT5305： 遺漏 'lipo' 工具。 請安裝 Xcode '命令列工具' 元件
-
-
 
 ### <a name="a-namemt5306mt5306-failed-to-create-the-a-fat-library-please-review-the-build-log"></a><a name="MT5306"/>MT5306： 無法建立 fat 文件庫。 請檢閱組建記錄檔。
 
@@ -2064,7 +2035,6 @@ Xamarin.iOS 專案會經常參考原生符號，以動態方式表示原生連�
 
 *MSBuild 工作： PropertyListEditorTaskBase*
 
-
 ## <a name="mt8xxx-runtime-error-messages"></a>MT8xxx： 執行階段錯誤訊息
 
 <!--
@@ -2098,7 +2068,7 @@ Xamarin.iOS 專案會經常參考原生符號，以動態方式表示原生連�
 
 這表示有不對勁出現在建置程序。 請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
-### <a name="a-namemt8011mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a><a name="MT8011"/>MT8011： 找不到方法的傳回值的區塊轉換屬性 ([DelegateProxy]) 的委派*。*。 請在 http://bugzilla.xamarin.com 提報 bug。
+### <a name="a-namemt8011mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a><a name="MT8011"/>MT8011： 找不到方法的傳回值的區塊轉換屬性 ([DelegateProxy]) 的委派*.*。 請在 http://bugzilla.xamarin.com 提報 bug。
 
 Xamarin.iOS 找不到所需的方法，在執行階段 （一個區塊轉換成委派）。
 
@@ -2157,5 +2127,9 @@ Xamarin.iOS 找不到所需的方法，在執行階段 （一個區塊轉換成�
 這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 ### <a name="a-namemt8023mt8023-an-instance-object-is-required-to-construct-a-closed-generic-method-for-the-open-generic-method--token-reference--please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT8023"/>MT8023： 執行個體物件，才能建構的開放式泛型方法為封閉式泛型方法: * (語彙基元的參考: *)。 請在 http://bugzilla.xamarin.com 檔案錯誤報告。
+
+這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+
+### <a name="a-namemt8024mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smarttype-please-file-a-bug-at-httpsbugzillaxamarincom"></a><a name="MT8024"/>MT8024： 找不到智慧列舉 '{smart_type}' 的有效的副檔名類型。 請在 https://bugzilla.xamarin.com 提報 bug。
 
 這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。

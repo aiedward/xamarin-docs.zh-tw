@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: cddf3c58020b534abdc1541d967a9a7f5a4d891a
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 440ee997b075b5c89504dcf20171fa3c8713e1ce
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="images"></a>影像
 
@@ -79,7 +79,7 @@ var image = new Image { Source = "waterfront.jpg" };
 
 下列螢幕擷取畫面顯示結果的每個平台上顯示本機映像：
 
-[ ![本機的 ImageSource](images-images/local-sml.png "範例應用程式顯示本機影像")](images-images/local.png "範例應用程式顯示本機映像")
+[![本機的 ImageSource](images-images/local-sml.png "範例應用程式顯示本機影像")](images-images/local.png#lightbox "範例應用程式顯示本機映像")
 
 更有彈性`Device.RuntimePlatform`屬性可以用來選取不同的影像檔案或路徑的部分或所有平台，這個程式碼範例所示：
 
@@ -102,7 +102,7 @@ IOS 9 之前, 的映像的視網膜版本可以架設在**資源**資料夾-二�
 
 Android 的替代解析度的影像應該放在[特別名為目錄](http://developer.android.com/guide/practices/screens_support.html)在 Android 專案中，如下列螢幕擷取畫面所示：
 
-[![Android 的多個高解析度影像位置](images-images/xs-highdpisolution-sml.png "Android 多重解析度影像位置")](images-images/xs-highdpisolution.png "Android 多重解析度影像位置")
+[![Android 的多個高解析度影像位置](images-images/xs-highdpisolution-sml.png "Android 多重解析度影像位置")](images-images/xs-highdpisolution.png#lightbox "Android 多重解析度影像位置")
 
 ### <a name="additional-controls-that-display-images"></a>顯示影像的其他控制項
 
@@ -159,7 +159,7 @@ var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithIm
 
 下列螢幕擷取畫面會顯示每個平台上顯示內嵌的影像的結果：
 
-[ ![ResourceImageSource](images-images/resource-sml.png "範例應用程式顯示內嵌的影像")](images-images/resource.png "範例顯示內嵌的影像的應用程式")
+[![ResourceImageSource](images-images/resource-sml.png "範例應用程式顯示內嵌的影像")](images-images/resource.png#lightbox "範例顯示內嵌的影像的應用程式")
 
 <a name="Embedded_Images_in_Xaml" />
 
@@ -261,7 +261,7 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 下列螢幕擷取畫面顯示結果的每個平台上顯示的遠端影像：
 
-[![下載 ImageSource](images-images/download-sml.png "範例應用程式顯示下載的映像")](images-images/download.png "範例應用程式顯示下載的映像")
+[![下載 ImageSource](images-images/download-sml.png "範例應用程式顯示下載的映像")](images-images/download.png#lightbox "範例應用程式顯示下載的映像")
 
 <a name="Image_Caching" />
 

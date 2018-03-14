@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 6ac228f85f3f717ddf95e0dc2e434b13bfec5d06
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: db7f5058983195c0dcea9505f5adcd0fd03f905d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>從 圖片庫挑選相片
 
@@ -51,7 +51,7 @@ namespace DependencyServiceSample
 
 IOS 實作`IPicturePicker`介面使用[ `UIImagePickerController` ](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/)中所述[**從資源庫選擇相片**](https://developer.xamarin.com/recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery/)配方和[範例程式碼](https://github.com/xamarin/recipes/tree/master/ios/media/video_and_photos/choose_a_photo_from_the_gallery)。
 
-IOS 實作則包含在[ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/iOS/PicturePickerImplementation.cs) iOS 專案中的範例程式碼的類別。 若要讓這個類別看見`DependencyService`管理員中，類別必須用來識別 [`assembly`] 類型的屬性`Dependency`，類別必須是公用的並明確地實作`IPicturePicker`介面：
+IOS 實作則包含在[ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/iOS/PicturePickerImplementation.cs) iOS 專案中的範例程式碼的類別。 若要讓這個類別看見`DependencyService`管理員 中，類別必須用來識別 [`assembly`] 類型的屬性`Dependency`，類別必須是公用的並明確地實作`IPicturePicker`介面：
 
 ```csharp
 [assembly: Dependency (typeof (PicturePickerImplementation))]
@@ -200,25 +200,22 @@ namespace DependencyServiceSample.Droid
             intent.SetType("image/*");
             intent.SetAction(Intent.ActionGetContent);
 
-            // Get the MainActivity instance
-            MainActivity activity = Forms.Context as MainActivity;
-
             // Start the picture-picker activity (resumes in MainActivity.cs)
-            activity.StartActivityForResult(
+            MainActivity.Instance.StartActivityForResult(
                 Intent.CreateChooser(intent, "Select Picture"),
                 MainActivity.PickImageId);
 
             // Save the TaskCompletionSource object as a MainActivity property
-            activity.PickImageTaskCompletionSource = new TaskCompletionSource<Stream>();
+            MainActivity.Instance.PickImageTaskCompletionSource = new TaskCompletionSource<Stream>();
 
             // Return Task object
-            return activity.PickImageTaskCompletionSource.Task;
+            return MainActivity.Instance.PickImageTaskCompletionSource.Task;
         }
     }
 }
 ```
 
-方法存取`MainActivity`類別有許多用途： 為`PickImageId`欄位，以供`TaskCompletionSource`屬性，並呼叫`StartActivityForResult`。 這個方法由定義`FormsApplicationActivity`也就是類別的基底類別`MainActivity`。
+這個方法會存取`MainActivity`多種用途的類別： 針對`Instance`屬性，如`PickImageId`欄位，以供`TaskCompletionSource`屬性，並呼叫`StartActivityForResult`。 這個方法由定義`FormsApplicationActivity`也就是類別的基底類別`MainActivity`。
 
 <a name="UWP_Implementation" />
 

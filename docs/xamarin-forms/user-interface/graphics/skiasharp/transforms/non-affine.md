@@ -4,14 +4,15 @@ description: "轉換矩陣的第三個資料行建立檢視方塊和錐形效果
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 3fda8524b824042aa4aba07853da2801baf47027
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2e2e83404bc93bd07885008b868c51eba2ff7140
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="non-affine-transforms"></a>非仿射轉換
 
@@ -226,7 +227,7 @@ public partial class TestPerspectivePage : ContentPage
 
 以下是一些範例映像：
 
-[![](non-affine-images/testperspective-small.png "[測試] 檢視方塊頁面上的三個螢幕擷取畫面")](non-affine-images/testperspective-large.png "的 [測試] 檢視方塊頁面上的三個螢幕擷取畫面")
+[![](non-affine-images/testperspective-small.png "[測試] 檢視方塊 頁面上的三個螢幕擷取畫面")](non-affine-images/testperspective-large.png#lightbox "的 [測試] 檢視方塊 頁面上的三個螢幕擷取畫面")
 
 當您嘗試將滑桿，您會發現 0.0066 超過或低於 –0.0066 的值會導致突然變得 fractured 和一致的映像。 要轉換點陣圖為 300 像素正方形。 它會轉換相對於其中心，讓點陣圖的座標的範圍從 –150 到 150。 請記得，z 的值 ' 是：
 
@@ -390,13 +391,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 以下是一些範例：
 
-[![](non-affine-images/tapertransform-small.png "[錐形轉換] 頁面上的三個螢幕擷取畫面")](non-affine-images/tapertransform-large.png "錐形轉換頁面的三個螢幕擷取畫面")
+[![](non-affine-images/tapertransform-small.png "[錐形轉換] 頁面上的三個螢幕擷取畫面")](non-affine-images/tapertransform-large.png#lightbox "錐形轉換頁面的三個螢幕擷取畫面")
 
 另一種廣義的非仿射轉換是下一個文件中所示範的 3D 旋轉[3D 旋轉](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md)。
 
 非仿射轉換可以將矩形轉換成任何凸四邊形。 這示範**顯示非仿射矩陣**頁面。 非常類似於**顯示仿射矩陣**頁面[矩陣轉換](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/matrix.md)文件不同之處在於它有第四個`TouchPoint`物件來操作第四個角落的點陣圖：
 
-[![](non-affine-images/shownonaffinematrix-small.png "顯示非仿射矩陣頁面的三個螢幕擷取畫面")](non-affine-images/shownonaffinematrix-large.png "的 [顯示非仿射矩陣] 頁面上的三個螢幕擷取畫面")
+[![](non-affine-images/shownonaffinematrix-small.png "顯示非仿射矩陣頁面的三個螢幕擷取畫面")](non-affine-images/shownonaffinematrix-large.png#lightbox "的 [顯示非仿射矩陣] 頁面上的三個螢幕擷取畫面")
 
 只要您不要嘗試建立點陣圖的四個端點的其中一個內部角度大於 180 度，或建立彼此相交的兩個邊，程式成功地計算轉換使用這個方法從[ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs)類別：
 

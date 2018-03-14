@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: f7e949902e2f960a9aa68c600514b7fefc8ae30d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9d774870a541630d8c6519f9dfeaeb21cacb98e8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="master-detail-page"></a>主版詳細資料頁面
 
@@ -22,7 +22,7 @@ _Xamarin.Forms MasterDetailPage 是資訊的管理兩個相關的網頁-主版�
 
 主版頁面通常會顯示一份項目，如下列螢幕擷取畫面所示：
 
-[![](master-detail-page-images/masterpage-components.png "主版頁面元件")](master-detail-page-images/masterpage-components-large.png "主版頁面的元件")
+[![](master-detail-page-images/masterpage-components.png "主版頁面元件")](master-detail-page-images/masterpage-components-large.png#lightbox "主版頁面的元件")
 
 項目清單的位置是每個平台上，完全相同，並選取其中一個項目會巡覽至對應的詳細資料頁面。 此外，主版頁面也提供功能包含一個按鈕，可用來瀏覽至作用中的詳細資料頁面巡覽列：
 
@@ -237,7 +237,7 @@ public partial class MainPage : MasterDetailPage
 
 `OnItemSelected`方法會執行下列動作：
 
-- 它會擷取[ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.SelectedItem/)從[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)執行個體，並提供不是`null`，中儲存的頁面類型的新執行個體設定詳細資料頁面`TargetType`屬性`MasterPageItem`。 頁面類型包裝在[ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)執行個體，以確保透過參考圖示[ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/)屬性`MasterPage`會顯示在詳細資料頁面上，在 iOS 中。
+- 它會擷取[ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.SelectedItem/)從[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)執行個體，並提供不是`null`，中儲存的頁面類型的新執行個體設定詳細資料頁面`TargetType`屬性`MasterPageItem`。 頁面類型包裝在[ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)執行個體，以確保透過參考圖示[ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/)屬性`MasterPage`會顯示在詳細資料 頁面上，在 iOS 中。
 - 在選取的項目[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)設`null`以確保沒有任何`ListView`下一次將選取項目`MasterPage`呈現。
 - 詳細資料頁面，會藉由設定呈現給使用者[ `MasterDetailPage.IsPresented` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsPresented/)屬性`false`。 這個屬性控制是否顯示 master] 或 [詳細資料頁面。 應該設定為`true`顯示主版頁面和`false`以顯示詳細資料頁面。
 

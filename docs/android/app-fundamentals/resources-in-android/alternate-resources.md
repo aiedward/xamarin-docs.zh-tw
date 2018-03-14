@@ -6,12 +6,12 @@ ms.assetid: AE5A864E-192D-475E-C731-99249C2E7D9E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: e421a52b1ae97b0beef59352a756401ed661051e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 7ebbf2a9215c8472ae2f286728cb2f819e8331cb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="alternate-resources"></a>其他資源
 
@@ -142,7 +142,7 @@ Android 會決定基底的資源，藉由重複處理規則的下列測試：
 
 這些規則也會是由以下流程圖所示：
 
-[![資源的流程圖](alternate-resources-images/flowchart-sml.png)](alternate-resources-images/flowchart.png)
+[![資源的流程圖](alternate-resources-images/flowchart-sml.png)](alternate-resources-images/flowchart.png#lightbox)
 
 當系統正在尋找密度專屬的資源，並找不到它們時，它會嘗試找出其他密度的特定資源，並調整其大小。 Android 可能不一定要使用的預設資源。
 比方說，尋找低的資源和它無法使用時，Android 可能高於預設值或媒體密度資源選取適用之高密度版本的資源。 這是因為會適用之高密度的資源可以縮小，因數為 0.5，而導致比規模媒體密度資源即需要 0.75 倍的可見性問題比較少。
@@ -196,4 +196,4 @@ Android 會決定基底的資源，藉由重複處理規則的下列測試：
 此程序，因為 Android 將資源目錄中使用 drawable 資源`drawable-en-port-ldpi`裝置。
 
 > [!NOTE]
-> **注意：**螢幕大小限定詞會提供這個選取項目處理序有一個例外狀況。 很可能適用於 Android 選取專為較小的螢幕較的目前裝置所提供的資源。 例如，大型螢幕裝置可能使用的資源提供一般大小螢幕。 不過這並非反之亦然： 相同的大型螢幕裝置不會使用 xlarge 檢測提供的資源。 如果 Android 找不到符合指定的螢幕大小的資源集，應用程式將會損毀。
+> 螢幕大小限定詞會提供這個選取項目處理序有一個例外狀況。 很可能適用於 Android 選取專為較小的螢幕較的目前裝置所提供的資源。 例如，大型螢幕裝置可能使用的資源提供一般大小螢幕。 不過這並非反之亦然： 相同的大型螢幕裝置不會使用 xlarge 檢測提供的資源。 如果 Android 找不到符合指定的螢幕大小的資源集，應用程式將會損毀。

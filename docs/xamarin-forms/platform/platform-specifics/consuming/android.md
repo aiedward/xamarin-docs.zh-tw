@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/17/2017
-ms.openlocfilehash: e26fcb81bb99e5a49d16731777171b4efa4163c6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 739ee4ebeb3176d23ab1eb911baaab31a26252c4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-platform-specifics"></a>Android 平台特性
 
@@ -54,7 +54,7 @@ App.Current.On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust
 
 結果是螢幕小鍵盤輸入的區域輸入的控制項有焦點時，就可以設定作業模式：
 
-[![](android-images/pan-resize.png "作業模式平台專屬的螢幕小鍵盤")](android-images/pan-resize-large.png "Soft Keyboard Operating Mode Plaform-Specific")
+[![](android-images/pan-resize.png "作業模式平台專屬的螢幕小鍵盤")](android-images/pan-resize-large.png#lightbox "Soft Keyboard Operating Mode Plaform-Specific")
 
 <a name="fastscroll" />
 
@@ -98,7 +98,7 @@ listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScro
 
 結果是透過資料快速捲動[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)可以啟用，捲軸之捲動方塊大小的變更：
 
-[![](android-images/fastscroll.png "ListView FastScroll 平台專屬")](android-images/fastscroll-large.png "ListView FastScroll Plaform-Specific")
+[![](android-images/fastscroll.png "ListView FastScroll 平台專屬")](android-images/fastscroll-large.png#lightbox "ListView FastScroll Plaform-Specific")
 
 <a name="enable_swipe_paging" />
 
@@ -126,7 +126,7 @@ On<Android>().SetOffscreenPageLimit(2)
              .SetIsSwipePagingEnabled(true);
 ```
 
-`TabbedPage.On<Android>`方法會指定平台專屬只會在 Android 上執行。 [ `TabbedPage.SetIsSwipePagingEnabled` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetIsSwipePagingEnabled/p/Xamarin.Forms.BindableObject/System.Boolean/)方法，請在[ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)命名空間，用來啟用在頁面之間撥動[ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)。 此外，`TabbedPage`類別`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`命名空間也有[ `EnableSwipePaging` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.EnableSwipePaging/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage%7D/)方法可讓此平台特定，和[ `DisableSwipePaging` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.DisableSwipePaging/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage%7D/)停用的方法此平台專屬。 [ `TabbedPage.OffscreenPageLimit` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.OffscreenPageLimitProperty/)附加屬性，以及[ `SetOffscreenPageLimit` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetOffscreenPageLimit/p/Xamarin.Forms.BindableObject/System.Int32/)方法，用來設定應保留在目前頁面的任一邊閒置狀態的頁面數目。
+`TabbedPage.On<Android>`方法會指定平台專屬只會在 Android 上執行。 [ `TabbedPage.SetIsSwipePagingEnabled` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetIsSwipePagingEnabled/p/Xamarin.Forms.BindableObject/System.Boolean/)方法，請在[ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)命名空間，用來啟用 在頁面之間撥動[ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)。 此外，`TabbedPage`類別`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`命名空間也有[ `EnableSwipePaging` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.EnableSwipePaging/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage%7D/)方法可讓此平台特定，和[ `DisableSwipePaging` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.DisableSwipePaging/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage%7D/)停用的方法此平台專屬。 [ `TabbedPage.OffscreenPageLimit` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.OffscreenPageLimitProperty/)附加屬性，以及[ `SetOffscreenPageLimit` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetOffscreenPageLimit/p/Xamarin.Forms.BindableObject/System.Int32/)方法，用來設定應保留在目前頁面的任一邊閒置狀態的頁面數目。
 
 結果是透過頁面顯示該撥動分頁[ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)已啟用：
 
@@ -244,7 +244,7 @@ Xamarin.Forms.Application.Current.On<Android>()
 
 結果是[ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)和[ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)網頁事件將不會引發在應用程式暫停和繼續分別但，如果螢幕小鍵盤時顯示應用程式已暫停，它也會顯示應用程式繼續時：
 
-[![](android-images/keyboard-on-resume.png "生命週期事件平台專屬")](android-images/keyboard-on-resume-large.png "生命週期事件平台專屬")
+[![](android-images/keyboard-on-resume.png "生命週期事件平台專屬")](android-images/keyboard-on-resume-large.png#lightbox "生命週期事件平台專屬")
 
 ## <a name="summary"></a>總結
 

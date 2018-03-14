@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: 89d3b56a15110d0c106c43ce227f11f86bbdf404
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0fd037e62bcdb1b2be4c93dc0d32ca76f4e1ba8e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="invoking-events-from-effects"></a>叫用事件的效果
 
@@ -448,7 +448,7 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 您可以移動多個`BoxView`同時使用不同的指的項目。
 
-[![](touch-tracking-images/boxviewdragging-small.png "BoxView 拖曳頁面的三個螢幕擷取畫面")](touch-tracking-images/boxviewdragging-large.png "BoxView 拖曳頁面的三個螢幕擷取畫面")
+[![](touch-tracking-images/boxviewdragging-small.png "BoxView 拖曳頁面的三個螢幕擷取畫面")](touch-tracking-images/boxviewdragging-large.png#lightbox "BoxView 拖曳頁面的三個螢幕擷取畫面")
 
 ### <a name="subclassing-the-view"></a>子類別化檢視
 
@@ -511,7 +511,7 @@ class DraggableBoxView : BoxView
 
 **橢圓形繪圖**頁面可讓您繪製橢圓形撥動螢幕上的手指。 根據您的手指的移動方式而定，您可以繪製橢圓形從左上角到右下角，或任何其他邊角以相反邊角。 使用隨機的色彩和不透明度繪製橢圓形。
 
-[![](touch-tracking-images/ellipsedrawing-small.png "繪製橢圓形頁面的三個螢幕擷取畫面")](touch-tracking-images/ellipsedrawing-large.png "橢圓形繪圖頁面的三個螢幕擷取畫面")
+[![](touch-tracking-images/ellipsedrawing-small.png "繪製橢圓形頁面的三個螢幕擷取畫面")](touch-tracking-images/ellipsedrawing-large.png#lightbox "橢圓形繪圖頁面的三個螢幕擷取畫面")
 
 如果您再觸控省略符號的其中一個，您可以將它拖曳到另一個位置。 這需要 ant colony optimization"點擊測試，"會搜尋特定點的圖形化的物件。 SkiaSharp 省略符號不是 Xamarin.Forms 元素，因此它們無法執行自己`TouchEffect`處理。 `TouchEffect`必須套用至整個`SKCanvasView`物件。
 
@@ -683,7 +683,7 @@ case TouchActionType.Pressed:
 
 其他 SkiaSharp 範例是**手指小畫家**頁面。 您可以從兩個選取的筆觸色彩和筆劃寬度`Picker`然後繪製以一個或多個手指與檢視：
 
-[![](touch-tracking-images/fingerpaint-small.png "手指 [小畫家] 頁面的三個螢幕擷取畫面")](touch-tracking-images/fingerpaint-large.png "手指 [小畫家] 頁面的三個螢幕擷取畫面")
+[![](touch-tracking-images/fingerpaint-small.png "手指 [小畫家] 頁面的三個螢幕擷取畫面")](touch-tracking-images/fingerpaint-large.png#lightbox "手指 [小畫家] 頁面的三個螢幕擷取畫面")
 
 這個範例也會需要不同的類別來代表在螢幕上繪製每一行：
 
@@ -791,7 +791,7 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 各種`WhiteKey`和`BlackKey`頁面中的項目排列[XAML 檔案](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/SilentKeyboardPage.xaml)，電話會保留以橫向模式時，其中查詢最佳：
 
-[![](touch-tracking-images/silentkeyboard-small.png "三個螢幕擷取畫面的無訊息的鍵盤頁面")](touch-tracking-images/silentkeyboard-large.png "的無訊息的鍵盤頁面的三個螢幕擷取畫面")
+[![](touch-tracking-images/silentkeyboard-small.png "三個螢幕擷取畫面的無訊息的鍵盤頁面")](touch-tracking-images/silentkeyboard-large.png#lightbox "的無訊息的鍵盤頁面的三個螢幕擷取畫面")
 
 如果您執行您的手指清除整個索引鍵，您會看到有些微變更色彩觸控事件傳出至另一個索引鍵。
 

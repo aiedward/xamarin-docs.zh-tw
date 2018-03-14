@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: e09ac502298296277d9264bcd18f1ce1cbbf0c55
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 53309be2712f14c79b84c2eabb519b86dd73a404
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-controltemplate"></a>建立 ControlTemplate
 
@@ -100,7 +100,7 @@ void OnButtonClicked (object sender, EventArgs e)
 ![](creating-images/aqua-theme.png "青色控制項範本")
 
 > [!NOTE]
-> **請注意**： 上`ContentPage`、`Content`屬性可以指派和`ControlTemplate`也可以設定屬性。 發生此狀況，如果`ControlTemplate`包含`ContentPresenter`執行個體指派給內容`Content`屬性會由`ContentPresenter`內`ControlTemplate`。
+> 在`ContentPage`、`Content`屬性可以指派和`ControlTemplate`也可以設定屬性。 發生此狀況，如果`ControlTemplate`包含`ContentPresenter`執行個體指派給內容`Content`屬性會由`ContentPresenter`內`ControlTemplate`。
 
 ### <a name="setting-a-controltemplate-with-a-style"></a>設定 ControlTemplate 的樣式
 
@@ -148,7 +148,7 @@ A [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Con
 
 加入時[ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)頁面層次[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)加入至[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)，然後`ControlTemplate`隨附的執行個體在`ResourceDictionary`。
 
-## <a name="creating-a-controltemplate-in-c35"></a>建立 ControlTemplate 中 & #35。
+## <a name="creating-a-controltemplate-in-c35"></a>在 C 中建立 ControlTemplate&#35;
 
 若要定義[ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)應用程式層級，`class`必須建立代表`ControlTemplate`。 類別應衍生自[配置](~/xamarin-forms/user-interface/layouts/index.md)使用範本中，如下列程式碼範例所示：
 
@@ -202,7 +202,7 @@ public class HomePageCS : ContentPage
 }
 ```
 
-[ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)會建立指定類型的定義中的控制項範本的類別執行個體`ControlTemplate`建構函式。
+[ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)會建立指定類型的定義中的控制項 範本的類別執行個體`ControlTemplate`建構函式。
 
 [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/)屬性設定為[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) ，定義要顯示在內容[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)。 此內容會由顯示[ `ContentPresenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/)中包含`TealTemplate`。 先前所述的相同機制使用將在執行階段主題變更`AquaTheme`。
 

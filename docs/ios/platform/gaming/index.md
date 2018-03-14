@@ -3,16 +3,16 @@ title: "iOS 遊戲應用程式開發介面"
 description: "本文涵蓋 iOS 9，可用來改善 Xamarin.iOS 遊戲的圖形和音訊的功能所提供的新遊戲增強功能。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
+ms.assetid: 958D38FD-9240-482E-9A42-D6671ED8F2B0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 6c735c68ee61032d8dfe3a74e6858bc058c6fa47
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d0a66d4cfdb3050c7ad791d24e24d6917a031ee1
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="ios-gaming-apis"></a>iOS 遊戲應用程式開發介面
 
@@ -21,7 +21,7 @@ _本文涵蓋 iOS 9，可用來改善 Xamarin.iOS 遊戲的圖形和音訊的功
 Apple 所做的數個技術改良在 iOS 9 遊戲應用程式開發介面可讓您更輕鬆地實作 Xamarin.iOS 應用程式中的遊戲圖形與音訊。
 這些包括這兩個輕鬆開發透過高層級架構和另外的 iOS 裝置的 GPU，以提升的速度及圖形的能力。
 
-[ ![](images/flocking01.png "執行 flocking 的應用程式範例")](images/flocking01.png)
+[![](images/flocking01.png "執行 flocking 的應用程式範例")](images/flocking01.png#lightbox)
 
 這包括 GameplayKit、 ReplayKit、 模型 I/O、 MetalKit 和金屬效能著色器連同金屬、 SceneKit 和 SpriteKit 新的增強功能。
 
@@ -40,7 +40,7 @@ GameplayKit 包含數個，常見，例如遊戲玩的演算法：
 此外，GameplayKit 所需的建置組塊方法遊戲開發使用模組化架構中提供下列功能：
 
 - 處理複雜，程序性程式碼的狀態機器架構的系統在遊戲進行中。
-- 提供的工具隨機遊戲婧矔菛不可預測性，而不會造成偵錯問題。
+- 提供的工具隨機遊戲不可預測性，而不會造成偵錯問題。
 - 可重複使用、 元件化實體基礎架構。
 
 若要深入了解 GameplayKit，請參閱 Apple [Gameplaykit 程式設計指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/GameplayKit_Guide/index.html#//apple_ref/doc/uid/TP40015172)和[GameplayKit Framework 參考](https://developer.apple.com/library/prerelease/ios/documentation/GameplayKit/Reference/GameplayKit_Framework/index.html#//apple_ref/doc/uid/TP40015199)。
@@ -56,7 +56,7 @@ Pathfinding 是 AI 項目在遊戲的遊戲面板其熟悉的能力。
 
 請考慮下列對應：
 
-[ ![](images/gkpathfindpath.png "Pathfinding 對應的範例")](images/gkpathfindpath.png)
+[![](images/gkpathfindpath.png "Pathfinding 對應的範例")](images/gkpathfindpath.png#lightbox)
 
 使用 pathfinding 這個 C# 程式碼可以找出透過對應的方式：
 
@@ -367,7 +367,7 @@ public override void ViewWillLayoutSubviews ()
 
 執行時，一點動畫_"Boids"_將 flock 周圍我們手指點選：
 
-[ ![](images/flocking01.png "稍微動畫的 Boids 將 flock 周圍手指點選")](images/flocking01.png)
+[![](images/flocking01.png "稍微動畫的 Boids 將 flock 周圍手指點選")](images/flocking01.png#lightbox)
 
 ### <a name="other-apple-examples"></a>其他 Apple 範例
 

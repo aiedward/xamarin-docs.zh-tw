@@ -3,14 +3,15 @@ title: "章 24 的摘要。 頁面巡覽"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b8eac45c52093dea23c08a19d219fa0bbd8d55ab
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3390a298cd8d9967f0aea2bd9fb5a90830714ba5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>章 24 的摘要。 頁面巡覽
 
@@ -99,7 +100,7 @@ ms.lasthandoff: 02/27/2018
 
 [ **ViewGalleryType** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ViewGalleryType)範例將示範如何使用`TableView`列出功能表項目。 每個項目相關聯`Type`特定的頁面上的物件。 選取該項目時，程式會具現化 頁面，並瀏覽至它。
 
-[![檢視組件庫類型的三個螢幕擷取畫面](images/ch24fg21-small.png "TableView 列出功能表項目")](images/ch24fg21-large.png "TableView 列出功能表項目")
+[![檢視組件庫類型的三個螢幕擷取畫面](images/ch24fg21-small.png "TableView 列出功能表項目")](images/ch24fg21-large.png#lightbox "TableView 列出功能表項目")
 
 [ **ViewGalleryInst** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ViewGalleryInst)範例是稍有不同，該功能表包含的每個頁面，而不是類型執行個體。 這可協助保留資訊，從每個頁面上，但所有頁面必須在程式啟動時具現都化。
 

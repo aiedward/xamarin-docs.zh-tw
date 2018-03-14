@@ -3,14 +3,15 @@ title: "章 28 的摘要。 位置和對應"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 7361f65fecfed9d61b9df7088f9021ffa0192ad8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0968270f657d3195855a752da311b4855283e971
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>章 28 的摘要。 位置和對應
 
@@ -48,7 +49,7 @@ Xamarin.Forms`Map`類別不包含的程式，以取得使用者的地理位置�
 
 ### <a name="the-location-tracker-api"></a>位置追蹤程式應用程式開發介面
 
-[ **Xamarin.FormsBook.Platform** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform)方案包含位置追蹤器應用程式開發介面的程式碼。 [ `GeographicLocation` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs)結構封裝緯度與經度。 [ `ILocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs)介面會定義兩種方法可以啟動與暫停位置追蹤程式，並使用新的位置時的事件。
+[ **Xamarin.FormsBook.Platform** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform)方案包含位置追蹤器 應用程式開發介面的程式碼。 [ `GeographicLocation` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs)結構封裝緯度與經度。 [ `ILocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs)介面會定義兩種方法可以啟動與暫停位置追蹤程式，並使用新的位置時的事件。
 
 #### <a name="the-ios-location-manager"></a>IOS 位置管理員
 
@@ -215,7 +216,7 @@ Windows 執行階段應用程式會使用 Bing 地圖服務需要授權金鑰。
 
 這用於[LocalMuseumsPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/LocalMuseumsPage.xaml)檔案和[LocalMuseumsPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/LocalMuseumsPage.xaml.cs)也顯示使用者的位置從博物館距離的程式碼後置檔案：
 
-[![本機博物館頁面的三個螢幕擷取畫面](images/ch28fg28-small.png "到位置距離")](images/ch28fg28-large.png "位置的距離")
+[![本機博物館頁面的三個螢幕擷取畫面](images/ch28fg28-small.png "到位置距離")](images/ch28fg28-large.png#lightbox "位置的距離")
 
 程式也會示範如何以動態方式限制 pin 根據對應的位置數目。
 

@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0d08b2ff5131996984dbe41862ad1d6aac33b3d0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e1232c96f5ea978c8adc640160a1e9b7e42663d8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-ios-6"></a>IOS 6 簡介
 
 _iOS 6 包含了許多新技術來開發應用程式中，為 C# 開發人員的 Xamarin.iOS 6。_
 
-[ ![](images/ios6-large.jpg "IOS 6 標誌")](images/ios6-large.jpg)
+[ ![](images/ios6-large.jpg "IOS 6 標誌")](images/ios6-large.jpg#lightbox)
 
 IOS 6 和 Xamarin.iOS 6，開發人員現在有豐富的功能來建立 iOS 應用程式，包括該目標 iPhone 5 處置。
 本文列出一些更有趣的新功能可與每個主題的文章連結。 此外它牽涉到重要，因為開發人員將移至 iOS 6 和新的解析度 iPhone 5 的一些變更。
@@ -92,11 +92,11 @@ if (myImageView != null){
 
 iPhone 5 裝置都具備 640 x 1136 解析度。 IOS 的先前版本為目標的應用程式會出現 letterboxed iPhone 5 上執行時如下所示：
 
- [ ![](images/01-letterboxed.png "IOS 的先前版本為目標的應用程式會出現 letterboxed iPhone 5 上執行時")](images/01-letterboxed.png)
+ [![](images/01-letterboxed.png "IOS 的先前版本為目標的應用程式會出現 letterboxed iPhone 5 上執行時")](images/01-letterboxed.png#lightbox)
 
 為了讓應用程式會顯示全螢幕上 iphone 5 以上，只要加入名為映像`Default-568h@2x.png`有 640 x 1136 的解析度。 下列螢幕擷取畫面顯示已包含此映像後，執行的應用程式：
 
- [ ![](images/02-fullscreen.png "這個螢幕擷取畫面顯示已包含此映像後，執行的應用程式")](images/02-fullscreen.png)
+ [![](images/02-fullscreen.png "這個螢幕擷取畫面顯示已包含此映像後，執行的應用程式")](images/02-fullscreen.png#lightbox)
 
 ### <a name="subclassing-uinavigationbar"></a>子類別化 UINavigationBar
 
@@ -130,7 +130,7 @@ navController = new UINavigationController (typeof(CustomNavBar), typeof(UIToolb
 
 使用此`UINavigationBar`子類別會導致影像檢視，顯示如下列螢幕擷取畫面所示：
 
- [ ![](images/03-navbar.png "在這個螢幕擷取畫面所示顯示映像檢視中使用這個 UINavigationBar 子類別化結果")](images/03-navbar.png)
+ [![](images/03-navbar.png "在這個螢幕擷取畫面所示顯示映像檢視中使用這個 UINavigationBar 子類別化結果")](images/03-navbar.png#lightbox)
 
 ### <a name="interface-orientation"></a>介面方向
 

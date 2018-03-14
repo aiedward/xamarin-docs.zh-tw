@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 29b405c61b745c26c74318243f75e5809ecfdd7d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5a33993bdef16191b66127dcc68c57661636c0f8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="native-references"></a>原生參考
 
@@ -78,13 +78,13 @@ _原生參考可讓您嵌入 Xamarin.iOS 或 Xamarin.Mac 專案或專案繫結�
 1. 建立新的或開啟現有的 Xamarin.iOS、 Xamarin.Mac 或繫結專案。
 2. 在**方案總管 中**，以滑鼠右鍵按一下專案名稱，然後選取**新增** > **加入原生參考**: 
 
-    [ ![](native-references-images/ref01.png "在 [方案總管] 中，以滑鼠右鍵按一下專案名稱並選取 加入原生參考")](native-references-images/ref01.png)
+    [![](native-references-images/ref01.png "在 [方案總管] 中，以滑鼠右鍵按一下專案名稱並選取 加入原生參考")](native-references-images/ref01.png#lightbox)
 3. 從**開啟**對話方塊方塊中，選取您想要將內嵌，並按一下 原生架構名稱**開啟**按鈕： 
 
-    [ ![](native-references-images/ref02.png "選取內嵌，然後按一下 [Open] 按鈕以原生的架構的名稱")](native-references-images/ref02.png)
+    [![](native-references-images/ref02.png "選取內嵌，然後按一下 [Open] 按鈕以原生的架構的名稱")](native-references-images/ref02.png#lightbox)
 4. 架構會加入至專案的樹狀結構： 
 
-    [ ![](native-references-images/ref03.png "架構會加入至專案樹狀結構")](native-references-images/ref03.png)
+    [![](native-references-images/ref03.png "架構會加入至專案樹狀結構")](native-references-images/ref03.png#lightbox)
 
 編譯專案之後，原生架構會內嵌在應用程式套件組合。
 

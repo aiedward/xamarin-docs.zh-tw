@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: f6884260315f8846720370c558f7435d2c5a9d91
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c2df60a79ea3b5a0ff226cfaade0440db13fd5ea
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="alternative-layout-views"></a>替代的版面配置檢視
 
 _本主題說明如何配置可以進行版本設定所使用的資源限定詞。例如，可以有的版面配置，裝置會以橫向模式時才會使用某個版本，僅適用於縱向模式的版面配置版本。_
 
-<a name="creating_alternative_layouts" />
 
 ## <a name="creating-alternative-layouts"></a>建立替代的配置
 
@@ -26,11 +25,11 @@ _本主題說明如何配置可以進行版本設定所使用的資源限定詞�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![替代的版面配置檢視 窗格](alternative-layout-views-images/vs/01-alt-layout-view-pane-sml.png "替代配置檢視 窗格")](alternative-layout-views-images/vs/01-alt-layout-view-pane.png)
+[![替代的版面配置檢視 窗格](alternative-layout-views-images/vs/01-alt-layout-view-pane-sml.png "替代配置檢視 窗格")](alternative-layout-views-images/vs/01-alt-layout-view-pane.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![替代的版面配置檢視 窗格](alternative-layout-views-images/xs/01-alt-layout-view-pane-sml.png)](alternative-layout-views-images/xs/01-alt-layout-view-pane.png)
+[![替代的版面配置檢視 窗格](alternative-layout-views-images/xs/01-alt-layout-view-pane-sml.png)](alternative-layout-views-images/xs/01-alt-layout-view-pane.png#lightbox)
 
 -----
 
@@ -38,11 +37,11 @@ _本主題說明如何配置可以進行版本設定所使用的資源限定詞�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![建立版面配置變化](alternative-layout-views-images/vs/02-create-layout-variation-sml.png "建立版面配置的變化")](alternative-layout-views-images/vs/02-create-layout-variation.png)
+[![建立版面配置變化](alternative-layout-views-images/vs/02-create-layout-variation-sml.png "建立版面配置的變化")](alternative-layout-views-images/vs/02-create-layout-variation.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![建立版面配置的變化](alternative-layout-views-images/xs/02-create-layout-variation-sml.png)](alternative-layout-views-images/xs/02-create-layout-variation.png)
+[![建立版面配置的變化](alternative-layout-views-images/xs/02-create-layout-variation-sml.png)](alternative-layout-views-images/xs/02-create-layout-variation.png#lightbox)
 
 -----
 
@@ -51,11 +50,11 @@ _本主題說明如何配置可以進行版本設定所使用的資源限定詞�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![大型土地變化](alternative-layout-views-images/vs/03-large-land-sml.png "大土地變化")](alternative-layout-views-images/vs/03-large-land.png)
+[![大型土地變化](alternative-layout-views-images/vs/03-large-land-sml.png "大土地變化")](alternative-layout-views-images/vs/03-large-land.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![大型土地變化](alternative-layout-views-images/xs/03-large-land-sml.png)](alternative-layout-views-images/xs/03-large-land.png)
+[![大型土地變化](alternative-layout-views-images/xs/03-large-land-sml.png)](alternative-layout-views-images/xs/03-large-land.png#lightbox)
 
 -----
 
@@ -64,16 +63,15 @@ _本主題說明如何配置可以進行版本設定所使用的資源限定詞�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![載入的配置指標](alternative-layout-views-images/vs/04-new-layout-sml.png "載入的配置指標")](alternative-layout-views-images/vs/04-new-layout.png)
+[![載入的配置指標](alternative-layout-views-images/vs/04-new-layout-sml.png "載入的配置指標")](alternative-layout-views-images/vs/04-new-layout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![載入的配置指標](alternative-layout-views-images/xs/04-new-layout-sml.png)](alternative-layout-views-images/xs/04-new-layout.png)
+[![載入的配置指標](alternative-layout-views-images/xs/04-new-layout-sml.png)](alternative-layout-views-images/xs/04-new-layout.png#lightbox)
 
 -----
 
 
-<a name="editing_alternative_layouts" />
 
 ## <a name="editing-alternative-layouts"></a>編輯替代的配置
 
@@ -83,11 +81,11 @@ _本主題說明如何配置可以進行版本設定所使用的資源限定詞�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![多重編輯圖示](alternative-layout-views-images/vs/05-multi-layout-icon-sml.png "多重編輯圖示")](alternative-layout-views-images/vs/05-multi-layout-icon.png)
+[![多重編輯圖示](alternative-layout-views-images/vs/05-multi-layout-icon-sml.png "多重編輯圖示")](alternative-layout-views-images/vs/05-multi-layout-icon.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![多重編輯圖示](alternative-layout-views-images/xs/05-multi-layout-icon-sml.png)](alternative-layout-views-images/xs/05-multi-layout-icon.png)
+[![多重編輯圖示](alternative-layout-views-images/xs/05-multi-layout-icon-sml.png)](alternative-layout-views-images/xs/05-multi-layout-icon.png#lightbox)
 
 -----
 
@@ -96,11 +94,11 @@ _本主題說明如何配置可以進行版本設定所使用的資源限定詞�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![取消連結所有配置](alternative-layout-views-images/vs/06-multi-linked-sml.png "取消都連結所有版面配置")](alternative-layout-views-images/vs/06-multi-linked.png)
+[![取消連結所有配置](alternative-layout-views-images/vs/06-multi-linked-sml.png "取消都連結所有版面配置")](alternative-layout-views-images/vs/06-multi-linked.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![取消連結所有版面配置](alternative-layout-views-images/xs/06a-linked-sml.png)](alternative-layout-views-images/xs/06a-linked.png)
+[![取消連結所有版面配置](alternative-layout-views-images/xs/06a-linked-sml.png)](alternative-layout-views-images/xs/06a-linked.png#lightbox)
 
 -----
 
@@ -109,11 +107,11 @@ _本主題說明如何配置可以進行版本設定所使用的資源限定詞�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![取消連結中間配置](alternative-layout-views-images/vs/07-unlink-middle-layout-sml.png "取消中間版面配置")](alternative-layout-views-images/vs/07-unlink-middle-layout.png)
+[![取消連結中間配置](alternative-layout-views-images/vs/07-unlink-middle-layout-sml.png "取消中間版面配置")](alternative-layout-views-images/vs/07-unlink-middle-layout.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![取消連結中間的版面配置](alternative-layout-views-images/xs/06b-multi-linked-sml.png)](alternative-layout-views-images/xs/06b-multi-linked.png)
+[![取消連結中間的版面配置](alternative-layout-views-images/xs/06b-multi-linked-sml.png)](alternative-layout-views-images/xs/06b-multi-linked.png#lightbox)
  
 -----
  
@@ -121,7 +119,6 @@ _本主題說明如何配置可以進行版本設定所使用的資源限定詞�
 在此範例中，變更為 **預設**或**長**配置會傳播至其他配置，而無法供**大型土地**版面配置。 
 
 
-<a name="multi_edit_example" />
 
 ### <a name="multi-edit-example"></a>多重編輯的範例 
 
@@ -129,11 +126,11 @@ _本主題說明如何配置可以進行版本設定所使用的資源限定詞�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![新增 TextView](alternative-layout-views-images/vs/08-add-textview-sml.png "新增 TextView")](alternative-layout-views-images/vs/08-add-textview.png)
+[![新增 TextView](alternative-layout-views-images/vs/08-add-textview-sml.png "新增 TextView")](alternative-layout-views-images/vs/08-add-textview.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![新增 TextView](alternative-layout-views-images/xs/07-add-textview-sml.png)](alternative-layout-views-images/xs/07-add-textview.png)
+[![新增 TextView](alternative-layout-views-images/xs/07-add-textview-sml.png)](alternative-layout-views-images/xs/07-add-textview.png#lightbox)
  
 -----
  
@@ -142,11 +139,11 @@ _本主題說明如何配置可以進行版本設定所使用的資源限定詞�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![橫向 TextView](alternative-layout-views-images/vs/09-landscape-textview-sml.png "橫向 TextView")](alternative-layout-views-images/vs/09-landscape-textview.png)
+[![橫向 TextView](alternative-layout-views-images/vs/09-landscape-textview-sml.png "橫向 TextView")](alternative-layout-views-images/vs/09-landscape-textview.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![橫向 TextView](alternative-layout-views-images/xs/08-landscape-textview-sml.png)](alternative-layout-views-images/xs/08-landscape-textview.png)
+[![橫向 TextView](alternative-layout-views-images/xs/08-landscape-textview-sml.png)](alternative-layout-views-images/xs/08-landscape-textview.png#lightbox)
  
 -----
  
@@ -154,7 +151,6 @@ _本主題說明如何配置可以進行版本設定所使用的資源限定詞�
 但要是您希望進行的變更，只有一個版面配置的本機 （亦即，您不想變更傳播至任何其他配置）？ 若要這樣做，您必須取消連結您想要變更再進行修改，接下來所述的配置。 
 
 
-<a name="making_local_changes" />
 
 ### <a name="making-local-changes"></a>在本機變更 
 
@@ -162,11 +158,11 @@ _本主題說明如何配置可以進行版本設定所使用的資源限定詞�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![本機變更](alternative-layout-views-images/vs/10-local-change-sml.png "本機變更")](alternative-layout-views-images/vs/10-local-change.png)
+[![本機變更](alternative-layout-views-images/vs/10-local-change-sml.png "本機變更")](alternative-layout-views-images/vs/10-local-change.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![本機變更](alternative-layout-views-images/xs/09-local-change-sml.png)](alternative-layout-views-images/xs/09-local-change.png)
+[![本機變更](alternative-layout-views-images/xs/09-local-change-sml.png)](alternative-layout-views-images/xs/09-local-change.png#lightbox)
  
 -----
  
@@ -174,7 +170,6 @@ _本主題說明如何配置可以進行版本設定所使用的資源限定詞�
 當您按一下**預設**版面配置，來檢視它，`TextView`文字字串仍會設為`Portrait`。 
 
 
-<a name="handling_conflicts" />
 
 ## <a name="handling-conflicts"></a>處理衝突 
 
@@ -182,22 +177,21 @@ _本主題說明如何配置可以進行版本設定所使用的資源限定詞�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![衝突變更](alternative-layout-views-images/vs/11-conflicting-change-sml.png "衝突變更")](alternative-layout-views-images/vs/11-conflicting-change.png)
+[![衝突變更](alternative-layout-views-images/vs/11-conflicting-change-sml.png "衝突變更")](alternative-layout-views-images/vs/11-conflicting-change.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![衝突的變更](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png)
+[![衝突的變更](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png#lightbox)
  
 -----
  
 
 A*衝突方塊*會顯示在右邊的小工具來說明衝突： 
 
-[ ![衝突的警告](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png)
+[![衝突的警告](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png#lightbox)
 
 衝突方塊會顯示已變更的屬性清單，並列出其值。 按一下**忽略衝突**屬性變更僅適用於此 widget。 按一下**套用**屬性變更套用至這個小工具以及以在連結的對應項目 widget**預設**版面配置。 如果所有屬性變更會都套用，衝突會自動被捨棄。 
 
-<a name="view_group_conflicts" />
 
 ### <a name="view-group-conflicts"></a>檢視群組的衝突 
 
@@ -205,11 +199,11 @@ A*衝突方塊*會顯示在右邊的小工具來說明衝突：
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![檢視群組衝突](alternative-layout-views-images/vs/12-view-group-conflict-sml.png "檢視群組的衝突")](alternative-layout-views-images/vs/12-view-group-conflict.png)
+[![檢視群組衝突](alternative-layout-views-images/vs/12-view-group-conflict-sml.png "檢視群組的衝突")](alternative-layout-views-images/vs/12-view-group-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![檢視群組的衝突](alternative-layout-views-images/xs/12-view-group-conflict-sml.png)](alternative-layout-views-images/xs/12-view-group-conflict.png)
+[![檢視群組的衝突](alternative-layout-views-images/xs/12-view-group-conflict-sml.png)](alternative-layout-views-images/xs/12-view-group-conflict.png#lightbox)
  
 -----
  
@@ -220,11 +214,11 @@ A*衝突方塊*會顯示在右邊的小工具來說明衝突：
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![核取方塊衝突](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "核取方塊衝突")](alternative-layout-views-images/vs/13-checkbox-conflict.png)
+[![核取方塊衝突](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "核取方塊衝突")](alternative-layout-views-images/vs/13-checkbox-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![核取方塊衝突](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png)
+[![核取方塊衝突](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png#lightbox)
  
 -----
  
@@ -233,18 +227,18 @@ A*衝突方塊*會顯示在右邊的小工具來說明衝突：
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Alt 配置衝突](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "Alt 配置衝突")](alternative-layout-views-images/vs/14-alt-layout-conflict.png)
+[![Alt 配置衝突](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "Alt 配置衝突")](alternative-layout-views-images/vs/14-alt-layout-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Alt 配置衝突](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png)
+[![Alt 配置衝突](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png#lightbox)
  
 -----
  
 
 此外，衝突方塊會顯示下列訊息：
 
-[ ![衝突訊息](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png)
+[![衝突訊息](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png#lightbox)
 
 加入`CheckBox`導致衝突，因為**大型土地**版面配置中有變更`LinearLayout`包含它。 不過，在此情況下衝突方塊會顯示只插入 widget**預設**配置 ( `CheckBox`)。
 
@@ -252,11 +246,11 @@ A*衝突方塊*會顯示在右邊的小工具來說明衝突：
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![解析群組衝突](alternative-layout-views-images/vs/15-resolved-group-conflict-sml.png "解析群組衝突")](alternative-layout-views-images/vs/15-resolved-group-conflict.png)
+[![解析群組衝突](alternative-layout-views-images/vs/15-resolved-group-conflict-sml.png "解析群組衝突")](alternative-layout-views-images/vs/15-resolved-group-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![解析群組衝突](alternative-layout-views-images/xs/16-resolved-group-conflict-sml.png)](alternative-layout-views-images/xs/16-resolved-group-conflict.png)
+[![解析群組衝突](alternative-layout-views-images/xs/16-resolved-group-conflict-sml.png)](alternative-layout-views-images/xs/16-resolved-group-conflict.png#lightbox)
  
 -----
  
@@ -264,7 +258,6 @@ A*衝突方塊*會顯示在右邊的小工具來說明衝突：
 與上述範例中所見`Button`、`CheckBox`不具有紅色變更標記，因為只有`LinearLayout`有變更套用**大型土地**版面配置。
 
 
-<a name="Conflict_Persistence" />
 
 ### <a name="conflict-persistence"></a>衝突的持續性
 

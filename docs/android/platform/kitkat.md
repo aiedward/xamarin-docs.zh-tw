@@ -7,12 +7,12 @@ ms.assetid: D3FDEA1C-F076-406F-BCC3-2A55D2C6ADEE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/07/2018
-ms.openlocfilehash: ae6b89e48005ca028db5d13f1a55f237888ae08b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 8fbb3f73fdc09f953ad5f7134020c1555d000d28
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
@@ -37,7 +37,7 @@ Android 4.4 (API Level 19)，也稱為"KitKat，「 已於 2013 落後發行。 
 
 若要開發使用 KitKat Xamarin.Android 應用程式，您需要*Xamarin.Android 4.11.0*或較高和 Android 4.4 (API Level 19) 安裝透過 Android SDK Manager 中，如下列螢幕擷取畫面所示：
 
-[![在 Android SDK Manager 中選取 Android 4.4](kitkat-images/api19.png)](kitkat-images/api19.png)
+[![在 Android SDK Manager 中選取 Android 4.4](kitkat-images/api19.png)](kitkat-images/api19.png#lightbox)
 
 <a name="Migrating_Your_App_to_KitKat" />
 
@@ -84,7 +84,7 @@ KitKat 不再可讓您設定確切的重複警示。 使用應用程式[ `SetRep
 -  如果您要存取屬性或上呼叫方法來取得檔案或目錄路徑`Environment`，例如[ `GetExternalStorageDirectory` ](https://developer.xamarin.com/api/property/Android.OS.Environment.ExternalStorageDirectory/)或[ `GetExternalStoragePublicDirectory` ](https://developer.xamarin.com/api/member/Android.OS.Environment.GetExternalStoragePublicDirectory/p/System.String/) ，應用程式需要`READ_EXTERNAL_STORAGE`或`WRITE_EXTERNAL_STORAGE`權限。
 
 > [!NOTE]
-> **注意：** `WRITE_EXTERNAL_STORAGE`意味著`READ_EXTERNAL_STORAGE`權限，因此您應該永遠只需要設定一個權限。
+> `WRITE_EXTERNAL_STORAGE` 表示`READ_EXTERNAL_STORAGE`權限，因此您應該永遠只需要設定一個權限。
 
 ### <a name="sms-consolidation"></a>SMS 彙總
 
@@ -147,11 +147,11 @@ public class MainActivity : Activity
 
 下列螢幕擷取畫面顯示動畫之前應用程式：
 
-[![動畫啟動前的應用程式螢幕擷取畫面](kitkat-images/trans-before.png)](kitkat-images/trans-before.png)
+[![動畫啟動前的應用程式螢幕擷取畫面](kitkat-images/trans-before.png)](kitkat-images/trans-before.png#lightbox)
 
 下列螢幕擷取畫面顯示動畫之後的應用程式：
 
-[![動畫完成之後的應用程式螢幕擷取畫面](kitkat-images/trans-after.png)](kitkat-images/trans-after.png)
+[![動畫完成之後的應用程式螢幕擷取畫面](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
 
 您可以取得更充分掌控場景下, 一節涵蓋的轉換。
 
@@ -161,7 +161,7 @@ public class MainActivity : Activity
 
 靜態罩動態內容的 UI 項目稱為*容器*或*場景基底*。 下列範例會使用 Android 設計工具來建立`RelativeLayout`呼叫`container`:
 
-[![若要建立 RelativeLayout 容器使用 Android 設計工具](kitkat-images/container.png)](kitkat-images/container.png)
+[![若要建立 RelativeLayout 容器使用 Android 設計工具](kitkat-images/container.png)](kitkat-images/container.png#lightbox)
 
 範例配置也會定義按鈕呼叫`sceneButton`下方`container`。 此按鈕將會觸發轉換。
 
@@ -237,22 +237,22 @@ sceneButton.Click += (o, e) => {
 
 下列螢幕擷取畫面說明之前動畫場景：
 
-[![動畫開始前的應用程式的螢幕擷取畫面](kitkat-images/trans-after.png)](kitkat-images/trans-after.png)
+[![動畫開始前的應用程式的螢幕擷取畫面](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
 
 下列螢幕擷取畫面說明場景動畫之後：
 
-[![在動畫完成之後，應用程式的螢幕擷取畫面](kitkat-images/scene.png)](kitkat-images/scene.png)
+[![在動畫完成之後，應用程式的螢幕擷取畫面](kitkat-images/scene.png)](kitkat-images/scene.png#lightbox)
 
 
 > [!NOTE]
-> **注意：**沒有[已知的錯誤](https://code.google.com/p/android/issues/detail?id=62450)在 Android 轉換導致場景的程式庫會建立使用`GetSceneForLayout`使用者的瀏覽活動透過第二次時中斷。 Java 的因應措施會描述[這裡](http://www.doubleencore.com/2013/11/new-transitions-framework/)。
+> 沒有[已知的錯誤](https://code.google.com/p/android/issues/detail?id=62450)在 Android 轉換導致場景的程式庫會建立使用`GetSceneForLayout`使用者的瀏覽活動透過第二次時中斷。 Java 的因應措施會描述[這裡](http://www.doubleencore.com/2013/11/new-transitions-framework/)。
 
 
 ##### <a name="custom-transitions-in-scenes"></a>場景中的自訂轉換
 
 可以在 xml 資源檔中定義自訂的轉換`transition`目錄下`Resources`，如以下螢幕擷取畫面所示：
 
-[![資源/轉換目錄下的 transition.xml 檔案的位置](kitkat-images/resources.png)](kitkat-images/resources.png)
+[![資源/轉換目錄下的 transition.xml 檔案的位置](kitkat-images/resources.png)](kitkat-images/resources.png#lightbox)
 
 下列程式碼範例定義的動畫 5 秒鐘，並使用轉換來[超過 interpolator](http://developer.android.com/reference/android/views/animation/OvershootInterpolator.html):
 
@@ -307,7 +307,7 @@ KitKat 可讓您更多控制主題設定應用程式與選擇性 transclucent �
 
 下列螢幕擷取畫面顯示上述半透明的狀態與導覽列的佈景主題：
 
-[![使用半透明的狀態和導覽列的應用程式的範例螢幕擷取畫面](kitkat-images/theme.png)](kitkat-images/theme.png)
+[![使用半透明的狀態和導覽列的應用程式的範例螢幕擷取畫面](kitkat-images/theme.png)](kitkat-images/theme.png#lightbox)
 
 <a name="user_content" />
 
@@ -338,7 +338,7 @@ StartActivityForResult (intent, save_request_code);
 
 呼叫`StartActivityForResult`啟動 SAF UI 中，使用者可以接著瀏覽並選擇映像：
 
-[![使用瀏覽至映像儲存體存取架構應用程式的範例螢幕擷取畫面](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png)
+[![使用瀏覽至映像儲存體存取架構應用程式的範例螢幕擷取畫面](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
 
 使用者已選擇映像之後,`OnActivityResult`傳回`Android.Net.Uri`的所選的檔案。 下列程式碼範例會顯示使用者的映像選取項目：
 
@@ -368,7 +368,7 @@ StartActivityForResult (intentCreate, write_request_code);
 
 上述程式碼範例會載入 SAF UI，讓使用者變更的檔案名稱，並選取以容納新的檔案目錄：
 
-[![[下載] 目錄中，將檔案名稱變更為 NewDoc 使用者的螢幕擷取畫面](kitkat-images/saf-save.png)](kitkat-images/saf-save.png)
+[![[下載] 目錄中，將檔案名稱變更為 NewDoc 使用者的螢幕擷取畫面](kitkat-images/saf-save.png)](kitkat-images/saf-save.png#lightbox)
 
 當使用者按**儲存**，`OnActivityResult`傳遞`Android.Net.Uri`的新建檔案，可以使用存取`data.Data`。 Uri 可以用於資料流資料到新的檔案：
 
@@ -396,11 +396,11 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 列印內容的介紹，已簡化中 KitKat[列印服務](https://developer.xamarin.com/api/namespace/Android.PrintServices/)和`PrintManager`。 KitKat 也是第一個應用程式開發介面版本完全利用[Google 雲端列印服務應用程式開發介面](https://developers.google.com/cloud-print/)使用[Google 雲端列印應用程式](https://play.google.com/store/apps/details?id=com.google.android.apps.cloudprint)。
 自動隨附 KitKat 的大部分裝置下載 Google 雲端列印應用程式和[HP 列印服務外掛程式](https://play.google.com/store/apps/details?id=com.hp.android.printservice)當他們第一次連線到 WiFi。 使用者可以檢查其裝置的列印設定，瀏覽至**設定 > System > 列印**:
 
-[![範例螢幕擷取畫面的 [列印設定] 畫面](kitkat-images/printing.png)](kitkat-images/printing.png)
+[![範例螢幕擷取畫面的 [列印設定] 畫面](kitkat-images/printing.png)](kitkat-images/printing.png#lightbox)
 
 
 > [!NOTE]
-> **注意：**列印的應用程式開發介面設定為使用 Google 雲端列印依預設，雖然 Android 仍可讓開發人員準備使用新的 Api，列印的內容，並將它傳送給其他應用程式處理列印。
+> 列印應用程式開發介面設定為使用 Google 雲端列印依預設，雖然 Android 仍可讓開發人員準備使用新的 Api，列印的內容，並將它傳送給其他應用程式處理列印。
 
 
 
@@ -410,14 +410,14 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 請注意，載入和列印網頁內容需要網際網路權限：
 
-[![在應用程式選項中設定網際網路權限](kitkat-images/internet.png)](kitkat-images/internet.png)
+[![在應用程式選項中設定網際網路權限](kitkat-images/internet.png)](kitkat-images/internet.png#lightbox)
 
 ##### <a name="print-menu-item"></a>列印功能表項目
 
 列印選項通常會出現在活動的[選項功能表](http://developer.android.com/guide/topics/ui/menus.html#options-menu)。
 [選項] 功能表可讓使用者執行動作的活動。 處於 右上角的畫面上，而且看起來像這樣：
 
-[![列印功能表項目 dispalyed 螢幕的右上角中的範例螢幕擷取畫面](kitkat-images/menu.png)](kitkat-images/menu.png)
+[![列印功能表項目 dispalyed 螢幕的右上角中的範例螢幕擷取畫面](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
 
 
 其他功能表項目中可以定義*功能表*目錄下*資源*。 下列程式碼定義範例功能表項目稱為[列印](https://developer.xamarin.com/api/type/Android.Print.PrintManager/):
@@ -500,9 +500,9 @@ void PrintPage ()
 
 呼叫`Print`載入列印的 UI 中，列出的列印工作選項。 UI 可讓使用者選擇列印或 HTML 內容儲存成 PDF，如以下螢幕擷取畫面所示：
 
-[![螢幕擷取畫面的 PrintHtmlActivity，顯示 [列印] 功能表](kitkat-images/print1.png)](kitkat-images/print1.png)
+[![螢幕擷取畫面的 PrintHtmlActivity，顯示 [列印] 功能表](kitkat-images/print1.png)](kitkat-images/print1.png#lightbox)
 
-[![螢幕擷取畫面的 PrintHtmlActivity，顯示 儲存成 PDF 功能表](kitkat-images/print2.png)](kitkat-images/print2.png)
+[![螢幕擷取畫面的 PrintHtmlActivity，顯示 儲存成 PDF 功能表](kitkat-images/print2.png)](kitkat-images/print2.png#lightbox)
 
 <a name="hardware" />
 
@@ -524,7 +524,7 @@ HCE 要求 HCE 功能和`Nfc`向應用程式的權限`AndroidManifest.xml`:
 <uses-feature android:name="android.hardware.nfc.hce" />
 ```
 
-[![在應用程式選項中設定 NFC 權限](kitkat-images/nfc.png)](kitkat-images/nfc.png)
+[![在應用程式選項中設定 NFC 權限](kitkat-images/nfc.png)](kitkat-images/nfc.png#lightbox)
 
 HCE 必須為能夠在背景中執行工作，而且必須啟動使用者的 NFC 交易時，即使使用 HCE 的應用程式未執行。 我們可以完成此作業藉由撰寫 HCE 程式碼做為`Service`。 HCE 服務會實作`HostApduService`介面，它會實作下列方法：
 
@@ -588,7 +588,7 @@ KitKat 也存隨附兩個新的感應器類型，用於追蹤使用者的步驟�
 
 下列螢幕擷取畫面說明的步驟中的計數器動作：
 
-[![顯示步驟計數器 SensorsActivity 應用程式的螢幕擷取畫面](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png)
+[![顯示步驟計數器 SensorsActivity 應用程式的螢幕擷取畫面](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png#lightbox)
 
 您可以建立`SensorManager`藉由呼叫`GetSystemService(SensorService)`和轉換結果當做`SensorManager`。 若要使用的步驟計數器，請呼叫`GetDeafultSensor`上`SensorManager`。 您可以註冊感應器及逐步執行計數的說明中的變更接聽[ `ISensorEventListener` ](https://developer.xamarin.com/api/type/Android.Hardware.ISensorEventListener/)介面，如下列程式碼範例所示：
 
@@ -637,11 +637,10 @@ protected override void OnPause()
 
 
 > [!NOTE]
-> **注意：**步驟偵測和計算隨附 KitKat 的 API，而不是所有的電話攜帶感應器。 您可以檢查感應器是否可以藉由執行`PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);`，或檢查，以確保傳回的值為`GetDefaultSensor`不`null`。
+> 步驟偵測和計算隨附 KitKat 的 API，而不是所有的電話被攜帶感應器。 您可以檢查感應器是否可以藉由執行`PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);`，或檢查，以確保傳回的值為`GetDefaultSensor`不`null`。
 
 
- <a name="developer_tools" />
-
+<a name="developer_tools" />
 
 ## <a name="developer-tools"></a>開發人員工具
 
@@ -664,7 +663,6 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 
 您可以在裝置上找到您的視訊-完成錄製時，它會顯示在您的組件庫。
 
-<a name="other_kitkat_additions" />
 
 ## <a name="other-kitkat-additions"></a>其他 KitKat 新增
 

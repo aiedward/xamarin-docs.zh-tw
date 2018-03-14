@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 97ca114f1160168c7fd9439e31dc475bc37b0467
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 2ec783b6963fc4ae14166ebf1e56bf8a802ba8b4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tabbed-page"></a>索引標籤式的頁面
 
@@ -97,9 +97,9 @@ public class MainPageCS : TabbedPage
 [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)會填入這兩個子[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)物件。 第一個子系是[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)執行個體，而且第二個索引標籤是[ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)包含`ContentPage`執行個體。
 
 > [!NOTE]
-> **請注意**: [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)不支援 UI 虛擬化。 因此，效能可能會受到影響如果`TabbedPage`包含太多子項目。
+> [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)不支援 UI 虛擬化。 因此，效能可能會受到影響如果`TabbedPage`包含太多子項目。
 
-下列螢幕擷取畫面顯示`TodayPage` [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)執行個體，其會顯示在*今天* 索引標籤：
+下列螢幕擷取畫面顯示`TodayPage` [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)執行個體，其會顯示在*今天* 索引標籤：
 
 ![](tabbed-page-images/today-page.png "在 TabbedPage ContentPage")
 
@@ -233,7 +233,7 @@ public class TabbedPageDemoPageCS : TabbedPage
 }
 ```
 
-每個索引標籤會顯示[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) ，使用一系列的[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)和[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)即可顯示索引標籤的資料執行個體。下列螢幕擷取畫面顯示的內容*Tamarin*索引標籤：
+每個索引標籤會顯示[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) ，使用一系列的[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)和[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)即可顯示 [] 索引標籤的資料執行個體。下列螢幕擷取畫面顯示的內容*Tamarin* 索引標籤：
 
 ![](tabbed-page-images/tab3.png "填入 TabbedPage 使用範本")
 

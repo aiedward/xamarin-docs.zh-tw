@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 077be02aacb9d4200db2d2eadf6f7388842b8e29
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 30a952bf0df4db34c749de3d6198877b7a9766b9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="unified-storyboards"></a>統一的分鏡腳本
 
@@ -36,7 +36,7 @@ iOS 8 包含新、 較簡單易用的機制，來建立使用者介面 — 統�
 
 如果同時使用兩個概念，則結果會是 2 x 2 方格，定義可用於這兩個不同的方向，不同可能大小，如下列圖表所示：
 
- [ ![](unified-storyboards-images/sizeclassgrid.png "定義可以用不同可能大小一般和壓縮的方向進行 2x2 方格")](unified-storyboards-images/sizeclassgrid.png)
+ [![](unified-storyboards-images/sizeclassgrid.png "定義可以用不同可能大小一般和壓縮的方向進行 2x2 方格")](unified-storyboards-images/sizeclassgrid.png#lightbox)
 
 開發人員可以建立會使用四個可能值 （如同上面的圖形中），會導致不同的版面配置的任何檢視控制器。
 
@@ -44,14 +44,14 @@ iOS 8 包含新、 較簡單易用的機制，來建立使用者介面 — 統�
 
 IPad，大小，因為有**規則**類別這兩個方向的大小。
 
- [ ![](unified-storyboards-images/image1.png "iPad 大小類別")](unified-storyboards-images/image1.png)
+ [![](unified-storyboards-images/image1.png "iPad 大小類別")](unified-storyboards-images/image1.png#lightbox)
 
 
 ### <a name="iphone-size-classes"></a>iPhone 大小類別
 
 在 iPhone 具有不同大小的類別，根據裝置的方向：
 
- [![](unified-storyboards-images/iphonesizeclasses.png "iPhone 大小類別")](unified-storyboards-images/iphonesizeclasses.png)
+ [![](unified-storyboards-images/iphonesizeclasses.png "iPhone 大小類別")](unified-storyboards-images/iphonesizeclasses.png#lightbox)
 
 -  在螢幕裝置直向模式中時，具有**壓縮**水平類別和**規則**垂直
 -  裝置以橫向模式時，就會反轉螢幕類別從直向模式。
@@ -60,7 +60,7 @@ IPad，大小，因為有**規則**類別這兩個方向的大小。
 
 大小為縱向方向，但在橫向不同在較早的 Iphone 相同：
 
-[![](unified-storyboards-images/iphone6sizeclasses.png "iPhone 6 Plus 大小類別")](unified-storyboards-images/iphone6sizeclasses.png)
+[![](unified-storyboards-images/iphone6sizeclasses.png "iPhone 6 Plus 大小類別")](unified-storyboards-images/iphone6sizeclasses.png#lightbox)
 
 因為在 iPhone 6 Plus 擁有夠大的螢幕，您能夠以橫向模式擁有一般寬度大小類別。
 
@@ -104,7 +104,7 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 
 所有特性環境使階層架構，如下列圖表所示：
 
- [ ![](unified-storyboards-images/viewhierarchy.png "特性環境階層架構圖表")](unified-storyboards-images/viewhierarchy.png)
+ [![](unified-storyboards-images/viewhierarchy.png "特性環境階層架構圖表")](unified-storyboards-images/viewhierarchy.png#lightbox)
 
 特性集合各上述特性環境有流動，根據預設，從父代的子系的環境。
 
@@ -233,17 +233,17 @@ Apple 已加入新的類別 ios 8 稱為`UIImageAsset`讓開發人員更多控�
 
 特性環境重疊顯示父容器下的子容器，如同下圖顯示分割檢視控制器 iPad 上：
 
- [ ![](unified-storyboards-images/cascadingclasses01.png "分割檢視控制器上以橫向 iPad")](unified-storyboards-images/cascadingclasses01.png)
+ [![](unified-storyboards-images/cascadingclasses01.png "分割檢視控制器上以橫向 iPad")](unified-storyboards-images/cascadingclasses01.png#lightbox)
 
 因為 iPad 水平和垂直方向進行一般大小類別，分割檢視會顯示在主要和詳細資料檢視。
 
 在 iPhone 中，其中大小類別是這兩個方向進行壓縮，分割檢視控制器只會顯示詳細資料檢視，如下所示：
 
- [ ![](unified-storyboards-images/cascadingclasses02.png "分割檢視控制器只會顯示詳細資料檢視")](unified-storyboards-images/cascadingclasses02.png)
+ [![](unified-storyboards-images/cascadingclasses02.png "分割檢視控制器只會顯示詳細資料檢視")](unified-storyboards-images/cascadingclasses02.png#lightbox)
 
 應用程式開發人員要顯示在 iPhone 上的 master 和詳細資料檢視中，開發人員必須分割檢視控制器中插入的父容器，並覆寫特性集合。 下圖所示：
 
- [ ![](unified-storyboards-images/cascadingclasses03.png "開發人員必須分割檢視控制器中插入的父容器，並覆寫特性集合")](unified-storyboards-images/cascadingclasses03.png)
+ [![](unified-storyboards-images/cascadingclasses03.png "開發人員必須分割檢視控制器中插入的父容器，並覆寫特性集合")](unified-storyboards-images/cascadingclasses03.png#lightbox)
 
 A`UIView`設定為分割檢視控制器的父系和`SetOverrideTraitCollection`檢視傳入新特性集合與目標分割檢視控制站上呼叫方法。 新的特性集合會覆寫`HorizontalSizeClass`，將它設定為`Regular`，如此一來，分割檢視控制器將會顯示在 iPhone 上的主要和詳細檢視。
 
@@ -253,7 +253,7 @@ A`UIView`設定為分割檢視控制器的父系和`SetOverrideTraitCollection`�
 
 本節會看，在詳細，特性集合的轉換方式特性環境變更時。 例如，當裝置從旋轉直向變成橫向。
 
- [ ![](unified-storyboards-images/traittransitions01.png "直向變成橫向特性變更概觀")](unified-storyboards-images/traittransitions01.png)
+ [![](unified-storyboards-images/traittransitions01.png "直向變成橫向特性變更概觀")](unified-storyboards-images/traittransitions01.png#lightbox)
 
 首先，iOS 8 會執行某些安裝程式以準備進行轉換。 接下來，系統以動畫顯示轉換狀態。 最後，iOS 8 清除轉換期間所需的任何暫存狀態。
 
@@ -352,7 +352,7 @@ iOS 8 提供數個回呼開發人員可以用來參與特性變更下, 表所示
 
 本節中，我們將看看這些方法中 iOS 8 如何實作。 第一個讓我們看看新`GetTargetForAction`方法：
 
- [ ![](unified-storyboards-images/gettargetforaction.png "新的 GetTargetForAction 方法")](unified-storyboards-images/gettargetforaction.png)
+ [![](unified-storyboards-images/gettargetforaction.png "新的 GetTargetForAction 方法")](unified-storyboards-images/gettargetforaction.png#lightbox)
 
 這個方法會逐步引導的階層鏈結，直到發現正確的容器檢視控制站。 例如: 
 
@@ -374,7 +374,7 @@ iOS 8 提供數個回呼開發人員可以用來參與特性變更下, 表所示
 
 使用自訂的展示樣式，開發人員可以使用自訂的簡報控制站的選項。 此自訂控制器可以用來修改的外觀和行為，它以結盟的檢視。
 
-<a name="size-classes">
+<a name="size-classes"/>
 
 ## <a name="working-with-size-classes"></a>使用大小類別
 
@@ -388,7 +388,7 @@ iOS 8 提供數個回呼開發人員可以用來參與特性變更下, 表所示
 
 執行時調整相片應用程式在 iPhone 中，當使用者旋轉裝置從直向變成橫向，分割檢視控制器將會顯示在主要和詳細資料檢視：
 
- [ ![](unified-storyboards-images/rotation.png "分割檢視控制器將會顯示這兩個主要和詳細資料檢視，如下所示")](unified-storyboards-images/rotation.png)
+ [![](unified-storyboards-images/rotation.png "分割檢視控制器將會顯示這兩個主要和詳細資料檢視，如下所示")](unified-storyboards-images/rotation.png#lightbox)
 
 這會透過覆寫`UpdateConstraintsForTraitCollection`檢視控制器，並調整這些條件約束的方法為基礎的值`VerticalSizeClass`。 例如: 
 
@@ -662,11 +662,11 @@ public override void ViewDidLoad ()
 
 為此開啟轉換在設計工具並檢查 iOS 分鏡腳本**使用大小類別**核取方塊：
 
- [ ![](unified-storyboards-images/sizeclass01.png "使用大小類別核取方塊")](unified-storyboards-images/sizeclass01.png)
+ [![](unified-storyboards-images/sizeclass01.png "使用大小類別核取方塊")](unified-storyboards-images/sizeclass01.png#lightbox)
 
 IOS 設計工具將會確認開發人員想要轉換的使用大小類別分鏡腳本格式：
 
- [ ![](unified-storyboards-images/sizeclass02.png "使用大小類別警示")](unified-storyboards-images/sizeclass02.png)
+ [![](unified-storyboards-images/sizeclass02.png "使用大小類別警示")](unified-storyboards-images/sizeclass02.png#lightbox)
 
 > [!IMPORTANT]
 > **請注意**： 自動配置也必須檢查大小類別才能正確運作。
@@ -675,41 +675,41 @@ IOS 設計工具將會確認開發人員想要轉換的使用大小類別分鏡�
 
 一旦分鏡腳本已轉換成使用大小類別，將系統的設計介面中和**檢視為**裝置將會泛型：
 
- [ ![](unified-storyboards-images/sizeclass03.png "檢視一般裝置類型")](unified-storyboards-images/sizeclass03.png)
+ [![](unified-storyboards-images/sizeclass03.png "檢視一般裝置類型")](unified-storyboards-images/sizeclass03.png#lightbox)
 
 選取的泛用的裝置類型時，所有檢視控制器會重新都調整 600 x 600 正方形。 這個方塊代表任何寬度和高度的大小。 當 iOS 設計工具在此模式中，所有的編輯會套用至所有大小類別。
 
 開發人員也可以檢視設計介面上的做為 iPhone 的選項：
 
- [ ![](unified-storyboards-images/sizeclass04.png "在 iPhone 與檢視設計介面")](unified-storyboards-images/sizeclass04.png)
+ [![](unified-storyboards-images/sizeclass04.png "在 iPhone 與檢視設計介面")](unified-storyboards-images/sizeclass04.png#lightbox)
 
 或在 iPad 為：
 
- [ ![](unified-storyboards-images/sizeclass05.png "在 iPad 與檢視設計介面")](unified-storyboards-images/sizeclass05.png)
+ [![](unified-storyboards-images/sizeclass05.png "在 iPad 與檢視設計介面")](unified-storyboards-images/sizeclass05.png#lightbox)
 
 ### <a name="select-a-size-class"></a>選取大小類別
 
 大小類別選取器按鈕位於設計介面 （附近的檢視為下拉式清單） 的左上角。 它可讓開發人員選取目前正在編輯的大小類別：
 
- [ ![](unified-storyboards-images/sizeclass06.png "選取大小類別")](unified-storyboards-images/sizeclass06.png)
+ [![](unified-storyboards-images/sizeclass06.png "選取大小類別")](unified-storyboards-images/sizeclass06.png#lightbox)
 
 選取器會顯示為 3 x 3 方格大小類別選取項目。 平方方格中的每個代表類別寬度和高度類別的組合。 中央的矩形會選取任何 Width/Any 高度大小類別 （這是整合的分鏡腳本的預設檢視）。 選取此方塊時，開發人員正在編輯預設版面配置，會繼承由所有其他組態。
 
 在方格的左上角的方塊表示 Compact Compact 寬度/高度大小的類別：
 
- [ ![](unified-storyboards-images/sizeclass07.png "壓縮的寬度 Compact 高度大小類別")](unified-storyboards-images/sizeclass07.png)
+ [![](unified-storyboards-images/sizeclass07.png "壓縮的寬度 Compact 高度大小類別")](unified-storyboards-images/sizeclass07.png#lightbox)
 
 此模式會對應至 iPhone。 在方格的右手邊角正方形代表規則一般寬度/高度大小類別，其代表 iPad:
 
- [ ![](unified-storyboards-images/sizeclass08.png "規則的寬度規則高度大小類別")](unified-storyboards-images/sizeclass08.png)
+ [![](unified-storyboards-images/sizeclass08.png "規則的寬度規則高度大小類別")](unified-storyboards-images/sizeclass08.png#lightbox)
 
 若要編輯適用於 iPhone 的直式方向版面配置，選取在左下角的平方。 這代表 Compact 的一般寬度/高度大小類別：
 
- [ ![](unified-storyboards-images/sizeclass09.png "壓縮的寬度規則高度大小類別")](unified-storyboards-images/sizeclass09.png)
+ [![](unified-storyboards-images/sizeclass09.png "壓縮的寬度規則高度大小類別")](unified-storyboards-images/sizeclass09.png#lightbox)
 
 按一下以選取它的矩形，並在設計介面會變更檢視控制器，以符合新的選取範圍的大小：
 
- [ ![](unified-storyboards-images/sizeclass10.png "在設計介面會變更檢視控制器，以符合新的選取範圍，如下所示的大小")](unified-storyboards-images/sizeclass10.png)
+ [![](unified-storyboards-images/sizeclass10.png "在設計介面會變更檢視控制器，以符合新的選取範圍，如下所示的大小")](unified-storyboards-images/sizeclass10.png#lightbox)
 
 大小類別和它們如何影響 Iphone 和 Ipad 的版面配置，請參閱這篇文章，如需詳細資訊的大小類別小節。
 
@@ -724,49 +724,49 @@ IOS 設計工具將會確認開發人員想要轉換的使用大小類別分鏡�
 
 若要達成這個效果，iOS 設計工具中控制項-按一下按鈕，將一條線拖曳至要顯示檢視控制器。 當您放開滑鼠按鈕時，選取`Show Detail`話題類型快顯功能表：
 
- [ ![](unified-storyboards-images/segue01.png "從話題類型快顯功能表選取 顯示詳細資料")](unified-storyboards-images/segue01.png)
+ [![](unified-storyboards-images/segue01.png "從話題類型快顯功能表選取 顯示詳細資料")](unified-storyboards-images/segue01.png#lightbox)
 
 按鈕和檢視控制站之間會建立新 segue。 現在 iPhone 模擬器中執行應用程式，而且會顯示主功能表：
 
- [ ![](unified-storyboards-images/segue02.png "主功能表")](unified-storyboards-images/segue02.png)
+ [![](unified-storyboards-images/segue02.png "主功能表")](unified-storyboards-images/segue02.png#lightbox)
 
 按一下**選取遊戲**按鈕和項目的檢視控制器會立即推送至瀏覽堆疊：
 
- [ ![](unified-storyboards-images/segue03.png "項目檢視控制器就會立即推送至瀏覽堆疊所示")](unified-storyboards-images/segue03.png)
+ [![](unified-storyboards-images/segue03.png "項目檢視控制器就會立即推送至瀏覽堆疊所示")](unified-storyboards-images/segue03.png#lightbox)
 
 停止模擬器 iPhone 和 iPad 模擬器中執行應用程式。 切換至 橫印 」 和 「 主要再次顯示功能表：
 
- [ ![](unified-storyboards-images/segue04.png "顯示在主功能表")](unified-storyboards-images/segue04.png)
+ [![](unified-storyboards-images/segue04.png "顯示在主功能表")](unified-storyboards-images/segue04.png#lightbox)
 
 再按一下**選取遊戲**分割檢視控制器的詳細資料區段中已顯示按鈕和項目的檢視控制器：
 
- [ ![](unified-storyboards-images/segue05.png "項目檢視控制器分割檢視控制器的詳細資料區段中顯示")](unified-storyboards-images/segue05.png)
+ [![](unified-storyboards-images/segue05.png "項目檢視控制器分割檢視控制器的詳細資料區段中顯示")](unified-storyboards-images/segue05.png#lightbox)
 
 ### <a name="excluding-an-element-from-a-size-class"></a>從大小類別排除項目
 
 但有些指定的項目 （例如檢視、 控制或條件約束） 時不需要在特定的大小類別內的時候。 若要排除大小類別中的項目，選取所需的項目排除在**設計介面**。 捲動至底部**屬性總管**按一下**齒輪**下拉式功能表。 選取的組合**寬度**和**高度**排除項目：
 
-[ ![](unified-storyboards-images/exclude-a.png "選取寬度和高度的組合")](unified-storyboards-images/exclude-a.png)
+[![](unified-storyboards-images/exclude-a.png "選取寬度和高度的組合")](unified-storyboards-images/exclude-a.png#lightbox)
 
 新*排除案例*底端的項目將會加入**屬性總管**。 接下來，取消核取**已安裝**核取方塊指定大小的類別：
 
-[ ![](unified-storyboards-images/exclude-b.png "取消核取 已安裝的核取方塊")](unified-storyboards-images/exclude-b.png)
+[![](unified-storyboards-images/exclude-b.png "取消核取 已安裝的核取方塊")](unified-storyboards-images/exclude-b.png#lightbox)
 
 切換至 項目中已排除的高度與寬度的設計介面，它已從指定的大小的類別，但不是整個 UI 設計：
 
- [ ![](unified-storyboards-images/exclude02.png "切換至 項目中已排除的高度與寬度的設計介面")](unified-storyboards-images/exclude02.png)
+ [![](unified-storyboards-images/exclude02.png "切換至 項目中已排除的高度與寬度的設計介面")](unified-storyboards-images/exclude02.png#lightbox)
 
 切換回 Any Width/Any 高度大小類別和項目仍在為：
 
- [ ![](unified-storyboards-images/exclude03.png "切換回 Any Width/Any 高度大小類別")](unified-storyboards-images/exclude03.png)
+ [![](unified-storyboards-images/exclude03.png "切換回 Any Width/Any 高度大小類別")](unified-storyboards-images/exclude03.png#lightbox)
 
 在 iPad 模擬器中執行應用程式時，會出現的項目：
 
- [ ![](unified-storyboards-images/exclude04.png "時顯示的項目在 iPad 模擬器中執行的應用程式")](unified-storyboards-images/exclude04.png)
+ [![](unified-storyboards-images/exclude04.png "時顯示的項目在 iPad 模擬器中執行的應用程式")](unified-storyboards-images/exclude04.png#lightbox)
 
 與 iPhone 模擬器上執行應用程式時，遺漏的元素：
 
- [ ![](unified-storyboards-images/exclude05.png "當遺失的項目在 iPhone 模擬器中執行的應用程式")](unified-storyboards-images/exclude05.png)
+ [![](unified-storyboards-images/exclude05.png "當遺失的項目在 iPhone 模擬器中執行的應用程式")](unified-storyboards-images/exclude05.png#lightbox)
 
 若要移除的項目排除案例，只需選取中的項目**設計介面**，捲動到底部**屬性總管**按一下 **-** 大小寫，以移除旁邊的按鈕。
 
@@ -797,48 +797,48 @@ IOS 設計工具將會確認開發人員想要轉換的使用大小類別分鏡�
 1. 開啟**Visual Studio for Mac**並載入**方案**來加入可動態啟動螢幕。
 2. 在**方案總管 中**，以滑鼠右鍵按一下`MainStoryboard.storyboard`檔案，然後選取**開啟** > **Xcode 介面產生器**:
 
-    [![](unified-storyboards-images/dls01.png "Xcode 介面產生器開啟")](unified-storyboards-images/dls01.png)
+    [![](unified-storyboards-images/dls01.png "Xcode 介面產生器開啟")](unified-storyboards-images/dls01.png#lightbox)
 3. 在 Xcode 中，選取**檔案** > **新增** > **檔案...**:
 
-    [![](unified-storyboards-images/dls02.png "選取 檔案 / 新增")](unified-storyboards-images/dls02.png)
+    [![](unified-storyboards-images/dls02.png "選取 檔案 / 新增")](unified-storyboards-images/dls02.png#lightbox)
 4. 選取**iOS** > **使用者介面** > **啟動螢幕**按一下**下一步**按鈕：
 
-    [![](unified-storyboards-images/dls03.png "選取 iOS / 使用者介面 / 啟動螢幕")](unified-storyboards-images/dls03.png)
+    [![](unified-storyboards-images/dls03.png "選取 iOS / 使用者介面 / 啟動螢幕")](unified-storyboards-images/dls03.png#lightbox)
 5. 將檔案命名`LaunchScreen.xib`按一下**建立**按鈕：
 
-    [![](unified-storyboards-images/dls04.png "LaunchScreen.xib 的檔案名稱")](unified-storyboards-images/dls04.png)
+    [![](unified-storyboards-images/dls04.png "LaunchScreen.xib 的檔案名稱")](unified-storyboards-images/dls04.png#lightbox)
 6. 加入圖形項目，並使用給定的裝置、 方向和螢幕大小將配置條件約束，以編輯啟動螢幕的設計：
 
-    [![](unified-storyboards-images/dls05.png "編輯啟動螢幕的設計")](unified-storyboards-images/dls05.png)
+    [![](unified-storyboards-images/dls05.png "編輯啟動螢幕的設計")](unified-storyboards-images/dls05.png#lightbox)
 7. 變更儲存到`LaunchScreen.xib`。
 8. 選取**應用程式目標**和**一般** 索引標籤：
 
-    [![](unified-storyboards-images/dls06.png "選取應用程式目標和 [一般] 索引標籤")](unified-storyboards-images/dls06.png)
+    [![](unified-storyboards-images/dls06.png "選取應用程式目標和 [一般] 索引標籤")](unified-storyboards-images/dls06.png#lightbox)
 9. 按一下**選擇 Info.plist**按鈕，選取`Info.plist`Xamarin 應用程式並按一下**選擇**按鈕：
 
-    [![](unified-storyboards-images/dls07.png "選取 Xamarin 應用程式 Info.plist")](unified-storyboards-images/dls07.png)
+    [![](unified-storyboards-images/dls07.png "選取 Xamarin 應用程式 Info.plist")](unified-storyboards-images/dls07.png#lightbox)
 10. 在**應用程式圖示和啟動映像**區段中，開啟**啟動螢幕檔案**下拉式清單中選擇 `LaunchScreen.xib`上面所建立：
 
-    [![](unified-storyboards-images/dls08.png "選擇 LaunchScreen.xib")](unified-storyboards-images/dls08.png)
+    [![](unified-storyboards-images/dls08.png "選擇 LaunchScreen.xib")](unified-storyboards-images/dls08.png#lightbox)
 11. 將變更儲存至檔案，並返回 Visual Studio for mac。
 12. 等候 Visual Studio for Mac 完成同步處理具有 Xcode 的變更。
 13. 在**方案總管 中**，以滑鼠右鍵按一下**資源**資料夾，然後選取**新增** > **加入檔案...**:
 
-    [![](unified-storyboards-images/dls09.png "選擇加入 / 加入檔案...")](unified-storyboards-images/dls09.png)
+    [![](unified-storyboards-images/dls09.png "選擇加入 / 加入檔案...")](unified-storyboards-images/dls09.png#lightbox)
 14. 選取`LaunchScreen.xib`上面所建立的檔案，然後按一下**開啟**按鈕：
 
-    [![](unified-storyboards-images/dls10.png "選取 LaunchScreen.xib 檔案")](unified-storyboards-images/dls10.png)
+    [![](unified-storyboards-images/dls10.png "選取 LaunchScreen.xib 檔案")](unified-storyboards-images/dls10.png#lightbox)
 15. 建置應用程式。
 
 ### <a name="testing-the-dynamic-launch-screen"></a>測試動態啟動螢幕
 
 在 Visual Studio for Mac 選取 iPhone 4 Retina 模擬器並執行應用程式。 [動態] 啟動畫面將會顯示在正確的格式和方向：
 
-[![](unified-storyboards-images/dls11.png "在垂直方向中顯示動態啟動螢幕")](unified-storyboards-images/dls11.png)
+[![](unified-storyboards-images/dls11.png "在垂直方向中顯示動態啟動螢幕")](unified-storyboards-images/dls11.png#lightbox)
 
 停止在 Visual Studio for Mac 應用程式，並選取 iPad iOS 8 裝置。 執行應用程式，並啟動螢幕會針對此裝置和方向正確格式化：
 
-[![](unified-storyboards-images/dls12.png "顯示水平方向的動態啟動畫面")](unified-storyboards-images/dls12.png)
+[![](unified-storyboards-images/dls12.png "顯示水平方向的動態啟動畫面")](unified-storyboards-images/dls12.png#lightbox)
 
 返回 Visual Studio for Mac，並停止執行應用程式。
 

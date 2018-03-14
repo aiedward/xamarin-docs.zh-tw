@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 500ad02d79cea79f59b1aca91b0312c9a9d6bac3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b82c0471985306962133c3bf7b084b49d5588bb6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="basic-bindings"></a>基本的繫結
 
@@ -53,7 +53,7 @@ Xamarin.Forms 資料繫結連結一組兩個物件，其中至少一個通常是
 您可以在任何衍生自的類別的執行個體上設定繫結[ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/)，其中包括`Element`， `VisualElement`， `View`，和`View`衍生項目。  繫結一定會在目標物件上設定。 繫結參考該來源物件。 若要設定資料繫結，請使用下列兩個目標類別的成員：
 
 - [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/)屬性指定的來源物件。
-- [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/)方法指定目標屬性和資料來源屬性。
+- [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/)方法指定目標屬性和資料來源 屬性。
 
 在此範例中，`Label`繫結目標，而`Slider`是繫結來源。 中的變更`Slider`來源影響旋轉的角度`Label`目標。 從來源傳送到目標資料。
 
@@ -94,7 +94,7 @@ label.SetBinding(RotationProperty, "Value");
 
 以操作`Slider`、`Label`據以旋轉：
 
-[![Basice 繫結的程式碼](basic-bindings-images/basiccodebinding-small.png "基本程式碼繫結")](basic-bindings-images/basiccodebinding-large.png "基本程式碼繫結")
+[![Basice 繫結的程式碼](basic-bindings-images/basiccodebinding-small.png "基本程式碼繫結")](basic-bindings-images/basiccodebinding-large.png#lightbox "基本程式碼繫結")
 
 **基本 Xaml 繫結**頁面等同於**基本的程式碼繫結**不同之處在於它會在 XAML 中定義的整個資料繫結：
 
@@ -190,7 +190,7 @@ public partial class AlternativeCodeBindingPage : ContentPage
 
 執行此程式可能會有點令人意外：
 
-[![替代程式碼繫結](basic-bindings-images/alternativecodebinding-small.png "替代程式碼繫結")](basic-bindings-images/alternativecodebinding-large.png "替代程式碼繫結")
+[![替代程式碼繫結](basic-bindings-images/alternativecodebinding-small.png "替代程式碼繫結")](basic-bindings-images/alternativecodebinding-large.png#lightbox "替代程式碼繫結")
 
 左側的 [iOS] 畫面會顯示在第一次出現時，螢幕的外觀。 其中是`Label`嗎？ 
 
@@ -319,7 +319,7 @@ Scale="{Binding Value, Source={x:Reference slider}}" />
 
 `BindingContext`屬性`StackLayout`設`slider`物件。 這個繫結內容會繼承由`Label`和`BoxView`，這兩個的具有其`Rotation`屬性設定為`Value`屬性`Slider`: 
 
-[![繫結內容繼承](basic-bindings-images/bindingcontextinheritance-small.png "繫結內容繼承")](basic-bindings-images/bindingcontextinheritance-large.png "繫結內容繼承")
+[![繫結內容繼承](basic-bindings-images/bindingcontextinheritance-small.png "繫結內容繼承")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "繫結內容繼承")
 
 在[下一篇文章](binding-mode.md)，您會看到如何*繫結模式*可以變更目標和來源的物件之間的資料流程。
 

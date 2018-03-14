@@ -5,18 +5,23 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: f6e80b21c76089c0f3f7ac655584b7e18400307e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 017f3c1b5fc14bf22a5ad85d1017bc8125b04038
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-extensions"></a>iOS 擴充功能
 
 _IOS 8 中引進，擴充功能所帶來的 iOS 標準的內容，例如在通知中心內，當使用者要求自訂的鍵盤，或當相片的 widget 編輯。所有擴充功能會安裝在搭配容器應用程式，並從特定的擴充點，在主機應用程式會啟動。_
+
+> [!VIDEO https://youtube.com/embed/Sd0-ch9Udmk]
+
+**藉由在 iOS 中，建立擴充功能[Xamarin 大學](https://university.xamarin.com/)**
 
 擴充功能，推出 iOS 8，進行特製化`UIViewControllers`所帶來的標準內容內的 iOS 例如中**通知中心**，如要求使用者所執行的自訂鍵盤類型特製化輸入或其他內容，例如編輯的相片，擴充功能可以提供特殊效果的篩選器的位置。
 
@@ -183,7 +188,7 @@ _IOS 8 中引進，擴充功能所帶來的 iOS 標準的內容，例如在通�
 
 在下列逐步解說中，您將建立範例**今天**計算的日期和年份中的剩餘天數的 widget:
 
-[ ![](extensions-images/carpediemscreenshot-sm.png "計算的日期和年份中的剩餘天數範例今天 widget")](extensions-images/carpediemscreenshot.png)
+[![](extensions-images/carpediemscreenshot-sm.png "計算的日期和年份中的剩餘天數範例今天 widget")](extensions-images/carpediemscreenshot.png#lightbox)
 
 <a name="Creating-the-Solution" />
 
@@ -193,26 +198,26 @@ _IOS 8 中引進，擴充功能所帶來的 iOS 標準的內容，例如在通�
 
 1. 首先，建立新的 iOS**單一檢視應用程式**專案，然後按一下**下一步**按鈕： 
 
-    [ ![](extensions-images/today01.png "首先，建立新的 iOS、 單一檢視應用程式專案，然後按一下 [下一步] 按鈕")](extensions-images/today01.png)
+    [![](extensions-images/today01.png "首先，建立新的 iOS、 單一檢視應用程式專案，然後按一下 [下一步] 按鈕")](extensions-images/today01.png#lightbox)
 2. 呼叫專案`TodayContainer`按一下**下一步**按鈕： 
 
-    [ ![](extensions-images/today02.png "呼叫專案 TodayContainer 並按一下 [下一步] 按鈕")](extensions-images/today02.png)
+    [![](extensions-images/today02.png "呼叫專案 TodayContainer 並按一下 [下一步] 按鈕")](extensions-images/today02.png#lightbox)
 3. 確認**專案名稱**和**SolutionName**按一下**建立**按鈕以建立方案： 
 
-    [ ![](extensions-images/today03.png "請確認 SolutionName 與專案名稱，然後按一下 [建立] 按鈕，即可建立方案")](extensions-images/today03.png)
+    [![](extensions-images/today03.png "請確認 SolutionName 與專案名稱，然後按一下 [建立] 按鈕，即可建立方案")](extensions-images/today03.png#lightbox)
 4. 接下來，在**方案總管 中**，以滑鼠右鍵按一下方案，並加入新**iOS 延伸**從專案**今天延伸**範本： 
 
-    [ ![](extensions-images/today04.png "接下來，在 [方案總管] 中，以滑鼠右鍵按一下方案，並從今天延伸範本加入新的 iOS 擴充功能專案")](extensions-images/today04.png)
+    [![](extensions-images/today04.png "接下來，在 [方案總管] 中，以滑鼠右鍵按一下方案，並從今天延伸範本加入新的 iOS 擴充功能專案")](extensions-images/today04.png#lightbox)
 5. 呼叫專案`DaysRemaining`按一下**下一步**按鈕： 
 
-    [ ![](extensions-images/today05.png "呼叫專案 DaysRemaining 並按一下 [下一步] 按鈕")](extensions-images/today05.png)
+    [![](extensions-images/today05.png "呼叫專案 DaysRemaining 並按一下 [下一步] 按鈕")](extensions-images/today05.png#lightbox)
 6. 檢閱專案，然後按一下**建立** 按鈕來建立它： 
 
-    [ ![](extensions-images/today06.png "檢閱專案，然後按一下 [建立] 按鈕，建立")](extensions-images/today06.png)
+    [![](extensions-images/today06.png "檢閱專案，然後按一下 [建立] 按鈕，建立")](extensions-images/today06.png#lightbox)
 
 所產生的解決方案現在應該有兩個專案，如下所示：
 
-[ ![](extensions-images/today07.png "所產生的解決方案現在應該會有兩個專案，如下所示")](extensions-images/today07.png)
+[![](extensions-images/today07.png "所產生的解決方案現在應該會有兩個專案，如下所示")](extensions-images/today07.png#lightbox)
 
 <a name="Creating-the-Extension-User-Interface" />
 
@@ -228,10 +233,10 @@ _IOS 8 中引進，擴充功能所帶來的 iOS 標準的內容，例如在通�
 
 1. 在**方案總管] 中**，連按兩下 [擴充功能專案`Main.storyboard`檔案，以開啟它進行編輯： 
 
-    [ ![](extensions-images/today08.png "按兩下要開啟它進行編輯的延伸模組專案 Main.storyboard 檔案")](extensions-images/today08.png)
-2. 選取已自動加入至 UI 之範本的標籤，並賦予**名稱**`TodayMessage`中**Widget**  索引標籤**屬性總管**: 
+    [![](extensions-images/today08.png "按兩下要開啟它進行編輯的延伸模組專案 Main.storyboard 檔案")](extensions-images/today08.png#lightbox)
+2. 選取已自動加入至 UI 之範本的標籤，並賦予**名稱**`TodayMessage`中**Widget** 索引標籤**屬性總管**: 
 
-    [ ![](extensions-images/today09.png "選取已自動加入至 UI 之範本的標籤，並給予其名稱 TodayMessage Widget 索引標籤的 [屬性總管] 中")](extensions-images/today09.png)
+    [![](extensions-images/today09.png "選取已自動加入至 UI 之範本的標籤，並給予其名稱 TodayMessage Widget 索引標籤的 [屬性總管] 中")](extensions-images/today09.png#lightbox)
 3. 將變更儲存到分鏡腳本。
 
 <a name="Using-Code" />
@@ -242,16 +247,16 @@ _IOS 8 中引進，擴充功能所帶來的 iOS 標準的內容，例如在通�
 
 1. 在**方案總管 中**，選取**DaysRemaining**專案中，加入新的類別並呼叫它`CodeBasedViewController`: 
 
-    [ ![](extensions-images/code01.png "Aelect DaysRemaining 專案中，加入新的類別並呼叫它 CodeBasedViewController")](extensions-images/code01.png)
+    [![](extensions-images/code01.png "Aelect DaysRemaining 專案中，加入新的類別並呼叫它 CodeBasedViewController")](extensions-images/code01.png#lightbox)
 2. 同樣地，在**方案總管] 中**，連按兩下 [擴充功能的`Info.plist`檔案，以開啟它進行編輯： 
 
-    [ ![](extensions-images/code02.png "按兩下以開啟檔案進行編輯的擴充功能的 Info.plist 檔案")](extensions-images/code02.png)
+    [![](extensions-images/code02.png "按兩下以開啟檔案進行編輯的擴充功能的 Info.plist 檔案")](extensions-images/code02.png#lightbox)
 3. 選取**來源檢視**（從畫面底部），然後開啟`NSExtension`節點： 
 
-    [ ![](extensions-images/code03.png "從畫面底部選取來源檢視，然後開啟 NSExtension 節點")](extensions-images/code03.png)
+    [![](extensions-images/code03.png "從畫面底部選取來源檢視，然後開啟 NSExtension 節點")](extensions-images/code03.png#lightbox)
 4. 移除`NSExtensionMainStoryboard`索引鍵，並新增`NSPrincipalClass`值`CodeBasedViewController`: 
 
-    [ ![](extensions-images/code04.png "移除 NSExtensionMainStoryboard 金鑰，並加入值 CodeBasedViewController NSPrincipalClass")](extensions-images/code04.png)
+    [![](extensions-images/code04.png "移除 NSExtensionMainStoryboard 金鑰，並加入值 CodeBasedViewController NSPrincipalClass")](extensions-images/code04.png#lightbox)
 5. 儲存您的變更。
 
 接著，編輯`CodeBasedViewController.cs`檔案，並讓它看起來如下所示：
@@ -327,7 +332,7 @@ public override void ViewDidLoad ()
 
 這個逐步解說中，容器應用程式只用於做為方法出貨，而且安裝擴充功能，並不提供它自己的任何功能。 編輯 TodayContainer`Main.storyboard`檔案，並加入一些文字定義的延伸模組的函式，以及如何安裝它：
 
-[ ![](extensions-images/today10.png "編輯 TodayContainers Main.storyboard 檔案，並加入一些文字定義延伸模組函式和安裝方法")](extensions-images/today10.png)
+[![](extensions-images/today10.png "編輯 TodayContainers Main.storyboard 檔案，並加入一些文字定義延伸模組函式和安裝方法")](extensions-images/today10.png#lightbox)
 
 將變更儲存到分鏡腳本。
 
@@ -337,19 +342,19 @@ public override void ViewDidLoad ()
 
 若要在 iOS 模擬器中測試您的擴充功能，請執行**TodayContainer**應用程式。 容器的主要檢視會顯示：
 
-[ ![](extensions-images/run01.png "將會顯示主要檢視容器")](extensions-images/run01.png)
+[![](extensions-images/run01.png "將會顯示主要檢視容器")](extensions-images/run01.png#lightbox)
 
 接下來，叫用**首頁**按鈕在模擬器中，從開啟畫面頂端向下撥動**通知中心**，選取**今天**索引標籤上，按一下  **編輯**按鈕：
 
-[ ![](extensions-images/run02.png "叫用 [首頁] 按鈕，在模擬器中，從頂端畫面開啟 [通知中心] 選取 [今日] 索引標籤，按一下 [編輯] 按鈕的向下撥動")](extensions-images/run02.png)
+[![](extensions-images/run02.png "叫用 [首頁] 按鈕，在模擬器中，從頂端畫面開啟 [通知中心] 選取 [今日] 索引標籤，按一下 [編輯] 按鈕的向下撥動")](extensions-images/run02.png#lightbox)
 
 新增**DaysRemaining**延伸**今天**檢視，並按一下**完成**按鈕：
 
-[ ![](extensions-images/run03.png "DaysRemaining 延伸模組加入今日檢視，然後按一下 [完成] 按鈕")](extensions-images/run03.png)
+[![](extensions-images/run03.png "DaysRemaining 延伸模組加入今日檢視，然後按一下 [完成] 按鈕")](extensions-images/run03.png#lightbox)
 
 將加入新的 widget**今天**檢視結果才會顯示：
 
-[ ![](extensions-images/run04.png "新的 widget 會加入今日檢視，並且會顯示結果")](extensions-images/run04.png)
+[![](extensions-images/run04.png "新的 widget 會加入今日檢視，並且會顯示結果")](extensions-images/run04.png#lightbox)
 
 <a name="Communicating-with-the-Host-App" />
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 42ef3e6c82763831b5114f3de7603bba8f59eac6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c582e0306bdc69570e3f8e8d35c7fa15b30523da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-animations"></a>自訂動畫
 
@@ -54,7 +54,7 @@ animation.Commit (this, "SimpleAnimation", 16, 2000, Easing.Linear, (v, c) => im
 整體的作用是建立動畫，從而[ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/)屬性[ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)從 1 到 2，超過 2 秒 （2000年毫秒為單位），使用[ `Linear`](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.Linear/) easing 函式。 在動畫完成時，每次它`Scale`屬性會重設為 1，並在動畫重複。
 
 > [!NOTE]
-> **請注意**： 可以由建立建構並行的動畫，彼此執行`Animation`物件每一個動畫，然後再呼叫`Commit`上每個動畫方法。
+> 可以藉由建立建構並行的動畫，彼此執行`Animation`物件每一個動畫，然後再呼叫`Commit`上每個動畫方法。
 
 <a name="child" />
 
@@ -173,7 +173,7 @@ await this.ColorTo(Color.FromRgb(0, 0, 0), Color.FromRgb(255, 255, 255), c => Ba
 await boxView.ColorTo(Color.Blue, Color.Red, c => boxView.Color = c, 4000);
 ```
 
-在此程式碼範例中，`ColorTo`方法以動畫方式顯示[ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/)和[ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/)屬性[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)， `BackgroundColor`屬性頁面上，而[ `Color` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/)屬性[ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)。
+在此程式碼範例中，`ColorTo`方法以動畫方式顯示[ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/)和[ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/)屬性[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)， `BackgroundColor`屬性 頁面上，而[ `Color` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/)屬性[ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)。
 
 ## <a name="summary"></a>總結
 

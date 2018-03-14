@@ -3,14 +3,15 @@ title: "章 26 的摘要。 自訂配置"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: dbddaaf2f4a5ad9d7161013f2ae11466b953e20c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9447f9fb47a3de0f278a89d45d657158be9b70b9
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>章 26 的摘要。 自訂配置
 
@@ -159,7 +160,7 @@ Xamarin.Forms 包含數個類別衍生自[ `Layout<View>` ](https://developer.xa
 
 [ **PhotoGrid** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoGrid)範例將示範如何`UniformGridLayout`:
 
-[![相片方格的三個螢幕擷取畫面](images/ch26fg08-small.png "統一格線版面配置")](images/ch26fg08-large.png "統一格線版面配置")
+[![相片方格的三個螢幕擷取畫面](images/ch26fg08-small.png "統一格線版面配置")](images/ch26fg08-large.png#lightbox "統一格線版面配置")
 
 ### <a name="overlapping-children"></a>重疊的子系
 
@@ -174,7 +175,7 @@ A`Layout<T>`衍生項目可以重疊的子系。 但是，在順序中轉譯子�
 
 [ `OverlapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/OverlapLayout.cs)類別[ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)程式庫會定義表示轉譯順序，並因此允許其中一個附加的屬性其要顯示在頂端，其他的子系。 [ **StudentCardFile** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/StudentCardFile)範例為其示範：
 
-[![學生卡檔案格線的三個螢幕擷取畫面](images/ch26fg10-small.png "重疊配置子系")](images/ch26fg10-large.png "重疊配置子系")
+[![學生卡檔案格線的三個螢幕擷取畫面](images/ch26fg10-small.png "重疊配置子系")](images/ch26fg10-large.png#lightbox "重疊配置子系")
 
 ### <a name="more-attached-bindable-properties"></a>連接可繫結屬性
 
