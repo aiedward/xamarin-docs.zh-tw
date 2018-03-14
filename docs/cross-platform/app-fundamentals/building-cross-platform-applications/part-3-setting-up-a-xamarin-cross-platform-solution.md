@@ -8,10 +8,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
 ms.openlocfilehash: 852c11eeccf347c3175cc5d8d42f55616aedfb84
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
-ms.translationtype: HT
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/13/2018
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>第 3-部分設定 Xamarin 的跨平台解決方案
 

@@ -8,10 +8,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
 ms.openlocfilehash: d90cd8ae620f51d7ea9bac0945ccc7ec4b83bac4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
-ms.translationtype: HT
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/13/2018
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>第 1 篇 – 了解 Xamarin 的行動裝置平台
 
