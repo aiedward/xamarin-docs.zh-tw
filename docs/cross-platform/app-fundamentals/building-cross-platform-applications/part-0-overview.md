@@ -8,10 +8,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
 ms.openlocfilehash: 8e7b25f615939c0ae902e09c728615188d1cb86e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/13/2018
 ---
 # <a name="building-cross-platform-applications-overview"></a>建置跨平台應用程式概觀
 
