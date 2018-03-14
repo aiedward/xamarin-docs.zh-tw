@@ -7,14 +7,63 @@ metadata:
   ms.author: crdun
   ms.date: 02/17/2018
   ms.topic: article
-  ms.openlocfilehash: 3a17dbc3fad1f32845912c76835dd401b4e5ee72
-  ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+  ms.openlocfilehash: b0c3efa12cbeb045104b2ce823cbf57cd1f56f75
+  ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 02/27/2018
+  ms.lasthandoff: 03/12/2018
 abstract:
-  description: "Xamarin 跨平台範例應用程式和程式碼示範，可協助您使用 C# 和 Xamarin 開始建置行動裝置應用程式。"
+  description: "Xamarin iOS 範例應用程式和程式碼示範，可協助您使用 C# 和 Xamarin 開始建置行動應用程式。"
   menu:
     items:
     - href: https://developer.xamarin.com/samples/ios/all/
       text: "所有 Xamarin.iOS 範例"
+sections:
+- title: 
+  items:
+  - type: list
+    style: cards
+    className: cardsW
+    items:
+    - href: https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/
+      html: "ARKit 擴增實境示範可讓您將物件放在已偵測的表面上。"
+      image:
+        src: images/arkit.png
+        href: https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/
+      title: ARKit (iOS 11)
+    - href: https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/
+      html: "MapKit 中新的 iOS 11 功能：根據縮放程度來分組及分割標記。"
+      image:
+        src: images/mapkit.png
+        href: https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/
+      title: MapKit (iOS 11)
+    - href: https://developer.xamarin.com/samples/monotouch/ios11/CoreMLAzureModel/
+      html: "iOS 11 視覺架構與 CoreML，使用經過 Azure 自訂視覺服務訓練的模型。"
+      image:
+        src: images/coremlazure.png
+        href: https://developer.xamarin.com/samples/monotouch/ios11/CoreMLAzureModel/
+      title: "CoreML 與 Azure (iOS 11)"
+    - href: https://developer.xamarin.com/samples/monotouch/ios9/QuickContacts/
+      html: "如何使用 ContactsUI 檢視控制器與屬性。"
+      image:
+        src: images/contacts.png
+        href: https://developer.xamarin.com/samples/monotouch/ios9/QuickContacts/
+      title: QuickContacts
+    - href: https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/
+      html: "可在 watchOS 中使用的 UI 控制項套件。"
+      image:
+        src: images/watchos.png
+        href: https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/
+      title: WatchKit Catalog
+    - href: https://developer.xamarin.com/samples/monotouch/tvos/UICatalog/
+      html: "示範如何在 tvOS 的 UIKit 架構中使用許多檢視與控制項。"
+      image:
+        src: images/tvosui.png
+        href: https://developer.xamarin.com/samples/monotouch/tvos/UICatalog/
+      title: tvOS UI Catalog
+    - href: https://developer.xamarin.com/samples/ios/all/
+      html: "一組完整的 Xamarin.iOS 範例應用程式與程式碼示範。"
+      image:
+        src: ~/media/shared/sample-download.svg
+        href: https://developer.xamarin.com/samples/ios/all/
+      title: "所有 Xamarin.iOS 範例"
