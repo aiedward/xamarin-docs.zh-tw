@@ -7,11 +7,11 @@ metadata:
   ms.author: crdun
   ms.date: 02/17/2018
   ms.topic: landing-page
-  ms.openlocfilehash: b660a3e8ebfe88264a22532a8943daf2afe9dd28
-  ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+  ms.openlocfilehash: 4cdecdac5ee283108bef7c3a99b335321b4cdf75
+  ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 02/27/2018
+  ms.lasthandoff: 03/15/2018
 abstract:
   description: "Xamarin.iOS 針對 .NET 開發人員公開完整的 iOS SDK。 在 Visual Studio 中使用 C# 或 F# 建置完整的原生 iOS 應用程式。"
   menu:
@@ -119,8 +119,8 @@ sections:
     className: cardsD
     items:
     - title: API
-      href: 
-      html: "<p><a href=\"https://developer.xamarin.com/api/root/monotouch-lib/\">iOS API 文件</a></p><p><a href=\"https://docs.microsoft.com/en-us/dotnet/api/?view=xamarinios-10.8\">基底類別程式庫</a></p>"
+      href: https://developer.xamarin.com/api/root/ios-unified/
+      html: "<p><a href=\"https://developer.xamarin.com/api/root/ios-unified/\">iOS API 文件</a></p><p><a href=\"https://docs.microsoft.com/en-us/dotnet/api/?view=xamarinios-10.8\">基底類別程式庫</a></p>"
     - title: "範例"
       href: https://developer.xamarin.com/samples
       html: "<p><a href=\"https://developer.xamarin.com/samples/ios/all/\">iOS 範例</a></p><p><a href=\"https://developer.xamarin.com/samples/ios/all/\">watchOS 範例</a></p><p><a href=\"https://developer.xamarin.com/samples/ios/all/\">tvOS 範例</a></p>"

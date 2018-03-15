@@ -7,11 +7,11 @@ metadata:
   ms.author: crdun
   ms.date: 02/17/2018
   ms.topic: landing-page
-  ms.openlocfilehash: 95b576880adef44c3a3c4b601d7ce04498d351da
-  ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+  ms.openlocfilehash: 708dbb752e4ba2e5d5ca6dc16b2a48af72f7632b
+  ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 02/27/2018
+  ms.lasthandoff: 03/15/2018
 abstract:
   description: "Xamarin.Android 公開了適用於 .NET 開發人員的完整 Android SDK。 在 Visual Studio 中使用 C# 或 F# 建置完全原生的 Android 應用程式。"
   menu:
@@ -107,8 +107,11 @@ sections:
     className: cardsD
     items:
     - title: API
-      html: "<p><a href=\"https://developer.xamarin.com/api/root/monodroi-lib/\">Android API 文件</a> \\(英文\\)</p><p><a href=\"https://docs.microsoft.com/en-us/dotnet/api/?view=xamarinandroid-7.1\">基底類別程式庫</a></p>"
+      href: https://developer.xamarin.com/api/root/MonoAndroid-lib/
+      html: "<p><a href=\"https://developer.xamarin.com/api/root/MonoAndroid-lib/\">Android API 文件</a> \\(英文\\)</p><p><a href=\"https://docs.microsoft.com/en-us/dotnet/api/?view=xamarinandroid-7.1\">基底類別程式庫</a></p>"
     - title: "範例"
+      href: https://developer.xamarin.com/samples/android/all/
       html: "<p><a href=\"https://developer.xamarin.com/samples/android/all/\">Android 範例</a></p>"
     - title: "活頁簿"
+      href: https://developer.xamarin.com/workbooks#android
       html: "<p><a href=\"https://developer.xamarin.com/workbooks#android\">Android Workbooks</a> \\(英文\\)</p>"
