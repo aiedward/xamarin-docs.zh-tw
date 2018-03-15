@@ -7,11 +7,11 @@ ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 394e1722c79bac5f034e9ad88eb1fed7e5090f8c
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: a3980c63c31f4fdf0297fdc9b05da3590f0cac54
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>第 14 的摘要。 絕對版面配置
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 03/12/2018
 
 您可以新增的子系`Children`集合`AbsoluteLayout`使用標準[ `Add` ](https://developer.xamarin.com/api/member/System.Collections.Generic.ICollection%3CT%3E.Add/p/T/)方法，但`AbsoluteLayout`也會提供擴充[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Rectangle/Xamarin.Forms.AbsoluteLayoutFlags/)可讓您指定的方法[ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/)。 另一個[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Point/)方法只需要[ `Point` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Point/)，在此情況下不受限制子系，並調整大小。
 
-您可以建立`Rectangle`值與[建構函式](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/System.Double/System.Double/System.Double/System.Double/)需要四個值 & #x 2014; 指出相對於其父代，子系的左上角的位置與前兩個和第二個兩個指出子系的大小。 您可以使用或[建構函式](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/Xamarin.Forms.Point/Xamarin.Forms.Size/)需要`Point`和[ `Size` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Size/)值。
+您可以建立`Rectangle`值與[建構函式](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/System.Double/System.Double/System.Double/System.Double/)需要四個值&mdash;指出相對於其父代，子系的左上角的位置與前兩個和第二個兩個指出子系的大小。 您可以使用或[建構函式](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/Xamarin.Forms.Point/Xamarin.Forms.Size/)需要`Point`和[ `Size` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Size/)值。
 
 這些`Add`中示範的方法[ **AbsoluteDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/AbsoluteDemo)，哪些位置`BoxView`項目使用`Rectangle`值，和`Label`使用剛才項目`Point`值。
 

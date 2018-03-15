@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 036e1ddc95f8eabec3e87c13c25cad972c29a5d1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 161a5be643ccf5f96b04413cec5956264af6ce60
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-macos-sierra"></a>MacOS 利也簡介
 
@@ -63,8 +63,6 @@ macOS 利也包含新的 ApplePay Javascript 架構，可讓開發人員併入 A
 CloudKit framework 已展開於 macOS 利也可讓使用者快速且輕鬆地共用記錄或從其私用 iCloud 資料庫的資料錄集。
 
 CloudKit 提供完整的 UI 來傳送和接受記錄的共用的邀請，而且使用者必須完成的讀取/寫入控制可以存取記錄的人員。
-
-<!--To find out more, please see our [CloudKit Data Sharing](~/mac/platform-features/introduction-to-macos-sierra/cloudkit-data-sharing/) guide.-->
 
 如需詳細資訊，請參閱 Apple [CloudKit Framework 參考](https://developer.apple.com/reference/clockkit)和[CloudKit JS Framework 參考](https://developer.apple.com/reference/cloudkitjs)。
 

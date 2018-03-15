@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 3ddf481a2356d49f11b96f5a8a6b7f7a492fefc9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a095dbbb78ad1517791356ae0b7cbeaa94d1336f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="consuming-an-aspnet-web-service-asmx"></a>使用 ASP.NET Web 服務 (ASMX)
 
@@ -39,37 +39,12 @@ ASMX 服務的設定指示可以找到範例應用程式隨附的讀我檔案。
 
 ASMX 服務提供下列作業：
 
-<table>
-  <thead>
-    <tr>
-      <th>運算</th>
-      <th>描述</th>
-      <th>參數</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>GetTodoItems</td>
-      <td>取得待辦項目清單</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>CreateTodoItem</td>
-      <td>建立新的待辦項目</td>
-      <td>XML 序列化 <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>EditTodoItem</td>
-      <td>更新 待辦項目</td>
-      <td>XML 序列化 <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>DeleteTodoItem</td>
-      <td>刪除待辦項目</td>
-      <td>XML 序列化 <code>TodoItem</code></td>
-    </tr>
-  </tbody>
-</table>
+|運算|描述|參數|
+|--- |--- |--- |
+|GetTodoItems|取得待辦項目清單|
+|CreateTodoItem|建立新的待辦項目|XML 序列化 TodoItem|
+|EditTodoItem|更新 待辦項目|XML 序列化 TodoItem|
+|DeleteTodoItem|刪除待辦項目|XML 序列化 TodoItem|
 
 如需使用應用程式中的資料模型的詳細資訊，請參閱[將資料模型化](~/xamarin-forms/data-cloud/walkthrough.md)。
 

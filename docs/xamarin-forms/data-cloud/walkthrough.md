@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: 6625edc1f661e5f9769de82ec48367e9f900e567
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ab44cb7a065164bb5b7501ac63bd0321b612b7ca
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="understanding-the-sample"></a>了解範例
 
@@ -38,47 +38,19 @@ _本主題提供逐步解說示範如何與不同的 web 服務通訊的 Xamarin
 
 PCL 專案，每個範例應用程式包含三個主要的資料夾：
 
-<table>
-    <thead>
-        <tr><td><strong>Folder</strong></td><td><strong>用途</strong></td></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>Data</strong></td>
-                        <td>包含類別和介面，可用來管理資料的項目，並與 web 服務通訊。 這包括最少<code>TodoItemManager</code>類別中的屬性會公開<code>App</code>類別叫用 web 服務作業。</td>
-        </tr>
-        <tr>
-            <td><strong>模型</strong></td>
-                        <td>包含應用程式的資料模型類別。 這包括最少<code>TodoItem</code>類別，為模型使用的應用程式資料的單一項目。 資料夾也可以包含任何其他的類別，用於模型的使用者資料。</td>
-        </tr>
-        <tr>
-            <td><strong>檢視</strong></td>
-                        <td>包含應用程式的網頁。 這通常是組成<code>TodoListPage</code>和<code>TodoItemPage</code>類別，以及任何其他類別，來進行驗證。</td>
-                </tr>
-    </tbody>
-</table>
+|資料夾|用途|
+|--- |--- |
+|資料|包含類別和介面，可用來管理資料的項目，並與 web 服務通訊。 這包括最少`TodoItemManager`類別中的屬性會公開`App`類別叫用 web 服務作業。|
+|模型|包含應用程式的資料模型類別。 這包括最少`TodoItem`類別，為模型使用的應用程式資料的單一項目。 資料夾也可以包含任何其他的類別，用於模型的使用者資料。|
+|檢視|包含應用程式的網頁。 這通常是組成`TodoListPage`和`TodoItemPage`類別，以及任何其他類別，來進行驗證。|
 
 PCL 專案，每個應用程式也包含一些重要的檔案：
 
-<table>
-    <thead>
-      <tr><td><strong>檔案</strong></td><td><strong>用途</strong></td></tr>
-    <thead>
-    <tbody>
-        <tr>
-            <td><strong>Constants.cs</strong></td>
-            <td><code>Constants</code>類別，可指定應用程式用來與 web 服務進行通訊的任何常數。 這些常數會需要存取您個人的後端服務更新提供者上建立。
-        </tr>
-        <tr>
-            <td><strong>ITextToSpeech.cs</strong></td>
-            <td><code>ITextToSpeech</code>介面，指定<code>Speak</code>方法必須由任何實作類別提供。</td>
-        </tr>
-        <tr>
-          <td><strong>Todo.cs</strong></td>
-          <td><code>App</code>負責具現化這兩個的第一頁會顯示每個平台上的應用程式的類別和<code>TodoItemManager</code>用來叫用 web 服務作業的類別。</td>
-        </tr>
-    </tbody>
-</table>
+|檔案|用途|
+|--- |--- |
+|Constants.cs|`Constants`類別，可指定應用程式用來與 web 服務進行通訊的任何常數。 這些常數會需要存取您個人的後端服務更新提供者上建立。|
+|ITextToSpeech.cs|`ITextToSpeech`介面，指定`Speak`方法必須由任何實作類別提供。|
+|Todo.cs|`App`負責具現化這兩個的第一頁會顯示每個平台上的應用程式的類別和`TodoItemManager`用來叫用 web 服務作業的類別。|
 
 ### <a name="viewing-pages"></a>檢視頁面
 

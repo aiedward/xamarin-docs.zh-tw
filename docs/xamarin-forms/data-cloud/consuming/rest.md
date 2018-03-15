@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: f8b748ad1b57218d1e8aab11bdc1037cf3cfa14c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 98c38001ea7751c419d4be5b0f68339b06ec656f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="consuming-a-restful-web-service"></a>使用 RESTful Web 服務
 
@@ -49,42 +49,12 @@ REST 服務的設定指示可以找到範例應用程式隨附的讀我檔案。
 
 REST 服務會使用 ASP.NET Core 寫入，並提供下列作業：
 
-<table>
-  <thead>
-    <tr>
-      <th>運算</th>
-      <th>HTTP 方法</th>
-      <th>相對 URI</th>
-      <th>參數</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>取得待辦項目清單</td>
-      <td>GET</td>
-      <td>/api/todoitems/</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>建立新的待辦項目</td>
-      <td>POST</td>
-      <td>/api/todoitems/</td>
-      <td>JSON 格式化 <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>更新 待辦項目</td>
-      <td>PUT</td>
-      <td>/api/todoitems/</td>
-      <td>JSON 格式化 <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>刪除待辦項目</td>
-      <td>DELETE</td>
-      <td>/api/todoitems/{id}</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+|運算|HTTP 方法|相對 URI|參數|
+|--- |--- |--- |--- |
+|取得待辦項目清單|GET|/api/todoitems/|
+|建立新的待辦項目|POST|/api/todoitems/|JSON 格式化的 TodoItem|
+|更新 待辦項目|PUT|/api/todoitems/|JSON 格式化的 TodoItem|
+|刪除待辦項目|DELETE|/api/todoitems/{id}|
 
 大部分的 Uri 包含`TodoItem`路徑中的識別碼。 例如，若要刪除`TodoItem`其識別碼是`6bb8a868-dba1-4f1a-93b7-24ebce87e243`，用戶端傳送的 DELETE 要求`http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243`。 如需使用範例應用程式中的資料模型的詳細資訊，請參閱[將資料模型化](~/xamarin-forms/data-cloud/walkthrough.md)。
 

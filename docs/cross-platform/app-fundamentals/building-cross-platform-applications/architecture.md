@@ -8,10 +8,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
 ms.openlocfilehash: 25cd374ef2b3026f5ac7242ee076c8593ce806da
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="part-2---architecture"></a>第 2 部-架構
 

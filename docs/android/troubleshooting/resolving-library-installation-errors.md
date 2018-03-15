@@ -7,12 +7,12 @@ ms.assetid: 2AE68ACE-8496-445D-BF17-5E4097D4AE35
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 5589d512f9a4ee9c1148810f36fee12d561f725c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/14/2018
+ms.openlocfilehash: 66555139cfaab2074e7461be737f997a9bb9c7a7
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="resolving-library-installation-errors"></a>解析程式庫安裝錯誤
 
@@ -104,7 +104,7 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     -   [android\_m2repository\_r16.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A83087881EE6
 
-    如果**m2repository**封存不會顯示在此資料表中，您可以建立的下載 URL 前面加上**https://dl-ssl.google.com/android/repository/**名稱**m2repository**下載。 例如，使用**https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip**下載**android\_m2repository\_r10.zip**.
+    如果**m2repository**封存不會顯示在此資料表中，您可以建立的下載 URL 前面加上 **https://dl-ssl.google.com/android/repository/** 名稱**m2repository**下載。 例如，使用 **https://dl-ssl.google.com/android/repository/android \_m2repository\_r10.zip**下載**android\_m2repository\_r10.zip**。
 
 2.  將檔案重新命名的上表所示的下載 URL 對應的 MD5 雜湊。 例如，如果您已經下載**android\_m2repository\_r25.zip**，它重新命名為**0B3F1796C97C707339FB13AE8507AF50.zip**。 如果下載檔案的下載 URL 的 MD5 雜湊不會顯示在資料表中，您可以使用[線上 MD5 產生器](http://www.webconfs.com/online-md5-generator.php)將 URL 轉換成 MD5 雜湊字串。 
 
@@ -160,6 +160,8 @@ Unzipping failed. Please download https://dl-ssl.google.com/android/repository/a
     [![23.1.1.0/embedded 資料夾複製檔案的範例](resolving-library-installation-errors-images/09-copied-vs.png)](resolving-library-installation-errors-images/09-copied-vs.png#lightbox)
 
 8.  請確認所有檔案會都遭覆寫。 **內嵌**目錄現在應該會包含檔案這類**d**， **.aar**，和**.pom**。
+
+9.  解壓縮擷取任何**.aar**檔案。 在 Windows 中，附加**.zip**延伸**.aar**檔案，以滑鼠右鍵按一下它，然後選取**全部解壓縮...**，然後移除**.zip**延伸模組。 上 macOS 解壓縮**.aar**檔案使用**解壓縮**命令終端機 (例如，**解壓縮 file.aar**)。
 
 此時，您已手動安裝遺失的元件，應該會無誤建置您的專案。 如果沒有，請確認您已下載**m2repository** **.zip**封存完全對應於錯誤訊息中的版本的版本，並確認您已安裝在其內容上述步驟中所述，請更正的位置。 
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: e9a6f44637b77bf53c3cab00ac5051e6a2f27386
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f14d456cba66142c51e0755cdfd3c6795bd1cf73
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="working-with-jni"></a>使用 JNI
 
@@ -154,7 +154,7 @@ public class HelloAndroid extends android.app.Activity {
 
 一般而言，Xamarin.Android 會自動產生包含 ACW; 的 Java 程式碼類別衍生自的 Java 類別並覆寫現有的 Java 方法時，此層代為基礎的類別和方法名稱。 不過，在某些情況下，程式碼產生不正確的如下所述：
 
--   Android 支援的動作名稱在配置的 xml 屬性，例如[android: onClick](https://developer.xamarin.com/api/member/Android.Views.View+IOnClickListener.OnClick/p/Android.Views.View/) XML 屬性。 當指定時，擴大的檢視執行個體就會嘗試查閱 Java 方法。
+-   Android 支援的動作名稱在配置的 XML 屬性，例如[android: onClick](https://developer.xamarin.com/api/member/Android.Views.View+IOnClickListener.OnClick/p/Android.Views.View/) XML 屬性。 當指定時，擴大的檢視執行個體就會嘗試查閱 Java 方法。
 
 -   [Java.io.Serializable](http://developer.android.com/reference/java/io/Serializable.html)介面需要`readObject`和`writeObject`方法。 沒有這個介面的成員，因為我們對應的 managed 的實作不會公開這些方法來使用 Java 程式碼。
 

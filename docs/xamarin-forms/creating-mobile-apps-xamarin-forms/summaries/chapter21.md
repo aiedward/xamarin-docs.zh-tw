@@ -7,11 +7,11 @@ ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: afb8e2fff58583dc8648c55839649c96cb68b6ba
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: a40b4f00fd2a0dd3f61c4882a2ef25b8eb68a3a5
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-21-transforms"></a>第 21 的摘要。 轉換
 
@@ -19,9 +19,9 @@ Xamarin.Forms 檢視位置和大小取決於其父代，這通常是在螢幕上
 
 Xamarin.Forms 可支援三個基本類型的轉換：
 
-- *轉譯*（& c) 2014; #x 水平或垂直移動項目
-- *標尺*（& c) 2014年 #x; 變更項目的大小
-- *旋轉*（& c) 2014; #x 開啟點或軸周圍的項目
+- *轉譯*&mdash;水平或垂直移動項目
+- *標尺*&mdash;變更項目的大小
+- *旋轉*&mdash;開啟點或軸周圍的項目
 
 透過 Xamarin.Forms，縮放比例是等方向性;它會影響的寬度和高度一致的方式。 同時在二維度介面的螢幕，並在 3D 空間中支援顯示器旋轉。 沒有任何誤差 （或僅只是） 的轉換，而且沒有通用的矩陣轉換。
 

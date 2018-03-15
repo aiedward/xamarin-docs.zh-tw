@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2017
-ms.openlocfilehash: f3dbfb52d4fbcb4dd65f695a862f6b041d2b22c0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4de4517c960395e5d7d5a8fb2c537576e15fc007
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>更新至 NuGet 元件參考
 
@@ -27,6 +27,82 @@ _取代為您元件的參考至未來的使用期限的 NuGet 封裝您的應用
 如果您使用的元件，並不具有對等的 NuGet 封裝，請閱讀[元件不包含 NuGet 移轉路徑](#require-update)下一節。
 
 如需詳細指示，在新增 NuGet 封裝是指這些頁面[Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package)或[Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。
+
+## <a name="opening-a-project-containing-a-component"></a>開啟包含元件的專案
+
+在 11 月版 2017年[宣布](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/)會停止 Xamarin 元件存放區。 若要移轉的元件 sunsetting 努力，15.6 版本的 Visual Studio 和 7.4 版的 Visual Studio for Mac 不再會支援您的專案中的元件。 
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+如果您將專案載入 Visual Studio 時，會顯示下列對話方塊，以說明，您必須移除任何元件從您的專案以手動方式：
+
+![警示對話方塊說明元件專案中找到，且必須移除](component-nuget-images/component-alert-vs.png)
+
+若要從您的專案中移除元件：
+
+1. 開啟.csproj 檔。 若要這樣做，以滑鼠右鍵按一下專案名稱，然後選取**卸載專案**。 
+
+2. 卸載的專案上按一下滑鼠右鍵，然後選取**編輯 {您的專案名稱}.csproj**。
+
+3. 尋找檔案中的任何參考`XamarinComponentReference`。 它看起來應該類似下列的範例：
+
+    ```xml
+    <ItemGroup>
+      <XamarinComponentReference Include="advancedcolorpicker">
+        <Version>2.0.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="gunmetaltheme">
+        <Version>1.4.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="signature-pad">
+        <Version>2.2.0</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+    </ItemGroup>
+    ```
+
+4. 移除參考`XamarinComponentReference`並儲存檔案。 在上述範例中，可以放心移除整個`ItemGroup`。
+
+5. 已儲存檔案，以滑鼠右鍵按一下專案名稱，並選取**重新載入專案**。
+
+6. 您的方案中每個專案重複上述步驟。
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+如果適用於 Mac 的專案載入 Visual Studio 中，會顯示下列對話方塊，以說明，您必須移除任何元件從您的專案以手動方式：
+
+![警示對話方塊說明元件專案中找到，且必須移除](component-nuget-images/component-alert.png)
+
+若要從您的專案中移除元件：
+
+1. 開啟.csproj 檔。 若要這樣做，以滑鼠右鍵按一下專案名稱，然後選取**工具 > 編輯檔案**。
+
+2. 尋找檔案中的任何參考`XamarinComponentReference`。 它看起來應該類似下列的範例：
+
+    ```xml
+    <ItemGroup>
+      <XamarinComponentReference Include="advancedcolorpicker">
+        <Version>2.0.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="gunmetaltheme">
+        <Version>1.4.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="signature-pad">
+        <Version>2.2.0</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+    </ItemGroup>
+    ```
+
+3. 移除參考`XamarinComponentReference`並儲存檔案。 在上述範例中，可以放心移除整個 `ItemGroup`
+
+4. 您的方案中每個專案重複上述步驟。 
+
+-----
 
 <a name="contain" />
 

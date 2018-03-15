@@ -8,11 +8,11 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 5b09621f1d3a24f8061e5cd6551dd85ce93e36e3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 10f741e853603ef22cd45004a6c726ae579f3675
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="drawing-a-simple-circle"></a>繪製簡單的圓形
 
@@ -146,7 +146,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `SKPaint`物件是比的繪圖屬性的集合。 這些物件是非常輕微。 您可以重複使用`SKPaint`像此程式會執行，或者您可以建立多個`SKPaint`各種組合繪製屬性的物件。 您可以建立並初始化這些物件的外部`PaintSurface`事件處理常式，而且您可以將它們儲存成欄位頁面類別中。
 
-雖然指定的圓形外框的寬度為 25 像素為單位 & #x 2014;或四分之一圓形 & #x 2014; 半徑的它似乎是越窄，而且做的原因： 線條的半形遮住藍色圓形。 引數`DrawCircle`方法定義抽象的地理座標的圓形。 藍色內部的大小調整成最接近像素，該維度，但 25 像素寬大綱跨越幾何圓形 & #x 2014;內部和外部一半一半。
+雖然為圓形的外框的寬度指定為 25 個像素&mdash;或四分之一圓形的半徑的&mdash;它似乎是越窄，而且做的原因： 線條的半形遮住藍色圓形。 引數`DrawCircle`方法定義抽象的地理座標的圓形。 藍色內部的大小調整成最接近像素，該維度，但 25 像素寬大綱跨越幾何圓形&mdash;內部和外部一半一半。
 
 中的下一個範例[整合 xamarin.forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)文件會以視覺化方式示範。
 

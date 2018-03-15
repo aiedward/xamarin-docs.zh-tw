@@ -8,11 +8,11 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: cc21f789d96f9375655766916f80c6f3f524c29d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 7d50e5a33020de822f96a8bf2f713a8c5b9d3020
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="svg-path-data"></a>SVG 路徑資料
 
@@ -178,7 +178,7 @@ public class PathDataHelloPage : ContentPage
 
 請注意，`M`開始的最後一個分佈的命令將位置設為點 350 （50），也就是左邊的垂直中央的那一邊 ' o '。 第一個數字下列所示`A`命令時，省略符號有水平半徑為 25 和 50 垂直半徑。 結束點由數字中的最後一個配對`A`命令，其表示的點 （300，49.9）。 這是刻意只要稍有不同的開始點。 如果端點設定為起始點，將不會轉譯弧線。 若要繪製完整橢圓形，您必須設定端點關閉 （但不是等於） 起始點，或者您必須使用兩個或多個`A`命令，每個完整的橢圓形的一部分。
 
-您可能想要在頁面的建構函式，新增下列陳述式，然後設定 中斷點檢查結果的字串：
+您可能想要在頁面的建構函式，新增下列陳述式，然後設定 [中斷點檢查結果的字串：
 
 ```csharp
 string str = helloPath.ToSvgPathData();
@@ -423,7 +423,7 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-特殊項目是第二個手中，不過。 因為時鐘會更新每隔 16 毫秒，`Millisecond`屬性`DateTime`值可能用第二個手動動畫掃掠，而不是一個不連續的跳躍點移動至第二個第二個。 但是，這段程式碼不允許順暢移動。 相反地，它會使用 Xamarin.Forms [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/)和[ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/)動畫的 easing 函式的不同種類的移動。 這些 easing 函式會導致秒針 jerkier 方式 & #x 2014; 中移動提取回很小之前它會移動，然後稍微過度疑難排解不幸的，其目的地，效果無法重現這些靜態螢幕擷取畫面中：
+特殊項目是第二個手中，不過。 因為時鐘會更新每隔 16 毫秒，`Millisecond`屬性`DateTime`值可能用第二個手動動畫掃掠，而不是一個不連續的跳躍點移動至第二個第二個。 但是，這段程式碼不允許順暢移動。 相反地，它會使用 Xamarin.Forms [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/)和[ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/)動畫的 easing 函式的不同種類的移動。 這些 easing 函式會導致 jerkier 方式移動秒針&mdash;提取回很小之前它會移動，然後稍微過度疑難排解不幸的，其目的地，效果無法重現這些靜態螢幕擷取畫面中：
 
 [![](path-data-images/prettyanalogclock-small.png "很類比時鐘頁面的三個螢幕擷取畫面")](path-data-images/prettyanalogclock-large.png#lightbox "的非常類比時鐘頁面 Triple 螢幕擷取畫面")
 

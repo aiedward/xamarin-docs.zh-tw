@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 650f8dceebb088b3601c21c1f5373fc4ae8c76dc
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c309fb6936296dc181e499c91770ab8891121e9c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>使用認知的服務加入智慧
 
@@ -52,51 +52,20 @@ _Microsoft 認知服務是一組應用程式開發介面、 Sdk 和藉由新增�
 
 範例應用程式的可攜式類別程式庫 (PCL) 專案包含五個主要的資料夾：
 
-<table>
-    <thead>
-        <tr><td><strong>Folder</strong></td><td><strong>用途</strong></td></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>模型</strong></td>
-            <td>包含應用程式的資料模型類別。 這包括<code>TodoItem</code>類別，為模型使用的應用程式資料的單一項目。 此資料夾也包含用來從不同的 Microsoft 認知服務 Api 傳回的模型 JSON 回應的類別。</td>
-        </tr>
-        <tr>
-            <td><strong>儲存機制</strong></td>
-                        <td>包含<code>ITodoItemRepository</code>介面和<code>TodoItemRepository</code>用來執行資料庫作業的類別。</td>
-        </tr>
-        <tr>
-            <td><strong>服務</strong></td>
-                        <td>包含介面和類別，用來存取不同 Microsoft 認知服務 Api，以及使用的介面<code>DependencyService</code>類別，以找出在平台專案中實作介面的類別。</td>
-        </tr>
-        <tr>
-            <td><strong>公用程式</strong></td>
-            <td>包含<code>Timer</code>類別，由<code>AuthenticationService</code>類別，以更新 JWT 存取權杖每隔 9 分鐘。</td>
-        </tr>
-        <tr>
-            <td><strong>檢視</strong></td>
-            <td>包含應用程式的網頁。</td>
-        </tr>
-    </tbody>
-</table>
+|資料夾|用途|
+|--- |--- |
+|模型|包含應用程式的資料模型類別。 這包括`TodoItem`類別，為模型使用的應用程式資料的單一項目。 此資料夾也包含用來從不同的 Microsoft 認知服務 Api 傳回的模型 JSON 回應的類別。|
+|儲存機制|包含`ITodoItemRepository`介面和`TodoItemRepository`用來執行資料庫作業的類別。|
+|服務|包含介面和類別，用來存取不同 Microsoft 認知服務 Api，以及使用的介面`DependencyService`類別，以找出在平台專案中實作介面的類別。|
+|公用程式|包含`Timer`類別，由`AuthenticationService`類別，以更新 JWT 存取權杖每隔 9 分鐘。|
+|檢視|包含應用程式的網頁。|
 
 PCL 專案也包含一些重要的檔案：
 
-<table>
-    <thead>
-      <tr><td><strong>檔案</strong></td><td><strong>用途</strong></td></tr>
-    <thead>
-    <tbody>
-        <tr>
-            <td><strong>Constants.cs</strong></td>
-            <td><code>Constants</code>類別，適用於 Microsoft 認知服務 Api 叫用指定的 API 金鑰和端點。 API 金鑰常數需要更新以存取不同的認知服務 Api。
-        </tr>
-        <tr>
-          <td><strong>App.xaml.cs</strong></td>
-          <td><code>App</code>類別會負責這兩個的第一頁會顯示每個平台上的應用程式具現化和<code>TodoManager</code>用來叫用的資料庫作業的類別。</td>
-        </tr>
-    </tbody>
-</table>
+|檔案|用途|
+|--- |--- |
+|Constants.cs|`Constants`類別，適用於 Microsoft 認知服務 Api 叫用指定的 API 金鑰和端點。 API 金鑰常數需要更新以存取不同的認知服務 Api。|
+|App.xaml.cs|`App`類別會負責這兩個的第一頁會顯示每個平台上的應用程式具現化和`TodoManager`用來叫用的資料庫作業的類別。|
 
 ### <a name="nuget-packages"></a>NuGet 封裝
 

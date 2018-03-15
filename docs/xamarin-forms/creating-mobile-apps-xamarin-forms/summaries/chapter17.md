@@ -7,11 +7,11 @@ ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 09f63dd418ea1fb523c028edb02c28c22bfdccd1
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4f76b1060ee8a672319683525470aee00e3db001
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>第 17 章的摘要。 主控方格
 
@@ -29,16 +29,16 @@ ms.lasthandoff: 03/12/2018
 
 在 XAML 中、 [ `GridLengthTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLengthTypeConverter/)轉換成的簡單的文字字串`GridLength`值。 在幕後[`GridLength`建構函式](https://developer.xamarin.com/api/constructor/Xamarin.Forms.GridLength.GridLength/p/System.Double/Xamarin.Forms.GridUnitType/)建立`GridLength`值根據數字和類型的值[ `GridUnitType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/)，具有三個成員的列舉：
 
-- [`Absolute`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Absolute/) （& c) 2014; #x裝置獨立單位 （必須是在 XAML 中的數字） 中指定寬度或高度
-- [`Auto`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Auto/) （& c) 2014; #x高度或寬度是資料格內容 （在 XAML 中為 「 自動 」） 為基礎的自動調整大小
-- [`Star`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Star/) （& c) 2014; #x剩餘的高度或寬度會按比例配置 (的數字 」\*"，稱為*星狀*，在 XAML 中)
+- [`Absolute`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Absolute/) &mdash; 裝置獨立單位 （必須是在 XAML 中的數字） 中指定寬度或高度
+- [`Auto`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Auto/) &mdash; 高度或寬度是資料格內容 （在 XAML 中為 「 自動 」） 為基礎的自動調整大小
+- [`Star`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Star/) &mdash; 剩餘的高度或寬度會按比例配置 (的數字 」\*"，稱為*星狀*，在 XAML 中)
 
-每個子系的`Grid`也必須指派資料列和資料行 （明確或隱含）。 跨越資料列和資料行範圍是選擇性的。 這些被指定所有可繫結屬性 & #x 2014; 使用連接屬性所定義的`Grid`但設定的子系上`Grid`。 `Grid` 定義四個靜態連結可繫結屬性：
+每個子系的`Grid`也必須指派資料列和資料行 （明確或隱含）。 跨越資料列和資料行範圍是選擇性的。 這些所有使用指定的連接可繫結屬性&mdash;屬性所定義的`Grid`但設定的子系上`Grid`。 `Grid` 定義四個靜態連結可繫結屬性：
 
-- [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) （& c) 2014; #x以零為起始的資料列。預設值為 0
-- [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) （& c) 2014; #x以零為起始的資料行;預設值為 0
-- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) （& c) 2014; #x數字的資料列的子系跨越;預設值為 1
-- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) （& c) 2014; #x數字資料行的子系跨越;預設值為 1
+- [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) &mdash; 以零為起始的資料列。預設值為 0
+- [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) &mdash; 以零為起始的資料行;預設值為 0
+- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) &mdash; 數字的資料列的子系跨越;預設值為 1
+- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) &mdash; 數字資料行的子系跨越;預設值為 1
 
 在程式碼中，程式可以使用八個靜態方法，以設定和取得這些值：
 

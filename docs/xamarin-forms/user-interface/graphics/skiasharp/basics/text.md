@@ -8,11 +8,11 @@ ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 1cb6b6fcd8a9d02910842eb3eba966fce281d977
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 1d174e441cd46255d62283521e7db2802b49072f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="integrating-text-and-graphics"></a>將文字和圖形的整合
 
@@ -61,13 +61,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 `Left`和`Top`屬性`SKRect`結構表示所呈現文字的左上角的座標，如果文字顯示`DrawText`以呼叫為 0 的 X 和 Y 位置。 例如，當此程式上執行 iPhone 7 模擬器，`TextSize`指派計算後的第一個呼叫的結果值 90.6254 `MeasureText`。 `SKRect`值取自第二個呼叫`MeasureText`具有下列屬性值：
 
 - `Left` = 6
-- `Top` = &#x2013;68
+- `Top` = &ndash;68
 - `Width` = 664.8214
 - `Height` = 88;
 
-請記住 X 和 Y 座標您傳遞給`DrawText`方法指定的基準文字左邊。 `Top`值會指出文字會擴充該基準和 （減去 68 it 從 88） 上方的 68 像素低於基準 20 像素為單位。 `Left` 6 的值會指出文字開始右邊的 X 值的 6 個像素`DrawText`呼叫。 這可讓一般字元的間距。 如果您想要顯示的左上角 snugly 顯示文字，傳遞這些否定`Left`和`Top`值的 X 和 Y 座標的`DrawText`，在此範例中，& #x 2013; 6 和 68。
+請記住 X 和 Y 座標您傳遞給`DrawText`方法指定的基準文字左邊。 `Top`值會指出文字會擴充該基準和 （減去 68 it 從 88） 上方的 68 像素低於基準 20 像素為單位。 `Left` 6 的值會指出文字開始右邊的 X 值的 6 個像素`DrawText`呼叫。 這可讓一般字元的間距。 如果您想要顯示的左上角 snugly 顯示文字，傳遞這些否定`Left`和`Top`值的 X 和 Y 座標的`DrawText`，在此範例中， &ndash;6 和 68。
 
-`SKRect`結構會定義數個實用的屬性和方法，其中一部分中的其餘部分使用`PaintSurface`處理常式。 `MidX`和`MidY`值表示中心之矩形的座標。 (在 iPhone 7 範例中，這些值是 338.4107 和 & #x 2013年; 24。)下列程式碼會在顯示的文字置中座標的最簡單的計算中使用這些值：
+`SKRect`結構會定義數個實用的屬性和方法，其中一部分中的其餘部分使用`PaintSurface`處理常式。 `MidX`和`MidY`值表示中心之矩形的座標。 (在 iPhone 7 範例中，這些值是 338.4107 和&ndash;24。)下列程式碼會在顯示的文字置中座標的最簡單的計算中使用這些值：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

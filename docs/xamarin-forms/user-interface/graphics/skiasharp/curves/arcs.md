@@ -8,11 +8,11 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 390c8f4634ea38ecb93e3f21175db00fef27b8e4
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 739efa994f172a7a1de82ac02d1c10b0d80f4c30
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>繪製弧形的三種方式
 
@@ -238,7 +238,7 @@ public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 
 ![](arcs-images/tangentarcconnectinglines.png "連接的正切函數弧線的三個點的線條")
 
-如果三個點都 colinear & #x 2014;也就是說，如果它們位於相同的直線 & #x 2014;會不繪製任何弧形。
+如果三個點 colinear&mdash;亦即，如果它們位於相同的直線&mdash;沒有弧線要繪製。
 
 `ArcTo`方法還包括`radius`參數。 這會定義圓形的半徑：
 

@@ -8,17 +8,17 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2017
-ms.openlocfilehash: facdcb6231b77714d6f5d0c7d496db12f75b1d08
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 921697657397662e92fb72c32e6efcc31745d7f1
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="bitmap-basics"></a>點陣圖的基本概念
 
 _從各種來源載入點陣圖並加以顯示。_
 
-龐大的 SkiaSharp 中的點陣圖支援。 本文章涵蓋只基本概念 & #x 2014;如何載入點陣圖以及如何顯示它們：
+龐大的 SkiaSharp 中的點陣圖支援。 本文件涵蓋的基本概念&mdash;如何載入點陣圖，以及如何顯示它們：
 
 ![](bitmaps-images/bitmapssample.png "顯示的兩個點陣圖")
 
@@ -207,7 +207,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](bitmaps-images/basicbitmaps-small.png "三個基本點陣圖頁面的螢幕擷取畫面")](bitmaps-images/basicbitmaps-large.png#lightbox "三個基本點陣圖頁面的螢幕擷取畫面")
 
-第三個影像 & #x 2014;如果您執行程式，並從您自己的圖片庫 & #x 2014; 載入相片，只可以看到也會顯示在矩形中，但該矩形的位置和大小會調整，以維持點陣圖的長寬比。 此計算會稍微更為複雜，因為它需要計算縮放比例根據點陣圖和目的地矩形的大小和置中以該區域的矩形：
+第三個影像&mdash;只可以看到您執行程式並從您自己的圖片庫載入相片&mdash;也會顯示在矩形中，但該矩形的位置和大小會調整，以維持點陣圖的長寬比。 此計算會稍微更為複雜，因為它需要計算縮放比例根據點陣圖和目的地矩形的大小和置中以該區域的矩形：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

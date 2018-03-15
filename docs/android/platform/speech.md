@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 7c38ebb6b482f4097a4977accecc4a230d3f3ed3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e8e56afbdf0b68ecc49a89b08b2e67a9715f2aef
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="android-speech"></a>Android 的語音
 
@@ -128,11 +128,11 @@ protected override void OnActivityResult(int requestCode, Result resultVal, Inte
 
 ### <a name="step-1---instantiating-texttospeech"></a>步驟 1-具現化 TextToSpeech
 
-`TextToSpeech` 可能需要最多 3 個參數前, 兩個是必要項目，第三個為選擇性 (`AppContext`， `IOnInitListener`， `engine`)。 接聽程式用來繫結的服務和失敗的測試與正在任意數目的最少的可用 Android 則文字轉換語音引擎的引擎，裝置會 Google 自己引擎。
+`TextToSpeech` 可能需要最多 3 個參數前, 兩個是必要項目，第三個為選擇性 (`AppContext`， `IOnInitListener`， `engine`)。 接聽程式用來繫結的服務和失敗的測試與正在使用 Android 的文字轉換語音引擎的引擎。 最少，裝置必須 Google 自己引擎。
 
 ### <a name="step-2---finding-the-languages-available"></a>步驟 2-尋找可用的語言
 
-`Java.Util.Locale`命名空間包含有用的方法呼叫`GetAvailableLocales()`。 針對已安裝的語言可以測試此清單中的語音引擎所支援的語言。
+`Java.Util.Locale`類別包含有用的方法呼叫`GetAvailableLocales()`。 針對已安裝的語言可以測試此清單中的語音引擎所支援的語言。
 
 它是毫無用處產生的 「 了解 「 語言清單。 一律會以預設語言 （使用者設定當他們第一次設定他們的裝置語言），因此在此範例`List<string>`"Default"做為第一個參數，清單的其餘部分將依據的結果會填滿`textToSpeech.IsLanguageAvailable(locale)`。
 
@@ -186,7 +186,7 @@ protected override void OnActivityResult(int req, Result res, Intent data)
 
 ### <a name="step-5---the-ioninitlistener"></a>步驟 5-IOnInitListener
 
-活動無法轉換文字轉換語音，介面方法`OnInit`已建立 (這是指定的具現化的第二個參數`TextToSpeech`類別)。 這會初始化接聽程式，並測試結果。
+活動無法轉換文字轉換語音，介面方法`OnInit`已實作 (這是指定的具現化的第二個參數`TextToSpeech`類別)。 這會初始化接聽程式，並測試結果。
 
 接聽程式應該測試兩個`OperationResult.Success`和`OperationResult.Failure`最少。
 下列範例顯示只：

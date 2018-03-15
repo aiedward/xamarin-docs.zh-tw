@@ -7,11 +7,11 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: e5b0cd151d282869cc9272f5ea3b0a83a6d04369
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: eb6d49433974a5e4e7bda69651508d5e9006a78e
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="overview"></a>總覽
 
@@ -70,7 +70,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 <a name="howitworks" />
 
-# <a name="how-binding-works"></a>繫結如何運作
+## <a name="how-binding-works"></a>繫結如何運作
 
 您可使用[[註冊]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/)屬性[[匯出]](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/)屬性，和[手動 Objective C 選取器引動過程](~/ios/internals/objective-c-selectors.md)一起，以手動方式繫結新 （先前未繫結） Objective C 類型。
 

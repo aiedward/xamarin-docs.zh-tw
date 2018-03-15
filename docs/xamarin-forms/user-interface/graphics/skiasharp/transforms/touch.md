@@ -8,11 +8,11 @@ ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 16e9423c84e591e15a703b4d5bb204a8b642bb40
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 90be80d42c20ca7509037b5f59b34cc1bddde6de
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="touch-manipulations"></a>觸控操作
 
@@ -193,7 +193,7 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-如果`HitTest`方法會傳回`true`（& c) 2014年 #x; 表示手指有接觸到的螢幕點陣圖 & #x 2014; 所佔用的區域內，則 touch ID 加入至`TouchIds`集合。 此 ID 代表該手指觸控事件的順序，直到從螢幕上手指，拿起。 如果多個手指觸控的點陣圖，然後在`touchIds`集合包含每個手指觸控識別碼。
+如果`HitTest`方法會傳回`true`&mdash;表示手指有接觸到的螢幕點陣圖所佔用的區域內&mdash;則 touch ID 加入至`TouchIds`集合。 此 ID 代表該手指觸控事件的順序，直到從螢幕上手指，拿起。 如果多個手指觸控的點陣圖，然後在`touchIds`集合包含每個手指觸控識別碼。
 
 `TouchAction`處理常式也會呼叫`ProcessTouchEvent`類別`TouchManipulationBitmap`。 這是 where 某些 （但並非全部） 的真實觸控進行處理。
 
@@ -404,7 +404,7 @@ class TouchManipulationManager
 
 每當您已選取旋轉，一個手指和兩個單指操作方法先行處理旋轉。 如果偵測到任何旋轉時，會有效地移除的旋轉元件。 剩下會解譯為移動瀏覽和縮放比例。
 
-以下是`OneFingerManipulate`方法。 如果尚未啟用一個單指旋轉，則邏輯是簡單 & #x 2014;它會直接使用新的點與前一個點來建構名為向量`delta`對應的精確地轉譯。 具有一個單指旋轉啟用，此方法會使用角度從樞紐分析點 （點陣圖的中心） 至新的點與前一個點來建構一個旋轉矩陣：
+以下是`OneFingerManipulate`方法。 如果尚未啟用一個單指旋轉，則其邏輯相當簡單&mdash;它會直接使用新的點與前一個點來建構名為向量`delta`對應的精確地轉譯。 具有一個單指旋轉啟用，此方法會使用角度從樞紐分析點 （點陣圖的中心） 至新的點與前一個點來建構一個旋轉矩陣：
 
 ```csharp
 class TouchManipulationManager

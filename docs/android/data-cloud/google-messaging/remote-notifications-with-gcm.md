@@ -7,12 +7,12 @@ ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 64961e9c45c28ede4cc84f7b978da565be4426d9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: 823fad163e837adab5490446c23ab2f492679114
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>遠端使用 Google 雲端訊息的通知
 
@@ -507,32 +507,12 @@ SendNotification (message);
 
 讓我們看看此 XML 中的每個設定的作用：
 
-<table>
-    <thead>
-        <tr>
-            <th>設定</th>
-            <th>描述</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>com.google.android.gms.gcm.GcmReceiver</code></td>
-            <td>宣告我們的應用程式實作 GCM 接收器，以便擷取和處理內送的推播通知訊息。</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.permission.SEND</code></td>
-            <td>宣告，只有 GCM 伺服器可以直接傳送訊息給應用程式。</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.intent.RECEIVE</code></td> 
-            <td>意圖廣告，我們的應用程式會處理來自 GCM 的廣播的訊息的篩選條件。</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.intent.REGISTRATION</code></td>
-            <td>意圖篩選通知，我們的應用程式會處理新的註冊方式 （也就是我們已經實作的執行個體識別碼接聽程式服務）。</td>
-        </tr>
-    </tbody>
-</table>
+|設定|描述|
+|---|---|
+|`com.google.android.gms.gcm.GcmReceiver`|宣告我們的應用程式實作 GCM 接收器，以便擷取和處理內送的推播通知訊息。|
+|`com.google.android.c2dm.permission.SEND`|宣告，只有 GCM 伺服器可以直接傳送訊息給應用程式。|
+|`com.google.android.c2dm.intent.RECEIVE`|意圖廣告，我們的應用程式會處理來自 GCM 的廣播的訊息的篩選條件。|
+|`com.google.android.c2dm.intent.REGISTRATION`|意圖篩選通知，我們的應用程式會處理新的註冊方式 （也就是我們已經實作的執行個體識別碼接聽程式服務）。|
 
 或者，您可以在其中裝飾`GcmListenerService`這些屬性，而不是 XML; 在這裡我們指定在**AndroidManifest.xml** ，讓您更輕鬆地遵循程式碼範例。 
 

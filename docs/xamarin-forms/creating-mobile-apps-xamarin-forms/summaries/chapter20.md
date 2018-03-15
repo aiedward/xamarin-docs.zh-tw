@@ -7,11 +7,11 @@ ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 86ae56fc2baac3eab0fbf375c5f67f7b2327721a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0ac316bc2cef04a80958c047427845dbdcc4137f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第 20 的摘要。 非同步和檔案 I/O
 
@@ -65,7 +65,7 @@ ms.lasthandoff: 03/12/2018
 
 ### <a name="good-news-and-bad-news"></a>好消息和壞處
 
-Xamarin.Forms 支援應用程式本機儲存體 & #x 2014; 支援的平台應用程式的私人儲存體。
+Xamarin.Forms 支援應用程式本機儲存體所支援的平台&mdash;是私用應用程式的儲存體。
 
 Xamarin.iOS 和 Xamarin.Android 程式庫包含 Xamarin 已明確量身訂做的這些兩個平台的.NET 的版本。 其中包括從類別`System.IO`可用來執行與應用程式的本機儲存體的檔案 I/O 的這兩個平台。
 
@@ -117,7 +117,7 @@ Windows 執行階段執行的程式使用中的類別[ `Windows.Storage` ](https
 
 ### <a name="keeping-it-in-the-background"></a>保留在背景中
 
-對多個非同步方法 & #x 2014; 發出呼叫的程式庫中的方法例如`WriteFileAsync`和`ReadFileASync`Windows 執行階段中的方法[ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs)類別 & #x 2014; 可以進行稍微更有效率地使用[ `ConfigureAwait` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task%3CTResult%3E.ConfigureAwait/p/System.Boolean/)方法避免在使用者介面執行緒中切換回。
+多個非同步方法呼叫的程式庫中方法&mdash;例如`WriteFileAsync`和`ReadFileASync`Windows 執行階段中的方法[ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs)類別&mdash;可稍微更有效率使用[ `ConfigureAwait` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task%3CTResult%3E.ConfigureAwait/p/System.Boolean/)方法，以避免在使用者介面執行緒中切換回。
 
 ### <a name="dont-block-the-ui-thread"></a>不會阻擋 UI 執行緒 ！
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2017
-ms.openlocfilehash: b0afba90dab5cba4bad385f8d6447d8b83c1de3d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55b83151e9c345096aeb0bfdd686d50c5fde62fd
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="xaml-namespaces"></a>XAML 命名空間
 
@@ -38,40 +38,14 @@ XAML 使用前置詞來宣告非預設的命名空間，以參考型別在命名
 
 下表概述`x`Xamarin.Forms 所支援的命名空間屬性：
 
-<table>
- <thead>
-   <tr>
-     <td><strong>Construct</strong></td>
-     <td><strong>描述</strong></td>
-   </tr>
- </thead>
- <tbody>
-   <tr>
-     <td><code>x:Arguments</code></td>
-     <td>指定非預設建構函式或 factory 方法物件宣告的建構函式引數。</td>
-   </tr>
-   <tr>
-     <td><code>x:Class</code></td>
-     <td>指定類別，在 XAML 中定義的命名空間和類別名稱。 類別名稱必須符合類別名稱的程式碼後置檔案。 請注意，這個建構只能出現在 XAML 檔案的根項目。</td>
-   </tr>
-   <tr>
-     <td><code>x:FactoryMethod</code></td>
-     <td>指定可以用來初始化物件的 factory 方法。</td>
-   </tr>
-   <tr>
-     <td><code>x:Key</code></td>
-     <td>指定使用者定義的唯一索引鍵中的每個資源<code>ResourceDictionary</code>。 索引鍵的值用來擷取 XAML 資源的方法，和通常是做為引數<code>StaticResource</code>標記延伸。</td>
-   </tr>
-   <tr>
-     <td><code>x:Name</code></td>
-     <td>指定的 XAML 項目執行階段物件名稱。 設定<code>x:Name</code>方式類似於宣告的變數在程式碼中。</td>
-   </tr>
-   <tr>
-     <td><code>x:TypeArguments</code></td>
-     <td>指定的泛型型別建構函式的泛型型別引數。</td>
-   </tr>
- </tbody>
-</table>
+|建構|描述|
+|--- |--- |
+|`x:Arguments`|指定非預設建構函式或 factory 方法物件宣告的建構函式引數。|
+|`x:Class`|指定類別，在 XAML 中定義的命名空間和類別名稱。 類別名稱必須符合類別名稱的程式碼後置檔案。 請注意，這個建構只能出現在 XAML 檔案的根項目。|
+|`x:FactoryMethod`|指定可以用來初始化物件的 factory 方法。|
+|`x:Key`|指定使用者定義的唯一索引鍵中的每個資源`ResourceDictionary`。 索引鍵的值用來擷取 XAML 資源的方法，和通常是做為引數`StaticResource`標記延伸。|
+|`x:Name`|指定的 XAML 項目執行階段物件名稱。 設定`x:Name`方式類似於宣告的變數在程式碼中。|
+|`x:TypeArguments`|指定的泛型型別建構函式的泛型型別引數。|
 
 如需有關`x:Arguments`， `x:FactoryMethod`，和`x:TypeArguments`屬性，請參閱[傳遞引數，在 XAML 中](~/xamarin-forms/xaml/passing-arguments.md)。
 

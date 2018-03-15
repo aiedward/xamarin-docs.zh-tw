@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: f1ce6b62ef13d24148048253700d7b3bff805fad
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6d2e600ccc85f6e72e7f913e7ffb501bf62ff69a
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="path-basics"></a>路徑的基本概念
 
@@ -115,7 +115,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 - `AddPath` 若要加入另一個路徑至目前的路徑
 - [`AddPathReverse`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddPathReverse/p/SkiaSharp.SKPath/) 若要加入另一個路徑以反向方向
 
-請注意，`SKPath`物件會定義只幾何 & #x 2014; 一連串的點和連接。 只有當`SKPath`結合`SKPaint`物件是以特定色彩、 筆劃寬度等呈現的路徑。 此外，請注意，`SKPaint`物件傳遞至`DrawPath`方法所定義的完整路徑的特性。 如果您想要繪製項目需要數個色彩，您必須使用個別的路徑為每個色彩。
+請注意，`SKPath`物件定義的幾何&mdash;一連串的點和連接。 只有當`SKPath`結合`SKPaint`物件是以特定色彩、 筆劃寬度等呈現的路徑。 此外，請注意，`SKPaint`物件傳遞至`DrawPath`方法所定義的完整路徑的特性。 如果您想要繪製項目需要數個色彩，您必須使用個別的路徑為每個色彩。
 
 兩行之間的連線的外觀就像筆觸端點定義的開始和結束的線條的外觀，由定義*筆劃聯結*。 您可以設定這指定[ `StrokeJoin` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeJoin/)屬性`SKPaint`成員[ `SKStrokeJoin` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeJoin/)列舉型別：
 

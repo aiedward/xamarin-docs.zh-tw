@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/12/2017
-ms.openlocfilehash: f448a3ee9c018aa475775a5ac2c614f3e7ddc324
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ab22881f383e00a67fda8d3e8ffc5d9a4f7f993e
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -25,20 +25,7 @@ ms.lasthandoff: 03/09/2018
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-## <a name="xamarin-studio"></a>Xamarin Studio
-
-Xamarin Studio 6.2，可以建立標準的.NET 程式庫專案藉由先建立可攜式程式庫專案：
-
-[![](net-standard-images/xs01-sml.png "建立新的可攜式程式庫專案")](net-standard-images/xs01.png#lightbox)
-
-一旦建立專案之後，以滑鼠右鍵按一下，然後開啟**專案選項**視窗。
-在**一般**專案可以轉換成.NET 標準和設定為使用中的特定版本的區段**平台**下拉式清單：
-
-[![](net-standard-images/xs02-sml.png "將轉換成.NET 標準一般選項")](net-standard-images/xs02.png#lightbox)
-
-您可以接著[建立 NuGet 套件](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library.md)與其他開發人員共用文件庫。
-
-## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac 逐步解說
+## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
 本節逐步解說如何建立及使用.NET 的標準程式庫，使用 Visual Studio for mac。 請參閱完整實作.NET 標準程式庫範例 > 一節。
 
@@ -68,7 +55,7 @@ Xamarin Studio 6.2，可以建立標準的.NET 程式庫專案藉由先建立可
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-## <a name="visual-studio-windows-walkthrough"></a>Visual Studio (Windows) 的逐步解說
+## <a name="visual-studio-2017-windows"></a>Visual Studio 2017 (Windows)
 
 本節逐步解說如何建立及使用.NET 的標準程式庫，使用 Visual Studio。 請參閱完整實作.NET 標準程式庫範例 > 一節。
 
@@ -104,7 +91,3 @@ Xamarin Studio 6.2，可以建立標準的.NET 程式庫專案藉由先建立可
 
 -----
 
-
-## <a name="related-links"></a>相關連結
-
-- [版本資訊](https://developer.xamarin.com/releases/studio/xamarin.studio_6.2/xamarin.studio_6.2/#.NET_Standard_Support)

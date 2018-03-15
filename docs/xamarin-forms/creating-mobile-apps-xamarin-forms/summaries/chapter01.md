@@ -7,11 +7,11 @@ ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 9b60a45cc998743d34d5cadb7750f35e7b965579
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e1d246ea65e88bde07c3d527c18b7850aa09e08b
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 的摘要。 Xamarin.Forms 納入如何？
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 03/12/2018
 
 行動平台為目標時，常會使用此問題。 目前，有兩個主要的行動平台、 Apple Iphone 和 Ipad 執行 iOS 作業系統和 Android 的手機和平板電腦執行的作業系統系列。 另一個重要的平台是 Microsoft 的通用 Windows 平台 (UWP)，可讓單一的程式，以目標為 Windows 10 和 Windows 10 行動裝置。
 
-想要這三個平台為目標的軟體廠商必須處理不同的使用者介面典範、 三個不同的開發環境、 三個不同的程式設計介面，和 （& s) #x 2014年，或許是大部分滑雪 & #x 2014年; 三個不同的程式語言： 適用於 iPhone 和 iPad、 android、 Java 和 C# windows OBJECTIVE-C。
+想要這三個平台為目標的軟體廠商必須處理不同的使用者介面典範、 三個不同的開發環境、 三個不同的程式設計介面，和&mdash;可能最滑雪&mdash;三種不同的程式設計語言： 適用於 iPhone 和 iPad、 android、 Java 和 C# windows OBJECTIVE-C。
 
 ## <a name="the-c-and-net-solution"></a>C# 和.NET 方案
 

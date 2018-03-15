@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: df3692777eaa0791385c9ef3d114fbc8a9ab752e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c489aab66a0aaafeaaeadad0e8b95d451ec1592
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>使用 MonoGame 管線工具
 
@@ -135,7 +135,7 @@ MonoGame 管線工具所能建立內容，針對 iOS 應用程式即使當在 Wi
 .Spritefont 檔案是實際的 XML 檔案的可編輯任何文字編輯器中，包括 Visual Studio for mac。 編輯.spritefont 檔案中的最常見變數包括`FontName`和`Size`屬性：
 
 
-```csharp
+```xml
     <!-- Modify this string to change the font that will be imported. -->
     <FontName>Arial</FontName>
 
@@ -147,7 +147,7 @@ MonoGame 管線工具所能建立內容，針對 iOS 應用程式即使當在 Wi
 我們會以任何文字編輯器開啟檔案。 做為我們**新細明體 36.spritefont**名所示，我們會將保留`FontName`為`Arial`但變更`Size`值設定為`36`:
 
 
-```csharp
+```xml
     <!-- Modify this string to change the font that will be imported. -->
     <FontName>Arial</FontName>   
   

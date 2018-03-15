@@ -6,12 +6,12 @@ ms.assetid: 70ECDDC9-FA40-03B4-BF04-E7CFFFE4260D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/30/2017
-ms.openlocfilehash: 83e58625438a0b50d89ca8dac3e940c8742e5aec
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: e1890575f5c3a5bd2e0c0de0712ba459607e6139
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-android-assets"></a>使用 Android 資產
 
@@ -44,7 +44,7 @@ Visual Studio 必須已設定**建置動作**此檔案**AndroidAsset**:
 
 ## <a name="reading-assets"></a>讀取資產
 
-使用讀取資產[AssetManager](https://developer.xamarin.com/api/type/Android.Content.Res.AssetManager/)。 執行個體`AssetManager`可以存取[資產](https://developer.xamarin.com/api/property/Android.Content.Context.Assets/)屬性`Android.Contet.Context`，例如的活動。
+使用讀取資產[AssetManager](https://developer.xamarin.com/api/type/Android.Content.Res.AssetManager/)。 執行個體`AssetManager`，就可以使用存取[資產](https://developer.xamarin.com/api/property/Android.Content.Context.Assets/)屬性`Android.Content.Context`，例如的活動。
 下列程式碼中，開啟我們**read_asset.txt**資產，讀取內容，並將其使用 TextView 顯示。
 
 ```csharp

@@ -8,11 +8,11 @@ ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: e18ef7c77c1d5c93d53882233c65a56e5567fcd7
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 347ecf72356915714200835263e38519c1ad8a13
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="basic-animation"></a>基本動畫
 
@@ -107,7 +107,7 @@ async Task AnimationLoop()
 
 ```
 
-`while`迴圈一開始會取得從循環時間`Slider`。 這是以秒為單位，例如，5 的時間。 第二個陳述式會計算值為`t`如*時間*。 如`cycleTime`5，`t`會增加從 0 到 1 每隔 5 秒。 引數`Math.Sin`函式中第二個陳述式的範圍從 0 到 2 π 每隔 5 秒。 `Math.Sin`函式傳回值，這個值為 0，然後以 1 & #x 2013年，則為 1 和 0 每 5 秒，但速度更慢變更時的值是 1 或-1 的值範圍從 0。 值 1 加入的值永遠為正數，因此然後它會除以 2，因此值範圍是從 ½ 設為 1，0 到 ½，但大約 1 和 0 值時，速度較慢的 ½。 這存放在`scale` 欄位中，而`SKCanvasView`失效。
+`while`迴圈一開始會取得從循環時間`Slider`。 這是以秒為單位，例如，5 的時間。 第二個陳述式會計算值為`t`如*時間*。 如`cycleTime`5，`t`會增加從 0 到 1 每隔 5 秒。 引數`Math.Sin`函式中第二個陳述式的範圍從 0 到 2 π 每隔 5 秒。 `Math.Sin`函式會傳回值，範圍從 0 到 1 的最下層為 0，然後以&ndash;1 和 0 每 5 秒，但速度更慢變更時的值是 1 或-1 的值。 值 1 加入的值永遠為正數，因此然後它會除以 2，因此值範圍是從 ½ 設為 1，0 到 ½，但大約 1 和 0 值時，速度較慢的 ½。 這存放在`scale` 欄位中，而`SKCanvasView`失效。
 
 `PaintSurface`方法會使用此`scale`來計算兩個橢圓形的軸的值：
 

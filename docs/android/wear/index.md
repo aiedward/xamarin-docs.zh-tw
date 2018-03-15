@@ -7,12 +7,12 @@ ms.assetid: 3BE4A128-2D88-4500-9E48-20375EA99A49
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: ac83b74f39497333de7aa80079784adf61bf2e65
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/13/2018
+ms.openlocfilehash: 5db4c735205753810466c26535ba9e2f525709a8
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="android-wear"></a>Android Wear
 
@@ -44,116 +44,25 @@ Android 損耗是 android 的可供穿戴的裝置，例如智慧型的監看版
 
 您可以找到數[範例](https://developer.xamarin.com/samples/android/Android%20Wear/)使用 Android 戴上 (或直接移至[github](https://github.com/xamarin/monodroid-samples/tree/master/wear))。 
 
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-  <thead>
-      <th>
-          <strong>範例</strong>
-      </th>
-      <th>
-          <strong>說明</strong>
-      </th>
-      <th>
-          <strong>螢幕擷取畫面</strong>
-      </th>
-  </thead>
-  <tbody>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/SkeletonWear/">SkeletonWear</a>
-      </td>
-      <td valign="top">
-簡單的範例包括 GridViewPager 和互動式通知穿戴專案的基本概念。
-      </td>
-      <td>
-          <img src="Images/skeleton.png" class="tableimg">
-      </td>
-  </tr>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/WatchViewStub/">WatchViewStub</a>
-      </td>
-      <td valign="top">
-偵測到畫面的圖形，並自動載入正確的版面配置的 WatchViewStub 控制項的簡單示範。
-請參閱 WatchViewStub 中的運作方式<b>Resources/layout/main_actvity.xml</b>版面配置。
-      </td>
-      <td>
-          <img src="Images/watchview.png" class="tableimg">
-      </td>
-  </tr>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/RecipeAssistant/">RecipeAssistant</a>
-      </td>
-      <td valign="top">
-示範的損耗通知頁面，配方步驟的形式。 通知建立在<b>RecipeService.cs</b>。
-      </td>
-      <td>
-          <img src="Images/recipeassist.png" class="tableimg">
-      </td>
-  </tr>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/ElizaChat/">ElizaChat</a>
-      </td>
-      <td valign="top">
-有趣的互動 」 個人助理 」 範例會呼叫 Eliza，若要建立使用傳達的回應的交談使用損耗互動式通知。
-      </td>
-      <td>
-          <img src="Images/eliza.png" class="tableimg">
-      </td>
-  </tr>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/GridViewPager/">GridViewPager</a>
-      </td>
-      <td valign="top">
-GridViewPager 實作的 2D 瀏覽模式，其中使用者 swipes 垂直和水平擴展至瀏覽選項和內容。
-      </td>
-      <td>
-          <img src="Images/gridviewpager.png" class="tableimg">
-      </td>
-  </tr>
-  <tr>
-      <td valign="top">
-          <a href="https://developer.xamarin.com/samples/monodroid/wear/WatchFace">WatchFace</a>
-      </td>
-      <td valign="top">
-          <b>WatchFace</b>是類比樣式小時、 分鐘、 與第二個指針的自訂監看式字體。 這個範例會示範如何建立監看式朝服務繪製目前的時間和環境控制代碼的模式和可見度變更事件。 它包含廣播收件者，它可接聽時區變更，並會自動隨之更新的時間。
-      </td>
-      <td>
-          <img src="Images/watchface.png" class="tableimg">
-      </td>
-  </tr>
-  </tbody>
-</table>
+|範例|描述|螢幕擷取畫面|
+|--- |--- |--- |
+|[SkeletonWear](https://developer.xamarin.com/samples/SkeletonWear/)|簡單的範例包括 GridViewPager 和互動式通知穿戴專案的基本概念。|![Skeletonwear 的螢幕擷取畫面](images/skeleton.png)|
+|[WatchViewStub](https://developer.xamarin.com/samples/WatchViewStub/)|偵測到畫面的圖形，並自動載入正確的版面配置的 WatchViewStub 控制項的簡單示範。  請參閱 WatchViewStub 中的運作方式**Resources/layout/main_actvity.xml**版面配置。|![WatchViewStub 的螢幕擷取畫面](images/watchview.png)|
+|[RecipeAssistant](https://developer.xamarin.com/samples/RecipeAssistant/)|示範的損耗通知頁面，配方步驟的形式。 通知被建立在 RecipeService.cs。|![RecipeAssistant 的螢幕擷取畫面](images/recipeassist.png)|
+|[ElizaChat](https://developer.xamarin.com/samples/ElizaChat/)|有趣的互動 」 個人助理 」 範例會呼叫 Eliza，若要建立使用傳達的回應的交談使用損耗互動式通知。|![ElizaChat 的螢幕擷取畫面](images/eliza.png)|
+|[GridViewPager](https://developer.xamarin.com/samples/GridViewPager/)|GridViewPager 實作的 2D 瀏覽模式，其中使用者 swipes 垂直和水平擴展至瀏覽選項和內容。|![GridViewPager 的螢幕擷取畫面](images/gridviewpager.png)|
+|[WatchFace](https://developer.xamarin.com/samples/monodroid/wear/WatchFace)|WatchFace 是類比樣式小時、 分鐘、 與第二個指針的自訂監看式字體。 這個範例會示範如何建立監看式朝服務繪製目前的時間和環境控制代碼的模式和可見度變更事件。 它包含廣播收件者，它可接聽時區變更，並會自動隨之更新的時間。|![WatchFace 的螢幕擷取畫面](images/gridviewpager.png)|
+
 
 ##  <a name="videos"></a>視訊
 
-簽出這些視訊連結，討論 Xamarin.Android 損耗的支援。
+簽出這些視訊連結，討論 Xamarin.Android 損耗的支援：
 
-<table align="center" border="0" cellpadding="1" cellspacing="1">
-    <tr>
-        <td>
-        <a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/"><img src="Images/video-android-l.png" border="0" /></td>
-        <td><a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/">Android L 等等</a>
-        <br />
-Android L Developer Preview 導入的新應用程式開發介面，讓開發人員充分利用，包括材料設計、 通知和新的動畫，等等。</td>
-    </tr>
-    <tr>
-        <td>
-        <a href="https://www.youtube.com/watch?v=80H8tXByZQc"><img src="Images/video-eyes-ears.png" border="0" /></td>
-        <td><a href="https://www.youtube.com/watch?v=80H8tXByZQc">C# 中是在消息和我的眼睛： Google 玻璃和 Android 戴上</a>
-        <br />
-穿戴計算看起來像是項目從以後的將來 （或偵測器小工具時段），但有許多人都已採用此未來今天 ！ C# 開發人員知道這項資訊，並已經有工具和技術來操控穿戴 （從 Evolve 2014) 的裝置。</td>
-    </tr>
-    <tr>
-        <td>
-        <a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU"><img src="Images/video-whats-new.png" border="0" /></td>
-        <td><a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU">Xamarin.Android 中最新消息</a>
-        <br />
-        <i>Android L、 Android 損耗、 Android 的電視、 Android 自動、 材料設計和圖案。這代表什麼您身為 Xamarin 開發人員？</i>從發展 2014年。</td>
-    </tr>
-</table>
+|描述|螢幕擷取畫面|
+|--- |--- |
+|[Android L 和更](http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/) &ndash; Android L Developer Preview 導入的新應用程式開發介面，讓開發人員充分利用，包括材料設計、 通知和新的動畫，等等。|![視訊簡報螢幕擷取畫面](images/video-android-l.png)|
+|[C# 中是在消息和我的眼睛： Google 玻璃和 Android 穿](https://www.youtube.com/watch?v=80H8tXByZQc)&ndash;穿戴計算看起來像是項目從以後的將來 （或偵測器小工具時段），但有許多人都已採用此未來今天 ！ C# 開發人員知道這項資訊，並已經有工具和技術來操控穿戴 （從 Evolve 2014) 的裝置。|![視訊簡報螢幕擷取畫面](images/video-eyes-ears.png)|
+|[新功能 Xamarin.Android](https://www.youtube.com/watch?v=Gpqc2XZIQfU) &ndash; Android L、 Android 穿、 Android 的電視、 Android 自動、 材料設計和圖片; 用途這 Xamarin 開發人員為平均？ 從 Evolve 2014。|![視訊簡報螢幕擷取畫面](Images/video-whats-new.png)|
 
 
 <!--

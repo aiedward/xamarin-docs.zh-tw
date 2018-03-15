@@ -8,17 +8,17 @@ ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 756261db8f82198e6c5a4330a663bbd9965e57f7
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 10b23975fab8aa87019b9d0fed42decdc6adddfb
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="skiasharp-transforms"></a>SkiaSharp 轉換
 
 _深入了解轉換為顯示 SkiaSharp 圖形_
 
-SkiaSharp 支援傳統的圖形會實作為的方法的轉換[ `SKCanvas` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCanvas/)物件。 轉換數學上，變更座標和您在中指定的大小`SKCanvas`呈現圖形物件的繪圖功能。 轉換通常會繪製重複圖形或動畫很方便的。 某些技術 & #x 2014;例如旋轉點陣圖或文字 & #x 2014;不一定要使用的轉換。
+SkiaSharp 支援傳統的圖形會實作為的方法的轉換[ `SKCanvas` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCanvas/)物件。 轉換數學上，變更座標和您在中指定的大小`SKCanvas`呈現圖形物件的繪圖功能。 轉換通常會繪製重複圖形或動畫很方便的。 一些技術&mdash;例如旋轉點陣圖或文字&mdash;不一定要使用的轉換。
 
 SkiaSharp 轉換支援下列作業：
 

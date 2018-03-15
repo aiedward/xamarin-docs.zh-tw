@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 5334465905817336df91f5816596dc5723071811
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d5d5de21c4f397f203b4da5ea86e1f9a0e4714e9
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction"></a>簡介
 
@@ -118,48 +118,16 @@ EShopOnContainers 行動裝置應用程式會執行下列 Xamarin.Forms 功能�
 
 EShopOnContainers 行動裝置應用程式方案會組織專案的原始碼和其他資源。 所有的專案，使用資料夾來組織成類別的原始碼和其他資源。 下表列出構成 eShopOnContainers 行動裝置應用程式的專案：
 
-<table>
-<thead>
-<tr class="header">
-<th>專案</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>eShopOnContainers.Core</td>
-<td>這個專案不包含共用程式碼和共用的 UI 的可攜式類別庫 (PCL) 專案。</td>
-</tr>
-<tr class="even">
-<td>eShopOnContainers.Droid</td>
-<td>此專案會保存 Android 的特定程式碼並 Android 應用程式的進入點。</td>
-</tr>
-<tr class="odd">
-<td>eShopOnContainers.iOS</td>
-<td>此專案保存 iOS 特定程式碼並將 iOS 應用程式的進入點。</td>
-</tr>
-<tr class="even">
-<td>eShopOnContainers.UWP</td>
-<td>此專案包含通用 Windows 平台 (UWP) 的特定程式碼並 for Windows 應用程式的進入點。</td>
-</tr>
-<tr class="odd">
-<td>eShopOnContainers.TestRunner.Droid</td>
-<td>這個專案是 Android 測試執行器 eShopOnContainers.UnitTests 專案。</td>
-</tr>
-<tr class="even">
-<td>eShopOnContainers.TestRunner.iOS</td>
-<td>這個專案是 iOS 測試執行器 eShopOnContainers.UnitTests 專案。</td>
-</tr>
-<tr class="odd">
-<td>eShopOnContainers.TestRunner.Windows</td>
-<td>這個專案是通用 Windows 平台測試執行器 eShopOnContainers.UnitTests 專案。</td>
-</tr>
-<tr class="even">
-<td>eShopOnContainers.UnitTests</td>
-<td>此專案包含 eShopOnContainers.Core 專案的單元測試。</td>
-</tr>
-</tbody>
-</table>
+|專案|描述|
+|--- |--- |
+|eShopOnContainers.Core|這個專案不包含共用程式碼和共用的 UI 的可攜式類別庫 (PCL) 專案。|
+|eShopOnContainers.Droid|此專案會保存 Android 的特定程式碼並 Android 應用程式的進入點。|
+|eShopOnContainers.iOS|此專案保存 iOS 特定程式碼並將 iOS 應用程式的進入點。|
+|eShopOnContainers.UWP|此專案包含通用 Windows 平台 (UWP) 的特定程式碼並 for Windows 應用程式的進入點。|
+|eShopOnContainers.TestRunner.Droid|這個專案是 Android 測試執行器 eShopOnContainers.UnitTests 專案。|
+|eShopOnContainers.TestRunner.iOS|這個專案是 iOS 測試執行器 eShopOnContainers.UnitTests 專案。|
+|eShopOnContainers.TestRunner.Windows|這個專案是通用 Windows 平台測試執行器 eShopOnContainers.UnitTests 專案。|
+|eShopOnContainers.UnitTests|此專案包含 eShopOnContainers.Core 專案的單元測試。|
 
 EShopOnContainers 行動應用程式中的類別可以在使用少量或沒有修改任何 Xamarin.Forms 應用程式中重複使用。
 
@@ -167,76 +135,23 @@ EShopOnContainers 行動應用程式中的類別可以在使用少量或沒有�
 
 EShopOnContainers.Core PCL 專案中包含下列資料夾：
 
-<table>
-<thead>
-<tr class="header">
-<th>資料夾</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Animations</td>
-<td>包含類別，可讓在 XAML 中使用動畫。</td>
-</tr>
-<tr class="even">
-<td>「行為」</td>
-<td>包含會公開至檢視類別的行為。</td>
-</tr>
-<tr class="odd">
-<td>控制項</td>
-<td>包含應用程式所使用的自訂控制項。</td>
-</tr>
-<tr class="even">
-<td>轉換程式</td>
-<td>包含自訂邏輯套用至繫結的值轉換器。</td>
-</tr>
-<tr class="odd">
-<td>效果</td>
-<td>包含<code>EntryLineColorEffect</code>類別，用來變更特定的框線色彩<code>Entry</code>控制項。</td>
-</tr>
-<tr class="even">
-<td>例外狀況</td>
-<td>包含自訂<code>ServiceAuthenticationException</code>。</td>
-</tr>
-<tr class="odd">
-<td>延伸模組</td>
-<td>包含的擴充方法<code>VisualElement</code>和<code>IEnumerable<T> </code>類別。</td>
-</tr>
-<tr class="even">
-<td>協助程式</td>
-<td>包含應用程式的協助程式類別。</td>
-</tr>
-<tr class="odd">
-<td>模型</td>
-<td>包含應用程式的模型類別。</td>
-</tr>
-<tr class="even">
-<td>屬性</td>
-<td>包含<code>AssemblyInfo.cs</code>，.NET 組件中繼資料檔案。</td>
-</tr>
-<tr class="odd">
-<td>服務</td>
-<td>包含介面和實作服務提供給應用程式的類別。</td>
-</tr>
-<tr class="even">
-<td>觸發程序</td>
-<td>包含<code>BeginAnimation</code>觸發程序，用來叫用 XAML 中的動畫。</td>
-</tr>
-<tr class="odd">
-<td>驗證</td>
-<td>包含類別參與驗證資料輸入。</td>
-</tr>
-<tr class="even">
-<td>ViewModels</td>
-<td>包含公開網頁的應用程式邏輯。</td>
-</tr>
-<tr class="odd">
-<td>檢視</td>
-<td>包含應用程式的網頁。</td>
-</tr>
-</tbody>
-</table>
+|資料夾|描述|
+|--- |--- |
+|Animations|包含類別，可讓在 XAML 中使用動畫。|
+|「行為」|包含會公開至檢視類別的行為。|
+|控制項|包含應用程式所使用的自訂控制項。|
+|轉換程式|包含自訂邏輯套用至繫結的值轉換器。|
+|效果|包含`EntryLineColorEffect`類別，用來變更特定的框線色彩`Entry`控制項。|
+|例外狀況|包含自訂`ServiceAuthenticationException`。|
+|延伸模組|包含的擴充方法`VisualElement`和`IEnumerable`類別。|
+|協助程式|包含應用程式的協助程式類別。|
+|模型|包含應用程式的模型類別。|
+|屬性|包含`AssemblyInfo.cs`，.NET 組件中繼資料檔案。|
+|服務|包含介面和實作服務提供給應用程式的類別。|
+|觸發程序|包含`BeginAnimation`觸發程序，用來叫用 XAML 中的動畫。|
+|驗證|包含類別參與驗證資料輸入。|
+|ViewModels|包含公開網頁的應用程式邏輯。|
+|檢視|包含應用程式的網頁。|
 
 ##### <a name="platform-projects"></a>平台專案
 

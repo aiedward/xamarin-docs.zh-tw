@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/07/2017
-ms.openlocfilehash: 0ea6528ce3523ab5d829342e99ccf35ca3d69aa2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 20e8d843b73fca5eb49da21a7f834ebbb52f4aa9
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>遠端 iOS 模擬器 （適用於 Windows)
 
@@ -52,7 +52,7 @@ IOS 模擬器，然後會開啟連接的 Mac 電腦上。 勾選此選項可開�
 - **鎖定**– 鎖定的模擬器 （可以撥動解除鎖定）。
 - **螢幕擷取畫面**– 將模擬器的螢幕擷取畫面儲存至磁碟。
 - [**設定**](#settings) – 設定鍵盤和位置。
- - 其他[**選項**](#options) – 各種不同的模擬器選項可用，例如旋轉、 搖晃，或叫用在模擬器中的其他狀態。 有些選項模糊，當從出現在工具列上，或以滑鼠右鍵按一下視窗上的省略符號圖示就可以存取它們。
+- 其他[**選項**](#options) – 各種不同的模擬器選項可用，例如旋轉、 搖晃，或叫用在模擬器中的其他狀態。 有些選項模糊，當從出現在工具列上，或以滑鼠右鍵按一下視窗上的省略符號圖示就可以存取它們。
 
     [![](ios-simulator-images/maps-app-sml.png "iOS 模擬器對應範例")](ios-simulator-images/maps-app.png#lightbox)
 

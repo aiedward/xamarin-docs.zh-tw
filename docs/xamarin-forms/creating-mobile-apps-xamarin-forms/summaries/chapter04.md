@@ -7,11 +7,11 @@ ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 5ad53d7bc8c4ee54a47c4b327fb6f07bc1906ab9
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 5559f9e6a4baf9d3f82701b5e3f341900ba83bae
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章的摘要。 捲動堆疊
 
@@ -67,9 +67,9 @@ ms.lasthandoff: 03/12/2018
 
 針對垂直`StackLayout`每個子系、 垂直受條件約束，以及取得垂直位置根據子系的高度，在此情況下`VerticalOptions`設定無關。
 
-如果垂直`StackLayout`本身不受限制 （& s) #x 2014;，如果其`VerticalOptions`設定`Start`， `Center`，或`End`的高度`StackLayout`是總其子系的高度。
+如果垂直`StackLayout`本身不受限制&mdash;也就是如果其`VerticalOptions`設定`Start`， `Center`，或`End`的高度`StackLayout`是總其子系的高度。
 
-不過，如果垂直`StackLayout`垂直限制 （& s) #x 2014年; 如果其`VerticalOptions`設定`Fill`& #x 2014; 然後的高度`StackLayout`將為其容器，可能會大於總高度高度及其子系。 如果這種情況下，而且，如果至少一個子系`VerticalOptions`設定`Expands`旗標`true`，再額外的空間`StackLayout`那些與所有子系之間平均配置`Expands`旗標`true`。 子系的總高度會接著等於的高度`StackLayout`，而`Alignment`屬於`VerticalOptions`設定會決定如何在子系垂直放置在其位置。
+不過，如果垂直`StackLayout`垂直限制&mdash;如果其`VerticalOptions`設定`Fill`&mdash;的高度`StackLayout`將為其容器，可能會大於總高度及其子系的高度。 如果這種情況下，而且，如果至少一個子系`VerticalOptions`設定`Expands`旗標`true`，再額外的空間`StackLayout`那些與所有子系之間平均配置`Expands`旗標`true`。 子系的總高度會接著等於的高度`StackLayout`，而`Alignment`屬於`VerticalOptions`設定會決定如何在子系垂直放置在其位置。
 
 這示範於[ **VerticalOptionsDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/VerticalOptionsDemo)範例。
 

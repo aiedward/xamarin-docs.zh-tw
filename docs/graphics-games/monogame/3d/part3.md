@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 861d47d001c10c14a0294536c6122cafb33a93ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e930004a91133f391f68221473f212b7caaf1b07
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="3d-coordinates-in-monogame"></a>3D MonoGame 座標
 
@@ -47,7 +47,7 @@ _了解 3D 座標系統是開發 3D 遊戲的重要步驟。MonoGame 提供數�
 
 開始移動周圍我們機器人之前，我們將建立`Robot`類別包含用於繪圖和移動邏輯。 此封裝的邏輯和資料做為參考遊戲開發人員*實體*。
 
-加入新的空的類別檔案**MonoGame3D**可攜式類別庫 (不平台專屬 ModelAndVerts.Android)。 命名 it * * 機器人 * * 按一下**新增**:
+加入新的空的類別檔案**MonoGame3D**可攜式類別庫 (不平台專屬 ModelAndVerts.Android)。 命名**機器人**按一下**新增**:
 
 ![](part3-images/image3.png "機器人將它命名，並按一下 [新增]")
 

@@ -8,11 +8,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 2b48667d90bf994deca5c41080e002974b0ded91
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dcfcf43c89f26b4e721c9752b9cbad1f4a30cfc2
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>三種類型的貝茲曲線
 
@@ -20,7 +20,7 @@ _探索如何使用 SkiaSharp 轉譯三次方、 二次方，和 conic 貝茲曲
 
 貝茲曲線命名匹貝茲 (1910年 – 1999) 的法文工程師，在汽車公司 Renault 使用電腦輔助設計車內文的曲線。
 
-貝茲曲線的互動式的設計適合已知： 它們是知名的行為 & #x 2014;換句話說，沒有 singularities 導致的曲線，以成為無限或變得不便 & #x 2014;它們通常是悅耳。 字元外框輪廓的電腦中的字型，通常被定義的貝茲曲線：
+貝茲曲線的互動式的設計適合已知： 它們是也運作正常&mdash;亦即，不會導致變成無限或變得不便曲線的 singularities &mdash; ，通常是悅耳. 字元外框輪廓的電腦中的字型，通常被定義的貝茲曲線：
 
 ![](beziers-images/beziersample.png "範例貝茲曲線")
 
@@ -411,7 +411,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="the-conic-bzier-curve"></a>Conic 貝茲曲線
 
-Conic 貝茲曲線 & #x 2014;也就是合理的二次方貝茲曲線 & #x 2014;是較新的系列的貝茲曲線新增。 例如二次方貝茲曲線，合理的二次方貝茲曲線牽涉到起點、 結束點和一個控制點。 但也需要合理的二次方貝茲曲線*加權*值。 它會呼叫*合理*二次方，因為參數化的公式都涉及比例。
+Conic 貝茲曲線&mdash;也稱為合理二次方貝茲曲線&mdash;是加入較新的系列的貝茲曲線。 例如二次方貝茲曲線，合理的二次方貝茲曲線牽涉到起點、 結束點和一個控制點。 但也需要合理的二次方貝茲曲線*加權*值。 它會呼叫*合理*二次方，因為參數化的公式都涉及比例。
 
 參數化的方程式 X 和 Y 是共用相同的分母的比例。 以下是對於分母的方程式*t*範圍從 0 到 1 和加權值是*w*:
 
@@ -425,7 +425,7 @@ x(t) = ((1 – t) ²x₀ + 2wt (1-t) x₁ + t²x₂)) ÷ d(t)
 
 y(t) = ((1 – t) ²y₀ + 2wt (1-t) y₁ + t²y₂)) ÷ d(t)
 
-也稱為合理的二次方貝茲曲線*conics*因為它們可以正確地表示的任何 conic 區段 & #x 2014; 區段 hyperbolas、 parabolas、 橢圓形和圓形。
+也稱為合理的二次方貝茲曲線*conics*因為它們只可以代表任何 conic 區段的區段&mdash;hyperbolas、 parabolas、 橢圓形和圓形。
 
 若要新增合理的二次方貝茲曲線的路徑，請使用[ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/)方法或[ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/)分別使用不同的多載`x`和`y`座標：
 

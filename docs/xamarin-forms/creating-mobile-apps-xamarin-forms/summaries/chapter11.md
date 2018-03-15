@@ -7,11 +7,11 @@ ms.assetid: 34671C48-0ED4-4B76-A33D-D6505390DC5B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 6e0f1abf04695dfb5348b631a9fbdbd2c81bc431
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ccae97021e86eb1375f948c5ad126253c6088037
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>第 11 章的摘要。 可繫結基礎結構
 
@@ -47,9 +47,9 @@ Xamarin.Forms 會定義稱為增強的屬性定義*可繫結屬性*由封裝[ `B
 
 當屬性，可繫結的屬性變更，並受到`BindableObject`引發[ `PropertyChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.BindableObject.PropertyChanged/)識別已變更之屬性的事件。 當屬性設定為相同的值，不會引發這個事件。
 
-有些屬性不是支援可繫結的屬性和一些 Xamarin.Forms 類別 & #x 2014;例如`Span`& #x 2014; 不是衍生自`BindableObject`。 只有類別衍生自`BindableObject`支援可繫結的屬性，因為`BindableObject`定義`SetValue`和`GetValue`方法。
+有些屬性不支援可繫結的屬性，以及一些 Xamarin.Forms 類別&mdash;例如`Span`&mdash;不是衍生自`BindableObject`。 只有類別衍生自`BindableObject`支援可繫結的屬性，因為`BindableObject`定義`SetValue`和`GetValue`方法。
 
-因為`Span`不是衍生自`BindableObject`，無其屬性 & #x 2014年; 例如`Text`& #x 2014; 都由可繫結的屬性。 這就是為什麼`DynamicResource`上設定`Text`屬性`Span`引發例外狀況以[ **DynamicVsStatic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic)前面章節中的範例。 [ **DynamicVsStaticCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/DynamicVsStaticCode)範例會示範如何在程式碼中使用設定動態資源[ `SetDynamicResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Element.SetDynamicResource/p/Xamarin.Forms.BindableProperty/System.String/)方法所定義`Element`。 第一個引數是類型的物件`BindableProperty`。
+因為`Span`不是衍生自`BindableObject`，其屬性&mdash;例如`Text`&mdash;都由可繫結的屬性。 這就是為什麼`DynamicResource`上設定`Text`屬性`Span`引發例外狀況以[ **DynamicVsStatic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic)前面章節中的範例。 [ **DynamicVsStaticCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/DynamicVsStaticCode)範例會示範如何在程式碼中使用設定動態資源[ `SetDynamicResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Element.SetDynamicResource/p/Xamarin.Forms.BindableProperty/System.String/)方法所定義`Element`。 第一個引數是類型的物件`BindableProperty`。
 
 同樣地， [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/)方法所定義`BindableObject`有第一個引數的型別`BindableProperty`。
 

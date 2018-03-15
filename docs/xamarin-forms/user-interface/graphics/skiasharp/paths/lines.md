@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: abcda680f6cfbde802f7b666cf2aade2c6e11093
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 341d850709ff27f4dc397cee3bb2fc5f73c0ec3c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="lines-and-stroke-caps"></a>線條和筆觸端點
 
@@ -30,7 +30,7 @@ canvas.DrawLine (x0, y0, x1, y1, paint);
 
 根據預設，`StrokeWidth`屬性的新具現化`SKPaint`物件為 0，其具有值為 1 中呈現一個像素的線條粗細中相同的效果。 因此您可能會想要設定顯示針對高解析度裝置，例如手機，非常細`StrokeWidth`到較大的值。 但是，一旦您開始繪製可調整大小的粗細的線條，會引發另一個問題： 如何應該開始和結束這些粗線的呈現？
 
-啟動和行尾的外觀會呼叫*線條端點*或在 Skia，*筆觸端點*。 在此內容中的 「 cap 」 這個字是指一種 hat & #x 2014;項目置放在桌上一行的結尾。 您設定[ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/)屬性`SKPaint`物件的下列成員的其中一個[ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/)列舉型別：
+啟動和行尾的外觀會呼叫*線條端點*或在 Skia，*筆觸端點*。 在此內容中的 「 cap 」 這個字是指一種 hat&mdash;置放在桌上一行結尾的項目。 您設定[ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/)屬性`SKPaint`物件的下列成員的其中一個[ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/)列舉型別：
 
 - [`Butt`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Butt/) （預設值）
 - [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)

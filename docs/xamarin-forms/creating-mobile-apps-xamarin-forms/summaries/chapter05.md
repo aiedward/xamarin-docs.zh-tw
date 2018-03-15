@@ -7,11 +7,11 @@ ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 1df1751c55c6a031bf9f26d774b739f4ca83fa91
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0c61727e90a03d618a7423e5b865a7fcc9e0b399
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>第 5 章的摘要。 處理大小
 
@@ -42,7 +42,7 @@ Windows 執行階段也已經建立隱含東西接近 160 英吋的裝置獨立�
 - 160 英吋，相當於單位
 - 以公分 64 單位
 
-唯讀[ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/)和[ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/)所定義的屬性`VisualElement`「 模擬 」 值的 & #x 2013; 預設值 1。 已調整和配置中容納項目時，才將這些屬性會反映裝置無關的單位中的項目中的實際大小。 此大小可包含任何`Padding`在元素上設定，但不是`Margin`。
+唯讀[ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/)和[ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/)所定義的屬性`VisualElement`有 「 模擬 」 值的預設&ndash;1。 已調整和配置中容納項目時，才將這些屬性會反映裝置無關的單位中的項目中的實際大小。 此大小可包含任何`Padding`在元素上設定，但不是`Margin`。
 
 視覺項目就會引發[ `SizeChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.SizeChanged/)事件時其`Width`或`Height`已變更。 [ **WhatSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/WhatSize)範例會使用這個事件來顯示程式的螢幕大小。
 
@@ -75,7 +75,7 @@ Windows 執行階段也已經建立隱含東西接近 160 英吋的裝置獨立�
 
 ## <a name="empirically-fitting-text"></a>實證調整文字
 
-以配合文字矩形的另一個方法是實證計算呈現的文字大小，然後向上或向下調整。 中的活頁簿呼叫的程式[ `GetSizeRequest` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/)上視覺化的項目，若要取得的項目所需的大小。 方法已被取代，，和程式應該改為呼叫 [`Measure`] (/ api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/)。
+以配合文字矩形的另一個方法是實證計算呈現的文字大小，然後向上或向下調整。 中的活頁簿呼叫的程式[ `GetSizeRequest` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/)上視覺化的項目，若要取得的項目所需的大小。 方法已被取代，，和程式應該改為呼叫[ `Measure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/)。
 
 如`Label`第一個引數應該是 （可允許換行） 容器的寬度，第二個引數應該設定到`Double.PositiveInfinity`讓未受限的高度。 [ **EmpiricalFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize)範例會示範這項技術。
 

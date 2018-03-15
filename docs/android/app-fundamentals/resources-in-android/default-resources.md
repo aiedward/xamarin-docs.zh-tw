@@ -6,12 +6,12 @@ ms.assetid: 762572F0-173A-D994-0510-8F36BEF3D487
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 3d9c747cdf8e43f33b9310ac1156550066b400eb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: 5cf5bd38612f0f763e30456b0dd42198a3c0ff06
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="default-resources"></a>預設資源
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 03/09/2018
 -  **anim** &ndash;描述的 XML 檔案*tween*動畫。 Tween 動畫是文字的一系列的動畫指示的檢視物件或範例中，旋轉的內容上執行轉換，映像或成長大小。 Tween 動畫會限制為僅檢視物件。
 
 -  **色彩**&ndash;描述狀態色彩的清單的 XML 檔案。 若要了解色彩狀態清單，請考慮 UI 小工具 （例如按鈕）。
-   可能會有不同的狀態，例如按下或停用，以及按鈕可能會變更色彩與每個狀態中的變更。 表示清單狀態清單中。
+   它可能有不同的狀態，例如按下或停用，以及按鈕可能會變更色彩與每個狀態中的變更。 表示清單狀態清單中。
 
 -  **drawable** &ndash; Drawable 資源是圖形可編譯成應用程式，然後透過 API 呼叫或參考其他 XML 資源的一般概念。
    Drawables 的一些範例包括點陣圖檔案 （.png、.gif、.jpg）、 特殊可調整大小的點陣圖，又稱為[九修補程式](https://developer.android.com/guide/topics/graphics/2d-graphics.html#nine-patch)，狀態會列出，等 XML 中定義的泛型圖形。

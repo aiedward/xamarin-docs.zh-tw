@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: d1c4c46b62b95d70dd2832c96ffd2686163990a5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f0e8dabc47352213d18d079ee9f8abb3e557b868
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="binding-objective-c-libraries"></a>繫結 Objective C 程式庫
 
@@ -1514,6 +1514,6 @@ Xamarin.iOS v3.2 為準，我們支援繼承自已標示的通訊協定`[Model]`
 
 在過去我們需要將通訊協定複製到每個實作中，但在這些情況下現在我們可以有`MKShape`類別繼承自`MKOverlay`通訊協定，它將所有需要的方法自動產生。
 
-### <a name="related-links"></a>相關的連結
+## <a name="related-links"></a>相關的連結
 
 - [繫結範例](https://developer.xamarin.com/samples/BindingSample/)
