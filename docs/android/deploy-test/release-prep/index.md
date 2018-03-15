@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 7f36a29b00e0393ac0a2d65e7ebe7d290bbdb89a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e440d5ab9f822277a8c0948a9795b9a030fa268c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="preparing-an-application-for-release"></a>準備可供發行的應用程式
 
-<a name="Compile_the_Application_for_Release" />
 
 應用程式完成編碼和測試之後，必須準備可供散發的套件。 準備此套件的第一項工作是建置可供發行的應用程式，主要是設定一些應用程式屬性。
 
@@ -53,13 +52,13 @@ ms.lasthandoff: 02/27/2018
 
 在 Visual Studio 2015 和更新版本中，透過專案 [屬性] 的 [Android 資訊清單] 區段來指定應用程式圖示，如下列螢幕擷取畫面所示：
 
-[ ![設定應用程式圖示](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png)
+[![設定應用程式圖示](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 在 Visual Studio for Mac 中，也可以透過 [專案選項] 的 [Android 應用程式] 區段來指定應用程式圖示，如下列螢幕擷取畫面所示：
 
-[ ![設定應用程式圖示](images/xs/01-application-icon-sml.png)](images/xs/01-application-icon.png)
+[![設定應用程式圖示](images/xs/01-application-icon-sml.png)](images/xs/01-application-icon.png#lightbox)
 
 -----
 
@@ -77,13 +76,13 @@ ms.lasthandoff: 02/27/2018
 
 在 Visual Studio 中，可在專案 [屬性] 的 [Android 資訊清單] 區段中設定這些值，如下列螢幕擷取畫面所示：
 
-[ ![設定版本號碼](images/vs/02-versioning-sml.png)](images/vs/02-versioning.png)
+[![設定版本號碼](images/vs/02-versioning-sml.png)](images/vs/02-versioning.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 這些值可以透過 [專案選項] 的 [建置] > [Android 應用程式] 區段來設定，如下列螢幕擷取畫面所示：
 
-[ ![設定版本號碼](images/xs/02-versioning-sml.png)](images/xs/02-versioning.png)
+[![設定版本號碼](images/xs/02-versioning-sml.png)](images/xs/02-versioning.png#lightbox)
 
 -----
 
@@ -93,7 +92,6 @@ ms.lasthandoff: 02/27/2018
 
 透過結合會移除不必要受控碼的 Xamarin.Android 連結器和會移除未使用 Java 位元組程式碼 Android SDK 的 *ProGuard* 工具，可讓 Xamarin.Android APK 變小。 建置處理序會先使用 Xamarin.Android 連結器以將受控碼 (C#) 層級的應用程式最佳化，然後使用 ProGuard (已啟用的話) 在 Java 位元組程式碼層級將 APK 最佳化。
 
-<a name="Configure_the_Linker" />
 
 ### <a name="configure-the-linker"></a>設定連結器
 
@@ -107,7 +105,7 @@ ms.lasthandoff: 02/27/2018
 
 透過專案 [屬性] 的 [Android 選項] 區段來設定連結器選項：
 
-[ ![連結器選項](images/vs/03-linking-sml.png)](images/vs/03-linking.png)
+[![連結器選項](images/vs/03-linking-sml.png)](images/vs/03-linking.png#lightbox)
 
 [連結] 下拉式功能表提供下列控制連結器選項：
 
@@ -122,7 +120,7 @@ ms.lasthandoff: 02/27/2018
 
 在 [專案選項] 的 [Android 組建] 區段中，透過 [連結器] 索引標籤來設定連結器選項 ，如下列螢幕擷取畫面所示：
 
-[ ![連結器選項](images/xs/03-linking-sml.png)](images/xs/03-linking.png)
+[![連結器選項](images/xs/03-linking-sml.png)](images/xs/03-linking.png#lightbox)
 
 控制連結器選項如下所示：
 
@@ -136,7 +134,6 @@ ms.lasthandoff: 02/27/2018
 
 連結會產生非預期的副作用，因此務必要在實體裝置上以發行模式重新測試應用程式。
 
-<a name="proguard" />
 
 ### <a name="proguard"></a>ProGuard
 
@@ -148,11 +145,11 @@ ProGuard 並非要替代 Xamarin.Android 連結器。 Xamarin.Android 受控碼�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![ProGuard 建置動作](images/vs/05-proguard-build-action-sml.png)](images/vs/05-proguard-build-action.png)
+[![ProGuard 建置動作](images/vs/05-proguard-build-action-sml.png)](images/vs/05-proguard-build-action.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![ProGuard 建置動作](images/xs/05-proguard-build-action-sml.png)](images/xs/05-proguard-build-action.png)
+[![ProGuard 建置動作](images/xs/05-proguard-build-action-sml.png)](images/xs/05-proguard-build-action.png#lightbox)
 
 -----
 
@@ -228,7 +225,6 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 [AOT 編譯] 選項需要企業授權或更高。 只有將專案設定為 [發行] 模式時才能使用 [AOT 編譯]，且該選項預設為停用。 如需 AOT 編譯的詳細資訊，請參閱 [AOT](http://www.mono-project.com/docs/advanced/aot/) \(英文\)。
 
-<a name="llvm" />
 
 #### <a name="llvm-optimizing-compiler"></a>LLVM 最佳化編譯器
 
@@ -246,31 +242,28 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 封裝屬性可以在專案 [屬性] 的 [Android 選項] 區段中設定，如下列螢幕擷取畫面所示：
 
-[ ![封裝屬性](images/vs/04-packaging-sml.png)](images/vs/04-packaging.png)
+[![封裝屬性](images/vs/04-packaging-sml.png)](images/vs/04-packaging.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 封裝屬性可以在 [專案選項] 中設定，如下列螢幕擷取畫面所示：
 
-[ ![封裝屬性](images/xs/04-packaging-sml.png)](images/xs/04-packaging.png)
+[![封裝屬性](images/xs/04-packaging-sml.png)](images/xs/04-packaging.png#lightbox)
 
 -----
 
 其中許多屬性都是提供偵錯模式使用，例如 [使用共用執行階段] 和 [使用 Fast Deployment]。 不過，設定應用程式以用於發行模式時，還有其他設定可決定如何將應用程式的[大小與執行速度最佳化](#shrink_apk)、[如何保護以免遭到竄改](#protect_app)，以及如何封裝以支援不同架構與大小限制。
 
-<a name="Specify_Supported_Architectures" />
 
 ### <a name="specify-supported-architectures"></a>指定支援的架構
 
 準備 Xamarin.Android 應用程式以供發行時，必須指定支援的 CPU 架構。 單一 APK 可以包含機器碼，以支援多個不同的架構。 如需支援多個 CPU 架構的詳細資訊，請參閱 [CPU 架構](~/android/app-fundamentals/cpu-architectures.md)。
 
-<a name="multiabi" />
 
 ### <a name="generate-one-package-apk-per-selected-abi"></a>為選取的每一個 ABI 產生一個套件 (.APK)
 
 啟用此選項時，會為每個支援的 ABI 建立一個 APK (於 [進階] 索引標籤上選取，如 [CPU 架構](~/android/app-fundamentals/cpu-architectures.md)中所述) 而不是為所有支援的 ABI 建立單一的大型 APK。 只有將專案設定為 [發行] 模式時才能使用此選項，且該選項預設為停用。
 
-<a name="multidex" />
 
 ### <a name="multi-dex"></a>Multi-Dex
 
@@ -305,30 +298,30 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 若要開始發行程序，請以滑鼠右鍵按一下 [方案總管] 中的專案，然後選取 [封存] 操作功能表項目：
 
-[ ![封存應用程式](images/vs/07-archive-for-publishing-sml.png)](images/vs/07-archive-for-publishing.png)
+[![封存應用程式](images/vs/07-archive-for-publishing-sml.png)](images/vs/07-archive-for-publishing.png#lightbox)
 
 [封存] 會啟動 [封存管理員]，並開始封存應用程式套件組合的程序，如以下螢幕擷取畫面所示：
 
-[ ![封存管理員](images/vs/08-archive-manager-sml.png)](images/vs/08-archive-manager.png)
+[![封存應用程式](images/vs/08-archive-manager-sml.png)](images/vs/08-archive-manager.png#lightbox)
 
 建立封存的另一種方法是，以滑鼠右鍵按一下 [方案總管] 中的解決方案，然後選取 [全部封存]，這樣會建置解決方案，並封存可產生封存的所有 Xamarin 專案：
 
-[ ![全部封存](images/vs/09-archive-all-sml.png)](images/vs/09-archive-all.png)
+[![全部封存](images/vs/09-archive-all-sml.png)](images/vs/09-archive-all.png#lightbox)
 
 
 [封存] 與 [全部封存] 都會自動啟動 [封存管理員]。 若要直接啟動 [封存管理員]，請按一下 [工具] > [封存管理員] 功能表項目：
 
-[ ![啟動封存管理員](images/vs/10-launch-archive-manager-sml.png)](images/vs/10-launch-archive-manager.png)
+[![啟動封存管理員](images/vs/10-launch-archive-manager-sml.png)](images/vs/10-launch-archive-manager.png#lightbox)
 
 您可隨時以滑鼠右鍵按一下 [解決方案] 節點並選取 [檢視封存] 來查看解決方案的封存：
 
-[ ![檢視封存](images/vs/11-view-archives-sml.png)](images/vs/11-view-archives.png)
+[![檢視封存](images/vs/11-view-archives-sml.png)](images/vs/11-view-archives.png#lightbox)
 
 ### <a name="the-archive-manager"></a>封存管理員
 
 **封存管理員** 是由**解決方案清單**窗格、**封存清單**及**詳細資料面板**組成：
 
-[ ![封存管理員窗格](images/vs/12-archive-manager-detail-sml.png)](images/vs/12-archive-manager-detail.png)
+[![封存管理員窗格](images/vs/12-archive-manager-detail-sml.png)](images/vs/12-archive-manager-detail.png#lightbox)
 
 **解決方案清單**會顯示至少有一個封存專案的解決方案。 **解決方案清單**包括下列區段：
 
@@ -348,11 +341,11 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 準備好要發行之應用程式的封存版本時，請選取 [封存管理員] 中的封存，然後按一下 [散發] 按鈕：
 
-[ ![[散發] 按鈕](images/vs/13-distribute-sml.png)](images/vs/13-distribute.png)
+[![[散發] 按鈕](images/vs/13-distribute-sml.png)](images/vs/13-distribute.png#lightbox)
 
 [散發通道] 對話方塊顯示應用程式、指出散發工作流程進度，以及所選擇之散發通道的相關資訊。 第一次執行時，會顯示兩個選擇：
 
-[ ![選擇散發通道](images/vs/14-distribution-channel-sml.png)](images/vs/14-distribution-channel.png)
+[![選擇散發通道](images/vs/14-distribution-channel-sml.png)](images/vs/14-distribution-channel.png#lightbox)
 
 您可選擇下列其中一個散發通道：
 
@@ -364,15 +357,15 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 若要開始發佈流程，請選取 [建置] > [封存以供發行]：
 
-[ ![封存以供發行](images/xs/07-archive-for-publishing-sml.png)](images/xs/07-archive-for-publishing.png)
+[![封存以供發行](images/xs/07-archive-for-publishing-sml.png)](images/xs/07-archive-for-publishing.png#lightbox)
 
 [封存以供發行] 可建置專案並組合成封存檔。 [全部封存] 功能表選項可封存解決方案中所有可封存的專案。 建置和統合作業完成時，兩個選項都會自動開啟 [封存管理員]：
 
-[ ![封存檢視](images/xs/08-archives-view-sml.png)](images/xs/08-archives-view.png)
+[![封存檢視](images/xs/08-archives-view-sml.png)](images/xs/08-archives-view.png#lightbox)
 
 在此範例中，[封存管理員] 只會列出一個封存應用程式 **MyApp**。 請注意，註解欄位允許簡短註解和封存一併儲存。 若要發佈封存的 Xamarin.Android 應用程式版本，請選取 [封存管理員] 中的應用程式，然後按一下 [簽署並散發]，如上所示。 所產生的 [簽署並散發] 對話方塊會出現兩個選項：
 
-[ ![簽署並散發](images/xs/09-sign-and-distribute-sml.png)](images/xs/09-sign-and-distribute.png)
+[![簽署並散發](images/xs/09-sign-and-distribute-sml.png)](images/xs/09-sign-and-distribute.png#lightbox)
 
 
 您可以從這裡選擇散發通道：

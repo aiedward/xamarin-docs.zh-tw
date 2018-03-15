@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 99f66fd0d23f14224bcd915ef7d1c6d81367f173
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 412e65e074a171666a0ed9b61e347c4a16ec366b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-an-application"></a>發行應用程式
 
 建立絕佳的應用程式之後，使用者將會想要使用它。 本節涵蓋透過電子郵件、私人 Web 伺服器、Google Play 或 Amazon App Store for Android 等管道公開散發使用 Xamarin.Android 所建立應用程式的步驟。
 
-<a name="Overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -29,7 +28,7 @@ Xamarin.Android 應用程式開發的最後一個步驟就是發行應用程式�
 
 下表說明發行 Xamarin.Android 應用程式所涉及的步驟：
 
-[ ![建置和部署流程圖](images/build-and-deploy-steps.png)](images/build-and-deploy-steps.png)
+[![建置和部署流程圖](images/build-and-deploy-steps.png)](images/build-and-deploy-steps.png#lightbox)
 
 如上圖所示，不論使用的散發方式是哪一種，準備工作都相同。 向使用者發行 Android 應用程式的方式有數種：
 
@@ -49,7 +48,7 @@ Amazon Mobile App Distribution Program (Amazon 行動應用程式散發計劃) �
 
 Google Play 可說是最全方位且最受歡迎的 Android 應用程式市集。 Google Play 讓使用者在其裝置或電腦上按一下單一圖示，即可進行應用程式探索、下載、評分及付費。 Google Play 也提供工具來協助分析銷售和市場趨勢，以及管制哪些裝置和使用者可以下載應用程式。 以下顯示在 Android 裝置上執行之 Google Play 的螢幕擷取畫面：
 
-[ ![Google Play 螢幕擷取畫面](images/google-play-app.png)](images/google-play-app.png)
+[![Google Play 螢幕擷取畫面](images/google-play-app.png)](images/google-play-app.png#lightbox)
 
 本節說明如何將應用程式連同適當的宣傳資料上傳到商店 (例如 Google Play)。 其中說明 APK 擴充檔，提供有關擴充檔是什麼及其運作方式的概念性概觀。 此外，也說明「Google 授權」服務。 最後則是介紹替代的散發方式，包括使用 HTTP Web 伺服器、簡單電子郵件散發，以及 Amazon App Store for Android。
 

@@ -3,16 +3,16 @@ title: "適用於 iOS 的 fastline 簡介"
 description: "本指南介紹可用來對 iOS 應用程式進行程式碼簽署的 fastlane 工具"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
+ms.assetid: 8202C57D-22FF-4224-A5B1-AAEF12B7C106
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 084be16b55650f607d71f6eb3baf86b6f968aa35
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 15ee039fbfa339a9246b2a4234f37caf685c80c6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>適用於 iOS 的 fastline 簡介
 
@@ -87,12 +87,12 @@ fastlane 有各種不同使用方式：透過終端機命令、透過檔案型�
 
 fastlane 是一個定期推出新版本、非常活躍的開放原始碼專案。 如果有新版 fastlane 可供使用，在您執行任何 fastlane 命令時，就會收到通知：
 
-[ ![](images/fastlane-image0.png "fastlane 更新提示")](images/fastlane-image0.png)
+[![](images/fastlane-image0.png "fastlane 更新提示")](images/fastlane-image0.png#lightbox)
 
 
 若要更新至新版 fastlane，請從[這裡](https://download.fastlane.tools)下載最新的套件，然後按兩下安裝套件來執行它：
 
-[ ![](images/fastlane-image0a.png "執行安裝套件")](images/fastlane-image0a.png)
+[![](images/fastlane-image0a.png "執行安裝套件")](images/fastlane-image0a.png#lightbox)
 
 
 ## <a name="contents"></a>內容
@@ -111,7 +111,7 @@ cert 和 sigh 可用來在本機電腦上建立和管理簽署憑證與部署設
 
 若要為 Xamarin.iOS 應用程式設定程式碼簽署選項，請在專案名稱上按一下滑鼠右鍵，選取 [專案選項] > [建置] > [iOS 套件組合簽署]，然後明確設定 [簽署身分識別] 和 [佈建設定檔]，如下所示：
 
-[ ![](images/fastlane-image11.png "明確設定 [簽署身分識別] 和 [佈建設定檔]")](images/fastlane-image11.png)
+[![](images/fastlane-image11.png "明確設定 [簽署身分識別] 和 [佈建設定檔]")](images/fastlane-image11.png#lightbox)
 
 ## <a name="related-links"></a>相關連結
 

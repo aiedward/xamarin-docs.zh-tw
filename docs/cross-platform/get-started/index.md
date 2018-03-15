@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.technology: xamarin-cross-platform
+ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: 24d58621ae8143984683a41cd849a8b60893fd25
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8d9acbf5fa53c2fa94d1a15d51de9d3db48a16fe
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started"></a>快速入門
 
@@ -45,6 +46,12 @@ ms.lasthandoff: 02/27/2018
 
 本文件提供 Visual Studio for Mac 整合式開發環境 (IDE) 的概觀。
 
+
+## <a name="xamarin-university-video"></a>Xamarin University 影片
+
+> [!VIDEO https://youtube.com/embed/NGvn-pGZFPA]
+
+**使用 Xamarin for Visual Studio 建置第一個 Xamarin.Forms 應用程式，[Xamarin University 提供](https://university.xamarin.com)**
 
 ## <a name="related-links"></a>相關連結
 

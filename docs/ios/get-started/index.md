@@ -3,16 +3,17 @@ title: "開始使用 iOS"
 description: "從 Hello World 到 Hello App Store"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
+ms.assetid: FA802CCF-3BA4-4F26-A7BF-FBB7D0AA889B
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/23/2016
-ms.openlocfilehash: 1c59a67a87087a821339e98bcdcc004a342e311a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 01e4d2e42f61145f220545c832bcbaf1d8a994f1
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="getting-started-with-ios"></a>開始使用 iOS
 
@@ -45,3 +46,9 @@ ms.lasthandoff: 02/27/2018
 ##  <a name="xamarin-for-objective-c-developersobjective-c-developersindexmd"></a>[適用於 Objective-C 開發人員的 Xamarin](objective-c-developers/index.md)
 
 提供適用於要轉換至 Xamarin 平台之 Objective-C 開發人員的資訊。
+
+## <a name="xamarin-university-video"></a>Xamarin University 影片
+
+> [!VIDEO https://youtube.com/embed/1ilsDnYC-B8]
+
+**使用 Xamarin for Visual Studio 建置第一個 iOS App 應用程式，[Xamarin University 提供](https://university.xamarin.com)**

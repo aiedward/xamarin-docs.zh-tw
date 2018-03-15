@@ -7,11 +7,11 @@ metadata:
   ms.author: crdun
   ms.date: 02/17/2018
   ms.topic: article
-  ms.openlocfilehash: 4f89c050b1fe991737e7d9dfeb835cefb5ccb081
-  ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+  ms.openlocfilehash: 2cd0a8019df09c8da0f19812b5217bcad5f0c2e9
+  ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 02/27/2018
+  ms.lasthandoff: 02/28/2018
 abstract:
   description: "Xamarin.Forms 範例應用程式和程式碼示範可協助您開始使用與了解 Xamarin.Forms 中的概念。"
   menu:
@@ -62,7 +62,7 @@ sections:
         href: https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/
       title: Xuzzle
     - href: https://developer.xamarin.com/samples/xamarin-forms/all/
-      html: "存取一組完整的 Xamarin.Forms 範例應用程式和程式碼示範。"
+      html: "一組完整的 Xamarin.Forms 範例應用程式及程式碼示範。"
       image:
         src: ~/media/shared/sample-download.svg
         href: https://developer.xamarin.com/samples/xamarin-forms/all/

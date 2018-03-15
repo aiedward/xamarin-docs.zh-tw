@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/25/2018
-ms.openlocfilehash: 854ca06abc8be2f55f3e95a8ac3bd87c78af19cf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55f5cf22718713fdcf11c49e0993f47c2f5a6f1d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="android-emulator-setup"></a>Android Emulator 安裝
 
@@ -25,7 +25,7 @@ Google Android SDK 模擬器可在各種不同組態中執行，以模擬不同�
 
 
 > [!NOTE]
-> **附註：**從 Android SDK 工具 **26.0.1** 版和更新版本開始，Google 已移除對現有 AVD/SDK 管理員的支援，轉而支援其新的 CLI (命令列介面) 工具。 由於此項取代變更，因此，現在會針對 Android 工具 26.0.1 和更新版本改用 Xamarin SDK/裝置管理員，而非 Google SDK/模擬器管理  (如需 Xamarin SDK Manager 的詳細資訊，請參閱 [Android SDK 安裝](~/android/get-started/installation/android-sdk.md))。
+> 自 Android SDK Tools **26.0.1** 版起，Google 移除了對現有 AVD/SDK 管理員的支援，改而提供其新推出的 CLI (命令列介面) 工具。 由於此項取代變更，因此，現在會針對 Android 工具 26.0.1 和更新版本改用 Xamarin SDK/裝置管理員，而非 Google SDK/模擬器管理  (如需 Xamarin SDK Manager 的詳細資訊，請參閱 [Android SDK 安裝](~/android/get-started/installation/android-sdk.md))。
 
 
 ## <a name="sections"></a>章節

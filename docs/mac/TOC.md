@@ -31,7 +31,7 @@
 ## [平台功能](platform/index.md)
 ### [macOS Sierra 的簡介](platform/introduction-to-macos-sierra/index.md)
 #### [建置現代化的 macOS 應用程式](platform/introduction-to-macos-sierra/modern-cocoa-apps.md)
-#### [其他 iOS 10 架構變更](platform/introduction-to-macos-sierra/additional-framework-changes.md)
+#### [其他 macOS Sierra 架構變更](platform/introduction-to-macos-sierra/additional-framework-changes.md)
 #### [疑難排解](platform/introduction-to-macos-sierra/troubleshooting.md)
 ### [繫結 Mac 程式庫](platform/binding.md)
 ### [OpenTK 簡介](platform/opentk.md)
