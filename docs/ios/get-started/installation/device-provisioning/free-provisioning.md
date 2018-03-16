@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: asb3993
+ms.author: amburns
 ms.date: 03/19/2017
-ms.openlocfilehash: baf1ae7d4cc533af0db482e8d7c31fc3c8b4edbf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 26ac40360b4e706180f4154f4fddcd9c992ad94b
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="free-provisioning"></a>免費佈建
 
@@ -43,29 +43,29 @@ _隨著 Apple 的 Xcode 7 發行，有一個針對所有 iOS 和 Mac 開發人�
 2. 開啟 Xcode，然後瀏覽至 [Xcode] > [Preferences] \(偏好設定\)。
 3. 在 [Accounts] \(帳戶\) 底下，使用 [+] 按鈕來新增您現有的 Apple ID。 看起來應該類似下面的螢幕擷取畫面：
 
-  [ ![](free-provisioning-images/launchapp1.png "Xcode > Preferences (偏好設定) > Accounts (帳戶)")](free-provisioning-images/launchapp1.png)
+  [![](free-provisioning-images/launchapp1.png "Xcode 喜好設定帳戶")](free-provisioning-images/launchapp1.png#lightbox)
 
 4. 插入要作為部署目的地的 iOS 裝置，然後在 Xcode 中建立新的空白單一檢視 iOS 專案。 將 [Team] \(小組\) 下拉式清單設定為您剛新增的 Apple ID。 其格式應該類似 `your name (Personal Team - your Apple ID)`：
 
-  [ ![](free-provisioning-images/launchapp2.png "建立簽署身分識別")](free-provisioning-images/launchapp2.png)
+  [![](free-provisioning-images/launchapp2.png "建立簽署身分識別")](free-provisioning-images/launchapp2.png#lightbox)
 
 5. 在 [General] \(一般\) > [Identity] \(身分識別\) 區段底下，確定 [Bundle Identifier] \(套件組合識別碼\) 與 Xamarin.iOS 的套件組合識別碼「完全」相符，並確保部署目標等於或低於所連接的 iOS 裝置。 此步驟極為重要，因為 Xcode 將只會建立具有明確 App ID (應用程式識別碼) 的佈建設定檔：
 
-  [![](free-provisioning-images/launchapp5.png "建立具有明確 App ID (應用程式識別碼) 的佈建設定檔")](free-provisioning-images/launchapp5.png)
+  [![](free-provisioning-images/launchapp5.png "建立具有明確 App ID (應用程式識別碼) 的佈建設定檔")](free-provisioning-images/launchapp5.png#lightbox)
 
 6. 在 [Signing] \(簽署\) 區段中，選取 [Automatically Manage Signing] \(自動管理簽署\)，然後從下拉式清單中選取您的小組：
 
-  [![](free-provisioning-images/launchapp6.png "選取 [Automatically Manage Signing] \(自動管理簽署\)，然後從下拉式清單中選取您的小組")](free-provisioning-images/launchapp6.png)
+  [![](free-provisioning-images/launchapp6.png "選取 [Automatically Manage Signing] \(自動管理簽署\)，然後從下拉式清單中選取您的小組")](free-provisioning-images/launchapp6.png#lightbox)
 
 7. 上一個步驟將會自動為您產生佈建設定檔和簽署身分識別。 您可以按一下佈建設定檔旁邊的資訊圖示來檢視此資訊：
 
-  [![](free-provisioning-images/launchapp7.png "檢視佈建設定檔")](free-provisioning-images/launchapp7.png)
+  [![](free-provisioning-images/launchapp7.png "檢視佈建設定檔")](free-provisioning-images/launchapp7.png#lightbox)
 
 8. 若要在 Xcode 中進行測試，請按一下 [Run] \(執行\) 按鈕，以將空白應用程式部署至您的裝置。
 
 9. 返回您的 IDE，仍插著相同的裝置，然後在 Xamarin.iOS 專案名稱上按一下滑鼠右鍵來開啟 [Project Options] \(專案選項\) 對話方塊。 瀏覽至 [iOS Bundle Signing] \(iOS 套件組合簽署\) 區段，然後明確設定您的簽署身分識別和佈建設定檔：
 
-  [![](free-provisioning-images/launchapp8.png "設定簽署身分識別和佈建設定檔")](free-provisioning-images/launchapp8.png)
+  [![](free-provisioning-images/launchapp8.png "設定簽署身分識別和佈建設定檔")](free-provisioning-images/launchapp8.png#lightbox)
 
 如果在 IDE 中看不到您的簽署身分識別或正確的部署設定檔，則您可能需要重新啟動 IDE。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: bc89450a5c9a00ab9f088ca9fff345ebbf7b6c4c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d7a458a0a0c2da1dbb40ae7222fcd35cf7172953
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-ios-deep-dive"></a>Hello, iOS 深度剖析
 
@@ -102,7 +102,7 @@ Visual Studio 會將程式碼組織成「方案」和「專案」。 方案是�
 
 本節將探究下圖中所述的關聯性：
 
-[ ![](hello-ios-deepdive-images/image32.png "此圖中舉例說明了架構和應用程式基本概念的關聯性")](hello-ios-deepdive-images/image32.png)
+[![](hello-ios-deepdive-images/image32.png "此圖說明了架構和應用程式基本概念的關聯性")](hello-ios-deepdive-images/image32.png#lightbox)
 
 讓我們從頭開始了解應用程式啟動時會發生什麼事。
 
@@ -197,7 +197,7 @@ iOS 設計工具是用來在 Xamarin 中建置使用者介面的視覺化工具�
 
 場景左邊是具有旗標圖示的灰色箭號，如下列螢幕擷取畫面所示：
 
- [ ![](hello-ios-deepdive-images/image37.png "具有旗標圖示的灰色箭號")](hello-ios-deepdive-images/image37.png)
+ [![](hello-ios-deepdive-images/image37.png "具有旗標圖示的灰色箭號")](hello-ios-deepdive-images/image37.png#lightbox)
 
 灰色箭號代表名為 *Segue* (唸成 "seg way") 的分鏡腳本轉換。 由於此 Segue 不具任何來源，因此稱為「無來源的 Segue」。 無來源的 Segue 會指向第一個場景，其檢視會在應用程式啟動時載入至應用程式的視窗。 場景及其內部的檢視將是應用程式載入時，使用者看到的第一件事。
 
@@ -243,7 +243,7 @@ iOS 設計工具是用來在 Xamarin 中建置使用者介面的視覺化工具�
 
 「內容檢視階層」是指由單一檢視控制器所管理之檢視和子檢視的堆疊，如下圖所示：
 
- [ ![](hello-ios-deepdive-images/image41.png "內容檢視階層")](hello-ios-deepdive-images/image41.png)
+ [![](hello-ios-deepdive-images/image41.png "內容檢視階層")](hello-ios-deepdive-images/image41.png#lightbox)
 
 我們可以在 **Properties Pad** 的 [檢視] 區段中，將根檢視的背景色彩暫時變更為黃色，讓 `ViewController` 的內容檢視階層變得更容易查看，如下列螢幕擷取畫面所示：
 
@@ -259,7 +259,7 @@ iOS 設計工具是用來在 Xamarin 中建置使用者介面的視覺化工具�
 
 下圖說明視窗、檢視、子檢視及檢視控制器之間的關聯性，以在裝置畫面中顯示使用者介面：
 
- [![ ](hello-ios-deepdive-images/image43.png "視窗、檢視、子檢視及檢視控制器之間的關聯性")](hello-ios-deepdive-images/image43.png)
+ [![](hello-ios-deepdive-images/image43.png "視窗、檢視、子檢視及檢視控制器之間的關聯性")](hello-ios-deepdive-images/image43.png#lightbox)
 
 下一節將討論如何在程式碼中運用檢視，以及了解如何使用檢視控制器和檢視生命週期，針對使用者互動進行程式設計。
 
@@ -331,7 +331,7 @@ public partial class ViewController : UIViewController
 現在已對檢視和檢視控制器有更深入了解，讓我們來探索其運作方式。
 在 `Phoneword_iOS` 專案中，已將名為 `TranslateButton` 的按鈕新增至內容檢視階層：
 
- [ ![](hello-ios-deepdive-images/image1.png "已將名為 TranslateButton 的按鈕新增至內容檢視階層")](hello-ios-deepdive-images/image1.png)
+ [![](hello-ios-deepdive-images/image1.png "已將名為 TranslateButton 的按鈕新增至內容檢視階層")](hello-ios-deepdive-images/image1.png#lightbox)
 
 將**名稱**指派給 **Properties Pad** 的**按鈕**控制項時，iOS 設計工具會自動將它對應到 **ViewController.designer.cs** 中的控制項，使 `TranslateButton` 在 `ViewController` 類別內部變成可供使用。 控制項會先在檢視生命週期的 `ViewDidLoad` 階段變成可供使用，因此可使用這個生命週期方法來回應使用者的觸控：
 
@@ -432,7 +432,7 @@ iOS 模擬器是一個快速測試應用程式的方式。 此模擬器有數個
 
 應用程式將會部署到 iOS 裝置：
 
-[ ![](hello-ios-deepdive-images/image1.png "應用程式將會部署到 iOS 裝置並執行")](hello-ios-deepdive-images/image1.png)
+[![](hello-ios-deepdive-images/image1.png "應用程式將會部署到 iOS 裝置並執行")](hello-ios-deepdive-images/image1.png#lightbox)
 
 ### <a name="generate-custom-icons-and-launch-images"></a>產生自訂圖示和啟動影像
 

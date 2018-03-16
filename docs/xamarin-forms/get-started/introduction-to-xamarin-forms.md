@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 593e720e4a6125e2ef4a1c9488186cb2c04dcd66
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: be4b0c907774c33dfcd1818da167acb2dc3b04dd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Xamarin.Forms 簡介
 
@@ -45,7 +45,7 @@ Xamarin.Forms 應用程式的架構方式與傳統的跨平台應用程式相同
 
 在 Visual Studio for Mac 和 Visual Studio 中，預設 Xamarin.Forms 應用程式範本會建立可向使用者顯示文字的最簡單 Xamarin.Forms 方案。 如果您執行應用程式，其外觀應該類似以下的螢幕擷取畫面：
 
-[ ![](introduction-to-xamarin-forms-images/image05-sml.png "預設 Xamarin.Forms 應用程式")](introduction-to-xamarin-forms-images/image05.png "預設 Xamarin.Forms 應用程式")
+[![](introduction-to-xamarin-forms-images/image05-sml.png "預設 Xamarin.Forms 應用程式")](introduction-to-xamarin-forms-images/image05.png#lightbox "預設 Xamarin.Forms 應用程式")
 
 螢幕擷取畫面中的每個畫面都對應至 Xamarin.Forms 中的*頁面*。 [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) 在 Android 中代表「活動」、在 iOS 中代表「檢視控制器」、在通用 Windows 平台上 (UWP) 則代表「頁面」。 上方螢幕擷取畫面中的範例會將 [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) 物件具現化，並使用該物件顯示 [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)。
 
@@ -249,7 +249,7 @@ public class StackLayoutExample : ContentPage
 
 根據預設，[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) 假設是垂直方向，如下列螢幕擷取畫面所示：
 
-[ ![](introduction-to-xamarin-forms-images/image09-sml.png "垂直 StackLayout")](introduction-to-xamarin-forms-images/image09.png "垂直 StackLayout")
+[![](introduction-to-xamarin-forms-images/image09-sml.png "垂直 StackLayout")](introduction-to-xamarin-forms-images/image09.png#lightbox "垂直 StackLayout")
 
 [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) 的方向可以變更為水平方向，如下列 XAML 程式碼範例所示：
 
@@ -286,7 +286,7 @@ public class StackLayoutExample: ContentPage
 
 下列螢幕擷取畫面顯示產生的版面配置：
 
-[ ![](introduction-to-xamarin-forms-images/image10-sml.png "水平 StackLayout")](introduction-to-xamarin-forms-images/image10.png "水平 StackLayout")
+[![](introduction-to-xamarin-forms-images/image10-sml.png "水平 StackLayout")](introduction-to-xamarin-forms-images/image10.png#lightbox "水平 StackLayout")
 
 控制項的大小可以透過 `HeightRequest` 和 `WidthRequest` 屬性設定，如下列 XAML 程式碼範例所示：
 
@@ -329,7 +329,7 @@ Content = new StackLayout
 
 下列螢幕擷取畫面顯示產生的版面配置：
 
-[ ![](introduction-to-xamarin-forms-images/image11-sml.png "具有 LayoutOptions 的水平 StackLayout")](introduction-to-xamarin-forms-images/image11.png "具有 LayoutOptions 的水平 StackLayout")
+[![](introduction-to-xamarin-forms-images/image11-sml.png "具有 LayoutOptions 的水平 StackLayout")](introduction-to-xamarin-forms-images/image11.png#lightbox "具有 LayoutOptions 的水平 StackLayout")
 
 如需 [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) 類別的詳細資訊，請參閱 [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)。
 

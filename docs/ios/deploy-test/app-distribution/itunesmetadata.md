@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 21ae62ee0d43e688e63ca8b7feb6a8aebb227cd5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3bdf00a9e50b2bf66f51c825306c2ba8e6365dd2
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="the-itunesmetadataplist-file"></a>iTunesMetadata.plist 檔案
 
@@ -239,7 +239,7 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 
 針對 iOS 應用程式，Apple 目前會定義下列內容類型和內容類型識別碼：
 
-[!include[](~/ios/includes/table-appstore.html)]
+[!include[](~/ios/includes/table-appstore.md)]
 
 如需詳細資訊，請參閱 Apple 的[內容類型識別碼附錄](http://www.apple.com/itunes/affiliates/resources/documentation/genre-mapping.html) \(英文\) 文件。
 
@@ -341,7 +341,7 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 
 適用於 Visual Studio 的 Xamarin 外掛程式僅支援 `Info.plist` 和 `Entitlement.plist` 檔案的視覺化編輯器，因此您必須在標準文字編輯器中建立 `iTunesMetadata.plist` 檔案，並將它手動包含到 Xamarin.iOS 專案中。
 
-執行下列動作：
+請執行下列動作：
 
 1. 在純文字編輯器中，建立新的文字檔，並將其命名為 `iTunesMetadata.plist`。
 2. 從上方的 [iTunesMetadata.plist 內容](#iTunesMetadata_contents)小節，複製範例內容。

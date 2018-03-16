@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 3bc53a8230b66b88319f729d7effe8ed75f0176b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf2f62929df63d08add76b7fb6de404d2780b2b3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="building-abi-specific-apks"></a>建置特定 ABI 的 APK
 
@@ -42,7 +42,6 @@ _本文將討論如何使用 Xamarin.Android 建置瞄準單一 ABI 的 APK。_
 本指南的最後會提供展示如何使用 [Rake](http://martinfowler.com/articles/rake.html) 來為這些步驟撰寫指令碼的逐步解說。
 
 
-<a name="Setting_android_versionCode" />
 
 ### <a name="creating-the-version-code-for-the-apk"></a>為 APK 建立版本代碼
 
@@ -67,7 +66,7 @@ Google 建議針對使用七位數版本代碼的版本代碼使用特定的演�
 
 下列圖表說明在上述清單中描述之每一個代碼的位置：
 
-[![八位數版本代碼格式的圖表，以顏色進行編碼](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png)
+[![八位數版本代碼格式的圖表，以顏色進行編碼](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png#lightbox)
 
 
 Google Play 會根據 `versionCode` 及 APK 組態來確保傳遞到裝置的是正確的 APK。 具有最高版本代碼的 APK 會傳遞到裝置。 例如，應用程式可能會有三個 APK，並具有下列版本代碼：
@@ -88,7 +87,6 @@ Google Play 會根據 `versionCode` 及 APK 組態來確保傳遞到裝置的是
 手動維持這些版本代碼對開發人員來說將會是沉重的負擔。 計算正確 `android:versionCode` 及建置 APK 的程序應該自動化。
 本文的最後的逐步解說會說明如何進行此動作。
 
-<a name="CreatingAndroidManifest" />
 
 ### <a name="create-a-temporary-androidmanifestxml"></a>建立暫存 AndroidManifest.XML
 
@@ -123,7 +121,6 @@ Google Play 會根據 `versionCode` 及 APK 組態來確保傳遞到裝置的是
 -   `<CS_PROJ FILE>` &ndash; 此為 Xamarin.Android `.csproj` 檔案的路徑。
 
 
-<a name="SignAndZipAlign" />
 
 ### <a name="sign-and-zipalign-the-apk"></a>針對 APK 進行簽署及 Zipalign
 
@@ -139,7 +136,6 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore <PATH/TO/KEYSTO
 zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 ```
 
-<a name="Automating_APK_Creation_With_Rake" />
 
 ## <a name="automating-apk-creation-with-rake"></a>使用 Rake 自動建立 APK
 
@@ -174,11 +170,11 @@ $ rake build
 
 Rake 工作完成之後，便會有三個 `bin` 資料夾，以及一個 `xamarin.helloworld.apk` 檔案。 下一個螢幕擷取畫面顯示每個資料夾及其內容：
 
-[![包含 xamarin.helloworld.apk 的特定平台資料夾位置](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png)
+[![包含 xamarin.helloworld.apk 的特定平台資料夾位置](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
 
 
 > [!NOTE]
-> **注意：**本指南中描述的建置過程可在許多不同建置系統的其中一個內實作。 雖然我們並未預先撰寫範例，但它也可以使用 [Powershell](http://technet.microsoft.com/en-ca/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) 或 [Fake](http://fsharp.github.io/FAKE/) 來進行。
+> 本指南中描述的建置過程可在許多不同建置系統的其中一個內實作。 雖然我們並未預先撰寫範例，但它也可以使用 [Powershell](http://technet.microsoft.com/en-ca/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) 或 [Fake](http://fsharp.github.io/FAKE/) 來進行。
 
 
 ## <a name="summary"></a>總結

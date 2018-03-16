@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 9fec6fca0bf7930a59a6927557786a3ed7a412da
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9a5dc7839b1669e51e79efc0f02111eae8987b95
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>使用 Instruments 分析 Xamarin.iOS 應用程式
 
@@ -38,13 +38,13 @@ Xcode Instruments 只能在 Mac 上執行。
 
 Instruments 現在將會開啟，並顯示下列對話方塊：
 
- [ ![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "選擇分析範本")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png)
+ [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "選擇分析範本")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
 
 按一下以選取 [配置] 範本。 其他範本也有效，但是本文僅討論 [配置] 分析範本。
 
 接下來，使用視窗頂端的功能表選取裝置和應用程式：
 
-[ ![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png "選取裝置和應用程式")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png "選取裝置及應用程式")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png#lightbox)
 
 在視窗頂端的功能表中，應該選取了 iOS 裝置，而且旁邊應該選取了要分析的應用程式 (上方螢幕擷取畫面中的 **MemoryDemo**)。
 
@@ -52,13 +52,13 @@ Instruments 現在將會開啟，並顯示下列對話方塊：
 
 按一下 [選擇] 按鈕，下一個畫面應該就會出現：
 
-[ ![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "分析介面")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "分析介面")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png#lightbox)
 
 按一下 [錄製] 按鈕 (左上方的紅色圓形)，即可開始分析。
 
 下列螢幕擷取畫面顯示使用 **Instruments** 進行分析的範例：
 
-[ ![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "使用 Instruments 進行分析的範例")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "使用 Instruments 執行分析的範例")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png#lightbox)
 
 ## <a name="summary"></a>總結
 

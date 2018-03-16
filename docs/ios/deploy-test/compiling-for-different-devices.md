@@ -7,27 +7,26 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 13838215b32abe49a5fe07b04088bc4216250844
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 12b8f51156c2ed750c59ef79522121c6c5d2c03c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="compiling-for-different-devices"></a>不同裝置的編譯
 
 可執行檔的組建屬性可從專案的 [iOS 組建] 屬性頁面來設定，若要找到此頁面，請在專案名稱上按一下滑鼠右鍵，然後瀏覽至 [選項] > [iOS 組建] (在 Visual Studio for Mac 中) 和 [屬性]\(在 Visual Studio 中)：
 
-[[ide name="xs"]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](compiling-for-different-devices-images/image1.png "專案 [iOS 組建] 屬性頁面")](compiling-for-different-devices-images/image1.png) 
 
-[[/ide]] 
+[![](compiling-for-different-devices-images/image1.png "專案的 iOS 組建屬性頁面")](compiling-for-different-devices-images/image1.png#lightbox) 
 
-[[ide name="vs"]]
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](compiling-for-different-devices-images/image1a.png "專案 [iOS 組建] 屬性頁面")](compiling-for-different-devices-images/image1a.png)
+[![](compiling-for-different-devices-images/image1a.png "專案的 iOS 組建屬性頁面")](compiling-for-different-devices-images/image1a.png#lightbox)
 
-[[/ide]]
+-----
 
 除了 UI 上可用的組態選項外，您也可以將自己的命令列選項集傳遞至 [Xamarin.iOS 建置工具 (mtouch)](~/ios/deploy-test/mtouch.md)。
 
@@ -66,9 +65,9 @@ iOS **SDK 版本**選項可讓您使用不同版本的 Apple 發佈 SDK，這會
 
 您可以從 Visual Studio for Mac 或 Visual Studio 的 [iOS 組建] 選項啟用這兩個引擎。
 
-[ ![](compiling-for-different-devices-images/image2.png "啟用 LLVM")](compiling-for-different-devices-images/image2.png)
+[![](compiling-for-different-devices-images/image2.png "啟用 LLVM")](compiling-for-different-devices-images/image2.png#lightbox)
 
-[ ![](compiling-for-different-devices-images/image2a.png "啟用 LLVM")](compiling-for-different-devices-images/image2a.png)
+[![](compiling-for-different-devices-images/image2a.png "啟用 LLVM")](compiling-for-different-devices-images/image2a.png#lightbox)
 
  <a name="ARMV7_and_ARMV7s_support" />
 
@@ -132,7 +131,7 @@ Thumb 是 ARM 處理器所使用、更為精簡的指令集。 藉由啟用 Thum
 -  針對您想要進行弱式連結的每個組態，在 [其他選項] 中新增 `'-gcc_flags "-weak_framework iAd"'`：
 
 
-[ ![](compiling-for-different-devices-images/image3.png "其他選項")](compiling-for-different-devices-images/image3.png)
+[![](compiling-for-different-devices-images/image3.png "其他選項")](compiling-for-different-devices-images/image3.png#lightbox)
 
 
 除此之外，您還必須確保您使用的類型不會在沒有這些類型的舊版 iOS 上執行。 有數種方法可達成此目的，但其中一個方式是剖析 `UIDevice.CurrentDevice.SystemVersion`。

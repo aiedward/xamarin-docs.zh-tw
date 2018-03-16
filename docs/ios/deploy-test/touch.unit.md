@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a113a386f1312253fda8913cea3cb608a65e1061
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f7c743bab2a6acb3dcd57ebca207957f983e0c0f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="unit-testing"></a>單元測試
 
@@ -119,15 +119,15 @@ namespace Fixtures {
 
 測試執行器可讓您查看已登錄的測試，並個別選取可以執行的測試。
 
-[ ![](touch.unit-images/02.png "已登錄測試的清單")](touch.unit-images/02.png) 
+[![](touch.unit-images/02.png "已註冊之測試的清單")](touch.unit-images/02.png#lightbox) 
 
-[ ![](touch.unit-images/03.png "個別的文字")](touch.unit-images/03.png) 
+[![](touch.unit-images/03.png "個別的文字")](touch.unit-images/03.png#lightbox) 
 
-[ ![](touch.unit-images/04.png "執行結果")](touch.unit-images/04.png)
+[![](touch.unit-images/04.png "執行結果")](touch.unit-images/04.png#lightbox)
 
 您可以透過從巢狀檢視中選取測試固件來執行個別的測試固件，或者您可以使用 [Run Everything] \(全部執行\) 來執行所有測試。 如果您執行預設測試，應該包括一個通過測試、一個失敗測試以及一個忽略測試。 這是報表的外觀，而且您可以直接向下切入失敗測試，並找出有關失敗的詳細資訊：
 
-[ ![](touch.unit-images/05.png "範例報表")](touch.unit-images/05.png) [ ![ ](touch.unit-images/06.png "範例報表")](touch.unit-images/06.png) [ ![ ](touch.unit-images/07.png "範例報表")](touch.unit-images/07.png)
+[![](touch.unit-images/05.png "範例報表")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/05.png "範例報表")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/05.png "範例報表")](touch.unit-images/05.png#lightbox)
 
 您也可以查看 IDE 中的 [應用程式輸出] 視窗，以了解正在執行哪些測試及其目前狀態。
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 2995d9126617a767013ed1f5cb808f22ce0fd2da
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 89768d2562814091f0e5894c4af2edd67d68cb00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="running-the-android-sdk-emulator"></a>執行 Android SDK 模擬器
 
@@ -32,13 +32,13 @@ Visual Studio 包含預先設定的虛擬裝置，這些裝置會顯示在裝置
 
 -   **VisualStudio\_android-23\_x86\_tablet** 
 
-[ ![虛擬裝置](running-the-emulator-images/win/01-virtual-devices-sml.png)](running-the-emulator-images/win/01-virtual-devices.png)
+[![虛擬裝置](running-the-emulator-images/win/01-virtual-devices-sml.png)](running-the-emulator-images/win/01-virtual-devices.png#lightbox)
 
 通常您會選取 [VisualStudio\_android-23\_x86\_phone] 虛擬裝置來針對手機應用程式進行測試和偵錯。 如果這其中一個預先設定的虛擬裝置符合您的需求 (亦即符合您應用程式的目標 API 層級)，請跳至[啟動模擬器](#launching)以開始在模擬器中執行您的應用程式。 (如果您不熟悉 Android API 層級，請參閱[了解 Android API 層級](~/android/app-fundamentals/android-api-levels.md))。
 
 如果您的 Xamarin.Android 專案使用與可用虛擬裝置不相容的「目標 Framework」層級，下拉式功能表將會在 [不支援的裝置] 底下列出無法使用的虛擬裝置。 例如，以下專案的「目標 Framework」設定為 **Android 7.1 Nougat (API 25)**，這與預設提供的 **Android 6.0** 虛擬裝置不相容：
 
-[ ![不相容的虛擬裝置](running-the-emulator-images/win/02-incompatible-level-sml.png)](running-the-emulator-images/win/02-incompatible-level.png)
+[![不相容的虛擬裝置](running-the-emulator-images/win/02-incompatible-level-sml.png)](running-the-emulator-images/win/02-incompatible-level.png#lightbox)
 
 您可以按一下 [變更最低 Android 目標] 來變更專案的「最低 Android 版本」，以讓它符合可用虛擬裝置的 API 層級。 或者，您也可以使用 **Android 模擬器管理員**來建立支援您目標 API 層級的新虛擬裝置，如稍後的[設定虛擬裝置](#virtualdevice)所述。 若要設定新 API 層級的虛擬裝置，您必須先安裝該 API 層級的對應系統映像 &ndash; 下一節中將會說明。
 
@@ -50,7 +50,7 @@ Visual Studio for Mac 包含預先設定的虛擬裝置，這些裝置會顯示�
 
 -   **Android\_ARMv7a**
 
-[ ![虛擬裝置](running-the-emulator-images/mac/01-virtual-devices-sml.png)](running-the-emulator-images/mac/01-virtual-devices.png)
+[![虛擬裝置](running-the-emulator-images/mac/01-virtual-devices-sml.png)](running-the-emulator-images/mac/01-virtual-devices.png#lightbox)
 
 通常您會選取 [Android\_Accelerated\_x86] 虛擬裝置來針對手機應用程式進行測試和偵錯。 如果這個預先設定的虛擬裝置符合您的需求 (亦即符合您應用程式的目標 API 層級)，請跳至[啟動模擬器](#launching)以開始在模擬器中執行您的應用程式。 (如果您不熟悉 Android API 層級，請參閱[了解 Android API 層級](~/android/app-fundamentals/android-api-levels.md))。
 
@@ -73,11 +73,11 @@ Visual Studio for Mac 包含預先設定的虛擬裝置，這些裝置會顯示�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![[偵錯] 和 [發行] 模式、[播放] 按鈕](running-the-emulator-images/win/17-debug-release-sml.png)](running-the-emulator-images/win/17-debug-release.png)
+[![[偵錯] 和 [發行] 模式、[播放] 按鈕](running-the-emulator-images/win/17-debug-release-sml.png)](running-the-emulator-images/win/17-debug-release.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![[偵錯] 和 [發行] 模式、[播放] 按鈕](running-the-emulator-images/mac/16-debug-release-sml.png)](running-the-emulator-images/mac/16-debug-release.png)
+[![[偵錯] 和 [發行] 模式、[播放] 按鈕](running-the-emulator-images/mac/16-debug-release-sml.png)](running-the-emulator-images/mac/16-debug-release.png#lightbox)
 
 -----
 

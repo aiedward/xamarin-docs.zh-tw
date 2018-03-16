@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: fec57fbeb201d55e887969c5a50baf6a76c10e17
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e09bb1150c3cc53104b41b75a2c3d4d2db4e5ff
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="publishing-independently"></a>獨立發行
 
 您可以在不使用任何現有 Android 市集的情況下發行應用程式。 本節將說明這些其他發行方法，以及 Xamarin.Android 的授權層級。
 
-<a name="Xamarin_Licensing" />
 
 ## <a name="xamarin-licensing"></a>Xamarin 授權
 
@@ -31,36 +30,32 @@ ms.lasthandoff: 02/27/2018
 
 請瀏覽 [visualstudio.com](https://www.visualstudio.com/xamarin/) 來下載 Community 版，或深入了解如何購買 Professional 和 Enterprise 版。
 
-<a name="Allow_Installation_from_Unknown_Sources" />
 
 ## <a name="allow-installation-from-unknown-sources"></a>允許從未知來源進行安裝
 
 Android 會防止使用者下載及安裝來自 Google Play.以外位置的應用程式。 若要允許從非市集來源進行安裝，使用者必須先在裝置上啟用 [不明的來源] 設定，才能嘗試安裝應用程式。 這項設定可能位於 [設定] > [系統安全] 底下，如下圖所示：
 
-[ ![[系統安全] 設定畫面](publishing-independently-images/settings.png)](publishing-independently-images/settings.png)
+[![](publishing-independently-images/settings.png)](publishing-independently-images/settings.png#lightbox)
 
 
 > [!IMPORTANT]
-> **注意：**有些網路提供者可能會防止安裝來自不明來源的應用程式，不論此設定為何。
+> 有些網路提供者可能會防止安裝來自不明來源的應用程式，不論此設定為何。
 
 
-<a name="Publishing_by_E-Mail" />
 
 ## <a name="publishing-by-e-mail"></a>透過電子郵件發行
 
 將發行 APK 附加在電子郵件中，是一個將應用程式散發給使用者的快速便利方式。 當使用者在 Android 架構裝置上開啟該電子郵件時，Android 會辨識出該 APK 附件並顯示 [安裝] 按鈕，如下圖所示：
 
-[ ![附件的 [安裝] 按鈕](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png)
+[![附件的 [安裝] 按鈕](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png#lightbox)
 
 雖然透過電子郵件散發相當簡單，但在防範盜版或未經授權散發方面所能提供的防護相當少。 在應用程式的接收者很少，且受信任不會散發該應用程式的情況下，最適合使用此散發方式。
 
-<a name="Publishing_by_Web" />
 
 ## <a name="publishing-by-web"></a>透過 Web 發行
 
 您可以透過 Web 伺服器散發應用程式。 做法是將應用程式上傳到 Web 伺服器，然後將下載連結提供給使用者。 當 Android 架構裝置瀏覽至連結，然後下載應用程式時，該應用程式會在下載完成時自動安裝。
 
-<a name="Manually_Installing_an_APK" />
 
 ## <a name="manually-installing-an-apk"></a>手動安裝 APK
 

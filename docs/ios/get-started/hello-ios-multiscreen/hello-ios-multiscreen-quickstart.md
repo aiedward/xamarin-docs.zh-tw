@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 6df2e2ad97e42c854b6377268086b80eef145e37
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d4b7439448d5c25aacf991c89a188086c95a44ac
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="helloios-multiscreen-quickstart"></a>Hello, iOS 多重畫面快速入門
 
 此逐步解說的這個部分會在 Phoneword 應用程式中新增第二個畫面，其中將顯示使用應用程式所撥打之電話號碼的歷程記錄。 最終的應用程式將具有第二個畫面來顯示通話記錄，如下列螢幕擷取畫面所示：
 
- [ ![](hello-ios-multiscreen-quickstart-images/00.png "最終的應用程式將具有第二個畫面來顯示通話記錄，如此螢幕擷取畫面所示")](hello-ios-multiscreen-quickstart-images/00.png)
+ [![](hello-ios-multiscreen-quickstart-images/00.png "最終的應用程式將具有第二個畫面來顯示通話記錄，如此螢幕擷取畫面所示")](hello-ios-multiscreen-quickstart-images/00.png#lightbox)
 
 [隨附的深度剖析](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md)將檢閱已建置的應用程式並討論架構、巡覽、以及過程中遇到的其他 iOS 新概念。
 

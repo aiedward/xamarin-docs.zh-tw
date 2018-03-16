@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 8e36548e0d9926a28c133f8f1dc688fcbfa9f78e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a7d4af1563cb5fe5166c289c4ee5dca6ad3ffb00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-ios-multiscreen-deep-dive"></a>Hello, iOS 多重畫面深度剖析
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 02/27/2018
 
 在 [Hello, iOS](~/ios/get-started/hello-ios/index.md) 教學課程中，我們了解到 iOS 應用程式只有一個「視窗」，檢視控制器會負責將其「內容檢視階層」載入到該視窗。 在第二個 Phoneword 逐步解說中，我們已將第二個畫面新增到應用程式，並在這兩個畫面之間傳遞一些資料 (電話號碼清單)，如下圖所示：
 
- [ ![](hello-ios-multiscreen-deepdive-images/08.png "此圖說明如何在兩個畫面之間傳遞資料")](hello-ios-multiscreen-deepdive-images/08.png)
+ [![](hello-ios-multiscreen-deepdive-images/08.png "此圖說明兩個畫面之間如何傳遞資料")](hello-ios-multiscreen-deepdive-images/08.png#lightbox)
 
 在我們的範例中，資料是在第一個畫面中收集、從第一個檢視控制器傳遞到第二個，並由第二個畫面顯示。 這個畫面、檢視控制器和資料的分隔會遵循「模型、檢視、控制器 (MVC)」模式。 在後續幾節中，我們將討論此模式的優點、它的元件，以及如何在 Phoneword 應用程式中使用它。
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 02/27/2018
 
 「模型-檢視-控制器」是一個「設計模式」，一種可在程式碼中針對常見問題或使用案例重複使用的架構方案。 MVC 是適用於含「圖形化使用者介面 (GUI)」之應用程式的架構。 它會為應用程式中的物件指派下列三個角色之一：「模型」(資料或應用程式邏輯)、「檢視」(使用者介面)，以及「控制器」(程式碼後置)。 下圖說明 MVC 模式的三個部分與使用者之間的關聯性：
 
- [ ![](hello-ios-multiscreen-deepdive-images/00.png "此圖說明 MVC 模式的三個部分與使用者之間的關聯性")](hello-ios-multiscreen-deepdive-images/00.png)
+ [![](hello-ios-multiscreen-deepdive-images/00.png "此圖說明 MVC 模式之三個部分與使用者之間的關聯性")](hello-ios-multiscreen-deepdive-images/00.png#lightbox)
 
 MVC 模式很實用，因為它提供 GUI 應用程式之不同組件間的邏輯分隔，讓我們能夠更輕鬆地重複使用程式碼與檢視。 讓我們開始更詳盡地查看這每一個角色。
 
@@ -71,23 +71,23 @@ MVC 完全不知道模型的「資料持續性」和「存取」。 換句話說
 
 瀏覽控制器在 iOS 應用程式中很常見，可提供常見 iOS 應用程式 (例如**設定**應用程式) 的瀏覽，如下列螢幕擷取畫面所示：
 
- [ ![](hello-ios-multiscreen-deepdive-images/01.png "瀏覽控制器提供 iOS 應用程式 (例如 [設定] 應用程式) 的瀏覽，如此處所示")](hello-ios-multiscreen-deepdive-images/01.png)
+ [![](hello-ios-multiscreen-deepdive-images/01.png "如此圖所示，瀏覽控制器提供 iOS 應用程式 (例如 [設定] 應用程式) 的瀏覽")](hello-ios-multiscreen-deepdive-images/01.png#lightbox)
 
 瀏覽控制器提供三個主要功能：
 
 -  **提供向前瀏覽的勾點**：瀏覽控制器使用會將內容檢視階層「推送」到「瀏覽堆疊」的階層式瀏覽隱喻。 您可以將瀏覽堆疊想像為一疊撲克牌，只能看見最上方的牌，如下圖所示：  
 
-    [ ![](hello-ios-multiscreen-deepdive-images/02.png "此圖以一疊撲克牌的方式說明瀏覽")](hello-ios-multiscreen-deepdive-images/02.png)
+    [![](hello-ios-multiscreen-deepdive-images/02.png "此圖以一疊卡片來說明導覽")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
 
 -  **選擇性地提供 [上一頁] 按鈕**：當我們將新的項目推送至瀏覽堆疊時，標題列可以自動顯示「[上一頁] 按鈕」，讓使用者能夠向後瀏覽。 按 [上一頁] 按鈕即會從瀏覽堆疊中「快顯」取出目前的檢視控制器，並將上一個內容檢視階層載入到視窗：  
 
-    [ ![](hello-ios-multiscreen-deepdive-images/03.png "此圖說明如何從堆疊中「快顯」取出卡片")](hello-ios-multiscreen-deepdive-images/03.png)
+    [![](hello-ios-multiscreen-deepdive-images/03.png "此圖說明如何從堆疊中取出卡片")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
 
 -  **提供標題列**：**瀏覽控制器**的上半部稱為「標題列」。 它負責顯示檢視控制器標題，如下圖所示：  
 
-    [ ![](hello-ios-multiscreen-deepdive-images/04.png "標題列負責顯示檢視控制器標題")](hello-ios-multiscreen-deepdive-images/04.png)
+    [![](hello-ios-multiscreen-deepdive-images/04.png "標題列負責顯示檢視控制器標題")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
 
 
@@ -97,11 +97,11 @@ MVC 完全不知道模型的「資料持續性」和「存取」。 換句話說
 **瀏覽控制器**不會管理內容檢視階層，因此，其本身沒有什麼可以顯示。
 **瀏覽控制器**會改為與「根檢視控制器」配對：
 
- [ ![](hello-ios-multiscreen-deepdive-images/05.png "瀏覽控制器會與根檢視控制器配對")](hello-ios-multiscreen-deepdive-images/05.png)
+ [![](hello-ios-multiscreen-deepdive-images/05.png "瀏覽控制器會與根檢視控制器配對")](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
 
 根檢視控制器代表**瀏覽控制器**堆疊中的第一個檢視控制器，而根檢視控制器的內容檢視階層則是第一個要載入到視窗的內容檢視階層。 如果想要將整個應用程式放置於瀏覽控制器的堆疊上，可將無來源的 Segue 移到**瀏覽控制器**，並將第一個畫面的檢視控制器設定為根檢視控制器，就像我們在 Phoneword 應用程式中所做的：
 
- [ ![](hello-ios-multiscreen-deepdive-images/06.png "無來源的 Segue 會將第一個畫面的檢視控制器設定為根檢視控制器")](hello-ios-multiscreen-deepdive-images/06.png)
+ [![](hello-ios-multiscreen-deepdive-images/06.png "無來源的 Segue 會將第一個畫面的檢視控制器設定為根檢視控制器")](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
 
 ### <a name="additional-navigation-options"></a>其他瀏覽選項
 
@@ -115,7 +115,7 @@ MVC 完全不知道模型的「資料持續性」和「存取」。 換句話說
 
 當我們將具有**顯示**動作的 Segue 新增到分鏡腳本時，會指示 iOS 將第二個檢視控制器推送至瀏覽控制器的堆疊：
 
- [ ![](hello-ios-multiscreen-deepdive-images/09.png "從下拉式清單中設定 Segue 類型")](hello-ios-multiscreen-deepdive-images/09.png)
+ [![](hello-ios-multiscreen-deepdive-images/09.png "從下拉式清單設定 Segue 類型")](hello-ios-multiscreen-deepdive-images/09.png#lightbox)
 
 將 Segue 新增到分鏡腳本，就足以建立畫面之間的簡單轉換。 如果想要在檢視控制器之間傳遞資料，就必須覆寫 `PrepareForSegue` 方法並自行處理資料：
 

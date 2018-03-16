@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 0fff4de7420bceda8c15ae33b03886eb6b332aeb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 430b07918b13878e3561b55ff841a64855183fa7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-package-size"></a>應用程式的套件大小
 
@@ -28,13 +28,13 @@ Xamarin.Android 使用了各種機制來將套件大小降至最低，同時維�
 
 若要提供完整包含的應用程式，套件必須包含應用程式、相關聯的程式庫、內容、Mono 執行階段，以及必要的基底類別庫 (BCL) 組件。 例如，若我們使用的是預設的「Hello, World」範本，則完整套件組建的內容會像是這個樣子：
 
-[ ![連結器之前的套件大小](app-package-size-images/hello-world-package-size-before-linker.png)](app-package-size-images/hello-world-package-size-before-linker.png)
+[![連結器之前的套件大小](app-package-size-images/hello-world-package-size-before-linker.png)](app-package-size-images/hello-world-package-size-before-linker.png#lightbox)
 
 相較於我們期望的大小，15.8 MB 是一個較大的下載大小。 問題在於 BCL 程式庫，因為它們包含了 mscorlib、System 及 Mono.Android，其可提供許多執行您應用程式所需要的元件。 然而，它們同時也提供了您應用程式不會使用到的功能，因此最好是能排除這些元件。
 
 當我們為了散發而建置應用程式時，我們會執行一個稱為「連結」的處理序，其會檢查應用程式並移除任何未直接使用到的程式碼。 這個程序與[記憶體回收](~/android/internals/garbage-collection.md)針對堆積配置記憶體所提供的功能相似。 但連結是透過您的程式碼而非物件來操作。 例如，在 System.dll 中有一整個命名空間是專門用來傳送及接收電子郵件，但若您的應用程式沒有使用到此功能，該程式碼就僅只是在浪費空間。 在 Hello World 應用程式執行連結器後，我們的套件看起來如下：
 
-[ ![連結器之後的套件大小](app-package-size-images/hello-world-package-size-after-linker.png)](app-package-size-images/hello-world-package-size-after-linker.png)
+[![連結器之後的套件大小](app-package-size-images/hello-world-package-size-after-linker.png)](app-package-size-images/hello-world-package-size-after-linker.png#lightbox)
 
 如同我們能看見的，它移除了並未使用到且數量相當龐大的 BCL。 請注意，最終 BCL 大小會取決於應用程式實際使用到的內容。 例如，若我們查看一個稱為 ApiDemo 的更龐大應用程式範例，我們可以看到 BCL 元件的大小增加，因為相較於 Hello, World，ApiDemo 使用到更多的 BCL：
 
@@ -51,7 +51,7 @@ Xamarin.Android 使用了各種機制來將套件大小降至最低，同時維�
 
 第一次在裝置上進行偵錯時，我們會複製兩個分別名為「共用執行階段」及「共用平台」的大型套件。 共用執行階段包含 Mono 執行階段及 BCL，共用平台則包含特定 Android API 層級的組件：
 
-[ ![共用執行階段套件大小](app-package-size-images/shared-runtime-package-size.png)](app-package-size-images/shared-runtime-package-size.png)
+[![共用執行階段套件大小](app-package-size-images/shared-runtime-package-size.png)](app-package-size-images/shared-runtime-package-size.png#lightbox)
 
 複製這些核心元件的過程只會執行一次。雖然這會花上一些時間，但它會允許任何後續在偵錯模式中執行的應用程式使用它們。 最後，我們會複製小而快速的實際應用程式：
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: d9e0bb41360185ffbe476ec5eed3a5c8c2ebf8f9
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 46d5527a33b82a795029f62900e782d644671f0d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sign-with-developer-id"></a>使用開發人員識別碼簽署
 
@@ -24,24 +24,24 @@ ms.lasthandoff: 02/28/2018
 
 若要建置可對使用者直接部署的應用程式 (不透過 Mac App Store)，請將**簽署設定**設為使用 [開發人員識別碼]。 務必要編輯 [發行] 組態。
 
- [ ![](signing-images/config02.png "Mac 簽署選項")](signing-images/config02.png)
+ [![](signing-images/config02.png "Mac 簽署選項")](signing-images/config02.png#lightbox)
 
 
 ## <a name="build"></a>組建
 
 建置之前，請務必選取正確的組態，並在 [Mac 組建] 設定中選擇要建立安裝套件：
 
-[ ![](signing-images/config03.png "建置選項")](signing-images/config03.png)
+[![](signing-images/config03.png "建置選項")](signing-images/config03.png#lightbox)
 
 建置應用程式時，系統會提示開發人員使用這兩種憑證：
 
- [ ![](signing-images/image57.png "允許鑰匙圈存取")](signing-images/image57.png)
+ [![](signing-images/image57.png "允許鑰匙圈存取")](signing-images/image57.png#lightbox)
 
- [ ![](signing-images/image58.png "允許鑰匙圈存取")](signing-images/image58.png)
+ [![](signing-images/image58.png "允許鑰匙圈存取")](signing-images/image58.png#lightbox)
 
 建置應用程式之後，開發人員可在專案上按一下滑鼠右鍵，然後選擇 [開啟包含的資料夾] 即可找到套件檔案 (在 `bin/Release` 目錄中)。 此套件檔案包含應用程式的安裝程式，因此可散發給任何 macOS 使用者進行安裝。
 
- [ ![](signing-images/image59.png "在 Finder 中選取應用程式套件")](signing-images/image59.png)
+ [![](signing-images/image59.png "在 Finder 中選取應用程式套件")](signing-images/image59.png#lightbox)
 
 ## <a name="related-links"></a>相關連結
 

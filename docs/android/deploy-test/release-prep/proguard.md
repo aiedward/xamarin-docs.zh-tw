@@ -7,18 +7,17 @@ ms.assetid: 29C0E850-3A49-4618-9078-D59BE0284D5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 50666708bde2f2e7a61c30c6c9b383541e7ae9d5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 10744d7c4fbcc5a8935a1fe1e60b6c96ec828815
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="proguard"></a>ProGuard
 
 _ProGuard 是 Java 類別檔案壓縮工具、最佳化工具、混淆器及預先驗證器。它可以偵測和移除未使用的程式碼、分析位元組程式碼並予以最佳化，然後混淆類別和類別成員。本指南說明 ProGuard 的運作方式、如何在專案中予以啟用，以及如何加以設定。文中也提供數個 ProGuard 組態範例。_
 
-<a name="overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -38,13 +37,12 @@ ProGuard 會使用下列步驟來處理 APK 的輸入：
 這些全都是「選擇性」步驟。 如下一節中所說明，Xamarin.Android ProGuard 只會使用這些步驟的某些步驟。 
 
 
-<a name="xa_proguard" />
 
 ## <a name="proguard-in-xamarinandroid"></a>Xamarin.Android 中的 ProGuard
 
-Xamarin.Android ProGuard 組態不會混淆 APK。 事實上，您無法透過 ProGuard 啟用混淆功能 (即使是使用自訂的組態檔)。 因此，Xamarin.Android 的 ProGuard 只會執行**壓縮**和**最佳化**步驟： 
+Xamarin.Android ProGuard 組態不會混淆 APK。 事實上，您無法透過 ProGuard 啟用混淆功能 (即使是使用自訂的組態檔)。 因此，Xamarin.Android 的 ProGuard 只會執行**壓縮**及**最佳化**步驟： 
 
-[ ![壓縮和最佳化步驟](proguard-images/01-xa-chain-sml.png)](proguard-images/01-xa-chain.png)
+[![壓縮及最佳化步驟](proguard-images/01-xa-chain-sml.png)](proguard-images/01-xa-chain.png#lightbox)
 
 使用 ProGuard 之前要事先知道的一個重要項目就是它在 `Xamarin.Android` 建置處理序中的運作方式。 此程序會使用兩個不同的步驟： 
 
@@ -55,7 +53,6 @@ Xamarin.Android ProGuard 組態不會混淆 APK。 事實上，您無法透過 P
 所有這些步驟都會描述如下。
 
 
-<a name="linker" />
 
 ### <a name="linker-step"></a>連結器步驟
 
@@ -70,21 +67,18 @@ Xamarin.Android 連結器會為您的應用程式使用靜態分析，以判斷�
 連結器一律會在 ProGuard 步驟之前執行。 因此，連結器能移除您可能預期 ProGuard 要在其上執行的組件/類型/成員 (如需 Xamarin.Android 中之連結的詳細資訊，請參閱 [Android 上的連結](~/android/deploy-test/linker.md))。
 
 
-<a name="proguard_step" />
 
 ### <a name="proguard-step"></a>ProGuard 步驟
 
 成功完成連結器步驟之後，ProGuard 會執行以移除未使用的 Java 位元組程式碼。 這是將 APK 最佳化的步驟。 
 
 
-<a name="using" />
 
 ## <a name="using-proguard"></a>使用 ProGuard
 
 若要在應用程式專案中使用 ProGuard，您必須先啟用 ProGuard。 接下來，您可以讓 Xamarin.Android 建置處理序使用預設 ProGuard 組態檔，或您可以建立自己的組態檔以供 ProGuard 使用。 
 
 
-<a name="enabling" />
 
 ### <a name="enabling-proguard"></a>啟用 ProGuard
 
@@ -92,22 +86,21 @@ Xamarin.Android 連結器會為您的應用程式使用靜態分析，以判斷�
 
 1.  請務必將專案設定為 [發行] 組態 (這相當重要，因為連結器必須執行，ProGuard才能執行)： 
 
-    [ ![選取發行組態](proguard-images/02-set-release-sml.png)](proguard-images/02-set-release.png)
+    [![選取發行組態](proguard-images/02-set-release-sml.png)](proguard-images/02-set-release.png#lightbox)
    
 2.  在 [屬性] > [Android 選項] 的 [封裝] 索引標籤下，選取 [啟用 ProGuard] 選項以啟用 ProGuard： 
 
-    [![已選取 [啟用 Proguard] 選項](proguard-images/03-enable-proguard-sml.png)](proguard-images/03-enable-proguard.png)
+    [![選取了 [啟用 Proguard] 選項](proguard-images/03-enable-proguard-sml.png)](proguard-images/03-enable-proguard.png#lightbox)
 
 針對大部分的 Xamarin.Android 應用程式而言，Xamarin.Android 提供的預設 ProGuard 組態檔即足以移除所有 (且僅限) 未使用的程式碼。 若要檢視預設 ProGuard 組態，請開啟位在 **obj\\Release\\proguard\\proguard_xamarin.cfg** 的檔案。 下一節說明如何建立自訂的 ProGuard 組態檔。 
 
 
-<a name="customizing" />
 
 ### <a name="customizing-proguard"></a>自訂 ProGuard
 
 您可以選擇新增自訂的 ProGuard 組態檔以對 ProGuard 工具施加更多控制。 例如，您可能想要明確告訴 ProGuard 要保留哪些類別。 若要執行此動作，請建立新的 **.cfg** 檔案，並在 [方案總管] 的 [屬性] 窗格中套用 `ProGuardConfiguration` 建置動作： 
 
-[![已選取 ProguardConfiguration 建置動作](proguard-images/04-build-action-sml.png)](proguard-images/04-build-action.png)
+[![選取了 ProguardConfiguration 建置動作](proguard-images/04-build-action-sml.png)](proguard-images/04-build-action.png#lightbox)
 
 請記住，由於 ProGuard 會使用兩者，所以此組態檔不會取代 Xamarin.Android **proguard_xamarin.cfg** 檔案。 
 
@@ -156,8 +149,6 @@ Xamarin.Android 連結器會為您的應用程式使用靜態分析，以判斷�
 您也可以使用 `[Register]` 註釋來登錄自己的名稱並使用這些名稱來自訂 ProGuard 規則。 您可以登錄 Adapters、Views、BroadcastReceivers、Services、ContentProviders、Activities 及 Fragments 的名稱。 如需使用 `[Register]` 自訂屬性的詳細資訊，請參閱[使用 JNI](~/android/platform/java-integration/working-with-jni.md)。
 
 
-<a name="options" />
-
 ### <a name="proguard-options"></a>ProGuard 選項
 
 ProGuard 提供一些您可以設定的選項，以對其作業進行更細微的控制。 [ProGuard 手冊](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/introduction.html) \(英文\) 提供使用 ProGuard 的完整參考文件。 
@@ -196,7 +187,6 @@ Xamarin.Android 會乎略下列選項：
 -    [預先驗證選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#preverificationoptions)
 
 
-<a name="nougat" />
 
 ## <a name="proguard-and-android-nougat"></a>ProGuard 和 Android Nougat
 
@@ -207,7 +197,6 @@ Xamarin.Android 會乎略下列選項：
 您可以在 [SourceForge 頁面](https://sourceforge.net/projects/proguard/files/)找到所有 ProGuard 版本。 
 
 
-<a name="examples" />
 
 ## <a name="example-proguard-configurations"></a>範例 ProGuard 組態
 
@@ -272,7 +261,6 @@ Xamarin.Android 會乎略下列選項：
     public static <fields>;
     }
 
-<a name="build" />
 
 ## <a name="proguard-and-the-xamarinandroid-build-process"></a>ProGuard 與 Xamarin.Android 建置處理序
 
@@ -325,12 +313,7 @@ ProGuard 工作可在 **Xamarin.Android.Build.Tasks.dll** 組件內找到。 它
 C:\Program Files (x86)\Java\jdk1.8.0_92\\bin\java.exe -jar C:\Android\android-sdk\tools\proguard\lib\proguard.jar -include obj\Release\proguard\proguard_xamarin.cfg -include obj\Release\proguard\proguard_project_references.cfg -include obj\Release\proguard\proguard_project_primary.cfg "-injars 'obj\Release\proguard\__proguard_input__.jar';'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v7.0\mono.android.jar'" "-libraryjars 'C:\Android\android-sdk\platforms\android-25\android.jar'" -outjars "obj\Release\proguard\__proguard_output__.jar" -optimizations !code/allocation/variable
 ```
 
-
-<a name="troubleshoot" />
-
 ## <a name="troubleshooting"></a>疑難排解
-
-<a name="files" />
 
 ### <a name="file-issues"></a>檔案問題
 
@@ -351,13 +334,10 @@ C:\Program Files (x86)\Java\jdk1.8.0_92\\bin\java.exe -jar C:\Android\android-sd
 -----
 
 
-<a name="other" />
-
 ### <a name="other-issues"></a>其他問題
 
 ProGuard [疑難排解](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/troubleshooting.html) \(英文\) 頁面討論使 ProGuard 時會遇到的常見問題 (和解決方案)。
 
-<a name="summary" />
 
 ## <a name="summary"></a>總結
 

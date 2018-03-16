@@ -2,16 +2,16 @@
 title: "適用於 iOS 的 fastlane - sigh"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
+ms.assetid: CD17276F-2C8C-4A46-A54C-DD532EBD5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d80a0ab5583231f95241fb8d4f6e339e44a84ca
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2c6ac298ca2040bb2d3619be080fb1387fbfd3a0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="fastlane-for-ios--sigh"></a>適用於 iOS 的 fastlane - sigh
 
@@ -61,7 +61,7 @@ sigh 提供一個終端機介面，可讓您為下列所有組態建立和更新
 
 其中 `com.company.appname` 是您應用程式的套件組合識別碼，您可以在 Xamarin.iOS 應用程式的 Info.plist 檔案中找到此識別碼，如下所示：
 
-[ ![](sigh-images/fastlane-image5.png "Xamarin.iOS 應用程式的 Info.plist 檔案")](sigh-images/fastlane-image5.png)
+[![](sigh-images/fastlane-image5.png "Xamarin.iOS 應用程式的 Info.plist 檔案")](sigh-images/fastlane-image5.png#lightbox)
 
 唯一「應用程式識別碼」必須是反向 DNS 樣式字串。 建立此識別碼之後，請記下它，因為稍後在本指南中使用 sigh 時，將會需要用到它。
 
@@ -108,7 +108,7 @@ fastlane sigh --development
 
 如果您的 Apple ID 與多個小組連線，此處將會顯示這些小組。 請選取與您想要使用之小組對應的號碼：
 
-[ ![](sigh-images/fastlane-image2.png "選取您想要使用的小組")](sigh-images/fastlane-image2.png)
+[![](sigh-images/fastlane-image2.png "選取您想要使用的小組")](sigh-images/fastlane-image2.png#lightbox)
 
 您也可以透過下列方式將「小組識別碼」傳遞給 CLI：
 
@@ -124,7 +124,7 @@ fastlane 將會接著為您建立、下載及安裝佈建設定檔。
 
 如果您瀏覽 Developer Center (開發人員中心)，就可以檢視新建立的佈建設定檔，如下所示：
 
-[ ![](sigh-images/fastlane-image10.png "檢視新建立的佈建設定檔")](sigh-images/fastlane-image10.png)
+[![](sigh-images/fastlane-image10.png "檢視新建立的佈建設定檔")](sigh-images/fastlane-image10.png#lightbox)
 
 sigh 預設會將佈建設定檔儲存在目前的資料夾中。 若要變更輸出目錄，請編輯 `output_path`，或是執行下列動作：
 
@@ -140,19 +140,19 @@ fastlane sigh -o "~/Library/MobileDevice/Provisioning Profiles"
 
 - 若要下載所有佈建設定檔，請使用：
 
-    ````bash
+    ```bash
     fastlane sigh download_all
     ```
 
-- To use a specific signing identity for your provisioning profile use:
+- 若要為您的佈建設定檔使用特定簽署身分識別：
 
     ```bash
     fastlane sigh -c "Amy cert"
     ```
     
-    Where `Amy cert` is the Code Signing Identity name.
+    其中 `Amy cert` 為程式碼簽署身分識別名稱。
 
 
-## Related Links
+## <a name="related-links"></a>相關連結
 
 - [fastlane - sigh](https://github.com/fastlane/fastlane/tree/master/sigh#readme)

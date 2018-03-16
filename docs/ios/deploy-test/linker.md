@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/24/2017
-ms.openlocfilehash: c4ad69890b7f50478e44d59cd37e7b6ac96a87ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2ee5da1b2c5d4c8fbf405c7f28ed280a3286a025
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="linking-on-ios"></a>在 iOS 上連結
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 02/27/2018
 
 您可以透過 [專案選項] 中的 [連結器行為] 下拉式清單自訂連結程序。 若要存取此清單，請對 iOS 專案按兩下，然後瀏覽至 [iOS 組建] > [連結器選項]，如下所示：
 
-[ ![](linker-images/image1.png "連結器選項")](linker-images/image1.png)
+[![](linker-images/image1.png "連結器選項")](linker-images/image1.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -128,7 +128,7 @@ public sealed class PreserveAttribute : System.Attribute {
 --linkskip=NameOfFirstAssembly --linkskip=NameOfSecondAssembly
 ```
 
-沒有可供使用這個選項的使用者介面，但 Visual Studio for Mac [專案選項] 對話方塊或 Visual Studio [專案屬性] 窗格中的 [其他 mtouch 引數] 文字欄位內會提供此選項。 (例如，*--linkskip=mscorlib* 不會連結 mscorlib.dll，但會連結解決方案中的其他組件)。 <bpt id="p1">*</bpt>--linkskip=mscorlib<ept id="p1">*</ept> would not link mscorlib.dll but would link other assemblies in the solution).
+沒有可供使用這個選項的使用者介面，但 Visual Studio for Mac [專案選項] 對話方塊或 Visual Studio [專案屬性] 窗格中的 [其他 mtouch 引數] 文字欄位內會提供此選項。 (例如， *--linkskip=mscorlib* 不會連結 mscorlib.dll，但會連結解決方案中的其他組件)。
 
 <a name="Disabling_Link_Away" />
 
@@ -138,7 +138,7 @@ public sealed class PreserveAttribute : System.Attribute {
 
 此選項對應至使用命令列工具 mtouch 時的 -nolinkaway 選項。
 
-沒有可供使用這個選項的使用者介面，但 Visual Studio for Mac [專案選項] 對話方塊或 Visual Studio [專案屬性] 窗格中的 [其他 mtouch 引數] 文字欄位內會提供此選項。 (例如，*--nolinkaway* 不會移除額外的程式碼 (大約 100 kb))。 <bpt id="p1">*</bpt>--nolinkaway<ept id="p1">*</ept> would not remove the extra code (about 100kb)).
+沒有可供使用這個選項的使用者介面，但 Visual Studio for Mac [專案選項] 對話方塊或 Visual Studio [專案屬性] 窗格中的 [其他 mtouch 引數] 文字欄位內會提供此選項。 (例如， *--nolinkaway* 不會移除額外的程式碼 (大約 100kb))。
 
 ### <a name="marking-your-assembly-as-linker-ready"></a>將組件標示為已可供連結器使用
 

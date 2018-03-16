@@ -7,12 +7,12 @@ ms.assetid: CD128CB9-499F-4558-B49F-77248824EFDF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: d4d00019f9c0fd3483cdf1b03d9f110078ce37a8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: a31d90e6d5abd574eb6187953082e1b70f66a113
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="visual-studio-android-emulator"></a>Visual Studio Android 模擬器
 
@@ -24,36 +24,32 @@ Microsoft Visual Studio 2015 包含 Android 模擬器，此模擬器可用來作
 
 本指南說明如何從 Visual Studio 啟動 Microsoft Android 模擬器來測試您的應用程式，並說明此模擬器中可用的各種功能。 您將了解如何選取「裝置設定檔」(類似於預設 Android SDK 模擬器中的裝置定義) 來模擬不同類型的 Android 裝置。 最後的疑難排解小節說明常見的錯誤和因應措施。
 
-<a name="requirements" />
-
 ## <a name="requirements"></a>需求
 
 若要執行此模擬器，電腦必須符合執行 Hyper-V 的需求。 Hyper-V 需要 64 位元專業版的 Windows 8、Windows 8.1、Windows 10 或更高版本。 如需有關需求的詳細資訊，請參閱 [Visual Studio 的 Android 模擬器系統需求](https://msdn.microsoft.com/en-us/library/mt228280.aspx)。
 
 > [!NOTE]
-> **注意：**在已啟用 Hyper-V 的情況下，您無法使用 HAXM (Android SDK Emulator 所使用)。 如需有關 HAXM 的限制和可能問題，請參閱 [HAXM 虛擬化衝突](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#virt-conflicts)。
+> 在已啟用 Hyper-V 的情況下，您無法使用 HAXM (Android SDK Emulator 所使用)。 如需有關 HAXM 的限制和可能問題，請參閱 [HAXM 虛擬化衝突](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#virt-conflicts)。
 
-
-<a name="launching" />
 
 ## <a name="running-the-emulator"></a>執行模擬器
 
 Visual Studio 在 [偵錯目標] 下拉式功能表中提供數個預先設定的目標裝置設定檔 (如以下螢幕擷取畫面所示)。 Microsoft Android 模擬器目標會以 **VS 模擬器**作為開頭：
 
-[ ![預先設定的目標裝置設定檔](visual-studio-android-emulator-images/01-vs-emulator-defaults-vs-sml.png)](visual-studio-android-emulator-images/01-vs-emulator-defaults-vs.png)
+[![預先設定的目標裝置設定檔](visual-studio-android-emulator-images/01-vs-emulator-defaults-vs-sml.png)](visual-studio-android-emulator-images/01-vs-emulator-defaults-vs.png#lightbox)
 
 當 Visual Studio 啟動 Xamarin.Android 應用程式時，會以所選裝置目標啟動模擬器，並將應用程式部署到該模擬器。 Visual Studio 左下角會顯示一則訊息，指出正在啟動模擬器：
 
-[ ![正在啟動 VS 模擬器](visual-studio-android-emulator-images/02-emulator-starting-vs-sml.png)](visual-studio-android-emulator-images/02-emulator-starting-vs.png)
+[![正在啟動 VS 模擬器](visual-studio-android-emulator-images/02-emulator-starting-vs-sml.png)](visual-studio-android-emulator-images/02-emulator-starting-vs.png#lightbox)
 
 在一段啟動延遲之後，就會出現如左下方所示的模擬器畫面。 請向上拖曳畫面上的鎖定圖示以將裝置解除鎖定。
 接著，Xamarin.Android 應用程式應該就會在模擬器中執行，如右邊所示：
 
-[ ![瀏覽器螢幕擷取畫面](visual-studio-android-emulator-images/03-first-screen-vs-sml.png)](visual-studio-android-emulator-images/03-first-screen-vs.png)
+[![瀏覽器螢幕擷取畫面](visual-studio-android-emulator-images/03-first-screen-vs-sml.png)](visual-studio-android-emulator-images/03-first-screen-vs.png#lightbox)
 
 與使用預設 Android SDK 模擬器時一樣，您可以在程式碼中設定中斷點、檢查變數，以及檢視呼叫堆疊。 模擬器右邊的垂直工具列可用來存取模擬器功能：
 
-[ ![垂直工具列上的按鈕](visual-studio-android-emulator-images/04-vertical-toolbar-vs-sml.png)](visual-studio-android-emulator-images/04-vertical-toolbar-vs.png)
+[![垂直工具列上的按鈕](visual-studio-android-emulator-images/04-vertical-toolbar-vs-sml.png)](visual-studio-android-emulator-images/04-vertical-toolbar-vs.png#lightbox)
 
 以下清單摘要說明垂直工具列上每個按鈕的功能：
 
@@ -77,7 +73,7 @@ Visual Studio 在 [偵錯目標] 下拉式功能表中提供數個預先設定�
 
 [其他工具] 按鈕會顯示一個開啟的對話方塊，當中顯示模擬器的額外功能：
 
-[ ![[其他工具] 對話方塊](visual-studio-android-emulator-images/05-additional-tools-vs-sml.png)](visual-studio-android-emulator-images/05-additional-tools-vs.png)
+[![[其他工具] 對話方塊](visual-studio-android-emulator-images/05-additional-tools-vs-sml.png)](visual-studio-android-emulator-images/05-additional-tools-vs.png#lightbox)
 
 
 從該對話方塊頂端的索引標籤列，即可使用每項額外功能：
@@ -100,7 +96,6 @@ Visual Studio 在 [偵錯目標] 下拉式功能表中提供數個預先設定�
 如需有關如何使用這些功能的詳細資訊，請參閱 [Visual Studio 的 Android 模擬器簡介](https://blogs.msdn.microsoft.com/visualstudioalm/2014/11/12/introducing-visual-studios-emulator-for-android/) \(英文\)。
 
 
-<a name="device_profiles" />
 
 ## <a name="configuring-device-profiles"></a>設定裝置設定檔
 
@@ -108,28 +103,26 @@ Microsoft Android 模擬器包含一組裝置設定檔，這些設定檔代表�
 
 「模擬器管理員」可用來進行裝置設定檔安裝、解除安裝及啟動。 請從 [工具] 功能表中，選取 [Visual Studio 的 Android 模擬器]，如以下螢幕擷取畫面所示：
 
-[![從 [工具] 功能表啟動模擬器](visual-studio-android-emulator-images/06-launch-emulator-manager-vs-sml.png)](visual-studio-android-emulator-images/06-launch-emulator-manager-vs.png)
+[![從 [工具] 功能表啟動模擬器](visual-studio-android-emulator-images/06-launch-emulator-manager-vs-sml.png)](visual-studio-android-emulator-images/06-launch-emulator-manager-vs.png#lightbox)
 
 這會開啟 [裝置設定檔] 對話方塊。 已安裝的設定檔會在裝置設定檔清單的頂端以醒目方式標示。 未安裝 (但可供安裝) 的設定檔會顯示成灰色：
 
-[ ![裝置設定檔圖示](visual-studio-android-emulator-images/07-device-profiles-vs-sml.png)](visual-studio-android-emulator-images/07-device-profiles-vs.png)
+[![裝置設定檔圖示](visual-studio-android-emulator-images/07-device-profiles-vs-sml.png)](visual-studio-android-emulator-images/07-device-profiles-vs.png#lightbox)
 
 若要安裝新的設定檔，請按一下設定檔安裝圖示 (箭頭向下的箭號，如以上螢幕擷取畫面所示)。 例如，當您按一下 [5.7" Marshmallow (6.0.0) XHDPI Phone] 的設定檔安裝圖示時，「模擬器管理員」會下載該設定檔，如下所示：
 
-[ ![下載設定檔的範例](visual-studio-android-emulator-images/08-downloading-profile-vs-sml.png)](visual-studio-android-emulator-images/08-downloading-profile-vs.png)
+[![下載設定檔的範例](visual-studio-android-emulator-images/08-downloading-profile-vs-sml.png)](visual-studio-android-emulator-images/08-downloading-profile-vs.png#lightbox)
 
 下載裝置設定檔之後，會以醒目方式標示它，以表示已成功安裝該設定檔。 按一下 [顯示詳細資料] 圖示將會顯示平台類型、CPU 架構、螢幕大小/解析度，以及裝置可用的記憶體：
 
-[ ![顯示裝置設定檔詳細資料](visual-studio-android-emulator-images/09-show-details-vs-sml.png)](visual-studio-android-emulator-images/09-show-details-vs.png)
+[![顯示裝置設定檔詳細資料](visual-studio-android-emulator-images/09-show-details-vs-sml.png)](visual-studio-android-emulator-images/09-show-details-vs.png#lightbox)
 
 當 Visual Studio [偵錯目標] 下拉式功能表開啟時，新安裝的裝置設定檔現已可供作為目標使用：
 
-[ ![目標下拉式功能表中的新設定檔](visual-studio-android-emulator-images/10-debug-target-vs-sml.png)](visual-studio-android-emulator-images/10-debug-target-vs.png)
+[![目標下拉式功能表中的新設定檔](visual-studio-android-emulator-images/10-debug-target-vs-sml.png)](visual-studio-android-emulator-images/10-debug-target-vs.png#lightbox)
 
 若要縮短此清單，可以在「模擬器管理員」中按一下 [將此模擬器解除安裝] 來移除不使用的裝置設定檔。 請注意，目前無法在此模擬器中建立自訂的裝置模擬器。
 
-
-<a name="troubleshooting" />
 
 ## <a name="troubleshooting"></a>疑難排解
 
@@ -144,27 +137,25 @@ Microsoft Android 模擬器包含一組裝置設定檔，這些設定檔代表�
 
 1.  按一下 [啟動] 按鈕，輸入 **MMC**，然後按 **Enter**鍵。 按一下 [Hyper-V 管理員]，如下所示：
 
-    [ ![Hyper-V 管理員](visual-studio-android-emulator-images/15-launch-hyperv-manager.png)](visual-studio-android-emulator-images/15-launch-hyperv-manager.png)
+    [![Hyper-V 管理員](visual-studio-android-emulator-images/15-launch-hyperv-manager.png)](visual-studio-android-emulator-images/15-launch-hyperv-manager.png#lightbox)
 
 2.  在 [Hyper-V 管理員] 的 [虛擬機器] 窗格中，於要編輯的模擬器上按一下滑鼠右鍵，然後按一下 [設定]：
 
-    [ ![虛擬機器的 [設定] 功能表項目](visual-studio-android-emulator-images/16-vm-settings.png)](visual-studio-android-emulator-images/16-vm-settings.png)
+    [![虛擬機器的 [設定] 功能表項目](visual-studio-android-emulator-images/16-vm-settings.png)](visual-studio-android-emulator-images/16-vm-settings.png#lightbox)
 
 3.  在設定視窗中，找出 [相容性] 區段 (位於 [硬體] > [處理器] 底下)，然後啟用 [移轉至使用不同處理器版本的實體電腦]：
 
-    [ ![已選取 [移轉] 選項](visual-studio-android-emulator-images/17-set-compatibility-vs-sml.png)](visual-studio-android-emulator-images/17-set-compatibility-vs.png)
+    [![已選取 [移轉] 選項](visual-studio-android-emulator-images/17-set-compatibility-vs-sml.png)](visual-studio-android-emulator-images/17-set-compatibility-vs.png#lightbox)
 
 4.  按一下 [確定] 並關閉 [Hyper-V 管理員] 視窗。
 
 
-<a name="app_fail" />
 
 ### <a name="app-deploys-and-starts-but-fails-immediately"></a>應用程式部署並啟動但立即發生失敗
 
 在此情況下，模擬器啟動，應用程式成功部署至模擬器，並且應用程式啟動。 不過，應用程式立即發生失敗。
 在許多情況下，這也是主機處理器與 Hyper-V 虛擬機器之間不相容所造成。 若要解決此錯誤，請依照[模擬器無法啟動](#cant_connect) (參見上方) 中的指示進行操作。
 
-<a name="mscorlib" />
 
 ### <a name="emulator-stops-with-the-diagnostic-message-libaot-mscorlibdllso-not-found"></a>模擬器停止並傳回下列診斷訊息：**找不到 libaot-mscorlib.dll.so**
 
@@ -176,23 +167,20 @@ Microsoft Android 模擬器包含一組裝置設定檔，這些設定檔代表�
 
 3.  按一下 [Android 選項]，然後取消選取 [使用 Fast Deployment (僅限偵錯模式)]：
 
-    [ ![已取消選取 [使用 Fast Deployment (僅限偵錯模式)]](visual-studio-android-emulator-images/18-fast-deployment-vs-sml.png)](visual-studio-android-emulator-images/18-fast-deployment-vs.png)
+    [![已取消選取 [使用 Fast Deployment (僅限偵錯模式)]](visual-studio-android-emulator-images/18-fast-deployment-vs-sml.png)](visual-studio-android-emulator-images/18-fast-deployment-vs.png#lightbox)
 
 
-<a name="dragndrop" />
 
 ### <a name="drag-and-drop-does-not-work"></a>無法拖放
 
 如果以系統管理員身分啟動「Visual Studio 的 Android 模擬器」(或是在 Visual Studio 以系統管理員權限執行的情況下，從 Visual Studio 啟動該模擬器)，可能無法拖放 .APK 或 .ZIP 檔案。 若要解決此問題，請在未提高權限的情況下 (亦即不是以系統管理員身分) 執行「Visual Studio 的 Android 模擬器」。
 
-<a name="other" />
 
 ### <a name="other-errors"></a>其他錯誤
 
 上述疑難排解秘訣涵蓋搭配 Xamarin.Android 使用「Visual Studio Android 模擬器」時的最常見問題。 如需更完整的「Visual Studio Android 模擬器」疑難排解指南，請參閱[針對 Visual Studio 的 Android 模擬器進行疑難排解](https://msdn.microsoft.com/en-us/library/mt228282.aspx)。
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>總結
 

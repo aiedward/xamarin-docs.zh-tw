@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: d118eb5e9f875c5480105d1596ef1318112fb53e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3431791d51858df2013634e1594ee960a10728da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="apk-expansion-files"></a>APK 擴充檔
 
@@ -33,7 +33,6 @@ ms.lasthandoff: 02/27/2018
 擴充檔必須與 APK 同時上傳。
 Google Play 不允許將擴充檔上傳到現有的 APK，或是更新現有的 APK。 如果必須更新擴充檔，則必須上傳已更新 `versionCode` 的新 APK。
 
-<a name="Expansion_File_Storage" />
 
 ## <a name="expansion-file-storage"></a>擴充檔儲存體
 
@@ -51,7 +50,6 @@ Google Play 不允許將擴充檔上傳到現有的 APK，或是更新現有的 
 
 有一個可以替代從擴充檔將檔案解壓縮的方式，就是直接從擴充檔讀取資產或資源。 擴充檔就是一個可與適當的 `ContentProvider` 搭配使用的 ZIP 檔案。 [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary) 包含一個組件 [System.IO.Compression.Zip](https://github.com/mattleibow/Android.Play.ExpansionLibrary/tree/master/System.IO.Compression.Zip)，此組件包含可允許對某些媒體檔案進行直接檔案存取的 `ContentProvider`。 如果媒體檔案被封裝成 ZIP 檔案，則媒體播放呼叫可直接使用 ZIP 中的檔案，而無須將 ZIP 檔案解壓縮。 將媒體檔案新增至 ZIP 檔案時，不應該將媒體檔案壓縮。 
 
-<a name="FileName_Format" />
 
 ### <a name="filename-format"></a>FileName 格式
 
@@ -68,13 +66,12 @@ Google Play 不允許將擴充檔上傳到現有的 APK，或是更新現有的 
 
 例如，如果 APK 版本為 21，而套件名稱為 `mono.samples.helloworld`，則主要擴充檔將會命名為 **main.21.mono.samples.helloworld**。
 
-<a name="Download_Process" />
 
 ## <a name="download-process"></a>下載程序
 
 從 Google Play 安裝應用程式時，擴充檔應該隨著 APK 一起下載並儲存。 在某些情況下，這可能不會發生，或擴充檔可能已被刪除。 為了處理此情況，應用程式必須檢查以了解擴充檔是否存在，然後如有必要，就會下載擴充檔。 以下流程圖顯示此程序的建議工作流程：
 
-[ ![APK 擴充檔流程圖](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png)
+[![APK 擴充檔流程圖](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png#lightbox)
 
 當應用程式啟動時，它應該檢查以了解目前的裝置上是否有適當的擴充檔。 如果沒有，應用程式就必須從 Google Play 的[應用程式授權](http://developer.android.com/google/play/licensing/index.html)提出要求。 進行這項檢查時，是藉由使用「授權驗證程式庫」(LVL)來進行，且不論是免費還是授權的應用程式都必須進行此檢查。 LVL 主要是供付費應用程式用來強制執行授權限制。 不過，Google 已將 LVL 延伸，讓它也可以與擴充程式庫搭配使用。 免費應用程式必須執行 LVL 檢查，但可以忽略授權限制。 LVL 要求會負責提供應用程式所需的下列擴充檔相關資訊： 
 
@@ -92,7 +89,6 @@ Google Play 不允許將擴充檔上傳到現有的 APK，或是更新現有的 
 -  在下載期間發生的錯誤會依正常程序處理並且可復原。
 
 
-<a name="Architectural_Overview" />
 
 ## <a name="architectural-overview"></a>架構概觀
 

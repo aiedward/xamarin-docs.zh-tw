@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 84db17ede0019e1134b65edaca85ef2401fb3bc0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dfa3d1f89d813f2e57863e615c701cd78c655ac0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-app-store"></a>發佈至 App Store
 
@@ -133,7 +133,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 4. 建立連結會將未使用的方法、屬性、類別等項目移除，進而減少應用程式可散發項目的整體大小。在大部分情況下應將其保持在**僅連結 SDK 組件**預設值。 而在使用部分特定協力廠商程式庫的情況下，您可能必須將此值設為**不要連結**，以防必要項目受到移除。 如需詳細資訊，請參閱 [iOS 建置機制](~/ios/deploy-test/ios-build-mechanics.md)指南。
 5. 建議您選取 [Optimize PNG image files for iOS] (為 iOS 將 PNG 影像檔最佳化) 核取方塊，這將能進一步減少您應用程式可傳遞項目的大小。
 6. 因為偵錯會使組建產生不必要的大小，所以建議「不要」啟用。
-8. 針對 iOS 11，您將需要選取支援 **ARM64** 的其中一個裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 [32/64 位元平台考量](~/cross-platform/macios/32-and-64.md)文件中的**啟用 Xamarin.iOS 應用程式的 64 位元組建**一節。
+8. 針對 iOS 11，您將需要選取支援 **ARM64** 的其中一個裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 [32/64 位元平台考量](~/cross-platform/macios/32-and-64/index.md)文件中的**啟用 Xamarin.iOS 應用程式的 64 位元組建**一節。
 9. 您可以考慮選擇使用 **LLVM** 編譯器，其所建立的程式碼更加輕巧高效，但需要較長的編譯時間。
 10. 根據您的應用程式需求，也可以考慮調整要使用的**記憶體回收**類型與**國際化**設定。
 11. 儲存您對組建組態進行的變更。
@@ -157,7 +157,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
     ![](publishing-to-the-app-store-images/configurevs02.png "[進階] 索引標籤")
 
-8. 若您的 Xamarin.iOS 應用程式目標為 iOS 8 及 64 位元 iOS 裝置，就必須選取其中一個支援 **ARM64** 的裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 [32/64 位元平台考量](~/cross-platform/macios/32-and-64.md)文件中的**啟用 Xamarin.iOS 應用程式的 64 位元組建**一節。
+8. 若您的 Xamarin.iOS 應用程式目標為 iOS 8 及 64 位元 iOS 裝置，就必須選取其中一個支援 **ARM64** 的裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 [32/64 位元平台考量](~/cross-platform/macios/32-and-64/index.md)文件中的**啟用 Xamarin.iOS 應用程式的 64 位元組建**一節。
 9. 您可以考慮選擇使用 **LLVM** 編譯器，其所建立的程式碼更加輕巧高效，但需要較長的編譯時間。
 10. 根據您的應用程式需求，也可以考慮調整要使用的**記憶體回收**類型與**國際化**設定。
 11. 儲存您對組建組態進行的變更。
@@ -351,16 +351,16 @@ xbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/B
 
 1. 選取 [Deliver Your App] (傳遞您的應用程式)，並按一下 [選擇] 按鈕：
 
-    [ ![](publishing-to-the-app-store-images/publishvs01.png "選取 [Deliver Your App] (傳遞您的應用程式)")](publishing-to-the-app-store-images/publishvs01.png)
+    [![](publishing-to-the-app-store-images/publishvs01.png "選取 [Deliver Your App] \(傳遞您的應用程式\)")](publishing-to-the-app-store-images/publishvs01.png#lightbox)
 
 2. 在上方選取您建立的 ZIP 或 IPA 檔案，並按一下 [確定] 按鈕。
 
 3. 應用程式載入器將會驗證檔案：
 
-    [ ![](publishing-to-the-app-store-images/publishvs02.png "驗證畫面")](publishing-to-the-app-store-images/publishvs02.png)
+    [![](publishing-to-the-app-store-images/publishvs02.png "驗證畫面")](publishing-to-the-app-store-images/publishvs02.png#lightbox)
 4. 按一下 [下一步] 按鈕後，就會對 App Store 驗證應用程式：
 
-    [ ![](publishing-to-the-app-store-images/publishvs03.png "對 App Store 進行驗證")](publishing-to-the-app-store-images/publishvs03.png)
+    [![](publishing-to-the-app-store-images/publishvs03.png "對 App Store 進行驗證")](publishing-to-the-app-store-images/publishvs03.png#lightbox)
 5. 按一下 [傳送] 按鈕將應用程式傳送至 Apple 進行審查。
 6. 當檔案已成功上傳時，應用程式載入器會通知您。
 
@@ -368,7 +368,7 @@ xbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/B
 
 如果您登再次登入 iTunes Connect，並從可用的應用程式清單選取您的應用程式，iTunes Connect 中的狀態現在應會顯示其**正在等候檢閱** (其可能在處理時，暫時顯示**已收到上傳**)：
 
-[ ![](publishing-to-the-app-store-images/image21.png "iTunes Connect 中的狀態現在應會顯示其")正在等候檢閱](publishing-to-the-app-store-images/image21.png)
+[![](publishing-to-the-app-store-images/image21.png "iTunes Connect 中的狀態現在應會顯示其")正在等候檢閱](publishing-to-the-app-store-images/image21.png#lightbox)
 
 ## <a name="summary"></a>總結
 

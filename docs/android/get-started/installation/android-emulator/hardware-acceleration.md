@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/22/2017
-ms.openlocfilehash: 53dc85cab94bdf692e088d7c6eea6916d283ba84
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7560900ace62a737ac765bcfe93f759f8985aca2
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Android Emulator 硬體加速
 
 由於 Android SDK 模擬器在沒有硬體加速的情況下會變得非常緩慢，因此建議使用 Intel 的 HAXM (Hardware Accelerated Execution Manager) 來大幅提升 Android SDK 模擬器的效能。
 
-<a name="haxm-overview" />
 
 ## <a name="haxm-overview"></a>HAXM 概觀
 
@@ -27,9 +26,8 @@ HAXM 為硬體輔助的虛擬化引擎 (Hypervisor)，使用 Intel 虛擬化技�
 Android SDK 模擬器會自動在 HAXM 可供使用時加以使用。 當您選取 **x86** 型虛擬裝置時 (如[設定及使用](~/android/deploy-test/debugging/android-sdk-emulator/index.md)中所述)，該虛擬裝置將使用 HAXM 進行硬體加速。 在您第一次使用 Android SDK 模擬器之前，最好先確認 HAXM 已安裝並可供 Android SDK 模擬器使用。
 
 > [!NOTE]
-> **注意：**您無法在虛擬機器上執行 HAXM。
+> 您無法在虛擬機器上執行 HAXM。
 
-<a name="verify-haxm" />
 
 ## <a name="verifying-haxm-installation"></a>驗證 HAXM 安裝
 
@@ -39,7 +37,7 @@ Android SDK 模擬器會自動在 HAXM 可供使用時加以使用。 當您選�
 
 1. 按一下 [工具] > [Android] > [Android Emulator 管理員] 來啟動 Android Emulator 管理員：
 
-    [![[Android Emulator 管理員] 功能表項目位置](hardware-acceleration-images/win/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/win/01-avd-manager-menu-item.png)
+    [![[Android Emulator 管理員] 功能表項目位置](hardware-acceleration-images/win/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/win/01-avd-manager-menu-item.png#lightbox)
 
 2. 如果您看到類似下方的 [效能警告] 對話方塊，便代表您的電腦上尚未安裝或正確設定 HAXM：
 
@@ -65,7 +63,7 @@ Android SDK 模擬器會自動在 HAXM 可供使用時加以使用。 當您選�
 
 1. 按一下 [工具] > [Google 模擬器管理員] 來啟動 Android Emulator 管理員：
 
-    [![[Android Emulator 管理員] 功能表項目位置](hardware-acceleration-images/mac/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/mac/01-avd-manager-menu-item.png)
+    [![[Android Emulator 管理員] 功能表項目位置](hardware-acceleration-images/mac/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/mac/01-avd-manager-menu-item.png#lightbox)
 
 2. 如果您看到類似下方的 [效能警告] 對話方塊，便代表您的電腦上尚未安裝或正確設定 HAXM：
 
@@ -75,7 +73,7 @@ Android SDK 模擬器會自動在 HAXM 可供使用時加以使用。 當您選�
 
 3. 選取 **x86** 映像 (例如 **Android\_Accelerated\_x86**)，按一下 [開始]，然後按一下 [啟動]：
 
-    [![使用預設虛擬裝置映像啟動 Android SDK 模擬器](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png)
+    [![使用預設虛擬裝置映像啟動 Android SDK 模擬器](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png#lightbox)
 
 3. 模擬器啟動時，請連一 [正在啟動 Android Emulator] 對話方塊視窗。 如果已安裝 HAXM，您將會看到「HAX 正在運作且模擬器會在快速虛擬模式中執行」的訊息，如這個螢幕擷取畫面所示：
 
@@ -147,7 +145,7 @@ Device Guard 和 Credential Guard 可能會防止在 Windows 電腦上停用 Hyp
 
 2. 在 [系統摘要] 中，查看 [Device Guard 虛擬化型安全性] 是否存在且處於 [執行中] 狀態：
 
-   [![Device Guard 存在且正在執行](hardware-acceleration-images/win/09-device-guard-sml.png)](hardware-acceleration-images/win/09-device-guard.png)
+   [![Device Guard 存在且正在執行](hardware-acceleration-images/win/09-device-guard-sml.png)](hardware-acceleration-images/win/09-device-guard.png#lightbox)
 
 如果已啟用 Device Guard，請使用下列步驟來停用它：
 
@@ -157,7 +155,7 @@ Device Guard 和 Credential Guard 可能會防止在 Windows 電腦上停用 Hyp
 
 3. 在 [本機群組原則編輯器] 中，瀏覽至 [電腦設定] > [系統管理範本] > [系統] > [Device Guard]：
 
-   [![[本機群組原則編輯器] 中的 Device Guard](hardware-acceleration-images/win/10-group-policy-editor-sml.png)](hardware-acceleration-images/win/10-group-policy-editor.png)
+   [![[本機群組原則編輯器] 中的 Device Guard](hardware-acceleration-images/win/10-group-policy-editor-sml.png)](hardware-acceleration-images/win/10-group-policy-editor.png#lightbox)
 
 4. 將 [開啟虛擬化型安全性] 變更為 [已停用] (如上所示)，然後結束 [本機群組原則編輯器]。
 
@@ -190,6 +188,6 @@ Device Guard 和 Credential Guard 可能會防止在 Windows 電腦上停用 Hyp
 
 2. 執行 HAXM 安裝程式。 接受安裝程式對話方塊中的預設值：
 
-   [![Intel Hardware Accelerated Execution Manager 安裝視窗](hardware-acceleration-images/mac/05-haxm-installer-sml.png)](hardware-acceleration-images/win/05-haxm-installer.png)
+   [![Intel Hardware Accelerated Execution Manager 安裝視窗](hardware-acceleration-images/mac/05-haxm-installer-sml.png)](hardware-acceleration-images/win/05-haxm-installer.png#lightbox)
 
 -----

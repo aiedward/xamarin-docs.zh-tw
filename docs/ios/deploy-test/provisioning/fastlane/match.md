@@ -2,16 +2,16 @@
 title: "適用於 iOS 的 fastlane - match"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
+ms.assetid: C4A2A67E-0643-4CED-B1A9-79D65054F3CA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 435ba4c3799288724625ca06016770b3ecad56a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d92f820e22277148b4de3ff87e3fdaca0f573f52
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="fastlane-for-ios---match"></a>適用於 iOS 的 fastlane - match
 
@@ -56,15 +56,15 @@ match 則是會為您建立和維護所有憑證與設定檔，並將其儲存�
 
 出現提示時，輸入 Git 存放庫的 URL：
 
- [ ![](match-images/fastlane-image7.png "輸入 Git 存放庫的 URL")](match-images/fastlane-image7.png)
+ [![](match-images/fastlane-image7.png "輸入 Git 存放庫的 URL")](match-images/fastlane-image7.png#lightbox)
 
 若要尋找及複製此 URL，請在 github.com 上按一下 [Clone or Download] \(複製或下載\) 按鈕，如下所示：
 
-[ ![](match-images/fastlane-image6.png "github.com 上 [Clone or Download] \(複製或下載\) 按鈕底下的 URL")](match-images/fastlane-image6.png)
+[![](match-images/fastlane-image6.png "github.com 上 [Clone or Download] \(複製或下載\) 按鈕底下的 URL")](match-images/fastlane-image6.png#lightbox)
 
 將專案初始化會建立一個 matchfile – 這是一個文字檔，您可以編輯此檔案以將環境變數傳遞給 match 工具。 matchfile 範例的說明如下：
 
-[ ![](match-images/fastlane-image8.png "matchfile 範例")](match-images/fastlane-image8.png)
+[![](match-images/fastlane-image8.png "matchfile 範例")](match-images/fastlane-image8.png#lightbox)
 
 <a name="running" />
 
@@ -88,7 +88,7 @@ match 則是會為您建立和維護所有憑證與設定檔，並將其儲存�
 - 含有基本指示的讀我檔案
 - match 版本
 
-[ ![](match-images/fastlane-image9.png "Git 存放庫中的專案結構")](match-images/fastlane-image9.png)
+[![](match-images/fastlane-image9.png "Git 存放庫中的專案結構")](match-images/fastlane-image9.png#lightbox)
 
 佈建設定檔安裝在 `~/Library/MobileDevice/Provisioning Profiles`中。 憑證和私密金鑰會直接安裝在您的 Keychain 中。
 

@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: asb3993
+ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: b54adc28e318b263052bb6073390556a198cffe7
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3ff77e909c86e627a6a1ea4875d8bef7db3f8d63
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="device-provisioning"></a>裝置佈建
 

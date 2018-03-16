@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/20/2017
-ms.openlocfilehash: f1e7e36dfa1bfe122084f0525d83f06760ca1fe0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d4ed2df994ace7f6de5ade78577e759bb811565c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="google-licensing-services"></a>Google 授權服務
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 02/27/2018
 
 已實作「Google 授權」的應用程式會向裝置上 Google Play 應用程式所主控的服務提出要求。 Google Play 會接著將此要求傳送給「Google 授權」伺服器，由該伺服器回應授權狀態： 
 
-[ ![授權伺服器工作流程圖](google-licensing-services-images/gp-licensing-service-overview.png)](google-licensing-services-images/gp-licensing-service-overview.png)
+[![授權伺服器工作流程圖](google-licensing-services-images/gp-licensing-service-overview.png)](google-licensing-services-images/gp-licensing-service-overview.png#lightbox)
 
 上圖說明以下工作流程： 
 
@@ -36,7 +36,6 @@ ms.lasthandoff: 02/27/2018
 
 「Google 授權」服務也是 APK 擴充檔 (本文件稍後會提供說明) 的主要元件。 APK 擴充檔會利用「Google 授權」服務來取得將下載之擴充檔的 URL。
 
-<a name="Requirements" />
 
 ## <a name="requirements"></a>需求
 

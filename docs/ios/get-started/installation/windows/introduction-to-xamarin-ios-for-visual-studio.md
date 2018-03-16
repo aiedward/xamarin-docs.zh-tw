@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 66992aabdb98c83e52ab555dafa65ae8ac7fb47b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e958b4e48767e0c2246b9f237c681fbc362f6b00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio 簡介
 
@@ -53,15 +53,15 @@ _本文說明如何使用 Visual Studio 來建置和測試 Xamarin iOS 應用程
 
 您可以藉由下列方式連線到 Mac 組建主機：透過 Visual Studio 工具列上的圖示 (如果 iOS 應用程式已開啟)：
 
-[ ![](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png "連線到 Mac 圖示")](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png)
+[![](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png "連線到 Mac 圖示")](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png#lightbox)
 
 或在 Visual Studio 中瀏覽至 [工具] > [選項]，然後選取 [Xamarin] > [iOS 設定]：
 
- [ ![](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png "iOS 選項")](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png)
+ [![](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png "iOS 選項")](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png#lightbox)
 
 您可以按一下 [尋找 Xamarin Mac Agent] 按鈕來變更「Mac 組建主機」。 將會顯示以下螢幕擷取畫面來更新「Mac 組建主機」：
 
-  [ ![](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png "[Xamarin Mac Agent] 對話方塊")](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png)
+  [![](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png "[Xamarin Mac Agent] 對話方塊")](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png#lightbox)
 
 
 ## <a name="visual-studio-toolbar-overview"></a>Visual Studio 工具列概觀
@@ -75,7 +75,7 @@ Xamarin iOS for Visual Studio 會在標準工具列和新的 iOS 工具列中新
 
 以紅色圈起的是與 Xamarin iOS 開發相關的控制項：
 
- [ ![](introduction-to-xamarin-ios-for-visual-studio-images/03.png "以紅色圈起的是與 Xamarin iOS 開發相關的控制項")](introduction-to-xamarin-ios-for-visual-studio-images/03.png "以紅色圈起的是與 Xamarin iOS 開發相關的控制項")
+ [![](introduction-to-xamarin-ios-for-visual-studio-images/03.png "以紅色圈起的是與 Xamarin iOS 開發相關的控制項")](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "以紅色圈起的是與 Xamarin iOS 開發相關的控制項")
 
 -  **開始** - 開始在選取的平台上進行應用程式偵錯或執行。 必須要有已連線的 Mac (請參閱 iOS 工具列中的狀態指標)。
 -  **方案組態** – 可讓您選取要使用的組態 (例如 [偵錯]、[發行])。
@@ -86,7 +86,7 @@ Xamarin iOS for Visual Studio 會在標準工具列和新的 iOS 工具列中新
 
 Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來都相似。 這些全部顯示如下：
 
-[ ![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS 工具列")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png)
+[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS 工具列")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
 
 以下說明每個項目：
 
@@ -105,25 +105,25 @@ Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來�
 
 下面的螢幕擷取畫面顯示可用的輸出視窗，這些可能會依據您的專案類型而有所不同：
 
-[ ![](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png "可用的輸出視窗")](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png)
+[![](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png "可用的輸出視窗")](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png#lightbox)
 
 - **Xamarin** – 這包含僅與 Xamarin 相關的資訊，例如與 Mac 的連線和啟用狀態。
 
-    [ ![](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png "僅與 Xamarin 相關的資訊，例如與 Mac 的連線和啟用狀態")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png)
+    [![](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png "僅與 Xamarin 相關的資訊，例如與 Mac 的連線和啟用狀態")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 - **Xamarin 診斷** – 這會顯示 Xamarin 專案的更多相關詳細資訊，例如與 Android 的互動。
 
-    [ ![](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png "Xamarin 專案的相關詳細資訊")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png)
+    [![](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png "Xamarin 專案的相關詳細資訊")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 其他預設的 Visual Studio [輸出] 窗格 (例如 [偵錯] 和 [建置]) 在 [輸出] 檢視內仍有提供，可用於「偵錯輸出」和「MSBuild 輸出」：
 
 -  **偵錯**
 
-    [ ![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "偵錯輸出")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png)
+    [![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "偵錯輸出")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
 
 - **建置**和**建置順序**
 
-    [ ![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild 輸出")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png)
+    [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild 輸出")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
 
 ## <a name="ios-project-properties"></a>iOS 專案屬性

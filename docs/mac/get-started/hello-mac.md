@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 7e964f2bdb523720e044c309a2ec0801080be59b
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: fdf5d1236c0d8f797bc53d01eada1777b1d92373
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-mac"></a>Hello, Mac
 
@@ -22,7 +22,7 @@ Xamarin.Mac 允許在 C# 和 .NET 中使用與在 *OBJECTIVE-C* 和 *Xcode* 中�
 
 本文將逐步解說建置一個簡單的 **Hello, Mac** 應用程式來計算已按一下按鈕的次數，同時也藉由這個程序來介紹使用 Xamarin.Mac、Visual Studio for Mac 和 Xcode 的 Interface Builder 建立 Mac 應用程式所需的重要概念：
 
-[ ![](hello-mac-images/run02.png "Hello, Mac 應用程式執行的範例")](hello-mac-images/run02.png)
+[![](hello-mac-images/run02.png "Hello, Mac 應用程式執行的範例")](hello-mac-images/run02.png#lightbox)
 
 將涵蓋下列概念：
 
@@ -57,29 +57,29 @@ Xamarin.Mac 允許在 C# 和 .NET 中使用與在 *OBJECTIVE-C* 和 *Xcode* 中�
 
 1. 啟動 Visual Studio for Mac：
 
-    [![ ](hello-mac-images/setup01.png "主要的 Visual Studio for Mac 介面")](hello-mac-images/setup01.png)
+    [![](hello-mac-images/setup01.png "主要的 Visual Studio for Mac 介面")](hello-mac-images/setup01.png#lightbox)
 
 2. 按一下畫面左上角的 [新增方案] 連結來開啟 [新增專案] 對話方塊：
 
-    [ ![](hello-mac-images/setup03.png "在 Visual Studio for Mac 中建立新方案")](hello-mac-images/setup02.png)
+    [![](hello-mac-images/setup03.png "在 Visual Studio for Mac 中建立新的解決方案")](hello-mac-images/setup02.png#lightbox)
 
 3. 選取 [Mac] > [應用程式][Cocoa 應用程式] > ，然後按一下 [下一步] 按鈕：
 
-    [ ![](hello-mac-images/setup03.png "選取 Cocoa 應用程式")](hello-mac-images/setup03.png)
+    [![](hello-mac-images/setup03.png "選取 Cocoa 應用程式")](hello-mac-images/setup03.png#lightbox)
 
 4. [應用程式名稱] 請輸入 `Hello_Mac`，其他項目則保留預設值。 按一下 [下一步]：
 
-    [ ![](hello-mac-images/setup05.png "設定應用程式的名稱")](hello-mac-images/setup05.png)
+    [![](hello-mac-images/setup05.png "設定應用程式的名稱")](hello-mac-images/setup05.png#lightbox)
 
 4. 當建立的方案會包含數個不同專案時，開發人員在此可能會想設定不同的**方案名稱**，但針對此範例，請將它保留為與**專案名稱**相同的預設值：
 
-    [ ![](hello-mac-images/setup04.png "驗證新的方案詳細資料")](hello-mac-images/setup04.png)
+    [![](hello-mac-images/setup04.png "驗證新的解決方案詳細資料")](hello-mac-images/setup04.png#lightbox)
 
 5. 按一下 [建立] 按鈕。
 
 Visual Studio for Mac 會建立新的 Xamarin.Mac 應用程式，並顯示加入到應用程式方案中的預設檔案：
 
- [ ![](hello-mac-images/project01.png "新方案的預設檢視")](hello-mac-images/project01.png)
+ [![](hello-mac-images/project01.png "新解決方案的預設檢視")](hello-mac-images/project01.png#lightbox)
 
 Visual Studio for Mac 使用**方案**和**專案**，作法與 Visual Studio 完全相同。 方案是一個容器，可保存一或多個專案；專案則可包含應用程式，並支援程式庫、測試應用程式等。在此案例中，Visual Studio for Mac 已自動建立方案和應用程式專案。
 
@@ -246,7 +246,7 @@ namespace Hello_Mac
 
 `Info.plist` 檔案包含 Xamarin.Mac 應用程式的相關資訊，例如其**名稱**和**套件組合識別碼**：
 
-[ ![](hello-mac-images/infoplist01.png "Visual Studio for Mac Plist 編輯器")](hello-mac-images/infoplist01.png)
+[![](hello-mac-images/infoplist01.png "Visual Studio for Mac Plist 編輯器")](hello-mac-images/infoplist01.png#lightbox)
 
 接著定義「分鏡腳本」，用來顯示 [主要介面] 下拉式清單底下的 Xamarin.Mac 應用程式使用者介面。 在上述範例的案例中，下拉式清單中的 [`Main`] 與 [方案總管]  中專案的來源樹狀目錄中的 [`Main.storyboard`] 相關。 它也會定義應用程式的圖示，方法是指定包含它們的「資產目錄」(在本案例中是 AppIcons)。
 
@@ -254,7 +254,7 @@ namespace Hello_Mac
 
 應用程式的 `Entitlements.plist` 檔案控制 Xamarin.Mac 應用程式擁有的權利，例如**沙箱功能**和 **iCloud**：
 
-[ ![](hello-mac-images/entitlements01.png "Visual Studio for Mac 權利編輯器")](hello-mac-images/entitlements01.png)
+[![](hello-mac-images/entitlements01.png "Visual Studio for Mac 權利編輯器")](hello-mac-images/entitlements01.png#lightbox)
 
 針對 Hello World 範例，將不需要任何權利。 下節說明如何使用 Xcode 的 Interface Builder 來編輯 `Main.storyboard` 檔案，並定義 Xamarin.Mac 應用程式的 UI。
 
@@ -266,11 +266,11 @@ Apple 將名為 Interface Builder 的工具建立為 Xcode 的一部分，讓開
 
 若要開始使用，請按兩下 [方案總管] 中的 [`Main.storyboard`] 檔案開啟它，以在 Xcode 和 Interface Builder 中編輯：
 
-[ ![](hello-mac-images/xcode01.png "[方案總管] 中的 Main.storyboard 檔案")](hello-mac-images/xcode01.png)
+[![](hello-mac-images/xcode01.png "方案總管中的 Main.storyboard 檔案")](hello-mac-images/xcode01.png#lightbox)
 
 這樣會啟動 Xcode，看起來與下列類似：
 
-[ ![](hello-mac-images/xcode02.png "預設的 Xcode Interface Builder 檢視")](hello-mac-images/xcode02.png)
+[![](hello-mac-images/xcode02.png "預設的 Xcode Interface Builder 檢視")](hello-mac-images/xcode02.png#lightbox)
 
 開始設計介面之前，請先快速瀏覽 Xcode，以熟悉將使用的主要功能。
 
@@ -284,7 +284,7 @@ Apple 將名為 Interface Builder 的工具建立為 Xcode 的一部分，讓開
 
 從 Visual Studio for Mac 開啟 Xcode 中的 `.storyboard` 檔案時，[專案導覽器] 會在左側，[介面階層架構] 和 [介面編輯器] 在中間，[屬性和公用程式] 區段在右側：
 
-[ ![](hello-mac-images/xcode03.png "Xcode 中不同的 Interface Builder 區段")](hello-mac-images/xcode03.png)
+[![](hello-mac-images/xcode03.png "Xcode 中不同的 Interface Builder 區段")](hello-mac-images/xcode03.png#lightbox)
 
 下列各節探討這些 Xcode 功能各自的作用，以及如何使用它們來建立 Xamarin.Mac 應用程式的介面。
 
@@ -314,13 +314,13 @@ Apple 將名為 Interface Builder 的工具建立為 Xcode 的一部分，讓開
 
 [屬性和公用程式] 區段分成兩個主要區段：[屬性] (也稱為偵測器) 和 [程式庫]：
 
-[ ![](hello-mac-images/xcode04.png "屬性偵測器")](hello-mac-images/xcode04.png)
+[![](hello-mac-images/xcode04.png "屬性偵測器")](hello-mac-images/xcode04.png#lightbox)
 
 此區段最初幾乎是空白，但如果開發人員在 [介面編輯器] 或 [介面階層架構] 中選取元素，則 [屬性] 區段將填入和他們可調整的指定元素和屬性相關的資訊。
 
 在 [屬性] 區段內，共有 8 個不同的「偵測器索引標籤」，如下圖所示：
 
-[ ![](hello-mac-images/xcode05.png "所有偵測器的概觀")](hello-mac-images/xcode05.png)
+[![](hello-mac-images/xcode05.png "所有偵測器的概觀")](hello-mac-images/xcode05.png#lightbox)
 
 <a name="Properties_Utility_Types" />
 
@@ -339,7 +339,7 @@ Apple 將名為 Interface Builder 的工具建立為 Xcode 的一部分，讓開
 
 使用 [程式庫] 區段來尋找要放入設計工具的控制項和物件，以圖形方式建立使用者介面：
 
-[ ![](hello-mac-images/xcode06.png "Xcode 程式庫偵測器")](hello-mac-images/xcode06.png)
+[![](hello-mac-images/xcode06.png "Xcode 程式庫偵測器")](hello-mac-images/xcode06.png#lightbox)
 
 <a name="Creating_the_Interface" />
 
@@ -351,31 +351,31 @@ Apple 將名為 Interface Builder 的工具建立為 Xcode 的一部分，讓開
 
 1. 在 Xcode 中，從 [程式庫] 區段拖曳 [按鈕]：
 
-    [ ![](hello-mac-images/xcode07.png "從 [程式庫偵測器] 中選取 [NSButton]")](hello-mac-images/xcode07.png)
+    [![](hello-mac-images/xcode07.png "從 [程式庫偵測器] 中選取 [NSButton]")](hello-mac-images/xcode07.png#lightbox)
 
 2. 將該按鈕拖曳至 [介面編輯器] 中的 [檢視] (在 [視窗控制器] 底下)：
 
-    [ ![](hello-mac-images/xcode08.png "在介面設計加入按鈕")](hello-mac-images/xcode08.png)
+    [![](hello-mac-images/xcode08.png "在介面設計新增按鈕")](hello-mac-images/xcode08.png#lightbox)
 
 3. 按一下 [屬性偵測器] 中的 [標題] 屬性，將按鈕的標題變更為 `Click Me`：
 
-    [ ![](hello-mac-images/xcode09.png "設定按鈕的屬性")](hello-mac-images/xcode09.png)
+    [![](hello-mac-images/xcode09.png "設定按鈕的屬性")](hello-mac-images/xcode09.png#lightbox)
 
 4. 從 [程式庫] 區段拖曳 [標籤]：
 
-    [ ![](hello-mac-images/xcode10.png "從 [程式庫偵測器] 中選取 [標籤]")](hello-mac-images/xcode10.png)
+    [![](hello-mac-images/xcode10.png "從 [程式庫偵測器] 中選取 [標籤]")](hello-mac-images/xcode10.png#lightbox)
 
 5. 將標籤拖曳到 [介面編輯器] 中 [視窗] 上的按鈕旁：
 
-    [ ![](hello-mac-images/xcode11.png "在介面設計加入標籤")](hello-mac-images/xcode11.png)
+    [![](hello-mac-images/xcode11.png "在介面設計新增標籤")](hello-mac-images/xcode11.png#lightbox)
 
 6. 抓住標籤上的右側控點，將它拖曳到視窗邊緣附近為止：
 
-    [ ![](hello-mac-images/xcode12.png "調整標籤大小")](hello-mac-images/xcode12.png)
+    [![](hello-mac-images/xcode12.png "調整標籤大小")](hello-mac-images/xcode12.png#lightbox)
 
 7. 選取剛才在 [介面編輯器] 中加入的「按鈕」，然後按一下 [條件約束編輯器] 圖示和視窗底部：
 
-    [ ![](hello-mac-images/xcode13.png "加入按鈕的條件約束")](hello-mac-images/xcode13.png)
+    [![](hello-mac-images/xcode13.png "新增按鈕的條件約束")](hello-mac-images/xcode13.png#lightbox)
 
 8. 在編輯器頂端，按一下頂端及左側的**紅色 I 字形狀**。 調整視窗大小時，這會讓「按鈕」保持在畫面左上角的相同位置。
 
@@ -385,7 +385,7 @@ Apple 將名為 Interface Builder 的工具建立為 Xcode 的一部分，讓開
 
 11. 選取 [標籤]，然後再按一下 [條件約束編輯器] 圖示：
 
-    [ ![](hello-mac-images/xcode14.png "加入標籤的條件約束")](hello-mac-images/xcode14.png)
+    [![](hello-mac-images/xcode14.png "新增標籤的條件約束")](hello-mac-images/xcode14.png#lightbox)
 
 12. 按一下 [條件約束編輯器] 頂端、右側及左側的**紅色 I 字形狀**，會使標籤固定在其指定的 X 和 Y 位置，並隨執行中應用程式的視窗大小調整而放大和縮小。
 
@@ -397,7 +397,7 @@ Apple 將名為 Interface Builder 的工具建立為 Xcode 的一部分，讓開
 
 在 [介面階層架構] 區段中查看構成使用者介面之元素的版面配置和階層架構如何顯示：
 
-[ ![](hello-mac-images/xcode15.png "在 [介面階層架構] 中選取元素")](hello-mac-images/xcode15.png)
+[![](hello-mac-images/xcode15.png "在 [介面階層架構] 中選取元素")](hello-mac-images/xcode15.png#lightbox)
 
 如有需要，開發人員可從此處選取要編輯的項目，或拖曳項目以重新排列 UI 元素。 比方說，如果某個 UI 元素被另一個元素覆蓋，他們可以將它拖曳到清單底部，使其成為視窗最頂端的項目。
 
@@ -416,7 +416,7 @@ Apple 將名為 Interface Builder 的工具建立為 Xcode 的一部分，讓開
 
 對 Xamarin.Mac 開發人員而言，這意味著開發人員需將與 C# 檔案對應的 Objective-C Stub 檔案拖放到他們想建立**方法**或**動作**的位置。 Visual Studio for Mac 已在其為了使用 Interface Builder 而產生的填充碼 Xcode 專案中建立檔案 `ViewController.h`：
 
-[ ![](hello-mac-images/xcode16.png "在 Xcode 中檢視來源")](hello-mac-images/xcode16.png)
+[![](hello-mac-images/xcode16.png "在 Xcode 中檢視來源")](hello-mac-images/xcode16.png#lightbox)
 
 這個 Stub `.h` 檔案會鏡像到新的 `NSWindow` 建立時自動加入到 Xamarin.Mac 專案的 `ViewController.designer.cs`。 此檔案將用於同步處理 Interface Builder 所做的變更，同時也是為了讓 UI 元素公開到 C# 程式碼而建立**輸出**和**動作**的位置。
 
@@ -430,7 +430,7 @@ Apple 將名為 Interface Builder 的工具建立為 Xcode 的一部分，讓開
 
 1. 在 Xcode 中，於畫面較靠近右上角按一下 [雙圓形] 按鈕以開啟 [助理編輯器]：
 
-    [ ![](hello-mac-images/outlet01.png "顯示 [助理編輯器]")](hello-mac-images/outlet01.png)
+    [![](hello-mac-images/outlet01.png "顯示 [助理編輯器]")](hello-mac-images/outlet01.png#lightbox)
 
 2. Xcode 會切換成分割檢視模式，一邊是 [介面編輯器]，另一邊則是 [程式碼編輯器]。
 
@@ -438,25 +438,25 @@ Apple 將名為 Interface Builder 的工具建立為 Xcode 的一部分，讓開
 
 4. 在 [程式碼編輯器] 的頂端按一下 [自動連結] 並選取 [`ViewController.h`] 檔案：
 
-    [ ![](hello-mac-images/outlet02.png "選取正確的檔案")](hello-mac-images/outlet02.png)
+    [![](hello-mac-images/outlet02.png "選取正確的檔案")](hello-mac-images/outlet02.png#lightbox)
 
 5. Xcode 現在應該已選取正確的檔案：
 
-    [ ![](hello-mac-images/outlet03.png "檢視 ViewController.h 檔案")](hello-mac-images/outlet03.png)
+    [![](hello-mac-images/outlet03.png "檢視 ViewController.h 檔案")](hello-mac-images/outlet03.png#lightbox)
 
 6. **最後一個步驟很重要 ！** 如果開發人員未選取正確的檔案，他們將無法建立**輸出**和**動作**，或者將公開到 C# 中錯誤的類別！
 
 7. 在 [介面編輯器] 中，按住鍵盤上的 **Control** 鍵，然後按一下先前建立的標籤並拖曳到程式碼編輯器的 `@interface ViewController : NSViewController {}` 程式碼底下：
 
-    [ ![](hello-mac-images/outlet04.png "拖曳以建立輸出")](hello-mac-images/outlet04.png)
+    [![](hello-mac-images/outlet04.png "拖曳以建立輸出")](hello-mac-images/outlet04.png#lightbox)
 
 8. 隨即顯示對話方塊。 將 [連接] 保留為**輸出**，在 [名稱] 中輸入 `ClickedLabel`：
 
-    [ ![](hello-mac-images/outlet05.png "定義輸出")](hello-mac-images/outlet05.png)
+    [![](hello-mac-images/outlet05.png "定義輸出")](hello-mac-images/outlet05.png#lightbox)
 
 9. 按一下 [連接] 按鈕以建立**輸出**：
 
-    [ ![](hello-mac-images/outlet06.png "檢視最終輸出")](hello-mac-images/outlet06.png)
+    [![](hello-mac-images/outlet06.png "檢視最終輸出")](hello-mac-images/outlet06.png#lightbox)
 
 10. 將變更儲存到檔案。
 
@@ -471,19 +471,19 @@ Apple 將名為 Interface Builder 的工具建立為 Xcode 的一部分，讓開
 1. 確認 Xcode 仍在 [助理編輯器] 畫面，而且在 [程式碼編輯器] 中可以看到 [ViewController.h] 檔案。
 2. 在 [介面編輯器] 中，按住鍵盤上的 **Control** 鍵，然後按一下先前建立的按鈕並拖曳到程式碼編輯器的 `@property (assign) IBOutlet NSTextField *ClickedLabel;` 程式碼底下：
 
-    [![ ](hello-mac-images/action01.png "拖曳以建立動作")](hello-mac-images/action01.png)
+    [![](hello-mac-images/action01.png "拖曳以建立動作")](hello-mac-images/action01.png#lightbox)
 
 3. 將 [連接] 類型變更為**動作**：
 
-    [ ![](hello-mac-images/action02.png "定義動作")](hello-mac-images/action02.png)
+    [![](hello-mac-images/action02.png "定義動作")](hello-mac-images/action02.png#lightbox)
 
 4. 輸入 `ClickedButton` 作為**名稱**：
 
-    [ ![](hello-mac-images/action03.png "為新的動作命名")](hello-mac-images/action03.png)
+    [![](hello-mac-images/action03.png "為新的動作命名")](hello-mac-images/action03.png#lightbox)
 
 5. 按一下 [連接] 按鈕以建立**動作**：
 
-    [ ![](hello-mac-images/action04.png "檢視最終動作")](hello-mac-images/action04.png)
+    [![](hello-mac-images/action04.png "檢視最終動作")](hello-mac-images/action04.png#lightbox)
 
 6. 將變更儲存到檔案。
 
@@ -500,7 +500,7 @@ Apple 將名為 Interface Builder 的工具建立為 Xcode 的一部分，讓開
 
 在 [方案總管] 中選取 [ViewController.designer.cs] 以查看**輸出**和**動作**在 C# 程式碼中如何連接：
 
-[ ![](hello-mac-images/sync01.png "與 Xcode 同步處理變更")](hello-mac-images/sync01.png)
+[![](hello-mac-images/sync01.png "與 Xcode 同步處理變更")](hello-mac-images/sync01.png#lightbox)
 
 注意 **ViewController.designer.cs** 檔案中的這兩個定義：
 
@@ -534,7 +534,7 @@ Visual Studio for Mac 會接聽對 **.h** 檔案的變更，並在個別的 [.de
 
 針對此範例應用程式，每次按一下第一個按鈕時，就會更新標籤以顯示已按下按鈕的次數。 若要完成這項作業，在 [方案總管] 中按兩下 [`ViewController.cs`] 檔案以將它開啟：
 
-[ ![](hello-mac-images/code01.png "在 Visual Studio for Mac 中檢視 ViewController.cs 檔案")](hello-mac-images/code01.png)
+[![](hello-mac-images/code01.png "在 Visual Studio for Mac 中檢視 ViewController.cs 檔案")](hello-mac-images/code01.png#lightbox)
 
 首先，在 `ViewController` 類別中建立一個類別層級變數來追蹤已按下的次數。 編輯類別定義，使它看起來如下所示：
 
@@ -586,7 +586,7 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 開發人員可以從 Visual Studio for Mac 畫面左上角的 [組態選取器] 選取組建的類型：
 
-[ ![](hello-mac-images/run01.png "選取偵錯組建")](hello-mac-images/run01.png)
+[![](hello-mac-images/run01.png "選取偵錯組建")](hello-mac-images/run01.png#lightbox)
 
 <a name="Building_the_Application" />
 
@@ -608,11 +608,11 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 應用程式就會建立 (如果尚未建立)，而且會以偵錯模式啟動並顯示其主要介面視窗：
 
-[ ![](hello-mac-images/run02.png "執行應用程式")](hello-mac-images/run02.png)
+[![](hello-mac-images/run02.png "執行應用程式")](hello-mac-images/run02.png#lightbox)
 
 如果多次按一下按鈕，標籤的次數應該會更新：
 
-[ ![](hello-mac-images/run03.png "顯示按一下按鈕的結果")](hello-mac-images/run03.png)
+[![](hello-mac-images/run03.png "顯示按一下按鈕的結果")](hello-mac-images/run03.png#lightbox)
 
 <a name="Where_to_Next" />
 

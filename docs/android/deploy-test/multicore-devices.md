@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 2a7b2a856d51447d6b7ab2032ebf7445d3f06ecb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ac525805fce99f44ea1efb132fb99f6d3a01f2f3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>多核心裝置和 Xamarin.Android
 
 _Android 可以在數種不同的電腦架構上執行。本文件會討論可供 Xamarin.Android 應用程式運用的不同 CPU 架構。本文件也會說明如何封裝 Android 應用程式以支援不同的 CPU 架構。文中會介紹應用程式二進位介面 (ABI)，並提供在 Xamarin.Android 應用程式中要使用哪些 ABI 的相關指導方針。_
 
-<a name="Overview" />
 
 ## <a name="overview"></a>總覽
 
@@ -47,16 +46,14 @@ Android 能夠建立「fat 二進位檔」，這是單一的 `.apk` 檔案，其
 由於 Android 4.0.0、4.0.1、4.0.2 和 4.0.3 中的錯誤，即使 `armeabi-v7a` 目錄存在，且該裝置是 `armeabi-v7a` 裝置，系統仍會從 `armeabi` 目錄挑選原生程式庫。
 
 > [!NOTE]
-> **注意**：Xamarin.Android 會確保 `.so` 以正確的順序新增至 APK。 對於 Xamarin.Android 使用者來說，這個錯誤應該不會成為問題。
+> Xamarin.Android 會確保 `.so` 以正確的順序新增至 APK。 對於 Xamarin.Android 使用者來說，這個錯誤應該不會成為問題。
 
-<a name="ABI_Descriptions" />
 
 ### <a name="abi-descriptions"></a>ABI 描述
 
 Android 所支援的每個 ABI 皆可透過唯一名稱來加以識別。
 
 
-<a name="armeabi" />
 
 #### <a name="armeabi"></a>armeabi
 
@@ -65,7 +62,6 @@ Android 所支援的每個 ABI 皆可透過唯一名稱來加以識別。
 **注意**：Xamarin.Android 的 `armeabi` 程式碼不具備執行緒安全性，所以不應用於具有多 CPU 的 `armeabi-v7a` 裝置 (下面會有說明)。 在單核心的 `armeabi-v7a` 裝置上使用 `aremabi` 程式碼很安全。
 
 
-<a name="armeabi-v7a" />
 
 #### <a name="armeabi-v7a"></a>armeabi-v7a
 
@@ -74,7 +70,6 @@ Android 所支援的每個 ABI 皆可透過唯一名稱來加以識別。
 **注意：**`armeabi-v7a` 機器碼不會在 ARMv5 裝置上執行。
 
 
-<a name="arm64-v8a" />
 
 #### <a name="arm64-v8a"></a>arm64-v8a
 
@@ -82,7 +77,6 @@ Android 所支援的每個 ABI 皆可透過唯一名稱來加以識別。
 Xamarin.Android 5.1 針對此架構提供了實驗性支援 (如需詳細資訊，請參閱[實驗性功能](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Experimental_Features))。
 
 
-<a name="x86" />
 
 #### <a name="x86"></a>x86
 
@@ -93,10 +87,9 @@ Xamarin.Android 5.1 針對此架構提供了實驗性支援 (如需詳細資訊�
 -  SSE4 的任何變化。
 
 
-**注意：**Google TV 雖然是在 x86 上執行，但 Android 的 NDK 或 Xamarin.Android 並不支援。 <a name="mips" />
+**注意：**Google TV 雖然在 x86 上執行，但提供支援的對象並不包括 Android 的 NDK 或
 
 
-<a name="x86_64" />
 
 #### <a name="x8664"></a>x86_64
 
@@ -110,13 +103,12 @@ Xamarin.Android 5.1 針對此架構提供了實驗性支援 (如需詳細資訊�
 **注意：**MIPS 裝置目前不受 Xamarin.Android 支援，但會在未來的版本中支援。
 
 
-<a name="APK_File_Format" />
 
 #### <a name="apk-file-format"></a>APK 檔案格式
 
 Android 應用程式套件是保存了 Android 應用程式所需之所有程式碼、資產、資源和憑證的檔案格式。 此套件是 `.zip` 檔案，但所使用的副檔名卻是 `.apk`。 展開時，Xamarin.Android 所建立之 `.apk` 的內容如以下螢幕擷取畫面所示：
 
-[ ![.apk 的內容](multicore-devices-images/00.png)](multicore-devices-images/00.png)
+[![.apk 的內容](multicore-devices-images/00.png)](multicore-devices-images/00.png#lightbox)
 
 `.apk` 檔案內容的簡短描述：
 
@@ -133,10 +125,9 @@ Android 應用程式套件是保存了 Android 應用程式所需之所有程式
 -   **res** &ndash; 這個目錄會保存未編譯為 `resources.arsc` 的資源。
 
 > [!NOTE]
-> **注意**：`libmonodroid.so` 檔案是 Xamarin.Android 應用程式所需的所有原生程式庫。
+> `libmonodroid.so` 檔案是 Xamarin.Android 應用程式所需的所有原生程式庫。
 
 
-<a name="Android_Device_ABI_Support" />
 
 #### <a name="android-device-abi-support"></a>Android 裝置 ABI 支援
 
@@ -149,7 +140,6 @@ Android 應用程式套件是保存了 Android 應用程式所需之所有程式
 
 例如，典型的 ARMv5TE 裝置只會有 `armeabi` 的主要 ABI，ARMv7 裝置則會指定 `armeabi-v7a` 的主要 ABI 和 `armeabi` 的次要 ABI。 典型的 x86 裝置只會指定 `x86` 的主要 ABI。
 
-<a name="Android_Native_Library_Installation" />
 
 ### <a name="android-native-library-installation"></a>Android 原生程式庫安裝
 
@@ -249,7 +239,6 @@ $APP/lib/libone.so # from armeabi
 $APP/lib/libtwo.so # from armeabi-v7a
 ```
 
-<a name="Xamarin.Android_and_ABIs" />
 
 ### <a name="xamarinandroid-and-abis"></a>Xamarin.Android 和 ABI
 
@@ -270,7 +259,6 @@ Xamarin.Android 針對下列架構提供了實驗性支援：
 Xamarin.Android 目前未提供 `mips` 的支援。
 
 
-<a name="Declaring_Supported_ABIs" />
 
 ### <a name="declaring-supported-abis"></a>宣告支援的 ABI
 
@@ -281,7 +269,7 @@ Xamarin.Android 目前未提供 `mips` 的支援。
 
 在 Visual Studio for Mac 中，可於 [專案選項] 之 [Android 組建] 頁面的 [進階] 索引標籤底下選取所支援的架構，如下列螢幕擷取畫面所示：
 
-[![Android 組建所支援的 ABI](multicore-devices-images/xs-abi-selections-sml.png)](multicore-devices-images/xs-abi-selections.png)
+[![Android 組建所支援的 ABI](multicore-devices-images/xs-abi-selections-sml.png)](multicore-devices-images/xs-abi-selections.png#lightbox)
 
 有時候您可能必須宣告其他 ABI 支援，例如在下列情況時：
 

@@ -7,21 +7,20 @@ ms.assetid: 0C0BBEC0-C84A-4558-B905-4EF81FCD62F9
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 12/22/2017
-ms.openlocfilehash: f275ff6c7d3e6eeec5eb3878cc39633d70238f66
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 1e90ebe55dbec9fdcc57b9eaab99e614fdc5cbbc
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="google-emulator-manager"></a>Google 模擬器管理員
 
 當您確認已啟用硬體加速之後 (如 [Android Emulator 硬體加速](~/android/get-started/installation/android-emulator/hardware-acceleration.md)中所述)，下一個步驟是建立要用於測試應用程式和針對應用程式進行偵錯的虛擬裝置。 您可以使用舊版 Google 模擬器管理員 (也稱為「Android 虛擬裝置 (AVD) 管理員」)，來建立供 Android SDK 模擬器使用的虛擬裝置。
 
 > [!NOTE]
-> **注意：**如果您的目標是 Android 8.0 Oreo，則必須使用 [Xamarin Android 裝置管理員](~/android/get-started/installation/android-emulator/xamarin-device-manager.md)來建立和設定虛擬裝置。
+> 如果您的目標是 Android 8.0 Oreo，則必須使用 [Xamarin Android 裝置管理員](~/android/get-started/installation/android-emulator/xamarin-device-manager.md)來建立和設定虛擬裝置。
 
-<a name="sysimg" />
 
 ## <a name="installing-system-images"></a>安裝系統映像
 
@@ -46,11 +45,11 @@ ms.lasthandoff: 02/27/2018
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![針對 Android Emulator 選取 Android 6.0 x86 系統映像](google-emulator-manager-images/win/03-select-x86-images-sml.png)](google-emulator-manager-images/win/03-select-x86-images.png)
+[![針對 Android Emulator 選取 Android 6.0 x86 系統映像](google-emulator-manager-images/win/03-select-x86-images-sml.png)](google-emulator-manager-images/win/03-select-x86-images.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![針對 Android Emulator 選取 Android 6.0 x86 系統映像](google-emulator-manager-images/mac/02-select-x86-images-sml.png)](google-emulator-manager-images/mac/02-select-x86-images.png)
+[![針對 Android Emulator 選取 Android 6.0 x86 系統映像](google-emulator-manager-images/mac/02-select-x86-images-sml.png)](google-emulator-manager-images/mac/02-select-x86-images.png#lightbox)
 
 -----
 
@@ -69,23 +68,21 @@ ms.lasthandoff: 02/27/2018
 安裝這些系統映像之後，您可以在設定虛擬裝置設定過程中選取適當的 API 層級和 CPU/ABI 選項 (後續將說明這一點)，以建立 **x86** 型 Android 虛擬裝置。
 
 
-<a name="virtualdevice" />
-
 ## <a name="configuring-virtual-devices"></a>設定虛擬裝置
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 虛擬裝置會透過 **Android Emulator 管理員** (也稱為「Android 虛擬裝置管理員」或 _AVD Manager_) 來設定。 若要從 Visual Studio 啟動「Android Emulator 管理員」，按一下工具列中的 [Android Emulator 管理員] 圖示：
 
-[ ![AVD 圖示位置](google-emulator-manager-images/win/04-avd-icon-sml.png)](google-emulator-manager-images/win/04-avd-icon.png)
+[![AVD 圖示位置](google-emulator-manager-images/win/04-avd-icon-sml.png)](google-emulator-manager-images/win/04-avd-icon.png#lightbox)
 
 您也可以從功能表列選取 [工具] > [Android] > [Android Emulator 管理員] 來啟動「Android Emulator 管理員」：
 
-[![[Android Emulator 管理員] 功能表項目位置](google-emulator-manager-images/win/05-avd-manager-menu-item-sml.png)](google-emulator-manager-images/win/05-avd-manager-menu-item.png)
+[![[Android Emulator 管理員] 功能表項目位置](google-emulator-manager-images/win/05-avd-manager-menu-item-sml.png)](google-emulator-manager-images/win/05-avd-manager-menu-item.png#lightbox)
 
 [Android 虛擬裝置 (AVD) 管理員] 對話方塊會顯示現有 Android 虛擬裝置的清單：
 
-[![Android 虛擬裝置管理員](google-emulator-manager-images/win/06-virtual-device-manager-sml.png)](google-emulator-manager-images/win/06-virtual-device-manager.png)
+[![Android 虛擬裝置管理員](google-emulator-manager-images/win/06-virtual-device-manager-sml.png)](google-emulator-manager-images/win/06-virtual-device-manager.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -93,17 +90,16 @@ ms.lasthandoff: 02/27/2018
 
 您可以從功能表列選取 [工具] > [Google 模擬器管理員] 來啟動 Android Emulator 管理員：
 
-[![[Android Emulator 管理員] 功能表項目位置](google-emulator-manager-images/mac/03-avd-manager-menu-item-sml.png)](google-emulator-manager-images/mac/03-avd-manager-menu-item.png)
+[![[Android Emulator 管理員] 功能表項目位置](google-emulator-manager-images/mac/03-avd-manager-menu-item-sml.png)](google-emulator-manager-images/mac/03-avd-manager-menu-item.png#lightbox)
 
 [Android 虛擬裝置 (AVD) 管理員] 對話方塊會顯示現有 Android 虛擬裝置的清單：
 
-[![Android 虛擬裝置管理員](google-emulator-manager-images/mac/05-virtual-device-manager-sml.png)](google-emulator-manager-images/mac/05-virtual-device-manager.png)
+[![Android 虛擬裝置管理員](google-emulator-manager-images/mac/05-virtual-device-manager-sml.png)](google-emulator-manager-images/mac/05-virtual-device-manager.png#lightbox)
 
 -----
 
 您可以使用不同的裝置特性和 API 層級來建立新的虛擬裝置映像 &ndash; 下節將說明如何建立自訂裝置定義和虛擬裝置。
 
-<a name="custom-def" />
 
 ### <a name="creating-a-custom-device-definition"></a>建立自訂裝置定義
 
@@ -111,11 +107,11 @@ ms.lasthandoff: 02/27/2018
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![以 Nexus 6 為基礎的自訂裝置定義](google-emulator-manager-images/win/07-custom-device-sml.png)](google-emulator-manager-images/win/07-custom-device.png)
+[![以 Nexus 6 為基礎的自訂裝置定義](google-emulator-manager-images/win/07-custom-device-sml.png)](google-emulator-manager-images/win/07-custom-device.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![以 Nexus 6 為基礎的自訂裝置定義](google-emulator-manager-images/mac/06-custom-device-sml.png)](google-emulator-manager-images/mac/06-custom-device.png)
+[![以 Nexus 6 為基礎的自訂裝置定義](google-emulator-manager-images/mac/06-custom-device-sml.png)](google-emulator-manager-images/mac/06-custom-device.png#lightbox)
 
 -----
 
@@ -153,11 +149,11 @@ ms.lasthandoff: 02/27/2018
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![已將 MyNexus 新增至裝置清單](google-emulator-manager-images/win/09-added-to-list-sml.png)](google-emulator-manager-images/win/09-added-to-list.png)
+[![已將 MyNexus 新增至裝置清單](google-emulator-manager-images/win/09-added-to-list-sml.png)](google-emulator-manager-images/win/09-added-to-list.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![已將 MyNexus 新增至裝置清單](google-emulator-manager-images/mac/08-added-to-list-sml.png)](google-emulator-manager-images/mac/08-added-to-list.png)
+[![已將 MyNexus 新增至裝置清單](google-emulator-manager-images/mac/08-added-to-list-sml.png)](google-emulator-manager-images/mac/08-added-to-list.png#lightbox)
 
 -----
 
@@ -165,16 +161,15 @@ ms.lasthandoff: 02/27/2018
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![已將 MyNexus 新增至裝置下拉式功能表](google-emulator-manager-images/win/10-available-custom-device-sml.png)](google-emulator-manager-images/win/10-available-custom-device.png)
+[![已將 MyNexus 新增至裝置下拉式功能表](google-emulator-manager-images/win/10-available-custom-device-sml.png)](google-emulator-manager-images/win/10-available-custom-device.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![已將 MyNexus 新增至裝置下拉式功能表](google-emulator-manager-images/mac/09-available-custom-device-sml.png)](google-emulator-manager-images/mac/09-available-custom-device.png)
+[![已將 MyNexus 新增至裝置下拉式功能表](google-emulator-manager-images/mac/09-available-custom-device-sml.png)](google-emulator-manager-images/mac/09-available-custom-device.png#lightbox)
 
 -----
 
 
-<a name="cloning" />
 
 ### <a name="cloning-a-device-definition"></a>複製裝置定義
 
@@ -182,11 +177,11 @@ ms.lasthandoff: 02/27/2018
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![可用裝置定義的清單](google-emulator-manager-images/win/11-device-definitions-sml.png)](google-emulator-manager-images/win/11-device-definitions.png)
+[![可用裝置定義的清單](google-emulator-manager-images/win/11-device-definitions-sml.png)](google-emulator-manager-images/win/11-device-definitions.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![可用裝置定義的清單](google-emulator-manager-images/mac/10-device-definitions-sml.png)](google-emulator-manager-images/mac/10-device-definitions.png)
+[![可用裝置定義的清單](google-emulator-manager-images/mac/10-device-definitions-sml.png)](google-emulator-manager-images/mac/10-device-definitions.png#lightbox)
 
 -----
 
@@ -194,11 +189,11 @@ ms.lasthandoff: 02/27/2018
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![[Clone device] \(複製裝置\) 對話方塊](google-emulator-manager-images/win/12-clone-device-sml.png)](google-emulator-manager-images/win/12-clone-device.png)
+[![[Clone device] \(複製裝置\) 對話方塊](google-emulator-manager-images/win/12-clone-device-sml.png)](google-emulator-manager-images/win/12-clone-device.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![[Clone device] \(複製裝置\) 對話方塊](google-emulator-manager-images/mac/11-clone-device-sml.png)](google-emulator-manager-images/mac/11-clone-device.png)
+[![[Clone device] \(複製裝置\) 對話方塊](google-emulator-manager-images/mac/11-clone-device-sml.png)](google-emulator-manager-images/mac/11-clone-device.png#lightbox)
 
 -----
 
@@ -210,7 +205,7 @@ ms.lasthandoff: 02/27/2018
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![自訂 Nexus 5 AVD](google-emulator-manager-images/mac/12-custom-nexus-sml.png)](google-emulator-manager-images/mac/12-custom-nexus.png)
+[![自訂 Nexus 5 AVD](google-emulator-manager-images/mac/12-custom-nexus-sml.png)](google-emulator-manager-images/mac/12-custom-nexus.png#lightbox)
 
 -----
 
@@ -218,11 +213,11 @@ ms.lasthandoff: 02/27/2018
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Nexus 5 Custom 會顯示為新的使用者裝置定義](google-emulator-manager-images/win/14-new-definition-sml.png)](google-emulator-manager-images/win/14-new-definition.png)
+[![Nexus 5 Custom 會顯示為新的使用者裝置定義](google-emulator-manager-images/win/14-new-definition-sml.png)](google-emulator-manager-images/win/14-new-definition.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Nexus 5 Custom 會顯示為新的使用者裝置定義](google-emulator-manager-images/mac/13-new-definition-sml.png)](google-emulator-manager-images/mac/13-new-definition.png)
+[![Nexus 5 Custom 會顯示為新的使用者裝置定義](google-emulator-manager-images/mac/13-new-definition-sml.png)](google-emulator-manager-images/mac/13-new-definition.png#lightbox)
 
 -----
 
@@ -230,11 +225,11 @@ ms.lasthandoff: 02/27/2018
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![從 Nexus 5 Custom 使用者裝置定義建立 AVD](google-emulator-manager-images/win/15-create-avd-sml.png)](google-emulator-manager-images/win/15-create-avd.png)
+[![從 Nexus 5 Custom 使用者裝置定義建立 AVD](google-emulator-manager-images/win/15-create-avd-sml.png)](google-emulator-manager-images/win/15-create-avd.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![從 Nexus 5 Custom 使用者裝置定義建立 AVD](google-emulator-manager-images/mac/14-create-avd-sml.png)](google-emulator-manager-images/mac/14-create-avd.png)
+[![從 Nexus 5 Custom 使用者裝置定義建立 AVD](google-emulator-manager-images/mac/14-create-avd-sml.png)](google-emulator-manager-images/mac/14-create-avd.png#lightbox)
 
 -----
 
@@ -242,11 +237,11 @@ ms.lasthandoff: 02/27/2018
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![已將新的自訂 AVD 新增至裝置下拉式功能表](google-emulator-manager-images/win/16-new-avd-sml.png)](google-emulator-manager-images/win/16-new-avd.png)
+[![已將新的自訂 AVD 新增至裝置下拉式功能表](google-emulator-manager-images/win/16-new-avd-sml.png)](google-emulator-manager-images/win/16-new-avd.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![已將新的自訂 AVD 新增至裝置下拉式功能表](google-emulator-manager-images/mac/15-new-avd-sml.png)](google-emulator-manager-images/mac/15-new-avd.png)
+[![已將新的自訂 AVD 新增至裝置下拉式功能表](google-emulator-manager-images/mac/15-new-avd-sml.png)](google-emulator-manager-images/mac/15-new-avd.png#lightbox)
 
 -----
 
