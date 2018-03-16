@@ -4,7 +4,7 @@
       "docset_name": "xamarin-docs",
       "build_source_folder": "docs",
       "build_output_subfolder": "xamarin-docs",
-      "locale": "cs-CZ",
+      "locale": "zh-TW",
       "monikers": [],
       "moniker_ranges": [],
       "open_to_public_contributors": false,
@@ -27,7 +27,7 @@
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
-      "url": "https://github.com/Microsoft/templates.docs.msft.cs-CZ",
+      "url": "https://github.com/Microsoft/templates.docs.msft.zh-TW",
       "branch": "master",
       "branch_mapping": {}
     },
