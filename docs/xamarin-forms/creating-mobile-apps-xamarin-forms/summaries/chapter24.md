@@ -7,11 +7,11 @@ ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 3390a298cd8d9967f0aea2bd9fb5a90830714ba5
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: db950915decd2bba216c7dcd6031797037a7c8e0
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>章 24 的摘要。 頁面巡覽
 
@@ -118,7 +118,7 @@ ms.lasthandoff: 03/12/2018
 
 ## <a name="patterns-of-data-transfer"></a>資料傳輸的模式
 
-通常是為了共用頁面 & #x 2014; 之間的資料將資料傳送到巡覽的頁面上，以及頁面，即可將資料傳回給叫用它的網頁。 有數種技巧可執行此動作。
+通常會需要頁面之間共用資料&mdash;將資料傳送到巡覽的頁面上，以及頁面，即可將資料傳回給叫用它的網頁。 有數種技巧可執行此動作。
 
 ### <a name="constructor-arguments"></a>建構函式引數
 

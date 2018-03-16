@@ -7,11 +7,11 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0968270f657d3195855a752da311b4855283e971
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d7a75ce0303030d53315b5e698fc604a910c969c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>章 28 的摘要。 位置和對應
 
@@ -29,7 +29,7 @@ Xamarin.Forms 支援[ `Map` ](https://developer.xamarin.com/api/type/Xamarin.For
 
 ### <a name="longitude-and-meridians"></a>經度和經線
 
-分成兩部分的優越南極延伸從北極圓形呈現也是相等的緯度行*經線*。 這些是相對於格林威治標準，英國子午線。 依照慣例，您該以東子午線正值是從 0 度 180 度、，而您該以西子午線負數的值從 0 度 & #x 2013; 180 度。
+分成兩部分的優越南極延伸從北極圓形呈現也是相等的緯度行*經線*。 這些是相對於格林威治標準，英國子午線。 依照慣例，您該以東子午線正值是從 0 度 180 度、，而您該以西子午線從 0 度負數值&ndash;180 度。
 
 ### <a name="the-equirectangular-projection"></a>等量矩形投影
 
@@ -49,7 +49,7 @@ Xamarin.Forms`Map`類別不包含的程式，以取得使用者的地理位置�
 
 ### <a name="the-location-tracker-api"></a>位置追蹤程式應用程式開發介面
 
-[ **Xamarin.FormsBook.Platform** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform)方案包含位置追蹤器 應用程式開發介面的程式碼。 [ `GeographicLocation` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs)結構封裝緯度與經度。 [ `ILocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs)介面會定義兩種方法可以啟動與暫停位置追蹤程式，並使用新的位置時的事件。
+[ **Xamarin.FormsBook.Platform** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform)方案包含位置追蹤器應用程式開發介面的程式碼。 [ `GeographicLocation` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs)結構封裝緯度與經度。 [ `ILocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs)介面會定義兩種方法可以啟動與暫停位置追蹤程式，並使用新的位置時的事件。
 
 #### <a name="the-ios-location-manager"></a>IOS 位置管理員
 
