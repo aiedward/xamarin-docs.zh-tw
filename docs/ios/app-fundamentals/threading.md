@@ -6,21 +6,20 @@ ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 8be599f5b6541ef738ffa47a01374fd7f90044a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 693ada611dc24d3bb22de7c51efe378939a732ad
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="threading"></a>執行緒
 
-Xamarin.iOS 執行階段可讓存取開發人員的.NET 執行緒應用程式開發介面，請明確使用的執行緒 ( `System.Threading.Thread, System.Threading.ThreadPool`)，隱含地使用非同步委派模式或 BeginXXX 方法，以及完整範圍的 Api，可支援工作平行程式庫。
+Xamarin.iOS 執行階段可讓開發人員存取.NET 執行緒應用程式開發介面，同時使用執行緒時，明確 (`System.Threading.Thread, System.Threading.ThreadPool`) 以及隱含地使用非同步委派模式或 BeginXXX 方法，以及完整範圍的應用程式開發介面支援工作平行程式庫。
 
 
 
-Xamarin 強烈建議您改用[工作平行程式庫](http://msdn.microsoft.com/en-us/library/dd460717.aspx)
-
- (TPL) 建置應用程式的幾個原因:-預設 TPL 排程器會將委派工作執行的執行緒集區，接著會動態地增加處理程序發生時，同時避免過多執行緒的結束位置的案例所需的執行緒數目向上競爭 CPU 時間。 
+Xamarin 強烈建議您改用[工作平行程式庫](http://msdn.microsoft.com/en-us/library/dd460717.aspx)(TPL) 建置應用程式的幾個原因：
+-  預設 TPL 排程器會將委派工作執行的執行緒集區，接著會動態地增加處理程序發生時，同時避免太多執行緒最後會競爭 CPU 時間的其中一個案例所需的執行緒數目。 
 -  它很容易就能考慮依據 TPL 工作作業。 您可以輕鬆地操作這些、 排程這些、 序列化其執行或啟動許多使用一組豐富的應用程式開發介面的平行。 
 -  它是新 C# 非同步語言擴充功能的程式設計基礎。 
 
@@ -41,7 +40,6 @@ MyThreadedRoutine ()
 {  
     var result = DoComputation ();  
 
-    //
     // we want to update an object that is managed by the main
     // thread; To do so, we need to ensure that we only access
     // this from the main thread:

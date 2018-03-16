@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b50c4bbef1510b739c4f7da7d732a4f4c66f13f3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d53dea1a46c6b42f901beb217eb00b3a3fa0fd92
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>在程式碼中建立 iOS 使用者介面
 
@@ -69,7 +69,7 @@ IOS 應用程式的使用者介面就像 storefront – 應用程式通常會取
 ## <a name="ios-templates"></a>iOS 範本
 
 
-Visual Studio for Mac 不提供空白的範本。 所有範本都隨附的分鏡腳本支援 Apple 建議做為主要方式來建立的 UI。 不過，它可完整程式碼中建立您的 UI 中。 
+Visual Studio for Mac 不提供空白的範本。 所有範本都隨附的分鏡腳本支援 Apple 建議做為主要方式來建立的 UI。 不過，它可能會完全建立您的 UI 程式碼。 
 
 下列步驟會引導您完成移除應用程式中的分鏡腳本： 
 
@@ -316,7 +316,7 @@ Window.RootViewController = navController;
 
 iOS 使用者介面是由檢視階層所組成。 額外的檢視，例如標籤、 按鈕、 滑桿 」 等會加入為 subviews 的某些父檢視。
 
-例如，若要開始編輯`CustomViewController`來建立讓使用者可以輸入使用者名稱和密碼的登入畫面。 螢幕將會包含兩個文字欄位和按鈕。
+例如，讓我們來編輯`CustomViewController`來建立讓使用者可以輸入使用者名稱和密碼的登入畫面。 螢幕將會包含兩個文字欄位和按鈕。
 
 ### <a name="adding-the-text-fields"></a>加入文字欄位
 
@@ -433,7 +433,7 @@ View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton });
 
 ## <a name="adding-button-functionality"></a>加入按鈕的功能
 
-當按一下按鈕時，您的使用者將預期發生是否此警示，或瀏覽至另一個螢幕。 
+當按一下按鈕時，您的使用者將預期發生。 例如，警示會顯示或執行瀏覽至另一個螢幕。 
 
 讓我們加入一些程式碼來推送巡覽堆疊中的第二個檢視控制站。
 
@@ -497,7 +497,7 @@ usernameField.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 
 ### <a name="inheriting-from-uiview"></a>繼承自 UIView
 
-我們要做的第一件事就是建立自訂檢視的類別。 我們會執行這項操作使用**類別**範本在 Visual Studio 中加入名為空類別`CircleView`。 基底類別應設定為`UIView`，提醒您處於`UIKit`命名空間。 我們還需要`System.Drawing`以及命名空間。 在各種`System.*`命名空間將不會使用在此範例中，所以您可以自由將它們移除。
+我們要做的第一件事就是建立自訂檢視的類別。 我們會執行這項操作使用**類別**範本在 Visual Studio 中加入名為空類別`CircleView`。 基底類別應設定為`UIView`，我們請記得這是在`UIKit`命名空間。 我們還需要`System.Drawing`以及命名空間。 在各種`System.*`命名空間將不會使用在此範例中，所以您可以自由將它們移除。
 
 此類別看起來應該像這樣：
 

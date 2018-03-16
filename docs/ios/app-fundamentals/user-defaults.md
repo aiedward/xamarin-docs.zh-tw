@@ -8,20 +8,20 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: c4b2a103821bb18da4878cd37335faa899e910be
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ee79c79d7b3226f23851a3157e5a609d7cfc4cf4
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="working-with-user-defaults"></a>使用使用者預設值
 
-_本文件涵蓋使用 NSUserDefault 儲存 Xamarin iOS 應用程式或延伸模組中的預設設定。_
+_本文件涵蓋使用 NSUserDefault 儲存 Xamarin.iOS 應用程式或擴充功能中的預設設定。_
 
 
 `NSUserDefaults`類別會提供適用於 iOS 的應用程式和擴充功能，以程式設計的方式與全系統預設系統互動的方式。 使用預設的系統，使用者可以設定應用程式的行為或樣式以符合他們的喜好設定 （根據應用程式的設計）。 例如，如果帝國度量呈現度量 vs 中的資料，或選取指定的 UI 佈景主題。
 
-當使用應用程式群組`NSUserDefaults`也提供給定群組內的 應用程式 （或擴充功能） 之間進行通訊的方式。
+應用程式群組搭配使用時`NSUserDefaults`也提供給定群組內的 應用程式 （或擴充功能） 之間進行通訊的方式。
 
 <a name="About-User-Defaults" />
 
@@ -46,7 +46,7 @@ _本文件涵蓋使用 NSUserDefault 儲存 Xamarin iOS 應用程式或延伸模
 - 應用程式的配套識別碼的網域。
 - `NSGlobalDomain`共用的所有應用程式的預設值所組成。
 - 每個使用者的慣用語言不同的網域。
-- `NSRegistationDomain`與一組可以由應用程式，以確保搜尋永遠都能成功進行修改的暫存預設值。
+- `NSRegistrationDomain`與一組可以由應用程式，以確保搜尋永遠都能成功進行修改的暫存預設值。
 
 若要存取共用使用者預設執行個體，請使用下列程式碼：
 
@@ -59,11 +59,11 @@ var plist = NSUserDefaults.StandardUserDefaults;
 
 ## <a name="accessing-an-app-group-nsuserdefaults-instance"></a>存取應用程式群組 NSUserDefaults 執行個體
 
-如上所述，方法是使用應用程式群組`NSUserDefaults`可以用於應用程式 （或擴充功能） 之間的通訊給定群組內。 首先，您必須確定應用程式群組和必要的應用程式識別碼有已正確設定在**憑證、 識別項與設定檔**區段[iOS 開發人員中心](https://developer.apple.com/devcenter/ios/)並已安裝在開發環境中。
+如上所述，方法是使用應用程式群組`NSUserDefaults`可以用於應用程式 （或擴充功能） 之間的通訊給定群組內。 首先，您必須確定應用程式群組和必要的應用程式識別碼有已正確設定在**憑證、 識別項與設定檔**區段[iOS 開發人員中心](https://developer.apple.com/devcenter/ios/)並已安裝在開發環境。
 
-接下來，您的應用程式和/或擴充的專案必須是有效的應用程式識別碼，上面所建立的其中一個，`Entitlements.plist`檔案已啟用，並指定應用程式群組並將它取得的併入應用程式套件組合。
+接下來，必須有一個有效的應用程式識別碼上方，建立您的應用程式和/或擴充功能專案和`Entitlements.plist`有包含在與應用程式群組啟用，並指定應用程式套件組合的檔案。
 
-與這一切就緒，可以使用下列程式碼來存取共用的應用程式群組使用者預設值：
+與就地這一切，共用應用程式群組使用者預設可以存取使用下列程式碼：
 
 ```csharp
 // Get App Group User Defaults

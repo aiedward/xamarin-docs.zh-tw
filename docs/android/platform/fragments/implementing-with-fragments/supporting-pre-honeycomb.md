@@ -6,38 +6,33 @@ ms.assetid: DACD0C14-5DDF-7BDE-6844-80550D301307
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 242adc94f04b3bda40238370ca924c1807a0c787
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/15/2018
+ms.openlocfilehash: 109c1e0f16d3a288160b64ec6ff833e5b31c4efd
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="supporting-pre-honeycomb-android-using-support-packages"></a>支援預先 Honeycomb Android 使用支援封裝
 
 *Android 支援封裝*回通訊埠部分的新 API 的程式庫所組成&ndash;例如片段&ndash;較舊版本的 Android。 因此藉由新增 Android 支援套件，我們可以執行我們的應用程式 Android 2.3 裝置上的下列畫面所示：
 
-![片段逐步解說螢幕擷取畫面](supporting-pre-honeycomb-images/00.png)
-
-![詳細說明活動螢幕擷取畫面](supporting-pre-honeycomb-images/01.png)
-
+[![片段逐步解說和詳細資訊記錄的螢幕擷取畫面](supporting-pre-honeycomb-images/01-sml.png)](supporting-pre-honeycomb-images/01.png#lightbox)
 
 ## <a name="adding-the-support-package"></a>新增支援套件
 
 Android 支援封裝不會自動加入至 Xamarin.Android 應用程式。 Xamarin 提供[Android 支援的程式庫 v4 NuGet 封裝](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)來簡化支援程式庫加入 Xamarin.Android 應用程式。
 若要將支援封裝包含您的應用程式包含的 Xamarin.Android [Android 支援的程式庫 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)元件到 Xamarin.Android 專案中，如下列螢幕擷取畫面所示：
 
-![新增 Android 支援程式庫 v4 套件](supporting-pre-honeycomb-images/02.png)
+[![新增 Android 支援程式庫 v4 套件](supporting-pre-honeycomb-images/02-sml.png)](supporting-pre-honeycomb-images/02.png#lightbox)
 
 加入封裝之後變更為 Android 2.2 或更高的目標 framework:
 
-![變更目標 Framework 應用程式開發介面層級的螢幕擷取畫面](supporting-pre-honeycomb-images/03.png)
+[![變更目標 Framework 應用程式開發介面層級的螢幕擷取畫面](supporting-pre-honeycomb-images/03-sml.png)](supporting-pre-honeycomb-images/03.png#lightbox)
 
 此外，請確定最小的 Android 版本為目標的相同應用程式開發介面層級：
 
-![設定 Android 最小版本的螢幕擷取畫面](supporting-pre-honeycomb-images/04.png)
-
-
+[![設定 Android 最小版本的螢幕擷取畫面](supporting-pre-honeycomb-images/04-sml.png)](supporting-pre-honeycomb-images/04.png#lightbox)
 
 ### <a name="change-mainactivity-to-derive-from-fragmentactivity"></a>變更衍生自 FragmentActivity MainActivity
 

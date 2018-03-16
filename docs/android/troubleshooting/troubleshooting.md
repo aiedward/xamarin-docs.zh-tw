@@ -6,12 +6,12 @@ ms.assetid: 56137ACA-4811-B312-6860-E16D0FA123F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 145c8507ca5ebea6197fa8827b93f58fbc9bb078
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/15/2018
+ms.openlocfilehash: 015fff63c612c3acf29681b90c1e945c5e460034
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="troubleshooting-tips"></a>疑難排解秘訣
 
@@ -333,7 +333,7 @@ Xamarin.Android 支援多個裝置 ABIs: *armeabi*， *armeabi v7a*，和*x86*�
 有可用的 Android SDK for windows 的 Google 的 2 的下載項目。
 如果您選擇.exe 安裝程式，則會寫入告訴 Xamarin.Android 安裝位置的登錄機碼。 如果您選擇的.zip 檔案，並將它解壓縮自行，Xamarin.Android 不知道哪裡可找到 SDK。 您可以告訴 Xamarin.Android 其中 SDK 是 Visual Studio 中，請前往**工具 > 選項 > Xamarin > Android 設定**:
 
-[![Android SDK Xamarin Android 設定中的位置](troubleshooting-images/01a.png)](troubleshooting-images/01a.png#lightbox)
+[![Android SDK Xamarin Android 設定中的位置](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
 
 
 

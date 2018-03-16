@@ -6,12 +6,12 @@ ms.assetid: 298139E2-194F-4A58-BC2D-1D22231066C4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 05443bb341b2355c9e7a72f46b70214fb169e598
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/15/2018
+ms.openlocfilehash: db277f20e63a59690ffaa8a8544ff9540578d3f5
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="garbage-collection"></a>記憶體回收
 
@@ -21,12 +21,12 @@ Xamarin.Android 使用單聲道的[層代簡單式記憶體回收行程](http://
 -   主要 （收集 Gen1 和大型物件空間堆積） 的集合。 
 
 > [!NOTE]
-> 如果沒有明確的集合，透過[GC。Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/)集合*視*、 根據堆積配置。 *這不是參考計數系統*; 物件*將不會收集因為沒有未完成參考*，或當範圍已結束。 次要的堆積的新配置的記憶體不足時，將會執行 GC。 如果有任何配置，不會執行它。
+> 如果沒有明確的集合，透過[GC。Collect()](xref:System.GC.Collect)集合*視*、 根據堆積配置。 *這不是參考計數系統*; 物件*將不會收集因為沒有未完成參考*，或當範圍已結束。 次要的堆積的新配置的記憶體不足時，將會執行 GC。 如果有任何配置，不會執行它。
 
 
-次要集合廉價頻繁，，用來收集最近配置並無作用物件。 次要集合每幾 MB 的配置的物件之後執行。 次要的集合可能會以手動方式執行藉由呼叫[GC。收集 (0)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32/) 
+次要集合廉價頻繁，，用來收集最近配置並無作用物件。 次要集合每幾 MB 的配置的物件之後執行。 次要的集合可能會以手動方式執行藉由呼叫[GC。收集 (0)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) 
 
-主要集合昂貴且較不頻繁，，用來回收無作用的所有物件。 一旦目前的堆積大小 （在之前調整大小的堆積） 耗盡記憶體，則會執行主要的集合。 主要的集合可能會以手動方式執行藉由呼叫[GC。收集 （）](https://developer.xamarin.com/api/member/System.GC.Collect/)或藉由呼叫[GC。收集 (int)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32)與引數[GC。MaxGeneration](https://developer.xamarin.com/api/property/System.GC.MaxGeneration/)。 
+主要集合昂貴且較不頻繁，，用來回收無作用的所有物件。 一旦目前的堆積大小 （在之前調整大小的堆積） 耗盡記憶體，則會執行主要的集合。 主要的集合可能會以手動方式執行藉由呼叫[GC。收集 （）](xref:System.GC.Collect)或藉由呼叫[GC。收集 (int)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_)與引數[GC。MaxGeneration](xref:System.GC.MaxGeneration)。 
 
 
 
@@ -34,7 +34,7 @@ Xamarin.Android 使用單聲道的[層代簡單式記憶體回收行程](http://
 
 有三個類別的物件類型。
 
--   **受管理物件**： 類型完成這件事*不*繼承自[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) ，例如[System.String](https://developer.xamarin.com/api/type/System.String/)。 
+-   **受管理物件**： 類型完成這件事*不*繼承自[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) ，例如[System.String](xref:System.String)。 
     這些會正常收集 GC。 
 
 -   **Java 物件**: Android 的執行階段 VM 內出現，但不會公開至 Mono VM 的 Java 類型。 這些無趣，且不會進一步討論。 這些會正常收集 Android 的執行階段 VM。 
@@ -71,7 +71,7 @@ Android 的執行階段集合運作正常，但要注意： JNI 全域的參考�
 
 對等物件是 Android 的執行階段和 Mono VM 內以邏輯方式出現。 例如， [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)受管理的對等執行個體將會有對應[android.app.Activity](http://developer.android.com/reference/android/app/Activity.html) framework 對等 Java 執行個體。 所有物件繼承自[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)應該有兩個 Vm 內表示法。 
 
-表示在這兩個 Vm 的所有物件都必須擴充相較於只在單一 VM 內存在的物件的存留期 (例如[ `System.Collections.Generic.List<int>` ](https://developer.xamarin.com/api/type/System.Collections.Generic.List%601/))。 呼叫[GC。收集](https://developer.xamarin.com/api/member/System.GC.Collect/)Xamarin.Android GC 需要以確保，任一個 VM 未參考的物件之前收集時一定不會收集這些物件。 
+表示在這兩個 Vm 的所有物件都必須擴充相較於只在單一 VM 內存在的物件的存留期 (例如[ `System.Collections.Generic.List<int>` ](xref:System.Collections.Generic.List%601))。 呼叫[GC。收集](xref:System.GC.Collect)Xamarin.Android GC 需要以確保，任一個 VM 未參考的物件之前收集時一定不會收集這些物件。 
 
 若要縮短物件存留期， [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/)應叫用。 這將會手動"斷絕"兩個 Vm 藉由釋放全域的參考，如此可讓要收集更快的物件之間的物件上的連線。 
 
@@ -140,7 +140,7 @@ GC 有不完整的處理程序，可能無法執行時記憶體不足因為 GC �
 例如，執行個體[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)型別或衍生型別是至少 20 個位元組大小 (恕不另行通知，以此類推，等。)。 
 [管理可呼叫包裝函式](~/android/internals/architecture.md)因此未加入其他執行個體成員，當您有[Android.Graphics.Bitmap](https://developer.xamarin.com/api/type/Android.Graphics.Bitmap/) 10 MB 的記憶體，blob 參考執行個體 Xamarin.Android 的 GC 不會知道&ndash;GC將會看到 20 位元組物件，且將無法判斷其連結，而導致 10 MB 的記憶體運作 Android runtime 配置的物件。 
 
-若要協助 GC 經常必須。 不幸的是， *GC。AddMemoryPressure()*和*GC。RemoveMemoryPressure()*不支援，因此，如果您*知道*只釋放大型 Java 配置的物件圖形，您可能需要手動呼叫[GC。Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/)提示 GC 釋放 Java 端的記憶體，或者您可以明確處置*Java.Lang.Object*子類別，請中斷受管理的可呼叫包裝函式和 Java 執行個體之間的對應。 例如，請參閱[Bug 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6)。 
+若要協助 GC 經常必須。 不幸的是， *GC。AddMemoryPressure()*和*GC。RemoveMemoryPressure()*不支援，因此，如果您*知道*只釋放大型 Java 配置的物件圖形，您可能需要手動呼叫[GC。Collect()](xref:System.GC.Collect)提示 GC 釋放 Java 端的記憶體，或者您可以明確處置*Java.Lang.Object*子類別，請中斷受管理的可呼叫包裝函式和 Java 執行個體之間的對應。 例如，請參閱[Bug 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6)。 
 
 
 > [!NOTE]
@@ -314,7 +314,7 @@ class BetterActivity : Activity {
 
 ## <a name="minor-collections"></a>次要的集合
 
-次要的集合可能會以手動方式執行藉由呼叫[GC。Collect(0)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32)。 次要的集合是廉價 （當相較於主要集合），但沒有重大固定成本，所以您不想要常常，觸發，且必須有幾毫秒的暫停時間。 
+次要的集合可能會以手動方式執行藉由呼叫[GC。Collect(0)](xref:System.GC.Collect)。 次要的集合是廉價 （當相較於主要集合），但沒有重大固定成本，所以您不想要常常，觸發，且必須有幾毫秒的暫停時間。 
 
 如果您的應用程式 」 工作週期"反覆完成同一件事是，它可能會建議手動執行次要集合的情況，一旦工作週期已經結束。 範例待命週期包括： 
 
@@ -326,7 +326,7 @@ class BetterActivity : Activity {
 
 ## <a name="major-collections"></a>主要的集合
 
-主要的集合可能會以手動方式執行藉由呼叫[GC。Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/)或`GC.Collect(GC.MaxGeneration)`。 
+主要的集合可能會以手動方式執行藉由呼叫[GC。Collect()](xref:System.GC.Collect)或`GC.Collect(GC.MaxGeneration)`。 
 
 它們應該很少執行而可能的第二個暫停的時間樣式的 Android 裝置上收集 512 MB 堆積時。 
 

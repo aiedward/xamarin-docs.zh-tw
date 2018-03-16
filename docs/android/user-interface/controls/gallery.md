@@ -6,12 +6,12 @@ ms.assetid: 3112E68A-7853-B147-90A6-6295CA2C4CB5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: da6815a073d93379c8564f3ff91023deb20b0d55
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/15/2018
+ms.openlocfilehash: c5e7cb864fc37a5365992fdff12a5be43dcccdd5
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="gallery"></a>組件庫
 
@@ -42,7 +42,7 @@ ms.lasthandoff: 03/09/2018
 
 啟動新的專案，名為*HelloGallery*。
 
-![新的 Android 專案中新方案對話方塊的螢幕擷取畫面](gallery-images/hellogallery1.png)
+[![新的 Android 專案中新方案對話方塊的螢幕擷取畫面](gallery-images/hellogallery1-sml.png)](gallery-images/hellogallery1.png#lightbox)
 
 尋找您想要使用時，某些相片或[下載這些範例影像](http://developer.android.com/shareables/sample_images.zip)。
 將影像檔加入至專案的**資源/Drawable**目錄。 在**屬性**視窗中，針對每個要設定建置動作**AndroidResource**。

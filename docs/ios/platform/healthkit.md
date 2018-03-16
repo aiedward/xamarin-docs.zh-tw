@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 4f85f208c12561b6db9800d963e2d7bf32c2a4d0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3e21794c9f1d8f010ec323774bc93987f4b89e1d
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -67,7 +67,7 @@ Xamarin iOS 8 應用程式可以使用 HealthKit API 之前，必須正確設定
 
 明確建立**應用程式識別碼**和適當**佈建設定檔**Apple 中進行[iOS 開發人員中心](https://developer.apple.com/devcenter/ios/index.action)。 
 
-您目前**應用程式識別碼**中所列[憑證、 識別項與設定檔](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action)開發人員中心的區段。 通常，這份清單會顯示**識別碼**值`*`，這表示，**應用程式識別碼*- **名稱**可以搭配任何數目的尾碼。 這類*萬用字元應用程式識別碼*不能與健全狀況的套件。
+您目前**應用程式識別碼**中所列[憑證、 識別項與設定檔](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action)開發人員中心的區段。 通常，這份清單會顯示**識別碼**值`*`，這表示，**應用程式識別碼** - **名稱**可以搭配任何數目的尾碼。 這類*萬用字元應用程式識別碼*不能與健全狀況的套件。
  
 若要建立明確**應用程式識別碼**，按一下   **+** 按鈕右上方帶您前往**註冊 iOS 應用程式識別碼**頁面：
 

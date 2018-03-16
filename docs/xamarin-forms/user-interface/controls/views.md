@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: c5bafe12c2cf8c5f8d75757b22223c708ae248dc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ef4de2d544f3bcfb661b29dd90de738ae0442373
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms 檢視
 
@@ -107,7 +107,7 @@ _Xamarin.Forms 檢視是跨平台行動裝置的使用者介面的建置組塊�
 
 |     |     |
 | --- | --- |
-| [`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) 可讓使用者與平台日期選擇器選取的日期。 將範圍設定為允許的日期與[ `MinimumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/)和[ `MaximumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/)屬性。 [ `Date` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/)屬性是選取的日期和[ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/)該屬性變更時引發事件。<br /><br />[應用程式開發介面文件](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) | [![日期選擇器範例](views-images/DatePicker.png "日期選擇器範例")](views-images/DatePicker-Large.png#lightbox "日期選擇器範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/DatePickerDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/DatePickerDemoPage.xaml) |
+| [`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) 可讓使用者與平台日期選擇器選取的日期。 將範圍設定為允許的日期與[ `MinimumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/)和[ `MaximumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/)屬性。 [ `Date` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/)屬性是選取的日期和[ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/)該屬性變更時引發事件。<br /><br />[應用程式開發介面文件](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) / [指南](~/xamarin-forms/user-interface/datepicker.md) / [範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker) | [![日期選擇器範例](views-images/DatePicker.png "日期選擇器範例")](views-images/DatePicker-Large.png#lightbox "日期選擇器範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/DatePickerDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/DatePickerDemoPage.xaml) |
 |     |     |
 
 ### <a name="timepicker"></a>TimePicker

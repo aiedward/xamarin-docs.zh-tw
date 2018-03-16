@@ -7,12 +7,12 @@ ms.assetid: 1AFB4242-A337-F8E0-83D9-B8D850D7F384
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 8595ecb63e49a4768120e98f41826b74c2dd43e4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/15/2018
+ms.openlocfilehash: 0a9a1f41810fe113ac3d88d2533411ac537840ab
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="fragments"></a>片段
 
@@ -53,9 +53,9 @@ _Android 3.0 引進了片段，示範如何以更具彈性的設計支援在手�
 
 [![Android SDK Manager 中選取的應用程式開發介面層級](images/02.png)](images/02.png#lightbox)
 
-片段是 Xamarin.Android 4.0 和更新版本。 Xamarin.Android 應用程式必須至少為目標 API 層級 11 (Android 3.0) 或更高版本，才能使用片段。 目標 Framework 可能會設定專案選項 中，如下所示：
+片段是 Xamarin.Android 4.0 和更新版本。 Xamarin.Android 應用程式必須至少為目標 API 層級 11 (Android 3.0) 或更高版本，才能使用片段。 目標 Framework 可能會設定專案屬性，如下所示：
 
-[![專案選項中設定的目標 Framework 應用程式開發介面層級](images/03.png)](images/03.png#lightbox)
+[![專案選項中設定的目標 Framework 應用程式開發介面層級](images/03-sml.png)](images/03.png#lightbox)
 
 很可能在使用的 Android 支援封裝和 Xamarin.Android 4.2 Android 或更高版本的舊版本中使用片段。 在這一節的文件中的更詳細地討論如何執行此動作。
 

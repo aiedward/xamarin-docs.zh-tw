@@ -7,11 +7,11 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: abd6ac7d4bce5a180db087488b32c878ed0a416b
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: bf3d675224a1e1696d4ce526fa42260d2102aa7d
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="workbooks-installation-and-requirements"></a>活頁簿安裝與需求
 
@@ -19,13 +19,13 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="download-and-install"></a>下載並安裝
 
-# <a name="windowstabvswin"></a>[Windows](#tab/vswin)
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
 1. 請檢查[需求](#requirements)下方。
 2. 下載並安裝[Windows 的 Xamarin 活頁簿](https://dl.xamarin.com/interactive/XamarinInteractive.msi)。
 3. 啟動[播放](~/tools/workbooks/workbook.md)使用活頁簿或試用[範例](https://developer.xamarin.com/workbooks)
 
-# <a name="macostabvsmac"></a>[macOS](#tab/vsmac)
+# <a name="macostabmacos"></a>[macOS](#tab/macos)
 
 1. 請檢查[需求](#Requirements)下方。
 2. 下載並安裝[Xamarin 適用於 Mac 的活頁簿](https://dl.xamarin.com/interactive/XamarinInteractive.pkg)。

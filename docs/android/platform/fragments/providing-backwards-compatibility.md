@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/12/2017
-ms.openlocfilehash: 670ec465843bbe819b41a53fff71b01ab78b0059
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f09aae1445cfcf9f4225af3de37b65ebb5a1b6b2
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>提供回溯相容性的 Android 支援封裝
 
@@ -25,13 +25,13 @@ ms.lasthandoff: 03/12/2018
 
 Android 支援封裝不會自動加入至 Xamarin.Android 應用程式。 Xamarin 提供[Android 支援的程式庫 v4 NuGet 封裝](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)來簡化支援程式庫加入 Xamarin.Android 應用程式。若要將支援封裝包含您的應用程式包含的 Xamarin.Android [Android 支援的程式庫 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)元件到 Xamarin.Android 專案中，如下列螢幕擷取畫面所示： 
 
-[![螢幕擷取畫面的 Android 支援程式庫 v4 封裝加入至專案](providing-backwards-compatibility-images/02.png)](providing-backwards-compatibility-images/02.png#lightbox)
+[![螢幕擷取畫面的 Android 支援程式庫 v4 封裝加入至專案](providing-backwards-compatibility-images/02-sml.png)](providing-backwards-compatibility-images/02.png#lightbox)
 
 在執行這些步驟後，就能夠在舊版的 Android 使用片段。 片段 Api 運作相同現在在這些舊的版本，但有下列例外狀況： 
 
 -   **變更最低的 Android 版本**&ndash;應用程式不再需要為目標 Android 3.0 或更新版本，如下所示： 
 
-    [![正在設定應用程式屬性底下的螢幕擷取畫面的最小值 Android 目標](providing-backwards-compatibility-images/03.png)](providing-backwards-compatibility-images/03.png#lightbox)
+    [![正在設定下 Android 資訊清單的螢幕擷取畫面的最小值 Android 目標](providing-backwards-compatibility-images/03-sml.png)](providing-backwards-compatibility-images/03.png#lightbox)
 
 -   **擴充 FragmentActivity** &ndash;裝載片段的活動必須現在是繼承自`Android.Support.V4.App.FragmentActivity`，而不是從`Android.App.Activity`。 
 

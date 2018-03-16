@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/22/2017
-ms.openlocfilehash: 9b801af77eceaf94b0ede98b6af51d55d6029fe6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ddc16dc1faaf623098aad5bca340c15f943223ba
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Xamarin Player 即時安裝程式
 
@@ -68,7 +68,7 @@ Xamarin Live Player 需要：
 
   如果沒有裝置配對，QR 代碼將會出現指示配對的裝置：
 
-    ![配對的裝置 視窗](install-images/manage-empty-windows.png)
+  ![配對的裝置 視窗](install-images/manage-empty-windows.png)
 
   如果配對的無法連絡裝置，可能會出現錯誤。
 
@@ -111,11 +111,11 @@ Xamarin Live Player 需要：
 
   若為不成對的任何裝置，QR 代碼將會出現如何配對的裝置上的指示：
 
-    ![配對的裝置 視窗](install-images/manage-empty.png)
+  ![配對的裝置 視窗](install-images/manage-empty.png)
 
   如果配對的無法連絡裝置，則會出現錯誤：
 
-    ![無法連線到裝置錯誤訊息](install-images/error-cannot-connect.png)
+  ![無法連線到裝置錯誤訊息](install-images/error-cannot-connect.png)
 
 
 -----

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 8bebc24ee62d7b5a6f2b9df6e33b6f2b9dbe2431
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c5cca8e6fceb9aef82fc6543adc6dc5e7399d839
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="user-interface"></a>使用者介面
 
@@ -37,6 +37,10 @@ Xamarin.Forms 包含本身可以直接建立簡單的動畫，同時也會多到
 ## <a name="datapagesdatapagesindexmd"></a>[DataPages](datapages/index.md)
 
 DataPages 提供 API，以快速且輕鬆地資料來源繫結至預先建立的檢視。 清單項目和詳細資料 頁面將會自動轉譯資料，並使用佈景主題來自訂。
+
+## <a name="datepickerdatepickermd"></a>[DatePicker](datepicker.md)
+
+`DatePicker`可讓使用者選取日期，以指定的範圍內。 它是使用特定的平台執行程式所支援的日期選擇器所實作的。
 
 ## <a name="graphicsgraphicsindexmd"></a>[圖形](graphics/index.md)
 

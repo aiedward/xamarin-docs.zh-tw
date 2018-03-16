@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b75bc7e4ccf53e82ff107c867c5ba01813960ea5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0456742ca30257670375e3ae781dcdc49707e2ce
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="the-command-interface"></a>命令介面
 
@@ -22,7 +22,7 @@ ViewModel，這通常是衍生自類別的屬性之間定義模型-檢視-ViewMo
 
 若要允許之間的資料繫結`Button`和 ViewModel，`Button`定義兩個屬性：
 
-- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Command/) 型別 [`ICommand`](https://developer.xamarin.com/api/type/System.Windows.Input.ICommand/)
+- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Command/) 型別 <xref:System.Windows.Input.ICommand>
 - [`CommandParameter`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.CommandParameter/) 型別 `Object`
 
 若要使用命令介面，您可以定義為目標的資料繫結`Command`屬性`Button`來源所在的型別 ViewModel 屬性`ICommand`。 ViewModel 包含關聯的程式碼`ICommand`按鈕時所執行的屬性。 您可以設定`CommandParameter`來區別多個按鈕，如果全部的任意資料繫結至相同`ICommand`ViewModel 中的屬性。
@@ -39,7 +39,7 @@ ViewModel，這通常是衍生自類別的屬性之間定義模型-檢視-ViewMo
 
 ## <a name="the-icommand-interface"></a>ICommand 介面
 
-[ `ICommand` ](https://developer.xamarin.com/api/type/System.Windows.Input.ICommand/)介面不是 Xamarin.Forms 的一部分。 而是定義在[ `System.Windows.Input` ](https://developer.xamarin.com/api/namespace/System.Windows.Input/)命名空間，而且包含兩個方法和一個事件：
+<xref:System.Windows.Input.ICommand>介面不是 Xamarin.Forms 的一部分。 而是定義在[System.Windows.Input](xref:System.Windows.Input)命名空間，而且包含兩個方法和一個事件：
 
 ```csharp
 public interface ICommand
