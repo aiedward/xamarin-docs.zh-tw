@@ -121,6 +121,7 @@
 ### [DataPages](user-interface/datapages/index.md)
 #### [快速入門](user-interface/datapages/get-started.md)
 #### [控制項參考](user-interface/datapages/controls.md)
+### [DatePicker](user-interface/datepicker.md)
 ### [圖形](user-interface/graphics/index.md)
 #### [在 Xamarin.Forms 中使用 CocosSharp](user-interface/graphics/cocossharp.md)
 #### [在 Xamarin.Forms 中使用 SkiaSharp](user-interface/graphics/skiasharp/index.md)
