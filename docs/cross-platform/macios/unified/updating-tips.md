@@ -6,11 +6,11 @@ ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 027b5869dbf52adf70c57d192ed638b10a6c8cdc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 31ee94b7a463a651556472967152b98ee3061a8d
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>統一的 API 來更新程式碼的秘訣
 
@@ -205,4 +205,4 @@ class BasicPinAnnotation : MKAnnotation
 - [更新 Xamarin.Forms 應用程式](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 - [更新繫結](~/cross-platform/macios/unified/update-binding.md)
 - [在跨平台應用程式中使用原生型別](~/cross-platform/macios/native-types-cross-platform.md)
-- [傳統的 vs 統一的 API 差異](http://developer.xamarin.comhttps://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [傳統的 vs 統一的 API 差異](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)

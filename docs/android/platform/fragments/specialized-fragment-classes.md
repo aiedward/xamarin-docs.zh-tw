@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: f962f4619352dbaaed8c8ffcf5d8c8305cb6ad62
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7ddb4b7d4867813311448258bb4fb177ae4cd175
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="specialized-fragment-classes"></a>特製化的片段類別
 
@@ -191,8 +191,7 @@ public class AlertDialogFragment : DialogFragment
 
 ## <a name="preferencefragment"></a>PreferenceFragment
 
-為了協助管理喜好設定，片段 API 提供`PreferenceFragment`子類別。 `PreferenceFragment`類似於[PreferenceActivity](https://developer.xamarin.com/api/type/Android.Preferences.PreferenceActivity/
-) &ndash;它會顯示給使用者的喜好設定的階層架構在片段中。 當使用者互動時，喜好設定，它們將會自動儲存到[SharedPreferences](http://developer.android.com/reference/android/content/SharedPreferences.html)。
+為了協助管理喜好設定，片段 API 提供`PreferenceFragment`子類別。 `PreferenceFragment`類似於[PreferenceActivity](https://developer.xamarin.com/api/type/Android.Preferences.PreferenceActivity/) &ndash;它會顯示給使用者的喜好設定的階層架構在片段中。 當使用者互動時，喜好設定，它們將會自動儲存到[SharedPreferences](http://developer.android.com/reference/android/content/SharedPreferences.html)。
 在 Android 3.0 或更高的應用程式中，使用`PreferenceFragment`處理應用程式中的喜好設定。 下圖顯示的範例`PreferenceFragment`:
 
 [![範例 PreferencesFragment 內嵌、 對話方塊中，與啟動喜好設定](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png#lightbox)

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 3b1bb45ab87c85dff42b4f7ea5297eb3596b81a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5ab6f68aed791dd21516d663367ac5435e92d6cc
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="introduction-to-game-development-with-cocossharp"></a>與 CocosSharp 遊戲應用程式開發簡介
 
@@ -38,4 +38,4 @@ CocosSharp 2D 遊戲引擎提供技術來進行跨平台遊戲。 如需支援�
 - [遊戲的內容 （範例）](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Content.zip?raw=true)
 - [已完成的專案 （範例）](https://developer.xamarin.com/samples/mobile/BouncingGame/)
 - [需由 NuGet CocosSharp PCL](http://www.nuget.org/packages/CocosSharp.PCL.Shared/)
-- [CocosSharp API 文件](http://developer.xamarin.comhttps://developer.xamarin.com/api/namespace/CocosSharp/)
+- [CocosSharp API 文件](https://developer.xamarin.com/api/namespace/CocosSharp/)

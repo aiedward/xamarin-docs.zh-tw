@@ -6,11 +6,11 @@ ms.assetid: E4EF7E0F-ED86-44C9-9F98-38ECF881C7E2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 6ca5b4d70669909b952752f7d600fcac37e9f557
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 68b420f98461ee42862726a658d721b36326c203
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="what-support-options-are-available-for-xamarin"></a>適用於 Xamarin 支援選項？
 
@@ -18,28 +18,13 @@ ms.lasthandoff: 03/09/2018
 
 如下所示[Xamarin 支援頁面](https://www.xamarin.com/support)，有許多選項可用。  以下是一些快速初始的建議[啟發的堆疊溢位](http://stackoverflow.com/help/product-support)如何挑選最佳的選項：
 
-<table>
-    <tr>
-        <td>「 這個錯誤代表什麼？ 」 或者 「 如何？ 我...」</td>
-        <td><a href="http://stackoverflow.com/questions/ask?tags=xamarin">堆疊溢位</a>下<em>xamarin</em>標記</td>
-    </tr>
-    <tr>
-        <td>我相信此問題的起因是中的 Xamarin 原始碼的缺失。</td>
-        <td><a href="https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html">Xamarin Bugzilla</a></td>
-    </tr>
-    <tr>
-        <td>我有概念、 功能要求或新的文件要求。</td>
-        <td><a href="https://xamarin.uservoice.com">Xamarin UserVoice 頁面</a></td>
-    </tr>
-    <tr>
-        <td>哪些資源、 架構或工具其他使用者建議...？ （和其他開放式的討論）</td>
-        <td><a href="https://forums.xamarin.com/">Xamarin 論壇</a></td>
-    </tr>
-    <tr>
-        <td>有疑問訂閱授權，或定價。</td>
-        <td>電子郵件或電話上使用的連絡資訊<a href="https://www.xamarin.com/faq">常見問題集</a></td>
-    </tr>
-</table>
+|   |   |
+|---|---|
+|「 這個錯誤代表什麼？ 」 或者 「 如何？ 我...」|[堆疊溢位](http://stackoverflow.com/questions/ask?tags=xamarin)下*xamarin*標記|
+|我相信此問題的起因是中的 Xamarin 原始碼的缺失。|[Xamarin Bugzilla](https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html)|
+|我有概念、 功能要求或新的文件要求。|[Xamarin UserVoice 頁面](https://xamarin.uservoice.com)|
+|哪些資源、 架構或工具其他使用者建議...？ （和其他開放式的討論）|[Xamarin 論壇](https://forums.xamarin.com)|
+|有疑問訂閱授權，或定價。|電子郵件或電話上使用的連絡資訊[常見問題集](https://www.xamarin.com/faq)|
 
 Xamarin 支援小組可協助您監視每個選項。  我們鼓勵其仔細考量的問題和報表，以充分利用，並協助成長了 Xamarin 開發人員社群參與的所有使用者。  可能的缺失，務必送出 bug 報告，以確保問題由 Xamarin 工程團隊正式追蹤時。
 

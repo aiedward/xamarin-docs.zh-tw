@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 8d23211e28cb1b1dae13d67e32462888c66ff065
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ff754a690627e7e2f0a5cd39dd669a4c9ddd47fb
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="using-jenkins-with-xamarin"></a>使用 Jenkins 搭配 Xamarin
 
@@ -343,40 +343,14 @@ Jenkins 會擷取到呼叫的特殊資料夾的整個原始程式碼*工作區*�
 
 這兩個命令都需要命令列參數的可能差異專案對專案。 此外，有些這些命令列參數是不應該出現在主控台輸出的組建正在執行時的密碼。 我們將在環境變數中儲存部分這些命令列參數。 下表描述所需的簽署及/或 zip 對齊的環境變數：
 
-<table>
-    <thead>
-        <tr>
-            <td>環境變數</td>
-            <td>描述</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>KEYSTORE_FILE</td>
-            <td>這是要用於簽署 APK 的金鑰存放區的路徑</td>
-        </tr>
-        <tr>
-            <td>KEYSTORE_ALIAS</td>
-            <td>將用來簽署 APK 的金鑰存放區中的索引鍵。</td>
-        </tr>
-        <tr>
-            <td>INPUT_APK</td>
-            <td>所建立的 APK `xbuild`。</td>
-        </tr>
-        <tr>
-            <td>SIGNED_APK</td>
-            <td>所產生的帶正負號的 APK `jarsigner`。</td>
-        </tr>
-        <tr>
-            <td>FINAL_APK</td>
-            <td>這是 zip 對齊由所產生的 APK `zipalign`。</td>
-        </tr>
-        <tr>
-            <td>STORE_PASS</td>
-            <td>這是用來存取如 singing 檔案的金鑰存放區內容的密碼。</td>
-        </tr>
-    </tbody>
-</table>
+|環境變數|描述|
+|--- |--- |
+|KEYSTORE_FILE|這是要用於簽署 APK 的金鑰存放區的路徑|
+|KEYSTORE_ALIAS|將用來簽署 APK 的金鑰存放區中的索引鍵。|
+|INPUT_APK|所建立的 APK `xbuild`。|
+|SIGNED_APK|所產生的帶正負號的 APK `jarsigner`。|
+|FINAL_APK|這是 zip 對齊由所產生的 APK `zipalign`。|
+|STORE_PASS|這是用來存取如 singing 檔案的金鑰存放區內容的密碼。|
 
 需求 > 一節所述，可以使用 EnvInject 外掛程式在建置期間設定這些環境變數。 作業都應該具有新的建置步驟會根據加入插入的環境變數，在下一個螢幕擷取畫面所示：
 

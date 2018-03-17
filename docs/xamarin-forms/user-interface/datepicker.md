@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/12/2018
-ms.openlocfilehash: d47499c1e309fbc67c85b55cacbbba3942188f54
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 5c214fe4124b900ea63399b97084d1ce0e181d4a
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="using-datepicker"></a>使用 日期選擇器
 
@@ -48,7 +48,7 @@ DatePicker datePicker = new DatePicker
 };
 ```
 
-當`DateTime`中的值指定在 XAML 中，XAML 剖析器會使用`DateTime.Parse`方法`CultureInfo.InvariantCulture`要轉換的字串引數`DateTime`值。 必須指定日期精確格式： 兩位數月份、 兩位數的天數，並以斜線分隔的四位數年份：
+當`DateTime`值會指定在 XAML 中，XAML 剖析器會使用`DateTime.Parse`方法`CultureInfo.InvariantCulture`要轉換的字串引數`DateTime`值。 必須指定日期精確格式： 兩位數月份、 兩位數的天數，並以斜線分隔的四位數年份：
 
 ```xaml
 <DatePicker MinimumDate="01/01/2018"
@@ -78,7 +78,7 @@ DatePicker datePicker = new DatePicker
             ··· />
 ```
 
-不過，建議您不要。 視設定而定`Format`所選取屬性的日期可能需要不同的顯示寬度。 例如，"D"格式字串會造成`DateTime`以長格式，以及 「 星期三，年 9 月 12，2018 」 顯示日期，需要較大的顯示寬度比"星期五，年 4，2018"。 根據平台，可能會造成這項差異`DateTime`檢視來變更在配置中，或被截斷的顯示寬度。
+不過，建議您不要。 視設定而定`Format`所選取屬性的日期可能需要不同的顯示寬度。 例如，"D"格式字串會造成`DateTime`以長格式，以及 「 星期三，年 9 月 12，2018 」 顯示日期，需要較大的顯示寬度比"星期五，年 4，2018。 」 根據平台，可能會造成這項差異`DateTime`檢視來變更在配置中，或被截斷的顯示寬度。
 
 > [!TIP]
 > 建議您最好使用預設`HorizontalOptions`設定`Fill`與`DatePicker`，且不使用在寬度為`Auto`當放置`DatePicker`中`Grid`儲存格。
@@ -139,7 +139,7 @@ DatePicker datePicker = new DatePicker
 </ContentPage>
 ```
 
-每個`DatePicker`指派`Format`完整日期格式的"D"屬性。 也請注意`endDatePicker`物件都有為目標的繫結其`MinimumDate`屬性。 繫結來源是所選`Date`屬性`startDatePicker`物件。 這可確保的結束日期稍後一律等於開始日期。 除了這兩個`DatePicker`物件`Switch`標示為"Include 總共兩天 」。 
+每個`DatePicker`指派`Format`完整日期格式的"D"屬性。 也請注意`endDatePicker`物件都有為目標的繫結其`MinimumDate`屬性。 繫結來源是所選`Date`屬性`startDatePicker`物件。 這可確保的結束日期稍後一律等於開始日期。 除了這兩個`DatePicker`物件`Switch`標示為 「 總共包含兩天 」。 
 
 這兩個`DatePicker`檢視已附加至處理常式`DateSelected`事件，而`Switch`已處理常式附加至其`Toggled`事件。 這些事件處理常式的程式碼後置檔案中，並觸發新的計算的兩個日期之間的天數：
 
@@ -184,7 +184,7 @@ public partial class MainPage : ContentPage
 
 [![日期結果之間的天數](datepicker-images/DaysBetweenDatesResult.png "日期結果之間的天數")](datepicker-images/DaysBetweenDatesResult-Large.png#lightbox "日期結果之間的天數")
 
-## <a name="related-links"></a>相關連結
+## <a name="related-links"></a>相關的連結
 
 - [DaysBetweenDates 範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)
 - [日期選擇器應用程式開發介面](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/)

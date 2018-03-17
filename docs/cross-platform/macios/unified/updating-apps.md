@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: b1b6338494b9be98e677cf9d338410eae759feb8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a09ba93fe7c3f5ade6b5cafe44fd7ee2b0c33487
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>統一的 API 來更新現有的應用程式
 
@@ -49,7 +49,7 @@ Xamarin 大學上具有的免費視訊**升級至 iOS 統一的 API**。 請瀏�
 
 請遵循這些指示來更新現有的 Xamarin.Forms 方案與使用統一的 API 的 iOS 專案。 統一的 API 支援僅用於 Xamarin.Forms 1.3 和更新版本，因此[指示](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)也說明如何更新的版本 1.3 Xamarin.Forms 應用程式。 這些[秘訣](~/cross-platform/macios/unified/updating-tips.md)可協助更新任何自訂轉譯器或相依性服務中的原生 iOS 程式碼。
 
-## <a name="working-with-native-types-in-cross-platform-appscross-platformmaciosnativetypesmd"></a>[使用跨平台應用程式中的原生類型](~/cross-platform/macios/nativetypes.md)
+## <a name="working-with-native-types-in-cross-platform-appscross-platformmaciosnativetypesmd"></a>[在跨平台應用程式中使用原生型別](~/cross-platform/macios/nativetypes.md)
 
 本文說明如何使用新的 iOS 原生整合應用程式開發介面的型別 （nint、 nuint、 nfloat） 跨平台應用程式中使用非 iOS 裝置，例如 Android 或 Windows Phone 作業系統版本之共用程式碼的位置。 它提供深入了解何時應該使用的原生類型，並提供以跨平台程式碼必須使用新類型的情況下幾個可能的解決方案。
 
@@ -68,4 +68,4 @@ Xamarin 大學上具有的免費視訊**升級至 iOS 統一的 API**。 請瀏�
 - [更新 Xamarin.Forms 應用程式](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 - [更新繫結](~/cross-platform/macios/unified/update-binding.md)
 - [更新的秘訣](~/cross-platform/macios/unified/updating-tips.md)
-- [傳統的 vs 統一的 API 差異](http://developer.xamarin.comhttps://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [傳統的 vs 統一的 API 差異](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)

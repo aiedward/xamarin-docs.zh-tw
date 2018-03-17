@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: 2c48ae5386fda63aed43c24c09c10cfb87b93637
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e231043b1c4b0fa7ba72f2a371545036ffb21164
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 
@@ -147,40 +147,12 @@ PrivateDatabase = CKContainer.DefaultContainer.PrivateCloudDatabase;
 
 以下是資料庫類型之間的差異：
 
-<table cellpadding="1" cellspacing="1" border="1" width="100%">
-<thead>
-<tr>
-<td></td>
-<td>公用資料庫</td>
-<td>私用的資料庫</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>資料類型</td>
-<td>共用的資料</td>
-<td>目前使用者的資料</td>
-</tr>
-
-<tr>
-<td>配額</td>
-<td>開發人員的配額中說明</td>
-<td>使用者的配額中說明</td>
-</tr>
-
-<tr>
-<td>預設權限</td>
-<td>可讀取的世界</td>
-<td>使用者可讀取</td>
-</tr>
-
-<tr>
-<td>編輯權限</td>
-<td>資料錄類別層級透過 iCloud 儀表板角色</td>
-<td>N/A</td>
-</tr>
-</tbody>
-</table>
+||公用資料庫|私用的資料庫|
+|---|--- |--- |
+|**資料類型**|共用的資料|目前使用者的資料|
+|**配額**|開發人員的配額中說明|使用者的配額中說明|
+|**預設權限**|可讀取的世界|使用者可讀取|
+|**編輯權限**|資料錄類別層級透過 iCloud 儀表板角色|N/A|
 
 ### <a name="records"></a>資料錄
 

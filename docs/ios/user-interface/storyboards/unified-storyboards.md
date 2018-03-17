@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 30a952bf0df4db34c749de3d6198877b7a9766b9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 77808ae03f5801dd3628b8966e05a574b8501f37
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="unified-storyboards"></a>統一的分鏡腳本
 
@@ -116,63 +116,23 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 
 以下是開發人員可能會看到在 iPhone 的一般特性集合：
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>屬性</td>
-    <td>值</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td><code>HorizontalSizeClass</code></td>
-    <td>壓縮</td>
-</tr>
-<tr>
-    <td><code>VerticalSizeClass</code></td>
-    <td>Regular</td>
-</tr>
-<tr>
-    <td><code>UserInterfaceIdom</code></td>
-    <td>電話</td>
-</tr>
-<tr>
-    <td><code>DisplayScale</code></td>
-    <td>2.0</td>
-</tr>
-</tbody>
-</table>
+|屬性|值|
+|--- |--- |
+|`HorizontalSizeClass`|壓縮|
+|`VerticalSizeClass`|Regular|
+|`UserInterfaceIdom`|電話|
+|`DisplayScale`|2.0|
 
 上述組代表完整限定特性集合，因為它具有所有其特性屬性的值。
 
 也是可能有遺漏某些值，其特性集合 (它會做為參考 Apple*未指定*):
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>屬性</td>
-    <td>值</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td><code>HorizontalSizeClass</code></td>
-    <td>壓縮</td>
-</tr>
-<tr>
-    <td><code>VerticalSizeClass</code></td>
-    <td>{未指定}</td>
-</tr>
-<tr>
-    <td><code>UserInterfaceIdom</code></td>
-    <td>{未指定}</td>
-</tr>
-<tr>
-    <td><code>DisplayScale</code></td>
-    <td>{未指定}</td>
-</tr>
-</tbody>
-</table>
+|屬性|值|
+|--- |--- |
+|`HorizontalSizeClass`|壓縮|
+|`VerticalSizeClass`|未指定|
+|`UserInterfaceIdom`|未指定|
+|`DisplayScale`|未指定|
 
 一般而言，不過，當開發人員會要求其特性集合特性環境，它會傳回完整的集合在上述範例所示。
 
@@ -216,7 +176,6 @@ Apple 已加入新的類別 ios 8 稱為`UIImageAsset`讓開發人員更多控�
 
 如前所述，如果任何特性的其中一個特性集合並未指定，且在另一個指定，此值將設定成指定的版本。 不過，如果沒有指定的給定值的多個版本，最後一個值特性集合會使用的值。
 
-
 ## <a name="adaptive-view-controllers"></a>自動調整檢視控制器
 
 本節將討論如何檢視和檢視控制器 iOS 採用特性和大小的類別可以自動在開發人員的應用程式中更彈性的概念的詳細資料。
@@ -259,58 +218,11 @@ A`UIView`設定為分割檢視控制器的父系和`SetOverrideTraitCollection`�
 
 iOS 8 提供數個回呼開發人員可以用來參與特性變更下, 表所示：
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Phase</td>
-    <td>回呼</td>
-    <td>描述</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td>安裝程式</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        <li><code>TraitCollectionDidChange</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>特性集合取得設為新的值之前的特性變更開頭取得呼叫這個方法。</li>
-        <li>取得呼叫這個方法，但特性集合的值變更時進行任何動畫之前。</li>
-        </ul>
-    </td>
-</tr>
-<tr>
-    <td>動畫</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>取得傳遞至這個方法轉換協調器<code>AnimateAlongside</code>屬性，可讓開發人員加入將會執行，以及預設動畫的動畫。</li>
-        </ul>
-    </td>
-</tr>
-<tr>
-    <td>清除</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>提供方法讓開發人員轉換之後，包含其本身的清除程式碼。</li>
-        </ul>
-    </td>
-</tr>
-</tbody>
-</table>
+|Phase|回呼|描述|
+|--- |--- |--- |
+|安裝程式|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>特性集合取得設為新的值之前的特性變更開頭取得呼叫這個方法。</li><li>取得呼叫這個方法，但特性集合的值變更時進行任何動畫之前。</li></ul>|
+|動畫|`WillTransitionToTraitCollection`|取得傳遞至這個方法轉換協調器`AnimateAlongside`屬性，可讓開發人員加入將會執行，以及預設動畫的動畫。|
+|清除|`WillTransitionToTraitCollection`|提供方法讓開發人員轉換之後，包含其本身的清除程式碼。|
 
 `WillTransitionToTraitCollection`方法適合用來建立檢視控制器動畫以及特性集合變更。 `WillTransitionToTraitCollection`方法才可以使用檢視控制器 ( `UIViewController`) 而不是在其他特性的環境，例如`UIViews`。
 

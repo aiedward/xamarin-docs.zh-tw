@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d1052695bb7337a18d1a2f1f7015e9079f86f6f5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3e3d1663e07b16721d1aa7253e7d0150a609718e
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="working-with-icons-and-images"></a>使用圖示和映像
 
@@ -40,17 +40,9 @@ _本文涵蓋設計和使用圖示和 Xamarin.tvOS 應用程式內的映像。_
 
 啟動映像不廣告或藝術運算式有機會、 它們的目的是為了讓您以為您的應用程式快速地啟動，並準備好使用。
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>啟動映像</b></td>
-</tr>
-<tr>
-    <td><b>Size</b></td>
-    <td>1920px x 1080px
-
-    Non-layered `.png` files only</td>
-</tr>
-</table>
+|啟動映像大小|注意|
+|---|---|
+|1920x1080px|僅適用於非分層.png 檔案|
 
 Apple 會進行下列建議來設計您的應用程式啟動映像：
 
@@ -146,39 +138,15 @@ Xamarin.tvOS 應用程式將需要不只一個應用程式圖示，首頁 Apple 
 
 每個應用程式必須提供一個小型和大型應用程式圖示的版本。 安裝應用程式時，將首頁 Apple TV 螢幕上使用小圖示。 大型版本會使用應用程式市集。 大型應用程式圖示應該模擬小型圖示版本的外觀與風格。
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>小圖示</b></td>
-    <td colspan="2"><b>大型圖示</b></td>
-</tr>
-<tr>
-    <td><b>實際大小</b></td>
-    <td>400px x 240px</td>
-    <td><b>Size</b></td>
-    <td>1280px x 768px</td>
-</tr>
-<tr>
-    <td><b>安全區域的大小</b></td>
-    <td>370px x 222px</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td><b>未取得焦點的大小</b></td>
-    <td>300px x 180px</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td><b>已取得焦點的大小</b></td>
-    <td>370px x 222px</td>
-    <td></td>
-    <td></td>
-</tr>
-</table>
+|小圖示||大型圖示||
+|---|---|---|---|
+|實際大小|400x240px|大小|1280x768px|
+|安全區域的大小|370x222px|||
+|未取得焦點的大小|300x180px|||
+|已取得焦點的大小|370x222px|||
 
 > [!IMPORTANT]
-> **注意：**必須當做提供您的應用程式圖示**分層映像**。 請參閱[分層映像](#Layered-Images)節以取得詳細資料。
+> 必須提供您的應用程式圖示，做為**分層映像**。 請參閱[分層映像](#Layered-Images)節以取得詳細資料。
 
 
 
@@ -227,17 +195,9 @@ Apple 提供建立應用程式圖示的下列建議：
 
 可以為單一靜態提供上架映像`.png`或`.lsr`檔案 (請參閱[建立分層映像](#Creating-Layered-Images)) 或它可以動態建立在執行階段為單一資料列的可設定焦點的項目 (請參閱[動態高層貨架內容](#Dynamic-Top-Shelf-Content)下方)。
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>高層貨架映像</b></td>
-</tr>
-<tr>
-    <td><b>Size</b></td>
-    <td>1920px x 720px
-
-    Static `.png` or layered `.lsr` file</td>
-</tr>
-</table>
+|高層貨架映像大小|注意|
+|---|---|
+|1920x720px|靜態的.png 或分層的.lsr 檔案|
 
 Apple 提供下列建議來建立您的上架映像：
 
@@ -279,38 +239,12 @@ Apple 提供下列建議來建立您的上架映像：
 
 下列內容的大小就會需要：
 
-<table width="100%" border="1px">
-<tr>
-    <td><b>&nbsp;</b></td>
-    <td><b>海報 (2:3)</b></td>
-    <td><b>正方形 (1:1)</b></td>
-    <td><b>HDTV (16:9)</b></td>
-</tr>
-<tr>
-    <td><b>實際大小</b></td>
-    <td>404px x 608px</td>
-    <td>608px x 608px</td>
-    <td>908px x 512px</td>
-</tr>
-<tr>
-    <td><b>安全區域的大小</b></td>
-    <td>380px x 570px</td>
-    <td>570px x 570px</td>
-    <td>852px x 479px</td>
-</tr>
-<tr>
-    <td><b>未取得焦點的大小</b></td>
-    <td>333px x 500px</td>
-    <td>500px x 500px</td>
-    <td>782px x 440px</td>
-</tr>
-<tr>
-    <td><b>已取得焦點的大小</b></td>
-    <td>380px x 570px</td>
-    <td>570px x 570px</td>
-    <td>852px x 479px</td>
-</tr>
-</table>
+||海報 (2:3)|正方形 (1:1)|HDTV (16:9)|
+|---|---|---|---|
+|實際大小|404x608px|608x608px|908x512px|
+|安全區域的大小|380x570px|570x570px|852x479px|
+|未取得焦點的大小|333x500px|500x500px|782x440px|
+|已取得焦點的大小|380x570px|570x570px|852x479px|
 
 Apple 提供的分段內容的資料列的下列建議：
 
@@ -325,27 +259,14 @@ Apple 提供的分段內容的資料列的下列建議：
 
 除了自動捲動，使用者可以控制橫幅，並使用 Siri 遠端任一方向捲動。 進行小，循環的筆勢上使用 Siri 遠端橫幅焦點時，會啟動該橫幅視差效果。
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>橫幅影像 （額外寬型）</b></td>
-</tr>
-<tr>
-    <td><b>實際大小</b></td>
-    <td>1940px x 624px</td>
-</tr>
-<tr>
-    <td><b>安全區域的大小</b></td>
-    <td>1740px x 620px</td>
-</tr>
-<tr>
-    <td><b>未取得焦點的大小</b></td>
-    <td>1740px x 560px</td>
-</tr>
-<tr>
-    <td><b>已取得焦點的大小</b></td>
-    <td>1740px x 620px</td>
-</tr>
-</table>
+**橫幅影像 （額外寬型）**
+
+|   |   |
+|---|---|
+|實際大小|1940x624px|
+|安全區域的大小|1740x620px|
+|未取得焦點的大小|1740x560px|
+|已取得焦點的大小|1740x620px|
 
 捲動內凹橫幅可以是提供做為靜態`.png`或分層`.lsr`檔案。
 
@@ -366,44 +287,13 @@ Apple 提供捲動內凹橫幅下列的建議：
 - **儀表板圖檔**-選用的映像可提供將會出現在遊戲中心中的應用程式的儀表板的頂端。 這些映像為非可設定焦點。
 - **Leaderboard 作品**-您必須提供介於一 （1） 到 （3） 16:9 外觀比例映像應用程式支援的每個 leaderboard。 這些可能是靜態`.png`或分層`.lsr`檔案。 Leaderboard 圖檔是可設定焦點。
 
-<table width="100%" border="1px">
-<tr>
-    <td><b>&nbsp;</b></td>
-    <td><b>成就圖示</b></td>
-    <td><b>儀表板圖檔</b></td>
-    <td><b>Leaderboard 圖檔</b></td>
-</tr>
-<tr>
-    <td><b>可見的大小</b></td>
-    <td>200px x 200px</td>
-    <td>923px x 150px</td>
-    <td>N/A</td>
-</tr>
-<tr>
-    <td><b>實際大小</b></td>
-    <td>320px x 320px</td>
-    <td>N/A</td>
-    <td>659px x 371px</td>
-</tr>
-<tr>
-    <td><b>安全區域的大小</b></td>
-    <td>N/A</td>
-    <td>N/A</td>
-    <td>618px x 348px</td>
-</tr>
-<tr>
-    <td><b>未取得焦點的大小</b></td>
-    <td>N/A</td>
-    <td>N/A</td>
-    <td>548px x 309px</td>
-</tr>
-<tr>
-    <td><b>已取得焦點的大小</b></td>
-    <td>N/A</td>
-    <td>N/A</td>
-    <td>618px x 348px</td>
-</tr>
-</table>
+||成就圖示|儀表板圖檔|Leaderboard 圖檔|
+|---|---|---|---|
+|可見的大小|200x200px|923x150px|N/A|
+|實際大小|320x320px|N/A|659x371px|
+|安全區域的大小|N/A|N/A|618x348px|
+|未取得焦點的大小|N/A|N/A|548x309px|
+|已取得焦點的大小|N/A|N/A|618x348px|
 
 如需有關使用 Game Center 的詳細資訊，請參閱 Apple[遊戲中心程式設計指南](https://developer.apple.com/library/prerelease/tvos/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html)。
 

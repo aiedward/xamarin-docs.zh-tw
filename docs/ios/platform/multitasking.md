@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 39c699b10280218223b6f6022d419f77aba875dc
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 34b51f784b549caa0dda2eeda066bb39dfc13020
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="multitasking-for-ipad"></a>適用於 iPad 的多工
 
@@ -260,7 +260,7 @@ Apple 所示，所有 iOS 9 應用程式都支援多工作業，那里可能非�
 ## <a name="related-links"></a>相關連結
 
 - [iOS 9 範例](https://developer.xamarin.com/samples/ios/iOS9/)
-- [MultiTask （範例）](http://developer.xamarin.comhttps://developer.xamarin.com/samples/monotouch/ios9/MultiTask/)
+- [MultiTask （範例）](https://developer.xamarin.com/samples/monotouch/ios9/MultiTask/)
 - [統一的分鏡腳本的簡介](~/ios/user-interface/storyboards/unified-storyboards.md)
 - [iOS 9 的開發人員](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

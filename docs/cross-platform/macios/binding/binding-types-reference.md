@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 6042ab9aa861a08da421140857459b02a78f7c70
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 568650a850b9db1fa22deef55eebb6a437e7e0b7
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="binding-types-reference-guide"></a>繫結型別參考指南
 
@@ -1987,70 +1987,20 @@ interface MyColoringKeys {
 
 支援下列資料型別`StrongDictionary`定義：
 
-<table border="1" cellpadding="1" cellspacing="1" width="80%">
-<tbody>
-  <tr>
-    <td>C# 介面類型</td>
-    <td>NSDictionary 儲存類型</td>
-  </tr>
-  <tr>
-    <td>bool</td>
-    <td>儲存在 NSNumber 的布林值</td>
-  </tr>
-  <tr>
-    <td>列舉值</td>
-    <td>儲存在 NSNumber 的整數</td>
-  </tr>
-  <tr>
-    <td>int</td>
-    <td>儲存在 NSNumber 32 位元整數</td>
-  </tr>
-  <tr>
-    <td>uint</td>
-    <td>32 位元不帶正負號的整數，儲存在 NSNumber</td>
-  </tr>
-  <tr>
-    <td>nint</td>
-    <td>儲存在 NSNumber NSInteger</td>
-  </tr>
-  <tr>
-    <td>nuint</td>
-    <td>儲存在 NSNumber NSUInteger</td>
-  </tr>
-  <tr>
-    <td>long</td>
-    <td>儲存在 NSNumber 64 位元整數</td>
-  </tr>
-  <tr>
-    <td>float</td>
-    <td>32 位元整數儲存為 NSNumber</td>
-  </tr>
-  <tr>
-    <td>double</td>
-    <td>64 位元整數儲存為 NSNumber</td>
-  </tr>
-  <tr>
-    <td>NSObject 和子類別</td>
-    <td>NSObject</td>
-  </tr>
-  <tr>
-    <td>NSDictionary</td>
-    <td>NSDictionary</td>
-  </tr>
-  <tr>
-    <td>字串</td>
-    <td>NSString</td>
-  </tr>
-  <tr>
-    <td>NSString</td>
-    <td>NSString</td>
-  </tr>
-  <tr>
-    <td>C# 的 NSObject 陣列</td>
-    <td>NSArray</td>
-  </tr>
-  <tr>
-    <td>C# 列舉型別的陣列</td>
-    <td>值包含 NSNumbers NSArray</td>
-  </tr>
-</tbody>
+|C# 介面類型|`NSDictionary` 儲存類型|
+|---|---|
+|`bool`|`Boolean` 儲存在 `NSNumber`|
+|列舉值|整數儲存在 `NSNumber`|
+|`int`|儲存在 32 位元整數 `NSNumber`|
+|`uint`|儲存在 32 位元不帶正負號的整數 `NSNumber`|
+|`nint`|`NSInteger` 儲存在 `NSNumber`|
+|`nuint`|`NSUInteger` 儲存在 `NSNumber`|
+|`long`|儲存在 64 位元整數 `NSNumber`|
+|`float`|儲存為 32 位元整數 `NSNumber`|
+|`double`|儲存為 64 位元整數 `NSNumber`|
+|`NSObject` 和子類別|`NSObject`|
+|`NSDictionary`|`NSDictionary`|
+|`string`|`NSString`|
+|`NSString`|`NSString`|
+|C#`Array`的 `NSObject`|`NSArray`|
+|C#`Array`的列舉型別|`NSArray` 包含`NSNumber`值|

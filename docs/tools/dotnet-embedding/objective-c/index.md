@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: f6d19f0f6573b17dfb3feb6bf131686413d4e68f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 047f7d7497a114bf4b7c94e50bdf09862b882794
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="objective-c-support"></a>Objective C 的支援
 
@@ -201,13 +201,11 @@ ObjC 不支援運算子多載與 C#，因此運算子會轉換為類別選取器
 
 當轉換從`DateTime`至`NSDate`的日期時間`Kind`屬性納入考量。
 
-<table>
-<tr><th> 類型         </th><th> 結果                                                                                            </th></tr>
-<!--tr><td> ------------ </td><td> -------------------------------------------------------------------------------------------------- </td></tr-->
-<tr><td> Utc          </td><td> 使用所提供的 DateTime 物件是一樣，會執行轉換。                                  </td></tr>
-<tr><td> 本機        </td><td> 呼叫`ToUniversalTime ()`中提供的 DateTime 物件用來進行轉換。 </td></tr>
-<tr><td> 未指定  </td><td> 所提供的 DateTime 物件假設為 UTC，因此相同的行為類型 = = Utc。                </td></tr>
-</table>
+|類型|結果                                                                                            |
+|---|---|
+|Utc|使用提供執行轉換`DateTime`是物件。|
+|本機|呼叫`ToUniversalTime()`中提供`DateTime`物件用來進行轉換。|
+|未指定|提供`DateTime`物件會被假設為 UTC，因此相同的行為類型 = = Utc。|
 
 使用下列公式進行轉換：
 

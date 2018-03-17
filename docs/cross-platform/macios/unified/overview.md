@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 21245d741ff025cb8c2a680642ec0226369540cb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2f55edb27f33becca8d354f9a7bb65932b4fd924
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="unified-api-overview"></a>統一的 API 概觀
 
@@ -67,36 +67,14 @@ _新樣式應用程式開發介面會更容易比以往 Mac 和 iOS 以及可讓
 
 統一的 API 中移除已被取代的方法，並有少數的執行個體的錯字時中沒有 API 名稱已繫結至傳統的應用程式開發介面中的原始 MonoTouch 和 MonoMac 命名空間。 這些執行個體已修正在新的統一的 Api，而且必須在您的元件、 iOS 和 Mac 應用程式中更新。 以下是您可能會遇到的最常見的清單：
 
-<table width="100%" border="1">
-<tr>
-    <th>傳統應用程式開發介面方法名稱</th>
-    <th>統一的 API 方法名稱</th>
-</tr>
-<tr>
-    <td>UINavigationController.PushViewControllerAnimated()</td>
-    <td>UINavigationController.PushViewController()</td>
-</tr>
-<tr>
-    <td>UINavigationController.PopViewControllerAnimated()</td>
-    <td>UINavigationController.PopViewController()</td>
-</tr>
-<tr>
-    <td>CGContext.SetRGBFillColor()</td>
-    <td>CGContext.SetFillColor()</td>
-</tr>
-<tr>
-    <td>NetworkReachability.SetCallback()</td>
-    <td>NetworkReachability.SetNotification()</td>
-</tr>
-<tr>
-    <td>CGContext.SetShadowWithColor</td>
-    <td>CGContext.SetShadow</td>
-</tr>
-<tr>
-    <td>UIView.StringSize</td>
-    <td>UIKit.UIStringDrawing.StringSize</td>
-</tr>
-</table>
+|傳統應用程式開發介面方法名稱|統一的 API 方法名稱|
+|--- |--- |
+|`UINavigationController.PushViewControllerAnimated()`|`UINavigationController.PushViewController()`|
+|`UINavigationController.PopViewControllerAnimated()`|`UINavigationController.PopViewController()`|
+|`CGContext.SetRGBFillColor()`|`CGContext.SetFillColor()`|
+|`NetworkReachability.SetCallback()`|`NetworkReachability.SetNotification()`|
+|`CGContext.SetShadowWithColor`|`CGContext.SetShadow`|
+|`UIView.StringSize`|`UIKit.UIStringDrawing.StringSize`|
 
 從傳統切換到統一的 API 時變更的完整清單，請參閱我們[傳統 (monotouch.dll) 與整合 (Xamarin.iOS.dll) API 差異](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)文件。
 

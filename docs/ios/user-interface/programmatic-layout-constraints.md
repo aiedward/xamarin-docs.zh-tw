@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 7819201e76e268ea84bf2cc5d49a5a07b20a04e3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4a3450026eff06555723b16093c7a0daf3d12ae7
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="programmatic-layout-constraints"></a>以程式設計方式配置條件約束
 
@@ -79,32 +79,15 @@ PurpleView.LeadingAnchor.ConstraintEqualTo (OrangeView.TrailingAnchor, 10).Activ
 
 其中的 C# 程式碼組件對應至給定的方程式的部分，如下所示：
 
-<table width="100%" border="1">
-<tr>
-<td width="50%"><b>方程式</b></td><td><b>程式碼</b></td>
-</tr>
-<tr>
-<td width="50%">項目 1</td><td>PurpleView</td>
-</tr>
-<tr>
-<td width="50%">1 屬性</td><td>LeadingAnchor</td>
-</tr>
-<tr>
-<td width="50%">Relationship</td><td>ConstraintEqualTo</td>
-</tr>
-<tr>
-<td width="50%">乘數</td><td>預設值為 1.0，因此未指定</td>
-</tr>
-<tr>
-<td width="50%">項目 2</td><td>OrangeView</td>
-</tr>
-<tr>
-<td width="50%">屬性 2</td><td>TrailingAnchor</td>
-</tr>
-<tr>
-<td width="50%">常數</td><td>10.0</td>
-</tr>
-</table>
+|方程式|程式碼|
+|---|---|
+|項目 1|PurpleView|
+|1 屬性|LeadingAnchor|
+|Relationship|ConstraintEqualTo|
+|乘數|預設值為 1.0，因此未指定|
+|項目 2|OrangeView|
+|屬性 2|TrailingAnchor|
+|常數|10.0|
 
 除了提供解決指定的配置的條件約束方程式所需的參數，每個配置錨點方法，強制執行的參數傳遞給它們的類型安全。 因此水平的條件約束將這類錨定`LeadingAnchor`或`TrailingAnchor`僅適用於其他水平的錨點與型別和乘數僅提供大小限制。
 

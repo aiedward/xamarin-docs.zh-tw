@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: b076c7a71d81a474ca80ac32771d5512c21c167c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b4705bc9c8fdb1a671c7de2453ea088bf2afe424
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>逐步解說-使用 WCF
 
@@ -394,37 +394,12 @@ WCF 服務 proxy 以供 Xamarin.iOS 應用程式，如下所示：
 1. 在`HelloWorld.iOS`專案中，將參考加入`HelloWorldServiceProxy`專案，以及參考`System.ServiceModel`命名空間。
 1. 在**方案總管 中**，按兩下`Main.storyboard`iOS 設計工具中開啟檔案。 然後，加入下列`UIButton`和`UITextView`控制項：
 
-    <table>
-        <thead>
-            <tr>
-                <td></td>
-                <td>名稱</td>
-                <td>標題</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>UIButton</code></td>
-                <td><code>sayHelloWorldButton</code></td>
-                <td>說出"Hello，World"</td>
-            </tr>
-            <tr>
-                <td><code>UITextView</code></td>
-                <td><code>sayHelloWorldText</code></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><code>UIButton</code></td>
-                <td><code>getHelloWorldDataButton</code></td>
-                <td>取得"Hello，World"的資料</td>
-            </tr>
-            <tr>
-                <td><code>UITextView</code></td>
-                <td><code>getHelloWorldDataText</code></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+    ||名稱|標題|
+    |--- |--- |--- |
+    |`UIButton`|`sayHelloWorldButton`|說出"Hello，World"|
+    |`UITextView`|`sayHelloWorldText`||
+    |`UIButton`|`getHelloWorldDataButton`|取得"Hello，World"的資料|
+    |`UITextView`|`getHelloWorldDataText`||
 
     在之後加入的控制項，UI 應類似於下列螢幕擷取畫面：
 

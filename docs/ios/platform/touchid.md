@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: a2378cb439ceed94751e61fd44b54aae3a65bebd
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3564b4f7d41822fdd9ab167fb3e756f26678a17b
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="touch-id"></a>Touch ID
 
@@ -39,11 +39,8 @@ Keychain 無法解密的金鑰鏈項目本身;而是在中完成*安全 Enclave*
 
 第一次您的應用程式應該查詢 Keychain 的密碼是否存在。 如果它不存在，您可能需要提示輸入密碼，因此使用者不持續要求。 如果更新需要密碼，提示使用者輸入新密碼，並傳入 keychain 更新的值。
 
-
-> ℹ️ **請注意**： 接收來自資料庫的任何密碼，並不只最佳作法，但預期任何機密資料將會保留在記憶體中。 如有必要，只要和絕對不要不將它指派給全域變數，您只應該保留的密碼 ！
-
-
-
+> [!NOTE]
+> 使用密碼從 Keychain 擷取之後，應該會從記憶體清除資料的所有參考。 永遠不會將它指派給全域變數。
 
 ## <a name="keychain-acl-and-touch-id"></a>Keychain ACL 和 Touch ID
 
@@ -53,32 +50,11 @@ Keychain 無法解密的金鑰鏈項目本身;而是在中完成*安全 Enclave*
 
 從 iOS 8，開始有現在是新的使用者是否存在原則`SecAccessControl`，這會強制執行安全的 enclave 和更新版本上 iPhone 5 秒。 我們可以看到下面只如何裝置組態可能會影響原則評估資料表中：
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>裝置設定</td>
-    <td>原則評估</td>
-    <td>備份機制</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td>沒有密碼的裝置</td>
-    <td>不允許存取</td>
-    <td>無</td>
-</tr>
-<tr>
-    <td>使用密碼的裝置</td>
-    <td>需要密碼</td>
-    <td>無</td>
-</tr>
-<tr>
-    <td>Touch id 的裝置</td>
-    <td>慣用 Touch ID</td>
-    <td>可讓密碼</td>
-</tr>
-</tbody>
-</table>
+|裝置設定|原則評估|備份機制|
+|--- |--- |--- |
+|沒有密碼的裝置|不允許存取|無|
+|使用密碼的裝置|需要密碼|無|
+|Touch id 的裝置|慣用 Touch ID|可讓密碼|
 
 在安全的 Enclave 內的所有作業可以彼此都信任。 這表示我們可以使用 Touch ID 的驗證結果授權 Keychain 項目解密。 安全的 Enclave 也會保存失敗 Touch ID 的相符項目中案例的使用者將擁有要還原成使用密碼的計數器。
 新的架構中 iOS 8，稱為_本機驗證_，支援的裝置中的驗證程序。 我們將探討這在下一節。

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: df9059b0e64b4a05b554f25b5f9d7f6031406633
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 68372d90b0567c662f0ae43e315663832f1f769b
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="application-icons"></a>應用程式圖示
 
@@ -42,104 +42,66 @@ UI 控制項，以及文件圖示 Xamarin.iOS 應用程式可以使用影像資�
 
 下列影像資產的大小和解析度需要支援所有目標 iOS 9 （或更高） 到 iOS 5 Xamarin.iOS 應用程式所需的圖示類型：
 
-<table cellpadding="7" cellspacing="0" width="100%">
-    <tr valign="top">
-        <td width="200" style="border-width: 0px;"></td>
-        <td colspan="5" align="center" bgcolor="#F0F0F0"><b>iPhone</b></td>
-    </tr>
-    <tr valign="center">
-        <td width="200" style="border-width: 0px;"></td>
-        <td colspan="2" align="center" bgcolor="#F9F9F9"><b>iOS 5 & 6</b></td>
-        <td colspan="2" align="center" bgcolor="#F9F9F9"><b>iOS 7 & 8</b></td>
-        <td align="center" bgcolor="#F9F9F9"><b>iOS 9 & 10<b><br/><i>(iPhone 6 & 7 Plus)</i></td>
-    </tr>
-    <tr valign="top" bgcolor="#F0F0F0">
-        <td width="200" align="center"><b>圖示類型</b></td>
-        <td align="center"><b>1x</b></td>
-        <td align="center"><b>2x</b></td>
-        <td align="center"><b>1x</b></td>
-        <td align="center"><b>2x</b></td>
-        <td align="center"><b>3x</b></td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">應用程式圖示</td>
-        <td align="center">57x57</td>
-        <td align="center">114x114</td>
-        <td align="center" style="color:#BBBBBB;">60x60<sup>(1)</sup></td>
-        <td align="center">120x120</td>
-        <td align="center">180x180</td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">精選</td>
-        <td align="center">29x29</td>
-        <td align="center">58x58</td>
-        <td align="center" style="color:#BBBBBB;">40x40<sup>(2)</sup></td>
-        <td align="center">80x80</td>
-        <td align="center">120x120</td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">設定</td>
-        <td align="center" style="color:#BBBBBB;">29x29<sup>(3)(4)</sup></td>
-        <td align="center" style="color:#BBBBBB;">58x58<sup>(3)(4)</sup></td>
-        <td align="center">-</td>
-        <td align="center">-</td>
-        <td align="center">87x87</td>
-    </tr>
-</table>
+### <a name="iphone-icon-sizes"></a>iPhone 圖示大小
 
-<table cellpadding="7" cellspacing="0" width="100%">
-    <tr valign="top">
-        <td width="200" style="border-width: 0px;"></td>
-        <td colspan="5" align="center" bgcolor="#F0F0F0"><b>iPad</b></td>
-    </tr>
-    <tr valign="center">
-        <td width="200" style="border-width: 0px;"></td>
-        <td colspan="2" align="center" bgcolor="#F9F9F9"><b>iOS 5 & 6</b></td>
-        <td colspan="2" align="center" bgcolor="#F9F9F9"><b>iOS 7 & 8</b></td>
-        <td colspan="1" align="center" bgcolor="#F9F9F9"><b>iOS&nbsp;9 & 10</b></td>
-    </tr>
-    <tr valign="top" bgcolor="#F0F0F0">
-        <td width="200" align="center"><b>圖示類型</b></td>
-        <td align="center"><b>1x</b></td>
-        <td align="center"><b>2x</b></td>
-        <td align="center"><b>1x</b></td>
-        <td align="center"><b>2x</b></td>
-        <td align="center"><b>2x<br/>iPad&nbsp;Pro</b></td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">應用程式圖示</td>
-        <td align="center">72x72</td>
-        <td align="center">144x144</td>
-        <td align="center">76x76</td>
-        <td align="center">152x152</td>
-        <td align="center">167x167<sup>(6)</sup></td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">精選</td>
-        <td align="center">50x50</td>
-        <td align="center">100x100</td>
-        <td align="center">40x40</td>
-        <td align="center">80x80</td>
-        <td align="center" style="color:#BBBBBB;">120x120<sup>(5)</sup></td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">設定</td>
-        <td align="center" style="color:#BBBBBB;">29x29<sup>(3)(5)</sup></td>
-        <td align="center" style="color:#BBBBBB;">58x58<sup>(3)(5)</sup></td>
-        <td align="center">-</td>
-        <td align="center">-</td>
-        <td align="center" style="color:#BBBBBB;">58x58<sup>(5)</sup></td>
-    </tr>
-</table>
+- **iPhone: iOS 9 和 10 (iPhone 6 及 7 加上)**
 
-1. _針對 Mac 和 Xcode 這兩個 Visual Studio 不再支援設定適用於 iOS 7 1 x 影像。_
-2. _不支援設定適用於 iOS 7 1 x 映像，當使用資產目錄。_
-3. _iOS 7 和 8 使用相同的映像大小為 iOS 5 和 6。_
-4. _以焦點圖示，會使用相同的映像和大小。_
-5. _IPhone 為使用相同的大小圖示。_
-6. _僅支援資產目錄映像集。_
+    ||3x|
+    |---|---|
+    |應用程式圖示|180x180|
+    |精選|120x120|
+    |設定|87x87|
 
-如需有關圖示的詳細資訊，請參閱 Apple[圖示和映像大小](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1)文件。
+- **iPhone: iOS 7 和 8**
+
+    ||1x|2x|
+    |---|---|---|
+    |應用程式圖示|60x60<sup>1</sup>|120x120|
+    |精選|40x40<sup>2</sup>|80x80|
+    |設定|-|-|
+
+- **iPhone: iOS 5 和 6**
+
+    ||1x|2x|
+    |---|---|---|
+    |應用程式圖示|57x57|114x114|
+    |精選|29x29|58x58|
+    |設定|29x29<sup>3, 4</sup>|58x58<sup>3, 4</sup>|
+
+### <a name="ipad-icon-sizes"></a>iPad 圖示大小
+
+- **iPad: iOS 9 & 10**
+
+    ||2 x (iPad Pro)|
+    |---|---|
+    |應用程式圖示|167x167<sup>6</sup>|
+    |精選|120x120<sup>6</sup>|
+    |設定|58x58<sup>5</sup>|
+
+- **iPad: iOS 7 和 8**
+
+    ||1x|2x|
+    |---|---|---|
+    |應用程式圖示|76x76|152x152|
+    |精選|40x40|80x80|
+    |設定|-|-|
+
+- **iPad: iOS 5 和 6**
+
+    ||1x|2x|
+    |---|---|---|
+    |應用程式圖示|72x72|144x144|
+    |精選|50x50|100x100|
+    |設定|29x29<sup>3, 5</sup>|58x58<sup>3, 5</sup>|
+
+ 1. 針對 Mac 和 Xcode 這兩個 Visual Studio 不再支援設定適用於 iOS 7 1 x 影像。
+ 2. 不支援設定適用於 iOS 7 1 x 映像，當使用資產目錄。
+ 3. iOS 7 和 8 使用相同的映像大小為 iOS 5 和 6。
+ 4. 以焦點圖示，會使用相同的映像和大小。
+ 5. IPhone 為使用相同的大小圖示。
+ 6. 僅支援資產目錄映像集。
+ 
+ 如需有關圖示的詳細資訊，請參閱 Apple[圖示和映像大小](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1)文件。
 
 <a name="managing" />
 

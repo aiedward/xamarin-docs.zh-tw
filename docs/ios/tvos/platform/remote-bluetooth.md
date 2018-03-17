@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: cef717a727b3b018b9eec3e8a402ae4f927f7cb8
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ca3dd71c3da316e467d8c388efbbded3d9778bf0
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="siri-remote-and-bluetooth-controllers"></a>Siri 遠端和藍芽控制站
 
@@ -39,43 +39,14 @@ Xamarin.tvOS 應用程式的使用者不會互動的介面直接做為使用 iOS
 
 Siri 遠端具有下列功能和 tvOS 應用程式內的預期使用方式：
 
-<table width="100%" border="1px">
-<tr>
-    <td><b>功能</b></td>
-    <td><b>一般應用程式使用量</b></td>
-    <td><b>遊戲的應用程式使用量</b></td>
-</tr>
-<tr>
-    <td valign="top"><b>觸控介面</b><br/>若要瀏覽，請按下以選取按住關聯式功能表撥動。</td>
-    <td valign="top"><b>點選/撥動：</b><br/>UI 可設定焦點的項目之間的導覽。<br/><br/><b>按一下：</b><br/>啟動選取的 （焦點） 項目。</td>
-    <td valign="top"><b>點選/撥動：</b><br/>遊戲的設計而定，而且可以當做 D-pad 依據點選邊緣上。<br/><br/><b>按一下：</b><br/>執行主要按鈕的功能。</td>
-</tr>
-<tr>
-    <td valign="top"><b>Menu</b><br/>按下即可返回上一個畫面或功能表。</td>
-    <td valign="top">返回上一個畫面，並會跳到首頁 Apple TV 螢幕，從主應用程式畫面。</td>
-    <td valign="top">暫停和繼續遊戲，傳回上一個螢幕，結束首頁 Apple TV 螢幕從主應用程式畫面。</td>
-</tr>
-<tr>
-    <td valign="top"><b>Siri/Search</b><br/>使用 Siri 國家/地區，請按住中所有其他國家/地區，顯示搜尋螢幕的語音控制。</td>
-    <td valign="top">N/A</td>
-    <td valign="top">N/A</td>
-</tr>
-<tr>
-    <td valign="top"><b>矔菛/縸懫</b><br/>播放和暫停媒體或提供應用程式中的第二個函式。</td>
-    <td valign="top">開始播放媒體和暫停/繼續播放。</td>
-    <td valign="top">執行次要按鈕函式，或略過簡介影片 (如果存在)。</td>
-</tr>
-<tr>
-    <td valign="top"><b>Home</b><br/>按下返回 [首頁] 螢幕，連按兩下以顯示執行中應用程式，請按住進入睡眠狀態的裝置。</td>
-    <td valign="top">N/A</td>
-    <td valign="top">N/A</td>
-</tr>
-<tr>
-    <td valign="top"><b>磁碟區</b><br/>控制項附加音訊/視訊設備磁碟區。</td>
-    <td valign="top">N/A</td>
-    <td valign="top">N/A</td>
-</tr>
-</table>
+|功能|一般應用程式使用量|遊戲的應用程式使用量|
+|---|---|---|
+|**觸控介面**<br />若要瀏覽，請按下以選取按住關聯式功能表撥動。|**點選/撥動**<br />UI 可設定焦點的項目之間的導覽。<br /><br />**Click**<br />啟動選取的 （焦點） 項目。|**點選/撥動**<br />遊戲的設計而定，而且可以當做 D-pad 依據點選邊緣上。<br /><br />**Click**<br />執行主要按鈕的功能。|
+|**Menu**<br />按下即可返回上一個畫面或功能表。|返回上一個畫面，並會跳到首頁 Apple TV 螢幕，從主應用程式畫面。|暫停和繼續遊戲，傳回上一個螢幕，結束首頁 Apple TV 螢幕從主應用程式畫面。|
+|**Siri/Search**<br />使用 Siri 國家/地區，請按住中所有其他國家/地區，顯示搜尋螢幕的語音控制。|N/A|N/A|
+|**矔菛/縸懫**<br />播放和暫停媒體或提供應用程式中的第二個函式。|開始播放媒體和暫停/繼續播放。|執行次要按鈕函式，或略過簡介影片 (如果存在)。|
+|**Home**<br />按下返回 [首頁] 螢幕，連按兩下以顯示執行中應用程式，請按住進入睡眠狀態的裝置。|N/A|N/A|
+|**磁碟區**<br />控制項附加音訊/視訊設備磁碟區。|N/A|N/A|
 
 <a name="Touch-Surface-Gestures" />
 
@@ -83,18 +54,10 @@ Siri 遠端具有下列功能和 tvOS 應用程式內的預期使用方式：
 
 Siri 遠端觸控介面是能夠偵測到各種不同的單指筆勢，您可以回應 Xamarin.tvOS 應用程式中：
 
-<table width="100%">
-<tr>
-    <td valign="top" width="30%"><img src="remote-bluetooth-images/Gesture01.png"></td>
-    <td valign="top" width="30%"><img src="remote-bluetooth-images/Gesture02.png"></td>
-    <td valign="top" width="30%"><img src="remote-bluetooth-images/Gesture03.png"></td>
-</tr>
-<tr>
-    <td valign="top"><b>撥動：</b><br/>在畫面上的 UI 項目之間移動選取項目 （焦點） （上、 下左、 右）。 撥動可以用來捲動的內容使用快速慣性大型清單。</td>
-    <td valign="top"><b>按一下：</b><br/>啟動選取的項目 （焦點），或像是在遊戲的主要按鈕。 按一下並按住，可以啟用關聯式功能表或次要函式。</td>
-    <td valign="top"><b>點選：</b><br/>輕量點選 觸控介面的邊緣上就像是方向鍵，將焦點移上、 下、 左或右依據點選的區域上的方向按鈕。 根據應用程式時，可以用來顯示隱藏的控制項。</td>
-</tr>
-</table>
+|撥動|按一下|點選|
+|---|---|---|
+|![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
+|在畫面上的 UI 項目之間移動選取項目 （焦點） （上、 下左、 右）。 撥動可以用來捲動的內容使用快速慣性大型清單。|啟動選取的項目 （焦點），或像是在遊戲的主要按鈕。 按一下並按住，可以啟用關聯式功能表或次要函式。|輕量點選 觸控介面的邊緣上就像是方向鍵，將焦點移上、 下、 左或右依據點選的區域上的方向按鈕。 根據應用程式時，可以用來顯示隱藏的控制項。|
 
 Apple 提供使用觸控介面筆勢的下列建議：
 
@@ -112,7 +75,7 @@ Apple 提供使用觸控介面筆勢的下列建議：
 此外，按下功能表按鈕可以偵測到使用標準的筆勢辨識器`UIKit`項目。 攔截按下功能表按鈕時，如果您將會負責關閉目前的檢視和檢視控制器，並返回前一個。
 
 > [!IMPORTANT]
-> **注意：**您應該**一律**函式指派給遙控器上的 [矔菛/縸懫] 按鈕。 具有非功能性的按鈕可以進行中斷，以使用者尋找應用程式。 如果您沒有有效的函式，此按鈕，將指派 （觸控介面按一下） 主要按鈕相同的功能。
+> 您應該**一律**函式指派給遙控器上的 [矔菛/縸懫] 按鈕。 具有非功能性的按鈕可以進行中斷，以使用者尋找應用程式。 如果您沒有有效的函式，此按鈕，將指派 （觸控介面按一下） 主要按鈕相同的功能。
 
 
 
@@ -319,77 +282,24 @@ namespace tvRemote
 遊戲控制器可以用來強化遊戲及提供了解在遊戲繪圖。 它們也可以用來控制標準 Apple TV 介面，讓使用不具有遠端與控制器之間切換。
 
 > [!IMPORTANT]
-> **注意：**藍芽遊戲控制器可能會讓使用者選擇性購買，您的應用程式不會強制要求使用者購買。 如果您的應用程式支援遊戲控制器就必須也支援使用 Siri 遠端使遊戲能由 Apple TV 的所有使用者。
-
+> 藍芽遊戲控制器可能會讓使用者選擇性購買，您的應用程式不會強制要求使用者購買。 如果您的應用程式支援遊戲控制器就必須也支援使用 Siri 遠端使遊戲能由 Apple TV 的所有使用者。
 
 遊戲控制器具有下列功能和 tvOS 應用程式內的預期使用方式：
-<table width="100%" border="1px">
-<tr>
-    <td><b>功能</b></td>
-    <td><b>一般應用程式使用量</b></td>
-    <td><b>遊戲的應用程式使用量</b></td>
-</tr>
-<tr>
-    <td valign="top"><b>D-Pad</b></td>
-    <td valign="top">導覽程式 UI 項目 （將焦點變更）。</td>
-    <td valign="top">取決於遊戲。</td>
-</tr>
-<tr>
-    <td valign="top"><b>A</b></td>
-    <td valign="top">啟動選取的項目 （焦點）。</td>
-    <td valign="top">執行主要按鈕的功能，並確認對話方塊動作。</td>
-</tr>
-<tr>
-    <td valign="top"><b>B</b></td>
-    <td valign="top">傳回上一個螢幕，或如果應用程式的主畫面上會跳到 [首頁] 螢幕。</td>
-    <td valign="top">執行次要按鈕的功能，或傳回上一個螢幕。</td>
-</tr>
-<tr>
-    <td valign="top"><b>X</b></td>
-    <td valign="top">啟動媒體的播放或暫停/繼續播放。</td>
-    <td valign="top">取決於遊戲。</td>
-</tr>
-<tr>
-    <td valign="top"><b>Y</b></td>
-    <td valign="top">N/A</td>
-    <td valign="top">取決於遊戲。</td>
-</tr>
-<tr>
-    <td valign="top"><b>Menu</b></td>
-    <td valign="top">傳回上一個螢幕，或如果應用程式的主畫面上會跳到 [首頁] 螢幕。</td>
-    <td valign="top">暫停/繼續應用程式的主畫面上如果遊戲，便會回到上一個畫面或 [首頁] 畫面的結束。</td>
-</tr>
-<tr>
-    <td valign="top"><b>左的 Shoulder 按鈕</b></td>
-    <td valign="top">瀏覽左邊。</td>
-    <td valign="top">取決於遊戲。</td>
-</tr>
-<tr>
-    <td valign="top"><b>左邊的觸發程序</b></td>
-    <td valign="top">瀏覽左邊。</td>
-    <td valign="top">取決於遊戲。</td>
-</tr>
-<tr>
-    <td valign="top"><b>右 Shoulder 按鈕</b></td>
-    <td valign="top">瀏覽權限。</td>
-    <td valign="top">取決於遊戲。</td>
-</tr>
-<tr>
-    <td valign="top"><b>正確的觸發程序</b></td>
-    <td valign="top">瀏覽權限</td>
-    <td valign="top">取決於遊戲。</td>
-</tr>
-<tr>
-    <td valign="top"><b>左搖桿</b></td>
-    <td valign="top">導覽程式 UI 項目 （將焦點變更）。</td>
-    <td valign="top">取決於遊戲。</td>
-</tr>
-<tr>
-    <td valign="top"><b>右搖桿</b></td>
-    <td valign="top">N/A</td>
-    <td valign="top">取決於遊戲。</td>
-</tr>
-</table>
+
+|功能|一般應用程式使用量|遊戲的應用程式使用量|
+|---|---|---|
+|**D-Pad**|導覽程式 UI 項目 （將焦點變更）。|取決於遊戲。|
+|**A**|啟動選取的項目 （焦點）。|執行主要按鈕的功能，並確認對話方塊動作。|
+|**B**|傳回上一個螢幕，或如果應用程式的主畫面上會跳到 [首頁] 螢幕。|執行次要按鈕的功能，或傳回上一個螢幕。|
+|**X**|啟動媒體的播放或暫停/繼續播放。|取決於遊戲。|
+|**Y**|N/A|取決於遊戲。|
+|**Menu**|傳回上一個螢幕，或如果應用程式的主畫面上會跳到 [首頁] 螢幕。|暫停/繼續應用程式的主畫面上如果遊戲，便會回到上一個畫面或 [首頁] 畫面的結束。|
+|**左的 Shoulder 按鈕**|瀏覽左邊。|取決於遊戲。|
+|**左邊的觸發程序**|瀏覽左邊。|取決於遊戲。|
+|**右 Shoulder 按鈕**|瀏覽權限。|取決於遊戲。|
+|**正確的觸發程序**|瀏覽權限|取決於遊戲。|
+|**左搖桿**|導覽程式 UI 項目 （將焦點變更）。|取決於遊戲。|
+|**右搖桿**|N/A|取決於遊戲。|
 
 Apple 提供遊戲控制器使用下列的建議：
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 202df615f1b35504f1fe5c9fd64c9c4b4db77a2d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 67635b6a04579246467184cdff8d9f277b36ecc4
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="understanding-sirikit-concepts"></a>了解 SiriKit 概念
 
@@ -65,108 +65,33 @@ MonkeyChat 會保留自己的使用者的好友連絡活頁簿，每個螢幕名
 
 比方說，如果使用者想要將訊息傳送至其 friend Bobo，它們可能會有下列的交談，並使用 Siri:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>User</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Hi Siri，來傳送 MonkeyChat 訊息 」</td>
-</tr>
-<tr>
-    <td>「 對象？ 」</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>「 Bobo"</td>
-</tr>
-<tr>
-    <td>「 什麼下達 Bobo？ 」</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>「 請傳送多個香蕉 」</td>
-</tr>
-</table>
+_使用者： Hey Siri，MonkeyChat 訊息傳送。_<br />
+_Siri： 對象？_<br />
+_使用者： Bobo。_<br />
+_Siri： 什麼下達 Bobo？_<br />
+_使用者： 請傳送多個香蕉。_<br />
 
 其他人可能會導致不同的交談使用相同的要求：
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>User</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>[傳送訊息到 Bobo 上 MonkeyChat]</td>
-</tr>
-<tr>
-    <td>「 什麼下達 Bobo？ 」</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>「 請傳送多個香蕉 」</td>
-</tr>
-</table>
+_使用者： 傳送訊息至 Bobo MonkeyChat 上。_<br />
+_Siri： 什麼下達 Bobo？_<br />
+_使用者： 請傳送多個香蕉。_<br />
 
 與其他使用者可能會導致即使較短的要求：
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>User</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>[MonkeyChat Bobo 請傳送多個香蕉]</td>
-</tr>
-<tr>
-    <td>"確定 傳送訊息請傳送多個香蕉到 Bobo 上 Monkeychat</td>
-    <td></td>
-</tr>
-</table>
+_使用者： MonkeyChat Bobo 請傳送多個香蕉。_<br />
+_Siri: [確定] 傳送訊息請傳送多個香蕉給 Bobo Monkeychat 上。_<br />
 
 或甚至在不同的語言中進行相同的要求：
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>User</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>「 MonkeyChat Bobo s'il vous plaît envoyer 加上 de bananes"</td>
-</tr>
-<tr>
-    <td>「 Oui、 envoi 訊息 s'il vous plaît envoyer 以及 de bananes à Bobo 南下 Monkeychat"</td>
-    <td></td>
-</tr>
-</table>
+_使用者： MonkeyChat Bobo s'il vous plaît envoyer 加上 de bananes。_<br />
+_Siri: Oui、 envoi 訊息 s'il vous plaît envoyer 加上 de bananes à Bobo 南下 Monkeychat。_<br />
 
 尚未另一位使用者可能非常詳細，其交談中：
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>User</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Hi Siri，可以您請我偏好與啟動 MonkeyChat 應用程式傳送訊息的文字，請傳送詳細香蕉"</td>
-</tr>
-<tr>
-    <td>「 對象？ 」</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>「 我最佳 pal Bobo"</td>
-</tr>
-</table>
+_使用者： Hey Siri，可以您請我偏好與啟動 MonkeyChat 應用程式傳送訊息的文字，請傳送詳細香蕉。_<br />
+_Siri： 對象？_<br />
+_使用者： 我最佳 pal Bobo。_<br />
 
 此外，還有許多 Siri 可能回應的要求，以製作要求之部分的方式：
 
@@ -198,24 +123,9 @@ Siri 也會調整為符合使用者的協助工具需求，以及將互動和回
 
 指定上述資訊，請檢查下列交談會與 MonkeyChat 應用程式的互動方式：
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>User</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Hi Siri，傳送訊息至上 MonkeyChat Bobo"</td>
-</tr>
-<tr>
-    <td>「 什麼下達 Bobo？ 」</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>「 請傳送多個香蕉 」</td>
-</tr>
-</table>
+_使用者： Hey Siri，傳送訊息至 Bobo MonkeyChat 上。_<br />
+_Siri： 什麼下達 Bobo？_<br />
+_使用者： 請傳送多個香蕉。_<br />
 
 應用程式會在交談中的第一個角色是要協助了解使用者的語音 Siri:
 

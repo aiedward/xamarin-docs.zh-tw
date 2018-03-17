@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 0d6e953a6a45b78d470c7ff73e1d6faa7444a683
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4985d67f74d54644cbc033d6c76148f88d741ee1
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="tools--commands"></a>工具和命令
 
@@ -53,19 +53,14 @@ Available Tools:
 
 目標 Sharpie 提供下列工具：
 
-<table>
-  <thead>
-    <tr><td>工具</td><td>描述</td>
-  </thead>
-  <tbody>
-    <tr><td><b>xcode</b></td><td>提供有關目前 Xcode 安裝和版本的 iOS 和 Mac Sdk 所提供的資訊。 我們將使用這項資訊稍後當我們產生我們的繫結。</td></tr>
-    <tr><td><b>pod</b></td><td>搜尋、 設定、 安裝 （在本機目錄中），並繫結 OBJECTIVE-C <a href="https://cocoapods.org">CocoaPod</a>主版規格的儲存機制從程式庫。 此工具會評估來自動推算要傳遞給正確的輸入已安裝的 CocoaPod<code>bind</code>下列工具。 <em><strong>在 3.0 新功能 ！</strong></em></td></tr>
-    <tr><td><b>bind</b></td><td>剖析的標頭檔 (<code>*.h</code>) 成 Objective C 程式庫中<a href="~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md">初始<i>ApiDefinition.cs</i>和<i>StructsAndEnums.cs</i>檔案</a>。</td></tr>
-    <tr><td><b>update</b></td><td>會檢查有較新版本的目標 Sharpie 和下載，並啟動安裝程式如果有的話。</td></tr>
-    <tr><td><b>verify-docs</b></td><td>會顯示詳細的資訊<code>[Verify]</code>屬性。</td></tr>
-    <tr><td><b>docs</b></td><td>瀏覽至文件預設網頁瀏覽器中。</td></tr>
-  </tbody>
-</table>
+|工具|描述|
+|--- |--- |
+|**xcode**|提供有關目前 Xcode 安裝和版本的 iOS 和 Mac Sdk 所提供的資訊。 我們將使用這項資訊稍後當我們產生我們的繫結。|
+|**pod**|搜尋、 設定、 安裝 （在本機目錄中），並繫結 OBJECTIVE-C [CocoaPod](https://cocoapods.org/)主版規格的儲存機制從程式庫。 此工具會評估來自動推算要傳遞給正確的輸入已安裝的 CocoaPod`bind`下列工具。 在 3.0 新功能 ！|
+|**bind**|剖析的標頭檔 (`*.h`) 至初始 Objective C 程式庫中[ApiDefinition.cs 和 StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md)檔案。|
+|**update**|會檢查有較新版本的目標 Sharpie 和下載，並啟動安裝程式如果有的話。|
+|**verify-docs**|會顯示詳細的資訊`[Verify]`屬性。|
+|**docs**|瀏覽至文件預設網頁瀏覽器中。|
 
 若要取得特定的目標 Sharpie 工具的說明，請輸入工具的名稱和`-help`選項。 例如，`sharpie xcode -help`會傳回下列輸出：
 
