@@ -3,20 +3,20 @@ title: "手動佈建"
 description: "成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。 本指南將探索如何要求開發憑證和設定檔、使用應用程式服務，以及將應用程式部署至裝置。"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
+ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: asb3993
+ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: 46d2f9f9f1a22ef13e994c91255f0fb29c52ca5d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e42b9d0b5eb64c17c96b66c9dbae7582551a06a0
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="manual-provisioning"></a>手動佈建
 
-_一旦成功安裝 Xamarin.iOS，iOS 開發中的下一個步驟是佈建您的 iOS 裝置。本指南將探索如何要求開發憑證和設定檔、使用應用程式服務，以及將應用程式部署至裝置。_
+_成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。本指南將探索如何要求開發憑證和設定檔、使用應用程式服務，以及將應用程式部署至裝置。_
 
 <a name="signingidentity" />
 
@@ -38,37 +38,37 @@ _一旦成功安裝 Xamarin.iOS，iOS 開發中的下一個步驟是佈建您的
 
 1. 登入 Developer Portal (開發人員入口網站) 的 [Certificates, Identifiers, and Profiles](https://developer.apple.com/account/overview.action) \(憑證、識別碼及設定檔\) 區段，然後從 [iOS Apps] \(iOS 應用程式\) 資料行中選取 [Certificates] 區段。 接著，按一下 [+] 以建立新的憑證：
 
-    [ ![](manual-provisioning-images/cert-plus.png "按一下 [+] 以建立新的憑證")](manual-provisioning-images/cert-plus.png)
+    [![](manual-provisioning-images/cert-plus.png "按一下 [+] 以建立新的憑證")](manual-provisioning-images/cert-plus.png#lightbox)
 
 2. 針對憑證類型選取 [iOS App Development] \(iOS 應用程式開發\) 選項，然後按一下 [Continue] \(繼續\)。 此畫面可能會依據您的帳戶權限而有所不同：
 
-    [ ![](manual-provisioning-images/cert-first.png "針對憑證類型選取 [iOS App Development] \(iOS 應用程式開發\) 選項")](manual-provisioning-images/cert-first.png)
+    [![](manual-provisioning-images/cert-first.png "針對憑證類型選取 [iOS App Development] \(iOS 應用程式開發\) 選項")](manual-provisioning-images/cert-first.png#lightbox)
 
 3. 要求一個「憑證簽署要求」，將會上傳此簽署要求以手動產生憑證。 若要這樣做，請在 Mac 上啟動 [鑰匙圈存取]。 瀏覽至主功能表，然後選取 [憑證輔助程式] 和 [從憑證授權要求憑證]如下所示：
 
-      [ ![](manual-provisioning-images/key-first.png "要求一個憑證簽署要求")](manual-provisioning-images/key-first.png)
+      [![](manual-provisioning-images/key-first.png "要求一個憑證簽署要求")](manual-provisioning-images/key-first.png#lightbox)
 
 4. 填入您的資訊，然後選取 [儲存到磁碟] 的選項：
 
-    [ ![](manual-provisioning-images/key-second.png "填入您的資訊")](manual-provisioning-images/key-second.png)
+    [![](manual-provisioning-images/key-second.png "填寫您的資訊")](manual-provisioning-images/key-second.png#lightbox)
 
 5. 將 CSR 儲存在容易找到的位置：
 
-    [ ![](manual-provisioning-images/cert-third.png "儲存 CSR")](manual-provisioning-images/cert-third.png)
+    [![](manual-provisioning-images/cert-third.png "儲存 CSR")](manual-provisioning-images/cert-third.png#lightbox)
 
 6. 返回 Provisioning Portal (佈建入口網站)，將憑證上傳到入口網站，然後提交：
 
-    [ ![](manual-provisioning-images/cert-second.png "將憑證上傳到入口網站")](manual-provisioning-images/cert-second.png)
+    [![](manual-provisioning-images/cert-second.png "將憑證上傳到入口網站")](manual-provisioning-images/cert-second.png#lightbox)
 
     如果您沒有系統管理員權限，則必須由系統管理員或小組代理人核准憑證。
 
 7. 在憑證獲得核准之後，從 Provisioning Portal (佈建入口網站) 下載它：
 
-    [ ![](manual-provisioning-images/status-dev.png "從 Provisioning Portal (佈建入口網站) 下載憑證")](manual-provisioning-images/status-dev.png)
+    [![](manual-provisioning-images/status-dev.png "從 Provisioning Portal (佈建入口網站) 下載憑證")](manual-provisioning-images/status-dev.png#lightbox)
 
 8. 按兩下已下載的憑證以啟動 [鑰匙圈存取]，然後開啟 [我的憑證] 面板，其中會顯示新的憑證和關聯的私密金鑰：
 
-    [ ![](manual-provisioning-images/keychain.png "[鑰匙圈存取] 中的憑證")](manual-provisioning-images/keychain.png)
+    [![](manual-provisioning-images/keychain.png "[鑰匙圈存取] 中的憑證")](manual-provisioning-images/keychain.png#lightbox)
 
 <a name="keypairs" />
 
@@ -103,34 +103,34 @@ _一旦成功安裝 Xamarin.iOS，iOS 開發中的下一個步驟是佈建您的
 2. 使用裝置隨附的 USB 纜線，將所要佈建的裝置連接至 Mac。
 2. 從 [視窗] 功能表中，選取 [裝置]：
 
-  [ ![](manual-provisioning-images/add01.png "從 [視窗] 功能表中選取 [裝置]")](manual-provisioning-images/add01.png)
+  [![](manual-provisioning-images/add01.png "從 [視窗] 功能表中選取 [裝置]")](manual-provisioning-images/add01.png#lightbox)
 
 3. 從左側 [裝置] 視窗上的 [裝置] 清單中選取所需的 iOS 裝置。
 4. 反白選取 [識別碼] 字串，然後將其複製到剪貼簿：
 
-  [ ![](manual-provisioning-images/add02.png "反白選取 [識別碼] 字串")](manual-provisioning-images/add02.png)
+  [![](manual-provisioning-images/add02.png "反白選取 [識別碼] 字串")](manual-provisioning-images/add02.png#lightbox)
 
 5. 在 Safari 中，瀏覽至 [Apple Developer Center](https://developer.apple.com/membercenter/index.action) \(Apple 開發人員中心\) 並登入。
 6. 按一下 [Certificates, Identifiers & Profiles] \(憑證、識別碼及設定檔\) 連結：
 
-  [ ![](manual-provisioning-images/add03.png "按一下 [Certificates, Identifiers & Profiles] \(憑證、識別碼及設定檔\) 連結")](manual-provisioning-images/add03.png)
+  [![](manual-provisioning-images/add03.png "按一下 [Certificates, Identifiers & Profiles] \(憑證、識別碼及設定檔\) 連結")](manual-provisioning-images/add03.png#lightbox)
 
 7. 按一下 [Devices] \(裝置\) 連結：
 
-  [ ![](manual-provisioning-images/add04.png "按一下 [Devices] \(裝置\) 連結")](manual-provisioning-images/add04.png)
+  [![](manual-provisioning-images/add04.png "按一下 [Devices] \(裝置\) 連結")](manual-provisioning-images/add04.png#lightbox)
 
 8. 按一下 [+] 按鈕：
 
-  [ ![](manual-provisioning-images/add05.png "按一下 + 按鈕")](manual-provisioning-images/add05.png)
+  [![](manual-provisioning-images/add05.png "按一下 [+] 按鈕")](manual-provisioning-images/add05.png#lightbox)
 
 9. 為新裝置提供名稱，然後將上述複製的**識別碼**貼到 [UUID] 欄位中：
 
-  [ ![](manual-provisioning-images/add06.png "為新裝置提供名稱和裝置識別碼")](manual-provisioning-images/add06.png)
+  [![](manual-provisioning-images/add06.png "為新裝置提供名稱和裝置識別碼")](manual-provisioning-images/add06.png#lightbox)
 
 10. 按一下 [繼續] 按鈕。
 11. 最後，檢閱資訊，然後按一下 [Register] \(註冊\) 按鈕：
 
-  [ ![](manual-provisioning-images/add07.png "檢閱資訊")](manual-provisioning-images/add07.png)
+  [![](manual-provisioning-images/add07.png "檢閱資訊")](manual-provisioning-images/add07.png#lightbox)
 
 請針對將用來進行 Xamarin.iOS 應用程式測試或偵錯的所有 iOS 裝置，重複上述步驟。
 
@@ -150,10 +150,10 @@ _一旦成功安裝 Xamarin.iOS，iOS 開發中的下一個步驟是佈建您的
 1. 在[開發人員入口網站](https://developer.apple.com/account/overview.action)中，瀏覽至 Apple Developer Center (Apple 開發人員中心) 中的 [Certificate, Identifiers and Profiles] \(憑證、識別碼及設定檔\) 區段。 選取 [Identifiers] \(識別碼\) 底下的 [App IDs] \(應用程式識別碼\)。
 2. 按一下 [+] 按鈕，然後提供 [Name] \(名稱\)：
 
-    [ ![](manual-provisioning-images/appid05a.png "提供 [Name] \(名稱\)")](manual-provisioning-images/appid05a.png)
+    [![](manual-provisioning-images/appid05a.png "提供 [Name] \(名稱\)")](manual-provisioning-images/appid05a.png#lightbox)
 3. 應用程式前置詞應該已預先設定。 針對應用程式後置詞，選取 [Wildcard App ID] \(萬用字元應用程式識別碼\)。 以 `com.[DomainName].*` 格式輸入 Bundle ID (套件組合識別碼)：
 
-  [ ![](manual-provisioning-images/appid05b.png "")](manual-provisioning-images/appid05b.png)
+  [![](manual-provisioning-images/appid05b.png "")](manual-provisioning-images/appid05b.png#lightbox)
 
 3. 按一下 [繼續] 按鈕，然後依照畫面上的指示來建立新的 App ID (應用程式識別碼)。
 
@@ -167,25 +167,25 @@ _一旦成功安裝 Xamarin.iOS，iOS 開發中的下一個步驟是佈建您的
 2. 按一下右上角的 [+] 按鈕來建立新的設定檔。
 3. 從 [Development] \(開發\) 區段中，選取 [iOS App Development] \(iOS 應用程式開發\) 旁邊的選項按鈕，然後按 [Continue] \(繼續\)：
 
-    [ ![](manual-provisioning-images/provisioning-profile01.png "選取要建立的設定檔類型")](manual-provisioning-images/provisioning-profile01.png)
+    [![](manual-provisioning-images/provisioning-profile01.png "選取要建立的設定檔類型")](manual-provisioning-images/provisioning-profile01.png#lightbox)
 4. 從下拉式功能表中，選取要使用的 App ID (應用程式識別碼)：
 
-    [ ![](manual-provisioning-images/provisioning-profile02.png "選取要使用的 App ID (應用程式識別碼)")](manual-provisioning-images/provisioning-profile02.png)
+    [![](manual-provisioning-images/provisioning-profile02.png "選取要使用的應用程式識別碼")](manual-provisioning-images/provisioning-profile02.png#lightbox)
 5. 選取要包含在佈建設定檔中的憑證，然後按 [Continue] \(繼續\)：
 
-    [ ![](manual-provisioning-images/provisioning-profile03.png "選取要包含在佈建設定檔中的憑證")](manual-provisioning-images/provisioning-profile03.png)
+    [![](manual-provisioning-images/provisioning-profile03.png "選取要包含在佈建設定檔中的憑證")](manual-provisioning-images/provisioning-profile03.png#lightbox)
 6. 選取將安裝應用程式的所有裝置。
 
-    [ ![](manual-provisioning-images/provisioning-profile04.png "選取將安裝應用程式的所有裝置")](manual-provisioning-images/provisioning-profile04.png)
+    [![](manual-provisioning-images/provisioning-profile04.png "選取將安裝應用程式的所有裝置")](manual-provisioning-images/provisioning-profile04.png#lightbox)
 7. 為 Provisioning Profile (佈建設定檔) 提供一個可識別的名稱，然後按 [Continue] \(繼續\) 來建立設定檔：
 
-    [ ![](manual-provisioning-images/provisioning-profile05.png "為 Provisioning Profile (佈建設定檔) 提供一個可識別的名稱")](manual-provisioning-images/provisioning-profile05.png)
+    [ ![](manual-provisioning-images/provisioning-profile05.png "為佈建設定檔提供一個可識別的名稱")](manual-provisioning-images/provisioning-profile05.png#lightbox)
 8. 按 [Download] \(下載\) 以將佈建設定檔下載到 Mac：
 
-    [ ![](manual-provisioning-images/provisioning-profile06.png "下載佈建設定檔")](manual-provisioning-images/provisioning-profile06.png)
+    [![](manual-provisioning-images/provisioning-profile06.png "下載佈建設定檔")](manual-provisioning-images/provisioning-profile06.png#lightbox)
 9. 按兩下檔案以在 Xcode 中安裝佈建設定檔。 請注意，除了開啟之外，Xcode 可能不會顯示任何有關它已安裝設定檔的視覺線索。 您可以瀏覽至 [Xcode] > [Preferences] \(偏好設定\) > [Accounts] \(帳戶\) 來確認是否已安裝設定檔。 選取您的 Apple ID，然後按一下 [View Details...] \(檢視詳細資料\)。其中應該會列出您的新佈建設定檔，如下所示：
 
-      [ ![](manual-provisioning-images/provisioning-profile07.png "在 Xcode 中檢視設定檔")](manual-provisioning-images/provisioning-profile07.png)
+      [![](manual-provisioning-images/provisioning-profile07.png "在 Xcode 中檢視設定檔")](manual-provisioning-images/provisioning-profile07.png#lightbox)
 
 成功建立佈建設定檔之後，可能必須重新整理 Xcode，Visual Studio for Mac 和 Visual Studio 才能使用所有開發憑證。
 
@@ -199,7 +199,7 @@ _一旦成功安裝 Xamarin.iOS，iOS 開發中的下一個步驟是佈建您的
 2.   啟動 Xcode。
 3.   選擇 [Xcode] 功能表 > [Preferences...] \(偏好設定\)
 4.   按一下 [Accounts] \(帳戶\) 索引標籤。
-5.   選取小組並按一下 [Download Manual Profiles] \(下載手動設定檔\) 按鈕：[ ![](manual-provisioning-images/selectteam1.png "下載手動設定檔")](manual-provisioning-images/selectteam1.png)
+5.   選取小組並按一下 [Download Manual Profiles] \(下載手動設定檔\) 按鈕：[ ![](manual-provisioning-images/selectteam1.png "下載手動設定檔")](manual-provisioning-images/selectteam1.png#lightbox)
 
 6.   結束 Xcode。
 7.  啟動 Visual Studio for Mac 或 Visual Studio。
@@ -236,7 +236,8 @@ Apple 提供一組可針對 Xamarin.iOS 應用程式啟用的精選特別「應�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-請務必在 [專案選項] > [iOS 套件組合簽署] 底下，將 [小組] 選取器設定為 [無]。
+> [!IMPORTANT]
+> 在您開始之前，請確定選取 **Info.plist** 中的 [手動佈建]。
 
 1. 將裝置插入 Mac。
 2. 在專案的 **Info.plist** 中，確定「套件組合識別碼」與「應用程式識別碼」相符 (除非「應用程式識別碼」是萬用字元)：
@@ -279,4 +280,4 @@ Apple 提供一組可針對 Xamarin.iOS 應用程式啟用的精選特別「應�
 - [免費佈建](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
 - [應用程式散發](~/ios/deploy-test/app-distribution/index.md)
 - [疑難排解](~/ios/deploy-test/troubleshooting.md)
-- [Apple - 應用程式散發指南](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
+- [Apple - 應用程式散發指南](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html) \(英文\)

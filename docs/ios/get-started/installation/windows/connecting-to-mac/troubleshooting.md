@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: fbf18bad2dbe227575f4d820a121eab6e91655a0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ffa61004bdaaaaf400f5e0d5ed90b4e6b1dcb7e7
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="connection-troubleshooting"></a>連線疑難排解
 
@@ -45,15 +45,15 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 2. 確定 Mac 上已啟用 [遠端登入]。 為 [僅以下使用者] 設定存取權，然後確定群組清單中包含您的 Mac 使用者：
 
-    [ ![](troubleshooting-images/troubleshooting-image1.png "為 [僅以下使用者] 設定存取權")](troubleshooting-images/troubleshooting-image1.png)
+    [![](troubleshooting-images/troubleshooting-image1.png "為 [僅以下使用者] 設定存取權")](troubleshooting-images/troubleshooting-image1.png#lightbox)
 
 3. 確認您的防火牆允許透過連接埠 22 (SSH 的預設連接埠) 的連入連線：
 
-    [ ![](troubleshooting-images/troubleshooting-image2.png "確認防火牆允許透過連接埠 22 的連入連線")](troubleshooting-images/troubleshooting-image2.png)
+    [![](troubleshooting-images/troubleshooting-image2.png "確認防火牆允許透過連接埠 22 的連入連線")](troubleshooting-images/troubleshooting-image2.png#lightbox)
 
     如果您已停用 [自動允許已簽名的軟體接收傳入連線]，OS X 將會在配對過程中顯示對話方塊，詢問是否要允許 `mono-sgen` 或 `mono-sgen32` 接收傳入連線。 在此對話方塊上，請務必按一下 [允許]：
 
-    [ ![](troubleshooting-images/troubleshooting-image4a.png "在此對話方塊上按一下 [允許]")](troubleshooting-images/troubleshooting-image4a.png)
+    [![](troubleshooting-images/troubleshooting-image4a.png "在此對話方塊上按一下 [允許]")](troubleshooting-images/troubleshooting-image4a.png#lightbox)
 
 4. 確認您已登入該 Mac 上的使用者帳戶，並且具有作用中的 GUI 工作階段。
 
@@ -63,12 +63,12 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
     例如，從下面的螢幕擷取畫面中，帳戶名稱將會是 **amyb**，而不是 **Amy Burns**：
 
-    [ ![](troubleshooting-images/troubleshooting-image5a.png "從 [終端機] 應用程式取得帳戶名稱")](troubleshooting-images/troubleshooting-image5a.png)
+    [![](troubleshooting-images/troubleshooting-image5a.png "從 [終端機] 應用程式取得帳戶名稱")](troubleshooting-images/troubleshooting-image5a.png#lightbox)
 
 
 6. 確認您用於 Mac 的 IP 位址正確。 您可以在 Mac 上的 [系統偏好設定] > [共享] > [遠端登入] 底下找到 IP 位址。
 
-    [ ![](troubleshooting-images/troubleshooting-image17.png "[系統偏好設定] 應用程式中的 IP 位址")](troubleshooting-images/troubleshooting-image17.png)
+    [![](troubleshooting-images/troubleshooting-image17.png "[系統喜好設定] 應用程式中的 IP 位址")](troubleshooting-images/troubleshooting-image17.png#lightbox)
 
 7. 確認 Mac 的 IP 位址之後，請嘗試在 Windows 上的 `cmd.exe` 中對該位址執行 `ping`：
 
@@ -80,7 +80,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
         ssh amyb@10.1.8.95
 
-<a name="stepnine">
+<a name="stepnine" />
 
 9. 如果**步驟 8 成功**，您便可以嘗試透過連線執行簡單的命令 (例如 `ls`)：
 
@@ -129,7 +129,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 - **Bug [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)** – 如果在 [系統偏好設定] &gt; [使用者與群組] 中，Mac 使用者 [進階選項] 操作功能表中的 [登入 Shell] 設定為 **/bin/bash** 以外的值，在 Xamarin 4.1 上就可能發生此問題。 (從 Xamarin 4.2 開始，此情況會改為導致產生「無法連線」錯誤訊息)。**因應措施**：將 [登入 Shell] 變更回原始預設值 **/bin/bash**。
 
-<a name="tryagain">
+<a name="tryagain" />
 
 ### <a name="couldnt-connect-to-macbuildhostlocal-please-try-again"></a>「無法連線到 MacBuildHost.local。 請重試。」
 
@@ -153,7 +153,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
     1. 在 [終端機] 命令提示字元中執行 `ls /etc/ssh/sshd_config` 和 `ls /etc/sshd_config`來確認 **sshd\_config** 檔案的位置。 針對所有剩餘的步驟，請務必使用「不會」傳回「無此檔案或目錄」的位置。
 
-        [ ![](troubleshooting-images/troubleshooting-image18.png "在 [終端機] 中執行 `ls /etc/ssh/sshd_config` 和 `ls /etc/sshd_config`")](troubleshooting-images/troubleshooting-image18.png)
+        [![](troubleshooting-images/troubleshooting-image18.png "在 [終端機] 中執行 `ls /etc/ssh/sshd_config` 和 `ls /etc/sshd_config`")](troubleshooting-images/troubleshooting-image18.png#lightbox)
 
     3. 在 [終端機] 中執行 `cp /etc/ssh/sshd_config "$HOME/Desktop/"` 以將檔案複製到您的桌面。
 
@@ -171,7 +171,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
     9. 在 [系統偏好設定] &gt; [共享] &gt; [遠端登入] 底下，將 [遠端登入] 停用後再啟用，以重新啟動 SSH 伺服器。
 
-<a name="clearing">
+<a name="clearing" />
 
 ### <a name="clearing-the-broker-idb-build-and-designer-agents-on-the-mac"></a>清除 Mac 上的 Broker、IDB、組建及 Designer 代理程式
 
@@ -183,7 +183,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 2. 按住 Control 同時按一下 [XMA] 資料夾，然後選取 [丟到垃圾桶]：
 
-    [ ![](troubleshooting-images/troubleshooting-image8.png "將 [XMA] 資料夾移至垃圾桶")](troubleshooting-images/troubleshooting-image8.png)
+    [![](troubleshooting-images/troubleshooting-image8.png "將 [XMA] 資料夾移至垃圾桶")](troubleshooting-images/troubleshooting-image8.png#lightbox)
 
 3. 在 Windows 上也有它可協助清除的快取。 在 Windows 上以系統管理員身分開啟命令提示字元：
 
@@ -221,7 +221,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 2. 按一下 [顯示輸出來源] 下拉式功能表。
 3. 選取 [Xamarin]。
 
-[ ![](troubleshooting-images/troubleshooting-image11.png "選取 [輸出] 索引標籤中的 [Xamarin]")](troubleshooting-images/troubleshooting-image11.png)
+[![](troubleshooting-images/troubleshooting-image11.png "選取 [輸出] 索引標籤中的 [Xamarin]")](troubleshooting-images/troubleshooting-image11.png#lightbox)
 
 ### <a name="log-files"></a>記錄檔
 
@@ -236,18 +236,17 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 3. 在 Visual Studio 遇到連線錯誤之後，請從 [說明] > [Xamarin] > [Zip 記錄檔] 收集記錄檔：
 
-    [ ![](troubleshooting-images/troubleshooting-image12.png "從 [說明] > [Xamarin] > [Zip 記錄檔] 收集記錄檔")](troubleshooting-images/troubleshooting-image12.png)
+    [![](troubleshooting-images/troubleshooting-image12.png "從 [說明] > [Xamarin] > [Zip 記錄檔] 收集記錄檔")](troubleshooting-images/troubleshooting-image12.png#lightbox)
 
 4. 當您開啟 .zip 檔案時，將會看到類似以下範例的檔案清單。 就連線錯誤而言，最重要的檔案是 **\*Ide.log** 和 **\*Ide.svclog** 檔案。 這些檔案以兩種略為不同的格式包含相同的資訊。 **.svclog** 是 XML，如果您想要瀏覽訊息，此檔案會相當有用。 **.log** 是純文字，如果您想要使用命令列工具來篩選訊息，此檔案會相當有用。
 
-
     若要瀏覽所有訊息，請選取並開啟 **.svclog** 檔案：
 
-    [ ![](troubleshooting-images/troubleshooting-image13.png "選取 svclog 檔案")](troubleshooting-images/troubleshooting-image13.png)
+    [![](troubleshooting-images/troubleshooting-image13.png "選取 svclog 檔案")](troubleshooting-images/troubleshooting-image13.png#lightbox)
 
 5. **.svclog** 檔案會在 **Microsoft Service Trace Viewer** 中開啟。 您可以依執行緒瀏覽訊息，以查看相關的訊息群組。 若要依執行緒瀏覽，請先選取 [圖形] 索引標籤，然後按一下 [版面配置模式] 下拉式功能表並選取 [執行緒]：
 
-    [ ![](troubleshooting-images/troubleshooting-image14.png "按一下 [版面配置模式] 下拉式功能表並選取 [執行緒]")](troubleshooting-images/troubleshooting-image14.png)
+    [![](troubleshooting-images/troubleshooting-image14.png "按一下 [版面配置模式] 下拉式功能表並選取 [執行緒]")](troubleshooting-images/troubleshooting-image14.png#lightbox)
 
 <a name="verboselogs" />
 
@@ -307,7 +306,7 @@ error : Building from a network share path is not supported at the moment. Pleas
 
 請在 Mac 上啟動 Xcode，並確定已登入您的 Apple 開發人員帳戶且已下載您的「iOS 開發設定檔」：
 
-[ ![](troubleshooting-images/troubleshooting-image7.png "確定已登入 Apple 開發人員帳戶且已下載「iOS 開發設定檔」")](troubleshooting-images/troubleshooting-image7.png)
+[![](troubleshooting-images/troubleshooting-image7.png "確定已登入 Apple 開發人員帳戶且已下載「iOS 開發設定檔」")](troubleshooting-images/troubleshooting-image7.png#lightbox)
 
 ### <a name="a-socket-operation-was-attempted-to-an-unreachable-network"></a>「嘗試對無法連線的網路進行通訊端作業」
 
@@ -319,11 +318,11 @@ error : Building from a network share path is not supported at the moment. Pleas
 
 相關的 Bug [#40781](https://bugzilla.xamarin.com/show_bug.cgi?id=40781)。
 
-當 Visual Studio 無法重新整理 MEF 元件快取時，就可能發生此問題。 如果是這種情況，安裝此 Visual Studio 擴充功能可能會有幫助：[https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd)
+當 Visual Studio 無法重新整理 MEF 元件快取時，就可能發生此問題。 如果是這種情況，安裝此 Visual Studio 延伸模組可能會有幫助：[https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd)
 
 這會清除 Visual Studio MEF 元件快取來修正快取損毀的問題。
 
-<a name="errors">
+<a name="errors" />
 
 ### <a name="errors-due-to-existing-build-host-processes-on-the-mac"></a>因 Mac 上有現有的組建主機處理序而發生錯誤
 
@@ -333,7 +332,7 @@ error : Building from a network share path is not supported at the moment. Pleas
 ps -A | grep mono
 ```
 
-[ ![](troubleshooting-images/troubleshooting-image10.png "在 Mac 上的 [終端機] 中執行命令")](troubleshooting-images/troubleshooting-image10.png)
+[![](troubleshooting-images/troubleshooting-image10.png "在 Mac 上的 [終端機] 中執行命令")](troubleshooting-images/troubleshooting-image10.png#lightbox)
 
 若要終止現有的處理序，請使用下列命令：
 
@@ -353,7 +352,7 @@ killall mono
 
 2. 按住 Control 同時按一下 [mtbs] 資料夾，然後選取 [丟到垃圾桶]：
 
-    [ ![](troubleshooting-images/troubleshooting-image9.png "將 [mtbs] 資料夾移至垃圾桶")](troubleshooting-images/troubleshooting-image9.png)
+    [![](troubleshooting-images/troubleshooting-image9.png "將 [mtbs] 資料夾移至垃圾桶")](troubleshooting-images/troubleshooting-image9.png#lightbox)
 
 
 ## <a name="related-links"></a>相關連結
