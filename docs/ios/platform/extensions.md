@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 017f3c1b5fc14bf22a5ad85d1017bc8125b04038
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6e0eebef2404ce3f117fe897d456f3ef78a8f585
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="ios-extensions"></a>iOS 擴充功能
 
@@ -44,63 +44,14 @@ _IOS 8 中引進，擴充功能所帶來的 iOS 標準的內容，例如在通�
 
 ## <a name="extension-points"></a>擴充點
 
-有幾種類型的擴充功能，可以建立 iOS 8 （和更高）：
-
-<table>
-<colgroup>
-<col />
-<col />
-<col />
-</colgroup>
-
-<thead>
-<tr>
-    <th >類型</th>
-    <th >描述</th>
-    <th >擴充點</th>
-    <th >主機應用程式</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-    <td >動作</td>
-    <td >特殊的編輯器或特定媒體類型的檢視器</td>
-    <td ><code>com.apple.ui-services</code></td>
-    <td >任何</td>
-</tr>
-<tr>
-    <td >文件提供者</td>
-    <td >允許應用程式使用遠端的文件存放區</td>
-    <td ><code>com.apple.fileprovider-ui</code></td>
-    <td >使用應用程式<a href="https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/">UIDocumentPickerViewController</a></td>
-</tr>
-<tr>
-    <td >鍵盤</td>
-    <td >替代鍵盤</td>
-    <td ><code>com.apple.keyboard-service</code></td>
-    <td >任何</td>
-</tr>
-<tr>
-    <td >編輯相片</td>
-    <td >相片管理和編輯</td>
-    <td ><code>com.apple.photo-editing</code></td>
-    <td >Photos.app 編輯器</td>
-</tr>
-<tr>
-    <td >共用</td>
-    <td >共用與社交網路、 訊息處理服務等的資料。</td>
-    <td ><code>com.apple.share-services</code></td>
-    <td >任何</td>
-</tr>
-<tr>
-    <td >今天</td>
-    <td >今天螢幕或通知中心上會出現 「 小工具 」</td>
-    <td ><code>com.apple.widget-extensions</code></td>
-    <td >今天和通知中心</td>
-</tr>
-</tbody>
-</table>
+|類型|描述|擴充點|主機應用程式|
+|--- |--- |--- |--- |
+|動作|特殊的編輯器或特定媒體類型的檢視器|`com.apple.ui-services`|任何|
+|文件提供者|允許應用程式使用遠端的文件存放區|`com.apple.fileprovider-ui`|使用應用程式[UIDocumentPickerViewController](https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/)|
+|鍵盤|替代鍵盤|`com.apple.keyboard-service`|任何|
+|編輯相片|相片管理和編輯|`com.apple.photo-editing`|Photos.app 編輯器|
+|共用|共用與社交網路、 訊息處理服務等的資料。|`com.apple.share-services`|任何|
+|今天|今天螢幕或通知中心上會出現 「 小工具 」|`com.apple.widget-extensions`|今天和通知中心|
 
 [其他擴充點](~/ios/platform/introduction-to-ios10/index.md#app-extensions)iOS 10 中已加入。
 
@@ -234,7 +185,7 @@ _IOS 8 中引進，擴充功能所帶來的 iOS 標準的內容，例如在通�
 1. 在**方案總管] 中**，連按兩下 [擴充功能專案`Main.storyboard`檔案，以開啟它進行編輯： 
 
     [![](extensions-images/today08.png "按兩下要開啟它進行編輯的延伸模組專案 Main.storyboard 檔案")](extensions-images/today08.png#lightbox)
-2. 選取已自動加入至 UI 之範本的標籤，並賦予**名稱**`TodayMessage`中**Widget** 索引標籤**屬性總管**: 
+2. 選取已自動加入至 UI 之範本的標籤，並賦予**名稱**`TodayMessage`中**Widget**  索引標籤**屬性總管**: 
 
     [![](extensions-images/today09.png "選取已自動加入至 UI 之範本的標籤，並給予其名稱 TodayMessage Widget 索引標籤的 [屬性總管] 中")](extensions-images/today09.png#lightbox)
 3. 將變更儲存到分鏡腳本。

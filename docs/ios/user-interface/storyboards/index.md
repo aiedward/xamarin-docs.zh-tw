@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 342e8189d9dec6eaa60a999d56a7891da845d247
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a0b0ca9857e706a9a84f1c661f7f6ff294e112c1
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="introduction-to-storyboards"></a>分鏡腳本的簡介
 
@@ -84,32 +84,12 @@ A *Segue*，或*話題物件*，iOS 開發中用來代表場景之間的轉換�
 
 [![](images/adaptivesegue.png "自動調整 Segues 下拉式清單中")](images/adaptivesegue.png#lightbox)
 
-<table>
-    <thead>
-        <tr>
-            <th>話題</th>
-            <th>描述</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>顯示</td>
-            <td>這是非常類似於話題推入，但是螢幕的內容列入考量。 </td>
-        </tr>
-        <tr>
-            <td>顯示詳細資料</td>
-            <td>如果應用程式會顯示主要和詳細的檢視 （例如，在 iPAd 上的分割檢視控制站），內容會取代詳細資料檢視。 如果應用程式會顯示只有主要<strong>或</strong>詳細資料，內容將會取代檢視控制器堆疊的頂端。</td>
-        </tr>
-        <tr>
-            <td>Presentation</td>
-            <td>這是強制回應 segue，類似，而且可讓簡報和轉換樣式的選取範圍。</td>
-        </tr>
-        <tr>
-            <td>Popover 簡報</td>
-            <td>這會將內容呈現成 popover</td>
-        </tr>
-    </tbody>
-</table>
+|話題|描述|
+|--- |--- |
+|顯示|這是非常類似於話題推入，但是螢幕的內容列入考量。|
+|顯示詳細資料|如果應用程式會顯示主要和詳細的檢視 （例如，在 iPad 上的分割檢視控制站），內容會取代詳細資料檢視。 如果只有主要或詳細資料，則會顯示應用程式，內容會取代檢視控制器堆疊的頂端。|
+|Presentation|這是強制回應 segue，類似，而且可讓簡報和轉換樣式的選取範圍。|
+|Popover 簡報|這會將內容呈現成 popover|
 
 ### <a name="transferring-data-with-segues"></a>傳輸資料與 Segues
 
