@@ -7,12 +7,12 @@ ms.assetid: A3B6C041-4052-4E7D-999C-C4FA10BE3D67
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: 240fc917a154085a459c6612f68c8b71e3ef01bb
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/13/2018
+ms.openlocfilehash: 7abcaa218c6755a58e6f35e982a1144060df0b3b
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="xamarin-for-java-developers"></a>適用於 Java 開發人員的 Xamarin
 
@@ -433,342 +433,48 @@ async void downloadAsync(object sender, System.EventArgs e)
 
 Java 中使用的許多語言關鍵字也會在 C# 中使用。 另外有些 Java 關鍵字在 C# 中具有相等但以不同方式命名的對等項目，如下表所示：
 
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-  <thead>
-    <th>
-        <strong>Java</strong>
-    </th>
-    <th>
-        <strong>C#</strong>
-    </th>
-    <th>
-        <strong>說明</strong>
-    </th>
-  </thead>
-  <tbody>
-    <tr>
-      <td valign="top">
-        <code>boolean</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/c8f5xwh7.aspx">bool</a>
-      </td>
-      <td valign="top">
-用來宣告布林值 <code>true</code> 和 <code>false</code>。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>extends</code>
-      </td>
-      <td valign="top">
-        <code>:</code>
-      </td>
-      <td valign="top">
-優先要從中繼承的類別和介面。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>implements</code>
-      </td>
-      <td valign="top">
-        <code>:</code>
-      </td>
-      <td valign="top">
-優先要從中繼承的類別和介面。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>import</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/zhdeatwt.aspx">using</a>
-      </td>
-      <td valign="top">
-從命名空間匯入類型，也可用來建立命名空間別名。
-      </td>
-    </tr>
-    <tr>
-      <td valign="final">
-        <code>final</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/88c54tsw.aspx">sealed</a>
-      </td>
-      <td valign="top">
-防止類別衍生；防止方法和屬性在衍生類別中遭到覆寫。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>instanceof</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/scekt9xw.aspx">is</a>
-      </td>
-      <td valign="top">
-評估物件是否可與指定的類型相容。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>native</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/e59b22c5.aspx">extern</a>
-      </td>
-      <td valign="top">
-宣告在外部實作的方法。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>package</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/z2kcy19k.aspx">namespace</a>
-      </td>
-      <td valign="top">
-宣告一組相關物件的範圍。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>T...</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/w5zay9db.aspx">params T[]</a>
-      </td>
-      <td valign="top">
-指定採用可變數目之引數的方法參數。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>super</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/hfw7t1ce.aspx">base</a>
-      </td>
-      <td valign="top">
-用來存取衍生類別中父類別的成員。
-      </td>
-    </tr>
-    <tr>
-      <td valign="synchronized">
-        <code>synchronized</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/c5kehkcz.aspx">lock</a>
-      </td>
-      <td valign="top">
-包裝含有鎖定取得和釋放的重要程式碼區段。
-      </td>
-    </tr>
-  </tbody>
-</table>
+|Java|C#|描述|
+|---|---|---|
+|`boolean`|[bool](https://msdn.microsoft.com/en-us/library/c8f5xwh7.aspx)|用來宣告布林值的真偽。|
+|`extends`|`:`|優先要從中繼承的類別和介面。|
+|`implements`|`:`|優先要從中繼承的類別和介面。|
+|`import`|[using](https://msdn.microsoft.com/en-us/library/zhdeatwt.aspx)|從命名空間匯入類型，也可用來建立命名空間別名。|
+|`final`|[sealed](https://msdn.microsoft.com/en-us/library/88c54tsw.aspx)|防止類別衍生；防止方法和屬性在衍生類別中遭到覆寫。|
+|`instanceof`|[is](https://msdn.microsoft.com/en-us/library/scekt9xw.aspx)|評估物件是否可與指定的類型相容。|
+|`native`|[extern](https://msdn.microsoft.com/en-us/library/e59b22c5.aspx)|宣告在外部實作的方法。|
+|`package`|[命名空間](https://msdn.microsoft.com/en-us/library/z2kcy19k.aspx)|宣告一組相關物件的範圍。|
+|`T...`|[params T](https://msdn.microsoft.com/en-us/library/w5zay9db.aspx)|指定採用可變數目之引數的方法參數。|
+|`super`|[base](https://msdn.microsoft.com/en-us/library/hfw7t1ce.aspx)|用來存取衍生類別中父類別的成員。|
+|`synchronized`|[lock](https://msdn.microsoft.com/en-us/library/c5kehkcz.aspx)|包裝含有鎖定取得和釋放的重要程式碼區段。|
 
 
 此外，還有許多 C# 中特有的關鍵字，它們在在 Java 中沒有對應項目。 Xamarin.Android 程式碼通常會使用下列 C# 關鍵字 (當您透過[範例程式碼](https://developer.xamarin.com/samples/android/all/) \(英文\) 讀取時非常適合參考此表格)：
 
-
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-  <thead>
-    <th>
-        <strong>C#</strong>
-    </th>
-    <th>
-        <strong>說明</strong>
-    </th>
-  </thead>
-  <tbody>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/cscsdfbt.aspx">as</a>
-      </td>
-      <td valign="top">
-在可相容的參考類型或可為 Null 的類型之間執行轉換。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/hh156513.aspx">async</a>
-      </td>
-      <td valign="top">
-指定方法或 Lambda 運算式為非同步。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/hh156528.aspx">await</a>
-      </td>
-      <td valign="top">
-暫停執行方法，直到工作完成為止。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/5bdb6693.aspx">byte</a>
-      </td>
-      <td valign="top">
-不帶正負號的 8 位元整數類型。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/900fyy8e.aspx">delegate</a>
-      </td>
-      <td valign="top">
-用來封裝方法或匿名方法。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/sbbt4032.aspx">enum</a>
-      </td>
-      <td valign="top">
-宣告列舉，一組具名常數。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/8627sbea.aspx">event</a>
-      </td>
-      <td valign="top">
-宣告發行者類別中的事件。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/f58wzh21.aspx">fixed</a>
-      </td>
-      <td valign="top">
-防止變數遭到重新配置。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-取得 </td>
-      <td valign="top">
-定義可擷取屬性值的存取子方法。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/dd469484.aspx">in</a>
-      </td>
-      <td valign="top">
-讓參數能夠接受泛型介面中較少衍生的類型。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/9kkx3h3c.aspx">object</a>
-      </td>
-      <td valign="top">
-.NET Framework 中 <code>Object</code> 類型的別名。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/t3c3bfhx.aspx">out</a>
-      </td>
-      <td valign="top">
-參數修飾詞或泛型類型參數宣告。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/ebca9ah3.aspx">override</a>
-      </td>
-      <td valign="top">
-擴充或修改繼承成員的實作。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/6b0scde8.aspx">partial</a>
-      </td>
-      <td valign="top">
-宣告要分割成多個檔案的定義，或從它的實作分割方法定義。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/acdd6hb7.aspx">readonly</a>
-      </td>
-      <td valign="top">
-宣告類別成員只能在宣告期間或透過類別建構函式加以指派。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/14akc2c7.aspx">ref</a>
-      </td>
-      <td valign="top">
-導致引數會以傳址方式傳遞，而不是依值傳遞。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/ms228368.aspx">set</a>
-      </td>
-      <td valign="top">
-定義可設定屬性值的存取子方法。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/362314fe.aspx">string</a>
-      </td>
-      <td valign="top">
-.NET Framework 中 <code>String</code> 類型的別名。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/ah19swz4.aspx">struct</a>
-      </td>
-      <td valign="top">
-封裝相關變數群組的實值類型。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/58918ffs.aspx">typeof</a>
-      </td>
-      <td valign="top">
-取得物件類型。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/bb383973.aspx">var</a>
-      </td>
-      <td valign="top">
-宣告隱含類型的區域變數。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/a1khb4f8.aspx">value</a>
-      </td>
-      <td valign="top">
-參考用戶端程式碼想要指派給屬性的值。
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/9fkccyh4.aspx">virtual</a>
-      </td>
-      <td valign="top">
-允許在衍生類別中覆寫方法。
-      </td>
-    </tr>
-  </tbody>
-</table>
+|C#|描述|
+|---|---|
+|[as](https://msdn.microsoft.com/en-us/library/cscsdfbt.aspx)|在可相容的參考類型或可為 Null 的類型之間執行轉換。|
+|[async](https://msdn.microsoft.com/en-us/library/hh156513.aspx)|指定方法或 Lambda 運算式為非同步。|
+|[await](https://msdn.microsoft.com/en-us/library/hh156528.aspx)|暫停執行方法，直到工作完成為止。|
+|[byte](https://msdn.microsoft.com/en-us/library/5bdb6693.aspx)|不帶正負號的 8 位元整數類型。|
+|[delegate](https://msdn.microsoft.com/en-us/library/900fyy8e.aspx)|用來封裝方法或匿名方法。|
+|[enum](https://msdn.microsoft.com/en-us/library/sbbt4032.aspx)|宣告列舉，一組具名常數。|
+|[event](https://msdn.microsoft.com/en-us/library/8627sbea.aspx)|宣告發行者類別中的事件。|
+|[fixed](https://msdn.microsoft.com/en-us/library/f58wzh21.aspx)|防止變數遭到重新配置。|
+|`get`|定義可擷取屬性值的存取子方法。|
+|[in](https://msdn.microsoft.com/en-us/library/dd469484.aspx)|讓參數能夠接受泛型介面中較少衍生的類型。|
+|[object](https://msdn.microsoft.com/en-us/library/9kkx3h3c.aspx)|.NET Framework 中 Object 型別的別名。|
+|[out](https://msdn.microsoft.com/en-us/library/t3c3bfhx.aspx)|參數修飾詞或泛型類型參數宣告。|
+|[override](https://msdn.microsoft.com/en-us/library/ebca9ah3.aspx)|擴充或修改繼承成員的實作。|
+|[partial](https://msdn.microsoft.com/en-us/library/6b0scde8.aspx)|宣告要分割成多個檔案的定義，或從它的實作分割方法定義。|
+|[readonly](https://msdn.microsoft.com/en-us/library/acdd6hb7.aspx)|宣告類別成員只能在宣告期間或透過類別建構函式加以指派。|
+|[ref](https://msdn.microsoft.com/en-us/library/14akc2c7.aspx)|導致引數會以傳址方式傳遞，而不是依值傳遞。|
+|[set](https://msdn.microsoft.com/en-us/library/ms228368.aspx)|定義可設定屬性值的存取子方法。|
+|[string](https://msdn.microsoft.com/en-us/library/362314fe.aspx)|.NET Framework 中 String 型別的別名。|
+|[struct](https://msdn.microsoft.com/en-us/library/ah19swz4.aspx)|封裝相關變數群組的實值類型。|
+|[typeof](https://msdn.microsoft.com/en-us/library/58918ffs.aspx)|取得物件類型。|
+|[var](https://msdn.microsoft.com/en-us/library/bb383973.aspx)|宣告隱含類型的區域變數。|
+|[value](https://msdn.microsoft.com/en-us/library/a1khb4f8.aspx)|參考用戶端程式碼想要指派給屬性的值。|
+|[virtual](https://msdn.microsoft.com/en-us/library/9fkccyh4.aspx)|允許在衍生類別中覆寫方法。|
 
 
 <a name="interop" />

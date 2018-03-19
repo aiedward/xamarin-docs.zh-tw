@@ -8,15 +8,15 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 3871955f723d1b3aec6245bba0502ca4f955d64c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 825b566ed45e8c337a1a452ec2c76a23e6a16462
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android 效能
 
-_有許多技巧可增加利用 Xamarin.Android 來建置應用程式的效能。這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。本文描述並討論這些技巧。_
+_有許多技巧可增加利用 Xamarin.Android 來建置應用程式的效能。這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。本文將描述並討論這些技巧。_
 
 ## <a name="performance-overview"></a>效能概觀
 
@@ -37,7 +37,7 @@ _有許多技巧可增加利用 Xamarin.Android 來建置應用程式的效能�
 
 
 > [!NOTE]
-> 在閱讀本文之前，您應該先閱讀[跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)，其中討論非平台特定的技術來改善記憶體使用量和使用 Xamarin 平台所建置之應用程式的效能。
+> 在閱讀本文之前，您應該先閱讀[跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)，其中探討可改善記憶體使用情況的非平台專用技術，以及使用 Xamarin 平台建置之應用程式的效能。
 
 <a name="optimizelayout" />
 
@@ -156,7 +156,7 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 
 當使用者捲動時，[`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/) 會呼叫 `GetView` 覆寫來要求顯示新的檢視；如果有的話，則會在 `convertView` 參數中傳遞未使用的檢視。 如果此值為 `null`，則程式碼會建立新的 [`View`](https://developer.xamarin.com/api/type/Android.Views.View/) 執行個體；否則即可重設和重複使用 `convertView` 屬性。
 
-如需詳細資訊，請參閱[將資料填入 ListView](~/android/user-interface/layouts/list-view/populating.md) 中的[資料列檢視重複使用](~/android/user-interface/layouts/list-view/populating.md)。
+如需詳細資訊，請參閱[將資料填入 ListView](~/android/user-interface/layouts/list-view/populating.md) 中的[資料列檢視重複使用](~/android/user-interface/layouts/list-view/populating.md#row-view-re-use)。
 
 <a name="removeeventhandlers" />
 
@@ -225,7 +225,7 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 ## <a name="optimize-image-resources"></a>最佳化影像資源
 
-影像是一些應用程式所使用成本最高的資源，且經常以高解析度擷取。 因此，當顯示影像時，請以裝置螢幕所需的解析度來顯示。 如果影像解析度比螢幕解析度還要高，則應該將它相應減少。
+影像是應用程式所使用之資源中成本最高的一種資源，且經常以高解析度擷取。 因此，當顯示影像時，請以裝置螢幕所需的解析度來顯示。 如果影像解析度比螢幕解析度還要高，則應該將它相應減少。
 
 如需詳細資訊，請參閱[跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)指南中的[最佳化影像資源](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages)。
 

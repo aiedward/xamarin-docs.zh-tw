@@ -5,18 +5,18 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: asb3993
+ms.author: amburns
 ms.date: 11/17/2017
-ms.openlocfilehash: d7532d052c57ad46caca0cd6d6ce26d0e77dc05f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a411c214e35f78ff9d3dd8d4e9122702d66a2156
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="automatic-provisioning"></a>自動化佈建
 
-_一旦成功安裝 Xamarin.iOS，iOS 開發中的下一個步驟是佈建您的 iOS 裝置。本指南將探索如何在 Visual Studio for Mac 中使用「自動化簽署」來要求開發憑證和設定檔。_
+_成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。本指南將探索如何在 Visual Studio for Mac 中使用「自動化簽署」來要求開發憑證和設定檔。_
 
 ## <a name="requirements"></a>需求
 
@@ -34,23 +34,15 @@ _一旦成功安裝 Xamarin.iOS，iOS 開發中的下一個步驟是佈建您的
 
 1. 在 Visual Studio for Mac 中開啟 iOS 專案。
 
-2. 開啟 **Info.plist** 檔案：
+2. 開啟 **Info.plist** 檔案。
 
-    ![Info.plist 檔案](automatic-provisioning-images/image1.png)
-
-3. 在 [簽署] 區段中，從 [小組] 下拉式清單中選取您的小組：
+3. 在 [簽署] 區段中，選擇 [自動化佈建]：
 
     ![[小組] 選取器下拉式清單](automatic-provisioning-images/image2.png)
 
-4. 選取 [自動管理簽署] 核取方塊，如下所示。 這會啟動自動簽署程序，其中 Visual Studio for Mac 會嘗試產生「應用程式識別碼」、佈建設定檔及簽署身分識別，並設定這些要用於簽署的成品。 選取該核取方塊之後，就會停用用於選取簽署身分識別的手動控制項。
+4. 從 [小組] 下拉式清單中選取您的小組。
 
-    ![自動管理小組選項](automatic-provisioning-images/image3.png)
-
-5. 將會顯示以下對話方塊，通知您專案檔將修改成使用新產生的憑證和佈建設定檔：
-
-    ![通知將修改專案檔的對話方塊](automatic-provisioning-images/image4.png)
-
-6. 幾秒鐘之後，就會建立並顯示「簽署憑證」和「佈建設定檔」：
+6. 幾秒鐘之後，就會建立「簽署憑證」和「佈建設定檔」：
 
     ![成功建立憑證和設定檔](automatic-provisioning-images/image5.png)
 
@@ -74,4 +66,4 @@ _一旦成功安裝 Xamarin.iOS，iOS 開發中的下一個步驟是佈建您的
 - [免費佈建](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
 - [應用程式散發](~/ios/deploy-test/app-distribution/index.md)
 - [疑難排解](~/ios/deploy-test/troubleshooting.md)
-- [Apple - 應用程式散發指南](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
+- [Apple - 應用程式散發指南](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html) \(英文\)

@@ -1,6 +1,6 @@
 ---
 title: "無線部署"
-description: "此預覽功能可讓您透過網路連線來部署至 iOS 或 Apple TV 裝置"
+description: "此功能可讓您透過網路連線來部署至 iOS 或 Apple TV 裝置"
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
@@ -8,47 +8,40 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/09/2018
-ms.openlocfilehash: 11961a21a7c4188c505c822a35531036fd953405
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7566669fb7d607ca6616b88cb32b770537146c94
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="wireless-deployment"></a>無線部署
 
-_此預覽功能可讓您透過網路連線來部署至 iOS 或 Apple TV 裝置_
-
-![預覽版本](~/media/shared/preview.png)
-
-開發人員工作流程中有一項重要工作是部署至裝置。 Xcode 9 引進了透過網路部署至 iOS 裝置或 Apple TV 的選項，使您不用在每次想要針對應用程式進行部署及偵錯時，都必須以實體纜線連接您的裝置。 此功能已於 Visual Studio for Mac 和 Visual Studio 15.6 版本中導入，其目前仍屬預覽狀態。
+開發人員工作流程中有一項重要工作是部署至裝置。 Xcode 9 引進了透過網路部署至 iOS 裝置或 Apple TV 的選項，使您不用在每次想要針對應用程式進行部署及偵錯時，都必須以實體纜線連接您的裝置。 此功能已於 Visual Studio for Mac 7.4 和 Visual Studio 15.6 版本中導入。
 
 本指南會詳細說明如何配對，然後透過網路部署至裝置。
 
 ## <a name="requirements"></a>需求
 
-Visual Studio for Mac 和 Visual Studio 皆以**預覽**功能的形式提供無線部署。
-
+Visual Studio for Mac 和 Visual Studio 皆提供無線部署功能。
 
 您必須擁有下列項目才能使用無線部署：
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 - macOS 10.12.4
-- Visual Studio for Mac 的最新預覽版本 
-    - 若要安裝此版本，請切換到 Visual Studio for Mac 的 [Alpha 版本或搶鮮版 (Beta) 通道](https://docs.microsoft.com/en-us/visualstudio/mac/update)。
+- 最新版本的 Visual Studio for Mac
 - Xcode 9.0 或更新版本
 - 具有 iOS 11.0 或 tvOS 11.0 和更新版本的裝置
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-- Visual Studio 的最新[預覽版本](https://www.visualstudio.com/vs/preview/)
+- 最新版本的 Visual Studio
 - 具有 iOS 11.0 或 tvOS 11.0 和更新版本的裝置
 
 Mac 組建主機上應該安裝下列元件：
 
 - macOS 10.12.4
-- Visual Studio for Mac Preview
-    - 若要進行安裝，請切換到 Visual Studio for Mac 的 [Alpha 版本或搶鮮版 (Beta) 通道](https://docs.microsoft.com/en-us/visualstudio/mac/update)。
+- Visual Studio for Mac
 - Xcode 9.0 或更新版本
 
 -----
