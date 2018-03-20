@@ -15,7 +15,7 @@ ms.lasthandoff: 03/09/2018
 ---
 # <a name="compiling-for-different-devices"></a>不同裝置的編譯
 
-可執行檔的組建屬性可從專案的 [iOS 組建] 屬性頁面來設定，若要找到此頁面，請在專案名稱上按一下滑鼠右鍵，然後瀏覽至 [選項] > [iOS 組建] (在 Visual Studio for Mac 中) 和 [屬性]\(在 Visual Studio 中)：
+可執行檔的組建屬性可從專案的 [iOS 組建] 屬性頁面來設定，若要找到此頁面，請在專案名稱上按一下滑鼠右鍵，然後瀏覽至 [選項] > [iOS 組建]\(在 Visual Studio for Mac 中) 和 [屬性]\(在 Visual Studio 中)：
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
