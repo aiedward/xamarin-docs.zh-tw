@@ -7,12 +7,12 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: fd5b2f8c758d8e1e9bb9276da96a410c61478d4a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: c542237523b934cb8616fda6cefdcd969b7700bd
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase 作業發送器
 
@@ -27,7 +27,7 @@ Android 應用程式能繼續回應使用者以最佳方式之一是確保複雜
 Android 已經提供數個 Api，來協助解決在背景中執行的工作，但是其中一個項目進行全面的解決方案：
 
 * **[意圖服務](~/android/app-fundamentals/services/creating-a-service/intent-services.md)** &ndash;意圖服務非常適合用來執行工作，不過它們會不提供任何方法可以排程工作。
-* **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager)**  &ndash;只有這些 Api 可讓工作排程，但不能實際執行工作。 此外，AlarmManager 僅允許以時間為基礎的條件約束，這表示在特定時間或經過一段時間後會引發警示。 
+* **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)**  &ndash;只有這些 Api 可讓工作排程，但不能實際執行工作。 此外，AlarmManager 僅允許以時間為基礎的條件約束，這表示在特定時間或經過一段時間後會引發警示。 
 * **[JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)**  &ndash; JobSchedule 是絕佳的 API，可搭配排程作業的作業系統。 不過，它是只適用於這些目標應用程式開發介面層級 21 的 Android 應用程式或更高版本。 
 * **[廣播接收者](~/android/app-fundamentals/broadcast-receivers.md)** &ndash; Android 應用程式可以設定廣播的接收者，以回應系統寬事件或對應方式執行工作。 不過，廣播的接收者不提供任何控制何時應執行的工作。 Android 作業系統中的變更也會限制當廣播的接收者也能運作，或它們可以回應的工作種類。 
 * **Google 雲端訊息的網路管理員**&ndash;長的時間，這是，在論證上，以聰明的方式排程背景的最佳方式運作。 不過，GCMNetworkManager，因為已被取代。 

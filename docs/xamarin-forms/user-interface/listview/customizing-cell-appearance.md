@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 62ac3ab4b3114447f0c67d86c601a688bb8ff1a7
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 551a0de8cd4965815c67a795fb5723d4261a173c
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="cell-appearance"></a>資料格的外觀
 
@@ -73,11 +73,9 @@ TextCells 轉譯為原生控制項在執行階段，因此效能是很好相較�
 <a name="customcells" />
 
 ## <a name="custom-cells"></a>自訂儲存格
-當內建資料格不提供必要的配置時，自訂資料格會實作必要的配置。 比方說，您可能要呈現的資料格具有兩個具有相同的權重的標籤。 A`LabelCell`會不足因為`LabelCell`具有較小的一個標籤。
+當內建資料格不提供必要的配置時，自訂資料格會實作必要的配置。 比方說，您可能要呈現的資料格具有兩個具有相同的權重的標籤。 A`LabelCell`會不足因為`LabelCell`具有較小的一個標籤。 大多數的儲存格自訂新增額外的唯讀資料 （例如額外的標籤、 影像或其他顯示資訊）。
 
 所有自訂儲存格必須衍生自[ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)，類型之所有內建的儲存格使用相同的基底類別。
-
-大多數的儲存格自訂新增額外的唯讀資料 （例如額外的標籤、 影像或其他顯示資訊）。 如果按鈕或其他可以已取得焦點的控制項加入時，可能無法在 Android 上可點選本身的儲存格。 請參閱以下的方法來克服這項限制。
 
 Xamarin.Forms 2 導入新[快取行為](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)上`ListView`控制項可改善某些類型的自訂儲存格的捲動效能設定。
 
@@ -261,30 +259,6 @@ var listView = new ListView {
 ```
 
 IOS 和 Android 上如果[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)循環項目和自訂資料格會使用自訂轉譯器、 自訂轉譯器必須正確實作屬性變更告知。 重複使用的資料格時繫結內容所使用的資料格，以更新時，會變更其屬性值`PropertyChanged`所引發的事件。 如需詳細資訊，請參閱[自訂 ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)。 如需儲存格回收的詳細資訊，請參閱[快取策略](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)。
-
-### <a name="enabling-row-selection-on-android"></a>啟用在 Android 上的資料列選取
-
-若要可允許資料列選取資料格也包含這類輸入項目 按鈕，簡單[ `custom renderer` ](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)需要。 在常見的程式碼中，建立的子類別`Button`，可以新增平台專案中的自訂轉譯器：
-
-```csharp
-public class ListButton : Button { }
-```
-
-只要設定適用於 Android 的轉譯器實作`Focusable`屬性讓要供主機可點按的按鈕以及選取的資料列。 Android 應用程式專案中加入此程式碼：
-
-```csharp
-[assembly: ExportRenderer (typeof (ListButton), typeof (ListButtonRenderer))]
-// ...
-public class ListButtonRenderer : ButtonRenderer {
-    protected override void OnElementChanged (ElementChangedEventArgs<ListButton> e) {
-        base.OnElementChanged (e);
-        Control.Focusable = false;
-    }
-}
-```
-
-如同前面所述，只有 Android 需要`ButtonRenderer`實作。 iOS 和 Windows Phone 平台允許但不會實作自訂轉譯器下的按鈕。
-
 
 ## <a name="related-links"></a>相關連結
 

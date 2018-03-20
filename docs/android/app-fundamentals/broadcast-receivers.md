@@ -7,12 +7,12 @@ ms.assetid: B2727160-12F2-43EE-84B5-0B15C8FCF4BD
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/09/2018
-ms.openlocfilehash: b2da136ddfa6aab4121ba21d0e6f83b2390ba10b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: 67b150650c21c781b7081de4e1f3b095c0ea560f
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>廣播 Xamarin.Android 接收器
 
@@ -23,14 +23,14 @@ _本節討論如何使用廣播的接收者。_
 
 A_廣播的接收者_是 Android 的元件，可讓應用程式回應訊息 (Android [ `Intent` ](https://developer.xamarin.com/api/type/Android.Content.Intent/)) 的廣播 Android 作業系統或應用程式。 請依照下列廣播_發行-訂閱_模型&ndash;事件造成廣播来發行和收到的事件有興趣的元件。 
 
-Android 識別廣播的兩個類別：
+Android 識別廣播的兩種類型：
 
-* **一般廣播**&ndash;正常廣播將會路由至所有已註冊的廣播接收者，以不定順序。 每個接收者會收到未定義的順序的目的。 
-* **排序廣播**&ndash;已排序的廣播傳送一次一個到已註冊的接收者。 收到目的時，廣播的收件者可以修改其目的或它可能會終止廣播。
+* **明確的廣播**&ndash;廣播的這些類型為目標的特定應用程式。 明確的常見用法是廣播的啟動活動。 舉例來說，當應用程式需要撥打電話號碼; 明確廣播它會分派設為目標在 Android 和傳遞的電話號碼沿著撥打的電話應用程式的意圖。 Android 然後會將目的路由到 Phone 應用程式。
+* **隱含 broadcase** &ndash;這些廣播會發送給所有裝置上的應用程式。 舉例來說，隱含的廣播是`ACTION_POWER_CONNECTED`意圖。 Android 偵測到在裝置上的電池正在充電每次發行此意圖。 Android 會路由此意圖，此事件的已註冊的所有應用程式。
 
-廣播的接收器是子類別的`BroadcastReceiver`類別也必須覆寫[ `OnReceive` ](https://developer.xamarin.com/api/member/Android.Content.BroadcastReceiver.OnReceive/p/Android.Content.Context/Android.Content.Intent/)方法。 將執行 android`OnReceive`主執行緒，因此這個方法應該設計成可快速執行。 應該小心繁衍 （spawn） 中的執行緒時`OnReceive`因為 Android 可能會在方法完成時終止處理程序。 如果廣播的收件者必須執行長時間執行的工作，則建議您排程_作業_使用`JobScheduler`或_Firebase 作業發送器_。 排程工作與工作將個別的指南中討論。
+廣播的接收器是子類別的`BroadcastReceiver`類型也必須覆寫[ `OnReceive` ](https://developer.xamarin.com/api/member/Android.Content.BroadcastReceiver.OnReceive/p/Android.Content.Context/Android.Content.Intent/)方法。 將執行 android`OnReceive`主執行緒，因此這個方法應該設計成可快速執行。 應該小心繁衍 （spawn） 中的執行緒時`OnReceive`因為 Android 可能會在方法完成時終止處理程序。 如果廣播的收件者必須執行長時間執行的工作，則建議您排程_作業_使用`JobScheduler`或_Firebase 作業發送器_。 排程工作與工作將個別的指南中討論。
 
-_意圖篩選_用來註冊廣播的接收器，以便 Android 適當地路由傳送訊息。 意圖篩選條件可以指定在執行階段 (這有時候稱為_內容註冊接收者_或_動態登錄_) 或可以在 Android 資訊清單 (靜態定義_資訊清單登錄接收者_)。 Xamarin.Android 提供 C# 屬性， `IntentFilterAttribute`，，將會以靜態方式註冊意圖 （這會討論更多詳細資料，稍後在本指南中） 的篩選器。 
+_意圖篩選_用來註冊廣播的接收器，以便 Android 適當地路由傳送訊息。 意圖篩選條件可以指定在執行階段 (這有時候稱為_內容註冊接收者_或_動態登錄_) 或可以在 Android 資訊清單 (靜態定義_資訊清單登錄接收者_)。 Xamarin.Android 提供 C# 屬性， `IntentFilterAttribute`，，將會以靜態方式註冊意圖 （這會討論更多詳細資料，稍後在本指南中） 的篩選器。 從 Android 8.0 開始，它不可能的應用程式以靜態方式註冊隱含的廣播。
 
 資訊清單已註冊的收件者與內容註冊接收者之間的主要差異是，內容已註冊的接收者將只回應廣播當應用程式正在執行，而資訊清單登錄的接收者可以回應廣播即使可能不在執行應用程式。  
 
@@ -68,7 +68,7 @@ public class SampleReceiver : BroadcastReceiver
 
 `OnReceive`方法會接收的參考`Intent`，已被分派至廣播的收件者。 如此便可利用試圖將值傳遞至廣播的收件者的寄件者。
 
-### <a name="statically-registering-a-broadcast-receiver-with-an-intent-filter"></a>靜態註冊廣播的接收者意圖篩選條件
+### <a name="statically-registering-a-broadcast-receiver-with-an-intent-filter"></a>以靜態方式將廣播接收者向意圖篩選器
 
 時`BroadcastReceiver`以裝飾[ `IntentFilterAttribute` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)，Xamarin.Android 會新增必要`<intent-filter>`Android 項目在編譯時期資訊清單。 下列程式碼片段是廣播接收器時裝置已完成開機 （如果使用者所授與適當的 Android 權限） 執行的範例：
 
@@ -98,9 +98,11 @@ public class MySampleBroadcastReceiver : BroadcastReceiver
 }
 ```
 
+Android 8.0 (API level 26) 為目標的應用程式或更高版本可能無法以靜態方式註冊隱含的廣播。 應用程式可能仍會以靜態方式註冊明確的廣播。 沒有隱含免套用此限制的廣播的小型清單。 這些例外狀況中所述[隱含廣播的例外狀況](https://developer.android.com/guide/components/broadcast-exceptions.html)Android 文件中的指南。 隱含的廣播感興趣的應用程式必須執行以動態使用`RegisterReceiver`方法。 這是接下來描述。  
+
 ### <a name="context-registering-a-broadcast-receiver"></a>內容註冊廣播的收件者 
 
-內容為註冊的收件者藉由叫用`RegisterReceiver`方法和廣播的收件者必須藉由呼叫取消註冊`UnregisterReceiver`方法。 若要避免資源流失，請務必取消登錄不再內容相關的收件者。 例如，服務可能廣播試圖通知更新可供顯示給使用者的活動。 當活動開始時，它會登錄這些對應方式。 當活動移至背景，而且不會再顯示給使用者，它應該取消註冊收件者因為顯示更新的 UI 不再顯示。 下列程式碼片段是活動的如何註冊及取消註冊廣播的接收者內容中的範例：
+內容的註冊 （也稱為動態登錄） 的收件者藉由叫用`RegisterReceiver`方法和廣播的收件者必須藉由呼叫取消註冊`UnregisterReceiver`方法。 若要避免資源流失，請務必取消登錄不再相關的內容 （活動或服務） 的收件者。 例如，服務可能廣播試圖通知更新可供顯示給使用者的活動。 當活動開始時，它會登錄這些對應方式。 當活動移至背景，而且不會再顯示給使用者，它應該取消註冊收件者因為顯示更新的 UI 不再顯示。 下列程式碼片段是活動的如何註冊及取消註冊廣播的接收者內容中的範例：
 
 ```csharp
 [Activity(Label = "MainActivity", MainLauncher = true, Icon = "@mipmap/icon")]
@@ -136,19 +138,10 @@ public class MainActivity: Activity
 
 ## <a name="publishing-a-broadcast"></a>發佈廣播
 
-廣播發行的封裝_動作_用途和分派使用兩個應用程式開發介面其中之一： 
+廣播可發行至所有應用程式建立的意圖物件並分派它以在裝置上安裝`SendBroadcast`或`SendOrderedBroadcast`方法。  
 
-1. **[`LocalBroadcastManager`](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html#sendBroadcast(android.content.Intent))** &ndash; 與發行的對應方式`LocalBroadcastManager`將只會收到由應用程式; 無法將路由到其他應用程式。 這應該是安全性的慣用的因為它保留在目前的應用程式對應方式可提供額外等級，因為所有項目是安全性的同處理序沒有相關聯處理序間呼叫負擔。 這個程式碼片段會示範如何活動可能會分派意圖使用`LocalBroadcastManager`:
-
-   ```csharp
-   Intent message = new Intent("com.xamarin.example.TEST");
-   // If desired, pass some values to the broadcast receiver.
-   intent.PutExtra("key", "value");
-   Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast(message);
-   ```
-
-2. **[`Context.SendBroadcast`](https://developer.xamarin.com/api/member/Android.Content.Context.SendBroadcast/p/Android.Content.Intent/) 方法**&ndash;數種方式實作這個方法。
-   這些方法會廣播到整個系統意圖。 這會提供相當大的彈性，但表示其他應用程式可能會註冊以接收應用程式。 這可能會造成潛在的安全性風險。 應用程式可能需要實作增加安全性，以確保未經授權之意圖的存取。 此程式碼片段是一個範例如何分派使用其中一種用途`SendBroadcast`方法：
+1. **Context.SendBroadcast 方法**&ndash;數種方式實作這個方法。
+   這些方法會廣播到整個系統意圖。 廣播的接收者 thatwill 收到意圖以不定順序。 這提供極大的彈性，但表示很可能讓其他應用程式註冊及接收的意圖。 這可能會造成潛在的安全性風險。 應用程式可能需要實作加法安全性可防止未經授權的存取。 一個可行的解決方案是使用`LocalBroadcastManager`這只會發送的應用程式私用的空間內的訊息。 此程式碼片段是一個範例如何分派使用其中一種用途`SendBroadcast`方法：
 
    ```csharp
    Intent message = new Intent("com.xamarin.example.TEST");
@@ -156,20 +149,30 @@ public class MainActivity: Activity
    intent.PutExtra("key", "value");
    SendBroadcast(intent);
    ```
-        
-> [!NOTE]
-> LocalBroadcastManager 是透過[Xamarin 支援程式庫 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) NuGet 封裝。 
 
-這個程式碼片段是另一個範例使用傳送廣播`Intent.SetAction`方法來識別此動作：
+    這個程式碼片段是另一個範例使用傳送廣播`Intent.SetAction`方法來識別此動作：
+    
+    ```csharp 
+    Intent intent = new Intent();
+    intent.SetAction("com.xamarin.example.TEST");
+    intent.PutExtra("key", "value");
+    SendBroadcast(intent);
+    ```
+   
+2. **Context.SendOrderedBroadcast** &ndash;這種方法非常類似於`Context.SendBroadcast`，兩者的差異在於意圖將會發行的一次接收者，recievers 已註冊的順序。
+   
+### <a name="localbroadcastmanager"></a>LocalBroadcastManager
 
-```csharp 
-Intent intent = new Intent();
-intent.SetAction("com.xamarin.example.TEST");
+[Xamarin 支援程式庫 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)提供呼叫的協助程式類別[ `LocalBroadcastManager` ](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html)。 `LocalBroadcastManager`適用於不想要傳送或廣播接收來自其他應用程式在裝置上的應用程式。 `LocalBroadcastManager`才會發佈應用程式的內容中的訊息。 在裝置上的其他應用程式無法接收訊息與已發行`LocalBroadcastManager`。 
+
+此程式碼片段示範如何分派意圖使用`LocalBroadcastManager`:
+
+```csharp
+Intent message = new Intent("com.xamarin.example.TEST");
+// If desired, pass some values to the broadcast receiver.
 intent.PutExtra("key", "value");
-SendBroadcast(intent);
-```
-
-
+Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast(message);
+``` 
 
 ## <a name="related-links"></a>相關連結
 

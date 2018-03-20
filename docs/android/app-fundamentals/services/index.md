@@ -7,12 +7,12 @@ ms.assetid: BA371A59-6F7A-F62A-02FC-28253504ACC9
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 02/16/2018
-ms.openlocfilehash: 5dc1fb0fb02014e123b3a161394155bde725f288
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: 08392872037783e0caaef4f2b19127adbe95151b
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="creating-android-services"></a>建立 Android 服務
 
@@ -43,7 +43,7 @@ Android 應用程式會啟動在至少一個下列四個主要元件：_活動_�
 
 有四種不同 Android 服務：
 
-* **繫結服務** &ndash; A_繫結服務_是有某些其他元件 （通常活動） 與它繫結的服務。 繫結的服務提供可讓繫結的元件和服務彼此互動的介面。 沒有更多的用戶端繫結至服務之後，Android 將會關閉服務。
+* **繫結服務** &ndash; A_繫結服務_是有某些其他元件 （通常活動） 與它繫結的服務。 繫結的服務提供可讓繫結的元件和服務彼此互動的介面。 沒有更多的用戶端繫結至服務之後，Android 將會關閉服務。 
 
 * **`IntentService`** &ndash;  _`IntentService`_ 是特定子類別`Service`簡化服務建立和使用方式的類別。 `IntentService`要處理個別自發的呼叫。 不同於服務，可以同時處理多個呼叫，`IntentService`則更像_工作佇列處理器_&ndash;工作排和`IntentService`單一工作者執行緒上一次處理一個每項工作。 一般而言，`IntentService`未繫結至活動或片段。 
 
@@ -57,4 +57,26 @@ Android 應用程式會啟動在至少一個下列四個主要元件：_活動_�
 
 它也是可以在它本身的處理序中執行服務，在相同的裝置，這有時稱為_遠端服務_或_跨處理序服務_。 這需要更多心力在建立，但是非常適合用於應用程式需要共用功能與其他應用程式，而且可以在某些情況下，改善應用程式的使用者體驗。 
 
-每個服務都有自己的特性和 behaviours，並因此將涵蓋自己指南中詳細說明。
+### <a name="background-execution-limits-in-android-80"></a>Android 8.0 中的背景執行限制
+
+從 Android 應用程式不會再開始 Android 8.0 （API 層級 26），能夠自由地在背景中執行。 在前景，當應用程式可以啟動並執行不受限制的服務。 當應用程式移到背景時，Android 將會授與應用程式來啟動及使用服務的時間量。 一旦經過該時間之後，應用程式可以不會再啟動任何服務，並已啟動的任何服務將會終止。 在此點是不可能的應用程式可以執行任何工作。 Android 將應用程式位於前景，如果符合下列條件會列入考量：
+
+* 沒有可見的活動 （啟動或暫停）。
+* 應用程式已啟動前景服務。
+* 另一個應用程式位於前景，並使用元件，否則會為在背景中的應用程式。 舉例來說，這是應用程式 A，這是在幕前，是否繫結至所提供的服務應用程式的應用程式 B 再也會視為在前景，並不在背景中所終止 android。
+
+有某些情況下，其中，即使應用程式是在背景中，Android 會喚醒應用程式而放寬這些限制的幾分鐘，讓應用程式來執行一些工作：
+* 應用程式收到 Firebase 雲端訊息的高優先順序。
+* 應用程式接收廣播例如 
+* 應用程式收到執行`PendingIntent`以回應通知。
+
+現有的 Xamarin.Android 應用程式可能需要變更執行背景工作，以避免 Android 8.0 上可能發生的任何問題。 以下是一些實用 alterantives Android 的服務：
+
+* **若要使用 Android 的作業排程器在背景中執行的工作排程或[Firebase 作業發送器](~/android/platform/firebase-job-dispatcher.md)** &ndash;這些兩個程式庫提供用來分隔中的背景工作的應用程式的架構_作業_，離散的工作單位。 應用程式然後透過排程以及一些準則作業系統的工作有關時可以執行此工作。
+* **啟動服務，在前景**&ndash;前景服務適用於當應用程式時，必須在背景中執行一些工作，以及使用者可能需要定期與該工作互動。 前景服務會顯示持續的通知，以便使用者注意應用程式正在執行背景工作，而且也提供監視或工作與互動的方式。 這個範例是播客播放的使用者，或可能下載播客時段，以便稍後用 podcasting 應用程式。 
+* **使用高優先權 Firebase 雲端訊息 (FCM)** &ndash;時 Android 收到高優先權 FCM 的應用程式時，它會允許服務在背景中執行一段時間該應用程式。 這是理想的替代方法，讓背景服務輪詢在背景中的應用程式。 
+* **延後的應用程式進入前景工作**&ndash;如果先前的解決方案都可行的則應用程式必須開發自己的方式，暫停及繼續工作，當應用程式移至前景。
+
+## <a name="related-links"></a>相關連結
+
+* [Android Oreo 背景執行限制](https://www.youtube.com/watch?v=Pumf_4yjTMc)

@@ -6,24 +6,44 @@ ms.assetid: C10FD999-7A91-4708-B642-0C1B0901BD24
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/09/2018
-ms.openlocfilehash: 96e8d1a3658a515b6b1d37cf0fdd93157954c01d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: d1267bc4a530deb6dfb6eb2e30bee2facabd8fed
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="foreground-services"></a>前景服務
 
-有些服務正在執行的使用者會主動留意某些工作，這些服務也稱為_前景服務_。 前景服務的範例是已為使用者提供指示開車或步行時的應用程式。 即使應用程式是在背景中，仍然十分重要的服務具有足夠的資源，才能正常運作，而且使用者擁有可快速又方便地存取應用程式。 Android 應用程式中，這表示前景服務應該會收到優先順序高於 「 一般 」 服務，而且前景服務必須提供`Notification`Android 將會顯示，只要服務正在執行。
+前景服務是一種特殊類型的繫結的服務或啟動的服務。 偶爾服務將會執行必須主動知道使用者的工作，這些服務也稱為_前景服務_。 前景服務的範例是已為使用者提供指示開車或步行時的應用程式。 即使應用程式是在背景中，仍然十分重要的服務具有足夠的資源，才能正常運作，而且使用者擁有可快速又方便地存取應用程式。 Android 應用程式中，這表示前景服務應該會收到優先順序高於 「 一般 」 服務，而且前景服務必須提供`Notification`Android 將會顯示，只要服務正在執行。
  
-前景是建立和啟動服務就像任何其他服務。 當服務啟動時，它會註冊本身與 Android 為前景服務。
- 
-本指南會討論必須採取註冊前景服務，以及完成時停止服務的額外步驟。
+若要啟動前景服務，應用程式必須分派用途，告知 Android 啟動服務。 然後服務必須將自己登錄以與 Android 前景服務。 Android 8.0 上 （或更新版本） 執行的應用程式應該使用`Context.StartForegroundService`方法來啟動服務，而應使用較舊版本的 Android 裝置執行的應用程式 `Context.StartService`
+
+這個 C# 擴充方法是如何啟動前景服務的範例。 在 Android 8.0 和更新版本就會使用`StartForegroundService`方法，否則舊`StartService`將使用的方法。  
+
+```csharp
+public static void StartForegroundServiceComapt<T>(this Context context, Bundle args = null) where T : Service
+{
+    var intent = new Intent(context, typeof(T));
+    if (args != null) 
+    {
+        intent.PutExtras(args);
+    }
+
+    if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
+    {
+        context.StartForegroundService(intent);
+    }
+    else
+    {
+        context.StartService(intent);
+    }
+}
+```
 
 ## <a name="registering-as-a-foreground-service"></a>註冊為前景服務
 
-前景服務是一種特殊類型的繫結的服務或啟動的服務。 服務，一旦啟動後，就會呼叫[ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/) android 為前景服務登錄它自己的方法。   
+前景服務啟動之後，它必須將自己登錄與 Android 所叫用[ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/)。 如果服務已啟動與`Service.StartForegroundService`方法但不會註冊本身，則 Android 將會停止服務和應用程式沒有回應的旗標。
 
 `StartForeground` 接受兩個參數，兩者都是強制性：
  
@@ -78,8 +98,7 @@ public override StartCommandResult OnStartCommand(Intent intent, StartCommandFla
 StopForeground(true);
 ```
 
-如果服務暫止呼叫`StopSelf`或`StopService`，則同樣會移除狀態 列通知。
-
+如果服務暫止呼叫`StopSelf`或`StopService`，狀態列通知將會移除。
 
 ## <a name="related-links"></a>相關連結
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: 50f99c48d0f53bd6a2dfaf42284137ce1e424b30
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 747c158460b23b91e4c2986d212802528cdd3979
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="an-introduction-to-skiasharp"></a>SkiaSharp 簡介
 
@@ -20,7 +20,7 @@ _這提供 SkiaSharp 背後的概念簡介_
 
 SkiaSharp 提供功能強大且豐富 2D 圖形 API，可用來轉譯成 2D 緩衝區。  您可以使用這些來實作自訂使用者介面項目與 2D 圖形可以被包含於您的應用程式。  SkiaSharp 是.NET 繫結至[Skia](https://skia.org)程式庫和繼承的功能和此媒體櫃的電源。
 
-媒體櫃是跨平台目前可供[NuGet 封裝](https://www.nuget.org/packages/SkiaSharp)，您可以加入專案中加入 NuGet 參考。
+媒體櫃是跨平台目前可供[NuGet 封裝](https://www.nuget.org/packages/SkiaSharp)，您可以將它加入您的專案中加入 NuGet 參考。
 
 若要繪製，您的程式碼會建立`SkCanvas`用來描述在其中繪製作業會發生的介面。
 
