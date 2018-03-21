@@ -9,10 +9,10 @@ author: mgmclemore
 ms.author: mamcle
 ms.date: 03/16/2018
 ms.openlocfilehash: 31114df0b631aea909e82f3a8b836d5ef922d2c1
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="android-wear"></a>Android Wear
 

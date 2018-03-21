@@ -9,10 +9,10 @@ author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
 ms.openlocfilehash: 9b76376bdbcf10bf35768cfdb79b6823388e303c
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="handling-multiple-resolutions-in-cocossharp"></a>處理 CocosSharp 在多種解析度
 

@@ -9,10 +9,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
 ms.openlocfilehash: ef4de2d544f3bcfb661b29dd90de738ae0442373
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms 檢視
 

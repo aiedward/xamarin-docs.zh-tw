@@ -9,10 +9,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
 ms.openlocfilehash: 0f8886546004702adbdbca7d991c67d5700e453e
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="xamarinforms-cells"></a>Xamarin.Forms 資料格
 

@@ -9,10 +9,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
 ms.openlocfilehash: 5f979d2dbb894107d8d606ec1f41de44c294cdd3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="xamarinforms-pages"></a>Xamarin.Forms Pages
 
