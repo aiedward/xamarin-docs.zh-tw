@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 47f90af1ed68e6c3aea5710b7181b4787fc0895c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 9834da444032622cc3547e7c99ca3de0e41bb603
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="architecture"></a>架構
 
@@ -33,7 +33,7 @@ Xamarin.Android 開發人員存取作業系統藉由呼叫.NET Api 時，才會�
 
 Android 應用程式封裝是以 ZIP 容器*.apk*檔案副檔名。 Xamarin.Android 應用程式封裝擁有相同的結構與配置一般 Android 套件的詳細資訊，具有下列功能：
 
--   應用程式組件 （包含 IL）*儲存*內未壓縮*組件*資料夾。 版本中的啟動建立程序期間*.apk*是*mmap()* ed 到處理程序和組件是從記憶體載入。 這允許更快速的應用程式啟動，做為不需要在執行前要擷取的組件。 - *注意：*組件位置資訊，例如[Assembly.Location](https://developer.xamarin.com/api/property/System.Reflection.Assembly.Location/)和[Assembly.CodeBase](https://developer.xamarin.com/api/property/System.Reflection.Assembly.CodeBase/)
+-   應用程式組件 （包含 IL）*儲存*內未壓縮*組件*資料夾。 版本中的啟動建立程序期間*.apk*是*mmap()* ed 到處理程序和組件是從記憶體載入。 這可讓更快速的應用程式啟動，如此不需要在執行前要擷取的組件。 - *注意：*組件位置資訊，例如[Assembly.Location](https://developer.xamarin.com/api/property/System.Reflection.Assembly.Location/)和[Assembly.CodeBase](https://developer.xamarin.com/api/property/System.Reflection.Assembly.CodeBase/)
     *無法依賴*版本中組建。 為不同的檔案系統項目，它們不存在，而且必須沒有可用的位置。
 
 

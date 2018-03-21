@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: edf25ebd089994c01b2fa45e77b35fad9a51e350
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 70f17b6bc8dc991534cdf4dd065c813aa0e27e96
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="java-bindings-metadata"></a>Java 繫結中繼資料
 
@@ -313,7 +313,7 @@ NavigationManager.2DSignNextManueverEventArgs
 </mapping>
 ```
 
-這裡我們已經建立 Java 類別`SKRealReachSettings`和定義呼叫的 C# 列舉`SKRealReachSettings`命名空間中`Skobbler.Ngx.Map.RealReach`。 `field`項目定義之 Java 常數的名稱 (範例`UNIT\_SECOND`)，列舉項目的名稱 (範例`Second`)，以及這兩個實體所代表的整數值 (範例`0`)。 
+這裡我們已經建立 Java 類別`SKRealReachSettings`和定義呼叫的 C# 列舉`SKMeasurementUnit`命名空間中`Skobbler.Ngx.Map.RealReach`。 `field`項目定義之 Java 常數的名稱 (範例`UNIT_SECOND`)，列舉項目的名稱 (範例`Second`)，以及這兩個實體所代表的整數值 (範例`0`)。 
 
 ### <a name="defining-gettersetter-methods-using-enummethodsxml"></a>定義使用 EnumMethods.xml Getter/Setter 方法
 
@@ -328,7 +328,7 @@ NavigationManager.2DSignNextManueverEventArgs
 </mapping>
 ```
 
-第一個`method`列對應之傳回值的 Java`getMeasurementUnit`方法`SKRealReachSettings`列舉。 第二個`method`列對應的第一個參數`setMeasurementUnit`至相同的列舉。
+第一個`method`列對應之傳回值的 Java`getMeasurementUnit`方法`SKMeasurementUnit`列舉。 第二個`method`列對應的第一個參數`setMeasurementUnit`至相同的列舉。
 
 所有這些變更之後，您可以使用下列程式碼中 Xamarin.Android 設定`MeasurementUnit`: 
 

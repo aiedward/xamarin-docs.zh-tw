@@ -8,33 +8,32 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/19/2018
-ms.openlocfilehash: c542237523b934cb8616fda6cefdcd969b7700bd
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: fbcb0190f609efc4396429a7961c2d49ab82576f
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase 作業發送器
 
 _本指南會討論如何使用 Firebase 作業發送器程式庫，將來自 Google 的背景工作的排程。_
 
-## <a name="firebase-job-dispatcher-overview"></a>Firebase 作業發送器概觀
+## <a name="overview"></a>總覽
 
 Android 應用程式能繼續回應使用者以最佳方式之一是確保複雜或長時間執行的工作在背景中執行。 不過，很重要，背景工作不會產生負面影響的使用者經驗與裝置。 
 
-例如，背景工作可能會變更特定資料集來查詢每隔幾分鐘輪詢網站。 不過，它有而言影響裝置上，這似乎良性。 應用程式將會得到喚醒裝置、 CPU 提升為較高的電源狀態，打開無線電、 提出網路要求，然後再處理結果。 它變差，因為裝置將不會立即關閉電源，並返回低電源閒置狀態。 無法順利排程的背景工作不小心可能會保留裝置處於的不必要和多餘的電源需求。 實際上，（輪詢網站） 此紓解其活動會使裝置在相對較短的一段時間無法使用。
+比方說，背景工作可能網站每隔三或四個分鐘輪詢查詢特定的資料集的變更。 不過，它會對電池壽命而言的影響，這似乎良性的。 應用程式重複會喚醒裝置，請將 CPU 提高為更高的電源狀態、 無線電開啟電源，確定網路要求，然後處理結果。 它變差，因為裝置將不會立即關閉電源，並返回低電源閒置狀態。 無法順利排程的背景工作不小心可能會保留裝置處於的不必要和多餘的電源需求。 這看似無害的活動 （輪詢網站） 將導致裝置在相對較短的時間內無法使用。
 
-Android 已經提供數個 Api，來協助解決在背景中執行的工作，但是其中一個項目進行全面的解決方案：
+Android 提供下列應用程式開發介面，以協助在背景中執行的工作，但本身沒有足夠的智慧型工作排程。 
 
 * **[意圖服務](~/android/app-fundamentals/services/creating-a-service/intent-services.md)** &ndash;意圖服務非常適合用來執行工作，不過它們會不提供任何方法可以排程工作。
 * **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)**  &ndash;只有這些 Api 可讓工作排程，但不能實際執行工作。 此外，AlarmManager 僅允許以時間為基礎的條件約束，這表示在特定時間或經過一段時間後會引發警示。 
 * **[JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)**  &ndash; JobSchedule 是絕佳的 API，可搭配排程作業的作業系統。 不過，它是只適用於這些目標應用程式開發介面層級 21 的 Android 應用程式或更高版本。 
-* **[廣播接收者](~/android/app-fundamentals/broadcast-receivers.md)** &ndash; Android 應用程式可以設定廣播的接收者，以回應系統寬事件或對應方式執行工作。 不過，廣播的接收者不提供任何控制何時應執行的工作。 Android 作業系統中的變更也會限制當廣播的接收者也能運作，或它們可以回應的工作種類。 
-* **Google 雲端訊息的網路管理員**&ndash;長的時間，這是，在論證上，以聰明的方式排程背景的最佳方式運作。 不過，GCMNetworkManager，因為已被取代。 
+* **[廣播接收者](~/android/app-fundamentals/broadcast-receivers.md)** &ndash; Android 應用程式可以設定廣播的接收者，以回應系統事件或對應方式執行工作。 不過，廣播的接收者不提供任何控制何時應執行的工作。 Android 作業系統中的變更也會限制當廣播的接收者也能運作，或它們可以回應的工作種類。 
 
-有兩個主要的功能，來有效地執行背景工作 (有時稱為_背景工作_或_作業_):
+有兩個主要的功能來有效率地執行背景工作 (有時稱為_背景工作_或_作業_):
 
-1. **有智慧地排程工作**&ndash;很重要的應用程式會進行的工作在背景中的，它會以為良好的公民。 在理想情況下，應用程式不應要求執行作業。 相反地，應用程式應該指定必須符合的作業可以執行時，然後透過排程，可在符合條件時執行的條件。 這可讓 Android，以聰明的方式執行的工作。 例如，網路要求可能會批次處理以發揮最大的負擔與網路有關的所有項目執行。
+1. **有智慧地排程工作**&ndash;很重要的應用程式會進行的工作在背景中的，它會以為良好的公民。 在理想情況下，應用程式不應要求執行作業。 相反地，應用程式應該指定當作業可以執行，並再排程符合條件時執行該工作必須符合的條件。 這可讓 Android，以聰明的方式執行的工作。 例如，網路要求可能會批次處理以發揮最大的負擔與網路有關的所有項目執行。
 2. **封裝工作**&ndash;執行背景工作的程式碼應該封裝中不連續的元件，可以獨立使用者介面執行將會是相當容易重新排定工作無法完成基於某些原因。
 
 Firebase 作業發送器是向 Google 提供 fluent 應用程式開發的 API，來簡化排程的背景工作的程式庫。 它會取代為 Google 雲端管理員。 Firebase 作業發送器包含下列 Api:
@@ -66,7 +65,7 @@ Firebase 作業發送器需要 Android API 層級 9 或更高版本。 Firebase 
 
 加入 Firebase 作業發送器程式庫之後, 建立`JobService`類別，然後將它與執行個體執行排定`FirebaseJobDispatcher`。
 
-### <a name="creating-a-jobservice"></a>建立 `JobService`
+### <a name="creating-a-jobservice"></a>建立 JobService
 
 Firebase 作業發送器程式庫所執行的所有工作都必須要擴充的型別都來`Firebase.JobDispatcher.JobService`抽象類別。 建立`JobService`非常類似於建立`Service`Android 架構： 
 
@@ -74,7 +73,7 @@ Firebase 作業發送器程式庫所執行的所有工作都必須要擴充的�
 2. 裝飾以子類別`ServiceAttribute`。 雖然並非絕對必要，建議您明確設定`Name`參數，以協助偵錯`JobService`。 
 3. 新增`IntentFilter`宣告`JobService`中**AndroidManifest.xml**。 這也有助於找出並叫用的 Firebase 作業發送器庫`JobService`。
 
-下列程式碼是最簡單的範例`JobService`應用程式：
+下列程式碼是最簡單的範例`JobService`的應用程式，使用 TPL 以非同步方式執行一些工作：
 
 ```csharp
 [Service(Name = "com.xamarin.fjdtestapp.DemoJob")]
@@ -85,11 +84,14 @@ public class DemoJob : JobService
 
     public override bool OnStartJob(IJobParameters jobParameters)
     {
-        Log.Debug(TAG, "DemoJob::OnStartJob");
-        // Note: This runs on the main thread. Anything that takes longer than 16 milliseconds
-         // should be run on a seperate thread.
-        
-        return false; // return false because there is no more work to do.
+        Task.Run(() =>
+        {
+            // Work is happening asynchronously (code omitted)
+                       
+        });
+
+        // Return true because of the asynchronous work
+        return true;  
     }
 
     public override bool OnStopJob(IJobParameters jobParameters)
@@ -101,7 +103,7 @@ public class DemoJob : JobService
 }
 ```
 
-### <a name="creating-a-firebasejobdispatcher"></a>建立 `FirebaseJobDispatcher`
+### <a name="creating-a-firebasejobdispatcher"></a>建立 FirebaseJobDispatcher
 
 可以排程任何工作之前，就必須建立`Firebase.JobDispatcher.FirebaseJobDispatcher`物件。 `FirebaseJobDispatcher`負責排程`JobService`。 下列程式碼片段是一種方式建立的執行個體`FirebaseJobDispatcher`: 
  
@@ -121,7 +123,7 @@ FirebaseJobDispatcher dispatcher = context.CreateJobDispatcher();
 
 一次`FirebaseJobDispatcher`已具現化，便可建立`Job`和執行程式碼`JobService`類別。 `Job`由`Job.Builder`物件，並將在下一節中討論。
 
-### <a name="creating-a-firebasejobdispatcherjob-with-the-jobbuilder"></a>建立`Firebase.JobDispatcher.Job`與 `Job.Builder`
+### <a name="creating-a-firebasejobdispatcherjob-with-the-jobbuilder"></a>建立與 Job.Builder Firebase.JobDispatcher.Job
 
 `Firebase.JobDispatcher.Job`類別會負責將中繼資料的封裝執行時所需`JobService`。 A`Job`包含資訊之前，必須符合作業可以執行，如果任何條件約束如`Job`為週期性，或將導致該工作會執行任何觸發程序。  以最低限度`Job`必須_標記_(識別作業的唯一字串`FirebaseJobDispatcher`) 及類型`JobService`應執行。 Firebase 作業發送器會具現化`JobService`時要執行此作業的時間。  A`Job`使用的執行個體建立`Firebase.JobDispatcher.Job.JobBuilder`類別。 
 
@@ -140,7 +142,7 @@ Job myJob = dispatcher.NewJobBuilder()
 * A`Job`會儘速執行排程。
 * 預設重試策略`Job`是使用_指數型輪詢_(上一節中會更詳細探討討論[設定 RetryStrategy](#Setting_a_RetryStrategy))
 
-### <a name="scheduling-a-job"></a>排程 `Job`
+### <a name="scheduling-a-job"></a>排程工作
 
 在建立之後`Job`，它必須排程`FirebaseJobDispatcher`之前執行。 有兩種方法來排程`Job`:
 
@@ -173,7 +175,7 @@ int scheduleResult = dispatcher.Schedule(myJob);
 
 <a name="Passing_Parameters_to_a_Job" />
 
-#### <a name="passing-parameters-to-a-job"></a>將參數傳遞至作業
+#### <a name="passing-jarameters-to-a-job"></a>Jarameters 傳遞至作業
 
 參數傳遞至作業建立`Bundle`連同傳遞`Job.Builder.SetExtras`方法：
 
@@ -219,8 +221,6 @@ Job myJob = dispatcher.NewJobBuilder()
 ```
 
 <a name="Setting_Job_Triggers" />
-
-#### <a name="setting-job-triggers"></a>設定工作觸發程序
 
 `JobTrigger`相關指引提供給作業系統的相關作業應該開始的時間。 A`JobTrigger`具有_執行視窗_定義時的排程的時間`Job`應該執行。 執行視窗有_啟動視窗_值和_結束視窗_值。 開始視窗裝置應執行工作之前等待的秒數，而結束視窗值的執行之前要等待的秒數上限`Job`。 
 
@@ -283,7 +283,7 @@ int cancelResult = dispatcher.Cancel("unique-tag-for-job");
 
 ## <a name="summary"></a>總結
 
-本指南將討論如何使用 Firebase 作業發送器有智慧地在背景中執行的工作。 它討論如何封裝要執行為工作`JobService`以及如何`FirebaseJobDispatcher`排程的工作，指定與條件`JobTrigger`和失敗應該如何處理與`RetryStrategy`。
+本指南將討論如何使用 Firebase 作業發送器有智慧地在背景中執行的工作。 它討論如何封裝要執行為工作`JobService`以及如何使用`FirebaseJobDispatcher`排程的工作，指定與條件`JobTrigger`和失敗應該如何處理與`RetryStrategy`。
 
 
 ## <a name="related-links"></a>相關連結

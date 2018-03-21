@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 7111c1716ef3a8869f8b2401a7653d9e9941977b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5e44635c9dfbe9fa069272f50d035476bd1aa6b9
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="manual-camera-controls"></a>手動攝影機控制項
 
@@ -370,7 +370,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 執行下列命令以連線檢視控制器的總手動焦點控制：
 
 
- 1. 加入下列 using 陳述式：
+1. 加入下列 using 陳述式：
 
     ```csharp
     using System;
@@ -387,7 +387,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
     using System.Timers;
     ```  
   
- 1. 加入下列私用變數：
+1. 加入下列私用變數：
 
     ```csharp
     #region Private Variables

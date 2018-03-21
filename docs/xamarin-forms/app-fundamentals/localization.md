@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: ffde89558495c4b9ccb9ec41761b5fc7ca53db38
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e04ea24883bdf1e29a538aaff92c555df8e1755f
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="localization"></a>當地語系化
 
@@ -21,22 +21,6 @@ _Xamarin.Forms 應用程式可以使用.NET 資源檔來當地語系化。_
 ## <a name="overview"></a>總覽
 
 當地語系化 .NET 應用程式使用的內建機制[RESX 檔案](http://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx)中的類別和`System.Resources`和`System.Globalization`命名空間。 RESX 檔案包含已翻譯的字串會內嵌 Xamarin.Forms 組件，以及編譯器所產生的類別，提供強型別存取翻譯。 接著，可以轉譯文字擷取程式碼中。
-
-本文件包含下列章節：
-
-**全球化 Xamarin.Forms 程式碼**
-
-* 加入和 Xamarin.Forms PCL 應用程式中使用字串資源。
-* 啟用偵測中每個原生應用程式的語言。
-
-**當地語系化 XAML**
-
-* 當地語系化使用 XAML `IMarkupExtension`。
-* 啟用原生應用程式中的標記延伸。
-
-**當地語系化平台特定項目**
-
-* 當地語系化映像和原生應用程式中的應用程式名稱。
 
 ### <a name="sample-code"></a>程式碼範例
 
@@ -651,15 +635,17 @@ using Xamarin.Forms.Xaml;
 
 namespace UsingResxLocalization
 {
-    // You exclude the 'Extension' suffix when using in Xaml markup
-    [ContentProperty ("Text")]
+    // You exclude the 'Extension' suffix when using in XAML
+    [ContentProperty("Text")]
     public class TranslateExtension : IMarkupExtension
     {
-        readonly CultureInfo ci;
+        readonly CultureInfo ci = null;
         const string ResourceId = "UsingResxLocalization.Resx.AppResources";
 
-        private static readonly Lazy<ResourceManager> ResMgr = new Lazy<ResourceManager>(()=> new ResourceManager(ResourceId
-                                                                                                                  , typeof(TranslateExtension).GetTypeInfo().Assembly));
+        static readonly Lazy<ResourceManager> ResMgr = new Lazy<ResourceManager>(
+            () => new ResourceManager(ResourceId, IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly));
+
+        public string Text { get; set; }
 
         public TranslateExtension()
         {
@@ -669,24 +655,21 @@ namespace UsingResxLocalization
             }
         }
 
-        public string Text { get; set; }
-
-        public object ProvideValue (IServiceProvider serviceProvider)
+        public object ProvideValue(IServiceProvider serviceProvider)
         {
             if (Text == null)
-                return "";
+                return string.Empty;
 
             var translation = ResMgr.Value.GetString(Text, ci);
-
             if (translation == null)
             {
-                #if DEBUG
+#if DEBUG
                 throw new ArgumentException(
-                    String.Format("Key '{0}' was not found in resources '{1}' for culture '{2}'.", Text, ResourceId, ci.Name),
+                    string.Format("Key '{0}' was not found in resources '{1}' for culture '{2}'.", Text, ResourceId, ci.Name),
                     "Text");
-                #else
-                translation = Text; // returns the key, which GETS DISPLAYED TO THE USER
-                #endif
+#else
+                translation = Text; // HACK: returns the key, which GETS DISPLAYED TO THE USER
+#endif
             }
             return translation;
         }
@@ -699,7 +682,7 @@ namespace UsingResxLocalization
 * 類別的名稱為`TranslateExtension`，但是我們可以參考的慣例則為**翻譯**我們標記中。
 * 此類別會實作`IMarkupExtension`，所需的 Xamarin.Forms，其工作。
 * `"UsingResxLocalization.Resx.AppResources"` 是我們 RESX 資源的資源識別碼。 它包含我們的預設命名空間、 資源檔所在的資料夾和預設 RESX 檔名。
-* `ResourceManager`類別建立使用`typeof(TranslateExtension)`來判斷目前的組件，以從中載入資源。
+* `ResourceManager`類別建立使用`IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly)`來判斷目前的組件載入資源，並快取中靜態`ResMgr`欄位。 它會建立為`Lazy`類型，讓其建立延後，直到在第一次使用`ProvideValue`方法。
 * `ci` 若要從原生作業系統取得的使用者所選擇的語言使用相依性服務。
 * `GetString` 是從資源檔擷取實際的已翻譯的字串的方法。 在 Windows Phone 8.1 和通用 Windows 平台上`ci`將傳回 null 因為`ILocalize`不在這些平台上實作介面。 這就相當於呼叫`GetString`只含第一個參數的方法。 相反地，資源架構會自動辨識的地區設定，並從適當的 RESX 檔案擷取的已翻譯的字串。
 * 錯誤處理已經以協助偵錯遺失的資源，藉由擲回例外狀況 (在`DEBUG`僅限模式)。
