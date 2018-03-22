@@ -180,6 +180,7 @@
 ### [選擇器](user-interface/picker/index.md)
 #### [設定選擇器的 ItemsSource 屬性](user-interface/picker/populating-itemssource.md)
 #### [將資料加入選擇器的項目集合](user-interface/picker/populating-items.md)
+### [Slider](user-interface/slider.md)
 ### [樣式](user-interface/styles/index.md)
 #### [簡介](user-interface/styles/introduction.md)
 #### [明確樣式](user-interface/styles/explicit.md)
