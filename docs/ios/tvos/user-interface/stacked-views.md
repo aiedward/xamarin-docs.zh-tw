@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c40e9291e81770435535de7b0c83d6c865cbed58
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: efc0da0b0f0a800069efb00a402361a8b0cd7f1d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-stacked-view"></a>使用堆疊檢視
 
@@ -76,7 +76,7 @@ _本文涵蓋設計和 Xamarin.tvOS 應用程式內使用堆疊檢視。_
 * 水平堆疊檢視會使用其最高的子檢視的第一個和最後一個基準。 如果最高的檢視，也是堆疊檢視，則會使用它的最高子檢視做為基準。
 
 > [!IMPORTANT]
-> **注意：**基準線對齊方式不適用於延展或壓縮的子檢視大小的基準會計算錯誤的位置。 基準線對齊方式，請確定子檢視**高度**符合內建函式的內容檢視的**高度**。
+> 基準線對齊方式不適用於延展或壓縮的子檢視的大小，會計算基準，以在錯誤的位置。 基準線對齊方式，請確定子檢視**高度**符合內建函式的內容檢視的**高度**。
 
 
 
@@ -149,7 +149,7 @@ _本文涵蓋設計和 Xamarin.tvOS 應用程式內使用堆疊檢視。_
 -----
 
 > [!IMPORTANT]
-> **注意：**注意： 雖然您可以指派動作，例如`TouchUpInside`UI 項目 (例如`UIButton`) 上的 ios 設計工具建立事件處理常式時，它會永遠不會呼叫因為 Apple TV 沒有觸控螢幕或支援觸控事件。 您應該一律使用預設`Action Type`tvos 使用者介面項目建立動作時。
+> 雖然您可以指派動作，例如`TouchUpInside`UI 項目 (例如`UIButton`) 上的 ios 設計工具建立事件處理常式時，它會永遠不會呼叫因為 Apple TV 沒有觸控螢幕或支援觸控事件。 您應該一律使用預設`Action Type`tvos 使用者介面項目建立動作時。
 
 如需使用分鏡腳本的詳細資訊，請參閱我們[Hello，tvOS 快速入門指南](~/ios/tvos/get-started/hello-tvos.md)。
 

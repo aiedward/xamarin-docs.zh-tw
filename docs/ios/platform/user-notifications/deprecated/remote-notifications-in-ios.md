@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 8e90bc3974247066a714cb44b6648a83cdb58cf5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3af74fb9d93e22e361f2e3db00961d7955eda689
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="push-notifications-in-ios"></a>在 iOS 中的推播通知
 
 _本節將討論在 iOS 中的推播通知。它引進 Apple 推播通知閘道服務及它在加入 iOS 應用程式的發行通知中扮演的角色。它會說明如何建立必要啟用推播通知，並討論安全性憑證。最後本章節將討論一些應用程式伺服器必須執行來追蹤用戶端行動裝置的環境維護工作。_
 
 > [!IMPORTANT]
-> **注意：**本節中的資訊屬於 iOS 9 及之前，它已保留這裡以支援較舊 iOS 版本。 適用於 iOS 10 和更新版本，請參閱[使用者通知架構指南](~/ios/platform/user-notifications/index.md)支援 iOS 裝置上的本機和遠端的通知。
+> 本節中的資訊屬於 iOS 9 及之前，它已保留這裡以支援較舊 iOS 版本。 適用於 iOS 10 和更新版本，請參閱[使用者通知架構指南](~/ios/platform/user-notifications/index.md)支援 iOS 裝置上的本機和遠端的通知。
 
 推播通知應該保持簡短，而且只可包含足夠的資料來告知它應該與伺服器應用程式取得更新的行動應用程式。 例如，當新的電子郵件送達時，伺服器應用程式只會通知到達新電子郵件的行動應用程式。 通知不會包含新的電子郵件本身。 行動應用程式會擷取新的電子郵件伺服器從適當時
 

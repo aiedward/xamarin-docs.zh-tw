@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: 469a63a990b1adb108284cfb88ee54e05218a8a9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2e63f2c47bbcd6da0f0d5370ebfc231d19a10e7d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="request-app-review"></a>要求檢閱應用程式
 
@@ -57,7 +57,7 @@ namespace iOSTenThree
 ```
 
 > [!NOTE]
-> **注意：**呼叫`RequestReview()`在置中的開發應用程式將一律顯示分級並檢閱對話方塊，以便進行測試。 這不適用於已散發到 TestFlight，將會忽略方法呼叫的應用程式。
+> 呼叫`RequestReview()`在置中的開發應用程式將一律顯示分級並檢閱對話方塊，以便進行測試。 這不適用於已散發到 TestFlight，將會忽略方法呼叫的應用程式。
 
 當`RequestReview()`使用者安裝應用程式商店中的傳送應用程式中呼叫方法、 iOS 10 處理整個的評等，並檢閱程序的開發人員。 同樣地，此程序由應用程式存放區原則，因為警示可能或可能不會顯示。
 

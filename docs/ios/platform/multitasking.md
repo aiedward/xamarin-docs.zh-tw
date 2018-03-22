@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 34b51f784b549caa0dda2eeda066bb39dfc13020
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 0783372cd36d5a4984d09ee055257d525e7becb1
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="multitasking-for-ipad"></a>適用於 iPad 的多工
 
@@ -33,7 +33,7 @@ iOS 9 加入多工作業支援特定的 iPad 硬體上同時執行兩個應用�
 - [自訂硬體鍵盤快速鍵](#Custom-Hardware-Keyboard-Shortcuts)
 - [資源管理](#Resource-Management-Considerations)
 
-身為應用程式開發人員也可以[多工作業退出](#Opting-Out-of-Multitasking)，包括[停用 PIP 視訊播放](#Disabling-PIP-Video-Playback)。
+身為應用程式開發人員也可以[退出多工作業](#Opting-Out-of-Multitasking)，包括[停用 PIP 視訊播放](#Disabling-PIP-Video-Playback)。
 
 本文將說明如何確保 Xamarin.iOS 應用程式能夠正確執行多工作業環境中，或如何退出多工作業，如果不是適合您的應用程式所需的步驟。
 
@@ -205,7 +205,7 @@ public void NewEntry() {
 
 針對已經在使用 iOS 8 的設計指南及最佳作法的應用程式，即使有效的資源管理仍然可能發生問題。 在 iOS 9 中，應用程式不再需要記憶體、 CPU 或其他系統資源的獨佔的使用。
 
-如此一來，您必須調整成 Xamarin.iOS 應用程式以有效地使用系統資源或面臨記憶體不足的情況下終止。 這是相等，則為 true 之應用程式的多工退出，因為第二個應用程式可能仍以投影片透過 [控制台] 或需要額外的資源，或導致重新整理頻率的圖片視窗中的圖片，低於 60 秒畫面格數。
+如此一來，您必須調整成 Xamarin.iOS 應用程式以有效地使用系統資源或面臨記憶體不足的情況下終止。 這同樣適退出多工作業的應用程式，因為第二個應用程式可能仍以投影片透過 [控制台] 或需要額外的資源，或導致重新整理頻率的圖片視窗中的圖片，低於 60 秒畫面格數。
 
 請考慮下列的使用者動作和及其含意：
 
@@ -223,19 +223,16 @@ public void NewEntry() {
 
 <a name="Opting-Out-of-Multitasking" />
 
-## <a name="opting-out-of-multitasking"></a>選擇向外多工作業
+## <a name="opting-out-of-multitasking"></a>選擇退出多工作業
 
 Apple 所示，所有 iOS 9 應用程式都支援多工作業，那里可能非常特定的理由要將應用程式不太，如遊戲或相機應用程式需要全螢幕才能正常運作。
 
-若要退出任一滑出面板中，或在分割檢視模式中執行您 Xamarin.iOS 應用程式中，編輯專案的**Info.plist**檔，並檢查**需要全螢幕**:
+退出任一滑出面板中，或在分割檢視模式中執行您 Xamarin.iOS 應用程式中，編輯專案的**Info.plist**檔，並檢查**需要全螢幕**:
 
-[![](multitasking-images/fullscreen01.png "選擇向外多工作業")](multitasking-images/fullscreen01.png#lightbox)
+[![](multitasking-images/fullscreen01.png "選擇退出多工作業")](multitasking-images/fullscreen01.png#lightbox)
 
 > [!IMPORTANT]
-> **注意：** Opting 外的多工可防止您的應用程式執行的投影片或分割檢視，而它會**不**防止另一個應用程式上執行投影片或圖片視訊中的圖片中顯示連同您應用程式。
-
-
-
+> 退出多工作業可防止您的應用程式執行的投影片或分割檢視，而它不會阻止另一個應用程式顯示您應用程式執行的投影片或視訊的圖片中的圖片。
 
 <a name="Disabling-PIP-Video-Playback" />
 
@@ -243,7 +240,7 @@ Apple 所示，所有 iOS 9 應用程式都支援多工作業，那里可能非�
 
 在大部分情況下，您的應用程式應該允許使用者来播放的圖片浮動視窗中的圖片中顯示的任何視訊內容。 不過，可能會有這可能不會想要的地方，例如遊戲剪下的場景視訊的情況。
 
-若要退出的 PIP 視訊播放，請執行您的應用程式中的下列：
+若要退出 PIP 播放視訊時，執行您的應用程式中的下列動作：
 
  - 如果您使用`AVPlayerViewController`若要顯示視訊，請設定`AllowsPictureInPicturePlayback`屬性`false`。
  - 如果您使用`AVPlayerLayer`來顯示視訊，不具現化`AVPictureInPictureController`。

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 7ae41e99d20f0e8f3cad6b933e415002903a3294
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d3a370c3a8d930c817d38422b249b496532fa33f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="text-kit"></a>文字套件
 
@@ -143,7 +143,7 @@ public class ExclusionPathView : UITextView
 這個程式碼加入 [文字] 檢視使用核心圖形上繪製的支援。 因為`UITextView`類別現在建立要用於其文字轉譯和版面配置中的文字套件，它使用的組件的文字，例如設定排除路徑的所有功能。
 
 > [!IMPORTANT]
->   注意： 這個範例子類別`UITextView`新增觸控描繪支援。 子類別化`UITextView`，就不需要取得文字套件的功能。
+> 此範例子類別`UITextView`新增觸控描繪支援。 子類別化`UITextView`，就不需要取得文字套件的功能。
 
 
 

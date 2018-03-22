@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 996723db83a1f972cce26090d1253f97b6c818d3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0a9b9651a735ef4300e19f5ccb231a616850d970
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="contacts-and-contactsui"></a>連絡人和 ContactsUI
 
@@ -30,7 +30,7 @@ IOS 9 的簡介，與 Apple 已釋放這兩個新的架構，`Contacts`和`Conta
 [![](contacts-images/add01.png "IOS 裝置上縮圖工作表範例")](contacts-images/add01.png#lightbox)
 
 > [!IMPORTANT]
-> **注意：**現有`AddressBook`和`AddressBookUI`架構使用 iOS 8 （且之前） iOS 9 中已被取代，並應該取代成新`Contacts`和`ContactsUI`儘速的任何現有的 Xamarin.iOS 架構應用程式。 新的應用程式應撰寫針對新的架構。
+> 現有`AddressBook`和`AddressBookUI`架構使用 iOS 8 （且之前） iOS 9 中已被取代，並應該取代成新`Contacts`和`ContactsUI`儘速的任何現有的 Xamarin.iOS 應用程式的架構。 新的應用程式應撰寫針對新的架構。
 
 
 
@@ -144,7 +144,7 @@ var predicate = CNContact.GetPredicateForContacts("Appleseed");
 ```
 
 > [!IMPORTANT]
-> **注意：**一般和連絡人 framework 不支援複合的述詞。
+> 連絡人 framework 不支援泛型和複合述詞。
 
 例如，若要限制為只有提取**GivenName**和**FamilyName**連絡人、 屬性，請使用下列程式碼：
 
@@ -190,7 +190,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 ```
 
 > [!IMPORTANT]
-> **注意：** `GetUnifiedContact`和`GetUnifiedContacts`方法`CNContactStore`類別_只_傳回部分連絡限制在要求中提供的擷取索引鍵的屬性。
+> `GetUnifiedContact`和`GetUnifiedContacts`方法`CNContactStore`類別_只_傳回部分連絡限制在要求中提供的擷取索引鍵的屬性。
 
 ### <a name="unified-contacts"></a>統一的連絡人
 

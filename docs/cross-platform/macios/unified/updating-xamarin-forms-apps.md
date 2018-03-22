@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 48b8d1cf8e6242fde632bceec5d482f53037a954
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d2f14510e5968ebe24bd297365416fa8aa5a0c59
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>更新現有 Xamarin.Forms 應用程式
 
@@ -196,7 +196,7 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
 
 偶爾您會看到更新的 Xamarin.Forms NuGet 套件之後，這類似的錯誤。 NuGet updater 並不會完全移除來自較舊版本的參考時發生您**csproj**檔案。
 
->您\_PROJECT.csproj： 錯誤： 此專案參考這部電腦所缺少的 NuGet 套件。 請啟用 NuGet 封裝還原，以下載。  如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。 遺失的檔案是.../../packages/Xamarin.Forms.1.2.3.6257/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.targets。 (您\_專案)
+>您\_PROJECT.csproj： 錯誤： 此專案參考這部電腦所缺少的 NuGet 套件。 請啟用 NuGet 封裝還原，以下載。  如需詳細資訊，請參閱http://go.microsoft.com/fwlink/?LinkID=322105。 遺失的檔案是.../../packages/Xamarin.Forms.1.2.3.6257/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.targets。 (您\_專案)
 
 若要修正這些錯誤，請開啟**csproj**檔案文字編輯器中，並尋找`<Target`舊版透過 Xamarin.Forms，例如如下所示的項目是指的項目。 您應該手動刪除這個整個項目從**csproj**檔案及儲存所做的變更。
 
@@ -226,7 +226,7 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
 這段時間，就像元件，直到您必須切換任何您要加入專案，以支援統一的 Api 版本的 NuGet 封裝，之後執行乾淨的組建。
 
 > [!IMPORTANT]
-> **注意：**如果您在表單中有錯誤_"錯誤 3 不能在相同的 Xamarin.iOS 專案中包含 'monotouch.dll' 和 'Xamarin.iOS.dll'-'monotouch.dll' 正由時明確地參考 'Xamarin.iOS.dll' ' xxx，版本 = 0.0.000，Culture = neutral，PublicKeyToken = null'"_之後轉換您的應用程式，以統一的 Api，它通常是因為有尚未更新統一的 API 的專案中的元件或 NuGet 封裝。 您必須移除現有元件/NuGet、 更新為支援統一的 Api 版本，執行乾淨的組建。
+> 如果您在表單中有錯誤_"錯誤 3 不能在相同的 Xamarin.iOS 專案中包含 'monotouch.dll' 和 'Xamarin.iOS.dll'-'monotouch.dll' 正由時明確地參考 'Xamarin.iOS.dll' ' xxx，版本 = 0.0.000，Culture = neutral，PublicKeyToken = null'"_之後轉換您的應用程式，以統一的 Api，它通常是因為有尚未更新統一的 API 的專案中的元件或 NuGet 封裝。 您必須移除現有元件/NuGet、 更新為支援統一的 Api 版本，執行乾淨的組建。
 
 ## <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>啟用 64 位元建置的 Xamarin.iOS 應用程式
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 06/12/2017
-ms.openlocfilehash: eff096b1dca15b9b11038a599987f632bca2352f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 01b316e296f78ea2739e2f3ed1bd8d8ec112fca8
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient 堆疊和 iOS/macOS SSL/TLS 實作選取器
 
@@ -110,6 +110,7 @@ HttpClient client = new HttpClient(new NSUrlSessionHandler());
 SSL （安全通訊端層） 和 TLS （傳輸層安全性），後續提供支援 HTTP 和其他網路連線，透過`System.Net.Security.SslStream`。 Xamarin.iOS、 Xamarin.tvOS 或 Xamarin.Mac 的`System.Net.Security.SslStream`實作會呼叫 Apple 的原生 SSL/TLS 實作，而不要使用 單聲道所提供的 managed 的實作。 Apple 的原生實作支援 TLS 1.2。
 
 <a name="Mono" />
+
 > [!WARNING]
 > **Mono/Managed** TLS 提供者僅限於 SSL v3 和 TLS v1。 此 TLS 提供者已被取代，不再適用於 Xamarin.iOS 應用程式。 
 

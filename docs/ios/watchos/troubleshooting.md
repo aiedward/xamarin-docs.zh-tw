@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ce850b7890265b82774534ca0daaf25bed7e0c2d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4a6b916f991b337d8a28764f1482ddd837bad460
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 疑難排解
 
@@ -33,13 +33,6 @@ ms.lasthandoff: 03/09/2018
 ### <a name="general"></a>一般
 
 <a name="deploy" />
-<!--
-* You cannot deploy to the App Store *from within Visual Studio for Mac or Visual Studio*
-    in the current release. You should create an **Archive** in Visual Studio for Mac
-    and then switch to Xcode to upload the archive to iTunes Connect. Visual Studio
-    is not currently supported (but will be a future release). Refer to the
-    [deployment guide](~/ios/watchos/deploy-test/appstore.md) for more information.
--->
 
 - 較舊版本的 Visual Studio for Mac 不正確地顯示其中一個**AppleCompanionSettings**圖示為 88 x 88 像素為單位; 會導致**遺漏圖示錯誤**如果您嘗試以提交至應用程式存放區。
     這個圖示應該是 87 x 87 像素 (29 單位 **@3x**  Retina 螢幕)。 您無法在 Visual Studio 中修正此問題適用於 Mac 的影像資產在 Xcode 中編輯，或是手動編輯**Contents.json**檔案 (以符合[這個範例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。
@@ -47,14 +40,6 @@ ms.lasthandoff: 03/09/2018
 - 如果監看式擴充功能專案**Info.plist > WKApp 套件組合識別碼**不[正確設定](~/ios/watchos/get-started/project-references.md)以符合監看式應用程式的**套件組合識別碼**，偵錯工具將無法連接和視覺化Studio for Mac 將會等候訊息*「 正在等候偵錯工具要連接 」*。
 
 - 中支援偵錯**通知**模式，但可以是不可靠。 重試一次將有時運作。 確認監看式應用程式的**Info.plist** `WKCompanionAppBundleIdentifier`設定為符合的 iOS 父/容器應用程式套件組合識別碼 (ie。 在 iPhone 執行的一個)。
-
-<!--
-- **Can't launch application on Watch simulator.** This seems to
-    be an issue with the iOS Simulator hanging when trying to
-    install an app that has changed. Xcode release notes (beta 4)
-    includes a similar known issue:
-    If the issue persists, reset the Simulator (**iOS Simulator > Reset Content and Settings...**).
--->
 
 - iOS 設計工具不會顯示摘要或通知介面控制站的進入點箭號。
 
@@ -69,15 +54,6 @@ ms.lasthandoff: 03/09/2018
 ### <a name="visual-studio"></a>Visual Studio
 
 IOS 設計工具支援監看式套件*需要*正確地設定方案。 若未設定專案參考 (請參閱[如何將參考](~/ios/watchos/get-started/project-references.md)) 則設計介面將無法正常運作。
-
-<!--
-* New Watch Kit apps created in Visual Studio might not allow
-    starting in Notifications mode.
-
-* You cannot deploy to the App Store from Visual Studio (see [notes above](#deploy)
-    and the [deployment guide](~/ios/watchos/deploy-test/appstore.md)). Use
-    Visual Studio for Mac and Xcode on your Mac Build Host.
-    -->
 
 <a name="noalpha" />
 
@@ -109,11 +85,10 @@ with an alpha channel. Icons should not have an alpha channel.
 ## <a name="manually-adding-interface-controller-files"></a>手動加入介面的控制器檔案
 
 > [!IMPORTANT]
-> Xamarin 的監看式套件支援包括設計監看式分鏡腳本 iOS 設計工具中 （在 Visual Studio for Mac 和 Visual Studio），不需要如下所述的步驟。 Visual Studio for Mac 屬性填補和檔案會自動建立的 C# 程式碼中的類別名稱只是提供介面控制站。
+> Xamarin 的 WatchKit 支援包括設計監看式分鏡腳本 iOS 設計工具中 （在 Visual Studio for Mac 和 Visual Studio），不需要如下所述的步驟。 Visual Studio for Mac 屬性填補和檔案會自動建立的 C# 程式碼中的類別名稱只是提供介面控制站。
 
 
 *如果*使用 Xcode 介面產生器，請遵循下列步驟來建立監看式應用程式的新介面控制站，並啟用具有 Xcode 的同步處理，以便插座和動作可以使用 C# 中：
-
 
 1. 開啟 監看式應用程式的**Interface.storyboard**中**Xcode 介面產生器**。
     
@@ -256,7 +231,7 @@ with an alpha channel. Icons should not have an alpha channel.
 主應用程式套件組合的完整路徑*包含監看式應用程式和延伸模組的 iOS 應用程式*。
 
 > [!NOTE]
-> *注意：*是您需要提供的路徑*iPhone 應用程式的.app 檔*，也就是一個，將會部署至 iOS 模擬器和包含 watch 擴充功能和監看式應用程式。
+> 您需要提供的路徑為*iPhone 應用程式的.app 檔*，也就是一個，將會部署至 iOS 模擬器和包含 watch 擴充功能和監看式應用程式。
 
 範例：
 

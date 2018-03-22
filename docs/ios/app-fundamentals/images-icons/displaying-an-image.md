@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 1ca537ef47f48886483e99bb33b0d524d16593f8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 39da41b7fb5118a16f2b2953f8fcb0a5b72aa819
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="displaying-an-image"></a>顯示影像
 
@@ -95,7 +95,7 @@ MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 ```
 
 > [!IMPORTANT]
-> **請注意**： 如果指派給設定映像的映像都未顯示正確，請確定正確的檔名，與搭配使用`FromBundle`方法 (**映像設定**並不是父代**資產目錄**名稱)。 為 PNG 影像`.png`副檔名可以省略。 其他的影像格式，副檔名是必要的 （例如。 `PurpleMonkey.jpg`)。
+> 如果指派給設定映像的映像都未顯示正確，請確定正確的檔名，與搭配使用`FromBundle`方法 (**映像設定**並不是父代**資產目錄**名稱)。 為 PNG 影像`.png`副檔名可以省略。 其他的影像格式，副檔名是必要的 （例如。 `PurpleMonkey.jpg`)。
 
 <a name="Using-Vector-Images-in-Asset-Catalogs" />
 

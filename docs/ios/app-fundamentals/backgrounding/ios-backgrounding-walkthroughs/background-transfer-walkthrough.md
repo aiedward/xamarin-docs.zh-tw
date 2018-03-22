@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d5a8baec164eb5c70f6dae5b2fa4fd5271afbd1c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4ab11239caf5986bba52f080945d90a91ea9453e
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="walkthrough---using-background-transfer-service-and-nsurlsession"></a>逐步解說-使用背景傳送服務和 NSURLSession
 
@@ -97,7 +97,7 @@ public class MySessionDelegate : NSUrlSessionDownloadDelegate
 工作階段代理人 API 可提供廣泛的工具組與工作互動。 如需完整清單，工作階段的委派方法，請參閱`NSUrlSessionDelegate`API 文件。
 
 > [!IMPORTANT]
-> **請注意**： 背景工作階段並啟動背景執行緒，所以任何呼叫才能更新 UI 必須明確地執行 UI 執行緒上呼叫`InvokeOnMainThread`避免 iOS 終止應用程式。 
+> 背景工作階段並啟動背景執行緒，所以任何呼叫才能更新 UI 必須明確地執行 UI 執行緒上呼叫`InvokeOnMainThread`避免 iOS 終止應用程式。 
 
 
 ## <a name="handling-transfer-completion"></a>處理傳送完成

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: e20c9f068fe92e0dd711e0c20d31d713a0d03f0d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 46a0920efc8d80db7f3783654630f65086907f50
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="advanced-user-notifications"></a>進階的使用者通知
 
@@ -145,7 +145,7 @@ namespace MonkeyNotification
 通知 iOS 10 中的支援的映像的媒體附件 (靜態和 Gif)、 音訊或視訊及系統會自動顯示正確的自訂使用者介面的這兩種類型的附件時通知呈現給使用者。
 
 > [!NOTE]
-> **注意：**應該小心最佳化媒體大小和花費的時間下載媒體，從遠端伺服器 （或本機通知組合媒體） 做為系統在執行應用程式的服務時，會加諸嚴格限制，同時延伸模組。 例如，請考慮傳送映像的簡易的版本或小剪輯的視訊顯示在通知。
+> 應該小心最佳化媒體大小且花費的時間下載媒體，從遠端伺服器 （或本機通知組合媒體） 做為系統嚴格限制同時執行的應用程式服務延伸模組時。 例如，請考慮傳送映像的簡易的版本或小剪輯的視訊顯示在通知。
 
 ## <a name="creating-custom-user-interfaces"></a>建立自訂使用者介面
 
@@ -299,7 +299,7 @@ namespace MonkeyChatNotifyExtension
 若要設計通知內容擴充功能的自訂使用者介面，按兩下`MainInterface.storyboard`檔案以開啟設計工具中，在 iOS 中進行編輯，拖曳項目，您必須先建置所需的介面中 (例如`UILabels`和`UIImageViews`)。
 
 > [!NOTE]
-> **注意：**通知 UI 未_不_通知內容的延伸模組中支援互動式的控制項，例如文字欄位或按鈕。 雖然可以將它們加入分鏡腳本，使用者將無法與它們互動。 若要加入自訂的通知使用者介面中的使用者互動，請改用自訂動作。
+> 沒有通知 UI_不_通知內容的延伸模組中支援互動式的控制項，例如文字欄位或按鈕。 雖然可以將它們加入分鏡腳本，使用者將無法與它們互動。 若要加入自訂的通知使用者介面中的使用者互動，請改用自訂動作。
 
 一旦 UI 配置，並以 C# 程式碼公開必要的控制項，開啟`NotificationViewController.cs`進行編輯和修改`DidReceiveNotification`填入 UI，當使用者展開通知的方法。 例如: 
 

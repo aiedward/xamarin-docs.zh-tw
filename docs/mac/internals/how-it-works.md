@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/25/2017
-ms.openlocfilehash: 7329e8ddb5b86adcf6e1efaa805149012be8853c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a1dbff32b113bd1c3a6b2058a34c73977c59c9e5
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="how-xamarinmac-works"></a>Xamarin.Mac 的運作方式
 
@@ -109,7 +109,7 @@ AOT Xamarin.Mac 中啟用按兩下**專案名稱**中**方案總管 中**、 瀏
 ![加入其他 mmp 引數的 AOT](how-it-works-images/aot01.png "加入 AOT 其他 mmp 引數")
 
 > [!IMPORTANT]
-> 警告 ！ 啟用 AOT 編譯大幅增加建置時，有時長達數分鐘，但它可以改善應用程式啟動時間是平均的 20%。 如此一來，AOT 編譯，才應該啟用上**發行**Xamarin.Mac 應用程式的組建。
+> 啟用 AOT 編譯大幅增加建置時，有時長達數分鐘，但它可以改善應用程式啟動時間是平均的 20%。 如此一來，AOT 編譯，才應該啟用上**發行**Xamarin.Mac 應用程式的組建。
 
 ### <a name="aot-compilation-options"></a>Aot 編譯選項
 
@@ -155,7 +155,7 @@ AOT Xamarin.Mac 中啟用按兩下**專案名稱**中**方案總管 中**、 瀏
 以下是一些更詳細的說明的項目在內部運作的方式：
 
 - [Objective C 的選取器](~/ios/internals/objective-c-selectors.md)
-- [Registrar](~/ios/internals/registrar.md)
+- [登錄器](~/ios/internals/registrar.md)
 - [適用於 iOS 和 OS X 的 Xamarin 統一的 API](~/cross-platform/macios/unified/index.md)
 - [Theading 基本概念](~/ios/app-fundamentals/threading.md)
 - [委派、 通訊協定和事件](~/ios/app-fundamentals/delegates-protocols-and-events.md)

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/07/2017
-ms.openlocfilehash: 20e8d843b73fca5eb49da21a7f834ebbb52f4aa9
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 6d1401728c1063ce09c5848865e4c9b3fe7687d7
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>遠端 iOS 模擬器 （適用於 Windows)
 
@@ -25,7 +25,7 @@ _在 Windows 上的 Visual Studio 中的測試及偵錯 iOS 應用程式_
 下載[installer](https://dl.xamarin.com/xamarin-simulator/Xamarin.Simulator.Installer.msi)並安裝 Windows 電腦上。 應該已安裝 for Xamarin visual Studio Tools。
 
 > [!NOTE]
-> 使用遠端 iOS 模擬器需要 Visual Studio 搭配 Xamarin 的安裝網路的 Mac。
+> 您必須安裝 Xamarin 與網路的 Mac，才能在 Visual Studio 使用遠端 iOS 模擬器。
 
 ## <a name="getting-started"></a>快速入門
 

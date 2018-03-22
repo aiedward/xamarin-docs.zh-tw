@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 0b8d8d08db15959a47093f255a891605a089ea00
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c55ba4fb90181aaa1aa8ec52e2fcb3e2b2cc76d0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="table-control"></a>表格控制項
 
@@ -51,7 +51,8 @@ myTable.SetNumberOfRows ((nint)rows.Count, "default");
 ```
 
 > [!IMPORTANT]
-> **請注意**： 似乎可在 iOS 中沒有虛擬化資料表資料列。 嘗試限制 （Apple 建議小於 20） 的資料列數目。
+> 似乎可在 iOS 中，不是虛擬化資料表資料列。 嘗試限制 （Apple 建議小於 20） 的資料列數目。
+
 一旦已建立的資料列，您必須填入每個資料格 (例如`GetCell`在 iOS 中一樣)。 從這個程式碼片段[WatchTables 範例](https://developer.xamarin.com/samples/monotouch/watchOS/WatchTables/)更新每個資料列中的標籤
 
 ```csharp
@@ -62,7 +63,7 @@ for (var i = 0; i < rows.Count; i++) {
 ```
 
 > [!IMPORTANT]
-> **注意：**使用`SetNumberOfRows`和迴圈使用`GetRowController`會讓整個資料表傳送到監看式。 在後續的表格檢視，如果您要新增或移除特定的資料列使用`InsertRowsAt`和`RemoveRowsAt`以提升效能。
+> 使用`SetNumberOfRows`和迴圈使用`GetRowController`會讓整個資料表傳送到監看式。 在後續的表格檢視，如果您要新增或移除特定的資料列使用`InsertRowsAt`和`RemoveRowsAt`以提升效能。
 
 
 ## <a name="respond-to-taps"></a>點選回應
@@ -148,7 +149,7 @@ watchOS 3 導入資料表的新功能： 能夠捲動詳細資料頁面與相關
 ![](table-images/table-scroll-sml.png "垂直分頁的詳細資料範例") ![](table-images/table-detail-sml.png)
 
 > [!IMPORTANT]
-> **警告：**這項功能目前僅提供的藉由編輯 Xcode 介面產生器中的分鏡腳本。
+> 這項功能目前僅提供的藉由編輯 Xcode 介面產生器中的分鏡腳本。
 
 若要啟用這項功能，請選取`WKInterfaceTable`在設計介面及其刻度**垂直詳細分頁**選項：
 

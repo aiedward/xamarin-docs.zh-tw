@@ -6,11 +6,11 @@ ms.assetid: EE3D45BD-8091-4C04-BA83-371371D8BEB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 6d80ef6bdac7f35b282f6347a0356453a413b39c
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 2961eb4726b9f313d01f8bc075e5ca362d708e92
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-icons"></a>使用圖示
 
@@ -79,7 +79,7 @@ Apple Watch 解決方案都需要兩個集合的圖示：
 您可以確認圖示會藉由檢查設定正確[Apple Watch 設定應用程式](~/ios/watchos/app-fundamentals/settings.md)iphone 模擬器，或者產生[通知](~/ios/watchos/platform/notifications.md)和確認圖示會出現在通知畫面。
 
 > [!NOTE]
-> **請注意**： 圖示不能有 alpha 色板 （如果存在 alpha 色板，將應用程式市集提交期間拒絕應用程式）。 您可以檢查 alpha 色板是否存在，並將它移除[預覽應用程式使用 Mac OS X 上](~/ios/watchos/troubleshooting.md#noalpha)。
+> 圖示不能有 alpha 色板 （如果存在 alpha 色板，將應用程式市集提交期間拒絕應用程式）。 您可以檢查 alpha 色板是否存在，並將它移除[預覽應用程式使用 Mac OS X 上](~/ios/watchos/troubleshooting.md#noalpha)。
 
 
 ## <a name="related-links"></a>相關連結

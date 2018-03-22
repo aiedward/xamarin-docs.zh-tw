@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: c111d2f873270eab78eee92edc3d884d1e92fdd8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 69c4b25e17c31d57701f99e84f6f686c65dc7028
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="interactive-workbooks"></a>互動式活頁簿
 
@@ -32,7 +32,7 @@ _使用活頁簿建立即時的文件的 C# 程式碼進行實驗，教導訓練
 
 [ ![](workbook-images/inspector-0.6.0-repl-small.png "編輯視窗的程式碼提供程式碼完成、 語法著色、 內嵌即時診斷和多行陳述式支援")](workbook-images/inspector-0.6.0-repl.png#lightbox)
 
-Xamarin 活頁簿會儲存在`.workbook`CommonMark 檔案具有一些頂端的中繼資料的檔案 (請參閱[活頁簿檔案類型](#Workbooks_Files_Types)如需詳細資訊可以儲存活頁簿的方式)。
+Xamarin 活頁簿會儲存在`.workbook`CommonMark 檔案具有一些頂端的中繼資料的檔案 (請參閱[活頁簿檔案類型](#workbooks-files-types)如需詳細資訊可以儲存活頁簿的方式)。
 
 ### <a name="nuget-package-support"></a>NuGet 套件支援
 
@@ -132,7 +132,7 @@ Xamarin 活頁簿中直接支援許多熱門的 NuGet 封裝。 您可以瀏覽�
 如果純文字`.workbook`0.99.3 活頁簿中開啟從其相同的目錄會參考資源的檔案或更新版本中，儲存時，它將會轉換成`.workbook`封裝。 這是在 Mac 和 Windows 上，則為 true。
 
 > [!NOTE]
-> **注意：** Windows 使用者會開啟`package.workbook\index.workbook`檔案直接，但是封裝就行為 mac 上的相同
+> Windows 使用者會開啟`package.workbook\index.workbook`檔案直接，但是封裝就行為 mac 上的相同
 
 ### <a name="archives"></a>封存
 

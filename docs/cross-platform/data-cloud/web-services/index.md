@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 48489ca7dc28dcc14a7810b15dc1ffa1fd4f7cf4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f619123fec036dfe919e977b4f218e8d235f0b82
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-web-services"></a>Web 服務簡介
 
@@ -29,8 +29,8 @@ _本指南示範如何使用不同的網頁服務技術。涵蓋的主題包括 
 使用 Xamarin.Forms 客戶，都有完整的範例使用每個這些技術[Xamarin.Forms Web 服務](~/xamarin-forms/data-cloud/index.md)文件。
 
 > [!IMPORTANT]
-> **Xamarin.iOS 附註：** iOS 9，應用程式傳輸安全性 (ATS) 會強制執行安全連線 （例如應用程式的後端伺服器） 的網際網路資源與應用程式，因此可以防止意外洩漏機密資訊。 由於 AT 預設會在 ios 9 建置的應用程式啟用時，所有連線將都會受限於 AT 安全性需求。 如果連線不符合這些需求，它們將會失敗並發生例外狀況。
-
+> IOS 9，應用程式傳輸安全性 (ATS) 會強制執行安全連線 （例如應用程式的後端伺服器） 的網際網路資源與應用程式，因此可以防止意外洩漏機密資訊。
+> 由於 AT 預設會在 ios 9 建置的應用程式啟用時，所有連線將都會受限於 AT 安全性需求。 如果連線不符合這些需求，它們將會失敗並發生例外狀況。
 
 您可以退出 AT 如果無法使用`HTTPS`通訊協定和安全的網際網路資源的通訊。 這可以藉由更新應用程式的**Info.plist**檔案。 如需詳細資訊，請參閱[應用程式的傳輸安全性](~/ios/app-fundamentals/ats.md)。
 
@@ -191,7 +191,7 @@ client.GetAsync<CustomersResponse>("",
 ```
 
 > [!IMPORTANT]
-> **注意：**工具 ServiceStack 和 RestSharp 可以輕鬆呼叫並取用 REST 服務，而可能會很重要取用 XML 或不符合標準的 JSON _DataContract_序列化慣例。 如有必要，叫用要求和處理適當的序列化使用明確 ServiceStack.Text 文件庫如下所示。
+> 雖然工具 ServiceStack 和 RestSharp 可以輕鬆呼叫並取用 REST 服務，可能會很重要取用 XML 或不符合標準的 JSON _DataContract_序列化慣例。 如有必要，叫用要求和處理適當的序列化使用明確 ServiceStack.Text 文件庫如下所示。
 
 
 <a name="Options_for_consuming_RESTful_data" />

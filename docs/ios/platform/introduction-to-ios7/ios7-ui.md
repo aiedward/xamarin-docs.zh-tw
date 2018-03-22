@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 1ad37cb4a794ac47e0e2f184a730949f14e85572
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3d70aff4df91120402e2987598b8973172b46245
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 使用者介面概觀
 
@@ -173,7 +173,7 @@ public override void ViewDidLayoutSubviews ()
 檢視已加入至階層中，因此嘗試讀取後，動態產生的位移值`TopLayoutGuide`和`BottomLayoutGuide`值`ViewDidLoad`會傳回 0。 檢視已載入後-例如，計算值`ViewDidLayoutSubviews`。
 
 > [!IMPORTANT]
-> **請注意**:`TopLayoutGuide`和`BottomLayoutGuide`改用新的安全區域配置 iOS 11 中已被取代。 Apple 已經表明使用安全的區域是 iOS 版本早於 iOS 11 相容。 如需詳細資訊，請參閱[更新您的應用程式，適用於 iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen)指南。
+> `TopLayoutGuide` 和`BottomLayoutGuide`改用新的安全區域配置 iOS 11 中已被取代。 Apple 已經表明使用安全的區域是 iOS 版本早於 iOS 11 相容。 如需詳細資訊，請參閱[更新您的應用程式，適用於 iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen)指南。
 
 #### <a name="edgesforextendedlayout"></a>EdgesForExtendedLayout
 
@@ -252,7 +252,7 @@ public override bool PrefersStatusBarHidden ()
 濃淡色彩可以套用至映像，以及當`RenderingMode`設`UIImageRenderingMode.AlwaysTemplate`。
 
 > [!IMPORTANT]
-> 注意： 濃淡的色彩不能使用設定`UIAppearance`。
+> 無法使用設定濃淡的色彩`UIAppearance`。
 
 
 ### <a name="dynamic-type"></a>動態類型

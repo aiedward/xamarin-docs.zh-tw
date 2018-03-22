@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: b970ff3570079c0e9fba10718ddcd75fbe857f2c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e400a72f4c759662e70bfecc372134f8fda05ad6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="new-user-interface-styles"></a>新的使用者介面樣式
 
@@ -101,7 +101,7 @@ Light UI 是以預設佈景主題和任何現有的 tvOS 應用程式仍會使�
 - TvOS 應用程式可以藉由覆寫處理特性集合變更`TraitCollectionDidChange`方法`UIView`或`UIViewController`類別。
 
 > [!IMPORTANT]
-> **注意：** Xamarin.tvOS 早期預覽 tvos 10 未完全支援`UIUserInterfaceStyle`如`UITraitCollection`尚未。 在未來版本中，將會加入完整的支援。
+> 未完全支援 Xamarin.tvOS 早期預覽 tvos 10`UIUserInterfaceStyle`如`UITraitCollection`尚未。 在未來版本中，將會加入完整的支援。
 
 
 
@@ -124,7 +124,7 @@ button.ForTraitCollection(dark).SetTitleColor (UIColor.White, UIControlState.Nor
 ```
 
 > [!IMPORTANT]
-> **注意：**不幸的是，未完全支援 Xamarin.tvOS 預覽 tvos 10`UIUserInterfaceStyle`如`UITraitCollection`，因此這種類型的自訂尚無法使用。 在未來版本中，將會加入完整的支援。
+> 不幸的是，未完全支援 Xamarin.tvOS 預覽 tvos 10`UIUserInterfaceStyle`如`UITraitCollection`，因此這種類型的自訂尚無法使用。 在未來版本中，將會加入完整的支援。
 
 <a name="Responding-to-Theme-Changes-Directly" />
 

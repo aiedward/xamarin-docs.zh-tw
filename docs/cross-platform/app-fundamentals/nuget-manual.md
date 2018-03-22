@@ -8,22 +8,20 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 76f35819b00302f4a586643798afbd27416d3997
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1a77dcc8ae1c698e1f1ef40757ab03558f329719
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>手動建立 Xamarin NuGet 套件
 
 _此頁面包含一些秘訣可協助您建立 Xamarin 平台為目標的 NuGet 封裝。_
 
 > [!NOTE]
-> Xamarin Studio 6.2 （與 Visual Studio for Mac） 的能力_自動_從 PCL 中，.NET 標準或共用專案中產生 NuGet 封裝。
-> 請參閱[多平台程式庫程式碼共用](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)指南以取得詳細資料。
+> Xamarin Studio 6.2 （與 Visual Studio for Mac） 的能力_自動_從 PCL 中，.NET 標準或共用專案中產生 NuGet 封裝。 請參閱[多平台程式庫程式碼共用](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)指南以取得詳細資料。
 
 ## <a name="nuget-package-xamarin-profiles"></a>NuGet 封裝 Xamarin 設定檔
-
 
 NuGet 網站[支援多個.NET Framework 版本和設定檔](https://docs.nuget.org/create/enforced-package-conventions)討論如何支援不同的 Microsoft 架構和設定檔，但不包括 Xamarin 所使用的目標架構名稱。
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/07/2017
-ms.openlocfilehash: 557521bc3bce41b9023acbf31a344a57cb63d2a1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6331912eedcd52df45c0d25d83a5b599c55ca7d2
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="sirikit"></a>SiriKit
 
@@ -146,12 +146,10 @@ public partial class IntentHandler : INExtension, IINNotebookDomainHandling
 此類別必須繼承自`INExtension`，範例會處理清單，並備忘稿對應方式，因為它也會實作`IINNotebookDomainHandling`。
 
 > [!NOTE]
-> **有關命名的附註：**有加上大寫字母介面的.NET 中是一項慣例`I`，其中 Xamarin 遵守 iOS SDK 中的繫結通訊協定時。
->
-> Xamarin 也會保留型別名稱，從 iOS 和 Apple 型別名稱中使用前兩個字元，以反映型別所屬的架構。
->
-> 如`Intents`framework 中，型別前面會加上`IN*`（例如。 `INExtension`)，但這些是_不_介面。
-> 它也會遵循 （這會成為在 C# 中的介面） 通訊協定結束具有兩個`I`s，例如`IINAddTasksIntentHandling`。
+> - 適用於.NET 介面加上大寫字母沒有慣例`I`，其中 Xamarin 遵守 iOS SDK 中的繫結通訊協定時。
+> - Xamarin 也會保留型別名稱，從 iOS 和 Apple 型別名稱中使用前兩個字元，以反映型別所屬的架構。
+> - 如`Intents`framework 中，型別前面會加上`IN*`（例如。 `INExtension`)，但這些是_不_介面。
+> - 它也會遵循 （這會成為在 C# 中的介面） 通訊協定結束具有兩個`I`s，例如`IINAddTasksIntentHandling`。
 
 #### <a name="handling-intents"></a>處理方式
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 9892577d7e0ed3d3f622f881cc51db09eb44a8fd
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7a190014abd3386a3a675d50ce6a89101d0588a7
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="social-framework"></a>社交架構
 
@@ -22,7 +22,7 @@ _社交 Framework 會提供統一的 API，來與社交網路包括 Twitter 與 
 使用社交架構可讓應用程式與社交網路從單一的應用程式開發介面互動，而不需要管理驗證。 其中包括為撰寫文章，以及可讓取用每一個社交網路應用程式開發介面透過 HTTP 的抽象提供檢視控制器的系統。
 
 > [!IMPORTANT]
-> **注意：**連線到不同的社交網路的跨平台 API，請參閱[Xamarin.Social](http://components.xamarin.com/view/xamarin.social/) Xamarin 元件存放區中的元件。
+> 連線到不同的社交網路的跨平台 API，請參閱[Xamarin.Social](http://components.xamarin.com/view/xamarin.social/) Xamarin 元件存放區中的元件。
 
 ## <a name="connecting-to-twitter"></a>連線到 Twitter
 

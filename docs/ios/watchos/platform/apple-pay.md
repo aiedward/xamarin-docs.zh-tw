@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 53c2c3e3866cb782eea0cc9514c0c35379e48b5c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 591f6f53c9e787ee9499b2a1a3cc812f7e72749a
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="apple-pay-on-watchos"></a>Apple Pay watchOS 上
 
@@ -58,7 +58,8 @@ Apple 已新增支援在應用程式付款的 watchOS 3 中，以進行的 Apple
 3. 設定所要測試應用程式中的區域。
 4. 使用其中一種測試的付款卡片，從[Apple 支付指南](https://developer.apple.com/apple-pay/)進行付款。
 
-> ⚠️ **注意：**藉由切換 iCloud 帳戶，則裝置將會自動切換到新的測試環境。 不過，Apple 仍**需要**應用程式，以測試與實際卡在生產環境之前提交至 iTunes App Store。
+> [!NOTE]
+> 藉由切換 iCloud 帳戶，則裝置將會自動切換到新的測試環境。 不過，Apple 仍**需要**應用程式，以測試與實際卡在生產環境之前提交至 iTunes App Store。
 
 ## <a name="summary"></a>總結
 

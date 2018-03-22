@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: cacefa28725973b59b7af42211e132879dadfca2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1e49c270d5836379d60f50ec72960ddc83bfbba4
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="mdocarchivetomsxdocconverterexe-not-found-rverbasecommandonrequest"></a>MDocArchiveToMsxDocConverter.exe not found rver.BaseCommand.OnRequest
 
@@ -23,9 +23,11 @@ ms.lasthandoff: 02/27/2018
 
 這個錯誤可能會出現在*Mac Server 記錄檔*Visual Studio 中：
 
-> ```Error: /Developer/MonoTouch/usr/share/doc/MonoTouch/MDocArchiveToMsxDocConverter.exe not found
-> rver.BaseCommand.OnRequest (System.Net.HttpListenerContext context, System.Object commandRequestState) [0x00000] in <filename unknown>:0
->   at Mtb.Server.Listener.OnRequest (System.Object state) [0x00000] in <filename unknown>:0```
+```
+Error: /Developer/MonoTouch/usr/share/doc/MonoTouch/MDocArchiveToMsxDocConverter.exe not found
+ rver.BaseCommand.OnRequest (System.Net.HttpListenerContext context, System.Object commandRequestState) [0x00000] in <filename unknown>:0
+  at Mtb.Server.Listener.OnRequest (System.Object state) [0x00000] in <filename unknown>:0
+```
 
 此訊息中有 2 個別問題：
 

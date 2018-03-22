@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 33e27043c3738c5213b17786e5a88fb30a7fc017
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e868c0ee71688e208c5217d9f5a89ea3acec988c
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="speech-recognition"></a>語音辨識
 
@@ -127,7 +127,7 @@ Apple，並包含可用性 API，以判斷給定的語言是否適用於在目�
 -----
 
 > [!IMPORTANT]
-> **注意：**無法提供上述其中一項`Info.plist`索引鍵 (`NSSpeechRecognitionUsageDescription`或`NSMicrophoneUsageDescription`) 可能會導致應用程式嘗試存取即時音訊麥克風或語音辨識時失敗而不發出警告。
+> 無法提供上述其中一項`Info.plist`索引鍵 (`NSSpeechRecognitionUsageDescription`或`NSMicrophoneUsageDescription`) 可能會導致應用程式嘗試存取即時音訊麥克風或語音辨識時失敗而不發出警告。
 
 
 
@@ -186,7 +186,7 @@ namespace MonkeyTalk
 A`SFSpeechRecognizerAuthorizationStatus`結果會傳回到`RequestAuthorization`可以用來採取的動作方法的回呼常式根據使用者的權限。 
 
 > [!IMPORTANT]
-> **注意：** Apple 建議等待，直到使用者已要求此權限之前需要語音辨識的應用程式中啟動動作。
+> Apple 建議等待，直到使用者已要求此權限之前需要語音辨識的應用程式中啟動動作。
 
 ### <a name="recognizing-pre-recorded-speech"></a>可預先錄製的語音辨識
 
@@ -373,7 +373,7 @@ RecognitionTask.Cancel ();
 請務必呼叫`RecognitionTask.Cancel`如果使用者取消的翻譯，以釋出記憶體和裝置的處理器。
 
 > [!IMPORTANT]
-> **注意：**無法提供`NSSpeechRecognitionUsageDescription`或`NSMicrophoneUsageDescription``Info.plist`金鑰可能會導致應用程式嘗試存取即時音訊麥克風或語音辨識時，而不發出警告失敗 (`var node = AudioEngine.InputNode;`)。 請參閱**提供使用方式描述**節，如需詳細資訊。
+> 無法提供`NSSpeechRecognitionUsageDescription`或`NSMicrophoneUsageDescription``Info.plist`金鑰可能會導致應用程式嘗試存取即時音訊麥克風或語音辨識時，而不發出警告失敗 (`var node = AudioEngine.InputNode;`)。 請參閱**提供使用方式描述**節，如需詳細資訊。
 
 ## <a name="speech-recognition-limits"></a>語音辨識限制
 

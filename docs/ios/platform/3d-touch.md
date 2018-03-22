@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d544647a2718d6b511551f4341dee51b2c68941f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c5cd2671bb66aa89117012fe394bb724f7e22e1a
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-3d-touch"></a>3D Touch 簡介
 
@@ -65,7 +65,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 `MaximumPossibleForce`屬性會傳回最大的可能值為`Force`屬性[UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/)根據 iOS 裝置上執行應用程式。
 
 > [!IMPORTANT]
-> **注意：**不足的壓力的變更會導致`TouchesMoved`會引發事件即使 X / Y 座標維持不變。 由於此項變更的行為，您的 iOS 應用程式應該做好準備`TouchesMoved`事件要叫用的頻率和 x / Y 座標，使與上次相同`TouchesMoved`呼叫。
+> 不足的壓力的變更會導致`TouchesMoved`事件引發，即使 X / Y 座標維持不變。 由於此項變更的行為，您的 iOS 應用程式應該做好準備`TouchesMoved`事件要叫用的頻率和 x / Y 座標，使與上次相同`TouchesMoved`呼叫。
 
 
 
@@ -281,7 +281,7 @@ public override void ViewDidLoad ()
 * `UIApplicationShortcutItemType` -這是字串值，我們會使用它來識別我們的應用程式中的項目。 如需詳細資訊，請參閱下一節。
 
 > [!IMPORTANT]
-> **注意：**中設定的快速動作捷徑項目`Info.plist`檔案無法以存取`Application.ShortcutItems`屬性。 它們只會在給`HandleShortcutItem`事件處理常式。 
+> 快速動作捷徑項目中設定的`Info.plist`檔案無法以存取`Application.ShortcutItems`屬性。 它們只會在給`HandleShortcutItem`事件處理常式。 
 
 
 

@@ -6,11 +6,11 @@ ms.assetid: FAED4445-9F37-46D8-B408-E694060969B9
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 3978b046a8ab4d42cbf86bf524452a033b5dbb4d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 53bc3d1a897eb007cd4c2971b0e3aa3fa01e1238
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="getting-started-with-the-xamarin-workbooks-sdk"></a>開始使用 Xamarin 活頁簿 SDK
 
@@ -160,13 +160,13 @@ nuget pack MyIntegration.nuspec
 
 簽出其他文件如需有關移動片段組成 SDK，以及我們[範例整合](~/tools/workbooks/samples/index.md)的其他項目，您可以從您的整合，例如提供執行中的自訂 JavaScript活頁簿的用戶端。
 
-[integration-type]: /api/type/Xamarin.Interactive.IAgentIntegration/
-[repman-api]: /api/type/Xamarin.Interactive.Representations.IRepresentationManager/
-[color]: /api/type/Xamarin.Interactive.Representations.Color/
-[xir]: /api/namespace/Xamarin.Interactive.Representations/
-[reppr]: /api/type/Xamarin.Interactive.Representations.RepresentationProvider/
-[prrep]: /api/member/Xamarin.Interactive.Representations.RepresentationProvider.ProvideRepresentations/p/System.Object/
+[integration-type]: https://developer.xamarin.com/api/type/Xamarin.Interactive.IAgentIntegration/
+[repman-api]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.IRepresentationManager/
+[color]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.Color/
+[xir]: https://developer.xamarin.com/api/namespace/Xamarin.Interactive.Representations/
+[reppr]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.RepresentationProvider/
+[prrep]: https://developer.xamarin.com/api/member/Xamarin.Interactive.Representations.RepresentationProvider.ProvideRepresentations/p/System.Object/
 [nugetorg]: https://nuget.org
 [nuget]: https://nuget.org/packages/Xamarin.Workbooks.Integration
-[addprovider]: /api/member/Xamarin.Interactive.Representations.IRepresentationManager.AddProvider/
+[addprovider]: https://developer.xamarin.com/api/member/Xamarin.Interactive.Representations.IRepresentationManager.AddProvider/
 [oxyplot]: http://www.oxyplot.org/

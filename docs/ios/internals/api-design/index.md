@@ -8,68 +8,72 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 8c336799a4d46359a78432837101dad43b572aea
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: c333fd18e306c50bbfd41377638470cb45954883
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="api-design"></a>應用程式開發介面設計
 
 除了核心 Mono，一部分的基底類別庫[Xamarin.iOS](http://www.xamarin.com/iOS)隨附的各種 iOS 應用程式開發介面可讓開發人員建立單聲道的原生 iOS 應用程式繫結。
 
-Xamarin.iOS 核心，橋接器與以 OBJECTIVE-C 全世界 C# 世界 interop 引擎，以及適用於 iOS 的繫結 C 為基礎的 Api 類似 CoreGraphics 和[OpenGLES](#OpenGLES)。
+Xamarin.iOS 核心，沒有橋接器的 C# 世界 Objective C 的世界中，以及繫結，適用於 iOS C 為基礎的 Api，像是 CoreGraphics interop 引擎和[OpenGL ES](#OpenGLES)。
 
-Objective C 程式碼通訊的低層級的執行階段處於[MonoTouch.ObjCRuntime](#MonoTouch.ObjCRuntime)。 在此，繫結之上[Foundation](#MonoTouch.Foundation)，CoreFoundation 和[UIKit](#MonoTouch.UIKit)所提供。
+Objective C 程式碼通訊的低層級的執行階段處於[MonoTouch.ObjCRuntime](#MonoTouch.ObjCRuntime)。 在此，繫結之上[Foundation](#MonoTouch.Foundation)，CoreFoundation，和[UIKit](#MonoTouch.UIKit)所提供。
 
 ## <a name="design-principles"></a>設計原則
 
-以下是一些的 Xamarin.iOS 繫結我們設計原則 （這些也適用於 Xamarin.Mac、 OS X 上 OBJECTIVE-C 適用的單聲道的繫結）：
+這些是一些 （它們也套用到 Xamarin.Mac，macOS 上取得 Objective C 的單聲道繫結） 我們設計原則，將 Xamarin.iOS 繫結：
 
-- 請遵循 Framework 設計方針
+- 請遵循[Framework 設計方針](https://docs.microsoft.com/dotnet/standard/design-guidelines)
 - 可讓開發人員子類別 Objective C 類別：
 
   - 衍生自現有的類別
   - 呼叫鏈結的基底建構函式
   - 覆寫方法應該使用 C# 的覆寫系統
+  - 子類別化應該使用 C# 標準建構
 
-- 子類別應該使用 C# 標準建構
 - 不會公開 Objective C 的選取器的開發人員
 - 提供機制來呼叫任意 Objective C 程式庫
-- 簡易而硬 Objective C 的工作可能使 Objective C 的一般工作
+- 簡單和固定 Objective C 的工作可能使 Objective C 的一般工作
 - 將 OBJECTIVE-C 屬性公開為 C# 屬性
-- 強類型的應用程式開發介面公開 （expose):
-- 提升類型安全
-- 最小化執行階段錯誤
-- 傳回型別可以使用 IDE intellisense
-- 允許快顯 IDE 的文件
+- 公開強類型的 API:
+
+  - 提升類型安全
+  - 最小化執行階段錯誤
+  - 傳回型別可以使用 IDE IntelliSense
+  - 允許快顯 IDE 的文件
+
 - 鼓勵 IDE 中瀏覽的 Api:
+
+  - 例如，而不是公開的弱式類型的陣列像這樣：
+    
+    ```objc
+    NSArray *getViews
+    ```
+    會公開為強式型別，就像這樣：
+    
+    ```csharp
+    NSView [] Views { get; set; }
+    ```
+    
+    這可讓 Visual Studio for Mac 瀏覽 API 時不要自動完成，但是所有`System.Array`上傳回的值，可用的作業，並允許參與 LINQ 將傳回值。
+
 - 原生 C# 類型：
 
-    - 範例： 而非公開弱型別陣列，像這樣：
-        ```
-        NSArray *getViews
-        ```
-        我們已公開它們使用強式類型，就像這樣：
-    
-        ```
-        NSView [] Views { get; set; }
-        ```
-    
-    這可讓 Visual Studio for Mac 瀏覽 API 時不要自動完成，也可讓所有`System.Array`可在傳回的值上的作業，並允許參與 LINQ 將傳回值
+  - [`NSString` 會變成 `string`](~/ios/internals/api-design/nsstring.md)
+  - 開啟`int`和`uint`參數應該已列舉成 C# 列舉型別和 C# 列舉型別與`[Flags]`屬性
+  - 而不是型別中性`NSArray`物件，公開為強型別陣列的陣列。
+  - 事件與通知，讓使用者可以選擇：
 
-- [NSString 會變成字串](~/ios/internals/api-design/nsstring.md)
-- 開啟 int 和 uint 應該已被列舉為 C# 列舉型別和 C# 列舉型別具有 [Flags] 屬性的參數
-- 而不是型別中性 NSArray 物件將公開為強類型陣列的陣列。
-- 事件與通知，讓使用者可以選擇：
-
-    - 強類型的版本是預設值
-    - 弱型別的的版本進階使用案例
+    - 預設為強型別版本
+    - 弱型別版本進階的使用案例
 
 - 支援 OBJECTIVE-C 委派模式：
 
     - C# 事件系統
-    - 公開給 Objective C 應用程式開發介面的 C# 委派 (lambda，匿名方法和 System.Delegate) 為 「 區塊 」
+    - 公開 （expose) C# 委派 (lambda、 匿名方法，和`System.Delegate`) 為區塊 OBJECTIVE-C api
 
 ### <a name="assemblies"></a>組件
 

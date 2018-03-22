@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 4a3450026eff06555723b16093c7a0daf3d12ae7
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 774d6e6ecdb081650c6f008b1ac83c397f788d5b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="programmatic-layout-constraints"></a>以程式設計方式配置條件約束
 
@@ -43,7 +43,7 @@ _本指南提供使用 iOS 自動配置條件約束而不是 iOS 設計工具中
 使用`NSLayoutAnchor`類別，您有 fluent 應用程式開發介面來建立錨點屬性，為限制的 UI 項目所根據的條件約束。 例如，檢視控制站的上方和下方版面配置輔助線公開`TopAnchor`，`BottomAnchor`和`HeightAnchor`錨定屬性，而檢視會公開邊緣、 中央、 大小和基準內容。
 
 > [!IMPORTANT]
-> **注意：**錨點屬性的標準集，除了 iOS 檢視也包括`LayoutMarginsGuides`和`ReadableContentGuide`屬性。 這些屬性會公開`UILayoutGuide`工作與檢視的邊界、 可讀性更高的物件分別內容輔助線。
+> 除了標準的錨點屬性集，iOS 檢視也包括`LayoutMarginsGuides`和`ReadableContentGuide`屬性。 這些屬性會公開`UILayoutGuide`工作與檢視的邊界、 可讀性更高的物件分別內容輔助線。
 
 版面配置起點提供容易閱讀、 精簡的格式建立條件約束的幾種方法：
 

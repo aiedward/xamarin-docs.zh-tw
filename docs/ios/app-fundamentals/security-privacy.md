@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 4747fb73358a60d10832a1e650acd90a5a4274d1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5e4bbc22403c6c0bfa5c8dc7ac4e3a39545051d4
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS 的安全性和隱私權功能
 
@@ -44,7 +44,7 @@ Apple 已進行數個增強功能的安全性和隱私權中 iOS 10 （和大於
 10 （或更新版本） 在 iOS 上執行的應用程式必須以靜態方式宣告其輸入中的一個或多個隱私權索引鍵來存取特定功能或使用者資訊的意圖其`Info.plist`解釋為什麼應用程式想要存取的使用者的檔案。
 
 > [!IMPORTANT]
-> **請注意**提供必要的金鑰將會以無訊息方式終止系統當他們嘗試存取其中一個受限制的功能或使用者資訊時失敗的應用程式_無誤_！ 如果應用程式啟動時意外失敗 10 在 iOS 上，確保所有必要`Info.plist`尚未指定。
+> 提供必要的金鑰將會以無訊息方式終止系統當他們嘗試存取其中一個受限制的功能或使用者資訊時失敗的應用程式_無誤_！ 如果應用程式啟動時意外失敗 10 在 iOS 上，確保所有必要`Info.plist`尚未指定。
 
 下列隱私權相關的索引鍵是可用：
 
@@ -109,7 +109,7 @@ Xamarin.iOS for Visual Studio 目前不支援編輯的安全性增強功能`Info
 -----
 
 > [!IMPORTANT]
-> **注意：**在範例中指定以上版本，無法設定`NSHomeKitUsageDescription`中的索引鍵`Info.plist`檔案會導致應用程式_以無訊息模式失敗_（正在關閉由系統在執行階段） 不會發生錯誤時 iOS 10 中執行 （或更高）。
+> 在範例中指定以上版本，無法設定`NSHomeKitUsageDescription`中的索引鍵`Info.plist`檔案會導致應用程式_以無訊息模式失敗_（正在關閉由系統在執行階段） 不會發生錯誤時 iOS （大於或等於 10） 中執行。
 
 <a name="Summary" />
 

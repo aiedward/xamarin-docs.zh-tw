@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b53f98206c100ed76f601937844bf182a6dc146c
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 8d7c942e0be52ed12fc20bc838e693af81dd989f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="using-adonet"></a>使用 ADO.NET
 
@@ -43,7 +43,7 @@ Xamarin 可 SQLite 資料庫，可在 iOS 上，使用熟悉的 ADO.NET 類似�
     `Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);`
 
     > [!NOTE]
-> **注意：** dbPath 變數應該根據這份文件稍早所述的規則決定。
+    > `dbPath`變數應該根據這份文件稍早所述的規則決定。
 
 2. **建立資料庫連接**-SQLite 資料庫檔案建立後，您可以建立連線物件來存取資料。 連接的連接字串，它使用的格式，建構`Data Source=file_path`，如下所示：
 

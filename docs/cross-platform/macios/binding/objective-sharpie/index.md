@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: bcb7be862537a002e5a80462702ed1f2f8497cda
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 08796d38301ba9c6ae15c3ddfe700b1cd2166ace
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="objective-sharpie"></a>目標 Sharpie
 
@@ -34,17 +34,13 @@ _本節提供目標 Sharpie，用來自動化的程序建立繫結到 Objective 
 目標 Sharpie 使用 Clang 剖析標頭檔，因此繫結是為完全相符和徹底越好。 這可以顯著降低的時間和產生品質繫結所需的投入時間。
 
 > [!IMPORTANT]
-> **警告：**目標 Sharpie 是有經驗的 Xamarin 開發人員了解 OBJECTIVE-C （而且藉由擴充，C） 的進階的工具。 然後再嘗試將繫結 Objective C 程式庫中，您應該具備如何建立命令列 （以及充分了解原生程式庫的運作方式） 的原生程式庫的實心知識。
-
-
+> 目標 Sharpie 是有經驗的 Xamarin 開發人員了解 OBJECTIVE-C （而且藉由擴充，C） 的進階工具。 然後再嘗試將繫結 Objective C 程式庫中，您應該具備如何建立命令列 （以及充分了解原生程式庫的運作方式） 的原生程式庫的實心知識。
 
 ## <a name="history"></a>歷程
 
 我們已進化並目標 Sharpie 內部在使用 Xamarin 過去三年。 目標 Sharpie 冪的建築，Api Xamarin.iOS 和 Xamarin.Mac 中導入自 iOS 8、 Mac OS X 10.10，和 watchOS 2.0 所需目標 Sharpie 完全使用啟動載入。 Xamarin 高度依賴目標 Sharpie 在內部建立自己的產品。
 
 不過，目標 Sharpie 是非常進階的工具，需要進階的知識 Objective C 和 C、 如何在命令列上使用 clang 編譯器和通常如何原生程式庫會放在一起。 由於高列中，我們認為需要 GUI 精靈設定錯誤的預期，而且，目標 Sharpie 目前只可做為命令列工具。
-
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 67635b6a04579246467184cdff8d9f277b36ecc4
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 0c1253391673e48f81c12b80719db485d276013d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="understanding-sirikit-concepts"></a>了解 SiriKit 概念
 
@@ -274,7 +274,7 @@ Apple 已設計，以實現自然流暢交談與使用者，而這是因為 Siri
 有一些情況下，應用程式可以在其中取代 Siri 顯示給使用者，根據預設，例如訊息或對應所在應用程式時，可以使用其中一個量身訂做的應用程式取代預設經驗的資訊。
 
 > [!IMPORTANT]
-> **注意：**雖然您可以加入互動式項目，例如`UIButtons`或`UITextFields`意圖 UI 延伸模組來`UIViewController`這些嚴格禁止做為在非互動意圖 UI，使用者無法互動使用它們。
+> 雖然您可以加入互動式項目，例如`UIButtons`或`UITextFields`意圖 UI 延伸模組來`UIViewController`這些嚴格禁止做為在非互動意圖 UI，使用者不能與之互動。
 
 它是完全選擇性的應用程式提供意圖 UI 延伸模組，因為 Siri 包含一組預設的 UI 每一種意圖類型。 此外，對應方式 UI 介面只有會提供針對特定目的 Apple 已視為很有幫助使用者。
 
@@ -320,7 +320,7 @@ Apple 已設計，以實現自然流暢交談與使用者，而這是因為 Siri
 更重要的是，應用程式_必須_刪除資訊 Siri 詞彙的立即因為如果這些檔案刪除的資訊，但 Siri 仍已辨識其小時或天後，無法成為干擾使用者。
 
 > [!IMPORTANT]
-> **注意：**應用程式應該移除所有的使用者特定詞彙 Siri 如果使用者選擇重設應用程式，或如果他們登出。
+> 應用程式應該移除所有的使用者特定詞彙 Siri 如果使用者選擇重設應用程式，或如果他們登出。
 
 ## <a name="sirikit-permissions"></a>SiriKit 權限
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: fc9765b3f6a77f47fdce32dbc3805dd7bd70a08a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7b3a7a2347ed93aff5cddc6f15e25028c61a53d8
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-tab-bar-controller"></a>使用索引標籤列的控制站
 
@@ -113,7 +113,7 @@ Xamarin.tvOS 應用程式中使用的索引標籤列的最簡單方式是將它�
 -----
 
 > [!IMPORTANT]
-> **注意：**雖然可以指派事件，例如`TouchUpInside`UI 項目 (例如`UIButton`) 在 iOS 設計工具中，它會永遠不會呼叫因為 Apple TV 沒有觸控螢幕或支援觸控事件。 您應該一律使用`Primary Action `事件時建立事件處理常式 tvos 使用者介面項目。
+> 雖然您可以指派事件，例如`TouchUpInside`UI 項目 (例如`UIButton`) 中的 iOS 設計工具中，它會永遠不會呼叫因為 Apple TV 沒有觸控螢幕或支援觸控事件。 您應該一律使用`Primary Action `事件時建立事件處理常式 tvos 使用者介面項目。
 
 如需使用分鏡腳本的詳細資訊，請參閱我們[Hello，tvOS 快速入門指南](~/ios/tvos/get-started/hello-tvos.md)。 
 

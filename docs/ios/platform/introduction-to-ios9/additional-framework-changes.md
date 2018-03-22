@@ -7,11 +7,11 @@ ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 773df1eec7c8694143ad6c31044ce281c1265282
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 5053d8d0cf9c1c3e6d3282ee8d6e42448e733c2c
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>其他 iOS 9 架構變更
 
@@ -53,7 +53,7 @@ CloudKit 架構來簡化應用程式的開發該存取 icloud 的功能。 這�
 新_CloudKit Web 服務_framework 提供的 JavaScript 程式庫 (CloudKit JS)，可以併入您的網站以提供存取相同的 CloudKit 基礎資料和與您 Xamarin.iOS 應用程式的內容。
 
 > [!IMPORTANT]
-> **注意：**可以存取、 呈現或更新內容，從使用 CloudKit JS CloudKit 資料庫之前，您必須擁有先前定義的資料庫結構描述。
+> 您可以存取、 呈現或更新內容，從使用 CloudKit JS CloudKit 資料庫之前，您必須是先前定義定義該資料庫的結構描述。
 
 
 

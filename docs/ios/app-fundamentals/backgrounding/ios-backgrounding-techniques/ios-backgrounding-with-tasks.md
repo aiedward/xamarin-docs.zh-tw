@@ -6,11 +6,11 @@ ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 5e05cf0f13512478b3957070e7fa6329ea84337f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ad75dfac55add7e03ffbdb910e0e62ebd0fd6c18
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS Backgrounding 與工作
 
@@ -43,7 +43,7 @@ UIApplication.SharedApplication.EndBackgroundTask(taskID);
 註冊程序組的唯一識別碼，與工作`taskID`，並再將它包裝在比對中`BeginBackgroundTask`和`EndBackgroundTask`呼叫。 若要產生的識別碼，我們對進行呼叫`BeginBackgroundTask`方法`UIApplication`物件，並通常是新的執行緒上啟動 「 長時間執行工作。 當工作完成時，我們稱之為`EndBackgroundTask`並傳入相同的識別項。 這是很重要，因為 iOS 會終止該應用程式，如果`BeginBackgroundTask`呼叫不含相符`EndBackgroundTask`。
 
 > [!IMPORTANT]
-> **請注意**： 安全背景工作可以在主執行緒或根據應用程式的需求而定，背景執行緒上執行。
+> 安全背景工作可以在主執行緒或根據應用程式的需求而定，背景執行緒上執行。
 
 
 ## <a name="performing-tasks-during-didenterbackground"></a>DidEnterBackground 期間執行工作
@@ -65,7 +65,7 @@ public override void DidEnterBackground (UIApplication application) {
 我們藉由覆寫開始`DidEnterBackground`方法中的`AppDelegate`，其中我們註冊我們的工作，透過`BeginBackgroundTask`可以如同我們在先前的範例。 接下來，我們會產生新的執行緒，並執行我們的長時間執行工作。 請注意，`EndBackgroundTask`現在從進行呼叫，在長時間執行的工作，因為`DidEnterBackground`都已傳回方法。
 
 > [!IMPORTANT]
-> **請注意**: iOS 使用[監視機制](http://developer.apple.com/library/ios/qa/qa1693/_index.html)以確保應用程式的 UI 保持回應。 應用程式於花費太多時間在`DidEnterBackground`將不會回應在 UI 中。 無法關閉在背景中執行的工作可讓`DidEnterBackground`傳回及時，讓 UI 保持回應，並防止監視終止應用程式。
+> 使用 iOS[監視機制](http://developer.apple.com/library/ios/qa/qa1693/_index.html)以確保應用程式的 UI 保持回應。 應用程式於花費太多時間在`DidEnterBackground`將不會回應在 UI 中。 無法關閉在背景中執行的工作可讓`DidEnterBackground`傳回及時，讓 UI 保持回應，並防止監視終止應用程式。
 
 
 ## <a name="handling-background-task-time-limits"></a>處理背景工作時間限制
@@ -153,7 +153,7 @@ else {
 ```
 
 > [!IMPORTANT]
-> **請注意**： 避免對更新 UI 的背景中 iOS 6 相容的程式碼，從 iOS 6 不支援背景 UI 更新，而且將會終止該應用程式進行呼叫。
+> 請避免對更新 UI 的背景中 iOS 6 相容的程式碼，從 iOS 6 不支援背景 UI 更新，而且將會終止該應用程式進行呼叫。
 
 
 `NSURLSession`應用程式開發介面包含一組豐富的功能，可處理驗證、 管理失敗的傳輸，以及報告用戶端-但沒有伺服器端的錯誤。 它可協助的橋接器在工作中斷執行 iOS 7，導入的時間，並也提供支援快速且可靠地傳送大型檔案。 下一節探討此第二個功能。

@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: dab1f5d571473fbbdb12ef78eed3788165c3f0a6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 82f85808da6776f2f718b21b2e87ff6d4d8087fd
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-the-parent-application"></a>使用父應用程式
 
 _IOS 和監看式 watchOS 1 應用程式之間共用的資料_
 
 > [!IMPORTANT]
-> **注意：**存取父應用程式使用下列範例只適用於 watchOS 1 監看式應用程式。
+> 存取父應用程式使用下列範例只適用於 watchOS 1 監看式應用程式。
 
 
 有不同的方式來監看式應用程式和其隨附的 iOS 應用程式之間進行通訊：

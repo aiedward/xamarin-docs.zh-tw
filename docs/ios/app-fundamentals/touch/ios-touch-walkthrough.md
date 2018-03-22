@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c806eb51be5f585f2c94b438f6ca31a70aaa7551
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 04c7a7235665e14fd128a3a70951168c1914c112
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="walkthrough--using-touch-in-ios"></a>逐步解說： 在 iOS 中使用觸控
 
@@ -92,12 +92,12 @@ ms.lasthandoff: 03/09/2018
         }
     }
     ```
+    
     這個方法的運作方式是檢查`UITouch`物件，以及如果它存在執行根據觸控發生某些動作：
 
     * _內部 TouchImage_ –: 將文字顯示`Touches Began`標籤和變更映像中。
     * _內部 DoubleTouchImage_ – 變更如果軌跡點兩下顯示的影像。
     * _內部 DragImage_ – 設定旗標，指出已啟動觸控。 此方法`TouchesMoved`會使用這個旗標來判斷是否`DragImage`應在螢幕上移動，或不是下, 一個步驟中，我們應該看到。
-
 
     上述程式碼只會處理個別的工作，不仍有任何行為如果使用者在螢幕上移動他們手指。 若要回應移動，實作`TouchesMoved`如下列程式碼所示：
 
@@ -192,7 +192,7 @@ ms.lasthandoff: 03/09/2018
 
 1. 編輯檔案**GestureViewController.cs**並加入下列的執行個體變數：
 
-    ```chsarp
+    ```csharp
     #region Private Variables
     private bool imageHighlighted = false;
     private RectangleF originalImageFrame = RectangleF.Empty;
@@ -204,7 +204,7 @@ ms.lasthandoff: 03/09/2018
 
 1. 將下列方法加入至控制器：
 
-    ```chsarp
+    ```csharp
     private void WireUpDragGestureRecognizer()
     {
         // Create a new tap gesture
@@ -223,7 +223,7 @@ ms.lasthandoff: 03/09/2018
 
 1. 若要實作 HandleDrag，加入下列程式碼控制站：
 
-    ```chsarp
+    ```csharp
     private void HandleDrag(UIPanGestureRecognizer recognizer)
     {
         // If it's just began, cache the location of the image
@@ -250,7 +250,7 @@ ms.lasthandoff: 03/09/2018
 
 1. 新增`UITapGestureRecognizer`此舉會變更 DoubleTouchImage 中所顯示的影像。 將下列方法加入`GestureViewController`控制器：
 
-    ```chsarp
+    ```csharp
     private void WireUpTapGestureRecognizer()
     {
         // Create a new tap gesture
@@ -286,7 +286,7 @@ ms.lasthandoff: 03/09/2018
 
 1. 我們要做的最後一件事就是修改`ViewDidLoad`使它呼叫我們剛才加入的方法。 變更 ViewDidLoad，因此看起來會類似下列程式碼：
 
-    ```chsarp
+    ```csharp
     public override void ViewDidLoad()
     {
         base.ViewDidLoad();
@@ -324,7 +324,7 @@ ms.lasthandoff: 03/09/2018
 
 1. 將新類別加入名為的專案`CheckmarkGestureRecognizer`，並使其看起來像下列程式碼：
 
-    ```chsarp
+    ```csharp
     using System;
     using CoreGraphics;
     using Foundation;
@@ -444,7 +444,7 @@ ms.lasthandoff: 03/09/2018
 
 1. 既然我們已經定義了自訂的筆勢辨識器 (`CheckmarkGestureRecognizer`) 編輯**CustomGestureViewController.cs**檔案，然後加入下列兩個執行個體變數：
 
-    ```chsarp
+    ```csharp
     #region Private Variables
     private bool isChecked = false;
     private CheckmarkGestureRecognizer checkmarkGesture;
@@ -453,7 +453,7 @@ ms.lasthandoff: 03/09/2018
 
 1. 具現化及設定我們的筆勢辨識器，將下列方法加入至控制器：
 
-    ```chsarp
+    ```csharp
     private void WireUpCheckmarkGestureRecognizer()
     {
         // Create the recognizer
@@ -482,7 +482,7 @@ ms.lasthandoff: 03/09/2018
 
 1. 編輯`ViewDidLoad`使它呼叫`WireUpCheckmarkGestureRecognizer`，如下列程式碼片段所示：
 
-    ```chsarp
+    ```csharp
     public override void ViewDidLoad()
     {
         base.ViewDidLoad();

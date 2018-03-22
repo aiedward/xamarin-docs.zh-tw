@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 5e44635c9dfbe9fa069272f50d035476bd1aa6b9
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: f11305fcbf8a5b9bf6552fa31ecfa1c0e8e7a68f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="manual-camera-controls"></a>手動攝影機控制項
 
@@ -881,7 +881,7 @@ iOS 7 及更新版本所提供的下列現有的白平衡控制項透過`WhiteBa
 使用`CaptureDevice.GetTemperatureAndTintValues`和`CaptureDevice.GetDeviceWhiteBalanceGains`溫度和濃淡、 色度和 RGB 之間進行轉換的方法取得色彩空間。
 
 > [!NOTE]
-> **請注意**： 轉換常式會比較準確，要轉換的值越接近 Planckian Locus。
+> 要轉換的值越接近 Planckian Locus 轉換常式是更精確。
 
 
 

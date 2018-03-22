@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/07/2016
-ms.openlocfilehash: be005f62c914fe5f59696c5ef9b608a73a45d269
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 348f84533974d1434dd0c7e5045c20e16b57057b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="deprecated-notification-technologies"></a>已被取代的通知技術
 
 本節說明如何實作本機及 Xamarin.iOS 中的推送通知。 它會說明 iOS 通知的各種 UI 項目，並討論應用程式開發介面的涉及建立和顯示通知。
 
 > [!IMPORTANT]
-> **注意：**本節中的資訊屬於 iOS 9 及之前，它已保留這裡以支援較舊 iOS 版本。 適用於 iOS 10 和更新版本，請參閱[使用者通知架構指南](~/ios/platform/user-notifications/index.md)支援 iOS 裝置上的本機和遠端的通知。
+> 本節中的資訊屬於 iOS 9 及之前，它已保留這裡以支援較舊 iOS 版本。 適用於 iOS 10 和更新版本，請參閱[使用者通知架構指南](~/ios/platform/user-notifications/index.md)支援 iOS 裝置上的本機和遠端的通知。
 
 
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 02/27/2018
 
 <a name="Local Notifications Walkthrough" />
 
-##  <a name="walkthrough---using-local-notifications-in-xamarinioslocal-notifications-in-ios-walkthroughmd"></a>[逐步解說-Xamarin.iOS 中使用本機的通知](local-notifications-in-ios-walkthrough.md)
+##  <a name="walkthrough---using-local-notifications-in-xamarinioslocal-notifications-in-ios-walkthroughmd"></a>[逐步解說 - 在 Xamarin.iOS 中使用本機通知](local-notifications-in-ios-walkthrough.md)
 
 這一節會詳細介紹如何 Xamarin.iOS 應用程式中使用本機的通知。 它會示範如何建立和發佈通知，就會出現警示時的應用程式所收到的基本概念。
 

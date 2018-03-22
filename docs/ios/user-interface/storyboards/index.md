@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: a0b0ca9857e706a9a84f1c661f7f6ff294e112c1
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 85c05145ce2490468ac5d5fb9b8524853d46a9e3
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-storyboards"></a>分鏡腳本的簡介
 
@@ -60,7 +60,7 @@ A *Segue*，或*話題物件*，iOS 開發中用來代表場景之間的轉換�
 [![](images/16new.png "動作話題下拉式清單的大小類別")](images/16new.png#lightbox)
 
 > [!IMPORTANT]
-> **注意：** ctrl 如果您使用 VMWare 的 Windows 虛擬機器，對應為_以滑鼠右鍵按一下_預設滑鼠按鈕。 若要建立 Segue，編輯您的鍵盤喜好設定，透過**喜好設定** > **鍵盤及滑鼠** > **滑鼠捷徑**再重新對應程式**次要按鈕**如下所示：
+> 如果您使用 VMWare 的 Windows 虛擬機器，對應為 ctrl_以滑鼠右鍵按一下_預設滑鼠按鈕。 若要建立 Segue，編輯您的鍵盤喜好設定，透過**喜好設定** > **鍵盤及滑鼠** > **滑鼠捷徑**再重新對應程式**次要按鈕**如下所示：
 > 
 > [![](images/image22.png "鍵盤和滑鼠的喜好設定")](images/image22.png#lightbox)
 > 

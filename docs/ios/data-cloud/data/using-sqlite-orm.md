@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/18/2018
-ms.openlocfilehash: 2b29826f1a7acc6bb8dcd0594c69a5cb7ff6db42
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: b161519bb6fecd31d54690af7c44772c0752f1f6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="using-sqlitenet"></a>使用 SQLite.NET
 
@@ -167,7 +167,7 @@ foreach (var s in stocksStartingWithA) {
 ```
 
 > [!IMPORTANT]
-> **請注意**： 當您建立的相依性的資料表和在資料庫中，從您的類別和其屬性已產生的資料行名稱直接撰寫 SQL 陳述式。 如果您變更這些名稱在程式碼中您必須記得更新任何手動撰寫的 SQL 陳述式。
+> 直接撰寫 SQL 陳述式時您可以建立相依性的資料表和資料行在資料庫中，從您的類別和其屬性已產生的名稱。 如果您變更這些名稱在程式碼中您必須記得更新任何手動撰寫的 SQL 陳述式。
 
 ### <a name="deleting-an-object"></a>刪除物件
 

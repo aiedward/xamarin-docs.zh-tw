@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 15f649440b2a855189acff33afcef5e8272a0769
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e7252aa89e2514653fc730c7221d22cc053d2e24
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-proactive-suggestions"></a>主動式建議簡介
 
@@ -68,7 +68,7 @@ UIKit 已展開於 iOS 包含 10 [TextContentType](https://developer.apple.com/r
 如果應用程式只支援騎共用，會從系統建議*> 的 < 取得，以及到...*，如果支援其他類型的路由 （例如 Walking 或自行車） 的方向，系統會使用*> 的 < 取得指示...*
 
 > [!IMPORTANT]
-> **注意：** [MKMapItem](https://developer.xamarin.com/api/type/MapKit.MKMapItem/)應用程式收到的物件可能不包含經度和緯度的資訊，因此將需要地理編碼。
+> [MKMapItem](https://developer.xamarin.com/api/type/MapKit.MKMapItem/)應用程式收到的物件可能不包含經度和緯度的資訊，因此將需要地理編碼。
 
 ## <a name="implementing-proactive-suggestions"></a>實作主動式建議
 

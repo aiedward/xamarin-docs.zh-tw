@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d53dea1a46c6b42f901beb217eb00b3a3fa0fd92
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 24fc64d1bd04cb1ebefb9bf9a359efb395b45074
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>在程式碼中建立 iOS 使用者介面
 
@@ -620,7 +620,7 @@ Apple 建議.xib 或分鏡腳本檔案的用途為目標 iOS 8 應用程式，�
 - [管理與分鏡腳本的啟動螢幕](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 > [!IMPORTANT]
-> **注意：**從 iOS 9，開始 Apple 建議分鏡腳本應該當做建立啟動螢幕的主要方法。
+> 從 iOS 9，開始 Apple 建議分鏡腳本應該當做建立啟動螢幕的主要方法。
 
 ### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>建立啟動映像前 ios 8 的應用程式
 
@@ -629,7 +629,7 @@ Apple 建議.xib 或分鏡腳本檔案的用途為目標 iOS 8 應用程式，�
 Info.plist 檔案，或在您的應用程式 （適用於 iOS 7) 的資產目錄，可以設定此靜態影像。 您必須為應用程式可能會在每個裝置大小 320 x 480、 640 x 960 （640 x 1136） 提供不同的映像。 如需有關啟動螢幕大小的詳細資訊，請檢視[啟動畫面影像](~/ios/app-fundamentals/images-icons/launch-screens.md)指南。
 
 > [!IMPORTANT]
-> **注意：**應用程式有沒有啟動螢幕，您可能會發現它並不完全符合螢幕。 如果這種情況，您應該確定至少，包含名為 640 x 1136 映像`Default-568@2x.png`程式 Info.plist 至。 
+> 如果您的應用程式有沒有啟動螢幕，您可能會發現它並不完全符合螢幕。 如果這種情況，您應該確定至少，包含名為 640 x 1136 映像`Default-568@2x.png`程式 Info.plist 至。 
 
 
 

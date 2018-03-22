@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: a5dbd65cc32ed63c0fa6f8abe3a13ffee4e9df63
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 50553cb1dc5f7ea782c0f13e32f60d7b6ce3e181
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="enhanced-user-notifications"></a>加強的使用者通知
 
@@ -558,7 +558,7 @@ namespace MonkeyNotification
 -----
 
 > [!IMPORTANT]
-> 注意： 服務延伸的配套識別碼應符合主應用程式配套識別碼`.appnameserviceextension`附加至結尾。 例如，如果主應用程式套件組合識別碼`com.xamarin.monkeynotify`，服務延伸模組都應該有的配套識別碼`com.xamarin.monkeynotify.monkeynotifyserviceextension`。 這應該會自動設定當延伸項目新增至方案。 
+> 服務延伸的配套識別碼應符合主應用程式配套識別碼`.appnameserviceextension`附加至結尾。 例如，如果主應用程式套件組合識別碼`com.xamarin.monkeynotify`，服務延伸模組都應該有的配套識別碼`com.xamarin.monkeynotify.monkeynotifyserviceextension`。 這應該會自動設定當延伸項目新增至方案。 
 
 在需要修改，以提供必要的功能通知服務延伸模組沒有一個主要類別。 例如: 
 

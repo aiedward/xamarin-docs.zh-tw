@@ -7,12 +7,12 @@ ms.assetid: C2BA2705-9B20-01C2-468D-860BDFEDC157
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 2d5a83b9f6278406e9b643277357df253f5fd524
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/21/2018
+ms.openlocfilehash: 4225e45ecfe4a4a2cdb7e75b94823fc8fcd29fc4
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="listview"></a>ListView
 
@@ -56,10 +56,10 @@ _ListView 是重要的 UI 元件的 Android 應用程式它用於所有位置的
 
 此檔案會定義每個項目會放在配置[ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/)。
 
-開啟`HelloListView.cs`並使該類別成為擴充[ `ListActivity` ](https://developer.xamarin.com/api/type/Android.App.ListActivity/) (而不是[ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/)):
+開啟`MainActivity.cs`並修改類別來擴充[ `ListActivity` ](https://developer.xamarin.com/api/type/Android.App.ListActivity/) (而不是[ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/)):
 
 ```csharp
-public class HelloListView : ListActivity
+public class MainActivity : ListActivity
 {
 ```
 
@@ -74,9 +74,9 @@ protected override void OnCreate (Bundle bundle)
 
     ListView.TextFilterEnabled = true;
 
-    ListView.ItemClick += delegate (object sender, ItemEventArgs args) {
-        // When clicked, show a toast with the TextView text
-        Toast.MakeText (Application, ((TextView)args.View).Text, ToastLength.Short).Show ();
+    ListView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
+    {
+        Toast.MakeText(Application, ((TextView)args.View).Text, ToastLength.Short).Show();
     };
 }
 ```
@@ -93,7 +93,12 @@ protected override void OnCreate (Bundle bundle)
 您可以使用而不是定義您自己的配置檔案。 平台所提供的清單項目設計[ `ListAdapter` ](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/)。
 例如，請嘗試使用`Android.Resource.Layout.SimpleListItem1`而不是`Resource.Layout.list_item`。
 
-之後[ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))方法，將字串陣列：
+加入下列`using`陳述式：
+
+```csharp
+using System;
+```
+接下來，加入下列的字串陣列的成員身分`MainActivity`:
 
 ```csharp
 static readonly string[] countries = new String[] {
@@ -145,22 +150,23 @@ static readonly string[] countries = new String[] {
 
 執行應用程式。 您可以捲動清單，或輸入以篩選，然後按一下以查看訊息的項目。 您應該會看到類似下面的內容：
 
-[![範例的螢幕擷取畫面 ListView 國家 （地區） 名稱](images/helloviews6.png)](images/helloviews6.png#lightbox)
+[![範例的螢幕擷取畫面 ListView 國家 （地區） 名稱](images/01-listview-example-sml.png)](images/01-listview-example.png#lightbox)
 
 請注意，使用硬式編碼的字串陣列不是最佳的設計作法。 使用其中一種是在為了簡單起見，本教學課程示範[ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/) widget。 更好的作法是為參考外部資源，例如由包含所定義的字串陣列`string-array`專案中的資源**Resources/Values/Strings.xml**檔案。 例如: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="countries_array">
-        <item>Bahrain</item>
-        <item>Bangladesh</item>
-        <item>Barbados</item>
-        <item>Belarus</item>
-        <item>Belgium</item>
-        <item>Belize</item>
-        <item>Benin</item>
-    </string-array>
+  <string name="app_name">HelloListView</string>
+  <string-array name="countries_array">
+    <item>Bahrain</item>
+    <item>Bangladesh</item>
+    <item>Barbados</item>
+    <item>Belarus</item>
+    <item>Belgium</item>
+    <item>Belize</item>
+    <item>Benin</item>
+  </string-array>
 </resources>
 ```
 
@@ -170,6 +176,9 @@ static readonly string[] countries = new String[] {
 string[] countries = Resources.GetStringArray (Resource.Array.countries_array);
 ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countries);
 ```
+執行應用程式。 您應該會看到類似下面的內容：
+
+[![範例的螢幕擷取畫面 ListView 與較小的名稱清單](images/02-smaller-example-sml.png)](images/02-smaller-example.png#lightbox)
 
 
 ## <a name="going-further-with-listview"></a>繼續進行的 ListView

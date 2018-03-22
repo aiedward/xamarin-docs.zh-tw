@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: ea51dc2c7dadc5cc430df990c9ce79eac6e941da
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 02116e8e11cb6ff050e2c885338777e1fd25c4cb
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="homekit"></a>HomeKit
 
@@ -77,7 +77,7 @@ HomeKit 會組織成首頁集合某一特定位置中的所有自動化裝置。
 這些設定，應用程式現在已準備好存取 HomeKit 架構應用程式開發介面。 如需佈建的詳細資訊，請參閱我們[裝置佈建](~/ios/get-started/installation/device-provisioning/index.md)和[佈建您的應用程式](~/ios/get-started/installation/device-provisioning/index.md)輔助線。
 
 > [!IMPORTANT]
-> **注意：**測試 HomeKit 啟用應用程式開發需要正確佈建真正的 iOS 裝置。 無法從 iOS 模擬器中測試 HomeKit。
+> 測試 HomeKit 啟用應用程式開發需要正確佈建真正的 iOS 裝置。 無法從 iOS 模擬器中測試 HomeKit。
 
 ## <a name="the-homekit-accessory-simulator"></a>HomeKit 附屬應用程式模擬器
 
@@ -143,7 +143,7 @@ IOS 10 的新功能 （和更高），開發人員必須加入`NSHomeKitUsageDes
 6. 將變更儲存到檔案。
 
 > [!IMPORTANT]
-> **注意：**無法設定`NSHomeKitUsageDescription`中的索引鍵`Info.plist`檔案將會導致應用程式_以無訊息模式失敗_（正在關閉由系統在執行階段） 不會發生錯誤時 iOS （大於或等於 10） 中執行。
+> 無法設定`NSHomeKitUsageDescription`中的索引鍵`Info.plist`檔案將會導致應用程式_以無訊息模式失敗_（正在關閉由系統在執行階段） 不會發生錯誤時 iOS （大於或等於 10） 中執行。
 
 ## <a name="connecting-to-homekit"></a>連接到 HomeKit
 
@@ -265,7 +265,7 @@ ThisApp.HomeManager.AddHome(HomeName.Text,(home,error) =>{
 您還應該監視首頁主管`DidAddHome`和`DidRemoveHome`事件和更新所需的應用程式的使用者介面。
 
 > [!IMPORTANT]
-> **注意：** `AlertView.PresentOKAlert`上述範例程式碼中使用的方法是讓使用 iOS 警示更容易在 HomeKitIntro 應用程式中的協助程式類別。
+> `AlertView.PresentOKAlert`上述範例程式碼中使用的方法是讓使用 iOS 警示更容易在 HomeKitIntro 應用程式中的協助程式類別。
 
 
 ## <a name="finding-new-accessories"></a>尋找新的附屬應用程式
@@ -275,7 +275,7 @@ ThisApp.HomeManager.AddHome(HomeName.Text,(home,error) =>{
 呼叫`StartSearchingForNewAccessories`開始搜尋新附屬應用程式的方法和`StopSearchingForNewAccessories`方法完成時。
 
 > [!IMPORTANT]
-> **注意：** `StartSearchingForNewAccessories`不能保留長時間執行，因為它會產生負面影響電池壽命和 iOS 裝置的效能。 Apple 建議呼叫`StopSearchingForNewAccessories`之後的分鐘或唯一的搜尋時找到附屬應用程式 UI 呈現給使用者。
+> `StartSearchingForNewAccessories` 不能保留長時間執行，因為它會產生負面影響電池壽命和 iOS 裝置的效能。 Apple 建議呼叫`StopSearchingForNewAccessories`之後的分鐘或唯一的搜尋時找到附屬應用程式 UI 呈現給使用者。
 
 `DidFindNewAccessory`會呼叫事件，當發現新的附屬應用程式，並會加入至`DiscoveredAccessories`附屬應用程式瀏覽器清單中的。
 

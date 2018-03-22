@@ -6,11 +6,11 @@ ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: eb188abb3e757f6f66af7758ced311ae1236d3ce
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 530abec733ec1d842559bf9c898217a8e45465aa
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="troubleshooting-xamarin-workbooks-on-android"></a>疑難排解在 Android 上的 Xamarin 活頁簿
 
@@ -25,7 +25,8 @@ ms.lasthandoff: 02/27/2018
 
 請閱讀[文件上設定 Android 模擬器][ android-emu]如果您不熟悉的程序。
 
-**注意：** 1.1 及更早版本的活頁簿將再試一次 （及失敗 ！） 來使用 ARM 模擬器在有提供。 若要暫時解決您的選擇，然後再開啟或建立 Android 的活頁簿，啟動 x86 模擬器。 活頁簿永遠偏好使用連線到執行中的模擬器，只要它相容。
+> [!NOTE]
+> 1.1 及更早版本的活頁簿將再試一次 （及失敗 ！） 來使用 ARM 模擬器在有提供。 若要暫時解決您的選擇，然後再開啟或建立 Android 的活頁簿，啟動 x86 模擬器。 活頁簿永遠偏好使用連線到執行中的模擬器，只要它相容。
 
 ## <a name="workbooks-wont-load"></a>無法載入活頁簿
 
@@ -33,7 +34,7 @@ ms.lasthandoff: 02/27/2018
 
 首先，檢查 [模擬器已完全運作的網路存取權，藉由在模擬器] 的 web 瀏覽器中測試任何網站。
 
-### <a name="visual-studio-android-emulator-cannot-connect-to-internet"></a>Visual Studio Android 模擬器無法連接到網際網路
+### <a name="visual-studio-android-emulator-cannot-connect-to-the-internet"></a>Visual Studio Android 模擬器無法連線到網際網路
 
 如果您的模擬器並沒有網路存取，您可能需要依照下列步驟來修正您的 HYPER-V 網路交換器。 如果您經常 Wi-fi 網路之間切換，您可能需要定期重複此步驟：
 

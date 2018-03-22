@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: ee79c79d7b3226f23851a3157e5a609d7cfc4cf4
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 73f3beb87fffcb37ef3e36d54f634c3bc62da538
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-user-defaults"></a>使用使用者預設值
 
@@ -32,7 +32,7 @@ _本文件涵蓋使用 NSUserDefault 儲存 Xamarin.iOS 應用程式或擴充功
 當您的應用程式第一次執行時，`NSUserDefaults`讀取應用程式的使用者預設資料庫中的索引鍵和值，並快取這些必要的值為要避免開啟和讀取資料庫每次記憶體。 
 
 > [!IMPORTANT]
-> **請注意**: Apple 不再建議開發人員呼叫`Synchronize`直接同步處理資料庫的記憶體中快取的方法。 相反地，它會自動呼叫要保留在記憶體中快取與使用者的預設資料庫的同步處理的定期間隔。
+> Apple 不再建議開發人員呼叫`Synchronize`直接同步處理資料庫的記憶體中快取的方法。 相反地，它會自動呼叫要保留在記憶體中快取與使用者的預設資料庫的同步處理的定期間隔。
 
 `NSUserDefaults`類別包含數個便利的方法來讀取和寫入喜好設定值的一般資料類型，例如： 字串、 整數、 浮點、 布林值和 Url。 其他類型的資料可以使用封存`NSData`，然後讀取或寫入使用者預設資料庫。 如需詳細資訊，請參閱 Apple[喜好設定和設定程式設計指南](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)。
 
@@ -127,7 +127,7 @@ plist.SetBool(useHeader, "UseHeader");
 ```
 
 > [!IMPORTANT]
-> **注意：**您的應用程式第一次執行時，`NSUserDefaults`讀取應用程式的使用者預設資料庫中的索引鍵和值，並快取這些必要的值為要避免開啟和讀取資料庫每次記憶體。
+> 當您的應用程式第一次執行時，`NSUserDefaults`讀取應用程式的使用者預設資料庫中的索引鍵和值，並快取這些必要的值為要避免開啟和讀取資料庫每次記憶體。
 
 
 

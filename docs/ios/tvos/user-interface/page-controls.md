@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: f77eac8179f9e368e767bb4b586ccaa3f93e40a3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b1b53fefdd72c36bdffd3c5ade0b8d86da225b14
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-page-control"></a>使用頁面控制項
 
@@ -72,7 +72,7 @@ Xamarin.tvOS 應用程式中使用的頁面控制項的最簡單方式是將它�
 -----
 
 > [!IMPORTANT]
-> **注意：**雖然可以指派事件，例如`TouchUpInside`UI 中的項目 （例如 UIButton) iOS 設計工具，它會永遠不會呼叫因為 Apple TV 沒有觸控螢幕或支援觸控事件。 您應該一律使用`Primary Action`事件時建立事件處理常式 tvos 使用者介面項目。
+> 雖然您可以指派事件，例如`TouchUpInside`UI 中的項目 （例如 UIButton) iOS 設計工具，它會永遠不會呼叫因為 Apple TV 沒有觸控螢幕或支援觸控事件。 您應該一律使用`Primary Action`事件時建立事件處理常式 tvos 使用者介面項目。
 
 
 

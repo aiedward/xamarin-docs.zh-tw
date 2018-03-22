@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9cf9cb2e4773b90ecdd9321c6627003be3fa1b8b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 71f076bb0dc7d552a041d48a6ce531dcff444de6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>沙箱 Xamarin.Mac 應用程式
 
@@ -174,7 +174,7 @@ public override void AwakeFromNib ()
 6. 按一下**完成** 按鈕。
 
 > [!IMPORTANT]
-> **注意：**可能要結束並重新啟動 Visual Studio for Mac，讓它能夠辨識新的應用程式識別碼和已安裝 Xcode 的佈建設定檔。
+> 您可能必須結束並重新啟動 Visual Studio for Mac，讓它能夠辨識新的應用程式識別碼和已安裝 Xcode 的佈建設定檔。
 
 #### <a name="troubleshooting-provisioning-issues"></a>佈建的問題進行疑難排解
 
@@ -308,7 +308,7 @@ Xamarin.Mac 應用程式的應用程式的容器目錄具有下列特性：
 - 如_鞋盒_類型的應用程式 （例如 Apple 的相片應用程式），使用者的內容將移到容器。
 
 > [!IMPORTANT]
-> **注意：**不幸的是，Xamarin.Mac 沒有 100%應用程式開發介面的涵蓋範圍尚未 （不同於 Xamarin.iOS)，因此`NSHomeDirectory`Xamarin.Mac 目前版本中尚未對應應用程式開發介面。
+> 不幸的是，Xamarin.Mac 沒有 100%應用程式開發介面的涵蓋範圍尚未 （不同於 Xamarin.iOS)，因此`NSHomeDirectory`Xamarin.Mac 目前版本中尚未對應應用程式開發介面。
 
 暫時的解決方法，您可以使用下列程式碼：
 
@@ -413,7 +413,7 @@ _Powerbox_是 macOS 安全性技術，以展開沙箱化 Xamarin.Mac 應用程�
 可以解析 Document-Scoped 書籤的書籤的資料和文件本身可以開啟任何應用程式。 這個支援可攜性，讓使用者將專案檔案傳送至另一個使用者，以及取得所有的書籤也使用它們。
 
 > [!IMPORTANT]
-> **注意：** Document-Scoped 新細明體可以_只_指向單一檔案，不是資料夾，該檔案不能是系統所使用的位置 (例如`/private`或`/Library`)。
+> Document-Scoped 書籤可以_只_指向單一檔案，不是資料夾，該檔案不能是系統所使用的位置 (例如`/private`或`/Library`)。
 
 #### <a name="using-security-scoped-bookmarks"></a>使用安全性範圍的書籤
 
@@ -428,7 +428,7 @@ _Powerbox_是 macOS 安全性技術，以展開沙箱化 Xamarin.Mac 應用程�
 放棄資源的存取權之後，您必須返回步驟 4，再次以重新建立存取。 重新啟動 Xamarin.Mac 應用程式，您必須回到步驟 3，並重新解決書籤。
 
 > [!IMPORTANT]
-> **注意：**釋放 Security-Scoped URL 資源的存取權的失敗會導致遺漏核心資源 Xamarin.Mac 應用程式。 如此一來，應用程式將無法再加入到其容器的檔案系統位置，直到重新啟動它。
+> 釋放 Security-Scoped URL 資源的存取權的失敗會造成遺漏核心資源 Xamarin.Mac 應用程式。 如此一來，應用程式將無法再加入到其容器的檔案系統位置，直到重新啟動它。
 
 ### <a name="the-app-sandbox-and-code-signing"></a>沙箱應用程式和程式碼簽署
 
@@ -493,7 +493,7 @@ Exception Type:  EXC_BAD_INSTRUCTION (SIGILL)
 6. 實作移轉策略。
 
 > [!IMPORTANT]
-> **注意：**必須不只有沙箱您應用程式套件組合，但也會每個包含協助程式的主要可執行檔的應用程式或該配套中的工具。 這是為了從 Mac App Store 發佈任何應用程式，而且可能的話，應該執行任何其他形式的應用程式發佈。
+> 必須不只有沙箱您應用程式套件組合，但也會每個包含協助程式的主要可執行檔的應用程式或該配套中的工具。 這是為了從 Mac App Store 發佈任何應用程式，而且可能的話，應該執行任何其他形式的應用程式發佈。
 
 如需所有可執行檔中的二進位檔 Xamarin.Mac 應用程式套件組合的清單，請在終端機中輸入下列命令：
 

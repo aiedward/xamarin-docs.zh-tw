@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 03/19/2018
-ms.openlocfilehash: fbcb0190f609efc4396429a7961c2d49ab82576f
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+author: topgenorth
+ms.author: toopge
+ms.date: 03/20/2018
+ms.openlocfilehash: 20fc48c5d308a64d88308562a18e961c288b5669
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase 作業發送器
 

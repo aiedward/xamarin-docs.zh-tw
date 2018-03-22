@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 77bad4c31ad0cb11476c656aa495707d2a94aa8f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2282a340811d9932f9df3a1343b22ffc35247e54
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="workout-apps"></a>健身應用程式
 
@@ -472,7 +472,7 @@ public override void DidGenerateEvent (HKWorkoutSession workoutSession, HKWorkou
 當應用程式收到移動已暫停的事件時，它應該先停止收集資料，直到使用者繼續移動，且收到影片會繼續執行事件。 應用程式的應用程式應該不會暫停健身工作階段，以回應移動已暫停的事件。
 
 > [!IMPORTANT]
-> **注意：** RunningWorkout 活動型別只支援移動已暫停] 和 [影片恢復事件 (`HKWorkoutActivityType.Running`)。
+> 移動已暫停] 和 [影片恢復事件僅針對 RunningWorkout 活動類型支援 (`HKWorkoutActivityType.Running`)。
 
 同樣地，這些事件可以藉由覆寫處理`DidGenerateEvent`方法`HKWorkoutSessionDelegate`:
 
@@ -649,7 +649,7 @@ WatchOS 應用程式執行時，它可以使用 WatchConnectivity 傳訊和與�
 3. 傳遞設定中使用健身，watchOS 3 應用程式會啟動新的健身工作階段 (`HKWorkoutSession`)。
 
 > [!IMPORTANT]
-> **注意：**父 iPhone 應用程式，在 Apple Watch 上啟動健身順序 watchOS 3 應用程式必須有啟用的背景執行。 請參閱[啟用背景執行](#Enabling-Background-Running)上方如需詳細資訊。
+> 為了讓父 iPhone 應用程式，在 Apple Watch 上啟動健身，watchOS 3 應用程式必須有背景執行啟用。 請參閱[啟用背景執行](#Enabling-Background-Running)上方如需詳細資訊。
 
 此程序會直接啟動健身工作階段 watchOS 3 應用程式中的程序非常類似。 在 iPhone 中使用下列程式碼：
 
@@ -764,7 +764,7 @@ public override void HandleWorkoutConfiguration (HKWorkoutConfiguration workoutC
 3. **watchOS 3 `OutdoorRunDelegate.cs`**  -自訂`HKWorkoutSessionDelegate`健身針對處理事件。
 
 > [!IMPORTANT]
-> **注意：**只會顯示下列各節中的程式碼包含實作健身 watchOS 3 中的應用程式提供的新的增強功能所需的組件。 所有支援的程式碼和呈現，並更新 UI 的程式碼就不會包含，但可以輕鬆地建立的其他 watchOS 文件。<p/>
+> 下列各節中所顯示的程式碼只會包含實作健身 watchOS 3 中的應用程式提供的新的增強功能所需的組件。 所有支援的程式碼和呈現，並更新 UI 的程式碼就不會包含，但可以輕鬆地建立的其他 watchOS 文件。<p/>
 
 
 

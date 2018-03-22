@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: d9e38f055414ff0eca70df4a4e38aa959b7d7237
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ff19048504ee76db614306adebb71b7237139091
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>使用 Xamarin 設計工具，適用於 iOS 的自動配置
 
@@ -88,7 +88,7 @@ IOS 設計工具提供兩種類型的控制項管理設計介面上的項目。 
 請注意三個綠色虛線，跨兩個按鈕。 綠色的線條表示*拖放區*，或我們可以限制其他項目的屬性。 在上面的螢幕擷取畫面，其他兩個按鈕提供 3 垂直的卸除區域 (*底部*， *centerY*，*頂端*) 來限制我們 按鈕。 綠色檢視頂端的虛線表示檢視控制器提供頂端的檢視中，條件約束，而實線綠色方塊表示檢視控制器提供最上層配置輔助線的條件約束。
 
 > [!IMPORTANT]
-> **請注意**： 配置輔助線是特殊類型的條件約束的目標可讓我們來建立列入考量系統列，例如狀態列或工具列是否存在的上方和下方的條件約束。 主要用途是要有相容 iOS 6 和 iOS 7 之間的應用程式，因為最新版本具有以下狀態列延伸容器檢視。 如需最上層配置指南的詳細資訊，請參閱[Apple 文件](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2)。
+> 版面配置輔助線是特殊類型的條件約束目標可讓我們建立頂端和底部條件約束，列入系統列，例如狀態列或工具列存在。 主要用途是要有相容 iOS 6 和 iOS 7 之間的應用程式，因為最新版本具有以下狀態列延伸容器檢視。 如需最上層配置指南的詳細資訊，請參閱[Apple 文件](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2)。
 
 
 

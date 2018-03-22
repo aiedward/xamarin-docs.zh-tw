@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/07/2017
-ms.openlocfilehash: 4b2a470d7fe2a1f9d4b8df40836c934547adf614
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5da834e7e77fb8ab080c124bd09653bc840be3b0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-buttons"></a>使用按鈕
 
@@ -130,7 +130,7 @@ namespace tvRemote
 只要按鈕`Enabled`屬性是`true`而且它未涵蓋其他控制項或檢視，可以設為使用 Siri 遠端的焦點在項目。 如果使用者選取的按鈕，按一下 [觸控] 介面`ButtonPressed`上述定義的動作就會執行。
 
 > [!IMPORTANT]
-> **附註：**雖然可以指派動作，例如`TouchUpInside`至`UIButton`iOS 建立時的設計工具中**事件處理常式**，它會永遠不會呼叫因為 Apple TV 沒有觸控式螢幕或支援人員觸控事件。 您應該一律使用預設**動作類型**建立時**動作**tvOS 使用者介面項目。
+> 雖然您可以指派動作，例如`TouchUpInside`至`UIButton`iOS 建立時的設計工具中**事件處理常式**，它會永遠不會呼叫因為 Apple TV 沒有觸控螢幕或支援觸控事件。 您應該一律使用預設**動作類型**建立時**動作**tvOS 使用者介面項目。
 
 
 
@@ -191,7 +191,7 @@ View.AddSubview (button);
 ```
 
 > [!IMPORTANT]
-> **注意：**雖然可以指派動作，例如`TouchUpInside`至`UIButton`，它會永遠不會呼叫因為 Apple TV 沒有觸控螢幕或支援觸控事件。 例如，您應該一律使用事件**AllEvents**或**PrimaryActionTriggered**。
+> 雖然您可以指派動作，例如`TouchUpInside`至`UIButton`，它會永遠不會呼叫因為 Apple TV 沒有觸控螢幕或支援觸控事件。 例如，您應該一律使用事件**AllEvents**或**PrimaryActionTriggered**。
 
 
 

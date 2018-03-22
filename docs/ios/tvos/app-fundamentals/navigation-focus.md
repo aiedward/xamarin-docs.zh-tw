@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 489f3bd43ff4515000127ac29de197435493d5a9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: fe1358d330c2a0fd94016853cedeabe094c394da
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-navigation-and-focus"></a>使用導覽和焦點
 
@@ -123,7 +123,7 @@ playButton.PreferredFocusedView = true;
 若要要求焦點引擎移動焦點回`PreferredFocusedView`UI 項目，呼叫`SetNeedsUpdateFocus`檢視控制器方法。
 
 > [!IMPORTANT]
-> **注意：**呼叫`SetNeedsUpdateFocus`如果呼叫時即是針對檢視控制器包含目前具有焦點的檢視才會有作用。
+> 呼叫`SetNeedsUpdateFocus`如果呼叫時即是針對檢視控制器包含目前具有焦點的檢視才會有作用。
 
 
 

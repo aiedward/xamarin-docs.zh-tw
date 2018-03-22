@@ -7,18 +7,18 @@ ms.assetid: 69A05B0E-8A0A-489F-8165-B10AC46FAF3C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bfdf0c73226eec472eb671d5543f5ce124919ab8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3f52ef88224e65f12502c9fbf82e240233890a82
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 相容性
 
 _即使您不打算立即將 iOS 9 功能加入至您的應用程式，您應該在重建您的應用程式的 Xamarin 的最新版本。_
 
 > [!IMPORTANT]
-> **注意：**此頁面上的這項資訊會與應用程式已在目標 iOS 8 或更早版本，應用程式存放區尚未已提交更新 iOS 9 相容性的客戶。 如果您已經使用最新的版本-Xcode 7 和 Xamarin.iOS 9-應用程式開發，請造訪[簡介 iOS 9](~/ios/platform/introduction-to-ios9/index.md)。
+> 此頁面上的資訊是已經在 windows 市集應用程式的客戶目標 iOS 8 或更早版本，人員尚未已提交的 iOS 9 相容性更新。 如果您已經使用最新的版本-Xcode 7 和 Xamarin.iOS 9-應用程式開發，請造訪[簡介 iOS 9](~/ios/platform/introduction-to-ios9/index.md)。
 
 當出現第一個 iOS 9 beta 版時，我們用來識別兩個問題： 認定為較舊的應用程式無法啟動 iOS 9 上的 Xamarin 的舊版本。
 

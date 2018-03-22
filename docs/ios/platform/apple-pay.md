@@ -7,11 +7,11 @@ ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0ac2a19e9020113df273897a8ec2c86ee1763ec2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: af899bb1c5708e3fc0be88db6224d9127f5a5c6d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="apple-pay"></a>Apple Pay
 
@@ -118,7 +118,7 @@ Apple 已中 iOS 10 可讓使用者從網站，並透過 Siri 與地圖互動的
 4. 使用其中一種測試的付款卡片，從[Apple 支付指南](https://developer.apple.com/apple-pay/)進行付款。
 
 > [!IMPORTANT]
->  **注意：**藉由切換 iCloud 帳戶，則裝置將會自動切換到新的測試環境。 不過，Apple 仍**需要**應用程式，以測試與實際卡在生產環境之前提交至 iTunes App Store。
+> 藉由切換 iCloud 帳戶，則裝置將會自動切換到新的測試環境。 不過，Apple 仍**需要**應用程式，以測試與實際卡在生產環境之前提交至 iTunes App Store。
 
 ## <a name="summary"></a>總結
 

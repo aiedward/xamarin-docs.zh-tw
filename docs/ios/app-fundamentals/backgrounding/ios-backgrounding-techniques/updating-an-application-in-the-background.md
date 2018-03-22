@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f4a18bf8f35d1a6c615c819ea90433d1eb123422
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7f7cfcd320fcb38a9b08dfd8fe7e0fae7ff808ec
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="updating-an-application-in-the-background"></a>在背景中的將應用程式更新
 
@@ -79,7 +79,7 @@ public override void PerformFetch (UIApplication application, Action<UIBackgroun
 使用背景所擷取的應用程式可以進行呼叫，來從背景更新 UI。 當使用者開啟應用程式時，UI 將最新，並且顯示新的內容。 這也會更新應用程式的應用程式切換器快照集，因此使用者可以看到應用程式時有新的內容。
 
 > [!IMPORTANT]
-> **請注意**： 一次`PerformFetch`是呼叫，應用程式有大約 30 秒來開始下載新的內容，並呼叫完成處理常式區塊。 如果花費的時間太長，應用程式將會終止。 請考慮使用背景擷取_背景傳送服務_下載媒體或其他大型檔案時。
+> 一次`PerformFetch`是呼叫，應用程式有大約 30 秒來開始下載新的內容，並呼叫完成處理常式區塊。 如果花費的時間太長，應用程式將會終止。 請考慮使用背景擷取_背景傳送服務_下載媒體或其他大型檔案時。
 
 
 ### <a name="backgroundfetchinterval"></a>BackgroundFetchInterval
@@ -132,7 +132,7 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 遠端的通知應用於內容的關鍵應用程式的功能不頻繁的更新。 如需有關遠端通知的詳細資訊，請參閱 Xamarin[推播通知，在 iOS 中](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md)指南。
 
 > [!IMPORTANT]
-> **請注意**： 因為遠端通知中的更新機制根據背景擷取、 應用程式必須開始下載新的內容，並呼叫接收通知的 30 秒內完成處理常式區塊或將 iOS結束應用程式。 請考慮配對與遠端通知_背景傳送服務_下載媒體或其他大型檔案，在背景中的時。
+> 遠端通知中的更新機制根據背景提取，因為應用程式必須開始下載新的內容，並呼叫接收通知的 30 秒內完成處理常式區塊或 iOS 會終止該應用程式。 請考慮配對與遠端通知_背景傳送服務_下載媒體或其他大型檔案，在背景中的時。
 
 
 ### <a name="silent-remote-notifications"></a>無訊息的遠端通知
@@ -156,7 +156,7 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
  [![](updating-an-application-in-the-background-images/silent.png "規則的通知可用來從 APNs 的預存的無訊息通知推播至裝置，如這個圖表所示")](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
-> **請注意**: Apple 鼓勵開發人員需要應用程式，並讓 APNs 排程傳送時，傳送無訊息的推播通知。
+> Apple 鼓勵開發人員應用程式需要，只要傳送無訊息的推播通知，並讓排程其交付的 APNs。
 
 
 在本節中，我們所討論的各種選項重新整理內容，在背景中的執行為背景需要分類不符合的工作。 現在，我們來看看一些動作中的這些 Api。

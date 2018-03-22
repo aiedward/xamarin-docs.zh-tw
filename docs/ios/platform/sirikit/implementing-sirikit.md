@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 0e271fb78cfd225f9ccdae9a515685e89bfd7ac2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 76787ecda1c2cd043b81482dcdbe3751d012ef74
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="implementing-sirikit"></a>實作 SiriKit
 
@@ -211,7 +211,7 @@ namespace MonkeyChat
 
 依下列方式在 Mac 上：
 
-1. 在 web 瀏覽器中，瀏覽至[http://developer.apple.com](http://developer.apple.com)和登入您的帳戶。
+1. 在 web 瀏覽器中，瀏覽至[ http://developer.apple.com ](http://developer.apple.com)和登入您的帳戶。
 2. 按一下**憑證**，**識別碼**和**設定檔**。
 3. 選取**佈建的設定檔**選取**應用程式識別碼**，然後按一下 [  **+**  ] 按鈕。
 4. 輸入**名稱**新設定檔。
@@ -246,7 +246,7 @@ namespace MonkeyChat
 22. 按一下 [確定] 按鈕以儲存所做的變更。
 
 > [!IMPORTANT]
-> **注意：**測試 SiriKit 只適用於真實 iOS 10 個硬體裝置而不是在 10 的 iOS 模擬器。 如果有安裝 SiriKit 的問題啟用實際的硬體上的 Xamarin.iOS 應用程式，請確認必要的權利、 應用程式識別碼、 簽章識別碼和佈建設定檔已正確設定 Apple 開發人員入口網站和 Visual Studio 中 for mac。
+> 測試 SiriKit 只適用於真實 iOS 10 個硬體裝置而不是在 10 的 iOS 模擬器。 如果有安裝 SiriKit 的問題啟用實際的硬體上的 Xamarin.iOS 應用程式，請確認必要的權利、 應用程式識別碼、 簽章識別碼和佈建設定檔已正確設定 Apple 開發人員入口網站和 Visual Studio 中 for mac。
 
 ### <a name="requesting-siri-authorization"></a>要求 Siri 授權
 
@@ -432,7 +432,7 @@ namespace MonkeyChat
 ```
 
 > [!IMPORTANT]
-> **注意：** Siri 視為提示的自訂的詞彙，並將會併入一樣多越好的術語。 不過，空間限制讓重要註冊自訂的詞彙為_只_可能會造成混淆，因此保持為最小值的已註冊的詞彙總數的術語。
+> Siri 自訂詞彙視為提示，將會併入一樣多越好的術語。 不過，空間限制讓重要註冊自訂的詞彙為_只_可能會造成混淆，因此保持為最小值的已註冊的詞彙總數的術語。
 
 如需詳細資訊，請參閱我們[使用者特定的詞彙參考](~/ios/platform/sirikit/understanding-sirikit.md)與 Apple[指定自訂詞彙參考](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1)。
 
@@ -587,7 +587,7 @@ namespace MonkeyChat
 -----
 
 > [!IMPORTANT]
-> **注意：** `AppIntentVocabulary.plist`會註冊與測試上使用 Siri 在開發和它的裝置可能需要一些時間 Siri 納入自訂的詞彙。 如此一來，測試人員將需要等待幾分鐘，再嘗試時已更新測試應用程式特定詞彙。
+> `AppIntentVocabulary.plist`會註冊與測試上使用 Siri 在開發和它的裝置可能需要一些時間 Siri 納入自訂的詞彙。 如此一來，測試人員將需要等待幾分鐘，再嘗試時已更新測試應用程式特定詞彙。
 
 如需詳細資訊，請參閱我們[應用程式特定的詞彙參考](~/ios/platform/sirikit/understanding-sirikit.md)與 Apple[指定自訂詞彙參考](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1)。
 
@@ -1013,7 +1013,7 @@ Siri 也將會傳入應用程式需要傳回檢視的所需的大小，當應用
 版面配置方式 UI 延伸模組的使用者介面 iOS 設計工具中。 按兩下副檔名`MainInterface.storyboard`檔案**方案總管 中**開啟進行編輯。 拖曳在所有必要的 UI 項目，以建置使用者介面，並儲存變更。
 
 > [!IMPORTANT]
-> **注意：**雖然您可以加入互動式項目，例如`UIButtons`或`UITextFields`意圖 UI 延伸模組來`UIViewController`這些嚴格禁止做為在非互動意圖 UI，使用者無法互動使用它們。
+> 雖然您可以加入互動式項目，例如`UIButtons`或`UITextFields`意圖 UI 延伸模組來`UIViewController`這些嚴格禁止做為在非互動意圖 UI，使用者不能與之互動。
 
 ### <a name="wire-up-the-user-interface"></a>網路上的使用者介面
 

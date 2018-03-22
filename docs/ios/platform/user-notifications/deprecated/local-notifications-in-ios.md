@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 2a8ae55f9cc3e2dd4818dec96a35017c76cc9623
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f1b36d3ba8601d125d0a17173efb12c249224e78
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="notifications-in-xamarinios"></a>Xamarin.iOS 中的通知
 
 _本節說明如何實作 Xamarin.iOS 在本機的通知。它會說明 iOS 通知的各種 UI 項目，並討論應用程式開發介面的涉及建立和顯示通知。_
 
 > [!IMPORTANT]
-> **注意：**本節中的資訊屬於 iOS 9 及之前，它已保留這裡以支援較舊 iOS 版本。 適用於 iOS 10 和更新版本，請參閱[使用者通知架構指南](~/ios/platform/user-notifications/index.md)支援 iOS 裝置上的本機和遠端的通知。
+> 本節中的資訊屬於 iOS 9 及之前，它已保留這裡以支援較舊 iOS 版本。 適用於 iOS 10 和更新版本，請參閱[使用者通知架構指南](~/ios/platform/user-notifications/index.md)支援 iOS 裝置上的本機和遠端的通知。
 
 iOS 有三種方式可向使用者指示已經收到通知：
 
@@ -78,7 +78,7 @@ notification.SoundName = UILocalNotification.DefaultSoundName;
 每個 Apple 人性化介面指導方針，通知會播放音效，如果它應該也伴隨著徽章或警示可協助使用者識別產生警示的應用程式。 此外，如果超過 30 秒鐘聲音，iOS 會播放預設聲音改為。
 
 > [!IMPORTANT]
-> **請注意**： 有一個錯誤是會引發兩次的委派通知的 iOS 模擬器中。 在裝置上執行應用程式時，應該不會發生此問題。
+> 沒有會引發兩次的委派通知的 iOS 模擬器中的 bug。 在裝置上執行應用程式時，應該不會發生此問題。
 
 ## <a name="handling-notifications"></a>處理告知
 

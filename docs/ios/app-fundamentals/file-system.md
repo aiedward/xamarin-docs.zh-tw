@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: fd6aa66a7e5e788babc0df3e94b8f3677a7625f0
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: a3337264bf04f5ad5495043c7e958276aba9eaee
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-the-file-system"></a>使用檔案系統
 
@@ -373,7 +373,7 @@ Console.WriteLine ("Group Path: " + appGroupContainerPath);
 ...
 ```
 > [!IMPORTANT]
-> **注意：**如果群組路徑傳回為`null`，檢查權利和佈建設定檔的組態，並確定它們是否正確。
+> 如果群組路徑傳回為`null`，檢查權利和佈建設定檔的組態，並確定它們是否正確。
 
 
 <a name="Application_Version_Updates" />
