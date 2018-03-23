@@ -1,18 +1,18 @@
 ---
-title: "資料與雲端服務"
-description: "本指南將會檢驗如何執行這項操作和 Xamarin.Forms 應用程式可以使用 web 服務使用各種不同的技術，實作。"
+title: 資料與雲端服務
+description: 本指南將會檢驗如何執行這項操作和 Xamarin.Forms 應用程式可以使用 web 服務使用各種不同的技術，實作。
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: "0601D9D0-C8D2-4C3B-A749-A340BDBF64A4ß"
+ms.assetid: 0601D9D0-C8D2-4C3B-A749-A340BDBF64A4ß
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: 28007ee702c66f3b819430b544465d3470d571d9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 54313c3e8808ee9e563d6b55e3bf034c543a48e5
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="data--cloud-services"></a>資料與雲端服務
 
@@ -50,7 +50,7 @@ _本指南將會檢驗如何執行這項操作和 Xamarin.Forms 應用程式可�
 
 ## <a name="storing-data-in-a-document-databasecosmosdbindexmd"></a>[將資料儲存在文件資料庫](cosmosdb/index.md)
 
-本指南示範如何使用 Microsoft Azure DocumentDB 的用戶端程式庫，將 Azure Cosmos DB 文件資料庫整合到 Xamarin.Forms 應用程式。 Azure Cosmos DB 文件資料庫是提供低延遲存取 JSON 文件，提供快速、 高可用性的可擴充資料庫服務，無縫式的小數位數和全域複寫所需要的應用程式的 NoSQL 資料庫。
+本指南示範如何使用 Azure Cosmos DB 標準.NET 用戶端程式庫，將 Azure Cosmos DB 文件資料庫整合到 Xamarin.Forms 應用程式。 Azure Cosmos DB 文件資料庫是提供低延遲存取 JSON 文件，提供快速、 高可用性的可擴充資料庫服務，無縫式的小數位數和全域複寫所需要的應用程式的 NoSQL 資料庫。
 
 ## <a name="adding-intelligence-with-cognitive-servicescognitive-servicesindexmd"></a>[使用認知服務加入智慧](cognitive-services/index.md)
 

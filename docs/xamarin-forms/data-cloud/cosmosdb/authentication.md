@@ -1,6 +1,6 @@
 ---
-title: "驗證使用者以 Azure Cosmos DB 文件資料庫"
-description: "Azure Cosmos DB 文件資料庫可支援資料分割的集合、 可以橫跨多部伺服器和資料分割，同時支援無限制的儲存體和輸送量。 本文說明如何結合資料分割的集合，存取控制，讓使用者只能存取自己的文件中的 Xamarin.Forms 應用程式。"
+title: 驗證使用者以 Azure Cosmos DB 文件資料庫
+description: Azure Cosmos DB 文件資料庫可支援資料分割的集合、 可以橫跨多部伺服器和資料分割，同時支援無限制的儲存體和輸送量。 本文說明如何結合資料分割的集合，存取控制，讓使用者只能存取自己的文件中的 Xamarin.Forms 應用程式。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 10c4a1e3355263722d170dff0a5e2707eb794818
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8de64d6489b4022e43bcf694f3b13d6f7eaaecbd
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>驗證使用者以 Azure Cosmos DB 文件資料庫
 
@@ -22,12 +22,12 @@ _Azure Cosmos DB 文件資料庫可支援資料分割的集合、 可以橫跨�
 
 建立分割的集合時，就必須指定資料分割索引鍵，並具有相同的資料分割索引鍵的文件會儲存在相同的資料分割。 因此，指定使用者的身分識別做為資料分割索引鍵會導致資料分割的集合，其中只會儲存該使用者的文件。 這也可確保 Azure Cosmos DB 文件資料庫會調整的使用者數目，並增加項目。
 
-必須授與至任何集合，存取和 DocumentDB API 的存取控制模型會定義兩種類型的存取的建構：
+必須授與至任何集合，存取和 SQL API 的存取控制模型會定義兩種類型的存取的建構：
 
 - **主要金鑰**啟用完整管理存取權 Cosmos DB 帳戶中的所有資源，並建立 Cosmos DB 帳戶時建立。
 - **資源語彙基元**擷取之資料庫的使用者和使用者擁有特定 Cosmos DB 資源，例如集合或文件的權限之間的關聯性。
 
-將主要金鑰的公開會開啟，可能會使用惡意或疏忽 Cosmos DB 帳戶。 不過，Cosmos DB 資源語彙基元提供允許讀取、 寫入和刪除 Cosmos DB 帳戶，根據授與權限中的特定資源的用戶端的安全機制。
+將主要金鑰的公開會開啟，可能會使用惡意或疏忽 Cosmos DB 帳戶。 不過，Azure Cosmos DB 資源語彙基元提供允許讀取、 寫入和刪除，Azure Cosmos DB 帳戶，根據授與權限的特定資源的用戶端的安全機制。
 
 要求的典型方法，產生，並將資源語彙基元傳遞給行動應用程式是使用資源語彙基元的 broker。 下圖顯示範例應用程式來管理存取權的文件資料庫資料所使用的資源權杖的 broker 的高階概觀：
 
@@ -44,7 +44,7 @@ Azure 應用程式服務擁有 Cosmos DB 帳戶的主要金鑰中裝載的中間
 > [!NOTE]
 > 當資源權杖到期時，後續的文件資料庫要求將會接收 401 未授權例外狀況。 此時，Xamarin.Forms 應用程式應該重新建立的身分識別，並要求新的資源權杖。
 
-如需 Cosmos DB 的資料分割的詳細資訊，請參閱[如何分割區和 Azure Cosmos DB 中的小數位數](/azure/cosmos-db/partition-data/)。 如需 Cosmos DB 存取控制的詳細資訊，請參閱[保護 Cosmos 資料庫資料的存取](/azure/cosmos-db/secure-access-to-data/)和[DocumentDB API 中的存取控制](/rest/api/documentdb/access-control-on-documentdb-resources/)。
+如需 Cosmos DB 的資料分割的詳細資訊，請參閱[如何分割區和 Azure Cosmos DB 中的小數位數](/azure/cosmos-db/partition-data/)。 如需 Cosmos DB 存取控制的詳細資訊，請參閱[保護 Cosmos 資料庫資料的存取](/azure/cosmos-db/secure-access-to-data/)和[中 SQL API 的存取控制](/rest/api/documentdb/access-control-on-documentdb-resources/)。
 
 ## <a name="setup"></a>安裝程式
 
@@ -58,11 +58,11 @@ Azure 應用程式服務擁有 Cosmos DB 帳戶的主要金鑰中裝載的中間
 
 <a name="cosmosdb_configuration" />
 
-### <a name="cosmos-db-configuration"></a>Cosmos DB 組態
+### <a name="azure-cosmos-db-configuration"></a>Azure Cosmos DB 組態
 
 建立會使用存取控制的 Cosmos DB 帳戶的程序如下所示：
 
-1. 建立 Cosmos DB 帳戶。 如需詳細資訊，請參閱[建立 Cosmos DB 帳戶](/azure/cosmos-db/documentdb-dotnetcore-get-started#step-1-create-a-documentdb-account)。
+1. 建立 Cosmos DB 帳戶。 如需詳細資訊，請參閱[建立 Azure Cosmos DB 帳戶](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account)。
 1. Cosmos DB 帳戶中，建立名為的新集合`UserItems`，指定資料分割索引鍵`/userid`。
 
 <a name="app_service_configuration" />
@@ -269,10 +269,10 @@ await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(Constants.Database
 
 ## <a name="related-links"></a>相關連結
 
-- [TodoDocumentDBAuth （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
+- [Todo Azure Cosmos DB Auth （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
 - [使用 Azure Cosmos DB 文件資料庫](~/xamarin-forms/data-cloud/cosmosdb/consuming.md)
 - [保護 Azure Cosmos 資料庫資料的存取](/azure/cosmos-db/secure-access-to-data/)
-- [DocumentDB API 中的存取控制](/rest/api/documentdb/access-control-on-documentdb-resources/)。
+- [SQL API 中的存取控制](/rest/api/documentdb/access-control-on-documentdb-resources/)。
 - [如何在資料分割和 Azure Cosmos DB 中的小數位數](/azure/cosmos-db/partition-data/)
-- [DocumentDB 用戶端程式庫](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
+- [Azure Cosmos DB 用戶端程式庫](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
 - [Azure Cosmos DB API](https://msdn.microsoft.com/library/azure/dn948556.aspx)

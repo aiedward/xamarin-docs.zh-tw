@@ -1,6 +1,6 @@
 ---
-title: "使用 Azure Cosmos DB 文件資料庫"
-description: "Azure Cosmos DB 文件資料庫是提供低延遲存取 JSON 文件，提供快速、 高可用性的可擴充資料庫服務，無縫式的小數位數和全域複寫所需要的應用程式的 NoSQL 資料庫。 本文說明如何將 Azure Cosmos DB 文件資料庫整合 Xamarin.Forms 應用程式使用 Microsoft Azure DocumentDB 的用戶端程式庫。"
+title: 使用 Azure Cosmos DB 文件資料庫
+description: Azure Cosmos DB 文件資料庫是提供低延遲存取 JSON 文件，提供快速、 高可用性的可擴充資料庫服務，無縫式的小數位數和全域複寫所需要的應用程式的 NoSQL 資料庫。 本文說明如何將 Azure Cosmos DB 文件資料庫整合 Xamarin.Forms 應用程式使用 Azure Cosmos DB 標準.NET 用戶端程式庫。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C
@@ -9,15 +9,15 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 5013b35828cecc2e38600839f306f3c0fc1366b9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e2fa5ae12531069e1ad1bc19e110e4dcffe23a02
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>使用 Azure Cosmos DB 文件資料庫
 
-_Azure Cosmos DB 文件資料庫是提供低延遲存取 JSON 文件，提供快速、 高可用性的可擴充資料庫服務，無縫式的小數位數和全域複寫所需要的應用程式的 NoSQL 資料庫。本文說明如何將 Azure Cosmos DB 文件資料庫整合 Xamarin.Forms 應用程式使用 Microsoft Azure DocumentDB 的用戶端程式庫。_
+_Azure Cosmos DB 文件資料庫是提供低延遲存取 JSON 文件，提供快速、 高可用性的可擴充資料庫服務，無縫式的小數位數和全域複寫所需要的應用程式的 NoSQL 資料庫。本文說明如何將 Azure Cosmos DB 文件資料庫整合 Xamarin.Forms 應用程式使用 Azure Cosmos DB 標準.NET 用戶端程式庫。_
 
 > [!VIDEO https://youtube.com/embed/BoVH12igmbg]
 
@@ -33,23 +33,20 @@ Azure Cosmos DB 文件資料庫可能包含零個或多個文件集合。 每個
 
 本文中，以及隨附的範例應用程式，示範 Todo 清單的應用程式，Azure Cosmos DB 文件資料庫中儲存工作。 如需範例應用程式的詳細資訊，請參閱[了解範例](~/xamarin-forms/data-cloud/walkthrough.md)。
 
-> [!NOTE]
-> DocumentDB 的用戶端程式庫目前不是與通用 Windows 平台 (UWP) 應用程式相容。 不過，Azure Cosmos DB 文件資料庫可以從 UWP 應用程式使用，藉由建立中間層 web 服務使用 DocumentDB 用戶端程式庫，並叫用此服務，從 UWP 應用程式。
-
 如需 Azure Cosmos DB 的詳細資訊，請參閱[Azure Cosmos DB 文件集](/azure/cosmos-db/)。
 
 ## <a name="setup"></a>安裝程式
 
 將 Azure Cosmos DB 文件資料庫整合至 Xamarin.Forms 應用程式的程序如下所示：
 
-1. 建立 Cosmos DB 帳戶。 如需詳細資訊，請參閱[建立 Cosmos DB 帳戶](/azure/cosmos-db/documentdb-dotnetcore-get-started#step-1-create-a-documentdb-account)。
-1. 新增[DocumentDB 用戶端程式庫](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)平台專案，在 Xamarin.Forms 方案的 NuGet 封裝。
+1. 建立 Cosmos DB 帳戶。 如需詳細資訊，請參閱[建立 Azure Cosmos DB 帳戶](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account)。
+1. 新增[Azure Cosmos DB 標準.NET 用戶端程式庫](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)平台專案，在 Xamarin.Forms 方案的 NuGet 封裝。
 1. 新增`using`指示詞`Microsoft.Azure.Documents`， `Microsoft.Azure.Documents.Client`，和`Microsoft.Azure.Documents.Linq`命名空間，以存取 Cosmos DB 帳戶的類別。
 
-執行這些步驟之後，DocumentDB 用戶端程式庫可用來設定與執行對文件資料庫要求。
+執行這些步驟之後，Azure Cosmos DB 標準.NET 用戶端程式庫可用來設定與執行對文件資料庫要求。
 
 > [!NOTE]
-> Azure DocumentDB 的用戶端程式庫只能安裝到平台專案，並不到可攜式類別程式庫 (PCL) 專案。 因此，範例應用程式是共用存取專案 (SAP) 以避免程式碼重複。 不過，`DependencyService`類別可以叫用平台專屬專案中所包含的 Azure DocumentDB 用戶端程式庫程式碼使用 PCL 專案中。
+> Azure Cosmos DB 標準.NET 用戶端程式庫只能安裝到平台專案，並不到可攜式類別程式庫 (PCL) 專案。 因此，範例應用程式是共用存取專案 (SAP) 以避免程式碼重複。 不過，`DependencyService`類別可以叫用 Azure Cosmos DB.NET 標準平台專屬專案中所包含的用戶端程式庫程式碼使用 PCL 專案中。
 
 ## <a name="consuming-the-azure-cosmos-db-account"></a>使用 Azure Cosmos DB 帳戶
 
@@ -59,7 +56,7 @@ Azure Cosmos DB 文件資料庫可能包含零個或多個文件集合。 每個
 DocumentClient client = new DocumentClient(new Uri(Constants.EndpointUri), Constants.PrimaryKey);
 ```
 
-Cosmos DB Uri 和主索引鍵必須提供給`DocumentClient`建構函式。 這些可以從 Azure 入口網站取得。 如需詳細資訊，請參閱[連接至 Azure Cosmos DB 帳戶](/azure/cosmos-db/documentdb-dotnetcore-get-started#a-idconnectastep-3-connect-to-an-azure-cosmos-db-account)。
+Cosmos DB Uri 和主索引鍵必須提供給`DocumentClient`建構函式。 這些可以從 Azure 入口網站取得。 如需詳細資訊，請參閱[連接至 Azure Cosmos DB 帳戶](/azure/cosmos-db/sql-api-dotnetcore-get-started#Connect)。
 
 ### <a name="creating-a-database"></a>建立資料庫
 
@@ -226,12 +223,12 @@ await client.DeleteDatabaseAsync(UriFactory.CreateDatabaseUri(Constants.Database
 
 ## <a name="summary"></a>總結
 
-本文說明如何將 Azure Cosmos DB 文件資料庫整合 Xamarin.Forms 應用程式使用 Microsoft Azure DocumentDB 的用戶端程式庫。 Azure Cosmos DB 文件資料庫是提供低延遲存取 JSON 文件，提供快速、 高可用性的可擴充資料庫服務，無縫式的小數位數和全域複寫所需要的應用程式的 NoSQL 資料庫。
+本文說明如何將 Azure Cosmos DB 文件資料庫整合 Xamarin.Forms 應用程式使用 Azure Cosmos DB 標準.NET 用戶端程式庫。 Azure Cosmos DB 文件資料庫是提供低延遲存取 JSON 文件，提供快速、 高可用性的可擴充資料庫服務，無縫式的小數位數和全域複寫所需要的應用程式的 NoSQL 資料庫。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [TodoDocumentDB (sample)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDB/)
-- [Cosmos DB 文件](/azure/cosmos-db/)
-- [DocumentDB 用戶端程式庫](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
-- [Azure Cosmos DB API](https://msdn.microsoft.com/library/azure/dn948556.aspx)
+- [Todo Azure Cosmos DB （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDB/)
+- [Azure Cosmos DB 文件](/azure/cosmos-db/)
+- [Azure Cosmos DB.NET 標準的用戶端程式庫](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
+- [Azure Cosmos DB API](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/cosmosdb/client?view=azure-dotnet)

@@ -1,5 +1,5 @@
 ---
-title: "逐步解說-使用背景位置"
+title: 逐步解說-使用背景位置
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: F8EEA0FD-5614-47FE-ADAC-80A5BCA6EB5F
@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: dfae07d36c67c12d254cd70c22acb01b2fc1c9b0
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: efdabc5450b186c89785ee3cb19a3decdd6c2064
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="walkthrough---using-background-location"></a>逐步解說-使用背景位置
 
@@ -28,7 +28,6 @@ ms.lasthandoff: 03/22/2018
 
     在 [方案總管] 中，按兩下**Info.plist**檔案，以開啟它，然後捲動至清單的底部。 勾選這兩**啟用背景模式**和**位置更新**核取方塊。
 
-
     在 Visual Studio for Mac 它看起來像下面這樣：
 
     [![](location-walkthrough-images/image7.png "勾選 啟用背景模式和位置更新核取方塊")](location-walkthrough-images/image7.png#lightbox)
@@ -38,7 +37,7 @@ ms.lasthandoff: 03/22/2018
     ```xml
     <key>UIBackgroundModes</key>
     <array>
-        <string>location</string>
+      <string>location</string>
     </array>
     ```
 

@@ -1,5 +1,5 @@
 ---
-title: "驗證和授權"
+title: 驗證和授權
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 5f27c1acefa63ee26184b8997594630e24cb0acc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 16cd5571a8c3b0e179046351e9996e55b040a9de
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="authentication-and-authorization"></a>驗證和授權
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 03/09/2018
 
 ## <a name="authentication"></a>驗證
 
-應用程式需要知道目前使用者的身分識別時，需要驗證。 ASP.NET Core 識別使用者的主要機制是 ASP.NET Core 識別成員資格系統，為開發人員所設定的資料存放區中儲存使用者資訊。 通常，這個資料存放區會執行 EntityFramework 存放區中，雖然自訂存放區或協力廠商封裝可用於將身分識別資訊儲存在 Azure 儲存體、 DocumentDB 或其他位置。
+應用程式需要知道目前使用者的身分識別時，需要驗證。 ASP.NET Core 識別使用者的主要機制是 ASP.NET Core 識別成員資格系統，為開發人員所設定的資料存放區中儲存使用者資訊。 通常，這個資料存放區會執行 EntityFramework 存放區中，雖然自訂存放區或協力廠商封裝可用於將身分識別資訊儲存在 Azure 儲存體、 Azure Cosmos DB 或其他位置。
 
 驗證案例，請使用本機使用者資料存放區，且已存在要求透過 cookie （跟一般在 ASP.NET MVC web 應用程式） 之間的識別資訊，ASP.NET Core Identity 是適合的解決方案。 不過，cookie 不一定自然的保存及傳輸資料。 例如，會公開 rest 式端點從行動裝置應用程式存取的 ASP.NET Core web 應用程式通常需要使用 bearer 權杖驗證，因為 cookie 不能用在此案例中。 不過，持有者權杖可輕鬆擷取及包含在從行動裝置應用程式進行的 web 要求的授權標頭。
 

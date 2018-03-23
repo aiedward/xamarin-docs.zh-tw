@@ -1,6 +1,6 @@
 ---
-title: "使用 Azure 搜尋搜尋資料"
-description: "Azure 搜尋是雲端服務可提供索引和查詢功能上傳的資料。 這會移除基礎結構需求和傳統上相關聯的應用程式中實作搜尋功能搜尋演算法的複雜度。 本文示範如何使用 Azure 搜尋整合 Xamarin.Forms 應用程式的 Microsoft Azure 搜尋程式庫。"
+title: 使用 Azure 搜尋搜尋資料
+description: Azure 搜尋是雲端服務可提供索引和查詢功能上傳的資料。 這會移除基礎結構需求和傳統上相關聯的應用程式中實作搜尋功能搜尋演算法的複雜度。 本文示範如何使用 Azure 搜尋整合 Xamarin.Forms 應用程式的 Microsoft Azure 搜尋程式庫。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A4AEF233-3672-4174-9DBA-15BEE3030C0B
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: bf6b9f8aaa07e934a1e707b85ecaa24e4f3d99bf
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 24db1404e218eea86356f9bbc004e7d5850c2e7a
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="searching-data-with-azure-search"></a>使用 Azure 搜尋搜尋資料
 
@@ -119,7 +119,7 @@ searchClient.Indexes.Delete(Constants.Index);
 
 定義索引之後, 可以使用其中兩個模型上傳資料：
 
-- **提取模型**– 資料是定期內嵌從 Azure DocumentDB、 Azure SQL Database、 Azure Blob 儲存體，或 SQL Server 裝載在 Azure 虛擬機器。
+- **提取模型**– 資料是定期內嵌從 Azure Cosmos DB、 Azure SQL Database、 Azure Blob 儲存體，或 SQL Server 裝載在 Azure 虛擬機器。
 - **發送模型**– 資料會以程式設計方式傳送至索引。 這是本文章中採用的主從模型。
 
 A`SearchIndexClient`必須匯入資料的索引建立執行個體。 這可藉由呼叫`SearchServiceClient.Indexes.GetClient`方法，如下列程式碼範例所示：

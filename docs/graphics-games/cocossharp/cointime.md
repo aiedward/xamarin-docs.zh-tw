@@ -1,6 +1,6 @@
 ---
-title: "參考階段實作詳細資料"
-description: "本指南討論實作詳細資料，在參考時間遊戲中，包括使用對應圖格、 建立實體、 動畫小，以及實作有效率的衝突。"
+title: 參考階段實作詳細資料
+description: 本指南討論實作詳細資料，在參考時間遊戲中，包括使用對應圖格、 建立實體、 動畫小，以及實作有效率的衝突。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5D285684-0417-4E16-BD14-2D1F6DEFBB8B
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: b3827d05ae9e563ae04dd4ab1e303577f6c9d82a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 80250ca9fae98fae653c9b2837b2b1a96fb02203
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="coin-time-implementation-details"></a>參考階段實作詳細資料
 
@@ -61,10 +61,7 @@ _本指南討論實作詳細資料，在參考時間遊戲中，包括使用對�
 1. 若要繪製磚上按一下
 1. 按一下或發送和拖曳來繪製磚對應
 
-
     ![](cointime-images/image2.png "按一下磚來繪製 1")
-
- 
 
 左上方的地塊包含所有的參考時間地形。 地形，也就是純色，包括**SolidCollision**屬性在螢幕左邊的圖格屬性中所示：
 
@@ -97,15 +94,11 @@ CoinTime 程式碼會尋找**EntityType**來識別應該由實體取代的磚載
 1. 重新命名新.tmx 檔案，因此它會繼續在層級的數字序列以現有的層級，例如**level8.tmx**
 1. 在 Visual Studio 或 Visual Studio for Mac，加入新.tmx 檔案至 Android 的層級資料夾。 請確認檔案使用**AndroidAsset**建置動作。
 
-
     ![](cointime-images/image8.png "驗證檔案所使用的 AndroidAsset 建置動作")
-
 
 1. 將新的.tmx 檔案加入 iOS 層級資料夾。 確定該檔案從其原始位置連結，並確認它會使用**BundleResource**建置動作。
 
-
     ![](cointime-images/image9.png "確定該檔案從其原始位置連結，並確認它會使用 BundleResource 建置動作")
-
 
 新的層級應該在層級的選取畫面會顯示為層級 9 (檔案名稱的層級 0 開始，但數字 1 開始的層級的按鈕):
 
