@@ -1,6 +1,6 @@
 ---
-title: "Apple Pay 功能"
-description: "為應用程式新增功能通常需要額外的佈建設定。 本指南說明 Apple Pay 功能所需的設定。"
+title: Apple Pay 功能
+description: 為應用程式新增功能通常需要額外的佈建設定。 本指南說明 Apple Pay 功能所需的設定。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 735CC916-16A4-471B-87F7-0535E24288D7
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: cc2c12ce2826f0b66cdf49a9a4df84d7f67f7713
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 655e9fc81d7079c355998f0da7b41ea7cc778c3f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="apple-pay-capabilities"></a>Apple Pay 功能
 
@@ -116,7 +116,7 @@ Apple 需要使用憑證來加密與交易關聯的敏感性資料。 每個建�
     ![建立 Certificate Signing Request \(憑證簽署要求\)](apple-pay-capabilities-images/image45.png)
     
     > [!IMPORTANT]
-> 如果您使用 Apple Pay 的付款提供者 (例如 JudoPay 或 Stripe)，它們可以提供一個格式正確的 CSR，供您此時使用。 如需有關要求此 CSR 的資訊，請參閱 [JudoPay](https://www.judopay.com/docs/version-52/apple-pay/getting-started/#create-an-apple-pay-certificate) \(英文\) 和 [Stripe](https://stripe.com/docs/apple-pay/apps#csr) \(英文\) 網站。 若要建立您自己的 CSR，請依照下方的步驟 5 到 8。 建立 CSR 之後，請前往步驟 9。
+    > 如果您使用 Apple Pay 的付款提供者 (例如 JudoPay 或 Stripe)，它們可以提供一個格式正確的 CSR，供您此時使用。 如需有關要求此 CSR 的資訊，請參閱 [JudoPay](https://www.judopay.com/docs/version-52/apple-pay/getting-started/#create-an-apple-pay-certificate) \(英文\) 和 [Stripe](https://stripe.com/docs/apple-pay/apps#csr) \(英文\) 網站。 若要建立您自己的 CSR，請依照下方的步驟 5 到 8。 建立 CSR 之後，請前往步驟 9。
 
 5.  開啟「鑰匙圈存取」應用程式，然後瀏覽至 [鑰匙圈存取] > [憑證輔助程式] > [從憑證授權要求憑證]： 
 

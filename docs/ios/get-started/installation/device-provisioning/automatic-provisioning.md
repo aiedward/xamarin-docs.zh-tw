@@ -1,6 +1,6 @@
 ---
-title: "自動化佈建"
-description: "成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。 本指南將探索如何在 Visual Studio for Mac 中使用「自動化佈建」來要求部署憑證和設定檔。"
+title: 自動化佈建
+description: 成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。 本指南將探索如何在 Visual Studio for Mac 中使用「自動化佈建」來要求部署憑證和設定檔。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 11/17/2017
-ms.openlocfilehash: a411c214e35f78ff9d3dd8d4e9122702d66a2156
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 271d9e3f7ae04f03a132ae2fd0ebf531fe52578c
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="automatic-provisioning"></a>自動化佈建
 
@@ -24,7 +24,7 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 - Xcode 9 或更新版本
 
 > [!IMPORTANT]
->  本指南說明如何使用 Visual Studio for Mac 來設定 Apple 裝置以進行部署，以及如何部署應用程式。 如需有關此做法的手動步驟，或是若要在 Windows 上使用 Visual Studio 來進行此操作，建議您依照[手動佈建](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)指南中的詳細步驟進行操作。
+> 本指南說明如何使用 Visual Studio for Mac 來設定 Apple 裝置以進行部署，以及如何部署應用程式。 如需有關此做法的手動步驟，或是若要在 Windows 上使用 Visual Studio 來進行此操作，建議您依照[手動佈建](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)指南中的詳細步驟進行操作。
 
 ## <a name="enabling-automatic-signing"></a>啟用自動簽署
 

@@ -1,6 +1,6 @@
 ---
-title: "在 Windows 上安裝 Xamarin.iOS"
-description: "本文說明如何設定 Xamarin.iOS for Visual Studio。 其中涵蓋 Visual Studio 之 Xamarin 擴充功能的安裝程序，並探討如何連線到安裝在 Mac 上的 Apple SDK。"
+title: 在 Windows 上安裝 Xamarin.iOS
+description: 本文說明如何設定 Xamarin.iOS for Visual Studio。 其中涵蓋 Visual Studio 之 Xamarin 擴充功能的安裝程序，並探討如何連線到安裝在 Mac 上的 Apple SDK。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: abf85d3e-a365-44a2-b1a4-6c572c7f76dd
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/29/2017
-ms.openlocfilehash: cfbe2df23317ee3ad11c9970ab892ddcc251b9d6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 08bf8b2b7c56983c43cf1ae080ab112e81851fbb
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="installing-xamarinios-on-windows"></a>在 Windows 上安裝 Xamarin.iOS
 
@@ -37,7 +37,7 @@ Xamarin.iOS for Visual Studio 支援的組態包括 Visual Studio 在 Mac 上的
 [![Xamarin.iOS 開發工作流程](images/xma2.png)](images/xma2.png#lightbox)
 
 > [!IMPORTANT]
->  Visual Studio 實際上會啟動個別的 MSBuild 處理序來建置專案。 此處理序會建立與 Mac 的新連線，也就是說當 Visual Studio 進行組建時，實際上有兩個從 Windows 到 Mac 的 SSH 連線。 從[命令列](~/ios/get-started/installation/windows/connecting-to-mac/index.md)進行組建只會建立一個 MSBuild 處理序。 為了簡單起見，此圖表的所有連線都只由一個箭號代表。
+> Visual Studio 實際上會啟動個別的 MSBuild 處理序來建置專案。 此處理序會建立與 Mac 的新連線，也就是說當 Visual Studio 進行組建時，實際上有兩個從 Windows 到 Mac 的 SSH 連線。 從[命令列](~/ios/get-started/installation/windows/connecting-to-mac/index.md)進行組建只會建立一個 MSBuild 處理序。 為了簡單起見，此圖表的所有連線都只由一個箭號代表。
 
 ## <a name="requirements"></a>需求
 
@@ -105,7 +105,7 @@ Xamarin.iOS for Visual Studio 可讓您從 Windows 建立、編輯、組建及�
 安裝軟體之後，請依照下一節中的步驟在 macOS 上設定 Xamarin.iOS，以允許 Xamarin for Visual Studio 與其連線。
 
 > [!IMPORTANT]
->  Windows 電腦必須與所連線的 Mac 使用相同的 Xamarin.iOS 版本。 確保此條件成立：
+> Windows 電腦必須與所連線的 Mac 使用相同的 Xamarin.iOS 版本。 確保此條件成立：
 >
 > - **Visual Studio 2015 和更早的版本**：確定您與 Visual Studio for Mac 位於相同的[更新通道](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/)上。
 >

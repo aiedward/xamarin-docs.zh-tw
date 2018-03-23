@@ -1,6 +1,6 @@
 ---
-title: "IPA 支援"
-description: "本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 IPA 檔案，以供測試或內部應用程式的內部作業散發使用。"
+title: IPA 支援
+description: 本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 IPA 檔案，以供測試或內部應用程式的內部作業散發使用。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: D253C2DB-852E-6FC6-C9FD-574730B8DB19
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: bee3480fc90c2eac5629e336c57daa90adf9c346
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fa0986141a44bbe7100268c629e606a5857e2699
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ipa-support"></a>IPA 支援
 
@@ -151,7 +151,7 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
     ![](ipa-support-images/imagevs02.png "從 [組態] 下拉式清單選取 [臨機操作]")
 
     > [!NOTE]
-> 較新的 Xamarin.iOS 專案可能無法使用臨機操作組態。 如果無法使用，請選取 [發行] 組態。
+    > 較新的 Xamarin.iOS 專案可能無法使用臨機操作組態。 如果無法使用，請選取 [發行] 組態。
 
 3. 如果您要納入選擇性的 **iTunesMetadata.plist** 檔案，請按一下 [...] 按鈕，從清單中選取該檔案，然後按一下 [開啟] 按鈕：
 
