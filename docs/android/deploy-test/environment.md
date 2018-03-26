@@ -1,5 +1,5 @@
 ---
-title: "Xamarin.Android 環境"
+title: Xamarin.Android 環境
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 67BFD4E1-276C-4B9F-9BD8-A5218D2BD529
@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: ee612d4a8982a6ae505b4d329b9abbc84624a1e0
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 66f4dcf14cd179795e9a23bccabe4289d74c7c5b
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android 環境
 
@@ -36,7 +36,7 @@ Android 系統屬性會針對目標裝置上所有的處理序進行設定。
 
 若 *key* 的開頭為大寫字元，則 *key* 便會作為環境變數處理，而 **setenv**(3) 則是用於在處理序啟動時將環境變數設為指定的 *value*。
 
-若 *key* 的開頭為小寫字元，則 *key* 便會作為 Android 系統屬性來處理，其 *value* 為「預設值」：控制 Xamarin.Android 執行行為的 Android 系統屬性會先從 Android 系統屬性伺服器尋找，若找不到，則便會使用環境檔案中指定的值。 這可允許 `adb shell setprop` 用於覆寫環境檔案中的值，作為診斷之用。
+若 *key* 的開頭為小寫字元，則 *key* 便會作為 Android 系統屬性來處理，其 *value* 為*預設值*：控制 Xamarin.Android 執行行為的 Android 系統屬性會先從 Android 系統屬性儲存區尋找，若找不到，則便會使用環境檔案中指定的值。 這可允許 `adb shell setprop` 用於覆寫環境檔案中的值，作為診斷之用。
 
 ## <a name="xamarinandroid-environment-variables"></a>Xamarin.Android 環境變數
 
@@ -45,9 +45,9 @@ Xamarin.Android 支援 `XA_HTTP_CLIENT_HANDLER_TYPE` 變數，可透過 `adb she
 
 ### `XA_HTTP_CLIENT_HANDLER_TYPE`
 
-組件限定類型，其必須從 [HttpMessageHandler](https://msdn.microsoft.com/en-us/library/system.net.http.httpmessagehandler(v=vs.118).aspx) 繼承並從 [`HttpClient()` 預設建構函式](https://msdn.microsoft.com/en-us/library/hh138077(v=vs.118).aspx)建構。
+組件限定類型，其必須從 [HttpMessageHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpmessagehandler?view=xamarinandroid-7.1) 繼承並從 [`HttpClient()` 預設建構函式](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.-ctor?view=xamarinandroid-7.1#System_Net_Http_HttpClient__ctor)建構。
 
-在 Xamarin.Android 6.1 中，預設不會設定環境變數，並且會使用 [HttpClientHandler](https://msdn.microsoft.com/en-us/library/system.net.http.httpclienthandler(v=vs.118).aspx)。
+在 Xamarin.Android 6.1 中，預設不會設定環境變數，並且會使用 [HttpClientHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1)。
 
 或者，`Xamarin.Android.Net.AndroidClientHandler` 的值可以指定為針對網路存取使用 [`java.net.URLConnection`](https://developer.xamarin.com/api/type/Java.Net.URLConnection/)，「可」允許使用 TLS 1.2 (若 Android 支援它的話)。
 

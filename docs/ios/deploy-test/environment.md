@@ -1,16 +1,16 @@
 ---
-title: "環境"
+title: 環境
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9801644A-89BB-4491-AD28-7F3B97D2CD62
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 7489c2fe38e8433811c5f298296baebacf1c0727
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: c46d3aa151d4a596ca3da881a3c4e5e38bb41cbd
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="environment"></a>環境
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 03/12/2018
 
 ## <a name="permanent-environment-variables"></a>永久環境變數
 
-永久環境變數可藉由將額外的引數指定給 mtouch 封裝工具來設定。 這些環境變數會編譯到可執行檔中，即使應用程式不是從 Xamarin Studio 啟動的也會進行設定。
+永久環境變數可藉由將額外的引數指定給 mtouch 封裝工具來設定。 這些環境變數會編譯到可執行檔中，即使應用程式不是從 Visual Studio for Mac 啟動也會設定這些環境變數。
 
 ## <a name="example"></a>範例
 

@@ -1,6 +1,6 @@
 ---
-title: "發佈至 App Store"
-description: "本文將介紹如何設定、建置及發佈 Xamarin.iOS 應用程式，以透過 App Store 進行散發。 本文的逐步指南內容涵蓋如何準備應用程式的散發、如何使用 Apple 的工具提交應用程式以進行審查，以及最終如何將應用程式發佈至 App Store。"
+title: 發佈至 App Store
+description: 本文將介紹如何設定、建置及發佈 Xamarin.iOS 應用程式，以透過 App Store 進行散發。 本文的逐步指南內容涵蓋如何準備應用程式的散發、如何使用 Apple 的工具提交應用程式以進行審查，以及最終如何將應用程式發佈至 App Store。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: dfa3d1f89d813f2e57863e615c701cd78c655ac0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ef8fafb923dcad936ce0a049e715cdd163ea7222
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="publishing-to-the-app-store"></a>發佈至 App Store
 
@@ -185,7 +185,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 
 > [!NOTE]
-> 注意：雖然舊的 _App Store_ 與_臨機操作_組態現已從所有 Visual Studio for Mac 範本專案移除，但您可能會在較舊的專案中發現仍然存在這些組態。 發生這種情形時，您可繼續使用上述清單步驟 1 內的 **App Store | 裝置**組態。
+> 雖然舊的 _App Store_ 與_臨機操作_設定現已從所有 Visual Studio for Mac 範本專案中移除，但是在較舊的專案中仍然存在這些設定。 發生這種情形時，您可繼續使用上述清單步驟 1 內的 **App Store | 裝置**組態。
 
 ### <a name="sign-and-distribute-your-app"></a>簽署並散發應用程式
 
@@ -309,7 +309,7 @@ xbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/B
 ## <a name="submitting-your-app-to-apple"></a>向 Apple 提交應用程式
 
 > [!NOTE]
-> 注意：Apple 已於近日變更其 iOS 應用程式的驗證程序，因此 IPA 內包含 `iTunesMetadata.plist` 的應用程式可能會遭到退回。 如果您遇到錯誤 `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"`，[此處](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1)描述的因應措施應可解決問題。
+> Apple 已於近日變更其 iOS 應用程式的驗證程序，因此 IPA 內包含 `iTunesMetadata.plist` 的應用程式可能會遭到退回。 如果您遇到錯誤 `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"`，[此處](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1)描述的因應措施應可解決問題。
 
 散發組建完成後，您即可準備將 iOS 應用程式提交至 Apple 以供審查，並在 App Store 上發行。
 

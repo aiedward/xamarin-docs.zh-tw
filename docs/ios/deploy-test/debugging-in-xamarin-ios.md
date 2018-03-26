@@ -1,6 +1,6 @@
 ---
-title: "偵錯"
-description: "Xamarin.iOS 應用程式可以使用 Visual Studio for Mac 或 Visual Studio 中的內建偵錯工具進行偵錯。"
+title: 偵錯
+description: Xamarin.iOS 應用程式可以使用 Visual Studio for Mac 或 Visual Studio 中的內建偵錯工具進行偵錯。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 05460010-99E1-DC38-F855-2D691EF54484
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 18f9814941c4cd7d2719f23b6102361f013ba8a9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a449d692a2761f59135930d40ad3708d6ef2e9b9
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="debugging"></a>偵錯
 
@@ -22,7 +22,7 @@ _Xamarin.iOS 應用程式可以使用 Visual Studio for Mac 或 Visual Studio �
 
 
 > [!NOTE]
-> **重要：**當您在 [偵錯] 模式中編譯應用程式時，Xamarin.iOS 將產生較慢且較大的應用程式，因為每一行程式碼都必須進行檢測。 在發行之前，請務必先完成 [發行] 組建。
+> 當您在「偵錯」模式中編譯應用程式時，Xamarin.iOS 將產生較慢且較大的應用程式，因為每一行程式碼都必須進行檢測。 在發行之前，請務必先完成 [發行] 組建。
 
 Xamarin.iOS 偵錯工具會整合到您的 IDE 中，而且它可讓開發人員在模擬器和裝置上針對使用 Xamarin.iOS 所支援之任何受控語言建置的 Xamarin.iOS 應用程式進行偵錯。
 

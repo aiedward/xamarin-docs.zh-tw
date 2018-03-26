@@ -1,6 +1,6 @@
 ---
-title: "Hello, iOS：深度剖析"
-description: "這份含有兩部分的指南將說明如何使用 Visual Studio for Mac 或 Visual Studio 來建置基本的 Xamarin.iOS 應用程式，以及了解使用 Xamarin 進行 iOS 應用程式開發的基本知識。 其中將介紹建置和部署 Xamarin.iOS 應用程式所需的工具、概念和步驟。"
+title: Hello, iOS：深度剖析
+description: 這份含有兩部分的指南將說明如何使用 Visual Studio for Mac 或 Visual Studio 來建置基本的 Xamarin.iOS 應用程式，以及了解使用 Xamarin 進行 iOS 應用程式開發的基本知識。 其中將介紹建置和部署 Xamarin.iOS 應用程式所需的工具、概念和步驟。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 61ba3a7e-fe11-4439-8bc8-9809512b8eff
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d7a458a0a0c2da1dbb40ae7222fcd35cf7172953
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 500c3d1c6f38427a921097a0c3104254ec5cb263
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="hello-ios-deep-dive"></a>Hello, iOS 深度剖析
 
@@ -306,7 +306,7 @@ public partial class ViewController : UIViewController
 `ViewController` 現在會在分鏡腳本中衍生與此檢視控制器相關聯之內容檢視階層的互動。 接下來，將藉由介紹名為「檢視生命週期」的程序，來讓您了解檢視控制器在管理檢視中所扮演的角色。
 
 > [!NOTE]
-> **注意：**針對不需使用者互動的僅供檢視畫面，**類別**屬性可以在 **Properties Pad** 中保留空白。 這會將檢視控制器的支援類別設定為 `UIViewController` 的預設實作，這適用於您不打算新增自訂程式碼時。
+> 針對不需使用者互動的僅供檢視畫面，**類別**屬性可以在 **Properties Pad** 中保留空白。 這會將檢視控制器的支援類別設定為 `UIViewController` 的預設實作，這適用於您不打算新增自訂程式碼時。
 
 ### <a name="view-lifecycle"></a>檢視生命週期
 
@@ -416,7 +416,7 @@ iOS 模擬器是一個快速測試應用程式的方式。 此模擬器有數個
 裝置需要時間佈建，並且需要 Apple 開發人員帳戶。 [裝置佈建](~/ios/get-started/installation/device-provisioning/index.md)指南提供準備好裝置以進行開發的完整指示。
 
 > [!NOTE]
-> **附註：**目前，由於 Apple 的要求，因此需要具有開發憑證或_簽署身分識別_，才能針對裝置或模擬器建置程式碼。 請依照[裝置佈建指南](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)中的步驟來設定此項。
+> 目前，由於 Apple 的要求，因此需要具有開發憑證或簽署身分識別，才能針對裝置或模擬器建置程式碼。 請依照[裝置佈建指南](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)中的步驟來設定此項。
 
 佈建裝置之後，您可插入裝置、將建置工具列中的目標變更為 iOS 裝置，然後按 [啟動] ([播放]) 以部署到裝置，如下列螢幕擷取畫面所示：
 

@@ -1,17 +1,17 @@
 ---
-title: "準備可供發行的應用程式"
+title: 準備可供發行的應用程式
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9C8145B3-FCF1-4649-8C6A-49672DDA4159
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: e440d5ab9f822277a8c0948a9795b9a030fa268c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/21/2018
+ms.openlocfilehash: baaa40bc89a1ca6728189563c8350f9c9f011762
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="preparing-an-application-for-release"></a>準備可供發行的應用程式
 
@@ -40,13 +40,7 @@ ms.lasthandoff: 03/09/2018
 
 ## <a name="specify-the-application-icon"></a>指定應用程式圖示
 
-強烈建議每個 Xamarin.Android 應用程式都指定應用程式圖示。 某些應用程式市集要求一定要有圖示，才能發行 Android 應用程式。
-
-`Application` 屬性的 `Icon` 屬性可用來指定 Xamarin.Android 專案的應用程式圖示。 此屬性可以在 **Properties\AssemblyInfo.cs** 檔案中宣告，如以下範例程式碼片段所示：
-
-```csharp
-[assembly: Application(Icon = "@drawable/icon")]
-```
+強烈建議每個 Xamarin.Android 應用程式都指定應用程式圖示。 某些應用程式市集要求一定要有圖示，才能發行 Android 應用程式。 `Application` 屬性的 `Icon` 屬性可用來指定 Xamarin.Android 專案的應用程式圖示。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -61,6 +55,15 @@ ms.lasthandoff: 03/09/2018
 [![設定應用程式圖示](images/xs/01-application-icon-sml.png)](images/xs/01-application-icon.png#lightbox)
 
 -----
+
+在這些範例中，`@drawable/icon` 指的是位於 **Resources/drawable/icon.png** 的圖示檔案 (請注意，資源名稱中並沒有包含 **.png** 副檔名)。 此屬性也可以在 **Properties\AssemblyInfo.cs** 檔案中宣告，如以下範例程式碼片段所示：
+
+```csharp
+[assembly: Application(Icon = "@drawable/icon")]
+```
+
+一般來說，`using Android.App` 會在 **AssemblyInfo.cs** 的上方宣告 (`Application` 屬性的命名空間為 `Android.App`)，不過若 `using` 陳述式不存在，您可能需要新增它。
+
 
 <a name="Versioning" />
 

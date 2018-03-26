@@ -1,6 +1,6 @@
 ---
-title: "在 iTunes Connect 中設定應用程式"
-description: "本文將介紹在 iTunes Connect 中設定和維護 Xamarin.iOS 應用程式，並在 App Store 上發行並散發所需的步驟。"
+title: 在 iTunes Connect 中設定應用程式
+description: 本文將介紹在 iTunes Connect 中設定和維護 Xamarin.iOS 應用程式，並在 App Store 上發行並散發所需的步驟。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 74587317-4b15-4904-9582-dcd914827cbc
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: dc21b21e28de155aa7a0e7b5cf9734e752cce9a2
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 3d5c84aee12c374317a797aa41446630a441f6df
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>在 iTunes Connect 中設定應用程式
 
@@ -198,7 +198,7 @@ Apple 要求開發人員提供網站連結，當使用者遇到可能的應用�
 ### <a name="app-icon"></a>應用程式圖示
 
 > [!IMPORTANT]
->  **注意**：應用程式圖示將不再透過 iTunes Connect 提交。 必須透過專案中 **Assets.xcassets** 文件的 **AppIcon** 影像集提交。 如需詳細資訊，請參閱 [App Store 圖示](~/ios/app-fundamentals/images-icons/app-store-icon.md)指南。
+>  應用程式圖示將不再透過 iTunes Connect 提交。 必須透過專案中 **Assets.xcassets** 文件的 **AppIcon** 影像集提交。 如需詳細資訊，請參閱 [App Store 圖示](~/ios/app-fundamentals/images-icons/app-store-icon.md)指南。
 
 應用程式圖示對使用者來說是應用程式的門面，必須容易記憶、在小尺寸下也能正常顯示。 容易記憶的圖示為乾淨、簡單、可立即辨識。
 

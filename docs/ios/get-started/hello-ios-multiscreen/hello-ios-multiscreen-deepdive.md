@@ -1,6 +1,6 @@
 ---
-title: "Hello, iOS 多重畫面"
-description: "在這份含有兩部分的指南中，將擴充我們在 Hello, iOS 指南中所建立的 Phoneword 應用程式來處理第二個畫面。 過程中，我們將介紹「模型-檢視-控制器」設計模式、實作第一個 iOS 瀏覽，並且更深入了解 iOS 應用程式結構和功能。"
+title: Hello, iOS 多重畫面
+description: 在這份含有兩部分的指南中，將擴充我們在 Hello, iOS 指南中所建立的 Phoneword 應用程式來處理第二個畫面。 過程中，我們將介紹「模型-檢視-控制器」設計模式、實作第一個 iOS 瀏覽，並且更深入了解 iOS 應用程式結構和功能。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: c866e5f4-8154-4342-876e-efa0693d66f5
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: a7d4af1563cb5fe5166c289c4ee5dca6ad3ffb00
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0c21fbd86fc9069d52f5f5935f66500e9477ca02
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="hello-ios-multiscreen-deep-dive"></a>Hello, iOS 多重畫面深度剖析
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 03/09/2018
 MVC 模式很實用，因為它提供 GUI 應用程式之不同組件間的邏輯分隔，讓我們能夠更輕鬆地重複使用程式碼與檢視。 讓我們開始更詳盡地查看這每一個角色。
 
 > [!NOTE]
-> **注意**：MVC 模式大致上類似於 ASP.NET 網頁或 WPF 應用程式的結構。 在這些範例中，檢視是實際上負責描述 UI 的元件，而且對應至 ASP.NET 中的 ASPX (HTML) 網頁，或對應至 WPF 應用程式中的 XAML。 控制器是負責管理檢視的元件，對應至 ASP.NET 或 WPF 中的程式碼後置。
+> MVC 模式大致上類似於 ASP.NET 網頁或 WPF 應用程式的結構。 在這些範例中，檢視是實際上負責描述 UI 的元件，而且對應至 ASP.NET 中的 ASPX (HTML) 網頁，或對應至 WPF 應用程式中的 XAML。 控制器是負責管理檢視的元件，對應至 ASP.NET 或 WPF 中的程式碼後置。
 
 
 ### <a name="model"></a>型號
@@ -52,7 +52,7 @@ MVC 完全不知道模型的「資料持續性」和「存取」。 換句話說
 在某些情況下，MVC 的模型部分可能是空的。 例如，我們可能選擇將一些靜態網頁新增至應用程式，以說明電話翻譯工具的運作方式、如何建置它，以及如何與我們聯繫來回報錯誤。 這些應用程式畫面仍會使用檢視和控制器來建立，但它們不會有任何實際的模型資料。
 
 > [!NOTE]
-> **注意**：在某些文獻中，MVC 模式的模型部分可以參考整個應用程式後端，而不只是顯示於 UI 的資料。 在本指南中，我們會使用模型的新詮釋，但差別不是特別重要。
+> 在某些文獻中，MVC 模式的模型部分可以參考整個應用程式後端，而不只是顯示於 UI 的資料。 在本指南中，我們會使用模型的新詮釋，但差別不是特別重要。
 
 
 ### <a name="view"></a>檢視

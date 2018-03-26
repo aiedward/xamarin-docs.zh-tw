@@ -1,6 +1,6 @@
 ---
-title: "App Store 散發"
-description: "本文件涵蓋將應用程式散發至 Apple App Store 的需求。"
+title: App Store 散發
+description: 本文件涵蓋將應用程式散發至 Apple App Store 的需求。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 2ee98b48feb8bc1e3431d796a7ca07a6c2e74790
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 25c4cb980f77880ae690916ec45be3cd12a3cf10
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="app-store-distribution"></a>App Store 散發
 
@@ -37,7 +37,7 @@ ms.lasthandoff: 03/09/2018
 您可以選擇與用於開發佈建設定檔相同的**應用程式識別碼**和**裝置**；但如果您還沒有，則需要建立一個「散發憑證」，以在將應用程式提交到應用程式市集時，確認您的組織。 以下將介紹建立「散發憑證」的步驟。
 
 > [!NOTE]
->  注意：只有小組代理人和管理員可以建立散發憑證和佈建設定檔。
+> 只有小組代理人和管理員可以建立散發憑證和佈建設定檔。
 
 <a name="creatingcertificate" />
 

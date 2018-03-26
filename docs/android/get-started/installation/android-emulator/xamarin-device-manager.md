@@ -1,18 +1,18 @@
 ---
-title: "Xamarin Android 裝置管理員"
-description: "Xamarin Android 裝置管理員目前處於預覽狀態，會取代 Google 的舊版裝置管理員。 本指南將說明如何使用 Xamarin Android 裝置管理員，來建立和設定可模擬 Android 裝置的 Android 虛擬裝置 (AVD)。 您可以使用這些虛擬裝置來執行和測試應用程式，而不必依賴實體裝置。"
+title: Xamarin Android 裝置管理員
+description: Xamarin Android 裝置管理員目前處於預覽狀態，會取代 Google 的舊版裝置管理員。 本指南將說明如何使用 Xamarin Android 裝置管理員，來建立和設定可模擬 Android 裝置的 Android 虛擬裝置 (AVD)。 您可以使用這些虛擬裝置來執行和測試應用程式，而不必依賴實體裝置。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/13/2018
-ms.openlocfilehash: c38a0a7f6897cd90f81c92348280539b33524b9c
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.date: 03/20/2018
+ms.openlocfilehash: 01fb21729e919872935fd63af28a13642a11fa4b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Xamarin Android 裝置管理員
 
@@ -308,7 +308,8 @@ Xamarin Studio 與 Xamarin Android 裝置管理員不相容。
 
 
 <a name="device-edit" />
- 
+
+
 ### <a name="edit-device"></a>編輯裝置
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -415,6 +416,7 @@ Xamarin Studio 與 Xamarin Android 裝置管理員不相容。
 
 <a name="properties" />
  
+
 ## <a name="profile-properties"></a>設定檔屬性
 
 [新裝置] 和 [裝置編輯] 畫面會在第一欄中列出虛擬裝置的屬性，並在第二欄中列出每個屬性的對應值。 當您選取屬性時，該屬性的詳細描述就會顯示在右邊。 您可以修改其「硬體設定檔屬性」及其「AVD 屬性」。
@@ -467,9 +469,9 @@ Xamarin Studio 與 Xamarin Android 裝置管理員不相容。
 
 ## <a name="troubleshooting"></a>疑難排解
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 以下說明一般的 Xamarin Android 裝置管理員問題和因應措施：
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ### <a name="android-sdk-in-non-standard-location"></a>Android SDK 不在標準位置上
 
@@ -501,19 +503,64 @@ Android SDK 通常會安裝於下列位置：
 
 對 **user.config** 進行此變更之後，您應該就能啟動 Xamarin Android 裝置管理員。
 
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Android Oreo 上的快照功能會停用 WiFi
+
+如果您有針對具有模擬 Wi-Fi 存取的 Android Oreo 設定 AVD，在使用快照功能後重新啟動 AVD 可能會造成 Wi-Fi 存取被停用。
+
+若要解決這個問題：
+
+1. 在 Xamarin 裝置管理員中選取 AVD。
+
+2. 在其他選項功能表中，按一下 [在檔案總管中顯示]。
+
+3. 瀏覽至 [快照] > [default_boot]。
+
+4. 刪除 **snapshot.pb** 檔案：
+
+    [![snapshot.pb 檔案的位置](xamarin-device-manager-images/win/36-delete-snapshot-sml.png)](xamarin-device-manager-images/win/36-delete-snapshot.png#lightbox)
+
+5. 重新啟動 AVD。 
+
+做出這些變更之後，AVD 將會重新啟動為允許 Wi-Fi 再次運作的狀態。
+
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Android Oreo 上的快照功能會停用 WiFi
+
+如果您有針對具有模擬 Wi-Fi 存取的 Android Oreo 設定 AVD，在使用快照功能後重新啟動 AVD 可能會造成 Wi-Fi 存取被停用。
+
+若要解決這個問題：
+
+1. 在 Xamarin 裝置管理員中選取 AVD。
+
+2. 在其他選項功能表中，按一下 [在尋找工具中顯示]。
+
+3. 瀏覽至 [快照] > [default_boot]。
+
+4. 刪除 **snapshot.pb** 檔案：
+
+    [![snapshot.pb 檔案的位置](xamarin-device-manager-images/mac/36-delete-snapshot-sml.png)](xamarin-device-manager-images/mac/36-delete-snapshot.png#lightbox)
+
+5. 重新啟動 AVD。 
+
+做出這些變更之後，AVD 將會重新啟動為允許 Wi-Fi 再次運作的狀態。
+
+-----
+
+
 ### <a name="generating-a-bug-report"></a>產生問題報告
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 如果您發現 Xamarin Android 裝置管理員的問題且無法使用上述疑難排解提示來解決，請以滑鼠右鍵按一下標題列，然後選取 [Generate Bug Report] \(產生問題報告\) 來提出問題報告：
 
 ![用來提出問題報告的功能表項目位置](xamarin-device-manager-images/win/35-bug-report.png)
 
+
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-目前沒有任何關於 Visual Studio for Mac 上 Xamarin Android 裝置管理員的已知問題/因應措施。 
-
-### <a name="generating-a-bug-report"></a>產生問題報告
-
-如果您發現問題，請按一下 [說明] > [Generate Bug Report] \(產生問題報告\) 來提出問題報告：
+如果您發現 Xamarin Android 裝置管理員的問題且無法使用上述疑難排解提示來解決，請按一下 [說明] > [產生問題報告] 來提出問題報告：
 
 ![用來提出問題報告的功能表項目位置](xamarin-device-manager-images/mac/35-bug-report.png)
 

@@ -1,6 +1,6 @@
 ---
-title: "手動佈建"
-description: "成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。 本指南將探索如何要求開發憑證和設定檔、使用應用程式服務，以及將應用程式部署至裝置。"
+title: 手動佈建
+description: 成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。 本指南將探索如何要求開發憑證和設定檔、使用應用程式服務，以及將應用程式部署至裝置。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: e42b9d0b5eb64c17c96b66c9dbae7582551a06a0
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: ecda5823636a1b2d7e31a39e29f1d46cdf7118b6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="manual-provisioning"></a>手動佈建
 
@@ -85,7 +85,7 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 -----
 
 > [!WARNING]
-> **注意：**遺失憑證和相關金鑰會造成極度混亂的情況，因為這將需要撤銷現有的憑證並重新佈建所有相關的裝置，包括已註冊要進行臨機操作部署的項目。 成功設定「開發憑證」之後，請匯出一份備份複本，並將其儲存在安全的地方。 如需有關此做法的詳細資訊，請參閱 Apple 文件中[維護憑證](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html)指南 \(英文\) 的＜Importing Certificates and Profiles＞(匯入憑證與設定檔) 一節。
+> 遺失憑證和相關金鑰的後果極度嚴重，因為這將需要撤銷現有的憑證並重新佈建所有相關的裝置，包括已註冊要進行臨機操作部署的項目。 成功設定「開發憑證」之後，請匯出一份備份複本，並將其儲存在安全的地方。 如需有關此做法的詳細資訊，請參閱 Apple 文件中[維護憑證](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html)指南 \(英文\) 的＜Importing Certificates and Profiles＞(匯入憑證與設定檔) 一節。
 
 <a name="provisioning" />
 
@@ -209,12 +209,12 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 > [!IMPORTANT]
-> **注意：**可能必須將 Visual Studio for Mac 停止後再重新啟動，才能看見由 Xcode 所更新的新的或已修改的憑證或設定檔。
+> 可能必須將 Visual Studio for Mac 停止後再重新啟動，才能看見由 Xcode 所更新的新的或已修改的憑證或設定檔。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 > [!IMPORTANT]
-> **注意：**可能必須將 Visual Studio 停止後再重新啟動，才能看見由 Xcode 所更新的新的或已修改的憑證或設定檔。
+> 可能必須將 Visual Studio 停止後再重新啟動，才能看見由 Xcode 所更新的新的或已修改的憑證或設定檔。
 
 -----
 

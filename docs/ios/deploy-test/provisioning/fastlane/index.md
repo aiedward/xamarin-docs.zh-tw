@@ -1,6 +1,6 @@
 ---
-title: "適用於 iOS 的 fastline 簡介"
-description: "本指南介紹可用來對 iOS 應用程式進行程式碼簽署的 fastlane 工具"
+title: 適用於 iOS 的 fastline 簡介
+description: 本指南介紹可用來對 iOS 應用程式進行程式碼簽署的 fastlane 工具
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8202C57D-22FF-4224-A5B1-AAEF12B7C106
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 15ee039fbfa339a9246b2a4234f37caf685c80c6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4bba92180e77accaa42b70843fb5dbf12c94d632
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>適用於 iOS 的 fastline 簡介
 
@@ -32,7 +32,7 @@ fastlane 有各種不同使用方式：透過終端機命令、透過檔案型�
 
 本指南特別說明如何設定裝置來進行 iOS 應用程式開發，並將焦點放在 **cert****sigh** 及 **match** 公用程式。 
 
-所提供的內容可作為輔助應用程式散發的跳板，其中包括將持續整合伺服器上的流程完全自動化。 不過，請務必注意，fastlane 是一個製作工具來支援 Xcode 專案的協力廠商，因此有些工具或命令 (例如 `fastlane init`) 在與 csproj 檔案搭配使用時，可能不會如預期般運作。 如需有關使用 fastlane、額外工具或使用 fastlane 來針對 Android 進行發行的詳細資訊，請參閱 [https://fastlane.tools/](https://fastlane.tools/) \(英文\)
+所提供的內容可作為輔助應用程式散發的跳板，其中包括將持續整合伺服器上的流程完全自動化。 不過，請務必注意，fastlane 是一個製作工具來支援 Xcode 專案的協力廠商，因此有些工具或命令 (例如 `fastlane init`) 在與 csproj 檔案搭配使用時，可能不會如預期般運作。 如需有關使用 fastlane、額外工具或使用 fastlane 來針對 Android 進行發行的詳細資訊，請參閱 [https://fastlane.tools/](https://fastlane.tools/)
 
 <a name="Installation" />
 
@@ -44,10 +44,10 @@ fastlane 有各種不同使用方式：透過終端機命令、透過檔案型�
     error: command line tools are already installed, use "Software Update" to install updates
     ```
 
-2. 從 [https://download.fastlane.tools](https://download.fastlane.tools)\(英文\) 下載 fastlane 工具。 
+2. 從 [https://download.fastlane.tools](https://download.fastlane.tools) 下載 fastlane 工具。 
 
     > [!NOTE]
-> 您可以使用 `brew cask install fastlane` 從 Homebrew 安裝 fastlane 工具，或使用 `sudo gem install fastlane –NV` 透過 Rubygems (2.0 或更新版本) 安裝這些工具。 不過，使用安裝程式將可確保有正確的相依性可供使用。 
+    > 您可以使用 `brew cask install fastlane` 從 Homebrew 安裝 fastlane 工具，或使用 `sudo gem install fastlane –NV` 透過 Rubygems (2.0 或更新版本) 安裝這些工具。 不過，使用安裝程式將可確保有正確的相依性可供使用。 
 
 3. 將檔案解壓縮來安裝 fastlane，然後按兩下 `install` 可執行檔。 如果您收到通知您檔案「無法開啟，因為它來自無法識別的開發者」的錯誤，請按 [確定] 並執行下列動作：
     - 按住 Control 鍵再按一下 `install` 可執行檔。 這會顯示以下的對話方塊：

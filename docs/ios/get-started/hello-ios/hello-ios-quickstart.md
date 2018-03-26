@@ -1,6 +1,6 @@
 ---
 title: Hello, iOS
-description: "這份含有兩部分的指南將說明如何使用 Visual Studio for Mac 或 Visual Studio 來建置基本的 Xamarin.iOS 應用程式，以及了解使用 Xamarin 進行 iOS 應用程式開發的基本知識。 其中將介紹建置和部署 Xamarin.iOS 應用程式所需的工具、概念和步驟。"
+description: 這份含有兩部分的指南將說明如何使用 Visual Studio for Mac 或 Visual Studio 來建置基本的 Xamarin.iOS 應用程式，以及了解使用 Xamarin 進行 iOS 應用程式開發的基本知識。 其中將介紹建置和部署 Xamarin.iOS 應用程式所需的工具、概念和步驟。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: D3868F3A-4EED-BDDF-45AA-665102C39634
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 7b1d56c62fe54d5b1e196e20e1a6989b542da1be
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6a26bb42ee0abcec70d17633152dd12bd200a737
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="helloios-quickstart"></a>Hello.iOS 快速入門
 
@@ -90,7 +90,7 @@ Xamarin.iOS 可與下列設定搭配運作：
   ![](hello-ios-quickstart-images/image8new.png "將標籤拖曳至設計介面的中央區域")
 
   > [!NOTE]
-> **注意：**您隨時都可瀏覽至[檢視] > [面板] 來顯示 **Properties Pad** 或**工具箱**。
+  > 您隨時都可移至 [檢視] > [面板] 來顯示 **Properties Pad** 或**工具箱**。
 
 9. 捕捉「拖曳控制項」的控點 (控制項周圍的圓形)，然後將標籤加寬：
 
@@ -268,9 +268,8 @@ Xamarin.iOS 可與下列設定搭配運作：
 
   ![](hello-ios-quickstart-images/image27new.png "按 [啟動]")
 
-
   > [!NOTE]
-> **注意：**目前，由於 Apple 的要求，因此可能需要具有開發憑證或*簽署身分識別*，才能針對裝置或模擬器建置程式碼。 請依照[裝置佈建指南](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)中的步驟來設定此項。
+  > 目前，由於 Apple 的要求，因此可能需要具有開發憑證或簽署身分識別，才能針對裝置或模擬器建置程式碼。 請依照[裝置佈建指南](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)中的步驟來設定此項。
 
 28. 這樣將會在 iOS 模擬器內啟動應用程式：
 
@@ -289,7 +288,7 @@ Xamarin.iOS 可與下列設定搭配運作：
 **附註**：這個逐步解說使用 Windows 10 虛擬機器上的 Visual Studio Enterprise 2017。 您的設定可以與之不同，只要符合上述需求即可，但請注意，某些螢幕擷取畫面看起來可能與您的設定不同。
 
 > [!NOTE]
-> **繼續進行本逐步解說之前**，您「必須」已經從 Visual Studio 連線到您的 Mac。 這是因為 Xamarin.iOS 依賴 Apple 的工具來建置並啟動 iOS 設計工具和應用程式。 若要進行設定，請依照[連線到 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) 指南中的步驟執行。
+> 繼續進行本逐步解說之前，您必須已經從 Visual Studio 連線到您的 Mac。 這是因為 Xamarin.iOS 依賴 Apple 的工具來建置並啟動 iOS 設計工具和應用程式。 若要進行設定，請依照[連線到 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) 指南中的步驟執行。
 
 1. 從 [開始] 功能表啟動 Visual Studio：
 
@@ -333,7 +332,7 @@ Xamarin.iOS 可與下列設定搭配運作：
   ![](hello-ios-quickstart-images/vs-image10.png "將標籤的文字屬性變更為 `Enter a Phoneword`")
 
   > [!NOTE]
-> **注意：**您隨時都可瀏覽至 [檢視] 功能表來顯示 [屬性] 或 [工具箱]。
+  > 您隨時都可移至 [檢視] 功能表來顯示 [屬性] 或 [工具箱]。
 
 
 9. 在工具箱內搜尋「文字欄位」，然後將**文字欄位**從**工具箱**拖曳至設計介面，並放置於**標籤**下方。 調整寬度，直到**文字欄位**與**標籤**等寬為止：
@@ -377,7 +376,7 @@ Xamarin.iOS 可與下列設定搭配運作：
   ![](hello-ios-quickstart-images/vs-image19.png "新增名為 PhoneTranslator 的類別")
 
   > [!IMPORTANT]
-> 確定您選取的是圖示中具有 C# 的「類別」範本。 否則您可能無法參考這個新類別。
+  > 確定您選取的是圖示中具有 C# 的「類別」範本。 否則您可能無法參考這個新類別。
 
 
 17. 這會建立新的 C# 類別。 移除所有範本程式碼，並使用下列程式碼來取代：

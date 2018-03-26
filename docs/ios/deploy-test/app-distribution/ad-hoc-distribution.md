@@ -1,6 +1,6 @@
 ---
-title: "臨機操作散發"
-description: "本文件提供臨機操作散發技術的概觀，此技術主要用於透過大範圍使用者來測試 Xamarin.iOS 應用程式。"
+title: 臨機操作散發
+description: 本文件提供臨機操作散發技術的概觀，此技術主要用於透過大範圍使用者來測試 Xamarin.iOS 應用程式。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3B621CAD-103C-478A-97C3-829015F48D1A
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d01130989336ada855e936a6597b517fab5ee69
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e0db9df11436cf1613ac5eacdf293245f99b8855
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ad-hoc-distribution"></a>臨機操作散發
 
@@ -39,7 +39,7 @@ Xamarin.iOS 應用程式可透過「臨機操作」散發進行使用者測試�
 下節將描述如何著手設定散發憑證與散發佈建設定檔。
 
 > [!NOTE]
->  注意：只有小組代理人和管理員可以建立散發憑證和佈建設定檔。
+> 只有小組代理人和管理員可以建立散發憑證和佈建設定檔。
 
 <a name="createcertificate" />
 
@@ -49,17 +49,17 @@ Xamarin.iOS 應用程式可透過「臨機操作」散發進行使用者測試�
 1. 瀏覽至 Apple Developer Member Center 的「憑證、識別碼與設定檔」區段。
 2. 在 [憑證] 下，選取 [生產環境]。
 3. 按一下 [+] 按鈕以建立新的憑證。
-4. 根據您的計劃成員身分，在 [生產環境] 標題下，選取 [In-House and Ad Hoc] (內部和臨機操作) 或 [App Store and Ad HocA] (App Store 和臨機操作)：
+4. 根據您的計劃成員身分，在 [生產環境] 標題下，選取 [In-House and Ad Hoc] (內部和臨機操作) 或是 [App Store and Ad HocA] (App Store 和臨機操作)：
 
   [![](ad-hoc-distribution-images/cert-first-small.png "選取 [In-House and Ad Hoc] \(內部和臨機操作\) 或 [App Store and Ad Hoc] \(App Store 和臨機操作\)")](ad-hoc-distribution-images/cert-first-large.png#lightbox)
 
 5. 按一下 [繼續]，並遵循指示以透過 Keychain 存取來建立憑證簽署要求：
 
-  [![](ad-hoc-distribution-images/createcertmanually02.png "透過 Keychain 存取建立憑證簽署要求")](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
+  [![](ad-hoc-distribution-images/createcertmanually02.png "透過 Keychain 存取來建立憑證簽署要求")](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
 
 6. 依指示建立 CSR 之後，請按一下 [繼續] 並將 CSR 上傳到 Member Center：
 
-  [![](ad-hoc-distribution-images/createcertmanually03.png "將 CSR 上傳到成員中心")](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
+  [![](ad-hoc-distribution-images/createcertmanually03.png "將 CSR 上傳到 Member Center")](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
 
 7. 按一下 [產生] 以建立您的憑證。
 8. 最後，下載完成的憑證，並按兩下檔案以進行安裝。

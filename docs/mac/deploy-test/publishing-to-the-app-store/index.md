@@ -1,6 +1,6 @@
 ---
-title: "發行至 App Store"
-description: "本指南逐步說明使用 Visual Studio for Mac 部署 Xamarin.Mac 應用程式。 文中說明如何設定 Mac 開發人員帳戶、逐步說明建立用於程式碼簽署之憑證的程序，以及示範如何使用它們以建置可直接散發或透過 Mac App Store 散發的 Mac 應用程式。"
+title: 發行至 App Store
+description: 本指南逐步說明使用 Visual Studio for Mac 部署 Xamarin.Mac 應用程式。 文中說明如何設定 Mac 開發人員帳戶、逐步說明建立用於程式碼簽署之憑證的程序，以及示範如何使用它們以建置可直接散發或透過 Mac App Store 散發的 Mac 應用程式。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: D26C5E54-EAD2-5487-264D-4263AEA1EBF2
@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 86514dbd6b40e9d59ea9a598395cf6f0a3f4889a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e4c7b0913d43d9db3b5414c831864dae8d0b4d61
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="publishing-to-the-app-store"></a>發佈至 App Store
 
@@ -37,7 +37,7 @@ Xamarin.Mac 應用程式可以兩種方式散發：
 請依據您的情況選擇正確的註冊類型。
 
 > [!NOTE]
-> **注意**：此處所做的選擇會影響設定開發人員帳戶時一些畫面的顯示方式。 本文中的說明與螢幕擷取畫面都是從 [Individual] \(個人\) 開發人員帳戶的觀點完成。 以 [Company] \(公司\) 的身分進行時，有些選項僅供**小組系統管理員**使用。
+> 此處所做的選擇會影響設定開發人員帳戶時一些畫面的顯示方式。 本文中的說明與螢幕擷取畫面都是從 [Individual] \(個人\) 開發人員帳戶的觀點完成。 以 [Company] \(公司\) 的身分進行時，有些選項僅供**小組系統管理員**使用。
 
 
 ### <a name="certificates-and-identifiersmacdeploy-testpublishing-to-the-app-storecertificates-identifiersmd"></a>[憑證和識別碼](~/mac/deploy-test/publishing-to-the-app-store/certificates-identifiers.md)

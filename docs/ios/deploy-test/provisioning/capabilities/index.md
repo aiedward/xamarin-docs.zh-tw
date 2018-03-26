@@ -1,6 +1,6 @@
 ---
-title: "使用功能"
-description: "為應用程式新增功能通常需要額外的佈建設定。 本指南說明所有功能所需的設定。"
+title: 使用功能
+description: 為應用程式新增功能通常需要額外的佈建設定。 本指南說明所有功能所需的設定。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
@@ -8,15 +8,15 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: c038aba3989046e6df062e97ae7f777ae6238ade
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ffc694e2f513d61cf32e94d8dc3bae17c887521b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-capabilities"></a>使用功能
 
-為應用程式新增功能通常需要額外的佈建設定。本指南說明所有功能所需的設定。
+_為應用程式新增功能通常需要額外的佈建設定。_本指南說明所有功能所需的設定。
 
 Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) 來延伸 iOS 應用程式的功能及擴大其用途範圍。 這些功能可讓開發人員在其應用程式中加入更深的平台功能整合，例如：能夠從應用程式、額外的裝置服務 (例如 Siri) 等起始金錢交易。
 這些功能可以與 Xamarin.iOS 專案搭配使用。 以下提供完整的服務清單說明：
@@ -58,7 +58,7 @@ Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) �
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 > [!IMPORTANT]
-> **注意：**並非所有功能都可以在 Visual Studio for Mac 中新增和管理。 以下清單包含支援的功能：
+> 並非所有功能都可以在 Visual Studio for Mac 中新增和管理。 以下清單包含支援的功能：
 >
 >* HealthKit 
 >* HomeKit 
@@ -198,7 +198,7 @@ Xamarin developers can also use Xcode to quickly create a provisioning profile w
     ![Visual Studio for Mac 專案選項](images/image16.png)
 
 > [!IMPORTANT]
-> 注意：您可能也需要在 Entitlement.plist 檔案中設定權利金鑰，以及在 Info.plist 檔案中設定隱私金鑰。 如需有關這些權利的詳細資訊，請參閱[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
+> 您可能也需要在 Entitlement.plist 檔案中設定權利金鑰，以及在 Info.plist 檔案中設定隱私金鑰。 如需有關這些權利的詳細資訊，請參閱[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
 
 <a name="nextsteps" />
 
@@ -220,7 +220,7 @@ Xamarin developers can also use Xcode to quickly create a provisioning profile w
 -   確定已安裝「佈建設定檔」和「應用程式識別碼」，並且應用程式的 **Info.plist** (位於「Xamarin 專案」中) 使用上述設定的其中一個「應用程式識別碼」。
 -   確定應用程式的 **Entitlements.plist** 檔案 (位於「Xamarin 專案」中) 已啟用正確的服務。
 -   確定 info.plist 中已設定正確的隱私機碼
--   在應用程式的 [iOS 套件組合簽署] 中，確定 [自訂權利] 已設定為 **Entitlements.plist**。 **注意：**這「不是」「偵錯」和「iOS 模擬器」組建的預設設定。
+-   在應用程式的 [iOS 套件組合簽署] 中，確定 [自訂權利] 已設定為 **Entitlements.plist**。 這「不是」「偵錯」和「iOS 模擬器」組建的預設設定。
 
 <a name="summary" />
 

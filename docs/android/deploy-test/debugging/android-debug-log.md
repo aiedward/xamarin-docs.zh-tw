@@ -1,61 +1,136 @@
 ---
-title: "Android 偵錯記錄檔"
+title: Android 偵錯記錄檔
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 26ac42e4b7acbe19dee746130fc335fdf18ffc46
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/21/2018
+ms.openlocfilehash: 2e3225c0b0f984e52507ac472e26c4aee6a76909
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="android-debug-log"></a>Android 偵錯記錄檔
 
+開發人員所使用的其中一個非常常見的應用程式偵錯技巧就是呼叫 `Console.WriteLine`。 不過，在 Android 這類行動平台上並沒有主控台。 Android 裝置會提供一個記錄檔，您可以在撰寫應用程式時使用此記錄檔。 由於擷取此記錄檔時所輸入命令的緣故，因此這個記錄檔有時會被稱為 _logcat_。 使用 [偵錯記錄檔] 工具來檢視已記錄的資料。
+
 ## <a name="android-debug-log-overview"></a>Android 偵錯記錄檔概觀
 
-開發人員所使用的其中一個非常常見的應用程式偵錯技巧就是呼叫 `Console.WriteLine`。 不過，在 Android 這類行動平台上並沒有主控台。 Android 裝置會提供一個記錄檔，您可以在撰寫應用程式時使用此記錄檔。 由於擷取此記錄檔時所輸入命令的緣故，因此這個記錄檔有時稱為 'logcat' 。
+[偵錯記錄檔] 工具能提供在透過 Visual Studio 對應用程式進行偵錯的期間檢視記錄檔輸出的方式。 偵錯記錄檔支援下列裝置：
 
-## <a name="accessing-from-visual-studio"></a>從 Visual Studio 存取
+-   實體 Android 手機、平板電腦及穿戴式裝置。
+-   於 Google Android Emulator 上執行的 Android 虛擬裝置。 
 
-在 Visual Studio 2015 和更新的版本中，Android 和 iOS 記錄台已整合在一起。
+> [!NOTE]
+> [偵錯記錄檔] 工具無法搭配 Xamarin Live Player 運作。
 
-### <a name="visual-studio-2015--2017"></a>Visual Studio 2015 和 2017
+**偵錯記錄檔**不會顯示應用程式於裝置上獨立執行期間 (也就是當它與 Visual Studio 之間的連線中斷時) 所產生的記錄訊息。
 
-Visual Studio 的新 [裝置記錄檔] 工具視窗會顯示 Android 和 iOS 裝置的記錄檔。 透過執行下列任何一個命令，即可顯示此記錄檔： 
+
+## <a name="accessing-the-debug-log-from-visual-studio"></a>從 Visual Studio 存取偵錯記錄檔
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+若要開啟 [偵錯記錄檔] 工具，請按一下工具列上的 [裝置記錄檔 (logcat)] 圖示：
+
+[![工具列上 [裝置記錄檔] 工具的位置](android-debug-log-images/vswin-01-logcat-sml.png)](android-debug-log-images/vswin-01-logcat.png#lightbox)
+
+或是從下列其中一項功能表選項，啟動 [裝置記錄檔] 工具：
 
 -   [檢視] -> [其他視窗] -> [裝置記錄檔]
 -   [工具] -> [Android] -> [裝置記錄檔]
--   Android 工具列 -> [裝置記錄檔]
 
-顯示工具視窗之後，即可從裝置下拉式方塊選取實體裝置。 選取裝置之後，它就會自動開始在表格中新增來自執行中應用程式的記錄項目。 如果在裝置之間切換，將會停止後再啟動裝置記錄。為了讓裝置出現在下拉式方塊中，必須載入 Android 專案。 如果裝置未出現在下拉式方塊中，請先檢查 [啟動偵錯] 下拉式清單中是否有該裝置。 
+下列螢幕擷取畫面會示範 [偵錯工具] 視窗的各個部分：
 
-此工具視窗會提供：記錄項目表、可選取裝置的下拉式方塊、清除記錄項目的方式、搜尋方塊，以及播放/停止/暫停按鈕。 
+[![[偵錯工具] 視窗的各個部分](android-debug-log-images/vswin-03-features-sml.png)](android-debug-log-images/vswin-03-features.png#lightbox)
 
+-   **裝置選取器** &ndash; 選取要監視的實體裝置或執行中的模擬器。
+
+-   **記錄檔項目** &ndash; 來自 logcat 的記錄訊息資料表。
+
+-   **清除記錄檔項目** &ndash; 從資料表中清除所有目前的記錄檔項目。
+
+-   **播放/暫停** &ndash; 在更新或暫停新記錄檔項目的顯示之間切換。
+
+-   **停止** &ndash; 中止新記錄檔項目的顯示。
+
+-   **搜尋方塊** &ndash; 在此方塊中輸入搜尋字串以篩選出記錄檔項目的子集。
+
+
+顯示 [偵錯記錄檔] 工具視窗時，請使用裝置下拉式功能表來選擇要監視的 Android 裝置：
+
+[![[裝置選取器] 的位置](android-debug-log-images/vswin-02-devices-combo-sml.png)](android-debug-log-images/vswin-02-devices-combo.png#lightbox)
+
+選取裝置之後，[裝置記錄檔] 工具會自動新增來自執行中應用程式的記錄檔項目 &ndash; 這些記錄檔項目會顯示於記錄檔項目的資料表中。 在裝置之間切換會停止及啟動裝置記錄。 請注意，必須先載入 Android 專案，裝置才會出現在裝置選取器中。 若裝置沒有出現在裝置選取器中，請確認該裝置是否有出現在位於 [啟動] 按鈕旁邊的 Visual Studio 裝置下拉式功能表中。
+
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+若要開啟 [裝置記錄檔]，請按一下 [檢視] > [面板] > [裝置記錄檔]：
+
+[![[裝置記錄檔] 功能表項目的位置](android-debug-log-images/vsmac-01-logcat-sml.png)](android-debug-log-images/vsmac-01-logcat.png#lightbox)
+
+下列螢幕擷取畫面會示範 [偵錯工具] 視窗的各個部分：
+
+[![[偵錯工具] 視窗的功能](android-debug-log-images/vsmac-03-features-sml.png)](android-debug-log-images/vsmac-03-features.png#lightbox)
+
+-   **裝置選取器** &ndash; 選取要監視的實體裝置或執行中的模擬器。
+
+-   **記錄檔項目** &ndash; 來自 logcat 的記錄訊息資料表。
+
+-   **清除記錄檔項目** &ndash; 從資料表中清除所有目前的記錄檔項目。
+
+-   **搜尋方塊** &ndash; 在此方塊中輸入搜尋字串以篩選出記錄檔項目的子集。
+
+-   **顯示訊息** &ndash; 切換告知性訊息的顯示。
+
+-   **顯示警告** &ndash; 切換警告訊息的顯示 (警告訊息會以黃色顯示)。
+
+-   **顯示錯誤** &ndash; 切換錯誤訊息的顯示 (錯誤訊息會以紅色顯示)。
+
+-   **重新連線** &ndash; 重新連線至裝置並重新整理記錄檔項目顯示。
+
+-   **新增標記** &ndash; 在最新的記錄檔項目之後插入標記訊息 (例如 `--- Marker N ---`)，其中 _N_ 為從 1 開始的計數器，並會隨新標記的新增而以 1 遞增。
+
+顯示 [偵錯記錄檔] 工具視窗時，請使用裝置下拉式功能表來選擇要監視的 Android 裝置：
+
+[![[裝置選取器] 的位置](android-debug-log-images/vsmac-02-devices-combo-sml.png)](android-debug-log-images/vsmac-02-devices-combo.png#lightbox)
+
+選取裝置之後，[裝置記錄檔] 工具會自動新增來自執行中應用程式的記錄檔項目 &ndash; 這些記錄檔項目會顯示於記錄檔項目的資料表中。 在裝置之間切換會停止及啟動裝置記錄。 請注意，必須先載入 Android 專案，裝置才會出現在裝置選取器中。 若裝置沒有出現在裝置選取器中，請確認該裝置是否有出現在位於 [啟動] 按鈕旁邊的 Visual Studio 裝置下拉式功能表中。
+
+-----
 
 
 ## <a name="accessing-from-the-command-line"></a>從命令列存取
 
-另一個檢視偵錯記錄檔的方式是透過命令列。 請開啟主控台視窗，然後瀏覽至 Android SDK 平台工具資料夾 (例如 **C:\android-sdk-windows\platform-tools**)。 
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-如果連接的裝置只有一部，則可以使用以下命令來檢視記錄檔：
+另一個檢視偵錯記錄檔的方式是透過命令列。 開啟命令提示字元視窗，並瀏覽至 Android SDK 平台工具資料夾 (SDK 平台工具資料夾通常位於 **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools**)。
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+另一個檢視偵錯記錄檔的方式是透過命令列。 開啟終端機視窗，並瀏覽至 Android SDK 平台工具資料夾 (SDK 平台工具資料夾通常位於 **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/platform-tools**)。
+
+-----
+
+若只有連接單一裝置 (實體裝置或模擬器)，則可以透過輸入下列命令來檢視記錄檔：
 
 ```shell
 $ adb logcat
 ```
 
-如果連接的裝置有多部，則必須識別裝置。 例如，`adb -d logcat` 會顯示唯一連接之實體裝置的記錄檔，而 `adb -e logcat` 則會顯示唯一執行中之模擬器的記錄檔。 
+如果連接的裝置有多部，則必須明確識別該裝置。 例如，**adb -d logcat** 會顯示唯一連接之實體裝置的記錄檔，而 **adb -e logcat** 則會顯示唯一執行中之模擬器的記錄檔。
 
-如需了解更多命令，只要執行 **adb** 即可。
-
+可以透過輸入 **adb** 並閱讀說明訊息來找到更多命令。
 
 
 ## <a name="writing-to-the-debug-log"></a>寫入至偵錯記錄檔
 
-您可以使用 [Android.Util.Log](https://developer.xamarin.com/api/type/Android.Util.Log/) 類別上的方法將訊息寫入至「偵錯記錄檔」： 
+您可以使用 [Android.Util.Log](https://developer.xamarin.com/api/type/Android.Util.Log/) \(英文\) 類別上的方法將訊息寫入至**偵錯記錄檔**。
+例如:  
 
 ```csharp
 string tag = "myapp";
@@ -65,7 +140,7 @@ Log.Warn (tag, "this is a warning message");
 Log.Error (tag, "this is an error message");
 ```
 
-這會產生：
+這會產生類似下列內容的輸出：
 
 ```shell
 I/myapp   (11103): this is an info message
@@ -73,27 +148,27 @@ W/myapp   (11103): this is a warning message
 E/myapp   (11103): this is an error message
 ```
 
-
 ## <a name="interesting-messages"></a>有趣的訊息
 
-讀取記錄檔時，尤其是要提供記錄檔程式碼片段給其他使用者時 (因為提供完整記錄檔 (1) 沒有必要且 (2) 無法讀取)，要開始著手的「最重要」一行就是類似下方的行：
+讀取記錄檔時 (特別是在為其他人提供記錄檔片段時)，直接讀取整個記錄檔通常是一件耗費心力的事情。
+若要使瀏覽記錄檔訊息變得更為輕鬆，請尋找類似下列內容的記錄檔項目：
 
 ```shell
 I/ActivityManager(12944): Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=GcTest.GcTest/gctest.Activity1 } from pid 24175
 ```
 
-具體而言，就是符合以下規則運算式：
+特別是尋找符合規則運算式且同時包含應用程式套件名稱的行：
 
 ```shell
 ^I.*ActivityManager.*Starting: Intent
 ```
 
-且含有應用程式套件名稱的行。 這是與活動開頭對應的行，且「大多數」 (並非全部) 下列訊息應該與應用程式相關。 
+這是與活動開頭對應的行，且「大多數」 (並非全部) 下列訊息應該與應用程式相關。
 
-特別是，每則訊息都會包含產生訊息之處理序的處理序識別項。 在上述 `ActivityManager` 訊息中，產生訊息的是 `12944` 處理序。 若要判斷哪個處理序是所偵錯之應用程式的處理序，請尋找 mono.MonoRuntimeProvider 訊息： 
+注意到每則訊息都會包含產生訊息之處理序的處理序識別項 (pid)。 在上述 `ActivityManager` 訊息中，產生訊息的是 `12944` 處理序。 若要判斷哪個處理序是所偵錯之應用程式的處理序，請尋找 **mono.MonoRuntimeProvider** 訊息： 
 
 ```shell
 I/ActivityThread(  602): Pub TouchTest.TouchTest.__mono_init__: mono.MonoRuntimeProvider
 ```
 
-此訊息來自所啟動的處理序，而下列所有包含相同 pid 的訊息都是來自相同處理序。 
+此訊息式來自已啟動的處理序。 所有包含此 pid 的後續訊息都會是來自相同的處理序。

@@ -1,6 +1,6 @@
 ---
-title: "解除安裝 Xamarin"
-description: "從電腦解除安裝 Xamarin 產品"
+title: 解除安裝 Xamarin
+description: 從電腦解除安裝 Xamarin 產品
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: 9b7738736995835ebb6da68d32bdfbec868e73cc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2c2ba84167924916c3bec27379d33c47e8dab360
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="uninstalling-xamarin"></a>解除安裝 Xamarin
 
@@ -69,13 +69,14 @@ rm -rf ~/Library/XamarinStudio-*
 Mono 是 Microsoft .NET Framework 的開放原始碼實作，並供所有 Xamarin 產品 (Xamarin.iOS、Xamarin.Android 和 Xamarin.Mac) 使用，以允許使用 C# 開發這些平台。
 
 > [!IMPORTANT]
-> 注意：除了 Xamarin 之外，也有其他應用程式使用 Mono，例如 Unity。 請先確認沒有與 Mono 的其他相依性，再將它解除安裝。
+> 除了 Xamarin 之外，也有其他應用程式使用 Mono，例如 Unity。 請先確認沒有與 Mono 的其他相依性，再將它解除安裝。
 
 若要從電腦中移除 Mono Framework，請在終端機中執行下列命令：
 
 ```bash
 sudo rm -rf /Library/Frameworks/Mono.framework
 sudo pkgutil --forget com.xamarin.mono-MDK.pkg
+sudo rm /etc/paths.d/mono-commands
 ```
 
 <a name="uninstallandroid" />
@@ -257,7 +258,7 @@ Xamarin 可以使用安裝程式應用程式來從 Visual Studio 2017 中解除�
 [![](uninstalling-xamarin-images/vs2017-uninstall-sml.png "完全解除安裝 Visual Studio")](uninstalling-xamarin-images/vs2017-uninstall.png#lightbox)
 
 > [!IMPORTANT]
-> **警告：**若您並存 (SxS) 安裝兩個 (或更多個) Visual Studio 執行個體 (例如發行版和預覽版)，則解除安裝一個執行個體可能會移除另一個 Visual Studio 執行個體中的一些 Xamarin 功能，包括：
+> 若您並存 (SxS) 安裝兩個 (或更多個) Visual Studio 執行個體 (例如發行版和預覽版)，則將一個執行個體解除安裝可能會移除另一個 Visual Studio 執行個體中的一些 Xamarin 功能，包括：
 >
 > - Xamarin Profiler
 > - Xamarin Workbooks/Inspector
