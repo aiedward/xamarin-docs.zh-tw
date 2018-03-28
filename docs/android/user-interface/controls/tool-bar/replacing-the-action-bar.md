@@ -1,20 +1,19 @@
 ---
-title: "取代動作列"
+title: 取代動作列
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5341D28E-B203-478D-8464-6FAFDC3A4110
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: e71c6ea816b8b732d21148db32fd9395732dd4c0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/27/2018
+ms.openlocfilehash: f02f77eb45086d1d568b367b28163a4773dcd80d
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="replacing-the-action-bar"></a>取代動作列
-
 
 ## <a name="overview"></a>總覽
 
@@ -38,7 +37,7 @@ ms.lasthandoff: 03/09/2018
 
 ## <a name="start-an-app-project"></a>啟動應用程式專案
 
-建立新的 Android 專案，稱為**ToolbarFun** (請參閱[Hello，Android](~/android/get-started/hello-android/hello-android-quickstart.md)如需有關建立新的 Android 專案)。 建立這個專案之後，設定目標與最低的 Android API 層級為**Android 5.0 (API 層級 21-棒棒糖符號)**。 如需設定 Android 版本層級的詳細資訊，請參閱[了解 Android API 層級](~/android/app-fundamentals/android-api-levels.md)。 當應用程式會建置並執行時，它會顯示預設的動作列這個螢幕擷取畫面所示： 
+建立新的 Android 專案，稱為**ToolbarFun** (請參閱[Hello，Android](~/android/get-started/hello-android/hello-android-quickstart.md)如需有關建立新的 Android 專案)。 建立這個專案之後，設定目標與最低的 Android API 層級為**Android 5.0 (API 層級 21-棒棒糖符號)**或更新版本。 如需設定 Android 版本層級的詳細資訊，請參閱[了解 Android API 層級](~/android/app-fundamentals/android-api-levels.md)。 當應用程式會建置並執行時，它會顯示預設的動作列這個螢幕擷取畫面所示：
 
 [![預設動作列螢幕擷取畫面](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
 
@@ -76,6 +75,8 @@ Olive-green`colorPrimary`工具列的背景色彩設定的用途：
 ```xml
 <item name="android:colorPrimary">#5A8622</item>
 ```
+
+## <a name="apply-the-custom-theme"></a>套用自訂的佈景主題
 
 編輯**Properties/AndroidManifest.xml**並加入下列`android:theme`屬性`<application>`項目，讓應用程式使用`MyTheme`自訂佈景主題： 
 
@@ -136,12 +137,6 @@ android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar"
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
-    <Button
-        android:id="@+id/MyButton"
-        android:layout_below="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello World, Click Me!" />
 </RelativeLayout>
 ```
 
@@ -171,6 +166,7 @@ ActionBar.Title = "My Toolbar";
 
 請注意，`Toolbar`樣式之外，獨立`Theme.Material.Light.DarkActionBar`佈景主題套用至應用程式的其餘部分。 
 
+如果在執行應用程式時發生例外狀況，請參閱[疑難排解](#troubleshooting)下一節。
 
  
 ## <a name="add-menu-items"></a>加入功能表項目 
@@ -193,7 +189,7 @@ ActionBar.Title = "My Toolbar";
 
 ### <a name="install-menu-icons"></a>安裝功能表圖示
 
-繼續`ToolbarFun`範例應用程式，將功能表圖示加入至應用程式專案。 下載[工具列 icons.zip](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons.zip?raw=true)並將它解壓縮。 將解壓縮的內容複製*mipmap-*至專案資料夾*mipmap-*資料夾下的**ToolbarFun/資源**並將每個加入的圖示檔案包含在專案中。
+繼續`ToolbarFun`範例應用程式，將功能表圖示加入至應用程式專案。 下載[工具列圖示](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons-plus.zip?raw=true)，解壓縮，並將複製的內容解壓縮*mipmap-*至專案資料夾*mipmap-*資料夾下的**ToolbarFun /資源**並將每個加入的圖示檔案包含在專案中。
 
 
 ### <a name="define-a-menu-resource"></a>定義功能表資源
@@ -277,6 +273,19 @@ public override bool OnOptionsItemSelected(IMenuItem item)
 如需 Android 功能表的詳細資訊，請參閱 Android 開發人員[功能表](https://developer.android.com/guide/topics/ui/menus.html)主題。 
  
 
+## <a name="troubleshooting"></a>疑難排解
+
+下列秘訣可協助偵錯時以工具列取代動作列可能發生的問題。
+
+### <a name="activity-already-has-an-action-bar"></a>活動已經有動作列
+
+如果應用程式未正確設定中所述，使用自訂的佈景主題[將自訂的佈景主題套用](#apply-the-custom-theme)，在執行應用程式可能會發生下列例外狀況：
+
+![不使用自訂的佈景主題時，可以發生的錯誤](replacing-the-action-bar-images/03-theme-not-defined.png)
+
+此外，錯誤訊息： 例如，下列可以產生： _Java.Lang.IllegalStateException： 這個活動已經有動作列視窗裝潢所提供。_ 
+
+若要更正這個錯誤，確認`android:theme`屬性自訂佈景主題都會加入至`<application>`(在**Properties/AndroidManifest.xml**) 在稍早所述[套用自訂的佈景主題](#apply-the-custom-theme). 此外，此錯誤可能造成如果`Toolbar`版面配置頁或自訂的佈景主題未正確設定。
 
 
 ## <a name="related-links"></a>相關連結

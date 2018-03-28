@@ -1,6 +1,6 @@
 ---
-title: "逐步解說： 繫結 iOS Objective C 程式庫"
-description: "本文章提供逐步解說動手建立現有的 Objective C 程式庫，InfColorPicker Xamarin.iOS 繫結。 它涵蓋了主題，例如編譯靜態 Objective C 程式庫、 繫結，以及 Xamarin.iOS 應用程式中使用的繫結。"
+title: 逐步解說： 繫結 iOS Objective C 程式庫
+description: 本文章提供逐步解說動手建立現有的 Objective C 程式庫，InfColorPicker Xamarin.iOS 繫結。 它涵蓋了主題，例如編譯靜態 Objective C 程式庫、 繫結，以及 Xamarin.iOS 應用程式中使用的繫結。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: e4619f5b1d3f888b2557cf894aaa83106504766f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 44ed651413d66866f131a294158525440278b291
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>逐步解說： 繫結 iOS Objective C 程式庫
 
@@ -159,7 +159,7 @@ _本文章提供逐步解說動手建立現有的 Objective C 程式庫，InfCol
 
     [![](walkthrough-images/image16b.png "展開連結二進位的程式庫區段")](walkthrough-images/image16b.png#lightbox)
 
-13. 使用 **+** 按鈕，即可開啟對話方塊，可讓您將新增所需的框架架構上面所列：
+13. 使用**+**按鈕，即可開啟對話方塊，可讓您將新增所需的框架架構上面所列：
 
     [![](walkthrough-images/image16c.png "加入上面所列的必要的框架架構")](walkthrough-images/image16c.png#lightbox)
 
@@ -183,7 +183,7 @@ Fat 程式庫是`.a`檔案包含所有支援的架構。
 
 雖然這三個步驟是相當容易，且可能需要重複步驟以後當 Objective C 程式庫接收更新，或如果我們需要 bug 修正。 如果您決定讓這些步驟自動化，它會簡化未來維護和支援的 iOS 繫結專案。
 
-有許多工具可用來自動化這類的殼層指令碼[耙](http://rake.rubyforge.org/)， [xbuild](http://www.mono-project.com/Microsoft.Build)，和[進行](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)。 當我們安裝 Xcode 命令列工具時，我們也會安裝產生，因此也就是將用於此逐步解說的建置系統。 以下是**Makefile**可讓您建立能夠在 iOS 裝置和模擬器的任何文件庫的多重架構共用程式庫：
+有許多工具可用來自動化這類的殼層指令碼[耙](http://rake.rubyforge.org/)， [xbuild](http://www.mono-project.com/docs/tools+libraries/tools/xbuild/)，和[進行](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)。 當我們安裝 Xcode 命令列工具時，我們也會安裝產生，因此也就是將用於此逐步解說的建置系統。 以下是**Makefile**可讓您建立能夠在 iOS 裝置和模擬器的任何文件庫的多重架構共用程式庫：
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild

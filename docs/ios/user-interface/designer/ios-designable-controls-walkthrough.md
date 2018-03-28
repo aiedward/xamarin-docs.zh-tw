@@ -1,6 +1,6 @@
 ---
-title: "逐步解說-使用 Xamarin 設計工具中的自訂控制項，適用於 iOS"
-description: "本文章提供逐步解說顯示如何建立自訂控制項，以及適用於 iOS Xamarin 設計工具中使用它。 它會顯示如何讓控制項使用設計工具的工具箱中，因此它可以拖/放至檢視。 此外，它會顯示如何實作控制項，讓它正確呈現在設計階段與執行階段，以及如何建立可以在設計階段設定的屬性。"
+title: 逐步解說-使用 Xamarin 設計工具中的自訂控制項，適用於 iOS
+description: 本文章提供逐步解說顯示如何建立自訂控制項，以及適用於 iOS Xamarin 設計工具中使用它。 它會顯示如何讓控制項使用設計工具的工具箱中，因此它可以拖/放至檢視。 此外，它會顯示如何實作控制項，讓它正確呈現在設計階段與執行階段，以及如何建立可以在設計階段設定的屬性。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 3e12e33b254e58759043ed838d5c34dd7bd024fd
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4138ba0da1dd2174c53e6e35105c3199ea941f7f
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>逐步解說-使用 Xamarin 設計工具中的自訂控制項，適用於 iOS
 
@@ -32,15 +32,11 @@ _本文章提供逐步解說顯示如何建立自訂控制項，以及適用於 
 
 1. 建立新的方案從**iOS > 應用程式 > 單一檢視應用程式 > C#**範本，其命名`ScratchTicket`，然後繼續進行 [新增專案] 精靈：
 
-
     [![](ios-designable-controls-walkthrough-images/01new.png "建立新的方案")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
-
 
 1. 建立新的空的類別檔案命名為`ScratchTicketView`:
 
-
     [![](ios-designable-controls-walkthrough-images/02new.png "建立新的 ScratchTicketView 類別")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
-
 
 1. 加入下列程式碼`ScratchTicketView`類別：
 

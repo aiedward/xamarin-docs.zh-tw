@@ -1,6 +1,6 @@
 ---
-title: "使用認知的服務加入智慧"
-description: "Microsoft 認知服務是一組應用程式開發介面、 Sdk 和藉由新增功能，例如臉部辨識、 語音辨識和語言的了解，使其應用程式更聰明的開發人員可使用的服務。 本文章提供範例應用程式，示範如何叫用一些 Microsoft 認知服務 Api 的簡介。"
+title: 使用認知的服務加入智慧
+description: Microsoft 認知服務是一組應用程式開發介面、 Sdk 和藉由新增功能，例如臉部辨識、 語音辨識和語言的了解，使其應用程式更聰明的開發人員可使用的服務。 本文章提供範例應用程式，示範如何叫用一些 Microsoft 認知服務 Api 的簡介。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: c309fb6936296dc181e499c91770ab8891121e9c
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: fd67629b9e8d0057ccf3b95b9e84ff1d16acbd7b
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>使用認知的服務加入智慧
 
@@ -23,12 +23,12 @@ _Microsoft 認知服務是一組應用程式開發介面、 Sdk 和藉由新增�
 隨附的範例是 todo 清單應用程式提供功能給：
 
 - 檢視工作的清單。
-- 新增和編輯工作透過螢幕小鍵盤，或是執行與 Bing 語音 API 的語音辨識。 如需執行語音辨識的詳細資訊，請參閱[語音辨識使用 Bing 語音 API](speech-recognition.md)。
+- 新增和編輯工作透過螢幕小鍵盤，或藉由執行 Microsoft 語音 API 與語音辨識。 如需執行語音辨識的詳細資訊，請參閱[語音辨識使用 Microsoft 語音 API](speech-recognition.md)。
 - 拼字檢查工作使用 Bing 拼字檢查 API。 如需詳細資訊，請參閱[拼字檢查使用 Bing 拼字檢查 API](spell-check.md)。
 - 轉譯為 「 德文使用轉譯器 API 從英文工作。 如需詳細資訊，請參閱[文字轉譯使用轉譯器 API](text-translation.md)。
 - 刪除工作。
 - 設定工作的狀態 設定為 完成。
-- 率情緒辨識，使用情緒 API 的應用程式。 如需詳細資訊，請參閱[情緒辨識使用情緒 API](emotion-recognition.md)。
+- 率情緒辨識，使用朝 API 的應用程式。 如需詳細資訊，請參閱[情緒辨識使用朝 API](emotion-recognition.md)。
 
 工作會儲存在本機的 SQLite 資料庫。 如需使用本機的 SQLite 資料庫的詳細資訊，請參閱[使用本機資料庫](~/xamarin-forms/app-fundamentals/databases.md)。
 
@@ -36,7 +36,7 @@ _Microsoft 認知服務是一組應用程式開發介面、 Sdk 和藉由新增�
 
 ![](images/sample-application-1.png "TodoListPage")
 
-您可以建立新的項目上按一下 *+* 按鈕，巡覽至`TodoItemPage`。 此頁面也可以巡覽至所選取工作：
+您可以建立新的項目上按一下*+*按鈕，巡覽至`TodoItemPage`。 此頁面也可以巡覽至所選取工作：
 
 ![](images/sample-application-2.png "TodoItemPage")
 
@@ -46,7 +46,7 @@ _Microsoft 認知服務是一組應用程式開發介面、 Sdk 和藉由新增�
 
 ![](images/sample-application-3.png "RateAppPage")
 
-`RateAppPage`可讓使用者為其表面，提交給情緒 API，以傳回要顯示的表情。
+`RateAppPage`可讓使用者為其表面，不會再顯示傳回情緒與提交給面對應用程式開發介面。
 
 ## <a name="understanding-the-application-anatomy"></a>了解應用程式結構
 
@@ -73,7 +73,7 @@ PCL 專案也包含一些重要的檔案：
 
 - `Microsoft.Net.Http` – 提供`HttpClient`類別進行透過 HTTP 要求。
 - `Newtonsoft.Json` – 提供 JSON framework for.NET。
-- `Microsoft.ProjectOxford.Emotion` – 存取情緒 API 的用戶端程式庫。
+- `Microsoft.ProjectOxford.Face` – 存取朝 API 的用戶端程式庫。
 - `PCLStorage` -提供一組的跨平台的本機檔案 IO 的應用程式開發介面。
 - `sqlite-net-pcl` – 提供 SQLite 資料庫儲存體。
 - `Xam.Plugin.Media` – 提供跨平台相片函式和挑選應用程式開發介面。
@@ -117,11 +117,10 @@ public class TodoItem
 
 範例應用程式會叫用下列 Microsoft 認知服務：
 
-- Bing 語音 API。 如需詳細資訊，請參閱[語音辨識使用 Bing 語音 API](speech-recognition.md)。
+- Microsoft 語音 API。 如需詳細資訊，請參閱[語音辨識使用 Microsoft 語音 API](speech-recognition.md)。
 - Bing 拼字檢查應用程式開發介面。 如需詳細資訊，請參閱[拼字檢查使用 Bing 拼字檢查 API](spell-check.md)。
 - 轉換 API。 如需詳細資訊，請參閱[文字轉譯使用轉譯器 API](text-translation.md)。
-- 情緒應用程式開發介面。 如需詳細資訊，請參閱[情緒辨識使用情緒 API](emotion-recognition.md)。
-
+- 字體應用程式開發介面。 如需詳細資訊，請參閱[情緒辨識使用朝 API](emotion-recognition.md)。
 
 ## <a name="related-links"></a>相關連結
 

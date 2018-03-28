@@ -1,5 +1,5 @@
 ---
-title: "記憶體回收"
+title: 記憶體回收
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 298139E2-194F-4A58-BC2D-1D22231066C4
@@ -7,15 +7,15 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/15/2018
-ms.openlocfilehash: db277f20e63a59690ffaa8a8544ff9540578d3f5
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: e27e9577957229f347b217a8920eac239799da15
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="garbage-collection"></a>記憶體回收
 
-Xamarin.Android 使用單聲道的[層代簡單式記憶體回收行程](http://www.mono-project.com/Compacting_GC)。 這是具有兩個層代標記掃掠記憶體回收行程和*大型物件空間*，有兩種類型的集合： 
+Xamarin.Android 使用單聲道的[層代簡單式記憶體回收行程](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/)。 這是具有兩個層代標記掃掠記憶體回收行程和*大型物件空間*，有兩種類型的集合： 
 
 -   次要的集合 （收集 Gen0 堆積） 
 -   主要 （收集 Gen1 和大型物件空間堆積） 的集合。 

@@ -1,16 +1,16 @@
 ---
-title: "限制"
+title: 限制
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 43b099e8ddd6acc3e8cc4ce94580313a39a0c686
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c099797f0687f198ed220c1bd366bd93ab6c6e99
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="limitations"></a>限制
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 02/27/2018
 
 不同於傳統 Mono/.NET，而不是由 JIT 編譯器編譯視事先以靜態方式編譯在 iPhone 上的程式碼。
 
-單聲道的[完整 AOT](http://www.mono-project.com/AOT#Full_AOT)技術具有泛用方面有一些限制，這些會導致因為不是每個可能的泛型具現化可以在編譯時期的最前面位置來決定。 這不是一般的.NET 或 Mono 執行階段的問題如下程式碼永遠會在執行階段使用 Just 時間編譯器中編譯。 但是，這會帶來 Xamarin.iOS 靜態編譯器的挑戰。
+單聲道的[完整 AOT](http://www.mono-project.com/docs/advanced/aot/#full-aot)技術具有泛用方面有一些限制，這些會導致因為不是每個可能的泛型具現化可以在編譯時期的最前面位置來決定。 這不是一般的.NET 或 Mono 執行階段的問題如下程式碼永遠會在執行階段使用 Just 時間編譯器中編譯。 但是，這會帶來 Xamarin.iOS 靜態編譯器的挑戰。
 
 遇到了開發人員，常見的問題包括：
 
@@ -117,13 +117,10 @@ System.Reflection 缺乏。 **發出**取決於執行階段程式碼產生任何
 
 在時間恰好中 Mono 實作這些橋接器編譯器。 當使用前的時間編譯器所需 iPhone，有兩個重要限制此時：
 
--  您必須加上旗標的回呼方法與所有[MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/MonoPInvokeCallbackAttribute/) 
+-  您必須加上旗標的回呼方法與所有[MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 
 -  方法可以是靜態方法，沒有支援執行個體方法。 
-
-
  
- <a name="No_Remoting" />
-
+<a name="No_Remoting" />
 
 ## <a name="no-remoting"></a>沒有遠端執行功能
 

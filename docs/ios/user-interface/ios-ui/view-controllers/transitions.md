@@ -1,5 +1,5 @@
 ---
-title: "檢視控制器轉換"
+title: 檢視控制器轉換
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: CB3AC8E2-8A47-4839-AFA5-AE33047BB26C
@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 88849d3007c007a5ac8820ca84083aa01459c4ce
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 7ef409a060eb64eb843661da9b6c6126a308c950
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="view-controller-transitions"></a>檢視控制器轉換
 
@@ -67,7 +67,7 @@ public class TransitioningDelegate : UIViewControllerTransitioningDelegate
 {
     CustomTransitionAnimator animator;
 
-    public override IUIViewControllerAnimatedTransitioning PresentingController (UIViewController presented, UIViewController presenting, UIViewController source)
+    public override IUIViewControllerAnimatedTransitioning GetAnimationControllerForPresentedController (UIViewController presented, UIViewController presenting, UIViewController source)
     {
         animator = new CustomTransitionAnimator ();
         return animator;

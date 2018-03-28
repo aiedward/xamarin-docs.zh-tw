@@ -1,18 +1,18 @@
 ---
-title: "第 3 部分。 XAML 標記延伸"
-description: "XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定為物件或間接參考來自其他來源的值。 XAML 標記延伸是特別重要的共用物件，並參考整個應用程式，所使用的常數，但他們資料繫結中找到其最大的公用程式。"
+title: 第 3 部分。 XAML 標記延伸
+description: XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定為物件或間接參考來自其他來源的值。 XAML 標記延伸是特別重要的共用物件，並參考整個應用程式，所使用的常數，但他們資料繫結中找到其最大的公用程式。
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
-ms.date: 10/25/2017
-ms.openlocfilehash: 1c5c4c30a7e506e19fc4dc0728fb55851ec4911f
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 3/27/2018
+ms.openlocfilehash: cd881b79945c2b9c10e9bb1bc85fce98acb71026
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 標記延伸
 
@@ -45,7 +45,7 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
         <Button Text="Do that!"
                 HorizontalOptions="Center"
@@ -53,7 +53,7 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
         <Button Text="Do the other thing!"
                 HorizontalOptions="Center"
@@ -61,7 +61,7 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
     </StackLayout>
 </ContentPage>
@@ -136,7 +136,7 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
         BorderWidth="3"
         Rotation="-15"
         TextColor="Red"
-        FontSize="Large" />
+        FontSize="24" />
 ```
 
 `StaticResource`標記延伸一律以大括號，分隔並包含字典的索引鍵。
@@ -192,7 +192,7 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
         BorderWidth="{StaticResource borderWidth}"
         Rotation="{StaticResource rotationAngle}"
         TextColor="Red"
-        FontSize="Large" />
+        FontSize="24" />
 ```
 
 類型資源`Color`，您可以使用直接指派這些型別的屬性時，您使用的相同字串表示。 建立資源時，會叫用型別轉換子。 以下是類型的資源`Color`:
@@ -201,14 +201,10 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
 <Color x:Key="textColor">Red</Color>
 ```
 
-`FontSize`屬性顯示小問題。 屬性會定義為型別的`double`。 當您設定之屬性的成員為`NamedSize`列舉型別，例如`Large`、`FontSizeConverter`類別將它轉換成平台相依的值，使用在幕後運作`Device.GetNamedSized`方法。
-
-不過，您不能定義的資源，字型大小為`double`並將值設為 「 大型 」。 在 XAML 剖析器處理資源的時間，它並不知道此值將用作字型的大小。 
-
-解決方法是定義為資源`string`使用`x:String`類型：
+通常，程式組`FontSize`屬性成員的`NamedSize`列舉型別，例如`Large`。 `FontSizeConverter`類別將它轉換成平台相依的值，使用在幕後運作`Device.GetNamedSized`方法。 不過，當您定義字型大小資源，合理的多個使用數字的值，並顯示為`x:Double`類型：
 
 ```xaml
-<x:String x:Key="fontSize">Large</x:String>
+<x:Double x:Key="fontSize">24</x:Double>
 ```
 
 現在的所有屬性除外`Text`資源設定所定義：
@@ -275,7 +271,7 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
                 BorderWidth="{StaticResource borderWidth}"
                 Rotation="{StaticResource rotationAngle}"
                 TextColor="{StaticResource textColor}"
-                FontSize"{StaticResource fontSize}" />
+                FontSize="{StaticResource fontSize}" />
 
         <Button Text="Do that!"
                 HorizontalOptions="{StaticResource horzOptions}"

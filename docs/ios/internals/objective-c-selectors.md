@@ -1,22 +1,22 @@
 ---
-title: "Objective C 的選取器"
+title: Objective C 的選取器
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 3fa01d8f28dc1c86f9d4a8ee4d9fc0a9cdb8ee9c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7b7f64288695ecc0f9f57ec670c4e9ff2e44804c
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="objective-c-selectors"></a>Objective C 的選取器
 
 Objective C 語言根據*選取器*。 選取器是可以傳送至物件的訊息或*類別*。 [Xamarin.iOS](~/ios/internals/api-design/index.md)對應執行個體選擇器執行個體方法和類別的靜態方法的選取器。
 
-不同於標準 C 函式 （和 c + + 成員函式一樣)，您無法直接叫用選取器使用[P/Invoke](http://www.mono-project.com/Dllimport)。
+不同於標準 C 函式 （和 c + + 成員函式一樣)，您無法直接叫用選取器使用[P/Invoke](http://www.mono-project.com/docs/advanced/pinvoke/)。
 (*擱置在一旁*： 理論上您可以使用 P/Invoke 非虛擬的 c + + 成員函式，但您需要擔心每個編譯器名稱修飾 （name-mangling），這是更忽略痛苦世界。)相反地，會傳送至 OBJECTIVE-C 類別選取器，或執行個體使用[`objc_msgSend`函式](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend)。
 
 您可能會發現[上 OBJECTIVE-C 傳訊此有幫助指南](http://developer.apple.com/iphone/library/documentation/cocoa/conceptual/ObjCRuntimeGuide/Articles/ocrtHowMessagingWorks.html)很有用。
