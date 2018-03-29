@@ -1,6 +1,6 @@
 ---
-title: "XAML 標準 （預覽） 控制項"
-description: "如何開始瀏覽 Xamarin.Forms 中的 XAML 標準預覽"
+title: XAML 標準 （預覽） 控制項
+description: 如何開始瀏覽 Xamarin.Forms 中的 XAML 標準預覽
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 287E6631-D1C5-46C5-8905-AB53D34E365D
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
-ms.openlocfilehash: b044cb849f9a8e591a8db5907211a55f77d6e45f
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 084da9cbb06c7ec9bbab6ea4dc6a1a7b15ffe692
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xaml-standard-preview-controls"></a>XAML 標準 （預覽） 控制項
 
@@ -38,7 +38,7 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="properties-and-enumerations"></a>屬性和列舉型別
 
-|Xamarin.FormsControls 與更新的屬性|Xamarin.FormsProperty 或列舉|XAML StandardEquivalent|
+|Xamarin.Forms 控制更新的屬性|Xamarin.Forms 屬性或列舉|XAML 標準的對等項目|
 |--- |--- |--- |
 |按鈕、 項目、 標籤、 日期選擇器、 編輯器、 SearchBar、 Timeupdown|TextColor|前景|
 |VisualElement|BackgroundColor|背景 *|

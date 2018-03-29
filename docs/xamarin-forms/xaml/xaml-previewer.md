@@ -1,6 +1,6 @@
 ---
-title: "Xamarin.Forms 的 XAML 預覽程式"
-description: "Xamarin.Forms 配置呈現您輸入時，請參閱 ！"
+title: Xamarin.Forms 的 XAML 預覽程式
+description: Xamarin.Forms 配置呈現您輸入時，請參閱 ！
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 02/24/2017
-ms.openlocfilehash: 8f4d8253d56708f77ede7b5173f3dd771e1da0ea
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a7a9c4fed92cb4ed8c8c12e97129bc8379037acb
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Xamarin.Forms 的 XAML 預覽程式
 
@@ -26,17 +26,19 @@ _Xamarin.Forms 配置呈現您輸入時，請參閱 ！_
 
 ## <a name="getting-started"></a>快速入門
 
-### <a name="visual-studio-for-mac-on-mac"></a>Visual Studio for Mac 上的 Mac
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+使用**檢視 > 其他視窗 > Xamarin.Forms 預覽程式**在 Visual Studio 中開啟 [預覽] 視窗的功能表。 使用**視窗 > 新增垂直索引標籤群組**功能表上，將它定位的並行。
+
+[![在 Visual Studio 中的 ListView 控制項預覽](xaml-previewer-images/xamlp-list-vs-sml.png "Visual Studio 中的表單預覽程式")](xaml-previewer-images/xamlp-list-vs.png#lightbox "Visual Studio 中的表單預覽程式")
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 **預覽**按鈕可以顯示在編輯器 中，XAML 檔案後，以滑鼠右鍵按一下並選取**開啟 > XAML 檢視器**。 [預覽] 窗格可再顯示或隱藏按**預覽**任何 XAML 文件視窗右上角的按鈕：
 
 [![在 Visual Studio for Mac 的 ListView 控制項預覽](xaml-previewer-images/xamlp-list-sml.png "適用於 Mac 的 Visual Studio 中的表單預覽程式")](xaml-previewer-images/xamlp-list.png#lightbox "Form 預覽程式，在 Visual Studio for Mac")
 
-### <a name="visual-studio-on-windows"></a>Windows 上的 Visual Studio
-
-使用**檢視 > 其他視窗 > Xamarin.Forms 預覽程式**在 Visual Studio 中開啟 [預覽] 視窗的功能表。 使用**視窗 > 新增垂直索引標籤群組**功能表上，將它定位的並行。
-
-[![在 Visual Studio 中的 ListView 控制項預覽](xaml-previewer-images/xamlp-list-vs-sml.png "Visual Studio 中的表單預覽程式")](xaml-previewer-images/xamlp-list-vs.png#lightbox "Visual Studio 中的表單預覽程式")
+-----
 
 ## <a name="xaml-preview-options"></a>XAML [預覽] 選項
 

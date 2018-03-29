@@ -1,6 +1,7 @@
 ---
-title: "XAML 即時預覽"
-description: "測試您的 iOS 或 Android 裝置上的即時應用程式程式碼變更"
+redirect_url: /xamarin/tools/live-player/
+title: XAML 即時預覽
+description: 測試您的 iOS 或 Android 裝置上的即時應用程式程式碼變更
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 86E9A179-21F8-4F3A-A9CE-36F0FC5DB4A8
@@ -8,11 +9,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 12/21/2017
-ms.openlocfilehash: f5c1649d625f2094fb710066f79a4ae89a696266
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 96ce096a57e46b36ebe6516ba0aff2733883e400
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xaml-live-previewing"></a>XAML 即時預覽
 
@@ -20,12 +21,12 @@ Xamarin Live 播放程式的優點之一是能夠即時預覽 XAML 頁面，在 
 
 ## <a name="requirements"></a>需求
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 執行 Windows 7 或更高版本的電腦。
 2. Visual Studio 2017 15.4 或更新版本與版本**行動應用程式開發的.NET**安裝的工作負載。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. Mac OS X 10.11 macOS 10.12，或更新版本。
 2. Visual Studio for Mac 7.2 或更新版本。 我們建議的最新版本。
@@ -40,7 +41,7 @@ Xamarin Live 播放程式的優點之一是能夠即時預覽 XAML 頁面，在 
 
 您可以使用 Xamarin Live Player 與您的 iOS 或 Android 裝置之前，您必須先下載 Xamarin Live 播放器應用程式，並將其加入 Visual Studio 中所述[安裝](~/tools/live-player/install.md)指南。 一旦您擁有已成功地搭配您 Visual Studio 的裝置，您可以開始即時預覽您的 XAML 頁面。 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 開啟您想要在 Visual Studio 2017 編輯器中的即時預覽的 XAML 頁面：
 
@@ -54,7 +55,7 @@ Xamarin Live 播放程式的優點之一是能夠即時預覽 XAML 頁面，在 
 
     ![](live-view-images/vs-image3.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 開啟您想要在 Visual Studio 中的即時預覽 Mac 編輯器的 XAML 頁面：
 

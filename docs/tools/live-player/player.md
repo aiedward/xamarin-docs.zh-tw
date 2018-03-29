@@ -1,6 +1,6 @@
 ---
-title: "Xamarin Player 即時應用程式"
-description: "編輯及測試您的 iOS 或 Android 裝置上的即時應用程式"
+title: Xamarin Player 即時應用程式
+description: 編輯及測試您的 iOS 或 Android 裝置上的即時應用程式
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: 6b0d62a9026c1248a66166e75ed41bb0148547a6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d666bb9a7749845265d50b86e46ef78e2036cb69
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Player 即時應用程式
 
@@ -20,17 +20,19 @@ ms.lasthandoff: 03/12/2018
 
 ## <a name="get-the-app"></a>取得應用程式
 
-### <a name="xamarin-live-player-for-android"></a>Xamarin 即時 Player for Android
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
 Xamarin Live Player for Android 從 Google Play 有：
 
 [ ![Google Play 上提供](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
 
 適用於 Android 裝置不含 Google Play Xamarin Live 播放程式是可透過[HockeyApp](https://aka.ms/xlp-hockeyapp)發佈。 此外，早期預覽中建置 Android 可以直接從 Google Play 安裝藉由選擇在[開啟測試計劃](https://play.google.com/apps/testing/com.xamarin.live)
 
-### <a name="xamarin-live-player-for-ios"></a>適用於 iOS 的 Xamarin Live Player
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
 我們鼓勵使用者加入[Xamarin Live 播放器應用程式_iOS 預覽_](https://aka.ms/liveplayeralpha)來享受 TestFlight 透過最新的增強功能的快速存取。
 
-
+-----
 
 ## <a name="using-the-app"></a>使用應用程式
 
@@ -44,7 +46,7 @@ Xamarin Live Player for Android 從 Google Play 有：
 
 ![IOS 條碼掃描器的螢幕擷取畫面](player-images/scan-iphone-sml.png) ![Android 的條碼掃描器的螢幕擷取畫面](player-images/scan-android-sml.png)
 
-如果連接成功，應該會幾乎會立即 （例如計算機範例） 在裝置上執行的程式碼：
+如果連接成功時，程式碼應該在裝置上執行幾乎會立即 (例如[計算機範例，](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator)):
 
 ![範例 [小算盤] 應用程式在裝置上執行](player-images/basic-calculator-iphone-sml.png)
 
@@ -52,7 +54,7 @@ Xamarin Live Player for Android 從 Google Play 有：
 
 按下 資訊 按鈕**(i)**底部的 應用程式，以顯示**選項**功能表：
 
-![[選項] 功能表的螢幕擷取畫面](player-images/options.png)
+[ ![[選項] 功能表的螢幕擷取畫面](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>記錄檔
 
@@ -64,13 +66,13 @@ Xamarin Live Player for Android 從 Google Play 有：
 * 版本資訊。
 * 傳送意見反應。
 
-![設定的螢幕擷取畫面](player-images/settings.png)
+[ ![設定的螢幕擷取畫面](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>管理裝置
 
 若要在第一次連接裝置，請依照下列中的指示[需求與安裝程式](~/tools/live-player/install.md)。 您可以配對 （例如 iOS 和 Android） 的多個裝置，再透過 IDE 管理它們。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 在 Visual Studio 中，選擇 **工具 > Xamarin Live Player > 管理裝置...**
 
@@ -84,7 +86,7 @@ Xamarin Live Player for Android 從 Google Play 有：
 
 您也可以存取此視窗從裝置清單。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 在 Visual Studio for Mac 選擇**工具 > (Xamarin Live Player) 管理的裝置...**
 

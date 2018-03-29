@@ -1,5 +1,5 @@
 ---
-title: "Android 資料交換"
+title: Android 資料交換
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 4172A798-89EC-444D-BC0C-0A7DD67EF98C
@@ -7,15 +7,15 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/06/2017
-ms.openlocfilehash: e9936bb523db8ba8777df94a03bf12f9fa718fca
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 08d15095c8d1d08a65f18d5ad867efdd89d3b795
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="android-beam"></a>Android 資料交換
 
-Android 資料交換是可讓透過時近 NFC 共用資訊的應用程式的 Android 4 的新附近欄位通訊 (NFC) 技術。
+Android 資料交換是附近欄位通訊 (NFC) 技術，可讓透過時近 NFC 共用資訊的應用程式的 Android 4.0 中導入。
 
 [![圖表說明兩個裝置進行近共用資訊](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
 

@@ -1,6 +1,6 @@
 ---
-title: "疑難排解"
-description: "Xamarin Live 播放程式，以及如何加以修正的已知的問題。"
+title: 疑難排解
+description: Xamarin Live 播放程式，以及如何加以修正的已知的問題。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/17/2017
-ms.openlocfilehash: d7c5bedb03d7c869be65e3c704bac58a9cdfcbbd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ab075cad0c3f3456ed23f3eb175dcdb3aa493510
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="troubleshooting"></a>疑難排解
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 02/27/2018
 
 發生於執行 Xamarin Live 播放程式的行動裝置不在相同的網路執行 IDE 的電腦上。 請參閱下列：
 
-- 確認裝置和電腦都位於相同的 WiFi 網路上。
+- 確認裝置和電腦都位於相同的 Wi-fi 網路。
   - 如果電腦連接到有線網路，請嘗試拔除有線的連線。
 - 網路可能會受到嚴密保護 （例如某些公司網路中），封鎖 Xamarin Live 播放程式所需的連接埠。
 - 關閉 Xamarin Live 播放器應用程式，然後重新啟動它。
@@ -35,12 +35,92 @@ ms.lasthandoff: 02/27/2018
 
 **「 IOException： 無法讀取傳輸連線的資料： 非封鎖通訊端上的作業會被封鎖 」**
 
-執行 Xamarin Live 播放程式的行動裝置不在相同的網路執行 IDE; 的電腦上時，通常被發生這個錯誤這通常會連接到先前已成功配對的裝置。
+執行 Xamarin Live 播放程式的行動裝置不在執行 Visual Studio; 的電腦相同的網路上時經常遇到這個錯誤這通常會連接到先前已成功配對的裝置。
 
-* 請檢查裝置和電腦都位於相同的 WiFi 網路上。
+* 請檢查裝置和電腦都位於相同的 Wi-fi 網路。
 * 網路可能會受到嚴密保護 （例如某些公司網路中），封鎖 Xamarin Live 播放程式所需的連接埠。 下列連接埠所需的 Xamarin Live Player:
   * 37847 – 內部網路存取權 
   * 8090 – 外部網路存取
+
+## <a name="manually-configure-device"></a>手動設定裝置
+
+如果您無法透過 Wi-fi 連線到您的裝置可以嘗試手動設定您的裝置，透過組態檔中，執行下列步驟：
+
+**步驟 1： 開啟組態檔**
+
+前往您的應用程式儲存資料夾：
+
+* Windows: **%userprofile%\AppData\Roaming**
+* macOS: **~/Users/$USER/.config**
+
+在這個資料夾中，您會發現**PlayerDeviceList.xml**不存在，如果您必須建立一個。
+
+**步驟 2： 取得 IP 位址**
+
+在 Xamarin Live 播放器應用程式中，移至**有關 > 連線測試 > 啟動連線測試**。
+
+記下 IP 位址，您必須列出當您設定您的裝置的 IP 位址。
+
+**步驟 3： 取得配對的程式碼**
+
+Xamarin Live Player 點選內**組**或**再次組**，然後按下**手動輸入**。 數字代碼將會顯示，您必須更新組態檔。
+
+**步驟 4： 產生的 GUID**
+
+移至：https://www.guidgenerator.com/online-guid-generator.aspx並產生新的 guid，並確定在大寫。
+
+
+**步驟 5： 設定裝置**
+
+開啟  **PlayerDeviceList.xml**向上例如 Visual Studio 或 Visual Studio Code 編輯器中。 您需要此檔案中手動設定您的裝置。 根據預設，此檔案應該包含下列空白`Devices`XML 項目：
+
+```xml
+<DeviceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<Devices>
+
+</Devices>
+</DeviceList>
+```
+
+**加入 iOS 裝置：**
+
+```xml
+<PlayerDevice>
+<SecretCode>ENTER-PAIR-CODE-HERE</SecretCode>
+<UniqueIdentifier>ENTER-GUID-HERE</UniqueIdentifier>
+<Name>iPhone Player</Name>
+<Platform>iOS</Platform>
+<AndroidApiLevel>0</AndroidApiLevel>
+<DebuggerEndPoint>ENTER-IP-HERE:37847</DebuggerEndPoint>
+<HostEndPoint />
+<NeedsAppInstall>false</NeedsAppInstall>
+<IsSimulator>false</IsSimulator>
+<SimulatorIdentifier />
+<LastConnectTimeUtc>2018-01-08T20:36:03.9492291Z</LastConnectTimeUtc>
+</PlayerDevice>
+```
+
+
+**新增 Android 裝置：**
+
+```xml
+<PlayerDevice>
+<SecretCode>ENTER-PAIR-CODE-HERE</SecretCode>
+<UniqueIdentifier>ENTER-GUID-HERE</UniqueIdentifier>
+<Name>Android Player</Name>
+<Platform>Android</Platform>
+<AndroidApiLevel>24</AndroidApiLevel>
+<DebuggerEndPoint>ENTER-IP-HERE:37847</DebuggerEndPoint>
+<HostEndPoint />
+<NeedsAppInstall>false</NeedsAppInstall>
+<IsSimulator>false</IsSimulator>
+<SimulatorIdentifier />
+<LastConnectTimeUtc>2018-01-08T20:34:42.2332328Z</LastConnectTimeUtc>
+</PlayerDevice>
+```
+
+**關閉並重新開啟 Visual Studio。** 您的裝置應該顯示在清單中。
+
 
 ## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>「 型別或命名空間無法找 」 訊息在 IDE 中
 

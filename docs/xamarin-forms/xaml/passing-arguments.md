@@ -1,6 +1,6 @@
 ---
-title: "在 XAML 中傳遞引數"
-description: "本文將示範使用 XAML 屬性，可用來將引數傳遞至非預設建構函式，呼叫 factory 方法，並指定為泛型引數的類型。"
+title: 在 XAML 中傳遞引數
+description: 本文將示範使用 XAML 屬性，可用來將引數傳遞至非預設建構函式，呼叫 factory 方法，並指定為泛型引數的類型。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8F3B267F-499E-4D79-9193-FCA99F199519
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2016
-ms.openlocfilehash: a30dd9b33466ac6907322f8c6b586c012452a44f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 232f60bb7afca7acf73e63bd7e11e1b6ec47fbd2
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="passing-arguments-in-xaml"></a>在 XAML 中傳遞引數
 
@@ -135,7 +135,7 @@ _本文將示範使用 XAML 屬性，可用來將引數傳遞至非預設建構�
 </BoxView>
 ```
 
-中的項目數`x:Arguments`標記，以及這些項目類型必須符合的 factory 方法，呼叫的引數。 [ `FromRgba` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Int32/System.Int32/System.Int32/System.Int32/) Factory 方法需要四個[ `Int32` ](https://developer.xamarin.com/api/type/System.Int32/)代表紅色、 綠色、 藍色以及 alpha 值，範圍從 0 到 255 分別的參數。 [ `FromHsla` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/) Factory 方法需要四個[ `Double` ](https://developer.xamarin.com/api/type/System.Double/)代表色調、 飽和度、 亮度以及 alpha 值，範圍從 0 到 1 分別的參數。 [ `FromHex` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHex/p/System.String/) Factory 方法需要[ `String` ](https://developer.xamarin.com/api/type/System.String/)表示十六進位 (A) RGB 色彩。
+中的項目數`x:Arguments`標記，以及這些項目類型必須符合的 factory 方法，呼叫的引數。 [ `FromRgba` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Int32/System.Int32/System.Int32/System.Int32/) Factory 方法需要四個[ `Int32` ](https://docs.microsoft.com/dotnet/api/system.int32)代表紅色、 綠色、 藍色以及 alpha 值，範圍從 0 到 255 分別的參數。 [ `FromHsla` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/) Factory 方法需要四個[ `Double` ](https://docs.microsoft.com/dotnet/api/system.double)代表色調、 飽和度、 亮度以及 alpha 值，範圍從 0 到 1 分別的參數。 [ `FromHex` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHex/p/System.String/) Factory 方法需要[ `String` ](https://docs.microsoft.com/dotnet/api/system.string)表示十六進位 (A) RGB 色彩。
 
 下列螢幕擷取畫面顯示每個呼叫的結果[ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) factory 方法，以指定的引數的值：
 

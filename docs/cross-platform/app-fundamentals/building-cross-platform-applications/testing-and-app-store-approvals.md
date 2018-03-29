@@ -4,14 +4,10 @@
 
 # <a name="part-6---testing-and-app-store-approvals"></a>第 6-測試和應用程式市集核准
 
-<a name="Testing" />
-
 
 ## <a name="testing"></a>測試
 
 許多應用程式 （即使 Android 應用程式，在某些存放區） 必須先通過核准程序，會在發行之前。讓測試，請務必確定您的應用程式達到市場 （徒您與客戶成功）。 測試可能需要許多形式，從開發人員層級的單元測試，管理測試跨各種不同的硬體。
-
- <a name="Test_on_All_Platforms" />
 
 
 ### <a name="test-on-all-platforms"></a>在所有平台上進行測試
@@ -22,16 +18,12 @@
 
 您也應該為許多不同的實體硬體裝置，您可以執行測試。
 
- <a name="Devices_in_cloud" />
-
 
 #### <a name="devices-in-cloud"></a>在雲端中的裝置
 
 行動電話和平板電腦生態系統成長所有的時間，讓您難以不斷增加的數目可用的裝置上測試。 若要解決此問題對一些服務提供的能力，讓應用程式可以安裝並測試而不需要投資大量硬體，直接從遠端控制許多不同的裝置。
 
 [應用程式中心測試](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)提供簡單的方式來測試 iOS 和 Android 的應用程式在數百個不同的裝置上。
-
- <a name="Test_Management" />
 
 
 ### <a name="test-management"></a>測試管理
@@ -44,10 +36,8 @@
 
 有一些服務可協助解決這些問題，可藉由提供基礎結構內建於您的應用程式來收集和報告使用量和錯誤，也可簡化程序，協助註冊和管理軟體測試人員和裝置佈建程序.
 
-[Xamarin Insights 預覽](http://xamarin.com/insights)提供此問題，提供當機報告和複雜應用程式使用資訊的第二個部分的解決方案。
+[Visual Studio 應用程式中心](/appcenter/)提供這些問題，提供測試版發佈、 當機報告，以及複雜的應用程式使用資訊的解決方案。
 
-
- <a name="Test_Automation" />
 
 
 ### <a name="test-automation"></a>測試自動化
@@ -55,12 +45,10 @@
 Xamarin [UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)可用來建立自動化的使用者介面測試指令碼可以在本機執行或上傳至[應用程式中心測試](https://docs.microsoft.com/appcenter/test-cloud/)。
 
 
- <a name="Unit_Testing" />
 
 
 ## <a name="unit-testing"></a>單元測試
 
- <a name="Touch.Unit" />
 
 
 #### <a name="touchunit"></a>Touch.Unit
@@ -69,29 +57,13 @@ Xamarin.iOS 包含單元測試架構，稱為 Touch.Unit 哪一種撰寫測試�
 
 請參閱我們[Xamarin.iOS 使用單元測試](~/ios/deploy-test/touch.unit.md)撰寫測試，並在執行 Touch.Unit 詳細資料的文件。
 
- <a name="Andr.Unit" />
 
 
 #### <a name="andrunit"></a>Andr.Unit
 
 沒有適用於 Android 呼叫 Andr.Unit Touch.Unit 開放原始碼對等項目。 您可以下載從[github](https://github.com/spouliot/Andr.Unit)閱讀有關工具和[@spouliot的部落格](http://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/)。
 
- <a name="Windows_Phone" />
 
-
-#### <a name="windows-phone"></a>Windows Phone
-
-以下是一些連結可幫助安裝程式執行單元測試適用於 Windows Phone:
-
--   [http://www.jeff.wilcox.name/2010/05/sl3-utf-bits/](http://www.jeff.wilcox.name/2010/05/sl3-utf-bits/)
--   [http://www.jeff.wilcox.name/2011/06/updated-ut-mango-bits/](http://www.jeff.wilcox.name/2011/06/updated-ut-mango-bits/)
--   [http://www.smartypantscoding.com/a-cheat-sheet-for-unit-testing-silverlight-apps-on-windows-phone-7](http://www.smartypantscoding.com/a-cheat-sheet-for-unit-testing-silverlight-apps-on-windows-phone-7)
--   [http://mobile.dzone.com/articles/unit-testing-your-windows](http://mobile.dzone.com/articles/unit-testing-your-windows)
-
-
-&nbsp;
-
- <a name="App_Store_Approvals" />
 
 
 ## <a name="app-store-approvals"></a>應用程式市集核准
@@ -100,7 +72,6 @@ Apple 和 Microsoft 運作在平台上的唯一存放區： 應用程式存放�
 
 等候要檢閱應用程式可以是非常壓力-商務壓力通常表示應用程式會使用 「 目標 」 的啟動日期之前的錯誤很少邊界提交核准。 處理序本身可能需要多達兩週，而不一定是透明： 前，會有有限的意見反應應用程式的進度最後拒絕或已核准。 拒絕可以表示遺漏行銷視窗的機會，特別是當發生一次以上，且原始的啟動日期之間的週數傳遞，而且最後核准應用程式時。
 
- <a name="Be_prepared" />
 
 
 ### <a name="be-prepared"></a>準備
@@ -117,7 +88,6 @@ Google Play 註冊只需要幾分鐘，如果您的應用程式可用，而處�
 
 本節的其餘部分將討論您應該以確保沒有任何網際網路核准您的應用程式納入考量的事項。
 
- <a name="Quality" />
 
 
 ### <a name="quality"></a>品質
@@ -127,8 +97,6 @@ Google Play 註冊只需要幾分鐘，如果您的應用程式可用，而處�
 損毀所拒絕的一個常見原因。 如果您很容易就能讓您的應用程式損毀，它具有保證會遭到拒絕。 大部分的開發人員沒有提交自己的應用程式，它們會當機，但通常的期望。 送出，焦點不只對進行確定運作一切正常而且您也可以處理常見的行動裝置的錯誤狀況，例如網路問題以及資源限制，例如記憶體或儲存空間之前，請徹底測試您的應用程式。 使用模擬器和實體裝置來測試-不論程度模擬器中執行程式碼，只有裝置可以示範應用程式的實際效能。 使用許多不同裝置，因為您可以尋找，或登錄測試版測試人員的小組，如果您可以第三方服務幫助您管理 beta 發佈和意見反應。
 
 所有行動裝置的作業系統將會終止無法夠快速啟動應用程式。 允許的時間長度會有所差異，但一般應用程式的目標應該在幾秒內回應，並使用背景工作會執行任何需要較長的工作。 應用程式的長的時間才能載入或沒有回應足以在一般情況下使用將會遭到拒絕。 一定要在背景中發生的項目，或已當機，並拒絕同樣地，會出現應用程式時提供使用者意見反應。
-
- <a name="Check_Your_Edge_Cases" />
 
 
 ### <a name="check-your-edge-cases"></a>請檢查您的邊緣案例
@@ -143,7 +111,6 @@ Google Play 註冊只需要幾分鐘，如果您的應用程式可用，而處�
 -   **硬體而有所不同**– 請記得在您打算支援的最舊的最慢硬體上進行測試。 有可能會影響您的應用程式的兩個層面： 效能，可能會在無法使用較舊的裝置與硬體功能，例如網路攝影機、 麥克風、 GPS、 迴轉儀或其他選擇性元件的支援。 應用程式應該會降低依正常程序 （和未損毀） 元件時無法使用。
 
 
- <a name="Guidelines_are_more_than_just_a_‘guide’" />
 
 
 ### <a name="guidelines-are-more-than-just-a-guide"></a>指導方針會不只是 '指引'
@@ -158,7 +125,6 @@ Windows 開發人員應該類似小心;常見的錯誤無法正確支援的硬�
 
 建議您設計工具來閱讀並遵循每個平台的設計指導方針。
 
- <a name="Implementing_Platform-Specific_Features" />
 
 
 ### <a name="implementing-platform-specific-features"></a>實作特定平台功能
@@ -171,7 +137,6 @@ Windows 開發人員應該類似小心;常見的錯誤無法正確支援的硬�
 -   **對應**– 它是將重疊影像和其他功能加入至行動裝置的對應，不過要特別小心不妨礙地圖 '點數' 資訊 （例如 iOS5 Google 標誌） 因為這樣會導致拒絕變得愈來愈普遍。
 
 
- <a name="Manage_Your_Metadata" />
 
 
 ### <a name="manage-your-metadata"></a>管理您的中繼資料
@@ -185,7 +150,6 @@ Windows 開發人員應該類似小心;常見的錯誤無法正確支援的硬�
 
 讓至應用程式的中繼資料到開發和測試。 因此您很值得花時間取得正確的中繼資料中的次要 infringements 取得拒絕應用程式。
 
- <a name="App_Stores:_Not_For_Everyone" />
 
 
 ### <a name="app-stores-not-for-everyone"></a>應用程式市集： 不適用於所有人
@@ -198,8 +162,6 @@ Android 在這方面提供最大的彈性: （只要裝置的組態可讓它）�
 Apple 開發人員註冊 iOS Developer Enterprise Program，這會略過應用程式市集核准程序，並讓公司將散發給員工的內部應用程式中提供的內部部署選項。
 不幸的是此授權無法解決需要類似外部網路的應用程式發佈到其他已關閉的群組的客戶或供應商。 [Enterprise （和臨機操作） 部署](~/ios/deploy-test/app-distribution/ipa-support.md)
 
-
- <a name="App_Store_Summary" />
 
 
 ### <a name="app-store-summary"></a>應用程式存放區摘要

@@ -1,6 +1,6 @@
 ---
 title: Xamarin Profiler
-description: "本指南中，瀏覽 Xamarin 分析工具的主要功能。 它看起來在程式碼剖析工具、 進行分析，以及何時應該使用它們，而在標準的工作流程的 Xamarin 應用程式程式碼剖析。"
+description: 本指南中，瀏覽 Xamarin 分析工具的主要功能。 它看起來在程式碼剖析工具、 進行分析，以及何時應該使用它們，而在標準的工作流程的 Xamarin 應用程式程式碼剖析。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: e5c17c53c154eb4da4ec76e567c1c73695de7e35
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7c44541c56d7b1a00a704cfc66812d5537ec83c4
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -48,7 +48,7 @@ Xamarin 分析工具有許多可用的程式碼剖析工具： 配置、 週期�
 ## <a name="download-and-install"></a>下載並安裝
 
 > [!NOTE]
-> **注意：**您必須是 Visual Studio Enterprise 訂閱者才可解除鎖定可能是在 Windows 上的 Visual Studio Enterprise 或 Visual Studio 中的這項功能，在 mac 上的 mac
+> **注意：**必須是[Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/)解除這項功能在 Windows 上的其中一個 Visual Studio Enterprise 或 Visual Studio 在 mac 上的 mac 的訂閱者
 
 Xamarin 分析工具是獨立應用程式，以及與 Visual Studio for Mac 和 Visual Studio 啟用程式碼剖析從 IDE 中整合。
 
@@ -60,10 +60,6 @@ Xamarin 分析工具是獨立應用程式，以及與 Visual Studio for Mac 和 
 - [**Windows**](https://dl.xamarin.com/profiler/profiler-windows.msi)
 
 在下載後，啟動安裝程式新增至系統的 Xamarin 分析工具。
-
-提供所有的發行版本的 Xamarin IDE 整合。
-不過， [Visual Studio Enterprise](https://www.xamarin.com/compare-visual-studio)無須進行程式碼剖析。
-
 
 
 ## <a name="profilers-and-profiling"></a>分析工具和程式碼剖析
