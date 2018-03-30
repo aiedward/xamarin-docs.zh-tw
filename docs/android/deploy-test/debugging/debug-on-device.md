@@ -1,6 +1,6 @@
 ---
-title: "在裝置上進行偵錯"
-description: "這篇文章說明如何在實體 Android 裝置上進行 Xamarin.Android 應用程式偵錯。"
+title: 在裝置上進行偵錯
+description: 這篇文章說明如何在實體 Android 裝置上進行 Xamarin.Android 應用程式偵錯。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 153D3746-A27F-198B-48FE-D219C0133A79
@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: d340c3da220deacdb5606547a084e55d80c817e7
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: df6d2b246d4f0298ff31228b5db82084a55a8dd4
+ms.sourcegitcommit: 7b88081a979381094c771421253d8a388b2afc16
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="debug-on-device"></a>在裝置上進行偵錯
 
@@ -20,7 +20,7 @@ _本文說明如何在實體 Android 裝置上進行 Xamarin.Android 應用程�
 
 ## <a name="debug-on-device-overview"></a>在裝置上進行偵錯概觀
 
-您可以使用 Visual Studio for Mac 或 Visual Studio 在 Android 裝置上進行 Xamarin.Android 偵錯。 在於裝置上進行偵錯之前，必須[設定裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md)，並連接至 PC 或 Mac。
+您可以使用 Visual Studio for Mac 或 Visual Studio，為 Android 裝置上的 Xamarin.Android App 進行偵錯。 在於裝置上進行偵錯之前，必須[設定裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md)，並連接至 PC 或 Mac。
 
 
 ## <a name="debug-application"></a>進行應用程式偵錯

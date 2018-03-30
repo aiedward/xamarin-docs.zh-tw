@@ -1,6 +1,7 @@
 ---
-title: "安裝"
-description: "本教學課程說明 Xamarin.Mac 的安裝路徑。"
+redirect_url: /visualstudio/mac/installation/
+title: 安裝
+description: 本教學課程說明 Xamarin.Mac 的安裝路徑。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 68E2A17F-7C10-EF1C-8362-C60E7F2FD94D
@@ -8,18 +9,18 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/12/2017
-ms.openlocfilehash: 15088ea451ce3e0c590144c5545f8a8e8d5f7c6a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 050055511c62a0fe26356200bed01b1dc650e796
+ms.sourcegitcommit: 7b88081a979381094c771421253d8a388b2afc16
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="installation"></a>安裝
 
 _本教學課程說明 Xamarin.Mac 的安裝路徑。_
 
 > [!NOTE]
-> 本內容已移至 [docs.microsoft.com](https://docs.microsoft.com/en-us/visualstudio/mac/installation) 上的 Visual Studio for Mac 安裝指南。
+> 此內容已移至 [Visual Studio for Mac 安裝指南](https://docs.microsoft.com/visualstudio/mac/installation)。
 
 
 ## <a name="related-links"></a>相關連結
