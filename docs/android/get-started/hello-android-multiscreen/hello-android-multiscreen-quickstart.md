@@ -1,6 +1,6 @@
 ---
-title: "Hello, Android 多重畫面：快速入門"
-description: "這份兩個部分的指南會展開 Phoneword 應用程式以處理第二個畫面。 過程中，會介紹基本 Android 應用程式建置組塊，並深入剖析 Android 架構。"
+title: Hello, Android 多重畫面：快速入門
+description: 這份兩個部分的指南會展開 Phoneword 應用程式以處理第二個畫面。 過程中，會介紹基本 Android 應用程式建置組塊，並深入剖析 Android 架構。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: ED99584A-BA3B-429A-AEE5-CF3CB0116762
@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 159bd2435a1d2b5252e0fd1b9d525cdf6cfa7207
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2913508159787f6d369f5e55f879addfc1b2ba4f
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android 多重畫面：快速入門
 
@@ -126,7 +126,7 @@ public class MainActivity : Activity
 }
 ```
 
-在 `MainActivity` 類別中，新增下列程式碼以註冊 [Translation History] (翻譯記錄) 按鈕 (將此行放在 `translationHistory` 宣告之後)：
+在 `MainActivity` 類別中，新增下列程式碼以註冊 [Translation History] (翻譯記錄) 按鈕 (將此行放在 `translateButton` 宣告之後)：
 
 ```csharp
 Button translationHistoryButton = FindViewById<Button> (Resource.Id.TranslationHistoryButton);

@@ -1,6 +1,6 @@
 ---
 title: Windows
-description: "本文涵蓋了使用 windows 和 Xamarin.Mac 應用程式中的面板。 它說明建立 windows 和 Xcode 和介面產生器中，從 分鏡腳本和.xib 檔案載入它們以及它們以程式設計方式使用中的面板。"
+description: 本文涵蓋了使用 windows 和 Xamarin.Mac 應用程式中的面板。 它說明建立 windows 和 Xcode 和介面產生器中，從 分鏡腳本和.xib 檔案載入它們以及它們以程式設計方式使用中的面板。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f483fcfa9dfca1eb476ceab2b67e7a03bf4b6354
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4b8de30cecb738fecb13616a3b796c0b4fa5a51a
+ms.sourcegitcommit: 7b88081a979381094c771421253d8a388b2afc16
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="windows"></a>Windows
 
@@ -20,7 +20,7 @@ _本文涵蓋了使用 windows 和 Xamarin.Mac 應用程式中的面板。它說
 
 當 Xamarin.Mac 應用程式中使用 C# 和.NET，您具有存取權的 Windows 和面板，開發人員使用*OBJECTIVE-C*和*Xcode*沒有。 由於直接與 Xcode 整合 Xamarin.Mac，您可以使用 Xcode 的_介面產生器_建立，並維護您的 Windows 和面板 （或您可以選擇直接在 C# 程式碼中建立它們）。
 
-根據它的用途，Xamarin.Mac 應用程式，可能會造成一或多個視窗在螢幕上管理和協調其顯示和與運作方式的資訊。 Windows 的主要功能是：
+根據其用途，Xamarin.Mac 應用程式，可能會造成一或多個 Windows 螢幕上管理和協調其顯示和與運作方式的資訊。 視窗的主要功能是：
 
 1. 若要提供的檢視與控制項中的區域可以放置與管理。
 2. 若要接受並回應使用者互動，使用鍵盤和滑鼠事件。

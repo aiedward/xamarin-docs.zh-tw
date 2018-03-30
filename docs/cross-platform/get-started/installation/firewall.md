@@ -1,6 +1,6 @@
 ---
-title: "Xamarin 防火牆組態指示"
-description: "您需要在防火牆中加入白名單的主機清單，以便讓 Xamarin 平台能為您的公司工作。"
+title: Xamarin 防火牆組態指示
+description: 您需要在您的防火牆中加入白名單的主機清單，以讓 Xamarin 平台能在您的公司中使用。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
-ms.openlocfilehash: de68c1a8ceec381faf1b867c708e04030d39c73a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c6e850594e23d650dbe67126143ce7d58fcaa82
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin 防火牆組態指示
 
@@ -55,13 +55,6 @@ _您需要在防火牆中加入白名單的主機清單，以便讓 Xamarin 平�
 -  software.xamarin.com (Updater 服務)
 -  download.visualstudio.microsoft.com
 -  dl.xamarin.com
-
-### <a name="xamarin-insights"></a>Xamarin Insights
-
-您必須新增下列位址，以確保活動能夠順利觸達 Xamarin Insights 伺服器：
-
-* https://xaapi.xamarin.com
-
 
 ## <a name="xamarin-mac-agent"></a>Xamarin Mac Agent
 
