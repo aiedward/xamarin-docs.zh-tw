@@ -1,6 +1,6 @@
 ---
-title: "回報 bug"
-description: "本文件說明解決 bug 的方法。"
+title: 回報 bug
+description: 本文件說明解決 bug 的方法。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5CBC6822-BCD7-4DAD-8468-6511250D41C4
@@ -9,10 +9,10 @@ author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
 ms.openlocfilehash: 9b0d757c951f9244beb093a0a9b13ac1d069b507
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="reporting-bugs"></a>回報 bug
 
