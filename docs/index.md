@@ -1,8 +1,8 @@
 ---
 layout: HubPage
-hide_bc: 
-title: "Xamarin 文件"
-description: "Xamarin 可讓您使用 .NET 程式碼和平台專屬的使用者介面，來建置 Android、iOS 和 macOS 原生應用程式。 Xamarin.Forms 可讓您透過以 C# 或 XAML 撰寫的共用 UI 程式碼，來建置原生應用程式。"
+hide_bc: true
+title: Xamarin 文件
+description: Xamarin 可讓您使用 .NET 程式碼和平台專屬的使用者介面，來建置 Android、iOS 和 macOS 原生應用程式。 Xamarin.Forms 可讓您透過以 C# 或 XAML 撰寫的共用 UI 程式碼，來建置原生應用程式。
 featureFlags:
 - clicktale
 ms.openlocfilehash: d73b8165fc1a71fbfe3202f694c4653788ccfb28
