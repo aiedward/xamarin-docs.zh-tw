@@ -1,6 +1,6 @@
 ---
-title: "實作跳躍遊戲"
-description: "本逐步解說示範如何加入空白的範本，建立稱為 BouncingGame 完整遊戲的遊戲邏輯和內容。"
+title: 實作跳躍遊戲
+description: 本逐步解說示範如何加入空白的範本，建立稱為 BouncingGame 完整遊戲的遊戲邏輯和內容。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: AC9FD56F-6E4A-40DA-8168-45A761D869FD
@@ -9,10 +9,10 @@ author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
 ms.openlocfilehash: 584ae03a3a773ae7e16fa7a24b9dbfa6c5056342
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.sourcegitcommit: 7b88081a979381094c771421253d8a388b2afc16
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="implementing-the-bouncing-game"></a>實作跳躍遊戲
 
