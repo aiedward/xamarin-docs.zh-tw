@@ -1,6 +1,6 @@
 ---
-title: "使用 CCTextureCache 紋理快取"
-description: "CocosSharp 的 CCTextureCache 類別提供的標準方式來組織，快取，及卸載內容。 它特別適用於大型的遊戲可能無法容納完全簡化程序的分組和處置紋理的 RAM。"
+title: 使用 CCTextureCache 紋理快取
+description: CocosSharp 的 CCTextureCache 類別提供的標準方式來組織，快取，及卸載內容。 它特別適用於大型的遊戲可能無法容納完全簡化程序的分組和處置紋理的 RAM。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1B5F3F85-9E68-42A7-B516-E90E54BA7102
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 365e343a55a208b63f4dc52999e8857b5f0ec1f4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 350a454bc94c796b34cfeeb319481919b18d334f
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="texture-caching-using-cctexturecache"></a>使用 CCTextureCache 紋理快取
 
@@ -29,7 +29,7 @@ _CocosSharp 的 CCTextureCache 類別提供的標準方式來組織，快取，�
  - 處置紋理
 
 
-# <a name="why-texture-caching-matters"></a>為什麼紋理快取的事情
+## <a name="why-texture-caching-matters"></a>為什麼紋理快取的事情
 
 紋理快取是遊戲開發的重要考量，因為紋理載入耗時的作業，而且紋理需要大量的 RAM 在執行階段。
 
@@ -38,7 +38,7 @@ _CocosSharp 的 CCTextureCache 類別提供的標準方式來組織，快取，�
 如上面所述，紋理也會佔用大量的執行階段記憶體。 例如背景影像的大小調整成 iPhone 6 (1344 x 750) 的解析度會佔用 4 mb 的 RAM – 即使 PNG 檔案只有幾 kb 的大小。 紋理快取會提供方法以共用應用程式中的紋理參考以及遊戲的不同狀態之間轉換時卸除所有內容的簡單方法。
 
 
-# <a name="texture-lifespan"></a>紋理的使用期限
+## <a name="texture-lifespan"></a>紋理的使用期限
 
 CocosSharp 紋理可能會保留在記憶體中的應用程式執行的整個範圍，或者可能是短暫的。 記憶體降到最低紋理不再需要時應該處置使用量應用程式。 當然，這表示紋理可能會處置並重新載入在稍後的時間，可以增加負載的時間，或在載入期間的效能會降低。 
 
@@ -58,7 +58,7 @@ CocosSharp 紋理可能會保留在記憶體中的應用程式執行的整個範
 上圖表示紋理的記憶體使用量可以減少卸載，但如果播放程式決定要重新執行層級，這可能需要額外的載入時間。 它也值得注意的是 UITexture 和 MainCharacter 紋理會載入，並永遠不會卸載。 這表示這些紋理會需要在所有層級，因此一律保留在記憶體中。 
 
 
-# <a name="using-sharedtexturecache"></a>使用 SharedTextureCache
+## <a name="using-sharedtexturecache"></a>使用 SharedTextureCache
 
 CocosSharp 自動快取紋理，當載入它們透過`CCSprite`建構函式。 例如下列程式碼只會建立一個紋理的執行個體：
 
@@ -84,7 +84,7 @@ CCSprite starSprite = new CCSprite ();
 `AddImage` 如果會檢查這些引數檔案 (在此情況下`star.png`) 已經載入。 如果是的話，則會傳回快取的執行個體。 如果不會再從檔案系統中，載入它，而且紋理的參考會儲存在內部針對後續`AddImage`呼叫。 換句話說`star.png`映像只能載入一次，而且後續的呼叫需要任何額外的磁碟存取或其他紋理的記憶體。
 
 
-# <a name="lazy-loading-vs-pre-loading-with-addimage"></a>延遲載入與預先載入與 AddImage
+## <a name="lazy-loading-vs-pre-loading-with-addimage"></a>消極式載入和預先載入 AddImage 與比較
 
 `AddImage` 可讓撰寫相同程式碼是否要求的紋理已經載入也是與否。 這表示，內容將不會載入，直到需要為止。不過，這也可能導致效能問題，因為無法預期的內容載入執行階段。
 
@@ -114,12 +114,12 @@ void PreLoadImages()
 這個預先載入可能會造成浪費的記憶體中，而且可能增加啟動時間。 例如，播放程式可能實際上永遠不會取得由電源總`powerup3.png`紋理，所以將不必要地載入它。 當然，這可能是必要的成本，付費以避免潛在的快顯的遊戲，因此如果它符合 RAM 是通常最好預先載入內容。
 
 
-# <a name="disposing-textures"></a>處置紋理
+## <a name="disposing-textures"></a>處置紋理
 
 如果遊戲不需要更多的紋理記憶體而不是最小規格的裝置上的可用，則不需要處置紋理。 相反地，較大的遊戲可能需要釋放紋理的記憶體，以騰出空間給新的內容。 例如遊戲可能使用大量的儲存環境的紋理的記憶體。 如果環境只用於特定層級則它應該卸載層級結束時。
 
 
-## <a name="disposing-a-single-texture"></a>處置單一的紋理
+### <a name="disposing-a-single-texture"></a>處置單一的紋理
 
 需要先移除單一材質呼叫`Dispose`方法，然後手動移除`CCTextureCache`。
 
@@ -187,11 +187,11 @@ Dispose 方法將處置所有內部的紋理，清除這些紋理所使用的記
 
 
 
-# <a name="summary"></a>總結
+## <a name="summary"></a>總結
 
 本指南示範如何使用`CCTextureCache`類別，以平衡記憶體使用量和執行階段效能。 `CCTexturCache.SharedTextureCache` 可以明確或隱含地用來載入及快取的應用程式生命週期的紋理，而`CCTextureCache`執行個體可以用來卸載紋理，來減少記憶體使用量。
 
-## <a name="related-links"></a>相關連結
+## <a name="related-links"></a>相關的連結
 
 - [https://github.com/mono/CocosSharp](https://github.com/mono/CocosSharp)
 - [/api/type/CocosSharp.CCTextureCache/](https://developer.xamarin.com/api/type/CocosSharp.CCTextureCache/)

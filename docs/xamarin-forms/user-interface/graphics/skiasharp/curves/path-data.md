@@ -1,6 +1,6 @@
 ---
-title: "SVG 路徑資料"
-description: "定義可縮放的向量圖形格式使用文字字串的路徑"
+title: SVG 路徑資料
+description: 定義可縮放的向量圖形格式使用文字字串的路徑
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 7d50e5a33020de822f96a8bf2f713a8c5b9d3020
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 0fcef7ce40a575e015232e1ed5996e6b799dd085
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="svg-path-data"></a>SVG 路徑資料
 
@@ -178,7 +178,7 @@ public class PathDataHelloPage : ContentPage
 
 請注意，`M`開始的最後一個分佈的命令將位置設為點 350 （50），也就是左邊的垂直中央的那一邊 ' o '。 第一個數字下列所示`A`命令時，省略符號有水平半徑為 25 和 50 垂直半徑。 結束點由數字中的最後一個配對`A`命令，其表示的點 （300，49.9）。 這是刻意只要稍有不同的開始點。 如果端點設定為起始點，將不會轉譯弧線。 若要繪製完整橢圓形，您必須設定端點關閉 （但不是等於） 起始點，或者您必須使用兩個或多個`A`命令，每個完整的橢圓形的一部分。
 
-您可能想要在頁面的建構函式，新增下列陳述式，然後設定 [中斷點檢查結果的字串：
+您可能想要在頁面的建構函式，新增下列陳述式，然後設定 中斷點檢查結果的字串：
 
 ```csharp
 string str = helloPath.ToSvgPathData();
@@ -431,4 +431,4 @@ public class PrettyAnalogClockPage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -1,6 +1,6 @@
 ---
-title: "與 CocosSharp 2D 數學運算"
-description: "本指南涵蓋 2D 數學開發遊戲。 它使用 CocosSharp 示範如何執行一般的遊戲開發工作，並說明這些工作背後的數學運算。"
+title: 與 CocosSharp 2D 數學運算
+description: 本指南涵蓋 2D 數學開發遊戲。 它使用 CocosSharp 示範如何執行一般的遊戲開發工作，並說明這些工作背後的數學運算。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5C241AB4-F97E-4B61-B93C-F5D307BCD517
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 7573ca423c3d9462d400f117c2116209e7c2a410
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 484bd8b19f2c51dac57a46a1ef93610ed5e13419
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="2d-math-with-cocossharp"></a>與 CocosSharp 2D 數學運算
 
@@ -28,12 +28,12 @@ _本指南涵蓋 2D 數學開發遊戲。它使用 CocosSharp 示範如何執行
 不具有強式數學背景，或使用者已長時間-忘記學校、 從這些主題的開發人員不需要擔心-這份文件會細分概念成接近大小的片段，並將會伴隨理論上與實用範例的說明。 簡單地說，這篇文章會回答歷數學學生:"當我實際上必須使用此內容？ 」
 
 
-# <a name="requirements"></a>需求
+## <a name="requirements"></a>需求
 
 雖然這份文件主要著重於 CocosSharp 的數學端，程式碼範例假設使用物件繼承表單`CCNode`。 此外，因為`CCNode`不包含值針對速度和速度，程式碼會假設其提供值，例如 VelocityX、 VelocityY、 AccelerationX 和 AccelerationY 實體使用。 如需有關實體的詳細資訊，請參閱我們的逐步解說[CocosSharp 中的實體](~/graphics-games/cocossharp/entities.md)。
 
 
-# <a name="velocity"></a>速度
+## <a name="velocity"></a>速度
 
 遊戲開發人員使用的詞彙*速度*來描述物件的方式移動 – 特別速度的項目移動，而且方向是移動。 
 
@@ -50,7 +50,7 @@ bulletInstance.VelocityY = 300;
 ```
 
 
-## <a name="implementing-velocity"></a>實作速度
+### <a name="implementing-velocity"></a>實作速度
 
 CocosSharp 未實作速度，因此需要移動物件必須實作自己的移動邏輯。 新遊戲開發人員實作速度通常犯讓其速度的畫面播放速率而定。 也就是下列*不正確實作*看似提供正確的結果，但會根據遊戲的畫面播放速率：
 
@@ -75,7 +75,7 @@ this.PositionY += this.VelocityY * seconds;
 如需如何增加時間為基礎的範例，請參閱[涵蓋時間這個配方基礎移動](https://developer.xamarin.com/recipes/cross-platform/game_development/time_based_movement/)。
 
 
-## <a name="calculating-positions-using-velocity"></a>計算位置使用速度
+### <a name="calculating-positions-using-velocity"></a>計算位置使用速度
 
 在物件會比較時間推移的後一些預測，或幫助微調物件的行為，而不需要執行遊戲，可以使用速度。 比方說，其實作的移動引發的項目符號的開發人員必須具現化後，設定項目符號的速度。 螢幕大小可以用來提供的基礎設定速度。 也就是說，如果開發人員知道項目符號應在 2 秒，移動螢幕的高度，則速度應該設定為除以 2 螢幕的高度。 如果 800 像素高的畫面，項目符號的速度會設定為 400 （也就是 800/2）。
 
@@ -92,7 +92,7 @@ label.Text = secondsToReachTarget + " seconds to reach target";
 ```
 
 
-# <a name="acceleration"></a>加速
+## <a name="acceleration"></a>加速
 
 *加速*是在遊戲開發中，一般概念，而且與其速度共用許多相似之處。 物件是加速或變慢 （如何速度值隨著時間變更），以量化加速。 加速*新增*於速度，就像速度將加入至定位。 常見的應用程式的加速包括重力、 加速，汽車和引發其 thrusters 空間出貨。 
 
@@ -111,12 +111,12 @@ icicle.AccelerationY = -50;
 ```
 
 
-## <a name="acceleration-vs-deceleration"></a>加速 vs。減速
+### <a name="acceleration-vs-deceleration"></a>加速減速與
 
 雖然加速和減速有時會在每一天語音區分，還有兩個無技術差異。 重力是會導致加速 force。 如果物件就會擲回向上然後重力會變慢 （減速），但一旦物件已停止上升並落在相同的方向為重力然後重力加速它 （加速）。 如下所示，加速應用程式是否正在套用相同方向或相反的方向移動都相同。 
 
 
-## <a name="implementing-acceleration"></a>實作加速
+### <a name="implementing-acceleration"></a>實作加速
 
 實作時，加速是類似於速度 – 它不會自動實作 CocosSharp，並以時間為基礎的加速所需的實作 （而不是以框架為基礎的加速）。 因此簡單加速 （以及速度） 實作可能看起來像是：
 
@@ -149,7 +149,7 @@ this.VelocityY += this.AccelerationY * seconds;
 實際影響`halfSecondSquare`是加速將以數學方式正確並如預期般運作不論畫面播放速率。 加速線性近似值受限於畫面播放速率 – 低的畫面播放速率卸除變得較不精確的近似值。 使用`halfSecondsSquared`保證程式碼的行為相同，不論畫面播放速率。
 
 
-# <a name="angles-and-rotation"></a>角度和旋轉
+## <a name="angles-and-rotation"></a>角度和旋轉
 
 視覺物件，例如`CCSprite`支援透過旋轉`Rotation`變數。 這可以被指派的值來設定其旋轉角度，以度為單位。 例如，下列程式碼顯示如何旋轉`CCSprite`執行個體：
 
@@ -189,7 +189,7 @@ this.AddChild (rotatedSprite);
 我們應該注意，上述圖表會顯示循環以度為單位。不過，某些數學函數 (例如中的函式`System.Math`命名空間) 預期和傳回值中的*弧度*而不是度。 我們會探討如何將稍後在本指南中的兩個單元類型之間轉換。
 
 
-## <a name="rotating-to-face-a-direction"></a>面對方向旋轉
+### <a name="rotating-to-face-a-direction"></a>面對方向旋轉
 
 如上所示，`CCSprite`可使用旋轉`Rotation`屬性。 `Rotation`屬性由`CCNode`(的基底類別`CCSprite`)，這表示旋轉可以套用至實體繼承自`CCNode`以及。 
 
@@ -261,14 +261,16 @@ private void HandleInput(System.Collections.Generic.List<CCTouch> touches, CCEve
 
 ![](math-images/image5.gif "此程式碼會產生此行為")
 
-### <a name="using-atan2-to-convert-offsets-to-angles"></a>若要將位移轉換成角度使用 Atan2
+#### <a name="using-atan2-to-convert-offsets-to-angles"></a>要轉換使用 Atan2 位移到角度
+
 `System.Math.Atan2` 可用來將位移轉換成角度。 函式名稱`Atan2`來自三角函式的反正切值。 "2"的後置詞從標準中區分此函式`Atan`函式，以完全符合反正切值的數學行為。 反正切值是函式會傳回介於-90 和 + 90 度 （或同等權限，以弧度為單位）。 許多應用程式，包括電腦遊戲，通常需要完整 360 度的值，所以`Math`類別包含`Atan2`來滿足此需求。
 
 請注意，上述程式碼傳遞 Y 參數第一次，然後 X 的參數，呼叫時`Atan2`方法。 這會是回溯一般 X，Y 順序的位置座標。 如需詳細資訊[看到 Atan2 文件](https://msdn.microsoft.com/en-us/library/system.math.atan2(v=vs.110).aspx)。
 
 它也是值得注意的傳回值從`Atan2`是以弧度為單位，也就是另一個用來測量角度的單位。 本指南未涵蓋的弧度為單位的詳細資料，但是請記住，在所有三角函數`System.Math`命名空間使用弧度為單位，因此任何值必須在 CocosSharp 物件上使用前先轉換為度。 可以找到更多有關弧度[弧度維基百科頁面中](http://en.wikipedia.org/wiki/Radian)。
 
-### <a name="forward-angle"></a>正向的角度
+#### <a name="forward-angle"></a>正向的角度
+
 一次`FacePoint`方法會將角度轉換成弧度，它會定義`forwardAngle`值。 這個值表示它旋轉的值等於 0 時，實體面臨的角度。 在此範例中，我們假設使用數學旋轉 （相對於 CocosSharp 旋轉） 時，這會 90 度，實體往上，對著。 我們使用數學旋轉這裡因為我們尚未您尚未反轉 CocosSharp 旋轉。
 
 下列範例示範具有哪些實體`forwardAngle`90 度的可能如下：
@@ -276,7 +278,7 @@ private void HandleInput(System.Collections.Generic.List<CCTouch> touches, CCEve
 ![](math-images/image6.png "這會顯示具有 forwardAngle 90 度的實體可能如下")
 
 
-## <a name="angled-velocity"></a>角度的速度
+### <a name="angled-velocity"></a>角度的速度
 
 到目前為止我們已經討論過如何將位移轉換成角度。 本節會另一種方式 – 角度，並將它轉換為 X 和 Y 值。 常見範例包括移動中遇到，方向或疑難排解遇到的出貨的方向移動項目符號空間出貨的汽車。 
 
@@ -354,6 +356,6 @@ newBullet.Rotation = rotation;
 ![](math-images/image9.png "此程式碼可能會產生類似這個螢幕擷取畫面")
 
 
-# <a name="summary"></a>總結
+## <a name="summary"></a>總結
 
 本指南涵蓋在 2D 遊戲開發 common 數學概念。 它會顯示如何指定及實作速度和加速功能，並涵蓋如何旋轉物件和任何方向移動的向量。

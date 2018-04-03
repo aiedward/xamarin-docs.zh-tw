@@ -1,6 +1,6 @@
 ---
-title: "SkiaSharp 轉換"
-description: "深入了解轉換為顯示 SkiaSharp 圖形"
+title: SkiaSharp 轉換
+description: 深入了解轉換為顯示 SkiaSharp 圖形
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 10b23975fab8aa87019b9d0fed42decdc6adddfb
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 668488ab7efae66f1777e9ae6ded1f725833fe16
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="skiasharp-transforms"></a>SkiaSharp 轉換
 
@@ -49,7 +49,7 @@ SkiaSharp 轉換是相對於左上角`SKCanvas`Xamarin.Forms 轉換是相對於�
 
 非常大的差異是 SKiaSharp 轉換*方法*Xamarin.Forms 轉換時*屬性*。 這是的語意差異以外的語法差異： SkiaSharp 轉換執行的作業，在 Xamarin.Forms 轉換設為狀態時。 SkiaSharp 轉換套用到後續繪製的圖形物件，但不是套用轉換之前繪製的圖形物件。 相反地，Xamarin.Forms 轉換會套用到先前呈現的項目屬性設定為。 SkiaSharp 轉換是累計的因為這些方法會呼叫;與另一個值設定屬性時，會取代 Xamarin.Forms 轉換。
 
-本節中的所有範例程式會都出現標題底下**轉換**在首頁上的[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)程式，然後在[**轉換**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms)方案的資料夾。
+本節中的所有範例程式會都出現標題底下**轉換**在首頁上的[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式，然後在[**轉換**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms)方案的資料夾。
 
 ## <a name="the-translate-transformtranslatemd"></a>[平移轉換](translate.md)
 
@@ -87,4 +87,4 @@ SkiaSharp 轉換是相對於左上角`SKCanvas`Xamarin.Forms 轉換是相對於�
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -1,6 +1,6 @@
 ---
-title: "手指繪製"
-description: "您可以使用手指在畫布上繪製。"
+title: 手指繪製
+description: 您可以使用手指在畫布上繪製。
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: b4213d71c2eca6c2552ac674a0203d7a2cc36e1b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dacb9f399ad044d2d5e9c960bce398092766020c
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="finger-painting"></a>手指繪製
 
@@ -24,7 +24,7 @@ _您可以使用手指在畫布上繪製。_
 
 觸控支援，在 Xamarin.Forms 中的不允許追蹤個別隻手指放在畫面上，，因此 Xamarin.Forms 觸控追蹤效果是開發來提供額外的觸控支援。 文件中說明這種效果[**叫用事件效果**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)。 範例程式[**觸控追蹤效果示範**](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/)包含使用 SkiaSharp，包括 finger-painting 程式的兩個頁面。
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)解決方案包含此觸控追蹤事件。 可攜式類別庫專案會包含`TouchEffect`類別`TouchActionType`列舉型別，`TouchActionEventHandler`委派，而`TouchActionEventArgs`類別。 每個平台的專案包含`TouchEffect`類別適用於該平台，則 iOS 專案也包含`TouchRecognizer`類別。
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)解決方案包含此觸控追蹤事件。 可攜式類別庫專案會包含`TouchEffect`類別`TouchActionType`列舉型別，`TouchActionEventHandler`委派，而`TouchActionEventArgs`類別。 每個平台的專案包含`TouchEffect`類別適用於該平台，則 iOS 專案也包含`TouchRecognizer`類別。
 
 **手指小畫家**頁面**SkiaSharpFormsDemos**是指繪製的簡單的實作。 不允許選取色彩或繪製寬度，它沒有方法可以清除畫布，而且當然您無法儲存您的作品。
 
@@ -169,6 +169,6 @@ public partial class FingerPaintPage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [觸控追蹤效果示範 （範例）](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/)
 - [叫用事件的效果](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

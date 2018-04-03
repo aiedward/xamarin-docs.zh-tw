@@ -1,6 +1,6 @@
 ---
-title: "線條和筆觸端點"
-description: "了解如何使用 SkiaSharp 使用不同的筆觸端點繪製線條"
+title: 線條和筆觸端點
+description: 了解如何使用 SkiaSharp 使用不同的筆觸端點繪製線條
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1F854DDD-5D1B-4DE4-BD2D-584439429FDB
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 341d850709ff27f4dc397cee3bb2fc5f73c0ec3c
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 96b8a990f4644d5e4c9c8ffe6cdb6c173c50657c
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="lines-and-stroke-caps"></a>線條和筆觸端點
 
@@ -36,7 +36,7 @@ canvas.DrawLine (x0, y0, x1, y1, paint);
 - [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 - [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 
-這些最好說明與範例程式。 第二個區段的 [首頁] 的[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)程式開始與頁面標題為**筆觸端點**根據[ `StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs)類別。 此頁面定義`PaintSurface`迴圈的三個成員的事件處理常式`SKStrokeCap`列舉型別，顯示列舉成員的名稱和繪製線條，使用該筆劃的端點：
+這些最好說明與範例程式。 第二個區段的 [首頁] 的[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式開始與頁面標題為**筆觸端點**根據[ `StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs)類別。 此頁面定義`PaintSurface`迴圈的三個成員的事件處理常式`SKStrokeCap`列舉型別，顯示列舉成員的名稱和繪製線條，使用該筆劃的端點：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -244,4 +244,4 @@ Windows 行動裝置顯示的結果`SKPointMode.Polygon`值。 陣列中的連�
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

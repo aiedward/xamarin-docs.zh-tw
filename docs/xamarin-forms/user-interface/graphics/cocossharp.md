@@ -1,6 +1,6 @@
 ---
-title: "使用 Xamarin.Forms 中 CocosSharp"
-description: "CocosSharp 可用於進階視覺效果應用程式中加入精確圖形、 影像和文字轉譯"
+title: 使用 Xamarin.Forms 中 CocosSharp
+description: CocosSharp 可用於進階視覺效果應用程式中加入精確圖形、 影像和文字轉譯
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: E0F404D5-5C6B-4288-92EC-78996C674E4E
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/03/2016
-ms.openlocfilehash: 395defa300da7b8f68746162d877a4fdb17ded9e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 83852b6b2d7324ae6aaf6b1dbf86a6ef7f9ac509
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>使用 Xamarin.Forms 中 CocosSharp
 
@@ -197,7 +197,7 @@ void HandleViewCreated (object sender, EventArgs e)
 
 ![](cocossharp-images/image4.png "一般 CocosSharp 階層")
 
-只有一個`CCScene`每次最多可處於作用中。 大多數的遊戲使用多個`CCLayer`排序的內容，但我們的應用程式的執行個體僅使用一個。 同樣地，大多數的遊戲使用多個視覺化的物件，但我們只需要在我們的應用程式中。 更詳細討論位於視覺階層 CocosSharp[彈跳遊戲逐步解說](~/graphics-games/cocossharp/first-game/index.md)。
+只有一個`CCScene`每次最多可處於作用中。 大多數的遊戲使用多個`CCLayer`排序的內容，但我們的應用程式的執行個體僅使用一個。 同樣地，大多數的遊戲使用多個視覺化的物件，但我們只需要在我們的應用程式中。 更詳細討論位於視覺階層 CocosSharp [BouncingGame 逐步解說](~/graphics-games/cocossharp/bouncing-game.md)。
 
 一開始`GameScene`類別將會幾乎空白 – 我們將只建立它以滿足中的參考`HomePage`。 將新類別加入名為您 PCL `GameScene`。 它應該是繼承自`CCScene`類別，如下所示：
 

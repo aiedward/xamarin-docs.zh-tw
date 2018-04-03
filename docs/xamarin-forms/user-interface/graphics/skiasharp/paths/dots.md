@@ -1,6 +1,6 @@
 ---
-title: "句點和連字號"
-description: "主要的複雜性 SkiaSharp 中繪製虛線和破折線的線條"
+title: 句點和連字號
+description: 主要的複雜性 SkiaSharp 中繪製虛線和破折線的線條
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8E9BCC13-830C-458C-9FC8-ECB4EAE66078
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 32326eb472b1bb8b4fbaf4066edc36255f5948ca
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d18afdf7c9d48a715a6a909105cee200ed116014
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="dots-and-dashes"></a>句點和連字號
 
@@ -221,4 +221,4 @@ protected override void OnAppearing()
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

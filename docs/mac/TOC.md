@@ -53,6 +53,7 @@
 #### [上傳至 Mac App Store](deploy-test/publishing-to-the-app-store/uploading.md)
 ## [進階概念與內部項目](internals/index.md)
 ### [AOT](internals/aot.md)
+### [可用的組件](~/cross-platform/internals/available-assemblies.md?context=xamarin/mac)
 ### [Mac 架構](internals/architecture.md)
 ### [Xamarin.Mac 的運作方式](internals/how-it-works.md)
 ### [架構](internals/frameworks.md)

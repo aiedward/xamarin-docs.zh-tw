@@ -1,5 +1,5 @@
 ---
-title: 參考階段實作詳細資料
+title: 參考時間遊戲詳細資料
 description: 本指南討論實作詳細資料，在參考時間遊戲中，包括使用對應圖格、 建立實體、 動畫小，以及實作有效率的衝突。
 ms.topic: article
 ms.prod: xamarin
@@ -8,13 +8,13 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 80250ca9fae98fae653c9b2837b2b1a96fb02203
-ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
+ms.openlocfilehash: 8c33b74af80a14df1626ab39ba8c055a81259194
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="coin-time-implementation-details"></a>參考階段實作詳細資料
+# <a name="coin-time-game-details"></a>參考時間遊戲詳細資料
 
 _本指南討論實作詳細資料，在參考時間遊戲中，包括使用對應圖格、 建立實體、 動畫小，以及實作有效率的衝突。_
 
@@ -24,27 +24,27 @@ _本指南討論實作詳細資料，在參考時間遊戲中，包括使用對�
 
 本指南將告訴您參考的時間，涵蓋下列主題中的實作詳細資料：
 
-- [使用 TMX 檔案](#Working_with_TMX_Files)
-- [載入層級](#Level_Loading)
-- [加入新的實體](#Adding_New_Entities)
-- [動畫的實體](#Animated_Entities)
+- [使用 tmx 檔案](#working-with-tmx-files)
+- [載入層級](#level-loading)
+- [加入新的實體](#adding-new-entities)
+- [動畫的實體](#animated-entities)
 
 
-# <a name="content-in-coin-time"></a>內容的參考時間
+## <a name="content-in-coin-time"></a>內容的參考時間
 
 參考時，表示可能會組織完整 CocosSharp 專案的方式範例專案。 錢幣式階段的結構其目的是簡化的新增和維護的內容。 它會使用**.tmx**所建立的檔案[磚塊](http://www.mapeditor.org)層級及定義動畫的 XML 檔案。 修改或加入新的內容可以輕鬆達成。 
 
 雖然這個方法會參考時間學習和試驗的有效專案，它也會反映如何專業遊戲進行。 本指南說明一些簡化加入和修改內容的方法。
 
 
-# <a name="working-with-tmx-files"></a>使用 TMX 檔案
+## <a name="working-with-tmx-files"></a>使用 tmx 檔案
 
 參考的時間層級會定義使用.tmx 檔案格式，輸出的[磚塊](http://www.mapeditor.org)磚對應編輯器。 如需使用磚塊的詳細討論，請參閱[使用並排顯示與 Cocos 尖指南](~/graphics-games/cocossharp/tiled.md)。 
 
 每個層級中包含它自己.tmx 檔案中定義**CoinTime/資產/內容/層級**資料夾。 所有的參考時間層級共用一個地塊檔，其定義在**mastersheet.tsx**檔案。 此檔案會定義每個圖格，例如是否這些磚的實心衝突，或是否應該取代磚的實體執行個體的自訂屬性。 Mastersheet.tsx 檔案可讓您能夠一次定義和使用的所有層級的屬性。 
 
 
-## <a name="editing-a-tile-map"></a>編輯磚對應
+### <a name="editing-a-tile-map"></a>編輯磚對應
 
 若要編輯的磚對應，.tmx 中開啟檔案磚塊.tmx 檔案上按兩下，或透過磚塊中的 [檔案] 功能表開啟它。 層級的磚貼圖包含三個層級的參考時間： 
 
@@ -54,7 +54,8 @@ _本指南討論實作詳細資料，在參考時間遊戲中，包括使用對�
 
 我們稍後將探索，層級載入程式碼必須要有下列三個層級中所有的參考時間層級。
 
-### <a name="editing-terrain"></a>編輯地形
+#### <a name="editing-terrain"></a>編輯地形
+
 磚可以放在按一下**mastersheet**地塊，，然後按一下 磚上的對應。 例如，若要繪製新地形層級中：
 
 1. 選取地形圖層
@@ -67,7 +68,8 @@ _本指南討論實作詳細資料，在參考時間遊戲中，包括使用對�
 
 ![](cointime-images/image3.png "地形，也就是純色，包含 SolidCollision 屬性，在螢幕左邊的圖格屬性中所示")
 
-### <a name="editing-entities"></a>編輯實體
+#### <a name="editing-entities"></a>編輯實體
+
 可以加入或移除從層級 – 就像地形實體。 **Mastersheet**地塊已放置關於地球的另一端的水平的所有實體，讓它們可能不會顯示不含向右捲動：
 
 ![](cointime-images/image4.png "Mastersheet 地塊已放置關於地球的另一端的水平的所有實體，因此它們不一定會顯示不含向右捲動，")
@@ -85,7 +87,7 @@ CoinTime 程式碼會尋找**EntityType**來識別應該由實體取代的磚載
 ![](cointime-images/image7.png "一旦已修改且儲存檔案，所做的變更會自動顯示在專案建置和執行")
 
 
-## <a name="adding-new-levels"></a>加入新的層級
+### <a name="adding-new-levels"></a>加入新的層級
 
 加入參考時間層級中的程序需要變更任何程式碼，只有少數小型專案的變更。 若要新增新的層級：
 
@@ -105,7 +107,7 @@ CoinTime 程式碼會尋找**EntityType**來識別應該由實體取代的磚載
 ![](cointime-images/image10.png "新的層級應該在層級的選取畫面會顯示為 0，層級 9 層級的檔案名稱開始，但數字 1 開始的層級的按鈕")
 
 
-# <a name="level-loading"></a>載入層級
+## <a name="level-loading"></a>載入層級
 
 如先前所示，新的層級需要任何程式碼中的變更 – 遊戲會自動偵測層級，如果它們會正確命名，並新增到**層級**資料夾具有正確的建置動作 (**BundleResource**或**AndroidAsset**)。
 
@@ -201,7 +203,7 @@ private void GoToLevel(int levelNumber)
 接下來我們將探討中呼叫方法`GoToLevel`。
 
 
-## <a name="loadlevel"></a>LoadLevel
+### <a name="loadlevel"></a>LoadLevel
 
 `LoadLevel`方法負責載入.tmx 檔案，並將它加入至`GameScene`。 這個方法不會建立任何互動的物件，例如衝突或實體 – 它只會建立視覺效果的層級，也稱為*環境*。
 
@@ -227,7 +229,7 @@ private void LoadLevel(int levelNumber)
 目前，CocosSharp 不允許的圖層移除並重新將它們加入至其父代重新調整順序`CCScene`(也就是`GameScene`在此情況下)，因此方法的最後幾行，才能重新排列圖層。
 
 
-## <a name="createcollision"></a>CreateCollision
+### <a name="createcollision"></a>CreateCollision
 
 `CreateCollision`方法建構`LevelCollision`用來執行的執行個體*實心衝突*player 與環境之間。
 
@@ -245,7 +247,7 @@ private void CreateCollision()
 沒有額外的程式碼 – 只有修改並排顯示的檔案，可以加入衝突的參考時間。 
 
 
-## <a name="processtileproperties"></a>ProcessTileProperties
+### <a name="processtileproperties"></a>ProcessTileProperties
 
 一旦載入層級，並建立衝突發生時，`ProcessTileProperties`呼叫來執行圖格屬性為基礎的邏輯。 參考時間包括`PropertyLocation`對內容和磚，含有這些屬性的座標定義的結構：
 
@@ -343,7 +345,7 @@ private bool TryCreateEntity(string entityType, float worldX, float worldY)
 ```
 
 
-# <a name="adding-new-entities"></a>加入新的實體
+## <a name="adding-new-entities"></a>加入新的實體
 
 其中遊戲物件的參考時間會使用的實體模式 (這在講述[CocosSharp 中的實體引導](~/graphics-games/cocossharp/entities.md))。 所有實體都繼承自`CCNode`，這表示可以將它們加入做為子系的`gameplayLayer`。
 
@@ -352,19 +354,19 @@ private bool TryCreateEntity(string entityType, float worldX, float worldY)
 現有的程式碼提供範例如何建立新的實體的實體類型的數字。 下列步驟可用來建立新的實體：
 
 
-## <a name="1---define-a-new-class-using-the-entity-pattern"></a>1-定義使用實體模式的新類別
+### <a name="1---define-a-new-class-using-the-entity-pattern"></a>1-定義使用實體模式的新類別
 
 建立實體的唯一需求是建立繼承自一個類別`CCNode`。 大多數實體具有一些視覺效果，例如`CCSprite`，應該加入其建構函式中的實體的子系。
 
-提供 CoinTime`AnimatedSpriteEntity`可簡化建立動畫的實體類別。 將更詳細地討論動畫[動畫實體 區段](#Animated_Entities)。
+提供 CoinTime`AnimatedSpriteEntity`可簡化建立動畫的實體類別。 將更詳細地討論動畫[動畫實體 區段](#animated-entities)。
 
 
-## <a name="2--add-a-new-entry-to-the-trycreateentity-switch-statement"></a>2 – TryCreateEntity switch 陳述式來加入新項目
+### <a name="2--add-a-new-entry-to-the-trycreateentity-switch-statement"></a>2 – TryCreateEntity switch 陳述式來加入新項目
 
 新實體的執行個體應該在具現化`TryCreateEntity`。 如果實體需要每隔框架邏輯，像是衝突、 AI 或讀取輸入，然後在`GameScene`需要保存物件的參考。 如果需要多個執行個體 (例如`Coin`或`Enemy`執行個體)，然後新`List`應加入至`GameScene`類別。
 
 
-## <a name="3--modify-tile-properties-for-the-new-entity"></a>3 – 修改新實體的圖格屬性
+### <a name="3--modify-tile-properties-for-the-new-entity"></a>3 – 修改新實體的圖格屬性
 
 一旦程式碼支援建立新的實體，新實體，就需要加入地塊。 開啟任何層級也可以編輯地塊`.tmx`檔案。 
 
@@ -389,7 +391,7 @@ private bool TryCreateEntity(string entityType, float worldX, float worldY)
 ![](cointime-images/image15.png "他地塊應該覆寫現有的 mastersheet.tsx 地塊")
 
 
-# <a name="entity-tile-removal"></a>實體磚移除
+## <a name="entity-tile-removal"></a>實體磚移除
 
 遊戲載入圖格對應時，個別的圖格就會是靜態物件。 因為實體需要自訂的行為，例如移動，參考時間程式碼建立實體時，就會移除磚。
 
@@ -453,7 +455,7 @@ private void ProcessTileProperties()
 ```
 
 
-# <a name="entity-offsets"></a>實體位移
+## <a name="entity-offsets"></a>實體位移
 
 對齊中央實體的圖格的中央位於實體所建立的磚。 較大的實體，例如`Door`，使用其他的屬性和邏輯來正確地放置。 
 
@@ -493,12 +495,12 @@ private void ProcessTileProperties()
 ```
 
 
-# <a name="animated-entities"></a>動畫的實體
+## <a name="animated-entities"></a>動畫的實體
 
 參考時間包括數個動畫項目。 `Player`和`Enemy`實體播放查核行程動畫和`Door`一旦所有錢幣已經收集都到的實體會播放開啟動畫。
 
 
-## <a name="achx-files"></a>.achx 檔案
+### <a name="achx-files"></a>.achx 檔案
 
 參考時間動畫.achx 檔案中定義。 每個動畫之間定義`AnimationChain`標記中定義下列動畫所示**propanimations.achx**:
 
@@ -533,7 +535,7 @@ private void ProcessTileProperties()
 .Achx 檔案中的所有其他 AnimationChain 屬性會忽略參考時間。
 
 
-## <a name="animatedspriteentity"></a>AnimatedSpriteEntity
+### <a name="animatedspriteentity"></a>AnimatedSpriteEntity
 
 動畫邏輯包含於`AnimatedSpriteEntity`類別會做為基底類別，如在中使用的大部分實體`GameScene`。 它提供下列功能：
 
@@ -562,10 +564,10 @@ walkRightAnimation = animations.Find (item => item.Name == "WalkRight");
 ```
 
 
-# <a name="summary"></a>總結
+## <a name="summary"></a>總結
 
 本指南涵蓋錢幣時間的實作詳細資料。 參考時間建立要在完整的遊戲，但也可以輕鬆地修改並擴充的專案。 加入新的層級，及建立新的實體來進一步了解如何實作參考的時間，是鼓勵花時間層級，讓修改讀取器。
 
-## <a name="related-links"></a>相關連結
+## <a name="related-links"></a>相關的連結
 
 - [遊戲專案 （範例）](https://developer.xamarin.com/samples/mobile/CoinTime/)

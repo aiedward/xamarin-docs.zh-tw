@@ -1,6 +1,6 @@
 ---
-title: "跨平台效能"
-description: "有許多技巧可增加利用 Xamarin 平台建置之應用程式的效能。 這些技巧可共同大幅減少 CPU 所執行的工作量和應用程式所耗用的記憶體數量。 本文將描述並討論這些技巧。"
+title: 跨平台效能
+description: 有許多技巧可增加利用 Xamarin 平台建置之應用程式的效能。 這些技巧可共同大幅減少 CPU 所執行的工作量和應用程式所耗用的記憶體數量。 本文將描述並討論這些技巧。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 287f564ba74050aa8a06e5a582ae8db6657e440e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e8b597221e806c2338d6f1965d3d151f998a3011
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="cross-platform-performance"></a>跨平台效能
 
@@ -352,7 +352,7 @@ Android 應用程式也可以將每個 ABI (「架構」) 分割成個別的 APK
 
 ## <a name="reduce-the-application-activation-period"></a>減少應用程式的啟用期間
 
-所有應用程式都會有一個「啟用期間」，即應用程式啟動時與應用程式準備好可供使用時之間的時間長度。 此啟用期間會提供使用者應用程式的第一印象，因此為了博得使用者對應用程式良好的第一印象，減少啟用期間並讓使用者察覺到是非常重要的。
+所有應用程式都會有一個「啟用期間」，即應用程式啟動時與應用程式準備好可供使用時之間的時間長度。 此啟用期間會成為使用者對應用程式的第一印象，因此為了博得使用者對應用程式良好的第一印象，減少啟用期間並讓使用者察覺到是非常重要的。
 
 在應用程式顯示其初始 UI 前，應用程式應提供啟動顯示畫面來向使用者表示應用程式正在啟動中。 若應用程式無法快速的顯示其初始 UI，啟動顯示畫面應用於向使用者提示啟用期間的進度，好讓使用者能夠放心並知道應用程式並未停止回應。 這個讓使用者放心的措施可以是一個進度列或類似的控制項。
 

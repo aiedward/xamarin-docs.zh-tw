@@ -1,6 +1,6 @@
 ---
-title: "非仿射轉換"
-description: "轉換矩陣的第三個資料行建立檢視方塊和錐形效果"
+title: 非仿射轉換
+description: 轉換矩陣的第三個資料行建立檢視方塊和錐形效果
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 2e2e83404bc93bd07885008b868c51eba2ff7140
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ae61774a53136af3350d63658470cfb4607026db
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="non-affine-transforms"></a>非仿射轉換
 
@@ -227,7 +227,7 @@ public partial class TestPerspectivePage : ContentPage
 
 以下是一些範例映像：
 
-[![](non-affine-images/testperspective-small.png "[測試] 檢視方塊 頁面上的三個螢幕擷取畫面")](non-affine-images/testperspective-large.png#lightbox "的 [測試] 檢視方塊 頁面上的三個螢幕擷取畫面")
+[![](non-affine-images/testperspective-small.png "[測試] 檢視方塊頁面上的三個螢幕擷取畫面")](non-affine-images/testperspective-large.png#lightbox "的 [測試] 檢視方塊頁面上的三個螢幕擷取畫面")
 
 當您嘗試將滑桿，您會發現 0.0066 超過或低於 –0.0066 的值會導致突然變得 fractured 和一致的映像。 要轉換點陣圖為 300 像素正方形。 它會轉換相對於其中心，讓點陣圖的座標的範圍從 –150 到 150。 請記得，z 的值 ' 是：
 
@@ -470,4 +470,4 @@ W 和 H 代表點陣圖的高度與寬度。 第一個轉換 (`S`) 只是可調�
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

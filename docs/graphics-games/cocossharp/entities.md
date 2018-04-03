@@ -1,6 +1,6 @@
 ---
-title: "CocosSharp 中的實體"
-description: "實體模式是強大的方式來組織的遊戲程式碼。 它有助於改善可讀性，讓程式碼更易於維護，並利用內建的父/子功能。"
+title: CocosSharp 中的實體
+description: 實體模式是強大的方式來組織的遊戲程式碼。 它有助於改善可讀性，讓程式碼更易於維護，並利用內建的父/子功能。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1D3261CE-AC96-4296-8A53-A76A42B927A8
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: fe722ce75f0322ab60bb6fd967ff2c498b2e7b20
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bb4af0f76f6b266cad4eb969d987a346b7396aa9
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="entities-in-cocossharp"></a>CocosSharp 中的實體
 
@@ -34,7 +34,7 @@ _實體模式是強大的方式來組織的遊戲程式碼。它有助於改善�
 ![](entities-images/image1.png "完成的遊戲看起來像這樣")
 
 
-# <a name="introduction-to-game-entities"></a>遊戲實體簡介
+## <a name="introduction-to-game-entities"></a>遊戲實體簡介
 
 遊戲的實體是類別，定義物件需要呈現、 衝突、 物理或人工地智慧邏輯。 幸運的是，出現在遊戲的程式碼基底實體通常符合在遊戲概念性的物件。 在這個情況下，找出需要在遊戲中的實體可以更輕鬆地完成。 
 
@@ -51,7 +51,7 @@ _實體模式是強大的方式來組織的遊戲程式碼。它有助於改善�
 這些實體會在遊戲中，他們自己類別，並每個執行個體需要少量或沒有安裝程式之外具現化。
 
 
-# <a name="general-vs-specific-entity-types"></a>一般與特定實體類型
+## <a name="general-vs-specific-entity-types"></a>一般與特定實體類型
 
 使用實體系統的遊戲開發人員所面臨的第一個問題是多少一般化其實體。 特定的實作會定義類別之每種實體，即使它們的幾項特性不同。 更一般的系統會將個實體群組合併成一個類別，並允許可自訂的執行個體。
 
@@ -84,7 +84,7 @@ _實體模式是強大的方式來組織的遊戲程式碼。它有助於改善�
 為了簡單起見，我們會使用特定類別為基礎的方法與單一的出貨和項目符號實體本教學課程。
 
 
-# <a name="project-setup"></a>專案設定
+## <a name="project-setup"></a>專案設定
 
 我們開始實作我們實體之前，我們需要建立專案。 我們將使用 CocosSharp 專案範本來簡化建立專案。 [請檢查這篇文章](http://forums.xamarin.com/discussion/26822/cocossharp-project-templates-for-xamarin-studio)建立 CocosSharp 專案從 Visual Studio for Mac 範本的資訊。 本指南的其餘部分將會使用專案名稱**EntityProject**。
 
@@ -110,14 +110,14 @@ public override void ApplicationDidFinishLaunching (CCApplication application, C
 如需有關處理 CocosSharp 解決方式的詳細資訊，請參閱我們[上 CocosSharp 中處理多個解決方案指南](~/graphics-games/cocossharp/resolutions.md)。
 
 
-# <a name="adding-content-to-the-project"></a>將內容加入至專案
+## <a name="adding-content-to-the-project"></a>將內容加入至專案
 
 一旦建立專案之後，我們會將所包含的檔案加入[此內容的 zip 檔案](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Entities.zip?raw=true)。 若要這樣做，請下載 zip 檔案，並將它解壓縮。 新增這兩個**ship.png**和**bullet.png**至**內容**資料夾。 **內容**資料夾就會在內**資產**資料夾在 Android 上，並會在 iOS 上專案的根目錄。 一旦加入，我們應該會看到這兩個檔案中的**內容**資料夾：
 
 ![](entities-images/image2.png "一旦加入，這兩個檔案應該是內容的資料夾中")
 
 
-# <a name="creating-the-ship-entity"></a>建立出貨實體
+## <a name="creating-the-ship-entity"></a>建立出貨實體
 
 `Ship`類別將為我們遊戲的第一個實體。 若要加入`Ship`類別中，先建立一個稱為資料夾**實體**根層級的專案。 加入新的類別中**實體**資料夾稱為`Ship`:
 
@@ -179,16 +179,16 @@ public class GameLayer : CCLayer
 ![](entities-images/image4.png "當執行遊戲時，會顯示出貨實體")
 
 
-## <a name="why-inherit-from-ccnode-instead-of-ccsprite"></a>為什麼會繼承而不是 CCSprite CCNode 嗎？
+### <a name="why-inherit-from-ccnode-instead-of-ccsprite"></a>為什麼會繼承而不是 CCSprite CCNode 嗎？
 
 此時我們`Ship`類別是簡單的包裝函式，如`CCSprite`執行個體。 因為`CCSprite`也會繼承`CCNode`，我們無法擁有直接繼承自`CCSprite`，其會降低中的程式碼`Ship.cs`。 此外，直接從繼承`CCSprite`減少記憶體內物件的數目，並透過讓較小的相依性樹狀結構來提高效能。
 
 儘管有這些優點，我們會繼承自`CCNode`來隱藏某些資料`CCSprite`從每個執行個體的屬性。 例如，`Texture`屬性不能修改外部`Ship`類別，並繼承自`CCNode`可讓我們來隱藏此屬性。 我們實體的 public 成員成為遊戲的大小和其他開發人員會加入至小組尤其重要。
 
 
-# <a name="adding-input-to-the-ship"></a>正在將出貨的輸入
+## <a name="adding-input-to-the-ship"></a>正在將出貨的輸入
 
-既然我們的出貨會顯示在螢幕上我們將加入的輸入。 我們的方法將會類似於描述中所採取的方法[CocosSharp 指南簡介](~/graphics-games/cocossharp/first-game/part2.md)，不過，我們將會放置在移動的程式碼`Ship`類別，而不是在包含`CCLayer`或`CCScene`.
+既然我們的出貨會顯示在螢幕上我們將加入的輸入。 我們的方法將會類似於描述中所採取的方法[BouncingGame 指南](~/graphics-games/cocossharp/bouncing-game.md)，不過，我們將會放置在移動的程式碼`Ship`類別，而不是在包含`CCLayer`或`CCScene`。
 
 將程式碼加入`Ship`才能將它移至使用者觸控螢幕的任一處：
 
@@ -230,7 +230,7 @@ public class Ship : CCNode
 許多攻擊來向上遊戲實作最大的速度，模擬傳統的控制站型移動。 話雖如此，我們只會實作立即移至保留較短的程式碼。
 
 
-# <a name="creating-the-bullet-entity"></a>建立項目符號實體
+## <a name="creating-the-bullet-entity"></a>建立項目符號實體
 
 在簡單遊戲中的第二個實體是以顯示項目符號的實體。 就像`Ship`實體，`Bullet`實體會包含`CCSprite`，讓它出現在螢幕上。 移動邏輯不同，因為它不相依於移動; 的使用者輸入相反地，`Bullet`執行個體將會使用速度屬性以直線移動。
 
@@ -288,7 +288,7 @@ namespace EntityProject
 `Schedule`方法允許加入每個框架呼叫的委派。 在此情況下，我們要新增`ApplyVelocity`方法，這樣我們項目符號會根據其速度值移動。 `Schedule`方法會採用`Action<float>`、 其中的浮點數參數指定的時間量 （以秒為單位） 後的最後一個畫面格，用來實作以時間為基礎的移動。 以來的秒數測量值，則我們的速度值代表移動*每秒的像素*。
 
 
-# <a name="adding-bullets-to-gamelayer"></a>將項目符號加入至 GameLayer
+## <a name="adding-bullets-to-gamelayer"></a>將項目符號加入至 GameLayer
 
 我們新增任何之前`Bullet`我們遊戲的執行個體將會進行一種容器，特別是`List<Bullet>`。 修改`GameLayer`使其包含的項目符號清單：
 
@@ -422,14 +422,14 @@ void HandleBulletCreated(Bullet newBullet)
 ![](entities-images/image1.png "執行遊戲和出貨疑難排解項目符號的執行個體")
 
 
-# <a name="why-gamelayer-has-ship-and-bullets-members"></a>為什麼 GameLayer 已出貨和項目符號的成員
+## <a name="why-gamelayer-has-ship-and-bullets-members"></a>為什麼 GameLayer 已出貨和項目符號的成員
 
 我們`GameLayer`類別會定義兩個欄位，以容納我們實體執行個體的參考 (`ship`和`bullets`)，但不進行任何處理。 此外，實體是負責其自己的行為，例如動作和疑難排解。 因此為什麼沒有我們加入`ship`和`bullets`欄位`GameLayer`？
 
 我們加入這些成員的原因是因為完整遊戲的實作中的邏輯需要`GameLayer`不同實體之間的互動。 例如，您可能會進一步要包含的播放程式可以終結開發此遊戲。 這些敵人會包含在`List`中`GameLayer`，和邏輯，以測試是否`Bullet`與衝突的執行個體敵人會執行在`GameLayer`以及。 換句話說，`GameLayer`是根*擁有者*所有實體的執行個體，以及它會負責實體執行個體之間的互動。
 
 
-# <a name="bullet-destruction-considerations"></a>項目符號解構考量
+## <a name="bullet-destruction-considerations"></a>項目符號解構考量
 
 我們遊戲目前缺少終結的程式碼`Bullet`執行個體。 每個`Bullet`執行個體有邏輯移動在畫面上，但我們還沒有加入任何程式碼來出螢幕外摧毀任何`Bullet`執行個體。
 
@@ -437,12 +437,11 @@ void HandleBulletCreated(Bullet newBullet)
 
 最簡單的解決方法是展開的 factory 類別，以支援解構的責任。 則可以接收通知的實體執行個體被損毀，可以處理由其他物件，例如的工廠`GameLayer`從其清單中移除實體執行個體。 
 
-
-# <a name="summary"></a>總結
+## <a name="summary"></a>總結
 
 本指南示範如何建立 CocosSharp 實體繼承自`CCNode`類別。 這些實體都各自獨立的物件，處理建立他們自己的視覺效果和自訂邏輯。 本指南會指定從所屬根目錄的實體容器 （衝突和其他實體的互動邏輯） 中的程式碼所屬的實體 （移動及建立其他實體） 內的程式碼。
 
-## <a name="related-links"></a>相關連結
+## <a name="related-links"></a>相關的連結
 
 - [CocosSharp API 文件](https://developer.xamarin.com/api/namespace/CocosSharp/)
 - [內容壓縮](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Entities.zip?raw=true)

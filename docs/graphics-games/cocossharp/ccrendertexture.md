@@ -1,17 +1,17 @@
 ---
-title: "效能和使用 CCRenderTexture 的視覺效果"
-description: "CCRenderTexture 可讓開發人員降低繪製呼叫，來改善的 CocosSharp 遊戲效能，而且可以用來建立視覺效果。 本指南隨附 CCRenderTexture 範例提供如何有效地使用這個類別的實際操作範例。"
+title: 效能和使用 CCRenderTexture 的視覺效果
+description: CCRenderTexture 可讓開發人員降低繪製呼叫，來改善的 CocosSharp 遊戲效能，而且可以用來建立視覺效果。 本指南隨附 CCRenderTexture 範例提供如何有效地使用這個類別的實際操作範例。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: F02147C2-754B-4FB4-8BE0-8261F1C5F574
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 8283c299d0e6529ef4cf8c285ec47b4d42fc682a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 36661344fc0f4b9e132e3f721c50f82f3a8db057
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="performance-and-visual-effects-with-ccrendertexture"></a>效能和使用 CCRenderTexture 的視覺效果
 
@@ -24,7 +24,7 @@ _CCRenderTexture 可讓開發人員降低繪製呼叫，來改善的 CocosSharp 
 ![](ccrendertexture-images/image1.png "本指南參考了 CCRenderTexture 範例專案")
 
 
-# <a name="card--a-typical-entity"></a>卡 – 一般實體
+## <a name="card--a-typical-entity"></a>卡 – 一般實體
 
 之前查看如何使用`CCRenderTexture`物件，我們會先瞭解自己與`Card`實體，我們將使用此專案來瀏覽`CCRenderTexture`類別。 `Card`類別是典型的實體，並遵循所述的實體模式[實體指南](~/graphics-games/cocossharp/entities.md)。 卡類別都具有其視覺化元件的所有 (的執行個體`CCSprite`和`CCLabel`) 做為欄位所列：
 
@@ -65,7 +65,7 @@ protected override void AddedToScene ()
 - 當我們稍後會瀏覽特定視覺效果，如透明效果，也無法精確地說，實作
 
 
-## <a name="card-draw-calls"></a>卡繪製呼叫
+### <a name="card-draw-calls"></a>卡繪製呼叫
 
 我們的程式碼是什麼可能會找到完整的簡化*可收集的撲克牌遊戲*(CCG) 例如"Magic:: 蒐集 」 或 「 Hearthstone"。 我們遊戲只一次顯示三張牌，並具有少數的可能單位 （藍、 綠和橙色）。 相反地，完整的遊戲可能螢幕上已經超過 20 種卡片，在指定的時間，而且播放程式可能有數百個卡，以建立其 deck 時選擇的。 即使我們遊戲不目前會發生效能問題，可能會有類似的實作的完整遊戲。
 
@@ -76,7 +76,7 @@ CocosSharp 提供一些深入藉由公開繪製呼叫的呈現效能執行個別
 請注意，儘管有三張畫面上，我們有 nineteen （每個卡導致六個繪製呼叫，效能資訊帳戶顯示更多個文字） 的繪製呼叫。 繪製呼叫，對遊戲的效能有顯著的影響 CocosSharp 會提供數種方式，以減少它們。 中所述的其中一種技術是[CCSpriteSheet 指南](~/graphics-games/cocossharp/ccspritesheet.md)。 另一種技巧是使用`CCRenderTexture`來減少因為我們將檢驗本指南中的下一個呼叫，每個實體。
 
 
-## <a name="card-transparency"></a>卡透明度
+### <a name="card-transparency"></a>卡透明度
 
 我們`Card`實體包含`Opacity`屬性來控制透明度，如下列程式碼片段所示：
 
@@ -143,7 +143,7 @@ protected override void AddedToScene ()
 使用`CCRenderTexture`讓我們可以讓整個卡透明而不會影響卡內的個別元件的呈現我們在本指南稍後將會看到。
 
 
-# <a name="using-ccrendertexture"></a>使用 CCRenderTexture
+## <a name="using-ccrendertexture"></a>使用 CCRenderTexture
 
 既然我們已經識別了個別呈現每個元件的問題，我們將會開啟呈現`CCRenderTexture`和比較行為。
 
@@ -159,7 +159,7 @@ protected override void AddedToScene ()
 ```
 
 
-## <a name="card-draw-calls"></a>卡繪製呼叫
+### <a name="card-draw-calls"></a>卡繪製呼叫
 
 如果我們現在執行遊戲時，我們會看到從 nineteen 到四個繪製呼叫 （從六，以其中一個減少每一張卡片）：
 
@@ -168,7 +168,7 @@ protected override void AddedToScene ()
 如先前所述，減少這種可以遊戲更多視覺上的實體螢幕上有顯著的影響。
 
 
-## <a name="card-transparency"></a>卡透明度
+### <a name="card-transparency"></a>卡透明度
 
 一次`useRenderTextures`設`true`，透明的卡片會以不同的方式轉譯：
 
@@ -181,7 +181,7 @@ protected override void AddedToScene ()
 最顯著的差異出現在詳細資料文字 （而不是淺灰色的黑色） 及機器人精靈 （而不是光線暗和 desaturated）。
 
 
-# <a name="ccrendertexture-details"></a>CCRenderTexture 詳細資料
+## <a name="ccrendertexture-details"></a>CCRenderTexture 詳細資料
 
 既然我們已看到使用的優點`CCRenderTexture`，讓我們看看如何在中使用`Card`實體。
 
@@ -256,7 +256,7 @@ private void SwitchToRenderTexture()
 下列各節瀏覽`SwitchToRenderTexture`方法。 
 
 
-## <a name="ccrendertexture-size"></a>CCRenderTexture 大小
+### <a name="ccrendertexture-size"></a>CCRenderTexture 大小
 
 CCRenderTexture 建構函式需要兩個集合的維度。 第一個控制項的大小`CCRenderTexture`當繪製，而第二個指定的像素寬度和高度的內容。 `Card`實體會具現化其`CCRenderTexture`使用背景[ContentSize](https://developer.xamarin.com/api/property/CocosSharp.CCSprite.ContentSize/)。 我們遊戲的`DesignResolution`512 由 384，如下所示的`ViewController.LoadGame`在 iOS 上和`MainActivity.LoadGame`在 Android 上：
 
@@ -293,7 +293,7 @@ renderTexture = new CCRenderTexture(unitResolution, pixelResolution);
 ![](ccrendertexture-images/image9.png "若要比較，可以變更 pixelResolution 值相符。不含正在加倍 contentSize 並比較結果")
 
 
-## <a name="rendering-to-a-ccrendertexture"></a>轉譯為 CCRenderTexture
+### <a name="rendering-to-a-ccrendertexture"></a>轉譯為 CCRenderTexture
 
 一般而言，CocosSharp 中的視覺物件不會明確地轉譯。 相反地，將視覺物件加入至`CCLayer`屬於`CCScene`。 自動轉譯 CocosSharp`CCScene`和其視覺階層中每一個框架不會呼叫任何轉譯程式碼。 
 
@@ -355,7 +355,7 @@ foreach (var component in visualComponents)
 this.AddChild(renderTexture.Sprite);
 ```
 
-# <a name="summary"></a>總結
+## <a name="summary"></a>總結
 
 本指南涵蓋`CCRenderTexture`類別使用`Card`可回收紙牌遊戲中可用的實體。 它示範了如何使用`CCRenderTexture`類別來改善畫面播放速率，並適當地實作整個實體的透明度。
 

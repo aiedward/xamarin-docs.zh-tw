@@ -1,6 +1,6 @@
 ---
-title: "改善 CCSpriteSheet 的畫面播放速率"
-description: "CCSpriteSheet 提供合併，並使用一種材質中的多個映像檔案的功能。 減少紋理計數可以改善遊戲的載入次數與畫面播放速率。"
+title: 提高畫面播放速率與 CCSpriteSheet
+description: CCSpriteSheet 提供合併，並使用一種材質中的多個映像檔案的功能。 減少紋理計數可以改善遊戲的載入次數與畫面播放速率。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A1334030-750C-4C60-8B84-1A8A54B0D00E
@@ -8,20 +8,20 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: ec8a641fbd15f826e92ada62f65b17dd46b369e4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7e2bb5b98b5c93fb625ce645692d8a3ccb3d143b
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="improving-framerate-with-ccspritesheet"></a>改善 CCSpriteSheet 的畫面播放速率
+# <a name="improving-frame-rate-with-ccspritesheet"></a>提高畫面播放速率與 CCSpriteSheet
 
 _CCSpriteSheet 提供合併，並使用一種材質中的多個映像檔案的功能。減少紋理計數可以改善遊戲的載入次數與畫面播放速率。_
 
 許多遊戲都需要順暢執行，並在行動硬體上的快速載入的最佳化工作。 `CCSpriteSheet`類別可協助解決 CocosSharp 遊戲所遇到的許多常見效能問題。 本指南涵蓋了常見效能問題，以及如何解決使用`CCSpriteSheet`類別。
 
 
-# <a name="what-is-a-sprite-sheet"></a>在精靈的工作表是什麼？
+## <a name="what-is-a-sprite-sheet"></a>在精靈的工作表是什麼？
 
 A*精靈表*，這可以也稱為*紋理 atlas*，是會結合成一個檔案的多個映像的映像。 這可以改善執行階段效能，以及內容的載入時間。
 
@@ -30,7 +30,7 @@ A*精靈表*，這可以也稱為*紋理 atlas*，是會結合成一個檔案的
 ![](ccspritesheet-images/image1.png "個別映像可以是任何規模，以及產生的精靈工作表並不需要完全填滿")
 
 
-## <a name="render-states"></a>呈現狀態
+### <a name="render-states"></a>呈現的狀態
 
 CocosSharp 的視覺物件 (例如`CCSprite`) 簡化轉譯程式碼透過傳統圖形化的應用程式開發介面轉譯程式碼，例如 MonoGame 或 OpenGL，需要建立頂點緩衝區 (如中所述[繪圖與 3D 圖形MonoGame 的頂點](~/graphics-games/monogame/3d/part2.md)指南)。 其簡化，儘管 CocosSharp 不排除設定成本*呈現狀態*，這是轉譯程式碼必須切換材質或其他呈現相關狀態的次數。
 
@@ -62,7 +62,7 @@ CocosSharp 會導致四顆星轉譯序列中：
 
 當然，理想的情況是具有單一轉譯狀態，雖然具有多個映像。 CocosSharp 遊戲可以完成這項作業結合成單一檔案中，所有映像，然後載入該檔案 (連同伴隨**.plist**檔案) 至`CCSpriteSheet`。 使用`CCSpriteSheet`類別變得更為重要的遊戲，其具有大量的映像，或其具有非常複雜的配置。 
 
-## <a name="load-times"></a>載入時間
+### <a name="load-times"></a>載入時間
 
 將多個映像結合成一個檔案時，也會提升多種原因所造成的遊戲的載入時間：
 
@@ -70,7 +70,7 @@ CocosSharp 會導致四顆星轉譯序列中：
  - 載入較少的檔案表示每個檔案額外負荷較少，例如剖析.png 標頭
  - 載入較少的檔案需要小於搜尋時間，這一點很重要的磁碟為基礎的媒體，例如 Dvd 和傳統電腦硬碟
 
-# <a name="using-ccspritesheet-in-code"></a>程式碼中使用 CCSpriteSheet
+## <a name="using-ccspritesheet-in-code"></a>程式碼中使用 CCSpriteSheet
 
 若要建立`CCSpriteSheet`執行個體，該程式碼必須提供的映像和檔案會定義要用於每個畫面格的影像區域。 可以載入影像，做為**.png**或**.xnb**檔案 (如果使用[內容的管線](~/graphics-games/cocossharp/content-pipeline/index.md))。 定義框架檔案是**.plist**可以以手動方式建立的檔案或*TexturePacker* （其中討論如下）。
 
@@ -110,7 +110,7 @@ CCSprite sprite = new CCSprite (frame);
 因為`CCSprite`建構函式可以採用`CCSpriteFrame`參數時，程式碼永遠不會有要調查的詳細資料`CCSpriteFrame`，例如哪些紋理它使用，或主要精靈工作表中的影像區域。
 
 
-#  <a name="creating-a-sprite-sheet-plist"></a>建立精靈表.plist
+## <a name="creating-a-sprite-sheet-plist"></a>建立精靈的工作表.plist
 
 .Plist 檔案是以 xml 為基礎的檔案，可建立和編輯。 同樣地，可以使用編輯程式的映像將多個檔案合併成一個大型的檔案。 建立和維護精靈工作表可能會非常耗時，因為我們將探討 TexturePacker 程式可以匯出 CocosSharp 格式的檔案。 TexturePacker 提供一套免費和 「 Pro"的版本，且適用於 Windows 和 Mac OS。 本指南的其餘部分後面可以接著使用免費版本。 
 
@@ -124,13 +124,13 @@ CCSprite sprite = new CCSprite (frame);
 
 若要匯出精靈的工作表，請按一下**發行精靈的工作表**按鈕，然後選取精靈工作表的位置。 .Plist 檔案和影像檔時，會將儲存 TexturePacker。
 
-若要使用產生的檔案，加入.png 和.plist CocosSharp 專案。 如需將檔案加入至 CocosSharp 專案資訊，請參閱[實作 BouncingGame 指南](~/graphics-games/cocossharp/first-game/part2.md)。 一旦加入檔案之後，可以載入到`CCSpriteSheet`是稍早在上述程式碼中所示：
+若要使用產生的檔案，加入.png 和.plist CocosSharp 專案。 如需將檔案加入至 CocosSharp 專案資訊，請參閱[BouncingGame 指南](~/graphics-games/cocossharp/bouncing-game.md)。 一旦加入檔案之後，可以載入到`CCSpriteSheet`是稍早在上述程式碼中所示：
 
 ```csharp
 CCSpriteSheet sheet = new CCSpriteSheet ("sheet.plist", "sheet.png"); 
 ```
 
-## <a name="considerations-for-maintaining-a-texturepacker-sprite-sheet"></a>維護 TexturePacker 精靈工作表的考量
+### <a name="considerations-for-maintaining-a-texturepacker-sprite-sheet"></a>維護 TexturePacker 精靈工作表的考量
 
 遊戲會開發，如演出者可能會加入、 移除或修改封面。 任何變更都需要更新的精靈工作表。 下列考量可簡化精靈頁維護工作：
 
@@ -144,11 +144,11 @@ CCSpriteSheet sheet = new CCSpriteSheet ("sheet.plist", "sheet.png");
 
     ![](ccspritesheet-images/image10.png "若要包含資料夾路徑，請按一下顯示在資料區段的 進階並檢查前面加上的資料夾名稱")
 
-# <a name="summary"></a>總結
+## <a name="summary"></a>總結
 
 本指南涵蓋如何建立及使用`CCSpriteSheet`類別。 其中也涵蓋如何建構可載入的檔案`CCSpriteSheet`TexturePacker 程式執行個體。
 
-## <a name="related-links"></a>相關連結
+## <a name="related-links"></a>相關的連結
 
 - [CCSpriteSheet](https://developer.xamarin.com/api/type/CocosSharp.CCSpriteSheet/)
 - [完整示範 （範例）](https://developer.xamarin.com/samples/mobile/SpriteSheetDemo/)

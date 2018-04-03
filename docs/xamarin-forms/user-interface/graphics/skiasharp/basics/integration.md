@@ -1,6 +1,6 @@
 ---
-title: "使用 Xamarin.Forms 整合"
-description: "建立回應的觸控和 Xamarin.Forms 元素的 SkiaSharp 圖形"
+title: 使用 Xamarin.Forms 整合
+description: 建立回應的觸控和 Xamarin.Forms 元素的 SkiaSharp 圖形
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: aa6011c783228848212c633c1c8059c402fdaa3f
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 3edc71977820ca618447e02caa032cf908e1aae4
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="integrating-with-xamarinforms"></a>使用 Xamarin.Forms 整合
 
@@ -23,7 +23,7 @@ Xamarin.Forms 其餘幾種方式可以整合 SkiaSharp 圖形。 您可以結合
 ![](integration-images/integrationexample.png "選取的色彩與滑桿")
 
 建立互動式 SkiaSharp 圖形，在 Xamarin.Forms 中的另一種方法是透過觸控。
-中的第二頁[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)程式有權使用**點選切換填滿**。 它繪製簡單的圓形兩種方式&mdash;填滿而填滿&mdash;切換點選。 [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)類別示範如何修改 SkiaSharp 圖形，以回應使用者輸入。
+中的第二頁[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式有權使用**點選切換填滿**。 它繪製簡單的圓形兩種方式&mdash;填滿而填滿&mdash;切換點選。 [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)類別示範如何修改 SkiaSharp 圖形，以回應使用者輸入。
 
 此頁面上，針對`SKCanvasView`類別具現化中[TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml)檔案，也會設定 Xamarin.Forms [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)檢視：
 
@@ -241,4 +241,4 @@ HSL 和 HSV 色彩模型中的色調值範圍從 0 到 360，並指出主控項�
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

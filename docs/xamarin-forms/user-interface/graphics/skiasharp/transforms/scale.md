@@ -1,6 +1,6 @@
 ---
-title: "小數位數轉換"
-description: "探索 SkiaSharp 標尺轉換縮放至各種大小的物件"
+title: 小數位數轉換
+description: 探索 SkiaSharp 標尺轉換縮放至各種大小的物件
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 39e2084bf9ca888d6e39fc5f02a455d3500e568c
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: b89e7472a332ed5cd518a26bc54af59f12b19c2a
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="the-scale-transform"></a>小數位數轉換
 
@@ -104,7 +104,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 您可以看到，所有項目後繪製`Scale`按比例呼叫增加：
 
-[![](scale-images/basicscale-small.png "基本的小數位數頁的三個螢幕擷取畫面")](scale-images/basicscale-large.png#lightbox "基本調整] 頁面的三個螢幕擷取畫面")
+[![](scale-images/basicscale-small.png "基本的小數位數頁的三個螢幕擷取畫面")](scale-images/basicscale-large.png#lightbox "基本調整 頁面的三個螢幕擷取畫面")
 
 文字、 虛線的長度的角落和 10 個像素間之邊界的左端和頂端邊緣的畫布和圓角的矩形的圓的該行中連字號的寬度受限於所有相同的縮放比例。
 
@@ -166,7 +166,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 圓角矩形的左上角位於`margin`畫布左側的像素和`margin`像素。 最後兩個引數`Scale`方法設定為這些值再加上高度與寬度的文字，這也是圓角矩形的寬度和高度。 這表示所有縮放比例是相對於該矩形的中心：
 
-[![](scale-images/centeredscale-small.png "置中的小數位數頁的三個螢幕擷取畫面")](scale-images/centeredscale-large.png#lightbox "的置中調整] 頁面的三個螢幕擷取畫面")
+[![](scale-images/centeredscale-small.png "置中的小數位數頁的三個螢幕擷取畫面")](scale-images/centeredscale-large.png#lightbox "的置中調整 頁面的三個螢幕擷取畫面")
 
 `Slider`項目，此程式中的範圍是&ndash;10 到 10。 如您所見，垂直調整 （例如在 Android 上畫面中央） 的負值會導致物件翻轉通過縮放的中心水平軸。 水平縮放比例 （例如 Windows 上的螢幕右邊） 的負值會導致翻轉通過縮放中心的垂直軸周圍的物件。
 
@@ -178,7 +178,7 @@ canvas.Translate(-px, -py);
 
 這些是樞紐分析點座標的否定。
 
-現在再次執行程式。 您會看到以便畫布左上角的中心] 是都要移動的矩形和文字。 您幾乎可以看到它。 滑桿不當然運作，因為現在程式不會完全擴充。
+現在再次執行程式。 您會看到以便畫布左上角的中心 是都要移動的矩形和文字。 您幾乎可以看到它。 滑桿不當然運作，因為現在程式不會完全擴充。
 
 現在，加入基本`Scale`呼叫 （而不需要調整的中心）*之前*，`Translate`呼叫：
 
@@ -245,7 +245,7 @@ using (SKPaint strokePaint = new SKPaint
 }
 ```
 
-`pathBounds`矩形是取得最上方的 [這個程式碼，並再搭配稍後在畫布上的高度與寬度`Scale`呼叫。 單獨使用時的呼叫會調整路徑的座標所呈現時`DrawPath`呼叫但星形將置於畫布的右上角。 它需要往下及往左移位。 這是作業的`Translate`呼叫。 這兩個屬性的`pathBounds`位於大約 – 100，因此轉譯因素約 100 個。 因為`Translate`呼叫之後`Scale`呼叫時，這些值會有效地縮放調整的因素，使其在畫布的正移動星形的中心：
+`pathBounds`矩形是取得最上方的 這個程式碼，並再搭配稍後在畫布上的高度與寬度`Scale`呼叫。 單獨使用時的呼叫會調整路徑的座標所呈現時`DrawPath`呼叫但星形將置於畫布的右上角。 它需要往下及往左移位。 這是作業的`Translate`呼叫。 這兩個屬性的`pathBounds`位於大約 – 100，因此轉譯因素約 100 個。 因為`Translate`呼叫之後`Scale`呼叫時，這些值會有效地縮放調整的因素，使其在畫布的正移動星形的中心：
 
 [![](scale-images/anisotropicscaling-small.png "非等向性調整頁面的三個螢幕擷取畫面")](scale-images/anisotropicscaling-large.png#lightbox "非等向性調整頁面的三個螢幕擷取畫面")
 
@@ -296,7 +296,7 @@ using (SKPaint textPaint = new SKPaint
 
 - 轉換中心的左上角的圖形化物件。
 - 調整水平及垂直頁面尺寸除以圖形物件維度的最小值為基礎的物件。
-- 轉換中心的 [縮放至頁面的中心的物件。
+- 轉換中心的 縮放至頁面的中心的物件。
 
 [ `IsotropicScalingPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/IsotropicScalingPage.cs)之前顯示星號以相反順序執行下列步驟：
 
@@ -345,4 +345,4 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

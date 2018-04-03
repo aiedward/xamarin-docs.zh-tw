@@ -1,6 +1,6 @@
 ---
-title: "行動軟體開發生命週期簡介"
-description: "本文將討論行動應用程式相關軟體的開發生命週期，以及建置行動專案時的一些考量事項。 對於希望直接開始建置的開發人員，可先跳過此指南並稍後再閱讀，以便更完整地解行動裝置應用程式開發。"
+title: 行動軟體開發生命週期簡介
+description: 本文將討論行動應用程式相關軟體的開發生命週期，以及建置行動專案時的一些考量事項。 對於希望直接開始建置的開發人員，可先跳過此指南並稍後再閱讀，以便更完整地解行動裝置應用程式開發。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: 7a344ce211a025176c2b40540ce8337802dd347b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 144e71677ad5477c7e1cfb5211cc5860995642bb
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>行動軟體開發生命週期簡介
 
@@ -25,7 +25,7 @@ _本文將探討行動應用程式相關的軟體開發生命週期，並探討�
 1.   **流程** - 軟體開發的流程稱為軟體開發生命週期 (SDLC)。 我們將介紹與行動應用程式開發相關的所有 SDLC 階段，包括：靈感、設計、開發、穩定、部署及維護。
 1.   **考量** - 建置行動應用程式時需要考慮許多因素，特別是與傳統的 Web 應用程式或桌面應用程式相比。 我們將介紹這些考量事項以及它們會如何影響行動應用程式開發。
 
-本文件旨在為初學者和有經驗的應用程式開發人員，回答有關行動應用程式開發的基本問題。 採用了相當全面的方法來介紹在整個軟體開發生命週期 (SDLC) 過程中將會遇到的大多數概念。 然而，並不是每一位都適合使用本文件，如果您渴望立刻開始建置應用程式，則我們建議往前跳至[行動應用程式開發簡介](~/cross-platform/get-started/introduction-to-mobile-development.md)、[Hello, Android](~/android/get-started/hello-android/index.md) 或 [Hello, iPhone](~/ios/get-started/hello-ios/index.md) 教學課程，稍後再回來使用本文件。
+本文件旨在為初學者和有經驗的應用程式開發人員，回答有關行動應用程式開發的基本問題。 採用了相當全面的方法來介紹在整個軟體開發生命週期 (SDLC) 過程中將會遇到的大多數概念。 然而，並不是每一位都適合使用本文件，如果您渴望立刻開始建置應用程式，則我們建議往前跳至[行動裝置應用程式開發簡介](~/cross-platform/get-started/introduction-to-mobile-development.md)指南，並稍後再回來使用本文件。
 
 ## <a name="mobile-development-sdlc"></a>行動應用程式開發 SDLC
 
@@ -73,19 +73,17 @@ _本文將探討行動應用程式相關的軟體開發生命週期，並探討�
 
 #### <a name="ux-design"></a>UX 設計
 
-UX 通常使用諸如 [Balsamiq](http://www.balsamiq.com/)、[Mockingbird](https://gomockingbird.com/)、[Visio](http://office.microsoft.com/en-us/visio/) 等工具，或只是普通的筆和紙，透過線框或原型來完成。 使用 UX 原型來設計 UX 可以不必擔心實際的 UI 設計：
+UX 通常會透過使用任何一種[設計工具組](https://docs.microsoft.com/windows/uwp/design/downloads/)的框線或原型來完成。 使用 UX 原型來設計 UX 可以不必擔心實際的 UI 設計：
 
  [![](introduction-to-mobile-sdlc-images/balsamiq.png "UX 的完成通常透過使用 Balsamiq 等工具的框線或圖樣")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
 建立 UX 原型時，請務必注意應用程式所針對的各種平台介面指導方針。 應用程式應在每種平台上都「有家的感覺」。 每種平台的官方設計指導方針如下：
 
-1.   **Apple** -  [Human Interface Guidelines](http://developer.apple.com/library/ios/#DOCUMENTATION/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html) (人性化介面指導方針)
+1.   **Apple** -  [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/) (人性化介面指導方針)
 1.   **Android** -  [Design Guidelines](http://developer.android.com/design/index.html) (設計指導方針)
-1.   **Windows Phone** –  [Design library for Windows Phone](http://msdn.microsoft.com/en-US/library/windowsphone/design/fa00461b-abe1-41d1-be87-0b0fe3d3389d(v=vs.105).aspx) (設計適用於 Windows Phone 的文件庫)
+1.   **UWP** –  [UWP 設計基本概念](https://docs.microsoft.com/windows/uwp/design/basics/)
 
-例如，每個應用程式都有一個用來在應用程式各區段間進行切換的隱喻。 iOS 使用畫面底部的索引標籤，Android 使用畫面頂部的索引標籤，而 Windows Phone 則使用全景檢視：
-
- ![](introduction-to-mobile-sdlc-images/38.png "每個應用程式都有一個用來在應用程式各區段間進行切換的隱喻")
+例如，每個應用程式都有一個用來在應用程式各區段間進行切換的隱喻。 iOS 使用畫面底部的索引標籤，Android 使用畫面頂部的索引標籤，而 UWP 則使用[樞紐或索引標籤](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tabs-pivot)檢視。
 
 此外，硬體本身也會限定 UX 決策。 例如，iOS 裝置沒有實體「返回」鍵，因此引入了導覽控制器隱喻：
 
@@ -104,15 +102,6 @@ UX 通常使用諸如 [Balsamiq](http://www.balsamiq.com/)、[Mockingbird](https
 如同 UX 一樣，請務必了解每種平台都有自己的設計語言，因此即使是設計良好的應用程式，在每種平台上的外觀可能仍有不同：
 
  [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "設計良好的應用程式在每種平台上的外觀可能仍不相同")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
-
-若要獲得良好的 UI 設計靈感，請查看下列網站：
-
-1.   [pttrns.com](http://pttrns.com) – (僅限 iOS)
-1.   [androidpttrns.com](http://androidpttrns.com) - (僅限 Android)
-1.   [lovelyui.com](http://lovelyui.com) – (iOS、Android 和 Windows Phone)
-1.   [mobiledesignpatterngallery.com](http://mobiledesignpatterngallery.com) – (iOS、Android 和 Windows Phone)
-
-此外，您也可以在 [Behance.com](http://behance.com) 和 [Dribbble.com](http://dribbble.com) 等網站上查看圖形設計工具的組合。您可以在其中找到來自世界各地的設計工具，往往在匯率有利的地區，因此良好的圖形設計成本不一定要很高。
 
 ### <a name="development"></a>開發
 
@@ -135,12 +124,7 @@ UX 通常使用諸如 [Balsamiq](http://www.balsamiq.com/)、[Mockingbird](https
 
 針對早期測試和部署到相對較少的裝置，通常直接從開發電腦進行部署便足夠了。 但是，隨著受眾的擴大，可能很快會變得十分麻煩。 因此，有許多測試部署選項讓您可以邀請他人加入測試集區、透過 Web 發行組建、提供可以進行使用者意見反應的工具，大大降低此流程的難度。
 
-下列是一些最常見的：
-
-1.   **Testflight** – 這是 iOS 產品，讓您可以散發應用程式以便進行測試，以及接收來自客戶的當機報告和使用資訊。 本產品已包含在 iTunes Connect 中，如果您具有 Apple Developer Enterprise 成員資格，則不可用。
-2.   **LaunchPad (launchpadapp.com)** – 此服務針對 Android 設計，非常近似於 TestFlight。
-3.   **Vessel (vessel.io)** – iOS 和 Android 皆適用的服務，讓您可以監視使用情況、追蹤客戶，甚至從應用程式內部進行「A/B 測試」。
-4.  **hockeyapp.com** - 提供適用於 iOS、Android 和 Windows Phone 的測試服務。
+針對測試與部署，您可以使用 [App Center](https://appcenter.ms/) 持續對應用程式進行建置、測試、發行和監視。
 
 ### <a name="distribution"></a>散發
 
@@ -170,9 +154,9 @@ Android 使用此資訊協助您在 Android OS 內運行的應用程式和元件
 1.  [Handango](http://www.handango.com/)
 1.  [GetJar](http://www.getjar.com/)
 
-#### <a name="windows"></a>Windows 
+#### <a name="uwp"></a>UWP 
 
-Windows 應用程式會透過 Microsoft Store 散發給使用者。 開發人員會提交其應用程式來進行准核，之後應用程式就會出現在市集中。
+UWP 應用程式會透過 Microsoft Store 散發給使用者。 開發人員會提交其應用程式來進行准核，之後應用程式就會出現在市集中。 如需發行 Windows 應用程式的詳細資訊，請參閱 UWP 的[發行](https://docs.microsoft.com/windows/uwp/publish/)文件。
 
 ## <a name="mobile-development-considerations"></a>行動應用程式開發考量
 
@@ -237,9 +221,9 @@ Android 中的多工有兩個元件；第一個是活動生命週期。 Android 
 Android 中多工的第二個元件，是使用「服務」。
 服務是長期運行的流程，獨立於應用程式之外存在，用於在應用程式處於背景時執行流程。 如需詳細資訊，請參閱[建立服務](~/android/app-fundamentals/services/index.md)指南。
 
-#### <a name="many-devices-amp-many-form-factors"></a>有眾多裝置 &amp; 眾多板形規格
+#### <a name="many-devices-and-many-form-factors"></a>許多裝置與許多板型規格
 
-不同於 iOS (裝置數量較少) 或甚至是 Windows Phone (僅可在已核准、滿足平台最低要求的裝置上運行)，Google 並未對可以運行 Android OS 的裝置施加任何限制。 這種開放式架構，導致產品環境包含大量具有截然不同的硬體、螢幕解析度和比例、裝置特性和功能的不同裝置。
+Google 不會對於可在 Android OS 上執行的做出任何限制。 這種開放式架構，導致產品環境包含大量具有截然不同的硬體、螢幕解析度和比例、裝置特性和功能的不同裝置。
 
 由於 Android 裝置極為分散，大多數人會選擇最受歡迎的 5 種或 6 種裝置進行設計和測試，並優先處理。
 
@@ -252,25 +236,17 @@ Android 中多工的第二個元件，是使用「服務」。
 
 #### <a name="multitasking"></a>多工
 
-Windows Phone 中的多工也分為兩個部分：頁面與應用程式的生命週期和背景流程。 應用程式中，每張畫面都是頁面類別的實例，具有與設為使用中或非使用中狀態建立關聯的事件 (具有用於處理非使用中狀態或「刪除標記」的特殊規則)。 
+UWP 中的多工也分為兩個部分：頁面與應用程式的生命週期和背景流程。 應用程式中，每張畫面都是頁面類別的實例，具有與設為使用中或非使用中狀態建立關聯的事件 (具有用於處理非使用中狀態或「刪除標記」的特殊規則)。 
 
 第二個部分：即使應用程式不在前景運行時，為處理工作提供背景代理程式。 
 
 #### <a name="device-capabilities"></a>裝置功能
 
-基於 Microsoft 提供的嚴格指導方針，Windows Phone 硬體同質程度雖然非常高，但仍存在選擇性元件，因此需要在撰寫程式碼時進行特殊考慮。 選擇性硬體功能包括相機、指南針和陀螺儀。 還有一個需要特別考量的低記憶體 (256 MB) 特殊類別，或是開發人員也可以選擇不支援低記憶體。
-
-#### <a name="database"></a>資料庫
-
-iOS 和 Android 皆包含 SQLite 資料庫引擎，可進行複雜的資料儲存，也可以跨平台運作。 Windows Phone 7 不包含資料庫，不過 Windows Phone 7.1 和 8 包含[本機資料庫引擎](http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202860(v=vs.105).aspx)，但只能使用 [LINQ to SQL](http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202872(v=vs.105).aspx) 進行查詢，且不支持 Transact-SQL 查詢。 [open-source port of SQLite](http://code.google.com/p/csharp-sqlite/) (SQLite 開放原始碼連接埠) 可新增至 Windows Phone 應用程式，以提供熟悉的 Transact-SQL 支援和跨平台相容性。
+雖然 UWP 硬體的同質性相當高，但仍有選擇性元件，因此在編碼時需要特殊考量。 選擇性硬體功能包括相機、指南針和陀螺儀。 還有一個需要特別考量的低記憶體 (256 MB) 特殊類別，或是開發人員也可以選擇不支援低記憶體。
 
 #### <a name="security-considerations"></a>安全性考量
 
-Windows Phone 應用程式使用一組受嚴格限制的權限來運行，這組權限使應用程式相互隔離，並限制可進行的作業。
-網路存取必須透過特定 API 來執行，且應用程式間的通訊只能透過受控制的機制來進行。 對檔案系統的存取也會受到限制；「隔離儲存區 API」可提供鍵/值組儲存，和以受控制的方式建立檔案和資料夾的能力。請參閱 [Isolated Storage Overview](http://msdn.microsoft.com/en-us/library/ff402541(v=vs.92).aspx) (隔離儲存區概觀) 以取得詳細資訊。
-
-應用程式對硬體和作業系統功能的存取，透過其資訊清單檔 (類似於 Android) 中所列的功能來控制。
-資訊清單檔必須宣告應用程式所要求的功能，以便使用者可以查看並同意這些權限，讓作業系統允許存取 API。 應用程式必須請求對連絡人或約會資料、相機、位置、媒體庫等功能的存取權限。 請參閱 Microsoft [Application Manifest File](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff769509(v=vs.92).aspx) (應用程式資訊清單檔) 文件以取得更多資訊。
+如需 UWP 中重要安全性考量的資訊，請參閱[安全性](https://docs.microsoft.com/windows/uwp/security/)文件。
 
 ## <a name="summary"></a>總結
 

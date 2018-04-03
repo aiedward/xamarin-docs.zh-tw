@@ -1,6 +1,6 @@
 ---
-title: "使用與 CocosSharp 並排顯示"
-description: "並排顯示是一個功能強大、 有彈性，並建立垂直及等磚的完整應用程式將對應的遊戲。 CocosSharp 提供內建整合磚塊的原生檔案格式。"
+title: 使用與 CocosSharp 並排顯示
+description: 並排顯示是一個功能強大、 有彈性，並建立垂直及等磚的完整應用程式將對應的遊戲。 CocosSharp 提供內建整合磚塊的原生檔案格式。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 804C042C-F62A-4E6C-B10F-06528637F0E2
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 5a469a372a9299712be7aef46c51f3d644946535
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 68afa9d175140fd5104e83282a2f72c47625d882
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="using-tiled-with-cocossharp"></a>使用與 CocosSharp 並排顯示
 
@@ -30,7 +30,7 @@ _並排顯示是一個功能強大、 有彈性，並建立垂直及等磚的完
 ![](tiled-images/image1.png "依照本指南中的步驟建立此示範應用程式")
 
 
-# <a name="the-purpose-of-tile-maps"></a>並排顯示地圖的用途
+## <a name="the-purpose-of-tile-maps"></a>並排顯示地圖的用途
 
 磚對應已存在於開發遊戲數十年，但仍常用於 2D 遊戲的效率及 esthetics。 圖格對應就能夠達到的效率透過其磚設定 – 磚對應所使用之來源影像的高度。 圖格集是一個影像合併成一個檔案的集合。 雖然磚對應中使用的影像參考磚的集合，包含多個較小的影像檔也會呼叫精靈的工作表，或對應遊戲開發中的精靈。 磚設定如何使用我們將使用我們的示範中的磚集加上格線，我們可以將視覺化：
 
@@ -43,7 +43,7 @@ _並排顯示是一個功能強大、 有彈性，並建立垂直及等磚的完
 ![](tiled-images/image4.png "下圖顯示使用相同的牌組可能的排列方式")
 
 
-# <a name="working-with-tmx-files"></a>使用.tmx 檔案
+## <a name="working-with-tmx-files"></a>使用.tmx 檔案
 
 .Tmx 檔案格式是由磚塊應用程式，可建立的 XML 檔案[磚塊網站上免費下載](http://www.mapeditor.org/)。 .Tmx 檔案格式儲存為並排顯示對應的資訊。 通常遊戲會有一個.tmx 檔案的每個層級或不同區域。
 
@@ -80,7 +80,7 @@ public class GameLayer : CCLayer
 ![](tiled-images/image6.png "如果執行遊戲時，磚地圖會出現在畫面的左下角")
 
 
-# <a name="considerations-for-rendering-pixel-art"></a>轉譯的像素封面的考量
+## <a name="considerations-for-rendering-pixel-art"></a>轉譯的像素封面的考量
 
 像素封面、 視訊遊戲開發的內容中是指這通常是由游標，而且通常是低解析度的 2D 視覺美工圖案。 像素圖案可以是 restrictively 來建立，因此像素封面磚集通常包括低解析度的圖格，例如 16 或 32 像素寬度和高度需要大量時間。 如果不在執行階段進行縮放，像素封面通常會太小，大多數最新型的手機和平板電腦。
 
@@ -161,7 +161,7 @@ protected override void AddedToScene ()
 ![](tiled-images/image8.png "現在磚對應不會模糊不清")
 
 
-# <a name="using-tile-properties-at-runtime"></a>在執行階段使用圖格屬性
+## <a name="using-tile-properties-at-runtime"></a>在執行階段使用圖格屬性
 
 到目前為止我們有`CCTileMap`.tmx 檔案載入及顯示，但沒有方法可以與其互動。 具體來說，某些磚 （例如我們珍貴箱子中） 需要有自訂邏輯。 我們將逐步執行如何偵測自訂圖格屬性，與以回應一次在執行階段中識別這些屬性的各種方式。
 
@@ -175,7 +175,7 @@ protected override void AddedToScene ()
 
 ![](tiled-images/image10.png "如果看不到珍貴箱子屬性，珍貴箱子上按一下滑鼠右鍵，然後選取 圖格屬性")
 
-並排顯示的屬性會實作具有名稱和值。 若要加入的屬性，請按一下 **+** 按鈕，輸入名稱**IsTreasure**，按一下**確定**，然後輸入值**true**: 
+並排顯示的屬性會實作具有名稱和值。 若要加入的屬性，請按一下**+**按鈕，輸入名稱**IsTreasure**，按一下**確定**，然後輸入值**true**: 
 
 ![](tiled-images/image11.png "若要加入屬性，按一下按鈕、 輸入名稱 IsTreasure，按一下 [確定]，然後輸入值為 true")
 
@@ -273,11 +273,11 @@ public class GameLayer : CCLayer
 換句話說，珍貴箱子將受益於正在實體，而不是正在以簡單的並排顯示`CCTileMap`。 如需有關遊戲的實體的詳細資訊，請參閱[CocosSharp 中的實體引導](~/graphics-games/cocossharp/entities.md)。
 
 
-# <a name="summary"></a>總結
+## <a name="summary"></a>總結
 
 這個逐步解說將說明如何載入到 CocosSharp 應用程式建立磚塊.tmx 檔案。 它會顯示如何修改應用程式解析，以說明較低解析度像素封面、 以及如何尋找其內容以執行自訂邏輯，例如建立實體執行個體磚。
 
-## <a name="related-links"></a>相關連結
+## <a name="related-links"></a>相關的連結
 
 - [並排顯示的網站](http://www.mapeditor.org/)
 - [內容壓縮](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Tiled.zip?raw=true)

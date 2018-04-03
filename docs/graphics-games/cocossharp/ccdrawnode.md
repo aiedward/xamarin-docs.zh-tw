@@ -1,6 +1,6 @@
 ---
-title: "繪製與 CCDrawNode 幾何"
-description: "CCDrawNode 提供繪圖基本的物件，例如線條、 圓形和三角形的方法。"
+title: 繪製與 CCDrawNode 幾何
+description: CCDrawNode 提供繪圖基本的物件，例如線條、 圓形和三角形的方法。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 46A3C3CE-74CC-4A3A-AB05-B694AE182ADB
@@ -8,20 +8,20 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: a7b62b131db3fc224ef59bdb9189b96d61129f30
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5a2471981f2e88ff8af9a803ff8f5a99e5b9266f
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="drawing-geometry-with-ccdrawnode"></a>繪製與 CCDrawNode 幾何
 
-_CCDrawNode 提供繪圖基本的物件，例如線條、 圓形和三角形的方法。_
+_`CCDrawNode` 提供方法來繪圖基本的物件，例如線條、 圓形和三角形。_
 
 `CCDrawNode`類別 CocosSharp 中的提供多種方法來繪製一般幾何圖案。 它繼承自`CCNode`類別，並通常會加入至`CCLayer`執行個體。 本指南涵蓋如何使用`CCDrawNode`執行自訂轉譯的執行個體。 它也提供可繪製函式的完整清單，螢幕擷取畫面和程式碼範例。
 
 
-# <a name="creating-a-ccdrawnode"></a>建立 CCDrawNode
+## <a name="creating-a-ccdrawnode"></a>建立 CCDrawNode
 
 `CCDrawNode`類別可以用來繪製幾何物件，例如圓形、 矩形和線條。 例如，下列程式碼範例示範如何建立`CCDrawNode`執行個體中繪製圓形`CCLayer`實作類別：
 
@@ -52,12 +52,12 @@ public class GameLayer : CCLayer
 ![](ccdrawnode-images/image1.png "此程式碼會產生此在執行階段的圓形")
 
 
-# <a name="draw-method-details"></a>Draw 方法詳細資料
+## <a name="draw-method-details"></a>Draw 方法詳細資料
 
 讓我們看看一些詳細資訊與繪圖相關`CCDrawNode`:
 
 
-## <a name="draw-methods-positions-are-relative-to-the-ccdrawnode"></a>Draw 方法位置是相對於以 CCDrawNode
+### <a name="draw-methods-positions-are-relative-to-the-ccdrawnode"></a>繪製位置是相對於 CCDrawNode 方法
 
 所有繪製方法繪圖都需要至少一個位置值。 此位置的值是相對於`CCDrawNode`執行個體。 這表示`CCDrawNode`本身具有位置，以及所有繪製呼叫對`CCDrawNode`也接受一或多個位置的值。 若要協助您了解如何將這些值結合，讓我們看看一些範例。
 
@@ -94,7 +94,7 @@ drawNode.DrawCircle (center: new CCPoint (50, 60),
 物件所繪製的`CCNodes`也受到`CCNode`執行個體的`Rotation`和`Scale`屬性。
 
 
-## <a name="draw-methods-do-not-need-to-be-called-every-frame"></a>繪製不需要是呼叫每個畫面格方法
+### <a name="draw-methods-do-not-need-to-be-called-every-frame"></a>不需要呼叫每個畫面格繪製方法
 
 Draw 方法需要一次呼叫，以建立持續性的視覺效果。 在呼叫上述範例`DrawCircle`的建構函式中`GameLayer`–`DrawCircle`不需要呼叫每個畫面格時重新整理畫面，重新繪製圓形。
 
@@ -103,7 +103,7 @@ Draw 方法需要一次呼叫，以建立持續性的視覺效果。 在呼叫�
 如果繪製呼叫的每個畫面格，則物件最終將會累積內呼叫`CCDrawNode`執行個體，導致畫面播放速率下降會繪製多個物件。
 
 
-## <a name="each-ccdrawnode-supports-multiple-draw-calls"></a>每個 CCDrawNode 支援多個繪製呼叫
+### <a name="each-ccdrawnode-supports-multiple-draw-calls"></a>每個 CCDrawNode 支援多個繪製呼叫
 
 `CCDrawNode` 執行個體可以用來繪製多個圖形。 這可讓複雜抓住單一物件中的視覺物件。 例如，下列程式碼可以用來呈現多個包含一個圓形`CCDrawNode`:
 
@@ -123,25 +123,25 @@ for (int i = 0; i < 8; i++)
 ![](ccdrawnode-images/image2.png "這會導致這個圖形")
 
 
-# <a name="draw-call-examples"></a>繪製呼叫範例
+## <a name="draw-call-examples"></a>繪製呼叫範例
 
 下列的繪製呼叫位於`CCDrawNode`:
 
-- [DrawCatmullRom](#DrawCatmullRom)
-- [DrawCircle](#DrawCircle)
-- [DrawCubicBezier](#DrawCubicBezier)
-- [DrawEllipse](#DrawEllipse)
-- [DrawLineList](#DrawLineList)
-- [DrawPolygon](#DrawPolygon)
-- [DrawQuadBezier](#DrawQuadBezier)
-- [DrawRect](#DrawRect)
-- [DrawSegment](#DrawSegment)
-- [DrawSolidArc](#DrawSolidArc)
-- [DrawSolidCircle](#DrawSolidCircle)
-- [DrawTriangleList](#DrawTriangleList)
+- [`DrawCatmullRom`](#drawcatmullrom)
+- [`DrawCircle`](#drawcircle)
+- [`DrawCubicBezier`](#drawcubicbezier)
+- [`DrawEllipse`](#drawellipse)
+- [`DrawLineList`](#drawlinelist)
+- [`DrawPolygon`](#drawpolygon)
+- [`DrawQuadBezier`](#drawquadbezier)
+- [`DrawRect`](#drawrect)
+- [`DrawSegment`](#drawsegment)
+- [`DrawSolidArc`](#drawsolidarc)
+- [`DrawSolidCircle`](#drawsolidcircle)
+- [`DrawTriangleList`](#drawtrianglelist)
 
 
-## <a name="drawcardinalspline"></a>DrawCardinalSpline
+### <a name="drawcardinalspline"></a>DrawCardinalSpline
 
 `DrawCardinalSpline` 建立曲線透過變動數目的點。 
 
@@ -171,7 +171,7 @@ drawNode.DrawCardinalSpline (
 ![](ccdrawnode-images/image3.png "區段參數用於控制多少區段用來繪製曲線")
 
 
-## <a name="drawcatmullrom"></a>DrawCatmullRom
+### <a name="drawcatmullrom"></a>DrawCatmullRom
 
 `DrawCatmullRom` 建立曲線變動數目的點，類似於透過`DrawCardinalLine`。 這個方法不包含張力參數。
 
@@ -192,7 +192,7 @@ drawNode.DrawCatmullRom (
 ![](ccdrawnode-images/image4.png "DrawCatmullRom 建立透過變動數目的點，類似於 DrawCardinalLine 曲線")
 
 
-## <a name="drawcircle"></a>DrawCircle
+### <a name="drawcircle"></a>DrawCircle
 
 `DrawCircle` 建立的圓形的周邊給定`radius`。
 
@@ -208,7 +208,7 @@ drawNode.DrawCircle (
 ![](ccdrawnode-images/image5.png "DrawCircle 建立周邊的指定半徑的圓形")
 
 
-## <a name="drawcubicbezier"></a>DrawCubicBezier
+### <a name="drawcubicbezier"></a>DrawCubicBezier
 
 `DrawCubicBezier` 若要設定兩個點之間路徑使用控點的兩個點之間繪製曲線。
 
@@ -228,7 +228,7 @@ drawNode.DrawCubicBezier (
  ![](ccdrawnode-images/image6.png "DrawCubicBezier 兩點之間繪製曲線")
 
 
-## <a name="drawellipse"></a>DrawEllipse
+### <a name="drawellipse"></a>DrawEllipse
 
 `DrawEllipse` 建立的大綱*橢圓形*，這通常稱為橢圓形 （雖然這兩個不形成的幾何相同）。 可以由定義橢圓形的圖形`CCRect`執行個體。
 
@@ -245,7 +245,7 @@ drawNode.DrawEllipse (
 ![](ccdrawnode-images/image8.png "DrawEllipse 建立外框的橢圓形，通常稱為橢圓形")
 
 
-## <a name="drawline"></a>DrawLine
+### <a name="drawline"></a>DrawLine
 
 `DrawLine` 連接點一行則為指定的寬度。 這個方法是類似於`DrawSegment`，只不過它會建立一般的端點，而不是圓角端點。
 
@@ -263,7 +263,7 @@ drawNode.DrawLine (
 ![](ccdrawnode-images/image9.png "DrawLine 連接點一行則為指定的寬度")
 
 
-## <a name="drawlinelist"></a>DrawLineList
+### <a name="drawlinelist"></a>DrawLineList
 
 `DrawLineList` 藉由連接點所指定的每個配對建立多行`CCV3F_C4B`陣列。 `CCV3F_C4B`結構包含的位置和色彩值。 `verts`參數一律應包含偶數個點，每一行是由兩個點定義。
 
@@ -288,7 +288,7 @@ drawNode.DrawLineList (verts);
 
 
 
-## <a name="drawpolygon"></a>DrawPolygon
+### <a name="drawpolygon"></a>DrawPolygon
 
 `DrawPolygon` 建立變數的寬度和色彩的外框的填滿的多邊形。
 
@@ -315,7 +315,7 @@ drawNode.DrawPolygon (verts,
 ![](ccdrawnode-images/image11.png "DrawPolygon 建立填滿的多邊形變數寬度和色彩的外框")
 
 
-## <a name="drawquadbezier"></a>DrawQuadBezier
+### <a name="drawquadbezier"></a>DrawQuadBezier
 
 `DrawQuadBezier` 有一條線連接兩個點。 它的行為類似於`DrawCubicBezier`但僅支援單一控制點。
 
@@ -335,7 +335,7 @@ drawNode.DrawQuadBezier (
 ![](ccdrawnode-images/image12.png "DrawQuadBezier 有一條線連接兩個點")
 
 
-## <a name="drawrect"></a>DrawRect
+### <a name="drawrect"></a>DrawRect
 
 `DrawRect` 建立變數的寬度和色彩的外框的填滿的矩形。
 
@@ -354,7 +354,7 @@ drawNode.DrawRect(shape,
 ![](ccdrawnode-images/image13.png "DrawRect 建立變數的寬度和色彩的外框的填滿的矩形")
 
 
-## <a name="drawsegment"></a>DrawSegment
+### <a name="drawsegment"></a>DrawSegment
 
 `DrawSegment` 有變數的寬度和色彩的一條線連接兩個點。 類似於`DrawLine`，只不過它會建立圓形的端點，而不是一般的端點。
 
@@ -371,7 +371,7 @@ drawNode.DrawSegment (from: new CCPoint (0, 0),
 ![](ccdrawnode-images/image14.png "DrawSegment 有變數的寬度和色彩的一條線連接兩個點")
 
 
-## <a name="drawsolidarc"></a>DrawSolidArc
+### <a name="drawsolidarc"></a>DrawSolidArc
 
 `DrawSolidArc` 建立指定的色彩和 radius 填滿的楔形。
 
@@ -390,7 +390,7 @@ drawNode.DrawSolidArc(
 ![](ccdrawnode-images/image15.png "DrawSolidArc 建立區域分布在楔形，將指定的色彩和 radius")
 
 
-## <a name="drawsolidcircle"></a>DrawSolidCircle
+### <a name="drawsolidcircle"></a>DrawSolidCircle
 
 `DrawCircle` 建立指定半徑的填滿的圓形。
 
@@ -407,7 +407,7 @@ drawNode.DrawSolidCircle(
 ![](ccdrawnode-images/image16.png "DrawCircle 建立指定半徑的填滿的圓形")
 
 
-## <a name="drawtrianglelist"></a>DrawTriangleList
+### <a name="drawtrianglelist"></a>DrawTriangleList
 
 `DrawTriangleList` 建立一份三角形。 每個三角形會定義三個`CCV3F_C4B`陣列中的執行個體。 傳遞至陣列中的頂點數目`verts`參數必須是 3 的倍數。 請注意，只有資訊包含在`CCV3F_C4B`verts 和其色彩 – 位置`DrawTriangleList`方法不支援以紋理繪製三角形。
 
@@ -432,11 +432,11 @@ drawNode.DrawTriangleList (verts);
 ![](ccdrawnode-images/image17.png "DrawTriangleList 建立一份三角形")
 
 
-# <a name="summary"></a>總結
+## <a name="summary"></a>總結
 
 本指南說明如何建立`CCDrawNode`並執行基本項目為基礎的轉譯。 它提供每個繪製呼叫的範例。
 
-## <a name="related-links"></a>相關連結
+## <a name="related-links"></a>相關的連結
 
 - [CCDrawNode API](https://developer.xamarin.com/api/type/CocosSharp.CCDrawNode/)
 - [完整範例](https://developer.xamarin.com/samples/mobile/CCDrawNode/)

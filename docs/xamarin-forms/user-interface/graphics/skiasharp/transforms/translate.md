@@ -1,6 +1,6 @@
 ---
-title: "轉換轉換"
-description: "了解如何使用轉換轉換移位 SkiaSharp 圖形"
+title: 轉換轉換
+description: 了解如何使用轉換轉換移位 SkiaSharp 圖形
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: cac2479af2778af6043a85583f9d7b518748d7da
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 771fde301a8585f25d7d83c7bf0451cf6e0cf8e9
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="the-translate-transform"></a>轉換轉換
 
@@ -36,7 +36,7 @@ public void Translate (Single dx, Single dy)
 public void Translate (SKPoint point)
 ```
 
-**累積轉譯**頁面[ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)程式範例示範多個呼叫的`Translate`方法將會累計。 [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs)類別會顯示相同的矩形的 20 版本，每個位移從先前的矩形只足以讓它們沿著對角線 stretch。 以下是`PaintSurface`事件處理常式：
+**累積轉譯**頁面[ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式範例示範多個呼叫的`Translate`方法將會累計。 [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs)類別會顯示相同的矩形的 20 版本，每個位移從先前的矩形只足以讓它們沿著對角線 stretch。 以下是`PaintSurface`事件處理常式：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -303,4 +303,4 @@ public class HendecagramAnimationPage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

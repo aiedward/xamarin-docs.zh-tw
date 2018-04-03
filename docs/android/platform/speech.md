@@ -1,18 +1,18 @@
 ---
-title: "Android 的語音"
-description: "本文件涵蓋使用非常強大的 Android.Speech 命名空間的基本概念。 自其開始，Android 已能夠辨識語音並將其輸出為文字。 它是相對較簡單的程序。 針對文字轉換語音，不過，處理程序是較為複雜，因為不僅不語音引擎一定納入考量，但也語言可用及已安裝從文字轉換語音 (TTS) 系統。"
+title: Android 的語音
+description: 本文件涵蓋使用非常強大的 Android.Speech 命名空間的基本概念。 自其開始，Android 已能夠辨識語音並將其輸出為文字。 它是相對較簡單的程序。 針對文字轉換語音，不過，處理程序是較為複雜，因為不僅不語音引擎一定納入考量，但也語言可用及已安裝從文字轉換語音 (TTS) 系統。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: FA3B8EC4-34D2-47E3-ACEA-BD34B28115B9
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: e8e56afbdf0b68ecc49a89b08b2e67a9715f2aef
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.date: 04/02/2018
+ms.openlocfilehash: acc64fee37e1a6046991355389a09a29e1889993
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="android-speech"></a>Android 的語音
 
@@ -158,15 +158,21 @@ foreach (var locale in localesAvailable)
 langAvailable = langAvailable.OrderBy(t => t).Distinct().ToList();
 ```
 
+此程式碼會呼叫[TextToSpeech.IsLanguageAvailable](https://developer.xamarin.com/api/member/Android.Speech.Tts.TextToSpeech.IsLanguageAvailable/p/Java.Util.Locale/)以測試是否為特定地區設定的語言套件已存在於裝置上。 這個方法會傳回[LanguageAvailableResult](https://developer.xamarin.com/api/type/Android.Speech.Tts.LanguageAvailableResult/)，表示是否可以使用傳入的地區設定的語言。 如果`LanguageAvailableResult`指出的語言是`NotSupported`，沒有可以 （即使下載） 的語音的封裝，然後針對該語言。 如果`LanguageAvailableResult`設`MissingData`，它就可能會在步驟 4 中，如下所述，下載新的語言套件。
+
 ### <a name="step-3---setting-the-speed-and-pitch"></a>步驟 3-設定速度及字距等性質
 
 Android 可讓使用者可以改變修改語音聲音`SpeechRate`和`Pitch`（速度及音調的語音速率）。 這是從 0 到 1，使用 「 一般 」 是兩個 1 的語音。
 
 ### <a name="step-4---testing-and-loading-new-languages"></a>步驟 4-測試及載入新的語言
 
-這使用執行`Intent`中解譯結果`OnActivityResult`。 不同於使用語音轉文字範例`RecognizerIntent`為`PutExtra`參數`Intent`，意圖會使用的安裝`Action`。
+下載新的語言透過執行`Intent`。 此意圖結果導致[OnActivityResult](https://developer.xamarin.com/api/member/Android.App.Activity.OnActivityResult/)方法被叫用。 不同於語音轉文字範例 (使用哪一個[RecognizerIntent](https://developer.xamarin.com/api/type/Android.Speech.RecognizerIntent/)為`PutExtra`參數`Intent`)，測試及載入`Intent`是`Action`-基礎：
 
-很可能來自使用下列程式碼的 Google 安裝新的語言。 結果`Activity`會查看是否需要的語言，以及如果是，會提示進行下載後安裝語言。
+-   [TextToSpeech.Engine.ActionCheckTtsData](https://developer.xamarin.com/api/field/Android.Speech.Tts.TextToSpeech+Engine.ActionCheckTtsData/) &ndash;啟動活動從平台`TextToSpeech`引擎來確認正確的安裝和裝置上的語言資源的可用性。
+
+-   [TextToSpeech.Engine.ActionInstallTtsData](https://developer.xamarin.com/api/field/Android.Speech.Tts.TextToSpeech+Engine.ActionInstallTtsData/) &ndash;開始活動，以提示使用者下載必需的語言。
+
+下列程式碼範例將說明如何使用這些動作測試的語言資源，並下載新的語言：
 
 ```csharp
 var checkTTSIntent = new Intent();
@@ -183,6 +189,19 @@ protected override void OnActivityResult(int req, Result res, Intent data)
     }
 }
 ```
+
+`TextToSpeech.Engine.ActionCheckTtsData` 測試的語言資源的可用性。 `OnActivityResult` 這項測試完成時，會叫用。 如果要下載的語言資源需要`OnActivityResult`引發`TextToSpeech.Engine.ActionInstallTtsData`動作啟動活動，可讓使用者下載必需的語言。 請注意這個`OnActivityResult`實作不會檢查`Result`因為簡化在本例中，判斷已發出的語言封裝必須先下載程式碼。
+
+`TextToSpeech.Engine.ActionInstallTtsData`動作原因**Google TTS 語音資料**要選擇要下載的語言呈現給使用者的活動：
+
+![Google TTS 語音資料活動](speech-images/01-google-tts-voice-data.png)
+
+例如，使用者可能會挑選法文，並按一下 [下載] 圖示，以下載法文語音資料：
+
+![下載法文語言的範例](speech-images/02-selecting-french.png)
+
+下載完成後，會自動發生這項資料的安裝。
+
 
 ### <a name="step-5---the-ioninitlistener"></a>步驟 5-IOnInitListener
 

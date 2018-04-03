@@ -1,6 +1,6 @@
 ---
-title: "與 CCAction 建立動畫"
-description: "CCAction 類別簡化了加入 CocosSharp 遊戲動畫。 這些動畫可用來實作功能，或更具吸引力。"
+title: 與 CCAction 建立動畫
+description: CCAction 類別簡化了加入 CocosSharp 遊戲動畫。 這些動畫可用來實作功能，或更具吸引力。
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 74DBD02A-6F10-4104-A61B-08CB49B733FB
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 2852cf0e141e8239cee8dbe580576f4571c919a3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7e64789f4e86dbcd47fc760fd9d4d7fb61c76121
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="animating-with-ccaction"></a>與 CCAction 建立動畫
 
@@ -23,7 +23,7 @@ _CCAction 類別簡化了加入 CocosSharp 遊戲動畫。這些動畫可用來�
 本指南會使用名為專案**ActionProject**其中[可以在這裡下載](https://developer.xamarin.com/samples/mobile/CCAction)。 本指南使用`CCDrawNode`類別在講述這個[CCDrawNode 與繪圖幾何](~/graphics-games/cocossharp/ccdrawnode.md)指南。
 
 
-# <a name="running-the-actionproject"></a>執行 ActionProject
+## <a name="running-the-actionproject"></a>執行 ActionProject
 
 **ActionProject**是 CocosSharp 解決方案，可建置適用於 iOS 和 Android。 它可以用來說明如何使用程式碼範例`CCAction`類別，以及即時示範的常見`CCAction`實作。
 
@@ -39,8 +39,7 @@ ActionProject 執行時，顯示三個`CCLabel`左邊的螢幕和兩個所繪製
 
 ![](ccaction-images/image3.gif "按一下位置標籤會循環不同的值可以變更顯示")
 
-
-# <a name="common-variable-changing-ccactions"></a>常用變數變更 CCActions 
+## <a name="common-variable-changing-ccaction-classes"></a>常用變數變更 CCAction 類別
 
 **ActionProject**會使用下列`CCAction`-繼承類別，屬於 CocosSharp:
 
@@ -94,13 +93,13 @@ nodeToAddTo.AddAction (coreAction);
 每個 「 目標 」 類別也有 「 由 」 版本，將引數將值加入至目前的值`CCNode`。 例如，建立`CCMoveBy`X 位置 = 100，而 Y = 200 會導致`CCNode`已從位置是否位於啟動動作時移到右邊 100 單位和總 200 個單位的執行個體。
 
 
-# <a name="easing-actions"></a>加/減速動作
+## <a name="easing-actions"></a>加/減速動作
 
 根據預設，變數變更動作將會執行*線性插補*– 動作將會移往的所需的值以常數速率。 如果插入*位置*線性增加，移動的物件將會立即啟動並停止在開頭和結尾動作、 移動和其速度會維持一致時執行動作。 
 
 非線性插補是較不突兀，並加入波蘭文的項目，因此 CocosSharp 提供各種 easing 可以用來修改變數變更動作的動作。
 
-在**ActionProject**範例中，我們就能切換這些類型的第二個標籤上的 加/減速動作 (預設為 **<None>** ):
+在**ActionProject**範例中，我們就能切換這些類型的第二個標籤上的 加/減速動作 (預設為**<None>**):
 
 ![](ccaction-images/image4.gif "使用者可以在這些類型的加/減速動作，按一下第二個標籤之間切換")
 
@@ -128,35 +127,35 @@ nodeToAddTo.AddAction (easing);
 ![](ccaction-images/image5.gif "完全相同 easing 可以套用至其他變數設定動作，例如 CCRotateTo")
 
 
-# <a name="easing-in-out-and-inout"></a>Easing In、 Out 和 InOut
+## <a name="easing-in-out-and-inout"></a>Easing In、 Out 和 InOut
 
 所有加/減速動作都有`In`， `Out`，或`InOut`附加至加/減速型別。 這些授權條款時，請參考 easing 套用：`In`表示 easing 不會套用在開始時，`Out`在結束時，表示和`InOut`表示同時在開頭和結尾。
 
 `In` Easing 動作會影響變數會套用到整個插補 （兩者的開頭和結尾），整個的方式，但通常加/減速動作的最容易辨認的特性會在開始進行。 同樣地，`Out`加/減速動作會依其行為的插補結尾加以區分。 例如，`CCEaseBounceOut`將會導致彈跳結尾動作的物件。
 
 
-## <a name="out"></a>出
+### <a name="out"></a>出
 
 `Out` easing 通常適用於在插補結尾非常顯著的變更。 例如，`CCEaseExponentialOut`它接近目標值會變慢變更變數的變動率：
 
 ![](ccaction-images/image6.gif "CCEaseExponentialOut 會變慢變更變數的變更的速率，它接近目標值")
 
 
-## <a name="in"></a>In
+### <a name="in"></a>In
 
 `In` easing 通常適用於最明顯的變更插補的開頭。 例如，`CCEaseExponentialIn`會移動速度更慢動作的開頭：
 
 ![](ccaction-images/image7.gif "CCEaseExponentialIn 會移動速度更慢動作的起始處")
 
 
-## <a name="inout"></a>InOut
+### <a name="inout"></a>InOut
 
 `InOut` 通常適用於同時在開頭和結尾非常顯著的變更。 `InOut` 緩和了是通常是對稱的。 例如，`CCEaseExponentialInOut`會緩慢移動開頭和結尾的動作：
 
 ![](ccaction-images/image8.gif "CCEaseExponentialInOut 會開頭和結束動作的移動速度很慢")
 
 
-# <a name="implementing-a-custom-ccaction"></a>實作自訂 CCAction
+## <a name="implementing-a-custom-ccaction"></a>實作自訂 CCAction
 
 所有的目前為止，我們所討論的類別都包含在 CocosSharp 提供一般功能。 自訂`CCAction`實作可以提供更大的彈性。 例如，`CCAction`可以使用這會控制經驗列的填滿的比例，以便體驗列非常平滑每當使用者得到的體驗。
 
@@ -226,7 +225,7 @@ public class LineWidthState : CCFiniteTimeActionState
 ![](ccaction-images/image9.gif "這個動畫所示，可以與任何加/減速的動作，來變更線條的寬度，以各種方式結合 LineWidthAction")
 
 
-## <a name="interpolation-and-the-update-method"></a>插補，Update 方法
+### <a name="interpolation-and-the-update-method"></a>插補，Update 方法
 
 唯一的邏輯，除了上面的類別中儲存值位於`LineWidthState.Update`方法。 `startWidth`變數儲存的目標寬度`LineNode`開頭的動作，而`deltaWidth`變數儲存的值會隨採取的動作而改變。
 
@@ -247,11 +246,11 @@ castedTarget.Width = startWidth + deltaWidth * 1;
 `time`值通常會介於 0 和 1-但不是一定-和`Update`實作不應該假設這些界限。 某些加/減速方法 (例如`CCEaseBackIn`和`CCEaseBackOut`) 會提供在 0 到 1 範圍之外的時間值。
 
 
-# <a name="conclusion"></a>結論
+## <a name="conclusion"></a>結論
 
 插補，以及減輕是很重要的一部分建立精美的遊戲，特別是在建立使用者介面。 本指南涵蓋如何使用`CCActions`來進行插補，例如位置和旋轉的標準值，以及自訂值。 `LineWidthState`和`LineWidthAction`類別示範如何實作自訂動作。
 
-## <a name="related-links"></a>相關連結
+## <a name="related-links"></a>相關的連結
 
 - [CCAction](https://developer.xamarin.com/api/type/CocosSharp.CCAction)
 - [CCMoveTo](https://developer.xamarin.com/api/type/CocosSharp.CCMoveTo)
