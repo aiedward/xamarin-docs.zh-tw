@@ -1,18 +1,17 @@
 ---
-title: "在程式碼中建立 iOS 使用者介面"
-description: "Xamarin.iOS 提供兩種方法的建立應用程式-適用於 iOS 或程式碼中，Xamarin 設計工具中使用的使用者介面。 這篇文章探討如何建立 iOS 完全以程式碼使用者介面。 它會顯示如何從專案範本從 UIKit 建立檢視表的階層會建立在控制器中的應用程式螢幕啟動。 然後，它討論如何在控制器中建立可載入的自訂檢視。"
-ms.topic: article
+title: 在程式碼中建立 iOS 使用者介面
+description: Xamarin.iOS 提供兩種方法的建立應用程式-適用於 iOS 或程式碼中，Xamarin 設計工具中使用的使用者介面。 這篇文章探討如何建立 iOS 完全以程式碼使用者介面。 它會顯示如何從專案範本從 UIKit 建立檢視表的階層會建立在控制器中的應用程式螢幕啟動。 然後，它討論如何在控制器中建立可載入的自訂檢視。
 ms.prod: xamarin
 ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 24fc64d1bd04cb1ebefb9bf9a359efb395b45074
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 7e8460d2c946159a9869322d6d4944d213d3d801
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>在程式碼中建立 iOS 使用者介面
 

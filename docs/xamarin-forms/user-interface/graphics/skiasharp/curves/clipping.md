@@ -1,18 +1,17 @@
 ---
 title: 使用路徑和地區的裁剪部分
 description: 特定領域，以及建立區域使用美工圖形的路徑
-ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: cc03f4b48f23ca772c621d3ce1ea7906b5d85d08
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 0451653b4ee5c85b9bcf884b6b5609a251cf577c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="clipping-with-paths-and-regions"></a>使用路徑和地區的裁剪部分
 

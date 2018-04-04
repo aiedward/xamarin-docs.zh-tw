@@ -1,17 +1,16 @@
 ---
-title: "填入資料的 ListView"
-ms.topic: article
+title: 填入資料的 ListView
 ms.prod: xamarin
 ms.assetid: AC4F95C8-EC3F-D960-7D44-8D55D0E4F1B6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: 12197d238ddc6ddc2bd8f48f77aa15f5eff22a0a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 83b398faf4fd634b7d492d372524b5fdd00163d0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="populating-a-listview-with-data"></a>填入資料的 ListView
 

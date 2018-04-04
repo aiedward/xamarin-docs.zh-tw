@@ -1,18 +1,17 @@
 ---
-title: "叫用事件的效果"
-description: "效果可以定義，並叫用事件，發出訊號基礎原生檢視中的變更。 本文示範如何實作低層級的多點觸控手指追蹤，以及如何產生通知觸控活動的事件。"
-ms.topic: article
+title: 叫用事件的效果
+description: 效果可以定義，並叫用事件，發出訊號基礎原生檢視中的變更。 本文示範如何實作低層級的多點觸控手指追蹤，以及如何產生通知觸控活動的事件。
 ms.prod: xamarin
 ms.assetid: 6A724681-55EB-45B8-9EED-7E412AB19DD2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: 0fd037e62bcdb1b2be4c93dc0d32ca76f4e1ba8e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: eb4ed3df4ea1f9e6aacf1c875eab17908d73cb7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="invoking-events-from-effects"></a>叫用事件的效果
 

@@ -1,18 +1,17 @@
 ---
-title: "在 iOS 中的推播通知"
-description: "本節將討論在 iOS 中的推播通知。 它引進 Apple 推播通知閘道服務及它在加入 iOS 應用程式的發行通知中扮演的角色。 它會說明如何建立必要啟用推播通知，並討論安全性憑證。 最後本章節將討論一些應用程式伺服器必須執行來追蹤用戶端行動裝置的環境維護工作。"
-ms.topic: article
+title: 在 iOS 中的推播通知
+description: 本節將討論在 iOS 中的推播通知。 它引進 Apple 推播通知閘道服務及它在加入 iOS 應用程式的發行通知中扮演的角色。 它會說明如何建立必要啟用推播通知，並討論安全性憑證。 最後本章節將討論一些應用程式伺服器必須執行來追蹤用戶端行動裝置的環境維護工作。
 ms.prod: xamarin
 ms.assetid: 64B3BE6A-A3E2-4B1B-95ED-02D27A8FDAAC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 3af74fb9d93e22e361f2e3db00961d7955eda689
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 3a86ce5e61576faec41b5fcddf899d731d2cc57a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="push-notifications-in-ios"></a>在 iOS 中的推播通知
 
@@ -51,7 +50,7 @@ Apple 會維護兩種環境的 APNS:*沙箱*和*生產*環境。 沙箱環境適
 
     [![](remote-notifications-in-ios-images/image6new.png "瀏覽至 [應用程式識別碼] 區段，並建立新的應用程式識別碼")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
-3.  當您按一下 [  **+**  ] 按鈕，您將能夠輸入的應用程式識別碼、 描述和配套識別碼中的下一個螢幕擷取畫面所示：
+3.  當您按一下 [ **+** ] 按鈕，您將能夠輸入的應用程式識別碼、 描述和配套識別碼中的下一個螢幕擷取畫面所示：
 
     [![](remote-notifications-in-ios-images/image7new.png "輸入描述和套件組合識別碼的應用程式識別碼")](remote-notifications-in-ios-images/image7new.png#lightbox)
 

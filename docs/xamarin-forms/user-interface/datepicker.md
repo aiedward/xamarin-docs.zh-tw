@@ -1,18 +1,17 @@
 ---
-title: "使用 日期選擇器"
-description: "允許使用者選取日期的 Xamarin.Forms 檢視"
-ms.topic: article
+title: 使用 日期選擇器
+description: 允許使用者選取日期的 Xamarin.Forms 檢視
 ms.prod: xamarin
 ms.assetid: 68E8EF8A-42E7-4939-8ABE-64D060E609D9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/12/2018
-ms.openlocfilehash: ad214b3986d039de40f8ed46b300e8d3cfd06328
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 0ab9d3c83b849e5ab5aac8bce9c581abd0312237
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-datepicker"></a>使用 日期選擇器
 

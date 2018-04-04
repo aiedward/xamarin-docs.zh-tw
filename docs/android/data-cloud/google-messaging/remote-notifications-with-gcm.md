@@ -1,18 +1,17 @@
 ---
-title: "遠端使用 Google 雲端訊息的通知"
-description: "本逐步解說 Xamarin.Android 應用程式中提供的逐步說明如何使用 Google Cloud Messaging 實作遠端 （也稱為推播通知） 的通知。 它會描述您必須實作以進行通訊與 Google Cloud Messaging (GCM) 的各種類別，說明如何在 Android 的 GCM，存取資訊清單設定的權限，它會示範端對端訊息的範例測試程式。"
-ms.topic: article
+title: 遠端使用 Google 雲端訊息的通知
+description: 本逐步解說 Xamarin.Android 應用程式中提供的逐步說明如何使用 Google Cloud Messaging 實作遠端 （也稱為推播通知） 的通知。 它會描述您必須實作以進行通訊與 Google Cloud Messaging (GCM) 的各種類別，說明如何在 Android 的 GCM，存取資訊清單設定的權限，它會示範端對端訊息的範例測試程式。
 ms.prod: xamarin
 ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/13/2018
-ms.openlocfilehash: 823fad163e837adab5490446c23ab2f492679114
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 969b1b36659ac52782d30a1840ba352524e5e3c6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>遠端使用 Google 雲端訊息的通知
 

@@ -1,18 +1,17 @@
 ---
-title: "驗證使用者與 Amazon SimpleDB 服務"
-description: "Amazon SimpleDB 並未提供它自己的資源為基礎的權限系統。 相反地，身分識別提供者的驗證可以用來確保使用者只能 SimpleDB 網域中擁有自己的資料存取。 本文說明如何限制使用者存取他們自己的 SimpleDB 資料。"
-ms.topic: article
+title: 驗證使用者與 Amazon SimpleDB 服務
+description: Amazon SimpleDB 並未提供它自己的資源為基礎的權限系統。 相反地，身分識別提供者的驗證可以用來確保使用者只能 SimpleDB 網域中擁有自己的資料存取。 本文說明如何限制使用者存取他們自己的 SimpleDB 資料。
 ms.prod: xamarin
 ms.assetid: 797C91A5-9720-4DAC-89D8-5C85996584C8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: ac4c788b4bd48991d7628d892ad1ece3d2451228
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 592e957e0c64e7189d6f01f1ba0f23da074c4bec
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="authenticating-users-with-an-amazon-simpledb-service"></a>驗證使用者與 Amazon SimpleDB 服務
 

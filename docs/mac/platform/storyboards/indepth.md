@@ -1,18 +1,17 @@
 ---
-title: "使用分鏡腳本"
-description: "使用分鏡腳本使用 Xcode 建置 macOS 使用者介面。"
-ms.topic: article
+title: 使用分鏡腳本
+description: 使用分鏡腳本使用 Xcode 建置 macOS 使用者介面。
 ms.prod: xamarin
 ms.assetid: DF4DF7C2-DDD7-4A32-B375-5C5446301EC5
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 388744d48799e84587a4f554a4eb67cd677d8c9a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3b72affd9b101b0a139301fec9f2bed343310507
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="storyboards"></a>分鏡腳本
 

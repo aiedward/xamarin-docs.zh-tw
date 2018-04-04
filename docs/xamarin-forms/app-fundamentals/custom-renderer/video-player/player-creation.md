@@ -1,17 +1,16 @@
 ---
-title: "建立平台的視訊播放程式"
-ms.topic: article
+title: 建立平台的視訊播放程式
 ms.prod: xamarin
 ms.assetid: EEE2FB9B-EB73-4A3F-A859-7A1D4808E149
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d9204593eea97f27b9f461f3f7571c326919f0a9
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 316a6b9e9ce65dfb3c19d611f1b4976709546b5f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-the-platform-video-players"></a>建立平台的視訊播放程式
 

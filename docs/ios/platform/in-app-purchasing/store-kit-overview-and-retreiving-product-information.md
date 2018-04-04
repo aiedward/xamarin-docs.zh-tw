@@ -1,17 +1,16 @@
 ---
-title: "儲存組件概觀和擷取產品資訊"
-ms.topic: article
+title: 儲存組件概觀和擷取產品資訊
 ms.prod: xamarin
 ms.assetid: FC21192E-6325-4389-C060-E92DBB5EBD87
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: bafada037f912007201fd5e81b17302b21de3092
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f4ecd2942a99f80854fd340be454f9d8fefa5a36
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="store-kit-overview-and-retrieving-product-information"></a>儲存組件概觀和擷取產品資訊
 

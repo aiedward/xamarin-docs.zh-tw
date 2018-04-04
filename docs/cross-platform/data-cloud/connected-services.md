@@ -1,18 +1,17 @@
 ---
-title: "適用於 Mac 連接 Visual Studio 中的服務"
-description: "新增 Azure 的資料存放區、 驗證和推播通知從行動裝置應用程式在 Visual Studio for Mac"
-ms.topic: article
+title: 適用於 Mac 連接 Visual Studio 中的服務
+description: 新增 Azure 的資料存放區、 驗證和推播通知從行動裝置應用程式在 Visual Studio for Mac
 ms.prod: xamarin
 ms.assetid: ADDFB3A5-DB6A-417C-8ACE-33D107FB75C2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 5c9ae8d65a2bfdd035cccb6b911448ea047f8c40
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b9aaa197ccf01c59d6e4bbb0476d10295a108f89
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="connected-services-walkthrough"></a>已連接的服務的逐步解說
 

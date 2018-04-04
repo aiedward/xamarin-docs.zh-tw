@@ -1,18 +1,17 @@
 ---
-title: "簡單的動畫"
-description: "ViewExtensions 類別提供擴充方法可以用來建構簡單動畫。 本文示範如何建立並取消使用 ViewExtensions 類別的動畫。"
-ms.topic: article
+title: 簡單的動畫
+description: ViewExtensions 類別提供擴充方法可以用來建構簡單動畫。 本文示範如何建立並取消使用 ViewExtensions 類別的動畫。
 ms.prod: xamarin
 ms.assetid: 4A6FAE5A-848F-4CE0-BFA1-22A6309B5225
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: fb7ca216978e4c890349a44b07d5a383e9ca2384
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0d2cc30f9bc1ae5602394b8ca2d8e75517a01b54
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="simple-animations"></a>簡單的動畫
 

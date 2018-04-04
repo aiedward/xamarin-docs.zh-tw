@@ -1,18 +1,17 @@
 ---
-title: "Xamarin.Mac 預先編譯時間"
-description: "繼續的時間 (AOT) 編譯的權衡取捨完全和考量"
-ms.topic: article
+title: Xamarin.Mac 預先編譯時間
+description: 繼續的時間 (AOT) 編譯的權衡取捨完全和考量
 ms.prod: xamarin
 ms.assetid: 38B8A017-5A58-429C-A6E9-9860A1DCEF63
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: f9ace41380987472b6957c94719e6ae9b6f7995d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d6be1d6e4a3cccef827862fb1fd54b202b0ce5fd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinmac-ahead-of-time-compilation"></a>Xamarin.Mac 預先編譯時間
 

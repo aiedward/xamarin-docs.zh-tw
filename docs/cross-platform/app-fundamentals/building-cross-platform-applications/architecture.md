@@ -1,17 +1,16 @@
 ---
-title: "第 2 部-架構"
-ms.topic: article
+title: 第 2 部-架構
 ms.prod: xamarin
 ms.assetid: 2176DB2D-E84A-3757-CFAB-04A586068D50
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
-ms.openlocfilehash: 25cd374ef2b3026f5ac7242ee076c8593ce806da
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: d8da218e081b0c3da7a7590f232c8e604b98a790
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-2---architecture"></a>第 2 部-架構
 

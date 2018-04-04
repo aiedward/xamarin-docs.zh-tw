@@ -1,18 +1,17 @@
 ---
-title: "損耗裝置上偵錯"
-description: "本文說明如何偵錯損耗裝置上的 Xamarin.Android 損耗應用程式。"
-ms.topic: article
+title: 損耗裝置上偵錯
+description: 本文說明如何偵錯損耗裝置上的 Xamarin.Android 損耗應用程式。
 ms.prod: xamarin
 ms.assetid: 01668E4B-BB83-4C26-B23A-F788173FB823
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: c12764610d0fd9834914b8114818b2ccd7d7def0
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 3f3143dcda4017bbabfbd34a58a40665beea6f75
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="debug-on-a-wear-device"></a>損耗裝置上偵錯
 

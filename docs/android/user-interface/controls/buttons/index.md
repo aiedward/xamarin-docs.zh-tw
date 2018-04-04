@@ -1,18 +1,17 @@
 ---
-title: "按鈕"
-description: "實作使用者點選執行動作的 UI 項目"
-ms.topic: article
+title: 按鈕
+description: 實作使用者點選執行動作的 UI 項目
 ms.prod: xamarin
 ms.assetid: 4FBB7789-A8DA-4B8B-A46C-849181388A8D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/18/2017
-ms.openlocfilehash: 6026842383393fa894c19ead6e7f8350dc574cef
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a9221504f1eda589eee51096185d47d93335a7de
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="buttons"></a>按鈕
 

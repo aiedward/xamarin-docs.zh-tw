@@ -1,18 +1,17 @@
 ---
-title: "iOS 遊戲應用程式開發介面"
-description: "本文涵蓋 iOS 9，可用來改善 Xamarin.iOS 遊戲的圖形和音訊的功能所提供的新遊戲增強功能。"
-ms.topic: article
+title: iOS 遊戲應用程式開發介面
+description: 本文涵蓋 iOS 9，可用來改善 Xamarin.iOS 遊戲的圖形和音訊的功能所提供的新遊戲增強功能。
 ms.prod: xamarin
 ms.assetid: 958D38FD-9240-482E-9A42-D6671ED8F2B0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: d0a66d4cfdb3050c7ad791d24e24d6917a031ee1
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 34d3d6980819510a3390e2c30069818d6dfd721f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-gaming-apis"></a>iOS 遊戲應用程式開發介面
 
@@ -40,7 +39,7 @@ GameplayKit 包含數個，常見，例如遊戲玩的演算法：
 此外，GameplayKit 所需的建置組塊方法遊戲開發使用模組化架構中提供下列功能：
 
 - 處理複雜，程序性程式碼的狀態機器架構的系統在遊戲進行中。
-- 提供的工具隨機遊戲不可預測性，而不會造成偵錯問題。
+- 提供的工具隨機遊戲婧矔菛不可預測性，而不會造成偵錯問題。
 - 可重複使用、 元件化實體基礎架構。
 
 若要深入了解 GameplayKit，請參閱 Apple [Gameplaykit 程式設計指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/GameplayKit_Guide/index.html#//apple_ref/doc/uid/TP40015172)和[GameplayKit Framework 參考](https://developer.apple.com/library/prerelease/ios/documentation/GameplayKit/Reference/GameplayKit_Framework/index.html#//apple_ref/doc/uid/TP40015199)。

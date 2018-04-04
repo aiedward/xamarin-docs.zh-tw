@@ -1,18 +1,17 @@
 ---
-title: "在 Android 應用程式連結"
-description: "本指南將討論如何 Android 6.0 支援應用程式連結，可讓行動裝置應用程式回應 Url 在網站上的技術。 它將會討論哪些應用程式連結是、 如何實作應用程式連結，在 Android 6.0 應用程式，以及如何設定網站要授與權限的網域中的行動應用程式。"
-ms.topic: article
+title: 在 Android 應用程式連結
+description: 本指南將討論如何 Android 6.0 支援應用程式連結，可讓行動裝置應用程式回應 Url 在網站上的技術。 它將會討論哪些應用程式連結是、 如何實作應用程式連結，在 Android 6.0 應用程式，以及如何設定網站要授與權限的網域中的行動應用程式。
 ms.prod: xamarin
 ms.assetid: 48174E39-19FD-43BC-B54C-9AF11D4B1F91
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 78fef780728ba1c2a3b9978504058f7a386b0e7d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 2ef6b8044387d759e26d05c1468caaad7efb9bdc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="app-linking-in-android"></a>在 Android 應用程式連結
 
@@ -56,7 +55,7 @@ Android 處理應用程式連結到*意圖系統*&ndash;行動瀏覽器，當使
 若要設定之網站的 URI （或可能的 Uri 集合） 會對應至 Android 應用程式中的活動意圖篩選條件必須。 Xamarin.Android，在此關聯性藉由在裝飾的活動[IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)。 意圖篩選必須宣告下列資訊：
 
 * **`Intent.ActionView`** &ndash; 這會註冊意圖篩選，以回應要求，以檢視資訊
-* **`Categories`** &ndash;  意圖篩選應該註冊兩者 **[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)** 和 **[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)** 能夠正確處理網頁 URI。
+* **`Categories`** &ndash;  意圖篩選應該註冊兩者**[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)**和**[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)**能夠正確處理網頁 URI。
 * **`DataScheme`** &ndash; 必須宣告意圖篩選`http`及/或`https`。 這些是只有兩個有效的配置。
 * **`DataHost`** &ndash; 這是 Uri 源自的網域。
 * **`DataPathPrefix`** &ndash; 這是選擇性的網站上的資源路徑。

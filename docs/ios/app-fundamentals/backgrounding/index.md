@@ -1,17 +1,16 @@
 ---
 title: Backgrounding
-description: "背景處理或 backgrounding 是讓應用程式在前景執行另一個應用程式時，在背景中執行工作的程序。 本指南可做為背景處理在 iOS 中的簡介。"
-ms.topic: article
+description: 背景處理或 backgrounding 是讓應用程式在前景執行另一個應用程式時，在背景中執行工作的程序。 本指南可做為背景處理在 iOS 中的簡介。
 ms.prod: xamarin
 ms.assetid: F377440C-C5D9-4267-85D8-2C816E3A0300
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 2bba7c0908fb78ca199cc654adad645afaf47a02
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ae3e732008c6503f511dc4be9cad874ecfe1272d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="backgrounding"></a>Backgrounding
 

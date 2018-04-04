@@ -1,18 +1,17 @@
 ---
-title: "建立 Android 服務"
-description: "本指南討論 Xamarin.Android 服務，這是 Android 的元件，可讓不含作用中使用者介面進行工作。 服務會耗費大量時間的計算，下載檔案，播放音樂，例如在背景中執行的工作相當常用等等。 它說明適用於服務之不同案例，並顯示如何將它們實作，同時執行長時間執行背景工作，以及遠端程序呼叫中提供的介面。"
-ms.topic: article
+title: 建立 Android 服務
+description: 本指南討論 Xamarin.Android 服務，這是 Android 的元件，可讓不含作用中使用者介面進行工作。 服務會耗費大量時間的計算，下載檔案，播放音樂，例如在背景中執行的工作相當常用等等。 它說明適用於服務之不同案例，並顯示如何將它們實作，同時執行長時間執行背景工作，以及遠端程序呼叫中提供的介面。
 ms.prod: xamarin
 ms.assetid: BA371A59-6F7A-F62A-02FC-28253504ACC9
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/19/2018
-ms.openlocfilehash: 08392872037783e0caaef4f2b19127adbe95151b
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: 2e942d1085822fee935ae0f23f2253f23d49a43d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-android-services"></a>建立 Android 服務
 
@@ -45,7 +44,7 @@ Android 應用程式會啟動在至少一個下列四個主要元件：_活動_�
 
 * **繫結服務** &ndash; A_繫結服務_是有某些其他元件 （通常活動） 與它繫結的服務。 繫結的服務提供可讓繫結的元件和服務彼此互動的介面。 沒有更多的用戶端繫結至服務之後，Android 將會關閉服務。 
 
-* **`IntentService`** &ndash;  _`IntentService`_ 是特定子類別`Service`簡化服務建立和使用方式的類別。 `IntentService`要處理個別自發的呼叫。 不同於服務，可以同時處理多個呼叫，`IntentService`則更像_工作佇列處理器_&ndash;工作排和`IntentService`單一工作者執行緒上一次處理一個每項工作。 一般而言，`IntentService`未繫結至活動或片段。 
+* **`IntentService`** &ndash; _`IntentService`_是特定子類別`Service`簡化服務建立和使用方式的類別。 `IntentService`要處理個別自發的呼叫。 不同於服務，可以同時處理多個呼叫，`IntentService`則更像_工作佇列處理器_&ndash;工作排和`IntentService`單一工作者執行緒上一次處理一個每項工作。 一般而言，`IntentService`未繫結至活動或片段。 
 
 * **已啟動服務** &ndash; A_已啟動服務_是服務已啟動某些其他 Android 元件 （例如活動），並會在背景中執行進行持續，直到項目明確告知，若要停止服務。 不同於繫結的服務，啟動的服務並沒有直接繫結至它的任何用戶端。 基於這個理由，是設計啟動的服務，讓它們可能會依正常程序重新啟動視。
 

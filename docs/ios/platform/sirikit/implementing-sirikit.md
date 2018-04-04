@@ -1,18 +1,17 @@
 ---
-title: "實作 SiriKit"
-description: "本文涵蓋 Xamarin.iOS 應用程式中實作 SiriKit 支援所需的步驟。"
-ms.topic: article
+title: 實作 SiriKit
+description: 本文涵蓋 Xamarin.iOS 應用程式中實作 SiriKit 支援所需的步驟。
 ms.prod: xamarin
 ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 76787ecda1c2cd043b81482dcdbe3751d012ef74
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 5fdc05de19799ce7b553428c23f860186909bcbb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="implementing-sirikit"></a>實作 SiriKit
 
@@ -213,14 +212,14 @@ namespace MonkeyChat
 
 1. 在 web 瀏覽器中，瀏覽至[ http://developer.apple.com ](http://developer.apple.com)和登入您的帳戶。
 2. 按一下**憑證**，**識別碼**和**設定檔**。
-3. 選取**佈建的設定檔**選取**應用程式識別碼**，然後按一下 [  **+**  ] 按鈕。
+3. 選取**佈建的設定檔**選取**應用程式識別碼**，然後按一下 [ **+** ] 按鈕。
 4. 輸入**名稱**新設定檔。
 5. 輸入**套件組合識別碼**遵循 Apple 的命名建議。
 6. 向下捲動至**應用程式服務**區段中，選取**SiriKit**按一下**繼續**按鈕： 
 
     [![](implementing-sirikit-images/setup03.png "選取 SiriKit")](implementing-sirikit-images/setup03.png#lightbox)
 7. 驗證所有的設定，然後**送出**應用程式識別碼。
-8. 選取**佈建的設定檔** > **開發**，按一下   **+** 按鈕，選取**Apple ID**，然後按一下 **繼續**。
+8. 選取**佈建的設定檔** > **開發**，按一下  **+**按鈕，選取**Apple ID**，然後按一下 **繼續**。
 9. 按一下 選取**所有**，然後按一下 **繼續**。
 10. 按一下**全選**一次，然後按一下 **繼續**。
 11. 輸入**設定檔名稱**使用 Apple 的命名建議，請按一下 **繼續**。
@@ -462,16 +461,16 @@ namespace MonkeyChat
 
     [![](implementing-sirikit-images/plist01.png "加入屬性清單")](implementing-sirikit-images/plist01.png#lightbox) 
 2. 按兩下`AppIntentVocabulary.plist`檔案**方案總管 中**開啟進行編輯。
-3. 按一下 **+** 新增機碼，設定**名稱**至`ParameterVocabularies`和**類型**至`Array`:
+3. 按一下**+**新增機碼，設定**名稱**至`ParameterVocabularies`和**類型**至`Array`:
 
     [![](implementing-sirikit-images/plist02.png "將名稱設定為 ParameterVocabularies 和陣列類型")](implementing-sirikit-images/plist02.png#lightbox)
-4. 展開`ParameterVocabularies`按一下 **+** 按鈕，然後設定**類型**至`Dictionary`:
+4. 展開`ParameterVocabularies`按一下**+**按鈕，然後設定**類型**至`Dictionary`:
 
     [![](implementing-sirikit-images/plist03.png "將類型設為字典")](implementing-sirikit-images/plist03.png#lightbox)
-5. 按一下 **+** 若要加入新的金鑰，請設定**名稱**至`ParameterNames`和**類型**至`Array`:
+5. 按一下**+**若要加入新的金鑰，請設定**名稱**至`ParameterNames`和**類型**至`Array`:
 
     [![](implementing-sirikit-images/plist04.png "將名稱設定為 ParameterNames 和陣列類型")](implementing-sirikit-images/plist04.png#lightbox)
-6. 按一下 **+** 要加入的新金鑰**類型**的`String`和做為其中一個可用的參數名稱的值。 例如， `INStartWorkoutIntent.workoutName`:
+6. 按一下**+**要加入的新金鑰**類型**的`String`和做為其中一個可用的參數名稱的值。 例如， `INStartWorkoutIntent.workoutName`:
 
     [![](implementing-sirikit-images/plist05.png "INStartWorkoutIntent.workoutName 金鑰")](implementing-sirikit-images/plist05.png#lightbox)
 7. 新增`ParameterVocabulary`鍵`ParameterVocabularies`索引鍵**類型**的`Array`:
@@ -526,16 +525,16 @@ namespace MonkeyChat
 
     [![](implementing-sirikit-images/plist01w.png "加入新的 Info.plist")](implementing-sirikit-images/plist01w.png#lightbox) 
 2. 按兩下`AppIntentVocabulary.plist`檔案**方案總管 中**開啟進行編輯。
-3. 按一下 **+** 新增機碼，設定**名稱**至`ParameterVocabularies`和**類型**至`Array`:
+3. 按一下**+**新增機碼，設定**名稱**至`ParameterVocabularies`和**類型**至`Array`:
 
     [![](implementing-sirikit-images/plist02w.png "將名稱設定為 ParameterVocabularies 和陣列類型")](implementing-sirikit-images/plist02w.png#lightbox)
-4. 展開`ParameterVocabularies`按一下 **+** 按鈕，然後設定**類型**至`Dictionary`:
+4. 展開`ParameterVocabularies`按一下**+**按鈕，然後設定**類型**至`Dictionary`:
 
     [![](implementing-sirikit-images/plist03w.png "將類型設為字典")](implementing-sirikit-images/plist03w.png#lightbox)
-5. 按一下 **+** 若要加入新的金鑰，請設定**名稱**至`ParameterNames`和**類型**至`Array`:
+5. 按一下**+**若要加入新的金鑰，請設定**名稱**至`ParameterNames`和**類型**至`Array`:
 
     [![](implementing-sirikit-images/plist04w.png "將名稱設定為 ParameterNames 和陣列類型")](implementing-sirikit-images/plist04w.png#lightbox)
-6. 按一下 **+** 要加入的新金鑰**類型**的`String`和做為其中一個可用的參數名稱的值。 例如， `INStartWorkoutIntent.workoutName`:
+6. 按一下**+**要加入的新金鑰**類型**的`String`和做為其中一個可用的參數名稱的值。 例如， `INStartWorkoutIntent.workoutName`:
 
     [![](implementing-sirikit-images/plist05w.png "INStartWorkoutIntent.workoutName 金鑰")](implementing-sirikit-images/plist05w.png#lightbox)
 7. 新增`ParameterVocabulary`鍵`ParameterVocabularies`索引鍵**類型**的`Array`:

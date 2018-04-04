@@ -1,18 +1,17 @@
 ---
-title: "實作檢視"
-description: "Xamarin.Forms 自訂使用者介面控制項應衍生自檢視類別，用來放置版面配置和螢幕上的控制項。 本文示範如何建立自訂轉譯器用來顯示預覽視訊資料流裝置的相機中的 Xamarin.Forms 自訂控制項。"
-ms.topic: article
+title: 實作檢視
+description: Xamarin.Forms 自訂使用者介面控制項應衍生自檢視類別，用來放置版面配置和螢幕上的控制項。 本文示範如何建立自訂轉譯器用來顯示預覽視訊資料流裝置的相機中的 Xamarin.Forms 自訂控制項。
 ms.prod: xamarin
 ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 30ee40272b5f7a6f5863dccf4dcae7431f6f536f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e84427ba576528ed76f5885605c423bf6499d20c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="implementing-a-view"></a>實作檢視
 

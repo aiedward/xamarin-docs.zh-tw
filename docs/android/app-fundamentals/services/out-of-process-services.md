@@ -1,18 +1,17 @@
 ---
-title: "遠端處理序中執行 Android 的服務"
-description: "一般而言，Android 應用程式中的所有元件將會都執行相同的程序。 Android 的服務是值得注意的例外狀況，這可以設定在他們自己的程序中執行並與其他應用程式，包括其他 Android 開發人員共用。 本指南將討論如何建立及使用 xamarin Android 的遠端服務。"
-ms.topic: article
+title: 遠端處理序中執行 Android 的服務
+description: 一般而言，Android 應用程式中的所有元件將會都執行相同的程序。 Android 的服務是值得注意的例外狀況，這可以設定在他們自己的程序中執行並與其他應用程式，包括其他 Android 開發人員共用。 本指南將討論如何建立及使用 xamarin Android 的遠端服務。
 ms.prod: xamarin
 ms.assetid: 27A2E972-A690-480B-B31D-5EF1F74F673C
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: ebbb4b527b27b87bb6357723978e730304658720
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: 57be8187509ad7607c38ea17233e9ab5d25b41f1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="running-android-services-in-remote-processes"></a>遠端處理序中執行 Android 的服務
 

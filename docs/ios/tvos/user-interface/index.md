@@ -1,18 +1,17 @@
 ---
-title: "使用者介面"
-description: "Xamarin.tvOS 處理時，一般使用者經驗 (UX) 涵蓋範圍包括使用者介面 (UI) 控制項，使用 Xcode 的介面產生器及 UX 設計原則。"
-ms.topic: article
+title: 使用者介面
+description: Xamarin.tvOS 處理時，一般使用者經驗 (UX) 涵蓋範圍包括使用者介面 (UI) 控制項，使用 Xcode 的介面產生器及 UX 設計原則。
 ms.prod: xamarin
 ms.assetid: 8CF80705-B36A-42D6-B66B-52BC8586FA5A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: c77cc6f9954c5fb7d1a303748efc5c3182a0c138
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a30bd02a9545717175daf1381730afce6b72218d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="user-interface"></a>使用者介面
 

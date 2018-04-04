@@ -1,18 +1,17 @@
 ---
-title: "應用程式散發概觀"
-description: "這份文件可供 Xamarin.tvOS 應用程式的通訊技術的概觀，並做為更詳細的文件在主題上的指標。"
-ms.topic: article
+title: 應用程式散發概觀
+description: 這份文件可供 Xamarin.tvOS 應用程式的通訊技術的概觀，並做為更詳細的文件在主題上的指標。
 ms.prod: xamarin
 ms.assetid: D5E0F446-C083-4E21-9788-FC84D32D00C4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 3e96e98f90c7f4c849a9f679b2de819ccaabfec0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e5be0bef158c87fe06516d9a58e34c741e6e14b1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="app-distribution-overview"></a>應用程式散發概觀
 

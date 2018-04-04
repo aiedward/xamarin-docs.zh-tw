@@ -1,18 +1,17 @@
 ---
-title: "在 MonoGame 中繪製頂點與 3D 圖形"
-description: "MonoGame 支援使用陣列的頂點定義以每個點為基礎呈現 3D 物件的方式。 使用者可以利用頂點陣列，以建立動態的幾何，實作特殊效果，改善其呈現透過挑選的效率。"
-ms.topic: article
+title: 在 MonoGame 中繪製頂點與 3D 圖形
+description: MonoGame 支援使用陣列的頂點定義以每個點為基礎呈現 3D 物件的方式。 使用者可以利用頂點陣列，以建立動態的幾何，實作特殊效果，改善其呈現透過挑選的效率。
 ms.prod: xamarin
 ms.assetid: 932AF5C2-884D-46E1-9455-4C359FD7C092
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 1b139e460a4841f2174df166bf50bb276802d8d3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 25a05bcd094011042b3dc33a1b837460d5893be0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="drawing-3d-graphics-with-vertices-in-monogame"></a>在 MonoGame 中繪製頂點與 3D 圖形
 

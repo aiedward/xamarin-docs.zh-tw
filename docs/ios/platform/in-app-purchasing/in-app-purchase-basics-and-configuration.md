@@ -1,17 +1,16 @@
 ---
-title: "在應用程式內購買基本概念和組態"
-ms.topic: article
+title: 在應用程式內購買基本概念和組態
 ms.prod: xamarin
 ms.assetid: 11FB7F02-41B3-2B34-5A4F-69F12897FE10
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b622da2d6d9777fc200a091ccf003369b1c2e8d1
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: c08d27ce2f5d41b7de1d08ea73232e92f9fa8144
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="in-app-purchase-basics-and-configuration"></a>在應用程式內購買基本概念和組態
 

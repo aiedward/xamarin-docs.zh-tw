@@ -1,18 +1,17 @@
 ---
-title: "可攜式類別庫簡介"
-description: "本文介紹可攜式類別程式庫 (PCL) 專案，並逐步解說建立和使用 Visual Studio 中的 PCL 專案，適用於 Mac 和 Visual Studio。"
-ms.topic: article
+title: 可攜式類別庫簡介
+description: 本文介紹可攜式類別程式庫 (PCL) 專案，並逐步解說建立和使用 Visual Studio 中的 PCL 專案，適用於 Mac 和 Visual Studio。
 ms.prod: xamarin
 ms.assetid: 76ba8f7a-9b6e-40f5-9a29-ff1274ece4f2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 5dd77232dc992880b18393c740b54c7784e4d049
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: feef0a4083d2455cc189ddab6ed22762c044d848
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-portable-class-libraries"></a>可攜式類別庫簡介
 

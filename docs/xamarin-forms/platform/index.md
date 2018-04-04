@@ -1,18 +1,17 @@
 ---
-title: "平台功能"
-description: "利用 xamarin.forms 特定平台功能"
-ms.topic: article
+title: 平台功能
+description: 利用 xamarin.forms 特定平台功能
 ms.prod: xamarin
 ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/20/2017
-ms.openlocfilehash: 950cc4a8611b05c22825ef89a85827fa0d3e5f7b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 454969d8a59128423d632452033b8ba84ee0bc98
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="platform-features"></a>平台功能
 
@@ -42,7 +41,7 @@ Xamarin.Forms 現在具有 macOS 應用程式的預覽支援。
 
 原生格式允許 Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-衍生頁面，以供原生 Xamarin.iOS、 Xamarin.Android 和通用 Windows 平台 (UWP) 專案。
 
-## <a name="native-viewsnative-viewsindexmd"></a>[原生的檢視](native-views/index.md)
+## <a name="native-viewsnative-viewsindexmd"></a>[原生檢視](native-views/index.md)
 
 原生 iOS、 Android 和通用 Windows 平台從檢視可以從 Xamarin.Forms 直接參考。 屬性和事件處理常式可以設定在原生的檢視，以及他們可以與互動 Xamarin.Forms 檢視。
 
@@ -50,7 +49,7 @@ Xamarin.Forms 現在具有 macOS 應用程式的預覽支援。
 
 平台特性可讓您使用才有特定的平台，而不需要自訂轉譯器或影響的功能。
 
-## <a name="pluginspluginsmd"></a>[增益集](plugins.md)
+## <a name="pluginspluginsmd"></a>[外掛程式](plugins.md)
 
 有各種不同的開放原始碼外掛程式適用於 Github、 Nuget 和 Xamarin 元件存放區，協助延長 Xamarin.Forms 應用程式。
 

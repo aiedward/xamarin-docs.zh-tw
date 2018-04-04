@@ -1,17 +1,16 @@
 ---
-title: "Android 損耗控制項"
-ms.topic: article
+title: Android 損耗控制項
 ms.prod: xamarin
 ms.assetid: 5B62A5F8-5E55-4B3C-BFC4-E21CDB27C08B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 867246b3784fb244171058c7f4c6ec54092e813b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2adae250d2f59e8eee0558a92c3845c5592aa01a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-wear-controls"></a>Android 損耗控制項
 

@@ -1,17 +1,16 @@
 ---
-title: "應用程式使用者介面當地語系化"
-ms.topic: article
+title: 應用程式使用者介面當地語系化
 ms.prod: xamarin
 ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 697edde44a5d28ef24cb92a4d06a5c61609b079e
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: f94959062f01a363319494eb510f1a6e42fe36b6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="localization"></a>當地語系化
 

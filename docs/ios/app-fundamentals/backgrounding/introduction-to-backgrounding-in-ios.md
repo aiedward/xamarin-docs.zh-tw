@@ -1,16 +1,15 @@
 ---
-title: "在 iOS 中 Backgrounding 簡介"
-ms.topic: article
+title: 在 iOS 中 Backgrounding 簡介
 ms.prod: xamarin
 ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: c0369fe52897a2557a92fd56ebcd816b8427faf7
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 3a82a34a37e53e0c6922ef47717a4100576c2277
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>在 iOS 中 Backgrounding 簡介
 

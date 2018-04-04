@@ -1,18 +1,17 @@
 ---
-title: "Xamarin.Mac 登錄器"
-description: "本文件說明 Xamarin.Mac 註冊機構和其不同的使用方式設定的用途。"
-ms.topic: article
+title: Xamarin.Mac 登錄器
+description: 本文件說明 Xamarin.Mac 註冊機構和其不同的使用方式設定的用途。
 ms.prod: xamarin
 ms.assetid: 7CAAA6B7-D654-4AD3-BAEC-9DD01210978A
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: 8d5061850a4cb73a81e1bf4c93583eb5b6eeefec
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4b70ac2271b23b54e7942fdc870e0f49548e6154
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinmac-registrar"></a>Xamarin.Mac 登錄器
 

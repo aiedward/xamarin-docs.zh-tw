@@ -1,17 +1,16 @@
 ---
-title: "第 6 章的摘要。 按一下按鈕"
-ms.topic: article
+title: 第 6 章的摘要。 按一下按鈕
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D4F9C429-A6CF-40FA-AC68-3F149307A5F9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 972d0d76fd55981ebca70acce69533d98c3fc0b5
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: a45d1f1663b141912744e83763e7d618866159d7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-6-button-clicks"></a>第 6 章的摘要。 按一下按鈕
 

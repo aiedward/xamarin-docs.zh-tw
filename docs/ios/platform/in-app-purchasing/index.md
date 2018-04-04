@@ -1,17 +1,16 @@
 ---
-title: "App 內購買"
-description: "數位產品和服務使用存放區套件應用程式開發介面，可以販售 iOS 應用程式。 建立和管理在 iTunes Connect 入口網站中的產品。 Apple 管理交易處理，並核准所有產品之前它們可以銷售，以及對 （目前 30%) 的每個交易的費用。 Apple 要求您使用應用程式中的任何數位銷售應用程式內購買，但無法用於實體的貨品或非數位服務的銷售。 可能會遭到拒絕時，會提供替代的付款選項數位產品和服務的應用程式。 本文件說明如何設定應用程式使用市集套件，並提供最常見的應用程式內購買案例的 Xamarin.iOS 範例。"
-ms.topic: article
+title: App 內購買
+description: 數位產品和服務使用存放區套件應用程式開發介面，可以販售 iOS 應用程式。 建立和管理在 iTunes Connect 入口網站中的產品。 Apple 管理交易處理，並核准所有產品之前它們可以銷售，以及對 （目前 30%) 的每個交易的費用。 Apple 要求您使用應用程式中的任何數位銷售應用程式內購買，但無法用於實體的貨品或非數位服務的銷售。 可能會遭到拒絕時，會提供替代的付款選項數位產品和服務的應用程式。 本文件說明如何設定應用程式使用市集套件，並提供最常見的應用程式內購買案例的 Xamarin.iOS 範例。
 ms.prod: xamarin
 ms.assetid: B41929D8-47E4-466D-1F09-6CC3C09C83B2
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: af8eb556215679bab2da8f54e8231f7d7d3ed418
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7a8dec6051caeba55c45df29c085ecfcddd160d2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="in-app-purchasing"></a>App 內購買
 

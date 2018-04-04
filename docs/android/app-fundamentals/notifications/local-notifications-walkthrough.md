@@ -1,18 +1,17 @@
 ---
-title: "逐步解說-Xamarin.Android 中使用本機的通知"
-description: "本逐步解說示範如何在 Xamarin.Android 應用程式中使用本機的通知。 它會示範建立和發佈本機通知的基本概念。 當使用者按一下通知區域中的通知時，它會啟動第二個活動。"
-ms.topic: article
+title: 逐步解說-Xamarin.Android 中使用本機的通知
+description: 本逐步解說示範如何在 Xamarin.Android 應用程式中使用本機的通知。 它會示範建立和發佈本機通知的基本概念。 當使用者按一下通知區域中的通知時，它會啟動第二個活動。
 ms.prod: xamarin
 ms.assetid: D8C6C9E2-3282-49D1-A2F6-78A4F3306E29
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/30/2018
-ms.openlocfilehash: b8642a1c96ee525fbd6950616fbc6da0ad0e2337
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a2ca3755e3201263584447ba47ec36d2096386da
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>逐步解說-Xamarin.Android 中使用本機的通知
 

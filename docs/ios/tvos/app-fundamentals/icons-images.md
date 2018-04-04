@@ -1,18 +1,17 @@
 ---
-title: "使用圖示和映像"
-description: "本文涵蓋設計和使用圖示和 Xamarin.tvOS 應用程式內的映像。"
-ms.topic: article
+title: 使用圖示和映像
+description: 本文涵蓋設計和使用圖示和 Xamarin.tvOS 應用程式內的映像。
 ms.prod: xamarin
 ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 927a77d5671e877e93e5375b61220ac595891179
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: c888ecf3d7e0f21734f2b89176eed56bf778dbf9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-icons-and-images"></a>使用圖示和映像
 
@@ -122,7 +121,7 @@ tvOS 運作方式與分層映像中，格式如下：
 
 [![](icons-images-images/layered03.png "視差預覽程式")](icons-images-images/layered03.png#lightbox)
 
-同時預覽分層映像，您可以使用滑鼠來將影像旋轉，以及預覽視差效果。 使用 **+**  （加號） 和 **-**  （減號） 按鈕來新增和移除圖層。
+同時預覽分層映像，您可以使用滑鼠來將影像旋轉，以及預覽視差效果。 使用**+** （加號） 和**-** （減號） 按鈕來新增和移除圖層。
 
 在建立新的分層式映像時，將它 LSR 格式匯出，並包含在您的應用程式套件組合。
 

@@ -1,18 +1,17 @@
 ---
-title: "應用程式圖示"
-description: "本文涵蓋包括和管理 Xamarin.iOS 應用程式中要做為應用程式圖示的影像資產。"
-ms.topic: article
+title: 應用程式圖示
+description: 本文涵蓋包括和管理 Xamarin.iOS 應用程式中要做為應用程式圖示的影像資產。
 ms.prod: xamarin
 ms.assetid: B7791574-4A0F-4CB6-8C18-36D40B5C91EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: 68372d90b0567c662f0ae43e315663832f1f769b
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 3bf9286fe641d836f0877bfe2e17263bf9d7356e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="application-icons"></a>應用程式圖示
 

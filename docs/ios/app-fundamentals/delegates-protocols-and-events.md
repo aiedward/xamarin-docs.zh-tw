@@ -1,18 +1,17 @@
 ---
-title: "事件、 通訊協定與委派"
-description: "這篇文章會提供用來接收回撥，並填入資料的使用者介面控制項的索引鍵的 iOS 技術。 這些技術是事件、 通訊協定，以及委派。 這篇文章解釋每一種是，以及每個從 C# 的使用方式。 它會示範如何 Xamarin.iOS 使用 iOS 控制項來公開熟悉.NET 事件，以及如何 Xamarin.iOS Objective C 的概念，例如通訊協定與委派提供支援 （OBJECTIVE-C 委派不應該與 C# 委派混淆）。 本文也會提供顯示通訊協定的使用方式 – 同時做為基礎的 OBJECTIVE-C 委派和非委派案例中的範例。"
-ms.topic: article
+title: 事件、 通訊協定與委派
+description: 這篇文章會提供用來接收回撥，並填入資料的使用者介面控制項的索引鍵的 iOS 技術。 這些技術是事件、 通訊協定，以及委派。 這篇文章解釋每一種是，以及每個從 C# 的使用方式。 它會示範如何 Xamarin.iOS 使用 iOS 控制項來公開熟悉.NET 事件，以及如何 Xamarin.iOS Objective C 的概念，例如通訊協定與委派提供支援 （OBJECTIVE-C 委派不應該與 C# 委派混淆）。 本文也會提供顯示通訊協定的使用方式 – 同時做為基礎的 OBJECTIVE-C 委派和非委派案例中的範例。
 ms.prod: xamarin
 ms.assetid: 7C07F0B7-9000-C540-0FC3-631C29610447
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 69296992c503d536a4160f172022c7ce5578812f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4c2888eb2d0b1ae79e10ca764e7bf14a1afb6c59
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="events-protocols-and-delegates"></a>事件、 通訊協定與委派
 

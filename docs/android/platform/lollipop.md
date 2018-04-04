@@ -1,18 +1,17 @@
 ---
-title: "棒棒糖符號功能"
-description: "本文章提供 Android 5.0 （棒棒糖符號） 中導入的新功能的高階概觀。 這些功能包括新的使用者介面樣式，稱為材料佈景主題，以及新支援的功能，例如動畫、 檢視陰影和 drawable 濃淡。 Android 5.0 也包含增強的通知、 兩個新的 UI widgets、 新的工作排程器和改善儲存體、 網路、 連接及多媒體功能少數幾個新的 Api。"
-ms.topic: article
+title: 棒棒糖符號功能
+description: 本文章提供 Android 5.0 （棒棒糖符號） 中導入的新功能的高階概觀。 這些功能包括新的使用者介面樣式，稱為材料佈景主題，以及新支援的功能，例如動畫、 檢視陰影和 drawable 濃淡。 Android 5.0 也包含增強的通知、 兩個新的 UI widgets、 新的工作排程器和改善儲存體、 網路、 連接及多媒體功能少數幾個新的 Api。
 ms.prod: xamarin
 ms.assetid: 1CE99CFE-FAAC-49FC-AEDC-1A21FC6E946E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: de6829a0a698133ad9002ead1cd7c534a30b1f6c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: cdef611525abbe4f066959c0ac56380b1c617747
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="lollipop-features"></a>棒棒糖符號功能
 

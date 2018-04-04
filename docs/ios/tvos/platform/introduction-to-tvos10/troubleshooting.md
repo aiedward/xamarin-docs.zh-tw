@@ -1,18 +1,17 @@
 ---
-title: "疑難排解"
-description: "這篇文章提供數個疑難排解秘訣 tvOS 10 Xamarin.tvOS 應用程式中使用。"
-ms.topic: article
+title: 疑難排解
+description: 這篇文章提供數個疑難排解秘訣 tvOS 10 Xamarin.tvOS 應用程式中使用。
 ms.prod: xamarin
 ms.assetid: EA5564BB-C415-49A2-B70C-3DBF5E0F3FAB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d45b9ed04d3ae4815d408d82068e588a2cbcc6f8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8875e658ead17820655a2401079627875c14958b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting"></a>疑難排解
 

@@ -1,18 +1,17 @@
 ---
-title: "iOS 平台功能"
-description: "將 iOS 特定功能加入至 Xamarin.Forms 應用程式"
-ms.topic: article
+title: iOS 平台功能
+description: 將 iOS 特定功能加入至 Xamarin.Forms 應用程式
 ms.prod: xamarin
 ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/13/2016
-ms.openlocfilehash: 708e3269888b5e6a095c99f1a09b5a8034cbd5a2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ef0aad7af3636911fba70667857ee9fbcf17853f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-platform-features"></a>iOS 平台功能
 

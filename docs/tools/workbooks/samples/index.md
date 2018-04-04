@@ -1,6 +1,5 @@
 ---
-title: "範例活頁簿"
-ms.topic: article
+title: 範例活頁簿
 ms.prod: xamarin
 ms.assetid: DE1609F8-0D39-4EA0-8666-0468FCF77ACC
 ms.technology: xamarin-cross-platform
@@ -8,11 +7,11 @@ ms.custom: xamu-video
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: 9fcfe728727448e320744ee7fca07f46ea56935e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 377dca2f7912918bdbde350046266f54592fbda8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="sample-workbooks"></a>範例活頁簿
 

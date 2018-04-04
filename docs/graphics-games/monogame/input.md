@@ -1,18 +1,17 @@
 ---
-title: "MonoGame 遊戲台參考"
-description: "遊戲台是標準、 跨平台的類別來存取在 MonoGame 輸入的裝置。"
-ms.topic: article
+title: MonoGame 遊戲台參考
+description: 遊戲台是標準、 跨平台的類別來存取在 MonoGame 輸入的裝置。
 ms.prod: xamarin
 ms.assetid: 1F71F3E8-2397-4C6A-8163-6731ECFB7E03
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 14a38c07b2ae5552cd9fb67d0cec581eafbf61cb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 37e6b0a6365b1e93192c0eaad4fd3975c3cbf010
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="monogame-gamepad-reference"></a>MonoGame 遊戲台參考
 

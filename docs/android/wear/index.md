@@ -1,18 +1,17 @@
 ---
 title: Android Wear
-description: "建置 Android 穿戴裝置的應用程式。"
-ms.topic: article
+description: 建置 Android 穿戴裝置的應用程式。
 ms.prod: xamarin
 ms.assetid: 3BE4A128-2D88-4500-9E48-20375EA99A49
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/16/2018
-ms.openlocfilehash: 31114df0b631aea909e82f3a8b836d5ef922d2c1
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: ec8ed32eba7d8341904f800d5c174235dc25388c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-wear"></a>Android Wear
 

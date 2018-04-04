@@ -1,18 +1,17 @@
 ---
-title: "在 監看式裝置上測試"
-description: "部署您的 Apple Watch 上測試應用程式"
-ms.topic: article
+title: 在 監看式裝置上測試
+description: 部署您的 Apple Watch 上測試應用程式
 ms.prod: xamarin
 ms.assetid: A72A7D38-FAE8-4DD2-843D-54B74C5078D7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 211f8c7066e86dac3a8351b913da0185093dcb70
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d1d00a4d561551435e7d2333520dc614a79dcad3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="testing-on-watch-devices"></a>在 監看式裝置上測試
 
@@ -26,7 +25,7 @@ ms.lasthandoff: 03/09/2018
 
 ## <a name="devices"></a>裝置
 
-測試上實際的 iPhone 或 iPad 的 iOS 應用程式永遠要求開發人員中心註冊裝置。 裝置清單中看起來像這樣 (按一下加號 **+** 新增新的裝置):
+測試上實際的 iPhone 或 iPad 的 iOS 應用程式永遠要求開發人員中心註冊裝置。 裝置清單中看起來像這樣 (按一下加號**+**新增新的裝置):
 
 ![](device-images/devices-sml.png "裝置清單中看起來像這樣")
 

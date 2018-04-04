@@ -1,18 +1,17 @@
 ---
 title: AbsoluteLayout
-description: "若要建立像素完美的 Ui 使用 AbsoluteLayout。"
-ms.topic: article
+description: 若要建立像素完美的 Ui 使用 AbsoluteLayout。
 ms.prod: xamarin
 ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 90f1394103b5a3996029355a8ef260817b14a697
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d07026fbcc43a43a9f26d85ad15d5a4e3165e2ef
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="absolutelayout"></a>AbsoluteLayout
 

@@ -1,17 +1,16 @@
 ---
-title: "活頁簿安裝與需求"
-description: "如何下載、 安裝及使用 Xamarin 的活頁簿。"
-ms.topic: article
+title: 活頁簿安裝與需求
+description: 如何下載、 安裝及使用 Xamarin 的活頁簿。
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: bf3d675224a1e1696d4ce526fa42260d2102aa7d
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 68cac91a9b430d2abd138c0bb8bd334b65986329
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="workbooks-installation-and-requirements"></a>活頁簿安裝與需求
 
@@ -61,7 +60,7 @@ ms.lasthandoff: 03/16/2018
 請務必附加活頁簿用戶端記錄檔：
 
 - Mac: `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
-- Windows: `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
+- Windows：`%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
 1.4.x 也提供功能的能力，從主功能表中選取記錄檔中搜尋 (macOS) 或檔案總管 (Windows) 直接：
 
@@ -70,7 +69,7 @@ ms.lasthandoff: 03/16/2018
 #### <a name="log-paths-for-workbooks-13-and-earlier"></a>活頁簿 1.3 及更早版本的記錄檔路徑：
 
 - Mac: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
-- Windows: `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
+- Windows：`%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
 ### <a name="platform-version-information"></a>平台版本資訊
 

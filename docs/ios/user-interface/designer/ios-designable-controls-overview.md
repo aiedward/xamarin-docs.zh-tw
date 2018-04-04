@@ -1,18 +1,17 @@
 ---
-title: "IOS 的 Xamarin 設計工具中的自訂控制項"
-description: "適用於 iOS Xamarin 設計工具支援您的專案中建立或從外部來源，例如 Xamarin 元件存放區參考轉譯自訂控制項。"
-ms.topic: article
+title: IOS 的 Xamarin 設計工具中的自訂控制項
+description: 適用於 iOS Xamarin 設計工具支援您的專案中建立或從外部來源，例如 Xamarin 元件存放區參考轉譯自訂控制項。
 ms.prod: xamarin
 ms.assetid: D8F07D63-B006-4050-9D1B-AC6FCDA71B99
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 83ec11ab6a17717dd9556122745afc8d87959186
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 113fab2fd0d1a055d566606885cefbafe3185529
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>IOS 的 Xamarin 設計工具中的自訂控制項
 

@@ -1,18 +1,17 @@
 ---
-title: "XAML 標記延伸"
-description: "擴充屬性會設定從哪一個 XAML 來源的範圍"
-ms.topic: article
+title: XAML 標記延伸
+description: 擴充屬性會設定從哪一個 XAML 來源的範圍
 ms.prod: xamarin
 ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 11889115b65608c750690c33052a9c86f7081e25
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b81bc4b31edd1d8b8f5f43f97885c38e889dd32c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xaml-markup-extensions"></a>XAML 標記延伸
 

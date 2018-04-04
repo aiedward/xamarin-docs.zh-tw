@@ -1,17 +1,16 @@
 ---
-title: "新的搜尋應用程式開發介面"
-description: "本文涵蓋使用 iOS 9 所提供的新應用程式搜尋 Api 可讓使用者搜尋的資訊及 Xamarin.iOS 應用程式內的功能。"
-ms.topic: article
+title: 新的搜尋應用程式開發介面
+description: 本文涵蓋使用 iOS 9 所提供的新應用程式搜尋 Api 可讓使用者搜尋的資訊及 Xamarin.iOS 應用程式內的功能。
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 6ec8cb9b6fdb391afcb8f9baaa641da5aec38f6d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5dcd3d9665befaa82fd0f5677a4a662f633ed45b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="new-search-apis"></a>新的搜尋應用程式開發介面
 

@@ -1,18 +1,17 @@
 ---
-title: "資源限定詞和視覺效果選項"
-description: "本主題說明如何定義某些辨識符號值進行比對時，才會使用的資源。 簡單的範例是語言限定字串資源。 與其他替代資源定義要用於其他語言，可以做為預設值，定義字串資源。 可以限定的所有資源類型，包括版面配置本身。"
-ms.topic: article
+title: 資源限定詞和視覺效果選項
+description: 本主題說明如何定義某些辨識符號值進行比對時，才會使用的資源。 簡單的範例是語言限定字串資源。 與其他替代資源定義要用於其他語言，可以做為預設值，定義字串資源。 可以限定的所有資源類型，包括版面配置本身。
 ms.prod: xamarin
 ms.assetid: 2111C18A-3EDA-3787-25E1-3869FF4BE441
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/29/2018
-ms.openlocfilehash: bff6d917fc4ce65daed329f15d6648bbfe0dd069
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: bc9eb145b6d9ed7bd441d625f533c5cbbd87fccd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>資源限定詞和視覺效果選項
 

@@ -1,18 +1,17 @@
 ---
-title: "Xamarin.iOS 中的通知"
-description: "本節說明如何實作 Xamarin.iOS 在本機的通知。 它會說明 iOS 通知的各種 UI 項目，並討論應用程式開發介面的涉及建立和顯示通知。"
-ms.topic: article
+title: Xamarin.iOS 中的通知
+description: 本節說明如何實作 Xamarin.iOS 在本機的通知。 它會說明 iOS 通知的各種 UI 項目，並討論應用程式開發介面的涉及建立和顯示通知。
 ms.prod: xamarin
 ms.assetid: 5BB76915-5DB0-48C7-A267-FA9F7C50793E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f1b36d3ba8601d125d0a17173efb12c249224e78
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: d4dd759f52e52f417441f69e6417fab536daf6d3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="notifications-in-xamarinios"></a>Xamarin.iOS 中的通知
 

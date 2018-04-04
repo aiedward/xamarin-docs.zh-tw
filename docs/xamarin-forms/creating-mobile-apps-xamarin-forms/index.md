@@ -1,18 +1,17 @@
 ---
 title: 使用 Xamarin.Forms 活頁簿第一版中建立行動裝置應用程式
 description: 了解 Xamarin.Forms，Charles Petzold 建立行動應用程式書電子版。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: CDE99818-689B-4376-9DC4-C4102AC0F931
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/03/2016
-ms.openlocfilehash: caee0d685838f7c0a54e19611fdf72df5730c037
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 6e98adc4cc9dbf1ef6483d552d859b4925d51fe9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book-first-edition"></a>使用 Xamarin.Forms 活頁簿第一版中建立行動裝置應用程式
 

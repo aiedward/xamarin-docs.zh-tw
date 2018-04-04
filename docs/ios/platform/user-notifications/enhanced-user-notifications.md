@@ -1,18 +1,17 @@
 ---
-title: "加強的使用者通知"
-description: "本文涵蓋的所有使用者通知已經過增強，iOS 10，以及如何在 Xamarin.iOS 應用程式中使用它們的方式。"
-ms.topic: article
+title: 加強的使用者通知
+description: 本文涵蓋的所有使用者通知已經過增強，iOS 10，以及如何在 Xamarin.iOS 應用程式中使用它們的方式。
 ms.prod: xamarin
 ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 50553cb1dc5f7ea782c0f13e32f60d7b6ce3e181
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 9fd3ff17dc9af3fd30a7d5b31e8cea7ff8669a51
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="enhanced-user-notifications"></a>加強的使用者通知
 
@@ -169,7 +168,7 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 2. 切換至**來源**檢視： 
 
     [![](enhanced-user-notifications-images/setup01.png "原始碼檢視")](enhanced-user-notifications-images/setup01.png#lightbox)
-3. 按一下 **+** 按鈕即可加入新的金鑰。
+3. 按一下**+**按鈕即可加入新的金鑰。
 4. 輸入`aps-environment`如**屬性**，保留**類型**為`String`並輸入 `development`或`production`如**值**: 
 
     [![](enhanced-user-notifications-images/setup02.png "Aps 環境屬性")](enhanced-user-notifications-images/setup02.png#lightbox)
@@ -178,7 +177,7 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 按兩下`Entitlements.plist`檔案**方案總管 中**開啟進行編輯。
-3. 按一下 **+** 按鈕即可加入新的金鑰。
+3. 按一下**+**按鈕即可加入新的金鑰。
 4. 輸入`aps-environment`如**屬性**，保留**類型**為`String`並輸入 `development`或`production`如**值**: 
 
     [![](enhanced-user-notifications-images/setup02w.png "Aps 環境屬性")](enhanced-user-notifications-images/setup02.png#lightbox)

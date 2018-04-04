@@ -1,25 +1,24 @@
 ---
-title: "平台功能"
-description: "索引鍵的 macOS 平台的元件"
-ms.topic: article
+title: 平台功能
+description: 索引鍵的 macOS 平台的元件
 ms.prod: xamarin
 ms.assetid: 37451F65-672A-4512-8DDD-06CCDE9E5A12
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 3e18863ae91e76325a088c83fc2c11b9d6fa1125
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2bebc42cd3b5db7dba20066e90f294e621b1e4ac
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="platform-features"></a>平台功能
 
 本節中的文件涵蓋使用 macOS Xamarin.Mac 應用程式中的金鑰、 平台專屬的功能。
 
 
-## <a name="introduction-to-macos-sierramacplatformintroduction-to-macos-sierraindexmd"></a>[MacOS 利也簡介](~/mac/platform/introduction-to-macos-sierra/index.md)
+## <a name="introduction-to-macos-sierramacplatformintroduction-to-macos-sierraindexmd"></a>[macOS Sierra 的簡介](~/mac/platform/introduction-to-macos-sierra/index.md)
 
 macOS 利也是最新形態 Apple 桌面作業系統的 for mac。 本文件涵蓋使用 Mac OS X El Capitan 以及如何實作它們 Xamarin.Mac 應用程式中的變更。
 
@@ -33,7 +32,7 @@ macOS 利也是最新形態 Apple 桌面作業系統的 for mac。 本文件涵�
 OpenTK (開啟 Toolkit) 是進階、 低階 C# 程式庫，使處理 OpenGL、 OpenCL 與 OpenAL 更容易。 OpenTK 可以用於遊戲、 科學應用程式或其他專案需要 3D 圖形、 聲音或計算功能。 本文提供使用 OpenTK Xamarin.Mac 應用程式中的簡介。
 
 
-## <a name="introduction-to-storyboardsmacplatformstoryboardsindexmd"></a>[分鏡腳本的簡介](~/mac/platform/storyboards/index.md)
+## <a name="introduction-to-storyboardsmacplatformstoryboardsindexmd"></a>[Storyboard 簡介](~/mac/platform/storyboards/index.md)
 
 分鏡腳本可讓您開發使用者介面為 Xamarin.Mac 應用程式不只會包含視窗定義和控制項，但也包含不同的視窗之間的連結 (透過 segues) 和檢視狀態。 本文提供將分鏡腳本 Xamarin.Mac 應用程式中的簡介。
 

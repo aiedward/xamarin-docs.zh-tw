@@ -1,17 +1,16 @@
 ---
-title: "在 Android 上回呼"
-ms.topic: article
+title: 在 Android 上回呼
 ms.prod: xamarin
 ms.assetid: F3A7A4E6-41FE-4F12-949C-96090815C5D6
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: f0a36549627c77887c8d6ba926fd7fd2613b41ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 72786ac4bceca2635747ebcc844a98b0ce60383f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="callbacks-on-android"></a>在 Android 上回呼
 

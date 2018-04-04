@@ -1,18 +1,17 @@
 ---
 title: XAML 標準 （預覽） 控制項
 description: 如何開始瀏覽 Xamarin.Forms 中的 XAML 標準預覽
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 287E6631-D1C5-46C5-8905-AB53D34E365D
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
-ms.openlocfilehash: 084da9cbb06c7ec9bbab6ea4dc6a1a7b15ffe692
-ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
+ms.openlocfilehash: 2fc7fb9581f344e0d54bd9f690d334eda78cc97a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/29/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xaml-standard-preview-controls"></a>XAML 標準 （預覽） 控制項
 

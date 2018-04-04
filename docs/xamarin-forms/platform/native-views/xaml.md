@@ -1,18 +1,17 @@
 ---
-title: "在 XAML 中的原生檢視"
-description: "原生 iOS、 Android 和通用 Windows 平台從檢視可以從 Xamarin.Forms XAML 檔案直接參考。 屬性和事件處理常式可以設定在原生的檢視，以及他們可以與互動 Xamarin.Forms 檢視。 本文將示範如何使用原生檢視從 Xamarin.Forms XAML 檔案。"
-ms.topic: article
+title: 在 XAML 中的原生檢視
+description: 原生 iOS、 Android 和通用 Windows 平台從檢視可以從 Xamarin.Forms XAML 檔案直接參考。 屬性和事件處理常式可以設定在原生的檢視，以及他們可以與互動 Xamarin.Forms 檢視。 本文將示範如何使用原生檢視從 Xamarin.Forms XAML 檔案。
 ms.prod: xamarin
 ms.assetid: 7A856D31-B300-409E-9AEB-F8A4DB99B37E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: f4345e107a32c3a583c246fe5dbe24590960c870
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6dbad7352a089f482fa3a396505507da58771cef
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="native-views-in-xaml"></a>在 XAML 中的原生檢視
 
@@ -329,7 +328,7 @@ IOS 和 Android 的原生按鈕共用相同`OnButtonTap`事件處理常式，因
 
 ### <a name="ios"></a>iOS
 
-IOS 實作子類別[ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/) 檢視中，並公開屬性，屬性可以從 XAML 輕鬆地取用的事件：
+IOS 實作子類別[ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/)檢視中，並公開屬性，屬性可以從 XAML 輕鬆地取用的事件：
 
 ```csharp
 public class MyUIPickerView : UIPickerView
@@ -421,7 +420,7 @@ class PickerModel : UIPickerViewModel
 
 ### <a name="android"></a>Android
 
-Android 的實作子類別[ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) 檢視中，並公開屬性，屬性可以從 XAML 輕鬆地取用的事件：
+Android 的實作子類別[ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/)檢視中，並公開屬性，屬性可以從 XAML 輕鬆地取用的事件：
 
 ```csharp
 class MySpinner : Spinner

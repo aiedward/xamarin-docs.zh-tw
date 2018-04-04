@@ -1,18 +1,17 @@
 ---
-title: "冰淇淋三明治功能"
-description: "這篇文章描述一些可用的 Android 4 API-冰淇淋三明治的應用程式開發人員的新功能。 它涵蓋了數種新的使用者介面技術，然後檢查 各種 Android 4 提供共用資料之間的應用程式和裝置之間的新功能。"
-ms.topic: article
+title: 冰淇淋三明治功能
+description: 這篇文章描述一些可用的 Android 4 API-冰淇淋三明治的應用程式開發人員的新功能。 它涵蓋了數種新的使用者介面技術，然後檢查 各種 Android 4 提供共用資料之間的應用程式和裝置之間的新功能。
 ms.prod: xamarin
 ms.assetid: 78E18A62-C12F-A699-37FA-44B9F6B44273
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: c2e7f9fabd462faf813299021d5f84ef0a62f790
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 3c5412629f6dcd31fb0a82634ef530569eef459a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ice-cream-sandwich-features"></a>冰淇淋三明治功能
 

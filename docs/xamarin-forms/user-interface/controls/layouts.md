@@ -1,18 +1,17 @@
 ---
-title: "Xamarin.Forms 版面配置"
-description: "Xamarin.Forms 版面配置用來撰寫使用者介面控制項至視覺化結構。"
-ms.topic: article
+title: Xamarin.Forms 版面配置
+description: Xamarin.Forms 版面配置用來撰寫使用者介面控制項至視覺化結構。
 ms.prod: xamarin
 ms.assetid: F4180997-BA21-453A-9958-D1E2940DF050
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: aa16c5aa0304b012aa6197e192ef073b472817cc
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0a3164dc0da7534e6bffc011ad2fdde894d6c74a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms 版面配置
 

@@ -1,18 +1,18 @@
 ---
 title: Xamarin.Mac 疑難排解
 description: 本節中的文件涵蓋使用 Xamarin.Mac 進行疑難排解的特定功能。
-ms.topic: article
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: EB81B998-6931-4CD3-8BB0-4679D5B5F39A
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: c4384db92c4a9327bc3bce3ede2f144e7f81454b
-ms.sourcegitcommit: 7b88081a979381094c771421253d8a388b2afc16
+ms.openlocfilehash: 0d9134002c4c597a8a64bc6a52937da615783c75
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinmac-troubleshooting"></a>Xamarin.Mac 疑難排解 
 

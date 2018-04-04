@@ -1,18 +1,17 @@
 ---
-title: "StoreKit 的變更"
-description: "iOS 6 導入了兩個變更存放區套件應用程式開發介面： 能夠顯示 iTunes （與應用程式市集/iBookstore） 從的產品，在您的應用程式和新應用程式內購買的 Apple 會裝載您可下載檔案的選項。 本文件說明如何實作與 Xamarin.iOS 這些功能。"
-ms.topic: article
+title: StoreKit 的變更
+description: iOS 6 導入了兩個變更存放區套件應用程式開發介面： 能夠顯示 iTunes （與應用程式市集/iBookstore） 從的產品，在您的應用程式和新應用程式內購買的 Apple 會裝載您可下載檔案的選項。 本文件說明如何實作與 Xamarin.iOS 這些功能。
 ms.prod: xamarin
 ms.assetid: 253D37D7-44C7-D012-3641-E15DC41C2699
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: ec83bc0f62ee195884cef2f59ba701fcbf15c1da
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8a7a70c3f84518141cf44d630fb4137051d0c866
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="changes-to-storekit"></a>StoreKit 的變更
 

@@ -1,18 +1,17 @@
 ---
 title: SkiaSharp 轉換
 description: 深入了解轉換為顯示 SkiaSharp 圖形
-ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 668488ab7efae66f1777e9ae6ded1f725833fe16
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 836f404e25679f01e1bd330582cf469299c73243
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="skiasharp-transforms"></a>SkiaSharp 轉換
 

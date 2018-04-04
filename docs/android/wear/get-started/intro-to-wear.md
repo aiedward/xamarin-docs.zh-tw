@@ -1,18 +1,17 @@
 ---
-title: "Android 損耗簡介"
-description: "Google Android 穿問世，您不再僅限於手機和平板電腦來開發很棒的 Android 應用程式時。 Xamarin.Android 的支援 Android 有可讓您能夠在手腕上執行 C# 程式碼 ！ 本簡介提供 Android 戴上的基本概觀、 說明其重要功能，並提供 Android 穿 2.0 中提供的功能的概觀。 它會列出一些常見的 Android 穿裝置，並提供基本的 Google Android 穿文件，如需進一步閱讀的連結。"
-ms.topic: article
+title: Android 損耗簡介
+description: Google Android 穿問世，您不再僅限於手機和平板電腦來開發很棒的 Android 應用程式時。 Xamarin.Android 的支援 Android 有可讓您能夠在手腕上執行 C# 程式碼 ！ 本簡介提供 Android 戴上的基本概觀、 說明其重要功能，並提供 Android 穿 2.0 中提供的功能的概觀。 它會列出一些常見的 Android 穿裝置，並提供基本的 Google Android 穿文件，如需進一步閱讀的連結。
 ms.prod: xamarin
 ms.assetid: EAEF99F0-8FBE-47E4-8644-E7244CFAF464
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 4f6cfe61b5f91fb6703fdcdd20513ce6bc2dc161
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0ab166bb71c23d456cb70d35a2794717110642fd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-android-wear"></a>Android 損耗簡介
 

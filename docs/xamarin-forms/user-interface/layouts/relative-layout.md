@@ -1,18 +1,17 @@
 ---
 title: RelativeLayout
-description: "您可以使用 RelativeLayout 建立縮放以符合任何畫面大小的 Ui。"
-ms.topic: article
+description: 您可以使用 RelativeLayout 建立縮放以符合任何畫面大小的 Ui。
 ms.prod: xamarin
 ms.assetid: 2530BCB8-01B8-4C4F-BF14-CA53659F1B5A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 3d915191e24b5238d5165237f6ede74635b31e08
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2edd7a982d0307475933a234e7e1fbb8dd8d6a34
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="relativelayout"></a>RelativeLayout
 

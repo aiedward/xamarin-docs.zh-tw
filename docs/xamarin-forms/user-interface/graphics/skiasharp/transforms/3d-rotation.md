@@ -1,18 +1,17 @@
 ---
 title: 3D 旋轉
 description: 使用非仿射轉換旋轉 2D 在 3D 空間中的物件。
-ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: a7d76bfad6a34bcd43b304a6ea4a8f9210e3550c
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 47daca2ab94f718aeb5ce474c87edce3c3bd77a4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="3d-rotations"></a>3D 旋轉
 

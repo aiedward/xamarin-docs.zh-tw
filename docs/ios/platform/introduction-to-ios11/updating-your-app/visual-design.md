@@ -1,18 +1,17 @@
 ---
-title: "視覺化設計的更新"
-description: "瀏覽 iOS 11 的新功能"
-ms.topic: article
+title: 視覺化設計的更新
+description: 瀏覽 iOS 11 的新功能
 ms.prod: xamarin
 ms.assetid: 7C300B94-0FAF-492E-A326-877419A1824B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: d66d8cd722aa9a7b6fe27db3f6128ee24309a1de
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 50858592ec6246fe825e80a3039f3640ebf708a9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="visual-design-updates"></a>視覺化設計的更新
 

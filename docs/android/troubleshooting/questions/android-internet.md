@@ -1,17 +1,17 @@
 ---
-title: "為何我的 Android 版本組建無法網際網路連線？"
-ms.topic: article
+title: 為何我的 Android 版本組建無法網際網路連線？
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: A6FE770B-A19A-4BF8-95E9-2CF880D4AFC5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: c37a417b84db4028ccea3848a6c152b8ff8d8ead
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 7f956defd0243e1927746a53e6b3b1b05d98f8d2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="why-cant-my-android-release-build-connect-to-the-internet"></a>為何我的 Android 版本組建無法網際網路連線？
 

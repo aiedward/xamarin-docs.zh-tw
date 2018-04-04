@@ -1,18 +1,17 @@
 ---
-title: "發行至 Apple TV 應用程式市集"
-description: "這篇文章會示範如何設定、 建置及發行 Xamarin.tvOS 應用程式透過 Apple TV App Store 的發佈。 它包含涵蓋如何準備您的應用程式進行發佈、 如何使用 Apple 的工具來送出您的應用程式，供檢閱，以及，最後，如何將您的應用程式發行至 Apple TV App Store 的逐步指南。"
-ms.topic: article
+title: 發行至 Apple TV 應用程式市集
+description: 這篇文章會示範如何設定、 建置及發行 Xamarin.tvOS 應用程式透過 Apple TV App Store 的發佈。 它包含涵蓋如何準備您的應用程式進行發佈、 如何使用 Apple 的工具來送出您的應用程式，供檢閱，以及，最後，如何將您的應用程式發行至 Apple TV App Store 的逐步指南。
 ms.prod: xamarin
 ms.assetid: 52448C93-DC19-40FA-BF8C-608AE680FF49
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: abb8ee30828e5d9856b9fd72cca8adb669959818
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c72b161845f6d8492a47d95e51a80cf0b4f30271
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>發行至 Apple TV 應用程式市集
 
@@ -114,7 +113,7 @@ Apple 提供的特殊應用程式服務，也稱為權利，將可啟動 tvOS �
 佈建包含下列步驟，過程會使用 Apple 的 Web 架構 iOS 佈建入口網站：
 
 1.  選取 [佈建] > [散發] 。
-2.  按一下 **+** 按鈕，然後選取您想要做為建立的散發設定檔的類型**Apple TV App Store**。
+2.  按一下**+**按鈕，然後選取您想要做為建立的散發設定檔的類型**Apple TV App Store**。
 3.  從您要建立散發設定檔的下拉式清單中選取 [應用程式識別碼]。
 4.  選取簽署該應用程式所需的憑證。
 5.  輸入新**散發設定檔**的**名稱**並產生設定檔。
@@ -154,7 +153,7 @@ Xamarin.tvOS 應用程式正確設定，現在您已經準備好進行最終發�
     ![](app-store-publishing-images/buildxs01new.png "選取 [發行] 組態")
 2. 從 [建置] 功能表選取 [Archive for Publishing] (封存以供發行)：
 
-    [![](app-store-publishing-images/buildxs02new.png "選取發行的封存")](app-store-publishing-images/buildxs02new.png#lightbox)
+    [![](app-store-publishing-images/buildxs02new.png "選取 [Archive for Publishing] \(封存以供發行\)")](app-store-publishing-images/buildxs02new.png#lightbox)
 3. 建立封存後，[封存] 檢視會隨即顯示：
 
     [![](app-store-publishing-images/buildxs03new.png "封存檢視")](app-store-publishing-images/buildxs03new.png#lightbox)
@@ -196,7 +195,7 @@ Xamarin.tvOS 應用程式正確設定，現在您已經準備好進行最終發�
 
 2. 選取 [Deliver Your App] (傳遞您的應用程式)，並按一下 [選擇] 按鈕：
 
-    [![](app-store-publishing-images/publishvs01.png "選取傳遞您的應用程式")](app-store-publishing-images/publishvs01.png#lightbox)
+    [![](app-store-publishing-images/publishvs01.png "選取 [Deliver Your App] \(傳遞您的應用程式\)")](app-store-publishing-images/publishvs01.png#lightbox)
 
 3. 在上方選取您建立的 ZIP 或 IPA 檔案，並按一下 [確定] 按鈕。
 4. 應用程式載入器將會驗證檔案：

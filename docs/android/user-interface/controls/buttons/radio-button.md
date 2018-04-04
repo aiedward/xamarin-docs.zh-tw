@@ -1,17 +1,16 @@
 ---
 title: RadioButton
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3C32EA3F-D917-C988-72C5-A17354DA791E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: c4f4909813f5c82a49ec51278b3b50cc36a8e17b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1267491f2d9b7519f76651df059722420fa8e1eb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="radiobutton"></a>RadioButton
 

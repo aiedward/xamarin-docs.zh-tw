@@ -1,17 +1,16 @@
 ---
-title: "使用核心 Spotlight 搜尋"
-ms.topic: article
+title: 使用核心 Spotlight 搜尋
 ms.prod: xamarin
 ms.assetid: 1374914C-0F63-41BF-BD97-EBCEE86E57B1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: b7db9082f05ea4db41ddb84d34be2ec9113f2ad5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d38d90ce460c7a93f8412baf372778443eb9d9e9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="search-with-core-spotlight"></a>使用核心 Spotlight 搜尋
 

@@ -1,17 +1,16 @@
 ---
-title: "目標 Sharpie 功能"
-ms.topic: article
+title: 目標 Sharpie 功能
 ms.prod: xamarin
 ms.technology: xamarin-cross-platform
 ms.assetid: 9A17A2C6-AFFD-41E2-BE9B-9BC1AA57E1E1
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: 99d14d885b1448d5495d852d82752ea707cd5f22
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d40a43620e912b5beaa39d1b1286df615939616e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="objective-sharpie-features"></a>目標 Sharpie 功能
 

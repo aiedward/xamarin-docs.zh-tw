@@ -1,18 +1,17 @@
 ---
-title: "Hello，監看式"
-description: "開始使用 Xamarin 和 watchOS"
-ms.topic: article
+title: Hello，監看式
+description: 開始使用 Xamarin 和 watchOS
 ms.prod: xamarin
 ms.assetid: AD1DA488-51AB-420A-A0B7-3AE69A964A40
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/14/2016
-ms.openlocfilehash: 732fd9808ded4bf97e99e7ab0e6ab63b989452d1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2281fa801d32e8d8934767ae090503ca523d7eff
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-watch"></a>Hello，監看式
 

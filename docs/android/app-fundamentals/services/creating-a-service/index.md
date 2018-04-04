@@ -1,17 +1,16 @@
 ---
-title: "建立服務"
-ms.topic: article
+title: 建立服務
 ms.prod: xamarin
 ms.assetid: A78A55E7-FB5C-4C42-8E3E-939B5E98F9EB
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 02/01/2018
-ms.openlocfilehash: 3d692ffbffd85f8cc2b51fd72c13527031058daf
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d1e0fdb1c4b159b6db283d7b9b3be673b73a0ee0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-a-service"></a>建立服務
 

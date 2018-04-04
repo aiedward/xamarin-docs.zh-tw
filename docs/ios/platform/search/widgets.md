@@ -1,18 +1,17 @@
 ---
-title: "搜尋和主畫面 Widget 增強功能"
-description: "本文說明 Apple iOS 10 的 Widget 系統所做的增強功能。"
-ms.topic: article
+title: 搜尋和主畫面 Widget 增強功能
+description: 本文說明 Apple iOS 10 的 Widget 系統所做的增強功能。
 ms.prod: xamarin
 ms.assetid: D66FD9E1-9E23-4BB6-825C-ED19B8F72A81
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 7ca863b92d8d7af46f4ce18f5d088347b9ca04ee
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e7a64738f29ab2b5c62659d721beb50db7c9adb5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="search-and-home-screen-widget-enhancements"></a>搜尋和主畫面 Widget 增強功能
 

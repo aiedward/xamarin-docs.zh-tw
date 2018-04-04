@@ -1,17 +1,16 @@
 ---
 title: 逐步解說-使用背景位置
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: F8EEA0FD-5614-47FE-ADAC-80A5BCA6EB5F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: efdabc5450b186c89785ee3cb19a3decdd6c2064
-ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
+ms.openlocfilehash: e6c74d9ffba4f63682a905d6ebc06d02be81abf4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="walkthrough---using-background-location"></a>逐步解說-使用背景位置
 

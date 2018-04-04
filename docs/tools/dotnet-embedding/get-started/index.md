@@ -1,17 +1,16 @@
 ---
-title: "開始使用.NET 內嵌"
-ms.topic: article
+title: 開始使用.NET 內嵌
 ms.prod: xamarin
 ms.assetid: AF8A4798-EBDD-4E73-997B-C3D4FC5E9685
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 947d1e2dd19a181376c8a9b7bf783c4185931d13
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e7924b4a582fd670062ae0cf8205bebce1fb00c8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="getting-started-with-net-embedding"></a>開始使用.NET 內嵌
 

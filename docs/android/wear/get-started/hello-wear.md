@@ -1,18 +1,17 @@
 ---
-title: "Hello 損耗"
-description: "建立第一個 Android 戴上應用程式和損耗模擬器或裝置上執行。 本逐步解說提供建立小型處理按鈕按一下動作，並按一下計數器顯示損耗裝置上的 Android 穿專案的逐步指示。 它會說明如何偵錯使用損耗模擬器或 Android 手機連接藍芽損耗裝置的應用程式。 它也提供 Android 有一組的偵錯秘訣。"
-ms.topic: article
+title: Hello 損耗
+description: 建立第一個 Android 戴上應用程式和損耗模擬器或裝置上執行。 本逐步解說提供建立小型處理按鈕按一下動作，並按一下計數器顯示損耗裝置上的 Android 穿專案的逐步指示。 它會說明如何偵錯使用損耗模擬器或 Android 手機連接藍芽損耗裝置的應用程式。 它也提供 Android 有一組的偵錯秘訣。
 ms.prod: xamarin
 ms.assetid: 86BCD0E7-E9DC-40F1-9B44-887BC51BB48D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 8eed2d6b825a6e6dd7e956bf901246b9a630081a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 742a10ce0042d2bbf6d5690cb7a7a6eca529a57e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-wear"></a>Hello 損耗
 

@@ -1,17 +1,16 @@
 ---
-title: "使用 SQLite.NET"
-ms.topic: article
+title: 使用 SQLite.NET
 ms.prod: xamarin
 ms.assetid: 3447B7EE-A320-489E-AF02-E5721097760A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: b9523d76c04dae97b74744fbe2bd6bc7022c3194
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 59ba1ef60b0f63ed98302bf65c4d43c8ae207f22
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-sqlitenet"></a>使用 SQLite.NET
 

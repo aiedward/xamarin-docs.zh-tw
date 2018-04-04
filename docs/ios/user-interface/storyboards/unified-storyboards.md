@@ -1,18 +1,17 @@
 ---
-title: "統一的分鏡腳本"
-description: "統一的分鏡腳本讓 iOS 開發人員建立的使用者介面的單一分鏡腳本，而不是多個分鏡腳本，涵蓋的裝置的螢幕大小擴充的範圍。 這篇文章被為了提供更深入概觀內 Xamarin.iOS 統一的分鏡腳本的作業。"
-ms.topic: article
+title: 統一的分鏡腳本
+description: 統一的分鏡腳本讓 iOS 開發人員建立的使用者介面的單一分鏡腳本，而不是多個分鏡腳本，涵蓋的裝置的螢幕大小擴充的範圍。 這篇文章被為了提供更深入概觀內 Xamarin.iOS 統一的分鏡腳本的作業。
 ms.prod: xamarin
 ms.assetid: F6F70374-FC2A-4401-A712-A16D0F9B340F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 60b2e6fa65226631fe2d2c847a56852ac9ae63d2
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: d84afd0d33a6115d5d3ef9ea9b68d3370f9bb946
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="unified-storyboards"></a>統一的分鏡腳本
 
@@ -680,7 +679,7 @@ IOS 設計工具將會確認開發人員想要轉換的使用大小類別分鏡�
 
  [![](unified-storyboards-images/exclude05.png "當遺失的項目在 iPhone 模擬器中執行的應用程式")](unified-storyboards-images/exclude05.png#lightbox)
 
-若要移除的項目排除案例，只需選取中的項目**設計介面**，捲動到底部**屬性總管**按一下 **-** 大小寫，以移除旁邊的按鈕。
+若要移除的項目排除案例，只需選取中的項目**設計介面**，捲動到底部**屬性總管**按一下**-**大小寫，以移除旁邊的按鈕。
 
 若要查看統一分鏡腳本的實作，看看`UnifiedStoryboard`範例 Xamarin iOS 8 應用程式附加至這份文件。
 

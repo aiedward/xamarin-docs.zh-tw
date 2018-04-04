@@ -1,18 +1,17 @@
 ---
-title: "Java 整合概觀"
-description: "Java 生態系統包含元件的各種及廣大的集合。 這些元件的許多可用來減少開發 Android 應用程式所花費的時間。 本文件將介紹，並提供一些開發人員可以使用這些現有的 Java 元件，以改善其 Xamarin.Android 應用程式開發體驗的方式的高層級概觀。"
-ms.topic: article
+title: Java 整合概觀
+description: Java 生態系統包含元件的各種及廣大的集合。 這些元件的許多可用來減少開發 Android 應用程式所花費的時間。 本文件將介紹，並提供一些開發人員可以使用這些現有的 Java 元件，以改善其 Xamarin.Android 應用程式開發體驗的方式的高層級概觀。
 ms.prod: xamarin
 ms.assetid: 7B5B8695-1C49-19BF-AE99-948CDCBD2A20
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/18/2017
-ms.openlocfilehash: 213702d289adefe966f07c3ad0174156cbc69ee1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: dbaf17479ae077fced425df5ac31bdbbc4e06b64
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="java-integration-overview"></a>Java 整合概觀
 

@@ -1,18 +1,17 @@
 ---
-title: "了解 Android API 層級"
-description: "Xamarin.Android 的數個 Android API 層級設定會決定使用多個版本的 Android 應用程式的相容性。 本指南說明這些設定代表什麼意思，如何進行設定，以及效果為何他們對您的應用程式在執行階段。"
-ms.topic: article
+title: 了解 Android API 層級
+description: Xamarin.Android 的數個 Android API 層級設定會決定使用多個版本的 Android 應用程式的相容性。 本指南說明這些設定代表什麼意思，如何進行設定，以及效果為何他們對您的應用程式在執行階段。
 ms.prod: xamarin
 ms.assetid: 58CB7B34-3140-4BEB-BE2E-209928C1878C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 907af0948e9d081f05cc201c49f94629a513c935
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8f284fefd260764c6f09d78d2518bfd115782cd2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="understanding-android-api-levels"></a>了解 Android API 層級
 

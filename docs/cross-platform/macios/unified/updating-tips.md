@@ -1,16 +1,15 @@
 ---
-title: "統一的 API 來更新程式碼的秘訣"
-ms.topic: article
+title: 統一的 API 來更新程式碼的秘訣
 ms.prod: xamarin
 ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 31ee94b7a463a651556472967152b98ee3061a8d
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: b23a84c990eb2418e94b414cc9750b3060c572ad
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>統一的 API 來更新程式碼的秘訣
 

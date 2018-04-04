@@ -1,18 +1,17 @@
 ---
-title: "清單檢視資料來源"
-description: "了解如何對 getlistctrl 資料。"
-ms.topic: article
+title: 清單檢視資料來源
+description: 了解如何對 getlistctrl 資料。
 ms.prod: xamarin
 ms.assetid: B5571660-1E82-4379-95C3-0725288CF5D9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 78659aff0b6b4e6401bec96a55935c141d1199f1
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6f0553f2887d4acb1015da71395be3f316e9acee
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="listview-data-sources"></a>清單檢視資料來源
 

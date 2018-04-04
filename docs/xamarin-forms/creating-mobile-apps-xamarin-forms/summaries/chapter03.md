@@ -1,17 +1,16 @@
 ---
-title: "第 3 章的摘要。 更深入成文字"
-ms.topic: article
+title: 第 3 章的摘要。 更深入成文字
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: a3ef515feabfc142f30e7e00a8fed710e733f4dc
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: d4ea9b9da2788ba0cfc9534532fedb5fe83e78a8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第 3 章的摘要。 更深入成文字
 

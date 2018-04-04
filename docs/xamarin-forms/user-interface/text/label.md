@@ -1,18 +1,17 @@
 ---
 title: ThisAddIn
-description: "Xamarin.Forms 中的顯示文字"
-ms.topic: article
+description: Xamarin.Forms 中的顯示文字
 ms.prod: xamarin
 ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 84b1a32435d6ce103ca540d7c9db4fce30bc0322
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c1056626b336dd9b6ce265ab693ceed2a24eae0f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="label"></a>ThisAddIn
 

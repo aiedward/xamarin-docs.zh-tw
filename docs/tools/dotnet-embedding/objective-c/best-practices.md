@@ -1,17 +1,16 @@
 ---
-title: "ObjC Embeddinator 4000 最佳作法"
-ms.topic: article
+title: ObjC Embeddinator 4000 最佳作法
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: bd2863fec2bd6cbec2efc0441db8d7aa8f3343d0
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 93dd98dcff772adceb3650ec327cc1a14e4e056b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="embeddinator-4000-best-practices-for-objc"></a>ObjC Embeddinator 4000 最佳作法
 

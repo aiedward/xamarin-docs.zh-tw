@@ -1,7 +1,6 @@
 ---
-title: "適用於 iPad 的多工"
-description: "iOS 9 支援在同一時間、 透過使用投影片或分割檢視執行的兩個應用程式。 它也支援視訊播放圖片的圖片。"
-ms.topic: article
+title: 適用於 iPad 的多工
+description: iOS 9 支援在同一時間、 透過使用投影片或分割檢視執行的兩個應用程式。 它也支援視訊播放圖片的圖片。
 ms.prod: xamarin
 ms.assetid: 0F2266D7-21FF-404D-A148-0CFDE76B12AA
 ms.technology: xamarin-ios
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 0783372cd36d5a4984d09ee055257d525e7becb1
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 553fd6e45df897037d6ad90ef9211eef0bf27aae
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="multitasking-for-ipad"></a>適用於 iPad 的多工
 

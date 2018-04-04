@@ -1,18 +1,17 @@
 ---
-title: "替代的版面配置檢視"
-description: "本主題說明如何配置可以進行版本設定所使用的資源限定詞。 例如，可以有的版面配置，裝置會以橫向模式時才會使用某個版本，僅適用於縱向模式的版面配置版本。"
-ms.topic: article
+title: 替代的版面配置檢視
+description: 本主題說明如何配置可以進行版本設定所使用的資源限定詞。 例如，可以有的版面配置，裝置會以橫向模式時才會使用某個版本，僅適用於縱向模式的版面配置版本。
 ms.prod: xamarin
 ms.assetid: 5EBF51FC-9048-F0CF-624A-D8782A91C1FD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: c2df60a79ea3b5a0ff226cfaade0440db13fd5ea
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d2228169ed5d8575c9e332c85d963fca0400dea8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="alternative-layout-views"></a>替代的版面配置檢視
 

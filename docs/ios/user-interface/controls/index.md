@@ -1,18 +1,17 @@
 ---
-title: "控制項"
-description: "Xamarin.iOS 公開 Apple 提供的所有原生使用者介面物件。 輕鬆地加入 Xamarin.iOS 應用程式使用 iOS 設計工具中，Xcode 的介面產生器或以程式設計的方式。 不論您選擇的方法，Xamarin.iOS 會公開所有的使用者介面物件的屬性和 C# 中的方法。"
-ms.topic: article
+title: 控制項
+description: Xamarin.iOS 公開 Apple 提供的所有原生使用者介面物件。 輕鬆地加入 Xamarin.iOS 應用程式使用 iOS 設計工具中，Xcode 的介面產生器或以程式設計的方式。 不論您選擇的方法，Xamarin.iOS 會公開所有的使用者介面物件的屬性和 C# 中的方法。
 ms.prod: xamarin
 ms.assetid: C00EA232-ADCC-42AD-BF86-B526414A21C6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: d661cf873baad43a51b40fb59fecd5bc298bcac4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 82b2998319d4e78ee4f58a6d024032a509724537
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="controls"></a>控制項
 

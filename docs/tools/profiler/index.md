@@ -1,18 +1,17 @@
 ---
 title: Xamarin Profiler
 description: 本指南中，瀏覽 Xamarin 分析工具的主要功能。 它看起來在程式碼剖析工具、 進行分析，以及何時應該使用它們，而在標準的工作流程的 Xamarin 應用程式程式碼剖析。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 7c44541c56d7b1a00a704cfc66812d5537ec83c4
-ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
+ms.openlocfilehash: 3408d4e1ca50651536b9d04f64156efac4fdd0ed
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/29/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 

@@ -1,17 +1,17 @@
 ---
 title: 如何自動執行的 Android NUnit 測試專案？
-ms.topic: article
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: EA3CFCC4-2D2E-49D6-A26C-8C0706ACA045
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/29/2018
-ms.openlocfilehash: 4d8ea267ef3a6bdea2db805725d5dd4220ab73c4
-ms.sourcegitcommit: 7b88081a979381094c771421253d8a388b2afc16
+ms.openlocfilehash: f63a25f36682038b7fcd85d711d980b9e3ec869d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>如何自動執行的 Android NUnit 測試專案？
 

@@ -1,16 +1,16 @@
 ---
-title: "我要如何降級 NuGet 封裝？"
-ms.topic: article
+title: 我要如何降級 NuGet 封裝？
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 2375F833-A630-471E-B8E9-5AD2CB81F264
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 7befac774732d6f9e432d43ac9bdc635b25bf431
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 2eec947ab748eccd45971054f2f5b232cf788cfa
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="how-do-i-downgrade-a-nuget-package"></a>我要如何降級 NuGet 封裝？
 

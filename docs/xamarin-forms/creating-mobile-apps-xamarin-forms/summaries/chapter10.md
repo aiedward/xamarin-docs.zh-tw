@@ -1,17 +1,16 @@
 ---
-title: "章 10 的摘要。 XAML 標記延伸"
-ms.topic: article
+title: 章 10 的摘要。 XAML 標記延伸
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 3e9f630fbfc9f7a1d6346b6dd8308504a6806e1a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 3223bc20448bd8354e84dc67ee64a8dc435f7667
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>章 10 的摘要。 XAML 標記延伸
 

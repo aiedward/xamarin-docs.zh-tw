@@ -1,18 +1,17 @@
 ---
-title: "自訂項目"
-description: "Xamarin.Forms 項目控制項可讓單行編輯的文字。 本文示範如何建立自訂轉譯器項目控制項，讓開發人員覆寫預設原生呈現使用他們自己平台專屬的自訂。"
-ms.topic: article
+title: 自訂項目
+description: Xamarin.Forms 項目控制項可讓單行編輯的文字。 本文示範如何建立自訂轉譯器項目控制項，讓開發人員覆寫預設原生呈現使用他們自己平台專屬的自訂。
 ms.prod: xamarin
 ms.assetid: 7B5DD10D-0411-424F-88D8-8A474DF16D8D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 0fe7aa2316abaae33da753e99a6f2eca4870d2d0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 1e8ef47ceb381a0e4e163aaa24795d46264195da
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="customizing-an-entry"></a>自訂項目
 

@@ -1,16 +1,16 @@
 ---
-title: "如何手動同步 Xamarin 授權？"
-ms.topic: article
+title: 如何手動同步 Xamarin 授權？
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: D0BD93E9-3A1F-4E5B-8EE8-36ADC33DCFE4
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 2413b6b7563a6ed1e17a8db61d2d61ddc85e71ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b06a1a7d525c91d7c3973b2b02d3d2835ce482f9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="how-do-i-manually-resynchronize-xamarin-licenses"></a>如何手動同步 Xamarin 授權？
 
@@ -49,7 +49,7 @@ ms.lasthandoff: 02/27/2018
 
 4.  如果您看到一組重複的電腦名稱時，使用**停用**下拉式功能表来移除的項目_兩者_組的成員：
     
-    ![授權-> 停用上 https://store.xamarin.com/account/my/subscription/computers](resync-licenses-images/deactivate.png "使用停用下拉式清單功能表項目移除該配對的兩個成員")
+    ![授權]-> [停用上https://store.xamarin.com/account/my/subscription/computers ](resync-licenses-images/deactivate.png "使用停用下拉式清單功能表項目移除該配對的兩個成員")
 
 5.  刪除任何剩餘的份數授權仍存在於磁碟上的檔案。
     -   Windows

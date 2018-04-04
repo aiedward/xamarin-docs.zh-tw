@@ -1,17 +1,16 @@
 ---
-title: "加入 iOS 專屬格式"
-ms.topic: article
+title: 加入 iOS 專屬格式
 ms.prod: xamarin
 ms.assetid: CE50E207-D092-4D88-8439-1B51F178E7ED
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2016
-ms.openlocfilehash: c84bc8286ad5f73acb2d7e9eb13467e2c3bfb9b9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 280ca523d3e3b4f5037d626cc5fd0bd5b31d0e8b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="adding-ios-specific-formatting"></a>加入 iOS 專屬格式
 

@@ -1,18 +1,17 @@
 ---
-title: "繫結模式"
-description: "控制項的來源和目標之間的資訊流程"
-ms.topic: article
+title: 繫結模式
+description: 控制項的來源和目標之間的資訊流程
 ms.prod: xamarin
 ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 887dc3cf710fb75d05d02af179bc218c15d31f97
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: fdcba9b680bd548371883788af9e4eda755d91df
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-mode"></a>繫結模式
 

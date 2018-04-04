@@ -1,18 +1,17 @@
 ---
-title: "iOS 架構"
-description: "瀏覽 Xamarin.iOS 在較低層級"
-ms.topic: article
+title: iOS 架構
+description: 瀏覽 Xamarin.iOS 在較低層級
 ms.prod: xamarin
 ms.assetid: F40F2275-17DA-4B4D-9678-618FF25C6803
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: c54ea9a2f63853066413f2db9713882441399744
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: 930b52e5b2a532e71594f26af79035db2cc5fb25
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-architecture"></a>iOS 架構
 

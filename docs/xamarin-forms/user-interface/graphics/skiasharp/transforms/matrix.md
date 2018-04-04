@@ -1,18 +1,17 @@
 ---
 title: 矩陣轉換
 description: 深入 SkiaSharp 多用途的轉換矩陣的轉換
-ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: d40f898f07077ec2e2466cd5de3cd582636cfb15
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 87bddc8d541167cef350658ac69f8aaac6d6a2ee
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="matrix-transforms"></a>矩陣轉換
 

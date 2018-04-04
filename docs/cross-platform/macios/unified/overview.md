@@ -1,18 +1,17 @@
 ---
-title: "統一的 API 概觀"
-description: "新樣式應用程式開發介面會更容易比以往 Mac 和 iOS 以及可讓您支援具有相同 32 和 64 位元應用程式二進位之間共用程式碼。"
-ms.topic: article
+title: 統一的 API 概觀
+description: 新樣式應用程式開發介面會更容易比以往 Mac 和 iOS 以及可讓您支援具有相同 32 和 64 位元應用程式二進位之間共用程式碼。
 ms.prod: xamarin
 ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 03364b3fd91ffdb4debb3d58f8040d8ade9100b8
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: c36682ba038c18dfb872e76f338ea1d9881cca10
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="unified-api-overview"></a>統一的 API 概觀
 

@@ -1,17 +1,17 @@
 ---
-title: "Android 設計工具中調整 Java 記憶體參數"
-ms.topic: article
+title: Android 設計工具中調整 Java 記憶體參數
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 62FAF21C-8090-4AF3-9D88-05A4CFCAFFDC
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 354a750fc57fd28754aea902d293e75b65d63997
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 32d98efd644fb033785fbae0d9689494e42b2809
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>Android 設計工具中調整 Java 記憶體參數
 

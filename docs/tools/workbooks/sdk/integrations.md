@@ -1,16 +1,15 @@
 ---
-title: "進階的 Integration 主題"
-ms.topic: article
+title: 進階的 Integration 主題
 ms.prod: xamarin
 ms.assetid: 002CE0B1-96CC-4AD7-97B7-43B233EF57A6
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 5e51aa9ab9d4d63d16b3a68d24084c872d831975
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: b669c61300b1d808be5467358b2ec16a9bc194a8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="external-integrations"></a>外部的整合
 

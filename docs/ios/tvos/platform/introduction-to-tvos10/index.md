@@ -1,18 +1,17 @@
 ---
-title: "TvOS 10 簡介"
-description: "本文介紹的所有新的及修改應用程式開發介面和功能中 tvOS 10 Xamarin.tvOS 開發人員。"
-ms.topic: article
+title: TvOS 10 簡介
+description: 本文介紹的所有新的及修改應用程式開發介面和功能中 tvOS 10 Xamarin.tvOS 開發人員。
 ms.prod: xamarin
 ms.assetid: CB9C1EC8-6008-43AD-977E-976AE7C73DD8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8bc379e507287cd609dca8440b1210b7f1514114
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 642a851cbfc0450ee8f5f5c4d798c40778e3d3dd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-tvos-10"></a>TvOS 10 簡介
 

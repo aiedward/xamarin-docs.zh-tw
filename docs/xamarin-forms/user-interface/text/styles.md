@@ -1,18 +1,17 @@
 ---
-title: "樣式"
-description: "樣式 Xamarin.Forms 中的文字"
-ms.topic: article
+title: 樣式
+description: 樣式 Xamarin.Forms 中的文字
 ms.prod: xamarin
 ms.assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: d1aadd808ea18023ee0a22259ddb36c0a8daa802
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: f38e4bc9ecd66c1dc33e53fa5c9046ff363802e6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="styles"></a>樣式
 

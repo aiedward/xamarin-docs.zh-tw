@@ -1,45 +1,44 @@
 ---
-title: "平台功能"
-description: "本節中的文件涵蓋 iOS 的特定功能。"
-ms.topic: article
+title: 平台功能
+description: 本節中的文件涵蓋 iOS 的特定功能。
 ms.prod: xamarin
 ms.assetid: 9F6A27E5-8A87-ADE2-D1EF-5684E7B8C999
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/15/2017
-ms.openlocfilehash: 88ddd7c74fd800c71e63c03f6a8492ecfcc28f9f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0a76ed52f52de144bb3da1e7be6e215ce0dfe0ab
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="platform-features"></a>平台功能
 
-##  <a name="introduction-to-ios-11iosplatformintroduction-to-ios11indexmd"></a>[IOS 11 簡介](~/ios/platform/introduction-to-ios11/index.md)
+##  <a name="introduction-to-ios-11iosplatformintroduction-to-ios11indexmd"></a>[iOS 11 簡介](~/ios/platform/introduction-to-ios11/index.md)
 
 如何安裝和開始使用 Xcode 9 beta 和 Xamarin 的 iOS 11 支援預覽。
 
 
-##  <a name="introduction-to-ios-10iosplatformintroduction-to-ios10indexmd"></a>[IOS 10 簡介](~/ios/platform/introduction-to-ios10/index.md)
+##  <a name="introduction-to-ios-10iosplatformintroduction-to-ios10indexmd"></a>[iOS 10 簡介](~/ios/platform/introduction-to-ios10/index.md)
 
 Apple iOS 10 包含數個新的 Api 和服務可讓您開發應用程式的新特色與功能。 IOS 10，app 具有新的能力，如對應、 訊息、 電話以及 Siri 擴充。 本節說明 Xamarin.iOS 應用程式利用這些功能的方式。
 
 
-##  <a name="introduction-to-ios-9iosplatformintroduction-to-ios9indexmd"></a>[IOS 9 的簡介](~/ios/platform/introduction-to-ios9/index.md)
+##  <a name="introduction-to-ios-9iosplatformintroduction-to-ios9indexmd"></a>[iOS 9 簡介](~/ios/platform/introduction-to-ios9/index.md)
 
 這個區段會定義從 iOS 8 及如何在 Xamarin.iOS 應用程式中使用這些功能升級時，在 iOS 9 中所做的變更。
 
 
-##  <a name="introduction-to-ios-8iosplatformintroduction-to-ios8md"></a>[IOS 8 的簡介](~/ios/platform/introduction-to-ios8.md)
+##  <a name="introduction-to-ios-8iosplatformintroduction-to-ios8md"></a>[iOS 8 簡介](~/ios/platform/introduction-to-ios8.md)
 
 Apple iOS 8 從 iOS 7 作業系統進行大量變更。 在這裡，我們會示範用途，以及如何使用它們。
 
-##  <a name="introduction-to-ios-7iosplatformintroduction-to-ios7indexmd"></a>[IOS 7 簡介](~/ios/platform/introduction-to-ios7/index.md)
+##  <a name="introduction-to-ios-7iosplatformintroduction-to-ios7indexmd"></a>[iOS 7 簡介](~/ios/platform/introduction-to-ios7/index.md)
 
 關於 iOS 7 中引進的主要新 Api，包括檢視控制器轉換，UIView 動畫、 UIKit Dynamics 和文字套件的增強功能。
 
-##  <a name="introduction-to-ios-6iosplatformintroduction-to-ios6indexmd"></a>[IOS 6 簡介](~/ios/platform/introduction-to-ios6/index.md)
+##  <a name="introduction-to-ios-6iosplatformintroduction-to-ios6indexmd"></a>[iOS 6 簡介](~/ios/platform/introduction-to-ios6/index.md)
 
 IOS 6，包括集合檢視、 傳遞的套件、 事件套件和共享架構中引進的功能的說明。
 
@@ -67,11 +66,11 @@ IOS 9 的簡介，與 Apple 已釋放這兩個新的架構，`Contacts`和`Conta
 
 iOS 會有兩個相關的行事曆應用程式內建： 行事曆應用程式，並提醒應用程式。 若要了解如何行事曆應用程式管理行事曆資料夠簡單但提醒應用程式是較不明顯。 提醒實際上可以有與其相關聯的通常是因為，要完成之時的日期等等。因此，iOS 會儲存所有行事曆資料，無論行事曆事件或在單一位置，稱為備忘提醒*行事曆資料庫*。
 
-##  <a name="ios-extensionsiosplatformextensionsmd"></a>[iOS 擴充功能](~/ios/platform/extensions.md)
+##  <a name="ios-extensionsiosplatformextensionsmd"></a>[iOS 延伸模組](~/ios/platform/extensions.md)
 
 擴充功能，推出 iOS 8，進行特製化`UIViewControllers`所帶來的標準內容內的 iOS 例如中**通知中心**，如要求使用者所執行的自訂鍵盤類型特製化輸入或其他內容，例如編輯的相片，擴充功能可以提供特殊效果的篩選器的位置。
 
-##  <a name="graphics-and-animation-in-iosiosplatformgraphics-animation-iosindexmd"></a>[圖形和動畫，在 iOS 中](~/ios/platform/graphics-animation-ios/index.md)
+##  <a name="graphics-and-animation-in-iosiosplatformgraphics-animation-iosindexmd"></a>[iOS 中的圖形和動畫](~/ios/platform/graphics-animation-ios/index.md)
 
 圖形和動畫，在 iOS 中涵蓋核心圖形概念，例如 CoreImage、 核心圖形和核心動畫 iOS 中。
 
@@ -87,11 +86,11 @@ Apple 在 iOS 8 和 OS X Yosemite (10.10) 提供通用的機制，使用者要�
 
 Apple iOS 8 探索，以及與使用者的家用擸裝置通訊提供一般架構中引進 HomeKit。 HomeKit 提供設定裝置和設定動作，來控制它們的常用平台。
 
-##  <a name="in-app-purchasingiosplatformin-app-purchasingindexmd"></a>[應用程式內購買](~/ios/platform/in-app-purchasing/index.md)
+##  <a name="in-app-purchasingiosplatformin-app-purchasingindexmd"></a>[App 內購買](~/ios/platform/in-app-purchasing/index.md)
 
 iOS 應用程式可以銷售數位產品或服務使用 StoreKit – 一組 Api 提供與 Apple 伺服器進行通訊的 iOS 進行財務交易與使用者透過其 Apple id。 StoreKit Api 關心主要是進行交易，擷取產品資訊-沒有使用者介面元件。 實作應用程式內購買的應用程式必須建置自己的使用者介面，並追蹤所購買的項目自訂程式碼，以提供必要的產品或服務給使用者。
 
-##  <a name="ios-gaming-apisiosplatformgamingindexmd"></a>[iOS 遊戲應用程式開發介面](~/ios/platform/gaming/index.md)
+##  <a name="ios-gaming-apisiosplatformgamingindexmd"></a>[iOS 遊戲 API](~/ios/platform/gaming/index.md)
 
 Apple 所做的數個技術改良在 iOS 9 遊戲應用程式開發介面可讓您更輕鬆地實作 Xamarin.iOS 應用程式中的遊戲圖形與音訊。 這些包括這兩個輕鬆開發透過高層級架構和另外的 iOS 裝置的 GPU，以提升的速度及圖形的能力。
 
@@ -113,11 +112,11 @@ Passbook 是應用程式的 Iphone 和 iPod 碰觸 iOS 6 與。 它會儲存，�
 
 相片套件是一個新的架構，可讓應用程式來查詢系統映像庫建立自訂使用者介面來檢視和修改其內容。 它包含的數字，表示影像和視訊資產，以及資產，例如專輯和資料夾的集合類別。
 
-##  <a name="request-app-reviewiosplatformrequest-app-reviewmd"></a>[要求檢閱應用程式](~/ios/platform/request-app-review.md)
+##  <a name="request-app-reviewiosplatformrequest-app-reviewmd"></a>[要求應用程式檢閱](~/ios/platform/request-app-review.md)
 
 Ios 10.3，新`RequestReview()`方法可讓要求使用者評等或檢閱 iOS 應用程式。 使用者安裝應用程式商店中的傳送應用程式中呼叫這個方法時，iOS 10 會處理整個分級，並檢閱程序的開發人員。 此程序由應用程式存放區原則，因為警示可能或可能不會顯示。
 
-##  <a name="search-apisiosplatformsearchindexmd"></a>[搜尋應用程式開發介面](~/ios/platform/search/index.md)
+##  <a name="search-apisiosplatformsearchindexmd"></a>[搜尋 API](~/ios/platform/search/index.md)
 
 搜尋已展開於 iOS 9 提供絕佳的新方法，以存取資訊和 Xamarin.iOS 應用程式內的功能。 使用新的應用程式搜尋 Api，應用程式的內容會透過精選和 Safari 搜尋結果中，遞交 Siri 提醒和建議的搜尋。 這可讓使用者快速存取活動和深層應用程式中的資訊。
 
@@ -145,13 +144,13 @@ IOS 7 已引入 touch ID 來驗證使用者的密碼類似。 不過，它是限
 
 新增 iOS 10、 傳遞和處理的本機和遠端通知架構可讓使用者通知。 使用此架構，在應用程式或應用程式擴充功能可以排程傳遞本機通知藉由指定的一組條件，例如位置或一天的時間。
 
-##  <a name="wide-coloriosplatformwide-colormd"></a>[寬的色彩](~/ios/platform/wide-color.md)
+##  <a name="wide-coloriosplatformwide-colormd"></a>[寬色域](~/ios/platform/wide-color.md)
 
 iOS 10 及 macOS 利也可增強的擴充範圍像素格式和整個系統中包括架構，例如核心圖形、 Core 映像、 裸機和 AVFoundation 寬一系列色彩空間的支援。 藉由提供整個圖形堆疊此行為，是進一步降低與寬的色彩顯示裝置的支援。
 
 
 
-##  <a name="binding-objective-cbinding-objective-cindexmd"></a>[繫結 Objective C](binding-objective-c/index.md)
+##  <a name="binding-objective-cbinding-objective-cindexmd"></a>[繫結 Objective-C](binding-objective-c/index.md)
 
 當工作在 iOS 上，您可能會遇到情況下，您要使用協力廠商 Objective C 程式庫。 在這些情況下，您可以使用 MonoTouch 的繫結專案建立的 C# 繫結至原生 Objective C 程式庫。 專案會使用相同的工具，我們使用 C# 使 iOS 應用程式開發介面。&nbsp;本文件說明如何將繫結 Objective C 應用程式開發介面。
 

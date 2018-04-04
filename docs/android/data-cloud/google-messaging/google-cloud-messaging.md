@@ -1,18 +1,17 @@
 ---
-title: "Google 雲端訊息"
-description: "Google Cloud Messaging (GCM) 是一種服務，可促進行動裝置應用程式與伺服器應用程式之間的傳訊。 本文提供的 GCM 的運作方式概觀，並說明如何設定 Google 服務，因此您的應用程式可以使用 GCM。"
-ms.topic: article
+title: Google 雲端訊息
+description: Google Cloud Messaging (GCM) 是一種服務，可促進行動裝置應用程式與伺服器應用程式之間的傳訊。 本文提供的 GCM 的運作方式概觀，並說明如何設定 Google 服務，因此您的應用程式可以使用 GCM。
 ms.prod: xamarin
 ms.assetid: DF8EF401-F63D-4BA0-B2C6-B22DF8FD60CB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: f44899ecf5ba2d904333b71226cdd6c7dcea8db0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 73ff82f3bf36aa54422c1693c6bf07731480b7f7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="google-cloud-messaging"></a>Google 雲端訊息
 

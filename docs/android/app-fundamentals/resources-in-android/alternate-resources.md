@@ -1,17 +1,16 @@
 ---
-title: "其他資源"
-ms.topic: article
+title: 其他資源
 ms.prod: xamarin
 ms.assetid: AE5A864E-192D-475E-C731-99249C2E7D9E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/13/2018
-ms.openlocfilehash: 230c26c2537987f7ca09e28e05ec96186e5f7882
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: f7833e238afe41d4a5ac7b8dde4c168f298752fc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="alternate-resources"></a>其他資源
 

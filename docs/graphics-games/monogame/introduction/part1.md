@@ -1,18 +1,17 @@
 ---
-title: "第 1 – 建立跨平台 MonoGame 部分"
-description: "本逐步解說示範如何建立新的專案，適用於 iOS 和 Android 使用 MonoGame。 結果是一個 Visual Studio for Mac 方案中使用跨平台共用程式碼專案，以及每個平台的一個專案。 這個專案將會顯示空白的藍色畫面時執行。"
-ms.topic: article
+title: 第 1 – 建立跨平台 MonoGame 部分
+description: 本逐步解說示範如何建立新的專案，適用於 iOS 和 Android 使用 MonoGame。 結果是一個 Visual Studio for Mac 方案中使用跨平台共用程式碼專案，以及每個平台的一個專案。 這個專案將會顯示空白的藍色畫面時執行。
 ms.prod: xamarin
 ms.assetid: FC69E69B-04D4-45DF-9BBF-2A6CDEAD9B2F
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 0d1352b4129dc1cf8be42e813787b9b73f80cd3e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0cd12f23f8cb269b2a41a08bf641db08e18fb82b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-1--creating-a-cross-platform-monogame"></a>第 1 – 建立跨平台 MonoGame 部分
 

@@ -1,18 +1,17 @@
 ---
-title: "軟糖 Bean 功能"
-description: "本文件將適用於 Android 4.1 中導入的開發人員提供的新功能的高階概觀。 這些功能包括： 增強式 Android 資料交換 」 共用大型檔案、 多媒體、 對等網路探索、 動畫、 新的權限更新至更新的通知。"
-ms.topic: article
+title: 軟糖 Bean 功能
+description: 本文件將適用於 Android 4.1 中導入的開發人員提供的新功能的高階概觀。 這些功能包括： 增強式 Android 資料交換 」 共用大型檔案、 多媒體、 對等網路探索、 動畫、 新的權限更新至更新的通知。
 ms.prod: xamarin
 ms.assetid: 23F57634-2EF9-5C15-C710-B3E19A5AF7E1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 136484644779ac40e661f50ff19cf15884c864c2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 1d8068ccfc8d0f159a88704370261ec5f20d8b7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="jelly-bean-features"></a>軟糖 Bean 功能
 

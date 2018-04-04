@@ -1,18 +1,17 @@
 ---
 title: 使用 Microsoft 語音 API 的語音辨識
 description: Microsoft 語音 API 是以雲端為基礎的 API，可讓演算法，以處理所使用的語言。 本文說明如何使用 Microsoft 語音辨識 REST API 將音訊轉換成 Xamarin.Forms 應用程式中的文字。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: B435FF6B-8785-48D9-B2D9-1893F5A87EA1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 2230b11f9553fb779a86d7504ed5507d2e7cbaa7
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.openlocfilehash: 81e645749d239f8964047e92255e786c9b35409d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="speech-recognition-using-the-microsoft-speech-api"></a>使用 Microsoft 語音 API 的語音辨識
 

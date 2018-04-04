@@ -1,17 +1,16 @@
 ---
-title: "使用 Android 資產"
-ms.topic: article
+title: 使用 Android 資產
 ms.prod: xamarin
 ms.assetid: 70ECDDC9-FA40-03B4-BF04-E7CFFFE4260D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/13/2018
-ms.openlocfilehash: e1890575f5c3a5bd2e0c0de0712ba459607e6139
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 337a1ed82010658adce40e8946ed1b0361fb6094
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-android-assets"></a>使用 Android 資產
 

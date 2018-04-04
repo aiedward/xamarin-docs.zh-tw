@@ -1,18 +1,17 @@
 ---
-title: "Windows 平台內容"
-description: "平台特性可讓您使用才有特定的平台，而不需要實作自訂轉譯器或影響的功能。 本文將示範如何使用 Windows 平台的內容內建 Xamarin.Forms。"
-ms.topic: article
+title: Windows 平台內容
+description: 平台特性可讓您使用才有特定的平台，而不需要實作自訂轉譯器或影響的功能。 本文將示範如何使用 Windows 平台的內容內建 Xamarin.Forms。
 ms.prod: xamarin
 ms.assetid: 22B403C0-FE6D-498A-AE53-095E6C4B527C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: 01b32d1ca5356ed69480dff0d31c210a8c460417
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d1610e4c9e6a8799362ff955061953962dd755ab
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="windows-platform-specifics"></a>Windows 平台內容
 

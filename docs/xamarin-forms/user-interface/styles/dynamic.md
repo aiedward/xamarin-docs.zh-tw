@@ -1,18 +1,17 @@
 ---
-title: "動態樣式"
-description: "樣式請勿回應屬性的變更，並針對應用程式的持續時間維持不變。 例如，指派之後樣式來視覺化項目，如果其中一個 Setter 執行個體在修改、 移除或加入的新 Setter 執行個體，所做的變更將不會套用至視覺項目。 不過，應用程式可以藉由使用動態的資源回應在執行階段動態樣式變更。"
-ms.topic: article
+title: 動態樣式
+description: 樣式請勿回應屬性的變更，並針對應用程式的持續時間維持不變。 例如，指派之後樣式來視覺化項目，如果其中一個 Setter 執行個體在修改、 移除或加入的新 Setter 執行個體，所做的變更將不會套用至視覺項目。 不過，應用程式可以藉由使用動態的資源回應在執行階段動態樣式變更。
 ms.prod: xamarin
 ms.assetid: 13D4FA4B-DF10-42BF-B001-2C49367FC216
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 9710e322460058902d89ec1a57c374b93beb82fb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c484bdc90ec039a8d70209deabbe283cf7100610
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="dynamic-styles"></a>動態樣式
 

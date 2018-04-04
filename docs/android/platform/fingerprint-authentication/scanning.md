@@ -1,17 +1,16 @@
 ---
-title: "掃描指紋"
-ms.topic: article
+title: 掃描指紋
 ms.prod: xamarin
 ms.assetid: 1CDDC096-77E0-47B3-BE0B-8953E2DDACD3
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/23/2016
-ms.openlocfilehash: 678ceaf122550c6561541533405fe3500d192110
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2b20402fd2cd6782247fb2c62513d7aff43a95a6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="scanning-for-fingerprints"></a>掃描指紋
 

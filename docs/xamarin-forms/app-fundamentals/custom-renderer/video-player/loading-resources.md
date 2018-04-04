@@ -1,17 +1,16 @@
 ---
-title: "正在載入應用程式資源影片"
-ms.topic: article
+title: 正在載入應用程式資源影片
 ms.prod: xamarin
 ms.assetid: F75BD540-9354-4C17-A119-57F3DEC66D54
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 08d07a82651887c9d87b908acd82296a3d80e43f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a9dbf77b85fe7f39c152d4dfb33bdd44c72dca40
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="loading-application-resource-videos"></a>正在載入應用程式資源影片
 

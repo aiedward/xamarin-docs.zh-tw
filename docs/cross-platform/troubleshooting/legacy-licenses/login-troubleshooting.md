@@ -1,16 +1,16 @@
 ---
-title: "為什麼無法我登入 Visual Studio 或 Visual Studio 中的 Xamarin 的 Mac？"
-ms.topic: article
+title: 為什麼無法我登入 Visual Studio 或 Visual Studio 中的 Xamarin 的 Mac？
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 6EF2B553-5DF9-41CC-B68F-77A7F64572FA
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: b50969e4c1d75c0bd79c08223dd959241dcb229a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cb750a7c282ecab6e2193bb554e470086868e018
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="why-cant-i-log-into-xamarin-in-visual-studio-or-visual-studio-for-mac"></a>為什麼無法我登入 Visual Studio 或 Visual Studio 中的 Xamarin 的 Mac？
 

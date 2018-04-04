@@ -1,18 +1,17 @@
 ---
-title: "編輯器"
-description: "多行文字輸入"
-ms.topic: article
+title: 編輯器
+description: 多行文字輸入
 ms.prod: xamarin
 ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 6833f8fb2de35139c35779d9eae4c3aff70568c7
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 1b121357f24ab9a0efab3fe0488fe868525cfd65
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="editor"></a>編輯器
 

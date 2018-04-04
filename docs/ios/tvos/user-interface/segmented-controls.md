@@ -1,18 +1,17 @@
 ---
-title: "使用分割的控制項"
-description: "本文涵蓋設計和 Xamarin.tvOS 應用程式內使用分割的控制項。"
-ms.topic: article
+title: 使用分割的控制項
+description: 本文涵蓋設計和 Xamarin.tvOS 應用程式內使用分割的控制項。
 ms.prod: xamarin
 ms.assetid: 23AD94CC-E93A-40B1-8E2B-ECD21FA355BE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 6561ff70997af05ed4df6b7bfe0ba6345fb44d9d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d4eac932c7fad628a0a65127bceb641f34ea5d79
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-segmented-controls"></a>使用分割的控制項
 

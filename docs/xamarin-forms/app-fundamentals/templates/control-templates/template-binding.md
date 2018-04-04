@@ -1,18 +1,17 @@
 ---
-title: "ControlTemplate 從繫結"
-description: "範本繫結允許資料控制項樣板中的控制項繫結至公用屬性，啟用 [控制項] 範本，輕鬆地變更中的控制項上的屬性值。 本文示範如何使用執行資料繫結的控制項範本的範本繫結。"
-ms.topic: article
+title: ControlTemplate 從繫結
+description: 範本繫結允許資料控制項樣板中的控制項繫結至公用屬性，啟用 [控制項] 範本，輕鬆地變更中的控制項上的屬性值。 本文示範如何使用執行資料繫結的控制項範本的範本繫結。
 ms.prod: xamarin
 ms.assetid: 794A663C-3A8D-438A-BD02-8E97C919B55F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 5b330c448a135cbcf8fc2745debc48924e29c103
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3b306c79aea9bd2192aa73eddcf95790a9b24353
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-from-a-controltemplate"></a>ControlTemplate 從繫結
 
@@ -68,7 +67,7 @@ public string FooterText {
 
 ![](template-binding-images/teal-theme.png "使用範本繫結的控制項範本藍綠色")
 
-## <a name="creating-a-templatebinding-in-c35"></a>建立為 TemplateBinding 中 & #35。
+## <a name="creating-a-templatebinding-in-c35"></a>在 C 中建立為 TemplateBinding&#35;
 
 在 C# 中， [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)建立使用`TemplateBinding`建構函式，如下列程式碼範例所示：
 

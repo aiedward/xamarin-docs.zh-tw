@@ -1,17 +1,16 @@
 ---
-title: "Android 資源基本概念"
-ms.topic: article
+title: Android 資源基本概念
 ms.prod: xamarin
 ms.assetid: ED32E7B5-D552-284B-6385-C3EDDCC30A4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/01/2018
-ms.openlocfilehash: fba8412c53597260744bdce443a7e993a6990672
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f6be1001e5d3455a94e677f1bb5dc52ca574b873
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-resource-basics"></a>Android 資源基本概念
 
@@ -136,7 +135,7 @@ public partial class Resource
 </LinearLayout>
 ```
 
-這個範例有[ `ImageView` ](https://developer.xamarin.com/recipes/android/controls/imageview)需要名為的 drawable 資源**旗標**。 `ImageView`具有其`src`屬性設為 **@drawable/flag** 。 當活動開始時，Android 看起來目錄內**資源/Drawable**名為的檔案**flag.png** (副檔名可能是另一個映像格式，例如**flag.jpg**)和載入該檔案，並顯示在`ImageView`。
+這個範例有[ `ImageView` ](https://developer.xamarin.com/recipes/android/controls/imageview)需要名為的 drawable 資源**旗標**。 `ImageView`具有其`src`屬性設為**@drawable/flag**。 當活動開始時，Android 看起來目錄內**資源/Drawable**名為的檔案**flag.png** (副檔名可能是另一個映像格式，例如**flag.jpg**)和載入該檔案，並顯示在`ImageView`。
 執行此應用程式時，它會看起來類似下列的影像：
 
 ![當地語系化的 ImageView](android-resource-basics-images/03-localized-screenshot.png)

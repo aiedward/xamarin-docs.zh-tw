@@ -1,18 +1,17 @@
 ---
-title: "協助工具選項"
-description: "確定您的應用程式都能由 widest 可能對象"
-ms.topic: article
+title: 協助工具選項
+description: 確定您的應用程式都能由 widest 可能對象
 ms.prod: xamarin
 ms.assetid: E587F0CF-7C1D-41F8-B5A8-DA3E738EDA81
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 88d3bf96fb0a19cf606a3869fa16ce565b352d06
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3b7912f7875e9d07de51861e573065b3d1b73de0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="accessibility"></a>協助工具選項
 

@@ -1,18 +1,17 @@
 ---
-title: "基本的繫結"
-description: "資料繫結目標、 來源和繫結內容"
-ms.topic: article
+title: 基本的繫結
+description: 資料繫結目標、 來源和繫結內容
 ms.prod: xamarin
 ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b82c0471985306962133c3bf7b084b49d5588bb6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 065258acacb8469b90dd2ca04286f0686dc90063
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="basic-bindings"></a>基本的繫結
 
@@ -53,7 +52,7 @@ Xamarin.Forms 資料繫結連結一組兩個物件，其中至少一個通常是
 您可以在任何衍生自的類別的執行個體上設定繫結[ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/)，其中包括`Element`， `VisualElement`， `View`，和`View`衍生項目。  繫結一定會在目標物件上設定。 繫結參考該來源物件。 若要設定資料繫結，請使用下列兩個目標類別的成員：
 
 - [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/)屬性指定的來源物件。
-- [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/)方法指定目標屬性和資料來源 屬性。
+- [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/)方法指定目標屬性和資料來源屬性。
 
 在此範例中，`Label`繫結目標，而`Slider`是繫結來源。 中的變更`Slider`來源影響旋轉的角度`Label`目標。 從來源傳送到目標資料。
 

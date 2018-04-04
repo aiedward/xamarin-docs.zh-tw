@@ -1,17 +1,16 @@
 ---
-title: "逐步解說： 建立使用者介面使用 JSON 項目"
-description: "MonoTouch.Dialog （機動D） 包含支援 JSON 資料透過動態 UI 產生。 在本教學課程中，我們將逐步解說如何使用 JSONElement 隨附於應用程式，或從遠端 Url 載入 JSON 從建立使用者介面。"
-ms.topic: article
+title: 逐步解說： 建立使用者介面使用 JSON 項目
+description: MonoTouch.Dialog （機動D） 包含支援 JSON 資料透過動態 UI 產生。 在本教學課程中，我們將逐步解說如何使用 JSONElement 隨附於應用程式，或從遠端 Url 載入 JSON 從建立使用者介面。
 ms.prod: xamarin
 ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 1a5e4ab73c9090cbb743dc8cb339d6f50c5ff527
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 322857295383d17da03507bdd5ac78753f8c0619
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="walkthrough-using-a-json-element-to-create-a-user-interface"></a>逐步解說： 建立使用者介面使用 JSON 項目
 

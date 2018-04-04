@@ -1,18 +1,17 @@
 ---
-title: "使用 Xamarin 的連續整合簡介"
-description: "持續整合是軟體工程作法自動化的組建會編譯並新增或變更專案的版本控制儲存機制中的開發人員程式碼時，您可選擇測試應用程式。 本文將討論連續整合的一般概念，以及一些可用的選項為持續整合與 Xamarin 專案。"
-ms.topic: article
+title: 使用 Xamarin 的連續整合簡介
+description: 持續整合是軟體工程作法自動化的組建會編譯並新增或變更專案的版本控制儲存機制中的開發人員程式碼時，您可選擇測試應用程式。 本文將討論連續整合的一般概念，以及一些可用的選項為持續整合與 Xamarin 專案。
 ms.prod: xamarin
 ms.assetid: 99484E96-DC69-4697-8BBB-1B44C5CBB5ED
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/04/2017
-ms.openlocfilehash: c28389479148829ee87eeda307915aacf7007b21
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b5bccfa38a9f382789585284765183efa42b6a3d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>使用 Xamarin 的連續整合簡介
 

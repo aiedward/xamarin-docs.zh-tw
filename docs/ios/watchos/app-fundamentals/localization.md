@@ -1,17 +1,16 @@
 ---
-title: "使用當地語系化"
-description: "調整多國語言的應用程式 watchOS"
-ms.topic: article
+title: 使用當地語系化
+description: 調整多國語言的應用程式 watchOS
 ms.prod: xamarin
 ms.assetid: 55834877-757B-4860-AF2F-933A948BE38D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 9ad3499a232e5f2b2ef362f772ed0197e71e6bee
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c765005491f55a1bdcadb1bc5aea97f693dc4570
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-localization"></a>使用當地語系化
 
@@ -86,13 +85,13 @@ iOS 和 OS 監看式會自動使用使用者的語言選擇來載入正確的字
 
 #### <a name="storyboard-images"></a>分鏡腳本映像
 
-範例解決方案也包含 **gradient@2x.png** 每個語言資料夾中的映像。 此映像 （例如可以針對每個語言不同 它內嵌文字需要轉譯，或使用當地語系化遙控器）。
+範例解決方案也包含**gradient@2x.png**每個語言資料夾中的映像。 此映像 （例如可以針對每個語言不同 它內嵌文字需要轉譯，或使用當地語系化遙控器）。
 
 只要設定 映像的**映像**分鏡腳本和正確的映像中的屬性會呈現上監看式，根據使用者所選取的語言。
 
 ![](localization-images/storyboard-image.png "設定影像影像 屬性中的分鏡腳本")
 
-注意： 因為所有 Apple 監看 Retina 顯示器只有 **@2x** 所需的映像的版本。 您不需要指定 **@2x** 腳本中。
+注意： 因為所有 Apple 監看 Retina 顯示器只有**@2x**所需的映像的版本。 您不需要指定**@2x**腳本中。
 
 ### <a name="watch-extension"></a>Watch 擴充功能
 
@@ -130,7 +129,7 @@ displayText.SetText (localizedDisplay);
   displayImage.SetImage("gradient"); // image in Watch App (as shown above)
   ```
 
-2. 您也可以將影像從延伸模組中，移到監看式使用`FromBundle`和應用程式會自動選擇使用者的語言選擇的正確影像。 在範例方案中沒有映像 **language@2x.png** 中每一種語言資料夾，然後它會顯示在`DetailController`使用下列程式碼：
+2. 您也可以將影像從延伸模組中，移到監看式使用`FromBundle`和應用程式會自動選擇使用者的語言選擇的正確影像。 在範例方案中沒有映像**language@2x.png**中每一種語言資料夾，然後它會顯示在`DetailController`使用下列程式碼：
 
   ```csharp
   using (var image = UIImage.FromBundle ("language")) {
@@ -138,7 +137,7 @@ displayText.SetText (localizedDisplay);
   }
   ```
 
-  請注意，您不需要指定 **@2x** 時參照映像的檔案名稱。
+  請注意，您不需要指定**@2x**時參照映像的檔案名稱。
 
 第二種方法也是適用於您從遠端伺服器上監看式; 呈現下載映像不過在此情況下您應該確定您所下載的映像已正確當地語系化根據使用者的喜好設定。
 

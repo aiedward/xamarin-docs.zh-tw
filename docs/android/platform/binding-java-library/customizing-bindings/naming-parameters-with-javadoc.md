@@ -1,18 +1,17 @@
 ---
-title: "與 Javadoc 命名參數"
-description: "本文說明如何使用 Java 專案所產生的 Javadoc 復原 Java 繫結專案中的參數名稱。"
-ms.topic: article
+title: 與 Javadoc 命名參數
+description: 本文說明如何使用 Java 專案所產生的 Javadoc 復原 Java 繫結專案中的參數名稱。
 ms.prod: xamarin
 ms.assetid: 59E8EF16-1322-486A-BB16-353804B77356
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/20/2017
-ms.openlocfilehash: d83135aa9c101e06a680b458cce8c12dcdddd947
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 7517e46c5b66123dc4e12fb5562c59f569f249aa
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="naming-parameters-with-javadoc"></a>與 Javadoc 命名參數
 

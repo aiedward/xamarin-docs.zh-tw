@@ -1,18 +1,17 @@
 ---
-title: "位置服務"
-description: "本指南介紹 Android 應用程式中的位置感知，並說明如何取得 Google 位置服務 API 中使用 Android 的位置服務 API，以及可用的合成的位置提供者的使用者的位置。"
-ms.topic: article
+title: 位置服務
+description: 本指南介紹 Android 應用程式中的位置感知，並說明如何取得 Google 位置服務 API 中使用 Android 的位置服務 API，以及可用的合成的位置提供者的使用者的位置。
 ms.prod: xamarin
 ms.assetid: 0008682B-6CEF-0C1D-3200-56ECF58F5D3C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 28cfb4cda27446b914c23a2ce4e8e9f845876107
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 366c75db49a7e0f4f559b13c0871071dee2f08e3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="location-services"></a>位置服務
 

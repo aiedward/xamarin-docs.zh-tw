@@ -1,18 +1,17 @@
 ---
-title: "驗證 Web 服務的存取權"
-description: "本指南說明如何整合到 Xamarin.Forms 應用程式，讓使用者共用在只具有自己的資料存取時的後端驗證服務。 涵蓋的主題包括使用基本驗證搭配 REST 服務，使用 Xamarin.Auth 元件驗證 OAuth 身分識別提供者，以及使用內建的驗證機制所提供不同的提供者。"
-ms.topic: article
+title: 驗證 Web 服務的存取權
+description: 本指南說明如何整合到 Xamarin.Forms 應用程式，讓使用者共用在只具有自己的資料存取時的後端驗證服務。 涵蓋的主題包括使用基本驗證搭配 REST 服務，使用 Xamarin.Auth 元件驗證 OAuth 身分識別提供者，以及使用內建的驗證機制所提供不同的提供者。
 ms.prod: xamarin
 ms.assetid: E6FCFAE1-4F83-4F93-9190-EC5290360C54
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 0139a7a921861b5d1c9a3639ee2c7e25ee6cf5fe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: df0e188efd2791b03a63c31b715ed1da77079230
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="authenticating-access-to-web-services"></a>驗證 Web 服務的存取權
 

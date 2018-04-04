@@ -1,17 +1,16 @@
 ---
-title: "ApiDefinitions & StructsAndEnums 檔案"
-ms.topic: article
+title: ApiDefinitions & StructsAndEnums 檔案
 ms.prod: xamarin
 ms.assetid: AC2087C0-BA54-46D8-B70C-6972941C8F73
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 0dedc6f574fbe2f2bf4ffaf4e70fb972670e9a8c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 366a50d67e114084808fbd41f5e70157e508eb4e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="apidefinitions--structsandenums-files"></a>ApiDefinitions & StructsAndEnums 檔案
 

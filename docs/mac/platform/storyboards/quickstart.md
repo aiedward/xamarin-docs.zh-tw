@@ -1,18 +1,17 @@
 ---
-title: "分鏡腳本快速入門"
-description: "取得已啟動的建置 macOS 分鏡腳本包含使用者介面。"
-ms.topic: article
+title: 分鏡腳本快速入門
+description: 取得已啟動的建置 macOS 分鏡腳本包含使用者介面。
 ms.prod: xamarin
 ms.assetid: 20719B5D-8147-4E8A-A23C-8D575C7ACCEE
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: fe3a93557509aba4b33b1470879cd2504ed0f2a2
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0c366de844b119736763f7d419d6bc9bb3fbfc0a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="starting-a-new-storyboard-based-project"></a>正在啟動新的分鏡腳本定專案
 

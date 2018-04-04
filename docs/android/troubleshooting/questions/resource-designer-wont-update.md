@@ -1,17 +1,17 @@
 ---
-title: "不會更新我的 Android Resource.designer.cs 檔案"
-ms.topic: article
+title: 不會更新我的 Android Resource.designer.cs 檔案
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 3F7376E3-59CC-4722-AEED-BB50E4D952AA
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/19/2017
-ms.openlocfilehash: 1b1496f4a6a504c8e991f853c92f937015797aa6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 6d20c92fbb61ab11fcfeda3e9d2f63fdfc5a6d54
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="my-android-resourcedesignercs-file-will-not-update"></a>不會更新我的 Android Resource.designer.cs 檔案
 

@@ -1,18 +1,17 @@
 ---
-title: "2D 繪圖"
-description: "跨平台 2D 繪圖 SkiaSharp 與"
-ms.topic: article
+title: 2D 繪圖
+description: 跨平台 2D 繪圖 SkiaSharp 與
 ms.prod: xamarin
 ms.assetid: A8A61421-4544-422A-A7E0-9355C67DF21E
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: ee0625f22062fef3c27a697ce33488274abc24d9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a6249525e8a5f85284c462888a7698312321642f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="2d-drawing"></a>2D 繪圖
 
@@ -74,4 +73,4 @@ SkiaSharp 和範例的核心概念的概觀來呈現圖形、 文字、 點陣�
 
 SkiaSharp 是進行中，我們的共用對象我們的社群。 雖然我們已經繫結 Skia API 的重要部分，請完成剩餘工時。 我們使用由 Skia，顯示的 C API 極為穩定，而且我們計劃也會繼續執行參與 Skia api 提供完整的涵蓋範圍的 C 繫結至工作。
 
-若要幫助我們引導我們的繫結工作，請保留註解或建議問題 GitHub 儲存機制上[http://github.com/mono/SkiaSharp](http://github.com/mono/SkiaSharp)。
+若要幫助我們引導我們的繫結工作，請保留註解或建議問題 GitHub 儲存機制上[ http://github.com/mono/SkiaSharp ](http://github.com/mono/SkiaSharp)。

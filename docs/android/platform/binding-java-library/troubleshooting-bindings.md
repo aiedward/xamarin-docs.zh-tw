@@ -1,18 +1,17 @@
 ---
-title: "疑難排解繫結"
-description: "本文摘要說明許多常見的錯誤時產生繫結，以及可能的原因和建議的方法來解決它們可能會發生。"
-ms.topic: article
+title: 疑難排解繫結
+description: 本文摘要說明許多常見的錯誤時產生繫結，以及可能的原因和建議的方法來解決它們可能會發生。
 ms.prod: xamarin
 ms.assetid: BB81FCCF-F7BF-4C78-884E-F02C49AA819A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 6d31e2a22c63f8d46893dd1928b561e1a06b19b4
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: da6286eed091114c117c723f462bbb8cac77034b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting-bindings"></a>疑難排解繫結
 
@@ -51,7 +50,7 @@ _本文摘要說明許多常見的錯誤時產生繫結，以及可能的原因�
 
 - **具有模糊化的特性類別**&ndash;模糊化類別的特性包括：
 
-    - 類別名稱包含 **$** ，也就是**$.class**
+    - 類別名稱包含**$**，也就是**$.class**
     - 類別名稱完全受到個小寫字元，也就是**a.class**      
 
 - **`import` 陳述式未參考的程式庫**&ndash;未參考的文件庫識別，並將這些相依性加入至具有的 Xamarin.Android 繫結專案**建置動作**的**ReferenceJar**或**EmbedddedReferenceJar**。

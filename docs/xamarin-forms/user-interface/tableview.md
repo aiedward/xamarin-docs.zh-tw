@@ -1,18 +1,17 @@
 ---
 title: TableView
-description: "在捲動功能表、 設定與輸入的表單。"
-ms.topic: article
+description: 在捲動功能表、 設定與輸入的表單。
 ms.prod: xamarin
 ms.assetid: D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 2dff3ca311341ffe1e30145ad436820b715973b0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: dc55f3fe70450c71b639cf33166720fc27d45a10
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="tableview"></a>TableView
 

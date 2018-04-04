@@ -1,18 +1,17 @@
 ---
-title: "使用模型類別"
-description: "模型類別可以大幅簡化呈現複雜的 3D 物件相較於呈現 3D 圖形的傳統方法。 從內容檔案，以便輕鬆整合的任何自訂程式碼的內容會建立模型物件。"
-ms.topic: article
+title: 使用模型類別
+description: 模型類別可以大幅簡化呈現複雜的 3D 物件相較於呈現 3D 圖形的傳統方法。 從內容檔案，以便輕鬆整合的任何自訂程式碼的內容會建立模型物件。
 ms.prod: xamarin
 ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: dd0f97f450d131bcbddff43ffc778b91bff6b12e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 871e4b1ad058dd97635dab228522620850b229b7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-the-model-class"></a>使用模型類別
 

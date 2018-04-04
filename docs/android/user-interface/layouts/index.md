@@ -1,18 +1,17 @@
 ---
-title: "版面配置"
-description: "定義 Xamarin.Android 應用程式的視覺化結構"
-ms.topic: article
+title: 版面配置
+description: 定義 Xamarin.Android 應用程式的視覺化結構
 ms.prod: xamarin
 ms.assetid: 2BA72B0E-230D-4F98-B4D5-4EFB0D479789
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/18/2017
-ms.openlocfilehash: 7c8bfa9594cd14322af671a97727e4e3b00ffeb1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 01ea244c7480082f2b3b39c0bdae2bad6807aa6d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="layouts"></a>版面配置
 

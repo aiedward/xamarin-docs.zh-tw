@@ -1,18 +1,17 @@
 ---
-title: "使用按鈕"
-description: "本文涵蓋設計和使用 Xamarin.tvOS 應用程式內的按鈕。"
-ms.topic: article
+title: 使用按鈕
+description: 本文涵蓋設計和使用 Xamarin.tvOS 應用程式內的按鈕。
 ms.prod: xamarin
 ms.assetid: DA6EF400-A4E3-4245-A0D4-F2398CAE2C9B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/07/2017
-ms.openlocfilehash: 5da834e7e77fb8ab080c124bd09653bc840be3b0
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: e915e96690fe67f0e704ec558313427f01753438
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-buttons"></a>使用按鈕
 

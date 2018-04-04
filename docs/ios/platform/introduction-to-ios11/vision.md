@@ -1,17 +1,16 @@
 ---
-title: "目標 Framework"
-ms.topic: article
+title: 目標 Framework
 ms.prod: xamarin
 ms.assetid: 7273ED68-7B7D-4252-B3A0-02DB2E357A8C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/31/2016
-ms.openlocfilehash: fb1b5b11ef0117a40267f805621797c3aee04810
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 698bf829128cff1263e98b49d29a77b75ec32ad9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="vision-framework"></a>目標 Framework
 

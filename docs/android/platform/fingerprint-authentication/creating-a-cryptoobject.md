@@ -1,17 +1,16 @@
 ---
-title: "建立 CryptoObject"
-ms.topic: article
+title: 建立 CryptoObject
 ms.prod: xamarin
 ms.assetid: 4D159B80-FFF4-4136-A7F0-F8A5C6B86838
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 6d383bc6077dc0286fa5ee4ae7e88df2d62e4664
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f7a8ab7a43c0a3258cf6e737b0d235cbe7a1c747
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-a-cryptoobject"></a>建立 CryptoObject
 

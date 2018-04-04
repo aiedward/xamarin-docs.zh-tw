@@ -1,18 +1,17 @@
 ---
-title: "可用的組件"
-description: "Xamarin.iOS、 Xamarin.Android 和 Xamarin.Mac 中可用的組件"
-ms.topic: article
+title: 可用的組件
+description: Xamarin.iOS、 Xamarin.Android 和 Xamarin.Mac 中可用的組件
 ms.prod: xamarin
 ms.assetid: AEF4ED0E-391F-4FA4-9F18-842BC24C272D
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/13/2018
-ms.openlocfilehash: 09df3b5e203281070e21b8c18ee4ff42245c0e46
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: e27ad3469a37634f5829f9c4c903808a74e4d6ae
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="available-assemblies"></a>可用的組件
 

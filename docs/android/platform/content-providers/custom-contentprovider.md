@@ -1,18 +1,17 @@
 ---
-title: "建立自訂 ContentProvider"
-description: "上一節示範了如何從內建的 ContentProvider 實作取用資料。 本章節將說明如何建置自訂 ContentProvider 並使用其資料。"
-ms.topic: article
+title: 建立自訂 ContentProvider
+description: 上一節示範了如何從內建的 ContentProvider 實作取用資料。 本章節將說明如何建置自訂 ContentProvider 並使用其資料。
 ms.prod: xamarin
 ms.assetid: 36742B59-607E-070E-5D0E-B9C18917D3F4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: 9fac4a233cecd9332602047bc83830d145b5fb08
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 95d38fae1614bbb12ddafaeca60d50e63404ea95
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-a-custom-contentprovider"></a>建立自訂 ContentProvider
 

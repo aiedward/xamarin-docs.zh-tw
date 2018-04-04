@@ -1,18 +1,17 @@
 ---
-title: "使用 JNI"
-description: "Xamarin.Android 允許撰寫 C# 而不是 Java 的 Android 應用程式。 數個組件會提供 Xamarin.Android 這兩個提供的 Java 程式庫，包括 Mono.Android.dll 和 Mono.Android.GoogleMaps.dll 繫結。 不過，每個可能的 Java 程式庫，如未提供繫結，而且每個 Java 類型及成員所提供的繫結可能不會將繫結。 若要使用未繫結的 Java 類型和成員，可能會使用 Java 原生介面 (JNI)。 本文說明如何使用 JNI Java 類型及成員從 Xamarin.Android 應用程式互動。"
-ms.topic: article
+title: 使用 JNI
+description: Xamarin.Android 允許撰寫 C# 而不是 Java 的 Android 應用程式。 數個組件會提供 Xamarin.Android 這兩個提供的 Java 程式庫，包括 Mono.Android.dll 和 Mono.Android.GoogleMaps.dll 繫結。 不過，每個可能的 Java 程式庫，如未提供繫結，而且每個 Java 類型及成員所提供的繫結可能不會將繫結。 若要使用未繫結的 Java 類型和成員，可能會使用 Java 原生介面 (JNI)。 本文說明如何使用 JNI Java 類型及成員從 Xamarin.Android 應用程式互動。
 ms.prod: xamarin
 ms.assetid: A417DEE9-7B7B-4E35-A79C-284739E3838E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: f14d456cba66142c51e0755cdfd3c6795bd1cf73
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 4b5874a0f0e4289201f68299e2e37660cabc9ecf
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-jni"></a>使用 JNI
 

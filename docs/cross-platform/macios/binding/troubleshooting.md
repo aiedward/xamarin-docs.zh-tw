@@ -1,18 +1,17 @@
 ---
-title: "繫結疑難排解"
-description: "本指南說明如果您無法繫結 Objective C 程式庫，該怎麼辦。"
-ms.topic: article
+title: 繫結疑難排解
+description: 本指南說明如果您無法繫結 Objective C 程式庫，該怎麼辦。
 ms.prod: xamarin
 ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/19/2016
-ms.openlocfilehash: 2db7fe30f05224f6b74b4d2189606da59946bda0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7ea3e3802ec2e0baf0fe8355a41e806bacabc9ac
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-troubleshooting"></a>繫結疑難排解
 
@@ -45,15 +44,15 @@ ms.lasthandoff: 02/27/2018
 
 您的意見反應對我們很重要。 如果您發現任何 Xamarin.Mac 的問題：
 
-- 請檢查[Xamarin.Mac 論壇](https://forums.xamarin.com/categories/mac)
-- 搜尋[問題儲存機制](https://github.com/xamarin/xamarin-macios/issues) 
-- 在切換之前 GitHub 問題，Xamarin 問題追蹤上[Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi)。 請搜尋那里相符的問題。
-- 如果找不到相符的問題，請檔案中的新問題[GitHub 問題儲存機制](https://github.com/xamarin/xamarin-macios/issues/new)。
+- 查看 [Xamarin.Mac 論壇](https://forums.xamarin.com/categories/mac) \(英文\)
+- 搜尋[問題存放庫](https://github.com/xamarin/xamarin-macios/issues) \(英文\) 
+- 在切換到 GitHub 問題之前，Xamarin 問題的追蹤是在 [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) \(英文\) 上進行的。 請從該處搜尋相符的問題。
+- 如果您找不到相符的問題，請在 [GitHub 問題存放庫](https://github.com/xamarin/xamarin-macios/issues/new) \(英文\) 中提出新的問題。
 
-GitHub 問題是所有公用的。 您不可以隱藏註解或附件。 
+GitHub 問題全都是公開的。 無法隱藏意見或附件。 
 
-請提供下盡量：
+請儘量包含下列資訊：
 
-- 重現問題的簡單範例。 這是**一兩**盡可能。 
-- 當機的完整的堆疊追蹤。
-- C# 程式碼周圍的損毀。 
+- 一個可重現問題的簡單範例。 這是**非常寶貴的**，請盡您所能提供。 
+- 損毀狀況的完整堆疊追蹤。
+- 損毀狀況周圍的 C# 程式碼。 

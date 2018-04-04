@@ -1,18 +1,17 @@
 ---
-title: "部署的應用程式市集"
-description: "監看式應用程式部署的應用程式市集"
-ms.topic: article
+title: 部署的應用程式市集
+description: 監看式應用程式部署的應用程式市集
 ms.prod: xamarin
 ms.assetid: DBE16040-70D2-4F61-B5F3-C8D213DBC754
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: c5b89570fdd3df80d39c6621fcd12a23babed9ee
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: a3c68a0720fbe18f35731cf1a19248c00f748877
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="deploying-to-the-app-store"></a>部署的應用程式市集
 
@@ -177,7 +176,7 @@ is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 請確定您有最新版本的 Visual Studio for Mac，而且您**AppIcons.appiconset**包含一組完整的映像。 如果您仍然看到此錯誤，檢視的來源**Contents.json**以確認它包含所有必要的映像的項目。 或者，一旦您已確保您使用 Xamarin 的最新版本，刪除並重新建立**AppIcons.appiconset**。
 
 > [!IMPORTANT]
-> 沒有已知的錯誤在 Visual Studio 中適用於 Mac 的監看式 圖示的支援： 它會預期 88 x 88 像素影像 **29x29@3x** 映像 （這應該是 87 x 87 像素為單位）。
+> 沒有已知的錯誤在 Visual Studio 中適用於 Mac 的監看式 圖示的支援： 它會預期 88 x 88 像素影像**29x29@3x**映像 （這應該是 87 x 87 像素為單位）。
 
 
 您無法在 Visual Studio 中修正此問題適用於 Mac 的影像資產在 Xcode 中編輯，或是手動編輯**Contents.json**檔案 (以符合[這個範例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。

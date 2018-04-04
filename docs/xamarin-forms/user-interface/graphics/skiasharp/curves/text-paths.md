@@ -1,18 +1,17 @@
 ---
 title: 路徑和文字
 description: 瀏覽路徑和文字的交集
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 25e76b7e02aa5bf6d5e83ea8188456115c527ef3
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 77005665d163e7f9f62325b94cc5c779a7873f78
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="paths-and-text"></a>路徑和文字
 

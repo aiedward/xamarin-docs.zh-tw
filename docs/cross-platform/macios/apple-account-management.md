@@ -1,17 +1,16 @@
 ---
-title: "Apple 帳戶管理"
-ms.topic: article
+title: Apple 帳戶管理
 ms.prod: xamarin
 ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/05/2017
-ms.openlocfilehash: c0d328e784b0a12b0df1a6b2bf5b990ffa461da5
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 21af0ef09644f39f9be42788b3d8f4977a2143d3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="apple-account-management"></a>Apple 帳戶管理
 
@@ -50,7 +49,7 @@ Apple 帳戶管理位於 Visual Studio for mac。 它不是目前可用在 Visua
 
     ![Apple 開發人員帳戶選項](apple-account-management-images/image1.png)
 
-2. 按 **+** 按鈕以顯示在對話方塊中，符號，如底下所述： 
+2. 按**+**按鈕以顯示在對話方塊中，符號，如底下所述： 
 
     ![fastlane 對話方塊。](apple-account-management-images/image2.png)
 

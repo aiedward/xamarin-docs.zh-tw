@@ -1,18 +1,17 @@
 ---
-title: "活動開發週期"
-description: "活動是基本的建置組塊的 Android 應用程式，它們可以存在於不同的狀態數目。 活動的生命週期有具現化開始和結束解構而且之間包含許多狀態。 當活動變更狀態時，會呼叫適當的生命週期事件的方法，通知即將發生的狀態變更的活動，並讓它可以執行程式碼，該變更會隨著調整。 這篇文章會檢查活動的生命週期和說明責任活動有每個階段的行為良好、 可靠的應用程式一部分這些狀態變更。"
-ms.topic: article
+title: 活動開發週期
+description: 活動是基本的建置組塊的 Android 應用程式，它們可以存在於不同的狀態數目。 活動的生命週期有具現化開始和結束解構而且之間包含許多狀態。 當活動變更狀態時，會呼叫適當的生命週期事件的方法，通知即將發生的狀態變更的活動，並讓它可以執行程式碼，該變更會隨著調整。 這篇文章會檢查活動的生命週期和說明責任活動有每個階段的行為良好、 可靠的應用程式一部分這些狀態變更。
 ms.prod: xamarin
 ms.assetid: 05B34788-F2D2-4347-B66B-40AFD7B1D167
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/28/2018
-ms.openlocfilehash: 335e63ce5a36cbd0172744a35c82920853b82e5c
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f35f3e59d8b669795ade3d370894e45866cea1ff
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="activity-lifecycle"></a>活動開發週期
 

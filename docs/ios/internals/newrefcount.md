@@ -1,16 +1,15 @@
 ---
-title: "新的參考計數系統"
-ms.topic: article
+title: 新的參考計數系統
 ms.prod: xamarin
 ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 723a9c4a052f7f432ba0f32ec501af3221b2696f
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 00a792fb6ee55d5937046ebb321ffcb3aa8bdbd5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="new-reference-counting-system"></a>新的參考計數系統
 

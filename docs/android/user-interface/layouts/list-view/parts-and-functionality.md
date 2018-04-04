@@ -1,17 +1,16 @@
 ---
-title: "ListView 組件和功能"
-ms.topic: article
+title: ListView 組件和功能
 ms.prod: xamarin
 ms.assetid: ABA40FED-FF68-C0B0-BC43-C748CEE585D8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: 4a7947c40d80c0ff8cb35dab54a11907280335d9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ec9b6583cac9478957e14f709c7c7ee8eb273cbc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="listview-parts-and-functionality"></a>ListView 組件和功能
 

@@ -1,17 +1,16 @@
 ---
-title: "自訂 ListView 的外觀"
-ms.topic: article
+title: 自訂 ListView 的外觀
 ms.prod: xamarin
 ms.assetid: B09AD282-2C4F-D71E-6806-9B1EF05C2CD4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 1bf481e4999365f4afc52cb9dda83c6e627950e1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 71557cc0adb123cd4556c3d35add314f44f30da1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="customizing-a-listviews-appearance"></a>自訂 ListView 的外觀
 

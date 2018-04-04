@@ -1,17 +1,16 @@
 ---
 title: 取代動作列
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5341D28E-B203-478D-8464-6FAFDC3A4110
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/27/2018
-ms.openlocfilehash: f02f77eb45086d1d568b367b28163a4773dcd80d
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.openlocfilehash: d9a5db70999a79d9b968fcd9a27d45e6d73354c0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="replacing-the-action-bar"></a>取代動作列
 

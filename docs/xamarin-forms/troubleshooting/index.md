@@ -1,18 +1,18 @@
 ---
-title: "疑難排解"
-description: "常見的錯誤狀況與解決方式"
-ms.topic: article
+title: 疑難排解
+description: 常見的錯誤狀況與解決方式
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 63291951-7375-4CBF-BCC3-2E4AD157A2C8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: 23ebefcbd6114b06c39740b3b56f87aeac0b9a00
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fbe4fb6fce52636b59a9637ee0150c4c19fcc9da
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting"></a>疑難排解
 

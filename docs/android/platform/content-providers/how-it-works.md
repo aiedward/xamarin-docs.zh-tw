@@ -1,17 +1,16 @@
 ---
-title: "如何在內容提供者工作"
-ms.topic: article
+title: 如何在內容提供者工作
 ms.prod: xamarin
 ms.assetid: B9E2EF89-7EBE-45F5-1ED9-7D2C70BE792C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 7802988833563469fcc25e03ee1bda2046591681
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b4c674176be5af09d6b780d79923737a364d1591
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="how-content-providers-work"></a>如何在內容提供者工作
 

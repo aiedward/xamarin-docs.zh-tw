@@ -1,18 +1,18 @@
 ---
-title: "watchOS 疑難排解"
-description: "已知的問題和因應措施 watchOS 開發問題。"
-ms.topic: article
+title: watchOS 疑難排解
+description: 已知的問題和因應措施 watchOS 開發問題。
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 27C31DB8-451E-4888-BBC1-CE0DFC2F9DEC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 4a6b916f991b337d8a28764f1482ddd837bad460
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 6e7a7dd09d65b88831136662d8718886aaf483c5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 疑難排解
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 03/22/2018
 <a name="deploy" />
 
 - 較舊版本的 Visual Studio for Mac 不正確地顯示其中一個**AppleCompanionSettings**圖示為 88 x 88 像素為單位; 會導致**遺漏圖示錯誤**如果您嘗試以提交至應用程式存放區。
-    這個圖示應該是 87 x 87 像素 (29 單位 **@3x**  Retina 螢幕)。 您無法在 Visual Studio 中修正此問題適用於 Mac 的影像資產在 Xcode 中編輯，或是手動編輯**Contents.json**檔案 (以符合[這個範例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。
+    這個圖示應該是 87 x 87 像素 (29 單位**@3x** Retina 螢幕)。 您無法在 Visual Studio 中修正此問題適用於 Mac 的影像資產在 Xcode 中編輯，或是手動編輯**Contents.json**檔案 (以符合[這個範例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。
 
 - 如果監看式擴充功能專案**Info.plist > WKApp 套件組合識別碼**不[正確設定](~/ios/watchos/get-started/project-references.md)以符合監看式應用程式的**套件組合識別碼**，偵錯工具將無法連接和視覺化Studio for Mac 將會等候訊息*「 正在等候偵錯工具要連接 」*。
 

@@ -1,17 +1,17 @@
 ---
-title: "如何手動安裝 Xamarin.Android.Support 套件所需的 Android 支援程式庫？"
-ms.topic: article
+title: 如何手動安裝 Xamarin.Android.Support 套件所需的 Android 支援程式庫？
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: A9CB8CA8-8A6D-405E-B84C-A16CE452C0F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 26dd7e23352bf0911c2a7268518ddebf6626596a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e760a87cbd1e0220ed5cf3a350d3539ffe29650e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="how-can-i-manually-install-the-android-support-libraries-required-by-the-xamarinandroidsupport-packages"></a>如何手動安裝 Xamarin.Android.Support 套件所需的 Android 支援程式庫？
 

@@ -1,18 +1,18 @@
 ---
-title: "解析程式庫安裝錯誤"
-description: "在某些情況下，您可能會發生錯誤時安裝的 Android 支援程式庫。 本指南提供的一些常見錯誤的因應措施。"
-ms.topic: article
+title: 解析程式庫安裝錯誤
+description: 在某些情況下，您可能會發生錯誤時安裝的 Android 支援程式庫。 本指南提供的一些常見錯誤的因應措施。
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 2AE68ACE-8496-445D-BF17-5E4097D4AE35
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 66555139cfaab2074e7461be737f997a9bb9c7a7
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 6f280a90994ff40ebd8a07d2cab49ddc2b3d6ca1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="resolving-library-installation-errors"></a>解析程式庫安裝錯誤
 
@@ -104,7 +104,7 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     -   [android\_m2repository\_r16.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A83087881EE6
 
-    如果**m2repository**封存不會顯示在此資料表中，您可以建立的下載 URL 前面加上 **https://dl-ssl.google.com/android/repository/** 名稱**m2repository**下載。 例如，使用 **https://dl-ssl.google.com/android/repository/android \_m2repository\_r10.zip**下載**android\_m2repository\_r10.zip**。
+    如果**m2repository**封存不會顯示在此資料表中，您可以建立的下載 URL 前面加上**https://dl-ssl.google.com/android/repository/**名稱**m2repository**下載。 例如，使用 **https://dl-ssl.google.com/android/repository/android \_m2repository\_r10.zip**下載**android\_m2repository\_r10.zip**。
 
 2.  將檔案重新命名的上表所示的下載 URL 對應的 MD5 雜湊。 例如，如果您已經下載**android\_m2repository\_r25.zip**，它重新命名為**0B3F1796C97C707339FB13AE8507AF50.zip**。 如果下載檔案的下載 URL 的 MD5 雜湊不會顯示在資料表中，您可以使用[線上 MD5 產生器](http://www.webconfs.com/online-md5-generator.php)將 URL 轉換成 MD5 雜湊字串。 
 

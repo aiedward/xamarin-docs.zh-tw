@@ -1,17 +1,16 @@
 ---
-title: ".xib 程式碼產生"
-ms.topic: article
+title: .xib 程式碼產生
 ms.prod: xamarin
 ms.assetid: 365991A8-E07A-0420-D28E-BC4D32065E1A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 7d320b3fc40c852c337e5fd1e9bda4e90920cf70
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: b887dbf09693452f62f744669ad9713927020cea
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xib-code-generation"></a>.xib 程式碼產生
 

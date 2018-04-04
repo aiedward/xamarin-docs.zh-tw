@@ -1,18 +1,18 @@
 ---
 title: 對於 Android SDK 工具所做的變更
 description: Android SDK 會如何管理已安裝的應用程式開發介面層級和 Avd 的變更。
-ms.topic: article
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5AC61C00-0FF6-4C2D-80E7-D67A3EE30A5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: a16aa3704d9e0a63cfabde4b620452e7e2a5bf57
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.openlocfilehash: 4156d712b91ad069d482debdf0731be8b649287a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>對於 Android SDK 工具所做的變更
 

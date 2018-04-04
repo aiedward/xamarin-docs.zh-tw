@@ -1,18 +1,17 @@
 ---
 title: macOS 使用者介面
 description: 描述各種 macOS UI 控制項的指南的這個文件連結。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: 2ad3d37e1a191423e0a9d744be2329870ba732d3
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.openlocfilehash: d40faa29f2fe278377bf4eae42a032f3dc9086ab
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="macos-user-interface"></a>macOS 使用者介面
 

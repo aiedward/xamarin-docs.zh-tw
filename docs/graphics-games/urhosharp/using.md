@@ -1,17 +1,16 @@
 ---
-title: "使用 UrhoSharp"
-description: "UrhoSharp 引擎的概觀"
-ms.topic: article
+title: 使用 UrhoSharp
+description: UrhoSharp 引擎的概觀
 ms.prod: xamarin
 ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: cd30f17d631216a3ea119a262aca6d294394a77f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cdb32c0fe9aa1a267bda5768b9026667723d694c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-urhosharp"></a>使用 UrhoSharp
 
@@ -497,7 +496,7 @@ healthBar.SetTexture(ResourceCache.GetTexture2D("Textures/HealthBarBorder.png"))
 
 Urho3D 嘗試使用現有的檔案格式可能的話，並定義自訂的檔案格式，例如模型絕對必要時 (*.mdl) 和動畫 (*.ani)。 針對這些類型的資產，Urho 提供轉換器- [AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html)消耗許多熱門的 3D 格式，例如 fbx、 dae、 3ds，和 obj 等等。
 
-另外還有好用的增益集 Blender [https://github.com/reattiva/Urho3D-Blender](https://github.com/reattiva/Urho3D-Blender) ，可以匯出格式，可適用於 Urho3D Blender 資產。
+另外還有好用的增益集 Blender [ https://github.com/reattiva/Urho3D-Blender ](https://github.com/reattiva/Urho3D-Blender) ，可以匯出格式，可適用於 Urho3D Blender 資產。
 
 ## <a name="background-loading-of-resources"></a>資源的背景載入
 
@@ -529,7 +528,7 @@ soundSource.AutoRemove = true;
 
 # <a name="particles"></a>物件
 
-物件提供簡易的方式加入至應用程式的一些簡單且便宜的影響。  您可以使用 PEX 格式儲存的物件使用的 puttygen 等工具[http://onebyonedesign.com/flash/particleeditor/](http://onebyonedesign.com/flash/particleeditor/)。
+物件提供簡易的方式加入至應用程式的一些簡單且便宜的影響。  您可以使用 PEX 格式儲存的物件使用的 puttygen 等工具[ http://onebyonedesign.com/flash/particleeditor/ ](http://onebyonedesign.com/flash/particleeditor/)。
 
 物件是可以加入至節點的元件。  您必須呼叫該節點的`CreateComponent<ParticleEmitter2D>`方法來建立物件，並接著設定物件的效果屬性設定為 2D 效果從資源快取載入。
 

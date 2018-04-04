@@ -1,16 +1,16 @@
 ---
-title: "PCL 案例研究： 如何解決 System.Diagnostics.Tracing Microsoft TPL 資料流程 NuGet 套件的相關問題？"
-ms.topic: article
+title: PCL 案例研究： 如何解決 System.Diagnostics.Tracing Microsoft TPL 資料流程 NuGet 套件的相關問題？
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7986A556-382D-4D00-ACCF-3589B4029DE8
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: c1d8bab1af8082d74f447cd51422a7eedb7c18c4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 04814b78fd035005aabd8b9229d36bbda17ba140
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-package"></a>PCL 案例研究： 如何解決 System.Diagnostics.Tracing Microsoft TPL 資料流程 NuGet 套件的相關問題？
 
@@ -90,7 +90,7 @@ Xamarin.iOS 和 Xamarin.Android 不會實作每個可做為參考 PCL 設定檔�
 
 **\[1\] "參考組件 」 的位置**
 
-Windows: `C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETPortable\v4.5\System.Diagnostics.Tracing.dll`
+Windows：`C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETPortable\v4.5\System.Diagnostics.Tracing.dll`
 
 Mac （單聲道）： `/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/xbuild-frameworks/.NETPortable/v4.5/System.Diagnostics.Tracing.dll`
 
@@ -107,7 +107,7 @@ Mac （單聲道）： <code>/Library/Frameworks/Mono.framework/Versions/Current
 
 1. 複製`System.Diagnostics.Tracing.dll`片面組件至應用程式專案資料夾中，從下列位置之一：
 
-    Windows: `C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Diagnostics.Tracing.dll`
+    Windows：`C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Diagnostics.Tracing.dll`
 
     Mac （單聲道）： `/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/4.5/Facades/System.Diagnostics.Tracing.dll`
 

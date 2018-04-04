@@ -1,18 +1,17 @@
 ---
 title: SiriKit
-description: "這篇文章會示範如何使用 SiriKit Xamarin.iOS 應用程式中提供的 iOS 裝置上使用 Siri 使用者可以存取的服務。"
-ms.topic: article
+description: 這篇文章會示範如何使用 SiriKit Xamarin.iOS 應用程式中提供的 iOS 裝置上使用 Siri 使用者可以存取的服務。
 ms.prod: xamarin
 ms.assetid: 84E5681A-F557-4967-AA99-F831169157AA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 9d7773be1244b0ba4e1a57c8a1efbddf02396138
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ac68f249361fd5bee8af102a1418c9d5f1d2c0ca
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="sirikit"></a>SiriKit
 

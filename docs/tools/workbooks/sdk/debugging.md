@@ -1,16 +1,15 @@
 ---
-title: "偵錯的整合"
-ms.topic: article
+title: 偵錯的整合
 ms.prod: xamarin
 ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: a0873c6b902e29174da5e27a09e8f580d6d69eb7
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: eaf391c399aa80de0174189ec68a2cca70125895
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="debugging-integrations"></a>偵錯的整合
 
@@ -23,7 +22,7 @@ MacOS，在記錄檔訊息，會出現在記錄檔檢視器功能表 (**視窗 >
 用戶端記錄檔位於 macOS 及 Windows 上的下列位置：
 
 - Mac: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
-- Windows: `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
+- Windows：`%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
 要注意的一點是，當載入透過一般整合`#r`在開發期間的機制，整合組件將會挑選做為_相依性_活頁簿和隨附的絕對路徑是否未使用。 這可能會造成似乎不會傳播，如同重建整合並沒有變更。
 

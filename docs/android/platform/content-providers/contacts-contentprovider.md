@@ -1,17 +1,16 @@
 ---
-title: "使用連絡人 ContentProvider"
-ms.topic: article
+title: 使用連絡人 ContentProvider
 ms.prod: xamarin
 ms.assetid: 21C5D1B4-3783-6090-33AB-78A484E65925
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/22/2018
-ms.openlocfilehash: 730cc1f815641d79350784790e3b33b743d1aebe
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 754b81cec7f1adbe5c7ff1c820260e162e226b15
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-the-contacts-contentprovider"></a>使用連絡人 ContentProvider
 

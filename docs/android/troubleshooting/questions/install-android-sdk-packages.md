@@ -1,17 +1,17 @@
 ---
-title: "應該安裝的 Android SDK 封裝？"
-ms.topic: article
+title: 應該安裝的 Android SDK 封裝？
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: F136AAE0-C6D2-4B0F-8F8C-7A6A94877266
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/02/2018
-ms.openlocfilehash: e2b0736a9ccc4dde5c1dcdf2d99f527247040560
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d1fc8a1c511e86615108d1df841c28256f23191f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="which-android-sdk-packages-should-i-install"></a>應該安裝的 Android SDK 封裝？
 

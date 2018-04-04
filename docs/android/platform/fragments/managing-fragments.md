@@ -1,17 +1,16 @@
 ---
-title: "管理的片段"
-ms.topic: article
+title: 管理的片段
 ms.prod: xamarin
 ms.assetid: 02C5E8F0-32EF-4FD9-DC8B-04650E20722C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: aa7c6eb2435be473049f0799a70a6eb37e678c78
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b39067b0cb1bbb344866761042db0125fd4a4dc5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="managing-fragments"></a>管理的片段
 

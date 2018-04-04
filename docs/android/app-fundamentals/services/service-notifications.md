@@ -1,18 +1,17 @@
 ---
-title: "服務通知"
-description: "本指南討論 Android 的服務可能會如何使用本機通知分派給使用者的資訊。"
-ms.topic: article
+title: 服務通知
+description: 本指南討論 Android 的服務可能會如何使用本機通知分派給使用者的資訊。
 ms.prod: xamarin
 ms.assetid: 6C06FDE7-6385-40EF-AC7C-8EFB54E29F45
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: 3c06fca9c6d8c3cd91889007bd1879149771622b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 65ccb94bd4fac1f3818b4f08eb34ecf73d6c52e4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="service-notifications"></a>服務通知
 

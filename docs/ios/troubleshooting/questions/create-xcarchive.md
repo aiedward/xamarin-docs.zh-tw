@@ -1,16 +1,16 @@
 ---
-title: "是可以從 Visual Studio 建立.xcarchive 封存？"
-ms.topic: article
+title: 是可以從 Visual Studio 建立.xcarchive 封存？
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 417D84FB-1BA9-4DB9-A683-66E960BA3D0D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bb8f9f8f58eb0b1251b31254b3798ba2c2b5c39b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 23af3bf277ab68ffe93df2e1ee8ee64afc01828d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="is-it-possible-to-create-a-xcarchive-archive-from-visual-studio"></a>是可以從 Visual Studio 建立.xcarchive 封存？
 

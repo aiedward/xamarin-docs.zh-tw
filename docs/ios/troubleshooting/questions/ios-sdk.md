@@ -1,16 +1,16 @@
 ---
-title: "其中可以設定我的 iOS SDK 位置？"
-ms.topic: article
+title: 其中可以設定我的 iOS SDK 位置？
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9D2AA00F-1EBD-40AA-87BF-0D7418E4B9EA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 6fc328dac14d6fb342f200ae5b673d1e6bd11b32
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0861f88b95ed36ed32600ce977b09bdca5c2468a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="where-can-i-set-my-ios-sdk-locations"></a>其中可以設定我的 iOS SDK 位置
 

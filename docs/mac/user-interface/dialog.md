@@ -1,18 +1,17 @@
 ---
-title: "對話方塊"
-description: "本文件涵蓋使用對話方塊和 Xamarin.Mac 應用程式中的強制回應視窗。 它描述在安裝 Xcode 和介面產生器中，使用標準的對話方塊，並與其互動 C# 程式碼中的這些控制項中建立強制回應視窗。"
-ms.topic: article
+title: 對話方塊
+description: 本文件涵蓋使用對話方塊和 Xamarin.Mac 應用程式中的強制回應視窗。 它描述在安裝 Xcode 和介面產生器中，使用標準的對話方塊，並與其互動 C# 程式碼中的這些控制項中建立強制回應視窗。
 ms.prod: xamarin
 ms.assetid: 55451990-B77B-4D44-B8BB-F874EC503B0C
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 661874ae8599fed35ce10213fece383eb81de94d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: cd0b57cc40d3f7cffd4d5711ec04a7225be870e9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="dialogs"></a>對話方塊
 

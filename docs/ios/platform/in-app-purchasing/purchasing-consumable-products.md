@@ -1,17 +1,16 @@
 ---
-title: "您可以使用產品的購買"
-ms.topic: article
+title: 您可以使用產品的購買
 ms.prod: xamarin
 ms.assetid: E0CB4A0F-C3FA-3933-58A7-13246971D677
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 3e5875249d7a84412b1c30580c3a8038cb53892f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5c2c84c044ff41cced2c97e414502faff45341ec
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="purchasing-consumable-products"></a>您可以使用產品的購買
 

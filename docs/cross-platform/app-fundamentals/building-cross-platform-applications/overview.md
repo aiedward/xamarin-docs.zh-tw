@@ -1,17 +1,16 @@
 ---
-title: "建置跨平台應用程式概觀"
-ms.topic: article
+title: 建置跨平台應用程式概觀
 ms.prod: xamarin
 ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: b46b5f36f0a4d8b4de499511a5d9fed299886006
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 48aa53595d7ab0ccd5fb8f3dab57198199d65b8e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="building-cross-platform-applications-overview"></a>建置跨平台應用程式概觀
 

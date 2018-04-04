@@ -1,18 +1,17 @@
 ---
-title: "自訂清單檢視"
-description: "Xamarin.Forms ListView 是以垂直清單顯示的資料集合的檢視。 本文示範如何建立自訂轉譯器會封裝特定平台清單控制項和原生的儲存格的版面配置，允許更充分掌控原生清單控制效能。"
-ms.topic: article
+title: 自訂清單檢視
+description: Xamarin.Forms ListView 是以垂直清單顯示的資料集合的檢視。 本文示範如何建立自訂轉譯器會封裝特定平台清單控制項和原生的儲存格的版面配置，允許更充分掌控原生清單控制效能。
 ms.prod: xamarin
 ms.assetid: 2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: eb4cf0285585351db5c45dc34a382236e6805c99
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 9d822444196479dabd19f43f45f289117f64c05e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="customizing-a-listview"></a>自訂清單檢視
 

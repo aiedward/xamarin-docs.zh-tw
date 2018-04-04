@@ -1,18 +1,17 @@
 ---
-title: "第 5 部分。 從資料繫結至 MVVM"
-description: "請注意，使用 XAML 發明模型-檢視-ViewModel (MVVM) 架構模式。 此模式會強制執行三個軟體層之間的區隔 — XAML 使用者介面，稱為檢視;基礎資料，稱為模型;而在檢視和模型之間的媒介稱為 ViewModel。 檢視和 ViewModel 通常是透過定義在 XAML 檔案中的資料繫結連接。 檢視 Bindingparameters 通常是 ViewModel 的執行個體。"
-ms.topic: article
+title: 第 5 部分。 從資料繫結至 MVVM
+description: 請注意，使用 XAML 發明模型-檢視-ViewModel (MVVM) 架構模式。 此模式會強制執行三個軟體層之間的區隔 — XAML 使用者介面，稱為檢視;基礎資料，稱為模型;而在檢視和模型之間的媒介稱為 ViewModel。 檢視和 ViewModel 通常是透過定義在 XAML 檔案中的資料繫結連接。 檢視 Bindingparameters 通常是 ViewModel 的執行個體。
 ms.prod: xamarin
 ms.assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 207bf7649d588f973b400cb452d9d8b246955cdb
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 95cd79a4bd6da47757cfeb12a2862ccb5a66fee2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分。 從資料繫結至 MVVM
 

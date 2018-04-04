@@ -1,18 +1,17 @@
 ---
-title: "替代的應用程式圖示"
-description: "本文涵蓋 Xamarin.iOS 中使用替代的應用程式圖示。"
-ms.topic: article
+title: 替代的應用程式圖示
+description: 本文涵蓋 Xamarin.iOS 中使用替代的應用程式圖示。
 ms.prod: xamarin
 ms.assetid: 302fa818-33b9-4ea1-ab63-0b2cb312299a
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: ff24a1411a7ddf2ca78c7997f1dc37744013ece4
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 8d9f27d58a881878aabeda4326805eec726c247c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="alternate-app-icons"></a>替代的應用程式圖示
 

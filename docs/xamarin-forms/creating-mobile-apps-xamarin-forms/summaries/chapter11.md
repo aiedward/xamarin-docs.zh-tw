@@ -1,17 +1,16 @@
 ---
-title: "第 11 章的摘要。 可繫結基礎結構"
-ms.topic: article
+title: 第 11 章的摘要。 可繫結基礎結構
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 34671C48-0ED4-4B76-A33D-D6505390DC5B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: ccae97021e86eb1375f948c5ad126253c6088037
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 9a35388f9ddd3adbefc3401352874a774376655b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>第 11 章的摘要。 可繫結基礎結構
 

@@ -1,18 +1,17 @@
 ---
-title: "驗證使用者與 Azure Active Directory B2C"
-description: "Azure Active Directory B2C 是消費者導向 web 與行動應用程式的雲端識別身分管理解決方案。 本文示範如何使用 Microsoft 驗證程式庫和 Azure Active Directory B2C 將取用者身分識別管理整合到行動裝置應用程式。"
-ms.topic: article
+title: 驗證使用者與 Azure Active Directory B2C
+description: Azure Active Directory B2C 是消費者導向 web 與行動應用程式的雲端識別身分管理解決方案。 本文示範如何使用 Microsoft 驗證程式庫和 Azure Active Directory B2C 將取用者身分識別管理整合到行動裝置應用程式。
 ms.prod: xamarin
 ms.assetid: B0A5DB65-0585-4A00-B908-22CCC286E6B6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 5d64c7c1dbc502acd3876c2442f9bae1c46eeb74
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f17a6ad012aff81674db943b7d65e65ba77dca52
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="authenticating-users-with-azure-active-directory-b2c"></a>驗證使用者與 Azure Active Directory B2C
 

@@ -1,16 +1,16 @@
 ---
-title: "偵錯工具需要何種專案設定？"
-ms.topic: article
+title: 偵錯工具需要何種專案設定？
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 3A024E4E-ACA3-4C7A-ADEF-541665D15779
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 6097dc8dfdff8807137ef68be86a08e4c9e23988
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7dff69e90b5105401da162c52053d884ed9b038b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="what-project-settings-are-required-for-the-debugger"></a>偵錯工具需要何種專案設定？
 

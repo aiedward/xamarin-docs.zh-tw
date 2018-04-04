@@ -1,5 +1,5 @@
 #<a name="---"></a>---
-標題: 「 組件 6-測試和應用程式市集核准"ms.topic： 文章 ms.prod: xamarin ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B ms.technology: xamarin 跨平台作者： asb3993 ms.author: amburns ms.date: 03/23/2017年
+標題: 「 組件 6-測試和應用程式市集核准"ms.prod: xamarin ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B ms.technology: xamarin 跨平台作者： asb3993 ms.author: amburns ms.date: 03/23/2017年
 ---
 
 # <a name="part-6---testing-and-app-store-approvals"></a>第 6-測試和應用程式市集核准

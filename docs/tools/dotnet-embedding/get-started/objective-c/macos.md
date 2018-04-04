@@ -1,17 +1,16 @@
 ---
-title: "開始使用 macOS"
-ms.topic: article
+title: 開始使用 macOS
 ms.prod: xamarin
 ms.assetid: AE51F523-74F4-4EC0-B531-30B71C4D36DF
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 5e2f14e7b29f85e838563914089743f56239d7bb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c129079aad14ac9e8aad6f73670ce9a43a36f222
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="getting-started-with-macos"></a>開始使用 macOS
 

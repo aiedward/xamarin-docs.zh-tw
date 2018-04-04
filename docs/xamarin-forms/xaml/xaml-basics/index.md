@@ -1,31 +1,30 @@
 ---
-title: "Xamarin.Forms XAML 基本概念"
-description: "開始使用行動裝置的跨平台標記"
-ms.topic: article
+title: Xamarin.Forms XAML 基本概念
+description: 開始使用行動裝置的跨平台標記
 ms.prod: xamarin
 ms.assetid: 67CC2CD6-D10A-4B14-9696-1D3A410EFFBF
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: a3f3dbbe0f12cfa7cc1fc6606ec8bd48a96e407c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 991d928c2c58f05098a41c84aba295a31636ab96
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML 基本概念
 
-XAML — 可延伸的應用程式標記語言，可讓開發人員定義的使用者介面，在 Xamarin.Forms 應用程式中使用標記，而不是程式碼。 XAML 永遠不需要在 Xamarin.Forms 程式中，但更簡潔和比對等的程式碼，更視覺化的方式一致和潛在 toolable。 XAML 是特別適合搭配熱門 MVVM (模型-檢視-ViewModel) 應用程式架構： XAML 定義的檢視，透過以 XAML 為基礎的資料繫結連結到 ViewModel 程式碼。
+XAML (eXtensible Application Markup Language) 讓開發人員可以在 Xamarin.Forms 應用程式中使用標記定義使用者介面，而不是使用程式碼。 XAML 永遠不需要在 Xamarin.Forms 程式中，但更簡潔和比對等的程式碼，更視覺化的方式一致和潛在 toolable。 XAML 是特別適合搭配熱門 MVVM (模型-檢視-ViewModel) 應用程式架構： XAML 定義的檢視，透過以 XAML 為基礎的資料繫結連結到 ViewModel 程式碼。
 
 ## <a name="xaml-basics-contents"></a>XAML 的基本內容
 
 * [概觀](#Overview)
-* [第 1 部分。開始使用 XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-* [第 2 部分。基本 XAML 語法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
-* [第 3 部分。XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-* [第 4 部分。資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
-* [第 5 部分。從資料繫結至 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+* [第 1 部分：開始使用 XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
+* [第 2 部分：基本 XAML 語法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
+* [第 3 部分：XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+* [第 4 部分：資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+* [第 5 部分：從資料繫結至 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
 
 除了這些基本 XAML 概念文件中，您可以下載活頁簿的章節[建立行動應用程式使用 Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md):
 

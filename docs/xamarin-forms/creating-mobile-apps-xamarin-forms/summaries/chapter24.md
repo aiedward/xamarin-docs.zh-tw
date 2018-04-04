@@ -1,17 +1,16 @@
 ---
-title: "章 24 的摘要。 頁面巡覽"
-ms.topic: article
+title: 章 24 的摘要。 頁面巡覽
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: db950915decd2bba216c7dcd6031797037a7c8e0
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 9d1a226a4532b745fddee28e943562fb51d34e65
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>章 24 的摘要。 頁面巡覽
 

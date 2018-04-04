@@ -1,18 +1,17 @@
 ---
-title: "繫結。AAR"
-description: "本逐步解說提供建立從 Android Xamarin.Android Java 繫結程式庫的逐步指示。AAR 檔案。"
-ms.topic: article
+title: 繫結。AAR
+description: 本逐步解說提供建立從 Android Xamarin.Android Java 繫結程式庫的逐步指示。AAR 檔案。
 ms.prod: xamarin
 ms.assetid: 380413B8-6A99-4BB8-B64C-3EAF9F359C22
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: ae209f8099925cc160e16cb5365625e48e6c384d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 101fb28add97749549de9c44292a1ef99a717dde
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-an-aar"></a>繫結。AAR
 
@@ -284,7 +283,7 @@ var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 
 **Textanalyzer.aar**範例包含位於的映像檔**res/drawable/monkey.png**。 讓我們來存取此影像資源，並在我們的範例應用程式中使用它：
 
-編輯**BindingTest**配置 (**Main.axml**) 並加入`ImageView`結尾`LinearLayout`容器。 這`ImageView`顯示影像，請參閱 **@drawable/monkey** ; 此映像將載入的資源區段從**textanalyzer.aar**:
+編輯**BindingTest**配置 (**Main.axml**) 並加入`ImageView`結尾`LinearLayout`容器。 這`ImageView`顯示影像，請參閱**@drawable/monkey**; 此映像將載入的資源區段從**textanalyzer.aar**:
 
 ```xml
     ...

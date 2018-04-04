@@ -1,18 +1,17 @@
 ---
-title: "了解範例"
-description: "本主題提供逐步解說示範如何與不同的 web 服務通訊的 Xamarin.Forms 範例應用程式。 而每個 web 服務使用個別的範例應用程式，其功能類似，共用通用類別。"
-ms.topic: article
+title: 了解範例
+description: 本主題提供逐步解說示範如何與不同的 web 服務通訊的 Xamarin.Forms 範例應用程式。 而每個 web 服務使用個別的範例應用程式，其功能類似，共用通用類別。
 ms.prod: xamarin
 ms.assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: ab44cb7a065164bb5b7501ac63bd0321b612b7ca
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: e9738a766762dd64cdfbb034d4eaa54f76aca311
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="understanding-the-sample"></a>了解範例
 
@@ -56,7 +55,7 @@ PCL 專案，每個應用程式也包含一些重要的檔案：
 
 大部分的範例應用程式包含至少兩個頁面：
 
-- **TodoListPage** – 此頁面會顯示一份`TodoItem`執行個體和勾號圖示如果`TodoItem.Done`屬性是`true`。 項目上按一下 瀏覽至`TodoItemPage`。 此外，建立新項目上的   *+* 符號。
+- **TodoListPage** – 此頁面會顯示一份`TodoItem`執行個體和勾號圖示如果`TodoItem.Done`屬性是`true`。 項目上按一下 瀏覽至`TodoItemPage`。 此外，建立新項目上的  *+*符號。
 - **TodoItemPage** – 此頁面會顯示所選的詳細資料`TodoItem`，並讓它可以編輯、 儲存、 刪除及語音。
 
 此外，某些範例應用程式包含用來管理使用者驗證程序的其他頁面。

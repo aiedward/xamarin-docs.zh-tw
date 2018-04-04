@@ -1,17 +1,16 @@
 ---
-title: "第 8 章的摘要。 程式碼和 XAML 中互聯"
-ms.topic: article
+title: 第 8 章的摘要。 程式碼和 XAML 中互聯
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 452a7835bcb54501edffe7a2467544c6677616ba
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ffd2d508e99508309ec07c6bc65c8d716427bdff
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>第 8 章的摘要。 程式碼和 XAML 中互聯
 

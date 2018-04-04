@@ -1,17 +1,16 @@
 ---
-title: "第 1 的摘要。 Xamarin.Forms 納入如何？"
-ms.topic: article
+title: 第 1 的摘要。 Xamarin.Forms 納入如何？
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: e1d246ea65e88bde07c3d527c18b7850aa09e08b
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 534c36a16acdc10ffb6f6b6703296a672875286e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 的摘要。 Xamarin.Forms 納入如何？
 

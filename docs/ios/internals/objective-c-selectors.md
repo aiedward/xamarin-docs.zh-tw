@@ -1,16 +1,15 @@
 ---
 title: Objective C 的選取器
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 7b7f64288695ecc0f9f57ec670c4e9ff2e44804c
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.openlocfilehash: 60f107bda29b351c119f5702b0ca797d7d16b0b1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="objective-c-selectors"></a>Objective C 的選取器
 

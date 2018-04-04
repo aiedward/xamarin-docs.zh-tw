@@ -1,17 +1,16 @@
 ---
-title: "基本的 RecyclerView 範例"
-ms.topic: article
+title: 基本的 RecyclerView 範例
 ms.prod: xamarin
 ms.assetid: A50520D2-1214-40E1-9B27-B0891FE11584
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 44ebc8098250da26762538cddf5a89ffac709d8e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d5be838dcb5530ece76c3701d8fce10403622e8d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="a-basic-recyclerview-example"></a>基本的 RecyclerView 範例
 

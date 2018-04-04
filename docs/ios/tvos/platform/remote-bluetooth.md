@@ -1,18 +1,17 @@
 ---
-title: "Siri 遠端和藍芽控制站"
-description: "本文涵蓋 Xamarin.tvOS 應用程式中支援的新 Siri 遠端和藍芽遊戲控制器。"
-ms.topic: article
+title: Siri 遠端和藍芽控制站
+description: 本文涵蓋 Xamarin.tvOS 應用程式中支援的新 Siri 遠端和藍芽遊戲控制器。
 ms.prod: xamarin
 ms.assetid: BDB9894A-236B-424B-9032-ACD12A6C5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: ca3dd71c3da316e467d8c388efbbded3d9778bf0
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 5b5893278acad999efd94c89f1ca923100f5cf7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="siri-remote-and-bluetooth-controllers"></a>Siri 遠端和藍芽控制站
 

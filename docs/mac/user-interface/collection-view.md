@@ -1,18 +1,17 @@
 ---
-title: "集合檢視"
-description: "這篇文章描述 Xamarin.Mac 應用程式中的集合檢視使用。 其中涵蓋建立和維護 Xcode 和介面產生器中的集合檢視，並以程式設計方式使用它們。"
-ms.topic: article
+title: 集合檢視
+description: 這篇文章描述 Xamarin.Mac 應用程式中的集合檢視使用。 其中涵蓋建立和維護 Xcode 和介面產生器中的集合檢視，並以程式設計方式使用它們。
 ms.prod: xamarin
 ms.assetid: 6EE32256-5948-4AE4-8133-6D0B3F4173E8
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/24/2017
-ms.openlocfilehash: 9aa66a531b723f176b940ba35ee4e86eae711f7d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f391a9df8a0d4012637c503bc95c6de2185dd2f9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="collection-views"></a>集合檢視
 

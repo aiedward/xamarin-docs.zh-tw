@@ -1,18 +1,17 @@
 ---
 title: 繪製簡單的圓形
 description: 了解 SkiaSharp 繪圖，包括畫布和繪製的基本概念
-ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 402470c3a27ba4327afa6e77336d60748abad436
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: a718d051c2bf04e75c87b0e4a18aced4824802ba
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="drawing-a-simple-circle"></a>繪製簡單的圓形
 

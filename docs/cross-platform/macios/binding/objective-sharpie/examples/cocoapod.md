@@ -1,18 +1,17 @@
 ---
 title: 使用 CocoaPods 真實世界範例
 description: 本文件將示範如何使用自動產生的 C# 繫結定義從 CocoaPod 目標 Sharpie。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 233B781D-5841-4250-9F63-0585231D2112
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2018
-ms.openlocfilehash: 24c796cb258578fdfc68c5b4aa1079d3c589da0f
-ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
+ms.openlocfilehash: cbcafc8d77304d117f8130cf0d6a89dd2a5ed3c8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/29/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="real-world-example-using-cocoapods"></a>使用 CocoaPods 真實世界範例
 

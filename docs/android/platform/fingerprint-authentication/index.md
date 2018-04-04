@@ -1,18 +1,17 @@
 ---
-title: "指紋驗證"
-description: "本指南會討論如何加入指紋驗證，在 Android 6.0 中，導入 Xamarin.Android 應用程式。"
-ms.topic: article
+title: 指紋驗證
+description: 本指南會討論如何加入指紋驗證，在 Android 6.0 中，導入 Xamarin.Android 應用程式。
 ms.prod: xamarin
 ms.assetid: 6742D874-4988-4516-A946-D5C714B20A10
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 79f5f81e11f62359c3b951500d4ab5cbd63fb507
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1b28b16dfd92ef3a31201ef2e86681a425a58ab8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="fingerprint-authentication"></a>指紋驗證
 

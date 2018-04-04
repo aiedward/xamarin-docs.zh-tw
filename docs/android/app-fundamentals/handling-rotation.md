@@ -1,18 +1,17 @@
 ---
-title: "處理旋轉"
-description: "本主題描述如何處理在 Xamarin.Android 裝置方向變更。 其中涵蓋如何搭配使用 Android 資源系統如何以程式設計方式處理方向變更自動載入資源的特定裝置方向。"
-ms.topic: article
+title: 處理旋轉
+description: 本主題描述如何處理在 Xamarin.Android 裝置方向變更。 其中涵蓋如何搭配使用 Android 資源系統如何以程式設計方式處理方向變更自動載入資源的特定裝置方向。
 ms.prod: xamarin
 ms.assetid: 6D33ADF7-ED81-0256-479D-D9E3787A76B0
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: c31dbfeea3134de95f3275a7fa79c508a94d6a91
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 1cdc7928c45b99cdd8c8149b3ae9b06e790deeca
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="handling-rotation"></a>處理旋轉
 

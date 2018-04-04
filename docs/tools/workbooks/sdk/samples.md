@@ -1,16 +1,15 @@
 ---
-title: "範例整合"
-ms.topic: article
+title: 範例整合
 ms.prod: xamarin
 ms.assetid: 327DAD2E-1F76-4EB5-BCD0-9E7384D99E48
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: f71da0f522c6c028981637a9797c3836063516f0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 458ebd0d47b3728f6207b30ddaf839ed5509dceb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="sample-integrations"></a>範例整合
 

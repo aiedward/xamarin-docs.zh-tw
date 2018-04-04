@@ -1,18 +1,17 @@
 ---
-title: "建立 ControlTemplate"
-description: "控制項範本可定義應用程式層級或頁面層級。 本文將示範如何建立和使用控制項範本。"
-ms.topic: article
+title: 建立 ControlTemplate
+description: 控制項範本可定義應用程式層級或頁面層級。 本文將示範如何建立和使用控制項範本。
 ms.prod: xamarin
 ms.assetid: A9AEB052-FBF5-4589-9BD4-6D6F62BED7F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 53309be2712f14c79b84c2eabb519b86dd73a404
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e8a0695969609a4b0bbeb38896adae9a7c16ed07
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-a-controltemplate"></a>建立 ControlTemplate
 
@@ -202,7 +201,7 @@ public class HomePageCS : ContentPage
 }
 ```
 
-[ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)會建立指定類型的定義中的控制項 範本的類別執行個體`ControlTemplate`建構函式。
+[ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)會建立指定類型的定義中的控制項範本的類別執行個體`ControlTemplate`建構函式。
 
 [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/)屬性設定為[ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) ，定義要顯示在內容[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)。 此內容會由顯示[ `ContentPresenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/)中包含`TealTemplate`。 先前所述的相同機制使用將在執行階段主題變更`AquaTheme`。
 

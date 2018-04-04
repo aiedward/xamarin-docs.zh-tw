@@ -1,18 +1,17 @@
 ---
-title: "偵測器的安裝和需求"
-description: "如何下載、 安裝及使用 Xamarin 偵測器。"
-ms.topic: article
+title: 偵測器的安裝和需求
+description: 如何下載、 安裝及使用 Xamarin 偵測器。
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: d93481a865be1ee9272c7ce7969bdb6ebd6b5536
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 93f42eef8d76074f6b672bc5a663e8f8f1d2ef80
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="inspector-installation-and-requirements"></a>偵測器的安裝和需求
 
@@ -95,7 +94,7 @@ Visual Studio
 偵測器用戶端
 
 - Mac: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
-- Windows: `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
+- Windows：`%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
 1.4.x 也提供功能的能力，從主功能表中選取記錄檔中搜尋 (macOS) 或檔案總管 (Windows) 直接：
 

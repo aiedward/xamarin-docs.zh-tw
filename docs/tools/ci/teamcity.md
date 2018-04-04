@@ -1,18 +1,17 @@
 ---
-title: "使用小組縣 （市） 與 Xamarin"
-description: "本指南會討論與使用 TeamCity 編譯行動應用程式，然後將它們提交至 Xamarin Test Cloud 所需的步驟。"
-ms.topic: article
+title: 使用小組縣 （市） 與 Xamarin
+description: 本指南會討論與使用 TeamCity 編譯行動應用程式，然後將它們提交至 Xamarin Test Cloud 所需的步驟。
 ms.prod: xamarin
 ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: caff1fb834ade35e68eb19683e87788a4aa70740
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 643ae8f30dc6447b548448f77883b204d8dc76c2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-team-city-with-xamarin"></a>使用小組縣 （市） 與 Xamarin
 

@@ -1,17 +1,16 @@
 ---
-title: "Nuget 在建立新的多平台程式庫"
-ms.topic: article
+title: Nuget 在建立新的多平台程式庫
 ms.prod: xamarin
 ms.assetid: E7B55354-9BBE-4122-BCE3-3506B79090DD
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: a56cc080ac04c45ef3f0fcc6c7c89096a08beddf
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 85403ee2ab8b5c1433e0e070b3af22fa42cd5efa
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>Nuget 在建立新的多平台程式庫
 

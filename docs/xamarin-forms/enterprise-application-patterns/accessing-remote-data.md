@@ -1,17 +1,16 @@
 ---
-title: "存取遠端資料"
-ms.topic: article
+title: 存取遠端資料
 ms.prod: xamarin
 ms.assetid: 42eba6f5-9784-4e1a-9943-5c1fbeea7452
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 0eec51a6c95894482a57bfe3bb1f95aec2045af4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0f29377c52dcf65247c11079178efe0745c654eb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="accessing-remote-data"></a>存取遠端資料
 

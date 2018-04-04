@@ -1,18 +1,17 @@
 ---
-title: "建立 XAML 標記延伸"
-description: "定義您自己自訂的 XAML 標記延伸"
-ms.topic: article
+title: 建立 XAML 標記延伸
+description: 定義您自己自訂的 XAML 標記延伸
 ms.prod: xamarin
 ms.assetid: 797C1EF9-1C8E-4208-8610-9B79CCF17D46
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 737c55aea087094ceb5e6070261d0a3d724e8a01
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d4ae3b42c5c926749310da6e36b6f4e9754d398c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-xaml-markup-extensions"></a>建立 XAML 標記延伸
 

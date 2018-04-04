@@ -1,17 +1,16 @@
 ---
-title: "在 iOS 11 中變更 web"
-ms.topic: article
+title: 在 iOS 11 中變更 web
 ms.prod: xamarin
 ms.assetid: C74B2E94-177C-43D4-8D6C-9B528773C120
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/12/2016
-ms.openlocfilehash: 224a64b39f9761ca520117a23dfeb7ee08cae719
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5cbf1d2f6c7b8a110cb65cad81df18f9f0568fda
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="web-changes-in-ios-11"></a>在 iOS 11 中變更 web
 

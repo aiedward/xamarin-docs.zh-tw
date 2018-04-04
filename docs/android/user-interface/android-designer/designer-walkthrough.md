@@ -1,18 +1,17 @@
 ---
-title: "使用 Android 設計工具"
-description: "本主題是 Xamarin.Android 設計工具的逐步解說。 它會示範如何建立使用者介面的小型色彩瀏覽器應用程式中;完全在設計工具中建立此使用者介面。"
-ms.topic: article
+title: 使用 Android 設計工具
+description: 本主題是 Xamarin.Android 設計工具的逐步解說。 它會示範如何建立使用者介面的小型色彩瀏覽器應用程式中;完全在設計工具中建立此使用者介面。
 ms.prod: xamarin
 ms.assetid: 70FF2F9A-71BD-317E-C881-A44D82DF1BD8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/29/2018
-ms.openlocfilehash: c9ec0d3bc9c3278f097b925ccb755323df950c62
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ea3d4a7f848847d6a9f7341faec47294a4cab3f8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-the-android-designer"></a>使用 Android 設計工具
 

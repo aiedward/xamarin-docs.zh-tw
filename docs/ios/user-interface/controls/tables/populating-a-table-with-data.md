@@ -1,17 +1,16 @@
 ---
-title: "使用資料填入資料表"
-ms.topic: article
+title: 使用資料填入資料表
 ms.prod: xamarin
 ms.assetid: 6FE64DDF-1029-EB9B-6EEC-1C7DFDFDF3AF
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: fe62b917946dda4cf669f5b15c91a5e3b596a0fc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c139b96adfc325e7c251f8093eab338ddf0c6337
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="populating-a-table-with-data"></a>使用資料填入資料表
 

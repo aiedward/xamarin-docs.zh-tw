@@ -2,18 +2,17 @@
 redirect_url: /xamarin/tools/live-player/
 title: XAML 即時預覽
 description: 測試您的 iOS 或 Android 裝置上的即時應用程式程式碼變更
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 86E9A179-21F8-4F3A-A9CE-36F0FC5DB4A8
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 12/21/2017
-ms.openlocfilehash: 96ce096a57e46b36ebe6516ba0aff2733883e400
-ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
+ms.openlocfilehash: 721266e1ddfe927b33529a9f4d0eb55a008dd4e8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/29/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xaml-live-previewing"></a>XAML 即時預覽
 

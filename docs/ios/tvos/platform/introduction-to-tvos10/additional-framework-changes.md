@@ -1,18 +1,17 @@
 ---
-title: "其他 tvOS 10 架構變更"
-description: "本文涵蓋其他次要變更或增強現有架構 tvos 10。"
-ms.topic: article
+title: 其他 tvOS 10 架構變更
+description: 本文涵蓋其他次要變更或增強現有架構 tvos 10。
 ms.prod: xamarin
 ms.assetid: F771640A-F92E-4954-82D5-2D720434971E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 004abfffd3a100b7a25a9647fe233fd676f61143
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c53726b91a0cd3e79041b9b1d51e9f7fbb1c79bd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>其他 tvOS 10 架構變更
 

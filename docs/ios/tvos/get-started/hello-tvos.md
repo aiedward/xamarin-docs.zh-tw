@@ -1,18 +1,17 @@
 ---
-title: "Hello，tvOS 快速入門指南"
-description: "本指南逐步引導您建立第一個 Xamarin.tvOS 應用程式和其開發工具鏈。 也引進了 Xamarin 設計工具中，它會公開 UI 控制項加入至程式碼中，並說明如何建置、 執行及測試 Xamarin.tvOS 應用程式。"
-ms.topic: article
+title: Hello，tvOS 快速入門指南
+description: 本指南逐步引導您建立第一個 Xamarin.tvOS 應用程式和其開發工具鏈。 也引進了 Xamarin 設計工具中，它會公開 UI 控制項加入至程式碼中，並說明如何建置、 執行及測試 Xamarin.tvOS 應用程式。
 ms.prod: xamarin
 ms.assetid: 6E0AFE58-A13B-492F-861E-D5D73EB1C4A3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: 5eccb36b3c6a437ddc1ec055e779d8f78460643e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0adf6e326dd29db15b6bd90626f424b803dc0bc9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello，tvOS 快速入門指南
 
@@ -253,7 +252,7 @@ namespace HellotvOS
 
 若要開始建立您的 UI，讓我們按兩下`Main.storyboard`檔案**方案總管 中**開啟 iOS 設計工具中進行編輯：
 
-[![](hello-tvos-images/designer01.png "在 [方案總管] 中 Main.storyboard 檔案")](hello-tvos-images/designer01.png#lightbox)
+[![](hello-tvos-images/designer01.png "方案總管中的 Main.storyboard 檔案")](hello-tvos-images/designer01.png#lightbox)
 
 這應該啟動設計工具，並如下所示：
 

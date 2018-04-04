@@ -1,18 +1,17 @@
 ---
 title: 句點和連字號
 description: 主要的複雜性 SkiaSharp 中繪製虛線和破折線的線條
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8E9BCC13-830C-458C-9FC8-ECB4EAE66078
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: d18afdf7c9d48a715a6a909105cee200ed116014
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 274c8e9a79fa3fadff14f1174d86aad04d902b05
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="dots-and-dashes"></a>句點和連字號
 

@@ -1,18 +1,17 @@
 ---
-title: "第 4 部分。 資料繫結的基本概念"
-description: "資料繫結允許的連結，讓其中的變更會導致變更另兩個物件的屬性。 這是相當有用的工具，以及資料繫結可以定義完全以程式碼中，XAML 提供捷徑和便利性。 因此，在 Xamarin.Forms 中最重要的標記延伸的其中一個繫結。"
-ms.topic: article
+title: 第 4 部分。 資料繫結的基本概念
+description: 資料繫結允許的連結，讓其中的變更會導致變更另兩個物件的屬性。 這是相當有用的工具，以及資料繫結可以定義完全以程式碼中，XAML 提供捷徑和便利性。 因此，在 Xamarin.Forms 中最重要的標記延伸的其中一個繫結。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: dbbbe051aab065a5b71905459f577fcacefd8bc5
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 2aa6fd2f54c09921621a12af9401a6f84ae37ffa
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部分。 資料繫結的基本概念
 

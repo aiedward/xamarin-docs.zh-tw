@@ -1,18 +1,17 @@
 ---
 title: iCloud
-description: "Apple 引進了 iCloud iOS 5 中的，以允許 Apple 的伺服器上儲存的資料，並讓它可以跨所有裝置 （透過其 Apple ID) 相同的人使用的同步處理的應用程式服務。 它也有備份的元件，其中您的裝置上的資料會備份到 Apple 的伺服器。 本文件說明如何使用某些 icloud 的功能 Api 提供 Apple 所儲存和擷取資料，從其伺服器使用，但 C# 範例儲存小的索引鍵-值資料組以及將儲存的文件。 它也會討論 iCloud 備份可能會如何影響您的應用程式的設計。"
-ms.topic: article
+description: Apple 引進了 iCloud iOS 5 中的，以允許 Apple 的伺服器上儲存的資料，並讓它可以跨所有裝置 （透過其 Apple ID) 相同的人使用的同步處理的應用程式服務。 它也有備份的元件，其中您的裝置上的資料會備份到 Apple 的伺服器。 本文件說明如何使用某些 icloud 的功能 Api 提供 Apple 所儲存和擷取資料，從其伺服器使用，但 C# 範例儲存小的索引鍵-值資料組以及將儲存的文件。 它也會討論 iCloud 備份可能會如何影響您的應用程式的設計。
 ms.prod: xamarin
 ms.assetid: C6F3B87C-C195-4434-EF14-D66E63894F09
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: ce2130985eb954abc4b4a1f4022eec97341eb902
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c9e7c920855d2002f52d05e28c5225f301cd62b1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="icloud"></a>iCloud
 

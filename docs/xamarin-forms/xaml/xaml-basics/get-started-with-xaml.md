@@ -1,18 +1,17 @@
 ---
-title: "第 1 部分。 開始使用 XAML"
-description: "Xamarin.Forms 應用程式中 XAML 大多用來定義頁面的視覺內容。 永遠提供標記的程式碼支援的 C# 程式碼檔案與相關聯的 XAML 檔案。 在一起，這兩個檔案會構成新的類別定義，其中包含子檢視和內容初始化。 在 XAML 檔案中，類別和屬性所參考 XML 項目和屬性，以及建立標記和程式碼之間的連結。"
-ms.topic: article
+title: 第 1 部分。 開始使用 XAML
+description: Xamarin.Forms 應用程式中 XAML 大多用來定義頁面的視覺內容。 永遠提供標記的程式碼支援的 C# 程式碼檔案與相關聯的 XAML 檔案。 在一起，這兩個檔案會構成新的類別定義，其中包含子檢視和內容初始化。 在 XAML 檔案中，類別和屬性所參考 XML 項目和屬性，以及建立標記和程式碼之間的連結。
 ms.prod: xamarin
 ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 55c4fa73044b1c37e879ed7731161269bdbf8ba8
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f1d347cc37ab065e09cb2627ee2122797280f3c1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 開始使用 XAML
 

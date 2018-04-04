@@ -1,17 +1,17 @@
 ---
-title: "使用者無法在 iOS 8 中運作的位置"
-ms.topic: article
+title: 使用者無法在 iOS 8 中運作的位置
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9BE92C99-C9C5-427E-ADE4-789DF258BACE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 4bb8d204d961e386b970cf206c9fa3fa06b80b3b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f6597fc3a2476de2aa7f191810e5dbaf2f6903bb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="user-location-not-working-in-ios-8"></a>使用者無法在 iOS 8 中運作的位置
 

@@ -1,17 +1,16 @@
 ---
-title: "MonoTouch.Dialog 簡介"
-description: "MonoTouch.Dialog （機動D） 工具組是快速的應用程式中 Xamarin.iOS UI 開發是不可或缺的架構。 周D 可快速又輕鬆地定義複雜的應用程式使用宣告式方法，而不是導覽控制站、 資料表等 tedium 的 UI。此外，機動D 具有彈性的一組 Api，開發人員提供完整的控制權或交給方法，以及其他功能，例如更新提取，背景影像載入，請搜尋支援和 JSON 資料透過 UI 的動態產生。 這個指南介紹使用機動不同的方式D，然後探討深度進階使用。"
-ms.topic: article
+title: MonoTouch.Dialog 簡介
+description: MonoTouch.Dialog （機動D） 工具組是快速的應用程式中 Xamarin.iOS UI 開發是不可或缺的架構。 周D 可快速又輕鬆地定義複雜的應用程式使用宣告式方法，而不是導覽控制站、 資料表等 tedium 的 UI。此外，機動D 具有彈性的一組 Api，開發人員提供完整的控制權或交給方法，以及其他功能，例如更新提取，背景影像載入，請搜尋支援和 JSON 資料透過 UI 的動態產生。 這個指南介紹使用機動不同的方式D，然後探討深度進階使用。
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b9bf4c5ee803aa60a2730703e64fcf73d07efdb5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: be979b35ffdd597dae74f1f661a381ae44433b10
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-monotouchdialog"></a>MonoTouch.Dialog 簡介
 
@@ -96,7 +95,7 @@ A *RootElement*是進入 DVC 之項目的上層的容器。 它包含區段，�
 
  [![](images/image2.png "與一般資料表的區段中，可以選擇性地有的頁首和頁尾，可以是文字或甚至自訂的檢視，如下列螢幕擷取畫面所示")](images/image2.png#lightbox)
 
-### <a name="element"></a>元素
+### <a name="element"></a>項目
 
 項目代表實際的資料格在資料表中。 周D 來自各種不同的項目代表不同的資料類型或不同的輸入與壓縮。 例如，下列螢幕擷取畫面說明幾個可用的項目：
 

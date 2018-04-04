@@ -1,17 +1,17 @@
 ---
-title: "Android 建置錯誤 – LinkAssemblies 意外失敗的工作"
-ms.topic: article
+title: Android 建置錯誤 – LinkAssemblies 意外失敗的工作
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: EB3BE685-CB72-48E3-89D7-C845E76B9FA2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: 667381e7f27f08f8b1d8b6c1979a7d0b26775177
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: de6e0b66cac688955d27ba2d0165d5a059d36c38
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-build-error--the-linkassemblies-task-failed-unexpectedly"></a>Android 建置錯誤 – LinkAssemblies 意外失敗的工作
 

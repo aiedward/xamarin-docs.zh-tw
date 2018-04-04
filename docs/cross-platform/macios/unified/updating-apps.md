@@ -1,17 +1,16 @@
 ---
-title: "統一的 API 來更新現有的應用程式"
-ms.topic: article
+title: 統一的 API 來更新現有的應用程式
 ms.prod: xamarin
 ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: a09ba93fe7c3f5ade6b5cafe44fd7ee2b0c33487
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: ca14d35bcc167bd35cf1ec9e822e86421579b7b8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>統一的 API 來更新現有的應用程式
 

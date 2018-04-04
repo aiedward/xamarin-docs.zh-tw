@@ -1,17 +1,16 @@
 ---
-title: "字型"
-ms.topic: article
+title: 字型
 ms.prod: xamarin
 ms.assetid: 3F543FC5-FDED-47F8-8D2C-481FCC98BFDA
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/09/2018
-ms.openlocfilehash: 7cde19a153585a6f9739aa02f3ea69dc4f09be58
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d4ad9dde4004440985ff247d2f986ede385f981f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="fonts"></a>字型
 

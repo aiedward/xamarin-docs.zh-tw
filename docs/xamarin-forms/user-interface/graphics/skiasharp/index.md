@@ -1,18 +1,17 @@
 ---
 title: 使用 Xamarin.Forms 中 SkiaSharp
 description: 使用 Xamarin.Forms 應用程式中的 2D 圖形 SkiaSharp
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 2C348BEA-81DF-4794-8857-EB1DFF5E11DB
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/11/2017
-ms.openlocfilehash: 2183601ca6e642b2fb21f640ed4fddfe2c300dc8
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: e3444411c80ecaee105cce7c10f7bec7583dc2a5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-skiasharp-in-xamarinforms"></a>使用 Xamarin.Forms 中 SkiaSharp
 

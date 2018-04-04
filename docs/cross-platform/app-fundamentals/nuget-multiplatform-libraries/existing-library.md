@@ -1,17 +1,16 @@
 ---
-title: "建立從現有的程式庫專案的 NuGet"
-ms.topic: article
+title: 建立從現有的程式庫專案的 NuGet
 ms.prod: xamarin
 ms.assetid: EDAC3E5E-DB7D-40A9-AE28-45C52ADA854E
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2017
-ms.openlocfilehash: ef34b1be5f993a3be819cd4ae1a9dcd5dfc27715
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 36de23c2a6db817805cafae282d227cc5ef15cc4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-a-nuget-from-existing-library-projects"></a>建立從現有的程式庫專案的 NuGet
 

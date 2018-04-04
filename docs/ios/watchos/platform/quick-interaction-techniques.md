@@ -1,18 +1,17 @@
 ---
-title: "快速互動技術 watchOS 3"
-description: "本文章涵蓋快速互動技術 watchOS 3，以及如何實作它們的 Apple Watch Xamarin.iOS 加入 Apple。"
-ms.topic: article
+title: 快速互動技術 watchOS 3
+description: 本文章涵蓋快速互動技術 watchOS 3，以及如何實作它們的 Apple Watch Xamarin.iOS 加入 Apple。
 ms.prod: xamarin
 ms.assetid: 26697F68-AF7E-4A36-988F-85E2674A4DD1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: bf93744914a0caf4f6599fc333ae200468d66e48
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d3c7c6d80a6f23cdadda04d787e28e13b054a9e6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="quick-interaction-techniques-for-watchos-3"></a>快速互動技術 watchOS 3
 

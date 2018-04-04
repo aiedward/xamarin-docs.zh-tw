@@ -1,18 +1,17 @@
 ---
-title: "繫結值轉換器"
-description: "轉型或轉換中的資料繫結的值"
-ms.topic: article
+title: 繫結值轉換器
+description: 轉型或轉換中的資料繫結的值
 ms.prod: xamarin
 ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: df6a0afe18b6929f8e03ce4d9bf35198034508bf
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 260db2372977202df3d73e32645a358066146b40
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-value-converters"></a>繫結值轉換器
 

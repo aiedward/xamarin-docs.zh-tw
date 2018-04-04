@@ -1,18 +1,17 @@
 ---
-title: "網頁檢視"
-description: "在本機或網路網頁內容與文件。"
-ms.topic: article
+title: 網頁檢視
+description: 在本機或網路網頁內容與文件。
 ms.prod: xamarin
 ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 7a077a3dcc47de8416abb0c51b23dc07fc1f1f12
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 54c70fda22782dfa9b6617c0832f2c17f0169b57
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="webview"></a>網頁檢視
 

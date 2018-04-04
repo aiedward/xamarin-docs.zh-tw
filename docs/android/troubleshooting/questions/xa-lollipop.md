@@ -1,17 +1,17 @@
 ---
-title: "哪些版本的 Xamarin.Android 加入棒棒糖符號支援？"
-ms.topic: article
+title: 哪些版本的 Xamarin.Android 加入棒棒糖符號支援？
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 63B6E10C-098D-4C82-9253-07CA62EA85A5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 75810a1261a40d87c8c18eb3253393373606ce0d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 065c68a373f67bb352b59dc88ef89daec8b51ef8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>哪些版本的 Xamarin.Android 加入棒棒糖符號支援？
 

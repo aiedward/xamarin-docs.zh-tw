@@ -1,18 +1,17 @@
 ---
-title: "使用父應用程式"
-description: "IOS 和監看式 watchOS 1 應用程式之間共用的資料"
-ms.topic: article
+title: 使用父應用程式
+description: IOS 和監看式 watchOS 1 應用程式之間共用的資料
 ms.prod: xamarin
 ms.assetid: 9AD29833-E9CC-41A3-95D2-8A655FF0B511
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 82f85808da6776f2f718b21b2e87ff6d4d8087fd
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 769847cccb3e21fea4d8f45d8e5d0c0fb59bdd43
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-the-parent-application"></a>使用父應用程式
 

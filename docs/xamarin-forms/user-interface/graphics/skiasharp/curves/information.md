@@ -1,18 +1,17 @@
 ---
 title: 路徑資訊和列舉
 description: 取得路徑的相關資訊，並列舉內容
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8E8C5C6A-F324-4155-8652-7A77D231B3E5
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 9c7e8a44a9bb4ee8cb131ffa25e4a595b4225ed6
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 998c804f02eed808c0a1493b054e754a7670aa70
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="path-information-and-enumeration"></a>路徑資訊和列舉
 

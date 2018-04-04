@@ -1,18 +1,17 @@
 ---
-title: "浮動切換 頁面"
-description: "Xamarin.Forms CarouselPage 是使用者可以撥動左右巡覽內容，例如主機庫頁面的頁面。 本文示範如何使用 CarouselPage 來瀏覽分頁的集合。"
-ms.topic: article
+title: 浮動切換 頁面
+description: Xamarin.Forms CarouselPage 是使用者可以撥動左右巡覽內容，例如主機庫頁面的頁面。 本文示範如何使用 CarouselPage 來瀏覽分頁的集合。
 ms.prod: xamarin
 ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: c4f8d70625fd8ee0e07832f8bdb3b7e502b5b38f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d55d8c8d98828097c842cc383037db88097b963d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="carousel-page"></a>浮動切換 頁面
 

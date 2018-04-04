@@ -1,7 +1,6 @@
 ---
-title: "TvOS 簡介"
-description: "本文介紹建置使用 Xamarin tvOS 應用程式。"
-ms.topic: article
+title: TvOS 簡介
+description: 本文介紹建置使用 Xamarin tvOS 應用程式。
 ms.prod: xamarin
 ms.assetid: 14345503-1742-41F5-B2EF-EE31AB7C3516
 ms.technology: xamarin-ios
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: 7246379fbe5918671de68cd4af10d1ce497e7c4e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 457e1c01365017f699c5902376cdb44b9127d88e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-tvos"></a>TvOS 簡介
 

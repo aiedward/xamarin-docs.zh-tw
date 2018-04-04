@@ -1,18 +1,17 @@
 ---
-title: "加入 AppCompat 和材料設計"
-description: "請遵循下列步驟，將現有的 Xamarin.Forms Android 應用程式以使用 AppCompat 和材料設計"
-ms.topic: article
+title: 加入 AppCompat 和材料設計
+description: 請遵循下列步驟，將現有的 Xamarin.Forms Android 應用程式以使用 AppCompat 和材料設計
 ms.prod: xamarin
 ms.assetid: 045FBCDF-4D45-48BB-9911-BD3938C87D58
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: 3014db91ff87f0e73291595a17dd780b5e3cd3c2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8f9820b863274453cff7e4124df683fb8518a978
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="adding-appcompat-and-material-design"></a>加入 AppCompat 和材料設計
 

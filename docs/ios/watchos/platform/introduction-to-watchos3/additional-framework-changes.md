@@ -1,18 +1,17 @@
 ---
-title: "其他 watchOS 3 架構變更"
-description: "本文涵蓋其他次要變更或增強的 watchOS 3 的現有架構。"
-ms.topic: article
+title: 其他 watchOS 3 架構變更
+description: 本文涵蓋其他次要變更或增強的 watchOS 3 的現有架構。
 ms.prod: xamarin
 ms.assetid: FE93796E-F699-4B14-B37D-D39F9D48E81E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: e2d14bcedd6ff5570d77da8c9b54a74b5ce0752a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 572aaff9d010ec1ec1f48db2878859e445e2fb20
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="additional-watchos-3-frameworks-changes"></a>其他 watchOS 3 架構變更
 

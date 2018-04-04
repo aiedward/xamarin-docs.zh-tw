@@ -1,17 +1,16 @@
 ---
-title: "第 13 章的摘要。 點陣圖"
-ms.topic: article
+title: 第 13 章的摘要。 點陣圖
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 74e5e47a481d02fe11be4b770b818d2c88b517f7
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 76551057abc1abdd150591c0a1be39e9f68c4278
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>第 13 章的摘要。 點陣圖
 

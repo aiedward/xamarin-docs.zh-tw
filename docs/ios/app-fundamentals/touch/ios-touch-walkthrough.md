@@ -1,17 +1,16 @@
 ---
-title: "逐步解說： 在 iOS 中使用觸控"
-ms.topic: article
+title: 逐步解說： 在 iOS 中使用觸控
 ms.prod: xamarin
 ms.assetid: 13F8289B-7A80-4959-AF3F-57874D866DCA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 04c7a7235665e14fd128a3a70951168c1914c112
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 58066ef0071c8105658f0d766e8f038b2bd3ddf2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="walkthrough--using-touch-in-ios"></a>逐步解說： 在 iOS 中使用觸控
 

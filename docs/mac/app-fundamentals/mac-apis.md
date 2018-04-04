@@ -1,20 +1,19 @@
 ---
-title: "Mac 應用程式開發介面"
-description: "本文件說明如何讀取 Objective C 的選取器以及如何尋找對應的 C# 方法。"
-ms.topic: article
+title: Mac API
+description: 本文件說明如何讀取 Objective C 的選取器以及如何尋找對應的 C# 方法。
 ms.prod: xamarin
 ms.assetid: 9F7451FA-E07E-4C7B-B5CF-27AFC157ECDA
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/02/2017
-ms.openlocfilehash: 724edb7d23a5be5d790b43b81486d60c06df60bf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0344fecb9a8d64a680bb11689f56cf074d952f4e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
-# <a name="mac-apis"></a>Mac 應用程式開發介面
+# <a name="mac-apis"></a>Mac API
 
 ## <a name="overview"></a>總覽
 

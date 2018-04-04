@@ -1,18 +1,17 @@
 ---
-title: "開始使用 iOS 11"
-description: "下載並安裝 Xcode 9"
-ms.topic: article
+title: 開始使用 iOS 11
+description: 下載並安裝 Xcode 9
 ms.prod: xamarin
 ms.assetid: 794EA2C4-884B-42AC-B8C4-8C8E5474B660
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/19/2016
-ms.openlocfilehash: 2cc35379958e933f96206846eeaeee1949100090
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2982e8acd27207452b74320cb3ea17d2ffc7375e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="getting-started-with-ios-11"></a>開始使用 iOS 11
 

@@ -1,17 +1,16 @@
 ---
-title: "容器化的 Microservices"
-ms.topic: article
+title: 容器化的 Microservices
 ms.prod: xamarin
 ms.assetid: 5872ad92-04e0-4f1a-9691-79d5602f5683
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 3ecbd5a301a64417ab5fb27bd8632b6d9790a7ac
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 461a1310ff430c16e49fa0ed6037a77b1302f769
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="containerized-microservices"></a>容器化的 Microservices
 

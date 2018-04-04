@@ -1,24 +1,23 @@
 ---
-title: "使用者介面"
-description: "Xamarin.Android 應用程式建立的使用者介面"
-ms.topic: article
+title: 使用者介面
+description: Xamarin.Android 應用程式建立的使用者介面
 ms.prod: xamarin
 ms.assetid: F67B7C33-BC53-2BB6-CDA7-16E4AB4A9EFB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/18/2017
-ms.openlocfilehash: 40d02def5c0aae3334ae59cec78f6d22a1d5d772
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 152f5551e2f539e8ab93121c35c2acca7eb7f2e9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="user-interface"></a>使用者介面
 
 下列各節說明的各種工具和用來撰寫 Xamarin.Android 應用程式中的使用者介面的建置組塊。
 
-## <a name="android-designerandroiduser-interfaceandroid-designerindexmd"></a>[Android 設計工具](~/android/user-interface/android-designer/index.md)
+## <a name="android-designerandroiduser-interfaceandroid-designerindexmd"></a>[Android Designer](~/android/user-interface/android-designer/index.md)
 
 本節說明如何使用 Android 設計工具以視覺化方式配置控制項和編輯屬性。 此外，它也會說明如何使用設計工具來處理跨不同的組態，例如佈景主題、 語言和裝置組態使用者介面和資源，以及如何設計的替代檢視，例如橫向和縱向。
 

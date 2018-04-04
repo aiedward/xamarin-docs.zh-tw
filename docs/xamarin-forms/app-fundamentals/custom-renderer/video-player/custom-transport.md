@@ -1,17 +1,16 @@
 ---
-title: "自訂的視訊傳輸控制"
-ms.topic: article
+title: 自訂的視訊傳輸控制
 ms.prod: xamarin
 ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: b0d871068f42a03b2aba3c1482a9236b19fe0db9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5463a91dba5840ebe655aa1509d9f98e73643d26
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="custom-video-transport-controls"></a>自訂的視訊傳輸控制
 
@@ -521,19 +520,19 @@ namespace FormsVideoLibrary.UWP
 
 使用 Unicode 字元符號**播放**，**暫停**，和**停止**映像會有問題。 [其他技術](https://unicode-table.com/en/blocks/miscellaneous-technical/)Unicode 標準區段可定義三個看似適用於此用途的符號字元。 這些是：
 
-- 0x23F5 （黑色中型指向右方的三角形） 或 & #x23F5;如**播放**
-- 0x23F8 （雙分隔號） 或 & #x23F8;如**暫停**
-- 0x23F9 （黑色方格） 或 & #x23F9;如**停止**
+- 0x23F5 （黑色中型指向右方的三角形） 或&#x23F5;如**播放**
+- 0x23F8 （雙分隔號） 或&#x23F8;如**暫停**
+- 0x23F9 （黑色方格） 或&#x23F9;如**停止**
 
 不論如何這些符號出現在您的瀏覽器 （和不同的瀏覽器以不同方式處理這類），不會顯示以一致的方式支援 Xamarin.Forms 平台上。 IOS 和 UWP 裝置上**暫停**和**停止**字元有圖形的外觀，以藍色的 3D 背景及白色前景。 這不是在 Android 上，其中的符號就是只是藍色的情況。 不過，如 0x23F5 字碼指標**播放**沒有 iOS 和 Android 上，甚至不支援相同 UWP 和它的外觀。
 
 基於這個原因，0x23F5 字碼指標無法用於**播放**。 是很好的替代：
 
-- 0x25B6 （黑色指向右方的三角形） 或 & #x25B6;如**播放**
+- 0x25B6 （黑色指向右方的三角形） 或&#x25B6;如**播放**
 
 這所有三個平台支援不同之處在於它是不相似的 3D 外觀純黑色三角形**暫停**和**停止**。 一個可能的原因是遵循 0x25B6 字碼指標變數的程式碼：
 
-- 0xFE0F （variant 型別 16） 後面接著 0x25B6 或 & #x25B6; & #xFE0F;如**播放**
+- 0x25B6 後面 0xFE0F （variant 型別 16） 或&#x25B6;&#xFE0F;如**播放**
 
 這是用於標記如下所示。 在 iOS 上，它提供**播放**符號做為相同的 3D 外觀**暫停**和**停止**按鈕，但在變數無法在 Android 和 UWP 上運作。
 

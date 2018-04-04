@@ -1,17 +1,16 @@
 ---
-title: "第 18 章摘要。 MVVM"
-ms.topic: article
+title: 第 18 章摘要。 MVVM
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: cadab2432d0b6c29ead9cde1f4220bb64e1e1886
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 392e683601726ed1219fd43786a9b50d2c14c9b5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>第 18 章摘要。 MVVM
 

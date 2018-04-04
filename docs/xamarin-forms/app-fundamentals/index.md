@@ -1,18 +1,17 @@
 ---
-title: "應用程式基本概念"
-description: "瀏覽 Xamarin.Forms 開發的基本概念"
-ms.topic: article
+title: 應用程式基本概念
+description: 瀏覽 Xamarin.Forms 開發的基本概念
 ms.prod: xamarin
 ms.assetid: 7B516BBC-F7E1-4387-9779-7754E2E69723
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: afa3bf25b1448d98c49c95a66bd0f4dc55bde39e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5a53c15ebad6081dae2ebc4bd782bcc3644620fe
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="application-fundamentals"></a>應用程式基本概念
 
@@ -64,7 +63,7 @@ Xamarin.Forms 支援資料庫驅動的應用程式使用 SQLite 資料庫引擎�
 
 Xamarin.Forms`MessagingCenter`啟用檢視模型和其他元件，以與通訊，而不需要知道任何關於彼此除了簡單的訊息合約。
 
-## <a name="navigationnavigationindexmd"></a>[瀏覽](navigation/index.md)
+## <a name="navigationnavigationindexmd"></a>[巡覽](navigation/index.md)
 
 Xamarin.Forms 提供不同的網頁瀏覽體驗，視數`Page`輸入所使用。
 

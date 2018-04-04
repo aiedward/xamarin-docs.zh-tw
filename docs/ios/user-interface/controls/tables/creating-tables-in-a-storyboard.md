@@ -1,18 +1,17 @@
 ---
-title: "在 iOS 設計工具中使用的資料表"
-description: "上一節我們探索開發使用資料表。 在這個中，第五個和最後一個區段中，我們將彙總我們已經為止學會，並建立基本的例行工作清單應用程式使用分鏡腳本。"
-ms.topic: article
+title: 在 iOS 設計工具中使用的資料表
+description: 上一節我們探索開發使用資料表。 在這個中，第五個和最後一個區段中，我們將彙總我們已經為止學會，並建立基本的例行工作清單應用程式使用分鏡腳本。
 ms.prod: xamarin
 ms.assetid: D8416E10-481A-0B6E-4081-B146E6358004
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: e46038b21327fe8847d2c04ee1ba16960f6a059b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 869719b1d3514fee4b45f61dcdb34a0bcf54f7b2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>在 iOS 設計工具中使用的資料表
 
@@ -115,7 +114,7 @@ StoryboardTable 範例包含簡單的主從式應用程式中，使用這兩種 
 請執行下列動作： 
 
 -  拖曳**工具列按鈕項目**從工具箱拖曳至_導覽列的右手邊_。
--  在**屬性板**下**工具列按鈕項目**選取**識別碼： 新增**(讓它 *+* 加號按鈕)。 
+-  在**屬性板**下**工具列按鈕項目**選取**識別碼： 新增**(讓它*+*加號按鈕)。 
 -  指定名稱，如此就可以在程式碼中識別在後續階段。 請注意，您將需要授與根目錄檢視控制器類別名稱 (例如**ItemViewController**) 可讓您設定列按鈕項目名稱。
 
 

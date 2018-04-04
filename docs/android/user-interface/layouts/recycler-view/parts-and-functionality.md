@@ -1,17 +1,16 @@
 ---
-title: "RecyclerView 組件和功能"
-ms.topic: article
+title: RecyclerView 組件和功能
 ms.prod: xamarin
 ms.assetid: 54F999BE-2732-4BC7-A466-D17373961C48
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 89679f7d825422ab34dd77b31a7a3fde60f36e99
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 44f042359c9363f8ec3008ee49d2f6a874983e12
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="recyclerview-parts-and-functionality"></a>RecyclerView 組件和功能
 

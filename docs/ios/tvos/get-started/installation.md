@@ -1,18 +1,17 @@
 ---
-title: "安裝 tvOS 支援"
-description: "本文涵蓋安裝 tvOS 支援所需的步驟。"
-ms.topic: article
+title: 安裝 tvOS 支援
+description: 本文涵蓋安裝 tvOS 支援所需的步驟。
 ms.prod: xamarin
 ms.assetid: 0819DC93-A46B-49DC-A566-8E27CAE1B829
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: b9ffbbb5f082503c8b571ed0c6fa835e60d4c3f5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ed795217e93b51c94e6502f9996c16c36783c49f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="installing-tvos-support"></a>安裝 tvOS 支援
 

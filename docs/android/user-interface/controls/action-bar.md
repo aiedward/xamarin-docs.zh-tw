@@ -1,17 +1,16 @@
 ---
 title: ActionBar
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 84A79F1F-9E73-4E3E-80FA-B72E5686900B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 64a5ac7e0c448205da66f9790a506ca34a944140
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 29726450e0899177f3223deeade1cb4766d933a5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="actionbar"></a>ActionBar
 

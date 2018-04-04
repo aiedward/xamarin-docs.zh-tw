@@ -1,18 +1,17 @@
 ---
-title: "動畫"
-description: "Xamarin.Forms 包含本身可以直接建立簡單的動畫，同時也會多到足以的用途，來建立複雜的動畫的動畫基礎結構。"
-ms.topic: article
+title: 動畫
+description: Xamarin.Forms 包含本身可以直接建立簡單的動畫，同時也會多到足以的用途，來建立複雜的動畫的動畫基礎結構。
 ms.prod: xamarin
 ms.assetid: AC0B4127-ECA3-44DA-8A24-A2B10A275083
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: e50419eaa6466e94fc5192a77ffd7cb89ca9d965
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7cff122e7ecc24f5ad93bd863ee422981871f857
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="animation"></a>動畫
 
@@ -20,7 +19,7 @@ _Xamarin.Forms 包含本身可以直接建立簡單的動畫，同時也會多�
 
 Xamarin.Forms 動畫類別以一般的動畫逐漸從一個值經過一段時間，將屬性變更為另一個為目標的視覺項目，不同的屬性。 請注意，Xamarin.Forms 動畫類別沒有 XAML 介面。 不過，封裝動畫，在[行為](~/xamarin-forms/app-fundamentals/behaviors/index.md)，然後從 XAML 參照。
 
-## <a name="simple-animationssimplemd"></a>[簡單的動畫](simple.md)
+## <a name="simple-animationssimplemd"></a>[簡單動畫](simple.md)
 
 [ `ViewExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/)類別提供擴充方法，可以用來建構簡單旋轉、 縮放、 轉譯，和淡出動畫[ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/)執行個體。 本文示範如何建立，並取消使用動畫`ViewExtensions`類別。
 

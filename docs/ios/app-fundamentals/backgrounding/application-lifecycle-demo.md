@@ -1,17 +1,16 @@
 ---
-title: "應用程式生命週期的示範"
-ms.topic: article
+title: 應用程式生命週期的示範
 ms.prod: xamarin
 ms.assetid: 5C8AACA6-49F8-4C6D-99C3-5F443C01B230
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 3d68b1e38ecb5b1833b818dd2a9fb7a5c84f9206
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f03cd7d74d09fc40b88cfbf44bf54c6da5f4c149
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="application-lifecycle-demo"></a>應用程式生命週期的示範
 

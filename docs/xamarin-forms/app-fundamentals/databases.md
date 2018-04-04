@@ -1,18 +1,17 @@
 ---
-title: "本機資料庫"
-description: "Xamarin.Forms 支援資料庫驅動的應用程式使用 SQLite 資料庫引擎，讓您能夠載入和儲存在共用程式碼中的物件。 本文說明如何讀取和寫入資料至本機 SQLite 資料庫使用 SQLite.Net Xamarin.Forms 應用程式。"
-ms.topic: article
+title: 本機資料庫
+description: Xamarin.Forms 支援資料庫驅動的應用程式使用 SQLite 資料庫引擎，讓您能夠載入和儲存在共用程式碼中的物件。 本文說明如何讀取和寫入資料至本機 SQLite 資料庫使用 SQLite.Net Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2017
-ms.openlocfilehash: 29686b29a18fe409a1f778d54266cbeedea40eda
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 95c5f482e1bf3e55fa4c6fef18b1dbe6274f33e8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="local-databases"></a>本機資料庫
 

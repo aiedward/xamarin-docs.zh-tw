@@ -1,18 +1,17 @@
 ---
-title: "將參數傳遞至效果"
-description: "效果參數可以定義屬性，啟用要重複使用的效果。 藉由指定每個屬性值時具現化效果然後效果傳遞參數。"
-ms.topic: article
+title: 將參數傳遞至效果
+description: 效果參數可以定義屬性，啟用要重複使用的效果。 藉由指定每個屬性值時具現化效果然後效果傳遞參數。
 ms.prod: xamarin
 ms.assetid: F6429859-6EF7-48BE-A0CB-8F42B8A75215
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 06de17e978dd30152f66fada36007ccf2189a1ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a199c7907c24f3a97fd4f01b64eb2e858e5c5d52
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="passing-parameters-to-an-effect"></a>將參數傳遞至效果
 

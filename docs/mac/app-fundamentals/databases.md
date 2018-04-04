@@ -1,18 +1,17 @@
 ---
-title: "資料庫"
-description: "本文說明如何使用索引鍵-值編碼並觀察 SQLite 資料庫與 Xcode 的介面產生器中的 UI 項目之間的資料繫結所允許的索引鍵-值。 其中也涵蓋使用 SQLite.NET ORM 提供 SQLite 資料的存取權。"
-ms.topic: article
+title: 資料庫
+description: 本文說明如何使用索引鍵-值編碼並觀察 SQLite 資料庫與 Xcode 的介面產生器中的 UI 項目之間的資料繫結所允許的索引鍵-值。 其中也涵蓋使用 SQLite.NET ORM 提供 SQLite 資料的存取權。
 ms.prod: xamarin
 ms.assetid: 44FAFDA8-612A-4E0F-8BB4-5C92A3F4D552
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 39186735749174884646a72871accfa051d2901c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 33c1ab7092669bb1dbd4e7bfae628b58a0bf3726
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="databases"></a>資料庫
 

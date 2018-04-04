@@ -1,17 +1,17 @@
 ---
-title: "可以變更以及 IPA 檔案的輸出路徑嗎？"
-ms.topic: article
+title: 可以變更以及 IPA 檔案的輸出路徑嗎？
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: F5E5DCC6-F7CC-48E2-89E8-709E9C269502
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 2cb5ef615bfd965ce3fbd4efbab7669fe12679a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 06074566b3d3a05e05a1646c70de211f908f3aa9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="can-i-change-the-output-path-of-the-ipa-file"></a>可以變更以及 IPA 檔案的輸出路徑嗎？
 
@@ -44,7 +44,7 @@ ms.lasthandoff: 02/27/2018
 2. 想要的輸出資料夾設定 DestinationFolder。 像往常一樣，您可以使用 MSBuild 屬性 （例如 $(OutputPath)) 這個引數，如果您想內。
 
 ## <a name="notes"></a>注意
-- `CreateIpaDependsOn`屬性已定義於`Xamarin.iOS.Common.targets`檔案亦即 Xamarin.iOS 的一部分。 它的行為如底下所述*正在覆寫 'DependsOn' 屬性*上[https://msdn.microsoft.com/en-us/library/ms366724.aspx](https://msdn.microsoft.com/en-us/library/ms366724.aspx)。
+- `CreateIpaDependsOn`屬性已定義於`Xamarin.iOS.Common.targets`檔案亦即 Xamarin.iOS 的一部分。 它的行為如底下所述*正在覆寫 'DependsOn' 屬性*上[ https://msdn.microsoft.com/en-us/library/ms366724.aspx ](https://msdn.microsoft.com/en-us/library/ms366724.aspx)。
 
 - 您可以使用**移動**工作而非**複製**如果您偏好的工作。 如果您選擇選項，您要在 Windows 上建置，您必須使用完整的工作名稱`<Microsoft.Build.Tasks.Move>`以避免與 XamarinVS 模稜兩可建置工作。
 
@@ -78,6 +78,6 @@ ms.lasthandoff: 02/27/2018
 2. 設定`DestinationFolder`到想要的輸出資料夾。 像往常一樣，您可以使用 MSBuild 屬性 (例如`$(OutputPath)`) 這個引數，如果您想內。
 
 ## <a name="notes"></a>注意
-- `CreateIpaDependsOn`屬性已定義於`Xamarin.iOS.Common.targets`檔案亦即 Xamarin.iOS 的一部分。 它的行為如底下所述*正在覆寫 「 DependsOn"屬性*上[https://msdn.microsoft.com/en-us/library/ms366724.aspx](https://msdn.microsoft.com/en-us/library/ms366724.aspx)。
+- `CreateIpaDependsOn`屬性已定義於`Xamarin.iOS.Common.targets`檔案亦即 Xamarin.iOS 的一部分。 它的行為如底下所述*正在覆寫 「 DependsOn"屬性*上[ https://msdn.microsoft.com/en-us/library/ms366724.aspx ](https://msdn.microsoft.com/en-us/library/ms366724.aspx)。
 
 - 您可以使用**移動**工作而非**複製**如果您偏好的工作。 如果您選擇選項，您要在 Windows 上建置，您必須使用完整的工作名稱`<Microsoft.Build.Tasks.Move>`以避免與 XamarinVS 模稜兩可建置工作。

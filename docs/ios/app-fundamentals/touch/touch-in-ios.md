@@ -1,17 +1,16 @@
 ---
-title: "在 iOS 中觸控"
-ms.topic: article
+title: 在 iOS 中觸控
 ms.prod: xamarin
 ms.assetid: DA666DC9-446E-4CD1-B5A0-C6FFBC7E53AD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 838a11f078d735759eda1d45a082ccbad51e2779
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 78783089303eba09b0ee36534b0078b82674a1c6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="touch-in-ios"></a>在 iOS 中觸控
 

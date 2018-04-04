@@ -1,18 +1,17 @@
 ---
-title: "檢查應用程式"
-description: "視覺化及偵錯即時應用程式"
-ms.topic: article
+title: 檢查應用程式
+description: 視覺化及偵錯即時應用程式
 ms.prod: xamarin
 ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: c923208b7ca4d41914504b4b0aa0687db1d49f01
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 841013fd6b836a7c9e065dc86e7d34c71146ca96
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="inspecting-live-applications"></a>檢查應用程式
 

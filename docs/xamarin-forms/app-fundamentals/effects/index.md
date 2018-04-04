@@ -1,18 +1,17 @@
 ---
-title: "效果"
-description: "使用允許保留每個平台適當的外觀及操作 Xamarin.Forms 應用程式的目標平台的原生控制項轉譯 Xamarin.Forms 使用者介面。 效果可讓自訂而不必訴諸於自訂轉譯器實作的每個平台的原生控制項。"
-ms.topic: article
+title: 效果
+description: 使用允許保留每個平台適當的外觀及操作 Xamarin.Forms 應用程式的目標平台的原生控制項轉譯 Xamarin.Forms 使用者介面。 效果可讓自訂而不必訴諸於自訂轉譯器實作的每個平台的原生控制項。
 ms.prod: xamarin
 ms.assetid: 8AF168A7-4CD9-4603-B961-15B8B1543784
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: dd8b98982052e15744bf67ece6a25cd940a9875a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 63d7750294321a28dbde833f72fe6b7277ada397
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="effects"></a>效果
 

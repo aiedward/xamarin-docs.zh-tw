@@ -1,17 +1,16 @@
 ---
-title: "取得 Google 地圖服務 API 金鑰"
-ms.topic: article
+title: 取得 Google 地圖服務 API 金鑰
 ms.prod: xamarin
 ms.assetid: D5969C57-3444-465E-D6FF-249AEE62E127
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 9402132b528d705455c183bb70e5bc9a270a8d05
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c37fce491b2e6f5e0211fcc6aa7906643a1bac2a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>取得 Google 地圖服務 API 金鑰
 

@@ -1,18 +1,17 @@
 ---
-title: "顯示快顯視窗"
-description: "Xamarin.Forms 提供兩個 pop up 類似使用者介面項目 – 警示和動作工作表。 本文示範如何使用警示和動作表應用程式開發介面，詢問使用者簡單的問題，以及引導使用者進行的工作。"
-ms.topic: article
+title: 顯示快顯視窗
+description: Xamarin.Forms 提供兩個 pop up 類似使用者介面項目 – 警示和動作工作表。 本文示範如何使用警示和動作表應用程式開發介面，詢問使用者簡單的問題，以及引導使用者進行的工作。
 ms.prod: xamarin
 ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 87b20dfd8882bf7da58b1bd078930fb69c46a79d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2e0a5ff433de034da0170e3aa9a19ab50ddc3cb6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="displaying-pop-ups"></a>顯示快顯視窗
 

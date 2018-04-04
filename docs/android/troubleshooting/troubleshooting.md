@@ -1,17 +1,17 @@
 ---
-title: "疑難排解秘訣"
-ms.topic: article
+title: 疑難排解秘訣
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 56137ACA-4811-B312-6860-E16D0FA123F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/15/2018
-ms.openlocfilehash: 015fff63c612c3acf29681b90c1e945c5e460034
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 961f9f38687790343f225d95c74e00e98f594c28
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting-tips"></a>疑難排解秘訣
 
@@ -200,7 +200,7 @@ I/monodroid-gref(27679): -w- grefc 1915 gwrefc 294 handle 0xde691aaf/W from take
 -  全域的弱式參考解構： 這些是以開頭的行*-w-* 。
 
 
-在所有訊息， *grefc*值是全域 Xamarin.Android 已建立的參考計數而*grefwc*值是弱式 Xamarin.Android 已建立的全域參考計數。 *處理*或*obj 控制代碼*值是 JNI 控制代碼值，並在之後的字元 '  */* ' 是控制代碼值的型別： */L*對於本機的參考， */G*全域的參考和*/W*為全域的弱式參考。
+在所有訊息， *grefc*值是全域 Xamarin.Android 已建立的參考計數而*grefwc*值是弱式 Xamarin.Android 已建立的全域參考計數。 *處理*或*obj 控制代碼*值是 JNI 控制代碼值，並在之後的字元 ' */*' 是控制代碼值的型別： */L*對於本機的參考， */G*全域的參考和*/W*為全域的弱式參考。
 
 一部分的 GC 程序的詳細資訊，通用參考 （+ g +） 會轉換成全域的弱式參考 (造成 + w + 和-g-)、 Java 端 GC 開始，然後弱式通用的參考會檢查以查看所收集。 如果仍在執行，建立新 gref 周圍的弱式參考 (+ g +、-w-)，否則為弱式參考被終結 (-w)。
 
@@ -270,7 +270,7 @@ Android 4.0，不過，已移動的收集器，並不會再交給 Android 的執
 
 ## <a name="receiving-activation-incomplete-error-message"></a>接收 ' 啟動不完整的錯誤訊息
 
-使用 Xamarin.Android for Visual Studio 時，可能會發生此問題。 若要解決此問題，請從傳送記錄檔的下列位置 *contact@xamarin.com* 。
+使用 Xamarin.Android for Visual Studio 時，可能會發生此問題。 若要解決此問題，請從傳送記錄檔的下列位置*contact@xamarin.com*。
 
 -  記錄位置： **%localappdata%\\Xamarin\\記錄檔**
 
@@ -301,7 +301,7 @@ Android 4.0，不過，已移動的收集器，並不會再交給 Android 的執
 5. 輸入您的認證
 6. 檢查更新
 
-如果此錯誤訊息持續出現，請傳送電子郵件 **contact@xamarin.com** 。
+如果此錯誤訊息持續出現，請傳送電子郵件**contact@xamarin.com**。
 
 
 

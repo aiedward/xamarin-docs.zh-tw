@@ -1,17 +1,17 @@
 ---
-title: "可以設定我的 Android SDK 的位置？"
-ms.topic: article
+title: 可以設定我的 Android SDK 的位置？
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 6A9DE6E9-3E27-4DD2-87D2-34E95E5D401C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 11/16/2017
-ms.openlocfilehash: 0113cc15bf1de5e0e668b05c2b0288a6ead141b5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e7af6635aeec72a9a0e0c01eeb6eb0a77d2a1d7b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="where-can-i-set-my-android-sdk-locations"></a>可以設定我的 Android SDK 的位置？
 

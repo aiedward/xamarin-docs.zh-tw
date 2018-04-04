@@ -1,7 +1,6 @@
 ---
-title: "C# 6 的新功能概觀"
-description: "最新版的 C# 語言 – 第 6 版 – 會持續發展成具有較少的未定案、 改良的清晰度和較佳的一致性的語言。 清理初始化語法，能夠使用 await catch/finally 區塊和 null 條件嗎？ 運算子時特別有用。"
-ms.topic: article
+title: C# 6 的新功能概觀
+description: 最新版的 C# 語言 – 第 6 版 – 會持續發展成具有較少的未定案、 改良的清晰度和較佳的一致性的語言。 清理初始化語法，能夠使用 await catch/finally 區塊和 null 條件嗎？ 運算子時特別有用。
 ms.prod: xamarin
 ms.assetid: 4B4E41A8-68BA-4E2B-9539-881AC19971B
 ms.technology: xamarin-cross-platform
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 80456287c92913b048b73f40d2db6dcb16cc270d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2a189a19280576876e5d5a6a4fa34d2d00cab330
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="c-6-new-features-overview"></a>C# 6 的新功能概觀
 

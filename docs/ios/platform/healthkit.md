@@ -1,18 +1,17 @@
 ---
 title: HealthKit
-description: "HealthKit 是 iOS 8 的健全狀況的相關資訊提供集中式、 協調，且安全的資料存放區中導入的架構。 作業系統可確保隱私權和安全性的健全狀況資訊和健全狀況應用程式時，使用者的儀表板。 使用使用者的權限、 應用程式可以讀取並寫入各式各樣的健全狀況資訊。"
-ms.topic: article
+description: HealthKit 是 iOS 8 的健全狀況的相關資訊提供集中式、 協調，且安全的資料存放區中導入的架構。 作業系統可確保隱私權和安全性的健全狀況資訊和健全狀況應用程式時，使用者的儀表板。 使用使用者的權限、 應用程式可以讀取並寫入各式各樣的健全狀況資訊。
 ms.prod: xamarin
 ms.assetid: E3927A21-507C-43BA-A2AD-957716BA9B52
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: e7075b67db94b6bf603bd96c637c9f7724ae1519
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: a569bcff3ac33d008788bb0b946bd027fa5c0ea8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -69,14 +68,14 @@ Xamarin iOS 8 應用程式可以使用 HealthKit API 之前，必須正確設定
 
 您目前**應用程式識別碼**中所列[憑證、 識別項與設定檔](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action)開發人員中心的區段。 通常，這份清單會顯示**識別碼**值`*`，這表示，**應用程式識別碼** - **名稱**可以搭配任何數目的尾碼。 這類*萬用字元應用程式識別碼*不能與健全狀況的套件。
  
-若要建立明確**應用程式識別碼**，按一下   **+** 按鈕右上方帶您前往**註冊 iOS 應用程式識別碼**頁面：
+若要建立明確**應用程式識別碼**，按一下  **+**按鈕右上方帶您前往**註冊 iOS 應用程式識別碼**頁面：
 
 
 [![](healthkit-images/image02.png "註冊 Apple 開發人員入口網站上的應用程式")](healthkit-images/image02.png#lightbox)
 
 中所示的影像上方，建立應用程式描述之後，使用**明確的應用程式識別碼**區段來建立您的應用程式的識別碼。 在**應用程式服務**區段中，按一下**健全狀況套件**中**啟用服務**> 一節。
 
-當您完成之後時，請按**繼續**按鈕，以登錄**應用程式識別碼**在您的帳戶。 您將帶回至**憑證、 識別碼和設定檔**頁面。 按一下**佈建的設定檔**，讓您的目前佈建設定檔清單，並按一下 **+** 帶您前往右上角的按鈕**新增 iOS佈建設定檔**頁面。 選取**iOS 應用程式開發**選項，然後按一下**繼續**前往**選取應用程式識別碼**頁面。 在這裡，選取 明確**應用程式識別碼**您先前指定：
+當您完成之後時，請按**繼續**按鈕，以登錄**應用程式識別碼**在您的帳戶。 您將帶回至**憑證、 識別碼和設定檔**頁面。 按一下**佈建的設定檔**，讓您的目前佈建設定檔清單，並按一下**+**帶您前往右上角的按鈕**新增 iOS佈建設定檔**頁面。 選取**iOS 應用程式開發**選項，然後按一下**繼續**前往**選取應用程式識別碼**頁面。 在這裡，選取 明確**應用程式識別碼**您先前指定：
 
 
 [![](healthkit-images/image03.png "選取明確的應用程式識別碼")](healthkit-images/image03.png#lightbox)

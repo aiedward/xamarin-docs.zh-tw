@@ -1,18 +1,17 @@
 ---
-title: "以程式設計方式配置條件約束"
-description: "本指南提供使用 iOS 自動配置條件約束而不是 iOS 設計工具中建立它們的 C# 程式碼。"
-ms.topic: article
+title: 以程式設計方式配置條件約束
+description: 本指南提供使用 iOS 自動配置條件約束而不是 iOS 設計工具中建立它們的 C# 程式碼。
 ms.prod: xamarin
 ms.assetid: 119C8365-B470-4CD4-85F7-086F0A46DCBB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 774d6e6ecdb081650c6f008b1ac83c397f788d5b
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 093101d09f5ffff637b034b3b4794aa6e785a0df
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="programmatic-layout-constraints"></a>以程式設計方式配置條件約束
 

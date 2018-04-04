@@ -1,18 +1,17 @@
 ---
-title: "使用 Web 服務"
-description: "本指南示範如何與提供不同的網頁服務建立、 讀取、 更新和刪除 (CRUD) Xamarin.Forms 應用程式的功能。 涵蓋的主題包含與 ASMX 服務、 WCF 服務、 REST 服務、 Azure 行動應用程式和 Amazon Web Services 通訊。"
-ms.topic: article
+title: 使用 Web 服務
+description: 本指南示範如何與提供不同的網頁服務建立、 讀取、 更新和刪除 (CRUD) Xamarin.Forms 應用程式的功能。 涵蓋的主題包含與 ASMX 服務、 WCF 服務、 REST 服務、 Azure 行動應用程式和 Amazon Web Services 通訊。
 ms.prod: xamarin
 ms.assetid: 8B360BDA-E4E3-4A3F-9004-0E35362F49F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 411ceaa372aef7aec51e3fa691996c2d7538c590
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 530b57c009a1f76d3756d7315856f74b6cda2f66
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="consuming-web-services"></a>使用 Web 服務
 

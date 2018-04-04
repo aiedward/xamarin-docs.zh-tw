@@ -1,18 +1,17 @@
 ---
-title: "自訂轉譯器簡介"
-description: "自訂轉譯器會提供強大的方法用於自訂的外觀和 Xamarin.Forms 控制項的行為。 它們可以用於小型的樣式變更或複雜的平台專屬版面配置和自訂行為。 這篇文章提供自訂的轉譯器的簡介，並且摘要說明建立自訂轉譯器的程序。"
-ms.topic: article
+title: 自訂轉譯器簡介
+description: 自訂轉譯器會提供強大的方法用於自訂的外觀和 Xamarin.Forms 控制項的行為。 它們可以用於小型的樣式變更或複雜的平台專屬版面配置和自訂行為。 這篇文章提供自訂的轉譯器的簡介，並且摘要說明建立自訂轉譯器的程序。
 ms.prod: xamarin
 ms.assetid: 264314BE-1C5C-4727-A14E-F6F98151CDBD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: 837d75bd4ecde92d4c375c680a5f5e7ff231f825
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e555c038d66033d925da42e4c70b89d5caac8ad6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>自訂轉譯器簡介
 

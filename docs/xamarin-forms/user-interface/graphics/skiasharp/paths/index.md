@@ -1,18 +1,17 @@
 ---
 title: SkiaSharp 線條和路徑
 description: 使用 SkiaSharp 繪製線條和圖形路徑
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 316A15FE-383D-4D06-8641-BAC7EE7474CA
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 897e3bbe0375a425709ec63edf25088ac35106e5
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: f7c0fcc87253b1d5ae9d612c52ef3a32c5790c5e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="skiasharp-lines-and-paths"></a>SkiaSharp 線條和路徑
 

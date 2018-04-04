@@ -1,18 +1,17 @@
 ---
 title: 驗證使用者以 Azure Cosmos DB 文件資料庫
 description: Azure Cosmos DB 文件資料庫可支援資料分割的集合、 可以橫跨多部伺服器和資料分割，同時支援無限制的儲存體和輸送量。 本文說明如何結合資料分割的集合，存取控制，讓使用者只能存取自己的文件中的 Xamarin.Forms 應用程式。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 8de64d6489b4022e43bcf694f3b13d6f7eaaecbd
-ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
+ms.openlocfilehash: 0132f849a066976896295da8b8b67ed8bf3c3e8d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>驗證使用者以 Azure Cosmos DB 文件資料庫
 

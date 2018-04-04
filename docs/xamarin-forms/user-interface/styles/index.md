@@ -1,18 +1,17 @@
 ---
-title: "樣式"
-description: "使用自訂外觀樣式"
-ms.topic: article
+title: 樣式
+description: 使用自訂外觀樣式
 ms.prod: xamarin
 ms.assetid: 344A34AA-B19A-4765-BC8A-875D9A6B5EA8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 934948579e5f3fb19c7afe49f4e86a1ef255b77f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7a19f7597ee17282bc8b41e7f0e7e3ade2361a50
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="styles"></a>樣式
 
@@ -20,11 +19,11 @@ ms.lasthandoff: 02/27/2018
 
 Xamarin.Forms 應用程式通常會包含多個具有相同的外觀的控制項。 設定每個個別控制項的外觀可能重複而且容易產生錯誤。 相反地，樣式可以建立自訂控制項外觀的群組上的控制項類型所提供的設定屬性。
 
-## <a name="explicit-stylesexplicitmd"></a>[明確的樣式](explicit.md)
+## <a name="explicit-stylesexplicitmd"></a>[明確樣式](explicit.md)
 
 *明確*樣式是藉由設定選擇性地套用到控制項及其[ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/)屬性。
 
-## <a name="implicit-stylesimplicitmd"></a>[隱含的樣式](implicit.md)
+## <a name="implicit-stylesimplicitmd"></a>[隱含樣式](implicit.md)
 
 *隱含*樣式是使用相同的所有控制項[ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/)，而不需要每個控制項，來參考樣式。
 

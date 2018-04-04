@@ -1,18 +1,17 @@
 ---
-title: "變更應用程式市集"
-description: "瀏覽 iOS 11 的新功能"
-ms.topic: article
+title: 變更應用程式市集
+description: 瀏覽 iOS 11 的新功能
 ms.prod: xamarin
 ms.assetid: 4A7A03FD-B4F2-4969-8676-A17260730FD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 78528c750c6350d113b34a07d166a03773119a8b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 9c9355c047d2e7083ca787f473515163d8e6f5f1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="app-store-changes"></a>變更應用程式市集
 

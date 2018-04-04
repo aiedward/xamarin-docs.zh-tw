@@ -1,7 +1,6 @@
 ---
-title: "版面配置"
-description: "在畫面上檢視版面配置設定。"
-ms.topic: article
+title: 版面配置
+description: 在畫面上檢視版面配置設定。
 ms.prod: xamarin
 ms.assetid: 65030DA3-C7C1-4A02-B478-811073C39139
 ms.technology: xamarin-forms
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 0ede9bbb47f398a82d6eae5d827122f469ad6ea4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 24d9dd332275fd811c0ff60fc514ae0f84c6ee07
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="layouts"></a>版面配置
 

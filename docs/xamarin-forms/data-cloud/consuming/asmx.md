@@ -1,18 +1,17 @@
 ---
-title: "使用 ASP.NET Web 服務 (ASMX)"
-description: "ASMX 提供建立使用簡易物件存取通訊協定 (SOAP) 來傳送訊息的 web 服務的能力。 SOAP 是平台和語言無關的通訊協定，來建置和存取 web 服務。 ASMX 服務的取用者不需要了解平台、 物件模型或用來實作服務的程式設計語言的任何項目。 它們只需要了解如何傳送和接收 SOAP 訊息。 本文將示範如何使用 ASMX SOAP 服務從 Xamarin.Forms 應用程式。"
-ms.topic: article
+title: 使用 ASP.NET Web 服務 (ASMX)
+description: ASMX 提供建立使用簡易物件存取通訊協定 (SOAP) 來傳送訊息的 web 服務的能力。 SOAP 是平台和語言無關的通訊協定，來建置和存取 web 服務。 ASMX 服務的取用者不需要了解平台、 物件模型或用來實作服務的程式設計語言的任何項目。 它們只需要了解如何傳送和接收 SOAP 訊息。 本文將示範如何使用 ASMX SOAP 服務從 Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: D5533964-5528-4D35-9C2B-FAFB632472AC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: a095dbbb78ad1517791356ae0b7cbeaa94d1336f
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: c45f0de039abc3f98b7c269f183e2883a495910b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="consuming-an-aspnet-web-service-asmx"></a>使用 ASP.NET Web 服務 (ASMX)
 

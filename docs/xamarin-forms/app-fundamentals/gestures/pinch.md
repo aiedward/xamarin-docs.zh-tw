@@ -1,18 +1,17 @@
 ---
-title: "加入捏合筆勢辨識器"
-description: "捏合手勢用來執行互動式縮放，並且與 PinchGestureRecognizer 類別實作。 捏合手勢的常見案例是執行互動式捏合位置之影像的縮放。 這透過調整檢視區中，內容，並會在本文中示範。"
-ms.topic: article
+title: 加入捏合筆勢辨識器
+description: 捏合手勢用來執行互動式縮放，並且與 PinchGestureRecognizer 類別實作。 捏合手勢的常見案例是執行互動式捏合位置之影像的縮放。 這透過調整檢視區中，內容，並會在本文中示範。
 ms.prod: xamarin
 ms.assetid: 832F7810-F0CF-441A-B04A-3975F3FB8B29
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 38e46af1d928a3d4e5dc33e2a46fe04cd169ed60
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f8f81418cf5284b288f29fd2363b6b8f2d9d5fdd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="adding-a-pinch-gesture-recognizer"></a>加入捏合筆勢辨識器
 

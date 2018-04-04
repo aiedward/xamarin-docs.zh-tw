@@ -1,16 +1,15 @@
 ---
-title: "MonoGame 平台特定的考量"
-ms.topic: article
+title: MonoGame 平台特定的考量
 ms.prod: xamarin
 ms.assetid: 36EF35F2-882C-4DCF-A95D-A36EFA47BCCC
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 230bbe3c6913370e355cc1e4f35378e45ef27b2e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 720ac99f29f445d707724280e89d43deb24b35aa
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="monogame-platform-specific-considerations"></a>MonoGame 平台特定的考量
 

@@ -1,18 +1,17 @@
 ---
-title: "反白顯示在地圖上的區域"
-description: "本文說明如何將多邊形重疊影像加入至地圖中，反白顯示在地圖上的區域。 多邊形是封閉的圖形，其內部具有填入資訊。"
-ms.topic: article
+title: 反白顯示在地圖上的區域
+description: 本文說明如何將多邊形重疊影像加入至地圖中，反白顯示在地圖上的區域。 多邊形是封閉的圖形，其內部具有填入資訊。
 ms.prod: xamarin
 ms.assetid: E79EB2CF-8DD6-44A8-B47D-5F0A94FB0A63
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 6c116565842537f24d92a6d100ab1636f25c2e12
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d87237015b9e3d896766894d552c650047137146
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="highlighting-a-region-on-a-map"></a>反白顯示在地圖上的區域
 
@@ -31,7 +30,7 @@ _本文說明如何將多邊形重疊影像加入至地圖中，反白顯示在�
 1. [自訂](#Customizing_the_Map)藉由建立自訂轉譯器對應的每個平台上的對應。
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) 必須初始化，並使用之前設定。 如需詳細資訊，請參閱[ `Maps Control` ](~/xamarin-forms/user-interface/map.md)。
+> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) 必須初始化，並使用之前設定。 如需詳細資訊，請參閱 [`Maps Control`](~/xamarin-forms/user-interface/map.md)。
 
 自訂地圖使用自訂轉譯器的相關資訊，請參閱[自訂地圖 Pin](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)。
 

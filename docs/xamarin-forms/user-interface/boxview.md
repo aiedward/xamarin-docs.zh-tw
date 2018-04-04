@@ -1,18 +1,17 @@
 ---
 title: BoxView
-description: "用於裝飾、 圖形及互動的彩色的矩形。"
-ms.topic: article
+description: 用於裝飾、 圖形及互動的彩色的矩形。
 ms.prod: xamarin
 ms.assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 4d50ea5c3db0f5a141f1b48cf0a948c10b63f7f0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5ef55f9c4a747ef73d674fada71c3a92d0cf846a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="boxview"></a>BoxView
 

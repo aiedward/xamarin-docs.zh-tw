@@ -1,18 +1,17 @@
 ---
-title: "寬的色彩"
-description: "本文涵蓋寬的色彩，以及如何使用它的 Xamarin.iOS 或 Xamarin.Mac 應用程式中。"
-ms.topic: article
+title: 寬的色彩
+description: 本文涵蓋寬的色彩，以及如何使用它的 Xamarin.iOS 或 Xamarin.Mac 應用程式中。
 ms.prod: xamarin
 ms.assetid: 576E978A-F182-489A-83E4-D8CDC6890B24
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 34f2e249c5474997b2e2e179285f455c425739cf
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 5f56b396715159cbc1539ae9a7f30cc7ad2236bf
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="wide-color"></a>寬的色彩
 

@@ -1,17 +1,16 @@
 ---
-title: "建立新的平台特定程式庫專案的 NuGet"
-ms.topic: article
+title: 建立新的平台特定程式庫專案的 NuGet
 ms.prod: xamarin
 ms.assetid: D8BC4906-805F-4AFB-8D1A-88B7BF87E17F
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 6512387738217259067e7b9ae8076f73b4fbeb07
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0f244e614a40e444139d51a9466ccc7225a7fe68
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-new-platform-specific-library-projects-for-nuget"></a>建立新的平台特定程式庫專案的 NuGet
 

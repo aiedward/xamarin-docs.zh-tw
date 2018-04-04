@@ -1,17 +1,16 @@
 ---
-title: "Windows 平台功能"
-ms.topic: article
+title: Windows 平台功能
 ms.prod: xamarin
 ms.assetid: F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/20/2017
-ms.openlocfilehash: f77290a8c780d7dd5c936af576b39228d91687aa
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ab6b12738028b4f3439629f334ed5429244f4d5a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="windows-platform-features"></a>Windows 平台功能
 

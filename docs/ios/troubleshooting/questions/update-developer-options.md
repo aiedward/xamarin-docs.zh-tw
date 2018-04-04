@@ -1,16 +1,16 @@
 ---
-title: "如何重新開發人員選項啟用之後更新 iOS"
-ms.topic: article
+title: 如何重新開發人員選項啟用之後更新 iOS
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: F38BD21E-0C21-43FF-80A6-BB4A88DB88A5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: f943132def65de04172d5547113ef85ecdbd036a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9eb25676cc4a3a0679d6a02fc64fef5632f76e33
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="how-can-i-reenable-developer-options-after-updating-ios"></a>如何重新開發人員選項啟用之後更新 iOS
 

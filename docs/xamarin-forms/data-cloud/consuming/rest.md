@@ -1,18 +1,17 @@
 ---
-title: "使用 RESTful Web 服務"
-description: "將 web 服務整合到應用程式是常見的案例。 這篇文章會示範如何使用 RESTful web 服務從 Xamarin.Forms 應用程式。"
-ms.topic: article
+title: 使用 RESTful Web 服務
+description: 將 web 服務整合到應用程式是常見的案例。 這篇文章會示範如何使用 RESTful web 服務從 Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: B540910C-9C51-416A-AAB9-057BF76489C3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 98c38001ea7751c419d4be5b0f68339b06ec656f
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 48b81c5beb1643501c69e5de1ea4f4197d587001
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="consuming-a-restful-web-service"></a>使用 RESTful Web 服務
 

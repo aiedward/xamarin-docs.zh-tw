@@ -1,18 +1,17 @@
 ---
-title: "疑難排解"
-description: "本文章會提供數個疑難排解提示 iOS 9 Xamarin.iOS 應用程式中使用。"
-ms.topic: article
+title: 疑難排解
+description: 本文章會提供數個疑難排解提示 iOS 9 Xamarin.iOS 應用程式中使用。
 ms.prod: xamarin
 ms.assetid: DCE83E36-CBD9-4D96-8E7F-384CB8A54563
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: ca3697b355a45e06f941a6dfd610cd19f922ca75
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 1b335fc6b19d87a46059511baf866433691b1b4d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting"></a>疑難排解
 
@@ -150,7 +149,7 @@ Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScr
 3. 在下**裝置**端面板中，選取您的裝置，以滑鼠右鍵按一下並選取**顯示佈建的設定檔...**: 
 
     [![](troubleshooting-images/untrusted03.png "SShow 佈建的設定檔")](troubleshooting-images/untrusted03.png#lightbox)
-4. 選取目前的裝置，然後按一下每個佈建設定檔 **-** 按鈕來刪除它： 
+4. 選取目前的裝置，然後按一下每個佈建設定檔**-**按鈕來刪除它： 
 
     [![](troubleshooting-images/untrusted04.png "刪除佈建設定檔")](troubleshooting-images/untrusted04.png#lightbox)
 5. 從**Xcode**功能表上，選取**喜好設定...**和**帳戶**: 

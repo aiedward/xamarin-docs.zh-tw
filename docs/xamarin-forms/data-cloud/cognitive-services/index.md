@@ -1,18 +1,17 @@
 ---
 title: 使用認知的服務加入智慧
 description: Microsoft 認知服務是一組應用程式開發介面、 Sdk 和藉由新增功能，例如臉部辨識、 語音辨識和語言的了解，使其應用程式更聰明的開發人員可使用的服務。 本文章提供範例應用程式，示範如何叫用一些 Microsoft 認知服務 Api 的簡介。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: fd67629b9e8d0057ccf3b95b9e84ff1d16acbd7b
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.openlocfilehash: 2600b52b6e044ca9a3a8387bcf719dd1632c406d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>使用認知的服務加入智慧
 

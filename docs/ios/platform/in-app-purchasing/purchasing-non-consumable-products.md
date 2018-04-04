@@ -1,17 +1,16 @@
 ---
-title: "購買非可使用產品"
-ms.topic: article
+title: 購買非可使用產品
 ms.prod: xamarin
 ms.assetid: 635D9CA2-6BCA-53E1-7B10-968029AA3493
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 43aceca2eb86616fd6c9f51eb10c680e8cee9800
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0a581dc222e43f8d4742bd52dc56dc691449a8f2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="purchasing-non-consumable-products"></a>購買非可使用產品
 

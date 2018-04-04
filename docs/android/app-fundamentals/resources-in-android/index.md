@@ -1,18 +1,17 @@
 ---
-title: "Android 的資源"
-description: "本文介紹 Android Xamarin.Android 中資源的概念，並將文件的使用方式。 它涵蓋了如何使用 Android 應用程式中的資源，以支援應用程式當地語系化，與多個裝置，包括各種不同的螢幕大小和密度。"
-ms.topic: article
+title: Android 的資源
+description: 本文介紹 Android Xamarin.Android 中資源的概念，並將文件的使用方式。 它涵蓋了如何使用 Android 應用程式中的資源，以支援應用程式當地語系化，與多個裝置，包括各種不同的螢幕大小和密度。
 ms.prod: xamarin
 ms.assetid: C0DCC856-FA36-04CD-443F-68D26075649E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/01/2018
-ms.openlocfilehash: 6546870d85f7b77e60dff0cb9e6075f982c9cb8e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7b6ba9cdc222019bfa2e1cb9a61b54e290e69bba
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-resources"></a>Android 的資源
 

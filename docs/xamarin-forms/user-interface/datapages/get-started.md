@@ -1,17 +1,16 @@
 ---
-title: "開始使用 DataPages"
-ms.topic: article
+title: 開始使用 DataPages
 ms.prod: xamarin
 ms.assetid: 6416E5FA-6384-4298-BAA1-A89381E47210
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 3b5346b6d556f6437d9c9fc17897180fd0b41b1e
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: d06c3f95f55edb4870279bfc7d5326be4af4b3bc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="getting-started-with-datapages"></a>開始使用 DataPages
 

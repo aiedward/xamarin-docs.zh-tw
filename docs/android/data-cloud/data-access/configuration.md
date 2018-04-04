@@ -1,17 +1,16 @@
 ---
-title: "組態"
-ms.topic: article
+title: 組態
 ms.prod: xamarin
 ms.assetid: 44526226-4E4E-4FFF-9A16-CA7B1E01BB8F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/11/2016
-ms.openlocfilehash: dd4b4c13fd860a13f97ca93435399ed952b1ed0e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf474015b28d9708d69719b38348391091040a28
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="configuration"></a>組態
 

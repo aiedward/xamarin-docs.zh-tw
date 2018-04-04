@@ -1,18 +1,17 @@
 ---
-title: "iOS 資料存取"
-description: "大部分的應用程式有某些需求，要將資料儲存在本機裝置上。 除非兩者小型的資料量，所以通常會要求資料庫和資料層應用程式來管理資料庫存取權。 iOS 具有 「 內建的 「 SQLite 資料庫引擎，並簡化了 Xamarin 的平台方式來儲存和擷取資料的存取。 本文件示範如何存取 SQLite 資料庫。"
-ms.topic: article
+title: iOS 資料存取
+description: 大部分的應用程式有某些需求，要將資料儲存在本機裝置上。 除非兩者小型的資料量，所以通常會要求資料庫和資料層應用程式來管理資料庫存取權。 iOS 具有 「 內建的 「 SQLite 資料庫引擎，並簡化了 Xamarin 的平台方式來儲存和擷取資料的存取。 本文件示範如何存取 SQLite 資料庫。
 ms.prod: xamarin
 ms.assetid: 3AEDFD8D-FB10-4CEF-BE04-CCD14E95F02C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: 6dba862055cc266b2af1eaf87418fe7ebf5830c5
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 47f2567d81f61568aad639330dc5133856e31936
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-data-access"></a>iOS 資料存取
 

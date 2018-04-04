@@ -1,18 +1,17 @@
 ---
 title: watchOS
-description: "Apple Watch 使用 Xamarin 建置應用程式"
-ms.topic: article
+description: Apple Watch 使用 Xamarin 建置應用程式
 ms.prod: xamarin
 ms.assetid: 14EAE85E-460A-4145-8C8D-869D176D5C3F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 062c53a855051e70329ec18f6c69253b5ee68e7b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5634306836b5fe0255a5d4cdf49013441206dd5f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="watchos"></a>watchOS
 

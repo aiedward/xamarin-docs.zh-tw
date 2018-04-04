@@ -1,18 +1,17 @@
 ---
-title: "建立自訂控制項"
-description: "本文說明如何建立自訂控制項，並在介面產生器中使用它們。"
-ms.topic: article
+title: 建立自訂控制項
+description: 本文說明如何建立自訂控制項，並在介面產生器中使用它們。
 ms.prod: xamarin
 ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3ea88810384dfe8b1a08080953db19caddf25d6a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e1ab3977df96e241fa2a5a80f6cabd74d7d775f8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-custom-controls"></a>建立自訂控制項
 

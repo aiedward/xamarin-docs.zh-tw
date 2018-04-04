@@ -1,18 +1,17 @@
 ---
-title: "可繫結屬性"
-description: "透過 Xamarin.Forms，在 common language runtime (CLR) 屬性的功能被擴充可繫結屬性。 可繫結屬性是屬性的特殊類型，其中會追蹤 Xamarin.Forms 屬性系統屬性的值。 本文介紹可繫結的屬性，並示範如何建立及使用它們。"
-ms.topic: article
+title: 可繫結屬性
+description: 透過 Xamarin.Forms，在 common language runtime (CLR) 屬性的功能被擴充可繫結屬性。 可繫結屬性是屬性的特殊類型，其中會追蹤 Xamarin.Forms 屬性系統屬性的值。 本文介紹可繫結的屬性，並示範如何建立及使用它們。
 ms.prod: xamarin
 ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/02/2016
-ms.openlocfilehash: ab8c4cfd92a048efb87f7508e53fc024a9c46405
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 7e1d3c82036ef703014ae548a6719937e89d22f4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="bindable-properties"></a>可繫結屬性
 

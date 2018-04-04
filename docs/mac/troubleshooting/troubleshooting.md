@@ -1,18 +1,18 @@
 ---
 title: Xamarin.Mac 疑難排解秘訣
 description: 本文件說明的方法來解決開發 Xamarin.Mac 應用程式時所遇到的問題。
-ms.topic: article
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5CBC6822-BCD7-4DAD-8468-6511250D41C4
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9e56a0ac213af4486efa73857ff08486630463d8
-ms.sourcegitcommit: 7b88081a979381094c771421253d8a388b2afc16
+ms.openlocfilehash: 3cec5465f3f30b230cc0f4f1b865209ed327a07c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Xamarin.Mac 疑難排解秘訣
 

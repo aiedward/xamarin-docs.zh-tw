@@ -1,18 +1,17 @@
 ---
-title: "逐步解說-使用 CoreGraphics 和 CoreAnimation"
-description: "本文逐步解說示範如何建立使用核心圖形和核心動畫的應用程式。 它會顯示以回應使用者觸控式螢幕上繪製的方式，以及如何建立動畫沿著路徑移動映像。"
-ms.topic: article
+title: 逐步解說-使用 CoreGraphics 和 CoreAnimation
+description: 本文逐步解說示範如何建立使用核心圖形和核心動畫的應用程式。 它會顯示以回應使用者觸控式螢幕上繪製的方式，以及如何建立動畫沿著路徑移動映像。
 ms.prod: xamarin
 ms.assetid: 4B96D5CD-1BF5-4520-AAA6-2B857C83815C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c62601ff446c114e97e9d4c2ded3727d08220095
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f857accfcdec4cb60e781936d1d0836dbf8d6ffb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="drawing-and-animating-along-a-path"></a>繪圖和沿著路徑製作動畫
 
@@ -183,6 +182,6 @@ ms.lasthandoff: 02/27/2018
 
 ## <a name="related-links"></a>相關連結
 
-- [核心動畫](~/ios/platform/graphics-animation-ios/core-animation.md)
-- [核心圖形](~/ios/platform/graphics-animation-ios/core-graphics.md)
+- [Core 動畫](~/ios/platform/graphics-animation-ios/core-animation.md)
+- [Core 圖形](~/ios/platform/graphics-animation-ios/core-graphics.md)
 - [核心動畫配方](https://developer.xamarin.com/recipes/ios/animation/coreanimation)

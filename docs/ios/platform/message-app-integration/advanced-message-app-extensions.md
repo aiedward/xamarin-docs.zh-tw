@@ -1,18 +1,17 @@
 ---
-title: "進階的訊息應用程式擴充功能"
-description: "本文將說明進階的技巧，在與郵件應用程式整合，並對使用者顯示的新功能的 Xamarin.iOS 方案中使用的訊息應用程式擴充功能。"
-ms.topic: article
+title: 進階的訊息應用程式擴充功能
+description: 本文將說明進階的技巧，在與郵件應用程式整合，並對使用者顯示的新功能的 Xamarin.iOS 方案中使用的訊息應用程式擴充功能。
 ms.prod: xamarin
 ms.assetid: 394A1FDA-AF70-4493-9B2C-4CFE4BE791B6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: fcfd1fd2ec9271bb5e8d9e09b43b7dc4cf3b3f12
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: cd2cabf98c83bba7502e8533e482713a9c43f67a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="advanced-message-app-extensions"></a>進階的訊息應用程式擴充功能
 

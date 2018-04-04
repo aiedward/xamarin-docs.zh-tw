@@ -1,18 +1,17 @@
 ---
 title: TextKit
-description: "文字套件 API 提供功能強大的文字 Xamarin.iOS 配置和轉譯功能。"
-ms.topic: article
+description: 文字套件 API 提供功能強大的文字 Xamarin.iOS 配置和轉譯功能。
 ms.prod: xamarin
 ms.assetid: 1D0477E8-CD1E-48A9-B7C8-7CA892069EFF
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d3a370c3a8d930c817d38422b249b496532fa33f
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 78ca0d9505c9f56dc6476bd04dab560a70b2c4b0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="text-kit"></a>文字套件
 

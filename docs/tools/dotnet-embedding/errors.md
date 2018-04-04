@@ -1,21 +1,20 @@
 ---
-title: ".NET 內嵌錯誤"
-ms.topic: article
+title: .NET 內嵌錯誤
 ms.prod: xamarin
 ms.assetid: 932C3F0C-D968-42D1-BB14-D97C73361983
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 90d30b92069bcd6a5c008fa8009c0392c4d26473
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64caaf6610d9f9193a686d91b4731cd4d4953fa6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="em0xxx-binding-error-messages"></a>EM0xxx： 繫結錯誤訊息
 
-例如： 參數、 環境
+例如， 參數、 環境
 
 <!-- 0xxx: the generator itself, e.g. parameters, environment -->
 <h3><a name="EM0000"/>EM0000： 未預期的錯誤-請填寫 錯誤報告在 https://github.com/mono/Embeddinator-4000/issues</h3>
@@ -68,7 +67,7 @@ ms.lasthandoff: 02/27/2018
 
 此工具無法合併的錯誤訊息中所述的架構，因為它們之間沒有通用的檔案。
 
-這可能表示 Embeddinator 4000; 中的 bug請檔案錯誤報告在[https://github.com/mono/Embeddinator-4000/issues](https://github.com/mono/Embeddinator-4000/issues)與測試案例。
+這可能表示 Embeddinator 4000; 中的 bug請檔案錯誤報告在[ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues)與測試案例。
 
 <h3><a name="EM0011"/>EM0011： 組件`X`不存在。</h3>
 
@@ -104,7 +103,7 @@ ms.lasthandoff: 02/27/2018
 
 在 Embeddinator 4000 內部一致性檢查失敗時，會報告此錯誤訊息。
 
-這表示 Embeddinator 4000; 中的 bug請檔案錯誤報告在[https://github.com/mono/Embeddinator-4000/issues](https://github.com/mono/Embeddinator-4000/issues)與測試案例。
+這表示 Embeddinator 4000; 中的 bug請檔案錯誤報告在[ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues)與測試案例。
 
 
 <!-- 1xxx: code processing -->
@@ -141,7 +140,7 @@ ms.lasthandoff: 02/27/2018
 
 <h3><a name="EM1021"/>建構函式`C`有任何包裝函式產生的預設值。</h3>
 
-這是**警告**的預設參數的建構函式`C`均未產生任何額外的程式碼。 最常見的原因是現有的方法已經有相同的簽章。 例如： 在.net 是可能有：
+這是**警告**的預設參數的建構函式`C`均未產生任何額外的程式碼。 最常見的原因是現有的方法已經有相同的簽章。 例如， 在.net 是可能有：
 
 ```
 public class MyType {
@@ -173,7 +172,7 @@ public class MyType {
 
 <h3><a name="EM1032"/>方法`M`有任何包裝函式產生的預設值。</h3>
 
-這是**警告**之方法的預設參數`M`均未產生任何額外的程式碼。 最常見的原因是現有的方法已經有相同的簽章。 例如： 在.net 是可能有：
+這是**警告**之方法的預設參數`M`均未產生任何額外的程式碼。 最常見的原因是現有的方法已經有相同的簽章。 例如， 在.net 是可能有：
 
 ```
 public class MyType {

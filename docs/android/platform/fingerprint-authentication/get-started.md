@@ -1,17 +1,16 @@
 ---
-title: "開始使用指紋驗證"
-ms.topic: article
+title: 開始使用指紋驗證
 ms.prod: xamarin
 ms.assetid: 7BACCB36-8E3E-4E5D-B8EF-56A639839FD2
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: e3c986b03408dae98a5a79f257029c10909aeabd
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 70d27ef3d7518619a246c25aac128b2fd1ed70c5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="getting-started-with-fingerprint-authentication"></a>開始使用指紋驗證
 

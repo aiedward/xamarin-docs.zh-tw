@@ -1,18 +1,17 @@
 ---
-title: "Firebase 作業發送器"
-description: "本指南會討論如何使用 Firebase 作業發送器程式庫，將來自 Google 的背景工作的排程。"
-ms.topic: article
+title: Firebase 作業發送器
+description: 本指南會討論如何使用 Firebase 作業發送器程式庫，將來自 Google 的背景工作的排程。
 ms.prod: xamarin
 ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/20/2018
-ms.openlocfilehash: 20fc48c5d308a64d88308562a18e961c288b5669
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 124823238968ab21c1e55818ba5b99d2bb0c0bf8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase 作業發送器
 

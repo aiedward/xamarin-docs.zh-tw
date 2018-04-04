@@ -1,18 +1,17 @@
 ---
 title: 資料與雲端服務
 description: 本指南將會檢驗如何執行這項操作和 Xamarin.Forms 應用程式可以使用 web 服務使用各種不同的技術，實作。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 0601D9D0-C8D2-4C3B-A749-A340BDBF64A4ß
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: 54313c3e8808ee9e563d6b55e3bf034c543a48e5
-ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
+ms.openlocfilehash: f20042b9599f7b4dde699a125e63c5ce435f6bc5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="data--cloud-services"></a>資料與雲端服務
 

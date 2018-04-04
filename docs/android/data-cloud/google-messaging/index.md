@@ -1,18 +1,17 @@
 ---
-title: "Google 傳訊"
-description: "本節說明如何實作使用 Google 訊息服務的 Xamarin.Android 應用程式的指南。"
-ms.topic: article
+title: Google 傳訊
+description: 本節說明如何實作使用 Google 訊息服務的 Xamarin.Android 應用程式的指南。
 ms.prod: xamarin
 ms.assetid: 85E8DF92-D160-4763-A7D3-458B4C31635F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 3e36eedf720b1905d708ffe4bd6e61c96fa38cf4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f68b4dc12586d482fd9d3f8901bf3fd09469b0bd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="google-messaging"></a>Google 傳訊
 

@@ -1,17 +1,16 @@
 ---
-title: "實作影片播放器"
-ms.topic: article
+title: 實作影片播放器
 ms.prod: xamarin
 ms.assetid: 0CE9BEE7-4F81-4A00-B9B3-5E2535CD3050
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a889be5ee31f667117d2c36859e667980f0e6610
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: bbc59205fc1d082c089f913ad308ee57317517b3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="implementing-a-video-player"></a>實作影片播放器
 

@@ -1,18 +1,17 @@
 ---
 title: DependencyService
-description: "Xamarin.Forms 可讓開發人員平台專屬專案中定義的行為。 DependencyService 然後尋找正確的平台實作中，允許共用的程式碼存取的原生功能。"
-ms.topic: article
+description: Xamarin.Forms 可讓開發人員平台專屬專案中定義的行為。 DependencyService 然後尋找正確的平台實作中，允許共用的程式碼存取的原生功能。
 ms.prod: xamarin
 ms.assetid: 403479F2-6751-41F2-ADCE-3AF595062FE4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 70e6550368575b6441b19cee2139859204132090
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 58ba2cb896ad8a63ea2232246772e24e32301483
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="dependencyservice"></a>DependencyService
 

@@ -1,18 +1,17 @@
 ---
 title: F#
 description: 'F # 是強型別功能的程式設計語言設計.NET 上執行'
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 506410BD-F89C-4FEB-8915-760FE250A206
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: bf41df7b3ff8186fa37dcdab0458c6b2a9844391
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.openlocfilehash: ed934e4a5896a004e0f226d156109df182cfebd3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="f35"></a>F&#35;
 

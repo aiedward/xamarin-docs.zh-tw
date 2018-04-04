@@ -1,18 +1,17 @@
 ---
-title: "設定與安裝"
-description: "若要開發 watchOS 的設定"
-ms.topic: article
+title: 設定與安裝
+description: 若要開發 watchOS 的設定
 ms.prod: xamarin
 ms.assetid: 69F21F15-198D-4B42-A703-21D35CAB0CCA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/05/2017
-ms.openlocfilehash: c423c9bf49c735673793f8e61134f7e705816d54
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 976b7a78b70522e6ca9942c286792b53e4f11ae5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="installation"></a>安裝
 

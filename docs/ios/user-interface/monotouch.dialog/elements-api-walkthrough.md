@@ -1,17 +1,16 @@
 ---
-title: "逐步解說-建立使用項目 API 的應用程式"
-description: "本文章根據 MonoTouch 對話方塊文章簡介 > 中所呈現的資訊。 它會呈現的逐步解說，示範如何使用 MonoTouch.Dialog （機動D） 項目 API 來快速地開始建置機動的應用程式D."
-ms.topic: article
+title: 逐步解說-建立使用項目 API 的應用程式
+description: 本文章根據 MonoTouch 對話方塊文章簡介 > 中所呈現的資訊。 它會呈現的逐步解說，示範如何使用 MonoTouch.Dialog （機動D） 項目 API 來快速地開始建置機動的應用程式D.
 ms.prod: xamarin
 ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 19e1ab4000e473aa773bf75015ff520a1f9a96d8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e4fbf744c6f967d09e0033212024c2e2398fb768
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="walkthrough---creating-an-application-using-the-elements-api"></a>逐步解說-建立使用項目 API 的應用程式
 

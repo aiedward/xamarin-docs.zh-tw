@@ -1,17 +1,16 @@
 ---
-title: "ListView 和活動的生命週期"
-ms.topic: article
+title: ListView 和活動的生命週期
 ms.prod: xamarin
 ms.assetid: 40840D03-6074-30A2-74DA-3664703E3367
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: b8ee113a321dbc84cf12a7ef4bb5084c5307115b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6e15fb8796ae6a616c5eae44059caae3d9478aef
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="listview-and-the-activity-lifecycle"></a>ListView 和活動的生命週期
 

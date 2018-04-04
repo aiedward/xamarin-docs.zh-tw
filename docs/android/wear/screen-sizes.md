@@ -1,17 +1,16 @@
 ---
-title: "使用的螢幕大小"
-ms.topic: article
+title: 使用的螢幕大小
 ms.prod: xamarin
 ms.assetid: 77831169-C663-4D42-B742-B8B556B1DA4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/02/2018
-ms.openlocfilehash: 2bb42a862ae8d9fb4c94a044542700dbc324f35b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 12272b6db10249fb3750edd853ebb01a99586427
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-screen-sizes"></a>使用的螢幕大小
 

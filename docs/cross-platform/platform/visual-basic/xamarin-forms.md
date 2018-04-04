@@ -1,18 +1,17 @@
 ---
-title: "Xamarin.Forms 使用 Visual basic.net"
-description: "Xamarin.Forms PCL 專案範本可以修改為使用 Visual Basic for 主要組件，有效地讓您建置跨平台行動應用程式使用 VB.NET。"
-ms.topic: article
+title: Xamarin.Forms 使用 Visual basic.net
+description: Xamarin.Forms PCL 專案範本可以修改為使用 Visual Basic for 主要組件，有效地讓您建置跨平台行動應用程式使用 VB.NET。
 ms.prod: xamarin
 ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 84240b6ac384c79c732abc783de84bfa1289f599
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e26d330d62e6ffdfdb3f9b8eab59e57a6377a86c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>Xamarin.Forms 使用 Visual basic.net
 

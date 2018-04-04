@@ -1,17 +1,16 @@
 ---
-title: "撰寫應用程式的回應"
-ms.topic: article
+title: 撰寫應用程式的回應
 ms.prod: xamarin
 ms.assetid: 452DF940-6331-55F0-D130-002822BBED55
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 67cad90f99614c3df90f483c9c6dbcec2df5113a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b8c113b67b3fbfa57ca86c72e11ddeb0e4e1a9ab
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="writing-responsive-applications"></a>撰寫應用程式的回應
 

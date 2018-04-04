@@ -1,18 +1,17 @@
 ---
-title: "材料佈景主題"
-description: "如何主題 Xamarin.Android 應用程式與資料的佈景主題"
-ms.topic: article
+title: 材料佈景主題
+description: 如何主題 Xamarin.Android 應用程式與資料的佈景主題
 ms.prod: xamarin
 ms.assetid: DC4CDBD0-3DF9-4B7E-B876-29128985E2A7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 479abf7fef695be156d4447592bc59dceabe3f03
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a3b5f908330833a38aad9e329835a4a437fc29f0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="material-theme"></a>材料佈景主題
 

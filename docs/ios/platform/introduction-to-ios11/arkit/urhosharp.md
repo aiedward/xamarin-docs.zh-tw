@@ -1,17 +1,16 @@
 ---
-title: "使用 UrhoSharp ARKit"
-ms.topic: article
+title: 使用 UrhoSharp ARKit
 ms.prod: xamarin
 ms.assetid: 877AF974-CC2E-48A2-8E1A-0EF9ABF2C92D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/01/2016
-ms.openlocfilehash: 94963e92f8372316a982bbe38f1fb653d38b2a3b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 95c9c602d0bfe1b77fda453a137dfdfc12a975c9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-arkit-with-urhosharp"></a>使用 UrhoSharp ARKit
 

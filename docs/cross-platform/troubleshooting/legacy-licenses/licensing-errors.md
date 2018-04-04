@@ -1,16 +1,16 @@
 ---
-title: "某些特定的授權錯誤"
-ms.topic: article
+title: 某些特定的授權錯誤
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: D26BDF2D-923B-4BC1-841A-74583155DB71
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 80006ce594db5baef5d295537f198181fe0b0fe1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8592fe5381c974e999477d0ef6ca6ebdd8b38cc4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="some-specific-licensing-errors"></a>某些特定的授權錯誤
 

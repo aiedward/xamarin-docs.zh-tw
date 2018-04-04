@@ -1,18 +1,17 @@
 ---
-title: "使用導覽和焦點"
-description: "本文涵蓋的概念焦點時，使用處理 Xamarin.tvOS 應用程式內瀏覽及呈現方式。"
-ms.topic: article
+title: 使用導覽和焦點
+description: 本文涵蓋的概念焦點時，使用處理 Xamarin.tvOS 應用程式內瀏覽及呈現方式。
 ms.prod: xamarin
 ms.assetid: DD72E95F-AE9B-47D2-B132-5FA5FBD8026E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: fe1358d330c2a0fd94016853cedeabe094c394da
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: cd60a11d860f51fd0d0e574516ca8dec1834865c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-navigation-and-focus"></a>使用導覽和焦點
 

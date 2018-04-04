@@ -1,17 +1,16 @@
 ---
-title: "Objective C 平台"
-ms.topic: article
+title: Objective C 平台
 ms.prod: xamarin
 ms.assetid: 43253BE4-A03A-4646-9A14-32C05174E672
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 17673c0d82f4e0a7c0b446bf51177441b1bdfbfa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a783dc554f54922f4fa4f99a43d83c4c864ef681
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="objective-c-platforms"></a>Objective C 平台
 

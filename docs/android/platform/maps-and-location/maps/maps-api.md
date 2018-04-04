@@ -1,17 +1,16 @@
 ---
 title: Maps API
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: C0589878-2D04-180E-A5B9-BB41D5AF6E02
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 48e8827895001d2b1887816a9368fcc5bbc50bbf
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: fc16178a4068b2dcf22fc19047e0ef403e83633f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="maps-api"></a>Maps API
 
@@ -527,7 +526,7 @@ _map.AddCircle (CircleOptions);
 
 -  **標記拖曳**-使用者已長時間-按一下 mparger 上
 
--  **資訊視窗中按一下**  -使用者已按一下資訊視窗上。
+-  **資訊視窗中按一下 ** -使用者已按一下資訊視窗上。
 
 將以下更詳細討論每個事件。
 

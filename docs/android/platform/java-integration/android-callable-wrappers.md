@@ -1,17 +1,16 @@
 ---
-title: "Android 的可呼叫包裝函式"
-ms.topic: article
+title: Android 的可呼叫包裝函式
 ms.prod: xamarin
 ms.assetid: C33E15FA-1E2B-819A-C656-CA588D611492
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 5b74b1486d72176207d3ccd669c85e249d0706b6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: bb15c7f3a36cc7f1ed235d92e343bbae67a718b8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-callable-wrappers"></a>Android 的可呼叫包裝函式
 

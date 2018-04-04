@@ -1,17 +1,17 @@
 ---
-title: "如何將 IPA 輸出檔案複製到 TFS 置放資料夾"
-ms.topic: article
+title: 如何將 IPA 輸出檔案複製到 TFS 置放資料夾
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B0F1E09E-7315-45BA-B7FF-44D2063EE19C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: c89d81434cac43505c4f0341a10aaf4fc99407fe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2139be01b95a0a4287bba43b8a2ebad537ac7a4f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="how-can-i-copy-ipa-output-files-to-the-tfs-drop-folder"></a>如何將 IPA 輸出檔案複製到 TFS 置放資料夾
 
@@ -41,7 +41,7 @@ ms.lasthandoff: 02/27/2018
 
 -   這是相同的一般技術以討論[我可以變更輸出檔案的路徑 IPA？](~/ios/troubleshooting/questions/ipa-output-path.md)。 兩個重點是要設定`$(TF_BUILD_BINARIESDIRECTORY)`作為目的地資料夾，並因此加入額外的條件`CopyIpa`才會執行的 TFS 組建。
 
--   如需說明的`TF_BUILD_BINARIESDIRECTORY`看到[https://msdn.microsoft.com/en-us/library/hh850448.aspx](https://msdn.microsoft.com/en-us/library/hh850448.aspx)。
+-   如需說明的`TF_BUILD_BINARIESDIRECTORY`看到[ https://msdn.microsoft.com/en-us/library/hh850448.aspx ](https://msdn.microsoft.com/en-us/library/hh850448.aspx)。
 
 ## <a name="additional-references"></a>其他參考資料
 

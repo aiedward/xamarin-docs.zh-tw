@@ -1,18 +1,17 @@
 ---
-title: "自訂動畫"
-description: "動畫類別是所有 Xamarin.Forms 動畫 ViewExtensions 類別建立一個或多個動畫物件的擴充方法的建置組塊。 本文將示範如何使用動畫類別來建立和取消動畫、 同步處理多個動畫，以及建立自訂的動畫，而不現有動畫方法所繪製的屬性以動畫顯示。"
-ms.topic: article
+title: 自訂動畫
+description: 動畫類別是所有 Xamarin.Forms 動畫 ViewExtensions 類別建立一個或多個動畫物件的擴充方法的建置組塊。 本文將示範如何使用動畫類別來建立和取消動畫、 同步處理多個動畫，以及建立自訂的動畫，而不現有動畫方法所繪製的屬性以動畫顯示。
 ms.prod: xamarin
 ms.assetid: 03B2E3FC-E720-4D45-B9A0-711081FC1907
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: c582e0306bdc69570e3f8e8d35c7fa15b30523da
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 302aa784baad9afb703f88dcfba56b68fd3c9105
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="custom-animations"></a>自訂動畫
 
@@ -173,7 +172,7 @@ await this.ColorTo(Color.FromRgb(0, 0, 0), Color.FromRgb(255, 255, 255), c => Ba
 await boxView.ColorTo(Color.Blue, Color.Red, c => boxView.Color = c, 4000);
 ```
 
-在此程式碼範例中，`ColorTo`方法以動畫方式顯示[ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/)和[ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/)屬性[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)， `BackgroundColor`屬性 頁面上，而[ `Color` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/)屬性[ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)。
+在此程式碼範例中，`ColorTo`方法以動畫方式顯示[ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/)和[ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/)屬性[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)， `BackgroundColor`屬性頁面上，而[ `Color` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/)屬性[ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)。
 
 ## <a name="summary"></a>總結
 

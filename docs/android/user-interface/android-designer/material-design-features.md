@@ -1,18 +1,17 @@
 ---
-title: "材料設計功能"
-description: "本主題描述設計工具功能，讓開發人員建立相容材料設計版面配置，更容易。 本節介紹，並說明如何使用資料方格、 材質色彩調色盤、 印刷樣式的小數位數和佈景主題編輯器。"
-ms.topic: article
+title: 材料設計功能
+description: 本主題描述設計工具功能，讓開發人員建立相容材料設計版面配置，更容易。 本節介紹，並說明如何使用資料方格、 材質色彩調色盤、 印刷樣式的小數位數和佈景主題編輯器。
 ms.prod: xamarin
 ms.assetid: AC55E1B2-C239-4019-B0C3-A16F6CF0D6E0
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 9c1797398fba580ab7f34526b10e1da455eb2dc5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a764efe7f2cadd8c777f8427c0220e45eec662c9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="material-design-features"></a>材料設計功能
 

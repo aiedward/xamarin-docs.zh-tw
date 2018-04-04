@@ -1,16 +1,15 @@
 ---
-title: "iOS Backgrounding 指引"
-ms.topic: article
+title: iOS Backgrounding 指引
 ms.prod: xamarin
 ms.assetid: BC629536-F179-4EC2-AD72-8F45081F8EE0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 924792dad0d4e04de73f9a280d4feff44a9d9f9f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b51b8a8bd72d14ad68055047603f041278e252c3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-backgrounding-guidance"></a>iOS Backgrounding 指引
 

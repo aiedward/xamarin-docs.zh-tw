@@ -1,17 +1,16 @@
 ---
-title: "指紋驗證指引"
-ms.topic: article
+title: 指紋驗證指引
 ms.prod: xamarin
 ms.assetid: B40332CC-8123-4150-B47E-996214388842
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 20defea58ec0c09becd5a3cec1961806cb0acc1d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2b66c3660f6d8af9217089a7615784957fcc6ed7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="fingerprint-authentication-guidance"></a>指紋驗證指引
 

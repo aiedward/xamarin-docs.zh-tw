@@ -1,18 +1,17 @@
 ---
-title: "XAML 命名空間"
-description: "XAML 會使用命名空間宣告 xmlns XML 屬性。 本文章導入 XAML 命名空間的語法，並示範如何宣告 XAML 命名空間，以存取的類型。"
-ms.topic: article
+title: XAML 命名空間
+description: XAML 會使用命名空間宣告 xmlns XML 屬性。 本文章導入 XAML 命名空間的語法，並示範如何宣告 XAML 命名空間，以存取的類型。
 ms.prod: xamarin
 ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2017
-ms.openlocfilehash: 55b83151e9c345096aeb0bfdd686d50c5fde62fd
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: ecf255d2fc6937e93258eaa021f79152cb7b1c7f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xaml-namespaces"></a>XAML 命名空間
 

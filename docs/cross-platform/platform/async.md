@@ -1,18 +1,17 @@
 ---
-title: "非同步總覽"
-description: "C# 語言 – 第 5 版 – 的最新版本導入了兩個新的關鍵字來表示非同步作業： async 和 await。 這些關鍵字可讓您在另一個執行緒中撰寫簡單的程式碼，它會利用工作平行程式庫執行長時間執行的作業 （例如網路存取），並輕鬆地存取在完成的結果。 最新版的 Xamarin.iOS 和 Xamarin.Android 支援 async 和 await-本文件提供說明和使用新語法中使用 Xamarin 的範例。"
-ms.topic: article
+title: 非同步總覽
+description: C# 語言 – 第 5 版 – 的最新版本導入了兩個新的關鍵字來表示非同步作業： async 和 await。 這些關鍵字可讓您在另一個執行緒中撰寫簡單的程式碼，它會利用工作平行程式庫執行長時間執行的作業 （例如網路存取），並輕鬆地存取在完成的結果。 最新版的 Xamarin.iOS 和 Xamarin.Android 支援 async 和 await-本文件提供說明和使用新語法中使用 Xamarin 的範例。
 ms.prod: xamarin
 ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 4762612075a866581339b198552b8e26c9a1f6fa
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0ecad6259cb0d472ac39afb0a6be980d4582812c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="async-support-overview"></a>非同步支援概觀
 

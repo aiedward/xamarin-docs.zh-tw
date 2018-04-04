@@ -1,16 +1,16 @@
 ---
-title: "適用於 Xamarin 支援選項？"
-ms.topic: article
+title: 適用於 Xamarin 支援選項？
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: E4EF7E0F-ED86-44C9-9F98-38ECF881C7E2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 68b420f98461ee42862726a658d721b36326c203
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: d8853da7d35752ef27bb23fce6d0db54540ed39d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="what-support-options-are-available-for-xamarin"></a>適用於 Xamarin 支援選項？
 

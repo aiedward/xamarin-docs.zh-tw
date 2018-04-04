@@ -1,17 +1,16 @@
 ---
-title: "在 iOS 上的協助工具"
-ms.topic: article
+title: 在 iOS 上的協助工具
 ms.prod: xamarin
 ms.assetid: 88D59B36-05A3-4356-AE29-EC2B69CE7162
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/18/2016
-ms.openlocfilehash: 39fa99ba534655331098abcb55789c8f4a8afb07
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: af28d0866337c769d1d6102317fc186c49ec259e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="accessibility-on-ios"></a>在 iOS 上的協助工具
 

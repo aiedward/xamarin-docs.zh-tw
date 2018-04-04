@@ -1,23 +1,22 @@
 ---
-title: "第 2 章的摘要。 應用程式的結構"
-ms.topic: article
+title: 第 2 章的摘要。 應用程式的結構
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: f1569911eb47f28ea6aee2313d01e07c801746df
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: c206b124349614db7249609707bd22e8a4efe6d8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第 2 章的摘要。 應用程式的結構
 
 Xamarin.Forms 應用程式中所佔用的空間，在螢幕上的物件稱為*視覺項目*、 由封裝[ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/)類別。 視覺項目可以分成三個類別對應至這些類別：
 
-- [Page](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)
+- [頁面](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)
 - [版面配置](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/)
 - [檢視](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)
 

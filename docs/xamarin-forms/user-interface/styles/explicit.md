@@ -1,18 +1,17 @@
 ---
-title: "明確的樣式"
-description: "明確樣式是藉由設定其樣式屬性選擇性地套用到控制項。"
-ms.topic: article
+title: 明確的樣式
+description: 明確樣式是藉由設定其樣式屬性選擇性地套用到控制項。
 ms.prod: xamarin
 ms.assetid: C0DF9F8F-B431-4374-A574-325BC3C41A3B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 1fbc12288527c053a24041aa6c49cc1a4abdde55
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 53f87fe9dfbf8284055d28fd87bab7bad02c1fd8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="explicit-styles"></a>明確的樣式
 

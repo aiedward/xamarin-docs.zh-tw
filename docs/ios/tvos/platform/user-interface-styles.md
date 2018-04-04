@@ -1,18 +1,17 @@
 ---
-title: "新的使用者介面樣式"
-description: "本文章涵蓋淺色且深色 UI 佈景主題的 Apple 已新增至 tvOS 10 且 Xamarin.tvOS 應用程式中實作方式。"
-ms.topic: article
+title: 新的使用者介面樣式
+description: 本文章涵蓋淺色且深色 UI 佈景主題的 Apple 已新增至 tvOS 10 且 Xamarin.tvOS 應用程式中實作方式。
 ms.prod: xamarin
 ms.assetid: 8BC37683-AD9E-45CD-BE40-96965618AD1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: e400a72f4c759662e70bfecc372134f8fda05ad6
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: da75a99e842b13d42251cdd1c5195ec66ff4a513
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="new-user-interface-styles"></a>新的使用者介面樣式
 
@@ -186,7 +185,7 @@ SetOverrideTraitCollection (trait, this);
 
 * 開發人員可以指定不同的使用者介面項目，根據 UI 佈景主題中的變化**屬性偵測器**:
     
-    * 現在有數個屬性 **+** 旁邊按一下就可加入 UI 佈景主題特定版本的： 
+    * 現在有數個屬性**+**旁邊按一下就可加入 UI 佈景主題特定版本的： 
 
         [![](user-interface-styles-images/theme08.png "加入 UI 佈景主題特定版本")](user-interface-styles-images/theme08.png#lightbox) 
     

@@ -1,16 +1,16 @@
 ---
-title: "我可以將檔案加入或移除 IPA 檔案中的檔案，在 Visual Studio 中建置它之後？"
-ms.topic: article
+title: 我可以將檔案加入或移除 IPA 檔案中的檔案，在 Visual Studio 中建置它之後？
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 6C3082FB-C3F1-4661-BE45-64570E56DE7C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: be792c95de7aa66d64278e47b2ca6b354e611273
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b8b61ba38491b2085233dd1b30a82bc57d2baaed
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>我可以將檔案加入或移除 IPA 檔案中的檔案，在 Visual Studio 中建置它之後？
 
@@ -86,4 +86,4 @@ file missing: /Users/macuser/Library/Caches/Xamarin/mtbs/builds/iPhoneApp1/cc530
 
 和應用程式市集驗證程序會報告類似的錯誤訊息：
 
-> 錯誤 ITMS 90035: 「 無效的簽章。 密封的資源已遺失或無效。 二進位檔位於路徑 [iPhoneApp1.app/iPhoneApp1] 包含無效的簽章。 請確定您已登入您的應用程式，以發佈憑證，而不臨機操作的憑證或開發憑證。 請確認在 Xcode 中的程式碼簽署設定正確，層級目標 （會覆寫在專案層級的任何值）。 此外，請確定您要上傳的組合使用建立的發行目標在 Xcode 中，不模擬器目標。 如果您確定您的程式碼簽署設定正確無誤，在 Xcode 中選擇 [全新全部]，刪除 [組建] 目錄中尋找工具中，並重建發行目標。 如需詳細資訊，請參閱[https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"
+> 錯誤 ITMS 90035: 「 無效的簽章。 密封的資源已遺失或無效。 二進位檔位於路徑 [iPhoneApp1.app/iPhoneApp1] 包含無效的簽章。 請確定您已登入您的應用程式，以發佈憑證，而不臨機操作的憑證或開發憑證。 請確認在 Xcode 中的程式碼簽署設定正確，層級目標 （會覆寫在專案層級的任何值）。 此外，請確定您要上傳的組合使用建立的發行目標在 Xcode 中，不模擬器目標。 如果您確定您的程式碼簽署設定正確無誤，在 Xcode 中選擇 [全新全部]，刪除 [組建] 目錄中尋找工具中，並重建發行目標。 如需詳細資訊，請參閱[ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"

@@ -1,18 +1,17 @@
 ---
-title: "驗證 RESTful Web 服務"
-description: "HTTP 支援使用數種驗證機制，來控制資源的存取權。 基本驗證有正確的認證這些用戶端提供資源的存取權。 這篇文章會示範如何使用基本驗證來保護 RESTful web 服務資源的存取權。"
-ms.topic: article
+title: 驗證 RESTful Web 服務
+description: HTTP 支援使用數種驗證機制，來控制資源的存取權。 基本驗證有正確的認證這些用戶端提供資源的存取權。 這篇文章會示範如何使用基本驗證來保護 RESTful web 服務資源的存取權。
 ms.prod: xamarin
 ms.assetid: 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 7aea74f95e8738cc415eaac3a5ac4f86b069d0f7
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 3160fcced190f74fcfb44c6259451e00995de0fa
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="authenticating-a-restful-web-service"></a>驗證 RESTful Web 服務
 

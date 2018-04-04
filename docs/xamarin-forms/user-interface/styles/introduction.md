@@ -1,18 +1,17 @@
 ---
-title: "Introduction to 樣式"
-description: "樣式可讓自訂的視覺化元素的外觀。 樣式定義的特定型別，而且包含在該類型的屬性值。"
-ms.topic: article
+title: Introduction to 樣式
+description: 樣式可讓自訂的視覺化元素的外觀。 樣式定義的特定型別，而且包含在該類型的屬性值。
 ms.prod: xamarin
 ms.assetid: 3FF899C0-6CFB-4C1D-837D-9E9E10181967
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: ce5a7976f5bac68ca01b30a8d437aa83b8360580
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 453c4d6edafd6493272f8ca0435fcc86e2f3b2f7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-styles"></a>Introduction to 樣式
 
@@ -94,7 +93,7 @@ public class NoStylesPageCS : ContentPage
 
 雖然樣式主要的設計以 XAML 為基礎的應用程式，也在 C# 中建立它們：
 
-- [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) 在 XAML 中建立的執行個體通常定義在[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) ，指派給[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/)控制項的集合 頁面上，或[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Resources/)應用程式集合。
+- [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) 在 XAML 中建立的執行個體通常定義在[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) ，指派給[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/)控制項的集合頁面上，或[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Resources/)應用程式集合。
 - [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) 在頁面的類別中，或可全域存取的類別中，通常被定義在 C# 中建立的執行個體。
 
 選擇要定義在何處[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)可以用它的影響：

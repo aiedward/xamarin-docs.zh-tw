@@ -1,17 +1,16 @@
 ---
-title: "DataPages 控制項參考"
-ms.topic: article
+title: DataPages 控制項參考
 ms.prod: xamarin
 ms.assetid: 891615D0-E8BD-4ACC-A7F0-4C3725FBCC31
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: fbbc7e8c93f8ed562381d9203060c862960f44b9
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 30c828ebfa84b6f3cb289c0aa89deb26d13d76a4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="datapages-controls-reference"></a>DataPages 控制項參考
 

@@ -1,17 +1,16 @@
 ---
-title: "TinyRenderer 活頁簿"
-ms.topic: article
+title: TinyRenderer 活頁簿
 ms.prod: xamarin
 ms.assetid: E4E17836-94C2-436F-ADD8-104AC574D22B
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: e5422d3f0a68f99790617fe534b30389aae2563c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 37aa6797d5b1e38a9d2db99febb2311b13030c68
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="tinyrenderer-workbooks"></a>TinyRenderer 活頁簿
 

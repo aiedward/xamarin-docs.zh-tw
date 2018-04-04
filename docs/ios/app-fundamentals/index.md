@@ -1,18 +1,17 @@
 ---
-title: "應用程式基本概念"
-description: "應用程式的核心概念"
-ms.topic: article
+title: 應用程式基本概念
+description: 應用程式的核心概念
 ms.prod: xamarin
 ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/21/2017
-ms.openlocfilehash: f6c0bb75327f0c14d314a0e7ad9d114fd17c2a57
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d8dc1e25de527357fe6ad3ad1328a930e0e4dc70
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="application-fundamentals"></a>應用程式基本概念
 

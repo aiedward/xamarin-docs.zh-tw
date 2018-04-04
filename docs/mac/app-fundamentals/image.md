@@ -1,18 +1,17 @@
 ---
-title: "影像"
-description: "本文涵蓋了使用映像和 Xamarin.Mac 應用程式中的圖示。 它說明建立和維護的映像，才能建立您的應用程式圖示，並使用 C# 程式碼和 Xcode 的介面產生器中的映像。"
-ms.topic: article
+title: 影像
+description: 本文涵蓋了使用映像和 Xamarin.Mac 應用程式中的圖示。 它說明建立和維護的映像，才能建立您的應用程式圖示，並使用 C# 程式碼和 Xcode 的介面產生器中的映像。
 ms.prod: xamarin
 ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: d8098afea87765166db8318b76adf250818a0a6f
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dc33dc78c09c0b5b7cb7533afdd2f95b8ebd9c4e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="images"></a>影像
 
@@ -46,7 +45,7 @@ _本文涵蓋了使用映像和 Xamarin.Mac 應用程式中的圖示。它說明
 - **[Deprecated] 的主要專案樹狀結構**-影像直接加入專案樹狀結構。 當呼叫映像儲存在程式碼的主要專案樹狀結構中，指定沒有資料夾位置。 例如：`NSImage image = NSImage.ImageNamed("tags.png");`。 
 - **[Deprecated] 的 [資源] 資料夾**-特殊**資源**資料夾是映像 （或任何其他映像或開發人員的檔案，例如圖示、 啟動螢幕或一般的組合將成為應用程式的一部分的任何檔案想要新增）。 呼叫中所儲存影像時**資源**從程式碼的資料夾，就像映像儲存在主要專案樹狀目錄中，指定沒有資料夾位置。 例如：`NSImage.ImageNamed("tags.png")`。
 - **自訂的資料夾或子資料夾 [deprecated]** -開發人員可以將自訂資料夾加入至專案的來源樹狀結構，並儲存映像那里。 這個檔案會加入其中的位置可以是巢狀進一步協助組織專案子資料夾中。 例如，如果開發人員加入`Card`專案資料夾的子資料夾`Hearts`到該資料夾，然後儲存映像**Jack.png**中`Hearts`資料夾，`NSImage.ImageNamed("Card/Hearts/Jack.png")`會載入的影像執行階段。
-- **[慣用] 資產目錄映像集**-中 「 OS X El Capitan 」 中，加入**資產目錄映像集**包含所有版本或映像的支援各種裝置和縮放因數所需的表示法您應用程式。 而不是依賴影像資產檔案名稱 (**@1x**，  **@2x** )。
+- **[慣用] 資產目錄映像集**-中 「 OS X El Capitan 」 中，加入**資產目錄映像集**包含所有版本或映像的支援各種裝置和縮放因數所需的表示法您應用程式。 而不是依賴影像資產檔案名稱 (**@1x**， **@2x**)。
 
 <a name="asset-catalogs" />
 
@@ -68,7 +67,7 @@ _本文涵蓋了使用映像和 Xamarin.Mac 應用程式中的圖示。它說明
 
     [![編輯影像設定名稱](image-images/imageset04.png "編輯影像設定名稱")](image-images/imageset04-large.png#lightbox)
     
-特殊**向量**類別也已經加入至**映像集**，可讓我們包含_PDF_格式化 casset 改為包括在個別的點陣圖檔案中的向量影像不同的解決方法。 使用這個方法時提供的單一向量檔案 **@1x** 解析度 （向量 PDF 檔案格式） 和 **@2x** 和 **@3x** 會產生編譯時期，應用程式的組合中所包含檔案的版本。
+特殊**向量**類別也已經加入至**映像集**，可讓我們包含_PDF_格式化 casset 改為包括在個別的點陣圖檔案中的向量影像不同的解決方法。 使用這個方法時提供的單一向量檔案**@1x**解析度 （向量 PDF 檔案格式） 和**@2x**和**@3x**會產生編譯時期，應用程式的組合中所包含檔案的版本。
 
 [![映像設定編輯器介面](image-images/imageset05.png "映像設定編輯器介面")](image-images/imageset05-large.png#lightbox)
 
@@ -142,7 +141,7 @@ _本文涵蓋了使用映像和 Xamarin.Mac 應用程式中的圖示。它說明
 當您建立的標準和高解析度版本的映像時，請遵循此映像配對的命名慣例時包含在 Xamarin.Mac 專案：
 
 - **標準解析度**  - **ImageName.filename 延伸**(範例： **tags.png**)
-- **高解析度**  -   **ImageName@2x.filename-extension**  (範例：  **tags@2x.png** )
+- **高解析度**  -  **ImageName@2x.filename-extension** (範例： **tags@2x.png**)
 
 加入至專案時，它們會出現，如下所示：
 
@@ -150,7 +149,7 @@ _本文涵蓋了使用映像和 Xamarin.Mac 應用程式中的圖示。它說明
 
 介面產生器中的 UI 項目指派映像時只會挑選中的檔案_ImageName_**。**_檔案名稱副檔名_格式 (範例： **tags.png**)。 相同的 C# 程式碼中使用的映像，您會選擇的檔案中_ImageName_**。**_檔案名稱副檔名_格式。
 
-當您 Xamarin.Mac 應用程式在 Mac 上，執行_ImageName_**。**_檔案名稱副檔名_格式影像將使用標準的解析度顯示 **ImageName@2x.filename-extension** 映像會自動挑選 Retina 顯示器的基底 Mac。
+當您 Xamarin.Mac 應用程式在 Mac 上，執行_ImageName_**。**_檔案名稱副檔名_格式影像將使用標準的解析度顯示**ImageName@2x.filename-extension**映像會自動挑選 Retina 顯示器的基底 Mac。
 
 
 ## <a name="using-images-in-interface-builder"></a>使用介面產生器中的映像
@@ -176,7 +175,7 @@ _本文涵蓋了使用映像和 Xamarin.Mac 應用程式中的圖示。它說明
      ![工具列編輯器中所顯示的影像](image-images/ib04.png "工具列編輯器中所顯示的影像")
 6. 儲存變更並返回 Visual Studio for Mac 使用 Xcode 進行同步處理。
 
-上述的步驟適用於任何 UI 元素，讓您在中設定其映像屬性**屬性偵測器**。 同樣地，如果您已加入 **@2x** 映像檔的版本，它將自動用於 Retina 顯示器基礎 Mac。
+上述的步驟適用於任何 UI 元素，讓您在中設定其映像屬性**屬性偵測器**。 同樣地，如果您已加入**@2x**映像檔的版本，它將自動用於 Retina 顯示器基礎 Mac。
 
 > [!IMPORTANT]
 > 如果映像將無法使用**映像名稱**下拉式清單中，關閉.storyboard 專案在 Xcode 中的，並重新開啟它從 Visual Studio for mac。 如果映像仍然無法使用，請確定其**建置動作**是`BundleResource`和影像加入**資源**資料夾。
@@ -189,7 +188,7 @@ _本文涵蓋了使用映像和 Xamarin.Mac 應用程式中的圖示。它說明
 NSImage image = NSImage.ImageNamed("tags.png");
 ```
 
-上述程式碼會使用靜態`ImageNamed("...")`方法`NSImage`類別載入從記憶體中的特定映像**資源**資料夾中，如果找不到映像，`null`會傳回。 像介面產生器中中, 指派的映像，如果您已加入 **@2x** 映像檔的版本，它將自動用於 Retina 顯示器基礎 Mac。
+上述程式碼會使用靜態`ImageNamed("...")`方法`NSImage`類別載入從記憶體中的特定映像**資源**資料夾中，如果找不到映像，`null`會傳回。 像介面產生器中中, 指派的映像，如果您已加入**@2x**映像檔的版本，它將自動用於 Retina 顯示器基礎 Mac。
 
 若要載入外部的應用程式套件組合 （從 Mac 檔案系統） 的映像，請使用下列程式碼：
 

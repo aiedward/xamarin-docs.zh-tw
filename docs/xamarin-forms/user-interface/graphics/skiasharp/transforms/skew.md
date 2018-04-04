@@ -1,18 +1,17 @@
 ---
 title: 傾斜轉換
 description: 請參閱如何傾斜轉換時，可以在 SkiaSharp 中建立傾斜的圖形物件
-ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: charlespetzold
 ms.author: chape
 ms.date: 03/20/2017
-ms.openlocfilehash: fd5601f380e51ec3fb3a6fdcaa491b218390b7f3
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: c9f5f9f20296b1c2443a8addeebd4d12ccaa1ab4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="the-skew-transform"></a>傾斜轉換
 

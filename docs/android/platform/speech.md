@@ -1,18 +1,17 @@
 ---
 title: Android 的語音
 description: 本文件涵蓋使用非常強大的 Android.Speech 命名空間的基本概念。 自其開始，Android 已能夠辨識語音並將其輸出為文字。 它是相對較簡單的程序。 針對文字轉換語音，不過，處理程序是較為複雜，因為不僅不語音引擎一定納入考量，但也語言可用及已安裝從文字轉換語音 (TTS) 系統。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: FA3B8EC4-34D2-47E3-ACEA-BD34B28115B9
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/02/2018
-ms.openlocfilehash: acc64fee37e1a6046991355389a09a29e1889993
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: bdaa9bf09485c06551a2df15a2e3a4b410a53e75
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-speech"></a>Android 的語音
 

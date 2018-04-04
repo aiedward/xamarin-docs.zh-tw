@@ -1,17 +1,16 @@
 ---
-title: "使用 Android 資訊清單"
-ms.topic: article
+title: 使用 Android 資訊清單
 ms.prod: xamarin
 ms.assetid: CB7CCF60-FEF1-3B28-215F-159391E74347
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: aa2d2ce6cabe9c394b9807ca3d6328da5b4ba311
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 18817063900437baa625d8572f0ae28fec77be1e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-the-android-manifest"></a>使用 Android 資訊清單
 

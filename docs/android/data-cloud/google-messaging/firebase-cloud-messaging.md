@@ -1,18 +1,17 @@
 ---
-title: "Firebase 雲端訊息"
-description: "Firebase 雲端傳訊 (FCM) 是一種服務，可促進行動裝置應用程式與伺服器應用程式之間的傳訊。 本文章提供 FCM 的運作方式的概觀並說明如何設定 Google 服務，好讓您的應用程式可以使用 FCM。"
-ms.topic: article
+title: Firebase 雲端訊息
+description: Firebase 雲端傳訊 (FCM) 是一種服務，可促進行動裝置應用程式與伺服器應用程式之間的傳訊。 本文章提供 FCM 的運作方式的概觀並說明如何設定 Google 服務，好讓您的應用程式可以使用 FCM。
 ms.prod: xamarin
 ms.assetid: E5314D7F-2AAC-40DA-BEBA-27C834F078DD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: ef073999e10e184806089bed3ef9ab93e2f28dd6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ef2c23d16545d03dc267054a96f8b0f8883afcf1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="firebase-cloud-messaging"></a>Firebase 雲端訊息
 

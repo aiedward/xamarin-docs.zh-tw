@@ -1,17 +1,16 @@
 ---
-title: "新增 Windows Phone 應用程式"
-ms.topic: article
+title: 新增 Windows Phone 應用程式
 ms.prod: xamarin
 ms.assetid: B598FA9D-6818-4CC9-8191-838C156DB9DA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/16/2016
-ms.openlocfilehash: bb3b7e101dad98a76ac6b8f55d190514d1bd599d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 55bd4bdcfde4c91ad5c9b94bef486207466e135d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="adding-a-windows-phone-app"></a>新增 Windows Phone 應用程式
 

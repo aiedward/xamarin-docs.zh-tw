@@ -1,18 +1,17 @@
 ---
-title: "主動式建議簡介"
-description: "本文示範如何在磁碟機 engagement Xamarin.iOS 應用程式中使用主動式建議，藉由使用系統自動向使用者主動顯示有用的資訊。"
-ms.topic: article
+title: 主動式建議簡介
+description: 本文示範如何在磁碟機 engagement Xamarin.iOS 應用程式中使用主動式建議，藉由使用系統自動向使用者主動顯示有用的資訊。
 ms.prod: xamarin
 ms.assetid: 8DDD084A-0D1E-4DF7-B686-6309DCEFF5D3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: e7252aa89e2514653fc730c7221d22cc053d2e24
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 5b06dbf0e8e108616adb4f77910267aaa1ac71f4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-proactive-suggestions"></a>主動式建議簡介
 

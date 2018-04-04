@@ -1,17 +1,16 @@
 ---
-title: "第 25 章摘要。 頁面須"
-ms.topic: article
+title: 第 25 章摘要。 頁面須
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 30642709519fc809d30da9a437728112f56a64d6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 951ae41763d8338d5adf73fb46ebc6defa64f8f8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>第 25 章摘要。 頁面須
 

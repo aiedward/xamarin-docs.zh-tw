@@ -1,18 +1,17 @@
 ---
-title: "Nougat 功能"
-description: "如何開始使用 Xamarin.Android 來開發 Android Nougat 應用程式。"
-ms.topic: article
+title: Nougat 功能
+description: 如何開始使用 Xamarin.Android 來開發 Android Nougat 應用程式。
 ms.prod: xamarin
 ms.assetid: 5C74ABE2-C862-4ED0-8EA5-C7FEE5251D4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: c666b7d5b680eab3c990950569868eacdb6f30af
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: fe544f8ac677987f8921ccb1c11b8930811b9553
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="nougat-features"></a>Nougat 功能
 

@@ -1,17 +1,16 @@
 ---
-title: "建立使用者介面物件"
-ms.topic: article
+title: 建立使用者介面物件
 ms.prod: xamarin
 ms.assetid: 4D6B136C-744A-4936-8655-A77E62BA7A60
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: e7a61dcf2cf2fabf575e30ef402121db3bea7912
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5229beb7a882049daf58d3a3e62da6fed25a1f48
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-user-interface-objects"></a>建立使用者介面物件
 

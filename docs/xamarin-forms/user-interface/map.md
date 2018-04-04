@@ -1,18 +1,17 @@
 ---
-title: "對應"
-description: "Xamarin.Forms 會在每個平台上使用原生對應應用程式開發介面。"
-ms.topic: article
+title: 對應
+description: Xamarin.Forms 會在每個平台上使用原生對應應用程式開發介面。
 ms.prod: xamarin
 ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 2f0ad800ed1ab3a336f10dd4431e234ac4ff9675
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f78b16a99d8bc828e26bb6aecdb67d4ba07e18d4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="map"></a>對應
 

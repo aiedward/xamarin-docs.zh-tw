@@ -1,17 +1,16 @@
 ---
-title: "新增第二個工具列"
-ms.topic: article
+title: 新增第二個工具列
 ms.prod: xamarin
 ms.assetid: FCE0AD27-8B6B-47C6-AD19-2B1C12E1BBBF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 343694163c79ab4d7e8b78875282e7077db979e5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f2255ab5ac7e153266093877a1c52bfc08927a09
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="adding-a-second-toolbar"></a>新增第二個工具列
 

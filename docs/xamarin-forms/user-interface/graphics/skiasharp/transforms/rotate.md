@@ -1,18 +1,17 @@
 ---
 title: 旋轉的轉換
 description: 瀏覽的效果和 SkiaSharp 旋轉轉換的可能動畫
-ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: e3e9c42fafc9a3d139a90bda6289260c5f3a667b
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 177437ef016a25849e7c34d0a26270ce14173b7d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="the-rotate-transform"></a>旋轉的轉換
 

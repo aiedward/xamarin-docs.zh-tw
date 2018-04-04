@@ -1,18 +1,17 @@
 ---
 title: Xamarin.Forms 的 XAML 預覽程式
 description: Xamarin.Forms 配置呈現您輸入時，請參閱 ！
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 02/24/2017
-ms.openlocfilehash: a7a9c4fed92cb4ed8c8c12e97129bc8379037acb
-ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
+ms.openlocfilehash: 77f9873259a2a44426007c50efbd7ff83c8a0ccb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/29/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Xamarin.Forms 的 XAML 預覽程式
 

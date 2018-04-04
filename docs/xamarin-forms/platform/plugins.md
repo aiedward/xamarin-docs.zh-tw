@@ -1,18 +1,17 @@
 ---
-title: "外掛程式"
-description: "輕鬆地將原生功能加入至 Xamarin.Forms 應用程式"
-ms.topic: article
+title: 外掛程式
+description: 輕鬆地將原生功能加入至 Xamarin.Forms 應用程式
 ms.prod: xamarin
 ms.assetid: 8A06A420-A9D0-4BCB-B9AF-3AEA6A648A8B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2016
-ms.openlocfilehash: ad338e655c1aeb475122c837ca5c805e491f84bc
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5770d13c46998872752820b7a0cbb222a04c3ff8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="plugins"></a>外掛程式
 
@@ -35,7 +34,7 @@ Xamarin 社群已建立許多跨平台外掛程式 Xamarin.Forms-與相容的大
 
 例如，外掛程式下方的清單是所有的開放原始碼，和它們對應中的範例[ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md) > 一節：
 
-- **文字轉換語音**James Montemagno 的&ndash; [GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/TextToSpeech)和[NuGet  ](https://www.nuget.org/packages/Xam.Plugin.Battery)
+- **文字轉換語音**James Montemagno 的&ndash; [GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/TextToSpeech)和[NuGet](https://www.nuget.org/packages/Xam.Plugin.Battery)
 - **電池狀態**James Montemagno 的&ndash; [GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery)和[NuGet](https://www.nuget.org/packages/Xam.Plugins.TextToSpeech/)
 
 這些 Github 專案可以提供很好的起點來建立您自己跨平台的外掛程式，與這些指示[xamarin 建立外掛程式](https://github.com/xamarin/plugins#create-a-plugin-for-xamarin)。

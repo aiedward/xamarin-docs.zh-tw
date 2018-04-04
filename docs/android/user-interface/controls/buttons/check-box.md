@@ -1,17 +1,16 @@
 ---
-title: "核取方塊"
-ms.topic: article
+title: 核取方塊
 ms.prod: xamarin
 ms.assetid: A884AF10-D5EA-72CA-2301-B80CEC7FFBE7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 78b32a90661c4fde279314aed5c62854b497980a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 85c505d03e7a763b24fb176b6a94c0fe43009b79
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="checkbox"></a>核取方塊
 

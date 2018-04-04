@@ -1,17 +1,16 @@
 ---
-title: "新增 Windows 應用程式"
-ms.topic: article
+title: 新增 Windows 應用程式
 ms.prod: xamarin
 ms.assetid: ADF99B78-F1BC-48DF-9128-01B93C4411C1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/16/2016
-ms.openlocfilehash: 369e8005c1d398c90b14a95ac36fc8659e462fbf
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0d2ef44896c9352776443c2fec318d40d27d7539
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="adding-a-windows-app"></a>新增 Windows 應用程式
 

@@ -1,18 +1,17 @@
 ---
-title: "集合檢視"
-description: "集合檢視允許使用任意的版面配置來顯示的內容。 它們允許更輕鬆地建立類似格線版面配置，根據預設，同時也支援自訂版面配置。"
-ms.topic: article
+title: 集合檢視
+description: 集合檢視允許使用任意的版面配置來顯示的內容。 它們允許更輕鬆地建立類似格線版面配置，根據預設，同時也支援自訂版面配置。
 ms.prod: xamarin
 ms.assetid: F4B85F25-0CB5-4FEA-A3B5-D22FCDC81AE4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 7048eb9c478d7ae10787e158f18b764b258da171
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 75ad331a265c14892f101b1aa7956d2cde3beec8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="collection-views"></a>集合檢視
 
@@ -140,7 +139,7 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
 
 ## <a name="data-source"></a>資料來源
 
-如同其他部分的 Io，例如`UITableView`和`MKMapView`，`UICollectionView`資料的來源*資料來源*，公開中透過 Xamarin.iOS  **`UICollectionViewDataSource`** 類別。 這個類別負責提供內容至`UICollectionView`例如：
+如同其他部分的 Io，例如`UITableView`和`MKMapView`，`UICollectionView`資料的來源*資料來源*，公開中透過 Xamarin.iOS **`UICollectionViewDataSource`**類別。 這個類別負責提供內容至`UICollectionView`例如：
 
 -  **資料格**-傳回從`GetCell`方法。
 -  **補充檢視**-傳回從`GetViewForSupplementaryElement`方法。

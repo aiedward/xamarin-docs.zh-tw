@@ -1,17 +1,16 @@
 ---
-title: "繫結的原生架構"
-ms.topic: article
+title: 繫結的原生架構
 ms.prod: xamarin
 ms.assetid: 91AE058A-3A1F-41A9-9DE4-4B96880A1869
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: 4588a879452b4ee49535ac8882977be2c064a43f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 52b845d9e062eea6292528c5a40a74aa67d8e1b7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-native-frameworks"></a>繫結的原生架構
 

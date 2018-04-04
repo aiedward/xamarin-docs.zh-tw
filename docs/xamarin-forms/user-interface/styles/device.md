@@ -1,18 +1,17 @@
 ---
-title: "裝置樣式"
-description: "Xamarin.Forms 包含六個動態樣式，稱為 Device.Styles 類別中的裝置樣式。"
-ms.topic: article
+title: 裝置樣式
+description: Xamarin.Forms 包含六個動態樣式，稱為 Device.Styles 類別中的裝置樣式。
 ms.prod: xamarin
 ms.assetid: 7FF19ED1-0822-4238-9435-AD970317A2F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 7e9d8768969affdbaf1172c59eaa5fc1e64460e8
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: c52de431faa8e6d17b281ece87c862a49d30e886
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="device-styles"></a>裝置樣式
 

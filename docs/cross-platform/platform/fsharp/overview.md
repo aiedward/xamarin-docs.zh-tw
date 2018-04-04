@@ -1,18 +1,17 @@
 ---
-title: "開始使用 F #"
-description: "F # 是強型別功能的程式設計語言設計.NET 上執行"
-ms.topic: article
+title: '開始使用 F #'
+description: 'F # 是強型別功能的程式設計語言設計.NET 上執行'
 ms.prod: xamarin
 ms.assetid: 1A0E627D-A4C1-4F95-BAED-76A0E40B9054
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 74911f583a2e28a99ceb7c087a8542d0a8cab71d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 29e5eff33a18090760365124101f1f7bd1fd0d0c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="getting-started-with-f35"></a>開始使用 F&#35;
 

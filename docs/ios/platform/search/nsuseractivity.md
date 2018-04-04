@@ -1,17 +1,16 @@
 ---
-title: "具有 NSUserActivity 搜尋"
-ms.topic: article
+title: 具有 NSUserActivity 搜尋
 ms.prod: xamarin
 ms.assetid: 0B28B284-C7C9-4C0D-A782-D471FBBC4CAE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 8376ce2ccff6732fa0c89d6030b9af36d29c5085
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 803fcce359bbe27ea19901afa766f5b7f4692e0c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="search-with-nsuseractivity"></a>具有 NSUserActivity 搜尋
 

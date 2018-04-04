@@ -1,18 +1,17 @@
 ---
-title: "iOS 平台特性"
-description: "平台特性可讓您使用才有特定的平台，而不需要實作自訂轉譯器或影響的功能。 本文將示範如何使用 iOS 平台-細節建 Xamarin.Forms。"
-ms.topic: article
+title: iOS 平台特性
+description: 平台特性可讓您使用才有特定的平台，而不需要實作自訂轉譯器或影響的功能。 本文將示範如何使用 iOS 平台-細節建 Xamarin.Forms。
 ms.prod: xamarin
 ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/16/2017
-ms.openlocfilehash: 798bb2b15534a620acbe76080e171af1a548ac25
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7826962cd3bf9595a63841e3f2d9fb377d1a0574
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-platform-specifics"></a>iOS 平台特性
 

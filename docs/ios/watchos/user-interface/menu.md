@@ -1,17 +1,16 @@
 ---
-title: "功能表控制項 （強制觸控）"
-ms.topic: article
+title: 功能表控制項 （強制觸控）
 ms.prod: xamarin
 ms.assetid: 5A7F83FB-9BC4-4812-92C5-CEC8DAE8211E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 87ab9bdf6af68448649d1b3e518743a73bb23fe7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4895f140acbc8a622cfb91c2fe9db6c5e9d9d1d7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="menu-control-force-touch"></a>功能表控制項 （強制觸控）
 

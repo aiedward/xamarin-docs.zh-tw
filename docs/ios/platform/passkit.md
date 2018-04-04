@@ -1,18 +1,17 @@
 ---
 title: PassKit
-description: "錢包是系統 iOS 應用程式儲存和顯示的條碼和其他資訊，以連結客戶與真實世界' 在電話上的交易。"
-ms.topic: article
+description: 錢包是系統 iOS 應用程式儲存和顯示的條碼和其他資訊，以連結客戶與真實世界' 在電話上的交易。
 ms.prod: xamarin
 ms.assetid: 74B9973B-C1E8-B727-3F6D-59C1F98BAB3A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 279b5bc1188c973fddc033f9b592e9acec703a59
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f1c8ac92c5ff7eed5116587ed13755ddee74a877
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="passkit"></a>PassKit
 
@@ -238,7 +237,7 @@ ISO 8859-1 編碼是最常見的核取哪一種編碼將閱讀您傳遞掃描系
 
 第一個步驟是設定為傳遞類型識別碼每一個不同_類型_階段都必須支援。 傳遞的識別碼 （或傳遞的型別識別項） 建立傳遞的唯一識別碼。 我們將使用此識別碼與您使用憑證的開發人員帳戶連結傳遞。
 
-1. 在[的 ios 佈建入口網站的憑證、 識別碼和設定檔區段](https://developer.apple.com/account/overview.action)，瀏覽至**識別碼**選取**傳遞的類型識別碼**。 然後選取 **+** 按鈕以建立新的傳遞類型： [ ![ ](passkit-images/passid.png "建立新的傳遞類型")](passkit-images/passid.png#lightbox)
+1. 在[的 ios 佈建入口網站的憑證、 識別碼和設定檔區段](https://developer.apple.com/account/overview.action)，瀏覽至**識別碼**選取**傳遞的類型識別碼**。 然後選取**+**按鈕以建立新的傳遞類型： [ ![ ](passkit-images/passid.png "建立新的傳遞類型")](passkit-images/passid.png#lightbox)
 
 2.   提供**描述**（名稱） 和**識別碼**（唯一的字串） 階段。 請注意，所有傳遞的型別 Id 必須以字串開頭`pass.`在此範例中我們使用`pass.com.xamarin.coupon.banana`: [ ![ ](passkit-images/register.png "提供說明和識別項")](passkit-images/register.png#lightbox)
 

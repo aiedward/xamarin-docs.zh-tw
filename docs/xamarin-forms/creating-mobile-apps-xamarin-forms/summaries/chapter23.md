@@ -1,17 +1,16 @@
 ---
-title: "章 23 的摘要。 觸發程序和行為"
-ms.topic: article
+title: 章 23 的摘要。 觸發程序和行為
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: ddb76e00cfe1c19a9d31dc3e53b80a2be0697dbc
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: f83a93fb5d101a7acd0a67903813dba1ba2bf8b4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>章 23 的摘要。 觸發程序和行為
 

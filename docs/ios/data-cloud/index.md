@@ -1,18 +1,17 @@
 ---
-title: "資料和雲端服務"
-description: "穩定和部署指南"
-ms.topic: article
+title: 資料和雲端服務
+description: 穩定和部署指南
 ms.prod: xamarin
 ms.assetid: 945719F7-7CE6-4207-BF0F-23195125FC84
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/13/2017
-ms.openlocfilehash: b5e250c7c505958c8293970321b6173e6086e7b1
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 81aebe5fd7431e578b75c5b61e1d2c92ce546909
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="data-and-cloud-services"></a>資料和雲端服務
 

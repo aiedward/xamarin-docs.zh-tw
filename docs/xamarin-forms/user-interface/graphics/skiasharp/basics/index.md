@@ -1,18 +1,17 @@
 ---
 title: SkiaSharp 繪圖基本概念
 description: 了解 SkiaSharp 圖形概念和座標的基本概念
-ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 25141E3E-D22E-44B1-A647-7E6FA0C9737B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 194081c5cb8878a418a188003d0f8c40286b2922
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: a6a1787b6bdb54f66aa5214bdd9193af354cebb1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="skiasharp-drawing-basics"></a>SkiaSharp 繪圖基本概念
 

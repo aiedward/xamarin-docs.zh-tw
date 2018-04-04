@@ -1,18 +1,17 @@
 ---
-title: "使用 Xamarin 的遊戲應用程式開發簡介"
-description: "遊戲開發性質可能大幅不同於其他類型的應用程式的開發。 本文是包含技術，可以搭配 Xamarin.iOS 和 Xamarin.Android 遊戲開發的簡介。 它使用 Xamarin.iOS 和 Xamarin.Android 提供高層級討論如何進行遊戲和取樣技術，可供使用。"
-ms.topic: article
+title: 使用 Xamarin 的遊戲應用程式開發簡介
+description: 遊戲開發性質可能大幅不同於其他類型的應用程式的開發。 本文是包含技術，可以搭配 Xamarin.iOS 和 Xamarin.Android 遊戲開發的簡介。 它使用 Xamarin.iOS 和 Xamarin.Android 提供高層級討論如何進行遊戲和取樣技術，可供使用。
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 9d1ce2da87d6f169efb5431f734695f6876cf3f0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b2df6d431004bbfa140b6cae1d069404af92c1df
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>使用 Xamarin 的遊戲應用程式開發簡介
 
@@ -97,8 +96,8 @@ _遊戲開發性質可能大幅不同於其他類型的應用程式的開發。�
 遊戲開發程序中的個人版中引進新的角色和標題。 大多數的遊戲開發人員不在無法滿足一組廣泛的技能，才能釋放完整的遊戲，因此存在專業領域的數字。 請注意這不是區域的開發 – 只是某些較常見的完整清單。
 
 - **程式設計人員**– 大多數的人閱讀這篇文章會歸類到此類別。 程式設計人員在遊戲開發的角色是類似於程式設計人員在非遊戲應用程式中的角色。 責任包括撰寫邏輯來控制遊戲時，開發系統指定的專案，加入和顯示內容，以及 – 當然 – 修正 bug 的內容中的一般工作流程。
-- **2D 演出者**– 2D 演出者負責建立*2D 資產*。 包括影像檔遊戲的 GUI、 物件、 環境和字元。 如果您要開發的遊戲 3D，然後 2D 演出者可能無法負責環境和字元。 您可以找到可用在遊戲的封面[http://opengameart.org/](http://opengameart.org/) 。
-- **3D 演出者**– 3D 演出者負責建立*3D 資產*。 這些包括 3D 模型的環境、 字元和 props （家具、 植物和其他崇拜物件）。 有些小組區分 3D 演出者與 3D 師小組的大小而定。 您可以找到可用在遊戲的 3D 圖案[http://opengameart.org/](http://opengameart.org/) 。
+- **2D 演出者**– 2D 演出者負責建立*2D 資產*。 包括影像檔遊戲的 GUI、 物件、 環境和字元。 如果您要開發的遊戲 3D，然後 2D 演出者可能無法負責環境和字元。 您可以找到可用在遊戲的封面[ http://opengameart.org/ ](http://opengameart.org/) 。
+- **3D 演出者**– 3D 演出者負責建立*3D 資產*。 這些包括 3D 模型的環境、 字元和 props （家具、 植物和其他崇拜物件）。 有些小組區分 3D 演出者與 3D 師小組的大小而定。 您可以找到可用在遊戲的 3D 圖案[ http://opengameart.org/ ](http://opengameart.org/) 。
 - **遊戲設計師**– 遊戲的設計工具會負責定義播放遊戲的方式。 這可能包括例如設定高層級的決策遊戲、 遊戲，以及播放程式如何透過遊戲開始進展的整體目標。 遊戲的設計工具也可以參與非常詳細的決策，將輸入對應的動作，例如定義係數移動或層級-ups 和設計層級的配置。 請注意，詞彙*設計師*可能會參考遊戲的設計工具或視覺化設計工具中的，視內容而定。
 - **設計工具的聲音**– 音效的設計工具會負責遊戲的音訊資產。 有些小組可以區別負責建立音效及作曲者，雖然較小的小組可能會有單一個人負責所有音訊的個人。
 
@@ -171,9 +170,9 @@ UrhoSharp 是跨平台高階 3D 和 2D 引擎，可以用來建立動畫的場�
 
 反白顯示上述的技術是可用的技術的範例。 其他值得注意的技術包括：
 
-- **精靈套件**– Xamarin 支援 Apple 的精靈套件遊戲架構，其可讓您存取所有原生 API 的功能。 因為精靈套件是由 Apple 建立的技術，它會提供與 iOS 生態系統的其餘部分深度整合。 當然，精靈套件不是跨平台讓它不能在 Android 上。 如需有關如何使用精靈套件的詳細資訊，請參閱這篇文章： [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
+- **精靈套件**– Xamarin 支援 Apple 的精靈套件遊戲架構，其可讓您存取所有原生 API 的功能。 因為精靈套件是由 Apple 建立的技術，它會提供與 iOS 生態系統的其餘部分深度整合。 當然，精靈套件不是跨平台讓它不能在 Android 上。 如需有關如何使用精靈套件的詳細資訊，請參閱這篇文章：  [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
 - **場景套件**– Xamarin 也提供支援 Apple 的場景套件架構，簡化了實作 3D 圖形到 iOS 應用程式。 場景套件也是 Apple，使它具有整合和特定平台考量先前所述精靈套件提供的技術。 如需有關場景套件的詳細資訊，請參閱這篇文章： [http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
-- **OpenTK –** OpenTK （它代表開啟 Tool Kit） 提供 iOS、 Apple 和 Mac 的低階 OpenGL 存取硬體。 如需有關 OpenTK 的詳細資訊，請參閱在主頁面： [http://www.opentk.com/](http://www.opentk.com/)
+- **OpenTK –** OpenTK （它代表開啟 Tool Kit） 提供 iOS、 Apple 和 Mac 的低階 OpenGL 存取硬體。 如需有關 OpenTK 的詳細資訊，請參閱在主要頁面：  [http://www.opentk.com/](http://www.opentk.com/)
 
 
 # <a name="summary"></a>總結

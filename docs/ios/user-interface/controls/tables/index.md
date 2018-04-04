@@ -1,18 +1,17 @@
 ---
-title: "使用資料表和資料格"
-description: "顯示資料是使用 Xamarin.iOS UITableView"
-ms.topic: article
+title: 使用資料表和資料格
+description: 顯示資料是使用 Xamarin.iOS UITableView
 ms.prod: xamarin
 ms.assetid: 04DF47DD-4E17-75D7-AC7C-8CF4A574CD21
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/06/2016
-ms.openlocfilehash: f6abcaa3a771954785df83e80c7e46dd200e6986
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a1cda3632a75c7e462e763a34fdb5b586237b670
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-tables-and-cells"></a>使用資料表和資料格
 
@@ -43,14 +42,14 @@ ms.lasthandoff: 02/27/2018
 
  [在分鏡腳本中建立資料表](~/ios/user-interface/controls/tables/creating-tables-in-a-storyboard.md)
  
- [自動調整大小的資料列高度](~/ios/user-interface/controls/tables/autosizing-row-height.md)
+ [自動調整資料列高度](~/ios/user-interface/controls/tables/autosizing-row-height.md)
 
 
 ## <a name="related-links"></a>相關連結
 
 - [WorkingWithTables （範例）](https://developer.xamarin.com/samples/monotouch/WorkingWithTables/)
 - [資料表中的分鏡腳本 （範例）](https://developer.xamarin.com/samples/monotouch/StoryboardTable/)
-- [分鏡腳本的簡介](~/ios/user-interface/storyboards/index.md)
+- [Storyboard 簡介](~/ios/user-interface/storyboards/index.md)
 - [分鏡腳本 TableView 注定](https://developer.xamarin.com/recipes/ios/general/storyboard/storyboard_a_tableview)
 - [MonoTouch.Dialog 簡介](~/ios/user-interface/monotouch.dialog/index.md)
 - [Github 上的 TableEditing 範例](https://github.com/xamarin/monotouch-samples/tree/master/TableEditing)

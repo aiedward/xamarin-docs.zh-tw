@@ -1,17 +1,16 @@
 ---
-title: "交易和驗證"
-ms.topic: article
+title: 交易和驗證
 ms.prod: xamarin
 ms.assetid: 84EDD2B9-3FAA-B3C7-F5E8-C1E5645B7C77
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 21f8c6738c00d5738c02962ee95b415e3855d740
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c8d86d0ce3119b3e104a65a170ab141484af44a7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="transactions-and-verification"></a>交易和驗證
 
@@ -212,7 +211,7 @@ Base64 編碼的交易接收資料 （無論是在步驟 5 或 #6）。
 }
 ```
 
-HTTP POST 以 JSON [https://buy.itunes.apple.com/verifyReceipt](https://buy.itunes.apple.com/verifyReceipt)生產環境或[https://sandbox.itunes.apple.com/verifyReceipt](https://sandbox.itunes.apple.com/verifyReceipt)進行測試。   
+HTTP POST 以 JSON [ https://buy.itunes.apple.com/verifyReceipt ](https://buy.itunes.apple.com/verifyReceipt)生產環境或[ https://sandbox.itunes.apple.com/verifyReceipt ](https://sandbox.itunes.apple.com/verifyReceipt)進行測試。   
    
  JSON 回應會包含下列機碼：
 

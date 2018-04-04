@@ -1,18 +1,17 @@
 ---
 title: Microsoft Azure 行動應用程式
 description: 如需 Azure 入口網站的文件會下載範例和程式碼。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 7B9AA8D9-C181-4C33-8AB0-2F56E4DBFC03
 ms.technology: xamarin-cross-platform
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2017
-ms.openlocfilehash: 7a5ae0013da4a5ac049df71437dc5c6b960c49b1
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 14ae6bdb3419bac13aebe6b5a9d8346ed5163de5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="microsoft-azure-mobile-apps"></a>Microsoft Azure 行動應用程式
 

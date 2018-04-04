@@ -1,18 +1,17 @@
 ---
 title: ListView
-description: "ListView 是重要的 UI 元件的 Android 應用程式它用於所有位置的功能表選項的簡短清單中較長的連絡人或網際網路我的最愛清單。 它提供簡單的方式來呈現捲動的資料列，可以使用內建樣式格式化或自訂的廣泛清單。"
-ms.topic: article
+description: ListView 是重要的 UI 元件的 Android 應用程式它用於所有位置的功能表選項的簡短清單中較長的連絡人或網際網路我的最愛清單。 它提供簡單的方式來呈現捲動的資料列，可以使用內建樣式格式化或自訂的廣泛清單。
 ms.prod: xamarin
 ms.assetid: C2BA2705-9B20-01C2-468D-860BDFEDC157
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2018
-ms.openlocfilehash: 4225e45ecfe4a4a2cdb7e75b94823fc8fcd29fc4
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 8499b9f186c12df22518893b6677cab22f0a3568
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="listview"></a>ListView
 

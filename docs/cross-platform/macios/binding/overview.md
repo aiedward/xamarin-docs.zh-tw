@@ -1,17 +1,16 @@
 ---
-title: "總覽"
-description: "繫結程序的運作方式的詳細資料"
-ms.topic: article
+title: 總覽
+description: 繫結程序的運作方式的詳細資料
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: eb6d49433974a5e4e7bda69651508d5e9006a78e
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: d1a90934cf7a9a832172f32ed95cf3e254e04385
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="overview"></a>總覽
 

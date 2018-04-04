@@ -1,17 +1,16 @@
 ---
-title: "在背景中的將應用程式更新"
-ms.topic: article
+title: 在背景中的將應用程式更新
 ms.prod: xamarin
 ms.assetid: A2B2231A-C045-4C11-8176-F9966485197A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7f7cfcd320fcb38a9b08dfd8fe7e0fae7ff808ec
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 370d1cba71fa695e4e01dfb93241536a8df01b11
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="updating-an-application-in-the-background"></a>在背景中的將應用程式更新
 

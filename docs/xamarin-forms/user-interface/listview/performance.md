@@ -1,18 +1,17 @@
 ---
-title: "ListView 效能"
-description: "請與您在清單檢視為基礎的應用程式的高效能。"
-ms.topic: article
+title: ListView 效能
+description: 請與您在清單檢視為基礎的應用程式的高效能。
 ms.prod: xamarin
 ms.assetid: 1B085639-652C-4862-86EB-5D55D32B9395
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: 81d4aec3153a4cb7bbb0f3577c5a67acd430f279
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: dcd4881e2ad7f1bb4af5455805da1dd2cade3605
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="listview-performance"></a>ListView 效能
 

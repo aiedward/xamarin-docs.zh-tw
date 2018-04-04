@@ -1,18 +1,17 @@
 ---
-title: "傳遞效果參數做為通用語言執行階段屬性"
-description: "Common Language Runtime (CLR) 屬性可以用來定義不回應執行階段屬性變更效果參數。 本文示範如何使用 CLR 屬性參數傳遞給效果。"
-ms.topic: article
+title: 傳遞效果參數做為通用語言執行階段屬性
+description: Common Language Runtime (CLR) 屬性可以用來定義不回應執行階段屬性變更效果參數。 本文示範如何使用 CLR 屬性參數傳遞給效果。
 ms.prod: xamarin
 ms.assetid: 4B50466C-5DBD-45DD-B1E6-BE9524C92F27
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: afe30ae87aa2e465013eb7fef3089cf701d98da6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 78d14b9764ab0c7cafb9f09fa1c8acea3f45afde
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>傳遞效果參數做為通用語言執行階段屬性
 

@@ -1,18 +1,17 @@
 ---
-title: "反白顯示地圖上的循環的區域"
-description: "本文說明如何將循環重疊影像加入至地圖中，反白顯示對應的循環區域。"
-ms.topic: article
+title: 反白顯示地圖上的循環的區域
+description: 本文說明如何將循環重疊影像加入至地圖中，反白顯示對應的循環區域。
 ms.prod: xamarin
 ms.assetid: 6FF8BD15-074E-4E6A-9522-F9E2BE32EF12
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 0eef31c5b9a93154b1038ffa63ee560bd738fe6b
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: a70c8fdca457e386a1490ca974e1a1ea5da2f6db
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>反白顯示地圖上的循環的區域
 
@@ -311,5 +310,5 @@ namespace MapOverlay.UWP
 ## <a name="related-links"></a>相關連結
 
 - [循環圖 Ovlerlay （範例）](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/circle/)
-- [自訂地圖 Pin](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
+- [自訂地圖釘選](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/)

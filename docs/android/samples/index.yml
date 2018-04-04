@@ -1,23 +1,23 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: "Xamarin.Android 範例"
+title: Xamarin.Android 範例
 metadata:
-  description: "適用於行動裝置開發人員的 Xamarin.Android 範例應用程式。"
+  description: 適用於行動裝置開發人員的 Xamarin.Android 範例應用程式。
   author: conceptdev
   ms.author: crdun
   ms.date: 02/20/2018
-  ms.topic: article
-  ms.openlocfilehash: df9b864542bbdbf57ed9096ce8e869a056b021c3
-  ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+  ms.topic: sample
+  ms.openlocfilehash: 58c8cf15dc196071268172980279cb19f269cc4a
+  ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 02/28/2018
+  ms.lasthandoff: 04/04/2018
 abstract:
-  description: "Xamarin Android 範例應用程式和程式碼示範，可協助您使用 C# 和 Xamarin 開始建置行動裝置應用程式。"
+  description: Xamarin Android 範例應用程式和程式碼示範，可協助您使用 C# 和 Xamarin 開始建置行動裝置應用程式。
   menu:
     items:
     - href: https://developer.xamarin.com/samples/android/all/
-      text: "所有 Xamarin.Android 範例"
+      text: 所有 Xamarin.Android 範例
 sections:
 - title: 
   items:
@@ -26,56 +26,56 @@ sections:
     className: cardsW
     items:
     - href: https://developer.xamarin.com/samples/monodroid/android5.0/GoogleIO2014Master/
-      html: "此範例示範 Android Lollipop 中引進的材料設計 API。"
+      html: 此範例示範 Android Lollipop 中引進的材料設計 API。
       image:
         src: images/material-design.png
         href: https://developer.xamarin.com/samples/monodroid/android5.0/GoogleIO2014Master/
-      title: "材料設計"
+      title: 材料設計
     - href: https://developer.xamarin.com/samples/monodroid/GooglePlayServices/
-      html: "此解決方案使用 Xamarin Google Play 服務 NuGet 來示範 Maps API 的幾個使用方式。"
+      html: 此解決方案使用 Xamarin Google Play 服務 NuGet 來示範 Maps API 的幾個使用方式。
       image:
         src: images/gps.png
         href: https://developer.xamarin.com/samples/monodroid/GooglePlayServices/
-      title: "Google Play 服務"
+      title: Google Play 服務
     - href: https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager/
-      html: "此範例示範如何搭配使用 ViewPager 和 PagerTabStrip，以實作在抽認卡上顯示一連串數學問題的應用程式。"
+      html: 此範例示範如何搭配使用 ViewPager 和 PagerTabStrip，以實作在抽認卡上顯示一連串數學問題的應用程式。
       image:
         src: images/flash.png
         href: https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager/
       title: Flash Card Pager
     - href: https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/
-      html: "片段是獨立的模組元件，可針對在不同大小螢幕上執行的應用程式，協助處理撰寫此類應用程式時所面臨的複雜性。"
+      html: 片段是獨立的模組元件，可針對在不同大小螢幕上執行的應用程式，協助處理撰寫此類應用程式時所面臨的複雜性。
       image:
         src: images/fragments.png
         href: https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/
-      title: "片段"
+      title: 片段
     - href: https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint/
-      html: "Android 上使用多點觸控追蹤的彩色手指繪製應用程式。"
+      html: Android 上使用多點觸控追蹤的彩色手指繪製應用程式。
       image:
         src: images/fingerpaint.png
         href: https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint/
       title: Finger Paint
     - href: https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/
-      html: "使用此範例學習如何使用 Android 5.0 Lollipop 引進的新 CardView 和 RecyclerView 小工具。"
+      html: 使用此範例學習如何使用 Android 5.0 Lollipop 引進的新 CardView 和 RecyclerView 小工具。
       image:
         src: images/recycler.png
         href: https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/
       title: RecyclerViewer
     - href: https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/
-      html: "以 Android 5.0 Lollipop 中新的工具列取代 ActionBar 的 Android 範例。"
+      html: 以 Android 5.0 Lollipop 中新的工具列取代 ActionBar 的 Android 範例。
       image:
         src: images/toolbar.png
         href: https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/
-      title: "工具列"
+      title: 工具列
     - href: https://developer.xamarin.com/samples/monodroid/wear/WatchFace/
-      html: "如何實作自訂的 Android Wear 錶面。"
+      html: 如何實作自訂的 Android Wear 錶面。
       image:
         src: images/watchface.png
         href: https://developer.xamarin.com/samples/monodroid/wear/WatchFace/
       title: WatchFace
     - href: https://developer.xamarin.com/samples/android/all/
-      html: "一組完整的 Xamarin.Android 範例應用程式及程式碼示範。"
+      html: 一組完整的 Xamarin.Android 範例應用程式及程式碼示範。
       image:
         src: ~/media/shared/sample-download.svg
         href: https://developer.xamarin.com/samples/android/all/
-      title: "所有 Xamarin.Android 範例"
+      title: 所有 Xamarin.Android 範例

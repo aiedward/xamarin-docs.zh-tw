@@ -1,17 +1,16 @@
 ---
-title: "圖形和動畫，在 iOS 中"
-description: "應用程式的核心概念"
-ms.topic: article
+title: 圖形和動畫，在 iOS 中
+description: 應用程式的核心概念
 ms.prod: xamarin
 ms.assetid: 3FEF45F2-C0F0-4D66-8796-9674FFE6740F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: ece988f2ba29ec4656631d993e4c4b99a276b199
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 99c05efa13027aca4935425d2a731613f250ec93
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="graphics-and-animation-in-ios"></a>圖形和動畫，在 iOS 中
 
@@ -22,11 +21,11 @@ ms.lasthandoff: 02/27/2018
 
 CoreImage 是 iOS 5 提供許多內建篩選器和效果套用至影像和視訊，包括字體偵測中導入的新架構。
 
-##  <a name="core-graphicsiosplatformgraphics-animation-ioscore-graphicsmd"></a>[核心圖形](~/ios/platform/graphics-animation-ios/core-graphics.md)
+##  <a name="core-graphicsiosplatformgraphics-animation-ioscore-graphicsmd"></a>[Core 圖形](~/ios/platform/graphics-animation-ios/core-graphics.md)
 
 本文討論的核心圖形 iOS framework 所提供的低層級的繪圖支援。 它示範如何使用核心圖形繪製幾何、 影像和 Pdf。
 
-##  <a name="core-animationiosplatformgraphics-animation-ioscore-animationmd"></a>[核心動畫](~/ios/platform/graphics-animation-ios/core-animation.md)
+##  <a name="core-animationiosplatformgraphics-animation-ioscore-animationmd"></a>[Core 動畫](~/ios/platform/graphics-animation-ios/core-animation.md)
 
 這篇文章會檢查核心動畫 framework 中，顯示如何啟用高效能、 流暢動畫，以及如何 UIKit，較低層級動畫控制項的直接使用它。
 

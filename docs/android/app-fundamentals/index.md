@@ -1,18 +1,17 @@
 ---
-title: "應用程式基本概念"
-description: "應用程式的核心概念"
-ms.topic: article
+title: 應用程式基本概念
+description: 應用程式的核心概念
 ms.prod: xamarin
 ms.assetid: 935B8BFE-23B7-4239-5C87-F4A503B889CB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 4abb8c823c62bc62fd2e6f717cc1b5bde9057e4e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cfb31fa6cac7c4848054cd58a1e144c2ac944262
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="application-fundamentals"></a>應用程式基本概念
 
@@ -35,7 +34,7 @@ ms.lasthandoff: 02/27/2018
 
 
 
-##  <a name="activity-lifecycleandroidapp-fundamentalsactivity-lifecycleindexmd"></a>[活動的生命週期](~/android/app-fundamentals/activity-lifecycle/index.md)
+##  <a name="activity-lifecycleandroidapp-fundamentalsactivity-lifecycleindexmd"></a>[活動生命週期](~/android/app-fundamentals/activity-lifecycle/index.md)
 
 活動是基本的建置組塊的 Android 應用程式，它們可以存在於不同的狀態數目。 活動的生命週期有具現化開始和結束解構而且之間包含許多狀態。 當活動變更狀態時，會呼叫適當的生命週期事件的方法，通知即將發生的狀態變更的活動，並讓它可以執行程式碼，該變更會隨著調整。 這篇文章會檢查活動的生命週期和說明責任活動有每個階段的行為良好、 可靠的應用程式一部分這些狀態變更。
 
@@ -47,7 +46,7 @@ ms.lasthandoff: 02/27/2018
 
 本文涵蓋 Android 服務，這是 Android 的元件，可讓要在背景中進行的工作。 它說明適用於服務之不同案例，並顯示如何將它們實作同時執行長時間執行背景工作，以及提供的遠端程序呼叫的介面。
 
-## <a name="broadcast-receiversandroidapp-fundamentalsbroadcast-receiversmd"></a>[廣播的接收者](~/android/app-fundamentals/broadcast-receivers.md)
+## <a name="broadcast-receiversandroidapp-fundamentalsbroadcast-receiversmd"></a>[廣播接收器](~/android/app-fundamentals/broadcast-receivers.md)
 
 本指南涵蓋如何建立及使用廣播的接收者，回應全系統的廣播，在 Xamarin.Android Android 元件。
 

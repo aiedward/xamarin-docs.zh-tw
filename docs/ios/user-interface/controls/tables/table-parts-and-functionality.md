@@ -1,17 +1,16 @@
 ---
-title: "資料表組件和功能"
-ms.topic: article
+title: 資料表組件和功能
 ms.prod: xamarin
 ms.assetid: B4139C8B-28F2-4C0F-297F-BF5432C5A915
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: fece27db2945ee7142296ec0872f395c127e318e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: be8ad21847aed3d8ad9bda7ac45b070e5ad868bc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="table-parts-and-functionality"></a>資料表組件和功能
 

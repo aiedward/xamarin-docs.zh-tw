@@ -1,17 +1,16 @@
 ---
 title: GridView
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 6992C4FF-ECBB-3493-AEE6-3E063C1A8C54
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 2fb3133833dbaa0b174c4611d204f6c8ceb42a2b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 82c82de912fd253d45e6343e2dd1c50e389c6371
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="gridview"></a>GridView
 

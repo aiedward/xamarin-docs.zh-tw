@@ -1,18 +1,17 @@
 ---
 title: Menus
-description: "本文件涵蓋使用 Xamarin.Mac 應用程式中的功能表。 它說明建立和維護功能表和功能表項目在 Xcode 和介面產生器，並以程式設計方式使用它們。"
-ms.topic: article
+description: 本文件涵蓋使用 Xamarin.Mac 應用程式中的功能表。 它說明建立和維護功能表和功能表項目在 Xcode 和介面產生器，並以程式設計方式使用它們。
 ms.prod: xamarin
 ms.assetid: 5D367F8E-3A76-4995-8A89-488530FAD802
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 52a9fc206a2c303d13d80be4de743d98056f7684
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 50c9cf333ff7965bbdfbb964a2301e677eb6aa59
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="menus"></a>Menus
 
@@ -439,7 +438,7 @@ public void defineKeyword (NSObject sender) {
 
 ![屬性偵測器](menu-images/action01.png "屬性偵測器")
 
-按一下 **+** 底部的按鈕**屬性偵測器**若要加入新的自訂動作：
+按一下**+**底部的按鈕**屬性偵測器**若要加入新的自訂動作：
 
 ![加入新的動作](menu-images/action02.png "加入新的動作")
 

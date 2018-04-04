@@ -1,17 +1,16 @@
 ---
-title: "Xamarin.Android 中的通知"
-ms.topic: article
+title: Xamarin.Android 中的通知
 ms.prod: xamarin
 ms.assetid: 2E54F1D0-45F4-43A7-B3A3-4F483B7150CB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: bc39faa37adae660a7751313d0d573237fadce94
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d321c3eb3fe1c882ef9cea6ed1aace3aa1dd953e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="notifications-in-xamarinandroid"></a>Xamarin.Android 中的通知
 

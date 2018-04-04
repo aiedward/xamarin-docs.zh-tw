@@ -1,24 +1,23 @@
 ---
-title: "平台功能"
-description: "跨平台應用程式功能和概念。"
-ms.topic: article
+title: 平台功能
+description: 跨平台應用程式功能和概念。
 ms.prod: xamarin
 ms.assetid: CEE8C464-67D7-45F4-9614-EAEF5217CACC
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 26b33b1fbf546f734e6661380f63b574cccbcae5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a1699c8bde336c040253a5560a2979de8b3fabf5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="platform-features"></a>平台功能
 
 本節說明一些更進階的跨平台應用程式功能和概念的文件。
 
-##  <a name="async-support-overviewcross-platformplatformasyncmd"></a>[支援非同步處理概觀](~/cross-platform/platform/async.md)
+##  <a name="async-support-overviewcross-platformplatformasyncmd"></a>[非同步支援概觀](~/cross-platform/platform/async.md)
 
 C# 5 版導入了兩個新的關鍵字來表示非同步作業： async 和 await。 這些關鍵字可讓您在另一個執行緒中撰寫簡單的程式碼，它會利用工作平行程式庫執行長時間執行的作業 （例如網路存取），並輕鬆地存取在完成的結果。 最新版的 Xamarin.iOS 和 Xamarin.Android 支援 async 和 await-本文件提供說明和使用新語法中使用 Xamarin 的範例。
 

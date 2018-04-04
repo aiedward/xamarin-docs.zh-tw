@@ -1,18 +1,17 @@
 ---
-title: "使用資料列的動作"
-description: "本指南示範如何建立自訂撥動動作為資料表資料列與 UISwipeActionsConfiguration 或 UITableViewRowAction"
-ms.topic: article
+title: 使用資料列的動作
+description: 本指南示範如何建立自訂撥動動作為資料表資料列與 UISwipeActionsConfiguration 或 UITableViewRowAction
 ms.prod: xamarin
 ms.assetid: 340FB633-0C46-40AA-9963-FF17D7CA6858
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/25/2017
-ms.openlocfilehash: 23a8fcd0633757bfffdb1761c3fc811268341b96
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c257406f3ad81e8144b47e099c9a00f3fdae30cb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-row-actions"></a>使用資料列的動作
 

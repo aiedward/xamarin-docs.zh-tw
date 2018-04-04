@@ -1,17 +1,16 @@
 ---
-title: "之間通訊的鬆散結合的元件"
-ms.topic: article
+title: 之間通訊的鬆散結合的元件
 ms.prod: xamarin
 ms.assetid: 1194af33-8a91-48d2-88b5-b84d77f2ce69
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: e05cd0ec7d03a033e24dcbfb8124cfc2ccfa438e
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 01669573f215c5a13bb918c9f9ba80aa5ca528c9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>之間通訊的鬆散結合的元件
 

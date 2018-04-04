@@ -1,17 +1,17 @@
 ---
-title: "IPA 檔案是 0 個位元組"
-ms.topic: article
+title: IPA 檔案是 0 個位元組
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 376BBA27-8694-4E63-9976-BF60349D42D8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: e5a1225663020b08bd2d0aa5ae1291e2c044a0ce
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 40799d0b8b051459145f51671ae7f6143db9635a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ipa-file-is-0-bytes"></a>IPA 檔案是 0 個位元組
 

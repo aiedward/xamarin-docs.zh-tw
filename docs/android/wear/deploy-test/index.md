@@ -1,18 +1,17 @@
 ---
-title: "部署及測試"
-description: "如何測試在 Android 裝置 （或模擬器） 應用程式損耗及準備進行部署。"
-ms.topic: article
+title: 部署及測試
+description: 如何測試在 Android 裝置 （或模擬器） 應用程式損耗及準備進行部署。
 ms.prod: xamarin
 ms.assetid: 3D8E5A97-F719-4E8C-B777-108DFF20C91F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/19/2017
-ms.openlocfilehash: f80be1c61d28ce73342399a0b4f2346007cd14de
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e6472b3bf07750338d9ada7ca62f0a5c9e2c8a7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="deployment-and-testing"></a>部署及測試
 
@@ -23,7 +22,7 @@ ms.lasthandoff: 02/27/2018
 
 如何偵錯 Android SDK 模擬器上的 Xamarin.Android 損耗應用程式。
 
-## <a name="debug-on-a-wear-deviceandroidweardeploy-testdebug-on-devicemd"></a>[損耗裝置上偵錯](~/android/wear/deploy-test/debug-on-device.md)
+## <a name="debug-on-a-wear-deviceandroidweardeploy-testdebug-on-devicemd"></a>[在 Wear 裝置上偵錯](~/android/wear/deploy-test/debug-on-device.md)
 
 如何設定 Android 裝置，讓 Xamarin.Android 損耗應用程式可以部署到它直接從 Visual Studio 或 Visual Studio for mac。
 

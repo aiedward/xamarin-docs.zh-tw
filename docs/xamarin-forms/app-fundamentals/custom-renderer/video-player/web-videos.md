@@ -1,17 +1,16 @@
 ---
-title: "播放網頁視訊"
-ms.topic: article
+title: 播放網頁視訊
 ms.prod: xamarin
 ms.assetid: 75781A10-865D-4BA8-8D6B-E3DA012922BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a5a98df4346c8720ae25fae4f27b5294993111c4
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 8326c142207e90f9b7d4bced7effd88ec88d8fa8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="playing-a-web-video"></a>播放網頁視訊
 

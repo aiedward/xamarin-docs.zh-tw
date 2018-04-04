@@ -1,18 +1,17 @@
 ---
-title: "標準控制項"
-description: "本文涵蓋了使用標準的 AppKit 控制項，例如按鈕、 標籤、 文字欄位、 核取方塊，並區隔 Xamarin.Mac 應用程式中的控制項。 它會描述新增至介面產生器的介面，並與其互動的程式碼中。"
-ms.topic: article
+title: 標準控制項
+description: 本文涵蓋了使用標準的 AppKit 控制項，例如按鈕、 標籤、 文字欄位、 核取方塊，並區隔 Xamarin.Mac 應用程式中的控制項。 它會描述新增至介面產生器的介面，並與其互動的程式碼中。
 ms.prod: xamarin
 ms.assetid: d2593883-d255-431f-9781-75f04d8cecea
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e887026b4f87d2e1bf8c7647a7845765ce8b886c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3fe155508b60cbe502c3beca58426528d6f49c9d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="standard-controls"></a>標準控制項
 

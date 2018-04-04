@@ -1,16 +1,15 @@
 ---
-title: "Xamarin 活頁簿編輯器鍵盤快速鍵"
-ms.topic: article
+title: Xamarin 活頁簿編輯器鍵盤快速鍵
 ms.prod: xamarin
 ms.assetid: 6375A371-3215-4A7C-B97B-A19E58BE96D6
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 65424f8c213c17b58f0ce1ad4acc9f6dcdaa192c
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 62cd8fd546667643ca90098f63866ab1ca6c4e99
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarin-workbooks-editor-keyboard-shortcuts"></a>Xamarin 活頁簿編輯器鍵盤快速鍵
 

@@ -1,17 +1,16 @@
 ---
-title: "工具列相容性"
-ms.topic: article
+title: 工具列相容性
 ms.prod: xamarin
 ms.assetid: A0798CA1-2C7D-43B6-9E91-4435CC7B6683
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: a17ad79d3f3b537332494fc368c878f2733d5db2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c3418a007ded30175049e83d515f59d5134deee0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="toolbar-compatibility"></a>工具列相容性
 

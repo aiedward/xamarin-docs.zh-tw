@@ -1,18 +1,17 @@
 ---
 title: SVG 路徑資料
 description: 定義可縮放的向量圖形格式使用文字字串的路徑
-ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 0fcef7ce40a575e015232e1ed5996e6b799dd085
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 7ea99612f85a853bcd045b773df0a01f33427a89
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="svg-path-data"></a>SVG 路徑資料
 

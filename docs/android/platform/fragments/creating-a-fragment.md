@@ -1,17 +1,16 @@
 ---
-title: "建立的片段"
-ms.topic: article
+title: 建立的片段
 ms.prod: xamarin
 ms.assetid: F2997242-BC29-1440-7F1A-CFC447CD73FA
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: 415c3a5e9446c5db545b62272f3b90a9ac73e401
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: eae25dbfaf1125191a83b3cc4326abc19105f22f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-a-fragment"></a>建立的片段
 

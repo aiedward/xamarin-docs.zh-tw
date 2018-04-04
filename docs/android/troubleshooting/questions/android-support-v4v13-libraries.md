@@ -1,17 +1,17 @@
 ---
-title: "更聰明的 Xamarin Android 支援 v4 / v13 NuGet 封裝"
-ms.topic: article
+title: 更聰明的 Xamarin Android 支援 v4 / v13 NuGet 封裝
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: FE66A82A-6C05-4646-BC52-E806F5DC606C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: ab8d90ebd938a8417e5a48155347e03191ef9ca4
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 47ae63fbd7062be97be04bfc1f1244ec63a1c5bd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="smarter-xamarin-android-support-v4--v13-nuget-packages"></a>更聰明的 Xamarin Android 支援 v4 / v13 NuGet 封裝
 

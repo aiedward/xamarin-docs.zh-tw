@@ -1,18 +1,17 @@
 ---
-title: "地圖"
-description: "iOS 包括 MapKit 架構，可讓您更輕鬆地加入對應至應用程式。 使用對應的套件，iOS 應用程式可以加入互動式支援功能，例如移動瀏覽和縮放、 地圖上顯示使用者位置及分層豐富圖形的對應。 這篇文章深入探討的數個套件對應的功能，顯示如何利用它們地理功能建置到應用程式"
-ms.topic: article
+title: 地圖
+description: iOS 包括 MapKit 架構，可讓您更輕鬆地加入對應至應用程式。 使用對應的套件，iOS 應用程式可以加入互動式支援功能，例如移動瀏覽和縮放、 地圖上顯示使用者位置及分層豐富圖形的對應。 這篇文章深入探討的數個套件對應的功能，顯示如何利用它們地理功能建置到應用程式
 ms.prod: xamarin
 ms.assetid: 5DD8E56D-51C1-4AFA-B387-79B5734698ED
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 3fecf17a4f70e44ca169c825bf0dd34a5127cec8
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 0249da1754083231fa4426ae4f42ce4ad73c3f51
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="maps"></a>地圖
 

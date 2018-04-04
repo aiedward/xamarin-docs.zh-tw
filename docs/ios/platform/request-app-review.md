@@ -1,18 +1,17 @@
 ---
-title: "要求檢閱應用程式"
-description: "本文涵蓋 RequestReview 方法加入至 iOS 10，以及如何實作在 Xamarin.iOS 該 Apple。"
-ms.topic: article
+title: 要求檢閱應用程式
+description: 本文涵蓋 RequestReview 方法加入至 iOS 10，以及如何實作在 Xamarin.iOS 該 Apple。
 ms.prod: xamarin
 ms.assetid: 6408e707-b7dc-4557-b931-16a4d79b8930
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: 2e63f2c47bbcd6da0f0d5370ebfc231d19a10e7d
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 2fff227581d6eeca69d7a770308d9793a4831baf
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="request-app-review"></a>要求檢閱應用程式
 

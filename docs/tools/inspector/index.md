@@ -1,18 +1,17 @@
 ---
 title: Xamarin Inspector
-description: "視覺化及偵錯即時應用程式"
-ms.topic: article
+description: 視覺化及偵錯即時應用程式
 ms.prod: xamarin
 ms.assetid: A5CCD63C-18E5-4D19-AFEA-301FE4F8538A
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: a5fcfadbe04dd329e609d194a0fb3c804f5d84c8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e306d71944f6a10f6e817b677f4363b33bd3da55
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarin-inspector"></a>Xamarin Inspector
 

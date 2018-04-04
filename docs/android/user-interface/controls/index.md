@@ -1,18 +1,17 @@
 ---
-title: "控制項"
-description: "用於建立 Xamarin.Android 使用者介面的建置組塊"
-ms.topic: article
+title: 控制項
+description: 用於建立 Xamarin.Android 使用者介面的建置組塊
 ms.prod: xamarin
 ms.assetid: B7A82166-B920-4672-B7A2-20DD5E0B5AEF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 25afd284fc88df4f23aaa3dfa1f47a3dc4fee551
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8994a8988c0e32e85aedcd9110e3583195843862
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="controls"></a>控制項
 
@@ -62,14 +61,14 @@ Xamarin.Android 不僅會公開所有由 Android 提供原生使用者介面控�
 ![範例編輯文字](images/edit-text.png)
 
 
-## <a name="galleryandroiduser-interfacecontrolsgallerymd"></a>[組件庫](~/android/user-interface/controls/gallery.md)
+## <a name="galleryandroiduser-interfacecontrolsgallerymd"></a>[圖庫](~/android/user-interface/controls/gallery.md)
 
 `Gallery` 是一種配置 widget，用來水平捲動的清單，來顯示項目它會將目前的選取項目放在檢視的中心。
 
 ![範例組件庫](images/gallery.png)
 
 
-## <a name="navigation-barandroiduser-interfacecontrolsnavigation-barmd"></a>[瀏覽列](~/android/user-interface/controls/navigation-bar.md)
+## <a name="navigation-barandroiduser-interfacecontrolsnavigation-barmd"></a>[導覽列](~/android/user-interface/controls/navigation-bar.md)
 
 *導覽列*提供不包含硬體按鈕的裝置上的導覽控制項**首頁**，**回**，和**功能表**。
 
@@ -90,14 +89,14 @@ Xamarin.Android 不僅會公開所有由 Android 提供原生使用者介面控�
 ![範例快顯功能表](images/popup-menu.png)
 
 
-## <a name="spinnerandroiduser-interfacecontrolsspinnermd"></a>[Spinner](~/android/user-interface/controls/spinner.md)
+## <a name="spinnerandroiduser-interfacecontrolsspinnermd"></a>[微調按鈕](~/android/user-interface/controls/spinner.md)
 
 `Spinner` 為提供快速的方法，從一組選取一個值的 UI 項目。 它是 simmilar 下拉式清單。 
 
 ![範例微調按鈕](images/spinner.png)
 
 
-## <a name="switchandroiduser-interfacecontrolsswitchmd"></a>[參數](~/android/user-interface/controls/switch.md)
+## <a name="switchandroiduser-interfacecontrolsswitchmd"></a>[開關](~/android/user-interface/controls/switch.md)
 
 `Switch` 是可讓使用者切換兩種狀態，例如，在或關閉的 UI 項目。 `Switch`預設值是 OFF。
 

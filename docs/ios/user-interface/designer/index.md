@@ -1,18 +1,17 @@
 ---
-title: "iOS 設計工具"
-description: "適用於 iOS Xamarin 設計工具是完全整合適用於 Mac 和 Visual Studio 與 Visual Studio 的 iOS 分鏡腳本和介面產生器格式的視覺化設計工具。 IOS 設計工具會維護與分鏡腳本 and.xib 格式完全相容，因此您可以在 Visual Studio for Mac 或除了 Xcode 的介面產生器的 Visual Studio 中編輯檔案。 此外，適用於 iOS Xamarin 設計工具支援進階的功能，例如在設計階段在編輯器中呈現的自訂控制項。"
-ms.topic: article
+title: iOS 設計工具
+description: 適用於 iOS Xamarin 設計工具是完全整合適用於 Mac 和 Visual Studio 與 Visual Studio 的 iOS 分鏡腳本和介面產生器格式的視覺化設計工具。 IOS 設計工具會維護與分鏡腳本 and.xib 格式完全相容，因此您可以在 Visual Studio for Mac 或除了 Xcode 的介面產生器的 Visual Studio 中編輯檔案。 此外，適用於 iOS Xamarin 設計工具支援進階的功能，例如在設計階段在編輯器中呈現的自訂控制項。
 ms.prod: xamarin
 ms.assetid: E35EFB69-EBBA-40E3-ADBE-CB8016F17127
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 884811e4035aabd831f851015db098a0243a2388
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 98d11b54ace70d4c4a82b2caebbe97cff02e0544
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-designer"></a>iOS 設計工具
 

@@ -1,18 +1,17 @@
 ---
-title: "進入"
-description: "單行文字或輸入的密碼"
-ms.topic: article
+title: 進入
+description: 單行文字或輸入的密碼
 ms.prod: xamarin
 ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 88b133a803aa74324e60a4f7610a2c0f0d31a807
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2e40effa7bc54b7b7cf73edaa882256fed521a95
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="entry"></a>進入
 

@@ -1,17 +1,16 @@
 ---
-title: "自動調整大小的資料列高度"
-ms.topic: article
+title: 自動調整大小的資料列高度
 ms.prod: xamarin
 ms.assetid: CE45A385-D40A-482A-90A0-E8382C2BFFB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: f1b35905d14086dcfc0cb749c8e4cc7de1608dd5
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 73e16c3381b639645463e3e8aaeed35224b67861
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="auto-sizing-row-height"></a>自動調整大小的資料列高度
 

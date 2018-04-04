@@ -1,17 +1,16 @@
 ---
-title: "前景服務"
-ms.topic: article
+title: 前景服務
 ms.prod: xamarin
 ms.assetid: C10FD999-7A91-4708-B642-0C1B0901BD24
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/19/2018
-ms.openlocfilehash: d1267bc4a530deb6dfb6eb2e30bee2facabd8fed
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: 3088fa4b5cfa21ac57533ef331ffcc15414e14b4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="foreground-services"></a>前景服務
 

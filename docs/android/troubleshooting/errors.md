@@ -1,17 +1,17 @@
 ---
-title: "Xamarin.Android 錯誤矩陣"
-ms.topic: article
+title: Xamarin.Android 錯誤矩陣
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7EBE4C01-8EFC-4B7E-97BA-D879994F59AB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/13/2018
-ms.openlocfilehash: d113e7747f656eda2bedb88574f4b2027616add8
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: e9916d8e264c202a914e6fd70e664beea276e93d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinandroid-errors-matrix"></a>Xamarin.Android 錯誤矩陣
 

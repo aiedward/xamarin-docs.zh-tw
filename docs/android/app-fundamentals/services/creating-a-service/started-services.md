@@ -1,17 +1,16 @@
 ---
-title: "Xamarin.Android 與啟動的服務"
-ms.topic: article
+title: Xamarin.Android 與啟動的服務
 ms.prod: xamarin
 ms.assetid: 8CC3A850-4CD2-4F93-98EE-AF3470794000
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: 8c2d68f08fea5b808b627803da9f9ddb7d62eb6c
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: c0aeeaad3798dd840e69c6da6d7857298f4da3c1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="started-services-with-xamarinandroid"></a>Xamarin.Android 與啟動的服務
 

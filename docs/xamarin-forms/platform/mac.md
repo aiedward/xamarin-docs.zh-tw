@@ -1,7 +1,6 @@
 ---
-title: "Mac 平台設定"
-description: "Xamarin.Forms 現在具有 Mac 平台支援預覽"
-ms.topic: article
+title: Mac 平台設定
+description: Xamarin.Forms 現在具有 Mac 平台支援預覽
 ms.prod: xamarin
 ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
 ms.technology: xamarin-forms
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: e8487dc06b3512a0ec0bb1b30393faeab506df60
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: de08e686fc07595b75016b9266f57b12831e9822
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="mac-platform-setup"></a>Mac 平台設定
 

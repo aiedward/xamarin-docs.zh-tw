@@ -1,18 +1,17 @@
 ---
-title: "來源清單"
-description: "本文件涵蓋使用 Xamarin.Mac 應用程式中的來源清單。 它說明建立和維護 Xcode 和介面產生器中的來源清單，並在 C# 程式碼中與它們互動。"
-ms.topic: article
+title: 來源清單
+description: 本文件涵蓋使用 Xamarin.Mac 應用程式中的來源清單。 它說明建立和維護 Xcode 和介面產生器中的來源清單，並在 C# 程式碼中與它們互動。
 ms.prod: xamarin
 ms.assetid: 651A3649-5AA8-4133-94D6-4873D99F7FCC
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 1fba2219a10a83043097d1b5ca6fb293de4d6c70
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a8d3a67768b9e47833d1819c3bf44774a52d2438
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="source-lists"></a>來源清單
 

@@ -1,18 +1,17 @@
 ---
-title: "常見的模式和慣用語"
-description: "本文件描述模型-檢視-控制器模式、 資料來源和委派模式及通訊協定。"
-ms.topic: article
+title: 常見的模式和慣用語
+description: 本文件描述模型-檢視-控制器模式、 資料來源和委派模式及通訊協定。
 ms.prod: xamarin
 ms.assetid: BF0A3517-17D8-453D-87F7-C8A34BEA8FF5
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/17/2016
-ms.openlocfilehash: 4926670a0cd0960c9a390bd388d3530929634153
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf499c555ddbefbdb5a7fae3ae8929a17e0d0cd7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="common-patterns-and-idioms"></a>常見的模式和慣用語
 

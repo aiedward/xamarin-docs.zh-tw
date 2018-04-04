@@ -1,18 +1,17 @@
 ---
-title: "應用程式開發介面設計"
-description: "API Xamarin.iOS 設計的檢視方塊"
-ms.topic: article
+title: 應用程式開發介面設計
+description: API Xamarin.iOS 設計的檢視方塊
 ms.prod: xamarin
 ms.assetid: 322D2724-AF27-6FFE-BD21-AA1CFE8C0545
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: c333fd18e306c50bbfd41377638470cb45954883
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: b7604633a5dfad6134d7b549299194ab6707a865
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="api-design"></a>應用程式開發介面設計
 

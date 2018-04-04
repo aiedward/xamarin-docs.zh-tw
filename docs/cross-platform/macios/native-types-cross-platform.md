@@ -1,18 +1,17 @@
 ---
-title: "使用跨平台應用程式中的原生類型"
-description: "本文說明如何使用新的 iOS 原生整合應用程式開發介面的型別 （nint、 nuint、 nfloat） 跨平台應用程式中使用非 iOS 裝置，例如 Android 或 Windows Phone 作業系統版本之共用程式碼的位置。"
-ms.topic: article
+title: 使用跨平台應用程式中的原生類型
+description: 本文說明如何使用新的 iOS 原生整合應用程式開發介面的型別 （nint、 nuint、 nfloat） 跨平台應用程式中使用非 iOS 裝置，例如 Android 或 Windows Phone 作業系統版本之共用程式碼的位置。
 ms.prod: xamarin
 ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/07/2016
-ms.openlocfilehash: 2e177afa9124095f00edacbeb71512d5cd9bb219
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0b32cb68174183fd094f72a7ab20f7ed52b278ee
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>使用跨平台應用程式中的原生類型
 

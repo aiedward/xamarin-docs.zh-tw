@@ -1,18 +1,17 @@
 ---
 title: 拼字檢查使用 Bing 拼字檢查應用程式開發介面
 description: Bing 拼字檢查，會執行內容的拼字檢查的文字，提供內嵌拼錯字的建議。 本文說明如何使用 Bing 拼字檢查 REST API 來更正 Xamarin.Forms 應用程式中的拼字錯誤。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: B40EB103-FDC0-45C6-9940-FB4ACDC2F4F9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 420eea4622d9c90c3587899fb24e707524990b19
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.openlocfilehash: 41bd79b22aa193dd5303847997bc07e8e8d12e58
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>拼字檢查使用 Bing 拼字檢查應用程式開發介面
 

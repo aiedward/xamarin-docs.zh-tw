@@ -1,17 +1,16 @@
 ---
-title: "章 26 的摘要。 自訂配置"
-ms.topic: article
+title: 章 26 的摘要。 自訂配置
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b17924ee2ee7c944b3924ec79568f07feb4449a7
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 5d2dc3e809026a36d186c9a582fcd047f6be24fe
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>章 26 的摘要。 自訂配置
 

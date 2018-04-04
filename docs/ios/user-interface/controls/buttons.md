@@ -1,18 +1,17 @@
 ---
-title: "按鈕"
-description: "UIButton 類別用於表示按鈕 iOS 螢幕中的各種不同的樣式。 本節將介紹 iOS 中的按鈕所使用的不同選項。"
-ms.topic: article
+title: 按鈕
+description: UIButton 類別用於表示按鈕 iOS 螢幕中的各種不同的樣式。 本節將介紹 iOS 中的按鈕所使用的不同選項。
 ms.prod: xamarin
 ms.assetid: 304229E5-8FA8-41BD-8563-D19E1D2A0296
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: ab7a77c44412bd22427e17a696eb43278ff7dd94
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c2c33103c005a5ed567b1c4703846f887d824ac4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="buttons"></a>按鈕
 

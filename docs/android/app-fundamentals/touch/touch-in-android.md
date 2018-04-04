@@ -1,17 +1,16 @@
 ---
-title: "在 Android 觸控"
-ms.topic: article
+title: 在 Android 觸控
 ms.prod: xamarin
 ms.assetid: 405A1FA0-4EFA-4AEB-B672-F36307B9CF16
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 1d9cf345aa971c40f4132cc7970ed1244640da14
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f1ccc86a20cb441bfdda864b8c7e263a691f5ab7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="touch-in-android"></a>在 Android 觸控
 

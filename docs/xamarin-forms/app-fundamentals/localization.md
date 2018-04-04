@@ -1,18 +1,17 @@
 ---
-title: "當地語系化"
-description: "Xamarin.Forms 應用程式可以使用.NET 資源檔來當地語系化。"
-ms.topic: article
+title: 當地語系化
+description: Xamarin.Forms 應用程式可以使用.NET 資源檔來當地語系化。
 ms.prod: xamarin
 ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: e04ea24883bdf1e29a538aaff92c555df8e1755f
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 7cae53187c9bc35d55f34dca664e28280cdab062
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="localization"></a>當地語系化
 
@@ -760,7 +759,7 @@ iOS 會使用稱為當地語系化的專案命名標準或**.lproj**包含影像
 
 ![](localization-images/ios-resources.png "iOS 當地語系化的專案目錄")
 
-每個語言目錄包含一份**flag.png**且該語言的當地語系化。 如果未不提供任何映像，則作業系統會預設為預設語言目錄中的映像。 如需完整的視網膜支援，您應該提供 **@2x** 和 **@3x** 每個影像的複本。
+每個語言目錄包含一份**flag.png**且該語言的當地語系化。 如果未不提供任何映像，則作業系統會預設為預設語言目錄中的映像。 如需完整的視網膜支援，您應該提供**@2x**和**@3x**每個影像的複本。
 
 #### <a name="app-name"></a>應用程式名稱
 

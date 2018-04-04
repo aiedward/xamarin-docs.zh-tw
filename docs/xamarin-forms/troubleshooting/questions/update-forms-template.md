@@ -1,17 +1,17 @@
 ---
-title: "可以加入較新的 NuGet 套件更新 Xamarin.Forms 預設範本嗎？"
-ms.topic: article
+title: 可以加入較新的 NuGet 套件更新 Xamarin.Forms 預設範本嗎？
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 160FBE13-26EB-4B4F-9248-A5CBE58FDD7F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: c626e8b4a01a55fac5d2c07f0c511241056c2774
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: fce595d7722dcd053f6fc9dcad84dc9a921e55b3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-package"></a>可以加入較新的 NuGet 套件更新 Xamarin.Forms 預設範本嗎？
 
@@ -41,5 +41,5 @@ ms.lasthandoff: 02/28/2018
 
 7.  將新的壓縮向上範本資料夾複製到新的 [行動應用程式] 目錄。
 
-8.  下載符合步驟 3 版本的 NuGet 套件。 例如， [http://nuget.org/api/v2/package/Xamarin.Forms/2.1.0.6529](http://nuget.org/api/v2/package/Xamarin.Forms/2.1.0.6529) (另請參閱[http://stackoverflow.com/questions/8597375/how-to-get-the-url-of-a-nupkg-file](http://stackoverflow.com/questions/8597375/how-to-get-the-url-of-a-nupkg-file))，並將複製到Visual Studio 的 Xamarin 擴充功能資料夾的適當子資料夾：
+8.  下載符合步驟 3 版本的 NuGet 套件。 例如， [ http://nuget.org/api/v2/package/Xamarin.Forms/2.1.0.6529 ](http://nuget.org/api/v2/package/Xamarin.Forms/2.1.0.6529) (另請參閱[ http://stackoverflow.com/questions/8597375/how-to-get-the-url-of-a-nupkg-file ](http://stackoverflow.com/questions/8597375/how-to-get-the-url-of-a-nupkg-file))，並將它複製到 Visual Studio 的 Xamarin 擴充功能資料夾的適當子資料夾：
     > `C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Xamarin\Xamarin\[Xamarin Version]\Packages`

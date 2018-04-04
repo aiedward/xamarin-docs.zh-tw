@@ -1,18 +1,17 @@
 ---
 title: Text
-description: "使用 Xamarin.Forms，輸入或顯示的文字。"
-ms.topic: article
+description: 使用 Xamarin.Forms，輸入或顯示的文字。
 ms.prod: xamarin
 ms.assetid: 4DBA7689-E5C8-4583-8FB4-02AB208B4416
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 55d13589e4241e9f4e29aea9a55346a8f514f208
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 37289c4c118c3a84b8c81d3a1c1502ff80564bb9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="text"></a>Text
 

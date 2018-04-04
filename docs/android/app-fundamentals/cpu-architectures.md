@@ -1,18 +1,17 @@
 ---
-title: "CPU 架構"
-description: "Xamarin.Android 支援數個 CPU 架構，包括 32 位元和 64 位元的裝置。 本文說明如何為目標的應用程式至一或多個的 Android 支援的 CPU 架構。"
-ms.topic: article
+title: CPU 架構
+description: Xamarin.Android 支援數個 CPU 架構，包括 32 位元和 64 位元的裝置。 本文說明如何為目標的應用程式至一或多個的 Android 支援的 CPU 架構。
 ms.prod: xamarin
 ms.assetid: D4BC889D-9164-49BB-9B7B-F6C4E4E109F1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 3df6dc72eaed74ad335596d55db8b1295b16f3c2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: dea5aaa16891893f649d5ec56f3e6b1ee9a18683
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="cpu-architectures"></a>CPU 架構
 

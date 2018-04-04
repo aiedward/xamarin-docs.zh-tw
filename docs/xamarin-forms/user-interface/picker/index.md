@@ -1,18 +1,17 @@
 ---
-title: "選擇器"
-description: "選擇器 檢視是從資料清單中選取的文字項目控制項。"
-ms.topic: article
+title: 選擇器
+description: 選擇器 檢視是從資料清單中選取的文字項目控制項。
 ms.prod: xamarin
 ms.assetid: D4815A4B-104B-4294-951B-BD8F2EC33C86
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: fc1aaffe4e31b596d57b5de30c87217ffba3772e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 9889502b635997dbb5e2b79a7654bf1ff0c99861
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="picker"></a>選擇器
 

@@ -1,17 +1,16 @@
 ---
-title: "第 5-實用的程式碼共用策略"
-ms.topic: article
+title: 第 5-實用的程式碼共用策略
 ms.prod: xamarin
 ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 4c102181a1d2c345e0376f53f1f343cbc7be5551
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: d5f639cffc8ff2d134731374bd72663fec81c6a0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>第 5-實用的程式碼共用策略
 

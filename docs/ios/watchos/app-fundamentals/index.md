@@ -1,16 +1,15 @@
 ---
-title: "watchOS 應用程式基本概念"
-ms.topic: article
+title: watchOS 應用程式基本概念
 ms.prod: xamarin
 ms.assetid: 156D6D1C-83CA-4088-BA08-40B22312269C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 06c2fbe7537df004641a2c1bd6e7d4e420fef1c7
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a21f45a954ffe937ebfb785aa6b0fbc6b468309f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="watchos-application-fundamentals"></a>watchOS 應用程式基本概念
 

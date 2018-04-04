@@ -1,18 +1,17 @@
 ---
-title: "Android 設計工具"
-description: "本文涵蓋 Xamarin.Android 設計工具的功能。 它涵蓋了設計工具的基本概念，顯示如何使用設計工具以視覺化方式配置 widget 及如何編輯內容。 此外，它也會示範如何使用設計工具來處理跨不同的組態，例如佈景主題、 語言和裝置組態使用者介面和資源，以及如何設計的替代檢視，例如橫向和縱向。"
-ms.topic: article
+title: Android 設計工具
+description: 本文涵蓋 Xamarin.Android 設計工具的功能。 它涵蓋了設計工具的基本概念，顯示如何使用設計工具以視覺化方式配置 widget 及如何編輯內容。 此外，它也會示範如何使用設計工具來處理跨不同的組態，例如佈景主題、 語言和裝置組態使用者介面和資源，以及如何設計的替代檢視，例如橫向和縱向。
 ms.prod: xamarin
 ms.assetid: E38C9AD9-56AA-B983-8B21-E1F466C4DB36
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 90dc37612f36eb914c3aaa140200762945ac4516
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 20da09895bae759c77e96300d798267881a7cbfd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-designer"></a>Android 設計工具
 

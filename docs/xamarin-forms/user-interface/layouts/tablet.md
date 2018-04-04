@@ -1,17 +1,16 @@
 ---
-title: "平板電腦和桌面應用程式的版面配置"
-ms.topic: article
+title: 平板電腦和桌面應用程式的版面配置
 ms.prod: xamarin
 ms.assetid: D62F472B-4345-4983-8403-659A538B591F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: f870cda73625197fb15bf19be1cdabbd675124d6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d75c5714e53961ff5704c72b5508514f8cd2e898
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>平板電腦和桌面應用程式的版面配置
 

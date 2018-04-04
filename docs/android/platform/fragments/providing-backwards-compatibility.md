@@ -1,17 +1,16 @@
 ---
-title: "提供回溯相容性的 Android 支援封裝"
-ms.topic: article
+title: 提供回溯相容性的 Android 支援封裝
 ms.prod: xamarin
 ms.assetid: 7511D2F8-2B4F-4200-C74E-E967153B2E8D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/12/2017
-ms.openlocfilehash: f09aae1445cfcf9f4225af3de37b65ebb5a1b6b2
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 07aec6f5fb66d4efcc114f92f0fb85d5b5b99c6f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>提供回溯相容性的 Android 支援封裝
 

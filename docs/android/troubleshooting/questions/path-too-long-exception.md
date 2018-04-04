@@ -1,18 +1,18 @@
 ---
-title: "如何解決 PathTooLongException 錯誤？"
-description: "本文說明如何解決 PathTooLongException 建置應用程式時可能發生的。"
-ms.topic: article
+title: 如何解決 PathTooLongException 錯誤？
+description: 本文說明如何解決 PathTooLongException 建置應用程式時可能發生的。
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 60EE1C8D-BE44-4612-B3B5-70316D71B1EA
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/20/2018
-ms.openlocfilehash: f4554178648d1257049d1c21cdc3e141acdb3de7
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: f50ca3e738cb781f9c80e83f58f2e0fa1fa8e113
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="how-do-i-resolve-a-pathtoolongexception-error"></a>如何解決 PathTooLongException 錯誤？
 

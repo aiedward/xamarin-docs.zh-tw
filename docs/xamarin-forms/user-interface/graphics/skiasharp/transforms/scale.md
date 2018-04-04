@@ -1,18 +1,17 @@
 ---
 title: 小數位數轉換
 description: 探索 SkiaSharp 標尺轉換縮放至各種大小的物件
-ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: b89e7472a332ed5cd518a26bc54af59f12b19c2a
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 4c2650d4586f210b121c4c72b79e92ce72d135fe
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="the-scale-transform"></a>小數位數轉換
 

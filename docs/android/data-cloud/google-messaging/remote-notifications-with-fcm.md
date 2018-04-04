@@ -1,18 +1,17 @@
 ---
-title: "遠端通知 Firebase 與雲端通訊"
-description: "本逐步解說 Xamarin.Android 應用程式中提供的逐步說明如何使用 Firebase Cloud Messaging 實作遠端 （也稱為推播通知） 的通知。 它說明如何實作所需的通訊與 Firebase 雲端傳訊 (FCM)、 提供如何設定存取權 FCM，Android 資訊清單的範例和示範如何使用 Firebase 下游訊息處理的各種類別主控台。"
-ms.topic: article
+title: 遠端通知 Firebase 與雲端通訊
+description: 本逐步解說 Xamarin.Android 應用程式中提供的逐步說明如何使用 Firebase Cloud Messaging 實作遠端 （也稱為推播通知） 的通知。 它說明如何實作所需的通訊與 Firebase 雲端傳訊 (FCM)、 提供如何設定存取權 FCM，Android 資訊清單的範例和示範如何使用 Firebase 下游訊息處理的各種類別主控台。
 ms.prod: xamarin
 ms.assetid: 4D7C5F46-C997-49F6-AFDA-6763E68CDC90
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 7e107fc9ced62027bc793c97a388344d74becd66
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c6e1d36d871b4bb41a1e53d6e58ba8940813b29f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>遠端通知 Firebase 與雲端通訊
 

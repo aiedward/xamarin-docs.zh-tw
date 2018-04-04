@@ -1,17 +1,16 @@
 ---
-title: "第 16 章的摘要。 資料繫結"
-ms.topic: article
+title: 第 16 章的摘要。 資料繫結
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: cf08874f66c9ab21cd0ede642c8c94821b6c5a2a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0f200e0c482402813ac7051255dd7c27da93d6dc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>第 16 章的摘要。 資料繫結
 

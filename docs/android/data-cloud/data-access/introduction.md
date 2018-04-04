@@ -1,17 +1,16 @@
 ---
-title: "簡介"
-ms.topic: article
+title: 簡介
 ms.prod: xamarin
 ms.assetid: FDAC0771-4749-4758-865A-F1BD190CA54B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/28/2017
-ms.openlocfilehash: bd670a07d09f9ff7892122ff4307ac4b900a580c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a2d92b6f7bfa1e2a40e30d0b832dd8a8f737cee2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction"></a>簡介
 

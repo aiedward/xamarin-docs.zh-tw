@@ -1,18 +1,17 @@
 ---
-title: "使用者通知架構"
-description: "本文涵蓋的所有使用者通知已經過增強，iOS 10，以及如何在 Xamarin.iOS 應用程式中使用它們的方式。"
-ms.topic: article
+title: 使用者通知架構
+description: 本文涵蓋的所有使用者通知已經過增強，iOS 10，以及如何在 Xamarin.iOS 應用程式中使用它們的方式。
 ms.prod: xamarin
 ms.assetid: 223FCE25-A3E6-4255-BCFC-0E3136F4E987
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/01/2016
-ms.openlocfilehash: 1ab0a4add92db21c352dbaeadc71a3ff1e3d0cf9
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 9b8671fe54f4017e81d7151cc42ea9df2bf9fa05
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="user-notifications-framework"></a>使用者通知架構
 

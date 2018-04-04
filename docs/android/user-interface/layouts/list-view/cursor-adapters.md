@@ -1,17 +1,16 @@
 ---
-title: "使用 CursorAdapters"
-ms.topic: article
+title: 使用 CursorAdapters
 ms.prod: xamarin
 ms.assetid: 60DE467E-A5DA-4420-52E5-D86AD1678FE6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/25/2017
-ms.openlocfilehash: 5cadaf5f41d940a0255113178d018b59b780eabc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 20311cc50c87638391d8b078c405bc61baceb373
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-cursoradapters"></a>使用 CursorAdapters
 

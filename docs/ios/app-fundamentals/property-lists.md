@@ -1,18 +1,17 @@
 ---
-title: "使用屬性清單"
-description: "本文件介紹使用 Info.plist 與 Entitlements.plist Mac 的圖形化和進階屬性清單 (.plist) 編輯器的 Visual Studio。 它說明如何設定圖示和啟動映像，以從 iOS 應用程式在 Visual Studio for mac。"
-ms.topic: article
+title: 使用屬性清單
+description: 本文件介紹使用 Info.plist 與 Entitlements.plist Mac 的圖形化和進階屬性清單 (.plist) 編輯器的 Visual Studio。 它說明如何設定圖示和啟動映像，以從 iOS 應用程式在 Visual Studio for mac。
 ms.prod: xamarin
 ms.assetid: 5E687043-0443-377C-9A12-9C5A05958646
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 778e70f6817b71e5910aa85425d46261dfe9c803
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f6ee7a606243f5d21d827546b528ca5d9d3f0281
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-property-lists"></a>使用屬性清單
 

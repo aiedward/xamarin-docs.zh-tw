@@ -1,18 +1,17 @@
 ---
-title: "實作 HybridWebView"
-description: "Xamarin.Forms 自訂使用者介面控制項應衍生自檢視類別，用來放置版面配置和螢幕上的控制項。 本文示範如何建立自訂轉譯器 HybridWebView 自訂控制項，示範如何以加強平台專屬 web 控制項可讓 C# 程式碼叫用 javascript。"
-ms.topic: article
+title: 實作 HybridWebView
+description: Xamarin.Forms 自訂使用者介面控制項應衍生自檢視類別，用來放置版面配置和螢幕上的控制項。 本文示範如何建立自訂轉譯器 HybridWebView 自訂控制項，示範如何以加強平台專屬 web 控制項可讓 C# 程式碼叫用 javascript。
 ms.prod: xamarin
 ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: e67646e5072f703af71fc3f0a7901fd8485f9710
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4adff8a95f9981dbecc44bf177dcd98b7984a3a9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="implementing-a-hybridwebview"></a>實作 HybridWebView
 

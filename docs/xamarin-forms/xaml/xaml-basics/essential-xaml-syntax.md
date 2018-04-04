@@ -1,18 +1,17 @@
 ---
-title: "第 2 部分。 基本 XAML 語法"
-description: "XAML 是大部分針對具現化，並初始化物件。 通常，屬性必須設定為複雜的物件無法輕鬆地表示為 XML 字串，但有時一個類別所定義的屬性必須設定子類別。 這些兩個需求所需的屬性項目和附加的屬性的基本 XAML 語法功能。"
-ms.topic: article
+title: 第 2 部分。 基本 XAML 語法
+description: XAML 是大部分針對具現化，並初始化物件。 通常，屬性必須設定為複雜的物件無法輕鬆地表示為 XML 字串，但有時一個類別所定義的屬性必須設定子類別。 這些兩個需求所需的屬性項目和附加的屬性的基本 XAML 語法功能。
 ms.prod: xamarin
 ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 77ed7c49a901a877d822c2274263bcb8dbe19ac6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 776b0d07de947c01761f8e8d8809b24cf7f3c3cb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分。 基本 XAML 語法
 

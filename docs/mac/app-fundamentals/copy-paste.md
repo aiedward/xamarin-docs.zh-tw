@@ -1,18 +1,17 @@
 ---
-title: "複製並貼上"
-description: "本文涵蓋剪貼版提供複製並貼上 Xamarin.Mac 應用程式中使用。 它會顯示如何處理與標準資料型別，可以在多個應用程式，以及如何支援自訂資料內指定的應用程式之間共用。"
-ms.topic: article
+title: 複製並貼上
+description: 本文涵蓋剪貼版提供複製並貼上 Xamarin.Mac 應用程式中使用。 它會顯示如何處理與標準資料型別，可以在多個應用程式，以及如何支援自訂資料內指定的應用程式之間共用。
 ms.prod: xamarin
 ms.assetid: 7E9C99FB-B7B4-4C48-B20F-84CB48543083
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: ba937a6eae7f0f74bcf044f1248d49a421e82de5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: cf81666403f687ce997e20f6f5f097dc9fcf1421
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="copy-and-paste"></a>複製並貼上
 

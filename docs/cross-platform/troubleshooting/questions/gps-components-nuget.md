@@ -1,16 +1,16 @@
 ---
-title: "元件和 NuGet 統一 Google Play 服務"
-ms.topic: article
+title: 元件和 NuGet 統一 Google Play 服務
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5D962EB4-2CB3-4B7D-9D77-889DEACDAE02
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 4e571f24d08fe34a2c3d689501cb2ca656aaa502
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e0ba5ee9417917b834ab060a94f72d1f071b4912
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="unifying-google-play-services-components-and-nuget"></a>元件和 NuGet 統一 Google Play 服務
 

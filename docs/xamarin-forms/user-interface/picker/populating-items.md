@@ -1,18 +1,17 @@
 ---
-title: "將資料加入至選擇器的項目集合"
-description: "選擇器 檢視是從資料清單中選取的文字項目控制項。 本文說明如何將它加入至項目集合中，填入資料的選擇器以及如何回應使用者所選擇的項目。"
-ms.topic: article
+title: 將資料加入至選擇器的項目集合
+description: 選擇器 檢視是從資料清單中選取的文字項目控制項。 本文說明如何將它加入至項目集合中，填入資料的選擇器以及如何回應使用者所選擇的項目。
 ms.prod: xamarin
 ms.assetid: 3C840F64-A430-457D-A4B2-3D7AF46F9DBE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: 3468e38d8ef46dfef870a05bf72d93c28195dae7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 63a72861895f79d2d0154297f88610ddb8bb8beb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="adding-data-to-a-pickers-items-collection"></a>將資料加入至選擇器的項目集合
 

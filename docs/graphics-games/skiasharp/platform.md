@@ -1,18 +1,17 @@
 ---
-title: "SkiaSharp 平台的特定詳細資料"
-description: "在您的平台使用 SkiaSharp 詳細資料。 簡短： 提供有關如何 SkSurface 內容帶入原生應用程式的詳細資料。"
-ms.topic: article
+title: SkiaSharp 平台的特定詳細資料
+description: 在您的平台使用 SkiaSharp 詳細資料。 簡短： 提供有關如何 SkSurface 內容帶入原生應用程式的詳細資料。
 ms.prod: xamarin
 ms.assetid: 1D90E0B3-A3A8-4286-BC54-9D67188A1C6C
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: a7a1d6618e359422cf6fb22f49648ac69b95072f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3f3eedc58284ffd10fb0352dd24e1605913f58c1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="platform-specific-integration"></a>平台特定的整合
 

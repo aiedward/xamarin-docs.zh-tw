@@ -1,18 +1,17 @@
 ---
 title: 第 3 部分。 XAML 標記延伸
 description: XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定為物件或間接參考來自其他來源的值。 XAML 標記延伸是特別重要的共用物件，並參考整個應用程式，所使用的常數，但他們資料繫結中找到其最大的公用程式。
-ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 3/27/2018
-ms.openlocfilehash: cd881b79945c2b9c10e9bb1bc85fce98acb71026
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.openlocfilehash: 104a3adb5d59bc7feafa3c993290247b749ce312
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 標記延伸
 

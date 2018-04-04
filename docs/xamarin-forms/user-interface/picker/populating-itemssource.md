@@ -1,18 +1,17 @@
 ---
-title: "選擇器 ItemsSource 屬性設定"
-description: "選擇器 檢視是從資料清單中選取的文字項目控制項。 本文說明如何藉由設定 ItemsSource 屬性中，填入資料的選擇器以及如何回應使用者所選擇的項目。"
-ms.topic: article
+title: 選擇器 ItemsSource 屬性設定
+description: 選擇器 檢視是從資料清單中選取的文字項目控制項。 本文說明如何藉由設定 ItemsSource 屬性中，填入資料的選擇器以及如何回應使用者所選擇的項目。
 ms.prod: xamarin
 ms.assetid: 8ECF390C-9DB2-4441-B9A3-101AE7E5AEC5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: 5e3d20ad213df9fd9331c71c84003c7738bd5a29
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bf3940bc1bc0318bad4d785388f9dc9292af80ca
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>選擇器 ItemsSource 屬性設定
 

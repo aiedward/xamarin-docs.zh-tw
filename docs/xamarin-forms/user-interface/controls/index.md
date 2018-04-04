@@ -1,18 +1,17 @@
 ---
-title: "控制項參考"
-description: "用來建構 Xamarin.Forms 應用程式的所有視覺化項目的描述。"
-ms.topic: article
+title: 控制項參考
+description: 用來建構 Xamarin.Forms 應用程式的所有視覺化項目的描述。
 ms.prod: xamarin
 ms.assetid: F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: e1e6234f0eadcbcbecc8d58a4774db88606be290
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a9fb90794ec74c46019fd2b4f41d90a2635909cd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="controls-reference"></a>控制項參考
 

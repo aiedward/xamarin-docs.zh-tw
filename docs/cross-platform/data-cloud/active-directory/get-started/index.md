@@ -1,18 +1,17 @@
 ---
 title: Azure Active Directory
-description: "註冊以使用 Azure Active Directory 應用程式"
-ms.topic: article
+description: 註冊以使用 Azure Active Directory 應用程式
 ms.prod: xamarin
 ms.assetid: 70B3C2AB-CB4D-420C-9CFA-20CCFA0E3C78
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: bf39b394903c3322ee617289ffe583a22a39fb20
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ff076aa894f7f406c79d2a19b6055d2feeb99bd0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="azure-active-directory"></a>Azure Active Directory
 

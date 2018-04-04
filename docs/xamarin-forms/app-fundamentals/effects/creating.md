@@ -1,18 +1,17 @@
 ---
-title: "建立效果"
-description: "效果簡化自訂控制項。 本文示範如何建立控制項取得焦點時，變更項目控制項的背景色彩的效果。"
-ms.topic: article
+title: 建立效果
+description: 效果簡化自訂控制項。 本文示範如何建立控制項取得焦點時，變更項目控制項的背景色彩的效果。
 ms.prod: xamarin
 ms.assetid: 9E2C8DB0-36A2-4F13-8E3C-A66D7021DB13
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 3a66ec9f935159e4854a12584a6c9f70ab805abb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 773636cf879439477a6f71e44f13ae66b8f10ea8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-an-effect"></a>建立效果
 
@@ -221,7 +220,7 @@ public class FocusEffect : RoutingEffect
 }
 ```
 
-`FocusEffect`類別子類別[ `RoutingEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RoutingEffect/)類別，表示包裝內部效果通常平台特定的平台獨立結果。 `FocusEffect`類別會呼叫基底類別建構函式，傳遞參數，其中 解析群組名稱的串連 (使用指定[ `ResolutionGroupName` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResolutionGroupNameAttribute/)效果類別上)，和的唯一 ID使用指定[ `ExportEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ExportEffectAttribute/)效果類別上的屬性。 因此，當[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)初始化在執行階段的新執行個體`MyCompany.FocusEffect`加入至控制項的[ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/)集合。
+`FocusEffect`類別子類別[ `RoutingEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RoutingEffect/)類別，表示包裝內部效果通常平台特定的平台獨立結果。 `FocusEffect`類別會呼叫基底類別建構函式，傳遞參數，其中解析群組名稱的串連 (使用指定[ `ResolutionGroupName` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResolutionGroupNameAttribute/)效果類別上)，和的唯一 ID使用指定[ `ExportEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ExportEffectAttribute/)效果類別上的屬性。 因此，當[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)初始化在執行階段的新執行個體`MyCompany.FocusEffect`加入至控制項的[ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/)集合。
 
 效果也可附加至控制項所使用的行為，或使用附加屬性。 如需使用行為來附加至控制項的效果的詳細資訊，請參閱[可重複使用 EffectBehavior](~/xamarin-forms/app-fundamentals/behaviors/reusable/effect-behavior.md)。 如需附加至控制項的效果，藉由使用附加的屬性的詳細資訊，請參閱[將參數傳遞至效果](~/xamarin-forms/app-fundamentals/effects/passing-parameters/index.md)。
 

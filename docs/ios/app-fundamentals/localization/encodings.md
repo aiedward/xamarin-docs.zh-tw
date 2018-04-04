@@ -1,16 +1,15 @@
 ---
-title: "國際化編碼"
-ms.topic: article
+title: 國際化編碼
 ms.prod: xamarin
 ms.assetid: F5117294-28BB-4583-B6A0-A339B050FDE1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 3829d8ed94bab482b0da9e52e5ee6e1f488e3992
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 60cfc5ac8238c853cc066afe2978f91ab9c0755e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="internationalization-encodings"></a>國際化編碼
 

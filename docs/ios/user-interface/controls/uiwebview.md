@@ -1,18 +1,17 @@
 ---
-title: "網頁檢視"
-description: "釐清 iOS web 檢視選項"
-ms.topic: article
+title: 網頁檢視
+description: 釐清 iOS web 檢視選項
 ms.prod: xamarin
 ms.assetid: 84886CF4-2B2B-4540-AD92-7F0B791952D1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 70703797792a2f667a2eb20cbc45d1736e5e6b9d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 787b5594476b3a1b5b3f6a0e8151a98c97443d00
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="web-views"></a>網頁檢視
 

@@ -1,17 +1,16 @@
 ---
-title: "使用應用程式群組"
-ms.topic: article
+title: 使用應用程式群組
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 9365bc2707876816419bb5d136a6a1011cf129d7
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 341f6b4f5049a39817f2923901472f35b254bead
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-app-groups"></a>使用應用程式群組
 

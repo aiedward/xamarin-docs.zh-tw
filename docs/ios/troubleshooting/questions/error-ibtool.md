@@ -1,16 +1,16 @@
 ---
-title: "IBTool 錯誤： 無法完成作業。"
-ms.topic: article
+title: IBTool 錯誤： 無法完成作業。
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: A804EBC4-2BBF-4A98-A4E8-A455DB2E8A17
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: dd668859428da1abfa3a8e46a0810b2de6645fe2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4647227ad208bfa968f8282a966220a09ab7f4a6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ibtool-error-the-operation-couldnt-be-completed"></a>IBTool 錯誤： 無法完成作業。
 
@@ -24,7 +24,7 @@ Apple[固定](https://developer.apple.com/library/content/documentation/Xcode/Co
 
 `ibtool` Xcode 6.0 中的命令在 OS X 10.10 Yosemite 有 bug。 Xamarin.iOS 使用 Xcode 的`ibtool`編譯分鏡腳本和`XIB`檔案。
 
-相對於 Xcode bug 的詳細資訊可以找到下列堆疊溢位 post: [http://stackoverflow.com/questions/25754763/cant-open-storyboard](http://stackoverflow.com/questions/25754763/cant-open-storyboard)
+相對於 Xcode bug 的詳細資訊可以找到下列堆疊溢位的文章： [http://stackoverflow.com/questions/25754763/cant-open-storyboard](http://stackoverflow.com/questions/25754763/cant-open-storyboard)
 
 ### <a name="error-message"></a>錯誤訊息
 
@@ -54,7 +54,7 @@ Apple[固定](https://developer.apple.com/library/content/documentation/Xcode/Co
 </BundleResource>
 ```
 
-在 Visual Studio for Mac`LogicalName`也可以設定使用`Resource ID`欄位下方影像**檢視 > 填補 > 屬性**。 (請參閱： [http://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545](http://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545))
+在 Visual Studio for Mac`LogicalName`也可以設定使用`Resource ID`欄位下方影像**檢視 > 填補 > 屬性**。 (請參閱： [ http://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545 ](http://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545))
 
 此變更後，您將需要更新的分鏡腳本和`.xib`檔案，以使用新的最上層的映像路徑。 適用於 Mac 的 visual Studio 會自動更新為 autocompletions 清單`Image`iOS 設計工具中的屬性。 在 Visual Studio 中，您必須以手動方式編輯路徑。 IOS 設計工具將會再顯示為遺失的影像，但專案會建置並正確執行。
 

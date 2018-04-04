@@ -1,18 +1,17 @@
 ---
-title: "Java 繫結中繼資料"
-description: "C# 程式碼中 Xamarin.Android 繫結，是一種機制，以區隔會指定在 Java 原生介面 (JNI) 的低層級詳細資料會透過呼叫 Java 文件庫。 Xamarin.Android 提供一種工具，會產生這些繫結。 此工具可讓開發人員控制項繫結使用的中繼資料，可讓程序，例如修改命名空間，以及重新命名成員的建立方式。 本文件討論中繼資料的運作方式，該中繼資料摘要的屬性支援，並說明如何藉由修改這個中繼資料來解決繫結的問題。"
-ms.topic: article
+title: Java 繫結中繼資料
+description: C# 程式碼中 Xamarin.Android 繫結，是一種機制，以區隔會指定在 Java 原生介面 (JNI) 的低層級詳細資料會透過呼叫 Java 文件庫。 Xamarin.Android 提供一種工具，會產生這些繫結。 此工具可讓開發人員控制項繫結使用的中繼資料，可讓程序，例如修改命名空間，以及重新命名成員的建立方式。 本文件討論中繼資料的運作方式，該中繼資料摘要的屬性支援，並說明如何藉由修改這個中繼資料來解決繫結的問題。
 ms.prod: xamarin
 ms.assetid: 27CB3C16-33F3-F580-E2C0-968005A7E02E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 70f17b6bc8dc991534cdf4dd065c813aa0e27e96
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 6dea13fcda43cad22b8bea9838bbcb23b97820c7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="java-bindings-metadata"></a>Java 繫結中繼資料
 
@@ -246,7 +245,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ### <a name="obfuscated"></a>模糊化
 
-模糊化 Java 文件庫的工具可能會干擾 Xamarin.Android 繫結產生器，以及其能力產生 C# 包裝函式類別。 模糊化類別的特性包括: * 類別名稱包含 **$** ，也就是**$.class** * 類別名稱完全受到個小寫字元，也就是**a.class**
+模糊化 Java 文件庫的工具可能會干擾 Xamarin.Android 繫結產生器，以及其能力產生 C# 包裝函式類別。 模糊化類別的特性包括: * 類別名稱包含**$**，也就是**$.class** * 類別名稱完全受到個小寫字元，也就是**a.class**
 
 這個程式碼片段是如何產生 「 未模糊化"C# 類型的範例：
 

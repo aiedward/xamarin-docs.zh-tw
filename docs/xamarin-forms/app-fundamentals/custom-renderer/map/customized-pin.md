@@ -1,18 +1,17 @@
 ---
-title: "自訂地圖 Pin"
-description: "本文示範如何建立自訂轉譯器對應控制項，可顯示每個平台的原生的對應自訂的 pin 與 pin 資料的自訂的檢視。"
-ms.topic: article
+title: 自訂地圖 Pin
+description: 本文示範如何建立自訂轉譯器對應控制項，可顯示每個平台的原生的對應自訂的 pin 與 pin 資料的自訂的檢視。
 ms.prod: xamarin
 ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 312bda44a6b390c6ba486d5a3d60dfe4fb770a2e
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 353575bad91c9bade0207a0aa271d9de7ec50240
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="customizing-a-map-pin"></a>自訂地圖 Pin
 
@@ -33,7 +32,7 @@ Xamarin.Forms 中的每個檢視有隨附的轉譯器，每個平台建立原生
 每個項目將現在依次討論實作`CustomMap`轉譯器，會顯示每個平台上的自訂的 pin 與 pin 資料的自訂的檢視的原生對應。
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) 必須初始化，並使用之前設定。 如需詳細資訊，請參閱[ `Maps Control` ](~/xamarin-forms/user-interface/map.md)。
+> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) 必須初始化，並使用之前設定。 如需詳細資訊，請參閱 [`Maps Control`](~/xamarin-forms/user-interface/map.md)。
 
 <a name="Creating_the_Custom_Map" />
 

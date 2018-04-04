@@ -1,18 +1,17 @@
 ---
-title: ".storyboard/.xib-less 使用者介面設計"
-description: "本文涵蓋直接從 C# 程式碼，而不需.storyboard 檔案、.xib 檔案或介面產生器建立 Xamarin.Mac 應用程式的使用者介面。"
-ms.topic: article
+title: .storyboard/.xib-less 使用者介面設計
+description: 本文涵蓋直接從 C# 程式碼，而不需.storyboard 檔案、.xib 檔案或介面產生器建立 Xamarin.Mac 應用程式的使用者介面。
 ms.prod: xamarin
 ms.assetid: 02310F58-DCF1-4589-9F4A-065DF64FC0E1
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 52d300ac583ec2313d3169c7b2adb73c15ebe4fb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 66725b02d3e351e74fa79ae5336a7db3a9f2b534
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="storyboardxib-less-user-interface-design"></a>.storyboard/.xib-less 使用者介面設計
 

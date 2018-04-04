@@ -1,17 +1,16 @@
 ---
-title: "回應驗證回呼"
-ms.topic: article
+title: 回應驗證回呼
 ms.prod: xamarin
 ms.assetid: 6533AFC9-1A1C-4897-A154-4D4ECFE27761
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/06/2017
-ms.openlocfilehash: 37d288cd75f232c8674aece085a78a83ce12d720
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: b8a3ed64e66cd97faeff78b4d0b008a1a0b14477
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="responding-to-authentication-callbacks"></a>回應驗證回呼
 

@@ -1,17 +1,16 @@
 ---
-title: "自訂按鈕"
-ms.topic: article
+title: 自訂按鈕
 ms.prod: xamarin
 ms.assetid: C523D41E-5855-248D-079D-6B12B74B7617
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 5131b4d09f01af6a6e8bed28a2df27bc801dfb80
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e6fc3fe4c3cb89d74188557615f58cc8e34f5991
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="custom-button"></a>自訂按鈕
 

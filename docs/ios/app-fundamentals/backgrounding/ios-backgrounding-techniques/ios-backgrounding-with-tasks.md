@@ -1,16 +1,15 @@
 ---
-title: "iOS Backgrounding 與工作"
-ms.topic: article
+title: iOS Backgrounding 與工作
 ms.prod: xamarin
 ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: ad75dfac55add7e03ffbdb910e0e62ebd0fd6c18
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 559c8ccce0ff41dccce0fdc93d6c18a1fee3db7d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS Backgrounding 與工作
 
