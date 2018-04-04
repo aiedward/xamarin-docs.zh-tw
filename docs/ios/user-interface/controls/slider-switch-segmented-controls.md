@@ -1,17 +1,16 @@
 ---
-title: "滑桿、 交換器及分割的控制項"
-ms.topic: article
+title: 滑桿、 交換器及分割的控制項
 ms.prod: xamarin
 ms.assetid: 85BF0EC8-E581-49CD-B9E7-98BE4C5A0F6B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 282a4cb59545703c5172f8747cb5b633e7b648dc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3c98ea19b3f925e71f72b09d5356286d676a9f71
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="sliders-switches-and-segmented-controls"></a>滑桿、 交換器及分割的控制項
 
