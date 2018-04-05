@@ -7,11 +7,11 @@ ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 7435807e77a9a79d7fc3821675c1d959a16caa8f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 859677a3dcfcddd0b333c9ddf60c01e2093b6a5b
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="basic-animation"></a>基本動畫
 
@@ -24,7 +24,7 @@ _了解如何製作動畫 SkiaSharp 圖形_
 **Pulsating 橢圓形**頁面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式繪製橢圓形的兩個軸，使其顯示來 pulsating，而且您甚至可以控制這個 pulsation 速率：
 
 
-[ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)檔案會具現化 Xamarin.Forms`Slider`和`Label`來顯示目前滑桿的值。 這是整合的常見方式`SKCanvasView`與其他 Xamarin.Forms 檢視：
+[ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)檔案會具現化 Xamarin.Forms`Slider`和`Label`來顯示目前滑桿的值。 這是整合的常見方式`SKCanvasView`與其他 Xamarin.Forms 檢視：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -149,7 +149,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
  在此特定情況下更好的解決方案，可建立兩個`SKPaint`物件一次，並將它們儲存為欄位。
 
-這就是**展開圓形**動畫沒有。 [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs)類別開始會定義數個欄位，包括`SKPaint`物件：
+這就是**展開圓形**動畫沒有。 [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs)類別開始會定義數個欄位，包括`SKPaint`物件：
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage

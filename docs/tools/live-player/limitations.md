@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2018
-ms.openlocfilehash: 0068540ec385ab3be56865c7728eb3128154a2ea
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 43699e77bc8b7365c6d5f7fbf27e19a945e69e22
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="limitations"></a>限制
 
@@ -51,7 +51,7 @@ Xamarin Live 播放器應用程式支援下列裝置：
 - 反映的支援受到限制 （目前會影響某些常用的 NuGets SQLite 和 Json.NET 等）。 其他 NuGets 可能仍會支援。
 - 無法覆寫某些系統類別 （例如，您不能實作子類別）。
 - 需要佈建的平台功能無法運作 （不過它已經設定的一般作業，像是相片圖庫存取） 的 Xamarin Live 播放器應用程式中。
-- 自訂的目標與建置步驟都會被忽略。 例如，工具像是 Fody、 Retit、 AutoFac，，和不能併入 AutoMapper。
+- 自訂的目標與建置步驟都會被忽略。 例如，無法納入 Fody、 Refit、 AutoFac 和 AutoMapper 等工具。
 - F # 專案不支援 Android 和 iOS 上的支援有限
 - 不支援進階的案例，以自訂的泛型類別和介面。
 

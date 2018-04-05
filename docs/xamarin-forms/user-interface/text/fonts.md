@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: e492bee2b43f2be54f450550e3f44e7da3de258e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 09328e1c6d884898aed86f2cb8ab1b84bf6d5cab
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="fonts"></a>字型
 
@@ -135,7 +135,7 @@ Xamarin.Forms 控制顯示文字全都有`Font`可以在 Xaml 中設定的屬性
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-若要指定多個`Font`設定，結合成單一的字型屬性字串所需的設定。 字型屬性字串的格式應為`"[font-face],[attributes],[size]"`。 參數的順序很重要，所有參數都是選擇性的與多個`attributes`可以指定，例如：
+若要指定多個`Font`設定，結合成單一的字型屬性字串所需的設定。 字型屬性字串的格式應為`"[font-face],[attributes],[size]"`。 參數的順序很重要，所有參數都是選擇性的與多重`attributes`可以指定，例如：
 
 ```xaml
 <Label Text="Small bold text" FontAttributes="Bold" FontSize="Micro" />

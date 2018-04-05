@@ -7,11 +7,11 @@ ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 87bddc8d541167cef350658ac69f8aaac6d6a2ee
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6f7de8724a16e8c9c900123ce7da79d33b51a08c
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="matrix-transforms"></a>矩陣轉換
 
@@ -321,7 +321,7 @@ SKMatrix.RotateDegrees(ref R, degrees, px, py);
 
 這些方法都會執行*不*串連旋轉轉換至現有的轉換。 方法會將矩陣的所有資料格。 它們是在功能上等於`MakeRotation`和`MakeRotationDegrees`方法不同之處在於它們不具現化`SKMatrix`值。
 
-假設您有`SKPath`您想要顯示，但您想使用它有稍有不同的方向或不同的中心點的物件。 您可以藉由呼叫修改該路徑的所有座標[ `Transform` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Transform/p/SkiaSharp.SKMatrix/)方法`SKPath`與`SKMatrix`引數。 **路徑轉換**頁面會示範如何執行這項操作。 [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs)類別參考`HendecagramPath`但套用至該路徑的轉換使用其建構函式的欄位中的物件：
+假設您有`SKPath`您想要顯示，但您想使用它有稍有不同的方向或不同的中心點的物件。 您可以藉由呼叫修改該路徑的所有座標[ `Transform` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Transform/p/SkiaSharp.SKMatrix/)方法`SKPath`與`SKMatrix`引數。 **路徑轉換**頁面會示範如何執行這項操作。 [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs)類別參考`HendecagramPath`但套用至該路徑的轉換使用其建構函式的欄位中的物件：
 
 ```csharp
 public class PathTransformPage : ContentPage
@@ -438,15 +438,15 @@ SKRect transformedRect = matrix.MapRect(rect);
 
 仿射轉換的操作有初步的一種方式是以互動方式移動螢幕上的點陣圖的三個角，並查看哪些轉換結果。 這是背後的概念**顯示仿射矩陣**頁面。 此頁面需要兩個其他的示範中也會使用其他類別：
 
-[ `TouchPoint` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/TouchPoint.cs)類別會顯示可以拖曳出來，放在螢幕上的半透明圓形。 `TouchPoint` 要求`SKCanvasView`或為其父系的項目`SKCanvasView`有[ `TouchEffect` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/TouchEffect.cs)附加。 將 `Capture` 屬性設定為 `true`。 在`TouchAction`事件處理常式，程式必須呼叫`ProcessTouchEvent`方法中的`TouchPoint`每個`TouchPoint`執行個體。 方法會傳回`true`如果觸控事件導致移動觸控點。 此外，`PaintSurface`處理常式必須呼叫`Paint`中每個方法`TouchPoint`執行個體，傳遞給它來`SKCanvas`物件。
+[ `TouchPoint` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs)類別會顯示可以拖曳出來，放在螢幕上的半透明圓形。 `TouchPoint` 要求`SKCanvasView`或為其父系的項目`SKCanvasView`有[ `TouchEffect` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs)附加。 將 `Capture` 屬性設定為 `true`。 在`TouchAction`事件處理常式，程式必須呼叫`ProcessTouchEvent`方法中的`TouchPoint`每個`TouchPoint`執行個體。 方法會傳回`true`如果觸控事件導致移動觸控點。 此外，`PaintSurface`處理常式必須呼叫`Paint`中每個方法`TouchPoint`執行個體，傳遞給它來`SKCanvas`物件。
 
 `TouchPoint` 示範一般方式 SkiaSharp 視覺效果，可以封裝在個別的類別。 類別可以定義來指定特性的視覺效果上，屬性和方法命名為`Paint`與`SKCanvas`引數可以轉譯它。
 
 `Center`屬性`TouchPoint`表示物件的位置。 這個屬性可以設定為初始化的位置。當使用者拖曳到畫布四周的圓圈屬性變更。
 
-**仿射矩陣網頁顯示**也需要[ `MatrixDisplay` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/MatrixDisplay.cs)類別。 這個類別會顯示的資料格`SKMatrix`物件。 它有兩個公用方法：`Measure`取得的轉譯矩陣中，維度和`Paint`加以顯示。 這個類別包含`MatrixPaint`型別的屬性`SKPaint`，可以在不同的字型的大小或色彩取代。
+**仿射矩陣網頁顯示**也需要[ `MatrixDisplay` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/MatrixDisplay.cs)類別。 這個類別會顯示的資料格`SKMatrix`物件。 它有兩個公用方法：`Measure`取得的轉譯矩陣中，維度和`Paint`加以顯示。 這個類別包含`MatrixPaint`型別的屬性`SKPaint`，可以在不同的字型的大小或色彩取代。
 
-[ **ShowAffineMatrixPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml)檔案會具現化`SKCanvasView`並附加`TouchEffect`。 [ **ShowAffineMatrixPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs)程式碼後置檔案會建立三個`TouchPoint`物件，然後將它們設定為對應至載入從內嵌點陣圖的三個角的位置資源：
+[ **ShowAffineMatrixPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml)檔案會具現化`SKCanvasView`並附加`TouchEffect`。 [ **ShowAffineMatrixPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs)程式碼後置檔案會建立三個`TouchPoint`物件，然後將它們設定為對應至載入從內嵌點陣圖的三個角的位置資源：
 
 ```csharp
 public partial class ShowAffineMatrixPage : ContentPage

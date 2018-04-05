@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 274c8e9a79fa3fadff14f1174d86aad04d902b05
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 46ab21aa5156a6deab5952f165917cc299b500ac
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="dots-and-dashes"></a>句點和連字號
 
@@ -29,7 +29,7 @@ SkiaSharp 可讓您繪製線條，不是實線，而是句點和連字號所組�
 
 不過，`StrokeCap`設定`SKPaint`物件也會影響這些句點和連字號。 您會發現，這個陣列的元素，有影響。
 
-點和虛線示範上**點和虛線**頁面。 [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml)檔案會呈現兩個`Picker`檢視時，可讓您選取的筆觸 cap 和選取虛線陣列的第二個的其中一個：
+點和虛線示範上**點和虛線**頁面。 [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml)檔案會呈現兩個`Picker`檢視時，可讓您選取的筆觸 cap 和選取虛線陣列的第二個的其中一個：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -92,7 +92,7 @@ SkiaSharp 可讓您繪製線條，不是實線，而是句點和連字號所組�
 
 中的前三個項目`dashArrayPicker`假設筆劃寬度為 10 個像素為單位。 {10，10} 陣列為虛線，{30，10} 為虛線，和 {10，10，30，10} 是點虛線的線條。 （其他三個將討論很快。）
 
-[ `DotsAndDashesPage`程式碼後置檔案](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs)包含`PaintSurface`事件處理常式和幾個 helper 常式存取`Picker`檢視：
+[ `DotsAndDashesPage`程式碼後置檔案](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs)包含`PaintSurface`事件處理常式和幾個 helper 常式存取`Picker`檢視：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -168,7 +168,7 @@ Windows 螢幕顯示點和虛線程式行及筆劃覆蓋的`Round`。 `Round`筆
 
 到目前為止沒有提及發出第二個參數的`SKPathEffect.CreateDash`方法。 此參數之所以名為`phase`它是指點和虛線圖樣的一行的開頭的位移。 例如，如果虛線陣列是 {10，10} 和`phase`為 10，則行開頭的間距，而不是一個點。
 
-一個有趣的應用程式的`phase`參數是在動畫。 **動畫老舊**頁面是類似於**Archimedean 老舊**頁面上，不同處在於[ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs)類別以動畫方式顯示`phase`參數。 此頁面也會示範另一個動畫的方法。 先前的範例[ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs)用`Task.Delay`方法，以控制動畫。 這個範例會改為使用 Xamarin.Forms`Device.Timer`方法：
+一個有趣的應用程式的`phase`參數是在動畫。 **動畫老舊**頁面是類似於**Archimedean 老舊**頁面上，不同處在於[ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs)類別以動畫方式顯示`phase`參數。 此頁面也會示範另一個動畫的方法。 先前的範例[ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs)用`Task.Delay`方法，以控制動畫。 這個範例會改為使用 Xamarin.Forms`Device.Timer`方法：
 
 
 ```csharp

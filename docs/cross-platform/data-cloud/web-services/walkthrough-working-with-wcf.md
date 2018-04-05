@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: 7f6885415e1b5e0c988d13fe331703213b9b8fb7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1b317c4c82ec736c7f4c8306036e43cf04086a82
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>逐步解說-使用 WCF
 
@@ -167,7 +167,6 @@ _這個逐步解說將說明如何使用 Xamarin 建置行動應用程式可以�
 1. 讓我們先設定 IIS Express 接聽外部的要求。 我們這樣可以編輯組態檔的 IIS Express 在`[solutiondirectory]\.vs\config\applicationhost.config`，如下列螢幕擷取畫面所示：
 
     [![](walkthrough-working-with-wcf-images/image05.png "我們這樣可以編輯組態檔在 solutiondirectory.vsconfigapplicationhost.config，IIS Express 中這個螢幕擷取畫面所示")](walkthrough-working-with-wcf-images/image05.png#lightbox)
-
 
     找出`site`名稱項目`HelloWorldWcfHost`。 它看起來應該類似下列的 XML 程式碼片段：
 

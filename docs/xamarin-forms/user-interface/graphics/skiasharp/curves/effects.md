@@ -7,11 +7,11 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 4097aea4079555b26b586db5ec63fa261d5e7946
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 47f5a6fdcfb6ee795f84ca8e19c0954b68a2fae9
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="path-effects"></a>路徑的效果
 
@@ -50,7 +50,7 @@ public static SKPathEffect CreateDash (Single[] intervals, Single phase)
 
 [![](effects-images/animateddottedtext-small.png "三個螢幕擷取畫面顯示動畫以點分隔的文字頁面的")](effects-images/animateddottedtext-large.png#lightbox "動畫以點分隔的文字頁面的三個螢幕擷取畫面")
 
-[ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)類別一開始會定義一些常數，也會覆寫`OnAppearing`和`OnDisappearing`動畫的方法：
+[ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)類別一開始會定義一些常數，也會覆寫`OnAppearing`和`OnDisappearing`動畫的方法：
 
 ```csharp
 public class AnimatedDottedTextPage : ContentPage
@@ -158,7 +158,7 @@ public class AnimatedDottedTextPage : ContentPage
 
 [![](effects-images/dotdashmorph-small.png "三個螢幕擷取畫面的點虛線 Morph 頁面")](effects-images/dotdashmorph-large.png#lightbox "點虛線 Morph 頁面的三個螢幕擷取畫面")
 
-[ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)類別覆寫`OnAppearing`和`OnDisappearing`方法就像前一個程式，但類別會定義`SKPaint`物件做為欄位：
+[ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)類別覆寫`OnAppearing`和`OnDisappearing`方法就像前一個程式，但類別會定義`SKPaint`物件做為欄位：
 
 ```csharp
 public class DotDashMorphPage : ContentPage
@@ -287,7 +287,7 @@ public static SKPathEffect Create1DPath (SKPath path, Single advance,
 
 `Translate`成員會造成能夠保持在相同的方向，因為它複寫沿著線條或曲線的路徑。 如`Rotate`，根據曲線一側正切函數旋轉路徑。 路徑有其正常方向的水平線。 `Morph` 類似於`Rotate`不同之處在於路徑本身也曲線要比對正在圖案線條的曲度。
 
-**1 D 路徑效果**頁面示範這三個選項。 [ **OneDimensionalPathEffectPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml)檔案會定義包含三個項目對應至列舉的三個成員的選擇器：
+**1 D 路徑效果**頁面示範這三個選項。 [ **OneDimensionalPathEffectPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml)檔案會定義包含三個項目對應至列舉的三個成員的選擇器：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -323,7 +323,7 @@ public static SKPathEffect Create1DPath (SKPath path, Single advance,
 </ContentPage>
 ```
 
-[ **OneDimensionalPathEffectPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs)程式碼後置檔案會定義三個`SKPathEffect`做為欄位的物件。 這些所有建立使用`SKPathEffect.Create1DPath`與`SKPath`使用建立的物件`SKPath.ParseSvgPathData`。 第一個是簡單的方塊、 第二個是一個菱形圖案，和第三個是一個矩形。 這些用來示範三個效果樣式：
+[ **OneDimensionalPathEffectPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs)程式碼後置檔案會定義三個`SKPathEffect`做為欄位的物件。 這些所有建立使用`SKPathEffect.Create1DPath`與`SKPath`使用建立的物件`SKPath.ParseSvgPathData`。 第一個是簡單的方塊、 第二個是一個菱形圖案，和第三個是一個矩形。 這些用來示範三個效果樣式：
 
 ```csharp
 public partial class OneDimensionalPathEffectPage : ContentPage
@@ -422,7 +422,7 @@ y = a · cosh(x / a)
 
 cosh(w / 2 / a) = 1 + h / a
 
-中的下列方法[ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)類別可藉由參考左側和右側等號做為兩個運算式會併入該相等`left`和`right`。 值較小，`left`大於`right`; 中的大型值，`left`是小於`right`。 `while`迴圈中的最佳值縮減:
+中的下列方法[ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)類別可藉由參考左側和右側等號做為兩個運算式會併入該相等`left`和`right`。 值較小，`left`大於`right`; 中的大型值，`left`是小於`right`。 `while`迴圈中的最佳值縮減:
 
 ```csharp
 float FindOptimumA(float width, float height)
@@ -551,7 +551,7 @@ public class LinkedChainPage : ContentPage
 
 （0，0） 的時間點的值區路徑是控制代碼，因此當`phase`引數會動畫、 心力都圍繞的輸送帶，或許 scooping 向上底部水和傾印出頂端似乎貯體。
 
-[ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs)類別會實作覆寫的動畫`OnAppearing`和`OnDisappearing`方法。 頁面的建構函式中定義的路徑，值區：
+[ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs)類別會實作覆寫的動畫`OnAppearing`和`OnDisappearing`方法。 頁面的建構函式中定義的路徑，值區：
 
 ```csharp
 public class ConveyorBeltPage : ContentPage
@@ -712,7 +712,7 @@ public static SKPathEffect Create2DLine (Single width, SKMatrix matrix)
 
 根據預設，規劃線是水平的。 如果`matrix`參數包含旋轉、 規劃線會朝順時針方向旋轉。
 
-**填滿影線**頁面示範這個路徑的影響。 [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs)類別做為欄位會定義三種路徑效果，它們是水平影線線條寬度為 3 的像素，並提供縮放因數，指出第一個間距相距 6 個像素。 行之間的分離，因此為 3 的像素。 第二個路徑效果是垂直規劃線寬度為 6 個像素間距 24 像素的距離 （因此分隔為 18 個像素），和第三個是斜對角影線行 12 個像素寬間距 36 佹萺慒距離。 
+**填滿影線**頁面示範這個路徑的影響。 [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs)類別做為欄位會定義三種路徑效果，它們是水平影線線條寬度為 3 的像素，並提供縮放因數，指出第一個間距相距 6 個像素。 行之間的分離，因此為 3 的像素。 第二個路徑效果是垂直規劃線寬度為 6 個像素間距 24 像素的距離 （因此分隔為 18 個像素），和第三個是斜對角影線行 12 個像素寬間距 36 佹萺慒距離。 
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -812,7 +812,7 @@ public static SKPathEffect Create2DPath (SKMatrix matrix, SKPath path)
 
 複寫的路徑通常對齊的左端和頂端邊緣螢幕，而不是被填滿的區域。 您可以藉由提供介於 0 到指定的左端和頂端旁邊的水平和垂直位移的縮放比例因素轉譯因素來覆寫這個行為。
 
-**路徑並排顯示填滿**頁面示範這個路徑的影響。 用來並排顯示區域路徑定義中的欄位為[ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs)類別。 水平和垂直座標介於 –40 到 40，這表示這個路徑是 80 個像素正方形： 
+**路徑並排顯示填滿**頁面示範這個路徑的影響。 用來並排顯示區域路徑定義中的欄位為[ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs)類別。 水平和垂直座標介於 –40 到 40，這表示這個路徑是 80 個像素正方形： 
 
 ```csharp
 public class PathTileFillPage : ContentPage
@@ -868,7 +868,7 @@ public static SKPathEffect CreateCorner (Single radius)
 
 雖然單一引數名為`radius`您必須將它設定為一半的所需的圓角半徑。 （這是基礎 Skia 程式碼的特性）。
 
-以下是`PaintSurface`中的處理常式[ `AnotherRoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs)類別：
+以下是`PaintSurface`中的處理常式[ `AnotherRoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs)類別：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -944,7 +944,7 @@ public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, U
 
 [![](effects-images/jitterexperiment-small.png "三倍抖動實驗頁面的螢幕擷取畫面")](effects-images/jitterexperiment-large.png#lightbox "Triple screenshot of the JitterExperiment page")
 
-此程式會警告並不如直接。 [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml)檔案會呈現兩個`Slider`項目和`SKCanvasView`:
+此程式會警告並不如直接。 [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml)檔案會呈現兩個`Slider`項目和`SKCanvasView`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -1000,7 +1000,7 @@ public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, U
 </ContentPage>
 ```
 
-`PaintSurface`中的處理常式[ **JitterExperimentPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs)程式碼後置檔案便稱為每當`Slider`值變更。 它會呼叫`SKPathEffect.CreateDiscrete`使用兩個`Slider`值，並使用該值來繪製矩形：
+`PaintSurface`中的處理常式[ **JitterExperimentPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs)程式碼後置檔案便稱為每當`Slider`值變更。 它會呼叫`SKPathEffect.CreateDiscrete`使用兩個`Slider`值，並使用該值來繪製矩形：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1031,7 +1031,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-您可以使用這個效果，以便填滿，在此情況下填滿區域的外框限於這些隨機的偏差。 **抖動文字**頁面將示範如何使用此路徑效果來顯示文字。 中的程式碼的大部分`PaintSurface`處理常式的[ `JitterTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs)類別專用於縮放及置中的文字：
+您可以使用這個效果，以便填滿，在此情況下填滿區域的外框限於這些隨機的偏差。 **抖動文字**頁面將示範如何使用此路徑效果來顯示文字。 中的程式碼的大部分`PaintSurface`處理常式的[ `JitterTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs)類別專用於縮放及置中的文字：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1086,7 +1086,7 @@ public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resS
 
 例如，如果`src`路徑是簡單的圓形的半徑 500，和`SKPaint`物件指定筆劃寬度為 100，則`dst`路徑會變成兩個重要同心圓，半徑為 550 半徑為 450，另一個。 此方法會呼叫`GetFillPath`因為填滿此`dst`路徑等同於繪製`src`路徑。 但您也可以繪製`dst`查看路徑外框的路徑。
 
-**點選外框以路徑**示範這項處理。 `SKCanvasView`和`TapGestureRecognizer`中執行個體化[ **TapToOutlineThePathPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml)檔案。 [ **TapToOutlineThePathPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs)程式碼後置檔案會定義三個`SKPaint`物件做為欄位，兩個進行繪製的筆觸寬度 100 和 20，並填滿的第三個：
+**點選外框以路徑**示範這項處理。 `SKCanvasView`和`TapGestureRecognizer`中執行個體化[ **TapToOutlineThePathPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml)檔案。 [ **TapToOutlineThePathPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs)程式碼後置檔案會定義三個`SKPaint`物件做為欄位，兩個進行繪製的筆觸寬度 100 和 20，並填滿的第三個：
 
 ```csharp
 public partial class TapToOutlineThePathPage : ContentPage
@@ -1239,7 +1239,7 @@ public static SKPathEffect CreateCompose (SKPathEffect outer, SKPathEffect inner
 
 [![](effects-images/catsinframe-small.png "在框架 Cats 頁面的三個螢幕擷取畫面")](effects-images/catsinframe-large.png#lightbox "Cats 中框架頁面的三個螢幕擷取畫面")
 
-[ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs)類別開始會定義數個欄位。 您可能會辨識的第一個欄位從[ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs)類別從[ **SVG 路徑資料**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)發行項。 第二個路徑根據一條線和弧線 scallop 模式的框架：
+[ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs)類別開始會定義數個欄位。 您可能會辨識的第一個欄位從[ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs)類別從[ **SVG 路徑資料**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)發行項。 第二個路徑根據一條線和弧線 scallop 模式的框架：
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1353,7 +1353,7 @@ public class CatsInFramePage : ContentPage
 
 它會使用`SKPathEffect.CreateCompose`某些抖動加入另一個路徑的效果。 您可以直接實驗您自己，但以下是稍有不同的範例：
 
-**虛線影線**虛線的規劃線與填滿橢圓形。 中的工作，大部分[ `DashedHatchLinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs)類別執行中的欄位定義的權限。 這些欄位會定義虛線效果及串聯效果。 定義為`static`因為再中參考`SKPathEffect.CreateCompose`呼叫中`SKPaint`定義：
+**虛線影線**虛線的規劃線與填滿橢圓形。 中的工作，大部分[ `DashedHatchLinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs)類別執行中的欄位定義的權限。 這些欄位會定義虛線效果及串聯效果。 定義為`static`因為再中參考`SKPathEffect.CreateCompose`呼叫中`SKPaint`定義：
 
 ```csharp
 public class DashedHatchLinesPage : ContentPage

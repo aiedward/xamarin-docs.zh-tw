@@ -7,11 +7,11 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 668b1f437b78535bd4cdf3bb3f80154dbf281a02
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c6fd0f905aceb9dddc4047abc6ad2722adf2d8e9
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>繪製弧形的三種方式
 
@@ -73,7 +73,7 @@ path.ArcTo (oval, startAngle, sweepAngle, false);
 
 這個版本的`ArcTo`從目前的位置繪製一條線弧線的開頭。這表示弧線可以是某處中間的較大的分佈。
 
-**角度弧線**頁面可讓您使用兩個滑桿來指定開始和掃掠角度。 XAML 檔案會呈現兩個`Slider`項目和`SKCanvasView`。 `PaintCanvas`中的處理常式[ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs)檔案繪製橢圓形和弧形使用兩個`SKPaint`做為欄位定義的物件：
+**角度弧線**頁面可讓您使用兩個滑桿來指定開始和掃掠角度。 XAML 檔案會呈現兩個`Slider`項目和`SKCanvasView`。 `PaintCanvas`中的處理常式[ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs)檔案繪製橢圓形和弧形使用兩個`SKPaint`做為欄位定義的物件：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -110,7 +110,7 @@ y = 橢圓形。MidY + (oval。高度 / 2) * sin(angle)
 
 `angle`值`startAngle`或`startAngle + sweepAngle`。
 
-使用兩個的角度，以定義弧形最適用於您知道您想要繪製，比方說，讓圓形圖的弧度角度長度的情況。 **分裂式圓形圖**頁面為其示範。 [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs)類別使用的內部類別來定義一些優質的資料和色彩：
+使用兩個的角度，以定義弧形最適用於您知道您想要繪製，比方說，讓圓形圖的弧度角度長度的情況。 **分裂式圓形圖**頁面為其示範。 [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs)類別使用的內部類別來定義一些優質的資料和色彩：
 
 ```csharp
 class ChartData
@@ -259,7 +259,7 @@ public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 
 可以從第二個正切函數點繼續進行分佈。
 
-**正切弧線**頁面可讓您試驗正切函數的弧形。這是衍生自的數個頁面中的第一個[ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/InteractivePage.cs)，而後者可定義幾個便利`SKPaint`物件，並執行`TouchPoint`處理：
+**正切弧線**頁面可讓您試驗正切函數的弧形。這是衍生自的數個頁面中的第一個[ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/InteractivePage.cs)，而後者可定義幾個便利`SKPaint`物件，並執行`TouchPoint`處理：
 
 ```csharp
 public class InteractivePage : ContentPage
@@ -309,7 +309,7 @@ public class InteractivePage : ContentPage
 }
 ```
 
-`TangentArcPage` 類別衍生自 `InteractivePage`。 在建構函式[ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs)檔案負責具現化，並初始化`touchPoints`陣列，以及設定`baseCanvasView`(中`InteractivePage`) 至`SKCanvasView`中具現化物件[ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml)檔案：
+`TangentArcPage` 類別衍生自 `InteractivePage`。 在建構函式[ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs)檔案負責具現化，並初始化`touchPoints`陣列，以及設定`baseCanvasView`(中`InteractivePage`) 至`SKCanvasView`中具現化物件[ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml)檔案：
 
 ```csharp
 public partial class TangentArcPage : InteractivePage
@@ -419,7 +419,7 @@ public partial class TangentArcPage : InteractivePage
 
 正切函數的弧形是適合用來建立例如圓角矩形的圓的角。 因為`SKPath`已經包含`AddRoundedRect`方法，**四捨五入 Heptagon**頁面會示範如何使用`ArcTo`捨入七個邊的多邊形的邊角。 （程式碼一般化的任何規則的多邊形）。
 
-`PaintSurface`處理常式的[ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs)類別包含一個`for`迴圈來計算 heptagon，第二個來計算從這些七個邊的中點的七個頂點的座標頂點。 然後這些中間點用來建構路徑：
+`PaintSurface`處理常式的[ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs)類別包含一個`for`迴圈來計算 heptagon，第二個來計算從這些七個邊的中點的七個頂點的座標頂點。 然後這些中間點用來建構路徑：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -543,7 +543,7 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 雖然這個方法來定義弧形聽起來複雜在遇到第一個項目，它是可定義與旋轉橢圓形弧線的唯一方法，而且這通常是當您需要與分佈的其他部分整合弧形最簡單的方法。
 
-**橢圓形弧線**頁面可讓您以互動方式設定兩個點的大小和旋轉的橢圓形。 `EllipticalArcPage`類別衍生自`InteractivePage`，而`PaintSurface`中的處理常式[ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs)程式碼後置檔案繪製四個弧形：
+**橢圓形弧線**頁面可讓您以互動方式設定兩個點的大小和旋轉的橢圓形。 `EllipticalArcPage`類別衍生自`InteractivePage`，而`PaintSurface`中的處理常式[ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs)程式碼後置檔案繪製四個弧形：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -613,7 +613,7 @@ y = 112·sin(41.8) = 75
 
 ![](arcs-images/infinitycoordinates.png "正切函數的線條和座標的兩個圓形")
 
-`PaintSurface`中的處理常式[ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs)類別放置無限大符號以便 （0，0） 點放置在頁面的中心和縮放的螢幕大小的路徑：
+`PaintSurface`中的處理常式[ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs)類別放置無限大符號以便 （0，0） 點放置在頁面的中心和縮放的螢幕大小的路徑：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
