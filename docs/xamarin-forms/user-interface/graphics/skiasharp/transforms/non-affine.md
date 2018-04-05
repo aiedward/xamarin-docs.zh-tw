@@ -7,11 +7,11 @@ ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 52bed94724d330b74a9604c54fcfebad1e562267
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8c3d39038fbaf5ed6601102a0aa16860c7a5a7a6
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="non-affine-transforms"></a>非仿射轉換
 
@@ -95,7 +95,7 @@ y' = y / （0.01·x + 1）
 
 `Persp`因為 foreshortening 建議方塊現在傾斜右側檢視器之間的距離越遠，「 檢視方塊 」 指這些資料格名稱的一部分。
 
-**測試透視圖**頁面可讓您試驗值`Persp0`和`Pers1`來初步的運作方式。 這些矩陣資料格的合理的值為很小，`Slider`在通用 Windows 平台無法正確處理它們。 若要容納 UWP 問題，這兩個`Slider`中的項目[ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml)必須初始化為範圍為 1-1:
+**測試透視圖**頁面可讓您試驗值`Persp0`和`Pers1`來初步的運作方式。 這些矩陣資料格的合理的值為很小，`Slider`在通用 Windows 平台無法正確處理它們。 若要容納 UWP 問題，這兩個`Slider`中的項目[ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml)必須初始化為範圍為 1-1:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -149,7 +149,7 @@ y' = y / （0.01·x + 1）
 </ContentPage>
 ```
 
-中的滑桿的事件處理常式[ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs)程式碼後置檔案除以值 100，讓它們 –0.01 和 0.01 之間的範圍。 此外，建構函式會載入點陣圖：
+中的滑桿的事件處理常式[ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs)程式碼後置檔案除以值 100，讓它們 –0.01 和 0.01 之間的範圍。 此外，建構函式會載入點陣圖：
 
 ```csharp
 public partial class TestPerspectivePage : ContentPage
@@ -240,7 +240,7 @@ z' = Persp0·x + Persp1·y + 1
 
 ![](non-affine-images/tapertransform.png "遭受錐形轉換方塊")
 
-[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs)類別來執行非仿射轉換這些參數為基礎的通用的計算：
+[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs)類別來執行非仿射轉換這些參數為基礎的通用的計算：
 
 - 要轉換的映像的矩形的大小
 - 列舉，指出 tapers，矩形的邊
@@ -349,7 +349,7 @@ static class TaperTransform
 }
 ```
 
-這個類別用於**錐形轉換**頁面。 XAML 檔案會呈現兩個`Picker`選取列舉值的項目和`Slider`選擇錐形分數。 [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55)處理常式結合錐形轉換具有兩個轉譯進行相對於點陣圖左上角轉換的轉換：
+這個類別用於**錐形轉換**頁面。 XAML 檔案會呈現兩個`Picker`選取列舉值的項目和`Slider`選擇錐形分數。 [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55)處理常式結合錐形轉換具有兩個轉譯進行相對於點陣圖左上角轉換的轉換：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -398,7 +398,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](non-affine-images/shownonaffinematrix-small.png "顯示非仿射矩陣頁面的三個螢幕擷取畫面")](non-affine-images/shownonaffinematrix-large.png#lightbox "的 [顯示非仿射矩陣] 頁面上的三個螢幕擷取畫面")
 
-只要您不要嘗試建立點陣圖的四個端點的其中一個內部角度大於 180 度，或建立彼此相交的兩個邊，程式成功地計算轉換使用這個方法從[ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs)類別：
+只要您不要嘗試建立點陣圖的四個端點的其中一個內部角度大於 180 度，或建立彼此相交的兩個邊，程式成功地計算轉換使用這個方法從[ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs)類別：
 
 ```csharp
 static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint ptLL, SKPoint ptLR)
@@ -459,7 +459,7 @@ static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint p
 
 在右邊最後座標是四個觸控點相關聯的四個點。 這些是最終點陣圖的邊角的座標。
 
-W 和 H 代表點陣圖的高度與寬度。 第一個轉換 (`S`) 只是可調整為 1 像素矩形的點陣圖。 第二個轉換為非仿射轉換`N`，和第三個是仿射轉換`A`。 該仿射轉換根據三個點，因此有就像先前仿射[ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68)方法，而且不包含的第四個資料列 (a、 b） 點。
+W 和 H 代表點陣圖的高度與寬度。 第一個轉換 (`S`) 只是可調整為 1 像素矩形的點陣圖。 第二個轉換為非仿射轉換`N`，和第三個是仿射轉換`A`。 該仿射轉換根據三個點，因此有就像先前仿射[ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68)方法，而且不包含的第四個資料列 (a、 b） 點。
 
 `a`和`b`，讓仿射轉換第三個計算值。 程式碼取得仿射轉換的反向，並且會使用將該對應右下角。 這點 (a、 b)。
 

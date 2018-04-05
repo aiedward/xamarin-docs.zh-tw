@@ -7,11 +7,11 @@ ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 67c4330d8e446a407dec7792fe5f40cdd9d23c22
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3ebe153ead2bb62b19ad6b25bf0093e20bf15c04
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="integrating-with-xamarinforms"></a>使用 Xamarin.Forms 整合
 
@@ -22,9 +22,9 @@ Xamarin.Forms 其餘幾種方式可以整合 SkiaSharp 圖形。 您可以結合
 ![](integration-images/integrationexample.png "選取的色彩與滑桿")
 
 建立互動式 SkiaSharp 圖形，在 Xamarin.Forms 中的另一種方法是透過觸控。
-中的第二頁[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式有權使用**點選切換填滿**。 它繪製簡單的圓形兩種方式&mdash;填滿而填滿&mdash;切換點選。 [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)類別示範如何修改 SkiaSharp 圖形，以回應使用者輸入。
+中的第二頁[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式有權使用**點選切換填滿**。 它繪製簡單的圓形兩種方式&mdash;填滿而填滿&mdash;切換點選。 [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)類別示範如何修改 SkiaSharp 圖形，以回應使用者輸入。
 
-此頁面上，針對`SKCanvasView`類別具現化中[TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml)檔案，也會設定 Xamarin.Forms [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)檢視：
+此頁面上，針對`SKCanvasView`類別具現化中[TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml)檔案，也會設定 Xamarin.Forms [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)檢視：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -99,7 +99,7 @@ public static SKColor FromHsv (Single h, Single s, Single v, Byte a)
 
 在這兩種情況下，`h`引數範圍從 0 到 360。 `s`， `l`，和`v`引數的範圍從 0 到 100。 `a` （alpha 或不透明度） 引數的範圍從 0 到 255 之間。
 
-[ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml)檔案會建立兩個`SKCanvasView`中的物件`StackLayout`與並存`Slider`和`Label`檢視可讓使用者選取 HSL 和HSV 色彩值：
+[ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml)檔案會建立兩個`SKCanvasView`中的物件`StackLayout`與並存`Slider`和`Label`檢視可讓使用者選取 HSL 和HSV 色彩值：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -181,7 +181,7 @@ public static SKColor FromHsv (Single h, Single s, Single v, Byte a)
 
 這兩個`SKCanvasView`單一儲存格內項目為`Grid`與`Label`坐在最上層顯示結果的 RGB 色彩值。
 
-[ **ColorExplorePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs)程式碼後置檔案是相當簡單。 共用`ValueChanged`三個處理常式`Slider`項目只是使兩者`SKCanvasView`項目。 `PaintSurface`處理常式所指定的色彩與清除畫布`Slider`項目，而且也設`Label`坐最上層的`SKCanvasView`項目：
+[ **ColorExplorePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs)程式碼後置檔案是相當簡單。 共用`ValueChanged`三個處理常式`Slider`項目只是使兩者`SKCanvasView`項目。 `PaintSurface`處理常式所指定的色彩與清除畫布`Slider`項目，而且也設`Label`坐最上層的`SKCanvasView`項目：
 
 ```csharp
 public partial class ColorExplorePage : ContentPage

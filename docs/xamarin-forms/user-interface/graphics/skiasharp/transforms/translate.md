@@ -7,11 +7,11 @@ ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 573848186a8f389ac18e22ea4c3b7d4fe1503449
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 98bf81df3eed951893c6bb717d933cfb61e029d3
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="the-translate-transform"></a>轉換轉換
 
@@ -35,7 +35,7 @@ public void Translate (Single dx, Single dy)
 public void Translate (SKPoint point)
 ```
 
-**累積轉譯**頁面[ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式範例示範多個呼叫的`Translate`方法將會累計。 [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs)類別會顯示相同的矩形的 20 版本，每個位移從先前的矩形只足以讓它們沿著對角線 stretch。 以下是`PaintSurface`事件處理常式：
+**累積轉譯**頁面[ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式範例示範多個呼叫的`Translate`方法將會累計。 [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs)類別會顯示相同的矩形的 20 版本，每個位移從先前的矩形只足以讓它們沿著對角線 stretch。 以下是`PaintSurface`事件處理常式：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -78,7 +78,7 @@ y' = y + dy
 
 這些值稱為*轉換公式*翻譯。 預設值`dx`和`dy`對新`SKCanvas`為 0。
 
-通常會使用轉換轉換陰影效果和類似的技術，做為**翻譯文字效果**頁面示範。 以下是相關的部分`PaintSurface`中的處理常式[ `TranslateTextEffectsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs)類別：
+通常會使用轉換轉換陰影效果和類似的技術，做為**翻譯文字效果**頁面示範。 以下是相關的部分`PaintSurface`中的處理常式[ `TranslateTextEffectsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs)類別：
 
 ```csharp
 float textSize = 150;
@@ -137,7 +137,7 @@ using (SKPaint textPaint = new SKPaint())
 
 不過，您不需要擔心轉換執行從一個呼叫的`PaintSurface`至下一個處理常式。 每個新呼叫`PaintSurface`傳遞從頭`SKCanvas`預設轉換的物件。
 
-另一個常見用途`Translate`轉換是呈現視覺物件已原先建立使用座標，這會很方便的繪圖。 例如，您可以指定中心點 （0，0） 與類比時鐘的座標。 您接著可以使用轉換來顯示您想要的位置。 這示範於 [**Hendecagram 陣列**] 頁面。 [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs)類別一開始會建立`SKPath`11 星形的物件。 `HendecagramPath`物件定義為公用、 靜態以及唯讀，因此它可以從其他示範程式存取。 它會在靜態建構函式所建立的：
+另一個常見用途`Translate`轉換是呈現視覺物件已原先建立使用座標，這會很方便的繪圖。 例如，您可以指定中心點 （0，0） 與類比時鐘的座標。 您接著可以使用轉換來顯示您想要的位置。 這示範於 [**Hendecagram 陣列**] 頁面。 [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs)類別一開始會建立`SKPath`11 星形的物件。 `HendecagramPath`物件定義為公用、 靜態以及唯讀，因此它可以從其他示範程式存取。 它會在靜態建構函式所建立的：
 
 ```csharp
 public class HendecagramArrayPage : ContentPage
@@ -211,7 +211,7 @@ public class HendecagramArrayPage : ContentPage
 
 [![](translate-images/hendecagramarray-small.png "三個螢幕擷取畫面的 Hendecagram 陣列頁面")](translate-images/hendecagramarray-large.png#lightbox "Hendecagram 陣列頁面的三個螢幕擷取畫面")
 
-動畫通常需要轉換。 **Hendecagram 動畫**頁面移動 11 星形的圓形。 [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs)類別開頭的某些欄位，並覆寫的`OnAppearing`和`OnDisappearing`啟動和停止 Xamarin.Forms 計時器的方法：
+動畫通常需要轉換。 **Hendecagram 動畫**頁面移動 11 星形的圓形。 [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs)類別開頭的某些欄位，並覆寫的`OnAppearing`和`OnDisappearing`啟動和停止 Xamarin.Forms 計時器的方法：
 
 ```csharp
 public class HendecagramAnimationPage : ContentPage

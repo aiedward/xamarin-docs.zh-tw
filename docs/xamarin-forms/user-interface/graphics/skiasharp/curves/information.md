@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 998c804f02eed808c0a1493b054e754a7670aa70
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 82ac4ea49462c7520219e1a621ea3946297b1b45
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="path-information-and-enumeration"></a>路徑資訊和列舉
 
@@ -31,7 +31,7 @@ _取得路徑的相關資訊，並列舉內容_
 
 [ `SKPathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/)類別可以幫助。 [建構函式](https://developer.xamarin.com/api/constructor/SkiaSharp.SKPathMeasure.SKPathMeasure/p/SkiaSharp.SKPath/System.Boolean/System.Single/)接受`SKPath`引數，而[ `Length` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPathMeasure.Length/)屬性會顯示它的長度。
 
-這示範於**路徑長度**範例，根據**貝茲曲線**頁面。 [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml)檔案衍生自`InteractivePage`並包含觸控介面：
+這示範於**路徑長度**範例，根據**貝茲曲線**頁面。 [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml)檔案衍生自`InteractivePage`並包含觸控介面：
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -52,7 +52,7 @@ _取得路徑的相關資訊，並列舉內容_
 </local:InteractivePage>
 ```
 
-[ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs)程式碼後置檔案，可讓您將四個觸控點，來定義結束點，以及控制三次方貝茲曲線的點。 三個欄位定義文字字串，`SKPaint`物件，並計算的寬度的文字：
+[ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs)程式碼後置檔案，可讓您將四個觸控點，來定義結束點，以及控制三次方貝茲曲線的點。 三個欄位定義文字字串，`SKPaint`物件，並計算的寬度的文字：
 
 ```csharp
 public partial class PathLengthPage : InteractivePage
@@ -242,7 +242,7 @@ SKPathVerb pathVerb = rawIterator.Next(points);
 
 有問題的動作，不過，是`Close`。 此命令從目前的位置繪製直線的稍早建立的分佈開頭`Move`命令。 在理想情況下，`Close`動詞命令應該提供這些兩個點，而不是一個點。 更糟的是在於點隨附`Close`動詞一定是 （0，0）。 這表示，當您透過路徑列舉時，您可能需要保留`Move`點和目前的位置。
 
-靜態[ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathExtensions.cs)類別包含數種方法，將三種類型的貝茲曲線轉換成一系列的近似曲線的小直線。 (發行項中顯示的參數化的公式[**三種類型的貝茲曲線**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)。)`Interpolate`細分成許多較短的行就是只有一個單位的長度為直線的方法：
+靜態[ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs)類別包含數種方法，將三種類型的貝茲曲線轉換成一系列的近似曲線的小直線。 (發行項中顯示的參數化的公式[**三種類型的貝茲曲線**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)。)`Interpolate`細分成許多較短的行就是只有一個單位的長度為直線的方法：
 
 ```csharp
 static class PathExtensions
@@ -426,7 +426,7 @@ static class PathExtensions
 
 [![](information-images/globulartext-small.png "三個螢幕擷取畫面的 Globular 文字頁面")](information-images/globulartext-large.png#lightbox "Globular 文字頁面的三個螢幕擷取畫面")
 
-[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs)類別建構函式會執行這項轉換。 它會建立`SKPaint`物件的文字，並接著取得`SKPath`物件從`GetTextPath`方法。 這是傳遞至的路徑`CloneWithTransform`擴充方法，以及轉換函式： 
+[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs)類別建構函式會執行這項轉換。 它會建立`SKPaint`物件的文字，並接著取得`SKPath`物件從`GetTextPath`方法。 這是傳遞至的路徑`CloneWithTransform`擴充方法，以及轉換函式： 
 
 ```csharp
 public class GlobularTextPage : ContentPage

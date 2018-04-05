@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 77005665d163e7f9f62325b94cc5c779a7873f78
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c0b793a495278d91429045d7e396917d02c1412e
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="paths-and-text"></a>路徑和文字
 
@@ -45,7 +45,7 @@ public SKPath GetTextPath (String text, Single x, Single y)
 
 [![](text-paths-images/clippingtext-small.png "三個螢幕擷取畫面的結束時間裁剪文字頁面")](text-paths-images/clippingtext-large.png#lightbox "裁剪文字頁面的三個螢幕擷取畫面")
 
-[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs)類別建構函式載入點陣圖儲存為內嵌資源中**媒體**方案的資料夾：
+[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs)類別建構函式載入點陣圖儲存為內嵌資源中**媒體**方案的資料夾：
 
 ```csharp
 public class ClippingTextPage : ContentPage
@@ -126,7 +126,7 @@ public class ClippingTextPage : ContentPage
 
 [![](text-paths-images/textpatheffect-small.png "文字路徑效果頁面的三個螢幕擷取畫面")](text-paths-images/textpatheffect-large.png#lightbox "文字路徑效果頁面的三個螢幕擷取畫面")
 
-中的工作更[ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs)類別中的欄位和建構函式，就會發生。 這兩個`SKPaint`物件定義欄位適用於兩個不同的用途如下： 第一個 (名為`textPathPaint`) 用來轉換以連字號`TextSize`的 50%到 1d 路徑效果的路徑。 第二個 (`textPaint`) 用來顯示的連字號，並且將該路徑的影響較大的版本。 基於這個原因，`Style`這個第二個 [小畫家] 的物件設定為`Stroke`，但`StrokeWidth`屬性沒有設定，因為該屬性就不需要使用 1d 路徑效果時：
+中的工作更[ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs)類別中的欄位和建構函式，就會發生。 這兩個`SKPaint`物件定義欄位適用於兩個不同的用途如下： 第一個 (名為`textPathPaint`) 用來轉換以連字號`TextSize`的 50%到 1d 路徑效果的路徑。 第二個 (`textPaint`) 用來顯示的連字號，並且將該路徑的影響較大的版本。 基於這個原因，`Style`這個第二個 [小畫家] 的物件設定為`Stroke`，但`StrokeWidth`屬性沒有設定，因為該屬性就不需要使用 1d 路徑效果時：
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -213,7 +213,7 @@ public class TextPathEffectPage : ContentPage
 
 您也可以呼叫`GetFillPath`從傳回的路徑上`GetTextPath`但是一開始您可能無法完全確定所希望的外觀。
 
-**字元大綱外框輪廓**頁面示範的技術。 所有相關的程式碼位於`PaintSurface`處理常式的[ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs)類別。
+**字元大綱外框輪廓**頁面示範的技術。 所有相關的程式碼位於`PaintSurface`處理常式的[ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs)類別。
 
 建構函式一開始會建立`SKPaint`名為物件`textPaint`與`TextSize`屬性根據頁面大小。 這會轉換成路徑，使用`GetTextPath`方法。 座標的引數`GetTextPath`有效地置中在螢幕上的路徑：
 
@@ -287,7 +287,7 @@ public Void DrawTextOnPath (String text, SKPath path, Single hOffset, Single vOf
 
 這個方法沒有功能設定會提供指引`TextSize`屬性`SKPaint`，使大小完全執行路徑的開頭到結尾的文字。 有時候您可以找出您自己的文字大小。 有時候，您必須使用路徑測量函數，以在未來的發行項中說明。
 
-**循環文字**程式圓形周圍包裝文字。 所以可以輕鬆地判斷圓的圓周，因此很容易就能調整大小以完全符合的文字。 `PaintSurface`處理常式的[ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs)類別計算根據頁面大小圓形的半徑。 該圓圈會變成`circularPath`:
+**循環文字**程式圓形周圍包裝文字。 所以可以輕鬆地判斷圓的圓周，因此很容易就能調整大小以完全符合的文字。 `PaintSurface`處理常式的[ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs)類別計算根據頁面大小圓形的半徑。 該圓圈會變成`circularPath`:
 
 ```csharp
 public class CircularTextPage : ContentPage

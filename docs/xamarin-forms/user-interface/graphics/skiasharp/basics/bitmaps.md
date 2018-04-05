@@ -7,11 +7,11 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2017
-ms.openlocfilehash: b86068c2ed5063c25f76e81fdf477550b1437984
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 688c6218f9ac66e3dfd6cd157e43f9b639e124c6
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="bitmap-basics"></a>點陣圖的基本概念
 
@@ -29,7 +29,7 @@ SkiaSharp 點陣圖必須是類型的物件[ `SKBitmap` ](https://developer.xama
 - 從可執行檔中內嵌的資源
 - 從使用者的相片程式庫
 
-三個`SKBitmap`物件做為欄位中定義這些三個來源[ `BasicBitmapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/BasicBitmapsPage.cs)類別：
+三個`SKBitmap`物件做為欄位中定義這些三個來源[ `BasicBitmapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/BasicBitmapsPage.cs)類別：
 
 ```csharp
 public class BasicBitmapsPage : ContentPage

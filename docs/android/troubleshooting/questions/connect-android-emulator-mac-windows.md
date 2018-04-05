@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: a04258e6056b4572856d4ec05c40effec4e51910
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4afe2b9fab8eeebb3f0451379b8e3937cc8d8f55
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>它可以連接至 Android 模擬器在 Mac 上從執行 Windows VM？
 
@@ -41,7 +41,7 @@ ms.lasthandoff: 04/04/2018
     ```bash
     cd /tmp
     mkfifo backpipe
-    nc -kl 5555 0 < backpipe | nc 127.0.0.1 5555 > backpipe
+    nc -kl 5555 0<backpipe | nc 127.0.0.1 5555 > backpipe
     ```
 
     只要`nc`命令執行維持在 Terminal 視窗中，如預期般，將會轉送封包。 您可以輸入控制項 C 以結束終端機視窗`nc`命令完成之後使用模擬器。

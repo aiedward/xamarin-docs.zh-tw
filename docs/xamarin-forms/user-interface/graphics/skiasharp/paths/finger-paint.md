@@ -7,11 +7,11 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: 9f7e3f64122f3b95291973d032aaf507dfbc8fab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 95c023d702d165b7a8a0ba392b2f87af58bfae07
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="finger-painting"></a>手指繪製
 
@@ -27,7 +27,7 @@ _您可以使用手指在畫布上繪製。_
 
 **手指小畫家**頁面**SkiaSharpFormsDemos**是指繪製的簡單的實作。 不允許選取色彩或繪製寬度，它沒有方法可以清除畫布，而且當然您無法儲存您的作品。
 
-[ **FingerPaintPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml)檔案置於`SKCanvasView`中單一儲存格`Grid`並附加`TouchEffect`的`Grid`:
+[ **FingerPaintPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml)檔案置於`SKCanvasView`中單一儲存格`Grid`並附加`TouchEffect`的`Grid`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -50,7 +50,7 @@ _您可以使用手指在畫布上繪製。_
 
 附加`TouchEffect`直接`SKCanvasView`不會在所有平台運作。
 
-[ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml.cs)程式碼後置檔案會定義兩個集合，用於儲存`SKPath`物件，以及`SKPaint`轉譯這些路徑的物件：
+[ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml.cs)程式碼後置檔案會定義兩個集合，用於儲存`SKPath`物件，以及`SKPaint`轉譯這些路徑的物件：
 
 ```csharp
 public partial class FingerPaintPage : ContentPage

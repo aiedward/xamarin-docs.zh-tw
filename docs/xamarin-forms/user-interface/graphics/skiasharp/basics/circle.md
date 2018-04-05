@@ -7,11 +7,11 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: a718d051c2bf04e75c87b0e4a18aced4824802ba
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e5b18bd6a565639e2ca22f4637a67c4f48717f6
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="drawing-a-simple-circle"></a>繪製簡單的圓形
 
@@ -19,11 +19,11 @@ _了解 SkiaSharp 繪圖，包括畫布和繪製的基本概念_
 
 本文介紹的概念使用 SkiaSharp，包括建立 Xamarin.Forms 中繪製圖形`SKCanvasView`物件來裝載的圖形，處理`PaintSurface`事件，並使用`SKPaint`物件，以指定色彩和其他的繪圖屬性。
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式包含此一系列的 SkiaSharp 發行項的所有範例程式碼。 第一頁有權使用**簡單圓形**並叫用網頁類別[ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)。 此程式碼會示範如何繪製圓形半徑為 100 像素為單位的頁面中央。 外框的圓形是紅色，、 圓形的內部是藍色。
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式包含此一系列的 SkiaSharp 發行項的所有範例程式碼。 第一頁有權使用**簡單圓形**並叫用網頁類別[ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)。 此程式碼會示範如何繪製圓形半徑為 100 像素為單位的頁面中央。 外框的圓形是紅色，、 圓形的內部是藍色。
 
 ![](circle-images/circleexample.png "加上紅框藍色圓形")
 
-[ `SimpleCirle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)頁面類別衍生自`ContentPage`和包含兩個`using`SkiaSharp 命名空間指示詞：
+[ `SimpleCirle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)頁面類別衍生自`ContentPage`和包含兩個`using`SkiaSharp 命名空間指示詞：
 
 ```csharp
 using SkiaSharp;

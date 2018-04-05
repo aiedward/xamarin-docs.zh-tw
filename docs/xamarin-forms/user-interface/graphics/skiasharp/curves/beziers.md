@@ -7,11 +7,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 312d487111f8e36170c97ca7a29fb91556c72569
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c5142a3abcc6d461bc277faeb02e3aacd9727bca
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>三種類型的貝茲曲線
 
@@ -46,7 +46,7 @@ public void CubicTo (Single x1, Single y1, Single x2, Single y2, Single x3, Sing
 
 結果曲線開始點開始，而結束於結束點。 曲線通常不會通過兩個控制點。而是它們函式多 like 磁鐵提取朝向它們曲線。
 
-初步的三次方貝茲曲線的最佳方式是實驗。 這是目的**貝茲曲線**頁面上，衍生自`InteractivePage`。 [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml)檔案會具現化`SKCanvasView`和`TouchEffect`。 [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs)程式碼後置檔案會建立四個`TouchPoint`其建構函式中的物件。 `PaintSurface`事件處理常式建立`SKPath`呈現貝茲曲線，根據四個`TouchPoint`物件，並也繪製虛線正切函數控點從至結束點：
+初步的三次方貝茲曲線的最佳方式是實驗。 這是目的**貝茲曲線**頁面上，衍生自`InteractivePage`。 [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml)檔案會具現化`SKCanvasView`和`TouchEffect`。 [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs)程式碼後置檔案會建立四個`TouchPoint`其建構函式中的物件。 `PaintSurface`事件處理常式建立`SKPath`呈現貝茲曲線，根據四個`TouchPoint`物件，並也繪製虛線正切函數控點從至結束點：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -128,7 +128,7 @@ L = 4 × tan(α / 4) / 3
 
 下圖顯示某個角度的 45 度，因此 L 等於 0.265。 在程式碼，該值會乘以所需，圓形的半徑。
 
-**貝茲圓弧**頁面可讓您試驗定義的貝茲曲線，來模擬圓弧範圍最多 180 度的角度。 [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml)檔案會具現化`SKCanvasView`和`Slider`選取角度。 `PaintSurface`中的事件處理常式[ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs)程式碼後置檔案會使用轉換來設定畫布的中心點 （0，0）。 它繪製在進行比較，該點上置中的圓形，然後再計算貝茲曲線的兩個控制點：
+**貝茲圓弧**頁面可讓您試驗定義的貝茲曲線，來模擬圓弧範圍最多 180 度的角度。 [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml)檔案會具現化`SKCanvasView`和`Slider`選取角度。 `PaintSurface`中的事件處理常式[ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs)程式碼後置檔案會使用轉換來設定畫布的中心點 （0，0）。 它繪製在進行比較，該點上置中的圓形，然後再計算貝茲曲線的兩個控制點：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -216,7 +216,7 @@ float Magnitude(SKPoint v)
 
 如果圓形的半徑為 100，則*L*是 55，而這是要記住的簡單號碼。
 
-**Number 圓形**頁面繪製的圖形間圓形與方形。 在這個陣列定義的第一個資料行中顯示其座標的四個貝茲曲線近似於圓形[ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs)類別：
+**Number 圓形**頁面繪製的圖形間圓形與方形。 在這個陣列定義的第一個資料行中顯示其座標的四個貝茲曲線近似於圓形[ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs)類別：
 
 ```csharp
 public class SquaringTheCirclePage : ContentPage
@@ -292,7 +292,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 沒有以演算法有足夠的彈性來呈現為圓弧及直線的曲線就無法使用這類動畫。
 
-**貝茲無限大**頁面也會利用貝茲曲線的能力，來模擬圓弧。以下是`PaintSurface`處理常式[ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs)類別：
+**貝茲無限大**頁面也會利用貝茲曲線的能力，來模擬圓弧。以下是`PaintSurface`處理常式[ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs)類別：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -359,7 +359,7 @@ public void QuadTo (Single x1, Single y1, Single x2, Single y2)
 
 方法會從目前的位置，以便新增曲線`point2`與`point1`為控制項控點。
 
-您可以試驗二次方貝茲曲線**二次方曲線**頁面上，非常類似於**貝茲曲線**頁面上，除了它有只有三個觸控點。 以下是`PaintSurface`中的處理常式[ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs)程式碼後置檔案：
+您可以試驗二次方貝茲曲線**二次方曲線**頁面上，非常類似於**貝茲曲線**頁面上，除了它有只有三個觸控點。 以下是`PaintSurface`中的處理常式[ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs)程式碼後置檔案：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -436,7 +436,7 @@ public void ConicTo (Single x1, Single y1, Single x2, Single y2, Single weight)
 
 請注意最終`weight`參數。
 
-**Conic 曲線**頁面可讓您試驗這些曲線。 `ConicCurvePage` 類別衍生自 `InteractivePage`。 [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml)檔案會具現化`Slider`選取 2 – 2 之間的加權值。 [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs)程式碼後置檔案會建立三個`TouchPoint`物件，而`PaintSurface`處理常式只會轉譯結果曲線正切函數的行至控制項重點：
+**Conic 曲線**頁面可讓您試驗這些曲線。 `ConicCurvePage` 類別衍生自 `InteractivePage`。 [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml)檔案會具現化`Slider`選取 2 – 2 之間的加權值。 [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs)程式碼後置檔案會建立三個`TouchPoint`物件，而`PaintSurface`處理常式只會轉譯結果曲線正切函數的行至控制項重點：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -490,7 +490,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 您可以使用三角函數來判斷的距離，從圓心的控制點： 它是除以一半的角度 α 的餘弦，圓形的半徑。 若要開始和結束點之間繪製圓弧，將加權設定為該相同一半的角度餘弦。 請注意，如果角度是 180 度，然後切線永遠無法符合加權值是零。 不過，如角度小於 180 度、 數學可以正常運作。
 
-**Conic 圓弧**頁面為其示範。 [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml)檔案會具現化`Slider`選取角度。 `PaintSurface`中的處理常式[ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs)控制項控點和重量，計算程式碼後置檔案：
+**Conic 圓弧**頁面為其示範。 [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml)檔案會具現化`Slider`選取角度。 `PaintSurface`中的處理常式[ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs)控制項控點和重量，計算程式碼後置檔案：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

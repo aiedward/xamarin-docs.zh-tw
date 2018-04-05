@@ -7,11 +7,11 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: dd9694a05632cd5f37cb583d15bc93311a49cfdc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e01d3e228a0684865fb09dd7a4cbb0e2f0b49125
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>像素與裝置無關的單位
 
@@ -31,7 +31,7 @@ _瀏覽 SkiaSharp 座標和 Xamarin.Forms 座標之間的差異_
 - [ `CanvasSize` ](https://developer.xamarin.com/api/property/SkiaSharp.Views.Forms.SKCanvasView.CanvasSize/)屬性`SKCanvasView`物件。
 - [ `Size` ](https://developer.xamarin.com/api/property/SkiaSharp.SKImageInfo.Size/)屬性`SKImageInfo`值，這是與一致`Width`和`Height`用於兩個的前幾頁的內容。
 
-[ `SurfaceSizePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SurfaceSizePage.cs)類別示範如何顯示這些值。 此建構函式會儲存`SKCanvasView`物件做為欄位，以便在存取`PaintSurface`事件處理常式：
+[ `SurfaceSizePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SurfaceSizePage.cs)類別示範如何顯示這些值。 此建構函式會儲存`SKCanvasView`物件做為欄位，以便在存取`PaintSurface`事件處理常式：
 
 ```csharp
 SKCanvasView canvasView;
@@ -114,7 +114,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 public void DrawOval (Single cx, Single cy, Single rx, Single ry, SKPaint paint)
 ```
 
-它可能會繪製填滿顯示介面的橢圓形？ **填滿橢圓形**頁面會示範如何。 `PaintSurface`中的事件處理常式[ **EllipseFillPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/EllipseFillPage.xaml.cs)類別減去的筆劃寬度的一半從`xRadius`和`yRadius`值以符合整個橢圓形和其顯示介面中將概略說明：
+它可能會繪製填滿顯示介面的橢圓形？ **填滿橢圓形**頁面會示範如何。 `PaintSurface`中的事件處理常式[ **EllipseFillPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/EllipseFillPage.xaml.cs)類別減去的筆劃寬度的一半從`xRadius`和`yRadius`值以符合整個橢圓形和其顯示介面中將概略說明：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

@@ -7,11 +7,11 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 7ea99612f85a853bcd045b773df0a01f33427a89
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fe9699894224d9a33b3a79e9b5bcd4cd41c635dd
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="svg-path-data"></a>SVG 路徑資料
 
@@ -147,7 +147,7 @@ T x2 y2 ...
 
 [ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/)方法是很方便用來取得從現有的 SVG 路徑資料`SKPath`物件傳送至另一個程式，或將儲存在以文字為基礎的檔案格式，例如 XML。 (`ToSvgPathData`方法不會在本文中的範例程式碼中示範。)請勿*不*預期`ToSvgPathData`傳回完全對應的方法呼叫，建立路徑的字串。 特別是，您會發現弧形會轉換成多個`QuadTo`命令，而這就是它們是如何出現在所傳回的資料路徑`ToSvgPathData`。
 
-**路徑資料 Hello**網頁魔法出文字"HELLO"的 SVG 路徑資料。 同時`SKPath`和`SKPaint`為中的欄位會定義物件[ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs)類別：
+**路徑資料 Hello**網頁魔法出文字"HELLO"的 SVG 路徑資料。 同時`SKPath`和`SKPaint`為中的欄位會定義物件[ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs)類別：
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -218,7 +218,7 @@ public class PathDataHelloPage : ContentPage
 
 [![](path-data-images/pathdatahello-small.png "路徑資料 Hello 頁面的三個螢幕擷取畫面")](path-data-images/pathdatahello-large.png#lightbox "路徑資料 Hello 頁面的三個螢幕擷取畫面")
 
-**路徑資料 Cat**頁面是類似。 路徑和小畫家物件兩者都定義為中的欄位[ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs)類別：
+**路徑資料 Cat**頁面是類似。 路徑和小畫家物件兩者都定義為中的欄位[ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs)類別：
 
 ```csharp
 public class PathDataCatPage : ContentPage
@@ -291,7 +291,7 @@ public class PathDataCatPage : ContentPage
 
 通常，當`SKPath`物件會定義為欄位，必須定義路徑的輪廓，建構函式或另一個方法中。 當使用 SVG 路徑的資料，不過，您就已經看到可以完全在欄位定義中指定的路徑。
 
-舊版**醜陋類比時鐘**範例[**旋轉轉換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)文章為簡單的線條顯示時鐘指針。 **相當類比時鐘**下列的程式會取代這些與行`SKPath`物件定義中的欄位為[ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs)類別連同`SKPaint`物件：
+舊版**醜陋類比時鐘**範例[**旋轉轉換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)文章為簡單的線條顯示時鐘指針。 **相當類比時鐘**下列的程式會取代這些與行`SKPath`物件定義中的欄位為[ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs)類別連同`SKPaint`物件：
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage

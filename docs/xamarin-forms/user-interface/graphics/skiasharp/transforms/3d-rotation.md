@@ -7,11 +7,11 @@ ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 47daca2ab94f718aeb5ce474c87edce3c3bd77a4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2f5562475db17b7451fe7cb2ee8bbf4ccb782a87
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="3d-rotations"></a>3D 旋轉
 
@@ -221,7 +221,7 @@ X 值時繞著 Y 軸，然後正數正面角度的 2D 物件會循環 recede 負
 
 當使用`SKMatrix44`，乘以各種執行所有的 3D 旋轉和檢視方塊作業`SKMatrix44`值。 然後您可以從 x 4 4 擷取的二維 3-3 矩陣矩陣使用[ `Matrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Matrix/)屬性`SKMatrix44`類別。 這個屬性會傳回熟悉`SKMatrix`值。
 
-**旋轉 3D**頁面可讓您試驗 3D 旋轉。 [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml)檔案具現化的四個滑桿，以設定繞 X、 Y 和 Z 軸，並設定深度值：
+**旋轉 3D**頁面可讓您試驗 3D 旋轉。 [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml)檔案具現化的四個滑桿，以設定繞 X、 Y 和 Z 軸，並設定深度值：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -302,7 +302,7 @@ X 值時繞著 Y 軸，然後正數正面角度的 2D 物件會循環 recede 負
 
 請注意，`depthSlider`初始化`Minimum`值為 250。 這表示這裡旋轉的 2D 物件具有限制為 250 像素半徑的原點所定義的圓形的 X 和 Y 座標。 此物件在 3D 空間中的任何輪替永遠會導致小於 250 座標值。
 
-[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs)為 300 像素正方形點陣圖中載入的程式碼後置檔案：
+[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs)為 300 像素正方形點陣圖中載入的程式碼後置檔案：
 
 ```csharp
 public partial class Rotation3DPage : ContentPage
