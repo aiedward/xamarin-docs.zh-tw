@@ -1,18 +1,17 @@
 ---
-title: "將 Xamarin.Android 安裝為系統應用程式"
-description: "本指南會討論系統應用程式與使用者應用程式的差異，以及如何將 Xamarin.Android 應用程式安裝為系統應用程式。 本指南適用於自訂 Android ROM 映像的作者。 它不會說明如何建立自訂 ROM。"
-ms.topic: article
+title: 將 Xamarin.Android 安裝為系統應用程式
+description: 本指南會討論系統應用程式與使用者應用程式的差異，以及如何將 Xamarin.Android 應用程式安裝為系統應用程式。 本指南適用於自訂 Android ROM 映像的作者。 它不會說明如何建立自訂 ROM。
 ms.prod: xamarin
 ms.assetid: 0113143B-7D8D-4C4C-B2F5-B966A2E7CE1F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: ad2080c61c9cc7fb376997bc56668b6db135dbae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 94f2108a55cea520782aa5eac959195be09929b5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="installing-xamarinandroid-as-a-system-app"></a>將 Xamarin.Android 安裝為系統應用程式
 

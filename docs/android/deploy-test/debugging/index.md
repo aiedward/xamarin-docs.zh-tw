@@ -1,18 +1,17 @@
 ---
 title: 偵錯
 description: 如何針對您的 Xamarin.Android 應用程式進行測試和偵錯
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: A355A471-8195-4391-93FE-0000BCB17923
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/16/2018
-ms.openlocfilehash: 61d7bb1b84b225146c5ebc67e9dc89b2b17a8c21
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: 429a369ddcd11829920f9fb932a737d1a53cec10
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="debugging"></a>偵錯
 

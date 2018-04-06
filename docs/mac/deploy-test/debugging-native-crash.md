@@ -1,18 +1,17 @@
 ---
-title: "針對原生損毀進行偵錯"
-description: "本指南說明如何針對源自 Objective-C 執行階段的例外狀況進行偵錯。"
-ms.topic: article
+title: 針對原生損毀進行偵錯
+description: 本指南說明如何針對源自 Objective-C 執行階段的例外狀況進行偵錯。
 ms.prod: xamarin
 ms.assetid: B0C0CE31-2737-4969-8EA5-D39D3333E9C2
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: d8633a3f575b51d4eeac326cc5ea418fcbf5bd20
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 211f85c32fae3ed947e01890916e0a646981a51b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="debugging-a-native-crash"></a>針對原生損毀進行偵錯
 

@@ -1,17 +1,16 @@
 ---
-title: "APK 擴充檔"
-ms.topic: article
+title: APK 擴充檔
 ms.prod: xamarin
 ms.assetid: DB7E38E8-3C4E-5191-27EA-22DE63044FE2
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 3431791d51858df2013634e1594ee960a10728da
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f2ca86fb27b5bd4b6cb7ba855fbd0a2abfa1381d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="apk-expansion-files"></a>APK 擴充檔
 

@@ -1,18 +1,17 @@
 ---
-title: "無線部署"
-description: "此功能可讓您透過網路連線來部署至 iOS 或 Apple TV 裝置"
-ms.topic: article
+title: 無線部署
+description: 此功能可讓您透過網路連線來部署至 iOS 或 Apple TV 裝置
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/09/2018
-ms.openlocfilehash: 7566669fb7d607ca6616b88cb32b770537146c94
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: b331ea61915b4f202aa971658a5a54d1a8038d64
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="wireless-deployment"></a>無線部署
 

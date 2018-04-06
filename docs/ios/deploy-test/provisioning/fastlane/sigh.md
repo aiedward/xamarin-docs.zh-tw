@@ -1,17 +1,16 @@
 ---
-title: "適用於 iOS 的 fastlane - sigh"
-ms.topic: article
+title: 適用於 iOS 的 fastlane - sigh
 ms.prod: xamarin
 ms.assetid: CD17276F-2C8C-4A46-A54C-DD532EBD5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 2c6ac298ca2040bb2d3619be080fb1387fbfd3a0
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ee04569fbfff84eafc5f813e6a25cbf6ad53f033
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="fastlane-for-ios--sigh"></a>適用於 iOS 的 fastlane - sigh
 

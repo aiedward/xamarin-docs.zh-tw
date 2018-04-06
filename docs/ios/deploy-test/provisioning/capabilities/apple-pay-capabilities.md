@@ -1,18 +1,17 @@
 ---
 title: Apple Pay 功能
 description: 為應用程式新增功能通常需要額外的佈建設定。 本指南說明 Apple Pay 功能所需的設定。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 735CC916-16A4-471B-87F7-0535E24288D7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 655e9fc81d7079c355998f0da7b41ea7cc778c3f
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: c389dc4831009d760e4a6a810b5b3c01637c822e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="apple-pay-capabilities"></a>Apple Pay 功能
 

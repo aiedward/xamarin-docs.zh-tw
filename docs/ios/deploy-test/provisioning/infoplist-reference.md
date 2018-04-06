@@ -1,17 +1,16 @@
 ---
-title: "Info.plist 參考"
-ms.topic: article
+title: Info.plist 參考
 ms.prod: xamarin
 ms.assetid: 944DFDB5-ADBA-4D6E-984C-5AEC19A1CC57
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/18/2017
-ms.openlocfilehash: 7732419af22ab8bd37cbfbf828dc59e48841217f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8ad2c5e8137dede71d9858aa144e440d984c1a75
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="infoplist-reference"></a>Info.plist 參考
 

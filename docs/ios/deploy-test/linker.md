@@ -1,17 +1,16 @@
 ---
-title: "在 iOS 上連結"
-ms.topic: article
+title: 在 iOS 上連結
 ms.prod: xamarin
 ms.assetid: 3A4B2178-F264-0E93-16D1-8C63C940B2F9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/24/2017
-ms.openlocfilehash: 2ee5da1b2c5d4c8fbf405c7f28ed280a3286a025
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 1d83a152c0949abe0221f6eb6dfb42f4e79eaf38
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="linking-on-ios"></a>在 iOS 上連結
 

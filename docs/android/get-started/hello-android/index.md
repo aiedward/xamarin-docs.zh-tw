@@ -1,18 +1,18 @@
 ---
 title: Hello, Android
-description: "在這份含有兩部分的指南中，您將會建置您的第一個 Xamarin.Android 應用程式 (使用 Visual Studio for Mac 或 Visual Studio)，以及了解使用 Xamarin 進行 Android 應用程式開發的基本知識。 在過程中，將會介紹建置和部署 Xamarin.Android 應用程式所需的工具、概念和步驟。"
-ms.topic: article
+description: 在這份含有兩部分的指南中，您將會建置您的第一個 Xamarin.Android 應用程式 (使用 Visual Studio for Mac 或 Visual Studio)，以及了解使用 Xamarin 進行 Android 應用程式開發的基本知識。 在過程中，將會介紹建置和部署 Xamarin.Android 應用程式所需的工具、概念和步驟。
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: C6474F70-3617-46AD-93E8-BE66878EEC17
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/02/2016
-ms.openlocfilehash: 8c48238071084c734768296fefe7056fcc55cabf
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: da6dabed58bedcbcaf1191c16a790e055184c95a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-android"></a>Hello, Android
 

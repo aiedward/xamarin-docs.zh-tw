@@ -1,18 +1,17 @@
 ---
-title: "iCloud 功能"
-description: "為應用程式新增功能通常需要額外的佈建設定。 本指南說明 iCloud 功能所需的設定。"
-ms.topic: article
+title: iCloud 功能
+description: 為應用程式新增功能通常需要額外的佈建設定。 本指南說明 iCloud 功能所需的設定。
 ms.prod: xamarin
 ms.assetid: 3CBAC982-D8DE-48DD-97CD-32B551D9DB85
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 22a1cd8a300533560f617fd60fc99474922247d0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7e18bff7f32303cb0c5016e4ade4b39723921534
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="icloud-capabilities"></a>iCloud 功能
 

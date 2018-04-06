@@ -1,18 +1,17 @@
 ---
-title: "我的 Mac 在哪裡?"
-description: "說明如何設定 Mac for Visual Studio 以建置 Xamarin.iOS 專案"
-ms.topic: article
+title: 我的 Mac 在哪裡?
+description: 說明如何設定 Mac for Visual Studio 以組建 Xamarin.iOS 專案
 ms.prod: xamarin
 ms.assetid: 4f792690-b3b1-4d56-a5e2-363b4f246059
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 491d7cea4b88fa44bb15e76dd92ecd5216ce9984
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f3e2988c9700549db24ad69277df9e412c99caed
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="wheres-my-mac"></a>我的 Mac 在哪裡?
 
@@ -49,4 +48,4 @@ _說明如何設定 Mac for Visual Studio 以建置 Xamarin.iOS 專案_
 
 如果您使用舊版 Xamarin for Visual Studio，就會熟悉 **Xamarin.iOS Build Host** 應用程式，此應用程式需要在 Mac 上啟動，然後透過 PIN 碼與 Visual Studio 執行個體進行「配對」。
 
-這一版的 Xamarin for Visual Studio 已不再需要建置主機應用程式。
+這一版的 Xamarin for Visual Studio 已不再需要組建主機應用程式。

@@ -1,17 +1,16 @@
 ---
-title: "尋找您的金鑰存放區簽章"
-ms.topic: article
+title: 尋找您的金鑰存放區簽章
 ms.prod: xamarin
 ms.assetid: 1b511fec-e6f6-453e-89c8-810aafb02b77
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: a0d773a9c66edd5f77e84b03d994a6a1f1297855
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 46b43e6689f751c4fac1e8668234fce7f953521e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="finding-your-keystores-signature"></a>尋找您的金鑰存放區簽章
 

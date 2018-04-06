@@ -1,18 +1,17 @@
 ---
-title: "部署及測試"
-description: "穩定和部署指南"
-ms.topic: article
+title: 部署及測試
+description: 穩定和部署指南
 ms.prod: xamarin
 ms.assetid: 2DBF3BF9-79E7-4E24-AF26-E34C972B0169
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: f051e855c9d32f5c9667dc70c7cb9cf9ba8105fb
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 515ea8e63f8309c46a7d802af1daafcb0c483762
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="deployment-and-testing"></a>部署及測試
 

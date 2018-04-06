@@ -1,18 +1,17 @@
 ---
-title: "佈建設定檔"
-description: "本指南逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要佈建設定檔。"
-ms.topic: article
+title: 佈建設定檔
+description: 本指南逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要佈建設定檔。
 ms.prod: xamarin
 ms.assetid: bdff6c32-f7e3-4a97-a093-dbda48be8227
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/12/2017
-ms.openlocfilehash: dab923f6150bdf005e9468add6d26d4fdb691a93
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4f3120c45de5022dca1e522be251f453f9f5b4c7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="provisioning-profiles"></a>佈建設定檔
 

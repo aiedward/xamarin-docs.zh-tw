@@ -1,18 +1,18 @@
 ---
-title: "Hello, Android：深度剖析"
-description: "在這份含有兩部分的指南中，您將會建置您的第一個 Xamarin.Android 應用程式，以及了解使用 Xamarin 進行 Android 應用程式開發的基本知識。 在過程中，將會為您介紹建置和部署 Xamarin.Android 應用程式所需的工具、概念和步驟。"
-ms.topic: article
+title: Hello, Android：深度剖析
+description: 在這份含有兩部分的指南中，您將會建置您的第一個 Xamarin.Android 應用程式，以及了解使用 Xamarin 進行 Android 應用程式開發的基本知識。 在過程中，將會為您介紹建置和部署 Xamarin.Android 應用程式所需的工具、概念和步驟。
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: EF0E110B-20EA-43F6-9476-1A0F41AFD298
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: e9e554da80218d2e89ff79c6e89886d707b1ed95
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: bae3e7323596cc88f2b76aceeb5a4d1df4ce2d0c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android：深度剖析
 

@@ -1,18 +1,17 @@
 ---
-title: "部署及測試"
-description: "穩定指南"
-ms.topic: article
+title: 部署及測試
+description: 穩定指南
 ms.prod: xamarin
 ms.assetid: D02C62C9-47D1-4E72-8A83-602C3E7929BE
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/07/2017
-ms.openlocfilehash: ff8a54a835b382dc949ec7d84169d85e6614a3df
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 720250997dc4c5431d946e41f835185759ef1e15
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="deployment-and-testing"></a>部署及測試
 

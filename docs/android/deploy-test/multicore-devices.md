@@ -1,18 +1,17 @@
 ---
-title: "多核心裝置和 Xamarin.Android"
-description: "Android 可以在數種不同的電腦架構上執行。 本文件會討論可供 Xamarin.Android 應用程式運用的不同 CPU 架構。 本文件也會說明如何封裝 Android 應用程式以支援不同的 CPU 架構。 文中會介紹應用程式二進位介面 (ABI)，並提供在 Xamarin.Android 應用程式中要使用哪些 ABI 的相關指導方針。"
-ms.topic: article
+title: 多核心裝置和 Xamarin.Android
+description: Android 可以在數種不同的電腦架構上執行。 本文件會討論可供 Xamarin.Android 應用程式運用的不同 CPU 架構。 本文件也會說明如何封裝 Android 應用程式以支援不同的 CPU 架構。 文中會介紹應用程式二進位介面 (ABI)，並提供在 Xamarin.Android 應用程式中要使用哪些 ABI 的相關指導方針。
 ms.prod: xamarin
 ms.assetid: D812883C-A14A-E74B-0F72-E50071E96328
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: ac525805fce99f44ea1efb132fb99f6d3a01f2f3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0288ba6aa8a3c9eb89208161f60ba831723444c5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>多核心裝置和 Xamarin.Android
 

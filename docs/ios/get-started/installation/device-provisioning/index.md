@@ -1,18 +1,17 @@
 ---
-title: "裝置佈建"
-description: "成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。 本指南將探索如何要求開發憑證和設定檔、使用應用程式服務，以及將應用程式部署至裝置。"
-ms.topic: article
+title: 裝置佈建
+description: 成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。 本指南將探索如何要求開發憑證和設定檔、使用應用程式服務，以及將應用程式部署至裝置。
 ms.prod: xamarin
 ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: 3ff77e909c86e627a6a1ea4875d8bef7db3f8d63
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: e04ebd041c64d474fafe12c387f558e740773c98
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="device-provisioning"></a>裝置佈建
 

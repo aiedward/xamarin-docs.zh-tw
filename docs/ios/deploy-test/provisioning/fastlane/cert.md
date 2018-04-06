@@ -1,17 +1,16 @@
 ---
-title: "適用於 iOS 的 fastlane - cert"
-ms.topic: article
+title: 適用於 iOS 的 fastlane - cert
 ms.prod: xamarin
 ms.assetid: 900FA6FF-F3C9-4D35-993E-B0D88E6B1883
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a37b0dc1418fd9dda5c59723a96c20855c1c3e1b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0b9db3d7b8f28e4b3e1bbb1ec167c73414845be3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="fastlane-for-ios--cert"></a>適用於 iOS 的 fastlane - cert
 

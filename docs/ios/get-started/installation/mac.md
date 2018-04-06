@@ -1,18 +1,17 @@
 ---
-title: "安裝"
-description: "本教學課程說明 Xamarin.iOS 的安裝路徑。"
-ms.topic: article
+title: 安裝
+description: 本教學課程說明 Xamarin.iOS 的安裝路徑。
 ms.prod: xamarin
 ms.assetid: 625A0933-47A5-6184-3AD5-7E1C8464AEBD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8fe41323cbb5bd241957b166523f245fa0206c48
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 580c322f4dc2239f4397afcefd9403c612f34bb1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="installing-and-configuring-xamarinios-on-mac"></a>在 Mac 上安裝及設定 Xamarin.iOS
 

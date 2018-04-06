@@ -1,18 +1,18 @@
 ---
 title: Hello, Xamarin.Forms
-description: "本指南提供使用 Visual Studio for Mac 或 Visual Studio 開發 Xamarin.Forms 應用程式，以及使用 Xamarin.Forms 開發應用程式之基礎概念的簡介。 涵蓋的主題包括建置和部署 Xamarin.Forms 應用程式所需的工具、概念和步驟。"
-ms.topic: article
+description: 本指南提供使用 Visual Studio for Mac 或 Visual Studio 開發 Xamarin.Forms 應用程式，以及使用 Xamarin.Forms 開發應用程式之基礎概念的簡介。 涵蓋的主題包括建置和部署 Xamarin.Forms 應用程式所需的工具、概念和步驟。
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: af79e4ef-99c6-4a17-b5d1-95ab652ac7ab
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 786b22ccc6a3e1fcba2ddbe8813aada33cfdda4e
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: a06bd03d7df45719b132f7cb1d9a46455dc75ddf
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-xamarinforms"></a>Hello, Xamarin.Forms
 

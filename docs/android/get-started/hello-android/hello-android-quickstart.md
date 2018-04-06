@@ -1,18 +1,18 @@
 ---
 title: Hello, Android：快速入門
 description: 在這份含有兩部分的指南中，您將會建置您的第一個 Xamarin.Android 應用程式 (使用 Visual Studio 或 Visual Studio for Mac)，以及了解使用 Xamarin 進行 Android 應用程式開發的基本知識。 在過程中，將會為您介紹建置和部署 Xamarin.Android 應用程式所需的工具、概念和步驟。
-ms.topic: article
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: bbe243b108be6e0060ba9067db58a9875c7b5153
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: c5937cc86a8a1f8506b14774b0429bee3c8aa594
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android：快速入門
 
@@ -476,7 +476,7 @@ translateButton.Click += (sender, e) =>
 };
 ```
 
-選取 [建置] > [Build All] (全部建置) (或按 **&#8984; + B**) 儲存工作並建置應用程式。 如果應用程式會編譯，您會在 Visual Studio for Mac 的頂端看到成功訊息：
+選取 [建置] > [Build All] (全部建置) (或按 **& #8984; + B**) 儲存工作並建置應用程式。 如果應用程式會編譯，您會在 Visual Studio for Mac 的頂端看到成功訊息：
 
 如果發生錯誤，請完成上述步驟，並更正任何錯誤，直到應用程式建置成功為止。 如果您收到建置錯誤，例如「資源不存在於目前的內容」，請確認 **MainActivity.cs** 中的命名空間名稱符合專案名稱 (`Phoneword`)，然後完全重建解決方案。 如果您仍然得到建置錯誤，請確認您已安裝最新的 Xamarin.Android 和 Visual Studio for Mac 更新。
 

@@ -1,17 +1,16 @@
 ---
-title: "手動上傳 APK"
-ms.topic: article
+title: 手動上傳 APK
 ms.prod: xamarin
 ms.assetid: 1309C251-ABF0-4412-B1F5-200DC8321A9D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 37e38ddd84b50709bec147c54cdfa9f79404a39f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3bfddb315d74e6282004edeb10a35271dce3b9c5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="manually-uploading-the-apk"></a>手動上傳 APK
 

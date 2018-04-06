@@ -1,18 +1,18 @@
 ---
 title: Hello, Mac
 description: 本指南逐步解說建立第一個 Xamarin.Mac 應用程式的步驟，並在程序中導入開發工具鏈，包括 Visual Studio for Mac、Xcode 和 Interface Builder。 它也導入將 UI 控制項公開到程式碼的「輸出」和「動作」，最後並說明如何建置、執行及測試 Xamarin.Mac 應用程式。
-ms.topic: article
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 37D0E9E6-979B-7069-B3BE-C5F0AF99BA72
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 635577bbc35d9e80147ecf7e1a59540099f85b9d
-ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
+ms.openlocfilehash: e5d87d42765480c97da392cf07b6599108895321
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-mac"></a>Hello, Mac
 

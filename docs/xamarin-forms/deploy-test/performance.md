@@ -1,18 +1,17 @@
 ---
-title: "Xamarin.Forms 效能"
-description: "有許多技巧可增加 Xamarin.Forms 應用程式的效能。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。 本文將描述並討論這些技巧。"
-ms.topic: article
+title: Xamarin.Forms 效能
+description: 有許多技巧可增加 Xamarin.Forms 應用程式的效能。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。 本文將描述並討論這些技巧。
 ms.prod: xamarin
 ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: a750167cb9e6bde3a4a9abe11c5386497f9a12ae
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5cc35dde80e4a0c28315589f4db127a922ba5a41
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinforms-performance"></a>Xamarin.Forms 效能
 

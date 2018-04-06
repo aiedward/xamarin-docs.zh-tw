@@ -1,18 +1,17 @@
 ---
 title: 針對 Mac App Store 進行統合
 description: 本指南逐步說明統合 Xamarin.Mac 應用程式以發行至 Mac App Store。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 00a36d7c-937d-4657-bf6a-0de9684b8f94
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: c3f94b448539b2e4073c7d8a1092df066e484dfc
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 88d813331dfce437f3668ada8f008bbbd5fdc3de
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="bundle-for-mac-app-store"></a>Mac App Store 的套件組合
 

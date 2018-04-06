@@ -1,17 +1,17 @@
 ---
-title: "Xamarin.iOS 錯誤"
-ms.topic: article
+title: Xamarin.iOS 錯誤
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9F76162B-D622-45DA-996B-2FBF8017E208
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: aeca01fdc9044f7b83f71d7b4895370188000523
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 0187b65e4c10e7cc03715a997a90fbddab9bd532
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinios-errors"></a>Xamarin.iOS 錯誤
 

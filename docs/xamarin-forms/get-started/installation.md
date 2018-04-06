@@ -1,18 +1,17 @@
 ---
-title: "Xamarin.Forms 需求"
-description: "Xamarin.Forms 的平台和開發系統需求。"
-ms.topic: article
+title: Xamarin.Forms 需求
+description: Xamarin.Forms 的平台和開發系統需求。
 ms.prod: xamarin
 ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/19/2017
-ms.openlocfilehash: fd6214f34c313db0d7a59291b73c5b29a9cc3592
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e62c82b351bab759192a4fe879a3b63754cdf0af
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms 需求
 

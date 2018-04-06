@@ -1,7 +1,6 @@
 ---
-title: "開始使用 iOS"
-description: "從 Hello World 到 Hello App Store"
-ms.topic: article
+title: 開始使用 iOS
+description: 從 Hello World 到 Hello App Store
 ms.prod: xamarin
 ms.assetid: FA802CCF-3BA4-4F26-A7BF-FBB7D0AA889B
 ms.technology: xamarin-ios
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/23/2016
-ms.openlocfilehash: 01e4d2e42f61145f220545c832bcbaf1d8a994f1
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: be25d976cc58d6c1dd0154cbdc06aab7039c544e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="getting-started-with-ios"></a>開始使用 iOS
 

@@ -1,18 +1,17 @@
 ---
-title: "使用開發人員識別碼簽署"
-description: "本指南逐步說明使用開發人員識別碼簽署 Xamarin.Mac 應用程式以供發行。"
-ms.topic: article
+title: 使用開發人員識別碼簽署
+description: 本指南逐步說明使用開發人員識別碼簽署 Xamarin.Mac 應用程式以供發行。
 ms.prod: xamarin
 ms.assetid: cf7b733b-e08f-4f56-a233-264b29ee4c97
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 46d5527a33b82a795029f62900e782d644671f0d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 1a2726ec46ac51ae9848b318798afba74183360c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="sign-with-developer-id"></a>使用開發人員識別碼簽署
 

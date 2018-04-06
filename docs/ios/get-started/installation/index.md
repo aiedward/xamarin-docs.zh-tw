@@ -1,17 +1,16 @@
 ---
-title: "Xamarin.iOS 安裝"
-ms.topic: article
+title: Xamarin.iOS 安裝
 ms.prod: xamarin
 ms.assetid: E5A29963-C8BD-465B-BFC1-7FAC9CC64BD3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 67c4278e5a32e29176e3bde209f6f8dc31e8a5cf
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 10b9e4e1abd97a82390d81ab740d753389b410b4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinios-installation"></a>Xamarin.iOS 安裝
 

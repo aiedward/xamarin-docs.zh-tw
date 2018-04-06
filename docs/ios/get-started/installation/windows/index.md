@@ -1,18 +1,17 @@
 ---
 title: 在 Windows 上安裝 Xamarin.iOS
 description: 本文說明如何設定 Xamarin.iOS for Visual Studio。 其中涵蓋 Visual Studio 之 Xamarin 擴充功能的安裝程序，並探討如何連線到安裝在 Mac 上的 Apple SDK。
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: abf85d3e-a365-44a2-b1a4-6c572c7f76dd
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/29/2017
-ms.openlocfilehash: 08bf8b2b7c56983c43cf1ae080ab112e81851fbb
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 02c4b27f12382d3c3d3eed778d1bfd92ae3f1e79
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="installing-xamarinios-on-windows"></a>在 Windows 上安裝 Xamarin.iOS
 

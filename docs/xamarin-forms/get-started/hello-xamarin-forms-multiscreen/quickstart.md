@@ -1,17 +1,16 @@
 ---
 title: Xamarin.Forms 多重畫面快速入門
-ms.topic: article
-ms.prod: xamarin
+ms.prod: quickstart
 ms.assetid: 255d93b9-518c-4e5d-a9cd-4dd8a7945a7f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 96a0ce0c2c53c1ede01afd743514c16d16f5b54e
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 268622ff8bc7ff05771096549ed694c57139366d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Xamarin.Forms 多重畫面快速入門
 

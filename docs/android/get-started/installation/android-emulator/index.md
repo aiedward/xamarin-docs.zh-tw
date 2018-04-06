@@ -1,18 +1,17 @@
 ---
-title: "Android Emulator 安裝"
-description: "本節描述如何準備 Android SDK 模擬器來測試您的應用程式。 其中說明如何加速模擬器以達到最大效能，並示範如何使用模擬器管理員來建立和自訂虛擬裝置。"
-ms.topic: article
+title: Android Emulator 安裝
+description: 本節描述如何準備 Android SDK 模擬器來測試您的應用程式。 其中說明如何加速模擬器以達到最大效能，並示範如何使用模擬器管理員來建立和自訂虛擬裝置。
 ms.prod: xamarin
 ms.assetid: 889963B7-F4DA-41D9-9B8D-B733BB71A329
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/25/2018
-ms.openlocfilehash: 55f5cf22718713fdcf11c49e0993f47c2f5a6f1d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 3c29d6b6c94abe7cc8a59486c338c0c634870d3e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-emulator-setup"></a>Android Emulator 安裝
 

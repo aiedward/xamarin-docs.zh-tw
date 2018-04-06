@@ -1,18 +1,17 @@
 ---
-title: "內部作業散發"
-description: "本文件針對 Apple Enterprise Developer Program 的成員，提供散發內部作業應用程式的概觀。"
-ms.topic: article
+title: 內部作業散發
+description: 本文件針對 Apple Enterprise Developer Program 的成員，提供散發內部作業應用程式的概觀。
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 4da96f3119fb46fbeb22ad3d6c68b3099f6d0698
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c11148928ab0fa028f9cc4a9cb50b27a0e195847
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="in-house-distribution"></a>內部作業散發
 
@@ -54,17 +53,17 @@ Apple Developer Enterprise Program 憑證將持續三年，而佈建設定檔將
 1. 瀏覽至 Apple Developer Member Center 的「憑證、識別碼與設定檔」區段。
 2. 在 [憑證] 下，選取 [生產環境]。
 3. 按一下 [+] 按鈕以建立新的憑證。
-4. 在 [生產環境] 標題下，選取 [In-House and Ad Hoc] (內部和臨機操作)：
+4. 在 [生產環境] 標題下，選取 [內部作業和臨機操作]：
 
    [ ![](in-house-distribution-images/createcertmanually01.png "選取 [In-House and Ad Hoc] \(內部和臨機操作\)")](in-house-distribution-images/createcertmanually01.png#lightbox)
 
 5. 按一下 [繼續]，並遵循指示以透過 Keychain 存取來建立憑證簽署要求：
 
-   [![](in-house-distribution-images/createcertmanually02.png "透過 Keychain 存取建立憑證簽署要求")](in-house-distribution-images/createcertmanually02.png#lightbox)
+   [![](in-house-distribution-images/createcertmanually02.png "透過 Keychain 存取來建立憑證簽署要求")](in-house-distribution-images/createcertmanually02.png#lightbox)
 
 6. 依指示建立 CSR 之後，請按一下 [繼續] 並將您的 CSR 上傳到 Member Center：
 
-   [![](in-house-distribution-images/createcertmanually03.png "將 CSR 上傳到成員中心")](in-house-distribution-images/createcertmanually03.png#lightbox)
+   [![](in-house-distribution-images/createcertmanually03.png "將 CSR 上傳到 Member Center")](in-house-distribution-images/createcertmanually03.png#lightbox)
 
 7. 按一下 [產生] 以建立您的憑證。
 8. 下載完成的憑證，並按兩下檔案以進行安裝。

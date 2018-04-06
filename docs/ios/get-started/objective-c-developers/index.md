@@ -1,17 +1,16 @@
 ---
-title: "適用於 Objective-C 開發人員的 Xamarin"
-description: "如果您是 Objective-C 開發人員，您應該已經開始在 Xamarin 平台上運用自己的技巧和現有的 Objective-C 程式碼，並享受 C# 的程式碼重複使用優勢。 本節的目的是作為 Xamarin.iOS 的進入點，並指引您取得有關使用來自 C# 之現有 Objective-C 程式碼的豐富資訊。"
-ms.topic: article
+title: 適用於 Objective-C 開發人員的 Xamarin
+description: 如果您是 Objective-C 開發人員，您應該已經開始在 Xamarin 平台上運用自己的技巧和現有的 Objective-C 程式碼，並享受 C# 的程式碼重複使用優勢。 本節的目的是作為 Xamarin.iOS 的進入點，並指引您取得有關使用來自 C# 之現有 Objective-C 程式碼的豐富資訊。
 ms.prod: xamarin
 ms.assetid: 9F3C86A3-403E-4025-99CA-99FCA86DC828
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 275cce891801cd542d202960efc3da668fa8f07b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e29762fb258f7d796878c85bfe6f7aaa93207c5e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarin-for-objective-c-developers"></a>適用於 Objective-C 開發人員的 Xamarin
 

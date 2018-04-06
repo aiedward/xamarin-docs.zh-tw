@@ -1,18 +1,17 @@
 ---
-title: "Xamarin.iOS for Visual Studio 簡介"
-description: "本文說明如何使用 Visual Studio 來組建和測試 Xamarin iOS 應用程式。 其中會說明如何使用 Visual Studio 來建立新的 iOS 專案、組建 iOS 應用程式，然後使用已連上網路的 Mac 來裝載 Apple 的編譯器和模擬器及 Xamarin 的組建工具鏈，以進行編譯、測試和偵錯。"
-ms.topic: article
+title: Xamarin.iOS for Visual Studio 簡介
+description: 本文說明如何使用 Visual Studio 來組建和測試 Xamarin iOS 應用程式。 其中會說明如何使用 Visual Studio 來建立新的 iOS 專案、組建 iOS 應用程式，然後使用已連上網路的 Mac 來裝載 Apple 的編譯器和模擬器及 Xamarin 的組建工具鏈，以進行編譯、測試和偵錯。
 ms.prod: xamarin
 ms.assetid: bf3c779f-959f-428d-babb-428f363f7e4e
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: e958b4e48767e0c2246b9f237c681fbc362f6b00
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a8264d3ebd5f294b1b77fbbafd660825d5ce5180
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio 簡介
 

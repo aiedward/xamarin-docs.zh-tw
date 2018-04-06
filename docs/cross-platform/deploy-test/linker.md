@@ -1,17 +1,16 @@
 ---
-title: "自訂連結器組態"
-ms.topic: article
+title: 自訂連結器組態
 ms.prod: xamarin
 ms.assetid: F8A99E3F-2197-4399-AC81-F1DBAB5729C9
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: d5470dfc314677dbe558bca2f3ddfa107354c752
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8b74d537d88c5a484c858e33d294352cdfd1d116
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="custom-linker-configuration"></a>自訂連結器組態
 

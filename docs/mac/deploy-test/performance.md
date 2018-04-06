@@ -1,18 +1,17 @@
 ---
-title: "Xamarin.Mac 效能"
-description: "本文提供 Xamarin.Mac 應用程式的一些效能考量。"
-ms.topic: article
+title: Xamarin.Mac 效能
+description: 本文提供 Xamarin.Mac 應用程式的一些效能考量。
 ms.prod: xamarin
 ms.assetid: 54B07DED-FDF2-49B2-A5FB-3A9357E65922
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: a10e423251a0e172722d254896fd4410dcf496b4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 273fb1980695a3dcd4a4fc2123b1ebafef1756a2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinmac-performance"></a>Xamarin.Mac 效能
 

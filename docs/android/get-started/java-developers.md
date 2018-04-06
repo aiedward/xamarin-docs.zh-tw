@@ -1,18 +1,17 @@
 ---
-title: "適用於 Java 開發人員的 Xamarin"
-description: "如果您是 Java 開發人員，您應該已經開始在 Xamarin 平台上運用自己的技巧和現有的程式碼，並享受 C# 的程式碼重複使用優勢。 您將會發現 C# 語法與 Java 語法非常類似，而且這兩種語言提供非常類似的功能。 此外，您將探索可讓開發工作更容易的 C# 特有功能。"
-ms.topic: article
+title: 適用於 Java 開發人員的 Xamarin
+description: 如果您是 Java 開發人員，您應該已經開始在 Xamarin 平台上運用自己的技巧和現有的程式碼，並享受 C# 的程式碼重複使用優勢。 您將會發現 C# 語法與 Java 語法非常類似，而且這兩種語言提供非常類似的功能。 此外，您將探索可讓開發工作更容易的 C# 特有功能。
 ms.prod: xamarin
 ms.assetid: A3B6C041-4052-4E7D-999C-C4FA10BE3D67
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/13/2018
-ms.openlocfilehash: 7abcaa218c6755a58e6f35e982a1144060df0b3b
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 29fc698e6ed1cfe02ce329813342916d5e7a1651
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarin-for-java-developers"></a>適用於 Java 開發人員的 Xamarin
 
@@ -442,7 +441,7 @@ Java 中使用的許多語言關鍵字也會在 C# 中使用。 另外有些 Jav
 |`final`|[sealed](https://msdn.microsoft.com/en-us/library/88c54tsw.aspx)|防止類別衍生；防止方法和屬性在衍生類別中遭到覆寫。|
 |`instanceof`|[is](https://msdn.microsoft.com/en-us/library/scekt9xw.aspx)|評估物件是否可與指定的類型相容。|
 |`native`|[extern](https://msdn.microsoft.com/en-us/library/e59b22c5.aspx)|宣告在外部實作的方法。|
-|`package`|[命名空間](https://msdn.microsoft.com/en-us/library/z2kcy19k.aspx)|宣告一組相關物件的範圍。|
+|`package`|[namespace](https://msdn.microsoft.com/en-us/library/z2kcy19k.aspx)|宣告一組相關物件的範圍。|
 |`T...`|[params T](https://msdn.microsoft.com/en-us/library/w5zay9db.aspx)|指定採用可變數目之引數的方法參數。|
 |`super`|[base](https://msdn.microsoft.com/en-us/library/hfw7t1ce.aspx)|用來存取衍生類別中父類別的成員。|
 |`synchronized`|[lock](https://msdn.microsoft.com/en-us/library/c5kehkcz.aspx)|包裝含有鎖定取得和釋放的重要程式碼區段。|

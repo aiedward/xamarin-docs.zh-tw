@@ -1,18 +1,17 @@
 ---
-title: "憑證和識別碼"
-description: "本指南逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要憑證與識別碼。"
-ms.topic: article
+title: 憑證和識別碼
+description: 本指南逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要憑證與識別碼。
 ms.prod: xamarin
 ms.assetid: 393d0066-7f6f-4ac3-a48d-4b5db65bc4cd
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a1065fb91a23827c4876654470cda5022aa1d3b8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d94819be2c014aec5edfae19959ce949ee8dcd4b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="certificates-and-identifiers"></a>憑證和識別碼
 

@@ -1,17 +1,16 @@
 ---
-title: "行動裝置應用程式開發簡介"
-ms.topic: article
+title: 行動裝置應用程式開發簡介
 ms.prod: xamarin
 ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: d3a39070e17729e99614e26e0a8892c6314512af
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2f3950509134d3f643f0ea63b6725c1b4fe38409
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-mobile-development"></a>行動裝置應用程式開發簡介
 

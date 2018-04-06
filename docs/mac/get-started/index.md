@@ -1,18 +1,17 @@
 ---
-title: "Mac 使用者入門"
-description: "Xamarin.Mac 簡介"
-ms.topic: article
+title: Mac 使用者入門
+description: Xamarin.Mac 簡介
 ms.prod: xamarin
 ms.assetid: 6CE7C634-6495-3517-B004-21C9EBF4C462
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 181da9a88f58b0d6265a164ec1c7b7c285430448
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 66bd2509c6b35d4391a9d04ad955b4a22cd9d39a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="getting-started-with-mac"></a>Mac 使用者入門
 

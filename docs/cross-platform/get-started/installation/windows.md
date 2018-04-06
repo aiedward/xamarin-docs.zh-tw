@@ -1,17 +1,16 @@
 ---
-title: "在 Windows 上的 Visual Studio 中安裝 Xamarin"
-ms.topic: article
+title: 在 Windows 上的 Visual Studio 中安裝 Xamarin
 ms.prod: xamarin
 ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 09/29/2017
-ms.openlocfilehash: b15c9b05a4e476353322c6d29e94267313460bfe
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 3a2de7154ac0ac00bb18fed65ec29173e7133eb3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="installing-xamarin-in-visual-studio-on-windows"></a>在 Windows 上的 Visual Studio 中安裝 Xamarin
 

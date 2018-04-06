@@ -1,18 +1,17 @@
 ---
-title: "Android Emulator 硬體加速"
-description: "如何準備您的電腦以達到最大的 Android SDK 模擬器效能"
-ms.topic: article
+title: Android Emulator 硬體加速
+description: 如何準備您的電腦以達到最大的 Android SDK 模擬器效能
 ms.prod: xamarin
 ms.assetid: 915874C3-2F0F-4D83-9C39-ED6B90BB2C8E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/22/2017
-ms.openlocfilehash: 7560900ace62a737ac765bcfe93f759f8985aca2
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f074bca7571188b14a36bd4e6c59a6fdf8df9339
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Android Emulator 硬體加速
 

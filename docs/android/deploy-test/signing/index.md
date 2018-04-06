@@ -1,17 +1,16 @@
 ---
-title: "簽署 Android 應用程式套件"
-ms.topic: article
+title: 簽署 Android 應用程式套件
 ms.prod: xamarin
 ms.assetid: 8E3EFBB2-F8AD-C126-5F32-7FD140791E53
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/26/2018
-ms.openlocfilehash: 56d6eea891de3aef8efbe1a971ce3af96ffd8fab
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ba936137dd868e9ba5eabc6df89bb98a0a178ba2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="signing-the-android-application-package"></a>簽署 Android 應用程式套件
 
@@ -65,7 +64,7 @@ ms.lasthandoff: 03/12/2018
 **C:\\Users\\*USERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\chimp\\chimp.keystore**
 
 > [!NOTE]
-> 務必將產生的金鑰儲存區檔案備份到安全的位置。&ndash;請不要將它包含在方案中。 如果您遺失金鑰儲存區檔案 (例如，因為您移至另一部電腦，或重新安裝 Windows)，您將無法使用與舊版相同的憑證來簽署應用程式。
+> 請務必將所產生的金鑰儲存區檔案備份到安全的位置。&ndash;解決方案不包含此檔案。 如果您遺失金鑰儲存區檔案 (例如，因為您移至另一部電腦，或重新安裝 Windows)，您將無法使用與舊版相同的憑證來簽署應用程式。
 
 如需金鑰儲存區的詳細資訊，請參閱[尋找金鑰儲存區的 MD5 或 SHA1 簽章](~/android/deploy-test/signing/keystore-signature.md)。
 

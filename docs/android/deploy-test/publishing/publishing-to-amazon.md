@@ -1,17 +1,16 @@
 ---
-title: "發行至 Amazon App Store"
-ms.topic: article
+title: 發行至 Amazon App Store
 ms.prod: xamarin
 ms.assetid: A3E9EAC7-2968-8891-CDF2-B73FC0013EC9
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: 9bae3c56c5f6c445618f41d877c3188a86167be1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4805b9685328c5848bcdeab6a0fbaa0c5ed67844
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>發行至 Amazon App Store
 

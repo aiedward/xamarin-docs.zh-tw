@@ -1,17 +1,16 @@
 ---
-title: "手動安裝"
-ms.topic: article
+title: 手動安裝
 ms.prod: xamarin
 ms.assetid: a4edda7a-ed4f-4e8a-9904-1716e86a7f78
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0329536b86be8f9025f6716c2d4c1072c3889bee
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 1bb4688637dc15a61aae27a3dec54bfdc21c0e72
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="manual-installation"></a>手動安裝
 

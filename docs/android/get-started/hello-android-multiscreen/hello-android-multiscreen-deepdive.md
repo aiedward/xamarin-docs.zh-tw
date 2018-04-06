@@ -1,18 +1,18 @@
 ---
-title: "Hello, Android 多重畫面：深度剖析"
-description: "在這份含有兩部分的指南中，會擴充在 Hello, Android 指南中所建立的 Phoneword 應用程式來處理第二個畫面。 過程中，會介紹基本 Android 應用程式建置組塊。 包含 Android 架構深入剖析，以協助您進一步了解 Android 應用程式結構和功能。"
-ms.topic: article
+title: Hello, Android 多重畫面：深度剖析
+description: 在這份含有兩部分的指南中，會擴充在 Hello, Android 指南中所建立的 Phoneword 應用程式來處理第二個畫面。 過程中，會介紹基本 Android 應用程式建置組塊。 包含 Android 架構深入剖析，以協助您進一步了解 Android 應用程式結構和功能。
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: E4150036-7760-4023-BD33-B7BDE7B7AF5B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: acced081daa9416c5c8dcf90f769aaacd584ec9a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f1c19d43aa1f9010307df3fb954ac1029221ccd4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-android-multiscreen-deep-dive"></a>Hello, Android 多重畫面：深度剖析
 
