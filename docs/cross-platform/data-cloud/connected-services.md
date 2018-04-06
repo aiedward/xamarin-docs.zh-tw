@@ -8,10 +8,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
 ms.openlocfilehash: b9aaa197ccf01c59d6e4bbb0476d10295a108f89
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="connected-services-walkthrough"></a>已連接的服務的逐步解說
 
