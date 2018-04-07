@@ -189,7 +189,6 @@
 ##### [遠端通知](platform/user-notifications/deprecated/remote-notifications-in-ios.md)
 ### [寬色域](platform/wide-color.md)
 ## [資料和雲端服務](data-cloud/index.md)
-### [Azure 已連線的服務](~/cross-platform/data-cloud/connected-services.md?context=xamarin/ios)
 ### [Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/ios)
 #### [快速入門](~/cross-platform/data-cloud/active-directory/get-started/index.md?context=xamarin/ios)
 ##### [步驟 1：註冊](~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/ios)

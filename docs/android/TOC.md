@@ -166,7 +166,6 @@
 ### [使用原生程式庫](platform/native-libraries.md)
 ### [Renderscript](platform/renderscript.md)
 ## [資料和雲端服務](data-cloud/index.md)
-### [Azure 已連線的服務](~/cross-platform/data-cloud/connected-services.md?context=xamarin/android)
 ### [Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/android)
 #### [快速入門](~/cross-platform/data-cloud/active-directory/get-started/index.md?context=xamarin/android)
 ##### [步驟 1：註冊](~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/android)
