@@ -8,10 +8,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
 ms.openlocfilehash: 020c263a18f72e9837fcaa3dea2d54177245efb8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/07/2018
 ---
 # <a name="legacy-license-frequently-asked-questions"></a>舊版的授權常見問題集
 

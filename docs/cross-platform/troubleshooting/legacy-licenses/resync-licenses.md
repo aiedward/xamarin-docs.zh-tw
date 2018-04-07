@@ -7,10 +7,10 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.openlocfilehash: b06a1a7d525c91d7c3973b2b02d3d2835ce482f9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/07/2018
 ---
 # <a name="how-do-i-manually-resynchronize-xamarin-licenses"></a>如何手動同步 Xamarin 授權？
 
