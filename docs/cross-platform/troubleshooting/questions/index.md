@@ -6,17 +6,13 @@ ms.assetid: C7E6E54D-3957-407D-BB87-22B095148C6B
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: cdddc66df4da22654e44b5b72d4b0b1c659c1fde
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 579393a8830e73f7ab64f750c0176eb4c4e36029
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="general-frequently-asked-questions"></a>一般常見問題集
-
-## <a name="visual-studio-2017-release-candidate"></a>Visual Studio 2017 發行候選版本
-### <a name="can-i-use-visual-studio-2017-release-candidate-with-xamarinvisualstudio-2017-rcmd"></a>[是否可以搭配使用 Visual Studio 2017 候選版與 Xamarin？](visualstudio-2017-rc.md)
-如需如何安裝 Visual Studio2017 RC 中的 Xamarin 的詳細資訊與使用 Visual Studio 2017 Release Candidate (RC) 以及使用 Xamarin 的目前含意的說明。
 
 ## <a name="portable-class-libraries"></a>可攜式類別庫
 ### <a name="how-can-i-view-what-libraries-are-supported-in-a-pclpcl-support-librariesmd"></a>[如何檢視 PCL 中所支援的程式庫？](pcl-support-libraries.md)

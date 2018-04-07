@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 6ec46a5e098ba14925102211a27fcce8c27970e9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d9d70c37de5cb91c4cd1fdc77e27942d851c346b
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="touch-id"></a>Touch ID
 
@@ -121,47 +121,46 @@ Keychain 無法解密的金鑰鏈項目本身;而是在中完成*安全 Enclave*
 
 讓我們查看我們的應用程式中加入一些 Touch ID 驗證。 在此逐步解說中我們會使用[分鏡腳本資料表](https://developer.xamarin.com/samples/StoryboardTable/)範例。 我們想要確定只有裝置擁有者可以將項目加入至這份清單，我們不想讓任何人都將項目弄亂 ！
 
-1.  下載範例和 Visual Studio 中執行 for mac。
-2.  按兩下`MainStoryboard.Storyboard`iOS 設計工具中開啟範例。 在此範例中，我們想要將新的畫面加入至我們的應用程式，這會控制驗證。 這將會移目前`MasterViewController`。
-3.  拖曳新**檢視控制器**從**工具箱**至**設計介面**。 設定為**根檢視控制器**由**Ctrl + 拖曳**從**導覽控制站**:
+1. 下載範例和 Visual Studio 中執行 for mac。
+2. 按兩下`MainStoryboard.Storyboard`iOS 設計工具中開啟範例。 在此範例中，我們想要將新的畫面加入至我們的應用程式，這會控制驗證。 這將會移目前`MasterViewController`。
+3. 拖曳新**檢視控制器**從**工具箱**至**設計介面**。 設定為**根檢視控制器**由**Ctrl + 拖曳**從**導覽控制站**:
 
     [![](touchid-images/image4.png "設定根檢視控制站")](touchid-images/image4.png#lightbox)
 4.  新的檢視控制器`AuthenticationViewController`。
-5.  下一步，拖曳按鈕，並將它放在`AuthenticationViewController`。 呼叫這個`AuthenticateButton`，並為它提供文字`Add a Chore`。
-6.  在建立事件`AuthenticateButton`呼叫`AuthenticateMe`。
-7.  建立手動從話題`AuthenticationViewController`按一下黑色列底部和**Ctrl + 拖曳**列從`MasterViewController`，然後選擇**發送**(或**顯示**如果使用大小類別）：
+5. 下一步，拖曳按鈕，並將它放在`AuthenticationViewController`。 呼叫這個`AuthenticateButton`，並為它提供文字`Add a Chore`。
+6. 在建立事件`AuthenticateButton`呼叫`AuthenticateMe`。
+7. 建立手動從話題`AuthenticationViewController`按一下黑色列底部和**Ctrl + 拖曳**列從`MasterViewController`，然後選擇**發送**(或**顯示**如果使用大小類別）：
 
     [![](touchid-images/image5.png "從列拖曳至 MasterViewController 並選擇推入，或顯示")](touchid-images/image6.png#lightbox)
-8.  按一下新建立的話題並予以識別項`AuthenticationSegue`，如下所示：
+8. 按一下新建立的話題並予以識別項`AuthenticationSegue`，如下所示：
 
     [![](touchid-images/image7.png "設 AuthenticationSegue segue 識別碼")](touchid-images/image7.png#lightbox)
-9.  將下列程式碼新增至 `AuthenticationViewController`：
+9. 將下列程式碼新增至 `AuthenticationViewController`：
 
-    ```
+    ```csharp
     partial void AuthenticateMe (UIButton sender)
-        {
-            var context = new LAContext();
-            NSError AuthError;
-            var myReason = new NSString("To add a new chore");
+    {
+        var context = new LAContext();
+        NSError AuthError;
+        var myReason = new NSString("To add a new chore");
 
-
-            if (context.CanEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, out AuthError)){
-                var replyHandler = new LAContextReplyHandler((success, error) => {
-
-                    this.InvokeOnMainThread(()=>{
-                        if(success){
-                            Console.WriteLine("You logged in!");
-                            PerformSegue("AuthenticationSegue", this);
-                        }
-                        else{
-                            //Show fallback mechanism here
-                        }
-                    });
-
+        if (context.CanEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, out AuthError)){
+            var replyHandler = new LAContextReplyHandler((success, error) => {
+                this.InvokeOnMainThread(()=> {
+                    if(success)
+                    {
+                        Console.WriteLine("You logged in!");
+                        PerformSegue("AuthenticationSegue", this);
+                    }
+                    else
+                    {
+                        // Show fallback mechanism here
+                    }
                 });
-                context.EvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, myReason, replyHandler);
-            };
-        }
+            });
+            context.EvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, myReason, replyHandler);
+        };
+    }
     ```
 
 這是您需要實作使用本機驗證 Touch ID 驗證的程式碼。 下圖中反白顯示的線條顯示使用本機驗證：

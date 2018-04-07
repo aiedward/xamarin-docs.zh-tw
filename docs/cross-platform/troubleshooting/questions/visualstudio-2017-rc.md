@@ -1,4 +1,5 @@
 ---
+redirect_url: /xamarin/cross-platform/troubleshooting/questions/
 title: 可以使用 Visual Studio 2017 發行候選版本使用 Xamarin 嗎？
 ms.topic: troubleshooting
 ms.prod: xamarin
@@ -7,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 18329d226df5d129bd648c82b01e1ea045d131f4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cfad562bfbfbc3985efa6252aa8eb9b6559fcc41
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="can-i-use-visual-studio-2017-release-candidate-with-xamarin"></a>可以使用 Visual Studio 2017 發行候選版本使用 Xamarin 嗎？
 

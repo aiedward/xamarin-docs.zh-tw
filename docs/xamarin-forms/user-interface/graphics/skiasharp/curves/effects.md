@@ -7,11 +7,11 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 47f5a6fdcfb6ee795f84ca8e19c0954b68a2fae9
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 9bdad3e7d3e16dfe906f96bce2b92cdb9ee6260a
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="path-effects"></a>路徑的效果
 
@@ -120,7 +120,7 @@ public class AnimatedDottedTextPage : ContentPage
             textPaint.TextSize *= 0.95f * info.Width / textWidth;
 
             // Find the text bounds
-            SKRect textBounds;
+            SKRect textBounds = new SKRect();
             textPaint.MeasureText(text, ref textBounds);
 
             // Calculate offsets to center the text on the screen
@@ -736,7 +736,7 @@ public class HatchFillPage : ContentPage
     ...
     static SKMatrix Multiply(SKMatrix first, SKMatrix second)
     {
-        SKMatrix target;
+        SKMatrix target = SKMatrix.MakeIdentity();
         SKMatrix.Concat(ref target, first, second);
         return target;
     }
@@ -1054,7 +1054,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
         textPaint.TextSize *= 0.95f * info.Width / textWidth;
 
         // Find the text bounds
-        SKRect textBounds;
+        SKRect textBounds = new SKRect();
         textPaint.MeasureText(text, ref textBounds);
 
         // Calculate offsets to center the text on the screen
@@ -1374,7 +1374,7 @@ public class DashedHatchLinesPage : ContentPage
     ...
     static SKMatrix Multiply(SKMatrix first, SKMatrix second)
     {
-        SKMatrix target;
+        SKMatrix target = SKMatrix.MakeIdentity();
         SKMatrix.Concat(ref target, first, second);
         return target;
     }

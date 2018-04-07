@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: ff36deff996a92fca512158252c64e5c29046be9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 76a5c96d0e7bb85f0e6b313e2dbc058b8c2aae6d
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="list-appearance"></a>清單外觀
 
@@ -117,14 +117,12 @@ x:Class="DemoListView.GroupingViewPage"
 - 變更`ListView`的`ItemsSource`群組清單
 
 ### <a name="customizing-grouping"></a>自訂群組
-既然我們已看到如何實作基本在 ListView 中群組，讓我們了解如何自訂群組標頭的顯示。
 
-類似於如何`ListView`具有`ItemTemplate`來定義資料列的顯示方式，`ListView`具有`GroupHeaderTemplate`。 這是從上述清單檢視使用自訂的群組標頭範本的範例：
+如果已啟用群組清單中，您也可以自訂群組標頭。
 
-![](customizing-list-appearance-images/grouping-depth.png "自訂 GroupHeaderTemplate ListView")
+類似於如何`ListView`具有`ItemTemplate`來定義資料列的顯示方式，`ListView`具有`GroupHeaderTemplate`。 
 
-
-以下是如何完成在 XAML 中的該設計：
+在 XAML 中的群組標頭的範例如下所示：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>

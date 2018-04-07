@@ -7,18 +7,18 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 9a808697bf8529aac8d68d6a4166cac7898894d5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e7776ed249307e7a6ba4401bfb409f749c4581e8
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="troubleshooting"></a>疑難排解
 
 ## <a name="general-issues"></a>一般問題
 ### <a name="frequently-asked-questionsquestionsindexmd"></a>[常見問題集](questions/index.md)
 
-Xamarin 平台的相關常見問題集。
+常見問題集有關 Xamarin 平台，並回答特定的 Visual studio。
 
 ### <a name="updating-component-references-to-nugetcomponent-nugetmd"></a>[將元件參考更新為 NuGet](component-nuget.md)
 

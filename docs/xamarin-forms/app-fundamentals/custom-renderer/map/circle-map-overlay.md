@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: a70c8fdca457e386a1490ca974e1a1ea5da2f6db
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 23f36bfbdc4638bb8f35dd2a55124a1438e1d441
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>反白顯示地圖上的循環的區域
 
@@ -290,17 +290,40 @@ namespace MapOverlay.UWP
                 nativeMap.MapElements.Add(polygon);
             }
         }
-        ...
+        // GenerateCircleCoordinates helper method (below)
     }
 }
 ```
 
 假設的自訂轉譯器附加至新的 Xamarin.Forms 項目，這個方法會執行下列作業：
 
-- 從擷取圓形位置與 radius`CustomMap.Circle`屬性，並傳遞給`GenerateCircleCoordinates`方法，會產生緯度和經度座標圓形的圓周。
+- 從擷取圓形位置與 radius`CustomMap.Circle`屬性，並傳遞給`GenerateCircleCoordinates`方法，會產生緯度和經度座標圓形的圓周。 這個 helper 方法的程式碼如下所示。
 - 圓形周邊座標會轉換成`List`的`BasicGeoposition`座標。
 - 由具現化 circle`MapPolygon`物件。 `MapPolygon`類別用來在地圖上顯示多點圖形，藉由設定其`Path`屬性`Geopath`物件，其中包含圖形座標。
 - 多邊形會轉譯在地圖上將它加入至`MapControl.MapElements`集合。
+
+
+```
+List<Position> GenerateCircleCoordinates(Position position, double radius)
+{
+    double latitude = position.Latitude.ToRadians();
+    double longitude = position.Longitude.ToRadians();
+    double distance = radius / EarthRadiusInMeteres;
+    var positions = new List<Position>();
+
+    for (int angle = 0; angle <=360; angle++)
+    {
+        double angleInRadians = ((double)angle).ToRadians();
+        double latitudeInRadians = Math.Asin(Math.Sin(latitude) * Math.Cos(distance) + Math.Cos(latitude) * Math.Sin(distance) * Math.Cos(angleInRadians));
+        double longitudeInRadians = longitude + Math.Atan2(Math.Sin(angleInRadians) * Math.Sin(distance) * Math.Cos(latitude), Math.Cos(distance) - Math.Sin(latitude) * Math.Sin(latitudeInRadians));
+
+        var pos = new Position(latitudeInRadians.ToDegrees(), longitudeInRadians.ToDegrees());
+        positions.Add(pos);
+    }
+
+    return positions;
+}
+```
 
 ## <a name="summary"></a>總結
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: db8b767d6e7a6c5e5badc1c74703825a66ea2ab8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1e1039f513534885dffe9fef348d567243651e22
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="app-class"></a>應用程式類別
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 04/04/2018
 * 持續性[`Properties`字典](#Properties_Dictionary)來儲存整個生命週期的狀態變更的簡單值。
 * 靜態`Current`屬性，其中包含目前的應用程式物件的參考。
 
-如果也會公開[存留週期方法](~/xamarin-forms/app-fundamentals/app-lifecycle.md)例如`OnStart`， `OnSleep`，和`OnResume`以及強制回應巡覽事件。
+它也會公開[存留週期方法](~/xamarin-forms/app-fundamentals/app-lifecycle.md)例如`OnStart`， `OnSleep`，和`OnResume`以及強制回應巡覽事件。
 
 在您選擇根據哪一個範本，`App`類別可定義於兩種方式之一：
 

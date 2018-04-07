@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: c0b793a495278d91429045d7e396917d02c1412e
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 9b3f906a23ed0d51237a244f3944104acc76e259
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="paths-and-text"></a>路徑和文字
 
@@ -156,7 +156,7 @@ public class TextPathEffectPage : ContentPage
         Content = canvasView;
 
         // Get the bounds of textPathPaint
-        SKRect textPathPaintBounds;
+        SKRect textPathPaintBounds = new SKRect();
         textPathPaint.MeasureText(character, ref textPathPaintBounds);
 
         // Create textPath centered around (0, 0)
@@ -191,7 +191,7 @@ public class TextPathEffectPage : ContentPage
         textPaint.TextSize = Math.Min(info.Width, info.Height);
 
         // Do not measure the text with PathEffect set!
-        SKRect textBounds;
+        SKRect textBounds = new SKRect();
         textPaint.MeasureText(character, ref textBounds);
 
         // Coordinates to center text on screen
@@ -235,7 +235,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
         textPaint.TextSize = Math.Min(info.Width, info.Height);
 
         // Measure the text
-        SKRect textBounds;
+        SKRect textBounds = new SKRect();
         textPaint.MeasureText("@", ref textBounds);
 
         // Coordinates to center text on screen

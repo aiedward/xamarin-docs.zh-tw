@@ -7,11 +7,11 @@ ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 4ef9f1b634d2ecfa73a94bfd562a68593dfdc575
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: dec1997d16afa1cb8235c47b125b113d7ff80a4d
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="integrating-text-and-graphics"></a>將文字和圖形的整合
 
@@ -49,7 +49,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
     textPaint.TextSize = 0.9f * info.Width * textPaint.TextSize / textWidth;
 
     // Find the text bounds
-    SKRect textBounds;
+    SKRect textBounds = new SKRect();
     textPaint.MeasureText(str, ref textBounds);
     ...
 }
@@ -150,7 +150,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
     textPaint.TextSize = 0.95f * info.Width * textPaint.TextSize / textWidth;
 
     // Find the text bounds
-    SKRect textBounds;
+    SKRect textBounds = new SKRect();
     textPaint.MeasureText(text, ref textBounds);
 
     // Calculate offsets to center the text on the screen

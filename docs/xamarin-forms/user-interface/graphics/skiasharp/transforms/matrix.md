@@ -7,11 +7,11 @@ ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 6f7de8724a16e8c9c900123ce7da79d33b51a08c
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 90fadf0081f86e7739d75c0710caeaf1775c423e
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="matrix-transforms"></a>矩陣轉換
 
@@ -542,7 +542,7 @@ public partial class ShowAffineMatrixPage : ContentPage
             Persp2 = 1
         };
 
-        SKMatrix result;
+        SKMatrix result = SKMatrix.MakeIdentity();
         SKMatrix.Concat(ref result, A, S);
         return result;
     }
