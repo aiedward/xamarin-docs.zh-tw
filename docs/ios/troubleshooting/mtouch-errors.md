@@ -2925,7 +2925,7 @@ Xamarin.iOS 專案會經常參考原生符號，以動態方式表示原生連�
 
 ### <a name="mt8010-native-type-size-mismatch-between-xamariniosmacdll-and-the-executing-architecture-xamariniosmacdll-was-built-for--bit-while-the-current-process-is--bit"></a>MT8010: Xamarin 之間的原生類型的大小不相符。[iOS |Mac].dll 和執行的架構。 Xamarin。[iOS |已針對建置 Mac].dll *-位元，而目前的處理序是 * 位元。
 
-這表示有不對勁出現在建置程序。 請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這表示有不對勁出現在建置程序。 請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT8011" />
 
@@ -2981,40 +2981,40 @@ Xamarin.iOS 找不到所需的方法，在執行階段 （一個區塊轉換成�
 
 ### <a name="mt8018-internal-consistency-error-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8018： 內部一致性錯誤。 請檔案錯誤報告在http://bugzilla.xamarin.com。
 
-這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT8019" />
 
 ### <a name="mt8019-could-not-find-the-assembly--in-the-loaded-assemblies"></a>MT8019： 找不到組件 * 中載入的組件。
 
-這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT8020" />
 
 ### <a name="mt8020-could-not-find-the-module-with-metadatatoken--in-the-assembly-"></a>MT8020： 找不到之模組的 MetadataToken * 組件中 *。
 
-這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT8021" />
 
 ### <a name="mt8021-unknown-implicit-token-type-"></a>MT8021： 未知的隱含語彙基元類型: *。
 
-這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT8022" />
 
 ### <a name="mt8022-expected-the-token-reference--to-be-a--but-its-a--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8022： 預期的語彙基元的參考 * 為 *，但它是 *。 請檔案錯誤報告在http://bugzilla.xamarin.com。
 
-這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT8023" />
 
 ### <a name="mt8023-an-instance-object-is-required-to-construct-a-closed-generic-method-for-the-open-generic-method--token-reference--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8023： 執行個體物件，才能建構的開放式泛型方法為封閉式泛型方法: * (語彙基元的參考: *)。 請檔案錯誤報告在http://bugzilla.xamarin.com。
 
-這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT8024" />
 
 ### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smarttype-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024： 找不到智慧列舉 '{smart_type}' 的有效的副檔名類型。 請將 bug 歸檔在https://bugzilla.xamarin.com。
 
-這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
