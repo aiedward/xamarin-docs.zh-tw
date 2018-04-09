@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 084fde62687bd9bdd84779e4486dd8a971d1acdd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: be1a3274ff4c9a15b7ee13c29d3176229a70642c
+ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/08/2018
 ---
 # <a name="grid"></a>Grid
 
@@ -130,8 +130,8 @@ var bottomLeft = new Label { Text = "Bottom Left" };
 var bottomRight = new Label { Text = "Bottom Right" };
 
 grid.Children.Add(topLeft, 0, 0);
-grid.Children.Add(topRight, 0, 1);
-grid.Children.Add(bottomLeft, 1, 0);
+grid.Children.Add(topRight, 1, 0;
+grid.Children.Add(bottomLeft, 0, 1);
 grid.Children.Add(bottomRight, 1, 1);
 ```
 

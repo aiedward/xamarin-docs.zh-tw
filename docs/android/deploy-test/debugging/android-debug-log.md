@@ -1,17 +1,16 @@
 ---
 title: Android 偵錯記錄檔
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/21/2018
-ms.openlocfilehash: 2e3225c0b0f984e52507ac472e26c4aee6a76909
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.date: 04/04/2018
+ms.openlocfilehash: e0e22fe35dc5042a7b3c895a250803e936611629
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="android-debug-log"></a>Android 偵錯記錄檔
 
@@ -110,17 +109,24 @@ ms.lasthandoff: 03/22/2018
 
 另一個檢視偵錯記錄檔的方式是透過命令列。 開啟命令提示字元視窗，並瀏覽至 Android SDK 平台工具資料夾 (SDK 平台工具資料夾通常位於 **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools**)。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-另一個檢視偵錯記錄檔的方式是透過命令列。 開啟終端機視窗，並瀏覽至 Android SDK 平台工具資料夾 (SDK 平台工具資料夾通常位於 **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/platform-tools**)。
-
------
-
 若只有連接單一裝置 (實體裝置或模擬器)，則可以透過輸入下列命令來檢視記錄檔：
 
 ```shell
 $ adb logcat
 ```
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+另一個檢視偵錯記錄檔的方式是透過命令列。 開啟終端機視窗，並瀏覽至 Android SDK 平台工具資料夾 (SDK 平台工具資料夾通常位於 **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/platform-tools**)。
+
+若只有連接單一裝置 (實體裝置或模擬器)，則可以透過輸入下列命令來檢視記錄檔：
+
+```shell
+$ ./adb logcat
+```
+
+-----
+
 
 如果連接的裝置有多部，則必須明確識別該裝置。 例如，**adb -d logcat** 會顯示唯一連接之實體裝置的記錄檔，而 **adb -e logcat** 則會顯示唯一執行中之模擬器的記錄檔。
 
@@ -146,6 +152,18 @@ Log.Error (tag, "this is an error message");
 I/myapp   (11103): this is an info message
 W/myapp   (11103): this is a warning message
 E/myapp   (11103): this is an error message
+```
+
+您也可以使用 `Console.WriteLine` 寫入**偵錯記錄**&ndash;這些訊息會顯示在 Logcat 中，但輸出格式略有不同 (當在 Android 上偵錯 Xamarin.Forms 應用程式時，此技術特別實用)：
+
+```csharp
+System.Console.WriteLine ("DEBUG - Button Clicked!");
+```
+
+這會在 Logcat 中產生類似下列內容的輸出：
+
+```
+Info (19543) / mono-stdout: DEBUG - Button Clicked!
 ```
 
 ## <a name="interesting-messages"></a>有趣的訊息

@@ -1,17 +1,16 @@
 ---
-title: "命令列模擬器"
-ms.topic: article
+title: 命令列模擬器
 ms.prod: xamarin
 ms.assetid: E592AA32-5E83-B7E5-1753-12416551B23C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 01ae4e1477ff5a05a5690ef24ed266b73f862748
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: b1ca1c2b441a9c9ca26de5668f318312bea156a3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="command-line-emulator"></a>命令列模擬器
 
@@ -36,4 +35,4 @@ emulator.exe -avd NameOfYourEmulator -partition-size 512
 
 需要分割區大小的理由是要允許模擬器具備足夠的空間在模擬器上安裝 Xamarin.Android 平台，因為模擬器的預設大小很小。
 
-您可以在位於此處的 Android 網站找到更多關於額外參數的詳細資訊 - [http://developer.android.com/guide/developing/tools/emulator.html](http://developer.android.com/guide/developing/tools/emulator.html)
+您可在以下 Android 網站找到有關額外參數的詳細資訊：[http://developer.android.com/guide/developing/tools/emulator.html](http://developer.android.com/guide/developing/tools/emulator.html)

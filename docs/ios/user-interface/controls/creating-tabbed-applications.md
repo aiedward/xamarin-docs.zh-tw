@@ -1,18 +1,17 @@
 ---
-title: "索引標籤列和索引標籤列的控制站"
-description: "使用 tab 導覽 UI 的 iOS 應用程式會使用 UITabBarController 類別建立。 本文章中我們將逐步解說如何設定包含數個控制器和檢視的索引標籤式應用程式。 然後，我們將檢驗如何載入 UITabBarController 時，就會為根控制站，例如登入畫面之後。"
-ms.topic: article
+title: 索引標籤列和索引標籤列的控制站
+description: 使用 tab 導覽 UI 的 iOS 應用程式會使用 UITabBarController 類別建立。 本文章中我們將逐步解說如何設定包含數個控制器和檢視的索引標籤式應用程式。 然後，我們將檢驗如何載入 UITabBarController 時，就會為根控制站，例如登入畫面之後。
 ms.prod: xamarin
 ms.assetid: 7C772899-2900-F139-D642-F3C4F3F14DDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 702a5986c9249eec38868895f55ef6f63b534b9b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c3c57cceed7271ebbe707172db892a246003426b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="tab-bars-and-tab-bar-controllers"></a>索引標籤列和索引標籤列的控制站
 
@@ -320,9 +319,9 @@ partial void InitialActionCompleted (UIButton sender)
 
 #### <a name="adding-the-tab-bar-controller"></a>加入索引標籤列控制器
 
-我們現在有我們如預期般運作的初始檢視。 接下來，我們想將它加入至`UITabBarController`以及檢視 2 和 3。 讓我們來開啟分鏡腳本設計工具中。
+我們現在有我們如預期般運作的初始檢視。 接下來，我們想將它加入至 `UITabBarController` 以及檢視 2 和 3。 讓我們來開啟分鏡腳本設計工具中。
 
-在**工具箱**，搜尋 **索引標籤列控制器**控制站和物件下這拖曳到設計介面上。 您可以看到下面的螢幕擷取畫面中，索引標籤列控制器是無 UI，並因此使兩個檢視控制站與其預設：
+在**工具箱**，搜尋**索引標籤列控制器**控制站和物件下這拖曳到設計介面上。 您可以看到下面的螢幕擷取畫面中，索引標籤列控制器是無 UI，並因此使兩個檢視控制站與其預設：
 
 [![](creating-tabbed-applications-images/tabbarcontroller.png "加入至配置的索引標籤列控制器")](creating-tabbed-applications-images/tabbarcontroller.png#lightbox)
 
@@ -330,9 +329,9 @@ partial void InitialActionCompleted (UIButton sender)
 
 在我們的分鏡腳本，我們可以使用 Segues 處理 TabBarController 和我們檢視控制站之間的轉換。 之後互動初始的檢視，我們想要將其載入至 TabBarController 呈現給使用者。 讓我們設定此項目在設計工具中。
 
-**按一下 Ctrl 以**和**拖曳**從 [TabBarController] 按鈕。 滑鼠向上上會出現內容功能表。 我們想要使用強制回應 segue。 
+**按一下 Ctrl 以** 和 **拖曳** 從 [TabBarController] 按鈕。 滑鼠向上上會出現內容功能表。 我們想要使用強制回應 segue。 
  
-若要設定每個索引標籤中， **Ctrl** TabBarController 我們檢視中控制站的順序的每一到三個，並選取關聯性從 **索引標籤**從內容功能表中，如下所示：
+若要設定每個索引標籤中， **Ctrl** TabBarController 我們檢視中控制站的順序的每一到三個，並選取關聯性從**索引標籤**從內容功能表中，如下所示：
 
 [![](creating-tabbed-applications-images/context-menu.png "選取索引標籤關聯性")](creating-tabbed-applications-images/context-menu.png#lightbox)
 

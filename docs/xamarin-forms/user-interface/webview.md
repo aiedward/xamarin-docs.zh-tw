@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 54c70fda22782dfa9b6617c0832f2c17f0169b57
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a96c57b66e5debbbb7318c22e33a21eb9b998395
+ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/08/2018
 ---
 # <a name="webview"></a>網頁檢視
 
@@ -399,6 +399,8 @@ void webOnEndNavigating (object sender, WebNavigatedEventArgs e)
 近來過採用技術，像是硬體加速呈現和 JavaScript 編譯每一個熱門的 web 瀏覽器。 不幸的是，由於安全性限制，大部分的繁雜所沒有的 iOS equaivalent `WebView`， `UIWebView`。 Xamarin.Forms`WebView`使用`UIWebView`。 如果是問題，您必須撰寫自訂轉譯器，它使用`WKWebView`，可支援更快速瀏覽。 請注意， `WKWebView` iOS 8 及更新版本上才支援。
 
 依預設在 Android 上的網頁檢視是差不多一樣內建瀏覽器。
+
+[UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view)使用 Microsoft Edge 轉譯引擎。 桌面與 tablet pc 的裝置應該會看到相同的效能與使用 Edge 瀏覽器本身。
 
 `WebBrowser`控制項在 Windows Phone 8 和 Windows Phone 8.1 的並不支援最新的 HTML5 功能，而且通常可能不佳的效能。 注意如何網站會顯示在 Windows Phone `WebView`。 您不在 Internet Explorer 中測試足夠。
 

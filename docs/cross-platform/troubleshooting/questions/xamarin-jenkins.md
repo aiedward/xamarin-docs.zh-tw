@@ -6,11 +6,11 @@ ms.assetid: 9951F980-2C6C-47C0-8A35-A78F06C20BEB
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 8112f9bfc8975b12e3c300c0c981d21749173f7c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: befcdcbee3114e760cec94a61a84106fddc72cf9
+ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/08/2018
 ---
 # <a name="why-isnt-jenkins-supported-by-xamarin"></a>為什麼不 Jenkins 支援 Xamarin？
 
@@ -51,7 +51,3 @@ Jenkins 是一個開放原始碼 CI 組合。因為這許多直接 Jenkins 所�
 > 錯誤： Xamarin.iOS Starter Edition 不支援建置 Xamarin Studio 外部 
 
 此案例的最常見的原因是沒有與您的 Xamarin 授權相關聯的使用者帳戶登入的 Jenkins 使用。 解決這項目，最簡單的方式是安裝 Jenkins 成直接透過使用者帳戶的應用程式。 該處理程序和一些其他考量如下所示： [https://forums.xamarin.com/discussion/comment/99397/#Comment_99397](https://forums.xamarin.com/discussion/comment/99397/#Comment_99397)
-
-另一個可能性是，由於某種原因而損毀您的 Xamarin 授權資訊，您可以使用[Xamarin 授權重新同步處理的指南](~/cross-platform/troubleshooting/legacy-licenses/resync-licenses.md)來進行這個案例的疑難排解。
-
-

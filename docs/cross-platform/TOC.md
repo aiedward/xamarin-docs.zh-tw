@@ -83,7 +83,6 @@
 ### [HttpClient 堆疊和 SSL/TLS 實作選擇器](macios/http-stack.md)
 ## [疑難排解](troubleshooting/index.md)
 ### [常見問題集](troubleshooting/questions/index.md)
-#### [是否可以搭配使用 Visual Studio 2017 候選版與 Xamarin？](troubleshooting/questions/visualstudio-2017-rc.md)
 #### [如何檢視 PCL 中所支援的程式庫？](troubleshooting/questions/pcl-support-libraries.md)
 #### [PCL 映射 API](troubleshooting/questions/pcl-reflection.md)
 #### [PCL 案例研究：如何解決 Microsoft TPL Dataflow NuGet 套件有關 System.Diagnostics.Tracing 的問題？](troubleshooting/questions/pcl-case-study.md)
@@ -96,6 +95,14 @@
 #### [提出錯誤報告的時機與方式為何？](troubleshooting/questions/howto-file-bug.md)
 #### [Xamarin 為什麼不支援 Jenkins？](troubleshooting/questions/xamarin-jenkins.md)
 #### [偵錯工具需要哪些專案設定？](troubleshooting/questions/debugger-settings.md)
+
+### Visual Studio 問題
+#### [部署 Configuration Manager 中停用的核取方塊](troubleshooting/questions/deploy-checkboxes.md)
+#### [安裝後遺漏的 Visual Studio 擴充功能](troubleshooting/questions/missing-vs-extensions.md)
+#### [如何完全的解除安裝 Xamarin for Visual Studio？](troubleshooting/questions/uninstall-xamarin-vs.md)
+#### [如何收集 Visual Studio 處理序的目前呼叫堆疊？](troubleshooting/questions/vs-callstack.md)
+#### [為什麼 Visual Studio 不在我的組建中包括參考的程式庫專案？](troubleshooting/questions/vs-config-manager.md)
+
 ### [將元件參考更新為 NuGet](troubleshooting/component-nuget.md)
 ### [支援選項](troubleshooting/support-options.md)
 ### [舊版的授權問題](troubleshooting/legacy-licenses/index.md)

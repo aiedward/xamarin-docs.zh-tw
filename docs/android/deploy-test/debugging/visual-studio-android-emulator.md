@@ -1,18 +1,17 @@
 ---
-title: "Visual Studio Android 模擬器"
-description: "本指南說明如何設定及使用「Visual Studio Android 模擬器」，以在 Visual Studio 2015 中開發 Xamarin.Android 應用程式。"
-ms.topic: article
+title: Visual Studio Android 模擬器
+description: 本指南說明如何設定及使用「Visual Studio Android 模擬器」，以在 Visual Studio 2015 中開發 Xamarin.Android 應用程式。
 ms.prod: xamarin
 ms.assetid: CD128CB9-499F-4558-B49F-77248824EFDF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: a31d90e6d5abd574eb6187953082e1b70f66a113
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/30/2018
+ms.openlocfilehash: bcc88ba4c46aa9abe9038d6ea65bc9c17f337da6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="visual-studio-android-emulator"></a>Visual Studio Android 模擬器
 
@@ -21,6 +20,9 @@ _本指南說明如何設定及使用 Visual Studio Android Emulator，以在 Vi
 ## <a name="visual-studio-android-emulator-overview"></a>Visual Studio Android Emulator 概觀
 
 Microsoft Visual Studio 2015 包含 Android 模擬器，此模擬器可用來作為進行 Xamarin.Android 應用程式偵錯時的目標：Visual Studio 的 Android 模擬器。 此模擬器使用您開發電腦的 Hyper-V 功能，因此啟動和執行速度都比 Android SDK 隨附的預設模擬器快。 開發 Xamarin.Android 應用程式時，可以使用「Visual Studio 的 Android 模擬器」來替代預設的 Android SDK 模擬器。
+
+> [!NOTE]
+> Visual Studio Android Emulator 僅與 Visual Studio 2015 相容 &ndash; 而無法搭配 Visual Studio 2017 使用。
 
 本指南說明如何從 Visual Studio 啟動 Microsoft Android 模擬器來測試您的應用程式，並說明此模擬器中可用的各種功能。 您將了解如何選取「裝置設定檔」(類似於預設 Android SDK 模擬器中的裝置定義) 來模擬不同類型的 Android 裝置。 最後的疑難排解小節說明常見的錯誤和因應措施。
 

@@ -1,17 +1,16 @@
 ---
-title: "不同裝置的編譯"
-ms.topic: article
+title: 不同裝置的編譯
 ms.prod: xamarin
 ms.assetid: 3B259248-887E-3E4F-E09C-7AD28C2A8CEE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 12b8f51156c2ed750c59ef79522121c6c5d2c03c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 039e0a931613ec79ccd6f2b13bc18ae6b80f5195
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="compiling-for-different-devices"></a>不同裝置的編譯
 
@@ -30,7 +29,7 @@ ms.lasthandoff: 03/09/2018
 
 除了 UI 上可用的組態選項外，您也可以將自己的命令列選項集傳遞至 [Xamarin.iOS 建置工具 (mtouch)](~/ios/deploy-test/mtouch.md)。
 
-[http://iossupportmatrix.com/](http://iossupportmatrix.com/) 是很實用的資源，可用來確定您會納入所有必要的裝置、架構和 iOS 版本。
+[http://iossupportmatrix.com/](http://iossupportmatrix.com/) 是很實用的資源，可用來確保您納入所有必要的裝置、架構和 iOS 版本。
 
  <a name="SDK_Options" />
 

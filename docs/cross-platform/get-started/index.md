@@ -1,7 +1,6 @@
 ---
-title: "快速入門"
-description: "解如何透過這些深入指南從零到部署開發行動應用程式。"
-ms.topic: article
+title: 快速入門
+description: 解如何透過這些深入指南從零到部署開發行動應用程式。
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.technology: xamarin-cross-platform
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: 8d9acbf5fa53c2fa94d1a15d51de9d3db48a16fe
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2178d567f1ccfe803ebce8b7b623c31c290999bc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="getting-started"></a>快速入門
 
@@ -23,11 +22,13 @@ ms.lasthandoff: 03/09/2018
 
 ## <a name="build-your-first-app"></a>建置您的第一個應用程式
 
-若要立即開始撰寫程式碼，請選擇一個快速入門指南來協助您建置第一個應用程式：
+> [!div class="nextstepaction"]
+> [Xamarin.Forms 快速入門](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
+
+若您想使用原生 UI 技術 (例如 Android XML 或 Xcode 腳本) 建置應用程式，請嘗試以下專為平台提供的指南：
 
 * [Android 快速入門](~/android/get-started/hello-android/hello-android-quickstart.md)
 * [iOS 快速入門](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
-* [Xamarin.Forms 快速入門](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
 * [Mac 快速入門](~/mac/get-started/hello-mac.md)
 
 ## <a name="getting-started-with-mobile-development"></a>行動裝置應用程式開發快速入門
@@ -47,7 +48,7 @@ ms.lasthandoff: 03/09/2018
 本文件提供 Visual Studio for Mac 整合式開發環境 (IDE) 的概觀。
 
 
-## <a name="xamarin-university-video"></a>Xamarin University 影片
+## <a name="get-started-with-xamarin-university"></a>開始使用 Xamarin University
 
 > [!VIDEO https://youtube.com/embed/NGvn-pGZFPA]
 
