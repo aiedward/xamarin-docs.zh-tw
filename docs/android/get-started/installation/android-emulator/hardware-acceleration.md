@@ -6,12 +6,12 @@ ms.assetid: 915874C3-2F0F-4D83-9C39-ED6B90BB2C8E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 12/22/2017
-ms.openlocfilehash: f074bca7571188b14a36bd4e6c59a6fdf8df9339
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/04/2018
+ms.openlocfilehash: d5921c549c299197bdc442c9b883b49064655f76
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Android Emulator 硬體加速
 
@@ -20,13 +20,14 @@ ms.lasthandoff: 04/04/2018
 
 ## <a name="haxm-overview"></a>HAXM 概觀
 
-HAXM 為硬體輔助的虛擬化引擎 (Hypervisor)，使用 Intel 虛擬化技術 (VT) 來加速主機電腦上的 Android 應用程式模擬。 透過與由 Intel 和官方 Android SDK 管理員提供的 Android x86 模擬器映像搭配使用，HAXM 就能夠在已啟用 VT 的系統上加快 Android 模擬的速度。 如果您是在配備具有 VT 功能之 Intel CPU 的電腦上進行開發，您可以利用 HAXM 大幅加速 Android SDK 模擬器 (如果您不確定 CPU 是否支援 VT，請參閱[判斷您的處理器是否支援 Intel 虛擬化技術](https://www.intel.com/content/www/us/en/support/processors/000005486.html) \(英文\))。
+HAXM 為硬體輔助的虛擬化引擎 (Hypervisor)，使用 Intel 虛擬化技術 (VT) 來加速主機電腦上的 Android 應用程式模擬。 透過與由 Intel 和官方 Android SDK 管理員提供的 Android x86 模擬器映像搭配使用，HAXM 就能夠在已啟用 VT 的系統上加快 Android 模擬的速度。 
 
-Android SDK 模擬器會自動在 HAXM 可供使用時加以使用。 當您選取 **x86** 型虛擬裝置時 (如[設定及使用](~/android/deploy-test/debugging/android-sdk-emulator/index.md)中所述)，該虛擬裝置將使用 HAXM 進行硬體加速。 在您第一次使用 Android SDK 模擬器之前，最好先確認 HAXM 已安裝並可供 Android SDK 模擬器使用。
+如果您是在配備具有 VT 功能之 Intel CPU 的電腦上進行開發，您可以利用 HAXM 大幅加速 Android SDK 模擬器 (如果您不確定 CPU 是否支援 VT，請參閱[判斷您的處理器是否支援 Intel 虛擬化技術](https://www.intel.com/content/www/us/en/support/processors/000005486.html) \(英文\))。
 
 > [!NOTE]
-> 您無法在虛擬機器上執行 HAXM。
+> 您無法在另一部 VM 執行 VM 加速的模擬器，例如 VirtualBox、VMWare 或 Docker 所裝載的 VM。 您必須[直接在系統硬體上](https://developer.android.com/studio/run/emulator-acceleration.html#extensions)執行 Google Android Emulator。
 
+Android SDK 模擬器會自動在 HAXM 可供使用時加以使用。 當您選取 **x86** 型虛擬裝置時 (如[設定及使用](~/android/deploy-test/debugging/android-sdk-emulator/index.md)中所述)，該虛擬裝置將使用 HAXM 進行硬體加速。 在您第一次使用 Android SDK 模擬器之前，最好先確認 HAXM 已安裝並可供 Android SDK 模擬器使用。
 
 ## <a name="verifying-haxm-installation"></a>驗證 HAXM 安裝
 
@@ -180,6 +181,11 @@ Device Guard 和 Credential Guard 可能會防止在 Windows 電腦上停用 Hyp
 8. 重新啟動電腦之後，再次檢查以確定 Hyper-V 已停用 (如先前步驟中所述)。
 
 如果 Hyper-V 仍未停用，您已加入網域之電腦的原則可能正在阻止您停用 Device Guard 或 Credential Guard。 在此情況下，您可以要求網域管理員給予特例，讓您能夠選擇不使用 Credential Guard。 或者，您可以使用未加入網域的電腦來使用 HAXM。
+
+## <a name="hardware-acceleration-and-amd-cpus"></a>硬體加速與 AMD CPU
+
+因為 Google 的 Android Emulator 目前[僅在 Lunux 上](https://developer.android.com/studio/run/emulator-acceleration.html#dependencies)支援 AMD 硬體加速，所以無法在執行 Windows 的 AMD 電腦上使用硬體加速。
+
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
