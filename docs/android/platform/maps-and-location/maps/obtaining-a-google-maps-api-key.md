@@ -127,7 +127,7 @@ Certificate fingerprints:
    [![按一下 [儀表板] 區段中的 [啟用] 按鈕](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png#lightbox)
 
 
-此時會建立 API 專案和 Google 地圖 Android API v2 已新增至它。 不過，您才可以使用此 API 在您的專案中為其建立認證。 接下來我們將探討如何建立 API 金鑰與白名單 Xamarin.Android 應用程式，讓它已獲授權使用此金鑰。
+此時會建立 API 專案和 Google 地圖 Android API v2 已新增至它。 不過，您才可以使用此 API 在您的專案中為其建立認證。 接下來我們將探討如何建立 API 金鑰與允許清單 Xamarin.Android 應用程式，讓它已獲授權使用此金鑰。
 
 
 ## <a name="obtaining-the-api-key"></a>取得 API 金鑰
