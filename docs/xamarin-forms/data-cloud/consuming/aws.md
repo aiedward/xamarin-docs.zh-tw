@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
 ms.openlocfilehash: 1602319dbf5a5d00ac5de75f2d438b9aea692699
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/12/2018
 ---
 # <a name="consuming-an-amazon-simpledb-service"></a>使用 Amazon SimpleDB 服務
 
@@ -197,7 +197,7 @@ public async Task DeleteTodoItemAsync (TodoItem todoItem)
 
 - [TodoAWS （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAWS/)
 - [Amazon Web 服務 SDK Xamarin 開發人員指南](http://docs.aws.amazon.com/mobile/sdkforxamarin/developerguide/)
-- [Amazon Cognito 身分識別](http://docs.aws.amazon.com/cognito/devguide/identity/)
+- [Amazon Cognito Identity](http://docs.aws.amazon.com/cognito/devguide/identity/)
 - [Amazon SimpleDB 開發人員文件](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Welcome.html)
 - [AmazonSimpleDBClient 類別](http://docs.aws.amazon.com/sdkfornet1/latest/apidocs/html/T_Amazon_SimpleDB_AmazonSimpleDBClient.htm)
-- [Amazon Web Services SDK for .NET](https://www.nuget.org/packages?q=Tags%3A%22aws-sdk-v3%22)
+- [Amazon Web Services SDK for.NET](https://www.nuget.org/packages?q=Tags%3A%22aws-sdk-v3%22)
