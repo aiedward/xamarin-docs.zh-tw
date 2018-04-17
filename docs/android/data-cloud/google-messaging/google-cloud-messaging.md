@@ -6,12 +6,12 @@ ms.assetid: DF8EF401-F63D-4BA0-B2C6-B22DF8FD60CB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 73ff82f3bf36aa54422c1693c6bf07731480b7f7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/12/2018
+ms.openlocfilehash: 29cccf414759a79a8ba74dfc35b7ba9f6a1cc5d6
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="google-cloud-messaging"></a>Google 雲端訊息
 
@@ -21,6 +21,9 @@ _Google Cloud Messaging (GCM) 是一種服務，可促進行動裝置應用程�
 
 本主題提供如何 Google Cloud Messaging 將訊息路由傳送應用程式伺服器，您的應用程式之間的高階概觀，並取得認證，好讓您的應用程式可以使用 GCM 服務提供的逐步程序。
 
+> [!NOTE]
+> GCM 已被取代的[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) (FCM)。
+> GCM 伺服器和用戶端應用程式開發介面[已被取代](https://firebase.googleblog.com/2018/04/time-to-upgrade-from-gcm-to-fcm.html)，將無法再使用盡 2019 年 4 月 11。
 
 ## <a name="overview"></a>總覽
 

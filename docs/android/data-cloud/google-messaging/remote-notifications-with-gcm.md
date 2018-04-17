@@ -6,16 +6,20 @@ ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/13/2018
-ms.openlocfilehash: 969b1b36659ac52782d30a1840ba352524e5e3c6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/12/2018
+ms.openlocfilehash: f4a1451cb848f4da1f595c15d946f4e05292900d
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>遠端使用 Google 雲端訊息的通知
 
 _本逐步解說 Xamarin.Android 應用程式中提供的逐步說明如何使用 Google Cloud Messaging 實作遠端 （也稱為推播通知） 的通知。它會描述您必須實作以進行通訊與 Google Cloud Messaging (GCM) 的各種類別，說明如何在 Android 的 GCM，存取資訊清單設定的權限，它會示範端對端訊息的範例測試程式。_
+
+> [!NOTE]
+> GCM 已被取代的[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) (FCM)。
+> GCM 伺服器和用戶端應用程式開發介面[已被取代](https://firebase.googleblog.com/2018/04/time-to-upgrade-from-gcm-to-fcm.html)，將無法再使用盡 2019 年 4 月 11。
 
 ## <a name="gcm-notifications-overview"></a>GCM 通知概觀
 

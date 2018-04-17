@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: f20042b9599f7b4dde699a125e63c5ce435f6bc5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6e67820fa83ddea46f934b4eaedde2c6334f9cc6
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="data--cloud-services"></a>資料與雲端服務
 
@@ -25,11 +25,11 @@ _本指南將會檢驗如何執行這項操作和 Xamarin.Forms 應用程式可�
 
 ## <a name="consuming-web-servicesxamarin-formsdata-cloudconsumingindexmd"></a>[使用 Web 服務](~/xamarin-forms/data-cloud/consuming/index.md)
 
-本指南示範如何與提供不同的網頁服務建立、 讀取、 更新和刪除 (CRUD) Xamarin.Forms 應用程式的功能。 涵蓋的主題包含與通訊[ASMX 服務](consuming/asmx.md)， [WCF 服務](consuming/wcf.md)， [REST 服務](consuming/rest.md)， [Azure 行動應用程式](consuming/azure.md)，和[Amazon Web Services](consuming/aws.md)。
+本指南示範如何與提供不同的網頁服務建立、 讀取、 更新和刪除 (CRUD) Xamarin.Forms 應用程式的功能。 涵蓋的主題包含與通訊[ASMX 服務](consuming/asmx.md)， [WCF 服務](consuming/wcf.md)， [REST 服務](consuming/rest.md)，和[Azure 行動應用程式](consuming/azure.md)。
 
 ## <a name="authenticating-access-to-web-servicesxamarin-formsdata-cloudauthenticationindexmd"></a>[驗證 Web 服務的存取權](~/xamarin-forms/data-cloud/authentication/index.md)
 
-本指南說明如何整合到 Xamarin.Forms 應用程式，讓使用者共用在只具有自己的資料存取時的後端驗證服務。 涵蓋的主題包括[REST 服務搭配使用基本驗證](authentication/rest.md)， [OAuth 身分識別提供者進行驗證，使用 Xamarin.Auth 元件](authentication/oauth.md)，並使用內建的驗證所提供的機制[Azure 行動應用程式](authentication/azure.md)，和[Amazon Web Services](authentication/aws.md)。
+本指南說明如何整合到 Xamarin.Forms 應用程式，讓使用者共用在只具有自己的資料存取時的後端驗證服務。 涵蓋的主題包括[REST 服務搭配使用基本驗證](authentication/rest.md)， [OAuth 身分識別提供者進行驗證，使用 Xamarin.Auth 元件](authentication/oauth.md)，並使用內建的驗證所提供的機制[Azure 行動應用程式](authentication/azure.md)。
 
 ## <a name="synchronizing-data-with-web-servicessyncindexmd"></a>[同步處理資料與 Web 服務](sync/index.md)
 

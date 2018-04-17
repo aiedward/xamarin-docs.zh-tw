@@ -6,11 +6,11 @@ ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 33a6dc7294db74c3c8ab451f147c941124db8982
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d9b98611c7d269e590ce6fe2ce0270ef71dacf1e
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="document-picker"></a>文件選擇器
 
@@ -38,6 +38,8 @@ _文件選擇器檢視控制器授與使用者存取應用程式的沙箱以外�
 -  在 Mac OS Finder 中已加入 iCloud 資料夾。
 -  iOS 裝置可以存取的 Mac OS iCloud 資料夾的內容。
 
+> [!IMPORTANT]
+> Apple[提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)可協助開發人員適當地處理歐盟的一般資料保護規定 (GDPR)。
 
 ## <a name="what-is-a-document"></a>什麼是文件？
 
@@ -1143,6 +1145,6 @@ if (Bookmark != null) {
 
 ## <a name="related-links"></a>相關連結
 
-- [DocPicker (sample)](https://developer.xamarin.com/samples/monotouch/ios8/DocPicker/)
+- [DocPicker （範例）](https://developer.xamarin.com/samples/monotouch/ios8/DocPicker/)
 - [iOS 8 簡介](~/ios/platform/introduction-to-ios8.md)
 - [應用程式延伸模組簡介](~/ios/platform/extensions.md)

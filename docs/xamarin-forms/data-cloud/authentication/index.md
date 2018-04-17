@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: df0e188efd2791b03a63c31b715ed1da77079230
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc34cf265885708fa6392936a8dbc9d82796e2fd
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="authenticating-access-to-web-services"></a>驗證 Web 服務的存取權
 
@@ -36,11 +36,6 @@ Azure Active Directory B2C 是消費者導向 web 與行動應用程式的雲端
 ## <a name="integrating-azure-active-directory-b2c-with-azure-mobile-appsazure-ad-b2c-mobile-appmd"></a>[整合 Azure Active Directory B2C 與 Azure Mobile Apps](azure-ad-b2c-mobile-app.md)
 
 Azure Active Directory B2C 可以用來管理 Azure 行動應用程式的驗證工作流程。 使用此方法時，身分識別管理體驗完全在雲端中，定義，並可以修改而不需要變更您的行動應用程式程式碼。 本文示範如何使用 Azure Active Directory B2C xamarin.forms 提供驗證和授權 Azure 行動應用程式執行個體。
-
-## <a name="authenticating-users-with-an-amazon-simpledb-serviceawsmd"></a>[驗證使用者與 Amazon SimpleDB 服務](aws.md)
-
-Amazon SimpleDB 並未提供它自己的資源為基礎的權限系統。 相反地，身分識別提供者的驗證可以用來確保使用者只能 SimpleDB 網域中擁有自己的資料存取。 本文說明如何限制使用者存取他們自己的 SimpleDB 資料。
-
 
 ## <a name="related-links"></a>相關連結
 

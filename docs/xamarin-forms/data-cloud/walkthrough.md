@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: e9738a766762dd64cdfbb034d4eaa54f76aca311
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 703441e3fc58beeb33e519f3781387a59c1c1cef
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="understanding-the-sample"></a>了解範例
 
@@ -86,7 +86,7 @@ public class TodoItem
 
 此外，某些範例應用程式包含額外的方法中`TodoItemManager`類別，用來管理使用者驗證程序。
 
-而不是直接叫用 web 服務作業`TodoItemManager`方法叫用插入到之相依類別方法`TodoItemManager`建構函式。 例如，一個範例應用程式會將插入`SimpleDBStorage`類別到`TodoItemManager`建構函式來提供叫用對 Amazon SimpleDB 服務作業的實作。
+而不是直接叫用 web 服務作業`TodoItemManager`方法叫用插入到之相依類別方法`TodoItemManager`建構函式。 例如，一個範例應用程式會將插入`RestService`類別到`TodoItemManager`建構函式來提供使用 REST Api 來存取資料的實作。
 
 ### <a name="translating-text-to-speech"></a>將文字轉換語音轉譯
 
@@ -113,4 +113,3 @@ void OnSpeakActivated (object sender, EventArgs e)
 - [WCF 版本 （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF)
 - [REST 版本 （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST)
 - [Azure 版本 （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzure)
-- [Amazon Web Services 版本 （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAWS)

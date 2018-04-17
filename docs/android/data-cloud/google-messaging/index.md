@@ -6,12 +6,12 @@ ms.assetid: 85E8DF92-D160-4763-A7D3-458B4C31635F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: f68b4dc12586d482fd9d3f8901bf3fd09469b0bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/12/2018
+ms.openlocfilehash: cf1eaec3dfee7c3457a4614147c9b5564843b2a7
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="google-messaging"></a>Google 傳訊
 
@@ -28,6 +28,10 @@ Firebase 雲端傳訊 (FCM) 是一種服務，可促進行動裝置應用程式�
 ## <a name="google-cloud-messaginggoogle-cloud-messagingmd"></a>[Google Cloud Messaging](google-cloud-messaging.md)
 
 本節提供如何 Google Cloud Messaging (GCM) 將訊息路由傳送應用程式伺服器，您的應用程式之間的高階概觀，並取得認證，好讓您的應用程式可以使用 GCM 服務提供的逐步程序。 （請注意 GCM 已被取代的 FCM）。
+
+> [!NOTE]
+> GCM 已被取代的[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) (FCM)。
+> GCM 伺服器和用戶端應用程式開發介面[已被取代](https://firebase.googleblog.com/2018/04/time-to-upgrade-from-gcm-to-fcm.html)，將無法再使用盡 2019 年 4 月 11。
 
 ## <a name="remote-notifications-with-google-cloud-messagingremote-notifications-with-gcmmd"></a>[遠端使用 Google 雲端訊息的通知](remote-notifications-with-gcm.md)
 

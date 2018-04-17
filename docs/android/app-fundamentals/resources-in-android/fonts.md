@@ -5,15 +5,14 @@ ms.assetid: 3F543FC5-FDED-47F8-8D2C-481FCC98BFDA
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/09/2018
-ms.openlocfilehash: d4ad9dde4004440985ff247d2f986ede385f981f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/13/2018
+ms.openlocfilehash: 086576ea7d806bb0768fbe4563df7fca99244ccb
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="fonts"></a>字型
-
 
 ## <a name="overview"></a>總覽
 
@@ -41,7 +40,7 @@ Android 支援的程式庫 v26 將 backport 支援的 API 層級 26 的字型。
             app:fontStyle="normal" 
             app:fontWeight="400" />
 
-</font-family>    
+</font-family>
 ```
 
 只要字型以正確方式提供給 Android 應用程式，可以將它們套用至 UI widget 藉由設定[`fontFamily`屬性](https://developer.android.com/reference/android/widget/TextView.html#attr_android:fontFamily)。 例如，下列程式碼片段會示範如何顯示字型 TextView 中：
@@ -49,8 +48,8 @@ Android 支援的程式庫 v26 將 backport 支援的 API 層級 26 的字型。
 ```xml
 <TextView
     android:text="The quick brown fox jumped over the lazy dog."
-    android:fontFamily="@font/caveat_bold"
-    app:fontFamily="@font/caveat_bold"
+    android:fontFamily="@font/sourcesanspro_regular"
+    app:fontFamily="@font/sourcesanspro_regular"
     android:textAppearance="?android:attr/textAppearanceLarge"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />
@@ -58,14 +57,12 @@ Android 支援的程式庫 v26 將 backport 支援的 API 層級 26 的字型。
 
 本指南將會先討論如何為 Android 的資源，使用的字型，然後移至討論如何在執行階段的字型下載。
 
-
 ## <a name="fonts-as-a-resource"></a>為資源的字型
 
 封裝成 Android APK 字型，可確保會讓應用程式使用。 字型檔案 (其中一個。TTF 或。OTF 檔案） 加入至 Xamarin.Android 應用程式，就像任何其他資源，將檔案複製到中的子目錄**資源**Xamarin.Android 專案的資料夾。 字型資源保留在**字型**子目錄的**資源**專案的資料夾。 
 
-
 > [!NOTE]
->  字型應有**建置動作**的**AndroidResource**或者不封裝成最終的 APK。 建置動作應該由 IDE 所自動設定。
+> 字型應有**建置動作**的**AndroidResource**或者不封裝成最終的 APK。 建置動作應該由 IDE 所自動設定。
 
 有許多類似字型檔案 （例如，使用不同的加權或樣式的相同字型） 時，可以將它們組成字型家族。
 
@@ -75,7 +72,7 @@ Android 支援的程式庫 v26 將 backport 支援的 API 層級 26 的字型。
 
 字型家族是一組有不同的加權和樣式的字型。 例如，可能是粗體或斜體字型的不同字型檔案。 字型家族由定義`font`就會保留在 XML 檔案中的項目**資源/字型**目錄。 每個字型家族應該有其自己的 XML 檔案。
 
-若要建立的字型系列，第一次新增的所有字型**資源/字型**資料夾。 字型家族的字型資料夾中，然後建立新的 XML 檔案。 這個 XML 檔案將會有根`font-family`包含一或多個項目`font`項目。 每個`font`項目宣告的字型屬性。 
+若要建立的字型系列，第一次新增的所有字型**資源/字型**資料夾。 字型家族的字型資料夾中，然後建立新的 XML 檔案。 XML 檔案的名稱具有任何同質或關聯性參考; 字型資源檔可以是任何合法的 Android 資源檔案名稱。 這個 XML 檔案將會有根`font-family`包含一或多個項目`font`項目。 每個`font`項目宣告的字型屬性。
 
 下列 XML 是字型家族的範例_來源 San Pro_字型，可定義許多不同的字型粗細。 這以檔案儲存在**資源/字型**資料夾名為**sourcesanspro.xml**:
 
@@ -86,7 +83,7 @@ Android 支援的程式庫 v26 將 backport 支援的 API 層級 26 的字型。
     <font android:font="@font/sourcesanspro_regular" 
           android:fontStyle="normal" 
           android:fontWeight="400"
-          app:font="@font/sourcesanspro_" 
+          app:font="@font/sourcesanspro_regular" 
           app:fontStyle="normal" 
           app:fontWeight="400" />
     <font android:font="@font/sourcesanspro_bold" 
@@ -111,15 +108,15 @@ Android 支援的程式庫 v26 將 backport 支援的 API 層級 26 的字型。
 
 `fontWeight`屬性對應的 css`font-weight`屬性，並參考之字型的粗細。 這是 100 900 的範圍內的值。 下列清單描述常見的字型粗細值和其名稱：
 
-* **Thin** &ndash; 100
+* **精簡** &ndash; 100
 * **額外淺色** &ndash; 200
 * **Light** &ndash; 300
 * **一般** &ndash; 400
 * **媒體** &ndash; 500
 * **半粗體** &ndash; 600
-* **Bold** &ndash; 700
+* **粗體** &ndash; 700
 * **特粗** &ndash; 800
-* **Black** &ndash; 900
+* **黑色** &ndash; 900
 
 一旦已定義字型家族，它可以使用以宣告方式設定`fontFamily`， `textStyle`，和`fontWeight`配置檔案中的屬性。  例如下列 XML 程式碼片段設定 （一般） 的粗細 400 字型和斜體文字樣式：
 
@@ -135,7 +132,6 @@ Android 支援的程式庫 v26 將 backport 支援的 API 層級 26 的字型。
     android:textStyle="italic"
     />
 ```
-
 
 ### <a name="programmatically-assigning-fonts"></a>以程式設計的方式指派字型
 
@@ -154,14 +150,13 @@ var typeface = Typeface.Create("<FONT FAMILY NAME>", Android.Graphics.TypefaceSt
 textView1.Typeface = typeface;
 ```
 
-
 ## <a name="downloading-fonts"></a>下載字型
 
 而不是封裝為應用程式資源的字型，Android 可以從遠端來源下載字型。 這會減少的 APK 大小的理想的效果。 
 
 字型下載的協助_字型提供者_。 這是特製化的內容提供者所管理的下載和快取的所有應用程式在裝置上的字型。 Android 8.0 包含字型提供者將從字型下載[Google 字型儲存機制](http://fonts.google.com)。 此預設字型提供者是應用程式開發介面層級 14 的 Android 支援程式庫 v26 backported。
- 
- 當應用程式提出要求時字型時、 字型提供者會先檢查字型已在裝置上。 如果沒有，它會嘗試下載字型。 如果字型不能是下載、 然後 Android 將會使用預設系統字型。 一旦已下載字型，皆可在裝置上，不只是進行初始要求的應用程式的所有應用程式。
+
+當應用程式提出要求時字型時、 字型提供者會先檢查字型已在裝置上。 如果沒有，它會嘗試下載字型。 如果字型不能是下載、 然後 Android 將會使用預設系統字型。 一旦已下載字型，皆可在裝置上，不只是進行初始要求的應用程式的所有應用程式。
 
 若要下載字型提出要求時應用程式不會直接查詢字型提供者。 相反地，應用程式將使用的執行個體[ `FontsContract` ](https://developer.android.com/reference/android/provider/FontsContract.html)應用程式開發介面 (或[ `FontsContractCompat` ](https://developer.android.com/reference/android/support/v4/provider/FontsContractCompat.html)如果正在使用支援程式庫 26)。  
 
@@ -184,19 +179,18 @@ Android 8.0 的支援方式有兩種下載字型：
              app:fontProviderPackage="com.google.android.gms" 
              app:fontProviderQuery="VT323"
              app:fontProviderCerts="@array/com_google_android_gms_fonts_certs"
-    >
+>
 </font-family>
 ```
 
 `font-family`元素包含下列屬性： 宣告 Android 需要下載字型的資訊：
- 
+
 1. **fontProviderAuthority** &ndash;字型提供者的要求所使用的授權。
 2. **fontPackage** &ndash;字型提供者以要求所使用的封裝。 這用來驗證身分識別提供者。
 3. **fontQuery** &ndash;這是可協助找出要求的字型的字型提供者的字串。 字型查詢的詳細資訊是特定字型的提供者。 [ `QueryBuilder` ](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/DownloadableFonts/QueryBuilder.cs)類別[可下載的字型](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/)範例應用程式提供某些有關的查詢格式的字型從 Google 字型開啟來源集合。
 4. **fontProviderCerts** &ndash;的提供者應該使用簽署憑證的雜湊集清單的資源陣列。
 
 字型定義之後，可能需要提供下列資訊_字型憑證_涉及下載。
-
 
 ### <a name="font-certificates"></a>字型的憑證
 
@@ -226,7 +220,6 @@ Android 8.0 的支援方式有兩種下載字型：
 
 這些資源中的檔案位置，應用程式都可以下載字型。
 
-
 ### <a name="declaring-downloadable-fonts-as-resources"></a>為資源宣告可下載的字型
 
 藉由列出在可下載的字型**AndroidManifest.XML**，Android 也會在應用程式第一次啟動時以非同步方式下載字型。 字型的本身為陣列資源檔，類似以下所示： 
@@ -238,14 +231,13 @@ Android 8.0 的支援方式有兩種下載字型：
         <item>@font/vt323</item>
     </array>
 </resources>
-```        
+```
 
 若要下載這些字型，他們必須在宣告**AndroidManifest.XML**加`meta-data`做為子系`application`項目。 例如，如果在資源檔中宣告可下載的字型**Resources/values/downloadable_fonts.xml**，則此程式碼片段必須加入資訊清單： 
 
 ```xml
 <meta-data android:name="downloadable_fonts" android:resource="@array/downloadable_fonts" />
 ```
-
 
 ### <a name="downloading-a-font-with-the-font-apis"></a>下載字型的字型 Api
 
@@ -269,17 +261,16 @@ FontRequest request = new FontRequest("com.google.android.gms.fonts", "com.googl
 在傳遞之前`FontRequest`至`FontContractCompat.RequestFont`方法中，有兩個物件，必須建立：
 
 * **`FontsContractCompat.FontRequestCallback`** &ndash; 這是必須擴充抽象類別。 它是會回呼時叫用`RequestFont`已完成。 Xamarin.Android 應用程式必須子類別化`FontsContractCompat.FontRequestCallback`並覆寫`OnTypefaceRequestFailed`和`OnTypefaceRetrieved`，提供下載失敗，或分別成功時要採取的動作。
-* **`Handler`** &ndash; 這是`Handler`這會由`RequestFont`視下載，執行緒上的字型。 字型應該**不**下載 UI 執行緒上。  
+* **`Handler`** &ndash; 這是`Handler`這會由`RequestFont`視下載，執行緒上的字型。 字型應該**不**下載 UI 執行緒上。
 
 這個程式碼片段是以非同步方式將下載字型 Google 字型開放原始碼集合中的 C# 類別的範例。 它會實作`FontRequestCallback`介面，並引發 C# 事件時`FontRequest`已完成。 
-
 
 ```csharp
 public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
 {
     // A very simple font query; replace as necessary
     public static readonly String FontToDownload = "Courgette";
-    
+
     Android.OS.Handler Handler = null;
 
     public event EventHandler<FontDownloadEventArg> FontDownloaded = delegate
@@ -305,7 +296,7 @@ public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
         base.OnTypefaceRetrieved(typeface);
         FontDownloaded(this, new FontDownloadEventArg(typeface));
     }
-    
+
     Handler GetHandlerThreadHandler()
     {
         if (Handler == null)
@@ -335,9 +326,8 @@ public class FontDownloadEventArg : EventArgs
 }
 ```
 
-
-
 若要使用此 helper，新`FontDownloadHelper`建立時，且已指派的事件處理常式：  
+
 ```csharp
 var fontHelper = new FontDownloadHelper();
 
@@ -348,11 +338,9 @@ fontHelper.FontDownloaded += (object sender, FontDownloadEventArg e) =>
 fontHelper.DownloadFonts(this); // this is an Android Context instance.
 ```
 
-
 ## <a name="summary"></a>總結
 
-本指南討論 Android 可下載的字型和做為資源的字型支援 8.0 中新的 Api。 它將討論如何將現有的字型內嵌在 APK，以及使用它們的版面配置中。 它也將討論如何 Android 8.0 支援下載字型字型提供者，以程式設計方式或宣告字型中繼資料資源檔中。 
-
+本指南討論 Android 可下載的字型和做為資源的字型支援 8.0 中新的 Api。 它將討論如何將現有的字型內嵌在 APK，以及使用它們的版面配置中。 它也將討論如何 Android 8.0 支援下載字型字型提供者，以程式設計方式或宣告字型中繼資料資源檔中。
 
 ## <a name="related-links"></a>相關連結
 

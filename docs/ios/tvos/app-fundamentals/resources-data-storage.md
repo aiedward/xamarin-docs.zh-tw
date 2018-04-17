@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: b4d96ef50498b454da583a955169b9d51c29dd01
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8103dcc1c2e1e8c2375a86d51580b1ea3fcce432
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="resources-and-data-storage"></a>資源和資料存放區
 
@@ -55,6 +55,9 @@ _本文件涵蓋使用資源和永續性資料儲存在 Xamarin.tvOS 應用程�
 
 - **索引鍵 / 值儲存體 (KVS) iCloud** -小型的資訊 (小於 1 MB)，您的應用程式可能需要 （例如使用者喜好設定），您可以使用 iCloud KVS 儲存體。 iCloud KVS 資料會自動同步到雲端，而且所有執行相同的應用程式的使用者的裝置。 如需詳細資訊，請參閱[機碼值的儲存體](~/ios/data-cloud/introduction-to-icloud.md)區段我們[icloud 的功能簡介](~/ios/data-cloud/introduction-to-icloud.md)文件或 Apple 的[設計 icloud 的功能中的索引鍵-值資料](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/iCloudDesignGuide/Chapters/DesigningForKey-ValueDataIniCloud.html#//apple_ref/doc/uid/TP40012094-CH7)文件。
 - **CloudKit** -存放裝置的較大的部分 （大於 1 MB） 的資訊，請使用 Apple 的 CloudKit 架構。 不同於 iCloud KVS 儲存體，您可以在您的應用程式 （以及在單一使用者的私用） 的所有使用者之間共用 CloudKit 資料。 如需詳細資訊，請參閱我們[簡介 CloudKit](~/ios/data-cloud/intro-to-cloudkit.md)文件或 Apple 的[CloudKit 快速入門](https://developer.apple.com/library/prerelease/tvos/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987)。
+
+> [!IMPORTANT]
+> Apple[提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)可協助開發人員適當地處理歐盟的一般資料保護規定 (GDPR)。
 
 <a name="On-Demand-Resources" />
 

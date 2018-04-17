@@ -1,21 +1,21 @@
 ---
 title: 使用 Web 服務
-description: 本指南示範如何與提供不同的網頁服務建立、 讀取、 更新和刪除 (CRUD) Xamarin.Forms 應用程式的功能。 涵蓋的主題包含與 ASMX 服務、 WCF 服務、 REST 服務、 Azure 行動應用程式和 Amazon Web Services 通訊。
+description: 本指南示範如何與提供不同的網頁服務建立、 讀取、 更新和刪除 (CRUD) Xamarin.Forms 應用程式的功能。 涵蓋的主題包含與 ASMX 服務、 WCF 服務、 REST 服務和 Azure 行動應用程式進行通訊。
 ms.prod: xamarin
 ms.assetid: 8B360BDA-E4E3-4A3F-9004-0E35362F49F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 530b57c009a1f76d3756d7315856f74b6cda2f66
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a4c842ea7fd37ade9be0a9cb3e3ff7e50a6d1491
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="consuming-web-services"></a>使用 Web 服務
 
-_本指南示範如何與提供不同的網頁服務建立、 讀取、 更新和刪除 (CRUD) Xamarin.Forms 應用程式的功能。涵蓋的主題包含與 ASMX 服務、 WCF 服務、 REST 服務、 Azure 行動應用程式和 Amazon Web Services 通訊。_
+（_t） 指南示範如何與提供不同的網頁服務建立、 讀取、 更新和刪除 (CRUD) Xamarin.Forms 應用程式的功能。 涵蓋的主題包含與 ASMX 服務、 WCF 服務、 REST 服務和 Azure 行動應用程式進行通訊。
 
 ## <a name="consuming-an-aspnet-web-service-asmxxamarin-formsdata-cloudconsumingasmxmd"></a>[使用 ASP.NET Web 服務 (ASMX)](~/xamarin-forms/data-cloud/consuming/asmx.md)
 
@@ -32,11 +32,6 @@ Representational State Transfer (REST) 為架構的樣式，來建置 web 服務
 ## <a name="consuming-an-azure-mobile-appxamarin-formsdata-cloudconsumingazuremd"></a>[使用 Azure 行動應用程式](~/xamarin-forms/data-cloud/consuming/azure.md)
 
 Azure 行動應用程式可讓您與裝載在 Azure 應用程式服務中，以支援行動裝置的驗證、 離線同步處理，及推播通知的可擴充後端開發應用程式。 只適用於使用 Node.js 後端的 Azure 行動應用程式，這篇文章說明如何查詢、 插入、 更新和刪除儲存在 Azure 行動應用程式執行個體中資料表的資料。
-
-## <a name="consuming-an-amazon-simpledb-servicexamarin-formsdata-cloudconsumingawsmd"></a>[使用 Amazon SimpleDB 服務](~/xamarin-forms/data-cloud/consuming/aws.md)
-
-Amazon SimpleDB 是 web 服務，提供儲存和查詢 Amazon 雲端中的資料的能力。 本文說明如何使用 AWS SDK for.NET 進行查詢、 建立和取代，並刪除儲存在 SimpleDB 服務中的資料。
-
 
 ## <a name="related-links"></a>相關連結
 

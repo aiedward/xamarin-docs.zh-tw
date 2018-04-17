@@ -7,11 +7,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 5ab373d708d47ad7c3dbbf4507284be04a1f9934
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3b8211e4c38fd37040fab5b35be4709d4b926c91
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="introduction-to-macos-sierra"></a>MacOS 利也簡介
 
@@ -64,6 +64,9 @@ CloudKit framework 已展開於 macOS 利也可讓使用者快速且輕鬆地共
 CloudKit 提供完整的 UI 來傳送和接受記錄的共用的邀請，而且使用者必須完成的讀取/寫入控制可以存取記錄的人員。
 
 如需詳細資訊，請參閱 Apple [CloudKit Framework 參考](https://developer.apple.com/reference/clockkit)和[CloudKit JS Framework 參考](https://developer.apple.com/reference/cloudkitjs)。
+
+> [!IMPORTANT]
+> Apple[提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)可協助開發人員適當地處理歐盟的一般資料保護規定 (GDPR)。
 
 <a name="Safari-App-Extensions-Support" />
 

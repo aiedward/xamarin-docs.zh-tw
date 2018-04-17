@@ -7,13 +7,13 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: ed934e4a5896a004e0f226d156109df182cfebd3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 20d5a81a6a33465e5b883e495600b57400adf199
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="f35"></a>F&#35;
+# <a name="f35"></a>F&AMP;#35;
 
 F # 是.NET 開放原始碼、 跨平台功能第一個程式設計語言。
 
@@ -21,7 +21,7 @@ F # 結合 succinctness、 表現和撰寫性型別推斷功能性程式設計�
 
 F # 可做為所有 Xamarin 支援的平台上的 Xamarin 使用者的程式語言： Android、 macOS 和 iOS。
 
-- [F# 指南](https://docs.microsoft.com/en-us/dotnet/fsharp/)
+- [F# 指南](https://docs.microsoft.com/dotnet/fsharp/)
 - [F # 和 Xamarin 使用者入門](overview.md)
 - [F # Mobile 範例](samples.md)
 
@@ -36,4 +36,3 @@ F # 是支援的語言，在 Visual Studio for mac。 支援的功能包括：
 - F # Interactive 中反白顯示語法
 - Xamarin.Forms、 iOS 和 Android 的 F # 範本
 - [*等等...*](https://developer.xamarin.com/releases/studio/xamarin.studio_6.0/xamarin.studio_6.0/#F_Enhancements)
-

@@ -6,12 +6,12 @@ ms.assetid: 4D7C5F46-C997-49F6-AFDA-6763E68CDC90
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: c6e1d36d871b4bb41a1e53d6e58ba8940813b29f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/12/2018
+ms.openlocfilehash: e2f25504b971a0332dc51dc9b017c9c83222ec57
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>遠端通知 Firebase 與雲端通訊
 
@@ -427,7 +427,7 @@ if (Intent.Extras != null)
 加上長字串**語彙基元**會貼入 Firebase 主控台的執行個體 ID 語彙基元&ndash;選取，然後將此字串複製到剪貼簿。 如果看不到執行個體的 ID 語彙基元，請將下列行加入頂端`OnCreate`方法可讓您確認**google services.json**正確剖析：
 
 ```csharp
-Log.Debug(TAG, "google app id: " + Resource.String.google_app_id);
+Log.Debug(TAG, "google app id: " + GetString(Resource.String.google_app_id));
 ```
 
 `google_app_id`記錄到 [輸出] 視窗的值應該符合`mobilesdk_app_id`值記錄在**google services.json**。 
@@ -683,6 +683,27 @@ SendNotification(message.GetNotification().Body, message.Data);
 當您開啟通知時，您應該會看到從 Firebase 主控台通知 GUI 已傳送的最後一個訊息： 
 
 [![前景與前景圖示一起顯示的通知](remote-notifications-with-fcm-images/23-foreground-msg-sml.png)](remote-notifications-with-fcm-images/23-foreground-msg.png#lightbox)
+
+
+## <a name="disconnecting-from-fcm"></a>中斷 FCM
+
+若要取消訂閱的主題，請呼叫[UnsubscribeFromTopic](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging.html#unsubscribeFromTopic%28java.lang.String%29)方法[FirebaseMessaging](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging)類別。 例如，若要取消訂閱_新聞_主題稍早，訂閱**Unsubscribe**按鈕無法加入至版面配置與下列處理常式程式碼：
+
+```csharp
+var unSubscribeButton = FindViewById<Button>(Resource.Id.unsubscribeButton);
+unSubscribeButton.Click += delegate {
+    FirebaseMessaging.Instance.UnsubscribeFromTopic("news");
+    Log.Debug(TAG, "Unsubscribed from remote notifications");
+};
+```
+
+若要完全 FCM 對裝置取消註冊，請刪除的執行個體識別碼藉由呼叫[DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)方法[FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)類別。 例如: 
+
+```csharp
+FirebaseInstanceId.Instance.DeleteInstanceId();
+```
+
+這個方法呼叫將會刪除的執行個體識別碼以及與其相關聯的資料。 如此一來，定期傳送到裝置的 FCM 資料就會中止。
 
  
 ## <a name="troubleshooting"></a>疑難排解

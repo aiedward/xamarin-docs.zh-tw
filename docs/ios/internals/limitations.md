@@ -5,11 +5,12 @@ ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: a75d76ad1292955003705a5ddc1d52381addc796
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/09/2018
+ms.openlocfilehash: 8bd4ce464adf316517e2e1f2299006913bc68736
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="limitations"></a>限制
 
@@ -106,6 +107,18 @@ System.Reflection 缺乏。 **發出**取決於執行階段程式碼產生任何
 
 但是，整個反映 API，包括 Type.GetType (「 someClass 」) 方法，列出擷取屬性和值的屬性，就可以正常運作。
 
+### <a name="using-delegates-to-call-native-functions"></a>使用委派來呼叫原生函式
+
+若要呼叫的原生函式透過 C# 委派，必須以下列屬性的其中一個裝飾委派宣告：
+
+- [UnmanagedFunctionPointerAttribute](https://developer.xamarin.com/api/type/System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute/) （慣用，因為它是跨平台和.NET 標準 1.1 + 相容）
+- [MonoNativeFunctionWrapperAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoNativeFunctionWrapperAttribute)
+
+無法提供其中一個屬性，會導致執行階段錯誤，例如：
+
+```
+System.ExecutionEngineException: Attempting to JIT compile method '(wrapper managed-to-native) YourClass/YourDelegate:wrapper_aot_native(object,intptr,intptr)' while running in aot-only mode.
+```
  
  <a name="Reverse_Callbacks" />
 
@@ -134,7 +147,7 @@ System.Reflection 缺乏。 **發出**取決於執行階段程式碼產生任何
 單聲道的 iOS 執行階段中已停用下列功能：
 
 -  程式碼剖析工具
--  Reflection.Emit
+-  這些事件處理常式
 -  Reflection.Emit.Save 功能
 -  COM 繫結
 -  JIT 引擎
