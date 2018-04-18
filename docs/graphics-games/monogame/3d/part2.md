@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 25a05bcd094011042b3dc33a1b837460d5893be0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4736bedd413663af098bbad522cc56f432e36ea0
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="drawing-3d-graphics-with-vertices-in-monogame"></a>在 MonoGame 中繪製頂點與 3D 圖形
 
@@ -29,19 +29,18 @@ _MonoGame 支援使用陣列的頂點定義以每個點為基礎呈現 3D 物件
 
 本逐步解說涵蓋下列主題：
 
- - 建立專案
- - 建立頂點
- - 加入的繪圖程式碼
- - 使用紋理的呈現
- - 修改材質座標
- - 呈現頂點的模型
+- 建立專案
+- 建立頂點
+- 加入的繪圖程式碼
+- 使用紋理的呈現
+- 修改材質座標
+- 呈現頂點的模型
 
 已完成的專案將會包含使用頂點陣列來繪製其棋盤式的樓層：
 
 ![](part2-images/image3.png "已完成的專案會包含使用頂點陣列來繪製其棋盤式的樓層")
 
-
-# <a name="creating-a-project"></a>建立專案
+## <a name="creating-a-project"></a>建立專案
 
 首先，我們將下載的專案將做為我們的起點。 我們將使用模型專案[這可以在這裡找到](https://developer.xamarin.com/samples/mobile/ModelRenderingMG/)。
 
@@ -51,12 +50,11 @@ _MonoGame 支援使用陣列的頂點定義以每個點為基礎呈現 3D 物件
 
 這個專案的結束我們將會結合自己自訂的頂點轉譯機器人`Model`，因此我們不會刪除機器人轉譯程式碼。 相反地，我們將剛清除`Game1.Draw`移除 6 robots 現在在繪製呼叫。 若要這樣做，請開啟**Game1.cs**檔案，並尋找`Draw`方法。 修改，它包含下列程式碼：
 
-
 ```csharp
 protected override void Draw(GameTime gameTime)
 {
-    GraphicsDevice.Clear(Color.CornflowerBlue);
-    base.Draw(gameTime);
+  GraphicsDevice.Clear(Color.CornflowerBlue);
+  base.Draw(gameTime);
 }
 ```
 
@@ -64,36 +62,33 @@ protected override void Draw(GameTime gameTime)
 
 ![](part2-images/image5.png "這將導致顯示空白的藍色螢幕遊戲")
 
-
-# <a name="creating-the-vertices"></a>建立頂點
+## <a name="creating-the-vertices"></a>建立頂點
 
 我們將建立來定義我們幾何頂點的陣列。 在本逐步解說中，我們將建立 3D 平面上 （在 3D 空間中的方塊，不飛機）。 雖然我們平面有四個邊與四個角落，但是它會組成每一個都需要三個頂點的兩個三角形。 因此，我們將在這裡定義六個點總數。
 
 到目前為止我們已經被指頂點的一般意義上，但 MonoGame 提供可用的頂點一些標準結構：
 
- - `Microsoft.Xna.Framework.Graphics.VertexPositionColor`
- - `Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture`
- - `Microsoft.Xna.Framework.Graphics.VertexPositionNormalTexture`
- - `Microsoft.Xna.Framework.Graphics.VertexPositionTexture`
+- `Microsoft.Xna.Framework.Graphics.VertexPositionColor`
+- `Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture`
+- `Microsoft.Xna.Framework.Graphics.VertexPositionNormalTexture`
+- `Microsoft.Xna.Framework.Graphics.VertexPositionTexture`
 
 每個型別名稱會指出它所包含的元件。 例如，`VertexPositionColor`包含值的位置和色彩。 讓我們看看每個元件：
 
- - 位置 – 所有的頂點類型包含`Position`元件。 `Position`值會定義在 3D 空間 （X、 Y 和 Z） 中的頂點位置。
- - 選擇性地指定色彩 – 頂點可以`Color`來執行自訂濃淡。
- - 標準 – 法線定義物件的表面遇到何種方法。 法線所需介面呈現具有光源自方向的物件，如果遇到的影響多少淺色接收。 法線通常會指定為*單位向量*– 3D 向量的長度為 1。
- - 紋理 – 紋理指材質座標 – 也就是對紋理的哪些部分應該會出現在指定的頂點。 紋理值如果是必要的呈現 3D 與紋理物件。 材質座標是標準化的座標，也就是說值將會介於 0 和 1。 我們會在本指南稍後的更詳細的材質座標。
+- 位置 – 所有的頂點類型包含`Position`元件。 `Position`值會定義在 3D 空間 （X、 Y 和 Z） 中的頂點位置。
+- 選擇性地指定色彩 – 頂點可以`Color`來執行自訂濃淡。
+- 標準 – 法線定義物件的表面遇到何種方法。 法線所需介面呈現具有光源自方向的物件，如果遇到的影響多少淺色接收。 法線通常會指定為*單位向量*– 3D 向量的長度為 1。
+- 紋理 – 紋理指材質座標 – 也就是對紋理的哪些部分應該會出現在指定的頂點。 紋理值如果是必要的呈現 3D 與紋理物件。 材質座標是標準化的座標，也就是說值將會介於 0 和 1。 我們會在本指南稍後的更詳細的材質座標。
 
 我們平面將做為下限，，我們會想要執行我們的轉譯，所以我們將使用時，套用紋理`VertexPositionTexture`類型來定義我們的頂點。
 
 首先，我們會將成員新增到 Game1 類別：
-
 
 ```csharp
 VertexPositionTexture[] floorVerts; 
 ```
 
 接下來，定義我們的頂點`Game1.Initialize`。 請注意，參考本文章中稍早提供的範本不包含`Game1.Initialize`方法，所以我們需要將整個方法加入`Game1`:
-
 
 ```csharp
 protected override void Initialize ()
@@ -116,8 +111,7 @@ protected override void Initialize ()
 
 我們需要依賴我們的圖表以視覺化方式檢視頂點直到我們完成實作呈現的程式碼。
 
-
-# <a name="adding-drawing-code"></a>加入的繪圖程式碼
+## <a name="adding-drawing-code"></a>加入的繪圖程式碼
 
 現在，我們已經定義我們幾何的位置，我們可以撰寫轉譯程式碼。
 
@@ -128,11 +122,10 @@ protected override void Initialize ()
 ...
 VertexPositionTexture[] floorVerts;
 // new code:
-BasicEffect effect; 
+BasicEffect effect;
 ```
 
 接下來，修改`Initialize`方法，以定義效果：
-
 
 ```csharp
 protected override void Initialize ()
@@ -150,11 +143,10 @@ protected override void Initialize ()
     effect = new BasicEffect (graphics.GraphicsDevice);
 
     base.Initialize ();
-} 
+}
 ```
 
 現在我們可以將執行繪圖程式碼：
-
 
 ```csharp
 void DrawGround()
@@ -193,7 +185,7 @@ void DrawGround()
             // The number of triangles to draw
             2);
     }
-} 
+}
 ```
 
 我們需要呼叫`DrawGround`中我們`Game1.Draw`:
@@ -215,13 +207,11 @@ protected override void Draw (GameTime gameTime)
 
 讓我們看看一些上述程式碼中的詳細資料。
 
-
-## <a name="view-and-projection-properties"></a>檢視及投影內容
+### <a name="view-and-projection-properties"></a>檢視及投影內容
 
 `View`和`Projection`屬性控制我們該如何檢視場景。 我們將會修改這個程式碼稍後當我們重新將加入模型轉譯程式碼。 具體來說，`View`控制的位置和方向的相機，和`Projection`控制項*視野*（這可以用來縮放相機）。
 
-
-## <a name="techniques-and-passes"></a>技術，以及傳遞
+### <a name="techniques-and-passes"></a>技術，以及傳遞
 
 一次我們已指派屬性，在我們效果，我們可以執行實際的轉譯。 
 
@@ -229,8 +219,7 @@ protected override void Draw (GameTime gameTime)
 
 要牢記的重點在於`foreach`迴圈可讓 C# 程式碼轉譯任何作用，無論基礎複雜性`BasicEffect`。
 
-
-## <a name="drawuserprimitives"></a>DrawUserPrimitives
+### <a name="drawuserprimitives"></a>DrawUserPrimitives
 
 `DrawUserPrimitives` 是頂點呈現的位置。 第一個參數會告知方法，我們有組織我們的頂點的方式。 我們有結構化它們，因此我們使用三個已排序的頂點，定義每個三角形`PrimitiveType.TriangleList`值。
 
@@ -240,15 +229,13 @@ protected override void Draw (GameTime gameTime)
 
 最後，我們會指定多少呈現的三角形。 我們的頂點陣列包含兩個三角形，因此傳遞的值為 2。
 
-
-# <a name="rendering-with-a-texture"></a>使用紋理的呈現
+## <a name="rendering-with-a-texture"></a>使用紋理的呈現
 
 此時我們的應用程式呈現白色平面上 （在檢視方塊）。 接下來我們要加入紋理轉譯我們平面時所要使用專案。 
 
 為了讓事情變簡單我們將.png 直接加入至受測專案，而不是使用 MonoGame 管線工具。 若要這樣做，請下載[.png 檔案](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/checkerboard.png?raw=true)到您的電腦。 在下載後，以滑鼠右鍵按一下**內容**方案板然後選取資料夾**新增 > 新增檔案...** . 如果工作在 Android 上，然後這個資料夾會位於**資產**特定的 Android 專案中的資料夾。 如果在 iOS 上，則此資料夾會在 iOS 專案的根目錄中。 瀏覽至位置其中**checkerboard.png**儲存，然後選取 此檔案。 選取即可將檔案複製到目錄。
 
 接下來，我們要在其中加入程式碼，建立我們`Texture2D`執行個體。 首先，新增`Texture2D`成員的身分`Game1`下`BasicEffect`執行個體：
-
 
 ```csharp
 ...
@@ -274,11 +261,10 @@ protected override void LoadContent()
     {
         checkerboardTexture = Texture2D.FromStream (this.GraphicsDevice, stream);
     }
-} 
+}
 ```
 
 接下來，修改`DrawGround`方法。 唯一必要的修改，將指派`effect.TextureEnabled`至`true`，並設定`effect.Texture`至`checkerboardTexture`:
-
 
 ```csharp
 void DrawGround()
@@ -315,7 +301,7 @@ void DrawGround()
             0,
             2);
     }
-} 
+}
 ```
 
 最後，我們需要修改`Game1.Initialize`方法也指派紋理座標在我們的頂點上：
@@ -353,8 +339,7 @@ protected override void Initialize ()
 
 ![](part2-images/image8.png "平面現在會顯示棋盤式圖樣")
 
-
-# <a name="modifying-texture-coordinates"></a>修改材質座標
+## <a name="modifying-texture-coordinates"></a>修改材質座標
 
 MonoGame 會使用標準化材質座標，也就是介於 0 和 1 之間，而不是介於 0 和材質的寬度或高度的座標。 下圖可協助視覺化標準化的座標：
 
@@ -391,7 +376,7 @@ protected override void Initialize ()
     effect = new BasicEffect (graphics.GraphicsDevice);
 
     base.Initialize ();
-} 
+}
 ```
 
 這會導致重複的 20 倍的紋理：
@@ -399,10 +384,9 @@ protected override void Initialize ()
 ![](part2-images/image10.png "這會導致重複的 20 倍的材質")
 
 
-# <a name="rendering-vertices-with-models"></a>呈現頂點的模型
+## <a name="rendering-vertices-with-models"></a>呈現頂點的模型
 
 既然我們平面都會正確轉譯，我們可以重新加入模型，以同時檢視所有項目。 首先，我們會重新加入模型程式碼，我們`Game1.Draw`方法 （包含已修改的位置）：
-
 
 ```csharp
 protected override void Draw(GameTime gameTime)
@@ -425,7 +409,6 @@ protected override void Draw(GameTime gameTime)
 
 我們也會建立`Vector3`中`Game1`來表示我們相機的位置。 我們會將新增的欄位，在我們`checkerboardTexture`宣告：
 
-
 ```csharp
 ...
 Texture2D checkerboardTexture;
@@ -434,7 +417,6 @@ Vector3 cameraPosition = new Vector3(0, 10, 10);
 ```
 
 接下來，移除本機`cameraPosition`變數從`DrawModel`方法：
-
 
 ```csharp
 void DrawModel(Vector3 modelPosition)
@@ -458,7 +440,6 @@ void DrawModel(Vector3 modelPosition)
 
 同樣地移除本機`cameraPosition`變數從`DrawGround`方法：
 
-
 ```csharp
 void DrawGround()
 {
@@ -478,7 +459,6 @@ void DrawGround()
 
 如果我們修改相機的位置 （例如藉由增加它的 X 值，會在此情況下將相機左側） 的值影響地面和模型，我們可以看到：
 
-
 ```csharp
 Vector3 cameraPosition = new Vector3(15, 10, 10);
 ```
@@ -487,8 +467,7 @@ Vector3 cameraPosition = new Vector3(15, 10, 10);
 
 ![](part2-images/image3.png "此程式碼會產生這份檢視")
 
-
-# <a name="summary"></a>總結
+## <a name="summary"></a>總結
 
 本逐步解說示範了如何使用頂點陣列來執行自訂的轉譯。 在此情況下，我們棋盤式的 floor 相結合所產生我們頂點型轉譯滿材質和`BasicEffect`，但列出的程式碼此處可做為任何 3D 呈現的基礎。 我們也示範了頂點基礎呈現可以搭配相同場景中的模型。
 

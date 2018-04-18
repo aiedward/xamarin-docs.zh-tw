@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 0273b4f13c91fd766530ff7c0976096de3239dc5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e3538efef107778397bd8c799bdd63eb6c2f3de3
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="3d-coordinates-in-monogame"></a>3D MonoGame 座標
 
@@ -23,26 +23,26 @@ _了解 3D 座標系統是開發 3D 遊戲的重要步驟。MonoGame 提供數�
 
 我們會涵蓋下列主題：
 
- - 建立專案
- - 建立機器人實體
- - 移動機器人實體
- - 矩陣乘法
- - 建立數位相機實體
- - 移動與輸入相機
+- 建立專案
+- 建立機器人實體
+- 移動機器人實體
+- 矩陣乘法
+- 建立數位相機實體
+- 移動與輸入相機
 
 一旦完成之後，我們會與移動中的圓形和具備觸控輸入可以受控制的相機是機器人擁有專案：
 
 ![](part3-images/image1.gif "應用程式完成之後，會包含機器人移動中的圓形和相機具備觸控輸入可以受控制的專案")
 
 
-# <a name="creating-a-project"></a>建立專案
+## <a name="creating-a-project"></a>建立專案
 
 本逐步解說著重於在 3D 空間中移動物件。 我們一開始會與專案的轉譯模型和頂點陣列[這可以在這裡找到](https://developer.xamarin.com/samples/mobile/ModelsAndVertsMG/)。 下載之後，解壓縮，然後開啟專案，以確定它會執行，而且應該看到下列項目：
 
 ![](part3-images/image2.png "下載之後，解壓縮，並開啟專案，以確定它會執行，而且應該會顯示此檢視")
 
 
-# <a name="creating-a-robot-entity"></a>建立機器人實體
+## <a name="creating-a-robot-entity"></a>建立機器人實體
 
 開始移動周圍我們機器人之前，我們將建立`Robot`類別包含用於繪圖和移動邏輯。 此封裝的邏輯和資料做為參考遊戲開發人員*實體*。
 
@@ -51,7 +51,6 @@ _了解 3D 座標系統是開發 3D 遊戲的重要步驟。MonoGame 提供數�
 ![](part3-images/image3.png "機器人將它命名，並按一下 [新增]")
 
 修改`Robot`類別，如下所示：
-
 
 ```csharp
 using System;
@@ -88,7 +87,7 @@ namespace MonoGame3D
 
                     effect.View = Matrix.CreateLookAt (
                         cameraPosition, cameraLookAtVector, cameraUpVector);
-                        
+
                     float fieldOfView = Microsoft.Xna.Framework.MathHelper.PiOver4;
                     float nearClipPlane = 1;
                     float farClipPlane = 200;
@@ -109,7 +108,6 @@ namespace MonoGame3D
 ```
 
 `Robot`是基本上相同的程式碼中`Game1`繪圖`Model`。 在檢閱`Model`載入及繪製，請參閱[本指南使用模型](~/graphics-games/monogame/3d/part1.md)。 現在我們可以移除所有`Model`載入和轉譯程式碼從`Game1`，並將它取代為`Robot`執行個體：
-
 
 ```csharp
 using Microsoft.Xna.Framework;
@@ -135,7 +133,7 @@ namespace MonoGame3D
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.IsFullScreen = true;
-                        
+
             Content.RootDirectory = "Content";
         }
 
@@ -226,7 +224,7 @@ namespace MonoGame3D
                     2);
             }
         }
-    }                                          
+    }
 }
 ```
 
@@ -234,15 +232,13 @@ namespace MonoGame3D
 
 ![](part3-images/image4.png "如果程式碼現在執行時，應用程式將會顯示場景的繪製大部分在最低限度下只有一個機器人")
 
-
-# <a name="moving-the-robot"></a>移動機器人
+## <a name="moving-the-robot"></a>移動機器人
 
 現在，我們已經`Robot`類別中，我們可以將移動邏輯加入至機器人。 在此情況下，我們只是要移動是圓形中有遊戲時間根據機器人。 這是有點不太實用實作實際的遊戲，因為字元通常可能回應輸入或人工地智慧，但是它所提供的環境，讓我們來瀏覽 3D 位置和旋轉。
 
 我們需要從之外的唯一資訊`Robot`類別是目前的遊戲時間。 我們會將新增`Update`方法，以便前往`GameTime`參數。 這`GameTime`參數將用來遞增的角度變數，我們會用來判斷機器人的最後一個位置。
 
 首先，我們會將新增到 [角度] 欄位`Robot`類別下`model`欄位：
-
 
 ```csharp
 public class Robot
@@ -251,11 +247,10 @@ public class Robot
 
     // new code:
     float angle;
-    ... 
+    ...
 ```
 
  現在我們可以增加此值在`Update`函式：
-
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -267,17 +262,15 @@ public void Update(GameTime gameTime)
 
 我們需要確定`Update`方法從呼叫`Game1.Update`:
 
-
 ```csharp
 protected override void Update(GameTime gameTime)
 {
     robot.Update (gameTime);
     base.Update(gameTime);
-} 
+}
 ```
 
 當然，此時 [角度] 欄位不做任何動作 – 我們必須撰寫程式碼以使用它。 我們會修改`Draw`方法，讓我們可以計算世界`Matrix`專用方法中： 
-
 
 ```csharp
 public void Draw(Vector3 cameraPosition, float aspectRatio)
@@ -296,7 +289,7 @@ public void Draw(Vector3 cameraPosition, float aspectRatio)
 
             effect.View = Matrix.CreateLookAt (
                 cameraPosition, cameraLookAtVector, cameraUpVector);
-                
+
             float fieldOfView = Microsoft.Xna.Framework.MathHelper.PiOver4;
             float nearClipPlane = 1;
             float farClipPlane = 200;
@@ -307,18 +300,17 @@ public void Draw(Vector3 cameraPosition, float aspectRatio)
 
         mesh.Draw ();
     }
-} 
+}
 ```
 
 接下來，我們會實作`GetWorldMatrix`方法中的`Robot`類別：
-
 
 ```csharp
 Matrix GetWorldMatrix()
 {
     const float circleRadius = 8;
     const float heightOffGround = 3;
-    
+
     // this matrix moves the model "out" from the origin
     Matrix translationMatrix = Matrix.CreateTranslation (
         circleRadius, 0, heightOffGround);
@@ -330,15 +322,14 @@ Matrix GetWorldMatrix()
     Matrix combined = translationMatrix * rotationMatrix;
 
     return combined;
-} 
+}
 ```
 
 執行此程式碼的結果會導致機器人移動是圓形中有：
 
 ![](part3-images/image5.gif "機器人移動是圓形中有在執行此程式碼結果")
 
-
-# <a name="matrix-multiplication"></a>矩陣乘法
+## <a name="matrix-multiplication"></a>矩陣乘法
 
 上述程式碼會藉由建立旋轉機器人`Matrix`中`GetWorldMatrix`方法。 `Matrix`結構包含 16 的浮點值可以用來轉譯 （組位置）、 旋轉和縮放 （設定大小）。 當指派`effect.World`屬性，我們會告訴呈現系統如何位置、 大小及設定任何基礎我們就可能發生在繪圖 (`Model`或從頂點幾何)。 
 
@@ -348,9 +339,9 @@ Matrix GetWorldMatrix()
 
 我們建立的第二個矩陣的旋轉矩陣使用`CreateRotationZ`矩陣。 這是可以用來建立循環的三種方法之一：
 
- - `CreateRotationX`
- - `CreateRoationY`
- - `CreateRotationZ`
+- `CreateRotationX`
+- `CreateRoationY`
+- `CreateRotationZ`
 
 每一種方法指定軸的旋轉建立一個旋轉矩陣。 在此案例中，我們要輪替繞 Z 軸，指向 「 向上 」。 下列可協助視覺化方式根據軸旋轉的運作：
 
@@ -359,7 +350,6 @@ Matrix GetWorldMatrix()
 我們也正在使用`CreateRotationZ`方法 [角度] 欄位，會累加一段時間，因為我們`Update`所呼叫方法。 結果是`CreateRotationZ`方法會讓我們來隨著時間推移的原點 orbit 機器人。
 
 最後一行程式碼會將兩個矩陣結合成一個：
-
 
 ```csharp
 Matrix combined = translationMatrix * rotationMatrix;
@@ -370,7 +360,6 @@ Matrix combined = translationMatrix * rotationMatrix;
 ![](part3-images/image8.png "視覺效果 pf 上行影響的位置和旋轉的方式")
 
 若要協助您了解矩陣乘法的順序可能會如何影響結果，請考慮的下列項目，會在被反轉矩陣乘法：
-
 
 ```csharp
 Matrix combined = rotationMatrix * translationMatrix;
@@ -384,13 +373,11 @@ Matrix combined = rotationMatrix * translationMatrix;
 
 ![](part3-images/image10.gif "就地旋轉模型")
 
-
-# <a name="creating-the-camera-entity"></a>建立數位相機實體
+## <a name="creating-the-camera-entity"></a>建立數位相機實體
 
 `Camera`實體會包含所有的邏輯來執行輸入為基礎的移動，以及提供屬性讓您將內容指派上`BasicEffect`類別。
 
 首先我們會實作靜態的相機 （沒有輸入基礎動作），並將其整合到我們現有的專案。 將新類別加入**MonoGame3D**可攜式類別庫 (相同的專案`Robot.cs`) 並將其命名**相機**。 以下列程式碼取代檔案的內容：
-
 
 ```csharp
 using System;
@@ -427,7 +414,7 @@ namespace MonoGame3D
                 float nearClipPlane = 1;
                 float farClipPlane = 200;
                 float aspectRatio = graphicsDevice.Viewport.Width / (float)graphicsDevice.Viewport.Height;
-                
+
                 return Matrix.CreatePerspectiveFieldOfView(
                     fieldOfView, aspectRatio, nearClipPlane, farClipPlane);
             }
@@ -448,8 +435,7 @@ namespace MonoGame3D
 
 上述程式碼是非常類似的程式碼從`Game1`和`Robot`其中上指派矩陣`BasicEffect`。 
 
-現在我們可以整合新`Camera`到我們的現有專案的類別。 首先，我們會修改`Robot`類別`Camera`執行個體中其` Draw `方法，會消除大量複製程式碼。 取代`Robot.Draw`以下列方法：
-
+現在我們可以整合新`Camera`到我們的現有專案的類別。 首先，我們會修改`Robot`類別`Camera`執行個體中其`Draw`方法，會消除大量複製程式碼。 取代`Robot.Draw`以下列方法：
 
 ```csharp
 public void Draw(Camera camera)
@@ -468,11 +454,10 @@ public void Draw(Camera camera)
 
         mesh.Draw ();
     }
-} 
+}
 ```
 
 接下來，修改`Game1.cs`檔案：
-
 
 ```csharp
 using Microsoft.Xna.Framework;
@@ -499,7 +484,7 @@ namespace MonoGame3D
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.IsFullScreen = true;
-                        
+
             Content.RootDirectory = "Content";
         }
 
@@ -585,35 +570,32 @@ namespace MonoGame3D
             }
         }
     }
-} 
+}
 ```
 
 若要修改`Game1`來自舊版本 (其中會識別與`// New camera code`) 是：
 
- - `Camera` 中的欄位 `Game1`
- - `Camera` 在具現化 `Game1.Initialize`
- - `Camera.Update` 呼叫 `Game1.Update`
- - `Robot.Draw` 現在採用`Camera`參數
- - `Game1.Draw` 現在使用`Camera.ViewMatrix`和 `Camera.ProjectionMatrix`
+- `Camera` 中的欄位 `Game1`
+- `Camera` 在具現化 `Game1.Initialize`
+- `Camera.Update` 呼叫 `Game1.Update`
+- `Robot.Draw` 現在採用`Camera`參數
+- `Game1.Draw` 現在使用`Camera.ViewMatrix`和 `Camera.ProjectionMatrix`
 
-
-# <a name="moving-the-camera-with-input"></a>移動與輸入相機
+## <a name="moving-the-camera-with-input"></a>移動與輸入相機
 
 目前為止，我們已加入`Camera`實體，但是您尚未這樣做任何動作，以變更執行階段行為。 我們會將行為可讓使用者新增至：
 
- - 觸控式螢幕開啟方相機的左半部
- - 若要開啟右邊相機螢幕的右側的觸控
- - 觸控向前移動相機螢幕的中央
+- 觸控式螢幕開啟方相機的左半部
+- 若要開啟右邊相機螢幕的右側的觸控
+- 觸控向前移動相機螢幕的中央
 
-
-## <a name="making-lookat-relative"></a>進行支票相對
+### <a name="making-lookat-relative"></a>進行支票相對
 
 我們會將第一次更新`Camera`類別，以包含`angle`欄位會用來將方向設定`Camera`遇到。 目前，我們`Camera`決定遇到透過本機方向`lookAtVector`，這指派給`Vector3.Zero`。 換句話說，我們`Camera`一律會尋找原始位置。 如果會相機移動，然後也會變更遇到相機角度：
 
 ![](part3-images/image11.gif "如果會相機移動，然後遇到相機角度也會變更")
 
-我們想要`Camera`到至少會遇到相同的方向，不論其位置 – 我們實作的邏輯旋轉直到` Camera `使用輸入。 第一項變更將會是調整`lookAtVector`變數根據我們目前的位置，而不是查看絕對位置：
-
+我們想要`Camera`到至少會遇到相同的方向，不論其位置 – 我們實作的邏輯旋轉直到`Camera`使用輸入。 第一項變更將會是調整`lookAtVector`變數根據我們目前的位置，而不是查看絕對位置：
 
 ```csharp
 public class Camera
@@ -635,7 +617,7 @@ public class Camera
             return  Matrix.CreateLookAt (
                 position, lookAtVector, upVector);
         }
-    } 
+    }
     ...
 ```
 
@@ -643,15 +625,13 @@ public class Camera
 
 ![](part3-images/image12.png "執行遊戲會顯示此檢視")
 
-
-## <a name="creating-an-angle-variable"></a>建立變數的角度
+### <a name="creating-an-angle-variable"></a>建立變數的角度
 
 `lookAtVector`變數控制正在檢視我們的攝影機角度。 它目前固定為負數的 Y 軸，向檢視並稍微向下傾斜 (從`-.5f`Z 值)。 我們將建立`angle`變數會用來調整`lookAtVector`屬性。 
 
 在本逐步解說稍早章節介紹矩陣可以用於旋轉物件的繪製方式。 我們也可以使用矩陣來旋轉像向量`lookAtVector`使用`Vector3.Transform`方法。 
 
 新增`angle`欄位，然後修改`ViewMatrix`屬性，如下所示：
-
 
 ```csharp
 public class Camera
@@ -678,12 +658,11 @@ public class Camera
             return  Matrix.CreateLookAt (
                 position, lookAtVector, upVector);
         }
-    } 
+    }
     ...
 ```
 
-
-## <a name="reading-input"></a>讀取輸入
+### <a name="reading-input"></a>讀取輸入
 
 我們`Camera`實體現在完全透過可以控制其位置和角度變數 – 我們只需要根據輸入變更它們。
 
@@ -693,13 +672,11 @@ public class Camera
 
 首先，加入 using 陳述式來限定`TouchPanel`和`TouchCollection`中的類別`Camera.cs`:
 
-
 ```csharp
 using Microsoft.Xna.Framework.Input.Touch; 
 ```
 
 接下來，修改`Update`方法來讀取 [觸控] 面板，並調整`angle`和`position`變數適當地：
-
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -734,7 +711,7 @@ public void Update(GameTime gameTime)
             angle -= (float)gameTime.ElapsedGameTime.TotalSeconds;
         }
     }
-} 
+}
 ```
 
 現在`Camera`觸控輸入回應：
@@ -747,8 +724,7 @@ public void Update(GameTime gameTime)
 
 如果使用者第三個接觸 center 的畫面上，然後相機會向前移動。 做法是先取得一開始定義為指向負的 Y 軸，然後據以旋轉的矩陣使用建立的前向量`Matrix.CreateRotationZ`和`angle`值。 最後`forwardVector`套用至`position`使用`unitsPerSecond`係數。
 
-
-# <a name="summary"></a>總結
+## <a name="summary"></a>總結
 
 這個逐步解說將說明如何移動和旋轉`Models`在 3D 空間使用`Matrices`和`BasicEffect.World`屬性。 這種形式的移動 3D 遊戲中移動的物件提供的基礎。 本逐步解說也將說明如何實作`Camera`檢視從任何位置和角度全球實體。
 

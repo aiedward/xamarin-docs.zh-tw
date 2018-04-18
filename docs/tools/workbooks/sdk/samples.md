@@ -5,15 +5,14 @@ ms.assetid: 327DAD2E-1F76-4EB5-BCD0-9E7384D99E48
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 458ebd0d47b3728f6207b30ddaf839ed5509dceb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 03/30/2017
+ms.openlocfilehash: 8c46fa05a8ffcedfa7fa9d1344946fac518b5036
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="sample-integrations"></a>範例整合
-
-## <a name="sample-integrations"></a>範例整合
 
 請參閱[廚房 Sink] [ KitchenSink]範例的整合的操作範例。 只要建置`KitchenSink.sln`在 Visual Studio for Mac 或 Visual Studio，然後開啟`KitchenSink.workbook`。
 

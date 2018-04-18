@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 02/24/2017
-ms.openlocfilehash: 77f9873259a2a44426007c50efbd7ff83c8a0ccb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d23f89ed8ad7956f7a366280a14ccc12ba3dac0c
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Xamarin.Forms 的 XAML 預覽程式
 
@@ -33,7 +33,7 @@ _Xamarin.Forms 配置呈現您輸入時，請參閱 ！_
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-**預覽**按鈕可以顯示在編輯器 中，XAML 檔案後，以滑鼠右鍵按一下並選取**開啟 > XAML 檢視器**。 [預覽] 窗格可再顯示或隱藏按**預覽**任何 XAML 文件視窗右上角的按鈕：
+**預覽**按鈕可以顯示在編輯器 中，XAML 檔案後，以滑鼠右鍵按一下並選取**開啟 > Form 預覽程式**。 [預覽] 窗格可再顯示或隱藏按**預覽**任何 XAML 文件視窗右上角的按鈕：
 
 [![在 Visual Studio for Mac 的 ListView 控制項預覽](xaml-previewer-images/xamlp-list-sml.png "適用於 Mac 的 Visual Studio 中的表單預覽程式")](xaml-previewer-images/xamlp-list.png#lightbox "Form 預覽程式，在 Visual Studio for Mac")
 

@@ -6,11 +6,12 @@ ms.assetid: 95FFBD36-14E9-4C17-B1E8-9A04E81E824D
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 4f439d8f848e84b0e775a56204a1834b55c7ad10
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 03/29/2017
+ms.openlocfilehash: ed396097f55f5f4a2f8a3b718b324919d0f8daea
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="urhosharp-mac-support"></a>UrhoSharp Mac 支援
 

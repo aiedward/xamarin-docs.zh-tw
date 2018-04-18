@@ -6,11 +6,12 @@ ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: cdb32c0fe9aa1a267bda5768b9026667723d694c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 03/29/2017
+ms.openlocfilehash: 7d54203fe391af6acde70f4c2a073b7f71332c91
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="using-urhosharp"></a>使用 UrhoSharp
 
@@ -20,7 +21,7 @@ _UrhoSharp 引擎的概觀_
 
 <a name="scenenodescomponentsandcameras"/>
 
-# <a name="scenes-nodes-components-and-cameras"></a>場景、 節點、 元件和攝影機
+## <a name="scenes-nodes-components-and-cameras"></a>場景、 節點、 元件和攝影機
 
 場景模型可以稱為以元件為基礎的場景圖形。 場景節點階層的場景，從根節點，這也代表整個場景所組成。 每個[ `Node` ](https://developer.xamarin.com/api/type/Urho.Node/)有 3D 轉換 （位置、 旋轉和小數位數）、 名稱、 識別碼、 加上任意數目的元件。  元件將節點，進行新增的視覺表示法 ([`StaticModel`](https://developer.xamarin.com/api/type/Urho.StaticModel))，它們可發出聲音 ([`SoundSource`](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource))，它們可以提供衝突界限，依此類推。
 
@@ -28,7 +29,7 @@ _UrhoSharp 引擎的概觀_
 
 除了設定場景，您需要設定[ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/)，這是決定向使用者取得顯示的內容。
 
-## <a name="setting-up-your-scene"></a>設定場景
+### <a name="setting-up-your-scene"></a>設定場景
 
 您通常會建立此表單 Start 方法：
 
@@ -52,7 +53,7 @@ planeObject.Model = ResourceCache.GetModel ("Models/Plane.mdl");
 planeObject.SetMaterial(ResourceCache.GetMaterial("Materials/StoneTiled.xml"));
 ```
 
-## <a name="components"></a>元件
+### <a name="components"></a>元件
 
 呈現 3D 物件、 音效播放、 物理和指令碼編寫的邏輯更新會啟用所有至各節點建立不同的元件，藉由呼叫[ `CreateComponent<T>()` ](https://developer.xamarin.com/api/member/Urho.Node.CreateComponent%3CT%3E/p/Urho.CreateMode/System.UInt32/)。  例如，安裝您的節點和淺色元件如下：
 
@@ -82,11 +83,11 @@ var light = lightNode.CreateComponent<Light>();
 
 程式庫隨附各種不同的元件，您可以附加至您的節點，使其更生動： 使用者可看見的項目 （模型）、 音效、 固定的內文、 衝突圖形、 數位相機、 光線的來源、 物件發出及執行更多。
 
-## <a name="shapes"></a>圖形
+### <a name="shapes"></a>圖形
 
 為了方便起見，各種圖形是 Urho.Shapes 命名空間中的簡單節點可用。  這些包括方塊、 陳列、 錐形、 圓柱及平面。
 
-## <a name="camera-and-viewport"></a>相機與檢視區
+### <a name="camera-and-viewport"></a>相機與檢視區
 
 就像光線，數位相機是元件，因此您必須將附加至節點的元件，這是以這種方式：
 
@@ -104,7 +105,7 @@ Renderer.SetViewPort (0, new Viewport (Context, scene, camera, null))
 
 現在您應該可以看到您所建立的結果。
 
-## <a name="identification-and-scene-hierarchy"></a>識別與場景的階層
+### <a name="identification-and-scene-hierarchy"></a>識別與場景的階層
 
 不同於節點，元件不會有名稱。只能由其類型，以及在節點的元件清單，會自動填入的建立順序的索引識別相同節點的內部元件，例如，您可以擷取[ `Light` ](https://developer.xamarin.com/api/type/Urho.Light)元件超出`lightNode`物件上方以這種方式：
 
@@ -128,13 +129,13 @@ var myLight = lightNode.GetComponent<Light>();
 
 它也可建立`Node`，不屬於場景。 這非常有用，例如使用相機移動中的場景，可能會載入或儲存，因為然後相機將不會儲存實際的場景，以及將不會終結場景載入時。 不過請注意，建立幾何、 物理或指令碼元件未附加的節點，並再將它移到場景稍後將會導致這些元件，才能正常運作。
 
-## <a name="scene-updates"></a>場景更新
+### <a name="scene-updates"></a>場景更新
 
 場景，其更新為啟用 （預設值） 會在每個主迴圈反覆項目自動更新。  應用程式的[ `SceneUpdate` ](https://developer.xamarin.com/api/event/Urho.Scene.SceneUpdate/)在其上叫用事件處理常式。
 
 節點和元件，即可排除來自窗定位在場景更新停用它們，請參閱[ `Enabled` ](https://developer.xamarin.com/api/member/Urho.Node.Enabled)。  行為取決於特定的元件，但例如停用 drawable 元件也可以看不見，而停用聲音來源元件靜音。 如果節點已停用，所有元件會視為為停用，不論他們自己的啟用/停用狀態。
 
-# <a name="adding-behavior-to-your-components"></a>將行為加入至您的元件
+## <a name="adding-behavior-to-your-components"></a>將行為加入至您的元件
 
 建構您的遊戲的最佳方式是讓自己封裝動作項目或項目上遊戲的元件。  這可讓功能自封，從用來顯示它，其行為的資產。
 
@@ -142,7 +143,7 @@ var myLight = lightNode.GetComponent<Light>();
 
 或者，您可以控制完全情形，您的元件藉由更新 （在以框架為基礎的行為 > 一節中討論） 的每個框架上您元件的屬性。
 
-## <a name="actions"></a>動作
+### <a name="actions"></a>動作
 
 您可以將行為加入節點最輕鬆地使用動作。  動作可以改變各種節點的屬性並執行它們經過一段時間，或重複數次，以指定的動畫曲線。
 
@@ -182,7 +183,7 @@ await cloud.RunActionsAsync (
 
 您會注意到，這些使用 C# 等候時，可讓您以線性方式考慮您想要達到的行為。
 
-## <a name="basic-actions"></a>基本的動作
+### <a name="basic-actions"></a>基本的動作
 
 這些是 UrhoSharp 中支援的動作：
 
@@ -196,7 +197,7 @@ await cloud.RunActionsAsync (
 
 其他進階的功能包括之組合的[ `Spawn` ](https://developer.xamarin.com/api/type/Urho.Actions.Spawn)和[ `Sequence` ](https://developer.xamarin.com/api/type/Urho.Actions.Sequence)動作。
 
-## <a name="easing---controlling-the-speed-of-your-actions"></a>Easing-控制動作的速度
+### <a name="easing---controlling-the-speed-of-your-actions"></a>Easing-控制動作的速度
 
 Easing 是方法，以指示，動畫會展開，而且它可以讓動畫更加愉快的方式。  預設您的動作將會有線性的行為，例如[ `MoveTo` ](https://developer.xamarin.com/api/type/Urho.Actions.MoveTo)動作會有非常機械移動。  您可以包裝您的動作加/減速動作來變更行為，例如，另一個會緩時變開始移動，以加速及緩時變到達的結尾 ([`EasyInOut`](https://developer.xamarin.com/api/type/Urho.Actions.EasyInOut))。
 
@@ -212,7 +213,7 @@ await cloud.RunActionAsync (
 
 ![Easing 模式](using-images/easing.png "此圖表顯示不同加/減速類型且其行為就會控制在一段時間之物件的值")
 
-## <a name="using-actions-and-async-code"></a>使用動作和非同步程式碼
+### <a name="using-actions-and-async-code"></a>使用動作和非同步程式碼
 
 在您[ `Component` ](https://developer.xamarin.com/api/type/Urho.Component/)子類別，您應該引進備妥您元件的行為，其磁碟機功能的非同步方法。
 然後您會叫用此方法使用 C#`await`關鍵字的程式，另一個組件可能是您`Application.Start`方法或為了回應應用程式中的使用者或本文點。
@@ -267,7 +268,7 @@ class Robot : Component {
 
 在`Launch`上面三個動作方法會啟動： 機器人進入場景，此動作會在一段會剩餘 0.6 秒改變節點的位置。  由於這是非同步選項時，會發生這種同時做為下一個指令，也就是呼叫要`MoveRandomly`。  這個方法會改變機器人平行到隨機位置中的位置。  這藉由執行兩個複合的動作，移動到新位置，並回到原始位置，並重複此步驟，只要機器人保持運作。  而且，若要讓概念更有趣，機器人會保留疑難排解同時。  疑難排解，才會開始每隔 0.1 秒。
 
-## <a name="frame-based-behavior-programming"></a>以框架為基礎的行為程式設計
+### <a name="frame-based-behavior-programming"></a>以框架為基礎的行為程式設計
 
 如果您想要控制您的元件，請依框架為基礎而不是使用動作的行為，就需要執行的動作是覆寫[ `OnUpdate` ](https://developer.xamarin.com/api/member/Urho.Component.OnUpdate)方法您[ `Component` ](https://developer.xamarin.com/api/type/Urho.Component)子類別。  此方法會一次叫用每個畫面格，而且 ReceiveSceneUpdates 屬性設為 true 時，才會叫用。
 
@@ -299,7 +300,7 @@ var rotator = new Rotator() { RotationSpeed = rotationSpeed };
 boxNode.AddComponent (rotator);
 ```
 
-## <a name="combining-styles"></a>結合樣式
+### <a name="combining-styles"></a>結合樣式
 
 您可以使用基礎的非同步/動作模型程式設計大部分的行為，幫助您和不理樣式的程式設計，但您可以也微調您的元件也在每個框架上執行某些更新程式碼的行為。
 
@@ -316,7 +317,7 @@ boxNode.AddComponent (rotator);
     }
 ```
 
-# <a name="loading-and-saving-scenes"></a>載入及儲存場景
+## <a name="loading-and-saving-scenes"></a>載入及儲存場景
 
 場景可以載入並儲存成 XML 格式。請參閱函數[ `LoadXml` ](https://developer.xamarin.com/api/member/Urho.Scene.LoadXml)和[ `SaveXML()` ](https://developer.xamarin.com/api/member/Urho.Scene.SaveXml)。 場景載入時，會先移除所有現有內容 （子節點和元件）。 節點與元件的標記與暫存`Temporary`將不會儲存屬性。 序列化程式會處理所有的內建的元件和屬性，但不是聰明，可以處理自訂屬性以及在您的元件子類別中定義的欄位。 但是它提供兩種虛擬方法，這個：
 
@@ -355,7 +356,7 @@ class MyComponent : Component {
 }
 ```
 
-## <a name="object-prefabs"></a>物件 Prefabs
+### <a name="object-prefabs"></a>物件 Prefabs
 
 剛載入或儲存整個場景不是有足夠的彈性，遊戲需要以動態方式建立新物件的位置。 相反地，建立複雜的物件和程式碼中設定其屬性也會是冗長。 基於這個理由，所以也可以儲存場景節點，其中包含它的子節點、 元件和屬性。 這些屬性稍後方便地以群組載入。  這類儲存的物件通常稱為 prefab。 執行這項作業的方法有三種：
 
@@ -374,7 +375,7 @@ using (var file = new File(Context, prefabPath, FileMode.Read))
 }
 ```
 
-# <a name="events"></a>事件
+## <a name="events"></a>事件
 
 UrhoObjects 引發的事件數目，這些會當成 C# 事件產生的各種類別。  除了 C# 為根據的事件模型，所以也可以使用`SubscribeToXXX`方法，可讓您訂閱和訂閱語彙基元保留稍後可用來取消訂閱。  差別在於，前者可讓許多訂閱的呼叫端，而第二個只允許一個，但允許沒用 lambda 樣式方法使用，並且棒的是，以輕鬆地將訂用帳戶。  它們是互斥的。
 
@@ -421,7 +422,7 @@ public void override Start ()
 
 收到的事件處理常式的參數是強類型的事件引數類別是特定的每個事件，其中包含事件裝載。
 
-# <a name="responding-to-user-input"></a>回應使用者輸入
+## <a name="responding-to-user-input"></a>回應使用者輸入
 
 您可以訂閱這類按鍵的各種事件向下訂閱事件，而且回應傳遞的輸入：
 
@@ -459,7 +460,7 @@ protected override void OnUpdate(float timeStep)
 }
 ```
 
-# <a name="resources-assets"></a>資源 （資產）
+## <a name="resources-assets"></a>資源 （資產）
 
 資源包括初始化或執行階段時載入從大量的儲存體中 UrhoSharp 大部分項目：
 
@@ -492,13 +493,13 @@ healthBar.SetTexture(ResourceCache.GetTexture2D("Textures/HealthBarBorder.png"))
 
 記憶體的預算可以設定每個資源類型： 如果資源耗用超過允許的更多記憶體，最舊的資源將會移除從快取，否則使用中不再。 根據預設記憶體預算會設定為無限制。
 
-## <a name="bringing-3d-models-and-images"></a>將 3D 模型和影像
+### <a name="bringing-3d-models-and-images"></a>將 3D 模型和影像
 
 Urho3D 嘗試使用現有的檔案格式可能的話，並定義自訂的檔案格式，例如模型絕對必要時 (*.mdl) 和動畫 (*.ani)。 針對這些類型的資產，Urho 提供轉換器- [AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html)消耗許多熱門的 3D 格式，例如 fbx、 dae、 3ds，和 obj 等等。
 
 另外還有好用的增益集 Blender [ https://github.com/reattiva/Urho3D-Blender ](https://github.com/reattiva/Urho3D-Blender) ，可以匯出格式，可適用於 Urho3D Blender 資產。
 
-## <a name="background-loading-of-resources"></a>資源的背景載入
+### <a name="background-loading-of-resources"></a>資源的背景載入
 
 一般來說，當要求資源使用其中一種`ResourceCache`的`Get`方法，它們會在主執行緒，這可能需要數個毫秒所需的步驟中立即載入 （從磁碟載入檔案、 剖析資料，如有必要上, 傳到 GPU)，因此可能會導致畫面播放速率卸除。
 
@@ -510,7 +511,7 @@ Urho3D 嘗試使用現有的檔案格式可能的話，並定義自訂的檔案�
 
 <a name="sound"/>
 
-# <a name="sound"></a>音效
+## <a name="sound"></a>音效
 
 音效玩遊戲的方式，很重要的一部分且 UrhoSharp framework 提供一種遊戲中播放音效。  您藉由附加播放音效[ `SoundSource` ](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource/)元件至[ `Node` ](https://developer.xamarin.com/api/type/Urho.Node) ，然後播放命名的檔案從您的資源。
 
@@ -526,7 +527,7 @@ soundSource.AutoRemove = true;
 
 <a name="particles"/>
 
-# <a name="particles"></a>物件
+## <a name="particles"></a>物件
 
 物件提供簡易的方式加入至應用程式的一些簡單且便宜的影響。  您可以使用 PEX 格式儲存的物件使用的 puttygen 等工具[ http://onebyonedesign.com/flash/particleeditor/ ](http://onebyonedesign.com/flash/particleeditor/)。
 
@@ -561,22 +562,19 @@ public async void Explode (Component target)
 
 ![物件與方塊紋理](using-images/image-2.png "，這是什麼樣子如果使用塊狀紋理")
 
-# <a name="multithreading-support"></a>多執行緒支援
+## <a name="multithreading-support"></a>多執行緒支援
 
 UrhoSharp 是單一執行緒程式庫。  這表示您不應嘗試叫用方法中 UrhoSharp 從背景執行緒，或您可能會損毀的應用程式狀態，並可能會損毀您的應用程式。
 
 如果您想要在背景中執行一些程式碼，然後更新 Urho 元件上的主要 UI，您可以使用[ `Application.InvokeOnMain(Action)` ](https://developer.xamarin.com/api/member/Urho.Application.InvokeOnMain)方法。  此外，您可以的使用 await C# 和.NET 工作 Api，以確保適當的執行緒上已執行的程式碼。
 
-
-# <a name="urhoeditor"></a>UrhoEditor
+## <a name="urhoeditor"></a>UrhoEditor
 
 您可以從您的平台下載 Urho 編輯器[Urho 網站](http://urho3d.github.io/)，移至下載，然後挑選最新版本。
 
-# <a name="copyrights"></a>著作權
+## <a name="copyrights"></a>著作權
 
 這份文件會包含 Xamarin Inc，從原始內容但廣泛繪製從 Urho3D 專案的開放原始碼文件，包含從 Cocos2D 專案的螢幕擷取畫面。
-
-
 
 ## <a name="related-links"></a>相關連結
 

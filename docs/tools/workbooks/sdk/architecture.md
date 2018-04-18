@@ -5,11 +5,12 @@ ms.assetid: 6C0226BE-A0C4-4108-B482-0A903696AB04
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 04ed545955b10ed95a15ac0820e4a99b697e0c3e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 03/30/2017
+ms.openlocfilehash: 5a836ec6e2e46316c46e4b6d6986d08601f84db1
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="architecture-overview"></a>架構概觀
 

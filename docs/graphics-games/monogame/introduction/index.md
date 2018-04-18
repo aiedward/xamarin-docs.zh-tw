@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 9fb19b86ca303f8be3506d267dd75dc9db6cfca6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c94ed2e06ee57b67745b6a02692df2360aeb9754
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="introduction-to-game-development-with-monogame"></a>與 MonoGame 遊戲應用程式開發簡介
 
@@ -27,16 +27,16 @@ MonoGame 跨平台，硬體加速應用程式開發介面匯入資產提供圖�
 
 下圖顯示這個逐步解說的結果：
 
-![](images/image1.gif "將在本逐步解說中建立的應用程式")
+![下列滑鼠範例遊戲字元的動畫](images/image1.gif)
 
-# <a name="monogame-and-xna"></a>Monogame 和 XNA
+## <a name="monogame-and-xna"></a>Monogame 和 XNA
 
 MonoGame 程式庫會模擬 Microsoft XNA 語法和功能的文件庫。  所有 MonoGame 物件都存在 Microsoft.Xna 命名空間之下，– 允許用於未修改的 MonoGame 大部分 XNA 程式碼。 
 
 XNA 熟悉的開發人員會熟悉 MonoGame 的語法，並尋找 MonoGame 搭配使用的其他資訊的開發人員可以參考現有的線上 XNA 逐步解說中，API 文件及討論。
 
 
-# <a name="walkthrough-parts"></a>逐步解說的部分
+## <a name="walkthrough-parts"></a>逐步解說的部分
 
 - [組件 1-建立跨平台 MonoGame 專案](~/graphics-games/monogame/introduction/part1.md)
 - [第 2 – 實作 WalkingGame 部分](~/graphics-games/monogame/introduction/part2.md)

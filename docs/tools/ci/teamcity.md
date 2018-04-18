@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 643ae8f30dc6447b548448f77883b204d8dc76c2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 34702fafdd0d767362b0ca32ab56e880ed7cb366
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="using-team-city-with-xamarin"></a>使用小組縣 （市） 與 Xamarin
 
@@ -39,7 +39,7 @@ _本指南會討論與使用 TeamCity 編譯行動應用程式，然後將它們
 
 - **建立 A TeamCity 專案**– 前三個步驟完成後，我們必須建立會包含中繼資料的所有 TeamCity 專案擷取的原始碼、 編譯專案，和送出至 Xamarin Test Cloud 測試所需。
 
-# <a name="requirements"></a>需求
+## <a name="requirements"></a>需求
 
 體驗[Xamarin Test Cloud](https://developer.xamarin.com/guides/testcloud)需要。
 
@@ -88,7 +88,6 @@ _本指南會討論與使用 TeamCity 編譯行動應用程式，然後將它們
 - [**假造**](http://fsharp.github.io/FAKE/) – 這是在 F # 中，可以利用現有的.NET 程式庫，視基礎 DSL。
 
 使用的指令碼語言，取決於您的喜好設定和需求。 [TaskyPro Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash)範例包含示範如何使用為耙[建置指令碼](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile)。
-
 
 > [!NOTE]
 > 您可使用 XML 為基礎建置系統，例如 MSBuild 或 NAnt，但這些缺少表達和 DSL，專門用來建置軟體的可維護性。
@@ -166,35 +165,35 @@ $ test-cloud submit /path/to/APK <test-cloud-team-api-key> --devices <ANDROID_DE
 
 1. 啟動登入 TeamCity 透過網頁瀏覽器。 瀏覽至根專案：
 
-    ![](teamcity-images/image2.png "瀏覽至根專案")根專案，底下建立新的子專案：
+    ![瀏覽至根專案](teamcity-images/image2.png "瀏覽至根專案")根專案，底下建立新的子專案：
 
-    ![](teamcity-images/image3.png "瀏覽至根專案底下根專案，建立新的子專案")
+    ![瀏覽至根專案底下根專案，建立新的子專案](teamcity-images/image3.png "瀏覽至根專案底下根專案，建立新的子專案")
 2. 一旦建立子專案之後，加入新的組建組態：
 
-    ![](teamcity-images/image5.png "一旦建立子專案之後，加入新的組建組態")
+    ![一旦建立子專案之後，加入新的建置組態](teamcity-images/image5.png "一旦建立子專案之後，加入新的組建組態")
 3. 附加 VC 專案建置組態。 這是透過 [版本控制設定] 畫面：
 
-    ![](teamcity-images/image6.png "這是透過 [版本控制設定] 畫面")
+    ![這是透過 [版本控制設定] 畫面](teamcity-images/image6.png "透過版本控制設定畫面")
 
     如果沒有 VC 專案建立，您可以選擇建立一個從新的 VC 根頁面如下所示：
 
-    ![](teamcity-images/image7.png "如果沒有 VC 專案建立，您必須建立一個從新的 VC 根頁面的選項")
+    ![如果沒有 VC 專案建立，您可以選擇建立一個新的 VC 根頁面從](teamcity-images/image7.png "如果沒有 VC 專案建立，您必須建立一個從新的 VC 根頁面的選項")
 
     在 VC 根附加之後，TeamCity 將簽出的專案，然後再次嘗試自動偵測到建置步驟。 如果您很熟悉 teamcity，然後您可以選取其中一個偵測到的建置步驟。 它可以安全地忽略立即偵測到的建置步驟。
 
 4. 接著，設定建立觸發程序。 當符合特定條件時，例如當使用者認可至儲存機制的程式碼會將佇列的組建。 下列螢幕擷取畫面顯示如何加入組建觸發程序：
 
-    ![](teamcity-images/image8.png "這個螢幕擷取畫面顯示如何加入組建觸發程序")下列螢幕擷取畫面中，可以看到設定組建觸發程序的範例：
+    ![這個螢幕擷取畫面顯示如何加入組建觸發程序](teamcity-images/image8.png "這個螢幕擷取畫面顯示如何加入組建觸發程序")下列螢幕擷取畫面中，可以看到設定組建觸發程序的範例：
 
-    ![](teamcity-images/image9.png "這個螢幕擷取畫面中，可以看到設定組建觸發程序的範例")
+    ![這個螢幕擷取畫面中，可以看到設定組建觸發程序的範例](teamcity-images/image9.png "這個螢幕擷取畫面中，可以看到設定組建觸發程序的範例")
 
 5. 上一節，將參數化建置指令碼，建議將某些值儲存為環境變數。 這些變數可以加入至組建組態，透過 [參數] 畫面。 將變數加入測試雲端 API 金鑰、 iOS 裝置識別碼和 Android 的裝置識別碼如以下螢幕擷取畫面所示：
 
-    ![](teamcity-images/image11.png "將變數加入測試雲端 API 金鑰、 iOS 裝置識別碼和 Android 的裝置識別碼")
+    ![將變數加入測試雲端 API 金鑰、 iOS 裝置識別碼和 Android 的裝置識別碼](teamcity-images/image11.png "將變數加入測試雲端 API 金鑰、 iOS 裝置識別碼和 Android 的裝置識別碼")
 
 6. 最後一個步驟是加入建置步驟，將會叫用組建指令碼来編譯的應用程式和測試雲端應用程式加入佇列。 下列螢幕擷取畫面是使用 Rakefile 建置應用程式的建置步驟的範例：
 
-    ![](teamcity-images/image12.png "這個螢幕擷取畫面是使用 Rakefile 建置應用程式的建置步驟的範例")
+    ![這個螢幕擷取畫面是使用 Rakefile 建置應用程式的建置步驟的範例](teamcity-images/image12.png "這個螢幕擷取畫面是使用 Rakefile 建置應用程式的建置步驟的範例")
 
 7. 此時，已完成組建設定。 最好要確認已正確設定專案的組建觸發程序。 若要這樣做的好方法是小型的無意義的變更認可至儲存機制。 TeamCity 應該偵測認可，並啟動組建。
 

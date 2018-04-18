@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 59aab811a51517d052902b40cb9e43a7cda6d654
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 603128db1df85e0dabb041d1eb79f250eb5d3872
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="introduction-to-3d-graphics-with-monogame"></a>Introduction to MonoGame 與 3D 圖形
 
@@ -24,7 +24,7 @@ MonoGame 幾乎是與 Microsoft 相同的 XNA，，因此 XNA 有經驗的開發
 第一節將說明如何從.fbx 檔案加入您的遊戲的 3D 模型。 下一節討論如何建立包含通用控制項，例如移動和尋找，的 3D 相機。 最後一節會深入剖析`VertexBuffer`從.fbx 檔案載入的類別可讓更多控制相較於轉譯模型的 3D 轉譯。
 
 
-# <a name="subsections"></a>各小節
+## <a name="topics"></a>主題
 
 - [使用模型類別](~/graphics-games/monogame/3d/part1.md)
 - [繪製有頂點的 3D 圖形](~/graphics-games/monogame/3d/part2.md)

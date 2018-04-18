@@ -5,11 +5,12 @@ ms.assetid: 5C7A60E3-1427-47C9-A022-720F25ECB031
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: f0fdc4f5145fc9a80f63b251a8a8927486fcd894
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 03/30/2017
+ms.openlocfilehash: a5593ac902bfd2478cd8587aeef7e4a3926627dd
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="representations-in-xamarin-workbooks"></a>Xamarin 活頁簿中的表示法
 
@@ -30,12 +31,12 @@ Xamarin 活頁簿會提供所有代理程式和用戶端，它提供豐富的轉
 ```csharp
 public sealed class Person : ISerializableObject
 {
-    public string Name { get; }
+  public string Name { get; }
 
-    // Rest of the code is omitted…
+  // Rest of the code is omitted…
 
-    void ISerializableObject.Serialize (ObjectSerializer serializer)
-        => serializer.Property (nameof (Name), Name);
+  void ISerializableObject.Serialize (ObjectSerializer serializer)
+    => serializer.Property (nameof (Name), Name);
 }
 ```
 

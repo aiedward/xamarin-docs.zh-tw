@@ -1,17 +1,17 @@
 ---
 title: SkiaSharp 平台的特定詳細資料
-description: 在您的平台使用 SkiaSharp 詳細資料。 簡短： 提供有關如何 SkSurface 內容帶入原生應用程式的詳細資料。
+description: 如何 SKSurface 內容帶入原生應用程式的詳細資料。
 ms.prod: xamarin
 ms.assetid: 1D90E0B3-A3A8-4286-BC54-9D67188A1C6C
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 3f3eedc58284ffd10fb0352dd24e1605913f58c1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8dd5fcd6e8ad7817a26dc310f76451874a18d134
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="platform-specific-integration"></a>平台特定的整合
 
@@ -71,7 +71,7 @@ using (var bitmap = Bitmap.CreateBitmap (canvas.Width, canvas.Height, Bitmap.Con
 }
 ```
 
-## <a name="os-x"></a>OS X
+## <a name="macos"></a>macOS
 
 ```csharp
 var screenScale = (int)NSScreen.MainScreen.BackingScaleFactor * 2;
@@ -119,7 +119,6 @@ using (var bitmap = new Bitmap(width, height, PixelFormat.Format32bppPArgb)) {
 ## <a name="xamarinforms"></a>Xamarin.Forms
 
 要包含在您 Xamarin.Forms SkiaSharp 應用程式，請參閱指南[Xamarin.Forms 中使用的 SkiaSharp](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)。
-
 
 ## <a name="related-links"></a>相關連結
 
