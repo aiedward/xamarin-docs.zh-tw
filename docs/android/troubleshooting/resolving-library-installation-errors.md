@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 6f280a90994ff40ebd8a07d2cab49ddc2b3d6ca1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a54c69ff708ff7438ef1a8fd14c17e77b5375039
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="resolving-library-installation-errors"></a>解析程式庫安裝錯誤
 
@@ -161,7 +161,8 @@ Unzipping failed. Please download https://dl-ssl.google.com/android/repository/a
 
 8.  請確認所有檔案會都遭覆寫。 **內嵌**目錄現在應該會包含檔案這類**d**， **.aar**，和**.pom**。
 
-9.  解壓縮擷取任何**.aar**檔案。 在 Windows 中，附加**.zip**延伸**.aar**檔案，以滑鼠右鍵按一下它，然後選取**全部解壓縮...**，然後移除**.zip**延伸模組。 上 macOS 解壓縮**.aar**檔案使用**解壓縮**命令終端機 (例如，**解壓縮 file.aar**)。
+9.  將解壓縮的內容擷取任何**.aar**檔案到**內嵌**目錄。 在 Windows 中，附加**.zip**延伸**.aar**檔、 開啟它，然後複製內容並**內嵌**目錄。
+    上 macOS 解壓縮**.aar**檔案使用**解壓縮**命令終端機 (例如，**解壓縮 file.aar**)。
 
 此時，您已手動安裝遺失的元件，應該會無誤建置您的專案。 如果沒有，請確認您已下載**m2repository** **.zip**封存完全對應於錯誤訊息中的版本的版本，並確認您已安裝在其內容上述步驟中所述，請更正的位置。 
 

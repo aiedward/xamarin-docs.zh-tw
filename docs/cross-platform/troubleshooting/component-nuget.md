@@ -7,28 +7,21 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.date: 11/22/2017
-ms.openlocfilehash: a76adab41e9f7de5abb391e69a5b27783e0c3a63
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/18/2018
+ms.openlocfilehash: e3adee1b56b833442a8c927672cf903d45d03e84
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>更新至 NuGet 元件參考
 
-_取代為您元件的參考至未來的使用期限的 NuGet 封裝您的應用程式。_
+> [!NOTE]
+> Xamarin 元件不再支援在 Visual Studio 中，並應取代為 NuGet 封裝。 請遵循下列指示手動從專案中移除元件參考。
 
-本指南說明如何更新現有的 Xamarin 解決方案元件將參考變更到 NuGet 封裝。
+新增 NuGet 封裝上的這些指示，請參閱[Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package)或[Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。
 
-- [元件，其中包含 NuGet 封裝](#contain)
-- [含有 NuGet 取代項目的元件](#replace)
-
-大部分元件歸類到其中一個以上的類別目錄。
-如果您使用的元件，並不具有對等的 NuGet 封裝，請閱讀[元件不包含 NuGet 移轉路徑](#require-update)下一節。
-
-如需詳細指示，在新增 NuGet 封裝是指這些頁面[Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package)或[Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。
-
-## <a name="opening-a-project-containing-a-component"></a>開啟包含元件的專案
+## <a name="manually-removing-component-references"></a>手動移除元件參考
 
 在 11 月版 2017年[宣布](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/)會停止 Xamarin 元件存放區。 若要移轉的元件 sunsetting 努力，15.6 版本的 Visual Studio 和 7.4 版的 Visual Studio for Mac 不再會支援您的專案中的元件。 
 
@@ -40,7 +33,7 @@ _取代為您元件的參考至未來的使用期限的 NuGet 封裝您的應用
 
 若要從您的專案中移除元件：
 
-1. 開啟.csproj 檔。 若要這樣做，以滑鼠右鍵按一下專案名稱，然後選取**卸載專案**。 
+1. 開啟**.csproj**檔案。 若要這樣做，以滑鼠右鍵按一下專案名稱，然後選取**卸載專案**。 
 
 2. 卸載的專案上按一下滑鼠右鍵，然後選取**編輯 {您的專案名稱}.csproj**。
 
@@ -100,9 +93,21 @@ _取代為您元件的參考至未來的使用期限的 NuGet 封裝您的應用
 
 3. 移除參考`XamarinComponentReference`並儲存檔案。 在上述範例中，可以放心移除整個 `ItemGroup`
 
-4. 您的方案中每個專案重複上述步驟。 
+4. 您的方案中每個專案重複上述步驟。
 
 -----
+
+> [!WARNING]
+> 下列指示只適用於舊版的 Visual Studio。
+> **元件**節點已無法再使用新版本的 Visual Studio 2017 或 Visual Studio for mac。
+
+下列各節說明如何更新現有的 Xamarin 解決方案元件將參考變更到 NuGet 封裝。
+
+- [元件，其中包含 NuGet 封裝](#contain)
+- [含有 NuGet 取代項目的元件](#replace)
+
+大部分元件歸類到其中一個以上的類別目錄。
+如果您使用的元件，並不具有對等的 NuGet 封裝，請閱讀[元件不包含 NuGet 移轉路徑](#require-update)下一節。
 
 <a name="contain" />
 
@@ -147,14 +152,12 @@ NuGet 封裝仍會列在**封裝**節點和應用程式會將編譯並如往常�
 
 _它可能包含 NuGet 相依性，但是可加以忽略。_
 
-
 若要確認更換 NuGet 封裝存在，搜尋上[NuGet.org](https://www.nuget.org/packages)，使用該元件名稱，或者依作者。
 
 例如，您可以找到熱門**sqlite net pcl**藉由搜尋套件：
 
 - [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) – 產品名稱。
 - [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) – 作者設定檔。
-
 
 ### <a name="updating-the-solution"></a>更新方案
 

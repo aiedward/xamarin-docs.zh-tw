@@ -1,31 +1,37 @@
 ---
-title: 使用 SQLite.NET
+title: 使用 Android SQLite.NET
+description: SQLite.NET PCL NuGet 程式庫提供一個簡單的資料存取機制 Xamarin.Android 應用程式。
 ms.prod: xamarin
 ms.assetid: 3447B7EE-A320-489E-AF02-E5721097760A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 59ba1ef60b0f63ed98302bf65c4d43c8ae207f22
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/18/2018
+ms.openlocfilehash: 00a937204147c418ada5570cf8021ebe1e6cfa28
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="using-sqlitenet"></a>使用 SQLite.NET
 
 Xamarin 會建議 SQLite.NET 程式庫是非常基本的 ORM，可讓您輕鬆地儲存和擷取在 Android 裝置上的本機 SQLite 資料庫中的物件。 代表物件關聯式對應 ORM &ndash; API，可讓您儲存及擷取資料庫中的 「 物件 」，而不需要撰寫 SQL 陳述式。
 
-## <a name="using-sqlitenet"></a>使用 SQLite.NET
+若要包含 SQLite.NET 程式庫中的 Xamarin 應用程式，將下列 NuGet 套件加入您的專案：
 
-若要包含 SQLite.NET 程式庫中的 Xamarin 應用程式，新增[SQLite.net PCL NuGet 封裝](https://www.nuget.org/packages/sqlite-net-pcl/)專案使用**SQLite net PCL** NuGet 封裝：
+- **封裝名稱：** SQLite net PCL
+- **作者：** Frank A.Krueger
+- **Id:** sqlite net pcl
+- **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![SQLite.NET NuGet 封裝](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet 封裝")](using-sqlite-orm-images/image1a.png#lightbox)
 
+> [!TIP]
+> 沒有可用的不同 SQLite 封裝數 – 請務必選擇正確 （它可能不是最上層的搜尋結果）。
+
 一旦您擁有可用 SQLite.NET 文件庫，請依照下列這三個步驟，使用它來存取資料庫：
 
-
-1.  **加入 using 陳述式** &ndash; C# 檔案需要的資料存取的位置中加入下列陳述式： 
+1.  **加入 using 陳述式** &ndash; C# 檔案需要的資料存取的位置中加入下列陳述式：
 
     ```csharp
     using SQLite;
@@ -206,7 +212,7 @@ SQLite 支援三種不同的執行緒模式：*單一執行緒*，*多執行緒*
 SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 ```
 
-SQLite 的 Android 版本具有需要幾個步驟的限制。 如果呼叫`SqliteConnection.SetConfig`產生 SQLite 例外狀況，例如`library used incorrectly`，則您必須使用下列因應措施： 
+SQLite 的 Android 版本具有需要幾個步驟的限制。 如果呼叫`SqliteConnection.SetConfig`產生 SQLite 例外狀況，例如`library used incorrectly`，則您必須使用下列因應措施：
 
 1.  連結至原生**libsqlite.so**程式庫，讓`sqlite3_shutdown`和`sqlite3_initialize`應用程式開發介面會提供給應用程式：
 
@@ -228,8 +234,6 @@ SQLite 的 Android 版本具有需要幾個步驟的限制。 如果呼叫`Sqlit
     ```
 
 此因應措施也適用於`Mono.Data.Sqlite`文件庫。 如需有關 SQLite 和多執行緒處理的詳細資訊，請參閱[SQLite 和多個執行緒](https://www.sqlite.org/threadsafe.html)。 
-
-
 
 ## <a name="related-links"></a>相關連結
 

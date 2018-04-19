@@ -1,16 +1,17 @@
 ---
-title: 使用 SQLite.NET
+title: 使用 iOS SQLite.NET
+description: SQLite.NET PCL NuGet 程式庫提供一個簡單的資料存取機制 Xamarin.iOS 應用程式。
 ms.prod: xamarin
 ms.assetid: 79813B09-42D7-47DD-AE71-A605E6B9EF24
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 01/18/2018
-ms.openlocfilehash: 8d68df2c29afe828482da7c5747b30dc5d30a5de
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/18/2018
+ms.openlocfilehash: e7287a4f6b4e3f1203f6181c900c05565d9b5050
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="using-sqlitenet"></a>使用 SQLite.NET
 
@@ -21,32 +22,47 @@ ORM 代表物件關聯式對應 – 可讓您儲存及擷取資料庫中的 「 
 
 ## <a name="usage"></a>使用量
 
-新增[SQLite.net PCL NuGet 封裝](https://www.nuget.org/packages/sqlite-net-pcl/)，您的專案-它支援各種不同平台，包括 iOS、 Android 和 Windows。
+若要包含 SQLite.NET 程式庫中的 Xamarin 應用程式，將下列 NuGet 套件加入您的專案：
 
-  [![](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet 封裝")](using-sqlite-orm-images/image1a.png#lightbox)
+- **封裝名稱：** SQLite net PCL
+- **作者：** Frank A.Krueger
+- **Id:** sqlite net pcl
+- **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+
+[![SQLite.NET NuGet 封裝](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet 封裝")](using-sqlite-orm-images/image1a.png#lightbox)
+
+> [!TIP]
+> 沒有可用的不同 SQLite 封裝數 – 請務必選擇正確 （它可能不是最上層的搜尋結果）。
 
 一旦您擁有可用 SQLite.NET 文件庫，請依照下列這三個步驟，使用它來存取資料庫：
 
-
 1. **加入 using 陳述式**-C# 檔案需要的資料存取的位置中加入下列陳述式：
 
-        using SQLite;
+    ```csharp
+    using SQLite;
+    ```
 
 1. **建立空白資料庫**-您可以建立的資料庫參考傳遞的檔案路徑 SQLiteConnection 類別建構函式。 您不需要檢查如果檔案已經存在-將會自動建立是否需要，否則現有的資料庫檔案將會開啟。
 
-        var db = new SQLiteConnection (dbPath);
+    ```csharp
+    var db = new SQLiteConnection (dbPath);
+    ```
 
     應該根據這份文件稍早所述的規則決定 dbPath 變數。
 
 1. **將資料儲存**-一旦您已建立 SQLiteConnection 物件，資料庫會執行命令，藉由呼叫其方法，例如 CreateTable 和插入，像這樣：
 
-        db.CreateTable<Stock> ();
-        db.Insert (newStock); // after creating the newStock object
+    ```csharp
+    db.CreateTable<Stock> ();
+    db.Insert (newStock); // after creating the newStock object
+    ```
 
 1. **擷取資料**-若要擷取的物件 （或一份物件） 使用下列語法：
 
-        var stock = db.Get<Stock>(5); // primary key id of 5
-        var stockList = db.Table<Stock>();
+    ```csharp
+    var stock = db.Get<Stock>(5); // primary key id of 5
+    var stockList = db.Table<Stock>();
+    ```
 
 ## <a name="basic-data-access-sample"></a>基本資料存取範例
 
@@ -54,14 +70,13 @@ ORM 代表物件關聯式對應 – 可讓您儲存及擷取資料庫中的 「 
 
 **iOS**
 
- ![](using-sqlite-orm-images/image2.png "iOS SQLite.NET 範例")
+ [![iOS SQLite.NET 範例](using-sqlite-orm-images/image2-sml.png)](using-sqlite-orm-images/image2-sml.png#lightbox)
 
 下列程式碼範例示範使用 SQLite.NET 程式庫封裝基礎資料庫存取整個資料庫互動。 它會顯示：
 
 1.  建立資料庫檔案
 1.  建立物件，然後將它們儲存插入一些資料
 1.  查詢資料
-
 
 您必須加入這些命名空間：
 
@@ -187,7 +202,6 @@ SQLite 支援三種不同的執行緒模式：*單一執行緒*，*多執行緒*
 ```csharp
 SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 ```
-
 
 ## <a name="related-links"></a>相關連結
 
