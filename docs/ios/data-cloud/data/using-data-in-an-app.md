@@ -1,18 +1,18 @@
 ---
-title: 應用程式中使用資料
+title: 使用 iOS 應用程式中的資料
 ms.prod: xamarin
 ms.assetid: 2CB8150E-CD2C-4E97-8605-1EE8CBACFEEC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: 3366b78479712dffee74448dcc51e193cd07564d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eded0918c6994481cdc82fe7662a985ea243b24d
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
-# <a name="using-data-in-an-app"></a>應用程式中使用資料
+# <a name="using-data-in-an-ios-app"></a>使用 iOS 應用程式中的資料
 
 **DataAccess_Adv**範例會顯示可用的應用程式，可讓使用者輸入和*CRUD* （建立、 讀取、 更新和刪除） 資料庫功能。 此應用程式包含兩個畫面： 清單，以及資料輸入表單。 所有資料存取程式碼都是可在 iOS 和 Android 必須修改才能重複使用。
 

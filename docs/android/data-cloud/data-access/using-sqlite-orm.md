@@ -7,19 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/18/2018
-ms.openlocfilehash: 00a937204147c418ada5570cf8021ebe1e6cfa28
-ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
+ms.openlocfilehash: e8e6e98cb6ada8d8da494e408e8db66ad5038799
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 04/20/2018
 ---
-# <a name="using-sqlitenet"></a>使用 SQLite.NET
+# <a name="using-sqlitenet-with-android"></a>使用 Android SQLite.NET
 
 Xamarin 會建議 SQLite.NET 程式庫是非常基本的 ORM，可讓您輕鬆地儲存和擷取在 Android 裝置上的本機 SQLite 資料庫中的物件。 代表物件關聯式對應 ORM &ndash; API，可讓您儲存及擷取資料庫中的 「 物件 」，而不需要撰寫 SQL 陳述式。
 
 若要包含 SQLite.NET 程式庫中的 Xamarin 應用程式，將下列 NuGet 套件加入您的專案：
 
-- **封裝名稱：** SQLite net PCL
+- **封裝名稱：** sqlite net pcl
 - **作者：** Frank A.Krueger
 - **Id:** sqlite net pcl
 - **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)

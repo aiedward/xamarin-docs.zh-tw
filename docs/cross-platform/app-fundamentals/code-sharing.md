@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 7531a8a21b6895de6113f5edd85d09a5e150877e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ec3cb08b227b268c4c755545e8bc76b9e234d093
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="sharing-code-options"></a>共用程式碼選項
 
@@ -136,7 +136,7 @@ _這份文件會比較跨平台專案之間共用程式碼的不同方法： 共
 
 程式碼共用您所選擇的策略會驅動您的目標平台。 選擇最適合您專案的方法。
 
-PCL 或.NET 標準是很好的選擇來建立可共用的程式碼程式庫 （特別需由 NuGet 發行）。 共用的專案，適用於應用程式開發人員計劃跨 platforma 應用程式中使用大量 plaform 特有的功能。
+PCL 或.NET 標準是很好的選擇來建立可共用的程式碼程式庫 （特別需由 NuGet 發行）。 共用的專案，適用於應用程式開發人員計劃跨平台應用程式中使用大量 plaform 特有的功能。
 
 
 ## <a name="related-links"></a>相關連結

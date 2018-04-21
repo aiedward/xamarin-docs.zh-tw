@@ -1,18 +1,18 @@
 ---
-title: 使用 ADO.NET
+title: 使用 ADO.NET 與 Android
 ms.prod: xamarin
 ms.assetid: F6ABCEF1-951E-40D8-9EA9-DD79123C2650
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: a2f7a7a0c282284d7a45fb81c134d300aef5afba
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 29e81afdf2c46cdefc68e2c2fae4e6e47999a346
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
-# <a name="using-adonet"></a>使用 ADO.NET
+# <a name="using-adonet-with-android"></a>使用 ADO.NET 與 Android
 
 Xamarin 具有內建支援可在 Android 上且可以使用熟悉的 ADO.NET 類似語法公開 SQLite 資料庫。 使用這些 Api 會要求您撰寫 SQL 陳述式所 SQLite，例如處理`CREATE TABLE`，`INSERT`和`SELECT`陳述式。
 

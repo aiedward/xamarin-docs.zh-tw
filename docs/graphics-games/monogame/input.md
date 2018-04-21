@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: e7ce8320441f6b248b183a8698a4f41c78bf2d64
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: ac87ee44163d53b11c15538f382379aae962cbb2
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="monogame-gamepad-reference"></a>MonoGame 遊戲台參考
 
@@ -25,7 +25,7 @@ _遊戲台是標準、 跨平台的類別來存取在 MonoGame 輸入的裝置�
 
 ## <a name="reading-input-from-gamepad"></a>從遊戲台讀取輸入
 
-`GameController`類別提供標準化的方式，讀取輸入的任何 MonoGame 平台上。 它會提供資訊透過兩種方法：
+`GamePad`類別提供標準化的方式，讀取輸入的任何 MonoGame 平台上。 它會提供資訊透過兩種方法：
 
 - `GetState` -傳回目前狀態的控制站的按鈕、 類比隨身碟和方向鍵。
 - `GetCapabilities` -傳回的硬體功能的相關資訊，例如控制器是否有特定的按鈕或支援震動。
