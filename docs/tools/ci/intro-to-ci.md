@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 017691ece68f979eea1627c0442f49018d5742fb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5e4720ac44876620783b32f731c44afe5a623231
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>使用 Xamarin 的連續整合簡介
 
@@ -36,7 +36,7 @@ _持續整合是軟體工程作法自動化的組建會編譯並新增或變更�
 
 行動裝置應用程式會導入連續整合唯一的挑戰。 應用程式可能需要如 GPS 或相機，才可以使用實體裝置上的感應器。 此外，模擬器只可約略估算的硬體且可能會隱藏或遮蔽的問題。 在結束時，就需要測試確信是真正可供客戶使用實際的硬體上的行動裝置應用程式。
 
-[應用程式中心測試](https://docs.microsoft.com/en-us/appcenter/test-cloud)解決此特定問題的方式來測試應用程式，直接在數百個實體裝置上的。 開發人員撰寫自動化的 acceptances 測試，可讓功能強大的 UI 測試。 一旦這些測試上傳至應用程式中心，CI 伺服器可以自動執行 CI 程序如下列圖表所示：
+[應用程式中心測試](https://docs.microsoft.com/appcenter/test-cloud)解決此特定問題的方式來測試應用程式，直接在數百個實體裝置上的。 開發人員撰寫自動化的 acceptances 測試，可讓功能強大的 UI 測試。 一旦這些測試上傳至應用程式中心，CI 伺服器可以自動執行 CI 程序如下列圖表所示：
 
 [![](intro-to-ci-images/intro02-small.png "一旦這些測試上傳至應用程式中心，CI 伺服器可以自動執行 CI 程序的一部分此圖表中所示")](intro-to-ci-images/intro02.png#lightbox)
 
@@ -48,21 +48,21 @@ _持續整合是軟體工程作法自動化的組建會編譯並新增或變更�
 
 ### <a name="visual-studio-team-services-and-team-foundation-server"></a>Visual Studio Team Services 和 Team Foundation Server
 
-[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs) (VSTS) 和[Team Foundation Server](http://msdn.microsoft.com/en-us/vstudio/ff637362.aspx) (TFS) 是 Microsoft 的共同作業工具，如持續整合建置服務、 追蹤工作、 敏捷式計劃和報告工具，以及版本控制項。 與版本控制 VSTS 和 TFS 可以處理它自己的系統 （Team Foundation 版本控制或 TFVC） 或裝載於 GitHub 上的專案。
+[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs) (VSTS) 和[Team Foundation Server](http://msdn.microsoft.com/vstudio/ff637362.aspx) (TFS) 是 Microsoft 的共同作業工具，如持續整合建置服務、 追蹤工作、 敏捷式計劃和報告工具，以及版本控制項。 與版本控制 VSTS 和 TFS 可以處理它自己的系統 （Team Foundation 版本控制或 TFVC） 或裝載於 GitHub 上的專案。
 
  - Visual Studio Team Services 提供透過雲端服務。 它的主要優點是它不需要專用的硬體或基礎結構，並可從任何地方透過網頁瀏覽器和款知名開發工具，例如 Visual Studio 中，讓您吸引分佈各地的小組散發。 它是免費的五個開發人員的小組或更少之後可以購買哪些額外的授權來容納不斷增長的小組。
  - TFS 是設計在內部部署 Windows 伺服器，並透過區域網路或該網路的 VPN 連線存取。 其主要的優點是您完全控制的組建伺服器組態和可以安裝任何其他軟體或服務所需。 TFS 有免費的入門級 Express 版本對於小型小組。
 
 TFS 和 VSTS 與 Visual Studio 緊密整合，可讓開發人員執行許多的版本控制和 CI 工作的單一 IDE 中。 也可以使用 Team Explorer Everywhere plugin for Eclipse （請參閱下文）。 Visual Studio for Mac 不提供任何支援 TFS 或 VSTS。
 
-Visual Studio Team 服務的建置系統可直接支援 Xamarin 專案中，您可以在其中建立您想要目標 （Android、 iOS 和 Windows） 的每個平台的組建定義。 適當的 Xamarin 授權所需的每個組建定義。 您也可連線本機、 Xamarin 支援 TFS 組建伺服器，以針對此用途的 Visual Studio Team Services。 使用這個設定，組建已排入佇列 VSTS 委派到本機伺服器。 如需詳細資訊，請參閱[部署和設定組建伺服器](https://msdn.microsoft.com/en-us/library/ms181712.aspx)。 或者，您可以使用其他建置工具，例如 Jenkins 或小組縣 （市）。
+Visual Studio Team 服務的建置系統可直接支援 Xamarin 專案中，您可以在其中建立您想要目標 （Android、 iOS 和 Windows） 的每個平台的組建定義。 適當的 Xamarin 授權所需的每個組建定義。 您也可連線本機、 Xamarin 支援 TFS 組建伺服器，以針對此用途的 Visual Studio Team Services。 使用這個設定，組建已排入佇列 VSTS 委派到本機伺服器。 如需詳細資訊，請參閱[部署和設定組建伺服器](https://msdn.microsoft.com/library/ms181712.aspx)。 或者，您可以使用其他建置工具，例如 Jenkins 或小組縣 （市）。
 
-所有的應用程式生命週期管理 (ALM) 功能的 Visual Studio、 Visual Studio Team Services 和 Team Foundation Server，請參閱完整的摘要[與 Xamarin 應用程式的應用程式生命週期管理](https://msdn.microsoft.com/en-us/library/mt162217(v=vs.140).aspx)MSDN 上。
+所有的應用程式生命週期管理 (ALM) 功能的 Visual Studio、 Visual Studio Team Services 和 Team Foundation Server，請參閱完整的摘要[與 Xamarin 應用程式的應用程式生命週期管理](https://msdn.microsoft.com/library/mt162217(v=vs.140).aspx)MSDN 上。
 
 
 ### <a name="team-explorer-everywhere"></a>Team Explorer Everywhere
 
-[Team Explorer Everywhere](http://msdn.microsoft.com/en-us/library/gg413285.aspx)將 Team Foundation Server 和 Visual Studio Team Services 功能帶給開發 Visual Studio 外部的小組。 它可讓開發人員從 Eclipse 或跨平台命令列用戶端連線到 team 專案，在內部部署或雲端中 OS X 和 Linux。 Team Explorer Everywhere 提供完整存取版本控制 （包括 Git），工作項目，並建立非 Windows 平台的功能。
+[Team Explorer Everywhere](http://msdn.microsoft.com/library/gg413285.aspx)將 Team Foundation Server 和 Visual Studio Team Services 功能帶給開發 Visual Studio 外部的小組。 它可讓開發人員從 Eclipse 或跨平台命令列用戶端連線到 team 專案，在內部部署或雲端中 OS X 和 Linux。 Team Explorer Everywhere 提供完整存取版本控制 （包括 Git），工作項目，並建立非 Windows 平台的功能。
 
 
 ### <a name="git"></a>Git
@@ -96,18 +96,18 @@ Visual Studio Team Services 和 Team Foundation Server 所述，提供兩個版�
 
 使用 Team Foundation Server，您可以設定組建電腦，如下所示的特定目標平台：
 
-- **Android 和 Windows:**安裝 Visual Studio 和 Xamarin 工具 （適用於 Android 和 Windows 這兩個），並使用您的 Xamarin 授權設定。 它也是必要移動到其中的 TFS 組建代理程式的共用位置在伺服器上的 Android SDK 可以找到它。 如需詳細資訊，請參閱[設定 TFVC](https://docs.microsoft.com/vsts/tfvc/overview)。
-- **iOS 和 Xamarin:**安裝 Visual Studio 和 Xamarin 工具在 Windows 伺服器上使用適當的授權。 Visual Studio for Mac 上安裝網路存取的 Mac OS X 電腦，這會做為組建主機，並建立最終應用程式封裝 (IPA 進行 iOS、 OS x 應用程式)。
+- **Android 和 Windows:** 安裝 Visual Studio 和 Xamarin 工具 （適用於 Android 和 Windows 這兩個），並使用您的 Xamarin 授權設定。 它也是必要移動到其中的 TFS 組建代理程式的共用位置在伺服器上的 Android SDK 可以找到它。 如需詳細資訊，請參閱[設定 TFVC](https://docs.microsoft.com/vsts/tfvc/overview)。
+- **iOS 和 Xamarin:** 安裝 Visual Studio 和 Xamarin 工具在 Windows 伺服器上使用適當的授權。 Visual Studio for Mac 上安裝網路存取的 Mac OS X 電腦，這會做為組建主機，並建立最終應用程式封裝 (IPA 進行 iOS、 OS x 應用程式)。
 
 下圖說明此拓撲：
 
 [![](intro-to-ci-images/intro03-small.png "此圖說明此拓撲")](intro-to-ci-images/intro03.png#lightbox)
 
-它也可將本機的 TFS 伺服器連結至 Visual Studio Team Services 專案，以便 VSTS 組建會委派給本機伺服器。 如需詳細資訊，請參閱[部署和設定組建伺服器](http://msdn.microsoft.com/en-us/library/ms181712.aspx)MSDN 上。
+它也可將本機的 TFS 伺服器連結至 Visual Studio Team Services 專案，以便 VSTS 組建會委派給本機伺服器。 如需詳細資訊，請參閱[部署和設定組建伺服器](http://msdn.microsoft.com/library/ms181712.aspx)MSDN 上。
 
 ### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services 和 Jenkins
 
-如果您使用 Jenkins 建置您的應用程式時，您可以在 Visual Studio Team Services 或 Team Foundation Server 中儲存您的程式碼，並繼續使用 Jenkins CI 組建。 您可以在程式碼推送至您的 team 專案的 Git 儲存機制或當您檢查程式碼 TFVC 時觸發 Jenkins 組建。 如需詳細資訊，請參閱[與 Visual Studio Team Services Jenkins](https://www.visualstudio.com/en-us/docs/marketplace/integrate/service-hooks/services/jenkins)。
+如果您使用 Jenkins 建置您的應用程式時，您可以在 Visual Studio Team Services 或 Team Foundation Server 中儲存您的程式碼，並繼續使用 Jenkins CI 組建。 您可以在程式碼推送至您的 team 專案的 Git 儲存機制或當您檢查程式碼 TFVC 時觸發 Jenkins 組建。 如需詳細資訊，請參閱[與 Visual Studio Team Services Jenkins](https://www.visualstudio.com/docs/marketplace/integrate/service-hooks/services/jenkins)。
 
 [![](intro-to-ci-images/intro04-small.png "如果您使用 Jenkins 建置您的應用程式時，您可以在 Visual Studio Team Services 或 Team Foundation Server 中儲存您的程式碼，並繼續使用 Jenkins CI 組建")](intro-to-ci-images/intro04.png#lightbox)
 
@@ -123,4 +123,4 @@ Visual Studio Team Services 和 Team Foundation Server 所述，提供兩個版�
 
 # <a name="summary"></a>總結
 
-持續整合概念，以及它為軟體開發團隊帶來的優勢，導入了這份文件。 版本控制的重要性先前討論的內容以及角色和責任的組建伺服器。 文件然後發生，討論的一些工具，可以是使用原始程式碼控制的組建伺服器。 我們也引進應用程式中心測試，可協助開發人員發行強大的應用程式執行將證明自己的應用程式的功能與品質的自動化的測試。 在提交應用程式和測試應用程式中心，您可以找到的文件的詳細[這裡](https://docs.microsoft.com/en-us/appcenter/test-cloud)。 最後，協助您了解如何所有這些工具和元件互相配合，我們概述幾個不同的 CI 環境組織可能會建立連續整合。 Xamarin 專案中使用 Visual Studio Team Services 和 Team Foundation Server 的詳細資訊，請參閱[設定 TFVC](https://docs.microsoft.com/vsts/tfvc/overview)和這[連續整合簡介](https://docs.microsoft.com/en-us/vsts/build-release/actions/ci-cd-part-1)。 同樣地，如果您使用 Jenkins，請參閱[使用 Jenkins xamarin](~/tools/ci/jenkins-walkthrough.md)的連續整合所設定的詳細資訊。
+持續整合概念，以及它為軟體開發團隊帶來的優勢，導入了這份文件。 版本控制的重要性先前討論的內容以及角色和責任的組建伺服器。 文件然後發生，討論的一些工具，可以是使用原始程式碼控制的組建伺服器。 我們也引進應用程式中心測試，可協助開發人員發行強大的應用程式執行將證明自己的應用程式的功能與品質的自動化的測試。 在提交應用程式和測試應用程式中心，您可以找到的文件的詳細[這裡](https://docs.microsoft.com/appcenter/test-cloud)。 最後，協助您了解如何所有這些工具和元件互相配合，我們概述幾個不同的 CI 環境組織可能會建立連續整合。 Xamarin 專案中使用 Visual Studio Team Services 和 Team Foundation Server 的詳細資訊，請參閱[設定 TFVC](https://docs.microsoft.com/vsts/tfvc/overview)和這[連續整合簡介](https://docs.microsoft.com/vsts/build-release/actions/ci-cd-part-1)。 同樣地，如果您使用 Jenkins，請參閱[使用 Jenkins xamarin](~/tools/ci/jenkins-walkthrough.md)的連續整合所設定的詳細資訊。

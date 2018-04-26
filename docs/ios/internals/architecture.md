@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 930b52e5b2a532e71594f26af79035db2cc5fb25
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 85dc675a9b18b974f21532298e4d3028bdecd0b7
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="ios-architecture"></a>iOS 架構
 
@@ -23,14 +23,14 @@ Xamarin.iOS 應用程式內單聲道執行環境、 執行，並使用完整的�
 
 ## <a name="native-and-managed-code-an-explanation"></a>原生和 Managed 程式碼： 的說明
 
-Xamarin 開發時條款*原生和 managed*通常會使用程式碼。 [Managed 程式碼](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)是由管理其執行的程式碼[.NET Framework Common Language Runtime](https://msdn.microsoft.com/en-us/library/8bs2ecf4(v=vs.110).aspx)，或在 Xamarin 的情況下： Mono 執行階段。 這是我們呼叫的中繼語言。
+Xamarin 開發時條款*原生和 managed*通常會使用程式碼。 [Managed 程式碼](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)是由管理其執行的程式碼[.NET Framework Common Language Runtime](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)，或在 Xamarin 的情況下： Mono 執行階段。 這是我們呼叫的中繼語言。
 
 原生程式碼是將特定的平台 （例如，OBJECTIVE-C 或甚至 AOT 編譯程式碼，在 ARM 晶片上的） 的原生方式執行的程式碼。 本指南會探討如何 AOT 編譯原生程式碼，managed 程式碼，並說明如何 Xamarin.iOS 應用程式的運作方式，充分使用 Apple iOS 應用程式開發介面使用的繫結，同時也擁有存取權。網路的 BCL 和複雜的語言，例如 C#。
 
 
 ## <a name="aot"></a>AOT
 
-當您編譯任何 Xamarin 平台應用程式時，Mono C# （或 F #） 編譯器會執行，而且會將 C# 和 F # 程式碼編譯成 Microsoft Intermediate Language (MSIL)。 如果您正在 Xamarin.Android、 Xamarin.Mac 應用程式或甚至 Xamarin.iOS 應用程式在模擬器中， [.NET Common Language Runtime (CLR)](https://msdn.microsoft.com/en-us/library/8bs2ecf4(v=vs.110).aspx)編譯 Time (JIT) 編譯器中使用正的 MSIL。 在這編譯成原生程式碼的執行階段，它可以您的應用程式的正確架構上執行。
+當您編譯任何 Xamarin 平台應用程式時，Mono C# （或 F #） 編譯器會執行，而且會將 C# 和 F # 程式碼編譯成 Microsoft Intermediate Language (MSIL)。 如果您正在 Xamarin.Android、 Xamarin.Mac 應用程式或甚至 Xamarin.iOS 應用程式在模擬器中， [.NET Common Language Runtime (CLR)](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)編譯 Time (JIT) 編譯器中使用正的 MSIL。 在這編譯成原生程式碼的執行階段，它可以您的應用程式的正確架構上執行。
 
 不過，沒有在 iOS、 Apple，就不允許在裝置上動態產生的程式碼執行所設定的安全性限制。
 若要確保我們遵守這些安全性通訊協定，Xamarin.iOS 改為使用前的時間 (AOT) 編譯器來編譯 managed 程式碼。 這會產生二進位，原生 iOS 的裝置，可以部署 Apple 的 arm 處理器選擇性地最佳化 LLVM。 下圖說明這如何搭配運用的概略圖表：
@@ -69,7 +69,7 @@ Xamarin 開發時條款*原生和 managed*通常會使用程式碼。 [Managed �
  }
 ```
 
-**Objective-C:**
+**目標 c:**
 
 ```objectivec
 @interface MyViewController : UIViewController { }

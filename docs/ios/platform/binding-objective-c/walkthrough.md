@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7a25aa1043dcaf52406059d3fa184da36dc4875e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6a43b9ad3c9af0a4118c40fb128f8890ac0ffe40
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>逐步解說： 繫結 iOS Objective C 程式庫
 
@@ -158,7 +158,7 @@ _本文章提供逐步解說動手建立現有的 Objective C 程式庫，InfCol
 
     [![](walkthrough-images/image16b.png "展開連結二進位的程式庫區段")](walkthrough-images/image16b.png#lightbox)
 
-13. 使用**+**按鈕，即可開啟對話方塊，可讓您將新增所需的框架架構上面所列：
+13. 使用**+** 按鈕，即可開啟對話方塊，可讓您將新增所需的框架架構上面所列：
 
     [![](walkthrough-images/image16c.png "加入上面所列的必要的框架架構")](walkthrough-images/image16c.png#lightbox)
 
@@ -396,7 +396,7 @@ Europa:Resources kmullins$
 針對這個逐步解說中，我們將使用下列目標 Sharpie 工具：
 
 - **xcode** -這個工具可讓我們 Xcode 我們目前的安裝和 iOS 和 Mac Api，我們已安裝的版本資訊。 我們將使用這項資訊稍後當我們產生我們的繫結。
-- **繫結**-我們將使用此工具來剖析**.h**至初始 InfColorPicker 專案中的檔案**ApiDefinition.cs**和**StructsAndEnums.cs**檔案。
+- **繫結**-我們將使用此工具來剖析 **.h**至初始 InfColorPicker 專案中的檔案**ApiDefinition.cs**和**StructsAndEnums.cs**檔案。
 
 若要取得特定的目標 Sharpie 工具的說明，請輸入工具的名稱和`-help`選項。 例如，`sharpie xcode -help`會傳回下列輸出：
 
@@ -430,7 +430,7 @@ sdk: watchos2.2      arch: armv7
 sharpie bind --output=InfColorPicker --namespace=InfColorPicker --sdk=[iphone-os] [full-path-to-project]/InfColorPicker/InfColorPicker/*.h
 ```
 
-其中`[full-path-to-project]`是目錄的完整路徑位置**InfColorPicker** Xcode 專案檔位於我們的電腦，且 [iphone os] iOS SDK，我們已安裝時，所註明`sharpie xcode -sdks`命令。 請注意，在此範例中我們已經傳遞 **\*.h**做為參數，其中包括*所有*標頭檔，此目錄位在您通常應該這樣做，但改為仔細閱讀若要尋找最上層的標頭檔**.h**參考的所有其他相關檔案，並只將其傳遞至目標 Sharpie 檔案。
+其中`[full-path-to-project]`是目錄的完整路徑位置**InfColorPicker** Xcode 專案檔位於我們的電腦，且 [iphone os] iOS SDK，我們已安裝時，所註明`sharpie xcode -sdks`命令。 請注意，在此範例中我們已經傳遞 **\*.h**做為參數，其中包括*所有*標頭檔，此目錄位在您通常應該這樣做，但改為仔細閱讀若要尋找最上層的標頭檔 **.h**參考的所有其他相關檔案，並只將其傳遞至目標 Sharpie 檔案。
 
 下列[輸出](walkthrough-images/os05.png)將在終端機中產生：
 
@@ -536,11 +536,11 @@ Europa:Resources kmullins$
 1. **建立使用者介面在 iPhone** -按兩下**MainStoryboard.storyboard**檔案**InfColorPickerSample**編輯 iOS 設計工具中的專案。 新增**按鈕**檢視並呼叫它`ChangeColorButton`，如下列所示：
 
     ![](walkthrough-images/use03.png "將按鈕加入至檢視")
-1. **新增 InfColorPickerView.xib** -InfColorPicker Objective C 程式庫包含**.xib**檔案。 Xamarin.iOS 將不會包含這**.xib**在繫結的專案中，這會導致在我們的範例應用程式的執行階段錯誤。 因應措施是新增**.xib** Xamarin.iOS 在專案的檔案。 選取 Xamarin.iOS 專案，以滑鼠右鍵按一下並選取**新增 > 新增檔案**，並加入**.xib**檔案中下列螢幕擷取畫面所示：
+1. **新增 InfColorPickerView.xib** -InfColorPicker Objective C 程式庫包含 **.xib**檔案。 Xamarin.iOS 將不會包含這 **.xib**在繫結的專案中，這會導致在我們的範例應用程式的執行階段錯誤。 因應措施是新增 **.xib** Xamarin.iOS 在專案的檔案。 選取 Xamarin.iOS 專案，以滑鼠右鍵按一下並選取**新增 > 新增檔案**，並加入 **.xib**檔案中下列螢幕擷取畫面所示：
 
     ![](walkthrough-images/use04.png "新增 InfColorPickerView.xib")
 
-1. 當系統詢問，請複製**.xib**將檔案貼入專案。
+1. 當系統詢問，請複製 **.xib**將檔案貼入專案。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -557,7 +557,7 @@ Europa:Resources kmullins$
 
     ![](walkthrough-images/use03vs.png "建立使用者介面在 iPhone")
 
-1. **新增 InfColorPickerView.xib** -InfColorPicker Objective C 程式庫包含**.xib**檔案。 Xamarin.iOS 將不會包含這**.xib**在繫結的專案中，這會導致在我們的範例應用程式的執行階段錯誤。 因應措施是新增**.xib**檔案，以從我們 Xamarin.iOS 專案我們**Mac 組建主機**。 選取 Xamarin.iOS 專案，以滑鼠右鍵按一下並選取**新增** > **現有項目...**，並加入**.xib**檔案。
+1. **新增 InfColorPickerView.xib** -InfColorPicker Objective C 程式庫包含 **.xib**檔案。 Xamarin.iOS 將不會包含這 **.xib**在繫結的專案中，這會導致在我們的範例應用程式的執行階段錯誤。 因應措施是新增 **.xib**檔案，以從我們 Xamarin.iOS 專案我們**Mac 組建主機**。 選取 Xamarin.iOS 專案，以滑鼠右鍵按一下並選取**新增** > **現有項目...**，並加入 **.xib**檔案。
 
 
 -----
@@ -735,4 +735,4 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 - [繫結詳細資料](~/cross-platform/macios/binding/overview.md)
 - [繫結型別參考指南](~/cross-platform/macios/binding/binding-types-reference.md)
 - [適用於 Objective-C 開發人員的 Xamarin](~/ios/get-started/objective-c-developers/index.md)
-- [Framework 設計方針](http://msdn.microsoft.com/en-us/library/ms229042.aspx)
+- [Framework 設計方針](http://msdn.microsoft.com/library/ms229042.aspx)

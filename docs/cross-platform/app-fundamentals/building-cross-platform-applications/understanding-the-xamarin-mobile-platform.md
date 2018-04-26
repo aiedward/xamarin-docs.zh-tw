@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 33551a924af1b7ca9c465514c704a0c1445fc2c4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 76b0e9ea6e13ed053a53971b6dbe9f65bb436a4e
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>第 1 篇 – 了解 Xamarin 的行動裝置平台
 
@@ -41,7 +41,7 @@ C# 原始程式檔會在每個平台上非常不同的方式進行到原生應�
 -   **iOS** – C# 中是前時間 (AOT) 編譯為 ARM 組件語言。 .NET framework 隨附，剔除了連結，以減少應用程式大小期間未使用的類別。 Apple 不允許執行階段程式碼產生在 iOS 上，因此不可以使用某些語言功能 (請參閱[Xamarin.iOS 限制](~/ios/internals/limitations.md))。
 -   **Android** – C# 編譯 il 及 MonoVM + JIT'ing 封裝。 Framework 中未使用的類別連結期間去除。 應用程式執行的並行與 Java 圖案 （Android 的執行階段） 並與其互動的原生類型透過 JNI (請參閱[Xamarin.Android 限制](~/android/internals/limitations.md))。
 -   **Windows** – C# 編譯的 il 和所內建的執行階段中，執行，而且不需要 Xamarin 工具。 設計 Windows 應用程式下列 Xamarin 的指引可重複使用 iOS 和 Android 上的程式碼變得更容易。
-  請注意，也有通用 Windows 平台**.NET 原生**其運作方式類似 Xamarin.iOS' AOT 編譯選項。
+  請注意，也有通用 Windows 平台 **.NET 原生**其運作方式類似 Xamarin.iOS' AOT 編譯選項。
 
 
 連結器文件[Xamarin.iOS](~/ios/deploy-test/linker.md)和[Xamarin.Android](~/android/deploy-test/linker.md)提供有關此組件編譯程序的詳細資訊。
@@ -173,7 +173,7 @@ Xamarin 提供了統一的安裝程式，將會設定您的系統必要條件 ja
 
 -   **iOS** – [Apple 人性化介面指導方針](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/index.html)
 -   **Android** – [Google 使用者介面指導方針](http://developer.android.com/guide/practices/ui_guidelines/index.html)
--   **Windows** –[適用於 Windows 的使用者經驗設計指導方針](https://developer.microsoft.com/en-us/windows/design)
+-   **Windows** –[適用於 Windows 的使用者經驗設計指導方針](https://developer.microsoft.com/windows/design)
 
 
  <a name="Library_and_Code_Re-use" />

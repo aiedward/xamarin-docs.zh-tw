@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/09/2017
-ms.openlocfilehash: 13868864813a2f120857fb6347924197e374638c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ab449a58cc87699b97a1ade7721a08f771c4f55d
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="microsoft-azure"></a>Microsoft Azure
 
@@ -31,7 +31,7 @@ _文件及範例程式碼會下載 azure。_
 集合[Azure 行動應用程式文件](~/cross-platform/data-cloud/mobile-apps.md)，引導您完成實作的處理序[Azure 行動用戶端](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)。
 Xamarin 也提供 Azure 傳訊 NuGet 封裝的[iOS](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.iOS/)和[Android](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.Android/)以協助實作跨平台的推播通知。
 
-設定您的應用程式上[Azure 應用程式服務入口網站](https://portal.azure.com/)存取行動應用程式、 Web 應用程式開發介面，存放裝置，以及執行更多。 深入了解[應用程式服務的不同方式](http://azure.microsoft.com/en-us/updates/whats-new-with-azure-app-service/)和觀賞中[microsoft 這些影片](http://azure.microsoft.com/en-us/campaigns/azure-march-announcement/)。
+設定您的應用程式上[Azure 應用程式服務入口網站](https://portal.azure.com/)存取行動應用程式、 Web 應用程式開發介面，存放裝置，以及執行更多。 深入了解[應用程式服務的不同方式](http://azure.microsoft.com/updates/whats-new-with-azure-app-service/)和觀賞中[microsoft 這些影片](http://azure.microsoft.com/campaigns/azure-march-announcement/)。
 
 ## <a name="active-directory-authentication"></a>Active Directory 驗證
 
@@ -58,7 +58,7 @@ Microsoft 的 Web API 會公開可以輕鬆地取用的 Xamarin 應用程式的�
 - [MyShoppe](https://github.com/jamesmontemagno/MyShoppe) -Azure 行動應用程式。
 
 - [資格](https://github.com/dotnet-architecture/eShopOnContainers)– 範例如[架構數列](https://www.microsoft.com/net/learn/architecture)有聲。
-- [MyDriving](https://azure.microsoft.com/en-us/campaigns/mydriving/) – Azure + IoT 範例建置 2016年。
+- [MyDriving](https://azure.microsoft.com/campaigns/mydriving/) – Azure + IoT 範例建置 2016年。
 
 
 ## <a name="related-links"></a>相關連結

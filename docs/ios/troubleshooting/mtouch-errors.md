@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 0187b65e4c10e7cc03715a997a90fbddab9bd532
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71cddc07863002a887cada2bb0db0f8d25fd1a17
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xamarinios-errors"></a>Xamarin.iOS 錯誤
 
@@ -163,9 +163,9 @@ Mtouch 無法辨識的錯誤訊息中所述的命令列引數。
 
 有幾個選項不能同時使用的 mtouch:
 
--  --logdev
+-  -logdev
 -  --installdev
--  --killdev
+-  -killdev
 -  -launchdev
 -  -launchdebug
 -  -launchsim
@@ -631,7 +631,7 @@ Xamarin.iOS 需要的標頭檔，從要建置應用程式的錯誤訊息中指�
 
 <a name="MT0109" />
 
-### <a name="mt0109-the-assembly-0-was-loaded-from-a-different-path-than-the-provided-path-provided-path-1-actual-path-2"></a>MT0109： 這個組件 '{0}' 已從提供的路徑不同的路徑載入 (提供路徑： {1}、 實際路徑： {2})。
+### <a name="mt0109-the-assembly-0-was-loaded-from-a-different-path-than-the-provided-path-provided-path-1-actual-path-2"></a>MT0109： 組件 '{0}' 載入從提供的路徑不同的路徑 (提供路徑： {1}，實際路徑： {2})。
 
 這是警告，表示應用程式所參考的組件已載入從不同的位置要求。
 
@@ -1653,11 +1653,11 @@ Parameter name: instruction
 
 <a name="MT2104" />
 
-### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104： 無法將連結組件 '{0}'，因為它是混合模式。
+### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104： 無法將連結的組件 '{0}' 因為它是混合模式。
 
 連結器無法處理混合模式組件。
 
-請參閱https://msdn.microsoft.com/en-us/library/x0w2664k.aspx如需有關混合模式組件。
+請參閱https://msdn.microsoft.com/library/x0w2664k.aspx如需有關混合模式組件。
 
 ## <a name="mt3xxx-aot-error-messages"></a>MT3xxx: AOT 錯誤訊息
 
@@ -1732,7 +1732,7 @@ Bitcode 支援需要 LLVM AOT 後端使用 (-llvm)。
 
 ### <a name="mt4001-the-main-template-could-not-be-expanded-to-"></a>MT4001： 主要範本無法擴充至`*`。
 
-產生 main.m 時，就會發生錯誤。 請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+產生 main.m 時，就會發生錯誤。 請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT4002" />
 
@@ -1988,7 +1988,7 @@ class MyCustomNSObject : MyNSObject
 
 ### <a name="mt4144-cannot-register-the-method--since-it-does-not-have-an-associated-trampoline-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4144： 無法登錄的方法 ' *' 因為沒有相關聯的 trampoline。 請檔案錯誤報告在http://bugzilla.xamarin.com。
 
-這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這表示 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT4145" />
 
@@ -2060,7 +2060,7 @@ Objectice C 類別的名稱不能包含空白字元，這表示`Register`對應�
 
 <a name="MT4161" />
 
-### <a name="mt4161-the-registrar-found-an-unsupported-structure--all-fields-in-a-structure-must-also-be-structures-field--with-type-2-is-not-a-structure"></a>MT4161: 註冊機構找到不支援的結構 '\*': 在結構中的所有欄位也必須都是結構 (欄位'\*' 與型別 '{2}' 不是結構)。
+### <a name="mt4161-the-registrar-found-an-unsupported-structure--all-fields-in-a-structure-must-also-be-structures-field--with-type-2-is-not-a-structure"></a>MT4161: 註冊機構找到不支援的結構 '\*': 在結構中的所有欄位也必須都是結構 (欄位'\*'與 type'{2}' 不是結構)。
 
 在註冊機構找到具有不支援欄位的結構。
 
@@ -2444,7 +2444,7 @@ Xamarin.iOS 專案會經常參考原生符號，以動態方式表示原生連�
 
 <a name="MT6003" />
 
-### <a name="mt6003-unauthorizedaccessexception-message"></a>MT6003: [UnauthorizedAccessException message]
+### <a name="mt6003-unauthorizedaccessexception-message"></a>MT6003: [UnauthorizedAccessException 訊息]
 
 安全性時，發生錯誤條狀配置偵錯符號，從應用程式。
 
@@ -2913,7 +2913,7 @@ Xamarin.iOS 專案會經常參考原生符號，以動態方式表示原生連�
 
 ### <a name="mt8008-the-loaded-version-of-xamariniosdll-was-compiled-for--bits-while-the-process-is--bits-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8008: Xamarin.iOS.dll 載入的版本編譯的 * 位元，處理程序時 * 位元。 請將 bug 歸檔在http://bugzilla.xamarin.com。
 
-這表示有不對勁出現在建置程序。 請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這表示有不對勁出現在建置程序。 請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT8009" />
 
@@ -2953,7 +2953,7 @@ Xamarin.iOS 找不到所需的方法，在執行階段 （一個區塊轉換成�
 
 <a name="MT8014" />
 
-### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014： 方法的傳回值的無效 DelegateProxyAttribute *。*: 其實的 ({2}) 'Handler' 欄位為 null。 請將 bug 歸檔在http://bugzilla.xamarin.com。
+### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014： 方法的傳回值的無效 DelegateProxyAttribute *。*: 其實 ({2}) 'Handler' 欄位為 null。 請將 bug 歸檔在http://bugzilla.xamarin.com。
 
 方法有問題的 DelegateProxy 屬性無效。
 
@@ -2961,7 +2961,7 @@ Xamarin.iOS 找不到所需的方法，在執行階段 （一個區塊轉換成�
 
 <a name="MT8015" />
 
-### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015： 方法的傳回值的無效 DelegateProxyAttribute *。*: 其實的 ({2}) 'Handler' 欄位不是委派，它是 *。 請將 bug 歸檔在http://bugzilla.xamarin.com。
+### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015： 方法的傳回值的無效 DelegateProxyAttribute *。*: 其實 ({2}) 'Handler' 欄位不是委派，它是 *。 請將 bug 歸檔在http://bugzilla.xamarin.com。
 
 方法有問題的 DelegateProxy 屬性無效。
 

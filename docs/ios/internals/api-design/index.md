@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: b7604633a5dfad6134d7b549299194ab6707a865
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da827c5bdd25bf841f5396b10d1eeb70e132dfeb
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="api-design"></a>應用程式開發介面設計
 
@@ -693,7 +693,7 @@ Xamarin.iOS 有會負責您釋放資源，當它們已經不再使用的記憶�
 
 公開`IDisposable`介面是協助開發人員在釋放物件，可能會將封裝的大型記憶體區塊的一個便利方式 (例如，`UIImage`看起來會像只無害的指標，但無法指向 2 mb 的映像) 和其他重要且有限的資源 （例如視訊解碼緩衝處理）。
 
-NSObject 實作 IDisposable 介面以及[.NET Dispose 模式](http://msdn.microsoft.com/en-us/library/fs2xkftw.aspx)。 這可讓開發人員 NSObject 來覆寫 Dispose 行為，並釋放其自己的資源，視該子類別。 例如，請考慮一堆映像會保持此檢視控制站：
+NSObject 實作 IDisposable 介面以及[.NET Dispose 模式](http://msdn.microsoft.com/library/fs2xkftw.aspx)。 這可讓開發人員 NSObject 來覆寫 Dispose 行為，並釋放其自己的資源，視該子類別。 例如，請考慮一堆映像會保持此檢視控制站：
 
 ```csharp
 class MenuViewController : UIViewController {

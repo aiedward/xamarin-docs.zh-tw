@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: f8e663ab2e274bff1ae8b700586d4c6749f04545
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 690edabd53752ff0347fdb232a4bbfcb1ba6e84d
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="case-study-tasky"></a>案例研究： Tasky
 
@@ -166,7 +166,7 @@ public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
 
 #### <a name="locking-to-prevent-concurrent-access"></a>鎖定來防止並行存取
 
-A[鎖定](http://msdn.microsoft.com/en-us/library/c5kehkcz(v=vs.100).aspx)內實作`TaskItemDatabase`類別，以防止並行存取資料庫。 這是為了確保從不同執行緒同時存取序列化 （否則 UI 元件可能會嘗試在背景執行緒正在更新的同時讀取資料庫）。 鎖定的實作方式的範例如下所示：
+A[鎖定](http://msdn.microsoft.com/library/c5kehkcz(v=vs.100).aspx)內實作`TaskItemDatabase`類別，以防止並行存取資料庫。 這是為了確保從不同執行緒同時存取序列化 （否則 UI 元件可能會嘗試在背景執行緒正在更新的同時讀取資料庫）。 鎖定的實作方式的範例如下所示：
 
 ```csharp
 static object locker = new object ();
@@ -253,7 +253,7 @@ path>/Documents/TaskDB.db3"Android 或只"TaskDB.db3"適用於 Windows Phone。
 
  <a name="iOS_App" />
 
-## <a name="ios-app"></a>iOS App
+## <a name="ios-app"></a>iOS 應用程式
 
 有少數幾個實作 iOS Tasky 使用通用的 PCL 專案來儲存和擷取資料的應用程式所需的類別。 完成 iOS Xamarin.iOS 專案如下所示：
 
@@ -357,7 +357,7 @@ Tasky 使用`MonoTouch.Dialog`的反映 API，以顯示螢幕，因此會有任�
 
  <a name="Android_App" />
 
-## <a name="android-app"></a>Android App
+## <a name="android-app"></a>Android 應用程式
 
 完整的 Xamarin.Android 專案，如圖如下所示：
 

@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5c6a5233c9cdc043986f106712895439fa008b41
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0706e416861e5636413577d38bf524ce9184bc4d
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="working-with-the-file-system"></a>使用檔案系統
 
 _Xamarin.iOS 可以使用相同的 System.IO 類別，才能使用，您會使用任何.NET 應用程式在 iOS 中檔案和目錄。不過，儘管熟悉類別和方法，iOS 可以建立或存取的檔案會實作一些限制，而且也會提供特殊功能為特定目錄。本文概述這些限制與功能，並示範檔案存取 Xamarin.iOS 應用程式中的運作方式。_
 
-您可以使用 Xamarin.iOS 和`System.IO`中的類別*.NET 基底類別程式庫 (BCL)*存取 iOS 檔案系統。 `File`類別可讓您建立、 刪除和讀取檔案，而`Directory`類別可讓您建立、 刪除或列舉的目錄內容。 您也可以使用`Stream`子類別，可提供更大的控制權檔案作業 （例如壓縮或位置的檔案內搜尋）。
+您可以使用 Xamarin.iOS 和`System.IO`中的類別 *.NET 基底類別程式庫 (BCL)* 存取 iOS 檔案系統。 `File`類別可讓您建立、 刪除和讀取檔案，而`Directory`類別可讓您建立、 刪除或列舉的目錄內容。 您也可以使用`Stream`子類別，可提供更大的控制權檔案作業 （例如壓縮或位置的檔案內搜尋）。
 
 iOS 會有些限制，應用程式可以做為檔案系統來保留的應用程式資料的安全性，以及保護使用者免於惡意應用程式。 這些限制屬於*應用程式沙箱*– 一組規則，以限制應用程式的存取權的檔案喜好設定、 網路資源、 硬體、 等等。應用程式僅限於讀取和寫入其主目錄 （安裝位置;） 中的檔案它無法存取另一個應用程式的檔案。
 
@@ -77,7 +77,7 @@ using (TextReader reader = new StreamReader("./TestData/test.xml")) {
 }
 ```
 
-請參閱 MSDN 文件[System.Xml](http://msdn.microsoft.com/en-us/library/system.xml.aspx)如需詳細資訊的命名空間[序列化](http://msdn.microsoft.com/en-us/library/system.xml.serialization.aspx)。 您也應該檢閱[Xamarin.iOS 文件](~/ios/deploy-test/linker.md)連結器 – 通常您會需要加入`[Preserve]`屬性設定為您想要序列化的類別。
+請參閱 MSDN 文件[System.Xml](http://msdn.microsoft.com/library/system.xml.aspx)如需詳細資訊的命名空間[序列化](http://msdn.microsoft.com/library/system.xml.serialization.aspx)。 您也應該檢閱[Xamarin.iOS 文件](~/ios/deploy-test/linker.md)連結器 – 通常您會需要加入`[Preserve]`屬性設定為您想要序列化的類別。
 
  <a name="Creating_Files_and_Directories" />
 
@@ -102,7 +102,7 @@ var directoryname = Path.Combine (documents, "NewDirectory");
 Directory.CreateDirectory(directoryname);
 ```
 
-如需 System.IO 命名空間的詳細資訊，請參閱[MSDN 文件](http://msdn.microsoft.com/en-us/library/system.io.aspx)。
+如需 System.IO 命名空間的詳細資訊，請參閱[MSDN 文件](http://msdn.microsoft.com/library/system.io.aspx)。
 
 
 ### <a name="serializing-json"></a>序列化 Json
@@ -214,7 +214,7 @@ iOS 會使用正斜線 '/' 做為路徑分隔符號 (不同於 Windows，會使�
 
 當您瀏覽至您的應用程式套件組合，在 Mac OS 時，它會出現以不同的圖示比您看到另一個目錄中 （和隱藏.app 尾碼）;不過，它是只以不同方式顯示作業系統的規則目錄。
 
-若要檢視的範例程式碼應用程式套件組合，以滑鼠右鍵按一下 Visual Studio 中的專案上的 Mac，並選取**開啟包含資料夾**。 瀏覽至**bin/Debug/**您應該在此找到應用程式圖示 （類似於以下螢幕擷取畫面）。
+若要檢視的範例程式碼應用程式套件組合，以滑鼠右鍵按一下 Visual Studio 中的專案上的 Mac，並選取**開啟包含資料夾**。 瀏覽至**bin/Debug/** 您應該在此找到應用程式圖示 （類似於以下螢幕擷取畫面）。
 
  [![](file-system-images/40-bundle.png "巡覽至 bin/Debug 尋找應用程式圖示類似這個螢幕擷取畫面")](file-system-images/40-bundle.png#lightbox)
 
@@ -243,8 +243,8 @@ iOS 會使用正斜線 '/' 做為路徑分隔符號 (不同於 Windows，會使�
 |文件 /|使用此目錄以儲存使用者文件和應用程式資料檔案。<br /><br />此目錄的內容可提供給使用者透過 iTunes 檔案共用 （雖然這會停用預設值）。 新增`UIFileSharingEnabled`布林金鑰至 Info.plist 檔案，以允許使用者存取這些檔案。<br /><br />即使應用程式不立即啟用檔案共用，您應該避免將應向使用者在此目錄中隱藏的檔案 (例如資料庫檔案，除非您想要分享)。 機密檔案仍然保持隱藏狀態，因為這些檔案將不會公開 （和可能移動、 修改或刪除由 iTunes） 如果檔案共用的未來版本中已啟用。<br /><br /> 您可以使用`Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)`方法來取得您的應用程式的文件目錄的路徑。<br /><br />此目錄的內容所備份的 iTunes。|
 |程式庫 /|程式庫目錄是不直接由使用者，例如資料庫或其他應用程式所產生的檔案建立的檔案儲存的好地方。 使用者可透過 iTunes 永遠不會公開此目錄的內容。<br /><br />您可以在程式庫; 中建立您自己的子目錄不過，已有一些系統建立目錄這裡，您應該注意，其中包括喜好設定和快取。<br /><br />此目錄 （除了的快取子目錄） 的內容所備份的 iTunes。 將備份您在程式庫中建立的自訂目錄。|
 |喜好設定程式庫 / /|特定應用程式喜好設定的檔案會儲存在此目錄。 請勿直接建立這些檔案。 請改用`NSUserDefaults`類別。<br /><br />此目錄的內容所備份的 iTunes。|
-|Library/Caches/|快取目錄是儲存資料檔案，可協助您的應用程式的好地方執行，但是可以輕鬆地重新建立必要的。 應用程式，建立和刪除這些檔案，視需要可以視需要重新建立這些檔案。 iOS 5 可能也會刪除這些檔案 （在非常低的存放裝置的情況下），但它並不是在執行應用程式。<br /><br />此目錄的內容不會備份由 iTunes，這表示它們不會出現，如果使用者會將裝置還原，及它們可能不存在您的應用程式的更新的版本安裝之後。<br /><br />比方說，如果您的應用程式無法連線到網路，您可以使用快取目錄來儲存資料或檔案，以提供良好的離線體驗。 應用程式可以儲存及快速擷取這項資料，等待網路回應，但它不需要進行備份，可輕鬆地復原或還原或版本更新之後重新建立。|
-|tmp/|應用程式可以儲存在此目錄中短暫的時間才會需要的暫存檔案。 為了節省空間，應該已不再需要時刪除檔案。 當應用程式未在執行作業系統也可能會從這個目錄刪除檔案。<br /><br />此目錄的內容不會由 iTunes 備份。<br /><br />例如，tmp 目錄可能會用來儲存暫存檔 （例如 Twitter 虛擬人偶或電子郵件附件），對使用者顯示的已下載，但他們已被檢視 （並如有必要在未來再次下載之後，就無法刪除的).|
+|程式庫/快取 /|快取目錄是儲存資料檔案，可協助您的應用程式的好地方執行，但是可以輕鬆地重新建立必要的。 應用程式，建立和刪除這些檔案，視需要可以視需要重新建立這些檔案。 iOS 5 可能也會刪除這些檔案 （在非常低的存放裝置的情況下），但它並不是在執行應用程式。<br /><br />此目錄的內容不會備份由 iTunes，這表示它們不會出現，如果使用者會將裝置還原，及它們可能不存在您的應用程式的更新的版本安裝之後。<br /><br />比方說，如果您的應用程式無法連線到網路，您可以使用快取目錄來儲存資料或檔案，以提供良好的離線體驗。 應用程式可以儲存及快速擷取這項資料，等待網路回應，但它不需要進行備份，可輕鬆地復原或還原或版本更新之後重新建立。|
+|tmp /|應用程式可以儲存在此目錄中短暫的時間才會需要的暫存檔案。 為了節省空間，應該已不再需要時刪除檔案。 當應用程式未在執行作業系統也可能會從這個目錄刪除檔案。<br /><br />此目錄的內容不會由 iTunes 備份。<br /><br />例如，tmp 目錄可能會用來儲存暫存檔 （例如 Twitter 虛擬人偶或電子郵件附件），對使用者顯示的已下載，但他們已被檢視 （並如有必要在未來再次下載之後，就無法刪除的).|
 
 這個螢幕擷取畫面會顯示目錄結構中尋找工具視窗：
 

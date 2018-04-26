@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: f94959062f01a363319494eb510f1a6e42fe36b6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 52f4c51258d1b635adcd697bccb7dd553acc0d5e
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="localization"></a>當地語系化
 
@@ -110,7 +110,7 @@ double.Parse("1,999.99", CultureInfo.InvariantCulture);
 double.Parse("1 999,99", CultureInfo.CreateSpecificCulture("fr-FR"));
 ```
 
-請參閱[剖析數值字串](http://msdn.microsoft.com/en-us/library/xbtzcc4w(v=vs.110).aspx)和[剖析日期和時間字串](http://msdn.microsoft.com/en-us/library/2h3syy57(v=vs.110).aspx)MSDN 文件，如需詳細資訊。
+請參閱[剖析數值字串](http://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx)和[剖析日期和時間字串](http://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx)MSDN 文件，如需詳細資訊。
 
 <a name="rtl" />
 
@@ -130,7 +130,7 @@ IOS 和 Android 支援由右至左配置和字型呈現時，使用內建功能�
 
 不同語言有不同，定義其字母的排序順序，即使它們使用相同的字元集。
 
-請參閱[詳細資料的字串比較](http://msdn.microsoft.com/en-us/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison)中[在.NET Framework 中使用字串的最佳作法](http://msdn.microsoft.com/en-us/library/dd465121(v=vs.110).aspx)範例，其中的語言 (CultureInfo) 會影響排序次序。
+請參閱[詳細資料的字串比較](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison)中[在.NET Framework 中使用字串的最佳作法](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx)範例，其中的語言 (CultureInfo) 會影響排序次序。
 
 也不太可能在行動平台上的內建的資料庫功能將會支援排序，因此您可能需要在您的商務邏輯中實作額外的程式碼的語言特有排序。
 
@@ -312,4 +312,4 @@ IOS 和 Android 支援由右至左配置和字型呈現時，使用內建功能�
 
 - [Apple 的當地語系化概觀](https://developer.apple.com/internationalization/)
 - [Android 的當地語系化檢查清單](http://developer.android.com/distribute/tools/localization-checklist.html)
-- [開發世界性的應用程式 (MSDN) 的最佳作法](http://msdn.microsoft.com/en-us/library/w7x1y988%28v=vs.90%29.aspx)
+- [開發世界性的應用程式 (MSDN) 的最佳作法](http://msdn.microsoft.com/library/w7x1y988%28v=vs.90%29.aspx)

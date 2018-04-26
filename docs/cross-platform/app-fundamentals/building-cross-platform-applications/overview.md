@@ -6,17 +6,17 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 48aa53595d7ab0ccd5fb8f3dab57198199d65b8e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b3b15736b5ec750e0b8db078cf428a7f573bc435
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="building-cross-platform-applications-overview"></a>建置跨平台應用程式概觀
 
 這個指南介紹 Xamarin 平台，以及如何設計來最大化程式碼重複使用，並在所有主要行動平台上提供高品質原生體驗的跨平台應用程式架構： iOS、 Android 和 Windows Phone。
 
-這份文件中使用的方法是通常適用於生產力應用程式和遊戲的應用程式，但是重點在於產能和公用程式 （非遊戲應用程式）。 請參閱[MonoGame 文件的簡介](https://developer.xamarin.com/guides/cross-platform/game_development/monogame/introduction/)或簽出[Visual Studio Tools for Unity](https://docs.microsoft.com/en-us/visualstudio/cross-platform/visual-studio-tools-for-unity)指導方針開發跨平台遊戲。
+這份文件中使用的方法是通常適用於生產力應用程式和遊戲的應用程式，但是重點在於產能和公用程式 （非遊戲應用程式）。 請參閱[MonoGame 文件的簡介](~/graphics-games/monogame/introduction/index.md)或簽出[Visual Studio Tools for Unity](https://docs.microsoft.com/visualstudio/cross-platform/visual-studio-tools-for-unity)指導方針開發跨平台遊戲。
 
 片語 「 寫入-一次，執行每個地方 」 通常用來 extol 優點，以及在單一程式碼基底執行未修改多個平台上。 時有重複使用程式碼的優點，方法通常會導致具有最低公分功能集的應用程式並不符合泛型尋找使用者介面運用到任何目標平台。
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: ae1300936a24ac1381496eaaf78aefb875bd5ed6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 33573d14d77f0582caca7d1e71b839563a3dd110
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="2d-math-with-cocossharp"></a>與 CocosSharp 2D 數學運算
 
@@ -264,7 +264,7 @@ private void HandleInput(System.Collections.Generic.List<CCTouch> touches, CCEve
 
 `System.Math.Atan2` 可用來將位移轉換成角度。 函式名稱`Atan2`來自三角函式的反正切值。 "2"的後置詞從標準中區分此函式`Atan`函式，以完全符合反正切值的數學行為。 反正切值是函式會傳回介於-90 和 + 90 度 （或同等權限，以弧度為單位）。 許多應用程式，包括電腦遊戲，通常需要完整 360 度的值，所以`Math`類別包含`Atan2`來滿足此需求。
 
-請注意，上述程式碼傳遞 Y 參數第一次，然後 X 的參數，呼叫時`Atan2`方法。 這會是回溯一般 X，Y 順序的位置座標。 如需詳細資訊[看到 Atan2 文件](https://msdn.microsoft.com/en-us/library/system.math.atan2(v=vs.110).aspx)。
+請注意，上述程式碼傳遞 Y 參數第一次，然後 X 的參數，呼叫時`Atan2`方法。 這會是回溯一般 X，Y 順序的位置座標。 如需詳細資訊[看到 Atan2 文件](https://msdn.microsoft.com/library/system.math.atan2(v=vs.110).aspx)。
 
 它也是值得注意的傳回值從`Atan2`是以弧度為單位，也就是另一個用來測量角度的單位。 本指南未涵蓋的弧度為單位的詳細資料，但是請記住，在所有三角函數`System.Math`命名空間使用弧度為單位，因此任何值必須在 CocosSharp 物件上使用前先轉換為度。 可以找到更多有關弧度[弧度維基百科頁面中](http://en.wikipedia.org/wiki/Radian)。
 

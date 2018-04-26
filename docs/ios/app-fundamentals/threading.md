@@ -5,11 +5,11 @@ ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 6d178231cd45d3b251a26c47abd47bf22b6c2716
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 63a213a62021923ac6dae8b080f3f8931621251d
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="threading"></a>執行緒
 
@@ -17,7 +17,7 @@ Xamarin.iOS 執行階段可讓開發人員存取.NET 執行緒應用程式開發
 
 
 
-Xamarin 強烈建議您改用[工作平行程式庫](http://msdn.microsoft.com/en-us/library/dd460717.aspx)(TPL) 建置應用程式的幾個原因：
+Xamarin 強烈建議您改用[工作平行程式庫](http://msdn.microsoft.com/library/dd460717.aspx)(TPL) 建置應用程式的幾個原因：
 -  預設 TPL 排程器會將委派工作執行的執行緒集區，接著會動態地增加處理程序發生時，同時避免太多執行緒最後會競爭 CPU 時間的其中一個案例所需的執行緒數目。 
 -  它很容易就能考慮依據 TPL 工作作業。 您可以輕鬆地操作這些、 排程這些、 序列化其執行或啟動許多使用一組豐富的應用程式開發介面的平行。 
 -  它是新 C# 非同步語言擴充功能的程式設計基礎。 

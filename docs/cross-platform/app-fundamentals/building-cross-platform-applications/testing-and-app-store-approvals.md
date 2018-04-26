@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 67f61da09861fac6f45faf80efde40302c05bfed
-ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
+ms.openlocfilehash: efe0f20207f6e4ec990af736f1d8e930445e59b9
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>第 6-測試和應用程式市集核准
 
@@ -75,7 +75,7 @@ Google Play 註冊只需要幾分鐘，如果您的應用程式可用，而處�
 
 - [Apple ios App Store 中發行](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [準備 Google Play 應用程式](~/android/deploy-test/publishing/publishing-to-google-play/index.md)
-- Windows 開發人員應該造訪[Windows 開發人員中心](https://developer.microsoft.com/en-us/windows/windows-apps)若要閱讀有關送出自己的應用程式。
+- Windows 開發人員應該造訪[Windows 開發人員中心](https://developer.microsoft.com/windows/windows-apps)若要閱讀有關送出自己的應用程式。
 
 本節的其餘部分將討論您應該以確保沒有任何網際網路核准您的應用程式納入考量的事項。
 

@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 2a189a19280576876e5d5a6a4fa34d2d00cab330
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: de6fdab62a57dddb6fcf48302b7ff9f5ec2bc9a2
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="c-6-new-features-overview"></a>C# 6 的新功能概觀
 
@@ -51,7 +51,7 @@ _最新版的 C# 語言 – 第 6 版 – 會持續發展成具有較少的未�
 
 Windows 使用者必須擁有[Visual Studio 2015 或 2017年 ^](https://www.visualstudio.com/)安裝 （即使您選擇適用於 Windows 的 Xamarin Studio 為您的 IDE） 編譯 C# 6 程式碼。
 
-^ 或 *[Microsoft 建置工具 2015年](http://www.microsoft.com/en-us/download/details.aspx?id=48159)*命令列編譯或組建伺服器，例如。
+^ 或 *[Microsoft 建置工具 2015年](http://www.microsoft.com/download/details.aspx?id=48159)* 命令列編譯或組建伺服器，例如。
 
 ## <a name="using-c-6"></a>使用 C# 6
 

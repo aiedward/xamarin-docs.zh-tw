@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: df6a848023febcb7fc65cf6616aeae3b43b39262
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 7f0d40e4adb16e47db18d0796afa42c66af096ce
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin.Mac 錯誤訊息 (mmp)
 
@@ -34,11 +34,11 @@ ms.lasthandoff: 04/20/2018
 
 <a name="MM0001" />
 
-#### <a name="mm0001-this-version-of-xamarinmac-requires-mono-0-the-current-mono-version-is-1-please-update-the-monoframework-from-httpmono-projectcomdownloads"></a>MM0001： 這個版本的 Xamarin.Mac 需要單聲道 {0} （目前的單聲道版本是 {1}）。 請更新從 Mono.framework http://mono-project.com/Downloads
+#### <a name="mm0001-this-version-of-xamarinmac-requires-mono-0-the-current-mono-version-is-1-please-update-the-monoframework-from-httpmono-projectcomdownloads"></a>MM0001： 這個版本的 Xamarin.Mac 需要單聲道{0}(單聲道新版{1})。 請更新從 Mono.framework http://mono-project.com/Downloads
 
 <a name="MM0003" />
 
-#### <a name="mm0003-application-name-0exe-conflicts-with-an-sdk-or-product-assembly-dll-name"></a>MM0003： 應用程式 '{0}.exe' 與名稱衝突的 SDK 或產品組件 (.dll) 的名稱。
+#### <a name="mm0003-application-name-0exe-conflicts-with-an-sdk-or-product-assembly-dll-name"></a>MM0003： 應用程式名稱 '{0}.exe' 與 SDK 或產品的組件 (.dll) 名稱相衝突。
 
 <a name="MM0007" />
 
@@ -46,7 +46,7 @@ ms.lasthandoff: 04/20/2018
 
 <a name="MM0008" />
 
-#### <a name="mm0008-you-should-provide-one-root-assembly-only-found-0-assemblies-1"></a>MM0008： 您應該提供一個根組件，找到 {0} 組件: '{1}'
+#### <a name="mm0008-you-should-provide-one-root-assembly-only-found-0-assemblies-1"></a>MM0008： 您應該提供一個根組件，找到{0}組件: '{1}'
 
 <a name="MM0010" />
 
@@ -68,11 +68,11 @@ ms.lasthandoff: 04/20/2018
 
 <a name="MM0020" />
 
-#### <a name="mm0020-the-valid-options-for-0-are-1"></a>MM0020: '{0}' 的有效選項為 '{1}'。
+#### <a name="mm0020-the-valid-options-for-0-are-1"></a>MM0020： 的有效選項 '{0}'是'{1}'。
 
 <a name="MM0023" />
 
-#### <a name="mm0023-application-name-0exe-conflicts-with-another-user-assembly"></a>MM0023： 應用程式名稱 '{0}.exe' 衝突與另一個使用者組件。
+#### <a name="mm0023-application-name-0exe-conflicts-with-another-user-assembly"></a>MM0023： 應用程式名稱 '{0}.exe' 與另一個使用者組件發生衝突。
 
 <a name="MM0026" />
 
@@ -104,11 +104,11 @@ ms.lasthandoff: 04/20/2018
 
 <a name="MM0060" />
 
-#### <a name="mm0060-could-not-find-the-currently-selected-xcode-on-the-system-xcode-select---print-path-returned-0-but-that-directory-does-not-exist"></a>MM0060： 在系統上找不到目前所選的 Xcode。 'xcode-選取-列印路徑' 傳回 '{0}'，但該目錄不存在。
+#### <a name="mm0060-could-not-find-the-currently-selected-xcode-on-the-system-xcode-select---print-path-returned-0-but-that-directory-does-not-exist"></a>MM0060： 在系統上找不到目前所選的 Xcode。 'xcode 選取-列印路徑' 傳回 '{0}'，但該目錄不存在。
 
 <a name="MM0068" />
 
-#### <a name="mm0068-invalid-value-for-target-framework-0"></a>MM0068： 目標架構的值無效: {0}。
+#### <a name="mm0068-invalid-value-for-target-framework-0"></a>MM0068： 目標架構的值無效： {0}。
 
 <a name="MM0071" />
 
@@ -141,7 +141,7 @@ Xamarin.Mac 需要的標頭檔，從要建置應用程式的靜態註冊機構�
 
 <a name="MM0097" />
 
-#### <a name="mm0097-machineconfig-file-0-can-not-be-found"></a>MM0097: machine.config '{0}' 不是找到檔案。
+#### <a name="mm0097-machineconfig-file-0-can-not-be-found"></a>MM0097: machine.config 檔案 '{0}' 找不到。
 
 <a name="MM0098" />
 
@@ -149,7 +149,7 @@ Xamarin.Mac 需要的標頭檔，從要建置應用程式的靜態註冊機構�
 
 <a name="MM0099" />
 
-#### <a name="mm0099-internal-error-0-please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MM0099： 內部錯誤 {0}。 請提出問題報告與測試案例 (http://bugzilla.xamarin.com)。
+#### <a name="mm0099-internal-error-0-please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MM0099： 內部錯誤{0}。 請提出問題報告與測試案例 (http://bugzilla.xamarin.com)。
 
 <a name="MM0114" />
 
@@ -165,15 +165,15 @@ Xamarin.Mac 需要的標頭檔，從要建置應用程式的靜態註冊機構�
 
 <a name="MM1401" />
 
-#### <a name="mm1401-the-required-0-assembly-is-missing-from-the-references"></a>MM1401： 需要 '{0}' 組件中遺漏的參考
+#### <a name="mm1401-the-required-0-assembly-is-missing-from-the-references"></a>MM1401: 需要 '{0}' 遺漏參考組件
 
 <a name="MM1402" />
 
-#### <a name="mm1402-the-assembly-0-is-not-compatible-with-this-tool"></a>MM1402： 組件 '{0}' 不相容，使用這項工具
+#### <a name="mm1402-the-assembly-0-is-not-compatible-with-this-tool"></a>MM1402： 組件 '{0}' 與這項工具不相容
 
 <a name="MM1403" />
 
-#### <a name="mm1403-0-1-could-not-be-found-target-framework-0-is-unusable-to-package-the-application"></a>找不到 MM1403: {0} '{1}'。 若要封裝應用程式無法使用目標 framework '{0}'。
+#### <a name="mm1403-0-1-could-not-be-found-target-framework-0-is-unusable-to-package-the-application"></a>MM1403: {0} '{1}' 找不到。 目標架構 '{0}' 無法將應用程式封裝。
 
 <a name="MM1404" />
 
@@ -181,15 +181,15 @@ Xamarin.Mac 需要的標頭檔，從要建置應用程式的靜態註冊機構�
 
 <a name="MM1405" />
 
-#### <a name="mm1405-usefullxammacframework-must-always-target-framework-net-45-not-0-which-is-invalid"></a>MM1405: useFullXamMacFramework 必須一律為目標 framework.NET 4.5 未 '{0}' 無效
+#### <a name="mm1405-usefullxammacframework-must-always-target-framework-net-45-not-0-which-is-invalid"></a>MM1405: useFullXamMacFramework 必須一律為目標.NET 4.5 framework 不 '{0}' 為無效的
 
 <a name="MM1406" />
 
-#### <a name="mm1406-target-framework-0-is-invalid-when-targetting-xamarinmac-45-net-framwork"></a>MM1406： 目標架構 '{0}' 時，無效目標 Xamarin.Mac 4.5.NET framwork。
+#### <a name="mm1406-target-framework-0-is-invalid-when-targetting-xamarinmac-45-net-framwork"></a>MM1406： 目標架構 '{0}' 時無效目標 Xamarin.Mac 4.5.NET framwork。
 
 <a name="MM1407" />
 
-#### <a name="mm1407-mismatch-between-xamarinmac-reference-0-and-target-framework-selected-1"></a>MM1407: Xamarin.Mac 參考的 '{0}' 和目標架構不相符選取 '{1}'。
+#### <a name="mm1407-mismatch-between-xamarinmac-reference-0-and-target-framework-selected-1"></a>MM1407： 不相符 Xamarin.Mac 參考 '{0}'和選取的目標架構'{1}'。
 
 ### <a name="mm15xx-assembly-gathering-not-requiring-linker-errors"></a>MM15xx： 組件 （不需要連結器） 的收集錯誤
 
@@ -201,23 +201,23 @@ Xamarin.Mac 需要的標頭檔，從要建置應用程式的靜態註冊機構�
 
 <a name="MM1600" />
 
-#### <a name="mm1600-not-a-mach-o-dynamic-library-unknown-header-0x0-1"></a>MM1600： 不符合 O 動態程式庫 (未知標頭 ' 0 0x {0}'): {1}。
+#### <a name="mm1600-not-a-mach-o-dynamic-library-unknown-header-0x0-1"></a>MM1600： 不符合 O 動態程式庫 (未知標頭 ' 0 x{0}'): {1}。
 
 <a name="MM1601" />
 
-#### <a name="mm1601-not-a-static-library-unknown-header-0-1"></a>MM1601： 不是靜態程式庫 （未知標頭 '{0}'）： {1}。
+#### <a name="mm1601-not-a-static-library-unknown-header-0-1"></a>MM1601： 不是靜態程式庫 (未知標頭 '{0}'): {1}。
 
 <a name="MM1602" />
 
-#### <a name="mm1602-not-a-mach-o-dynamic-library-unknown-header-0x0-1"></a>MM1602： 不符合 O 動態程式庫 (未知標頭 ' 0 0x {0}'): {1}。
+#### <a name="mm1602-not-a-mach-o-dynamic-library-unknown-header-0x0-1"></a>MM1602： 不符合 O 動態程式庫 (未知標頭 ' 0 x{0}'): {1}。
 
 <a name="MM1603" />
 
-#### <a name="mm1603-unknown-format-for-fat-entry-at-position-0-in-1"></a>MM1603： 未知的格式為 fat 的項目位置在 {0} {1} 中的。
+#### <a name="mm1603-unknown-format-for-fat-entry-at-position-0-in-1"></a>MM1603： 未知的格式為 fat 的項目位置{0}中{1}。
 
 <a name="MM1604" />
 
-#### <a name="mm1604-file-of-type-0-is-not-a-macho-file-1"></a>MM1604： 型別 {0} 的檔案不是 MachO 檔案 ({1})。
+#### <a name="mm1604-file-of-type-0-is-not-a-macho-file-1"></a>MM1604： 型別的檔案{0}不 MachO 檔案 ({1})。
 
 ## <a name="mm2xxx-linker"></a>MM2xxx： 連結器
 
@@ -233,7 +233,7 @@ Xamarin.Mac 需要的標頭檔，從要建置應用程式的靜態註冊機構�
 
 <a name="MM2003" />
 
-#### <a name="mm2003-option-0-will-be-ignored-since-linking-is-disabled"></a>MM2003： 選項 '{0}' 將被忽略因為連結已停用
+#### <a name="mm2003-option-0-will-be-ignored-since-linking-is-disabled"></a>MM2003： 選項 '{0}' 將被忽略，因為連結已停用
 
 <a name="MM2004" />
 
@@ -241,7 +241,7 @@ Xamarin.Mac 需要的標頭檔，從要建置應用程式的靜態註冊機構�
 
 <a name="MM2005" />
 
-#### <a name="mm2005-definitions-from-0-could-not-be-parsed"></a>MM2005： 無法剖析來自 '{0}' 定義。
+#### <a name="mm2005-definitions-from-0-could-not-be-parsed"></a>MM2005： 來自定義 '{0}' 無法剖析。
 
 <a name="MM2006" />
 
@@ -253,7 +253,7 @@ Xamarin.Mac 需要的標頭檔，從要建置應用程式的靜態註冊機構�
 
 <a name="MM2009" />
 
-#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009： 參考 {0}。 \ {1 \} * * 此訊息是否關係到 MM2006 * *
+#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009: 所參考{0}。{1}    * * 此訊息是否關係到 MM2006 * *
 
 <a name="MM2010" />
 
@@ -261,15 +261,15 @@ Xamarin.Mac 需要的標頭檔，從要建置應用程式的靜態註冊機構�
 
 <a name="MM2011" />
 
-#### <a name="mm2011-unknown-tlsprovider-0--valid-values-are-default-or-appletls"></a>MM2011： 未知的 TLSProvider ' {0}。  有效值為 default 或 appletls
+#### <a name="mm2011-unknown-tlsprovider-0--valid-values-are-default-or-appletls"></a>MM2011： 未知的 TLSProvider '{0}。  有效值為 default 或 appletls
 
 <a name="MM2012" />
 
-#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: 1 \} 的第一個 {0} 「 參考 」 所示的警告。 * * 此訊息相關 2009 * *
+#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: 只有第一個{0}的{1}「 參考 」 所示的警告。 * * 此訊息相關 2009 * *
 
 <a name="MM2013" />
 
-#### <a name="mm2013-failed-to-resolve-the-reference-to-0-referenced-in-1-the-app-will-not-include-the-referenced-assembly-and-may-fail-at-runtime"></a>MM2013： 無法解析"{0}"，"{1} 」 中所參考的參考。 應用程式將不會包含參考的組件，並在執行階段可能會失敗。
+#### <a name="mm2013-failed-to-resolve-the-reference-to-0-referenced-in-1-the-app-will-not-include-the-referenced-assembly-and-may-fail-at-runtime"></a>MM2013： 無法解析的參考 「{0}"，在參考"{1}"。 應用程式將不會包含參考的組件，並在執行階段可能會失敗。
 
 <a name="MM2014" />
 
@@ -303,11 +303,11 @@ Xamarin.Mac 需要的標頭檔，從要建置應用程式的靜態註冊機構�
 
 <a name="MM2104" />
 
-#### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104： 無法將連結組件 '{0}'，因為它是混合模式。
+#### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104： 無法將連結的組件 '{0}' 因為它是混合模式。
 
 連結器無法處理混合模式組件。
 
-請參閱https://msdn.microsoft.com/en-us/library/x0w2664k.aspx如需有關混合模式組件。
+請參閱https://msdn.microsoft.com/library/x0w2664k.aspx如需有關混合模式組件。
 
 ## <a name="mm3xxx-aot"></a>MM3xxx: AOT
 
@@ -327,11 +327,11 @@ Xamarin.Mac 需要的標頭檔，從要建置應用程式的靜態註冊機構�
 
 <a name="MM3009" />
 
-#### <a name="mm3009-aot-of-0-was-requested-but-was-not-found"></a>MM3009: AOT '{0}' 的要求，但找不到
+#### <a name="mm3009-aot-of-0-was-requested-but-was-not-found"></a>MM3009: AOT '{0}' 已要求，但是找不到
 
 <a name="MM3010" />
 
-#### <a name="mm3010-exclusion-of-aot-of-0-was-requested-but-was-not-found"></a>MM3010： 排除 AOT '{0}' 的要求，但找不到
+#### <a name="mm3010-exclusion-of-aot-of-0-was-requested-but-was-not-found"></a>MM3010： 排除的 AOT '{0}' 已要求，但是找不到
 
 ## <a name="mm4xxx-code-generation"></a>MM4xxx： 程式碼產生
 
@@ -345,7 +345,7 @@ Xamarin.Mac 需要的標頭檔，從要建置應用程式的靜態註冊機構�
 
 <a name="MM4134" />
 
-#### <a name="mm4134-your-application-is-using-the-0-framework-which-isnt-included-in-the-macos-sdk-youre-using-to-build-your-app-this-framework-was-introduced-in-osx-2-while-youre-building-with-the-macos-1-sdk-this-configuration-is-not-supported-with-the-static-registrar-pass---registrardynamic-as-an-additional-mmp-argument-in-your-projects-mac-build-option-to-select-alternatively-select-a-newer-sdk-in-your-apps-mac-build-options"></a>MM4134： 應用程式使用的 '{0}' framework 未包含在 MacOS SDK 您用來建置的應用程式 （此架構中引進了 OSX {2}，當您建置 MacOS {1} SDK。）此組態不支援靜態的註冊機構 （通過-註冊機構： 動態做為您的專案 Mac 建置選項，即可選取其他 mmp 引數）。 或者選取較新的 SDK 在應用程式的 Mac 建置選項。
+#### <a name="mm4134-your-application-is-using-the-0-framework-which-isnt-included-in-the-macos-sdk-youre-using-to-build-your-app-this-framework-was-introduced-in-osx-2-while-youre-building-with-the-macos-1-sdk-this-configuration-is-not-supported-with-the-static-registrar-pass---registrardynamic-as-an-additional-mmp-argument-in-your-projects-mac-build-option-to-select-alternatively-select-a-newer-sdk-in-your-apps-mac-build-options"></a>MM4134: 應用程式使用 '{0}' 架構，其不包含在您用來建置應用程式的 MacOS SDK (OSX 中引進這個架構{2}，而您要建置使用 MacOS {1} SDK。)此組態不支援靜態的註冊機構 （通過-註冊機構： 動態做為您的專案 Mac 建置選項，即可選取其他 mmp 引數）。 或者選取較新的 SDK 在應用程式的 Mac 建置選項。
 
 ## <a name="mm5xxx-gcc-and-toolchain"></a>MM5xxx: GCC 和工具鏈
 
@@ -359,7 +359,7 @@ Xamarin.Mac 需要的標頭檔，從要建置應用程式的靜態註冊機構�
 
 <a name="MM5103" />
 
-#### <a name="mm5103-failed-to-compile-error-code---0-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MM5103： 無法編譯。 錯誤碼為 {0}。 請檔案在錯誤報告 http://bugzilla.xamarin.com
+#### <a name="mm5103-failed-to-compile-error-code---0-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MM5103： 無法編譯。 錯誤碼- {0}。 請檔案在錯誤報告 http://bugzilla.xamarin.com
 
 <!-- 5104 used by mtouch -->
 

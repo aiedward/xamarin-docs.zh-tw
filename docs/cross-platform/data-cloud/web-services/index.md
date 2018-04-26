@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: ad18382a7143c7b1cc6bbecb3867c042512eb562
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6de16095d9e1267587a050e8081f87f896f3153e
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-web-services"></a>Web 服務簡介
 
@@ -22,7 +22,7 @@ _本指南示範如何使用不同的網頁服務技術。涵蓋的主題包括 
 本文將討論下列主題：
 
 - [REST 服務](#rest)
-- [ASP.Net Web Services (ASMX)](#asmx)
+- [ASP.Net Web 服務 (ASMX)](#asmx)
 - [WCF 服務](#wcf)
 
 使用 Xamarin.Forms 客戶，都有完整的範例使用每個這些技術[Xamarin.Forms Web 服務](~/xamarin-forms/data-cloud/index.md)文件。
@@ -337,7 +337,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 工作平行程式庫 (TPL) 可以簡化耗用 APM begin/end 方法組，它會封裝在相同的非同步作業的程序`Task`物件。 此封裝由多個多載`Task.Factory.FromAsync`方法。 這個方法會建立`Task`執行`TodoService.EndGetTodoItems`方法一次`TodoService.BeginGetTodoItems`方法完成時，與`null`指出沒有資料會傳遞至參數`BeginGetTodoItems`委派。 最後，值`TaskCreationOptions`列舉值會指定應建立和執行工作的預設行為。
 
-如需 APM 的詳細資訊，請參閱[非同步程式設計模型](https://msdn.microsoft.com/en-us/library/ms228963(v=vs.110).aspx)和[TPL 和傳統.NET Framework 非同步程式設計](https://msdn.microsoft.com/en-us/library/dd997423(v=vs.110).aspx)MSDN 上。
+如需 APM 的詳細資訊，請參閱[非同步程式設計模型](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)和[TPL 和傳統.NET Framework 非同步程式設計](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)MSDN 上。
 
 如需使用 ASMX 服務的詳細資訊，請參閱[取用 ASP.NET Web 服務 (ASMX)](~/xamarin-forms/data-cloud/consuming/asmx.md)。
 
@@ -364,7 +364,7 @@ ASP.NET Web 服務 (ASMX) 和 WCF 之間的差異，但請務必了解 WCF 支�
 
 A *proxy*取用 WCF 服務，允許應用程式連接到服務，必須產生。 Proxy 的建構方式取用的服務中繼資料定義的方法和相關聯的服務組態。 產生 web 服務的 Web 服務描述語言 (WSDL) 文件的形式公開此中繼資料。 在 Visual Studio 2017 使用 Microsoft WCF Web 服務參考提供者，將 web 服務的服務參考新增至.NET 標準程式庫，您可以建立 proxy。
 
-建立使用 Microsoft WCF Web 服務參考提供者，在 Visual Studio 2017 proxy 的替代方式是使用 ServiceModel Metadata Utility Tool (svcutil.exe)。 如需詳細資訊，請參閱[ServiceModel Metadata Utility Tool (Svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)。
+建立使用 Microsoft WCF Web 服務參考提供者，在 Visual Studio 2017 proxy 的替代方式是使用 ServiceModel Metadata Utility Tool (svcutil.exe)。 如需詳細資訊，請參閱[ServiceModel Metadata Utility Tool (Svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)。
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security" />
 
@@ -416,7 +416,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 工作平行程式庫 (TPL) 可以簡化耗用 APM begin/end 方法組，它會封裝在相同的非同步作業的程序`Task`物件。 此封裝由多個多載`Task.Factory.FromAsync`方法。 這個方法會建立`Task`執行`TodoServiceClient.EndGetTodoItems`方法一次`TodoServiceClient.BeginGetTodoItems`方法完成時，與`null`指出沒有資料會傳遞至參數`BeginGetTodoItems`委派。 最後，值`TaskCreationOptions`列舉值會指定應建立和執行工作的預設行為。
 
-如需 APM 的詳細資訊，請參閱[非同步程式設計模型](https://msdn.microsoft.com/en-us/library/ms228963(v=vs.110).aspx)和[TPL 和傳統.NET Framework 非同步程式設計](https://msdn.microsoft.com/en-us/library/dd997423(v=vs.110).aspx)MSDN 上。
+如需 APM 的詳細資訊，請參閱[非同步程式設計模型](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)和[TPL 和傳統.NET Framework 非同步程式設計](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)MSDN 上。
 
 如需有關如何使用 WCF 服務的詳細資訊，請參閱[使用 Windows Communication Foundation (WCF) Web 服務](~/xamarin-forms/data-cloud/consuming/wcf.md)。
 
@@ -462,5 +462,5 @@ client.ClientCredentials.UserName.Password = @"mrsnuggles";
 
 - [Web 服務範例](https://developer.xamarin.com/samples/mobile/WebServices/WebServiceSamples/)
 - [Xamarin.Forms 中的 web 服務](~/xamarin-forms/data-cloud/index.md)
-- [ServiceModel Metadata Utility Tool (svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
-- [BasicHttpBinding](http://msdn.microsoft.com/en-us/library/system.servicemodel.basichttpbinding.aspx)
+- [ServiceModel Metadata Utility Tool (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [BasicHttpBinding](http://msdn.microsoft.com/library/system.servicemodel.basichttpbinding.aspx)

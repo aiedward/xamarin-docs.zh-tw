@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 036dbc6a33126d4ade1a68e853ca6ddb4b7c83cc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0df51429ea9655b0a72d9f4c1e413fa7e37410ac
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="app-search-enhancements"></a>應用程式搜尋的增強功能
 
@@ -107,7 +107,7 @@ Apple 的[應用程式搜尋 API 驗證工具](https://search.developer.apple.co
 1. 建立訊息應用程式擴充功能。
 2. 新增`com.apple.developer.associated-domains`至應用程式的權利，包括裝載共用訊息應用程式擴充功能的映像的網路網域的清單。 針對每個網域中，指定`spotlight-image-search`服務。
 3. 新增`apple-app-site-association`網站裝載映像檔案。 這個檔案包含的字典`spotlight-image-search`服務，並包含應用程式的識別碼，也就是小組 ID 或應用程式識別碼前置詞後面接著套件組合識別碼。 檔案可以包含最多 500 名的路徑和模式，將以精選編製索引，而且包含在受歡迎的映像搜尋。 如需詳細資訊，請參閱 Apple[建立和上傳關聯檔案](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW4)文件。
-4. 允許 Applebot 来編目的網站。 請參閱 Apple[有關 Applebot](https://support.apple.com/en-us/HT204683)文件。
+4. 允許 Applebot 来編目的網站。 請參閱 Apple[有關 Applebot](https://support.apple.com/HT204683)文件。
 
 請參閱我們[訊息應用程式整合](~/ios/platform/message-app-integration/index.md)文件以取得詳細資料。
 

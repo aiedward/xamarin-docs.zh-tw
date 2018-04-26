@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: d5f639cffc8ff2d134731374bd72663fec81c6a0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6f6b88bf29e94a221b2ef58b3299348eb08d33fa
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>第 5-實用的程式碼共用策略
 
@@ -200,7 +200,7 @@ await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 
 它是預設的機制適用於在 Windows Phone (Silverlight) 已實作中 Xamarin.iOS 和 Xamarin.Android 允許一般的檔案存取程式碼，要寫入的檔案存取。 `System.IO.IsolatedStorage`類別可以參考中的所有三個平台[共用專案](~/cross-platform/app-fundamentals/shared-projects.md)。
 
-請參閱[隔離儲存區概觀適用於 Windows Phone](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402541(v=vs.105).aspx)如需詳細資訊。
+請參閱[隔離儲存區概觀適用於 Windows Phone](http://msdn.microsoft.com/library/windowsphone/develop/ff402541(v=vs.105).aspx)如需詳細資訊。
 
 隔離儲存區 Api 也不適用於[可攜式類別庫](~/cross-platform/app-fundamentals/pcl.md)。 是一種替代方法，如 PCL [PCLStorage NuGet](https://pclstorage.codeplex.com/)
 
