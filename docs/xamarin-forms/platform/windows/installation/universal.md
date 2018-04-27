@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/16/2016
 ms.openlocfilehash: f851c1ca241be9e3c94a70b1f63135a46575d471
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="adding-a-universal-windows-platform-uwp-app"></a>新增通用 Windows 平台 (UWP) 應用程式
 
@@ -25,7 +25,7 @@ UWP 可用 Xamarin.Forms 2.1 和更新版本，而且 Xamarin.Forms.Maps 都支�
 
 請遵循這些指示來加入將在 Windows 10 手機、 平板電腦和桌上型電腦執行的 UWP 應用程式：
 
- 1 . 以滑鼠右鍵按一下方案，然後選取**新增 > 新的專案...**並加入**空白應用程式 (通用 Windows)**專案：
+ 1 . 以滑鼠右鍵按一下方案，然後選取**新增 > 新的專案...** 並加入**空白應用程式 (通用 Windows)** 專案：
 
   ![](universal-images/add-wu.png "加入新的專案 對話方塊")
 
@@ -33,17 +33,17 @@ UWP 可用 Xamarin.Forms 2.1 和更新版本，而且 Xamarin.Forms.Maps 都支�
 
   ![](universal-images/target-version.png "新的通用 Windows 平台專案對話方塊")
 
- 3 . UWP 專案上按一下滑鼠右鍵，然後選取**管理 NuGet 封裝...**並加入**Xamarin.Forms**封裝。 確定方案中的其他專案也會更新成 Xamarin.Forms 封裝的相同版本。
+ 3。 UWP 專案上按一下滑鼠右鍵，然後選取**管理 NuGet 封裝...** 並加入**Xamarin.Forms**封裝。 確定方案中的其他專案也會更新成 Xamarin.Forms 封裝的相同版本。
 
  4 . 請確定將建立新的 UWP 專案**建置 > 組態管理員**視窗 （這可能不是依預設）。 刻度**建置**和**部署**方塊通用專案：
 
   [![](universal-images/configuration-sml.png "組態管理員視窗")](universal-images/configuration.png#lightbox "組態管理員視窗")
 
- 5 . 以滑鼠右鍵按一下專案，然後選取**新增 > 參考**並建立 Xamarin.Forms 應用程式專案 （PCL、.NET 標準或共用專案） 的參考。
+ 5。 以滑鼠右鍵按一下專案，然後選取**新增 > 參考**並建立 Xamarin.Forms 應用程式專案 （PCL、.NET 標準或共用專案） 的參考。
 
   ![](universal-images/addref-sml.png "參考管理員 對話方塊")
 
- 6 . 在 UWP 專案中，編輯**App.xaml.cs**包含`Init`方法呼叫內`OnLaunched`列 52 解決方法：
+ 6。 在 UWP 專案中，編輯**App.xaml.cs**包含`Init`方法呼叫內`OnLaunched`列 52 解決方法：
 
 ```csharp
 // under this line
@@ -52,7 +52,7 @@ rootFrame.NavigationFailed += OnNavigationFailed;
 Xamarin.Forms.Forms.Init (e); // requires the `e` parameter
 ```
 
- 7 . 在 UWP 專案中，編輯**MainPage.xaml**藉由移除`Grid`內含`Page`項目。
+ 7。 在 UWP 專案中，編輯**MainPage.xaml**藉由移除`Grid`內含`Page`項目。
 
  8 . 在**MainPage.xaml**，加入新`xmlns`項目`Xamarin.Forms.Platform.UWP`:
 
@@ -60,7 +60,7 @@ Xamarin.Forms.Forms.Init (e); // requires the `e` parameter
 xmlns:forms="using:Xamarin.Forms.Platform.UWP"
 ```
 
- 9 . 在**MainPage.xaml**，變更根`<Page`元素`<forms:WindowsPage`:
+ 第 9。 在**MainPage.xaml**，變更根`<Page`元素`<forms:WindowsPage`:
 
 ```xaml
 <forms:WindowsPage
@@ -70,13 +70,13 @@ xmlns:forms="using:Xamarin.Forms.Platform.UWP"
 </forms:WindowsPage>
 ```
 
- 10 . 在 UWP 專案中，編輯**MainPage.xaml.cs**移除`: Page`繼承規範的類別名稱 (因為它現在會繼承`WindowsPage`因為上一個步驟中所做的變更):
+ 10。 在 UWP 專案中，編輯**MainPage.xaml.cs**移除`: Page`繼承規範的類別名稱 (因為它現在會繼承`WindowsPage`因為上一個步驟中所做的變更):
 
 ```csharp
 public sealed partial class MainPage  // REMOVE ": Page"
 ```
 
- 11 . 在**MainPage.xaml.cs**，新增`LoadApplication`呼叫中`MainPage`啟動 Xamarin.Forms 應用程式的建構函式：
+ 11。 在**MainPage.xaml.cs**，新增`LoadApplication`呼叫中`MainPage`啟動 Xamarin.Forms 應用程式的建構函式：
 
 ```csharp
 // below this existing line
@@ -95,7 +95,7 @@ LoadApplication(new YOUR_NAMESPACE.App());
   * Location
 -->
 
-12 . 新增任何本機資源 （例如。 影像檔） 從現有的平台專案所需。
+12。 新增任何本機資源 （例如。 影像檔） 從現有的平台專案所需。
 
 <a name="troubleshooting" />
 
