@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8848dd20683163cd42215fe496dd7ff6a9e9f0c7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e2e32170de258f46eb5a926db35bce33c0ca64de
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="debugging"></a>偵錯
 
@@ -162,9 +162,9 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](http://www.mono-project
 - **執行/停止**：這會開始/停止執行程式碼，直到下一個中斷點。
 - **不進入函式 (F11)**：這會執行下一行程式碼。 如果下一行是函式呼叫，不進入函式會執行該函式，並在函式「之後」的下一行程式碼停止。
 - **逐步執行 (F10)**：這也會執行下一行程式碼。 如果下一行是函式呼叫，逐步執行會停止在函式的第一行，讓您繼續一行一行地進行函式的偵錯。 如果下一行不是函式，它的行為與「不進入函式」相同。
-- **跳離函式 (Shift + F11)**這會回到呼叫目前函式的行。
+- **跳離函式 (Shift + F11)** 這會回到呼叫目前函式的行。
 
-如需更多關於偵錯的深入文件，請參閱[使用 Visual Studio 偵錯工具巡覽程式碼](https://docs.microsoft.com/en-us/visualstudio/debugger/navigating-through-code-with-the-debugger)。
+如需更多關於偵錯的深入文件，請參閱[使用 Visual Studio 偵錯工具巡覽程式碼](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)。
 
 -----
 

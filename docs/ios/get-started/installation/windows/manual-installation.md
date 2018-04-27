@@ -7,10 +7,10 @@ author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
 ms.openlocfilehash: 1bb4688637dc15a61aae27a3dec54bfdc21c0e72
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/21/2018
 ---
 # <a name="manual-installation"></a>手動安裝
 

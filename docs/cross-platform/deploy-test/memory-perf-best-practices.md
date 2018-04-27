@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: d434782e2586b1ed4f42984f2eeb72191b0dc171
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 98b4b4a9e7bc28dd444cfdcb1afdfbe64cb1aee0
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="cross-platform-performance"></a>跨平台效能
 
@@ -211,7 +211,7 @@ double Compute(double x)
 
 延遲初始化會在第一次存取 `Lazy<T>.Value` 屬性時發生。 包裝於其中的類型會在第一次存取時建立及傳回，並會儲存起來供任何未來的存取使用。
 
-如需延遲初始化的詳細資訊，請參閱[延遲初始設定](https://msdn.microsoft.com/en-us/library/dd997286(v=vs.110).aspx)。
+如需延遲初始化的詳細資訊，請參閱[延遲初始設定](https://msdn.microsoft.com/library/dd997286(v=vs.110).aspx)。
 
 <a name="async" />
 

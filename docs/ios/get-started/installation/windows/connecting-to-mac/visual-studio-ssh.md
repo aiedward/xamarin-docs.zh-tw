@@ -8,10 +8,10 @@ author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
 ms.openlocfilehash: f3e2988c9700549db24ad69277df9e412c99caed
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/21/2018
 ---
 # <a name="wheres-my-mac"></a>我的 Mac 在哪裡?
 

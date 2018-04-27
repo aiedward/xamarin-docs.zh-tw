@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 5ca2918a0348254407fcbfff030def6c36af4988
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71bfccdcab73b651f458dd8d9c5396bffd55004b
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="hello-ios-deep-dive"></a>Hello, iOS 深度剖析
 
@@ -85,7 +85,7 @@ Visual Studio 會將程式碼組織成「方案」和「專案」。 方案是�
 
 在 [Hello, iOS](~/ios/get-started/hello-ios/hello-ios-quickstart.md) 逐步解說中，您已建立名為 **Phoneword** 的方案，並在其中放置了一個 iOS 專案 (**Phoneword_iOS**)。 專案內的項目包括：
 
--  **參考**：包含建置及執行應用程式所需的組件。 展開目錄以查看對 .NET 組件的參考，例如，[System](http://msdn.microsoft.com/en-us/library/system%28v=vs.110%29.aspx) \(機器翻譯\)、System.Core 和 [System.Xml](http://msdn.microsoft.com/en-us/library/system.xml%28v=vs.110%29.aspx) \(機器翻譯\)，以及對 Xamarin 之 Xamarin.iOS 組件的參考。
+-  **參考**：包含建置及執行應用程式所需的組件。 展開目錄以查看對 .NET 組件的參考，例如，[System](http://msdn.microsoft.com/library/system%28v=vs.110%29.aspx) \(機器翻譯\)、System.Core 和 [System.Xml](http://msdn.microsoft.com/library/system.xml%28v=vs.110%29.aspx) \(機器翻譯\)，以及對 Xamarin 之 Xamarin.iOS 組件的參考。
 -  **套件**：套件目錄包含現成的 NuGet 套件。
 -  **資源**：資源資料夾會儲存其他媒體。
 -  **Main.cs**：這當中包含應用程式的主要進入點。 為了啟動應用程式，會傳入主應用程式類別 (`AppDelegate`) 的名稱。
