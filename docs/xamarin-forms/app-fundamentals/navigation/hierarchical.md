@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: afaf0c702cdba1ba9c5d2c9d158501c50501f910
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3fc5b24474230fd2b2477f020ac24cd72996d7b1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="hierarchical-navigation"></a>階層式導覽
 
@@ -47,7 +47,7 @@ _NavigationPage 類別會提供使用者所在的能向前及向後，視需要�
 
 - 在 iOS 上，出現在頁面會顯示標題，並具有的最上方導覽列就*回*回到前一頁的按鈕。
 - 在 Android 上，導覽列是出現在頂端顯示標題、 圖示、 頁面和*回*回到前一頁的按鈕。 中所定義的圖示`[Activity]`裝飾的屬性`MainActivity`Android 平台專屬專案中的類別。
-- 在 Windows Phone 上導覽列是出現在頁面頂端的顯示標題。 Windows Phone 缺少*回*按鈕巡覽列上，因為螢幕*回*按鈕將會出現在畫面底部。
+- 通用 Windows 平台上，導覽列是出現在頁面頂端的顯示標題。 
 
 所有平台上，值[ `Page.Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/)屬性將會顯示為頁面標題。
 

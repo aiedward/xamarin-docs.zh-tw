@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: f17a6ad012aff81674db943b7d65e65ba77dca52
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 627c6773c099c9cf45f871a9bb73a201bf98271a
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="authenticating-users-with-azure-active-directory-b2c"></a>驗證使用者與 Azure Active Directory B2C
 
@@ -60,7 +60,7 @@ Microsoft 驗證程式庫 (MSAL) NuGet 程式庫必須加入至可攜式類別�
 
 ### <a name="portable-class-library"></a>可攜式類別庫
 
-MSAL 不支援 Windows Phone 8.1，並因此 PCLs 取用 MSAL 就必須移除此目標。 這可以透過使用 Profile7 PCLs 的重定目標。 如需有關 PCL 的詳細資訊，請參閱[可攜式類別庫簡介](~/cross-platform/app-fundamentals/pcl.md)。
+取用 MSAL PCLs 必須重定目標為使用 Profile7。 如需有關 PCL 的詳細資訊，請參閱[可攜式類別庫簡介](~/cross-platform/app-fundamentals/pcl.md)。
 
 ### <a name="ios"></a>iOS
 

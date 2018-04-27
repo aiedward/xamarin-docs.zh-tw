@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 24d9dd332275fd811c0ff60fc514ae0f84c6ee07
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 864e81b6955fd5138c4055a3f202695803139ac6
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="layouts"></a>版面配置
 
@@ -180,7 +180,7 @@ Xamarin.Forms 和內建的版面配置是能夠處理變更裝置方向。 您�
 
 ### <a name="layout-for-tablet-and-desktop-appstabletmd"></a>[平板電腦和桌面應用程式的版面配置](tablet.md)
 
-iOS、 Android 和 Windows 平台所有支援較大的螢幕大小平板裝置 （以及膝上型電腦和 Windows 的桌上型電腦）。 Xamarin.Forms 可讓您藉由偵測裝置類型和調整頁面配置，或完全使用完全不同的頁面，針對較大的螢幕最佳化您的應用程式，針對較大的螢幕。
+iOS、 Android 和通用 Windows 平台所有支援較大的螢幕大小上平板裝置 （以及膝上型電腦和 Windows 的桌上型電腦）。 Xamarin.Forms 可讓您藉由偵測裝置類型和調整頁面配置，或完全使用完全不同的頁面，針對較大的螢幕最佳化您的應用程式，針對較大的螢幕。
 
 ### <a name="creating-a-custom-layoutcustommd"></a>[建立自訂版面配置](custom.md)
 

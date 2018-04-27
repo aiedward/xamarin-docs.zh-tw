@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d55d8c8d98828097c842cc383037db88097b963d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 035254f87e52801d5ff7419f9ad9d5503f060020
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="carousel-page"></a>浮動切換 頁面
 
@@ -45,7 +45,7 @@ _Xamarin.Forms CarouselPage 是使用者可以撥動左右巡覽內容，例如�
 - [填入](#Populating_a_CarouselPage_with_a_Page_Collection)`CarouselPage`的子集合[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)執行個體。
 - [指派](#Populating_a_CarouselPage_with_a_Template)集合[ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemsSource/)屬性並指派[ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)至[ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemTemplate/)屬性，以傳回[`ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)集合中物件的執行個體。
 
-這兩種方法，與`CarouselPage`接著將移至下一個頁面上顯示撥動互動會再顯示每一頁。 此瀏覽體驗會覺得自然且以 Windows Phone 使用者所熟悉。
+這兩種方法，與`CarouselPage`接著將移至下一個頁面上顯示撥動互動會再顯示每一頁。 
 
 > [!NOTE]
 > A [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/)才會填入與[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)執行個體，或`ContentPage`衍生項目。
@@ -246,7 +246,7 @@ public class MainPageCS : CarouselPage
 
 ## <a name="summary"></a>總結
 
-本文示範如何使用[ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/)來瀏覽分頁的集合。 `CarouselPage`是瀏覽頁面的內容，例如組件庫中，使用者可以撥動左右的頁面，並提供操作自然且以 Windows Phone 使用者所熟悉的巡覽體驗。
+本文示範如何使用[ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/)來瀏覽分頁的集合。 `CarouselPage`是使用者可以撥動左右來瀏覽頁面的內容，非常類似的組件庫的頁面。
 
 
 ## <a name="related-links"></a>相關連結

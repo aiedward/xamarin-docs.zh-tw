@@ -7,12 +7,12 @@ ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: c5937cc86a8a1f8506b14774b0429bee3c8aa594
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 44c3e4b0f05526560ff4b32808ba476110ce5e8f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android：快速入門
 
@@ -185,11 +185,10 @@ namespace Core
 (Resource.Layout.Main)` 呼叫底下。 首先，修改範本程式碼，讓 `OnCreate` 方法如下所示：
 
 ```csharp
-using System;
 using Android.App;
-using Android.Content;
-using Android.Widget;
 using Android.OS;
+using Android.Widget;
+using Core;
 
 namespace Phoneword
 {
@@ -420,13 +419,10 @@ namespace Core
 開始新增事件處理常式至 [翻譯] 按鈕。 在 `MainActivity` 類別中找到 `OnCreate` 方法。 將按鈕程式碼新增在 `OnCreate` 內，`base.OnCreate(bundle)` 和 `SetContentView (Resource.Layout.Main)` 呼叫底下。 移除範本按鈕處理程式碼，讓 `OnCreate` 方法如下所示：
 
 ```csharp
-using System;
 using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Android.Widget;
+using Core;
 
 namespace Phoneword
 {

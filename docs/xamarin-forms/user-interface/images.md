@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: ddbcb74d34f09c7bb60891148bd50b36bc5094c3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5e8ad5ba3bdfa61ae1b2f4404016f204a8c1747c
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="images"></a>影像
 
@@ -58,7 +58,6 @@ Xamarin.Forms 使用[ `Image` ](https://developer.xamarin.com/api/type/Xamarin.F
 
 - **iOS** -慣用的方式來管理和支援映像，因為 iOS 9 是要使用**資產目錄映像集**，其中應包含的所有支援各種裝置和縮放因數所需的映像的版本應用程式。 如需詳細資訊，請參閱[加入影像資產目錄映像設定](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
 - **Android** -將放在映像**資源/drawable**目錄用於**建置動作： AndroidResource**。 您也可以提供高和低 DPI 映像的版本 (在適當命名**資源**子目錄，例如**drawable ldpi**， **drawable hdpi**，和**drawable xhdpi**)。
-- **Windows Phone** -將映像放在與應用程式的根目錄**建置動作： 內容**。
 - **通用 Windows 平台 (UWP)** -將映像放在與應用程式的根目錄**建置動作： 內容**。
 
 > [!IMPORTANT]
@@ -93,7 +92,7 @@ image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("
 
 ### <a name="native-resolutions-retina-and-high-dpi"></a>原生解析度 （Retina 和高 DPI）
 
-iOS、 Android、 Windows Phone 和 UWP 包括支援針對不同的影像解析度，其中作業系統會選擇適當的映像，在執行階段根據裝置的功能。 Xamarin.Forms 使用原生的平台應用程式開發介面，用於載入本機映像，所以若正確命名並在專案檔案會自動支援替代的解決方式。
+iOS、 Android 和 UWP 包括支援針對不同的影像解析度，其中作業系統會選擇適當的映像，在執行階段根據裝置的功能。 Xamarin.Forms 使用原生的平台應用程式開發介面，用於載入本機映像，所以若正確命名並在專案檔案會自動支援替代的解決方式。
 
 自 iOS 9 管理映像的較佳的方式是拖曳至適當的資產目錄映像集所需的每種解析度的影像。 如需詳細資訊，請參閱[加入影像資產目錄映像設定](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
 
@@ -103,7 +102,7 @@ Android 的替代解析度的影像應該放在[特別名為目錄](http://devel
 
 [![Android 的多個高解析度影像位置](images-images/xs-highdpisolution-sml.png "Android 多重解析度影像位置")](images-images/xs-highdpisolution.png#lightbox "Android 多重解析度影像位置")
 
-UWP 和 Windows Phone 映像檔案名稱[可以後置字元為`.scale-xxx`副檔名前](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)，其中`xxx`百分比的縮放比例資產，例如套用**myimage.scale 200.png**. 然後可以參考映像程式碼或 XAML 沒有小數位數修飾詞，例如只**myimage.png**。 平台將會選取最接近的適當的資產縮放比例根據目前的顯示器的 DPI。
+UWP 映像檔案名稱[可以後置字元為`.scale-xxx`副檔名前](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)，其中`xxx`百分比的縮放比例資產，例如套用**myimage.scale 200.png**。 然後可以參考映像程式碼或 XAML 沒有小數位數修飾詞，例如只**myimage.png**。 平台將會選取最接近的適當的資產縮放比例根據目前的顯示器的 DPI。
 
 ### <a name="additional-controls-that-display-images"></a>顯示影像的其他控制項
 

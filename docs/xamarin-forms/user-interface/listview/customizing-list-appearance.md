@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 76a5c96d0e7bb85f0e6b313e2dbc058b8c2aae6d
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: f1f0bb0ce282479a7b185257880244863bb67a60
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="list-appearance"></a>清單外觀
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 04/06/2018
 - 設定`ListView`的`ItemsSource`此清單。
 - 設定`IsGroupingEnabled`為 true。
 - 設定[ `GroupDisplayBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupDisplayBinding/)繫結至群組的屬性，顯示目前已使用群組的標題。
-- [選用]設定[ `GroupShortNameBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/)繫結至群組的屬性，顯示正做為群組的簡短名稱。 簡短名稱用於跳躍清單 （在 iOS、 Windows Phone 上的磚方格 rigt 端資料行）。
+- [選用]設定[ `GroupShortNameBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/)繫結至群組的屬性，顯示正做為群組的簡短名稱。 簡短名稱用於跳躍清單 （在 iOS 上的右邊資料行）。
 
 啟動建立群組的類別：
 
@@ -120,7 +120,7 @@ x:Class="DemoListView.GroupingViewPage"
 
 如果已啟用群組清單中，您也可以自訂群組標頭。
 
-類似於如何`ListView`具有`ItemTemplate`來定義資料列的顯示方式，`ListView`具有`GroupHeaderTemplate`。 
+類似於如何`ListView`具有`ItemTemplate`來定義資料列的顯示方式，`ListView`具有`GroupHeaderTemplate`。
 
 在 XAML 中的群組標頭的範例如下所示：
 
@@ -206,7 +206,7 @@ ListView HeaderList = new ListView() {
 <a name="Row_Separators" />
 
 ## <a name="row-separators"></a>資料列分隔符號
-之間顯示分隔符號行`ListView`預設會在 iOS 和 Android 上的項目。 Windows Phone 不支援分隔符號每行數，該平台 UX 指導方針。 如果您想要隱藏在 iOS 和 Android 的分隔線，設定`SeparatorVisibility`您 ListView 上的屬性。 選項`SeparatorVisibility`是：
+之間顯示分隔符號行`ListView`預設會在 iOS 和 Android 上的項目。 如果您想要隱藏在 iOS 和 Android 的分隔線，設定`SeparatorVisibility`您 ListView 上的屬性。 選項`SeparatorVisibility`是：
 
 * **預設**-iOS 和 Android 上顯示分隔線。
 * **無**-隱藏所有平台上的分隔符號。

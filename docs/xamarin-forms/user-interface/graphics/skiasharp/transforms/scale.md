@@ -7,11 +7,11 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 09a81cd84f145512b9fbbf0db009335eac8a95a9
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: b4a36e15bd5db72ef113748282175c6d31a95966
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="the-scale-transform"></a>小數位數轉換
 
@@ -167,7 +167,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](scale-images/centeredscale-small.png "置中的小數位數頁的三個螢幕擷取畫面")](scale-images/centeredscale-large.png#lightbox "的置中調整 頁面的三個螢幕擷取畫面")
 
-`Slider`項目，此程式中的範圍是&ndash;10 到 10。 如您所見，垂直調整 （例如在 Android 上畫面中央） 的負值會導致物件翻轉通過縮放的中心水平軸。 水平縮放比例 （例如 Windows 上的螢幕右邊） 的負值會導致翻轉通過縮放中心的垂直軸周圍的物件。
+`Slider`項目，此程式中的範圍是&ndash;10 到 10。 如您所見，垂直調整 （例如在 Android 上畫面中央） 的負值會導致物件翻轉通過縮放的中心水平軸。 水平縮放比例 （例如 UWP 螢幕右邊） 的負值會導致翻轉通過縮放中心的垂直軸周圍的物件。
 
 這個第四個版本的`Scale`方法是實際的捷徑。 您可能想要查看其運作所取代的方式`Scale`在此程式碼以下列方法：
 
@@ -344,4 +344,4 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

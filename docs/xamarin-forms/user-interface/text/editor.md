@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 1b121357f24ab9a0efab3fe0488fe868525cfd65
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dc83defcb3eb69cf53c205793ce77029c0947c2f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="editor"></a>編輯器
 
@@ -73,7 +73,7 @@ public partial class EditorPage : ContentPage
         InitializeComponent ();
         var layout = new StackLayout { Padding = new Thickness(5,10) };
         this.Content = layout;
-        //dark blue on Windows Phone & Android, light blue on iOS
+        //dark blue on UWP & Android, light blue on iOS
         var editor = new Editor { BackgroundColor = Device.RuntimePlatform == Device.iOS ? Color.FromHex("#A4EAFF") : Color.FromHex("#2c3e50") };
         layout.Children.Add(editor);
     }
@@ -94,7 +94,7 @@ public partial class EditorPage : ContentPage
                 <Editor.BackgroundColor>
                     <OnPlatform x:TypeArguments="x:Color">
                         <On Platform="iOS" Value="#a4eaff" />
-                        <On Platform="Android, WinPhone, UWP" Value="#2c3e50" />
+                        <On Platform="Android, UWP" Value="#2c3e50" />
                     </OnPlatform>
                 </Editor.BackgroundColor>
             </Editor>

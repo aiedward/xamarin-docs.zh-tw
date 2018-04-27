@@ -7,11 +7,11 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: c6fd0f905aceb9dddc4047abc6ad2722adf2d8e9
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: aba193ca38d60db52298fdf239d936310a4ac193
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>繪製弧形的三種方式
 
@@ -104,7 +104,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 這個方法來產生弧形是以演算法最簡單，所以可以輕鬆地衍生參數描述弧線的方程式。了解的大小和位置的橢圓形和開始和掃掠角度，開始和結束點弧線的計算使用簡單的三角函數：
 
-x = oval.MidX + (oval.Width / 2) * cos(angle)
+x = 橢圓形。MidX + (oval。寬度 / 2) * cos(angle)
 
 y = 橢圓形。MidY + (oval。高度 / 2) * sin(angle)
 
@@ -415,8 +415,6 @@ public partial class TangentArcPage : InteractivePage
 
 [![](arcs-images/tangentarc-small.png "三個螢幕擷取畫面的正切函數弧線頁面")](arcs-images/tangentarc-large.png#lightbox "正切弧線頁面的三個螢幕擷取畫面")
 
-在 Windows Mobile 裝置上，三個點幾乎 colinear，而且弧線便相當小。
-
 正切函數的弧形是適合用來建立例如圓角矩形的圓的角。 因為`SKPath`已經包含`AddRoundedRect`方法，**四捨五入 Heptagon**頁面會示範如何使用`ArcTo`捨入七個邊的多邊形的邊角。 （程式碼一般化的任何規則的多邊形）。
 
 `PaintSurface`處理常式的[ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs)類別包含一個`for`迴圈來計算 heptagon，第二個來計算從這些七個邊的中點的七個頂點的座標頂點。 然後這些中間點用來建構路徑：
@@ -669,4 +667,4 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 511a7052b07a853279f91211b3e3b1219f125c59
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d16c45b7f7cb7eef67a905b6fbcb9b8675b0b2ba
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="listview-interactivity"></a>ListView 互動功能
 
@@ -53,12 +53,10 @@ SelectionDemoList.ItemSelected += (sender, e) => {
 
 ![](interactivity-images/selection-default.png "清單檢視與啟用的選取項目")
 
-請注意，在 Windows Phone，某些資料格，包括`SwitchCell`不要更新其視覺狀態回應選取項目。
-
 <a name="Context_Actions" />
 
 ## <a name="context-actions"></a>內容的動作
-通常，使用者會想要採取的動作中的項目`ListView`。 例如，請考慮一份電子郵件的郵件應用程式中。 在 iOS 上，您可以刪除訊息撥動，並在 Windows Phone，您可以長時間按訊息然後再刪除它：
+通常，使用者會想要採取的動作中的項目`ListView`。 例如，請考慮一份電子郵件的郵件應用程式中。 在 iOS 上，您可以刪除訊息撥動::
 
 ![](interactivity-images/context-default.png "動作內容的 ListView")
 
@@ -149,8 +147,6 @@ listView.IsPullToRefreshEnabled = true;
 ![](interactivity-images/refresh-start.png "ListView 拖動以重新整理進行中")
 
 提取更新以使用者身分發行提取。 這是什麼，使用者會看到當您更新的清單： ![ ] (interactivity-images/refresh-in-progress.png "ListView 拖動以重新整理完成")
-
-請注意，從 Xamarin.Forms 1.4.3 將開始，提取-重新整理不支援 Windows Phone 8.1 上。 在 Windows phone 8，提取-重新整理不原生平台功能，因此提取-重新整理的實作由 Xamarin.Forms。 最後，請注意該提取更新不適用於 Windows Phone 如果清單中的所有元素可以符合螢幕都大小 （換句話說，如果您不需要垂直捲動）。
 
 清單檢視會公開一些可讓您回應更新提取事件的事件。
 

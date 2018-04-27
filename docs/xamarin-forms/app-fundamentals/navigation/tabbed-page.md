@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 11287d38ec0e01e068ca385c92e6a6efdc323aeb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4210f672cdc68acc45b1f547dcc2e6933298df93
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="tabbed-page"></a>索引標籤式的頁面
 
@@ -39,7 +39,6 @@ _Xamarin.Forms TabbedPage 清單所組成的索引標籤和較大的詳細資料
     > [!NOTE]
   > 請注意，當使用 AppCompat 在 Android 上，每個索引標籤也會顯示圖示。 此外， `TabbedPageRenderer` Android AppCompat 具有可覆寫`SetTabIcon`方法可以用來從自訂載入索引標籤圖示`Drawable`。 此覆寫會讓您能夠使用作為圖示上的 SVG 影像`TabbedPage`。
 
-- Windows Phone 上索引標籤的清單會出現在螢幕頂端，以下是詳細資料區域。 如果有太多而無法放入一個螢幕的名稱會自動轉換為小寫和使用者 索引標籤可捲動索引標籤的集合。
 - Windows 平板電腦的尺寸，在索引標籤不一定可見，並且使用者需要撥動清單 （或按一下滑鼠右鍵，如果有連接滑鼠），檢視中的索引標籤`TabbedPage`（如下所示）。
 
 ![](tabbed-page-images/windows-tabs.png "在 Windows 上的 TabbedPage 索引標籤")

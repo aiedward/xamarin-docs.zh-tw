@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/20/2017
-ms.openlocfilehash: fd46411f3662652ef26addc76f273d6071401a6f
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: be131bdbfeceabd72494708cdfe9a263da9bbbd8
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="platform-features"></a>平台功能
 
@@ -63,11 +63,4 @@ Xamarin.Forms 現在有了 Windows Presentation Foundation (WPF) 應用程式的
 
 ## <a name="windowswindowsindexmd"></a>[Windows](windows/index.md)
 
-Xamarin.Forms 可支援四種不同的 Windows 專案：
-
-* Windows Phone 8 Silverlight （原始 Windows 支援的平台 Xamarin.Forms），
-* Windows Phone 8.1 (WinRT)，
-* Windows 8.1 (WinRT)，以及
-* 通用 Windows 平台 (Windows 10)。
-
-本章節描述，以及如何將它們加入至現有的 Xamarin.Forms 方案之間的差異。
+Xamarin.Forms 會對 Windows 10 中支援的通用 Windows 平台 (UWP)。 本文說明如何新增至現有的 Xamarin.Forms 方案的 UWP 專案。

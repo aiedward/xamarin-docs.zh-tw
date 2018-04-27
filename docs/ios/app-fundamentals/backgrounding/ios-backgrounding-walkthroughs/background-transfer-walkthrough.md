@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: bedfb6298e63ed06063707178af1ca48179d0dd7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 51e1ae0a4314d0b23ec9e3236656321bd3dcb4e4
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough---using-background-transfer-service-and-nsurlsession"></a>逐步解說-使用背景傳送服務和 NSURLSession
 
@@ -39,7 +39,7 @@ public partial class SimpleBackgroundTransferViewController : UIViewController
   NSUrlSessionConfiguration configuration =
       NSUrlSessionConfiguration.CreateBackgroundSessionConfiguration ("com.SimpleBackgroundTransfer.BackgroundSession");
   session = NSUrlSession.FromConfiguration
-      (configuration, (NSUrlSessionDelegate) new MySessionDelegate, new NSOperationQueue());
+      (configuration, (NSUrlSessionDelegate) new MySessionDelegate(), new NSOperationQueue());
 
 }
 ```

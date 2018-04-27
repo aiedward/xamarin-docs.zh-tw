@@ -7,11 +7,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: c5142a3abcc6d461bc277faeb02e3aacd9727bca
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 7b7bd83c474c7e0d32a693e06b5f12696ec5efa2
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>三種類型的貝茲曲線
 
@@ -92,7 +92,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 在數學上，曲線是三次方多項式。 曲線最相交直線在 3 個點。 開始處曲線永遠是正切函數，然後在與相同的方向，從一開始為直線指向第一個控制點。 結束點曲線永遠是正切函數，然後在與相同的方向，從第二個控制項的直線指向結束點。
 
-連接的四個點的凸四邊形一律被限制三次方貝茲曲線。 這稱為*凸殼*。 如果上開始和結束點間的直線，直至控點，貝茲曲線就會轉譯成一條直線。 但曲線也可以跨本身，如從 Windows Mobile 裝置的螢幕擷取畫面所示。
+連接的四個點的凸四邊形一律被限制三次方貝茲曲線。 這稱為*凸殼*。 如果上開始和結束點間的直線，直至控點，貝茲曲線就會轉譯成一條直線。 但曲線也可以跨本身，如第三個螢幕擷取畫面所示。
 
 路徑 contour 可以包含多個連接的三次方貝茲曲線，但兩個三次方貝茲曲線之間的連線會平滑，只有當下列三個點都 colinear （也就是上一條直線直至）：
 
@@ -104,7 +104,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 有時候會很有幫助呈現三次方貝茲曲線的基礎參數方程式。 如*t*範圍從 0 到 1，參數化的方程式如下：
 
-x(t) = (1 – t)³x₀ + 3t(1 – t)²x₁ + 3t²(1 – t)x₂ + t³x₃
+x(t) = (1-t) ³x₀ + 3t (1-t) ²x₁ + 3t² (1-t) x₂ + t³x₃
 
 y(t) = (1-t) ³y₀ + 3t (1-t) ²y₁ + 3t² (1-t) y₂ + t³y₃
 
@@ -208,7 +208,7 @@ float Magnitude(SKPoint v)
 
 [![](beziers-images/beziercirculararc-small.png "三重螢幕擷取畫面的頁面貝茲圓弧")](beziers-images/beziercirculararc-large.png#lightbox "貝茲圓弧頁面的三個螢幕擷取畫面")
 
-仔細查看 Windows 行動裝置版 畫面中，而且您會看到的貝茲曲線值得注意的是偏離半圓形角度 180 度，但它看起來以角度為 90 度符合季圓形正常顯示 iOS 畫面時。
+仔細查看的第三個螢幕擷取畫面，您會看到的貝茲曲線值得注意的是偏離半圓形角度 180 度，但它看起來以角度為 90 度符合季圓形正常顯示 iOS 畫面時。
 
 計算兩個控制點的座標時相當簡單季圓形導向像這樣：
 
@@ -345,7 +345,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 二次方貝茲曲線有只有一個控制點，且只有三個點定義曲線： 起始點、 程式控制點和結束點。 參數化的方程式是三次方貝茲曲線，非常類似，不同之處在於最高的指數，是 2，因此曲線是二次方多項式：
 
-x(t) = (1 – t)²x₀ + 2t(1 – t)x₁ + t²x₂
+x(t) = (1-t) ²x₀ + 2t (1-t) x₁ + t²x₂
 
 y(t) = (1-t) ²y₀ + 2t (1-t) y₁ + t²y₂
 
@@ -552,4 +552,4 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

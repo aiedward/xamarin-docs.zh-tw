@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: e555c038d66033d925da42e4c70b89d5caac8ad6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 43b021b158bbb815ab8d27c393f54e0775599940
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>自訂轉譯器簡介
 
@@ -19,7 +19,7 @@ _自訂轉譯器會提供強大的方法用於自訂的外觀和 Xamarin.Forms �
 
 Xamarin.Forms[頁面、 版面配置和控制項](~/xamarin-forms/user-interface/controls/index.md)呈現一般 API 來描述跨平台行動裝置的使用者介面。 每個頁面、 版面配置和控制項以不同的方式上呈現每個平台，使用`Renderer`類別接著會建立原生控制項 （對應至 Xamarin.Forms 表示法），其排列以在畫面上，並將在指定的行為。共用的程式碼。
 
-開發人員可以實作自己的自訂 `Renderer` 類別，以自訂控制項的外觀及/或行為。 每種類型的自訂轉譯器可以加入一個應用程式專案中加入自訂控制項，在一個地方，同時允許在其他平台; 上的預設行為或不同的自訂轉譯器可以加入至每個應用程式專案，在 iOS、 Android 和 Windows Phone 建立不同的外觀及操作。 不過，實作自訂轉譯器類別來執行簡單的控制項自訂通常是重量回應。 影響簡化這個程序，而且通常用於小型的樣式變更。 如需詳細資訊，請參閱[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
+開發人員可以實作自己的自訂 `Renderer` 類別，以自訂控制項的外觀及/或行為。 每種類型的自訂轉譯器可以加入一個應用程式專案中加入自訂控制項，在一個地方，同時允許在其他平台; 上的預設行為或不同的自訂轉譯器可以加入 iOS、 Android 和通用 Windows 平台 (UWP) 上建立不同的外觀與風格的每個應用程式專案。 不過，實作自訂轉譯器類別來執行簡單的控制項自訂通常是重量回應。 影響簡化這個程序，而且通常用於小型的樣式變更。 如需詳細資訊，請參閱[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 
 ## <a name="examining-why-custom-renderers-are-necessary"></a>正在檢查為什麼自訂轉譯器會視需要
 
@@ -51,7 +51,7 @@ public class MyEntry : Entry
 `local`命名空間前置詞可以是任何項目。 不過，`namespace`和`assembly`值必須符合自訂控制項的詳細資料。 一旦宣告命名空間，前置詞用來參考自訂控制項。
 
 > [!NOTE]
-> 定義`xmlns`PCLs 中共用專案比來得簡單。 PCL 已編譯的組件，所以可以輕鬆地判斷何種`assembly=CustomRenderer`值應該是。 當使用共用專案時，所有共用的資產 （包括 XAML） 都會編譯成每個參考的專案，這表示，如果 iOS、 Android 和 Windows Phone 專案具有自己*組件名稱*是不可能若要撰寫`xmlns`宣告因為此值必須為每個應用程式不同。 共用專案的 XAML 中的自訂控制項將需要使用相同的組件名稱來設定每個應用程式專案。
+> 定義`xmlns`PCLs 中共用專案比來得簡單。 PCL 已編譯的組件，所以可以輕鬆地判斷何種`assembly=CustomRenderer`值應該是。 當使用共用專案時，所有共用的資產 （包括 XAML） 都會編譯成每個參考的專案，這表示，如果 iOS、 Android 和 UWP 專案具有自己*組件名稱*就無法寫入`xmlns`宣告因為此值必須為每個應用程式不同。 共用專案的 XAML 中的自訂控制項將需要使用相同的組件名稱來設定每個應用程式專案。
 
 `MyEntry`中的下列螢幕擷取畫面所示，每個平台上，以灰色背景，然後呈現自訂控制項：
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 638243958fce34871089b10185f150492dbd2b0d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c27f94302037e4e19c9d72131e7137c8a4004d5c
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="stacklayout"></a>StackLayout
 
@@ -215,8 +215,6 @@ Title="StackLayouts">
 上述程式碼會產生下列配置：
 
 ![](stack-layout-images/stack.png "複雜 StackLayout")
-
-請注意，由於在 Windows Phone 呈現按鈕的方式的差異，部分的圓形呈現已取代 boxviews 在 Windows Phone 的螢幕擷取畫面。
 
 請注意， `StackLayouts`s 巢狀的因為在某些情況下建立巢狀配置來得容易呈現相同的配置中的所有項目。 也請注意，因為`StackLayout`不支援重疊的項目頁面不具有某些配置細中找到其他配置頁面。
 

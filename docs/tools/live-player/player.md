@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: 2ddaba4541af52ae119fbf504fdcc66ba357c113
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e3205d83ba207322d4c53c4c6e98d4890ad48a77
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Player 即時應用程式
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 04/04/2018
 
 Xamarin Live Player for Android 從 Google Play 有：
 
-[ ![Google Play 上提供](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
+[![Google Play 上提供](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
 
 適用於 Android 裝置不含 Google Play Xamarin Live 播放程式是可透過[HockeyApp](https://aka.ms/xlp-hockeyapp)發佈。 此外，早期預覽中建置 Android 可以直接從 Google Play 安裝藉由選擇在[開啟測試計劃](https://play.google.com/apps/testing/com.xamarin.live)
 
@@ -51,9 +51,9 @@ Xamarin Live Player for Android 從 Google Play 有：
 
 ## <a name="options"></a>選項
 
-按下 資訊 按鈕**(i)**底部的 應用程式，以顯示**選項**功能表：
+按下 資訊 按鈕 **(i)** 底部的 應用程式，以顯示**選項**功能表：
 
-[ ![[選項] 功能表的螢幕擷取畫面](player-images/options-sml.png)](player-images/options.png#lightbox)
+[![[選項] 功能表的螢幕擷取畫面](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>記錄檔
 
@@ -61,11 +61,11 @@ Xamarin Live Player for Android 從 Google Play 有：
 
 ### <a name="settings"></a>設定
 
-* 切換顯示的編譯和執行階段錯誤。
-* 版本資訊。
-* 傳送意見反應。
+- 切換顯示的編譯和執行階段錯誤。
+- 版本資訊。
+- 傳送意見反應。
 
-[ ![設定的螢幕擷取畫面](player-images/settings-sml.png)](player-images/settings.png#lightbox)
+[![設定的螢幕擷取畫面](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>管理裝置
 
@@ -107,9 +107,8 @@ Xamarin Live Player for Android 從 Google Play 有：
 
 如果您遇到任何問題，請參閱[限制和疑難排解](~/tools/live-player/troubleshooting.md)。
 
-
 ## <a name="related-links"></a>相關連結
 
 - [限制](~/tools/live-player/limitations.md)
 - [疑難排解](~/tools/live-player/troubleshooting.md)
-- [Xamarin Player 即時範例](~/tools/livehttps://developer.xamarin.com/samples.md)
+- [Xamarin Player 即時範例](samples.md)

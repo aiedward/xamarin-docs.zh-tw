@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 1e8ef47ceb381a0e4e163aaa24795d46264195da
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c120add5a301e440911bd9794da77732e7787cc0
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-an-entry"></a>自訂項目
 
 _Xamarin.Forms 項目控制項可讓單行編輯的文字。本文示範如何建立自訂轉譯器項目控制項，讓開發人員覆寫預設原生呈現使用他們自己平台專屬的自訂。_
 
-Xamarin.Forms 中的每個控制項都有隨附的轉譯器，每個平台建立原生控制項的執行個體。 當[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) Xamarin.Forms 應用程式，在 iOS 中所要呈現控制項`EntryRenderer`類別具現化，進而會具現化的原生`UITextField`控制項。 Android 平台上，`EntryRenderer`類別具現化`EditText`控制項。 在 Windows Phone 和通用 Windows 平台 (UWP)，`EntryRenderer`類別具現化`TextBox`控制項。 如需有關轉譯器，而且 Xamarin.Forms 控制項對應至原生控制項類別的詳細資訊，請參閱[轉譯器的基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
+Xamarin.Forms 中的每個控制項都有隨附的轉譯器，每個平台建立原生控制項的執行個體。 當[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) Xamarin.Forms 應用程式，在 iOS 中所要呈現控制項`EntryRenderer`類別具現化，進而會具現化的原生`UITextField`控制項。 Android 平台上，`EntryRenderer`類別具現化`EditText`控制項。 在通用 Windows 平台 (UWP)，`EntryRenderer`類別具現化`TextBox`控制項。 如需有關轉譯器，而且 Xamarin.Forms 控制項對應至原生控制項類別的詳細資訊，請參閱[轉譯器的基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
 下圖說明之間的關聯性[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)控制項和對應的原生控制項實作它：
 
@@ -178,13 +178,13 @@ namespace CustomRenderer.Android
 
 基底類別呼叫`OnElementChanged`方法具現化 Android`EditText`控制項，與指派至這個產生器控制項的參考`Control`屬性。 背景色彩會接著設為淺綠色以及`Control.SetBackgroundColor`方法。
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>建立自訂轉譯器，在 Windows Phone 和 UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>在 UWP 上建立的自訂轉譯器
 
-下列程式碼範例顯示 Windows Phone 和 UWP 的自訂轉譯器：
+下列程式碼範例示範 UWP 的自訂轉譯器：
 
 ```csharp
 [assembly: ExportRenderer(typeof(MyEntry), typeof(MyEntryRenderer))]
-namespace CustomRenderer.WinPhone81
+namespace CustomRenderer.UWP
 {
     public class MyEntryRenderer : EntryRenderer
     {

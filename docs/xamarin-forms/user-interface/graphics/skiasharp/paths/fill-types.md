@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 6288a773fb7122c16b405b8a5056b23b7a59fb6d
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: d22ebf0e150c064835fa73765a65025f10ef4c2a
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="the-path-fill-types"></a>路徑填滿類型
 
@@ -165,7 +165,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](fill-types-images/fivepointedstar-small.png "Five-Pointed 星狀頁面的三個螢幕擷取畫面")](fill-types-images/fivepointedstar-large.png#lightbox "Five-Pointed 星狀頁面的三個螢幕擷取畫面")
 
-Android 和 Windows 行動裝置的螢幕擷取畫面顯示一般奇偶和捲繞效果，但筆觸與填滿的順序也會影響結果。
+Android 和 UWP 螢幕擷取畫面顯示一般奇偶和捲繞效果，但筆觸與填滿的順序也會影響結果。
 
 捲繞演算法會相依於線條會繪製的方向。 通常當您建立的路徑，您可以控制該方向與您指定行取自到另一個點。 不過，`SKPath`類別也可以定義像方法`AddRect`和`AddCircle`，繪製整個分佈。 若要控制這些物件如何繪製，方法包括類型參數的[ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/)，其中包含兩個成員：
 
@@ -222,4 +222,4 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 58f5a64f85dbe5a6889e6ff598c14fdfd9b0a5df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da3025f2616c91488ec70e25836351b08e957494
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-a-contentpage"></a>自訂 ContentPage
 
 _ContentPage 是螢幕的視覺化的項目會顯示在單一檢視，而且會佔用大部分。本文示範如何建立自訂轉譯器的 ContentPage 頁面上，讓開發人員覆寫預設原生呈現使用他們自己平台專屬的自訂。_
 
-Xamarin.Forms 中的每個控制項都有隨附的轉譯器，每個平台建立原生控制項的執行個體。 當[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) Xamarin.Forms 應用程式，在 iOS 中呈現`PageRenderer`類別具現化，這又會具現化原生`UIViewController`控制項。 Android 平台上，`PageRenderer`類別具現化`ViewGroup`控制項。 在 Windows Phone 和通用 Windows 平台 (UWP)，`PageRenderer`類別具現化`FrameworkElement`控制項。 如需有關轉譯器，而且 Xamarin.Forms 控制項對應至原生控制項類別的詳細資訊，請參閱[轉譯器的基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
+Xamarin.Forms 中的每個控制項都有隨附的轉譯器，每個平台建立原生控制項的執行個體。 當[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) Xamarin.Forms 應用程式，在 iOS 中呈現`PageRenderer`類別具現化，這又會具現化原生`UIViewController`控制項。 Android 平台上，`PageRenderer`類別具現化`ViewGroup`控制項。 在通用 Windows 平台 (UWP)，`PageRenderer`類別具現化`FrameworkElement`控制項。 如需有關轉譯器，而且 Xamarin.Forms 控制項對應至原生控制項類別的詳細資訊，請參閱[轉譯器的基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
 下圖說明之間的關聯性[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)和對應的原生控制項實作它：
 
@@ -197,57 +197,6 @@ namespace CustomRenderer.Droid
 基底類別呼叫`OnElementChanged`方法具現化 Android`ViewGroup`控制項，這是檢視的群組。 轉譯器不已經附加到現有的 Xamarin.Forms 項目，並假設頁面執行個體存在，會呈現的自訂轉譯器，只會轉譯相機即時資料流。
 
 然後叫用一系列的方法使用的自訂頁面`Camera`API 來提供即時資料流，從網路攝影機和之前擷取相片的能力`AddView`方法會叫用來新增即時相機串流 UI `ViewGroup`。
-
-### <a name="creating-the-page-renderer-on-windows-phone"></a>建立 Windows Phone 上的頁面轉譯器
-
-下列程式碼範例顯示 Windows Phone 平台的頁面轉譯器：
-
-```csharp
-[assembly: ExportRenderer (typeof(CameraPage), typeof(CameraPageRenderer))]
-namespace CustomRenderer.WinPhone81
-{
-    public class CameraPageRenderer : PageRenderer
-    {
-        ...
-
-        protected override void OnElementChanged (VisualElementChangedEventArgs e)
-        {
-            base.OnElementChanged (e);
-
-            if (e.OldElement != null || Element == null) {
-                return;
-            }
-
-            try {
-                ...
-                var container = ContainerElement as Canvas;
-
-                SetupUserInterface ();
-                SetupEventHandlers ();
-                SetupLiveCameraStream ();
-                container.Children.Add (page);
-            }
-            ...
-        }
-
-        protected override Size ArrangeOverride(Size finalSize)
-        {
-            page.Arrange(new Windows.Foundation.Rect(0, 0, finalSize.Width, finalSize.Height));
-            return finalSize;
-        }
-        ...
-    }
-}
-```
-
-基底類別呼叫`OnElementChanged`方法具現化的 Windows Phone`Canvas`呈現網頁的控制項。 轉譯器不已經附加到現有的 Xamarin.Forms 項目，並假設頁面執行個體存在，會呈現的自訂轉譯器，只會轉譯相機即時資料流。
-
-可以透過存取 Windows Phone 平台上原生的網頁平台上使用的型別的參考`ContainerElement`屬性，與`Canvas`控制正在型別的參考`FrameworkElement`。 然後叫用一系列的方法使用的自訂頁面`MediaCapture`API 來提供即時資料流，從網路攝影機和自訂的頁面加入至之前擷取相片的能力`Canvas`供顯示。
-
-實作衍生自的自訂轉譯器時`PageRenderer`對 Windows 執行階段，`ArrangeOverride`方法應該也排列頁面控制項實作，因為基底的轉譯器不知道該如何處理它們。 否則，會產生空白頁面。 因此，在此範例`ArrangeOverride`方法呼叫`Arrange`方法`Page`執行個體。
-
-> [!NOTE]
-> 請務必停止與處置的物件可提供存取的相機中的 Windows Phone 8.1 WinRT 應用程式。 這樣可能會干擾其他應用程式嘗試存取裝置的相機。 如需詳細資訊，請參閱`CleanUpCaptureResourcesAsync`範例方案中，在 Windows Phone 專案中的方法和[快速入門： 使用 MediaCapture 應用程式開發介面擷取視訊](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx)。
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>在 UWP 上建立頁面轉譯器
 

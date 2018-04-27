@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 58254fd3c7a3949b0ed6bb448223e34cf76f7103
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7b1eb1289688b6152e4e854ca0f51d66932c91a1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="validation"></a>驗證
 
@@ -214,7 +214,7 @@ EShopOnContainers 行動裝置應用程式通知的任何驗證錯誤的使用�
 
 ![](validation-images/validation-login.png "在登入期間顯示驗證錯誤")
 
-**圖 6-2:**登入期間顯示驗證錯誤
+**圖 6-2:** 登入期間顯示驗證錯誤
 
 ### <a name="highlighting-a-control-that-contains-invalid-data"></a>反白顯示包含無效的資料的控制項
 
@@ -225,7 +225,7 @@ EShopOnContainers 行動裝置應用程式通知的任何驗證錯誤的使用�
     <Entry.Style>
         <OnPlatform x:TypeArguments="Style">
             <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
-            <On Platform="UWP, WinRT, WinPhone" Value="{StaticResource UwpEntryStyle}" />
+            <On Platform="UWP" Value="{StaticResource UwpEntryStyle}" />
         </OnPlatform>
     </Entry.Style>
     ...

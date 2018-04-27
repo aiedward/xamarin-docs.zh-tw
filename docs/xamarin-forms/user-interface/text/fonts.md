@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 09328e1c6d884898aed86f2cb8ab1b84bf6d5cab
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 52c86c63c328729211c4fbd22bd10b5eb1e56615
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="fonts"></a>字型
 
@@ -53,7 +53,7 @@ label.FontSize = 24;
 -  **Micro**
 -  **小**
 -  **媒體**
--  **Large**
+-  **大型**
 
 
 `NamedSize`列舉型別可以是任一處使用`FontSize`您可以使用指定`Device.GetNamedSize`方法將值轉換成`double`:
@@ -70,7 +70,7 @@ label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
 
 -  **無**
 -  **粗體**
--  **Italic**
+-  **斜體**
 
 `FontAttribute`列舉可用，如下所示 (您可以指定單一屬性或`OR`一起):
 
@@ -166,7 +166,7 @@ Xamarin.Forms 控制顯示文字全都有`Font`可以在 Xaml 中設定的屬性
         <OnPlatform x:TypeArguments="x:String">
                 <On Platform="iOS" Value="MarkerFelt-Thin" />
                 <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
-                <On Platform="UWP, WinRT, WinPhone" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
         </OnPlatform>
     </Label.FontFamily>
 </Label>
@@ -178,7 +178,7 @@ Xamarin.Forms 控制顯示文字全都有`Font`可以在 Xaml 中設定的屬性
 
 ## <a name="using-a-custom-font"></a>使用自訂的字型
 
-使用內建的字體以外字型需要某些平台專屬程式碼撰寫。 這個螢幕擷取畫面顯示自訂字型**洛貝斯特**從[Google 的開放原始碼字型](https://www.google.com/fonts)呈現在 iOS、 Android 和 Windows Phone 使用 Xamarin.Forms。
+使用內建的字體以外字型需要某些平台專屬程式碼撰寫。 這個螢幕擷取畫面顯示自訂字型**洛貝斯特**從[Google 的開放原始碼字型](https://www.google.com/fonts)使用 Xamarin.Forms 轉譯。
 
  [![IOS 和 Android 上的自訂字型](fonts-images/custom-sml.png "自訂字型範例")](fonts-images/custom.png#lightbox "自訂字型範例")
 
@@ -215,7 +215,7 @@ new Label
 
 ### <a name="windows"></a>Windows
 
-Xamarin.Forms，針對 Windows 平台可以參考自訂字型已加入至專案依照特定的命名標準。 第一次加入字型檔案**/Assets/字型/**資料夾中的應用程式專案和組<span class="UIItem">建置動作： Content</span>。 然後使用完整路徑和字型檔名，後面接著雜湊 （#） 和<span class="UIItem">字型名稱</span>，如下列程式碼片段所示：
+Xamarin.Forms，針對 Windows 平台可以參考自訂字型已加入至專案依照特定的命名標準。 第一次加入字型檔案 **/Assets/字型/** 資料夾中的應用程式專案和組<span class="UIItem">建置動作： Content</span>。 然後使用完整路徑和字型檔名，後面接著雜湊 （#） 和<span class="UIItem">字型名稱</span>，如下列程式碼片段所示：
 
 ```csharp
 new Label
@@ -240,7 +240,7 @@ new Label
         <OnPlatform x:TypeArguments="x:String">
                 <On Platform="iOS" Value="Lobster-Regular" />
                 <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
-                <On Platform="UWP, WinRT, WinPhone" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
         </OnPlatform>
     </Label.FontFamily>
 </Label>

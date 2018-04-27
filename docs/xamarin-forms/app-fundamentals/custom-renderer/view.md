@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: e84427ba576528ed76f5885605c423bf6499d20c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a8ab35b3ec13c76e1e00da6e3265e3e337e37b7e
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="implementing-a-view"></a>實作檢視
 
 _Xamarin.Forms 自訂使用者介面控制項應衍生自檢視類別，用來放置版面配置和螢幕上的控制項。本文示範如何建立自訂轉譯器用來顯示預覽視訊資料流裝置的相機中的 Xamarin.Forms 自訂控制項。_
 
-Xamarin.Forms 中的每個檢視有隨附的轉譯器，每個平台建立原生控制項的執行個體。 當[ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) Xamarin.Forms 應用程式在 iOS 中，呈現`ViewRenderer`類別具現化，這又會具現化原生`UIView`控制項。 Android 平台上，`ViewRenderer`類別具現化的原生`View`控制項。 在 Windows Phone 和通用 Windows 平台 (UWP)，`ViewRenderer`類別具現化的原生`FrameworkElement`控制項。 如需有關轉譯器，而且 Xamarin.Forms 控制項對應至原生控制項類別的詳細資訊，請參閱[轉譯器的基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
+Xamarin.Forms 中的每個檢視有隨附的轉譯器，每個平台建立原生控制項的執行個體。 當[ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) Xamarin.Forms 應用程式在 iOS 中，呈現`ViewRenderer`類別具現化，這又會具現化原生`UIView`控制項。 Android 平台上，`ViewRenderer`類別具現化的原生`View`控制項。 在通用 Windows 平台 (UWP)，`ViewRenderer`類別具現化的原生`FrameworkElement`控制項。 如需有關轉譯器，而且 Xamarin.Forms 控制項對應至原生控制項類別的詳細資訊，請參閱[轉譯器的基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
 下圖說明之間的關聯性[ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)和對應的原生控制項實作它：
 
@@ -263,13 +263,13 @@ namespace CustomRenderer.Droid
 
 前提是`Control`屬性是`null`、`SetNativeControl`呼叫方法來具現化新`CameraPreview`控制，並將該參考指派`Control`屬性。 `CameraPreview`控制項是平台專屬的自訂控制項，會使用`Camera`API 用於提供從相機的預覽資料流。 `CameraPreview`則設定控制項，前提是自訂轉譯器附加至新的 Xamarin.Forms 項目。 這項設定包括建立新的原生`Camera`存取特定硬體相機、 物件和註冊事件處理常式來處理`Click`事件。 接著此處理常式將會停止並啟動預覽視訊時它點選。 `Click` Xamarin.Forms 項目，轉譯器附加到變更，取消事件訂閱。
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>建立自訂轉譯器，在 Windows Phone 和 UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>在 UWP 上建立的自訂轉譯器
 
-下列程式碼範例顯示 Windows Phone 和 UWP 的自訂轉譯器：
+下列程式碼範例示範 UWP 的自訂轉譯器：
 
 ```csharp
 [assembly: ExportRenderer (typeof(CameraPreview), typeof(CameraPreviewRenderer))]
-namespace CustomRenderer.WinPhone81
+namespace CustomRenderer.UWP
 {
     public class CameraPreviewRenderer : ViewRenderer<CameraPreview, Windows.UI.Xaml.Controls.CaptureElement>
     {
@@ -317,7 +317,7 @@ namespace CustomRenderer.WinPhone81
 前提是`Control`屬性是`null`，新`CaptureElement`具現化和`InitializeAsync`呼叫方法時，它會使用`MediaCapture`API 用於提供從相機的預覽資料流。 `SetNativeControl`方法接著會呼叫指定的參考`CaptureElement`執行個體`Control`屬性。 `CaptureElement`控制公開`Tapped`由處理的事件`OnCameraPreviewTapped`來停止及啟動預覽視訊時它所點選的方法。 `Tapped`自訂轉譯器已連接到新的 Xamarin.Forms 項目，並取消訂閱只當轉譯器的項目附加至變更時要訂閱事件。
 
 > [!NOTE]
-> 請務必停止與處置的物件可提供存取的相機中的 Windows Phone 或 UWP 應用程式。 這樣可能會干擾其他應用程式嘗試存取裝置的相機。 如需詳細資訊，請參閱和[快速入門： 使用 MediaCapture 應用程式開發介面擷取視訊](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx)Windows 執行階段應用程式，以及[顯示相機預覽](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access)UWP 應用程式。
+> 請務必停止與處置的物件可提供存取的相機 UWP 應用程式中。 這樣可能會干擾其他應用程式嘗試存取裝置的相機。 如需詳細資訊，請參閱[顯示相機預覽](/windows/uwp/audio-video-camera/simple-camera-preview-access/)。
 
 ## <a name="summary"></a>總結
 

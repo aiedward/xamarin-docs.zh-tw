@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2016
-ms.openlocfilehash: 8d3a7fd7534ccc5eca1432e7f4656c8d0652b126
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f0b7a83a16a13d38fc9e59456e864084b439b71f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="passing-arguments-in-xaml"></a>在 XAML 中傳遞引數
 
@@ -153,7 +153,7 @@ _本文將示範使用 XAML 屬性，可用來將引數傳遞至非預設建構�
       <OnPlatform x:TypeArguments="Thickness">
         <On Platform="iOS" Value="0,20,0,0" />
         <On Platform="Android" Value="5, 10" />
-        <On Platform="WinPhone, Windows" Value="10" />
+        <On Platform="UWP" Value="10" />
       </OnPlatform>
     </StackLayout.Margin>
   </StackLayout>

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: b9a5e7c15fd1105a9ca4661ff38e4eb2c92dd10f
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 24bf7bd7fb2aa51968a96bdbf808030604665c26
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="lines-and-stroke-caps"></a>線條和筆觸端點
 
@@ -235,7 +235,7 @@ T GetPickerItem<T>(Picker picker)
 
 當您改為使用`SKPointMode.Lines`，如在中心，Android 螢幕上顯示`DrawPoints`方法每對之間繪製一條線`SKPoint`值，在此情況下使用指定的線條端點`Round`。
 
-Windows 行動裝置顯示的結果`SKPointMode.Polygon`值。 陣列中的連續點之間繪製一條線，但如果您非常仔細看，您會看到這些線條未連線。 每個別一行的開始和結束與指定的線條端點時。 如果您選取`Round`cap，線條可能似乎可以連接，但實際上未連接。
+UWP 螢幕擷取畫面顯示的結果`SKPointMode.Polygon`值。 陣列中的連續點之間繪製一條線，但如果您非常仔細看，您會看到這些線條未連線。 每個別一行的開始和結束與指定的線條端點時。 如果您選取`Round`cap，線條可能似乎可以連接，但實際上未連接。
 
 線條會連接或未連接是使用圖形路徑的重要層面。
 
@@ -243,4 +243,4 @@ Windows 行動裝置顯示的結果`SKPointMode.Polygon`值。 陣列中的連�
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

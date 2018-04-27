@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 773636cf879439477a6f71e44f13ae66b8f10ea8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6138bd1f9211248b3a260795c2ef9d3db87580be
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="creating-an-effect"></a>建立效果
 
@@ -150,17 +150,17 @@ namespace EffectsDemo.Droid
 
 `OnElementPropertyChanged`覆寫回應 Xamarin.Forms 控制項上的可繫結的屬性變更。 當[ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/)屬性變更，如果焦點在控制項，變更控制項的背景色彩為白色，否則它會變更為淺綠色。 這項功能會包裝在`try` / `catch`封鎖以防效果附加至控制項沒有`BackgroundColor`屬性。
 
-## <a name="windows-phone--universal-windows-platform-projects"></a>Windows Phone 和通用 Windows 平台專案
+## <a name="universal-windows-platform-projects"></a>通用 Windows 平台專案
 
-下列程式碼範例示範`FocusEffect`實作適用於 Windows Phone 和通用 Windows 平台 (UWP) 專案：
+下列程式碼範例示範`FocusEffect`實作的通用 Windows 平台 (UWP) 專案：
 
 ```csharp
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.WinRT;
+using Xamarin.Forms.Platform.UWP;
 
 [assembly: ResolutionGroupName("MyCompany")]
 [assembly: ExportEffect(typeof(FocusEffect), "FocusEffect")]
-namespace EffectsDemo.WinPhone81
+namespace EffectsDemo.UWP
 {
     public class FocusEffect : PlatformEffect
     {

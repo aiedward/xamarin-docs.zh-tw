@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2017
-ms.openlocfilehash: 67e392bb3672e54a1e2fe709af9cf5deb3dae5e8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c9cf700ea798ac316e806c40cb90eedc7ded9fa5
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="implementing-text-to-speech"></a>實作文字轉換語音
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 04/04/2018
 - **[建立介面](#Creating_the_Interface)** &ndash;了解如何建立共用的程式碼中的介面。
 - **[iOS 實作](#iOS_Implementation)** &ndash;了解如何在原生 iOS 程式碼中實作介面。
 - **[Android 實作](#Android_Implementation)** &ndash;了解如何在原生程式碼中實作的介面，適用於 Android。
-- **[Windows 實作](#WindowsImplementation)** &ndash;深入了解如何在原生程式碼中實作的介面，適用於 Windows Phone 和通用 Windows 平台 (UWP)。
+- **[UWP 實作](#WindowsImplementation)** &ndash;深入了解如何在原生程式碼中的通用 Windows 平台 (UWP) 上實作介面。
 - **[在共用程式碼中實作](#Implementing_in_Shared_Code)** &ndash;了解如何使用`DependencyService`來呼叫原生實作共用的程式碼。
 
 應用程式使用`DependencyService`會有下列結構：
@@ -122,9 +122,9 @@ namespace DependencyServiceSample.Droid
 
 <a name="WindowsImplementation" />
 
-## <a name="windows-phone-and-universal-windows-platform-implementation"></a>Windows Phone 和通用 Windows 平台實作
+## <a name="universal-windows-platform-implementation"></a>通用 Windows 平台實作
 
-Windows Phone 和通用 Windows 平台有中的語音 API`Windows.Media.SpeechSynthesis`命名空間。 唯一需要注意是要記得刻度**麥克風**功能中的資訊，否則存取遭到封鎖的應用程式開發介面的語音。
+通用 Windows 平台具有中的語音 API`Windows.Media.SpeechSynthesis`命名空間。 唯一需要注意是要記得刻度**麥克風**功能中的資訊，否則存取遭到封鎖的應用程式開發介面的語音。
 
 ```csharp
 [assembly:Dependency(typeof(TextToSpeechImplementation))]
@@ -165,7 +165,7 @@ public MainPage ()
 }
 ```
 
-在 iOS、 Android 或 Windows 平台和按下按鈕將會導致就您在每個平台上使用原生語音 SDK 的應用程式上執行此應用程式。
+在 iOS、 Android 或 UWP 上執行此應用程式，並按下的按鈕會導致應用程式就您在每個平台上使用原生語音 SDK。
 
  ![iOS 和 Android 的文字轉換語音按鈕](text-to-speech-images/running.png "則文字轉換語音範例")
 

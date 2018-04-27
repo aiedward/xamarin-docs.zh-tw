@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: a96c57b66e5debbbb7318c22e33a21eb9b998395
-ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
+ms.openlocfilehash: ed37e723d4b1a7997890c41886df8d117425e270
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="webview"></a>網頁檢視
 
@@ -33,12 +33,12 @@ ms.lasthandoff: 04/08/2018
 WebView 隨附支援下列類型的內容：
 
 - HTML 與 CSS 網站&ndash;WebView 具有完整支援使用 HTML 和 CSS，包括支援 JavaScript 撰寫的網站。
-- 文件&ndash;WebView WebView 實作每個平台上使用原生元件，因為是顯示在每個平台可檢視的文件。 這表示 PDF 檔案使用 iOS 和 Android，但不是 Windows Phone 上。
+- 文件&ndash;WebView WebView 實作每個平台上使用原生元件，因為是顯示在每個平台可檢視的文件。 這表示 PDF 檔案使用 iOS 和 Android 上。
 - HTML 字串&ndash;WebView 可以顯示從記憶體的 HTML 字串。
 - 本機檔案&ndash;WebView 可以呈現內嵌於應用程式中任何上述的內容類型。
 
 > [!NOTE]
-> `WebView` 在 Windows 和 Windows Phone 上不支援 Silverlight、 Flash 或任何 ActiveX 控制項，即使該平台上支援 Internet explorer。
+> `WebView` 在 Windows 上不支援 Silverlight、 Flash 或任何 ActiveX 控制項，即使該平台上支援 Internet explorer。
 
 ### <a name="websites"></a>網站
 
@@ -231,28 +231,9 @@ using (var streamReader = new StreamReader (assetManager.Open ("local.html"))) {
 }
 ```
 
-#### <a name="windows-phone"></a>Windows Phone
+#### <a name="universal-windows-platform"></a>通用 Windows 平台
 
-在 Windows Phone，將 HTML、 CSS 和圖像專案根目錄中建置動作設定為與*內容*依照以下所示：
-
-![](webview-images/windows-vs.png "在 Windows Phone 上的本機檔案")
-
-在 Windows Phone，`BaseUrl`應該設定為`""`:
-
-```csharp
-[assembly: Dependency (typeof(BaseUrl_Windows))]
-namespace WorkingWithWebview.Windows {
-  public class BaseUrl_Windows : IBaseUrl {
-    public string Get() {
-      return "";
-    }
-  }
-}
-```
-
-#### <a name="windows-runtime-and-universal-windows-platform"></a>Windows 執行階段和通用 Windows 平台
-
-在 Windows 執行階段和通用 Windows 平台 (UWP) 專案中，放置 HTML、 CSS 和圖像專案根目錄中的建置動作設定為*內容*。
+通用 Windows 平台 (UWP) 專案中放置 HTML、 CSS 和圖像專案根目錄中建置動作設定為*內容*。
 
 `BaseUrl`應該設定為`"ms-appx-web:///"`:
 
@@ -402,14 +383,11 @@ void webOnEndNavigating (object sender, WebNavigatedEventArgs e)
 
 [UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view)使用 Microsoft Edge 轉譯引擎。 桌面與 tablet pc 的裝置應該會看到相同的效能與使用 Edge 瀏覽器本身。
 
-`WebBrowser`控制項在 Windows Phone 8 和 Windows Phone 8.1 的並不支援最新的 HTML5 功能，而且通常可能不佳的效能。 注意如何網站會顯示在 Windows Phone `WebView`。 您不在 Internet Explorer 中測試足夠。
-
 ## <a name="permissions"></a>權限
 
 為了讓`WebView`運作，您必須確定每個平台已設定權限。 請注意，在某些平台，`WebView`偵錯模式，但不是會針對發行建置在運作。 這是因為依預設會由 Visual Studio 在偵錯模式中的 mac 設定某些權限，如同在 Android 上，網際網路存取。
 
-- **Windows Phone 8.0** &ndash;需要`ID_CAP_WEBBROWSERCOMPONENT`控制項和`ID_CAP_NETWORKING`供網際網路存取。
-- **Windows Phone 8.1 和 UWP** &ndash;時顯示的網路內容需要網際網路 （用戶端和伺服器） 功能。
+- **UWP** &ndash;時顯示的網路內容需要網際網路 （用戶端和伺服器） 功能。
 - **Android** &ndash;需要`INTERNET`才顯示從網路的內容。 本機內容需要任何特殊權限。
 - **iOS** &ndash;需要任何特殊權限。
 

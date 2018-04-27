@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 909a04398043a3c2f0c30e4da82d174a6bfaf148
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 00d52aa69372ab5ec3073e2355a43521b515ca8b
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="modal-pages"></a>強制回應頁面
 
@@ -100,7 +100,7 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 
 ### <a name="disabling-the-back-button"></a>停用 [上一頁] 按鈕
 
-在 Android 和 Windows Phone，使用者可以隨時返回前一個頁面按下標準*回*裝置上的按鈕。 強制回應頁面會要求使用者各自獨立的工作完成之前離開頁面，如果應用程式必須停用*回* 按鈕。 這可藉由覆寫[ `Page.OnBackButtonPressed` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnBackButtonPressed/)強制回應頁面上的方法。 如需詳細資訊，請參閱[章 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold Xamarin.Forms 活頁簿。
+在 Android 上，使用者可以隨時返回前一個頁面按下標準*回*裝置上的按鈕。 強制回應頁面會要求使用者各自獨立的工作完成之前離開頁面，如果應用程式必須停用*回* 按鈕。 這可藉由覆寫[ `Page.OnBackButtonPressed` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnBackButtonPressed/)強制回應頁面上的方法。 如需詳細資訊，請參閱[章 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold Xamarin.Forms 活頁簿。
 
 ### <a name="animating-page-transitions"></a>動畫畫面轉換
 

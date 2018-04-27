@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 46ab21aa5156a6deab5952f165917cc299b500ac
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 1e295ac424c311472ff175d4627c5fb12641d31f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="dots-and-dashes"></a>句點和連字號
 
@@ -164,7 +164,7 @@ float[] GetPickerArray(Picker picker)
 - {30，10} 成為 {20，20} 的虛線
 - {10，10，30，10} 成為 {0，20，20，20} 的虛線和破折線線條
 
-Windows 螢幕顯示點和虛線程式行及筆劃覆蓋的`Round`。 `Round`筆觸端點通常會提供最佳的外觀句點和連字號的粗線。
+UWP 螢幕顯示點和虛線程式行及筆劃覆蓋的`Round`。 `Round`筆觸端點通常會提供最佳的外觀句點和連字號的粗線。
 
 到目前為止沒有提及發出第二個參數的`SKPathEffect.CreateDash`方法。 此參數之所以名為`phase`它是指點和虛線圖樣的一行的開頭的位移。 例如，如果虛線陣列是 {10，10} 和`phase`為 10，則行開頭的間距，而不是一個點。
 
@@ -220,4 +220,4 @@ protected override void OnAppearing()
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

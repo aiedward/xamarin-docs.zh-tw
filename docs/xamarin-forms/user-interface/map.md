@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 050e37d208c3ba5a330d7ecc6df9d106e14f8bb9
-ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
+ms.openlocfilehash: e296ca79ee03e7fc61532758219b65946a8d4381
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="map"></a>對應
 
@@ -50,7 +50,7 @@ Xamarin.FormsMaps.Init();
 Xamarin.FormsMaps.Init(this, bundle);
 ```
 
-Windows 執行階段 (WinRT) 和通用 Windows 平台 (UWP) 使用下列程式碼：
+針對通用 Windows 平台 (UWP) 使用下列程式碼：
 
 ```csharp
 Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
@@ -60,7 +60,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 -  **iOS** -d 檔，請在`FinishedLaunching`方法。
 -  **Android** -Weatherapp 檔，請在`OnCreate`方法。
--  **WinRT 及 UWP** -MainPage.xaml.cs 檔，請在`MainPage`建構函式。
+-  **UWP** -MainPage.xaml.cs 檔，請在`MainPage`建構函式。
 
 已加入 NuGet 套件和初始設定方法呼叫內每個應用程式中，一旦`Xamarin.Forms.Maps`Api 可用於通用的 PCL 或共用的專案程式碼。
 
@@ -132,9 +132,9 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 最後兩個所需的因為應用程式需要下載對應資料的網路連線。 了解 Android[權限](http://developer.android.com/reference/android/Manifest.permission.html)如需詳細資訊。
 
-### <a name="windows-runtime-and-universal-windows-platform"></a>Windows 執行階段和通用 Windows 平台
+### <a name="universal-windows-platform"></a>通用 Windows 平台
 
-若要在 Windows 執行階段和通用 Windows 平台上使用 map 中，您必須產生的授權權杖。 如需詳細資訊，請參閱[要求對應的驗證金鑰](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx)MSDN 上。
+通用 Windows 平台上使用對應中，您必須產生的授權權杖。 如需詳細資訊，請參閱[要求對應的驗證金鑰](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx)MSDN 上。
 
 驗證權杖則應該指定在`FormsMaps.Init("AUTHORIZATION_TOKEN")`方法呼叫中，驗證與 Bing 地圖服務的應用程式。
 
@@ -255,7 +255,7 @@ MyMap.MoveToRegion(
 
 ## <a name="summary"></a>總結
 
-Xamarin.Forms.Maps 是個別的 NuGet 必須新增至 Xamarin.Forms 方案中每個專案。 額外的初始化程式碼是必要項，為 iOS、 Android、 WinRT，和 UWP 也一些設定步驟。
+Xamarin.Forms.Maps 是個別的 NuGet 必須新增至 Xamarin.Forms 方案中每個專案。 額外的初始化程式碼是必要項，為 iOS、 Android 和 UWP 也有些組態步驟。
 
 一次設定對應的 API 可用來呈現釘選標記在短短幾行程式碼對應。 地圖可以進一步加強與[自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)。
 

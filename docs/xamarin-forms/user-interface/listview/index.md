@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: a153791893f99a472c3fcf91a205bf91ed971e13
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ddd779fc7eb1a10e74c68504367083ff0efcdfcd
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="listview"></a>ListView
 
@@ -53,7 +53,7 @@ ListView 有多個元件可用來執行每個平台的原生功能。 下面會�
 ListView 支援多個互動的樣式，包括：
 
 - **[若要重新整理提取](interactivity.md#Pull_to_Refresh)** &ndash; ListView 上每個平台支援提取-重新整理。
-- **[內容動作](interactivity.md#Context_Actions)** &ndash; ListView 支援清單中的個別項目上採取行動。 比方說，您可以在 iOS 上，實作撥動至動作或長時間點選在 Android 和 Windows Phone 上的動作。
+- **[內容動作](interactivity.md#Context_Actions)** &ndash; ListView 支援清單中的個別項目上採取行動。 比方說，您可以在 iOS 上，實作撥動至動作或長時間點選在 Android 上的動作。
 - **[選取項目](interactivity.md#selectiontaps)** &ndash;您可以接聽項目，並 deselections 時要採取的動作所點選的資料列。
 
 ![](images/context-default.png "動作內容的 ListView")
@@ -70,5 +70,5 @@ ListView 支援多個互動的樣式，包括：
 - [群組 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
 - [自訂轉譯器檢視 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/WorkingWithListviewNative)
 - [ListView 互動功能 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
-- [iOS Workbook](https://developer.xamarin.com/workbooks/xamarin-forms/user-interface/listview/ListView1-ios.workbook)
-- [Android Workbook](https://developer.xamarin.com/workbooks/xamarin-forms/user-interface/listview/ListView1-android.workbook)
+- [iOS 活頁簿](https://developer.xamarin.com/workbooks/xamarin-forms/user-interface/listview/ListView1-ios.workbook)
+- [Android 的活頁簿](https://developer.xamarin.com/workbooks/xamarin-forms/user-interface/listview/ListView1-android.workbook)

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 2edd7a982d0307475933a234e7e1fbb8dd8d6a34
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 924aa88d29379c98204fd810c651de56ff757971
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
@@ -221,8 +221,6 @@ Title="RelativeLayout">
 上述程式碼會產生下列配置：
 
 ![](relative-layout-images/relative.png "複雜 RelativeLayout")
-
-請注意，由於在 Windows Phone 呈現按鈕的方式的差異，部分的圓形呈現已取代 boxviews 在 Windows Phone 的螢幕擷取畫面。
 
 請注意， `RelativeLayouts`s 巢狀的因為在某些情況下建立巢狀配置來得容易呈現相同的配置中的所有項目。 也請注意，某些項目`RelativeToView`，因為，允許更容易且更具直覺性的版面配置時檢視之間的關聯性引導定位。
 

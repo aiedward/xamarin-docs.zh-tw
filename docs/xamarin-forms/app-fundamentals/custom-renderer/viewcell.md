@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 3e5f4f2d4c4025cce21026cc611af650616e69e2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4d1d4323e42df6240fee7be42ae8fac70a2b3f1f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-a-viewcell"></a>自訂 ViewCell
 
 _Xamarin.Forms ViewCell 就是資料格可以加入至 ListView 或 TableView，其中包含開發人員定義的檢視。本文示範如何建立裝載於 Xamarin.Forms ListView 控制項 ViewCell 自訂轉譯器。這會停止從 Xamarin.Forms 配置計算期間 ListView 捲動重複呼叫。_
 
-每個 Xamarin.Forms 儲存格有隨附的轉譯器，每個平台建立原生控制項的執行個體。 當[ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) Xamarin.Forms 應用程式，在 iOS 中呈現`ViewCellRenderer`類別具現化，這又會具現化原生`UITableViewCell`控制項。 Android 平台上，`ViewCellRenderer`類別具現化的原生`View`控制項。 在 Windows Phone 和通用 Windows 平台 (UWP)，`ViewCellRenderer`類別具現化的原生`DataTemplate`。 如需有關轉譯器，而且 Xamarin.Forms 控制項對應至原生控制項類別的詳細資訊，請參閱[轉譯器的基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
+每個 Xamarin.Forms 儲存格有隨附的轉譯器，每個平台建立原生控制項的執行個體。 當[ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) Xamarin.Forms 應用程式，在 iOS 中呈現`ViewCellRenderer`類別具現化，這又會具現化原生`UITableViewCell`控制項。 Android 平台上，`ViewCellRenderer`類別具現化的原生`View`控制項。 在通用 Windows 平台 (UWP)，`ViewCellRenderer`類別具現化的原生`DataTemplate`。 如需有關轉譯器，而且 Xamarin.Forms 控制項對應至原生控制項類別的詳細資訊，請參閱[轉譯器的基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
 下圖說明之間的關聯性[ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)和對應的原生控制項實作它：
 
@@ -169,7 +169,7 @@ Xamarin.Forms [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Form
 
 ![](viewcell-images/screenshots.png "每個平台上 NativeCell")
 
-`ViewCellRenderer`類別會公開特定平台的方法，以呈現自訂儲存格。 這是`GetCell`iOS 平台上的方法`GetCellCore`Android 平台上的方法和`GetTemplate`Windows Phone 平台上的方法。
+`ViewCellRenderer`類別會公開特定平台的方法，以呈現自訂儲存格。 這是`GetCell`iOS 平台上的方法`GetCellCore`Android 平台上的方法和`GetTemplate`UWP 上的方法。
 
 每個自訂轉譯器類別以裝飾`ExportRenderer`xamarin.forms 註冊轉譯器的屬性。 屬性會採用兩個參數 – Xamarin.Forms 儲存格所呈現的型別名稱和自訂轉譯器的型別名稱。 `assembly`屬性的前置詞指定的屬性會套用至整個組件。
 
@@ -519,15 +519,15 @@ internal class NativeAndroidCell : LinearLayout, INativeElementView
 
 此配置命名為指定的兩個`TextView`控制項和`ImageView`控制項用來顯示儲存格的內容。 這兩個`TextView`控制項的垂直方向內`LinearLayout`控制項所內含的所有控制項`RelativeLayout`。
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>建立自訂轉譯器，在 Windows Phone 和 UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>在 UWP 上建立的自訂轉譯器
 
-下列程式碼範例顯示 Windows Phone 和 UWP 的自訂轉譯器：
+下列程式碼範例示範 UWP 的自訂轉譯器：
 
 ```csharp
-[assembly: ExportRenderer(typeof(NativeCell), typeof(NativeWinPhoneCellRenderer))]
-namespace CustomRenderer.WinPhone81
+[assembly: ExportRenderer(typeof(NativeCell), typeof(NativeUWPCellRenderer))]
+namespace CustomRenderer.UWP
 {
-    public class NativeWinPhoneCellRenderer : ViewCellRenderer
+    public class NativeUWPCellRenderer : ViewCellRenderer
     {
         public override Windows.UI.Xaml.DataTemplate GetTemplate(Cell cell)
         {

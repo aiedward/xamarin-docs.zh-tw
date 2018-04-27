@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: c02929c49d9757f0814208d5f4fce7d258a689bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5bca36189100942e21d1d750dd156dab0cf45fc4
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>傳遞做為附加屬性的效果參數
 
@@ -345,14 +345,14 @@ public class LabelShadowEffect : PlatformEffect
 
 `OnElementPropertyChanged`方法會更新 radius、 色彩或陰影的位移，提供適當`ShadowEffect`附加的屬性值已變更。 變更的屬性應該一律會進行檢查，為此覆寫可呼叫多次。
 
-### <a name="windows-phone--universal-windows-platform-projects"></a>Windows Phone 和通用 Windows 平台專案
+### <a name="universal-windows-platform-project"></a>通用 Windows 平台專案
 
-下列程式碼範例示範`LabelShadowEffect`實作適用於 Windows Phone 和通用 Windows 平台 (UWP) 專案：
+下列程式碼範例示範`LabelShadowEffect`實作通用 Windows 平台 (UWP) 專案：
 
 ```csharp
 [assembly: ResolutionGroupName ("MyCompany")]
 [assembly: ExportEffect (typeof(LabelShadowEffect), "LabelShadowEffect")]
-namespace EffectsDemo.WinPhone81
+namespace EffectsDemo.UWP
 {
     public class LabelShadowEffect : PlatformEffect
     {
@@ -401,7 +401,7 @@ namespace EffectsDemo.WinPhone81
 }
 ```
 
-Windows 執行階段和通用 Windows 平台不提供陰影效果，因此`LabelShadowEffect`實作這兩個平台上的會模擬一個藉由新增第二個位移[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)背後的主要`Label`. `OnAttached`方法會建立新`Label`並設定一些版面配置屬性上`Label`。 然後它會呼叫方法，擷取附加的屬性值使用`ShadowEffect`getter，並藉由設定建立陰影[ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/)， [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/)，和[ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/)屬性以控制色彩和位置`Label`。 `shadowLabel`則插入位移背後主要`Label`。 這項功能會包裝在`try` / `catch`封鎖以防效果附加至控制項沒有`Control.Layer`屬性。 沒有實作由提供`OnDetached`方法因為不會清除的必要。
+通用 Windows 平台不提供陰影效果，因此`LabelShadowEffect`實作這兩個平台上的會模擬一個藉由新增第二個位移[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)背後主要`Label`。 `OnAttached`方法會建立新`Label`並設定一些版面配置屬性上`Label`。 然後它會呼叫方法，擷取附加的屬性值使用`ShadowEffect`getter，並藉由設定建立陰影[ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/)， [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/)，和[ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/)屬性以控制色彩和位置`Label`。 `shadowLabel`則插入位移背後主要`Label`。 這項功能會包裝在`try` / `catch`封鎖以防效果附加至控制項沒有`Control.Layer`屬性。 沒有實作由提供`OnDetached`方法因為不會清除的必要。
 
 #### <a name="responding-to-property-changes"></a>屬性變更回應
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 9d1b10925f1455c303950eff342764b1fbc9275d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b06b17ce8f19f7f7cabe35c23de5b61db8f71dbe
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="device-orientation"></a>裝置方向
 
@@ -28,9 +28,6 @@ ms.lasthandoff: 04/04/2018
 ## <a name="controlling-orientation"></a>控制方向
 
 使用 Xamarin.Forms 時，控制裝置方向的支援的方法時使用的設定，針對每個個別的專案。
-
-> [!NOTE]
-> Xamarin.Forms 沒有錯誤會阻止的 1.5.0 為準，轉譯器為基礎的自訂會試圖控制失敗的方向。 請參閱[討論](https://forums.xamarin.com/discussion/46653/forcing-landscape-for-a-single-page-in-ios#latest)如需詳細資訊的 Xamarin 論壇中討論。
 
 ### <a name="ios"></a>iOS
 
@@ -57,7 +54,6 @@ ms.lasthandoff: 04/04/2018
 ![在 Visual Studio for Mac 支援裝置方向](device-orientation-images/orientation-xam-source.png)
 
 -----
-
 
 ### <a name="android"></a>Android
 
@@ -87,33 +83,15 @@ Xamarin.Android 支援數個選項的指定方向：
 - **ReversePortrait** &ndash;會導致應用程式使用直式方向，面對相反的方向，從平常久時，才會出現 「 顛倒。 」
 - **FullSensor** &ndash;導致應用程式依賴感應器資料，以選取正確的方向 （從可能的 4)。
 - **FullUser** &ndash;會導致應用程式使用使用者的方向偏好設定。 如果啟用自動旋轉，則可以使用所有 4 個方向。
-- **UserLandscape** &ndash; _\[不支援\]_會導致應用程式使用，除非使用者具有自動旋轉啟用，在此情況下，它會使用若要判斷方向的感應器。 此選項將會中斷編譯。
-- **UserPortrait** &ndash; _\[不支援\]_除非使用者具有自動旋轉啟用，它會使用在此情況下，會導致應用程式使用直式方向若要判斷方向的感應器。 此選項將會中斷編譯。
-- **鎖定** &ndash; _\[不支援\]_會導致應用程式使用螢幕方向，不論其所處啟動，而不會變更裝置回應的實體方向。 此選項將會中斷編譯。
+- **UserLandscape** &ndash; _\[不支援\]_ 會導致應用程式使用，除非使用者具有自動旋轉啟用，在此情況下，它會使用若要判斷方向的感應器。 此選項將會中斷編譯。
+- **UserPortrait** &ndash; _\[不支援\]_ 除非使用者具有自動旋轉啟用，它會使用在此情況下，會導致應用程式使用直式方向若要判斷方向的感應器。 此選項將會中斷編譯。
+- **鎖定** &ndash; _\[不支援\]_ 會導致應用程式使用螢幕方向，不論其所處啟動，而不會變更裝置回應的實體方向。 此選項將會中斷編譯。
 
 請注意，原生 Android Api 提供許多控制管理方向的方式，包括明確有所出入的使用者的選項來表示喜好設定。
 
-### <a name="windows-phone"></a>Windows Phone
+### <a name="universal-windows-platform"></a>通用 Windows 平台
 
-在 Windows Phone RT 中設定支援的方向<span class="UIItem">Package.appxmanifest</span>檔案。 開啟資訊清單會顯示組態面板，其中可以選取支援的方向：
-
-![](device-orientation-images/vs-winrt-config.png "Package.appxmanifest Visual 編輯器")
-
-在 Windows Phone 8 (Silverlight)，支援的方向在中的程式碼中設定<span class="UIItem">MainPage.xaml.cs</span>檔案。 在預設專案範本中，設定值，則已經與下列程式碼行：
-
-```csharp
-SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
-```
-
-若要指定在 Windows Phone 上的 [列印方向] 選項，取代程式碼，讓您想要的方向：
-
-```csharp
-SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
-SupportedOrientations = SupportedPageOrientation.Portrait; // portrait only
-SupportedOrientations = SupportedPageOrientation.Landscape; // landscape only
-```
-
-請注意，Windows Phone 支援橫向檢視中 （如同縱向） 左到右及從右至左的方向。 您不可以指定用。
+在通用 Windows 平台 (UWP)，在中設定支援的方向**Package.appxmanifest**檔案。 開啟資訊清單會顯示組態面板，其中可以選取支援的方向。
 
 <a name="Reacting_to_Changes_in_Orientation" />
 

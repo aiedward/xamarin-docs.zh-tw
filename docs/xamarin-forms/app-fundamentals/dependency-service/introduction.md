@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 01953d55a104a70b0451c9b796c732254afb081e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 88821c5315fc338b5195e42ea4b2bc3e648e6ea1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="introduction-to-dependencyservice"></a>DependencyService 簡介
 
@@ -48,53 +48,64 @@ public interface ITextToSpeech {
 
 ### <a name="implementation-per-platform"></a>每個平台的實作
 
-一旦已設計適當的介面，必須實作該介面中每個平台所設定的目標專案。 例如，下列類別會實作`ITextToSpeech`Windows Phone 上的介面：
+一旦已設計適當的介面，必須實作該介面中每個平台所設定的目標專案。 例如，下列類別會實作`ITextToSpeech`在 iOS 上的介面：
 
 ```csharp
-namespace TextToSpeech.WinPhone
+namespace UsingDependencyService.iOS
 {
-  public class TextToSpeechImplementation : ITextToSpeech
-  {
-      public TextToSpeechImplementation() {}
+    public class TextToSpeech_iOS : ITextToSpeech
+    {
+        public void Speak (string text)
+        {
+            var speechSynthesizer = new AVSpeechSynthesizer ();
 
-      public async void Speak(string text)
-      {
-          SpeechSynthesizer synth = new SpeechSynthesizer();
-          await synth.SpeakTextAsync(text);
-      }
-  }
+            var speechUtterance = new AVSpeechUtterance (text) {
+                Rate = AVSpeechUtterance.MaximumSpeechRate/4,
+                Voice = AVSpeechSynthesisVoice.FromLanguage ("en-US"),
+                Volume = 0.5f,
+                PitchMultiplier = 1.0f
+            };
+
+            speechSynthesizer.SpeakUtterance (speechUtterance);
+        }
+    }
 }
 ```
 
-請注意，每個實作必須擁有預設 （無參數） 建構函式為了讓`DependencyService`能夠將它執行個體化。 無參數建構函式不能定義介面。
-
 ### <a name="registration"></a>註冊
 
-每個介面的實作必須與註冊`DependencyService`與中繼資料屬性。 下列程式碼會註冊 Windows Phone 的實作：
+每個介面的實作必須與註冊`DependencyService`與中繼資料屬性。 下列程式碼會註冊適用於 iOS 的實作：
 
 ```csharp
-using TextToSpeech.WinPhone;
-
-[assembly: Xamarin.Forms.Dependency (typeof (TextToSpeechImplementation))]
-namespace TextToSpeech.WinPhone {
+[assembly: Dependency (typeof (TextToSpeech_iOS))]
+namespace UsingDependencyService.iOS
+{
   ...
+}
 ```
 
 融會貫通，平台特定實作看起來像這樣：
 
 ```csharp
-[assembly: Xamarin.Forms.Dependency (typeof (TextToSpeechImplementation))]
-namespace TextToSpeech.WinPhone {
-  public class TextToSpeechImplementation : ITextToSpeech
-  {
-      public TextToSpeechImplementation() {}
+[assembly: Dependency (typeof (TextToSpeech_iOS))]
+namespace UsingDependencyService.iOS
+{
+    public class TextToSpeech_iOS : ITextToSpeech
+    {
+        public void Speak (string text)
+        {
+            var speechSynthesizer = new AVSpeechSynthesizer ();
 
-      public async void Speak(string text)
-      {
-          SpeechSynthesizer synth = new SpeechSynthesizer();
-          await synth.SpeakTextAsync(text);
-      }
-  }
+            var speechUtterance = new AVSpeechUtterance (text) {
+                Rate = AVSpeechUtterance.MaximumSpeechRate/4,
+                Voice = AVSpeechSynthesisVoice.FromLanguage ("en-US"),
+                Volume = 0.5f,
+                PitchMultiplier = 1.0f
+            };
+
+            speechSynthesizer.SpeakUtterance (speechUtterance);
+        }
+    }
 }
 ```
 
@@ -102,7 +113,7 @@ namespace TextToSpeech.WinPhone {
 
 #### <a name="universal-windows-platform-net-native-compilation"></a>通用 Windows 平台.NET 原生編譯
 
-使用.NET Native 編譯選項的 UWP 專案應遵循[稍有不同的組態](~/xamarin-forms/platform/windows/installation/universal.md#target-invocation-exception)初始化 Xamarin.Forms 時。 .NET 原生編譯也需要稍微不同的註冊相依性服務。
+使用.NET Native 編譯選項的 UWP 專案應遵循[稍有不同的組態](~/xamarin-forms/platform/windows/installation/index.md#target-invocation-exception)初始化 Xamarin.Forms 時。 .NET 原生編譯也需要稍微不同的註冊相依性服務。
 
 在**App.xaml.cs**檔案中，手動註冊每個定義在 UWP 專案中使用的相依性服務`Register<T>`方法，如下所示：
 

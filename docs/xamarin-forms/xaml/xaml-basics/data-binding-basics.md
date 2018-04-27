@@ -7,11 +7,11 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 2aa6fd2f54c09921621a12af9401a6f84ae37ffa
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4e3e090d826aa46d503f8c612250fd5122bc703e
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部分。 資料繫結的基本概念
 
@@ -277,7 +277,8 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <ListView ItemsSource="{x:Static local:NamedColor.All}">
+    <ListView ItemsSource="{x:Static local:NamedColor.All}"
+              RowHeight="{StaticResource rowHeight}">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>

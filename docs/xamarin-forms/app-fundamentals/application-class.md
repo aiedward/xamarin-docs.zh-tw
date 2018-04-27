@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 1e1039f513534885dffe9fef348d567243651e22
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 5c9eed8f48a40bc7feaadd0c644610f691713e9b
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="app-class"></a>應用程式類別
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 04/06/2018
 在您選擇根據哪一個範本，`App`類別可定義於兩種方式之一：
 
 * **C#**，或
-* **XAML & C#**
+* **XAML 和 C#**
 
 若要建立**應用程式**類別使用 XAML，預設值**應用程式**類別都必須取代 XAML**應用程式**類別和相關聯的程式碼後置，如下列程式碼範例所示：
 
@@ -198,70 +198,9 @@ public class MainActivity :
 > 沒有在較新[ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md)基底類別，可用來更妥善支援 Android 材料設計。
 > 這會在未來，成為預設 Android 範本，但是您可以依照[這些指示](~/xamarin-forms/platform/android/appcompat.md)更新現有的 Android 應用程式。
 
-
-### <a name="windows-phone-project"></a>Windows Phone 專案
-
-Windows Phone （以 Silverlight 為基礎） 專案中的主頁面應該繼承自`FormsApplicationPage`。 這表示 XAML 和 C# 的`MainPage`參考`FormsApplicationPage`類別所示。
-
-XAML 會使用自訂的命名空間，讓根項目會反映`FormsApplicationPage`類別：
-
-```xaml
-<winPhone:FormsApplicationPage
-   ...
-   xmlns:winPhone="clr-namespace:Xamarin.Forms.Platform.WinPhone;assembly=Xamarin.Forms.Platform.WP8"
-    ...>
-</winPhone:FormsApplicationPage>
-```
-
-C# 繼承自`FormsApplicationPage`類別，並呼叫`LoadApplication`來建立執行個體的程式 Xamarin.Forms `App`。 請注意，它是很好的作法，明確地使用應用程式命名空間來限定`App`因為 Windows Phone 應用程式也有自己`App`Xamarin.Forms 無關的類別。
-
-```csharp
-public partial class MainPage :
-    global::Xamarin.Forms.Platform.WinPhone.FormsApplicationPage // superclass new in 1.3
-{
-    public MainPage()
-    {
-        InitializeComponent();
-        SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
-
-        global::Xamarin.Forms.Forms.Init();
-        LoadApplication(new YOUR_APP_NAMESPACE.App()); // new in 1.3, use the correct namespace
-    }
- }
-```
-
-### <a name="windows-81-project"></a>Windows 8.1 專案
-
-在主頁面[（WinRT 型） 的 Windows 8.1](~/xamarin-forms/platform/windows/installation/tablet.md)專案現在應該繼承自`WindowsPage`。 這表示適用於 XAML`MainPage`參考`WindowsPage`類別所示：
-
-XAML 會使用自訂的命名空間，讓根項目會反映`FormsApplicationPage`類別：
-
-```xaml
-<forms:WindowsPage
-   ...
-   xmlns:forms="using:Xamarin.Forms.Platform.WinRT"
-   ...>
-</forms:WindowsPage>
-```
-
-C# 程式碼後置的建構必須呼叫`LoadApplication`來建立執行個體的程式 Xamarin.Forms `App`。 請注意，它是很好的作法，明確地使用應用程式命名空間來限定`App`因為 UWP 應用程式也有自己`App`Xamarin.Forms 無關的類別。
-
-```csharp
-public partial class MainPage
-{
-    public MainPage()
-    {
-        InitializeComponent();
-        LoadApplication(new YOUR_APP_NAMESPACE.App());
-    }
- }
-```
-
-請注意，`Forms.Init()`必須呼叫**App.xaml.cs**大約第 65。
-
 ### <a name="universal-windows-project-uwp-for-windows-10"></a>適用於 Windows 10 的通用 Windows 專案 (UWP)
 
-[通用 Windows 專案](~/xamarin-forms/platform/windows/installation/universal.md)Xamarin.Forms 中的支援目前為預覽狀態。
+請參閱[安裝 Windows 專案](~/xamarin-forms/platform/windows/installation/index.md)UWP 支援 Xamarin.Forms 中的相關資訊。
 
 UWP 專案中的主頁面應該繼承自`WindowsPage`。 這表示 XAML 和 C# 的`MainPage`參考`FormsApplicationPage`類別所示。
 

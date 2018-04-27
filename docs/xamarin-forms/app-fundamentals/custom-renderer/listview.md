@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 9d822444196479dabd19f43f45f289117f64c05e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 964e2302c290930ec62752e51e7de388cb42ee32
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-a-listview"></a>自訂清單檢視
 
 _Xamarin.Forms ListView 是以垂直清單顯示的資料集合的檢視。本文示範如何建立自訂轉譯器會封裝特定平台清單控制項和原生的儲存格的版面配置，允許更充分掌控原生清單控制效能。_
 
-Xamarin.Forms 中的每個檢視有隨附的轉譯器，每個平台建立原生控制項的執行個體。 當[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) Xamarin.Forms 應用程式，在 iOS 中呈現`ListViewRenderer`類別具現化，這又會具現化原生`UITableView`控制項。 Android 平台上，`ListViewRenderer`類別具現化的原生`ListView`控制項。 在 Windows Phone 和通用 Windows 平台 (UWP)，`ListViewRenderer`類別具現化的原生`ListView`控制項。 如需有關轉譯器，而且 Xamarin.Forms 控制項對應至原生控制項類別的詳細資訊，請參閱[轉譯器的基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
+Xamarin.Forms 中的每個檢視有隨附的轉譯器，每個平台建立原生控制項的執行個體。 當[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) Xamarin.Forms 應用程式，在 iOS 中呈現`ListViewRenderer`類別具現化，這又會具現化原生`UITableView`控制項。 Android 平台上，`ListViewRenderer`類別具現化的原生`ListView`控制項。 在通用 Windows 平台 (UWP)，`ListViewRenderer`類別具現化的原生`ListView`控制項。 如需有關轉譯器，而且 Xamarin.Forms 控制項對應至原生控制項類別的詳細資訊，請參閱[轉譯器的基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
 下圖說明之間的關聯性[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)控制項和對應的原生控制項實作它：
 
@@ -467,15 +467,15 @@ protected override void OnElementPropertyChanged (object sender, System.Componen
 
 方法會建立的新執行個體`NativeAndroidListViewAdapter`類別提供資料給原生`ListView`控制項，但前提是可繫結`NativeListView.Items`屬性已變更。
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>建立自訂轉譯器，在 Windows Phone 和 UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>在 UWP 上建立的自訂轉譯器
 
-下列程式碼範例顯示 Windows Phone 和 UWP 的自訂轉譯器：
+下列程式碼範例示範 UWP 的自訂轉譯器：
 
 ```csharp
-[assembly: ExportRenderer (typeof(NativeListView), typeof(NativeWinPhoneListViewRenderer))]
-namespace CustomRenderer.WinPhone81
+[assembly: ExportRenderer(typeof(NativeListView), typeof(NativeUWPListViewRenderer))]
+namespace CustomRenderer.UWP
 {
-    public class NativeWinPhoneListViewRenderer : ListViewRenderer
+    public class NativeUWPListViewRenderer : ListViewRenderer
     {
         ListView listView;
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: b8392dad578f94380e90da24cbf44120d38f754d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 09cd92b436be97f5490ac74890e4b0723bcd5701
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="checking-device-orientation"></a>檢查裝置方向
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 04/04/2018
 - **[建立介面](#Creating_the_Interface)** &ndash;了解如何在介面中的共用程式碼建立。
 - **[iOS 實作](#iOS_Implementation)** &ndash;了解如何在原生 iOS 程式碼中實作介面。
 - **[Android 實作](#Android_Implementation)** &ndash;了解如何在原生程式碼中實作的介面，適用於 Android。
-- **[Windows 實作](#WindowsImplementation)** &ndash;深入了解如何在原生程式碼中實作的介面，適用於 Windows Phone 和通用 Windows 平台 (UWP)。
+- **[UWP 實作](#WindowsImplementation)** &ndash;深入了解如何在原生程式碼中的通用 Windows 平台 (UWP) 上實作介面。
 - **[在共用程式碼中實作](#Implementing_in_Shared_Code)** &ndash;了解如何使用`DependencyService`來呼叫原生實作共用的程式碼。
 
 應用程式使用`DependencyService`會有下列結構：
@@ -145,9 +145,9 @@ namespace DependencyServiceSample.Droid {
 
 <a name="WindowsImplementation" />
 
-## <a name="windows-phone-and-universal-windows-platform-implementation"></a>Windows Phone 和通用 Windows 平台實作
+## <a name="universal-windows-platform-implementation"></a>通用 Windows 平台實作
 
-下列程式碼會實作`IDeviceOrientation`Windows Phone 和通用 Windows 平台上的介面：
+下列程式碼會實作`IDeviceOrientation`通用 Windows 平台上的介面：
 
 ```csharp
 namespace DependencyServiceSample.WindowsPhone

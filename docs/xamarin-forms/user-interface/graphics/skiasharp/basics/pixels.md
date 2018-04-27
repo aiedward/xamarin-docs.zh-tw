@@ -7,11 +7,11 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: e01d3e228a0684865fb09dd7a4cbb0e2f0b49125
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 95f782fd4670782217d8ce4bc055341747a71170
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>像素與裝置無關的單位
 
@@ -102,7 +102,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 如您所見，`CanvasSize`屬性`SKCanvasView`和`Size`屬性`SKImageInfo`值都是一致 reporting 像素維度中。 `Height`和`Width`屬性`SKCanvasView`Xamarin.Forms 屬性和報表平台所定義的裝置獨立單位檢視的大小。
 
-在左邊的 iOS 7 模擬器具備 2 像素為單位，每個裝置獨立單位、 Android Nexus 5 中央具有 3 像素為單位，每個單位，且右邊 Nokia Lumia 925 2.25 像素為單位，每個單位。 為什麼簡單 circle 關於相同大小的 iPhone 上顯示先前看起來，Windows phone，但較小的 Android 手機上。
+在左邊的 iOS 7 模擬器 2 像素為單位，每個裝置獨立單位，Android Nexus 5 中央 3 像素為單位，每個單位。 這就是為什麼簡單的圓形稍早所示不同平台上有不同的大小。
 
 如果您想要完全以裝置無關的單位運作，您可以藉由設定`IgnorePixelScaling`屬性`SKCanvasView`至`true`。 不過，您可能會不喜歡結果。 SkiaSharp 呈現較小裝置在介面上，以像素大小等於以裝置獨立單位的大小檢視的圖形。 （例如，SkiaSharp 會 Nexus 5 上使用顯示介面的 360 x 512 像素為單位）。它接著會依據該映像的大小，造成明顯的點陣圖 jaggies。
 
@@ -164,4 +164,4 @@ canvas.DrawOval(rect, paint);
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
