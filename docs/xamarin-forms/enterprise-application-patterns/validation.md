@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 7b1eb1289688b6152e4e854ca0f51d66932c91a1
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 80c78d359761c4383f9abf9338a995e3cc486968
+ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="validation"></a>驗證
 
@@ -189,7 +189,7 @@ public bool Validate()
 
 ### <a name="triggering-validation-when-properties-change"></a>當屬性變更時觸發驗證
 
-每當繫結的屬性變更時，也會自動觸發驗證。 例如，當雙向繫結中`LoginView`設定`UserName`或`Password`屬性，驗證就會觸發。 下列程式碼範例將示範如何發生這種情況：
+每當繫結的屬性變更時，也會觸發驗證。 例如，當雙向繫結中`LoginView`設定`UserName`或`Password`屬性，驗證就會觸發。 下列程式碼範例將示範如何發生這種情況：
 
 ```xaml
 <Entry Text="{Binding UserName.Value, Mode=TwoWay}">  

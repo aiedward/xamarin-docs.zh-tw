@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2018
-ms.openlocfilehash: 51aad1643709a96c56ccad8187a53f47a65a9dac
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 2e2bbf12cd7b4abab4609349b549fde1bcea09e8
+ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="wpf-platform-setup"></a>WPF 平台安裝程式
 
@@ -27,7 +27,7 @@ Xamarin.Forms 現在提供預覽支援的 Windows Presentation Foundation (WPF)�
 
 1. 在 Visual Studio 2017，以滑鼠右鍵按一下方案名稱在**方案總管 中**選擇**新增 > 新的專案...**.
 
-2. 在**新專案**視窗中的，在左側選取**Visual C#**和**的傳統 Windows 桌面**。 在專案類型清單中選擇**WPF 應用程式 (.NET Framework)**。 
+2. 在**新專案**視窗中的，在左側選取**Visual C#** 和**的傳統 Windows 桌面**。 在專案類型清單中選擇**WPF 應用程式 (.NET Framework)**。 
 
 3. 輸入的名稱與專案**WPF**擴充功能，例如**BoxViewClock.WPF**。 按一下**瀏覽**按鈕，選取**BoxViewClock**資料夾，然後按下**選取資料夾**。 這樣就會加入 WPF 專案與方案中的其他專案相同的目錄中。
 
@@ -57,7 +57,7 @@ Xamarin.Forms 現在提供預覽支援的 Windows Presentation Foundation (WPF)�
     xmlns:wpf="clr-namespace:Xamarin.Forms.Platform.WPF;assembly=Xamarin.Forms.Platform.WPF"
     ```
 
-    現在變更`Window`標記至`wpf:FormsApplcationPage`。 變更`Title`設為應用程式的名稱，例如**BoxViewClock**。 已完成的 XAML 檔案看起來應該像這樣：
+    現在變更`Window`標記至`wpf:FormsApplicationPage`。 變更`Title`設為應用程式的名稱，例如**BoxViewClock**。 已完成的 XAML 檔案看起來應該像這樣：
 
     ```xaml
     <wpf:FormsApplicationPage x:Class="BoxViewClock.WPF.MainWindow"

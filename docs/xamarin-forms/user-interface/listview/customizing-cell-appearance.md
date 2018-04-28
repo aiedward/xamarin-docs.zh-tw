@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 74f65021c23515e78e630f907a89ffde74de4da4
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 37ecc76d9774b3f375af92f2a00c6c687358f065
+ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="cell-appearance"></a>資料格的外觀
 
@@ -70,7 +70,7 @@ TextCells 轉譯為原生控制項在執行階段，因此效能是很好相較�
 <a name="customcells" />
 
 ## <a name="custom-cells"></a>自訂儲存格
-當內建資料格不提供必要的配置時，自訂資料格會實作必要的配置。 比方說，您可能要呈現的資料格具有兩個具有相同的權重的標籤。 A`LabelCell`會不足因為`LabelCell`具有較小的一個標籤。 大多數的儲存格自訂新增額外的唯讀資料 （例如額外的標籤、 影像或其他顯示資訊）。
+當內建資料格不提供必要的配置時，自訂資料格會實作必要的配置。 比方說，您可能要呈現的資料格具有兩個具有相同的權重的標籤。 A`TextCell`會不足因為`TextCell`具有較小的一個標籤。 大多數的儲存格自訂新增額外的唯讀資料 （例如額外的標籤、 影像或其他顯示資訊）。
 
 所有自訂儲存格必須衍生自[ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)，類型之所有內建的儲存格使用相同的基底類別。
 
