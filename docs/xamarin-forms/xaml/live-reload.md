@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 04/23/2018
-ms.openlocfilehash: 11e876207285689b230bb2fada3a4c836443e360
-ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
+ms.openlocfilehash: bfb53af420b64fb9af994d3fb19293406d3acd7b
+ms.sourcegitcommit: 180a8411d912de40545f9624e2127a66ee89e7b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="xamarin-live-reload"></a>Xamarin 即時重新載入
 
@@ -31,7 +31,7 @@ Xamarin 即時重新載入可讓您**變更 XAML 看到其反映即時，而不�
 * [Xamarin.Forms 3.0.354232-pre3](https://www.nuget.org/packages/Xamarin.Forms/3.0.0.354232-pre3)或更新版本。
 
 ## <a name="getting-started"></a>快速入門
-### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1.安裝 Xamarin 即時重新載入，從 Visual Studio Marketplace。
+### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1.安裝 Xamarin 即時重新載入，從 Visual Studio Marketplace
 
 透過 Visual Studio Marketplace 散發 Xamarin 即時重新載入。 若要安裝擴充功能，請造訪[Xamarin 即時重新載入頁面，在 Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Xamarin.XamarinLiveReload)網站，並按一下**下載**。
 
@@ -39,9 +39,9 @@ Xamarin 即時重新載入可讓您**變更 XAML 看到其反映即時，而不�
 
 ![Visual Studio 安裝程式 Xamarin 即時重新載入確認](images/LiveReloadVSIXInstall.png)
 
-> 或者，您可以搜尋中**線上**索引標籤中**擴充功能和更新**在 Visual Studio 內的對話方塊。
+或者，您可以搜尋中**線上**索引標籤中**擴充功能和更新**在 Visual Studio 內的對話方塊。
 
-### <a name="2-configure-your-app-to-use-live-reload"></a>2.設定應用程式以使用即時重新載入。
+### <a name="2-configure-your-app-to-use-live-reload"></a>2.設定應用程式以使用即時重新載入
 
 即時重新載入現有的行動裝置應用程式可新增三個步驟：
 
@@ -66,7 +66,7 @@ public partial class App : Application
 }
 ```
 
-### <a name="3-start-live-reloading"></a>3.啟動即時重新載入。
+### <a name="3-start-live-reloading"></a>3.啟動即時重新載入
 
 編譯及部署您的應用程式。 已部署應用程式之後，開啟 XAML 檔案，進行一些變更，然後儲存檔案。 部署目標來重新部署您的變更。
 
@@ -110,18 +110,13 @@ public partial class App : Application
 * 只適用於.NET 標準程式庫。
 * 不支援 CSS 樣式表。
 * 除非使用 MVVM UI 狀態可能無法維護之間重新部署。
-
-## <a name="live-reload-server"></a>即時重新載入伺服器
-
-在案例中從執行中應用程式連接到您的電腦 (表示使用`localhost`或`127.0.0.1`中**工具 > 選項 > Xamarin > 即時重新載入**) 無法 （也就是防火牆，不同的網路）您可以將遠端伺服器設定相反地，IDE 和應用程式將以連現到。
-
-即時重新載入使用標準[MQTT 通訊協定](http://mqtt.org/)來交換訊息，並因此可以與[協力廠商伺服器](https://github.com/mqtt/mqtt.github.io/wiki/servers)。 即使有[公用伺服器](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers)(也稱為*broker*) 可用，您可以使用。 即時重新載入經過測試可與`broker.hivemq.com`和`iot.eclipse.org`主機名稱，以及所提供的服務[www.cloudmqtt.com](https://www.cloudmqtt.com)和[www.cloudamqp.com](https://www.cloudamqp.com)。您也可以如部署在雲端中，您自己 MQTT 伺服器[在 Azure 上的 HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud)或[上 AWS 兔子 MQ](http://www.rabbitmq.com/ec2.html)。 
-
-您可以設定任何連接埠，但通常會使用預設 1883年連接埠使用遠端伺服器。 即時重新載入訊息使用強式端對端 AES 對稱式加密，因此安全地連線至遠端伺服器。 根據預設，加密金鑰和初始化向量 (IV) 會重新產生每個 Visual Studio 工作階段上。
+* 重新載入整個應用程式的資源 (也就是**App.xaml**或共用資源字典)，就會重設應用程式瀏覽。
 
 ## <a name="troubleshooting"></a>疑難排解
 
-當建置應用程式，從資訊**工具 > 選項 > Xamarin > 即時重新載入**（主機名稱、 連接埠和加密金鑰） 會因此內嵌在應用程式中，當`LiveReload.Init();`沒有配對或組態執行是需要連接才會成功。
+### <a name="app-doesnt-connect"></a>應用程式並不會連接
+
+當建置應用程式，從資訊**工具 > 選項 > Xamarin > 即時重新載入**（主機名稱、 連接埠和加密金鑰） 會因此內嵌在應用程式中，當`LiveReload.Init()`沒有配對或組態執行是需要連接才會成功。
 
 非標準網路問題 （防火牆，在不同的網路上的裝置），應用程式可能無法順利連線 IDE 的主要原因是因為其設定與 Visual Studio 中的一個。 如果此情形：
 
@@ -131,6 +126,13 @@ public partial class App : Application
 
 這些情況下會建置並重新部署應用程式解決。
 
+### <a name="uninstalling-preview-1"></a>解除安裝 Preview 1
+
+如果您有較舊的預覽，並解除安裝的問題，請遵循下列步驟：
+
+1. 刪除資料夾**C:\Program Files (x86) \Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\Extensions\Xamarin\LiveReload** (注意： 您已安裝的版本，以取代"Enterprise"和"Preview"與"2017 「 如果您安裝到穩定 VS）
+2. 開啟**開發人員命令提示字元**該 Visual Studio 和執行`devenv /updateconfiguration`。 
+
 ## <a name="tips--tricks"></a>秘訣和訣竅
 
 * 只要即時重新載入設定不會變更 (包括加密金鑰，例如，如果您關閉**自動產生加密金鑰**) 和您建立從同一部電腦，您不需要建置和部署應用程式之後部署，除非您變更程式碼或相依性。 您可以只再次啟動先前部署的應用程式和它的最後一個會連接使用的主機。
@@ -138,3 +140,21 @@ public partial class App : Application
 * 會有多少裝置，您可以連接到相同的 Visual Studio 工作階段上沒有限制。 您可以部署，並視需要，請參閱即時 reloading 上全部都在相同的時間，最多的裝置/模擬器中啟動應用程式。
 
 * 即時重新載入只會重新載入您的應用程式的使用者介面部分，但也不會*不*重新建立您的網頁，都不它取代您檢視模型 （或繫結內容）。 這表示*整個*應用程式狀態一定會保留在重新載入，包括您插入的相依性。
+
+## <a name="live-reload-server"></a>即時重新載入伺服器
+
+在案例中從執行中應用程式連接到您的電腦 (表示使用`localhost`或`127.0.0.1`中**工具 > 選項 > Xamarin > 即時重新載入**) 無法 （也就是防火牆，不同的網路）您可以將遠端伺服器設定相反地，IDE 和應用程式將以連現到。
+
+即時重新載入使用標準[MQTT 通訊協定](http://mqtt.org/)來交換訊息，並因此可以與[協力廠商伺服器](https://github.com/mqtt/mqtt.github.io/wiki/servers)。 即使有[公用伺服器](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers)(也稱為*broker*) 可用，您可以使用。 即時重新載入經過測試可與`broker.hivemq.com`和`iot.eclipse.org`主機名稱，以及所提供的服務[www.cloudmqtt.com](https://www.cloudmqtt.com)和[www.cloudamqp.com](https://www.cloudamqp.com)。您也可以如部署在雲端中，您自己 MQTT 伺服器[在 Azure 上的 HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud)或[上 AWS 兔子 MQ](http://www.rabbitmq.com/ec2.html)。 
+
+您可以設定任何連接埠，但通常會使用預設 1883年連接埠使用遠端伺服器。 即時重新載入訊息使用強式端對端 AES 對稱式加密，因此安全地連線至遠端伺服器。 根據預設，加密金鑰和初始化向量 (IV) 會重新產生每個 Visual Studio 工作階段上。
+
+可能的最簡單方式是安裝[mosquitto](https://mosquitto.org)空白 Ubuntu VM 在 Azure 中的伺服器：
+
+1. 在 Azure 入口網站中建立新的 Ubuntu Server VM
+2. 針對 1883 （預設 MQTT 連接埠） 在 [網路] 索引標籤中加入新的輸入連接埠規則
+3. 開啟[雲端殼層](https://docs.microsoft.com/azure/cloud-shell/overview)（撞模式）
+4. 輸入`ssh [USERNAME]@[PUBLIC_IP]`使用您選擇 1 中的使用者名稱) 與 VM 的 [概觀] 頁面中顯示的公用 IP
+5. 執行`sudo apt-get install mosquitto`，輸入您在 1 中選擇的密碼)
+
+現在您可以使用該 IP 連接到您自己 MQTT 伺服器。
