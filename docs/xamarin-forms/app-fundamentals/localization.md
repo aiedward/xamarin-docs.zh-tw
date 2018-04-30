@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 7cae53187c9bc35d55f34dca664e28280cdab062
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f179fcfc26dd73bf1655c786078dce1f6a02b3a9
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="localization"></a>當地語系化
 
@@ -30,7 +30,7 @@ _Xamarin.Forms 應用程式可以使用.NET 資源檔來當地語系化。_
 
 #### <a name="shared-projects-are-not-recommended"></a>不建議使用共用的專案
 
-TodoLocalized 範例包括[共用專案示範](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized/SharedProject/)不過由於建置系統的限制資源檔不會收到**.designer.cs**產生的檔案而中斷存取的能力翻譯字串[強型別程式碼中](~/xamarin-forms/app-fundamentals/localization.md)。
+TodoLocalized 範例包括[共用專案示範](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized/SharedProject/)不過由於建置系統的限制資源檔不會收到 **.designer.cs**產生的檔案而中斷存取的能力翻譯字串[強型別程式碼中](~/xamarin-forms/app-fundamentals/localization.md)。
 
 使用 Xamarin.Forms PCL 範本的專案與本文件其餘內容。
 
@@ -67,7 +67,7 @@ TodoLocalized 範例包括[共用專案示範](https://github.com/xamarin/xamari
 
 ##### <a name="string-visibility"></a>字串的可見性
 
-依預設會產生強類型字串的參考，將予以`internal`組件。 這是因為 RESX 檔案的預設建置工具會產生**.designer.cs**檔案搭配`internal`屬性。
+依預設會產生強類型字串的參考，將予以`internal`組件。 這是因為 RESX 檔案的預設建置工具會產生 **.designer.cs**檔案搭配`internal`屬性。
 
 選取**AppResources.resx**檔案，並顯示**屬性**若要查看此建置工具所在的填補設定。 螢幕擷取畫面所示**自訂工具： ResXFileCodeGenerator**。
 
@@ -150,7 +150,7 @@ TodoLocalized 範例包括[共用專案示範](https://github.com/xamarin/xamari
 
 一般模式將會是使用兩個字母的語言代碼，但有一些範例 （例如中文） 使用不同格式的位置和其他範例 （例如巴西葡萄牙文） 需要四個字元的地區設定識別碼的地方。
 
-這些語言專屬的資源檔案*不*需要**.designer.cs**部分類別，因此可以將它們加入為規則的 XML 檔案，與**建置動作： EmbeddedResource**設定。 這個螢幕擷取畫面會顯示包含特定語言的資源檔的方案：
+這些語言專屬的資源檔案*不*需要 **.designer.cs**部分類別，因此可以將它們加入為規則的 XML 檔案，與**建置動作： EmbeddedResource**設定。 這個螢幕擷取畫面會顯示包含特定語言的資源檔的方案：
 
 ![](localization-images/appresources-langs.png "將語言特定資源檔")
 
@@ -165,7 +165,7 @@ TodoLocalized 範例包括[共用專案示範](https://github.com/xamarin/xamari
 </data>
 ```
 
-**AppResources.ja.resx (Japanese)**
+**AppResources.ja.resx （日文）**
 
 ```xml
 <data name="AddButton" xml:space="preserve">
@@ -174,7 +174,7 @@ TodoLocalized 範例包括[共用專案示範](https://github.com/xamarin/xamari
 </data>
 ```
 
-**AppResources.pt-BR.resx (Brazilian Portuguese)**
+**AppResources.pt BR.resx （巴西葡萄牙文）**
 
 ```xml
 <data name="AddButton" xml:space="preserve">
@@ -201,7 +201,7 @@ myEntry.Placeholder = AppResources.NotesPlaceholder;
 myButton.Text = AppResources.AddButton;
 ```
 
-IOS、 Android 和 Windows 平台轉譯器，為您的使用者介面所預期的除了現在可以將應用程式轉譯成多種語言，因為正在從資源載入文字而非硬式編碼。 以下是顯示在轉譯之前的每個平台上的 UI 螢幕擷取畫面：
+IOS、 Android 和的通用 Windows 平台 (UWP) 會轉譯成您的使用者介面所預期的除了現在可以將應用程式轉譯成多種語言，因為正在從資源載入文字而非硬式編碼。 以下是顯示在轉譯之前的每個平台上的 UI 螢幕擷取畫面：
 
 ![](localization-images/simple-example-english.png "跨平台 Ui 之前轉譯")
 
@@ -274,7 +274,7 @@ public interface ILocalize
 }
 ```
 
-接著，請使用[DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md) Xamarin.Forms 中`App`類別來呼叫的介面，並將我們 RESX 資源的文化特性設定為正確的值。 請注意，我們不需要手動設定此值適用於 Windows Phone 和通用 Windows 平台，因為資源 framework 自動在這些平台上識別選取的語言。
+接著，請使用[DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md) Xamarin.Forms 中`App`類別來呼叫的介面，並將我們 RESX 資源的文化特性設定為正確的值。 請注意，我們不需要手動將此值設定通用 Windows 平台，因為資源 framework 自動在這些平台上識別選取的語言。
 
 ```csharp
 if (Device.RuntimePlatform == Device.iOS || Device.RuntimePlatform == Device.Android)
@@ -326,7 +326,7 @@ public class PlatformCulture
 
 ### <a name="platform-specific-code"></a>平台專屬的程式碼
 
-偵測要顯示哪一個語言的程式碼必須是特定平台，因為 iOS、 Android 和 Windows 平台所有會稍有不同的方式公開此資訊。 程式碼`ILocalize`相依性服務會提供下列每個平台，以及其他特定平台需求，以確保當地語系化的文字正確呈現。
+偵測要顯示哪一個語言的程式碼必須是特定平台，因為 iOS、 Android 和 UWP 所有會稍有不同的方式公開此資訊。 程式碼`ILocalize`相依性服務會提供下列每個平台，以及其他特定平台需求，以確保當地語系化的文字正確呈現。
 
 平台專屬的程式碼也必須處理其中作業系統可讓使用者設定不支援的地區設定識別碼的情況。網路的`CultureInfo`類別。 在這些情況下您必須撰寫自訂程式碼，以偵測到不支援的地區設定，並以最佳的取代。NET 相容的地區設定。
 
@@ -553,48 +553,9 @@ namespace UsingResxLocalization.Android
 > [!NOTE]
 >️**警告：**如果 Android 發行組建中，但不是偵錯時使用的已翻譯的字串，以滑鼠右鍵按一下**Android 專案**選取**選項 > 建置 > Android建置**，並確定**快速組件部署**不的話。 這個選項會導致問題的資源，並不應該使用如果您要測試當地語系化的應用程式。
 
-#### <a name="windows-application-projects"></a>Windows 應用程式專案
+#### <a name="universal-windows-platform"></a>通用 Windows 平台
 
-Windows 8.1 和通用 Windows 平台 (UWP) 專案不需要相依性服務，這些平台自動設定資源的文化特性正確。
-
-可能需要實作 XAML 標記延伸在本文件稍後所述`ILocalize`實作適用於 Windows Phone，如下所示。
-
-##### <a name="windows-phone-80"></a>Windows Phone 8.0
-
-雖然不會用於`App`類別中，以下是 Windows Phone 實作`ILocalize`相依性服務。 將這個類別加入至 Windows Phone 應用程式專案。如果實作稍後所述的 XAML 標記延伸，它就會需要：
-
-```csharp
-[assembly: Dependency(typeof(UsingResxLocalization.WinPhone.Localize))]
-
-namespace UsingResxLocalization.WinPhone
-{
-    public class Localize : UsingResxLocalization.ILocalize
-    {
-        public void SetLocale (CultureInfo ci) { }
-        public System.Globalization.CultureInfo GetCurrentCultureInfo ()
-        {
-            return System.Threading.Thread.CurrentThread.CurrentUICulture;
-        }
-    }
-}
-
-```
-
-要顯示的當地語系化文字必須正確設定 Windows Phone 8.0 專案。
-支援的語言必須專案選項中選取*和* **WMAppManifest.xml**檔案。
-如果沒有更新這些設定將不會載入當地語系化的 RESX 資源。
-
-##### <a name="project-options"></a>專案選項
-
-Windows Phone 專案上按一下滑鼠右鍵，然後選取**屬性**。 在**應用程式**索引標籤的刻度**支援的文化特性**應用程式所支援：
-
-[![](localization-images/winphone-projectproperties-sml.png "專案屬性-支援的文化特性")](localization-images/winphone-projectproperties.png#lightbox "專案屬性-支援的文化特性")
-
-##### <a name="wmappmanifestxml"></a>WMAppManifest.xml
-
-展開 Windows Phone 專案中的 屬性 節點，然後按兩下**WMAppManifest.xml**檔案。 按一下**封裝**索引標籤和刻度的應用程式支援的所有語言。
-
-[![](localization-images/winphone-wmappmanifest-sml.png "WMAppManifest.xml-支援的語言")](localization-images/winphone-wmappmanifest.png#lightbox "WMAppManifest.xml-支援的語言")
+通用 Windows 平台 (UWP) 專案不需要相依性服務。 相反地，此平台會自動設定資源的文化特性正確。
 
 ##### <a name="assemblyinfocs"></a>AssemblyInfo.cs
 
@@ -683,7 +644,7 @@ namespace UsingResxLocalization
 * `"UsingResxLocalization.Resx.AppResources"` 是我們 RESX 資源的資源識別碼。 它包含我們的預設命名空間、 資源檔所在的資料夾和預設 RESX 檔名。
 * `ResourceManager`類別建立使用`IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly)`來判斷目前的組件載入資源，並快取中靜態`ResMgr`欄位。 它會建立為`Lazy`類型，讓其建立延後，直到在第一次使用`ProvideValue`方法。
 * `ci` 若要從原生作業系統取得的使用者所選擇的語言使用相依性服務。
-* `GetString` 是從資源檔擷取實際的已翻譯的字串的方法。 在 Windows Phone 8.1 和通用 Windows 平台上`ci`將傳回 null 因為`ILocalize`不在這些平台上實作介面。 這就相當於呼叫`GetString`只含第一個參數的方法。 相反地，資源架構會自動辨識的地區設定，並從適當的 RESX 檔案擷取的已翻譯的字串。
+* `GetString` 是從資源檔擷取實際的已翻譯的字串的方法。 通用 Windows 平台上`ci`將傳回 null 因為`ILocalize`不在這些平台上實作介面。 這就相當於呼叫`GetString`只含第一個參數的方法。 相反地，資源架構會自動辨識的地區設定，並從適當的 RESX 檔案擷取的已翻譯的字串。
 * 錯誤處理已經以協助偵錯遺失的資源，藉由擲回例外狀況 (在`DEBUG`僅限模式)。
 
 下列 XAML 程式碼片段示範如何使用標記延伸。 有兩個步驟，讓它運作：
@@ -751,11 +712,11 @@ switch (Device.RuntimePlatform)
 
 ### <a name="ios-application-project"></a>iOS 應用程式專案
 
-iOS 會使用稱為當地語系化的專案命名標準或**.lproj**包含影像和字串資源的目錄。 這些目錄可以包含當地語系化的版本的應用程式中使用的映像以及**InfoPlist.strings**可用來當地語系化應用程式名稱的檔案。
+iOS 會使用稱為當地語系化的專案命名標準或 **.lproj**包含影像和字串資源的目錄。 這些目錄可以包含當地語系化的版本的應用程式中使用的映像以及**InfoPlist.strings**可用來當地語系化應用程式名稱的檔案。
 
 #### <a name="images"></a>影像
 
-這個螢幕擷取畫面顯示 iOS 範例應用程式與語言特有**.lproj**目錄。 西班牙文的目錄稱為**es.lproj**，包含當地語系化的版本的預設影像，以及**flag.png**:
+這個螢幕擷取畫面顯示 iOS 範例應用程式與語言特有 **.lproj**目錄。 西班牙文的目錄稱為**es.lproj**，包含當地語系化的版本的預設影像，以及**flag.png**:
 
 ![](localization-images/ios-resources.png "iOS 當地語系化的專案目錄")
 
@@ -809,92 +770,23 @@ Android 遵循不同的配置來儲存使用不同的映像當地語系化**draw
 
 ![](localization-images/android-imageicon.png "Android 的範例應用程式文字和影像當地語系化")
 
-### <a name="windows-phone-80-application-project"></a>Windows Phone 8.0 應用程式專案
+### <a name="universal-windows-platform-application-projects"></a>通用 Windows 平台應用程式專案
 
-Windows Phone 沒有簡單的內建方法的選取特定的當地語系化映像，也不針對當地語系化的應用程式名稱。
-
-#### <a name="images"></a>影像
-
-若要取得這項限制範例提供的建議您如何實作當地語系化映像載入使用[自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)如`Image`控制項。
-
-自訂轉譯器程式碼如下所示-如果來源是`FileImageSource`然後它會擷取檔案名稱，並建立當地語系化的映像使用的路徑`CurrentUICulture`。 有些語言需要特殊處理，以便後援正常運作。在範例中的預設值是在幾個特殊情況下使用其兩個字母的語言程式碼除外：
-
-```csharp
-using System.IO;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.WinPhone;
-
-[assembly: ExportRenderer(typeof(Image), typeof(UsingResxLocalization.WinPhone.LocalizedImageRenderer))]
-namespace UsingResxLocalization.WinPhone
-{
-    public class LocalizedImageRenderer : ImageRenderer
-    {
-        protected override void OnElementChanged(ElementChangedEventArgs<Image> e)
-        {
-            base.OnElementChanged(e);
-
-            if (e.NewElement != null)
-            {
-                var s = e.NewElement.Source as FileImageSource;
-                if (s != null)
-                {
-                    var fileName = s.File;
-                    string ci = System.Threading.Thread.CurrentThread.CurrentUICulture.ToString();
-                    // you might need some custom logic here to support particular cultures and fallbacks
-                    if (ci == "pt-BR") {
-                        // use the complete string 'as is'
-                    } else if (ci == "zh-CN") {
-                         // we could have named the image directories differently,
-                         // but this keeps them consisent with RESX file naming
-                        ci = "zh-Hans";
-                    } else if (ci == "zh-TW" || ci == "zh-HK") {
-                        ci = "zh-Hant";
-                    } else {
-                        // for all others, just use the two-character language code
-                        ci = System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
-                    }
-                    e.NewElement.Source = Path.Combine("Assets/" + ci + "/" + fileName);
-                }
-            }
-        }
-    }
-}
-```
-
-此程式碼的運作方式與當地語系化的映像，如下所示的目錄結構中。 您可以修改程式碼，以符合您特定的當地語系化的需求 （例如處理更特定的地區設定，並繼續之外回映像無法使用時），我們建議：
-
-![](localization-images/winphone-resources.png "WinPhone 當地語系化映像目錄結構")
-
-Windows Phone 現在當地語系化映像。 以下是結果 （在西班牙文和簡體中文） 的螢幕擷取畫面：
-
-![](localization-images/winphone-image-sml.png "WinPhone 範例應用程式文字和影像當地語系化")
-
-#### <a name="app-name"></a>應用程式名稱
-
-請參閱 Microsoft 文件[當地語系化 Windows Phone 8.0 應用程式標題](http://msdn.microsoft.com/library/windows/apps/ff967550(v=vs.105).aspx)。
-
-### <a name="windows-phone-81-and-universal-windows-platform-application-projects"></a>Windows Phone 8.1 和通用 Windows 平台應用程式專案
-
-Windows Phone 8.1 和通用 Windows 平台同時擁有資源基礎結構，可簡化將映像和應用程式名稱的當地語系化。
+通用 Windows 平台擁有資源基礎結構，可簡化將映像和應用程式名稱的當地語系化。
 
 #### <a name="images"></a>影像
 
 可以將它們放在特定資源的資料夾，當地語系化映像，如下列螢幕擷取畫面所示：
 
-![](localization-images/uwp-image-folder-structure.png "WinPhone 8.1 及 UWP 映像當地語系化資料夾結構")
+![](localization-images/uwp-image-folder-structure.png "UWP 映像當地語系化資料夾結構")
 
 在執行階段的 Windows 資源基礎結構會選取適當的映像會根據使用者的地區設定。
-
-#### <a name="app-name"></a>應用程式名稱
-
-請參閱 Microsoft 文件[Windows 8.1 市集應用程式： 當地語系化描述您的應用程式使用者的資訊](https://msdn.microsoft.com/library/windows/apps/hh454044.aspx)和[從應用程式資訊清單載入字串](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323.aspx#loading_strings_from_the_app_manifest.)。
 
 ## <a name="summary"></a>總結
 
 Xamarin.Forms 應用程式可以使用 RESX 檔案和.NET 全球化類別來當地語系化。 除了少量的平台專屬程式碼，來偵測使用者慣用何種語言，大部分的當地語系化工作被集中在一般程式碼。
 
-映像通常會在利用提供在 iOS 和 Android 的多重解析度支援的平台特定方式處理。 Windows Phone 需要一些自訂程式碼，以跨平台便利的方式; 當地語系化映像範例程式碼提供給加入這項功能。
-
+映像通常會在利用提供在 iOS 和 Android 的多重解析度支援的平台特定方式處理。 
 
 ## <a name="related-links"></a>相關連結
 
