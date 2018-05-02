@@ -16,6 +16,7 @@
 #### [第 4 部分：資料繫結的基本概念](xaml/xaml-basics/data-binding-basics.md)
 #### [第 5 部分：從資料繫結至 MVVM](xaml/xaml-basics/data-bindings-to-mvvm.md)
 ### [XAML 編譯](xaml/xamlc.md)
+### [即時重新載入](xaml/live-reload.md)
 ### [XAML 預覽程式](xaml/xaml-previewer.md)
 ### [XAML 命名空間](xaml/namespaces.md)
 ### [XAML 標記延伸](xaml/markup-extensions/index.md)
