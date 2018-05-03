@@ -28,6 +28,7 @@
 #### [範例整合](workbooks/sdk/samples.md)
 ## [.NET 內嵌](dotnet-embedding/index.md)
 ### [快速入門](dotnet-embedding/get-started/index.md)
+#### [安裝](dotnet-embedding/get-started/install/install.md)
 #### [C](dotnet-embedding/get-started/c.md)
 #### [Java](dotnet-embedding/get-started/java/index.md)
 ##### [Android](dotnet-embedding/get-started/java/android.md)
