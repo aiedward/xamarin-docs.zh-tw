@@ -1,27 +1,27 @@
 ---
 title: Xamarin.Forms 簡介
-description: Xamarin.Forms 是一個以原生方式跨平台支援的 UI 工具組抽象概念，可讓開發人員輕鬆地建立可以跨 Android、iOS、Windows 和 Windows Phone 共用的使用者介面。 系統會使用目標平台的原生控制項呈現使用者介面，讓 Xamarin.Forms 應用程式保留每個平台適當的外觀及操作。 本文提供 Xamarin.Forms 的簡介，以及如何使用它開始撰寫應用程式。
+description: Xamarin.Forms 是一個以原生方式跨平台支援的 UI 工具組抽象概念，可讓開發人員輕鬆地建立可以跨 Android、iOS 和通用 Windows 平台共用的使用者介面。 系統會使用目標平台的原生控制項呈現使用者介面，讓 Xamarin.Forms 應用程式保留每個平台適當的外觀及操作。 本文提供 Xamarin.Forms 的簡介，以及如何使用它開始撰寫應用程式。
 ms.prod: xamarin
 ms.assetid: f619595f-3ee7-439b-a1bc-d13e5106e6e9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 6428f1658245ec5ecf47e474bc5ffd5d49663bf2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9f7c9d1b410d9d1d699644148903fdc6cfeec4fd
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Xamarin.Forms 簡介
 
-_Xamarin.Forms 是一個以原生方式跨平台支援的 UI 工具組抽象概念，可讓開發人員輕鬆地建立可以跨 Android、iOS、Windows 和 Windows Phone 共用的使用者介面。系統會使用目標平台的原生控制項呈現使用者介面，讓 Xamarin.Forms 應用程式保留每個平台適當的外觀及操作。本文介紹 Xamarin.Forms，以及如何開始使用它來撰寫應用程式。_
+_Xamarin.Forms 是一個以原生方式跨平台支援的 UI 工具組抽象概念，可讓開發人員輕鬆地建立可以跨 Android、iOS、Windows 和通用 Windows 平台共用的使用者介面。系統會使用目標平台的原生控制項呈現使用者介面，讓 Xamarin.Forms 應用程式保留每個平台適當的外觀及操作。本文介紹 Xamarin.Forms，以及如何開始使用它來撰寫應用程式。_
 
 <a name="Overview" />
 
 ## <a name="overview"></a>總覽
 
-Xamarin.Forms 是一個可讓開發人員快速建立跨平台使用者介面的架構。 它會針對將使用 iOS、Android、Windows 或 Windows Phone 上原生控制項呈現的使用者介面，提供自己的抽象概念。 也就是說，應用程式可以共用大部分的使用者介面程式碼，而且仍然保留目標平台的原生外觀及操作。
+Xamarin.Forms 是一個可讓開發人員快速建立跨平台使用者介面的架構。 它會針對將使用 iOS、Android 或通用 Windows 平台 (UWP) 上原生控制項呈現的使用者介面，提供自己的抽象概念。 也就是說，應用程式可以共用大部分的使用者介面程式碼，而且仍然保留目標平台的原生外觀及操作。
 
 Xamarin.Forms 允許快速開發可能會隨著時間的推移而演化為複雜應用程式的應用程式原型。 Xamarin.Forms 應用程式屬於原生應用程式，因此沒有其他工具組的限制，例如，瀏覽器沙箱功能、受限的 API 或效能不佳。 使用 Xamarin.Forms 撰寫的應用程式可以使用任何 API 或基礎平台的功能，例如 (但不限於) iOS 上的 CoreMotion、PassKit 和 StoreKit；Android 上的 NFC 和 Google Play 服務；以及 Windows 上的磚。 此外，您可以建立將使用 Xamarin.Forms 建立其使用者介面部分，同時使用原生 UI 工具組建立其他部分的應用程式。
 
@@ -120,39 +120,6 @@ namespace HelloXamarinFormsWorld.Android
 ```
 
 `OnCreate` 覆寫會呼叫 `Init` 方法，藉此初始化 Xamarin.Forms 架構。 如此會在載入 Xamarin.Forms 應用程式之前，先在應用程式中載入 Android 專用的 Xamarin.Forms 實作。
-
-<a name="Launching_in_Windows_Phone" />
-
-#### <a name="windows-phone-81-winrt"></a>Windows Phone 8.1 (WinRT)
-
-在 Windows 執行階段應用程式中，初始化 Xamarin.Forms 架構的 `Init` 方法是從 `App` 類別叫用的：
-
-```csharp
-Xamarin.Forms.Forms.Init (e);
-
-if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-{
-  ...
-}
-```
-
-如此會在應用程式中載入 Windows Phone 專用的 Xamarin.Forms 實作。 如下列程式碼範例所示，Xamarin.Forms 的初始頁面是由 `MainPage` 類別所啟動：
-
-```csharp
-public partial class MainPage
-{
-    public MainPage()
-    {
-      this.InitializeComponent();
-      this.NavigationCacheMode = NavigationCacheMode.Required;
-      this.LoadApplication(new HelloXamarinFormsWorld.App());
-    }
-}
-```
-
-Xamarin.Forms 應用程式是以 `LoadApplication` 方法來載入。
-
-Xamarin.Forms 也支援 Windows 8.1。 如需如何設定此專案類型的相關資訊，請參閱[設定 Windows 專案](~/xamarin-forms/platform/windows/installation/index.md)。
 
 #### <a name="universal-windows-platform"></a>通用 Windows 平台
 
@@ -747,7 +714,7 @@ await Navigation.PopModalAsync();
 
 ## <a name="summary"></a>總結
 
-本文提供 Xamarin.Forms 的簡介，以及如何使用它開始撰寫應用程式。 Xamarin.Forms 是一個以原生方式跨平台支援的 UI 工具組抽象概念，可讓開發人員輕鬆地建立可以跨 Android、iOS、Windows 和 Windows Phone 共用的使用者介面。 系統會使用目標平台的原生控制項呈現使用者介面，讓 Xamarin.Forms 應用程式保留每個平台適當的外觀及操作。
+本文提供 Xamarin.Forms 的簡介，以及如何使用它開始撰寫應用程式。 Xamarin.Forms 是一個以原生方式跨平台支援的 UI 工具組抽象概念，可讓開發人員輕鬆地建立可以跨 Android、iOS 和通用 Windows 平台共用的使用者介面。 系統會使用目標平台的原生控制項呈現使用者介面，讓 Xamarin.Forms 應用程式保留每個平台適當的外觀及操作。
 
 
 ## <a name="related-links"></a>相關連結

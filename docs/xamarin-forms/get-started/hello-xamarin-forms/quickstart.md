@@ -6,12 +6,12 @@ ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/06/2018
-ms.openlocfilehash: e8d1064e76c2ccdeb14302d30428cd932444a0f5
-ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
+ms.date: 04/26/2018
+ms.openlocfilehash: f5c05ce308a10747ad3e18e4a1d141d29fd6c8a1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms Quickstart
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 04/08/2018
 
     ![](quickstart-images/vs/new-project.png "跨平台專案範本")
 
-4. 在 [新增跨平台應用程式] 對話方塊中，按一下 [空白應用程式]、選取 [Xamarin.Forms] 作為 [UI 技術]、選取 [.NET Standard] 作為 [程式碼共用策略]，然後按一下 [確定] 按鈕：
+4. 在 [新增跨平台應用程式] 對話方塊中，按一下 [空白應用程式]，並選取 [.NET Standard] 作為 [程式碼共用策略]，然後按一下 [確定] 按鈕：
 
     ![](quickstart-images/vs/new-app.png "新增跨平台應用程式")
 
@@ -53,7 +53,7 @@ ms.lasthandoff: 04/08/2018
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -523,7 +523,7 @@ ms.lasthandoff: 04/08/2018
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -630,7 +630,7 @@ ms.lasthandoff: 04/08/2018
     }
     ```
 
-    選擇 [檔案] > [儲存] (或按下 **&#8984; + S**)，將變更儲存到 **Phoneword.cs**，然後關閉檔案。
+    選擇 [檔案] > [儲存] (或按下 **&#8984; + S**) 以將變更儲存到 **App.xaml.cs**，然後關閉檔案。
 
 13. 在 [Solution Pad] 中，選取 **Phoneword** 專案、按一下滑鼠右鍵，然後選取 [新增] > [新增檔案]：
 
