@@ -7,19 +7,19 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
-ms.openlocfilehash: bb551b548f241cacfc4cb700d247684c15f6fcf7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 212a190b56465a8401b17b7a379a1f083d8f8d87
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin 防火牆組態指示
 
 _您需要在防火牆中加入允許清單許清的主機清單，以便讓 Xamarin 平台能為您的公司工作。_
 
-為讓 Xamarin 產品能順利安裝及運作，Xamarin 必須要能夠存取特定端點來下載必要的工具及軟體更新。 若您或您的公司有嚴格的防火牆設定，您可能會遭遇安裝、授權、元件等問題。 本文件概要說明一些必須在您的防火牆中加入允許清單的已知端點，以讓 Xamarin 能正常運作。 這份清單不包含在下載內容中任何協力廠商工具所需要的端點。 若您在使用這份清單之後仍然遭遇問題，請參閱 Apple 或 Android 安裝疑難排解指南。
+為讓 Xamarin 產品能順利安裝及運作，Xamarin 必須要能夠存取特定端點來下載必要的工具及軟體更新。 若您或您的公司有嚴格的防火牆設定，您可能會遭遇安裝、授權、元件等問題。 本文件概要說明一些必須在您的防火牆中加入白名單的已知端點，以讓 Xamarin 能正常運作。 這份清單不包含在下載內容中任何協力廠商工具所需要的端點。 若您在使用這份清單之後仍然遭遇問題，請參閱 Apple 或 Android 安裝疑難排解指南。
 
-## <a name="endpoints-to-whitelist"></a>應加入允許清的端點
+## <a name="endpoints-to-whitelist"></a>應加入白名單的端點
 
 ### <a name="xamarin-installer"></a>Xamarin 安裝程式
 
@@ -42,7 +42,7 @@ _您需要在防火牆中加入允許清單許清的主機清單，以便讓 Xam
 
 -  components.xamarin.com (以使用 Xamarin 元件存放區)
 -  xampubdl.blob.core.windows.net (主控元件存放區下載)
--  www.nuget.org (以存取 NuGet)
+-  www\.nuget.org (以存取 NuGet)
 -  az320820.vo.msecnd.net (NuGet 下載)
 -  dl-ssl.google.com (Google 元件)
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 6ced541ca9df6fcae1643dc14c2e19807e972822
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f158ab7e51eb7610566ed052b326fecf016add8a
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="working-with-entitlements"></a>使用權利
 
@@ -127,6 +127,9 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
     - 若要尋找 `$(TeamIdentifierPrefix)` 字串，請登入 developer.apple.com，然後瀏覽 [Member Center] \(會員中心\) > [Your Account] \(您的帳戶\) > [Developer Account Summary] \(開發人員帳戶摘要\) 以取得您的 Team ID (小組識別碼) (如果是單一開發人員，則為 Individual ID (個人識別碼))。 它將是一個 10 個字元的字串 (例如 A93A5CM278)。
     - `$(CFBundleIdentifier)` 字串的開頭為 `iCloud`，在建立 iCloud 容器 (依據[使用功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)指南中的步驟) 時，會設定此字串。
     - 可以使用 $`(TeamIdentifierPrefix)` 和 `$(CFBundleIdentifier)` 預留位置，在建置階段將會以正確的值取代這些預留位置。
+
+> [!IMPORTANT]
+> Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)協助開發人員適當地處理歐盟一般資料保護規定 (GDPR)。
 
 ### <a name="app-groups"></a>應用程式群組
 

@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: 2f3950509134d3f643f0ea63b6725c1b4fe38409
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6be97162d1c371b9215d59ef77a7a5044e04f6b1
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-mobile-development"></a>行動裝置應用程式開發簡介
 
@@ -42,7 +42,7 @@ Xamarin 的獨特之處便是它結合原生平台的所有威力，並新增許
 
 
 > [!NOTE]
-> 本＜快速入門＞系列將焦點放在開始建置 iOS 和 Android 應用程式。 Microsoft 在[這裡](http://dev.windowsphone.com/en-us/develop)提供適用於 Windows Phone 開發的教學課程。 若要深入了解使用 Xamarin 的跨平台開發 (包括適用於 Windows 的 UWP 應用程式)，請參閱[建置跨平台應用程式指南](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)。
+> 本＜快速入門＞系列將焦點放在開始建置 iOS 和 Android 應用程式。 Microsoft 提供適用於平板電腦和桌上型電腦的[通用 Windows 平台 (UWP) 開發](https://docs.microsoft.com/windows/uwp/develop/)相關資訊。 若要深入了解使用 Xamarin 的跨平台開發 (包括適用於 Windows 的 UWP 應用程式)，請參閱[建置跨平台應用程式指南](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)。
 
 
 

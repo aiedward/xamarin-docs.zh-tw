@@ -1,189 +1,245 @@
 ---
-title: 連線到 Mac
-description: Xamarin.iOS for Visual Studio 可讓開發人員在 Windows 電腦上使用 Visual Studio IDE 來建立、組建 iOS 應用程式及針對這些應用程式進行偵錯。 本指南說明 Xamarin.iOS for Visual Studio 所提供的功能，以及如何建立與 Mac 組建主機的連線。
+title: 與 Mac 配對
+description: 本指南說明如何使用 [與 Mac 配對] 將 Visual Studio 2017 連線至 Mac 組建主機。
 ms.prod: xamarin
 ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/19/2017
-ms.openlocfilehash: 5a76c443521276a66e820fa0b1877ae2a4cce8f0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/16/2018
+ms.openlocfilehash: adaa74e206b1e756398f1ef1a38f387082c1e8f5
+ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/23/2018
 ---
-# <a name="connecting-to-the-mac"></a>連線到 Mac
+# <a name="pair-to-mac"></a>與 Mac 配對
 
-_Xamarin.iOS for Visual Studio 可讓開發人員在 Windows 電腦上使用 Visual Studio IDE 來建立、建置 iOS 應用程式，及針對這些應用程式進行偵錯。本指南說明 Xamarin.iOS for Visual Studio 所提供的功能，以及如何建立與 Mac 組建主機的連線。_
+_本指南說明如何使用 [與 Mac 配對] 將 Visual Studio 2017 連線至 Mac 組建主機。_
 
-Visual Studio 會透過 SSH 連線到 Mac，這提供數個優點，包括：
+## <a name="overview"></a>總覽
 
-- Visual Studio 可以直接啟動和控制組建代理程式。 不再有使用者可見的應用程式需要手動啟動和停止。
+建置原生 iOS 應用程式需要存取只在 Mac 上執行的 Apple 組建工具。 因此，Visual Studio 2017 必須連線至網路可存取 Mac 以建置 Xamarin.iOS 應用程式。
 
-- Visual Studio 中的新「連線管理員」將會探索、驗證及記住 Mac 組建主機。
+Visual Studio 2017 的 [與 Mac 配對] 功能會探索、連線至、驗證並記住 Mac 組建主機，讓 Windows 型 iOS 開發人員可以更具生產力地工作。 
 
-- 由於所有通訊都會透過 SSH 的安全通道傳送，因此只需要一個連至連接埠 22 的單一連接埠連線。
+[與 Mac 配對] 會啟用下列開發工作流程：
 
-- 一有變更發生時，就會立即通知 Visual Studio。 例如，插入 iOS 裝置時，工具列會立即更新。
+- 開發人員可以在 Visual Studio 2017 中撰寫 Xamarin.iOS 程式碼。
 
-- 多個 Visual Studio 執行個體可以同時連線。
+- Visual Studio 2017 會開啟與 Mac 組建主機的網路連線，並在該電腦上使用組建工具編譯和簽署 iOS 應用程式。
 
-- 連線將不會打擾到開發。 只會在執行需要 Mac 的作業 (例如進行偵錯或使用「iOS 設計工具」) 時，出現連線到 Mac 的提示。
+- 不需要在 Mac 上執行個別應用程式；Visual Studio 2017 會透過 SSH 安全地叫用 Mac 組建。
 
-連線到 Mac 是由用於其功能各個不同組件 (例如 iOS 設計工具代理程式和組建代理程式) 的多個處理序所組成 – 這些處理序皆由 Broker 所控制。 這個 Broker 是由 Visual Studio 所控制並更新的，並且會在任何獨立處理序當機時，自動重新啟動這些處理序。
+- 一旦發生，就會立即通知 Visual Studio 2017。 例如，將 iOS 裝置插入至 Mac 或在網路上變成可用時，會立即更新 iOS 工具列。
 
-下圖顯示一個簡單的 Xamarin.iOS 開發工作流程概觀：
+- 多個 Visual Studio 2017 執行個體可以同時連線至 Mac。
 
-[![iOS 開發工作流程](images/xma2.png)](images/xma2.png#lightbox)
-
-> [!IMPORTANT]
-> Visual Studio 實際上會啟動個別的 MSBuild 處理序來建置專案。 此處理序會建立與 Mac 的新連線，也就是說當 Visual Studio 進行組建時，實際上有兩個從 Windows 到 Mac 的 SSH 連線。 從[命令列](#commandline)進行組建只會建立一個 MSBuild 處理序。 為了簡單起見，此圖表的所有連線都只由一個箭號代表。
-
-## <a name="requirements"></a>需求
-
-Xamarin.iOS for Visual Studio 實現卓越的技術：不僅可讓開發人員在 Windows 電腦上使用 Visual Studio IDE 來建立、組建 iOS 應用程式，還可針對這些應用程式進行偵錯。 它無法單獨完成這些工作 – 在沒有 Apple 編譯器的情況下，無法建立 iOS 應用程式，而在沒有 Apple 憑證及程式碼簽署工具的情況下，也無法部署這些應用程式。 這意謂著 Xamarin.iOS for Visual Studio 安裝必須連線到已連上網路的 Mac OS X 電腦 (稱為「主機」或「組建主機」)，才能為您執行這些工作。 設定好之後，Xamarin 的工具將會儘可能讓程序無縫接軌。
-
-### <a name="system-requirements"></a>系統需求
-
-系統需求可於[在 Windows 上安裝 Xamarin.iOS](~/ios/get-started/installation/windows/index.md#system-requirements) 指南中找到
-
-
-#### <a name="compatibility"></a>相容性
-
-> [!IMPORTANT]
-> Windows 電腦必須與所連線的 Mac 使用相同的 Xamarin.iOS 版本。 確保此條件成立：                                                    
->                                                                                                                 
-> - **Visual Studio 2015 和更早的版本**：確定您與 Visual Studio for Mac 位於相同的[更新通道](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/)上。
->                                                                                                                 
-> - **Visual Studio 2017 發行版本**：確定您位於 Visual Studio for Mac 的**穩定**通道上。
->                                                                                                                 
-> - **Visual Studio 2017 預覽版本**：確定您位於 Visual Studio for Mac 的 **Alpha 版**通道上。 Visual Studio 不會檢查 Xamarin.iOS SDK 和 Xcode 是否存在且版本相容。
->   這將會由組建代理程式進行檢查而產生組建錯誤，以及由「iOS 設計工具」進行檢查而產生設計工具錯誤。
-
-### <a name="connecting-to-the-mac"></a>連線到 Mac
-
-#### <a name="mac-setup"></a>Mac 設定
-
-若要設定 Mac 主機，您必須啟用 Visual Studio 的 Xamarin 擴充功能與 Mac 之間的通訊。 若要這樣做，請依照下面的步驟，在 Mac 上允許 [Remote Login] \(遠端登入\)：
-
-1. 開啟 *Spotlight* (同時按**⌘ 鍵和空格鍵**) 並搜尋「遠端登入」，然後選取 [共享] 結果項目。 這會開啟 [系統偏好設定] 的 [共享] 面板：
-
-   [![Spotlight 的遠端登入搜尋](images/spotlight.png)](images/spotlight.png#lightbox)
-
-2. 勾選左側 [服務] 清單中的 [遠端登入] 選項，以允許 Xamarin for Visual Studio 連線到 Mac：
-
-   [![勾選 [服務] 清單中的 [遠端登入] 選項](images/sharing.png)](images/sharing.png#lightbox)
-
-3. 確定 [遠端登入] 已設定為允許 [所有使用者] 存取，或是右側清單之允許的使用者清單中包含您的 Mac 使用者名稱或群組。
-
-此外，如果您的 OS X 防火牆已設定為預設封鎖已簽署的應用程式，則您可能需要允許 `mono-sgen` 接收傳入連線。 如果是這種情況，將會顯示警示對話方塊來提示您。
-
-如果您的 Mac 上有目前已開啟的工作階段，且與 Visual Studio 位於相同的網路上，Visual Studio 現在應該就能探索到它。
-
-Visual Studio 會將您 Mac 上的代理程式啟動並停止，讓身為使用者的您無須執行任何其他操作。
-
-### <a name="windows-setup"></a>Windows 設定
-
-請務必在您的 Windows 電腦上[安裝](~/ios/get-started/installation/windows/index.md) Xamarin 工具。
-
-### <a name="connecting-to-the-mac-build-host"></a>連線到 Mac 組建主機
-
-連線到 Mac 組建主機的方式有兩種：
-
-在 iOS 工具列上：
-
-[![iOS 工具列](images/image1.png)](images/image1.png#lightbox)
-
-或在 Visual Studio 中瀏覽至 [工具] > [選項]，選取 [Xamarin] > [iOS 設定]，然後按一下 [尋找 Xamarin Mac Agent] 按鈕：
-
-[![尋找 Xamarin Mac Agent](images/image2.png)](images/image2.png#lightbox)
-
-以上述任一方式瀏覽都會前往 **Mac Agent** 對話方塊，如下所示：
-
-[![Mac Agent 對話方塊](images/image3.png)](images/image3.png#lightbox)
-
-這會顯示先前已連線並儲存為已知電腦的所有電腦清單，或可供「遠端登入」的電腦。
-
-請按兩下 Mac 來選取該 Mac 以與其連線。 第一次連線到 Mac 時，系統會提示您輸入 Mac 使用者認證以允許遠端連線：
-
-[![輸入 Mac 使用者認證](images/image4.png)](images/image4.png#lightbox)
-
-代理程式將會使用這些認證來建立與 Mac 的新 SSH 連線。 如果成功，就會建立 SSH 金鑰，並在該 Mac 上的 `authorized_keys` 檔案中[註冊](#commandline)該金鑰。 在後續的連線中，代理程式會使用使用者名稱和金鑰檔來連線到最近連線過的已知組建主機。
+- 您可以使用 Windows 命令列建置 iOS 應用程式。
 
 > [!NOTE]
-> 輸入認證時，您必須使用「使用者名稱」，而不是「全名」。  您可以在 [終端機] 中使用 `whoami` 命令來找此使用者名稱。  例如，從下面的螢幕擷取畫面中，帳戶名稱將會是 **amyb**，而不是 **Amy Burns**：
+> 遵循本指南中的指示，完成下列步驟： 
+> 
+> - 在 Windows 電腦上，[安裝 Visual Studio 2017](~/cross-platform/get-started/installation/windows.md)
+> - 在 Mac 上，[安裝 Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) 和 [Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation)
 >
-> ![在 [終端機] 應用程式中尋找使用者名稱](images/image5.png)
+> 如果您偏好不要安裝 Visual Studio for Mac，則 Visual Studio 2017 可以使用 Xamarin.iOS 和 Mono 來自動設定 Mac 組建主機。
+> 如需詳細資訊，請參閱[自動 Mac 佈建](#automatic-mac-provisioning)。
 
-已成功建立連線時，[主機選取] 對話方塊中會顯示 [已連線] 圖示，如下所示：
+## <a name="enable-remote-login-on-the-mac"></a>在 Mac 上啟用遠端登入
 
-[![主機旁邊有 [已連線] 圖示的 [主機選取] 對話方塊](images/image6.png)](images/image6.png#lightbox)
+若要設定 Mac 組建主機，請先啟用遠端登入：
 
-在任一時間都只能有一個已連線的 Mac。
+1. 在 Mac 上，開啟 [系統偏好設定]，並移至 [共用] 窗格。
 
-在清單中的每部電腦 (不論是否已連線) 上按一下滑鼠右鍵時，都會顯示操作功能表，可讓您視需要 [連接]、[中斷連接] 或 [不要記住這部 Mac]：
+2. 核取 [服務] 清單中的 [遠端登入]。
 
-[![[連接]、[中斷連接] 或 [不要記住這部 Mac] 操作功能表](images/image7.png)](images/image7.png#lightbox)
+    ![啟用遠端登入](images/sharing.png "啟用遠端登入")
 
-如果您選擇 [不要記住這部 Mac]，就必須重新輸入您的認證，才能再次與它連線。
+    確定已設定為允許 [所有使用者] 存取，或是允許使用者清單中包含您的 Mac 使用者名稱或群組。
 
-<a name="manual-add"/>
+3. 如果出現提示，請設定 macOS 防火牆。
 
-### <a name="manually-adding-a-mac"></a>手動新增 Mac
+    如果您已設定 macOS 防火牆封鎖傳入連線，則可能需要允許 `mono-sgen` 接收傳入連線。 如果是這種情況，則會顯示警示來提示您。
 
-在某些情況下，如果您在 [主機選取] 對話方塊中沒有看到列出 Mac 的 mDNS 名稱，您可能會想要手動新增 Mac。 若要這樣做，請依照下列步驟進行操作：
+4. 如果它位在與 Windows 電腦相同的網路上，則 Visual Studio 2017 現在應該可以探索到 Mac。 如果仍然探索不到 Mac，則請嘗試[手動新增 Mac](#manually-add-a-mac) 或查看[疑難排解指南](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md)。
 
-1. 在 Mac 上瀏覽至 [系統偏好設定] > [共享] > [遠端登入] 來找出 Mac 的 IP 位址：
+## <a name="connect-to-the-mac-from-visual-studio-2017"></a>從 Visual Studio 2017 連線至 Mac
 
-   [![[系統偏好設定] 中的 Mac IP 位址](images/image8.png)](images/image8.png#lightbox)
+現在已啟用遠端登入，請將 Visual Studio 2017 連線至 Mac。
 
-   或者，如果您偏好使用命令列，則可以在 [終端機] 中輸入 `ipconfig getifaddr en0` 來找出 IP 位址 (請注意，視連線類型而定，變數可能會是 `en1``en2` 等)：
+1. 在 Visual Studio 2017 中，選擇 [檔案] > [新增] > [專案]，然後選取 iOS 專案範本，即可開啟現有 iOS 專案或建立新專案。
 
-   [![[終端機] 應用程式中的 IP 位址](images/image9.png)](images/image9.png#lightbox)
+2. 開啟 [與 Mac 配對] 對話方塊。 
 
-2. 返回 Visual Studio，然後在 [主機選取] 對話方塊中，選取 [新增 Mac]：
+    - 使用 [與 Mac 配對] 按鈕 iOS 工具列：
 
-   [![[主機選取] 對話方塊](images/image10.png)](images/image10.png#lightbox)
+        ![已醒目提示 [與 Mac 配對] 按鈕的 [iOS] 工具列](images/ios-toolbar.png "已醒目提示 [與 Mac 配對] 按鈕的 [iOS] 工具列")
 
-3. 在 [新增 Mac] 對話方塊中，輸入 Mac 的 IP 位址，然後按一下 [新增]：
+    - 或者，選取 [工具] > [iOS] > [與 Mac 配對]。
 
-   [![在 [新增 Mac] 對話方塊中輸入 Mac 的 IP 位址](images/image11.png)](images/image11.png#lightbox)
+    - [與 Mac 配對] 對話方塊會顯示所有先前連線且目前可用的 Mac 組建主機清單：
 
-4. 最後，輸入 Mac 系統管理員帳戶的使用者名稱 (不是全名) 和對應的密碼：
+        ![[與 Mac 配對] 對話方塊](images/pairtomac.png "[與 Mac 配對] 對話方塊")
 
-   [![輸入使用者名稱和密碼](images/image12.png)](images/image12.png#lightbox)
+3. 在清單中，選取 Mac。 按一下 **[Connect]**(連線)。 
 
-按一下 [登入] 之後，Visual Studio 就會使用 SSH 來登入 Mac 電腦，並將這部 Mac 新增為已知的電腦。
+4. 輸入使用者名稱和密碼。
+    
+    - 第一次連線至任何特定 Mac 時，系統會提示您輸入該電腦的使用者名稱和密碼：
 
-<a name="commandline"/>
+        ![輸入 Mac 的使用者名稱和密碼](images/auth.png "輸入 Mac 的使用者名稱和密碼")
 
-### <a name="command-line-support"></a>命令列支援
+        > [!TIP]
+        > 登入時，請使用您的系統使用者名稱，而非完整名稱。
 
-代理程式也支援從命令列建置 Xamarin.iOS 設定。  若要使用它，您將必須把下列必要的參數傳遞給 MSBuild：
+    - [與 Mac 配對] 會使用這些認證來建立與 Mac 的新 SSH 連線。 如果成功，則會將金鑰新增至 Mac 上的 **authorized_keys** 檔案。 後續連線至相同 Mac 將會自動登入。
 
-- `ServerAddress` – Mac 伺服器的 IP 位址。
+5. [與 Mac 配對] 會自動設定 Mac。
 
-- `ServerUser` – 要用來登入 Mac 伺服器的使用者名稱 (不是全名)。
+    [從 Visual Studio 2017 15.6 版](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)開始，Visual Studio 2017 會視需要安裝或更新已連線 Mac 組建主機上的 Mono 和 Xamarin.iOS (請注意，仍然必須手動安裝 Xcode)。 如需詳細資訊，請參閱[自動 Mac 佈建](#automatic-mac-provisioning)。
 
-- `ServerPassword` – 用來登入 Mac 主機的密碼 (選用)。
+6. 尋找連線狀態圖示。
+    
+    - Visual Studio 2017 連線至 Mac 時，[與 Mac 配對] 對話方塊中該 Mac 的項目會顯示圖示，指出目前已連線：
 
-`ServerPassword` 不是必要參數。
+        ![已連線的 Mac](images/connected.png "已連線的 Mac")
 
-取而代之的是，第一次傳遞密碼 (不論是使用 Visual Studio 還是命令列來傳遞) 時，會針對該特定的 Windows、Mac 及使用者組態產生一個金鑰組，並儲存在 Windows 電腦上以供日後使用。 此金鑰組會位於 **%localappdata%\Xamarin\MonoTouch\id_rsa** 中。  如果您未傳遞 `ServerPassword` 參數，系統就會使用 `id_rsa` 金鑰檔來進行驗證。
+      一次只能有一個已連線的 Mac。
 
-以下顯示使用 **xamUser** 帳戶搭配 **mypassword** 密碼來連線到 Mac 10.211.55.2 的範例：
+      > [!TIP]
+      > 以滑鼠右鍵按一下 [與 Mac 配對] 清單中的任何 Mac 都會啟動操作功能表，讓您可以 [連線...]、[不要記住這部 Mac] 或 [中斷連線]：
+      >
+      > ![[與 Mac 配對] 操作功能表](images/contextmenu.png "[與 Mac 配對] 操作功能表") 
+      >
+      > 如果您選擇 [不要記住這部 Mac]，則會忘記所選取 Mac 的認證。 若要重新連線至該 Mac，您需要重新輸入使用者名稱和密碼。
+
+如果您已成功與 Mac 組建主機配對，則準備好在 Visual Studio 2017 中建置 Xamarin.iOS 應用程式。 請查看 [Xamarin.iOS for Visual Studio 簡介](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)指南。
+
+如果您還是無法與 Mac 配對，則請嘗試[手動新增 Mac](#manually-add-a-mac) 或查看[疑難排解指南](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md)。
+
+## <a name="manually-add-a-mac"></a>手動新增 Mac
+
+如果 [與 Mac 配對] 對話方塊中未列出特定 Mac，則請手動予以新增：
+
+1. 找到 Mac 的 IP 位址。 
+
+    - 在 Mac 上，開啟 [系統偏好設定] > [共用] > [遠端登入]：
+
+        [![[系統偏好設定] > [共用] 中 Mac 的 IP 位址](images/sharing-ipaddress.png "[系統偏好設定] > [共用] 中 Mac 的 IP 位址")](images/sharing.png#lightbox)
+
+    - 或者，使用命令列。 在 [終端機] 中，發出此命令： 
+   
+        ```bash
+        $ ipconfig getifaddr en0
+        196.168.1.8
+        ```
+
+      根據網路組態，您可能需要使用 `en0` 以外的介面名稱。 例如：`en1`、`en2` 等等。
+
+2. 在 Visual Studio 2017 的 [與 Mac 配對] 對話方塊中，選取 [新增 Mac...]：
+
+    [![[與 Mac 配對] 對話方塊中的 [新增 Mac] 按鈕](images/addtomac.png "[與 Mac 配對] 對話方塊中的 [新增 Mac] 按鈕")](images/addtomac-large.png#lightbox)
+
+3. 輸入 Mac 的 IP 位址，然後按一下 [新增]：
+
+    ![輸入 Mac 的 IP 位址](images/enteripaddress.png "輸入 Mac 的 IP 位址")
+
+4. 輸入 Mac 的使用者名稱和密碼：
+
+    ![輸入使用者名稱和密碼](images/auth.png "輸入使用者名稱和密碼")
+
+   > [!TIP]
+   > 登入時，請使用您的系統使用者名稱，而非完整名稱。
+
+5. 按一下 [登入]，透過 SSH 將 Visual Studio 2017 連線至 Mac，並將它新增至已知電腦的清單。
+
+## <a name="automatic-mac-provisioning"></a>自動 Mac 佈建
+
+從 [Visual Studio 2017 15.6 版](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)開始，[與 Mac 配對] 會自動佈建具有建置 Xamarin.iOS 應用程式所需軟體的 Mac：Mono、Xamarin.iOS (軟體架構、非 Visual Studio for Mac IDE)，以及各種 Xcode 相關工具 (但非 Xcode 本身)。
+
+> [!IMPORTANT]
+> - [與 Mac 配對] 無法安裝 Xcode；您必須在 Mac 組建主機上手動安裝它。 它是進行 Xamarin.iOS 開發的必要項目。
+> - 自動 Mac 佈建需要在 Mac 上啟用遠端登入，而且 Mac 必須可透過網路存取 Windows 電腦。 如需詳細資訊，請參閱[在 Mac 上啟用遠端登入](#enable-remote-login-on-the-mac)。
+
+[與 Mac 配對] 會在 Visual Studio 2017 [連線至 Mac](#connect-to-the-mac-from-visual-studio-2017) 時執行必要的軟體安裝/更新。
+
+### <a name="mono"></a>Mono
+
+[與 Mac 配對] 將會確定已安裝 Mono。 如果未安裝，則 [與 Mac 配對] 將會在 Mac 下載和安裝 Mono 的最新穩定版本。 
+
+進度是以各種提示指出，如下列螢幕擷取畫面所示 (按一下以縮放)：
+
+||安裝檢查|下載|安裝
+|---|---|---|---|
+|Mono|[![遺漏 Mono 安裝](images/mono-missing.png "遺漏 Mono 安裝")](images/mono-missing-large.png#lightbox)|[![下載 Mono](images/mono-downloading.png "下載 Mono")](images/mono-downloading-large.png#lightbox)|[![安裝 Mono](images/mono-installing.png "安裝 Mono")](images/mono-installing-large.png#lightbox)|
+
+### <a name="xamarinios"></a>Xamarin.iOS 
+
+[與 Mac 配對] 會在 Mac 上升級 Xamarin.iOS，以符合 Windows 電腦上已安裝的版本。
+
+> [!IMPORTANT]
+> [與 Mac 配對] 不會將 Mac 上的 Xamarin.iOS 從 alpha/beta 降級至穩定。 如果您已安裝 Visual Studio for Mac，則請設定[發行通道](https://docs.microsoft.com/visualstudio/mac/update)，如下所示：
+> - 如果您使用 Visual Studio 2017，請選取 Visual Studio for Mac 中的 [穩定] 更新通道。
+> - 如果您使用 Visual Studio 2017 Preview，請選取 Visual Studio for Mac 中的 [Alpha] 更新通道。
+
+進度是以各種提示指出，如下列螢幕擷取畫面所示 (按一下以縮放)：
+
+||安裝檢查|下載|安裝
+|---|---|---|---|
+|Xamarin.iOS|[![遺漏 Xamarin.iOS 安裝](images/xamios-missing.png "遺漏 Xamarin.iOS 安裝")](images/xamios-missing-large.png#lightbox)|[![下載 Xamarin.iOS](images/xamios-downloading.png "下載 Xamarin.iOS")](images/xamios-downloading-large.png#lightbox)|[![安裝 Xamarin.iOS](images/xamios-installing.png "安裝 Xamarin.iOS")](images/xamios-installing-large.png#lightbox)|
+
+### <a name="xcode-tools-and-license"></a>Xcode 工具和授權
+
+[與 Mac 配對] 也會確認是否已安裝 Xcode 並接受其授權。 [與 Mac 配對] 未安裝 Xcode 時，系統會提示接受授權，如下列螢幕擷取畫面所示 (按一下以縮放)：
+
+||安裝檢查|接受授權|
+|---|---|---|
+|Xcode|[![遺漏 Xcode 安裝](images/xcode-missing.png "遺漏 Xcode 安裝")](images/xcode-missing-large.png#lightbox)|[![Xcode 授權](images/xcode-license.png "Xcode 授權")](images/xcode-license-large.png#lightbox)|
+
+此外，[與 Mac 配對] 將會安裝或更新利用 Xcode 所散發的各種套件。 例如: 
+
+- **MobileDeviceDevelopment.pkg**
+- **XcodeExtensionSupport.pkg**
+- **MobileDevice.pkg**
+- **XcodeSystemResources.pkg**
+
+這些套件的安裝會快速發生，而且不會出現提示。
+
+> [!NOTE]
+> 這些工具與 Xcode 命令列工具不同，而從 macOS 10.9 開始是[使用 Xcode 安裝](https://developer.apple.com/library/content/technotes/tn2339/_index.html)。
+
+### <a name="troubleshooting-automatic-mac-provisioning"></a>針對自動 Mac 佈建進行疑難排解
+
+如果您在使用自動 Mac 佈建時遇到任何問題，請查看儲存於 **%LOCALAPPDATA%\Xamarin\Logs\15.0** 的 Visual Studio 2017 IDE 記錄。 這些記錄可能包含錯誤訊息，協助您進一步診斷失敗或取得支援。
+
+## <a name="build-ios-apps-from-the-windows-command-line"></a>從 Windows 命令列建置 iOS 應用程式 
+
+[與 Mac 配對] 支援從命令列建置 Xamarin.iOS 應用程式。 例如: 
 
 ```bash
 C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamUser /p:Platform=iPhoneSimulator /p:ServerPassword=mypassword
 ```
+上述範例中傳遞給 `msbuild` 的參數如下：
 
-### <a name="summary"></a>總結
+- `ServerAddress` - Mac 組建主機的 IP 位址。
+- `ServerUser` - 要在登入 Mac 組建主機時使用的使用者名稱。
+  請使用您的系統使用者名稱，而非完整名稱。
+- `ServerPassword` - 要在登入 Mac 組建主機時使用的密碼。
+ 
+> [!NOTE]
+> Visual Studio 2017 會將 `msbuild` 儲存至下列目錄：**C:\Program Files (x86)\Microsoft Visual Studio\2017\<Version>\MSBuild\15.0\Bin**
 
-本文探索了 Visual Studio 與 iOS 組建及 Mac 上設計工具之間的連線，可讓您使用 Visual Studio 來組建 Xamarin.iOS 應用程式。
+[與 Mac 配對] 第一次從 Visual Studio 2017 或命令列登入特定 Mac 組建主機時，會設定 SSH 金鑰。 如果使用這些金鑰，則未來的登入不需要使用者名稱或密碼。 新建立的金鑰會儲存在 **%LOCALAPPDATA%\Xamarin\MonoTouch** 中。
 
-### <a name="related-links"></a>相關連結
+如果從命令列組建叫用來省略 `ServerPassword` 參數，則 [與 Mac 配對] 會嘗試使用已儲存的 SSH 金鑰來登入 Mac 組建主機。
 
-- [安裝](~/ios/get-started/installation/windows/index.md)
+## <a name="summary"></a>總結
+
+本文說明如何使用 [與 Mac 配對] 將 Visual Studio 2017 連線至 Mac 組建主機，並讓 Visual Studio 2017 開發人員使用 Xamarin.iOS 建置原生 iOS 應用程式。
+
+## <a name="next-steps"></a>後續步驟
+
 - [連線疑難排解](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md)
-- [使用 XMA 將 Mac 連線到您的 Visual Studio 環境 (影片)](https://university.xamarin.com/lightninglectures/xamarin-mac-agent) \(英文\)
+- [Xamarin Mac 組建代理程式 - Xamarin University Lightning Lecture](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
+- [Xamarin.iOS for Visual Studio 簡介](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
