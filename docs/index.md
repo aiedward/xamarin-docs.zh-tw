@@ -5,11 +5,11 @@ title: Xamarin 文件
 description: Xamarin 可讓您使用 .NET 程式碼和平台專屬的使用者介面，來建置 Android、iOS 和 macOS 原生應用程式。 Xamarin.Forms 可讓您透過以 C# 或 XAML 撰寫的共用 UI 程式碼，來建置原生應用程式。
 featureFlags:
 - clicktale
-ms.openlocfilehash: de03c1bd1b7874e6a837fbbb9e88a353f19afca5
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: a2f8c6ddedcff89f357ed8a984954d9f91c0477f
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 05/03/2018
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -831,12 +831,12 @@ ms.lasthandoff: 04/03/2018
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Application Fundamentals" src="~/media/index/xamarin-cross-platform-fundamentals.svg?branch=master" data-linktype="external">
+                                                        <img alt="Sharing Code" src="~/media/index/xamarin-cross-platform-fundamentals.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>應用程式基本概念</h3>
-                                                    <p>了解針對如檔案處理、影像等基本工作撰寫可共用之程式碼的基本知識。</p>
+                                                    <h3>共用程式碼</h3>
+                                                    <p>了解在 Android、iOS 和 Windows 之間共用程式碼和程式庫的不同選項。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -850,12 +850,12 @@ ms.lasthandoff: 04/03/2018
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Platform Features" src="~/media/index/xamarin-cross-platform-platform-features.svg?branch=master" data-linktype="external">
+                                                        <img alt="Language Support" src="~/media/index/xamarin-cross-platform-platform-features.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>平台功能</h3>
-                                                    <p>使用平台專屬功能，例如 FaceID 和 ARKit，以及 iOS 的最近新增項目。</p>
+                                                    <h3>語言支援</h3>
+                                                    <p>Xamarin 專案可以使用 C# 和 F# 撰寫，並使用以 VB 撰寫的程式庫。 也支援 Razor 範本。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -873,8 +873,8 @@ ms.lasthandoff: 04/03/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>部署與測試</h3>
-                                                    <p>為多個平台建置和部署應用程式。</p>
+                                                    <h3>偵錯與效能</h3>
+                                                    <p>無論您以哪一個平台為目標，都可以協助改善您的應用程式。</p>
                                                 </div>
                                             </div>
                                         </div>
