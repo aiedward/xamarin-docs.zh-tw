@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 2ef6b8044387d759e26d05c1468caaad7efb9bdc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 84185bb616597ee62a35c1acacc5e3664f500c21
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="app-linking-in-android"></a>在 Android 應用程式連結
 
@@ -55,7 +55,7 @@ Android 處理應用程式連結到*意圖系統*&ndash;行動瀏覽器，當使
 若要設定之網站的 URI （或可能的 Uri 集合） 會對應至 Android 應用程式中的活動意圖篩選條件必須。 Xamarin.Android，在此關聯性藉由在裝飾的活動[IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)。 意圖篩選必須宣告下列資訊：
 
 * **`Intent.ActionView`** &ndash; 這會註冊意圖篩選，以回應要求，以檢視資訊
-* **`Categories`** &ndash;  意圖篩選應該註冊兩者**[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)**和**[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)**能夠正確處理網頁 URI。
+* **`Categories`** &ndash;  意圖篩選應該註冊兩者**[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)** 和**[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)** 能夠正確處理網頁 URI。
 * **`DataScheme`** &ndash; 必須宣告意圖篩選`http`及/或`https`。 這些是只有兩個有效的配置。
 * **`DataHost`** &ndash; 這是 Uri 源自的網域。
 * **`DataPathPrefix`** &ndash; 這是選擇性的網站上的資源路徑。
@@ -68,8 +68,8 @@ Android 處理應用程式連結到*意圖系統*&ndash;行動瀏覽器，當使
               Categories = new[] { Intent.CategoryBrowsable, Intent.CategoryDefault },
               DataScheme = "http",
               DataHost = "recipe-app.com",
-              DataPathPrefix = "/recipe"),
-              AutoVerify=true]
+              DataPathPrefix = "/recipe",
+              AutoVerify=true)]
 public class RecipeActivity : Activity
 {
     // Code for the activity omitted

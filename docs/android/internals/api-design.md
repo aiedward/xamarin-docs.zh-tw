@@ -1,18 +1,18 @@
 ---
-title: 應用程式開發介面設計
+title: Xamarin.Android API 設計原則
 ms.prod: xamarin
 ms.assetid: 3E52D815-D95D-5510-0D8F-77DAC7E62EDE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: a9c0b02457f006f75dc5b6f0a52e68865d620f67
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 611046954e8ef359476d2bd12a69f04041d869f1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="api-design"></a>應用程式開發介面設計
+# <a name="xamarinandroid-api-design-principles"></a>Xamarin.Android API 設計原則
 
 
 ## <a name="overview"></a>總覽
@@ -59,7 +59,6 @@ ms.lasthandoff: 04/04/2018
     - 當適當且適用於，而不是單一方法的介面公開 C# 委派 (lambda，匿名方法和 System.Delegate)。
 
     - 提供機制來呼叫任意的 Java 程式庫 ( [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/))。
-
 
 
 ## <a name="assemblies"></a>組件
@@ -163,7 +162,7 @@ button.Click += (sender, e) => {
 此外，如果接聽程式介面的方法具有傳回型別**布林**而不是**void**，然後產生*EventArgs*子類別將包含*Handled*屬性。 值*Handled*屬性做為傳回值*接聽程式*方法，而且它會預設為`true`。
 
 例如，Android [View.setOnKeyListener()](https://developer.xamarin.com/api/member/Android.Views.View.SetOnKeyListener/p/Android.Views.View+IOnKeyListener/)方法會接受[View.OnKeyListener](https://developer.xamarin.com/api/type/Android.Views.View+IOnKeyListener)介面，而[View.OnKeyListener.onKey （檢視、 int、 KeyEvent）](https://developer.xamarin.com/api/member/Android.Views.View+IOnKeyListener.OnKey/p/Android.Views.View/Android.Views.Keycode/Android.Views.KeyEvent/)方法有布林的傳回型別。 Xamarin.Android 會產生對應[View.KeyPress](https://developer.xamarin.com/api/event/Android.Views.View.KeyPress/)事件，這是[EventHandler&lt;View.KeyEventArgs&gt;](https://developer.xamarin.com/api/type/Android.Views.View+KeyEventArgs/)。
-*KeyEventArgs*類別接著具有[View.KeyEventArgs.Handled](https://developer.xamarin.com/api/property/Android.Views.View+KeyEventArgs.Handled/)屬性，可做為傳回值*View.OnKeyListener.onKey()*方法。
+*KeyEventArgs*類別接著具有[View.KeyEventArgs.Handled](https://developer.xamarin.com/api/property/Android.Views.View+KeyEventArgs.Handled/)屬性，可做為傳回值*View.OnKeyListener.onKey()* 方法。
 
 我們想要新增的其他方法和公開的委派型連線 ctors 多載。 此外，具有多個回呼的接聽程式需要一些額外檢查以判斷實作個別的回撥時，可合理，因此我們想要轉換這些所識別。 如果沒有對應的事件，接聽程式必須使用在 C# 中，但請將任何您認為可能會有委派我們注意到的使用方式。 清除獲益委派替代方案時，我們也已完成介面沒有 「 接聽程式 」 後置詞的某些轉換。
 

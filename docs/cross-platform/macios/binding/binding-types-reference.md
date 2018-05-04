@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 9364b4c56951ac9ebd3870e4afe41a40f9e1f455
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e064eda3db9aa0156869cf1c7392823553af9bd2
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="binding-types-reference-guide"></a>繫結型別參考指南
 
@@ -1141,7 +1141,7 @@ public NSObject this [NSObject idx] {
 這個屬性會使方法支援原生 (OBJECTIVE-C) 例外狀況。
 而不是呼叫`objc_msgSend`引動過程會直接進行自訂的 trampoline 攔截 ObjectiveC 例外狀況，並將其封送處理成 managed 例外狀況。
 
-目前只有少數`objc_msgSend`支援簽章 (是否不支援簽章，當應用程式使用之繫結的原生連結失敗且遺失 monotouch_ 找出*_objc_msgSend*符號)，但更多可在要求中加入。
+目前只有少數`objc_msgSend`支援簽章 (是否不支援簽章，當應用程式使用之繫結的原生連結失敗且遺失 monotouch_ 找出 *_objc_msgSend*符號)，但更多可在要求中加入。
 
 
 ### <a name="newattribute"></a>NewAttribute
@@ -1493,7 +1493,7 @@ interface FooExplorer {
 
 這通常用於在目標 c： 定義像這樣的回呼
 
-```csharp
+```objc
 typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 ```
 

@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: b3b15736b5ec750e0b8db078cf428a7f573bc435
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: e4a55829e35329a50b2e121311b0102328e6fea9
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="building-cross-platform-applications-overview"></a>建置跨平台應用程式概觀
 
@@ -25,7 +25,7 @@ Xamarin 不只是 「 寫入-一次，執行每個地方 「 平台，因為其�
 建立 Xamarin 的跨平台應用程式的重點摘要如下：
 
 -   **使用 C#** -C# 撰寫您的應用程式。 以 C# 撰寫的現有程式碼可以移植到 iOS 和 Android 非常輕鬆地使用 Xamarin，顯然是 Windows 應用程式中使用。
--   **利用 MVC 或 MVVVM 設計模式**-開發您的應用程式使用者介面使用的模型/檢視/控制器模式。 使用模型/檢視/控制器的方法或 ViewModel/檢視模型/方法的應用程式架構設計人員沒有清楚的區隔，「 模型 」 和其他成員之間。 判斷您的應用程式的哪些部分會使用每個平台 (iOS、 Android、 Windows、 Mac) 的原生使用者介面項目，並使用這個當做指導方針您應用程式分割成兩個元件: 「 核心 」 和 「 使用者介面 」。
+-   **利用 MVC 或 MVVM 設計模式**-開發您的應用程式使用者介面使用的模型/檢視/控制器模式。 使用模型/檢視/控制器的方法或 ViewModel/檢視模型/方法的應用程式架構設計人員沒有清楚的區隔，「 模型 」 和其他成員之間。 判斷您的應用程式的哪些部分會使用每個平台 (iOS、 Android、 Windows、 Mac) 的原生使用者介面項目，並使用這個當做指導方針您應用程式分割成兩個元件: 「 核心 」 和 「 使用者介面 」。
 -   **建立原生 Ui** -每個作業系統特定應用程式提供不同的使用者介面層 (實作在 C# 的協助的原生 UI 設計工具):
 
 1.  在 iOS 上，使用 UIKit Api 來建立原生應用程式，您可以選擇使用 Xamarin 的 iOS 設計工具以視覺化方式建立您的 UI。

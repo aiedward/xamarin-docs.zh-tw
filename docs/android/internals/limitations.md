@@ -1,16 +1,16 @@
 ---
-title: 限制
+title: Xamarin.Android vs。桌面： 單聲道的執行階段的差異
 ms.prod: xamarin
 ms.assetid: F953F9B4-3596-8B3A-A8E4-8219B5B9F7CA
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 07353cfa3ce9bc20688b9a59c09a6e602f16dd60
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: b1302bcf8d6835cac356d96b538d134891648420
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="limitations"></a>限制
 
@@ -157,6 +157,6 @@ class MyIntentService : IntentService {
 
 - [Android 可呼叫包裝函式](~/android/platform/java-integration/android-callable-wrappers.md)
 - [使用 JNI](~/android/platform/java-integration/working-with-jni.md)
-- [ExportAttribute](https://developer.xamarin.com/api/type/Java.Interop.ExportAttribute/)
+- [Exportattribute 標記的型](https://developer.xamarin.com/api/type/Java.Interop.ExportAttribute/)
 - [SuperString](https://developer.xamarin.com/api/property/Java.Interop.ExportAttribute.SuperArgumentsString/)
 - [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)

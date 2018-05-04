@@ -1,17 +1,17 @@
 ---
-title: 部署及測試
-description: 如何測試在 Android 裝置 （或模擬器） 應用程式損耗及準備進行部署。
+title: 測試、 最佳化及部署有 OS 應用程式
+description: 如何測試 Android 裝置 （或模擬器） 上的應用程式有作業系統，並準備進行部署。
 ms.prod: xamarin
 ms.assetid: 3D8E5A97-F719-4E8C-B777-108DFF20C91F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 12/19/2017
-ms.openlocfilehash: e6472b3bf07750338d9ada7ca62f0a5c9e2c8a7c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 9e35b383c77e246d453f03c4b6cdac7c01d32ace
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="deployment-and-testing"></a>部署及測試
 

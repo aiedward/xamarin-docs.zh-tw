@@ -7,13 +7,13 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: ec3cb08b227b268c4c755545e8bc76b9e234d093
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 97e6167304ebf50a149fce379eb34e8a46c8d3e8
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="sharing-code-options"></a>共用程式碼選項
+# <a name="sharing-code-overview"></a>共用程式碼的概觀
 
 _這份文件會比較跨平台專案之間共用程式碼的不同方法： 共用的專案 」、 「 可攜式類別庫，和 「.NET 標準，包括優點和缺點。_
 

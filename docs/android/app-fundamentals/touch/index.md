@@ -1,5 +1,5 @@
 ---
-title: 觸控
+title: 觸控與手勢 Xamarin.Android 中
 description: 在許多現今的裝置上的觸控式螢幕讓使用者快速且有效地與裝置互動以自然且直覺式的方式。 這種互動不只限於簡單觸控偵測-可能使用筆勢以及。 例如，縮小-放大手勢是螢幕的一個非常常見的範例就與使用者都可以放大或縮小的兩指部分。本指南檢查觸控與手勢都在 Android。
 ms.prod: xamarin
 ms.assetid: 61874769-978A-4562-9B2A-7FFD45F58B38
@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: d6c6d7fd02511ede84b7cfa75575d755f11bab99
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3700f9c73fb58fefcdba7987c9931e385cd52d38
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="touch"></a>觸控
+# <a name="touch-and-gestures-in-xamarinandroid"></a>觸控與手勢 Xamarin.Android 中
 
 _在許多現今的裝置上的觸控式螢幕讓使用者快速且有效地與裝置互動以自然且直覺式的方式。這種互動不只限於簡單觸控偵測-可能使用筆勢以及。例如，縮小-放大手勢是螢幕的一個非常常見的範例就與使用者都可以放大或縮小的兩指部分。本指南檢查觸控與手勢都在 Android。_
 

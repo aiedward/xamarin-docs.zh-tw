@@ -1,5 +1,5 @@
 ---
-title: 控制項
+title: Android 的控制項 (Widget)
 description: 用於建立 Xamarin.Android 使用者介面的建置組塊
 ms.prod: xamarin
 ms.assetid: B7A82166-B920-4672-B7A2-20DD5E0B5AEF
@@ -7,14 +7,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 8994a8988c0e32e85aedcd9110e3583195843862
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28418c3b3fedcd24963008eb3b59ffa782d791f1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="controls"></a>控制項
-
+# <a name="android-controls-widgets"></a>Android 的控制項 (Widget)
 
 Xamarin.Android 不僅會公開所有由 Android 提供原生使用者介面控制項 (widget)。 使用 Android 設計工具的 Xamarin.Android 應用程式或以程式設計方式透過 XML 配置檔案，就可以輕鬆地新增這些控制項。 不論您選擇的方法，Xamarin.Android 公開的所有使用者介面物件的屬性和 C# 中的方法。 下列各節介紹最常見的 Android 使用者介面控制項，並說明如何併入 Xamarin.Android 應用程式。
 

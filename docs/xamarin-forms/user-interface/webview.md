@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: ed37e723d4b1a7997890c41886df8d117425e270
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: a1cba53223567e353194a4fcd52c8e22fa48ddf0
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="webview"></a>網頁檢視
 
@@ -329,41 +329,40 @@ public partial class InAppDemo : ContentPage
 - **瀏覽** &ndash; WebView 會開始載入新的頁面時引發的事件。
 - **瀏覽**&ndash;載入的頁面，並瀏覽已停止時引發的事件。
 
-如果您預期使用需要很長的時間來載入的網頁，請考慮使用這些事件實作之狀態指標。 例如: 
-
-我們的 XAML:
+如果您預期使用需要很長的時間來載入的網頁，請考慮使用這些事件實作之狀態指標。 例如在 XAML 看起來像這樣：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 x:Class="WebViewDemo.LoadingDemo" Title="Loading Demo">
-    <ContentPage.Content>
+  <ContentPage.Content>
     <StackLayout>
       <Label x:Name="LoadingLabel"
         Text="Loading..."
         HorizontalOptions="Center"
-        isVisible="false" />
+        IsVisible="false" />
       <WebView x:Name="Browser"
       HeightRequest="1000"
       WidthRequest="1000"
       Navigating="webOnNavigating"
       Navigated="webOnEndNavigating" />
     </StackLayout>
-    </ContentPage.Content>
+  </ContentPage.Content>
 </ContentPage>
 ```
-兩個事件處理常式：
+
+兩個事件處理常式中：
 
 ```csharp
 void webOnNavigating (object sender, WebNavigatingEventArgs e)
 {
-            LoadingLabel.IsVisible = true;
+    LoadingLabel.IsVisible = true;
 }
 
 void webOnEndNavigating (object sender, WebNavigatedEventArgs e)
 {
-            LoadingLabel.IsVisible = false;
+    LoadingLabel.IsVisible = false;
 }
 ```
 

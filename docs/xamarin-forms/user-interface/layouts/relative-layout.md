@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 924aa88d29379c98204fd810c651de56ff757971
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 7c12319d9e688504c87368be37edf93e7294df30
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 04/27/2018
 
 ## <a name="purpose"></a>用途
 
-`RelativeLayout` 可用來放置在相對於整個版面配置 畫面上的檢視或其他兩個檢視。
+`RelativeLayout` 可用來將位置相對於整個版面配置或其他檢視螢幕上的檢視。
 
 ![](relative-layout-images/flag.png "RelativeLayout 瀏覽")
 

@@ -1,5 +1,5 @@
 ---
-title: 平台功能
+title: 平台功能的 Xamarin.Android
 description: 本節中的文件涵蓋 Android 的特定功能。 您可以在這裡找到主題，例如使用片段中，使用對應以及封裝與內容提供者的資料。
 ms.prod: xamarin
 ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 69a70fe399bc95a9d8b24cc839382f2f3bee553e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8c26cc3af97cad26e8add248b5bf4aabcefc614b
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="platform-features"></a>平台功能
 
@@ -38,7 +38,7 @@ Android 3.0 引進了片段，示範如何以更具彈性的設計支援在手�
 
 
 
-## <a name="app-linkingandroidplatformapp-linkingmd"></a>[App-Linking](~/android/platform/app-linking.md)
+## <a name="app-linkingandroidplatformapp-linkingmd"></a>[應用程式連結](~/android/platform/app-linking.md)
 
 本指南將討論如何支援 Android 6.0_應用程式連結_，可讓行動裝置應用程式回應 Url 在網站上的技術。 它將討論如何實作應用程式連結，在 Android 6.0 應用程式，以及如何設定網站来授與行動裝置應用程式的權限，以處理網域的應用程式連結。
 

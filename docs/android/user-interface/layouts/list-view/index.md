@@ -1,17 +1,17 @@
 ---
-title: ListView
+title: Xamarin.Android 中使用清單檢視
 description: ListView 是重要的 UI 元件的 Android 應用程式它用於所有位置的功能表選項的簡短清單中較長的連絡人或網際網路我的最愛清單。 它提供簡單的方式來呈現捲動的資料列，可以使用內建樣式格式化或自訂的廣泛清單。
 ms.prod: xamarin
 ms.assetid: C2BA2705-9B20-01C2-468D-860BDFEDC157
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/21/2018
-ms.openlocfilehash: 8499b9f186c12df22518893b6677cab22f0a3568
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: c5c8222df16b265f3b44f3ee3fcd9053d827cf6a
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="listview"></a>ListView
 
@@ -41,7 +41,7 @@ _ListView 是重要的 UI 元件的 Android 應用程式它用於所有位置的
 
 啟動新的專案，名為**HelloListView**。
 
-建立名為 XML 檔案**list_item.xml**並將其內部儲存**資源/配置/**資料夾。 插入下列：
+建立名為 XML 檔案**list_item.xml**並將其內部儲存**資源/配置/** 資料夾。 插入下列：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -215,7 +215,7 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 
 - [AccessoryViews （範例）](https://developer.xamarin.com/samples/AccessoryViews/)
 - [BasicTableAndroid （範例）](https://developer.xamarin.com/samples/BasicTableAndroid/)
-- [BasicTableAdapter (sample)](https://developer.xamarin.com/samples/BasicTableAdapter/)
+- [BasicTableAdapter （範例）](https://developer.xamarin.com/samples/BasicTableAdapter/)
 - [BuiltInViews （範例）](https://developer.xamarin.com/samples/BuiltInViews/)
 - [CustomRowView （範例）](https://developer.xamarin.com/samples/CustomRowView/)
 - [FastScroll （範例）](https://developer.xamarin.com/samples/FastScroll/)

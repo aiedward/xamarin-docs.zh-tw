@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 04/23/2018
-ms.openlocfilehash: bfb53af420b64fb9af994d3fb19293406d3acd7b
-ms.sourcegitcommit: 180a8411d912de40545f9624e2127a66ee89e7b2
+ms.openlocfilehash: 627225fdeef781a8b24a79e9b46627a739fd15af
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="xamarin-live-reload"></a>Xamarin 即時重新載入
 
@@ -106,13 +106,33 @@ public partial class App : Application
 ## <a name="limitations"></a>限制
 
 * 只重新載入的 XAML 支援。
-* 只支援 Visual Studio 中。
-* 只適用於.NET 標準程式庫。
-* 不支援 CSS 樣式表。
 * 除非使用 MVVM UI 狀態可能無法維護之間重新部署。
-* 重新載入整個應用程式的資源 (也就是**App.xaml**或共用資源字典)，就會重設應用程式瀏覽。
+
+## <a name="known-issues"></a>已知問題
+
+* 只支援 Visual Studio 中。
+* 只適用於.NET 標準程式庫。 這將在下一步的預覽版本中修正。
+* 不支援 CSS 樣式表。 這將在下一步的預覽版本中修正。
+* 重新載入整個應用程式的資源 (也就是**App.xaml**或共用資源字典)，就會重設應用程式瀏覽。 這將在下一步的預覽版本中修正。
+* 當偵錯 UWP 可能會造成執行階段當機，請編輯 XAML。 因應措施： 使用**啟動但不偵錯 （Ctrl + F5）**而不是**開始偵錯 (F5)**。
 
 ## <a name="troubleshooting"></a>疑難排解
+
+### <a name="error-codes"></a>錯誤碼
+
+* **XLR001**:*目前的專案參考 'Xamarin.LiveReload' NuGet 套件版本 [版本]，但 Xamarin 即時重新載入延伸模組需要版本 [版本]。*
+
+  為了讓快速反覆項目和即時重新載入功能的演進，必須完全符合 nuget 套件和 Visual Studio 擴充功能。 為相同的版本，您已安裝的擴充功能的更新您的 nuget 套件。
+
+* **XLR002**:*即時重新載入至少需要 'MqttHostname' 屬性從命令列建置時。或者，設定 'EnableLiveReload' 為 'false' 停用此功能。*
+
+  即時重新載入所需的屬性時，就無法使用從命令列 （或連續整合中），建置，因此必須明確提供。 
+
+* **XLR003**:*即時重新載入 nuget 套件需要安裝 Xamarin 即時重新載入 Visual Studio 擴充功能。*
+
+  嘗試建置專案，參考即時重新載入 nuget 封裝，但未安裝 Visual 的擴充功能。  
+
+
 
 ### <a name="app-doesnt-connect"></a>應用程式並不會連接
 
@@ -145,7 +165,7 @@ public partial class App : Application
 
 在案例中從執行中應用程式連接到您的電腦 (表示使用`localhost`或`127.0.0.1`中**工具 > 選項 > Xamarin > 即時重新載入**) 無法 （也就是防火牆，不同的網路）您可以將遠端伺服器設定相反地，IDE 和應用程式將以連現到。
 
-即時重新載入使用標準[MQTT 通訊協定](http://mqtt.org/)來交換訊息，並因此可以與[協力廠商伺服器](https://github.com/mqtt/mqtt.github.io/wiki/servers)。 即使有[公用伺服器](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers)(也稱為*broker*) 可用，您可以使用。 即時重新載入經過測試可與`broker.hivemq.com`和`iot.eclipse.org`主機名稱，以及所提供的服務[www.cloudmqtt.com](https://www.cloudmqtt.com)和[www.cloudamqp.com](https://www.cloudamqp.com)。您也可以如部署在雲端中，您自己 MQTT 伺服器[在 Azure 上的 HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud)或[上 AWS 兔子 MQ](http://www.rabbitmq.com/ec2.html)。 
+即時重新載入使用標準[MQTT 通訊協定](http://mqtt.org/)來交換訊息，並因此可以與[協力廠商伺服器](https://github.com/mqtt/mqtt.github.io/wiki/servers)。 即使有[公用伺服器](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers)(也稱為*broker*) 可用，您可以使用。 即時重新載入經過測試可與`broker.hivemq.com`和`iot.eclipse.org`主機名稱，以及所提供的服務[www.cloudmqtt.com](https://www.cloudmqtt.com)和[www.cloudamqp.com](https://www.cloudamqp.com)。您也可以如部署在雲端中，您自己 MQTT 伺服器[在 Azure 上的 HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud)。
 
 您可以設定任何連接埠，但通常會使用預設 1883年連接埠使用遠端伺服器。 即時重新載入訊息使用強式端對端 AES 對稱式加密，因此安全地連線至遠端伺服器。 根據預設，加密金鑰和初始化向量 (IV) 會重新產生每個 Visual Studio 工作階段上。
 

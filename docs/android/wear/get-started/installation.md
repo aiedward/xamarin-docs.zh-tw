@@ -1,17 +1,17 @@
 ---
-title: 設定與安裝
+title: '安裝和設定穿 OS onXamarin.Android '
 description: 本文逐步解說的安裝步驟及準備您的電腦和裝置的 Android 戴上開發所需的組態詳細資料。 這篇文章結束時，您必須可運作的 Xamarin.Android 損耗安裝整合至 Visual Studio for Mac 及/或 Microsoft Visual Studio 中，及您就可以開始建置 Xamarin.Android 損耗應用程式第一次。
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 86ed62075f5c39eaf7b0e348020f4a9361764727
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 14162663c518fdd1324f2b0340592fbae491d112
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="setup-and-installation"></a>設定與安裝
 

@@ -1,18 +1,18 @@
 ---
-title: ObjC Embeddinator 4000 最佳作法
+title: .NET 內嵌 OBJECTIVE-C 適用的最佳作法
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: ca5face9865c60fabe8359c2bf356d5d5555f517
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 9f31190d54b187e1dc298fe1c2a8d443862f10de
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="embeddinator-4000-best-practices-for-objc"></a>ObjC Embeddinator 4000 最佳作法
+# <a name="net-embedding-best-practices-for-objective-c"></a>OBJECTIVE-C 適用的.NET 內嵌最佳作法
 
 這是一個草稿和可能不在同步處理的功能目前支援工具。 我們希望這份文件將會個別發展和最終符合最後一個工具，也就是我們會建議長期最佳方法不直接的因應措施。
 
@@ -106,7 +106,7 @@ Objective C 開發人員的觀點來看，具有的方法從`Get`前置詞表示
 
 ## <a name="exceptions"></a>例外狀況
 
-在.NET 中使用廣泛地報告錯誤的例外狀況的竟全功 commont 它。 不過，它們是速度慢且不 ObjC 完全相同。 可能的話您應該從 OBJECTIVE-C developer 隱藏它們。
+它是使用廣泛地報告錯誤的例外狀況的.NET 中相當常見。 不過，它們是速度慢且相當相同目標 c 可能的話您應該從 OBJECTIVE-C developer 隱藏它們。
 
 例如，.NET`Try`模式將會更輕鬆地取用來自 Objective C 程式碼：
 
@@ -138,6 +138,6 @@ public bool TryParse (string number, out int value)
 
 Objective C 不允許運算子多載與 C#，因此這些會轉換為類別選取器。
 
-[「 易記 」](/dotnet/standard/design-guidelines/operator-overloads/)具名的方法所產生狀況運算子多載時找不到，並且可以產生更輕鬆地取用應用程式開發介面。
+[「 易記 」](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads)具名的方法所產生狀況運算子多載時找不到，並且可以產生更輕鬆地取用應用程式開發介面。
 
 覆寫的運算子的類別`==`和/或`!=`應該覆寫標準 Equals (Object) 方法。
