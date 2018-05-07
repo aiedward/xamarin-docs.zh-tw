@@ -6,12 +6,12 @@ ms.assetid: CD128CB9-499F-4558-B49F-77248824EFDF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/30/2018
-ms.openlocfilehash: bcc88ba4c46aa9abe9038d6ea65bc9c17f337da6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/30/2018
+ms.openlocfilehash: 29e35d0dee614d28eed08fbe8799fc74c5ad1eba
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="visual-studio-android-emulator"></a>Visual Studio Android 模擬器
 
@@ -191,5 +191,5 @@ Microsoft Android 模擬器包含一組裝置設定檔，這些設定檔代表�
 
 ## <a name="related-links"></a>相關連結
 
-- [Android 版 Visual Studio 模擬器](https://www.visualstudio.com/en-us/explore/msft-android-emulator-vs.aspx)
+- [Android 版 Visual Studio 模擬器](https://www.visualstudio.com/vs/msft-android-emulator/)
 - [Visual Studio Android Emulator 簡介](https://blogs.msdn.microsoft.com/visualstudioalm/2014/11/12/introducing-visual-studios-emulator-for-android/)

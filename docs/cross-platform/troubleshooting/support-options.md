@@ -6,11 +6,11 @@ ms.assetid: E4EF7E0F-ED86-44C9-9F98-38ECF881C7E2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 500b4c63131ab850b4b9d7c6a0aec49b313ec426
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 47480adfdff5ee3282c1c7fa422260184f91c071
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="what-support-options-are-available-for-xamarin"></a>適用於 Xamarin 支援選項？
 
@@ -33,8 +33,6 @@ Xamarin 支援小組可協助您監視每個選項。  我們鼓勵其仔細考�
 ### <a name="visual-studio-email-support-incidents-for-xamarin-topics"></a>Visual Studio 電子郵件事件支援 Xamarin 主題
 
 Xamarin SDK 和 IDE 功能的一部份都適合進行技術支援事件[Visual Studio 訂閱者權益](https://msdn.microsoft.com/subscriptions/bb266240)和[Microsoft Premier Support](https://www.microsoft.com/microsoftservices/support.aspx)。  這與電腦的原則，例如 UWP 和 ASP.NET 的 Visual Studio 中的其他開發平台符合。  Xamarin 事件送出這種方式會指派給 Xamarin 支援小組。  請參閱[Microsoft 支援常見問題集](https://support.microsoft.com/gp/offerprophone)如需有關這些事件的原則。
-
-Xamarin Test Cloud，支援事件可以提交瀏覽至[測試雲端登入頁面](https://testcloud.xamarin.com/login)並開啟**支援**連結。
 
 ### <a name="information-for-users-migrating-from-expired-xamarin-subscriptions-to-visual-studio-subscriptions"></a>從過期的 Xamarin 訂用帳戶移轉至 Visual Studio 訂用帳戶的使用者資訊
 

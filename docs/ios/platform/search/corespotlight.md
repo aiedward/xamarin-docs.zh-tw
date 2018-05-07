@@ -6,11 +6,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: d38d90ce460c7a93f8412baf372778443eb9d9e9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0074cfcdc4a80f66f64d12f8e5c0a5e81ab2b8a1
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="search-with-core-spotlight"></a>使用核心 Spotlight 搜尋
 
@@ -28,7 +28,7 @@ using CoreSpotlight;
 
 // Create attributes to describe an item
 var attributes = new CSSearchableItemAttributeSet();
-attributes.Title = "Test Cloud";
+attributes.Title = "App Center Test";
 attributes.ContentDescription = "Automatically test your app on 1,000 devices in the cloud.";
 
 // Create item

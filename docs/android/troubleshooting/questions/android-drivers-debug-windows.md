@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/19/2017
-ms.openlocfilehash: 5799d3bd40effcad4404532c47bdab73bc6cfc98
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 77a7f50ab9d8f351dcefcbbdd50e88e18a13645d
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="what-usb-drivers-do-i-need-to-debug-android-on-windows"></a>若要偵錯在 Windows 上的 Android 需要哪些 USB 驅動程式？
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 04/04/2018
 
 根據 manfacturer，可能很難追蹤需要的確切 USB 驅動程式。 包括使用的 Android 模擬器，或使用外部測試服務的 Windows 中，開發測試 Android 應用程式的一些其他替代方案。 其中包括：
 
-- [Xamarin Test Cloud](https://xamarin.com/test-cloud) -雲端測試在數百真正 Android 裝置上執行的服務。
+- [應用程式中心測試](https://docs.microsoft.com/appcenter/test-cloud/)-雲端測試在數百真正 Android 裝置上執行的服務。
 
 - [Android 版 Visual Studio 模擬器](https://www.visualstudio.com/en-us/features/msft-android-emulator-vs.aspx)
 

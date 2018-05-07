@@ -5,11 +5,11 @@ title: Xamarin 文件
 description: Xamarin 可讓您使用 .NET 程式碼和平台專屬的使用者介面，來建置 Android、iOS 和 macOS 原生應用程式。 Xamarin.Forms 可讓您透過以 C# 或 XAML 撰寫的共用 UI 程式碼，來建置原生應用程式。
 featureFlags:
 - clicktale
-ms.openlocfilehash: a2f8c6ddedcff89f357ed8a984954d9f91c0477f
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: ba47459859866c140dd12186035ed6916393a4f2
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -863,6 +863,25 @@ ms.lasthandoff: 05/03/2018
                                 </a>
                             </li>
                             <li>
+                                <a href="~/cross-platform/deploy-test/performance.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Deployment and Testing" src="https://docs.microsoft.com/media/illustrations/team-services-agile-track.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>效能與安全性</h3>
+                                                    <p>應用程式效能和安全性指導方針。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="~/cross-platform/deploy-test/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
@@ -873,8 +892,27 @@ ms.lasthandoff: 05/03/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>偵錯與效能</h3>
-                                                    <p>無論您以哪一個平台為目標，都可以協助改善您的應用程式。</p>
+                                                    <h3>部署和偵錯</h3>
+                                                    <p>偵錯和部署的秘訣。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/cross-platform/desktop/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Deployment and Testing" src="~/media/index/xamarin-cross-platform-desktop.svg" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>桌面開發人員</h3>
+                                                    <p>適用於有意建置行動應用程式之 .NET 桌面開發人員的指引。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1123,25 +1161,6 @@ ms.lasthandoff: 05/03/2018
                                                 <div class="cardText">
                                                     <h3>連續整合</h3>
                                                     <p>如何將 Xamarin 專案合併到持續組建與整合管線。</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://developer.xamarin.com/testcloud/">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img src="https://docs.microsoft.com/en-us/media/illustrations/team-services-agile-track.svg" alt="Xamarin Test Cloud" />
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Xamarin Test Cloud</h3>
-                                                    <p>在任何裝置上測試您的應用程式。</p>
                                                 </div>
                                             </div>
                                         </div>

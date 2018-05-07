@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/04/2017
-ms.openlocfilehash: b5bccfa38a9f382789585284765183efa42b6a3d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 54f3d3c475e506e7d451af5125e90a0f51aa7374
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>使用 Xamarin 的連續整合簡介
 
@@ -35,9 +35,8 @@ _持續整合是軟體工程作法自動化的組建會編譯並新增或變更�
 
 ### <a name="using-teamcity-with-xamarintoolsciteamcitymd"></a>[使用 TeamCity 搭配 Xamarin](~/tools/ci/teamcity.md)
 
-本指南會討論與使用 TeamCity 編譯行動應用程式，然後將它們提交至 Xamarin Test Cloud 所需的步驟。
+本指南會討論與使用 TeamCity 編譯行動應用程式，然後將它們提交至應用程式中心測試所需的步驟。
 
-###  <a name="using-jenkins-with-xamarintoolscijenkins-walkthroughmd"></a>[使用 Jenkins 搭配 Xamarin](~/tools/ci/jenkins-walkthrough.md)
+### <a name="using-jenkins-with-xamarintoolscijenkins-walkthroughmd"></a>[使用 Jenkins 搭配 Xamarin](~/tools/ci/jenkins-walkthrough.md)
 
 本指南說明如何設定為持續整合伺服器 Jenkins 和自動化編譯建立使用 Xamarin 的行動裝置應用程式。 說明如何安裝 Jenkins OS X 上、 設定，以及設定變更認可至版本控制系統時，編譯 Xamarin.iOS 和 Xamarin.Android 應用程式的作業。
-
