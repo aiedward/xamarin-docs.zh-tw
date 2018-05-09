@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: 2178d567f1ccfe803ebce8b7b623c31c290999bc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fec14b0f7328bee1d0866ba02f28202e8d63e8cb
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started"></a>快速入門
 
@@ -42,6 +42,10 @@ ms.lasthandoff: 04/04/2018
 ###  <a name="introduction-to-the-mobile-software-development-lifecyclecross-platformget-startedintroduction-to-mobile-sdlcmd"></a>[行動軟體開發生命週期簡介](~/cross-platform/get-started/introduction-to-mobile-sdlc.md)
 
 本文將討論行動應用程式相關軟體的開發生命週期，以及建置行動專案時的一些考量事項。 對於希望直接開始建置的開發人員，可先跳過此指南並稍後再閱讀，以便更完整地解行動裝置應用程式開發。
+
+##  <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[建置跨平台應用程式](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
+
+藉由選擇 Xamarin 並在設計及開發您的行動應用程式時記住幾件事，您就可以在行動平台之間共用大量的程式碼、縮短您的上市時間、有效率的調控現有的人力、符合客戶對行動存取的需求，以及降低跨平台複雜度。&nbsp;本文件概述為公用程式和生產力應用程式實現這些優點的主要指引。
 
 ###  <a name="introducing-visual-studio-for-machttpsdocsmicrosoftcomvisualstudiomac"></a>[Visual Studio for Mac 簡介](https://docs.microsoft.com/visualstudio/mac/)
 

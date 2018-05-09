@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 864e81b6955fd5138c4055a3f202695803139ac6
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 2f57ac5b5b54b2606618c5e59fb544cae7c77e88
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="layouts"></a>版面配置
 
@@ -28,6 +28,7 @@ Xamarin.Forms 會有數個配置和功能來組織螢幕上的內容。
 * **[AbsoluteLayout](absolute-layout.md)**  &ndash;用來排列檢視，藉由設定座標 （& s） 方面絕對值或比例調整大小。 AbsoluteLayout 可以用於圖層的檢視，以及錨定在其左、 右邊或中間。
 * **[RelativeLayout](relative-layout.md)**  &ndash;用來排列檢視，藉由設定相對於其父代的維度及位置條件約束。
 * **[方格](grid.md)** &ndash;用來排列在方格中的檢視。 資料列和資料行可以指定絕對值或比例。
+* **[FlexLayout](flex-layout.md)**  &ndash;用來水平或垂直排列檢視進行換行。
 * **[ScrollView](scroll-view.md)**  &ndash;用來提供捲動時檢視完全無法容納螢幕的界限。
 * **[LayoutOptions](layout-options.md)**  &ndash;對齊和擴充的檢視，相對於其父定義。
 * **[輸入透明度](#input_transparency)** &ndash;指定項目是否會收到輸入。
@@ -59,6 +60,23 @@ Xamarin.Forms 會有數個配置和功能來組織螢幕上的內容。
   <Button HorizontalOptions="End" Text="Button" />
 </StackLayout>
 ```
+
+### <a name="flexlayoutflex-layoutmd"></a>[FlexLayout](flex-layout.md)
+
+`FlexLayout`類似於`StackLayout`均以水平或垂直方式顯示子檢視：
+
+```xaml
+<FlexLayout Direction="Column"
+            AlignItems="Center"
+            JustifyContent="SpaceEvenly">
+        
+    <Label Text="FlexLayout in Action" />
+    <Button Text="Button" />
+    <Label Text="Another Label" />
+</FlexLayout>
+```
+
+不過，如果有太多的子系，以配合單一資料列或資料，`FlexLayout`能夠包裝這些檢視表。 `FlexLayout` 會根據 CSS 彈性方塊配置模組，並有許多的內建的相同選項，用來定位和對齊其子系。
 
 ### <a name="absolutelayoutabsolute-layoutmd"></a>[AbsoluteLayout](absolute-layout.md)
 

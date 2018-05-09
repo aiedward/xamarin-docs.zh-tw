@@ -6,12 +6,12 @@ ms.assetid: 0CFB494C-376C-449D-B714-9E82644F9DA3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/16/2017
-ms.openlocfilehash: 492b06420d27f902faf7240003ebe5e16416a5cb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/02/2017
+ms.openlocfilehash: 73ca0974a42bf661a89327148b68341114297084
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="message-app-extension-basics"></a>訊息應用程式擴充功能的基本概念
 
@@ -131,11 +131,12 @@ Apple 建議測試以確保它們在所有可能的情況下尋找最佳的貼�
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 啟動 Visual Studio。
-2. 開啟方案，以新增至訊息應用程式擴充功能。 
-3. 選取**iOS** > **延伸** > **iMessage 延伸**按一下**下一步**按鈕： 
+2. 開啟方案，以新增訊息應用程式擴充功能。
+3. 選取 * * iOS 擴充功能 > iMessage 延伸模組 (iOS) * * 按一下**下一步**按鈕：
 
-    [![](intro-to-message-app-extensions-images/message01w.png "選取 iMessage 延伸模組")](intro-to-message-app-extensions-images/message01.png#lightbox)
-4. 輸入**副檔名**按一下**確定**按鈕
+    [![選取 iMessage 延伸模組 (iOS)](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
+
+4. 輸入**名稱**按一下**確定**按鈕
 
 -----
 
@@ -166,7 +167,7 @@ Apple 建議測試以確保它們在所有可能的情況下尋找最佳的貼�
 1. 在**方案總管 中**，擴充功能的專案名稱上按一下滑鼠右鍵，然後選取**新增** > **新的檔案...**  >  **iOS |Apple Watch** > **介面控制器**。
 2. 輸入`StickerBrowserViewController`如**名稱**按一下**新增**按鈕： 
 
-    [![](intro-to-message-app-extensions-images/browser01w.png "請輸入名稱 StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.png#lightbox)
+    [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "請輸入名稱 StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
 3. 開啟`StickerBrowserViewController.cs`檔案進行編輯。
 
 -----

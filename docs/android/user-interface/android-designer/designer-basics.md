@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 6bac16a8ce9859e819299689489d9aad982c1f7f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a8201301fc0437ecb79a81f40e865f14dc6af020
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="designer-basics"></a>設計工具的基本概念
 
@@ -37,7 +37,7 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 
 同樣地，您可以加入新的版面配置，以滑鼠右鍵按一下**配置**資料夾中的**方案總管 中**，然後選取**新增 > 新項目 > Android 配置**:
 
-[![加入新項目 對話方塊](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png#lightbox)
+[![加入新項目 對話方塊](designer-basics-images/vs/02-add-new-layout-sml.w157.png)](designer-basics-images/vs/02-add-new-layout.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -280,7 +280,7 @@ _本主題導入了設計工具功能，說明如何啟動設計工具、 說明
 
 ### <a name="referencing-resources"></a>參考的資源
 
-某些屬性可以參考檔案以外的版面配置中定義的資源**.axml**檔案。 此類型的最常見的情況下會`string`和`drawable`資源。 不過，參考可以也用於其他資源，例如`Boolean`值和維度。
+某些屬性可以參考檔案以外的版面配置中定義的資源 **.axml**檔案。 此類型的最常見的情況下會`string`和`drawable`資源。 不過，參考可以也用於其他資源，例如`Boolean`值和維度。
 當某個屬性支援資源參考，瀏覽圖示 (的省略符號， &hellip;) 屬性的文字項目旁邊會顯示。
 這個按鈕會開啟資源選擇器時按下。
 

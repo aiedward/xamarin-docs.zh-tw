@@ -4,14 +4,14 @@ description: 控制項的來源和目標之間的資訊流程
 ms.prod: xamarin
 ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
 ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: fdcba9b680bd548371883788af9e4eda755d91df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+author: charlespetzold
+ms.author: chape
+ms.date: 05/01/2018
+ms.openlocfilehash: 1aa612d8b855158f09bc0aeaad1520a44b3d9637
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="binding-mode"></a>繫結模式
 
@@ -58,6 +58,7 @@ ms.lasthandoff: 04/04/2018
 - [`TwoWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/) &ndash; 資料來源和目標之間進入這兩種方式
 - [`OneWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWay/) &ndash; 資料會從來源移到目標
 - [`OneWayToSource`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; 資料是從目標到來源
+- [`OneTime`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; 資料會從來源移到目標，但只有在`BindingContext`變更 （新增使用 Xamarin.Forms 3.0）
 
 每個可繫結屬性具有預設的繫結模式時建立可繫結的屬性時，才設定，以及從[ `DefaultBindingMode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableProperty.DefaultBindingMode/)屬性`BindableProperty`物件。 作用中時，該屬性是資料繫結目標時，此預設繫結模式將指出的模式。
 
@@ -94,6 +95,15 @@ ms.lasthandoff: 04/04/2018
 - `SelectedItem` 屬性 `ListView`
 
 基本原理是繫結的`SelectedItem`屬性應該會導致設定繫結來源。 本文稍後的範例會覆寫該行為。
+
+### <a name="one-time-bindings"></a>一次性的繫結
+
+數個屬性都使用預設繫結模式的`OneTime`。 這些是：
+
+- `IsTextPredictionEnabled` 屬性 `Entry`
+- `Text``BackgroundColor`，和`Style`屬性`Span`。
+
+目標屬性的繫結模式`OneTime`繫結內容變更時，才會更新。 對於這些目標屬性的繫結，這會簡化繫結基礎結構，因為不需要監視的來源屬性中的變更。
 
 ## <a name="viewmodels-and-property-change-notifications"></a>ViewModels 和屬性變更通知
 
@@ -198,6 +208,8 @@ public class HslColorViewModel : INotifyPropertyChanged
 當`Color`屬性變更、 靜態`GetNearestColorName`方法中的`NamedColor`類別 (也包含在**DataBindingDemos**方案) 取得最接近的命名的色彩，並設定`Name`屬性。 這`Name`屬性具有私用`set`存取子，因此無法從中設定在類別外部。
 
 繫結基礎結構當 ViewModel 設定做為繫結來源時，附加至處理常式`PropertyChanged`事件。 如此一來，繫結屬性的變更通知和可以設定目標屬性從變更的值。
+
+不過，當目標屬性 (或`Binding`定義要針對目標屬性) 具有`BindingMode`的`OneTime`，則不需要針對要附加的處理常式上的繫結基礎結構`PropertyChanged`事件。 更新的目標屬性時，才`BindingContext`變更並不本身的 [來源] 屬性變更時。 
 
 **簡單色彩選取器**XAML 檔案會具現化`HslColorViewModel`中頁面的資源字典，並初始化`Color`屬性。 `BindingContext`屬性`Grid`設`StaticResource`繫結參考該資源擴充功能：
 

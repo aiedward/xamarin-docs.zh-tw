@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 83fb7a03b3426631fcf772bcb3605fea44fd4f2b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3485a7ebf9c54c2aa084dd11f32cd028cbc68aff
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="user-interface"></a>使用者介面
 
@@ -51,7 +51,7 @@ DataPages 提供 API，以快速且輕鬆地資料來源繫結至預先建立的
 
 ## <a name="layoutslayoutsindexmd"></a>[版面配置](layouts/index.md)
 
-Xamarin.Forms 會有數個配置用於組織的螢幕上的內容。 `StackLayout``Grid`， `AbsoluteLayout`， `ScrollView`，和`RelativeLayout`每個可用來建立美觀、 可回應使用者介面。
+Xamarin.Forms 會有數個配置用於組織的螢幕上的內容。 `StackLayout``Grid`， `FlexLayout`， `AbsoluteLayout`， `ScrollView`，和`RelativeLayout`每個可用來建立美觀、 可回應使用者介面。
 
 ## <a name="listviewlistviewindexmd"></a>[ListView](listview/index.md)
 
@@ -84,6 +84,10 @@ Xamarin.Forms 有呈現及接收文字的多個檢視。 可格式化並針對�
 ## <a name="themesthemesindexmd"></a>[佈景主題](themes/index.md)
 
 Xamarin.Forms 佈景主題定義適用於標準控制特定的視覺外觀。 一旦您將主題加入應用程式的資源字典時，將會變更的標準控制項的外觀。
+
+## <a name="visual-state-managervisual-state-managermd"></a>[視覺狀態管理員](visual-state-manager.md)
+
+Visual State Manager 提供的結構化的方式觸發從程式碼，包括變更裝置方向或大小會調整的版面配置的使用者介面中的變更。
 
 ## <a name="webviewwebviewmd"></a>[WebView](webview.md)
 

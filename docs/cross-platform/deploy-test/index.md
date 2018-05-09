@@ -1,33 +1,24 @@
 ---
-title: 部署及測試
-description: 穩定指南
+title: 部署和偵錯
+description: 偵錯 Xamarin 應用程式及變更部署組態的秘訣。
 ms.prod: xamarin
 ms.assetid: D02C62C9-47D1-4E72-8A83-602C3E7929BE
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/07/2017
-ms.openlocfilehash: 720250997dc4c5431d946e41f835185759ef1e15
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f6db6aed18fb38e8b24b11eb1760921e0d8cf938
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="deployment-and-testing"></a>部署及測試
-
-##  <a name="cross-platform-performancememory-perf-best-practicesmd"></a>[跨平台效能](memory-perf-best-practices.md)
-
-有許多技巧可增加利用 Xamarin 平台建置之應用程式的效能。 這些技巧可共同大幅減少 CPU 所執行的工作量和應用程式所耗用的記憶體數量。
-
-## <a name="installing-nunit-264-using-nugetinstalling-nunit-using-nugetmd"></a>[使用 NuGet 安裝 NUnit 2.6.4](installing-nunit-using-nuget.md)
-
-本指南會討論如何使用 NuGet 安裝 NUnit 2.6.4 (以及在需要的情況下移除 NUnit 3.0) 來測試專案。
+# <a name="deployment--debugging"></a>部署和偵錯
 
 ## <a name="multi-process-debuggingmulti-process-debuggingmd"></a>[多處理序偵錯](multi-process-debugging.md)
 
 本指南會討論如何偵錯多個處理序。
 
-
-##  <a name="custom-linker-configurationlinkermd"></a>[自訂連結器設定](linker.md)
+## <a name="custom-linker-configurationlinkermd"></a>[自訂連結器設定](linker.md)
 
 如果預設的選項組不足以滿足需求，則可以使用描述您對連結器要求的 XML 檔案，藉以驅動連結程序。

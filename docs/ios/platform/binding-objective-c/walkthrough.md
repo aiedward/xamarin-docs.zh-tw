@@ -6,12 +6,12 @@ ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/18/2017
-ms.openlocfilehash: 6a43b9ad3c9af0a4118c40fb128f8890ac0ffe40
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.date: 05/02/2017
+ms.openlocfilehash: 5954d705e403a3c8230c3125efcf836c3930c459
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>逐步解說： 繫結 iOS Objective C 程式庫
 
@@ -128,6 +128,7 @@ _本文章提供逐步解說動手建立現有的 Objective C 程式庫，InfCol
 3. 選取**架構和程式庫**、 **Cocoa 觸控靜態程式庫**範本，然後按一下**下一步**按鈕：
 
     [![](walkthrough-images/image05.png "選取 Cocoa 觸控靜態程式庫範本")](walkthrough-images/image05.png#lightbox)
+
 4. 輸入`InfColorPicker`如**專案名稱**按一下**下一步**按鈕：
 
     [![](walkthrough-images/image06.png "針對專案名稱輸入 InfColorPicker")](walkthrough-images/image06.png#lightbox)
@@ -276,11 +277,11 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 1. 從**檔案**功能表上，選取**新增** > **專案...**:
 
-    ![](walkthrough-images/bind01vs.png "在新專案起始")
+    ![在新專案起始](walkthrough-images/bind01vs.png "啟動新的專案")
 
-1. 從 新增專案 對話方塊中，選取  **iOS** > **繫結的程式庫**:
+1. 從新專案 對話方塊中，選取**Visual C# > iPhone 和 iPad > iOS 繫結的程式庫 (Xamarin)**:
 
-    ![](walkthrough-images/bind02vs.png "選取 iOS 繫結文件庫")
+    [![選取 iOS 繫結文件庫](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
 
 1. 輸入 「 InfColorPickerBinding"做為**名稱**按一下**確定**按鈕以建立方案。
 
@@ -289,8 +290,6 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 ![](walkthrough-images/bind03vs.png "在 [方案總管] 中的方案結構")
 
 -----
-
-
 
 - **ApiDefinition.cs** -這個檔案會包含定義如何 OBJECTIVE-C API 會包裝在 C# 中的合約。
 - **Structs.cs** -此檔案會保留任何結構或列舉值所需的介面和委派。
@@ -332,8 +331,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 -----
 
-
-當.a 檔案加入至專案時，將會自動設定 Xamarin.iOS**建置動作**要檔案**ObjcBindingNativeLibrary**，並建立名為的特殊檔案`libInfColorPickerSDK.linkwith.cs`。
+當 **.a**檔案會加入至專案，將會自動設定 Xamarin.iOS**建置動作**要檔案**ObjcBindingNativeLibrary**，並建立特殊的檔案呼叫`libInfColorPickerSDK.linkwith.cs`。
 
 
 這個檔案包含`LinkWith`告訴 Xamarin.iOS 如何控制代碼靜態程式庫我們剛才加入的屬性。 此檔案的內容是以下列程式碼片段所示：
@@ -536,6 +534,7 @@ Europa:Resources kmullins$
 1. **建立使用者介面在 iPhone** -按兩下**MainStoryboard.storyboard**檔案**InfColorPickerSample**編輯 iOS 設計工具中的專案。 新增**按鈕**檢視並呼叫它`ChangeColorButton`，如下列所示：
 
     ![](walkthrough-images/use03.png "將按鈕加入至檢視")
+
 1. **新增 InfColorPickerView.xib** -InfColorPicker Objective C 程式庫包含 **.xib**檔案。 Xamarin.iOS 將不會包含這 **.xib**在繫結的專案中，這會導致在我們的範例應用程式的執行階段錯誤。 因應措施是新增 **.xib** Xamarin.iOS 在專案的檔案。 選取 Xamarin.iOS 專案，以滑鼠右鍵按一下並選取**新增 > 新增檔案**，並加入 **.xib**檔案中下列螢幕擷取畫面所示：
 
     ![](walkthrough-images/use04.png "新增 InfColorPickerView.xib")
@@ -544,10 +543,11 @@ Europa:Resources kmullins$
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
+1. **建立 Xamarin.iOS 專案**-新增名為 Xamarin.iOS 專案**InfColorPickerSample**使用**單一檢視應用程式**範本：
 
-1. **建立 Xamarin.iOS 專案**-加入新的 Xamarin.iOS 專案呼叫**InfColorPickerSample**加入方案中，如下列螢幕擷取畫面所示：
+    [![iOS 應用程式 (Xamarin) 專案](walkthrough-images/use01.w157-sml.png)](walkthrough-images/use01.w157.png#lightbox)
 
-    ![](walkthrough-images/use01vs.png "建立 Xamarin.iOS 專案")
+    [![選取範本](walkthrough-images/use01-2.w157-sml.png)](walkthrough-images/use01-2.w157.png#lightbox)
 
 1. **繫結的專案參考加入**-更新**InfColorPickerSample**專案，使其具有參考**InfColorPickerBinding**專案：
 
@@ -559,10 +559,7 @@ Europa:Resources kmullins$
 
 1. **新增 InfColorPickerView.xib** -InfColorPicker Objective C 程式庫包含 **.xib**檔案。 Xamarin.iOS 將不會包含這 **.xib**在繫結的專案中，這會導致在我們的範例應用程式的執行階段錯誤。 因應措施是新增 **.xib**檔案，以從我們 Xamarin.iOS 專案我們**Mac 組建主機**。 選取 Xamarin.iOS 專案，以滑鼠右鍵按一下並選取**新增** > **現有項目...**，並加入 **.xib**檔案。
 
-
 -----
-
-
 
 接下來，讓我們快速查看 Objective C 以及如何我們處理它們的繫結和 C# 程式碼中的通訊協定。
 

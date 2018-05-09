@@ -1,16 +1,16 @@
 ---
-title: 設定與安裝
+title: 安裝和設定 Xamarin.Android
 ms.prod: xamarin
 ms.assetid: 4BE549B8-5696-2BA7-DA32-8C0EE90A879D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 12/28/2017
-ms.openlocfilehash: 368f84bc5db6850aadb733a166a35b4fa49e1836
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 269b5a06796ae748da93f7c65b23598d9e9311df
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="setup-and-installation"></a>設定與安裝
 

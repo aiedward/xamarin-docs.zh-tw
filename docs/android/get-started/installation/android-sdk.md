@@ -1,5 +1,5 @@
 ---
-title: Android SDK 安裝
+title: 設定 Xamarin.Android 的 Android SDK
 description: Visual Studio 包含會取代 Google 獨立 SDK 管理員的 Android SDK 管理員。 本指南將說明如何使用 SDK 管理員來下載 Android SDK 工具、平台，以及開發 Xamarin.Android 應用程式所需的其他元件。
 ms.prod: xamarin
 ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 45ab1930300ac704da0a1fee25c08d40aa35ac5c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5c2259ad32f341094f6cdc440edb2053987374b1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="android-sdk-setup"></a>Android SDK 安裝
+# <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>設定 Xamarin.Android 的 Android SDK
 
 _Visual Studio 包含會取代 Google 獨立 SDK 管理員的 Android SDK 管理員。本指南將說明如何使用 SDK 管理員來下載 Android SDK 工具、平台，以及開發 Xamarin.Android 應用程式所需的其他元件。_
 

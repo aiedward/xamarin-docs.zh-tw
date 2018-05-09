@@ -6,12 +6,12 @@ ms.assetid: 4E0C60AE-6F54-4098-8FA0-AADF9AC86805
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/17/2017
-ms.openlocfilehash: 9958682ce9e356692f451900d7dca0e343b244da
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: bd8a95afc5bdd5aed958913d63f9b6cfe853677e
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="advanced-user-notifications"></a>進階的使用者通知
 
@@ -181,10 +181,10 @@ namespace MonkeyNotification
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 在 Visual Studio 中開啟應用程式的方案，for mac。
-2. 以滑鼠右鍵按一下方案名稱在**方案總管 中**選取**新增** > **加入新的專案**。
-3. 選取**iOS** > **延伸** > **通知內容延伸**: 
+2. 以滑鼠右鍵按一下方案名稱在**方案總管 中**選取**新增 > 新的專案...**.
+3. 選取**Visual C# > iOS 擴充功能 > 通知內容延伸**:
 
-    [![](advanced-user-notifications-images/notify01w.png "選取通知內容的延伸模組")](advanced-user-notifications-images/notify01w.png#lightbox)
+    [![](advanced-user-notifications-images/notify01.w157-sml.png "選取通知內容的延伸模組")](advanced-user-notifications-images/notify01.w157.png#lightbox)
 4. 輸入**名稱**延伸模組，然後按一下**確定** 按鈕。
 
 -----

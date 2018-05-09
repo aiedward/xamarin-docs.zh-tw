@@ -7,12 +7,12 @@ ms.assetid: ED99584A-BA3B-429A-AEE5-CF3CB0116762
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 67644caedd268aac45a86c03a69ba017976fc103
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/30/2018
+ms.openlocfilehash: d8f909ab522b5bbf08a2b666fd4f64340e60b3e5
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android 多重畫面：快速入門
 
@@ -108,10 +108,11 @@ namespace Phoneword
 
 ### <a name="adding-translation-history-code"></a>新增翻譯記錄程式碼
 
-此應用程式會收集電話號碼 (使用者已在第一個畫面中翻譯)，然後將它們傳送至第二個畫面。 電話號碼會儲存為字串清單。 若要支援清單，請將下列 `using` 指示詞新增至 `MainActivity` 類別的頂端：
+此應用程式會收集電話號碼 (使用者已在第一個畫面中翻譯)，然後將它們傳送至第二個畫面。 電話號碼會儲存為字串清單。 若要支援清單 (及稍後使用的意圖)，請將下列 `using` 指示詞新增至 **MainActivity.cs** 的頂端：
 
 ```csharp
 using System.Collections.Generic;
+using Android.Content;
 ```
 
 接下來，建立可以填入電話號碼的空白清單。
@@ -246,10 +247,11 @@ namespace Phoneword
 
 ### <a name="adding-translation-history-code"></a>新增翻譯記錄程式碼
 
-此應用程式會收集電話號碼 (使用者已在第一個畫面中翻譯)，然後將它們傳送至第二個畫面。 電話號碼會儲存為字串清單。 若要支援清單，請將下列 `using` 指示詞新增至 `MainActivity` 類別的頂端：
+此應用程式會收集電話號碼 (使用者已在第一個畫面中翻譯)，然後將它們傳送至第二個畫面。 電話號碼會儲存為字串清單。 若要支援清單 (及稍後使用的意圖)，請將下列 `using` 指示詞新增至 **MainActivity.cs** 的頂端：
 
 ```csharp
 using System.Collections.Generic;
+using Android.Content;
 ```
 
 接下來，建立可以填入電話號碼的空白清單。 `MainActivity` 類別會顯示如下：

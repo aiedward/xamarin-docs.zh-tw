@@ -1,17 +1,17 @@
 ---
-title: 部署及測試
+title: 測試、最佳化及部署 Xamarin.Android 應用程式
 description: 本節所包含的指南說明如何測試應用程式、將其效能最佳化、準備發行、使用憑證進行簽署，以及將它發佈至應用程式市集
 ms.prod: xamarin
 ms.assetid: 568C0B85-EFF3-AF6F-5605-95055193D367
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: d7453af3721cbdb6b93d884322cee1cd5115c317
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 5b3061f30f6f120cf8edb41ccf5e70ae853aeb9e
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="deployment-and-testing"></a>部署及測試
 

@@ -5,12 +5,12 @@ ms.assetid: A78A55E7-FB5C-4C42-8E3E-939B5E98F9EB
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 02/01/2018
-ms.openlocfilehash: d1e0fdb1c4b159b6db283d7b9b3be673b73a0ee0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: 00785ad161f5f05fd70b059bb0a3f1c8d6c31f97
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="creating-a-service"></a>建立服務
 
@@ -82,8 +82,8 @@ Android 在啟動服務的最基本方式是分派`Intent`其中包含中繼資�
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
--   **隱含的意圖**&ndash;鬆散識別這種類型的意圖 動作，應該執行，但確切的服務，以完成該動作未知。 隱含的意圖可以想像因為字母的收件者的 「 To Whom It 可能問題 … 」。
-    如果沒有現有的服務符合目的 android 會檢查意圖和 determin 的內容。
+-   **隱含的意圖**&ndash;這種類型的意圖鬆散識別的使用者想要執行，但確切的服務，以完成該動作未知的動作。 隱含的意圖可以想像因為字母的收件者的 「 To Whom It 可能問題 … 」。
+    Android 會檢查內容的意圖，並判斷是否有現有的服務符合目的。
 
     _意圖篩選_用來協助符合隱含的目的與已註冊的服務。 意圖的篩選條件是 XML 項目加入至**AndroidManifest.xml**其中包含必要中繼資料，可協助符合服務，以隱含的意圖。
 

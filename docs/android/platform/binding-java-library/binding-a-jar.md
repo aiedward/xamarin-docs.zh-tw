@@ -6,12 +6,12 @@ ms.assetid: 93F1D5C5-E2AF-46EA-8460-485A0860C176
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: a6cb08f19aac46ffa089914e28c732660caa52b2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/11/2018
+ms.openlocfilehash: 2d9f2198dbb88e7614944ac73729a4e6eca42647
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="binding-a-jar"></a>繫結。JAR
 
@@ -81,7 +81,7 @@ Picasso.With (this)
 
 首先，建立新的繫結的程式庫專案。 在 Visual Studio for Mac 或 Visual Studio，請建立新的方案，然後選取*Android 繫結的程式庫*範本。 （在本逐步解說螢幕擷取畫面使用 Visual Studio 中，但 Visual Studio for Mac 是非常類似）。將方案命名**JarBinding**: 
 
-[![建立 JarBinding 程式庫專案](binding-a-jar-images/01-new-bindings-library-sml.png)](binding-a-jar-images/01-new-bindings-library.png#lightbox)
+[![建立 JarBinding 程式庫專案](binding-a-jar-images/01-new-bindings-library-sml.w157.png)](binding-a-jar-images/01-new-bindings-library.w157.png#lightbox)
 
 此範本包括**Jar**資料夾，您新增程式。JAR(s) 繫結庫專案。 以滑鼠右鍵按一下**Jar**資料夾，然後選取**新增 > 現有項目**: 
 
@@ -130,7 +130,7 @@ Picasso.With (this)
 
 首先，建立新的 Xamarin.Android 應用程式使用的繫結的程式庫。 以滑鼠右鍵按一下方案，然後選取**加入新的專案**; 新專案命名為**BindingTest**。 正在以簡化此逐步解說中，為繫結的程式庫相同的方案中建立此應用程式不過，使用繫結的程式庫應用程式無法，相反地，位於不同的解決方案： 
 
-[![加入新的 BindingTest 專案](binding-a-jar-images/07-add-new-project-sml.png)](binding-a-jar-images/07-add-new-project.png#lightbox)
+[![加入新的 BindingTest 專案](binding-a-jar-images/07-add-new-project-sml.w157.png)](binding-a-jar-images/07-add-new-project.w157.png#lightbox)
 
 以滑鼠右鍵按一下**參考**節點**BindingTest**專案，然後選取**加入參考...**:
 

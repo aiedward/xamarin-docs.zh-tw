@@ -6,12 +6,12 @@ ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/18/2017
-ms.openlocfilehash: 7e8460d2c946159a9869322d6d4944d213d3d801
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: e2f377b11cfb1ff5027cc704de694184d2208c97
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>在程式碼中建立 iOS 使用者介面
 
@@ -33,9 +33,7 @@ IOS 應用程式的使用者介面就像 storefront – 應用程式通常會取
 
 [![](ios-code-only-images/image9.png "此圖說明 視窗、 檢視、 Subviews 及檢視控制器之間的關聯性")](ios-code-only-images/image9.png#lightbox)
 
-
 這些檢視階層可以使用建構[Xamarin 設計工具，適用於 iOS](~/ios/user-interface/designer/index.md)在 Visual Studio for Mac，不過最好是有基本了解如何在程式碼中完全處理。 本文逐步解說一些基本的點，才能啟動和執行僅限程式碼使用者介面開發人員。
-
 
 -----
 
@@ -45,16 +43,17 @@ IOS 應用程式的使用者介面就像 storefront – 應用程式通常會取
 
 ## <a name="ios-blank-project-template"></a>iOS 空白專案範本
 
-首先，建立在 Visual Studio 中使用 iPhone 的 iOS 專案**空白專案**範本，如下所示將擴充新增控制器和檢視。
+首先，建立 iOS 專案在 Visual Studio 使用**檔案 > 新的專案 > Visual C# > iPhone （& s) iPad > iOS 應用程式 (Xamarin)** 專案中，如下所示：
 
+[![新增專案 對話方塊](ios-code-only-images/blankapp.w157-sml.png)](ios-code-only-images/blankapp.w157.png#lightbox)
 
-[![](ios-code-only-images/blankapp-vs.png "新增專案 對話方塊")](ios-code-only-images/blankapp-vs.png#lightbox)
+然後選取**空白應用程式**專案範本：
 
+[![[選取範本] 對話方塊](ios-code-only-images/blankapp-2.w157-sml.png)](ios-code-only-images/blankapp-2.w157.png#lightbox)
 
 空白專案範本會將 4 個檔案加入專案：
 
-
-[![](ios-code-only-images/empty-project.png "專案檔")](ios-code-only-images/empty-project.png#lightbox)
+[![專案檔](ios-code-only-images/empty-project.w157-sml.png "專案檔")](ios-code-only-images/empty-project.w157.png#lightbox)
 
 
 1. **D** -包含`UIApplicationDelegate`子類別， `AppDelegate` ，用來處理從 iOS 應用程式事件。 應用程式視窗中建立`AppDelegate`的`FinishedLaunching`方法。
@@ -99,18 +98,12 @@ Visual Studio for Mac 不提供空白的範本。 所有範本都隨附的分鏡
             return true;
         }
 
+已加入的程式碼`FinishedLaunching`在步驟 5 以上版本，方法是建立您的 iOS 應用程式的視窗所需的程式碼的最小數量。
+
 
 -----
 
-## <a name="creating-a-window"></a>建立視窗
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-已加入的程式碼`FinishedLaunching`中步驟 3 以上版本，方法是建立您的 iOS 應用程式的視窗所需的程式碼的最小數量。  
-
------
 
 建置 iOS 應用程式使用[MVC 模式](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#Model_View_Controller)。 視窗的根檢視控制站來建立應用程式會顯示第一個畫面。 請參閱[Hello，iOS 多重畫面](~/ios/get-started/hello-ios-multiscreen/index.md)引導如需有關 MVC 模式本身。
 
@@ -223,7 +216,7 @@ public class AppDelegate : UIApplicationDelegate
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](ios-code-only-images/customviewcontroller.png "新增名為 CustomViewController 類別")](ios-code-only-images/customviewcontroller.png#lightbox)
+[![](ios-code-only-images/customviewcontroller.w157-sml.png "新增名為 CustomViewController 類別")](ios-code-only-images/customviewcontroller.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 

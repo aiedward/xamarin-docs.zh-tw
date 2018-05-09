@@ -6,12 +6,12 @@ ms.assetid: 86BCD0E7-E9DC-40F1-9B44-887BC51BB48D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 742a10ce0042d2bbf6d5690cb7a7a6eca529a57e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/10/2018
+ms.openlocfilehash: 17c12c4ec818c21d6697932315874ea4f63e6109
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="hello-wear"></a>Hello 損耗
 
@@ -29,7 +29,7 @@ _建立第一個 Android 戴上應用程式和損耗模擬器或裝置上執行�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![在 [新增專案] 對話方塊建立新 Android 戴上的應用程式](hello-wear-images/vs/new-solution-sml.png)](hello-wear-images/vs/new-solution.png#lightbox)
+[![在 [新增專案] 對話方塊建立新 Android 戴上的應用程式](hello-wear-images/vs/new-solution-sml.w157.png)](hello-wear-images/vs/new-solution.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -151,7 +151,7 @@ Android 穿裝置應該會出現在裝置下拉式功能表。 請務必選擇�
 
 -----
 
-您可能會看到**一分鐘時間...**在第一個訊息 （或其他插入的螢幕）： 
+您可能會看到**一分鐘時間...** 在第一個訊息 （或其他插入的螢幕）： 
 
 ![監看模擬器會顯示一分鐘時間...](hello-wear-images/please-wait.png)
 

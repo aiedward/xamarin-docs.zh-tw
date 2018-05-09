@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 52f4c51258d1b635adcd697bccb7dd553acc0d5e
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
-ms.translationtype: MT
+ms.openlocfilehash: 2e108947ce8237b9f48b201e60c2252cfb0bc376
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="localization"></a>當地語系化
 
@@ -18,7 +18,7 @@ ms.lasthandoff: 04/26/2018
 
 如果您想要直接跳過的當地語系化的 Xamarin 應用程式的技術詳細資料，以其中一個這些平台專屬的使用說明文章的開頭：
 
-- [**Xamarin.Forms** ](~/xamarin-forms/app-fundamentals/localization.md)使用 RESX 檔案的跨平台當地語系化。
+- [**Xamarin.Forms** ](~/xamarin-forms/app-fundamentals/localization/index.md)使用 RESX 檔案的跨平台當地語系化。
 - [**Xamarin.iOS** ](~/ios/app-fundamentals/localization/index.md)原生平台當地語系化。
 - [**Xamarin.Android** ](~/android/app-fundamentals/localization.md)原生平台當地語系化。
 
@@ -302,7 +302,7 @@ IOS 和 Android 支援由右至左配置和字型呈現時，使用內建功能�
 
 繼續閱讀您感興趣的平台的技術詳細資料：
 
-- [Xamarin.Forms](~/xamarin-forms/app-fundamentals/localization.md)使用 RESX 檔案的跨平台當地語系化。
+- [Xamarin.Forms](~/xamarin-forms/app-fundamentals/localization/index.md)使用 RESX 檔案的跨平台當地語系化。
 - [Xamarin.iOS](~/ios/app-fundamentals/localization/index.md)原生平台當地語系化。
 - [Xamarin.Android](~/android/app-fundamentals/localization.md)原生平台當地語系化。
 

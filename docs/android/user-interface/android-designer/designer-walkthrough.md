@@ -6,12 +6,12 @@ ms.assetid: 70FF2F9A-71BD-317E-C881-A44D82DF1BD8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/29/2018
-ms.openlocfilehash: ea3d4a7f848847d6a9f7341faec47294a4cab3f8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/10/2018
+ms.openlocfilehash: 8d1dc410d5336d9c2505a18720cc7f734e838c39
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="using-the-android-designer"></a>使用 Android 設計工具
 
@@ -36,9 +36,9 @@ Android 使用者介面可以宣告建立 XML 檔案，或以程式設計方式�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-啟動 Visual Studio，然後按一下**新的專案...**然後選擇  **Visual C\# > Android > 空白應用程式 (Android)**範本：
+啟動 Visual Studio，然後按一下**新的專案...** 然後選擇  **Visual C\# > Android > Android 應用程式 (Xamarin)** 範本：
 
-[![Android 的空白應用程式](designer-walkthrough-images/vs/01-android-app-sml.png)](designer-walkthrough-images/vs/01-android-app.png#lightbox)
+[![Android 的空白應用程式](designer-walkthrough-images/vs/01-android-app-sml.w157.png)](designer-walkthrough-images/vs/01-android-app.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -74,7 +74,7 @@ Android 使用者介面可以宣告建立 XML 檔案，或以程式設計方式�
 
 在 Visual Studio 中，以滑鼠右鍵按一下**資源/配置**中**方案總管 中**選取**新增 > 新的項目...**.在**加入新項目**對話方塊中，選取**Android 配置**。 將檔案命名**ListItem.axml**按一下**新增**:
 
-[![新的版面配置](designer-walkthrough-images/vs/03-new-layout-sml.png)](designer-walkthrough-images/vs/03-new-layout.png#lightbox)
+[![新的版面配置](designer-walkthrough-images/vs/03-new-layout-sml.w157.png)](designer-walkthrough-images/vs/03-new-layout.w157.png#lightbox)
 
 新**ListItem**配置會顯示在設計工具：
 

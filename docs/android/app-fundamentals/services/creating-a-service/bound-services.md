@@ -6,12 +6,12 @@ ms.assetid: 809ECE88-EF08-4E9A-B389-A2DC08C51A6E
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 02/16/2018
-ms.openlocfilehash: 1cb151cc5c741a020fcbb398441ed4958ec5980b
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.date: 05/04/2018
+ms.openlocfilehash: f4fe1bd753260f05dedb452655572d290c0781d0
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Xamarin.Android 中繫結的服務
 
@@ -42,8 +42,8 @@ _繫結的服務是 Android 提供用戶端-伺服器介面 （例如 Android �
 有三個元件必須實作為了讓 Android 應用程式使用的繫結的服務：
 
 1. **擴充`Service`類別並實作生命週期的回呼方法**&ndash;此類別所包含的程式碼，將會執行將會要求服務的工作。 這將以下更詳細說明。
-2. **建立類別實作`IServiceConnection`**  &ndash;此物件包含從服務它已連線至 （或中斷連線） 時，通知用戶端的回呼方法。 服務連線也會提供用戶端可用來直接與服務互動的物件的參考。 這個參考指_繫結器_。
-3. **建立類別實作`IBinder`**  &ndash; A_繫結器_實作提供用戶端與服務通訊時所使用的 API。 繫結器可以提供的參考繫結的服務，允許直接叫用方法或繫結器可以提供用戶端應用程式開發介面，用以封裝和隱藏從應用程式繫結的服務。 `IBinder`必須提供必要的程式碼的遠端程序呼叫。 不需要 （或不建議） 若要實作`IBinder`直接介面。 `IBinder` Instead 應用程式應該擴充`Binder`這樣會提供大部分的所需的基底功能`IBinder`。
+2. **建立類別實作`IServiceConnection`**  &ndash;這個介面提供回呼方法會叫用 android 時要通知用戶端服務的連線已變更，也就是用戶端已連線，或若要中斷連線服務。 服務連線也會提供用戶端可用來直接與服務互動的物件的參考。 這個參考指_繫結器_。
+3. **建立類別實作`IBinder`**  &ndash; A_繫結器_實作提供用戶端與服務通訊時所使用的 API。 繫結器可以提供的參考繫結的服務，允許直接叫用方法或繫結器可以提供用戶端應用程式開發介面，用以封裝和隱藏從應用程式繫結的服務。 `IBinder`必須提供必要的程式碼的遠端程序呼叫。 不需要 （或不建議） 若要實作`IBinder`直接介面。 擴充應用程式應該改用`Binder`類型提供的基本功能所需的大部分`IBinder`。
 4. **啟動和繫結至服務**&ndash;一旦建立服務連線、 繫結器，以及服務 Android 應用程式負責啟動服務，並繫結至它。
 
 每個步驟將更多詳細資料中的下列各節中討論。

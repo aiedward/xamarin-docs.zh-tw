@@ -6,12 +6,12 @@ ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 10/25/2017
-ms.openlocfilehash: f8032966b49f6f023642b0d1338e8c5d740b66e0
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 04/10/2018
+ms.openlocfilehash: bc535160816ad186baaa5e802eceb6ae40347d75
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 開始使用 XAML
 
@@ -23,9 +23,9 @@ _Xamarin.Forms 應用程式中 XAML 大多用來定義頁面的視覺內容。�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-在 Windows 中，使用 Visual Studio 選取**檔案 > 新增 > 專案**從功能表。 在**新專案**對話方塊中，選取**Visual C# > 跨平台**左邊，然後**跨平台應用程式 （Xamarin.Forms 或原生）**從中心中的清單。 
+在 Windows 中，使用 Visual Studio 選取**檔案 > 新增 > 專案**從功能表。 在**新專案**對話方塊中，選取**Visual C# > 跨平台**左邊，然後**行動裝置應用程式 (Xamarin.Forms)** 從中心中的清單。 
 
-![](get-started-with-xaml-images/win/newprojectdialog.png "新增專案 對話方塊")
+![](get-started-with-xaml-images/win/newprojectdialog.w157.png "新增專案 對話方塊")
 
 選取方案的位置，將名稱**XamlSamples** （或您偏好的任何內容），然後按**確定**。
 
@@ -226,7 +226,7 @@ MainPage = new MainPage();
 
 若要加入其他以 XAML 為基礎`ContentPage`類別加入您專案中，選取**XamlSamples** PCL 專案，並叫用**專案 > 加入新項目**功能表項目。 左邊的**加入新項目**對話方塊中，選取**Visual C#** 和**Xamarin.Forms**。 從清單中選取**內容頁面**(不**內容頁面 (C#)**，它會建立僅限程式碼頁面上，或**內容檢視**，不是頁面)。 指定頁面名稱，例如**HelloXamlPage.xaml**:
 
-![](get-started-with-xaml-images/win/addnewitemdialog.png "加入新項目 對話方塊")
+![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "加入新項目 對話方塊")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 

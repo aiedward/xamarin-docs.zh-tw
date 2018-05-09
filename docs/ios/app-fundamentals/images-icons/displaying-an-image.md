@@ -6,12 +6,12 @@ ms.assetid: 60288B12-49E3-4E87-8690-D04A5EC7A664
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/18/2017
-ms.openlocfilehash: 8afc15a75b6d34d9b3f094fe2c92f2b6623ee63f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/24/2018
+ms.openlocfilehash: f1f733fa91be7bf76e19896e78809d18494891d3
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="displaying-an-image"></a>顯示影像
 
@@ -66,6 +66,7 @@ _本文涵蓋包括 Xamarin.iOS 應用程式和使用 C# 程式碼，或將其�
 1. 開啟從資產目錄**方案總管] 中**，然後在左上角，按一下 [**加上**按鈕：
 
     ![](displaying-an-image-images/asset5.png "按一下加號按鈕")
+
 2. 選取**新增映像設定**和映像設定編輯器 將會顯示新的映像集。 從這裡拖曳影像中的每個不同的裝置和與所需的解決方案。 (注意： 會解決方法比對中指定的解決方式[映像大小和檔案名稱](~/ios/app-fundamentals/images-icons/displaying-an-image.md)文件):
 
     ![](displaying-an-image-images/asset7.png "影像編輯器設定。")
