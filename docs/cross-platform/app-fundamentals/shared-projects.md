@@ -3,15 +3,14 @@ title: 共用的專案
 description: 共用的專案可讓您撰寫正由許多不同的應用程式專案的通用程式碼。 程式碼會編譯為組件的每個參考的專案，而且可包含編譯器指示詞，以協助特定平台功能納入共用程式碼基底。
 ms.prod: xamarin
 ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: a7d5a25c3c6f2889bde0ff4aeaf85053bcc796fb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2910ada16aad2d8cb19cf0ee3a059c7df22b630e
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="shared-projects"></a>共用的專案
 
@@ -50,7 +49,7 @@ _共用的專案可讓您撰寫正由許多不同的應用程式專案的通用�
 ## <a name="creating-a-shared-project"></a>建立共用的專案
 
 
-若要建立新的共用專案巡覽至**檔案 > 新的方案...**和選擇的名稱。
+若要建立新的共用專案巡覽至**檔案 > 新的方案...** 和選擇的名稱。
 
 
 ![](shared-projects-images/xs-newsolution.png "新增方案")

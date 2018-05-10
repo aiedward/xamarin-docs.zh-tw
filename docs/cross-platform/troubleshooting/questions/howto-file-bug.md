@@ -3,14 +3,13 @@ title: 時機和方式我應該提出問題報告？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 8AD9CFBF-282A-4C1F-95E9-25F21141B052
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 1b23ea33fe19e0d9ae07d1f1e6213c65439f58b1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d5471195b5051725b41b8f28b3959db362297669
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="when-and-how-should-i-file-a-bug-report"></a>時機和方式我應該提出問題報告？
 

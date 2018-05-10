@@ -3,15 +3,14 @@ title: 使用模型類別
 description: 模型類別可以大幅簡化呈現複雜的 3D 物件相較於呈現 3D 圖形的傳統方法。 從內容檔案，以便輕鬆整合的任何自訂程式碼的內容會建立模型物件。
 ms.prod: xamarin
 ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 7e778df7fa6dd27aee8282154c99faf5ca5791ce
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 01e000b22749acb1b5c3a3203db7f372613cca16
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="using-the-model-class"></a>使用模型類別
 
@@ -48,7 +47,7 @@ MonoGame API 包含`Model`類別可以用來儲存資料的載入根據內容的
 
 本指南中我們將會略過使用 MonoGame 管線工具，而且將會使用。本文提及的 XNB 檔案。 請注意，。XNB 檔案與每個平台不同，因此請務必針對您正在使用何種平台使用一組正確的 XNB 檔案。
 
-我們會解壓縮[Content.zip 檔案](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)以便我們可以使用包含的.xnb 檔案我們遊戲中。 如果使用 Android 專案，以滑鼠右鍵按一下**資產**資料夾中的**WalkingGame.Android**專案。 如果使用 iOS 專案，以滑鼠右鍵按一下**WalkingGame.iOS**專案。 選取**新增]-> [新增檔案...**依據您進行平台的資料夾中選取這兩個.xnb 檔案。
+我們會解壓縮[Content.zip 檔案](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)以便我們可以使用包含的.xnb 檔案我們遊戲中。 如果使用 Android 專案，以滑鼠右鍵按一下**資產**資料夾中的**WalkingGame.Android**專案。 如果使用 iOS 專案，以滑鼠右鍵按一下**WalkingGame.iOS**專案。 選取**新增]-> [新增檔案...** 依據您進行平台的資料夾中選取這兩個.xnb 檔案。
 
 兩個檔案現在應該是受測專案的一部分：
 

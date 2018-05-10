@@ -3,15 +3,14 @@ title: Xamarin 分析工具疑難排解
 description: 疑難排解 Xamarin 分析工具
 ms.prod: xamarin
 ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 4844c999ceddcee89d4f45f6e41dd4c7f2caf054
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e2f9a35f37513ce0cb785f2bd922aeccf42dd8e
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin 分析工具疑難排解
 
@@ -36,9 +35,9 @@ Xamarin 小組有助於追蹤問題，如果您提供使用資訊，包括：
 
 ### <a name="generating-mlpd-files"></a>產生.mlpd 檔案
 
-**.Mlpd**檔案是壓縮單聲道的執行階段程式碼剖析工具的輸出。 Xamarin 分析工具 GUI 會讀取來自資料**.mlpd**並將它顯示為使用者。 **.mlpd**檔案就非常有用的 Xamarin 偵錯工具，因為它們可以協助我們診斷的問題與您的資料，分析工具可能會發生的工程師。
+**.Mlpd**檔案是壓縮單聲道的執行階段程式碼剖析工具的輸出。 Xamarin 分析工具 GUI 會讀取來自資料 **.mlpd**並將它顯示為使用者。 **.mlpd**檔案就非常有用的 Xamarin 偵錯工具，因為它們可以協助我們診斷的問題與您的資料，分析工具可能會發生的工程師。
 
-**.Mlpd**的目前工作階段會自動儲存您的 Mac`/tmp`目錄，而且可以識別依時間戳記。 如果您開啟記錄功能時，第一個輸出會路徑**.mlpd**檔案。 **.Mlpd**檔案通常會儲存在目錄啟動 ~/var/資料夾...
+**.Mlpd**的目前工作階段會自動儲存您的 Mac`/tmp`目錄，而且可以識別依時間戳記。 如果您開啟記錄功能時，第一個輸出會路徑 **.mlpd**檔案。 **.Mlpd**檔案通常會儲存在目錄啟動 ~/var/資料夾...
 
 **.Mlpd**也可以選擇儲存目前的工作階段的**檔案 > 另存新檔...** 從程式碼剖析工具 功能表：
 
@@ -51,7 +50,7 @@ Xamarin 小組有助於追蹤問題，如果您提供使用資訊，包括：
 ![](troubleshooting-images/image17-vs.png "在 Visual Studio 中儲存.mlpd 檔案")
 
 
-請務必注意**.mlpd**包含許多資訊，而且檔案大小會是大。
+請務必注意 **.mlpd**包含許多資訊，而且檔案大小會是大。
 
 ## <a name="troubleshooting"></a>疑難排解
 

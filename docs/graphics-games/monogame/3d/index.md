@@ -3,15 +3,14 @@ title: Introduction to MonoGame 與 3D 圖形
 description: MonoGame 提供彈性且有效率的 API，來顯示即時的 3D 圖形。 它會呈現較高層級建構包含並也較低層級圖形資源的存取。
 ms.prod: xamarin
 ms.assetid: 8706826E-8BA5-4E00-A7D6-4072626E3292
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 603128db1df85e0dabb041d1eb79f250eb5d3872
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: b0d8a5b8ae08c460aee4748036ee171a0e84085d
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="introduction-to-3d-graphics-with-monogame"></a>Introduction to MonoGame 與 3D 圖形
 

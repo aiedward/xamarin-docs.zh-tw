@@ -2,15 +2,14 @@
 title: 使用 Java 和 Android 應用程式共用.NET 程式碼
 ms.prod: xamarin
 ms.assetid: EB2F967A-6D95-4448-994B-6D5C7BFAC2C7
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/25/2018
-ms.openlocfilehash: 4d7eeada2b24ff63eb179c78ed6fd5038eae31a6
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: ae5e98b5066c288f897cefc02638a5b20226e48d
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="net-embedding-on-android"></a>內嵌在 Android 上的.NET
 

@@ -2,15 +2,14 @@
 ms.assetid: 4D47185C-8998-4903-AE64-7E2A67F9DF7A
 title: UI 控制項的比較
 description: 了解的相似性與每個平台上的控制項可用之間的差異。
-ms.technology: xamarin-crossplatform
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 01c7f8eaa2f37b2309a47e0ee72c74f8e6427e1d
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: 01dead601f1d4ba50140d5cd9d280ebd5412225a
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="ui-controls-comparison"></a>UI 控制項的比較
 

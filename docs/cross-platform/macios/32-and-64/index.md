@@ -3,15 +3,14 @@ title: 32/64 位元平台考量
 description: 32 位元和 64 位元應用程式的架構為目標時的考量
 ms.prod: xamarin
 ms.assetid: F7126340-04B2-4A10-B14D-394E23527C1A
-ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: 06e65b8a639345af65c6e5d3bbe57d8bb3feffa1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 223da6b490e09b2fa27ab3bbf8fa123b5fa8070c
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="3264-bit-platform-considerations"></a>32/64 位元平台考量
 

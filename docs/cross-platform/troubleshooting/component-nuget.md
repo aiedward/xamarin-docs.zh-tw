@@ -4,15 +4,14 @@ description: 取代為您元件的參考至未來的使用期限的 NuGet 封裝
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
-ms.openlocfilehash: e3adee1b56b833442a8c927672cf903d45d03e84
-ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
+ms.openlocfilehash: 020a5a2182458e759626b9bdbf45b62b6e13d71a
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>更新至 NuGet 元件參考
 
@@ -33,7 +32,7 @@ ms.lasthandoff: 04/19/2018
 
 若要從您的專案中移除元件：
 
-1. 開啟**.csproj**檔案。 若要這樣做，以滑鼠右鍵按一下專案名稱，然後選取**卸載專案**。 
+1. 開啟 **.csproj**檔案。 若要這樣做，以滑鼠右鍵按一下專案名稱，然後選取**卸載專案**。 
 
 2. 卸載的專案上按一下滑鼠右鍵，然後選取**編輯 {您的專案名稱}.csproj**。
 

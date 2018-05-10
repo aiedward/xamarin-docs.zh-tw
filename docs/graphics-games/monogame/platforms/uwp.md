@@ -3,15 +3,14 @@ title: 建立 MonoGame UWP 專案
 description: MonoGame 可以用來建立通用 Windows 平台、 目標多個裝置的其中一個程式碼基底和一組內容的遊戲和應用程式。
 ms.prod: xamarin
 ms.assetid: C6B99E44-00C1-4139-A1B7-FCFBE8749AB1
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: e28823165188d1046142e31490967367d3246422
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: f539ede3bb90f216463a55cca30554a5f50e2386
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="creating-a-monogame-uwp-project"></a>建立 MonoGame UWP 專案
 

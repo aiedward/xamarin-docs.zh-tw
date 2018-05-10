@@ -2,15 +2,14 @@
 title: 安裝.NET 內嵌
 ms.prod: xamarin
 ms.assetid: 47106AF3-AC6E-4A0E-B30B-9F73C116DDB3
-ms.technology: xamarin-cross-platform
 author: chamons
 ms.author: chhamo
 ms.date: 4/18/2018
-ms.openlocfilehash: d4ee3ef610611dd489d90a364d15f727ea49a79e
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: 1675889dceb1d364abe74461b32aa4c895a144a0
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="installing-net-embedding"></a>安裝.NET 內嵌
 

@@ -3,15 +3,14 @@ title: SkiaSharp 簡介
 description: 這提供 SkiaSharp 背後的概念簡介
 ms.prod: xamarin
 ms.assetid: 19506F08-2603-465E-A806-6BD01638DE90
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: b16792a506b131be07c52275e3f40cbb8d5fca94
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 9e88009cc768e71336c48eb1fab5c5c4c8afa1a9
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="an-introduction-to-skiasharp"></a>SkiaSharp 簡介
 

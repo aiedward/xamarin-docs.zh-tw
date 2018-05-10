@@ -2,15 +2,14 @@
 title: Apple 帳戶管理
 ms.prod: xamarin
 ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: a4ca803085f31ff0db5dd4f194b705d765447c9d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
-ms.translationtype: HT
+ms.openlocfilehash: 2a37f6644c66ebeb3b10a9fa0467115a21f69e75
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="apple-account-management"></a>Apple 帳戶管理
 

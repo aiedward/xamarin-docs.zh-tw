@@ -3,15 +3,14 @@ title: UrhoSharp 平台支援
 description: 跨平台 3D/2D 遊戲和視覺效果引擎
 ms.prod: xamarin
 ms.assetid: 6205E430-1036-4CC3-8E97-AA5554E3D468
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: e2c29b451caeddccdb1f0b11555e409e90f880a7
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: b9fdb205148824282d527f2483e027b14d786ff2
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="urhosharp-platform-support"></a>UrhoSharp 平台支援
 

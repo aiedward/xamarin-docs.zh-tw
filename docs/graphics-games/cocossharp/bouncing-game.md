@@ -3,15 +3,14 @@ title: BouncingGame 詳細資料
 description: 本逐步解說示範如何實作簡單彈跳使用 CocosSharp 的球遊戲。
 ms.prod: xamarin
 ms.assetid: AC9FD56F-6E4A-40DA-8168-45A761D869FD
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2018
-ms.openlocfilehash: 2f25841af8cb73a7e0fe02264706404ce59cacfb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d12d6fb8ecfcba5e5093b2af4790a51ef8cf8e47
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="bouncinggame-details"></a>BouncingGame 詳細資料
 
@@ -96,7 +95,7 @@ namespace BouncingGame
 
 上述程式碼會建立單一`CCSprite`並將它加入做為子系`GameLayer`。 `CCSprite`建構函式可讓我們來定義要做為字串使用的影像檔。 我們的程式碼會告知尋找檔案，稱為 CocosSharp `paddle` （擴充功能會省略，我們將稍後在本指南中討論）。 CocosSharp 會尋找任何檔案名稱`paddle`的根內容的資料夾中 (也就是**內容**) 以及加入至任何資料夾`gameView.ContentManager.SearchPaths`（如上一節中討論）。
 
-我們會將檔案新增至根直接**內容**適用於 iOS 和 Android 的資料夾。 若要這樣做，請以滑鼠右鍵按一下或控制項按一下**內容**中 iOS 專案，然後選取資料夾**新增** > **加入檔案...**其中我們稍早解壓縮內容瀏覽並選取**paddle.png**。 如果系統詢問如何將檔案加入資料夾，我們應該選取**複製**選項：
+我們會將檔案新增至根直接**內容**適用於 iOS 和 Android 的資料夾。 若要這樣做，請以滑鼠右鍵按一下或控制項按一下**內容**中 iOS 專案，然後選取資料夾**新增** > **加入檔案...** 其中我們稍早解壓縮內容瀏覽並選取**paddle.png**。 如果系統詢問如何將檔案加入資料夾，我們應該選取**複製**選項：
 
 ![新增檔案到資料夾 對話方塊](bouncing-game-images/image2.png "檔案新增到資料夾 對話方塊")
 

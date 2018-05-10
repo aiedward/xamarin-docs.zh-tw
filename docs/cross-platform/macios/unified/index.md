@@ -3,15 +3,14 @@ title: 統一的 API
 description: 新樣式應用程式開發介面會更容易比以往 Mac 和 iOS 以及可讓您支援具有相同 32 和 64 位元應用程式二進位之間共用程式碼。
 ms.prod: xamarin
 ms.assetid: 14311617-1BC2-42CC-AF3F-9F97733EE2D0
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: d0ad5b08aaf5e7b14f75611a28d389e3f7e0477c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bee477a8e84e8cfdd20e89b7ca51c1ac40c0ee52
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="unified-api"></a>統一的 API
 
@@ -45,7 +44,7 @@ _新樣式應用程式開發介面會更容易比以往 Mac 和 iOS 以及可讓
 從這裡開始，我們的 Api，會發生兩種方式：
 
 -  **傳統應用程式開發介面：**限制為 32 位元 （僅限） 和中公開`monotouch.dll`和`XamMac.dll`組件。
--  **統一的 API:**支援使用單一 API 中可用的 32 和 64 位元開發`Xamarin.iOS.dll`和`Xamarin.Mac.dll`組件。
+-  **統一的 API:** 支援使用單一 API 中可用的 32 和 64 位元開發`Xamarin.iOS.dll`和`Xamarin.Mac.dll`組件。
 
 這表示，企業開發人員 （不以應用程式存放區），您可以繼續使用現有的傳統 Api，因為將會保留將我們維護它們，或者您可以升級至新的 Api。
 
@@ -60,7 +59,7 @@ _新樣式應用程式開發介面會更容易比以往 Mac 和 iOS 以及可讓
 這可讓您更容易 Mac 和 iOS 平台，而不必條件式編譯之間共用程式碼，並會減少在您的原始程式碼檔的頂端雜訊。
 
 -  **傳統應用程式開發介面：**命名空間使用`MonoTouch.`或`MonoMac.`前置詞。
--  **統一的 API:**沒有命名空間前置詞
+-  **統一的 API:** 沒有命名空間前置詞
 
 ## <a name="api-changes"></a>應用程式開發介面變更
 
@@ -93,7 +92,7 @@ _新樣式應用程式開發介面會更容易比以往 Mac 和 iOS 以及可讓
 統一的 API 導入了新的平台識別項的相容封裝- **Xamarin.iOS10**。 現有的 NuGet 封裝必須更新以新增支援此平台，建置針對統一的 API。
 
 > [!IMPORTANT]
-> 如果您在表單中有錯誤_"錯誤 3 不能在相同的 Xamarin.iOS 專案中包含 'monotouch.dll' 和 'Xamarin.iOS.dll'-'monotouch.dll' 正由時明確地參考 'Xamarin.iOS.dll' ' xxx，版本 = 0.0.000，Culture = neutral，PublicKeyToken = null'"_之後轉換您的應用程式，以統一的 Api，它通常是因為有尚未更新統一的 API 的專案中的元件或 NuGet 封裝。 您必須移除現有元件/NuGet、 更新為支援統一的 Api 版本，執行乾淨的組建。
+> 如果您在表單中有錯誤 _"錯誤 3 不能在相同的 Xamarin.iOS 專案中包含 'monotouch.dll' 和 'Xamarin.iOS.dll'-'monotouch.dll' 正由時明確地參考 'Xamarin.iOS.dll' ' xxx，版本 = 0.0.000，Culture = neutral，PublicKeyToken = null'"_ 之後轉換您的應用程式，以統一的 Api，它通常是因為有尚未更新統一的 API 的專案中的元件或 NuGet 封裝。 您必須移除現有元件/NuGet、 更新為支援統一的 Api 版本，執行乾淨的組建。
 
 ### <a name="the-road-to-64-bits"></a>為 64 位元路段圖
 
@@ -236,7 +235,7 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 在少數情況下某些常數必須從變更`string`至`NSString`，例如 `UITableViewCell`
 
-**Classic**
+**傳統**
 
     public virtual string ReuseIdentifier { get; }
 
@@ -254,7 +253,7 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 這些限制已經移除，以及清除整合應用程式開發介面。 大部分的變更看起來像這樣：
 
-**Classic**
+**傳統**
 
     public virtual AVAssetResourceLoaderDelegate Delegate { get; }
 
@@ -266,7 +265,7 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 它也允許某些 API 來為更精確且易於使用，例如：
 
-**Classic**
+**傳統**
 
     public virtual void SelectionDidChange (NSObject uiTextInput);
 

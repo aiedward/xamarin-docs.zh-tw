@@ -3,15 +3,14 @@ title: 偵測器的安裝和需求
 description: 如何下載、 安裝及使用 Xamarin 偵測器。
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: 93f42eef8d76074f6b672bc5a663e8f8f1d2ef80
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5bbd5c64f53e191d5ac629e20df87c2b7ca4ec00
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="inspector-installation-and-requirements"></a>偵測器的安裝和需求
 
@@ -115,7 +114,7 @@ Visual Studio
 
 ### <a name="project-settings"></a>專案設定
 
-如果您可以將附加**.csproj**對於想要檢查的專案，會是非常有幫助。 這是更為詢問有關個別設定。
+如果您可以將附加 **.csproj**對於想要檢查的專案，會是非常有幫助。 這是更為詢問有關個別設定。
 
 也請確認您是在偵錯組態。
 

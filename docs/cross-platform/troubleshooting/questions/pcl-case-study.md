@@ -3,15 +3,14 @@ title: 解決 System.Diagnostics.Tracing TPL 資料流程的相關問題
 description: PCL 案例研究： 如何解決 System.Diagnostics.Tracing Microsoft TPL 資料流程 NuGet 套件的相關問題？
 ms.prod: xamarin
 ms.assetid: 7986A556-382D-4D00-ACCF-3589B4029DE8
-ms.technology: xamarin-cross-platform
 ms.date: 04/17/2018
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: b1b56b0e831edbb6327f3ca66f6ec8dc780b46f2
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 1acc9ccc78ad14198a59e74d1fae845790d66b16
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-package"></a>PCL 案例研究： 如何解決 System.Diagnostics.Tracing Microsoft TPL 資料流程 NuGet 套件的相關問題？
 
@@ -27,7 +26,7 @@ Xamarin.iOS 和 Xamarin.Android 不會實作每個可做為參考 PCL 設定檔�
 
 （這可避免錯誤和適用於最新版 Xamarin 所有三個層級。）
 
-1. 開啟應用程式專案**.csproj**文字編輯器中的檔案。
+1. 開啟應用程式專案 **.csproj**文字編輯器中的檔案。
 
 2. 找到行看起來像這樣：
 

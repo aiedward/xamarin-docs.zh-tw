@@ -2,15 +2,14 @@
 title: Xamarin.Essentials 檔案系統的協助程式
 description: FileSystem 類別包含一系列的協助程式，以尋找應用程式的快取和資料目錄，並開啟應用程式套件內的檔案。
 ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
-ms.technology: xamarin-crossplatform
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 797c74bf6afa1d072d72e695df44e52658131265
-ms.sourcegitcommit: 46d3c9daa45350bdd536d9e105517f3c1c753c5b
-ms.translationtype: HT
+ms.openlocfilehash: 2d660e4c325b72817c7386c43c0d1dde909c4921
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials 檔案系統的協助程式
 

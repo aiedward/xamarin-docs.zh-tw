@@ -3,15 +3,14 @@ title: UrhoSharp Android 支援
 description: Android 的設定和 UrhoSharp 的功能。
 ms.prod: xamarin
 ms.assetid: 8409BD81-B1A6-4F5D-AE11-6BBD3F7C6327
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 8d6abdac258e7a5b66e12367751652c5769405b0
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 008afb060729b6d1badf47db7eafedbe631326df
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="urhosharp-android-support"></a>UrhoSharp Android 支援
 

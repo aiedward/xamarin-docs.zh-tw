@@ -3,15 +3,14 @@ title: Xamarin.Forms 使用 Visual basic.net
 description: Xamarin.Forms PCL 專案範本可以修改為使用 Visual Basic for 主要組件，有效地讓您建置跨平台行動應用程式使用 VB.NET。
 ms.prod: xamarin
 ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e26d330d62e6ffdfdb3f9b8eab59e57a6377a86c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b858e26de95d2abbc23917b1ed5a1de65105cd8d
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>Xamarin.Forms 使用 Visual basic.net
 
@@ -26,7 +25,7 @@ Xamarin 不直接支援 Visual Basic-依此頁面，即可建立 C# Xamarin.Form
 
 請遵循下列步驟建立簡單的 Xamarin.Forms 專案會使用 Visual Basic:
 
-1. 建立新*Xamarin.Forms C#*使用可攜式類別程式庫 (PCL) 解決方案。
+1. 建立新*Xamarin.Forms C#* 使用可攜式類別程式庫 (PCL) 解決方案。
 移至**檔案 > 新的專案**和**新專案**視窗瀏覽至**已安裝 > 範本 > Visual C# > 跨平台**然後選擇  **跨平台應用程式 （Xamarin.Forms 或原生） > Xamarin.Forms**。
 
 2. 以滑鼠右鍵按一下方案並**新增 > 新的專案**。
@@ -83,7 +82,7 @@ Xamarin 不直接支援 Visual Basic-依此頁面，即可建立 C# Xamarin.Form
 
    [![](xamarin-forms-images/add-vb-8-sml.png "移除舊專案的參考，加入 Visual Basic 參考")](xamarin-forms-images/add-vb-8.png#lightbox)
 
-10. 刪除 C# 可攜式專案。 加入新**.vb**來建置檔案 out Xamarin.Forms 應用程式。 對於新的範本`ContentPage`在 Visual Basic 中的 s 如下所示：
+10. 刪除 C# 可攜式專案。 加入新 **.vb**來建置檔案 out Xamarin.Forms 應用程式。 對於新的範本`ContentPage`在 Visual Basic 中的 s 如下所示：
 
     ```vb
     Imports Xamarin.Forms
@@ -120,5 +119,5 @@ Xamarin 不直接支援 Visual Basic-依此頁面，即可建立 C# Xamarin.Form
 
 ## <a name="related-links"></a>相關連結
 
-- [XamarinFormsVB (sample)](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB)
+- [XamarinFormsVB （範例）](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB)
 - [使用.NET Framework (Microsoft) 進行跨平台開發](http://msdn.microsoft.com/en-us/library/gg597391(v=vs.110).aspx)

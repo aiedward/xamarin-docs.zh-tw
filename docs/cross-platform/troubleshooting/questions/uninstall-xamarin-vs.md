@@ -3,15 +3,14 @@ title: 如何執行完整解除安裝 xamarin for Visual Studio？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: c1742239-05ea-449d-9c99-611e5e5a90e4
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
-ms.openlocfilehash: 49577961026d9895912d2848975e71a9f7eebbd8
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 99fde9330498ee62d3cf6b5910c2cbfae39cfdeb
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="how-do-i-perform-a-thorough-uninstall-for-xamarin-for-visual-studio"></a>如何執行完整解除安裝 xamarin for Visual Studio？
 
@@ -19,7 +18,7 @@ ms.lasthandoff: 04/06/2018
 1.  從 Windows 控制台中解除安裝有下列任何一項：
 
     -   Xamarin
-    -   適用於 Windows 的 Xamarin
+    -   Xamarin for Windows
     -   Xamarin.Android
     -   Xamarin.iOS
     -   Xamarin for Visual Studio
@@ -54,9 +53,9 @@ ms.lasthandoff: 04/06/2018
 
 6.  尋找下列機碼：
 
-    _HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\SharedDlls_
+    _HKEY\_本機\_機器\\軟體\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\以 Shareddll_
 
-7.  尋找並刪除任何符合此模式的項目：
+7.  尋找並刪除所有符合此模式的項目：
 
     _C:\\程式檔案\*\\Microsoft Visual Studio 1\*.0\\Common7\\IDE\\延伸\\Xamarin_
 
@@ -64,11 +63,11 @@ ms.lasthandoff: 04/06/2018
 
     _HKEY\_CURRENT\_USER\\Software\\Microsoft\\VisualStudio\\1\*.0\\ExtensionManager\\PendingDeletions_
 
-9.  刪除任何項目看起來像是可能會與 Xamarin。  例如，這裡的一個，會用來 Xamarin 的舊版本會造成問題：
+9.  刪除所有看起來可能與 Xamarin 相關的項目。  例如，這裡的一個，會用來 Xamarin 的舊版本會造成問題：
 
     _Mono.VisualStudio.Shell,1.0_
 
-10. 開啟系統管理員`cmd.exe`命令提示字元，然後再執行`devenv /setup`和`devenv /updateconfiguration`每個已安裝版本的 Visual Studio 的命令。  例如，針對 Visual Studio 2015:
+10. 開啟系統管理員`cmd.exe`命令提示字元，然後再執行`devenv /setup`和`devenv /updateconfiguration`每個已安裝版本的 Visual Studio 的命令。  例如，若為 Visual Studio 2015：
 
     ```
     "%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /setup
@@ -89,7 +88,7 @@ ms.lasthandoff: 04/06/2018
 
 3.  如果正確載入延伸模組，然後問題最可能被因某些儲存原始使用者的設定：
 
-    -   **In Explorer** –  _%LOCALAPPDATA%\\Microsoft\\VisualStudio\\1\*.0_
+    -   **在 [總管]** – _%LOCALAPPDATA%\\Microsoft\\VisualStudio\\1\*.0_
     -   **在 regedit** – _HKEY\_目前\_使用者\\軟體\\Microsoft\\VisualStudio\\1\*.0_
     -   **在 regedit** – _HKEY\_目前\_使用者\\軟體\\Microsoft\\VisualStudio\\1\*.0\_組態_
 

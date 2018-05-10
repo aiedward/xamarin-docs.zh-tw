@@ -3,15 +3,14 @@ title: 傳輸層安全性 (TLS) 1.2
 description: 為 Android、 iOS 和 Mac 上的 Xamarin 專案啟用 TLS 1.2
 ms.prod: xamarin
 ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: 6205e8633ccdd2c1e568e7de8103c38eb9edbc2f
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 8e27801a9feb8cf7ba1534f88479dbf7259c3e85
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="transport-layer-security-tls-12"></a>傳輸層安全性 (TLS) 1.2
 

@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
-ms.date: 05/01/2018
-ms.openlocfilehash: 4aa2ea21c9cf2e9e646465ab7ad4aa0a01de433e
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/07/2018
+ms.openlocfilehash: bba5007acb54852b9427c57c26aba6358c4c5771
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
 _使用 FlexLayout 堆疊或換行的子檢視集合。_
 
-Xamarin.Forms [ `FlexLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexLayout/) Xamarin.Forms 3.0 版的新功能。 它會根據 CSS[彈性方塊配置模組](http://www.w3.org/TR/css-flexbox-1/)，稱為_flex 配置_或_彈性方塊_，因此呼叫，因為它包含許多彈性的選項，來排列子系在版面配置。
+Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) Xamarin.Forms 3.0 版的新功能。 它會根據 CSS[彈性方塊配置模組](http://www.w3.org/TR/css-flexbox-1/)，稱為_flex 配置_或_彈性方塊_，因此呼叫，因為它包含許多彈性的選項，來排列子系在版面配置。
 
 `FlexLayout` 類似於 Xamarin.Forms [ `StackLayout` ](~/xamarin-forms/user-interface/layouts/stack-layout.md) ，它可以排列其子系水平及垂直堆疊。 不過，`FlexLayout`也能夠包裝其子系，如果有太多，無法納入單一資料列或資料行，而且也有許多選擇可用來列印方向、 對齊方式及調整以各種螢幕大小。
 
@@ -65,11 +65,11 @@ Xamarin.Forms [ `FlexLayout` ](https://developer.xamarin.com/api/type/Xamarin.Fo
 
 三個屬性的`FlexLayout`如下所示**SimpleStackPage.xaml**檔案：
 
-- [ `Direction` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Direction/)屬性設定的值為[ `FlexDirection` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexDirection/)列舉型別。 預設值為 `Row`。 將屬性設定為`Column`會導致子系`FlexLayout`排列成單一資料行的項目。
+- [ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction)屬性設定的值為[ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection)列舉型別。 預設值為 `Row`。 將屬性設定為`Column`會導致子系`FlexLayout`排列成單一資料行的項目。
 
     當中的項目`FlexLayout`會排列在資料行，`FlexLayout`即所謂具有垂直_主座標軸_和水平_交叉軸_。
 
-- [ `AlignItems` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.AlignItems/)屬性屬於型別[ `FlexAlignItems` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexAlignItems/)和指定的項目上的交叉軸的對齊方式。 `Center`選項會讓每個項目水平置中對齊。
+- [ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems)屬性屬於型別[ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems)和指定的項目上的交叉軸的對齊方式。 `Center`選項會讓每個項目水平置中對齊。
 
     如果您使用`StackLayout`而`FlexLayout`這項工作，您會置中的所有項目指派`HorizontalOptions`屬性每個項目`Center`。 `HorizontalOptions`屬性不適用於子系`FlexLayout`，但此單一`AlignItems`屬性可達成相同的目標。 如果需要您可以使用`AlignSelf`附加可繫結的屬性，來覆寫`AlignItems`個別項目的屬性：
 
@@ -81,7 +81,7 @@ Xamarin.Forms [ `FlexLayout` ](https://developer.xamarin.com/api/type/Xamarin.Fo
 
     這項變更，這一個`Label`停駐在左邊緣`FlexLayout`時讀取順序是由左到右。
 
-- [ `JustifyContent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.JustifyContent/)屬性屬於型別[ `FlexJustify` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexJustify/)，並指定項目在主要軸上的排列方式。 `SpaceEvenly`選項會配置所有剩餘的垂直空間之間的所有項目，平均和第一個項目，上下最後一個項目。
+- [ `JustifyContent` ](xref:Xamarin.Forms.FlexLayout.JustifyContent)屬性屬於型別[ `FlexJustify` ](xref:Xamarin.Forms.FlexJustify)，並指定項目在主要軸上的排列方式。 `SpaceEvenly`選項會配置所有剩餘的垂直空間之間的所有項目，平均和第一個項目，上下最後一個項目。
 
     如果您使用`StackLayout`，您必須指派`VerticalOptions`屬性每個項目`CenterAndExpand`來達到類似的效果。 但`CenterAndExpand`選項會配置每個項目比第一個項目之前和之後的最後一個項目之間倍空間。 您可以模擬`CenterAndExpand`選項`VerticalOptions`藉由設定`JustifyContent`屬性`FlexLayout`至`SpaceAround`。
 
@@ -112,7 +112,7 @@ Xamarin.Forms [ `FlexLayout` ](https://developer.xamarin.com/api/type/Xamarin.Fo
 
 `Direction`屬性這`FlexLayout`未設定，所以它沒有預設值為`Row`，這表示子系會排列在資料列，而主要軸是水平。
 
-[ `Wrap` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Wrap/)屬性是列舉型別的[ `FlexWrap` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexWrap/)。 如果有太多而無法放入一個資料列的項目，這個屬性設定會導致要包裝至下一個資料列的項目。
+[ `Wrap` ](xref:Xamarin.Forms.FlexLayout.Wrap)屬性是列舉型別的[ `FlexWrap` ](xref:Xamarin.Forms.FlexWrap)。 如果有太多而無法放入一個資料列的項目，這個屬性設定會導致要包裝至下一個資料列的項目。
 
 請注意，`FlexLayout`子系的`ScrollView`。 如果有太多資料列，以符合在頁面上，則`ScrollView`具有預設`Orientation`屬性`Vertical`並允許垂直捲動。
 
@@ -398,14 +398,14 @@ public partial class PhotoWrappingPage : ContentPage
 
 ### <a name="the-direction-property"></a>方向屬性
 
-[ `Direction` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Direction/)屬性屬於型別[ `FlexDirection` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexDirection/)，具有四個成員的列舉：
+[ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction)屬性屬於型別[ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection)，具有四個成員的列舉：
 
 - `Column`
 - `ColumnReverse` （或者 「 資料行反轉 」 在 XAML 中）
 - `Row`預設值
 - `RowReverse` （或者 「 資料列反轉 」 在 XAML 中）
 
-在 XAML 中，您可以指定列舉成員名稱使用大寫、 小寫的這個屬性的值，或混合大小寫，或者您可以使用兩個 CSS 指標相同的括號內的其他字串。 (中所定義的 「 資料行反轉 」 和 「 資料列反向 」 字串[ `FlexDirectionTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexDirectionTypeConverter/) XAML 剖析器使用的類別。)
+在 XAML 中，您可以指定列舉成員名稱使用大寫、 小寫的這個屬性的值，或混合大小寫，或者您可以使用兩個 CSS 指標相同的括號內的其他字串。 (中所定義的 「 資料行反轉 」 和 「 資料列反向 」 字串[ `FlexDirectionTypeConverter` ](xref:Xamarin.Forms.FlexDirectionTypeConverter) XAML 剖析器使用的類別。)
 
 以下是**實驗**（從左到右） 顯示頁面`Row`方向，`Column`方向，以及`ColumnReverse`方向：
 
@@ -417,7 +417,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 ### <a name="the-wrap-property"></a>自動換行屬性
 
-[ `Wrap` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Wrap/)屬性屬於型別[ `FlexWrap` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexWrap/)，具有三個成員的列舉：
+[ `Wrap` ](xref:Xamarin.Forms.FlexLayout.Wrap)屬性屬於型別[ `FlexWrap` ](xref:Xamarin.Forms.FlexWrap)，具有三個成員的列舉：
 
 - `NoWrap`預設值
 - `Wrap`
@@ -433,7 +433,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 ### <a name="the-justifycontent-property"></a>JustifyContent 屬性
 
-[ `JustifyContent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.JustifyContent/)屬性屬於型別[ `FlexJustify` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexJustify/)，具有六個成員的列舉：
+[ `JustifyContent` ](xref:Xamarin.Forms.FlexLayout.JustifyContent)屬性屬於型別[ `FlexJustify` ](xref:Xamarin.Forms.FlexJustify)，具有六個成員的列舉：
 
 - `Start` （或 「 flex-開始 」 在 XAML 中），預設值
 - `Center`
@@ -452,7 +452,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 ### <a name="the-alignitems-property"></a>AlignItems 屬性
 
-[ `AlignItems` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.AlignItems/)屬性屬於型別[ `FlexAlignItems` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexAlignItems/)，具有四個成員的列舉：
+[ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems)屬性屬於型別[ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems)，具有四個成員的列舉：
 
 - `Stretch`預設值
 - `Center`
@@ -471,7 +471,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 ### <a name="the-aligncontent-property"></a>AlignContent 屬性
 
-[ `AlignContent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.AlignContent/)屬性屬於型別[ `FlexAlignContent` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexAlignContent/)，具有七個成員的列舉：
+[ `AlignContent` ](xref:Xamarin.Forms.FlexLayout.AlignContent)屬性屬於型別[ `FlexAlignContent` ](xref:Xamarin.Forms.FlexAlignContent)，具有七個成員的列舉：
 
 - `Stretch`預設值
 - `Center`
@@ -501,7 +501,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 ### <a name="the-alignself-property"></a>AlignSelf 屬性
 
-[ `AlignSelf` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.AlignSelf/)附加的繫結屬性為類型[ `FlexAlignSelf` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexAlignContent/)，具有五個成員的列舉：
+[ `AlignSelf` ](xref:Xamarin.Forms.FlexLayout.AlignSelfProperty)附加的繫結屬性為類型[ `FlexAlignSelf` ](xref:Xamarin.Forms.FlexAlignContent)，具有五個成員的列舉：
 
 - `Auto`預設值
 - `Stretch`
@@ -525,15 +525,15 @@ FlexAlign.SetAlignSelf(label, FlexAlignSelf.Center);
 
 ### <a name="the-order-property"></a>Order 屬性
 
-[ `Order` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Order/)屬性屬於型別`int`。 預設值為 0。
+[ `Order` ](xref:Xamarin.Forms.FlexLayout.OrderProperty)屬性屬於型別`int`。 預設值為 0。
 
 `Order`屬性可讓您變更順序的子系`FlexLayout`排列。 通常的子系`FlexLayout`排列中出現的順序相同`Children`集合。 您可以藉由設定覆寫這個順序`Order`附加在上一個或多個子系為非零的整數值的可繫結屬性。 `FlexLayout`將排列以根據設定的子系`Order`上每一個子系，但具有相同的子系屬性`Order`中出現的順序排列設定`Children`集合。
 
 ### <a name="the-basis-property"></a>基礎屬性
 
-[ `Basis` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Basis/)附加可繫結的屬性表示的子系的已配置的空間量`FlexLayout`主要軸上。 所指定的大小`Basis`屬性是父代的主座標軸大小`FlexLayout`。 換句話說，`Basis`當資料行中排列子系，將會排列在資料列或高度的子系時，表示子系的寬度。
+[ `Basis` ](xref:Xamarin.Forms.FlexLayout.BasisProperty)附加可繫結的屬性表示的子系的已配置的空間量`FlexLayout`主要軸上。 所指定的大小`Basis`屬性是父代的主座標軸大小`FlexLayout`。 換句話說，`Basis`當資料行中排列子系，將會排列在資料列或高度的子系時，表示子系的寬度。
 
-`Basis`屬性屬於型別[ `FlexBasis` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexBasis/)，結構。 裝置獨立單位或大小的百分比，就可以指定大小`FlexLayout`。 預設值`Basis`屬性是靜態屬性`FlexBasis.Auto`，這表示子系的要求會使用寬度或高度。
+`Basis`屬性屬於型別[ `FlexBasis` ](xref:Xamarin.Forms.FlexBasis)，結構。 裝置獨立單位或大小的百分比，就可以指定大小`FlexLayout`。 預設值`Basis`屬性是靜態屬性`FlexBasis.Auto`，這表示子系的要求會使用寬度或高度。
 
 在程式碼中，您可以設定`Basis`屬性`Label`名為`label`40 裝置獨立單位，就像這樣：
 
@@ -581,7 +581,7 @@ FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 
 ### <a name="the-grow-property"></a>擴充屬性
 
-[ `Grow` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Grow/)屬性屬於型別`int`。 預設值為 0，，和值必須大於或等於 0。
+[ `Grow` ](xref:Xamarin.Forms.FlexLayout.GrowProperty)附加的繫結屬性為類型`int`。 預設值為 0，，和值必須大於或等於 0。
 
 `Grow`屬性所扮演的角色時當`Wrap`屬性設定為`NoWrap`和子系的資料列有總寬度小於寬度`FlexLayout`，或子系的資料行具有較短的高度比`FlexLayout`。 `Grow`屬性會指出如何分配之間的子系的剩餘空間。
 
@@ -597,7 +597,7 @@ FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 
 ### <a name="the-shrink-property"></a>壓縮屬性
 
-[ `Shrink` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Shrink/)屬性屬於型別`int`。 預設值為 1，和值必須大於或等於 0。
+[ `Shrink` ](xref:Xamarin.Forms.FlexLayout.ShrinkProperty)附加的繫結屬性為類型`int`。 預設值為 1，和值必須大於或等於 0。
 
 `Shrink`屬性所扮演的角色時`Wrap`屬性設定為`NoWrap`和彙總的子系的資料列的寬度大於寬度`FlexLayout`，或彙總單一資料行的子系的高度大於高度`FlexLayout`。 通常`FlexLayout`會顯示這些系 constricting 其大小。 `Shrink`屬性可以指出哪一個子系優先順序中顯示其完整的大小。
 

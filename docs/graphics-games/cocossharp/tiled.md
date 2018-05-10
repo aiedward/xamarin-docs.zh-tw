@@ -3,15 +3,14 @@ title: 使用與 CocosSharp 並排顯示
 description: 並排顯示是一個功能強大、 有彈性，並建立垂直及等磚的完整應用程式將對應的遊戲。 CocosSharp 提供內建整合磚塊的原生檔案格式。
 ms.prod: xamarin
 ms.assetid: 804C042C-F62A-4E6C-B10F-06528637F0E2
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: a356ddc0412eb1dce1b35e060e6c9127525de804
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8a7782097324829b8150b968c5658a864d1fab4a
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="using-tiled-with-cocossharp"></a>使用與 CocosSharp 並排顯示
 
@@ -174,7 +173,7 @@ protected override void AddedToScene ()
 
 ![](tiled-images/image10.png "如果看不到珍貴箱子屬性，珍貴箱子上按一下滑鼠右鍵，然後選取 圖格屬性")
 
-並排顯示的屬性會實作具有名稱和值。 若要加入的屬性，請按一下**+**按鈕，輸入名稱**IsTreasure**，按一下**確定**，然後輸入值**true**: 
+並排顯示的屬性會實作具有名稱和值。 若要加入的屬性，請按一下**+** 按鈕，輸入名稱**IsTreasure**，按一下**確定**，然後輸入值**true**: 
 
 ![](tiled-images/image11.png "若要加入屬性，按一下按鈕、 輸入名稱 IsTreasure，按一下 [確定]，然後輸入值為 true")
 

@@ -3,15 +3,14 @@ title: Xamarin Player 即時範例
 description: 以下是一些範例來試用與 Xamarin Live Player。
 ms.prod: xamarin
 ms.assetid: C71D34AD-747B-4826-838D-5138F5DCD7EF
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 06/20/2017
-ms.openlocfilehash: bd7adf668f8e71da4eafc8e48e05358d829e9547
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 67c734a76e78973aa1acf8eb2b5dec720701d3d7
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarin-live-player-samples"></a>Xamarin Player 即時範例
 

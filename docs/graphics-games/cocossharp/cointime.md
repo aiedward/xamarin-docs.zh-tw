@@ -3,15 +3,14 @@ title: 參考時間遊戲詳細資料
 description: 本指南討論實作詳細資料，在參考時間遊戲中，包括使用對應圖格、 建立實體、 動畫小，以及實作有效率的衝突。
 ms.prod: xamarin
 ms.assetid: 5D285684-0417-4E16-BD14-2D1F6DEFBB8B
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 07a43dbf5f3095d1735d57fdbb13499532bfe415
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2687b1c8eca8cfb68660c8a622278aa628459d07
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="coin-time-game-details"></a>參考時間遊戲詳細資料
 
@@ -31,7 +30,7 @@ _本指南討論實作詳細資料，在參考時間遊戲中，包括使用對�
 
 ## <a name="content-in-coin-time"></a>內容的參考時間
 
-參考時，表示可能會組織完整 CocosSharp 專案的方式範例專案。 錢幣式階段的結構其目的是簡化的新增和維護的內容。 它會使用**.tmx**所建立的檔案[磚塊](http://www.mapeditor.org)層級及定義動畫的 XML 檔案。 修改或加入新的內容可以輕鬆達成。 
+參考時，表示可能會組織完整 CocosSharp 專案的方式範例專案。 錢幣式階段的結構其目的是簡化的新增和維護的內容。 它會使用 **.tmx**所建立的檔案[磚塊](http://www.mapeditor.org)層級及定義動畫的 XML 檔案。 修改或加入新的內容可以輕鬆達成。 
 
 雖然這個方法會參考時間學習和試驗的有效專案，它也會反映如何專業遊戲進行。 本指南說明一些簡化加入和修改內容的方法。
 

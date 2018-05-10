@@ -3,15 +3,14 @@ title: Xamarin.Forms 即時播放程式
 description: 快速了解 Xamarin、 建置及執行應用程式在 Android 或 iOS 裝置上啟動。
 ms.prod: xamarin
 ms.assetid: 19B1F126-866E-4672-92D2-BE2B70ACF0F1
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: 64b4e2b9ba7911f872edbaea8a71b4b2d542ad95
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b5301e499a3b85087f19449f8a25b107b8ec1e4b
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarin-live-player-for-xamarinforms"></a>Xamarin.Forms Xamarin 即時播放程式
 

@@ -2,15 +2,14 @@
 title: 第 4-處理多個平台
 ms.prod: xamarin
 ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 8de540e736bee32c9ee98476bcdc3c5b1100f0f4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0988eef07ead9b2cbb6a447ac54f80bcb80e66bf
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="part-4---dealing-with-multiple-platforms"></a>第 4-處理多個平台
 
@@ -215,7 +214,7 @@ Xamarin.iOS 定義`__IOS__`可用來偵測 iOS 裝置。
 
 ##### <a name="mac"></a>Mac
 
-目前沒有內建符號 Xamarin.Mac，但是您可以加入您自己的 Mac 應用程式專案**選項 > 建置 > 編譯器**中**定義符號**方塊中，或編輯**.csproj**檔案，並在該處加入 (例如`__MAC__`)
+目前沒有內建符號 Xamarin.Mac，但是您可以加入您自己的 Mac 應用程式專案**選項 > 建置 > 編譯器**中**定義符號**方塊中，或編輯 **.csproj**檔案，並在該處加入 (例如`__MAC__`)
 
 ```xml
 <PropertyGroup><DefineConstants>__MAC__;$(DefineConstants)</DefineConstants></PropertyGroup>

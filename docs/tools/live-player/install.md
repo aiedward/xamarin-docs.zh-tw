@@ -3,15 +3,14 @@ title: Xamarin Player 即時安裝程式
 description: 編輯及測試您的 iOS 或 Android 裝置上的即時應用程式
 ms.prod: xamarin
 ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/22/2017
-ms.openlocfilehash: 1c1d8e24ecea2e1606f7f134aaa5ecf619e155c6
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 0f343e253a57de33d7e19e648862e6d11fa5af5f
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Xamarin Player 即時安裝程式
 
@@ -47,7 +46,7 @@ Xamarin Live Player 需要：
 ## <a name="3-using-xamarin-live-player-for-the-first-time"></a>3.使用 Xamarin Live 播放程式第一次
 
 1. 開啟**Visual Studio 2017**。
-2. 移至**工具 > 選項...**選取**Xamarin > 其他** 索引標籤。
+2. 移至**工具 > 選項...** 選取**Xamarin > 其他** 索引標籤。
 3. 刻度**啟用 Xamarin 即時 Player**:
 
   ![檢查 [選項] 視窗的啟用 Xamarin Live Player 方塊](install-images/vs2017-options.png)
@@ -87,7 +86,7 @@ Xamarin Live Player 需要：
 ## <a name="3-using-xamarin-live-player-for-the-first-time"></a>3.使用 Xamarin 即時的播放程式第一次
 
 1. 開啟**Visual Studio for Mac**。
-2. 移至**Visual Studio > 喜好設定...**選取**專案 > Xamarin Live 播放程式 （預覽）**  索引標籤。
+2. 移至**Visual Studio > 喜好設定...** 選取**專案 > Xamarin Live 播放程式 （預覽）**  索引標籤。
 3. 刻度**啟用 Xamarin 即時 Player**:
 
   [![檢查 [選項] 視窗的啟用 Xamarin Live Player 方塊](install-images/vsmac-options-sml.png)](install-images/vsmac-options.png#lightbox)
@@ -99,7 +98,7 @@ Xamarin Live Player 需要：
 
   * 如果您已經有配對的裝置，它可做為選項。
   * 否則您將會提示您時所需的裝置進行配對。
-  * 選擇**Xamarin Player 即時裝置...**來管理的裝置，您想要使用與 Xamarin Live Player。
+  * 選擇**Xamarin Player 即時裝置...** 來管理的裝置，您想要使用與 Xamarin Live Player。
 
 4. 按**執行** 按鈕或選取下列其中一個選項從**執行**或以滑鼠右鍵按一下功能表：
 

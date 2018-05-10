@@ -3,15 +3,14 @@ title: Apple 平台 （iOS 和 Mac）
 description: 本節中，我們會討論 Xamarin.iOS 和 Xamarin.Mac 專案之間共用程式碼的策略。
 ms.prod: xamarin
 ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: a842e89b74419a03e4ea8f4355162960d9109f9b
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: 3c01ff4af699dd0374729b638470d1ef34aa7022
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="apple-platform-ios-and-mac"></a>Apple 平台 （iOS 和 Mac）
 

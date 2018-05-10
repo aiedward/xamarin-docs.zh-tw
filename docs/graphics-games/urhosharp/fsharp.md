@@ -3,15 +3,14 @@ title: '使用 F # 的程式設計 UrhoSharp'
 description: '如何建立使用 F # Visual Studio 中適用於 Mac 的簡單 UrhoSharp 應用程式'
 ms.prod: xamarin
 ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 1496ff10a089829a01ad9993dfbca87d10b18991
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: d2b21204d1d328831419308827e1a2de2b6aef1c
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="programming-urhosharp-with-f"></a>使用 F # 的程式設計 UrhoSharp
 
@@ -27,16 +26,16 @@ UrhoSharp 可以使用 F # 使用相同的程式庫和 C# 程式設計人員所�
 
 沒有 UrhoSharp 的 F # 範本，但您可以開始使用可用的因此若要建立您自己的 UrhoSharp 專案[範例](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)或遵循下列步驟：
 
-1. 從 Visual Studio for Mac，建立新**方案**。 選擇**iOS > 應用程式 > 單一檢視應用程式**選取**F #**做為實作語言。 
+1. 從 Visual Studio for Mac，建立新**方案**。 選擇**iOS > 應用程式 > 單一檢視應用程式**選取**F #** 做為實作語言。 
 1. 刪除**Main.storyboard**檔案。 開啟**Info.plist**檔案並在**iPhone / iPod 部署資訊** 窗格中，刪除`Main`中**主要介面**下拉式清單。
 1. 刪除**ViewController.fs**檔案。
 
 ## <a name="building-hello-world-in-urho"></a>建置 Urho 中的 Hello World
 
-現在您已經準備好開始定義遊戲的類別。 最少，您必須定義的子類別`Urho.Application`並覆寫其`Start`方法。 若要建立這個檔案，以滑鼠右鍵按一下您的 F # 專案中，選擇**新增新的檔案...**並將空的 F # 類別加入至您的專案。 新的檔案會加入至您的專案中的檔案清單的結尾，但您必須將它拖曳，使它顯示*之前*在**AppDelegate.fs**。
+現在您已經準備好開始定義遊戲的類別。 最少，您必須定義的子類別`Urho.Application`並覆寫其`Start`方法。 若要建立這個檔案，以滑鼠右鍵按一下您的 F # 專案中，選擇**新增新的檔案...** 並將空的 F # 類別加入至您的專案。 新的檔案會加入至您的專案中的檔案清單的結尾，但您必須將它拖曳，使它顯示*之前*在**AppDelegate.fs**。
 
 1. 加入 Urho NuGet 套件的參考。
-1. 從現有 Urho 專案中，複製 （大型） 目錄**發生 CoreData /**和**資料 /**到您的專案**資源 /**目錄。 在 F # 專案中，以滑鼠右鍵按一下**資源**資料夾，然後使用**新增] / [加入現有資料夾**將所有的這些檔案新增至您的專案。
+1. 從現有 Urho 專案中，複製 （大型） 目錄**發生 CoreData /** 和**資料 /** 到您的專案**資源 /** 目錄。 在 F # 專案中，以滑鼠右鍵按一下**資源**資料夾，然後使用**新增] / [加入現有資料夾**將所有的這些檔案新增至您的專案。
 
 您的專案結構應該看起來像：
 

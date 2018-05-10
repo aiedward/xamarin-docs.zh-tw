@@ -2,15 +2,14 @@
 title: Xamarin.Essentials 裝置資訊
 description: DeviceInfo 類別會提供執行應用程式之裝置的相關資訊。
 ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
-ms.technology: xamarin-crossplatform
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 3a9fc352336f67375b732247560f8c1d4dd45f70
-ms.sourcegitcommit: 46d3c9daa45350bdd536d9e105517f3c1c753c5b
-ms.translationtype: HT
+ms.openlocfilehash: d5220b09808bda2deb2ef391b5fbe2a1332d0e28
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials 裝置資訊
 

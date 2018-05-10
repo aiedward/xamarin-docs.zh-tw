@@ -6,12 +6,12 @@ ms.assetid: 4917273d-32f9-401a-a52c-5cfb53a2170d
 ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
-ms.date: 04/23/2018
-ms.openlocfilehash: 627225fdeef781a8b24a79e9b46627a739fd15af
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.date: 05/08/2018
+ms.openlocfilehash: 96054505af44c5d3e198c2b9e7e7cb30d39b02b1
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarin-live-reload"></a>Xamarin 即時重新載入
 
@@ -27,8 +27,8 @@ Xamarin 即時重新載入可讓您**變更 XAML 看到其反映即時，而不�
 
 ## <a name="requirements"></a>需求
 
-* [Visual Studio 2017 15.7 Preview 4](https://www.visualstudio.com/vs/preview/)或更新版本與**行動應用程式開發的.NET**工作負載。
-* [Xamarin.Forms 3.0.354232-pre3](https://www.nuget.org/packages/Xamarin.Forms/3.0.0.354232-pre3)或更新版本。
+* [Visual Studio 2017 15.7 版本或更高版本](https://www.visualstudio.com/vs/)或更新版本與**行動應用程式開發的.NET**工作負載。
+* [Xamarin.Forms 3.0.0 以上](https://www.nuget.org/packages/Xamarin.Forms/)或更新版本。
 
 ## <a name="getting-started"></a>快速入門
 ### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1.安裝 Xamarin 即時重新載入，從 Visual Studio Marketplace
@@ -45,8 +45,13 @@ Xamarin 即時重新載入可讓您**變更 XAML 看到其反映即時，而不�
 
 即時重新載入現有的行動裝置應用程式可新增三個步驟：
 
-1. 請確認所有專案都會都更新為使用[Xamarin.Forms 3.0.354232-pre3](https://www.nuget.org/packages/Xamarin.Forms/3.0.0.354232-pre3)或更新版本。
-2. 安裝**Xamarin.LiveReload** NuGet 到您的.NET 標準 2.0 程式庫。 這不需要安裝在您的平台專案。 請確認**套件來源**設**所有**。
+1. 請確認所有專案都會都更新為使用[Xamarin.Forms 3.0.0 以上](https://www.nuget.org/packages/Xamarin.Forms/)或更新版本。
+
+2. 新增**Xamarin.LiveReload** NuGet 封裝：
+
+    a. **標準.NET** – 安裝**Xamarin.LiveReload** NuGet 到您的.NET 標準 2.0 程式庫。 這不需要安裝在您的平台專案。 請確認**套件來源**設**所有**。
+    
+    b. **共用的專案**– 安裝**Xamarin.LiveReload** NuGet 在所有平台專案 （例如 Android、 iOS、 UWP，等）。 請確認**套件來源**設**所有**。
 
 ![新增 Xamarin 即時重新載入 NuGet 使用 NuGet 封裝管理員](images/addlivereloadnuget.png)
 
@@ -85,7 +90,7 @@ public partial class App : Application
 
 ### <a name="what-changes-does-live-reload-redeploy"></a>即時重新載入部署了哪些變更？ 
 
-即時重新載入只適用於 XAML 所做的變更。 如果您以 C# 檔案中進行變更，將會需要重新編譯。 重新載入 C# 的支援已規劃在未來的版本。
+即時重新載入只適用於 XAML 或 CSS 所做的變更。 如果您以 C# 檔案中進行變更，將會需要重新編譯。 重新載入 C# 的支援已規劃在未來的版本。
 
 ### <a name="what-platforms-are-supported"></a>支援哪些平台？ 
 
@@ -111,8 +116,6 @@ public partial class App : Application
 ## <a name="known-issues"></a>已知問題
 
 * 只支援 Visual Studio 中。
-* 只適用於.NET 標準程式庫。 這將在下一步的預覽版本中修正。
-* 不支援 CSS 樣式表。 這將在下一步的預覽版本中修正。
 * 重新載入整個應用程式的資源 (也就是**App.xaml**或共用資源字典)，就會重設應用程式瀏覽。 這將在下一步的預覽版本中修正。
 * 當偵錯 UWP 可能會造成執行階段當機，請編輯 XAML。 因應措施： 使用**啟動但不偵錯 （Ctrl + F5）**而不是**開始偵錯 (F5)**。
 
@@ -131,8 +134,6 @@ public partial class App : Application
 * **XLR003**:*即時重新載入 nuget 套件需要安裝 Xamarin 即時重新載入 Visual Studio 擴充功能。*
 
   嘗試建置專案，參考即時重新載入 nuget 封裝，但未安裝 Visual 的擴充功能。  
-
-
 
 ### <a name="app-doesnt-connect"></a>應用程式並不會連接
 

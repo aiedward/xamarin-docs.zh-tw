@@ -2,15 +2,14 @@
 title: Xamarin.Essentials 連線
 description: 連線類別可讓您監視裝置的網路狀況中的變更，請檢查目前的網路存取權，以及目前連接方式。
 ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
-ms.technology: xamarin-crossplatform
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 99faa518f44dca51cd1bbe2562a83893c48d2917
-ms.sourcegitcommit: 46d3c9daa45350bdd536d9e105517f3c1c753c5b
-ms.translationtype: HT
+ms.openlocfilehash: fd757bec32d2854d2c9693812dece05ef11e2f80
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials 連線
 

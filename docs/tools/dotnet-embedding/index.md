@@ -3,15 +3,14 @@ title: .NET 內嵌
 description: '內嵌.NET 可讓現有.NET 程式碼 （C#、 F # 中，以及其他） 取用來自其他程式設計語言'
 ms.prod: xamarin
 ms.assetid: 617C38CA-B921-4A76-8DFC-B0A3DF90E48A
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 505c2902f2b8d112597b4b9b9b07282a7810db68
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: f6edf25faa00bc7c90a52b76a6e90168ccd85b32
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="net-embedding"></a>.NET 內嵌
 

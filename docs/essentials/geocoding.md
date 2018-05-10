@@ -2,15 +2,14 @@
 title: Xamarin.Essentials 地理編碼
 description: 地理編碼類別提供了 Api geocode placemark 位置座標，反轉 placemark geocode coordincates。
 ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
-ms.technology: xamarin-crossplatform
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 1b9bb3232c5b9eacde5ca90c9decf02138e3069a
-ms.sourcegitcommit: 46d3c9daa45350bdd536d9e105517f3c1c753c5b
-ms.translationtype: HT
+ms.openlocfilehash: 0bfc463ca22d4137eadc35c02375fe41b0b99b8a
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials 地理編碼
 

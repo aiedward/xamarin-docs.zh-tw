@@ -3,15 +3,14 @@ title: 原生參考
 description: 原生參考可讓您嵌入 Xamarin.iOS 或 Xamarin.Mac 專案或專案繫結的原生的架構。
 ms.prod: xamarin
 ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: cd271ad68e5edb06158f7d595395ddcd0bcfbdce
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c56e392420debb21998363cfffa288aec51691ea
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="native-references"></a>原生參考
 

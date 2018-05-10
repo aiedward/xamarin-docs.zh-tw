@@ -3,15 +3,14 @@ title: 更新現有 Xamarin.Forms 應用程式
 description: 請依照下列步驟來更新現有 Xamarin.Forms 應用程式使用統一的 API，並更新到版本 1.3.1
 ms.prod: xamarin
 ms.assetid: C2F0D1D1-256D-44A4-AAC9-B06A0CB41E70
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 49614dddf05d692d94d28b29729e7b2038be31e7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7b69ecb5d62a30cf6259aae1884971ad13babede
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>更新現有 Xamarin.Forms 應用程式
 
@@ -46,7 +45,7 @@ _請依照下列步驟來更新現有 Xamarin.Forms 應用程式使用統一的 
 
 ### <a name="migration-tool"></a>移轉工具
 
-按一下 iOS 專案，讓它被選取，然後選擇 **專案 > 移轉到 Xamarin.iOS 統一的 API...**並同意所出現的警告訊息。
+按一下 iOS 專案，讓它被選取，然後選擇 **專案 > 移轉到 Xamarin.iOS 統一的 API...** 並同意所出現的警告訊息。
 
 ![](updating-xamarin-forms-apps-images/beta-tool1.png "選擇 [專案] >...請移轉到 Xamarin.iOS 統一的 API，並同意所出現的警告訊息")
 
@@ -225,7 +224,7 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
 這段時間，就像元件，直到您必須切換任何您要加入專案，以支援統一的 Api 版本的 NuGet 封裝，之後執行乾淨的組建。
 
 > [!IMPORTANT]
-> 如果您在表單中有錯誤_"錯誤 3 不能在相同的 Xamarin.iOS 專案中包含 'monotouch.dll' 和 'Xamarin.iOS.dll'-'monotouch.dll' 正由時明確地參考 'Xamarin.iOS.dll' ' xxx，版本 = 0.0.000，Culture = neutral，PublicKeyToken = null'"_之後轉換您的應用程式，以統一的 Api，它通常是因為有尚未更新統一的 API 的專案中的元件或 NuGet 封裝。 您必須移除現有元件/NuGet、 更新為支援統一的 Api 版本，執行乾淨的組建。
+> 如果您在表單中有錯誤 _"錯誤 3 不能在相同的 Xamarin.iOS 專案中包含 'monotouch.dll' 和 'Xamarin.iOS.dll'-'monotouch.dll' 正由時明確地參考 'Xamarin.iOS.dll' ' xxx，版本 = 0.0.000，Culture = neutral，PublicKeyToken = null'"_ 之後轉換您的應用程式，以統一的 Api，它通常是因為有尚未更新統一的 API 的專案中的元件或 NuGet 封裝。 您必須移除現有元件/NuGet、 更新為支援統一的 Api 版本，執行乾淨的組建。
 
 ## <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>啟用 64 位元建置的 Xamarin.iOS 應用程式
 

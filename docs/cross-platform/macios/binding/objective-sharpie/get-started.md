@@ -2,15 +2,14 @@
 title: 快速入門
 ms.prod: xamarin
 ms.assetid: 577512BF-1A90-41E5-89DE-9E056C478678
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 139a5102b2f2d8a9d803fd1ac593934aa73e2415
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5f61d0794e1f5a38370f0d840504720043f69590
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="getting-started"></a>快速入門
 
@@ -51,9 +50,9 @@ ms.lasthandoff: 04/04/2018
 
 如果目標 Sharpie 出剖析期間發生錯誤，則表示該 clang 期間錯誤出其剖析階段嘗試建構 AST，而且您需要找出原因。
 
-**NEW!** 3.0 版嘗試解決部分這種複雜性藉由直接支援的 Xcode 專案。 如果原生程式庫中有有效的 Xcode 專案，目標 Sharpie 可以評估指定的目標和組態來推算的必要輸入標頭檔和編譯器旗標的專案。
+**新功能 ！** 3.0 版嘗試解決部分這種複雜性藉由直接支援的 Xcode 專案。 如果原生程式庫中有有效的 Xcode 專案，目標 Sharpie 可以評估指定的目標和組態來推算的必要輸入標頭檔和編譯器旗標的專案。
 
 如果沒有 Xcode 專案功能，您必須要由較為熟悉以專案推算出的正確輸入標頭檔、 標頭檔搜尋路徑和其他必要的編譯器旗標。 請務必了解用來建立原生程式庫的編譯器旗標都相同，必須傳遞至目標 Sharpie。 這是更多的手動程序，以及一需要熟悉命令列中利用 Clang 工具鏈的原生程式碼編譯的位元。
 
-**NEW!** 3.0 也引進了輕鬆地繫結的工具版本[CocoaPods](https://cocoapods.org)透過`sharpie pod`命令。
+**新功能 ！** 3.0 也引進了輕鬆地繫結的工具版本[CocoaPods](https://cocoapods.org)透過`sharpie pod`命令。
 如果您感興趣的程式庫功能為 CocoaPod，我們建議您一開始會嘗試與目標 Sharpie CocoaPod 連結 （相對於嘗試針對來源直接繫結）。

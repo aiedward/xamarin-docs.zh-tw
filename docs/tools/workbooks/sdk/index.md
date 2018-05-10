@@ -2,15 +2,14 @@
 title: 開始使用 Xamarin 活頁簿 SDK
 ms.prod: xamarin
 ms.assetid: FAED4445-9F37-46D8-B408-E694060969B9
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: ad7341776c2f37d4eb6238a26d5b12ee9e340ff7
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 2951075f5917d26d19b05eee3d4908a33799352e
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="getting-started-with-the-xamarin-workbooks-sdk"></a>開始使用 Xamarin 活頁簿 SDK
 

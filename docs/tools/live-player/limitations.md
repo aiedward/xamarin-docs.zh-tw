@@ -3,15 +3,14 @@ title: 限制
 description: Xamarin Live 播放程式的某些限制
 ms.prod: xamarin
 ms.assetid: 36A1531E-630A-4B7C-A333-4E67E5DC023C
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2018
-ms.openlocfilehash: 43699e77bc8b7365c6d5f7fbf27e19a945e69e22
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: a3aea31f32e3bf6227cce2e3340e3d04828472a0
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="limitations"></a>限制
 

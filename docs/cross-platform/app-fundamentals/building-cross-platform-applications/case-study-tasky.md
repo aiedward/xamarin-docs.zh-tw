@@ -3,15 +3,14 @@ title: 案例研究： Tasky
 description: 本文件說明如何建置跨平台應用程式的原則已套用 Tasky 可攜式的範例應用程式中。 它所接觸行動應用程式的設計，撰寫一般程式碼重複使用和實作 iOS、 Android 和 Windows Phone 平台為目標的平台特定專案。
 ms.prod: xamarin
 ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 690edabd53752ff0347fdb232a4bbfcb1ba6e84d
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 1f8325bbc6b3f8aa40a08ca2c57605544ab0bc85
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="case-study-tasky"></a>案例研究： Tasky
 

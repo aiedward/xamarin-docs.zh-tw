@@ -3,14 +3,13 @@ title: 為什麼不 Jenkins 支援 Xamarin？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9951F980-2C6C-47C0-8A35-A78F06C20BEB
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: befcdcbee3114e760cec94a61a84106fddc72cf9
-ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
+ms.openlocfilehash: 37fc134f7e97af74f5bb019f3262972273f0c4cf
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="why-isnt-jenkins-supported-by-xamarin"></a>為什麼不 Jenkins 支援 Xamarin？
 

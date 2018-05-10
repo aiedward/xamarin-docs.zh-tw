@@ -2,15 +2,14 @@
 title: C 使用者入門
 ms.prod: xamarin
 ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/19/2018
-ms.openlocfilehash: 1313d7156a1fd75fd40e2aff65404aef5ab023bb
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: f3c238dc9805dafa922f8e32fb4b1935a3fa152c
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="getting-started-with-c"></a>C 使用者入門
 
@@ -38,13 +37,13 @@ ms.lasthandoff: 05/03/2018
 ### <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
 ```shell
-mono {SolutionDir}/packages/Embeddinator-4000.0.4.0.0/tools/Embeddinator-4000.exe --gen=c --output=managed_c --platform=macos --compile managed.dll
+mono {SolutionDir}/packages/Embeddinator-4000.0.4.0.0/tools/Embeddinator-4000.exe --gen=c --outdir=managed_c --platform=macos --compile managed.dll
 ```
 
 ### <a name="visual-studio-2017"></a>Visual Studio 2017
 
 ```shell
-$(SolutionDir)\packages\Embeddinator-4000.0.2.0.80\tools\Embeddinator-4000.exe --gen=c --output=managed_c --platform=windows --compile managed.dll
+$(SolutionDir)\packages\Embeddinator-4000.0.2.0.80\tools\Embeddinator-4000.exe --gen=c --outdir=managed_c --platform=windows --compile managed.dll
 ```
 
 ## <a name="generation"></a>產生

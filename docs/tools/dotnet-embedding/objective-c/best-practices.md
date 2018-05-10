@@ -2,15 +2,14 @@
 title: .NET 內嵌 OBJECTIVE-C 適用的最佳作法
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 9f31190d54b187e1dc298fe1c2a8d443862f10de
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: e592a76e428d23881f1fe2dc5c7254999bece517
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="net-embedding-best-practices-for-objective-c"></a>OBJECTIVE-C 適用的.NET 內嵌最佳作法
 

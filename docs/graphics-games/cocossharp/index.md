@@ -3,15 +3,14 @@ title: CocosSharp
 description: 提供使用 CocosSharp 遊戲開發各種文章此文件連結。
 ms.prod: xamarin
 ms.assetid: 5E72869D-3541-408B-AB64-D34C777AFB79
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2018
-ms.openlocfilehash: 2772af61dfc60b7ecd0fd5f7ecdfe5701d2504f0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a188863cf57706e3f9dd6c8f4d2d3e60b2591e0b
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="cocossharp"></a>CocosSharp
 

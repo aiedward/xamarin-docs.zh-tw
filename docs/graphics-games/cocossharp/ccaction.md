@@ -3,15 +3,14 @@ title: 與 CCAction 建立動畫
 description: CCAction 類別簡化了加入 CocosSharp 遊戲動畫。 這些動畫可用來實作功能，或更具吸引力。
 ms.prod: xamarin
 ms.assetid: 74DBD02A-6F10-4104-A61B-08CB49B733FB
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 21d7cd17d7d08f05e044f648fc09b71b7a837065
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b6209816f741423f40945a0fe4391fe921cb35de
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="animating-with-ccaction"></a>與 CCAction 建立動畫
 

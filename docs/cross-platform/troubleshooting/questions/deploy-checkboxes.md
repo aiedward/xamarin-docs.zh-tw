@@ -3,15 +3,14 @@ title: 部署停用 Configuration Manager 中的核取方塊
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: aaf675cd-d885-4dac-9754-77dbcaea3be9
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
-ms.openlocfilehash: c0f116565a2741c62a00ed2a255cfde8c57b8569
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: ab825ba4d28ca8768e5c633fc3779828638a498d
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="deploy-checkboxes-disabled-in-configuration-manager"></a>部署停用 Configuration Manager 中的核取方塊
 

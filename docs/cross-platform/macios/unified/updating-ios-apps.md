@@ -3,15 +3,14 @@ title: 更新現有的 iOS 應用程式
 description: 請依照下列步驟來更新現有使用統一的 API Xamarin.iOS 應用程式。
 ms.prod: xamarin
 ms.assetid: 303C36A8-CBF4-48C0-9412-387E95024CAB
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: ce7e269f76567f824c4cc65916bed32f0f6c08d1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 74534333bb0c4ae54dc6816312a5531f29a80ce5
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="updating-existing-ios-apps"></a>更新現有的 iOS 應用程式
 
@@ -100,7 +99,7 @@ Xamarin 提供適用於 Mac 的 Visual Studio 和 Visual Studio 從傳統 API �
 這段時間，就像元件，直到您必須切換任何您要加入專案，以支援統一的 Api 版本的 NuGet 封裝，之後執行乾淨的組建。
 
 > [!IMPORTANT]
-> 如果您在表單中有錯誤_"錯誤 3 不能在相同的 Xamarin.iOS 專案中包含 'monotouch.dll' 和 'Xamarin.iOS.dll'-'monotouch.dll' 正由時明確地參考 'Xamarin.iOS.dll' ' xxx，版本 = 0.0.000，Culture = neutral，PublicKeyToken = null'"_之後轉換您的應用程式，以統一的 Api，它通常是因為有尚未更新統一的 API 的專案中的元件或 NuGet 封裝。 您必須移除現有元件/NuGet、 更新為支援統一的 Api 版本，執行乾淨的組建。
+> 如果您在表單中有錯誤 _"錯誤 3 不能在相同的 Xamarin.iOS 專案中包含 'monotouch.dll' 和 'Xamarin.iOS.dll'-'monotouch.dll' 正由時明確地參考 'Xamarin.iOS.dll' ' xxx，版本 = 0.0.000，Culture = neutral，PublicKeyToken = null'"_ 之後轉換您的應用程式，以統一的 Api，它通常是因為有尚未更新統一的 API 的專案中的元件或 NuGet 封裝。 您必須移除現有元件/NuGet、 更新為支援統一的 Api 版本，執行乾淨的組建。
 
 ## <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>啟用 64 位元建置的 Xamarin.iOS 應用程式
 

@@ -3,15 +3,14 @@ title: 3D MonoGame 座標
 description: 了解 3D 座標系統是開發 3D 遊戲的重要步驟。 MonoGame 提供數個位置、 指定的方向，以及調整在 3D 空間中的物件類別。
 ms.prod: xamarin
 ms.assetid: A4130995-48FD-4E2E-9C2B-ADCEFF35BE3A
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: e3538efef107778397bd8c799bdd63eb6c2f3de3
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 2f14d21302ed4295d16baa28723df6ef79863686
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="3d-coordinates-in-monogame"></a>3D MonoGame 座標
 

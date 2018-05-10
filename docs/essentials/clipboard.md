@@ -2,15 +2,14 @@
 title: Xamarin.Essentials 剪貼簿
 description: 剪貼簿類別可讓您複製並貼到系統剪貼簿應用程式之間的文字。
 ms.assetid: C52AE99A-0FB3-425D-9106-3DA5777FEFA0
-ms.technology: xamarin-crossplatform
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 218f90746f130f02c47040a9191b1001fa80c203
-ms.sourcegitcommit: 46d3c9daa45350bdd536d9e105517f3c1c753c5b
-ms.translationtype: HT
+ms.openlocfilehash: 44ba8090851b65327682b3d290d58fb23bb8aae4
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials 剪貼簿
 

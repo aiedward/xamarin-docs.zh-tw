@@ -8,11 +8,11 @@ ms.custom: video
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 4a7a8a96ff22cf02d04ffdfff684d454d1a28024
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3eb3bdd7b060b661d5202c63a879f1c88d2ccdcb
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="oreo-features"></a>Oreo 功能
 
@@ -43,7 +43,7 @@ _如何開始使用 Xamarin.Android 開發最新版的 Android 應用程式。_
 
 1. 更新至最新版的 Visual Studio。
 
-2. 安裝**Android 8.0.0 (應用程式開發介面 26)**或更新版本的套件和工具透過 SDK Manager。
+2. 安裝**Android 8.0.0 (應用程式開發介面 26)** 或更新版本的套件和工具透過 SDK Manager。
 
 3. 建立新的 Xamarin.Android 專案的目標 Android Oreo (應用程式開發介面 26)。
 
@@ -162,7 +162,7 @@ _如何開始使用 Xamarin.Android 開發最新版的 Android 應用程式。_
     avdmanager create avd -n AVD-Oreo-8.0 -k "system-images;android-26;google_apis;x86"
     ```
 
-4.  出現提示時**您想要建立自訂硬體設定檔 [no]**您可以輸入**沒有**並接受預設硬體設定檔。 如果您說出**是**， **avdmanager**會提示您的自訂硬體設定檔的問題清單。
+4.  出現提示時**您想要建立自訂硬體設定檔 [no]** 您可以輸入**沒有**並接受預設硬體設定檔。 如果您說出**是**， **avdmanager**會提示您的自訂硬體設定檔的問題清單。
 
 之後您**avdmanager**若要建立虛擬裝置，它將會包含在裝置下拉功能表：
 
@@ -182,7 +182,7 @@ _如何開始使用 Xamarin.Android 開發最新版的 Android 應用程式。_
     avdmanager create avd -n AVD-Oreo-8.0 -k "system-images;android-26;google_apis;x86"
     ```
 
-3.  出現提示時**您想要建立自訂硬體設定檔 [no]**您可以輸入**沒有**並接受預設硬體設定檔。 如果您說出**是**， **avdmanager**會提示您使用自訂的問題清單，硬體設定檔。
+3.  出現提示時**您想要建立自訂硬體設定檔 [no]** 您可以輸入**沒有**並接受預設硬體設定檔。 如果您說出**是**， **avdmanager**會提示您使用自訂的問題清單，硬體設定檔。
 
 使用之後**avdmanager**若要建立虛擬裝置，它將會包含在裝置下拉功能表：
 
@@ -190,7 +190,7 @@ _如何開始使用 Xamarin.Android 開發最新版的 Android 應用程式。_
 
 -----
 
-如需設定的 Android 模擬器進行測試和偵錯的詳細資訊，請參閱[Android SDK 模擬器](~/android/deploy-test/debugging/android-sdk-emulator/index.md)。
+如需設定的 Android 模擬器進行測試和偵錯的詳細資訊，請參閱[Google Android 模擬器](~/android/deploy-test/debugging/android-sdk-emulator/index.md)。
 
 如果您使用的實體裝置，例如管道或像素，您可以透過自動更新您的裝置，透過無線方式 (OTA) 更新或下載系統映像並直接快閃裝置。 如需手動更新 Android Oreo 您裝置的詳細資訊，請參閱[Nexus 和像素裝置的原廠映像](https://developers.google.com/android/images)。
 

@@ -3,14 +3,13 @@ title: CocosSharp 內容管線
 description: 描述 CocosSharp 內容管線的指南的這個文件連結。
 ms.prod: xamarin
 ms.assetid: 2BC895E5-BDFD-443D-A96D-86BA7042CB70
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 7145b255beec47335cb97f159c82b73b756f402f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7cf4d5cd60da1703b6047f6840222946010c9300
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="cocossharp-content-pipeline"></a>CocosSharp 內容管線
 

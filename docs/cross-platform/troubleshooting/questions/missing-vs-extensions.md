@@ -3,15 +3,14 @@ title: 安裝之後遺漏 Visual Studio 擴充功能
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 066d36a3-e553-48d6-8769-c972274d7641
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/20/2017
-ms.openlocfilehash: 72870b9bf6ff6c3068ee037e6405e4ec03546cd6
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: e47cfc4de77a6310a81867eefb07c3c1e5cc7060
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="missing-visual-studio-extensions-after-installation"></a>安裝之後遺漏 Visual Studio 擴充功能
 
@@ -61,7 +60,7 @@ ms.lasthandoff: 04/06/2018
 
     *   Xamarin
 
-    *   適用於 Windows 的 Xamarin
+    *   Xamarin for Windows
 
     *   Xamarin.Android
 
@@ -83,7 +82,7 @@ ms.lasthandoff: 04/06/2018
 
     _HKEY\_LOCAL\_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\SharedDlls_
 
-6.  尋找並刪除任何符合此模式的項目：
+6.  尋找並刪除所有符合此模式的項目：
 
     _C:\Program Files\*\Microsoft Visual Studio 1\*.0\Common7\IDE\Extensions\Xamarin_
 
@@ -91,7 +90,7 @@ ms.lasthandoff: 04/06/2018
 
     `HKEY\_CURRENT\_USER\Software\Microsoft\VisualStudio\1\*.0\ExtensionManager\PendingDeletions`
 
-8.  刪除任何項目看起來像是可能會與 Xamarin。 例如，這裡的一個，會用來 Xamarin 的舊版本會造成問題：
+8.  刪除所有看起來可能與 Xamarin 相關的項目。 例如，這裡的一個，會用來 Xamarin 的舊版本會造成問題：
 
     _Mono.VisualStudio.Shell,1.0_
 

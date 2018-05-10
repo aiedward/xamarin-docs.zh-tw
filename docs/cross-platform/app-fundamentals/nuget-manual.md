@@ -3,15 +3,14 @@ title: 手動建立 Xamarin NuGet 套件
 description: 此頁面包含一些秘訣可協助您建立 Xamarin 平台為目標的 NuGet 封裝。
 ms.prod: xamarin
 ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: ce8003c862205ac80dfea2095009562ae7ebb23f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 510c27cb54b91c837ca6f6b7a93f944f13097f0c
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>手動建立 Xamarin NuGet 套件
 
@@ -26,7 +25,7 @@ NuGet 網站[支援多個.NET Framework 版本和設定檔](https://docs.nuget.o
 
 使用中主要的 Xamarin 的目標 framework 今天是：
 
-* **MonoAndroid** - Xamarin.Android
+* **MonoAndroid** -Xamarin.Android
 * **Xamarin.iOS** -Xamarin.iOS[統一的 API](~/cross-platform/macios/unified/index.md) （支援 64 位元）
 * **Xamarin.Mac** -Xamarin.Mac 的行動裝置設定檔，它就相當於 Xamarin.iOS 和 Xamarin.Android API 介面。
 
@@ -47,7 +46,7 @@ A **.nuspec**目標所有這些檔案會看起來像：
 
 上述會忽略任何可攜式類別庫。
 
-大部分**.nuspec**檔案指定的目標 framework 的版本號碼，但它是選擇性的如果您的組件適用於所有的目標 framework 版本。 因此，如果您的目標是**lib\MonoAndroid**這表示它適用於任何版本的 Xamarin.Android。
+大部分 **.nuspec**檔案指定的目標 framework 的版本號碼，但它是選擇性的如果您的組件適用於所有的目標 framework 版本。 因此，如果您的目標是**lib\MonoAndroid**這表示它適用於任何版本的 Xamarin.Android。
 
 您可以指定不含小數點的數字集合的版本，或您可以指定使用小數位數。 不含小數點 NuGet 將只需要每個數字並使其成為版本插入 '。 ' 每個數字之間。
 

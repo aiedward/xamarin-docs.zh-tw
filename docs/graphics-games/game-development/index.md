@@ -3,15 +3,14 @@ title: 使用 Xamarin 的遊戲應用程式開發簡介
 description: 遊戲開發性質可能大幅不同於其他類型的應用程式的開發。 本文是包含技術，可以搭配 Xamarin.iOS 和 Xamarin.Android 遊戲開發的簡介。 它使用 Xamarin.iOS 和 Xamarin.Android 提供高層級討論如何進行遊戲和取樣技術，可供使用。
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: b2df6d431004bbfa140b6cae1d069404af92c1df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 543d3e2d4e53d1b88213ac82689073a9fb925820
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>使用 Xamarin 的遊戲應用程式開發簡介
 
@@ -153,7 +152,7 @@ FEZ:
 
 防禦：
 
-![](images/image8.jpg "Bastion")
+![](images/image8.jpg "防禦")
 
 若要開始使用 MonoGame，前往透過我們[MonoGame 指南](~/graphics-games/monogame/index.md)。
 

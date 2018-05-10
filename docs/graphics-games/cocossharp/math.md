@@ -3,15 +3,14 @@ title: 與 CocosSharp 2D 數學運算
 description: 本指南涵蓋 2D 數學開發遊戲。 它使用 CocosSharp 示範如何執行一般的遊戲開發工作，並說明這些工作背後的數學運算。
 ms.prod: xamarin
 ms.assetid: 5C241AB4-F97E-4B61-B93C-F5D307BCD517
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 33573d14d77f0582caca7d1e71b839563a3dd110
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 13279df69b7a22117c10d74f1a15c082aff13264
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="2d-math-with-cocossharp"></a>與 CocosSharp 2D 數學運算
 

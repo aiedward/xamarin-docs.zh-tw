@@ -3,21 +3,20 @@ title: 使用 MonoGame PipelineTool
 description: MonoGame 管線工具用來建立及管理 MonoGame 內容專案。 由 Monogame 管線工具處理並且輸出為.xnb CocosSharp 及 MonoGame 應用程式中使用的檔案內容的專案中的檔案。
 ms.prod: xamarin
 ms.assetid: CACFBF5F-BBD4-4D46-8DDA-1F46466725FD
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 672c57aded149200b32501a6b48165ca88726ee1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 50e6c611e285cde9184eed242353ad08b2a941ee
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>使用 MonoGame 管線工具
 
 _MonoGame 管線工具用來建立及管理 MonoGame 內容專案。由 Monogame 管線工具處理並且輸出為.xnb CocosSharp 及 MonoGame 應用程式中使用的檔案內容的專案中的檔案。_
 
-MonoGame 管線工具提供方便使用環境轉換到的內容檔案的**.xnb** CocosSharp 和 MonoGame 應用程式中使用的檔案。 如需內容的管線，以及為何有用遊戲開發資訊，請參閱[上內容的管線本簡介](~/graphics-games/cocossharp/content-pipeline/introduction.md)
+MonoGame 管線工具提供方便使用環境轉換到的內容檔案的 **.xnb** CocosSharp 和 MonoGame 應用程式中使用的檔案。 如需內容的管線，以及為何有用遊戲開發資訊，請參閱[上內容的管線本簡介](~/graphics-games/cocossharp/content-pipeline/introduction.md)
 
 本逐步解說涵蓋下列：
 
@@ -27,9 +26,9 @@ MonoGame 管線工具提供方便使用環境轉換到的內容檔案的**.xnb**
  - 處理 MonoGame 管線工具中的檔案
  - 在執行階段使用的檔案
 
-本逐步解說會使用 CocosSharp 專案示範如何**.xnb**檔案可以載入和應用程式中使用。 MonoGame 的使用者也可以參考此逐步解說中，如 CocosSharp 和 MonoGame 都使用相同**.xnb**內容檔案。
+本逐步解說會使用 CocosSharp 專案示範如何 **.xnb**檔案可以載入和應用程式中使用。 MonoGame 的使用者也可以參考此逐步解說中，如 CocosSharp 和 MonoGame 都使用相同 **.xnb**內容檔案。
 
-完成的應用程式將會顯示單一精靈顯示從紋理**.xnb**檔案和單一標籤，顯示從精靈字型**.xnb**檔案：
+完成的應用程式將會顯示單一精靈顯示從紋理 **.xnb**檔案和單一標籤，顯示從精靈字型 **.xnb**檔案：
 
 ![](walkthrough-images/image1.png "完成的應用程式將會顯示單一精靈顯示紋理從.xnb 檔案")
 
@@ -69,7 +68,7 @@ MonoGame 管線工具是能夠建立內容，針對 iOS 應用程式即使當在
 
 ## <a name="creating-a-content-project"></a>建立內容的專案
 
-現在，我們已經使用遊戲專案，我們可以建立 MonoGame 管線專案。 若要這樣做，請在 MonoGame 管線工具選取**檔案 > 新...**並瀏覽至您的專案內容資料夾。 適用於 Android 資料夾位於 **[專案 root]\BouncingGame.Android\Assets\Content\**。 對於 iOS，資料夾位於 **[專案 root]\BouncingGame.iOS\Content\**。
+現在，我們已經使用遊戲專案，我們可以建立 MonoGame 管線專案。 若要這樣做，請在 MonoGame 管線工具選取**檔案 > 新...** 並瀏覽至您的專案內容資料夾。 適用於 Android 資料夾位於 **[專案 root]\BouncingGame.Android\Assets\Content\**。 對於 iOS，資料夾位於 **[專案 root]\BouncingGame.iOS\Content\**。
 
 變更**檔案名稱**至**ContentProject**按一下**儲存**按鈕：
 
@@ -84,7 +83,7 @@ MonoGame 管線工具是能夠建立內容，針對 iOS 應用程式即使當在
 
 ### <a name="output-folder"></a>輸出資料夾
 
-這是其中的資料夾 （相對於內容專案本身） 輸出**.xnb**檔案會儲存。 為了簡單起見，我們會使用相同的資料夾，可保存我們輸入及輸出檔案。 換句話說，我們將會變更**輸出資料夾**是 **。\** :
+這是其中的資料夾 （相對於內容專案本身） 輸出 **.xnb**檔案會儲存。 為了簡單起見，我們會使用相同的資料夾，可保存我們輸入及輸出檔案。 換句話說，我們將會變更**輸出資料夾**是 **。\** :
 
 ![](walkthrough-images/image10.png "")
 
@@ -108,7 +107,7 @@ MonoGame 管線工具是能夠建立內容，針對 iOS 應用程式即使當在
 
 ### <a name="adding-a-png-file"></a>若要加入.png 檔案
 
-若要加入**.png**檔案加入專案中，我們會先將它複製到與管線專案中，具有相同的目錄**.mgcb**延伸模組。
+若要加入 **.png**檔案加入專案中，我們會先將它複製到與管線專案中，具有相同的目錄 **.mgcb**延伸模組。
 
 ![](walkthrough-images/image12.png ".Png 檔案加入專案")
 
@@ -162,7 +161,7 @@ MonoGame 管線工具是能夠建立內容，針對 iOS 應用程式即使當在
 
 ### <a name="adding-xnb-files-to-visual-studio-for-mac"></a>.Xnb 將檔案加入至 Visual Studio for Mac
 
-首先我們會將檔案加入專案。 在 Visual Studio for Mac，我們會依序展開**BouncingGame.Android**專案中，展開 **資產**資料夾中，以滑鼠右鍵按一下**內容**資料夾，然後選取**新增 > 新增檔案...**首先，我們將在其中選取**ball.xnb**我們稍早建立及按一下**開啟**。 然後重複上述步驟，但加入**新細明體 36.xnb**檔案。 我們將選取**保留其目前的子目錄中的檔案**選項如果 Visual Studio for Mac 詢問如何將檔案加入。 一旦完成這兩個檔案應該是受測專案的一部分：
+首先我們會將檔案加入專案。 在 Visual Studio for Mac，我們會依序展開**BouncingGame.Android**專案中，展開 **資產**資料夾中，以滑鼠右鍵按一下**內容**資料夾，然後選取**新增 > 新增檔案...** 首先，我們將在其中選取**ball.xnb**我們稍早建立及按一下**開啟**。 然後重複上述步驟，但加入**新細明體 36.xnb**檔案。 我們將選取**保留其目前的子目錄中的檔案**選項如果 Visual Studio for Mac 詢問如何將檔案加入。 一旦完成這兩個檔案應該是受測專案的一部分：
 
 ![](walkthrough-images/image20.png "一旦完成這兩個檔案應該是專案的一部分")
 

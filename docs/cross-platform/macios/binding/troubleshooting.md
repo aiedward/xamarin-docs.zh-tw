@@ -3,15 +3,14 @@ title: 繫結疑難排解
 description: 本指南說明如果您無法繫結 Objective C 程式庫，該怎麼辦。
 ms.prod: xamarin
 ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/19/2016
-ms.openlocfilehash: 7ea3e3802ec2e0baf0fe8355a41e806bacabc9ac
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cb685bb60d49615c69925d17f69b0342d4f0a1a6
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="binding-troubleshooting"></a>繫結疑難排解
 

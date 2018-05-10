@@ -3,15 +3,14 @@ title: 我要如何收集 Visual Studio 處理序的目前呼叫堆疊？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 64c24b09-2c4a-43ad-b94d-6cd05a1aee44
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/30/2017
-ms.openlocfilehash: 45ad6cc93d14fc1da077a40abea2c25668fb2269
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: e81c28f0610a0df2e4fe06349685ef5e0744071a
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="how-do-i-collect-the-current-call-stacks-of-the-visual-studio-process"></a>我要如何收集 Visual Studio 處理序的目前呼叫堆疊？
 

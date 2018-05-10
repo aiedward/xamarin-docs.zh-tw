@@ -3,15 +3,14 @@ title: Xamarin Profiler
 description: 本指南中，瀏覽 Xamarin 分析工具的主要功能。 它看起來在程式碼剖析工具、 進行分析，以及何時應該使用它們，而在標準的工作流程的 Xamarin 應用程式程式碼剖析。
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 3408d4e1ca50651536b9d04f64156efac4fdd0ed
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e28e2513b74faa884fb7bc3d7194f1b02844734
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -180,7 +179,7 @@ Xamarin 分析工具可以從您的 IDE，當您要分析您的 iOS 或 Android 
 
 #### <a name="saving-and-loading-profiler-sessions"></a>儲存和載入分析工具工作階段
 
-若要儲存在任何時間的程式碼剖析工作階段，請選擇**檔案 > 另存新檔...**從程式碼剖析工具功能表列。 這會將儲存在檔案_mlpd_格式、 程式碼剖析資料的特殊高度壓縮格式。
+若要儲存在任何時間的程式碼剖析工作階段，請選擇**檔案 > 另存新檔...** 從程式碼剖析工具功能表列。 這會將儲存在檔案_mlpd_格式、 程式碼剖析資料的特殊高度壓縮格式。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -196,7 +195,7 @@ Xamarin 分析工具可以從您的 IDE，當您要分析您的 iOS 或 Android 
 
 -----
 
-您可以載入*.mlpd*開啟獨立應用程式程式碼剖析工具檔案選取**選擇目標**和載入檔案。
+您可以載入 *.mlpd*開啟獨立應用程式程式碼剖析工具檔案選取**選擇目標**和載入檔案。
 
 如需詳細資訊，請參閱[產生.mlpd 檔案](~/tools/profiler/troubleshooting.md#gen_mlpd)。
 

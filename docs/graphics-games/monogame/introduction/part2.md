@@ -3,15 +3,14 @@ title: 第 2 – 實作 WalkingGame 部分
 description: 本逐步解說示範如何加入遊戲邏輯和空 MonoGame 專案來建立動畫的精靈，以移動的示範，內容觸控輸入。
 ms.prod: xamarin
 ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: bc4ab2e77bfce9c9ba6043533bcfda5a359d322e
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 87678d9d77f75bccc68a667d3fb0f35b641b937c
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>第 2 – 實作 WalkingGame 部分
 
@@ -55,7 +54,7 @@ _本逐步解說示範如何加入遊戲邏輯和空 MonoGame 專案來建立動
 
 我們必須建立`Texture2D`轉譯我們精靈時所要使用的執行個體。 最終包含在名為資料夾中所有遊戲內容**內容，**平台專屬專案中。 MonoGame 共用專案不能包含的內容，內容必須使用平台專屬的建置動作。 CocosSharp 開發人員會覺得熟悉概念內容的資料夾，位於 CocosSharp 和 MonoGame 專案中的相同位置。 中的 iOS 專案，並在 Android 專案的 Assets 資料夾內，就可以找到的內容資料夾。
 
-若要加入我們遊戲的內容，以滑鼠右鍵按一下**內容**資料夾，然後選取**新增 > 新增檔案...**瀏覽至 content.zip 檔案已解壓縮的位置，然後選取**charactersheet.png**檔案。 如果系統詢問如何將檔案加入資料夾，我們應該選取**複製**選項：
+若要加入我們遊戲的內容，以滑鼠右鍵按一下**內容**資料夾，然後選取**新增 > 新增檔案...** 瀏覽至 content.zip 檔案已解壓縮的位置，然後選取**charactersheet.png**檔案。 如果系統詢問如何將檔案加入資料夾，我們應該選取**複製**選項：
 
 ![](part2-images/image1.png "如果系統詢問如何將檔案加入資料夾，選取 [複製] 選項")
 
@@ -289,7 +288,7 @@ protected override void Draw(GameTime gameTime)
 
 ### <a name="defining-animationframe"></a>定義 AnimationFrame
 
-`AnimationFrame` 不會包含任何與動畫相關的邏輯。 我們會用它只是用來儲存資料。 若要加入`AnimationFrame`類別，以滑鼠右鍵按一下或控制項按一下**WalkingGame**共用專案，然後選取**新增 > 新的檔案...**輸入名稱**AnimationFrame**按一下**新增** 按鈕。 我們會修改`AnimationFrame.cs`檔案，使其包含下列程式碼：
+`AnimationFrame` 不會包含任何與動畫相關的邏輯。 我們會用它只是用來儲存資料。 若要加入`AnimationFrame`類別，以滑鼠右鍵按一下或控制項按一下**WalkingGame**共用專案，然後選取**新增 > 新的檔案...** 輸入名稱**AnimationFrame**按一下**新增** 按鈕。 我們會修改`AnimationFrame.cs`檔案，使其包含下列程式碼：
 
 
 ```csharp

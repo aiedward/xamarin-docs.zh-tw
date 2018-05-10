@@ -3,15 +3,14 @@ title: 移植 Visual basic.net
 description: 本指南將說明如何使用 Visual Basic 撰寫 Xamarin.iOS 和 Xamarin.Android 為目標的方案中可用的可攜式類別程式庫 (PCL) 專案。
 ms.prod: xamarin
 ms.assetid: f264c632-8feb-4015-a5e5-cb9c681c787d
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: f37ff8a2d07681ba8e4ec3ed6ad7e5bbd85e6502
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 71ee153135df97d3b4fa149d3d788d3b940fe944
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="portable-visual-basicnet"></a>移植 Visual basic.net
 

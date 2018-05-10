@@ -3,15 +3,14 @@ title: 使用 Razor 範本建置 HTML 檢視
 description: " 使用全螢幕網頁來呈現 HTML，可以是簡單且有效的方式，來呈現複雜的格式，跨平台的方式，特別是如果您已經有 HTML、 Javascript 和 CSS 的網站專案。"
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: fa361e48f8f7e236a3295deda2d80a02ef06b34d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 48d7778bf3225401f2819909ae6be320cfa881e3
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="building-html-views-using-razor-templates"></a>使用 Razor 範本建置 HTML 檢視
 
@@ -92,7 +91,7 @@ Android 也需要在 web 檢視中顯示 html 字串時，做為參數傳遞的�
 webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
 ```
 
-特殊字串**file:///android_asset/**指的是應用程式中，顯示以下包含 Android 的 Assets 資料夾**style.css**檔案。
+特殊字串**file:///android_asset/** 指的是應用程式中，顯示以下包含 Android 的 Assets 資料夾**style.css**檔案。
 
  ![AndroidHybrid 方案](images/image3_240x167.png)
 
@@ -207,7 +206,7 @@ Razor 的範本不限於使用伺服器端使用，也可以包含 Xamarin 應�
 
 ### <a name="razor-template-basics"></a>Razor 範本的基本概念
 
-Razor 的範本檔案有**.cshtml**檔案副檔名。 加入 Xamarin 專案中的文字範本化區段從**新檔案**對話方塊：
+Razor 的範本檔案有 **.cshtml**檔案副檔名。 加入 Xamarin 專案中的文字範本化區段從**新檔案**對話方塊：
 
  ![新的檔案-Razor 範本](images/image5_400x201.png)
 
@@ -228,7 +227,7 @@ Razor 的範本檔案有**.cshtml**檔案副檔名。 加入 Xamarin 專案中�
 - `@model` 指示詞一律會顯示為 Razor 的範本檔案的第一行。
 -  `@model`指示詞後面必須接著型別。 在此範例中簡單字串傳遞至範本，但這可能是任何自訂的類別。
 -  當`@Model`參考整個範本，它會提供產生 （在此範例中，它會是一個字串） 時，傳遞至範本物件的參考。
--  IDE 會自動產生的範本部分類別 (具有檔案**.cshtml**副檔名)。 您可以檢視這段程式碼，但它不應編輯。
+-  IDE 會自動產生的範本部分類別 (具有檔案 **.cshtml**副檔名)。 您可以檢視這段程式碼，但它不應編輯。
  ![RazorView.cshtml](images/image6_125x34.png)部分類別的名稱為 RazorView 符合.cshtml 範本檔案名稱。 它是用來參考 C# 程式碼中的範本，此名稱。
 - `@using` 陳述式也可以包含 Razor 範本加入額外的命名空間的頂端。
 
@@ -369,7 +368,7 @@ var page = template.GenerateString ();
 
 ## <a name="using-razor-templates-with-xamarin"></a>使用 Xamarin Razor 範本
 
-本節說明如何使用建置自己的混合式應用程式，使用 Visual Studio 中的解決方案範本 for mac。 有可用的三個範本**檔案 > 新增 > 方案...**視窗：
+本節說明如何使用建置自己的混合式應用程式，使用 Visual Studio 中的解決方案範本 for mac。 有可用的三個範本**檔案 > 新增 > 方案...** 視窗：
 
 - **Android > 應用程式 > Android WebView 應用程式**
 - **iOS > 應用程式 > WebView 應用程式**
@@ -381,7 +380,7 @@ var page = template.GenerateString ();
 
  ![建立 iPhone 和 Android 的解決方案](images/image13_1139x959.png)
 
-請注意，您可以輕鬆加入**.cshtml** Razor 範本*任何*現有 Xamarin 專案，則不需要使用這些解決方案範本。 iOS 的專案不需要使用 Razor; 分鏡腳本只要 UIWebView 控制項加入任何檢視中以程式設計方式，您可以轉譯 Razor templates 整個 C# 程式碼。
+請注意，您可以輕鬆加入 **.cshtml** Razor 範本*任何*現有 Xamarin 專案，則不需要使用這些解決方案範本。 iOS 的專案不需要使用 Razor; 分鏡腳本只要 UIWebView 控制項加入任何檢視中以程式設計方式，您可以轉譯 Razor templates 整個 C# 程式碼。
 
 IPhone 和 Android 專案的預設範本方案內容如下所示：
 
@@ -495,7 +494,7 @@ HTML 可以就很適合建立原型，並顯示的各種網路是最適合例如
 
 兩個範例應用程式併入 Twitter 共用與文字轉換語音 Api 的原生的平台，示範，使用 Xamarin 混合式應用程式還是可以存取所有的基礎功能從 HTML Razor 範本驅動的檢視。
 
-**RazorTodo**應用程式的清單，並編輯檢視中使用 HTML Razor 的範本。 這表示我們可以建置應用程式幾乎完全共用可攜式類別庫 (包括資料庫和**.cshtml** Razor 範本)。 以下螢幕擷取畫面顯示 iOS 和 Android 應用程式。
+**RazorTodo**應用程式的清單，並編輯檢視中使用 HTML Razor 的範本。 這表示我們可以建置應用程式幾乎完全共用可攜式類別庫 (包括資料庫和 **.cshtml** Razor 範本)。 以下螢幕擷取畫面顯示 iOS 和 Android 應用程式。
 
  ![RazorTodo](images/Both_700x290.png)
 

@@ -3,15 +3,14 @@ title: 處理 CocosSharp 在多種解析度
 description: 本指南示範如何使用 CocosSharp 開發會正確顯示不同解析度的裝置的遊戲。
 ms.prod: xamarin
 ms.assetid: 859ABF98-2646-431A-A4A8-3E7E48DA5A43
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 4077af2351b8ab3ef718a71cc672add54b6ef05a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 577a3edbd106b6fba298b3ee5999265ef955f9dd
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="handling-multiple-resolutions-in-cocossharp"></a>處理 CocosSharp 在多種解析度
 
@@ -25,7 +24,7 @@ CocosSharp 提供方法來標準化物件維度，在您的遊戲，不論實體
 | **裝置** | **顯示器解析度** | **範例螢幕擷取畫面** |
 |--- | --- |--- |
 |所要的顯示|368 x 240 （與黑色的長寬比列）| ![368 x 240 （與黑色的長寬比列）](resolutions-images/image1.png) |
-|iPhone 4s|960x640| ![iPhone 4s 960x640](resolutions-images/image2.png) |
+|iPhone 4s|960x640| ![iPhone 4s 960 x 640](resolutions-images/image2.png) |
 |iPhone 6 Plus|1920x1080| ![iPhone 6 Plus 1920 x 1080](resolutions-images/image3.png) |
 
 本文件涵蓋如何使用 CocosSharp 來修正問題，如上表所示。 也就是說，我們將討論如何進行任何轉譯的第一個資料列 – 無論螢幕解析度所示的裝置。
@@ -248,7 +247,7 @@ public override void ApplicationDidFinishLaunching (CCApplication application, C
 ```
 
 
-### <a name="defaulttexeltocontentsizeratio-example"></a>DefaultTexelToContentSizeRatio example
+### <a name="defaulttexeltocontentsizeratio-example"></a>DefaultTexelToContentSizeRatio 範例
 
 若要查看如何`DefaultTexelToContentSizeRatio`視覺效果的大小，將會影響項目，請考慮以上所顯示的程式碼：
 
@@ -277,7 +276,7 @@ CCSprite.DefaultTexelToContentSizeRatio = 2;
 ![](resolutions-images/image12.png "現在如果我們執行遊戲 1000 x 1000 紋理是完全不可見")
 
 
-### <a name="defaulttexeltocontentsizeratio-details"></a>DefaultTexelToContentSizeRatio details
+### <a name="defaulttexeltocontentsizeratio-details"></a>DefaultTexelToContentSizeRatio 詳細資料
 
 `DefaultTexelToContentSizeRatio`屬性是`static,`這表示應用程式中的所有小會共用相同的值。 遊戲資產對不同的解決方法的一般方法是包含一組完整的每個解決方式類別的資產。 根據預設 CocosSharp Visual Studio for Mac 範本提供**ld**和**hd**資產，可用於支援兩個集合的紋理的遊戲的資料夾。 具有內容的範例內容資料夾可能看起來像是：
 

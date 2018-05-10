@@ -3,15 +3,14 @@ title: Xamarin Workbooks
 description: Xamarin 活頁簿提供的 blend 文件，以及實驗，最適合的程式碼，學習和建立指南及教導輔助工具。
 ms.prod: xamarin
 ms.assetid: 04275482-0488-4F1C-8808-D03A8E21BE62
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: bae0fcc5b82a2833e39d078693555634d160ffb9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 57ef9cb3a45dbf1c6271a1475c27fdd38d2fd96b
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarin-workbooks"></a>Xamarin Workbooks
 

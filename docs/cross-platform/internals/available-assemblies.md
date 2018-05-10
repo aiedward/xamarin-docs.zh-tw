@@ -3,15 +3,14 @@ title: 可用的組件
 description: Xamarin.iOS、 Xamarin.Android 和 Xamarin.Mac 中可用的組件
 ms.prod: xamarin
 ms.assetid: AEF4ED0E-391F-4FA4-9F18-842BC24C272D
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/13/2018
-ms.openlocfilehash: a80a23e8c3a41b7a06e1bbcb33d171ed2dc30fd2
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: ef1dde061ffce4082922cc2eb2af1ae9b045aedd
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="available-assemblies"></a>可用的組件
 

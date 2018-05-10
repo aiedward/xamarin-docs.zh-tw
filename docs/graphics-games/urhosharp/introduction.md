@@ -3,15 +3,14 @@ title: UrhoSharp 簡介
 description: 這提供 UrhoSharp 背後的概念簡介
 ms.prod: xamarin
 ms.assetid: 18041443-5093-4AF7-8B20-03E00478EF35
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 6c46d7648d1f1bb8863abe092bae5c44850d3cf1
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 6fb53aa6d4bad8f8fcae8608ab0192af15fe87b1
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="an-introduction-to-urhosharp"></a>UrhoSharp 簡介
 
