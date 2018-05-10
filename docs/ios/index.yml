@@ -7,11 +7,11 @@ metadata:
   ms.author: crdun
   ms.date: 04/25/2018
   ms.topic: landing-page
-  ms.openlocfilehash: 9f60abbaa0787514766e566b6406a192d378a8a8
-  ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+  ms.openlocfilehash: 5e2988004b2b9d67a8fb5501214fd1d6075520cc
+  ms.sourcegitcommit: 46d3c9daa45350bdd536d9e105517f3c1c753c5b
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 05/03/2018
+  ms.lasthandoff: 05/07/2018
 abstract:
   description: Xamarin.iOS 針對 .NET 開發人員公開完整的 iOS SDK。 在 Visual Studio 中使用 C# 或 F# 建置完整的原生 iOS 應用程式。
   menu:
@@ -74,6 +74,12 @@ sections:
         src: ~/media/icons/i_platform.svg
         href: ~/ios/platform/
       title: 平台功能
+    - href: ~/essentials/index.md?context=xamarin/ios
+      html: 行動應用程式的跨平台 API。
+      image:
+        src: https://docs.microsoft.com/en-us/media/common/i_multi-connect.svg
+        href: ~/essentials/index.md?context=xamarin/ios
+      title: Xamarin.Essentials
     - href: ~/ios/data-cloud/
       html: 本機和遠端資料儲存體及擷取，以及其他雲端式服務。
       image:

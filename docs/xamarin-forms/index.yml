@@ -7,11 +7,11 @@ metadata:
   ms.author: crdun
   ms.date: 04/25/2018
   ms.topic: landing-page
-  ms.openlocfilehash: 20178c7ff96dbdd7353d92f454f3231ad89ba3eb
-  ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+  ms.openlocfilehash: 21325d312fe3b05e06a2cfad5c085273b4e5e890
+  ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 04/27/2018
+  ms.lasthandoff: 05/07/2018
 abstract:
   description: Xamarin.Forms 會公開適用於 .NET 開發人員的完整跨平台 UI 工具組。 在 Visual Studio 中使用 C# 建置完整的原生 Android、iOS 與通用 Windows 平台應用程式。
   menu:
@@ -82,6 +82,12 @@ sections:
         src: ~/media/icons/i_platform.svg
         href: ~/xamarin-forms/platform/
       title: 平台功能
+    - href: ~/essentials/index.md?context=xamarin/xamarin-forms
+      html: 像是檔案存取、裝置資訊、硬體功能等等一般工作的跨平台 API。
+      image:
+        src: https://docs.microsoft.com/en-us/media/common/i_multi-connect.svg
+        href: ~/essentials/index.md?context=xamarin/xamarin-forms
+      title: Xamarin.Essentials
     - href: ~/xamarin-forms/data-cloud/
       html: 本機和遠端資料儲存體及擷取，以及其他雲端式服務。
       image:
