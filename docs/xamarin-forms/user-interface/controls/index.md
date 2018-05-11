@@ -7,24 +7,24 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: a9fb90794ec74c46019fd2b4f41d90a2635909cd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fb6620e160af4c2c844fa694649c95abdac123f9
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="controls-reference"></a>控制項參考
 
 _用來建構 Xamarin.Forms 應用程式的所有視覺化項目的描述。_
 
-Xamarin.Forms 應用程式的視覺介面是由對應至每個目標平台的原生控制項的物件建構。 這可讓特定平台應用程式的 iOS、 Android 和通用 Windows 平台使用 Xamarin.Forms 中包含的程式碼[可攜式類別庫](~/cross-platform/app-fundamentals/pcl.md)、 [.NET 標準程式庫](~/cross-platform/app-fundamentals/net-standard.md)，或[共用專案](~/cross-platform/app-fundamentals/shared-projects.md)。
+Xamarin.Forms 應用程式的視覺介面是由對應至每個目標平台的原生控制項的物件建構。 這可讓特定平台應用程式的 iOS、 Android 和通用 Windows 平台使用 Xamarin.Forms 中包含的程式碼[.NET 標準程式庫](~/cross-platform/app-fundamentals/net-standard.md)或[共用專案](~/cross-platform/app-fundamentals/shared-projects.md)。
 
 用來建立 Xamarin.Forms 應用程式的使用者介面的四個主要的控制項群組會顯示這些四個文章中：
 
-- [**Pages**](pages.md)
+- [**頁面**](pages.md)
 - [**版面配置**](layouts.md)
-- [**Views**](views.md)
-- [**Cells**](cells.md)
+- [**檢視**](views.md)
+- [**資料格**](cells.md)
 
 Xamarin.Forms 頁面通常佔滿整個螢幕。 網頁通常會包含版面配置，其中包含檢視和可能是其他鍵盤配置。 儲存格是與使用的特定的元件[ `TableView` ](views.md#tableView)和[ `ListView` ](views.md#listView)。
 

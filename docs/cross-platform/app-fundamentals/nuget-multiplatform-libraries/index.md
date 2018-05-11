@@ -3,15 +3,14 @@ title: NuGet 的專案 (Nugetizer 3000)
 description: 自動建立 NuGet 套件，以跨平台使用 Nugetizer 3000 共用程式碼 ！
 ms.prod: xamarin
 ms.assetid: F0A5A9BB-86CD-44C9-8EE8-74D1E5E74A30
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2017
-ms.openlocfilehash: 2ef8bfc15aaa2e66683c38584f05b94d20a2a9c3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 60c78385d0ffd2fbbdd7af5a4ef4af63e30feb9f
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="nuget-projects-nugetizer-3000"></a>NuGet 的專案 (Nugetizer 3000)
 
@@ -56,7 +55,7 @@ Nugetizer 3000 隨附於 Visual Studio for Mac 6.2。
 
 深入了解[手動建立 NuGets xamarin](~/cross-platform/app-fundamentals/nuget-manual.md)以及如何[包含應用程式中的 NuGet 封裝](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。
 
-Microsoft 的[NuGet 文件](https://docs.microsoft.com/nuget/)包含更詳細的資訊上**.nupkg**格式和使用 Visual Studio 中的 NuGet 封裝。
+Microsoft 的[NuGet 文件](https://docs.microsoft.com/nuget/)包含更詳細的資訊上 **.nupkg**格式和使用 Visual Studio 中的 NuGet 封裝。
 
 NuGet 封裝專案的設計討論內容 （也稱為 NuGetizer 3000) 位於[NuGet GitHub 儲存機制](https://github.com/NuGet/Home/wiki/NuGetizer-3000)。
 

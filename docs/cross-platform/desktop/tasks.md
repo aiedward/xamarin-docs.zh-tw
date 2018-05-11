@@ -1,15 +1,14 @@
 ---
 ms.assetid: 0B45BF03-145B-43B2-AFD9-5A0EAB1E63A9
 title: 常見的工作比較
-ms.technology: xamarin-crossplatform
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 84b3edc1a8cbc9ad642d94b457321786fae5fe70
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: b4d45ae61c5d7a7093d51c4440d11dd883c157a4
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="common-tasks-comparison"></a>常見的工作比較
 

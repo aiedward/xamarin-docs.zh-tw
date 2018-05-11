@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 8326c142207e90f9b7d4bced7effd88ec88d8fa8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 322ae03fc813d180a6678f63b04488a17705523d
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="playing-a-web-video"></a>播放網頁視訊
 
@@ -120,7 +120,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-處理類型的物件`ResourceVideoSource`文件所述[載入應用程式資源視訊](loading-resources.md)。 `VideoPlayer`類別具有功能載入視訊檔案儲存為可攜式類別庫中的資源。
+處理類型的物件`ResourceVideoSource`文件所述[載入應用程式資源視訊](loading-resources.md)。 `VideoPlayer`類別具有沒有載入以.NET 標準程式庫中的資源形式儲存視訊檔案的能力。
 
 `FileVideoSource`類別用來存取裝置的視訊媒體櫃從視訊檔案。 單一的屬性也屬於型別`string`:
 

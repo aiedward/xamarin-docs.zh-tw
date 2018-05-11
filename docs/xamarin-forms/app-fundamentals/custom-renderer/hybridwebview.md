@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ffb013c355db34ef7456404d6f9dcaec75743420
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: af0dbef84d8ceb178fe5c1ac6fc7194c178141dc
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="implementing-a-hybridwebview"></a>實作 HybridWebView
 
@@ -74,7 +74,7 @@ public class HybridWebView : View
 }
 ```
 
-`HybridWebView`建立可攜式類別庫 (PCL) 專案中自訂控制項，並定義控制項的下列 API:
+`HybridWebView` .NET 標準程式庫專案中建立自訂控制項，並定義控制項的下列 API:
 
 - A`Uri`屬性，指定要載入的網頁位址。
 - A`RegisterAction`方法註冊`Action`與控制項。 註冊的動作將會叫用從透過參考的 HTML 檔案中所包含的 JavaScript`Uri`屬性。
@@ -85,7 +85,7 @@ public class HybridWebView : View
 
 ## <a name="consuming-the-hybridwebview"></a>耗用 HybridWebView
 
-`HybridWebView`自訂控制項可以在 XAML 中參考 PCL 專案中，宣告的命名空間，做為其位置，並使用自訂控制項上的命名空間前置詞。 下列程式碼範例示範如何`HybridWebView`自訂控制項以供 XAML 頁面：
+`HybridWebView`自訂控制項可以在 XAML 中參考.NET 標準程式庫專案中，宣告的命名空間，做為其位置，並使用自訂控制項上的命名空間前置詞。 下列程式碼範例示範如何`HybridWebView`自訂控制項以供 XAML 頁面：
 
 ```xaml
 <ContentPage ...

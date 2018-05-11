@@ -7,39 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: b6ea988aa8c058fe5a92a17e9b72f81e0ccb12db
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: aed240dd403957e5935666d4179a6d642c411b86
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="setup-windows-projects"></a>安裝 Windows 專案
 
 _將新的 Windows 專案加入至現有的 Xamarin.Forms 方案_
 
 舊版 Xamarin.Forms 方案 （或建立 macOS 上） 不會有通用 Windows 平台 (UWP) 應用程式專案。 因此，您必須手動加入 UWP 專案以建置的 Windows 10 (UWP) 應用程式。
-
-<a name="pcl" />
-
-## <a name="update-the-pcl-profile"></a>更新 PCL 設定檔
-
-如果您現有的 Xamarin.Forms 應用程式使用可攜式類別程式庫 (PCL) 範本，您必須更新其設定檔。
-
-1. **以滑鼠右鍵按一下 > 屬性**（您現有的設定可能不同）
-
-  ![](images/targets.png "PCL 目標")
-
-2. 按一下**變更...** 按鈕
-
-3. 請確定**Windows 8**和**Windows Phone 8.1**選取選項 (和**Windows Phone Silveright**是*取消選取*):
-
-  ![](images/pcl.png "PCL 目標選項")
-
-4. 按**確定**並儲存變更。
-
-這等同於**設定檔 111**如果您要在 Visual Studio 中設定您的 PCL for Mac 使用下拉式清單。
-
-  ![](images/pcl-xs.png "PCL 設定檔 111")
 
 ## <a name="add-a-universal-windows-platform-app"></a>新增通用 Windows 平台應用程式
 
@@ -65,7 +43,7 @@ UWP 可用 Xamarin.Forms 2.1 和更新版本，而且 Xamarin.Forms.Maps 都支�
 
   [![](universal-images/configuration-sml.png "組態管理員視窗")](universal-images/configuration.png#lightbox "組態管理員視窗")
 
- 5。 以滑鼠右鍵按一下專案，然後選取**新增 > 參考**並建立 Xamarin.Forms 應用程式專案 （PCL、.NET 標準或共用專案） 的參考。
+ 5。 以滑鼠右鍵按一下專案，然後選取**新增 > 參考**並建立 Xamarin.Forms 應用程式專案 （.NET 標準或共用專案） 的參考。
 
   ![](universal-images/addref-sml.png "參考管理員 對話方塊")
 

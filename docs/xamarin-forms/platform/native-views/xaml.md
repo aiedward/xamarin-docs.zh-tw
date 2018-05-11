@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 6dbad7352a089f482fa3a396505507da58771cef
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 24e7f29e42607d4a2c957cf85dad15f659d3618e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="native-views-in-xaml"></a>在 XAML 中的原生檢視
 
@@ -74,7 +74,7 @@ _原生 iOS、 Android 和通用 Windows 平台從檢視可以從 Xamarin.Forms 
 Android 的 widget 建構函式通常需要在 Android`Context`物件引數，而這可透過靜態屬性`MainActivity`類別。 因此，當在 XAML 中，建立 Android 的 widget`Context`物件通常必須傳遞給 widget 的建構函式使用`x:Arguments`屬性附帶`x:Static`標記延伸。 如需詳細資訊，請參閱[傳遞的引數至原生檢視](#passing_arguments)。
 
 > [!NOTE]
-> 請注意命名的原生檢視`x:Name`不可能在可攜式類別程式庫 (PCL) 專案或共用資產專案 (SAP)。 這樣會產生原生類型，這會造成編譯錯誤的變數。 不過，原生的檢視可能會包裝在`ContentView`執行個體，並擷取在程式碼後置檔案中，前提是正在使用 SAP。 如需詳細資訊，請參閱[參考從程式碼的原生檢視](#native_view_code)。
+> 請注意命名的原生檢視`x:Name`不可能的.NET 標準程式庫專案或共用資產專案 (SAP) 中。 這樣會產生原生類型，這會造成編譯錯誤的變數。 不過，原生的檢視可能會包裝在`ContentView`執行個體，並擷取在程式碼後置檔案中，前提是正在使用 SAP。 如需詳細資訊，請參閱[參考從程式碼的原生檢視](#native_view_code)。
 
 <a name="native_bindings" />
 
@@ -285,7 +285,7 @@ IOS 和 Android 的原生按鈕共用相同`OnButtonTap`事件處理常式，因
 
 ## <a name="subclassing-native-views"></a>子類別化原生的檢視
 
-許多 iOS 和 Android 的原生檢視並不適合在 XAML 中執行個體化，因為它們使用的方法，而不是屬性，若要設定控制項。 此問題的解決方案是子類別中定義多個適合 XAML 應用程式開發介面，會使用屬性來設定控制項，並使用平台無關的事件的包裝函式的原生檢視。 包裝原生檢視可以然後是放在共用資產專案 」 (SAP) 和括住條件式編譯指示詞，或放在特定平台專案以及從 XAML 參考可攜式類別程式庫 (PCL) 專案中。
+許多 iOS 和 Android 的原生檢視並不適合在 XAML 中執行個體化，因為它們使用的方法，而不是屬性，若要設定控制項。 此問題的解決方案是子類別中定義多個適合 XAML 應用程式開發介面，會使用屬性來設定控制項，並使用平台無關的事件的包裝函式的原生檢視。 已包裝的原生檢視可以再放在共用資產專案 」 (SAP) 和括住條件式編譯指示詞，或放在特定平台專案並參照從 XAML.NET 標準的程式庫專案中。
 
 下列程式碼範例示範使用 Xamarin.Forms 頁面子類別化原生的檢視：
 

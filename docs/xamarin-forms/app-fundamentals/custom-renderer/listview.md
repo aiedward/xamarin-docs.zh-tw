@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 964e2302c290930ec62752e51e7de388cb42ee32
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 0d1afc2c14b19bbd03244affed494405776a3c99
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-a-listview"></a>自訂清單檢視
 
@@ -59,13 +59,13 @@ public class NativeListView : ListView
 }
 ```
 
-`NativeListView`可攜式類別庫 (PCL) 專案中建立並定義自訂控制項的 API。 此控制項會公開`Items`屬性用於填入`ListView`與資料，它可以是資料繫結到針對顯示用途。 它也會公開`ItemSelected`會在特定平台的原生清單控制項中選取項目時引發的事件。 如需有關資料繫結的詳細資訊，請參閱[資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
+`NativeListView` .NET 標準程式庫專案中建立並定義自訂控制項的 API。 此控制項會公開`Items`屬性用於填入`ListView`與資料，它可以是資料繫結到針對顯示用途。 它也會公開`ItemSelected`會在特定平台的原生清單控制項中選取項目時引發的事件。 如需有關資料繫結的詳細資訊，請參閱[資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>使用自訂控制項
 
-`NativeListView`自訂控制項可以在 Xaml 中參考 PCL 專案中，宣告的命名空間，做為其位置，並在控制項上使用命名空間前置詞。 下列程式碼範例示範如何`NativeListView`自訂控制項以供 XAML 頁面：
+`NativeListView`自訂控制項可以在 Xaml 中參考.NET 標準程式庫專案中，宣告的命名空間，做為其位置，並在控制項上使用命名空間前置詞。 下列程式碼範例示範如何`NativeListView`自訂控制項以供 XAML 頁面：
 
 ```xaml
 <ContentPage ...

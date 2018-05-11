@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: eb3d66630613225c9b2becaa20f73a82f409ce7e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d0f58a4a53d41c23e993f8b8b89b3fca44e0733d
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="accessing-the-devices-video-library"></a>存取裝置的視訊媒體櫃
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 04/04/2018
 
 每三個平台包含一種可讓使用者從裝置的映像庫中選取的相片或視訊的設備。 播放視訊從裝置的映像庫中的第一個步驟建置到叫用每個平台映像選擇器的相依性服務。 下面描述的相依性服務是非常類似中定義的其中一項[**挑選相片圖片庫從**](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)發行項，不同之處在於視訊選擇器傳回檔案名稱，而不是`Stream`物件。
 
-PCL 專案中定義名為介面`IVideoPicker`相依性服務：
+標準.NET 程式庫專案會定義名為介面`IVideoPicker`相依性服務：
 
 ```csharp
 namespace FormsVideoLibrary

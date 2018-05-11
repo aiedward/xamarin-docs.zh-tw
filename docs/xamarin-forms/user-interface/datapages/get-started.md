@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d06c3f95f55edb4870279bfc7d5326be4af4b3bc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5774d91dad7b733a03219dcce1434798f70d4564
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="getting-started-with-datapages"></a>開始使用 DataPages
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 04/04/2018
 
 ## <a name="1-add-nuget-packages"></a>1.新增 NuGet 封裝
 
-將下列 Nuget 封裝加入至您 Xamarin.Forms PCL 和應用程式專案：
+將下列 Nuget 封裝加入至 Xamarin.Forms.NET 標準程式庫和應用程式專案：
 
 * Xamarin.Forms.Pages
 * Xamarin.Forms.Theme.Base

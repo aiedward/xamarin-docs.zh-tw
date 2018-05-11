@@ -2,15 +2,14 @@
 title: 步驟 2： 服務存取的行動應用程式設定
 ms.prod: xamarin
 ms.assetid: 8A14A457-F72E-4B08-B4B6-801F7619F893
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: f530f578b297af36ae010c25c87dbffa2d31cb2b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fd6436a664fde7a610b29bba31d0baf35cf88dad
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="step-2-configure-service-access-for-mobile-application"></a>步驟 2： 服務存取的行動應用程式設定
 

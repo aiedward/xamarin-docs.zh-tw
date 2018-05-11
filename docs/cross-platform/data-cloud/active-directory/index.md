@@ -3,15 +3,14 @@ title: Microsoft Azure Active Directory
 description: 您可以使用 Active Directory 來驗證使用者在 Xamarin 的行動應用程式。
 ms.prod: xamarin
 ms.assetid: 0A74766A-B583-47AF-986C-FEA8F5CBF9CD
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: dc81d9eb9c991c8e97185b5ab37b9a1aa9c5e278
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7182b0ff308b952205c0d89ecb929695b0183e53
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="microsoft-azure-active-directory"></a>Microsoft Azure Active Directory
 

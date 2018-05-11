@@ -5,11 +5,11 @@ ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 0bfc463ca22d4137eadc35c02375fe41b0b99b8a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 95301dad847887e867b220997ea9c34dba827982
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials 地理編碼
 
@@ -107,11 +107,11 @@ catch (FeatureNotSupportedException fnsEx)
 }
 catch (Exception ex)
 {
-    // Handle exception that may have occured in geocoding
+    // Handle exception that may have occurred in geocoding
 }
 ```
 
 ## <a name="api"></a>API
 
-- [地理編碼原始程式碼](https://github.com/xamarin/Essentials/tree/master/Essentials/Geocoding)
+- [地理編碼原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geocoding)
 - [地理編碼 API 文件](xref:Xamarin.Essentials.Geocoding)

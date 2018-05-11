@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/11/2016
-ms.openlocfilehash: 8421355e0630a637589cb4f08c2fec4ea9cdab24
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1a982078f7a3fb2ba462cd7d6f1420b1d27618f7
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>使用 Xamarin.Forms 中 UrhoSharp
 
@@ -27,10 +27,10 @@ UrhoSharp 可以用於呈現圖形 Xamarin.Forms 應用程式中。
 
 ## <a name="adding-the-urhosharp-nuget-packages"></a>新增 UrhoSharp Nuget 封裝
 
-在使用之前 UrhoSharp，開發人員需要將 UrhoSharp Nuget 封裝加入至方案。 本指南假設在 Xamarin.Forms 專案中的使用 iOS、 Android 和 PCL 專案。 所有的程式碼會寫入 PCL 專案中但如果 UrhoSharp Nuget 必須新增到 iOS 和 Android 專案太。
+在使用之前 UrhoSharp，開發人員需要將 UrhoSharp Nuget 封裝加入至方案。 本指南假設具有 iOS、 Android 和.NET 標準 Xamarin.Forms 專案程式庫專案。 所有的程式碼將會以.NET 標準程式庫專案中，撰寫但如果 UrhoSharp Nuget 必須新增到 iOS 和 Android 專案太。
 
 UrhoSharp.Forms Nuget 封裝包含所有建立 UrhoSharp 物件所需的物件。 UrhoSharp.Forms nuget 套件會包含`UrhoSurface`用來裝載 UrhoSharp Xamarin.Forms 中的類別。
-若要開始，以滑鼠右鍵按一下 PCL**封裝**資料夾，然後選取**新增套件...**.輸入搜尋字詞**UrhoSharp.Forms**，選取**Xamarin.Forms 的 UrhoSharp**，然後按一下 **加入封裝**。
+若要開始，以滑鼠右鍵按一下**封裝**中.NET 標準程式庫專案，然後選取資料夾**新增套件...**.輸入搜尋字詞**UrhoSharp.Forms**，選取**Xamarin.Forms 的 UrhoSharp**，然後按一下 **加入封裝**。
 
 [![](urhosharp-images/add-package-sml.png "新增套件 對話方塊")](urhosharp-images/add-package.png#lightbox "新增套件 對話方塊")
 

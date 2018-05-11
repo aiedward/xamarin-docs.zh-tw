@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: da3025f2616c91488ec70e25836351b08e957494
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 0f4de4594e8abb8d0ee03690e5829193c51a3736
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-a-contentpage"></a>自訂 ContentPage
 
@@ -222,7 +222,7 @@ namespace CustomRenderer.UWP
             {
                 ...
                 SetupUserInterface();
-                SetupCamera();
+                SetupBasedOnStateAsync();
 
                 this.Children.Add(page);
             }

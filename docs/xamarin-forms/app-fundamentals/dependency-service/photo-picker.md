@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 6945d64e37bc7e0de930093d8a3f71590026182d
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: e552a0bf76572d50eb0d4618af69fc1179979f97
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>從 圖片庫挑選相片
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 04/27/2018
 
 ## <a name="creating-the-interface"></a>建立介面
 
-首先，建立共用的程式碼表示所需的功能中的介面。 如果相片挑選應用程式中，只有一個方法則是必要項目。 這定義在[ `IPicturePicker` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs)介面中的範例程式碼的可攜式類別程式庫：
+首先，建立共用的程式碼表示所需的功能中的介面。 如果相片挑選應用程式中，只有一個方法則是必要項目。 這定義在[ `IPicturePicker` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs)介面中的範例程式碼的.NET 標準程式庫：
 
 ```csharp
 namespace DependencyServiceSample
@@ -261,7 +261,7 @@ namespace DependencyServiceSample.UWP
 
 ## <a name="implementing-in-shared-code"></a>在共用程式碼中實作
 
-現在，每個平台已實作的介面，常見的可攜式類別庫中的應用程式可以利用它。
+現在，每個平台已實作的介面，.NET 標準程式庫中的應用程式可以利用它。
 
 [ `App` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/DependencyServiceSample.cs)類別會建立`Button`挑選相片：
 

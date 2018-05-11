@@ -2,15 +2,14 @@
 title: 建立從現有的程式庫專案的 NuGet
 ms.prod: xamarin
 ms.assetid: EDAC3E5E-DB7D-40A9-AE28-45C52ADA854E
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2017
-ms.openlocfilehash: 36de23c2a6db817805cafae282d227cc5ef15cc4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 466ec405d4951de2d47d075c748cbc20ac5074e6
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="creating-a-nuget-from-existing-library-projects"></a>建立從現有的程式庫專案的 NuGet
 
@@ -24,7 +23,7 @@ ms.lasthandoff: 04/04/2018
 
 3. （選擇性）[新增其他中繼資料](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)中**詳細資料** 索引標籤。
 
-4. 一旦設定中繼資料，您可以在專案上按一下滑鼠右鍵並選擇**建立 NuGet 封裝**和**.nupkg** NuGet 封裝檔案會儲存在**/bin/**資料夾 （偵錯或發行，組態而定）。
+4. 一旦設定中繼資料，您可以在專案上按一下滑鼠右鍵並選擇**建立 NuGet 封裝**和 **.nupkg** NuGet 封裝檔案會儲存在 **/bin/** 資料夾 （偵錯或發行，組態而定）。
 
   ![](existing-library-images/create-nuget-package.png "以滑鼠右鍵按一下功能表選擇 建立 NuGet 封裝")
 

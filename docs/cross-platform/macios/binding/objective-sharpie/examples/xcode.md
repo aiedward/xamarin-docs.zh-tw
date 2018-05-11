@@ -2,15 +2,14 @@
 title: 真實世界範例使用 Xcode 專案
 ms.prod: xamarin
 ms.assetid: 168AA64C-E181-4937-A1F2-AD095B9A36F2
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: a90d2fdee353057126fe804a4c20032dad1a3057
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4e30b07c10de439df8e1ec1706845150e8c54a41
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="real-world-example-using-an-xcode-project"></a>真實世界範例使用 Xcode 專案
 

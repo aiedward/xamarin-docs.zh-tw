@@ -6,12 +6,12 @@ ms.assetid: d97aa580-1eb9-48b3-b15b-0d7421ea7ae
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/06/2018
-ms.openlocfilehash: e254aa14f5889cee6b5bee452f5275fd579eb8fc
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 04/10/2018
+ms.openlocfilehash: 9bb368ca72909489ca267794035a4c4d0883f109
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="xamarinforms-deep-dive"></a>Xamarin.Forms 深度剖析
 
@@ -54,7 +54,7 @@ Visual Studio for Mac 遵循 Visual Studio 的做法，將程式碼組織成「�
 
 這些專案包括：
 
-- Phoneword - 此專案是可攜式類別庫 (PCL) 專案，容納所有共用程式碼和共用 UI。
+- Phoneword - 此專案是包含所有共用程式碼和共用 UI 的 .NET Standard 程式庫專案。
 - Phoneword.Droid - 此專案容納 Android 專用的程式碼，而且是 Android 應用程式的進入點。
 - Phoneword.iOS - 此專案容納 iOS 專用的程式碼，而且是 iOS 應用程式的進入點。
 
@@ -94,7 +94,7 @@ Xamarin.Forms 應用程式的架構方式與傳統的跨平台應用程式相同
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Xamarin.Forms 應用程式的架構方式與傳統的跨平台應用程式相同。 共用程式碼通常會放在可攜式類別庫 (PCL) 中，而且平台專用的應用程式會使用共用程式碼。 下圖顯示此 Phoneword 應用程式關聯性的概觀：
+Xamarin.Forms 應用程式的架構方式與傳統的跨平台應用程式相同。 共用程式碼通常放在 .NET Standard 程式庫中，而平台專用的應用程式則會取用共用程式碼。 下圖顯示此 Phoneword 應用程式關聯性的概觀：
 
 ![](deepdive-images/xs/architecture.png "Phoneword 架構")
 

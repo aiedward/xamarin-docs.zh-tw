@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 7b859dd58551675c121c5600ba9c691e4280a03b
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 805b27139d644d0fac4a7c5a9e9b2c2c331d7130
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="introduction-to-effects"></a>效果簡介
 
@@ -21,7 +21,7 @@ Xamarin.Forms[頁面、 版面配置和控制項](~/xamarin-forms/user-interface
 
 開發人員可以實作自己的自訂 `Renderer` 類別，以自訂控制項的外觀及/或行為。 不過，實作自訂轉譯器類別來執行簡單的控制項自訂通常是重量回應。 效果簡化此程序，允許更輕鬆地自訂每個平台的原生控制項。
 
-效果在平台專屬專案中建立子類別化`PlatformEffect`控制項，然後再效果所使用的連接到適當的控制項，在 Xamarin.Forms 可攜式類別程式庫 (PCL) 或共用的程式庫專案。
+效果在平台專屬專案中建立子類別化`PlatformEffect`控制項，然後再效果所使用的連接到適當的控制項，在 Xamarin.Forms.NET 標準程式庫或共用的程式庫專案中。
 
 ## <a name="why-use-an-effect-over-a-custom-renderer"></a>為什麼要透過自訂轉譯器使用效果？
 

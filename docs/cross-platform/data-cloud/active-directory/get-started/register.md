@@ -2,15 +2,14 @@
 title: 步驟 1： 註冊以使用 Azure Active Directory 應用程式
 ms.prod: xamarin
 ms.assetid: 0B17991A-4573-4F6C-9E86-D4B9D1A47E4D
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: c9a44a35e91e6368522f8632e185bd8a554d8593
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bac26d47c0500de138efb0ebdf98b247d7b26fcf
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="step-1-register-an-app-to-use-azure-active-directory"></a>步驟 1： 註冊以使用 Azure Active Directory 應用程式
 

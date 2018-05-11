@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 46284fd1b0863f904e9f24f125aef75fe3eb8caa
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c3a79947b02e0f877fd4ea1b0ddb72486c222719
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="native-views-in-c"></a>在 C# 中的原生檢視
 
@@ -19,7 +19,7 @@ _原生 iOS、 Android 和 UWP 從檢視可以從使用 C# 建立 Xamarin.Forms 
 
 ## <a name="overview"></a>總覽
 
-可讓任何 Xamarin.Forms 控制項`Content`以設定，或具有`Children`集合，可以加入平台專屬檢視。 例如，iOS`UILabel`可以直接加入至[ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/)屬性，或[ `StackLayout.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/)集合。 不過，請注意這項功能需要使用`#if`Xamarin.Forms 共用專案方案中定義，而且無法使用從 Xamarin.Forms 可攜式類別程式庫 (PCL) 方案。
+可讓任何 Xamarin.Forms 控制項`Content`以設定，或具有`Children`集合，可以加入平台專屬檢視。 例如，iOS`UILabel`可以直接加入至[ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/)屬性，或[ `StackLayout.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/)集合。 不過，請注意這項功能需要使用`#if`Xamarin.Forms 共用專案方案中定義，而且無法使用從 Xamarin.Forms.NET 標準程式庫的方案。
 
 下列螢幕擷取畫面示範平台專屬檢視具有已新增至 Xamarin.Forms [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/):
 

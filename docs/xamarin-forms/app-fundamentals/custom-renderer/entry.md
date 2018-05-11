@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: c120add5a301e440911bd9794da77732e7787cc0
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c93681c3bfd8de8d813cbe98a7ac28b3ee8b74fc
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-an-entry"></a>自訂項目
 
@@ -43,13 +43,13 @@ public class MyEntry : Entry
 }
 ```
 
-`MyEntry`控制項會建立可攜式類別庫 (PCL) 專案中，而且只要[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)控制項。 自訂控制項的執行時，自訂轉譯器，因此沒有額外的實作需要用於`MyEntry`控制項。
+`MyEntry`控制項會.NET 標準程式庫專案中建立，而且只要[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)控制項。 自訂控制項的執行時，自訂轉譯器，因此沒有額外的實作需要用於`MyEntry`控制項。
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>使用自訂控制項
 
-`MyEntry`控制項可以在 XAML 中參考 PCL 專案中，宣告的命名空間，做為其位置，並使用命名空間前置詞上的控制項項目。 下列程式碼範例示範如何`MyEntry`控制項可供 XAML 頁面：
+`MyEntry`控制項可以在 XAML 中參考.NET 標準程式庫專案中，宣告的命名空間，做為其位置，並使用命名空間前置詞上的控制項項目。 下列程式碼範例示範如何`MyEntry`控制項可供 XAML 頁面：
 
 ```xaml
 <ContentPage ...

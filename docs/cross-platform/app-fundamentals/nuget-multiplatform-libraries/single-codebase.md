@@ -2,15 +2,14 @@
 title: Nuget 在建立新的多平台程式庫
 ms.prod: xamarin
 ms.assetid: E7B55354-9BBE-4122-BCE3-3506B79090DD
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 85403ee2ab8b5c1433e0e070b3af22fa42cd5efa
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ee508d40423e3757f7e2934b7682f840ebf8b86a
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>Nuget 在建立新的多平台程式庫
 
@@ -45,7 +44,7 @@ ms.lasthandoff: 04/04/2018
 
   [![](single-codebase-images/single-metadata-sml.png "輸入必要的中繼資料")](single-codebase-images/single-metadata.png#lightbox)
 
-7. 以滑鼠右鍵按一下程式庫專案，然後選擇 **建立 NuGet 封裝**（或建置或部署解決方案） 和**.nupkg** NuGet 封裝檔案會儲存在**/bin/**資料夾 （偵錯或發行，視組態而定）：
+7. 以滑鼠右鍵按一下程式庫專案，然後選擇 **建立 NuGet 封裝**（或建置或部署解決方案） 和 **.nupkg** NuGet 封裝檔案會儲存在 **/bin/** 資料夾 （偵錯或發行，視組態而定）：
 
   ![](single-codebase-images/create-nuget-package.png "NuGet 封裝檔案會儲存在 bin 資料夾中偵錯或發行，視組態而定")
 

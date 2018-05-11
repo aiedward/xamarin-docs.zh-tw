@@ -2,15 +2,14 @@
 title: 建立新的平台特定程式庫專案的 NuGet
 ms.prod: xamarin
 ms.assetid: D8BC4906-805F-4AFB-8D1A-88B7BF87E17F
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 0f244e614a40e444139d51a9466ccc7225a7fe68
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 901dbe032d62047668f265e8c7f79593b3fbfcce
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="creating-new-platform-specific-library-projects-for-nuget"></a>建立新的平台特定程式庫專案的 NuGet
 
@@ -50,7 +49,7 @@ NuGet 可包含特定 iOS 及 Android 程式碼，以及同時.NET 程式碼。
   > [!NOTE]
 > 上鉤 and 的交換器 」 表示 PCL 組件只會包含程式庫 （不能包含平台專屬的程式碼） 所公開的 API。 當 NuGet 加入 Xamarin 專案中時，將編譯共用程式庫，針對此 PCL，但這些特定平台組件包含實際使用 iOS 或 Android 專案的程式碼。
 
-7. 以滑鼠右鍵按一下專案，然後選擇 **建立 NuGet 封裝**（或建置或部署解決方案） 和**.nupkg** NuGet 封裝檔案會儲存在**/bin/**資料夾 (偵錯或發行，視組態而定）。
+7. 以滑鼠右鍵按一下專案，然後選擇 **建立 NuGet 封裝**（或建置或部署解決方案） 和 **.nupkg** NuGet 封裝檔案會儲存在 **/bin/** 資料夾 (偵錯或發行，視組態而定）。
 
   ![](platform-specific-images/create-nuget-package.png "NuGet 封裝檔案會儲存在 bin 資料夾中偵錯或發行，視組態而定")
 

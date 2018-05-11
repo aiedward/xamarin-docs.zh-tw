@@ -6,12 +6,12 @@ ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/26/2018
-ms.openlocfilehash: f5c05ce308a10747ad3e18e4a1d141d29fd6c8a1
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 05/03/2018
+ms.openlocfilehash: 6a0107ec11955f99c62a6f59f9bf82291dee9224
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms Quickstart
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 04/27/2018
 
 3. 在 [新增專案] 對話方塊中，按一下 [跨平台]、選取 [行動應用程式 (Xamarin.Forms)] 範本、將 [名稱] 和 [方案名稱] 設定為 `Phoneword`、選擇專案的適當位置，然後按一下 [確定] 按鈕：
 
-    ![](quickstart-images/vs/new-project.png "跨平台專案範本")
+    ![](quickstart-images/vs/new-project.w157.png "跨平台專案範本")
 
 4. 在 [新增跨平台應用程式] 對話方塊中，按一下 [空白應用程式]，並選取 [.NET Standard] 作為 [程式碼共用策略]，然後按一下 [確定] 按鈕：
 
@@ -168,7 +168,7 @@ ms.lasthandoff: 04/27/2018
 
 12. 在 [加入新項目] 對話方塊中，選取 [Visual C#] > [程式碼] > [類別]、將新檔案命名為 **PhoneTranslator**，然後按一下 [新增] 按鈕：
 
-    ![](quickstart-images/vs/add-translator-class.png "加入新類別")
+    ![](quickstart-images/vs/add-translator-class.w157.png "加入新類別")
 
 13. 在 **PhoneTranslator.cs** 中，移除所有範本程式碼，並取代為下列程式碼。 此程式碼會將電話文字轉譯成電話號碼：
 
@@ -234,7 +234,7 @@ ms.lasthandoff: 04/27/2018
 
 15. 在 [加入新項目] 對話方塊中，選取 [Visual C#] > [程式碼] > [介面]、將新檔案命名為 **IDialer**，然後按一下 [新增] 按鈕：
 
-    ![](quickstart-images/vs/add-idialer-interface.png "加入新介面")
+    ![](quickstart-images/vs/add-idialer-interface.w157.png "加入新介面")
 
 16. 在 **IDialer.cs** 中，移除所有範本程式碼，並取代為下列程式碼。 此程式碼會定義必須在每個平台上實作的 `Dial` 方法，才能撥打轉譯的電話號碼：
 
@@ -257,9 +257,9 @@ ms.lasthandoff: 04/27/2018
 
     ![](quickstart-images/vs/add-new-item-ios.png "加入新項目")
 
-18. 在 [加入新項目] 對話方塊中，選取 [Apple] > [程式碼] > [類別]、將新檔案命名為 **PhoneDialer**，然後按一下 [新增] 按鈕：
+18. 在 [加入新項目] 對話方塊中，選取 [Visual C#] > [程式碼] > [類別]、將新檔案命名為 **PhoneDialer**，然後按一下 [新增] 按鈕：
 
-    ![](quickstart-images/vs/new-phone-dialer-ios.png "加入新類別")
+    ![](quickstart-images/vs/new-phone-dialer-ios.w157.png "加入新類別")
 
 19. 在 **PhoneDialer.cs** 中，移除所有範本程式碼，並取代為下列程式碼。 此程式碼會建立將在 iOS 平台上使用的 <code>Dial</code> 方法，才能撥打轉譯的電話號碼：
 
@@ -291,7 +291,7 @@ ms.lasthandoff: 04/27/2018
 
 21. 在 [加入新項目] 對話方塊中，選取 [Visual C#] > [Android] > [類別]、將新檔案命名為 **PhoneDialer**，然後按一下 [新增] 按鈕：
 
-    ![](quickstart-images/vs/new-phone-dialer-android.png "加入新類別")
+    ![](quickstart-images/vs/new-phone-dialer-android.w157.png "加入新類別")
 
 22. 在 **PhoneDialer.cs** 中，移除所有範本程式碼，並取代為下列程式碼。 此程式碼會建立將在 Android 平台上使用的 `Dial` 方法，才能撥打轉譯的電話號碼：
 
@@ -391,7 +391,7 @@ ms.lasthandoff: 04/27/2018
 
 27. 在 [加入新項目] 對話方塊中，選取 [Visual C#] > [程式碼] > [類別]、將新檔案命名為 **PhoneDialer**，然後按一下 [新增] 按鈕：
 
-    ![](quickstart-images/vs/new-phone-dialer-uwp.png "加入新類別")
+    ![](quickstart-images/vs/new-phone-dialer-uwp.w157.png "加入新類別")
 
 28. 在 **PhoneDialer.cs** 中，移除所有範本程式碼，並取代為下列程式碼。 此程式碼會建立將在通用 Windows 平台上使用的 `Dial` 方法和 Helper 方法，才能撥打轉譯的電話號碼：
 
@@ -523,7 +523,7 @@ ms.lasthandoff: 04/27/2018
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, UWP" Value="20" />
+                <On Platform="Android, WinPhone, Windows" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -630,7 +630,7 @@ ms.lasthandoff: 04/27/2018
     }
     ```
 
-    選擇 [檔案] > [儲存] (或按下 **&#8984; + S**) 以將變更儲存到 **App.xaml.cs**，然後關閉檔案。
+    選擇 [檔案] > [儲存] (或按下 **&#8984; + S**)，將變更儲存到 **Phoneword.cs**，然後關閉檔案。
 
 13. 在 [Solution Pad] 中，選取 **Phoneword** 專案、按一下滑鼠右鍵，然後選取 [新增] > [新增檔案]：
 

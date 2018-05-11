@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: d4ae3b42c5c926749310da6e36b6f4e9754d398c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3807ac6a91d3bf650922a01d9111dc34513d62b3
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="creating-xaml-markup-extensions"></a>建立 XAML 標記延伸
 
@@ -116,7 +116,7 @@ public class HslColorExtension : IMarkupExtension<Color>
 
 請注意，當`HslColorExtension`XML 標記，四個屬性的設定屬性，但是當似乎大括號之間，會以不加引號的逗號分隔的四個屬性。 預設值`H`， `S`，和`L`0，且預設值的`A`為 1，因此可以省略這些屬性，如果要將它們設為預設值。 最後一個範例顯示的範例其中亮度為 0，這通常會以黑色，但是 alpha 色板 0.5，因此它是半透明的並顯示灰色白色背景的頁面：
 
-[![HSL Color Demo](creating-images/hslcolordemo-small.png "HSL Color Demo")](creating-images/hslcolordemo-large.png#lightbox "HSL Color Demo")
+[![HSL 色彩示範](creating-images/hslcolordemo-small.png "HSL 色彩示範")](creating-images/hslcolordemo-large.png#lightbox "HSL 色彩示範")
 
 ## <a name="a-markup-extension-for-accessing-bitmaps"></a>標記延伸來存取的點陣圖
 
@@ -151,7 +151,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension` XAML 檔案需要存取儲存為可攜式類別庫專案中的內嵌資源影像檔時，就會很有幫助。 它會使用`Source`屬性，以呼叫靜態`ImageSource.FromResource`方法。 此方法需要完整限定的資源名稱，其中包含組件名稱、 資料夾名稱，並以句號分隔的檔案名稱。 `ImageResourceExtension`不需要的組件名稱部分，因此它會取得使用反映的組件名稱前面加上以`Source`屬性。 不論如何，`ImageSource.FromResource`必須從包含點陣圖，這表示此 XAML 資源擴充功能不能是外部的程式庫的一部分，除非的映像也為該文件庫中的組件呼叫。 (請參閱[**內嵌影像**](~/xamarin-forms/user-interface/images.md#embedded_images)點陣圖儲存為內嵌資源的存取詳細資訊的發行項。) 
+`ImageResourceExtension` XAML 檔案需要存取儲存為標準.NET 程式庫專案中的內嵌資源影像檔時，就會很有幫助。 它會使用`Source`屬性，以呼叫靜態`ImageSource.FromResource`方法。 此方法需要完整限定的資源名稱，其中包含組件名稱、 資料夾名稱，並以句號分隔的檔案名稱。 `ImageResourceExtension`不需要的組件名稱部分，因此它會取得使用反映的組件名稱前面加上以`Source`屬性。 不論如何，`ImageSource.FromResource`必須從包含點陣圖，這表示此 XAML 資源擴充功能不能是外部的程式庫的一部分，除非的映像也為該文件庫中的組件呼叫。 (請參閱[**內嵌影像**](~/xamarin-forms/user-interface/images.md#embedded_images)點陣圖儲存為內嵌資源的存取詳細資訊的發行項。) 
 
 雖然`ImageResourceExtension`需要`Source`屬性來設定，`Source`屬性會指出在屬性中，做為類別的內容屬性。 這表示`Source=`括孤括住之運算式的一部分，則可以省略。 在**映像資源示範** 頁面上，`Image`項目擷取使用的資料夾名稱和檔案名稱以句號分隔的兩個映像：
 

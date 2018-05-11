@@ -7,11 +7,11 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 3/27/2018
-ms.openlocfilehash: 104a3adb5d59bc7feafa3c993290247b749ce312
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c110223eae2bb06f64adf3e09977d97cc7b5d71b
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 標記延伸
 
@@ -386,13 +386,13 @@ xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
-您將需要額外的 XML 命名空間宣告來存取其他類別。 每個額外的 XML 命名空間宣告會定義新的前置詞。 若要存取 PCL 中，共用應用程式的本機的類別，例如`AppConstants`，XAML 程式設計人員通常會使用前置詞`local`。 命名空間宣告必須指出 CLR (Common Language Runtime) 命名空間名稱，也就是.NET 命名空間名稱，這就是出現在 C# 中的名稱`namespace`定義或`using`指示詞：
+您將需要額外的 XML 命名空間宣告來存取其他類別。 每個額外的 XML 命名空間宣告會定義新的前置詞。 若要存取類別本機共用應用程式的.NET 標準程式庫，例如`AppConstants`，XAML 程式設計人員通常會使用前置詞`local`。 命名空間宣告必須指出 CLR (Common Language Runtime) 命名空間名稱，也就是.NET 命名空間名稱，這就是出現在 C# 中的名稱`namespace`定義或`using`指示詞：
 
 ```csharp
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-您也可以定義 PCL 參考任何組件中的.NET 命名空間的 XML 命名空間宣告。 例如，以下是`sys`前置詞為標準.net`System`命名空間中的**mscorlib**組件，這一次名人的 「 Microsoft 通用物件執行階段程式庫，"，但現在表示 「 多語系標準一般物件執行階段程式庫。 」 因為這是另一個組件，您也必須指定組件名稱，在此情況下**mscorlib**:
+您也可以定義標準.NET 程式庫參考任何組件中的.NET 命名空間的 XML 命名空間宣告。 例如，以下是`sys`前置詞為標準.net`System`命名空間中的**mscorlib**組件，這一次名人的 「 Microsoft 通用物件執行階段程式庫，"，但現在表示 「 多語系標準一般物件執行階段程式庫。 」 因為這是另一個組件，您也必須指定組件名稱，在此情況下**mscorlib**:
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=mscorlib"

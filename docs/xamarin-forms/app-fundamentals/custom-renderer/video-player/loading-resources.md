@@ -6,15 +6,15 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a9dbf77b85fe7f39c152d4dfb33bdd44c72dca40
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 89c424ee80a4ebf6363a836e752b72ee9bc5cd5a
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="loading-application-resource-videos"></a>正在載入應用程式資源影片
 
-自訂轉譯器，如`VideoPlayer`檢視都能播放視訊檔已內嵌在個別的平台專案中，為應用程式資源。 不過，目前版本的`VideoPlayer`無法存取內嵌在可攜式類別庫中的資源。
+自訂轉譯器，如`VideoPlayer`檢視都能播放視訊檔已內嵌在個別的平台專案中，為應用程式資源。 不過，目前版本的`VideoPlayer`無法存取的標準.NET 程式庫中內嵌資源。
 
 若要載入這些資源，建立的執行個體`ResourceVideoSource`藉由設定`Path`檔名 （或資料夾和檔案名稱） 之資源的屬性。 或者，您可以呼叫靜態`VideoSource.FromResource`參考這個資源的方法。 然後，設定`ResourceVideoSource`物件`Source`屬性`VideoPlayer`。 
 

@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: de08e686fc07595b75016b9266f57b12831e9822
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0985fb533969a331ceee62f490bae600de9f189c
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="mac-platform-setup"></a>Mac 平台設定
 
@@ -39,9 +39,9 @@ ms.lasthandoff: 04/04/2018
 
   ![動畫顯示如何加入 Cocoa 應用程式的指示](mac-images/add-macos-proj.gif)
 
-5. 在 Mac 專案中，以滑鼠右鍵按一下**封裝 > 新增套件...**新增[Xamarin.Forms/2.3.5.235-pre2](https://www.nuget.org/packages/Xamarin.Forms/2.3.5.235-pre2) NuGet。 您應該一併更新至此版本的其他專案。
+5. 在 Mac 專案中，以滑鼠右鍵按一下**封裝 > 新增套件...** 新增[Xamarin.Forms/2.3.5.235-pre2](https://www.nuget.org/packages/Xamarin.Forms/2.3.5.235-pre2) NuGet。 您應該一併更新至此版本的其他專案。
 
-6. 在 Mac 專案中，以滑鼠右鍵按一下**參考**並將參考加入 Xamarin.Forms （共用專案或 PCL）。
+6. 在 Mac 專案中，以滑鼠右鍵按一下**參考**和加入 Xamarin.Forms 專案 （共用專案或標準.NET 程式庫專案） 的參考。
 
   ![加入 Xamarin.Forms 共用程式碼專案的參考](mac-images/references-sml.png)
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 353575bad91c9bade0207a0aa271d9de7ec50240
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 04d3d99a5d85dd77c93e9b926e8952cc3d8a771e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-a-map-pin"></a>自訂地圖 Pin
 
@@ -47,7 +47,7 @@ public class CustomMap : Map
 }
 ```
 
-`CustomMap`控制項建立可攜式類別庫 (PCL) 專案中，並定義自訂地圖的 API。 自訂地圖公開`CustomPins`表示的集合屬性`CustomPin`轉譯的每個平台上原生地圖控制項的物件。 `CustomPin`類別以下列程式碼範例所示：
+`CustomMap`控制.NET 標準程式庫專案中建立和定義自訂地圖的 API。 自訂地圖公開`CustomPins`表示的集合屬性`CustomPin`轉譯的每個平台上原生地圖控制項的物件。 `CustomPin`類別以下列程式碼範例所示：
 
 ```csharp
 public class CustomPin : Pin
@@ -62,7 +62,7 @@ public class CustomPin : Pin
 
 ## <a name="consuming-the-custom-map"></a>使用自訂地圖
 
-`CustomMap`控制項可以在 XAML 中參考 PCL 專案中，宣告的命名空間，做為其位置，並使用自訂地圖控制項上的命名空間前置詞。 下列程式碼範例示範如何`CustomMap`控制項可供 XAML 頁面：
+`CustomMap`控制項可以在 XAML 中參考.NET 標準程式庫專案中，宣告的命名空間，做為其位置，並使用自訂地圖控制項上的命名空間前置詞。 下列程式碼範例示範如何`CustomMap`控制項可供 XAML 頁面：
 
 ```xaml
 <ContentPage ...
@@ -322,7 +322,7 @@ void OnCalloutAccessoryControlTapped (object sender, MKMapViewAccessoryTappedEve
 }
 ```
 
-這個方法會開啟網頁瀏覽器並瀏覽至的位址儲存在`CustomMKAnnotationView.Url`屬性。 請注意，在建立時，已定義位址`CustomPin`PCL 專案中的集合。
+這個方法會開啟網頁瀏覽器並瀏覽至的位址儲存在`CustomMKAnnotationView.Url`屬性。 請注意，在建立時，已定義位址`CustomPin`.NET 標準程式庫專案中的集合。
 
 <a name="Deselecting_the_Annotation" />
 
@@ -499,7 +499,7 @@ void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
 }
 ```
 
-這個方法會開啟網頁瀏覽器並瀏覽至的位址儲存在`Url`屬性擷取`CustomPin`例項而言`Marker`。 請注意，在建立時，已定義位址`CustomPin`PCL 專案中的集合。
+這個方法會開啟網頁瀏覽器並瀏覽至的位址儲存在`Url`屬性擷取`CustomPin`例項而言`Marker`。 請注意，在建立時，已定義位址`CustomPin`.NET 標準程式庫專案中的集合。
 
 如需有關自訂`MapView`執行個體，請參閱[Maps API](~/android/platform/maps-and-location/maps/maps-api.md)。
 
@@ -645,7 +645,7 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 }
 ```
 
-這個方法會開啟網頁瀏覽器並瀏覽至的位址儲存在`Url`屬性`CustomPin`執行個體。 請注意，在建立時，已定義位址`CustomPin`PCL 專案中的集合。
+這個方法會開啟網頁瀏覽器並瀏覽至的位址儲存在`Url`屬性`CustomPin`執行個體。 請注意，在建立時，已定義位址`CustomPin`.NET 標準程式庫專案中的集合。
 
 如需有關自訂`MapControl`執行個體，請參閱[地圖與位置概觀](https://msdn.microsoft.com/library/windows/apps/mt219699.aspx)MSDN 上。
 

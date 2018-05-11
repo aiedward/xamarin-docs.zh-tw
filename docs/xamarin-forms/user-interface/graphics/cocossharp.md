@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/03/2016
-ms.openlocfilehash: 5fcc3405780e0c5e8a0e8d32caf35abf59808c8e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7ce541134e6db9a26699f96ab3114ced2ad22244
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>使用 Xamarin.Forms 中 CocosSharp
 
@@ -53,13 +53,13 @@ Xamarin.Forms 是以原生、 平台專屬的 UI 系統為基礎。 例如， [ 
 ## <a name="adding-the-cocossharp-nuget-packages"></a>新增 CocosSharp Nuget 封裝
 
 在使用之前 CocosSharp，開發人員需要進行一些 Xamarin.Forms 專案新增項目。
-本指南假設在 Xamarin.Forms 專案中的使用 iOS、 Android 和 PCL 專案。
-所有的程式碼會寫入 PCL 專案中不過，必須新增程式庫的 iOS 和 Android 專案。
+本指南假設具有 iOS、 Android 和.NET 標準 Xamarin.Forms 專案程式庫專案。
+所有的程式碼將會以.NET 標準程式庫專案中，撰寫不過，必須新增程式庫的 iOS 和 Android 專案。
 
 CocosSharp Nuget 封裝包含所有建立 CocosSharp 物件所需的物件。
 CocosSharp.Forms nuget 套件會包含`CocosSharpView`用來裝載 CocosSharp Xamarin.Forms 中的類別。
 新增**CocosSharp.Forms** NuGet 和**CocosSharp**將會自動加入以及。
-若要這樣做，以滑鼠右鍵按一下 PCL<span class="UIItem">封裝</span>資料夾，然後選取<span class="UIItem">新增套件...</span>.輸入搜尋字詞<span class="UIItem">CocosSharp.Forms</span>，選取<span class="UIItem">Xamarin.Forms 的 CocosSharp</span>，然後按一下 <span class="UIItem">加入封裝</span>。
+若要這樣做，以滑鼠右鍵按一下<span class="UIItem">封裝</span>中.NET 標準程式庫專案，然後選取資料夾<span class="UIItem">新增套件...</span>.輸入搜尋字詞<span class="UIItem">CocosSharp.Forms</span>，選取<span class="UIItem">Xamarin.Forms 的 CocosSharp</span>，然後按一下 <span class="UIItem">加入封裝</span>。
 
 ![](cocossharp-images/image1.png "新增套件 對話方塊")
 
@@ -198,7 +198,7 @@ void HandleViewCreated (object sender, EventArgs e)
 
 只有一個`CCScene`每次最多可處於作用中。 大多數的遊戲使用多個`CCLayer`排序的內容，但我們的應用程式的執行個體僅使用一個。 同樣地，大多數的遊戲使用多個視覺化的物件，但我們只需要在我們的應用程式中。 更詳細討論位於視覺階層 CocosSharp [BouncingGame 逐步解說](~/graphics-games/cocossharp/bouncing-game.md)。
 
-一開始`GameScene`類別將會幾乎空白 – 我們將只建立它以滿足中的參考`HomePage`。 將新類別加入名為您 PCL `GameScene`。 它應該是繼承自`CCScene`類別，如下所示：
+一開始`GameScene`類別將會幾乎空白 – 我們將只建立它以滿足中的參考`HomePage`。 名為標準.NET 程式庫專案中加入新類別`GameScene`。 它應該是繼承自`CCScene`類別，如下所示：
 
 
 ```csharp
@@ -222,7 +222,7 @@ GameScene gameScene;
 
 我們現在可以編譯專案，並加以執行，請參閱 CocosSharp 執行。 我們還沒有加入任何項目我們`GameScene,`因此我們頁面的上半部是黑色 – CocosSharp 場景的預設色彩：
 
-![](cocossharp-images/image5.png "Blank GameScene")
+![](cocossharp-images/image5.png "空白 GameScene")
 
 <a name="4" />
 

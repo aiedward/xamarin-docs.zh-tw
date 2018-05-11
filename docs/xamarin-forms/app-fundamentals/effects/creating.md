@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 6138bd1f9211248b3a260795c2ef9d3db87580be
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 12b8906dd4562e58dede181e773e4046b8434214
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="creating-an-effect"></a>建立效果
 
@@ -188,7 +188,7 @@ namespace EffectsDemo.UWP
 
 ## <a name="consuming-the-effect"></a>使用效果
 
-使用 Xamarin.Forms 可攜式類別程式庫 (PCL) 或共用的程式庫專案有效的程序如下所示：
+使用 Xamarin.Forms.NET 標準程式庫或共用的程式庫專案有效的程序如下所示：
 
 1. 宣告會影響所自訂的控制項。
 1. 附加至控制項的影響，將它加入至控制項的[ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/)集合。
@@ -209,7 +209,7 @@ namespace EffectsDemo.UWP
 </Entry>
 ```
 
-`FocusEffect` PCL 中的類別支援效果耗用量在 XAML 中，與下列程式碼範例所示：
+`FocusEffect` .NET 標準文件庫中的類別支援效果耗用量在 XAML 中，與下列程式碼範例所示：
 
 ```csharp
 public class FocusEffect : RoutingEffect

@@ -3,16 +3,15 @@ title: 快速入門
 description: 解如何透過這些深入指南從零到部署開發行動應用程式。
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
-ms.technology: xamarin-cross-platform
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: fec14b0f7328bee1d0866ba02f28202e8d63e8cb
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: de5b1499f95e6703e0c11adb1f76e1717a494e33
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="getting-started"></a>快速入門
 

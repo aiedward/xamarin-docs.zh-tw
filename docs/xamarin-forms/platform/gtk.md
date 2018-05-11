@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: a601e74cc274fd57bb2be9af3562b3a7290d7047
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 275ec851a2fd8e96adecfeca5daf6a66add7bd92
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="gtk-platform-setup"></a>GTK # 平台安裝程式
 
@@ -34,7 +34,7 @@ GTK 的 # macOS 和 Linux 時一併安裝的[Mono](http://www.mono-project.com/d
 
 1. 在 Visual Studio 2017，以滑鼠右鍵按一下方案名稱在**方案總管 中**選擇**新增 > 新的專案...**.
 
-2. 在**新專案**視窗中的，在左側選取**Visual C#**和**的傳統 Windows 桌面**。 在專案類型清單中選擇**類別庫 (.NET Framework)**，並確定**Framework**下拉式清單設為.NET Framework 4.7 最少。
+2. 在**新專案**視窗中的，在左側選取**Visual C#** 和**的傳統 Windows 桌面**。 在專案類型清單中選擇**類別庫 (.NET Framework)**，並確定**Framework**下拉式清單設為.NET Framework 4.7 最少。
 
 3. 輸入的名稱與專案**GTK**擴充功能，例如**GameOfLife.GTK**。 按一下**瀏覽**按鈕、 選取的資料夾包含其他平台專案中，然後按**選取資料夾**。 這樣就會加入 GTK 專案與方案中的其他專案相同的目錄中。
 
@@ -56,7 +56,7 @@ GTK 的 # macOS 和 Linux 時一併安裝的[Mono](http://www.mono-project.com/d
 
 6. 在**方案總管 中**，以滑鼠右鍵按一下方案名稱，然後選取**管理方案的 NuGet 套件**。 選取**更新** 索引標籤和**Xamarin.Forms**封裝。 選取所有專案，並更新為相同的 Xamarin.Forms 版本所用的 GTK 專案。
 
-7. 在**方案總管 中**，以滑鼠右鍵按一下**參考**GTK 專案中。 在**參考管理員**對話方塊中，選取**專案**在左邊，並核取.NET 標準、 PCL 中或共用專案旁邊的核取方塊：
+7. 在**方案總管 中**，以滑鼠右鍵按一下**參考**GTK 專案中。 在**參考管理員**對話方塊中，選取**專案**在左邊，並核取.NET 標準或共用專案旁邊的核取方塊：
 
     ![參考共用的專案](gtk-images/win/reference-shared-project.png "參考共用的專案")
 
@@ -129,7 +129,7 @@ GTK 的 # macOS 和 Linux 時一併安裝的[Mono](http://www.mono-project.com/d
 
 6. 更新其他平台專案，以使用 Xamarin.Forms 版本相同，所用的 GTK 專案。
 
-7. 在**方案板**，以滑鼠右鍵按一下**參考 > 編輯參考...** GTK 的專案，然後將參考加入 Xamarin.Forms 專案 （.NET 標準、 PCL 中或共用專案）。
+7. 在**方案板**，以滑鼠右鍵按一下**參考 > 編輯參考...** GTK 的專案，然後將參考加入 Xamarin.Forms 專案 （.NET 標準或共用專案）。
 
     ![參考共用的專案](gtk-images/mac/reference-shared-project.png "參考共用的專案")
 

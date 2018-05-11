@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 1fc3fb17ec97ce9028abbf63cdedbfc5fec12204
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 520982491803fa0a909008ee60730a4149a75296
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="device-class"></a>裝置類別
 
@@ -155,7 +155,7 @@ Device.OpenUri(new Uri("https://evolve.xamarin.com/"));
 
 ## <a name="devicestarttimer"></a>Device.StartTimer
 
-`Device`類別也有`StartTimer`方法可提供簡單的方式來觸發時間相依工作，在 Xamarin.Forms 通用程式碼 （包括 PCLs） 中運作。 傳遞`TimeSpan`來設定的間隔，並傳回`true`保持執行計時器或`false`停止目前的引動過程之後。
+`Device`類別也有`StartTimer`方法可提供簡單的方式來觸發時間相依工作，在 Xamarin.Forms 通用程式碼，包括.NET 標準程式庫中運作。 傳遞`TimeSpan`來設定的間隔，並傳回`true`保持執行計時器或`false`停止目前的引動過程之後。
 
 ```csharp
 Device.StartTimer (new TimeSpan (0, 0, 60), () => {
@@ -184,7 +184,7 @@ Device.BeginInvokeOnMainThread ( () => {
 
 ## <a name="summary"></a>總結
 
-Xamarin.Forms`Device`類別可讓更細微的控制功能和配置每個平台為基礎-即使在一般程式碼 （PCL 或共用專案）。
+Xamarin.Forms`Device`類別可讓更細微的控制功能和配置每個平台為基礎-即使在一般程式碼 （.NET 標準程式庫專案或共用專案）。
 
 
 ## <a name="related-links"></a>相關連結

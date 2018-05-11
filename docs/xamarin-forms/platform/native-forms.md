@@ -1,23 +1,23 @@
 ---
 title: 原生格式
-description: 原生格式讓 Xamarin.Forms ContentPage 衍生頁可供原生 Xamarin.iOS、 Xamarin.Android 和通用 Windows 平台 (UWP) 專案。 原生專案可能會耗用 ContentPage 衍生頁面直接加入至專案，或從可攜式類別程式庫 (PCL)、.NET 標準程式庫或共用的專案。 本文說明如何使用 ContentPage 衍生的頁面，都會直接加入至原生專案，以及如何在它們之間瀏覽。
+description: 原生格式讓 Xamarin.Forms ContentPage 衍生頁可供原生 Xamarin.iOS、 Xamarin.Android 和通用 Windows 平台 (UWP) 專案。 原生專案可能會耗用 ContentPage 衍生頁面直接加入至專案，或從.NET 標準程式庫，.NET 標準程式庫或共用的專案。 本文說明如何使用 ContentPage 衍生的頁面，都會直接加入至原生專案，以及如何在它們之間瀏覽。
 ms.prod: xamarin
 ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: 9d0d4e69228ce8a1d9944833bff80b22ea5f9ddd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bb7aa9a7071f9ac7bef0dce5790a3fe74302cfb4
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="native-forms"></a>原生格式
 
-_原生格式讓 Xamarin.Forms ContentPage 衍生頁可供原生 Xamarin.iOS、 Xamarin.Android 和通用 Windows 平台 (UWP) 專案。原生專案可能會耗用 ContentPage 衍生頁面直接加入至專案，或從可攜式類別程式庫 (PCL)、.NET 標準程式庫或共用的專案。本文說明如何使用 ContentPage 衍生的頁面，都會直接加入至原生專案，以及如何在它們之間瀏覽。_
+_原生格式讓 Xamarin.Forms ContentPage 衍生頁可供原生 Xamarin.iOS、 Xamarin.Android 和通用 Windows 平台 (UWP) 專案。原生專案可能會耗用 ContentPage 衍生頁面直接加入至專案，或從.NET 標準程式庫，.NET 標準程式庫或共用的專案。本文說明如何使用 ContentPage 衍生的頁面，都會直接加入至原生專案，以及如何在它們之間瀏覽。_
 
-Xamarin.Forms 應用程式通常包括衍生自的一個或多個頁面[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)，以及這些頁面中 PCL、.NET 標準程式庫或共用專案共用之所有平台。 不過，原生格式可讓`ContentPage`-衍生直接加入至原生 Xamarin.iOS、 Xamarin.Android 和 UWP 應用程式的頁面。 相較於具有原生專案取用`ContentPage`-衍生的頁面從 PCL、.NET 標準程式庫或共用專案，直接將頁面加入原生專案中的優點是頁面可以使用原生的檢視來延伸。 然後可以在 XAML 中使用命名原生檢視`x:Name`並參考從程式碼後置。 如需原生檢視的詳細資訊，請參閱[原生檢視](~/xamarin-forms/platform/native-views/index.md)。
+Xamarin.Forms 應用程式通常包括衍生自的一個或多個頁面[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)，以及這些頁面中的.NET 標準程式庫專案或共用專案共用之所有平台。 不過，原生格式可讓`ContentPage`-衍生直接加入至原生 Xamarin.iOS、 Xamarin.Android 和 UWP 應用程式的頁面。 相較於具有原生專案取用`ContentPage`-衍生的頁面，從.NET 標準程式庫專案或共用專案，直接將頁面加入原生專案中的優點是頁面可以使用原生的檢視來延伸。 然後可以在 XAML 中使用命名原生檢視`x:Name`並參考從程式碼後置。 如需原生檢視的詳細資訊，請參閱[原生檢視](~/xamarin-forms/platform/native-views/index.md)。
 
 使用 Xamarin.Forms 的程序[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-衍生原生專案中的頁面如下所示：
 
@@ -30,7 +30,7 @@ Xamarin.Forms 應用程式通常包括衍生自的一個或多個頁面[ `Conten
 必須藉由呼叫初始化 Xamarin.Forms`Forms.Init`方法之前原生專案可以建構[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-衍生頁面。 它是最方便的應用程式流程中選擇何時要執行此動作主要取決於-無法執行應用程式啟動時或之前`ContentPage`-建構衍生的頁面。 在本文中，並隨附的範例應用程式，`Forms.Init`方法在應用程式啟動時呼叫。
 
 > [!NOTE]
-> **NativeForms**範例應用程式方案不包含任何 Xamarin.Forms 專案。 相反地，會包含專案 Xamarin.iOS、 Xamarin.Android 專案時和 UWP 專案。 每個專案是使用原生格式來取用的原生專案[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-衍生的頁面。 不過，沒有的理由為何無法使用原生專案`ContentPage`-取自 PCL、.NET 標準程式庫或共用專案中的頁面。
+> **NativeForms**範例應用程式方案不包含任何 Xamarin.Forms 專案。 相反地，會包含專案 Xamarin.iOS、 Xamarin.Android 專案時和 UWP 專案。 每個專案是使用原生格式來取用的原生專案[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-衍生的頁面。 不過，沒有的理由為何無法使用原生專案`ContentPage`-衍生自.NET 標準程式庫專案或共用專案的 頁面。
 
 當使用原生格式，Xamarin.Forms 這類功能[ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/)， [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/)，和資料繫結引擎，而仍的所有工作。
 
@@ -349,7 +349,7 @@ void OnNavigated(object sender, NavigationEventArgs e)
 
 ## <a name="summary"></a>總結
 
-原生格式允許 Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-衍生頁面，以供原生 Xamarin.iOS、 Xamarin.Android 和通用 Windows 平台 (UWP) 專案。 原生專案可能會耗用`ContentPage`-衍生直接加入至專案，或從 PCL、.NET 標準程式庫或共用專案的頁面。 本文說明如何使用`ContentPage`-衍生都會直接加入至原生專案，以及如何在它們之間瀏覽的頁面。
+原生格式允許 Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-衍生頁面，以供原生 Xamarin.iOS、 Xamarin.Android 和通用 Windows 平台 (UWP) 專案。 原生專案可能會耗用`ContentPage`-衍生直接加入至專案，或從.NET 標準程式庫專案或共用專案的頁面。 本文說明如何使用`ContentPage`-衍生都會直接加入至原生專案，以及如何在它們之間瀏覽的頁面。
 
 
 ## <a name="related-links"></a>相關連結

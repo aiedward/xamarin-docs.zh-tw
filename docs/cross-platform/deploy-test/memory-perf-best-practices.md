@@ -3,15 +3,14 @@ title: 跨平台效能
 description: 有許多技巧可增加利用 Xamarin 平台建置之應用程式的效能。 這些技巧可共同大幅減少 CPU 所執行的工作量和應用程式所耗用的記憶體數量。 本文將描述並討論這些技巧。
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 98b4b4a9e7bc28dd444cfdcb1afdfbe64cb1aee0
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: f011a92b4789da7328827f184449fd957abdf3ba
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="cross-platform-performance"></a>跨平台效能
 
@@ -168,7 +167,7 @@ public class Subscriber : IDisposable
 ## <a name="use-weak-references-to-prevent-immortal-objects"></a>使用弱式參考以防止 Immortal 物件
 
 > [!NOTE]
-> iOS 開發人員應檢閱有關[在 iOS 中避免循環參考](~/ios/deploy-test/performance.md#avoidcircularreferences)的文件，以確保其應用程式有效率地使用記憶體。
+> iOS 開發人員應檢閱有關[在 iOS 中避免循環參考](~/ios/deploy-test/performance.md#avoid-strong-circular-references)的文件，以確保其應用程式有效率地使用記憶體。
 
 <a name="lazy" />
 

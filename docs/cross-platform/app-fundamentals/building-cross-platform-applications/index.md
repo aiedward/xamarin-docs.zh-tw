@@ -3,15 +3,14 @@ title: 建置跨平台應用程式
 description: 本章節討論，摘要加上六個組件，如何建置使用 Xamarin 開發平台-從了解 Xamarin 的方式設計行動應用程式，然後測試並部署到不同的應用程式市集的應用程式。
 ms.prod: xamarin
 ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/28/2016
-ms.openlocfilehash: b9d167d8874ecfde9094bacc26cff3e7d1b10bab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fba13ab921949cd2361e78535d5ffc96952a1336
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="sharing-code-options"></a>共用程式碼選項
 

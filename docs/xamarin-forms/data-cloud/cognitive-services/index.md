@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 2600b52b6e044ca9a3a8387bcf719dd1632c406d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 86253e42db7da2da6eb8b03e2d4a4b3c943b7e17
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>使用認知的服務加入智慧
 
@@ -35,7 +35,7 @@ _Microsoft 認知服務是一組應用程式開發介面、 Sdk 和藉由新增�
 
 ![](images/sample-application-1.png "TodoListPage")
 
-您可以建立新的項目上按一下*+*按鈕，巡覽至`TodoItemPage`。 此頁面也可以巡覽至所選取工作：
+您可以建立新的項目上按一下*+* 按鈕，巡覽至`TodoItemPage`。 此頁面也可以巡覽至所選取工作：
 
 ![](images/sample-application-2.png "TodoItemPage")
 
@@ -70,9 +70,7 @@ PCL 專案也包含一些重要的檔案：
 
 範例應用程式會使用下列 NuGet 套件：
 
-- `Microsoft.Net.Http` – 提供`HttpClient`類別進行透過 HTTP 要求。
 - `Newtonsoft.Json` – 提供 JSON framework for.NET。
-- `Microsoft.ProjectOxford.Face` – 存取朝 API 的用戶端程式庫。
 - `PCLStorage` -提供一組的跨平台的本機檔案 IO 的應用程式開發介面。
 - `sqlite-net-pcl` – 提供 SQLite 資料庫儲存體。
 - `Xam.Plugin.Media` – 提供跨平台相片函式和挑選應用程式開發介面。

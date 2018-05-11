@@ -2,15 +2,14 @@
 ms.assetid: 65F6A634-9CB0-4BB8-A013-7CA0334F6100
 title: 跨平台為桌面的開發人員的
 description: Xamarin 可讓您建置 Windows、 Android、 iOS 和 Mac 使用您的 Windows Forms 或 WPF 技術的應用程式。
-ms.technology: xamarin-crossplatform
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: d73402d2b2f29cfc47d3406e06fad974c844ce81
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: 0794d931dd57971efcbd0ea5b42159e3524ea6b0
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="cross-platform-for-desktop-developers"></a>跨平台為桌面的開發人員的
 

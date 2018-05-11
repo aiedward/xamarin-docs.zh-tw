@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: 43b021b158bbb815ab8d27c393f54e0775599940
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: b394c64fe6e2bfb9e5e7ee0e00d8c0366d6bd93e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>自訂轉譯器簡介
 
@@ -51,7 +51,7 @@ public class MyEntry : Entry
 `local`命名空間前置詞可以是任何項目。 不過，`namespace`和`assembly`值必須符合自訂控制項的詳細資料。 一旦宣告命名空間，前置詞用來參考自訂控制項。
 
 > [!NOTE]
-> 定義`xmlns`PCLs 中共用專案比來得簡單。 PCL 已編譯的組件，所以可以輕鬆地判斷何種`assembly=CustomRenderer`值應該是。 當使用共用專案時，所有共用的資產 （包括 XAML） 都會編譯成每個參考的專案，這表示，如果 iOS、 Android 和 UWP 專案具有自己*組件名稱*就無法寫入`xmlns`宣告因為此值必須為每個應用程式不同。 共用專案的 XAML 中的自訂控制項將需要使用相同的組件名稱來設定每個應用程式專案。
+> 定義`xmlns`.NET 標準程式庫專案中共用專案比來得簡單。 標準.NET 程式庫已編譯的組件，所以可以輕鬆地判斷何種`assembly=CustomRenderer`值應該是。 當使用共用專案時，所有共用的資產 （包括 XAML） 都會編譯成每個參考的專案，這表示，如果 iOS、 Android 和 UWP 專案具有自己*組件名稱*就無法寫入`xmlns`宣告因為此值必須為每個應用程式不同。 共用專案的 XAML 中的自訂控制項將需要使用相同的組件名稱來設定每個應用程式專案。
 
 `MyEntry`中的下列螢幕擷取畫面所示，每個平台上，以灰色背景，然後呈現自訂控制項：
 
@@ -74,7 +74,7 @@ public class MyEntry : Entry
 
 ## <a name="troubleshooting"></a>疑難排解
 
-如果已加入至方案 (也就是不 PCL Visual Studio for Mac/Visual Studio Xamarin.Forms 應用程式專案範本所建立) 的 PCL 專案中包含自訂控制項，可能會發生例外狀況在 iOS 中嘗試存取的自訂控制項時。 如果發生這個問題可以藉由建立自訂控制項的參考已解決`AppDelegate`類別：
+如果自訂控制項包含在已加入至方案 （也就是不.NET 標準程式庫由 Visual Studio for Mac/Visual Studio Xamarin.Forms 應用程式專案範本建立），例外狀況的.NET 標準程式庫專案可能會發生在 iOS 中時嘗試存取的自訂控制項。 如果發生這個問題可以藉由建立自訂控制項的參考已解決`AppDelegate`類別：
 
 ```csharp
 var temp = new ClassInPCL(); // in AppDelegate, but temp not used anywhere

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2017
-ms.openlocfilehash: 95c5f482e1bf3e55fa4c6fef18b1dbe6274f33e8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d1f11ed1b52354dedbdb8893a96e0ae7589d5389
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="local-databases"></a>本機資料庫
 
@@ -19,7 +19,7 @@ _Xamarin.Forms 支援資料庫驅動的應用程式使用 SQLite 資料庫引擎
 
 ## <a name="overview"></a>總覽
 
-Xamarin.Forms 應用程式可以使用[SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/)封裝加入到資料庫作業藉由參考共用程式碼`SQLite`出貨 NuGet 中的類別。 資料庫作業可以定義在可攜式類別程式庫 (PCL) 專案中的 Xamarin.Forms 方案時，以傳回路徑來儲存資料庫平台專屬專案中。
+Xamarin.Forms 應用程式可以使用[SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/)封裝加入到資料庫作業藉由參考共用程式碼`SQLite`出貨 NuGet 中的類別。 資料庫作業可以具有特定平台專案來儲存資料庫傳回路徑的 Xamarin.Forms 方案時，.NET 標準程式庫專案中定義。
 
 隨附[範例應用程式](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo)是簡單的待辦事項清單應用程式。 下列螢幕擷取畫面顯示此範例顯示每個平台上的方式：
 

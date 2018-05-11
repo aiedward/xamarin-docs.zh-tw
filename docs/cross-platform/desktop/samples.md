@@ -2,15 +2,14 @@
 ms.assetid: 77F12838-DBB1-48AC-ACF8-B934998B6EC8
 title: 跨平台桌面範例
 description: 桌面應用程式移植到跨平台行動裝置應用程式。
-ms.technology: xamarin-crossplatform
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 767c6f5db0fec41ac927be3877760d6f4efc60fa
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: 19f05ccc3d15e42ffa5471ba6d85f56dd4d189b8
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="cross-platform-desktop-samples"></a>跨平台桌面範例
 

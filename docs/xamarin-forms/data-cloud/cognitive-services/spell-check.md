@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 41bd79b22aa193dd5303847997bc07e8e8d12e58
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 259be743a706c9316e2e275ff305a0fe5ad97906
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>拼字檢查使用 Bing 拼字檢查應用程式開發介面
 
@@ -90,7 +90,7 @@ async Task<string> SendRequestAsync(string url)
 }
 ```
 
-這個方法會加入做為值的應用程式開發介面索引鍵，建置 GET 要求`Ocp-Apim-Subscription-Key`標頭。 然後會傳送 GET 要求至`SpellCheck`拼字檢查模式的要求 URL 指定的文字轉譯，與應用程式開發介面。 回應然後讀取，並傳回至呼叫的方法。
+這個方法會傳送 GET 要求`SpellCheck`拼字檢查模式的要求 URL 指定的文字轉譯，與應用程式開發介面。 回應然後讀取，並傳回至呼叫的方法。
 
 `SpellCheck` API 回應，提供該要求是否有效，表示要求成功，並要求的資訊回應中傳送 HTTP 狀態碼 200 （確定）。 如需回應物件的清單，請參閱[回應物件](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference#response-objects)。
 

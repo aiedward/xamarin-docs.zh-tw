@@ -7,15 +7,15 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: 6aea0faa65944f33783940178a1d2ce3ef65df1a
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: fc479b4b0651e3312b855673730be21c2076d833
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-package"></a>可以加入較新的 NuGet 套件更新 Xamarin.Forms 預設範本嗎？
 
-本指南使用 Xamarin.Forms PCL 範本做為範例，但相同的一般方法也可用於 Xamarin.Forms 共用專案範本。 本指南會寫入 Xamarin.Forms 至 2.1.0.6529 1.5.1.6471 從更新的範例，但改為設定為預設值的其他版本可能會有相同的步驟。
+本指南使用 Xamarin.Forms.NET 標準程式庫範本做為範例，但相同的一般方法也可用於 Xamarin.Forms 共用專案範本。 本指南會寫入 Xamarin.Forms 至 2.1.0.6529 1.5.1.6471 從更新的範例，但改為設定為預設值的其他版本可能會有相同的步驟。
 
 1.  將原始範本複製`.zip`從：
 

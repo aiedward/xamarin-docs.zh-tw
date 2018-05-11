@@ -3,15 +3,14 @@ title: Microsoft Azure
 description: 文件及範例程式碼會下載 azure。
 ms.prod: xamarin
 ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/09/2017
-ms.openlocfilehash: ab449a58cc87699b97a1ade7721a08f771c4f55d
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 5a7c2e4e1bc8beff40984e66760a332e8b00f87d
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="microsoft-azure"></a>Microsoft Azure
 
@@ -21,7 +20,7 @@ _文件及範例程式碼會下載 azure。_
 
 [發展 2016年： 開發使用 Azure 和 Xamarin 的已連線應用程式](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
-## <a name="connected-services-in-visual-studio-for-mac"></a>適用於 Mac 連接 Visual Studio 中的服務
+## <a name="connected-services-in-visual-studio-for-mac"></a>Visual Studio for Mac 中已連線的服務
 
 新[已連接服務](connected-services.md)適用於 Mac 的 Visual Studio 功能可協助開發人員快速且輕鬆地新增 Azure 功能，從行動裝置應用程式在 IDE 中。 目前可供測試的 Alpha 色板。
 

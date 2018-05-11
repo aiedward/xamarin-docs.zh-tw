@@ -3,15 +3,14 @@ title: 更新 Xamarin.Mac 整合到 64 位元的應用程式
 description: 本指南說明如何更新您的目標為 64 位元 Xamarin.Mac 應用程式
 ms.prod: xamarin
 ms.assetid: C3810A74-539C-4FFB-B47F-68CA5F7BCDAD
-ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/22/2018
-ms.openlocfilehash: e365fe1af47338f41aebe4bc0d81d289466a9b6c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 558edbdee5adfe57205c7f76b35a0538c78b927f
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="updating-xamarinmac-unified-applications-to-64-bit"></a>更新 Xamarin.Mac 整合到 64 位元的應用程式
 

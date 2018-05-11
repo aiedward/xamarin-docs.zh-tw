@@ -3,15 +3,14 @@ title: 部署和偵錯
 description: 偵錯 Xamarin 應用程式及變更部署組態的秘訣。
 ms.prod: xamarin
 ms.assetid: D02C62C9-47D1-4E72-8A83-602C3E7929BE
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/07/2017
-ms.openlocfilehash: f6db6aed18fb38e8b24b11eb1760921e0d8cf938
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: 3fdaa20979119afe82e1058fd8629acb667b5064
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="deployment--debugging"></a>部署和偵錯
 
