@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: cf0e7cab0c879f8fb286c87b2aaadab2dc1453f8
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: eaa57e90ef71f13a53737aa6540e5b5bd9126ad2
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="localization"></a>當地語系化
 
@@ -32,7 +32,7 @@ _Xamarin.Forms 應用程式可以使用.NET 資源檔來當地語系化。_
 
 TodoLocalized 範例包括[共用專案示範](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized/SharedProject/)不過由於建置系統的限制資源檔不會收到 **.designer.cs**產生的檔案而中斷存取的能力強型別程式碼中的已翻譯的字串。
 
-使用 Xamarin.Forms PCL 範本的專案與本文件其餘內容。
+使用 Xamarin.Forms.NET 標準程式庫範本的專案與本文件其餘內容。
 
 ## <a name="globalizing-xamarinforms-code"></a>全球化 Xamarin.Forms 程式碼
 
@@ -46,7 +46,7 @@ TodoLocalized 範例包括[共用專案示範](https://github.com/xamarin/xamari
 
 ### <a name="adding-resources"></a>將資源加入
 
-全球化 Xamarin.Forms PCL 應用程式的第一個步驟加入將用於儲存應用程式中所使用的所有文字的 RESX 資源檔。 我們需要加入 RESX 檔案包含預設的文字，然後再加入其他 RESX 檔案，我們想要支援每種語言。
+全球化 Xamarin.Forms.NET 標準的程式庫應用程式的第一個步驟加入將用於儲存應用程式中所使用的所有文字的 RESX 資源檔。 我們需要加入 RESX 檔案包含預設的文字，然後再加入其他 RESX 檔案，我們想要支援每種語言。
 
 #### <a name="base-language-resource"></a>基底語言資源
 
@@ -98,7 +98,7 @@ TodoLocalized 範例包括[共用專案示範](https://github.com/xamarin/xamari
 
 -----
 
-這項變更是選擇性的而且僅在需要如果您想要參考多個不同的組件的當地語系化的字串 （例如，如果您的程式碼 RESX 檔案置於不同的組件中）。 本主題的範例會保留字串`internal`因為其定義中使用這些相同的 Xamarin.Forms PCL 組件。
+這項變更是選擇性的而且僅在需要如果您想要參考多個不同的組件的當地語系化的字串 （例如，如果您的程式碼 RESX 檔案置於不同的組件中）。 本主題的範例會保留字串`internal`因為其定義位於相同 Xamarin.Forms.NET 標準程式庫的組件使用的位置。
 
 您只需要; 如上所示，在基底的 RESX 檔案上設定自訂的工具您不需要設定*任何*下列各節中討論的特定語言 RESX 檔案的建置工具。
 
@@ -559,7 +559,7 @@ namespace UsingResxLocalization.Android
 
 ##### <a name="assemblyinfocs"></a>AssemblyInfo.cs
 
-展開 可攜式類別程式庫 (PCL) 專案中的 屬性 節點，然後按兩下**AssemblyInfo.cs**檔案。 若要設定為英文的中性資源組件語言檔案中加入下行：
+展開 .NET 標準程式庫專案中的 屬性 節點，然後按兩下**AssemblyInfo.cs**檔案。 若要設定為英文的中性資源組件語言檔案中加入下行：
 
 ```csharp
 [assembly: NeutralResourcesLanguage("en")]
