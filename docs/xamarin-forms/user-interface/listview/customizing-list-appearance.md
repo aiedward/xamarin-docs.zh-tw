@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: f1f0bb0ce282479a7b185257880244863bb67a60
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 26a3203bff9b65ec8063b513bb576eed5936892b
+ms.sourcegitcommit: c5bb1045b2f4607dafe3101ad1ea6ade23e44342
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="list-appearance"></a>清單外觀
 
@@ -151,7 +151,7 @@ x:Class="DemoListView.GroupingViewPage">
                     DetailColor="#503026" />
                 </DataTemplate>
             </ListView.GroupHeaderTemplate>
-            <!-- End Group Header Customization
+            <!-- End Group Header Customization -->
         </ListView>
     </ContentPage.Content>
 </ContentPage>

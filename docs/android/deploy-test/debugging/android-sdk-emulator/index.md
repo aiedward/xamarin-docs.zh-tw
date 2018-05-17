@@ -1,21 +1,21 @@
 ---
-title: Android SDK Emulator
-description: 本指南將說明如何搭配 Visual Studio 使用「Google Android SDK 模擬器」。
+title: Google Android 模擬器
+description: 本指南將說明如何搭配 Visual Studio 使用 Google Android 模擬器。
 ms.prod: xamarin
 ms.assetid: 8913bb90-1340-409d-b7bb-71a06914923a
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: bdae9f2189f91a6768419fd930a4ad5ce4b6e0ad
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: aca71284c7d51936ce2addf143edb9980d9536fc
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="android-sdk-emulator"></a>Android SDK Emulator
+# <a name="google-android-emulator"></a>Google Android 模擬器
 
-本指南將說明如何搭配 Visual Studio 使用「Google Android SDK 模擬器」。
+_本指南將說明如何搭配 Visual Studio 使用 Google Android 模擬器。_
 
 
 ## <a name="overview"></a>總覽
@@ -27,13 +27,13 @@ Google Android SDK Android 模擬器可在各種不同的組態中執行，以�
 
 ### <a name="running-the-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorrunning-the-emulatormd"></a>[正在執行模擬器](~/android/deploy-test/debugging/android-sdk-emulator/running-the-emulator.md)
 
-如何從 Visual Studio 啟動「Android SDK 模擬器」。
+如何從 Visual Studio 啟動 Google Android 模擬器。
 
 ### <a name="troubleshootingandroiddeploy-testdebuggingandroid-sdk-emulatortroubleshootingmd"></a>[疑難排解](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md)
 
-如何識別及解決常見的「Android SDK 模擬器」問題。
+如何識別及解決常見的 Google Android 模擬器問題。
 
-如需有關設定「Android SDK 模擬器」及建立新虛擬裝置的資訊，請參閱 [Android 模擬器設定](~/android/get-started/installation/android-emulator/index.md)。
+如需設定 Google Android 模擬器及建立新虛擬裝置的資訊，請參閱 [Android 模擬器設定](~/android/get-started/installation/android-emulator/index.md)。
 
 
 

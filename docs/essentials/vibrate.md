@@ -5,11 +5,11 @@ ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 53271f3cee06f33cea4fa0bd28d3cff1baf0cd3e
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 68b064d9824a82ea733c7c8bef0c2d43f0a04283
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-vibration"></a>Xamarin.Essentials 震動
 
@@ -39,7 +39,7 @@ Vibrate 權限是必要的而且必須設定 Android 專案中。 這可以透�
 <uses-permission android:name="android.permission.VIBRATE" />
 ```
 
-或 Anroid 專案上按一下滑鼠右鍵，然後開啟專案的屬性。 在下**Android 資訊清單**尋找**必要的權限：**區域，然後核取**VIBRATE**權限。 這會自動更新**AndroidManifest.xml**檔案。
+或 Anroid 專案上按一下滑鼠右鍵，然後開啟專案的屬性。 在下**Android 資訊清單**尋找**必要的權限：** 區域，然後核取**VIBRATE**權限。 這會自動更新**AndroidManifest.xml**檔案。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -107,5 +107,5 @@ catch (Exception ex)
 
 ## <a name="api"></a>API
 
-- [震動原始程式碼](https://github.com/xamarin/Essentials/tree/master/Essentials/Vibration)
+- [震動原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Vibration)
 - [震動 API 文件](xref:Xamarin.Essentials.Vibration)

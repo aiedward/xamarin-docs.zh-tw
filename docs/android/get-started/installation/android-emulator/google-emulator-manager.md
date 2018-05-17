@@ -7,15 +7,15 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: a399aa1c314f1e93377a7831b430e563d9fd1b13
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c42ebdca44e47e29ac74a263f0d11d4d4c120586
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="google-emulator-manager"></a>Google 模擬器管理員
 
-當您確認已啟用硬體加速之後 (如 [Android Emulator 硬體加速](~/android/get-started/installation/android-emulator/hardware-acceleration.md)中所述)，下一個步驟是建立要用於測試應用程式和針對應用程式進行偵錯的虛擬裝置。 您可以使用舊版 Google 模擬器管理員 (也稱為「Android 虛擬裝置 (AVD) 管理員」)，來建立供 Android SDK 模擬器使用的虛擬裝置。
+當您確認已啟用硬體加速之後 (如 [Android Emulator 硬體加速](~/android/get-started/installation/android-emulator/hardware-acceleration.md)中所述)，下一個步驟是建立要用於測試應用程式和針對應用程式進行偵錯的虛擬裝置。 您可以使用舊版 Google 模擬器管理員 (也稱為「Android 虛擬裝置 (AVD) 管理員」)，來建立供 Google Android 模擬器使用的虛擬裝置。
 
 > [!NOTE]
 > 如果您的目標是 Android 8.0 Oreo，則必須使用 [Xamarin Android 裝置管理員](~/android/get-started/installation/android-emulator/xamarin-device-manager.md)來建立和設定虛擬裝置。

@@ -81,8 +81,6 @@
 #### [GridLayout](user-interface/layouts/grid-layout.md)
 #### [索引標籤式版面配置](user-interface/layouts/tab-layout/index.md)
 ##### [使用 ActionBar 的瀏覽索引標籤](user-interface/layouts/tab-layout/with-action-bar.md)
-##### [TabHost 概觀](user-interface/layouts/tab-layout/tab-host.md)
-##### [使用 TabHost 建立索引標籤式 UI](user-interface/layouts/tab-layout/creating-a-tabbed-ui.md)
 ### [控制項](user-interface/controls/index.md)
 #### [ActionBar](user-interface/controls/action-bar.md)
 #### [自動完成](user-interface/controls/auto-complete.md)

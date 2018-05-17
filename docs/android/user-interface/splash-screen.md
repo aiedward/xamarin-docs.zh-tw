@@ -6,12 +6,12 @@ ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: f34a3ee44b604bf0b82faf77769f3c2844e6460f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
-ms.translationtype: MT
+ms.date: 05/11/2018
+ms.openlocfilehash: 431cc359f4191ab2b247b3cacf0f54c3ba44cd57
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="splash-screen"></a>啟動顯示畫面
 
@@ -152,6 +152,74 @@ public class MainActivity : AppCompatActivity
     // Code omitted for brevity
 }
 ```
+
+## <a name="landscape-mode"></a>橫向模式
+
+在先前步驟中實作的啟動顯示畫面會正確顯示在縱向或橫向模式。 不過，在某些情況下就需要有個別的啟動顯示畫面縱向或橫向模式 （例如，如果開頭顯示畫面影像是全螢幕）。
+
+若要新增橫向模式的啟動顯示畫面，請使用下列步驟：
+
+1. 在**資源/drawable**資料夾中，加入您想要使用的啟動顯示畫面影像的橫向版本。 在此範例中， **splash_logo_land.png**橫向版本 （它會使用黑色字母，而不是藍色） 的上述範例中所使用的標誌。
+
+2. 中**資源/drawable**資料夾中，建立橫向版本`layer-list`drawable，先前所定義 (例如， **splash_screen_land.xml**)。 這個檔案中設定的點陣圖路徑橫向版本的啟動顯示畫面影像。 在下列範例中， **splash_screen_land.xml**使用**splash_logo_land.png**:
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+      <item>
+        <color android:color="@color/splash_background"/>
+      </item>
+      <item>
+        <bitmap
+            android:src="@drawable/splash_logo_land"
+            android:tileMode="disabled"
+            android:gravity="center"/>
+      </item>
+    </layer-list>
+
+    ```
+
+3.  建立**資源/值-土地**若不存在的資料夾。
+
+4.  將檔案加入**colors.xml**和**style.xml**至**值土地**(這些可以複製和修改從現有的**values/colors.xml**和**values/style.xml**檔案)。
+
+5.  修改**值-土地/style.xml**使其使用的 drawable 橫向版本`windowBackground`。 在此範例中， **splash_screen_land.xml**用：
+
+    ```xml
+    <resources>
+      <style name="MyTheme.Base" parent="Theme.AppCompat.Light">
+      </style>
+        <style name="MyTheme" parent="MyTheme.Base">
+      </style>
+      <style name="MyTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen_land</item>
+        <item name="android:windowNoTitle">true</item>  
+        <item name="android:windowFullscreen">true</item>  
+        <item name="android:windowContentOverlay">@null</item>  
+        <item name="android:windowActionBar">true</item>  
+      </style>
+    </resources>
+    ```
+
+6.  修改**值-土地/colors.xml**來設定您想要使用的啟動顯示畫面橫向版本的色彩。 在此範例中，開頭顯示畫面背景色彩變更為黃色橫向模式：
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+      <color name="primary">#2196F3</color>
+      <color name="primaryDark">#1976D2</color>
+      <color name="accent">#FFC107</color>
+      <color name="window_background">#F5F5F5</color>
+      <color name="splash_background">#FFFF00</color>
+    </resources>
+    ```
+
+7.  建置並再次執行應用程式。 旋轉裝置時仍會顯示啟動顯示畫面橫向模式。 啟動顯示畫面會變更為橫向版本：
+
+    [![旋轉的橫向模式來啟動顯示畫面](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
+
+
+請注意，橫向模式啟動顯示畫面將永遠不提供順暢的體驗。 根據預設，Android 直向模式中的應用程式會啟動，並轉換以橫向模式，即使裝置已在橫向模式。 如此一來，如果應用程式啟動時以橫向模式的裝置時，裝置短暫顯示縱向啟動顯示畫面，並從直向旋轉橫印啟動顯示畫面以動畫方式顯示。 不幸的是，這項初始直向-橫向轉換發生時也`ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape`指定在啟動顯示活動的旗標。 若要解決這個限制，最好是在縱向或橫向模式中正確建立呈現單一的啟動顯示畫面影像。
 
 
 ## <a name="summary"></a>總結

@@ -5,11 +5,11 @@ ms.assetid: 81A757F2-6F2A-458F-B9BE-770ADEBFAB58
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 5baeee03626ba659ac7e5c06be40039476a67e08
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 1f466e01d9b1e48849e60a364cf1d49d9cbdcb37
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-sms"></a>Xamarin.Essentials SMS
 
@@ -51,5 +51,5 @@ public class SmsTest
 
 ## <a name="api"></a>API
 
-- [Sms 來源的程式碼](https://github.com/xamarin/Essentials/tree/master/Essentials/Sms)
+- [Sms 來源的程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Sms)
 - [Sms API 文件](xref:Xamarin.Essentials.Sms)

@@ -5,11 +5,11 @@ ms.assetid: 6B67C114-315E-4199-AA72-3F90E85A4909
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 7175362dcb7f85746ea85447936d7fe3e2fd026b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: f7e6a3d6933ed1fce7522fdbb8102e5100bd1589
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-screen-lock"></a>Xamarin.Essentials 螢幕鎖定
 
@@ -35,12 +35,12 @@ public class ScreenLockTest
         if (ScreenLock.IsMonitoring)
             ScreenLock.RequestActive();
         else
-            ScreenLock.RequestRelease;
+            ScreenLock.RequestRelease();
     }
 }
 ```
 
 ## <a name="api"></a>API
 
-- [畫面上鎖定原始碼](https://github.com/xamarin/Essentials/tree/master/Essentials/ScreenLock)
+- [畫面上鎖定原始碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/ScreenLock)
 - [螢幕鎖定 API 文件](xref:Xamarin.Essentials.ScreenLock)

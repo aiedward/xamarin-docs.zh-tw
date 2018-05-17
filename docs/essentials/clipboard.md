@@ -5,11 +5,11 @@ ms.assetid: C52AE99A-0FB3-425D-9106-3DA5777FEFA0
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 44ba8090851b65327682b3d290d58fb23bb8aae4
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 67a0218325918b57e5ed2618b57d52d3fe3ee820
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials 剪貼簿
 
@@ -45,5 +45,5 @@ var text = await Clipboard.GetTextAsync();
 
 ## <a name="api"></a>API
 
-- [剪貼簿原始程式碼](https://github.com/xamarin/Essentials/tree/master/Essentials/Clipboard)
+- [剪貼簿原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Clipboard)
 - [剪貼簿應用程式開發介面文件](xref:Xamarin.Essentials.Clipboard)

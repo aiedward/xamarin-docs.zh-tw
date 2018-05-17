@@ -6,12 +6,12 @@ ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 07/15/2017
-ms.openlocfilehash: e04ebd041c64d474fafe12c387f558e740773c98
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/06/2018
+ms.openlocfilehash: 5265ee366c7e3c0e79e54d320d3d6eb57c2fd92d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="device-provisioning"></a>裝置佈建
 
@@ -47,23 +47,14 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 
 <a name="Provisioning_Profile" />
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
 ## <a name="provisioning-your-device"></a>佈建您的裝置
 
-使用 Visual Studio for Mac 來佈建 iOS 裝置的方式有兩種：
+佈建 iOS 裝置的方式有兩種：
 
-* **自動 (建議使用)** – 在 Info.plist 檔案中選取 [Automatically manage signing] \(自動管理簽署\) 選項，讓 Visual Studio for Mac 自動建立和管理您的「簽署身分識別」、「應用程式識別碼」及「佈建設定檔」。  如需有關如何自動管理佈建的資訊，請參閱[自動化佈建](automatic-provisioning.md)指南。 這是建議的 iOS 裝置佈建方式。
+* **自動 (建議使用)** – 在您的專案中選取 [自動化佈建] 配置，讓 Visual Studio 自動建立和管理您的簽署身分識別、應用程式識別碼及佈建設定檔。 如需有關如何自動管理佈建的資訊，請參閱[自動化佈建](automatic-provisioning.md)指南。 這是建議的 iOS 裝置佈建方式。
 
 * **手動** – 可以透過 Apple Developer Portal (Apple 開發人員入口網站) 來建立和管理「簽署身分識別」、「應用程式識別碼」及「佈建設定檔」，如[手動佈建](manual-provisioning.md)指南所述。 您可以依照 [Apple 帳戶管理](~/cross-platform/macios/apple-account-management.md)指南所述，管理這些成品。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-## <a name="provisioning-your-device"></a>佈建您的裝置
-
-如需有關如何設定 Apple 裝置以進行部署及在 Windows 上使用 Visual Studio 來部署應用程式的步驟，建議您依照[手動佈建](manual-provisioning.md)指南中的詳細步驟進行操作。
-
------
 
 <a name="appservices" />
 
@@ -74,9 +65,6 @@ Apple 提供一組可針對 Xamarin.iOS 應用程式啟用的精選特別「應�
 * 建立具有所需應用程式服務的 App ID (應用程式識別碼)。
 * 建立包含此 App ID (應用程式識別碼) 的新[佈建設定檔](#Provisioning_Profile)。
 * 在 Xamarin.iOS 專案中設定權利
-
-> [!NOTE]
-> 目前，在 Visual Studio for Mac 中建立的佈建設定檔將不會考慮於您專案中選取的權利 (Entitlements.plist)。 在未來的 IDE 版本中，將會新增這項功能。 如果您需要使用「應用程式服務」，建議您依照[手動佈建](manual-provisioning.md)指南中的指示進行操作。
 
 ## <a name="related-links"></a>相關連結
 

@@ -5,11 +5,11 @@ ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 41e0b704715b648e642f4a4c99554ff3f085a39a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: f6ab63c44307fca860ccb73744b35c006f25a9ed
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-version-tracking"></a>追蹤 Xamarin.Essentials 版本
 
@@ -77,5 +77,5 @@ var buildHistory = VersionTracking.BuildHistory;
 
 ## <a name="api"></a>API
 
-- [版本追蹤程式碼](https://github.com/xamarin/Essentials/tree/master/Essentials/VersionTracking)
+- [版本追蹤程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
 - [版本追蹤 API 文件](xref:Xamarin.Essentials.VersionTracking)

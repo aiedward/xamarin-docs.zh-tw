@@ -5,11 +5,11 @@ ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 570fb6cf3eadfbbc7e189f875498d3cea0bc1514
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 05701ff2bc9fceac8a0a490989e52d0327079d46
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials 裝置顯示的資訊
 
@@ -70,5 +70,5 @@ public class ScreenMetricsTest
 
 ## <a name="api"></a>API
 
-- [DeviceDisplay 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Essentials/DeviceDisplay)
+- [DeviceDisplay 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceDisplay)
 - [DeviceDisplay API 文件](xref:Xamarin.Essentials.DeviceDisplay)

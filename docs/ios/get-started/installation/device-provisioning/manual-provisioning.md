@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: 3f321366b3afc814aef1c586af2707b1caeef4c7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f604d41990a7a592a3d5207e7a12075c35ae661f
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="manual-provisioning"></a>手動佈建
 
@@ -254,7 +254,10 @@ Apple 提供一組可針對 Xamarin.iOS 應用程式啟用的精選特別「應�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. 將裝置插入 Mac。
+> [!IMPORTANT]
+> 在您開始之前，請確定選取 [專案] > [佈建內容] 中的 [手動佈建]。
+
+1. 將裝置插入 Mac 組建主機。
 2. 在專案的 **Info.plist** 中，確定「套件組合識別碼」與「應用程式識別碼」相符：
 
   ![](manual-provisioning-images/servicevs01.png "輸入識別碼")

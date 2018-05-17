@@ -5,34 +5,16 @@ ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: topgenorth
 ms.author: toopge
-ms.date: 05/10/2017
-ms.openlocfilehash: 2e2a3e80c121688f9a8bfff0afe4184f19fc6619
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/14/2017
+ms.openlocfilehash: 3d4d34c6945387f5878ea708faf630d2545a750e
+ms.sourcegitcommit: b706fbe05344f7201fbe8f82d9dbbceb66060637
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Player 即時應用程式
 
 ![預覽功能](~/media/shared/preview.png)
-
-## <a name="get-the-app"></a>取得應用程式
-
-# <a name="androidtabandroid"></a>[Android](#tab/android)
-
-Xamarin Live Player for Android 從 Google Play 有：
-
-[![Google Play 上提供](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
-
-適用於 Android 裝置不含 Google Play Xamarin Live 播放程式是可透過[HockeyApp](https://aka.ms/xlp-hockeyapp)發佈。 此外，早期預覽中建置 Android 可以直接從 Google Play 安裝藉由選擇在[開啟測試計劃](https://play.google.com/apps/testing/com.xamarin.live)
-
-# <a name="iostabios"></a>[iOS](#tab/ios)
-
-我們鼓勵使用者加入[Xamarin Live 播放器應用程式_iOS 預覽_](https://aka.ms/liveplayeralpha)來享受 TestFlight 透過最新的增強功能的快速存取。
-
------
-
-## <a name="using-the-app"></a>使用應用程式
 
 一旦您已安裝應用程式在電話上，遵循[安裝指示](~/tools/live-player/install.md)連接到您的電腦。 請嘗試[範例應用程式](~/tools/live-player/samples.md)，讓它運作。
 

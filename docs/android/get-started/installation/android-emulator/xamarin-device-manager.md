@@ -1,41 +1,36 @@
 ---
 title: 使用 Xamarin Android 裝置管理員管理 Android 模擬器
-description: Xamarin Android 裝置管理員目前處於預覽狀態，會取代 Google 的舊版裝置管理員。 本指南將說明如何使用 Xamarin Android 裝置管理員，來建立和設定可模擬 Android 裝置的 Android 虛擬裝置 (AVD)。 您可以使用這些虛擬裝置來執行和測試應用程式，而不必依賴實體裝置。
+description: 本指南將說明如何使用 Xamarin Android 裝置管理員，來建立和設定可模擬 Android 裝置的 Android 虛擬裝置 (AVD)。 您可以使用這些虛擬裝置來執行和測試應用程式，而不必依賴實體裝置。
 ms.prod: xamarin
 ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/26/2018
-ms.openlocfilehash: 2b41c23bb880ca6150fa5f3f487eb00d8a7a19d8
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.date: 05/03/2018
+ms.openlocfilehash: 420ffc905659c6fd6245dc8cc3bdae4cb9401a63
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Xamarin Android 裝置管理員
 
-_Xamarin Android 裝置管理員 (目前處於預覽狀態) 會取代 Google 的舊版裝置管理員。本指南將說明如何使用 Xamarin Android 裝置管理員，來建立和設定可模擬 Android 裝置的 Android 虛擬裝置 (AVD)。您可以使用這些虛擬裝置來執行和測試應用程式，而不必依賴實體裝置。_
+_本指南將說明如何使用 Xamarin Android 裝置管理員，來建立和設定可模擬 Android 裝置的 Android 虛擬裝置 (AVD)。您可以使用這些虛擬裝置來執行和測試應用程式，而不必依賴實體裝置。_
 
-![目前處於預覽狀態](~/media/shared/preview.png)
- 
 ## <a name="overview"></a>總覽
 
-當您確認已啟用硬體加速之後 (如[硬體加速](~/android/get-started/installation/android-emulator/hardware-acceleration.md)中所述)，下一個步驟就是建立要用於測試和偵錯應用程式的虛擬裝置。 您可以使用 Xamarin Android 裝置管理員，來建立可供 Android SDK 模擬器使用的虛擬裝置。
-
-為什麼您要使用 Xamarin Android 裝置管理員，而不是 [Google 裝置管理員](~/android/get-started/installation/android-emulator/google-emulator-manager.md)？
-從 Android SDK 工具 26.0.1 版開始，Google 已移除對其 UI 型 AVD 和 SDK 管理員的支援，轉而支援其新的 CLI (命令列介面) 工具。 由於此項變更，當您更新為 Android SDK 工具 26.0.1 和更新版本 (Android 8.0 Oreo 開發時所需的項目) 時，您必須使用 [Xamarin SDK Manager](~/android/get-started/installation/android-sdk.md) 和 Xamarin Android 裝置管理員。
+當您確認已啟用硬體加速之後 (如[硬體加速](~/android/get-started/installation/android-emulator/hardware-acceleration.md)中所述)，下一個步驟是使用 Xamarin Android Device Manager 建立要用於測試應用程式和針對應用程式進行偵錯的虛擬裝置。
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-本指南將說明如何安裝和使用適用於 Windows (或[適用於 Mac](?tabs=vsmac)) 之 Visual Studio 的 Xamarin Android 裝置管理員：
+本指南說明如何使用適用於 Windows (或[適用於 Mac](?tabs=vsmac)) 之 Visual Studio 的 Xamarin Android 裝置管理員：
 
 [![[裝置] 索引標籤中 Xamarin Android 裝置管理員的螢幕擷取畫面](xamarin-device-manager-images/win/01-devices-dialog-sml.png)](xamarin-device-manager-images/win/01-devices-dialog.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-本指南將說明如何安裝和使用適用於 Mac (或[適用於 Windows](?tabs=vswin)) 之 Visual Studio 的 Xamarin Android 裝置管理員：
+本指南說明如何使用適用於 Mac (或[適用於 Windows](?tabs=vswin)) 之 Visual Studio 的 Xamarin Android 裝置管理員：
 
 [![[裝置] 索引標籤中 Xamarin Android 裝置管理員的螢幕擷取畫面](xamarin-device-manager-images/mac/01-devices-dialog-sml.png)](xamarin-device-manager-images/mac/01-devices-dialog.png#lightbox)
 
@@ -48,7 +43,7 @@ Xamarin Studio 與 Xamarin Android 裝置管理員不相容。
 您會使用 Xamarin Android 裝置管理員，來建立和設定可在 [Android SDK 模擬器](~/android/deploy-test/debugging/android-sdk-emulator/index.md)中執行的「Android 虛擬裝置」(AVD)。
 每個 AVD 都是可模擬實體 Android 裝置的模擬器組態。 這讓您能夠在模擬不同實體 Android 裝置的各種組態中，執行並測試應用程式。 Xamarin Android 裝置管理員會取代 Google 的獨立 AVD Manager (已過時)。
 
-在本指南中，您將了解如何安裝並啟動 Android 裝置管理員。 您將了解如何建立、複製、自訂和啟動虛擬裝置。 本指南也會說明如何設定每個虛擬裝置的屬性 (例如，API 層級、CPU、記憶體和解析度)，來啟用/停用模擬的感應器 (例如，加速計、GPS、方向及光感應器)，並設定該虛擬裝置所使用的硬體加速類型。
+在本指南中，您會了解如何使用 Android Device Manager 建立、複製、自訂和啟動虛擬裝置。 本指南也會說明如何設定每個虛擬裝置的屬性 (例如，API 層級、CPU、記憶體和解析度)，來啟用/停用模擬的感應器 (例如，加速計、GPS、方向及光感應器)，並設定該虛擬裝置所使用的硬體加速類型。
 
 ## <a name="requirements"></a>需求
 
@@ -56,74 +51,37 @@ Xamarin Studio 與 Xamarin Android 裝置管理員不相容。
 
 若要使用 Xamarin Android 裝置管理員，您需要下列項目：
 
-- 需要 Visual Studio 2017 15.5 版或更新版本。 支援 Visual Studio Community Edition 和更新版本。
+- 需要 Visual Studio 2017 15.7 版或更新版本。 支援 Visual Studio Community Edition 和更新版本。
 
-- Xamarin for Visual Studio 4.8 版或更新版本。 如需更新 Xamarin 的相關資訊，請參閱[變更更新通道](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/)。
+- Xamarin for Visual Studio 4.9 版或更新版本。 如需更新 Xamarin 的相關資訊，請參閱[變更更新通道](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/)。
 
-- 適用於 Windows 的最新版 [Xamarin 裝置管理員安裝程式](https://go.microsoft.com/fwlink/?linkid=865528)。
-
-- **Android SDK** &ndash; 必須安裝 Android SDK (請參閱 [Android SDK 安裝](~/android/get-started/installation/android-sdk.md))，而且必須安裝 SDK 工具 26.0 版，如下一節中所述。 確定會將 Android SDK 安裝於下列位置 (如果尚未安裝)：**C:\\Program Files (x86)\\Android\\android-sdk**。
+- **Android SDK** &ndash; 必須安裝 Android SDK (請參閱 [Android SDK 安裝](~/android/get-started/installation/android-sdk.md))，而且必須安裝 SDK 工具 26.0 版或更新版本，如下一節中所述。 確定會將 Android SDK 安裝於下列位置 (如果尚未安裝)：**C:\\Program Files (x86)\\Android\\android-sdk**。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-- Visual Studio for Mac 7.4 或更新版本。
-
-- 適用於 macOS 的最新版 [Xamarin 裝置管理員安裝程式](https://go.microsoft.com/fwlink/?linkid=865527)。
+- Visual Studio for Mac 7.5 版或更新版本。
 
 - **Android SDK** &ndash; 必須透過 SDK 管理員安裝 Android SDK 8.0 (API 26) 或更新版本。
 
 -----
 
-## <a name="installing-the-device-manager"></a>安裝裝置管理員
-
-使用下列步驟來安裝 Xamarin Android 裝置管理員：
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-1. 下載適用於 Windows 的 [Xamarin 裝置管理員安裝程式](https://go.microsoft.com/fwlink/?linkid=865528)。
-
-2. 按兩下 **Xamarin.DeviceManager.msi**，並依照安裝指示進行： 
-
-    ![Xamarin Android 裝置管理員安裝精靈](xamarin-device-manager-images/win/30-installer.png)
-
-
-> [!NOTE]
-> 從 [Visual Studio 2017 Preview 5](https://www.visualstudio.com/vs/preview/) 開始，Android Device Manager 將會當成 VS2017 安裝程式的一部分來散發。 不需要下載個別安裝程式，即可使用 Visual Studio 2017 Preview 5 存取 Xamarin Android Device Manager。
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-1. 下載適用於 macOS 的 [Xamarin 裝置管理員安裝程式](https://go.microsoft.com/fwlink/?linkid=865527)。
-
-2. 按兩下 **AndroidDevices.pkg**，並依照安裝指示進行： 
-
-    [![Xamarin Android 裝置管理員安裝精靈](xamarin-device-manager-images/mac/30-installer-sml.png)](xamarin-device-manager-images/mac/30-installer.png#lightbox)
-
------
 ## <a name="launching-the-device-manager"></a>啟動裝置管理員
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-在 Visual Studio 15.6 Preview 3 和更新版本中，您可以從 [工具] 功能表啟動 Xamarin Android 裝置管理員。 如果您使用 Visual Studio 15.6 Preview 3 或更新版本，可按一下 [工具] > [Android Emulator 管理員] 來啟動裝置管理員：
+按一下 [工具] > [Android 模擬器管理員]，從 [工具] 功能表啟動 Xamarin Android Device Manager：
 
 [![正在從 [工具] 功能表啟動](xamarin-device-manager-images/win/04-tools-menu-sml.png)](xamarin-device-manager-images/win/04-tools-menu.png#lightbox)
 
-如果您使用舊版 Visual Studio，就必須從 Windows [開始] 功能表啟動 Xamarin Android 裝置管理員。
-
-![[開始] 功能表中的 Xamarin Android 裝置管理員](xamarin-device-manager-images/win/31-start-menu.png)
-
-以滑鼠右鍵按一下 [Xamarin Android 裝置管理員]，然後選取 [更多] > [以系統管理員身分執行]。 如果您在啟動時看到下列錯誤對話方塊，請參閱[疑難排解](#troubleshooting)一節來取得因應措施的指示：
+如果您在啟動時看到下列錯誤對話方塊，請參閱[疑難排解](#troubleshooting)一節來取得因應措施的指示：
 
 ![Android SDK 執行個體錯誤](xamarin-device-manager-images/win/32-sdk-error.png)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-在 Visual Studio for Mac 7.6 Preview 3 (目前處於 Alpha 色板) 或更新版本中，您可以藉由選取 [工具] > [模擬器管理員] 來啟動 Xamarin Android 裝置管理員：
+在 Visual Studio for Mac 中，選取 [工具] > [模擬器管理員] 來啟動 Xamarin Android Device Manager：
 
 [![正在從 [工具] 功能表啟動](xamarin-device-manager-images/mac/16-tools-menu-sml.png)](xamarin-device-manager-images/mac/16-tools-menu.png#lightbox)
-
-如果您使用舊版 Visual Studio for Mac，就必須個別啟動 Xamarin Android 裝置管理員。 在**應用程式**資料夾中找出 **Android 裝置**，然後按兩下以啟動它：
-
-[![Finder 中的 Xamarin Android 裝置管理員位置](xamarin-device-manager-images/mac/31-location-in-finder-sml.png)](xamarin-device-manager-images/mac/31-location-in-finder.png#lightbox)
 
 -----
 

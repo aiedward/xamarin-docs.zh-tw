@@ -5,17 +5,39 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: 24d1e29ba0203aaafc3e21533478f6c505cc09b3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: e64160a5579bffa8e9e9820db1a3ba39bdf7304e
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials 安全儲存體
 
 ![發行前版本的 NuGet](~/media/shared/pre-release.png)
 
 **SecureStorage**類別可協助安全地儲存簡單的索引鍵/值組。
+
+## <a name="getting-started"></a>快速入門
+
+若要存取**SecureStorage**功能，下列的特定平台安裝程式需要：
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+不需要其他設定。
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+在開發 iOS 模擬器上時，啟用**Keychain**權限和新增 keychain 存取群組的應用程式的配套識別碼。
+
+開啟**Entitlements.plist** iOS 專案，發現**Keychain**權利，將它啟用。 這會自動加入為群組的應用程式的識別項。
+
+在專案屬性中，在**iOS 套件組合簽署**設定**自訂權利**至**Entitlements.plist**。
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+不需要其他設定。
+
+-----
 
 ## <a name="using-secure-storage"></a>使用安全的儲存體
 
@@ -75,5 +97,5 @@ Encryped 值會儲存在`ApplicationData.Current.LocalSettings`，名稱為容�
 
 ## <a name="api"></a>API
 
-- [SecureStorage 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Essentials/SecureStorage)
+- [SecureStorage 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/SecureStorage)
 - [SecureStorage API 文件](xref:Xamarin.Essentials.SecureStorage)

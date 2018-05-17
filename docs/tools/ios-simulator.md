@@ -1,93 +1,66 @@
 ---
-title: 遠端 iOS 模擬器 （適用於 Windows)
-description: 在 Windows 上的 Visual Studio 中的測試及偵錯 iOS 應用程式
+title: 適用於 Windows 的遠端 iOS 模擬器
+description: 遠端 iOS 模擬器 for Windows 可讓您測試您的應用程式在 iOS 模擬器與 Visual Studio 2017 一起視窗中顯示。
 ms.prod: xamarin
 ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: topgenorth
 ms.author: toopge
-ms.date: 04/07/2017
-ms.openlocfilehash: 5a1408f6595bd1e2371cd1d0421f81a3a16a5cc3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/11/2018
+ms.openlocfilehash: b07cc24e63f4aa3ce4451e3bdb5819f1df1058c6
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
-# <a name="remoted-ios-simulator-for-windows"></a>遠端 iOS 模擬器 （適用於 Windows)
+# <a name="remoted-ios-simulator-for-windows"></a>適用於 Windows 的遠端 iOS 模擬器
 
-_在 Windows 上的 Visual Studio 中的測試及偵錯 iOS 應用程式_
+遠端 iOS 模擬器 for Windows 可讓您測試您的應用程式在 iOS 模擬器與 Visual Studio 2017 一起視窗中顯示。
 
 [![](ios-simulator-images/hero-sml.png "iOS 模擬器在 Windows 上執行")](ios-simulator-images/hero.png#lightbox)
 
-## <a name="download-and-install"></a>下載並安裝
+## <a name="getting-started"></a>使用者入門
 
-下載[installer](https://dl.xamarin.com/xamarin-simulator/Xamarin.Simulator.Installer.msi)並安裝 Windows 電腦上。 應該已安裝 for Xamarin visual Studio Tools。
+遠端 iOS 模擬器 for Windows 會自動安裝的 Visual Studio 2017 Xamarin 的一部分。 若要使用它，請遵循下列步驟：
 
-> [!NOTE]
-> 您必須安裝 Xamarin 與網路的 Mac，才能在 Visual Studio 使用遠端 iOS 模擬器。
+1. [建立 Mac 的主機配對 Visual 2017](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+2. 在 Visual Studio 2017，開始偵錯 iOS 或 tvOS 專案。 Windows 遠端 iOS 模擬器會出現在您的 Windows 電腦。
 
-## <a name="getting-started"></a>快速入門
+## <a name="simulator-window"></a>模擬器視窗
 
-若要使用遠端 iOS 模擬器：
+在模擬器 視窗頂端工具列包含有用的按鈕數目：
 
-1. 請確定 Visual Studio 啟動遠端 iOS 模擬器之前，至少一次連接到您的 Mac。
-2. 確保應用程式的 iOS 或 tvOS**啟始專案**並開始偵錯。
-
-您可以停用遠端 iOS 模擬器**工具 > 選項 > Xamarin > iOS 設定**取消核取方塊**遠端 windows 模擬器**如下所示：
-
-[![](ios-simulator-images/options-sml.png "核取方塊以使用模擬器")](ios-simulator-images/options.png#lightbox)
-
-IOS 模擬器，然後會開啟連接的 Mac 電腦上。 勾選此選項可開啟遠端 iOS 模擬器。
-
-## <a name="features"></a>功能
-
-在遠端 iOS 模擬器為您提供測試和偵錯 iOS 應用程式，完全由 Windows 上的 Visual Studio 模擬器上的方法。
-
-### <a name="simulator-window"></a>模擬器視窗
-
-視窗工具列包含數個按鈕與模擬器互動：
-
-- **家用**– 模擬裝置上的 [首頁] 按鈕。
-- **鎖定**– 鎖定的模擬器 （可以撥動解除鎖定）。
-- **螢幕擷取畫面**– 將模擬器的螢幕擷取畫面儲存至磁碟。
-- [**設定**](#settings) – 設定鍵盤和位置。
-- 其他[**選項**](#options) – 各種不同的模擬器選項可用，例如旋轉、 搖晃，或叫用在模擬器中的其他狀態。 有些選項模糊，當從出現在工具列上，或以滑鼠右鍵按一下視窗上的省略符號圖示就可以存取它們。
+- **家用**– 模擬 iOS 裝置上的 [首頁] 按鈕
+- **鎖定**– 鎖定模擬器 （撥動以解除鎖定）
+- **螢幕擷取畫面**– 儲存模擬器的螢幕擷取畫面
+- [**設定**](#settings) – 顯示鍵盤、 位置和其他設定
+- [**其他選項**](#other-options) – 會開啟不同的模擬器選項，例如旋轉和搖晃手勢
 
     [![](ios-simulator-images/maps-app-sml.png "iOS 模擬器對應範例")](ios-simulator-images/maps-app.png#lightbox)
 
+## <a name="settings"></a>設定
 
-### <a name="settings"></a>設定
-
-「 齒輪 」 圖示會開啟**設定**視窗：
+按一下工具列的齒輪圖示開啟**設定**視窗：
 
 [![](ios-simulator-images/settings-sml.png "iOS 模擬器設定")](ios-simulator-images/settings.png#lightbox)
 
-這可讓您啟用硬體鍵盤上的模擬器，並選擇哪些位置會回報給裝置 （包括靜態位置或其他移動的位置選項）。
+這些設定可讓您啟用硬體鍵盤，請選擇裝置必須的位置 （靜態和移動位置同時支援） 的報表，請啟用 Touch ID，以及重設內容及設定適用於模擬器。
 
+## <a name="other-options"></a>其他選項
 
-
-### <a name="other-options"></a>其他選項
-
-若要檢視所有可用的模擬器，例如旋轉、 觸發搖晃手勢，並重新啟動模擬器中的選項 [模擬器] 視窗中按一下滑鼠右鍵：
+工具列的省略符號按鈕會顯示其他選項，例如旋轉、 搖晃手勢，和重新開機。 這些相同的選項都可視為清單上按一下滑鼠右鍵在模擬器 視窗中的任何位置：
 
 [![](ios-simulator-images/more-sml.png "iOS 模擬器中的其他設定")](ios-simulator-images/more.png#lightbox)
 
-### <a name="touchscreen-support"></a>觸控螢幕支援
+## <a name="touchscreen-support"></a>觸控螢幕支援
 
-大多數最新型的 Windows 電腦有觸控式螢幕，並遠端 iOS 模擬器可讓您接觸模擬器視窗來測試 iOS 應用程式中的使用者互動。
+大多數最新型的 Windows 電腦有觸控式螢幕。 由於遠端 iOS 模擬器 for Windows 支援觸控的互動，您可以測試您的應用程式相同的縮小、 撥動和您使用實體 iOS 裝置的多重指觸控手勢。
 
-這包括就撥動，以及多個單指觸控手勢-先前無法只可輕鬆地測試實體裝置的項目。
+同樣地，遠端 iOS 模擬器 for Windows 會將 Windows 手寫筆輸入視為 Apple 鉛筆輸入。
 
-Windows 中的手寫筆支援也會轉譯到 Apple 鉛筆模擬器上的輸入。
+## <a name="disabling-the-remoted-ios-simulator-for-windows"></a>停用遠端 iOS 模擬器 for Windows
 
-<!--
-<a name="knownissues" />
+若要停用遠端 iOS 模擬器的 Windows，請導覽至**工具 > 選項 > Xamarin > iOS 設定**並取消核取**遠端 windows 模擬器**。
 
-# Known Issues
+[![](ios-simulator-images/options-sml.png "核取方塊以使用模擬器")](ios-simulator-images/options.png#lightbox)
 
- - Apple Watch devices may show in the Visual Studio device list, but are not yet supported.
- - Launching in **Release** mode may also start Apple’s simulator on the networked Mac.
- - Closing the remote iOS Simulator on Windows will not immediately stop debugging in Visual Studio. Stop debugging manually from the menu or the red button.
- - Opening too many different simulators simultaneously will produce unexpected results.
- - Exception of type `Foundation.NSErrorException` may be thrown while launching Simulators. Workaround is to kill csproxy (server process) on the Mac host and re-deploy to the simulator.
- - Performance may be slower when using Xcode 8
--->
+停用這個選項，偵錯會開啟連接的 Mac 上的 iOS 模擬器建置的主機。

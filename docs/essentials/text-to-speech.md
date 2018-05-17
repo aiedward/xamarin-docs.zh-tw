@@ -5,17 +5,17 @@ ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 2fcb97eafda15a73e2b7e5441f1d6c94f75af0ce
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b2c9ed50c48aee6343a20ddb28c49e1bd05d2153
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials 文字轉換語音
 
 ![發行前版本的 NuGet](~/media/shared/pre-release.png)
 
-**TextToSpeech**類別可讓應用程式利用內建文字轉換語音引擎從裝置和查詢可用的語言引擎可支援以尋求後的文字。
+**TextToSpeech**類別可讓應用程式可以利用內建文字轉換語音引擎從裝置和查詢可用的語言引擎可支援以尋求後的文字。
 
 ## <a name="using-text-to-speech"></a>使用文字轉換語音
 
@@ -45,7 +45,7 @@ public void SpeakNowDefaultSettings2()
 }
 ```
 
-若要停止 utterance 一開始，這個方法會採用中選擇性的 CancellationToken。 
+若要停止 utterance，一旦開始之後，這個方法會採用中選擇性的 CancellationToken。 
 ```csharp
 CancellationTokenSource cts;
 public async Task SpeakNowDefaultSettings()
@@ -115,7 +115,7 @@ public async Task SpeakNow()
 
 ### <a name="speech-locales"></a>語音地區設定
 
-每個平台提供了多重語言和重音符號後的文字的讀出的地區設定。 每個平台都有不同的代碼和方式，指定這個項目，這也是為什麼 Essentials 提供跨平台`Locale`類別和方法來查詢它們與`GetLocalesAsync`。
+每個平台提供了多重語言和重音符號後的文字的讀出的地區設定。 每個平台都有不同的程式碼與方式來指定這個項目，這也是為什麼 Essentials 提供跨平台`Locale`類別和方法來查詢它們與`GetLocalesAsync`。
 
 ```csharp
 public async Task SpeakNow()
@@ -143,5 +143,5 @@ public async Task SpeakNow()
 
 ## <a name="api"></a>API
 
-- [TextToSpeech 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Essentials/TextToSpeech)
+- [TextToSpeech 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/TextToSpeech)
 - [TextToSpeech API 文件](xref:Xamarin.Essentials.TextToSpeech)

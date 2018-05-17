@@ -5,12 +5,12 @@ ms.prod: xamarin
 ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
 author: topgenorth
 ms.author: toopge
-ms.date: 11/22/2017
-ms.openlocfilehash: 0f343e253a57de33d7e19e648862e6d11fa5af5f
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/14/2018
+ms.openlocfilehash: bbc935c2770fab1a853bb12fba2b7eb0283bb258
+ms.sourcegitcommit: b706fbe05344f7201fbe8f82d9dbbceb66060637
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Xamarin Player 即時安裝程式
 
@@ -30,7 +30,9 @@ Xamarin Live Player for Android 從 Google Play 有：
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-我們鼓勵使用者加入[Xamarin Live 播放器應用程式_iOS 預覽_](https://aka.ms/liveplayeralpha)來享受 TestFlight 透過最新的增強功能的快速存取。
+我們鼓勵使用者加入 Xamarin Live 播放器應用程式 iOS 來享受快速存取最新的增強功能，透過 TestFlight 預覽。 藉由存取 Xamarin Live Player，您要同意 Microsoft[使用條款](https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx) & [隱私權聲明](https://privacy.microsoft.com/en-us/privacystatement)。 Microsoft 得使用您的連絡資訊提供更新和有關 Xamarin 的特殊優惠和其他 Microsoft 產品和服務。 您可以隨時取消訂閱。
+
+若要存取 Xamarin Live Player iOS 預覽，請先完成[TestFlight 註冊資訊](https://fastring.xamarinliveplayer.com/)之後, 您會收到一封電子郵件 TestFlight 有關如何安裝 Xamarin Live Player iOS 預覽。
 
 -----
 

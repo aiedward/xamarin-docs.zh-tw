@@ -6,12 +6,12 @@ ms.assetid: 4917273d-32f9-401a-a52c-5cfb53a2170d
 ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
-ms.date: 05/08/2018
-ms.openlocfilehash: 96054505af44c5d3e198c2b9e7e7cb30d39b02b1
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/11/2018
+ms.openlocfilehash: ca359e5ea700ef09249a2d8a299b6604f91e9149
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarin-live-reload"></a>Xamarin 即時重新載入
 
@@ -53,7 +53,7 @@ Xamarin 即時重新載入可讓您**變更 XAML 看到其反映即時，而不�
     
     b. **共用的專案**– 安裝**Xamarin.LiveReload** NuGet 在所有平台專案 （例如 Android、 iOS、 UWP，等）。 請確認**套件來源**設**所有**。
 
-![新增 Xamarin 即時重新載入 NuGet 使用 NuGet 封裝管理員](images/addlivereloadnuget.png)
+    [![新增 Xamarin 即時重新載入 NuGet 使用 NuGet 封裝管理員](images/addlivereloadnuget.w157-sml.png)](images/addlivereloadnuget.w157.png#lightbox)
 
 3. 新增`LiveReload.Init();`建構函式中`Application`類別，如下列程式碼片段所示：
 
@@ -117,7 +117,7 @@ public partial class App : Application
 
 * 只支援 Visual Studio 中。
 * 重新載入整個應用程式的資源 (也就是**App.xaml**或共用資源字典)，就會重設應用程式瀏覽。 這將在下一步的預覽版本中修正。
-* 當偵錯 UWP 可能會造成執行階段當機，請編輯 XAML。 因應措施： 使用**啟動但不偵錯 （Ctrl + F5）**而不是**開始偵錯 (F5)**。
+* 當偵錯 UWP 可能會造成執行階段當機，請編輯 XAML。 因應措施： 使用**啟動但不偵錯 （Ctrl + F5）** 而不是**開始偵錯 (F5)**。
 
 ## <a name="troubleshooting"></a>疑難排解
 

@@ -5,11 +5,11 @@ ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: baec3bdd89cb98d7595a524b6b9c4263ca18aa41
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b03ec1330aff1210350adf2600c63d7d84bc1125
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-data-transfer"></a>Xamarin.Essentials 資料傳輸
 
@@ -67,5 +67,5 @@ public class DataTransferTest
 
 ## <a name="api"></a>API
 
-- [資料傳輸的原始程式碼](https://github.com/xamarin/Essentials/tree/master/Essentials/DataTransfer)
+- [資料傳輸的原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DataTransfer)
 - [資料傳輸的 API 文件](xref:Xamarin.Essentials.DataTransfer)

@@ -7,22 +7,26 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
-ms.openlocfilehash: 020a5a2182458e759626b9bdbf45b62b6e13d71a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 31660ff1255878dbae15bda601da8e628aabd459
+ms.sourcegitcommit: c5bb1045b2f4607dafe3101ad1ea6ade23e44342
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>更新至 NuGet 元件參考
 
-> [!NOTE]
+> [!IMPORTANT]
+> 從 2018 月 15，開始，已停用元件存放區 (此終止原本[宣布](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/)在 2017 年 11 月)。
+>
 > Xamarin 元件不再支援在 Visual Studio 中，並應取代為 NuGet 封裝。 請遵循下列指示手動從專案中移除元件參考。
 
 新增 NuGet 封裝上的這些指示，請參閱[Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package)或[Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。
 
+一份熱門 Xamarin[外掛程式和文件庫](https://github.com/xamarin/XamarinComponents/blob/master/README.md)來協助尋找 NuGet pacakges 為無法使用元件的替代方案。
+
 ## <a name="manually-removing-component-references"></a>手動移除元件參考
 
-在 11 月版 2017年[宣布](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/)會停止 Xamarin 元件存放區。 若要移轉的元件 sunsetting 努力，15.6 版本的 Visual Studio 和 7.4 版的 Visual Studio for Mac 不再會支援您的專案中的元件。 
+15.6 版本的 Visual Studio 和 7.4 版的 Visual Studio for Mac 不再支援元件，您的專案中。 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -199,6 +203,6 @@ NuGet 封裝將會加入至專案，以及任何相依性。
 
 
 ## <a name="related-links"></a>相關連結
-
+- [熱門 Xamarin 增益集和文件庫的清單](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
 - [安裝和使用 NuGet 封裝 (Windows)](https://docs.microsoft.com/nuget/quickstart/use-a-package)
 - [包括 NuGet 封裝 (Mac)](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)

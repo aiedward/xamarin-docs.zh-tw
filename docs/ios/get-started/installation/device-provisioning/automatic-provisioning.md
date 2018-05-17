@@ -1,35 +1,46 @@
 ---
 title: 自動化佈建
-description: 成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。 本指南將探索如何在 Visual Studio for Mac 中使用「自動化佈建」來要求部署憑證和設定檔。
+description: 成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。 本指南將探索使用自動化簽署來要求開發憑證和設定檔。
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 11/17/2017
-ms.openlocfilehash: 01818d2870c7cf59a0f15385dbb3565f07400ff0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/06/2018
+ms.openlocfilehash: 0e2ce758da2951efa0508e76cdf4eaac5384fa6b
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="automatic-provisioning"></a>自動化佈建
 
-_成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。本指南將探索如何在 Visual Studio for Mac 中使用「自動化簽署」來要求開發憑證和設定檔。_
+_成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。本指南將探索使用自動化簽署來要求開發憑證和設定檔。_
 
 ## <a name="requirements"></a>需求
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 - Visual Studio for Mac 7.3 或更新版本
 - Xcode 9 或更新版本
 
-> [!IMPORTANT]
-> 本指南說明如何使用 Visual Studio for Mac 來設定 Apple 裝置以進行部署，以及如何部署應用程式。 如需有關此做法的手動步驟，或是若要在 Windows 上使用 Visual Studio 來進行此操作，建議您依照[手動佈建](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)指南中的詳細步驟進行操作。
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+- Visual Studio 2017 15.7 版 (或更新版本)
+
+您也必須和具有下列項目的 Mac 組建主機配對：
+
+- Xcode 9 或更新版本
+
+-----
 
 ## <a name="enabling-automatic-signing"></a>啟用自動簽署
 
-在您啟動自動簽署程序之前，應該先確定已在 Visual Studio for Mac 中新增「應用程式識別碼」，如 [Apple 帳戶管理](~/cross-platform/macios/apple-account-management.md)指南所述。 新增「應用程式識別碼」之後，您可以使用任何關聯的「小組」。 這可讓您針對小組建立憑證、設定檔及其他識別碼。 小組識別碼也會用來建立將包含在佈建設定檔中之「應用程式識別碼」的前置詞。 有了這項資訊，便可讓 Apple 驗證您與所宣稱的身分識別相符。
+在您啟動自動簽署程序之前，應該先確定已在 Visual Studio 中新增應用程式識別碼，如 [Apple 帳戶管理](~/cross-platform/macios/apple-account-management.md)指南所述。 新增「應用程式識別碼」之後，您可以使用任何關聯的「小組」。 這可讓您針對小組建立憑證、設定檔及其他識別碼。 小組識別碼也會用來建立將包含在佈建設定檔中之「應用程式識別碼」的前置詞。 有了這項資訊，便可讓 Apple 驗證您與所宣稱的身分識別相符。
 
 若要自動簽署應用程式以在 iOS 裝置上部署，請執行下列動作：
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在 Visual Studio for Mac 中開啟 iOS 專案。
 
@@ -46,6 +57,26 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
     ![成功建立憑證和設定檔](automatic-provisioning-images/image5.png)
 
     如果自動簽署失敗，**自動簽署台**將會顯示該錯誤的原因。
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+1. 依[與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南所述配對 Visual Studio 2017 和 Mac。
+
+2. 選取 [專案] > [佈建內容] 開啟 [佈建] 選項
+
+3. 選取 [自動化佈建] 配置：
+
+    ![選取自動配置](automatic-provisioning-images/prov4.png)
+
+4. 從 [小組] 下拉式方塊選取您的小組，啟動自動簽署程序。
+
+    ![選取小組](automatic-provisioning-images/prov3.png)
+
+4. 這樣會啟動自動簽署程序。 然後，Visual Studio 會嘗試產生應用程式識別碼、佈建設定檔，以及簽署身分識別，使用這些成品以供簽署。 您可以在組建輸出中查看產生程序：
+
+    ![組建輸出顯示成品的產生過程](automatic-provisioning-images/prov5.png)
+
+-----
 
 ## <a name="triggering-automatic-provisioning"></a>觸發自動化佈建
 

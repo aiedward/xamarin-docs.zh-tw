@@ -1,21 +1,21 @@
 ---
-title: 執行 Android SDK 模擬器
-description: 如何使用 Android SDK 模擬器來進行應用程式偵錯
+title: 執行 Google Android 模擬器
+description: 如何使用 Google Android 模擬器偵錯應用程式
 ms.prod: xamarin
 ms.assetid: AEA165A4-D81A-411B-91DF-2DED2EED27B5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 630520f88dd23d3860b5f42fbb9bc4eb35ca2c4b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0e290b24c0d7a98b1abaf647fe76e56867042645
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="running-the-android-sdk-emulator"></a>執行 Android SDK 模擬器
+# <a name="running-the-google-android-emulator"></a>執行 Google Android 模擬器
 
-在本指南中，您將了解如何在 Android SDK Emulator 中啟動虛擬裝置來進行偵錯和測試您的應用程式。
+在本指南中，您將了解如何在 Google Android 模擬器中啟動虛擬裝置來進行偵錯和測試您的應用程式。
 
 ## <a name="using-a-pre-configured-virtual-device"></a>使用預先設定的虛擬裝置
 
@@ -80,13 +80,13 @@ Visual Studio for Mac 包含預先設定的虛擬裝置，這些裝置會顯示�
 
 -----
 
-在 Android 模擬器啟動之後，Xamarin.Android 就會將應用程式部署至模擬器。 模擬器會以所設定的虛擬裝置映像來執行應用程式。 以下顯示「Android SDK 模擬器」的範例螢幕擷取畫面 (模擬器正在執行名為 **MyApp** 的空白應用程式)：
+在 Android 模擬器啟動之後，Xamarin.Android 就會將應用程式部署至模擬器。 模擬器會以所設定的虛擬裝置映像來執行應用程式。 以下顯示 Google Android 模擬器的範例螢幕擷取畫面 (模擬器正在執行稱為 **MyApp** 的空白應用程式)：
 
 ![執行空白應用程式的模擬器](running-the-emulator-images/emulator-running.png)
 
 您可以讓模擬器保持執行；無須在每次執行應用程式時都將其關閉並重新啟動。 第一次在模擬器中執行 Xamarin.Android 應用程式時，會安裝目標 API 層級的 Xamarin.Android 共用執行階段，再接著安裝應用程式。 安裝執行階段可能需要一些時間，因此請耐心等候。 只有在將第一個 Xamarin.Android 應用程式部署至模擬器時，才會安裝執行階段 &ndash; 後續部署速度會較快，因為要複製到模擬器的只有應用程式。
 
-如需有關使用「Android SDK 模擬器」的詳細資訊，請參閱下列 Android 開發人員主題：
+如需使用 Google Android 模擬器的詳細資訊，請參閱下列 Android 開發人員主題：
 
 -   [在螢幕上瀏覽](https://developer.android.com/studio/run/emulator.html#navigate)
 

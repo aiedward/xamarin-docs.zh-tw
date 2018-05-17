@@ -5,11 +5,11 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 399dcd54d574875bcb5e491e87731b817e840e54
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: ead498113f432e766fbd77ae2f01bc67c2273b60
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials 地理編碼
 
@@ -47,7 +47,7 @@ ms.lasthandoff: 05/09/2018
 <uses-feature android:name="android.hardware.location.network" android:required="false" />
 ```
 
-或 Anroid 專案上按一下滑鼠右鍵，然後開啟專案的屬性。 在下**Android 資訊清單**尋找**必要的權限：**區域，然後核取**ACCESS_COARSE_LOCATION**和**ACCESS_FINE_LOCATION**權限。 這會自動更新**AndroidManifest.xml**檔案。
+或 Anroid 專案上按一下滑鼠右鍵，然後開啟專案的屬性。 在下**Android 資訊清單**尋找**必要的權限：** 區域，然後核取**ACCESS_COARSE_LOCATION**和**ACCESS_FINE_LOCATION**權限。 這會自動更新**AndroidManifest.xml**檔案。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -177,5 +177,5 @@ catch (Exception ex)
 
 ## <a name="api"></a>API
 
-- [地理位置的原始程式碼](https://github.com/xamarin/Essentials/tree/master/Essentials/Geolocation)
+- [地理位置的原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geolocation)
 - [地理位置應用程式開發介面文件](xref:Xamarin.Essentials.Geolocation)

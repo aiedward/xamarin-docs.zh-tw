@@ -4,18 +4,18 @@ description: 為應用程式新增功能通常需要額外的佈建設定。 本
 ms.prod: xamarin
 ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 03/15/2017
-ms.openlocfilehash: ff918ac104e7eab4f2e8c0d0be46df240138c97c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+author: asb3993
+ms.author: amburns
+ms.date: 05/06/2018
+ms.openlocfilehash: e6fc3d38fef7c7c3204d1413911ddfa9a486c67c
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="working-with-capabilities"></a>使用功能
 
-_為應用程式新增功能通常需要額外的佈建設定。_本指南說明所有功能所需的設定。
+_為應用程式新增功能通常需要額外的佈建設定。_ 本指南說明所有功能所需的設定。
 
 Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) 來延伸 iOS 應用程式的功能及擴大其用途範圍。 這些功能可讓開發人員在其應用程式中加入更深的平台功能整合，例如：能夠從應用程式、額外的裝置服務 (例如 Siri) 等起始金錢交易。
 這些功能可以與 Xamarin.iOS 專案搭配使用。 以下提供完整的服務清單說明：
@@ -44,20 +44,18 @@ Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) �
 * NFC 標籤讀取
 
 
-您可以透過 Visual Studio for Mac 啟用功能，也可以在 Apple Developer Portal (Apple 開發人員入口網站) 中以手動方式啟用功能。 有些功能 (例如「電子錢包」、Apple Pay 及 iCloud) 需要額外的「應用程式識別碼」組態。
+您可以透過 Visual Studio for Mac 和 Visual Studio 2017 啟用功能，也可以在 Apple Developer Portal (Apple 開發人員入口網站) 中以手動方式啟用功能。 有些功能 (例如「電子錢包」、Apple Pay 及 iCloud) 需要額外的「應用程式識別碼」組態。
 
-本指南說明如何在 Visual Studio for Mac 中，以及透過開發人員中心以手動方式，在您應用程式中啟用這每一項「應用程式服務」，包括可能需要的任何額外設定。 
+本指南說明如何在 Visual Studio 中自動以及透過開發人員中心手動，在您應用程式中啟用這每一項「應用程式服務」，包括可能需要的任何額外設定。 
 
 ## <a name="adding-app-services"></a>新增應用程式服務
 
-若要使用功能，應用程式必須具有有效的佈建設定檔，其中包含已啟用正確服務的「應用程式識別碼」。 建立此佈建設定檔時，可以在 Visual Studio for Mac 中自動建立，也可以在 Apple Developer Center (Apple 開發人員中心) 中以手動方式建立。
+若要使用功能，應用程式必須具有有效的佈建設定檔，其中包含已啟用正確服務的「應用程式識別碼」。 建立此佈建設定檔時，可以在 Visual Studio for Mac 和 Visual Studio 2017 中自動建立，也可以在 Apple Developer Center (Apple 開發人員中心) 中以手動方式建立。
 
-本節說明如何使用 Visual Studio for Mac 的自動化佈建，或開發人員中心來啟用大多數功能。 有些功能 (例如「電子錢包」、iCloud、Apple Pay 及「應用程式群組」) 需要額外的設定。 在相鄰的指南中將會詳細說明這些功能。
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+本節說明如何使用 Visual Studio 的自動化佈建或開發人員中心來啟用大多數功能。 有些功能 (例如「電子錢包」、iCloud、Apple Pay 及「應用程式群組」) 需要額外的設定。 在相鄰的指南中將會詳細說明這些功能。
 
 > [!IMPORTANT]
-> 並非所有功能都可以在 Visual Studio for Mac 中新增和管理。 以下清單包含支援的功能：
+> 並非所有功能都可以使用自動化佈建來新增和管理。 以下清單包含支援的功能：
 >
 >* HealthKit 
 >* HomeKit 
@@ -72,10 +70,13 @@ Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) �
 >
 >目前不支援「推播通知」、Game Center、「App 內購買」、「地圖」、「Keychain 共用」、「相關聯的網域」及「資料保護」功能。 若要新增這些功能，請使用手動佈建並依照[開發人員中心](#devcenter)一節中的步驟進行操作。
 
+## <a name="using-the-ide"></a>使用 IDE
 
-在 Visual Studio for Mac 中，功能會新增至 **Entitlements.plist**。 若要新增功能，請依照下列步驟進行操作：
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 開啟您 iOS 應用程式的 **Info.plist** 檔案，並確定已選取 [自動管理簽署]。 如果需要協助，請依照[自動佈建](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)指南中的步驟進行操作：
+在 Visual Studio for Mac 中，功能會新增至 **Entitlements.plist**。 若要新增功能，請使用下列步驟：
+
+1. 開啟您 iOS 應用程式的 **Info.plist** 檔案，並從下拉式方塊選取 [自動化佈建] 配置和您的**小組**。 如果需要協助，請依照[自動佈建](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)指南中的步驟進行操作：
 
     ![[自動管理簽署] 選項](images/manage-signing.png)
 
@@ -93,39 +94,29 @@ Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) �
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-由於目前在 Visual Studio 2017 中不支援自動化佈建，您必須使用[開發人員中心](#devcenter)，透過正確的應用程式服務來建立應用程式識別碼。
+功能會新增至 **Entitlements.plist**。 若要在 Visual Studio 2017 中新增功能，請使用下列步驟：
+
+1. 依[與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南所述配對 Visual Studio 2017 和 Mac。
+
+2. 選取 [專案] > [佈建內容] 開啟 [佈建] 選項
+
+3. 從下拉式方塊選取 [自動化佈建] 配置和您的**小組**。 如果需要協助，請依照[自動佈建](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)指南中的步驟進行操作：
+
+    ![[自動管理簽署] 選項](images/manage-signing-vs.png)
+
+4. 開啟 **Entitlements.plist** 檔案，然後選取您想要新增的功能。 儲存檔案。
+
+    儲存 **Entitlement.plist** 會執行兩項工作：
+
+    * 將該功能新增至您的「應用程式識別碼」
+    * 將權利的成對「機碼/值」新增至您的 Entitlements.plist 檔案。
 
 -----
 
-<!--
-<a name="xcode" />
-
-## Xcode
-
-Xamarin developers can also use Xcode to quickly create a provisioning profile with a suitable App ID. This process, described below, can be used for any app service in the list:
-
-1.  Open Xcode and create a ‘dummy’ project. Give the dummy project the same name as your Xamarin.iOS project. The bundle identifier should be identical to the bundle identifier of your Xamarin.iOS project:
-
-    ![Xcode Create Project](images/image1.png)
-
-2.  Ensure **Automatically manage signing** is selected:
-
-    ![Automatically manage signing selection](images/image2.png)
-
-3.  Once the app has been created, go to the tab named **Capabilities**:
-
-    ![Xcode Capabilities tab](images/image3.png)
-
-4.  Browse to the capability that you wish to add, and move the switch to the **ON** position.
-5.  This will create a provisioning profile with an App ID that contains the capability and adds the entitlement to the profile.
-6.  In Visual Studio for Mac / Visual Studio, browse to **Project Options > Bundle Signing** and set the provisioning profile to the one that was just created in Xcode:
-
-    ![Visual Studio for Mac Project Options](images/image4.png)
--->
 
 <a name="devcenter" />
 
-## <a name="developer-center"></a>開發人員中心
+## <a name="using-the-developer-center"></a>使用開發人員中心
 
 使用開發人員中心是一個兩步驟的流程，需要建立「應用程式識別碼」，然後使用該「應用程式識別碼」來建立佈建設定檔。 這些步驟如下所述。
 
@@ -190,7 +181,7 @@ Xamarin developers can also use Xcode to quickly create a provisioning profile w
 
 8.  按 [Download] \(下載\) 按鈕來下載它，然後在 Finder 中按兩下該檔案來安裝佈建設定檔。
 
-9. 如果您使用 Visual Studio for Mac，請確定在 **Info.plist** 檔案中已將 [自動管理簽署] 選項取消選取
+9. 如果您要使用 Visual Studio，請確認選取 [手動佈建] 選項。
 
 10. 在 Visual Studio for Mac / Visual Studio 中，瀏覽至 [專案選項] > [套件組合簽署]，然後將佈建設定檔設定為剛才建立的佈建設定檔：
 

@@ -1,37 +1,96 @@
 ---
 title: Android Emulator 硬體加速
-description: 如何準備您的電腦以達到最大的 Android SDK 模擬器效能
+description: 如何準備您的電腦以達到最大的 Google Android 模擬器效能
 ms.prod: xamarin
 ms.assetid: 915874C3-2F0F-4D83-9C39-ED6B90BB2C8E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/04/2018
-ms.openlocfilehash: d5921c549c299197bdc442c9b883b49064655f76
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.date: 05/10/2018
+ms.openlocfilehash: b5c20eb9f40bb4c4981d6b60b9fd4bc75fd29336
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Android Emulator 硬體加速
 
-由於 Android SDK 模擬器在沒有硬體加速的情況下會變得非常緩慢，因此建議使用 Intel 的 HAXM (Hardware Accelerated Execution Manager) 來大幅提升 Android SDK 模擬器的效能。
+無硬體加速的 Google Android 模擬器極為緩慢。 使用以 x86 硬體為目標的特殊模擬器映像和兩種虛擬化技術其中之一，可大幅提升 Google Android 模擬器的效能：
 
+1. **Microsoft Hyper-V 和 Hypervisor 平台** &ndash; Hyper-V 是 Windows 10 提供的虛擬元件，可在實體主機的上層執行虛擬電腦系統。 這是加速 Google Android 模擬器映像建議使用的虛擬化技術。 若要深入了解 Hyper-V，請參閱 [Windows 10 上的 Hyper-V 指南](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/)。
+2. **Intel 的 Hardware Accelerated Execution Manager (HAXM)** &ndash;這是執行 Intel CPU 之電腦的虛擬化引擎。 無法使用 Hyper-V 的開發人員，建議使用此虛擬化引擎。
+
+有硬體加速可用時，Android SDK Manager 會自動在執行模擬器映像時使用它，特別是 **x86** 型的虛擬裝置 (如[設定及使用](~/android/deploy-test/debugging/android-sdk-emulator/index.md)中所述)。
+
+## <a name="hyper-v-overview"></a>Hyper-V 概觀
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+![](~/media/shared/preview.png)
+
+> [!NOTE]
+> Preview 目前支援 Hyper-V。
+
+強烈建議使用 Windows 10 (2018 年 4 月更新) 的開發人員使用 Microsoft Hyper-V。 Visual Studio Tools for Xamarin 讓開發人員在 Android 裝置無法使用或不實用的情況下，更容易測試和偵錯他們的 Xamarin.Android 應用程式。
+
+開始使用 Hyper-V 和 Google Android 模擬器：
+
+1. **Windows 10 2018 年 4 月 更新的更新 (組建 1803)** &ndash; 若要確認所執行的 Windows 版本，請按一下 Cortana 搜尋列，然後鍵入**有關**。 在搜尋結果中選取 [About your PC] \(電腦相關\)。 向下捲動 [有關] 對話方塊至 [Windows 規格] 區段。 [版本] 至少應為 1803：
+
+    [![Windows 規格](hardware-acceleration-images/win/12-about-windows.w10-sml.png)](hardware-acceleration-images/win/12-about-windows.w10.png#lightbox)
+
+2. **同時啟用 Hyper-V 和 Windows Hypervisor 平台** &ndash; 在 Cortana 搜尋列中，鍵入**開啟或關閉 Windows 功能**。
+   向下捲動 [Windows 功能] 對話方塊，確定已啟用 **Windows Hypervisor 平台**。
+
+    [![Hyper-V 與 Windows Hypervisor 平台已啟用](hardware-acceleration-images/win/13-windows-features.w10-sml.png)](hardware-acceleration-images/win/13-windows-features.w10.png#lightbox)
+
+    啟用 Hyper-V 和 Windows Hypervisor 平台之後，可能需要重新啟動 Windows。
+
+3. **安裝 [Visual Studio 15.8 Preview 1](https://aka.ms/hyperv-emulator-dl)** &ndash; 這個版本的 Visual Studio 提供 IDE 支援，啟動具有 Hyper-V 支援的 Google Android 模擬器。
+
+4. **安裝 Google Android 模擬器套件 27.2.7 或更新版本** &ndash; 若要安裝此套件，請巡覽至 Visual Studio 的 [工具] > [Android] > [Android SDK Manager]。 選取 [工具] 索引標籤，確定 Android 模擬器元件的版本至少為 27.2.7。
+
+    [![Android SDK 及工具對話方塊](hardware-acceleration-images/win/14-sdk-manager.w158-sml.png)](hardware-acceleration-images/win/14-sdk-manager.w158.png#lightbox)
+
+5. 如果 Android 模擬器版本低於 27.3.1，則適用**已知問題** (下一節) 中所述的其他因應措施步驟。
+
+
+### <a name="known-issues"></a>已知問題
+
+-   如果模擬器版本至少為 27.2.7，但低於 27.3.1，則需要下列因應措施才能使用 Hyper-V：
+    1.  在 **C:\\Users\\_username_\\.android** 資料夾中，建立稱為 **advancedFeatures.ini** 的檔案 (如果檔案不存在)。
+    2.  將下列行新增至 **advancedFeatures.ini**：
+        ```
+        WindowsHypervisorPlatform = on
+        ```
+
+-   使用特定 Intel 和 AMD 型處理器時，效能可能會降低。
+
+-   Android 應用程式載入部署需要花費的時間可能異常。
+
+-   MMIO 存取錯誤可能斷斷續續阻止 Android 模擬器開機。 重新啟動模擬器應該會解決此問題。
+
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+Hyper-V 支援需要 Windows 10。 如需詳細資料，請參閱 [Hyper-V 需求](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v#check-requirements)。
+
+-----
 
 ## <a name="haxm-overview"></a>HAXM 概觀
 
 HAXM 為硬體輔助的虛擬化引擎 (Hypervisor)，使用 Intel 虛擬化技術 (VT) 來加速主機電腦上的 Android 應用程式模擬。 透過與由 Intel 和官方 Android SDK 管理員提供的 Android x86 模擬器映像搭配使用，HAXM 就能夠在已啟用 VT 的系統上加快 Android 模擬的速度。 
 
-如果您是在配備具有 VT 功能之 Intel CPU 的電腦上進行開發，您可以利用 HAXM 大幅加速 Android SDK 模擬器 (如果您不確定 CPU 是否支援 VT，請參閱[判斷您的處理器是否支援 Intel 虛擬化技術](https://www.intel.com/content/www/us/en/support/processors/000005486.html) \(英文\))。
+如果您是在配備具有 VT 功能之 Intel CPU 的電腦上進行開發，您可以利用 HAXM 大幅加速 Google Android 模擬器 (如果您不確定 CPU 是否支援 VT，請參閱[判斷您的處理器是否支援 Intel 虛擬化技術](https://www.intel.com/content/www/us/en/support/processors/000005486.html)。
 
 > [!NOTE]
 > 您無法在另一部 VM 執行 VM 加速的模擬器，例如 VirtualBox、VMWare 或 Docker 所裝載的 VM。 您必須[直接在系統硬體上](https://developer.android.com/studio/run/emulator-acceleration.html#extensions)執行 Google Android Emulator。
 
-Android SDK 模擬器會自動在 HAXM 可供使用時加以使用。 當您選取 **x86** 型虛擬裝置時 (如[設定及使用](~/android/deploy-test/debugging/android-sdk-emulator/index.md)中所述)，該虛擬裝置將使用 HAXM 進行硬體加速。 在您第一次使用 Android SDK 模擬器之前，最好先確認 HAXM 已安裝並可供 Android SDK 模擬器使用。
+在您第一次使用 Google Android 模擬器之前，最好先確認 HAXM 已安裝並可供 Google Android 模擬器使用。
 
-## <a name="verifying-haxm-installation"></a>驗證 HAXM 安裝
+### <a name="verifying-haxm-installation"></a>驗證 HAXM 安裝
 
-您可以在模擬器啟動時，藉由檢視 [正在啟動 Android Emulator] 視窗，以檢查 HAXM 是否可供使用。 若要啟動 Android SDK 模擬器，請執行下列動作：
+您可以在模擬器啟動時，藉由檢視 [正在啟動 Android Emulator] 視窗，以檢查 HAXM 是否可供使用。 若要啟動 Google Android 模擬器，請執行下列動作：
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -47,7 +106,7 @@ Android SDK 模擬器會自動在 HAXM 可供使用時加以使用。 當您選�
 
 3. 選取 **x86** 映像 (例如 **VisualStudio\_android-23\_x86\_phone**)，按一下 [開始]，然後按一下 [啟動]：
 
-    ![使用預設虛擬裝置映像啟動 Android SDK 模擬器](hardware-acceleration-images/win/02-start-default-avd.png)
+    ![使用預設虛擬裝置映像啟動 Google Android 模擬器](hardware-acceleration-images/win/02-start-default-avd.png)
 
 4. 模擬器啟動時，請連一 [正在啟動 Android Emulator] 對話方塊視窗。 如果已安裝 HAXM，您將會看到「HAX 正在運作且模擬器會在快速虛擬模式中執行」的訊息，如這個螢幕擷取畫面所示：
 
@@ -73,7 +132,7 @@ Android SDK 模擬器會自動在 HAXM 可供使用時加以使用。 當您選�
 
 3. 選取 **x86** 映像 (例如 **Android\_Accelerated\_x86**)，按一下 [開始]，然後按一下 [啟動]：
 
-    [![使用預設虛擬裝置映像啟動 Android SDK 模擬器](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png#lightbox)
+    [![使用預設虛擬裝置映像啟動 Google Android 模擬器](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png#lightbox)
 
 3. 模擬器啟動時，請連一 [正在啟動 Android Emulator] 對話方塊視窗。 如果已安裝 HAXM，您將會看到「HAX 正在運作且模擬器會在快速虛擬模式中執行」的訊息，如這個螢幕擷取畫面所示：
 
@@ -86,7 +145,7 @@ Android SDK 模擬器會自動在 HAXM 可供使用時加以使用。 當您選�
 
 <a name="install-haxm" />
 
-## <a name="installing-haxm"></a>安裝 HAXM
+### <a name="installing-haxm"></a>安裝 HAXM
 
 如果模擬器無法啟動，可能必須手動安裝 HAXM。 適用於 Windows 和 macOS 的 HAXM 安裝套件，可從 [Intel Hardware Accelerated Execution Manager](https://software.intel.com/en-us/android/articles/intel-hardware-accelerated-execution-manager) \(英文\) 頁面取得。 使用下列步驟來手動下載並安裝 HAXM：
 
@@ -104,84 +163,6 @@ Android SDK 模擬器會自動在 HAXM 可供使用時加以使用。 當您選�
 
    ![Intel Hardware Accelerated Execution Manager 安裝視窗](hardware-acceleration-images/win/05-haxm-installer.png)
 
-如果您看到下列錯誤對話方塊 (_這台電腦不支援 Intel 虛擬化技術 (VT-x)，或是 Hyper-V 正以獨佔方式使用它_)，則必須先停用 Hyper-V，才能安裝 HAXM：
-
-![因發生 Hyper-V 衝突而導致無法安裝 HAXM](hardware-acceleration-images/win/06-cant-install-haxm.png)
-
-下一節將說明如何停用 Hyper-V。
-
-<a name="disable-hyperv" />
-
-## <a name="disabling-hyper-v"></a>停用 Hyper-V
-
-如果您使用 Windows 且已啟用 Hyper-V，您必須將 Hyper-V 停用並重新啟動電腦，才能安裝並使用 HAXM。 您可以遵循下列步驟從控制台停用 Hyper-V：
-
-1. 在 Windows 搜尋方塊中，輸入**程式和**，然後按一下 [程式和功能] 搜尋結果。
-
-2. 在控制台的 [程式和功能] 對話方塊中，按一下 [開啟或關閉 Windows 功能]：
-
-    ![開啟或關閉 Windows 功能](hardware-acceleration-images/win/07-turn-windows-features.png)
-
-3. 取消選取 [Hyper-V]，然後重新啟動電腦：
-
-    ![正在 [Windows 功能] 對話方塊中停用 Hyper-V](hardware-acceleration-images/win/08-uncheck-hyper-v.png)
-
-或者，您可以使用下列 Powershell Cmdlet 來停用 Hyper-V：
-
-`Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor`
-
-Intel HAXM 和 Microsoft Hyper-V 不可同時啟動。 不幸的是，目前並沒有任何方法可在未重新啟動電腦的情況下，於 Hyper-V 和 HAXM 之間進行切換。 如果您想要使用 [Visual Studio 的 Android 模擬器](~/android/deploy-test/debugging/visual-studio-android-emulator.md) (其需要使用 Hyper-V)，您將無法在未重新開機的情況下使用 Android SDK 模擬器。 同時使用 Hyper-V 和 HAXM 的其中一種方式是建立多重開機設定，如[建立沒有 Hypervisor 的開機項目](https://blogs.msdn.microsoft.com/virtual_pc_guy/2008/04/14/creating-a-no-hypervisor-boot-entry/) \(英文\) 中所述。
-
-如果已啟用 Device Guard 和 Credential Guard，在某些情況下使用上述步驟將無法成功停用 Hyper-V。 如果您無法停用 Hyper-V (或是在停用後仍然無法安裝 HAXM)，請使用下一節的步驟來停用 Device Guard 和 Credential Guard。
-
-<a name="disable-devguard" />
-
-## <a name="disabling-device-guard"></a>停用 Device Guard
-
-Device Guard 和 Credential Guard 可能會防止在 Windows 電腦上停用 Hyper-V。 此問題通常會發生在已加入網域且由組織進行設定和控制的電腦上。
-在 Windows 10 上，使用下列步驟來查看 **Device Guard** 是否正在執行：
-
-1. 在 [Windows 搜尋] 中，輸入**系統資訊**以啟動 [系統資訊] 應用程式。
-
-2. 在 [系統摘要] 中，查看 [Device Guard 虛擬化型安全性] 是否存在且處於 [執行中] 狀態：
-
-   [![Device Guard 存在且正在執行](hardware-acceleration-images/win/09-device-guard-sml.png)](hardware-acceleration-images/win/09-device-guard.png#lightbox)
-
-如果已啟用 Device Guard，請使用下列步驟來停用它：
-
-1. 確認 [Hyper-V] 已停用 (位於 [開啟或關閉 Windows 功能] 下方)，如上一節所述。
-
-2. 在 Windows 搜尋方塊中，輸入 **gpedit**，然後選取 [編輯群組原則] 搜尋結果。 這會啟動 [本機群組原則編輯器]。
-
-3. 在 [本機群組原則編輯器] 中，瀏覽至 [電腦設定] > [系統管理範本] > [系統] > [Device Guard]：
-
-   [![[本機群組原則編輯器] 中的 Device Guard](hardware-acceleration-images/win/10-group-policy-editor-sml.png)](hardware-acceleration-images/win/10-group-policy-editor.png#lightbox)
-
-4. 將 [開啟虛擬化型安全性] 變更為 [已停用] (如上所示)，然後結束 [本機群組原則編輯器]。
-
-5. 在 Windows 搜尋方塊中，輸入 **cmd**。 當 [命令提示字元] 在搜尋結果中出現時，以滑鼠右鍵按一下 [命令提示字元]，然後選取 [以系統管理員身分執行]。
-
-6. 複製下列命令，並將之貼入命令提示字元視窗 (如果磁碟機 **Z:** 正在使用中，請改為挑選未使用的磁碟機代號)：
-
-        mountvol Z: /s
-        copy %WINDIR%\System32\SecConfig.efi Z:\EFI\Microsoft\Boot\SecConfig.efi /Y
-        bcdedit /create {0cb3b571-2f2e-4343-a879-d86a476d7215} /d "DebugTool" /application osloader
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} path "\EFI\Microsoft\Boot\SecConfig.efi"
-        bcdedit /set {bootmgr} bootsequence {0cb3b571-2f2e-4343-a879-d86a476d7215}
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions DISABLE-LSA-ISO,DISABLE-VBS
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=Z:
-        mountvol Z: /d
-
-7. 重新啟動電腦。 在開機畫面上，您應該會看到如下的提示：
-
-   **Do you want to disable Credential Guard?** \(是否要停用 Credential Guard？\)
-
-   出現提示時，請按下指定的按鍵來停用 Credential Guard。
-
-8. 重新啟動電腦之後，再次檢查以確定 Hyper-V 已停用 (如先前步驟中所述)。
-
-如果 Hyper-V 仍未停用，您已加入網域之電腦的原則可能正在阻止您停用 Device Guard 或 Credential Guard。 在此情況下，您可以要求網域管理員給予特例，讓您能夠選擇不使用 Credential Guard。 或者，您可以使用未加入網域的電腦來使用 HAXM。
-
 ## <a name="hardware-acceleration-and-amd-cpus"></a>硬體加速與 AMD CPU
 
 因為 Google 的 Android Emulator 目前[僅在 Lunux 上](https://developer.android.com/studio/run/emulator-acceleration.html#dependencies)支援 AMD 硬體加速，所以無法在執行 Windows 的 AMD 電腦上使用硬體加速。
@@ -196,3 +177,8 @@ Device Guard 和 Credential Guard 可能會防止在 Windows 電腦上停用 Hyp
    [![Intel Hardware Accelerated Execution Manager 安裝視窗](hardware-acceleration-images/mac/05-haxm-installer-sml.png)](hardware-acceleration-images/win/05-haxm-installer.png#lightbox)
 
 -----
+
+
+## <a name="related-links"></a>相關連結
+
+* [Run Apps on the Android Emulator](https://developer.android.com/studio/run/emulator) (在 Android 模擬器上執行應用程式)

@@ -6,12 +6,12 @@ ms.assetid: bf3c779f-959f-428d-babb-428f363f7e4e
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/19/2017
-ms.openlocfilehash: 859f84fbe329d79e9e1e6a8b7445fe2a7f03af23
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.date: 05/02/2018
+ms.openlocfilehash: fbd48deb0b18dcd3ac0d40e379e21d5967f81e0d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio 簡介
 
@@ -48,8 +48,6 @@ _本文說明如何使用 Visual Studio 來建置和測試 Xamarin iOS 應用程
 ## <a name="connecting-to-the-mac"></a>連線到 Mac
 
 若要將 Visual Studio 連線至 Mac 組建主機，請遵循[與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南中的指示。
-
-
 
 ## <a name="visual-studio-toolbar-overview"></a>Visual Studio 工具列概觀
 
@@ -136,14 +134,17 @@ Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來�
 
 ## <a name="creating-a-new-project-for-ios-applications"></a>為 iOS 應用程式建立新專案
 
-從 Visual Studio 內建立新 iOS 專案的方式與建立任何其他專案類型相同。 選取 [檔案] > [新增專案] 將會開啟以下所示的對話方塊，其中顯示一些可供建立新 iOS 專案的範本：
+從 Visual Studio 內建立新 iOS 專案的方式與建立任何其他專案類型相同。 選取 [檔案] > [新增專案] 將會開啟以下所示的對話方塊，其中顯示一些可供建立新 iOS 專案的專案類型：
 
+![建立新專案](introduction-to-xamarin-ios-for-visual-studio-images/newproject.w157.png)
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/newproject.png "建立新專案")
+選取 [iOS 應用程式 (Xamarin)] 會顯示下列用於建立新 Xamarin.iOS 應用程式的範本：
+
+![選取 iOS 應用程式的範本](introduction-to-xamarin-ios-for-visual-studio-images/newproject-2.w157.png)
 
 您可以在 Visual Studio 中使用「iOS 設計工具」來編輯分鏡腳本和 .xib 檔案。 若要建立「分鏡腳本」，請選擇其中一個「分鏡腳本」範本。 這會在 [方案總管] 中產生一個 **Main.storyboard** 檔案，如以下螢幕擷取畫面所示：
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/solution-explorer-new.png "[方案總管] 中的 Main.storyboard 檔案")
+![[方案總管] 中的 Main.storyboard 檔案](introduction-to-xamarin-ios-for-visual-studio-images/solution-explorer-new.w157.png)
 
 若要開始建立或編輯您的「分鏡腳本」，請按兩下 `Main.storyboard` 以在「iOS 設計工具」中開啟它：
 

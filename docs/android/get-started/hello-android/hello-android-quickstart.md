@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/25/2018
-ms.openlocfilehash: 44c3e4b0f05526560ff4b32808ba476110ce5e8f
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 7faf4ef090815ea799209e76816113f06889bd21
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android：快速入門
 
@@ -64,10 +64,10 @@ _在這份含有兩部分的指南中，您將會建置您的第一個 Xamarin.A
 
 啟動 Visual Studio。  按一下 [檔案] > [新增] > [專案]，建立新的專案。
 
-在 [新增專案] 對話方塊中，按一下 [空白應用程式 (Android)] 範本。
+在 [新增專案] 對話方塊中，按一下 [Android 應用程式] 範本。
 將新專案命名為 `Phoneword`。 按一下 [確定] 建立新專案：
 
-[![新的專案是 Phoneword](hello-android-quickstart-images/vs/02-new-project-name-sml.png)](hello-android-quickstart-images/vs/02-new-project-name.png#lightbox)
+[![新的專案是 Phoneword](hello-android-quickstart-images/vs/02-new-project-name-sml.w157.png)](hello-android-quickstart-images/vs/02-new-project-name.w157.png#lightbox)
 
 ### <a name="creating-the-layout"></a>建立版面配置
 
@@ -112,9 +112,9 @@ _在這份含有兩部分的指南中，您將會建置您的第一個 Xamarin.A
 
 [![新增項目](hello-android-quickstart-images/vs/12-add-new-item-sml.png)](hello-android-quickstart-images/vs/12-add-new-item.png#lightbox)
 
-在 [新增項目] 對話方塊中選取 [Visual C#] > [程式碼]並將新的程式碼檔案命名為 **PhoneTranslator.cs**：
+在 [新增項目] 對話方塊中選取 [Visual C#] > [程式碼] > [程式碼檔案] 並將新的程式碼檔案命名為 **PhoneTranslator.cs**：
 
-[![新增 PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-sml.png)](hello-android-quickstart-images/vs/14-add-class.png#lightbox)
+[![新增 PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-sml.w157.png)](hello-android-quickstart-images/vs/14-add-class.w157.png#lightbox)
 
 這會建立新的空白 C# 類別。 將下列程式碼插入這個檔案中：
 
@@ -185,10 +185,11 @@ namespace Core
 (Resource.Layout.Main)` 呼叫底下。 首先，修改範本程式碼，讓 `OnCreate` 方法如下所示：
 
 ```csharp
+using System;
 using Android.App;
-using Android.OS;
+using Android.Content;
 using Android.Widget;
-using Core;
+using Android.OS;
 
 namespace Phoneword
 {
@@ -419,10 +420,13 @@ namespace Core
 開始新增事件處理常式至 [翻譯] 按鈕。 在 `MainActivity` 類別中找到 `OnCreate` 方法。 將按鈕程式碼新增在 `OnCreate` 內，`base.OnCreate(bundle)` 和 `SetContentView (Resource.Layout.Main)` 呼叫底下。 移除範本按鈕處理程式碼，讓 `OnCreate` 方法如下所示：
 
 ```csharp
+using System;
 using Android.App;
-using Android.OS;
+using Android.Content;
+using Android.Runtime;
+using Android.Views;
 using Android.Widget;
-using Core;
+using Android.OS;
 
 namespace Phoneword
 {
