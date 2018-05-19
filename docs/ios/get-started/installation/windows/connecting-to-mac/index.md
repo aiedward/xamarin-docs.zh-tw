@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/16/2018
-ms.openlocfilehash: adaa74e206b1e756398f1ef1a38f387082c1e8f5
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.openlocfilehash: ac3df50a67dcf6ad813d549479db42856acc2ce1
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="pair-to-mac"></a>與 Mac 配對
 
@@ -243,3 +243,4 @@ C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamU
 - [連線疑難排解](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md)
 - [Xamarin Mac 組建代理程式 - Xamarin University Lightning Lecture](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
 - [Xamarin.iOS for Visual Studio 簡介](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
+- [適用於 Windows 的遠端 iOS 模擬器](~/tools/ios-simulator.md)
