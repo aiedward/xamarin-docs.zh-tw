@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/17/2017
-ms.openlocfilehash: dfc46b5caa14c1c02d1c2afaffecc701fea59e2c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8aa17c868ce1d0343eab6758c03aaf042c27130e
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="android-platform-specifics"></a>Android 平台特性
 
@@ -135,7 +135,7 @@ On<Android>().SetOffscreenPageLimit(2)
 
 ## <a name="controlling-the-elevation-of-visual-elements"></a>控制視覺元素的權限提高
 
-平台專屬是用來控制 API 21 為目標的提高權限或疊置順序，在應用程式上的視覺項目或更高。 提高的權限視覺項目決定其繪製順序，與視覺化元素有 occluding 視覺項目具有較低的 Z 值較大的 Z 值。 它由在 XAML 中設定`Elevation.Elevation`附加屬性`boolean`值：
+平台專屬是用來控制 API 21 為目標的提高權限或疊置順序，在應用程式上的視覺項目或更高。 提高的權限視覺項目決定其繪製順序，與視覺化元素有 occluding 視覺項目具有較低的 Z 值較大的 Z 值。 它由在 XAML 中設定`VisualElement.Elevation`附加屬性`boolean`值：
 
 ```xaml
 <ContentPage ...
@@ -147,7 +147,7 @@ On<Android>().SetOffscreenPageLimit(2)
             <BoxView Color="Red" Opacity="0.2" HeightRequest="50" />
         </Grid>        
         <Grid Margin="0,20,0,0">
-            <Button Text="Button Above BoxView - Click Me" android:Elevation.Elevation="10"/>
+            <Button Text="Button Above BoxView - Click Me" android:VisualElement.Elevation="10"/>
             <BoxView Color="Red" Opacity="0.2" HeightRequest="50" />
         </Grid>
     </StackLayout>
@@ -196,7 +196,7 @@ public class AndroidElevationPageCS : ContentPage
 }
 ```
 
-`Button.On<Android>`方法會指定平台專屬只會在 Android 上執行。 `Elevation.SetElevation`方法，請在[ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)命名空間，用來提高的權限的視覺項目設定為可為 null `float`。 此外，`Elevation.GetElevation`方法可以用來擷取的視覺元素的高度值。
+`Button.On<Android>`方法會指定平台專屬只會在 Android 上執行。 `VisualElement.SetElevation`方法，請在[ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)命名空間，用來提高的權限的視覺項目設定為可為 null `float`。 此外，`VisualElement.GetElevation`方法可以用來擷取的視覺元素的高度值。
 
 結果是視覺元素的提高權限可以進行控制，以便有較大的 Z 值的視覺項目 occlude 視覺項目具有較低的 Z 值。 因此，在此範例中，第二個[ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)呈現上述[ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)因為它具有較高的權限提高值：
 

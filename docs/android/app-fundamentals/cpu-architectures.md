@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: dea5aaa16891893f649d5ec56f3e6b1ee9a18683
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: abfe22683de024f056d7798dc3ac2de13ebd953e
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="cpu-architectures"></a>CPU 架構
 
@@ -29,7 +29,7 @@ _Xamarin.Android 支援數個 CPU 架構，包括 32 位元和 64 位元的裝�
 
 一般而言，您明確地選取架構 （或架構） 當您的應用程式時設定為**發行**。 當您的應用程式時設定為**偵錯**、**使用共用的執行階段**和**使用快速部署**已啟用選項，從而停用明確的架構選項。
 
-在 Visual Studio 中，按兩下**屬性**您專案下**方案總管 中**選取**Android 選項**頁面。 按一下**封裝**索引標籤上，確認**使用共用的執行階段**已停用 （關閉此功能可讓您明確地選取 支援哪些 ABIs）。 按一下**進階** 索引標籤上和下**進階屬性**，檢查您想要支援的架構：
+在 Visual Studio 中，以滑鼠右鍵按一下底下的專案**方案總管 中**選取**屬性**。 在下**Android 選項**頁面上，檢查**封裝屬性**區段，並確認**使用共用的執行階段**已停用 （關閉此功能可讓您明確選取以支援哪些 ABIs）。 按一下**進階**按鈕和底下**支援的架構**，檢查您想要支援的架構：
 
 [![選取 armeabi 和 armeabi v7a](cpu-architectures-images/vs/01-abi-selections-sml.png)](cpu-architectures-images/vs/01-abi-selections.png#lightbox)
 

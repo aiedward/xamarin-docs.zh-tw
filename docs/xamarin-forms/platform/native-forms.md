@@ -1,21 +1,21 @@
 ---
 title: 原生格式
-description: 原生格式讓 Xamarin.Forms ContentPage 衍生頁可供原生 Xamarin.iOS、 Xamarin.Android 和通用 Windows 平台 (UWP) 專案。 原生專案可能會耗用 ContentPage 衍生頁面直接加入至專案，或從.NET 標準程式庫，.NET 標準程式庫或共用的專案。 本文說明如何使用 ContentPage 衍生的頁面，都會直接加入至原生專案，以及如何在它們之間瀏覽。
+description: 原生格式讓 Xamarin.Forms ContentPage 衍生頁可供原生 Xamarin.iOS、 Xamarin.Android 和通用 Windows 平台 (UWP) 專案。 原生專案可能會耗用 ContentPage 衍生頁面直接加入至專案，或從.NET 標準程式庫、 標準的.NET 程式庫或共用的專案。 本文說明如何使用 ContentPage 衍生的頁面，都會直接加入至原生專案，以及如何在它們之間瀏覽。
 ms.prod: xamarin
 ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: bb7aa9a7071f9ac7bef0dce5790a3fe74302cfb4
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: a103d360221650ee4f679ee285dbedd65e62f947
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="native-forms"></a>原生格式
 
-_原生格式讓 Xamarin.Forms ContentPage 衍生頁可供原生 Xamarin.iOS、 Xamarin.Android 和通用 Windows 平台 (UWP) 專案。原生專案可能會耗用 ContentPage 衍生頁面直接加入至專案，或從.NET 標準程式庫，.NET 標準程式庫或共用的專案。本文說明如何使用 ContentPage 衍生的頁面，都會直接加入至原生專案，以及如何在它們之間瀏覽。_
+_原生格式讓 Xamarin.Forms ContentPage 衍生頁可供原生 Xamarin.iOS、 Xamarin.Android 和通用 Windows 平台 (UWP) 專案。原生專案可能會耗用 ContentPage 衍生頁面直接加入至專案，或從.NET 標準程式庫、 標準的.NET 程式庫或共用的專案。本文說明如何使用 ContentPage 衍生的頁面，都會直接加入至原生專案，以及如何在它們之間瀏覽。_
 
 Xamarin.Forms 應用程式通常包括衍生自的一個或多個頁面[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)，以及這些頁面中的.NET 標準程式庫專案或共用專案共用之所有平台。 不過，原生格式可讓`ContentPage`-衍生直接加入至原生 Xamarin.iOS、 Xamarin.Android 和 UWP 應用程式的頁面。 相較於具有原生專案取用`ContentPage`-衍生的頁面，從.NET 標準程式庫專案或共用專案，直接將頁面加入原生專案中的優點是頁面可以使用原生的檢視來延伸。 然後可以在 XAML 中使用命名原生檢視`x:Name`並參考從程式碼後置。 如需原生檢視的詳細資訊，請參閱[原生檢視](~/xamarin-forms/platform/native-views/index.md)。
 

@@ -5,11 +5,11 @@ ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: dde3f7f160d796afe3184ef1d61d8b437ec09ea8
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 3fee30e31dc18665d59f944462959fd3f8166968
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials 電子郵件
 
@@ -30,7 +30,7 @@ using Xamarin.Essentials;
 ```csharp
 public class EmailTest
 {
-    public async Task SendEmail(string subject, string, body, List<string> recipients)
+    public async Task SendEmail(string subject, string body, List<string> recipients)
     {
         try
         {

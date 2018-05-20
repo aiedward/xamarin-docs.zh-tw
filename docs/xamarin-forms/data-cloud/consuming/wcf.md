@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: c626008012ccdab2f8ed2c719b34a45471598d47
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 23cdc1871511fa75ba2686213d135822ca0fb971
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation (WCF) Web 服務
 
@@ -42,10 +42,10 @@ WCF 服務提供下列作業：
 
 |運算|描述|參數|
 |--- |--- |--- |
-|GetTodoItems|取得待辦項目清單|
+|GetTodoItems|取得待辦事項的清單|
 |CreateTodoItem|建立新的待辦項目|XML 序列化 TodoItem|
-|EditTodoItem|更新 待辦項目|XML 序列化 TodoItem|
-|DeleteTodoItem|刪除待辦項目|XML 序列化 TodoItem|
+|EditTodoItem|更新待辦事項|XML 序列化 TodoItem|
+|DeleteTodoItem|刪除待辦事項|XML 序列化 TodoItem|
 
 如需使用應用程式中的資料模型的詳細資訊，請參閱[將資料模型化](~/xamarin-forms/data-cloud/walkthrough.md)。
 

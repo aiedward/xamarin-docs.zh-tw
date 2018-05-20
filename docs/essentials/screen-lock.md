@@ -5,11 +5,11 @@ ms.assetid: 6B67C114-315E-4199-AA72-3F90E85A4909
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: f7e6a3d6933ed1fce7522fdbb8102e5100bd1589
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 0bdf75825d9c6dc594749fe7aa1e133207cfa0fa
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="xamarinessentials-screen-lock"></a>Xamarin.Essentials 螢幕鎖定
 
@@ -32,7 +32,7 @@ public class ScreenLockTest
 {
     public void ToggleScreenLock()
     {
-        if (ScreenLock.IsMonitoring)
+        if (ScreenLock.IsActive)
             ScreenLock.RequestActive();
         else
             ScreenLock.RequestRelease();

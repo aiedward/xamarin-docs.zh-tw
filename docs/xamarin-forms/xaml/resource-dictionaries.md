@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: bfdfeda5821b020d7948e583a63bf9ec7e8ee324
-ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
+ms.openlocfilehash: 47cca2f726b0af396ea1eb287cfa4e1f1bf19724
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="resource-dictionaries"></a>資源字典
 
@@ -35,7 +35,7 @@ A [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)是 Xamarin.For
 Xamarin.Forms 程式包含只有一個類別衍生自`Application`但通常會使用許多類別衍生自`VisualElement`，包括頁面、 版面配置和控制項。 任何這些物件可以有其`Resources`屬性設定為`ResourceDictionary`。 選擇要放置在特定`ResourceDictionary`位置可以使用資源的影響：
 
 - 中的資源`ResourceDictionary`，例如附加到檢視`Button`或`Label`只能套用至該特定物件，因此這不是非常有用。
-- 中的資源`ResourceDictionary`例如附加至配置`StackLayout`或`Grid`可以套用至版面配置和版面配置的所有子系。 
+- 中的資源`ResourceDictionary`例如附加至配置`StackLayout`或`Grid`可以套用至版面配置和版面配置的所有子系。
 - 中的資源`ResourceDictionary`定義在頁面層級可以套用至頁面和所有子系。
 - 中的資源`ResourceDictionary`定義在應用程式層級可以套用在整個應用程式。
 
@@ -187,7 +187,7 @@ Xamarin.Forms 從 3.0 開始，明確`ResourceDictionary`標記不需要。 `Res
         <local:MyResourceDictionary />
     </ContentPage.Resources>
     ...
-</ContentPage>  
+</ContentPage>
 ```
 
 執行個體`MyResourceDictionary`設`Resources`屬性`ContentPage`物件。
@@ -258,7 +258,7 @@ Xamarin.Forms 從 3.0 開始，明確`ResourceDictionary`標記不需要。 `Res
 
 ## <a name="merging-dictionaries-in-xamarinforms-30"></a>合併的字典，在 Xamarin.Forms 3.0
 
-Xamarin.Forms 3.0，合併的程序開始`ResourceDictionaries`變得稍微更容易且更有彈性。 `MergedDictionaries`屬性項目標記不再需要。 相反地，您將加入至資源字典另`ResourceDictionary`標記與新[ `Source` ](xref:Xamarin.Forms.ResourceDictionary.Source)屬性設定為使用的資源之 XAML 檔案的檔名：
+Xamarin.Forms 3.0，合併的程序開始[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)執行個體已變成稍微更容易且更有彈性。 `MergedDictionaries`屬性項目標記不再需要。 相反地，您將加入至資源字典另`ResourceDictionary`標記與新[ `Source` ](xref:Xamarin.Forms.ResourceDictionary.Source)屬性設定為使用的資源之 XAML 檔案的檔名：
 
 ```xaml
 <ContentPage ...>
@@ -294,7 +294,7 @@ Xamarin.Forms 3.0，合併的程序開始`ResourceDictionaries`變得稍微更�
 </ContentPage>
 ```
 
-這種新語法未_不_具現化`MyResourceDictionary`類別。 相反地，它會參考之 XAML 檔案。 基於這個原因，程式碼後置檔案 (**MyResourceDictionary.xaml.cs**) 已不再需要。 您也可以移除`x:Class`屬性從根標記**MyResourceDictionary.xaml**檔案。 
+這種新語法未_不_具現化`MyResourceDictionary`類別。 相反地，它會參考之 XAML 檔案。 基於這個原因，程式碼後置檔案 (**MyResourceDictionary.xaml.cs**) 已不再需要。 您也可以移除`x:Class`屬性從根標記**MyResourceDictionary.xaml**檔案。
 
 ## <a name="summary"></a>總結
 

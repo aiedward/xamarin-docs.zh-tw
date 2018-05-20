@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 3201c3161d66163cabffdb36465356192bdd3843
-ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
+ms.openlocfilehash: ff9814291d5a28ec9e0bbb3c2a6fc6cce5d8ee25
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="right-to-left-localization"></a>由右至左當地語系化
 
@@ -105,7 +105,7 @@ this.FlowDirection = Device.FlowDirection;
 </Resources>
 ```
 
-此外，UWP 需要在.NET 的標準程式庫中明確定義之應用程式的預設文化特性。 這可藉由設定`NeutralResourcesLanguage`屬性`AssemblyInfo.cs`，或在另一個類別，以預設文化特性：
+此外，UWP 需要在.NET 標準程式庫中明確定義之應用程式的預設文化特性。 這可藉由設定`NeutralResourcesLanguage`屬性`AssemblyInfo.cs`，或在另一個類別，以預設文化特性：
 
 ```csharp
 using System.Resources;
@@ -149,6 +149,6 @@ Xamarin.Forms 由右至左當地語系化目前有許多限制：
 
 **Xamarin.Forms 3.0 從右至左支援，藉由[Xamarin 大學](https://university.xamarin.com/)**
 
-## <a name="related-links"></a>相關的連結
+## <a name="related-links"></a>相關連結
 
 - [TodoLocalizedRTL 範例應用程式](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalizedRTL/)
