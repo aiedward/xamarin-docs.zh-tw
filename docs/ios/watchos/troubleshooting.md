@@ -37,7 +37,7 @@ ms.lasthandoff: 04/04/2018
 - 較舊版本的 Visual Studio for Mac 不正確地顯示其中一個**AppleCompanionSettings**圖示為 88 x 88 像素為單位; 會導致**遺漏圖示錯誤**如果您嘗試以提交至應用程式存放區。
     這個圖示應該是 87 x 87 像素 (29 單位**@3x** Retina 螢幕)。 您無法在 Visual Studio 中修正此問題適用於 Mac 的影像資產在 Xcode 中編輯，或是手動編輯**Contents.json**檔案 (以符合[這個範例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。
 
-- 如果監看式擴充功能專案**Info.plist > WKApp 套件組合識別碼**不[正確設定](~/ios/watchos/get-started/project-references.md)以符合監看式應用程式的**套件組合識別碼**，偵錯工具將無法連接和視覺化Studio for Mac 將會等候訊息*「 正在等候偵錯工具要連接 」*。
+- 如果監看式擴充功能專案**Info.plist > WKApp 套件組合識別碼**不[正確設定](~/ios/watchos/get-started/project-references.md)以符合監看式應用程式的**套件組合識別碼**，偵錯工具將無法連接和視覺化Studio for Mac 將會等候訊息 *「 正在等候偵錯工具要連接 」*。
 
 - 中支援偵錯**通知**模式，但可以是不可靠。 重試一次將有時運作。 確認監看式應用程式的**Info.plist** `WKCompanionAppBundleIdentifier`設定為符合的 iOS 父/容器應用程式套件組合識別碼 (ie。 在 iPhone 執行的一個)。
 
@@ -98,7 +98,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
     ![](troubleshooting-images/add-1.png "InterfaceController")
 
-3. 您可以現在將控制項拖曳到介面控制器 （例如。 標籤和按鈕），但您無法建立插座或動作，因為沒有任何**.h**標頭檔。 下列步驟可能會造成需要**.h**建立標頭檔。
+3. 您可以現在將控制項拖曳到介面控制器 （例如。 標籤和按鈕），但您無法建立插座或動作，因為沒有任何 **.h**標頭檔。 下列步驟可能會造成需要 **.h**建立標頭檔。
 
     ![](troubleshooting-images/add-2.png "版面配置中的按鈕")
 
@@ -165,7 +165,7 @@ with an alpha channel. Icons should not have an alpha channel.
     ![](troubleshooting-images/add-6.png "在介面產生器中開啟分鏡腳本")
 
 8. 選取新的介面控制站，並提供您定義以上版本，例如類別名稱。 `MyInterfaceController`.
-如果所有項目已正確運作，它應該會出現在自動**類別：**下拉式清單，而且您可以從該處選取它。
+如果所有項目已正確運作，它應該會出現在自動**類別：** 下拉式清單，而且您可以從該處選取它。
 
     ![](troubleshooting-images/add-4.png "設定自訂的類別")
 
@@ -173,11 +173,11 @@ with an alpha channel. Icons should not have an alpha channel.
 
     ![](troubleshooting-images/add-7.png "小幫手編輯器的工具列項目")
 
-    當焦點是在程式碼 窗格中時，請確定您正在查看**.h**標頭檔，而且如果未在軌跡列中以滑鼠右鍵按一下並選取正確的檔案 (**MyInterfaceController.h**)
+    當焦點是在程式碼 窗格中時，請確定您正在查看 **.h**標頭檔，而且如果未在軌跡列中以滑鼠右鍵按一下並選取正確的檔案 (**MyInterfaceController.h**)
 
     ![](troubleshooting-images/add-8.png "選取 MyInterfaceController")
 
-10. 您現在可以建立插座和動作**Ctrl + 拖曳**到分鏡腳本從**.h**標頭檔。
+10. 您現在可以建立插座和動作**Ctrl + 拖曳**到分鏡腳本從 **.h**標頭檔。
 
     ![](troubleshooting-images/add-9.png "建立插座和動作")
 
@@ -185,7 +185,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
     ![](troubleshooting-images/add-a.png "輸出和動作對話方塊")
 
-11. 儲存分鏡腳本變更並關閉 Xcode，回到 Visual Studio for mac。 它會偵測到標頭檔的變更，並自動將程式碼加入**.designer.cs**檔案：
+11. 儲存分鏡腳本變更並關閉 Xcode，回到 Visual Studio for mac。 它會偵測到標頭檔的變更，並自動將程式碼加入 **.designer.cs**檔案：
 
 
         [Register ("MyInterfaceController")]

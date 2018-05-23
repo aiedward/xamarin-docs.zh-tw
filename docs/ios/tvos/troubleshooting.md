@@ -39,7 +39,7 @@ _本文涵蓋了解 Xamarin 的 tvOS 支援使用時可能遇到的問題。_
 
 ### <a name="invalid-executable---the-executable-does-not-contain-bitcode"></a>無效的可執行檔的可執行檔不包含 bitcode
 
-嘗試提交至 Apple TV 應用程式市集的 Xamarin.tvOS 應用程式，您可能會收到錯誤訊息格式_「 無效的可執行檔的可執行檔未包含 bitcode 」_。
+嘗試提交至 Apple TV 應用程式市集的 Xamarin.tvOS 應用程式，您可能會收到錯誤訊息格式 _「 無效的可執行檔的可執行檔未包含 bitcode 」_。
 
 若要解決此問題，請執行下列各項：
 

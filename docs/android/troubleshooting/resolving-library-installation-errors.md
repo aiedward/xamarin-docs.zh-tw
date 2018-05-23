@@ -44,13 +44,13 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     -   在 Windows 中，支援程式庫位於**c:\\使用者\\_username_\\AppData\\本機\\Xamarin**。 
 
-    -   在 Mac OS X 上，支援程式庫位於**/Users/_username_/.local/share/Xamarin**。 
+    -   在 Mac OS X 上，支援程式庫位於 **/Users/_username_/.local/share/Xamarin**。 
 
 2. 尋找對應至錯誤訊息的程式庫和版本的資料夾。 例如，上述錯誤訊息的程式庫及版本資料夾是位於**Android.Support.v4\\22.2.1**:
 
     [![支援程式庫的 22.2.1 的範例資料夾位置](resolving-library-installation-errors-images/01-example-location.png)](resolving-library-installation-errors-images/01-example-location.png#lightbox)
 
-3. 刪除版本資料夾的內容。 請務必移除**.zip**檔案以及**內容**和**內嵌**這個資料夾內的子目錄。 範例錯誤訊息如上所示，檔案和子目錄這個螢幕擷取畫面所示 (**內容**，**內嵌**，和**android_m2repository_r16.zip**) 要刪除：
+3. 刪除版本資料夾的內容。 請務必移除 **.zip**檔案以及**內容**和**內嵌**這個資料夾內的子目錄。 範例錯誤訊息如上所示，檔案和子目錄這個螢幕擷取畫面所示 (**內容**，**內嵌**，和**android_m2repository_r16.zip**) 要刪除：
 
     [![範例內容 22.2.1 支援文件庫資料夾](resolving-library-installation-errors-images/02-example-folder-vs.png)](resolving-library-installation-errors-images/02-example-folder-vs.png#lightbox)
 
@@ -104,7 +104,7 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     -   [android\_m2repository\_r16.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A83087881EE6
 
-    如果**m2repository**封存不會顯示在此資料表中，您可以建立的下載 URL 前面加上**https://dl-ssl.google.com/android/repository/**名稱**m2repository**下載。 例如，使用 **https://dl-ssl.google.com/android/repository/android \_m2repository\_r10.zip**下載**android\_m2repository\_r10.zip**。
+    如果**m2repository**封存不會顯示在此資料表中，您可以建立的下載 URL 前面加上**https://dl-ssl.google.com/android/repository/** 名稱**m2repository**下載。 例如，使用 **https://dl-ssl.google.com/android/repository/android \_m2repository\_r10.zip**下載**android\_m2repository\_r10.zip**。
 
 2.  將檔案重新命名的上表所示的下載 URL 對應的 MD5 雜湊。 例如，如果您已經下載**android\_m2repository\_r25.zip**，它重新命名為**0B3F1796C97C707339FB13AE8507AF50.zip**。 如果下載檔案的下載 URL 的 MD5 雜湊不會顯示在資料表中，您可以使用[線上 MD5 產生器](http://www.webconfs.com/online-md5-generator.php)將 URL 轉換成 MD5 雜湊字串。 
 
@@ -112,7 +112,7 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     -   在 Windows 中，此資料夾位於**c:\\使用者\\***username***\\AppData\\本機\\Xamarin\\送達**。 
 
-    -   在 Mac OS X 上，此資料夾位於**/Users/***username***/.local/share/Xamarin/zips**。 
+    -   在 Mac OS X 上，此資料夾位於 **/Users/***username***/.local/share/Xamarin/zips**。 
 
     例如，下列螢幕擷取畫面說明結果時**android\_m2repository\_r16.zip**會下載並重新命名為其下載 URL，在 Windows 上的 MD5 雜湊：
 
@@ -139,7 +139,7 @@ Unzipping failed. Please download https://dl-ssl.google.com/android/repository/a
 
 2.  下載**android\_m2repository\_r_nn_.zip**檔案，將來自 Google 對應至錯誤訊息 （請參閱連結的前一節中的資料表）。
 
-3.  擷取此**.zip**封存至任何位置 （例如桌上型電腦）。 這必須建立對應至名稱的目錄**.zip**封存。 在此目錄中，您應該找到子目錄呼叫**m2repository**: 
+3.  擷取此 **.zip**封存至任何位置 （例如桌上型電腦）。 這必須建立對應至名稱的目錄 **.zip**封存。 在此目錄中，您應該找到子目錄呼叫**m2repository**: 
 
     [![擷取的 zip 封存中找到的 m2repository 資料夾](resolving-library-installation-errors-images/05-m2repository-vs.png)](resolving-library-installation-errors-images/05-m2repository-vs.png#lightbox)
 
@@ -147,11 +147,11 @@ Unzipping failed. Please download https://dl-ssl.google.com/android/repository/a
 
     [![建立內容和內嵌的資料夾中 23.1.1.0 資料夾](resolving-library-installation-errors-images/06-recreate-folders-vs.png)](resolving-library-installation-errors-images/06-recreate-folders-vs.png#lightbox)
 
-5.  複製**m2repository**從解壓縮**.zip**到**內容**您在上一個步驟中建立的目錄： 
+5.  複製**m2repository**從解壓縮 **.zip**到**內容**您在上一個步驟中建立的目錄： 
 
     [![複製到 23.1.1.0/content 資料夾 m2repository 的螢幕擷取畫面](resolving-library-installation-errors-images/07-copied-m2repository-vs.png)](resolving-library-installation-errors-images/07-copied-m2repository-vs.png#lightbox)
 
-6.  在解壓縮**.zip**目錄中，瀏覽至**m2repository\\com\\android\\支援\\支援 v4** ，然後開啟對應的資料夾上面所建立的版本號碼 (在此範例中， **23.1.1**):
+6.  在解壓縮 **.zip**目錄中，瀏覽至**m2repository\\com\\android\\支援\\支援 v4** ，然後開啟對應的資料夾上面所建立的版本號碼 (在此範例中， **23.1.1**):
 
     [![Support-v4/23.1.1 資料夾中包含檔案的範例清單](resolving-library-installation-errors-images/08-zip-contents-vs.png)](resolving-library-installation-errors-images/08-zip-contents-vs.png#lightbox)
 
@@ -159,10 +159,10 @@ Unzipping failed. Please download https://dl-ssl.google.com/android/repository/a
 
     [![23.1.1.0/embedded 資料夾複製檔案的範例](resolving-library-installation-errors-images/09-copied-vs.png)](resolving-library-installation-errors-images/09-copied-vs.png#lightbox)
 
-8.  請確認所有檔案會都遭覆寫。 **內嵌**目錄現在應該會包含檔案這類**d**， **.aar**，和**.pom**。
+8.  請確認所有檔案會都遭覆寫。 **內嵌**目錄現在應該會包含檔案這類**d**， **.aar**，和 **.pom**。
 
-9.  將解壓縮的內容擷取任何**.aar**檔案到**內嵌**目錄。 在 Windows 中，附加**.zip**延伸**.aar**檔、 開啟它，然後複製內容並**內嵌**目錄。
-    上 macOS 解壓縮**.aar**檔案使用**解壓縮**命令終端機 (例如，**解壓縮 file.aar**)。
+9.  將解壓縮的內容擷取任何 **.aar**檔案到**內嵌**目錄。 在 Windows 中，附加 **.zip**延伸 **.aar**檔、 開啟它，然後複製內容並**內嵌**目錄。
+    上 macOS 解壓縮 **.aar**檔案使用**解壓縮**命令終端機 (例如，**解壓縮 file.aar**)。
 
 此時，您已手動安裝遺失的元件，應該會無誤建置您的專案。 如果沒有，請確認您已下載**m2repository** **.zip**封存完全對應於錯誤訊息中的版本的版本，並確認您已安裝在其內容上述步驟中所述，請更正的位置。 
 

@@ -68,11 +68,11 @@ ms.lasthandoff: 04/04/2018
 
 ### <a name="unable-to-connect-to-the-debugger-in-sandboxed-apps"></a>無法連接至沙箱化應用程式中偵錯工具
 
-偵錯工具連接到 Xamarin.Mac 應用程式，透過 TCP，這表示，依預設啟用沙箱，當它是無法連線到應用程式，因此如果您嘗試執行應用程式沒有啟用適當的權限，您會收到錯誤*「 無法連接到偵錯工具 」*。 
+偵錯工具連接到 Xamarin.Mac 應用程式，透過 TCP，這表示，依預設啟用沙箱，當它是無法連線到應用程式，因此如果您嘗試執行應用程式沒有啟用適當的權限，您會收到錯誤 *「 無法連接到偵錯工具 」*。 
 
 [![編輯權利](troubleshooting-images/debug01.png "編輯權利")](troubleshooting-images/debug01-large.png#lightbox)
 
-**允許傳出網路連線 （用戶端）**權限就是所需的偵錯工具，啟用此選項將允許正常地偵錯。 您無法偵錯，而它，因為我們已更新`CompileEntitlements`目標`msbuild`為沙箱化針對偵錯任何應用程式只建置的自動將該權限新增至權利。 發行組建應該使用未經修改的權利檔案中指定的權利。
+**允許傳出網路連線 （用戶端）** 權限就是所需的偵錯工具，啟用此選項將允許正常地偵錯。 您無法偵錯，而它，因為我們已更新`CompileEntitlements`目標`msbuild`為沙箱化針對偵錯任何應用程式只建置的自動將該權限新增至權利。 發行組建應該使用未經修改的權利檔案中指定的權利。
 
 ### <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>沒有資料也可用來編碼 437 System.NotSupportedException:
  

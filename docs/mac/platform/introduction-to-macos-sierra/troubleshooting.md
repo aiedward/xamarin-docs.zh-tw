@@ -65,7 +65,7 @@ _這篇文章提供數個疑難排解秘訣 macOS 利也 Xamarin.Mac 應用程�
 
 ## <a name="cloudkit"></a>CloudKit
 
-長時間執行的作業會傳回_「 您沒有儲存檔案的權限 」。_ 發生錯誤。
+長時間執行的作業會傳回 _「 您沒有儲存檔案的權限 」。_ 發生錯誤。
 
 <a name="CoreImage" />
 

@@ -19,7 +19,7 @@ _本文章會提供數個疑難排解提示 iOS 9 Xamarin.iOS 應用程式中使
 
 ## <a name="there-was-a-problem-parsing-the-xml"></a>剖析 XML 發生問題
 
-Xamarin iOS 設計工具還不支援 Xcode 7 功能。 分鏡腳本將無法使用設計工具中載入_"時發生問題，剖析 XML 」_時嘗試使用新的 iOS 9 (Xcode 7) 例如 StackView 設計工具項目。
+Xamarin iOS 設計工具還不支援 Xcode 7 功能。 分鏡腳本將無法使用設計工具中載入 _"時發生問題，剖析 XML 」_ 時嘗試使用新的 iOS 9 (Xcode 7) 例如 StackView 設計工具項目。
 
 iOS Xcode 7 功能的設計工具支援適用於即將推出的循環 6 功能版本。 循環 6 的預覽版本目前用於 Alpha 色板，而新 Xcode 7 功能的支援有限。
 
@@ -89,9 +89,9 @@ IOS9，應用程式傳輸安全性 (ATS) 會強制執行 （例如應用程式�
 
 ## <a name="uicollectionviewcellcontentview-is-null-in-constructors"></a>UICollectionViewCell.ContentView 是建構函式中的 Null
 
-**原因：**在 iOS 9`initWithFrame:`建構函式現在是必要項目，因為在為 iOS 9 中的行為變更[UICollectionView 文件狀態](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)。 如果您註冊指定的識別項的類別，並且必須建立新的儲存格，資料格現在藉由呼叫初始化其`initWithFrame:`方法。
+**原因：** 在 iOS 9`initWithFrame:`建構函式現在是必要項目，因為在為 iOS 9 中的行為變更[UICollectionView 文件狀態](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)。 如果您註冊指定的識別項的類別，並且必須建立新的儲存格，資料格現在藉由呼叫初始化其`initWithFrame:`方法。
 
-**修正：**新增`initWithFrame:`建構函式，就像這樣：
+**修正：** 新增`initWithFrame:`建構函式，就像這樣：
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -109,7 +109,7 @@ public YourCellClassName (CGRect frame) : base (frame)
 
 **原因：** `initWithCoder:`建構函式是從介面產生器 Xib 檔案載入檢視時呼叫。 如果這個建構函式不會匯出 unmanaged 程式碼無法呼叫它的我們受管理的版本。 之前 （例如。 在 iOS 8)`IntPtr`建構函式已叫用來初始化檢視。
 
-**修正：**建立和匯出`initWithCoder:`建構函式，就像這樣：
+**修正：** 建立和匯出`initWithCoder:`建構函式，就像這樣：
 
 ```csharp
 [Export ("initWithCoder:")]
@@ -130,9 +130,9 @@ Dyld Error Message:
 Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScriptCore.framework/JavaScriptCore)
 ```
 
-**原因：**這是 Apple 的原生連結器，以致它們公開私用的 framework 中的 bug （JavaScriptCore 已公開在 iOS 7，之前它是私用架構），和應用程式的部署目標是 iOS 版本時架構是私人的。 在此情況下 Apple 的連結器會使用私用的版本，而不是公用版本的 framework 的連結。
+**原因：** 這是 Apple 的原生連結器，以致它們公開私用的 framework 中的 bug （JavaScriptCore 已公開在 iOS 7，之前它是私用架構），和應用程式的部署目標是 iOS 版本時架構是私人的。 在此情況下 Apple 的連結器會使用私用的版本，而不是公用版本的 framework 的連結。
 
-**修正：**這將會解決 ios 9，但沒有簡單的解決方法，您可以同時套用自行： 只為目標的更新版本的 iOS 版本專案中 （您在此情況下可以嘗試 iOS 7）。 其他架構可能會表現出類似的問題，例如 WebKit framework 已公開在 iOS 8 （和目標 iOS 7 時，會導致此錯誤，因此您應將目標設 iOS 應用程式中使用 WebKit 8）。
+**修正：** 這將會解決 ios 9，但沒有簡單的解決方法，您可以同時套用自行： 只為目標的更新版本的 iOS 版本專案中 （您在此情況下可以嘗試 iOS 7）。 其他架構可能會表現出類似的問題，例如 WebKit framework 已公開在 iOS 8 （和目標 iOS 7 時，會導致此錯誤，因此您應將目標設 iOS 應用程式中使用 WebKit 8）。
 
 ## <a name="untrusted-enterprise-developer"></a>不受信任的企業開發人員
 
@@ -149,13 +149,13 @@ Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScr
 3. 在下**裝置**端面板中，選取您的裝置，以滑鼠右鍵按一下並選取**顯示佈建的設定檔...**: 
 
     [![](troubleshooting-images/untrusted03.png "SShow 佈建的設定檔")](troubleshooting-images/untrusted03.png#lightbox)
-4. 選取目前的裝置，然後按一下每個佈建設定檔**-**按鈕來刪除它： 
+4. 選取目前的裝置，然後按一下每個佈建設定檔**-** 按鈕來刪除它： 
 
     [![](troubleshooting-images/untrusted04.png "刪除佈建設定檔")](troubleshooting-images/untrusted04.png#lightbox)
-5. 從**Xcode**功能表上，選取**喜好設定...**和**帳戶**: 
+5. 從**Xcode**功能表上，選取**喜好設定...** 和**帳戶**: 
 
     [![](troubleshooting-images/untrusted05.png "Xcode 帳號喜好設定")](troubleshooting-images/untrusted05.png#lightbox)
-6. 按一下**檢視詳細資料...**按鈕，然後按一下**下載所有**按鈕： 
+6. 按一下**檢視詳細資料...** 按鈕，然後按一下**下載所有**按鈕： 
 
     [![](troubleshooting-images/untrusted06.png "下載的所有設定檔")](troubleshooting-images/untrusted06.png#lightbox)
 7. 當更新完成清單時，按一下**完成**按鈕，然後關閉 [喜好設定] 視窗。
@@ -168,7 +168,7 @@ Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScr
 
 iOS 9 現在會強制啟動螢幕需求，如此可以不再支援不同的介面方向重複使用相同的啟動映像。 請參閱 Apple [UILanchImage 參考](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW28)如需詳細資訊。
 
-或者，您可以使用分鏡腳本檔案，來呈現您的應用程式啟動畫面而不是使用一組**.png**影像檔。 這是現在 Apple 的慣用方式來顯示啟動螢幕。 請參閱我們[簡介統一分鏡腳本](~/ios/user-interface/storyboards/unified-storyboards.md)指南以取得詳細的資訊。
+或者，您可以使用分鏡腳本檔案，來呈現您的應用程式啟動畫面而不是使用一組 **.png**影像檔。 這是現在 Apple 的慣用方式來顯示啟動螢幕。 請參閱我們[簡介統一分鏡腳本](~/ios/user-interface/storyboards/unified-storyboards.md)指南以取得詳細的資訊。
 
 最後，您的應用程式必須使用其啟動螢幕的分鏡腳本檔案，並支援所有的四個介面方向 （直向、 顛倒直向、 橫向左右橫向） 才會被視為投影片上面板中，或在分割檢視模式中執行。 若要了解有關新的多工能力的 iOS 9 的詳細資訊，請參閱我們[適用於 iPad 的多工](~/ios/platform/multitasking.md)指南。
 

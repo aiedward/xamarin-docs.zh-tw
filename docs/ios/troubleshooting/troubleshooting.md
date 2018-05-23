@@ -45,7 +45,7 @@ ms.lasthandoff: 04/04/2018
 成員可能已移除的連結器，並因此不存在於執行階段組件。  有數個解決方案：
 
 -  新增[[保留]](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute)屬性的成員。  如此可防止連結器將它移除。
--  叫用時[mtouch](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29) ，使用**-nolink**或**-linksdkonly**選項。 -    **-nolink**停用所有連結。
+-  叫用時[mtouch](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29) ，使用 **-nolink**或 **-linksdkonly**選項。 -    **-nolink**停用所有連結。
 -    **-linksdkonly**將只 Xamarin.iOS 提供組件連結，例如*monotouch.dll*或 xamarin.ios.dll。
 
 請注意，組件連結，以便產生的可執行檔是較小。因此，停用連結可能會導致比理想的較大型可執行檔。
@@ -149,7 +149,7 @@ public Bar (IntPtr handle) : base (handle) { }
 
 請確定您用於 Mac 和 Xamarin.iOS 使用最新版本的 Visual Studio
 
-如果問題仍然存在，請[提報 bug](http://monodevelop.com/Developers#Reporting_Bugs)、 附加**~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**， **AndroidTools-{TIMESTAMP}.log**，和**元件-{TIMESTAMP}.log**記錄檔。
+如果問題仍然存在，請[提報 bug](http://monodevelop.com/Developers#Reporting_Bugs)、 附加 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**， **AndroidTools-{TIMESTAMP}.log**，和**元件-{TIMESTAMP}.log**記錄檔。
 
 如果所有解決方案均失敗，您可以嘗試移除程式碼完成快取，以便重新產生時：
 
@@ -207,7 +207,7 @@ int count = ((ICollection<Foo>) array).Count;
 
 
 
-請將 XS 記錄檔，附加**~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**， **AndroidTools-{TIMESTAMP}.log**，和**元件-{TIMESTAMP}.log**(在較舊版本的 XS/MonoDevelop，只需傳送**~/Library/Logs/MonoDevelop-(3.0|2.8|2.6)/MonoDevelop.log**)。
+請將 XS 記錄檔，附加 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**， **AndroidTools-{TIMESTAMP}.log**，和**元件-{TIMESTAMP}.log**(在較舊版本的 XS/MonoDevelop，只需傳送 **~/Library/Logs/MonoDevelop-(3.0|2.8|2.6)/MonoDevelop.log**)。
 
  **注意： 上述問題已修正在最終 XS 2.2**
 
@@ -386,7 +386,7 @@ Visual Studio for Mac iPhone 專案建置選項包括將使用的 SDK 版本的�
 ```
 ...then 程式模擬器的應用程式目錄中可能有一個 （或以上） 過時的組件。 由於 Apple iOS 模擬器新增和更新的檔案，但永遠不會刪除它們，可能存在這類組件。 如果發生這種情況然後最簡單的解決方案是從 [模擬器] 功能表中選取 [重設和內容和設定]。   
 
-**警告：**這將會移除所有的檔案、 應用程式和資料從模擬器。   下一次執行應用程式，適用於 Mac 的 Visual Studio 會將它部署至模擬器，而且會有任何舊、 過時的組件造成損毀。
+**警告：** 這將會移除所有的檔案、 應用程式和資料從模擬器。   下一次執行應用程式，適用於 Mac 的 Visual Studio 會將它部署至模擬器，而且會有任何舊、 過時的組件造成損毀。
 
 ## <a name="simulator-hangs-during-application-installation"></a>在應用程式安裝期間停止回應之模擬器
 

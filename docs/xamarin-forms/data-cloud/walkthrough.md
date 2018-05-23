@@ -55,7 +55,7 @@ PCL 專案，每個應用程式也包含一些重要的檔案：
 
 大部分的範例應用程式包含至少兩個頁面：
 
-- **TodoListPage** – 此頁面會顯示一份`TodoItem`執行個體和勾號圖示如果`TodoItem.Done`屬性是`true`。 項目上按一下 瀏覽至`TodoItemPage`。 此外，建立新項目上的  *+*符號。
+- **TodoListPage** – 此頁面會顯示一份`TodoItem`執行個體和勾號圖示如果`TodoItem.Done`屬性是`true`。 項目上按一下 瀏覽至`TodoItemPage`。 此外，建立新項目上的  *+* 符號。
 - **TodoItemPage** – 此頁面會顯示所選的詳細資料`TodoItem`，並讓它可以編輯、 儲存、 刪除及語音。
 
 此外，某些範例應用程式包含用來管理使用者驗證程序的其他頁面。

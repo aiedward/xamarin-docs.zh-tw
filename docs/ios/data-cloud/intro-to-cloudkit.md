@@ -838,7 +838,7 @@ CloudKit 提供個別的開發和生產環境應用程式的記錄類型和資�
 
     [![](intro-to-cloudkit-images/shipping04.png "選取 組合管理")](intro-to-cloudkit-images/shipping04.png#lightbox)
 
-6. 選取應用程式封存檔，然後按一下**匯出...**按鈕： 
+6. 選取應用程式封存檔，然後按一下**匯出...** 按鈕： 
 
     [![](intro-to-cloudkit-images/shipping05.png "應用程式封存檔")](intro-to-cloudkit-images/shipping05.png#lightbox)
     
@@ -860,7 +860,7 @@ CloudKit 提供個別的開發和生產環境應用程式的記錄類型和資�
 
 11. 選擇要產生結果的應用程式的位置`.ipa`檔案。
 
-此處理序送出應用程式直接 iTunes Connect 類似，只要按一下**送出...**而不是匯出 組合管理 視窗中選取封存之後，... 按鈕。
+此處理序送出應用程式直接 iTunes Connect 類似，只要按一下**送出...** 而不是匯出 組合管理 視窗中選取封存之後，... 按鈕。
 
 ## <a name="when-to-use-cloudkit"></a>何時使用 CloudKit
 
