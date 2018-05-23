@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 4d963bbefce2b4564c3f352be5768df77b45b34d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 79d4bdd64ca777c0d74b3df199b5247ce909b02e
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="contacts-and-contactsui"></a>連絡人和 ContactsUI
 
@@ -363,6 +363,6 @@ PresentViewController(view, true, null);
 ## <a name="related-links"></a>相關連結
 
 - [QuickContacts 範例](https://developer.xamarin.com/samples/monotouch/ios9/QuickContacts/)
-- [新功能 iOS 9](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html#//apple_ref/doc/uid/TP40016198-DontLinkElementID_14))
-- [連絡人 Framework 參考](https://developer.apple.com/library/prerelease/ios/documentation/Contacts/Reference/Contacts_Framework/index.html#//apple_ref/doc/uid/TP40015328)
-- [ContactsUI Framework 參考](https://developer.apple.com/library/prerelease/ios/documentation/ContactsUI/Reference/ContactsUI_Framework/index.html#//apple_ref/doc/uid/TP40016207)
+- [功能在 iOS 9 中的新功能](https://developer.apple.com/library/content/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [連絡人 Framework 參考](https://developer.apple.com/documentation/contacts?language=objc)
+- [ContactsUI Framework 參考](https://developer.apple.com/documentation/contactsui?language=objc)

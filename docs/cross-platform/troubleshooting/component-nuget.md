@@ -7,11 +7,11 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
-ms.openlocfilehash: 31660ff1255878dbae15bda601da8e628aabd459
-ms.sourcegitcommit: c5bb1045b2f4607dafe3101ad1ea6ade23e44342
+ms.openlocfilehash: e9c056d37577a280b66bb3aa7ded19e966bca43b
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>更新至 NuGet 元件參考
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 05/14/2018
 
 新增 NuGet 封裝上的這些指示，請參閱[Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package)或[Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。
 
-一份熱門 Xamarin[外掛程式和文件庫](https://github.com/xamarin/XamarinComponents/blob/master/README.md)來協助尋找 NuGet pacakges 為無法使用元件的替代方案。
+一份熱門 Xamarin[增益集和文件庫](https://github.com/xamarin/XamarinComponents/blob/master/README.md)可用以協助找出替代項目，也就是無法使用 NuGet 封裝時元件。
 
 ## <a name="manually-removing-component-references"></a>手動移除元件參考
 

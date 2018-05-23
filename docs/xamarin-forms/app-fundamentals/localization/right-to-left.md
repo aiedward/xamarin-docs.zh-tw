@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: ff9814291d5a28ec9e0bbb3c2a6fc6cce5d8ee25
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: 92ca58374292c829df4098274abae870b355a7b0
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="right-to-left-localization"></a>由右至左當地語系化
 
@@ -24,7 +24,7 @@ _由右至左當地語系化加入 Xamarin.Forms 應用程式的支援由右至�
 資料流程方向是所在頁面的 UI 元素會掃描該眼睛的方向。 某些語言中的，如阿拉伯文與希伯來文，需要的 UI 項目在配置由右至左文字方向。 這可藉由設定[ `VisualElement.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)屬性。 這個屬性會取得或設定中，控制其配置，並應該設為其中任何父項目中的 UI 項目資料流程方向[ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection)列舉值：
 
 - [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
-- [`RightToRight`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
+- [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
 - [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
 設定[ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)屬性[ `RightToLeft` ](xref:Xamarin.Forms.FlowDirection.RightToLeft)在項目通常會設定對齊方式為讓資料流程從的權限，為從右至左讀取順序和控制項的配置由右至左：

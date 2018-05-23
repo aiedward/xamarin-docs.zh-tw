@@ -6,11 +6,11 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 7e28e2513b74faa884fb7bc3d7194f1b02844734
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 81c6a5682fc91b49a0f7495f06e7f7b6d3f76330
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -24,33 +24,12 @@ Xamarin 分析工具有許多可用的程式碼剖析工具： 配置、 週期�
 
 本指南會檢查程式碼剖析的常見案例，並介紹分析工具以協助分析和最佳化 iOS 和 Android 的應用程式的工具。
 
-## <a name="contents"></a>內容
-
-- [下載並安裝](#Download_and_Install)
-- [分析工具和程式碼剖析](#Profilers_and_Profiling)
-- [Xamarin Profiler](#Xamarin_Profiler)
-- [程式碼剖析工具支援](#Profiler_Support)
-- [程式碼剖析工具的基本概念](#Profiler_Basics)
-    - [允許在您的應用程式中進行分析](#Allowing_Profiling_in_your_App)
-    - [啟動分析工具](#Launching_the_Profiler)
-        - [從 Visual Studio 啟動 mac](#Launching_from_Xamarin_Studio)
-        - [從 Visual Studio 啟動](#Launching_from_Visual_Studio)
-        - [儲存和載入分析工具工作階段](#Saving_and_Loading_Profiler_Sessions)
-        - [程式碼剖析工具功能和工具](#Profiler_Features)
-    - [配置](#Allocations)
-    - [時間程式碼剖析工具](#Time_Profiler)
-    - [循環](#Cycles)
-- [剖析應用程式](#Profiling_Applications)
-- [摘要](#Summary)
-
 ## <a name="download-and-install"></a>下載並安裝
 
 > [!NOTE]
-> **注意：**必須是[Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/)解除這項功能在 Windows 上的其中一個 Visual Studio Enterprise 或 Visual Studio 在 mac 上的 mac 的訂閱者
+> 您必須是[Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/)解除這項功能在 Windows 上的其中一個 Visual Studio Enterprise 或 Visual Studio 在 mac 上的 mac 的訂閱者
 
 Xamarin 分析工具是獨立應用程式，以及與 Visual Studio for Mac 和 Visual Studio 啟用程式碼剖析從 IDE 中整合。
-
-### <a name="download"></a>下載
 
 下載您的平台的安裝套件：
 
@@ -58,7 +37,6 @@ Xamarin 分析工具是獨立應用程式，以及與 Visual Studio for Mac 和 
 - [**Windows**](https://dl.xamarin.com/profiler/profiler-windows.msi)
 
 在下載後，啟動安裝程式新增至系統的 Xamarin 分析工具。
-
 
 ## <a name="profilers-and-profiling"></a>分析工具和程式碼剖析
 
@@ -199,7 +177,6 @@ Xamarin 分析工具可以從您的 IDE，當您要分析您的 iOS 或 Android 
 
 如需詳細資訊，請參閱[產生.mlpd 檔案](~/tools/profiler/troubleshooting.md#gen_mlpd)。
 
-
 ## <a name="profiler-features"></a>程式碼剖析工具功能
 
 Xamarin 分析工具是由五個區段如下所示：
@@ -298,7 +275,6 @@ Xamarin 分析工具是由五個區段如下所示：
 
 -----
 
-
 - **呼叫樹狀圖**– 顯示一段時間花費在每個方法：
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
@@ -340,24 +316,7 @@ Xamarin 分析工具是由五個區段如下所示：
 
 -----
 
-
 選取**更新**才能繼續。
-
-<!---
-## Profiling Android Applications
-
-
-Due to the recent inclusion of the profiling libraries into any new Android project template, you will find that when profiling any legacy applications you are greeted with the message dialog above.
-
-You will need to enable this to make sure that the profiling libraries are included in your Android application, for debug builds. This should not be checked for release builds as it creates overhead.
-
-
-## Profiling iOS Applications
-
-### Profiling tvOS
-
-## Profiling Mac Applications
--->
 
 ### <a name="sgen-garbage-collector-and-profiling"></a>SGen 記憶體回收行程和程式碼剖析
 
@@ -374,7 +333,6 @@ SGen 是衍生的 GC，所配置的應用程式三個堆積物件 — Nursery、
 ## <a name="summary"></a>總結
 
 本指南中我們探討了何種程式碼剖析已而如何幫助開發人員。 然後，我們引進了 Xamarin 分析工具，提供一些記錄與成它的運作方式的資訊。 最後我們參觀 Xamarin 分析工具的功能，並瀏覽時間程式碼剖析工具儀器與配置。
-
 
 ## <a name="related-links"></a>相關連結
 

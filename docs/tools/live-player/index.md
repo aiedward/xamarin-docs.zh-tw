@@ -6,11 +6,11 @@ ms.assetid: 19B1F126-866E-4672-92D2-BE2B70ACF0F1
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: b5301e499a3b85087f19449f8a25b107b8ec1e4b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: dd179fb1d1ce3ca57cdf6e27bb86a12e2f9ef03f
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarin-live-player-for-xamarinforms"></a>Xamarin.Forms Xamarin 即時播放程式
 
@@ -22,7 +22,7 @@ Xamarin Live 播放程式被設計為開始開發人員以取得他們以視覺�
 
 [![即時的 Xamarin Player： 程式碼中，掃描，請測試](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
-1. 下載的應用程式傳送[Xamarin Live Player 安裝](install.md)指示。
+1. 下載應用程式遵循[Xamarin Live Player 安裝](install.md)指示。
 2. 啟用*Xamarin Live Player*中**喜好設定**，然後選取您的裝置從**裝置**清單。
 2. 管理 Live 播放程式來掃描 QR 代碼配對 Visual Studio 裝置的裝置。
 3. 在應用程式權限執行您的電話或平板電腦上。

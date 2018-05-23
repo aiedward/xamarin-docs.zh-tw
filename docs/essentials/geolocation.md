@@ -5,13 +5,13 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: ead498113f432e766fbd77ae2f01bc67c2273b60
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: bf0fa7d2caf7c8857bc1272f4471def04100383f
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/23/2018
 ---
-# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials 地理編碼
+# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials 地理位置
 
 ![發行前版本的 NuGet](~/media/shared/pre-release.png)
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 05/12/2018
 
 ## <a name="getting-started"></a>快速入門
 
-若要存取**地理位置**還需要下列平台的特定安裝程式的功能。
+若要存取**地理位置**功能，下列的特定平台安裝程式需要：
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
@@ -37,7 +37,7 @@ ms.lasthandoff: 05/12/2018
 
 或更新 Android 資訊清單：
 
-開啟**AndroidManifest.xml**底下**屬性**資料夾，然後將下列內部**資訊清單**節點。
+開啟**AndroidManifest.xml**底下**屬性**資料夾，然後將下列內部**資訊清單**節點：
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -47,11 +47,11 @@ ms.lasthandoff: 05/12/2018
 <uses-feature android:name="android.hardware.location.network" android:required="false" />
 ```
 
-或 Anroid 專案上按一下滑鼠右鍵，然後開啟專案的屬性。 在下**Android 資訊清單**尋找**必要的權限：** 區域，然後核取**ACCESS_COARSE_LOCATION**和**ACCESS_FINE_LOCATION**權限。 這會自動更新**AndroidManifest.xml**檔案。
+或 Android 專案上按一下滑鼠右鍵，然後開啟專案的屬性。 在下**Android 資訊清單**尋找**必要的權限：** 區域，然後核取**ACCESS_COARSE_LOCATION**和**ACCESS_FINE_LOCATION**權限。 這會自動更新**AndroidManifest.xml**檔案。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-您的應用程式必須要有索引鍵您**Info.plist**如 NSLocationWhenInUseUsageDescription 才能存取裝置的位置。
+您的應用程式**Info.plist**必須包含`NSLocationWhenInUseUsageDescription`金鑰才能存取裝置的位置。
 
 開啟 plist 編輯器，然後加入**隱私權-位置時在使用使用方式描述**屬性和值，以顯示使用者的填滿。
 
@@ -104,7 +104,7 @@ catch (Exception ex)
 }
 ```
 
-若要查詢目前的裝置[位置](xref:Xamarin.Essentials.Location)座標`GetLocationAsync`可用。 建議將完整`GeolocationRequest`和`CancellationToken`因為它可能需要一些時間才能取得裝置的位置。
+若要查詢目前的裝置[位置](xref:Xamarin.Essentials.Location)座標，`GetLocationAsync`可用。 建議您最好傳入完整`GeolocationRequest`和`CancellationToken`因為它可能需要一些時間才能取得裝置的位置。
 
 ```csharp
 try
@@ -133,7 +133,7 @@ catch (Exception ex)
 
 ## <a name="geolocation-accuracy"></a>地理位置精確度
 
-下表摘要列出每個平台的精確度
+下表摘要列出每個平台的精確度：
 
 ### <a name="lowest"></a>最低
 
