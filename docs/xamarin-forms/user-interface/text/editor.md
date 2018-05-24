@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: dc83defcb3eb69cf53c205793ce77029c0947c2f
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 035365a22c487039ff811756d91ca0a8d392d628
+ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="editor"></a>編輯器
 
@@ -19,8 +19,8 @@ _多行文字輸入_
 
 `Editor`控制項用來接受多行的輸入。 本文將說明如何：
 
-- **[自訂](#Customization)** &ndash;鍵盤和色彩選項。
-- **[互動功能](#Interactivity)** &ndash;提供互動功能可以接聽的事件。
+- **[自訂](#customization)** &ndash;鍵盤和色彩選項。
+- **[互動功能](#interactivity)** &ndash;提供互動功能可以接聽的事件。
 
 ## <a name="customization"></a>自訂
 

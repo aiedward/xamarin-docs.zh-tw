@@ -5,11 +5,11 @@ ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 700c148424da7e50a519659bf9766ce248e66dda
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 2e0abff4d0408d3db11ab95f1debc6621f609d86
+ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="get-started-with-xamarinessentials"></a>開始使用 Xamarin.Essentials
 
@@ -25,7 +25,7 @@ Xamarin.Essentials 支援下列平台和作業系統：
 | --- | --- |
 | Android | 4.4 (應用程式開發介面 19) 或更高版本 |
 | iOS |10.0 或更高 |
-| UWP | 10.0.6299.0 或更高版本 |
+| UWP | 10.0.16299.0 或更高版本 |
 
 ## <a name="installation"></a>安裝
 

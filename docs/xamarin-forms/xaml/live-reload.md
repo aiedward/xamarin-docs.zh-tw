@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: ca359e5ea700ef09249a2d8a299b6604f91e9149
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: d2aee2d6421b06f9147c656debdd58bdfe21be72
+ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarin-live-reload"></a>Xamarin 即時重新載入
 
@@ -63,8 +63,10 @@ public partial class App : Application
     public App ()
     {
         // Initialize Live Reload.
+        #if DEBUG
         LiveReload.Init();
-    
+        #endif
+        
         InitializeComponent();
         MainPage = new MainPage();
     }
@@ -134,6 +136,10 @@ public partial class App : Application
 * **XLR003**:*即時重新載入 nuget 套件需要安裝 Xamarin 即時重新載入 Visual Studio 擴充功能。*
 
   嘗試建置專案，參考即時重新載入 nuget 封裝，但未安裝 Visual 的擴充功能。  
+
+* *載入組件時發生例外狀況： System.IO.FileNotFoundException： 無法載入組件 ' Xamarin.Live.Reload，Version = 0.3.27.0，Culture = neutral，PublicKeyToken ='。*
+
+  應該使用主專案`PackageReference`而不是 `packages.config`
 
 ### <a name="app-doesnt-connect"></a>應用程式並不會連接
 
