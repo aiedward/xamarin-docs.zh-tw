@@ -6,12 +6,12 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/04/2018
-ms.openlocfilehash: b1cf87ed8c5614a113a03232547a6753da26bc2d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/17/2018
+ms.openlocfilehash: ca88159e8bcbcd4665e29b4ad8df9ffe00cfec67
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="windows-installation"></a>Windows 安裝
 
@@ -85,7 +85,8 @@ Visual Studio 預設會安裝 Google Android SDK 管理員：
 如需 Google Android 模擬器、Hyper-V 和 HAXM 的詳細資訊，請參閱 [Android 模擬器硬體加速](~/android/get-started/installation/android-emulator/hardware-acceleration.md)指南。
 
 > [!NOTE]
-> 在舊版的 Windows 中，HAXM 與 Hyper-V 不相容。 在本例中，需要[停用 Hyper-V](/xamarin/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md?tabs=vswin#disabling-hyper-v) 或使用沒有最佳化 x86 的較慢模擬器映像。
+> 在舊版的 Windows 中，HAXM 與 Hyper-V 不相容。 在本例中，需要[停用 Hyper-V](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#disabling-hyper-v) 或使用沒有最佳化 x86 的較慢模擬器映像。
+
 
 <a name="device" />
 
