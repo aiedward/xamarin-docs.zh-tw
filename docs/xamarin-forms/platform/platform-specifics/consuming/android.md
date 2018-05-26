@@ -6,12 +6,12 @@ ms.assetid: C5D4AA65-9BAA-4008-8A1E-36CDB78A435D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/17/2017
-ms.openlocfilehash: 8aa17c868ce1d0343eab6758c03aaf042c27130e
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.date: 05/23/2018
+ms.openlocfilehash: 8d7ec3f2f64fdb8be903fd13bd72bcf545265a3d
+ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="android-platform-specifics"></a>Android 平台特性
 
@@ -24,6 +24,8 @@ _平台特性可讓您使用才有特定的平台，而不需要實作自訂轉�
 - 啟用在頁面之間撥動[ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)。 如需詳細資訊，請參閱[啟用撥動頁之間的中 TabbedPage](#enable_swipe_paging)。
 - 控制疊置順序的視覺項目來判斷繪製順序。 如需詳細資訊，請參閱[控制提高權限的視覺化項目](#elevation)。
 - 停用[ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)和[ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/)頁面生命週期事件上暫停和繼續分別使用 AppCompat 的應用程式。 如需詳細資訊，請參閱[停用 Disappearing 和出現網頁生命週期事件](#disable_lifecycle_events)。
+- 控制是否[ `WebView` ](xref:Xamarin.Forms.WebView)可以顯示混合的內容。 如需詳細資訊，請參閱[啟用混合內容在 WebView 中](#webview-mixed-content)。
+- 輸入的法編輯器的設定選項的螢幕小鍵盤[ `Entry` ](xref:Xamarin.Forms.Entry)。 如需詳細資訊，請參閱[設定項目輸入法編輯器選項](#entry-imeoptions)。
 
 <a name="soft_input_mode" />
 
@@ -245,10 +247,88 @@ Xamarin.Forms.Application.Current.On<Android>()
 
 [![](android-images/keyboard-on-resume.png "生命週期事件平台專屬")](android-images/keyboard-on-resume-large.png#lightbox "生命週期事件平台專屬")
 
+<a name="webview-mixed-content" />
+
+## <a name="enabling-mixed-content-in-a-webview"></a>啟用在 WebView 中的混合的內容
+
+此平台特定的控制項是否[ `WebView` ](xref:Xamarin.Forms.WebView)可以顯示混合的內容中的應用程式 API 21 或更新版本為目標。 混合的內容是透過 HTTPS 連線，一開始載入的但透過 HTTP 連線載入資源 （例如影像、 音訊、 視訊、 樣式表、 指令碼） 的內容。 它由在 XAML 中設定[ `WebView.MixedContentMode` ](x:ref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.MixedContentModeProperty)附加屬性的值[ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling)列舉型別：
+
+```xaml
+<ContentPage ...
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <WebView ... android:WebView.MixedContentMode="AlwaysAllow" />
+</ContentPage>
+```
+
+或者，可以取用從 C# 使用 fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+webView.On<Android>().SetMixedContentMode(MixedContentHandling.AlwaysAllow);
+```
+
+`WebView.On<Android>`方法會指定平台專屬只會在 Android 上執行。 [ `WebView.SetMixedContentMode` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.SetMixedContentMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.WebView},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling))方法，請在[ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)命名空間，可用來控制是否可以顯示混合的內容，與[ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling)提供三個可能值的列舉型別：
+
+- [`AlwaysAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.AlwaysAllow) – 表示[ `WebView` ](xref:Xamarin.Forms.WebView)將允許 HTTPS origin 從 HTTP 來源載入內容。
+- [`NeverAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.NeverAllow) – 表示[ `WebView` ](xref:Xamarin.Forms.WebView)將不允許 HTTPS origin 從 HTTP 來源載入內容。
+- [`CompatibilityMode`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.CompatibilityMode) – 表示[ `WebView` ](xref:Xamarin.Forms.WebView)會嘗試與最新的裝置網頁瀏覽器的方法相容。 可能會允許某些 HTTP 內容個 HTTPS 來源載入和其他類型的內容將會遭到封鎖。 內容是被封鎖或允許的類型可能會變更每個作業系統版本。
+
+結果是，指定[ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling)值套用至[ `WebView` ](xref:Xamarin.Forms.WebView)，這會控制是否可以顯示混合的內容：
+
+[![混合內容大小處理特定的平台的 WebView](android-images/webview-mixedcontent.png "混合內容大小處理特定的平台的 WebView")](android-images/webview-mixedcontent-large.png#lightbox "WebView 混合內容大小處理特定的平台")
+
+<a name="entry-imeoptions" />
+
+## <a name="setting-entry-input-method-editor-options"></a>設定項目輸入法編輯器選項
+
+平台專屬設定輸入的法 (ime) 選項的螢幕小鍵盤[ `Entry` ](xref:Xamarin.Forms.Entry)。 這包括設定螢幕小鍵盤，以互動的右下角的使用者動作按鈕`Entry`。 它由在 XAML 中設定[ `Entry.ImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.ImeOptionsProperty)附加屬性的值[ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)列舉型別：
+
+```xaml
+<ContentPage ...
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout ...>
+        <Entry ... android:Entry.ImeOptions="Send" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+或者，可以取用從 C# 使用 fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+entry.On<Android>().SetImeOptions(ImeFlags.Send);
+```
+
+`Entry.On<Android>`方法會指定平台專屬只會在 Android 上執行。 [ `Entry.SetImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.SetImeOptions(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Entry},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags))方法，請在[ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)命名空間，用來設定的螢幕小鍵盤的輸入的法動作選項[ `Entry` ](xref:Xamarin.Forms.Entry)，與[ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)列舉型別提供下列值：
+
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Default) -表示沒有特定的動作索引鍵為必要項，而且它基礎控制項將會產生其本身是否可以。
+- [`None`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.None) – 表示，沒有動作索引鍵會成為可用。
+- [`Go`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Go) – 表示動作索引鍵會執行"go"的作業，它們接受文字的目標使用者輸入。
+- [`Search`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Search) – 表示動作索引鍵執行 「 搜尋 」 作業，取得結果的搜尋文字使用者他們已輸入。
+- [`Send`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Send) – 表示動作索引鍵將會執行 「 傳送 」 作業，將文字傳送到其目標。
+- [`Next`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Next) – 表示動作索引鍵會使使用者將會接受文字的下一個欄位的 下一步 」 作業。
+- [`Done`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Done) – 指示動作索引鍵將執行 「 完成 」 的作業，並關閉螢幕小鍵盤。
+- [`Previous`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Previous) – 指示將執行之動作索引鍵的先前的欄位，將會接受文字使使用者的 「 之前 」 作業。
+- [`ImeMaskAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.ImeMaskAction) – 遮罩，以選取動作的選項。
+- [`NoPersonalizedLearning`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoPersonalizedLearning) – 表示，工具會深入了解使用者，都建議根據使用者具有先前輸入的內容。
+- [`NoFullscreen`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoFullscreen) – 表示 UI 不應全螢幕。
+- [`NoExtractUi`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoExtractUi) – 指出將擷取的文字中顯示 UI。
+- [`NoAccessoryAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoAccessoryAction) -表示沒有 UI，將顯示的自訂動作。
+
+結果是，指定[ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)值會套用到螢幕小鍵盤的[ `Entry` ](xref:Xamarin.Forms.Entry)，它會設定輸入的法編輯器選項：
+
+[![項目輸入方法編輯器平台專屬](android-images/entry-imeoptions.png "項目輸入方法編輯器平台專屬")](android-images/entry-imeoptions-large.png#lightbox "項目輸入編輯器平台特定方法")
+
 ## <a name="summary"></a>總結
 
 本文示範如何使用 Android 平台-細節建 Xamarin.Forms。 平台特性可讓您使用才有特定的平台，而不需要實作自訂轉譯器或影響的功能。
-
 
 ## <a name="related-links"></a>相關連結
 

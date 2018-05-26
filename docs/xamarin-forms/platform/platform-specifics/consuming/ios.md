@@ -6,12 +6,12 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/16/2017
-ms.openlocfilehash: 7826962cd3bf9595a63841e3f2d9fb377d1a0574
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/23/2018
+ms.openlocfilehash: cc6cb282565e08f7ce4401e5317fba518a74a8f3
+ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="ios-platform-specifics"></a>iOS 平台特性
 
@@ -28,6 +28,7 @@ _平台特性可讓您使用才有特定的平台，而不需要實作自訂轉�
 - 控制中的項目選取發生時就[ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)。 如需詳細資訊，請參閱[控制選擇器項目選取](#picker_update_mode)。
 - 在設定狀態軸的可見性[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)。 如需詳細資訊，請參閱[頁面上設定狀態軸的可見性](#set_status_bar_visibility)。
 - 控制是否[ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/)處理觸控手勢，或將其傳遞給它的內容。 如需詳細資訊，請參閱[中 ScrollView 延遲內容修飾](#delay_content_touches)。
+- 在設定的分隔符號樣式[ `ListView` ](xref:Xamarin.Forms.ListView)。 如需詳細資訊，請參閱[ListView 上設定分隔符號樣式](#listview-separatorstyle)。
 
 <a name="blur" />
 
@@ -302,7 +303,6 @@ IsPresentedChanged += (sender, e) =>
 平台專屬用來調整字型大小[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)以確保在控制項中，以符合不經的文字。 它由在 XAML 中設定[ `Entry.AdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty/)附加屬性`boolean`值：
 
 ```xaml
-<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage ...
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     <StackLayout Margin="20">
@@ -393,7 +393,6 @@ switch (picker.On<iOS>().UpdateMode())
 平台專屬用來設定 [狀態] 列的可見性[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)，其中包含能夠控制狀態列如何進入或離開`Page`。 它由在 XAML 中設定`Page.PrefersStatusBarHidden`附加屬性的值`StatusBarHiddenMode`列舉型別，並選擇性地`Page.PreferredStatusBarUpdateAnimation`附加屬性的值`UIStatusBarAnimation`列舉型別：
 
 ```xaml
-<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage ...
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.PrefersStatusBarHidden="True"
@@ -468,6 +467,45 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 結果是[ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/)可以停用延遲接收內容的風格，因此，在此案例中[ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/)接收筆勢而不是[ `Detail`](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/)頁面[ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/):
 
 [![](ios-images/scrollview-delay-content-touches.png "ScrollView 延遲內容碰觸特定平台")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Plaform-Specific")
+
+<a name="listview-separatorstyle" />
+
+## <a name="setting-the-separator-style-on-a-listview"></a>ListView 上設定的分隔符號的樣式
+
+平台專屬控制是否在儲存格之間的分隔符號[ `ListView` ](xref:Xamarin.Forms.ListView)使用的整個寬度`ListView`。 它由在 XAML 中設定[ `ListView.SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SeparatorStyleProperty)附加屬性的值[ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle)列舉型別：
+
+```xaml
+<ContentPage ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout Margin="20">
+        <ListView ... ios:ListView.SeparatorStyle="FullWidth">
+            ...
+        </ListView>
+    </StackLayout>
+</ContentPage>
+```
+
+或者，可以取用從 C# 使用 fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+listView.On<iOS>().SetSeparatorStyle(SeparatorStyle.FullWidth);
+```
+
+`ListView.On<iOS>`方法會指定平台專屬只會在 iOS 上執行。 [ `ListView.SetSeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SetSeparatorStyle(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.ListView},Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle))方法，請在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空間，可用來控制是否中的儲存格之間的分隔符號[ `ListView` ](xref:Xamarin.Forms.ListView)使用完整寬度`ListView`，與[ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle)提供兩個可能值的列舉：
+
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.Default) – 表示預設 iOS 分隔符號行為。 這是預設行為，在 Xamarin.Forms。
+- [`FullWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.FullWidth) – 表示分隔符號會取自的某一邊`ListView`之間。
+
+結果是，指定[ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle)值套用至[ `ListView` ](xref:Xamarin.Forms.ListView)，這會控制的儲存格之間的分隔符號寬度：
+
+![](ios-images/listview-separatorstyle.png "ListView SeparatorStyle 平台專屬")
+
+> [!NOTE]
+> 一旦分隔符號樣式設`FullWidth`，就無法變更回`Default`在執行階段。
 
 ## <a name="summary"></a>總結
 
