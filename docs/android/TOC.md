@@ -232,6 +232,7 @@
 ### [自訂連結器設定](deploy-test/linker.md)
 ### [多核心裝置](deploy-test/multicore-devices.md)
 ### [效能](deploy-test/performance.md)
+### [程式碼剖析](deploy-test/profiling.md)
 ### [準備發行](deploy-test/release-prep/index.md)
 #### [ProGuard](deploy-test/release-prep/proguard.md)
 ### [簽署 APK](deploy-test/signing/index.md)
