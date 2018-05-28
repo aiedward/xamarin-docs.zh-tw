@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 9f7c9d1b410d9d1d699644148903fdc6cfeec4fd
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c2e37de65cf7be461543704b67249dfa9833dba8
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Xamarin.Forms 簡介
 
@@ -21,7 +21,7 @@ _Xamarin.Forms 是一個以原生方式跨平台支援的 UI 工具組抽象概�
 
 ## <a name="overview"></a>總覽
 
-Xamarin.Forms 是一個可讓開發人員快速建立跨平台使用者介面的架構。 它會針對將使用 iOS、Android 或通用 Windows 平台 (UWP) 上原生控制項呈現的使用者介面，提供自己的抽象概念。 也就是說，應用程式可以共用大部分的使用者介面程式碼，而且仍然保留目標平台的原生外觀及操作。
+Xamarin.Forms 是一個可讓開發人員快速建立跨平台使用者介面的架構。 它對於使用者介面有自己的抽象概念，會使用 iOS、Android 或通用 Windows 平台 (UWP) 上的原生控制項來呈現。 也就是說，應用程式可以共用大部分的使用者介面程式碼，而且仍然保留目標平台的原生外觀及操作。
 
 Xamarin.Forms 允許快速開發可能會隨著時間的推移而演化為複雜應用程式的應用程式原型。 Xamarin.Forms 應用程式屬於原生應用程式，因此沒有其他工具組的限制，例如，瀏覽器沙箱功能、受限的 API 或效能不佳。 使用 Xamarin.Forms 撰寫的應用程式可以使用任何 API 或基礎平台的功能，例如 (但不限於) iOS 上的 CoreMotion、PassKit 和 StoreKit；Android 上的 NFC 和 Google Play 服務；以及 Windows 上的磚。 此外，您可以建立將使用 Xamarin.Forms 建立其使用者介面部分，同時使用原生 UI 工具組建立其他部分的應用程式。
 

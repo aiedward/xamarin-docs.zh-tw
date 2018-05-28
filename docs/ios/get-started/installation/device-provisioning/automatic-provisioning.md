@@ -6,12 +6,12 @@ ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 05/06/2018
-ms.openlocfilehash: 0e2ce758da2951efa0508e76cdf4eaac5384fa6b
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/22/2018
+ms.openlocfilehash: d324e469ba392b14c635990d607bf04c949ad5db
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="automatic-provisioning"></a>自動化佈建
 
@@ -37,6 +37,14 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 ## <a name="enabling-automatic-signing"></a>啟用自動簽署
 
 在您啟動自動簽署程序之前，應該先確定已在 Visual Studio 中新增應用程式識別碼，如 [Apple 帳戶管理](~/cross-platform/macios/apple-account-management.md)指南所述。 新增「應用程式識別碼」之後，您可以使用任何關聯的「小組」。 這可讓您針對小組建立憑證、設定檔及其他識別碼。 小組識別碼也會用來建立將包含在佈建設定檔中之「應用程式識別碼」的前置詞。 有了這項資訊，便可讓 Apple 驗證您與所宣稱的身分識別相符。
+
+> [!IMPORTANT]
+> 開始之前，請務必登入 [iTunes Connect](https://itunesconnect.apple.com/) 或 [appleid.apple.com](https://appleid.apple.com)，以檢查您是否已經接受最新的 Apple 帳戶原則。 如果出現提示，請完成步驟，以接受來自 Apple 的任何新帳戶合約。 如果您不接受自 2018 年 5 月起的隱私權合約，便會在佈建裝置時收到以下警示：
+> ```
+> Unexpected authentication failure. Reason: {
+> "authType" : "sa"
+>}
+>```
 
 若要自動簽署應用程式以在 iOS 裝置上部署，請執行下列動作：
 

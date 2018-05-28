@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/10/2018
-ms.openlocfilehash: b5c20eb9f40bb4c4981d6b60b9fd4bc75fd29336
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 2f0bb6f1371b9ce1b925b876851d58f3c4d01419
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Android Emulator 硬體加速
 
@@ -46,9 +46,9 @@ ms.lasthandoff: 05/10/2018
 
     啟用 Hyper-V 和 Windows Hypervisor 平台之後，可能需要重新啟動 Windows。
 
-3. **安裝 [Visual Studio 15.8 Preview 1](https://aka.ms/hyperv-emulator-dl)** &ndash; 這個版本的 Visual Studio 提供 IDE 支援，啟動具有 Hyper-V 支援的 Google Android 模擬器。
+3. **安裝 [Visual Studio 15.8 Preview 1 或更新版本](https://www.visualstudio.com/vs/preview/)** &ndash; 這個版本的 Visual Studio 提供 IDE 支援，可啟動具有 Hyper-V 支援的 Google Android 模擬器。
 
-4. **安裝 Google Android 模擬器套件 27.2.7 或更新版本** &ndash; 若要安裝此套件，請巡覽至 Visual Studio 的 [工具] > [Android] > [Android SDK Manager]。 選取 [工具] 索引標籤，確定 Android 模擬器元件的版本至少為 27.2.7。
+4. **安裝 Google Android 模擬器套件 27.2.7 或更新版本** &ndash; 若要安裝此套件，請在 Visual Studio 中，巡覽至 [工具] > [Android] > [Android SDK 管理員]。 選取 [工具] 索引標籤，確定 Android 模擬器元件的版本至少為 27.2.7。
 
     [![Android SDK 及工具對話方塊](hardware-acceleration-images/win/14-sdk-manager.w158-sml.png)](hardware-acceleration-images/win/14-sdk-manager.w158.png#lightbox)
 
