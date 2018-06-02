@@ -7,11 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/18/2018
-ms.openlocfilehash: e9149fc163d31e0fcbc6ae28ccaa896eeca6dd9b
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 861b024a7ff5dd07752662cc45306b6533cd38bd
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34689497"
 ---
 # <a name="using-sqlitenet-with-ios"></a>使用 iOS SQLite.NET
 
@@ -207,5 +208,4 @@ SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 
 - [DataAccess Basic （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [資料存取進階 （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [iOS 資料配方](https://developer.xamarin.com/recipes/ios/data/sqlite/)
 - [Xamarin.Forms 資料存取](~/xamarin-forms/app-fundamentals/databases.md)

@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 04/20/2018
-ms.openlocfilehash: bedcf0603fffc9886155881f91972203104ba155
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 765c51346ac63a00838fec52bde87b38091e2dd9
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34689470"
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>HttpClient 堆疊與 SSL/TLS 實作適用於 Android 的選取器
 
@@ -89,9 +90,9 @@ AndroidClientHandler 是新處理常式委派給原生 Java/OS 的程式碼，�
 
 開頭為 Xamarin.Android 8.3`HttpClientHandler`無聊 ssl 的預設值 (`btls`) 為基礎的 TLS 提供者。 無聊 SSL TLS 提供者會提供下列優點：
 
--   它支援 TLS 1.2。
+-   它支援 TLS 1.2 +。
 -   它支援所有的 Android 版本。
--   它提供兩個的 TLS 1.2 支援`HttpClient`和`WebClient`。
+-   它提供兩個支援 TLS 1.2 +`HttpClient`和`WebClient`。
 
 做為從基礎 TLS 提供者使用無聊 SSL 的缺點是它可以增加產生的 APK （新增的每個支援的 ABI 額外 APK 大小約 1 MB） 的大小。
 

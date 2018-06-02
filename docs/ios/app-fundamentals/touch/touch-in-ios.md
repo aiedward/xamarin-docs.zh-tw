@@ -6,11 +6,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 78783089303eba09b0ee36534b0078b82674a1c6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9ed90a9c4ddcd398d834cb8c91553a57e7bd5ad8
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34689537"
 ---
 # <a name="touch-in-ios"></a>在 iOS 中觸控
 
@@ -76,7 +77,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 }
 ```
 
-## <a name="multi-touch"></a>Multi-Touch
+## <a name="multi-touch"></a>多點觸控
 
 預設會在控制項上未啟用多點觸控。 可以在 iOS 設計工具中，啟用多點觸控，如下列螢幕擷取畫面所示：
 
@@ -117,7 +118,7 @@ if (this.imgTouchMe.Frame.Contains (touch.LocationInView (this.View)))
 
 提供類別，Xamarin.iOS`UIGestureRecognizer`為下列的內建的筆勢辨識器的基底類別：
 
--  *UITapGesturesRecognizer* – 這是針對一個或多個點選。
+-  *UITapGestureRecognizer* – 這是針對一個或多個點選。
 -  *UIPinchGestureRecognizer* – Pinching 和分配分開手指。
 -  *UIPanGestureRecognizer* – 移動或拖曳。
 -  *UISwipeGestureRecognizer* – 撥動朝任何方向。
