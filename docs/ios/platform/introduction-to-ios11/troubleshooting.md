@@ -1,21 +1,20 @@
 ---
-title: 疑難排解
-description: 這篇文章提供數個疑難排解秘訣 iOS 11 Xamarin.iOS 應用程式中使用。
+title: 疑難排解 iOS 11 Xamarin.iOS 應用程式內
+description: 本文描述可用於疑難排解開發 Xamarin.iOS 應用程式時的資源。 其中也會討論 bug 報告，版本資訊，Xamarin 版本、 部落格和支援選項。
 ms.prod: xamarin
 ms.assetid: A90493BF-5298-4A5D-A5D5-8A8FCD078FF7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/31/2017
-ms.openlocfilehash: 181f0a1c66d05e0adf2b682f2df971f5d7d67dfb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ace24cae139c97a8735558c82e22143adbc9c064
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787542"
 ---
-# <a name="troubleshooting"></a>疑難排解
-
-_這篇文章提供數個疑難排解秘訣 iOS 11 Xamarin.iOS 應用程式中使用。_
+# <a name="troubleshooting-ios-11-apps-built-with-xamarinios"></a>疑難排解 iOS 11 Xamarin.iOS 應用程式內
 
 下列各節將列出當 iOS 11 使用 Xamarin.iOS 和情況下，可能會發生的一些已知的問題的解決這些問題：
 

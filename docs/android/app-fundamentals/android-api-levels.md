@@ -6,12 +6,13 @@ ms.assetid: 58CB7B34-3140-4BEB-BE2E-209928C1878C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 8f284fefd260764c6f09d78d2518bfd115782cd2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/01/2018
+ms.openlocfilehash: b942bb1be3441b1fb1a8bd65016914b3ecddbb26
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732316"
 ---
 # <a name="understanding-android-api-levels"></a>了解 Android API 層級
 
@@ -29,6 +30,10 @@ Xamarin.Android 會公開三個 Android API 層級的專案設定：
 -   [Android 的版本為目標](#target)&ndash;指定 Android 應用程式的版本要在上執行。 在使用此應用程式開發介面層級*執行*android 時間。
 
 您可以將應用程式開發介面層級設定為您的專案之前，您必須安裝 SDK 平台元件，該應用程式開發介面層級。 如需有關下載和安裝 Android SDK 元件的詳細資訊，請參閱[Android SDK 安裝程式](~/android/get-started/installation/android-sdk.md)。
+
+> [!NOTE]
+> 從 8 月 2018年，Google 播放主控台將會需要新的應用程式目標應用程式開發介面層級 26 (Android 8.0) 或更高版本。
+現有的應用程式必須以 API 層級 26 或更高版本在 11 月版 2018年開頭為目標。 如需詳細資訊，請參閱[改善應用程式安全性和效能返回年的 Google Play 上](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html)。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -51,7 +56,7 @@ Xamarin.Android 會公開三個 Android API 層級的專案設定：
 
 [![預設為使用最新安裝的平台的目標 framework](android-api-levels-images/xs-default-target-sml.png)](android-api-levels-images/xs-default-target.png#lightbox)
 
-您可以找到的最小值和目標 Android 版本設定**建置 > Android 應用程式**中**專案選項**。 設定 Android 最低版本為**Automatic-使用目標 framework 版本**和相同的值的目標 Framework 版本設定的目標 Android 版本。 在下列螢幕擷取畫面中，Android 目標架構設為**Android 8.0 (API level 26)**以符合上述的目標 Framework 設定：
+您可以找到的最小值和目標 Android 版本設定**建置 > Android 應用程式**中**專案選項**。 設定 Android 最低版本為**Automatic-使用目標 framework 版本**和相同的值的目標 Framework 版本設定的目標 Android 版本。 在下列螢幕擷取畫面中，Android 目標架構設為**Android 8.0 (API level 26)** 以符合上述的目標 Framework 設定：
 
 [![專案選項中設定的目標和架構層級](android-api-levels-images/xs-default-app-sml.png)](android-api-levels-images/xs-default-app.png#lightbox)
 
@@ -170,13 +175,9 @@ Xamarin.Android 中選取的目標或最小 API 層級之前，您必須安裝�
 
 *目標 Framework* (也稱為`compileSdkVersion`) 是在建置階段編譯您的應用程式特定的 Android 架構版本 （API 層級）。 此設定可指定哪些應用程式開發介面應用程式*預期*時執行，但它沒有任何作用所在應用程式開發介面是實際可用的應用程式在安裝時使用。 如此一來，變更目標 Framework 設定不會變更執行階段行為。
 
-目標 Framework 識別您的應用程式會針對連結的程式庫版本&ndash;這會決定哪些應用程式開發介面，您可以使用您的應用程式中。 例如，如果您想要使用[NotificationBuilder.SetCategory](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetCategory/p/System.String/) Android 5.0 棒棒糖符號中所導入的方法，您必須將目標架構設**（棒棒糖符號） 的應用程式開發介面層級 21**或更新版本。 如果您專案的目標 Framework 設定為應用程式開發介面層級，例如**API Level 19 (KitKat)**並再試一次呼叫`SetCategory`程式碼中的方法，就會產生編譯錯誤。
+目標 Framework 識別您的應用程式會針對連結的程式庫版本&ndash;這會決定哪些應用程式開發介面，您可以使用您的應用程式中。 例如，如果您想要使用[NotificationBuilder.SetCategory](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetCategory/p/System.String/) Android 5.0 棒棒糖符號中所導入的方法，您必須將目標架構設 **（棒棒糖符號） 的應用程式開發介面層級 21**或更新版本。 如果您專案的目標 Framework 設定為應用程式開發介面層級，例如**API Level 19 (KitKat)** 並再試一次呼叫`SetCategory`程式碼中的方法，就會產生編譯錯誤。
 
 我們建議，您一律使用編譯*最新*可用的目標 Framework 版本。 如此一來您提供很有幫助的警告訊息的任何已被取代的 Api，可能會由您的程式碼呼叫。 當您使用最新的支援程式庫版本時使用的最新的目標 Framework 版本是特別重要&ndash;每個程式庫預期您的應用程式是編譯該支援程式庫的最小 API 層級或更高。 
-
-> [!NOTE]
-> 從 8 月 2018年，Google 播放主控台將會需要新的應用程式目標應用程式開發介面層級 26 (Android 8.0) 或更高版本。
-現有的應用程式必須以 API 層級 26 或更高版本在 11 月版 2018年開頭為目標。 如需詳細資訊，請參閱[改善應用程式安全性和效能返回年的 Google Play 上](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html)。
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -202,9 +203,9 @@ Xamarin.Android 中選取的目標或最小 API 層級之前，您必須安裝�
 
 ### <a name="minimum-android-version"></a>最低的 Android 版本
 
-*Android 最小版本*(也稱為`minSdkVersion`) 是 Android OS （亦即，最低 API 層級），可以安裝和執行應用程式的舊版本。 根據預設，應用程式只能安裝在與目標架構設定的裝置上或更高版本;如果 Android 最小值的版本設定為*低*比目標架構設定中，您的應用程式也可以執行 Android 的較早版本上。 例如，如果您將目標 Framework 設定為**Android 7.1 (Nougat)**和設定的最小值 Android 版本**Android 4.0.3 （冰淇淋三明治）**，您的應用程式可以安裝在任何平台應用程式開發介面層級 15應用程式開發介面層級 25 （含)。
+*Android 最小版本*(也稱為`minSdkVersion`) 是 Android OS （亦即，最低 API 層級），可以安裝和執行應用程式的舊版本。 根據預設，應用程式只能安裝在與目標架構設定的裝置上或更高版本;如果 Android 最小值的版本設定為*低*比目標架構設定中，您的應用程式也可以執行 Android 的較早版本上。 例如，如果您將目標 Framework 設定為**Android 7.1 (Nougat)** 和設定的最小值 Android 版本**Android 4.0.3 （冰淇淋三明治）**，您的應用程式可以安裝在任何平台應用程式開發介面層級 15應用程式開發介面層級 25 （含)。
 
-雖然您的應用程式可能成功建置，並在此範圍的平台上安裝，但這不保證已成功將*執行*所有這些平台上。 例如，如果您的應用程式安裝在**Android 5.0 （棒棒糖符號）**和程式碼呼叫的 API 僅適用於**Android 7.1 (Nougat)**和更新版本中，您的應用程式將取得執行階段錯誤，並且可能會損毀。 因此，必須確定您的程式碼&ndash;在執行階段&ndash;呼叫只在 Android 裝置上執行所支援的 Api。 換句話說，您的程式碼必須包含明確的執行階段檢查，以確保您的應用程式會使用較新的 Api，只會不夠新，無法支援他們的裝置上。
+雖然您的應用程式可能成功建置，並在此範圍的平台上安裝，但這不保證已成功將*執行*所有這些平台上。 例如，如果您的應用程式安裝在**Android 5.0 （棒棒糖符號）** 和程式碼呼叫的 API 僅適用於**Android 7.1 (Nougat)** 和更新版本中，您的應用程式將取得執行階段錯誤，並且可能會損毀。 因此，必須確定您的程式碼&ndash;在執行階段&ndash;呼叫只在 Android 裝置上執行所支援的 Api。 換句話說，您的程式碼必須包含明確的執行階段檢查，以確保您的應用程式會使用較新的 Api，只會不夠新，無法支援他們的裝置上。
 [執行階段會檢查 Android 版本](#runtimechecks)稍後在本指南中，說明如何將這些執行階段檢查加入至您的程式碼。
 
 
@@ -279,7 +280,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop)
 }
 ```
 
-在此範例中，我們的應用程式的目標 Framework 設定為**Android 5.0 (API 層級 21)**且其最小值 Android 版本設為**Android 4.1 (API 層級 16)**。 因為`SetCategory`在 API 層級`Android.OS.BuildVersionCodes.Lollipop`和更新版本中，此程式碼範例會呼叫`SetCategory`只時實際可用&ndash;會*不*嘗試呼叫`SetCategory`時應用程式開發介面層級為 16、 17、 18、 19、 或 20。 只有的通知時，不會排序正確 （因為它們不以類型分類），但仍來提醒使用者發佈通知功能會減少這些較舊的 Android 版本。 我們的應用程式仍能運作，但其功能稍微變差。
+在此範例中，我們的應用程式的目標 Framework 設定為**Android 5.0 (API 層級 21)** 且其最小值 Android 版本設為**Android 4.1 (API 層級 16)**。 因為`SetCategory`在 API 層級`Android.OS.BuildVersionCodes.Lollipop`和更新版本中，此程式碼範例會呼叫`SetCategory`只時實際可用&ndash;會*不*嘗試呼叫`SetCategory`時應用程式開發介面層級為 16、 17、 18、 19、 或 20。 只有的通知時，不會排序正確 （因為它們不以類型分類），但仍來提醒使用者發佈通知功能會減少這些較舊的 Android 版本。 我們的應用程式仍能運作，但其功能稍微變差。
 
 一般而言，建置版本檢查可協助您決定在執行階段之間做的事與舊的方法中的新方法的程式碼。 例如: 
 

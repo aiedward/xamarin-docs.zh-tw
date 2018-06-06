@@ -1,18 +1,20 @@
 ---
-title: 參考原生程式庫
+title: Xamarin.iOS 在參考原生程式庫
+description: 本文將討論如何連結至 Xamarin.iOS 應用程式的原生 C 程式庫。 說明如何從 C# 建置原生的通用程式庫和存取 C 方法。
 ms.prod: xamarin
 ms.assetid: 1DA80280-E78A-EC4B-8673-C249C8425CF5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/28/2016
-ms.openlocfilehash: 4d58e869dc1357faef71ea88ed6b5ea30aaf960d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bb27ba8b2d9c1b66448f22b7f80f17ba2e483544
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787721"
 ---
-# <a name="referencing-native-libraries"></a>參考原生程式庫
+# <a name="referencing-native-libraries-in-xamarinios"></a>Xamarin.iOS 在參考原生程式庫
 
 Xamarin.iOS 支援原生 C 程式庫和 Objective C 程式庫連結。 本文將討論如何連結 Xamarin.iOS 專案具有您原生 C 程式庫。 如需執行 Objective C 程式庫相同的動作，請參閱我們[繫結 Objective C 類型](~/ios/platform/binding-objective-c/index.md)文件。
 

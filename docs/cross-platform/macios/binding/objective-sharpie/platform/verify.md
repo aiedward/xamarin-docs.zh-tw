@@ -1,18 +1,19 @@
 ---
-title: 確認屬性
+title: 目標 Sharpie 確認屬性
+description: 本文件說明目標 Sharpie 所產生的 [驗證] 屬性。 開發人員而言，他們應該手動驗證目標 Sharpie 輸出，反白顯示 [驗證] 屬性。
 ms.prod: xamarin
 ms.assetid: 107FBCEA-266B-4295-B7AA-40A881B82B7B
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: b9409b4351ed9233db0edf8e2dd9f516b9727fe0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 96e5bafc14c2d3aba03ccc137151a83ee8afeef9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780707"
 ---
-# <a name="verify-attributes"></a>確認屬性
-
+# <a name="objective-sharpie-verify-attributes"></a>目標 Sharpie 確認屬性
 
 您通常會發現目標 Sharpie 所產生的繫結會以註解`[Verify]`屬性。 這些屬性會指出您應該_確認_目標 Sharpie 未正確的做法，藉由比較原始 C/Objective C 宣告 （這會提供繫結的宣告上方的註解） 的繫結。
 
@@ -27,7 +28,7 @@ ms.lasthandoff: 05/09/2018
 
 提供給屬性提示引數可以是交互參考下列文件。 任何產生的文件`[Verify]`繫結完成之後，將主控台也提供屬性。
 
-|確認提示|描述|
+|`[Verify]` 提示|描述|
 |---|---|
 |InferredFromPreceedingTypedef|此宣告的名稱由從的常見慣例推斷立即前面`typedef`在原始的原生程式碼中。 請確認推斷的名稱正確，因為這個慣例會模稜兩可。|
 |ConstantsInterfaceAssociation|沒有任何是傻瓜證明方法來判斷哪個 Objective C 介面與外部變數宣告可能會在相關聯。 這些執行個體繫結為`[Field]`完全介面部分的介面到接近依據具體介面以產生更具直覺性的 API，可能消除 '常數' 中的屬性。|

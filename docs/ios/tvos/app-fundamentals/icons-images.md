@@ -1,21 +1,20 @@
 ---
-title: 使用圖示和映像
-description: 本文涵蓋設計和使用圖示和 Xamarin.tvOS 應用程式內的映像。
+title: 使用 tvOS 圖示和 Xamarin 中的映像
+description: 本文件說明如何使用圖示和在 tvOS 應用程式中使用 Xamarin 建置的映像。 它討論啟動映像、 多層式映像、 應用程式圖示，等等。
 ms.prod: xamarin
 ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c888ecf3d7e0f21734f2b89176eed56bf778dbf9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 59cbc53acf3ab7da12826b9d3cffb821631a0500
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788793"
 ---
-# <a name="working-with-icons-and-images"></a>使用圖示和映像
-
-_本文涵蓋設計和使用圖示和 Xamarin.tvOS 應用程式內的映像。_
+# <a name="working-with-tvos-icons-and-images-in-xamarin"></a>使用 tvOS 圖示和 Xamarin 中的映像
 
 建立幻象圖示和圖像是開發應用程式 Apple TV 沈浸式使用者經驗很重要的一部分。 本指南將說明如何建立並包含必要的圖形資產 Xamarin.tvOS 應用程式所需的步驟：
 
@@ -238,7 +237,7 @@ Apple 提供下列建議來建立您的上架映像：
 
 下列內容的大小就會需要：
 
-||海報 (2:3)|正方形 (1:1)|HDTV (16:9)|
+||海報 (2:3)|正方形 (1:1)|高畫質電視 (16:9)|
 |---|---|---|---|
 |實際大小|404x608px|608x608px|908x512px|
 |安全區域的大小|380x570px|570x570px|852x479px|

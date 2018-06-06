@@ -1,20 +1,19 @@
 ---
 title: UrhoSharp iOS 和 tvOS 支援
-description: iOS 和特定的安裝程式和功能來 UrhoSharp tvOS。
+description: 本文將討論 iOS 以及 tvOS 支援 UrhoSharp。 說明如何建立專案、 設定和啟動 Urho，並執行 Urho 自訂內嵌。
 ms.prod: xamarin
 ms.assetid: 7B06567E-E789-4EA1-A2A9-F3B2212EDD23
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 322297e7782a06a2d900b12cd5afc5f469009f69
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 7e8975b6885f6c902634e05aafca0b8ee60a981c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783970"
 ---
 # <a name="urhosharp-ios-and-tvos-support"></a>UrhoSharp iOS 和 tvOS 支援
-
-_iOS 和 tvOS 特定的安裝程式和功能_
 
 雖然 Urho 是可攜式類別程式庫，並可讓相同的 API，用於在各種平台間之遊戲的邏輯，您仍然需要初始化 Urho 驅動程式中的平台特定，並在某些情況下，您會想要利用平台特定的功能.
 

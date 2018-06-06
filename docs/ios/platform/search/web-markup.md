@@ -1,19 +1,20 @@
 ---
-title: 搜尋以 Web 標記
-description: 加入可連結至您的應用程式的 web 架構的搜尋結果。
+title: 具有 Web 標記 Xamarin.iOS 中搜尋
+description: 本文件說明如何建立連結至 Xamarin.iOS 應用程式的 web 架構的搜尋結果。 它討論如何啟用編製索引，可讓您的應用程式網站執行可探索，並使用智慧應用程式橫幅、 通用的連結，以及更多的 web 內容。
 ms.prod: xamarin
 ms.assetid: 876315BA-2EF9-4275-AE33-A3A494BBF7FD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: bc3446419ef0e469f7184d60fe8876cd2e5da520
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 438a65de3eb78f849493e3478bce5522a325d0cd
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787990"
 ---
-# <a name="search-with-web-markup"></a>搜尋以 Web 標記
+# <a name="search-with-web-markup-in-xamarinios"></a>具有 Web 標記 Xamarin.iOS 中搜尋
 
 提供網站上透過其內容的存取權的應用程式 (不只會從應用程式內)，web 內容可以標記具有特殊的連結，對於將編目 Apple，並提供深層連結至您的應用程式使用者的 iOS 9 裝置上。
 

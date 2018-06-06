@@ -1,19 +1,20 @@
 ---
-title: 快速入門
-description: 了解如何安裝 Xamarin tvOS 支援並快速地開始在 tvOS 開發。
+title: 在 Xamarin tvOS 使用者入門
+description: 本文件說明如何開始使用 Xamarin tvOS 應用程式的建置。 它會連結到已安裝指南和快速入門指南。
 ms.prod: xamarin
 ms.assetid: 1A3D8211-A689-41D9-BCFE-AF8398992031
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: d348cfe00c1099d2e845d93c4e31ff33ae9efc75
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f794562f4113517c8b5e768b264a6dd11f088390
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788754"
 ---
-# <a name="getting-started-with-xamarintvos"></a>開始使用 Xamarin.tvOS
+# <a name="getting-started-with-tvos-in-xamarin"></a>在 Xamarin tvOS 使用者入門
 
 Xamarin.tvOS 允許建立原生 tvOS 應用程式的彈性和更現代的 C# 語言的簡潔性、.NET 基底類別程式庫 (BCL) 和 Visual Studio 的強大的 Mac 或 Visual Studio 2015 或 2017 Windows 上。
 

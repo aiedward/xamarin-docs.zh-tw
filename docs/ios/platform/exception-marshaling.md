@@ -1,19 +1,20 @@
 ---
-title: 例外狀況封送處理
-description: Xamarin.iOS 包含新的事件，以協助回應例外狀況，特別是在原生程式碼。
+title: Xamarin.iOS 中封送處理的例外狀況
+description: 本文件說明如何使用 Xamarin.iOS 應用程式中的原生與 managed 例外狀況。 它會討論可能發生的問題，以及這些問題的解決方案。
 ms.prod: xamarin
 ms.assetid: BE4EE969-C075-4B9A-8465-E393556D8D90
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/05/2017
-ms.openlocfilehash: bb9c16985d958772193093434350435ce477956a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dcf1074aacb6d139d107dac01fa86f459831d5f9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786739"
 ---
-# <a name="exception-marshaling"></a>例外狀況封送處理
+# <a name="exception-marshaling-in-xamarinios"></a>Xamarin.iOS 中封送處理的例外狀況
 
 _Xamarin.iOS 包含新的事件，以協助回應例外狀況，特別是在原生程式碼。_
 
@@ -108,7 +109,7 @@ try {
 
 程式碼範例：
 
-``` objective-c
+```objc
 -(id) setObject: (id) object forKey: (id) key
 {
     @try {
@@ -124,7 +125,7 @@ try {
 
 這一種會擲回 managed 例外狀況在 managed 程式碼，並接著透過原生框架以取得回溯至第一個管理`catch`子句：
 
-``` csharp
+```csharp
 class AppDelegate : UIApplicationDelegate {
     public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
     {

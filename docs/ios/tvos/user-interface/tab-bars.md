@@ -1,21 +1,20 @@
 ---
-title: 使用索引標籤列的控制站
-description: 本文涵蓋設計和使用 Xamarin.tvOS 應用程式內的索引標籤列的控制站。
+title: 使用 tvOS Xamarin 中的索引標籤列控制站
+description: 本文件說明如何使用索引標籤列的控制站在 tvOS 應用程式中使用 Xamarin 建置的。 它提供高層級的索引標籤列檢視，並討論 索引標籤列項目、 分鏡腳本整合和索引標籤列項目。
 ms.prod: xamarin
 ms.assetid: 99A2D7C6-0324-4DE5-B6E9-D39D0BAD8370
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 1536e37830f3b2a1e2a83c7bf5039909062d092b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ea782fc8d6a2ccef2cdd687ec467be6d49793fc0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789316"
 ---
-# <a name="working-with-tab-bar-controller"></a>使用索引標籤列的控制站
-
-_本文涵蓋設計和使用 Xamarin.tvOS 應用程式內的索引標籤列的控制站。_
+# <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>使用 tvOS Xamarin 中的索引標籤列控制站
 
 許多類型的 tvOS 應用程式，主要瀏覽會顯示成索引標籤列執行螢幕的頂端。 使用者 swipes left 和 right 跨可能類別和內容區域底下所做的變更以反映使用者的選取項目清單。
 

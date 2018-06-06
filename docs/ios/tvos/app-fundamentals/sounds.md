@@ -1,21 +1,20 @@
 ---
-title: 播放音效與 AVAudioPlayer
-description: 本文示範如何控制播放的聲音使用 AVAudioPlayer 使用協助程式類別。
+title: 與在 Xamarin AVAudioPlayer tvOS 中播放音效
+description: 本文示範如何控制播放的聲音使用 AVAudioPlayer Xamarin.iOS 應用程式中使用的協助程式類別。
 ms.prod: xamarin
 ms.assetid: E0305572-DC64-48BB-BD97-0A5096E6CA04
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c50aea9c4c35e91c2baa98c94db2fd7c61136d69
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7d95a8ea6c22c0d897d8ccfe0c2ca401f6523783
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788626"
 ---
-# <a name="playing-sound-with-avaudioplayer"></a>播放音效與 AVAudioPlayer
-
-_本文示範如何控制播放的聲音使用 AVAudioPlayer 使用協助程式類別。_
+# <a name="playing-sound-in-tvos-with-avaudioplayer-in-xamarin"></a>與在 Xamarin AVAudioPlayer tvOS 中播放音效
 
 ## <a name="about-the-avaudioplayer"></a>關於 AVAudioPlayer
 

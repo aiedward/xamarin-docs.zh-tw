@@ -1,18 +1,20 @@
 ---
-title: 檢視控制器轉換
+title: 檢視 Xamarin.iOS 控制器轉換
+description: 本文件說明如何自訂動畫的 Xamarin.iOS 應用程式中檢視控制站之間的轉換。
 ms.prod: xamarin
 ms.assetid: CB3AC8E2-8A47-4839-AFA5-AE33047BB26C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 253a2556872ea9186eec832a84f4cfff9cb1c209
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 35795002310cd79a1897061fe6e3e41b48b45b4d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790444"
 ---
-# <a name="view-controller-transitions"></a>檢視控制器轉換
+# <a name="view-controller-transitions-in-xamarinios"></a>檢視 Xamarin.iOS 控制器轉換
 
 UIKit 加入支援自訂動畫呈現檢視控制器時，就會發生的轉換。 這項支援隨附內建的控制站，以及直接繼承自任何自訂控制器`UIViewController`。 此外，`UICollectionViewController`利用控制器轉換自訂，以利用集合檢視的版面配置中動畫的轉換。
 

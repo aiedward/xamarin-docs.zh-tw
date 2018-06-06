@@ -1,18 +1,20 @@
 ---
-title: 購買非可使用產品
+title: 購買 Xamarin.iOS 中的非可使用產品
+description: 本文件說明非可使用產品的 Xamarin.iOS，也就是購買使用者仍可無限期，無論裝置的功能。
 ms.prod: xamarin
 ms.assetid: 635D9CA2-6BCA-53E1-7B10-968029AA3493
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 0a581dc222e43f8d4742bd52dc56dc691449a8f2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: db193493ea11a7963fe5fc57f0c45978c26a7a74
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786947"
 ---
-# <a name="purchasing-non-consumable-products"></a>購買非可使用產品
+# <a name="purchasing-non-consumable-products-in-xamarinios"></a>購買 Xamarin.iOS 中的非可使用產品
 
 非可使用產品 '' 所擁有的客戶。 預期是，它們一定會存取它們，即使他們的裝置遺失/遭竊或購買新的。 它們是適用於書籍、 雜誌問題、 遊戲的層級、 相片篩選、 'pro 功能' 等。一旦使用者已購買的非可使用產品，就不需要支付它一次。 如果您的程式碼不小心讓他們再試一次，StoreKit 會顯示已購買的訊息。
 

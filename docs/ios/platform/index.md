@@ -1,34 +1,32 @@
 ---
-title: 平台功能
-description: 本節中的文件涵蓋 iOS 的特定功能。
+title: iOS 平台功能
+description: 說明各種 iOS 版本中引進的功能和其他 iOS 平台功能的各種指南的這個文件連結。
 ms.prod: xamarin
 ms.assetid: 9F6A27E5-8A87-ADE2-D1EF-5684E7B8C999
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/15/2017
-ms.openlocfilehash: 0a76ed52f52de144bb3da1e7be6e215ce0dfe0ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 95053faa4bab0a65660772aeea39405e4a80a042
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787083"
 ---
-# <a name="platform-features"></a>平台功能
+# <a name="ios-platform-features"></a>iOS 平台功能
 
 ##  <a name="introduction-to-ios-11iosplatformintroduction-to-ios11indexmd"></a>[iOS 11 簡介](~/ios/platform/introduction-to-ios11/index.md)
 
 如何安裝和開始使用 Xcode 9 beta 和 Xamarin 的 iOS 11 支援預覽。
 
-
 ##  <a name="introduction-to-ios-10iosplatformintroduction-to-ios10indexmd"></a>[iOS 10 簡介](~/ios/platform/introduction-to-ios10/index.md)
 
 Apple iOS 10 包含數個新的 Api 和服務可讓您開發應用程式的新特色與功能。 IOS 10，app 具有新的能力，如對應、 訊息、 電話以及 Siri 擴充。 本節說明 Xamarin.iOS 應用程式利用這些功能的方式。
 
-
 ##  <a name="introduction-to-ios-9iosplatformintroduction-to-ios9indexmd"></a>[iOS 9 簡介](~/ios/platform/introduction-to-ios9/index.md)
 
 這個區段會定義從 iOS 8 及如何在 Xamarin.iOS 應用程式中使用這些功能升級時，在 iOS 9 中所做的變更。
-
 
 ##  <a name="introduction-to-ios-8iosplatformintroduction-to-ios8md"></a>[iOS 8 簡介](~/ios/platform/introduction-to-ios8.md)
 
@@ -147,8 +145,6 @@ IOS 7 已引入 touch ID 來驗證使用者的密碼類似。 不過，它是限
 ##  <a name="wide-coloriosplatformwide-colormd"></a>[寬色域](~/ios/platform/wide-color.md)
 
 iOS 10 及 macOS 利也可增強的擴充範圍像素格式和整個系統中包括架構，例如核心圖形、 Core 映像、 裸機和 AVFoundation 寬一系列色彩空間的支援。 藉由提供整個圖形堆疊此行為，是進一步降低與寬的色彩顯示裝置的支援。
-
-
 
 ##  <a name="binding-objective-cbinding-objective-cindexmd"></a>[繫結 Objective-C](binding-objective-c/index.md)
 

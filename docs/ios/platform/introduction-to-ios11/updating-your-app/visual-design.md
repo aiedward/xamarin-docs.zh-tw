@@ -1,21 +1,20 @@
 ---
-title: 視覺化設計的更新
-description: 瀏覽 iOS 11 的新功能
+title: 在 iOS 11 中的視覺效果設計更新
+description: 本文件說明更新導入 iOS 11 的視覺化設計。 它討論導覽列、 搜尋控制站、 邊界、 全螢幕的內容和資料表檢視的變更。
 ms.prod: xamarin
 ms.assetid: 7C300B94-0FAF-492E-A326-877419A1824B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 50858592ec6246fe825e80a3039f3640ebf708a9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5bc29e021e30910c7fcc4c3b451d0a4dfe187d05
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787847"
 ---
-# <a name="visual-design-updates"></a>視覺化設計的更新
-
-_瀏覽 iOS 11 的新功能_
+# <a name="visual-design-updates-in-ios-11"></a>在 iOS 11 中的視覺效果設計更新
 
 在 iOS 11 中，Apple 引進了新的視覺效果變更，包括瀏覽列、 搜尋列和資料表檢視更新。 此外已改良上邊界和全螢幕的內容，以便更大的彈性。 本指南涵蓋這些變更。
 

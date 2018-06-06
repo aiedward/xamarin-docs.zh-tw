@@ -1,18 +1,20 @@
 ---
-title: 組件
+title: 透過 Xamarin tvos 的組件支援
+description: 為了協助釐清 tvOS 應用程式可用的功能，本文件提供支援 Xamarin tvOS 開發的組件的清單。
 ms.prod: xamarin
 ms.assetid: 0B1ACF06-65FF-49E2-B6BC-7AEC55638ED8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: 7d0ee27cfa2ae153ef481f943402f5fcfc5d04e4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 217ec5ea81b304555bcaf19e53c8132628628627
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788819"
 ---
-# <a name="assemblies"></a>組件
+# <a name="assemblies-supported-by-xamarin-for-tvos"></a>透過 Xamarin tvos 的組件支援
 
 ## <a name="supported-assemblies"></a>支援的組件
 
@@ -46,8 +48,6 @@ ms.lasthandoff: 04/04/2018
 ## <a name="portable-class-libraries"></a>可攜式類別庫
 
 除了 Mac 的繫結，會消耗 Xamarin.tvOS [.NET 可攜式類別庫](~/cross-platform/app-fundamentals/pcl.md)。
-
-
 
 ## <a name="related-links"></a>相關連結
 

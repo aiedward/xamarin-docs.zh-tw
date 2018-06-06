@@ -1,16 +1,18 @@
 ---
 title: 可以在哪裡找到我的版本資訊和記錄檔？
+description: 本文件說明哪裡可找到了 Xamarin 版本資訊和記錄檔。 診斷送出 bug，或取得支援的問題時，此資訊會非常實用。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 9234ee0553b2cc9376c0e4e39ffc0700deaacda1
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 0164c5b5cad972b2d8854aefd4403e287a50a6e0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782046"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>可以在哪裡找到我的版本資訊和記錄檔？
 

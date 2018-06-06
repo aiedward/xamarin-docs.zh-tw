@@ -1,21 +1,20 @@
 ---
-title: 使用檔案系統
-description: Xamarin.iOS 可以使用相同的 System.IO 類別，才能使用，您會使用任何.NET 應用程式在 iOS 中檔案和目錄。 不過，儘管熟悉類別和方法，iOS 可以建立或存取的檔案會實作一些限制，而且也會提供特殊功能為特定目錄。 本文概述這些限制與功能，並示範檔案存取 Xamarin.iOS 應用程式中的運作方式。
+title: 使用檔案系統中 Xamarin.iOS
+description: 本文件說明如何使用 Xamarin.iOS 中的檔案系統。 其中也會討論讀取檔案、 XML 和 JSON 序列化、 應用程式的沙箱，共用透過 iTunes，以及其他更多的檔案的目錄。
 ms.prod: xamarin
 ms.assetid: 37DF2F38-901E-8F8E-269A-5EE0CCD28C08
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 0706e416861e5636413577d38bf524ce9184bc4d
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 5bcfac7911ac589e08cd6c5db8c8ea15a3497eca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784237"
 ---
-# <a name="working-with-the-file-system"></a>使用檔案系統
-
-_Xamarin.iOS 可以使用相同的 System.IO 類別，才能使用，您會使用任何.NET 應用程式在 iOS 中檔案和目錄。不過，儘管熟悉類別和方法，iOS 可以建立或存取的檔案會實作一些限制，而且也會提供特殊功能為特定目錄。本文概述這些限制與功能，並示範檔案存取 Xamarin.iOS 應用程式中的運作方式。_
+# <a name="working-with-the-file-system-in-xamarinios"></a>使用檔案系統中 Xamarin.iOS
 
 您可以使用 Xamarin.iOS 和`System.IO`中的類別 *.NET 基底類別程式庫 (BCL)* 存取 iOS 檔案系統。 `File`類別可讓您建立、 刪除和讀取檔案，而`Directory`類別可讓您建立、 刪除或列舉的目錄內容。 您也可以使用`Stream`子類別，可提供更大的控制權檔案作業 （例如壓縮或位置的檔案內搜尋）。
 
@@ -29,15 +28,13 @@ iOS 也有一些檔案系統的特定功能： 特定目錄需要特殊處理相
 
  <a name="General_File_Access" />
 
-
 ## <a name="general-file-access"></a>一般檔案存取
 
 Xamarin.iOS 可讓您使用.NET`System.IO`在 iOS 上的檔案系統作業的類別。
 
 下列程式碼片段將說明一些常見的檔案作業。 您會發現在其下方所有`SampleCode.cs`檔案，請在這個發行項的範例應用程式。
 
- <a name="Working_with_directories" />
-
+<a name="Working_with_directories" />
 
 ### <a name="working-with-directories"></a>使用目錄
 

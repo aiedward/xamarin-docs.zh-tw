@@ -1,21 +1,21 @@
 ---
-title: 逐步解說： 建立使用者介面使用 JSON 項目
+title: 使用 JSON Xamarin.iOS 中建立使用者介面
 description: MonoTouch.Dialog （機動D） 包含支援 JSON 資料透過動態 UI 產生。 在本教學課程中，我們將逐步解說如何使用 JSONElement 隨附於應用程式，或從遠端 Url 載入 JSON 從建立使用者介面。
 ms.prod: xamarin
 ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 322857295383d17da03507bdd5ac78753f8c0619
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f9ba2cce1650260aa889e8282c091012ef8bbddc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790649"
 ---
-# <a name="walkthrough-using-a-json-element-to-create-a-user-interface"></a>逐步解說： 建立使用者介面使用 JSON 項目
+# <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>使用 JSON Xamarin.iOS 中建立使用者介面
 
 _MonoTouch.Dialog （機動D） 包含支援 JSON 資料透過動態 UI 產生。在本教學課程中，我們將逐步解說如何使用 JSONElement 隨附於應用程式，或從遠端 Url 載入 JSON 從建立使用者介面。_
-
 
 周D 支援在 JSON 中宣告的建立使用者介面。 當使用 JSON，機動宣告的項目D 將相關項目為您自動建立。 JSON 可以載入從本機檔案，請剖析`JsonObject`執行個體或遠端 Url。
 
@@ -177,7 +177,7 @@ _rootElement = new RootElement ("Json Example"){
 
 ## <a name="related-links"></a>相關連結
 
-- [MTDJsonDemo (sample)](https://developer.xamarin.com/samples/MTDJsonDemo/)
+- [MTDJsonDemo （範例）](https://developer.xamarin.com/samples/MTDJsonDemo/)
 - [錄影畫面-Miguel de Icaza iOS 登入畫面以建立 MonoTouch.Dialog](http://youtu.be/3butqB1EG0c)
 - [錄影畫面-輕鬆地建立 iOS 使用者介面與 MonoTouch.Dialog](http://youtu.be/j7OC5r8ZkYg)
 - [MonoTouch.Dialog 簡介](~/ios/user-interface/monotouch.dialog/index.md)

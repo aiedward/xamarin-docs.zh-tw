@@ -1,5 +1,5 @@
 ---
-title: 註解，而且覆疊
+title: 附註和 Xamarin.iOS 中的覆疊
 description: 本文件提供逐步解說示範如何使用附註和重疊的對應組件功能。 它示範如何將地圖加入至應用程式，以顯示註解和覆疊 Xamarin 發展 2013年會議的位置。
 ms.prod: xamarin
 ms.assetid: 1BC4F7FC-AE3C-46D7-A4D3-18E142F55B8E
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 9defbade6fafefb26d87e88665c491b3a559c1ae
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7d224f034afc9b841bbf82b2b15b92db2d7820c7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789576"
 ---
-# <a name="annotations-and-overlays--walkthrough"></a>註解，而且覆疊 – 逐步解說
+# <a name="annotations-and-overlays-in-xamarinios"></a>附註和 Xamarin.iOS 中的覆疊
 
 我們將在本逐步解說中建立的應用程式如下所示：
 

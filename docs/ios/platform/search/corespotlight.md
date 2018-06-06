@@ -1,18 +1,20 @@
 ---
-title: 使用核心 Spotlight 搜尋
+title: 使用中 Xamarin.iOS 核心 Spotlight 搜尋
+description: 本文件說明如何使用核心精選 Xamarin.iOS 應用程式中，以提供在應用程式內容的連結。 它討論如何建立、 還原、 更新和刪除可搜尋的項目。
 ms.prod: xamarin
 ms.assetid: 1374914C-0F63-41BF-BD97-EBCEE86E57B1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 0074cfcdc4a80f66f64d12f8e5c0a5e81ab2b8a1
-ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
+ms.openlocfilehash: a8bc3aaa43d7830b0a3baa0768d495458b1ecfad
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788035"
 ---
-# <a name="search-with-core-spotlight"></a>使用核心 Spotlight 搜尋
+# <a name="search-with-core-spotlight-in-xamarinios"></a>使用中 Xamarin.iOS 核心 Spotlight 搜尋
 
 核心精選是一個新的架構，適用於 iOS 9 所呈現的類似資料庫 API 來加入、 編輯或刪除您的應用程式內的內容連結。 使用核心精選加入的項目將可在 iOS 裝置上的 Spotlight 搜尋。
 

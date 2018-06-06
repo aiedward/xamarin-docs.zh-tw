@@ -1,5 +1,5 @@
 ---
-title: 資料繫結和索引鍵-值撰寫程式碼
+title: 資料繫結和 Xamarin.Mac 撰寫程式碼索引鍵-值
 description: 本文說明如何使用索引鍵-值編碼並觀察以便進行資料繫結至 UI 項目在 Xcode 的介面產生器中的索引鍵-值。
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 48ee5d4e4a0a53de49fbba46d79424e03af6fe5c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 88567e47f488a94fcf7334584a678c9689b83306
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792134"
 ---
-# <a name="data-binding-and-key-value-coding"></a>資料繫結和索引鍵-值撰寫程式碼
+# <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>資料繫結和 Xamarin.Mac 撰寫程式碼索引鍵-值
 
 _本文說明如何使用索引鍵-值編碼並觀察以便進行資料繫結至 UI 項目在 Xcode 的介面產生器中的索引鍵-值。_
 
@@ -333,7 +334,7 @@ public NSArray People {
 這裡要注意兩件事：
 
 1. 我們使用`NSMutableArray`而不是標準的 C# 陣列或集合，因為這是資料繫結至 AppKit 控制項的需求，例如**資料表檢視**，**大綱檢視**和**集合**.
-2. 我們公開陣列之員工的轉型以`NSArray`資料繫結用途，並變更其 C# 格式名稱， `People`，資料繫結，需要的其中一個`personModelArray`形式**{class_name} 陣列**（附註第一個字元未進行小寫）。
+2. 我們公開陣列之員工的轉型以`NSArray`資料繫結用途，並變更其 C# 格式名稱， `People`，資料繫結，需要的其中一個`personModelArray`形式 **{class_name} 陣列**（附註第一個字元未進行小寫）。
 
 接下來，我們需要加入一些特殊名稱公用方法來支援**陣列控制器**和**樹狀控制站**:
 

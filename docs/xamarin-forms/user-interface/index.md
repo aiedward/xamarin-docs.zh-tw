@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 3485a7ebf9c54c2aa084dd11f32cd028cbc68aff
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 84106cf8f699616fae772a6f149681840abca0e5
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34733044"
 ---
 # <a name="user-interface"></a>使用者介面
 
@@ -24,6 +25,10 @@ Xamarin.Forms 包含本身可以直接建立簡單的動畫，同時也會多到
 ## <a name="boxviewboxviewmd"></a>[BoxView](boxview.md)
 
 `BoxView`只是簡單彩色矩形，但是它可以用裝飾項目的基本圖形，以及取得 interative 具備觸控輸入。
+
+## <a name="buttonbuttonmd"></a>[Button](button.md)
+
+`Button`回應點選或按一下，以引導應用程式來執行特定工作。
 
 ## <a name="colorscolorsmd"></a>[色彩](colors.md)
 
@@ -85,7 +90,7 @@ Xamarin.Forms 有呈現及接收文字的多個檢視。 可格式化並針對�
 
 Xamarin.Forms 佈景主題定義適用於標準控制特定的視覺外觀。 一旦您將主題加入應用程式的資源字典時，將會變更的標準控制項的外觀。
 
-## <a name="visual-state-managervisual-state-managermd"></a>[視覺狀態管理員](visual-state-manager.md)
+## <a name="visual-state-managervisual-state-managermd"></a>[Visual State Manager](visual-state-manager.md)
 
 Visual State Manager 提供的結構化的方式觸發從程式碼，包括變更裝置方向或大小會調整的版面配置的使用者介面中的變更。
 

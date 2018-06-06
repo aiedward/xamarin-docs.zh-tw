@@ -7,12 +7,13 @@ ms.technology: xamarin-android
 ms.custom: video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 3eb3bdd7b060b661d5202c63a879f1c88d2ccdcb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/30/2018
+ms.openlocfilehash: 3776a0554e5ae496f9e39612ec9bab971c6f1f88
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732758"
 ---
 # <a name="oreo-features"></a>Oreo 功能
 
@@ -133,8 +134,8 @@ _如何開始使用 Xamarin.Android 開發最新版的 Android 應用程式。_
 
 因為 Google 不再提供 standlone 支援 API 26.0 和更新版本的 GUI AVD manager，會顯示此訊息。 針對 Android 8.0 Oreo，您必須使用 Xamarin Android 模擬器管理員或命令列`avdmanager`工具來建立虛擬裝置的 Android Oreo。
 
-若要使用 Xamarin Android 裝置管理員來建立及管理虛擬裝置，請參閱[Xamarin Android 裝置管理員](~/android/get-started/installation/android-emulator/xamarin-device-manager.md)。
-若要建立虛擬裝置不含 Xamarin Android 模擬器管理員，請遵循下一節中的步驟。
+若要使用 Android 裝置管理員來建立及管理虛擬裝置，請參閱[管理虛擬裝置的 Android 裝置管理員](~/android/get-started/installation/android-emulator/device-manager.md)。
+若要建立虛擬裝置沒有 Android 裝置管理員中，請遵循下一節中的步驟。
 
 
 #### <a name="creating-virtual-devices-using-avdmanager"></a>建立虛擬裝置使用 avdmanager
@@ -190,7 +191,7 @@ _如何開始使用 Xamarin.Android 開發最新版的 Android 應用程式。_
 
 -----
 
-如需設定的 Android 模擬器進行測試和偵錯的詳細資訊，請參閱[Google Android 模擬器](~/android/deploy-test/debugging/android-sdk-emulator/index.md)。
+如需設定的 Android 模擬器進行測試和偵錯的詳細資訊，請參閱[使用 Google Android 模擬器偵錯](~/android/deploy-test/debugging/android-sdk-emulator/index.md)。
 
 如果您使用的實體裝置，例如管道或像素，您可以透過自動更新您的裝置，透過無線方式 (OTA) 更新或下載系統映像並直接快閃裝置。 如需手動更新 Android Oreo 您裝置的詳細資訊，請參閱[Nexus 和像素裝置的原廠映像](https://developers.google.com/android/images)。
 

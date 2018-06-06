@@ -1,21 +1,20 @@
 ---
-title: 使用集合檢視
-description: 本文涵蓋設計和集合檢視 Xamarin.tvOS 應用程式內使用。
+title: 使用 tvOS 集合檢視中的 Xamarin
+description: 本文件說明如何使用 Xamarin 建置 tvOS 應用程式中的集合檢視使用。 它涵蓋了集合檢視的配置、 建立資料格和增補的檢視，回應使用者事件，等等。
 ms.prod: xamarin
 ms.assetid: 5125C4C7-2DDF-4C19-A362-17BB2B079178
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7fa38aa81e5929bdc88ceebd153d86cfcd92f20e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9b411ac6bb8d1492511f9e5d2234731ae64c3a82
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789274"
 ---
-# <a name="working-with-collection-views"></a>使用集合檢視
-
-_本文涵蓋設計和集合檢視 Xamarin.tvOS 應用程式內使用。_
+# <a name="working-with-tvos-collection-views-in-xamarin"></a>使用 tvOS 集合檢視中的 Xamarin
 
 集合檢視使用任意的版面配置來顯示可讓群組的內容。 使用內建支援，可讓您輕鬆建立類似格線或線性配置，同時也支援自訂版面配置。
 

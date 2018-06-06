@@ -1,14 +1,16 @@
 ---
 title: 統一的 API 來更新程式碼的秘訣
+description: 本文將討論常見錯誤和有用的各種提示更新應用程式使用 Xamarin 的統一的 API 時。
 ms.prod: xamarin
 ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 640f95e0083c73288cc8e1f183b06bd28a7b4e07
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: cab27d5dc38eeab65728f242c6f11fd445601a88
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782114"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>統一的 API 來更新程式碼的秘訣
 
@@ -20,7 +22,6 @@ ms.lasthandoff: 05/09/2018
 
 ```console
 Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not find a storyboard named 'xxx' in bundle NSBundle...
-
 ```
 
 您可以執行下列動作以解決此問題，請找出下列的建置目標檔案：
@@ -82,9 +83,9 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
     vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
     ```
 
- * NSObject`.ctor(IntPtr)`建構函式已從變更公開受保護 ([以防止不當使用](~/cross-platform/macios/unified/index.md#NSObject_ctor))。
+ * NSObject`.ctor(IntPtr)`建構函式已從變更公開受保護 ([以防止不當使用](~/cross-platform/macios/unified/overview.md#NSObject_ctor))。
 
- * `NSAction` 已[取代](~/cross-platform/macios/unified/index.md#NSAction)與 starndard.NET `Action`。 一些簡單 （單一參數） 委派也已取代為`Action<T>`。
+ * `NSAction` 已[取代](~/cross-platform/macios/unified/overview.md#NSAction)與 starndard.NET `Action`。 一些簡單 （單一參數） 委派也已取代為`Action<T>`。
 
 最後，請參閱[傳統 v 統一的 API 差異](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)查閱 api 程式碼中的變更。 搜尋[本頁](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)將協助您尋找傳統應用程式開發介面什麼它們已被更新。
 

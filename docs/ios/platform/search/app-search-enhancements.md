@@ -1,5 +1,5 @@
 ---
-title: 應用程式搜尋的增強功能
+title: 應用程式搜尋 Xamarin.iOS 中的增強功能
 description: 本文件涵蓋的增強功能 Apple iOS 10，以及如何實作它們 Xamarin.iOS 中，已進行的應用程式內搜尋。
 ms.prod: xamarin
 ms.assetid: 30124DB6-6A02-4F66-A2D9-BBC8008E6B48
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 0df51429ea9655b0a72d9f4c1e413fa7e37410ac
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 06c405a15c26e02908d609bc27cac2c0509e5028
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787880"
 ---
-# <a name="app-search-enhancements"></a>應用程式搜尋的增強功能
+# <a name="app-search-enhancements-in-xamarinios"></a>應用程式搜尋 Xamarin.iOS 中的增強功能
 
 _本文件涵蓋的增強功能 Apple iOS 10，以及如何實作它們 Xamarin.iOS 中，已進行的應用程式內搜尋。_
 

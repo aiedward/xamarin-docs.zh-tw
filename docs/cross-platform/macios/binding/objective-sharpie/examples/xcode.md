@@ -1,15 +1,17 @@
 ---
 title: 真實世界範例使用 Xcode 專案
+description: 本文件說明如何使用 Xcode 專案做為直接輸入到目標 Sharpie，簡化建立 C# 的繫結 Objective C 程式碼的程序。
 ms.prod: xamarin
 ms.assetid: 168AA64C-E181-4937-A1F2-AD095B9A36F2
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: 4e30b07c10de439df8e1ec1706845150e8c54a41
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 850c351f91c9a09a6654c876167e035f751e9504
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781113"
 ---
 # <a name="real-world-example-using-an-xcode-project"></a>真實世界範例使用 Xcode 專案
 

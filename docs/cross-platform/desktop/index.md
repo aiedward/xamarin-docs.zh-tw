@@ -1,19 +1,20 @@
 ---
 ms.assetid: 65F6A634-9CB0-4BB8-A013-7CA0334F6100
 title: 跨平台為桌面的開發人員的
-description: Xamarin 可讓您建置 Windows、 Android、 iOS 和 Mac 使用您的 Windows Forms 或 WPF 技術的應用程式。
+description: 描述 Xamarin.Forms WPF 和 Windows Form 開發人員的各種指南的這個文件連結。 連結的內容瀏覽應用程式生命週期，移植指南和範例的 UI 控制項。
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 0794d931dd57971efcbd0ea5b42159e3524ea6b0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 21c74b8c0ccaffb2b3b8205a3bdda9101b99f072
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34779950"
 ---
 # <a name="cross-platform-for-desktop-developers"></a>跨平台為桌面的開發人員的
 
-此章節包含的資訊可協助 WPF 和 Windows.Forms 開發人員為了交互參照其現有的知識，了解使用 Xamarin 的行動裝置應用程式開發和經驗，行動裝置的慣用語，並提供移植至行動裝置的桌面應用程式的範例。
+本節中的資訊以協助交互參照其現有的知識，了解使用 Xamarin 的行動裝置應用程式開發的 WPF 和 Windows Form 開發人員及行動慣用語，並提供範例移植到行動裝置的桌面應用程式的體驗。
 
 ## <a name="app-lifecycle-comparisonlifecyclemd"></a>[應用程式生命週期的比較](lifecycle.md)
 

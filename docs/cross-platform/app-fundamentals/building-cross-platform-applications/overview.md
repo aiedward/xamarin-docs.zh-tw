@@ -1,15 +1,17 @@
 ---
 title: 建置跨平台應用程式概觀
+description: 本文件提供建置跨平台應用程式的高階概觀。 其中也會討論 C# 中，例如 MVC/MVVM 與原生 Ui 的設計模式的值。
 ms.prod: xamarin
 ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e6e2b4f9d5a482a3c8c24dc5b059db2457b0f301
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 1eb308e0095c29d8ab0d0bdf1f74b807fd2ab97f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780779"
 ---
 # <a name="building-cross-platform-applications-overview"></a>建置跨平台應用程式概觀
 

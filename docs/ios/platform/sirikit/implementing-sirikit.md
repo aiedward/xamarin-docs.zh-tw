@@ -1,23 +1,22 @@
 ---
-title: 實作 SiriKit
-description: 本文涵蓋 Xamarin.iOS 應用程式中實作 SiriKit 支援所需的步驟。
+title: 實作 SiriKit Xamarin.iOS 中
+description: 本文件說明在 Xamarin.iOS 應用程式中實作 SiriKit 支援所需的步驟。 它討論對應方式擴充功能和對應方式 UI 延伸模組。
 ms.prod: xamarin
 ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: a4f38e93cae3c9577a0b1e32067da2cfd2e4796d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: f0e5e05828305bd3656d70105b6e2ad06f9fdc81
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788845"
 ---
-# <a name="implementing-sirikit"></a>實作 SiriKit
+# <a name="implementing-sirikit-in-xamarinios"></a>實作 SiriKit Xamarin.iOS 中
 
 _本文涵蓋 Xamarin.iOS 應用程式中實作 SiriKit 支援所需的步驟。_
-
-
 
 新增 ios 10 SiriKit 允許 Xamarin.iOS 應用程式提供的 iOS 裝置上使用 Siri 和對應的應用程式的使用者可以存取的服務。 本文涵蓋 Xamarin.iOS 應用程式中實作 SiriKit 支援將所需的對應方式擴充功能，目的 UI 延伸模組與詞彙所需的步驟。
 

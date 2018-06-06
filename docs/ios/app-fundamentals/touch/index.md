@@ -1,22 +1,20 @@
 ---
-title: 觸控
-description: 在許多現今的裝置上的觸控式螢幕讓使用者快速且有效地與裝置互動以自然且直覺式的方式。 不只限於簡單觸控偵測這種互動 – 也可使用筆勢以及。 例如，縮小-放大手勢是螢幕的一個非常常見的範例 – 就與使用者都可以放大或縮小的兩指部分。本指南會檢查觸控與手勢在 iOS 中。
+title: 處理觸控 Xamarin.iOS 應用程式中
+description: 描述如何使用觸控、 多點觸控、 筆勢和 3D Touch Xamarin.iOS 應用程式中的輔助線此文件連結。
 ms.prod: xamarin
 ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/23/2017
-ms.openlocfilehash: f34b502e3c0d67f33d41bc489f7ec1d93356af99
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eb8dce8b13345c13a6f95ae7784bd135e7d1f1f5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784158"
 ---
-# <a name="touch"></a>觸控
-
-_在許多現今的裝置上的觸控式螢幕讓使用者快速且有效地與裝置互動以自然且直覺式的方式。不只限於簡單觸控偵測這種互動 – 也可使用筆勢以及。例如，縮小-放大手勢是螢幕的一個非常常見的範例 – 就與使用者都可以放大或縮小的兩指部分。本指南會檢查觸控與手勢在 iOS 中。_
-
+# <a name="handling-touch-in-xamarinios-apps"></a>處理觸控 Xamarin.iOS 應用程式中
 
 如同其他的行動平台，iOS 會具有數種方式來處理觸控。 它可以支援多點觸控 — 許多在螢幕上的連絡點 — 和複雜的筆勢。 本指南介紹一些概念，以及任用實作在 iOS 上的觸控與手勢。
 
@@ -38,8 +36,6 @@ iOS 封裝中的觸控資料`UITouch`類別，可透過一系列的應用程式`
 
 * [3D Touch](~/ios/platform/3d-touch.md)
 * [提供 Haptic 意見反應](~/ios/user-interface/ios-ui/haptic-feedback.md)
-
-
 
 ## <a name="related-links"></a>相關連結
 

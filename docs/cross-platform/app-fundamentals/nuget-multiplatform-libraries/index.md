@@ -1,16 +1,17 @@
 ---
 title: NuGet 的專案 (Nugetizer 3000)
-description: 自動建立 NuGet 套件，以跨平台使用 Nugetizer 3000 共用程式碼 ！
+description: 本文件說明如何使用 Nugetizer 3000 工具自動建立 NuGet 套件，以跨平台共用程式碼。
 ms.prod: xamarin
 ms.assetid: F0A5A9BB-86CD-44C9-8EE8-74D1E5E74A30
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2017
-ms.openlocfilehash: 60c78385d0ffd2fbbdd7af5a4ef4af63e30feb9f
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: f79ed775173e05dd850fbc74c53127b63c0d5f34
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780766"
 ---
 # <a name="nuget-projects-nugetizer-3000"></a>NuGet 的專案 (Nugetizer 3000)
 

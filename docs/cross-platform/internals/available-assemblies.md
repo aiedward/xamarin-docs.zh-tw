@@ -1,20 +1,19 @@
 ---
 title: 可用的組件
-description: Xamarin.iOS、 Xamarin.Android 和 Xamarin.Mac 中可用的組件
+description: 本文件列出可用於 Xamarin.iOS、 Xamarin.Android 和 Xamarin.Mac 組件。 它也會連結到.NET 標準程式庫和可攜式類別庫的相關文件。
 ms.prod: xamarin
 ms.assetid: AEF4ED0E-391F-4FA4-9F18-842BC24C272D
 author: asb3993
 ms.author: amburns
 ms.date: 03/13/2018
-ms.openlocfilehash: ef1dde061ffce4082922cc2eb2af1ae9b045aedd
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b73a818d3864c7c4d1d776e104d95090e87f5877
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781903"
 ---
 # <a name="available-assemblies"></a>可用的組件
-
-_Xamarin.iOS、 Xamarin.Android 和 Xamarin.Mac 中可用的組件_
 
 Xamarin.iOS、 Xamarin.Android 和 Xamarin.Mac 所有隨附在十幾組件。 就像是 Silverlight 桌面的.NET 組件中擴充的子集，Xamarin 平台也是數個 Silverlight 和桌面的.NET 組件擴充的子集。
 

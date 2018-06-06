@@ -1,25 +1,27 @@
 ---
-title: 原生類型
+title: 適用於 iOS 和 macOS 原生類型
+description: 本文件說明如何 Xamarin 的統一的 API 將.NET 型別對應到 32 位元和 64 位元原生類型，視編譯目標架構為基礎。
 ms.prod: xamarin
 ms.assetid: B5237770-0FC3-4B01-9E22-766B35C9A952
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: 4d11d053cf4471a98cbba0f7c97be3bef39276fb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: fc2b91a9265fcf09e4f58d5de27a1fdef9350b2d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781100"
 ---
-# <a name="native-types"></a>原生類型
+# <a name="native-types-for-ios-and-macos"></a>適用於 iOS 和 macOS 原生類型
 
-差異的核心 Mac 和 iOS 應用程式開發介面使用永遠會在 32 位元平台上，在 64 位元平台上的 64 位元的 32 位元架構特定的資料類型。
+Mac 和 iOS 應用程式開發介面使用永遠會在 32 位元平台上，在 64 位元平台上的 64 位元的 32 位元的架構特定的資料類型。
 
 Objective C 的對應，例如`NSInteger`資料型別`int32_t`32 位元系統上和`int64_t`64 位元系統上。
 
-要比對這種行為，我們有統一的 API，我們要取代的先前使用`int`(在.NET 中會定義為一律`System.Int32`) 成新的資料類型： `System.nint`。  您可以將"n"視為意義 「 原生 」，因此原生整數類型的平台。
+要比對這種行為，我們有統一的 API，我們要取代的先前使用`int`(在.NET 中會定義為一律`System.Int32`) 成新的資料類型： `System.nint`。 您可以將"n"視為意義 「 原生 」，因此原生整數類型的平台。
 
-使用這些新的資料類型，相同的原始碼會編譯為 32 位元、 32 位元和 64 位元或 64 位元，視您編譯旗標而定。
+這些新的資料類型，與相同來源的程式碼會編譯 32 位元和 64 位元架構，根據您編譯旗標。
 
 ## <a name="new-data-types"></a>新的資料類型
 

@@ -1,18 +1,19 @@
 ---
-title: 共用程式碼
-description: 應用程式的核心概念
+title: 在多個平台上的共用程式碼
+description: 描述用於共用程式碼，包括可攜式類別庫、 共用的專案、 標準.NET 與 NuGet 技術的各種指南的這個文件連結。
 ms.prod: xamarin
 ms.assetid: 7D179ACF-09A6-46EE-B49D-E27AB5F09CD4
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 4cca202627d1b901e00532c92598ffddd48b4853
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 61377afa61e2c2006c2fdf8ef9b21fe7d567b3de
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780061"
 ---
-# <a name="sharing-code"></a>共用程式碼
+# <a name="sharing-code-on-multiple-platforms"></a>在多個平台上的共用程式碼
 
 此章節提供一些較常見的工作項目或概念，開發人員需要開發行動應用程式時應該注意的指南。
 

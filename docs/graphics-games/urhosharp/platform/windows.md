@@ -1,26 +1,25 @@
 ---
 title: UrhoSharp Windows 支援
-description: Windows 特定的安裝程式和功能來 UrhoSharp。
+description: 本文件討論 UrhoSharp Windows 支援。 說明如何建立專案、 設定和啟動 Urho、 WPF 中，與整合和 UWP 與整合。
 ms.prod: xamarin
 ms.assetid: A4F36014-AE4E-4F07-A1AC-F264AAA68ACF
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: ac563e18c714a276ebe94a491999e61630d53ef3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 094eaf0ebe84ce8c1771bd6481ee897463349856
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783229"
 ---
 # <a name="urhosharp-windows-support"></a>UrhoSharp Windows 支援
-
-_Windows 特定的安裝程式和功能_
 
 雖然 Urho 是可攜式類別程式庫，並可讓相同的 API，用於在各種平台間之遊戲的邏輯，您仍然需要初始化 Urho 驅動程式中的平台特定，並在某些情況下，您會想要利用平台特定的功能.
 
 在下列頁面中，假設`MyGame`是子類別的`Application`類別。
 
-**支援的架構：**只有 64 位元 Windows。
+**支援的架構：** 只有 64 位元 Windows。
 
 您可以看到完整的範例顯示如何使用這個在我們[範例](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples)
 

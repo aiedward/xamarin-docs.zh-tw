@@ -1,18 +1,19 @@
 ---
-title: 協助工具選項
-description: 確定您的應用程式都能由 widest 可能對象
+title: 中的 Xamarin 應用程式的協助工具
+description: 這份文件建立可存取的應用程式提供各種不同的秘訣。 例如，它包含大字型、 高對比、 自我描述的介面和多個相關的建議。
 ms.prod: xamarin
 ms.assetid: E587F0CF-7C1D-41F8-B5A8-DA3E738EDA81
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 48e9d760362e47d7046528c819959bfb14f71f91
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 97cd3655ac47a017d9590e1890b93d74f10a9c34
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780300"
 ---
-# <a name="accessibility"></a>協助工具選項
+# <a name="accessibility-in-xamarin-apps"></a>中的 Xamarin 應用程式的協助工具
 
 _確定您的應用程式都能由 widest 可能對象_
 

@@ -1,16 +1,18 @@
 ---
 title: 在 iOS 11 MapKit 的新功能
+description: 本文件描述新 MapKit 功能 iOS 11： 群組標記、 羅盤的按鈕、 [小數位數] 檢視和使用者的 [追蹤] 按鈕。
 ms.prod: xamarin
 ms.assetid: 304AE5A3-518F-422F-BE24-92D62CE30F34
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/30/2016
-ms.openlocfilehash: 3b1ac8015a86292f00f26133277ead2f211dca33
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f73078a2dcbaeefeb5608ce7ec1e2c12b261acad
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787402"
 ---
 # <a name="new-features-in-mapkit-on-ios-11"></a>在 iOS 11 MapKit 的新功能
 

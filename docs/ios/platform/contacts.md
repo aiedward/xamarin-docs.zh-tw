@@ -1,5 +1,5 @@
 ---
-title: 連絡人和 ContactsUI
+title: 連絡人，以及在 Xamarin.iOS ContactsUI
 description: 本文涵蓋了使用新的連絡人和連絡人 UI Xamarin.iOS 應用程式中的架構。 這些架構會取代現有的通訊錄和 iOS 的先前版本中使用位址活頁簿的 UI。
 ms.prod: xamarin
 ms.assetid: 7b6fb66a-5e19-4a5a-9ed2-f6b02af099af
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: ca4235f7fb67c26ade6171d91870e74407aedbd3
-ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
+ms.openlocfilehash: 60b59023e937215bc640aeb4e9858baa0533db14
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786674"
 ---
-# <a name="contacts-and-contactsui"></a>連絡人和 ContactsUI
+# <a name="contacts-and-contactsui-in-xamarinios"></a>連絡人，以及在 Xamarin.iOS ContactsUI
 
 _本文涵蓋了使用新的連絡人和連絡人 UI Xamarin.iOS 應用程式中的架構。這些架構會取代現有的通訊錄和 iOS 的先前版本中使用位址活頁簿的 UI。_
 

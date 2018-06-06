@@ -1,18 +1,20 @@
 ---
-title: 在 iOS 上的資料儲存體簡介
+title: Xamarin.iOS 應用程式中的資料儲存體簡介
+description: 本文件描述 Xamarin.iOS 應用程式中儲存資料的各種方法，並提供 SQLite 的優點的特定資訊。
 ms.prod: xamarin
 ms.assetid: B1994468-FD06-4FD9-96B3-FCEBB13A972A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: 0da267502629ba30da59c26600ef0e7c605640aa
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 3fc82e2a1a2cf8d25d934ca2194ecd7de1b8b7df
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784699"
 ---
-# <a name="introduction"></a>簡介
+# <a name="introduction-to-data-storage-in-xamarinios-apps"></a>Xamarin.iOS 應用程式中的資料儲存體簡介
 
 ## <a name="when-to-use-a-database"></a>使用資料庫的時機
 

@@ -1,18 +1,19 @@
 ---
-title: 工具和命令
-description: 包含在與目標 Sharpie 命令列引數來使用這些工具的概觀。
+title: 目標 Sharpie 工具與命令
+description: 本文件提供隨附於目標 Sharpie 和命令列引數，使用這些工具的概觀。
 ms.prod: xamarin
 ms.assetid: A84E209B-8932-4CC1-BAD1-7FD51F798A97
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 0e333ce7c336d13c8b55326a5d51a64092885dfd
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 9ef566559249caca75281d9490d5314e08e26d44
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781061"
 ---
-# <a name="tools--commands"></a>工具和命令
+# <a name="objective-sharpie-tools--commands"></a>目標 Sharpie 工具與命令
 
 _包含在與目標 Sharpie 命令列引數來使用這些工具的概觀。_
 

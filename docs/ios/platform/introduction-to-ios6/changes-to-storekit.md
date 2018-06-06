@@ -1,5 +1,5 @@
 ---
-title: StoreKit 的變更
+title: 在 iOS 6 StoreKit 變更
 description: iOS 6 導入了兩個變更存放區套件應用程式開發介面： 能夠顯示 iTunes （與應用程式市集/iBookstore） 從的產品，在您的應用程式和新應用程式內購買的 Apple 會裝載您可下載檔案的選項。 本文件說明如何實作與 Xamarin.iOS 這些功能。
 ms.prod: xamarin
 ms.assetid: 253D37D7-44C7-D012-3641-E15DC41C2699
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8a7a70c3f84518141cf44d630fb4137051d0c866
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ff717d1e4ea7da947d5534f1ce790b58d84fdfd4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787688"
 ---
-# <a name="changes-to-storekit"></a>StoreKit 的變更
+# <a name="changes-to-storekit-in-ios-6"></a>在 iOS 6 StoreKit 變更
 
 _iOS 6 導入了兩個變更存放區套件應用程式開發介面： 能夠顯示 iTunes （與應用程式市集/iBookstore） 從的產品，在您的應用程式和新應用程式內購買的 Apple 會裝載您可下載檔案的選項。本文件說明如何實作與 Xamarin.iOS 這些功能。_
 
@@ -142,8 +143,8 @@ Apple 提供動態搜尋 API 來查詢 iTunes App Store iBookstore 中的所有�
 
 以下是一些範例：
 
--   **iBooks app*- [http://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us](http://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us) 
--   **點和袋鼠 iBook*- [http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;實體 = 電子書&amp;國家/地區 = us](http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us) 
+-   **iBooks 應用程式*- [http://itunes.apple.com/search?term=ibooks&amp; 實體 = 軟體&amp;國家/地區 = us](http://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us) 
+-   **點和袋鼠 iBook*- [http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp; 實體 = 電子書&amp;國家/地區 = us](http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us) 
 
 
 ### <a name="enterprise-partner-feed"></a>企業夥伴摘要

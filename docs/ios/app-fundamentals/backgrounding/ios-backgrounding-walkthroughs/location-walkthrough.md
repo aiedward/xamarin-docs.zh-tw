@@ -1,18 +1,20 @@
 ---
-title: 逐步解說-使用背景位置
+title: 逐步解說-Xamarin.iOS 背景位置
+description: 本文件提供的逐步解說如何使用 backgrounded Xamarin.iOS 應用程式中的位置資訊。 它會描述必要的設定、 使用者介面和應用程式狀態。
 ms.prod: xamarin
 ms.assetid: F8EEA0FD-5614-47FE-ADAC-80A5BCA6EB5F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: e6c74d9ffba4f63682a905d6ebc06d02be81abf4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: aef39ef435bbbad6f643b2376832d8f8132d6a4c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784090"
 ---
-# <a name="walkthrough---using-background-location"></a>逐步解說-使用背景位置
+# <a name="walkthrough---background-location-in-xamarinios"></a>逐步解說-Xamarin.iOS 背景位置
 
 在此範例中，我們會建置 iOS 位置應用程式會列印我們目前位置的相關資訊： 緯度、 經度和螢幕其他參數。 此應用程式將示範如何在應用程式時作用中] 或 [Backgrounded 正確執行位置更新。
 

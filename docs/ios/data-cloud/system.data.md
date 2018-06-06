@@ -1,17 +1,19 @@
 ---
-title: System.Data
+title: System.Data Xamarin.iOS 中
+description: 本文件說明如何使用 System.Data 和 Mono.Data.Sqlite.dll 存取 SQLite Xamarin.iOS 應用程式中的資料。
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b141dfac49e2cfa2dc80b7c0e4ca3a93968590a6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f20bdbdb9fe0d25e1ba545633e271af912aab3ba
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784712"
 ---
-# <a name="systemdata"></a>System.Data
+# <a name="systemdata-in-xamarinios"></a>System.Data Xamarin.iOS 中
 
 Xamarin.iOS 8.10 新增支援[System.Data](https://developer.xamarin.com/api/namespace/System.Data/)，包括`Mono.Data.Sqlite.dll`ADO.NET 提供者。 支援包括下列新增[組件](~/cross-platform/internals/available-assemblies.md):
 
@@ -21,7 +23,6 @@ Xamarin.iOS 8.10 新增支援[System.Data](https://developer.xamarin.com/api/nam
 -  `Mono.Data.Tds.dll`
 -  `Mono.Data.Sqlite.dll`
 
-
 <a name="Example" />
 
 ## <a name="example"></a>範例
@@ -30,7 +31,7 @@ Xamarin.iOS 8.10 新增支援[System.Data](https://developer.xamarin.com/api/nam
 
 ### <a name="add-references"></a>加入參考
 
-首先，以滑鼠右鍵按一下**參考**節點，然後選擇 **編輯參考...**然後選取`System.Data`和`Mono.Data.Sqlite`:
+首先，以滑鼠右鍵按一下**參考**節點，然後選擇 **編輯參考...** 然後選取`System.Data`和`Mono.Data.Sqlite`:
 
 [![](system.data-images/edit-references-sml.png "加入新的參考")](system.data-images/edit-references.png#lightbox)
 

@@ -1,21 +1,21 @@
 ---
 title: 進階 （手動） 的真實世界範例
+description: 本文件說明如何使用 xcodebuild 的輸出做為目標 Sharpie，讓您深入目標 Sharpie 沒有實際上的輸入。
 ms.prod: xamarin
 ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 82bca525433e5c8fea3a29250afb83962f2e64fc
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 7af9700a9b661280c2ee32a1f65cdc01234cbe37
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781252"
 ---
 # <a name="advanced-manual-real-world-example"></a>進階 （手動） 的真實世界範例
 
-
 **這個範例會使用[來自 Facebook 的快顯程式庫](https://github.com/facebook/pop)。**
-
 
 本節涵蓋了更進階的方式，以繫結，我們將在其中使用 Apple 的`xcodebuild`工具第一次建置 POP 的專案，並手動推算目標 Sharpie 的輸入。 這基本上是包含目標 Sharpie 上一節底下。
 

@@ -1,18 +1,20 @@
 ---
-title: 應用程式生命週期的示範
+title: Xamarin.iOS 的應用程式生命週期示範
+description: 這份文件會檢查各種生命週期事件處理應用程式中的委派 iOS 應用程式，來示範這些事件處理的時機和方式。
 ms.prod: xamarin
 ms.assetid: 5C8AACA6-49F8-4C6D-99C3-5F443C01B230
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f03cd7d74d09fc40b88cfbf44bf54c6da5f4c149
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 64c695065012e4bf796c219c260324d9b6278ca5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783580"
 ---
-# <a name="application-lifecycle-demo"></a>應用程式生命週期的示範
+# <a name="application-lifecycle-demo-for-xamarinios"></a>Xamarin.iOS 的應用程式生命週期示範
 
 在本節中，我們會檢查應用程式，示範四個應用程式狀態，以及所扮演的角色`AppDelegate`通知時變更狀態的應用程式中的方法。 每當應用程式會將狀態變更時，應用程式會列印到主控台的更新：
 
@@ -80,4 +82,4 @@ iOS 會終止該應用程式。 請注意，`WillTerminate`因為我們會終止
 
 ## <a name="related-links"></a>相關連結
 
-- [LifecycleDemo(Part2) (sample)](https://developer.xamarin.com/samples/monotouch/LifecycleDemo/)
+- [LifecycleDemo(Part2) （範例）](https://developer.xamarin.com/samples/monotouch/LifecycleDemo/)

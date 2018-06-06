@@ -1,15 +1,16 @@
 ---
 ms.assetid: 77F12838-DBB1-48AC-ACF8-B934998B6EC8
 title: 跨平台桌面範例
-description: 桌面應用程式移植到跨平台行動裝置應用程式。
+description: 此文件的連結已移植到跨平台應用程式以執行使用 Xamarin 的各種範例應用程式。
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 19f05ccc3d15e42ffa5471ba6d85f56dd4d189b8
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 4f77353345c6ed1ce1cde8190a347f3deb1c0348
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34779927"
 ---
 # <a name="cross-platform-desktop-samples"></a>跨平台桌面範例
 

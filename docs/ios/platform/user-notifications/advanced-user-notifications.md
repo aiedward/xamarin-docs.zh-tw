@@ -1,21 +1,20 @@
 ---
-title: 進階的使用者通知
-description: 本文會深入探討新使用者通知架構以及如何充分利用它 Xamarin.iOS 應用程式中。
+title: Xamarin.iOS 中的進階的使用者通知
+description: 本文會深入探討使用者通知架構，在 iOS 10 中導入。 它討論使用者通知、 使用者通知介面、 媒體附件、 自訂使用者介面，等等。
 ms.prod: xamarin
 ms.assetid: 4E0C60AE-6F54-4098-8FA0-AADF9AC86805
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: bd8a95afc5bdd5aed958913d63f9b6cfe853677e
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 09a73ebc3dab90e6342a45c0f1fb5a40184d18a6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788524"
 ---
-# <a name="advanced-user-notifications"></a>進階的使用者通知
-
-_本文會深入探討新使用者通知架構以及如何充分利用它 Xamarin.iOS 應用程式中。_
+# <a name="advanced-user-notifications-in-xamarinios"></a>Xamarin.iOS 中的進階的使用者通知
 
 新增 iOS 10、 傳遞和處理的本機和遠端通知架構可讓使用者通知。 使用此架構，應用程式或應用程式擴充功能可以排程傳遞本機通知藉由指定的一組條件，例如位置或一天的時間。
 

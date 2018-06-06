@@ -1,18 +1,20 @@
 ---
-title: 編輯
+title: 編輯具有 Xamarin.iOS 資料表
+description: 本文件說明如何編輯 Xamarin.iOS 中的資料表。 其中也會討論撥動刪除、 編輯模式和資料列插入。
 ms.prod: xamarin
 ms.assetid: EC197F25-E865-AFA3-E5CF-B33FAB7744A0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 161de0209217dde671b976afad90eaad18d8c7b0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28ebf1157a1bfc9f7bd910fd11365b29cecb9529
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789986"
 ---
-# <a name="editing"></a>編輯
+# <a name="editing-tables-with-xamarinios"></a>編輯具有 Xamarin.iOS 資料表
 
 藉由覆寫方法中的啟用資料表的編輯功能`UITableViewSource`子類別。 最簡單的編輯行為是可以用單一方法覆寫來實作撥動至刪除筆勢。
 編輯模式中的資料表可以完成更複雜的編輯 （包括移動資料列）。
@@ -129,21 +131,21 @@ table.SetEditing (false, true);
 
 ## <a name="row-insertion-editing-style"></a>資料列插入編輯樣式
 
-從資料表中的資料列插入是不常見的使用者介面-標準的 iOS 應用程式中的主要範例是**編輯連絡人**螢幕。 這個螢幕擷取畫面顯示資料列插入功能的運作方式，在編輯模式，沒有其他資料列的 （當按下） 將額外的資料列插入至資料。 編輯完成時，暫存**（新增）**移除資料列。
+從資料表中的資料列插入是不常見的使用者介面-標準的 iOS 應用程式中的主要範例是**編輯連絡人**螢幕。 這個螢幕擷取畫面顯示資料列插入功能的運作方式，在編輯模式，沒有其他資料列的 （當按下） 將額外的資料列插入至資料。 編輯完成時，暫存 **（新增）** 移除資料列。
 
  [![](editing-images/image12.png "當編輯完成時，暫存加入新資料列會移除")](editing-images/image12.png#lightbox)
 
 有多種不同的方法上`UITableViewSource`會影響資料表的編輯模式行為。 這些方法已實作，如下所示的範例程式碼：
 
 -   **EditingStyleForRow** – 傳回`UITableViewCellEditingStyle.Delete`的資料列包含資料，並傳回`UITableViewCellEditingStyle.Insert`最後一個資料列 （這會特別成插入按鈕行為加入）。 
--   **CustomizeMoveTarget** – 雖然使用者所移動的資料格傳回的值從這個選擇性的方法可以覆寫其選擇的位置。 這表示您可以防止 '卸除' 中的特定位置 – 例如此範例，防止之後移動任何資料列儲存格**（新增）**資料列。 
+-   **CustomizeMoveTarget** – 雖然使用者所移動的資料格傳回的值從這個選擇性的方法可以覆寫其選擇的位置。 這表示您可以防止 '卸除' 中的特定位置 – 例如此範例，防止之後移動任何資料列儲存格 **（新增）** 資料列。 
 -   **CanMoveRow** – 傳回 true，以啟用移動 '控制代碼' 或 false，以避免移動。 在範例中，最後一個資料列會有 '控' 隱藏，因為這要作為插入按鈕只到伺服器。 
 
 
 我們也加入兩個自訂的方法，加入 'insert' 的資料列，然後移除它再次不再需要時。 從呼叫**編輯**和**完成**按鈕：
 
--   **WillBeginTableEditing** – 當**編輯**按鈕接觸到它呼叫`SetEditing`，將資料表置於編輯模式。 這會觸發 WillBeginTableEditing 方法顯示其中**（新增）**結尾要做為 '插入按鈕' 資料表的資料列。 
--   **DidFinishTableEditing** – 當 完成 按鈕會接觸到`SetEditing`再次呼叫以關閉 編輯模式。 範例程式碼會移除**（新增）**編輯資料表中的資料列已不再需要。 
+-   **WillBeginTableEditing** – 當**編輯**按鈕接觸到它呼叫`SetEditing`，將資料表置於編輯模式。 這會觸發 WillBeginTableEditing 方法顯示其中 **（新增）** 結尾要做為 '插入按鈕' 資料表的資料列。 
+-   **DidFinishTableEditing** – 當 完成 按鈕會接觸到`SetEditing`再次呼叫以關閉 編輯模式。 範例程式碼會移除 **（新增）** 編輯資料表中的資料列已不再需要。 
 
 
 範例檔案中實作這些方法的覆寫**TableEditModeAdd/Code/TableSource.cs**:
@@ -173,7 +175,7 @@ public override bool CanMoveRow (UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-這兩個自訂方法可用來加入和移除**（新增）**啟用或停用資料表的編輯模式時的資料列：
+這兩個自訂方法可用來加入和移除 **（新增）** 啟用或停用資料表的編輯模式時的資料列：
 
 ```csharp
 public void WillBeginTableEditing (UITableView tableView)

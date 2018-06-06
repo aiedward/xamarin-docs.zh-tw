@@ -1,5 +1,5 @@
 ---
-title: 核心動畫
+title: Xamarin.iOS 中的核心動畫
 description: 這篇文章會檢查核心動畫 framework 中，顯示如何啟用高效能、 流暢動畫，以及如何 UIKit，較低層級動畫控制項的直接使用它。
 ms.prod: xamarin
 ms.assetid: D4744147-FACB-415B-8155-3A6B3C35E527
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b89b93a90e13072e36140b79081b90dcde1cdb05
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5cc6019ed148b870e38659eb30ac7f2738481a50
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786812"
 ---
-# <a name="core-animation"></a>核心動畫
+# <a name="core-animation-in-xamarinios"></a>Xamarin.iOS 中的核心動畫
 
 _這篇文章會檢查核心動畫 framework 中，顯示如何啟用高效能、 流暢動畫，以及如何 UIKit，較低層級動畫控制項的直接使用它。_
 

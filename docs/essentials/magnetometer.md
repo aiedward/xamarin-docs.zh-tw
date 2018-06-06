@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials 磁力計
-description: 磁力計類別可讓您監視裝置的磁力計感應器表示相對於地球磁場的裝置的方向。
+title: Xamarin.Essentials： 磁力計
+description: 磁力計中的類別 Xamarin.Essentials 可讓您監視裝置的磁力計感應器，其指出相對於地球磁場的裝置的方向。
 ms.assetid: 64DD0D41-03E2-40DD-9EC8-101CA0ED852B
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 054a3081aab3b0337336ad7f856532caa41d70fe
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 78ed943a0fa7ca0cb249a4ac030ea6b52dcfb537
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782933"
 ---
-# <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials 磁力計
+# <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials： 磁力計
 
 ![發行前版本的 NuGet](~/media/shared/pre-release.png)
 

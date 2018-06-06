@@ -1,17 +1,18 @@
 ---
 title: 其他 iOS 10 架構變更
-description: 本文涵蓋其他次要變更或增強現有的架構，適用於 iOS 10。
+description: 本文件描述次要變更和增強功能對 iOS 10 中的現有架構，並討論如何進行這些更新 Xamarin.iOS 中使用。
 ms.prod: xamarin
 ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: 33852ef62bd00368ef6544d07e60dd6de4c3b7d3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4b9a230157593b66446e2949e57a925d94208752
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787555"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>其他 iOS 10 架構變更
 

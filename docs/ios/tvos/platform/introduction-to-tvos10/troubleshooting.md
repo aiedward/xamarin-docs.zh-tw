@@ -1,29 +1,28 @@
 ---
-title: 疑難排解
-description: 這篇文章提供數個疑難排解秘訣 tvOS 10 Xamarin.tvOS 應用程式中使用。
+title: 疑難排解 tvOS 10 使用 Xamarin 建置應用程式
+description: 這篇文章提供數個疑難排解秘訣 tvOS 10 Xamarin 應用程式中使用。 它會描述應用程式市集，二進位碼相容性、 CFNetwork HttpProtocol、 CloudKit、 Core 映像、 NSUserActivity 和 UIKit 相關問題。
 ms.prod: xamarin
 ms.assetid: EA5564BB-C415-49A2-B70C-3DBF5E0F3FAB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8875e658ead17820655a2401079627875c14958b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4332caca2804da52bb565fe382932af691c39dab
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788806"
 ---
-# <a name="troubleshooting"></a>疑難排解
+# <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>疑難排解 tvOS 10 使用 Xamarin 建置應用程式
 
-_這篇文章提供數個疑難排解秘訣 tvOS 10 Xamarin.tvOS 應用程式中使用。_
-
-下列各節列出一些使用 tvOS 10 Xamarin.tvOS 與這些問題的解決方案時可能發生的已知的問題：
+下列各節列出一些使用 tvOS 10 使用 Xamarin 和這些問題的解決方案時可能發生的已知的問題：
 
 - [App Store](#App-Store)
 - [二進位碼相容性](#Binary-Compatibility)
-- [CFNetwork HTTP Protocol](#CFNetwork-HTTP-Protocol)
+- [CFNetwork HTTP 通訊協定](#CFNetwork-HTTP-Protocol)
 - [CloudKit](#CloudKit)
-- [CoreImage](#CoreImage)
+- [Core 映像](#CoreImage)
 - [NSUserActivity](#NSUserActivity)
 - [UIKit](#UIKit)
 
@@ -62,7 +61,7 @@ _這篇文章提供數個疑難排解秘訣 tvOS 10 Xamarin.tvOS 應用程式中
 
 <a name="CoreImage" />
 
-## <a name="coreimage"></a>CoreImage
+## <a name="core-image"></a>Core 映像
 
 `CIImageProcessor` API 現在支援任意輸入的影像計數。 `CIImageProcessor` 將移除 tvOS 10 beta 1 中所包含的 API。
 
@@ -84,10 +83,6 @@ _這篇文章提供數個疑難排解秘訣 tvOS 10 Xamarin.tvOS 應用程式中
  - tvOS 10 需要開發人員呼叫`base.AwakeFromNib`時子類別化`UIViewController`和覆寫`AwakeFromNib`方法。
  - 使用自訂的應用程式`UIView`覆寫的子類別`LayoutSubviews`和已變更的版面配置，然後再呼叫`base.LayoutSubviews`可能會觸發無限的版面配置中的迴圈 tvOS 10。
  - 方向特定或 flippable 影像資產是沒有翻轉時指派給`UIButton`物件。
-
-
-
-
 
 ## <a name="related-links"></a>相關連結
 

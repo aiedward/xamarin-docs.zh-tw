@@ -1,19 +1,20 @@
 ---
-title: 網頁檢視
-description: 釐清 iOS web 檢視選項
+title: 在 Xamarin.iOS web 檢視
+description: 本文件說明 Xamarin.iOS 應用程式可以顯示的網頁內容的各種方式。 它討論 UIWebView、 WKWebView、 SFSafariViewController、 Safari 和應用程式的傳輸安全性。
 ms.prod: xamarin
 ms.assetid: 84886CF4-2B2B-4540-AD92-7F0B791952D1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 787b5594476b3a1b5b3f6a0e8151a98c97443d00
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f720eae68415ab9efe021e53c9da4875209cd221
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790492"
 ---
-# <a name="web-views"></a>網頁檢視
+# <a name="web-views-in-xamarinios"></a>在 Xamarin.iOS web 檢視
 
 IOS 的存留期 Apple 已發行數種方式併入 web 應用程式中的檢視功能的應用程式開發人員。 大部分的使用者利用內建的 Safari 網頁瀏覽器在 iOS 裝置上，所以預期會從其他應用程式的網頁檢視功能是與這項體驗一致。 他們期望應用程式相同的動作，才能執行，要在長條上方，以及的功能相同的效能。
 

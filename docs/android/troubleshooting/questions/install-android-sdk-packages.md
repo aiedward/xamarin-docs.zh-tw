@@ -6,12 +6,13 @@ ms.assetid: F136AAE0-C6D2-4B0F-8F8C-7A6A94877266
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/02/2018
-ms.openlocfilehash: d1fc8a1c511e86615108d1df841c28256f23191f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/30/2018
+ms.openlocfilehash: df359fae545079c7ac1d7106ec86e9297f183f90
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732771"
 ---
 # <a name="which-android-sdk-packages-should-i-install"></a>應該安裝的 Android SDK 封裝？
 
@@ -42,11 +43,8 @@ ms.lasthandoff: 04/04/2018
 若要安裝 SDK 平台 API 15 和 23 的需要。 請注意，您不需要安裝 （即使您是 backporting 至這些應用程式開發介面層級） 的最小值與目標伺服器之間的應用程式開發介面層級。
 
 ## <a name="system-images"></a>系統映像
-這些只是如果您想要使用的方塊外 google Android 模擬器。 
 
-- [如何設定預設模擬器](~/android/get-started/installation/android-emulator/index.md)
-
-- [如何加速預設模擬器](~/android/get-started/installation/android-emulator/index.md)
+這些只是如果您想要使用的方塊外 google Android 模擬器。 如需詳細資訊，請參閱[Android 模擬器的安裝程式](~/android/get-started/installation/android-emulator/index.md)
 
 ## <a name="extras"></a>額外項目
 Android SDK 額外項目通常是不必要的。但是就很有用，因為它們可能需要根據您使用大小寫要知道它們的存在。

@@ -1,20 +1,19 @@
 ---
 title: 使用 Xamarin 的遊戲應用程式開發簡介
-description: 遊戲開發性質可能大幅不同於其他類型的應用程式的開發。 本文是包含技術，可以搭配 Xamarin.iOS 和 Xamarin.Android 遊戲開發的簡介。 它使用 Xamarin.iOS 和 Xamarin.Android 提供高層級討論如何進行遊戲和取樣技術，可供使用。
+description: 本文件提供使用 Xamarin，遊戲開發的高階概觀，描述如何進行遊戲和適用於使用 Xamarin.iOS 和 Xamarin.Android 技術的取樣。
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 543d3e2d4e53d1b88213ac82689073a9fb925820
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b1bd6d011cdc10352ce3b9258da7e16c2899d2d8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783912"
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>使用 Xamarin 的遊戲應用程式開發簡介
-
-_遊戲開發性質可能大幅不同於其他類型的應用程式的開發。本文是包含技術，可以搭配 Xamarin.iOS 和 Xamarin.Android 遊戲開發的簡介。它使用 Xamarin.iOS 和 Xamarin.Android 提供高層級討論如何進行遊戲和取樣技術，可供使用。_
 
 開發遊戲可以是非常讓人動心，特別是指定如何輕鬆它可以是發佈在行動平台。 這篇文章討論的概念和技術，可協助您開發遊戲相關建立遊戲，不論您的目標是建立高品質 AAA 遊戲或只是為了有趣的程式。
 

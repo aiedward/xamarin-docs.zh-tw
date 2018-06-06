@@ -1,15 +1,17 @@
 ---
 title: 第 2 部-架構
+description: 本文件說明架構模式很有幫助建置跨平台應用程式。 它討論一般的應用程式層級 （資料層，資料存取層等） 以及常見的行動軟體模式 （MVVM、 MVC）
 ms.prod: xamarin
 ms.assetid: 2176DB2D-E84A-3757-CFAB-04A586068D50
 author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
-ms.openlocfilehash: 94cd2ae09da2e36f8855d95dda883cd3b7819e5b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: ebcfe8880a826c552d55e7a5567271a5a764fa1d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780870"
 ---
 # <a name="part-2---architecture"></a>第 2 部-架構
 

@@ -1,19 +1,20 @@
 ---
-title: 3D Touch 簡介
-description: 本文將說明如何使用新 iPhone 6s 和 iPhone 6s Plus 3D 觸控筆勢應用程式中。
+title: 3D Touch 中 Xamarin.iOS 簡介
+description: 這篇文章描述如何使用 3D 觸控筆勢，引進與 iPhone 6s 和 iPhone 6s Plus。 這些筆勢啟用壓力敏感度、 查看和快顯，和 快速動作。
 ms.prod: xamarin
 ms.assetid: 806D051E-3791-40F7-9776-4E4D3E56F7F3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a0d89315b82f4931538cdabe64aade7986b2a42e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f6eb71409317661cdd571c708db062e06e63ff55
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786579"
 ---
-# <a name="introduction-to-3d-touch"></a>3D Touch 簡介
+# <a name="introduction-to-3d-touch-in-xamarinios"></a>3D Touch 中 Xamarin.iOS 簡介
 
 _本文將說明如何使用新 iPhone 6s 和 iPhone 6s Plus 3D 觸控筆勢應用程式中。_
 

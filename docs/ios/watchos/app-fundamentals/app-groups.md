@@ -1,18 +1,20 @@
 ---
-title: 使用應用程式群組
+title: 使用 watchOS Xamarin 應用程式群組
+description: 本文件說明應用程式群組以及 watchOS 應用程式中的使用。 它討論如何設定應用程式群組中，佈建需求、 Entitlements.plist 考量，以及部署。
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 341f6b4f5049a39817f2923901472f35b254bead
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5736b25af3993e2da794422a1a6f040461532497
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790675"
 ---
-# <a name="working-with-app-groups"></a>使用應用程式群組
+# <a name="working-with-watchos-app-groups-in-xamarin"></a>使用 watchOS Xamarin 應用程式群組
 
 
 「應用程式群組」可讓不同的應用程式 (或應用程式及其擴充功能) 存取共用檔案儲存體位置。 「應用程式群組」可用於資料下列資料：

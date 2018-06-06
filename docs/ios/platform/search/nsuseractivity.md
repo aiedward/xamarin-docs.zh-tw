@@ -1,18 +1,20 @@
 ---
-title: 具有 NSUserActivity 搜尋
+title: 具有 NSUserActivity Xamarin.iOS 中搜尋
+description: 本文件說明如何 NSUserActivity，因此可搜尋精選和 Safari 中編製索引。 它討論如何回應 NSUserActivity 搜尋結果中的選取項目。
 ms.prod: xamarin
 ms.assetid: 0B28B284-C7C9-4C0D-A782-D471FBBC4CAE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 803fcce359bbe27ea19901afa766f5b7f4692e0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4b053f66e9b6b7715cbe52c4e43d9db32db48f4c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788204"
 ---
-# <a name="search-with-nsuseractivity"></a>具有 NSUserActivity 搜尋
+# <a name="search-with-nsuseractivity-in-xamarinios"></a>具有 NSUserActivity Xamarin.iOS 中搜尋
 
 `NSUserActivity` iOS 8 中引進，用來提供遞移式的資料。
 它可讓您建立活動，您可以接著傳遞另一個執行個體在不同的 iOS 裝置上執行的應用程式的應用程式的特定部分中。 然後接收裝置，可以繼續先前在裝置上，收取右邊使用者離開的地方啟動活動。 如需有關使用遞移式的詳細資訊，請參閱我們[簡介遞交](~/ios/platform/handoff.md)文件。

@@ -1,26 +1,26 @@
 ---
-title: 訂用帳戶和報表
+title: 訂閱和 Xamarin.iOS 中的報告
+description: 本文件說明非更新的訂閱，免費訂用帳戶、 自動更新的訂閱，然後使用 iTunes Connect 報告這些項目。
 ms.prod: xamarin
 ms.assetid: 27EE4234-07F5-D2CD-DC1C-86E27C20141E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7ba47e8f0ec114845c14269e81bb7f078a5d4936
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e0873107a60b48e5ebfd8e159f3bf3b85d02867
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787025"
 ---
-# <a name="subscriptions-and-reporting"></a>訂用帳戶和報表
+# <a name="subscriptions-and-reporting-in-xamarinios"></a>訂閱和 Xamarin.iOS 中的報告
 
 ## <a name="about-non-renewing-subscriptions"></a>有關非更新訂用帳戶
 
 非更新的訂閱適用於代表的時間限制，例如 （一週的瀏覽應用程式存取） 或資料保存的時間限制存取的服務之銷售的產品。   
    
-   
-   
- 非更新訂用帳戶和其他產品類型之間的主要差異：
+非更新訂用帳戶和其他產品類型之間的主要差異：
 
 -  在 iTunes Connect 中的產品定義不包含該詞彙。 應用程式程式碼必須能夠推斷有效期間，從產品的識別碼。 
 -  它們可以購買許多次 （例如在您可以使用的產品）。 需要應用程式管理的訂用帳戶詞彙/到期和更新，並避免使用者購買重疊的訂用帳戶。 

@@ -6,19 +6,18 @@ ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
 author: asb3993
 ms.author: amburns
 ms.date: 01/28/2016
-ms.openlocfilehash: fba13ab921949cd2361e78535d5ffc96952a1336
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3966b731531d617f105583210334a23071a6802b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780170"
 ---
-# <a name="sharing-code-options"></a>共用程式碼選項
+# <a name="building-cross-platform-applications"></a>建置跨平台應用程式
 
 有兩個選項的跨平台行動應用程式之間共用程式碼： 共用資產專案和可攜式類別庫。 這些選項[這裡所討論](~/cross-platform/app-fundamentals/code-sharing.md); 上的詳細資訊[可攜式類別庫](~/cross-platform/app-fundamentals/pcl.md)和[共用專案](~/cross-platform/app-fundamentals/shared-projects.md)也會提供。
 
 <a name="Sections" />
-
-## <a name="building-cross-platform-mobile-apps"></a>建置跨平台行動應用程式
 
  [概觀](~/cross-platform/app-fundamentals/building-cross-platform-applications/overview.md)
 
@@ -36,13 +35,11 @@ ms.lasthandoff: 05/10/2018
 
  <a name="Cross-Platform_Mobile_Application_Case_Studies" />
 
-
 ## <a name="case-studies"></a>案例研究
 
 這份文件中所述的原則會放在範例應用程式的作法是*Tasky*，以及[預先建置的應用程式](https://xamarin.com/prebuilt)像[Xamarin CRM](https://xamarin.com/prebuilt/#xamarincrm)。
 
  <a name="Tasky" />
-
 
 ### <a name="tasky"></a>Tasky
 
@@ -53,7 +50,6 @@ Tasky 是簡單的待辦事項清單應用程式進行 iOS、 Android 和 Window
 
 讀取[Tasky 案例研究](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)。
 
-
 ## <a name="summary"></a>總結
 
 本節介紹 Xamarin 的應用程式開發工具，並討論如何建置多個行動平台為目標的應用程式。
@@ -63,8 +59,6 @@ Tasky 是簡單的待辦事項清單應用程式進行 iOS、 Android 和 Window
 常見的應用程式函式 （例如檔案和網路作業） 和它們如何建置跨平台方式將提供範例。
 
 最後，它簡要討論測試，並提供個案研究，以將這些原則放入動作的參考。
-
-
 
 ## <a name="related-links"></a>相關連結
 

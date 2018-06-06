@@ -1,16 +1,17 @@
 ---
 title: 繪製與 CCDrawNode 幾何
-description: CCDrawNode 提供繪圖基本的物件，例如線條、 圓形和三角形的方法。
+description: 本文件說明 CCDrawNode 提供方法來繪圖基本的物件，例如線條、 圓形和三角形。
 ms.prod: xamarin
 ms.assetid: 46A3C3CE-74CC-4A3A-AB05-B694AE182ADB
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 83d973ed013d1448915ee553069c1366922d28b6
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 00ccf089e88d726aff09605aa88076139399a7dc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782881"
 ---
 # <a name="drawing-geometry-with-ccdrawnode"></a>繪製與 CCDrawNode 幾何
 
@@ -434,7 +435,7 @@ drawNode.DrawTriangleList (verts);
 
 本指南說明如何建立`CCDrawNode`並執行基本項目為基礎的轉譯。 它提供每個繪製呼叫的範例。
 
-## <a name="related-links"></a>相關的連結
+## <a name="related-links"></a>相關連結
 
 - [CCDrawNode 應用程式開發介面](https://developer.xamarin.com/api/type/CocosSharp.CCDrawNode/)
 - [完整範例](https://developer.xamarin.com/samples/mobile/CCDrawNode/)

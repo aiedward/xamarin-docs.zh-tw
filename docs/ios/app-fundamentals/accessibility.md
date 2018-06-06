@@ -1,16 +1,18 @@
 ---
 title: 在 iOS 上的協助工具
+description: 本文件說明的協助工具，在 iOS 中，討論各種屬性和功能，可用於才可以使用您的應用程式的使用者數目越好。
 ms.prod: xamarin
 ms.assetid: 88D59B36-05A3-4356-AE29-EC2B69CE7162
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/18/2016
-ms.openlocfilehash: af28d0866337c769d1d6102317fc186c49ec259e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fa85459870211ff26c3bfdd3cc25f722a635952c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783567"
 ---
 # <a name="accessibility-on-ios"></a>在 iOS 上的協助工具
 
@@ -140,4 +142,4 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 - [跨平台的協助工具](~/cross-platform/app-fundamentals/accessibility.md)
 - [iOS (Apple) 的協助工具](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html)
-- [iOS VoiceOver](http://www.apple.com/accessibility/ios/voiceover/)
+- [iOS 旁白](http://www.apple.com/accessibility/ios/voiceover/)

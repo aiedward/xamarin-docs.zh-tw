@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials 安全儲存體
-description: SecureStorage 類別可協助安全地儲存簡單的索引鍵/值組。
+title: Xamarin.Essentials： 安全儲存體
+description: 本文件說明 SecureStorage 中的類別 Xamarin.Essentials，可協助安全地儲存簡單的索引鍵/值組。 它討論如何使用類別、 平台實作的特性，以及限制。
 ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: e64160a5579bffa8e9e9820db1a3ba39bdf7304e
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: d9fd5b5fd0d4dc29f4d2531521370618f97e3846
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783154"
 ---
-# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials 安全儲存體
+# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials： 安全儲存體
 
 ![發行前版本的 NuGet](~/media/shared/pre-release.png)
 

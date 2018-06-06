@@ -1,17 +1,18 @@
 ---
 title: 開始使用 iOS 11
-description: 下載並安裝 Xcode 9
+description: 本文件描述必須完成才能開始開發 iOS 11 應用程式的步驟。 它討論如何下載 Xcode，並更新 Visual Studio 2017。
 ms.prod: xamarin
 ms.assetid: 794EA2C4-884B-42AC-B8C4-8C8E5474B660
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/19/2016
-ms.openlocfilehash: 2982e8acd27207452b74320cb3ea17d2ffc7375e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 494ffa4ffef09eedf2ce38f33e2e2b216a9417bb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786908"
 ---
 # <a name="getting-started-with-ios-11"></a>開始使用 iOS 11
 

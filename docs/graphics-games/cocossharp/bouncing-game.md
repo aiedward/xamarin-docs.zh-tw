@@ -1,16 +1,17 @@
 ---
 title: BouncingGame 詳細資料
-description: 本逐步解說示範如何實作簡單彈跳使用 CocosSharp 的球遊戲。
+description: 本文件提供逐步解說建立 BouncingGame，簡單彈跳 CocosSharp 與內建的球遊戲。
 ms.prod: xamarin
 ms.assetid: AC9FD56F-6E4A-40DA-8168-45A761D869FD
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2018
-ms.openlocfilehash: d12d6fb8ecfcba5e5093b2af4790a51ef8cf8e47
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 1a2423fcbeec0c3414b766a6c9e6f64ab53f4bf9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783102"
 ---
 # <a name="bouncinggame-details"></a>BouncingGame 詳細資料
 
@@ -419,7 +420,7 @@ if (doesBallOverlapPaddle && isMovingDownward)
 
 本逐步解說涵蓋一小部分的解 CocosSharp 遊戲引擎提供的功能。 資訊及其他 CocosSharp 主題逐步解說，請參閱[CocosSharp 指南的其餘部分](~/graphics-games/cocossharp/index.md)。
 
-## <a name="related-links"></a>相關的連結
+## <a name="related-links"></a>相關連結
 
 - [已完成的遊戲 （範例）](https://developer.xamarin.com/samples/mobile/BouncingGame/)
 - [遊戲的內容 （範例）](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Content.zip?raw=true)

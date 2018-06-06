@@ -1,19 +1,20 @@
 ---
-title: macOS 使用者介面
-description: 描述各種 macOS UI 控制項的指南的這個文件連結。
+title: 在 Xamarin.Mac macOS 使用者介面控制項
+description: 描述各種使用者介面控制項 Xamarin.Mac 開發人員可使用的指南的這個文件連結。 連結的內容會查看 windows、 對話方塊、 警示、 功能表、 工具列、 資料表檢視、 大綱檢視等等。
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: d40faa29f2fe278377bf4eae42a032f3dc9086ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 231d3a935cf251d0b2a1a3e6947abcb1c2133b90
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792950"
 ---
-# <a name="macos-user-interface"></a>macOS 使用者介面
+# <a name="macos-user-interface-controls-in-xamarinmac"></a>在 Xamarin.Mac macOS 使用者介面控制項
 
 _描述各種 macOS UI 控制項的指南的這個文件連結。_
 
@@ -71,6 +72,6 @@ Mac 應用程式的使用者介面; 各個組件中使用功能表從應用程�
 
 我們也建議看一下[Mac 範例庫](https://developer.xamarin.com/samples/mac/all/)。 它包含了許多可協助您快速取得 Xamarin.Mac 專案踏出的已備妥要使用程式碼。
 
-## <a name="related-links"></a>相關的連結
+## <a name="related-links"></a>相關連結
 
 - [macOS 人性化介面指導方針](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

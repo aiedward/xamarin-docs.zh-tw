@@ -1,21 +1,20 @@
 ---
-title: 提供 Haptic 意見反應
-description: 本文涵蓋 haptic 意見反應 iOS 10 以及如何實作它們 Xamarin.iOS 中可用的新的類型。
+title: 提供在 Xamarin.iOS Haptic 意見反應
+description: 本文件說明如何提供 haptic Xamarin.iOS 應用程式中的意見反應。 它討論 UIImpactFeedbackGenerator、 UINotificationFeedbackGenerator 和 UISelectionFeedbackGenerator。
 ms.prod: xamarin
 ms.assetid: 888106D1-58F4-453F-BACC-91D51FA39C80
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: f2d1bd73ea764cd5bf56775abd7c7357b039bc79
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d0dae6d6f50423474fbfebad5d630000e2160f6a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790184"
 ---
-# <a name="providing-haptic-feedback"></a>提供 Haptic 意見反應
-
-_本文涵蓋 haptic 意見反應 iOS 10 以及如何實作它們 Xamarin.iOS 中可用的新的類型。_
+# <a name="providing-haptic-feedback-in-xamarinios"></a>提供在 Xamarin.iOS Haptic 意見反應
 
 <a name="Overview" />
 

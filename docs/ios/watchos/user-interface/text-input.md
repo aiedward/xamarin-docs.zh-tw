@@ -1,18 +1,20 @@
 ---
-title: 使用文字輸入
+title: 使用 watchOS Xamarin 中的文字輸入
+description: 本文件說明在 Xamarin watchOS 文字輸入。 它討論 PresentTextInputController 方法、 徒手畫、 純文字、 emojis，以及聽寫。
 ms.prod: xamarin
 ms.assetid: E9CDF1DE-4233-4C39-99A9-C0AA643D314D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 9dec6f754590abf6db8829f555376b423b7a7da7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da668333b3549c92264af7d4da4941ac6b5bf865
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791380"
 ---
-# <a name="working-with-text-input"></a>使用文字輸入
+# <a name="working-with-watchos-text-input-in-xamarin"></a>使用 watchOS Xamarin 中的文字輸入
 
 Apple Watch 不提供鍵盤使用者輸入的文字，不過它支援一些監看式易記替代項目：
 

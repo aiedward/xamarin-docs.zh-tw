@@ -1,18 +1,19 @@
 ---
-title: HttpClient 堆疊和 iOS/macOS SSL/TLS 實作選取器
-description: HttpClient 堆疊與 SSL/TLS 實作的選取器，決定將 Xamarin iOS、 tvOS 或 macOS 應用程式所使用的 HttpClient 和 SSL/TLS 實作。
+title: HttpClient 和 iOS/macOS SSL/TLS 實作選取器
+description: HttpClient 堆疊與 SSL/TLS 實作的選取器會決定將 Xamarin iOS、 tvOS 或 macOS 應用程式所使用的 HttpClient 和 SSL/TLS 實作。
 ms.prod: xamarin
 ms.assetid: 12101297-BB04-4410-85F0-A0D41B7E6591
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: dcbdb4d20bca9764731b08e551a4d3b8a26a2ab4
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 9de2c97933bd33111a751be51e06dffe09794f15
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782264"
 ---
-# <a name="httpclient-stack-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient 堆疊和 iOS/macOS SSL/TLS 實作選取器
+# <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient 和 iOS/macOS SSL/TLS 實作選取器
 
 **HttpClient 實作的選取器**Xamarin.iOS，Xamarin.tvOS 和 Xamarin.Mac 控制其`HttpClient`使用實作。 您可以切換到使用原生 iOS、 tvOS 或 macOS 傳輸的實作 (`NSUrlSession`或`CFNetwork`，取決於作業系統)。 其優點是 TLS 1.2 支援的小型二進位檔，並更快下載;缺點是它需要事件迴圈執行的非同步作業執行。
 

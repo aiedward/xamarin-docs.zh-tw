@@ -1,16 +1,17 @@
 ---
 title: 編輯 NuGet 中繼資料
-description: 若要編輯多平台程式庫 NuGet 中繼資料中使用專案選項
+description: 本文件說明如何使用專案選項來編輯多平台程式庫 NuGet 中繼資料。 其中也會討論必要和選擇性中繼資料。
 ms.prod: xamarin
 ms.assetid: 147BA370-67A7-4E6C-BF17-AA7C536C0A48
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: dc2bd64339aa3deacd640cc982af5ee52d76ff07
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3680b02003a844668b0b5c97e5d4c0d296ae3500
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34779966"
 ---
 # <a name="editing-nuget-metadata"></a>編輯 NuGet 中繼資料
 

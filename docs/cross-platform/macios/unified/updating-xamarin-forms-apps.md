@@ -1,16 +1,17 @@
 ---
 title: 更新現有 Xamarin.Forms 應用程式
-description: 請依照下列步驟來更新現有 Xamarin.Forms 應用程式使用統一的 API，並更新到版本 1.3.1
+description: 本文件說明更新從傳統的 API 以統一的 API Xamarin.Forms 應用程式必須遵循的步驟。
 ms.prod: xamarin
 ms.assetid: C2F0D1D1-256D-44A4-AAC9-B06A0CB41E70
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 7b69ecb5d62a30cf6259aae1884971ad13babede
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: d5c16b034b07d3e9875412f041c16b293557438a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781835"
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>更新現有 Xamarin.Forms 應用程式
 

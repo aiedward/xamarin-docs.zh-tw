@@ -1,5 +1,5 @@
 ---
-title: 新的使用者介面樣式
+title: tvOS Xamarin 中的使用者介面樣式
 description: 本文章涵蓋淺色且深色 UI 佈景主題的 Apple 已新增至 tvOS 10 且 Xamarin.tvOS 應用程式中實作方式。
 ms.prod: xamarin
 ms.assetid: 8BC37683-AD9E-45CD-BE40-96965618AD1D
@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: da75a99e842b13d42251cdd1c5195ec66ff4a513
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 43bfac29acb8b465fd1f3cdfd53c7664adeae18f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789167"
 ---
-# <a name="new-user-interface-styles"></a>新的使用者介面樣式
+# <a name="tvos-user-interface-styles-in-xamarin"></a>tvOS Xamarin 中的使用者介面樣式
 
 _本文章涵蓋淺色且深色 UI 佈景主題的 Apple 已新增至 tvOS 10 且 Xamarin.tvOS 應用程式中實作方式。_
 
 tvOS 10 現在支援所有內建 UIKit 控制項將會自動同時深色和淺色使用者介面主題會隨著調整，依據使用者的喜好設定。 此外，開發人員可以手動調整 UI 項目，根據使用者選取的佈景主題，而且可以覆寫指定的佈景主題。
-
 
 <a name="About-the-New-User-Interface-Styles" />
 
@@ -185,7 +185,7 @@ SetOverrideTraitCollection (trait, this);
 
 * 開發人員可以指定不同的使用者介面項目，根據 UI 佈景主題中的變化**屬性偵測器**:
     
-    * 現在有數個屬性**+**旁邊按一下就可加入 UI 佈景主題特定版本的： 
+    * 現在有數個屬性**+** 旁邊按一下就可加入 UI 佈景主題特定版本的： 
 
         [![](user-interface-styles-images/theme08.png "加入 UI 佈景主題特定版本")](user-interface-styles-images/theme08.png#lightbox) 
     

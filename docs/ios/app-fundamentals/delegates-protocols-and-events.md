@@ -1,21 +1,20 @@
 ---
-title: 事件、 通訊協定與委派
-description: 這篇文章會提供用來接收回撥，並填入資料的使用者介面控制項的索引鍵的 iOS 技術。 這些技術是事件、 通訊協定，以及委派。 這篇文章解釋每一種是，以及每個從 C# 的使用方式。 它會示範如何 Xamarin.iOS 使用 iOS 控制項來公開熟悉.NET 事件，以及如何 Xamarin.iOS Objective C 的概念，例如通訊協定與委派提供支援 （OBJECTIVE-C 委派不應該與 C# 委派混淆）。 本文也會提供顯示通訊協定的使用方式 – 同時做為基礎的 OBJECTIVE-C 委派和非委派案例中的範例。
+title: 事件、 通訊協定和 Xamarin.iOS 的委派
+description: 本文件描述如何使用事件，通訊協定，並在 Xamarin.iOS 委派。 這些基本概念是無所不在 Xamarin.iOS 開發工作。
 ms.prod: xamarin
 ms.assetid: 7C07F0B7-9000-C540-0FC3-631C29610447
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 4c2888eb2d0b1ae79e10ca764e7bf14a1afb6c59
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d0e4c23bffe689c9218da2f43b97d98f348513ad
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784006"
 ---
-# <a name="events-protocols-and-delegates"></a>事件、 通訊協定與委派
-
-_這篇文章會提供用來接收回撥，並填入資料的使用者介面控制項的索引鍵的 iOS 技術。這些技術是事件、 通訊協定，以及委派。這篇文章解釋每一種是，以及每個從 C# 的使用方式。它會示範如何 Xamarin.iOS 使用 iOS 控制項來公開熟悉.NET 事件，以及如何 Xamarin.iOS Objective C 的概念，例如通訊協定與委派提供支援 （OBJECTIVE-C 委派不應該與 C# 委派混淆）。本文也會提供顯示通訊協定的使用方式 – 同時做為基礎的 OBJECTIVE-C 委派和非委派案例中的範例。_
+# <a name="events-protocols-and-delegates-in-xamarinios"></a>事件、 通訊協定和 Xamarin.iOS 的委派
 
 Xamarin.iOS 使用控制項來公開大部分的使用者互動的事件。
 傳統的.NET 應用程式一樣，Xamarin.iOS 應用程式會使用這些事件中的相同方式進行。 比方說，Xamarin.iOS UIButton 類別已呼叫 TouchUpInside 的事件，並取用此事件，就如同此類別與事件是在.NET 應用程式。
@@ -28,15 +27,13 @@ Xamarin.iOS 使用控制項來公開大部分的使用者互動的事件。
 -  **通訊協定**– 了解哪些通訊協定和使用方式，並建立範例提供對應的註解的資料。
 -  **委派**– 學習需 OBJECTIVE-C 委派延伸來處理使用者互動，其中包含註解，對應的範例，然後學習強式和弱式委派，以及何時使用每一種之間的差異。
 
-
 為了說明通訊協定與委派，我們會建置一個簡單的對應應用程式，將註解加入至地圖，如下所示：
 
  [![](delegates-protocols-and-events-images/01-map.png "將註解加入至對應的簡單的對應應用程式的範例")](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ](delegates-protocols-and-events-images/04-annotation-with-callout.png "範例註解加入至地圖")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 之前解決這個應用程式，讓我們開始吧藉由查看下 UIKit.NET 事件。
 
- <a name=".NET_Events_with_UIKit" />
-
+<a name=".NET_Events_with_UIKit" />
 
 ## <a name="net-events-with-uikit"></a>UIKit.NET 事件
 
@@ -47,7 +44,6 @@ aButton.TouchUpInside += (o,s) => {
     Console.WriteLine("button touched");
 };
 ```
-
 您也可以實作這與 C# 2.0 樣式匿名方法與下列類似：
 
 ```csharp

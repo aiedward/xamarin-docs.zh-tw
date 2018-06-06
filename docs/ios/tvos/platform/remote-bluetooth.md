@@ -1,22 +1,20 @@
 ---
-title: Siri 遠端和藍芽控制站
-description: 本文涵蓋 Xamarin.tvOS 應用程式中支援的新 Siri 遠端和藍芽遊戲控制器。
+title: Siri 遠端和 tvOS 在 Xamarin 的藍芽控制站
+description: 本文說明如何使用 Siri 遠端和藍芽 tvOS 使用 Xamarin 所撰寫的應用程式中的遊戲控制器。
 ms.prod: xamarin
 ms.assetid: BDB9894A-236B-424B-9032-ACD12A6C5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5b5893278acad999efd94c89f1ca923100f5cf7c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3fc2abed202f8b2e6993890ca4e6b3c6875522e5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789186"
 ---
-# <a name="siri-remote-and-bluetooth-controllers"></a>Siri 遠端和藍芽控制站
-
-_本文涵蓋 Xamarin.tvOS 應用程式中支援的新 Siri 遠端和藍芽遊戲控制器。_
-
+# <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Siri 遠端和 tvOS 在 Xamarin 的藍芽控制站
 
 Xamarin.tvOS 應用程式的使用者不會互動的介面直接做為使用 iOS 其中他們點選裝置螢幕上的映像但間接從跨空間使用[Siri 遠端](#The-Siri-Remote)。
 
@@ -40,9 +38,9 @@ Siri 遠端具有下列功能和 tvOS 應用程式內的預期使用方式：
 
 |功能|一般應用程式使用量|遊戲的應用程式使用量|
 |---|---|---|
-|**觸控介面**<br />若要瀏覽，請按下以選取按住關聯式功能表撥動。|**點選/撥動**<br />UI 可設定焦點的項目之間的導覽。<br /><br />**Click**<br />啟動選取的 （焦點） 項目。|**點選/撥動**<br />遊戲的設計而定，而且可以當做 D-pad 依據點選邊緣上。<br /><br />**Click**<br />執行主要按鈕的功能。|
+|**觸控介面**<br />若要瀏覽，請按下以選取按住關聯式功能表撥動。|**點選/撥動**<br />UI 可設定焦點的項目之間的導覽。<br /><br />**按一下**<br />啟動選取的 （焦點） 項目。|**點選/撥動**<br />遊戲的設計而定，而且可以當做 D-pad 依據點選邊緣上。<br /><br />**按一下**<br />執行主要按鈕的功能。|
 |**Menu**<br />按下即可返回上一個畫面或功能表。|返回上一個畫面，並會跳到首頁 Apple TV 螢幕，從主應用程式畫面。|暫停和繼續遊戲，傳回上一個螢幕，結束首頁 Apple TV 螢幕從主應用程式畫面。|
-|**Siri/Search**<br />使用 Siri 國家/地區，請按住中所有其他國家/地區，顯示搜尋螢幕的語音控制。|N/A|N/A|
+|**Siri/搜尋**<br />使用 Siri 國家/地區，請按住中所有其他國家/地區，顯示搜尋螢幕的語音控制。|N/A|N/A|
 |**矔菛/縸懫**<br />播放和暫停媒體或提供應用程式中的第二個函式。|開始播放媒體和暫停/繼續播放。|執行次要按鈕函式，或略過簡介影片 (如果存在)。|
 |**Home**<br />按下返回 [首頁] 螢幕，連按兩下以顯示執行中應用程式，請按住進入睡眠狀態的裝置。|N/A|N/A|
 |**磁碟區**<br />控制項附加音訊/視訊設備磁碟區。|N/A|N/A|
@@ -75,9 +73,6 @@ Apple 提供使用觸控介面筆勢的下列建議：
 
 > [!IMPORTANT]
 > 您應該**一律**函式指派給遙控器上的 [矔菛/縸懫] 按鈕。 具有非功能性的按鈕可以進行中斷，以使用者尋找應用程式。 如果您沒有有效的函式，此按鈕，將指派 （觸控介面按一下） 主要按鈕相同的功能。
-
-
-
 
 <a name="Gestures-and-Storyboards" />
 

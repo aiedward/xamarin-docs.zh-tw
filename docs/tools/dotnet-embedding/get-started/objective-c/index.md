@@ -1,15 +1,17 @@
 ---
 title: Objective C 使用者入門
+description: 本文件說明如何開始使用.NET 嵌入目標 c。 它討論需求、 安裝 NuGet，和支援的平台的.NET 內嵌。
 ms.prod: xamarin
 ms.assetid: 4ABC0247-B608-42D4-89CB-D2E598097142
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 0c2d92f52000bbc6d9d4ea3b07112795aa98bd0a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: c5db0a55cc1d2597837ae5feb2c5167a0a21b494
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792976"
 ---
 # <a name="getting-started-with-objective-c"></a>Objective C 使用者入門
 
@@ -61,6 +63,6 @@ Objective C 是最常用於撰寫 macOS、 iOS、 tvOS 和 watchOS 應用程式�
 * [錯誤碼與描述](~/tools/dotnet-embedding/errors.md)
 * [目標平台](~/tools/dotnet-embedding/objective-c/platforms.md)
 
-## <a name="related-links"></a>相關的連結
+## <a name="related-links"></a>相關連結
 
 - [天氣範例 (iOS & macOS)](https://github.com/jamesmontemagno/embeddinator-weather)

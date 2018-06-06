@@ -1,19 +1,20 @@
 ---
-title: CoreML 簡介
-description: 機器學習 iOS 11 上的行動裝置應用程式
+title: 在 Xamarin.iOS CoreML 簡介
+description: 本文件說明 CoreML，可讓在 iOS 上的機器學習。 本文將討論如何開始使用 CoreML 以及如何使用目標 framework。
 ms.prod: xamarin
 ms.assetid: BE1E2CA1-E3AE-4C90-914C-CFDBD1DCB82B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/30/2016
-ms.openlocfilehash: 412a534829349dbbc3f3b76b166882fa6e0e1cd1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b893fe5e56cc2d43a71870ffbbd20f0b8c6cfd18
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787490"
 ---
-# <a name="introduction-to-coreml"></a>CoreML 簡介
+# <a name="introduction-to-coreml-in-xamarinios"></a>在 Xamarin.iOS CoreML 簡介
 
 _機器學習 iOS 11 上的行動裝置應用程式_
 
@@ -34,7 +35,7 @@ CoreML 帶來 ios 的機器學習 – 應用程式可以利用定型的機器學
 
 ### <a name="1-add-the-model-to-the-project"></a>1.將模型加入至專案
 
-將編譯過的模型 (與目錄**.modelc**延伸模組) 以**資源**專案的目錄。 目錄的內容都應該具備的建置動作**BundleResource**:
+將編譯過的模型 (與目錄 **.modelc**延伸模組) 以**資源**專案的目錄。 目錄的內容都應該具備的建置動作**BundleResource**:
 
 ![[資源] 資料夾應該包含編譯的模型](coreml-images/resources-modelc.png)
 
@@ -45,7 +46,7 @@ xcrun coremlcompiler compile {model.mlmodel} {outputFolder}
 ```
 
 > [!NOTE]
-> **.model**檔案_必須_編譯為**.modelc**可供 CoreML 之前
+> **.model**檔案_必須_編譯為 **.modelc**可供 CoreML 之前
 
 ### <a name="2-load-the-model"></a>2.載入模型
 

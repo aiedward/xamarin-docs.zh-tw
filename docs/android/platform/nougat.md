@@ -6,12 +6,13 @@ ms.assetid: 5C74ABE2-C862-4ED0-8EA5-C7FEE5251D4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: fe544f8ac677987f8921ccb1c11b8930811b9553
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/02/2018
+ms.openlocfilehash: 15698767ae71b68a26138169771f7f397bddd95a
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732514"
 ---
 # <a name="nougat-features"></a>Nougat 功能
 
@@ -46,7 +47,7 @@ Android Nougat Xamarin.Android 開發人員提供感興趣的許多新功能。 
 
 需要下列項目在 Xamarin 應用程式中使用新的 Android Nougat 功能：
 
--   **Visual Studio 或 Visual Studio for Mac** &ndash;如果您使用 Visual Studio 中，版本 4.2.0.628 或更新版本的 Visual Studio 的 Xamarin 是必要項。 如果您使用 Visual Studio for Mac、 6.1.0 版本或更新版本的 Visual Studio。 需要 Mac。
+-   **Visual Studio 或 Visual Studio for Mac** &ndash;如果您使用 Visual Studio 中，版本 4.2.0.628 或更新版本的 Visual Studio Tools for Xamarin 是必要項。 如果您使用 Visual Studio for Mac、 6.1.0 版本或更新版本的 Visual Studio。 需要 Mac。
 
 -   **Xamarin.Android** &ndash; Xamarin.Android 7.0 或更新版本必須安裝並設定 Visual Studio 或 Visual Studio for mac。
 
@@ -67,7 +68,7 @@ Android Nougat Xamarin.Android 開發人員提供感興趣的許多新功能。 
 
 1.  從在 Xamarin 安裝最新的 Xamarin.Android 更新。
 
-2.  安裝**Android 7.0 (應用程式開發介面 24)**套件和工具或更新版本。
+2.  安裝**Android 7.0 (應用程式開發介面 24)** 套件和工具或更新版本。
 
 3.  建立新的 Xamarin.Android 專案的目標 Android Nougat。
 
@@ -84,11 +85,11 @@ Android Nougat Xamarin.Android 開發人員提供感興趣的許多新功能。 
 
 ### <a name="install-the-android-sdk"></a>安裝 Android SDK
 
-若要建立專案時使用 Xamarin Android 7.0，您必須先使用 Android SDK Manager 安裝**SDK 平台 Android N (應用程式開發介面 24)**或更新版本。 您也必須安裝最新**Android SDK 工具**:
+若要建立專案時使用 Xamarin Android 7.0，您必須先使用 Android SDK Manager 安裝**SDK 平台 Android N (應用程式開發介面 24)** 或更新版本。 您也必須安裝最新**Android SDK 工具**:
 
 1.  啟動 Android SDK Manager (在 Visual Studio for Mac 使用**工具 > 開啟 Android SDK Manager&hellip;**; 在 Visual Studio 中，使用**工具 > Android > Android SDK Manager**)。
 
-2.  安裝**Android 7.0 (應用程式開發介面 24)**或更新版本：
+2.  安裝**Android 7.0 (應用程式開發介面 24)** 或更新版本：
 
     [![選取 Android 7.0 封裝 Android SDK Manager 中](nougat-images/preview-packages.png)](nougat-images/preview-packages.png#lightbox)
 
@@ -114,7 +115,7 @@ Android Nougat Xamarin.Android 開發人員提供感興趣的許多新功能。 
 
 
 > [!NOTE]
-> 目前，您必須設定**Android 最小版本**至**Android 7.0 (應用程式開發介面 24-Nougat)**將您的應用程式部署至 Android Nougat 裝置或模擬器。
+> 目前，您必須設定**Android 最小版本**至**Android 7.0 (應用程式開發介面 24-Nougat)** 將您的應用程式部署至 Android Nougat 裝置或模擬器。
 
 
 

@@ -1,15 +1,17 @@
 ---
 title: Nuget 在建立新的多平台程式庫
+description: 本文件說明如何使用 NuGet 建立使用的多平台程式庫。 此技術適用於商務邏輯和演算法可以用來表示完全.NET 基底類別程式庫，因此沒有平台專屬程式碼的所有目標平台上執行。
 ms.prod: xamarin
 ms.assetid: E7B55354-9BBE-4122-BCE3-3506B79090DD
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: ee508d40423e3757f7e2934b7682f840ebf8b86a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b59450ac949bffdf927475598d3678564f09f8cf
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781324"
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>Nuget 在建立新的多平台程式庫
 

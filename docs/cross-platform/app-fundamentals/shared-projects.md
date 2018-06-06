@@ -1,18 +1,19 @@
 ---
-title: 共用的專案
+title: 使用共用的共用程式碼的專案
 description: 共用的專案可讓您撰寫正由許多不同的應用程式專案的通用程式碼。 程式碼會編譯為組件的每個參考的專案，而且可包含編譯器指示詞，以協助特定平台功能納入共用程式碼基底。
 ms.prod: xamarin
 ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 2910ada16aad2d8cb19cf0ee3a059c7df22b630e
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 749daac36cce26c9d24d04b89e933aab994791b4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781799"
 ---
-# <a name="shared-projects"></a>共用的專案
+# <a name="using-shared-projects-to-share-code"></a>使用共用的共用程式碼的專案
 
 _共用的專案可讓您撰寫正由許多不同的應用程式專案的通用程式碼。程式碼會編譯為組件的每個參考的專案，而且可包含編譯器指示詞，以協助特定平台功能納入共用程式碼基底。_
 

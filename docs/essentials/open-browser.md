@@ -1,17 +1,18 @@
 ---
 title: Xamarin.Essentials 開啟瀏覽器
-description: 瀏覽器類別可讓應用程式來最佳化的系統慣用的瀏覽器或外部瀏覽器中開啟網頁連結。
+description: 瀏覽器中的類別 Xamarin.Essentials 讓應用程式最佳化的系統慣用的瀏覽器或外部瀏覽器中開啟網頁連結。
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 2a95d0b89b78ce8b0ddfdc94d86c284a6f8b2bbe
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: 563d3899cffb80c0215d90e8e4392046c4635256
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783131"
 ---
-# <a name="xamarinessentials-browser"></a>Xamarin.Essentials 瀏覽器
+# <a name="xamarinessentials-browser"></a>Xamarin.Essentials： 瀏覽器
 
 ![發行前版本的 NuGet](~/media/shared/pre-release.png)
 

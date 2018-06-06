@@ -1,17 +1,18 @@
 ---
-title: 總覽
-description: 繫結程序的運作方式的詳細資料
+title: Objective C 繫結的概觀
+description: 本文件提供不同的方式來建立 C# Objective C 程式碼，包括命令列的繫結、 繫結專案和目標 Sharpie 繫結的概觀。 它也會討論繫結如何運作。
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: ce2e45a1985c64b5c479bd41140d7270fae97aee
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: f9f981a9024ad9b1f780efbadeeb7e1f1636a8ae
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781740"
 ---
-# <a name="overview"></a>總覽
+# <a name="overview-of-objective-c-bindings"></a>Objective C 繫結的概觀
 
 _繫結程序的運作方式的詳細資料_
 
@@ -24,7 +25,7 @@ _繫結程序的運作方式的詳細資料_
 3. 「 繫結 」 組件接著會新增至您的 Xamarin 應用程式專案，讓您能夠存取使用您所定義的 API 的原生功能。
   繫結的專案是完全不同於您的應用程式專案。
 
-**注意：**步驟 1 可以自動化的協助[**目標 Sharpie**](#objectivesharpie)。 它會檢查 Objective C 應用程式開發介面，並產生建議 C# 「 應用程式開發介面定義 」。 您可以自訂目標 Sharpie 所建立的檔案及使用繫結專案中 （或在命令列上） 來建立組件繫結。 目標 Sharpie 不會建立本身的繫結，只是大型程序的選擇性部分。
+**注意：** 步驟 1 可以自動化的協助[**目標 Sharpie**](#objectivesharpie)。 它會檢查 Objective C 應用程式開發介面，並產生建議 C# 「 應用程式開發介面定義 」。 您可以自訂目標 Sharpie 所建立的檔案及使用繫結專案中 （或在命令列上） 來建立組件繫結。 目標 Sharpie 不會建立本身的繫結，只是大型程序的選擇性部分。
 
 您也可以讀取的詳細技術資訊[它的運作方式](#howitworks)，這將會幫助您撰寫您的繫結。
 

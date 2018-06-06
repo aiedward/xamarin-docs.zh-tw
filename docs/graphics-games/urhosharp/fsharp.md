@@ -1,20 +1,19 @@
 ---
 title: '使用 F # 的程式設計 UrhoSharp'
-description: '如何建立使用 F # Visual Studio 中適用於 Mac 的簡單 UrhoSharp 應用程式'
+description: '本文件說明如何建立簡單的 hello world UrhoSharp 應用程式使用 F # 在 Visual Studio for mac。'
 ms.prod: xamarin
 ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: d2b21204d1d328831419308827e1a2de2b6aef1c
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 64d69de70d6bc6f23b9907b498622b00c42b6f50
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783268"
 ---
 # <a name="programming-urhosharp-with-f"></a>使用 F # 的程式設計 UrhoSharp
-
-_如何建立使用 F # Visual Studio 中適用於 Mac 的簡單 UrhoSharp 應用程式_
 
 UrhoSharp 可以使用 F # 使用相同的程式庫和 C# 程式設計人員所使用的概念端進行程式設計。 [使用 UrhoSharp](~/graphics-games/urhosharp/using.md)文章 UrhoSharp 引擎的概觀，並應一併閱讀本文之前。
 

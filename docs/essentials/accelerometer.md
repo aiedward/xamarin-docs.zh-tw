@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials 加速計
-description: 加速計類別可讓您監視裝置的加速計感應器表示之三個維度空間中的裝置。
+title: Xamarin.Essentials： 加速計
+description: 加速計中的類別 Xamarin.Essentials 可讓您監視裝置的加速計感應器，表示之三個維度空間中的裝置。
 ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: bb62ad438c2db906af112322174656bc62740cbc
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 99529f08348254dff7577b7e82da739fabd63a14
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781861"
 ---
-# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials 加速計
+# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials： 加速計
 
 ![發行前版本的 NuGet](~/media/shared/pre-release.png)
 

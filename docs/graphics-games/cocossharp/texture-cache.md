@@ -1,16 +1,17 @@
 ---
 title: 使用 CCTextureCache 紋理快取
-description: CocosSharp 的 CCTextureCache 類別提供的標準方式來組織，快取，及卸載內容。 它特別適用於大型的遊戲可能無法容納完全簡化程序的分組和處置紋理的 RAM。
+description: CocosSharp 的 CCTextureCache 類別提供的標準方式來組織，快取，及卸載內容。 它特別適用於大型可能無法容納整個 RAM，以簡化的分組和處置紋理的遊戲。
 ms.prod: xamarin
 ms.assetid: 1B5F3F85-9E68-42A7-B516-E90E54BA7102
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: bb75efea0914827f1d59a8e0943584597f91803a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: c217d8a935ae971aab472b05968c0251366362b2
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783684"
 ---
 # <a name="texture-caching-using-cctexturecache"></a>使用 CCTextureCache 紋理快取
 
@@ -189,7 +190,7 @@ Dispose 方法將處置所有內部的紋理，清除這些紋理所使用的記
 
 本指南示範如何使用`CCTextureCache`類別，以平衡記憶體使用量和執行階段效能。 `CCTexturCache.SharedTextureCache` 可以明確或隱含地用來載入及快取的應用程式生命週期的紋理，而`CCTextureCache`執行個體可以用來卸載紋理，來減少記憶體使用量。
 
-## <a name="related-links"></a>相關的連結
+## <a name="related-links"></a>相關連結
 
 - [https://github.com/mono/CocosSharp](https://github.com/mono/CocosSharp)
 - [/api/type/CocosSharp.CCTextureCache/](https://developer.xamarin.com/api/type/CocosSharp.CCTextureCache/)

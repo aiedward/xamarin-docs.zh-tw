@@ -1,24 +1,23 @@
 ---
-title: Apple Pay
+title: Apple Pay Xamarin.iOS 中
 description: 本指南中，瀏覽設定 Xamarin.iOS 環境搭配 Apple Pay 支付實體的貨物，例如食物、 娛樂與透過您的應用程式的成員資格。 它包含必要的識別項，憑證與權利的詳細資訊。
 ms.prod: xamarin
 ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: fc7c247e5edcdc25d53c34c922801a5497b8c367
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7033373cddb2503e5912eb17b1e72ece759cc3ad
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786687"
 ---
-# <a name="apple-pay"></a>Apple Pay
+# <a name="apple-pay-in-xamarinios"></a>Apple Pay Xamarin.iOS 中
 
 _本指南中，瀏覽設定 Xamarin.iOS 環境搭配 Apple Pay 支付實體的貨物，例如食物、 娛樂與透過您的應用程式的成員資格。它包含必要的識別項，憑證與權利的詳細資訊。_
 
-
 Apple Pay 引進了與 iOS 8，讓使用者支付實體的貨物，例如食物、 娛樂及透過其 iOS 裝置的成員資格。 它是適用於 iPhone 6 和 iPhone 6 加號，及也能與 Apple Watch 存放區中購買的配對。 在 iPhone 上使用時，它會使用 Touch ID 的方式來確認和授權使用者的信用卡或扣款卡交易。
-
 
 ## <a name="requirements"></a>需求
 
@@ -41,7 +40,6 @@ Apple Pay 的主要差異和*應用程式內購買*（iap 營收） 都屬於與
 
 使用 Apple Pay，Apple[狀態](https://developer.apple.com/apple-pay/Getting-Started-with-Apple-Pay.pdf)[，它"不] 會收費使用者、 商家或開發人員若要使用 Apple Pay 付款 」。 相較之下，iap 營收會有 30%的電量，每一筆交易。 此外，與 Apple Pay，交易不會進出 Apple 根本，相反地，它將經歷付款平台。
 
-
 ## <a name="using-a-payment-processor-platform"></a>使用付款處理器平台
 
 處理付款的其中一個 Apple Pay 的基本部分。 雖然可以自行，需要密碼編譯的重要的資訊
@@ -53,7 +51,6 @@ Apple Pay 的主要差異和*應用程式內購買*（iap 營收） 都屬於與
 - **等量磁碟區**-註冊[Stripe.com](https://stripe.com/)存取其應用程式開發介面。
 
 - **JudoPay** -簽出其[github 上的 Xamarin 範例程式碼](https://github.com/Judopay/Xamarin-Sample-App)，並在註冊[JudoPay.com](https://www.judopay.com/)。
-
 
 ## <a name="provisioning-for-apple-pay"></a>Apple Pay 佈建
 
@@ -70,13 +67,11 @@ Apple Pay 的主要差異和*應用程式內購買*（iap 營收） 都屬於與
 5. 新增 Apple Pay 權利：
     - 選取所述的 Apple pay 權利[這裡](~/ios/deploy-test/provisioning/entitlements.md)，或手動從檔案新增的索引鍵/值組[這裡](~/ios/deploy-test/provisioning/entitlements.md)
 
-
 ## <a name="working-with-apple-pay"></a>使用 Apple Pay
 
 Apple 已中 iOS 10 可讓使用者從網站，並透過 Siri 與地圖互動的安全付款，以進行的 Apple Pay 數個增強功能。
 
 使用 iOS 10，數個新的應用程式開發介面已加入使用 iOS 和 watchOS 支援動態付款網路與新的沙箱測試環境。
-
 
 ### <a name="apple-pay-website-integration"></a>Apple Pay 網站整合
 
@@ -122,7 +117,6 @@ Apple 已中 iOS 10 可讓使用者從網站，並透過 Siri 與地圖互動的
 ## <a name="summary"></a>總結
 
 在本文中，我們可以探索內所要使用 Apple Pay 您的應用程式所需的不同項目。 我們探討了如何建立一個商店識別碼，以及如何用在**Entitlements.plist**，而且需要以手動方式修改。
-
 
 ## <a name="related-links"></a>相關連結
 

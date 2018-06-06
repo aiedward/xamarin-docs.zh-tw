@@ -1,22 +1,20 @@
 ---
-title: 使用分割檢視控制器
-description: 本文涵蓋設計和 Xamarin.tvOS 應用程式內使用分割檢視的控制器。
+title: 使用 tvOS Xamarin 中的分割檢視控制站
+description: 本文件說明如何使用 tvOS 分割檢視中使用 Xamarin 所建置的應用程式。 它提供概要分割檢視控制器、 如何使用分鏡腳本，存取 master 和詳細資料檢視，並顯示和隱藏主版檢視。
 ms.prod: xamarin
 ms.assetid: 21248CFB-5A94-4C19-B223-C72E0DC5F1D5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 25151eb2929e2bc61dba27a9937ffdf4ee224626
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2dd07cd8a4e92d6d39be50ba670441d965ed4d13
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789427"
 ---
-# <a name="working-with-split-view-controllers"></a>使用分割檢視控制器
-
-_本文涵蓋設計和 Xamarin.tvOS 應用程式內使用分割檢視的控制器。_
-
+# <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>使用 tvOS Xamarin 中的分割檢視控制站
 
 分割檢視控制器呈現，並管理 Master 和詳細資料檢視控制器的並行，同時在螢幕上。 分割檢視的控制器是用來呈現主版檢視 （左邊的較小區段） 中的持續性、 可設定焦點的內容和相關的詳細資料檢視 （在右側較大的區段） 的詳細資料。
 

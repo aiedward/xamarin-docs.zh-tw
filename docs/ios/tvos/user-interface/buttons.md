@@ -1,22 +1,20 @@
 ---
-title: 使用按鈕
-description: 本文涵蓋設計和使用 Xamarin.tvOS 應用程式內的按鈕。
+title: 使用 Xamarin tvOS 按鈕
+description: 本文件說明如何使用按鈕在 tvOS 應用程式中使用 Xamarin 建置的。 其中也會討論如何使用按鈕和分鏡腳本，程式碼中，它會檢查如何設定按鈕樣式。
 ms.prod: xamarin
 ms.assetid: DA6EF400-A4E3-4245-A0D4-F2398CAE2C9B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/07/2017
-ms.openlocfilehash: e915e96690fe67f0e704ec558313427f01753438
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3de732e9eee696ce21ffc5526afd44f29695a313
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789381"
 ---
-# <a name="working-with-buttons"></a>使用按鈕
-
-_本文涵蓋設計和使用 Xamarin.tvOS 應用程式內的按鈕。_
-
+# <a name="working-with-tvos-buttons-in-xamarin"></a>使用 Xamarin tvOS 按鈕
 
 使用的執行個體`UIButton`tvOS 視窗中建立可設定焦點，可選取按鈕的類別。 當使用者選取按鈕時，會傳送動作訊息至目標物件允許您 Xamarin.tvOS 應用程式的回應使用者的輸入。
 

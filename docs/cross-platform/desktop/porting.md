@@ -5,11 +5,12 @@ description: 如何將現有的 Windows Form 或 WPF 應用程式中，若要建
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: cdf70065893a4da268f628369fa94336291ead1f
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b9cfad9c046d4f2ad89506f7172a0418e90478f5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781042"
 ---
 # <a name="desktop-app-porting-guidance"></a>桌面應用程式移植指南
 

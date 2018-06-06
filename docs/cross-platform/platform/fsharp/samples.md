@@ -1,17 +1,19 @@
 ---
-title: F# 範例
+title: '適用於 Xamarin F # 範例'
+description: 'F # 可以用來建置 Xamarin 應用程式。 此文件會連結到各種 iOS、 Mac 和 Xamarin.Forms 的範例撰寫 F # 中的 Xamarin 應用程式專案。'
 ms.prod: xamarin
 ms.assetid: 8A355636-DE60-45BC-B988-1967755FDD28
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 30b27a68e8b69c2e431b172ffa4e7e5bbcc942e0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 316ec2d6991adbb187b7158f9bf9e0c1426e3c7d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781016"
 ---
-# <a name="f-samples"></a>F# 範例
+# <a name="f-samples-for-xamarin"></a>適用於 Xamarin F # 範例
 
 此頁面會連結至使用 Xamarin 某些 F # 範例。
 

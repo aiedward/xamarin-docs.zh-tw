@@ -1,18 +1,20 @@
 ---
-title: 泛型的 NSObject 的子類別
+title: 泛型的 NSObject Xamarin.iOS 中的子類別
+description: 本文件說明如何建立建立的 NSObject 泛型子類別。 它會檢查功能可以和無法完成、 討論靜態註冊機構，並會查看效能。
 ms.prod: xamarin
 ms.assetid: BB99EBD7-308A-C865-1829-4DFFDB1BBCA4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 89df751d74b9b54ae8138d2e1b24c61d82c3cac8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9caad9d4990225a0468be8ee4987eaa9fea0c118
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786479"
 ---
-# <a name="generic-subclasses-of-nsobject"></a>泛型的 NSObject 的子類別
+# <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>泛型的 NSObject Xamarin.iOS 中的子類別
 
 ## <a name="using-generics-with-nsobjects"></a>使用泛型搭配 NSObjects
 
@@ -186,7 +188,7 @@ class Generic<T> : NSObject where T : NSObject
 }
 ```
 
-**原因：**一樣泛型方法，若要能夠知道要用於泛型型別引數 t 類型的 Xamarin.iOS 執行階段需求
+**原因：** 一樣泛型方法，若要能夠知道要用於泛型型別引數 t 類型的 Xamarin.iOS 執行階段需求
 
 執行個體使用本身的執行個體的成員 (由於永遠不會為執行個體的泛型<T>，它一律是泛型<SomeSpecificClass>)，但對靜態成員而言這項資訊不存在。
 

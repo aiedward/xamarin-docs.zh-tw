@@ -1,5 +1,5 @@
 ---
-title: 應用程式的傳輸安全性
+title: Xamarin.iOS 應用程式的傳輸安全性
 description: 應用程式的傳輸安全性 (ATS) 會強制執行 （例如應用程式的後端伺服器） 的網際網路資源與您的應用程式之間的安全連線。
 ms.prod: xamarin
 ms.assetid: F8C5E444-2D05-4D9B-A2EF-EB052CD6F007
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/13/2017
-ms.openlocfilehash: 7e3a191def7e0c06365f334b4a7708e5927eadf8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71632da89c6a276b427b36f91eb343ab0a5c515b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784318"
 ---
-# <a name="app-transport-security"></a>應用程式的傳輸安全性
+# <a name="app-transport-security-in-xamarinios"></a>Xamarin.iOS 應用程式的傳輸安全性
 
 _應用程式的傳輸安全性 (ATS) 會強制執行 （例如應用程式的後端伺服器） 的網際網路資源與您的應用程式之間的安全連線。_
 
@@ -119,7 +120,7 @@ Managed 處理常式是隨附的 Xamarin.iOS 先前版本的預設處理常式�
 - 不適用的 watchOS。
 - 某些 HttpClient 功能和選項無法使用。
 
-#### <a name="nsurlsession-handler"></a>NSUrlSession Handler
+#### <a name="nsurlsession-handler"></a>NSUrlSession 處理常式
 
 基礎 NSUrlSession 處理常式根據原生`NSUrlSession`應用程式開發介面。
 

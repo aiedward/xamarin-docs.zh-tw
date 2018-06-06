@@ -1,21 +1,20 @@
 ---
-title: 逐步解說-使用背景傳送服務和 NSURLSession
-description: 在本逐步解說中，使用背景傳送的服務和 NSURLSession API 開始進行大型的映像，會下載應用程式時在背景中繼續下載。
+title: 背景傳送和 NSURLSession Xamarin.iOS 中
+description: 本文件提供逐步解說會示範如何使用背景傳送和 NSUrlSession 來開始下載大型影像，以及當應用程式會在背景中繼續下載。
 ms.prod: xamarin
 ms.assetid: 6960E025-3D5C-457A-B893-25B734F8626D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 51e1ae0a4314d0b23ec9e3236656321bd3dcb4e4
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 08a0ba1337c0d28d1f0d60d04394ccaf4a9ccfc7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783735"
 ---
-# <a name="walkthrough---using-background-transfer-service-and-nsurlsession"></a>逐步解說-使用背景傳送服務和 NSURLSession
-
-_在本逐步解說中，使用背景傳送的服務和 NSURLSession API 開始進行大型的映像，會下載應用程式時在背景中繼續下載。_
+# <a name="background-transfer-and-nsurlsession-in-xamarinios"></a>背景傳送和 NSURLSession Xamarin.iOS 中
 
 藉由設定背景起始背景傳送`NSURLSession`和上傳或下載工作的佇列。 如果工作完成時 backgrounded、 暫止，或結束應用程式時，iOS 會通知應用程式藉由在應用程式中呼叫完成處理常式*AppDelegate*。 下圖示範中的動作：
 

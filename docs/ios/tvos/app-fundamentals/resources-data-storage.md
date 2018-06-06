@@ -1,19 +1,20 @@
 ---
-title: 資源和資料存放區
-description: 本文件涵蓋使用資源和永續性資料儲存在 Xamarin.tvOS 應用程式。
+title: tvOS 資源和 Xamarin 中儲存資料
+description: 本文說明如何使用資源和永續性資料儲存在 tvOS 應用程式中使用 Xamarin 建置的。 其中也會討論 iCloud 資料儲存體和隨資源。
 ms.prod: xamarin
 ms.assetid: C56B5046-D2C0-4B63-9CE0-ADAA0EFD368A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8103dcc1c2e1e8c2375a86d51580b1ea3fcce432
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: aa14ac08763a48b5f4f9a9522e8b10c652e513c4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788832"
 ---
-# <a name="resources-and-data-storage"></a>資源和資料存放區
+# <a name="tvos-resources-and-data-storage-in-xamarin"></a>tvOS 資源和 Xamarin 中儲存資料
 
 _本文件涵蓋使用資源和永續性資料儲存在 Xamarin.tvOS 應用程式。_
 
@@ -57,7 +58,7 @@ _本文件涵蓋使用資源和永續性資料儲存在 Xamarin.tvOS 應用程�
 - **CloudKit** -存放裝置的較大的部分 （大於 1 MB） 的資訊，請使用 Apple 的 CloudKit 架構。 不同於 iCloud KVS 儲存體，您可以在您的應用程式 （以及在單一使用者的私用） 的所有使用者之間共用 CloudKit 資料。 如需詳細資訊，請參閱我們[簡介 CloudKit](~/ios/data-cloud/intro-to-cloudkit.md)文件或 Apple 的[CloudKit 快速入門](https://developer.apple.com/library/prerelease/tvos/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987)。
 
 > [!IMPORTANT]
-> Apple[提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)可協助開發人員適當地處理歐盟的一般資料保護規定 (GDPR)。
+> Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)協助開發人員適當地處理歐盟一般資料保護規定 (GDPR)。
 
 <a name="On-Demand-Resources" />
 

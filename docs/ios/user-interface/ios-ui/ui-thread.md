@@ -1,18 +1,20 @@
 ---
-title: 使用 UI 執行緒
+title: 使用 UI 執行緒中 Xamarin.iOS
+description: 本文件說明如何使用 Xamarin.iOS 在 UI 執行緒。 它會討論 UI 執行緒執行、 提供背景執行緒範例中，並檢查非同步/等候。
 ms.prod: xamarin
 ms.assetid: 98762ACA-AD5A-4E1E-A536-7AF3BE36D77E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 72f161001509519fb02a652f23eaa7805a55f7ca
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4328b84625aff4c92d6e97029ced7dde747d4fc4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790405"
 ---
-# <a name="working-with-the-ui-thread"></a>使用 UI 執行緒
+# <a name="working-with-the-ui-thread-in-xamarinios"></a>使用 UI 執行緒中 Xamarin.iOS
 
 應用程式使用者介面一律是單一執行緒，即使是在多執行緒的裝置 – 螢幕只有一個表示法，並顯示內容的任何變更需要在透過 「 存取點 」 的單一協調。 這可避免多個執行緒嘗試同時更新相同的像素 （例如）。
 

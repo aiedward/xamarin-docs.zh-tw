@@ -1,5 +1,5 @@
 ---
-title: 應用程式基本概念
+title: tvOS 應用程式基本概念
 description: 本節說明最常見的工作和開發人員需要寫入 Xamarin.tvOS 應用程式時應該注意的概念。
 ms.prod: xamarin
 ms.assetid: B245062F-1DD9-4BE5-8E11-728BA3C8AD4C
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: 4ab06bd7de0b0e847d0ca31bcac9ecdefe79854e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cc9c0d26dfb9f5c97acd1d2a794ed1a9798b2eaf
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788858"
 ---
-# <a name="application-fundamentals"></a>應用程式基本概念
+# <a name="tvos-application-fundamentals"></a>tvOS 應用程式基本概念
 
 _本節說明最常見的工作和開發人員需要寫入 Xamarin.tvOS 應用程式時應該注意的概念。_
 

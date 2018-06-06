@@ -1,15 +1,17 @@
 ---
 title: 第 1 篇 – 了解 Xamarin 的行動裝置平台
+description: 本文件說明 Xamarin 平台在高層級，查看編譯處理程序、 平台 SDK 存取權限，程式碼共用、 使用者介面建立、 視覺化設計工具，等等。
 ms.prod: xamarin
 ms.assetid: FBCEF258-D3D8-A420-79ED-3AAB4A7308E4
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 10d1b0786d5ca0b42b6e6c3e2f2a08edb7a37591
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 40183e5f18ee589adaf2ea903f6948293c8680f7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781890"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>第 1 篇 – 了解 Xamarin 的行動裝置平台
 
@@ -143,8 +145,8 @@ Xamarin 提供了統一的安裝程式，將會設定您的系統必要條件 ja
 
 每個平台都有不同的方法，來以視覺方式配置螢幕：
 
--   **iOS** – Xamarin 的 iOS 設計工具可協助建立檢視表中使用拖放功能和屬性欄位。 這些檢視共同構成分鏡腳本，並可於**。分鏡腳本**隨附於您的專案中的檔案。
--   **Android** – Xamarin for Visual Studio 提供的 Android 拖放 UI 設計工具。 Android 的畫面配置會儲存為**。AXML**檔案時使用 Xamarin 工具。
+-   **iOS** – Xamarin 的 iOS 設計工具可協助建立檢視表中使用拖放功能和屬性欄位。 這些檢視共同構成分鏡腳本，並可於 **。分鏡腳本**隨附於您的專案中的檔案。
+-   **Android** – Xamarin for Visual Studio 提供的 Android 拖放 UI 設計工具。 Android 的畫面配置會儲存為 **。AXML**檔案時使用 Xamarin 工具。
 -   **Windows** – Microsoft 提供在 Visual Studio 和 Blend 中的拖放 UI 設計工具。 畫面配置會儲存為。XAML 檔案。
 
 

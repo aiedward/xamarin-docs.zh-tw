@@ -1,15 +1,17 @@
 ---
 title: 建立從現有的程式庫專案的 NuGet
+description: 本文件說明如何從現有的程式庫專案，允許程式碼可共用給其他開發人員建立的 NuGet 封裝。
 ms.prod: xamarin
 ms.assetid: EDAC3E5E-DB7D-40A9-AE28-45C52ADA854E
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2017
-ms.openlocfilehash: 466ec405d4951de2d47d075c748cbc20ac5074e6
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 7f407b22d1793d585ae40aeae8c2d9b7616784e6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34779979"
 ---
 # <a name="creating-a-nuget-from-existing-library-projects"></a>建立從現有的程式庫專案的 NuGet
 

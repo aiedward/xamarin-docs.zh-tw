@@ -1,6 +1,6 @@
 ---
 title: 繫結 iOS 的程式庫
-description: 如何讓 iOS 原生程式庫 （CocoaPods） 中的 Xamarin 應用程式存取。
+description: 本文件說明如何建立 C# 繫結至 Objective C 程式碼，讓您可以使用原生程式庫和 CocoaPods Xamarin.iOS 應用程式中。
 ms.prod: xamarin
 ms.assetid: EBDC50DC-B44B-4003-AB2B-1EEB868A5E01
 ms.technology: xamarin-ios
@@ -8,15 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 268900c7ab7b317b0b20f4c1ead2360fd6f9bbf0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b054595568a34616a01f2c3f3c7d85f968c3f1fa
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787161"
 ---
 # <a name="binding-ios-libraries"></a>繫結 iOS 的程式庫
-
-_如何讓 iOS 原生程式庫 （CocoaPods） 中的 Xamarin 應用程式存取。_
 
 請遵循下列連結，以了解 Xamarin.iOS 和 Xamarin.Mac Objective C 程式庫和 CocoaPods 繫結：
 

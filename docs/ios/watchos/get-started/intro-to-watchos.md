@@ -1,17 +1,18 @@
 ---
 title: WatchOS 簡介
-description: WatchOS 方案結構和限制的概觀
+description: 本文件提供 watchOS，描述應用程式生命週期、 使用者介面的型別，螢幕大小、 限制和更多的概觀。
 ms.prod: xamarin
 ms.assetid: 99c316d6-6707-40f6-bec9-801d05888759
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 0a0adbab54fc134eaf2e69cc8088713e54b15d3b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 87edc24daab3239626cb904357bd2d45ce868970
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791305"
 ---
 # <a name="introduction-to-watchos"></a>WatchOS 簡介
 

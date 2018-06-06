@@ -1,19 +1,20 @@
 ---
-title: 核心 NFC
-description: 使用 iOS 11 讀取附近欄位距離無線通訊 (NFC) 標記
+title: 核心 NFC Xamarin.iOS 中
+description: 本文件說明如何在使用中 iOS 11 引進 Api Xamarin.iOS 欄位通訊標記附近讀取。
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/25/2016
-ms.openlocfilehash: db0c417c1c79a988821a93b1cf20d94161f5c47a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c42048f9c00238fb73e354ea86322c3d19bae601
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787373"
 ---
-# <a name="core-nfc"></a>核心 NFC
+# <a name="core-nfc-in-xamarinios"></a>核心 NFC Xamarin.iOS 中
 
 _使用 iOS 11 讀取附近欄位距離無線通訊 (NFC) 標記_
 

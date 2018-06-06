@@ -1,23 +1,20 @@
 ---
-title: 處理文字與搜尋欄位
-description: 本文涵蓋設計和處理文字與搜尋欄位內 Xamarin.tvOS 應用程式。
+title: 使用 tvOS 文字和 Xamarin 中搜尋欄位
+description: 本文件說明如何使用 Xamarin 建置 tvOS 應用程式中的文字，並搜尋欄位使用。 它提供文字 和 搜尋 欄位的高階概觀，並討論鍵盤、 分鏡腳本整合、 搜尋資料模型，等等。
 ms.prod: xamarin
 ms.assetid: 9EE63CA6-2F31-4EE0-AAE5-82E18CFAC06C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 220c6e3d1c6f358c67a2f596c977f4d2132298a8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4bf71df62bd6ffd88f42d31809444cd7b3350b66
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789718"
 ---
-# <a name="working-with-text-and-search-fields"></a>處理文字與搜尋欄位
-
-_本文涵蓋設計和處理文字與搜尋欄位內 Xamarin.tvOS 應用程式。_
-
-
+# <a name="working-with-tvos-text-and-search-fields-in-xamarin"></a>使用 tvOS 文字和 Xamarin 中搜尋欄位
 
 在必要時 Xamarin.tvOS 應用程式可以小型的文字，向使用者要求 （例如使用者識別碼和密碼） 使用的文字欄位和螢幕小鍵盤：
 

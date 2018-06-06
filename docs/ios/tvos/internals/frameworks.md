@@ -1,18 +1,20 @@
 ---
-title: 支援和不支援的架構
+title: 在 tvOS 支援和不支援的架構
+description: 為了協助釐清 tvOS 應用程式可用的功能，這份文件提供兩個 Apple 架構清單： 支援 tvOS，以及與不支援 tvOS。
 ms.prod: xamarin
 ms.assetid: 28EF1337-3D0E-47AB-8A13-1B333A964FB6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: 4b368a8e4d449d8fa8d0d29dab19d227bb6eee4c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8ba33d028263385eca50f8174124bbe629e3f951
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789118"
 ---
-# <a name="supported-and-unsupported-frameworks"></a>支援和不支援的架構
+# <a name="supported-and-unsupported-frameworks-in-tvos"></a>在 tvOS 支援和不支援的架構
 
 <a name="Supported-Frameworks" />
 
@@ -41,7 +43,7 @@ ms.lasthandoff: 04/04/2018
 * Foundation
 * GameController
 * GameKit
-* GamePlay
+* 遊戲
 * GLKit
 * ImageIO
 * MachO

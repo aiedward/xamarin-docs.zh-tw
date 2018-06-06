@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 805b27139d644d0fac4a7c5a9e9b2c2c331d7130
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 38805c09136405a7a241cfaeb8fa8cb6fb1a5d5f
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732719"
 ---
 # <a name="introduction-to-effects"></a>效果簡介
 
@@ -53,7 +54,7 @@ Xamarin.Forms[頁面、 版面配置和控制項](~/xamarin-forms/user-interface
 
 每個平台專屬`PlatformEffect`類別會公開下列方法，必須覆寫來實作效果：
 
-- [`OnAttached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnAttached()/) – 當影響附加至 Xamarin.Forms 控制項時呼叫。 覆寫的版本中每個平台專屬效果類別，這個方法，是控制項的執行自訂，以及例外狀況處理萬一效果無法套用至指定的 Xamarin.Forms 控制項的位置。
+- [`OnAttached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnAttached()/) – 當效果附加至 Xamarin.Forms 控制項時呼叫。 覆寫的版本中每個平台專屬效果類別，這個方法，是控制項的執行自訂，以及例外狀況處理萬一效果無法套用至指定的 Xamarin.Forms 控制項的位置。
 - [`OnDetached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnDetached()/) – 當效果中斷 Xamarin.Forms 控制項時呼叫。 覆寫的版本中每個平台專屬效果類別，這個方法，是要執行任何效果清除作業，例如取消註冊事件處理常式的地方。
 
 此外，`PlatformEffect`公開[ `OnElementPropertyChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformEffect%3CTContainer,TControl%3E.OnElementPropertyChanged/p/System.ComponentModel.PropertyChangedEventArgs/)方法，也可以覆寫。 元素的屬性變更時，會呼叫這個方法。 這個方法，每個平台專屬效果類別中覆寫的版本是 Xamarin.Forms 控制項上的可繫結的屬性變更回應的位置。 變更的屬性應該一律會進行檢查，為此覆寫可呼叫多次。

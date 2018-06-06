@@ -1,21 +1,20 @@
 ---
-title: watchOS
-description: Apple Watch 使用 Xamarin 建置應用程式
+title: 建置 watchOS 使用 Xamarin 應用程式
+description: 說明如何建置使用 Xamarin watchOS 應用程式的各種指南的這個文件連結。 連結的輔助線討論使用者入門、 watchOS 使用者介面控制項、 watchOS 功能、 部署和測試和疑難排解
 ms.prod: xamarin
 ms.assetid: 14EAE85E-460A-4145-8C8D-869D176D5C3F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 5634306836b5fe0255a5d4cdf49013441206dd5f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 407c1648bef6e1ca84922a8186fbcfbc76c2c7a6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791393"
 ---
-# <a name="watchos"></a>watchOS
-
-_Apple Watch 使用 Xamarin 建置應用程式_
+# <a name="building-watchos-apps-with-xamarin"></a>建置 watchOS 使用 Xamarin 應用程式
 
 ![Apple Watch 選擇器介面](images/watch1.png) ![Apple Watch 按鈕](images/watch2.png) ![Apple Watch 對應介面](images/watch3.png)
 

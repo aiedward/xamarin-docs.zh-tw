@@ -1,15 +1,17 @@
 ---
 title: 繫結 Objective C 程式庫
+description: 本文件提供如何建立 C# 繫結至 Objective C 程式碼，說明如何將事件、 方法、 自訂控制項和多個繫結的高階概觀。
 ms.prod: xamarin
 ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: fddde9dbef0e4dfb03707a970d4263983d4cf85d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: f7c4be4254ce3e3301c0c1e98d37134f5524c23b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782316"
 ---
 # <a name="binding-objective-c-libraries"></a>繫結 Objective C 程式庫
 
@@ -1368,6 +1370,6 @@ Xamarin.iOS v3.2 為準，我們支援繼承自已標示的通訊協定[ `[Model
 
 在過去我們需要將通訊協定複製到每個實作中，但在這些情況下現在我們可以有`MKShape`類別繼承自`MKOverlay`通訊協定，它將所有需要的方法自動產生。
 
-## <a name="related-links"></a>相關的連結
+## <a name="related-links"></a>相關連結
 
 - [繫結範例](https://developer.xamarin.com/samples/BindingSample/)

@@ -1,24 +1,26 @@
 ---
-title: SceneKit
+title: 在 Xamarin.iOS SceneKit
+description: 本文件說明 SceneKit，3D 場景 graph API 可簡化使用 3D 圖形抽離 OpenGL 的複雜性。
 ms.prod: xamarin
 ms.assetid: 19049ED5-B68E-4A0E-9D57-B7FAE3BB8987
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 7c00a3f6aed442eec402f34a5cea4b1895bb3685
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fb72e194e14f903061e1bd2dc6d04ef88ab429d4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786781"
 ---
-# <a name="scenekit"></a>SceneKit
+# <a name="scenekit-in-xamarinios"></a>在 Xamarin.iOS SceneKit
 
-場景套件是 3D 場景的圖形，可簡化使用 3D 圖形 API。 它引進 OS X 10.8，和 iOS 8 現在有了。 使用場景套件建立沈浸式 3D 視覺效果和 3D 的休閒遊戲不需要 OpenGL 的專業知識。 常見的場景圖形概念上建置，場景套件抽象化 OpenGL 和 OpenGL ES，因此很容易就能加入 3D 內容至應用程式的複雜性。 不過，如果您是 OpenGL 專家，場景套件會有很棒支援直接與 OpenGL 以及繫結。 也包含許多功能，可補充 3D 圖形，例如物理，並充分整合數個其他 Apple 架構，例如核心動畫、 Core 映像和套件精靈。
+SceneKit 是 3D 場景的圖形，可簡化使用 3D 圖形 API。 它引進 OS X 10.8，和 iOS 8 現在有了。 與 SceneKit 建立沈浸式 3D 視覺效果和 3D 的休閒遊戲不需要 OpenGL 的專業知識。 常見的場景圖形概念上建置，SceneKit 抽象化 OpenGL 和 OpenGL ES，因此很容易就能加入 3D 內容至應用程式的複雜性。 不過，如果您是 OpenGL 專家，SceneKit 有供直接與 OpenGL 也將絕佳的支援。 也包含許多功能，可補充 3D 圖形，例如物理，並充分整合數個其他 Apple 架構，例如核心動畫、 Core 映像和套件精靈。
 
-場景套件是非常容易使用。 它是負責呈現的宣告式 API。 您只要設定場景，將屬性加入至它，並場景套件處理場景的轉譯。
+SceneKit 是非常容易使用。 它是負責呈現的宣告式 API。 您只要設定場景，將屬性加入至它，並 SceneKit 處理場景的轉譯。
 
-若要使用場景套件您建立場景圖形使用`SCNScene`類別。 場景中包含的執行個體所表示的節點階層`SCNNode`，定義在 3D 空間中的位置。 每個節點具有屬性，例如幾何、 光線和材質會影響其外觀，如下圖所示：
+若要使用 SceneKit 您建立場景圖形使用`SCNScene`類別。 場景中包含的執行個體所表示的節點階層`SCNNode`，定義在 3D 空間中的位置。 每個節點具有屬性，例如幾何、 光線和材質會影響其外觀，如下圖所示：
 
 ![](scenekit-images/image7.png "SceneKit 階層") 
 
@@ -43,7 +45,7 @@ scene.RootNode.AddChildNode (sphereNode);
 
 ## <a name="adding-light"></a>加入 Light
 
-此時球體不會顯示任何項目，所以沒有光線場景中。 附加`SCNLight`節點的執行個體建立場景套件中的燈號。 有幾種類型的範圍從各種不同的方向性的光源到周遭的明暗度的燈號。 例如下列程式碼會建立側邊球體想使用全方向 light:
+此時球體不會顯示任何項目，所以沒有光線場景中。 附加`SCNLight`節點的執行個體中 SceneKit 建立燈號。 有幾種類型的範圍從各種不同的方向性的光源到周遭的明暗度的燈號。 例如下列程式碼會建立側邊球體想使用全方向 light:
 
 ```csharp
 // omnidirectional light
@@ -89,7 +91,7 @@ cameraNode = new SCNNode {
 scene.RootNode.AddChildNode (cameraNode);
 ```
 
-您可以看到從上面的程式碼，您可以使用建構函式建立物件的場景套件或建立的 factory 方法。 前者允許使用 C# 初始設定式語法，但是要使用哪一個是主要的喜好設定。
+您可以看到從上方 SceneKit 物件可以使用建構函式建立的程式碼或建立的 factory 方法。 前者允許使用 C# 初始設定式語法，但是要使用哪一個是主要的喜好設定。
 
 就地相機，與整個球體是使用者可以看見：
 
@@ -129,7 +131,7 @@ material.Reflective.Contents = UIImage.FromFile ("monkey.png");
 
 ### <a name="animation"></a>動畫
 
-場景套件被為了搭配動畫。 您可以建立隱含或明確的動畫，並可能甚至會造成核心動畫層樹狀結構中的場景。 場景套件時建立隱含的動畫，提供它自己的轉換類別`SCNTransaction`。
+SceneKit 被為了搭配動畫。 您可以建立隱含或明確的動畫，並可能甚至會造成核心動畫層樹狀結構中的場景。 SceneKit 時建立隱含的動畫，提供它自己的轉換類別`SCNTransaction`。
 
 旋轉的球面範例如下：
 
@@ -140,7 +142,7 @@ sphereNode.Rotation = new SCNVector4 (0, 1, 0, (float)Math.PI * 4);
 SCNTransaction.Commit ();
 ```
 
-您可以動畫顯示更多旋轉雖然。 場景套件的許多屬性是展示動畫。 例如，下列程式碼繪製材料`Shininess`增加反射反映。
+您可以動畫顯示更多旋轉雖然。 許多屬性 SceneKit 是展示動畫。 例如，下列程式碼繪製材料`Shininess`增加反射反映。
 
 ```csharp
 SCNTransaction.Begin ();
@@ -149,4 +151,4 @@ material.Shininess = 0.1f;
 SCNTransaction.Commit ();
 ```
 
-場景套件是使用非常直接。 它提供豐富的其他功能，包括條件約束、 物理、 宣告式的動作、 3D 文字、 欄位支援、 精靈套件整合以及 Core 映像整合命名少數的深度。
+SceneKit 是非常容易使用。 它提供豐富的其他功能，包括條件約束、 物理、 宣告式的動作、 3D 文字、 欄位支援、 精靈套件整合以及 Core 映像整合命名少數的深度。

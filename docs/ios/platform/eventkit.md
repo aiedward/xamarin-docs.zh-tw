@@ -1,21 +1,20 @@
 ---
-title: EventKit
-description: 本指南提供有關如何存取和使用行事曆、 CalendarEvents，與提醒儲存的資料在行事曆資料庫中，公開透過 EventKit 的概觀。 它涵蓋的主要類別和其 EventKit 程式設計，以及數 EventKit 架構與相關聯的常見工作的角色。
+title: 在 Xamarin.iOS EventKit
+description: 本文件說明 EventKit 以及如何使用 Xamarin.iOS 中。 其中也會討論行事曆、 行事曆事件和提醒，探討使用 EventKit，以及其他更多設計程式時常用的類別。
 ms.prod: xamarin
 ms.assetid: 00E88629-357D-1FCD-4FCE-1330D5D9D32C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a8439586ac92f8139cf9341611125352c85706e5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3522870d3e063d1e12660094a311e9850bcefa13
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786710"
 ---
-# <a name="eventkit"></a>EventKit
-
-_本指南提供有關如何存取和使用行事曆、 CalendarEvents，與提醒儲存的資料在行事曆資料庫中，公開透過 EventKit 的概觀。它涵蓋的主要類別和其 EventKit 程式設計，以及數 EventKit 架構與相關聯的常見工作的角色。_
+# <a name="eventkit-in-xamarinios"></a>在 Xamarin.iOS EventKit
 
 iOS 會有兩個相關的行事曆應用程式內建： 行事曆應用程式，並提醒應用程式。 若要了解如何行事曆應用程式管理行事曆資料夠簡單但提醒應用程式是較不明顯。 提醒實際上可以有與其相關聯的通常是因為，要完成之時的日期等等。因此，iOS 會儲存所有行事曆資料，無論行事曆事件或在單一位置，稱為備忘提醒*行事曆資料庫*。
 

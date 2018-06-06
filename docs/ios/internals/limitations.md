@@ -1,18 +1,20 @@
 ---
-title: 限制
+title: Xamarin.iOS 的限制
+description: 本文件說明 Xamarin.iOS，討論泛型、 泛型的 NSObjects、 P/Invokes 在一般的物件，以及更多的子類別的限制。
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/09/2018
-ms.openlocfilehash: 8bd4ce464adf316517e2e1f2299006913bc68736
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 8eb2cd5a749beab6f089479f5992fe3fbc16dd0a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786225"
 ---
-# <a name="limitations"></a>限制
+# <a name="limitations-of-xamarinios"></a>Xamarin.iOS 的限制
 
 使用 Xamarin.iOS 在 iPhone 上的應用程式會編譯成靜態程式碼，因為它不使用任何需要在執行階段產生的程式碼的功能。
 
@@ -103,7 +105,7 @@ System.Reflection 缺乏。 **發出**取決於執行階段程式碼產生任何
 -  遠端處理之 TransparentProxy 或任何其他項目，可能導致執行階段動態產生程式碼。 
 
 
- **重要事項：**請勿混淆**Reflection.Emit**與**反映**。 這些事件處理常式是關於動態產生程式碼，並擁有該 Jit 編譯為原生程式碼和。 由於在 iphone （沒有 JIT 編譯） 限制，所以這不支援。
+ **重要事項：** 請勿混淆**Reflection.Emit**與**反映**。 這些事件處理常式是關於動態產生程式碼，並擁有該 Jit 編譯為原生程式碼和。 由於在 iphone （沒有 JIT 編譯） 限制，所以這不支援。
 
 但是，整個反映 API，包括 Type.GetType (「 someClass 」) 方法，列出擷取屬性和值的屬性，就可以正常運作。
 

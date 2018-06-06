@@ -1,21 +1,20 @@
 ---
-title: 地圖
-description: iOS 包括 MapKit 架構，可讓您更輕鬆地加入對應至應用程式。 使用對應的套件，iOS 應用程式可以加入互動式支援功能，例如移動瀏覽和縮放、 地圖上顯示使用者位置及分層豐富圖形的對應。 這篇文章深入探討的數個套件對應的功能，顯示如何利用它們地理功能建置到應用程式
+title: Xamarin.iOS 中的對應
+description: 本文件說明 iOS MapKit 架構以及如何搭配 Xamarin.iOS 使用它。 它討論如何新增的對應，取景位置調整及縮放、 使用使用者位置、 加入註解、 與圖說文字和覆疊，並執行本機搜尋的樣式。
 ms.prod: xamarin
 ms.assetid: 5DD8E56D-51C1-4AFA-B387-79B5734698ED
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 0249da1754083231fa4426ae4f42ce4ad73c3f51
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3649c8eb9c8c1a82940b8e2eece7d2bfd005d024
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790226"
 ---
-# <a name="maps"></a>地圖
-
-_iOS 包括 MapKit 架構，可讓您更輕鬆地加入對應至應用程式。使用對應的套件，iOS 應用程式可以加入互動式支援功能，例如移動瀏覽和縮放、 地圖上顯示使用者位置及分層豐富圖形的對應。這篇文章深入探討的數個套件對應的功能，顯示如何利用它們地理功能建置到應用程式_
+# <a name="maps-in-xamarinios"></a>Xamarin.iOS 中的對應
 
 地圖是所有現代的行動裝置作業系統中的常見功能。 iOS 提供原生透過對應組件架構的對應支援。 使用對應的套件，應用程式可以輕鬆加入豐富、 互動式的對應。 您可以自訂這些對應中有許多種，例如加上註解標記地圖上的位置，以及覆疊圖形的任意形狀。 對應組件即使具有用於顯示裝置的目前位置的內建支援。
 

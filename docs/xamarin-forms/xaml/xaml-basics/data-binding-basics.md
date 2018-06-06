@@ -7,11 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 4e3e090d826aa46d503f8c612250fd5122bc703e
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: a8adc0c16043048ec919f5a0f9f7c5ce25f08ef9
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34733031"
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部分。 資料繫結的基本概念
 
@@ -388,7 +389,7 @@ namespace XamlSamples
 
 [![](data-binding-basics-images/listview3.png "繫結至具有 DataTemplate 和轉換器集合")](data-binding-basics-images/listview3-large.png#lightbox "繫結至含 DataTemplate 和轉換器的集合")
 
-`ListView`功能已經相當成熟中處理變更，以動態方式可能會發生在基礎資料，但是只有採取某些步驟。 如果項目集合指派給`ItemsSource`屬性`ListView`執行階段期間的變更 — 是，如果項目可以加入或從集合中移除 — 使用`ObservableCollection`這些項目的類別。 `ObservableCollection` 實作`INotifyCollectionChanged`介面，和`ListView`將安裝的處理常式`CollectionChanged`事件。
+`ListView`功能已經相當成熟中處理動態如果可能會發生在基礎資料中，但僅限於您採取某些步驟的變更。 如果項目集合指派給`ItemsSource`屬性`ListView`執行階段期間的變更 — 是，如果項目可以加入或從集合中移除 — 使用`ObservableCollection`這些項目的類別。 `ObservableCollection` 實作`INotifyCollectionChanged`介面，和`ListView`將安裝的處理常式`CollectionChanged`事件。
 
 如果在執行階段變更的項目本身的屬性，則集合中的項目應該實作`INotifyPropertyChanged`屬性值使用的介面和信號變更`PropertyChanged`事件。 這示範於本系列的下一個部分[第 5 部分。從資料繫結至 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
 

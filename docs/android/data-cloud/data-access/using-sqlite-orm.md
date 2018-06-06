@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/18/2018
-ms.openlocfilehash: e8e6e98cb6ada8d8da494e408e8db66ad5038799
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 878b0097fc0f62e6b90d948d8a15ab39db4b2f3e
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732251"
 ---
 # <a name="using-sqlitenet-with-android"></a>使用 Android SQLite.NET
 
@@ -239,5 +240,4 @@ SQLite 的 Android 版本具有需要幾個步驟的限制。 如果呼叫`Sqlit
 
 - [DataAccess Basic （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [資料存取進階 （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Android 資料配方](https://developer.xamarin.com/recipes/android/data/)
 - [Xamarin.Forms 資料存取](~/xamarin-forms/app-fundamentals/databases.md)

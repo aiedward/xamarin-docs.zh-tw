@@ -1,15 +1,17 @@
 ---
 title: Xamarin 活頁簿中的表示法
+description: 本文件說明 Xamarin 活頁簿表示管線，可讓豐富結果傳回值的任何程式碼的轉譯。
 ms.prod: xamarin
 ms.assetid: 5C7A60E3-1427-47C9-A022-720F25ECB031
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: 90c3522fda0541021e10c97ce27cc92b5db37902
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: d4d8fa164b9f52e2c5331aa2c08fdddf232572d4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794159"
 ---
 # <a name="representations-in-xamarin-workbooks"></a>Xamarin 活頁簿中的表示法
 

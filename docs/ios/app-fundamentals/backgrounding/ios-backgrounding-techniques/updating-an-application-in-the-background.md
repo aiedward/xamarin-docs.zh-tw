@@ -1,18 +1,20 @@
 ---
-title: 在背景中的將應用程式更新
+title: 更新在背景中 Xamarin.iOS 應用程式
+description: 本文件說明各種方法來更新 Xamarin.iOS 應用程式是在背景中，例如區域監視、 背景擷取和遠端的通知。
 ms.prod: xamarin
 ms.assetid: A2B2231A-C045-4C11-8176-F9966485197A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 370d1cba71fa695e4e01dfb93241536a8df01b11
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 973c18528eee2096b29ba86e82ceff31ecf3e207
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784061"
 ---
-# <a name="updating-an-application-in-the-background"></a>在背景中的將應用程式更新
+# <a name="updating-a-xamarinios-app-in-the-background"></a>更新在背景中 Xamarin.iOS 應用程式
 
 背景重新整理是喚醒裝置的應用程式已暫止或未執行，並更新為新的內容的程序。 iOS 提供重新整理內容，在背景中的三個的選項：
 

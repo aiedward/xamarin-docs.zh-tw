@@ -1,19 +1,20 @@
 ---
-title: iOS 當地語系化
-description: 本文件涵蓋 iOS SDK 的當地語系化功能以及如何使用 Xamarin 存取它們。
+title: 當地語系化的 Xamarin.iOS
+description: 本文件說明 iOS 當地語系化功能以及如何在 Xamarin.iOS 應用程式中使用這些功能。 它討論語言、 地區設定中，字串的檔案、 啟動映像，等等。
 ms.prod: xamarin
 ms.assetid: DFD9EB4A-E536-18E4-C8FD-679BA9C836D8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: 5ee04614a500618846ad3acf2a38f279351d6e9d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 06758fd8fac62a63c309b173738a8ee889716143
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785262"
 ---
-# <a name="ios-localization"></a>iOS 當地語系化
+# <a name="localization-in-xamarinios"></a>當地語系化的 Xamarin.iOS
 
 _本文件涵蓋 iOS SDK 的當地語系化功能以及如何使用 Xamarin 存取它們。_
 

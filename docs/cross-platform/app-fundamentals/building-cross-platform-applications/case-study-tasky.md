@@ -1,20 +1,19 @@
 ---
-title: 案例研究： Tasky
-description: 本文件說明如何建置跨平台應用程式的原則已套用 Tasky 可攜式的範例應用程式中。 它所接觸行動應用程式的設計，撰寫一般程式碼重複使用和實作 iOS、 Android 和 Windows Phone 平台為目標的平台特定專案。
+title: 跨平台應用程式案例研究： Tasky
+description: 本文件說明 Tasky 可攜式的範例應用程式在設計和建置跨平台行動應用程式的方式。 它討論應用程式的需求、 介面、 資料模型、 核心功能，實作，等等。
 ms.prod: xamarin
 ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 1f8325bbc6b3f8aa40a08ca2c57605544ab0bc85
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 48650445d06ad3bc7ca6d4da84c9b8837f8a0f88
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782231"
 ---
-# <a name="case-study-tasky"></a>案例研究： Tasky
-
-_本文件說明如何建置跨平台應用程式的原則已套用 Tasky 可攜式的範例應用程式中。它所接觸行動應用程式的設計，撰寫一般程式碼重複使用和實作 iOS、 Android 和 Windows Phone 平台為目標的平台特定專案。_
+# <a name="cross-platform-app-case-study-tasky"></a>跨平台應用程式案例研究： Tasky
 
 *Tasky* *可攜式*是簡單的待辦事項清單應用程式。 本文將討論如何它所設計及建置，下列的指引[建置跨平台應用程式](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)文件。 討論涵蓋下列各方面：
 
@@ -478,7 +477,7 @@ MainPage 類別會使用`TaskListViewModel`使用 XAML 的資料繫結功能顯�
 
 #### <a name="ios"></a>iOS
 
-應用程式使用 iOS 標準使用者介面的設計，例如 'add' 按鈕放在導覽列中，使用內建**加號 （+）**圖示。 它也會使用預設`UINavigationController`[上一頁] 按鈕的行為，並支援 ' 撥動-delete' 資料表中的。
+應用程式使用 iOS 標準使用者介面的設計，例如 'add' 按鈕放在導覽列中，使用內建**加號 （+）** 圖示。 它也會使用預設`UINavigationController`[上一頁] 按鈕的行為，並支援 ' 撥動-delete' 資料表中的。
 
  [![](case-study-tasky-images/ios-taskylist.png "它也會使用預設 UINavigationController 上一頁按鈕行為，並支援資料表撥動至刪除")](case-study-tasky-images/ios-taskylist.png#lightbox) [ ![ ](case-study-tasky-images/ios-taskylist.png "它也會使用預設 UINavigationController備份按鈕的行為，並支援表撥動-delete")](case-study-tasky-images/ios-taskylist.png#lightbox)
 

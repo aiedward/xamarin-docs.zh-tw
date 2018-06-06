@@ -1,17 +1,18 @@
 ---
 title: TvOS 11 簡介
-description: Tvos 11 使用 Xamarin 的開發人員可使用的新功能
+description: 本文件 tvOS 11 和 Apple 的版本資訊的連結中的 Xamarin 開發人員提供可用的新功能的簡短概觀。
 ms.prod: xamarin
 ms.assetid: 5258F7A1-3388-4482-978C-DC33AAAEFBE6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/08/2018
-ms.openlocfilehash: 735b2a113256b61d4e93c52707411e43fed2eca2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 83251cfa50dde4fb2089057aaaa2771956a4a3b0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788910"
 ---
 # <a name="introduction-to-tvos-11"></a>TvOS 11 簡介
 
@@ -36,8 +37,6 @@ _Tvos 11 使用 Xamarin 的開發人員可使用的新功能_
 - 裸機 2
 
 如需變更 Apple tvOS 11 中導入的完整清單，請參閱[的新功能 tvOS](https://developer.apple.com/library/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS_11_0.html)文件。
-
-
 
 ## <a name="related-links"></a>相關連結
 

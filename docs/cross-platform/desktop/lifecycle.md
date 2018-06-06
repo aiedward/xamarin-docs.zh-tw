@@ -1,15 +1,16 @@
 ---
 ms.assetid: 7C132A7C-4973-4B2D-98DC-3661C08EA33F
 title: WPF 和。Xamarin.Forms 應用程式生命週期
-description: 了解應用程式的啟動程序，以及處理背景狀態
+description: 這份文件相比較的相似性與差異 Xamarin.Forms 和 WPF 應用程式的應用程式生命週期。 它也會查看視覺化樹狀結構、 圖形、 資源和樣式。
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: b4f9aebbbcab48290d37c5732c69267897238272
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: abb7773873fa181085464b5985cc8233715cc4be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781578"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF 和。Xamarin.Forms 應用程式生命週期
 

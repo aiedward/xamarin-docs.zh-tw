@@ -1,18 +1,20 @@
 ---
-title: 您可以使用產品的購買
+title: 購買 Xamarin.iOS 中的您可以使用產品
+description: 本文件說明 Xamarin.iOS 中的您可以使用產品。 您可以使用的產品是功能的單次使用片段，例如遊戲中的貨幣。
 ms.prod: xamarin
 ms.assetid: E0CB4A0F-C3FA-3933-58A7-13246971D677
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5c2c84c044ff41cced2c97e414502faff45341ec
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9c53af1055736512c42f83a58011b7b3a42bcd5b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786973"
 ---
-# <a name="purchasing-consumable-products"></a>您可以使用產品的購買
+# <a name="purchasing-consumable-products-in-xamarinios"></a>購買 Xamarin.iOS 中的您可以使用產品
 
 您可以使用的產品是最簡單的方式實作，因為沒有 'restore' 的需求。 它們可用於產品，例如遊戲中貨幣或單次使用一項功能。 使用者重新可以一次購買您可以使用產品 over 和-移轉。
 
@@ -23,8 +25,6 @@ ms.lasthandoff: 04/04/2018
 [![採購程序視覺效果](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png#lightbox)     
    
  基本工作流程是︰   
-   
-   
    
  1. 應用程式將`SKPayment`至佇列。 如果需要使用者將會提示您輸入其 Apple ID，並要求確認付款。   
    

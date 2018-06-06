@@ -1,22 +1,22 @@
 ---
-title: 語言支援
-description: 跨平台應用程式功能和概念。
+title: 程式設計語言支援的 Xamarin
+description: '本文件說明了 Xamarin 支援各種程式設計語言。 它討論 C#、 F #、 可攜式的 Visual basic.net 和 Razor 的範本。'
 ms.prod: xamarin
 ms.assetid: CEE8C464-67D7-45F4-9614-EAEF5217CACC
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 18d7e93d686f369dec4a98b5b5f6c77679119091
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 715f63a0be54ba3342bd63c1c76d89656313359a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781672"
 ---
-# <a name="language-support"></a>語言支援
-
-本節說明一些更進階的跨平台應用程式功能和概念的文件。
+# <a name="programming-language-support-in-xamarin"></a>程式設計語言支援的 Xamarin
 
 ## <a name="c"></a>C# 
+
 ###  <a name="async-support-overviewcross-platformplatformasyncmd"></a>[非同步支援概觀](~/cross-platform/platform/async.md)
 
 C# 5 版導入了兩個新的關鍵字來表示非同步作業： async 和 await。 這些關鍵字可讓您在另一個執行緒中撰寫簡單的程式碼，它會利用工作平行程式庫執行長時間執行的作業 （例如網路存取），並輕鬆地存取在完成的結果。 最新版的 Xamarin.iOS 和 Xamarin.Android 支援 async 和 await-本文件提供說明和使用新語法中使用 Xamarin 的範例。

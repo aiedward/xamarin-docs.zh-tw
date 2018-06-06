@@ -1,19 +1,20 @@
 ---
-title: 在 iOS 中觸控
+title: 觸控事件和 Xamarin.iOS 中的筆勢
+description: 本文件說明如何使用觸控事件、 多點觸控、 筆勢、 多個放軌跡及 Xamarin.iOS 應用程式中的自訂軌跡。
 ms.prod: xamarin
 ms.assetid: DA666DC9-446E-4CD1-B5A0-C6FFBC7E53AD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 9ed90a9c4ddcd398d834cb8c91553a57e7bd5ad8
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: 34073474ef3ef74f2fddbf487b3377224dc1aa3e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34689537"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784585"
 ---
-# <a name="touch-in-ios"></a>在 iOS 中觸控
+# <a name="touch-events-and-gestures-in-xamarinios"></a>觸控事件和 Xamarin.iOS 中的筆勢
 
 務必了解觸控事件及觸控 Api iOS 應用程式中，因為它們是與裝置的所有實體互動的核心。 觸控的所有互動都涉及`UITouch`物件。 在本文中，我們會了解如何使用`UITouch`類別和其支援觸控的 Api。 更新版本中，我們將會展開以了解如何支援筆勢我們知道。
 

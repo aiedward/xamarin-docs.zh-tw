@@ -1,21 +1,20 @@
 ---
-title: 應用程式存放區圖示
-description: 本文涵蓋包括和管理影像資產 Xamarin.iOS 應用程式中的要做為應用程式存放區圖示。
+title: Xamarin.iOS 應用程式存放區圖示
+description: 本文件說明如何使用資產目錄管理 Xamarin.iOS 應用程式的應用程式存放區圖示。 先前，iTunes Connect 已受管理應用程式市集圖示。
 ms.prod: xamarin
 ms.assetid: BFB5665A-F557-46E1-B35E-870CC2026AD9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/26/2017
-ms.openlocfilehash: f8d993ccb23817e237b9cef8074b881f3ea4b3a2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 749dbf01af382a54fe24652706f6a605ac7b20b4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783606"
 ---
-# <a name="app-store-icon"></a>應用程式存放區圖示
-
-_本文涵蓋包括和管理影像資產 Xamarin.iOS 應用程式中的要做為應用程式存放區圖示。_
+# <a name="app-store-icons-in-xamarinios"></a>Xamarin.iOS 應用程式存放區圖示
 
 Xcode 9 之前是透過 iTunes Connect 新增所有的應用程式存放區圖示。 不過，這不會再是大小寫。 應用程式市集圖示現在必須納入您的專案組合的一部分並加入資產目錄中。 不包含應用程式存放區圖示的應用程式將會拒絕的 Apple。
 

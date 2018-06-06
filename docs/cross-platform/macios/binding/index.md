@@ -1,15 +1,17 @@
 ---
 title: 繫結 Objective C
+description: 本文件提供各種指南說明如何建立 C# 繫結至 Objective C 程式碼，讓開發人員可以使用現成的程式庫中的 Xamarin 應用程式的連結。
 ms.prod: xamarin
 ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: 721036993061d08dadf8b279e13981caaa51f91f
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 55c28387424dd7397280ffa255d94a950618d5ab
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781003"
 ---
 # <a name="binding-objective-c"></a>繫結 Objective C
 

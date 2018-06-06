@@ -1,16 +1,17 @@
 ---
 title: 其他 iOS 9 架構變更
-description: 本文涵蓋了其他的次要變更或現有的架構，適用於 iOS 9 的增強功能。
+description: 本文件說明在 iOS 9 中所導入的其他架構變更。 它討論 AVFoundation、 AVKit 和 CloudKit。
 ms.prod: xamarin
 ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0ae286ddbc61f48cbdd257dc453a2d9680bba703
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 15c9364cf3bdcb8c797882cc9ac76219959de439
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787704"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>其他 iOS 9 架構變更
 
@@ -20,9 +21,9 @@ _本文涵蓋了其他的次要變更或現有的架構，適用於 iOS 9 的增
 
 IOS 的重大變更，除了 Apple 已進行修改，以及數個現有架構的增強功能中 iOS 9。
 
-## <a name="av-foundation-framework-additions"></a>AV 基礎架構新增項目
+## <a name="avfoundation-framework-additions"></a>AVFoundation 架構新增項目
 
-AV 基礎架構，在[AVSpeechSynthesisVoice](https://developer.xamarin.com/api/type/AVFoundation.AVSpeechSynthesisVoice/)類別現在可讓您指定語音除了語言識別項。
+在 AVFoundation framework 中， [AVSpeechSynthesisVoice](https://developer.xamarin.com/api/type/AVFoundation.AVSpeechSynthesisVoice/)類別現在可讓您指定語音除了語言識別項。
 
 例如，下列程式碼會取得一份所有可用的語音：
 
@@ -66,7 +67,7 @@ CloudKit 架構來簡化應用程式的開發該存取 icloud 的功能。 這�
 - [CloudKit 類別目錄： 簡介 （Cocoa 和 JavaScript） 的 CloudKit](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599) -使用 CloudKit 和 CloudKit JS Apple 的範例應用程式。
 
 > [!IMPORTANT]
-> Apple[提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)可協助開發人員適當地處理歐盟的一般資料保護規定 (GDPR)。
+> Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)協助開發人員適當地處理歐盟一般資料保護規定 (GDPR)。
 
 ## <a name="foundation-framework-additions"></a>Mfc 架構新增項目
 

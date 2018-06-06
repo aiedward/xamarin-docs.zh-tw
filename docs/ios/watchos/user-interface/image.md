@@ -1,18 +1,20 @@
 ---
-title: 影像控制項
+title: watchOS 影像控制項在 Xamarin
+description: 本文件說明如何在使用 Xamarin 所建置的 watchOS 應用程式中使用影像控制項。 其中也會討論 WKInterfaceImage 控制項 SetImage 方法，將影像加入至監看式延伸模組、 動畫和更多。
 ms.prod: xamarin
 ms.assetid: B741C207-3427-46F3-9C90-A52BF8933FA4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 370b9f2a57716de876c7e883afdaf445186fb577
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eb58c587f737a5991a21f0efe9964353a8ab0399
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791247"
 ---
-# <a name="image-control"></a>影像控制項
+# <a name="watchos-image-controls-in-xamarin"></a>watchOS 影像控制項在 Xamarin
 
 提供 watchOS [ `WKInterfaceImage` ](https://developer.xamarin.com/api/type/WatchKit.WKInterfaceImage/)控制項來顯示影像和簡單的動畫。 有些控制項也可以讓背景影像 （例如按鈕、 群組和介面控制站）。
 

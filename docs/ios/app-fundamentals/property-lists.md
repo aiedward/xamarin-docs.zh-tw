@@ -1,5 +1,5 @@
 ---
-title: 使用屬性清單
+title: 使用在 Xamarin.iOS 屬性清單
 description: 本文件介紹使用 Info.plist 與 Entitlements.plist Mac 的圖形化和進階屬性清單 (.plist) 編輯器的 Visual Studio。 它說明如何設定圖示和啟動映像，以從 iOS 應用程式在 Visual Studio for mac。
 ms.prod: xamarin
 ms.assetid: 5E687043-0443-377C-9A12-9C5A05958646
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f6ee7a606243f5d21d827546b528ca5d9d3f0281
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6b22acab3fb19a6209fac8dcf6a0870763e601d2
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784464"
 ---
-# <a name="working-with-property-lists"></a>使用屬性清單
+# <a name="working-with-property-lists-in-xamarinios"></a>使用在 Xamarin.iOS 屬性清單
 
 _本文件介紹使用 Info.plist 與 Entitlements.plist Mac 的圖形化和進階屬性清單 (.plist) 編輯器的 Visual Studio。它說明如何設定圖示和啟動映像，以從 iOS 應用程式在 Visual Studio for mac。_
 
@@ -113,7 +114,7 @@ Visual Studio for Mac 功能.plist 圖形化編輯器，可讓您編輯應用程
 
 ## <a name="utis"></a>UTIs
 
-有時候應用程式必須支援開啟自訂檔案類型。 比方說，我們可能會想要開啟映像檔案的自訂延伸模組與*.xam*。 若要指定自訂檔案類型，我們將建立自訂 UTI-通用類型識別碼-使用`UIExportedTypeDeclarations`索引鍵。 下列螢幕擷取畫面說明了如何建立自訂 UTI.xam 延伸模組：
+有時候應用程式必須支援開啟自訂檔案類型。 比方說，我們可能會想要開啟映像檔案的自訂延伸模組與 *.xam*。 若要指定自訂檔案類型，我們將建立自訂 UTI-通用類型識別碼-使用`UIExportedTypeDeclarations`索引鍵。 下列螢幕擷取畫面說明了如何建立自訂 UTI.xam 延伸模組：
 
  [![](property-lists-images/uti.png "UTIs 編輯器")](property-lists-images/uti.png#lightbox)
 

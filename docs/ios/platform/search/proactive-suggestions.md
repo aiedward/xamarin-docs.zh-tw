@@ -1,5 +1,5 @@
 ---
-title: 主動式建議簡介
+title: 主動式建議 Xamarin.iOS 簡介
 description: 本文示範如何在磁碟機 engagement Xamarin.iOS 應用程式中使用主動式建議，藉由使用系統自動向使用者主動顯示有用的資訊。
 ms.prod: xamarin
 ms.assetid: 8DDD084A-0D1E-4DF7-B686-6309DCEFF5D3
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5b06dbf0e8e108616adb4f77910267aaa1ac71f4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f736e9dda00546ddef7cf03457813c7e3d10882b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788011"
 ---
-# <a name="introduction-to-proactive-suggestions"></a>主動式建議簡介
+# <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>主動式建議 Xamarin.iOS 簡介
 
 _本文示範如何在磁碟機 engagement Xamarin.iOS 應用程式中使用主動式建議，藉由使用系統自動向使用者主動顯示有用的資訊。_
 
@@ -54,7 +55,7 @@ UIKit 已展開於 iOS 包含 10 [TextContentType](https://developer.apple.com/r
 
 ## <a name="contextual-siri-reminders"></a>內容 Siri 提醒
 
-可讓使用者使用 Siri 快速將它們目前正在檢視的應用程式中在日後若要檢視內容提醒。 例如，如果他們已檢視餐廳評論的應用程式中，他們就可以叫用 Siri 然後說出*"提醒我有關此當我回家。 」* Siri 便會產生一個連結到檢閱提醒應用程式中。
+可讓使用者使用 Siri 快速將它們目前正在檢視的應用程式中在日後若要檢視內容提醒。 例如，如果他們已檢視餐廳評論的應用程式中，他們就可以叫用 Siri 然後說出 *"提醒我有關此當我回家。 」* Siri 便會產生一個連結到檢閱提醒應用程式中。
 
 ## <a name="contact-based-suggestions"></a>連絡基礎的建議
 
@@ -64,7 +65,7 @@ UIKit 已展開於 iOS 包含 10 [TextContentType](https://developer.apple.com/r
 
 如果騎共用應用程式使用[MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) API，iOS 10 會加以呈現在應用程式切換器的選項有時候使用者可能要騎時。 應用程式必須也登錄為騎共用應用程式藉由指定`MKDirectionsModeRideShare`如[MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html)中的索引鍵及其`Info.plist`檔案。
 
-如果應用程式只支援騎共用，會從系統建議*> 的 < 取得，以及到...*，如果支援其他類型的路由 （例如 Walking 或自行車） 的方向，系統會使用*> 的 < 取得指示...*
+如果應用程式只支援騎共用，會從系統建議 *> 的 < 取得，以及到...*，如果支援其他類型的路由 （例如 Walking 或自行車） 的方向，系統會使用 *> 的 < 取得指示...*
 
 > [!IMPORTANT]
 > [MKMapItem](https://developer.xamarin.com/api/type/MapKit.MKMapItem/)應用程式收到的物件可能不包含經度和緯度的資訊，因此將需要地理編碼。
@@ -203,10 +204,10 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 1. 尋找他們想要符合在朋友的應用程式中的餐廳。
 2. 使用者移動離開使用多工作業的應用程式切換器的應用程式時，系統會自動顯示建議 （位於螢幕底部） 取得餐廳使用他們最愛的瀏覽應用程式的指示。
-3. 如果使用者切換到訊息 」 應用程式，並開始輸入*」 讓我們在符合"*，QuickType 鍵盤將會自動建議貼上的餐廳的地址。
+3. 如果使用者切換到訊息 」 應用程式，並開始輸入 *」 讓我們在符合"*，QuickType 鍵盤將會自動建議貼上的餐廳的地址。
 4. 如果使用者切換至對應的應用程式時，餐廳的位址會自動建議做為目的地。
 5. 這甚至適用於第 3 個合作對象應用程式 (支援`NSUserActivity`)，因此使用者可以切換到騎共用應用程式和餐廳的位址會自動建議做為目的地那里以及。
-6. 它也提供內容給 Siri，讓使用者可以叫用餐廳應用程式內的 Siri 並詢問*「 取得說明...」* Siri 會提供到 「 餐廳 」 使用者檢視的方向。
+6. 它也提供內容給 Siri，讓使用者可以叫用餐廳應用程式內的 Siri 並詢問 *「 取得說明...」* Siri 會提供到 「 餐廳 」 使用者檢視的方向。
 
 所有上述功能共同具有一件事，但是所有建議原本來自何方。 在上述範例中，它可以是虛構的餐廳檢閱應用程式。
 
@@ -479,7 +480,7 @@ Schema.org 可以提供相同的網站的位置基礎互動類型。 Apple 設�
 
 Safari 會擷取符合下列結構描述屬性在網頁上的任何項目：
 
-- **PostalAddress**
+- **省略**
 - **GeoCoordinates**
 - 此為電話屬性。
 

@@ -1,15 +1,17 @@
 ---
 title: 時機和方式我應該提出問題報告？
+description: 本文件說明何時、 何處，以及如何檔案錯誤報告。 它也會提供最佳作法可讓最佳工程師診斷問題的錯誤報告。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 8AD9CFBF-282A-4C1F-95E9-25F21141B052
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: d5471195b5051725b41b8f28b3959db362297669
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 08a782e9637442a43e9c63305ddf161403519169
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781939"
 ---
 # <a name="when-and-how-should-i-file-a-bug-report"></a>時機和方式我應該提出問題報告？
 

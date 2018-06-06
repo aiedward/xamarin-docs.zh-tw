@@ -1,32 +1,32 @@
 ---
-title: TextKit
-description: 文字套件 API 提供功能強大的文字 Xamarin.iOS 配置和轉譯功能。
+title: 在 Xamarin.iOS TextKit
+description: 本文件說明如何使用 TextKit Xamarin.iOS 中。 TextKit 提供功能強大的文字配置和轉譯功能。
 ms.prod: xamarin
 ms.assetid: 1D0477E8-CD1E-48A9-B7C8-7CA892069EFF
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 78ca0d9505c9f56dc6476bd04dab560a70b2c4b0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ac80d1d07f5649d377dd6fdefcb4911ba9ec2dcb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788331"
 ---
-# <a name="text-kit"></a>文字套件
+# <a name="textkit-in-xamarinios"></a>在 Xamarin.iOS TextKit
 
-文字套件是新的 API 可提供配置和轉譯功能強大的文字。 它會建置於核心文字架構的低層級之上，但更容易使用的核心文字以外。
+TextKit 是新的 API 可提供配置和轉譯功能強大的文字。 它之上低階的核心文字架構，但更容易使用的核心文字以外。
 
-若要讓使用標準控制項文字套件的功能，數個 iOS 文字控制項已被重新實作使用文字套件，包括：
+若要讓使用標準控制項 TextKit 的功能，數個 iOS 文字控制項已被重新實作使用 TextKit，包括：
 
 -  UITextView
 -  UITextField
 -  UILabel
 
-
 ## <a name="architecture"></a>架構
 
-文字套件提供隔開的版面配置和顯示方式，包括下列類別中的文字儲存體分層的架構：
+TextKit 提供隔開的版面配置和顯示方式，包括下列類別中的文字儲存體分層的架構：
 
 -  `NSTextContainer` – 提供座標系統以及用來配置文字的幾何。
 -  `NSLayoutManager` – 配置文字藉由開啟成圖像的文字。 
@@ -37,7 +37,7 @@ ms.lasthandoff: 04/04/2018
 
 下圖說明這個架構：
 
- ![](textkit-images/textkitarch.png "此圖說明文字套件架構")
+ ![](textkit-images/textkitarch.png "此圖說明 TextKit 架構")
 
 ## <a name="text-storage-and-attributes"></a>文字的儲存體和屬性
 
@@ -56,7 +56,7 @@ textView.TextStorage.EndEditing ();
 
 ## <a name="layout-with-exclusion-path"></a>排除路徑的版面配置
 
-文字套件也支援版面配置，並允許複雜的案例，例如呼叫多重資料行的文字和指定的路徑的流動繞*排除路徑*。 排除路徑會套用至文字容器，以修改文字版面配置，導致繞過指定的路徑文字的幾何。
+TextKit 也支援版面配置，並允許複雜的案例，例如呼叫多重資料行的文字和指定的路徑的流動繞*排除路徑*。 排除路徑會套用至文字容器，以修改文字版面配置，導致繞過指定的路徑文字的幾何。
 
 加入排除路徑必須設定`ExclusionPaths`配置管理員上的屬性。 將此屬性會使文字版面配置和資料流程周圍排除路徑的文字配置管理員。
 
@@ -139,10 +139,10 @@ public class ExclusionPathView : UITextView
 }
 ```
 
-這個程式碼加入 [文字] 檢視使用核心圖形上繪製的支援。 因為`UITextView`類別現在建立要用於其文字轉譯和版面配置中的文字套件，它使用的組件的文字，例如設定排除路徑的所有功能。
+這個程式碼加入 [文字] 檢視使用核心圖形上繪製的支援。 因為`UITextView`類別現在已內建用於 TextKit 其文字轉譯和版面配置，它使用 TextKit，例如設定排除路徑的所有功能。
 
 > [!IMPORTANT]
-> 此範例子類別`UITextView`新增觸控描繪支援。 子類別化`UITextView`，就不需要取得文字套件的功能。
+> 此範例子類別`UITextView`新增觸控描繪支援。 子類別化`UITextView`，就不需要取得 TextKit 的功能。
 
 
 

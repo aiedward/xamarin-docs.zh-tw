@@ -1,19 +1,20 @@
 ---
-title: ARKit 簡介
-description: 適用於 iOS 11 擴增的實境
+title: 在 Xamarin.iOS ARKit 簡介
+description: 本文件說明擴增的實境中與 ARKit iOS 11。 它討論如何將 3D 模型加入至應用程式、 設定檢視、 實作工作階段代理人，在世界中，定位 3D 模型和暫停擴增的實境工作階段。
 ms.prod: xamarin
 ms.assetid: 70291430-BCC1-445F-9D41-6FBABE87078E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/30/2016
-ms.openlocfilehash: f48cdd48e63131fe234fef1bb60b555724dd8a92
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 55ef2004f66cb808f878b2215dfdd59a45015877
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787160"
 ---
-# <a name="introduction-to-arkit"></a>ARKit 簡介
+# <a name="introduction-to-arkit-in-xamarinios"></a>在 Xamarin.iOS ARKit 簡介
 
 _適用於 iOS 11 擴增的實境_
 

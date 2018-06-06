@@ -1,22 +1,20 @@
 ---
-title: 使用堆疊檢視
-description: 本文涵蓋設計和 Xamarin.tvOS 應用程式內使用堆疊檢視。
+title: 使用 Xamarin 中 tvOS 堆疊檢視
+description: 本文件說明如何使用 tvOS 過堆疊中使用 Xamarin 所建置的應用程式的檢視。 它提供堆疊檢視的高階概觀，並討論自動配置定位和調整大小堆疊的檢視、 一般用途，分鏡腳本，與整合等等。
 ms.prod: xamarin
 ms.assetid: 00B07F85-F30B-4DD4-8664-A61D0A1CDB0E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: a6300e4da47022199c0503e6be63b0c90f15654d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e718e525c23e78fbf846209602a07bf0f3f386e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789368"
 ---
-# <a name="working-with-stacked-view"></a>使用堆疊檢視
-
-_本文涵蓋設計和 Xamarin.tvOS 應用程式內使用堆疊檢視。_
-
+# <a name="working-with-tvos-stacked-views-in-xamarin"></a>使用 Xamarin 中 tvOS 堆疊檢視
 
 堆疊檢視控制項 (`UIStackView`) 會利用自動配置和大小類別來管理一堆 subviews，水平或垂直，與內容的變更和 Apple TV 裝置的螢幕大小會動態地回應。
 

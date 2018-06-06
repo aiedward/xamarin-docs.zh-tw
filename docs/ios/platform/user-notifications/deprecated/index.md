@@ -1,26 +1,25 @@
 ---
-title: 已被取代的通知技術
+title: Xamarin.iOS 中已被取代的通知技術
+description: 本文件說明已被取代，以利於使用者通知架構，在 iOS 10 中導入的 iOS 通知技術。
 ms.prod: xamarin
 ms.assetid: 20C4F6E5-56DF-4A85-BBF0-E38C88586307
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/07/2016
-ms.openlocfilehash: eff1d999e705aa493d0481e34ead3b9b81d434f9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4becc5e296fb6e2496d9ffd863f7137419480262
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788549"
 ---
-# <a name="deprecated-notification-technologies"></a>已被取代的通知技術
+# <a name="deprecated-notification-technologies-in-xamarinios"></a>Xamarin.iOS 中已被取代的通知技術
 
 本節說明如何實作本機及 Xamarin.iOS 中的推送通知。 它會說明 iOS 通知的各種 UI 項目，並討論應用程式開發介面的涉及建立和顯示通知。
 
 > [!IMPORTANT]
 > 本節中的資訊屬於 iOS 9 及之前，它已保留這裡以支援較舊 iOS 版本。 適用於 iOS 10 和更新版本，請參閱[使用者通知架構指南](~/ios/platform/user-notifications/index.md)支援 iOS 裝置上的本機和遠端的通知。
-
-
-
 
 ## <a name="sections"></a>章節
 

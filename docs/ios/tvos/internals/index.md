@@ -1,22 +1,20 @@
 ---
-title: tvOS 內部項目
-description: Xamarin.tvOS 共用相同的 DNA 為我們 Xamarin.iOS 的產品，因此我們已產生我們 iOS 產品的進階文件與 tvOS 產品幾乎完全相同。
+title: 在 Xamarin – 內部 tvOS
+description: 在 Xamarin，根據 Xamarin.iOS 描述 tvOS 的內部工作的文件。 連結內容討論組件，目標架構，以及相關 iOS 概念。
 ms.prod: xamarin
 ms.assetid: 8C076FED-9C03-44DE-9723-0E20272DD16B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: 83b8d5b6dc4e73f05160960f0e2547284de57799
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0132eac4edd4ecb9f693828bd58288dfbcb1c008
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789141"
 ---
-# <a name="tvos-internals"></a>tvOS 內部項目
-
-_Xamarin.tvOS 共用相同的 DNA 為我們 Xamarin.iOS 的產品，因此我們已產生我們 iOS 產品的進階文件與 tvOS 產品幾乎完全相同。_
-
+# <a name="tvos-in-xamarin--internals"></a>在 Xamarin – 內部 tvOS 
 
 ##  <a name="assembliesiostvosinternalsassembliesmd"></a>[組件](~/ios/tvos/internals/assemblies.md)
 
@@ -73,8 +71,6 @@ Xamarin.iOS 支援原生 C 程式庫和 Objective C 程式庫連結。 本文將
 ###  <a name="xib-code-generationiosinternalsxib-code-generationmd"></a>[XIB 程式碼產生](~/ios/internals/xib-code-generation.md)
 
 如何 Visual Studio for Mac 整合使用 Xcode 的介面產生器，讓您可以使用介面產生器來設計 UI。
-
-
 
 ## <a name="related-links"></a>相關連結
 

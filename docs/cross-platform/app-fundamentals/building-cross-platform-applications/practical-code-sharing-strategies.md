@@ -1,15 +1,17 @@
 ---
 title: 第 5-實用的程式碼共用策略
+description: 本文件討論實際的程式碼共用功能，例如資料庫、 檔案存取、 網路作業和非同步程式碼的策略。
 ms.prod: xamarin
 ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 234f6399a163572538755c41e4c58cf0a80e0d3e
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: d912f93025fb1b9bc511c1aeab9040dc1acf0e48
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781688"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>第 5-實用的程式碼共用策略
 

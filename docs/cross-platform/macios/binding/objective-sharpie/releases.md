@@ -1,17 +1,19 @@
 ---
-title: 發行記錄
+title: 目標 Sharpie 發行記錄
+description: 本文件說明目標 Sharpie，此工具用來自動建立的 C# 繫結至 Objective C 程式碼的發行記錄。
 ms.prod: xamarin
 ms.assetid: 1F4A1BE1-7205-43F4-89D0-6C8672F52598
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 9a29b131af706b9dedc808a156cdfaffa4173882
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: a173df769068a3834dfdc314675254af1f3594ed
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781727"
 ---
-# <a name="release-history"></a>發行記錄
+# <a name="objective-sharpie-release-history"></a>目標 Sharpie 發行記錄
 
 ## <a name="34-october-11-2017"></a>3.4 (2017 年 10 月 11，)
 

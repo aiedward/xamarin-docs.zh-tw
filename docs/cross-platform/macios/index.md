@@ -1,20 +1,19 @@
 ---
 title: Apple 平台 （iOS 和 Mac）
-description: 本節中，我們會討論 Xamarin.iOS 和 Xamarin.Mac 專案之間共用程式碼的策略。
+description: 本文件說明 Xamarin.iOS 和 Xamarin.Mac 開發相關的各種主題： 共用、 統一的 API，繫結 Objective C 程式庫、 原生參考、 原生類型，以及更多的程式碼。
 ms.prod: xamarin
 ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 3c01ff4af699dd0374729b638470d1ef34aa7022
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b40758fa562e57415cd3c0818763ef0a7ce5dcca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781529"
 ---
 # <a name="apple-platform-ios-and-mac"></a>Apple 平台 （iOS 和 Mac）
-
-_本節中，我們會討論 Xamarin.iOS 和 Xamarin.Mac 專案之間共用程式碼的策略。_
 
 ## <a name="code-sharing"></a>共用程式碼
 
@@ -48,8 +47,6 @@ Xamarin 可讓您帶入您的應用程式中的原生程式庫，以繫結。 �
 
 ## <a name="native-referencesnative-referencesmd"></a>[原生參考](native-references.md)
 
-
-
 ##  <a name="macios-native-typesnativetypesmd"></a>[Mac/iOS 原生類型](nativetypes.md)
 
 為了支援 32 和 64 位元會明確地從 C# 和 F # 的程式碼，我們引進新的資料類型。   資訊，請在這裡了解。
@@ -62,7 +59,6 @@ Xamarin 可讓您帶入您的應用程式中的原生程式庫，以繫結。 �
 
 本文將說明如何使用新的 iOS 原生整合應用程式開發介面的型別 (`nint`， `nuint`， `nfloat`) 在跨平台應用程式中使用非 iOS 裝置，例如 Android 或 Windows Phone 作業系統版本之共用程式碼的位置。
 它提供深入了解何時應該使用的原生類型，並提供以跨平台程式碼必須使用新類型的情況下幾個可能的解決方案。
-
 
 ## <a name="httpclient-stack-and-ssltls-implementation-selectorhttp-stackmd"></a>[HttpClient 堆疊和 SSL/TLS 實作選擇器](http-stack.md)
 

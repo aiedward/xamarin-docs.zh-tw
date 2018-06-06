@@ -1,19 +1,20 @@
 ---
-title: 選擇器
-description: 本指南涵蓋設計及 Xamarin.iOS 應用程式中使用選擇器。
+title: Xamarin.iOS 中選擇器控制項
+description: 本文件說明如何設計和使用 Xamarin.iOS 應用程式中的選擇器控制項時。 它討論如何實作選擇器中的程式碼，以及在 iOS 設計工具中。
 ms.prod: xamarin
 ms.assetid: A2369EFC-285A-44DD-9E80-EC65BC3DF041
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/02/2017
-ms.openlocfilehash: e213124e870f1cca96a6078fd26bc7eeb1af55a1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7f46d354af86027d1e2656171c6595562d3555a6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789908"
 ---
-# <a name="picker"></a>選擇器
+# <a name="picker-control-in-xamarinios"></a>Xamarin.iOS 中選擇器控制項
 
 選擇器控制項顯示 '滾輪類似' 控制項包含可捲動的值，選取要反白顯示的值清單。 使用者旋轉滾輪以選取他們想要的選項。
 

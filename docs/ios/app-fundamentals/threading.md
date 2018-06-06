@@ -1,17 +1,19 @@
 ---
-title: 執行緒
+title: Xamarin.iOS 中執行緒
+description: 本文件說明如何使用 System.Threading Api Xamarin.iOS 應用程式中。 其中也會討論工作平行程式庫，建置應用程式的回應，以及記憶體回收。
 ms.prod: xamarin
 ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 63a213a62021923ac6dae8b080f3f8931621251d
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 05d015d8d255ccc8c6230b1a89e098e187b22b37
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784913"
 ---
-# <a name="threading"></a>執行緒
+# <a name="threading-in-xamarinios"></a>Xamarin.iOS 中執行緒
 
 Xamarin.iOS 執行階段可讓開發人員存取.NET 執行緒應用程式開發介面，同時使用執行緒時，明確 (`System.Threading.Thread, System.Threading.ThreadPool`) 以及隱含地使用非同步委派模式或 BeginXXX 方法，以及完整範圍的應用程式開發介面支援工作平行程式庫。
 

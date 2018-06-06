@@ -1,17 +1,18 @@
 ---
-title: 平台功能
-description: 描述各個 tvOS 版次中包含的功能的文件到這個文件連結。
+title: tvOS 平台功能
+description: 描述各個 tvOS 版次中包含的功能的文件到這個文件連結。 它也會連結至文件描述使用 Siri 遠端和藍芽的控制站。
 ms.prod: xamarin
 ms.assetid: FB705CAD-B43C-4374-B139-92AB81185429
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: 3cce82bd6058d2d74c1acdef7f99196835908718
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 33679a79935d891e4d340d4adcf41e37d68cd40f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788955"
 ---
 # <a name="tvos-platform-features"></a>tvOS 平台功能
 
@@ -34,8 +35,6 @@ ms.lasthandoff: 04/04/2018
 ## <a name="siri-remote-and-bluetooth-controllersiostvosplatformremote-bluetoothmd"></a>[Siri 遠端和藍牙控制器](~/ios/tvos/platform/remote-bluetooth.md)
 
 本文涵蓋 Xamarin.tvOS 應用程式中支援的新 Siri 遠端和藍芽遊戲控制器。
-
-
 
 ## <a name="related-links"></a>相關連結
 

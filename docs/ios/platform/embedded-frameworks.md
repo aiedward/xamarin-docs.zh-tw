@@ -1,18 +1,19 @@
 ---
-title: 內嵌的架構
-description: 本文件說明應用程式開發人員如何在其應用程式中內嵌使用者介面架構。
+title: 內嵌在 Xamarin.iOS 架構
+description: 本文件說明如何在 Xamarin.iOS 應用程式中內嵌的架構與共用程式碼。 這可以與 mtouch 工具或原生參考完成。
 ms.prod: xamarin
 ms.assetid: F8C61020-4106-46F1-AECB-B56C909F42CB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: f223d8ef6e89cc44822b8a831dbba3cf71d727c9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e42f0940fe3fc132c9d381907aad5afbe474c4ad
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787288"
 ---
-# <a name="embedded-frameworks"></a>內嵌的架構
+# <a name="embedded-frameworks-in-xamarinios"></a>內嵌在 Xamarin.iOS 架構
 
 _本文件說明應用程式開發人員如何在其應用程式中內嵌使用者介面架構。_
 

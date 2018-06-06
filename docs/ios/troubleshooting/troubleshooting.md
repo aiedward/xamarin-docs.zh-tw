@@ -1,5 +1,6 @@
 ---
-title: 疑難排解
+title: Xamarin.iOS 的疑難排解秘訣
+description: 本文件提供各種適合 Xamarin.iOS 應用程式開發期間疑難排解的秘訣。 它會描述特定的錯誤訊息，以及其他潛在問題。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B50FE9BD-9E01-AE88-B178-10061E3986DA
@@ -7,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/0201
-ms.openlocfilehash: 6a179c1d63e9b5a7b8a42705d5c112a7b71a4906
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 26fe2fb848fb81940bc01a34c69b1b28897005dc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789349"
 ---
-# <a name="troubleshooting"></a>疑難排解
+# <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin.iOS 的疑難排解秘訣 
 
 ## <a name="xamarinios-cannot-resolve-systemvaluetuple"></a>Xamarin.iOS 無法解析 System.ValueTuple
 

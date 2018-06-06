@@ -11,7 +11,7 @@ ms.openlocfilehash: d97fc792e2eb14f7e432d377811d1318c99b9602
 ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/01/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34689444"
 ---
 # <a name="local-databases"></a>本機資料庫

@@ -1,21 +1,20 @@
 ---
-title: 使用父應用程式
-description: IOS 和監看式 watchOS 1 應用程式之間共用的資料
+title: 使用 watchOS 父 Xamarin 應用程式
+description: 本文件說明如何使用 Xamarin watchOS 父應用程式。 它討論 WatchKit 應用程式擴充功能、 iOS 應用程式、 共用儲存體、 等等。
 ms.prod: xamarin
 ms.assetid: 9AD29833-E9CC-41A3-95D2-8A655FF0B511
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 769847cccb3e21fea4d8f45d8e5d0c0fb59bdd43
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3af2cce0d84e3934eeb89917990f111d29aadef1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790688"
 ---
-# <a name="working-with-the-parent-application"></a>使用父應用程式
-
-_IOS 和監看式 watchOS 1 應用程式之間共用的資料_
+# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>使用 watchOS 父 Xamarin 應用程式
 
 > [!IMPORTANT]
 > 存取父應用程式使用下列範例只適用於 watchOS 1 監看式應用程式。
@@ -59,7 +58,7 @@ WKInterfaceController.OpenParentApplication (new NSDictionary (), (replyInfo, er
 ```
 
 
-### <a name="ios-app"></a>iOS App
+### <a name="ios-app"></a>iOS 應用程式
 
 透過在 iPhone 應用程式進行路由傳送來自監看式應用程式擴充功能的所有呼叫`HandleWatchKitExtensionRequest`方法。
 如果您正在監看式應用程式中不同的要求，則這個方法需要查詢`userInfo`字典，以便判斷如何處理要求。

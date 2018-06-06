@@ -1,6 +1,6 @@
 ---
-title: TvOS 簡介
-description: 本文介紹建置使用 Xamarin tvOS 應用程式。
+title: 在 Xamarin tvOS 簡介
+description: 這個文件會連結至不同的指南及範例會示範如何建置使用 Xamarin tvOS 應用程式。 這些指南討論各種功能，例如使用者介面開發人員、 資料存放區、 圖示和多個。
 ms.prod: xamarin
 ms.assetid: 14345503-1742-41F5-B2EF-EE31AB7C3516
 ms.technology: xamarin-ios
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: 457e1c01365017f699c5902376cdb44b9127d88e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 45a509f6ee86e42279ec7877272965e8f6d7338f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788682"
 ---
-# <a name="introduction-to-tvos"></a>TvOS 簡介
+# <a name="introduction-to-tvos-in-xamarin"></a>在 Xamarin tvOS 簡介
 
 ## <a name="introducing-tvos"></a>介紹 tvOS
 

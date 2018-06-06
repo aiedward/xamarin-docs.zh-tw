@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: b370c27a212f876231764851c894bf683ae460c3
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: aafad29a30130c9ec088121e03a986034f002e1c
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34733083"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms 檢視
 
@@ -69,7 +70,7 @@ _Xamarin.Forms 檢視是跨平台行動裝置的使用者介面的建置組塊�
 
 |     |     |
 | --- | --- |
-| [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) 是一個矩形的物件，顯示的文字，並引發[ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Button.Clicked/)時已按下的事件。<br /><br />[應用程式開發介面文件](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) | [![按鈕範例](views-images/Button.png "按鈕範例")](views-images/Button-Large.png#lightbox "按鈕範例")<br /> [此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ButtonDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml)與[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml.cs) |
+| [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) 是一個矩形的物件，顯示的文字，並引發[ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Button.Clicked/)時已按下的事件。<br /><br />[應用程式開發介面文件](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) / [指南](~/xamarin-forms/user-interface/button.md) / [範例](https://developer.xamarin.com/samples/UserInterface/ButtonDemos/) | [![按鈕範例](views-images/Button.png "按鈕範例")](views-images/Button-Large.png#lightbox "按鈕範例")<br /> [此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ButtonDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml)與[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="searchbar"></a>SearchBar

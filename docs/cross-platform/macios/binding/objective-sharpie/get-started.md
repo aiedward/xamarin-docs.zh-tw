@@ -1,17 +1,19 @@
 ---
-title: 快速入門
+title: 目標 Sharpie 使用者入門
+description: 本文件提供目標 Sharpie，此工具用來自動建立的 C# Objective C 程式碼的繫結的高階概觀。
 ms.prod: xamarin
 ms.assetid: 577512BF-1A90-41E5-89DE-9E056C478678
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 5f61d0794e1f5a38370f0d840504720043f69590
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: a0431f8952055a55be24ae5f85381a4295206a40
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781812"
 ---
-# <a name="getting-started"></a>快速入門
+# <a name="getting-started-with-objective-sharpie"></a>目標 Sharpie 使用者入門
 
 > [!IMPORTANT]
 > 目標 Sharpie 是有經驗的 Xamarin 開發人員了解 OBJECTIVE-C （而且藉由擴充，C） 的進階工具。 然後再嘗試將繫結 Objective C 程式庫中，您應該具備如何建立命令列 （以及充分了解原生程式庫的運作方式） 的原生程式庫的實心知識。

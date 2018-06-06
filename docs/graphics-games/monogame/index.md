@@ -1,19 +1,21 @@
 ---
-title: Monogame
+title: Monogame 架構
+description: 這份文件連結到各種描述使用 MonoGame 遊戲開發的輔助線： 概觀、 討論 3D 圖形和遊戲，並查看特定平台考量。
 ms.prod: xamarin
 ms.assetid: 35EC29CE-538B-4844-BACC-E51823EFF3B5
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 8c5256f3e8f6a617362fe6721a0eaff897297100
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 1c398b7d20a8c28001c2f3371dd792ed4b017a5f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783118"
 ---
-# <a name="monogame"></a>Monogame
+# <a name="monogame-framework"></a>Monogame 架構
 
-MonoGame 很有效率，有彈性，跨平台 API 開發 2D 和 3D 遊戲。 它提供許多跨平台遊戲引擎的基礎，但是可以用直接在遊戲中，而不被包裝在遊戲引擎。
+MonoGame 是效益、 有彈性、 跨平台 API，可用於開發 2D 和 3D 遊戲。 它提供許多跨平台遊戲引擎的基礎，但是可以用直接在遊戲中，而不被包裝在遊戲引擎。
 
 ## <a name="introduction-to-game-development-with-monogamegraphics-gamesmonogameintroductionindexmd"></a>[與 MonoGame 遊戲應用程式開發簡介](~/graphics-games/monogame/introduction/index.md)
 

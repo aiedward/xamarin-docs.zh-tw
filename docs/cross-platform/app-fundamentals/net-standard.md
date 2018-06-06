@@ -1,19 +1,21 @@
 ---
-title: .NET Standard
+title: 使用.NET 標準程式庫共用的程式碼
+description: 本文件說明如何使用.NET 標準程式庫共用的程式碼。 它討論建立的標準.NET 程式庫、 編輯其設定，和在應用程式中使用它。
 ms.prod: xamarin
 ms.assetid: 8C30F8D3-1920-453E-9E8B-D40696736FF2
 author: asb3993
 ms.author: amburns
 ms.date: 04/12/2017
-ms.openlocfilehash: c70a1cb1aa05426ba6d54d8af3787f014883bfa1
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 448bbc0630388f6bf45056c90cc75586996d0623
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781029"
 ---
-# <a name="net-standard"></a>.NET Standard
+# <a name="using-net-standard-libraries-to-share-code"></a>使用.NET 標準程式庫共用的程式碼
 
-## <a name="using-net-standard-library-projects-to-share-code"></a>共用的程式碼使用.NET 標準程式庫專案
+## <a name="net-standard"></a>.NET Standard
 
 .NET 標準程式庫是計劃提供所有 .NET 執行階段使用的 .NET API 正式規格。 標準程式庫背後的動機是在 .NET 生態系統中建立更高的一致性。
 [ECMA 335](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) 會繼續建立 .NET 執行階段行為的一致性，但沒有 .NET 程式庫實作之 .NET 基底類別庫 (BCL) 的類似規格。
@@ -33,7 +35,7 @@ ms.lasthandoff: 05/09/2018
 
 1. 在 [加入新的專案] 對話方塊中，選取`.NET Core`類別目錄，然後選取`Class Library(.NET Core)`。
 
-  **注意：**此範本將重新命名為`.NET Standard`的未來版本的 Visual Studio for mac。
+  **注意：** 此範本將重新命名為`.NET Standard`的未來版本的 Visual Studio for mac。
 
   ![建立.NET 核心類別庫](net-standard-images/vsm01.png)
 
@@ -49,7 +51,7 @@ ms.lasthandoff: 05/09/2018
 
 您可以在內部變更您的版本`netstandard`藉由變更`Target Framework`下拉式清單中的值。
 
-**此外：**可以編輯`.csproj`直接來變更此值。
+**此外：** 可以編輯`.csproj`直接來變更此值。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -79,7 +81,7 @@ ms.lasthandoff: 05/09/2018
 
 您可以在內部變更您的版本`netstandard`藉由變更`Target Framework`下拉式清單中的值。
 
-**此外：**可以編輯`.csproj`直接來變更此值。
+**此外：** 可以編輯`.csproj`直接來變更此值。
 
 #### <a name="using-net-standard-library"></a>使用.NET 標準程式庫
 

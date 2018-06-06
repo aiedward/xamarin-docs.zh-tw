@@ -1,19 +1,20 @@
 ---
-title: 部署及測試
-description: 在裝置上測試並上傳至應用程式市集
+title: 部署和測試使用 Xamarin watchOS 應用程式
+description: 本文件說明如何部署和測試 watchOS 使用 Xamarin 建置的應用程式。 它提供部署檢查清單，討論明確和萬用字元應用程式識別碼，並查看應用程式群組。
 ms.prod: xamarin
 ms.assetid: 98257399-E9B3-4BAB-9204-0E89117DEA6D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 47c63a01d435626fd1637b6ed5f5bb1755c717af
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 778583456e74bb7ed3a85dce96bcdbc487aef57a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790938"
 ---
-# <a name="deployment-and-testing"></a>部署及測試
+# <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>部署和測試使用 Xamarin watchOS 應用程式
 
 ## <a name="deployment-checklist"></a>部署檢查清單
 

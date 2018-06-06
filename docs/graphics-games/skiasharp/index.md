@@ -1,18 +1,19 @@
 ---
-title: 2D 繪圖
-description: 跨平台 2D 繪圖 SkiaSharp 與
+title: 與 SkiaSharp 2D 繪圖
+description: 本文件提供跨平台 2D 的概觀與 SkiaSharp 繪製。 它會連結到各種描述 SkiaSharp 的輔助線和其各種應用程式開發介面。
 ms.prod: xamarin
 ms.assetid: A8A61421-4544-422A-A7E0-9355C67DF21E
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: f1a40b48ecfb7244aae77cf1b4110ae53490d98c
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 962fe657f25976f9b5069f2d434e92f816d249ca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783283"
 ---
-# <a name="2d-drawing"></a>2D 繪圖
+# <a name="2d-drawing-with-skiasharp"></a>與 SkiaSharp 2D 繪圖
 
 SkiaSharp 提供功能強大的 C# API 進行 2D 圖形。 它由[Google Skia 程式庫](http://skia.org)，提供 Google Chrome、 Firefox 和 Android 的圖形的堆疊相同文件庫。
 

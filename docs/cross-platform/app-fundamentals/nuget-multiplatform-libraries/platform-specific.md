@@ -1,15 +1,17 @@
 ---
 title: 建立新的平台特定程式庫專案的 NuGet
+description: 本文件說明如何建立單一的 NuGet 封裝包含多個平台的平台專屬程式碼。
 ms.prod: xamarin
 ms.assetid: D8BC4906-805F-4AFB-8D1A-88B7BF87E17F
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 901dbe032d62047668f265e8c7f79593b3fbfcce
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 00a02973d6016ad63e4317279515acc2b4e2e81b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780639"
 ---
 # <a name="creating-new-platform-specific-library-projects-for-nuget"></a>建立新的平台特定程式庫專案的 NuGet
 
@@ -17,7 +19,7 @@ IOS 和 Android 等特定的平台為目標的多平台程式庫專案最適合�
 
 NuGet 可包含特定 iOS 及 Android 程式碼，以及同時.NET 程式碼。
 
-建立多個組件和內建於單一的 NuGet 封裝。 NuGet 標準能夠確保封裝，可以加入所有支援的專案類型，例如 Xamarin iOS 和 Android 專案。
+建立多個組件和內建於單一的 NuGet 封裝。 NuGet 標準能夠確保封裝，可以加入所有支援的專案類型，例如 Xamarin.iOS 和 Android 專案。
 
 ## <a name="steps-to-create-a-cross-platform-library-nuget"></a>若要建立跨平台程式庫 NuGet 的步驟
 

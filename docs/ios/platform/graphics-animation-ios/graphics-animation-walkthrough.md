@@ -1,5 +1,5 @@
 ---
-title: 逐步解說-使用 CoreGraphics 和 CoreAnimation
+title: 使用核心圖形和核心動畫 Xamarin.iOS 中
 description: 本文逐步解說示範如何建立使用核心圖形和核心動畫的應用程式。 它會顯示以回應使用者觸控式螢幕上繪製的方式，以及如何建立動畫沿著路徑移動映像。
 ms.prod: xamarin
 ms.assetid: 4B96D5CD-1BF5-4520-AAA6-2B857C83815C
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f857accfcdec4cb60e781936d1d0836dbf8d6ffb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7a4399a5d62e2000c2a15a65da8e0e427dc039e0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787051"
 ---
-# <a name="drawing-and-animating-along-a-path"></a>繪圖和沿著路徑製作動畫
+# <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>使用核心圖形和核心動畫 Xamarin.iOS 中
 
 此逐步解說中，我們即將繪製觸控輸入回應中使用核心圖形的路徑。 然後，我們會加入`CALayer`包含我們會沿著路徑製作動畫的影像。
 

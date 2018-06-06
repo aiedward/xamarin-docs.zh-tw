@@ -1,23 +1,24 @@
 ---
 title: 統一的 API 來更新現有的應用程式
+description: 描述如何更新統一的 API 的 Xamarin 應用程式的各種指南的這個文件連結。 其中也會討論 Xamarin.iOS 應用程式，Xamarin.Mac 應用程式。 跨平台應用程式和繫結的專案中的原生類型的 Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 588c01ef9f9ee014592c9d8dc72f2b8be20dfee3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 2d09be7b85980e5c5a8eb209dc1b4ff3136c34b3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781627"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>統一的 API 來更新現有的應用程式
 
 > [!IMPORTANT]
-> **傳統的設定檔已被取代：** Xamarin.iOS 中加入新的平台時我們開始逐漸淘汰它們從傳統的設定檔 (monotouch.dll) 的功能。 例如，非 NRC （新 ref-計數） 選項已經移除。 NRC 一律已啟用所有整合的應用程式 （亦即非 NRC 從未選項），並沒有已知的問題。 未來版本將移除使用 Boehm 為記憶體回收行程的選項。 這也是整合的應用程式永遠不會使用的選項。 Xamarin.iOS 10.0 版的下一步 改為排定的傳統支援完整移除。
-
-
-
+> Xamarin 傳統 API，前面有統一的 API，已被取代。 
+> - 支援傳統的 (monotouch.dll) API Xamarin.iOS 的最後一個版本已 Xamarin.iOS 9.10。
+> - Xamarin.Mac 仍支援傳統的 API，但不再更新。 因為它已被取代，開發人員應該一併移動應用程式，以統一的 API。
 
 ## <a name="how-to-update-your-apps"></a>如何更新您的應用程式
 
@@ -31,7 +32,7 @@ Xamarin 大學上具有的免費視訊**升級至 iOS 統一的 API**。 請瀏�
 
 2. 若要更新您的專案檔和命名空間中使用內建於 Visual Studio for Mac 移轉工具。
 
-3. 剩餘的與新的編譯器錯誤修正[64 類型](~/cross-platform/macios/nativetypes.md)和[其他 Api](~/cross-platform/macios/unified/index.md#deprecated-typos)變更過的。 簽出[這些秘訣](~/cross-platform/macios/unified/updating-tips.md)如需有關可能需要手動更新。
+3. 剩餘的與新的編譯器錯誤修正[64 類型](~/cross-platform/macios/nativetypes.md)和[其他 Api](~/cross-platform/macios/unified/overview.md#deprecated-typos)變更過的。 簽出[這些秘訣](~/cross-platform/macios/unified/updating-tips.md)如需有關可能需要手動更新。
 
 有可用來協助您更新您的應用程式的統一的 API 和 64 位元支援的每項產品的特定指南：
 
@@ -55,9 +56,6 @@ Xamarin 大學上具有的免費視訊**升級至 iOS 統一的 API**。 請瀏�
 
 建立繫結至 Objective C 程式庫的客戶必須更新以反映變更基礎的 API （其中有些類型現在會是 64 位元） 的繫結專案。
 請遵循下列指示[更新現有繫結的專案以支援統一的 API](~/cross-platform/macios/unified/update-binding.md)。
-
-
-
 
 ## <a name="related-links"></a>相關連結
 
