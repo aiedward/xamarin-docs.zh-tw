@@ -1,30 +1,31 @@
 ---
-title: PhotoKit
-description: 相片套件可讓應用程式查詢系統映像庫，並建立自訂使用者介面來檢視和修改其內容。
+title: 在 Xamarin.iOS PhotoKit
+description: 本文件說明 PhotoKit，討論其模型物件，如何查詢模型資料，以及將變更儲存到相片程式庫。
 ms.prod: xamarin
 ms.assetid: 7FDEE394-3787-40FA-8372-76A05BF184B3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: c721064f62f8e2255de2b4ea2d0438e3ed630d39
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4aeeec5b96e24c654407ad672930c0cb78592450
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787893"
 ---
-# <a name="photokit"></a>PhotoKit
+# <a name="photokit-in-xamarinios"></a>在 Xamarin.iOS PhotoKit
 
-_相片套件可讓應用程式查詢系統映像庫，並建立自訂使用者介面來檢視和修改其內容。_
-
-相片套件是一個新的架構，可讓應用程式來查詢系統映像庫建立自訂使用者介面來檢視和修改其內容。 它包含的數字，表示影像和視訊資產，以及資產，例如專輯和資料夾的集合類別。
+PhotoKit 是新的架構，可讓應用程式查詢系統映像庫，並建立自訂使用者介面來檢視和修改其內容。 它包含的數字，表示影像和視訊資產，以及資產，例如專輯和資料夾的集合類別。
 
 ## <a name="model-objects"></a>模型物件
-相片套件表示在它呼叫模型物件的這些資產。 表示相片和視訊本身的模型物件屬於類型`PHAsset`。 A`PHAsset`包含中繼資料，例如資產的媒體類型和其建立日期。
+
+PhotoKit 代表在它呼叫模型物件的這些資產。 表示相片和視訊本身的模型物件屬於類型`PHAsset`。 A`PHAsset`包含中繼資料，例如資產的媒體類型和其建立日期。
 同樣地，`PHAssetCollection`和`PHCollectionList`類別分別包含關於資產集合與集合清單的中繼資料。 資產集合是群組的資產，例如相片和視訊，針對特定的年份。 同樣地，集合清單是資產的集合，例如相片和視訊分組依年度的群組。
 
 ## <a name="querying-model-data"></a>查詢模型資料
-相片套件可輕鬆查詢模型資料透過不同的提取方法。 例如，若要擷取的所有映像，您可以呼叫`PFAsset.Fetch`，並傳遞`PHAssetMediaType.Image`媒體類型。
+
+PhotoKit 可輕鬆查詢模型資料透過不同的提取方法。 例如，若要擷取的所有映像，您可以呼叫`PFAsset.Fetch`，並傳遞`PHAssetMediaType.Image`媒體類型。
 
     PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
 

@@ -1,18 +1,20 @@
 ---
-title: 建立使用者介面物件
+title: Xamarin.iOS 中建立使用者介面物件
+description: 本文件提供如何在 Xamarin.iOS 中建立使用者介面的概觀。 它討論 iOS 設計工具、 Xcode 介面產生器、 C# 中，以及分鏡腳本。
 ms.prod: xamarin
 ms.assetid: 4D6B136C-744A-4936-8655-A77E62BA7A60
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 5229beb7a882049daf58d3a3e62da6fed25a1f48
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c688dcdf7498b0a2860d1878d893beae4f5cf8fc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790148"
 ---
-# <a name="creating-user-interface-objects"></a>建立使用者介面物件
+# <a name="creating-user-interface-objects-in-xamarinios"></a>Xamarin.iOS 中建立使用者介面物件
 
 Apple 群組關聯的部分功能"架構"，這等同於 Xamarin.iOS 命名空間。 `UIKit` 是包含適用於 iOS 的所有使用者介面控制項的命名空間。
 
@@ -21,7 +23,6 @@ Apple 群組關聯的部分功能"架構"，這等同於 Xamarin.iOS 命名空�
 ```csharp
 using UIKit;
 ```
-
 
 本章所討論的所有控制項都都在 UIKit 的命名空間，而且每個使用者控制項類別名稱`UI`前置詞。
 

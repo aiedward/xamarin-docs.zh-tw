@@ -1,19 +1,20 @@
 ---
-title: 常見的模式和慣用語
-description: 本文件描述模型-檢視-控制器模式、 資料來源和委派模式及通訊協定。
+title: 常見的模式和慣用語 Xamarin.Mac 中
+description: 本文件說明建置 Xamarin.Mac 應用程式時使用的常見設計模式。 它討論的模型-檢視-控制器模式、 資料來源和委派模式及通訊協定。
 ms.prod: xamarin
 ms.assetid: BF0A3517-17D8-453D-87F7-C8A34BEA8FF5
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/17/2016
-ms.openlocfilehash: cf499c555ddbefbdb5a7fae3ae8929a17e0d0cd7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f6bba5575edf2dcbddbd354b590e03f9fed06291
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791533"
 ---
-# <a name="common-patterns-and-idioms"></a>常見的模式和慣用語
+# <a name="common-patterns-and-idioms-in-xamarinmac"></a>常見的模式和慣用語 Xamarin.Mac 中
 
 Apple 公開的 Api 透過 C#，整個特定語言和模式會一再重複。 如果您有使用 Xamarin.iOS 程式設計經驗，這些可能看起來很熟悉。 文件將通常參考這些模式和慣用語重複，因此需要充分了解它們可協助您充分您找到的文件的意義。
 

@@ -1,18 +1,20 @@
 ---
-title: 搜尋列
+title: Xamarin.iOS 中搜尋列
+description: 本文件說明如何使用搜尋列中 Xamarin.iOS。 它討論如何以程式設計方式和分鏡腳本建立搜尋列。
 ms.prod: xamarin
 ms.assetid: 22A8249A-19C6-4734-8331-E49FE3170771
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 4ea39f6f935adba2c035884c625c57c0039b1165
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cd78c58ecb119c437296a0befe1d319d8837edae
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789921"
 ---
-# <a name="search-bar"></a>搜尋列
+# <a name="search-bars-in-xamarinios"></a>Xamarin.iOS 中搜尋列
 
 UISearchBar 用來搜尋值的清單。 
 

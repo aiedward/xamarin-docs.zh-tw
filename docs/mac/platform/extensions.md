@@ -1,17 +1,18 @@
 ---
 title: Xamarin.Mac 延伸模組支援
-description: 本文涵蓋 Xamarin.Mac 2.10 （和更高） 的版本中的延伸模組支援。
+description: 本文件說明 Xamarin.Mac 的支援搜尋、 共用和今天的延伸模組。 它會檢查限制與已知的問題，連結的逐步解說和範例應用程式，並提供使用延伸模組的秘訣。
 ms.prod: xamarin
 ms.assetid: 4148F1BE-DFA0-46B6-9FCD-425A6541F510
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 03936c75d31bfd01e741ad2c09096c925dc9dbfc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4cef6e89b89ef41a0c93b687c9df11a8aa971ed5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792373"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 延伸模組支援
 

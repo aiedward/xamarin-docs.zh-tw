@@ -1,15 +1,17 @@
 ---
 title: TinyRenderer 活頁簿
+description: 本文件說明 TinyRenderer 活頁簿與 opengl 一起運作。 在 Windows 和 mac 上執行這些活頁簿
 ms.prod: xamarin
 ms.assetid: E4E17836-94C2-436F-ADD8-104AC574D22B
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: fc0716fc3babd0b2ee835b839ae816f2cb815b0f
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 10704044042ea38dd3a5297c46371f9f9c27936c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794133"
 ---
 # <a name="tinyrenderer-workbooks"></a>TinyRenderer 活頁簿
 
@@ -31,7 +33,6 @@ ms.lasthandoff: 05/09/2018
 [![](tinyrenderer-images/tinyrenderer-sml.png "框線轉譯範例")](tinyrenderer-images/tinyrenderer.png#lightbox)
 
 這些活頁簿中的 C# 程式碼根據此開放原始碼[c + + 程式碼](https://github.com/ssloy/tinyrenderer)而且文字是從這個[wiki](https://github.com/ssloy/tinyrenderer/wiki/)。 我們非常感謝原始工作可允許我們變成活頁簿的一組授權。
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -1,22 +1,22 @@
 ---
-title: 平台功能
-description: 索引鍵的 macOS 平台的元件
+title: macOS 平台功能
+description: 這份文件連結至說明重要 macOS 和 Xamarin.Mac 平台功能的指南： OpenTK，分鏡腳本、 擴充功能，以及更多。
 ms.prod: xamarin
 ms.assetid: 37451F65-672A-4512-8DDD-06CCDE9E5A12
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 2bebc42cd3b5db7dba20066e90f294e621b1e4ac
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e82db1c0f38d35c23a6cd0667bef49315ff86be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792213"
 ---
-# <a name="platform-features"></a>平台功能
+# <a name="macos-platform-features"></a>macOS 平台功能
 
 本節中的文件涵蓋使用 macOS Xamarin.Mac 應用程式中的金鑰、 平台專屬的功能。
-
 
 ## <a name="introduction-to-macos-sierramacplatformintroduction-to-macos-sierraindexmd"></a>[macOS Sierra 的簡介](~/mac/platform/introduction-to-macos-sierra/index.md)
 

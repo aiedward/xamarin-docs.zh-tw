@@ -1,21 +1,20 @@
 ---
 title: 其他 macOS 利也架構變更
-description: 本文涵蓋其他次要變更或增強現有 macOS 利也適用架構。
+description: 本文件說明次要變更和增強功能中 macOS 利也導入的現有架構。 它會檢查變更加速架構、 AppKit、 AVFoundation、 核心資料、 Core 映像、 Foundation，以及更多。
 ms.prod: xamarin
 ms.assetid: CA701269-D11E-4DE3-89C1-58EF8993A482
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a1bc12629a84e9a06cc80882d141bf6a0c2f0c52
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3cfa2e9bcb0be4d65462914215045c9c7f01da5b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792589"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>其他 macOS 利也架構變更
-
-_本文涵蓋其他次要變更或增強現有 macOS 利也適用架構。_
 
 <a name="Accelerate-Framework-Enhancements" />
 
@@ -29,7 +28,7 @@ _本文涵蓋其他次要變更或增強現有 macOS 利也適用架構。_
 
 <a name="AppKit-Framework-Enhancements" />
 
-## <a name="appkit-framework-enhancements"></a>Appkit 架構增強功能
+## <a name="appkit-framework-enhancements"></a>AppKit 架構增強功能
 
 AppKit 架構 macOS 利也已做了下列增強功能：
 

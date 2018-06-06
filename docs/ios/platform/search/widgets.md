@@ -1,22 +1,22 @@
 ---
-title: 搜尋和主畫面 Widget 增強功能
-description: 本文說明 Apple iOS 10 的 Widget 系統所做的增強功能。
+title: 搜尋和首頁畫面 Widget 中的增強功能 iOS 10
+description: 本文說明 Apple iOS 10，包括搜尋及主畫面 widget 的更新中的 Widget 對所做的增強功能。
 ms.prod: xamarin
 ms.assetid: D66FD9E1-9E23-4BB6-825C-ED19B8F72A81
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: e7a64738f29ab2b5c62659d721beb50db7c9adb5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8383f167f8c85459e996b83368281fa243317948
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788107"
 ---
-# <a name="search-and-home-screen-widget-enhancements"></a>搜尋和主畫面 Widget 增強功能
+# <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>搜尋和首頁畫面 Widget 中的增強功能 iOS 10
 
 _本文說明 Apple iOS 10 的 Widget 系統所做的增強功能。_
-
 
 Apple 已引進了數個增強功能 Widget 系統，以確保 widget 看起來很棒，於任何存在於新的 iOS 10 鎖定畫面的背景。 此外，widget 現在包含[NCWidgetDisplayMode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode)屬性，可讓開發人員描述多少內容可供使用，並可讓使用者展開和摺疊的內容。
 

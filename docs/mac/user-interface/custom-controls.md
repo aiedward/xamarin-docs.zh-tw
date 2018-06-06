@@ -1,21 +1,20 @@
 ---
-title: 建立自訂控制項
-description: 本文說明如何建立自訂控制項，並在介面產生器中使用它們。
+title: Xamarin.Mac 中建立自訂控制項
+description: 本文件說明如何建置 Xamarin.Mac 中的自訂控制項。 它示範如何建置自訂控制項，來追蹤其狀態、 繪製其介面、 回應使用者輸入，並使用應用程式中的控制項。
 ms.prod: xamarin
 ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e1ab3977df96e241fa2a5a80f6cabd74d7d775f8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e4c2b2c9ee7bae3d6489fec6b22881653ec53043
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792674"
 ---
-# <a name="creating-custom-controls"></a>建立自訂控制項
-
-_本文說明如何建立自訂控制項，並在介面產生器中使用它們。_
+# <a name="creating-custom-controls-in-xamarinmac"></a>Xamarin.Mac 中建立自訂控制項
 
 當 Xamarin.Mac 應用程式中使用 C# 和.NET，您可以存取相同使用者控制項，工作的開發人員*OBJECTIVE-C*， *Swift*和*Xcode*沒有. 由於直接與 Xcode 整合 Xamarin.Mac，您可以使用 Xcode 的_介面產生器_建立，並維護您的使用者控制項 （或您可以選擇直接在 C# 程式碼中建立它們）。
 

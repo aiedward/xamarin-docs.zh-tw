@@ -1,15 +1,16 @@
 ---
 title: 活頁簿安裝與需求
-description: 如何下載、 安裝及使用 Xamarin 的活頁簿。
+description: 本文件說明如何下載並安裝 Xamarin 活頁簿，討論支援的平台和系統需求。
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 4d3217140605be8567d70e6dcf63d60a02e6b2fb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b5e94a9b0bc3b9e9f141ad9fd262d29e01eb8a10
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793817"
 ---
 # <a name="workbooks-installation-and-requirements"></a>活頁簿安裝與需求
 

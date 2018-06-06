@@ -1,19 +1,20 @@
 ---
-title: 疑難排解
-description: 本文章會提供數個疑難排解提示 iOS 9 Xamarin.iOS 應用程式中使用。
+title: Xamarin.iOS 9 – 疑難排解
+description: 這篇文章提供各種疑難排解提示 iOS 9 的 Xamarin.iOS 使用。 提示涵蓋 XML 剖析、 模擬器、 配置條件約束、 網路問題，以及許多其他的主題。
 ms.prod: xamarin
 ms.assetid: DCE83E36-CBD9-4D96-8E7F-384CB8A54563
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 1b335fc6b19d87a46059511baf866433691b1b4d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c44d737efcf5092eb4b27d5311271005de65318b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787659"
 ---
-# <a name="troubleshooting"></a>疑難排解
+# <a name="xamarinios-9--troubleshooting"></a>Xamarin.iOS 9 – 疑難排解
 
 _本文章會提供數個疑難排解提示 iOS 9 Xamarin.iOS 應用程式中使用。_
 
@@ -190,8 +191,6 @@ iOS 9 現在會強制啟動螢幕需求，如此可以不再支援不同的介�
 Xamarin.iOS 很可能要檢視或檢視控制器內的項目公開至 managed 程式碼，不過它會破壞 iOS 設計時所呼叫之建構函式的初始化。
 
 一般情況下您應該初始化可以回 Objective C 程式碼從呼叫建構函式不能確定的任何項目時呼叫。 這也表示有更佳的位置 (其他.ctor) 或覆寫 （如 Objective C 沒有任何事件） 的呼叫應該在其中完成這類初始化。
-
-
 
 ## <a name="related-links"></a>相關連結
 

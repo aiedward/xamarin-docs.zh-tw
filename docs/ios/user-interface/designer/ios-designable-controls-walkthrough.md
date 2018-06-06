@@ -1,21 +1,20 @@
 ---
-title: 逐步解說-使用 Xamarin 設計工具中的自訂控制項，適用於 iOS
-description: 本文章提供逐步解說顯示如何建立自訂控制項，以及適用於 iOS Xamarin 設計工具中使用它。 它會顯示如何讓控制項使用設計工具的工具箱中，因此它可以拖/放至檢視。 此外，它會顯示如何實作控制項，讓它正確呈現在設計階段與執行階段，以及如何建立可以在設計階段設定的屬性。
+title: IOS 設計工具搭配使用的自訂控制項
+description: 本文件說明如何建立自訂控制項，並使用它搭配 Xamarin 的設計工具，適用於 iOS。 它會顯示如何將控制項設為 iOS 設計工具的工具箱中可用、 實作控制項，讓它正確轉譯和設計階段，等等。
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 4a7fb6cba82b52f2a3506df7a36b4813a88ff583
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dae675d65cb2be93ac828a1aebe560354630ab54
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790161"
 ---
-# <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>逐步解說-使用 Xamarin 設計工具中的自訂控制項，適用於 iOS
-
-_本文章提供逐步解說顯示如何建立自訂控制項，以及適用於 iOS Xamarin 設計工具中使用它。它會顯示如何讓控制項使用設計工具的工具箱中，因此它可以拖/放至檢視。此外，它會顯示如何實作控制項，讓它正確呈現在設計階段與執行階段，以及如何建立可以在設計階段設定的屬性。_
+# <a name="using-custom-controls-with-the-ios-designer"></a>IOS 設計工具搭配使用的自訂控制項
 
 ## <a name="requirements"></a>需求
 
@@ -29,7 +28,7 @@ _本文章提供逐步解說顯示如何建立自訂控制項，以及適用於 
 > 從開始 Xamarin.Studio 5.5，在其中建立自訂控制項的方式會稍有不同於舊版。 若要建立自訂控制項，或是`IComponent`介面 （具有相關聯的實作的方法） 或需要的類別可以是以註解`[DesignTimeVisible(true)]`。 第二個方法用於下列逐步解說範例。
 
 
-1. 建立新的方案從**iOS > 應用程式 > 單一檢視應用程式 > C#**範本，其命名`ScratchTicket`，然後繼續進行 [新增專案] 精靈：
+1. 建立新的方案從**iOS > 應用程式 > 單一檢視應用程式 > C#** 範本，其命名`ScratchTicket`，然後繼續進行 [新增專案] 精靈：
 
     [![](ios-designable-controls-walkthrough-images/01new.png "建立新的方案")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
 
@@ -190,7 +189,7 @@ _本文章提供逐步解說顯示如何建立自訂控制項，以及適用於 
     [![](ios-designable-controls-walkthrough-images/08new.png "條件約束工具列")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
 
-1. 接下來，建置專案，讓**Scratch 票證檢視**會出現在**「 自訂 」 元件**工具箱中：
+1. 接下來，建置專案，讓**Scratch 票證檢視**會出現在 **「 自訂 」 元件**工具箱中：
 
     [![](ios-designable-controls-walkthrough-images/09new.png "「 自訂 」 元件工具箱")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
 

@@ -1,17 +1,19 @@
 ---
-title: 新的參考計數系統
+title: 新的參考計數在 Xamarin.iOS 系統
+description: 本文件說明 Xamarin 的增強的參考計數系統中，依預設，所有的 Xamarin.iOS 應用程式中啟用。
 ms.prod: xamarin
 ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 00a792fb6ee55d5937046ebb321ffcb3aa8bdbd5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f2e40ca1fdd4a02d62e45004b75f3abefda781a5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786248"
 ---
-# <a name="new-reference-counting-system"></a>新的參考計數系統
+# <a name="new-reference-counting-system-in-xamarinios"></a>新的參考計數在 Xamarin.iOS 系統
 
 Xamarin.iOS 9.2.1 導入了增強的參考計數的所有應用程式的系統預設。 它可用來消除許多難以追蹤並修正 Xamarin.iOS 較舊版本中的記憶體問題。
 

@@ -1,21 +1,20 @@
 ---
-title: 架構變更
-description: 瀏覽 iOS 11 的新功能
+title: 在 iOS 11 中的架構變更
+description: 本文件說明 32 位元應用程式在 iOS 11 中已被的取代。 它討論如何更新目標的 64 位元架構的應用程式。
 ms.prod: xamarin
 ms.assetid: 55F62F3F-8570-402B-B7D9-2875F76CB946
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 6dd874fd803d2b3de21b0b604cbc2bafa5bf1aec
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 09d528ceb0654debd7c0ac8818f19c622775eac2
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787431"
 ---
-# <a name="architecture-changes"></a>架構變更
-
-_瀏覽 iOS 11 的新功能_
+# <a name="architecture-changes-in-ios-11"></a>在 iOS 11 中的架構變更
 
 其中一個最大的變更，您應該留意 iOS 11 是已被取代的應用程式中所述的 32 位元支援[Apple](https://developer.apple.com/news/?id=06282017b)按 釋出。 所有新的應用程式與現有的應用程式的更新必須支援 64 位元。 32 位元應用程式**將不會啟動**iOS 11 中。
 

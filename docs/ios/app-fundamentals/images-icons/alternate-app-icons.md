@@ -1,19 +1,20 @@
 ---
-title: 替代的應用程式圖示
-description: 本文涵蓋 Xamarin.iOS 中使用替代的應用程式圖示。
+title: Xamarin.iOS 中的其他應用程式圖示
+description: 本文件說明如何在 Xamarin.iOS 中使用替代的應用程式圖示。 它討論如何將這些圖示新增至 Xamarin.iOS 專案、 如何修改 Info.plist 檔案，以及如何以程式設計方式管理應用程式的圖示。
 ms.prod: xamarin
 ms.assetid: 302fa818-33b9-4ea1-ab63-0b2cb312299a
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: 8d9f27d58a881878aabeda4326805eec726c247c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1d37a29982454367c35bfdfad205abce0eb025af
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784106"
 ---
-# <a name="alternate-app-icons"></a>替代的應用程式圖示
+# <a name="alternate-app-icons-in-xamarinios"></a>Xamarin.iOS 中的其他應用程式圖示
 
 _本文涵蓋 Xamarin.iOS 中使用替代的應用程式圖示。_
 

@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2018
-ms.openlocfilehash: d5a267bfa8655a9b9c6d4dba9d8cf9d16624ba9b
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 0fbd38b643e7806932ba262becc72be2bae6ba4b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784610"
 ---
-# <a name="launch-screens"></a>啟動畫面
+# <a name="launch-screens-for-xamarinios-apps"></a>Xamarin.iOS 應用程式啟動畫面
 
 _本文說明如何在任何解析度和方向，使用單一的統一分鏡腳本建立所有的 iOS 裝置的應用程式啟動螢幕。_
 

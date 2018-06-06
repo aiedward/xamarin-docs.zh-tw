@@ -1,21 +1,20 @@
 ---
 title: 在 iOS 中的推播通知
-description: 本節將討論在 iOS 中的推播通知。 它引進 Apple 推播通知閘道服務及它在加入 iOS 應用程式的發行通知中扮演的角色。 它會說明如何建立必要啟用推播通知，並討論安全性憑證。 最後本章節將討論一些應用程式伺服器必須執行來追蹤用戶端行動裝置的環境維護工作。
+description: 本文件說明如何使用 iOS 9 及更早版本中的推播通知。 它會討論向 Apple 推播通知閘道 Service (APNS)，以及其他更多的憑證。
 ms.prod: xamarin
 ms.assetid: 64B3BE6A-A3E2-4B1B-95ED-02D27A8FDAAC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 3a86ce5e61576faec41b5fcddf899d731d2cc57a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7bb2a250b9d3cc0c8df02f432330f9fe1dc58f94
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788663"
 ---
 # <a name="push-notifications-in-ios"></a>在 iOS 中的推播通知
-
-_本節將討論在 iOS 中的推播通知。它引進 Apple 推播通知閘道服務及它在加入 iOS 應用程式的發行通知中扮演的角色。它會說明如何建立必要啟用推播通知，並討論安全性憑證。最後本章節將討論一些應用程式伺服器必須執行來追蹤用戶端行動裝置的環境維護工作。_
 
 > [!IMPORTANT]
 > 本節中的資訊屬於 iOS 9 及之前，它已保留這裡以支援較舊 iOS 版本。 適用於 iOS 10 和更新版本，請參閱[使用者通知架構指南](~/ios/platform/user-notifications/index.md)支援 iOS 裝置上的本機和遠端的通知。
@@ -185,5 +184,5 @@ public override void FailedToRegisterForRemoteNotifications (UIApplication appli
 
 - [通知-示範本機和遠端通知 （範例）](https://developer.xamarin.com/samples/monotouch/Notifications/)
 - [本機和開發人員的推播通知](https://developer.apple.com/notifications/)
-- [UIApplication](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIApplication)
+- [Uiapplication #](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIApplication)
 - [UIRemoteNotificationType](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIRemoteNotificationType)

@@ -1,18 +1,20 @@
 ---
-title: 自動調整大小的資料列高度
+title: 自動調整大小的資料列高度，單位為 Xamarin.iOS
+description: 本文件說明如何將資料表的檢視資料列的高度改變依據的內容新增至 Xamarin.iOS 應用程式。 它討論 iOS 設計工具中的資料格版面配置] 和 [啟用自動調整大小的高度。
 ms.prod: xamarin
 ms.assetid: CE45A385-D40A-482A-90A0-E8382C2BFFB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 73e16c3381b639645463e3e8aaeed35224b67861
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3c6beb112947f5423de200fd5c8957ef28dd48f9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789963"
 ---
-# <a name="auto-sizing-row-height"></a>自動調整大小的資料列高度
+# <a name="auto-sizing-row-height-in-xamarinios"></a>自動調整大小的資料列高度，單位為 Xamarin.iOS
 
 從 iOS 8 開始，Apple 加入建立資料表的檢視表的能力 (`UITableView`)，可以自動擴增和縮減使用自動配置大小類別，限制其內容的大小為基礎的指定資料列的高度。
 

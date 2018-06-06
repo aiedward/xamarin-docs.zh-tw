@@ -1,18 +1,20 @@
 ---
-title: 進度和活動的指標
+title: 進度和 Xamarin.iOS 中的活動指標
+description: 本文將討論如何使用編輯器中 Xamarin.iOS 進度和活動的指標。 說明如何使用它們，以程式設計方式及使用分鏡腳本。
 ms.prod: xamarin
 ms.assetid: 7AA887E4-51F7-4867-82C5-A8D2EA48AE07
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 58a492bed81a1d96a482c1396718da1c5e4af589
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 27ee788ec40bfd158dbc0d9926245b166e2954a9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790051"
 ---
-# <a name="progress-and-activity-indicators"></a>進度和活動的指標
+# <a name="progress-and-activity-indicators-in-xamarinios"></a>進度和 Xamarin.iOS 中的活動指標
 
 很可能您的應用程式必須執行長時間執行工作，例如載入或處理資料，以及這項延遲可能會造成延遲，更新您的 UI。 在這段期間您應該一律使用進度列指示器 reassure 使用者系統正在忙著處理工作。 這可讓使用者控制的應用程式正在處理其要求，它不是正在等候其輸入，而且可以提供一種詳述完全多久必須等候。
 

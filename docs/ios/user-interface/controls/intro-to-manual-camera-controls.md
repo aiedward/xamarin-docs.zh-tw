@@ -1,21 +1,20 @@
 ---
-title: 手動攝影機控制項
-description: AVFoundation 架構可讓使用者更容易比以往藉由使用手動攝影機控制項很棒的相片。 使用此架構，應用程式可以採取直接控制相機焦點、 白平衡和風險設定。 應用程式也可以使用以方括弧括住的曝光擷取自動擷取映像使用不同的風險的設定。 這篇文章會快速查看簡單 iOS 8 行動裝置應用程式在使用手動攝影機控制項。
+title: Xamarin.iOS 手動攝影機控制項
+description: 本文件說明如何 iOS AVFoundation framework 可以配合 Xamarin.iOS 若要啟用手動攝影機控制項。 手動攝影機控制項可讓使用者控制焦點、 白平衡，並公開設定。
 ms.prod: xamarin
 ms.assetid: 56340225-5F3C-4BFC-9A79-61496D7FE5B5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 8545dce1b9232e396c4c9e71ad5f20649eef2417
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a0f605a38117df87a03801c3b9d86b0b7361c232
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790821"
 ---
-# <a name="manual-camera-controls"></a>手動攝影機控制項
-
-_AVFoundation 架構可讓使用者更容易比以往藉由使用手動攝影機控制項很棒的相片。使用此架構，應用程式可以採取直接控制相機焦點、 白平衡和風險設定。應用程式也可以使用以方括弧括住的曝光擷取自動擷取映像使用不同的風險的設定。這篇文章會快速查看簡單 iOS 8 行動裝置應用程式在使用手動攝影機控制項。_
+# <a name="manual-camera-controls-in-xamarinios"></a>Xamarin.iOS 手動攝影機控制項
 
 提供的手冊攝影機控制項`AVFoundation Framework`中 iOS 8，允許行動裝置的應用程式，以便對於 iOS 裝置的相機的完整控制權。 這個更細緻的控制層級可以用於建立專業的層級相機應用程式，並提供演出者組合所佔用的靜態影像或視訊調整相機的參數。
 

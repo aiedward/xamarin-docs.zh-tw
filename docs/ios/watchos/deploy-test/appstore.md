@@ -1,19 +1,20 @@
 ---
-title: 部署的應用程式市集
-description: 監看式應用程式部署的應用程式市集
+title: WatchOS 應用程式部署的應用程式市集
+description: 本文件說明如何部署 watchOS 建置 xamarin 應用程式市集的應用程式。 花在看發佈佈建設定檔和 iTunes Connect，並且提供疑難排解秘訣。
 ms.prod: xamarin
 ms.assetid: DBE16040-70D2-4F61-B5F3-C8D213DBC754
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: a3c68a0720fbe18f35731cf1a19248c00f748877
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 70613c79c2ec0c81f1dbdc218b747f809f859767
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790980"
 ---
-# <a name="deploying-to-the-app-store"></a>部署的應用程式市集
+# <a name="deploying-watchos-apps-to-the-app-store"></a>WatchOS 應用程式部署的應用程式市集
 
 > [!IMPORTANT]
 > 請務必檢閱[Apple Watch 套件提交指南](https://developer.apple.com/app-store/watch/)，並查看[疑難排解](#Troubleshooting)> 一節，您可能會有任何問題。
@@ -37,8 +38,8 @@ ms.lasthandoff: 04/04/2018
 
   - 移至**視窗 > 組合管理**選擇**封存**。
   - 從清單中選取的應用程式和封存。
-  - （選擇性）**驗證...**封存。
-  - **提交...**封存和後續的步驟，將上傳至 iTunes 連接供審查與核准。
+  - （選擇性）**驗證...** 封存。
+  - **提交...** 封存和後續的步驟，將上傳至 iTunes 連接供審查與核准。
 
 讀取特定以下這些項目與相關的提示。 請參閱[疑難排解](#Troubleshooting)區段中如果有問題。
 
@@ -98,7 +99,7 @@ ms.lasthandoff: 04/04/2018
 
   ![](appstore-images/xs-archive.png "[建置] 功能表")
 
-您也可以選擇**檢視 > 封存...**功能表項目，請參閱先前建立的封存。
+您也可以選擇**檢視 > 封存...** 功能表項目，請參閱先前建立的封存。
 
   ![](appstore-images/xs-archives-sml.png "封存檢視")
 
@@ -116,7 +117,7 @@ Xcode 會自動顯示封存建立在 Visual Studio for mac。
 
   ![](appstore-images/xc-archives.png "[封存] 索引標籤")
 
-3. 選擇性地**驗證...**封存，然後選擇 **送出...** iTunes Connect 來上傳應用程式。
+3. 選擇性地**驗證...** 封存，然後選擇 **送出...** iTunes Connect 來上傳應用程式。
 
 4. 選擇開發團隊] （如果您隸屬於多個），然後確認 [送出：
 

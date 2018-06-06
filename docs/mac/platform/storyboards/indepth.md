@@ -1,19 +1,20 @@
 ---
-title: 使用分鏡腳本
-description: 使用分鏡腳本使用 Xcode 建置 macOS 使用者介面。
+title: 使用分鏡腳本中 Xamarin.Mac
+description: 本文件描述如何使用 Xamarin.Mac，檢查如何將它們載入從程式碼、 檢視控制器生命週期、 回應鏈結中的分鏡腳本，segues 視窗的控制站、 筆勢辨識器，以及更多。
 ms.prod: xamarin
 ms.assetid: DF4DF7C2-DDD7-4A32-B375-5C5446301EC5
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3b72affd9b101b0a139301fec9f2bed343310507
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 72986ed4247c3b6f66f6f1813d74bf0a95d0de53
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792836"
 ---
-# <a name="storyboards"></a>分鏡腳本
+# <a name="working-with-storyboards-in-xamarinmac"></a>使用分鏡腳本中 Xamarin.Mac
 
 分鏡腳本定義所有已細分成其檢視控制站的功能概觀給定應用程式的使用者介面。 在 Xcode 的介面產生器中，每一個這些控制器存在於它自己的場景。
 

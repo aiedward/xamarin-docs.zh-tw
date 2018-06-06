@@ -1,19 +1,20 @@
 ---
-title: iOS 架構
-description: 瀏覽 Xamarin.iOS 在較低層級
+title: iOS 應用程式架構
+description: 本文件說明 Xamarin.iOS 在低層級，討論如何在原生和 managed 程式碼互動，AOT 編譯、 選取器、 註冊機構、 應用程式啟動和產生器。
 ms.prod: xamarin
 ms.assetid: F40F2275-17DA-4B4D-9678-618FF25C6803
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 85dc675a9b18b974f21532298e4d3028bdecd0b7
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 89b4e8bde43b34c50c1cba54a4c7d8d4ff183c66
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786118"
 ---
-# <a name="ios-architecture"></a>iOS 架構
+# <a name="ios-app-architecture"></a>iOS 應用程式架構
 
 Xamarin.iOS 應用程式內單聲道執行環境、 執行，並使用完整的前的時間 (AOT) 編譯來編譯 C# 程式碼以 ARM 組件語言。 這會執行的並行與[Objective C 執行階段](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)。 這兩個執行階段環境上執行 unix 核心特別[XNU](https://en.wikipedia.org/wiki/XNU)，並公開各種 Api，可讓開發人員能夠存取基礎原生或 managed 系統的使用者程式碼。
 
@@ -26,7 +27,6 @@ Xamarin.iOS 應用程式內單聲道執行環境、 執行，並使用完整的�
 Xamarin 開發時條款*原生和 managed*通常會使用程式碼。 [Managed 程式碼](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)是由管理其執行的程式碼[.NET Framework Common Language Runtime](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)，或在 Xamarin 的情況下： Mono 執行階段。 這是我們呼叫的中繼語言。
 
 原生程式碼是將特定的平台 （例如，OBJECTIVE-C 或甚至 AOT 編譯程式碼，在 ARM 晶片上的） 的原生方式執行的程式碼。 本指南會探討如何 AOT 編譯原生程式碼，managed 程式碼，並說明如何 Xamarin.iOS 應用程式的運作方式，充分使用 Apple iOS 應用程式開發介面使用的繫結，同時也擁有存取權。網路的 BCL 和複雜的語言，例如 C#。
-
 
 ## <a name="aot"></a>AOT
 
@@ -62,10 +62,10 @@ Xamarin 開發時條款*原生和 managed*通常會使用程式碼。 [Managed �
 
 ```csharp
  class MyViewController : UIViewController{
-    [Export ("myFunc")]
-    public void MyFunc ()
-    {
-    }
+     [Export ("myFunc")]
+     public void MyFunc ()
+     {
+     }
  }
 ```
 

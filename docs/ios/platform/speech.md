@@ -1,5 +1,5 @@
 ---
-title: 語音辨識
+title: Xamarin.iOS 語音辨識
 description: 本文章提供新的語音應用程式開發介面，並示範如何實作在 Xamarin.iOS 應用程式中支援連續的語音辨識和語音 （從即時或錄製音訊資料流） 同時成文字。
 ms.prod: xamarin
 ms.assetid: 64FED50A-6A28-4833-BEAE-63CEC9A09010
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: fa010f57d163cabe544176608cff2eb6efe872ad
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 00841a73f9da3c4c434419cdb37726b17c08cf31
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788357"
 ---
-# <a name="speech-recognition"></a>語音辨識
+# <a name="speech-recognition-in-xamarinios"></a>Xamarin.iOS 語音辨識
 
 _本文章提供新的語音應用程式開發介面，並示範如何實作在 Xamarin.iOS 應用程式中支援連續的語音辨識和語音 （從即時或錄製音訊資料流） 同時成文字。_
 

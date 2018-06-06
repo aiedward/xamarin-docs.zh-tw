@@ -1,18 +1,19 @@
 ---
-title: CocosSharp
-description: 提供使用 CocosSharp 遊戲開發各種文章此文件連結。
+title: CocosSharp 2D 遊戲引擎
+description: 提供使用 CocosSharp 遊戲開發各種文章此文件連結。 連結的內容描述範例應用程式、 繪圖、 動畫和更多。
 ms.prod: xamarin
 ms.assetid: 5E72869D-3541-408B-AB64-D34C777AFB79
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2018
-ms.openlocfilehash: a188863cf57706e3f9dd6c8f4d2d3e60b2591e0b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 34d22b6e9d8c671e38fbadab0edafa2f57c566e7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783242"
 ---
-# <a name="cocossharp"></a>CocosSharp
+# <a name="cocossharp-2d-game-engine"></a>CocosSharp 2D 遊戲引擎
 
 _CocosSharp 是用於建置 2D 遊戲使用 C# 和 F # 程式庫。它是.NET 連接埠的熱門 Cocos2D 引擎。_
 

@@ -1,17 +1,19 @@
 ---
-title: 國際化編碼
+title: Xamarin.iOS 中的國際化編碼
+description: 本文件說明 Xamarin.iOS，討論可用的編碼，以及如何將它們加入至應用程式中的國際化編碼。
 ms.prod: xamarin
 ms.assetid: F5117294-28BB-4583-B6A0-A339B050FDE1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 60cfc5ac8238c853cc066afe2978f91ab9c0755e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4963b0f95ae48ee56462a82d2f82a8dcaa231a23
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784122"
 ---
-# <a name="internationalization-encodings"></a>國際化編碼
+# <a name="internationalization-encodings-in-xamarinios"></a>Xamarin.iOS 中的國際化編碼
 
 並非所有的編碼預設會包含 Xamarin.iOS 類別庫中。
 

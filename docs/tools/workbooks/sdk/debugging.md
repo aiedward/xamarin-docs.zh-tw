@@ -1,15 +1,17 @@
 ---
 title: 偵錯的整合
+description: 本文件說明如何偵錯 Xamarin 活頁簿整合，代理程式端和用戶端上 Windows 和 mac。
 ms.prod: xamarin
 ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: f36ce595a739667a91d557c4cd896146c5614f51
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: fa8806345a364a70535a91b2ba99e3bfee8d47bc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794016"
 ---
 # <a name="debugging-integrations"></a>偵錯的整合
 

@@ -1,23 +1,22 @@
 ---
-title: 控制項
-description: Xamarin.iOS 公開 Apple 提供的所有原生使用者介面物件。 輕鬆地加入 Xamarin.iOS 應用程式使用 iOS 設計工具中，Xcode 的介面產生器或以程式設計的方式。 不論您選擇的方法，Xamarin.iOS 會公開所有的使用者介面物件的屬性和 C# 中的方法。
+title: Xamarin.iOS 中的使用者介面控制項
+description: 描述各種 iOS 使用者介面控制項 Xamarin.iOS 開發人員可使用的指南的這個文件連結。 連結的內容討論警示、 按鈕、 集合檢視、 影像、 手動攝影機控制項、 對應、 標籤、 選擇器、 日期選擇器，等等。
 ms.prod: xamarin
 ms.assetid: C00EA232-ADCC-42AD-BF86-B526414A21C6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 82b2998319d4e78ee4f58a6d024032a509724537
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 477cb4e479224b9e795f3460e0f59e0aa2038630
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790038"
 ---
-# <a name="controls"></a>控制項
+# <a name="user-interface-controls-in-xamarinios"></a>Xamarin.iOS 中的使用者介面控制項
 
-_Xamarin.iOS 公開 Apple 提供的所有原生使用者介面物件。輕鬆地加入 Xamarin.iOS 應用程式使用 iOS 設計工具中，Xcode 的介面產生器或以程式設計的方式。不論您選擇的方法，Xamarin.iOS 會公開所有的使用者介面物件的屬性和 C# 中的方法。_
-
-本文件將介紹一些最常見的 iOS 使用者介面控制項，以及如何使用它們。
+本文件介紹的一些最常見的 iOS 使用者介面控制項，以及如何使用它們。
 
 ## <a name="alertsalertsmd"></a>[警示](alerts.md)
 

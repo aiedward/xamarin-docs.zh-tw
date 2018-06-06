@@ -1,17 +1,18 @@
 ---
 title: MacOS 上的協助工具
-description: 本指南說明建立可存取的 Xamarin.Mac 應用程式的功能。
+description: 本文件說明如何使用 macOS Xamarin.Mac 應用程式中的協助工具功能。 其中也會討論描述中的分鏡腳本和程式碼、 自訂控制項和測試協助工具的 UI 項目。
 ms.prod: xamarin
 ms.assetid: D7F4892B-501A-4271-A7E0-BDD1586B63AD
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: ad04e0276c046f133a6f71abb38912343d2d86b6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b2406654a46428e8c22284f5c7d114b07a463251
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791159"
 ---
 # <a name="accessibility-on-macos"></a>MacOS 上的協助工具
 

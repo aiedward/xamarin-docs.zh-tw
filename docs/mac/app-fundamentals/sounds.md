@@ -1,21 +1,20 @@
 ---
-title: 播放音效與 AVAudioPlayer
-description: 本文示範如何控制播放的聲音使用 AVAudioPlayer 使用協助程式類別。
+title: 播放音效與 AVAudioPlayer Xamarin.Mac 中
+description: 本文件說明如何播放音效與 AVAudioPlayer Xamarin.Mac 應用程式中。 其中也會討論 AVAudioPlayer 高的層級和它更能完整瀏覽其他文件的連結。
 ms.prod: xamarin
 ms.assetid: 4A683A94-F75D-4EAF-8497-E9443653250B
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 25e3285a1da1b6a112629001d5412fdd0788c705
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e5b9ec43189999f8a0aee29eb50221b494e2133
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791851"
 ---
-# <a name="playing-sound-with-avaudioplayer"></a>播放音效與 AVAudioPlayer
-
-_本文示範如何控制播放的聲音使用 AVAudioPlayer 使用協助程式類別。_
+# <a name="playing-sound-with-avaudioplayer-in-xamarinmac"></a>播放音效與 AVAudioPlayer Xamarin.Mac 中
 
 ## <a name="about-the-avaudioplayer"></a>關於 AVAudioPlayer
 
@@ -34,8 +33,6 @@ _本文示範如何控制播放的聲音使用 AVAudioPlayer 使用協助程式�
 ## <a name="playing-sounds-in-macos"></a>MacOS 中播放音效
 
 由於 macOS 支援相同的音訊的工具箱類別，為 iOS，請參閱我們的 iOS[遊戲音效與 AVAudioPlayer](https://developer.xamarin.com/recipes/ios/media/sound/avaudioplayer/) Xamarin.Mac 應用程式中播放音訊的完整詳細資料的文件。
-
-
 
 ## <a name="related-links"></a>相關連結
 

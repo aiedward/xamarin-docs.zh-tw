@@ -1,5 +1,5 @@
 ---
-title: OpenTK 簡介
+title: 在 Xamarin.Mac OpenTK 簡介
 description: 本文章提供簡介 OpenTK Xamarin.Mac 應用程式中使用。 其中涵蓋建立和維護遊戲視窗、 轉譯簡單的物件，並向使用者顯示的物件。
 ms.prod: xamarin
 ms.assetid: BDE05645-7273-49D3-809B-8642347678D2
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: d5f19dac8dc362e1ac4a36cbe5cf5db3e31ae363
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 448b8bdba8ccedbb732a73a265d0ce76bb589190
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792602"
 ---
-# <a name="introduction-to-opentk"></a>OpenTK 簡介
+# <a name="introduction-to-opentk-in-xamarinmac"></a>在 Xamarin.Mac OpenTK 簡介
 
 OpenTK (開啟 Toolkit) 是進階、 低階 C# 程式庫，使處理 OpenGL、 OpenCL 與 OpenAL 更容易。 OpenTK 可以用於遊戲、 科學應用程式或其他專案需要 3D 圖形、 聲音或計算功能。 本文提供使用 OpenTK Xamarin.Mac 應用程式中的簡介。
 

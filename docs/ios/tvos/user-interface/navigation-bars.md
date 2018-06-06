@@ -1,21 +1,20 @@
 ---
-title: 使用 瀏覽控制站
-description: 本文涵蓋設計和 Xamarin.tvOS 應用程式內使用導覽列。
+title: 使用 tvOS 導覽列中的 Xamarin
+description: 本文件說明如何使用導覽列中使用 Xamarin 建置 tvOS 應用程式。 它討論設定分鏡腳本中的巡覽列，以及從這些按鈕回應事件。
 ms.prod: xamarin
 ms.assetid: 74E396B7-87F0-46F7-BC6C-827DB8884C97
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8a9a1c852137a2bcc0d46615e69eef0a245a9768
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b6c8ff8551c91578b9399b88e90e94c6af12ac68
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789287"
 ---
-# <a name="working-with-navigation-controllers"></a>使用 瀏覽控制站
-
-_本文涵蓋設計和 Xamarin.tvOS 應用程式內使用導覽列。_
+# <a name="working-with-tvos-navigation-bars-in-xamarin"></a>使用 tvOS 導覽列中的 Xamarin
 
 可以檢視以顯示標題和選擇性的導覽列按鈕的頂端加入導覽列。 通常這些用於當使用者巡覽從主要頁面上，例如資料表檢視表、 集合或功能表來顯示選取之項目的詳細資料子檢視。
 
@@ -26,9 +25,6 @@ _本文涵蓋設計和 Xamarin.tvOS 應用程式內使用導覽列。_
 > [!IMPORTANT]
 > 導覽列完全都預設為透明。 應該小心，確保其下方內容上保持可讀取導覽列的內容。 例如，當資料表檢視表或集合中的內容捲動其下。
 
-
-
-
 <a name="Navigation-Bars-and-Storyboards" />
 
 ## <a name="navigation-bars-and-storyboards"></a>導覽列和分鏡腳本
@@ -36,7 +32,6 @@ _本文涵蓋設計和 Xamarin.tvOS 應用程式內使用導覽列。_
 Xamarin.tvOS 應用程式中使用導覽列的最簡單方式是將它們新增到應用程式的 UI 使用 iOS 設計工具。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
 
 1. 在**方案板**，連按兩下`Main.storyboard`檔案，並開啟它進行編輯。
 1. 拖曳**導覽列**從**工具箱**並放在畫面頂端的檢視： 
@@ -77,9 +72,6 @@ Xamarin.tvOS 應用程式中使用導覽列的最簡單方式是將它們新增�
 
 > [!IMPORTANT]
 > 雖然您可以指派事件，例如`TouchUpInside`UI 中的項目 （例如 UIButton) iOS 設計工具，它會永遠不會呼叫因為 Apple TV 沒有觸控螢幕或支援觸控事件。 您應該一律使用`Primary Action`事件時建立事件處理常式 tvos 使用者介面項目。
-
-
-
 
 下列程式碼會提供三個不同 BarButtonItems 事件處理常式的範例： `ShowFirstHotel`， `ShowSecondHotel`，和`ShowThirdHotel`。 當每個項目按一下時，背景影像`HotelImage`變更。 這在檢視控制器中編輯 (範例`ViewController.cs`) 檔案：
 

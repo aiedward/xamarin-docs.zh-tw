@@ -1,17 +1,19 @@
 ---
-title: Objective C 的選取器
+title: Objective C Xamarin.iOS 中的選取器
+description: 本文將討論如何互動 Objective C 選取器，從 C#。 說明如何叫用的選取器和技術考量這麼做時必須採取納入考量。
 ms.prod: xamarin
 ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 60f107bda29b351c119f5702b0ca797d7d16b0b1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 25276851879ba828361d3236cbf7896cf748588c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787038"
 ---
-# <a name="objective-c-selectors"></a>Objective C 的選取器
+# <a name="objective-c-selectors-in-xamarinios"></a>Objective C Xamarin.iOS 中的選取器
 
 Objective C 語言根據*選取器*。 選取器是可以傳送至物件的訊息或*類別*。 [Xamarin.iOS](~/ios/internals/api-design/index.md)對應執行個體選擇器執行個體方法和類別的靜態方法的選取器。
 
@@ -141,7 +143,7 @@ else
 
 <a name="Calling_objc_msgSend()" />
 
-### <a name="calling-objcmsgsend"></a>Calling objc_msgSend()
+### <a name="calling-objcmsgsend"></a>呼叫 objc_msgSend()
 
  `objc_msgSend()` 用來傳送訊息 （選擇器） 的物件。 這一系列的函式會採用兩個以上的必要引數： 選取器目標 （執行個體或處理的類別）、 選取器本身，然後所需的特定選取器的任何引數。 執行個體和選取器引數必須是`System.IntPtr`，而且所有其餘的引數必須符合選取器所預期，例如類型`nint`如`int`，或`System.IntPtr`所有`NSObject`-衍生型別。 使用[NSObject.Handle](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)屬性，以取得`IntPtr`Objective C 類型執行個體。
 

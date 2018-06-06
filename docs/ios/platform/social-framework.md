@@ -1,5 +1,5 @@
 ---
-title: 社交架構
+title: 社交 Xamarin.iOS 架構
 description: 社交 Framework 會提供統一的 API，來與社交網路包括 Twitter 與 Facebook、 以及 SinaWeibo 中國中的使用者互動。
 ms.prod: xamarin
 ms.assetid: A1C28E66-AA20-1C13-23AF-5A8712E6C752
@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 334e05ad653d766b48f7f6028a1e98b0a0548c0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9b7269282b18adc46f53b708a0af4934a1621d23
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788191"
 ---
-# <a name="social-framework"></a>社交架構
+# <a name="social-framework-in-xamarinios"></a>社交 Xamarin.iOS 架構
 
 _社交 Framework 會提供統一的 API，來與社交網路包括 Twitter 與 Facebook、 以及 SinaWeibo 中國中的使用者互動。_
-
 
 使用社交架構可讓應用程式與社交網路從單一的應用程式開發介面互動，而不需要管理驗證。 其中包括為撰寫文章，以及可讓取用每一個社交網路應用程式開發介面透過 HTTP 的抽象提供檢視控制器的系統。
 
@@ -476,5 +476,5 @@ accountStore.RequestAccess (accountType, options, (granted, error) => {
 
 ## <a name="related-links"></a>相關連結
 
-- [SocialFrameworkDemo (sample)](https://developer.xamarin.com/samples/SocialFrameworkDemo/)
+- [SocialFrameworkDemo （範例）](https://developer.xamarin.com/samples/SocialFrameworkDemo/)
 - [Web 服務簡介](~/cross-platform/data-cloud/web-services/index.md)

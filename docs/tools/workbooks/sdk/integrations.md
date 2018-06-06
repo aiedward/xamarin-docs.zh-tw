@@ -1,17 +1,19 @@
 ---
 title: 進階的 Integration 主題
+description: 本文件說明 Xamarin 活頁簿整合功能的相關進階的主題。 它討論的 Xamarin.Workbook.Integrations NuGet 套件和應用程式開發介面公開在 Xamarin 活頁簿中。
 ms.prod: xamarin
 ms.assetid: 002CE0B1-96CC-4AD7-97B7-43B233EF57A6
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: fc108c3d7f6f4c0fbd948182b4e60a3eee0aea0a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 1aa6b5d0ca574345e1d349ea53df96f554c06bc4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793832"
 ---
-# <a name="external-integrations"></a>外部的整合
+# <a name="advanced-integration-topics"></a>進階的 Integration 主題
 
 整合組件應該參考[ `Xamarin.Workbooks.Integrations` NuGet][nuget]。 請查看我們[快速入門文件](~/tools/workbooks/sdk/index.md)如需開始使用 NuGet 封裝。
 

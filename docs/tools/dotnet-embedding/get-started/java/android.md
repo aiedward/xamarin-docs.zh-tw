@@ -1,15 +1,17 @@
 ---
 title: Android 使用者入門
+description: 本文件說明如何開始使用.NET 內嵌 Android。 它說明安裝.NET 內嵌，Android 程式庫專案，建立使用產生的輸出，在 Android Studio 專案中和其他考量。
 ms.prod: xamarin
 ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
 author: topgenorth
 ms.author: toopge
 ms.date: 03/28/2018
-ms.openlocfilehash: 57bedba786de82094ef43a6982d2df1bcab1de9c
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 6fbd46578f07692f266d97279031f1893bb96a1f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793913"
 ---
 # <a name="getting-started-with-android"></a>Android 使用者入門
 
@@ -281,6 +283,6 @@ dependencies {
 * [參與開放原始碼專案](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
 * [錯誤碼與描述](~/tools/dotnet-embedding/errors.md)
 
-## <a name="related-links"></a>相關的連結
+## <a name="related-links"></a>相關連結
 
 - [天氣範例 (Android)](https://github.com/jamesmontemagno/embeddinator-weather)

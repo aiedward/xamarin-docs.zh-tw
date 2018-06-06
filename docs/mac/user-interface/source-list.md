@@ -1,5 +1,5 @@
 ---
-title: 來源清單
+title: Xamarin.Mac 中的來源清單
 description: 本文件涵蓋使用 Xamarin.Mac 應用程式中的來源清單。 它說明建立和維護 Xcode 和介面產生器中的來源清單，並在 C# 程式碼中與它們互動。
 ms.prod: xamarin
 ms.assetid: 651A3649-5AA8-4133-94D6-4873D99F7FCC
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a8d3a67768b9e47833d1819c3bf44774a52d2438
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c93d4b0855fb96897da2018596766b16e5385ab4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792768"
 ---
-# <a name="source-lists"></a>來源清單
+# <a name="source-lists-in-xamarinmac"></a>Xamarin.Mac 中的來源清單
 
 _本文件涵蓋使用 Xamarin.Mac 應用程式中的來源清單。它說明建立和維護 Xcode 和介面產生器中的來源清單，並在 C# 程式碼中與它們互動。_
 
@@ -47,7 +48,7 @@ _本文件涵蓋使用 Xamarin.Mac 應用程式中的來源清單。它說明建
 
 來源清單是一種特殊的大綱檢視用來顯示動作，像是在搜尋或 iTunes 提要欄位的來源。 不同於大綱檢視中，我們在介面產生器定義來源清單之前，我們來建立支援類別 Xamarin.Mac 中。
 
-首先，我們來建立新`SourceListItem`類別，以保存資料來源清單。 在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...**選取**一般** > **空類別**，輸入`SourceListItem`如**名稱**按一下**新增**按鈕：
+首先，我們來建立新`SourceListItem`類別，以保存資料來源清單。 在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...** 選取**一般** > **空類別**，輸入`SourceListItem`如**名稱**按一下**新增**按鈕：
 
 [![](source-list-images/source01.png "加入空的類別")](source-list-images/source01.png#lightbox)
 
@@ -269,7 +270,7 @@ namespace MacOutlines
 }
 ```
 
-在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...**選取**一般** > **空類別**，輸入`SourceListDataSource`如**名稱**按一下**新增** 按鈕。 請`SourceListDataSource.cs`檔案外觀如下所示：
+在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...** 選取**一般** > **空類別**，輸入`SourceListDataSource`如**名稱**按一下**新增** 按鈕。 請`SourceListDataSource.cs`檔案外觀如下所示：
 
 ```csharp
 using System;
@@ -353,7 +354,7 @@ namespace MacOutlines
 
 這將提供的資料來源清單。
 
-在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...**選取**一般** > **空類別**，輸入`SourceListDelegate`如**名稱**按一下**新增** 按鈕。 請`SourceListDelegate.cs`檔案外觀如下所示：
+在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...** 選取**一般** > **空類別**，輸入`SourceListDelegate`如**名稱**按一下**新增** 按鈕。 請`SourceListDelegate.cs`檔案外觀如下所示：
 
 ```csharp
 using System;
@@ -445,7 +446,7 @@ namespace MacOutlines
 
 這會提供來源清單的行為。
 
-最後，在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...**選取**一般** > **空類別**，輸入`SourceListView`如**名稱**按一下**新增** 按鈕。 請`SourceListView.cs`檔案外觀如下所示：
+最後，在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...** 選取**一般** > **空類別**，輸入`SourceListView`如**名稱**按一下**新增** 按鈕。 請`SourceListView.cs`檔案外觀如下所示：
 
 ```csharp
 using System;

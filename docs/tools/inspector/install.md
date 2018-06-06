@@ -1,21 +1,21 @@
 ---
 title: 偵測器的安裝和需求
-description: 如何下載、 安裝及使用 Xamarin 偵測器。
+description: 本文件說明如何安裝 Xamarin 偵測器，並討論支援的作業系統、 Ide，以及應用程式平台。
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: 5bbd5c64f53e191d5ac629e20df87c2b7ca4ec00
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 80bf3cb4e8e27355ccf6213dbfd07a17e992961b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793804"
 ---
 # <a name="inspector-installation-and-requirements"></a>偵測器的安裝和需求
 
 ## <a name="download-and-installation"></a>下載和安裝
-
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
@@ -55,7 +55,6 @@ ms.lasthandoff: 05/09/2018
 |iOS （整合）|支援 XS 和 Visual Studio 中|檢查從 Windows 的 iOS 應用程式需要相同版本的 Mac 組建主機上也會安裝的偵測器。|
 |Android|支援 XS 和 Visual Studio 中|必須為目標 Android > = 4.0.3， **fastdev**啟用。<br />必須使用 Google、 Visual Studio 或 Xamarin Android 模擬器。 Android 7 模擬器可能不允許在此階段的檢查。|
 |WPF|在 Windows 上的 Visual Studio 中才支援|
-
 
 <a name="reporting-bugs" />
 
@@ -167,6 +166,5 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 1. 刪除 `"/Applications/Xamarin Workbooks.app"` 上的 Workbooks 應用程式
 2. 刪除 `"Applications/Xamarin Inspector.app"` 上的 Inspector 應用程式
-2. 刪除增益集：`"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` 和 `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
-3. 刪除這裡的 Inspector 和支援檔：`/Library/Frameworks/Xamarin.Interactive.framework` 和 `/Library/Frameworks/Xamarin.Inspector.framework`
-
+3. 刪除增益集：`"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` 和 `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
+4. 刪除這裡的 Inspector 和支援檔：`/Library/Frameworks/Xamarin.Interactive.framework` 和 `/Library/Frameworks/Xamarin.Inspector.framework`

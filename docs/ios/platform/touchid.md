@@ -1,19 +1,20 @@
 ---
-title: Touch ID
-description: Apple 的指紋生物識別驗證技術 touch ID。
+title: Touch ID Xamarin.iOS 中
+description: 本文件說明如何使用 Touch ID，Apple 的指紋生物識別驗證技術，Xamarin.iOS 應用程式中。
 ms.prod: xamarin
 ms.assetid: 4BC8EFD6-52FC-4793-BA69-D6BFF850FE5F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: d9d70c37de5cb91c4cd1fdc77e27942d851c346b
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: b5db80d280d7ad3c43a438d5caae57fbd1928896
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788578"
 ---
-# <a name="touch-id"></a>Touch ID
+# <a name="touch-id-in-xamarinios"></a>Touch ID Xamarin.iOS 中
 
 IOS 7 已引入 touch ID 來驗證使用者的密碼類似。 不過，它是限制為解除鎖定裝置、 使用應用程式存放區、 使用 iTunes 和 iCloud keychain 只進行驗證。
 

@@ -1,5 +1,5 @@
 ---
-title: Apple Pay watchOS 上
+title: Apple Pay 上 watchOS Xamarin 中
 description: 本文件涵蓋的增強功能蘋果對 Apple Pay watchOS 3 以及如何為 Apple Watch 中 Xamarin.iOS 實作它們。
 ms.prod: xamarin
 ms.assetid: 32FF5D21-C252-485D-83AC-A7E592237962
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: b46a0e57ea9abc5c4ec4fc2aba1e6940249b64fb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 75d660ad0699b6fac3b1ae43046f322f380872b3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791071"
 ---
-# <a name="apple-pay-on-watchos"></a>Apple Pay watchOS 上
+# <a name="apple-pay-on-watchos-in-xamarin"></a>Apple Pay 上 watchOS Xamarin 中
 
 Apple 已新增支援在應用程式付款的 watchOS 3 中，以進行的 Apple Pay 數個增強功能。 這可讓使用者安全地提供付款，並連絡要直接從 Apple Watch 特別實體的產品和服務的資訊。
 

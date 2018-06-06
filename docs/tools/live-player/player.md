@@ -1,16 +1,17 @@
 ---
 title: Xamarin Player 即時應用程式
-description: 編輯及測試您的 iOS 或 Android 裝置上的即時應用程式
+description: 本文件說明 Xamarin Live 播放程式在裝置的即時應用程式，可用來預覽程式碼變更。 其中也會討論安裝程式、 範例、 記錄、 管理裝置和更多的設定。
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: topgenorth
 ms.author: toopge
 ms.date: 05/14/2017
-ms.openlocfilehash: 3d4d34c6945387f5878ea708faf630d2545a750e
-ms.sourcegitcommit: b706fbe05344f7201fbe8f82d9dbbceb66060637
+ms.openlocfilehash: 88f7f62650484007c221aa7baaa684f872e0a8e9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794146"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Player 即時應用程式
 

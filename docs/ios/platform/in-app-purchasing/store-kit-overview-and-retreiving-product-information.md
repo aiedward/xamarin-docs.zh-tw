@@ -1,18 +1,20 @@
 ---
-title: 儲存組件概觀和擷取產品資訊
+title: StoreKit 概觀和 Xamarin.iOS 中的擷取產品資訊
+description: 本文件提供 StoreKit 的概觀。 它說明 StoreKit 測試 StoreKit 互動、 顯示銷售的產品、 處理無效的產品，並顯示當地語系化的價格搭配使用的類別。
 ms.prod: xamarin
 ms.assetid: FC21192E-6325-4389-C060-E92DBB5EBD87
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f4ecd2942a99f80854fd340be454f9d8fefa5a36
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 964b97e82db8e79cb32598d0c955fac3ab122314
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787220"
 ---
-# <a name="store-kit-overview-and-retrieving-product-information"></a>儲存組件概觀和擷取產品資訊
+# <a name="storekit-overview-and-retrieving-product-info-in-xamarinios"></a>StoreKit 概觀和 Xamarin.iOS 中的擷取產品資訊
 
 以下螢幕擷取畫面會顯示在應用程式內購買的使用者介面。
 任何交易發生之前，應用程式必須擷取產品的價格和顯示的描述。 然後當使用者按**購買**，應用程式對 StoreKit 可管理的確認對話方塊和 Apple ID 登入進行要求。 假設，之後交易又成功，StoreKit 通知的應用程式程式碼中，必須儲存的交易結果以及讓使用者存取其購買。   

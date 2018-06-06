@@ -1,21 +1,19 @@
 ---
-title: 逐步解說： 建立使用反映 API 的應用程式
-description: 除了項目 API，MonoTouch.Dialog （機動D） 也包含屬性為基礎的反映 API。 反映 API 可讓使用機動建立螢幕D 與裝飾類別與屬性一樣容易。 本文提供的逐步示範如何建立使用反映 API 的應用程式。
+title: 建立使用反映 API Xamarin.iOS 應用程式
+description: 本文件描述 MonoTouch.Dialog 屬性為基礎反映 API，其會建立具有屬性裝飾的類別為基礎的 UI。
 ms.prod: xamarin
 ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e56eaeccb2e09d9f1ad84245bf41e2a4bf1b56f1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c60d2a8ca58fe807dc340125d0db21b6f9ddff9f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790505"
 ---
-# <a name="walkthrough-creating-an-application-using-the-reflection-api"></a>逐步解說： 建立使用反映 API 的應用程式
-
-_除了項目 API，MonoTouch.Dialog （機動D） 也包含屬性為基礎的反映 API。反映 API 可讓使用機動建立螢幕D 與裝飾類別與屬性一樣容易。本文提供的逐步示範如何建立使用反映 API 的應用程式。_
-
+# <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>建立使用反映 API Xamarin.iOS 應用程式
 
 周D 反映 API 可讓類別能夠以屬性裝飾的周D 會使用自動建立螢幕。 反映 API 提供這些類別，並在螢幕上顯示的內容之間的繫結。 這個 API 不會提供更細微的控制的應用程式開發介面的項目，雖然它可自動建置出根據類別裝飾項目階層架構來降低複雜性。
 
@@ -36,7 +34,6 @@ _除了項目 API，MonoTouch.Dialog （機動D） 也包含屬性為基礎的�
  [![](reflection-api-walkthrough-images/01-expense-entry.png "在此範例中，我們將建立簡單的資料輸入螢幕如下所示")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
  <a name="Creating_a_Class_with_MT.D_Attributes" />
-
 
 ## <a name="creating-a-class-with-mtd-attributes"></a>使用機動建立類別D 屬性
 

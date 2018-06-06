@@ -1,19 +1,20 @@
 ---
-title: 寬的色彩
-description: 本文涵蓋寬的色彩，以及如何使用它的 Xamarin.iOS 或 Xamarin.Mac 應用程式中。
+title: 在 Xamarin.iOS 寬色彩
+description: 本文件討論寬的色彩，以及如何在 Xamarin.iOS 或 Xamarin.Mac 應用程式中使用。 它也提供許多重要的色彩相關概念，例如色彩空間、 通道和主要複本會的高階概觀。
 ms.prod: xamarin
 ms.assetid: 576E978A-F182-489A-83E4-D8CDC6890B24
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 5f56b396715159cbc1539ae9a7f30cc7ad2236bf
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 173919e0d5feda6ab7d34895cc834c5f36d737a8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788777"
 ---
-# <a name="wide-color"></a>寬的色彩
+# <a name="wide-color-in-xamarinios"></a>在 Xamarin.iOS 寬色彩
 
 _本文涵蓋寬的色彩，以及如何使用它的 Xamarin.iOS 或 Xamarin.Mac 應用程式中。_
 

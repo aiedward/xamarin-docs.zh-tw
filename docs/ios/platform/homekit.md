@@ -1,5 +1,5 @@
 ---
-title: HomeKit
+title: 在 Xamarin.iOS HomeKit
 description: HomeKit 是 Apple 的架構控制擸裝置。 本文介紹 HomeKit，並涵蓋 HomeKit 附屬應用程式模擬器和撰寫簡單的 Xamarin.iOS 應用程式，這些附屬應用程式與互動中設定測試附屬應用程式。
 ms.prod: xamarin
 ms.assetid: 90C0C553-916B-46B1-AD52-1E7332792283
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 5699465330a4d2a5b983ec7661f80c1ed4f14bde
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0dfc6e9ba5098df66a72292d6c8b89ea1bbd1f97
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787457"
 ---
-# <a name="homekit"></a>HomeKit
+# <a name="homekit-in-xamarinios"></a>在 Xamarin.iOS HomeKit
 
 _HomeKit 是 Apple 的架構控制擸裝置。本文介紹 HomeKit，並涵蓋 HomeKit 附屬應用程式模擬器和撰寫簡單的 Xamarin.iOS 應用程式，這些附屬應用程式與互動中設定測試附屬應用程式。_
 
@@ -103,7 +104,7 @@ Apple HomeKit 附屬應用程式模擬器會隨著提供個別下載 Xcode，因
 1. 從應用程式 資料夾中，啟動 HomeKit 附屬應用程式模擬器： 
 
     [![](homekit-images/simulator02.png "HomeKit 附屬應用程式模擬器")](homekit-images/simulator02.png#lightbox)
-2. 按一下**+**按鈕，然後選取**新附屬應用程式...**: 
+2. 按一下**+** 按鈕，然後選取**新附屬應用程式...**: 
 
     [![](homekit-images/simulator03.png "加入新的附屬應用程式")](homekit-images/simulator03.png#lightbox)
 3. 新的附屬應用程式的相關資訊，然後按一下**完成**按鈕： 

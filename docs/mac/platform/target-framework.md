@@ -1,5 +1,5 @@
 ---
-title: 目標 Framework
+title: Xamarin.Mac 的目標 Framework
 description: 本文涵蓋的目標架構 （基底類別程式庫） 可供 Xamarin.Mac 和 Xamarin.Mac 專案中使用它們的含意。
 ms.prod: xamarin
 ms.assetid: AF21BE16-3F92-4121-AB4C-D51AC863D92D
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: 053cdd2dbfc7741257e6630e5b11b77b1055428e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28d312ae10ce736a1720384fe76714910c3ff8f5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792498"
 ---
-# <a name="target-framework"></a>目標 Framework
+# <a name="target-framework-for-xamarinmac"></a>Xamarin.Mac 的目標 Framework
 
 _本文涵蓋的目標架構 （基底類別程式庫） 可供 Xamarin.Mac 和 Xamarin.Mac 專案中使用它們的含意。_
 

@@ -1,18 +1,20 @@
 ---
-title: 交易和驗證
+title: 交易和 Xamarin.iOS 中驗證
+description: 本文件說明如何允許過去購買的產品 Xamarin.iOS 應用程式中還原。 它也會討論如何保護採購產品和伺服器傳送的產品。
 ms.prod: xamarin
 ms.assetid: 84EDD2B9-3FAA-B3C7-F5E8-C1E5645B7C77
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c8d86d0ce3119b3e104a65a170ab141484af44a7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2cb38df4bbabc3534f5c90c7695569d68349ccc3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786921"
 ---
-# <a name="transactions-and-verification"></a>交易和驗證
+# <a name="transactions-and-verification-in-xamarinios"></a>交易和 Xamarin.iOS 中驗證
 
 ## <a name="restoring-past-transactions"></a>還原過去的交易
 

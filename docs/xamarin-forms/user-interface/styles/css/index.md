@@ -1,5 +1,5 @@
 ---
-title: 使用階層式樣式表樣式 Xamarin.Forms 應用程式
+title: 使用階層式樣式表 (CSS) 樣式 Xamarin.Forms 應用程式
 description: Xamarin.Forms 可支援使用階層式樣式表 (CSS) 樣式視覺項目。
 ms.prod: xamarin
 ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 811abacff330bf7b6e6240691cb6a15ebbd9d242
-ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
+ms.openlocfilehash: 76ca67f7ac8a8e27e5f502455d48874c775fc172
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794081"
 ---
-# <a name="styling-xamarinforms-apps-using-cascading-style-sheets"></a>使用階層式樣式表樣式 Xamarin.Forms 應用程式
+# <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用階層式樣式表 (CSS) 樣式 Xamarin.Forms 應用程式
 
 _Xamarin.Forms 可支援使用階層式樣式表 (CSS) 樣式視覺項目。_
 
@@ -372,7 +373,7 @@ Xamarin.Forms 可支援下列的 CSS 屬性 (在**值**資料行中，類型為_
 |`color`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`|_色彩_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_字串_ \| `initial` |`font-family: Consolas;`|
-|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_double_ \| _namedsize_  \| `initial` |`font-size: 12;`|
+|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_double_ \| _namedsize_ \| `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
 |`height`|`VisualElement`|_double_ \| `initial` |`min-height: 250;`|
 |`margin`|`View`|_粗細_ \| `initial` |`margin: 6 12;`|
@@ -447,4 +448,4 @@ Xamarin.Forms 可支援下列的 CSS 屬性 (在**值**資料行中，類型為_
 ## <a name="related-links"></a>相關連結
 
 - [MonkeyAppCSS （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)
-- [設定樣式 Xamarin.Forms 使用 XAML 樣式的應用程式](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [使用 XAML 樣式設定 Xamarin.Forms 應用程式的樣式](~/xamarin-forms/user-interface/styles/xaml/index.md)

@@ -1,21 +1,20 @@
 ---
-title: 背後原理
-description: 查看 Xamarin.Mac 的內部運作方式
+title: 背後原理 Xamarin.Mac 中
+description: 描述 Xamarin.Mac 的內部運作方式的各種指南的這個文件連結。 連結的文件討論在編譯時間、 Xamarin.Mac 架構和 Xamarin.Mac 註冊機構的前面。
 ms.prod: xamarin
 ms.assetid: 84974D75-0CCE-4455-AA38-00DE68AE33B6
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: 74721e880bb0d3ada3f3940a4074d06f55601c0e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c940252a675c38247d2c5bb374b9c30237222bda
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792485"
 ---
-# <a name="under-the-hood"></a>背後原理
-
-_查看 Xamarin.Mac 的內部運作方式_
+# <a name="under-the-hood-in-xamarinmac"></a>背後原理 Xamarin.Mac 中
 
 ## <a name="ahead-of-time-compilation-aotaotmd"></a>[繼續的時間編譯 (AOT)](aot.md)
 

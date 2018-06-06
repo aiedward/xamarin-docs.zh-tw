@@ -1,15 +1,17 @@
 ---
 title: 開始使用 Java
+description: 本文件說明如何開始使用.NET 內嵌 Java。 它討論系統需求、 安裝和支援的平台。
 ms.prod: xamarin
 ms.assetid: B9A25E9B-3EC2-489A-8AD3-F78287609747
 author: topgenorth
 ms.author: toopge
 ms.date: 03/28/2018
-ms.openlocfilehash: e88e3c8d2dbabebcfff22687d8ea341233a776b5
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 84ef5d047b3f70635d74ef5bee7741a7447db677
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793213"
 ---
 # <a name="getting-started-with-java"></a>開始使用 Java
 

@@ -1,16 +1,17 @@
 ---
 title: Xamarin Player 即時範例
-description: 以下是一些範例來試用與 Xamarin Live Player。
+description: 範例應用程式，測試出 Xamarin Live Player 時要使用此文件連結。 連結的範例包括基本計算機和 bug 清理遊戲。
 ms.prod: xamarin
 ms.assetid: C71D34AD-747B-4826-838D-5138F5DCD7EF
 author: topgenorth
 ms.author: toopge
 ms.date: 06/20/2017
-ms.openlocfilehash: 67c734a76e78973aa1acf8eb2b5dec720701d3d7
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 090b52f4ebf9ec6f46426b4364f8b57b67a79324
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793722"
 ---
 # <a name="xamarin-live-player-samples"></a>Xamarin Player 即時範例
 
@@ -31,8 +32,6 @@ ms.lasthandoff: 05/09/2018
 這是加入新變化的常見遊戲。 十隻蟲藏在 9 乘 9 的方格中。 若要獲勝，您必須找到所有十隻蟲並加上旗標。
 
 ![在 Android 上 BugSweeper 應用程式](samples-images/bugsweeper-sml.png)
-
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -1,19 +1,20 @@
 ---
-title: 專案參考
-description: IOS 應用程式、 監看式應用程式，並監看式延伸模組之間的關聯性的說明。
+title: watchOS Xamarin 中的專案參考
+description: 本文件說明 iOS 應用程式、 監看式應用程式和監看式應用程式擴充功能之間的關聯性。 其中也會討論專案參照和套件組合識別碼。
 ms.prod: xamarin
 ms.assetid: C366E062-C33D-406A-B3FF-CBE82E5D1E7E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: f3573e8b578ca567ea9d7360eb132aead4c24f37
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1bd950d0929beae7133b0eb8ef6b2a69bc116f50
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791484"
 ---
-# <a name="project-references"></a>專案參考
+# <a name="watchos-project-references-in-xamarin"></a>watchOS Xamarin 中的專案參考
 
 _IOS 應用程式、 監看式應用程式，並監看式延伸模組之間的關聯性的說明。_
 

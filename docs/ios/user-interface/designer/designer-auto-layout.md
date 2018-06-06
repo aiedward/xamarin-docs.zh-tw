@@ -1,21 +1,20 @@
 ---
 title: 使用 Xamarin 設計工具，適用於 iOS 的自動配置
-description: 本指南介紹 iOS 自動配置和新條件約束的工作流程使用 iOS 的 Xamarin 設計工具中。
+description: 本指南介紹 iOS 自動配置，並說明如何使用適用於 iOS 的 Xamarin 設計工具來建立和編輯配置使用條件約束。 它也會討論在程式碼中建立動畫的條件約束的變更，以及其他的修改條件約束。
 ms.prod: xamarin
 ms.assetid: CAC7A715-55BB-45E2-BB6D-2168D36D428F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 2023483f817c365d2cfad6945b281d630317693b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 876bf3de19d2bcce7d951facc92d5b05a928cd38
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790197"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>使用 Xamarin 設計工具，適用於 iOS 的自動配置
-
-_本指南介紹 iOS 自動配置和新條件約束的工作流程使用 iOS 的 Xamarin 設計工具中。_
 
 自動配置 （也稱為 「 自動調整的版面配置 」） 是一種回應式設計方法。 不同於這個過渡期的版面配置系統，其中每個元素的位置是硬式編碼至螢幕上的點，自動配置是關於*關聯性*-設計介面上的其他項目位置的項目的位置。 自動配置的核心是 條件約束或規則，以定義位置的項目或項目集在螢幕上的其他項目內容中的概念。 在螢幕上的特定位置，不會繫結項目，因為條件約束會協助建立起來不錯上不同的螢幕大小和裝置的方向調整版面配置。
 
@@ -61,7 +60,7 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 
   ![條件約束模式切換](designer-auto-layout-images/constraints.png)
 
-- **「 更新條件約束 」 按鈕：**很值得注意的變更，視您是在編輯模式的條件約束。
+- **「 更新條件約束 」 按鈕：** 很值得注意的變更，視您是在編輯模式的條件約束。
   - 在條件約束的編輯模式下此按鈕，調整以符合項目框架的條件約束。
   - 框架編輯模式中這個按鈕會調整以符合這些條件約束所定義的位置的項目框架。
 

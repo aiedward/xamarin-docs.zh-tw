@@ -1,20 +1,19 @@
 ---
 title: 更新現有的 Mac 應用程式
-description: 請依照下列步驟來更新現有 Xamarin.Mac 應用程式使用的統一的 API。
+description: 本文件說明更新從傳統的 API 以統一的 API Xamarin.Mac 應用程式必須遵循的步驟。
 ms.prod: xamarin
 ms.assetid: 26673CC5-C1E5-4BAC-BEF4-9A386B296FD5
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: a2e3df4db13ccbf8001b762bf29a3eb53cacd35a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 5e6034b079bba5e884872e4f2096d677fd3641d0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782407"
 ---
 # <a name="updating-existing-mac-apps"></a>更新現有的 Mac 應用程式
-
-_請依照下列步驟來更新現有 Xamarin.Mac 應用程式使用的統一的 API。_
 
 更新現有的應用程式使用的統一的 API 需要變更專案檔本身以及命名空間和應用程式程式碼中使用的應用程式開發介面。
 
@@ -41,7 +40,7 @@ Xamarin 提供適用於 Mac 的 Visual Studio 和 Visual Studio 從傳統 API �
 有兩個支援的目標 Framework 類型 Xamarin.Mac 應用程式中使用統一的 API 時可選取：
 
 - **Xamarin.Mac Mobile 架構**-這是使用 Xamarin.iOS 和 Xamarin.Android 支援完整的子集的.NET framework 相同微調**桌面**架構。 這是建議的架構，因為它會提供較小的平均二進位檔，因為上層連結的行為。
-- **Xamarin.Mac.NET 4.5 Framework** -此架構是一次，子集**桌面**架構。 不過，它會修剪遠小於完整**桌面**架構比**行動**架構，而且應該使用_」 工作只"_ 大部分的 NuGet 封裝或第 3 個合作對象文件庫。 這可讓開發人員使用標準**桌面**時仍在使用支援的架構，但此選項會產生較大的應用程式套件組合的組件。 這是第 3 個合作對象.NET 組件所使用的位置與不相容的建議的架構**Xamarin.Mac Mobile 架構**。 如需支援的組件的清單，請參閱我們[組件](~/cross-platform/internals/available-assemblies.md)文件。
+- **Xamarin.Mac.NET 4.5 Framework** -此架構是一次，子集**桌面**架構。 不過，它會修剪遠小於完整**桌面**架構比**行動**架構，而且應該使用 _」 工作只"_ 大部分的 NuGet 封裝或第 3 個合作對象文件庫。 這可讓開發人員使用標準**桌面**時仍在使用支援的架構，但此選項會產生較大的應用程式套件組合的組件。 這是第 3 個合作對象.NET 組件所使用的位置與不相容的建議的架構**Xamarin.Mac Mobile 架構**。 如需支援的組件的清單，請參閱我們[組件](~/cross-platform/internals/available-assemblies.md)文件。
 
 如需目標架構的詳細的資訊和選取 Xamarin.Mac 應用程式的特定目標的影響，請參閱我們[目標架構](~/mac/platform/target-framework.md)文件。 
 

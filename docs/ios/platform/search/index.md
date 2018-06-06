@@ -1,20 +1,21 @@
 ---
-title: 新的搜尋應用程式開發介面
+title: 搜尋 Api Xamarin.iOS 中
 description: 本文涵蓋使用 iOS 9 所提供的新應用程式搜尋 Api 可讓使用者搜尋的資訊及 Xamarin.iOS 應用程式內的功能。
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 5dcd3d9665befaa82fd0f5677a4a662f633ed45b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc62ad34af0b9b98f0475599a08946122badd21e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788172"
 ---
-# <a name="new-search-apis"></a>新的搜尋應用程式開發介面
+# <a name="search-apis-in-xamarinios"></a>搜尋 Api Xamarin.iOS 中
 
-_本文涵蓋使用 iOS 9 所提供的新應用程式搜尋 Api 可讓使用者搜尋的資訊及 Xamarin.iOS 應用程式內的功能。_
+_本文涵蓋使用 iOS 9 所提供的應用程式搜尋 Api 可讓使用者搜尋的資訊及 Xamarin.iOS 應用程式內的功能。_
 
 搜尋已展開於 iOS 9 提供絕佳的新方法，以存取資訊和 Xamarin.iOS 應用程式內的功能。 使用新的應用程式搜尋 Api，應用程式的內容會透過精選和 Safari 搜尋結果中，遞交 Siri 提醒和建議的搜尋。 這可讓使用者快速存取活動和深層應用程式中的資訊。
 

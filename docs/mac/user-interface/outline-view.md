@@ -1,5 +1,5 @@
 ---
-title: 大綱檢視
+title: 大綱檢視中 Xamarin.Mac
 description: 本文件涵蓋使用 Xamarin.Mac 應用程式中的大綱檢視。 它說明建立和維護安裝 Xcode 和介面產生器中的大綱檢視，並以程式設計方式使用它們。
 ms.prod: xamarin
 ms.assetid: 043248EE-11DA-4E96-83A3-08824A4F2E01
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 82cb3afadf7615fdd92476371e9ab80cd1228b02
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a12eee5f473ffdc6a235faeb55c0a3d6754f4629
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792823"
 ---
-# <a name="outline-views"></a>大綱檢視
+# <a name="outline-views-in-xamarinmac"></a>大綱檢視中 Xamarin.Mac
 
 _本文件涵蓋使用 Xamarin.Mac 應用程式中的大綱檢視。它說明建立和維護安裝 Xcode 和介面產生器中的大綱檢視，並以程式設計方式使用它們。_
 
@@ -176,7 +177,7 @@ _本文件涵蓋使用 Xamarin.Mac 應用程式中的大綱檢視。它說明建
 
 我們大綱檢視設計介面產生器中，並透過公開**插座**，接下來我們要建立 C# 程式碼以填入它。
 
-首先，我們來建立新`Product`類別以包裝個別資料列和群組的子產品的資訊。 在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...**選取**一般** > **空類別**，輸入`Product`如**名稱**按一下**新增**按鈕：
+首先，我們來建立新`Product`類別以包裝個別資料列和群組的子產品的資訊。 在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...** 選取**一般** > **空類別**，輸入`Product`如**名稱**按一下**新增**按鈕：
 
 [![](outline-view-images/populate01.png "建立空的類別")](outline-view-images/populate01.png#lightbox)
 
@@ -218,7 +219,7 @@ namespace MacOutlines
 }
 ```
 
-接下來，我們需要建立的子類別`NSOutlineDataSource`要求時，我們大綱提供的資料。 在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...**選取**一般** > **空類別**，輸入`ProductOutlineDataSource`如**名稱**按一下**新增** 按鈕。
+接下來，我們需要建立的子類別`NSOutlineDataSource`要求時，我們大綱提供的資料。 在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...** 選取**一般** > **空類別**，輸入`ProductOutlineDataSource`如**名稱**按一下**新增** 按鈕。
 
 編輯`ProductTableDataSource.cs`檔案，並讓它看起來如下所示：
 
@@ -281,7 +282,7 @@ namespace MacOutlines
 
 這個類別具有存放裝置，我們的大綱檢視項目，並覆寫`GetChildrenCount`傳回資料表中的資料列數目。 `GetChild`傳回特定的父系或子系項目 （由大綱檢視要求） 和`ItemExpandable`指定的項目定義為父系或子系。
 
-最後，我們需要建立的子類別`NSOutlineDelegate`可提供我們大綱的行為。 在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...**選取**一般** > **空類別**，輸入`ProductOutlineDelegate`如**名稱**按一下**新增** 按鈕。
+最後，我們需要建立的子類別`NSOutlineDelegate`可提供我們大綱的行為。 在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...** 選取**一般** > **空類別**，輸入`ProductOutlineDelegate`如**名稱**按一下**新增** 按鈕。
 
 編輯`ProductOutlineDelegate.cs`檔案，並讓它看起來如下所示：
 

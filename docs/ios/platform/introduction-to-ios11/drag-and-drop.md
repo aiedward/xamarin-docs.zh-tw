@@ -1,19 +1,20 @@
 ---
-title: 拖放
-description: 實作拖放 ios 11
+title: 拖放 Xamarin.iOS
+description: 本文件說明如何實作拖曳和卸除使用中 iOS 11 導入的 Api Xamarin.iOS 應用程式中。 特別是，討論啟用拖放 UITableView。
 ms.prod: xamarin
 ms.assetid: 0D39C4C3-D169-42F8-B3FA-7F98CF0B6F1F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/05/2016
-ms.openlocfilehash: fa6fcb2c4f5f17011307b31e4644889d066b71a9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7c41f96dae88047e64ec1e74838e3efab55958cc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786960"
 ---
-# <a name="drag-and-drop"></a>拖放
+# <a name="drag-and-drop-in-xamarinios"></a>拖放 Xamarin.iOS
 
 _實作拖放 ios 11_
 

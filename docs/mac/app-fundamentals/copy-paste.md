@@ -1,5 +1,5 @@
 ---
-title: 複製並貼上
+title: 複製及貼到 Xamarin.Mac
 description: 本文涵蓋剪貼版提供複製並貼上 Xamarin.Mac 應用程式中使用。 它會顯示如何處理與標準資料型別，可以在多個應用程式，以及如何支援自訂資料內指定的應用程式之間共用。
 ms.prod: xamarin
 ms.assetid: 7E9C99FB-B7B4-4C48-B20F-84CB48543083
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: cf81666403f687ce997e20f6f5f097dc9fcf1421
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: becdec771949584919595c84b13ae9e05bfd377b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791893"
 ---
-# <a name="copy-and-paste"></a>複製並貼上
+# <a name="copy-and-paste-in-xamarinmac"></a>複製及貼到 Xamarin.Mac
 
 _本文涵蓋剪貼版提供複製並貼上 Xamarin.Mac 應用程式中使用。它會顯示如何處理與標準資料型別，可以在多個應用程式，以及如何支援自訂資料內指定的應用程式之間共用。_
 
@@ -46,7 +47,7 @@ _本文涵蓋剪貼版提供複製並貼上 Xamarin.Mac 應用程式中使用。
 
 請執行下列動作：
 
-1. 啟動 Visual Studio 用於 Mac 和按一下**新的專案...**連結。
+1. 啟動 Visual Studio 用於 Mac 和按一下**新的專案...** 連結。
 2. 選取**Mac** > **應用程式** > **Cocoa 應用程式**，然後按一下 **下一步**按鈕： 
 
     [![建立新的 Cocoa 應用程式專案](copy-paste-images/sample01.png "建立新的 Cocoa 應用程式專案")](copy-paste-images/sample01-large.png#lightbox)
@@ -1279,7 +1280,7 @@ if (ok) {
 
 ## <a name="related-links"></a>相關連結
 
-- [MacCopyPaste (sample)](https://developer.xamarin.com/samples/mac/MacCopyPaste/)
+- [MacCopyPaste （範例）](https://developer.xamarin.com/samples/mac/MacCopyPaste/)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [剪貼版程式設計指南](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PasteboardGuide106/Articles/pbGettingStarted.html)
 - [macOS 人性化介面指導方針](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

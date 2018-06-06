@@ -1,16 +1,17 @@
 ---
 title: SkiaSharp 簡介
-description: 這提供 SkiaSharp 背後的概念簡介
+description: 本文件提供核心 SkiaSharp 概念的簡介。 特別是，討論取得及 SKCanvas 上繪製。
 ms.prod: xamarin
 ms.assetid: 19506F08-2603-465E-A806-6BD01638DE90
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: 9e88009cc768e71336c48eb1fab5c5c4c8afa1a9
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: a42836a49560a73b9e35ef97bfb2ba83d15812e3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783057"
 ---
 # <a name="an-introduction-to-skiasharp"></a>SkiaSharp 簡介
 

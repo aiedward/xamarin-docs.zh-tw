@@ -1,19 +1,20 @@
 ---
-title: Hello，監看式
-description: 開始使用 Xamarin 和 watchOS
+title: Hello，watchOS – 逐步解說
+description: 本文件提供逐步解說中的建置 xamarin 簡單 watchOS 應用程式。 說明如何適用於 Visual Studio 和 Visual Studio for Mac、 使用分鏡腳本，並回應程式碼中的事件。
 ms.prod: xamarin
 ms.assetid: AD1DA488-51AB-420A-A0B7-3AE69A964A40
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/14/2016
-ms.openlocfilehash: 2281fa801d32e8d8934767ae090503ca523d7eff
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 00d6080429450dce2c0491fa385cf4f179befba6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790993"
 ---
-# <a name="hello-watch"></a>Hello，監看式
+# <a name="hello-watchos--walkthrough"></a>Hello，watchOS – 逐步解說
 
 在您建立的方案中的步驟之後[設定及安裝](~/ios/watchos/get-started/installation.md)，您會有 3 的專案：
 
@@ -130,13 +131,11 @@ partial class InterfaceController
 
 ```csharp
 int clickCount = 0;
-
 partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 {
   var msg = String.Format("Clicked {0} times", ++clickCount);
   myLabel.SetText(msg);
 }
-
 ```
 
 此程式碼應該是相當透明： 執行個體變數`clickCount`是每次遞增函式`OnButtonPress`呼叫。 文字`myLabel`變更以反映這個計數;`myLabel`，當然是其中一個插座，您在 XCode 中建立的名稱。 `partial`函式是您所指定的動作名稱相關聯函式的實作。

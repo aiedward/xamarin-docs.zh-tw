@@ -1,29 +1,26 @@
 ---
 title: 檢查應用程式
-description: 視覺化及偵錯即時應用程式
+description: 本文件說明如何使用 Xamarin 偵測器來檢查應用程式。 它也會討論 Xamarin Inspector 工具的限制。
 ms.prod: xamarin
 ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: 8bcdc5ac50a0f03086ad9e9c3265e3ce86b06704
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 16a0474c7fc9a496409e2133714b6d4374691dbc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793475"
 ---
 # <a name="inspecting-live-applications"></a>檢查應用程式
 
 企業客戶可使用即時應用程式檢查。
 
-
 1. [安裝 Xamarin 活頁簿 （& s） 偵測器。](~/tools/inspector/install.md)
-
 1. 開啟任何[支援應用程式專案](~/tools/inspector/install.md#supported-platforms)Mac 或 Visual Studio 的 Visual Studio 中。
 1. 以偵錯模式執行您的應用程式。
-1. 按一下**檢查**IDE 工具列按鈕 (在 Visual Studio**檢查目前的應用程式。**功能表項目也會提供**工具**或**偵錯**功能表)。
-
-
+1. 按一下**檢查**IDE 工具列按鈕 (在 Visual Studio**檢查目前的應用程式。** 功能表項目也會提供**工具**或**偵錯**功能表)。
 
 [![](inspect-images/mac-heres-the-button.png "按一下 [檢查] 按鈕，IDE 工具列中")](inspect-images/mac-heres-the-button.png#lightbox)
 

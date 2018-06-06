@@ -1,16 +1,17 @@
 ---
-title: Xamarin.Forms 即時播放程式
-description: 快速了解 Xamarin、 建置及執行應用程式在 Android 或 iOS 裝置上啟動。
+title: Xamarin.Forms Xamarin 即時播放程式
+description: 本文件所討論 Xamarin Live Player 透過 Xamarin.Forms，描述安裝、 Xamarin Live 播放器應用程式、 範例搭配 Xamarin Live 播放程式，限制，並進行疑難排解。
 ms.prod: xamarin
 ms.assetid: 19B1F126-866E-4672-92D2-BE2B70ACF0F1
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: dd179fb1d1ce3ca57cdf6e27bb86a12e2f9ef03f
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.openlocfilehash: 79cf2c790789963189d3eedd6645a6b6ae6503b6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793134"
 ---
 # <a name="xamarin-live-player-for-xamarinforms"></a>Xamarin.Forms Xamarin 即時播放程式
 
@@ -46,7 +47,6 @@ Xamarin Live Player 會有一些限制，它能支援的功能。
 ## <a name="troubleshootingtroubleshootingmd"></a>[疑難排解](troubleshooting.md)
 
 如果發生錯誤，請找到說明。
-
 
 ## <a name="related-links"></a>相關連結
 

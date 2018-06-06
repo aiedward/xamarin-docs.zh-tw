@@ -1,21 +1,20 @@
 ---
-title: 索引標籤列和索引標籤列的控制站
-description: 使用 tab 導覽 UI 的 iOS 應用程式會使用 UITabBarController 類別建立。 本文章中我們將逐步解說如何設定包含數個控制器和檢視的索引標籤式應用程式。 然後，我們將檢驗如何載入 UITabBarController 時，就會為根控制站，例如登入畫面之後。
+title: 索引標籤列和索引標籤列 Xamarin.iOS 中的控制站
+description: 本文件說明 iOS 索引標籤列的控制站，以及如何使用 Xamarin.iOS。 它會示範如何設定 UITabBarController、 使用映像時，設定徽章值、 工作與事件，等等。
 ms.prod: xamarin
 ms.assetid: 7C772899-2900-F139-D642-F3C4F3F14DDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: c3c57cceed7271ebbe707172db892a246003426b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d8b096774e60ec0e0b69e109fa5da53c25e66d25
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789754"
 ---
-# <a name="tab-bars-and-tab-bar-controllers"></a>索引標籤列和索引標籤列的控制站
-
-_使用 tab 導覽 UI 的 iOS 應用程式會使用 UITabBarController 類別建立。本文章中我們將逐步解說如何設定包含數個控制器和檢視的索引標籤式應用程式。然後，我們將檢驗如何載入 UITabBarController 時，就會為根控制站，例如登入畫面之後。_
+# <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>索引標籤列和索引標籤列 Xamarin.iOS 中的控制站
 
 在 iOS 中使用索引標籤式的應用程式以支援使用者介面，其中可以存取多個螢幕不依特定順序。 透過`UITabBarController`類別，應用程式可以輕鬆地包含這類多重畫面案例的支援。 `UITabBarController` 會負責多螢幕管理，允許應用程式開發人員專注於每個畫面的詳細資料。
 
@@ -237,7 +236,7 @@ tab3.TabBarItem.BadgeValue = null;
 
 [![](creating-tabbed-applications-images/inital-screen-application.png "這個螢幕擷取畫面顯示應用程式流程")](creating-tabbed-applications-images/inital-screen-application.png#lightbox)
 
-讓我們開始新的應用程式，此範例中。 同樣地，我們將使用**iPhone > 應用程式 > 空專案 (C#)**範本，此時命名專案`InitialScreenDemo`。
+讓我們開始新的應用程式，此範例中。 同樣地，我們將使用**iPhone > 應用程式 > 空專案 (C#)** 範本，此時命名專案`InitialScreenDemo`。
 
 
 在此範例中我們需要儲存我們檢視控制器分鏡腳本。 若要新增分鏡腳本：
@@ -321,7 +320,7 @@ partial void InitialActionCompleted (UIButton sender)
 
 我們現在有我們如預期般運作的初始檢視。 接下來，我們想將它加入至 `UITabBarController` 以及檢視 2 和 3。 讓我們來開啟分鏡腳本設計工具中。
 
-在**工具箱**，搜尋**索引標籤列控制器**控制站和物件下這拖曳到設計介面上。 您可以看到下面的螢幕擷取畫面中，索引標籤列控制器是無 UI，並因此使兩個檢視控制站與其預設：
+在**工具箱**，搜尋** 索引標籤列控制器**控制站和物件下這拖曳到設計介面上。 您可以看到下面的螢幕擷取畫面中，索引標籤列控制器是無 UI，並因此使兩個檢視控制站與其預設：
 
 [![](creating-tabbed-applications-images/tabbarcontroller.png "加入至配置的索引標籤列控制器")](creating-tabbed-applications-images/tabbarcontroller.png#lightbox)
 
@@ -331,7 +330,7 @@ partial void InitialActionCompleted (UIButton sender)
 
 **按一下 Ctrl 以** 和 **拖曳** 從 [TabBarController] 按鈕。 滑鼠向上上會出現內容功能表。 我們想要使用強制回應 segue。 
  
-若要設定每個索引標籤中， **Ctrl** TabBarController 我們檢視中控制站的順序的每一到三個，並選取關聯性從**索引標籤**從內容功能表中，如下所示：
+若要設定每個索引標籤中， **Ctrl** TabBarController 我們檢視中控制站的順序的每一到三個，並選取關聯性從** 索引標籤**從內容功能表中，如下所示：
 
 [![](creating-tabbed-applications-images/context-menu.png "選取索引標籤關聯性")](creating-tabbed-applications-images/context-menu.png#lightbox)
 

@@ -1,20 +1,20 @@
 ---
-title: 資料和雲端服務
-description: 穩定和部署指南
+title: 資料和 Xamarin.iOS 應用程式中的雲端服務
+description: 描述如何使用本機資料、 icloud 的功能，以及 CloudKit Xamarin.iOS 應用程式中的指南的這個文件連結。
 ms.prod: xamarin
 ms.assetid: 945719F7-7CE6-4207-BF0F-23195125FC84
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/13/2017
-ms.openlocfilehash: 81aebe5fd7431e578b75c5b61e1d2c92ce546909
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a733c1af34b577786a7e18eeafa13da4327dddc6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784256"
 ---
-# <a name="data-and-cloud-services"></a>資料和雲端服務
-
+# <a name="data-and-cloud-services-in-xamarinios-apps"></a>資料和 Xamarin.iOS 應用程式中的雲端服務
 
 ##  <a name="data-accessiosdata-clouddataindexmd"></a>[資料存取](~/ios/data-cloud/data/index.md)
 

@@ -1,5 +1,5 @@
 ---
-title: 警示
+title: Xamarin.Mac 中警示
 description: 本文件涵蓋使用 Xamarin.Mac 應用程式中的警示。 它說明建立和顯示 C# 程式碼產生的警示，以及回應使用者互動。
 ms.prod: xamarin
 ms.assetid: F1DB93A1-7549-4540-AD5E-D7605CCD8435
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a451d0a5535915d9e52f687ae07ea028c0ccd5ef
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1eb781fe02213de6a994f56e321316b93a128b60
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792638"
 ---
-# <a name="alerts"></a>警示
+# <a name="alerts-in-xamarinmac"></a>Xamarin.Mac 中警示
 
 _本文件涵蓋使用 Xamarin.Mac 應用程式中的警示。它說明建立和顯示 C# 程式碼產生的警示，以及回應使用者互動。_
 
@@ -71,7 +72,7 @@ Apple 提供數個屬性，可以用來自訂警示：
 - **InformativeText** -這是主體的警示，您應該清楚地定義這種情況並向使用者顯示可用的選項。
 - **圖示**-可讓自訂的圖示，以顯示給使用者。
 - **HelpAnchor** & **ShowsHelp** -允許要繫結到 HelpBook 的應用程式，並顯示說明警示的警示。
-- **按鈕**-根據預設，警示只有**[確定]**按鈕但**按鈕**集合可讓您將新增所需的更多選擇。
+- **按鈕**-根據預設，警示只有 **[確定]** 按鈕但**按鈕**集合可讓您將新增所需的更多選擇。
 - **ShowsSuppressionButton** -如果`true`顯示使用者可以使用隱藏的警示觸發該事件後面出現的核取方塊。
 - **AccessoryView** -可讓您將另一個子檢視附加至以提供額外的資訊，例如新增警示**文字欄位**用於資料輸入。 如果您設定新**AccessoryView**或修改現有，您需要呼叫`Layout()`調整警示的顯示配置的方法。
 

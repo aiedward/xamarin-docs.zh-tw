@@ -1,22 +1,20 @@
 ---
-title: 使用分割的控制項
-description: 本文涵蓋設計和 Xamarin.tvOS 應用程式內使用分割的控制項。
+title: 使用 Xamarin tvOS 分割控制項
+description: 本文件說明如何使用 tvOS 分割中使用 Xamarin 所建置的應用程式的控制項。 其中也會討論區段圖示和文字、 修改控制項的外觀，以及更多的事件。
 ms.prod: xamarin
 ms.assetid: 23AD94CC-E93A-40B1-8E2B-ECD21FA355BE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d4eac932c7fad628a0a65127bceb641f34ea5d79
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8980f9fbf6996217dbcaec869e4c81598ac36552
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789235"
 ---
-# <a name="working-with-segmented-controls"></a>使用分割的控制項
-
-_本文涵蓋設計和 Xamarin.tvOS 應用程式內使用分割的控制項。_
-
+# <a name="working-with-tvos-segmented-controls-in-xamarin"></a>使用 Xamarin tvOS 分割控制項
 
 分割的控制項提供一組線性項目，其中每個可以包含的圖示或文字，並用來向使用者提供的一組相關的選擇。
 

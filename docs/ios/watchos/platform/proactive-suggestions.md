@@ -1,5 +1,5 @@
 ---
-title: 主動式建議
+title: watchOS 中 Xamarin 主動式建議
 description: 本文示範如何在磁碟機 engagement watchOS 3 應用程式中使用主動式建議，藉由使用系統自動向使用者主動顯示有用的資訊。
 ms.prod: xamarin
 ms.assetid: 10CC9F16-963C-44F1-8B98-F09FB2310DFF
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: f22be43f814865c3c14e12aa2aec3a8dbce09b7a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 33dccd00e07062e040c2707826ef62b764e11a0e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791277"
 ---
-# <a name="proactive-suggestions"></a>主動式建議
+# <a name="watchos-proactive-suggestions-in-xamarin"></a>watchOS 中 Xamarin 主動式建議
 
 _本文示範如何在磁碟機 engagement watchOS 3 應用程式中使用主動式建議，藉由使用系統自動向使用者主動顯示有用的資訊。_
 
@@ -37,7 +38,7 @@ _本文示範如何在磁碟機 engagement watchOS 3 應用程式中使用主動
 
 ## <a name="contextual-siri-reminders"></a>內容 Siri 提醒
 
-可讓使用者使用 Siri 快速將它們目前正在檢視的應用程式中在日後若要檢視內容提醒。 例如，如果他們已檢視餐廳評論的應用程式中，他們就可以叫用 Siri 然後說出*"提醒我有關此當我回家。 」* Siri 便會產生一個連結到檢閱提醒應用程式中。
+可讓使用者使用 Siri 快速將它們目前正在檢視的應用程式中在日後若要檢視內容提醒。 例如，如果他們已檢視餐廳評論的應用程式中，他們就可以叫用 Siri 然後說出 *"提醒我有關此當我回家。 」* Siri 便會產生一個連結到檢閱提醒應用程式中。
 
 ## <a name="implementing-proactive-suggestions"></a>實作主動式建議
 
@@ -170,7 +171,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 1. 尋找他們想要符合在朋友的應用程式中的餐廳。
 4. 如果使用者切換至對應的應用程式時，餐廳的位址會自動建議做為目的地。
 5. 這甚至適用於第 3 個合作對象應用程式 (支援`NSUserActivity`)，因此使用者可以切換到騎共用應用程式和餐廳的位址會自動建議做為目的地那里以及。
-6. 它也提供內容給 Siri，讓使用者可以叫用餐廳應用程式內的 Siri 並詢問*「 取得說明...」* Siri 會提供到 「 餐廳 」 使用者檢視的方向。
+6. 它也提供內容給 Siri，讓使用者可以叫用餐廳應用程式內的 Siri 並詢問 *「 取得說明...」* Siri 會提供到 「 餐廳 」 使用者檢視的方向。
 
 所有上述功能共同具有一件事，但是所有建議原本來自何方。 在上述範例中，它可以是虛構的餐廳檢閱應用程式。
 

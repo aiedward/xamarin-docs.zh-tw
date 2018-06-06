@@ -1,5 +1,5 @@
 ---
-title: 資料表檢視
+title: Xamarin.Mac 中的資料表檢視
 description: 本文件涵蓋使用 Xamarin.Mac 應用程式中的資料表檢視。 它會描述 Xcode 介面產生器及與其互動的程式碼中建立的資料表檢視表。
 ms.prod: xamarin
 ms.assetid: 3B55B858-4769-4331-966A-7F53B3B7C720
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: c274405613f079cb61ad9c96497a9effdc7173f5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da26810869f23b8861ffb4409248c56bff12a521
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793226"
 ---
-# <a name="table-views"></a>資料表檢視
+# <a name="table-views-in-xamarinmac"></a>Xamarin.Mac 中的資料表檢視
 
 _本文件涵蓋使用 Xamarin.Mac 應用程式中的資料表檢視。它會描述 Xcode 介面產生器及與其互動的程式碼中建立的資料表檢視表。_
 
@@ -172,7 +173,7 @@ _本文件涵蓋使用 Xamarin.Mac 應用程式中的資料表檢視。它會描
 
 我們的資料表檢視表設計介面產生器中，並透過公開**插座**，接下來我們要建立 C# 程式碼以填入它。
 
-首先，我們來建立新`Product`類別以包裝為個別的資料列的資訊。 在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...**選取**一般** > **空類別**，輸入`Product`如**名稱**按一下**新增**按鈕：
+首先，我們來建立新`Product`類別以包裝為個別的資料列的資訊。 在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...** 選取**一般** > **空類別**，輸入`Product`如**名稱**按一下**新增**按鈕：
 
 [![](table-view-images/populate01.png "建立空的類別")](table-view-images/populate01.png#lightbox)
 
@@ -206,7 +207,7 @@ namespace MacTables
 
 ```
 
-接下來，我們需要建立的子類別`NSTableDataSource`要求時，提供資料的資料表。 在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...**選取**一般** > **空類別**，輸入`ProductTableDataSource`如**名稱**按一下**新增** 按鈕。
+接下來，我們需要建立的子類別`NSTableDataSource`要求時，提供資料的資料表。 在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...** 選取**一般** > **空類別**，輸入`ProductTableDataSource`如**名稱**按一下**新增** 按鈕。
 
 編輯`ProductTableDataSource.cs`檔案，並讓它看起來如下所示：
 
@@ -245,7 +246,7 @@ namespace MacTables
 
 這個類別已儲存的資料表檢視我們的項目，並覆寫`GetRowCount`傳回資料表中的資料列數目。
 
-最後，我們需要建立的子類別`NSTableDelegate`以提供資料表中的行為。 在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...**選取**一般** > **空類別**，輸入`ProductTableDelegate`如**名稱**按一下**新增** 按鈕。
+最後，我們需要建立的子類別`NSTableDelegate`以提供資料表中的行為。 在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...** 選取**一般** > **空類別**，輸入`ProductTableDelegate`如**名稱**按一下**新增** 按鈕。
 
 編輯`ProductTableDelegate.cs`檔案，並讓它看起來如下所示：
 

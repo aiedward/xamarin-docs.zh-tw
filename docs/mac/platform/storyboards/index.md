@@ -1,5 +1,5 @@
 ---
-title: 分鏡腳本的簡介
+title: 分鏡腳本中 Xamarin.Mac 簡介
 description: 本文章提供在 Xamarin.Mac 應用程式中使用的分鏡腳本的簡介。 其中涵蓋使用分鏡腳本和 Xcode 的 Interface Builder 建立與維護應用程式的 UI。
 ms.prod: xamarin
 ms.assetid: F37BA503-0B25-489F-80A8-58C493291A55
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: c5d69e1d11fb59afe3cdcbe11391af7eced733b3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 027998d6aff8aba4e5621b1cde51a24e18821ff9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792661"
 ---
-# <a name="introduction-to-storyboards"></a>分鏡腳本的簡介
+# <a name="introduction-to-storyboards-in-xamarinmac"></a>分鏡腳本中 Xamarin.Mac 簡介
 
 _本文章提供在 Xamarin.Mac 應用程式中使用的分鏡腳本的簡介。其中涵蓋建立和維護應用程式的 UI 使用分鏡腳本和 Xcode 的介面產生器。_
 

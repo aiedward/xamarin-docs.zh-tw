@@ -1,17 +1,18 @@
 ---
 title: iOS 的安全性和隱私權功能
-description: 本文涵蓋的 iOS 和它們如何影響 Xamarin.iOS 應用程式的安全性和隱私權的工作。
+description: 本文件描述安全性和隱私權功能的 Io，並討論如何使用 Xamarin.iOS。 它會查看 iOS 10 以及如何存取私用使用者資料所做的更新。
 ms.prod: xamarin
 ms.assetid: 718C8721-C359-4650-878A-D68E159A3F53
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 2ce6dadf2236c326fcbc2021509795182329010e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fd50e42536aabe16de3e44146d28950970dd801d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784412"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS 的安全性和隱私權功能
 

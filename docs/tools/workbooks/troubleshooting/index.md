@@ -1,14 +1,16 @@
 ---
 title: 疑難排解 Xamarin 活頁簿
+description: 提供使用 Xamarin 活頁簿的疑難排解資訊的各種指南的這個文件連結。 連結的內容討論一般的已知的問題，使用 Android 的活頁簿的問題，並提供支援相關的資源。
 ms.prod: xamarin
 ms.assetid: 1706EA2C-7A94-4E30-BD4D-A2F31070554F
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: a1f7213a5c6e02fcd266dd84ee9b7d09315ad275
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 0ef0a7680bf6e0c86926b6bbd0ddf661492919c7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794042"
 ---
 # <a name="troubleshooting-xamarin-workbooks"></a>疑難排解 Xamarin 活頁簿
 

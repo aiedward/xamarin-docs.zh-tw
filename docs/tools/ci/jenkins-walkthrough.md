@@ -1,16 +1,17 @@
 ---
 title: 使用 Jenkins 搭配 Xamarin
-description: 本指南說明如何設定為持續整合伺服器 Jenkins 和自動化編譯建立使用 Xamarin 的行動應用程式。 說明如何安裝 Jenkins OS X 上、 設定它，並設定作業，若要變更認可至原始程式碼管理系統時，編譯 Xamarin.iOS 和 Xamarin.Android 應用程式。
+description: 本文件說明如何使用 Jenkins 連續整合與 Xamarin 應用程式。 它討論如何安裝、 設定及使用 Jenkins。
 ms.prod: xamarin
 ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 1052507bfbf06e264f9e9da89be1e0f35fa70ce1
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 7e9069c698f82e9ec9c5009286c2a36b6722b7a8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793942"
 ---
 # <a name="using-jenkins-with-xamarin"></a>使用 Jenkins 搭配 Xamarin
 

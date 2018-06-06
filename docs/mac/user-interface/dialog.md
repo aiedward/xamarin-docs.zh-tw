@@ -1,5 +1,5 @@
 ---
-title: 對話方塊
+title: Xamarin.Mac 對話方塊
 description: 本文件涵蓋使用對話方塊和 Xamarin.Mac 應用程式中的強制回應視窗。 它描述在安裝 Xcode 和介面產生器中，使用標準的對話方塊，並與其互動 C# 程式碼中的這些控制項中建立強制回應視窗。
 ms.prod: xamarin
 ms.assetid: 55451990-B77B-4D44-B8BB-F874EC503B0C
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: cd0b57cc40d3f7cffd4d5711ec04a7225be870e9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7d9a93c8503d7e25f098e871378a22455b597e90
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792690"
 ---
-# <a name="dialogs"></a>對話方塊
+# <a name="dialogs-in-xamarinmac"></a>Xamarin.Mac 對話方塊
 
 當 Xamarin.Mac 應用程式中使用 C# 和.NET，您可以存取相同的對話方塊和強制回應視窗，工作的開發人員*OBJECTIVE-C*和*Xcode*沒有。 由於直接與 Xcode 整合 Xamarin.Mac，您可以使用 Xcode 的_介面產生器_建立，並維護您的強制回應視窗 （或您可以選擇直接在 C# 程式碼中建立它們）。
 
@@ -507,7 +508,7 @@ namespace MacWindows
     [![](dialog-images/pref09.png "設定 segue 類型")](dialog-images/pref09.png#lightbox)
 11. 儲存變更並返回 Visual Studio for Mac 同步處理。
 
-如果我們執行程式碼，並選取**喜好設定...**從**應用程式功能表**，視窗會顯示：
+如果我們執行程式碼，並選取**喜好設定...** 從**應用程式功能表**，視窗會顯示：
 
 [![](dialog-images/pref10.png "範例喜好設定 視窗")](dialog-images/pref10.png#lightbox)
 
@@ -951,7 +952,7 @@ if (dlg.RunModal () == 1) {
 
 [開啟] 對話方塊會傳回使用者的選取的檔案或目錄做為陣列中的 Url 的`URL`屬性。
 
-如果我們執行程式並選取**開啟...**項目從**檔案**就會顯示下列功能表： 
+如果我們執行程式並選取**開啟...** 項目從**檔案**就會顯示下列功能表： 
 
 [![](dialog-images/dialog03.png "開啟的對話方塊")](dialog-images/dialog03.png#lightbox)
 
@@ -1073,7 +1074,7 @@ void ShowSaveAs (NSObject sender)
 
 `AllowedFileTypes`屬性是使用者可以選擇將檔案儲存為的檔案類型的字串陣列。 檔案類型可以是指定做為擴充或_UTI_。 預設值是`null`，可讓使用任何檔案類型。
 
-如果我們將`ShowSaveAsSheet`屬性`false`，執行應用程式，並選取**另存新檔...**從**檔案**功能表上，將會顯示下列：
+如果我們將`ShowSaveAsSheet`屬性`false`，執行應用程式，並選取**另存新檔...** 從**檔案**功能表上，將會顯示下列：
 
 [![](dialog-images/save01.png "儲存對話方塊")](dialog-images/save01.png#lightbox)
 
@@ -1081,7 +1082,7 @@ void ShowSaveAs (NSObject sender)
 
 [![](dialog-images/save02.png "展開 [儲存] 對話方塊")](dialog-images/save02.png#lightbox)
 
-如果我們將`ShowSaveAsSheet`屬性`true`，執行應用程式，並選取**另存新檔...**從**檔案**功能表上，將會顯示下列：
+如果我們將`ShowSaveAsSheet`屬性`true`，執行應用程式，並選取**另存新檔...** 從**檔案**功能表上，將會顯示下列：
 
 [![](dialog-images/save03.png "儲存工作表")](dialog-images/save03.png#lightbox)
 

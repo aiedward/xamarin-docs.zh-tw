@@ -1,15 +1,17 @@
 ---
 title: 架構概觀
+description: 本文件說明 Xamarin 活頁簿中，檢查互動式代理程式和互動式用戶端如何一起運作的架構。
 ms.prod: xamarin
 ms.assetid: 6C0226BE-A0C4-4108-B482-0A903696AB04
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: b80576d3c43340a3c5dc2c6fe1ed20a277f14222
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3cd0d3e8cc47dd7fa43dfa0b910c9f09740fcc9a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794003"
 ---
 # <a name="architecture-overview"></a>架構概觀
 

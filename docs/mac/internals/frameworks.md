@@ -1,21 +1,20 @@
 ---
-title: 架構
-description: 本文件列出 Xamarin.Mac 所支援的架構。
+title: Xamarin.Mac 架構
+description: 開發與 Xamarin.Mac Mac 應用程式時，本文件列出各種 macOS 架構可供使用。
 ms.prod: xamarin
 ms.assetid: E8108E77-13FE-2EC2-83FF-AFE0408D3EE6
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 7e3ccfd9f23fa5c9c158ff49f0961b5140084d06
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8b4dc591d9fd606e9ee3ef6e34d9d29f44263392
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792286"
 ---
-# <a name="frameworks"></a>架構
-
-&nbsp;
+# <a name="xamarinmac-frameworks"></a>Xamarin.Mac 架構
 
 Xamarin.Mac 支援下列 macOS 架構：
 

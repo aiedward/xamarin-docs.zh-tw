@@ -1,18 +1,20 @@
 ---
-title: 功能表控制項 （強制觸控）
+title: watchOS 功能表控制項 （強制觸控） 中的 Xamarin
+description: 本文件說明如何在 Xamarin 中使用 watchOS 強制觸控筆勢。 其中也會討論如何回應強制觸控如何加入功能表和變更的功能表項目。
 ms.prod: xamarin
 ms.assetid: 5A7F83FB-9BC4-4812-92C5-CEC8DAE8211E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 4895f140acbc8a622cfb91c2fe9db6c5e9d9d1d7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4b973b925b99189416087224644c376864c56871
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791341"
 ---
-# <a name="menu-control-force-touch"></a>功能表控制項 （強制觸控）
+# <a name="watchos-menu-control-force-touch-in-xamarin"></a>watchOS 功能表控制項 （強制觸控） 中的 Xamarin
 
 監看式套件會提供觸發程序時實作監看式應用程式畫面上的功能表強制觸控筆勢。
 

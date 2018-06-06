@@ -1,17 +1,19 @@
 ---
-title: 使用圖示
+title: 使用 watchOS Xamarin 中的圖示
+description: 本文件說明各種 watchOS 應用程式以及如何設定要包含這些圖示的方案所需的圖示。
 ms.prod: xamarin
 ms.assetid: EE3D45BD-8091-4C04-BA83-371371D8BEB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: a7cdecaa2ba6a8c9f28ef8598fec31506eee6852
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 150cca754de26edffcf97bb5d39b26166662c75b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790662"
 ---
-# <a name="working-with-icons"></a>使用圖示
+# <a name="working-with-watchos-icons-in-xamarin"></a>使用 watchOS Xamarin 中的圖示
 
 Apple Watch 解決方案都需要兩個集合的圖示：
 
@@ -31,7 +33,7 @@ Apple Watch 解決方案都需要兩個集合的圖示：
 
 若要確保您的 iOS 應用程式和監看式應用程式會顯示正確的名稱和圖示，請遵循這些指示，針對每個專案：
 
-### <a name="ios-app"></a>iOS App
+### <a name="ios-app"></a>iOS 應用程式
 
 請參閱[iOS 應用程式圖示引導](~/ios/app-fundamentals/images-icons/app-icons.md)來確定已正確設定您的 iOS 應用程式圖示。
 

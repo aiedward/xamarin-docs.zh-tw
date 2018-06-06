@@ -1,14 +1,16 @@
 ---
 title: 已知的問題及因應措施
+description: 本文件說明已知的問題和因應措施 Xamarin 活頁簿。 它討論 CultureInfo 問題、 JSON 問題等等。
 ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 186faf3fc4f93d1c9a4af9e3e9f72afd569fed8b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b6dc3b119d3e85369a71638f2519b2ef0c85446c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794029"
 ---
 # <a name="known-issues--workarounds"></a>已知的問題及因應措施
 
@@ -56,7 +58,7 @@ CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 
 ## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>SkiaSharp 轉譯器沒有在活頁簿 1.3
 
-從活頁簿 1.3 開始，我們便移除了我們隨附 SkiaSharp 轉譯器在活頁簿 0.99.0，改用 SkiaSharp 本身提供的轉譯器，請使用我們的 [SDK] [/ 輔助線/跨-平台/活頁簿/sdk /]。
+從活頁簿 1.3 開始，我們便移除了我們隨附 SkiaSharp 轉譯器在活頁簿 0.99.0，改用 SkiaSharp 本身提供的轉譯器，請使用我們[SDK](~/tools/workbooks/sdk/index.md)。
 
 ### <a name="workaround"></a>因應措施
 

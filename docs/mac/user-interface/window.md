@@ -1,5 +1,5 @@
 ---
-title: Windows
+title: Windows 中 Xamarin.Mac
 description: 本文涵蓋了使用 windows 和 Xamarin.Mac 應用程式中的面板。 它說明建立 windows 和 Xcode 和介面產生器中，從 分鏡腳本和.xib 檔案載入它們以及它們以程式設計方式使用中的面板。
 ms.prod: xamarin
 ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f45bc69b74d98c7b9130f2caeaee91b184c38d87
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 39efcf3554469219cc29d70ee059fe645c41280d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794068"
 ---
-# <a name="windows"></a>Windows
+# <a name="windows-in-xamarinmac"></a>Windows 中 Xamarin.Mac
 
 _本文涵蓋了使用 windows 和 Xamarin.Mac 應用程式中的面板。它說明建立 windows 和 Xcode 和介面產生器中，從 分鏡腳本和.xib 檔案載入它們以及它們以程式設計方式使用中的面板。_
 
@@ -687,7 +688,7 @@ void OpenDialog (NSObject sender)
 }
 ```
 
-現在如果我們執行我們的應用程式，請選取**開啟...**從**檔案**功能表上，選取從文字檔**開啟**對話方塊方塊中，並將它開啟：
+現在如果我們執行我們的應用程式，請選取**開啟...** 從**檔案**功能表上，選取從文字檔**開啟**對話方塊方塊中，並將它開啟：
 
 [![](window-images/file03.png "開啟的對話方塊")](window-images/file03.png#lightbox)
 
@@ -719,7 +720,7 @@ void OpenDialog (NSObject sender)
 7. 選取**顯示**從快顯功能表。
 6. 儲存變更並返回 Visual Studio for Mac 使用 Xcode 進行同步處理。
 
-如果我們執行程式碼，並選取**喜好設定...**從**應用程式功能表**，視窗會顯示：
+如果我們執行程式碼，並選取**喜好設定...** 從**應用程式功能表**，視窗會顯示：
 
 [![](window-images/new04.png "範例喜好設定 功能表")](window-images/new04.png#lightbox)
 

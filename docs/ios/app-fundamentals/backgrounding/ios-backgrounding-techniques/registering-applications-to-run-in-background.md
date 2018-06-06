@@ -1,18 +1,20 @@
 ---
-title: 註冊在背景中執行的應用程式
+title: 若要在背景中執行的註冊 Xamarin.iOS 應用程式
+description: 本文件說明如何註冊一個 Xamarin.iOS 在背景中執行的應用程式。 它討論音訊應用程式、 VoIP 應用程式、 外部附屬應用程式與藍芽，等等。
 ms.prod: xamarin
 ms.assetid: 8F89BE63-DDB5-4740-A69D-F60AEB21150D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 58ee68f765372094d68c3cf30ed6a631a67fe313
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f4774f6b4f5412c44dc985bd40129a178b1e813c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783671"
 ---
-# <a name="registering-applications-to-run-in-the-background"></a>註冊在背景中執行的應用程式
+# <a name="registering-xamarinios-apps-to-run-in-the-background"></a>若要在背景中執行的註冊 Xamarin.iOS 應用程式
 
 註冊個別工作的背景權限適用於某些應用程式，但如果應用程式經常執行重要、 長時間執行的工作，例如快速入門說明透過 GPS 使用者呼叫時，會發生什麼事？ 此類應用程式應該改為註冊為已知的背景需要應用程式。
 

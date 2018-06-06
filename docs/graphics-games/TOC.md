@@ -2,7 +2,7 @@
 ## [遊戲開發](game-development/index.md)
 ## [SkiaSharp](skiasharp/index.md)
 ### [簡介](skiasharp/introduction.md)
-### [平台專用備註](skiasharp/platform.md)
+### [平台專屬附註](skiasharp/platform.md)
 
 
 

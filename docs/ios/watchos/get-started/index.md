@@ -1,19 +1,20 @@
 ---
-title: 開始使用 watchOS
-description: WatchOS 和如何建置監看式應用程式簡介
+title: 在 Xamarin watchOS 使用者入門
+description: 描述如何使用 Xamarin watchOS 開發入門的各種指南的這個文件連結。 連結的內容提供簡介 watchOS、 說明如何安裝 Xamarin，watchOS 支援和示範如何建置的初始應用程式。
 ms.prod: xamarin
 ms.assetid: BB938008-C013-4A1D-8229-FEEE94F83BBD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 7eabcb9a9ea300eccf34737e634168defe2948e7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 66482d72bebabbc6fd5c4f4a252ac81d1b73dd05
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790889"
 ---
-# <a name="getting-started-with-watchos"></a>開始使用 watchOS
+# <a name="getting-started-with-watchos-in-xamarin"></a>在 Xamarin watchOS 使用者入門
 
 _WatchOS 和如何建置監看式應用程式簡介_
 

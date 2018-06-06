@@ -1,21 +1,20 @@
 ---
-title: 在程式碼中建立 iOS 使用者介面
-description: Xamarin.iOS 提供兩種方法的建立應用程式-適用於 iOS 或程式碼中，Xamarin 設計工具中使用的使用者介面。 這篇文章探討如何建立 iOS 完全以程式碼使用者介面。 它會顯示如何從專案範本從 UIKit 建立檢視表的階層會建立在控制器中的應用程式螢幕啟動。 然後，它討論如何在控制器中建立可載入的自訂檢視。
+title: 建立程式碼中 Xamarin.iOS iOS 使用者介面
+description: 本文件說明如何使用程式碼建置 Xamarin.iOS 應用程式的使用者介面。 其中也會討論檢視控制器，建置檢視階層時，處理旋轉，等等。
 ms.prod: xamarin
 ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: e2f377b11cfb1ff5027cc704de694184d2208c97
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 5e8abc2cea2e2ca8abfada8bc85379d93d183768
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784630"
 ---
-# <a name="creating-ios-user-interfaces-in-code"></a>在程式碼中建立 iOS 使用者介面
-
-_Xamarin.iOS 提供兩種方法的建立應用程式-適用於 iOS 或程式碼中，Xamarin 設計工具中使用的使用者介面。這篇文章探討如何建立 iOS 完全以程式碼使用者介面。它會顯示如何從專案範本從 UIKit 建立檢視表的階層會建立在控制器中的應用程式螢幕啟動。然後，它討論如何在控制器中建立可載入的自訂檢視。_
+# <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>建立程式碼中 Xamarin.iOS iOS 使用者介面
 
 IOS 應用程式的使用者介面就像 storefront – 應用程式通常會取得一個視窗，但它可以充滿視窗需要在它的許多物件，並根據應用程式想要顯示，則可以變更的物件和排列方式。 此案例中的物件 (使用者所看見的內容) 稱為「檢視」。 若要建置的應用程式中的單一畫面，檢視會彼此交互堆疊在內容檢視階層中，與階層由單一檢視控制器管理。 具有多個畫面的應用程式會有多個內容檢視階層，每個都有它自己的檢視控制器，而應用程式會將檢視放置於視窗中，以根據使用者所在畫面建立不同的內容檢視階層。
 

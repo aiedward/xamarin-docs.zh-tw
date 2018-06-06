@@ -1,20 +1,19 @@
 ---
 title: Xamarin 分析工具疑難排解
-description: 疑難排解 Xamarin 分析工具
+description: 本文件提供 Xamarin 分析工具的相關的疑難排解資訊。 它會描述與記錄和診斷，在 IDE 中其他主題相關的問題。
 ms.prod: xamarin
 ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 9e2f9a35f37513ce0cb785f2bd922aeccf42dd8e
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 247a18cf7f645ea90d100cb3f4900f30ac7754cc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793847"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin 分析工具疑難排解
-
-_疑難排解 Xamarin 分析工具_
 
 ## <a name="logging-and-diagnostics"></a>記錄和診斷功能
 
@@ -25,6 +24,7 @@ Xamarin 小組有助於追蹤問題，如果您提供使用資訊，包括：
 - **.Mlpd**所產生的程式碼剖析工作階段 （請參閱下文）。
 
 ### <a name="getting-log-outputs"></a>取得記錄檔輸出
+
 記錄檔儲存至 Mac 上`~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log`。
 
 在 Windows 中，這些會儲存到`%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log`每當您提交的問題，請包含最新的記錄。
@@ -49,7 +49,6 @@ Xamarin 小組有助於追蹤問題，如果您提供使用資訊，包括：
 
 ![](troubleshooting-images/image17-vs.png "在 Visual Studio 中儲存.mlpd 檔案")
 
-
 請務必注意 **.mlpd**包含許多資訊，而且檔案大小會是大。
 
 ## <a name="troubleshooting"></a>疑難排解
@@ -70,7 +69,6 @@ Xamarin 小組有助於追蹤問題，如果您提供使用資訊，包括：
 - 確認您已登入，並正確通過驗證。
 - [Visual Studio]您必須使用[Visual Studio Enterprise](https://www.visualstudio.com/vs/enterprise/)而且具有有效的企業授權。
 
-
 #### <a name="i-get-an-error-when-i-try-to-launch-the-profiler"></a>當我嘗試啟動分析工具時收到錯誤
 
 如果您在此錯誤中時執行使用 Visual Studio 中的程式碼剖析工具：
@@ -83,14 +81,11 @@ Xamarin 小組有助於追蹤問題，如果您提供使用資訊，包括：
 
 如果您有想要特別注意的執行緒，很適合用來命名執行緒中的最開頭建立，好讓 get 取得`ThreadName`而不是`0x0`。 例如若要為 UI 中設定執行緒名稱，您可以使用下列程式碼：
 
-
 ```csharp
 RunOnUiThread (() => {
   Thread.CurrentThread.Name  = "UI";
 });
 ```
-
-
 
 ## <a name="related-links"></a>相關連結
 

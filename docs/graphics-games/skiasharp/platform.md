@@ -1,18 +1,19 @@
 ---
-title: SkiaSharp 平台的特定詳細資料
-description: 如何 SKSurface 內容帶入原生應用程式的詳細資料。
+title: SkiaSharp 平台專屬附註
+description: 本文件說明 SkiaSharp 與相關的特定平台詳細資料。 它會提供範例程式碼而言，iOS、 Android、 macOS、 Windows 和 Xamarin.Forms。
 ms.prod: xamarin
 ms.assetid: 1D90E0B3-A3A8-4286-BC54-9D67188A1C6C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 3f40c7ea0b118816b7be373617795db9158c1450
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: bcec8f2c850396f45cba795555b924d3cbc4ef22
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783525"
 ---
-# <a name="platform-specific-integration"></a>平台特定的整合
+# <a name="skiasharp-platform-specific-notes"></a>SkiaSharp 平台專屬附註
 
 下列範例手動配置映像緩衝區，這麼做是為了說明常見的平台模式也就是平台所提供的現有 RBGA 緩衝區上繪製。
 

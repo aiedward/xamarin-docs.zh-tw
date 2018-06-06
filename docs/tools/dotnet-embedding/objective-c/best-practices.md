@@ -1,15 +1,17 @@
 ---
-title: .NET 內嵌 OBJECTIVE-C 適用的最佳作法
+title: OBJECTIVE-C 適用的.NET 內嵌最佳作法
+description: 本文件說明使用.NET 嵌入目標 C.各種最佳作法 它討論公開 managed 程式碼的子集、 公開 chunkier API、 命名和更多。
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: e592a76e428d23881f1fe2dc5c7254999bece517
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b4b0df6f1c7c1d5931c0c18a1508747a7c570bea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793489"
 ---
 # <a name="net-embedding-best-practices-for-objective-c"></a>OBJECTIVE-C 適用的.NET 內嵌最佳作法
 

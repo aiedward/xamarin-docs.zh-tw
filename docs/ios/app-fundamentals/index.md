@@ -1,19 +1,20 @@
 ---
-title: 應用程式基本概念
-description: 應用程式的核心概念
+title: Xamarin.iOS 應用程式基本概念
+description: 此文件指南的連結各種描述 Xamarin.iOS 開發，例如應用程式的傳輸安全性基本概念 backgrounding，事件和執行緒處理。
 ms.prod: xamarin
 ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/21/2017
-ms.openlocfilehash: d8dc1e25de527357fe6ad3ad1328a930e0e4dc70
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cdace50d851b2c99f9241b869f248e58d5b93377
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784493"
 ---
-# <a name="application-fundamentals"></a>應用程式基本概念
+# <a name="xamarinios-application-fundamentals"></a>Xamarin.iOS 應用程式基本概念
 
 此章節提供一些較常見的工作項目或概念，開發人員需要開發 Xamarin.iOS (先前稱為 MonoTouch) 應用程式時應該注意的指南。
 

@@ -1,15 +1,17 @@
 ---
 title: .NET 內嵌限制
+description: 本文件說明的.NET 內嵌，此工具，可讓您使用其他程式設計語言中的.NET 程式碼的限制。
 ms.prod: xamarin
 ms.assetid: EBBBB886-1CEF-4DF4-AFDD-CA96049F878E
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 8ea3e7c6ff2fc28700c46109a814fc5da6958500
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: fdd3ac4cd57ac7f79f9071d62e758625b30f05dd
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794120"
 ---
 # <a name="net-embedding-limitations"></a>.NET 內嵌限制
 
@@ -21,7 +23,7 @@ ms.lasthandoff: 05/09/2018
 
 您不可以有兩個共置在相同的應用程式內現有的單聲道執行階段。 這表示您不能使用兩個不同.NET 內嵌所產生的程式庫相同的應用程式內。
 
-**因應措施：**您可用來建立單一的程式庫包含數個組件 （從不同專案） 產生器。
+**因應措施：** 您可用來建立單一的程式庫包含數個組件 （從不同專案） 產生器。
 
 ### <a name="subclassing"></a>子類別化
 

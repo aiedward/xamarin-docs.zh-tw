@@ -1,19 +1,20 @@
 ---
-title: 分鏡腳本快速入門
-description: 取得已啟動的建置 macOS 分鏡腳本包含使用者介面。
+title: 分鏡腳本中 Xamarin.Mac-快速入門
+description: 本文件提供建置 macOS 分鏡腳本 Xamarin.Mac 中包含使用者介面的快速簡介。 說明如何建立 segue，並建立喜好設定 視窗。
 ms.prod: xamarin
 ms.assetid: 20719B5D-8147-4E8A-A23C-8D575C7ACCEE
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: 0c366de844b119736763f7d419d6bc9bb3fbfc0a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2bf91a51a55583e2ba8ca1fc09eb3dcd0d9986cf
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792567"
 ---
-# <a name="starting-a-new-storyboard-based-project"></a>正在啟動新的分鏡腳本定專案
+# <a name="storyboards-in-xamarinmac--quick-start"></a>分鏡腳本中 Xamarin.Mac-快速入門
 
 為快速介紹使用腳本來定義 Xamarin.Mac 應用程式的使用者介面，讓我們開始新 Xamarin.Mac 專案。 選取 [Mac] > [應用程式][Cocoa 應用程式] > ，然後按一下 [下一步] 按鈕：
 
@@ -107,7 +108,7 @@ ms.lasthandoff: 04/04/2018
 
 [![](quickstart-images/qs19.png "設定條件約束")](quickstart-images/qs19.png#lightbox)
 
-接下來，我們想要顯示喜好設定 視窗，當使用者選取**喜好設定...**功能表項目。 從功能表列中，選取 喜好設定功能表項目，**控制項**金鑰按一下和拖曳一條線到我們的索引標籤檢視控制站：
+接下來，我們想要顯示喜好設定 視窗，當使用者選取**喜好設定...** 功能表項目。 從功能表列中，選取 喜好設定功能表項目，**控制項**金鑰按一下和拖曳一條線到我們的索引標籤檢視控制站：
 
 [![](quickstart-images/qs20.png "若要建立 segue 拖曳")](quickstart-images/qs20.png#lightbox)
 
@@ -115,7 +116,7 @@ ms.lasthandoff: 04/04/2018
 
 [![](quickstart-images/qs21.png "選取 segue 類型")](quickstart-images/qs21.png#lightbox)
 
-如果我們儲存變更，回到 Visual Studio for Mac 上，執行應用程式，然後選取**喜好設定...**功能表項目 對話方塊將會顯示我們新的喜好設定：
+如果我們儲存變更，回到 Visual Studio for Mac 上，執行應用程式，然後選取**喜好設定...** 功能表項目 對話方塊將會顯示我們新的喜好設定：
 
 [![](quickstart-images/qs22.png "執行 segue 的範例")](quickstart-images/qs22.png#lightbox)
 
@@ -129,7 +130,7 @@ ms.lasthandoff: 04/04/2018
 
 [![](quickstart-images/qs24.png "在 Xcode 中設定每個索引標籤")](quickstart-images/qs24.png#lightbox)
 
-如果我們儲存變更，回到 Visual Studio for Mac 上，執行應用程式，然後選取**喜好設定...**功能表項目，像標準 macOS 應用程式，現在顯示的對話方塊：
+如果我們儲存變更，回到 Visual Studio for Mac 上，執行應用程式，然後選取**喜好設定...** 功能表項目，像標準 macOS 應用程式，現在顯示的對話方塊：
 
 [![](quickstart-images/qs25.png "執行 [喜好設定] 視窗的範例")](quickstart-images/qs25.png#lightbox)
 

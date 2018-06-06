@@ -1,23 +1,23 @@
 ---
-title: 疑難排解
-description: Xamarin Live 播放程式，以及如何加以修正的已知的問題。
+title: 疑難排解 Xamarin 即時 Player
+description: 本文件說明 Xamarin Live Player 和可能的修正方法的已知的問題。 它討論的連線問題、 組態問題，以及更多。
 ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
 author: topgenorth
 ms.author: toopge
 ms.date: 05/17/2017
-ms.openlocfilehash: 147ce43d3fe764f71f27dce46b699142dfb99872
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3db14db2c64e024ef1c04275661f610f9407dfb7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793751"
 ---
-# <a name="troubleshooting"></a>疑難排解
+# <a name="troubleshooting-xamarin-live-player"></a>疑難排解 Xamarin 即時 Player
 
 ![預覽功能](~/media/shared/preview.png)
 
 本文說明一些常見的問題，並提供的步驟來更正它們。
-
 
 ## <a name="mobile-device-does-not-connect-after-scanning-barcode-or-entering-code"></a>行動裝置不會掃描條碼 （或輸入的程式碼） 之後，連線
 
@@ -27,7 +27,6 @@ ms.lasthandoff: 05/09/2018
   - 如果電腦連接到有線網路，請嘗試拔除有線的連線。
 - 網路可能會受到嚴密保護 （例如某些公司網路中），封鎖 Xamarin Live 播放程式所需的連接埠。
 - 關閉 Xamarin Live 播放器應用程式，然後重新啟動它。
-
 
 ## <a name="error-while-trying-to-deploy-message-in-ide"></a>在 IDE 中的 「 嘗試部署時的錯誤 」 訊息
 
@@ -67,7 +66,6 @@ Xamarin Live Player 點選內**組**或**再次組**，然後按下**手動輸�
 
 移至：https://www.guidgenerator.com/online-guid-generator.aspx並產生新的 guid，並確定在大寫。
 
-
 **步驟 5： 設定裝置**
 
 開啟  **PlayerDeviceList.xml**向上例如 Visual Studio 或 Visual Studio Code 編輯器中。 您需要此檔案中手動設定您的裝置。 根據預設，此檔案應該包含下列空白`Devices`XML 項目：
@@ -98,7 +96,6 @@ Xamarin Live Player 點選內**組**或**再次組**，然後按下**手動輸�
 </PlayerDevice>
 ```
 
-
 **新增 Android 裝置：**
 
 ```xml
@@ -118,7 +115,6 @@ Xamarin Live Player 點選內**組**或**再次組**，然後按下**手動輸�
 ```
 
 **關閉並重新開啟 Visual Studio。** 您的裝置應該顯示在清單中。
-
 
 ## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>「 型別或命名空間無法找 」 訊息在 IDE 中
 
@@ -141,9 +137,7 @@ AXML 檔案目前不支援 Xamarin Live 播放程式中。
 
 Xamarin.Forms Android 專案必須使用 「 Toolbar.axml"和"Tabbar.axml 」 相關的配置檔案的名稱。 預設範本會使用這些名稱。重新命名會造成呈現問題。
 
-
 請將任何其他的問題報告上[bugzilla](https://aka.ms/live-player-report-issue)。
-
 
 ## <a name="related-links"></a>相關連結
 

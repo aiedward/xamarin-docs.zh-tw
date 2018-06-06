@@ -1,20 +1,21 @@
 ---
-title: 非同步總覽
-description: C# 語言 – 第 5 版 – 的最新版本導入了兩個新的關鍵字來表示非同步作業： async 和 await。 這些關鍵字可讓您在另一個執行緒中撰寫簡單的程式碼，它會利用工作平行程式庫執行長時間執行的作業 （例如網路存取），並輕鬆地存取在完成的結果。 最新版的 Xamarin.iOS 和 Xamarin.Android 支援 async 和 await-本文件提供說明和使用新語法中使用 Xamarin 的範例。
+title: 非同步支援概觀
+description: 本文件描述使用非同步程式設計，並等候時，若要更輕鬆地撰寫非同步程式碼的 C# 5 中的概念。
 ms.prod: xamarin
 ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 5d6bb9581a4429502d9a70385b3ee2ff056f30ee
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 22878695d93ae79bbbfe1b99961587ff0bf957be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782004"
 ---
 # <a name="async-support-overview"></a>非同步支援概觀
 
-_C# 語言 – 第 5 版 – 的最新版本導入了兩個新的關鍵字來表示非同步作業： async 和 await。這些關鍵字可讓您在另一個執行緒中撰寫簡單的程式碼，它會利用工作平行程式庫執行長時間執行的作業 （例如網路存取），並輕鬆地存取在完成的結果。最新版的 Xamarin.iOS 和 Xamarin.Android 支援 async 和 await-本文件提供說明和使用新語法中使用 Xamarin 的範例。_
+_C# 5 導入了兩個關鍵字，以簡化非同步程式設計： async 和 await。這些關鍵字可讓您在另一個執行緒中撰寫簡單的程式碼，它會利用工作平行程式庫執行長時間執行的作業 （例如網路存取），並輕鬆地存取在完成的結果。最新版的 Xamarin.iOS 和 Xamarin.Android 支援 async 和 await-本文件提供說明和使用新語法中使用 Xamarin 的範例。_
 
 Xamarin 的非同步支援單聲道 3.0 基礎上建置，並從正在行動設備友善的 Silverlight 版本是.NET 4.5 的行動設備友善版本升級應用程式開發介面的設定檔。
 

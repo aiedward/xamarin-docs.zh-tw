@@ -1,33 +1,35 @@
 ---
-title: SpriteKit
+title: 在 Xamarin.iOS SpriteKit
+description: 本文件說明 SpriteKit，Apple 的 2D 圖形 framework SceneKit 與整合、 併入了物理和動畫，包括支援光源和陰影，等等。 SpriteKit 可以用來建立 2D 遊戲。
 ms.prod: xamarin
 ms.assetid: 93971DAE-ED6B-48A8-8E61-15C0C79786BB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 967fd5b25213478c89d1ab849b6c0b7ac66d0e20
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b74b5a722aab240b55ed96bea2a33b162d7817eb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786765"
 ---
-# <a name="spritekit"></a>SpriteKit
+# <a name="spritekit-in-xamarinios"></a>在 Xamarin.iOS SpriteKit
 
-精靈套件，2D 遊戲，向 Apple 架構有一些有趣的新功能，在 iOS 8 和 OS X Yosemite。 這些包括整合場景套件、 著色器支援、 光源、 陰影、 條件約束、 法線貼圖產生與物理增強功能。 特別是，新物理功能使遊戲中加入實際的效果很容易。
+SpriteKit、 2D 圖形架構，向 Apple 有一些有趣的新功能，在 iOS 8 和 OS X Yosemite。 這些包括整合 SceneKit、 著色器支援、 光源、 陰影、 條件約束、 法線貼圖產生與物理增強功能。 特別是，新物理功能使遊戲中加入實際的效果很容易。
 
 ## <a name="physics-bodies"></a>物理內文
 
-精靈套件包含的 2D 固定主體物理應用程式開發介面。 每個精靈具有相關聯的物理主體 (`SKPhysicsBody`) 物理世界中定義的物理屬性，例如大型和人事，以及主體的幾何。
+SpriteKit 包括 2D，固定主體物理應用程式開發介面。 每個精靈具有相關聯的物理主體 (`SKPhysicsBody`) 物理世界中定義的物理屬性，例如大型和人事，以及主體的幾何。
 
 ## <a name="creating-a-physics-body-from-a-texture"></a>從紋理建立物理主體
-精靈套件現在支援從其紋理衍生物理主體的精靈。 這使得容易實作看起來更自然的衝突。
+SpriteKit 現在支援從其紋理衍生物理主體的精靈。 這使得容易實作看起來更自然的衝突。
 
 例如，請注意，在下列衝突香蕉和猴子幾乎會在每個影像表面衝突的方式：
  
 ![](spritekit-images/image13.png "香蕉和猴子衝突幾乎會在每個映像的介面")
 
-精靈套件建立這類物理主體可讓使用一行程式碼。 只需呼叫`SKPhysicsBody.Create`使用紋理和大小： 小精靈。PhysicsBody = SKPhysicsBody.Create （精靈。紋理，精靈。大小）。
+SpriteKit 建立這類物理主體可讓使用一行程式碼。 只需呼叫`SKPhysicsBody.Create`使用紋理和大小： 小精靈。PhysicsBody = SKPhysicsBody.Create （精靈。紋理，精靈。大小）。
 
 ## <a name="alpha-threshold"></a>Alpha 閾值
 
@@ -45,7 +47,7 @@ sprite.PhysicsBody = SKPhysicsBody.Create (sprite.Texture, 0.7f, sprite.Size);
  
 ## <a name="physics-fields"></a>物理欄位
 
-另一項絕佳新增套件精靈是新物理欄位支援。 這些選項可讓您新增項目頂點處欄位，例如星形重力欄位和要命名在短短幾 spring 欄位。
+另一個絕佳 SpriteKit 是新物理欄位支援。 這些選項可讓您新增項目頂點處欄位，例如星形重力欄位和要命名在短短幾 spring 欄位。
 
 建立使用 SKFieldNode 類別，它會加入至場景，如同任何其他物理欄位`SKNode`。 上有各種不同的 factory 方法`SKFieldNode`建立不同的物理欄位。 您可以藉由呼叫建立 spring 欄位`SKFieldNode.CreateSpringField()`，藉由呼叫星形重力欄位`SKFieldNode.CreateRadialGravityField()`，依此類推。
 

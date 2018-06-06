@@ -1,5 +1,5 @@
 ---
-title: 使用 資料表檢視
+title: 使用 tvOS Xamarin 中的資料表檢視
 description: 本文涵蓋設計和資料表檢視和資料表檢視控制器 Xamarin.tvOS 應用程式內使用。
 ms.prod: xamarin
 ms.assetid: D8F80FA9-6400-4DB7-AFC9-A28A54AD04E8
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8864e85e4d657fc242f6c06b21c815f62055c9f4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8c74c2cc7598f50e57a6a450823e2b0ebca4b537
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789563"
 ---
-# <a name="working-with-table-views"></a>使用 資料表檢視
+# <a name="working-with-tvos-table-views-in-xamarin"></a>使用 tvOS Xamarin 中的資料表檢視
 
 _本文涵蓋設計和資料表檢視和資料表檢視控制器 Xamarin.tvOS 應用程式內使用。_
 
@@ -285,7 +286,7 @@ namespace tvTable
 
 每個資料表的檢視表需要資料來源 (`UITableViewDataSource`) 來提供資料表的資料，並產生必要的資料列，因為所需的資料表檢視表。
 
-上述範例中，以滑鼠右鍵按一下專案名稱中**方案總管 中**，選取**新增** > **新的檔案...**並呼叫它`AttractionTableDatasource`按一下**新增** 按鈕來建立。 接著，編輯`AttractionTableDatasource.cs`檔案，並讓它看起來如下所示：
+上述範例中，以滑鼠右鍵按一下專案名稱中**方案總管 中**，選取**新增** > **新的檔案...** 並呼叫它`AttractionTableDatasource`按一下**新增** 按鈕來建立。 接著，編輯`AttractionTableDatasource.cs`檔案，並讓它看起來如下所示：
 
 ```csharp
 using System;
@@ -477,7 +478,7 @@ public override UITableViewCell GetCell (UITableView tableView, Foundation.NSInd
 
 每個資料表的檢視表需要委派 (`UITableViewDelegate`) 回應使用者互動或資料表上的其他系統事件。
 
-上述範例中，以滑鼠右鍵按一下專案名稱中**方案總管 中**，選取**新增** > **新的檔案...**並呼叫它`AttractionTableDelegate`按一下**新增** 按鈕來建立。 接著，編輯`AttractionTableDelegate.cs`檔案，並讓它看起來如下所示：
+上述範例中，以滑鼠右鍵按一下專案名稱中**方案總管 中**，選取**新增** > **新的檔案...** 並呼叫它`AttractionTableDelegate`按一下**新增** 按鈕來建立。 接著，編輯`AttractionTableDelegate.cs`檔案，並讓它看起來如下所示：
 
 ```csharp
 using System;

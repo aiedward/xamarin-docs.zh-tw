@@ -1,18 +1,20 @@
 ---
-title: 在應用程式內購買基本概念和組態
+title: 在應用程式內購買基本知識和設定 Xamarin.iOS
+description: 本文件說明 Xamarin.iOS，討論相關資訊的相關規則、 組態和 iTunes Connect 中的應用程式內購買。
 ms.prod: xamarin
 ms.assetid: 11FB7F02-41B3-2B34-5A4F-69F12897FE10
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c08d27ce2f5d41b7de1d08ea73232e92f9fa8144
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9ded160ad4b31346c400e63d739a3dc21f6304d3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787239"
 ---
-# <a name="in-app-purchase-basics-and-configuration"></a>在應用程式內購買基本概念和組態
+# <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>在應用程式內購買基本知識和設定 Xamarin.iOS
 
 實作在應用程式內購買需要利用 StoreKit API，在裝置上的應用程式。 StoreKit 管理所有與 Apple iTunes 伺服器以取得產品資訊並執行交易的通訊。 佈建設定檔必須設定應用程式內購買，並在 iTunes Connect 中必須輸入產品資訊。
 

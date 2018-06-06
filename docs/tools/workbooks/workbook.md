@@ -1,20 +1,19 @@
 ---
 title: 互動式活頁簿
-description: 使用活頁簿建立即時的文件的 C# 程式碼進行實驗，教導訓練或瀏覽。
+description: 本文件說明如何使用 Xamarin 活頁簿來建立包含 C# 程式碼的實驗，教學、 定型，或瀏覽即時文件。
 ms.prod: xamarin
 ms.assetid: B79E5DE9-5389-4691-9AA3-FF4336CE294E
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: de88bbc9bc45b8a6326924d964bdd9385acb82aa
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: fa79aae9af2cd90741a54a5b3abc17910fcb181d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794172"
 ---
 # <a name="interactive-workbooks"></a>互動式活頁簿
-
-_使用活頁簿建立即時的文件的 C# 程式碼進行實驗，教導訓練或瀏覽。_
 
 您可以使用活頁簿當做獨立應用程式，不同於您的 IDE。
 

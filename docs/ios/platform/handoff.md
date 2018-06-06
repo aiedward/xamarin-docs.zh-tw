@@ -1,18 +1,19 @@
 ---
-title: 遞交
+title: Xamarin.iOS 中遞交
 description: 本文章涵蓋在要傳送的 Xamarin.iOS 應用程式中使用的遞移式使用者上所執行的應用程式之間的使用者活動的其他裝置。
 ms.prod: xamarin
 ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bb665c7ffd4241fac14be13ebd8f113d11afd417
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ec324e8fb8327b622424311b89567608311a6a19
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787516"
 ---
-# <a name="handoff"></a>遞交
+# <a name="handoff-in-xamarinios"></a>Xamarin.iOS 中遞交
 
 _本文章涵蓋在要傳送的 Xamarin.iOS 應用程式中使用的遞移式使用者上所執行的應用程式之間的使用者活動的其他裝置。_
 

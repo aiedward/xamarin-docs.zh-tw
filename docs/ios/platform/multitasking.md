@@ -1,5 +1,5 @@
 ---
-title: 適用於 iPad 的多工
+title: 適用於 iPad 的 Xamarin.iOS 多工作業
 description: iOS 9 支援在同一時間、 透過使用投影片或分割檢視執行的兩個應用程式。 它也支援視訊播放圖片的圖片。
 ms.prod: xamarin
 ms.assetid: 0F2266D7-21FF-404D-A148-0CFDE76B12AA
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 553fd6e45df897037d6ad90ef9211eef0bf27aae
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7eacd9ece067d2ddf6363c0551055daa3df4433a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787951"
 ---
-# <a name="multitasking-for-ipad"></a>適用於 iPad 的多工
+# <a name="multitasking-for-ipad-in-xamarinios"></a>適用於 iPad 的 Xamarin.iOS 多工作業
 
 _iOS 9 支援在同一時間、 透過使用投影片或分割檢視執行的兩個應用程式。它也支援視訊播放圖片的圖片。_
 
@@ -126,7 +127,7 @@ IOS 9 之前，您可以設計您的應用程式，針對特定裝置的螢幕�
 
 | **方向** | **主要的應用程式** | **次要應用程式** |
 |--- |--- |--- |
-| **Portrait** |75%的螢幕<br />Compact 水平<br />規則的垂直|25%的螢幕<br />Compact 水平<br />規則的垂直|
+| **直向** |75%的螢幕<br />Compact 水平<br />規則的垂直|25%的螢幕<br />Compact 水平<br />規則的垂直|
 | **橫向** |75%的螢幕<br />規則的水平<br />規則的垂直|25%的螢幕<br />Compact 水平<br />規則的垂直|
 | **橫向** |50%的螢幕<br />Compact 水平<br />規則的垂直|50%的螢幕<br />Compact 水平<br />規則的垂直|
 
@@ -142,7 +143,7 @@ IOS 9 之前，您可以設計您的應用程式，針對特定裝置的螢幕�
 
 此外，您可以不再依賴裝置螢幕範圍來定義應用程式的可見區域，您必須改為使用您的應用程式視窗界限。 由於視窗界限完全控制的使用者，無法以程式設計方式調整它們，或防止使用者變更這些界限。
 
-最後，您的應用程式必須使用分鏡腳本檔案來顯示啟動螢幕而不是使用一組**.png**影像檔，並支援所有的四個介面方向 （直向、 顛倒直向、 橫向左右橫向）若要在投影片上面板中，或在分割檢視模式中執行的考量。
+最後，您的應用程式必須使用分鏡腳本檔案來顯示啟動螢幕而不是使用一組 **.png**影像檔，並支援所有的四個介面方向 （直向、 顛倒直向、 橫向左右橫向）若要在投影片上面板中，或在分割檢視模式中執行的考量。
 
 <a name="Custom-Hardware-Keyboard-Shortcuts" />
 

@@ -1,21 +1,20 @@
 ---
-title: 背景工作
-description: 使用新的背景工作 watchOS 3 確保監看式應用程式一律會擁有最新的資料和停駐快照集。
+title: watchOS Xamarin 的背景工作
+description: 本文件說明如何使用 Xamarin，看看一個背景工作類型、 使用的資源，背景工作、 排程、 最佳做法及多個實作中 watchOS 背景工作。
 ms.prod: xamarin
 ms.assetid: 2049C430-7566-45F8-9E3D-1446F484981E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/13/2017
-ms.openlocfilehash: 0279aed1e694e3b38dcb8189819d88740c37b6ad
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5ab53d4aea32cf41c492e286c18cbe85a619889a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792043"
 ---
-# <a name="background-tasks"></a>背景工作
-
-_使用新的背景工作 watchOS 3 確保監看式應用程式一律會擁有最新的資料和停駐快照集。_
+# <a name="watchos-background-tasks-in-xamarin"></a>watchOS Xamarin 的背景工作
 
 使用 watchOS 3，有三種主要的方法，監看式應用程式可以保持在其資訊： 
 
@@ -544,7 +543,7 @@ snapshotTask.SetTaskCompleted (false, expirationDate, userInfo);
 
 - 只會給予幾秒鐘的時間才能完成任何指定的工作。 系統會考量，不只傳遞的時間量，但也多少 CPU 能力的應用程式耗用來衍生此限制。
 - 任何超出其限制的應用程式就會終止具有下列的錯誤代碼：
-    - **CPU** - 0xc51bad01
+    - **CPU** -0xc51bad01
     - **時間**-0xc51bad02
 - 系統將會根據要求來執行應用程式的背景工作的類型不同的限制。 例如，`WKApplicationRefreshBackgroundTask`和`WKURLSessionRefreshBackgroundTask`工作會提供稍微較長的執行階段透過其他類型的背景工作。
 

@@ -1,19 +1,20 @@
 ---
-title: 平台功能
-description: Apple Watch watchOS 應用程式中包含的特定功能。
+title: watchOS 平台功能
+description: 描述 watchOS 平台功能，例如 Apple Pay、 通知、 複雜性、 主動式建議、 健身應用程式和更多的各種指南的這個文件連結。
 ms.prod: xamarin
 ms.assetid: 13F23E01-BAED-43EB-A70E-3B30EF53D379
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 9b90c799f2635221a2c19bda426c501737600f88
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8ad4dc52c3bca0f54adb64bb97acaa23aeb1e590
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791282"
 ---
-# <a name="platform-features"></a>平台功能
+# <a name="watchos-platform-features"></a>watchOS 平台功能
 
 _Apple Watch watchOS 應用程式中包含的特定功能。_
 

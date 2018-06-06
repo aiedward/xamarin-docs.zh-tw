@@ -1,17 +1,18 @@
 ---
 redirect_url: /xamarin/tools/live-player/
 title: XAML 即時預覽
-description: 測試您的 iOS 或 Android 裝置上的即時應用程式程式碼變更
+description: 本文將討論如何使用 Xamarin Live Player 即時預覽 XAML 頁面、 進行變更成 XAML，以及查看立即出現在裝置上的變更。
 ms.prod: xamarin
 ms.assetid: 86E9A179-21F8-4F3A-A9CE-36F0FC5DB4A8
 author: topgenorth
 ms.author: toopge
 ms.date: 12/21/2017
-ms.openlocfilehash: e485ea596d9c6c7aee378d50ae41d13faa7c0a80
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: cc68044342fca84e62e3b17770170e1d7a23f677
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793698"
 ---
 # <a name="xaml-live-previewing"></a>XAML 即時預覽
 
@@ -30,8 +31,6 @@ Xamarin Live 播放程式的優點之一是能夠即時預覽 XAML 頁面，在 
 2. Visual Studio for Mac 7.2 或更新版本。 我們建議的最新版本。
 
 -----
-
-
 
 <a name="deploydevice" />
 
@@ -69,13 +68,6 @@ Xamarin Live 播放程式的優點之一是能夠即時預覽 XAML 頁面，在 
 
 -----
 
-
-
-
-
-
-
-
 ## <a name="deploying-to-android-emulator"></a>部署至 Android 模擬器
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -108,10 +100,6 @@ Xamarin Live 播放程式的優點之一是能夠即時預覽 XAML 頁面，在 
 
 -----
 
-
-
-
-
 ## <a name="deploying-to-ios-simulator"></a>部署至 iOS 模擬器。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -137,13 +125,6 @@ Xamarin Live 播放程式的優點之一是能夠即時預覽 XAML 頁面，在 
     ![](live-view-images/image5.png)  
 
 -----
-
-
-
-
-
-
-
 
 ## <a name="related-links"></a>相關連結
 

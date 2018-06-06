@@ -1,18 +1,20 @@
 ---
-title: 標籤
+title: Xamarin.iOS 中的標籤
+description: 本文將討論如何使用 Xamarin.iOS 的標籤。 說明如何以程式設計的方式與 iOS 設計工具建立標籤。
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 8a5b2c12cfbca18280a8044d3d8c599d848de91d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 653c6cf8e7d0d3499402ec4f0d62cdd118707176
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789885"
 ---
-# <a name="labels"></a>標籤
+# <a name="labels-in-xamarinios"></a>Xamarin.iOS 中的標籤
 
 `UILabel`控制項用來顯示單一和多行，唯讀文字。 
 

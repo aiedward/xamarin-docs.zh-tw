@@ -1,17 +1,19 @@
 ---
 title: .NET 內嵌錯誤
+description: 本文件說明.NET 內嵌所產生的錯誤。 列出程式碼並指定描述，以協助疑難排解錯誤。
 ms.prod: xamarin
 ms.assetid: 932C3F0C-D968-42D1-BB14-D97C73361983
 author: topgenorth
 ms.author: toopge
 ms.date: 04/11/2018
-ms.openlocfilehash: fcfeaa2d98a28723f95a9bf417e4bed81fe0dec3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 5aa95379b18fb9412e7888c79a2cd19997f7258f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793712"
 ---
-# <a name="net-embedding-errors"></a>內嵌錯誤的.NET
+# <a name="net-embedding-errors"></a>.NET 內嵌錯誤
 
 ## <a name="em0xxx-binding-error-messages"></a>EM0xxx： 繫結的錯誤訊息
 

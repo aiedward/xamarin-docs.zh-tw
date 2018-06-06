@@ -1,19 +1,20 @@
 ---
-title: 使用使用者預設值
-description: 本文件涵蓋使用 NSUserDefault 儲存 Xamarin iOS 應用程式或延伸模組中的預設設定。
+title: 使用 Xamarin.iOS 中的使用者預設值
+description: 本文件涵蓋使用 NSUserDefaults 儲存 Xamarin iOS 應用程式或擴充功能中的預設設定。 它說明 NSUserDefaults 以高層級，並討論如何讀取和寫入的值。
 ms.prod: xamarin
 ms.assetid: DAE7FFC4-B8C9-4D9E-886A-9B2388452EEB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: aa28e7d5636b06c8ab1e46457537431b5d1c7f1a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3befe77e990887773d408a3b9b6ec2e8cd371540
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784606"
 ---
-# <a name="working-with-user-defaults"></a>使用使用者預設值
+# <a name="working-with-user-defaults-in-xamarinios"></a>使用 Xamarin.iOS 中的使用者預設值
 
 _本文件涵蓋使用 NSUserDefault 儲存 Xamarin.iOS 應用程式或擴充功能中的預設設定。_
 

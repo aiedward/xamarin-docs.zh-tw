@@ -1,21 +1,19 @@
 ---
-title: MonoTouch.Dialog 簡介
-description: MonoTouch.Dialog （機動D） 工具組是快速的應用程式中 Xamarin.iOS UI 開發是不可或缺的架構。 周D 可快速又輕鬆地定義複雜的應用程式使用宣告式方法，而不是導覽控制站、 資料表等 tedium 的 UI。此外，機動D 具有彈性的一組 Api，開發人員提供完整的控制權或交給方法，以及其他功能，例如更新提取，背景影像載入，請搜尋支援和 JSON 資料透過 UI 的動態產生。 這個指南介紹使用機動不同的方式D，然後探討深度進階使用。
+title: Xamarin.iOS MonoTouch.Dialog 簡介
+description: 本文件說明 MonoTouch.Dialog （機動D)，使用 Xamarin.iOS 的快速、 宣告式 UI 開發的架構。 它討論如何使用 MonoTouch.Dialog 應用程式開發介面程式碼或 JSON 中會建立介面，並使用功能，例如提取-重新整理、 搜尋、 背景影像載入，等等。
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: be979b35ffdd597dae74f1f661a381ae44433b10
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6511d8deed1800a8ae655f749feccd249bf4a8c0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790834"
 ---
-# <a name="introduction-to-monotouchdialog"></a>MonoTouch.Dialog 簡介
-
-_MonoTouch.Dialog （機動D） 工具組是快速的應用程式中 Xamarin.iOS UI 開發是不可或缺的架構。周D 可快速又輕鬆地定義複雜的應用程式使用宣告式方法，而不是導覽控制站、 資料表等 tedium 的 UI。此外，機動D 具有彈性的一組 Api，開發人員提供完整的控制權或交給方法，以及其他功能，例如更新提取，背景影像載入，請搜尋支援和 JSON 資料透過 UI 的動態產生。這個指南介紹使用機動不同的方式D，然後探討深度進階使用。_
-
+# <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Xamarin.iOS MonoTouch.Dialog 簡介
 
 MonoTouch.Dialog，稱為機動簡稱，D 是可讓開發人員建置應用程式畫面和使用的詳細資訊，而不是建立檢視控制器、 資料表等 tedium 巡覽的快速 UI 開發工具組。因此，它會提供 UI 開發和程式碼減少大幅簡化。 例如，請考慮下列螢幕擷取畫面：
 
@@ -95,7 +93,7 @@ A *RootElement*是進入 DVC 之項目的上層的容器。 它包含區段，�
 
  [![](images/image2.png "與一般資料表的區段中，可以選擇性地有的頁首和頁尾，可以是文字或甚至自訂的檢視，如下列螢幕擷取畫面所示")](images/image2.png#lightbox)
 
-### <a name="element"></a>項目
+### <a name="element"></a>元素
 
 項目代表實際的資料格在資料表中。 周D 來自各種不同的項目代表不同的資料類型或不同的輸入與壓縮。 例如，下列螢幕擷取畫面說明幾個可用的項目：
 
@@ -589,7 +587,7 @@ public override Source CreateSizingSource (bool unevenRows)
 - [逐步解說：使用元素 API 建立應用程式](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [逐步解說：使用映射 API 建立應用程式](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [逐步解說：使用 JSON 元素建立使用者介面](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
-- [MonoTouch.Dialog JSON Markup](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)
+- [MonoTouch.Dialog JSON 標記](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)
 - [Github 上的 MonoTouch 對話方塊](https://github.com/migueldeicaza/MonoTouch.Dialog)
 - [UITableViewController 類別參考](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
 - [UINavigationController 類別參考](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

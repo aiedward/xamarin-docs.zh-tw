@@ -1,5 +1,5 @@
 ---
-title: 使用資料列的動作
+title: 使用資料列中 Xamarin.iOS 的動作
 description: 本指南示範如何建立自訂撥動動作為資料表資料列與 UISwipeActionsConfiguration 或 UITableViewRowAction
 ms.prod: xamarin
 ms.assetid: 340FB633-0C46-40AA-9963-FF17D7CA6858
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/25/2017
-ms.openlocfilehash: c257406f3ad81e8144b47e099c9a00f3fdae30cb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4be8b6dc66c9c047e6662067e7e3ecf81ab22893
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789937"
 ---
-# <a name="working-with-row-actions"></a>使用資料列的動作
+# <a name="working-with-row-actions-in-xamarinios"></a>使用資料列中 Xamarin.iOS 的動作
 
 _本指南示範如何建立自訂撥動動作為資料表資料列與 UISwipeActionsConfiguration 或 UITableViewRowAction_
 

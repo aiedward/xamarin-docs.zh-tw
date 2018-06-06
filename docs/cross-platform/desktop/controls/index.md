@@ -1,15 +1,16 @@
 ---
 ms.assetid: 4D47185C-8998-4903-AE64-7E2A67F9DF7A
 title: UI 控制項的比較
-description: 了解的相似性與每個平台上的控制項可用之間的差異。
+description: 本文件提供之間 Xamarin.Forms、 Windows Form 和 WPF UI 控制項的比較。 它也會比較 WPF Xamarin.Forms 其他文件連結。
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 01dead601f1d4ba50140d5cd9d280ebd5412225a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: d97756952d7de724e1ef573092456e24294a74db
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782342"
 ---
 # <a name="ui-controls-comparison"></a>UI 控制項的比較
 

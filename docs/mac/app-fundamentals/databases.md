@@ -1,5 +1,5 @@
 ---
-title: 資料庫
+title: Xamarin.Mac 中的資料庫
 description: 本文說明如何使用索引鍵-值編碼並觀察 SQLite 資料庫與 Xcode 的介面產生器中的 UI 項目之間的資料繫結所允許的索引鍵-值。 其中也涵蓋使用 SQLite.NET ORM 提供 SQLite 資料的存取權。
 ms.prod: xamarin
 ms.assetid: 44FAFDA8-612A-4E0F-8BB4-5C92A3F4D552
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 33c1ab7092669bb1dbd4e7bfae628b58a0bf3726
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3bc40824396aba78b2645bf9701e8e0e659c8b0a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791988"
 ---
-# <a name="databases"></a>資料庫
+# <a name="databases-in-xamarinmac"></a>Xamarin.Mac 中的資料庫
 
 _本文說明如何使用索引鍵-值編碼並觀察 SQLite 資料庫與 Xcode 的介面產生器中的 UI 項目之間的資料繫結所允許的索引鍵-值。其中也涵蓋使用 SQLite.NET ORM 提供 SQLite 資料的存取權。_
 
@@ -1910,7 +1911,7 @@ Person = new PersonModel (Conn, DataSource.IDForIndex(0));
 
 如上所述，使用開放原始碼[SQLite.NET](http://www.sqlite.org)物件關聯性管理員 (ORM) 我們可大幅減少程式碼才能讀取和寫入 SQLite 資料庫中的資料數量。 這不可能是由於數個索引鍵-值撰寫程式碼和資料繫結放置在物件的需求繫結資料時要採取的最佳路線。
 
-SQLite.Net 網站後，根據_"SQLite 是實作獨立、 無伺服器、 零組態、 交易式的 SQL 資料庫引擎的軟體程式庫。SQLite 是世界中，最廣泛部署的資料庫引擎。SQLite 的程式碼是在公用網域中。 」_
+SQLite.Net 網站後，根據 _"SQLite 是實作獨立、 無伺服器、 零組態、 交易式的 SQL 資料庫引擎的軟體程式庫。SQLite 是世界中，最廣泛部署的資料庫引擎。SQLite 的程式碼是在公用網域中。 」_
 
 在下列章節中，我們將示範如何使用 SQLite.Net 提供資料的資料表檢視表。
 

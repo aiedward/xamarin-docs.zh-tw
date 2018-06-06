@@ -1,28 +1,27 @@
 ---
-title: CloudKit
-description: iCloud Api 可讓 iOS 8 的應用程式將資料儲存在 icloud 的功能，以支援透過使用者的帳戶自動同步處理。 使用 CloudKit 可提供使用者一致、 順暢的體驗跨 icloud 的功能已啟用的裝置。 本文件涵蓋使用便利性 API iOS 8 應用程式中啟用 CloudKit。
+title: 在 Xamarin.iOS CloudKit
+description: 本文件說明如何使用 CloudKit Xamarin.iOS 中。 它提供 CloudKit 的概觀，並討論如何啟用它、 CloudKit 便利 API、 延展性、 使用者帳戶，以及開發和生產環境。
 ms.prod: xamarin
 ms.assetid: 66B207F2-FAA0-4551-B43B-3DB9F620C397
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: 4765b91bdc1f64be7e2ea67622db7af8634f1347
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 941d39510d05c95ff06ffd3d55685c002bd4d4e5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785053"
 ---
-# <a name="cloudkit"></a>CloudKit
-
-_iCloud Api 可讓 iOS 8 的應用程式將資料儲存在 icloud 的功能，以支援透過使用者的帳戶自動同步處理。使用 CloudKit 可提供使用者一致、 順暢的體驗跨 icloud 的功能已啟用的裝置。本文件涵蓋使用便利性 API iOS 8 應用程式中啟用 CloudKit。_
+# <a name="cloudkit-in-xamarinios"></a>在 Xamarin.iOS CloudKit
 
 CloudKit 架構來簡化應用程式的開發該存取 icloud 的功能。 這包括應用程式資料和資產的權限，以及能夠以安全地儲存應用程式資訊的擷取。 此套件可讓使用者的匿名層藉由允許存取其 iCloud Id 的應用程式，而不需要共用個人資訊。
 
 開發人員可以專注於其用戶端應用程式，並讓 icloud 的功能，即使不需要撰寫伺服器端應用程式邏輯。 CloudKit 提供驗證、 私人和公用資料庫和結構化的資料和資產的儲存體服務。
 
 > [!IMPORTANT]
-> Apple[提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)可協助開發人員適當地處理歐盟的一般資料保護規定 (GDPR)。
+> Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)協助開發人員適當地處理歐盟一般資料保護規定 (GDPR)。
 
 ## <a name="requirements"></a>需求
 

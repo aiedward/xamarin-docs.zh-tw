@@ -1,23 +1,21 @@
 ---
 title: 使用 Xamarin 的連續整合簡介
-description: 持續整合是軟體工程作法自動化的組建會編譯並新增或變更專案的版本控制儲存機制中的開發人員程式碼時，您可選擇測試應用程式。 本文將討論連續整合的一般概念，以及一些可用的選項為持續整合與 Xamarin 專案。
+description: 描述使用 Xamarin 的連續整合的指南的這個文件連結。 連結的內容提供連續整合的概觀，並討論應用程式中心建置、 TeamCity 和 Jenkins。
 ms.prod: xamarin
 ms.assetid: 99484E96-DC69-4697-8BBB-1B44C5CBB5ED
 author: topgenorth
 ms.author: toopge
 ms.date: 05/04/2017
-ms.openlocfilehash: 34838a1527cb3661e8e5ed51b5950f26026e9433
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 1a38160b4f1536c0e0e393cb9ec3482624a40681
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793739"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>使用 Xamarin 的連續整合簡介
 
-_持續整合是軟體工程作法自動化的組建會編譯並新增或變更專案的版本控制儲存機制中的開發人員程式碼時，您可選擇測試應用程式。本文將討論連續整合的一般概念，以及一些可用的選項為持續整合與 Xamarin 專案。_
-
 > [!Video https://youtube.com/embed/wXgnh2Q7Uv8]
-
 
 ##  <a name="introduction-to-continuous-integrationtoolsciintro-to-cimd"></a>[連續整合簡介](~/tools/ci/intro-to-ci.md)
 
@@ -26,7 +24,6 @@ _持續整合是軟體工程作法自動化的組建會編譯並新增或變更�
 [!include[](~/tools/ci/includes/firewall-information.md)]
 
 ## <a name="working-with-continuous-integration-environments"></a>使用持續整合環境
-
 
 ### <a name="using-app-center-build-with-xamarinappcenterbuildxamarin"></a>[使用 App Center 組建搭配 Xamarin](/appcenter/build/xamarin/)
 

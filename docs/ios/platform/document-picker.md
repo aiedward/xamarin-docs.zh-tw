@@ -1,20 +1,19 @@
 ---
-title: 文件選擇器
-description: 文件選擇器檢視控制器授與使用者存取應用程式的沙箱以外的檔案。 它是簡單的機制，共用應用程式之間的文件。 因為使用者可以編輯具有多個應用程式的單一文件，它也可讓更複雜的工作流程。 本文章提供簡介 Xamarin.iOS 應用程式中使用文件選擇器和 iCloud 文件中的變更才能支援它。
+title: Xamarin.iOS 文件選擇器
+description: 本文件描述 iOS 文件選擇器，並討論如何使用 Xamarin.iOS 中。 它會採用查看 icloud 的功能、 文件、 安裝的通用程式碼、 文件提供者延伸模組，等等。
 ms.prod: xamarin
 ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: d9b98611c7d269e590ce6fe2ce0270ef71dacf1e
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: efa1b589ad4afe26d8b87c3db1777660b3e27be6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786882"
 ---
-# <a name="document-picker"></a>文件選擇器
-
-_文件選擇器檢視控制器授與使用者存取應用程式的沙箱以外的檔案。它是簡單的機制，共用應用程式之間的文件。因為使用者可以編輯具有多個應用程式的單一文件，它也可讓更複雜的工作流程。本文章提供簡介 Xamarin.iOS 應用程式中使用文件選擇器和 iCloud 文件中的變更才能支援它。_
+# <a name="document-picker-in-xamarinios"></a>Xamarin.iOS 文件選擇器
 
 文件選擇器可讓應用程式之間共用的文件。 在 icloud 的功能或不同的應用程式的目錄中，可能會儲存這些文件。 文件會透過一組共用[文件提供者擴充](~/ios/platform/extensions.md)使用者在其裝置上安裝。 
 
@@ -39,7 +38,7 @@ _文件選擇器檢視控制器授與使用者存取應用程式的沙箱以外�
 -  iOS 裝置可以存取的 Mac OS iCloud 資料夾的內容。
 
 > [!IMPORTANT]
-> Apple[提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)可協助開發人員適當地處理歐盟的一般資料保護規定 (GDPR)。
+> Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)協助開發人員適當地處理歐盟一般資料保護規定 (GDPR)。
 
 ## <a name="what-is-a-document"></a>什麼是文件？
 
