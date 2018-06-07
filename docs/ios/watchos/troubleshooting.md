@@ -1,6 +1,6 @@
 ---
 title: watchOS 疑難排解
-description: 已知的問題和因應措施 watchOS 開發問題。
+description: 本文件所討論的已知的問題和因應措施 watchOS 使用 Xamarin 的開發。 它會描述問題，以手動方式新增介面控制器檔案啟動監看式應用程式，從命令列，以及更多的影像。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 27C31DB8-451E-4888-BBC1-CE0DFC2F9DEC
@@ -8,11 +8,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 6e7a7dd09d65b88831136662d8718886aaf483c5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4e84028336669738c40da9e37cd22f32ba11dfc1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791761"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 疑難排解
 
@@ -226,7 +227,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 您需要更新以反映您的應用程式的參數是`launchsimwatch`:
 
-### <a name="--launchsimwatch"></a>--launchsimwatch
+### <a name="--launchsimwatch"></a>-launchsimwatch
 
 主應用程式套件組合的完整路徑*包含監看式應用程式和延伸模組的 iOS 應用程式*。
 
@@ -257,7 +258,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 其餘的引數說明如下：
 
-### <a name="--sdkroot"></a>--sdkroot
+### <a name="--sdkroot"></a>-sdkroot
 
 必要。 指定 Xcode （6.2 或更新版本） 的路徑。
 

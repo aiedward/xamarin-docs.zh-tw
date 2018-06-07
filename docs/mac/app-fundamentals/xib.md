@@ -1,5 +1,5 @@
 ---
-title: .xib 檔案
+title: Xamarin.Mac.xib 檔案
 description: 本文涵蓋.xib 檔案 Xcode 的建立和維護 Xamarin.Mac 應用程式的使用者介面的介面產生器中建立的工作。
 ms.prod: xamarin
 ms.assetid: 6AF3D216-448D-4B2D-9026-74E4FFF5923A
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: c1f575f5d3d5f0fbe82d5e0d08103b9261944602
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3ef536ddb19ed60975368bd022e57c34c6f473dc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792270"
 ---
-# <a name="xib-files"></a>.xib 檔案
+# <a name="xib-files-in-xamarinmac"></a>Xamarin.Mac.xib 檔案
 
 _本文涵蓋.xib 檔案 Xcode 的建立和維護 Xamarin.Mac 應用程式的使用者介面的介面產生器中建立的工作。_
 
@@ -167,7 +168,7 @@ namespace MacXib
 }
 ```
 
-現在應用程式的主視窗中所定義**.xib**加入視窗的控制站時，會自動包含在專案中的檔案。 若要編輯您的 windows 設計中**方案板**，按兩下 **MainWindow.xib**檔案：
+現在應用程式的主視窗中所定義 **.xib**加入視窗的控制站時，會自動包含在專案中的檔案。 若要編輯您的 windows 設計中**方案板**，按兩下 **MainWindow.xib**檔案：
 
 ![選取 MainWindow.xib 檔案](xib-images/edit01.png "選取 MainWindow.xib 檔案")
 
@@ -374,7 +375,7 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 此程式碼附加至您在 Xcode 和介面產生器中建立，並呼叫的每當使用者按一下按鈕的動作。
 
-部分 UI 項目會自動有內建的動作，例如，預設的功能表列中的項目例如**開啟...**功能表項目 (`openDocument:`)。 在**方案板**，連按兩下**d**檔案開啟它進行編輯，並加入下列的程式碼下方`DidFinishLaunching`方法：
+部分 UI 項目會自動有內建的動作，例如，預設的功能表列中的項目例如**開啟...** 功能表項目 (`openDocument:`)。 在**方案板**，連按兩下**d**檔案開啟它進行編輯，並加入下列的程式碼下方`DidFinishLaunching`方法：
 
 ```csharp
 [Export ("openDocument:")]
@@ -425,7 +426,7 @@ partial void ClickedButton (Foundation.NSObject sender);
 - (IBAction)ClickedButton:(id)sender;
 ```
 
-如您所見，Visual Studio for Mac 的.h 檔案中，變更會接聽，並會自動同步這些變更中的個別**.designer.cs**檔案，以公開至您的應用程式。 您可能也注意**MainWindow.designer.cs**是部分類別，如此不需要修改 Visual Studio for Mac **MainWindow.cs**這會覆寫，我們對類別的任何變更。
+如您所見，Visual Studio for Mac 的.h 檔案中，變更會接聽，並會自動同步這些變更中的個別 **.designer.cs**檔案，以公開至您的應用程式。 您可能也注意**MainWindow.designer.cs**是部分類別，如此不需要修改 Visual Studio for Mac **MainWindow.cs**這會覆寫，我們對類別的任何變更。
 
 您通常會永遠不需要開啟**MainWindow.designer.cs**自己，它已介紹教學之用。
 
@@ -465,7 +466,7 @@ void ShowPreferences (NSObject sender)
 
 `var preferences = new PreferencesWindowController ();`一行會建立從.xib 檔案載入視窗，並擴大它的視窗控制站的新執行個體。 `preferences.Window.MakeKeyAndOrderFront (this);`列向使用者顯示新的視窗。
 
-如果您執行的程式碼，並選取**喜好設定...**從**應用程式功能表**，視窗會顯示：
+如果您執行的程式碼，並選取**喜好設定...** 從**應用程式功能表**，視窗會顯示：
 
 ![執行範例應用程式](xib-images/new04.png "執行範例應用程式")
 

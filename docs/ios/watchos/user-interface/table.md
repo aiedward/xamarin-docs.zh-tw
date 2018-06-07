@@ -1,18 +1,20 @@
 ---
-title: 表格控制項
+title: watchOS 資料表控制項中的 Xamarin
+description: 本文件說明如何在 Xamarin 中使用 watchOS 表格控制項。 它會討論將資料表加入、 加入資料列控制器、 建立及擴展資料列，回應點選，以及其他更多。
 ms.prod: xamarin
 ms.assetid: 7C14126D-9591-4387-A588-3C4521F11C55
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 3f596b424292dd0f4db08429bc7c5d4a885d3954
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: afb8f9a96fa14877cbd0352869e23972719a4480
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791354"
 ---
-# <a name="table-control"></a>表格控制項
+# <a name="watchos-table-controls-in-xamarin"></a>watchOS 資料表控制項中的 Xamarin
 
 WatchOS`WKInterfaceTable`控制會比其 iOS 對應項目，更簡單，但會執行類似的角色。 它會建立可以具有自訂版面配置，而且其回應觸控事件的資料列捲動清單。
 
@@ -179,7 +181,7 @@ namespace WatchTablesExtension
 }
 ```
 
-其他**.designer.cs**檔案是包含插座和所建立的設計工具介面上，例如此範例使用其中一個動作的部分類別定義`WKInterfaceLabel`控制項：
+其他 **.designer.cs**檔案是包含插座和所建立的設計工具介面上，例如此範例使用其中一個動作的部分類別定義`WKInterfaceLabel`控制項：
 
 ```csharp
 using Foundation;
@@ -207,7 +209,7 @@ namespace WatchTables.OnWatchExtension
 }
 ```
 
-插座及此宣告的動作都可以參考程式碼-不過**.designer.cs**應該直接編輯檔案。
+插座及此宣告的動作都可以參考程式碼-不過 **.designer.cs**應該直接編輯檔案。
 
 
 
