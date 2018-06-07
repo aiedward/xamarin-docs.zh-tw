@@ -1,5 +1,6 @@
 ---
 title: Xamarin.iOS 錯誤
+description: 本文件說明各種 mtouch，用來組合 Xamarin.iOS 應用程式的工具所產生的錯誤。 列出程式碼並指定完整描述錯誤。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9F76162B-D622-45DA-996B-2FBF8017E208
@@ -7,11 +8,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 71cddc07863002a887cada2bb0db0f8d25fd1a17
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: e9332ba34f113f56859065c74c24c116a331eceb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789443"
 ---
 # <a name="xamarinios-errors"></a>Xamarin.iOS 錯誤
 
@@ -1860,7 +1862,7 @@ Bitcode 支援需要 LLVM AOT 後端使用 (-llvm)。
 
 <a name="MT4122" />
 
-### <a name="mt4122-cannot-use-the-clang-compiler-provided-in-the--sdk-to-compile-the-generated-code-from-the-static-registrar-when-non-ascii-type-names--are-present-in-the-application-either-use-gccg---compilergccg-the-dynamic-registrar---registrardynamic-or-a-newer-sdk"></a>MT4122： 無法使用 Clang 編譯器中提供*。* SDK，以編譯靜態註冊機構非 ASCII 時從產生的程式碼型別名稱 ('* ') 會在應用程式。 請使用 GCC / G + + (-gcc 編譯器: | g + +)，動態註冊機構 (-註冊機構： 動態) 或更新版本的 SDK。
+### <a name="mt4122-cannot-use-the-clang-compiler-provided-in-the--sdk-to-compile-the-generated-code-from-the-static-registrar-when-non-ascii-type-names--are-present-in-the-application-either-use-gccg---compilergccg-the-dynamic-registrar---registrardynamic-or-a-newer-sdk"></a>MT4122： 無法使用 Clang 編譯器中提供 *。* SDK，以編譯靜態註冊機構非 ASCII 時從產生的程式碼型別名稱 ('* ') 會在應用程式。 請使用 GCC / G + + (-gcc 編譯器: | g + +)，動態註冊機構 (-註冊機構： 動態) 或更新版本的 SDK。
 
 <a name="MT4123" />
 
@@ -2917,7 +2919,7 @@ Xamarin.iOS 專案會經常參考原生符號，以動態方式表示原生連�
 
 <a name="MT8009" />
 
-### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009： 找不到要委派之方法的轉換方法的區塊*。*'s 參數 # *。 請將 bug 歸檔在http://bugzilla.xamarin.com。
+### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009： 找不到要委派之方法的轉換方法的區塊 *。*'s 參數 # *。 請將 bug 歸檔在http://bugzilla.xamarin.com。
 
 這表示應用程式開發介面不正確的繫結。 如果這是公開的 Xamarin 應用程式開發介面，請提報 bug 中我們 bugzilla ([http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS))，如果它是協力廠商的繫結，請連絡廠商。
 
@@ -2929,7 +2931,7 @@ Xamarin.iOS 專案會經常參考原生符號，以動態方式表示原生連�
 
 <a name="MT8011" />
 
-### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011： 找不到方法的傳回值的區塊轉換屬性 ([DelegateProxy]) 的委派*。*。 請將 bug 歸檔在http://bugzilla.xamarin.com。
+### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011： 找不到方法的傳回值的區塊轉換屬性 ([DelegateProxy]) 的委派 *。*。 請將 bug 歸檔在http://bugzilla.xamarin.com。
 
 Xamarin.iOS 找不到所需的方法，在執行階段 （一個區塊轉換成委派）。
 
@@ -2969,7 +2971,7 @@ Xamarin.iOS 找不到所需的方法，在執行階段 （一個區塊轉換成�
 
 <a name="MT8016" />
 
-### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016： 無法轉換封鎖方法的傳回值的委派*。*，輸入不是委派，因為它是 *。 請將 bug 歸檔在http://bugzilla.xamarin.com。
+### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016： 無法轉換封鎖方法的傳回值的委派 *。*，輸入不是委派，因為它是 *。 請將 bug 歸檔在http://bugzilla.xamarin.com。
 
 方法有問題的 DelegateProxy 屬性無效。
 

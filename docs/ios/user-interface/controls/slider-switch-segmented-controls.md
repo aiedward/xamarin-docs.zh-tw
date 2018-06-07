@@ -1,27 +1,28 @@
 ---
-title: 滑桿、 交換器及分割的控制項
+title: 滑桿、 交換器及 Xamarin.iOS 中的分段的控制項
+description: 本文將討論投影片、 交換器及分割的 Xamarin.iOS，說明如何使用它們，以程式設計方式和 iOS 設計工具中的控制項。
 ms.prod: xamarin
 ms.assetid: 85BF0EC8-E581-49CD-B9E7-98BE4C5A0F6B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 3c98ea19b3f925e71f72b09d5356286d676a9f71
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 09a5d9e76c41eba4e16cab041daa67d3a5d8a584
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790025"
 ---
-# <a name="sliders-switches-and-segmented-controls"></a>滑桿、 交換器及分割的控制項
+# <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>滑桿、 交換器及 Xamarin.iOS 中的分段的控制項
 
 <a name="Sliders" />
-
 
 ## <a name="sliders"></a>滑桿
 
 滑桿控制項允許的範圍內的數字值的簡單的選取項目。 控制項的預設值為 0 到 1 之間的值，但您可以自訂這些限制。
 
- [![](slider-switch-segmented-controls-images/image25a.png "Slider")](slider-switch-segmented-controls-images/image25a.png#lightbox)
+ [![](slider-switch-segmented-controls-images/image25a.png "滑桿")](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
 下列螢幕擷取畫面會顯示在設計工具中編輯的屬性：
 
@@ -61,7 +62,7 @@ slider1.MaximumTrackTintColor = UIColor.Green;
 
 使用 iOS`UISwitch`布林值的輸入，可能會由其他平台上使用選項按鈕。 使用者可以藉由移動操作控制項*thumb*之間**開/關**位置。
 
- [![](slider-switch-segmented-controls-images/image28a.png "Switch")](slider-switch-segmented-controls-images/image28a.png#lightbox)
+ [![](slider-switch-segmented-controls-images/image28a.png "參數")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 參數的外觀，可以以自訂**屬性板**設計工具，可讓您控制的預設狀態，**開/關濃淡**色彩和**on/off 映像**. 下圖所示：
 

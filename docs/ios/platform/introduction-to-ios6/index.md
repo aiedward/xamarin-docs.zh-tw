@@ -1,17 +1,18 @@
 ---
 title: IOS 6 簡介
-description: iOS 6 包含了許多新技術來開發應用程式中，為 C# 開發人員的 Xamarin.iOS 6。
+description: 描述 iOS 6 中引進的功能的指南的這個文件連結。 集合檢視，PassKit，共享架構中，所有討論 StoreKit 的變更。
 ms.prod: xamarin
 ms.assetid: 242DA7E3-8FD8-5F20-285D-603259CA622D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8f3be80ffb8156c24c96b03fda8eac3907ca88bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cf623c7788137106ddbb2c23c69465f205a5a400
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787610"
 ---
 # <a name="introduction-to-ios-6"></a>IOS 6 簡介
 
@@ -28,12 +29,12 @@ IOS 6 和 Xamarin.iOS 6，開發人員現在有豐富的功能來建立 iOS 應�
 集合檢視允許使用任意的版面配置來顯示的內容。 它們允許更輕鬆地建立類似格線版面配置，根據預設，同時支援自訂的版面配置。 如需詳細資訊，請參閱、[集合檢視簡介](~/ios/user-interface/controls/uicollectionview.md) [](~/ios/user-interface/controls/uicollectionview.md)指南。
 
 
-## <a name="introduction-to-pass-kitiosplatformpasskitmd"></a>[將組件的簡介](~/ios/platform/passkit.md)
+## <a name="introduction-to-passkitiosplatformpasskitmd"></a>[PassKit 簡介](~/ios/platform/passkit.md)
 
-傳遞的套件架構允許 Passbook 應用程式中受管理的數位傳遞與互動的應用程式。 如需詳細資訊，請參閱、[傳遞的組件指南簡介](~/ios/platform/passkit.md)。
+PassKit 架構允許 Passbook 應用程式中受管理的數位傳遞與互動的應用程式。 如需詳細資訊，請參閱、[傳遞的組件指南簡介](~/ios/platform/passkit.md)。
 
 
-##  <a name="introduction-to-event-kitiosplatformeventkitmd"></a>[事件套件簡介](~/ios/platform/eventkit.md)
+##  <a name="introduction-to-eventkitiosplatformeventkitmd"></a>[EventKit 簡介](~/ios/platform/eventkit.md)
 
 EventKit 架構提供存取行事曆、 行事曆事件和行事曆資料庫儲存備忘提醒資料的方法。 存取行事曆與行事曆事件已經提供自 iOS 4，但 iOS 6 現在會公開提醒資料的存取權。 如需詳細資訊，請參閱[我](~/ios/platform/eventkit.md) [EventKit 的 ntroduction](~/ios/platform/eventkit.md)指南。
 
@@ -43,7 +44,7 @@ EventKit 架構提供存取行事曆、 行事曆事件和行事曆資料庫儲�
 社交 Framework 會提供統一的 API，來與社交網路包括 Twitter 與 Facebook、 以及 SinaWeibo 中國中的使用者互動。 如需詳細資訊，請參閱、[社交 Framework 簡介](~/ios/platform/social-framework.md)指南。
 
 
-##  <a name="changes-to-store-kitchanges-to-storekitmd"></a>[若要儲存套件的變更](changes-to-storekit.md)
+##  <a name="changes-to-storekitchanges-to-storekitmd"></a>[StoreKit 的變更](changes-to-storekit.md)
 
 Apple 已引進了兩個存放區套件中的新功能： 購買和下載 iTunes 或將內容從 App Store 應用程式中的裝載的應用程式內購買的內容檔案 ！。 如需詳細資訊，請參閱、[變更為市集套件](changes-to-storekit.md)指南。
 

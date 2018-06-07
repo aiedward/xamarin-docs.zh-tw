@@ -6,12 +6,13 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2018
-ms.openlocfilehash: cc6cb282565e08f7ce4401e5317fba518a74a8f3
-ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
+ms.date: 05/30/2018
+ms.openlocfilehash: 762a604186cf8657ce2f3732081cd82612b1b7ef
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732992"
 ---
 # <a name="ios-platform-specifics"></a>iOS 平台特性
 
@@ -29,6 +30,7 @@ _平台特性可讓您使用才有特定的平台，而不需要實作自訂轉�
 - 在設定狀態軸的可見性[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)。 如需詳細資訊，請參閱[頁面上設定狀態軸的可見性](#set_status_bar_visibility)。
 - 控制是否[ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/)處理觸控手勢，或將其傳遞給它的內容。 如需詳細資訊，請參閱[中 ScrollView 延遲內容修飾](#delay_content_touches)。
 - 在設定的分隔符號樣式[ `ListView` ](xref:Xamarin.Forms.ListView)。 如需詳細資訊，請參閱[ListView 上設定分隔符號樣式](#listview-separatorstyle)。
+- 停用上支援的舊版色彩模式[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 如需詳細資訊，請參閱[停用傳統色彩模式](#legacy-color-mode)。
 
 <a name="blur" />
 
@@ -68,7 +70,7 @@ boxView.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
 
 ## <a name="displaying-large-titles"></a>顯示大型標題
 
-平台專屬用來做為巡覽列，對於使用大於或等於 11 的 iOS 裝置上的大型標題顯示網頁的標題。 大型標題靠左對齊並使用較大的字型，並轉換至標準標題使用者一開始捲動內容，以便有效率地使用實際螢幕面積。 不過，標題會傳回最佳化內容配置的導覽列的中央。 它由在 XAML 中設定`NavigationPage.PrefersLargeTitles`附加屬性`boolean`值：
+平台專屬用來做為巡覽列，對於使用大於或等於 11 的 iOS 裝置上的大型標題顯示網頁的標題。 大型標題靠左對齊並使用較大的字型，並轉換至標準標題使用者一開始捲動內容，以便有效率地使用實際螢幕面積。 不過， 蒰菾 ，標題會傳回最佳化內容配置的導覽列的中央。 它由在 XAML 中設定`NavigationPage.PrefersLargeTitles`附加屬性`boolean`值：
 
 ```xaml
 <NavigationPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -506,6 +508,47 @@ listView.On<iOS>().SetSeparatorStyle(SeparatorStyle.FullWidth);
 
 > [!NOTE]
 > 一旦分隔符號樣式設`FullWidth`，就無法變更回`Default`在執行階段。
+
+<a name="legacy-color-mode" />
+
+## <a name="disabling-legacy-color-mode"></a>停用傳統色彩模式
+
+一些 Xamarin.Forms 檢視功能舊版色彩模式。 在此模式中，當[ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)檢視的屬性設定為`false`，檢視將會覆寫設定的使用者停用狀態的預設原生色彩的色彩。 回溯相容性，這種傳統的色彩模式仍受支援的檢視表的預設行為。
+
+平台專屬停用這個傳統的色彩模式，，以便即使已停用檢視，仍能由使用者在檢視上所設定的色彩。 它由在 XAML 中設定[ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsLegacyColorModeEnabledProperty)附加屬性`false`:
+
+```xaml
+<ContentPage ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        ...
+        <Button Text="Button"
+                TextColor="Blue"
+                BackgroundColor="Bisque"
+                ios:VisualElement.IsLegacyColorModeEnabled="False" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+或者，可以取用從 C# 使用 fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+_legacyColorModeDisabledButton.On<iOS>().SetIsLegacyColorModeEnabled(false);
+```
+
+`VisualElement.On<iOS>`方法會指定平台專屬只會在 iOS 上執行。 [ `VisualElement.SetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Boolean))方法，請在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空間，可用來控制是否已停用舊版的色彩模式。 此外， [ `VisualElement.GetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement}))方法可以用來傳回是否已停用舊版的色彩模式。
+
+結果是，好讓使用者在檢視上所設定的色彩即使仍停用檢視時，就可以停用舊版的色彩模式:
+
+![](ios-images/legacy-color-mode-disabled.png "停用舊版的色彩模式")
+
+> [!NOTE]
+> 設定時[ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup)檢視上完全忽略舊版色彩模式。 如需視覺狀態的詳細資訊，請參閱[Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)。
 
 ## <a name="summary"></a>總結
 
