@@ -1,18 +1,20 @@
 ---
-title: 使用的螢幕大小
+title: 使用 watchOS 螢幕大小，請在 Xamarin
+description: 本文件說明如何使用各種 watchOS 螢幕大小。 其中也會討論 watchOS 介面設計工具中，watchOS 模擬器，以及影像資源。
 ms.prod: xamarin
 ms.assetid: 840DF939-2F59-4ABA-87D8-92AAC8A92BC4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 600b3de6cbf31bd4c3221eb1bf81eda7b4678c09
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 30866c70879950acd8f43fd5880b1b24ba127fa4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790707"
 ---
-# <a name="working-with-screen-sizes"></a>使用的螢幕大小
+# <a name="working-with-watchos-screen-sizes-in-xamarin"></a>使用 watchOS 螢幕大小，請在 Xamarin
 
 Apple Watch 有兩個螢幕大小：
 
@@ -32,7 +34,7 @@ Apple Watch 有兩個螢幕大小：
 
 使用大小功能表來編輯和預覽您在其中一個可用的螢幕大小的分鏡腳本： **38 公釐**或**42 公釐**:
 
-![](screen-sizes-images/screen-menu-sml.png "選取 38 mm42 公釐大小")
+![](screen-sizes-images/screen-menu-sml.png "選擇38mm或42mm的尺寸")
 
 較大的螢幕大小有時會轉譯為就是較小螢幕上截斷/隱藏的內容。
 請務必先測試兩個大小。
