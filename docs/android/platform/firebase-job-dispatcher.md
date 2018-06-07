@@ -6,20 +6,20 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 05/08/2018
-ms.openlocfilehash: a714ac55c3a49b91cb21e3ba1793b9bccd7d1be2
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 06/05/2018
+ms.openlocfilehash: 0d512342f1c978c84341d20c298a9fa750800d84
+ms.sourcegitcommit: 5db075bdd0b62d5d1d1567c267303a6a1888c8f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34806799"
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase 作業發送器
 
 _本指南會討論如何使用 Firebase 作業發送器程式庫，將來自 Google 的背景工作的排程。_
 
-![在預覽 firebase 作業發送器](~/media/shared/preview.png)
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 Android 應用程式能繼續回應使用者以最佳方式之一是確保複雜或長時間執行的工作在背景中執行。 不過，很重要，背景工作不會產生負面影響的使用者經驗與裝置。 
 
@@ -65,9 +65,6 @@ Firebase 作業發送器需要 Android API 層級 9 或更高版本。 Firebase 
 若要開始使用 Firebase 作業發送器，先新增[Xamarin.Firebase.JobDispatcher NuGet 封裝](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)Xamarin.Android 專案。 搜尋 NuGet 封裝管理員**Xamarin.Firebase.JobDispatcher**封裝 （也就是仍在發行前版本）。
 
 加入 Firebase 作業發送器程式庫之後, 建立`JobService`類別，然後將它與執行個體執行排定`FirebaseJobDispatcher`。
-
-> [!NOTE]
-> 目前的繫結 Firebase 作業發送器會以較舊版本的程式庫為目標。 是 [已知的錯誤 [(https://bugzilla.xamarin.com/show_bug.cgi?id=59046)] 這樣就不會從正在更新 Firebase 作業發送器的較新版本為目標的繫結。
 
 
 ### <a name="creating-a-jobservice"></a>建立 JobService
@@ -286,14 +283,13 @@ int cancelResult = dispatcher.Cancel("unique-tag-for-job");
 * `FirebaseJobDispatcher.CancelResultUnknownError` &ndash; 發生錯誤，無法從已取消作業。
 * `FirebaseJobDispatcher.CancelResult.NoDriverAvailable` &ndash; `FirebaseJobDispatcher`無法取消工作，因為沒有不具有效`IDriver`可用。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本指南將討論如何使用 Firebase 作業發送器有智慧地在背景中執行的工作。 它討論如何封裝要執行為工作`JobService`以及如何使用`FirebaseJobDispatcher`排程的工作，指定與條件`JobTrigger`和失敗應該如何處理與`RetryStrategy`。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [繫結產生器因錯誤嚴重的未處理例外狀況： System.ArgumentNullException： 值不可為 null。](https://bugzilla.xamarin.com/show_bug.cgi?id=59046)
 - [需由 NuGet Xamarin.Firebase.JobDispatcher](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)
 - [GitHub 上 firebase-工作-發送器](https://github.com/firebase/firebase-jobdispatcher-android)
 - [Xamarin.Firebase.JobDispatcher 繫結](https://github.com/xamarin/XamarinComponents/tree/master/Android/FirebaseJobDispatcher)
