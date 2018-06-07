@@ -1,5 +1,5 @@
 ---
-title: Menus
+title: Xamarin.Mac 中的功能表
 description: 本文件涵蓋使用 Xamarin.Mac 應用程式中的功能表。 它說明建立和維護功能表和功能表項目在 Xcode 和介面產生器，並以程式設計方式使用它們。
 ms.prod: xamarin
 ms.assetid: 5D367F8E-3A76-4995-8A89-488530FAD802
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 50c9cf333ff7965bbdfbb964a2301e677eb6aa59
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cb89d1df60bafe14dcc989666f0eeb5d757e4017
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792917"
 ---
-# <a name="menus"></a>Menus
+# <a name="menus-in-xamarinmac"></a>Xamarin.Mac 中的功能表
 
 _本文件涵蓋使用 Xamarin.Mac 應用程式中的功能表。它說明建立和維護功能表和功能表項目在 Xcode 和介面產生器，並以程式設計方式使用它們。_
 
@@ -438,7 +439,7 @@ public void defineKeyword (NSObject sender) {
 
 ![屬性偵測器](menu-images/action01.png "屬性偵測器")
 
-按一下**+**底部的按鈕**屬性偵測器**若要加入新的自訂動作：
+按一下**+** 底部的按鈕**屬性偵測器**若要加入新的自訂動作：
 
 ![加入新的動作](menu-images/action02.png "加入新的動作")
 
@@ -995,7 +996,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 當我們執行應用程式，將會顯示新的狀態 列項目。 從功能表中選取項目將會變更 [文字] 檢視中的文字： 
 
-![執行 [狀態] 列功能表](menu-images/statusbar01.png "執行 [狀態] 列 功能表")
+![執行 [狀態] 列功能表](menu-images/statusbar01.png "執行 [狀態] 列功能表")
 
 接下來，讓我們看看建立自訂的停駐的功能表項目。
 
@@ -1007,7 +1008,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 讓我們來建立自訂的停駐功能表應用程式執行下列動作：
 
-1. 在 Visual Studio for Mac，以滑鼠右鍵按一下應用程式的專案，然後選取**新增** > **新的檔案...**從新的檔案對話方塊中，選取**Xamarin.Mac** > **空白介面定義**，用於 「 DockMenu"**名稱**按一下**新增**來建立新的按鈕**DockMenu.xib**檔案：
+1. 在 Visual Studio for Mac，以滑鼠右鍵按一下應用程式的專案，然後選取**新增** > **新的檔案...** 從新的檔案對話方塊中，選取**Xamarin.Mac** > **空白介面定義**，用於 「 DockMenu"**名稱**按一下**新增**來建立新的按鈕**DockMenu.xib**檔案：
 
     ![加入空的介面定義](menu-images/dock02.png "加入空的介面定義")
 2. 在**方案板**，連按兩下**DockMenu.xib**檔案將它開啟在 Xcode 中進行編輯。 建立新**功能表**與下列項目：**位址**，**日期**，**問候語**，和**簽章** 

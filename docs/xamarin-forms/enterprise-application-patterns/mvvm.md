@@ -6,11 +6,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 32a7a7dd50edcc3eefe76429ddb1e5581447993e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 03a3c411c7031ece32a8987b480f96ad39909201
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793946"
 ---
 # <a name="mvvm"></a>MVVM
 
@@ -175,7 +176,7 @@ private static void OnAutoWireViewModelChanged(BindableObject bindable, object o
 
 所有的檢視模型和存取檢視的模型類別必須實作`INotifyPropertyChanged`介面。 檢視模型或模型類別中實作這個介面可讓類別提供基礎的屬性值變更時的任何資料繫結的控制項檢視中的變更通知。
 
-符合下列需求的應該是應用程式的架構為屬性變更告知的正確用法：
+應用程式應該架構為屬性變更告知的正確用法，符合下列需求：
 
 -   一律引發`PropertyChanged`如果公用屬性的值變更時發生的事件。 不會假設該引發`PropertyChanged`可以忽略事件，因為知識的 XAML 繫結進行方式。
 -   一律引發`PropertyChanged`任何事件計算其值由檢視中的其他屬性的內容模型。

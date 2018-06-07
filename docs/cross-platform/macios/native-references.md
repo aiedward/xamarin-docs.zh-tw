@@ -1,29 +1,26 @@
 ---
-title: 原生參考
-description: 原生參考可讓您嵌入 Xamarin.iOS 或 Xamarin.Mac 專案或專案繫結的原生的架構。
+title: 原生參考 iOS、 Mac 和繫結的專案
+description: 原生參考可讓您嵌入原生架構 Xamarin.iOS、 Xamarin.Mac 或繫結專案。
 ms.prod: xamarin
 ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: c56e392420debb21998363cfffa288aec51691ea
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3a497d0bb4674014b8063cb1fbc91eec6e7ae5ea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781714"
 ---
-# <a name="native-references"></a>原生參考
+# <a name="native-references-in-ios-mac-and-bindings-projects"></a>原生 iOS、 Mac 和繫結的專案中的參考
 
 _原生參考可讓您嵌入 Xamarin.iOS 或 Xamarin.Mac 專案或專案繫結的原生的架構。_
-
 
 自 iOS 8.0 已建立內嵌到應用程式擴充功能，並在 Xcode 中主要的應用程式之間共用程式碼架構。 使用原生參考功能則可能 Xamarin.iOS 中取用這些內嵌的架構 （使用 Xcode 建立）。
  
 > [!IMPORTANT]
 > 無法從任何類型的 Xamarin.iOS 或 Xamarin.Mac 專案中建立內嵌的架構，原生參考，僅允許現有的原生 (OBJECTIVE-C) 架構的耗用量。
-
-
-
 
 <a name="Terminology" />
 
@@ -76,8 +73,8 @@ _原生參考可讓您嵌入 Xamarin.iOS 或 Xamarin.Mac 專案或專案繫結�
 1. 建立新的或開啟現有的 Xamarin.iOS、 Xamarin.Mac 或繫結專案。
 2. 在**方案總管 中**，以滑鼠右鍵按一下專案名稱，然後選取**新增** > **加入原生參考**: 
 
-    [![](native-references-images/ref01.png "在 [方案總管] 中，以滑鼠右鍵按一下專案名稱並選取 加入原生參考")](native-references-images/ref01.png#lightbox)
-3. 從**開啟**對話方塊方塊中，選取您想要將內嵌，並按一下 原生架構名稱**開啟**按鈕： 
+    [![](native-references-images/ref01.png "在 [方案總管] 中，以滑鼠右鍵按一下專案名稱並選取加入原生參考")](native-references-images/ref01.png#lightbox)
+3. 從**開啟**對話方塊方塊中，選取您想要將內嵌，並按一下原生架構名稱**開啟**按鈕： 
 
     [![](native-references-images/ref02.png "選取內嵌，然後按一下 [Open] 按鈕以原生的架構的名稱")](native-references-images/ref02.png#lightbox)
 4. 架構會加入至專案的樹狀結構： 

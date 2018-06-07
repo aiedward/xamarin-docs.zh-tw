@@ -1,21 +1,20 @@
 ---
-title: 分鏡腳本的簡介
-description: 外觀的視覺表示法，而應用程式的流程分鏡腳本。 Xamarin 已經導入的設計工具可讓 Xamarin.iOS 應用程式，以善用分鏡腳本，讓您以視覺化方式設計您的應用程式畫面及存取檢視，控制站和使用 C# segues 獲得更多控制。
+title: 分鏡腳本中 Xamarin.iOS 簡介
+description: 本文件提供在 Xamarin.iOS 分鏡腳本的簡介。 它描述如何使用腳本來定義使用者介面、 segues，以及如何使用 iOS 設計工具，以編輯分鏡腳本檔案。
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 647bd7d339dc56978752f7ab29de30cf8acb7e07
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3366da2f5dc869c7b075bf32be238a1ebd3145d7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790964"
 ---
-# <a name="introduction-to-storyboards"></a>分鏡腳本的簡介
-
-_外觀的視覺表示法，而應用程式的流程分鏡腳本。Xamarin 已經導入的設計工具可讓 Xamarin.iOS 應用程式，以善用分鏡腳本，讓您以視覺化方式設計您的應用程式畫面及存取檢視，控制站和使用 C# segues 獲得更多控制。_
+# <a name="introduction-to-storyboards-in-xamarinios"></a>分鏡腳本中 Xamarin.iOS 簡介
 
 在本指南中，我們將說明分鏡腳本並檢查一些重要元件 – 例如 Segues。 我們將探討分鏡腳本可以如何建立和使用，而且開發人員有哪些優點。
 

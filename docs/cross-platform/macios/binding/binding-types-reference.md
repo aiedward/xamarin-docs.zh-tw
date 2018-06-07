@@ -1,15 +1,17 @@
 ---
 title: 繫結型別參考指南
+description: 本參考指南描述各種屬性和概念所需了解何時建立 C# 繫結至 Objective C 程式庫。
 ms.prod: xamarin
 ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 35e3a645a3a7f837c87d88a156051d39f49dc4ee
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3de85a1e3c84366a2059a8f7c479c20ce873508d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782166"
 ---
 # <a name="binding-types-reference-guide"></a>繫結型別參考指南
 
@@ -1028,7 +1030,7 @@ interface DatabaseConnection {
 
 ### <a name="exportattribute"></a>ExportAttribute
 
-`[Export]`屬性用來在方法或屬性，以公開成 Objective C 執行階段旗標。 這個屬性會繫結工具與實際的 Xamarin.iOS 和 Xamarin.Mac 執行階段之間共用。 方法中，參數會傳遞逐字產生的程式碼，屬性的 getter 和 setter 匯出會產生與基底宣告為基礎 (請參閱節[ `[BindAttribute]` ](#BindAttribute)如需有關如何變更資訊繫結 工具的行為）。
+`[Export]`屬性用來在方法或屬性，以公開成 Objective C 執行階段旗標。 這個屬性會繫結工具與實際的 Xamarin.iOS 和 Xamarin.Mac 執行階段之間共用。 方法中，參數會傳遞逐字產生的程式碼，屬性的 getter 和 setter 匯出會產生與基底宣告為基礎 (請參閱節[`[BindAttribute]`](#BindAttribute)如需有關如何變更資訊繫結工具的行為）。
 
 語法：
 

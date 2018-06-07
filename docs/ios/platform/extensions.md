@@ -1,6 +1,6 @@
 ---
-title: iOS 擴充功能
-description: IOS 8 中引進，擴充功能所帶來的 iOS 標準的內容，例如在通知中心內，當使用者要求自訂的鍵盤，或當相片的 widget 編輯。 所有擴充功能會安裝在搭配容器應用程式，並從特定的擴充點，在主機應用程式會啟動。
+title: iOS Xamarin.iOS 中延伸模組
+description: 本文件描述擴充功能，也就是 iOS 的標準環境，如通知中心內所顯示的小工具。 它討論如何建立擴充功能，並從父應用程式溝通。
 ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
@@ -8,15 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: af52db5f1add040af025f2134f0e9a7b3936f4f2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c26f951ddaff34cf23662f701395e636e1258b7d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786726"
 ---
-# <a name="ios-extensions"></a>iOS 擴充功能
-
-_IOS 8 中引進，擴充功能所帶來的 iOS 標準的內容，例如在通知中心內，當使用者要求自訂的鍵盤，或當相片的 widget 編輯。所有擴充功能會安裝在搭配容器應用程式，並從特定的擴充點，在主機應用程式會啟動。_
+# <a name="ios-extensions-in-xamarinios"></a>iOS Xamarin.iOS 中延伸模組
 
 > [!VIDEO https://youtube.com/embed/Sd0-ch9Udmk]
 

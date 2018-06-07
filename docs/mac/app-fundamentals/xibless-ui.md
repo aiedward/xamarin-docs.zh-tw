@@ -1,5 +1,5 @@
 ---
-title: .storyboard/.xib-less 使用者介面設計
+title: 在 Xamarin.Mac.storyboard/.xib-less 使用者介面設計
 description: 本文涵蓋直接從 C# 程式碼，而不需.storyboard 檔案、.xib 檔案或介面產生器建立 Xamarin.Mac 應用程式的使用者介面。
 ms.prod: xamarin
 ms.assetid: 02310F58-DCF1-4589-9F4A-065DF64FC0E1
@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 66725b02d3e351e74fa79ae5336a7db3a9f2b534
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 239133c8a5bcce97aca0c4444624fe0541600354
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792397"
 ---
-# <a name="storyboardxib-less-user-interface-design"></a>.storyboard/.xib-less 使用者介面設計
+# <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>在 Xamarin.Mac.storyboard/.xib-less 使用者介面設計
 
 _本文涵蓋直接從 C# 程式碼，而不需.storyboard 檔案、.xib 檔案或介面產生器建立 Xamarin.Mac 應用程式的使用者介面。_
-
 
 ## <a name="overview"></a>總覽
 
@@ -37,7 +37,7 @@ _本文涵蓋直接從 C# 程式碼，而不需.storyboard 檔案、.xib 檔案�
 1. 開啟您想要停止使用的應用程式`.stroyboard`或.xib 檔，以在 Visual Studio 中的使用者介面定義 for mac。
 2. 在**方案板**，以滑鼠右鍵按一下**Main.storyboard**或**MainWindow.xib**檔案，然後選取**移除**: 
 
-    ![移除 [主要腳本] 或 視窗](xibless-ui-images/switch01.png "移除主要腳本或視窗")
+    ![移除 [主要腳本] 或視窗](xibless-ui-images/switch01.png "移除主要腳本或視窗")
 3. 從**移除對話方塊**，按一下 **刪除**按鈕即可移除.storyboard 或.xib 完全專案： 
 
     ![確認刪除](xibless-ui-images/switch02.png "確認刪除作業")
