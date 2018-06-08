@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: eaa57e90ef71f13a53737aa6540e5b5bd9126ad2
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 7171142951a2893233233bb8a1c44c5a84c57b5c
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848196"
 ---
 # <a name="localization"></a>當地語系化
 
@@ -386,7 +387,7 @@ public class Localize : UsingResxLocalization.ILocalize
             switch (iOSLanguage)
             {
                 case "ms-MY":   // "Malaysian (Malaysia)" not supported .NET culture
-                case "ms-SG":   // "Malaysian (Singapore)" not supported .NET culture
+                case "ms-SG":    // "Malaysian (Singapore)" not supported .NET culture
                     netLanguage = "ms"; // closest supported
                     break;
                 case "gsw-CH":  // "Schwiizertüütsch (Swiss German)" not supported .NET culture
@@ -551,7 +552,7 @@ namespace UsingResxLocalization.Android
 此程式碼加入至 Android 應用程式專案之後, 會自動顯示翻譯的字串。
 
 > [!NOTE]
->️**警告：**如果 Android 發行組建中，但不是偵錯時使用的已翻譯的字串，以滑鼠右鍵按一下**Android 專案**選取**選項 > 建置 > Android建置**，並確定**快速組件部署**不的話。 這個選項會導致問題的資源，並不應該使用如果您要測試當地語系化的應用程式。
+>️**警告：** 如果 Android 發行組建中，但不是偵錯時使用的已翻譯的字串，以滑鼠右鍵按一下**Android 專案**選取**選項 > 建置 > Android建置**，並確定**快速組件部署**不的話。 這個選項會導致問題的資源，並不應該使用如果您要測試當地語系化的應用程式。
 
 #### <a name="universal-windows-platform"></a>通用 Windows 平台
 

@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: c2e37de65cf7be461543704b67249dfa9833dba8
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.openlocfilehash: 43282196b1c5b6e43927554d2189e54fc532915a
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848521"
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Xamarin.Forms 簡介
 
@@ -58,11 +59,11 @@ public class App : Application
     MainPage = new ContentPage {
       Content =  new Label
       {
-        Text = "Hello, Forms !",
-        VerticalOptions = LayoutOptions.CenterAndExpand,
-        HorizontalOptions = LayoutOptions.CenterAndExpand,
+          Text = "Hello, Forms !",
+          VerticalOptions = LayoutOptions.CenterAndExpand,
+          HorizontalOptions = LayoutOptions.CenterAndExpand,
       }
-    };
+      };
   }
 }
 ```
