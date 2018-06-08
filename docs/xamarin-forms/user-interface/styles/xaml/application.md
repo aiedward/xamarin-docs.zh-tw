@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: a505720e5fef8fe9e9ef82d03e53370210772f45
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 219973e26c5ee25accec57f1bebbd1753391e6de
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847900"
 ---
 # <a name="global-styles"></a>全域樣式
 
@@ -111,7 +112,7 @@ public class App : Application
         var buttonStyle = new Style (typeof(Button)) {
             Setters = {
                 ...
-                new Setter { Property = Button.TextColorProperty,   Value = Color.Teal }
+                new Setter { Property = Button.TextColorProperty,    Value = Color.Teal }
             }
         };
 

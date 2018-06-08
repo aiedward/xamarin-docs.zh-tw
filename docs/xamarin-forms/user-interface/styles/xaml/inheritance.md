@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: ffddc14145a3b187c03a6b2ba5ac6f8d6414468c
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 7b489e90daec2659a6d11b2776731582bdf368ff
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848417"
 ---
 # <a name="style-inheritance"></a>樣式繼承
 
@@ -117,7 +118,7 @@ public class StyleInheritancePageCS : ContentPage
         var baseStyle = new Style (typeof(View)) {
             Setters = {
                 new Setter {
-                    Property = View.HorizontalOptionsProperty, Value = LayoutOptions.Center },
+                    Property = View.HorizontalOptionsProperty, Value = LayoutOptions.Center    },
                 ...
             }
         };
@@ -126,14 +127,14 @@ public class StyleInheritancePageCS : ContentPage
             BasedOn = baseStyle,
             Setters = {
                 ...
-                new Setter { Property = Label.TextColorProperty, Value = Color.Teal }
+                new Setter { Property = Label.TextColorProperty, Value = Color.Teal    }
             }
         };
 
         var buttonStyle = new Style (typeof(Button)) {
             BasedOn = baseStyle,
             Setters = {
-                new Setter { Property = Button.BorderColorProperty, Value = Color.Lime },
+                new Setter { Property = Button.BorderColorProperty, Value =    Color.Lime },
                 ...
             }
         };

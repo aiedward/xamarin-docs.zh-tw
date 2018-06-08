@@ -8,11 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: cff0b85514d2e5995d09735d6ad99b7909bfacb4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28aba0ec33dc88e3e87f51fbdd28d5ec8a72d3c3
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847598"
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>從 Azure 行動應用程式中傳送推播通知
 
@@ -421,5 +422,5 @@ protected override async void OnLaunched(LaunchActivatedEventArgs e)
 - [將推播通知新增至 Xamarin.Forms 應用程式](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/)
 - [在 iOS 中的推播通知](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md)
 - [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)
-- [TodoAzurePush (sample)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzurePush/)
+- [TodoAzurePush （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzurePush/)
 - [Azure 行動用戶端 SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)

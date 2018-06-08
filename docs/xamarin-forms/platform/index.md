@@ -6,12 +6,13 @@ ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/20/2017
-ms.openlocfilehash: be131bdbfeceabd72494708cdfe9a263da9bbbd8
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 04/06/2018
+ms.openlocfilehash: 0609d15248f1827b892ae02a877382ca0ffbed18
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847627"
 ---
 # <a name="platform-features"></a>平台功能
 
@@ -41,10 +42,6 @@ Xamarin.Forms 現在具有 GTK # 應用程式的預覽支援。
 
 Xamarin.Forms 現在具有 macOS 應用程式的預覽支援。
 
-## <a name="wpfwpfmd"></a>[WPF](wpf.md)
-
-Xamarin.Forms 現在有了 Windows Presentation Foundation (WPF) 應用程式的預覽支援。
-
 ## <a name="native-formsnative-formsmd"></a>[原生格式](native-forms.md)
 
 原生格式允許 Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-衍生頁面，以供原生 Xamarin.iOS、 Xamarin.Android 和通用 Windows 平台 (UWP) 專案。
@@ -61,6 +58,14 @@ Xamarin.Forms 現在有了 Windows Presentation Foundation (WPF) 應用程式的
 
 有各種不同的開放原始碼外掛程式適用於 Github、 Nuget 和 Xamarin 元件存放區，協助延長 Xamarin.Forms 應用程式。
 
+## <a name="tizentizenmd"></a>[Tizen](tizen.md)
+
+Tizen.NET 可讓您建置.NET 應用程式，使用 Xamarin.Forms 和 Tizen.NET framework。
+
 ## <a name="windowswindowsindexmd"></a>[Windows](windows/index.md)
 
 Xamarin.Forms 會對 Windows 10 中支援的通用 Windows 平台 (UWP)。 本文說明如何新增至現有的 Xamarin.Forms 方案的 UWP 專案。
+
+## <a name="wpfwpfmd"></a>[WPF](wpf.md)
+
+Xamarin.Forms 現在有了 Windows Presentation Foundation (WPF) 應用程式的預覽支援。

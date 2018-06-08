@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/19/2018
-ms.openlocfilehash: 2e942d1085822fee935ae0f23f2253f23d49a43d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 92eabbec31b654f1aefcffb99ec2ed14062e8681
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847373"
 ---
 # <a name="creating-android-services"></a>建立 Android 服務
 
@@ -25,7 +26,7 @@ Android 應用程式會啟動在至少一個下列四個主要元件：_活動_�
  
 在 Android 中的背景工作的主要機制是_服務_。 Android 的服務是設計用來執行一些工作，不含使用者介面的元件。 服務可能會下載檔案、 播放音樂，或將篩選套用至映像。 服務也可以用於處理序間通訊 (_IPC_) Android 應用程式之間。 例如一個 Android 應用程式可能會使用來自另一個應用程式的音樂播放機服務或應用程式可能會公開至其他應用程式透過服務的資料 （例如個人的連絡資訊）。 
 
-服務和其執行背景工作的能力是提供順利且流暢的使用者介面非常重要。 所有 Android 應用程式有_主執行緒_(也稱為_UI 執行緒_) 上所執行的活動。 裝置能繼續回應，Android 必須能夠更新速率為 60 秒畫面格數的使用者介面。 如果太多工作，在主執行緒上執行 Android 應用程式，則 Android 將會捨棄畫面，這又會導致出現不穩定的 UI (有時也稱為_janky_)。 這表示 UI 執行緒上執行任何工作應該完成這兩個框架，（1 第二個每隔 60 的畫面格數） 的大約 16 毫秒的時間範圍中。 
+服務和其執行背景工作的能力是提供順利且流暢的使用者介面非常重要。 所有 Android 應用程式有_主執行緒_(也稱為_UI 執行緒_) 上所執行的活動。 裝置能繼續回應，Android 必須能夠更新速率為 60 秒畫面格數的使用者介面。 如果 Android 應用程式，在主執行緒上執行太多工作，則 Android 將會捨棄畫面，這又會導致出現不穩定的 UI (有時也稱為_janky_)。 這表示 UI 執行緒上執行任何工作應該完成這兩個框架，（1 第二個每隔 60 的畫面格數） 的大約 16 毫秒的時間範圍中。 
 
 若要解決這個問題，開發人員可能會使用執行緒活動中執行某些工作，會封鎖 UI。 不過，這可能會造成問題。 它是 Android 將會損毀，並重新建立多個執行個體的活動很可能。 不過，Android，並不會自動終結執行緒，可能會導致記憶體流失。 基本的使用範例時，[裝置旋轉](~/android/app-fundamentals/handling-rotation.md) &ndash; Android 將會嘗試終結活動的執行個體，然後重新建立新的：
 
@@ -44,7 +45,7 @@ Android 應用程式會啟動在至少一個下列四個主要元件：_活動_�
 
 * **繫結服務** &ndash; A_繫結服務_是有某些其他元件 （通常活動） 與它繫結的服務。 繫結的服務提供可讓繫結的元件和服務彼此互動的介面。 沒有更多的用戶端繫結至服務之後，Android 將會關閉服務。 
 
-* **`IntentService`** &ndash; _`IntentService`_是特定子類別`Service`簡化服務建立和使用方式的類別。 `IntentService`要處理個別自發的呼叫。 不同於服務，可以同時處理多個呼叫，`IntentService`則更像_工作佇列處理器_&ndash;工作排和`IntentService`單一工作者執行緒上一次處理一個每項工作。 一般而言，`IntentService`未繫結至活動或片段。 
+* **`IntentService`** &ndash; _`IntentService`_ 是特定子類別`Service`簡化服務建立和使用方式的類別。 `IntentService`要處理個別自發的呼叫。 不同於服務，可以同時處理多個呼叫，`IntentService`則更像_工作佇列處理器_&ndash;工作排和`IntentService`單一工作者執行緒上一次處理一個每項工作。 一般而言，`IntentService`未繫結至活動或片段。 
 
 * **已啟動服務** &ndash; A_已啟動服務_是服務已啟動某些其他 Android 元件 （例如活動），並會在背景中執行進行持續，直到項目明確告知，若要停止服務。 不同於繫結的服務，啟動的服務並沒有直接繫結至它的任何用戶端。 基於這個理由，是設計啟動的服務，讓它們可能會依正常程序重新啟動視。
 

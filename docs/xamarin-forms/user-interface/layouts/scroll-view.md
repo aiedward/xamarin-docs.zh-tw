@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/22/2016
-ms.openlocfilehash: 13f3d5c02b8451bcd52b355fb89f7931f50a0d39
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 708fb39aa2e56861a8c9fc47ab30bd20ed20188e
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847533"
 ---
 # <a name="scrollview"></a>ScrollView
 
@@ -55,7 +56,7 @@ ms.lasthandoff: 04/04/2018
 var scroll = new ScrollView();
 Content = scroll;
 var stack = new StackLayout();
-stack.Children.Add(new BoxView { BackgroundColor = Color.Red,   HeightRequest = 600, WidthRequest = 600 });
+stack.Children.Add(new BoxView { BackgroundColor = Color.Red,    HeightRequest = 600, WidthRequest = 600 });
 stack.Children.Add(new Entry());
 ```
 

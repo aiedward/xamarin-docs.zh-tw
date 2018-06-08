@@ -1,18 +1,19 @@
 ---
-title: LinearLayout
+title: 線性
 ms.prod: xamarin
 ms.assetid: B49D129C-AF24-3C5A-C833-5A34AFBB2442
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 417593a32ce99393bddeb912833fdd02e4439026
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/07/2018
+ms.openlocfilehash: b7564d95c9a472276846b4773d355d8167f37efe
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34846402"
 ---
-# <a name="linearlayout"></a>LinearLayout
+# <a name="linearlayout"></a>線性
 
 [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) 是[ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)顯示子[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)線性方向的項目水平或垂直。
 
@@ -27,71 +28,71 @@ ms.lasthandoff: 04/04/2018
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation=    "vertical"
-    android:layout_width=    "fill_parent"
-    android:layout_height=    "fill_parent"    >
+    android:layout_width=    "match_parent"
+    android:layout_height=    "match_parent"    >
 
   <LinearLayout
       android:orientation=    "horizontal"
-      android:layout_width=    "fill_parent"
-      android:layout_height=    "fill_parent"
+      android:layout_width=    "match_parent"
+      android:layout_height=    "match_parent"
       android:layout_weight=    "1"    >
       <TextView
           android:text=    "red"
           android:gravity=    "center_horizontal"
           android:background=    "#aa0000"
           android:layout_width=    "wrap_content"
-          android:layout_height=    "fill_parent"
+          android:layout_height=    "match_parent"
           android:layout_weight=    "1"    />
       <TextView
           android:text=    "green"
           android:gravity=    "center_horizontal"
           android:background=    "#00aa00"
           android:layout_width=    "wrap_content"
-          android:layout_height=    "fill_parent"
+          android:layout_height=    "match_parent"
           android:layout_weight=    "1"    />
       <TextView
           android:text=    "blue"
           android:gravity=    "center_horizontal"
           android:background=    "#0000aa"
           android:layout_width=    "wrap_content"
-          android:layout_height=    "fill_parent"
+          android:layout_height=    "match_parent"
           android:layout_weight=    "1"    />
       <TextView
           android:text=    "yellow"
           android:gravity=    "center_horizontal"
           android:background=    "#aaaa00"
           android:layout_width=    "wrap_content"
-          android:layout_height=    "fill_parent"
+          android:layout_height=    "match_parent"
           android:layout_weight=    "1"    />
   </LinearLayout>
         
   <LinearLayout
     android:orientation=    "vertical"
-    android:layout_width=    "fill_parent"
-    android:layout_height=    "fill_parent"
+    android:layout_width=    "match_parent"
+    android:layout_height=    "match_parent"
     android:layout_weight=    "1"    >
     <TextView
         android:text=    "row one"
         android:textSize=    "15pt"
-        android:layout_width=    "fill_parent"
+        android:layout_width=    "match_parent"
         android:layout_height=    "wrap_content"
         android:layout_weight=    "1"    />
     <TextView
         android:text=    "row two"
         android:textSize=    "15pt"
-        android:layout_width=    "fill_parent"
+        android:layout_width=    "match_parent"
         android:layout_height=    "wrap_content"
         android:layout_weight=    "1"    />
     <TextView
         android:text=    "row three"
         android:textSize=    "15pt"
-        android:layout_width=    "fill_parent"
+        android:layout_width=    "match_parent"
         android:layout_height=    "wrap_content"
         android:layout_weight=    "1"    />
     <TextView
         android:text=    "row four"
         android:textSize=    "15pt"
-        android:layout_width=    "fill_parent"
+        android:layout_width=    "match_parent"
         android:layout_height=    "wrap_content"
        android:layout_weight=    "1"    />
   </LinearLayout>

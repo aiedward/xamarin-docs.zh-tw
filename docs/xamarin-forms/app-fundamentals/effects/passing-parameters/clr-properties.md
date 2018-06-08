@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: c913ea56af423631c48fb9ee6d8dcb95028a4144
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c85256803da137c850e502cfad917de703b161b5
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34846470"
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>傳遞效果參數做為通用語言執行階段屬性
 
@@ -49,7 +50,7 @@ public class ShadowEffect : RoutingEffect
   public float DistanceY { get; set; }
 
   public ShadowEffect () : base ("MyCompany.LabelShadowEffect")
-  {         
+  {            
   }
 }
 ```

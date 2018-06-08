@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: fd96770caf92eb30e669133f592f5d780146be59
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: ec7e8ef619ba065c0e9d81b71f267eb70a68bd14
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847702"
 ---
 # <a name="customizing-a-viewcell"></a>自訂 ViewCell
 
@@ -79,17 +80,17 @@ public class NativeCell : ViewCell
     ...>
     ...
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Xamarin.Forms native cell" HorizontalTextAlignment="Center" />
-            <ListView x:Name="listView" CachingStrategy="RecycleElement" ItemSelected="OnItemSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <local:NativeCell Name="{Binding Name}" Category="{Binding Category}" ImageFilename="{Binding ImageFilename}" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
+          <StackLayout>
+              <Label Text="Xamarin.Forms native cell" HorizontalTextAlignment="Center" />
+              <ListView x:Name="listView" CachingStrategy="RecycleElement" ItemSelected="OnItemSelected">
+                  <ListView.ItemTemplate>
+                      <DataTemplate>
+                          <local:NativeCell Name="{Binding Name}" Category="{Binding Category}" ImageFilename="{Binding ImageFilename}" />
+                      </DataTemplate>
+                  </ListView.ItemTemplate>
+              </ListView>
+          </StackLayout>
+      </ContentPage.Content>
 </ContentPage>
 ```
 

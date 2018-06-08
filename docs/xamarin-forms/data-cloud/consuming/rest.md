@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 48b81c5beb1643501c69e5de1ea4f4197d587001
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7857f3d4c76fe7d8589c25e4f7fb079f06e136e7
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34846615"
 ---
 # <a name="consuming-a-restful-web-service"></a>使用 RESTful Web 服務
 
@@ -50,10 +51,10 @@ REST 服務會使用 ASP.NET Core 寫入，並提供下列作業：
 
 |運算|HTTP 方法|相對 URI|參數|
 |--- |--- |--- |--- |
-|取得待辦項目清單|GET|/api/todoitems/|
-|建立新的待辦項目|POST|/api/todoitems/|JSON 格式化的 TodoItem|
-|更新 待辦項目|PUT|/api/todoitems/|JSON 格式化的 TodoItem|
-|刪除待辦項目|DELETE|/api/todoitems/{id}|
+|取得待辦事項的清單|GET|/api/todoitems /|
+|建立新的待辦項目|POST|/api/todoitems /|JSON 格式化的 TodoItem|
+|更新待辦事項|PUT|/api/todoitems /|JSON 格式化的 TodoItem|
+|刪除待辦事項|DELETE|/api/todoitems / {id}|
 
 大部分的 Uri 包含`TodoItem`路徑中的識別碼。 例如，若要刪除`TodoItem`其識別碼是`6bb8a868-dba1-4f1a-93b7-24ebce87e243`，用戶端傳送的 DELETE 要求`http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243`。 如需使用範例應用程式中的資料模型的詳細資訊，請參閱[將資料模型化](~/xamarin-forms/data-cloud/walkthrough.md)。
 
@@ -69,9 +70,9 @@ config.Routes.MapHttpRoute(
 
 路由表含有路由範本，和 Web API framework 收到 HTTP 要求時，會嘗試比對針對路由表中的路由範本的 URI。 如果相符路由找不到用戶端收到 404 （找不到） 錯誤。 如果找到相符的路由，Web API 會選取控制器和動作，如下所示：
 
-- 若要尋找控制器，Web API 將 「 控制器 」 加入至值*{控制器}*變數。
+- 若要尋找控制器，Web API 將 「 控制器 」 加入至值 *{控制器}* 變數。
 - 若要尋找此動作，Web API 的 HTTP 方法並使用相同的 HTTP 方法，做為屬性裝飾的控制器動作會查看。
-- *{Id}*預留位置變數會對應至動作參數。
+- *{Id}* 預留位置變數會對應至動作參數。
 
 REST 服務會使用基本驗證。 如需詳細資訊，請參閱[驗證 RESTful web 服務](~/xamarin-forms/data-cloud/authentication/rest.md)。 如需 ASP.NET Web API 路由的詳細資訊，請參閱[中 ASP.NET Web API 的路由](http://www.asp.net/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api)ASP.NET 網站上。 如需有關如何建置使用 ASP.NET Core 的 REST 服務的詳細資訊，請參閱[原生行動應用程式建立後端服務](/aspnet/core/mobile/native-mobile-backend/)。
 
@@ -149,7 +150,7 @@ public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
   ...
 
   if (response.IsSuccessStatusCode) {
-    Debug.WriteLine (@"             TodoItem successfully saved.");
+    Debug.WriteLine (@"                TodoItem successfully saved.");
 
   }
   ...
@@ -196,7 +197,7 @@ public async Task DeleteTodoItemAsync (string id)
   ...
   var response = await client.DeleteAsync (uri);
   if (response.IsSuccessStatusCode) {
-    Debug.WriteLine (@"             TodoItem successfully deleted.");
+    Debug.WriteLine (@"                TodoItem successfully deleted.");
   }
   ...
 }

@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: dc55f3fe70450c71b639cf33166720fc27d45a10
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 312472fdfae65bc62b76f4295a13760236dededc
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847653"
 ---
 # <a name="tableview"></a>TableView
 
@@ -54,7 +55,7 @@ Content = new TableView {
 };
 ```
 
-每個`TableSection`的標題和一或多個 ViewCells 所組成。 我們在這裡看到`TableSection`的`Title`屬性設定為*「 環 」*建構函式：
+每個`TableSection`的標題和一或多個 ViewCells 所組成。 我們在這裡看到`TableSection`的`Title`屬性設定為 *「 環 」* 建構函式：
 
 ```csharp
 var section = new TableSection ("Ring") { //TableSection constructor takes title as an optional parameter

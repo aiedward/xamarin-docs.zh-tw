@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 71c10e1de8b94b8d9799d144fb603c82c40ca9eb
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 7a304790213bcebe50a3f39295b5b1d1fb052879
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848339"
 ---
 # <a name="colors"></a>色彩
 
@@ -71,6 +72,21 @@ IOS 和 Android 上這個執行個體設定為對比的色彩，會顯示預設�
 -  **WithLuminosity** -傳回新的色彩，以提供的值取代亮度。
 -  **WithSaturation** -傳回新的色彩、 飽和度取代成所提供的值。
 -  **MultiplyAlpha** -藉由修改 alpha，乘以所提供的 alpha 值會傳回新的色彩。
+
+## <a name="implicit-conversions"></a>隱含轉換
+
+之間的隱含轉換`Xamarin.Forms.Color`和`System.Drawing.Color`可以執行類型：
+
+```csharp
+Xamarin.Forms.Color xfColor = Xamarin.Forms.Color.FromRgb(0, 72, 255);
+System.Drawing.Color sdColor = System.Drawing.Color.FromArgb(38, 127, 0);
+
+// Implicity convert from a Xamarin.Forms.Color to a System.Drawing.Color
+System.Drawing.Color sdColor2 = xfColor;
+
+// Implicitly convert from a System.Drawing.Color to a Xamarin.Forms.Color
+Xamarin.Forms.Color xfColor2 = sdColor;
+```
 
 ## <a name="deviceruntimeplatform"></a>Device.RuntimePlatform
 

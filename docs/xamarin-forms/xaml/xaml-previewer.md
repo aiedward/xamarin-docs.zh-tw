@@ -6,12 +6,13 @@ ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 02/24/2017
-ms.openlocfilehash: d23f89ed8ad7956f7a366280a14ccc12ba3dac0c
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.date: 05/31/2018
+ms.openlocfilehash: 9b87145773bf16b15c391c5c5d6d136b7aa76e39
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848352"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Xamarin.Forms 的 XAML 預覽程式
 
@@ -55,6 +56,17 @@ _Xamarin.Forms 配置呈現您輸入時，請參閱 ！_
 某些版面配置可能會很難視覺化沒有任何繫結至使用者介面控制項的資料。 若要讓更實用的預覽，某些靜態將資料指派給控制項的硬式編碼繫結內容 （無論是在程式碼後置，或是使用 XAML）。
 
 James Montemagno 是指[新增設計階段資料的部落格文章](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data)以了解如何將繫結至 XAML 中的靜態 ViewModel。
+
+## <a name="detecting-design-mode"></a>偵測設計模式
+
+靜態[ `DesignMode.IsDesignModeEnabled` ](xref:Xamarin.Forms.DesignMode.IsDesignModeEnabled)屬性可加以檢查來判斷應用程式是否正在執行中的預覽程式。 這可讓您指定只會在應用程式預覽程式在執行時，所執行的程式碼：
+
+```csharp
+if (DesignMode.IsDesignModeEnabled)
+{
+  // Previewer only code  
+}
+```
 
 ## <a name="troubleshooting"></a>疑難排解
 

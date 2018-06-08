@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 4d1699f95d39fcd43a4d8da8404beac8cbf0158e
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 6ff36f511c5194017afd34601fc9ea2f89b1e2d4
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733018"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848105"
 ---
 # <a name="grid"></a>Grid
 

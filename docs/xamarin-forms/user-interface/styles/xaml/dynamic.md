@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: c484bdc90ec039a8d70209deabbe283cf7100610
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: e0cfcbaef70f58622a21315637279740f568ada8
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848066"
 ---
 # <a name="dynamic-styles"></a>動態樣式
 
@@ -112,7 +113,7 @@ public class DynamicStylesPageCS : ContentPage
         Resources ["searchBarStyle"] = Resources ["blueSearchBarStyle"];
 
         Content = new StackLayout {
-            Children = { searchBar1, searchBar2, searchBar3, searchBar4,    button  }
+            Children = { searchBar1, searchBar2, searchBar3, searchBar4,    button    }
         };
     }
     ...

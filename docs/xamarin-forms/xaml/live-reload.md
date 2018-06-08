@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: d2aee2d6421b06f9147c656debdd58bdfe21be72
-ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
+ms.openlocfilehash: 756f0570ce792450cfcaf6b1c5161a95a6cb80c8
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848300"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin 即時重新載入
 
@@ -172,7 +173,7 @@ public partial class App : Application
 
 在案例中從執行中應用程式連接到您的電腦 (表示使用`localhost`或`127.0.0.1`中**工具 > 選項 > Xamarin > 即時重新載入**) 無法 （也就是防火牆，不同的網路）您可以將遠端伺服器設定相反地，IDE 和應用程式將以連現到。
 
-即時重新載入使用標準[MQTT 通訊協定](http://mqtt.org/)來交換訊息，並因此可以與[協力廠商伺服器](https://github.com/mqtt/mqtt.github.io/wiki/servers)。 即使有[公用伺服器](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers)(也稱為*broker*) 可用，您可以使用。 即時重新載入經過測試可與`broker.hivemq.com`和`iot.eclipse.org`主機名稱，以及所提供的服務[www.cloudmqtt.com](https://www.cloudmqtt.com)和[www.cloudamqp.com](https://www.cloudamqp.com)。您也可以如部署在雲端中，您自己 MQTT 伺服器[在 Azure 上的 HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud)。
+即時重新載入使用標準[MQTT 通訊協定](http://mqtt.org/)來交換訊息，並因此可以與[協力廠商伺服器](https://github.com/mqtt/mqtt.github.io/wiki/servers)。 即使有[公用伺服器](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers)(也稱為*broker*) 可用，您可以使用。 即時重新載入經過測試可與`broker.hivemq.com`和`iot.eclipse.org`主機名稱，以及所提供的服務[www.cloudmqtt.com](https://www.cloudmqtt.com)和[www.cloudamqp.com](https://www.cloudamqp.com)。 您也可以如部署在雲端中，您自己 MQTT 伺服器[在 Azure 上的 HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud)。
 
 您可以設定任何連接埠，但通常會使用預設 1883年連接埠使用遠端伺服器。 即時重新載入訊息使用強式端對端 AES 對稱式加密，因此安全地連線至遠端伺服器。 根據預設，加密金鑰和初始化向量 (IV) 會重新產生每個 Visual Studio 工作階段上。
 

@@ -6,11 +6,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 5774d91dad7b733a03219dcce1434798f70d4564
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: d5e73839f889234c816bfff08f3e46dade8dffc9
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34846837"
 ---
 # <a name="getting-started-with-datapages"></a>開始使用 DataPages
 
@@ -47,7 +48,7 @@ ms.lasthandoff: 05/10/2018
 </Application>
 ```
 
-**重要事項：**您也應該遵循的步驟[載入佈景主題 （下方） 的組件](#loadtheme)的未定案程式碼加入至 iOS`AppDelegate`和 Android `MainActivity`。 這將在未來的預覽版本中改進。
+**重要事項：** 您也應該遵循的步驟[載入佈景主題 （下方） 的組件](#loadtheme)的未定案程式碼加入至 iOS`AppDelegate`和 Android `MainActivity`。 這將在未來的預覽版本中改進。
 
 
 ## <a name="3-add-a-xaml-page"></a>3.加入 XAML 頁面
@@ -94,7 +95,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 刪除`Content`項目並將它取代為`p:ListDataPage.DataSource`來填入資料的頁面。 在下列遠端 Json 範例資料檔案從 URL 載入。
 
-**注意：**預覽*需要*`StyleClass`對資料來源提供呈現提示的屬性。 `StyleClass="Events"`指的預先定義的預覽中，其中包含樣式的配置*硬式編碼*以符合所使用的 JSON 資料來源。
+**注意：** 預覽*需要*`StyleClass`對資料來源提供呈現提示的屬性。 `StyleClass="Events"`指的預先定義的預覽中，其中包含樣式的配置*硬式編碼*以符合所使用的 JSON 資料來源。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -135,7 +136,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 [![](get-started-images/demo-sml.png "DataPages 範例應用程式")](get-started-images/demo.png#lightbox "DataPages 範例應用程式")
 
-因為預先建立的樣式**「 事件 」**淺色佈景主題的 Nuget 封裝中存在，而且有定義符合資料來源 （例如，樣式 "title"、"image"、"展示器 」）。
+因為預先建立的樣式 **「 事件 」** 淺色佈景主題的 Nuget 封裝中存在，而且有定義符合資料來源 （例如，樣式 "title"、"image"、"展示器 」）。
 
 「 事件 」`StyleClass`建置用來顯示`ListDataPage`具有自訂控制項`CardView`控制也就是定義在 Xamarin.Forms.Pages。 `CardView`控制項有三個屬性： `ImageSource`， `Text`，和`Detail`。 是以硬式編碼繫結資料來源的三個欄位 （從 JSON 檔案） 來顯示這些屬性。
 

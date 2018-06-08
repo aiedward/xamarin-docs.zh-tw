@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 0f4de4594e8abb8d0ee03690e5829193c51a3736
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 5fe7250b5b8fcea97d4fbe6846999be60e8e8673
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848170"
 ---
 # <a name="customizing-a-contentpage"></a>自訂 ContentPage
 
@@ -142,7 +143,7 @@ namespace CustomRenderer.iOS
                 SetupLiveCameraStream ();
                 AuthorizeCameraUse ();
             } catch (Exception ex) {
-                System.Diagnostics.Debug.WriteLine (@"          ERROR: ", ex.Message);
+                System.Diagnostics.Debug.WriteLine (@"            ERROR: ", ex.Message);
             }
         }
         ...
@@ -186,7 +187,7 @@ namespace CustomRenderer.Droid
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine(@"           ERROR: ", ex.Message);
+                System.Diagnostics.Debug.WriteLine(@"            ERROR: ", ex.Message);
             }
         }
         ...
