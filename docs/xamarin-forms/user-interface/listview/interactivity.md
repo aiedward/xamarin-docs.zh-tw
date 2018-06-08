@@ -6,12 +6,13 @@ ms.assetid: CD14EB90-B08C-4E8F-A314-DA0EEC76E647
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: d16c45b7f7cb7eef67a905b6fbcb9b8675b0b2ba
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 06/01/2018
+ms.openlocfilehash: 5fe821e7e5254da8febbbde518b9fd42526bf262
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848118"
 ---
 # <a name="listview-interactivity"></a>ListView 互動功能
 
@@ -111,7 +112,7 @@ ContextActions.Add (deleteAction);
                Text="Delete" IsDestructive="True" />
          </ViewCell.ContextActions>
          <StackLayout Padding="15,0">
-             <Label Text="{Binding title}" />
+              <Label Text="{Binding title}" />
          </StackLayout>
       </ViewCell>
     </DataTemplate>
@@ -132,6 +133,9 @@ public void OnDelete (object sender, EventArgs e) {
     DisplayAlert("Delete Context Action", mi.CommandParameter + " delete context action", "OK");
 }
 ```
+
+> [!NOTE]
+> `NavigationPageRenderer` Android 具有可覆寫`UpdateMenuItemIcon`方法可以用來從自訂載入圖示`Drawable`。 此覆寫會讓您能夠使用作為圖示上的 SVG 影像`MenuItem`在 Android 上的執行個體。
 
 <a name="Pull_to_Refresh" />
 

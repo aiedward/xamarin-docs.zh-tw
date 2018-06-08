@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: af0dbef84d8ceb178fe5c1ac6fc7194c178141dc
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 3926fd5c19ad187deef16c4beb0812b3947e9544
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847237"
 ---
 # <a name="implementing-a-hybridwebview"></a>實作 HybridWebView
 
@@ -222,7 +223,7 @@ function invokeCSCode(data) {
         invokeCSharpAction(data);
     }
     catch (err){
-        log(err);
+          log(err);
     }
 }
 </script>

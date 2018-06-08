@@ -6,24 +6,25 @@ ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/22/2017
-ms.openlocfilehash: 2e40effa7bc54b7b7cf73edaa882256fed521a95
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/31/2018
+ms.openlocfilehash: a45a4edb93920cfe1d0289da44ee664e41c25cf1
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847844"
 ---
 # <a name="entry"></a>進入
 
 _單行文字或輸入的密碼_
 
-Xamarin.Forms`Entry`用於單行文字輸入。 `Entry`例如編輯器 檢視中，支援多個鍵盤類型。 此外，`Entry`可用來當作密碼欄位。
+Xamarin.Forms`Entry`用於單行文字輸入。 `Entry`、 Like`Editor`檢視中，支援多個鍵盤類型。 此外，`Entry`可用來當作密碼欄位。
 
 ## <a name="display-customization"></a>顯示的自訂
 
 ### <a name="setting-and-reading-text"></a>設定及讀取文字
 
-項目，例如其他文字呈現的檢視，會公開`Text`屬性。 `Text` 可用來設定並閱讀所呈現的文字`Entry`。 下列範例會示範在 XAML 中設定的文字：
+`Entry`，像其他文字呈現的檢視，公開`Text`屬性。 這個屬性可以用來設定並閱讀所呈現的文字`Entry`。 下列範例會示範設定`Text`在 XAML 中的屬性：
 
 ```xaml
 <Entry Text="I am an Entry" />
@@ -44,6 +45,20 @@ var text = MyEntry.Text;
 > [!NOTE]
 > 寬度`Entry`可以藉由設定定義其`WidthRequest`屬性。 請不要依賴的寬度`Entry`被定義為基礎的值及其`Text`屬性。
 
+### <a name="limiting-input-length"></a>輸入的長度的限制
+
+[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)屬性可以用來限制所允許輸入的長度[ `Entry` ](xref:Xamarin.Forms.Entry)。 這個屬性應該設定為正整數：
+
+```xaml
+<Entry ... MaxLength="10" />
+```
+
+```csharp
+var entry = new Entry { ... MaxLength = 10 };
+```
+
+A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)屬性值為 0 表示會允許任何輸入項目，而值為`int.MaxValue`，這是預設值[ `Entry` ](xref:Xamarin.Forms.Entry)，表示沒有任何可能輸入的字元數的有效限制。
+
 ### <a name="keyboards"></a>鍵盤
 
 當使用者互動時顯示鍵盤`Entry`可以透過程式設計方式設定`Keyboard`屬性。
@@ -58,6 +73,23 @@ var text = MyEntry.Text;
 - **Url** &ndash;為用來輸入檔案路徑和網址
 
 沒有[範例的每個鍵盤](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/)我們配方一節。
+
+### <a name="enabling-and-disabling-spell-checking"></a>啟用和停用拼字檢查
+
+[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性會控制是否拼字檢查已啟用。 根據預設，此屬性設定為`true`。 在使用者輸入文字，也會指出拼字錯誤。
+
+不過，某些文字項目的情況下，輸入使用者名稱，例如拼字檢查會提供負的經驗，因此應該停用設定[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性`false`:
+
+```xaml
+<Entry ... IsSpellCheckEnabled="false" />
+```
+
+```csharp
+var entry = new Entry { ... IsSpellCheckEnabled = false };
+```
+
+> [!NOTE]
+> 當[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性設定為`false`，而且在不使用自訂的鍵盤，原生拼字檢查將會停用。 不過，如果[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)具有已設定，以停用拼字檢查，例如[ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat)、`IsSpellCheckEnabled`屬性會被忽略。 因此，屬性不能用來啟用拼字檢查`Keyboard`，明確地停用。
 
 ### <a name="placeholders"></a>預留位置
 

@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 53f87fe9dfbf8284055d28fd87bab7bad02c1fd8
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 9f9e87ae0fd9d609cef56123e9052d85941bda51
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848183"
 ---
 # <a name="explicit-styles"></a>明確的樣式
 
@@ -106,7 +107,7 @@ public class ExplicitStylesPageCS : ContentPage
         var labelRedStyle = new Style (typeof(Label)) {
             Setters = {
                 ...
-                new Setter { Property = Label.TextColorProperty, Value = Color.Red  }
+                new Setter { Property = Label.TextColorProperty, Value = Color.Red    }
             }
         };
         var labelGreenStyle = new Style (typeof(Label)) {
@@ -136,7 +137,7 @@ public class ExplicitStylesPageCS : ContentPage
                             Style = (Style)Resources ["labelGreenStyle"] },
                 new Label { Text = "explicit styles,",
                             Style = (Style)Resources ["labelBlueStyle"] },
-                new Label { Text = "and an explicit style override",
+                new Label {    Text = "and an explicit style override",
                             Style = (Style)Resources ["labelBlueStyle"], TextColor = Color.Teal }
             }
         };
