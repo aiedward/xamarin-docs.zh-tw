@@ -1,20 +1,20 @@
 ---
-title: ListView
-description: 美觀、 更互動的清單中呈現您的資料。
+title: Xamarin.Forms ListView
+description: 本指南介紹 Xamarin.Forms 清單檢視，可用來呈現美觀、 更互動的清單中的資料。
 ms.prod: xamarin
 ms.assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: 7beb9e66a6e6bc29de36fcd605c5daa0098e75a2
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: f73e7b70749a7a6913856d8c753db63a6d0a2bbe
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848534"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244996"
 ---
-# <a name="listview"></a>ListView
+# <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
 清單檢視是以呈現資料，需要捲動，特別是較長的清單的清單檢視。 本指南將說明如何使用清單檢視：
 

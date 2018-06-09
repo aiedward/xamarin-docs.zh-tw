@@ -1,19 +1,20 @@
 ---
-title: 繫結值轉換器
-description: 轉型或轉換中的資料繫結的值
+title: Xamarin.Forms 繫結值轉換器
+description: 本文說明如何轉型或轉換中的 Xamarin.Forms 資料繫結的值，藉由實作值轉換器 （這就是所謂的繫結轉換程式或繫結值轉換器）。
 ms.prod: xamarin
 ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 260db2372977202df3d73e32645a358066146b40
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a5bd52d43ef93013537f30c7d5e0c31cbf336d07
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241825"
 ---
-# <a name="binding-value-converters"></a>繫結值轉換器
+# <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms 繫結值轉換器
 
 至目標屬性，以及從目標屬性某些情況下，來源屬性的資料繫結通常是以來源屬性的傳輸資料。 當來源和目標屬性都屬於相同，或當一個型別可以轉換成其他類型透過隱含的轉換，這項傳輸是類型的直接。 時，不是這樣，型別轉換必須先完成。
 

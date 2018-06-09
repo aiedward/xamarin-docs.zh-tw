@@ -1,5 +1,5 @@
 ---
-title: 控制項範本
+title: Xamarin.Forms 控制項範本
 description: 控制項範本提供清楚分隔頁面的外觀和其內容，允許建立可以輕鬆地設定主題的網頁。
 ms.prod: xamarin
 ms.assetid: 836C8D57-ABBC-4D5A-B3CF-0B723E069A2B
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 7062962b1aeb397e61de769ef1e3c9aaea942147
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a667f952eead5bed8305f4c9f4201fd6235b883a
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239967"
 ---
-# <a name="control-templates"></a>控制項範本
+# <a name="xamarinforms-control-templates"></a>Xamarin.Forms 控制項範本
 
 _控制項範本提供清楚分隔頁面的外觀和其內容，允許建立可以輕鬆地設定主題的網頁。_
 
@@ -28,4 +29,3 @@ Xamarin.Forms 控制項範本提供輕鬆佈景主題和 re 佈景主題的功�
 ## <a name="binding-from-a-controltemplatetemplate-bindingmd"></a>[ControlTemplate 從繫結](template-binding.md)
 
 範本繫結允許資料控制項樣板中的控制項繫結至公用屬性，啟用 [控制項] 範本，輕鬆地變更中的控制項上的屬性值。 本文示範如何使用執行資料繫結的控制項範本的範本繫結。
-

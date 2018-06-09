@@ -1,19 +1,20 @@
 ---
-title: 自訂轉譯器
-description: 使用允許保留每個平台適當的外觀及操作 Xamarin.Forms 應用程式的目標平台的原生控制項轉譯 Xamarin.Forms 使用者介面。 自訂轉譯器可讓開發人員覆寫以自訂外觀和行為 Xamarin.Forms 控制項，在每個平台上的這個程序。
+title: Xamarin.Forms 自訂轉譯器
+description: 自訂轉譯器可讓開發人員覆寫每個平台，若要自訂的外觀和行為的 Xamarin.Forms 控制項中的原生控制項呈現。
 ms.prod: xamarin
 ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 6a2ee4b09426e6b4ff6dac7e1fd5221fc5b6d750
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a88462052906e68fd85a07161e8b5bb63a61e69d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239886"
 ---
-# <a name="custom-renderers"></a>自訂轉譯器
+# <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms 自訂轉譯器
 
 _使用允許保留每個平台適當的外觀及操作 Xamarin.Forms 應用程式的目標平台的原生控制項轉譯 Xamarin.Forms 使用者介面。自訂轉譯器可讓開發人員覆寫以自訂外觀和行為 Xamarin.Forms 控制項，在每個平台上的這個程序。_
 
@@ -55,7 +56,7 @@ Xamarin.Forms 自訂使用者介面控制項應衍生自[ `View` ](https://devel
 
 ## <a name="implementing-a-video-playervideo-playerindexmd"></a>[實作影片播放器](video-player/index.md)
 
-本文將說明如何撰寫實作自訂的轉譯器`VideoPlayer`可以播放從 web、 影片內嵌為應用程式資源或儲存在使用者的裝置上的視訊媒體櫃中的視訊的視訊的控制項。 示範數種技術，包括實作方法和唯讀的可繫結屬性。 
+本文將說明如何撰寫實作自訂的轉譯器`VideoPlayer`可以播放從 web、 影片內嵌為應用程式資源或儲存在使用者的裝置上的視訊媒體櫃中的視訊的視訊的控制項。 示範數種技術，包括實作方法和唯讀的可繫結屬性。
 
 
 ## <a name="related-links"></a>相關連結

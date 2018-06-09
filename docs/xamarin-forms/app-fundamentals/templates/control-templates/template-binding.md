@@ -1,5 +1,5 @@
 ---
-title: ControlTemplate 從繫結
+title: Xamarin.Forms ControlTemplate 從繫結
 description: 範本繫結允許資料控制項樣板中的控制項繫結至公用屬性，啟用 [控制項] 範本，輕鬆地變更中的控制項上的屬性值。 本文示範如何使用執行資料繫結的控制項範本的範本繫結。
 ms.prod: xamarin
 ms.assetid: 794A663C-3A8D-438A-BD02-8E97C919B55F
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 6b2904d06d0982fb30e9a989f03f22b726b9772e
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 99d798ce2c74da0cf7fa0d497128db628a12ead5
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847172"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241577"
 ---
-# <a name="binding-from-a-controltemplate"></a>ControlTemplate 從繫結
+# <a name="binding-from-a-xamarinforms-controltemplate"></a>Xamarin.Forms ControlTemplate 從繫結
 
 _範本繫結允許資料控制項樣板中的控制項繫結至公用屬性，啟用 [控制項] 範本，輕鬆地變更中的控制項上的屬性值。本文示範如何使用執行資料繫結的控制項範本的範本繫結。_
 

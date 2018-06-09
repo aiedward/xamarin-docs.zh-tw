@@ -1,5 +1,5 @@
 ---
-title: 建立 DataTemplate
+title: 建立 Xamarin.Forms DataTemplate
 description: 在 ResourceDictionary，或從自訂類型或適當的 Xamarin.Forms 資料格類型，資料範本可以建立內嵌。 這份文件會探索每個技術。
 ms.prod: xamarin
 ms.assetid: CFF4AB5E-9069-461C-84D8-F9F6C38510AB
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: c04f33f5956eadb677c55e01bea836815ad15462
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 8aa0ad693fd1a7f086492f93f18c1e33871dee0e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848495"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240508"
 ---
-# <a name="creating-a-datatemplate"></a>建立 DataTemplate
+# <a name="creating-a-xamarinforms-datatemplate"></a>建立 Xamarin.Forms DataTemplate
 
 _在 ResourceDictionary，或從自訂類型或適當的 Xamarin.Forms 資料格類型，資料範本可以建立內嵌。這份文件會探索每個技術。_
 

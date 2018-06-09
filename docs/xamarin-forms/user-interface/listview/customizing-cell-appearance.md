@@ -1,20 +1,20 @@
 ---
-title: 資料格的外觀
-description: 瀏覽同時利用 ListView 的方便性，不論呈現資料的選項。
+title: 自訂 ListView 資料格的外觀
+description: 這篇文章探討 Xamarin.Forms 應用程式中呈現資料，同時利用 ListView 控制項的方便性，不論選項。
 ms.prod: xamarin
 ms.assetid: FD45CB91-1A8F-46FB-B432-6BC20492E456
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 14ef4abe773512f76d9823809270f27b1a0ad1a3
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 86447afbabca1384f9e46f5128a9dc00253a798c
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848456"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244752"
 ---
-# <a name="cell-appearance"></a>資料格的外觀
+# <a name="customizing-listview-cell-appearance"></a>自訂 ListView 資料格的外觀
 
 清單檢視會顯示可捲動清單，您可以透過使用的自訂`ViewCell`s。 `ViewCells` 可以用於顯示文字和影像，表示 true/false 狀態和接收使用者輸入。
 

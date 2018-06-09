@@ -1,20 +1,20 @@
 ---
-title: 編輯器
-description: 多行文字輸入
+title: Xamarin.Forms 編輯器
+description: 本文說明如何使用 Xamarin.Forms 編輯器控制項，可接受應用程式中的多行文字輸入。
 ms.prod: xamarin
 ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: 317d4f140daeccc525c4267fca43e6164a8f7827
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 7ad8c8aa77e23c5a8fb7649736ecb271f835d1a7
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848313"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245520"
 ---
-# <a name="editor"></a>編輯器
+# <a name="xamarinforms-editor"></a>Xamarin.Forms 編輯器
 
 _多行文字輸入_
 

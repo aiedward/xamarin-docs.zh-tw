@@ -1,20 +1,20 @@
 ---
-title: ScrollView
-description: 您可以使用 ScrollView 呈現不能只有一個螢幕上，而且其內容騰出空間給鍵盤配置。
+title: Xamarin.Forms ScrollView
+description: 本文說明如何使用 Xamarin.Forms ScrollView 類別呈現的版面配置，無法放在一個畫面上，和其中有騰出空間給鍵盤的內容。
 ms.prod: xamarin
 ms.assetid: 7B542872-B3D1-49B3-B15E-0E98F53C1F6E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/22/2016
-ms.openlocfilehash: 708fb39aa2e56861a8c9fc47ab30bd20ed20188e
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 72897013842d464ff9d46825e2b111efbaeb79b8
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847533"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245230"
 ---
-# <a name="scrollview"></a>ScrollView
+# <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
 [`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) 包含配置，並可讓他們幕後的捲軸。 `ScrollView` 也用來允許檢視來顯示鍵盤時，會自動移至螢幕的可見部分。
 

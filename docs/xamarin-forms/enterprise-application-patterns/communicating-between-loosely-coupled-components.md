@@ -1,16 +1,18 @@
 ---
 title: 之間通訊的鬆散結合的元件
+description: '本章說明 eShopOnContainers 行動裝置應用程式如何實作發行-訂閱模式，讓不方便，連結物件和型別參考的元件之間的訊息為基礎的通訊 '
 ms.prod: xamarin
 ms.assetid: 1194af33-8a91-48d2-88b5-b84d77f2ce69
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 01669573f215c5a13bb918c9f9ba80aa5ca528c9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 797032d17babe986de1357c6ac3291a4960d87ff
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245077"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>之間通訊的鬆散結合的元件
 
@@ -26,7 +28,7 @@ Xamarin.Forms [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamar
 
 ![](communicating-between-loosely-coupled-components-images/messagingcenter.png "多點傳送的發佈-訂閱功能")
 
-**圖 4-1:**多點傳送的發佈-訂閱功能
+**圖 4-1:** 多點傳送的發佈-訂閱功能
 
 「 發行者 」 使用傳送郵件[ `MessagingCenter.Send` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MessagingCenter.Send%7BTSender%7D/p/TSender/System.String/)方法，而訂閱者接聽訊息使用[ `MessagingCenter.Subscribe` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MessagingCenter.Subscribe%7BTSender%7D/p/System.Object/System.String/System.Action%7BTSender%7D/TSender/)方法。 此外，「 訂閱者 」 可以也取消訂閱的訊息訂閱，必要時，與[ `MessagingCenter.Unsubscribe` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MessagingCenter.Unsubscribe%7BTSender%7D/p/System.Object/System.String/)方法。
 

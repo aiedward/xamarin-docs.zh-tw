@@ -1,18 +1,20 @@
 ---
-title: 裝置類別
+title: Xamarin.Forms 裝置類別
+description: 本文說明如何使用 Xamarin.Forms 裝置類別，更細緻的控制功能和配置每個平台為基礎。
 ms.prod: xamarin
 ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 520982491803fa0a909008ee60730a4149a75296
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: cdcd4bb08b9dac84d264f7c0c41e16d68380e1d0
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242540"
 ---
-# <a name="device-class"></a>裝置類別
+# <a name="xamarinforms-device-class"></a>Xamarin.Forms 裝置類別
 
 [ `Device` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/)類別包含許多屬性和方法，以協助開發人員自訂版面配置和每個平台為基礎的功能。
 

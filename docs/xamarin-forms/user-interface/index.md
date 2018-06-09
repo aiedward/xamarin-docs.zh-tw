@@ -1,20 +1,20 @@
 ---
-title: 使用者介面
-description: 如何使用 Xamarin.Forms 提供的檢視
+title: Xamarin.Forms 使用者介面檢視
+description: 本文介紹的控制項和概念，在 Xamarin.Forms 應用程式中建立使用者介面時才能使用。
 ms.prod: xamarin
 ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 84106cf8f699616fae772a6f149681840abca0e5
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 55c461a7dee26462e0b9daebeb10e47afa4e5f6f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733044"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244366"
 ---
-# <a name="user-interface"></a>使用者介面
+# <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 使用者介面檢視
 
 _如何使用 Xamarin.Forms 提供的檢視_
 

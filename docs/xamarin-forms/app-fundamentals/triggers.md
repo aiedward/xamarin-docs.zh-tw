@@ -1,20 +1,20 @@
 ---
-title: 觸發程序
-description: 回應具有 XAML 使用者介面變更
+title: Xamarin.Forms 觸發程序
+description: 本文說明如何使用 Xamarin.Forms 觸發程序來回應具有 XAML 使用者介面變更。 觸發程序可讓您表示在 XAML 中以宣告方式變更的事件或變更屬性，依據控制項的外觀的動作。
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: af5912736e2a2bd7d3347d4aa199faa3fdfe41c7
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b28ebb8845b7eae0d818e1279b4d6eaef4ad5b8b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846441"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241431"
 ---
-# <a name="triggers"></a>觸發程序
+# <a name="xamarinforms-triggers"></a>Xamarin.Forms 觸發程序
 
 觸發程序可讓您表示在 XAML 中以宣告方式變更的事件或變更屬性，依據控制項的外觀的動作。
 

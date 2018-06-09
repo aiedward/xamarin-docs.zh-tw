@@ -1,17 +1,18 @@
 ---
 title: 使用路徑和地區的裁剪部分
-description: 特定領域，以及建立區域使用美工圖形的路徑
+description: 本文章說明如何使用剪輯圖形 SkiaSharp 路徑特定區域，以及如何建立區域，並為其示範以範例程式碼。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: 051ceec148a569d00048a661e6ba8dc3ce96fc81
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 0d246dc4a5304b56560deb1095149e52c1f82335
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243885"
 ---
 # <a name="clipping-with-paths-and-regions"></a>使用路徑和地區的裁剪部分
 
@@ -515,4 +516,4 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

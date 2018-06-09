@@ -1,17 +1,18 @@
 ---
 title: 加入 iOS 專屬格式
+description: 本文說明如何設定 iOS 專屬外觀，而不使用 Xamarin.Forms 自訂轉譯器。
 ms.prod: xamarin
 ms.assetid: CE50E207-D092-4D88-8439-1B51F178E7ED
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2016
-ms.openlocfilehash: f14479d353d24910f66afd35f968a232ec31657c
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 74a3cdc340cb09e8adf15ed0dd09315c985d18b5
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847279"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243527"
 ---
 # <a name="adding-ios-specific-formatting"></a>加入 iOS 專屬格式
 

@@ -1,20 +1,20 @@
 ---
-title: 樣式繼承
-description: 樣式可以繼承自其他樣式來減少重複，並允許重複使用。
+title: Xamarin.Forms 中的樣式繼承
+description: 樣式可以繼承自其他樣式來減少重複，並允許重複使用。 本文說明如何執行樣式繼承 Xamarin.Forms 應用程式中。
 ms.prod: xamarin
 ms.assetid: 67A3A39C-8CC0-446D-8162-FFA73582D3B8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 7b489e90daec2659a6d11b2776731582bdf368ff
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: aff47769fad065e03de4c62af1be1d67b903eb0a
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848417"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245090"
 ---
-# <a name="style-inheritance"></a>樣式繼承
+# <a name="style-inheritance-in-xamarinforms"></a>Xamarin.Forms 中的樣式繼承
 
 _樣式可以繼承自其他樣式來減少重複，並允許重複使用。_
 

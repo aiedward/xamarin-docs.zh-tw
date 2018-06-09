@@ -1,17 +1,18 @@
 ---
 title: 實作文字轉換語音
-description: 使用 DependencyService 呼叫每個平台的原生文字轉換語音 API 應用程式
+description: 本文說明如何使用 Xamarin.Forms DependencyService 類別來呼叫每個平台的原生文字轉換語音 API。
 ms.prod: xamarin
 ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2017
-ms.openlocfilehash: c9cf700ea798ac316e806c40cb90eedc7ded9fa5
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 5d9e7c74878ea6a095ba28a80fe1307493acbed5
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241054"
 ---
 # <a name="implementing-text-to-speech"></a>實作文字轉換語音
 

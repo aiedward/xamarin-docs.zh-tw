@@ -1,19 +1,20 @@
 ---
-title: 繫結模式
-description: 控制項的來源和目標之間的資訊流程
+title: Xamarin.Forms 繫結模式
+description: 本文說明如何控制資訊來源和目標使用的繫結模式，指定與 BindingMode 列舉的成員之間的流程。 每個可繫結的屬性具有作用中指出的模式，該屬性是資料繫結目標時預設繫結模式。
 ms.prod: xamarin
 ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/01/2018
-ms.openlocfilehash: 1aa612d8b855158f09bc0aeaad1520a44b3d9637
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 12e6416eee989b0d36a7b9fe0ca4dcd9b18b0ade
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241812"
 ---
-# <a name="binding-mode"></a>繫結模式
+# <a name="xamarinforms-binding-mode"></a>Xamarin.Forms 繫結模式
 
 在[前一篇文章](basic-bindings.md)、**替代方案的程式碼繫結**和**替代 XAML 繫結**精選的頁面`Label`與其`Scale`屬性繫結至`Value`屬性`Slider`。 因為`Slider`初始值為 0，這造成`Scale`屬性`Label`設為 0，而不是 1，而`Label`消失。
 
@@ -26,7 +27,7 @@ ms.lasthandoff: 05/07/2018
              Title="Reverse Binding">
     <StackLayout Padding="10, 0">
 
-        <Label x:Name="label" 
+        <Label x:Name="label"
                Text="TEXT"
                FontSize="80"
                HorizontalOptions="Center"
@@ -52,9 +53,9 @@ ms.lasthandoff: 05/07/2018
 
 ## <a name="the-default-binding-mode"></a>預設繫結模式
 
-成員指定了繫結模式[ `BindingMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingMode/)列舉型別： 
+成員指定了繫結模式[ `BindingMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingMode/)列舉型別：
 
-- [`Default`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.Default/) 
+- [`Default`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.Default/)
 - [`TwoWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/) &ndash; 資料來源和目標之間進入這兩種方式
 - [`OneWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWay/) &ndash; 資料會從來源移到目標
 - [`OneWayToSource`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; 資料是從目標到來源
@@ -78,11 +79,11 @@ ms.lasthandoff: 05/07/2018
 - `SelectedItem` 屬性 `MultiPage`
 - `SelectedIndex` 和`SelectedItem`屬性 `Picker`
 - `Value` 屬性`Slider`和 `Stepper`
-- `IsToggled` 屬性 `Switch` 
+- `IsToggled` 屬性 `Switch`
 - `On` 屬性 `SwitchCell`
 - `Time` 屬性 `TimePicker`
 
-這些特定的屬性定義為`TwoWay`很好的原因： 
+這些特定的屬性定義為`TwoWay`很好的原因：
 
 資料繫結搭配使用的模型-檢視-ViewModel (MVVM) 應用程式架構，ViewModel 類別時，資料繫結來源和檢視中，例如組成檢視`Slider`，資料繫結目標。 MVVM 繫結類似於**反向繫結**比先前的範例中的繫結的範例。 就很可能是您想要初始化 ViewModel 中對應之屬性的值 頁面上的每個檢視，但在檢視中的變更也會影響 ViewModel 屬性。
 
@@ -117,7 +118,7 @@ ViewModel 是資料繫結來源。 沒有 ViewModel*不*定義可繫結的屬性
 public class HslColorViewModel : INotifyPropertyChanged
 {
     Color color;
-    string name; 
+    string name;
 
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -130,7 +131,7 @@ public class HslColorViewModel : INotifyPropertyChanged
                 Color = Color.FromHsla(value, color.Saturation, color.Luminosity);
             }
         }
-        get 
+        get
         {
             return color.Hue;
         }
@@ -209,7 +210,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 
 繫結基礎結構當 ViewModel 設定做為繫結來源時，附加至處理常式`PropertyChanged`事件。 如此一來，繫結屬性的變更通知和可以設定目標屬性從變更的值。
 
-不過，當目標屬性 (或`Binding`定義要針對目標屬性) 具有`BindingMode`的`OneTime`，則不需要針對要附加的處理常式上的繫結基礎結構`PropertyChanged`事件。 更新的目標屬性時，才`BindingContext`變更並不本身的 [來源] 屬性變更時。 
+不過，當目標屬性 (或`Binding`定義要針對目標屬性) 具有`BindingMode`的`OneTime`，則不需要針對要附加的處理常式上的繫結基礎結構`PropertyChanged`事件。 更新的目標屬性時，才`BindingContext`變更並不本身的 [來源] 屬性變更時。
 
 **簡單色彩選取器**XAML 檔案會具現化`HslColorViewModel`中頁面的資源字典，並初始化`Color`屬性。 `BindingContext`屬性`Grid`設`StaticResource`繫結參考該資源擴充功能：
 
@@ -221,7 +222,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:HslColorViewModel x:Key="viewModel" 
+            <local:HslColorViewModel x:Key="viewModel"
                                      Color="MediumTurquoise" />
 
             <Style TargetType="Slider">
@@ -229,7 +230,7 @@ public class HslColorViewModel : INotifyPropertyChanged
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-        
+
     <Grid BindingContext="{StaticResource viewModel}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -246,7 +247,7 @@ public class HslColorViewModel : INotifyPropertyChanged
                    HorizontalTextAlignment="Center" />
 
             <Slider Value="{Binding Hue}" />
-    
+
             <Slider Value="{Binding Saturation}" />
 
             <Slider Value="{Binding Luminosity}" />
@@ -257,7 +258,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 
 `BoxView`， `Label`，和三個`Slider`檢視繼承繫結內容從`Grid`。 這些檢視表是參考 ViewModel 中的來源屬性的所有繫結目標。 如`Color`屬性`BoxView`，而`Text`屬性`Label`，資料繫結是`OneWay`： 從 ViewModel 中的屬性會設定在檢視中的屬性。
 
-`Value`屬性`Slider`，不過， `TwoWay`。 這可讓每個`Slider`設 ViewModel，而且也為每個要設定 ViewModel `Slider`。 
+`Value`屬性`Slider`，不過， `TwoWay`。 這可讓每個`Slider`設 ViewModel，而且也為每個要設定 ViewModel `Slider`。
 
 第一次執行此程式， `BoxView`， `Label`，和三個`Slider`項目都從根據初始 ViewModel 設`Color`ViewModel 未具現化時設定的屬性。 在左側 iOS 螢幕擷取畫面所示：
 
@@ -272,7 +273,7 @@ public class HslColorViewModel : INotifyPropertyChanged
     <Grid.BindingContext>
         <local:HslColorViewModel Color="MediumTurquoise" />
     </Grid.BindingContext>
-        
+
     ···
 
 </Grid>
@@ -408,9 +409,9 @@ public class SampleSettingsViewModel : INotifyPropertyChanged
 }
 ```
 
-每個應用程式設定是儲存在名為方法中的 Xamarin.Forms 屬性字典屬性`SaveState`並從該字典的建構函式中載入。 類別的底端是兩個方法協助簡化 ViewModels 並讓它們比較不容易發生錯誤。 `OnPropertyChanged`底部的方法有選擇性參數設為呼叫端的屬性。 指定的屬性名稱做為字串時，這可避免拼字錯誤。 
+每個應用程式設定是儲存在名為方法中的 Xamarin.Forms 屬性字典屬性`SaveState`並從該字典的建構函式中載入。 類別的底端是兩個方法協助簡化 ViewModels 並讓它們比較不容易發生錯誤。 `OnPropertyChanged`底部的方法有選擇性參數設為呼叫端的屬性。 指定的屬性名稱做為字串時，這可避免拼字錯誤。
 
-`SetProperty`類別中的方法會執行更多： 它會比較已儲存為欄位的值設定為屬性的值，並只呼叫`OnPropertyChanged`當兩個值是否不相等。 
+`SetProperty`類別中的方法會執行更多： 它會比較已儲存為欄位的值設定為屬性的值，並只呼叫`OnPropertyChanged`當兩個值是否不相等。
 
 `SampleSettingsViewModel`類別定義的背景色彩的兩個屬性：`BackgroundNamedColor`屬性屬於型別`NamedColor`，類別也隨附於**DataBindingDemos**方案。 `BackgroundColor`屬性屬於型別`Color`，並從取得`Color`屬性`NamedColor`物件。
 
@@ -649,7 +650,7 @@ public partial class App : Application
 SelectedItem="{Binding BackgroundNamedColor, Mode=TwoWay}"
 ```
 
-預設繫結模式`SelectedItem`是`OneWayToSource`，它會從選取的項目設定 ViewModel 屬性。 `TwoWay`模式可讓`SelectedItem`從 ViewModel 初始化。 
+預設繫結模式`SelectedItem`是`OneWayToSource`，它會從選取的項目設定 ViewModel 屬性。 `TwoWay`模式可讓`SelectedItem`從 ViewModel 初始化。
 
 不過，當`SelectedItem`設定如此一來，`ListView`不會自動捲動以顯示所選的項目。 程式碼後置檔案中的一些程式碼為必要值：
 
@@ -662,13 +663,13 @@ public partial class SampleSettingsPage : ContentPage
 
         if (colorListView.SelectedItem != null)
         {
-            colorListView.ScrollTo(colorListView.SelectedItem, 
-                                   ScrollToPosition.MakeVisible, 
+            colorListView.ScrollTo(colorListView.SelectedItem,
+                                   ScrollToPosition.MakeVisible,
                                    false);
         }
     }
 }
-``` 
+```
 
 第一次執行時，左側 iOS 螢幕擷取畫面會顯示程式。 在建構函式`SampleSettingsViewModel`初始化的背景色彩為白色，而這就是在選取的項目`ListView`:
 

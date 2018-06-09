@@ -1,17 +1,18 @@
 ---
 title: 驗證使用者身分識別提供者
-description: Xamarin.Auth 是跨平台 SDK，以驗證使用者，並儲存他們的帳戶。 它包含可支援使用身分識別提供者，例如 Google、 Microsoft、 Facebook 和 Twitter OAuth 驗證器。 本文說明如何使用 Xamarin.Auth 管理驗證程序，在 Xamarin.Forms 應用程式。
+description: 本文說明如何使用 Xamarin.Auth 管理驗證程序，在 Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: D44745D5-77BB-4596-9B8C-EC75C259157C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
-ms.openlocfilehash: 26e85a37cfd36b5d4f045273548efafccca79e1a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 361b5e5583b10b7ea07abd1460350d6445cae1c2
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241256"
 ---
 # <a name="authenticating-users-with-an-identity-provider"></a>驗證使用者身分識別提供者
 

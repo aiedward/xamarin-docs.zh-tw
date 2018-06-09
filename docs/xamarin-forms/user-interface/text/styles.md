@@ -1,33 +1,25 @@
 ---
-title: 樣式
-description: 樣式 Xamarin.Forms 中的文字
+title: Xamarin.Forms 文字樣式
+description: 這篇文章說明如何設定樣式 Xamarin.Forms 應用程式中的文字。 樣式可以定義一次，並使用許多檢視，但樣式只用於具有一種類型的檢視。
 ms.prod: xamarin
 ms.assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 42d5da5c4171347de8c4befc773e498803fd9f36
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b8cc6493c3574180e7938050075c5a70ecebeebf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848443"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245318"
 ---
-# <a name="styles"></a>樣式
+# <a name="xamarinforms-text-styles"></a>Xamarin.Forms 文字樣式
 
 _樣式 Xamarin.Forms 中的文字_
 
-
 樣式可以用來調整標籤、 項目，以及編輯器的外觀。 樣式可以定義一次，並使用許多檢視，但樣式只用於具有一種類型的檢視。
 可以指定樣式`Key`，並且選擇性地使用特定控制項`Style`屬性。
-
-本文涵蓋下列主題：
-
-- **[內建樣式](#Built-In_Styles)** &ndash;使用內建樣式整個應用程式以文字為基礎檢視的樣式。
-- **[自訂樣式](#Custom_Styles)** &ndash;內建的選項還不夠時，定義自訂樣式。
-- **[套用樣式](#Applying_Styles)** &ndash;將自訂和內建樣式套用至您的檢視。
-- **[協助工具](#Accessibility)** &ndash;確保文字尊重協助工具設定。
 
 <a name="Built-In_Styles" />
 

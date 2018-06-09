@@ -1,19 +1,20 @@
 ---
-title: 對應
-description: Xamarin.Forms 會在每個平台上使用原生對應應用程式開發介面。
+title: Xamarin.Forms 對應
+description: 本文說明如何使用 Xamarin.Forms Map 類別每個平台上使用原生的對應應用程式開發介面，提供熟悉對應的使用者體驗。
 ms.prod: xamarin
 ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 6063732e08680974b8d4a2358bfd85b176b36aec
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 9bd4c810db0397d84803be7c38f625b9b047c3da
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245471"
 ---
-# <a name="map"></a>對應
+# <a name="xamarinforms-map"></a>Xamarin.Forms 對應
 
 _Xamarin.Forms 會在每個平台上使用原生對應應用程式開發介面。_
 
@@ -80,7 +81,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 - iOS 10 及更早版本
     - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – 應用程式正在使用中時，使用位置服務
     - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – 隨時都能使用位置服務    
-    
+
 若要支援 iOS 11 及更早版本，您可以包含所有的三個索引鍵： `NSLocationWhenInUseUsageDescription`， `NSLocationAlwaysAndWhenInUseUsageDescription`，和`NSLocationAlwaysUsageDescription`。
 
 這些索引鍵中的 XML 表示法**Info.plist**如下所示。 您應該更新`string`值，以反映您的應用程式如何使用位置資訊：

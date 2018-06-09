@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/01/2018
-ms.openlocfilehash: 1fed439ecb4bd79bd84974ea1397ca0ed1336b62
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: d74e0b2aa5be6e8eee2ce5cb54572dd4113d4d7d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847949"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244912"
 ---
 # <a name="xamarinforms-button"></a>Xamarin.Forms 按鈕
 
-_按鈕會回應點選或按一下，以引導應用程式來執行特定工作。_ 
+_按鈕會回應點選或按一下，以引導應用程式來執行特定工作。_
 
 [ `Button` ](xref:Xamarin.Forms.Button)是所有 Xamarin.Forms 中的最基本互動控制項。 `Button`通常會顯示簡短文字字串，表示命令，但它也可以顯示點陣圖影像，或文字的組合和影像。 使用者按下`Button`手指或初始化該命令的滑鼠按一下它。
 
@@ -24,7 +24,7 @@ _按鈕會回應點選或按一下，以引導應用程式來執行特定工作�
 
 ## <a name="handling-button-clicks"></a>處理按鈕按一下
 
-`Button` 定義[ `Clicked` ](xref:Xamarin.Forms.Button.Clicked)在使用者點選時引發的事件`Button`用手指或滑鼠指標。 在事件引發時的介面從釋放手指或滑鼠按鈕`Button`。 `Button`必須要有其[ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)屬性設定為`true`使其回應的點選。 
+`Button` 定義[ `Clicked` ](xref:Xamarin.Forms.Button.Clicked)在使用者點選時引發的事件`Button`用手指或滑鼠指標。 在事件引發時的介面從釋放手指或滑鼠按鈕`Button`。 `Button`必須要有其[ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)屬性設定為`true`使其回應的點選。
 
 **基本按鈕按一下**頁面[ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)範例示範如何具現化`Button`XAML 和控制代碼中其`Clicked`事件。 **BasicButtonClickPage.xaml**檔案包含`StackLayout`兼具`Label`和`Button`:
 
@@ -34,18 +34,18 @@ _按鈕會回應點選或按一下，以引導應用程式來執行特定工作�
              x:Class="ButtonDemos.BasicButtonClickPage"
              Title="Basic Button Click">
     <StackLayout>
-        
+
         <Label x:Name="label"
                Text="Click the Button below"
                FontSize="Large"
-               VerticalOptions="CenterAndExpand" 
+               VerticalOptions="CenterAndExpand"
                HorizontalOptions="Center" />
 
         <Button Text="Click to Rotate Text!"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="Center"
                 Clicked="OnButtonClicked" />
-     
+
     </StackLayout>
 </ContentPage>
 ```
@@ -136,7 +136,8 @@ button.Clicked += OnButtonClicked;
 
 ## <a name="disabling-the-button"></a>停用按鈕
 
-有時候應用程式處於特定狀態的特定`Button`按一下不是有效的作業。 在這些情況下，`Button`應該設定來停用其`IsEnabled`屬性`false`。 典型的範例是`Entry`伴隨著開啟檔案的檔名的控制項`Button`:`Button`一些文字輸入時，才應該啟用`Entry`。 您可以使用`DataTrigger`這項工作，如中所示[**資料觸發程序**](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers)發行項。
+有時候應用程式處於特定狀態的特定`Button`按一下不是有效的作業。 在這些情況下，`Button`應該設定來停用其`IsEnabled`屬性`false`。 典型的範例是`Entry`伴隨著開啟檔案的檔名的控制項`Button`:`Button`一些文字輸入時，才應該啟用`Entry`。
+您可以使用`DataTrigger`這項工作，如中所示[**資料觸發程序**](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers)發行項。
 
 ## <a name="using-the-command-interface"></a>使用命令介面
 
@@ -199,15 +200,15 @@ class CommandDemoViewModel : INotifyPropertyChanged
              xmlns:local="clr-namespace:ButtonDemos"
              x:Class="ButtonDemos.BasicButtonCommandPage"
              Title="Basic Button Command">
-    
+
     <ContentPage.BindingContext>
         <local:CommandDemoViewModel />
     </ContentPage.BindingContext>
-    
+
     <StackLayout>
         <Label Text="{Binding Number, StringFormat='Value is now {0}'}"
                FontSize="Large"
-               VerticalOptions="CenterAndExpand" 
+               VerticalOptions="CenterAndExpand"
                HorizontalOptions="Center" />
 
         <Button Text="Multiply by 2"
@@ -355,7 +356,7 @@ public partial class MainPage : ContentPage
         <Label x:Name="label"
                Text="Press and hold the Button below"
                FontSize="Large"
-               VerticalOptions="CenterAndExpand" 
+               VerticalOptions="CenterAndExpand"
                HorizontalOptions="Center" />
 
         <Button Text="Press to Rotate Text!"
@@ -406,7 +407,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 [![按下並且放開按鈕](button-images/PressAndReleaseButton.png "按下並且放開按鈕")](button-images/PressAndReleaseButton-Large.png)
 
-這種行為有遊戲的應用程式： 手指上保留`Button`可能會使特定方向移動於螢幕物件。 
+這種行為有遊戲的應用程式： 手指上保留`Button`可能會使特定方向移動於螢幕物件。
 
 <a name="button-appearance" />
 
@@ -420,7 +421,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 - [`FontFamily`](xref:Xamarin.Forms.Button.FontFamily) 字型系列用於文字嗎
 - [`FontSize`](xref:Xamarin.Forms.Button.FontSize) 文字的大小
 - [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes) 指出文字是否為斜體或粗體
-- [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) 框線的寬度 
+- [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) 框線的寬度
 - [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) 重試回合邊角
 
 六個這些屬性的效果 (不包括`FontFamily`和`FontAttributes`) 中會示範**按鈕外觀**頁面。 另一個屬性[ `Image` ](xref:Xamarin.Forms.Button.Image)，一節所述[**使用的點陣圖按鈕使用**](#image-button)。
@@ -447,7 +448,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
         <StackLayout BindingContext="{x:Reference button}"
                      Padding="10">
-            
+
             <Slider x:Name="fontSizeSlider"
                     Maximum="48"
                     Minimum="1"
@@ -462,8 +463,8 @@ public partial class PressAndReleaseButtonPage : ContentPage
                     Minimum="-1"
                     Maximum="12"
                     Value="{Binding BorderWidth}" />
-            
-            <Label Text="{Binding Source={x:Reference borderWidthSlider}, 
+
+            <Label Text="{Binding Source={x:Reference borderWidthSlider},
                                   Path=Value,
                                   StringFormat='BorderWidth = {0:F0}'}"
                    HorizontalTextAlignment="Center" />
@@ -473,7 +474,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
                     Maximum="24"
                     Value="{Binding CornerRadius}" />
 
-            <Label Text="{Binding Source={x:Reference cornerRadiusSlider}, 
+            <Label Text="{Binding Source={x:Reference cornerRadiusSlider},
                                   Path=Value,
                                   StringFormat='CornerRadius = {0:F0}'}"
                    HorizontalTextAlignment="Center" />
@@ -484,7 +485,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -586,13 +587,13 @@ class ToggleButton : Button
 }
 ```
 
-`ToggleButton`建構函式附加至處理常式`Clicked`事件，讓它可以變更的值`IsToggled`屬性。 `OnIsToggledChanged`方法引發`Toggled`事件。 
+`ToggleButton`建構函式附加至處理常式`Clicked`事件，讓它可以變更的值`IsToggled`屬性。 `OnIsToggledChanged`方法引發`Toggled`事件。
 
-最後一行`OnIsToggledChanged`方法會呼叫靜態`VisualStateManager.GoToState`方法具有兩個文字字串"ToggledOn"和"ToggledOff"。 您可以讀取此方法，及您的應用程式將如何回應文件中的視覺狀態相關[ **Xamarin.Forms Visual State Manager**](~/xamarin-forms/user-interface/visual-state-manager.md)。 
+最後一行`OnIsToggledChanged`方法會呼叫靜態`VisualStateManager.GoToState`方法具有兩個文字字串"ToggledOn"和"ToggledOff"。 您可以讀取此方法，及您的應用程式將如何回應文件中的視覺狀態相關[ **Xamarin.Forms Visual State Manager**](~/xamarin-forms/user-interface/visual-state-manager.md)。
 
-因為`ToggleButton`呼叫`VisualStateManager.GoToState`，此類別本身不需要包含任何額外的功能，若要變更按鈕的外觀，根據其`IsToggled`狀態。 也就是 XAML 中主控的責任`ToggleButton`。 
+因為`ToggleButton`呼叫`VisualStateManager.GoToState`，此類別本身不需要包含任何額外的功能，若要變更按鈕的外觀，根據其`IsToggled`狀態。 也就是 XAML 中主控的責任`ToggleButton`。
 
-**切換按鈕示範**頁面包含兩個執行個體`ToggleButton`，包括設定的 Visual State Manager 標記`Text`， `BackgroundColor`，和`TextColor`根據視覺狀態的按鈕： 
+**切換按鈕示範**頁面包含兩個執行個體`ToggleButton`，包括設定的 Visual State Manager 標記`Text`， `BackgroundColor`，和`TextColor`根據視覺狀態的按鈕：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -601,7 +602,7 @@ class ToggleButton : Button
              xmlns:local="clr-namespace:ButtonDemos"
              x:Class="ButtonDemos.ToggleButtonDemoPage"
              Title="Toggle Button Demo">
-    
+
     <ContentPage.Resources>
         <Style TargetType="local:ToggleButton">
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
@@ -620,7 +621,7 @@ class ToggleButton : Button
                             <Setter Property="TextColor" Value="Black" />
                         </VisualState.Setters>
                     </VisualState>
-                    
+
                     <VisualState Name="ToggledOn">
                         <VisualState.Setters>
                             <Setter Property="Text" Value=" Italic On " />
@@ -642,7 +643,7 @@ class ToggleButton : Button
                             <Setter Property="TextColor" Value="Black" />
                         </VisualState.Setters>
                     </VisualState>
-                    
+
                     <VisualState Name="ToggledOn">
                         <VisualState.Setters>
                             <Setter Property="Text" Value=" Bold On " />
@@ -710,9 +711,9 @@ public partial class ToggleButtonDemoPage : ContentPage
 
 `Button`類別會定義[ `Image` ](xref:Xamarin.Forms.Button.Image)屬性，可讓您在上顯示點陣圖影像`Button`，單獨或結合文字。 您也可以指定文字和影像的排列方式。
 
-`Image`屬性屬於型別[ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource)，表示點陣圖必須將儲存為資源在個別的平台專案中，而不是在.NET 標準程式庫專案。 
+`Image`屬性屬於型別[ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource)，表示點陣圖必須將儲存為資源在個別的平台專案中，而不是在.NET 標準程式庫專案。
 
-Xamarin.Forms 支援每個平台可讓儲存在多個的大小，針對不同的像素解析度的各種裝置上可能執行的應用程式的映像。 這些多個點陣圖會命名為，或是儲存在一種作業系統可以挑選最佳的相符項目，用於裝置的視訊顯示器解析度。 
+Xamarin.Forms 支援每個平台可讓儲存在多個的大小，針對不同的像素解析度的各種裝置上可能執行的應用程式的映像。 這些多個點陣圖會命名為，或是儲存在一種作業系統可以挑選最佳的相符項目，用於裝置的視訊顯示器解析度。
 
 在點陣圖`Button`、 32 和 64 裝置獨立單位之間通常是最佳的大小、 您想要視大小而定。 此範例中使用的映像為基礎的 48 裝置獨立單位的大小。
 
@@ -801,7 +802,7 @@ Button button = new Button
     <FlexLayout Direction="Column"
                 JustifyContent="SpaceEvenly"
                 AlignItems="Center">
-        
+
         <FlexLayout.Resources>
             <Style TargetType="Button">
                 <Setter Property="Image">
@@ -833,7 +834,7 @@ Button button = new Button
         <Button Text="Right - 20"
                 ContentLayout="Right, 20" />
 
-        <Button Text="Bottom - 20" 
+        <Button Text="Bottom - 20"
                 ContentLayout="Bottom, 20" />
     </FlexLayout>
 </ContentPage>

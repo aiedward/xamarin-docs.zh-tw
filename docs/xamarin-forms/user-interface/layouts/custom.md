@@ -1,18 +1,18 @@
 ---
 title: 建立自訂的版面配置
-description: Xamarin.Forms 定義四個配置類別 – StackLayout、 AbsoluteLayout、 RelativeLayout 和格線，以及每個不同的方式排列子系。 不過，有時則需要以組織使用 Xamarin.Forms 未提供的版面配置的頁面內容。 本文章說明如何撰寫自訂版面配置的類別，並示範如何在頁面上，水平排列子系，繞著額外的資料列的後續子系的顯示方向區分 WrapLayout 類別。
+description: 本文章說明如何撰寫自訂版面配置的類別，並示範如何在頁面上，水平排列子系，繞著額外的資料列的後續子系的顯示方向區分 WrapLayout 類別。
 ms.prod: xamarin
 ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 7f2a443ded0d6b41db237e9842cd80e016bb5251
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: f225a80a1c386668b71d1cdd47409eb017f19033
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847742"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244931"
 ---
 # <a name="creating-a-custom-layout"></a>建立自訂的版面配置
 

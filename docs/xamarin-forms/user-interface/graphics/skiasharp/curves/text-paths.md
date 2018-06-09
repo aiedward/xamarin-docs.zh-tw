@@ -1,25 +1,26 @@
 ---
-title: 路徑和文字
-description: 瀏覽路徑和文字的交集
+title: 路徑以及 SkiaSharp 中的文字
+description: 本文探討 SkiaSharp 路徑和文字的交集，並示範此範例程式碼。
 ms.prod: xamarin
 ms.assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 9b3f906a23ed0d51237a244f3944104acc76e259
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 305ee2946d3a291e6237d5a2860eda7331193b23
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243901"
 ---
-# <a name="paths-and-text"></a>路徑和文字
+# <a name="paths-and-text-in-skiasharp"></a>路徑以及 SkiaSharp 中的文字
 
 _瀏覽路徑和文字的交集_
 
-在現代的圖形系統中文字的字型會是字元外框輪廓，通常由二次方貝茲曲線的集合。 因此，許多現代圖形系統包含文字的字元轉換成圖形路徑的功能。 
+在現代的圖形系統中文字的字型會是字元外框輪廓，通常由二次方貝茲曲線的集合。 因此，許多現代圖形系統包含文字的字元轉換成圖形路徑的功能。
 
-您所見，您可以繪製外框的文字字元，以及填入。 這可讓您顯示中所述的特定筆劃寬度，即使路徑效果與這些字元外的框輪廓[**路徑效果**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)發行項。 但是，也可以轉換成字元字串`SKPath`物件。 這表示文字概述可用來裁剪，以及所述的技術[**裁剪路徑和地區**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)發行項。 
+您所見，您可以繪製外框的文字字元，以及填入。 這可讓您顯示中所述的特定筆劃寬度，即使路徑效果與這些字元外的框輪廓[**路徑效果**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)發行項。 但是，也可以轉換成字元字串`SKPath`物件。 這表示文字概述可用來裁剪，以及所述的技術[**裁剪路徑和地區**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)發行項。
 
 除了使用路徑效果繪製字元大綱，您也可以建立路徑為基礎的效果衍生自字元字串的路徑，您甚至可以合併兩個的效果：
 
@@ -37,7 +38,7 @@ _瀏覽路徑和文字的交集_
 public SKPath GetTextPath (String text, Single x, Single y)
 ```
 
-`x`和`y`引數表示文字的左邊算起的基準線的起點。 中的相同 role 此處為玩`DrawText`方法`SKCanvas`。 在該路徑中，左邊算起的基準線會有座標 （x，y）。 
+`x`和`y`引數表示文字的左邊算起的基準線的起點。 中的相同 role 此處為玩`DrawText`方法`SKCanvas`。 在該路徑中，左邊算起的基準線會有座標 （x，y）。
 
 `GetTextPath`方法是大材小用，如果您只想要填滿或繪製結果的路徑。 法線`DrawText`方法可讓您執行此作業。 `GetTextPath`方法會更有用包含路徑的其他工作。
 
@@ -114,7 +115,7 @@ public class ClippingTextPage : ContentPage
 
         // Display bitmap to fill window but maintain aspect ratio
         SKRect rect = new SKRect(0, 0, info.Width, info.Height);
-        canvas.DrawBitmap(bitmap, 
+        canvas.DrawBitmap(bitmap,
             rect.AspectFill(new SKSize(bitmap.Width, bitmap.Height)));
     }
 }
@@ -141,7 +142,7 @@ public class TextPathEffectPage : ContentPage
         TextSize = littleSize
     };
 
-    SKPaint textPaint = new SKPaint 
+    SKPaint textPaint = new SKPaint
     {
         Style = SKPaintStyle.Stroke,
         Color = SKColors.Black
@@ -160,7 +161,7 @@ public class TextPathEffectPage : ContentPage
         textPathPaint.MeasureText(character, ref textPathPaintBounds);
 
         // Create textPath centered around (0, 0)
-        SKPath textPath = textPathPaint.GetTextPath(character, 
+        SKPath textPath = textPathPaint.GetTextPath(character,
                                                     -textPathPaintBounds.MidX,
                                                     -textPathPaintBounds.MidY);
         // Create the path effect
@@ -324,9 +325,9 @@ public class CircularTextPage : ContentPage
 
 [![](text-paths-images/circulartext-small.png "三個螢幕擷取畫面的循環的文字頁面")](text-paths-images/circulartext-large.png#lightbox "循環的文字頁面的三個螢幕擷取畫面")
 
-選擇文字本身也是有些循環： word"circle"是兩者的句子的主旨和前置詞片語的物件。 
+選擇文字本身也是有些循環： word"circle"是兩者的句子的主旨和前置詞片語的物件。
 
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

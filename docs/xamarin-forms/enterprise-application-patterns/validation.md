@@ -1,19 +1,20 @@
 ---
-title: 驗證
+title: 企業應用程式中的驗證
+description: 本章說明 eShopOnContainers 行動裝置應用程式執行驗證的使用者輸入的方式。 這包括指定驗證規則，以觸發驗證，並顯示驗證錯誤。
 ms.prod: xamarin
 ms.assetid: 56e4f0fc-48d9-4033-91ec-173bb46a5e4d
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 484f3b3d45e41d0dd0406681250ac90943a1cdde
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 6a7f244b78d5b48dd219f59f1191993d62663bbf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847585"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243173"
 ---
-# <a name="validation"></a>驗證
+# <a name="validation-in-enterprise-apps"></a>企業應用程式中的驗證
 
 可接受使用者輸入的任何應用程式應該確定輸入有效。 包含在特定範圍內的唯一字元、 為特定長度，或符合特定格式的輸入，例如可以檢查應用程式。 不需要驗證，使用者可以提供會導致失敗的應用程式的資料。 驗證會強制執行商務規則，並防止攻擊者插入惡意的資料。
 

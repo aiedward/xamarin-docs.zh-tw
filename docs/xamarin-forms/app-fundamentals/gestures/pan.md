@@ -1,18 +1,18 @@
 ---
 title: 新增取景位置調整筆勢辨識器
-description: 取景位置調整筆勢用於偵測拖曳，而且以 PanGestureRecognizer 類別實作。 取景位置調整動作的常見案例是水平及垂直拖曳影像，以便顯示位於小於影像尺寸檢視區時可以檢視所有的映像內容。 這透過移動的檢視區內，映像，並會在本文中示範。
+description: 這篇文章說明如何使用 pan 手勢，以水平及垂直拖曳影像，讓所有的映像內容時，可以檢視顯示小於影像尺寸檢視區中。
 ms.prod: xamarin
 ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 1f564fe14be0bcda08722bad11c9c5bd8152687a
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: d3e4dfc57678ff75fb8f9761360748d94aeefcc2
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846327"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239980"
 ---
 # <a name="adding-a-pan-gesture-recognizer"></a>新增取景位置調整筆勢辨識器
 

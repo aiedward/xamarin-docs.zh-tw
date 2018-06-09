@@ -1,19 +1,20 @@
 ---
-title: 外掛程式
-description: 輕鬆地將原生功能加入至 Xamarin.Forms 應用程式
+title: 使用及建立 Xamarin.Forms 外掛程式
+description: 本文說明如何使用及建立 Xamarin.Forms 外掛程式。 外掛程式通常可用來輕鬆地公開的原生平台功能。
 ms.prod: xamarin
 ms.assetid: 8A06A420-A9D0-4BCB-B9AF-3AEA6A648A8B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2016
-ms.openlocfilehash: 5770d13c46998872752820b7a0cbb222a04c3ff8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dff9fad0da30475a0fb91c0af76a25ea50d34439
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242553"
 ---
-# <a name="plugins"></a>外掛程式
+# <a name="consuming-and-creating-xamarinforms-plugins"></a>使用及建立 Xamarin.Forms 外掛程式
 
 存在於所有平台之間的許多原生平台功能，不過有稍微不同的應用程式開發介面。 開發人員撰寫外掛程式，以建立抽象跨平台介面也可以與其他人共用這些功能。
 

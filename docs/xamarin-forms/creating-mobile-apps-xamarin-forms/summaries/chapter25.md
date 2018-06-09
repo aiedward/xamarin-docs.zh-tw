@@ -1,16 +1,18 @@
 ---
 title: 第 25 章摘要。 頁面須
+description: 使用 Xamarin.Forms 建立行動裝置應用程式： 摘要的第 25 章。 頁面須
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 951ae41763d8338d5adf73fb46ebc6defa64f8f8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ecee7866f4bf9ac1a4f706853434dce2b9cef7f6
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241151"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>第 25 章摘要。 頁面須
 
@@ -58,7 +60,7 @@ XAML 檔案也設定[ `IsPresented` ](https://developer.xamarin.com/api/property
 
 ### <a name="your-own-user-interface"></a>使用者介面
 
-Xamarin.Forms 提供使用者介面，用於 master 和詳細資料檢視之間切換，雖然您可以提供您自己。 若要這樣做：
+Xamarin.Forms 提供使用者介面，用於 master 和詳細資料檢視之間切換，雖然您可以提供您自己。 方法如下：
 
 - 設定[ `IsGestureEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsGestureEnabled/)屬性`false`撥動停用
 - 覆寫[ `ShouldShowToolbarButton` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton()/)方法，並傳回`false`隱藏 Windows 8.1 和 Windows Phone 8.1 上的工具列按鈕。

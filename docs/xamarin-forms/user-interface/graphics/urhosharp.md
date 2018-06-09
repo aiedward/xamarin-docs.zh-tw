@@ -1,18 +1,18 @@
 ---
 title: 使用 Xamarin.Forms 中 UrhoSharp
-description: UrhoSharp 可用於進階視覺效果應用程式中加入 3D 圖形
+description: 本文說明如何使用 UrhoSharp 將 3D 圖形新增至進階視覺效果的 Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: 0646B98E-CC04-4537-9715-9F82338FD7FF
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/11/2016
-ms.openlocfilehash: fbe07b81c8818378c3f6c12e09ae74bca2d89543
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 3ada1f45532797d77d52968343a7d7b3ab8f7948
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847481"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244515"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>使用 Xamarin.Forms 中 UrhoSharp
 

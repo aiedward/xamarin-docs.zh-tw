@@ -1,16 +1,18 @@
 ---
 title: 第 20 的摘要。 非同步和檔案 I/O
+description: 使用 Xamarin.Forms 建立行動裝置應用程式： 章 20 的摘要。 非同步和檔案 I/O
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 521a8b18e74e078b9caafc6c79c7e418e1f5e08f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fbcf1c9cfb1cd87ea33f47ae61a8ebe233b89736
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241864"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第 20 的摘要。 非同步和檔案 I/O
 
@@ -93,7 +95,7 @@ Windows 執行階段執行的程式使用中的類別[ `Windows.Storage` ](https
 - [**Xamarin.FormsBook.Platform.Android**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android)，Android 類別程式庫
 - [**Xamarin.FormsBook.Platform.UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.UWP)，通用 Windows 類別程式庫
 - [**Xamarin.FormsBook.Platform.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Windows)，Windows 8.1 的 PCL。
-- [**Xamarin.FormsBook.Platform.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinPhone), a PCL for Windows Phone 8.1
+- [**Xamarin.FormsBook.Platform.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinPhone)，適用於 Windows Phone 8.1 PCL
 - [**Xamarin.FormsBook.Platform.WinRT**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT)，共通用於所有 Windows 平台的程式碼專案
 
 所有個別的平台專案 (除了**Xamarin.FormsBook.Platform.WinRT**) 具有其參照**Xamarin.FormsBook.Platform**。 三個 Windows 專案有參考**Xamarin.FormsBook.Platform.WinRT**。

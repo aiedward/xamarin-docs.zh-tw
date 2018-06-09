@@ -1,19 +1,20 @@
 ---
-title: Text
-description: 使用 Xamarin.Forms，輸入或顯示的文字。
+title: Xamarin.Forms 中的文字
+description: Xamarin.Forms 有三個主要的檢視，使用文字，以及這篇文章說明如何使用它們來輸入和 Xamarin.Forms 應用程式中顯示的文字。
 ms.prod: xamarin
 ms.assetid: 4DBA7689-E5C8-4583-8FB4-02AB208B4416
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 37289c4c118c3a84b8c81d3a1c1502ff80564bb9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c5bd157299c9388b561f316e65f2ba290bd15224
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244983"
 ---
-# <a name="text"></a>Text
+# <a name="text-in-xamarinforms"></a>Xamarin.Forms 中的文字
 
 _使用 Xamarin.Forms，輸入或顯示的文字。_
 

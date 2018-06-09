@@ -1,5 +1,5 @@
 ---
-title: 「行為」
+title: Xamarin.Forms 行為
 description: 行為可讓您將功能加入至使用者介面控制項，而它們不必子類別。 行為是以程式碼撰寫，並加入 XAML 或程式碼中的控制項。
 ms.prod: xamarin
 ms.assetid: 42E32AD7-8E3B-48B3-B402-E75B758DA913
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: e5eef459c340764d9d373b42ac594f78c042a4de
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: edb8929a4e5ffcff74714f65154cd78795bb9568
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239806"
 ---
-# <a name="behaviors"></a>「行為」
+# <a name="xamarinforms-behaviors"></a>Xamarin.Forms 行為
 
 _行為可讓您將功能加入至使用者介面控制項，而它們不必子類別。行為是以程式碼撰寫，並加入 XAML 或程式碼中的控制項。_
 
@@ -32,4 +33,3 @@ _行為可讓您將功能加入至使用者介面控制項，而它們不必子�
 ## <a name="reusable-behaviorsreusableindexmd"></a>[可重複使用的行為](reusable/index.md)
 
 跨多個應用程式行為是可重複使用。 這些文件說明如何建立實用的行為，來執行常用的功能。
-

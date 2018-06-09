@@ -1,16 +1,18 @@
 ---
 title: 第 13 章的摘要。 點陣圖
+description: 使用 Xamarin.Forms 建立行動裝置應用程式： 摘要的第 13 章。 點陣圖
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 76551057abc1abdd150591c0a1be39e9f68c4278
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d95e801f6a239e894c1f6baa68015659af9eba35
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241551"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>第 13 章的摘要。 點陣圖
 
@@ -156,7 +158,7 @@ Windows 執行階段專案支援點陣圖命名配置所組成的像素為單位
 
 - MyImage.scale-200.jpg 正方形 320 像素
 
-只有某些百分比是有效的。 範例程式，此活頁簿包含使用的映像**標尺 200**尾碼，但目前 Xamarin.Forms 方案範本包含**標尺 100**，**標尺 125**，**標尺 150**，和**標尺 400**。 
+只有某些百分比是有效的。 範例程式，此活頁簿包含使用的映像**標尺 200**尾碼，但目前 Xamarin.Forms 方案範本包含**標尺 100**，**標尺 125**，**標尺 150**，和**標尺 400**。
 
 加入平台專案中，點陣圖時**建置動作**應該是：
 

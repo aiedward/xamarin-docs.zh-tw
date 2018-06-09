@@ -1,28 +1,24 @@
 ---
 title: ListView 效能
-description: 請與您在清單檢視為基礎的應用程式的高效能。
+description: 雖然 ListView 是功能強大的檢視，以顯示資料，它會有一些限制。 本文說明如何確保應用程式中的 Xamarin.Forms ListView 與高效能。
 ms.prod: xamarin
 ms.assetid: 1B085639-652C-4862-86EB-5D55D32B9395
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: dcd4881e2ad7f1bb4af5455805da1dd2cade3605
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4803a612e2b06e458f2859dbbbd30b970f0fc8ea
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244899"
 ---
 # <a name="listview-performance"></a>ListView 效能
 
 在撰寫行動裝置應用程式時，效能將很重要。 使用者預期會有的平滑捲動和快速載入時間。 無法符合使用者的期望，將會成本您的應用程式存放區中的評等，或在特定業務應用程式的成本您組織的時間和金錢。
 
 雖然[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)是功能強大的檢視來顯示資料，有一些限制。 捲動效能可能會使用自訂的資料格，尤其是在包含深的巢狀檢視階層，或使用某些需要大量的度量的版面配置時。 幸運的是，有的技術可用來避免效能不佳。
-
-本文章中討論下列主題：
-
-- **[快取策略](#cachingstrategy)**
-- **[改善 ListView 效能](#improving-performance)**
 
 <a name="cachingstrategy" />
 

@@ -1,17 +1,18 @@
 ---
 title: 使用 XAML 標記延伸
-description: 使用 Xamarin.Forms 中可用的 XAML 標記延伸
+description: 本文說明如何使用 Xamarin.Forms XAML 標記延伸，以允許從各種來源的設定項目屬性增強的功能和彈性的 XAML。
 ms.prod: xamarin
 ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 25eada483e8bd2ce95cb3101dfe873ea38b283ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 278677d45f997ac446c2a20967dc3501179bf8da
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245933"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 標記延伸
 
@@ -318,7 +319,7 @@ public partial class TypeDemoPage : ContentPage
 
 方法時執行`Button`按下的引數的新執行個體、 設定其`VerticalOptions`屬性，並將它加入`StackLayout`。 三個`Button`項目然後分享頁面具有動態建立的檢視：
 
-[![x:Type Demo](consuming-images/typedemo-small.png "x:Type Demo")](consuming-images/typedemo-large.png#lightbox "x:Type Demo")
+[![X:type 示範](consuming-images/typedemo-small.png "X:type 示範")](consuming-images/typedemo-large.png#lightbox "X:type 示範")
 
 <a name="array" />
 
@@ -375,7 +376,7 @@ public partial class TypeDemoPage : ContentPage
 
 `ViewCell`建立簡單`BoxView`每個色彩項目：
 
-[![x:Array Demo](consuming-images/arraydemo-small.png "x:Array Demo")](consuming-images/arraydemo-large.png#lightbox "x:Array Demo")
+[![X:array 示範](consuming-images/arraydemo-small.png "X:array 示範")](consuming-images/arraydemo-large.png#lightbox "X:array 示範")
 
 有數種方法來指定個別`Color`此陣列中的項目。 您可以使用`x:Static`標記延伸：
 

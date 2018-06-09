@@ -1,6 +1,6 @@
 ---
 title: 從 Azure 行動應用程式中傳送推播通知
-description: Azure 通知中心提供可擴充的推播基礎結構，將行動推播通知從任何後端傳送至任何行動裝置的平台，同時不需與各平台通知系統進行通訊的後端的複雜性。 本文說明如何使用 Azure 通知中樞傳送推播通知從 Azure 行動應用程式執行個體 Xamarin.Forms 應用程式。
+description: 本文說明如何使用 Azure 通知中樞傳送推播通知從 Azure 行動應用程式執行個體 Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: A1EF400F-73F4-43E9-A0C3-1569A0F34A3B
 ms.technology: xamarin-forms
@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: 28aba0ec33dc88e3e87f51fbdd28d5ec8a72d3c3
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: d5bf0e614ef3777bc956e66c0b737bfb8a5b9e0c
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847598"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243762"
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>從 Azure 行動應用程式中傳送推播通知
 

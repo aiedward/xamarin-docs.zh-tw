@@ -1,20 +1,20 @@
 ---
-title: 清單外觀
-description: 自訂使用頁首、 頁尾、 群組和可變高度的資料格的 Listview。
+title: 自訂 ListView 外觀
+description: 本文說明如何以自訂 Listview Xamarin.Forms 應用程式中使用頁首、 頁尾、 群組和可變高度的資料格。
 ms.prod: xamarin
 ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 6b460e25aa5b97953069caa5456003b6cab2c8a8
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: febf712848b81c09a4e25c824acc097e8b65e409
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848380"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245136"
 ---
-# <a name="list-appearance"></a>清單外觀
+# <a name="customizing-listview-appearance"></a>自訂 ListView 外觀
 
 `ListView` 已控制整體清單中，除了基礎的呈現方式選項`ViewCell`s。 這些選項包括：
 

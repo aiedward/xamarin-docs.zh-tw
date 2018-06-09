@@ -1,19 +1,20 @@
 ---
-title: 字串格式
-description: 使用資料繫結來格式化，並以字串形式顯示物件
+title: Xamarin.Forms 字串格式
+description: 本文說明如何使用 Xamarin.FOrms 資料繫結來格式化，並以字串形式顯示物件。 達到此目的的繫結的 StringFormat 設為標準.NET 格式字串以預留位置。
 ms.prod: xamarin
 ms.assetid: 978C85B7-CB58-4483-A131-21B381A865E0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 4e143f650c3cde7577def1a95e53b207608a088a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bdac74e4ec14797ec373f86b8a94c7af4d480951
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240297"
 ---
-# <a name="string-formatting"></a>字串格式
+# <a name="xamarinforms-string-formatting"></a>Xamarin.Forms 字串格式
 
 有時候很方便使用的資料繫結來顯示物件或值的字串表示。 例如，您可能想要使用`Label`要顯示的目前值`Slider`。 在此資料繫結`Slider`是來源，而目標為`Text`屬性`Label`。
 

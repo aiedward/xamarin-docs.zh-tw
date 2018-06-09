@@ -1,17 +1,18 @@
 ---
 title: 加入 AppCompat 和材料設計
-description: 請遵循下列步驟，將現有的 Xamarin.Forms Android 應用程式以使用 AppCompat 和材料設計
+description: 本文說明如何將轉換現有的 Xamarin.Forms Android 應用程式以使用 AppCompat 和材料設計。
 ms.prod: xamarin
 ms.assetid: 045FBCDF-4D45-48BB-9911-BD3938C87D58
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: 8f9820b863274453cff7e4124df683fb8518a978
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c2eed44a7c684b91ceed4493a83ff3b4e1578b5f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242917"
 ---
 # <a name="adding-appcompat-and-material-design"></a>加入 AppCompat 和材料設計
 
@@ -24,7 +25,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 下列指示說明如何更新現有的 Xamarin.Forms Android 應用程式使用 AppCompat 程式庫和 Android Xamarin.Forms 應用程式的版本中啟用材料設計。
 
-### <a name="1-update-xamarinforms"></a>1.Update Xamarin.Forms
+### <a name="1-update-xamarinforms"></a>1.更新 Xamarin.Forms
 
 確保解決方案使用 Xamarin.Forms 2.0 或更新版本。 視需要更新的 Xamarin.Forms Nuget 套件 2.0。
 
@@ -79,7 +80,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 </resources>
 ```
 
-### <a name="4-update-androidmanifestxml"></a>4.Update AndroidManifest.xml
+### <a name="4-update-androidmanifestxml"></a>4.更新 AndroidManifest.xml
 
 若要確保這個新佈景主題的資訊是使用的設定中的主題**AndroidManifest**檔案加`android:theme="@style/MyTheme"`（因為它已保留其餘的 XML）。
 
@@ -139,7 +140,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 在現有的 Xamarin.Forms 應用程式中**Weatherapp**類別將繼承自`FormsApplicationActivity`。 這必須取代`FormsAppCompatActivity`啟用新功能。
 
-**MainActivity.cs**
+**Weatherapp**
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity  // was FormsApplicationActivity

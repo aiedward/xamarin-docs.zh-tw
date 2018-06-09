@@ -1,20 +1,20 @@
 ---
-title: 建立 DataTemplateSelector
-description: DataTemplateSelector 可以用來選擇 DataTemplate 在執行階段根據資料繫結屬性的值。 這可讓多個 DataTemplates 来套用至相同類型的物件，以自訂特定物件的外觀。 本文將示範如何建立和使用 DataTemplateSelector。
+title: 建立 Xamarin.Forms DataTemplateSelector
+description: 本文將示範如何建立和使用 DataTemplateSelector，可用來選擇 DataTemplate 在執行階段根據資料繫結屬性的值。
 ms.prod: xamarin
 ms.assetid: A4629E8F-2BAF-45CE-A76E-DF225FE8D26C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: ad8cce32cb9cfe2ea5e78f11b1250440371a9851
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 5e1f9e4ef3aa7f9c415427e280d9bdd05dfbd13c
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847188"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240648"
 ---
-# <a name="creating-a-datatemplateselector"></a>建立 DataTemplateSelector
+# <a name="creating-a-xamarinforms-datatemplateselector"></a>建立 Xamarin.Forms DataTemplateSelector
 
 _DataTemplateSelector 可以用來選擇 DataTemplate 在執行階段根據資料繫結屬性的值。這可讓多個 DataTemplates 来套用至相同類型的物件，以自訂特定物件的外觀。本文將示範如何建立和使用 DataTemplateSelector。_
 

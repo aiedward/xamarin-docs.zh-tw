@@ -1,20 +1,20 @@
 ---
-title: 平台功能
-description: 利用 xamarin.forms 特定平台功能
+title: Xamarin.Forms 平台功能
+description: 本指南說明如何利用特定平台功能 Xamarin.Forms 應用程式中使用各種不同的技術。
 ms.prod: xamarin
 ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2018
-ms.openlocfilehash: 0609d15248f1827b892ae02a877382ca0ffbed18
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 2e8eb19411799e7723be338e9e3f6df35058eb8c
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847627"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242796"
 ---
-# <a name="platform-features"></a>平台功能
+# <a name="xamarinforms-platform-features"></a>Xamarin.Forms 平台功能
 
 Xamarin.Forms 是可延伸和可讓您使用的平台專屬功能併入[效果](~/xamarin-forms/app-fundamentals/effects/index.md)，[自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)、 [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md)， [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md)，以及其他更多。
 

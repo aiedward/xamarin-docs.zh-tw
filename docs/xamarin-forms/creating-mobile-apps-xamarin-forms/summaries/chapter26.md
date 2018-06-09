@@ -1,16 +1,18 @@
 ---
 title: 章 26 的摘要。 自訂配置
+description: 使用 Xamarin.Forms 建立行動裝置應用程式： 章 26 的摘要。 自訂配置
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 5d2dc3e809026a36d186c9a582fcd047f6be24fe
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1c8fec34c0bc7f38d360f76122d851ae653ce15e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241167"
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>章 26 的摘要。 自訂配置
 

@@ -1,16 +1,18 @@
 ---
 title: 章 28 的摘要。 位置和對應
+description: 使用 Xamarin.Forms 建立行動裝置應用程式： 章 28 的摘要。 位置和對應
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 40d2b67f1a1655ec1d731493446f320b8aef17ca
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c98e0e6611f70d3aea9309472d2287af401ba4ea
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241997"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>章 28 的摘要。 位置和對應
 

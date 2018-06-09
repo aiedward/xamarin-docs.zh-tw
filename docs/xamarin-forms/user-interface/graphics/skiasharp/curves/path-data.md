@@ -1,19 +1,20 @@
 ---
-title: SVG 路徑資料
-description: 定義可縮放的向量圖形格式使用文字字串的路徑
+title: 在 SkiaSharp SVG 路徑資料
+description: 本文說明如何定義 SkiaSharp 路徑可縮放的向量圖形格式使用文字字串，並示範此範例程式碼。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: fe9699894224d9a33b3a79e9b5bcd4cd41c635dd
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 0453374c59c3b12842b7fb1524cc150329d84b7f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243970"
 ---
-# <a name="svg-path-data"></a>SVG 路徑資料
+# <a name="svg-path-data-in-skiasharp"></a>在 SkiaSharp SVG 路徑資料
 
 _定義可縮放的向量圖形格式使用文字字串的路徑_
 
@@ -430,4 +431,4 @@ public class PrettyAnalogClockPage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

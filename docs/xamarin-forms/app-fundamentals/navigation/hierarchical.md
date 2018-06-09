@@ -1,18 +1,18 @@
 ---
 title: 階層式導覽
-description: NavigationPage 類別會提供使用者所在的能向前及向後，視需要執行頁面，瀏覽階層式導覽體驗。 類別會實作瀏覽後進先出 (LIFO) 堆疊的頁面物件。 本文示範如何使用 NavigationPage 類別來執行瀏覽的頁面堆疊中。
+description: 這篇文章會示範如何使用 NavigationPage 類別來執行瀏覽整疊後進先出 (LIFO) 頁面中。
 ms.prod: xamarin
 ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 49be5b812c5ef66907e7ebf74906c25bfbb076b6
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 20dfb6e935d08c35da73a81fb401a613aa6c9bac
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847159"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242452"
 ---
 # <a name="hierarchical-navigation"></a>階層式導覽
 
@@ -48,7 +48,7 @@ _NavigationPage 類別會提供使用者所在的能向前及向後，視需要�
 
 - 在 iOS 上，出現在頁面會顯示標題，並具有的最上方導覽列就*回*回到前一頁的按鈕。
 - 在 Android 上，導覽列是出現在頂端顯示標題、 圖示、 頁面和*回*回到前一頁的按鈕。 中所定義的圖示`[Activity]`裝飾的屬性`MainActivity`Android 平台專屬專案中的類別。
-- 通用 Windows 平台上，導覽列是出現在頁面頂端的顯示標題。 
+- 通用 Windows 平台上，導覽列是出現在頁面頂端的顯示標題。
 
 所有平台上，值[ `Page.Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/)屬性將會顯示為頁面標題。
 

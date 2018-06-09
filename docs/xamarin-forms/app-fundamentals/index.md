@@ -1,19 +1,20 @@
 ---
-title: 應用程式基本概念
-description: 瀏覽 Xamarin.Forms 開發的基本概念
+title: Xamarin.Forms 應用程式基本概念
+description: 瀏覽 Xamarin.Forms 應用程式開發，包含所有必要的核心概念，透過以修飾，例如可存取性和當地語系化的基本概念。
 ms.prod: xamarin
 ms.assetid: 7B516BBC-F7E1-4387-9779-7754E2E69723
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: 2bd050e6eba33b543c52a80bb42b184200164c14
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: f843f4b1c20daba2a504bd0e70ae51f4d0405c06
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240242"
 ---
-# <a name="application-fundamentals"></a>應用程式基本概念
+# <a name="xamarinforms-application-fundamentals"></a>Xamarin.Forms 應用程式基本概念
 
 ## <a name="accessibilityaccessibilityindexmd"></a>[協助工具選項](accessibility/index.md)
 

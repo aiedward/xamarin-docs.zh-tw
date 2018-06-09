@@ -1,18 +1,20 @@
 ---
-title: 序言
+title: 企業應用程式開發的序言
+description: 此章節提供序言企業應用程式模式以使用 Xamarin.Forms。
 ms.prod: xamarin
 ms.assetid: fbf32a44-1d33-4e16-a904-dc7ee5991e7c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: e9dd5f663fc98ac1e869721517e9a3d0fb2033bb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fd085d2fb12e82233f6d3be2e2773a84539f837b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242364"
 ---
-# <a name="preface"></a>序言
+# <a name="preface-to-enterprise-app-development"></a>企業應用程式開發的序言
 
 這個電子書提供指引建置跨平台企業應用程式使用 Xamarin.Forms。 Xamarin.Forms 是可讓開發人員輕鬆地建立原生使用者介面版面配置，可共用的跨平台，包括 iOS、 Android 和通用 Windows 平台 (UWP) 的跨平台 UI 工具組。 它提供全面的解決方案，商務用員工 (B2E)，企業對企業 (B2B)，和商務用消費者 (B2C) 應用程式，提供所有目標平台共用的程式碼的能力，並協助降低總擁有成本 (TCO)。
 

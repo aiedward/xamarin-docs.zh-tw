@@ -1,19 +1,20 @@
 ---
-title: 3D 旋轉
-description: 使用非仿射轉換旋轉 2D 在 3D 空間中的物件。
+title: SkiaSharp 中的 3D 旋轉
+description: 本文章說明如何使用非仿射轉換旋轉 2D 物件在 3D 空間中，並示範此範例程式碼。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 2f5562475db17b7451fe7cb2ee8bbf4ccb782a87
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: ad4bce6eff7df65185fc3bd754c747fd0db0c9f1
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244295"
 ---
-# <a name="3d-rotations"></a>3D 旋轉
+# <a name="3d-rotations-in-skiasharp"></a>SkiaSharp 中的 3D 旋轉
 
 _使用非仿射轉換旋轉 2D 在 3D 空間中的物件。_
 
@@ -72,13 +73,13 @@ w' = M14·x + M24·y + M34·z + M44
 
 若要將這些座標轉換回 W 其中等於 1，x 的 3D 空間 '，y'、 z' 座標是所有除以 w':
 
-x" = x' / w'
+x"= x' /w '
 
 y"= y' /w '
 
 z"= z' /w '
 
-w" = w' / w' = 1
+w"= w' /w ' = 1
 
 該除以 w' 提供在 3D 空間中的檢視方塊。 如果 w' 等於 1，則沒有檢視方塊，就會發生。
 
@@ -170,7 +171,7 @@ w' = M14·x + M24·y + M44
 
 此外，z' 座標也會是不相關這裡。 2D 圖形系統中顯示為 3D 物件時，它會摺疊二維物件以忽略 Z 座標值。 轉換公式是其實只是這兩個：
 
-x" = x' / w'
+x"= x' /w '
 
 y"= y' /w '
 
@@ -213,7 +214,7 @@ z' = (sin （α） / 深度) ·x + 1
 
 現在將所有項目除以 z':
 
-x" = cos(α)·x / ((sin(α)/depth)·x + 1)
+x"= cos （α） ·x / ((sin （α） / 深度) ·x + 1)
 
 y"= y / ((sin （α） / 深度) ·x + 1)
 
@@ -538,4 +539,4 @@ public class AnimatedRotation3DPage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

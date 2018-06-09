@@ -1,17 +1,18 @@
 ---
 title: 使用 Windows Communication Foundation (WCF) Web 服務
-description: WCF 是 Microsoft 的統一的架構建置服務導向應用程式。 它可讓開發人員建置安全、 可靠、 交易，以及可互通的分散式應用程式。 這篇文章會示範如何使用 Xamarin.Forms 應用程式從 WCF 簡易物件存取通訊協定 (SOAP) 服務。
+description: 這篇文章會示範如何使用 Xamarin.Forms 應用程式從 WCF 簡易物件存取通訊協定 (SOAP) 服務。
 ms.prod: xamarin
 ms.assetid: 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 23cdc1871511fa75ba2686213d135822ca0fb971
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: 05092a3648ac4c37dfd8d712184176a544979ede
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241200"
 ---
 # <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation (WCF) Web 服務
 

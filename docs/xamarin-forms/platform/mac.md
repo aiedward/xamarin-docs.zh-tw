@@ -1,6 +1,6 @@
 ---
 title: Mac 平台設定
-description: Xamarin.Forms 現在具有 Mac 平台支援預覽
+description: 本文說明如何將 Mac 專案新增至 Xamarin.Forms 專案，將會產生應用程式能夠在 macOS 利也及 macOS El Capitan 上執行。
 ms.prod: xamarin
 ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
 ms.technology: xamarin-forms
@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: c3a2c36463b2934254c54f3f2250ee253d57798b
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: ae0fbfc7862a0d2147b2c3bbdbae7dd53dfce78f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848215"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242592"
 ---
 # <a name="mac-platform-setup"></a>Mac 平台設定
 
@@ -28,7 +28,7 @@ ms.locfileid: "34848215"
 
 ## <a name="adding-a-mac-app"></a>新增 Mac 應用程式
 
-請遵循這些指示來新增利也和 Mac OS X El Capitan macOS 執行的 Mac 應用程式：
+請遵循這些指示來新增 Mac 應用程式將在 macOS 利也及 macOS El Capitan 上執行：
 
 1. 在 Visual Studio for Mac，以滑鼠右鍵按一下現有的 Xamarin.Forms 方案，然後選擇 **新增 > 加入新的專案...**
 

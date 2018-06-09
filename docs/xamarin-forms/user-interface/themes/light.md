@@ -1,19 +1,20 @@
 ---
-title: 淺色佈景主題
+title: Xamarin.Forms 淺色佈景主題
+description: 本文說明如何使用 Xamarin.Forms 淺色佈景主題的應用程式中。
 ms.prod: xamarin
 ms.assetid: D5D16AE3-F51F-4359-B37A-E1087ECE512B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: 87c2a1a1003868aba10c7c1ec50856f307cc5bff
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 7f40e375d653acec60f8848627234ab46fcce8de
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848001"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245243"
 ---
-# <a name="light-theme"></a>淺色佈景主題
+# <a name="xamarinforms-light-theme"></a>Xamarin.Forms 淺色佈景主題
 
 ![](~/media/shared/preview.png "這個 API 目前處於預覽狀態")
 
@@ -68,4 +69,3 @@ XAML 檔案的範例如下所示：
 ```
 
 [內建類別的完整清單](~/xamarin-forms/user-interface/themes/index.md)顯示何種樣式的一些常見的控制項可用。
-

@@ -1,16 +1,18 @@
 ---
 title: 驗證和授權
+description: 本章說明驗證和授權，對容器化 microservices eShopOnContainers 行動裝置應用程式執行的方式。
 ms.prod: xamarin
 ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 9c6f3ae19b3e1b89220cbdf0985f4bdf789f2209
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e6cfa566ab455841b3f11e4a857dcf678083417
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242423"
 ---
 # <a name="authentication-and-authorization"></a>驗證和授權
 
@@ -39,7 +41,7 @@ IdentityServer 4 是實作這些通訊協定與 OpenID Connect 和 OAuth 2.0 的
 
 ![](authentication-and-authorization-images/authentication.png "專用的驗證微服務驗證")
 
-**圖 9-1:**專用的驗證微服務驗證
+**圖 9-1:** 專用的驗證微服務驗證
 
 EShopOnContainers 行動裝置應用程式會識別微服務，來使用 IdentityServer 4 執行驗證，以及應用程式開發介面的存取控制與通訊。 因此，行動裝置應用程式要求語彙基元從 IdentityServer，用於驗證的使用者或存取資源：
 
@@ -222,7 +224,7 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clientsUr
 
 ![](authentication-and-authorization-images/sign-in.png "登入程序的高階概觀")
 
-**圖 9-2:**登入程序的高階概觀
+**圖 9-2:** 登入程序的高階概觀
 
 對登入的要求`<base endpoint>:5105/connect/authorize`。 驗證成功，後面 IdentityServer 會傳回包含授權碼和識別權杖的驗證回應。 授權碼然後傳送至`<base endpoint>:5105/connect/token`，它會存取、 識別和重新整理權杖以回應。
 
@@ -230,7 +232,7 @@ EShopOnContainers 行動裝置應用程式簽署外 IdentityServer 所要求傳�
 
 ![](authentication-and-authorization-images/sign-out.png "登出程序的高階概觀")
 
-**圖 9-3:**登出程序的高階概觀
+**圖 9-3:** 登出程序的高階概觀
 
 EShopOnContainers 行動裝置應用程式，在與 IdentityServer 通訊由執行`IdentityService`類別，它會實作`IIdentityService`介面。 這個介面會指定必須提供實作類別`CreateAuthorizationRequest`， `CreateLogoutRequest`，和`GetTokenAsync`方法。
 
@@ -408,7 +410,7 @@ IdentityServer 可以整合到授權工作流程，以便提供控制授權的�
 
 ![](authentication-and-authorization-images/authorization.png "存取語彙基元所授權")
 
-**圖 9-5:**授權的存取權杖
+**圖 9-5:** 授權的存取權杖
 
 EShopOnContainers 行動裝置應用程式與身分識別的微服務通訊，並要求存取權杖驗證程序的一部分。 存取權杖再轉送到應用程式開發介面，排序和購物籃 microservices 所公開做為存取要求的一部分。 存取權杖包含用戶端和使用者的相關資訊。 然後，應用程式開發介面會使用該資訊來授權存取其資料。 如需如何設定 IdentityServer 來保護應用程式開發介面的資訊，請參閱[設定應用程式開發介面資源](#configuring-api-resources)。
 

@@ -1,17 +1,18 @@
 ---
 title: 使用 Azure 行動應用程式
-description: Azure 行動應用程式可讓您與裝載在 Azure 應用程式服務中，以支援行動裝置的驗證、 離線同步處理，及推播通知的可擴充後端開發應用程式。 只適用於使用 Node.js 後端的 Azure 行動應用程式，這篇文章說明如何查詢、 插入、 更新和刪除儲存在 Azure 行動應用程式執行個體中資料表的資料。
+description: 只適用於使用 Node.js 後端的 Azure 行動應用程式，這篇文章說明如何查詢、 插入、 更新和刪除儲存在 Azure 行動應用程式執行個體中資料表的資料。
 ms.prod: xamarin
 ms.assetid: 2B3EFD0A-2922-437D-B151-4B4DE46E2095
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: e2e9e2c05d3f6e467fd47b31af4f53049aab2709
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3cf27e48fe23b9a0f035689e55a72fcc706ab266
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241327"
 ---
 # <a name="consuming-an-azure-mobile-app"></a>使用 Azure 行動應用程式
 

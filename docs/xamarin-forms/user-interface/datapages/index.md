@@ -1,18 +1,20 @@
 ---
-title: DataPages
+title: Xamarin.Forms DataPages
+description: 本文介紹 Xamarin.Forms DataPages 提供 API，以快速且輕鬆地將資料來源繫結至預先建立的檢視。
 ms.prod: xamarin
 ms.assetid: DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: e83efcd71eb9427f0b63749e8885a991a206febe
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2a74b636a41a72b26776157a774f0a33ef45a075
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243326"
 ---
-# <a name="datapages"></a>DataPages
+# <a name="xamarinforms-datapages"></a>Xamarin.Forms DataPages
 
 ![](~/media/shared/preview.png "這個 API 目前處於預覽狀態")
 
@@ -72,4 +74,3 @@ Xamarin.Forms 基礎結構互動與資料來源，藉由下列屬性：
 
 有兩種方法`MaskKey`和`UnmaskKey`，可用來隱藏 （或者顯示） （即資料項目屬性 防止它們呈現）。
 索引鍵會對應至資料的項目物件上的具名的屬性。
-

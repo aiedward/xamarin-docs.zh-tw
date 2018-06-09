@@ -1,18 +1,20 @@
 ---
-title: 巡覽
+title: 企業應用程式瀏覽
+description: 本章說明 eShopOnContainers 行動裝置應用程式中檢視模型所執行的檢視模型優先 （contract-first） 瀏覽。
 ms.prod: xamarin
 ms.assetid: 4cad57b5-7fe4-4527-a988-d9b60c9620b4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: aa2e2858e3bb8e435ec3f38bb3d5b249eaa6cba4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9ac9f3200440001752c07ad45fdaaf2b1d9ba6a5
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243677"
 ---
-# <a name="navigation"></a>巡覽
+# <a name="enterprise-app-navigation"></a>企業應用程式瀏覽
 
 Xamarin.Forms 可支援的頁面巡覽，通常是從使用者的互動與 UI 或應用程式本身內部邏輯驅動的狀態變更的結果。 但是，瀏覽很複雜，所以無法使用模型-檢視-ViewModel (MVVM) 模式中，應用程式中實作，因為必須符合下列挑戰：
 

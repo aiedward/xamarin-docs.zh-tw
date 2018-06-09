@@ -1,17 +1,18 @@
 ---
 title: 旋轉的轉換
-description: 瀏覽的效果和 SkiaSharp 旋轉轉換的可能動畫
+description: 這篇文章探索效果和動畫的 SkiaSharp 旋轉轉換，可能和範例程式碼為其示範。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 354844f69c0b8755a15a3325c39e35b97d44f94d
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 514ecd16fedd7d3fda39fe20641cf0ee9ecb119e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244616"
 ---
 # <a name="the-rotate-transform"></a>旋轉的轉換
 
@@ -369,4 +370,4 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

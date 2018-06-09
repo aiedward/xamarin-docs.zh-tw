@@ -1,5 +1,5 @@
 ---
-title: 檔案
+title: 處理 Xamarin.Forms 中的檔案
 description: 使用內嵌的資源，或針對原生檔案系統應用程式開發介面撰寫，可以完成檔案處理 xamarin.forms。
 ms.prod: xamarin
 ms.assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/22/2017
-ms.openlocfilehash: 02bea7e2ec927277a92c0732b25f590b5ae6704b
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 80fdedd6c5df15272e36e6ac9c1414a4f731123a
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241929"
 ---
-# <a name="files"></a>檔案
+# <a name="file-handling-in-xamarinforms"></a>處理 Xamarin.Forms 中的檔案
 
 _使用內嵌的資源，或針對原生檔案系統應用程式開發介面撰寫，可以完成檔案處理 xamarin.forms。_
 

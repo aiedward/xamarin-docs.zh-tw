@@ -1,18 +1,18 @@
 ---
 title: ListView 互動功能
-description: 透過實作選取項目、 撥動-刪除和重新整理提取至您的 ListView 加入互動功能。
+description: 本文說明如何透過實作選取項目、 撥動-刪除和重新整理提取到 Xamarin.Forms ListView 加入互動功能。
 ms.prod: xamarin
 ms.assetid: CD14EB90-B08C-4E8F-A314-DA0EEC76E647
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/01/2018
-ms.openlocfilehash: 5fe821e7e5254da8febbbde518b9fd42526bf262
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 64ffda681c51c21b7485f0865af4b740316edaaa
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848118"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245103"
 ---
 # <a name="listview-interactivity"></a>ListView 互動功能
 

@@ -1,22 +1,24 @@
 ---
 title: 第 16 章的摘要。 資料繫結
+description: 使用 Xamarin.Forms 建立行動裝置應用程式： 第 16 章的摘要。 資料繫結
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0f200e0c482402813ac7051255dd7c27da93d6dc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 520da1518c7b795bd1ad17cc3cfaa8d37815de53
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241506"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>第 16 章的摘要。 資料繫結
 
 程式設計人員通常會發現自己撰寫當一個物件的屬性變更時，偵測到的事件處理常式，然後使用它來中另一個物件的屬性值變更。 此程序可以自動化的技術與*資料繫結*。 資料繫結通常定義在 XAML 中，會成為使用者介面的定義的一部分。
 
-通常，這些資料繫結連接使用者介面物件基礎的資料。 這是會探索更中技巧[**第 18 章。MVVM**](chapter18.md). 不過，資料繫結也可以連接兩個以上的使用者介面項目。 大部分的這一章中的資料繫結的最早的範例會示範這項技術。
+通常，這些資料繫結連接使用者介面物件基礎的資料。 這是會探索更中技巧[**第 18 章。MVVM**](chapter18.md)。 不過，資料繫結也可以連接兩個以上的使用者介面項目。 大部分的這一章中的資料繫結的最早的範例會示範這項技術。
 
 ## <a name="binding-basics"></a>繫結的基本概念
 

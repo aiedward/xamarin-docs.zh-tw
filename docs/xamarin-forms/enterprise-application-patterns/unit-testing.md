@@ -1,18 +1,20 @@
 ---
-title: 單元測試
+title: 單元測試的企業應用程式
+description: 本章節說明如何執行單元測試，eShopOnContainers 行動應用程式中。
 ms.prod: xamarin
 ms.assetid: 4af82e52-f99b-4cad-b278-1745f190c240
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 57201a32f5ffc0ae962f6db851a25a737e1cb17d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 06cd89e0b0871eac723e8580340173f77821e4ed
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242527"
 ---
-# <a name="unit-testing"></a>單元測試
+# <a name="unit-testing-enterprise-apps"></a>單元測試的企業應用程式
 
 行動裝置應用程式有唯一的問題，桌面和 web 應用程式不需要擔心。 行動使用者將不同的裝置在使用，透過網路連線所服務的可用性以及其他因素的範圍。 因此，行動裝置應用程式應該經過測試，因為它們會使用真實世界中以改善其品質、 可靠性和效能。 有許多類型的測試應該執行的應用程式，包括單元測試、 整合測試，以及使用者介面測試、 單元測試所測試的最常見的表單上。
 
@@ -52,7 +54,7 @@ public class OrderDetailViewModel : ViewModelBase
 
 ![](unit-testing-images/unittesting.png "類別可實作 IOrderService 介面")
 
-**圖 10-1:**實作 IOrderService 介面的類別
+**圖 10-1:** 實作 IOrderService 介面的類別
 
 這個方法可讓`OrderService`物件傳遞至`OrderDetailViewModel`類別在執行階段，以及的測試能力，它可讓`OrderMockService`類別，以傳遞至`OrderDetailViewModel`次測試的類別。 這種方法的主要優點是它可讓單元測試，而不需要龐大的資源，例如 web 服務或資料庫執行。
 

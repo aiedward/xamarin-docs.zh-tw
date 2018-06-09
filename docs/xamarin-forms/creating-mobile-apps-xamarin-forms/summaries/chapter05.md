@@ -1,16 +1,18 @@
 ---
 title: 第 5 章的摘要。 處理大小
+description: 使用 Xamarin.Forms 建立行動裝置應用程式： 第 5 章的摘要。 處理大小
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 71d40136d7c3fc780815471cb822e94a4fa704c5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0b93942d6623106a5e507d6eef3e7140f9d409bd
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241643"
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>第 5 章的摘要。 處理大小
 

@@ -1,16 +1,18 @@
 ---
 title: 章 24 的摘要。 頁面巡覽
+description: 使用 Xamarin.Forms 建立行動裝置應用程式： 章 24 的摘要。 頁面巡覽
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 9d1a226a4532b745fddee28e943562fb51d34e65
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 048b002cc3a250fe74a41bbeb756f8484a15abf1
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241363"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>章 24 的摘要。 頁面巡覽
 

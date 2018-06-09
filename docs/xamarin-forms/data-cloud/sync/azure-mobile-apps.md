@@ -1,18 +1,18 @@
 ---
 title: 同步處理離線資料與 Azure 行動應用程式
-description: 離線同步處理可讓使用者互動與行動應用程式、 檢視、 加入或修改資料，即使在沒有網路連線。 變更會儲存在本機資料庫中，並變更裝置在線上時，一旦可以同步處理與 Azure 行動應用程式執行個體。 本文說明如何加入 Xamarin.Forms 應用程式中離線的同步處理功能。
+description: 本文說明如何將離線同步處理功能加入至使用 Azure 行動應用程式後端的 Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: DBB343B0-2709-4C20-A669-5522B9956D9B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/02/2017
-ms.openlocfilehash: 8623127444836d3335f42f9ba7a40de6aedfef70
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: e8b0eeeb4f0033fccd7a61b4acb286bb8457e6c2
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848365"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243593"
 ---
 # <a name="synchronizing-offline-data-with-azure-mobile-apps"></a>同步處理離線資料與 Azure 行動應用程式
 

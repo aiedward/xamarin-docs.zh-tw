@@ -1,17 +1,18 @@
 ---
 title: 使用 ASP.NET Web 服務 (ASMX)
-description: ASMX 提供建立使用簡易物件存取通訊協定 (SOAP) 來傳送訊息的 web 服務的能力。 SOAP 是平台和語言無關的通訊協定，來建置和存取 web 服務。 ASMX 服務的取用者不需要了解平台、 物件模型或用來實作服務的程式設計語言的任何項目。 它們只需要了解如何傳送和接收 SOAP 訊息。 本文將示範如何使用 ASMX SOAP 服務從 Xamarin.Forms 應用程式。
+description: 本文將示範如何使用 ASMX SOAP 服務從 Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: D5533964-5528-4D35-9C2B-FAFB632472AC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: c45f0de039abc3f98b7c269f183e2883a495910b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6ec8168a8da64dbf3dfeb805856a4d91c9ec78ca
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242059"
 ---
 # <a name="consuming-an-aspnet-web-service-asmx"></a>使用 ASP.NET Web 服務 (ASMX)
 
@@ -40,10 +41,10 @@ ASMX 服務提供下列作業：
 
 |運算|描述|參數|
 |--- |--- |--- |
-|GetTodoItems|取得待辦項目清單|
+|GetTodoItems|取得待辦事項的清單|
 |CreateTodoItem|建立新的待辦項目|XML 序列化 TodoItem|
-|EditTodoItem|更新 待辦項目|XML 序列化 TodoItem|
-|DeleteTodoItem|刪除待辦項目|XML 序列化 TodoItem|
+|EditTodoItem|更新待辦事項|XML 序列化 TodoItem|
+|DeleteTodoItem|刪除待辦事項|XML 序列化 TodoItem|
 
 如需使用應用程式中的資料模型的詳細資訊，請參閱[將資料模型化](~/xamarin-forms/data-cloud/walkthrough.md)。
 

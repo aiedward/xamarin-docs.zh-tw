@@ -1,6 +1,6 @@
 ---
 title: 使用 Azure Cosmos DB 文件資料庫
-description: Azure Cosmos DB 文件資料庫是提供低延遲存取 JSON 文件，提供快速、 高可用性的可擴充資料庫服務，無縫式的小數位數和全域複寫所需要的應用程式的 NoSQL 資料庫。 本文說明如何將 Azure Cosmos DB 文件資料庫整合 Xamarin.Forms 應用程式使用 Azure Cosmos DB 標準.NET 用戶端程式庫。
+description: 本文說明如何將 Azure Cosmos DB 文件資料庫整合 Xamarin.Forms 應用程式使用 Azure Cosmos DB 標準.NET 用戶端程式庫。
 ms.prod: xamarin
 ms.assetid: 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C
 ms.technology: xamarin-forms
@@ -8,11 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: a4656b5eb9a8159f1b3dc39c8cf62509101d219e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6e797eaad98f6fac66876aaebecd7ae53ad9dbab
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242501"
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>使用 Azure Cosmos DB 文件資料庫
 
@@ -230,4 +231,4 @@ await client.DeleteDatabaseAsync(UriFactory.CreateDatabaseUri(Constants.Database
 - [Todo Azure Cosmos DB （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDB/)
 - [Azure Cosmos DB 文件](/azure/cosmos-db/)
 - [Azure Cosmos DB.NET 標準的用戶端程式庫](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
-- [Azure Cosmos DB API](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/cosmosdb/client?view=azure-dotnet)
+- [Azure Cosmos DB 應用程式開發介面](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/cosmosdb/client?view=azure-dotnet)

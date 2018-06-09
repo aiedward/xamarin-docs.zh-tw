@@ -1,16 +1,18 @@
 ---
 title: 第 12 的摘要。 樣式
+description: 使用 Xamarin.Forms 建立行動裝置應用程式： 摘要第 12 個。 樣式
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 3EAE6BDC-8EFB-464B-A87B-1C35B8387BB3
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: bb26c5d93bc9945ad43ed62d7feba2bc851e510e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d69c6c18a28c89742b186474656ee666b1e6a0ee
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241672"
 ---
 # <a name="summary-of-chapter-12-styles"></a>第 12 的摘要。 樣式
 
@@ -87,8 +89,8 @@ A`Style`要求其[ `TargetType` ](https://developer.xamarin.com/api/property/Xam
 - [`TitleStyleKey`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.TitleStyleKey/) 等於"TitleStyle"
 - [`SubtitleStyleKey`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.SubtitleStyleKey/) 等於"SubtitleStyle"
 - [`CaptionStyleKey`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.CaptionStyleKey/) 等於"CaptionStyle"
-- [`ListItemTextStyleKey`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.ListItemTextStyleKey/) equal to "ListItemTextStyle"
-- [`ListItemDetailTextStyleKey`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.ListItemDetailTextStyleKey/) equal to "ListItemDetailTextStyle"
+- [`ListItemTextStyleKey`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.ListItemTextStyleKey/) 等於"ListItemTextStyle"
+- [`ListItemDetailTextStyleKey`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.ListItemDetailTextStyleKey/) 等於"ListItemDetailTextStyle"
 
 這些樣式說明[ **DeviceStylesList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/DeviceStylesList)範例。
 

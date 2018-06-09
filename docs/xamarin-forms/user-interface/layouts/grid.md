@@ -1,20 +1,20 @@
 ---
-title: Grid
-description: 在方格中，呈現檢視。
+title: Xamarin.Forms 方格
+description: 本文說明如何使用 Xamarin.Forms 方格類別來處理資料列和資料行的方格中，呈現檢視。
 ms.prod: xamarin
 ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 6ff36f511c5194017afd34601fc9ea2f89b1e2d4
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: a50144f5e0962bd74858bb7731e30cef5dd31b6d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848105"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245149"
 ---
-# <a name="grid"></a>Grid
+# <a name="xamarinforms-grid"></a>Xamarin.Forms 方格
 
 [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) 排列成資料列和資料行的檢視表的支援。 資料列和資料行，都可以設定成比例的大小或絕對大小。 `Grid`配置不能與傳統資料表混淆，而不是呈現表格式資料。 `Grid` 沒有資料列、 資料行或資料格格式化的概念。 不同於 HTML 表格`Grid`純粹供配置內容。
 

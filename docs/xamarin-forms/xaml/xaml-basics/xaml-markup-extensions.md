@@ -1,17 +1,18 @@
 ---
 title: 第 3 部分。 XAML 標記延伸
-description: XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定為物件或間接參考來自其他來源的值。 XAML 標記延伸是特別重要的共用物件，並參考整個應用程式，所使用的常數，但他們資料繫結中找到其最大的公用程式。
+description: XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定為物件或間接參考來自其他來源的值。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 3/27/2018
-ms.openlocfilehash: c110223eae2bb06f64adf3e09977d97cc7b5d71b
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 6fcb051d2c24c7da169106b06ad5ebfc91edafa6
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245907"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 標記延伸
 
@@ -321,8 +322,8 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
 
 - 公用靜態欄位
 - 公用靜態屬性
-- 公用常數欄位 
-- 列舉的成員。 
+- 公用常數欄位
+- 列舉的成員。
 
 `StaticResource`標記延伸支援 XAML 實作所定義的資源字典，雖然`x:Static`屬於內建的 XAML，做為`x`前置詞會顯示。
 
@@ -366,7 +367,7 @@ namespace XamlSamples
                     PagePadding = new Thickness(5, 0, 5, 0);
                     TitleFont = Font.SystemFontOfSize(40, FontAttributes.Bold);
                     break;
-                    
+
                 case Device.UWP:
                     PagePadding = new Thickness(5, 0, 5, 0);
                     TitleFont = Font.SystemFontOfSize(50, FontAttributes.Bold);

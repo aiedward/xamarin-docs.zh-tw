@@ -1,17 +1,18 @@
 ---
 title: 像素與裝置無關的單位
-description: 瀏覽 SkiaSharp 座標和 Xamarin.Forms 座標之間的差異
+description: 這篇文章探討 SkiaSharp 座標和 Xamarin.Forms 座標之間的差異和範例程式碼為其示範。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 95f782fd4670782217d8ce4bc055341747a71170
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 2c7521fbedf1759c32e18d9c7f2a8fc6f0903587
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244135"
 ---
 # <a name="pixels-and-device-independent-units"></a>像素與裝置無關的單位
 

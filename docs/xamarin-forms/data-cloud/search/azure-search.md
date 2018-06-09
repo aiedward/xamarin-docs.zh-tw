@@ -1,17 +1,18 @@
 ---
 title: 使用 Azure 搜尋搜尋資料
-description: Azure 搜尋是雲端服務可提供索引和查詢功能上傳的資料。 這會移除基礎結構需求和傳統上相關聯的應用程式中實作搜尋功能搜尋演算法的複雜度。 本文示範如何使用 Azure 搜尋整合 Xamarin.Forms 應用程式的 Microsoft Azure 搜尋程式庫。
+description: 本文示範如何使用 Azure 搜尋整合 Xamarin.Forms 應用程式的 Microsoft Azure 搜尋程式庫。
 ms.prod: xamarin
 ms.assetid: A4AEF233-3672-4174-9DBA-15BEE3030C0B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: b0542b330e54a41a0cbe6ffe364def78ab6386b8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bb1ebec25d747f1188f39e9c9032145bcdc3cb97
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242124"
 ---
 # <a name="searching-data-with-azure-search"></a>使用 Azure 搜尋搜尋資料
 

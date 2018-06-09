@@ -1,22 +1,22 @@
 ---
 title: 建立 XAML 標記延伸
-description: 定義您自己自訂的 XAML 標記延伸
+description: 本文說明如何定義您自己自訂的 Xamarin.Forms XAML 標記延伸。 XAML 標記延伸是實作 IMarkupExtension IMarkupExtension 介面的類別。
 ms.prod: xamarin
 ms.assetid: 797C1EF9-1C8E-4208-8610-9B79CCF17D46
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 1a484aa4a19473c5a4f60b3d7bab78af7a20eecd
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b185ea3b7260ff2be8a4dec5dc713f24dc6e6095
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848248"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245699"
 ---
 # <a name="creating-xaml-markup-extensions"></a>建立 XAML 標記延伸
 
-以程式設計方式的層級的 XAML 標記延伸是實作的類別[ `IMarkupExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension/)或[ `IMarkupExtension<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension%3CT%3E/)介面。 您可以瀏覽下所述的標準標記延伸模組的原始程式碼[ **MarkupExtensions**目錄](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions)Xamarin.Forms GitHub 儲存機制。 
+以程式設計方式的層級的 XAML 標記延伸是實作的類別[ `IMarkupExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension/)或[ `IMarkupExtension<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension%3CT%3E/)介面。 您可以瀏覽下所述的標準標記延伸模組的原始程式碼[ **MarkupExtensions**目錄](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions)Xamarin.Forms GitHub 儲存機制。
 
 它也可由衍生自定義您自己自訂的 XAML 標記延伸`IMarkupExtension`或`IMarkupExtension<T>`。 如果標記延伸取得特定類型的值，請使用一般的表單。 這是使用數個 Xamarin.Forms 標記延伸的案例：
 
@@ -26,7 +26,7 @@ ms.locfileid: "34848248"
 - `BindingExtension` 衍生自 `IMarkupExtension<BindingBase>`
 - `ConstraintExpression` 衍生自 `IMarkupExtension<Constraint>`
 
-這兩個`IMarkupExtension`介面定義只有一個方法，名為`ProvideValue`: 
+這兩個`IMarkupExtension`介面定義只有一個方法，名為`ProvideValue`:
 
 ```csharp
 public interface IMarkupExtension
@@ -92,7 +92,7 @@ public class HslColorExtension : IMarkupExtension<Color>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <StackLayout>
         <BoxView>
             <BoxView.Color>
@@ -121,7 +121,7 @@ public class HslColorExtension : IMarkupExtension<Color>
 
 ## <a name="a-markup-extension-for-accessing-bitmaps"></a>標記延伸來存取的點陣圖
 
-引數`ProvideValue`是實作的物件[ `IServiceProvider` ](https://developer.xamarin.com/api/type/System.IServiceProvider/)介面定義在.NET 中，它`System`命名空間。 這個介面具有一個成員的方法，名為`GetService`與`Type`引數。 
+引數`ProvideValue`是實作的物件[ `IServiceProvider` ](https://developer.xamarin.com/api/type/System.IServiceProvider/)介面定義在.NET 中，它`System`命名空間。 這個介面具有一個成員的方法，名為`GetService`與`Type`引數。
 
 `ImageResourceExtension`如下所示的類別會顯示可能的用途之一`IServiceProvider`和`GetService`取得`IXmlLineInfoProvider`物件可提供行與字元指出偵測特定錯誤的資訊。 在此情況下，會引發例外狀況時`Source`屬性尚未設定：
 
@@ -152,7 +152,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension` XAML 檔案需要存取儲存為標準.NET 程式庫專案中的內嵌資源影像檔時，就會很有幫助。 它會使用`Source`屬性，以呼叫靜態`ImageSource.FromResource`方法。 此方法需要完整限定的資源名稱，其中包含組件名稱、 資料夾名稱，並以句號分隔的檔案名稱。 `ImageResourceExtension`不需要的組件名稱部分，因此它會取得使用反映的組件名稱前面加上以`Source`屬性。 不論如何，`ImageSource.FromResource`必須從包含點陣圖，這表示此 XAML 資源擴充功能不能是外部的程式庫的一部分，除非的映像也為該文件庫中的組件呼叫。 (請參閱[**內嵌影像**](~/xamarin-forms/user-interface/images.md#embedded_images)點陣圖儲存為內嵌資源的存取詳細資訊的發行項。) 
+`ImageResourceExtension` XAML 檔案需要存取儲存為標準.NET 程式庫專案中的內嵌資源影像檔時，就會很有幫助。 它會使用`Source`屬性，以呼叫靜態`ImageSource.FromResource`方法。 此方法需要完整限定的資源名稱，其中包含組件名稱、 資料夾名稱，並以句號分隔的檔案名稱。 `ImageResourceExtension`不需要的組件名稱部分，因此它會取得使用反映的組件名稱前面加上以`Source`屬性。 不論如何，`ImageSource.FromResource`必須從包含點陣圖，這表示此 XAML 資源擴充功能不能是外部的程式庫的一部分，除非的映像也為該文件庫中的組件呼叫。 (請參閱[**內嵌影像**](~/xamarin-forms/user-interface/images.md#embedded_images)點陣圖儲存為內嵌資源的存取詳細資訊的發行項。)
 
 雖然`ImageResourceExtension`需要`Source`屬性來設定，`Source`屬性會指出在屬性中，做為類別的內容屬性。 這表示`Source=`括孤括住之運算式的一部分，則可以省略。 在**映像資源示範** 頁面上，`Image`項目擷取使用的資料夾名稱和檔案名稱以句號分隔的兩個映像：
 
@@ -167,7 +167,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
+
         <Image Source="{local:ImageResource Images.SeatedMonkey.jpg}"
                Grid.Row="0" />
 
@@ -198,7 +198,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 
 ## <a name="conclusion"></a>結論
 
-XAML 標記延伸在 XAML 中扮演重要角色，藉由延伸設定屬性，從各種來源的能力。 此外，如果沒有提供現有的 XAML 標記延伸，完全必要條件，您也可以撰寫您自己。 
+XAML 標記延伸在 XAML 中扮演重要角色，藉由延伸設定屬性，從各種來源的能力。 此外，如果沒有提供現有的 XAML 標記延伸，完全必要條件，您也可以撰寫您自己。
 
 
 ## <a name="related-links"></a>相關連結

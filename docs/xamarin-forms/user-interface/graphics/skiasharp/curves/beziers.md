@@ -1,17 +1,18 @@
 ---
 title: 三種類型的貝茲曲線
-description: 探索如何使用 SkiaSharp 轉譯三次方、 二次方，和 conic 貝茲曲線
+description: 本文章說明如何使用 SkiaSharp 轉譯 Xamarin.Forms 應用程式中的三次方、 二次方，和 conic 貝茲曲線，並示範此範例程式碼。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 7b7bd83c474c7e0d32a693e06b5f12696ec5efa2
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 4a1b86035f9ce31b6e9fafac06cd0090a516b542
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244002"
 ---
 # <a name="three-types-of-bzier-curves"></a>三種類型的貝茲曲線
 

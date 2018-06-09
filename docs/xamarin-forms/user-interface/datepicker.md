@@ -1,20 +1,20 @@
 ---
-title: 使用 日期選擇器
-description: 允許使用者選取日期的 Xamarin.Forms 檢視
+title: Xamarin.Forms 日期選擇器
+description: 日期選擇器是 Xamarin.Forms 檢視，可讓使用者選取日期。 本文說明如何使用 Xamarin.Forms 應用程式中的日期選擇器。
 ms.prod: xamarin
 ms.assetid: 68E8EF8A-42E7-4939-8ABE-64D060E609D9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/04/2018
-ms.openlocfilehash: 09b0bd788d9ac436e0270b447556ad2b0a848f99
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 9cbc87637df088a4989d3602a7d1d126adf86385
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848560"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243641"
 ---
-# <a name="using-datepicker"></a>使用 日期選擇器
+# <a name="xamarinforms-datepicker"></a>Xamarin.Forms 日期選擇器
 
 _允許使用者選取日期的 Xamarin.Forms 檢視_
 

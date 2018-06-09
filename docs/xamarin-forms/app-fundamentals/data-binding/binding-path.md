@@ -1,19 +1,20 @@
 ---
-title: 繫結路徑
-description: 使用資料繫結至存取子的屬性和集合成員
+title: Xamarin.Forms 繫結路徑
+description: 本文說明如何使用 Xamarin.Forms 資料繫結來存取子的屬性和繫結類別的路徑屬性的集合成員。
 ms.prod: xamarin
 ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: f75cfcf4bfd5ffa71699f62b30145b732421d964
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d7c3b1ba991380451b4a82c389c4d46e950bc914
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240469"
 ---
-# <a name="binding-path"></a>繫結路徑
+# <a name="xamarinforms-binding-path"></a>Xamarin.Forms 繫結路徑
 
 在所有先前的資料繫結範例， [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/)屬性`Binding`類別 (或[ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.Path/)屬性`Binding`標記延伸) 已設定指派給單一的屬性。 它可實際設定`Path`至*子屬性*（屬性的屬性），或集合的成員。
 
@@ -29,7 +30,7 @@ ms.lasthandoff: 04/04/2018
 {Binding Source={x:Reference timePicker},
          Path=Time.TotalSeconds}
 ```
-         
+
 `Time`屬性屬於型別`TimeSpan`，其具有`TotalSeconds`屬性。 `Time`和`TotalSeconds`屬性是 simply 連線以句號。 中的項目`Path`字串一律參考屬性而非這些屬性的型別。
 
 範例及數個其他項目會出現在**路徑變化**頁面：
@@ -50,7 +51,7 @@ ms.lasthandoff: 04/04/2018
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <StackLayout Margin="10, 0">
         <TimePicker x:Name="timePicker" />
 
@@ -61,7 +62,7 @@ ms.lasthandoff: 04/04/2018
         <Label Text="{Binding Source={x:Reference page},
                               Path=Content.Children.Count,
                               StringFormat='There are {0} children in this StackLayout'}" />
-        
+
         <Label Text="{Binding Source={x:Static globe:CultureInfo.CurrentCulture},
                               Path=DateTimeFormat.DayNames[3],
                               StringFormat='The middle day of the week is {0}'}" />
@@ -156,7 +157,7 @@ ms.lasthandoff: 04/04/2018
 
 型別`Content`屬性現在會顯示為`Xamarin.Forms.StackLayout`。 新增`Children`屬性`Path`且類型為`Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`，這是透過 Xamarin.Forms，但很明顯地集合類型的內部類別。 將索引加入至該且類型為`Xamarin.Forms.Label`。 以這種方式繼續。
 
-Xamarin.Forms 會處理繫結路徑，它會安裝`PropertyChanged`上實作的路徑中的任何物件的處理常式`INotifyPropertyChanged`介面。 最後一個繫結，例如會第一個範圍中的變更做出反應`Label`因為`Text`屬性變更。 
+Xamarin.Forms 會處理繫結路徑，它會安裝`PropertyChanged`上實作的路徑中的任何物件的處理常式`INotifyPropertyChanged`介面。 最後一個繫結，例如會第一個範圍中的變更做出反應`Label`因為`Text`屬性變更。
 
 如果繫結路徑中的屬性未實作`INotifyPropertyChanged`，將忽略該屬性的任何變更。 某些變更完全無法讓失效的繫結路徑，讓您在屬性和子屬性的字串不會變成無效時，才應該使用這項技術。
 

@@ -1,17 +1,18 @@
 ---
 title: 觸控操作
-description: 使用矩陣轉換實作拖曳觸控、 就，和旋轉
+description: 本文章說明如何使用實作拖曳觸控、 就，和旋轉的矩陣轉換，並為其示範以範例程式碼。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2018
-ms.openlocfilehash: e8e5cc7b1a00f9822c4cbb4859a02b7546102ca0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a53fe287e74070adb22c2a7c67d4b7cc10b35d3e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244282"
 ---
 # <a name="touch-manipulations"></a>觸控操作
 
@@ -753,9 +754,9 @@ public partial class SingleFingerCornerScalePage : ContentPage
 }
 ```
 
-這`SKMatrix`物件遭到修改，如下所示的觸控式邏輯。 
+這`SKMatrix`物件遭到修改，如下所示的觸控式邏輯。
 
-程式碼後置檔案中的其餘部分是`TouchEffect`事件處理常式。 它一開始會轉換至手指的目前位置`SKPoint`值。 如`Pressed`動作類型處理常式會檢查任何其他手指接觸畫面上，且在手指點陣圖的範圍內。 
+程式碼後置檔案中的其餘部分是`TouchEffect`事件處理常式。 它一開始會轉換至手指的目前位置`SKPoint`值。 如`Pressed`動作類型處理常式會檢查任何其他手指接觸畫面上，且在手指點陣圖的範圍內。
 
 程式碼的重要部分是`if`涉及兩個呼叫的陳述式`Math.Pow`方法。 這個數學檢查手指位置是否以外的填滿點陣圖的橢圓形。 如果是的話，就是調整作業。 附近的點陣圖，邊角的其中一個是指和樞紐分析點是決定也就是說相反邊角。 如果手指這個橢圓形之內，它是一般的移動作業：
 
@@ -901,5 +902,5 @@ else
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [叫用事件的效果](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

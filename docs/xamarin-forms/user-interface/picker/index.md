@@ -1,20 +1,20 @@
 ---
-title: 選擇器
-description: 選擇器 檢視是從資料清單中選取的文字項目控制項。
+title: Xamarin.Forms 選擇器
+description: Xamarin.Forms 選擇器顯示的項目，使用者可以從中選取項目簡短清單。 本文說明如何使用選擇器類別的文字項目從清單中選取的資料。
 ms.prod: xamarin
 ms.assetid: D4815A4B-104B-4294-951B-BD8F2EC33C86
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/04/2018
-ms.openlocfilehash: 7f0050351ca28d7f8afeb82a85e82e51d399824b
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 82ae36a7be139e2a93d0e5c43c4bad355c49f217
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847494"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245035"
 ---
-# <a name="picker"></a>選擇器
+# <a name="xamarinforms-picker"></a>Xamarin.Forms 選擇器
 
 _選擇器 檢視是從資料清單中選取的文字項目控制項。_
 

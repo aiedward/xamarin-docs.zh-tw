@@ -1,16 +1,18 @@
 ---
 title: 容器化的 Microservices
+description: 本章節將說明如何使用 microservices 和容器來建置敏捷式軟體開發、 可擴充和可靠的現代化雲端應用程式。
 ms.prod: xamarin
 ms.assetid: 5872ad92-04e0-4f1a-9691-79d5602f5683
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 461a1310ff430c16e49fa0ed6037a77b1302f769
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 33be84bc17f72c8b70d117a0742b001f1f763d3d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242257"
 ---
 # <a name="containerized-microservices"></a>容器化的 Microservices
 
@@ -121,13 +123,13 @@ Microservices 基礎應用程式是分散式的系統，可能會在多部電腦
 
 ![](containerized-microservices-images/eventbus.png "與事件匯流排發行-訂閱")
 
-**圖 8-6:**發行-訂閱與事件匯流排
+**圖 8-6:** 發行-訂閱與事件匯流排
 
 從應用程式的觀點而言，事件匯流排是只要發行-訂閱介面透過公開的通道。 不過，事件匯流排實作的方式而有所不同。 例如，事件匯流排實作無法使用 RabbitMQ、 Azure 服務匯流排、 或 MassTransit NServiceBus 等其他服務匯流排。 圖 8-7 顯示事件匯流排 eShopOnContainers 參考應用程式中的使用方式。
 
 ![](containerized-microservices-images/microservicesarchitecturewitheventbus.png "事件驅動的非同步通訊，參考應用程式中")
 
-**圖 8-7:**參考應用程式中的非同步事件導向通訊
+**圖 8-7:** 參考應用程式中的非同步事件導向通訊
 
 EShopOnContainers 事件匯流排實作使用 RabbitMQ，提供一對多非同步發行-訂閱功能。 這表示，發行事件之後, 可以有多個接聽相同事件的訂閱者。 圖 8-9 說明這個關聯性。
 

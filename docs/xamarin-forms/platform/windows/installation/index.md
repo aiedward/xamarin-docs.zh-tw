@@ -1,17 +1,18 @@
 ---
 title: 安裝 Windows 專案
-description: 將新的 Windows 專案加入至現有的 Xamarin.Forms 方案
+description: 舊版 Xamarin.Forms 方案 （或 macOS 上建立那些） 並不會通用 Windows 平台專案中，且因此這篇文章說明如何將新的 UWP 專案加入至現有的 Xamarin.Forms 方案。
 ms.prod: xamarin
 ms.assetid: A0774D2E-6994-4D91-84E8-DAB66FC92320
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: aed240dd403957e5935666d4179a6d642c411b86
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 81cad7b178948ebfcf6f424be9ab62d6b6be5b92
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242633"
 ---
 # <a name="setup-windows-projects"></a>安裝 Windows 專案
 

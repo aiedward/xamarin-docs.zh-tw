@@ -1,5 +1,5 @@
 ---
-title: 自訂地圖
+title: 自訂 Xamarin.Forms 地圖
 description: Xamarin.Forms.Maps 提供抽象的跨平台，來顯示使用者使用的每個平台上，服務 Api 用於提供快速且熟悉的對應會遇到的原生對應的對應。
 ms.prod: xamarin
 ms.assetid: CAF389DD-7AA8-4065-B56E-239A7E01CD1F
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 7dc77b1ea886718473f8cf03440fb604a0364cd1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ac1e2b3aa1a485af2c01087ae627972924d44271
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239793"
 ---
-# <a name="customizing-a-map"></a>自訂地圖
+# <a name="customizing-a-xamarinforms-map"></a>自訂 Xamarin.Forms 地圖
 
 _Xamarin.Forms.Maps 提供抽象的跨平台，來顯示使用者使用的每個平台上，服務 Api 用於提供快速且熟悉的對應會遇到的原生對應的對應。_
 

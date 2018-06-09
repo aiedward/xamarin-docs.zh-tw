@@ -1,17 +1,18 @@
 ---
 title: 路徑填滿類型
-description: 探索不同的效果可能 SkiaSharp 路徑填滿類型
+description: 這篇文章會不同的效果可能檢查 SkiaSharp 路徑填滿，以類型，並示範此範例程式碼。
 ms.prod: xamarin
 ms.assetid: 57103A7A-49A2-46AE-894C-7C2664682644
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: d22ebf0e150c064835fa73765a65025f10ef4c2a
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: d54ebd157fcc76b0fcc15bf89c72edbcd88b42f2
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243703"
 ---
 # <a name="the-path-fill-types"></a>路徑填滿類型
 

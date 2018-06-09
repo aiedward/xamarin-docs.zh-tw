@@ -1,17 +1,18 @@
 ---
 title: Android 平台功能
-description: 將 Android 特定功能加入至 Xamarin.Forms 應用程式
+description: 本文章說明如何將 Android 特有的功能加入至 Xamarin.Forms 應用程式，並著重在資料設計。
 ms.prod: xamarin
 ms.assetid: E24168F3-0138-4814-86EA-B467F6B8A545
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/13/2016
-ms.openlocfilehash: 3648f6f5f576a77bf7887668352c4f3d11f3906d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2eada518586f222d200ec19aeddc65107d7603b3
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242400"
 ---
 # <a name="android-platform-features"></a>Android 平台功能
 

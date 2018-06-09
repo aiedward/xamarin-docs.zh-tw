@@ -1,19 +1,20 @@
 ---
-title: 矩陣轉換
-description: 深入 SkiaSharp 多用途的轉換矩陣的轉換
+title: 在 SkiaSharp 矩陣轉換
+description: 本文章更深入探討 SkiaSharp 與多功能的轉換矩陣的轉換，並示範此範例程式碼。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 90fadf0081f86e7739d75c0710caeaf1775c423e
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 816a5f47a4a4f5c01a1fb20b5c8e7a2fc83a64b0
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244873"
 ---
-# <a name="matrix-transforms"></a>矩陣轉換
+# <a name="matrix-transforms-in-skiasharp"></a>在 SkiaSharp 矩陣轉換
 
 _深入 SkiaSharp 多用途的轉換矩陣的轉換_
 
@@ -115,7 +116,7 @@ y' = sy ·y
 
 轉換公式是：
 
-x' = x + xSkew · y
+x' = x + xSkew ·y
 
 y' = ySkew ·x + y
 
@@ -129,9 +130,9 @@ y' = ySkew ·x + y
 
 以下是轉換公式：
 
-x' = cos(α) · x - sin(α) · y
+x' = cos(α) ·x 軸 sin(α) ·y
 
-y' = sin(α) · x - cos(α) · y
+y' = sin(α) ·x 軸 cos(α) ·y
 
 0 度 α 時，它會為識別矩陣。 Α 是 180 度，轉換矩陣時，如下所示：
 
@@ -268,7 +269,7 @@ SKMatrix.PostConcat(ref A, ref B);
 
 這些呼叫會執行下列作業：
 
-A = A × B
+A = B ×
 
 這兩個`PreConcat`方法如下：
 
@@ -358,7 +359,7 @@ SKMatrix.PostConcat(ref A, C);
 
 這是一系列的連續的乘積，所以結果為，如下所示：
 
-A × B × C
+× B × C
 
 連續乘法有助於了解每個轉換的功能。 小數位數轉換 3 倍增加路徑座標的大小，讓座標的範圍從 –300 到 300。 旋轉轉換旋轉周圍其原來的星號。 轉換轉換然後則會將其 300 像素為單位右和向下鍵，讓所有變成正數的座標。
 
@@ -652,4 +653,4 @@ public partial class ShowAffineMatrixPage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

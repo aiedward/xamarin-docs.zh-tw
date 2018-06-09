@@ -1,19 +1,20 @@
 ---
-title: 主題
+title: Xamarin.Forms 佈景主題
+description: 本文介紹 Xamarin.Forms 佈景主題，定義特定的標準檢視的視覺外觀。
 ms.prod: xamarin
 ms.assetid: 3DFB7C55-69F6-4980-A501-588719143482
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: fca5a0cb2e188df822efb15b090ef7986cf4a2d8
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 0f49eeba072d6aeb7ead40d5d56d4af9e9bf5e27
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848092"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245728"
 ---
-# <a name="themes"></a>主題
+# <a name="xamarinforms-themes"></a>Xamarin.Forms 佈景主題
 
 ![](~/media/shared/preview.png "這個 API 目前處於預覽狀態")
 

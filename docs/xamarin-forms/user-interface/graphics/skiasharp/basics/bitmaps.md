@@ -1,19 +1,20 @@
 ---
-title: 點陣圖的基本概念
-description: 從各種來源載入點陣圖並加以顯示。
+title: 點陣圖 SkiaSharp 中的基本概念
+description: 本文章說明如何從各種來源載入點陣圖中 SkiaSharp 和 Xamarin.Forms 應用程式，以顯示，並為其示範以範例程式碼。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2017
-ms.openlocfilehash: 688c6218f9ac66e3dfd6cd157e43f9b639e124c6
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 291f08afb95c70e9f9fccc02e1fd7353cf107213
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244382"
 ---
-# <a name="bitmap-basics"></a>點陣圖的基本概念
+# <a name="bitmap-basics-in-skiasharp"></a>點陣圖 SkiaSharp 中的基本概念
 
 _從各種來源載入點陣圖並加以顯示。_
 
@@ -247,5 +248,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [從 圖片庫挑選相片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

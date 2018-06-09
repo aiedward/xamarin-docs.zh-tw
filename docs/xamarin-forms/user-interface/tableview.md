@@ -1,20 +1,20 @@
 ---
-title: TableView
-description: 在捲動功能表、 設定與輸入的表單。
+title: Xamarin.Forms TableView
+description: 本文說明如何使用 Xamarin.Forms TableView 類別來呈現應用程式中的捲動功能表、 設定以及輸入的表單。
 ms.prod: xamarin
 ms.assetid: D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 312472fdfae65bc62b76f4295a13760236dededc
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 5ad1db6a073b5a6d0199aa586230cb55a9d4a925
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847653"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244854"
 ---
-# <a name="tableview"></a>TableView
+# <a name="xamarinforms-tableview"></a>Xamarin.Forms TableView
 
 [TableView](https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/)是用於顯示可捲動的資料或選擇清單檢視中不會共用相同的範本的資料列。 不同於[ListView](~/xamarin-forms/user-interface/listview/index.md)，TableView 沒有的概念`ItemsSource`，因此，項目必須做為子系手動加入。
 

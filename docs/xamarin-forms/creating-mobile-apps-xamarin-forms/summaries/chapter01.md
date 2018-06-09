@@ -1,22 +1,24 @@
 ---
 title: 第 1 的摘要。 Xamarin.Forms 納入如何？
+description: 使用 Xamarin.Forms 建立行動裝置應用程式： 第 1 摘要。 Xamarin.Forms 納入如何？
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 534c36a16acdc10ffb6f6b6703296a672875286e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2897229b0749b1a6ead805d6ad063603a77f8f0d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240456"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 的摘要。 Xamarin.Forms 納入如何？
 
 其中一個在程式設計中最不愉快的作業移植程式碼基底到另一個，從一個平台，特別是如果該平台牽涉到不同的程式設計語言。 誘惑時沒有移植程式碼，重新建構，但如果必須維護兩個平台，以平行方式，則兩個程式碼基底差異會讓未來維護更加困難。
 
-## <a name="cross-platform-mobile-development"></a>跨平台行動開發
+## <a name="cross-platform-mobile-development"></a>跨平台行動裝置程式開發
 
 行動平台為目標時，常會使用此問題。 目前，有兩個主要的行動平台、 Apple Iphone 和 Ipad 執行 iOS 作業系統和 Android 的手機和平板電腦執行的作業系統系列。 另一個重要的平台是 Microsoft 的通用 Windows 平台 (UWP)，可讓單一的程式，以目標為 Windows 10 和 Windows 10 行動裝置。
 

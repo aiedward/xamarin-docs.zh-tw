@@ -1,18 +1,18 @@
 ---
 title: 第 4 部分。 資料繫結的基本概念
-description: 資料繫結允許的連結，讓其中的變更會導致變更另兩個物件的屬性。 這是相當有用的工具，以及資料繫結可以定義完全以程式碼中，XAML 提供捷徑和便利性。 因此，在 Xamarin.Forms 中最重要的標記延伸的其中一個繫結。
+description: 資料繫結允許的連結，讓其中的變更會導致變更另兩個物件的屬性。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: a8adc0c16043048ec919f5a0f9f7c5ce25f08ef9
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 117ddd033faedda871c33ba10c246739309e2e86
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733031"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245946"
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部分。 資料繫結的基本概念
 
@@ -86,7 +86,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 屬性都可以在同一行，或是分隔成多行：
 
 ```csharp
-Text="{Binding Value, 
+Text="{Binding Value,
                StringFormat='The angle is {0:F0} degrees'}"
 ```
 
@@ -102,13 +102,13 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 [![](data-binding-basics-images/sliderbinding.png "檢視可檢視繫結")](data-binding-basics-images/sliderbinding-large.png#lightbox "檢視來檢視繫結 ")
 
-## <a name="the-binding-mode"></a>繫結模式 
+## <a name="the-binding-mode"></a>繫結模式
 
 單一檢視可以有數個屬性上的資料繫結。 不過，每個檢視只能有一個`BindingContext`，因此該檢視表上的多個資料繫結都必須參考相同物件的屬性。
 
 這個資料庫和其他問題的解決方法包括`Mode`屬性設定為隸屬`BindingMode`列舉型別：
 
-- `Default` 
+- `Default`
 - `OneWay` — 值會從來源傳送到目標
 - `OneWayToSource` — 值會從目標傳送到來源
 - `TwoWay` — 值會傳送來源和目標之間的這兩種方式
@@ -324,7 +324,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 </ContentPage>
 ```
 
-請注意，使用`OnPlatform`定義的大小`BoxView`和高度`ListView`資料列。 雖然所有的三個平台的值相同，可以輕鬆地調整為其他值以微調顯示標記。 
+請注意，使用`OnPlatform`定義的大小`BoxView`和高度`ListView`資料列。 雖然所有的三個平台的值相同，可以輕鬆地調整為其他值以微調顯示標記。
 
 ## <a name="binding-value-converters"></a>繫結值轉換器
 
@@ -366,7 +366,7 @@ namespace XamlSamples
 }
 ```
 
-`ConvertBack`方法不是扮演 role 在此程式因為繫結只有其中一種方式從來源到目標。 
+`ConvertBack`方法不是扮演 role 在此程式因為繫結只有其中一種方式從來源到目標。
 
 繫結參考繫結轉換器，並`Converter`屬性。 繫結轉換也可以接受參數，指定為`ConverterParameter`屬性。 對於某些維持通用性，這是指定乘數的方式。 繫結轉換器會檢查有效的轉換器參數`double`值。
 

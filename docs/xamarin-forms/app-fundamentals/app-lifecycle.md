@@ -1,20 +1,20 @@
 ---
-title: 應用程式生命週期
-description: 如何回應應用程式生命週期
+title: Xamarin.Forms 應用程式生命週期
+description: 本文說明如何回應應用程式生命週期，包括存留週期方法、 頁面巡覽事件，以及強制回應巡覽事件。
 ms.prod: xamarin
 ms.assetid: 69B416CF-B243-4790-AB29-F030B32465BE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: a22ad8f3f272212f5c7f088ba2112f2771ff4a7f
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: fb651494b63a77ede47dd246ee054b5c67af2a35
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846340"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240265"
 ---
-# <a name="app-lifecycle"></a>應用程式生命週期
+# <a name="xamarinforms-app-lifecycle"></a>Xamarin.Forms 應用程式生命週期
 
 [ `Application` ](xref:Xamarin.Forms.Application)基底類別提供下列功能：
 

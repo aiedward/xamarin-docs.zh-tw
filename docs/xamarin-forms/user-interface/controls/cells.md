@@ -1,23 +1,24 @@
 ---
 title: Xamarin.Forms 資料格
-description: Xamarin.Forms 資料格可以加入至 Listview 和 TableViews。
+description: Xamarin.Forms 資料格可以加入至 Listview 和 TableViews。 本文列出包含在 Xamarin.Forms 中的資料格。
 ms.prod: xamarin
 ms.assetid: 77DA0C89-35D6-4C09-A072-3ADE53FD56CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: dbc28f3d58b43bb53db39da2dcdf1ba722169264
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0947027b43eacd0bac269ebf7a779746e0d22866
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243352"
 ---
 # <a name="xamarinforms-cells"></a>Xamarin.Forms 資料格
 
 _Xamarin.Forms 資料格可以加入至 Listview 和 TableViews。_
 
-A*儲存格*資料表中的項目所使用的特定項目，並描述清單中的每個項目轉譯的方式。 [ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/)類別衍生自[ `Element` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/)，從中[ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/)也衍生。 資料格本身並不可見的項目。相反地，它是用來建立視覺項目範本。 
+A*儲存格*資料表中的項目所使用的特定項目，並描述清單中的每個項目轉譯的方式。 [ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/)類別衍生自[ `Element` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/)，從中[ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/)也衍生。 資料格本身並不可見的項目。相反地，它是用來建立視覺項目範本。
 
 `Cell` 用於以獨佔方式[ `ListView` ](views.md#listView)和[ `TableView` ](views.md#tableView)控制項。 若要了解如何使用和自訂資料格，請參閱[ `ListView` ](~/xamarin-forms/user-interface/listview/index.md)和[ `TableView` ](~/xamarin-forms/user-interface/tableview.md)文件。
 

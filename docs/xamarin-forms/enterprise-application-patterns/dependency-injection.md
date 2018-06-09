@@ -1,16 +1,18 @@
 ---
 title: 相依性插入
+description: 本章說明 eShopOnContainers 行動裝置應用程式如何使用相依性插入來分離從程式碼相依於這些類型的具象型別。
 ms.prod: xamarin
 ms.assetid: a150f2d1-06f8-4aed-ab4e-7a847d69f103
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 8db8e5b756fe770bdf292ec03c28eb5ed54acf9e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fb225349b9ffb1c950486a817897b3c26c6ffbe4
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242566"
 ---
 # <a name="dependency-injection"></a>相依性插入
 
@@ -61,7 +63,7 @@ public class ProfileViewModel : ViewModelBase
 
 ![](dependency-injection-images/dependencyinjection.png "當使用相依性插入的相依性範例")
 
-**圖 3-1:**時使用相依性插入的相依性
+**圖 3-1:** 時使用相依性插入的相依性
 
 在執行階段，容器必須知道哪一個實作`IOrderService`介面，它應該具現化，它可以具現化之前`ProfileViewModel`物件。 這項作業包括：
 

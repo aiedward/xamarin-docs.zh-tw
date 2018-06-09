@@ -1,16 +1,18 @@
 ---
 title: 第 21 的摘要。 轉換
+description: 使用 Xamarin.Forms 建立行動裝置應用程式： 章 21 的摘要。 轉換
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: d9c135191fc8143ca932fec5129f1b35af4b29b4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b8f24a500c0d1a8359641c62e88779b795b0577a
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240553"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>第 21 的摘要。 轉換
 

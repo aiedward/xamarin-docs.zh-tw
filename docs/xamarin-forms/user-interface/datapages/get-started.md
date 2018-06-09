@@ -1,17 +1,18 @@
 ---
 title: 開始使用 DataPages
+description: 本文說明如何建置使用 Xamarin.Forms DataPages 簡單資料導向頁面開始。
 ms.prod: xamarin
 ms.assetid: 6416E5FA-6384-4298-BAA1-A89381E47210
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d5e73839f889234c816bfff08f3e46dade8dffc9
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 1fb8a06111271d453c578cd3d2db97ec8689c995
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846837"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243073"
 ---
 # <a name="getting-started-with-datapages"></a>開始使用 DataPages
 
@@ -21,7 +22,7 @@ ms.locfileid: "34846837"
 > 需要 DataPages [Xamarin.Forms 佈景主題](~/xamarin-forms/user-interface/themes/index.md)來呈現的參考。
 
 
-若要開始建置簡單的資料磁碟機頁面使用 DataPages Preview，請遵循下列步驟。 此示範會使用硬式編碼中的樣式 （「 事件 」） 預覽組建，只能搭配特定程式碼中的 JSON 格式。
+若要開始建置使用 DataPages 預覽的簡單資料導向網頁，請遵循下列步驟。 此示範會使用硬式編碼中的樣式 （「 事件 」） 預覽組建，只能搭配特定程式碼中的 JSON 格式。
 
 [![](get-started-images/demo-sml.png "DataPages 範例應用程式")](get-started-images/demo.png#lightbox "DataPages 範例應用程式")
 

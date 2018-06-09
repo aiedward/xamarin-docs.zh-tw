@@ -1,5 +1,5 @@
 ---
-title: XAML 命名空間
+title: Xamarin.Forms 中的 XAML 命名空間
 description: XAML 會使用命名空間宣告 xmlns XML 屬性。 本文章導入 XAML 命名空間的語法，並示範如何宣告 XAML 命名空間，以存取的類型。
 ms.prod: xamarin
 ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2017
-ms.openlocfilehash: ecf255d2fc6937e93258eaa021f79152cb7b1c7f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: faa4998869b918caaf5bc4252dc81a5745199c93
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245829"
 ---
-# <a name="xaml-namespaces"></a>XAML 命名空間
+# <a name="xaml-namespaces-in-xamarinforms"></a>Xamarin.Forms 中的 XAML 命名空間
 
 _XAML 會使用命名空間宣告 xmlns XML 屬性。本文章導入 XAML 命名空間的語法，並示範如何宣告 XAML 命名空間，以存取的類型。_
 
@@ -54,7 +55,7 @@ XAML 使用前置詞來宣告非預設的命名空間，以參考型別在命名
 
 以指定的 Common Language Runtime (CLR) 命名空間名稱，和 （選擇性） 組件名稱的命名空間宣告中宣告 XAML 命名空間與前置詞，可以在 XAML 中參考型別。 這被藉由定義下列關鍵字命名空間宣告內的值：
 
-- **clr 命名空間：**或**使用：** – 包含將公開為 XAML 項目類型的組件內的 CLR 命名空間宣告。 這個關鍵字是必要項。
+- **clr 命名空間：** 或**使用：** – 包含將公開為 XAML 項目類型的組件內的 CLR 命名空間宣告。 這個關鍵字是必要項。
 - **組件 =** – 包含參考的 CLR 命名空間的組件。 這個值會是組件，不含副檔名的名稱。 您應該建立組件的路徑，做為參考專案檔，其中包含將參考組件的 XAML 檔案中。 如果可以省略這個關鍵字**clr 命名空間**值是在相同的組件參考類型的應用程式程式碼。
 
 請注意，區隔字元`clr-namespace`或`using`語彙基元的值是冒號，而字元區隔`assembly`語彙基元，其值為等號。 若要使用兩個語彙基元之間的字元是分號。

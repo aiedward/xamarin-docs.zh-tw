@@ -1,17 +1,18 @@
 ---
 title: 播放網頁視訊
+description: 本文說明如何使用 Xamarin.Forms 影片播放器應用程式中播放 web 視訊。
 ms.prod: xamarin
 ms.assetid: 75781A10-865D-4BA8-8D6B-E3DA012922BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 1d00861a9b6d7066212189aa4a59e786cb545f12
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: f9b52398efbd189153ca74ce80433863b25bd578
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846743"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240973"
 ---
 # <a name="playing-a-web-video"></a>播放網頁視訊
 
@@ -36,7 +37,7 @@ namespace FormsVideoLibrary
             set { SetValue(SourceProperty, value); }
             get { return (VideoSource)GetValue(SourceProperty); }
         }
-        
+
         // AutoPlay property
         public static readonly BindableProperty AutoPlayProperty =
             BindableProperty.Create(nameof(AutoPlay), typeof(bool), typeof(VideoPlayer), true);
@@ -169,7 +170,7 @@ namespace FormsVideoLibrary
             if (!String.IsNullOrWhiteSpace(value))
             {
                 Uri uri;
-                return Uri.TryCreate(value, UriKind.Absolute, out uri) && uri.Scheme != "file" ? 
+                return Uri.TryCreate(value, UriKind.Absolute, out uri) && uri.Scheme != "file" ?
                                 VideoSource.FromUri(value) : VideoSource.FromResource(value);
             }
 
@@ -482,7 +483,7 @@ namespace FormsVideoLibrary.UWP
                    AreTransportControlsEnabled="False" />
 ```
 
-如果您將這兩個屬性設定為`false`，然後視訊時才會開始播放，並會有沒有方法可以將它啟動 ！ 您必須呼叫`Play`從程式碼後置檔案，或文件中所述，建立您自己的傳輸控制[實作自訂視訊傳輸控制](custom-transport.md)。 
+如果您將這兩個屬性設定為`false`，然後視訊時才會開始播放，並會有沒有方法可以將它啟動 ！ 您必須呼叫`Play`從程式碼後置檔案，或文件中所述，建立您自己的傳輸控制[實作自訂視訊傳輸控制](custom-transport.md)。
 
 **App.xaml**檔案包含兩個額外的視訊資源：
 
@@ -502,7 +503,7 @@ namespace FormsVideoLibrary.UWP
 
             <video:UriVideoSource x:Key="Sintel"
                                   Uri="https://archive.org/download/Sintel/sintel-2048-stereo_512kb.mp4" />
-            
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

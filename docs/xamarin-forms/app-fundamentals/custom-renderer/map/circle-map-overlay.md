@@ -1,18 +1,18 @@
 ---
 title: 反白顯示地圖上的循環的區域
-description: 本文說明如何將循環重疊影像加入至地圖中，反白顯示對應的循環區域。
+description: 本文說明如何將循環重疊影像加入至地圖中，反白顯示對應的循環區域。 雖然 iOS 和 Android 提供應用程式開發介面加入對應的循環的覆疊的在 UWP 上重疊影像會轉譯為多邊形。
 ms.prod: xamarin
 ms.assetid: 6FF8BD15-074E-4E6A-9522-F9E2BE32EF12
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 1bec7a318bebc40c050104a51408473d89f483a5
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 06ea1e788add0064571f01dc1080147e64bb8397
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846519"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240281"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>反白顯示地圖上的循環的區域
 

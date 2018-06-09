@@ -1,18 +1,18 @@
 ---
 title: 建立平台特性
-description: 廠商可以建立自己的平台特性效果。 效果提供的特定功能，然後透過特定平台。 結果是可以在 XAML 中，透過和 fluent 應用程式開發的程式碼 API 更輕鬆地取用的效果。 本文將示範如何公開透過平台專屬的效果。
+description: 本文將示範如何公開透過平台專屬的效果。
 ms.prod: xamarin
 ms.assetid: 0D0E6274-6EF2-4D40-BB77-3D8E53BCD24B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/23/2016
-ms.openlocfilehash: dcd22dd0d4e281245a1f6598d9a58d24a97b1f20
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: a07ff2e206a08ee40355733ab2c1026f29de2f2f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848144"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242780"
 ---
 # <a name="creating-platform-specifics"></a>建立平台特性
 

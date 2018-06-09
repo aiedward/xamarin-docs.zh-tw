@@ -1,20 +1,20 @@
 ---
-title: 網頁檢視
-description: 在本機或網路網頁內容與文件。
+title: Xamarin.Forms WebView
+description: 這篇文章會說明如何使用 Xamarin.Forms WebView 類別來提供本機或網路 web 內容和文件給使用者。
 ms.prod: xamarin
 ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 7ce48e48e41c3554094a12a220ae197cc4ec3fff
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: df004bd2a580e48137162d28ca3974521266ae7a
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847988"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245640"
 ---
-# <a name="webview"></a>網頁檢視
+# <a name="xamarinforms-webview"></a>Xamarin.Forms WebView
 
 [WebView](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/)是檢視以顯示 web 和 HTML 的應用程式中的內容。 不同於`OpenUri`，其可接受使用者在裝置上的網頁瀏覽器`WebView`顯示您的應用程式內的 HTML 內容。
 

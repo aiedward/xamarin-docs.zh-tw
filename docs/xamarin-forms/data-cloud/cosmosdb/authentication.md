@@ -1,17 +1,18 @@
 ---
 title: 驗證使用者以 Azure Cosmos DB 文件資料庫
-description: Azure Cosmos DB 文件資料庫可支援資料分割的集合、 可以橫跨多部伺服器和資料分割，同時支援無限制的儲存體和輸送量。 本文說明如何結合資料分割的集合，存取控制，讓使用者只能存取自己的文件中的 Xamarin.Forms 應用程式。
+description: 本文說明如何結合 Azure Cosmos DB 分割集合的存取控制，讓使用者只能存取自己的文件中的 Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 0132f849a066976896295da8b8b67ed8bf3c3e8d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 031a48e5e10100b2c57ac067a0dda916c93d20da
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241607"
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>驗證使用者以 Azure Cosmos DB 文件資料庫
 
@@ -145,7 +146,7 @@ var auth = new Xamarin.Auth.WebRedirectAuthenticator(
 
 這會導致 Azure App Service 與 Facebook、 Facebook 登入頁面會顯示起始 OAuth 驗證流程：
 
-![](authentication-images/login.png "Facebook Login")
+![](authentication-images/login.png "Facebook 登入")
 
 登入可以藉由按下取消**取消**按鈕在 iOS 上，或按**回**按鈕在 Android 上，在此情況下，使用者仍未驗證和身分識別提供者使用者介面從螢幕中移除。
 
@@ -274,4 +275,4 @@ await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(Constants.Database
 - [SQL API 中的存取控制](/rest/api/documentdb/access-control-on-documentdb-resources/)。
 - [如何在資料分割和 Azure Cosmos DB 中的小數位數](/azure/cosmos-db/partition-data/)
 - [Azure Cosmos DB 用戶端程式庫](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
-- [Azure Cosmos DB API](https://msdn.microsoft.com/library/azure/dn948556.aspx)
+- [Azure Cosmos DB 應用程式開發介面](https://msdn.microsoft.com/library/azure/dn948556.aspx)

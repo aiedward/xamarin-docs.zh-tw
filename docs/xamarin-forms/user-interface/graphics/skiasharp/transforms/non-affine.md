@@ -1,17 +1,18 @@
 ---
 title: 非仿射轉換
-description: 轉換矩陣的第三個資料行建立檢視方塊和錐形效果
+description: 本文章說明如何建立檢視方塊和錐形效果的轉換矩陣的第三個資料行，並示範此範例程式碼。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 8c3d39038fbaf5ed6601102a0aa16860c7a5a7a6
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 03c5b0dcbb7870e38991d7e0f4c7ac4feebfcf4e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244229"
 ---
 # <a name="non-affine-transforms"></a>非仿射轉換
 
@@ -47,9 +48,9 @@ z' = Persp0·x + Persp1·y + Persp2
 
 x" = x' / z'
 
-y" = y' / z'
+y"= y' / z'
 
-z" = z' / z' = 1
+z"= z' / z' = 1
 
 這些值稱為*同質座標*和開發時由數學家年 8 月斐迪南 Möbius，更佳已知他拓樸件怪事，如 Möbius 區域。
 
@@ -75,19 +76,19 @@ z' = Persp0·x + Persp1·y + Persp2
 
 轉換公式是：
 
-x` = x / (0.01·x + 1)
+x' = x / （0.01·x + 1）
 
 y' = y / （0.01·x + 1）
 
 現在使用這項轉換來轉譯 100 像素的方塊位於原始位置。 以下是四個角落的轉換方式：
 
-(0, 0) → (0, 0)
+（0，0） （0，0） 的 →
 
-(0, 100) → (0, 100)
+（0，100） → （0，100）
 
-(100, 0) → (50, 0)
+（100，0） → （50，0）
 
-(100, 100) → (50, 50)
+（100，100） （50，50） →
 
 當 x 是 100，則 z' 分母為 2，，x 和 y 座標，所以會有效減半。 方塊右邊會變成短於左邊算起的：
 
@@ -469,4 +470,4 @@ W 和 H 代表點陣圖的高度與寬度。 第一個轉換 (`S`) 只是可調�
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -1,16 +1,18 @@
 ---
 title: 第 18 章摘要。 MVVM
+description: 使用 Xamarin.Forms 建立行動裝置應用程式： 摘要的第 18 章。 MVVM
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 392e683601726ed1219fd43786a9b50d2c14c9b5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4a9e8221828ddd49c10dc4f14dc996acc167ae2f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240427"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>第 18 章摘要。 MVVM
 

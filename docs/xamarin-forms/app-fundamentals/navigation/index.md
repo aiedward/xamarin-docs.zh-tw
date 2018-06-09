@@ -1,19 +1,20 @@
 ---
-title: 巡覽
-description: Xamarin.Forms 提供許多不同的網頁瀏覽體驗，所用的頁面類型而定。
+title: Xamarin.Forms 瀏覽
+description: 本指南說明如何執行瀏覽 Xamarin.Forms 應用程式中。 Xamarin.Forms 提供許多不同的網頁瀏覽體驗，所用的頁面類型而定。
 ms.prod: xamarin
 ms.assetid: BC5D0C6C-D5A9-4B12-A492-ED1F570CEC87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 1a184e1ebfd9d87ba82642ebdfc30a8d3f92cce1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 90aedee42af7ed1788110e832fb3b435d870ee77
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241952"
 ---
-# <a name="navigation"></a>巡覽
+# <a name="xamarinforms-navigation"></a>Xamarin.Forms 瀏覽
 
 _Xamarin.Forms 提供許多不同的網頁瀏覽體驗，所用的頁面類型而定。_
 
@@ -42,4 +43,3 @@ Xamarin.Forms 也有提供支援強制回應頁面。 強制回應頁面鼓勵�
 ## <a name="displaying-pop-upspop-upsmd"></a>[顯示快顯視窗](pop-ups.md)
 
 Xamarin.Forms 提供兩個 pop up 類似使用者介面項目： 警示和動作工作表。 可以使用這些介面項目，詢問使用者簡單的問題，以及引導使用者進行的工作。
-

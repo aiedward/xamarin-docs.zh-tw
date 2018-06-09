@@ -1,19 +1,20 @@
 ---
-title: 範本
-description: 如何使用 Xamarin.Forms 所提供的範本支援
+title: Xamarin.Forms 範本
+description: 本指南說明如何使用 Xamarin.Forms 所提供的範本支援。 這包括控制項範本，可用來輕鬆地重新佈景主題及網頁在執行階段，以及支援的控制項定義的資料呈現的資料範本。
 ms.prod: xamarin
 ms.assetid: 4453C209-C068-47D5-A49B-0ECC95C0FB3B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/05/2016
-ms.openlocfilehash: a37a82e008093d90dcf18bc46abada0d406b3815
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bcc65685ecc69964f792dc699e12215015d7b840
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240414"
 ---
-# <a name="templates"></a>範本
+# <a name="xamarinforms-templates"></a>Xamarin.Forms 範本
 
 ## <a name="control-templatescontrol-templatesindexmd"></a>[控制項範本](control-templates/index.md)
 

@@ -1,20 +1,20 @@
 ---
-title: 進入
-description: 單行文字或輸入的密碼
+title: Xamarin.Forms 項目
+description: 本文說明如何接受單行文字或密碼輸入應用程式中的使用 Xamarin.Forms 項目類別。
 ms.prod: xamarin
 ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: a45a4edb93920cfe1d0289da44ee664e41c25cf1
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b6188b986589a56229ad2e092d4100ff3f75dbe4
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847844"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245549"
 ---
-# <a name="entry"></a>進入
+# <a name="xamarinforms-entry"></a>Xamarin.Forms 項目
 
 _單行文字或輸入的密碼_
 

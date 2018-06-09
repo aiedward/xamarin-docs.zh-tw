@@ -1,19 +1,20 @@
 ---
-title: 字型
-description: Xamarin.Forms 中的設定字型
+title: Xamarin.Forms 中的字型
+description: 本文說明如何指定 Xamarin.Forms 應用程式中顯示文字的控制項字型資訊。
 ms.prod: xamarin
 ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 52c86c63c328729211c4fbd22bd10b5eb1e56615
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: fd45528446c9d3d4bdfa1b8f9f4010babb2ad044
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245627"
 ---
-# <a name="fonts"></a>字型
+# <a name="fonts-in-xamarinforms"></a>Xamarin.Forms 中的字型
 
 本文說明如何 Xamarin.Forms 可讓您指定的字型屬性 （包括權數和大小） 上顯示文字的控制項。 字型資訊可以是[程式碼中指定](#Setting_Font_in_Code)或[Xaml 中指定](#Setting_Font_in_Xaml)。
 它也可使用[自訂字型](#Using_a_Custom_Font)。

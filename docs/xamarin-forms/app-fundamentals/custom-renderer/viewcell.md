@@ -1,18 +1,18 @@
 ---
 title: 自訂 ViewCell
-description: Xamarin.Forms ViewCell 就是資料格可以加入至 ListView 或 TableView，其中包含開發人員定義的檢視。 本文示範如何建立裝載於 Xamarin.Forms ListView 控制項 ViewCell 自訂轉譯器。 這會停止從 Xamarin.Forms 配置計算期間 ListView 捲動重複呼叫。
+description: Xamarin.Forms ViewCell 就是資料格可以加入至 ListView 或 TableView，其中包含開發人員定義的檢視。 本文示範如何建立裝載於 Xamarin.Forms ListView 控制項 ViewCell 自訂轉譯器。
 ms.prod: xamarin
 ms.assetid: 61F378C9-6DEF-436B-ACC3-2324B25D404E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: ec7e8ef619ba065c0e9d81b71f267eb70a68bd14
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 2011049180aa47b7be68486d4f30bd356e2ba813
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847702"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241799"
 ---
 # <a name="customizing-a-viewcell"></a>自訂 ViewCell
 
