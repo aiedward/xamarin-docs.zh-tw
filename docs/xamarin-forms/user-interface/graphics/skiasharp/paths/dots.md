@@ -1,19 +1,20 @@
 ---
-title: 句點和連字號
-description: 主要的複雜性 SkiaSharp 中繪製虛線和破折線的線條
+title: 點和虛線 SkiaSharp
+description: 這篇文章探討如何主要複雜的繪圖線條虛線和破折線 SkiaSharp，和範例程式碼為其示範。
 ms.prod: xamarin
 ms.assetid: 8E9BCC13-830C-458C-9FC8-ECB4EAE66078
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 1e295ac424c311472ff175d4627c5fb12641d31f
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 5571f2d1824cef72e192a19d15f9af03276f7523
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243869"
 ---
-# <a name="dots-and-dashes"></a>句點和連字號
+# <a name="dots-and-dashes-in-skiasharp"></a>點和虛線 SkiaSharp
 
 _主要的複雜性 SkiaSharp 中繪製虛線和破折線的線條_
 

@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 453c4d6edafd6493272f8ca0435fcc86e2f3b2f7
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
-ms.translationtype: MT
+ms.openlocfilehash: f878641f9266da74d61eda8a85d4e16de193be0e
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847962"
 ---
 # <a name="introduction-to-styles"></a>Introduction to 樣式
 
@@ -93,7 +94,7 @@ public class NoStylesPageCS : ContentPage
 
 雖然樣式主要的設計以 XAML 為基礎的應用程式，也在 C# 中建立它們：
 
-- [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) 在 XAML 中建立的執行個體通常定義在[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) ，指派給[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/)控制項的集合頁面上，或[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Resources/)應用程式集合。
+- [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) 在 XAML 中建立的執行個體通常定義在[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) ，指派給[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/)控制項的集合] 頁面上，或[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Resources/)應用程式集合。
 - [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) 在頁面的類別中，或可全域存取的類別中，通常被定義在 C# 中建立的執行個體。
 
 選擇要定義在何處[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)可以用它的影響：

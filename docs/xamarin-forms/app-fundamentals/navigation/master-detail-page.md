@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: e1df494edfc82f3a168e56553db6f43e63217def
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
-ms.translationtype: MT
+ms.openlocfilehash: 20032cdf4789de3248ec30a8da5e21e1bd8e4bcd
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34846373"
 ---
 # <a name="master-detail-page"></a>主版詳細資料頁面
 
@@ -236,7 +237,7 @@ public partial class MainPage : MasterDetailPage
 
 `OnItemSelected`方法會執行下列動作：
 
-- 它會擷取[ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.SelectedItem/)從[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)執行個體，並提供不是`null`，中儲存的頁面類型的新執行個體設定詳細資料頁面`TargetType`屬性`MasterPageItem`。 頁面類型包裝在[ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)執行個體，以確保透過參考圖示[ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/)屬性`MasterPage`會顯示在詳細資料頁面上，在 iOS 中。
+- 它會擷取[ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.SelectedItem/)從[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)執行個體，並提供不是`null`，中儲存的頁面類型的新執行個體設定詳細資料頁面`TargetType`屬性`MasterPageItem`。 頁面類型包裝在[ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)執行個體，以確保透過參考圖示[ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/)屬性`MasterPage`會顯示在詳細資料] 頁面上，在 iOS 中。
 - 在選取的項目[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)設`null`以確保沒有任何`ListView`下一次將選取項目`MasterPage`呈現。
 - 詳細資料頁面，會藉由設定呈現給使用者[ `MasterDetailPage.IsPresented` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsPresented/)屬性`false`。 這個屬性控制是否顯示 master] 或 [詳細資料頁面。 應該設定為`true`顯示主版頁面和`false`以顯示詳細資料頁面。
 
@@ -253,7 +254,7 @@ public partial class MainPage : MasterDetailPage
 - **預設**– 頁會使用平台預設值。
 - **Popover** -詳細資料頁面涵蓋，或部分涵蓋的主版頁面。
 - **分割**– 主版頁面會顯示在左邊和右邊是詳細資料頁面。
-- **SplitOnLandscape** – 裝置時，會使用分割畫面。
+- **SplitOnLandscape** –  蒰菾  裝置時，會使用分割畫面。
 - **SplitOnPortrait** – 分割畫面可在裝置處於直式方向。
 
 下列 XAML 程式碼範例示範如何設定[ `MasterBehavior` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.MasterBehavior/)屬性[ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/):

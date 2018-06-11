@@ -1,19 +1,20 @@
 ---
-title: 路徑的效果
-description: 探索各種路徑效果可讓用於繪製和填滿的路徑
+title: 路徑 SkiaSharp 效果
+description: 本文說明各種 SkiaSharp 路徑效果，讓用於繪製和填滿的路徑，並示範此範例程式碼。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 76192f48bedebb183c64c83e34c3908cc85d591c
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 2071a2fb140d0e9c78d4c86d6aa70d3606dc1f98
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244106"
 ---
-# <a name="path-effects"></a>路徑的效果
+# <a name="path-effects-in-skiasharp"></a>路徑 SkiaSharp 效果
 
 _探索各種路徑效果可讓用於繪製和填滿的路徑_
 
@@ -400,7 +401,7 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 中指定的路徑`SKPathEffect.Create1DPath`方法一律會填滿。 中指定的路徑`DrawPath`方法永遠繪製如果`SKPaint`物件都有其`PathEffect`屬性設定為 1 D 路徑效果。 請注意，`pathPaint`物件之中未包含任何`Style`設定，通常會預設為`Fill`，但無論繪製路徑。
 
-方塊用`Translate`範例是 20 像素方形，而`advance`引數設定為 24。 這項差異會導致行大致上是水平或垂直，但線條是對角線，因為方塊的對角線為 28.3 像素時，方塊的方式稍有重疊時，在方塊之間的間距。 
+方塊用`Translate`範例是 20 像素方形，而`advance`引數設定為 24。 這項差異會導致行大致上是水平或垂直，但線條是對角線，因為方塊的對角線為 28.3 像素時，方塊的方式稍有重疊時，在方塊之間的間距。
 
 中的菱形圖案`Rotate`範例也是 20 像素寬。 `advance`以便在持續點觸及菱形旋轉線條的曲度以及設定為 20。
 
@@ -585,9 +586,9 @@ public class ConveyorBeltPage : ContentPage
         bucketPath.AddRect(new SKRect(-5, -3, 25, 3));
 
         // Sides
-        bucketPath.AddRoundedRect(new SKRect(25, -19, 27, 18), 10, 10, 
+        bucketPath.AddRoundedRect(new SKRect(25, -19, 27, 18), 10, 10,
                                   SKPathDirection.CounterClockwise);
-        bucketPath.AddRoundedRect(new SKRect(63, -19, 65, 18), 10, 10, 
+        bucketPath.AddRoundedRect(new SKRect(63, -19, 65, 18), 10, 10,
                                   SKPathDirection.CounterClockwise);
 
         // Five slats
@@ -595,20 +596,20 @@ public class ConveyorBeltPage : ContentPage
         {
             bucketPath.MoveTo(25, -19 + 8 * i);
             bucketPath.LineTo(25, -13 + 8 * i);
-            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                              SKPathDirection.CounterClockwise, 65, -13 + 8 * i);
             bucketPath.LineTo(65, -19 + 8 * i);
-            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                              SKPathDirection.Clockwise, 25, -19 + 8 * i);
             bucketPath.Close();
         }
 
         // Arc to suggest the hidden side
         bucketPath.MoveTo(25, -17);
-        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                          SKPathDirection.Clockwise, 65, -17);
         bucketPath.LineTo(65, -19);
-        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                          SKPathDirection.CounterClockwise, 25, -19);
         bucketPath.Close();
 
@@ -619,7 +620,7 @@ public class ConveyorBeltPage : ContentPage
     ...
 ```
 
-值區建立程式碼會完成的兩個轉換，讓變大一點的值區，並開啟它側邊。 套用這些轉換是更為調整在先前的程式碼中的所有座標。 
+值區建立程式碼會完成的兩個轉換，讓變大一點的值區，並開啟它側邊。 套用這些轉換是更為調整在先前的程式碼中的所有座標。
 
 `PaintSurface`處理常式開始藉由定義本身的輸送帶的路徑。 這是只是一組線條和分號圓形繪製以 20 像素寬暗灰色列的一組：
 
@@ -642,10 +643,10 @@ public class ConveyorBeltPage : ContentPage
         {
             // Straight verticals capped by semicircles on top and bottom
             conveyerPath.MoveTo(width, verticalMargin);
-            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large, 
+            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large,
                                SKPathDirection.Clockwise, 2 * width, verticalMargin);
             conveyerPath.LineTo(2 * width, info.Height - verticalMargin);
-            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large, 
+            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large,
                                SKPathDirection.Clockwise, width, info.Height - verticalMargin);
             conveyerPath.Close();
 
@@ -665,8 +666,8 @@ public class ConveyorBeltPage : ContentPage
             float phase = -t * spacing;
 
             // Create the buckets PathEffect
-            using (SKPathEffect bucketsPathEffect = 
-                        SKPathEffect.Create1DPath(bucketPath, spacing, phase, 
+            using (SKPathEffect bucketsPathEffect =
+                        SKPathEffect.Create1DPath(bucketPath, spacing, phase,
                                                   SKPath1DPathEffectStyle.Rotate))
             {
                 // Set it to the Paint object and draw the path again
@@ -680,7 +681,7 @@ public class ConveyorBeltPage : ContentPage
 
 繪製輸送帶的邏輯在橫向模式中無法運作。
 
-值區應該間距約 200 像素上輸送帶距離。 不過，輸送帶可能不是 200 像素長，這表示它作為倍數`phase`引數的`SKPathEffect.Create1DPath`是動畫，值區會快顯進出是否存在。 
+值區應該間距約 200 像素上輸送帶距離。 不過，輸送帶可能不是 200 像素長，這表示它作為倍數`phase`引數的`SKPathEffect.Create1DPath`是動畫，值區會快顯進出是否存在。
 
 基於這個理由，程式會先計算名為的值`length`也就是輸送帶的長度。 輸送帶包含直線和分號的圓形，因為這是簡單的計算。 接下來，bucket 的數目會計算除以`length`由 200。 這會四捨五入為最接近的整數，而數字就分成`length`。 結果是一個整數的值區的間距。 `phase`引數是直接的分數。
 
@@ -708,11 +709,11 @@ canvas.DrawPath(newPath, newPaint);
 public static SKPathEffect Create2DLine (Single width, SKMatrix matrix)
 ```
 
-`width`引數會指定筆觸線條的寬度影線。 `matrix`參數是調整和選擇性旋轉的組合。 縮放比例表示 Skia 使用空間規劃線的像素遞增。 行之間的分隔是負的縮放比例`width`引數。 如果縮放比例小於或等於`width`值影線線條之間會有任何空間和區域會顯示要填滿。 指定水平和垂直縮放比例的相同值。 
+`width`引數會指定筆觸線條的寬度影線。 `matrix`參數是調整和選擇性旋轉的組合。 縮放比例表示 Skia 使用空間規劃線的像素遞增。 行之間的分隔是負的縮放比例`width`引數。 如果縮放比例小於或等於`width`值影線線條之間會有任何空間和區域會顯示要填滿。 指定水平和垂直縮放比例的相同值。
 
 根據預設，規劃線是水平的。 如果`matrix`參數包含旋轉、 規劃線會朝順時針方向旋轉。
 
-**填滿影線**頁面示範這個路徑的影響。 [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs)類別做為欄位會定義三種路徑效果，它們是水平影線線條寬度為 3 的像素，並提供縮放因數，指出第一個間距相距 6 個像素。 行之間的分離，因此為 3 的像素。 第二個路徑效果是垂直規劃線寬度為 6 個像素間距 24 像素的距離 （因此分隔為 18 個像素），和第三個是斜對角影線行 12 個像素寬間距 36 佹萺慒距離。 
+**填滿影線**頁面示範這個路徑的影響。 [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs)類別做為欄位會定義三種路徑效果，它們是水平影線線條寬度為 3 的像素，並提供縮放因數，指出第一個間距相距 6 個像素。 行之間的分離，因此為 3 的像素。 第二個路徑效果是垂直規劃線寬度為 6 個像素間距 24 像素的距離 （因此分隔為 18 個像素），和第三個是斜對角影線行 12 個像素寬間距 36 佹萺慒距離。
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -721,10 +722,10 @@ public class HatchFillPage : ContentPage
 
     SKPathEffect horzLinesPath = SKPathEffect.Create2DLine(3, SKMatrix.MakeScale(6, 6));
 
-    SKPathEffect vertLinesPath = SKPathEffect.Create2DLine(6, 
+    SKPathEffect vertLinesPath = SKPathEffect.Create2DLine(6,
         Multiply(SKMatrix.MakeRotationDegrees(90), SKMatrix.MakeScale(24, 24)));
 
-    SKPathEffect diagLinesPath = SKPathEffect.Create2DLine(12, 
+    SKPathEffect diagLinesPath = SKPathEffect.Create2DLine(12,
         Multiply(SKMatrix.MakeScale(36, 36), SKMatrix.MakeRotationDegrees(45)));
 
     SKPaint strokePaint = new SKPaint
@@ -761,14 +762,14 @@ public class HatchFillPage : ContentPage
 
         using (SKPath roundRectPath = new SKPath())
         {
-            // Create a path 
+            // Create a path
             roundRectPath.AddRoundedRect(
                 new SKRect(50, 50, info.Width - 50, info.Height - 50), 100, 100);
 
             // Horizontal hatch marks
             fillPaint.PathEffect = horzLinesPath;
             fillPaint.Color = SKColors.Red;
-            canvas.DrawPath(roundRectPath, fillPaint); 
+            canvas.DrawPath(roundRectPath, fillPaint);
 
             // Vertical hatch marks
             fillPaint.PathEffect = vertLinesPath;
@@ -808,18 +809,18 @@ Android 螢幕真的看起來像這樣： 的螢幕擷取畫面縮放比例導�
 public static SKPathEffect Create2DPath (SKMatrix matrix, SKPath path)
 ```
 
-`SKMatrix`縮放比例表示複寫路徑的水平和垂直間距。 但您不能旋轉使用此路徑`matrix`引數; 如果您想路徑旋轉，旋轉路徑本身使用`Transform`方法所定義`SKPath`。 
+`SKMatrix`縮放比例表示複寫路徑的水平和垂直間距。 但您不能旋轉使用此路徑`matrix`引數; 如果您想路徑旋轉，旋轉路徑本身使用`Transform`方法所定義`SKPath`。
 
 複寫的路徑通常對齊的左端和頂端邊緣螢幕，而不是被填滿的區域。 您可以藉由提供介於 0 到指定的左端和頂端旁邊的水平和垂直位移的縮放比例因素轉譯因素來覆寫這個行為。
 
-**路徑並排顯示填滿**頁面示範這個路徑的影響。 用來並排顯示區域路徑定義中的欄位為[ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs)類別。 水平和垂直座標介於 –40 到 40，這表示這個路徑是 80 個像素正方形： 
+**路徑並排顯示填滿**頁面示範這個路徑的影響。 用來並排顯示區域路徑定義中的欄位為[ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs)類別。 水平和垂直座標介於 –40 到 40，這表示這個路徑是 80 個像素正方形：
 
 ```csharp
 public class PathTileFillPage : ContentPage
 {
     SKPath tilePath = SKPath.ParseSvgPathData(
-        "M -20 -20 L 2 -20, 2 -40, 18 -40, 18 -20, 40 -20, " + 
-        "40 -12, 20 -12, 20 12, 40 12, 40 40, 22 40, 22 20, " + 
+        "M -20 -20 L 2 -20, 2 -40, 18 -40, 18 -20, 40 -20, " +
+        "40 -12, 20 -12, 20 12, 40 12, 40 40, 22 40, 22 20, " +
         "-2 20, -2 40, -20 40, -20 8, -40 8, -40 -8, -20 -8 Z");
     ...
     void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -840,7 +841,7 @@ public class PathTileFillPage : ContentPage
                 paint.PathEffect = pathEffect;
 
                 canvas.DrawRoundRect(
-                    new SKRect(50, 50, info.Width - 50, info.Height - 50), 
+                    new SKRect(50, 50, info.Width - 50, info.Height - 50),
                     100, 100, paint);
             }
         }
@@ -935,7 +936,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, UInt32 seedAssist)
 ```
 
-您可以使用此路徑效果繪製或填滿。 行分成連接區段，其近似長度所指定`segLength`— 及擴充不同的方向。 所指定的範圍從原始列差`deviation`。 
+您可以使用此路徑效果繪製或填滿。 行分成連接區段，其近似長度所指定`segLength`— 及擴充不同的方向。 所指定的範圍從原始列差`deviation`。
 
 最後一個引數是用來產生虛擬亂數序列的效果所使用的種子。 抖動效果看起來稍有不同的不同的種子。 引數的預設值是零，表示結果是相同每次執行程式。 如果您希望不同抖動重繪螢幕，您可以設定種子為`Millisecond`屬性`DataTime.Now`值 （例如）。
 
@@ -1016,7 +1017,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
     using (SKPaint paint = new SKPaint())
     {
-        paint.Style = SKPaintStyle.Stroke; 
+        paint.Style = SKPaintStyle.Stroke;
         paint.StrokeWidth = 5;
         paint.Color = SKColors.Blue;
 
@@ -1144,7 +1145,7 @@ public partial class TapToOutlineThePathPage : ContentPage
         using (SKPath circlePath = new SKPath())
         {
             circlePath.AddCircle(info.Width / 2, info.Height / 2,
-                                 Math.Min(info.Width / 2, info.Height / 2) - 
+                                 Math.Min(info.Width / 2, info.Height / 2) -
                                  redThickStroke.StrokeWidth);
 
             if (!outlineThePath)
@@ -1217,9 +1218,9 @@ using (SKPath linkPath = new SKPath())
 }
 ```
 
-`outlinePath`物件就的外框的收件者`linkPath`時繪製在指定的屬性`strokePaint`。 
+`outlinePath`物件就的外框的收件者`linkPath`時繪製在指定的屬性`strokePaint`。
 
-使用這項技術的另一個範例中使用的路徑用於接下來`SKPathEffect.Create2DPath`方法。 
+使用這項技術的另一個範例中使用的路徑用於接下來`SKPathEffect.Create2DPath`方法。
 
 ## <a name="combining-path-effects"></a>合併路徑效果
 
@@ -1270,7 +1271,7 @@ public class CatsInFramePage : ContentPage
         StrokeWidth = 5
     };
 
-    SKPath scallopPath = 
+    SKPath scallopPath =
         SKPath.ParseSvgPathData("M 0 0 L 50 0 A 60 60 0 0 1 -50 0 Z");
 
     SKPaint framePaint = new SKPaint
@@ -1316,7 +1317,7 @@ public class CatsInFramePage : ContentPage
             outlinedCatPath);
 
         // Create a 1D path effect from the scallop path
-        SKPathEffect strokeEffect = 
+        SKPathEffect strokeEffect =
             SKPathEffect.Create1DPath(scallopPath, 75, 0, SKPath1DPathEffectStyle.Rotate);
 
         // Set the sum the effects to frame paint
@@ -1358,11 +1359,11 @@ public class CatsInFramePage : ContentPage
 ```csharp
 public class DashedHatchLinesPage : ContentPage
 {
-    static SKPathEffect dashEffect = 
+    static SKPathEffect dashEffect =
         SKPathEffect.CreateDash(new float[] { 30, 30 }, 0);
 
     static SKPathEffect hatchEffect = SKPathEffect.Create2DLine(20,
-        Multiply(SKMatrix.MakeScale(60, 60), 
+        Multiply(SKMatrix.MakeScale(60, 60),
                  SKMatrix.MakeRotationDegrees(45)));
 
     SKPaint paint = new SKPaint()
@@ -1395,8 +1396,8 @@ public class DashedHatchLinesPage : ContentPage
 
         canvas.Clear();
 
-        canvas.DrawOval(info.Width / 2, info.Height / 2, 
-                        0.45f * info.Width, 0.45f * info.Height, 
+        canvas.DrawOval(info.Width / 2, info.Height / 2,
+                        0.45f * info.Width, 0.45f * info.Height,
                         paint);
     }
     ...

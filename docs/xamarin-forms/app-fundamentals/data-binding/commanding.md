@@ -1,21 +1,22 @@
 ---
-title: 命令介面
-description: 實作`Command`屬性與資料繫結
+title: Xamarin.Forms 命令介面
+description: 本文說明如何實作使用 Xamarin.Forms 資料繫結的命令屬性。 命令的介面會提供實作命令比較適合 MVVM 架構的替代方法。
 ms.prod: xamarin
 ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 7f8b40624b9434347f69a473eed3bdff5c1d3d33
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 37fe5bbcfa3dbc6aa5483c89b49c1698a00ecbb6
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241308"
 ---
-# <a name="the-command-interface"></a>命令介面
+# <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms 命令介面
 
-ViewModel，這通常是衍生自類別的屬性之間定義模型-檢視-ViewModel (MVVM) 架構中，資料繫結`INotifyPropertyChanged`，以及在檢視中，這通常是 XAML 檔案的屬性。 有時候應用程式的需求超越這些屬性繫結，透過要求使用者若要啟動命令會影響 ViewModel 中的項目。 這些命令通常會按一下按鈕所收到信號或手指點選，並在程式碼後置檔案中的處理常式的處理傳統上`Clicked`事件`Button`或`Tapped`事件`TapGestureRecognizer`。 
+ViewModel，這通常是衍生自類別的屬性之間定義模型-檢視-ViewModel (MVVM) 架構中，資料繫結`INotifyPropertyChanged`，以及在檢視中，這通常是 XAML 檔案的屬性。 有時候應用程式的需求超越這些屬性繫結，透過要求使用者若要啟動命令會影響 ViewModel 中的項目。 這些命令通常會按一下按鈕所收到信號或手指點選，並在程式碼後置檔案中的處理常式的處理傳統上`Clicked`事件`Button`或`Tapped`事件`TapGestureRecognizer`。
 
 命令的介面會提供實作命令比較適合 MVVM 架構的替代方法。 ViewModel 本身可以包含方法，例如執行在檢視中的特定活動的命令`Button`按一下。 這些命令之間已定義的資料繫結和`Button`。
 
@@ -32,7 +33,7 @@ ViewModel，這通常是衍生自類別的屬性之間定義模型-檢視-ViewMo
 - [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) 因此， [ `ImageCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/)，其衍生自 `TextCell`
 - [`TapGestureRecognizer`](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)
 
-[`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) 定義[ `SearchCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommand/)型別的屬性`ICommand`和[ `SearchCommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommandParameter/)屬性。 [ `RefreshCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RefreshCommand/)屬性[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)也屬於型別`ICommand`。 
+[`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) 定義[ `SearchCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommand/)型別的屬性`ICommand`和[ `SearchCommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommandParameter/)屬性。 [ `RefreshCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RefreshCommand/)屬性[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)也屬於型別`ICommand`。
 
 所有這些命令可以處理內 ViewModel 不相依於特定的使用者介面中的物件檢視的方式。
 
@@ -57,7 +58,7 @@ public interface ICommand
 public ICommand MyCommand { private set; get; }
 ```
 
-ViewModel 也必須參考實作的類別`ICommand`介面。 這個類別會在稍後說明。 在檢視中，`Command`屬性`Button`繫結至該屬性： 
+ViewModel 也必須參考實作的類別`ICommand`介面。 這個類別會在稍後說明。 在檢視中，`Command`屬性`Button`繫結至該屬性：
 
 ```xaml
 <Button Text="Execute command"
@@ -136,7 +137,7 @@ public class PersonViewModel : INotifyPropertyChanged
 }
 ```
 
-`PersonCollectionViewModel`顯示底下建立新的物件型別的`PersonViewModel`並允許使用者填入的資料。 基於這個目的，類別會定義屬性`IsEditing`型別的`bool`和`PersonEdit`型別的`PersonViewModel`。 此外，類別會定義三個屬性的型別`ICommand`和屬性，名為`Persons`型別的`IList<PersonViewModel>`: 
+`PersonCollectionViewModel`顯示底下建立新的物件型別的`PersonViewModel`並允許使用者填入的資料。 基於這個目的，類別會定義屬性`IsEditing`型別的`bool`和`PersonEdit`型別的`PersonViewModel`。 此外，類別會定義三個屬性的型別`ICommand`和屬性，名為`Persons`型別的`IList<PersonViewModel>`:
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -199,7 +200,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
         <Grid.BindingContext>
             <local:PersonCollectionViewModel />
         </Grid.BindingContext>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -216,7 +217,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
         <!-- Entry Form -->
         <Grid Grid.Row="1"
               IsEnabled="{Binding IsEditing}">
-            
+
             <Grid BindingContext="{Binding PersonEdit}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -230,11 +231,11 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
                 </Grid.ColumnDefinitions>
 
                 <Label Text="Name: " Grid.Row="0" Grid.Column="0" />
-                <Entry Text="{Binding Name}" 
+                <Entry Text="{Binding Name}"
                        Grid.Row="0" Grid.Column="1" />
 
                 <Label Text="Age: " Grid.Row="1" Grid.Column="0" />
-                <StackLayout Orientation="Horizontal" 
+                <StackLayout Orientation="Horizontal"
                              Grid.Row="1" Grid.Column="1">
                     <Stepper Value="{Binding Age}"
                              Maximum="100" />
@@ -315,7 +316,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
     {
         (SubmitCommand as Command).ChangeCanExecute();
     }
-    
+
     void RefreshCanExecutes()
     {
         (NewCommand as Command).ChangeCanExecute();
@@ -359,9 +360,9 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
             },
             canExecute: () =>
             {
-                return PersonEdit != null && 
-                       PersonEdit.Name != null && 
-                       PersonEdit.Name.Length > 1 && 
+                return PersonEdit != null &&
+                       PersonEdit.Name != null &&
+                       PersonEdit.Name.Length > 1 &&
                        PersonEdit.Age > 0;
             });
 
@@ -373,7 +374,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-`canExecute`函式`SubmitCommand`每次變更中屬性呼叫`PersonViewModel`正在編輯的物件。 它會傳回`true`時，才`Name`屬性是在至少一個字元和`Age`大於 0。 在這段時間，**送出**按鈕會變成啟用。 
+`canExecute`函式`SubmitCommand`每次變更中屬性呼叫`PersonViewModel`正在編輯的物件。 它會傳回`true`時，才`Name`屬性是在至少一個字元和`Age`大於 0。 在這段時間，**送出**按鈕會變成啟用。
 
 `execute`函式**送出**移除屬性變更處理常式從`PersonViewModel`，將物件加入`Persons`集合，並傳回初始條件的所有項目。
 
@@ -401,7 +402,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
             canExecute: () =>
             {
                 return IsEditing;
-            }); 
+            });
     }
 
     ···
@@ -417,7 +418,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 ## <a name="using-command-parameters"></a>使用命令參數
 
-可能會很方便的一個或多個按鈕 （或其他使用者介面物件） 會共用相同`ICommand`ViewModel 中的屬性。 在此情況下，您使用`CommandParameter`屬性來區別按鈕之間。 
+可能會很方便的一個或多個按鈕 （或其他使用者介面物件） 會共用相同`ICommand`ViewModel 中的屬性。 在此情況下，您使用`CommandParameter`屬性來區別按鈕之間。
 
 您可以繼續使用`Command`共用這些類別`ICommand`屬性。 類別會定義[替代建構函式](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command.Command/p/System.Action%7BSystem.Object%7D/System.Func%7BSystem.Object,System.Boolean%7D/)接受`execute`和`canExecute`具有參數的型別方法`Object`。 這是如何`CommandParameter`傳遞給這些方法。
 
@@ -442,7 +443,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
         <Grid.BindingContext>
             <local:DecimalKeypadViewModel />
         </Grid.BindingContext>
-        
+
         <Grid.Resources>
             <ResourceDictionary>
                 <Style TargetType="Button">
@@ -465,51 +466,51 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
                 Command="{Binding ClearCommand}" />
 
         <Button Text="&#x21E6;"
-                Grid.Row="1" Grid.Column="2" 
+                Grid.Row="1" Grid.Column="2"
                 Command="{Binding BackspaceCommand}" />
 
         <Button Text="7"
-                Grid.Row="2" Grid.Column="0" 
+                Grid.Row="2" Grid.Column="0"
                 Command="{Binding DigitCommand}"
                 CommandParameter="7" />
 
         <Button Text="8"
-                Grid.Row="2" Grid.Column="1" 
+                Grid.Row="2" Grid.Column="1"
                 Command="{Binding DigitCommand}"
                 CommandParameter="8" />
-        
+
         <Button Text="9"
-                Grid.Row="2" Grid.Column="2" 
+                Grid.Row="2" Grid.Column="2"
                 Command="{Binding DigitCommand}"
                 CommandParameter="9" />
 
         <Button Text="4"
-                Grid.Row="3" Grid.Column="0" 
+                Grid.Row="3" Grid.Column="0"
                 Command="{Binding DigitCommand}"
                 CommandParameter="4" />
 
         <Button Text="5"
-                Grid.Row="3" Grid.Column="1" 
+                Grid.Row="3" Grid.Column="1"
                 Command="{Binding DigitCommand}"
                 CommandParameter="5" />
 
         <Button Text="6"
-                Grid.Row="3" Grid.Column="2" 
+                Grid.Row="3" Grid.Column="2"
                 Command="{Binding DigitCommand}"
                 CommandParameter="6" />
 
         <Button Text="1"
-                Grid.Row="4" Grid.Column="0" 
+                Grid.Row="4" Grid.Column="0"
                 Command="{Binding DigitCommand}"
                 CommandParameter="1" />
 
         <Button Text="2"
-                Grid.Row="4" Grid.Column="1" 
+                Grid.Row="4" Grid.Column="1"
                 Command="{Binding DigitCommand}"
                 CommandParameter="2" />
 
         <Button Text="3"
-                Grid.Row="4" Grid.Column="2" 
+                Grid.Row="4" Grid.Column="2"
                 Command="{Binding DigitCommand}"
                 CommandParameter="3" />
 
@@ -519,7 +520,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
                 CommandParameter="0" />
 
         <Button Text="&#x00B7;"
-                Grid.Row="5" Grid.Column="2" 
+                Grid.Row="5" Grid.Column="2"
                 Command="{Binding DigitCommand}"
                 CommandParameter="." />
     </Grid>
@@ -532,7 +533,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 [![十進位鍵盤](commanding-images/decimalkeyboard-small.png "十進位鍵盤")](commanding-images/decimalkeyboard-large.png#lightbox "十進位鍵盤")
 
-請注意，所有三個螢幕擷取畫面中小數點的按鈕已停用，因為輸入的數字已經包含小數點。 
+請注意，所有三個螢幕擷取畫面中小數點的按鈕已停用，因為輸入的數字已經包含小數點。
 
 `DecimalKeypadViewModel`定義`Entry`型別的屬性`string`(這是觸發程序的唯一屬性`PropertyChanged`事件) 和三個屬性的型別`ICommand`:
 
@@ -587,7 +588,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
             });
 
         ···
-    
+
     }
 
     void RefreshCanExecutes()
@@ -597,7 +598,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
     }
 
     ···
-    
+
 }
 ```
 
@@ -638,7 +639,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
     }
 
     ···
-    
+
 }
 ```
 
@@ -674,13 +675,13 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
     }
 
     ···
-    
+
 }
 ```
 
 `execute`方法會將附加的字串引數`Entry`屬性。 不過，如果結果為開頭有零 （但不是零和小數點） 然後該初始零必須移除使用`Substring`函式。
 
-`canExecute`方法會傳回`false`只有當引數是小數點 （表示小數點已被按下） 和`Entry`已經包含小數點。 
+`canExecute`方法會傳回`false`只有當引數是小數點 （表示小數點已被按下） 和`Entry`已經包含小數點。
 
 所有`execute`方法呼叫`RefreshCanExecutes`，然後呼叫`ChangeCanExecute`兩者`DigitCommand`和`ClearCommand`。 這可確保小數點及退格鍵按鈕都已啟用或停用根據目前的輸入的數字序列。
 
@@ -753,13 +754,13 @@ public partial class MainPage : ContentPage
 }
 ```
 
-建構函式設定`NavigateCommand`屬性`execute`具現化的方法`System.Type`參數，並接著移動它。 因為`PushAsync`呼叫需要`await`運算子，`execute`必須標示為非同步方法。 這是與`async`關鍵字前面的參數清單。 
+建構函式設定`NavigateCommand`屬性`execute`具現化的方法`System.Type`參數，並接著移動它。 因為`PushAsync`呼叫需要`await`運算子，`execute`必須標示為非同步方法。 這是與`async`關鍵字前面的參數清單。
 
 建構函式也會設定`BindingContext`本身的頁面，讓繫結參考`NavigateCommand`此類別中。
 
 這個建構函式中的程式碼的順序會形成差異：`InitializeComponent`呼叫會造成無法剖析 XAML，但在該時間屬性繫結命名`NavigateCommand`無法解析，因為`BindingContext`設`null`。 如果`BindingContext`設定於建構函式*之前*`NavigateCommand`設定，然後繫結可以解決當`BindingContext`設定，但在這段時間，`NavigateCommand`仍然是`null`。 設定`NavigateCommand`之後`BindingContext`會有繫結上的沒有作用，因為變更`NavigateCommand`不引發`PropertyChanged`事件及繫結並不知道，`NavigateCommand`現在是有效。
 
-設定同時`NavigateCommand`和`BindingContext`（順序不拘） 之前呼叫`InitializeComponent`會運作，因為 XAML 剖析器遇到繫結定義時，會設定繫結的兩個元件。 
+設定同時`NavigateCommand`和`BindingContext`（順序不拘） 之前呼叫`InitializeComponent`會運作，因為 XAML 剖析器遇到繫結定義時，會設定繫結的兩個元件。
 
 資料繫結有時可能很困難，但如您所見在這一系列的文章中，也是功能強大且靈活，幫助您，以區隔從使用者介面的基礎邏輯，以組織您的程式碼。
 

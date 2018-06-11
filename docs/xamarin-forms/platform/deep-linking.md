@@ -1,6 +1,6 @@
 ---
 title: 應用程式編製索引和深層連結
-description: 應用程式編製索引，可讓會後一些使用搜尋結果中出現的停留相關否則忘記的應用程式。 深層連結，可讓應用程式來瀏覽至頁面，參考從深層連結通常包含應用程式資料的搜尋結果的回應。 本文示範如何使用應用程式的索引，以及讓 iOS 和 Android 裝置上搜尋 Xamarin.Forms 應用程式內容的深層連結。
+description: 本文示範如何使用應用程式的索引，以及讓 iOS 和 Android 裝置上搜尋 Xamarin.Forms 應用程式內容的深層連結。
 ms.prod: xamarin
 ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
 ms.technology: xamarin-forms
@@ -8,11 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2016
-ms.openlocfilehash: d302e24ee74290eecd3dd9ad3f81921d6654cc10
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9cc5177a585af1569385840ab8c370993984ca2b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242488"
 ---
 # <a name="application-indexing-and-deep-linking"></a>應用程式編製索引和深層連結
 
