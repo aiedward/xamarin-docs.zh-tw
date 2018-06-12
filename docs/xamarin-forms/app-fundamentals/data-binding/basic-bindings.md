@@ -1,19 +1,20 @@
 ---
-title: 基本的繫結
-description: 資料繫結目標、 來源和繫結內容
+title: Xamarin.Forms 基本繫結
+description: 本文說明如何使用 Xamarin.Forms 資料繫結，這樣會連結兩個物件之間屬性的一組至少一個通常是使用者介面物件。 這兩個物件稱為 「 目標 」 和 「 來源 」。
 ms.prod: xamarin
 ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 065258acacb8469b90dd2ca04286f0686dc90063
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f932b7dfbcccb8f1c6ccb726f5e48c2df6e93c6c
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241685"
 ---
-# <a name="basic-bindings"></a>基本的繫結
+# <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms 基本繫結
 
 Xamarin.Forms 資料繫結連結一組兩個物件，其中至少一個通常是使用者介面物件之間的屬性。 這兩個物件稱為*目標*和*來源*:
 
@@ -47,7 +48,7 @@ Xamarin.Forms 資料繫結連結一組兩個物件，其中至少一個通常是
 
 `Slider`設定 0 到 360 的範圍。 這個程式的目的是要旋轉`Label`操縱`Slider`。
 
-資料繫結，不會設定`ValueChanged`事件`Slider`存取之事件處理常式`Value`屬性`Slider`並將該值設定為`Rotation`屬性`Label`。 資料繫結會自動執行該作業。事件處理常式並在其中的程式碼不再需要。 
+資料繫結，不會設定`ValueChanged`事件`Slider`存取之事件處理常式`Value`屬性`Slider`並將該值設定為`Rotation`屬性`Label`。 資料繫結會自動執行該作業。事件處理常式並在其中的程式碼不再需要。
 
 您可以在任何衍生自的類別的執行個體上設定繫結[ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/)，其中包括`Element`， `VisualElement`， `View`，和`View`衍生項目。  繫結一定會在目標物件上設定。 繫結參考該來源物件。 若要設定資料繫結，請使用下列兩個目標類別的成員：
 
@@ -73,7 +74,7 @@ public partial class BasicCodeBindingPage : ContentPage
 
 `Label`物件則繫結目標，因此，和呼叫的方法上設定這個屬性的物件。 `BindingContext`屬性會指出繫結來源，也就是`Slider`。
 
-`SetBinding`繫結目標上呼叫方法，但指定的目標屬性和 [來源] 屬性。 目標屬性會指定為`BindableProperty`物件： `Label.RotationProperty`。 [來源] 屬性指定為字串，並指出`Value`屬性`Slider`。 
+`SetBinding`繫結目標上呼叫方法，但指定的目標屬性和 [來源] 屬性。 目標屬性會指定為`BindableProperty`物件： `Label.RotationProperty`。 [來源] 屬性指定為字串，並指出`Value`屬性`Slider`。
 
 `SetBinding`方法會顯示其中一個最重要的資料繫結規則：
 
@@ -120,7 +121,7 @@ label.SetBinding(RotationProperty, "Value");
 如同程式碼中，資料繫結設定的目標物件，也就是上`Label`。 牽涉到兩個 XAML 標記延伸。 這些是立即可辨認的大括號分隔符號：
 
 - `x:Reference`標記延伸，才能參考來源物件，也就是`Slider`名為`slider`。
-- `Binding`標記延伸連結`Rotation`屬性`Label`至`Value`屬性`Slider`。 
+- `Binding`標記延伸連結`Rotation`屬性`Label`至`Value`屬性`Slider`。
 
 請參閱文章[XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)的 XAML 標記延伸的詳細資訊。 `x:Reference`標記延伸支援[ `ReferenceExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ReferenceExtension/)類別;`Binding`支援[ `BindingExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.BindingExtension/)類別。 為 XML 命名空間前置詞指出，`x:Reference`是 XAML 2009 規格的一部分時`Binding`屬於 Xamarin.Forms。 請注意，沒有引號會出現在大括號。
 
@@ -185,13 +186,13 @@ public partial class AlternativeCodeBindingPage : ContentPage
 }
 ```
 
-`Binding`建構函式有 6 參數，所以`source`參數指定的具名引數。 引數是`slider`物件。 
+`Binding`建構函式有 6 參數，所以`source`參數指定的具名引數。 引數是`slider`物件。
 
 執行此程式可能會有點令人意外：
 
 [![替代程式碼繫結](basic-bindings-images/alternativecodebinding-small.png "替代程式碼繫結")](basic-bindings-images/alternativecodebinding-large.png#lightbox "替代程式碼繫結")
 
-左側的 [iOS] 畫面會顯示在第一次出現時，螢幕的外觀。 其中是`Label`嗎？ 
+左側的 [iOS] 畫面會顯示在第一次出現時，螢幕的外觀。 其中是`Label`嗎？
 
 問題在於`Slider`初始的值為 0。 這會導致`Scale`屬性`Label`也設定為 0，覆寫其預設值為 1。 這會導致`Label`正在一開始不可見。 如 Android 和通用 Windows 平台 (UWP) 的螢幕擷取畫面所示，您可以使用操作`Slider`進行`Label`出現一次，但其初始消失令人不安。
 
@@ -246,7 +247,7 @@ Scale="{Binding Value, Source={x:Reference slider}}" />
                  Path="Value" />
     </Label.Scale>
 </Label>
-``` 
+```
 
 現在`Source`和`Path`屬性是一般的 XAML 屬性： 值引號內的顯示和屬性不以逗號分隔。 `x:Reference`標記延伸也會成為物件項目：
 
@@ -267,9 +268,9 @@ Scale="{Binding Value, Source={x:Reference slider}}" />
 
 此語法不常見，但有時候很有必要時涉及複雜的物件。
 
-到目前為止所顯示的範例設定`BindingContext`屬性和`Source`屬性`Binding`至`x:Reference`來參考另一個檢視頁面上的標記延伸。 這兩個屬性都屬於型別`Object`，並可以將任何物件，其中包含適用於繫結來源的屬性。 
+到目前為止所顯示的範例設定`BindingContext`屬性和`Source`屬性`Binding`至`x:Reference`來參考另一個檢視頁面上的標記延伸。 這兩個屬性都屬於型別`Object`，並可以將任何物件，其中包含適用於繫結來源的屬性。
 
-文件中繼續，您會發現，您可以設定`BindingContext`或`Source`屬性`x:Static`參考的靜態屬性或欄位值的標記延伸或`StaticResource`來參考物件儲存在標記延伸資源字典，或直接至物件，這是通常 （但並非一定） ViewModel 的執行個體。 
+文件中繼續，您會發現，您可以設定`BindingContext`或`Source`屬性`x:Static`參考的靜態屬性或欄位值的標記延伸或`StaticResource`來參考物件儲存在標記延伸資源字典，或直接至物件，這是通常 （但並非一定） ViewModel 的執行個體。
 
 `BindingContext`屬性也設定為`Binding`物件以便`Source`和`Path`屬性`Binding`定義繫結內容。
 
@@ -294,7 +295,7 @@ Scale="{Binding Value, Source={x:Reference slider}}" />
 
         <StackLayout VerticalOptions="FillAndExpand"
                      BindingContext="{x:Reference slider}">
-            
+
             <Label Text="TEXT"
                    FontSize="80"
                    HorizontalOptions="Center"
@@ -309,14 +310,14 @@ Scale="{Binding Value, Source={x:Reference slider}}" />
                      Rotation="{Binding Value}" />
         </StackLayout>
 
-        <Slider x:Name="slider" 
+        <Slider x:Name="slider"
                 Maximum="360" />
-        
+
     </StackLayout>
 </ContentPage>
 ```
 
-`BindingContext`屬性`StackLayout`設`slider`物件。 這個繫結內容會繼承由`Label`和`BoxView`，這兩個的具有其`Rotation`屬性設定為`Value`屬性`Slider`: 
+`BindingContext`屬性`StackLayout`設`slider`物件。 這個繫結內容會繼承由`Label`和`BoxView`，這兩個的具有其`Rotation`屬性設定為`Value`屬性`Slider`:
 
 [![繫結內容繼承](basic-bindings-images/bindingcontextinheritance-small.png "繫結內容繼承")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "繫結內容繼承")
 

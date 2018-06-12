@@ -1,19 +1,20 @@
 ---
-title: 原生格式
-description: 原生格式讓 Xamarin.Forms ContentPage 衍生頁可供原生 Xamarin.iOS、 Xamarin.Android 和通用 Windows 平台 (UWP) 專案。 原生專案可能會耗用 ContentPage 衍生頁面直接加入至專案，或從.NET 標準程式庫、 標準的.NET 程式庫或共用的專案。 本文說明如何使用 ContentPage 衍生的頁面，都會直接加入至原生專案，以及如何在它們之間瀏覽。
+title: Xamarin Native 專案中的 Xamarin.Forms
+description: 本文說明如何使用 ContentPage 衍生頁面直接加入至 Xamarin 原生專案，以及如何在它們之間瀏覽。
 ms.prod: xamarin
 ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: a103d360221650ee4f679ee285dbedd65e62f947
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: ca62b9fec3223e8da62d8e4cc6e1f69a58f335a0
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243271"
 ---
-# <a name="native-forms"></a>原生格式
+# <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin Native 專案中的 Xamarin.Forms
 
 _原生格式讓 Xamarin.Forms ContentPage 衍生頁可供原生 Xamarin.iOS、 Xamarin.Android 和通用 Windows 平台 (UWP) 專案。原生專案可能會耗用 ContentPage 衍生頁面直接加入至專案，或從.NET 標準程式庫、 標準的.NET 程式庫或共用的專案。本文說明如何使用 ContentPage 衍生的頁面，都會直接加入至原生專案，以及如何在它們之間瀏覽。_
 
@@ -22,7 +23,7 @@ Xamarin.Forms 應用程式通常包括衍生自的一個或多個頁面[ `Conten
 使用 Xamarin.Forms 的程序[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-衍生原生專案中的頁面如下所示：
 
 1. 加入原生專案中的 Xamarin.Forms NuGet 套件。
-1. 新增[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-衍生 頁面上，以及任何相依，原生專案。
+1. 新增[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-衍生頁面上，以及任何相依，原生專案。
 1. 呼叫 `Forms.Init` 方法。
 1. 建構的執行個體[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-衍生頁面，並將它轉換成適當的原生類型，使用下列的擴充方法的其中一個：`CreateViewController`對於 iOS，`CreateFragment`或`CreateSupportFragment`for Android，或`CreateFrameworkElement` uwp。
 1. 瀏覽至的原生類型表示[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-衍生使用原生瀏覽應用程式開發介面的頁面。
