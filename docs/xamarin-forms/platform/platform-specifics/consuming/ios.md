@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/30/2018
-ms.openlocfilehash: 762a604186cf8657ce2f3732081cd82612b1b7ef
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
-ms.translationtype: HT
+ms.openlocfilehash: dbcf97248c1d4537319691f6e18e0d41c931f423
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732992"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848261"
 ---
 # <a name="ios-platform-specifics"></a>iOS 平台特性
 
@@ -43,8 +43,8 @@ _平台特性可讓您使用才有特定的平台，而不需要實作自訂轉�
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
   ...
   <AbsoluteLayout HorizontalOptions="Center">
-    <Image Source="monkeyface.png" />
-    <BoxView x:Name="boxView" ios:VisualElement.BlurEffect="ExtraLight" HeightRequest="300" WidthRequest="300" />
+      <Image Source="monkeyface.png" />
+      <BoxView x:Name="boxView" ios:VisualElement.BlurEffect="ExtraLight" HeightRequest="300" WidthRequest="300" />
   </AbsoluteLayout>
   ...
 </ContentPage>
@@ -70,7 +70,7 @@ boxView.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
 
 ## <a name="displaying-large-titles"></a>顯示大型標題
 
-平台專屬用來做為巡覽列，對於使用大於或等於 11 的 iOS 裝置上的大型標題顯示網頁的標題。 大型標題靠左對齊並使用較大的字型，並轉換至標準標題使用者一開始捲動內容，以便有效率地使用實際螢幕面積。 不過， 蒰菾 ，標題會傳回最佳化內容配置的導覽列的中央。 它由在 XAML 中設定`NavigationPage.PrefersLargeTitles`附加屬性`boolean`值：
+平台專屬用來做為巡覽列，對於使用大於或等於 11 的 iOS 裝置上的大型標題顯示網頁的標題。 大型標題靠左對齊並使用較大的字型，並轉換至標準標題使用者一開始捲動內容，以便有效率地使用實際螢幕面積。 但是，在橫向模式下，標題將返回到導航欄的中心以優化內容佈局。 它由在 XAML 中設定`NavigationPage.PrefersLargeTitles`附加屬性`boolean`值：
 
 ```xaml
 <NavigationPage xmlns="http://xamarin.com/schemas/2014/forms"

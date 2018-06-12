@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 24e7f29e42607d4a2c957cf85dad15f659d3618e
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: b98a2b12dc2629ae7a5f2dd2a4de5c59452a19e4
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848469"
 ---
 # <a name="native-views-in-xaml"></a>在 XAML 中的原生檢視
 
@@ -220,7 +221,7 @@ Android 的 widget 建構函式通常需要在 Android`Context`物件引數，�
             <ios:UILabel Text="Text in a UILabel" TextColor="{x:Static ios:UIColor.Red}" />
             <androidWidget:TextView x:Arguments="{x:Static androidLocal:MainActivity.Instance}"
                 Text="Text in a TextView" />
-            <winControls:TextBlock Text="Text in a TextBlock" />
+              <winControls:TextBlock Text="Text in a TextBlock" />
         </ContentView>
         <ContentView x:Name="contentViewButtonParent" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
             <ios:UIButton TouchUpInside="OnButtonTap" View.HorizontalOptions="Center" View.VerticalOptions="Center" />
@@ -328,7 +329,7 @@ IOS 和 Android 的原生按鈕共用相同`OnButtonTap`事件處理常式，因
 
 ### <a name="ios"></a>iOS
 
-IOS 實作子類別[ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/)檢視中，並公開屬性，屬性可以從 XAML 輕鬆地取用的事件：
+IOS 實作子類別[ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/) 檢視中，並公開屬性，屬性可以從 XAML 輕鬆地取用的事件：
 
 ```csharp
 public class MyUIPickerView : UIPickerView
@@ -420,7 +421,7 @@ class PickerModel : UIPickerViewModel
 
 ### <a name="android"></a>Android
 
-Android 的實作子類別[ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/)檢視中，並公開屬性，屬性可以從 XAML 輕鬆地取用的事件：
+Android 的實作子類別[ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) 檢視中，並公開屬性，屬性可以從 XAML 輕鬆地取用的事件：
 
 ```csharp
 class MySpinner : Spinner

@@ -1,21 +1,20 @@
 ---
-title: 統一的分鏡腳本
-description: 統一的分鏡腳本讓 iOS 開發人員建立的使用者介面的單一分鏡腳本，而不是多個分鏡腳本，涵蓋的裝置的螢幕大小擴充的範圍。 這篇文章被為了提供更深入概觀內 Xamarin.iOS 統一的分鏡腳本的作業。
+title: 統一的分鏡腳本中 Xamarin.iOS
+description: 本文件說明在 Xamarin.iOS 統一分鏡腳本。 統一的分鏡腳本可讓開發人員支援多個螢幕大小與單一介面定義。
 ms.prod: xamarin
 ms.assetid: F6F70374-FC2A-4401-A712-A16D0F9B340F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: d84afd0d33a6115d5d3ef9ea9b68d3370f9bb946
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6d3324a6485f2d240ec339f6ce7f03aafe51c80c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792017"
 ---
-# <a name="unified-storyboards"></a>統一的分鏡腳本
-
-_統一的分鏡腳本讓 iOS 開發人員建立的使用者介面的單一分鏡腳本，而不是多個分鏡腳本，涵蓋的裝置的螢幕大小擴充的範圍。這篇文章被為了提供更深入概觀內 Xamarin.iOS 統一的分鏡腳本的作業。_
+# <a name="unified-storyboards-in-xamarinios"></a>統一的分鏡腳本中 Xamarin.iOS
 
 iOS 8 包含新、 較簡單易用的機制，來建立使用者介面 — 統一的分鏡腳本。 單一分鏡腳本可以涵蓋各種不同硬體的螢幕大小，以快速且回應迅速的檢視中可建立 「 設計-一次的使用對多 」 樣式。
 
@@ -93,7 +92,7 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 特性環境中 iOS 8 的新介面，而無法傳回特性集合中的下列物件：
 
 -  螢幕 ( `UIScreens` )。
--  Windows ( `UIWindows` ).
+-  Windows ( `UIWindows` )。
 -  檢視控制器 ( `UIViewController` )。
 -  檢視 ( `UIView` )。
 -  簡報控制站 ( `UIPresentationController` )。
@@ -189,7 +188,7 @@ Apple 已加入新的類別 ios 8 稱為`UIImageAsset`讓開發人員更多控�
 
 ### <a name="overriding-traits"></a>覆寫特性
 
-特性環境重疊顯示父容器下的子容器，如同下圖顯示分割檢視控制器 iPad 上：
+特徵環境從父容器向下級聯到子容器，如下圖所示，以橫向顯示iPad上的分割視圖控制器：
 
  [![](unified-storyboards-images/cascadingclasses01.png "分割檢視控制器上以橫向 iPad")](unified-storyboards-images/cascadingclasses01.png#lightbox)
 
@@ -199,11 +198,11 @@ Apple 已加入新的類別 ios 8 稱為`UIImageAsset`讓開發人員更多控�
 
  [![](unified-storyboards-images/cascadingclasses02.png "分割檢視控制器只會顯示詳細資料檢視")](unified-storyboards-images/cascadingclasses02.png#lightbox)
 
-應用程式開發人員要顯示在 iPhone 上的 master 和詳細資料檢視中，開發人員必須分割檢視控制器中插入的父容器，並覆寫特性集合。 下圖所示：
+在開發人員希望在橫向顯示iPhone上的主視圖和詳細視圖的應用程序中，開發人員必須為分割視圖控制器插入父容器並覆蓋特徵集合。 下圖所示：
 
  [![](unified-storyboards-images/cascadingclasses03.png "開發人員必須分割檢視控制器中插入的父容器，並覆寫特性集合")](unified-storyboards-images/cascadingclasses03.png#lightbox)
 
-A`UIView`設定為分割檢視控制器的父系和`SetOverrideTraitCollection`檢視傳入新特性集合與目標分割檢視控制站上呼叫方法。 新的特性集合會覆寫`HorizontalSizeClass`，將它設定為`Regular`，如此一來，分割檢視控制器將會顯示在 iPhone 上的主要和詳細檢視。
+A`UIView`設定為分割檢視控制器的父系和`SetOverrideTraitCollection`檢視傳入新特性集合與目標分割檢視控制站上呼叫方法。 新的特徵集合將覆蓋`HorizontalSizeClass`，設置為`Regular`，以便分割視圖控制器將以橫向顯示iPhone上的主視圖和詳細視圖。
 
 請注意，`VerticalSizeClass`已設為`unspecified`，這可讓新特性集合加入至其父系，特性集合導致`Compact VerticalSizeClass`子分割檢視的控制器。
 
@@ -610,7 +609,7 @@ IOS 設計工具將會確認開發人員想要轉換的使用大小類別分鏡�
 
  [![](unified-storyboards-images/sizeclass07.png "壓縮的寬度 Compact 高度大小類別")](unified-storyboards-images/sizeclass07.png#lightbox)
 
-此模式會對應至 iPhone。 在方格的右手邊角正方形代表規則一般寬度/高度大小類別，其代表 iPad:
+此模式對應於橫向的iPhone。 在方格的右手邊角正方形代表規則一般寬度/高度大小類別，其代表 iPad:
 
  [![](unified-storyboards-images/sizeclass08.png "規則的寬度規則高度大小類別")](unified-storyboards-images/sizeclass08.png#lightbox)
 
@@ -679,7 +678,7 @@ IOS 設計工具將會確認開發人員想要轉換的使用大小類別分鏡�
 
  [![](unified-storyboards-images/exclude05.png "當遺失的項目在 iPhone 模擬器中執行的應用程式")](unified-storyboards-images/exclude05.png#lightbox)
 
-若要移除的項目排除案例，只需選取中的項目**設計介面**，捲動到底部**屬性總管**按一下**-**大小寫，以移除旁邊的按鈕。
+若要移除的項目排除案例，只需選取中的項目**設計介面**，捲動到底部**屬性總管**按一下**-** 大小寫，以移除旁邊的按鈕。
 
 若要查看統一分鏡腳本的實作，看看`UnifiedStoryboard`範例 Xamarin iOS 8 應用程式附加至這份文件。
 

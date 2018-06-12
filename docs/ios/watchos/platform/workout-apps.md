@@ -1,5 +1,5 @@
 ---
-title: 健身應用程式
+title: watchOS 健身 Xamarin 應用程式
 description: 本文件涵蓋的增強功能蘋果對健身 watchOS 3，以及如何將它們實作中的 Xamarin 應用程式。
 ms.prod: xamarin
 ms.assetid: F1D19635-A738-43E5-9873-1FC1BA44EEDF
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 96eb2eaca15ed0bccbb4c5cdb6a855fc7e0e3bb1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a9e1ed8c0808ad42d96ac84d79721a5c706a27ea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791701"
 ---
-# <a name="workout-apps"></a>健身應用程式
+# <a name="watchos-workout-apps-in-xamarin"></a>watchOS 健身 Xamarin 應用程式
 
 _本文件涵蓋的增強功能蘋果對健身 watchOS 3，以及如何將它們實作中的 Xamarin 應用程式。_
 

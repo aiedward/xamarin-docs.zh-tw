@@ -1,16 +1,18 @@
 ---
 title: 建立平台的視訊播放程式
+description: 本文說明如何實作影片播放器自訂轉譯器，每個平台上，使用 Xamarin.Forms。
 ms.prod: xamarin
 ms.assetid: EEE2FB9B-EB73-4A3F-A859-7A1D4808E149
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 9efdc8376d9970cb429654e3d3aa2eef75ac2996
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 205adf802bc0fc496d79e2b9df4a4360e6c27dc0
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241120"
 ---
 # <a name="creating-the-platform-video-players"></a>建立平台的視訊播放程式
 
