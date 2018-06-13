@@ -1,5 +1,5 @@
 ---
-title: 影像
+title: Xamarin.Forms 中的映像
 description: 可以跨平台與 Xamarin.Forms 共用映像、 可以載入特別針對每個平台，或它們可以顯示為下載。
 ms.prod: xamarin
 ms.assetid: C025AB53-05CC-49BA-9815-75D6DF9E40B7
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: caa7884920e842a8f83e2b0fdb5e0fa4b358ca8e
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 6d3e5e61069723b0910b092da6631d5dc4ad8629
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244541"
 ---
-# <a name="images"></a>影像
+# <a name="images-in-xamarinforms"></a>Xamarin.Forms 中的映像
 
 _可以跨平台與 Xamarin.Forms 共用映像、 可以載入特別針對每個平台，或它們可以顯示為下載。_
 
@@ -179,7 +180,7 @@ public class ImageResourceExtension : IMarkupExtension
    {
      return null;
    }
-   
+
    // Do your translation lookup here, using whatever method you require
    var imageSource = ImageSource.FromResource(Source);
 

@@ -1,28 +1,22 @@
 ---
 title: 裝置方向
-description: 了解如何配置看起來不錯縱向或橫向方向中的應用程式。
+description: 這篇文章說明如何在縱向或橫向方向中更棒的版面配置 Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 95049e2d44b369bfa879226e17d2bad20b7b5408
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
-ms.translationtype: HT
+ms.openlocfilehash: 9245a17423d97887d2032856b10427685b25c29b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848131"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244347"
 ---
 # <a name="device-orientation"></a>裝置方向
 
-請務必考慮您的應用程式的使用方式以及如何合併  蒰菾 ，來改善使用者經驗。 個別的配置可以設計來容納多個方向，最好使用可用的空間。 應用程式層級，可以停用或啟用旋轉。
-
-本文將引導您完成建立利用裝置方向功能的應用程式，並具有下列章節：
-
-- **[控制方向](#Controlling_Orientation)** &ndash;了解如何控制每個平台應用程式層級的方向。
-- **[方向中的變更對回應](#Reacting_to_Changes_in_Orientation)** &ndash;了解如何收到通知，並做出回應、 變更方向。
-- **[回應式配置](#Responsive_Layout)** &ndash;學到如何建立自動工作在橫向和縱向方向版面配置。
+請務必考慮您的應用程式的使用方式以及如何合併，來改善使用者經驗。 個別的配置可以設計來容納多個方向，最好使用可用的空間。 應用程式層級，可以停用或啟用旋轉。
 
 <a name="Controlling_Orientation" />
 
@@ -78,13 +72,13 @@ Xamarin.Android 支援數個選項的指定方向：
 - **使用者**&ndash;導致應用程式可以使用使用者的慣用的方向顯示。
 - **後置**&ndash;會導致應用程式的方向的方向相同[活動](https://developer.xamarin.com/api/type/Android.App.Activity/)背後。
 - **感應器**&ndash;會導致以感應器，來判斷應用程式的方向，即使使用者已停用自動旋轉。
-- **SensorLandscape** &ndash;會導致應用程式使用  蒰菾  同時使用來變更 （以便螢幕不被視為顛倒） 遇到螢幕方向的感應器資料。
+- **SensorLandscape** &ndash;會導致應用程式使用同時使用來變更 （以便螢幕不被視為顛倒） 遇到螢幕方向的感應器資料。
 - **SensorPortrait** &ndash;會導致應用程式使用直式方向時使用變更 （以便螢幕不被視為顛倒） 遇到螢幕方向的感應器資料。
-- **ReverseLandscape** &ndash;會導致應用程式使用  蒰菾  面對相反的方向，從平常久時，才會出現 「 顛倒。 」
+- **ReverseLandscape** &ndash;會導致應用程式使用面對相反的方向，從平常久時，才會出現 「 顛倒。 」
 - **ReversePortrait** &ndash;會導致應用程式使用直式方向，面對相反的方向，從平常久時，才會出現 「 顛倒。 」
 - **FullSensor** &ndash;導致應用程式依賴感應器資料，以選取正確的方向 （從可能的 4)。
 - **FullUser** &ndash;會導致應用程式使用使用者的方向偏好設定。 如果啟用自動旋轉，則可以使用所有 4 個方向。
-- **UserLandscape** &ndash; _\[不支援\]_ 會導致應用程式使用  蒰菾 ，除非使用者具有自動旋轉啟用，在此情況下，它會使用若要判斷方向的感應器。 此選項將會中斷編譯。
+- **UserLandscape** &ndash; _\[不支援\]_ 會導致應用程式使用，除非使用者具有自動旋轉啟用，在此情況下，它會使用若要判斷方向的感應器。 此選項將會中斷編譯。
 - **UserPortrait** &ndash; _\[不支援\]_ 除非使用者具有自動旋轉啟用，它會使用在此情況下，會導致應用程式使用直式方向若要判斷方向的感應器。 此選項將會中斷編譯。
 - **鎖定** &ndash; _\[不支援\]_ 會導致應用程式使用螢幕方向，不論其所處啟動，而不會變更裝置回應的實體方向。 此選項將會中斷編譯。
 
@@ -98,7 +92,7 @@ Xamarin.Android 支援數個選項的指定方向：
 
 ## <a name="reacting-to-changes-in-orientation"></a>對回應方向中的變更
 
-Xamarin.Forms 不提供任何原生事件通知的共用程式碼中的方向變更您的應用程式。 不過，`SizeChanged`事件`Page`時引發寬度或高度`Page`變更。 當的寬度`Page`大於高度，裝置會以橫向模式。 如需詳細資訊，請參閱[顯示根據  堶菾  影像](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)。
+Xamarin.Forms 不提供任何原生事件通知的共用程式碼中的方向變更您的應用程式。 不過，`SizeChanged`事件`Page`時引發寬度或高度`Page`變更。 當的寬度`Page`大於高度，裝置會以橫向模式。 如需詳細資訊，請參閱[顯示根影像](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)。
 
 > [!NOTE]
 > 沒有現有的、 可用的 NuGet 封裝共用的程式碼中接收通知的方向變更。 請參閱[GitHub 儲存機制](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)如需詳細資訊。
@@ -482,4 +476,4 @@ protected override void OnSizeAllocated (double width, double height){
 - [版面配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [BusinessTumble 範例 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
 - [回應式配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
-- [顯示根據  堶菾  影像](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)
+- [顯示根據影像](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)

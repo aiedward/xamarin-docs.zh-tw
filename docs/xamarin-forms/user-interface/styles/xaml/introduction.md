@@ -1,5 +1,5 @@
 ---
-title: Introduction to 樣式
+title: Xamarin.Forms 樣式簡介
 description: 樣式可讓自訂的視覺化元素的外觀。 樣式定義的特定型別，而且包含在該類型的屬性值。
 ms.prod: xamarin
 ms.assetid: 3FF899C0-6CFB-4C1D-837D-9E9E10181967
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: f878641f9266da74d61eda8a85d4e16de193be0e
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
-ms.translationtype: HT
+ms.openlocfilehash: 071cfa2ba145775c179bc85dce4fac29ba0bd8fa
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847962"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245816"
 ---
-# <a name="introduction-to-styles"></a>Introduction to 樣式
+# <a name="introduction-to-xamarinforms-styles"></a>Xamarin.Forms 樣式簡介
 
 _樣式可讓自訂的視覺化元素的外觀。樣式定義的特定型別，而且包含在該類型的屬性值。_
 
@@ -94,7 +94,7 @@ public class NoStylesPageCS : ContentPage
 
 雖然樣式主要的設計以 XAML 為基礎的應用程式，也在 C# 中建立它們：
 
-- [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) 在 XAML 中建立的執行個體通常定義在[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) ，指派給[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/)控制項的集合] 頁面上，或[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Resources/)應用程式集合。
+- [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) 在 XAML 中建立的執行個體通常定義在[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) ，指派給[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/)控制項的集合 頁面上，或[ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Resources/)應用程式集合。
 - [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) 在頁面的類別中，或可全域存取的類別中，通常被定義在 C# 中建立的執行個體。
 
 選擇要定義在何處[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)可以用它的影響：
