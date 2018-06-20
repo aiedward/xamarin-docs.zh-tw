@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 275ec851a2fd8e96adecfeca5daf6a66add7bd92
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 7f68b7c8affc11b50bdb4a2fc9589f8dcbfb45ec
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209186"
 ---
 # <a name="gtk-platform-setup"></a>GTK # 平台安裝程式
 
@@ -42,7 +43,7 @@ GTK 的 # macOS 和 Linux 時一併安裝的[Mono](http://www.mono-project.com/d
 
     按**確定**按鈕以建立專案。
 
-4. 在**方案總管 中**，以滑鼠右鍵按一下新 GTK 專案並選取**管理 NuGet 封裝**。 選取**瀏覽**索引標籤上，按一下 **包含發行前版本**核取方塊，並搜尋**Xamarin.Forms** 3.0 或更新。
+4. 在**方案總管 中**，以滑鼠右鍵按一下新 GTK 專案並選取**管理 NuGet 封裝**。 選取**瀏覽**索引標籤，並搜尋**Xamarin.Forms** 3.0 或更新。
 
     ![選取的 Xamarin.Forms NuGet 套件](gtk-images/win/select-forms-nuget-package.png "選取的 Xamarin.Forms NuGet 套件")
 

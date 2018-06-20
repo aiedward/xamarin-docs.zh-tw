@@ -5,12 +5,13 @@ ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: b5e94a9b0bc3b9e9f141ad9fd262d29e01eb8a10
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: a35038a948a89889bbf067a453b7465c1a6a7b49
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793817"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268988"
 ---
 # <a name="workbooks-installation-and-requirements"></a>活頁簿安裝與需求
 
@@ -43,8 +44,8 @@ ms.locfileid: "34793817"
 
 |應用程式平台|作業系統支援|注意|
 |--- |--- |--- |
-|Mac （整合）|在 Mac 上才支援|
-|iOS （整合）|於 Mac 和 Windows 支援|必須在 mac 上安裝 Xamarin.iOS 11.0 和 Xcode 9.0 或更新版本 在 Windows 上執行 iOS 的活頁簿需要 Mac 組建主機執行所有上述項目，而[遠端 iOS 模擬器](~/tools/ios-simulator.md)安裝在 Windows 上。|
+|Mac|在 Mac 上才支援|
+|iOS|於 Mac 和 Windows 支援|必須在 mac 上安裝 Xamarin.iOS 11.0 和 Xcode 9.0 或更新版本 在 Windows 上執行 iOS 的活頁簿需要 Mac 組建主機執行所有上述項目，而[遠端 iOS 模擬器](~/tools/ios-simulator.md)安裝在 Windows 上。|
 |Android|於 Mac 和 Windows 支援|必須與虛擬裝置搭配使用 Google、 Visual Studio 或 Xamarin Android 模擬器，> = 5.0|
 |WPF|在 Windows 上才支援|
 |主控台 (.NET Framework)|於 Mac 和 Windows 支援|
@@ -114,7 +115,7 @@ Visual Studio
 
 ### <a name="windows"></a>Windows
 
-根據您如何取得活頁簿 （& s） 偵測器，您可能執行兩個解除安裝程序。 請檢查這兩個完全解除安裝軟體。
+根據如何貴用戶取得活頁簿，您可能執行兩個解除安裝程序。 請檢查這兩個完全解除安裝軟體。
 
 #### <a name="visual-studio-installer"></a>Visual Studio 安裝程式
 
@@ -122,19 +123,19 @@ Visual Studio
 
 #### <a name="system-uninstall"></a>系統解除安裝
 
-如果您已安裝的活頁簿 （& s） 偵測器自行下載安裝程式，就會需要透過解除安裝**應用程式和功能**系統設定 頁面在 Windows 10 上或透過**新增/移除程式**較舊版本的 Windows 控制台中。
+如果您已安裝的活頁簿自行下載安裝程式，就會需要透過解除安裝**應用程式和功能**系統設定 頁面在 Windows 10 上或透過**新增/移除程式**控制項中在舊版的 Windows 上的面板。
 
 > **開始 > 設定 > System > 應用程式和功能**
 
-![](install-images/windows-remove.png "Xamarin 活頁簿和如下所示的偵測器&quot;應用程式&amp;功能&quot;")
+![](install-images/windows-remove.png "Xamarin 活頁簿中列出&quot;應用程式&amp;功能&quot;")
 
-**您仍應遵循 Visual Studio 安裝程式，以便確定活頁簿的程序 （& s) 偵測器不會不取得重新安裝您不知情的情況下。**
+**您仍應該遵循的程序，以確定活頁簿不會不取得重新安裝您不知情的情況下，Visual Studio 安裝程式。**
 
 <a name="uninstall-macos" />
 
 ### <a name="macos"></a>macOS
 
-從開始[1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/)，Xamarin 活頁簿 （& s） 偵測器可以從解除安裝終端機執行：
+從開始[1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/)，Xamarin 活頁簿可以解除安裝從終止執行：
 
 ```bash
 sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
@@ -153,7 +154,7 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 ## <a name="downgrading"></a>降級
 
-套件組合識別碼**Xamarin 應用程式/Workbooks.app**從變更`com.xamarin.Inspector`至`com.xamarin.Workbooks`1.4 以便未來分割 Xamarin 活頁簿 （& s） 偵測器安裝程式的版本中。
+套件組合識別碼**Xamarin 應用程式/Workbooks.app**從變更`com.xamarin.Inspector`至`com.xamarin.Workbooks`在 1.4 版中，為活頁簿和偵測器會立即完全分割。
 
 由於較舊的安裝程式中的錯誤，不可能降級 1.4 或更新版本使用 1.3.2 或較舊的安裝程式的版本。
 

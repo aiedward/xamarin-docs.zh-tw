@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: edb2785362f2cc7377d9adb0c1a89a6fa2b08111
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 0a99845b23ee32a00a6894ef60988e61e361805e
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244311"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209241"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
 
@@ -160,7 +160,7 @@ A`BoxView`也可以是子系`AbsoluteLayout`。 在此情況下，位置和大�
         ···
 
     </Label>
-/StackLayout>
+</StackLayout>
 ```
 <a name="listingcolors" />
 
