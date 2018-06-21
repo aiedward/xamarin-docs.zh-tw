@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 7171142951a2893233233bb8a1c44c5a84c57b5c
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 47ea437be8a1570517f37cc59aab17431c5af7f0
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848196"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291321"
 ---
 # <a name="localization"></a>當地語系化
 
@@ -44,6 +44,9 @@ TodoLocalized 範例包括[共用專案示範](https://github.com/xamarin/xamari
 在這份文件中，我們將檢驗如何使用 RESX 檔案來儲存這些字串，並擷取這些顯示根據使用者的喜好設定。
 
 這些範例是以英文、 法文、 西班牙文、 德文、 中文、 日文、 俄文和巴西葡萄牙文語言為目標。 應用程式可以轉譯成所需的最少或最多語言。
+
+> [!NOTE]
+> 通用 Windows 平台上 RESW 檔案應該用於推播通知當地語系化，而不是 RESX 檔案。 如需詳細資訊，請參閱[UWP 當地語系化](/windows/uwp/design/globalizing/globalizing-portal/)。
 
 ### <a name="adding-resources"></a>將資源加入
 
@@ -458,6 +461,8 @@ public class Localize : UsingResxLocalization.ILocalize
 > 從[其文件](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW2): _」 使用 pt 語言識別碼為葡萄牙文它用在巴西和 PT-PT 語言識別碼為葡萄牙文因為它正使用葡萄牙"_。
 > 這表示當葡萄牙文語言會選擇非標準的地區設定，後援語言巴西葡萄牙文在 iOS 上，除非會撰寫程式碼來變更此行為 (例如`ToDotnetFallbackLanguage`上方)。
 
+如需 iOS 當地語系化的詳細資訊，請參閱[iOS 當地語系化](~/ios/app-fundamentals/localization/index.md)。
+
 #### <a name="android-application-project"></a>Android 應用程式專案
 
 Android 公開 （expose) 目前選取的地區設定，透過`Java.Util.Locale.Default`，同時也會使用底線分隔符號，而不是以破折號 （這會取代下列程式碼）。 Android 應用程式專案中加入此相依性服務實作：
@@ -548,11 +553,12 @@ namespace UsingResxLocalization.Android
 >
 > 開發人員應該修改`iOSToDotnetLanguage`和`ToDotnetFallbackLanguage`方法以處理特定的情況下所需的支援的語言。
 
-
 此程式碼加入至 Android 應用程式專案之後, 會自動顯示翻譯的字串。
 
 > [!NOTE]
 >️**警告：** 如果 Android 發行組建中，但不是偵錯時使用的已翻譯的字串，以滑鼠右鍵按一下**Android 專案**選取**選項 > 建置 > Android建置**，並確定**快速組件部署**不的話。 這個選項會導致問題的資源，並不應該使用如果您要測試當地語系化的應用程式。
+
+如需 Android 當地語系化的詳細資訊，請參閱[Android 當地語系化](~/android/app-fundamentals/localization.md)。
 
 #### <a name="universal-windows-platform"></a>通用 Windows 平台
 
@@ -573,6 +579,8 @@ namespace UsingResxLocalization.Android
 之後更新平台專屬專案所示上述使用翻譯的 RESX 檔案，重新編譯應用程式，都可在每個應用程式更新的翻譯。 以下是範例程式碼轉譯為簡體中文螢幕擷取畫面：
 
 ![](text-images/simple-example-hans.png "跨平台 Ui 轉譯為中文 （簡體）")
+
+如需 UWP 當地語系化的詳細資訊，請參閱[UWP 當地語系化](/windows/uwp/design/globalizing/globalizing-portal/)。
 
 ## <a name="localizing-xaml"></a>當地語系化 XAML
 
@@ -713,7 +721,7 @@ switch (Device.RuntimePlatform)
 
 ### <a name="ios-application-project"></a>iOS 應用程式專案
 
-iOS 會使用稱為當地語系化的專案命名標準或 **.lproj**包含影像和字串資源的目錄。 這些目錄可以包含當地語系化的版本的應用程式中使用的映像以及**InfoPlist.strings**可用來當地語系化應用程式名稱的檔案。
+iOS 會使用稱為當地語系化的專案命名標準或 **.lproj**包含影像和字串資源的目錄。 這些目錄可以包含當地語系化的版本的應用程式中使用的映像以及**InfoPlist.strings**可用來當地語系化應用程式名稱的檔案。 如需 iOS 當地語系化的詳細資訊，請參閱[iOS 當地語系化](~/ios/app-fundamentals/localization/index.md)。
 
 #### <a name="images"></a>影像
 
@@ -737,7 +745,7 @@ iOS 會使用稱為當地語系化的專案命名標準或 **.lproj**包含影�
 
 ### <a name="android-application-project"></a>Android 應用程式專案
 
-Android 遵循不同的配置來儲存使用不同的映像當地語系化**drawable**和**字串**語言程式碼後置詞使用的目錄。 （例如 ZH-TW 或 PT-BR） 需要四個字母的地區設定程式碼時，請注意，Android 需要額外**r**遵循上述 dash/地區設定程式碼 （例如。 zh-chs 和 rTW 或 pt rBR）。
+Android 遵循不同的配置來儲存使用不同的映像當地語系化**drawable**和**字串**語言程式碼後置詞使用的目錄。 （例如 ZH-TW 或 PT-BR） 需要四個字母的地區設定程式碼時，請注意，Android 需要額外**r**遵循上述 dash/地區設定程式碼 （例如。 zh-chs 和 rTW 或 pt rBR）。 如需 Android 當地語系化的詳細資訊，請參閱[Android 當地語系化](~/android/app-fundamentals/localization.md)。
 
 #### <a name="images"></a>影像
 
@@ -773,7 +781,7 @@ Android 遵循不同的配置來儲存使用不同的映像當地語系化**draw
 
 ### <a name="universal-windows-platform-application-projects"></a>通用 Windows 平台應用程式專案
 
-通用 Windows 平台擁有資源基礎結構，可簡化將映像和應用程式名稱的當地語系化。
+通用 Windows 平台擁有資源基礎結構，可簡化將映像和應用程式名稱的當地語系化。 如需 UWP 當地語系化的詳細資訊，請參閱[UWP 當地語系化](/windows/uwp/design/globalizing/globalizing-portal/)。
 
 #### <a name="images"></a>影像
 
@@ -796,5 +804,6 @@ Xamarin.Forms 應用程式可以使用 RESX 檔案和.NET 全球化類別來當�
 - [跨平台當地語系化](~/cross-platform/app-fundamentals/localization.md)
 - [iOS 當地語系化](~/ios/app-fundamentals/localization/index.md)
 - [Android 的當地語系化](~/android/app-fundamentals/localization.md)
+- [UWP 當地語系化](/windows/uwp/design/globalizing/globalizing-portal/)
 - [使用 CultureInfo 類別 (MSDN)](http://msdn.microsoft.com/library/87k6sx8t%28v=vs.90%29.aspx)
 - [尋找和使用資源的特定文化特性 (MSDN)](http://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)
