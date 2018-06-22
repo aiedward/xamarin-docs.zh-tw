@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: f843f4b1c20daba2a504bd0e70ae51f4d0405c06
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d75cac7a21b2c74a6627845cdda8e4c04e72bddc
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240242"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309771"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Xamarin.Forms 應用程式基本概念
 
@@ -47,6 +47,10 @@ ms.locfileid: "35240242"
 ## <a name="effectseffectsindexmd"></a>[Effects](effects/index.md)
 
 效果可讓自訂，每個平台的原生控制項，通常用於小型的樣式變更。
+
+## <a name="filesfilesmd"></a>[檔案](files.md)
+
+檔案處理 xamarin.forms 可以使用程式碼，以.NET 標準程式庫，或使用內嵌的資源來達成。
 
 ## <a name="gesturesgesturesindexmd"></a>[Gestures](gestures/index.md)
 
