@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30773734"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
@@ -653,8 +654,8 @@ KitKat 包括記錄功能，讓開發人員可以在動作記錄的應用程式�
 adb shell screenrecord /sdcard/screencast.mp4
 ```
 
-上述命令會記錄預設 3 分鐘的影片 4Mbps 預設解析度。 若要編輯的長度，新增*-時間限制*旗標。
-若要變更解析度，新增*-位元速率*旗標。 下列命令會記錄在 8Mbps 分鐘長時間視訊：
+上述命令會記錄預設 3 分鐘的影片 4Mbps 預設解析度。 若要編輯的長度，新增 *-時間限制*旗標。
+若要變更解析度，新增 *-位元速率*旗標。 下列命令會記錄在 8Mbps 分鐘長時間視訊：
 
 ```shell
 adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4

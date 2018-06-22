@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30771014"
 ---
 # <a name="java-bindings-metadata"></a>Java 繫結中繼資料
 
@@ -245,7 +246,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ### <a name="obfuscated"></a>模糊化
 
-模糊化 Java 文件庫的工具可能會干擾 Xamarin.Android 繫結產生器，以及其能力產生 C# 包裝函式類別。 模糊化類別的特性包括: * 類別名稱包含**$**，也就是**$.class** * 類別名稱完全受到個小寫字元，也就是**a.class**
+模糊化 Java 文件庫的工具可能會干擾 Xamarin.Android 繫結產生器，以及其能力產生 C# 包裝函式類別。 模糊化類別的特性包括: * 類別名稱包含**$**，也就是 **$.class** * 類別名稱完全受到個小寫字元，也就是**a.class**
 
 這個程式碼片段是如何產生 「 未模糊化"C# 類型的範例：
 

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/27/2018
+ms.locfileid: "32019291"
 ---
 # <a name="architecture"></a>架構
 
@@ -32,7 +33,7 @@ Xamarin.Android 開發人員存取作業系統藉由呼叫.NET Api 時，才會�
 
 Android 應用程式封裝是以 ZIP 容器 *.apk*檔案副檔名。 Xamarin.Android 應用程式封裝擁有相同的結構與配置一般 Android 套件的詳細資訊，具有下列功能：
 
--   應用程式組件 （包含 IL）*儲存*內未壓縮*組件*資料夾。 版本中的啟動建立程序期間 *.apk*是*mmap()* ed 到處理程序和組件是從記憶體載入。 這可讓更快速的應用程式啟動，如此不需要在執行前要擷取的組件。 - *注意：*組件位置資訊，例如[Assembly.Location](https://developer.xamarin.com/api/property/System.Reflection.Assembly.Location/)和[Assembly.CodeBase](https://developer.xamarin.com/api/property/System.Reflection.Assembly.CodeBase/)
+-   應用程式組件 （包含 IL）*儲存*內未壓縮*組件*資料夾。 版本中的啟動建立程序期間 *.apk*是*mmap()* ed 到處理程序和組件是從記憶體載入。 這可讓更快速的應用程式啟動，如此不需要在執行前要擷取的組件。 - *注意：* 組件位置資訊，例如[Assembly.Location](https://developer.xamarin.com/api/property/System.Reflection.Assembly.Location/)和[Assembly.CodeBase](https://developer.xamarin.com/api/property/System.Reflection.Assembly.CodeBase/)
     *無法依賴*版本中組建。 為不同的檔案系統項目，它們不存在，而且必須沒有可用的位置。
 
 
@@ -77,9 +78,9 @@ Like managed 可呼叫包裝函式，管理可呼叫包裝函式的子類別也�
 
 當[Android 可呼叫包裝函式](~/android/platform/java-integration/android-callable-wrappers.md)(ACW) 會建立從 Java，ACW 建構函式會導致對應 C# 建構函式會叫用。 例如，針對 ACW *MainActivity*會包含將會叫用預設建構函式*MainActivity*的預設建構函式。 (這透過完成*TypeManager.Activate()* 內 ACW 建構函式呼叫。)
 
-沒有結果的一個其他建構函式簽章： *（IntPtr、 JniHandleOwnership）*建構函式。 *（IntPtr、 JniHandleOwnership）* Java 物件公開給 managed 程式碼和管理可呼叫包裝函式就需要建構來管理 JNI 控制代碼時，會叫用建構函式。 這通常會自動完成。
+沒有結果的一個其他建構函式簽章： *（IntPtr、 JniHandleOwnership）* 建構函式。 *（IntPtr、 JniHandleOwnership）* Java 物件公開給 managed 程式碼和管理可呼叫包裝函式就需要建構來管理 JNI 控制代碼時，會叫用建構函式。 這通常會自動完成。
 
-有兩種案例中的*（IntPtr、 JniHandleOwnership）*建構函式必須以手動方式提供受管理的可呼叫包裝函式的子類別上：
+有兩種案例中的 *（IntPtr、 JniHandleOwnership）* 建構函式必須以手動方式提供受管理的可呼叫包裝函式的子類別上：
 
 1. [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/)子類別化。 *應用程式*是特殊; 預設*應用程式*建構函式會*永遠不會*叫用，而[（IntPtr、 JniHandleOwnership） 必須改為提供建構函式](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/SanityTests/Hello.cs#L105).
 
@@ -105,7 +106,7 @@ Like managed 可呼叫包裝函式，管理可呼叫包裝函式的子類別也�
 
 6.  *Java.Lang.Object.GetObject&lt;TextView&gt;（)* 檢查，以查看是否有已對應的 C# 執行個體*處理*。 如果沒有，它會傳回。 在此案例中，沒有，因此*Object.GetObject&lt;T&gt;（)* 必須建立一個。
 
-7.  *Object.GetObject&lt;T&gt;（)* 尋找*LogTextBox （IntPtr、 JniHandleOwneship）*建構函式，會叫用它，然後建立之間的對應*處理*和建立的執行個體，並傳回建立的執行個體。
+7.  *Object.GetObject&lt;T&gt;（)* 尋找*LogTextBox （IntPtr、 JniHandleOwneship）* 建構函式，會叫用它，然後建立之間的對應*處理*和建立的執行個體，並傳回建立的執行個體。
 
 8.  *TextView.n_GetDefaultMovementMethod()* 叫用*LogTextBox.DefaultMovementMethod*屬性 getter。
 
@@ -121,7 +122,7 @@ Like managed 可呼叫包裝函式，管理可呼叫包裝函式的子類別也�
 
 ### <a name="premature-dispose-calls"></a>過早 dispose （） 呼叫
 
-沒有 JNI 控制代碼與對應的 C# 執行個體之間的對應。 Java.Lang.Object.Dispose() 中斷此對應。 若對應已中斷後，JNI 控點會進入 managed 程式碼，它看起來像 Java 啟用和*（IntPtr、 JniHandleOwnership）*建構函式會檢查並加以叫用。 如果建構函式不存在，將會擲回例外狀況。
+沒有 JNI 控制代碼與對應的 C# 執行個體之間的對應。 Java.Lang.Object.Dispose() 中斷此對應。 若對應已中斷後，JNI 控點會進入 managed 程式碼，它看起來像 Java 啟用和 *（IntPtr、 JniHandleOwnership）* 建構函式會檢查並加以叫用。 如果建構函式不存在，將會擲回例外狀況。
 
 例如，假設下列管理可呼叫 Wraper 子類別：
 
@@ -164,13 +165,13 @@ E/mono    ( 2906):   at Java.Lang.Object.GetObject (IntPtr handle, JniHandleOwne
 E/mono    ( 2906):   at Java.Lang.Object._GetObject[IJavaObject] (IntPtr handle, JniHandleOwnership transfer) [0x00000
 ```
 
-如果子類別並包含*（IntPtr、 JniHandleOwnership）*建構函式，則*新*將建立之類型的執行個體。 如此一來，執行個體將會出現 「 遺失 」 的所有執行個體資料，因為它是的新執行個體。 （請注意此值為 null）。
+如果子類別並包含 *（IntPtr、 JniHandleOwnership）* 建構函式，則*新*將建立之類型的執行個體。 如此一來，執行個體將會出現 「 遺失 」 的所有執行個體資料，因為它是的新執行個體。 （請注意此值為 null）。
 
 ```shell
 I/mono-stdout( 2993): [Managed: Value=]
 ```
 
-只有*dispose （)* 的 managed 可呼叫包裝函式的子類別，當您知道不會再，使用 Java 物件，或子類別未包含任何執行個體資料和*（IntPtr、 JniHandleOwnership）*已提供建構函式。
+只有*dispose （)* 的 managed 可呼叫包裝函式的子類別，當您知道不會再，使用 Java 物件，或子類別未包含任何執行個體資料和 *（IntPtr、 JniHandleOwnership）* 已提供建構函式。
 
 
 
