@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30770959"
 ---
 # <a name="creating-resources-for-varying-screens"></a>針對不同螢幕中建立資源
 
@@ -35,7 +36,7 @@ Android 本身上執行許多不同裝置，每個具有各種不同的解析度
 
 請注意這些概念的前三個間相關&ndash;增加而增加密度會增加的螢幕大小的解析度。 不過如果增加密度和解析然後螢幕大小可以維持不變。 此螢幕大小、 密度和解析度之間的關聯性會使得螢幕支援非常快速。
 
-為了處理這種複雜性，Android 架構偏好使用*密度無關的像素 (dp)*螢幕配置。 藉由使用密度無關的像素，使用者擁有相同的實體大小，使用的不同密度的螢幕會顯示 UI 項目。
+為了處理這種複雜性，Android 架構偏好使用*密度無關的像素 (dp)* 螢幕配置。 藉由使用密度無關的像素，使用者擁有相同的實體大小，使用的不同密度的螢幕會顯示 UI 項目。
 
 
 ## <a name="supporting-various-screen-sizes-and-densities"></a>支援各種螢幕大小和密度

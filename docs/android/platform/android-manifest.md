@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30769802"
 ---
 # <a name="working-with-the-android-manifest"></a>使用 Android 資訊清單
 
@@ -127,7 +128,7 @@ public class MyActivity : Activity
 
 ### <a name="activity-icon"></a>活動圖示
 
-根據預設，活動將會提供系統提供的預設啟動程式圖示。 若要使用自訂圖示，請先加入您**.png**至**資源/drawable**，其 建置動作設定為**AndroidResource**，然後使用[ `Icon` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Icon/)屬性來指定使用的圖示。 例如:  
+根據預設，活動將會提供系統提供的預設啟動程式圖示。 若要使用自訂圖示，請先加入您 **.png**至**資源/drawable**，其 建置動作設定為**AndroidResource**，然後使用[ `Icon` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Icon/)屬性來指定使用的圖示。 例如:  
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 

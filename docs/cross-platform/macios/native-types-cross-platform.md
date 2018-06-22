@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33918152"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>使用跨平台應用程式中的原生類型
 

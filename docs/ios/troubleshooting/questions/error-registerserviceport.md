@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30776712"
 ---
 # <a name="ios-designer-error-with-registerserviceport"></a>iOS 與 RegisterServicePort 的設計工具時發生錯誤
 

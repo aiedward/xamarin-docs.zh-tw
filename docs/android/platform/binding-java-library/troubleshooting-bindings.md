@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30771092"
 ---
 # <a name="troubleshooting-bindings"></a>疑難排解繫結
 
@@ -42,7 +43,7 @@ _本文摘要說明許多常見的錯誤時產生繫結，以及可能的原因�
 檢查的類別和方法的 Java 類別可以提供寶貴的資訊可協助繫結的程式庫。
 [JD GUI](http://jd.benow.ca/)圖形公用程式，可顯示從 Java 原始碼**類別**包含 JAR 檔案。 它可以當做獨立應用程式或外掛程式針對 IntelliJ 或執行 Eclipse。
 
-反編譯 Android 程式庫開啟**。JAR** Java 解編程式檔案。 如果程式庫是**。AAR**檔案，就必須將檔案解壓縮**classes.jar**保存檔案。 以下是範例螢幕擷取畫面的分析中使用 JD GUI[畢加索](http://square.github.io/picasso/)JAR:
+反編譯 Android 程式庫開啟 **。JAR** Java 解編程式檔案。 如果程式庫是 **。AAR**檔案，就必須將檔案解壓縮**classes.jar**保存檔案。 以下是範例螢幕擷取畫面的分析中使用 JD GUI[畢加索](http://square.github.io/picasso/)JAR:
 
 ![使用 Java 解編程式分析畢加索 2.5.2.jar](troubleshooting-bindings-images/troubleshoot-bindings-01.png)
 
@@ -50,7 +51,7 @@ _本文摘要說明許多常見的錯誤時產生繫結，以及可能的原因�
 
 - **具有模糊化的特性類別**&ndash;模糊化類別的特性包括：
 
-    - 類別名稱包含**$**，也就是**$.class**
+    - 類別名稱包含**$**，也就是 **$.class**
     - 類別名稱完全受到個小寫字元，也就是**a.class**      
 
 - **`import` 陳述式未參考的程式庫**&ndash;未參考的文件庫識別，並將這些相依性加入至具有的 Xamarin.Android 繫結專案**建置動作**的**ReferenceJar**或**EmbedddedReferenceJar**。
@@ -99,7 +100,7 @@ _本文摘要說明許多常見的錯誤時產生繫結，以及可能的原因�
 
 ### <a name="problem-missing-c-types-in-generated-output"></a>問題： 遺漏 C# 中產生的輸出型別。
 
-繫結**.dll**組建但遺漏某些 Java 資料類型，或因為發生錯誤，指出有遺失的類型未建置產生的 C# 原始程式碼。
+繫結 **.dll**組建但遺漏某些 Java 資料類型，或因為發生錯誤，指出有遺失的類型未建置產生的 C# 原始程式碼。
 
 #### <a name="possible-causes"></a>可能的原因：
 
@@ -237,9 +238,9 @@ return type of 'Java.Lang.Object'
 
 ### <a name="problem-a-so-library-required-by-the-binding-is-not-loading"></a>問題： A **.so**繫結所需的程式庫是未載入
 
-某些繫結專案也會取決於功能中**.so**程式庫。 很可能 Xamarin.Android 不會自動載入**.so**程式庫。 若要讓 JNI 呼叫和錯誤訊息的已包裝的 Java 程式碼執行時，將會失敗 Xamarin.Android _java.lang.UnsatisfiedLinkError： 找不到原生方法：_會出現在出 logcat，應用程式。
+某些繫結專案也會取決於功能中 **.so**程式庫。 很可能 Xamarin.Android 不會自動載入 **.so**程式庫。 若要讓 JNI 呼叫和錯誤訊息的已包裝的 Java 程式碼執行時，將會失敗 Xamarin.Android _java.lang.UnsatisfiedLinkError： 找不到原生方法：_ 會出現在出 logcat，應用程式。
 
-此修正方法是手動載入**.so**呼叫的程式庫`Java.Lang.JavaSystem.LoadLibrary`。 如需範例假設 Xamarin.Android 專案已共用程式庫**libpocketsphinx_jni.so**包含在繫結專案的建置動作**EmbeddedNativeLibrary**、 下（使用共用媒體櫃之前執行） 的程式碼片段會載入**.so**程式庫：
+此修正方法是手動載入 **.so**呼叫的程式庫`Java.Lang.JavaSystem.LoadLibrary`。 如需範例假設 Xamarin.Android 專案已共用程式庫**libpocketsphinx_jni.so**包含在繫結專案的建置動作**EmbeddedNativeLibrary**、 下（使用共用媒體櫃之前執行） 的程式碼片段會載入 **.so**程式庫：
 
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");

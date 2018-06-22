@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30774846"
 ---
 # <a name="populating-a-listview-with-data"></a>填入資料的 ListView
 
@@ -72,7 +73,7 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 
 -   **GetItemId** &ndash;傳回資料列識別碼 （通常是資料列數字，雖然它可以是任何您喜歡的長數值）。
 
--   **此 [int]**索引子&ndash;傳回特定資料列數目與相關聯的資料。
+-   **此 [int]** 索引子&ndash;傳回特定資料列數目與相關聯的資料。
 
 中的範例程式碼**BasicTableAdapter/HomeScreenAdapter.cs**示範如何以子類別`BaseAdapter`:
 

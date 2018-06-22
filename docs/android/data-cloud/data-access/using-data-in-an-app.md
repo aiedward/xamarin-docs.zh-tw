@@ -11,6 +11,7 @@ ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/20/2018
+ms.locfileid: "31647030"
 ---
 # <a name="using-data-in-an-app"></a>應用程式中使用資料
 
@@ -97,7 +98,7 @@ public int DeleteStock(Stock stock)
 
 建立發佈的資料庫檔案與應用程式，格外謹慎以確保它們符合您的程式碼所預期，特別是如果您使用 SQLite.NET 它預期能以符合您的 C# 類別和屬性名稱的資料表和資料行命名 （或相關聯的自訂屬性）。
 
-若要確保一些程式碼執行 Android 應用程式中的其他任何項目之前，您可以在載入第一個活動，或者您可以建立`Application`載入之前的任何活動的子類別。 程式碼所示`Application`複製現有的資料庫檔案的子類別**data.sqlite**超出**/Resources/Raw/**目錄。
+若要確保一些程式碼執行 Android 應用程式中的其他任何項目之前，您可以在載入第一個活動，或者您可以建立`Application`載入之前的任何活動的子類別。 程式碼所示`Application`複製現有的資料庫檔案的子類別**data.sqlite**超出 **/Resources/Raw/** 目錄。
 
 ```csharp
 [Application]

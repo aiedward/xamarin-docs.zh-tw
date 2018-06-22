@@ -12,6 +12,7 @@ ms.sourcegitcommit: c5bb1045b2f4607dafe3101ad1ea6ade23e44342
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34153193"
 ---
 # <a name="splash-screen"></a>啟動顯示畫面
 

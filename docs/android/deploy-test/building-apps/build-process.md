@@ -11,6 +11,7 @@ ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/27/2018
+ms.locfileid: "32019707"
 ---
 # <a name="build-process"></a>建置流程
 
@@ -216,7 +217,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
     - **SdkOnly**：只會對基底類別庫執行連結，而不會對使用者的組件執行。
 
-    - **完整**：會對基底類別庫和使用者組件執行連結。 **注意：**若使用的 `AndroidLinkMode` 值為「完整」，通常會導致應用程式損壞，特別是在使用了「反映」時。 除非您確實了解您正在執行的動作，否則請避免使用此值。
+    - **完整**：會對基底類別庫和使用者組件執行連結。 **注意：** 若使用的 `AndroidLinkMode` 值為「完整」，通常會導致應用程式損壞，特別是在使用了「反映」時。 除非您確實了解您正在執行的動作，否則請避免使用此值。
 
     ```xml
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>

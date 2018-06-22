@@ -12,6 +12,7 @@ ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/27/2018
+ms.locfileid: "32019681"
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>轉譯器的基底類別和原生控制項
 

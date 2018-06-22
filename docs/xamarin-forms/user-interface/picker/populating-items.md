@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30792650"
 ---
 # <a name="adding-data-to-a-pickers-items-collection"></a>將資料加入至選擇器的項目集合
 

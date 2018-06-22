@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30763767"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>如何自動執行的 Android NUnit 測試專案？
 

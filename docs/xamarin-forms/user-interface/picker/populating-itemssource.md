@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30789035"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>選擇器 ItemsSource 屬性設定
 

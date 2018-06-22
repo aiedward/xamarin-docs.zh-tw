@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33917859"
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>Xamarin.Forms 使用 Visual basic.net
 
@@ -30,7 +31,7 @@ Xamarin 不直接支援 Visual Basic-依此頁面，即可建立 C# Xamarin.Form
 
 2. 以滑鼠右鍵按一下方案並**新增 > 新的專案**。
 
-3. 選擇**Visual Basic > 類別庫 （可攜式）**專案類型：
+3. 選擇**Visual Basic > 類別庫 （可攜式）** 專案類型：
 
    [![](xamarin-forms-images/add-vb-2-sml.png "加入新的可攜式類別庫專案")](xamarin-forms-images/add-vb-2.png#lightbox)
 

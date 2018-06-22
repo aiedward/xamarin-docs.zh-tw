@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30780719"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>在 iOS 設計工具中使用的資料表
 
@@ -45,7 +46,7 @@ StoryboardTable 範例包含簡單的主從式應用程式中，使用這兩種 
 
 ## <a name="walkthrough"></a>逐步解說
 
-建立新的方案在 Visual Studio 使用**（建立） 新增專案 > 單一檢視 App(C#)**，並呼叫它_StoryboardTables_。
+建立新的方案在 Visual Studio 使用 **（建立） 新增專案 > 單一檢視 App(C#)**，並呼叫它_StoryboardTables_。
 
  [![建立新的專案 對話方塊](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
 
@@ -114,7 +115,7 @@ StoryboardTable 範例包含簡單的主從式應用程式中，使用這兩種 
 請執行下列動作： 
 
 -  拖曳**工具列按鈕項目**從工具箱拖曳至_導覽列的右手邊_。
--  在**屬性板**下**工具列按鈕項目**選取**識別碼： 新增**(讓它*+*加號按鈕)。 
+-  在**屬性板**下**工具列按鈕項目**選取**識別碼： 新增**(讓它*+* 加號按鈕)。 
 -  指定名稱，如此就可以在程式碼中識別在後續階段。 請注意，您將需要授與根目錄檢視控制器類別名稱 (例如**ItemViewController**) 可讓您設定列按鈕項目名稱。
 
 

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30772587"
 ---
 # <a name="replacing-the-action-bar"></a>取代動作列
 
@@ -36,7 +37,7 @@ ms.lasthandoff: 04/04/2018
 
 ## <a name="start-an-app-project"></a>啟動應用程式專案
 
-建立新的 Android 專案，稱為**ToolbarFun** (請參閱[Hello，Android](~/android/get-started/hello-android/hello-android-quickstart.md)如需有關建立新的 Android 專案)。 建立這個專案之後，設定目標與最低的 Android API 層級為**Android 5.0 (API 層級 21-棒棒糖符號)**或更新版本。 如需設定 Android 版本層級的詳細資訊，請參閱[了解 Android API 層級](~/android/app-fundamentals/android-api-levels.md)。 當應用程式會建置並執行時，它會顯示預設的動作列這個螢幕擷取畫面所示：
+建立新的 Android 專案，稱為**ToolbarFun** (請參閱[Hello，Android](~/android/get-started/hello-android/hello-android-quickstart.md)如需有關建立新的 Android 專案)。 建立這個專案之後，設定目標與最低的 Android API 層級為**Android 5.0 (API 層級 21-棒棒糖符號)** 或更新版本。 如需設定 Android 版本層級的詳細資訊，請參閱[了解 Android API 層級](~/android/app-fundamentals/android-api-levels.md)。 當應用程式會建置並執行時，它會顯示預設的動作列這個螢幕擷取畫面所示：
 
 [![預設動作列螢幕擷取畫面](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
 
@@ -188,7 +189,7 @@ ActionBar.Title = "My Toolbar";
 
 ### <a name="install-menu-icons"></a>安裝功能表圖示
 
-繼續`ToolbarFun`範例應用程式，將功能表圖示加入至應用程式專案。 下載[工具列圖示](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons-plus.zip?raw=true)，解壓縮，並將複製的內容解壓縮*mipmap-*至專案資料夾*mipmap-*資料夾下的**ToolbarFun /資源**並將每個加入的圖示檔案包含在專案中。
+繼續`ToolbarFun`範例應用程式，將功能表圖示加入至應用程式專案。 下載[工具列圖示](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons-plus.zip?raw=true)，解壓縮，並將複製的內容解壓縮*mipmap-* 至專案資料夾*mipmap-* 資料夾下的**ToolbarFun /資源**並將每個加入的圖示檔案包含在專案中。
 
 
 ### <a name="define-a-menu-resource"></a>定義功能表資源

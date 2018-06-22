@@ -13,6 +13,7 @@ ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/19/2018
+ms.locfileid: "31538087"
 ---
 # <a name="resolving-library-installation-errors"></a>解析程式庫安裝錯誤
 

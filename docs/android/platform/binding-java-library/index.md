@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30768817"
 ---
 # <a name="binding-a-java-library"></a>繫結的 Java 程式庫
 
@@ -88,7 +89,7 @@ using Com.Company.Package;
 
 * `EmbeddedReferenceJar` &ndash; 將內嵌參考**d**至產生的繫結程式庫。DLL。 當您想要建立 C# 這兩個輸入的繫結時使用此組建動作**d** （或。AAR) 和所有其參考**d**(s) 您繫結文件庫中。
 
-* `EmbeddedNativeLibrary` &ndash; 嵌入原生**.so**繫結。 用於此組建動作**.so**檔案所需的**d**檔案所要繫結。 可能需要手動載入**.so**之前執行的 Java 程式庫的程式碼程式庫。 說明如下。
+* `EmbeddedNativeLibrary` &ndash; 嵌入原生 **.so**繫結。 用於此組建動作 **.so**檔案所需的**d**檔案所要繫結。 可能需要手動載入 **.so**之前執行的 Java 程式庫的程式碼程式庫。 說明如下。
 
 動作中的下列指南中詳細說明這些組建。
 
@@ -102,9 +103,9 @@ using Com.Company.Package;
 
 ## <a name="including-a-native-library-in-a-binding"></a>包含繫結中的原生程式庫
 
-可能需要包含**.so** Xamarin.Android 繫結專案一部分的繫結 Java 文件庫中的程式庫。 若要讓 JNI 呼叫和錯誤訊息的已包裝的 Java 程式碼執行時，將會失敗 Xamarin.Android _java.lang.UnsatisfiedLinkError： 找不到原生方法：_會出現在出 logcat，應用程式。
+可能需要包含 **.so** Xamarin.Android 繫結專案一部分的繫結 Java 文件庫中的程式庫。 若要讓 JNI 呼叫和錯誤訊息的已包裝的 Java 程式碼執行時，將會失敗 Xamarin.Android _java.lang.UnsatisfiedLinkError： 找不到原生方法：_ 會出現在出 logcat，應用程式。
 
-此修正方法是手動載入**.so**呼叫的程式庫`Java.Lang.JavaSystem.LoadLibrary`。 如需範例假設 Xamarin.Android 專案已共用程式庫**libpocketsphinx_jni.so**包含在繫結專案的建置動作**EmbeddedNativeLibrary**、 下（使用共用媒體櫃之前執行） 的程式碼片段會載入**.so**程式庫：
+此修正方法是手動載入 **.so**呼叫的程式庫`Java.Lang.JavaSystem.LoadLibrary`。 如需範例假設 Xamarin.Android 專案已共用程式庫**libpocketsphinx_jni.so**包含在繫結專案的建置動作**EmbeddedNativeLibrary**、 下（使用共用媒體櫃之前執行） 的程式碼片段會載入 **.so**程式庫：
 
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");

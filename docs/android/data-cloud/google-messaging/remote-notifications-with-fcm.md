@@ -12,6 +12,7 @@ ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31044934"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>遠端通知 Firebase 與雲端通訊
 
@@ -534,7 +535,7 @@ subscribeButton.Click += delegate {
 
 5.  在裝置準備好時，請按一下**傳送訊息**Firebase 主控台中。 
 
-6.  檢查 IDE 輸出視窗來查看**/主題/新聞**中的記錄檔輸出： 
+6.  檢查 IDE 輸出視窗來查看 **/主題/新聞**中的記錄檔輸出： 
 
     [![顯示從 /topic/news 訊息](remote-notifications-with-fcm-images/17-message-arrived-sml.png)](remote-notifications-with-fcm-images/17-message-arrived.png#lightbox)
 

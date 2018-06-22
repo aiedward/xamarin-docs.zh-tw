@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30764888"
 ---
 # <a name="android-resource-basics"></a>Android 資源基本概念
 
@@ -30,7 +31,7 @@ ms.lasthandoff: 04/04/2018
 
 -  **Icon.png** &ndash;應用程式的預設圖示
 
--  **Main.axml** &ndash;應用程式的預設使用者介面版面配置的檔案。 請注意，雖然 Android 使用**.xml**檔案延伸模組，會使用 Xamarin.Android **.axml**檔案副檔名。
+-  **Main.axml** &ndash;應用程式的預設使用者介面版面配置的檔案。 請注意，雖然 Android 使用 **.xml**檔案延伸模組，會使用 Xamarin.Android **.axml**檔案副檔名。
 
 -  **Strings.xml** &ndash;協助進行應用程式的當地語系化字串資料表
 

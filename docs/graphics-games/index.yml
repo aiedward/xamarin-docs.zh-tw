@@ -1,8 +1,8 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: "圖形和遊戲"
+title: 圖形和遊戲
 metadata:
-  description: "適用於行動裝置和桌上型電腦平台的跨平台圖形、2D 及 3D 遊戲。"
+  description: 適用於行動裝置和桌上型電腦平台的跨平台圖形、2D 及 3D 遊戲。
   author: conceptdev
   ms.author: crdun
   ms.date: 02/17/2018
@@ -12,14 +12,15 @@ metadata:
   ms.translationtype: HT
   ms.contentlocale: zh-TW
   ms.lasthandoff: 03/09/2018
+  ms.locfileid: "29825385"
 abstract:
-  description: "適用於行動裝置和桌上型電腦平台的跨平台圖形、2D 及 3D 遊戲。"
+  description: 適用於行動裝置和桌上型電腦平台的跨平台圖形、2D 及 3D 遊戲。
   menu:
     items:
     - href: https://developer.xamarin.com/samples/
-      text: "範例"
+      text: 範例
     - href: https://developer.xamarin.com/releases/
-      text: "版本資訊"
+      text: 版本資訊
 sections:
 - title: 
   items:
@@ -32,26 +33,26 @@ sections:
         src: ~/media/index/xamarin-graphics-skia.svg
         href: ~/graphics-games/skiasharp/index.md
       title: SkiaSharp
-      html: "適用於行動裝置和桌上型電腦的跨平台 2D 圖形。"
+      html: 適用於行動裝置和桌上型電腦的跨平台 2D 圖形。
     - href: ~/graphics-games/urhosharp/index.md
       image:
         src: ~/media/index/xamarin-graphics-urho.svg
         href: ~/graphics-games/urhosharp/index.md
       title: UrhoSharp
-      html: "跨平台 3D 圖形和遊戲。"
+      html: 跨平台 3D 圖形和遊戲。
     - href: ~/graphics-games/cocossharp/index.md
       image:
         src: ~/media/index/xamarin-graphics-cocos.svg
         href: ~/graphics-games/cocossharp/index.md
       title: CocosSharp
-      html: "建置適用於行動裝置的跨平台 2D 遊戲。"
+      html: 建置適用於行動裝置的跨平台 2D 遊戲。
     - href: ~/graphics-games/monogame/index.md
       image:
         src: ~/media/index/xamarin-graphics-monogame.svg
         href: ~/graphics-games/monogame/index.md
       title: MonoGame
-      html: "使用 C# 建置桌上型電腦、行動裝置與主機遊戲。"
-- title: "平台"
+      html: 使用 C# 建置桌上型電腦、行動裝置與主機遊戲。
+- title: 平台
   items:
   - type: list
     style: cards
@@ -59,13 +60,13 @@ sections:
     items:
     - title: Xamarin.Forms
       href: ~/xamarin-forms/index.md
-      html: "<p><a href=\"~/xamarin-forms/get-started/index.md\">開始使用</a><br /><a href=\"~/xamarin-forms/app-fundamentals/index.md\">應用程式基本概念</a><br /><a href=\"~/xamarin-forms/user-interface/index.md\">使用者介面</a><br /><a href=\"~/xamarin-forms/platform/index.md\">平台功能</a><br /><a href=\"~/xamarin-forms/deploy-test/index.md\">部署與測試</a><br /><a href=\"~/xamarin-forms/xaml/index.md\">XAML</a><br /><a href=\"~/xamarin-forms/data-cloud/index.md\">資料與雲端服務</a><br /><a href=\"~/xamarin-forms/internals/index.md\">進階概念與內部項目</a></p>"
+      html: <p><a href="~/xamarin-forms/get-started/index.md">開始使用</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">應用程式基本概念</a><br /><a href="~/xamarin-forms/user-interface/index.md">使用者介面</a><br /><a href="~/xamarin-forms/platform/index.md">平台功能</a><br /><a href="~/xamarin-forms/deploy-test/index.md">部署與測試</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">資料與雲端服務</a><br /><a href="~/xamarin-forms/internals/index.md">進階概念與內部項目</a></p>
     - title: Android
       href: ~/android/index.md
-      html: "<p><a href=\"~/android/get-started/index.md\">開始使用</a><br /><a href=\"~/android/app-fundamentals/index.md\">應用程式基本概念</a><br /><a href=\"~/android/user-interface/index.md\">使用者介面</a><br /><a href=\"~/android/platform/index.md\">平台功能</a><br /><a href=\"~/android/deploy-test/index.md\">部署與測試</a><br /><a href=\"~/android/data-cloud/index.md\">資料與雲端服務</a><br /><a href=\"~/android/internals/index.md\">進階概念與內部項目</a></p>"
+      html: <p><a href="~/android/get-started/index.md">開始使用</a><br /><a href="~/android/app-fundamentals/index.md">應用程式基本概念</a><br /><a href="~/android/user-interface/index.md">使用者介面</a><br /><a href="~/android/platform/index.md">平台功能</a><br /><a href="~/android/deploy-test/index.md">部署與測試</a><br /><a href="~/android/data-cloud/index.md">資料與雲端服務</a><br /><a href="~/android/internals/index.md">進階概念與內部項目</a></p>
     - title: iOS
       href: ~/ios/index.md
-      html: "<p><a href=\"~/ios/get-started/index.md\">開始使用</a><br /><a href=\"~/ios/app-fundamentals/index.md\">應用程式基本概念</a><br /><a href=\"~/ios/user-interface/index.md\">使用者介面</a><br /><a href=\"~/ios/platform/index.md\">平台功能</a><br /><a href=\"~/ios/deploy-test/index.md\">部署與測試</a><br /><a href=\"~/ios/data-cloud/index.md\">資料與雲端服務</a><br /><a href=\"~/ios/internals/index.md\">進階概念與內部項目</a></p>"
+      html: <p><a href="~/ios/get-started/index.md">開始使用</a><br /><a href="~/ios/app-fundamentals/index.md">應用程式基本概念</a><br /><a href="~/ios/user-interface/index.md">使用者介面</a><br /><a href="~/ios/platform/index.md">平台功能</a><br /><a href="~/ios/deploy-test/index.md">部署與測試</a><br /><a href="~/ios/data-cloud/index.md">資料與雲端服務</a><br /><a href="~/ios/internals/index.md">進階概念與內部項目</a></p>
     - title: Mac
       href: ~/mac/index.md
-      html: "<p><a href=\"~/mac/get-started/index.md\">開始使用</a><br /><a href=\"~/mac/app-fundamentals/index.md\">應用程式基本概念</a><br /><a href=\"~/mac/user-interface/index.md\">使用者介面</a><br /><a href=\"~/mac/platform/index.md\">平台功能</a><br /><a href=\"~/mac/deploy-test/index.md\">部署與測試</a><br /><a href=\"~/mac/internals/index.md\">進階概念與內部項目</a></p>"
+      html: <p><a href="~/mac/get-started/index.md">開始使用</a><br /><a href="~/mac/app-fundamentals/index.md">應用程式基本概念</a><br /><a href="~/mac/user-interface/index.md">使用者介面</a><br /><a href="~/mac/platform/index.md">平台功能</a><br /><a href="~/mac/deploy-test/index.md">部署與測試</a><br /><a href="~/mac/internals/index.md">進階概念與內部項目</a></p>
