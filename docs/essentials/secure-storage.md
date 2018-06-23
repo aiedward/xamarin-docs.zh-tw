@@ -5,12 +5,12 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: d9fd5b5fd0d4dc29f4d2531521370618f97e3846
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4909cb3b874b1397fad10c92d8d655fadcbe8d85
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783154"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321336"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials： 安全儲存體
 
@@ -78,13 +78,13 @@ var oauthToken = await SecureStorage.GetAsync("oauth_token");
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-[KeyChain](https://developer.xamarin.com/api/type/Android.Security.KeyChain/)用來安全地儲存在 iOS 裝置上的值。  `SecRecord`用來儲存值具有`Service`值設定為 **[您的應用程式-配套-ID].xamarinessentials**。
+[KeyChain](https://developer.xamarin.com/api/type/Security.SecKeyChain/)用來安全地儲存在 iOS 裝置上的值。  `SecRecord`用來儲存值具有`Service`值設定為 **[您的應用程式-配套-ID].xamarinessentials**。
 
 KeyChain 資料同步使用 icloud 的功能，在某些情況下，解除安裝應用程式可能不會移除從 icloud 的功能和其他裝置之使用者的安全的值。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/en-us/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider)用來安全地在 UWP 裝置上的 encryped 值。
+[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider)用來安全地在 UWP 裝置上的 encryped 值。
 
 Encryped 值會儲存在`ApplicationData.Current.LocalSettings`，名稱為容器內 **[您的應用程式識別碼的].xamarinessentials**。
 

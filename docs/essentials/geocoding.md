@@ -5,12 +5,12 @@ ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 0b6cbf9ee5621466285656a5efee68ccc2c85211
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 001cca2524e495d64c6781d8a2fc5cb58e771e6e
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783024"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321440"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials： 地理編碼
 
@@ -32,7 +32,7 @@ ms.locfileid: "34783024"
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-若要使用地理編碼 funcationality 需要 Bing 地圖服務 API 金鑰。 註冊免費的[Bing 地圖服務](https://www.bingmapsportal.com/)帳戶。 在下**我的帳戶 > 金鑰**建立新的金鑰，並填寫您的應用程式類型為基礎的資訊。
+若要使用地理編碼 funcationality 需要 Bing 地圖服務 API 金鑰。 註冊免費的[Bing 地圖服務](https://www.bingmapsportal.com/)帳戶。 下**我的帳戶 > 金鑰**建立新的金鑰，並填寫您的應用程式類型為基礎的資訊 (這應該是**公用 Windows 應用程式 (UWP，8.x 及更早版本)** 用於 UWP 應用程式)。
 
 在您的應用程式生命週期之前呼叫任何**地理編碼**方法設定的 API 金鑰：
 
