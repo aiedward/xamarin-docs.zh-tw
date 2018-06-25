@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 6d3e5e61069723b0910b092da6631d5dc4ad8629
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b0fd644f1f3b49a949a3a9ba9aca4c0770f17013
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244541"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291347"
 ---
 # <a name="images-in-xamarinforms"></a>Xamarin.Forms 中的映像
 
@@ -153,8 +153,11 @@ IDE 已產生此預設值，藉由串連**預設命名空間**這個專案檔名
 載入內嵌的影像的程式碼直接傳**資源識別碼**至[ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/)方法如下所示：
 
 ```csharp
-var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg") };
+var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg", typeof(EmbeddedImages).GetTypeInfo().Assembly) };
 ```
+
+> [!NOTE]
+> 若要支援在通用 Windows 平台上發行模式中顯示內嵌的影像，就必須使用的多載`ImageSource.FromResource`，指定要在其中搜尋映像的來源組件。
 
 目前沒有資源識別元隱含轉換。 相反地，您必須使用[ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/)或`new ResourceImageSource()`載入內嵌的影像。
 
@@ -182,12 +185,15 @@ public class ImageResourceExtension : IMarkupExtension
    }
 
    // Do your translation lookup here, using whatever method you require
-   var imageSource = ImageSource.FromResource(Source);
+   var imageSource = ImageSource.FromResource(Source, typeof(ImageResourceExtension).GetTypeInfo().Assembly);
 
    return imageSource;
  }
 }
 ```
+
+> [!NOTE]
+> 若要支援在通用 Windows 平台上發行模式中顯示內嵌的影像，就必須使用的多載`ImageSource.FromResource`，指定要在其中搜尋映像的來源組件。
 
 若要使用這項擴充功能加入自訂`xmlns`成 XAML，請使用正確的命名空間和組件值專案。 影像來源可以設定使用此語法： `{local:ImageResource WorkingWithImages.beach.jpg}`。 完整的 XAML 範例如下所示：
 
@@ -224,9 +230,15 @@ foreach (var res in assembly.GetManifestResourceNames())
 }
 ```
 
-#### <a name="images-embedded-in-other-projects-dont-appear"></a>不會出現在其他專案中內嵌影像
+#### <a name="images-embedded-in-other-projects"></a>其他專案中內嵌影像
 
-`Image.FromResource` 只會尋找程式碼呼叫相同的組件中的映像`FromResource`。 使用偵錯程式碼，您可以判斷哪些組件包含特定的資源，藉由變更`typeof()`陳述式來`Type`已知為每個組件。
+根據預設，`ImageSource.FromResource`方法只會尋找程式碼呼叫相同的組件中的影像`ImageSource.FromResource`方法。 使用偵錯程式碼，您可以判斷哪些組件包含特定的資源，藉由變更`typeof()`陳述式來`Type`已知為每個組件。
+
+不過，可以指定要搜尋的內嵌影像的來源組件的引數為`ImageSource.FromResource`方法：
+
+```csharp
+var imageSource = ImageSource.FromResource("filename.png", typeof(MyClass).GetTypeInfo().Assembly);
+```
 
 <a name="Downloading_Images" />
 
@@ -269,7 +281,7 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 ### <a name="downloaded-image-caching"></a>下載的映像快取
 
-A [ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/)也支援 快取的下載映像，透過下列屬性：
+A [ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/)也支援快取的下載映像，透過下列屬性：
 
 - [`CachingEnabled`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CachingEnabled/) -是否啟用快取 (`true`依預設)。
 - [`CacheValidity`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CacheValidity/) -A`TimeSpan`多久映像會儲存在本機定義。
@@ -316,7 +328,6 @@ webImage.Source = new UriImageSource
 Xamarin.Forms 提供數種不同的跨平台應用程式，允許跨平台使用相同的映像，或指定的平台專屬映像中包含影像。 下載的影像也會自動快取，自動化程式碼撰寫的常見案例。
 
 應用程式圖示和啟動顯示畫面影像會安裝並設定與非 Xamarin.Forms 應用程式-請遵循相同的指引，用於特定平台應用程式。
-
 
 ## <a name="related-links"></a>相關連結
 
