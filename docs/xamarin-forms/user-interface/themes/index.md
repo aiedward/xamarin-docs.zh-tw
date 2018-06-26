@@ -49,7 +49,7 @@ Xamarin.Forms 佈景主題在 Evolve 2016 所宣佈，而且可做為客戶再�
 * 淺色佈景主題 （只有只有些微的差異有無佈景主題）
 * 暗色調佈景主題
 
-![](images/standard-none-sml.png "不使用佈景主題的控制項") ![ ](images/standard-light-sml.png "淺色佈景主題的控制項") ![ ](images/standard-dark-sml.png "暗色調佈景主題的控制項")
+![](images/standard-none-sml.png "不使用佈景主題的控制項") ![](images/standard-light-sml.png "淺色佈景主題的控制項") ![](images/standard-dark-sml.png "暗色調佈景主題的控制項")
 
 <a name="styleclass" />
 
@@ -69,7 +69,7 @@ Xamarin.Forms 佈景主題在 Evolve 2016 所宣佈，而且可做為客戶再�
 
 這會轉譯淺色與深色，如下所示：
 
-![](images/boxview-light-sml.png "淺色佈景主題 StyleClass 與 BoxView") ![ ](images/boxview-dark-sml.png "與暗色調佈景主題 StyleClass BoxView")
+![](images/boxview-light-sml.png "淺色佈景主題 StyleClass 與 BoxView") ![](images/boxview-dark-sml.png "與暗色調佈景主題 StyleClass BoxView")
 
 <a name="builtin" />
 
