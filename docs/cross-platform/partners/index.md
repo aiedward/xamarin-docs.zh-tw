@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: F42526FF-2B0D-4A9D-B129-CECF680ED0DE
 author: conceptdev
 ms.author: crdun
-ms.date: 06/19/2017
-ms.openlocfilehash: 8f52c6783335bd7bc26bc9886dee670489ffba09
-ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
+ms.date: 06/25/2018
+ms.openlocfilehash: 4a3045b6f35930b61598f7038974722801c38c2e
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291772"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935512"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>認證來傳遞 mobile 解決方案顧問合作夥伴
 
@@ -56,7 +56,6 @@ _許多協力廠商所列的主要位置，對外提供服務。_
 |[Ciber 美國](http://www.ciber.com/)|Greenwood Village，美國|第一個數位的轉換服務雲端、 與唯一的快速鍵焦點的 talent 服務，就能讓您未來可能。|
 |[Cie 數位實驗室](http://www.ciedigital.com/)|洛杉磯，USA;Irvine，美國|Cie 數位實驗室是有關了解商業挑戰我們合作夥伴字體及新的軟體解決方案讓 measureable 企業值開創電腦科技熱愛|
 |[清晰度大膽](https://www.clarity-ventures.com)|Austin，德州|清晰度是周全、 professional、 業務的所有服務延伸模組。 創意小組設計從您的商務識別至螢幕的螢幕中的任何項目...|
-|[程式碼廠技術](https://codemilltech.com/)|Madison，美國|程式碼廠是 boutique 諮詢和訓練公司由 Microsoft 和 Xamarin MVP Matt Soucoup 所建構。 它會指定在 Xamarin 及 Azure 開發 |
 |[一點技術解決方案](http://www.cognizant.com)|布宜諾斯艾利斯，阿根廷;奧克蘭，紐西蘭;墨爾本，澳洲;雪梨，澳洲;布里斯本，澳洲;布魯塞爾，比利時;San Paulo，巴西;多倫多 （加拿大);上海 （中國);Heredia，哥斯大黎加;美國，NJ Jersey 縣 （市）;San Francisco，CA，USA;Teaneck，NJ，美國|一點結合熱忱客戶滿意度、 創新技術、 深層產業和商務程序的專業知識和全域、 共同作業的工作力，意未來的工作|
 |[一致的解決方案，inc.](http://www.coherentsolutions.com)|紐約;麻州波士頓;白俄羅斯明斯克，|一致的解決方案是軟體開發諮詢和外包公司透過結合全域的專業知識、 創新和創造力，以解決客戶的商務問題|
 |[Cruxlab](https://cruxlab.com/)|洛杉磯，美國|我們會建立自訂的數位產品創和企業中，使用者和企業|
@@ -65,10 +64,10 @@ _許多協力廠商所列的主要位置，對外提供服務。_
 |[度](http://www.degdigital.com)|Overland 公園，美國|度會建立智慧型數位行銷、 商務和共同作業的策略，讓組織能夠擴大其具競爭力的優點以及達成其目標|
 |[DevRabbit](http://www.devrabbit.com)|San Ramon，美國|DevRabbit 是美國基礎技術諮詢 firm 所提供的圖案狀態解決方案企業行動力，Web 應用程式開發和雲端諮詢。|
 |[Digineer](http://www.digineer.com)|普利茅斯、 MN|Digineer 提供企業專案管理、 商務分析、 應用程式開發人員和商務智慧和專業人員的服務|
-|[DigitasLBi Sverige AB](http://www.digitaslbi.com)|麻州波士頓;歐;亞洲 Pasific; 中東;非洲|DigitasLBi 是可協助公司瀏覽數位世界的國際通訊代理程式|
+|[DigitasLBi Sverige AB](http://www.digitaslbi.com)|麻州波士頓;歐;亞太地區; 中東;非洲|DigitasLBi 是可協助公司瀏覽數位世界的國際通訊代理程式|
 |[DMI](https://dminc.com/)|Bethesda，MD|我們建立來協助企業重建本身的網際網路連線，請提供唯一混合的功能和全新設計燃料創新心態。|
 |[DOOR3](http://door3.com/)|New York，美國|在大型的諮詢公司和特殊的實作商店的創意機關世界中我們會不同。 我們關心我們商務，但我們關心我們的客戶更多。|
-|[DreamTeam 行動裝置](http://dreamteam-mobile.com)|華盛頓特區，美國|DreamTeam Moible 建立原生 iOS、 Android、 Windows 和 Mac 應用程式使用 Xamarin，Swift 和原生回應。 我們會建置多平台的原生應用程式共用程式碼基底|
+|[DreamTeam 行動裝置](http://dreamteam-mobile.com)|華盛頓特區，美國|DreamTeam 行動建立原生 iOS、 Android、 Windows 和 Mac 應用程式使用 Xamarin，Swift 和原生回應。 我們會建置多平台的原生應用程式共用程式碼基底|
 |[Durwella](http://www.durwella.com)|休斯頓，美國|Durwella 是軟體解決方案公司，它著重在科學和工程專案|
 |[EastBanc 技術](http://www.eastbanctech.com)|華盛頓特區，美國|EastBanc 技術是平台適用的完整生命週期軟體開發公司提供彈性的技術解決方案|
 |[邊緣 Webware，inc.](https://edgewebware.com)|Miamisburg，思想|邊緣 Webware，Inc.提供的 web 和行動裝置應用程式的設計及/或開發的服務|
@@ -79,7 +78,7 @@ _許多協力廠商所列的主要位置，對外提供服務。_
 |[啦軟體技術 Inc.](http://www.techendeavour.com)|Austin，德州|啦的顧問評估企業行動成熟度，並協助解決策略行動力的需求，所有層級的組織|
 |[增強的系統諮詢](http://www.enhancedsystems.com)|Johnson 縣 （市） 曼非斯，|增強系統查閱，Inc.提供位專業人員設計、 開發和整合服務公司，以建立新的商務應用程式或現有的搜尋|
 |[Envoc](http://envoc.com/)|交給魯治，LA|我們存在於創意和技術，可提供絕佳的經驗和創新的交集|
-|[EPAM 系統](https://www.epam.com)|Newtown，PA|EPAM 系統，Inc 是前置全域產品開發和工程服務公司數位平台|
+|[EPAM 系統](https://www.epam.com)|Newtown，PA;New York City;Philadelphia;芝加哥;San Francisco;Los Angeles;倫敦 （london);明斯克;St 堡;布達佩斯|EPAM 系統，Inc 是前置全域產品開發和工程服務公司數位平台|
 |[Experis Ciber B.V。](http://www.ciber.com)|MI 特洛伊， |Ciber 跨 North America 和印度是全域 IT 諮詢公司具有超過 2900 員工和分公司|
 |[向前快轉 LLC](http://www.fastforward.sh/)|Salem，MA|向前快轉到所有裝置類型，將應用程式開發跨所有主要原生作業系統，並讓物聯網工作|
 |[Fincons 群組](http://www.finconsgroup.com)|洛杉磯，加州;紐約;倫敦，英國|Fincoins 群組服務和解決方案提供具象回應的大型帳戶和 Sme，同時為技術和程序，以及確保他們需要的創新的實際需求。|
@@ -88,7 +87,7 @@ _許多協力廠商所列的主要位置，對外提供服務。_
 |[FusionComputing，inc.](http://www.fusioncomputing.com)|Douglasville 喬治亞州|我們開發跨平台的原生應用程式，讓您到達您的客戶在任何裝置上。|
 |[Griffin 解決方案群組](http://griffinsolutionsgroup.com)|阿法樂特，GA|因為我們已經解決商務問題的熱情成立 Griffin 解決方案群組。 我們套用多年的經驗，以協助我們的用戶端正確技術決策產業的|
 |[Harman 連接服務，inc.](http://www.harman.com)|Mountain View，CA;Hartford，CT;西雅圖，華盛頓州。紐瓦克，紐澤西州;倫敦，英國;柏林，德國;莫斯科，俄羅斯|Harman 設計工程師連接產品和解決方案 automakers、 取用者，以及企業全球，包括車聯版系統、 音訊及視覺化產品、 企業自動化解決方案。及連線的服務|
-|[HCL 技術](https://www.hcltech.com/)|Noida，Uttar 得 （印度）;Mississauga 日，加拿大;New York，開頭為 NY，USA;San Paulo，巴西;墨西哥城，CDMX，墨西哥;倫敦，英國;雪梨，澳洲|HCL 技術是下一代全球性的技術公司，它可讓企業數位天數 reimagine 與其企業|
+|[HCL 技術](https://www.hcltech.com/)|Noida，Uttar 得 （印度）;Mississauga 日，加拿大;New York，開頭為 NY，USA;San Paulo，巴西;墨西哥城，CDMX，墨西哥;倫敦，英國;雪梨，澳洲|HCL 技術是下一代全球性的技術公司，它可讓企業重新假設數位存留期與其企業|
 |[Hexaware 技術 Ltd](http://hexaware.com/)|Iselin，紐澤西|Hexaware 是全域的提供者的 IT 消費化、 BPO 和諮詢服務 |
 |[高科技群組 LLC](http://hightg.com)|聖路易斯堪薩斯|自訂的軟體開發公司|
 |[Hitcents](http://hitcents.com)|保齡球綠色，金鑰;洛杉磯，CA，USA;San Francisco，CA，USA;上海，上海 （中國）|Hitcents 不只會建置應用程式。在建置超出一個平台的經驗。 它們也支援 24/7，應用程式，讓任何使用者，任何地方、 可存取您的應用程式。|
@@ -239,7 +238,7 @@ _許多協力廠商所列的主要位置，對外提供服務。_
 |[流程試驗 CVBA](http://www.flowpilots.com)|比利時 Antwerp，|流程試驗設計、 建置、 部署和管理數位工具，可協助客戶增加營收、 降低成本或讓其員工的自由和彈性。|
 |[KENZE](http://www.kenze.be)|比利時 Mechelen，|Microsoft.NET projecten en gerelateerde technologieën。  De drie belangrijkste pijlers binnen de organisatie zijn mensen，kennis en mensenkennis，想 zij vormen de 基礎 voor kwalitatieve，succesvolle projecten en tevreden klanten。 |
 |[Levelapp](http://www.levelapp.be)|比利時 Hoeilaart，|我們很 Levelapp 完整行動運商。 我們將做為軟體開發人員。 我們建立的大小以及駭人您策略遠景的跨平台應用程式。 我們會提供價值給您的客戶、 合作夥伴和員工。 |
-|[Realdolmen](http://www.realdolmen.com/)|Huizingen，比利時;Kontich，比利時;Lummen，比利時;Ghent，比利時;Harelbeke，比利時;Namur，比利時;比利時 Mons，|Mobile 是新的標準。 幾乎所有的公司需要行動服務或應用程式維持競爭。 但在它自己的行動策略是不夠的;所有項目必須完全整合在一般 ICT 基礎結構，包括雲端、 安全性、 ERP 等。 在 Realdolmen 我們稱之為連接的商務。 <link>|
+|[Realdolmen](http://www.realdolmen.com/)|Huizingen，比利時;Kontich，比利時;Lummen，比利時;Ghent，比利時;Harelbeke，比利時;Namur，比利時;比利時 Mons，|Mobile 是新的標準。 幾乎所有的公司需要行動服務或應用程式維持競爭。 但在它自己的行動策略是不夠的;所有項目必須完全整合在一般 ICT 基礎結構，包括雲端、 安全性、 ERP 等。 在 Realdolmen 我們稱之為連接的商務。|
 
 
 ## <a name="brazil"></a>巴西
@@ -574,7 +573,7 @@ _許多協力廠商所列的主要位置，對外提供服務。_
 |[Billennium](http://billennium.pl/)|華沙，波蘭 |Billennium 有多年的經驗中開發的創新的企業工具和解決方案。|
 |[邊緣一個解決方案 sp z o.o.](http://www.edge1s.com)|華沙，波蘭 |我們提供的技術和高限定 IT 顧問的體驗。 我們保證在我們的組合中的每項服務有彈性的方法，以用戶端的需求和期望|
 |[NETBULLS sp z o.o.](http://www.netbulls.io)|Bialystok，波蘭|取得您的想法 skilfully 市場。 不含浪費 £$ €、 時間或藉口。 |
-|[Sii](http://www.sii.pl/en)|華沙，波蘭;巴黎，法國;馬德里，西班牙;柏林，德國;阿姆斯特丹，荷蘭;布魯塞爾，比利時;盧森堡城市，盧森堡;Geneva （瑞士);Marrakesh，摩洛哥;布拉格，Czechia;布加勒斯特，羅馬尼亞;多倫多 （ON，加拿大);聖地牙哥，聖地牙哥大都會區域、 智利;布宜諾斯艾利斯，自發縣 （市） 的布宜諾斯艾利斯，阿根廷;Bogot√ °，波哥大，哥倫比亞;Delhi （印度）|Sii 是前置 IT 服務中的公司波蘭支援數位的轉換程式從其概念成功傳遞到。 我們提供傳遞第一次啟用裝置通訊，巨量資料處理和離線的企業和取用者應用程式的專業知識。|
+|[Sii](http://www.sii.pl/en)|華沙，波蘭;巴黎，法國;馬德里，西班牙;柏林，德國;阿姆斯特丹，荷蘭;布魯塞爾，比利時;盧森堡城市，盧森堡;Geneva （瑞士);Marrakesh，摩洛哥;布拉格，Czechia;布加勒斯特，羅馬尼亞;多倫多 （ON，加拿大);聖地牙哥，聖地牙哥大都會區域、 智利;布宜諾斯艾利斯，自發縣 （市） 的布宜諾斯艾利斯，阿根廷;Bogot，波哥大，哥倫比亞;Delhi （印度）|Sii 是前置 IT 服務中的公司波蘭支援數位的轉換程式從其概念成功傳遞到。 我們提供傳遞第一次啟用裝置通訊，巨量資料處理和離線的企業和取用者應用程式的專業知識。|
 
 
 ## <a name="portugal"></a>-葡萄牙

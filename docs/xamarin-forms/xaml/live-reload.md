@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 756f0570ce792450cfcaf6b1c5161a95a6cb80c8
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 15de334500ea25d22657c257a4a4fc6887cc122c
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848300"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935424"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin 即時重新載入
 
@@ -119,6 +119,7 @@ public partial class App : Application
 ## <a name="known-issues"></a>已知問題
 
 * 只支援 Visual Studio 中。
+* 連結必須設為**不連結**或**連結 Framework Sdk 只** 
 * 重新載入整個應用程式的資源 (也就是**App.xaml**或共用資源字典)，就會重設應用程式瀏覽。 這將在下一步的預覽版本中修正。
 * 當偵錯 UWP 可能會造成執行階段當機，請編輯 XAML。 因應措施： 使用**啟動但不偵錯 （Ctrl + F5）** 而不是**開始偵錯 (F5)**。
 

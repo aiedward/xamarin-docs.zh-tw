@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 ms.custom: video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 3776a0554e5ae496f9e39612ec9bab971c6f1f88
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: a23072427a74119bfa339fea8a695cd13b775685
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732758"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935099"
 ---
 # <a name="oreo-features"></a>Oreo 功能
 
@@ -191,7 +191,7 @@ _如何開始使用 Xamarin.Android 開發最新版的 Android 應用程式。_
 
 -----
 
-如需設定的 Android 模擬器進行測試和偵錯的詳細資訊，請參閱[使用 Google Android 模擬器偵錯](~/android/deploy-test/debugging/android-sdk-emulator/index.md)。
+如需設定的 Android 模擬器進行測試和偵錯的詳細資訊，請參閱[Android 模擬器上偵錯](~/android/deploy-test/debugging/debug-on-emulator.md)。
 
 如果您使用的實體裝置，例如管道或像素，您可以透過自動更新您的裝置，透過無線方式 (OTA) 更新或下載系統映像並直接快閃裝置。 如需手動更新 Android Oreo 您裝置的詳細資訊，請參閱[Nexus 和像素裝置的原廠映像](https://developers.google.com/android/images)。
 

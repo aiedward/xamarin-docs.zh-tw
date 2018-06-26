@@ -1,19 +1,20 @@
 ---
-title: 對應應用程式
+title: 啟動對應應用程式
+description: 如何啟動內建對應應用程式從 Xamarin.Android 應用程式內。
 ms.prod: xamarin
 ms.assetid: 929EACB8-8950-50E1-093C-43FB5F1F1CD5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/05/2017
-ms.openlocfilehash: b94c65c079b28fe042a42ec04357c11f3516d205
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/25/2018
+ms.openlocfilehash: d15b6e544f58f03272c711236b579ca568e09539
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30765551"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935018"
 ---
-# <a name="maps-application"></a>對應應用程式
+# <a name="launching-the-maps-application"></a>啟動對應應用程式
 
 將對應中 Xamarin.Android 最簡單的方式是利用內建的對應應用程式，如下所示：
 

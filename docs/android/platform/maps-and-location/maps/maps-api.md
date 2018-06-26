@@ -1,19 +1,20 @@
 ---
-title: Maps API
+title: 使用 Google 地圖應用程式開發介面，以在您的應用程式
+description: 如何在 Xamarin.Android 應用程式中實作 Google Maps API v2 功能。
 ms.prod: xamarin
 ms.assetid: C0589878-2D04-180E-A5B9-BB41D5AF6E02
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: fc16178a4068b2dcf22fc19047e0ef403e83633f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/25/2018
+ms.openlocfilehash: a0e010a8300eb4b4452737e34d2f55a35ab95428
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30773520"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935135"
 ---
-# <a name="maps-api"></a>Maps API
+# <a name="using-the-google-maps-api-in-your-application"></a>應用程式中使用 Google Maps API
 
 使用對應的應用程式很棒，但有時在您想要直接在您的應用程式中包含的對應。 除了內建對應應用程式，也提供 Google[適用於 Android 的原生對應 API](https://developers.google.com/maps/documentation/android/)。
 適當的情況下，您要維護更充分掌控對應經驗 Maps API。 與 Maps API 可能會有的項目包括：
@@ -315,7 +316,7 @@ Android Maps API 提供了 API 可讓活動在變更觀點來看，新增標記�
 
 對應會在畫面上，根據 Mercator 投射，和模型化成一般的平面。 地圖檢視，就是*相機*尋找直接關閉此平面上。 變更位置、 縮放、 傾斜，以及關係可以控制相機的位置。 [CameraUpdate](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdate)類別用來移動相機的位置。 `CameraUpdate` 物件不直接執行個體化，改為 Maps API 提供[CameraUpdateFactory](http://developer.android.com/reference/com/google/android/gms/maps/CameraUpdateFactory.html)類別。
 
-一次`CameraUpdate`已建立物件，做為參數傳遞至[GoogleMap.MoveCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#moveCamera(com.google.maps.CameraUpdate))或[GoogleMap.AnimateCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera(com.google.maps.CameraUpdate))方法。 `MoveCamera`方法會更新對應時立即`AnimateCamera`方法提供 smooth、 動畫的轉換。
+一次`CameraUpdate`已建立物件，做為參數傳遞至[GoogleMap.MoveCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#moveCamera%28com.google.maps.CameraUpdate%29)或[GoogleMap.AnimateCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera%28com.google.maps.CameraUpdate%29)方法。 `MoveCamera`方法會更新對應時立即`AnimateCamera`方法提供 smooth、 動畫的轉換。
 
 此程式碼片段是簡單的範例使用方式的`CameraUpdateFactory`建立`CameraUpdate`，會以一遞增地圖的縮放層級：
 
@@ -328,7 +329,7 @@ if (_map != null) {
 }
 ```
 
-Maps API 提供[CameraPosition](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html)這會相機位置的可能值的所有彙總。 這個類別的執行個體可以提供給[CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition(com.google.android.gms.maps.model.CameraPosition))方法以傳回`CameraUpdate`物件。 Maps API 也包含[CameraPosition.Builder](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html)提供 fluent 應用程式開發的應用程式開發介面建立類別`CameraPosition`物件。
+Maps API 提供[CameraPosition](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html)這會相機位置的可能值的所有彙總。 這個類別的執行個體可以提供給[CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition%28com.google.android.gms.maps.model.CameraPosition%29)方法以傳回`CameraUpdate`物件。 Maps API 也包含[CameraPosition.Builder](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html)提供 fluent 應用程式開發的應用程式開發介面建立類別`CameraPosition`物件。
 下列程式碼片段示範建立`CameraUpdate`從`CameraPosition`及變更相機位置上使用該`GoogleMap`:
 
 ```csharp
@@ -372,7 +373,7 @@ Maps API 提供[標記](https://developers.google.com/maps/documentation/android
 
 ##### <a name="adding-a-marker"></a>加入標記
 
-若要將標記加入至地圖，就必須建立新[MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions)物件，然後呼叫[AddMarker](http://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker(com.google.android.gms.maps.model.MarkerOptions))方法`GoogleMap`執行個體。 這個方法會傳回[標記](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker)物件。
+若要將標記加入至地圖，就必須建立新[MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions)物件，然後呼叫[AddMarker](http://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker%28com.google.android.gms.maps.model.MarkerOptions%29)方法`GoogleMap`執行個體。 這個方法會傳回[標記](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker)物件。
 
 ```csharp
 MapFragment mapFrag = (MapFragment) FragmentManager.FindFragmentById(Resource.Id.my_mapfragment_container);
@@ -382,7 +383,7 @@ if (_map != null) {
     MarkerOptions markerOpt1 = new MarkerOptions();
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
-    _map.AddMarker(marker1);
+    _map.AddMarker(markerOpt1);
 }
 ```
 
@@ -402,7 +403,7 @@ if (_map != null) {
 
 -   `FromBitmap(Bitmap image)` &ndash; 使用指定的點陣圖為圖示。
 
--   `FromFile(string fileName` &ndash; 從位於指定路徑的檔案中建立自訂的圖示。
+-   `FromFile(string fileName)` &ndash; 從位於指定路徑的檔案中建立自訂的圖示。
 
 -   `FromResource(int resourceId)` &ndash; 從指定的資源建立自訂圖示。
 
@@ -417,7 +418,7 @@ if (_map != null)
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
     markerOpt1.InvokeIcon(BitmapDescriptorFactory.DefaultMarker (BitmapDescriptorFactory.HueCyan));
-    _map.AddMarker(marker1);
+    _map.AddMarker(markerOpt1);
 }
 ```
 
@@ -515,7 +516,7 @@ myMap.AddPolygon(rectOptions);
 CircleOptions circleOptions = new CircleOptions ();
 circleOptions.InvokeCenter (new LatLng(37.4, -122.1));
 circleOptions.InvokeRadius (1000);
-_map.AddCircle (CircleOptions);
+_map.AddCircle (circleOptions);
 ```
 
 
@@ -614,4 +615,3 @@ private void MapOnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEvent
 - [Google 對應 Android API v2](https://developers.google.com/maps/documentation/android/)
 - [Google Play 服務 APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)
 - [取得 Google Maps API 金鑰](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [無法更新但 AVD 問題 57880: Google Play 服務](https://code.google.com/p/android/issues/detail?id=57880)

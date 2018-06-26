@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 04/20/2018
-ms.openlocfilehash: 9c17641312384634983c2cbb34fa923a9416c9f7
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 6b2e316eaf67e51801be4fcd670e80ec81c8ff08
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "31646699"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935395"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>廣播 Xamarin.Android 接收器
 
@@ -25,7 +25,7 @@ A_廣播的接收者_是 Android 的元件，可讓應用程式回應訊息 (And
 Android 識別廣播的兩種類型：
 
 * **明確的廣播**&ndash;廣播的這些類型為目標的特定應用程式。 明確的常見用法是廣播的啟動活動。 舉例來說，當應用程式需要撥打電話號碼; 明確廣播它會分派設為目標在 Android 和傳遞的電話號碼沿著撥打的電話應用程式的意圖。 Android 然後會將目的路由到 Phone 應用程式。
-* **隱含 broadcase** &ndash;這些廣播會發送給所有裝置上的應用程式。 舉例來說，隱含的廣播是`ACTION_POWER_CONNECTED`意圖。 Android 偵測到在裝置上的電池正在充電每次發行此意圖。 Android 會路由此意圖，此事件的已註冊的所有應用程式。
+* **隱含的廣播**&ndash;這些廣播會發送給所有裝置上的應用程式。 舉例來說，隱含的廣播是`ACTION_POWER_CONNECTED`意圖。 Android 偵測到在裝置上的電池正在充電每次發行此意圖。 Android 會路由此意圖，此事件的已註冊的所有應用程式。
 
 廣播的接收器是子類別的`BroadcastReceiver`類型也必須覆寫[ `OnReceive` ](https://developer.xamarin.com/api/member/Android.Content.BroadcastReceiver.OnReceive/p/Android.Content.Context/Android.Content.Intent/)方法。 將執行 android`OnReceive`主執行緒，因此這個方法應該設計成可快速執行。 應該小心繁衍 （spawn） 中的執行緒時`OnReceive`因為 Android 可能會在方法完成時終止處理程序。 如果廣播的收件者必須執行長時間執行的工作，則建議您排程_作業_使用`JobScheduler`或_Firebase 作業發送器_。 排程工作與工作將個別的指南中討論。
 

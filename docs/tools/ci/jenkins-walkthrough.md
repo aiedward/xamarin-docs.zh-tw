@@ -6,12 +6,12 @@ ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 7e9069c698f82e9ec9c5009286c2a36b6722b7a8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8094f1ab78252e6d6bd8f5991bcb567b36ed1e9b
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793942"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935340"
 ---
 # <a name="using-jenkins-with-xamarin"></a>使用 Jenkins 搭配 Xamarin
 
@@ -385,7 +385,7 @@ Jenkins 會擷取到呼叫的特殊資料夾的整個原始程式碼*工作區*�
 
 ### <a name="submitting-tests-to-test-cloud"></a>正在提交測試來測試雲端
 
-自動化的測試可以提交給測試雲端中使用殼層命令。 如需 Xamarin Test Cloud 中測試回合設定的詳細資訊，我們的指南使用[Xamarin.UITest](https://developer.xamarin.com/guides/testcloud/uitest/working-with/submitting-tests-to-xamarin-test-cloud/)或[Calabash](https://developer.xamarin.com/guides/testcloud/calabash/working-with/submitting-tests-to-xamarin-test-cloud/)。
+自動化的測試可以提交給測試雲端中使用殼層命令。 多個在 Xamarin Test Cloud 測試回合設定的詳細資訊，請參閱本指南，使用[Xamarin.UITest](/appcenter/test-cloud/preparing-for-upload/uitest/)。
 
 
 ## <a name="summary"></a>總結

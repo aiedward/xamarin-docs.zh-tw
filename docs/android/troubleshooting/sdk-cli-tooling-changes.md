@@ -7,13 +7,13 @@ ms.assetid: 5AC61C00-0FF6-4C2D-80E7-D67A3EE30A5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/02/2018
-ms.openlocfilehash: b0d9458238c4b3ac9ceeeb7d7ce4e2ca8b0b6de3
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/21/2018
+ms.openlocfilehash: 4e808736fd92fa40ecbf0c24938c0fedd7afcff9
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732862"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935447"
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>對於 Android SDK 工具所做的變更
 
@@ -56,7 +56,7 @@ Visual Studio 和 Visual Studio for Mac 現在提供已停止的 Google gui 管�
 
 **中加入：** Android SDK 工具 25.3.0 (年 3 月，2017) 及更高版本。
 
-新程式可以呼叫**avdmanager**中**工具/bin**您的 Android SDK 的資料夾。 此工具用來維護 Avd Google Android 模擬器。 如需有關使用此工具的詳細資訊，請參閱[avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)。
+新程式可以呼叫**avdmanager**中**工具/bin**您的 Android SDK 的資料夾。 此工具用來維護 Avd Android 模擬器。 如需有關使用此工具的詳細資訊，請參閱[avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)。
 
 ### <a name="downgrading"></a>降級
 
