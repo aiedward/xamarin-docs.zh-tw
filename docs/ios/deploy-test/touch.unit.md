@@ -1,18 +1,20 @@
 ---
-title: 單元測試
+title: 單元測試 Xamarin.iOS 應用程式
+description: 本文件提供如何對 Xamarin.iOS 應用程式進行單元測試的概觀。 描述如何建立單元測試專案、撰寫測試和執行測試。
 ms.prod: xamarin
 ms.assetid: BD959779-3239-79B6-5289-3A9ECDFBD973
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3129302cbb2fbe9e2757986317da0ec30601b492
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ce2b452d50222ac3561dab5b76915b7ae634934b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785459"
 ---
-# <a name="unit-testing"></a>單元測試
+# <a name="unit-testing-xamarinios-apps"></a>單元測試 Xamarin.iOS 應用程式
 
 本文件說明如何為 Xamarin.iOS 專案建立單元測試。
 為 Xamarin.iOS 進行單元測試時，是透過使用 Touch.Unit 架構來完成。該架構包含 iOS 測試執行器，以及修改過的 NUnit 版本 (稱為 [Touch.Unit](https://github.com/xamarin/Touch.Unit))；此版本會提供一組熟悉的 API，以供編寫單元測試之用。

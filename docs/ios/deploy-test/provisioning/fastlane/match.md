@@ -1,16 +1,18 @@
 ---
 title: 適用於 iOS 的 fastlane - match
+description: 本文件描述 fastlane 的 match 命令，它用來建立及維護 iOS 開發的程式碼簽署憑證和佈建設定檔。
 ms.prod: xamarin
 ms.assetid: C4A2A67E-0643-4CED-B1A9-79D65054F3CA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 729bfb5bf19034fc5eed2350a3fe5f481224a385
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 668538d4c9048175fb95f9d010bb5e95c800fea8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785446"
 ---
 # <a name="fastlane-for-ios---match"></a>適用於 iOS 的 fastlane - match
 

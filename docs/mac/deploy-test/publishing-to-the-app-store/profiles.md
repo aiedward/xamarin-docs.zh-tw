@@ -1,5 +1,5 @@
 ---
-title: 佈建設定檔
+title: Xamarin.Mac 應用程式的佈建設定檔
 description: 本指南逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要佈建設定檔。
 ms.prod: xamarin
 ms.assetid: bdff6c32-f7e3-4a97-a093-dbda48be8227
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/12/2017
-ms.openlocfilehash: 4f3120c45de5022dca1e522be251f453f9f5b4c7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9660d5373cc5213f648b145ef38ddbf25c7633ce
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792147"
 ---
-# <a name="provisioning-profiles"></a>佈建設定檔
+# <a name="provisioning-profiles-for-xamarinmac-apps"></a>Xamarin.Mac 應用程式的佈建設定檔
 
 佈建設定檔可讓開發人員將數項macOS (之前稱為 Mac OS X) 特有功能 (例如 iCloud 與推播通知) 併入其 Xamarin.Mac 應用程式。 開發人員必須為他們所開發會使用這些功能的每個應用程式建立、下載並安裝 Mac 佈建設定檔。
 

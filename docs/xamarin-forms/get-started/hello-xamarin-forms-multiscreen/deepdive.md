@@ -1,5 +1,6 @@
 ---
 title: Xamarin.Forms 多重畫面深度剖析
+description: 本文介紹 Xamarin.Forms 應用程式中的頁面巡覽和資料繫結，並示範其在多重畫面跨平台應用程式中的用法。
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: e4faa36c-6600-48c0-94c4-b4431103a4
@@ -7,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 2bf76a42fa05dce0d76cfd2169e8310d76216282
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 1c7edff3c71b9d7530b2acf21acaa06149156d43
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847029"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35242231"
 ---
 # <a name="xamarinforms-multiscreen-deep-dive"></a>Xamarin.Forms 多重畫面深度剖析
 

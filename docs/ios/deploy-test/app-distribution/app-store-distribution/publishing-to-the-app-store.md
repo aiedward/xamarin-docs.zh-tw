@@ -1,21 +1,20 @@
 ---
-title: 發佈至 App Store
-description: 本文將介紹如何設定、建置及發佈 Xamarin.iOS 應用程式，以透過 App Store 進行散發。 本文的逐步指南內容涵蓋如何準備應用程式的散發、如何使用 Apple 的工具提交應用程式以進行審查，以及最終如何將應用程式發佈至 App Store。
+title: 將 Xamarin.iOS 應用程式發佈到 App Store
+description: 本文件描述如何設定、建置及發佈 Xamarin.iOS 應用程式，以在 App Store 中發佈。
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 5d78cb81f27ce7478719ff9f11f4eb38fddc3981
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b8bea29e71e055621e7d0b85d3736ec6cc9ba3b4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785696"
 ---
-# <a name="publishing-to-the-app-store"></a>發佈至 App Store
-
-_本文將介紹如何設定、建置及發佈 Xamarin.iOS 應用程式，以透過 App Store 進行散發。本文的逐步指南內容涵蓋如何準備應用程式的散發、如何使用 Apple 的工具提交應用程式以進行審查，以及最終如何將應用程式發佈至 App Store。_
+# <a name="publishing-xamarinios-apps-to-the-app-store"></a>將 Xamarin.iOS 應用程式發佈到 App Store
 
 為了讓所有 iOS 裝置皆可取得應用程式，Apple 要求應用程式必須透過 *App Store* 發佈，這使應用程式市集成為了 iOS 應用程式的一站式購物地點。 在具有 500,000 個以上應用程式的商店中，各類應用程式的開發人員皆隨著此單一散發點的大成功獲得龐大利潤。 App Store 為應用程式開發人員同時提供散發與支付系統，是一套周全解決方案。
 

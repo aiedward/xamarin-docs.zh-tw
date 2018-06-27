@@ -1,19 +1,20 @@
 ---
-title: 部署及測試
-description: 本文件記錄討論圖示、效能及發行至 App Store 之指南的連結。
+title: 部署和測試 Xamarin.Mac 應用程式
+description: 本文件連結的各種指南，會描述如何部署和測試 Xamarin.Mac 應用程式。 連結的指南會討論應用程式圖示、效能及發佈至 App Store。
 ms.prod: xamarin
 ms.assetid: 2FF314C7-D926-9FEC-57A6-F421A0ED3A46
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/17/2018
-ms.openlocfilehash: 7e0af30b412a0a4c9d73009dad5d66d7762edbb9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4bf1643be8c7a8fc5371c2dda5cf8d5bf1b5ec1f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792079"
 ---
-# <a name="deployment-and-testing"></a>部署及測試
+# <a name="deploying-and-testing-xamarinmac-apps"></a>部署和測試 Xamarin.Mac 應用程式
 
 ## <a name="application-iconapp-iconmd"></a>[應用程式圖示](app-icon.md)
 

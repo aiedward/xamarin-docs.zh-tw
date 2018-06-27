@@ -1,5 +1,5 @@
 ---
-title: IPA 支援
+title: Xamarin.iOS 中的 IPA 支援
 description: 本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 IPA 檔案，以供測試或內部應用程式的內部作業散發使用。
 ms.prod: xamarin
 ms.assetid: D253C2DB-852E-6FC6-C9FD-574730B8DB19
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d63624ed486079f44e9756ee84612863e6176d7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 288ac813f23f281a1bbed375cadf5faa9d4ff9d0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784871"
 ---
-# <a name="ipa-support"></a>IPA 支援
+# <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS 中的 IPA 支援
 
 _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 IPA 檔案，以供測試或內部應用程式的內部作業散發使用。_
 

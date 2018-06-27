@@ -1,15 +1,17 @@
 ---
 title: 安裝 Xamarin 預覽版 (Windows)
+description: 本文件描述如何使用預覽發行通路在 Visual Studio 2017 上安裝 Xamarin 的預覽版本。
 ms.prod: xamarin
 ms.assetid: 9F730444-06E8-4B3F-8A19-CA95CD484FFA
 author: asb3993
 ms.author: amburns
 ms.date: 03/20/2018
-ms.openlocfilehash: 20b9bbfcdcc698f19c6400cd738ba7f6d5db7e44
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: d920dd688a7911ccf4002d67914c977da56f89e1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780681"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>安裝 Xamarin 預覽版 (Windows)
 

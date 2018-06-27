@@ -1,21 +1,20 @@
 ---
-title: 裝置佈建
-description: 成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。 本指南將探索如何要求開發憑證和設定檔、使用應用程式服務，以及將應用程式部署至裝置。
+title: Xamarin.iOS 的裝置佈建
+description: 本文件描述如何佈建裝置，使其可用於測試應用程式。 它也會討論如何設定應用程式，以便使用推播通知等功能。
 ms.prod: xamarin
 ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 5265ee366c7e3c0e79e54d320d3d6eb57c2fd92d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 9721cc40319f0b4d6f0869eabccb84256122fb02
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785784"
 ---
-# <a name="device-provisioning"></a>裝置佈建
-
-_成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。本指南將探索如何要求開發憑證和設定檔、使用應用程式服務，以及將應用程式部署至裝置。_
+# <a name="device-provisioning-for-xamarinios"></a>Xamarin.iOS 的裝置佈建
 
 開發 Xamarin.iOS 應用程式時，除了模擬器之外，將應用程式部署至實體裝置來測試應用程式也是必要步驟。 由於硬體限制 (例如記憶體) 或網路連線能力的緣故，裝置專屬的 Bug 和效能問題可能在裝置上執行時顯露出來。 若要在實體裝置上進行測試，必須「佈建」裝置，且必須告知 Apple 將使用該裝置進行測試。
 

@@ -1,5 +1,5 @@
 ---
-title: 電子錢包功能
+title: Xamarin.iOS 的電子錢包功能
 description: 為應用程式新增功能通常需要額外的佈建設定。 本指南說明「電子錢包」功能所需的設定。
 ms.prod: xamarin
 ms.assetid: BD9475E6-F586-488C-93D4-8A2A1629B99B
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: f41ba2b693b37f39ea49f62e322932537014a317
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 811c5bc707a5768e72ccb2d20541d16af67ab835
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785082"
 ---
-# <a name="wallet-capabilities"></a>電子錢包功能
+# <a name="wallet-capabilities-in-xamarinios"></a>Xamarin.iOS 的電子錢包功能
 
 _為應用程式新增功能通常需要額外的佈建設定。本指南說明「電子錢包」功能所需的設定。_
 

@@ -1,16 +1,18 @@
 ---
 title: 適用於 iOS 的 fastlane - sigh
+description: 本文件描述 fastlane 的 sigh 命令，它用來建立、更新及修復所有 Xamarin.iOS 的組建組態佈建設定檔。
 ms.prod: xamarin
 ms.assetid: CD17276F-2C8C-4A46-A54C-DD532EBD5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: ee04569fbfff84eafc5f813e6a25cbf6ad53f033
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8eedc86807035887cade48c42868649b362b7cb2
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785498"
 ---
 # <a name="fastlane-for-ios--sigh"></a>適用於 iOS 的 fastlane - sigh
 

@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/25/2018
-ms.openlocfilehash: 5b3061f30f6f120cf8edb41ccf5e70ae853aeb9e
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: ce86590b2d05f3b9141d1a5ba42df9274544f9ae
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34549232"
 ---
 # <a name="deployment-and-testing"></a>部署及測試
 
@@ -57,6 +58,11 @@ ms.lasthandoff: 05/03/2018
 ## <a name="xamarinandroid-performanceandroiddeploy-testperformancemd"></a>[Xamarin.Android 效能](~/android/deploy-test/performance.md)
 
 有許多技巧可增加利用 Xamarin.Android 建置之應用程式的效能。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
+
+## <a name="profiling-android-appsandroiddeploy-testprofilingmd"></a>[分析 Android 應用程式](~/android/deploy-test/profiling.md)
+
+本指南說明如何使用分析工具來檢查 Android 應用程式的效能和記憶體使用量。
+
 
 ## <a name="preparing-an-application-for-releaseandroiddeploy-testrelease-prepindexmd"></a>[準備可供發行的應用程式](~/android/deploy-test/release-prep/index.md)
 

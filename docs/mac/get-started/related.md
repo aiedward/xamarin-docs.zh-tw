@@ -1,19 +1,20 @@
 ---
-title: 相關文件
-description: 適用於 macOS 開發人員的其他文件連結。
+title: Xamarin.Mac – 相關文件
+description: 本文件為 Xamarin.Mac 開發人員提供相關文件的連結：Xamarin.iOS 文件、Apple Mac 開發人員中心，以及描述如何使用 Xamarin.Mac 建置使用者介面的各種指南。
 ms.prod: xamarin
 ms.assetid: 0a282c58-1c37-4f73-8440-85de2daf454a
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: ff26747a395b48163dbabf0b058f28427182d41a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1bef756d89a92d082bd5ee29e18047bc4bed2498
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792524"
 ---
-# <a name="related-documentation"></a>相關文件
+# <a name="xamarinmac--related-documentation"></a>Xamarin.Mac – 相關文件
 
 除了 [developer.xamarin.com](~/mac/get-started/index.md) 的 Mac 一節外，還有三個很棒的文件來源也可以協助解決 Xamarin.Mac 問題：
 

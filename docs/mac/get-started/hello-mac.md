@@ -1,6 +1,6 @@
 ---
-title: Hello, Mac
-description: 本指南逐步解說建立第一個 Xamarin.Mac 應用程式的步驟，並在程序中導入開發工具鏈，包括 Visual Studio for Mac、Xcode 和 Interface Builder。 它也導入將 UI 控制項公開到程式碼的「輸出」和「動作」，最後並說明如何建置、執行及測試 Xamarin.Mac 應用程式。
+title: Hello, Mac – 逐步解說
+description: 本文件會示範如何建立 Xamarin.Mac 應用程式，並介紹 Visual Studio for Mac、Xcode 和介面產生器。 並討論透過輸出和動作將 UI 控制項公開到程式碼，以及示範如何建置、執行及測試 Xamarin.Mac 應用程式。
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 37D0E9E6-979B-7069-B3BE-C5F0AF99BA72
@@ -8,13 +8,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: e5d87d42765480c97da392cf07b6599108895321
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 438bb8141818ccdb1aaf2fa604707d2fb7601cd5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792781"
 ---
-# <a name="hello-mac"></a>Hello, Mac
+# <a name="hello-mac--walkthrough"></a>Hello, Mac – 逐步解說
 
 Xamarin.Mac 允許在 C# 和 .NET 中使用與在 *OBJECTIVE-C* 和 *Xcode* 中開發時使用的相同 OS X 程式庫和介面控制項，來開發完整的原生 Mac 應用程式。 由於 Xamarin.Mac 直接與 Xcode 整合，開發人員可以使用 Xcode 的 _Interface Builder_ 來建立應用程式的使用者介面 (或選擇直接在 C# 程式碼中建立)。
 

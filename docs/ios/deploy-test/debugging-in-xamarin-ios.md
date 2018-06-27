@@ -1,19 +1,20 @@
 ---
-title: 偵錯
-description: Xamarin.iOS 應用程式可以使用 Visual Studio for Mac 或 Visual Studio 中的內建偵錯工具進行偵錯。
+title: 偵錯 Xamarin.iOS 應用程式
+description: 本文件描述如何在 Visual Studio for Mac 或 Visual Studio 2017 中使用偵錯工具來偵錯 Xamarin.iOS 應用程式，包括設定中斷點、無線偵錯等等。
 ms.prod: xamarin
 ms.assetid: 05460010-99E1-DC38-F855-2D691EF54484
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: e2e32170de258f46eb5a926db35bce33c0ca64de
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 494dfad0ba3d26147604ce1bca1de49fac318811
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785430"
 ---
-# <a name="debugging"></a>偵錯
+# <a name="debugging-xamarinios-apps"></a>偵錯 Xamarin.iOS 應用程式
 
 _Xamarin.iOS 應用程式可以使用 Visual Studio for Mac 或 Visual Studio 中的內建偵錯工具進行偵錯。_
 

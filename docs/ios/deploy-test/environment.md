@@ -1,17 +1,19 @@
 ---
-title: 環境
+title: Xamarin.iOS 應用程式的執行環境
+description: 本文件描述如何設定 Xamarin.iOS 應用程式的暫時性和永久性環境變數。 這些變數可在專案內容中指定，或當成 mtouch 封裝工具的額外引數。
 ms.prod: xamarin
 ms.assetid: 9801644A-89BB-4491-AD28-7F3B97D2CD62
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bc06ce3f3a26842340ce6e19741a8a7dfe8f086d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 246c65729f9327dd1ccf549603b4c2b1feb023e8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784962"
 ---
-# <a name="environment"></a>環境
+# <a name="execution-environment-for-xamarinios-apps"></a>Xamarin.iOS 應用程式的執行環境
 
 「執行環境」是一組環境變數，會影響程式的執行。 環境變數可在專案屬性中暫時設定，或透過將額外引數指定給 mtouch 封裝工具來永久設定。
 

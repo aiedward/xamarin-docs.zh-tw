@@ -1,21 +1,20 @@
 ---
-title: 快速入門
-description: 解如何透過這些深入指南從零到部署開發行動應用程式。
+title: 開始使用 Xamarin
+description: 本文件連結各種指南，描述如何開始使用 Xamarin 開發。 連結的內容會討論如何建置第一個應用程式、提供行動應用程式開發的一般簡介，並會查看 Xamarin University 的訓練。
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: de5b1499f95e6703e0c11adb1f76e1717a494e33
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3873236c64f1288a896c40d468f06b60f532a431
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780792"
 ---
-# <a name="getting-started"></a>快速入門
-
-透過這些深入指南了解如何從零開始開發行動應用程式到部署。
+# <a name="getting-started-with-xamarin"></a>開始使用 Xamarin
 
 在您開始之前，請先參閱[系統需求](requirements.md)及[安裝指示](installation/index.md)，以確認您已將一切準備就緒。
 

@@ -6,22 +6,23 @@ ms.assetid: A355A471-8195-4391-93FE-0000BCB17923
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/25/2018
-ms.openlocfilehash: a4ce36e28bd5b6dcf78d248b1f2ba951cad9b286
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/30/2018
+ms.openlocfilehash: e1c2a591450d8a5fd0aebe2bceb1d914a711512e
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732215"
 ---
 # <a name="debugging"></a>偵錯
 
 本節討論如何偵錯裝置或模擬器上的 Xamarin.Android 應用程式。
+
 ## <a name="debugging-overview"></a>偵錯概觀
 
 開發 Android 應用程式需要在實體硬體上或使用模擬器來執行應用程式。 使用硬體是最佳方式，但並不一定是最務實的做法。 在許多情況下，使用以下所述的其中一種模擬器來模擬 Android 硬體，會是較簡單且更符合成本效益的方式。
 
-
-### <a name="google-android-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[Google Android 模擬器 ](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
+### <a name="debugging-with-the-google-android-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[使用 Google Android 模擬器偵錯](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
 
 這些文章說明如何使用 Android SDK 隨附的預設模擬器。 此模擬器適用於 Visual Studio for Windows 和 Visual Studio for Mac。
 

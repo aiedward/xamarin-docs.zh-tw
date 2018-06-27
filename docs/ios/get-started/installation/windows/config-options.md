@@ -1,17 +1,18 @@
 ---
 title: 設定 Visual Studio 2017
-description: 本文說明 Visual Studio 2017 的各種 Xamarin.iOS 組態選項。
+description: 本文描述如何設定 Visual Studio 2017 以開發 Xamarin.iOS。 尤其著重討論如何設定已安裝的 Xamarin.iOS 版本、iOS 工具列以及 [方案平台] 下拉式功能表。
 ms.prod: xamarin
 ms.assetid: 22D82244-890D-4325-B3CC-C0AC49130BCA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/16/2018
-ms.openlocfilehash: ee08cf7d68bd9d10026f1c15d4438077349fe367
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.openlocfilehash: 70633877fb07f52ce4e7a399668be6268942b137
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785950"
 ---
 # <a name="configuring-visual-studio-2017"></a>設定 Visual Studio 2017
 
