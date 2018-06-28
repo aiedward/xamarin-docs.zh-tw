@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 15de334500ea25d22657c257a4a4fc6887cc122c
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 12b677c8cc4a709a865d2eaee3ea44a6babf1b05
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935424"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066646"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin 即時重新載入
 
@@ -28,7 +28,7 @@ Xamarin 即時重新載入可讓您**變更 XAML 看到其反映即時，而不�
 
 ## <a name="requirements"></a>需求
 
-* [Visual Studio 2017 15.7 版本或更高版本](https://www.visualstudio.com/vs/)或更新版本與**行動應用程式開發的.NET**工作負載。
+* [Visual Studio 2017 15.7 版本或更高版本](https://visualstudio.microsoft.com/vs/)或更新版本與**行動應用程式開發的.NET**工作負載。
 * [Xamarin.Forms 3.0.0 以上](https://www.nuget.org/packages/Xamarin.Forms/)或更新版本。
 
 ## <a name="getting-started"></a>快速入門
