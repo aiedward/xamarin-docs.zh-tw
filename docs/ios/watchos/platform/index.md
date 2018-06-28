@@ -6,17 +6,25 @@ ms.assetid: 13F23E01-BAED-43EB-A70E-3B30EF53D379
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 09/13/2016
-ms.openlocfilehash: 8ad4dc52c3bca0f54adb64bb97acaa23aeb1e590
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/25/2018
+ms.openlocfilehash: 16d10dd69223f404aac7c933302992a1544461e9
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791282"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066610"
 ---
 # <a name="watchos-platform-features"></a>watchOS 平台功能
 
-_Apple Watch watchOS 應用程式中包含的特定功能。_
+描述 watchOS 平台功能，例如 Apple Pay、 通知、 複雜性、 主動式建議、 健身應用程式和更多的各種指南的這個文件連結。
+
+## <a name="introduction-to-watchos-4introduction-to-watchos4md"></a>[watchOS 4 簡介](introduction-to-watchos4.md)
+
+本文件提供功能新增及更新 watchOS 4 中的高階的概觀。
+
+## <a name="introduction-to-watchos-3introduction-to-watchos3indexmd"></a>[watchOS 3 簡介](introduction-to-watchos3/index.md)
+
+本文說明 watchOS 3 中的新增和更新 Api。
 
 ## <a name="apple-pay-enhancementsioswatchosplatformapple-paymd"></a>[Apple Pay 增強功能](~/ios/watchos/platform/apple-pay.md)
 
@@ -26,22 +34,13 @@ _Apple Watch watchOS 應用程式中包含的特定功能。_
 
 watchOS 3 會介紹幾個背景工作的應用程式可以用來更新他們開啟之前，使用者需要其資訊確保它包含的內容。
 
-## <a name="introduction-to-watchos-4introduction-to-watchos4md"></a>[watchOS 4 簡介](introduction-to-watchos4.md)
-
-WatchOS 4 中的新功能。
-
-## <a name="introduction-to-watchos-3introduction-to-watchos3indexmd"></a>[watchOS 3 簡介](introduction-to-watchos3/index.md)
-
-本文介紹新的及修改 watchOS 3 中可用的 Api 的所有適用於 Xamarin 開發人員。
-
-##  <a name="notificationsnotificationsmd"></a>[通知](notifications.md)
+## <a name="notificationsnotificationsmd"></a>[通知](notifications.md)
 
 了解如何提供自訂監看式應用程式中處理的通知。
 
-##  <a name="complicationscomplicationsmd"></a>[複雜功能](complications.md)
+## <a name="complicationscomplicationsmd"></a>[複雜功能](complications.md)
 
 加入複雜功能支援 watch 錶面上顯示最新的資料。
-
 
 ## <a name="proactive-suggestionsioswatchosplatformproactive-suggestionsmd"></a>[主動式建議](~/ios/watchos/platform/proactive-suggestions.md)
 

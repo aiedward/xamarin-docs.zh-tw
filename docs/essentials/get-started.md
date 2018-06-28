@@ -5,12 +5,12 @@ ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: f0f6eebbd12041a7be2d8e2dc00a9146b40d675f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a42086f70eb81a761358655b3effb9f8f934c8d4
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783070"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37067287"
 ---
 # <a name="get-started-with-xamarinessentials"></a>開始使用 Xamarin.Essentials
 
@@ -63,6 +63,10 @@ Xamarin.Essentials 是可以加入任何現有的或新專案，使用 Visual St
 5. Xamarin.Essentials 需要平台專屬的設定：
 
     # <a name="androidtabandroid"></a>[Android](#tab/android)
+
+    Xamarin.Essentials 支援最小的 Android 4.4，對應至應用程式開發介面層級 19 版，但目標 Android 版本編譯必須 8.1，對應至應用程式開發介面層級 27。 （在 Visual Studio 中，下列兩個版本會在 Android 資訊清單索引標籤中的 Android 專案的 專案屬性 對話方塊中設定。在 Visual Studio for Mac 它們所設定的 Android 應用程式 索引標籤中的 Android 專案的專案選項對話方塊中）。 
+    
+    Xamarin.Essentials 安裝新版 27.0.2 它需要的 Xamarin.Android.Support 程式庫。 應用程式所需的任何其他 Xamarin.Android.Support 程式庫也應該更新為版本 27.0.2 透過 NuGet 套件管理員。 應用程式所使用的所有 Xamarin.Android.Support 程式庫應該相同，而且至少應該是 27.0.2 版本。 請參閱[疑難排解頁面](troubleshooting.md)您如有加入 Xamarin.Essentials NuGet 或 NuGets 更新方案中的問題。
 
     在 Android 專案的`MainLauncher`或任何`Activity`也就是必須在初始化啟動的 Xamarin.Essentials`OnCreate`方法：
 

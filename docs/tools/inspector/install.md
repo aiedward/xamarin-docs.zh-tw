@@ -6,12 +6,12 @@ ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: topgenorth
 ms.author: toopge
 ms.date: 06/19/2018
-ms.openlocfilehash: f7c5217a9c2d3881ca29094c3186e448975db6a3
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 690329aa1577c66b3aa2794342a8e367477d3a74
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268965"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066919"
 ---
 # <a name="inspector-installation-and-requirements"></a>偵測器的安裝和需求
 
@@ -19,13 +19,13 @@ ms.locfileid: "36268965"
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-1. 下載並安裝[Visual Studio Enterprise](https://www.visualstudio.com/vs/)選取**行動應用程式開發的.NET**工作負載。
+1. 下載並安裝[Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/)選取**行動應用程式開發的.NET**工作負載。
 1. [登入](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio)啟用您的企業訂閱。
 1. [檢查](~/tools/inspector/inspect.md)您自己的應用程式 ！
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-1. 下載並安裝[Visual Studio for Mac](https://www.visualstudio.com/vs/mac/)。
+1. 下載並安裝[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)。
 1. [登入](https://docs.microsoft.com/visualstudio/mac/activation)啟用您的企業訂閱。
 1. [檢查](~/tools/inspector/inspect.md)您自己的應用程式 ！
 
