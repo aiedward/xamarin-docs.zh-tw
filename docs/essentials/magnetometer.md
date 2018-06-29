@@ -5,12 +5,12 @@ ms.assetid: 64DD0D41-03E2-40DD-9EC8-101CA0ED852B
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 78ed943a0fa7ca0cb249a4ac030ea6b52dcfb537
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 2c02188b5282949559e0abc5fa1b61b6b451fc8e
+ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782933"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37080457"
 ---
 # <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials： 磁力計
 
@@ -77,6 +77,8 @@ Microteslas 中會傳回所有資料。
 - **遊戲**– 速率適合遊戲 （不保證會傳回在 UI 執行緒上）。
 - **一般**– 適用於螢幕方向變更預設速率。
 - **Ui** – 速率適用於一般使用者介面。
+
+如果您的事件處理常式不一定，在 UI 執行緒上執行，如果事件處理常式需要存取使用者介面項目，使用[ `MainThread.BeginInvokeOnMainThread` ](main-thread.md) UI 執行緒上執行該程式碼的方法。
 
 ## <a name="api"></a>API
 

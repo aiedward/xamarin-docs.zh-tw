@@ -5,12 +5,12 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: d5dfdcb11754b1e08e7768a17003a14117e795ea
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 11749107403fc99e1d49b63ee3b50ff105abaa57
+ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783187"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37080283"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials： 地理位置
 
@@ -88,7 +88,7 @@ try
 
     if (location != null)
     {
-        Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}");
+        Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
     }
 }
 catch (FeatureNotSupportedException fnsEx)
@@ -105,6 +105,8 @@ catch (Exception ex)
 }
 ```
 
+高度永遠無法使用。 如果它無法使用，`Altitude`屬性可能是`null`值可能為零。 如果高度可用，值會位於上述 sea 層級上面的計量器。 
+
 若要查詢目前的裝置[位置](xref:Xamarin.Essentials.Location)座標，`GetLocationAsync`可用。 建議您最好傳入完整`GeolocationRequest`和`CancellationToken`因為它可能需要一些時間才能取得裝置的位置。
 
 ```csharp
@@ -115,7 +117,7 @@ try
 
     if (location != null)
     {
-        Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}");
+        Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
     }
 }
 catch (FeatureNotSupportedException fnsEx)
@@ -175,6 +177,22 @@ catch (Exception ex)
 | Android | 0-100 |
 | iOS | ~0 |
 | UWP | < = 10 |
+
+<a name="calculate-distance" />
+
+## <a name="distance-between-two-locations"></a>兩個位置之間的距離
+
+[ `Location` ](xref:Xamarin.Essentials.Location)和[ `LocationExtensions` ](xref:Xamarin.Essentials.LocationExtensions)類別定義`CalculateDistance`方法可讓您計算兩個地理位置之間的距離。 此導出距離不考慮道路或其他路徑，且只的最短距離地球表面沿著兩個點之間也稱為_優越圓形距離_或將，距離 」 以 crow 飛。 」
+
+以下為範例：
+
+```csharp
+Location boston = new Location(42.358056, -71.063611);
+Location sanFrancisco = new Location(37.783333, -122.416667);
+double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Miles);
+```
+
+`Location`建構函式具有緯度和經度的引數的順序。 緯度值北方赤道，而正數的經度值以東子午線正數。 使用最後的引數`CalculateDistance`指定英哩或公里為單位。 `Location`類別也會定義`KilometersToMiles`和`MilesToKilometers`兩個單位之間進行轉換的方法。
 
 ## <a name="api"></a>API
 

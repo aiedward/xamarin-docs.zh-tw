@@ -5,12 +5,12 @@ ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 30ef4c7c155b09c06c8bc36404b92c2a91b7eb0d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 63818014a9b3bdbef479055cbbcfbf8d348080fc
+ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782290"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37080458"
 ---
 # <a name="xamarinessentials-compass"></a>Xamarin.Essentials： 指南針
 
@@ -74,6 +74,8 @@ public class CompassTest
 - **遊戲**– 速率適合遊戲 （不保證會傳回在 UI 執行緒上）。
 - **一般**– 適用於螢幕方向變更預設速率。
 - **Ui** – 速率適用於一般使用者介面。
+
+如果您的事件處理常式不一定，在 UI 執行緒上執行，如果事件處理常式需要存取使用者介面項目，使用[ `MainThread.BeginInvokeOnMainThread` ](main-thread.md) UI 執行緒上執行該程式碼的方法。
 
 ## <a name="platform-implementation-specifics"></a>平台實作的特性
 

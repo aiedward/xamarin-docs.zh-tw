@@ -5,12 +5,12 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 5fec06fd6f0c13a75040d940a11811ef97c3bcc3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 97dc5494f37da1590178bc90feb673889598bdd7
+ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782735"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37080453"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -44,8 +44,11 @@ Android、 iOS 和 UWP 提供唯一的作業系統與平台開發人員可存取
 * [地理位置](geolocation.md?context=xamarin/xamarin-forms)– 擷取裝置的 GPS 位置。
 * [迴轉儀](gyroscope.md?context=xamarin/xamarin-forms)– 追蹤繞裝置的三個主要的軸旋轉。
 * [磁力計](magnetometer.md?context=xamarin/xamarin-forms)– 偵測相對於地球磁場的裝置的方向。
+* [MainThread](main-thread.md?content=xamarin/xamarin-forms) – 應用程式的主執行緒上執行的程式碼。 
 * [開啟瀏覽器](open-browser.md?context=xamarin/xamarin-forms)– 快速且輕鬆地瀏覽器開啟至特定網站。
+* [方向的感應器](orientation-sensor.md?context=xamarin/xamarin-forms)– 擷取三個維度空間中裝置的方向。
 * [電話撥號員](phone-dialer.md?context=xamarin/xamarin-forms)– 開啟 電話撥號員。
+* [電源](power.md?context=xamarin/xamarin-forms)– 取得裝置的能源保護裝置狀態。
 * [喜好設定](preferences.md?context=xamarin/xamarin-forms)– 快速且輕鬆地新增永續性的喜好設定。
 * [螢幕鎖定](screen-lock.md?context=xamarin/xamarin-forms)– 讓醒著的 [裝置] 畫面。
 * [安全儲存體](secure-storage.md?context=xamarin/xamarin-forms)– 安全地儲存資料。
