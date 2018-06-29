@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/03/2018
-ms.openlocfilehash: e62ac290423db1c18e7e50d55b2b3550f99d1533
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: fd9ebc7922428d2779e6985379c3118274a46aff
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34549259"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066659"
 ---
 # <a name="profiling-android-apps"></a>分析 Android 應用程式
 
@@ -30,7 +30,7 @@ ms.locfileid: "34549259"
 Xamarin Profiler 是獨立的應用程式，與 Visual Studio 和 Visual Studio for Mac 整合以從 IDE 中分析 Xamarin 應用程式。 如需使用 Xamarin Profiler 的詳細資訊，請參閱 [Xamarin Profiler](~/tools/profiler/index.md)。
 
 > [!NOTE]
-> 您必須是 [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) 的訂閱者才能解除鎖定 Visual Studio Enterprise on Windows 或 Visual Studio for Mac 中的 Xamarin Profiler 功能。
+> 您必須是 [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/compare/) 的訂閱者才能解除鎖定 Visual Studio Enterprise on Windows 或 Visual Studio for Mac 中的 Xamarin Profiler 功能。
  
 ## <a name="android-studio-profiler"></a>Android Studio Profiler
 

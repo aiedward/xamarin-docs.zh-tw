@@ -6,12 +6,12 @@ ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
 author: asb3993
 ms.author: amburns
 ms.date: 09/29/2017
-ms.openlocfilehash: 419addde14d5be99833b4611a4af2a1be8756b9d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 6c2fe10b9b29901dfbb6173df131d093fe726bff
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781474"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066948"
 ---
 # <a name="installing-xamarin-in-visual-studio-2017"></a>在 Visual Studio 2017 中安裝 Xamarin
 
@@ -36,7 +36,7 @@ ms.locfileid: "34781474"
 Xamarin 可以隨著新的 Visual Studio 2017 安裝一起安裝。
 若要這麼做，請使用下列步驟：
 
-1. 從 [Visual Studio](https://www.visualstudio.com/vs/) 頁面下載 Visual Studio 2017 Community、Visual Studio Professional 或 Visual Studio Enterprise (下載連結是在底部提供)。
+1. 從 [Visual Studio](https://visualstudio.microsoft.com/vs/) 頁面下載 Visual Studio 2017 Community、Visual Studio Professional 或 Visual Studio Enterprise (下載連結是在底部提供)。
 
 2. 按兩下已下載的套件來啟動安裝。
 

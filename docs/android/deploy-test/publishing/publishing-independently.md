@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: f7ba0620a4639ff62e2d75d7cf8f02fcc01faac5
-ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
+ms.openlocfilehash: 2cb2167f534251e15455e11b6a2c85f53fb48b8c
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33113469"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066997"
 ---
 # <a name="publishing-independently"></a>獨立發行
 
@@ -28,7 +28,7 @@ ms.locfileid: "33113469"
 
 -   **Visual Studio Enterprise** &ndash; 適用於任何規模的團隊 (僅限 Windows)。 此授權包含企業功能、標準或雲端訂用帳戶。
 
-請瀏覽 [visualstudio.com](https://www.visualstudio.com/xamarin/) 來下載 Community 版，或深入了解如何購買 Professional 和 Enterprise 版。
+請瀏覽 [visualstudio.com](https://visualstudio.microsoft.com/xamarin/) 來下載 Community 版，或深入了解如何購買 Professional 和 Enterprise 版。
 
 
 ## <a name="allow-installation-from-unknown-sources"></a>允許從未知來源進行安裝

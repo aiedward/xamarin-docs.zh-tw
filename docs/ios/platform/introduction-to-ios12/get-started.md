@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/25/2018
-ms.openlocfilehash: c2ce57934d39b82725722d4e49051cbf3ded5df1
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.openlocfilehash: 887a5cc72b951b2f115cdc6998a6cf6ca7a94df0
+ms.sourcegitcommit: 4939748d537cbb1934a3b5b22add39ef3d9aa64d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/28/2018
-ms.locfileid: "37067295"
+ms.locfileid: "37091554"
 ---
 # <a name="getting-started-with-ios-12-and-tvos-12"></a>開始使用 iOS 12 和 tvOS 12
 
