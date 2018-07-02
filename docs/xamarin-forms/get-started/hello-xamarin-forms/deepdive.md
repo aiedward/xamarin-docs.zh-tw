@@ -7,13 +7,13 @@ ms.assetid: d97aa580-1eb9-48b3-b15b-0d7421ea7ae
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/10/2018
-ms.openlocfilehash: 011ec94aca4e5110c704b83cb24cf6260338dfbd
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/13/2018
+ms.openlocfilehash: 7c8eee5fc7075f23221c06dab29b83b1d5e01ffc
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35243622"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269066"
 ---
 # <a name="xamarinforms-deep-dive"></a>Xamarin.Forms 深度剖析
 
@@ -62,15 +62,11 @@ Visual Studio for Mac 遵循 Visual Studio 的做法，將程式碼組織成「�
 
 ## <a name="anatomy-of-a-xamarinforms-application"></a>Xamarin.Forms 應用程式的結構
 
-下列螢幕擷取畫面顯示 Visual Studio for Mac 中的 Phoneword PCL 專案內容：
+以下螢幕擷取畫面顯示 Visual Studio for Mac 中 Phoneword .NET Standard 程式庫專案的內容：
 
-![](deepdive-images/xs/pcl-project.png "Phoneword PCL 專案內容")
+![](deepdive-images/xs/library-project.png "Phoneword .NET Standard 程式庫專案內容")
 
-此專案包含三個資料夾：
-
-- **References** - 包含建置及執行應用程式所需的組件。 展開 .NET Portable Subset 資料夾可顯示 .NET 組件的參考，例如 [System](http://msdn.microsoft.com/library/system%28v=vs.110%29.aspx) \(機器翻譯\)、System.Core 和 [System.Xml](http://msdn.microsoft.com/library/system.xml%28v=vs.110%29.aspx) \(機器翻譯\)。 展開 [From Packages] 資料夾可顯示 Xamarin.Forms 組件的參考。
-- **Packages** - [Packages] 目錄中含有 [NuGet](https://www.nuget.org) \(英文\) 套件，可簡化在應用程式中使用協力廠商程式庫的程序。 以滑鼠右鍵按一下資料夾，然後選取快顯功能表中的 [更新] 選項，可以將這些封裝更新為最新版本。
-- **Properties** - 包含 **AssemblyInfo.cs**，也就是 .NET 組件中繼資料檔案。 建議您在此檔案填入您應用程式的一些基本資訊。 如需有關這個檔案的詳細資訊，請參閱 MSDN 上的 [AssemblyInfo 類別](http://msdn.microsoft.com/library/microsoft.visualbasic.applicationservices.assemblyinfo(v=vs.110).aspx)。
+此專案具有 [相依性] 節點，其中包含 [NuGet] 和 [SDK] 節點。 [NuGet] 節點包含已新增到專案中的 Xamarin.Forms NuGet 套件，而 [SDK] 節點則包含 `NETStandard.Library` 中繼套件，此中繼套件參考一組定義 .NET Standard 的完整 NuGet 套件。
 
 -----
 
@@ -81,7 +77,6 @@ Visual Studio for Mac 遵循 Visual Studio 的做法，將程式碼組織成「�
 - **IDialer.cs** - `IDialer` 介面，指定 `Dial` 方法必須由任何實作類別提供。
 - **MainPage.xaml** - `MainPage` 類別的 XAML 標記，定義應用程式啟動時所顯示之頁面的 UI。
 - **MainPage.xaml.cs** - `MainPage` 類別的程式碼後置，其中包含使用者與頁面互動時所執行的商務邏輯。
-- **packages.config** - (僅適用於 Visual Studio for Mac) XML 檔案，其中包含專案所用 NuGet 套件的相關資訊，用以追蹤所需的套件及其個別版本。 Visual Studio for Mac 和 Visual Studio 都可以設定為與其他使用者共用原始程式碼時，自動還原任何缺少的 NuGet 封裝。 此檔案的內容由 NuGet 套件管理員所控制，而且不得以手動方式編輯。
 - **PhoneTranslator.cs** - 商務邏輯，負責將電話文字轉換為從 **MainPage.xaml.cs** 叫用的電話號碼。
 
 如需有關 Xamarin.iOS 應用程式結構的詳細資訊，請參閱 [Xamarin.iOS 應用程式的結構](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy)。 如需有關 Xamarin.Android 應用程式結構的詳細資訊，請參閱 [Xamarin.Android 應用程式的結構](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy)。
@@ -99,8 +94,6 @@ Xamarin.Forms 應用程式的架構方式與傳統的跨平台應用程式相同
 Xamarin.Forms 應用程式的架構方式與傳統的跨平台應用程式相同。 共用程式碼通常放在 .NET Standard 程式庫中，而平台專用的應用程式則會取用共用程式碼。 下圖顯示此 Phoneword 應用程式關聯性的概觀：
 
 ![](deepdive-images/xs/architecture.png "Phoneword 架構")
-
-如需有關 PCL 的詳細資訊，請參閱[可攜式類別庫簡介](~/cross-platform/app-fundamentals/pcl.md)。
 
 -----
 
@@ -153,23 +146,26 @@ namespace Phoneword.iOS
 
 ### <a name="android"></a>Android
 
-為了在 Android 中啟動 Xamarin.Forms 初始頁面，Phoneword.Droid 專案包含了使用 `MainLauncher` 屬性來建立 `Activity` 的程式碼，其中活動會從 `FormsApplicationActivity` 類別繼承，如以下程式碼範例所示：
+為了在 Android 中啟動 Xamarin.Forms 初始頁面，Phoneword.Droid 專案包含了使用 `MainLauncher` 屬性來建立 `Activity` 的程式碼，其中活動會從 `FormsAppCompatActivity` 類別繼承，如以下程式碼範例所示：
 
 ```csharp
 namespace Phoneword.Droid
 {
-    [Activity(Label = "Phoneword",
-              Icon = "@drawable/icon",
+    [Activity(Label = "Phoneword", 
+              Icon = "@mipmap/icon", 
+              Theme = "@style/MainTheme", 
               MainLauncher = true,
               ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         internal static MainActivity Instance { get; private set; }
 
         protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(bundle);
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
 
+            base.OnCreate(bundle);
             Instance = this;
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());

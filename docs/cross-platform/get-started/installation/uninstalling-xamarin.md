@@ -6,12 +6,12 @@ ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: d5cf15b8ecd225fb75a3cfa0017cb84bc13cce1b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 444559672f25b13b7d3a769d6de4bd6384174965
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782017"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268884"
 ---
 # <a name="uninstalling-xamarin"></a>解除安裝 Xamarin
 
@@ -27,7 +27,7 @@ ms.locfileid: "34782017"
 - [Xamarin.Android](#uninstallandroid)
 - [Xamarin.iOS](#uninstallios)
 - [Xamarin.Mac](#uninstallmac)
-- [Inspector 與 Workbooks](#uninstallworkbooks)
+- [活頁簿](#uninstallworkbooks)
 - [Xamarin Profiler](#uninstallprofiler)
 - [安裝程式](#uninstallinstaller)
 
@@ -146,9 +146,9 @@ rm -rf ~/Library/Xamarin.Mac
 
 <a name="uninstallworkbooks" />
 
-### <a name="uninstall-workbooks-and-inspector"></a>解除安裝 Workbooks 和 Inspector
+### <a name="uninstall-workbooks"></a>解除安裝 Workbooks
 
-若要移除 Xamarin Inspector 與 Workbooks 1.2.2 版及更新版本，請在終端機內使用下列命令：
+若要移除 Xamarin Workbooks 1.2.2 版及更新版本，請在終端機內使用下列命令：
 
 ```bash
 sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall

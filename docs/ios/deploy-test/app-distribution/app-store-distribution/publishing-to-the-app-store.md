@@ -7,14 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: b8bea29e71e055621e7d0b85d3736ec6cc9ba3b4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 489d9fa569b083f5cb655dc503ab4fa551810b6d
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785696"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209469"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>將 Xamarin.iOS 應用程式發佈到 App Store
+
+> [!IMPORTANT]
+> Apple [已宣告](https://developer.apple.com/news/?id=05072018a)從 2018 年 7 月開始，提交至 App Store 的所有應用程式和更新都必須是使用 iOS 11 SDK 建置，且必須[支援 iPhone X 顯示器](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)。
 
 為了讓所有 iOS 裝置皆可取得應用程式，Apple 要求應用程式必須透過 *App Store* 發佈，這使應用程式市集成為了 iOS 應用程式的一站式購物地點。 在具有 500,000 個以上應用程式的商店中，各類應用程式的開發人員皆隨著此單一散發點的大成功獲得龐大利潤。 App Store 為應用程式開發人員同時提供散發與支付系統，是一套周全解決方案。
 
@@ -231,7 +234,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 1. 選取 [iOS 套件組合簽署] ，並將佈建設定檔變更為 App Store 佈建設定檔：
 
     ![](publishing-to-the-app-store-images/ipa01.png "選取 [iOS 套件組合簽署]，並將佈建設定檔變更為 App Store 佈建設定檔")
-1. 選取 [iOS IPA Options] (iOS IPA 選項) 並從 [組態] 下拉式清單選取 [臨機操作]，若 [臨機操作] 不存在則請改選 [發行]：
+1. 選取 [iOS IPA 選項] > [組態] > [臨機操作] (如果 [臨機操作] 不是選擇項目，請改為選取 [發行])，並檢查建置 IPA 檔案的核取方塊：
 
     ![](publishing-to-the-app-store-images/imagevs02.png "從 [組態] 下拉式清單選取 [臨機操作]")
 
