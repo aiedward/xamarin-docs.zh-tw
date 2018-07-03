@@ -6,13 +6,13 @@ ms.assetid: A355A471-8195-4391-93FE-0000BCB17923
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: e1c2a591450d8a5fd0aebe2bceb1d914a711512e
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: 1ed6ec57365c5d3a861dd3fd947a2ad195ce5357
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732215"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935382"
 ---
 # <a name="debugging"></a>偵錯
 
@@ -22,13 +22,9 @@ ms.locfileid: "34732215"
 
 開發 Android 應用程式需要在實體硬體上或使用模擬器來執行應用程式。 使用硬體是最佳方式，但並不一定是最務實的做法。 在許多情況下，使用以下所述的其中一種模擬器來模擬 Android 硬體，會是較簡單且更符合成本效益的方式。
 
-### <a name="debugging-with-the-google-android-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[使用 Google Android 模擬器偵錯](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
+### <a name="debugging-on-the-android-emulatorandroiddeploy-testdebuggingdebug-on-emulatormd"></a>[Run Apps on the Android Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) (在 Android Emulator 上執行應用程式)
 
-這些文章說明如何使用 Android SDK 隨附的預設模擬器。 此模擬器適用於 Visual Studio for Windows 和 Visual Studio for Mac。
-
-### <a name="visual-studio-android-emulatorandroiddeploy-testdebuggingvisual-studio-android-emulatormd"></a>[Visual Studio Android 模擬器](~/android/deploy-test/debugging/visual-studio-android-emulator.md)
-
-這篇文章說明如何使用 Visual Studio 2015 內建的 Android 模擬器，來針對您的 Xamarin.Android 應用程式進行偵錯和測試。 如果您使用 Visual Studio 2015 且不需要自訂裝置設定檔，此模擬器就會是您的理想選擇。
+本文說明如何從 Visual Studio 啟動 Android Emulator，並在虛擬裝置中啟動您的應用程式。
 
 ### <a name="debugging-on-a-deviceandroiddeploy-testdebuggingdebug-on-devicemd"></a>[在裝置上進行偵錯](~/android/deploy-test/debugging/debug-on-device.md)
 
@@ -39,4 +35,4 @@ ms.locfileid: "34732215"
 開發人員所使用的其中一個非常常見的應用程式偵錯技巧就是使用 `Console.WriteLine`。 不過，在 Android 這類行動平台上並沒有主控台。 Android 裝置會提供一個記錄檔，您在撰寫應用程式時可能會需要用到此記錄檔。 由於擷取此記錄檔時所輸入命令的緣故，因此這個記錄檔有時稱為 **logcat**。 本文說明如何使用 **logcat**。
 
 > [!WARNING]
-> 請注意，**Xamarin Android Player** 已被取代。 如需詳細資訊，請參閱[這篇部落格文章中的公告](https://blog.xamarin.com/live-from-dotnetconf-cycle-7-xamarin-studio-6-and-more/) \(英文\)。
+> 請注意，**Xamarin Android Player** 已被取代。 如需詳細資訊，請參閱[這篇部落格文章中的公告](https://blog.xamarin.com/live-from-dotnetconf-cycle-7-xamarin-studio-6-and-more/) \(英文\)。 此外，**Visual Studio Android Emulator** 已取代為 Visual Studio 2017 Android Emulator。

@@ -6,13 +6,13 @@ ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/02/2018
-ms.openlocfilehash: 888f126d3e58b0300ba7ce3ad1cb5a8001fc545a
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: a7c1aeafd94d7e2639617cda13312ee8a09e2c94
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733387"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935324"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>使用 Android Device Manager 管理虛擬裝置
 
@@ -28,7 +28,7 @@ _本文說明如何使用 Android Device Manager 建立和設定可模擬實體 
 
 [![[裝置] 索引標籤中 Android Device Manager 的螢幕擷取畫面](device-manager-images/win/01-devices-dialog-sml.png)](device-manager-images/win/01-devices-dialog.png#lightbox)
 
-您會使用 Android Device Manager，來建立和設定可在 [Google Android 模擬器](~/android/deploy-test/debugging/android-sdk-emulator/index.md)中執行的「Android 虛擬裝置」(AVD)。
+您會使用 Android Device Manager，來建立和設定在 [Android Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) 中執行的 _Android 虛擬裝置_ (AVD)。
 每個 AVD 都是可模擬實體 Android 裝置的模擬器組態。 這讓您能夠在模擬不同實體 Android 裝置的各種組態中，執行並測試應用程式。
 
 ## <a name="requirements"></a>需求
@@ -48,7 +48,7 @@ _本文說明如何使用 Android Device Manager 建立和設定可模擬實體 
 
 [![正在從 [工具] 功能表啟動](device-manager-images/win/04-tools-menu-sml.png)](device-manager-images/win/04-tools-menu.png#lightbox)
 
-如果在啟動時看到下列錯誤對話方塊，請參閱[針對模擬器設定問題進行疑難排解](~/android/get-started/installation/android-emulator/troubleshooting.md)以取得因應措施的指示：
+如果您在啟動時看到下列錯誤對話方塊，請參閱 [Android Emulator Troubleshooting](~/android/get-started/installation/android-emulator/troubleshooting.md) (Android Emulator 疑難排解) 一節來取得因應措施的指示：
 
 ![Android SDK 執行個體錯誤](device-manager-images/win/32-sdk-error.png)
 
@@ -165,7 +165,7 @@ _本文說明如何使用 Android Device Manager 建立和設定可模擬實體 
 
     [![按一下 [在檔案總管中顯示] 的結果](device-manager-images/win/24-reveal-in-explorer-sml.png)](device-manager-images/win/24-reveal-in-explorer.png#lightbox)
 
--   **重設為原廠設定** &ndash; 當裝置正在執行時，將選取的裝置重設為其預設設定，清除對其內部狀態所做的任何使用者變更 (這也會清除目前的[快速開機](~/android/deploy-test/debugging/android-sdk-emulator/running-the-emulator.md#quick-boot)快照集，如果有的話)。 這項變更不會改變您在建立和編輯期間對虛擬裝置所做的修改。 隨即會出現一個對話方塊，提醒您此重設是無法復原的。 按一下 [清除使用者資料] 以確認重設。
+-   **重設為原廠設定** &ndash; 當裝置正在執行時，將選取的裝置重設為其預設設定，清除對其內部狀態所做的任何使用者變更 (這也會清除目前的[快速開機](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)快照集，如果有的話)。 這項變更不會改變您在建立和編輯期間對虛擬裝置所做的修改。 隨即會出現一個對話方塊，提醒您此重設是無法復原的。 按一下 [清除使用者資料] 以確認重設。
 
 -   **刪除** &ndash; 永久刪除所選取的虛擬裝置。
     隨即會出現一個對話方塊，提醒您刪除裝置是無法復原的。 如果您確定要刪除裝置，按一下 [刪除]。
@@ -181,7 +181,7 @@ _本文說明如何使用 Android Device Manager 建立和設定可模擬實體 
 > 本指南僅適用於 Visual Studio for Mac。
 Xamarin Studio 與 Android Device Manager 不相容。
 
-您會使用 Android Device Manager，來建立和設定可在 [Google Android 模擬器](~/android/deploy-test/debugging/android-sdk-emulator/index.md)中執行的「Android 虛擬裝置」(AVD)。
+您會使用 Android Device Manager，來建立和設定在 [Android Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) 中執行的 *Android 虛擬裝置* (AVD)。
 每個 AVD 都是可模擬實體 Android 裝置的模擬器組態。 這讓您能夠在模擬不同實體 Android 裝置的各種組態中，執行並測試應用程式。
 
 ## <a name="requirements"></a>需求
@@ -320,15 +320,113 @@ Xamarin Studio 與 Android Device Manager 不相容。
 
 -----
 
+## <a name="troubleshooting"></a>疑難排解
+
+下列章節說明如何診斷和因應使用 Android Device Manager 設定虛擬裝置時可能發生的問題。
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+### <a name="android-sdk-in-non-standard-location"></a>Android SDK 不在標準位置上
+
+Android SDK 通常會安裝於下列位置：
+
+**C:\\Program Files (x86)\\Android\\android-sdk**
+
+如果 SDK 不是安裝在此位置，您在啟動 Android Device Manager 時可能會收到這個錯誤：
+
+![Android SDK 執行個體錯誤](troubleshooting-images/win/01-sdk-error.png)
+
+若要解決這個問題，請執行下列動作：
+
+1. 從 Windows 桌面，瀏覽至 **C:\\Users\\*username*\\AppData\\Roaming\\XamarinDeviceManager**：
+
+    ![Android Device Manager 記錄檔位置](troubleshooting-images/win/02-log-files.png)
+
+2. 按兩下以開啟其中一個記錄檔，並找出 **Config file path**。 例如: 
+
+    [![記錄檔中的 Config file path](troubleshooting-images/win/03-config-file-path-sml.png)](troubleshooting-images/win/03-config-file-path.png#lightbox)
+
+3. 瀏覽至此位置，然後按兩下 **user.config** 加以開啟。 
+
+4. 在 **user.config** 中，找出 **&lt;UserSettings&gt;** 元素，並在其中新增 **AndroidSdkPath** 屬性。 將此屬性設定為電腦上安裝 Android SDK 的路徑，並儲存檔案。 例如，如果 Android SDK 安裝於 **C:\\Programs\\Android\\SDK**，則 **&lt;UserSettings&gt;** 看起來如下：
+        
+    ```xml
+    <UserSettings SdkLibLastWriteTimeUtcTicks="636409365200000000" AndroidSdkPath="C:\Programs\Android\SDK" />
+    ```
+
+完成對 **user.config** 的變更後，您應該就能啟動 Android Device Manager。
+
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Android Oreo 上的快照功能會停用 WiFi
+
+如果您有針對具有模擬 Wi-Fi 存取的 Android Oreo 設定 AVD，在使用快照功能後重新啟動 AVD 可能會造成 Wi-Fi 存取被停用。
+
+若要解決這個問題：
+
+1. 在 Android Device Manager 中選取 AVD。
+
+2. 在其他選項功能表中，按一下 [在檔案總管中顯示]。
+
+3. 瀏覽至 [快照] > [default_boot]。
+
+4. 刪除 **snapshot.pb** 檔案：
+
+    ![snapshot.pb 檔案的位置](troubleshooting-images/win/05-delete-snapshot.png)
+
+5. 重新啟動 AVD。 
+
+做出這些變更之後，AVD 將會重新啟動為允許 Wi-Fi 再次運作的狀態。
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Android Oreo 上的快照功能會停用 WiFi
+
+如果您有針對具有模擬 Wi-Fi 存取的 Android Oreo 設定 AVD，在使用快照功能後重新啟動 AVD 可能會造成 Wi-Fi 存取被停用。
+
+若要解決這個問題：
+
+1. 在 Android Device Manager 中選取 AVD。
+
+2. 在其他選項功能表中，按一下 [在尋找工具中顯示]。
+
+3. 瀏覽至 [快照] > [default_boot]。
+
+4. 刪除 **snapshot.pb** 檔案：
+
+    [![snapshot.pb 檔案的位置](troubleshooting-images/mac/02-delete-snapshot-sml.png)](troubleshooting-images/mac/02-delete-snapshot.png#lightbox)
+
+5. 重新啟動 AVD。 
+
+做出這些變更之後，AVD 將會重新啟動為允許 Wi-Fi 再次運作的狀態。
+
+-----
+
+### <a name="generating-a-bug-report"></a>產生問題報告
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+如果您發現 Android Device Manager 的問題且無法使用上述疑難排解提示來解決，請以滑鼠右鍵按一下標題列，然後選取 [產生 Bug 報告] 來提出問題報告：
+
+[![建檔 Bug 報告的功能表項目位置](troubleshooting-images/win/04-bug-report-sml.png)](troubleshooting-images/win/04-bug-report.png#lightbox)
+
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+如果您發現 Android Device Manager 的問題且無法使用上述疑難排解提示來解決，請按一下 [說明] > [產生問題報告] 來提出問題報告：
+
+[![建檔 Bug 報告的功能表項目位置](troubleshooting-images/mac/01-bug-report-sml.png)](troubleshooting-images/mac/01-bug-report.png#lightbox)
+
+
+-----
+
 ## <a name="summary"></a>總結
 
-本指南引進適用於 Visual Studio for Mac 和 Visual Studio Tools for Xamarin 的 Android Device Manager。 其中說明了必要的功能，例如，啟動和停止 Android 模擬器、選取要執行的 Android 虛擬裝置 (AVD)、建立新的虛擬裝置，以及如何編輯虛擬裝置。 它也會說明如何編輯設定檔硬體屬性以進行進一步自訂。
+本指南引進適用於 Visual Studio for Mac 和 Visual Studio Tools for Xamarin 的 Android Device Manager。 其中說明了必要的功能，例如，啟動和停止 Android 模擬器、選取要執行的 Android 虛擬裝置 (AVD)、建立新的虛擬裝置，以及如何編輯虛擬裝置。 它說明如何編輯設定檔硬體內容，以進一步自訂，並提供常見問題的疑難排解的秘訣。
 
 
 ## <a name="related-links"></a>相關連結
 
 - [對 Android SDK 工具所做的變更](~/android/troubleshooting/sdk-cli-tooling-changes.md)
-- [使用 Android SDK 模擬器進行偵錯](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
+- [Run Apps on the Android Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) (在 Android Emulator 上執行應用程式)
 - [SDK 工具版本資訊 (Google)](https://developer.android.com/studio/releases/sdk-tools)
 - [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)

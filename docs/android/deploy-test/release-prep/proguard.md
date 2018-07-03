@@ -1,27 +1,27 @@
 ---
 title: ProGuard
-description: ProGuard 是 Java 類別檔案壓縮工具、最佳化工具、混淆器及預先驗證器。 它可以偵測和移除未使用的程式碼、分析位元組程式碼並予以最佳化，然後混淆類別和類別成員。 本指南說明 ProGuard 的運作方式、如何在專案中予以啟用，以及如何加以設定。 文中也提供數個 ProGuard 組態範例。
+description: Xamarin.Android ProGuard 是 Java 類別檔案壓縮工具、最佳化工具和預先驗證器。 它可以偵測和移除未使用的程式碼，分析位元組程式碼並予以最佳化。 本指南說明 ProGuard 的運作方式、如何在專案中予以啟用，以及如何加以設定。 文中也提供數個 ProGuard 組態範例。
 ms.prod: xamarin
 ms.assetid: 29C0E850-3A49-4618-9078-D59BE0284D5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: e65c78633ae91318bd8e9cce949bac9cc12675c0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: efb9c73eb9bddb2b22b84fb6f3388281f32a82ab
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30771440"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321372"
 ---
 # <a name="proguard"></a>ProGuard
 
-_ProGuard 是 Java 類別檔案壓縮工具、最佳化工具、混淆器及預先驗證器。它可以偵測和移除未使用的程式碼、分析位元組程式碼並予以最佳化，然後混淆類別和類別成員。本指南說明 ProGuard 的運作方式、如何在專案中予以啟用，以及如何加以設定。文中也提供數個 ProGuard 組態範例。_
+_Xamarin.Android ProGuard 是 Java 類別檔案壓縮工具、最佳化工具和預先驗證器。它可以偵測和移除未使用的程式碼，分析位元組程式碼並予以最佳化。本指南說明 ProGuard 的運作方式、如何在專案中予以啟用，以及如何加以設定。文中也提供數個 ProGuard 組態範例。_
 
 
 ## <a name="overview"></a>總覽
 
-ProGuard 可偵測和移除封裝應用程式的未使用類別、欄位、方法及屬性。 即使對參考的程式庫也能這樣做 (這有助於避免 64k 參考限制)。 Android SDK 的 ProGuard 工具也會將位元組程式碼最佳化、移除未使用的程式碼指示，以及利用簡短名稱來混淆其餘的類別、欄位及方法。 ProGuard 會讀取**輸入 jar**，然後予以壓縮、最佳化、混淆並預先驗證；它會將結果寫入一或多個**輸出 jar**。 
+ProGuard 可偵測和移除封裝應用程式的未使用類別、欄位、方法及屬性。 即使對參考的程式庫也能這樣做 (這有助於避免 64k 參考限制)。 Android SDK 提供的 ProGuard 工具也會將位元組程式碼最佳化，以及移除未使用的程式碼指令。 ProGuard 會讀取**輸入 jar**，然後予以壓縮、最佳化並預先驗證；它會將結果寫入一或多個**輸出 jar**。 
 
 ProGuard 會使用下列步驟來處理 APK 的輸入： 
 
@@ -30,7 +30,7 @@ ProGuard 會使用下列步驟來處理 APK 的輸入：
 2.  **最佳化步驟** &ndash; ProGuard 會進一步將程式碼最佳化。 
     在其他最佳化之中，並非進入點的類別與方法可設為私人、靜態或最終的進入點，可以移除未使用的參數，而且可以內嵌某些方法。 
 
-3.  **混淆步驟** &ndash; ProGuard 可將不是進入點的類別與類別成員重新命名。 保留進入點可確保仍可透過其原始名稱來存取。 
+3.  **混淆步驟** &ndash; 在原生的 Android 開發中，ProGuard 會重新命名不是進入點的類別與類別成員。 保留進入點可確保仍可透過其原始名稱來存取。 但是 Xamarin.Android 並不支援這項步驟，原因是該應用程式以中繼語言 (IL) 編譯而成。
 
 4.  **預先驗證步驟** &ndash; 在執行階段之前對 Java 位元組程式碼執行檢查，並標註類別檔案，方便 Java VM 使用。 這是唯一不需要知道進入點的步驟。 
 
