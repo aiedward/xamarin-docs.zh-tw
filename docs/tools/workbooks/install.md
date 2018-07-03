@@ -48,7 +48,7 @@ ms.locfileid: "34793817"
 |Android|於 Mac 和 Windows 支援|必須與虛擬裝置搭配使用 Google、 Visual Studio 或 Xamarin Android 模擬器，> = 5.0|
 |WPF|在 Windows 上才支援|
 |主控台 (.NET Framework)|於 Mac 和 Windows 支援|
-|主控台 （.NET 核心）|於 Mac 和 Windows 支援|
+|主控台 （.NET Core）|於 Mac 和 Windows 支援|
 
 
 ## <a name="reporting-bugs"></a>回報 Bug
