@@ -89,5 +89,4 @@
 #### [為什麼 Visual Studio 不在我的組建中包括參考的程式庫專案？](troubleshooting/questions/vs-config-manager.md)
 
 ### [將元件參考更新為 NuGet](troubleshooting/component-nuget.md)
-### [支援選項](troubleshooting/support-options.md)
 ## [範例](samples/index.yml)
