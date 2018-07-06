@@ -37,7 +37,7 @@ ms.locfileid: "34806786"
 
   **注意：** 此範本將重新命名為`.NET Standard`的未來版本的 Visual Studio for mac。
 
-  ![建立.NET Core類別庫](net-standard-images/vsm01.png "建立新的.NET Core類別庫")
+  ![建立.NET Core 類別庫](net-standard-images/vsm01.png "建立新的.NET Core 類別庫")
 
 2. .NET 標準程式庫專案會出現在 [方案總管] 中所示。 相依性節點會指出程式庫會使用[NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/)。
 

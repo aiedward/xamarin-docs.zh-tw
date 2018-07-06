@@ -362,7 +362,7 @@ public string CreateLogoutRequest(string token)
 
 這個方法會建立 IdentityServer 的 URI[結束工作階段結束點](https://identityserver4.readthedocs.io/en/release/endpoints/endsession.html#refendsession)，必要參數。 結束工作階段結束點位於`/connect/endsession`5105 基底的結束點公開為使用者設定的連接埠。 如需使用者設定的詳細資訊，請參閱[Configuration Management](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
 
-傳回的 URI 會儲存在`LoginUrl`屬性`LoginViewModel`類別。 雖然`IsLogin`屬性是`true`、 [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/)中`LoginView`為可見。 `WebView`資料繫結其[ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.WebView.Source/)屬性`LoginUrl`屬性`LoginViewModel`類別，並因此將登出要求對 IdentityServer 時`LoginUrl`屬性設定為IdentityServer 的結束工作階段的端點。 IdentityServer 收到此要求時，假設使用者是登入，登出時發生。 驗證是使用 cookie，由 cookie 驗證中介軟體，從 ASP.NET Core追蹤。 因此，登出 IdentityServer 移除驗證 cookie，並將傳送 post 登出重新導向 URI 傳回至用戶端。
+傳回的 URI 會儲存在`LoginUrl`屬性`LoginViewModel`類別。 雖然`IsLogin`屬性是`true`、 [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/)中`LoginView`為可見。 `WebView`資料繫結其[ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.WebView.Source/)屬性`LoginUrl`屬性`LoginViewModel`類別，並因此將登出要求對 IdentityServer 時`LoginUrl`屬性設定為IdentityServer 的結束工作階段的端點。 IdentityServer 收到此要求時，假設使用者是登入，登出時發生。 驗證是使用 cookie，由 cookie 驗證中介軟體，從 ASP.NET Core 追蹤。 因此，登出 IdentityServer 移除驗證 cookie，並將傳送 post 登出重新導向 URI 傳回至用戶端。
 
 在行動裝置應用程式， [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/)會重新導向至 post 登出重新導向 URI。 這`WebView`導覽會導致`NavigateAsync`方法中的`LoginViewModel`類別要執行下列程式碼範例所示：
 
