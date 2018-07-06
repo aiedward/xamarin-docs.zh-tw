@@ -1,48 +1,48 @@
 ---
-title: 繫結疑難排解
-description: 本指南說明如果您無法繫結 Objective C 程式庫，該怎麼辦。 特別是，它討論遺漏繫結，將 null 傳遞到繫結，並回報 bug 時的引數例外狀況。
+title: 繫結進行疑難排解
+description: 本指南說明如果您無法繫結 Objective C 程式庫，該怎麼辦。 特別是，它還會討論遺漏繫結，將 null 傳遞至繫結，並回報 bug 時的引數例外狀況。
 ms.prod: xamarin
 ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
 author: asb3993
 ms.author: amburns
 ms.date: 10/19/2016
-ms.openlocfilehash: b0ce6c3792d6495cabdf8acdab1a644fe75f1219
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: aaceada84b151856506ede66907274e2457c23d4
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780231"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37854794"
 ---
-# <a name="binding-troubleshooting"></a>繫結疑難排解
+# <a name="binding-troubleshooting"></a>繫結進行疑難排解
 
 疑難排解 macOS （之前稱為 OS X） 的繫結的一些秘訣 Xamarin.Mac 中的 Api。
 
 ## <a name="missing-bindings"></a>遺漏繫結
 
-儘管 Xamarin.Mac 涵蓋大部分的 Apple 應用程式開發介面，有時候您可能需要呼叫沒有繫結某些 Apple API 尚未。 在其他情況下，您需要呼叫第三方 C/OBJECTIVE-C 它 Xamarin.Mac 繫結的範圍之外。
+雖然 Xamarin.Mac 涵蓋了大部分的 Apple Api，有時候您可能需要呼叫一些沒有繫結的 Apple API 尚未。 在其他情況下，您必須呼叫第三方 C/OBJECTIVE-C 範圍以外的 Xamarin.Mac 繫結它。
 
-如果您正在處理的 Apple 應用程式開發介面，第一個步驟是讓 Xamarin 知道，您到達區段的應用程式開發介面，我們針對還沒有涵蓋範圍。 [將 bug 歸檔](#reporting-bugs)注意遺漏的 API。 我們會使用來自客戶的報表來排列優先順序的應用程式開發介面，我們處理下一步。 此外，如果您有商務或企業授權，而且這種欠缺的繫結會封鎖您的進度，也請遵循指示[支援](http://xamarin.com/support)檔案票證。 我們無法保證繫結，但在某些情況下我們可以避開您的工作。
+如果您正在處理的 Apple API，第一個步驟是讓 Xamarin 知道您會達到 API 的一個區段，如尚未沒有涵蓋範圍。 [提報 bug](#reporting-bugs)注意遺漏的 API。 我們會使用來自客戶的報告來排定優先順序的 Api，我們正致力於下一步。 此外，如果您有商務或企業授權，而且缺乏此種繫結會封鎖您的進度，也請遵循指示[支援](http://xamarin.com/support)來提出票證。 我們無法保證繫結，但在某些情況下我們可以避開您的工作。
 
-一旦您通知 Xamarin （如果適用） 您遺失的繫結下, 一步是考慮繫結它自己。 我們有完整指南[這裡](~/cross-platform/macios/binding/overview.md)和某些非官方文件[這裡](http://brendanzagaeski.appspot.com/xamarin/0002.html)以包裝 OBJECTIVE-C 繫結，以手動方式。 如果您呼叫 C API，您可以使用 C# P/Invoke 機制，文件是[這裡](http://www.mono-project.com/docs/advanced/pinvoke/)。
+一旦您通知 Xamarin （如果適用） 您遺失的繫結下, 一步是考慮將它繫結您自己。 我們有完整的指南[此處](~/cross-platform/macios/binding/overview.md)和一些非官方文件[這裡](http://brendanzagaeski.appspot.com/xamarin/0002.html)包裝 OBJECTIVE-C 繫結，以手動方式。 如果您呼叫 C API，您可以使用 C# 的 P/Invoke 機制、 文件[此處](http://www.mono-project.com/docs/advanced/pinvoke/)。
 
-如果您決定要使用繫結上，請注意繫結中的錯誤可能會產生各式各樣有趣的當機，原生執行階段中。 特別是，要非常小心，您在 C# 中的簽章比對原生的簽章的引數數目，而每個引數大小。 這樣可能會損毀記憶體及/或堆疊，您可以在未來損毀立即或在某個任意時間點或資料損毀。
+如果您決定要使用繫結上，請注意繫結中的錯誤可能會產生各種有趣的當機，在原生執行階段。 特別是，要非常小心，您在 C# 中的簽章比對原生的簽章中的引數數目和每個引數的大小。 失敗，若要這樣做可能會損毀記憶體和/或堆疊，而且您可能會損毀立即或在某個任意時間點在未來或損毀資料。
 
 ## <a name="argument-exceptions-when-passing-null-to-a-binding"></a>將 null 傳遞至繫結時的引數例外狀況
 
-雖然 Xamarin 的運作以提供高品質的 Apple 應用程式開發介面，以及測試繫結有時錯誤和 bug 名單中。 截至目前為止，最常見的問題，您可能會遇到是一種 API 擲回`ArgumentNullException`當您要傳入 null 基礎 API 接受時`nil`。 通常定義 API 的原生的標頭檔不會提供足夠的資訊的應用程式開發介面接受 nil 和這將會損毀，如果您將在。
+雖然 Xamarin 的運作方式來提供高品質並經過的 Apple Api 繫結有時錯誤和 bug 名單中。 到目前為止最常見的問題，您可能會遇到是一種 API 擲回`ArgumentNullException`當您傳遞 null 時基礎 API 接受`nil`。 通常定義 API 的原生的標頭檔不會提供足夠的資訊，在其 API 接受 nil，這將會損毀，如果您將它傳入。
 
-如果您遇到的大小寫的傳入`null`會擲回`ArgumentNullException`但您認為它應該工作，請遵循下列步驟：
+如果您遇到的情況下，傳入`null`會擲回`ArgumentNullException`但您認為它應該運作，請遵循下列步驟：
 
-1. 檢查的 Apple 文件及/或範例，請參閱是否可以找到它可接受的證明`nil`。 如果您是熟悉 Objective C，您可以撰寫小型測試程式加以驗證。
-2. [將 bug 歸檔](#reporting-bugs)。
-3. 您可以解決 bug？ 如果呼叫的 API，您可以避免`null`，簡單的 null 檢查，在呼叫可以是簡單的因應措施。
-4. 不過，某些應用程式開發介面需要傳入 null 關閉或停用某些功能。 在這些情況下，您可以暫時解決此問題的組件的瀏覽器開啟 (請參閱[給定選取器中尋找 C# 成員](~/mac/app-fundamentals/mac-apis.md#finding_selector))，將複製繫結，並移除 null 檢查。 請務必為 bug 建檔 （步驟 2） 如果您這樣做，當您複製繫結不會收到更新和修正程式，我們在 Xamarin.Mac，而且這也應該考量短期因應措施。
+1. 檢查的 Apple 文件及/或範例，以查看是否可以找到它所接受的證明`nil`。 如果您熟悉 OBJECTIVE-C，您可以撰寫的小型測試程式，以確認它。
+2. [提報 bug](#reporting-bugs)。
+3. 您可以解決 bug？ 如果您可以呼叫 API 來避免`null`，簡單的 null 檢查，在呼叫可以是簡單的因應措施。
+4. 不過，某些 Api 需要傳入 null 來關閉或停用某些功能。 在這些情況下，您可以暫時解決此問題將組件瀏覽器 (請參閱[尋找給定選取器 C# 成員](~/mac/app-fundamentals/mac-apis.md#finding_selector))，複製繫結，並移除 null 檢查。 請務必提出錯誤報告 （步驟 2） 如果您執行這項操作，因為您已複製的繫結不會收到更新和修正程式，我們讓 Xamarin.Mac，且應視為短期因應措施。
 
 <a name="reporting-bugs"/>
 
 ## <a name="reporting-bugs"></a>回報 bug
 
-您的意見反應對我們很重要。 如果您發現任何 Xamarin.Mac 的問題：
+您的意見反應對我們至關重要。 如果您發現任何問題，使用 Xamarin.Mac:
 
 - 查看 [Xamarin.Mac 論壇](https://forums.xamarin.com/categories/mac) \(英文\)
 - 搜尋[問題存放庫](https://github.com/xamarin/xamarin-macios/issues) \(英文\) 
@@ -56,3 +56,8 @@ GitHub 問題全都是公開的。 無法隱藏意見或附件。
 - 一個可重現問題的簡單範例。 這是**非常寶貴的**，請盡您所能提供。 
 - 損毀狀況的完整堆疊追蹤。
 - 損毀狀況周圍的 C# 程式碼。 
+
+## <a name="related-links"></a>相關連結
+
+- [Xamarin University 課程： 建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University 課程： 建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
