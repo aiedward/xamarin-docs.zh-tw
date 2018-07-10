@@ -1,32 +1,30 @@
 ---
 title: 簽署 Android 應用程式套件
+description: 如何簽署要發佈的 Android 應用程式套件 (APK)
 ms.prod: xamarin
 ms.assetid: 8E3EFBB2-F8AD-C126-5F32-7FD140791E53
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/21/2018
-ms.openlocfilehash: 6a4164ea4a56ee7c1b3c1abd05f7b1bb95aede4f
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.date: 07/02/2018
+ms.openlocfilehash: 4afcf42750cd9366bfd9fa5855fe1e7c0f114162
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34458797"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403308"
 ---
 # <a name="signing-the-android-application-package"></a>簽署 Android 應用程式套件
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+在[準備要發行的應用程式](~/android/deploy-test/release-prep/index.md)中，使用**封存管理員**來建置應用程式，並將它放入封存以進行簽署和發行。 本節說明如何建立 Android 簽署身分識別、建立適用於 Android 應用程式的新簽署憑證，並透過「臨機操作」將封存的應用程式發行至磁碟。 產生的 APK 可以側載到 Android 裝置，而不需透過應用程式市集 。
 
-本節說明簽署 Visual Studio 所提供之 APK 的整合式發行工作流程。 在[準備要發行的應用程式](~/android/deploy-test/release-prep/index.md)中，使用**封存管理員**來建置應用程式，並將它放入封存以進行簽署和發行。 本節說明如何建立 Android 簽署身分識別、建立適用於 Android 應用程式的新簽署憑證，並透過「臨機操作」將封存的應用程式發行至磁碟。
-產生的 APK 可以側載到 Android 裝置，而不需透過 App Store。
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 在[封存以供發行](~/android/deploy-test/release-prep/index.md#archive)中，[散發通道] 對話方塊顯示了兩個用於散發的選項。 選取 [臨機操作]：
 
 [![[散發通道] 對話方塊](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-在本節中，我們將使用 Visual Studio for Mac 的整合式發行工作流程來簽署 APK。 在[準備要發行的應用程式](~/android/deploy-test/release-prep/index.md)中，我們使用了**封存管理員**來建置應用程式，並將它放入封存以進行簽署和發行。 在本節中，我們將了解如何建立 Android 簽署身分識別、建立適用於 Android 應用程式的新簽署憑證，並透過「臨機操作」將封存的應用程式發行至磁碟。 產生的 APK 可以側載到 Android 裝置，而不需透過 App Store。
 
 在[封存以供發行](~/android/deploy-test/release-prep/index.md#archive)中，[簽署並散發] 對話方塊顯示了兩個用於散發的選項。 選取 [臨機操作]，然後按一下 [下一步]：
 
@@ -58,14 +56,14 @@ ms.locfileid: "34458797"
 
 產生的金鑰儲存區位於下列位置：
 
-**C:\\Users\\*USERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\alias\\alias.keystore**
+**C:\\Users\\*USERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\*ALIAS*\\*ALIAS*.keystore**
 
-例如，上述步驟可能會在下列位置建立新的簽署金鑰：
+例如，使用 **chimp** 作為別名，上述步驟會在下列位置建立新的簽署金鑰：
 
-**C:\\Users\\*USERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\chimp\\chimp.keystore**
+**C:\\Users\\*USERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\\chimp.keystore**
 
 > [!NOTE]
-> 請務必將所產生的金鑰儲存區檔案備份到安全的位置。&ndash;解決方案不包含此檔案。 如果您遺失金鑰儲存區檔案 (例如，因為您移至另一部電腦，或重新安裝 Windows)，您將無法使用與舊版相同的憑證來簽署應用程式。
+> 請務必將所產生的金鑰儲存區檔案和密碼備份到安全的位置 &ndash; 解決方案不包含此檔案。 如果您遺失金鑰儲存區檔案 (例如，因為您移至另一部電腦，或重新安裝 Windows)，您將無法使用與舊版相同的憑證來簽署應用程式。
 
 如需金鑰儲存區的詳細資訊，請參閱[尋找金鑰儲存區的 MD5 或 SHA1 簽章](~/android/deploy-test/signing/keystore-signature.md)。
 
@@ -89,7 +87,7 @@ ms.locfileid: "34458797"
 
 
 > [!NOTE]
-> 請務必將所產生的金鑰儲存區檔案備份到安全的位置。&ndash;解決方案不包含此檔案。 如果您遺失金鑰儲存區檔案 (例如，因為您移至另一部電腦，或重新安裝 Mac)，您將無法使用與舊版相同的憑證來簽署應用程式。
+> 請務必將所產生的金鑰儲存區檔案和密碼備份到安全的位置 &ndash; 解決方案不包含此檔案。 如果您遺失金鑰儲存區檔案 (例如，因為您移至另一部電腦，或重新安裝 macOS)，您將無法使用與舊版相同的憑證來簽署應用程式。
 
 如需金鑰儲存區的詳細資訊，請參閱[尋找金鑰儲存區的 MD5 或 SHA1 簽章](~/android/deploy-test/signing/keystore-signature.md)。
 
