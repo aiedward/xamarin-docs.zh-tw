@@ -5,12 +5,12 @@ ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: ca21f43631c261cd384f9049f30f0fa29e2ca44e
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: 530273543c6cb71038613c22fa4a6bfbde4928d7
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855165"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947253"
 ---
 # <a name="xamarinessentials-vibration"></a>Xamarin.Essentials： 震動
 
@@ -48,7 +48,7 @@ ms.locfileid: "37855165"
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-不需要其他設定。
+任何平台差異。
 
 -----
 
