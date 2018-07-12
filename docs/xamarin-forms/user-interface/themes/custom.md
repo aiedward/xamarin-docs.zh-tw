@@ -1,6 +1,6 @@
 ---
-title: 建立自訂 Xamarin.Forms 佈景主題
-description: 本文說明如何建立自訂 Xamarin.Forms 佈景主題中的應用程式用來參考。
+title: 建立自訂的 Xamarin.Forms 佈景主題
+description: 這篇文章說明如何建立自訂的 Xamarin.Forms 佈景主題中的應用程式用來參考。
 ms.prod: xamarin
 ms.assetid: 4FE08ADC-093F-47FA-B33C-20CF08B5D7E0
 ms.technology: xamarin-forms
@@ -8,25 +8,25 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 018193cf0b198fd87f0f09cbfeba52e9d2a0f68b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245568"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38838166"
 ---
-# <a name="creating-a-custom-xamarinforms-theme"></a>建立自訂 Xamarin.Forms 佈景主題
+# <a name="creating-a-custom-xamarinforms-theme"></a>建立自訂的 Xamarin.Forms 佈景主題
 
-![](~/media/shared/preview.png "這個 API 目前處於預覽狀態")
+![](~/media/shared/preview.png "此 API 目前為預覽狀態")
 
-除了從 Nuget 封裝加入佈景主題 (例如[Light](~/xamarin-forms/user-interface/themes/light.md)和[深色](~/xamarin-forms/user-interface/themes/dark.md)佈景主題)，您可以建立您自己的資源字典佈景主題中，您可以參考您的應用程式中。
+除了從 Nuget 套件新增佈景主題 (例如[Light](~/xamarin-forms/user-interface/themes/light.md)並[深色](~/xamarin-forms/user-interface/themes/dark.md)佈景主題)，可以在您的應用程式中建立您自己的資源字典，可參考的佈景主題。
 
 ## <a name="example"></a>範例
 
-三個`BoxView`上顯示的 s[佈景主題頁面](~/xamarin-forms/user-interface/themes/index.md)根據兩個可下載的主題中定義的三個類別的樣式設定。
+三個`BoxView`上顯示的 s[佈景主題頁面](~/xamarin-forms/user-interface/themes/index.md)根據兩個可下載的主題中所定義的三個類別的樣式設定。
 
-若要了解這些如何運作，下列標記會建立對等的樣式，您可以直接加入您**App.xaml**。
+若要了解這些的運作方式，下列標記會建立對等的樣式，您無法直接將新增至您**App.xaml**。
 
-請注意`Class`屬性`Style`(與[ `x:Key` ](~/xamarin-forms/user-interface/styles/inheritance.md) Xamarin.Forms 較舊版本中可用的屬性)。
+附註`Class`屬性`Style`(相對於[ `x:Key` ](~/xamarin-forms/user-interface/styles/inheritance.md)屬性適用於 Xamarin.Forms 較早版本)。
 
 ```xml
 <ResourceDictionary>
@@ -64,16 +64,16 @@ ms.locfileid: "35245568"
 ```
 
 您會發現`Rounded`類別是指自訂效果`CornerRadius`。
-此效果的程式碼如下所示的方式來參考它正確自訂`xmlns`必須新增至**App.xaml**的根項目：
+這種效果的程式碼如下所示的方式來參考它正確自訂`xmlns`必須加入至**App.xaml**的根項目：
 
 ```csharp
 xmlns:local="clr-namespace:ThemesDemo;assembly=ThemesDemo"
 ```
 
-### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>C#.NET 標準程式庫專案或共用專案中的程式碼
+### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>.NET Standard 程式庫專案或共用專案中的 C# 程式碼
 
-建立循右上角的程式碼`BoxView`使用[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
-使用套用的圓角半徑`BindableProperty`和藉由套用[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。 效果需要平台專屬程式碼中的[iOS](#ios)和[Android](#android)專案 （如下所示。）
+建立循右上角的程式碼`BoxView`會使用[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
+使用套用的圓角半徑`BindableProperty`並實作藉由套用[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。 效果要求中的平台特定程式碼[iOS](#ios)並[Android](#android)專案 （如下所示。）
 
 ```csharp
 namespace ThemesDemo
@@ -128,7 +128,7 @@ namespace ThemesDemo
 
 <a name="ios" />
 
-### <a name="c-code-in-the-ios-project"></a>C# 程式碼的 iOS 專案中
+### <a name="c-code-in-the-ios-project"></a>在 iOS 專案的 C# 程式碼
 
 ```csharp
 using System;
@@ -184,7 +184,7 @@ namespace ThemesDemo.iOS
 
 <a name="android" />
 
-### <a name="c-code-in-the-android-project"></a>在 Android 專案的 C# 程式碼
+### <a name="c-code-in-the-android-project"></a>在 Android 專案中的 C# 程式碼
 
 ```csharp
 using System;
@@ -257,8 +257,8 @@ namespace ThemesDemo.Droid
 
 ## <a name="summary"></a>總結
 
-定義每個需要自訂外觀的控制項的樣式，可以建立自訂佈景主題。 多個控制項的樣式應該透過不同區分`Class`資源字典中的屬性，並藉由設定套用`StyleClass`控制項上的屬性。
+定義每個控制項需要自訂外觀的樣式，可以建立自訂佈景主題。 控制項的多個樣式應該可區別不同`Class`屬性在資源字典中，並藉由設定套用`StyleClass`控制項上的屬性。
 
-也可以利用樣式[效果](~/xamarin-forms/app-fundamentals/effects/index.md)來進一步自訂控制項的外觀。
+樣式也可以利用[效果](~/xamarin-forms/app-fundamentals/effects/index.md)來進一步自訂控制項的外觀。
 
-[隱含樣式](~/xamarin-forms/user-interface/styles/implicit.md)(沒有`x:Key`或`Style`屬性) 會繼續套用到符合的所有控制項`TargetType`。
+[隱含樣式](~/xamarin-forms/user-interface/styles/implicit.md)(但沒有`x:Key`或是`Style`屬性) 繼續套用到符合的所有控制項`TargetType`。

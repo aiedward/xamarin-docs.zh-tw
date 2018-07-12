@@ -6,11 +6,11 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: ca6d4f1ec60a80b483c79dd75267144e67d80c0b
-ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37403486"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831760"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials： 喜好設定
 

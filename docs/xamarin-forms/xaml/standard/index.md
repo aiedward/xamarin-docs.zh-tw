@@ -1,6 +1,6 @@
 ---
 title: XAML 標準 （預覽）
-description: 本文說明如何開始使用瀏覽 Xamarin.Forms 中的 XAML 標準預覽。
+description: 這篇文章說明如何開始探索在 Xamarin.Forms 中 XAML Standard 預覽版。
 ms.prod: xamarin
 ms.assetid: 24382DF1-BE70-4608-B86F-B79FB23E4A78
 ms.technology: xamarin-forms
@@ -8,37 +8,37 @@ author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
 ms.openlocfilehash: 61e0fa2587ce9a8794dbd32ff9de1f13da857342
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245790"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38838006"
 ---
 # <a name="xaml-standard-preview"></a>XAML 標準 （預覽）
 
 ![預覽](~/media/shared/preview.png)
 
-遵循下列步驟來實驗 XAML 標準 Xamarin.Forms 中：
+遵循下列步驟來試驗標準 Xamarin.Forms XAML:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. 下載[預覽 NuGet 套件](https://aka.ms/xf-xamlstandard-nuget)。
-2. 新增**Xamarin.Forms.Alias** NuGet 封裝加入您 Xamarin.Forms 標準.NET 與平台的專案。
+1. 下載[預覽以下 NuGet 套件](https://aka.ms/xf-xamlstandard-nuget)。
+2. 新增**Xamarin.Forms.Alias**至 Xamarin.Forms.NET Standard 與平台專案的 NuGet 套件。
 3. 初始化與套件 `Alias.Init()`
 4. 新增`xmlns:a`參考 `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
-5. 在 XAML 中使用的類型-請參閱[控制參考](controls.md)如需詳細資訊。
+5. 使用 XAML 中的類型-請參閱[控制項參考](controls.md)如需詳細資訊。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 下載[預覽 NuGet 套件](https://aka.ms/xf-xamlstandard-nuget)。
-2. 新增**Xamarin.Forms.Alias** NuGet 封裝加入您 Xamarin.Forms 標準.NET 與平台的專案。
+1. 下載[預覽以下 NuGet 套件](https://aka.ms/xf-xamlstandard-nuget)。
+2. 新增**Xamarin.Forms.Alias**至 Xamarin.Forms.NET Standard 與平台專案的 NuGet 套件。
 3. 初始化與套件 `Alias.Init()`
 4. 新增`xmlns:a`參考 `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
-5. 在 XAML 中使用的類型-請參閱[控制參考](controls.md)如需詳細資訊。
+5. 使用 XAML 中的類型-請參閱[控制項參考](controls.md)如需詳細資訊。
 
 -----
 
-下列 XAML 會示範在 Xamarin.Forms 中使用某些標準 XAML 控制項`ContentPage`:
+下列 XAML 示範如何在 Xamarin.Forms 中使用某些標準 XAML 控制項`ContentPage`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -76,5 +76,5 @@ ms.locfileid: "35245790"
 
 ## <a name="related-links"></a>相關連結
 
-- [預覽 NuGet](https://aka.ms/xf-xamlstandard-nuget)
+- [NuGet 預覽](https://aka.ms/xf-xamlstandard-nuget)
 - [控制項參考](controls.md)

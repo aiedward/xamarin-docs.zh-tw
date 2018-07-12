@@ -1,32 +1,32 @@
 ---
-title: Xamarin.Essentials： 裝置顯示的資訊
-description: 本文件說明 DeviceDisplay 中的類別 Xamarin.Essentials，提供應用程式執行所在裝置的螢幕標準。
+title: Xamarin.Essentials： 裝置顯示資訊
+description: 本文件說明在 Xamarin.Essentials，提供應用程式執行所在裝置的螢幕計量 DeviceDisplay 類別。
 ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 3060d56e14fb0d3801a96ec0fe6e24c9efda4dac
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080309"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38816512"
 ---
-# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials： 裝置顯示的資訊
+# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials： 裝置顯示資訊
 
 ![發行前版本的 NuGet](~/media/shared/pre-release.png)
 
-**DeviceDisplay**類別會提供應用程式執行裝置的螢幕度量資訊。
+**DeviceDisplay**類別提供應用程式執行相關裝置的螢幕度量資訊。
 
 ## <a name="using-devicedisplay"></a>使用 DeviceDisplay
 
-在您類別中加入 Xamarin.Essentials 的參考：
+在您的類別加入 Xamarin.Essentials 的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-## <a name="screen-metrics"></a>螢幕度量
+## <a name="screen-metrics"></a>畫面計量
 
 除了基本裝置資訊**DeviceDisplay**類別包含裝置的螢幕和方向的相關資訊。
 
@@ -50,7 +50,7 @@ var height = metrics.Height;
 var density = metrics.Density;
 ```
 
-**DeviceDisplay**類別也會公開任何畫面公制的變更時會觸發可供訂閱的事件：
+**DeviceDisplay**類別也會公開任何畫面度量變更時會觸發訂閱的事件：
 
 ```csharp
 public class ScreenMetricsTest
