@@ -6,11 +6,11 @@ author: redth
 ms.author: jodick
 ms.date: 05/04/2018
 ms.openlocfilehash: fae5f5f0f15d80e2f3bdce26b8beb5f6fae2f81f
-ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37403438"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38830449"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials： 安全的儲存體
 
