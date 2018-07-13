@@ -1,30 +1,30 @@
 ---
-title: Xamarin.Forms 中的樣式繼承
-description: 樣式可以繼承自其他樣式來減少重複，並允許重複使用。 本文說明如何執行樣式繼承 Xamarin.Forms 應用程式中。
+title: 在 Xamarin.Forms 中的樣式繼承
+description: 若要減少重複，並啟用重複使用其他樣式可以繼承樣式。 這篇文章說明如何在 Xamarin.Forms 應用程式執行樣式繼承。
 ms.prod: xamarin
 ms.assetid: 67A3A39C-8CC0-446D-8162-FFA73582D3B8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: aff47769fad065e03de4c62af1be1d67b903eb0a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f8cf3287c6d713d91a0217bd30ca2ee927534aea
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245090"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995329"
 ---
-# <a name="style-inheritance-in-xamarinforms"></a>Xamarin.Forms 中的樣式繼承
+# <a name="style-inheritance-in-xamarinforms"></a>在 Xamarin.Forms 中的樣式繼承
 
-_樣式可以繼承自其他樣式來減少重複，並允許重複使用。_
+_若要減少重複，並啟用重複使用其他樣式可以繼承樣式。_
 
 ## <a name="style-inheritance-in-xaml"></a>在 XAML 中的樣式繼承
 
-樣式繼承藉由設定[ `Style.BasedOn` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BasedOn/)屬性至現有[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)。 在 XAML 中，這藉由設定`BasedOn`屬性`StaticResource`參考先前建立的標記延伸`Style`。 在 C# 中，這藉由設定`BasedOn`屬性`Style`執行個體。
+樣式繼承藉由設定[ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn)屬性的現有[ `Style` ](xref:Xamarin.Forms.Style)。 在 XAML，做法是藉由設定`BasedOn`屬性，以`StaticResource`參考先前建立的標記延伸`Style`。 在 C# 中，做法是藉由設定`BasedOn`屬性設`Style`執行個體。
 
-可以包含繼承自基底樣式的樣式[ `Setter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)執行個體為新的屬性，或使用它們來覆寫基底樣式的樣式。 此外，繼承自基底樣式的樣式必須在相同的型別或衍生自的基底樣式的目標類型的型別目標。 例如，如果基底樣式的目標[ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)情況下，目標可以為基礎的基底樣式的樣式`View`執行個體或衍生自類型`View`類別，例如[ `Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)和[ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)執行個體。
+可以包含繼承自基底樣式的樣式[ `Setter` ](xref:Xamarin.Forms.Setter)執行個體，為新的屬性，或使用它們來覆寫的基底樣式的樣式。 此外，繼承自基底樣式的樣式都必須指向相同的型別或衍生自的基底樣式的目標類型的類型。 比方說，如果基底樣式目標[ `View` ](xref:Xamarin.Forms.View)執行個體，以基礎基底樣式的樣式可以將目標`View`執行個體或衍生自類型`View`類別，例如[ `Label`](xref:Xamarin.Forms.Label)並[ `Button` ](xref:Xamarin.Forms.Button)執行個體。
 
-下列程式碼示範*明確*XAML 頁面中設定樣式繼承：
+下列程式碼示範*明確*XAML 頁面中的樣式繼承：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.StyleInheritancePage" Title="Inheritance" Icon="xaml.png">
@@ -60,22 +60,22 @@ _樣式可以繼承自其他樣式來減少重複，並允許重複使用。_
 </ContentPage>
 ```
 
-`baseStyle`目標[ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)例項，並設定[ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/)和[ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/)屬性。 `baseStyle`未設定任何控制項上直接。 相反地，`labelStyle`和`buttonStyle`從它繼承，設定其他可繫結的屬性值。 `labelStyle`和`buttonStyle`接著會套用到[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)執行個體和[ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)執行個體，藉由設定其[ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/)屬性。 這會導致下列螢幕擷取畫面所示的外觀：
+`baseStyle`目標[ `View` ](xref:Xamarin.Forms.View)執行個體，並設定[ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)並[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)屬性。 `baseStyle`未直接在任何控制項上設定。 相反地，`labelStyle`和`buttonStyle`繼承自它，設定額外的可繫結屬性值。 `labelStyle`並`buttonStyle`會接著套用至[ `Label` ](xref:Xamarin.Forms.Label)執行個體並[ `Button` ](xref:Xamarin.Forms.Button)執行個體，藉由設定其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)屬性。 這會導致下列的螢幕擷取畫面所示的外觀：
 
 [![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
 > [!NOTE]
-> 隱含樣式可以衍生自明確樣式，但明確樣式不能衍生自隱含樣式。
+> 隱含樣式可以衍生自明確的樣式，但明確樣式無法衍生自隱含樣式。
 
 ### <a name="respecting-the-inheritance-chain"></a>尊重繼承鏈結
 
-樣式只可以繼承自樣式相同層級，或以上版本，檢視階層中。 這表示：
+樣式只可以繼承樣式，在相同的層級，或以上版本，檢視階層中。 這表示：
 
-- 應用程式層級資源只可以繼承自其他應用程式層級資源。
-- 頁面層級的資源可以繼承自應用程式層級的資源，以及其他的頁面層級資源。
-- 控制層級的資源可以繼承自應用程式層級的資源、 頁面層級資源和其他控制項的層級資源。
+- 應用程式層級資源只可以繼承自其他應用程式層級的資源。
+- 頁面層級的資源可以繼承自應用程式層級的資源和其他頁面層級的資源。
+- 控制層級的資源可以繼承自應用程式層級的資源、 頁面層級的資源和其他控制項的層級資源。
 
-下列程式碼範例示範此繼承鏈結：
+此繼承鏈結以下列程式碼範例所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.StyleInheritancePage" Title="Inheritance" Icon="xaml.png">
@@ -104,11 +104,11 @@ _樣式可以繼承自其他樣式來減少重複，並允許重複使用。_
 </ContentPage>
 ```
 
-在此範例中，`labelStyle`和`buttonStyle`會控制層級的資源，而`baseStyle`為頁面層級的資源。 但是，當`labelStyle`和`buttonStyle`繼承自`baseStyle`，不可能`baseStyle`繼承自`labelStyle`或`buttonStyle`，因為檢視階層中其各自的位置。
+在此範例中，`labelStyle`並`buttonStyle`是控制層級的資源，而`baseStyle`是頁面層級的資源。 不過，雖然`labelStyle`並`buttonStyle`繼承自`baseStyle`，不可能`baseStyle`繼承`labelStyle`或`buttonStyle`，因為它們各自的位置，檢視階層中。
 
 ## <a name="style-inheritance-in-c35"></a>在 C 中的樣式繼承&#35;
 
-對等的 C# 頁面上，其中[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)直接指派給執行個體[ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/)屬性的所需的控制項，顯示在下列程式碼範例：
+對等的 C# 頁面，其中[ `Style` ](xref:Xamarin.Forms.Style)執行個體直接指派給[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)所需的控制項的屬性會顯示在下列程式碼範例：
 
 ```csharp
 public class StyleInheritancePageCS : ContentPage
@@ -151,11 +151,11 @@ public class StyleInheritancePageCS : ContentPage
 }
 ```
 
-`baseStyle`目標[ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)例項，並設定[ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/)和[ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/)屬性。 `baseStyle`未設定任何控制項上直接。 相反地，`labelStyle`和`buttonStyle`從它繼承，設定其他可繫結的屬性值。 `labelStyle`和`buttonStyle`接著會套用到[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)執行個體和[ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)執行個體，藉由設定其[ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/)屬性。
+`baseStyle`目標[ `View` ](xref:Xamarin.Forms.View)執行個體，並設定[ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)並[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)屬性。 `baseStyle`未直接在任何控制項上設定。 相反地，`labelStyle`和`buttonStyle`繼承自它，設定額外的可繫結屬性值。 `labelStyle`並`buttonStyle`會接著套用至[ `Label` ](xref:Xamarin.Forms.Label)執行個體並[ `Button` ](xref:Xamarin.Forms.Button)執行個體，藉由設定其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)屬性。
 
 ## <a name="summary"></a>總結
 
-樣式可以繼承自其他樣式來減少重複，並允許重複使用。 樣式繼承藉由設定[ `Style.BasedOn` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BasedOn/)屬性至現有[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)。
+若要減少重複，並啟用重複使用其他樣式可以繼承樣式。 樣式繼承藉由設定[ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn)屬性的現有[ `Style` ](xref:Xamarin.Forms.Style)。
 
 
 ## <a name="related-links"></a>相關連結
@@ -163,6 +163,6 @@ public class StyleInheritancePageCS : ContentPage
 - [XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [基本的樣式 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
 - [使用樣式 （範例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
-- [樣式](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
-- [Setter](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [樣式](xref:Xamarin.Forms.Style)
+- [Setter](xref:Xamarin.Forms.Setter)

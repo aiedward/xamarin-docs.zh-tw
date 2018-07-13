@@ -1,30 +1,30 @@
 ---
-title: Xamarin.Forms ControlTemplate 從繫結
-description: 範本繫結允許資料控制項樣板中的控制項繫結至公用屬性，啟用 [控制項] 範本，輕鬆地變更中的控制項上的屬性值。 本文示範如何使用執行資料繫結的控制項範本的範本繫結。
+title: 從 Xamarin.Forms ControlTemplate 的繫結
+description: 範本繫結可讓控制項的控制項範本，以資料繫結至公用屬性，啟用 [控制項] 範本，輕鬆地變更中的控制項上的屬性值。 這篇文章示範如何使用範本繫結控制項範本，從執行資料繫結。
 ms.prod: xamarin
 ms.assetid: 794A663C-3A8D-438A-BD02-8E97C919B55F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 99d798ce2c74da0cf7fa0d497128db628a12ead5
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 86de2ad6009365b3debbe1a2310651002b023219
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241577"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995560"
 ---
-# <a name="binding-from-a-xamarinforms-controltemplate"></a>Xamarin.Forms ControlTemplate 從繫結
+# <a name="binding-from-a-xamarinforms-controltemplate"></a>從 Xamarin.Forms ControlTemplate 的繫結
 
-_範本繫結允許資料控制項樣板中的控制項繫結至公用屬性，啟用 [控制項] 範本，輕鬆地變更中的控制項上的屬性值。本文示範如何使用執行資料繫結的控制項範本的範本繫結。_
+_範本繫結可讓控制項的控制項範本，以資料繫結至公用屬性，啟用 [控制項] 範本，輕鬆地變更中的控制項上的屬性值。這篇文章示範如何使用範本繫結控制項範本，從執行資料繫結。_
 
-A [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)使用控制項範本中的控制項屬性繫結至可繫結上的父屬性*目標*擁有控制項樣板檢視。 例如，而不是定義所顯示的文字[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)內執行個體[ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)，您可以使用範本繫結至繫結[ `Label.Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/)屬性可繫結的屬性，定義要顯示的文字。
+A [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding)用來在控制項範本中控制項的屬性繫結至可繫結屬性的父代上*目標*擁有控制項範本的檢視。 比方說，而不是定義所顯示的文字[ `Label` ](xref:Xamarin.Forms.Label)內的執行個體[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)，您可以使用範本繫結來繫結[ `Label.Text`](xref:Xamarin.Forms.Label.Text)屬性可繫結的屬性，定義要顯示的文字。
 
-A [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)類似現有[ `Binding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Binding/)，不同之處在於*來源*的`TemplateBinding`一律會自動設定為父代*目標*擁有控制項樣板檢視。 不過，請注意，使用`TemplateBinding`之外[ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)不支援。
+A [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding)類似於現有[ `Binding` ](xref:Xamarin.Forms.Binding)，不同之處在於*來源*的`TemplateBinding`一定會自動設定為父代*目標*擁有控制項範本的檢視。 不過，請注意，使用`TemplateBinding`之外[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)不支援。
 
-## <a name="creating-a-templatebinding-in-xaml"></a>在 XAML 中建立為 TemplateBinding
+## <a name="creating-a-templatebinding-in-xaml"></a>在 XAML 中建立 TemplateBinding
 
-在 XAML 中、 [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)使用建立[ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.TemplateBindingExtension/)標記延伸，如下列程式碼範例所示：
+在 XAML 中， [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding)會使用建立[ `TemplateBinding` ](xref:Xamarin.Forms.Xaml.TemplateBindingExtension)標記延伸，如下列程式碼範例所示：
 
 ```xaml
 <ControlTemplate x:Key="TealTemplate">
@@ -37,7 +37,7 @@ A [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Tem
 </ControlTemplate>
 ```
 
-而非設定[ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/)靜態文字的屬性，屬性可以使用範本繫結繫結至可繫結內容的父代*目標*擁有檢視[`ControlTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/). 不過，請注意，範本繫結繫結至`Parent.HeaderText`和`Parent.FooterText`，而非`HeaderText`和`FooterText`。 這是因為在此範例中，可繫結的屬性會定義在祖系*目標*檢視，而不是父代，如下列程式碼範例所示：
+而不是設定[ `Label.Text` ](xref:Xamarin.Forms.Label.Text)靜態文字的屬性，屬性可以使用範本繫結來繫結至可繫結屬性的父代上*目標*擁有檢視[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate). 不過，請注意，範本繫結繫結至`Parent.HeaderText`並`Parent.FooterText`，而非`HeaderText`和`FooterText`。 這是因為在此範例中，可繫結的屬性會定義上的父父代*目標*檢視，而不是父代，如下列程式碼範例所示：
 
 ```xaml
 <ContentPage ...>
@@ -47,7 +47,7 @@ A [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Tem
 </ContentPage>
 ```
 
-*來源*範本的繫結會一律自動設定為父代*目標*擁有 [控制項] 範本，以下是檢視[ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)執行個體。 繫結所使用的範本[ `Parent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Parent/)屬性傳回的父項目`ContentView`執行個體，也就是[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)執行個體。 因此，使用[ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)中[ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)繫結至`Parent.HeaderText`和`Parent.FooterText`找出可繫結內容上定義之`ContentPage`，做為下列程式碼範例所示：
+*來源*的範本繫結一定會自動設定為父代*目標*擁有控制項範本，以下是檢視[ `ContentView` ](xref:Xamarin.Forms.ContentView)執行個體。 繫結所使用的範本[ `Parent` ](xref:Xamarin.Forms.Element.Parent)屬性傳回的父項目`ContentView`執行個體，也就是[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)執行個體。 因此，使用[ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding)中[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)繫結至`Parent.HeaderText`並`Parent.FooterText`找出可繫結的屬性上定義之`ContentPage`，做為下列程式碼範例所示：
 
 ```csharp
 public static readonly BindableProperty HeaderTextProperty =
@@ -64,13 +64,13 @@ public string FooterText {
 }
 ```
 
-這會導致下列螢幕擷取畫面所示的外觀：
+這會導致下列的螢幕擷取畫面所示的外觀：
 
-![](template-binding-images/teal-theme.png "使用範本繫結的控制項範本藍綠色")
+![](template-binding-images/teal-theme.png "使用範本繫結的藍綠色控制項範本")
 
-## <a name="creating-a-templatebinding-in-c35"></a>在 C 中建立為 TemplateBinding&#35;
+## <a name="creating-a-templatebinding-in-c35"></a>在 C 中建立 TemplateBinding&#35;
 
-在 C# 中， [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)建立使用`TemplateBinding`建構函式，如下列程式碼範例所示：
+在 C# 中， [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding)建立使用`TemplateBinding`建構函式，如下列程式碼範例所示：
 
 ```csharp
 class TealTemplate : Grid
@@ -88,7 +88,7 @@ class TealTemplate : Grid
 }
 ```
 
-而非設定[ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/)靜態文字的屬性，屬性可以使用範本繫結繫結至可繫結內容的父代*目標*擁有檢視[`ControlTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/). 範本繫結由使用[ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/)方法，指定[ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)做為第二個參數的執行個體。 請注意，範本繫結的繫結至`Parent.HeaderText`和`Parent.FooterText`，因為的父父代上定義的繫結屬性*目標*檢視，而不是父代，如下列程式碼範例所示：
+而不是設定[ `Label.Text` ](xref:Xamarin.Forms.Label.Text)靜態文字的屬性，屬性可以使用範本繫結來繫結至可繫結屬性的父代上*目標*擁有檢視[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate). 範本繫結由使用[ `SetBinding` ](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase))方法，指定[ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding)做為第二個參數的執行個體。 請注意，範本繫結的繫結至`Parent.HeaderText`並`Parent.FooterText`，因為可繫結屬性的定義的父父代*目標*檢視，而不是父代，如下列程式碼範例所示：
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -108,13 +108,13 @@ public class HomePageCS : ContentPage
 }
 ```
 
-可繫結屬性的定義`ContentPage`，如之前所述。
+可繫結屬性的定義`ContentPage`、 稍早所述。
 
 ### <a name="binding-a-bindableproperty-to-a-viewmodel-property"></a>繫結 BindableProperty ViewModel 屬性
 
-如先前所述， [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)控制項樣板中的控制項屬性繫結至可繫結屬性的父代上*目標*擁有控制項樣板檢視。 接著，可以繫結中 ViewModels 屬性這些可繫結的屬性。
+如先前所述[ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding)控制項範本中的控制項屬性繫結至可繫結屬性的父代上*目標*擁有控制項範本的檢視。 接著，這些可繫結的屬性可以繫結 Viewmodel 的屬性。
 
-下列程式碼範例會定義兩個屬性上 ViewModel:
+下列程式碼範例會在 ViewModel 上定義兩個屬性：
 
 ```csharp
 public class HomePageViewModel
@@ -138,7 +138,7 @@ public class HomePageViewModel
 </ContentPage>
 ```
 
-`HeaderText`和`FooterText`可繫結屬性繫結至`HomePageViewModel.HeaderText`和`HomePageViewModel.FooterText`屬性，因為設定[ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/)的執行個體`HomePageViewModel`類別。 整體來說，這會導致中的控制項屬性[ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)繫結至[ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)執行個體[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)，這又繫結至ViewModel 屬性。
+`HeaderText`並`FooterText`可繫結屬性繫結至`HomePageViewModel.HeaderText`並`HomePageViewModel.FooterText`屬性，因為設定[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)的執行個體`HomePageViewModel`類別。 整體來說，這會導致控制項中的屬性[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)繫結至[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)執行個體上[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)，其接著繫結至ViewModel 的屬性。
 
 對等的 C# 程式碼會顯示在以下程式碼範例中：
 
@@ -156,11 +156,11 @@ public class HomePageCS : ContentPage
 }
 ```
 
-如需資料繫結至 ViewModels 的詳細資訊，請參閱[從資料繫結至 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
+如需有關資料繫結至 Viewmodel 的詳細資訊，請參閱[從資料繫結至 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
 
 ## <a name="summary"></a>總結
 
-本文示範使用範本繫結來執行資料繫結的控制項範本。 範本繫結允許資料控制項樣板中的控制項繫結至公用屬性，啟用 [控制項] 範本，輕鬆地變更中的控制項上的屬性值。
+示範使用範本繫結來執行資料繫結控制項範本，從這篇文章。 範本繫結可讓控制項的控制項範本，以資料繫結至公用屬性，啟用 [控制項] 範本，輕鬆地變更中的控制項上的屬性值。
 
 
 
@@ -168,8 +168,8 @@ public class HomePageCS : ContentPage
 
 - [資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
 - [從資料繫結至 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
-- [簡單的佈景主題的範本繫結 （範例）](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebinding/)
+- [簡單的佈景主題與範本繫結 （範例）](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebinding/)
 - [簡單的佈景主題與範本繫結和 ViewModel （範例）](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebindingandviewmodel/)
-- [TemplateBinding](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)
-- [ControlTemplate](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)
-- [ContentView](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)
+- [TemplateBinding](xref:Xamarin.Forms.TemplateBinding)
+- [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)
+- [ContentView](xref:Xamarin.Forms.ContentView)

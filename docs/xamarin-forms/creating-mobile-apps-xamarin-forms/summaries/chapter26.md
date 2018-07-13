@@ -7,16 +7,16 @@ ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b6ef23364cac0dd1459681aa92c7a7db58bc81f0
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 1fc42207d26f2e2154c7bd6634cc90fead4b0b17
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935637"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998930"
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>第 26 章的摘要。 自訂版面配置
 
-Xamarin.Forms 包含數個類別衍生自[ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/):
+Xamarin.Forms 包含數個類別衍生自[ `Layout<View>` ](xref:Xamarin.Forms.Layout`1):
 
 * `StackLayout`,
 * `Grid`,
@@ -35,74 +35,74 @@ Xamarin.Forms 包含數個類別衍生自[ `Layout<View>` ](https://developer.xa
 
 ### <a name="sizing-and-positioning"></a>大小及定位
 
-版面配置頁面的視覺化樹狀結構頂端開始，並繼續進行到所有分支。 最重要的公用方法，在配置中是[ `Layout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Layout/p/Xamarin.Forms.Rectangle/)所定義`VisualElement`。 每個項目，是其他項目呼叫的父`Layout`針對每個子系的大小和位置相對於本身的形式提供子系[ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/)值。 這些`Layout`呼叫傳遍視覺化樹狀結構。
+版面配置頁面的視覺化樹狀結構頂端開始，並繼續進行到所有分支。 最重要的公用方法，在配置中是[ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))所定義`VisualElement`。 每個項目，是其他項目呼叫的父`Layout`針對每個子系的大小和位置相對於本身的形式提供子系[ `Rectangle` ](xref:Xamarin.Forms.Rectangle)值。 這些`Layout`呼叫傳遍視覺化樹狀結構。
 
 呼叫`Layout`是必要項目會出現在畫面上，並會導致下列的唯讀屬性，以設定。 它們都必須配合`Rectangle`傳遞至方法：
 
-- [`Bounds`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Bounds/) 型別 `Rectangle`
-- [`X`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.X/) 型別 `double`
-- [`Y`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Y/) 型別 `double`
-- [`Width`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) 型別 `double`
-- [`Height`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) 型別 `double`
+- [`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds) 型別 `Rectangle`
+- [`X`](xref:Xamarin.Forms.VisualElement.X) 型別 `double`
+- [`Y`](xref:Xamarin.Forms.VisualElement.Y) 型別 `double`
+- [`Width`](xref:Xamarin.Forms.VisualElement.Width) 型別 `double`
+- [`Height`](xref:Xamarin.Forms.VisualElement.Height) 型別 `double`
 
 之前`Layout`呼叫時，`Height`並`Width`模擬 （mock） 的值為&ndash;1。
 
 呼叫`Layout`也會觸發下列受保護的方法呼叫：
 
-- [`SizeAllocated`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.SizeAllocated/p/System.Double/System.Double/)其會呼叫
-- [`OnSizeAllocated`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnSizeAllocated/p/System.Double/System.Double/)其中可以覆寫。
+- [`SizeAllocated`](xref:Xamarin.Forms.VisualElement.SizeAllocated(System.Double,System.Double))其會呼叫
+- [`OnSizeAllocated`](xref:Xamarin.Forms.VisualElement.OnSizeAllocated(System.Double,System.Double))其中可以覆寫。
 
 最後，會引發下列事件：
 
-- [`SizeChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.SizeChanged/)
+- [`SizeChanged`](xref:Xamarin.Forms.VisualElement.SizeChanged)
 
 `OnSizeAllocated`方法會覆寫`Page`和`Layout`，這些是可以有子系的 Xamarin.Forms 中只有兩個類別。 覆寫的方法呼叫
 
-- [`UpdateChildrenLayout`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.UpdateChildrenLayout()/) 針對`Page`衍生項目和[ `UpdateChildrenLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.UpdateChildrenLayout()/)如`Layout`衍生項目，它會呼叫
-- [`LayoutChildren`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/) 針對`Page`衍生項目和[ `LayoutChildren` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/)如`Layout`衍生項目。
+- [`UpdateChildrenLayout`](xref:Xamarin.Forms.Page.UpdateChildrenLayout) 針對`Page`衍生項目和[ `UpdateChildrenLayout` ](xref:Xamarin.Forms.Layout.UpdateChildrenLayout)如`Layout`衍生項目，它會呼叫
+- [`LayoutChildren`](xref:Xamarin.Forms.Page.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) 針對`Page`衍生項目和[ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))如`Layout`衍生項目。
 
 `LayoutChildren` 然後呼叫`Layout`針對每個項目的子系。 如果至少一個子系有新`Bounds`設定，則會引發下列事件：
 
-- [`LayoutChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.LayoutChanged/) 針對`Page`衍生項目和[ `LayoutChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Layout.LayoutChanged/)如`Layout`衍生項目
+- [`LayoutChanged`](xref:Xamarin.Forms.Page.LayoutChanged) 針對`Page`衍生項目和[ `LayoutChanged` ](xref:Xamarin.Forms.Layout.LayoutChanged)如`Layout`衍生項目
 
 ### <a name="constraints-and-size-requests"></a>條件約束和大小的要求
 
 針對`LayoutChildren`聰明地呼叫`Layout`在其所有子系，它必須知道*慣用*或*所需*大小的子系。 因此的呼叫`Layout`的每個子系通常前面會加上呼叫
 
-- [`GetSizeRequest`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/)
+- [`GetSizeRequest`](xref:Xamarin.Forms.VisualElement.GetSizeRequest(System.Double,System.Double))
 
 發行活頁簿之後，`GetSizeRequest`方法已被取代，並取代為
 
-- [`Measure`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/)
+- [`Measure`](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))
 
-`Measure`方法所能容納[ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/)屬性，並包含類型的引數[ `MeasureFlag` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MeasureFlags/)，其中包含兩個成員：
+`Measure`方法所能容納[ `Margin` ](xref:Xamarin.Forms.View.Margin)屬性，並包含類型的引數[ `MeasureFlag` ](xref:Xamarin.Forms.MeasureFlags)，其中包含兩個成員：
 
 - [`IncludeMargins`](xref:Xamarin.Forms.MeasureFlags.IncludeMargins)
 - [`None`](xref:Xamarin.Forms.MeasureFlags.None) 不包含邊界
 
 許多項目，如`GetSizeRequest`或`Measure`從其轉譯器取得原生大小的項目。 這兩種方法有參數的寬度和高度*條件約束*。 比方說，`Label`會使用寬度條件約束，來決定如何包裝多行文字。
 
-兩者`GetSizeRequest`並`Measure`傳回型別的值[ `SizeRequest` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SizeRequest/)，其中包含兩個屬性：
+兩者`GetSizeRequest`並`Measure`傳回型別的值[ `SizeRequest` ](xref:Xamarin.Forms.SizeRequest)，其中包含兩個屬性：
 
-- [`Request`](https://developer.xamarin.com/api/property/Xamarin.Forms.SizeRequest.Request/) 型別 `Size`
-- [`Minimum`](https://developer.xamarin.com/api/property/Xamarin.Forms.SizeRequest.Minimum/) 型別 `Size`
+- [`Request`](xref:Xamarin.Forms.SizeRequest.Request) 型別 `Size`
+- [`Minimum`](xref:Xamarin.Forms.SizeRequest.Minimum) 型別 `Size`
 
 通常這兩個值都相同，而`Minimum`通常可忽略的值。
 
 `VisualElement` 也會定義受保護的方法類似`GetSizeRequest`呼叫從`GetSizeRequest`:
 
-- [`OnSizeRequest`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnSizeRequest/p/System.Double/System.Double/) 傳回`SizeRequest`值
+- [`OnSizeRequest`](xref:Xamarin.Forms.VisualElement.OnSizeRequest(System.Double,System.Double)) 傳回`SizeRequest`值
 
 該方法現在是已被取代，並取代為：
 
-- [`OnMeasure`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnMeasure/p/System.Double/System.Double/)
+- [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))
 
 每個類別衍生自`Layout`或是`Layout<T>`必須覆寫`OnSizeRequest`或`OnMeasure`。 這是其中配置類別會決定其本身的大小，通常根據大小及其子系，它會取得藉由呼叫`GetSizeRequest`或`Measure`的子系。 在呼叫前後`OnSizeRequest`或是`OnMeasure`，`GetSizeRequest`或`Measure`會根據下列屬性的調整：
 
-- [`WidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/)型別的`double`，會影響`Request`屬性 `SizeRequest`
-- [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) 型別的`double`，會影響`Request`屬性 `SizeRequest`
-- [`MinimumWidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumWidthRequest/) 型別的`double`，會影響`Minimum`屬性 `SizeRequest`
-- [`MinimumHeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumHeightRequest/) 型別的`double`，會影響`Minimum`屬性 `SizeRequest`
+- [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)型別的`double`，會影響`Request`屬性 `SizeRequest`
+- [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 型別的`double`，會影響`Request`屬性 `SizeRequest`
+- [`MinimumWidthRequest`](xref:Xamarin.Forms.VisualElement.MinimumWidthRequest) 型別的`double`，會影響`Minimum`屬性 `SizeRequest`
+- [`MinimumHeightRequest`](xref:Xamarin.Forms.VisualElement.MinimumHeightRequest) 型別的`double`，會影響`Minimum`屬性 `SizeRequest`
 
 ### <a name="infinite-constraints"></a>無限的條件約束
 
@@ -131,23 +131,23 @@ Xamarin.Forms 包含數個類別衍生自[ `Layout<View>` ](https://developer.xa
 
 ### <a name="vertical-and-horizontal-positioning-simplified"></a>垂直和水平定位簡化
 
-其中一個作業，`VerticalStack`必須執行期間發生`LayoutChildren`覆寫。 此方法會使用子系`HorizontalOptions`屬性來判斷如何放置在其位置內的子系`VerticalStack`。 您可以改為呼叫靜態方法[ `Layout.LayoutChildIntoBoundingRect` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildIntoBoundingRegion/p/Xamarin.Forms.VisualElement/Xamarin.Forms.Rectangle/)。 這個方法會呼叫`Measure`上的子系，並使用其`HorizontalOptions`和`VerticalOptions`放置在指定矩形內的子系的屬性。
+其中一個作業，`VerticalStack`必須執行期間發生`LayoutChildren`覆寫。 此方法會使用子系`HorizontalOptions`屬性來判斷如何放置在其位置內的子系`VerticalStack`。 您可以改為呼叫靜態方法[ `Layout.LayoutChildIntoBoundingRect` ](xref:Xamarin.Forms.Layout.LayoutChildIntoBoundingRegion(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle))。 這個方法會呼叫`Measure`上的子系，並使用其`HorizontalOptions`和`VerticalOptions`放置在指定矩形內的子系的屬性。
 
 ### <a name="invalidation"></a>失效
 
 通常的項目屬性的變更會影響該項目在版面配置中的顯示方式。 配置必須是以觸發新的版面配置失效。
 
-`VisualElement` 定義受保護的方法[ `InvalidateMeasure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.InvalidateMeasure()/)，通常稱為屬性變更處理常式的可繫結的任何屬性的變更會影響項目的大小。 `InvalidateMeasure`方法會引發[ `MeasureInvalidated` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.MeasureInvalidated/)事件。
+`VisualElement` 定義受保護的方法[ `InvalidateMeasure` ](xref:Xamarin.Forms.VisualElement.InvalidateMeasure)，通常稱為屬性變更處理常式的可繫結的任何屬性的變更會影響項目的大小。 `InvalidateMeasure`方法會引發[ `MeasureInvalidated` ](xref:Xamarin.Forms.VisualElement.MeasureInvalidated)事件。
 
-`Layout`類別會定義名為類似受保護的方法[ `InvalidateLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.InvalidateLayout()/)，`Layout`衍生項目應該呼叫其位置和大小及其子系的方式會影響任何變更。
+`Layout`類別會定義名為類似受保護的方法[ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout)，`Layout`衍生項目應該呼叫其位置和大小及其子系的方式會影響任何變更。
 
 ### <a name="some-rules-for-coding-layouts"></a>一些編碼配置的規則
 
 1. 所定義的屬性`Layout<T>`衍生物件應受到可繫結的屬性和屬性變更處理常式應該呼叫`InvalidateLayout`。
 
-2. A`Layout<T>`定義可繫結的附加的屬性的衍生項目應該覆寫[ `OnAdded` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout%3CT%3E.OnAdded/p/T/)將屬性變更處理常式新增至子系並[ `OnRemoved` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout%3CT%3E.OnRemoved/p/T/)移除，處理常式。 這個處理常式應該檢查是否有變更，在這些連結可繫結屬性，並藉由呼叫回應`InvalidateLayout`。
+2. A`Layout<T>`定義可繫結的附加的屬性的衍生項目應該覆寫[ `OnAdded` ](xref:Xamarin.Forms.Layout`1.OnAdded*)將屬性變更處理常式新增至子系並[ `OnRemoved` ](xref:Xamarin.Forms.Layout`1.OnRemoved*)移除，處理常式。 這個處理常式應該檢查是否有變更，在這些連結可繫結屬性，並藉由呼叫回應`InvalidateLayout`。
 
-3. A`Layout<T>`實作子系大小的快取的衍生項目應該覆寫`InvalidateLayout`並[ `OnChildMeasureInvalidated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.OnChildMeasureInvalidated()/)和呼叫這些方法時清除快取。
+3. A`Layout<T>`實作子系大小的快取的衍生項目應該覆寫`InvalidateLayout`並[ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated)和呼叫這些方法時清除快取。
 
 ### <a name="a-layout-with-properties"></a>版面配置屬性
 
@@ -169,8 +169,8 @@ A`Layout<T>`衍生項目可以重疊及其子系。 不過，子系會呈現在�
 
 `Layout`類別會定義兩個方法，容許您移動集合內的子系：
 
-- [`LowerChild`](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LowerChild/p/Xamarin.Forms.View/) 若要將子系移至集合的開頭
-- [`RaiseChild`](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.RaiseChild/p/Xamarin.Forms.View/) 若要將子系移至集合的結尾
+- [`LowerChild`](xref:Xamarin.Forms.Layout.LowerChild(Xamarin.Forms.View)) 若要將子系移至集合的開頭
+- [`RaiseChild`](xref:Xamarin.Forms.Layout.RaiseChild(Xamarin.Forms.View)) 若要將子系移至集合的結尾
 
 重疊的子系集合結尾的子系以視覺化方式顯示於最上層集合開頭的子系。
 

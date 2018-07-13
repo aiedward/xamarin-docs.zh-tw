@@ -1,31 +1,31 @@
 ---
 title: Xamarin.Forms 文字樣式
-description: 這篇文章說明如何設定樣式 Xamarin.Forms 應用程式中的文字。 樣式可以定義一次，並使用許多檢視，但樣式只用於具有一種類型的檢視。
+description: 這篇文章說明如何在 Xamarin.Forms 應用程式中的樣式文字。 樣式可以定義一次，並使用許多檢視，但樣式僅適用於具有一種類型的檢視。
 ms.prod: xamarin
 ms.assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: b8cc6493c3574180e7938050075c5a70ecebeebf
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 73aa3115e92d1e3954f5ae3eb8dcb84abf9d9efb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245318"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998764"
 ---
 # <a name="xamarinforms-text-styles"></a>Xamarin.Forms 文字樣式
 
-_樣式 Xamarin.Forms 中的文字_
+_在 Xamarin.Forms 中的樣式文字_
 
-樣式可以用來調整標籤、 項目，以及編輯器的外觀。 樣式可以定義一次，並使用許多檢視，但樣式只用於具有一種類型的檢視。
-可以指定樣式`Key`，並且選擇性地使用特定控制項`Style`屬性。
+樣式可用來調整標籤、 項目，以及編輯器的外觀。 樣式可以定義一次，並使用許多檢視，但樣式僅適用於具有一種類型的檢視。
+您可以指定樣式`Key`選擇性地使用特定的控制項與套用`Style`屬性。
 
 <a name="Built-In_Styles" />
 
 ## <a name="built-in-styles"></a>內建樣式
 
-Xamarin.Forms 可包含數個[內建](http://developer.xamarin.com/api/type/Xamarin.Forms.Device+Styles/)樣式的常見案例：
+Xamarin.Forms 包含數個[內建](xref:Xamarin.Forms.Device.Styles)樣式的常見案例：
 
 - `BodyStyle`
 - `CaptionStyle`
@@ -34,7 +34,7 @@ Xamarin.Forms 可包含數個[內建](http://developer.xamarin.com/api/type/Xama
 - `SubtitleStyle`
 - `TitleStyle`
 
-若要套用內建樣式的其中一個，請使用`DynamicResource`標記延伸到指定的樣式：
+若要套用其中一個內建樣式，請使用`DynamicResource`指定樣式的標記延伸模組：
 
 ```xaml
 <Label Text="I'm a Title" Style="{DynamicResource TitleStyle}"/>
@@ -52,9 +52,9 @@ label.Style = Device.Styles.TitleStyle;
 
 ## <a name="custom-styles"></a>自訂樣式
 
-樣式包含 setter 和 setter 組成屬性和值的屬性會設定為。
+樣式組成 setter 屬性組成的 setter 和屬性的值會設定為。
 
-在 C# 中，大小 30 的紅色文字標籤的自訂樣式會定義如下：
+在 C# 中，有大小 30 的紅色文字的標籤的自訂樣式就，如下所示定義：
 
 ```csharp
 var LabelStyle = new Style (typeof(Label)) {
@@ -86,7 +86,7 @@ var label = new Label { Text = "Check out my style.", Style = LabelStyle };
 </ContentPage.Content>
 ```
 
-請注意，資源 （包括所有樣式） 會定義內`ContentPage.Resources`，這是更熟悉的同層級`ContentPage.Content`項目。
+請注意，資源 （包括所有樣式） 會定義內`ContentPage.Resources`，這是較熟悉的同層級`ContentPage.Content`項目。
 
 ![](styles-images/customstyle.png "自訂樣式範例")
 
@@ -96,26 +96,26 @@ var label = new Label { Text = "Check out my style.", Style = LabelStyle };
 
 一旦建立樣式，它可以套用至任何檢視表比對其`TargetType`。
 
-在 XAML 中，自訂樣式套用至檢視藉由提供其`Style`屬性`StaticResource`參考所需的樣式的標記延伸：
+在 XAML 中，自訂樣式套用至檢視藉由提供他們`Style`屬性與`StaticResource`標記延伸參考所要的樣式：
 
 ```xaml
 <Label Text="Check out my style." Style="{StaticResource LabelStyle}" />
 ```
 
-在 C# 樣式可以是直接套用到檢視或新增至並從頁面擷取`ResourceDictionary`。 若要直接新增：
+在 C# 中，樣式可以是直接套用到檢視或新增至並從頁面擷取`ResourceDictionary`。 若要直接新增：
 
 ```csharp
 var label = new Label { Text = "Check out my style.", Style = LabelStyle };
 ```
 
-加入和從分頁中擷取`ResourceDictionary`:
+若要從網頁的新增和擷取`ResourceDictionary`:
 
 ```csharp
 this.Resources.Add ("LabelStyle", LabelStyle);
 label.Style = (Style)Resources["LabelStyle"];
 ```
 
-因為它們必須以回應協助工具設定，會以不同的方式，套用內建樣式。 若要套用在 XAML 中，內建樣式`DynamicResource`使用標記延伸模組：
+內建樣式是以不同的方式套用，因為它們需要回應的協助工具設定。 若要將 XAML 中的內建樣式套用`DynamicResource`使用標記延伸模組：
 
 ```xaml
 <Label Text="I'm a Title" Style="{DynamicResource TitleStyle}"/>
@@ -129,24 +129,24 @@ label.Style = Device.Styles.TitleStyle;
 
 ## <a name="accessibility"></a>協助工具選項
 
-內建樣式存在是為了更輕鬆地採用協助工具喜好設定。 使用時的任何內建樣式，如果使用者據以設定協助工具喜好設定，將會自動會增加字型的大小。
+內建樣式可用來輕鬆地採用協助工具偏好設定。 使用時的任何內建樣式，如果使用者據以設定他們的協助工具喜好設定，就會自動會增加字型大小。
 
-請考慮下列檢視與內建樣式樣式與協助工具設定啟用和停用的相同頁面的範例：
+請考慮下列檢視樣式的內建樣式與協助工具設定啟用和停用的相同頁面的範例：
 
 已停用：
 
-![](styles-images/pre-access.png "停用協助工具功能的裝置樣式")
+![](styles-images/pre-access.png "使用協助工具已停用裝置樣式")
 
-啟用：
+已啟用：
 
 ![](styles-images/post-access.png "裝置啟用的存取範圍的樣式")
 
-若要確保協助工具，請確定內建樣式當做應用程式內的任何文字相關樣式為基礎，而且您會一致地使用樣式。 請參閱[樣式](~/xamarin-forms/user-interface/styles/index.md)如需有關擴充及一般情況下使用樣式。
+若要確保協助工具，請確定內建樣式做為應用程式內的任何文字相關樣式為基礎，而且您正在使用的樣式以一致的方式。 請參閱[樣式](~/xamarin-forms/user-interface/styles/index.md)如需詳細資訊，擴充和一般使用的樣式。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [透過 Xamarin.Forms，12 章建立行動應用程式](https://developer.xamarin.com/r/xamarin-forms/book/chapter12.pdf)
+- [使用 Xamarin.Forms 時，第 12 章建立行動應用程式](https://developer.xamarin.com/r/xamarin-forms/book/chapter12.pdf)
 - [樣式](~/xamarin-forms/user-interface/styles/index.md)
 - [文字 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [樣式](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
+- [樣式](xref:Xamarin.Forms.Style)

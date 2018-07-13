@@ -7,12 +7,12 @@ ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 6d26e3b9a82917ec3f70190e5e90c59d274de990
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 6da3753d723ed44ca640d8c80ae07258a03cbbbc
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935182"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998663"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>第 15 章的摘要。 互動式介面
 
@@ -33,10 +33,10 @@ Xamarin.Forms 包含 20 的可具現化類別，衍生自`View`而非`Layout`。
 
 |資料類型|檢視|
 |--- |--- |
-|`Double`|[`Slider`](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/), [`Stepper`](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/)|
-|`Boolean`|[`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/)|
-|`String`|[`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/), [`Editor`](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/), [`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/)|
-|`DateTime`|[`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/), [`TimePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/)|
+|`Double`|[`Slider`](xref:Xamarin.Forms.Slider), [`Stepper`](xref:Xamarin.Forms.Stepper)|
+|`Boolean`|[`Switch`](xref:Xamarin.Forms.Switch)|
+|`String`|[`Entry`](xref:Xamarin.Forms.Entry), [`Editor`](xref:Xamarin.Forms.Editor), [`SearchBar`](xref:Xamarin.Forms.SearchBar)|
+|`DateTime`|[`DatePicker`](xref:Xamarin.Forms.DatePicker), [`TimePicker`](xref:Xamarin.Forms.TimePicker)|
 
 您可以將這些檢視為基礎的資料類型的視覺互動的表示法。 這個概念會在下一章中，探索更[**第 16 章。資料繫結**](chapter16.md)。
 
@@ -51,22 +51,22 @@ Xamarin.Forms 包含 20 的可具現化類別，衍生自`View`而非`Layout`。
 
 ## <a name="slider-and-stepper"></a>滑桿和步進
 
-兩者[ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/)並[ `Stepper` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/)允許使用者選擇各式各樣的數字的值。 `Slider`是連續的範圍時`Stepper`包含離散值。
+兩者[ `Slider` ](xref:Xamarin.Forms.Slider)並[ `Stepper` ](xref:Xamarin.Forms.Stepper)允許使用者選擇各式各樣的數字的值。 `Slider`是連續的範圍時`Stepper`包含離散值。
 
 ### <a name="slider-basics"></a>滑桿的基本概念
 
-[ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/)是水平軸從左邊的最小值表示某個範圍的值，右邊為最大值。 它會定義三個公用屬性：
+[ `Slider` ](xref:Xamarin.Forms.Slider)是水平軸從左邊的最小值表示某個範圍的值，右邊為最大值。 它會定義三個公用屬性：
 
-- [`Value`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Value/) 型別的`double`，預設值為 0
-- [`Minimum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Minimum/) 型別的`double`，預設值為 0
-- [`Maximum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/) 型別的`double`，預設值為 1
+- [`Value`](xref:Xamarin.Forms.Slider.Value) 型別的`double`，預設值為 0
+- [`Minimum`](xref:Xamarin.Forms.Slider.Minimum) 型別的`double`，預設值為 0
+- [`Maximum`](xref:Xamarin.Forms.Slider.Maximum) 型別的`double`，預設值為 1
 
 支援這些屬性可繫結屬性中，請確定一致：
 
 - 所有的三個屬性，如[ `coerceValue` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty+CoerceValueDelegate/)指定為可繫結的屬性可確保方法`Value`之間`Minimum`和`Maximum`。
 - [ `validateValue` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty+ValidateValueDelegate/)方法`MinimumProperty`會傳回`false`如果`Minimum`所設值大於或等於`Maximum`，類似`MaximumProperty`。 傳回`false`從`validateValue`方法會使`ArgumentException`引發。
 
-`Slider` 會引發[ `ValueChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Slider.ValueChanged/)事件[ `ValueChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ValueChangedEventArgs/)引數時`Value`屬性變更，以程式設計方式或當使用者操控`Slider`。
+`Slider` 會引發[ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged)事件[ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs)引數時`Value`屬性變更，以程式設計方式或當使用者操控`Slider`。
 
 [ **SliderDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SliderDemo)範例會示範簡單的使用`Slider`。
 
@@ -88,9 +88,9 @@ Xamarin.Forms 包含 20 的可具現化類別，衍生自`View`而非`Layout`。
 
 ### <a name="the-stepper-difference"></a>步進差異
 
-[ `Stepper` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/)定義的相同屬性和事件中的當做`Slider`但`Maximum`屬性會初始化為 100 和`Stepper`定義第四個屬性：
+[ `Stepper` ](xref:Xamarin.Forms.Stepper)定義的相同屬性和事件中的當做`Slider`但`Maximum`屬性會初始化為 100 和`Stepper`定義第四個屬性：
 
-- [`Increment`](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Increment/) 型別的`double`，初始化為 1
+- [`Increment`](xref:Xamarin.Forms.Stepper.Increment) 型別的`double`，初始化為 1
 
 在視覺上，`Stepper`包含兩個按鈕，分別為**&ndash;** 並**+**。 按下**&ndash;** 減少`Value`由`Increment`最低`Minimum`。 按下**+** 增加`Value`由`Increment`最大值`Maximum`。
 
@@ -98,17 +98,17 @@ Xamarin.Forms 包含 20 的可具現化類別，衍生自`View`而非`Layout`。
 
 ## <a name="switch-and-checkbox"></a>參數，並核取方塊
 
-[ `Switch` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/)可讓使用者指定的布林值。
+[ `Switch` ](xref:Xamarin.Forms.Switch)可讓使用者指定的布林值。
 
 ### <a name="switch-basics"></a>切換 基本概念
 
 以視覺化的方式，`Switch`組成可以關閉或開啟的切換。 此類別會定義一個屬性：
 
-- [`IsToggled`](https://developer.xamarin.com/api/property/Xamarin.Forms.Switch.IsToggled/) 型別 `bool`
+- [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) 型別 `bool`
 
 `Switch` 定義一個事件：
 
-- [`Toggled`](https://developer.xamarin.com/api/event/Xamarin.Forms.Switch.Toggled/) 伴隨[ `ToggledEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToggledEventArgs/)物件，當引發`IsToggled`屬性變更。
+- [`Toggled`](xref:Xamarin.Forms.Switch.Toggled) 伴隨[ `ToggledEventArgs` ](xref:Xamarin.Forms.ToggledEventArgs)物件，當引發`IsToggled`屬性變更。
 
 [ **SwitchDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SwitchDemo)程式示範`Switch`。
 
@@ -122,33 +122,33 @@ Xamarin.Forms 包含 20 的可具現化類別，衍生自`View`而非`Layout`。
 
 Xamarin.Forms 可定義三個檢視，可讓使用者輸入，並編輯文字：
 
-- [`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) 對於某一行的文字
-- [`Editor`](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/) 為多行文字
-- [`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) 對於某一行的文字進行搜尋。
+- [`Entry`](xref:Xamarin.Forms.Entry) 對於某一行的文字
+- [`Editor`](xref:Xamarin.Forms.Editor) 為多行文字
+- [`SearchBar`](xref:Xamarin.Forms.SearchBar) 對於某一行的文字進行搜尋。
 
-`Entry` 並`Editor`衍生自[ `InputView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.InputView/)，其衍生自`View`。 `SearchBar` 直接衍生自`View`。
+`Entry` 並`Editor`衍生自[ `InputView` ](xref:Xamarin.Forms.InputView)，其衍生自`View`。 `SearchBar` 直接衍生自`View`。
 
 ### <a name="keyboard-and-focus"></a>鍵盤和焦點
 
-在手機和平板電腦，而不需要實體鍵盤`Entry`， `Editor`，和`SearchBar`所有的項目會導致顯示虛擬鍵盤。 這個鍵盤在螢幕上的目前狀態與輸入焦點。 檢視必須同時擁有其[ `IsVisible` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/)並[ `IsEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/)屬性設為`true`取得輸入的焦點。
+在手機和平板電腦，而不需要實體鍵盤`Entry`， `Editor`，和`SearchBar`所有的項目會導致顯示虛擬鍵盤。 這個鍵盤在螢幕上的目前狀態與輸入焦點。 檢視必須同時擁有其[ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible)並[ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)屬性設為`true`取得輸入的焦點。
 
 具有輸入焦點涉及兩個方法、 一個唯讀屬性，以及兩個事件。 這些全都定義由`VisualElement`:
 
-- [ `Focus` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Focus()/)方法，嘗試設定輸入的焦點的項目並傳回`true`如果成功
-- [ `Unfocus` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Unfocus()/)方法會將輸入的焦點移除項目
-- [ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/)唯讀屬性會指出是否項目具有輸入焦點
-- [ `Focused` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.Focused/)事件表示當項目取得輸入的焦點
-- [ `Unfocused` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.Unfocused/)事件表示當項目失去輸入的焦點
+- [ `Focus` ](xref:Xamarin.Forms.VisualElement.Focus)方法，嘗試設定輸入的焦點的項目並傳回`true`如果成功
+- [ `Unfocus` ](xref:Xamarin.Forms.VisualElement.Unfocus)方法會將輸入的焦點移除項目
+- [ `IsFocused` ](xref:Xamarin.Forms.VisualElement.IsFocused)唯讀屬性會指出是否項目具有輸入焦點
+- [ `Focused` ](xref:Xamarin.Forms.VisualElement.Focused)事件表示當項目取得輸入的焦點
+- [ `Unfocused` ](xref:Xamarin.Forms.VisualElement.Unfocused)事件表示當項目失去輸入的焦點
 
 ### <a name="choosing-the-keyboard"></a>選擇 鍵盤
 
-[ `InputView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.InputView/)從中類別`Entry`和`Editor`衍生定義只有一個屬性：
+[ `InputView` ](xref:Xamarin.Forms.InputView)從中類別`Entry`和`Editor`衍生定義只有一個屬性：
 
-- [`Keyboard`](https://developer.xamarin.com/api/property/Xamarin.Forms.InputView.Keyboard/) 型別 [`Keyboard`](https://developer.xamarin.com/api/type/Xamarin.Forms.Keyboard/)
+- [`Keyboard`](xref:Xamarin.Forms.InputView.Keyboard) 型別 [`Keyboard`](xref:Xamarin.Forms.Keyboard)
 
 這表示鍵盤顯示的類型。 有些鍵盤最適合的 Uri 或數字。
 
-`Keyboard`類別可讓您定義使用靜態鍵盤[ `Keyboard.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Keyboard.Create/p/Xamarin.Forms.KeyboardFlags/)方法的型別引數[ `KeyboardFlags` ](https://developer.xamarin.com/api/type/Xamarin.Forms.KeyboardFlags/)，含有下列的位元旗標的列舉類型：
+`Keyboard`類別可讓您定義使用靜態鍵盤[ `Keyboard.Create` ](xref:Xamarin.Forms.Keyboard.Create(Xamarin.Forms.KeyboardFlags))方法的型別引數[ `KeyboardFlags` ](xref:Xamarin.Forms.KeyboardFlags)，含有下列的位元旗標的列舉類型：
 
 - `None` 設定為 0
 - [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) 設為 1
@@ -156,71 +156,71 @@ Xamarin.Forms 可定義三個檢視，可讓使用者輸入，並編輯文字：
 - [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) 設為 4
 - [`All`](xref:Xamarin.Forms.KeyboardFlags.All) 設定為 \xFFFFFFFF
 
-使用多行時[ `Editor` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/)段落或多個文字預期等候時間時，呼叫`Keyboard.Create`是不錯的方法，來選取鍵盤。 單一線條[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)，下列靜態唯讀屬性的`Keyboard`很有用：
+使用多行時[ `Editor` ](xref:Xamarin.Forms.Editor)段落或多個文字預期等候時間時，呼叫`Keyboard.Create`是不錯的方法，來選取鍵盤。 單一線條[ `Entry` ](xref:Xamarin.Forms.Entry)，下列靜態唯讀屬性的`Keyboard`很有用：
 
-- [`Default`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Default/)
-- [`Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Text/)
-- [`Chat`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Chat/)
-- [`Url`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Url/)
-- [`Email`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Email/)
-- [`Telephone`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Telephone/)
-- [`Numeric`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Numeric/) 為正數或不含小數點。
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default)
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text)
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat)
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url)
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email)
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone)
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) 為正數或不含小數點。
 
-[ `KeyboardTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.KeyboardTypeConverter/)可讓您在 XAML 中指定這些屬性，如所示[ **EntryKeyboards** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/EntryKeyboards)程式。
+[ `KeyboardTypeConverter` ](xref:Xamarin.Forms.KeyboardTypeConverter)可讓您在 XAML 中指定這些屬性，如所示[ **EntryKeyboards** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/EntryKeyboards)程式。
 
 ### <a name="entry-properties-and-events"></a>項目屬性和事件
 
-單行[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)定義下列屬性：
+單行[ `Entry` ](xref:Xamarin.Forms.Entry)定義下列屬性：
 
-- [`Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.Text/) 型別的`string`，在出現的文字 `Entry`
-- [`TextColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/) 型別 `Color`
-- [`FontFamily`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.FontFamily/) 型別 `string`
-- [`FontSize`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.FontSize/) 型別 `double`
-- [`FontAttributes`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.FontAttributes/) 型別 `FontAttributes`
-- [`IsPassword`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.IsPassword/) 型別的`bool`，因而導致會遮罩處理的字元
-- [`Placeholder`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.Placeholder/) 型別的`string`，如中所顯示的 dimly 彩色文字`Entry`輸入的任何內容之前
-- [`PlaceholderColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.PlaceholderColor/) 型別 `Color`
+- [`Text`](xref:Xamarin.Forms.Entry.Text) 型別的`string`，在出現的文字 `Entry`
+- [`TextColor`](xref:Xamarin.Forms.Entry.TextColor) 型別 `Color`
+- [`FontFamily`](xref:Xamarin.Forms.Entry.FontFamily) 型別 `string`
+- [`FontSize`](xref:Xamarin.Forms.Entry.FontSize) 型別 `double`
+- [`FontAttributes`](xref:Xamarin.Forms.Entry.FontAttributes) 型別 `FontAttributes`
+- [`IsPassword`](xref:Xamarin.Forms.Entry.IsPassword) 型別的`bool`，因而導致會遮罩處理的字元
+- [`Placeholder`](xref:Xamarin.Forms.Entry.Placeholder) 型別的`string`，如中所顯示的 dimly 彩色文字`Entry`輸入的任何內容之前
+- [`PlaceholderColor`](xref:Xamarin.Forms.Entry.PlaceholderColor) 型別 `Color`
 
 `Entry`也會定義兩個事件：
 
-- [`TextChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) 具有[ `TextChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TextChangedEventArgs/)物件，每次引發`Text`屬性變更
-- [`Completed`](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.Completed/)當使用者已完成和鍵盤關閉時引發。 使用者會指出完成平台專屬的方式
+- [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) 具有[ `TextChangedEventArgs` ](xref:Xamarin.Forms.TextChangedEventArgs)物件，每次引發`Text`屬性變更
+- [`Completed`](xref:Xamarin.Forms.Entry.Completed)當使用者已完成和鍵盤關閉時引發。 使用者會指出完成平台專屬的方式
 
 [ **QuadraticEquations** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/QuadaticEquations)範例會示範這兩個事件。
 
 ### <a name="the-editor-difference"></a>編輯器的差異
 
-Multiline [ `Editor` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/)定義相同`Text`並`Font`屬性為`Entry`但不是包含其他屬性。 `Editor` 也會定義相同的兩個屬性`Entry`。
+Multiline [ `Editor` ](xref:Xamarin.Forms.Editor)定義相同`Text`並`Font`屬性為`Entry`但不是包含其他屬性。 `Editor` 也會定義相同的兩個屬性`Entry`。
 
 [**JustNotes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/JustNotes)是自由格式的資訊採取程式儲存並還原的內容`Editor`。
 
 ### <a name="the-searchbar"></a>SearchBar
 
-[ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/)不是衍生自`InputView`，因此它並沒有`Keyboard`屬性。 但它的確有全部`Text`， `Font`，並`Placeholder`屬性，`Entry`定義。 颾魤 ㄛ`SearchBar`定義三個額外屬性：
+[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)不是衍生自`InputView`，因此它並沒有`Keyboard`屬性。 但它的確有全部`Text`， `Font`，並`Placeholder`屬性，`Entry`定義。 颾魤 ㄛ`SearchBar`定義三個額外屬性：
 
-- [`CancelButtonColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.CancelButtonColor/) 型別 `Color`
-- [`SearchCommand`](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommand/) 型別的[ `ICommand` ](https://developer.xamarin.com/api/type/System.Windows.Input.ICommand/)用於資料繫結與 MVVM
-- [`SearchCommandParameter`](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommandParameter/) 型別的`Object`，搭配 `SearchCommand`
+- [`CancelButtonColor`](xref:Xamarin.Forms.SearchBar.CancelButtonColor) 型別 `Color`
+- [`SearchCommand`](xref:Xamarin.Forms.SearchBar.SearchCommand) 型別的[ `ICommand` ](xref:System.Windows.Input.ICommand)用於資料繫結與 MVVM
+- [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter) 型別的`Object`，搭配 `SearchCommand`
 
 特定平台會取消按鈕清除文字。 `SearchBar`也有一個平台特有的搜尋 按鈕。 按下其中一個這些按鈕引發的兩個事件的其中一個，`SearchBar`定義：
 
-- [`TextChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.SearchBar.TextChanged/) 伴隨[ `TextChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TextChangedEventArgs/)物件
-- [`SearchButtonPressed`](https://developer.xamarin.com/api/event/Xamarin.Forms.SearchBar.SearchButtonPressed/)
+- [`TextChanged`](xref:Xamarin.Forms.SearchBar.TextChanged) 伴隨[ `TextChangedEventArgs` ](xref:Xamarin.Forms.TextChangedEventArgs)物件
+- [`SearchButtonPressed`](xref:Xamarin.Forms.SearchBar.SearchButtonPressed)
 
 [ **SearchBarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SearchBarDemo)範例會示範`SearchBar`。
 
 ## <a name="date-and-time-selection"></a>日期和時間的選取項目
 
-[ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/)並[ `TimePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/)檢視實作平台特定的控制，讓使用者指定的日期或時間。
+[ `DatePicker` ](xref:Xamarin.Forms.DatePicker)並[ `TimePicker` ](xref:Xamarin.Forms.TimePicker)檢視實作平台特定的控制，讓使用者指定的日期或時間。
 
 ### <a name="the-datepicker"></a>DatePicker
 
-[`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) 定義四個屬性：
+[`DatePicker`](xref:Xamarin.Forms.DatePicker) 定義四個屬性：
 
-- [`MinimumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/) 型別的`DateTime`，初始化為 1900 年 1 月 1 日
-- [`MaximumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/) 型別的`DateTime`，初始化為 2100 年 12 月 31，
-- [`Date`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/) 型別的`DateTime`，初始化為 `DateTime.Today`
-- [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Format/) 型別的`string`、.NET 格式字串初始化為"d"，簡短日期模式中，導致日期顯示像是 「 7/20/1969 」 在美國。
+- [`MinimumDate`](xref:Xamarin.Forms.DatePicker.MinimumDate) 型別的`DateTime`，初始化為 1900 年 1 月 1 日
+- [`MaximumDate`](xref:Xamarin.Forms.DatePicker.MaximumDate) 型別的`DateTime`，初始化為 2100 年 12 月 31，
+- [`Date`](xref:Xamarin.Forms.DatePicker.Date) 型別的`DateTime`，初始化為 `DateTime.Today`
+- [`Format`](xref:Xamarin.Forms.DatePicker.Format) 型別的`string`、.NET 格式字串初始化為"d"，簡短日期模式中，導致日期顯示像是 「 7/20/1969 」 在美國。
 
 您可以設定`DateTime`屬性中 XAML 表示的屬性做為屬性項目，並使用文化特性而異簡短日期格式 (「 7/20/1969 」)。   
 
@@ -228,14 +228,14 @@ Multiline [ `Editor` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Edit
 
 ### <a name="the-timepicker-or-is-it-a-timespanpicker"></a>TimePicker （或它是否為 TimeSpanPicker？）
 
-[`TimePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/) 會定義兩個屬性和任何事件：
+[`TimePicker`](xref:Xamarin.Forms.TimePicker) 會定義兩個屬性和任何事件：
 
-- [`Time`](https://developer.xamarin.com/api/property/Xamarin.Forms.TimePicker.Time/) 屬於類型`TimeSpan`而非`DateTime`，指出時間從午夜開始經過
-- [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.TimePicker.Format/) 型別的`string`、.NET 格式字串初始化為"t"、 簡短時間模式，導致 「 下午 1:45 」 等的時間顯示在美國。
+- [`Time`](xref:Xamarin.Forms.TimePicker.Time) 屬於類型`TimeSpan`而非`DateTime`，指出時間從午夜開始經過
+- [`Format`](xref:Xamarin.Forms.TimePicker.Format) 型別的`string`、.NET 格式字串初始化為"t"、 簡短時間模式，導致 「 下午 1:45 」 等的時間顯示在美國。
 
 [ **SetTimer** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SetTimer)程式示範如何使用`TimePicker`計時器的指定時間。 如果您將它保留在前景，僅適用於該程式。
 
-**SetTimer**也會示範使用[ `DisplayAlert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/)方法`Page`来顯示的警示方塊。
+**SetTimer**也會示範使用[ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String))方法`Page`来顯示的警示方塊。
 
 
 

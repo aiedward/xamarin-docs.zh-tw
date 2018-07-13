@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: ea7ec0d297e144966f8ff7545e6b12160f66c9b0
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 47fbe67561ea9150d0fdc0b41eb5c70edbeac75e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935536"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996265"
 ---
 # <a name="images-in-xamarinforms"></a>在 Xamarin.Forms 中的映像
 
@@ -31,19 +31,19 @@ _映像可以跨平台與 Xamarin.Forms 共用、 可以載入特別針對每個
 
 ## <a name="displaying-images"></a>顯示影像
 
-使用 Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)檢視來顯示網頁上的映像。 它有兩個重要屬性：
+使用 Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image)檢視來顯示網頁上的映像。 它有兩個重要屬性：
 
-- [`Source`](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Source/) -An [ `ImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/)執行個體、 檔案、 Uri 或資源，設定要顯示的影像。
-- [`Aspect`](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/) -如何調整大小的影像，它顯示 （是否要自動縮放、 裁剪或 letterbox） 內的範圍內。
+- [`Source`](xref:Xamarin.Forms.Image.Source) -An [ `ImageSource` ](xref:Xamarin.Forms.ImageSource)執行個體、 檔案、 Uri 或資源，設定要顯示的影像。
+- [`Aspect`](xref:Xamarin.Forms.Image.Aspect) -如何調整大小的影像，它顯示 （是否要自動縮放、 裁剪或 letterbox） 內的範圍內。
 
-[`ImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/) 您可以使用靜態方法，每種類型的映像來源取得執行個體：
+[`ImageSource`](xref:Xamarin.Forms.ImageSource) 您可以使用靜態方法，每種類型的映像來源取得執行個體：
 
-- [`FromFile`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromFile/p/System.String/) -需要檔案名稱或可解析每個平台上的檔案路徑。
-- [`FromUri`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) -例如，需要的 Uri 物件。  `new Uri("http://server.com/image.jpg")` .
-- [`FromResource`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) -需要內嵌在應用程式或.NET Standard 程式庫專案，為影像檔的資源識別元**建置動作： EmbeddedResource**。
-- [`FromStream`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromStream/p/System.Func%7BSystem.IO.Stream%7D/) -需要提供影像資料的資料流。
+- [`FromFile`](xref:Xamarin.Forms.ImageSource.FromFile(System.String)) -需要檔案名稱或可解析每個平台上的檔案路徑。
+- [`FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) -例如，需要的 Uri 物件。  `new Uri("http://server.com/image.jpg")` .
+- [`FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) -需要內嵌在應用程式或.NET Standard 程式庫專案，為影像檔的資源識別元**建置動作： EmbeddedResource**。
+- [`FromStream`](xref:Xamarin.Forms.ImageSource.FromStream(System.Func{System.IO.Stream})) -需要提供影像資料的資料流。
 
-[ `Aspect` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/)屬性會決定如何將影像會縮放以符合顯示區域：
+[ `Aspect` ](xref:Xamarin.Forms.Image.Aspect)屬性會決定如何將影像會縮放以符合顯示區域：
 
 - [`Fill`](xref:Xamarin.Forms.Aspect.Fill) -會自動縮放以完全並完全填滿顯示區域的映像。 這可能導致正在失真的映像。
 - [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -裁剪影像，同時保留長寬滿顯示區域 (亦即。 不失真)。
@@ -109,13 +109,13 @@ UWP 映像檔名[可以加`.scale-xxx`副檔名前面](https://docs.microsoft.co
 
 有些控制項具有屬性的顯示影像，例如：
 
-- [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) -任何頁面上，衍生自類型`Page`已經[ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/)並[ `BackgroundImage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.BackgroundImage/)可指派的本機檔案參考的屬性。 在某些情況下，例如當[ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)顯示[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)，如果平台支援，則會顯示圖示。
+- [`Page`](xref:Xamarin.Forms.Page) -任何頁面上，衍生自類型`Page`已經[ `Icon` ](xref:Xamarin.Forms.Page.Icon)並[ `BackgroundImage` ](xref:Xamarin.Forms.Page.BackgroundImage)可指派的本機檔案參考的屬性。 在某些情況下，例如當[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)顯示[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)，如果平台支援，則會顯示圖示。
 
   > [!IMPORTANT]
-  > 在 iOS 上， [ `Page.Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/)無法填入屬性，從映像中的資產目錄的影像集。 相反地，載入圖示的映像`Page.Icon`屬性從**資源**iOS 專案中的資料夾。
+  > 在 iOS 上， [ `Page.Icon` ](xref:Xamarin.Forms.Page.Icon)無法填入屬性，從映像中的資產目錄的影像集。 相反地，載入圖示的映像`Page.Icon`屬性從**資源**iOS 專案中的資料夾。
 
-- [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) -具有[ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/)可以設定為本機檔案參考的屬性。
-- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) -具有[ `ImageSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ImageCell.ImageSource/)從本機檔案、 內嵌的資源或在 URI 中擷取可以設定為映像的屬性。
+- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) -具有[ `Icon` ](xref:Xamarin.Forms.MenuItem.Icon)可以設定為本機檔案參考的屬性。
+- [`ImageCell`](xref:Xamarin.Forms.ImageCell) -具有[ `ImageSource` ](xref:Xamarin.Forms.ImageCell.ImageSource)從本機檔案、 內嵌的資源或在 URI 中擷取可以設定為映像的屬性。
 
 <a name="embedded_images" />
 
@@ -150,7 +150,7 @@ IDE 已產生此預設值，藉由串連**預設命名空間**此專案的檔案
 
 如果您在專案中將內嵌的影像放入資料夾，資料夾名稱會也隔開句號 （.） 中的資源 id。 移動**beach.jpg**映像到名為的資料夾**MyImages**可能會導致資源識別碼**WorkingWithImages.MyImages.beach.jpg**
 
-若要將內嵌的影像載入程式碼只會將傳遞**資源識別碼**要[ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/)方法，如下所示：
+若要將內嵌的影像載入程式碼只會將傳遞**資源識別碼**要[ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource*)方法，如下所示：
 
 ```csharp
 var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg", typeof(EmbeddedImages).GetTypeInfo().Assembly) };
@@ -159,7 +159,7 @@ var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithIm
 > [!NOTE]
 > 若要支援在通用 Windows 平台上的 [發行] 模式中顯示內嵌的影像，就必須使用的多載`ImageSource.FromResource`，指定要在其中搜尋映像的來源組件。
 
-目前沒有任何隱含的轉換，資源識別元。 相反地，您必須使用[ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/)或`new ResourceImageSource()`載入內嵌的影像。
+目前沒有任何隱含的轉換，資源識別元。 相反地，您必須使用[ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource*)或`new ResourceImageSource()`載入內嵌的影像。
 
 下列螢幕擷取畫面顯示每個平台上顯示內嵌的影像的結果：
 
@@ -265,7 +265,7 @@ var imageSource = ImageSource.FromResource("filename.png", typeof(MyClass).GetTy
 var webImage = new Image { Source = ImageSource.FromUri(new Uri("https://xamarin.com/content/images/pages/forms/example-app.png")) };
 ```
 
-[ `ImageSource.FromUri` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/)方法需要`Uri`物件，並傳回新[ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/)自讀取`Uri`。
+[ `ImageSource.FromUri` ](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri))方法需要`Uri`物件，並傳回新[ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource)自讀取`Uri`。
 
 因此也適用於下列的範例，也會產生 URI 字串的隱含轉換：
 
@@ -281,10 +281,10 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 ### <a name="downloaded-image-caching"></a>下載的映像快取
 
-A [ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/)也支援快取的下載映像，透過下列屬性：
+A [ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource)也支援快取的下載映像，透過下列屬性：
 
-- [`CachingEnabled`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CachingEnabled/) -是否啟用快取 (`true`預設情況下)。
-- [`CacheValidity`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CacheValidity/) -A`TimeSpan`定義多久映像會儲存在本機。
+- [`CachingEnabled`](xref:Xamarin.Forms.UriImageSource.CachingEnabled) -是否啟用快取 (`true`預設情況下)。
+- [`CacheValidity`](xref:Xamarin.Forms.UriImageSource.CacheValidity) -A`TimeSpan`定義多久映像會儲存在本機。
 
 快取預設為啟用，並將儲存在本機的 24 小時內的映像。 若要停用特定的映像快取，請具現化映像來源，如下所示：
 
@@ -309,7 +309,7 @@ webImage.Source = new UriImageSource
 
 ## <a name="icons-and-splashscreens"></a>圖示和啟動顯示畫面
 
-雖然無關[ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)檢視、 應用程式圖示和啟動顯示畫面也是一個重要用途的 Xamarin.Forms 專案中的映像。
+雖然無關[ `Image` ](xref:Xamarin.Forms.Image)檢視、 應用程式圖示和啟動顯示畫面也是一個重要用途的 Xamarin.Forms 專案中的映像。
 
 設定圖示和啟動顯示畫面的 Xamarin.Forms 應用程式是在每個應用程式專案來完成。 這表示正在產生正確調整適用於 iOS、 Android 和 UWP 映像。 這些映像應進行命名，並位於根據每個平台的需求。
 
