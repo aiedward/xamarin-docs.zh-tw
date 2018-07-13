@@ -7,36 +7,36 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 3cb4d7f152e0f9540275f12f0ade568cd0552784
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: b1ebe2694ad5fa996b8b679cfb31a203588de05c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935572"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998995"
 ---
 # <a name="customizing-a-viewcell"></a>自訂 ViewCell
 
 _Xamarin.Forms ViewCell 就是資料格可以加入至 ListView 或 TableView，其中包含開發人員定義的檢視。這篇文章會示範如何建立自訂 ViewCell Xamarin.Forms ListView 控制項內裝載的轉譯器。這會停止從 Xamarin.Forms 版面配置計算 ListView 捲動期間重複呼叫。_
 
-每個 Xamarin.Forms 資料格具有隨附的轉譯器，每個平台建立原生控制項的執行個體。 當[ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) Xamarin.Forms 應用程式，在 iOS 中呈現`ViewCellRenderer`類別具現化，以依序具現化原生`UITableViewCell`控制項。 Android 平台上，`ViewCellRenderer`類別會具現化原生`View`控制項。 在通用 Windows 平台 (UWP)，`ViewCellRenderer`類別會具現化原生`DataTemplate`。 如需有關轉譯器和 Xamarin.Forms 控制項對應至原生控制項類別的詳細資訊，請參閱 <<c0> [ 轉譯器基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
+每個 Xamarin.Forms 資料格具有隨附的轉譯器，每個平台建立原生控制項的執行個體。 當[ `ViewCell` ](xref:Xamarin.Forms.ViewCell) Xamarin.Forms 應用程式，在 iOS 中呈現`ViewCellRenderer`類別具現化，以依序具現化原生`UITableViewCell`控制項。 Android 平台上，`ViewCellRenderer`類別會具現化原生`View`控制項。 在通用 Windows 平台 (UWP)，`ViewCellRenderer`類別會具現化原生`DataTemplate`。 如需有關轉譯器和 Xamarin.Forms 控制項對應至原生控制項類別的詳細資訊，請參閱 <<c0> [ 轉譯器基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
-下圖說明之間的關聯性[ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)和對應的原生控制項實作它：
+下圖說明之間的關聯性[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)和對應的原生控制項實作它：
 
 ![](viewcell-images/viewcell-classes.png "ViewCell 控制項與實作的原生控制項之間的關聯性")
 
-轉譯程序可以藉由建立自訂轉譯器的實作平台專屬的自訂採取善用[ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)每個平台。 執行此動作的程序如下所示：
+轉譯程序可以藉由建立自訂轉譯器的實作平台專屬的自訂採取善用[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)每個平台。 執行此動作的程序如下所示：
 
 1. [建立](#Creating_the_Custom_Cell)Xamarin.Forms 自訂儲存格。
 1. [取用](#Consuming_the_Custom_Cell)Xamarin.Forms 自訂資料格。
 1. [建立](#Creating_the_Custom_Renderer_on_each_Platform)每個平台上的資料格的自訂轉譯器。
 
-每個項目會現在依次討論實作`NativeCell`利用 Xamarin.Forms 內裝載每個資料格的平台特定版面配置轉譯器[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)控制項。 如此一來重複呼叫期間 Xamarin.Forms 版面配置計算`ListView`捲動。
+每個項目會現在依次討論實作`NativeCell`利用 Xamarin.Forms 內裝載每個資料格的平台特定版面配置轉譯器[ `ListView` ](xref:Xamarin.Forms.ListView)控制項。 如此一來重複呼叫期間 Xamarin.Forms 版面配置計算`ListView`捲動。
 
 <a name="Creating_the_Custom_Cell" />
 
 ## <a name="creating-the-custom-cell"></a>建立自訂的儲存格
 
-可以建立自訂的儲存格控制項的子類別化[ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)類別，如下列程式碼範例所示：
+可以建立自訂的儲存格控制項的子類別化[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)類別，如下列程式碼範例所示：
 
 ```csharp
 public class NativeCell : ViewCell
@@ -143,9 +143,9 @@ public class NativeCellPageCS : ContentPage
 }
 ```
 
-Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView)控制項來顯示一份資料，也就透過填入[ `ItemSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%601.ItemsSource/)屬性。 [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)快取策略嘗試最小化`ListView`記憶體耗用量和執行速度所回收清單資料格。 如需詳細資訊，請參閱 <<c0> [ 快取策略](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)。
+Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView)控制項來顯示一份資料，也就透過填入[ `ItemSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)屬性。 [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)快取策略嘗試最小化`ListView`記憶體耗用量和執行速度所回收清單資料格。 如需詳細資訊，請參閱 <<c0> [ 快取策略](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)。
 
-在清單中的每個資料列包含資料 – 名稱、 類別和影像檔案名稱的三個項的目。 所定義的清單中的每個資料列版面配置`DataTemplate`透過參考[ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%601.ItemTemplate/)可繫結的屬性。 `DataTemplate`會定義將會每個清單中的資料列`NativeCell`會顯示其`Name`， `Category`，和`ImageFilename`透過資料繫結的屬性。 如需詳細資訊`ListView`控制項，請參閱[ListView](~/xamarin-forms/user-interface/listview/index.md)。
+在清單中的每個資料列包含資料 – 名稱、 類別和影像檔案名稱的三個項的目。 所定義的清單中的每個資料列版面配置`DataTemplate`透過參考[ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)可繫結的屬性。 `DataTemplate`會定義將會每個清單中的資料列`NativeCell`會顯示其`Name`， `Category`，和`ImageFilename`透過資料繫結的屬性。 如需詳細資訊`ListView`控制項，請參閱[ListView](~/xamarin-forms/user-interface/listview/index.md)。
 
 自訂轉譯器現在可以新增至每個應用程式專案，以自訂特定平台版面配置，每個資料格。
 
@@ -315,9 +315,9 @@ internal class NativeiOSCell : UITableViewCell, INativeElementView
 }
 ```
 
-這個類別會定義用來呈現儲存格的內容，以及其配置的控制項。 此類別會實作[ `INativeElementView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.INativeElementView/)介面，就需要[ `ListView` ](xref:Xamarin.Forms.ListView)會使用[ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)快取策略。 此介面可讓您指定的類別必須實作[ `Element` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INativeElementView.Element/)屬性，這應傳回回收的儲存格的自訂資料格資料。
+這個類別會定義用來呈現儲存格的內容，以及其配置的控制項。 此類別會實作[ `INativeElementView` ](xref:Xamarin.Forms.INativeElementView)介面，就需要[ `ListView` ](xref:Xamarin.Forms.ListView)會使用[ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)快取策略。 此介面可讓您指定的類別必須實作[ `Element` ](xref:Xamarin.Forms.INativeElementView.Element)屬性，這應傳回回收的儲存格的自訂資料格資料。
 
-`NativeiOSCell`建構函式初始化的外觀`HeadingLabel`， `SubheadingLabel`，和`CellImageView`屬性。 這些屬性用來顯示資料儲存在`NativeCell`執行個體，與`UpdateCell`方法呼叫來設定每個屬性的值。 此外，當[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)會使用[ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)快取策略，所顯示的資料`HeadingLabel`， `SubheadingLabel`，和`CellImageView`屬性可以是更新`OnNativeCellPropertyChanged`中自訂轉譯器的方法。
+`NativeiOSCell`建構函式初始化的外觀`HeadingLabel`， `SubheadingLabel`，和`CellImageView`屬性。 這些屬性用來顯示資料儲存在`NativeCell`執行個體，與`UpdateCell`方法呼叫來設定每個屬性的值。 此外，當[ `ListView` ](xref:Xamarin.Forms.ListView)會使用[ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)快取策略，所顯示的資料`HeadingLabel`， `SubheadingLabel`，和`CellImageView`屬性可以是更新`OnNativeCellPropertyChanged`中自訂轉譯器的方法。
 
 資料格的版面配置由執行`LayoutSubviews`覆寫，可設定的座標`HeadingLabel`， `SubheadingLabel`，和`CellImageView`與資料格內。
 
@@ -358,19 +358,19 @@ namespace CustomRenderer.Droid
 }
 ```
 
-`GetCellCore`呼叫方法來建置要顯示的每個資料格。 每個資料格是`NativeAndroidCell`執行個體，其定義的資料格，而其資料配置。 營運`GetCellCore`方法是仰賴[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)快取策略：
+`GetCellCore`呼叫方法來建置要顯示的每個資料格。 每個資料格是`NativeAndroidCell`執行個體，其定義的資料格，而其資料配置。 營運`GetCellCore`方法是仰賴[ `ListView` ](xref:Xamarin.Forms.ListView)快取策略：
 
-- 當[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)快取策略[ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement)，則`GetCellCore`方法會叫用每個資料格。 A`NativeAndroidCell`將會建立每個`NativeCell`最初顯示在螢幕的執行個體。 當使用者捲動`ListView`，`NativeAndroidCell`會重複使用執行個體。 如需 Android 資料格重複使用的詳細資訊，請參閱[資料列檢視重複使用](~/android/user-interface/layouts/list-view/populating.md)。
+- 當[ `ListView` ](xref:Xamarin.Forms.ListView)快取策略[ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement)，則`GetCellCore`方法會叫用每個資料格。 A`NativeAndroidCell`將會建立每個`NativeCell`最初顯示在螢幕的執行個體。 當使用者捲動`ListView`，`NativeAndroidCell`會重複使用執行個體。 如需 Android 資料格重複使用的詳細資訊，請參閱[資料列檢視重複使用](~/android/user-interface/layouts/list-view/populating.md)。
 
   > [!NOTE]
-  > 請注意，此自訂轉譯器程式碼會執行一些儲存格重複使用，即使[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)會設定為保留的資料格。
+  > 請注意，此自訂轉譯器程式碼會執行一些儲存格重複使用，即使[ `ListView` ](xref:Xamarin.Forms.ListView)會設定為保留的資料格。
 
   每個所顯示的資料`NativeAndroidCell`執行個體，將從每個資料更新新建立或重複使用，是否`NativeCell`執行個體`UpdateCell`方法。
 
   > [!NOTE]
-  > 請注意，雖然`OnNativeCellPropertyChanged`方法將會叫用時[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)已設為保留的資料格，它將不會更新`NativeAndroidCell`屬性值。
+  > 請注意，雖然`OnNativeCellPropertyChanged`方法將會叫用時[ `ListView` ](xref:Xamarin.Forms.ListView)已設為保留的資料格，它將不會更新`NativeAndroidCell`屬性值。
 
-- 當[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)快取策略[ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)，`GetCellCore`最初顯示在螢幕的每個資料格都會叫用方法。 A`NativeAndroidCell`執行個體將會為每個建立`NativeCell`最初顯示在螢幕的執行個體。 每個所顯示的資料`NativeAndroidCell`執行個體將會更新包含來自`NativeCell`執行個體`UpdateCell`方法。 不過，`GetCellCore`不會叫用方法，在使用者捲動`ListView`。 相反地，`NativeAndroidCell`會重複使用執行個體。  `PropertyChanged` 會在引發事件`NativeCell`執行個體時變更其資料，而`OnNativeCellPropertyChanged`事件處理常式會更新每個重複使用資料`NativeAndroidCell`執行個體。
+- 當[ `ListView` ](xref:Xamarin.Forms.ListView)快取策略[ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)，`GetCellCore`最初顯示在螢幕的每個資料格都會叫用方法。 A`NativeAndroidCell`執行個體將會為每個建立`NativeCell`最初顯示在螢幕的執行個體。 每個所顯示的資料`NativeAndroidCell`執行個體將會更新包含來自`NativeCell`執行個體`UpdateCell`方法。 不過，`GetCellCore`不會叫用方法，在使用者捲動`ListView`。 相反地，`NativeAndroidCell`會重複使用執行個體。  `PropertyChanged` 會在引發事件`NativeCell`執行個體時變更其資料，而`OnNativeCellPropertyChanged`事件處理常式會更新每個重複使用資料`NativeAndroidCell`執行個體。
 
 下列程式碼範例所示`OnNativeCellPropertyChanged`時已叫用的方法`PropertyChanged`就會引發事件：
 
@@ -474,7 +474,7 @@ internal class NativeAndroidCell : LinearLayout, INativeElementView
 }
 ```
 
-這個類別會定義用來呈現儲存格的內容，以及其配置的控制項。 此類別會實作[ `INativeElementView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.INativeElementView/)介面，就需要[ `ListView` ](xref:Xamarin.Forms.ListView)會使用[ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)快取策略。 此介面可讓您指定的類別必須實作[ `Element` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INativeElementView.Element/)屬性，這應傳回回收的儲存格的自訂資料格資料。
+這個類別會定義用來呈現儲存格的內容，以及其配置的控制項。 此類別會實作[ `INativeElementView` ](xref:Xamarin.Forms.INativeElementView)介面，就需要[ `ListView` ](xref:Xamarin.Forms.ListView)會使用[ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)快取策略。 此介面可讓您指定的類別必須實作[ `Element` ](xref:Xamarin.Forms.INativeElementView.Element)屬性，這應傳回回收的儲存格的自訂資料格資料。
 
 `NativeAndroidCell`建構函式會擴大`NativeAndroidCell`版面配置，並初始化`HeadingTextView`， `SubheadingTextView`，和`ImageView`擴大配置中控制項的屬性。 這些屬性用來顯示資料儲存在`NativeCell`執行個體，與`UpdateCell`方法呼叫來設定每個屬性的值。 此外，當[ `ListView` ](xref:Xamarin.Forms.ListView)會使用[ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)快取策略，所顯示的資料`HeadingTextView`， `SubheadingTextView`，和`ImageView`屬性可以是更新`OnNativeCellPropertyChanged`中自訂轉譯器的方法。
 
@@ -569,7 +569,7 @@ namespace CustomRenderer.UWP
 
 ## <a name="summary"></a>總結
 
-這篇文章已示範如何建立自訂轉譯器[ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)那裝載在 Xamarin.Forms [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)控制項。 如此一來重複呼叫期間 Xamarin.Forms 版面配置計算`ListView`捲動。
+這篇文章已示範如何建立自訂轉譯器[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)那裝載在 Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView)控制項。 如此一來重複呼叫期間 Xamarin.Forms 版面配置計算`ListView`捲動。
 
 
 ## <a name="related-links"></a>相關連結
