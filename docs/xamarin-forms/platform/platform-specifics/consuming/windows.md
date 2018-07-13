@@ -6,13 +6,13 @@ ms.assetid: 22B403C0-FE6D-498A-AE53-095E6C4B527C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/30/2018
-ms.openlocfilehash: 52895564ef327845940d687a58b007fb1502e62b
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.date: 07/10/2018
+ms.openlocfilehash: 43a681350035c3e965798bd63f49cd39f472ebfd
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935110"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998410"
 ---
 # <a name="windows-platform-specifics"></a>Windows 平台特性
 
@@ -20,19 +20,21 @@ _平台特性可讓您使用的功能只可在特定的平台，而不需要實�
 
 在通用 Windows 平台 (UWP)，Xamarin.Forms 包含下列平台特性：
 
-- 設定工具列的放置選項。 如需詳細資訊，請參閱 <<c0> [ 變更工具列位置](#toolbar_placement)。
-- 摺疊[ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)導覽列中。 如需詳細資訊，請參閱 <<c0> [ 摺疊導覽列中 MasterDetailPage](#collapsable_navigation_bar)。
+- 設定工具列的放置選項。 如需詳細資訊，請參閱 <<c0> [ 變更頁面工具列位置](#toolbar_placement)。
+- 摺疊[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)導覽列中。 如需詳細資訊，請參閱 <<c0> [ 摺疊導覽列中 MasterDetailPage](#collapsable_navigation_bar)。
 - 啟用[ `WebView` ](xref:Xamarin.Forms.WebView) UWP 訊息對話方塊中顯示 JavaScript 的警示。 如需詳細資訊，請參閱 <<c0> [ 顯示 JavaScript 警示](#webview-javascript-alert)。
 - 啟用[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)與拼字檢查引擎互動。 如需詳細資訊，請參閱 <<c0> [ 啟用 SearchBar 拼字檢查](#searchbar-spellcheck)。
 - 正在偵測讀取順序，從文字中的內容[ `Entry` ](xref:Xamarin.Forms.Entry)， [ `Editor` ](xref:Xamarin.Forms.Editor)，以及[ `Label` ](xref:Xamarin.Forms.Label)執行個體。 如需詳細資訊，請參閱 <<c0> [ 偵測內容的讀取順序](#inputview-readingorder)。
 - 停用上支援的舊版的色彩模式[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 如需詳細資訊，請參閱 <<c0> [ 停用舊版色彩模式](#legacy-color-mode)。
 - 啟用在點選 筆勢支援[ `ListView` ](xref:Xamarin.Forms.ListView)。 如需詳細資訊，請參閱 <<c0> [ 啟用點選 筆勢支援在 ListView 中](#listview-selectionmode)。
+- 啟用顯示在頁面圖示[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)工具列。 如需詳細資訊，請參閱 <<c0> [ 啟用圖示 TabbedPage](#tabbedpage-icons)。
+- 設定存取金鑰[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 如需詳細資訊，請參閱 <<c0> [ 設定 VisualElement 便捷鍵](#visualelement-accesskeys)。
 
 <a name="toolbar_placement" />
 
-## <a name="changing-the-toolbar-placement"></a>變更工具列位置
+## <a name="changing-the-page-toolbar-placement"></a>變更頁面工具列位置
 
-此平台專屬用來變更工具列的位置上[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)，而且由在 XAML 中設定[ `Page.ToolbarPlacement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty/)附加屬性的值[`ToolbarPlacement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement/)列舉型別：
+此平台專屬用來變更工具列的位置上[ `Page` ](xref:Xamarin.Forms.Page)，而且由在 XAML 中設定[ `Page.ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty)附加屬性的值[`ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement)列舉型別：
 
 ```xaml
 <TabbedPage ...
@@ -52,9 +54,9 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 page.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 ```
 
-`Page.On<Windows>`方法可讓您指定這個平台專屬只會在 Windows 上執行。 [ `Page.SetToolbarPlacement` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.SetToolbarPlacement/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.Page}/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement/)方法，請在[ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)命名空間，用來設定工具列位置中，使用[ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement)列舉型別提供三個值： [ `Default` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Default)， [ `Top` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Top)，以及[ `Bottom` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Bottom)。
+`Page.On<Windows>`方法可讓您指定這個平台專屬只會在 Windows 上執行。 [ `Page.SetToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.SetToolbarPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.Page},Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement))方法，請在[ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)命名空間，用來設定工具列位置中，使用[ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement)列舉型別提供三個值： [ `Default` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Default)， [ `Top` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Top)，以及[ `Bottom` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Bottom)。
 
-結果就是指定的工具列位置，會套用至[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)執行個體：
+結果就是指定的工具列位置，會套用至[ `Page` ](xref:Xamarin.Forms.Page)執行個體：
 
 [![](windows-images/toolbar-placement.png "工具列位置平台專屬")](windows-images/toolbar-placement-large.png#lightbox "工具列放置平台專屬")
 
@@ -62,7 +64,7 @@ page.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
 ## <a name="collapsing-a-masterdetailpage-navigation-bar"></a>摺疊 MasterDetailPage 導覽列
 
-此平台專屬用來摺疊導覽列上[ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)，而且由在 XAML 中設定[ `MasterDetailPage.CollapseStyle` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty/)並[ `MasterDetailPage.CollapsedPaneWidth` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty/)附加屬性：
+此平台專屬用來摺疊導覽列上[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)，而且由在 XAML 中設定[ `MasterDetailPage.CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty)並[ `MasterDetailPage.CollapsedPaneWidth` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty)附加屬性：
 
 ```xaml
 <MasterDetailPage ...
@@ -84,9 +86,9 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 page.On<Windows>().SetCollapseStyle(CollapseStyle.Partial).CollapsedPaneWidth(148);
 ```
 
-`MasterDetailPage.On<Windows>`方法可讓您指定這個平台專屬只會在 Windows 上執行。 [ `Page.SetCollapseStyle` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.SetCollapseStyle/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage}/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/)方法，請在[ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.WindowsSpecific/)命名空間，用來指定摺疊樣式[ `CollapseStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/)提供兩個列舉值： [ `Full` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Full)並[ `Partial` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Partial)。 [ `MasterDetailPage.CollapsedPaneWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage}/System.Double/)方法用來指定部分摺疊的導覽列的寬度。
+`MasterDetailPage.On<Windows>`方法可讓您指定這個平台專屬只會在 Windows 上執行。 [ `Page.SetCollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.SetCollapseStyle(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage},Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle))方法，請在[ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)命名空間，用來指定摺疊樣式[ `CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle)提供兩個列舉值： [ `Full` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Full)並[ `Partial` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Partial)。 [ `MasterDetailPage.CollapsedPaneWidth` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidth(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage},System.Double))方法用來指定部分摺疊的導覽列的寬度。
 
-結果是，指定[ `CollapseStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/)會套用至[ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)執行個體，也指定的寬度：
+結果是，指定[ `CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle)會套用至[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)執行個體，也指定的寬度：
 
 [![](windows-images/collapsed-navigation-bar.png "摺疊導覽列平台專屬")](windows-images/collapsed-navigation-bar-large.png#lightbox "摺疊導覽列中特定的平台")
 
@@ -293,6 +295,153 @@ listView.On<Windows>().SetSelectionMode(ListViewSelectionMode.Inaccessible);
 
 結果是，指定[ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode)會套用至[ `ListView` ](xref:Xamarin.Forms.ListView)，哪些控制項是否中的項目`ListView`點選手勢，可回應，因此是否原生`ListView`引發`ItemClick`或`Tapped`事件。
 
+<a name="tabbedpage-icons" />
+
+## <a name="enabling-icons-on-a-tabbedpage"></a>啟用 TabbedPage 圖示
+
+此平台專屬可讓頁面上要顯示的圖示[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)工具列上，並提供的功能，可選擇性地指定圖示大小。 它由在 XAML 中設定[ `TabbedPage.HeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsEnabledProperty) ; 附加屬性`true`，以及選擇性地設定[ `TabbedPage.HeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsSizeProperty) ; 附加屬性[ `Size`](xref:Xamarin.Forms.Size)值：
+
+```xaml
+<TabbedPage ...
+            xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
+            windows:TabbedPage.HeaderIconsEnabled="true">
+    <windows:TabbedPage.HeaderIconsSize>
+        <Size>
+            <x:Arguments>
+                <x:Double>24</x:Double>
+                <x:Double>24</x:Double>
+            </x:Arguments>
+        </Size>
+    </windows:TabbedPage.HeaderIconsSize>
+    <ContentPage Title="Todo" Icon="todo.png">
+        ...
+    </ContentPage>
+    <ContentPage Title="Reminders" Icon="reminders.png">
+        ...
+    </ContentPage>
+    <ContentPage Title="Contacts" Icon="contacts.png">
+        ...
+    </ContentPage>
+</TabbedPage>
+```
+
+或者，它可以取用從 C# 使用 fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+public class WindowsTabbedPageIconsCS : Xamarin.Forms.TabbedPage
+{
+  public WindowsTabbedPageIconsCS()
+    {
+    On<Windows>().SetHeaderIconsEnabled(true);
+    On<Windows>().SetHeaderIconsSize(new Size(24, 24));
+
+    Children.Add(new ContentPage { Title = "Todo", Icon = "todo.png" });
+    Children.Add(new ContentPage { Title = "Reminders", Icon = "reminders.png" });
+    Children.Add(new ContentPage { Title = "Contacts", Icon = "contacts.png" });
+  }
+}
+```
+
+`TabbedPage.On<Windows>`方法可讓您指定這個特定平台-通用 Windows 平台上只會執行。 [ `TabbedPage.SetHeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.SetHeaderIconsEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.TabbedPage},System.Boolean))方法，請在[ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)命名空間，用來開啟標頭圖示，開啟或關閉。 [ `TabbedPage.SetHeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.SetHeaderIconsSize(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.TabbedPage},Xamarin.Forms.Size))方法會選擇性地指定標頭圖示大小[ `Size` ](xref:Xamarin.Forms.Size)值。
+
+颾魤 ㄛ`TabbedPage`類別內`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`命名空間也有[ `EnableHeaderIcons` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.EnableHeaderIcons*)方法，可讓標頭圖示[ `DisableHeaderIcons` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.DisableHeaderIcons*)標頭圖示，會停用的方法和[ `IsHeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.IsHeaderIconsEnabled*)方法會傳回`boolean`值，指出是否啟用標頭圖示。
+
+結果會是該頁面，可以顯示圖示[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)工具列上，選擇性地設定為所需大小的圖示大小：
+
+![TabbedPage 圖示啟用平台專屬](windows-images/tabbedpage-icons.png "TabbedPage 圖示啟用平台專屬")
+
+<a name="visualelement-accesskeys" />
+
+## <a name="setting-visualelement-access-keys"></a>設定 VisualElement 存取金鑰
+
+存取金鑰會藉由提供應用程式的顯示 UI，透過觸控式鍵盤而不是透過使用者快速瀏覽並與其互動以直覺的方式改善可用性和通用 Windows 平台上的應用程式的協助工具的鍵盤快速鍵或滑鼠。 也就是一或多個英數字元的索引鍵，通常依序按下 Alt 鍵的組合。 鍵盤快速鍵自動支援使用單一的英數字元的存取金鑰。
+
+存取金鑰祕訣則浮動的控制項，包括存取金鑰旁邊顯示的徽章。 每個存取金鑰的提示包含英數字元的索引鍵的啟動相關聯的控制項。 當使用者按下 Alt 鍵時，則會顯示存取金鑰祕訣。
+
+此平台專屬用來指定存取金鑰[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 它由在 XAML 中設定[ `VisualElement.AccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyProperty)為英數字元值，並選擇性地設定附加屬性[ `VisualElement.AccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyPlacementProperty)附加屬性值為[ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement)列舉[ `VisualElement.AccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyHorizontalOffsetProperty) ; 附加屬性`double`，而[ `VisualElement.AccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyVerticalOffsetProperty) ;附加屬性`double`:
+
+```xaml
+<TabbedPage ...
+            xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core">
+    <ContentPage Title="Page 1"
+                 windows:VisualElement.AccessKey="1">
+        <StackLayout Margin="20">
+            ...
+            <Switch windows:VisualElement.AccessKey="A" />
+            <Entry Placeholder="Enter text here"
+                   windows:VisualElement.AccessKey="B" />
+            ...
+            <Button Text="Access key F, placement top with offsets"
+                    Margin="20"
+                    Clicked="OnButtonClicked"
+                    windows:VisualElement.AccessKey="F"
+                    windows:VisualElement.AccessKeyPlacement="Top"
+                    windows:VisualElement.AccessKeyHorizontalOffset="20"
+                    windows:VisualElement.AccessKeyVerticalOffset="20" />
+            ...
+        </StackLayout>
+    </ContentPage>
+    ...
+</TabbedPage>
+```
+
+或者，它可以取用從 C# 使用 fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+var page = new ContentPage { Title = "Page 1" };
+page.On<Windows>().SetAccessKey("1");
+
+var switchView = new Switch();
+switchView.On<Windows>().SetAccessKey("A");
+var entry = new Entry { Placeholder = "Enter text here" };
+entry.On<Windows>().SetAccessKey("B");
+...
+
+var button4 = new Button { Text = "Access key F, placement top with offsets", Margin = new Thickness(20) };
+button4.Clicked += OnButtonClicked;
+button4.On<Windows>()
+    .SetAccessKey("F")
+    .SetAccessKeyPlacement(AccessKeyPlacement.Top)
+    .SetAccessKeyHorizontalOffset(20)
+    .SetAccessKeyVerticalOffset(20);
+...
+```
+
+`VisualElement.On<Windows>`方法可讓您指定這個特定平台-通用 Windows 平台上只會執行。 [ `VisualElement.SetAccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKey(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.String))方法，請在[ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)命名空間，用來設定存取金鑰值，如`VisualElement`。 [ `VisualElement.SetAccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},Xamarin.Forms.AccessKeyPlacement))方法，選擇性地指定要用於顯示存取金鑰祕訣，位置[ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement)列舉提供下列可能的值：
+
+- [`Auto`](xref:Xamarin.Forms.AccessKeyPlacement.Auto) – 表示 存取金鑰的小費放置將會由作業系統決定。
+- [`Top`](xref:Xamarin.Forms.AccessKeyPlacement.Top) -指出存取關鍵提示會出現上述的上邊緣`VisualElement`。
+- [`Bottom`](xref:Xamarin.Forms.AccessKeyPlacement.Bottom) -指出存取關鍵提示會出現如下的下邊緣`VisualElement`。
+- [`Right`](xref:Xamarin.Forms.AccessKeyPlacement.Right) -指出存取關鍵提示會出現右邊的右緣`VisualElement`。
+- [`Left`](xref:Xamarin.Forms.AccessKeyPlacement.Left) – 表示存取關鍵提示會顯示左邊的左邊緣`VisualElement`。
+- [`Center`](xref:Xamarin.Forms.AccessKeyPlacement.Center) -指出的中心點會出現重疊的存取金鑰祕訣`VisualElement`。
+
+> [!NOTE]
+> 通常[ `Auto` ](xref:Xamarin.Forms.AccessKeyPlacement.Auto)關鍵提示放置已足夠，其中包括支援的自適性使用者介面。
+
+[ `VisualElement.SetAccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyHorizontalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.Double))並[ `VisualElement.SetAccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyVerticalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.Double))方法可用於更細微的控制的存取金鑰祕訣位置。 引數`SetAccessKeyHorizontalOffset`方法會指示如何向移動的存取金鑰提示左或向右和引數`SetAccessKeyVerticalOffset`方法指出目前存取關鍵提示上移或下移的方式。
+
+>[!NOTE]
+> 在設定的存取金鑰的位置時，就無法設定存取關鍵提示位移`Auto`。
+
+颾魤 ㄛ [ `GetAccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKey(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement}))， [ `GetAccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement}))， [ `GetAccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyHorizontalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement}))，以及[ `GetAccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyVerticalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement}))可用方法若要擷取存取金鑰值和它的位置。
+
+結果是存取重要的提示，可以顯示任何旁邊[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)定義的執行個體存取金鑰，藉由按下 Alt 鍵：
+
+![VisualElement 存取金鑰的平台專屬](windows-images/visualelement-accesskeys.png "VisualElement 存取金鑰的特定平台")
+
+當使用者啟用存取金鑰，藉由按下 Alt 鍵後面跟著存取金鑰的預設動作`VisualElement`就會執行。 例如，當使用者啟動的存取金鑰上[ `Switch` ](xref:Xamarin.Forms.Switch)，則`Switch`切換。 當使用者啟動上的存取金鑰[ `Entry` ](xref:Xamarin.Forms.Entry)，則`Entry`取得焦點。 當使用者啟動上的存取金鑰[ `Button` ](xref:Xamarin.Forms.Button)，事件處理常式，如[ `Clicked` ](xref:Xamarin.Forms.Button.Clicked)執行事件。
+
+如需存取金鑰的詳細資訊，請參閱[存取金鑰](/windows/uwp/design/input/access-keys#key-tip-positioning)。
+
 ## <a name="summary"></a>總結
 
 這篇文章會示範如何使用 Windows 平台特性 Xamarin.Forms 內建。 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。
@@ -301,4 +450,4 @@ listView.On<Windows>().SetSelectionMode(ListViewSelectionMode.Inaccessible);
 
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
-- [WindowsSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.WindowsSpecific/)
+- [WindowsSpecific](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/02/2016
-ms.openlocfilehash: 115fff5f80eb531780aa208fde677b26b69e9294
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 241579d51d1f0af84655f439bad3adb879404e91
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935624"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995384"
 ---
 # <a name="bindable-properties"></a>可繫結屬性
 
@@ -20,7 +20,7 @@ _在 Xamarin.Forms 中，通用語言執行平台 (CLR) 屬性的功能會擴充
 
 ## <a name="overview"></a>總覽
 
-可繫結的屬性延伸 CLR 屬性功能所支援的屬性[ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)型別，而非備份含有欄位的屬性。 可繫結屬性的目的是要提供屬性系統，可支援資料繫結、 樣式、 範本，並透過父子式關聯性設定的值。 此外，可繫結的屬性可以提供預設值，驗證的屬性值和回呼，以監視屬性變更。
+可繫結的屬性延伸 CLR 屬性功能所支援的屬性[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)型別，而非備份含有欄位的屬性。 可繫結屬性的目的是要提供屬性系統，可支援資料繫結、 樣式、 範本，並透過父子式關聯性設定的值。 此外，可繫結的屬性可以提供預設值，驗證的屬性值和回呼，以監視屬性變更。
 
 屬性應該實作為可繫結的屬性，以支援一或多個下列功能：
 
@@ -30,7 +30,7 @@ _在 Xamarin.Forms 中，通用語言執行平台 (CLR) 屬性的功能會擴充
 - 正在驗證屬性的值。
 - 監視屬性變更。
 
-Xamarin.Forms 可繫結屬性的範例包括[ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/)， [ `Button.BorderRadius` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.BorderRadius/)，以及[ `StackLayout.Orientation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Orientation/)。 每個可繫結的屬性都有對應`public static readonly`型別的屬性[ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)相同類別上公開，且可繫結屬性的識別項。 例如，對應可繫結的屬性識別項`Label.Text`屬性是[ `Label.TextProperty` ](xref:Xamarin.Forms.Label.TextProperty)。
+Xamarin.Forms 可繫結屬性的範例包括[ `Label.Text` ](xref:Xamarin.Forms.Label.Text)， [ `Button.BorderRadius` ](xref:Xamarin.Forms.Button.BorderRadius)，以及[ `StackLayout.Orientation` ](xref:Xamarin.Forms.StackLayout.Orientation)。 每個可繫結的屬性都有對應`public static readonly`型別的屬性[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)相同類別上公開，且可繫結屬性的識別項。 例如，對應可繫結的屬性識別項`Label.Text`屬性是[ `Label.TextProperty` ](xref:Xamarin.Forms.Label.TextProperty)。
 
 <a name="consuming-bindable-property" />
 
@@ -38,23 +38,23 @@ Xamarin.Forms 可繫結屬性的範例包括[ `Label.Text` ](https://developer.x
 
 建立可繫結屬性的程序如下所示：
 
-1. 建立[ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)執行個體，其中[ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/)方法多載。
-1. 定義屬性的存取子[ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)執行個體。
+1. 建立[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)執行個體，其中[ `BindableProperty.Create` ](xref:Xamarin.Forms.BindableProperty.Create*)方法多載。
+1. 定義屬性的存取子[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)執行個體。
 
-請注意，所有[ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)必須在 UI 執行緒上建立執行個體。 這表示只有在 UI 執行緒執行的程式碼可以取得或設定可繫結屬性的值。 不過，`BindableProperty`執行個體可以由封送處理至 UI 執行緒存取來自其他執行緒[ `Device.BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/)方法。
+請注意，所有[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)必須在 UI 執行緒上建立執行個體。 這表示只有在 UI 執行緒執行的程式碼可以取得或設定可繫結屬性的值。 不過，`BindableProperty`執行個體可以由封送處理至 UI 執行緒存取來自其他執行緒[ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))方法。
 
 ### <a name="creating-a-property"></a>建立屬性
 
-若要建立`BindableProperty`執行個體，包含的類別必須衍生自[ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/)類別。 不過，`BindableObject`類別是在類別階層中，高，因此大部分的類別用於使用者介面功能支援可繫結屬性。
+若要建立`BindableProperty`執行個體，包含的類別必須衍生自[ `BindableObject` ](xref:Xamarin.Forms.BindableObject)類別。 不過，`BindableObject`類別是在類別階層中，高，因此大部分的類別用於使用者介面功能支援可繫結屬性。
 
-您可以建立可繫結的屬性宣告`public static readonly`型別的屬性[ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)。 可繫結的屬性應該設定為傳回的值，其中[ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/)方法多載。 宣告應該是主體內[ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/)衍生類別，但是不在任何成員定義。
+您可以建立可繫結的屬性宣告`public static readonly`型別的屬性[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)。 可繫結的屬性應該設定為傳回的值，其中[ `BindableProperty.Create` ](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate))方法多載。 宣告應該是主體內[ `BindableObject` ](xref:Xamarin.Forms.BindableObject)衍生類別，但是不在任何成員定義。
 
-至少必須指定識別碼時建立[ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)，以及下列參數：
+至少必須指定識別碼時建立[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)，以及下列參數：
 
-- 名稱[ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)。
+- 名稱[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)。
 - 屬性的類型。
 - 主控物件的型別。
-- 屬性的預設值。 這可確保未設定，且它可以是不同的屬性類型的預設值時，屬性永遠傳回特定的預設值。 預設值將會是還原時[ `ClearValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.ClearValue/p/Xamarin.Forms.BindableProperty/)可繫結的屬性上呼叫方法。
+- 屬性的預設值。 這可確保未設定，且它可以是不同的屬性類型的預設值時，屬性永遠傳回特定的預設值。 預設值將會是還原時[ `ClearValue` ](xref:Xamarin.Forms.BindableObject.ClearValue(Xamarin.Forms.BindableProperty))可繫結的屬性上呼叫方法。
 
 下列程式碼示範可繫結的屬性，識別項和四個必要參數的值：
 
@@ -63,9 +63,9 @@ public static readonly BindableProperty EventNameProperty =
   BindableProperty.Create ("EventName", typeof(string), typeof(EventToCommandBehavior), null);
 ```
 
-這會建立[ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)具名執行個體`EventName`，型別的`string`。 屬性由所擁有`EventToCommandBehavior`類別，並具有預設值是`null`。 可繫結屬性的命名慣例是可繫結屬性的識別項必須符合在指定的屬性名稱`Create`方法，並有"Property"附加到它。 因此，在上述範例中，可繫結屬性的識別項是`EventNameProperty`。
+這會建立[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)具名執行個體`EventName`，型別的`string`。 屬性由所擁有`EventToCommandBehavior`類別，並具有預設值是`null`。 可繫結屬性的命名慣例是可繫結屬性的識別項必須符合在指定的屬性名稱`Create`方法，並有"Property"附加到它。 因此，在上述範例中，可繫結屬性的識別項是`EventNameProperty`。
 
-（選擇性） 建立時[ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)執行個體，這個參數可以指定：
+（選擇性） 建立時[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)執行個體，這個參數可以指定：
 
 - 繫結模式。 這用來指定屬性值變更會傳播所在的方向。 在預設的繫結模式，變更會傳播從*來源*要*目標*。
 - 可設定屬性值時將會叫用的驗證委派。 如需詳細資訊，請參閱 <<c0> [ 驗證回撥](#validation)。
@@ -76,7 +76,7 @@ public static readonly BindableProperty EventNameProperty =
 
 ### <a name="creating-accessors"></a>建立存取子
 
-屬性存取子，才能使用屬性語法來存取可繫結的屬性。 `Get`存取子應會傳回包含值，對應的可繫結屬性中。 這可藉由呼叫[ `GetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.GetValue/p/Xamarin.Forms.BindableProperty/)方法中，傳入可繫結的屬性識別項，以取得值，然後再轉換為要求的類型結果。 `Set`存取子都應該設定相對應的可繫結屬性的值。 這可藉由呼叫[ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/)方法並傳入要設定值，並要設定的值可繫結的屬性識別項。
+屬性存取子，才能使用屬性語法來存取可繫結的屬性。 `Get`存取子應會傳回包含值，對應的可繫結屬性中。 這可藉由呼叫[ `GetValue` ](xref:Xamarin.Forms.BindableObject.GetValue(Xamarin.Forms.BindableProperty))方法中，傳入可繫結的屬性識別項，以取得值，然後再轉換為要求的類型結果。 `Set`存取子都應該設定相對應的可繫結屬性的值。 這可藉由呼叫[ `SetValue` ](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object))方法並傳入要設定值，並要設定的值可繫結的屬性識別項。
 
 下列程式碼範例顯示存取子`EventName`可繫結屬性：
 
@@ -123,13 +123,13 @@ listView.Behaviors.Add (new EventToCommandBehavior {
 
 ## <a name="advanced-scenarios"></a>進階的案例
 
-建立時[ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)執行個體，有幾個可以實現進階的可繫結屬性中設定的選擇性參數。 本節會探討這些案例。
+建立時[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)執行個體，有幾個可以實現進階的可繫結屬性中設定的選擇性參數。 本節會探討這些案例。
 
 <a name="propertychanges" />
 
 ### <a name="detecting-property-changes"></a>偵測屬性變更
 
-A`static`屬性變更的回呼方法可以註冊具有可繫結的屬性，藉由指定`propertyChanged`參數[ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/)方法。 可繫結屬性的值變更時，便會叫用指定的回呼方法。
+A`static`屬性變更的回呼方法可以註冊具有可繫結的屬性，藉由指定`propertyChanged`參數[ `BindableProperty.Create` ](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate))方法。 可繫結屬性的值變更時，便會叫用指定的回呼方法。
 
 下列程式碼範例示範如何`EventName`可繫結屬性暫存器`OnEventNameChanged`做為屬性變更的回呼方法的方法：
 
@@ -145,13 +145,13 @@ static void OnEventNameChanged (BindableObject bindable, object oldValue, object
 }
 ```
 
-在屬性變更的回呼方法中， [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/)參數會用來表示哪個主控類別的執行個體發生了變更，以及兩個值`object`參數代表的舊和新值可繫結的屬性。
+在屬性變更的回呼方法中， [ `BindableObject` ](xref:Xamarin.Forms.BindableObject)參數會用來表示哪個主控類別的執行個體發生了變更，以及兩個值`object`參數代表的舊和新值可繫結的屬性。
 
 <a name="validation" />
 
 ### <a name="validation-callbacks"></a>驗證回撥
 
-A`static`驗證回撥方法可以註冊具有可繫結的屬性，藉由指定`validateValue`參數[ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/)方法。 設定可繫結屬性的值時，會叫用指定的回呼方法。
+A`static`驗證回撥方法可以註冊具有可繫結的屬性，藉由指定`validateValue`參數[ `BindableProperty.Create` ](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate))方法。 設定可繫結屬性的值時，會叫用指定的回呼方法。
 
 下列程式碼範例示範如何`Angle`可繫結屬性暫存器`IsValidValue`做為驗證回呼方法的方法：
 
@@ -174,7 +174,7 @@ static bool IsValidValue (BindableObject view, object value)
 
 ### <a name="coerce-value-callbacks"></a>強制轉型值回撥
 
-A`static`強制轉型值回呼方法可以註冊可繫結的屬性，藉由指定`coerceValue`參數[ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/)方法。 可繫結屬性的值變更時，便會叫用指定的回呼方法。
+A`static`強制轉型值回呼方法可以註冊可繫結的屬性，藉由指定`coerceValue`參數[ `BindableProperty.Create` ](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate))方法。 可繫結屬性的值變更時，便會叫用指定的回呼方法。
 
 強制轉型的值回撥來強制重新評估它的可繫結的屬性，屬性的值變更時。 比方說，強制轉型值回呼可以用於確保一個可繫結屬性的值不大於另一個可繫結屬性的值。
 
@@ -214,7 +214,7 @@ public static readonly BindableProperty SizeProperty =
   defaultValueCreator: bindable => Device.GetNamedSize (NamedSize.Large, (Label)bindable));
 ```
 
-`defaultValueCreator`參數設定為`Func`叫用[ `Device.GetNamedSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.GetNamedSize/p/Xamarin.Forms.NamedSize/System.Type/)方法來傳回`double`表示具名的大小上使用的字型[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)原生的平台上。
+`defaultValueCreator`參數設定為`Func`叫用[ `Device.GetNamedSize` ](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type))方法來傳回`double`表示具名的大小上使用的字型[ `Label` ](xref:Xamarin.Forms.Label)原生的平台上。
 
 ## <a name="summary"></a>總結
 
@@ -227,5 +227,5 @@ public static readonly BindableProperty SizeProperty =
 - [事件要命令行為 （範例）](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
 - [驗證回撥 （範例）](https://developer.xamarin.com/samples/xamarin-forms/xaml/validationcallback/)
 - [強制轉型值回撥 （範例）](https://developer.xamarin.com/samples/xamarin-forms/xaml/coercevaluecallback/)
-- [BindableProperty](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)
-- [BindableObject](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/)
+- [BindableProperty](xref:Xamarin.Forms.BindableProperty)
+- [BindableObject](xref:Xamarin.Forms.BindableObject)

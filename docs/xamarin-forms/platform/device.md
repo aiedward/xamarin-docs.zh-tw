@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: ff707cdf73665ae07881d2d17ec837a4cfacaca0
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: c706d50962fb707208203a97374d4ae26f141ebf
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935367"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998257"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms 裝置類別
 
@@ -24,11 +24,11 @@ ms.locfileid: "37935367"
 
 ## <a name="providing-platform-specific-values"></a>提供平台專屬值
 
-在 Xamarin.Forms 2.3.4 之前, 的平台執行應用程式無法取得 dimension&gt [ `Device.OS` ](xref:Xamarin.Forms.Device.OS)屬性，並比較它[ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS)， [`TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android)， [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone)，和[ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows)列舉值。 同樣地，其中[ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/)多載可用來提供控制項的平台特定值。
+在 Xamarin.Forms 2.3.4 之前, 的平台執行應用程式無法取得 dimension&gt [ `Device.OS` ](xref:Xamarin.Forms.Device.OS)屬性，並比較它[ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS)， [`TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android)， [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone)，和[ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows)列舉值。 同樣地，其中[ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action))多載可用來提供控制項的平台特定值。
 
-不過，因為 Xamarin.Forms 2.3.4 這些 Api 已被取代並取代。 [ `Device` ](xref:Xamarin.Forms.Device)類別現在包含公用的字串常數，用以識別平台 – [ `Device.iOS` ](xref:Xamarin.Forms.Device.iOS)， [ `Device.Android` ](xref:Xamarin.Forms.Device.Android)， `Device.WinPhone`(已被取代）， `Device.WinRT` （已過時） [ `Device.UWP` ](xref:Xamarin.Forms.Device.UWP)，並[ `Device.macOS` ](xref:Xamarin.Forms.Device.macOS)。 同樣地， [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/)多載已取代為[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/)並[ `On` ](xref:Xamarin.Forms.On) Api。
+不過，因為 Xamarin.Forms 2.3.4 這些 Api 已被取代並取代。 [ `Device` ](xref:Xamarin.Forms.Device)類別現在包含公用的字串常數，用以識別平台 – [ `Device.iOS` ](xref:Xamarin.Forms.Device.iOS)， [ `Device.Android` ](xref:Xamarin.Forms.Device.Android)， `Device.WinPhone`(已被取代）， `Device.WinRT` （已過時） [ `Device.UWP` ](xref:Xamarin.Forms.Device.UWP)，並[ `Device.macOS` ](xref:Xamarin.Forms.Device.macOS)。 同樣地， [ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action))多載已取代為[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)並[ `On` ](xref:Xamarin.Forms.On) Api。
 
-在 C# 中，平台專屬值可供建立`switch`陳述式[ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/)屬性，然後再提供`case`適用於必要平台的陳述式：
+在 C# 中，平台專屬值可供建立`switch`陳述式[ `Device.RuntimePlatform` ](xref:Xamarin.Forms.Device.RuntimePlatform)屬性，然後再提供`case`適用於必要平台的陳述式：
 
 ```csharp
 double top;
@@ -46,7 +46,7 @@ switch (Device.RuntimePlatform)
 layout.Margin = new Thickness(5, top, 5, 0);
 ```
 
-[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/)並[ `On` ](xref:Xamarin.Forms.On)類別會提供相同的功能，在 XAML 中：
+[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)並[ `On` ](xref:Xamarin.Forms.On)類別會提供相同的功能，在 XAML 中：
 
 ```xaml
 <StackLayout>
@@ -60,7 +60,7 @@ layout.Margin = new Thickness(5, top, 5, 0);
 </StackLayout>
 ```
 
-[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/)類別是泛型類別，因此必須具現化`x:TypeArguments`符合目標類型的屬性。 在  [ `On` ](xref:Xamarin.Forms.On)類別[ `Platform` ](xref:Xamarin.Forms.On.Platform)屬性可以接受單一`string`值或以逗號分隔的多個`string`值。
+[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)類別是泛型類別，因此必須具現化`x:TypeArguments`符合目標類型的屬性。 在  [ `On` ](xref:Xamarin.Forms.On)類別[ `Platform` ](xref:Xamarin.Forms.On.Platform)屬性可以接受單一`string`值或以逗號分隔的多個`string`值。
 
 > [!IMPORTANT]
 > 提供不正確`Platform`屬性中的值`On`類別不會導致錯誤。 相反地，程式碼會執行不含套用的平台特定值。
@@ -75,6 +75,7 @@ layout.Margin = new Thickness(5, top, 5, 0);
 -  **Tablet** – iPad、 Windows 裝置和 Android 裝置的寬度超過 600 dip ^
 -  **桌面**– 只有在傳回[UWP 應用程式](~/xamarin-forms/platform/windows/installation/index.md)在 Windows 10 desktop 電腦上 (傳回`Phone`行動 Windows 在裝置上，包括在連續體案例中)
 -  **電視**– Tizen TV 裝置
+-  **監看式**– Tizen 監看式裝置
 -  **不支援**– 未使用
 
 *^ dip 不一定是實體的像素計數*
@@ -172,7 +173,7 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () => {
 
 ## <a name="devicebegininvokeonmainthread"></a>Device.BeginInvokeOnMainThread
 
-由背景執行緒，例如在計時器或非同步作業，例如 web 要求的完成處理常式中執行的程式碼時，應該永遠不會存取使用者介面項目。 需要更新使用者介面的任何背景程式碼應該包裝在內[ `BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/)。 這相當於`InvokeOnMainThread`在 iOS 上，`RunOnUiThread`在 Android 上，和`Dispatcher.RunAsync`通用 Windows 平台上。
+由背景執行緒，例如在計時器或非同步作業，例如 web 要求的完成處理常式中執行的程式碼時，應該永遠不會存取使用者介面項目。 需要更新使用者介面的任何背景程式碼應該包裝在內[ `BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))。 這相當於`InvokeOnMainThread`在 iOS 上，`RunOnUiThread`在 Android 上，和`Dispatcher.RunAsync`通用 Windows 平台上。
 
 Xamarin.Forms 程式碼是：
 

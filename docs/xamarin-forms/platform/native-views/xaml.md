@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 4afdf1210a435e4631b1fe43e9415f4f9f599350
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: b7ea75c13d84cf9fe74d7a606f6127aaa6bbe3b2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935487"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996330"
 ---
 # <a name="native-views-in-xaml"></a>在 XAML 中的原生檢視
 
@@ -44,7 +44,7 @@ _從 iOS、 Android 和通用 Windows 平台的原生檢視可以直接參考從
 
 ## <a name="consuming-native-views"></a>使用原生檢視
 
-下列程式碼範例會示範如何使用 Xamarin.Forms 每個平台的原生檢視[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/):
+下列程式碼範例會示範如何使用 Xamarin.Forms 每個平台的原生檢視[ `ContentPage` ](xref:Xamarin.Forms.ContentPage):
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -63,11 +63,11 @@ _從 iOS、 Android 和通用 Windows 平台的原生檢視可以直接參考從
 </ContentPage>
 ```
 
-以及指定`clr-namespace`並`assembly`原生檢視命名空間`targetPlatform`也必須指定。 這應該設定為其中一個值[ `TargetPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TargetPlatform/)列舉型別，而且通常會設定為`iOS`， `Android`，或`Windows`。 在執行階段，XAML 剖析器將會忽略任何 XML 命名空間前置詞具有`targetPlatform`不符合應用程式執行所在的平台。
+以及指定`clr-namespace`並`assembly`原生檢視命名空間`targetPlatform`也必須指定。 這應該設定為其中一個值[ `TargetPlatform` ](xref:Xamarin.Forms.TargetPlatform)列舉型別，而且通常會設定為`iOS`， `Android`，或`Windows`。 在執行階段，XAML 剖析器將會忽略任何 XML 命名空間前置詞具有`targetPlatform`不符合應用程式執行所在的平台。
 
 每個命名空間宣告可用來從指定的命名空間參考任何類別或結構。 例如，`ios`命名空間宣告可用來參考任何類別或結構，從 iOS`UIKit`命名空間。 原生檢視的屬性可以設定透過 XAML，但必須符合的屬性和物件類型。 例如，`UILabel.TextColor`屬性設定為`UIColor.Red`使用`x:Static`標記延伸和`ios`命名空間。
 
-可繫結屬性和附加的可繫結屬性也可以設定在原生檢視上使用`Class.BindableProperty="value"`語法。 每個原生的檢視會包裝在特定平台`NativeViewWrapper`執行個體，它是衍生自[ `Xamarin.Forms.View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)類別。 設定 原生的檢視中的 繫結的屬性或附加的可繫結屬性包裝函式傳輸屬性值。 例如，指定置中的水平版面配置，藉由設定`View.HorizontalOptions="Center"`上原生的檢視。
+可繫結屬性和附加的可繫結屬性也可以設定在原生檢視上使用`Class.BindableProperty="value"`語法。 每個原生的檢視會包裝在特定平台`NativeViewWrapper`執行個體，它是衍生自[ `Xamarin.Forms.View` ](xref:Xamarin.Forms.View)類別。 設定 原生的檢視中的 繫結的屬性或附加的可繫結屬性包裝函式傳輸屬性值。 例如，指定置中的水平版面配置，藉由設定`View.HorizontalOptions="Center"`上原生的檢視。
 
 > [!NOTE]
 > 請注意樣式無法搭配原生的檢視，因為樣式可以只為目標所支援的屬性`BindableProperty`物件。
@@ -113,14 +113,14 @@ Android 的小工具的建構函式通常需要 Android`Context`物件引數，�
 
 ```
 
-此頁面包含[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)其[ `IsEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/)屬性繫結至`NativeSwitchPageViewModel.IsSwitchOn`屬性。 [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/)的頁面設定的新執行個體`NativeSwitchPageViewModel`類別在程式碼後置檔案中，使用 ViewModel 類別實作`INotifyPropertyChanged`介面。
+此頁面包含[ `Entry` ](xref:Xamarin.Forms.Entry)其[ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)屬性繫結至`NativeSwitchPageViewModel.IsSwitchOn`屬性。 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)的頁面設定的新執行個體`NativeSwitchPageViewModel`類別在程式碼後置檔案中，使用 ViewModel 類別實作`INotifyPropertyChanged`介面。
 
 此頁面也包含每個平台的原生交換器。 使用每個原生交換器[ `TwoWay` ](xref:Xamarin.Forms.BindingMode.TwoWay)更新的值的繫結`NativeSwitchPageViewModel.IsSwitchOn`屬性。 因此，當參數為 off，`Entry`已停用，以及當參數為 on，`Entry`已啟用。 下列螢幕擷取畫面會顯示這項功能，每個平台：
 
 ![](xaml-images/native-switch-disabled.png "原生交換器已停用")
 ![](xaml-images/native-switch-enabled.png "原生交換器已啟用")
 
-前提是原生屬性實作，會自動支援雙向繫結`INotifyPropertyChanged`，在 iOS 上，支援索引鍵-值觀察 (KVO) 或`DependencyProperty`UWP 上。 不過，許多原生檢視不支援屬性變更通知。 對於這些檢視中，您可以指定[ `UpdateSourceEventName` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.UpdateSourceEventName/)屬性值，做為繫結運算式的一部分。 此屬性應該設定為原生通知的目標屬性已變更的檢視中的事件名稱。 然後，當原生參數的值變更時，`Binding`類別會收到通知，使用者已變更參數值，而`NativeSwitchPageViewModel.IsSwitchOn`更新屬性值。
+前提是原生屬性實作，會自動支援雙向繫結`INotifyPropertyChanged`，在 iOS 上，支援索引鍵-值觀察 (KVO) 或`DependencyProperty`UWP 上。 不過，許多原生檢視不支援屬性變更通知。 對於這些檢視中，您可以指定[ `UpdateSourceEventName` ](xref:Xamarin.Forms.Binding.UpdateSourceEventName)屬性值，做為繫結運算式的一部分。 此屬性應該設定為原生通知的目標屬性已變更的檢視中的事件名稱。 然後，當原生參數的值變更時，`Binding`類別會收到通知，使用者已變更參數值，而`NativeSwitchPageViewModel.IsSwitchOn`更新屬性值。
 
 <a name="passing_arguments" />
 
@@ -199,12 +199,12 @@ Android 的小工具的建構函式通常需要 Android`Context`物件引數，�
 
 ## <a name="referring-to-native-views-from-code"></a>從程式碼參考原生檢視
 
-雖然未命名的原生檢視`x:Name`屬性，就可以擷取自其程式碼後置檔案，在共用存取專案中，XAML 檔案中所宣告的原生檢視執行個體，前提是原生的檢視是子系[ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)指定`x:Name`屬性值。 然後，程式碼後置檔案中的條件式編譯指示詞內您應該：
+雖然未命名的原生檢視`x:Name`屬性，就可以擷取自其程式碼後置檔案，在共用存取專案中，XAML 檔案中所宣告的原生檢視執行個體，前提是原生的檢視是子系[ `ContentView` ](xref:Xamarin.Forms.ContentView)指定`x:Name`屬性值。 然後，程式碼後置檔案中的條件式編譯指示詞內您應該：
 
-1. 擷取[ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/)屬性值，並將它轉換成特定平台`NativeViewWrapper`型別。
+1. 擷取[ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content)屬性值，並將它轉換成特定平台`NativeViewWrapper`型別。
 1. 擷取`NativeViewWrapper.NativeElement`屬性並將其轉換成原生檢視型別。
 
-原生 API 則叫用原生的檢視，來執行所需的作業。 這個方法也提供權益，多個 XAML 原生檢視針對不同平台可以是相同的子系[ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)。 下列程式碼範例示範這項技術：
+原生 API 則叫用原生的檢視，來執行所需的作業。 這個方法也提供權益，多個 XAML 原生檢視針對不同平台可以是相同的子系[ `ContentView` ](xref:Xamarin.Forms.ContentView)。 下列程式碼範例示範這項技術：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -234,7 +234,7 @@ Android 的小工具的建構函式通常需要 Android`Context`物件引數，�
 </ContentPage>
 ```
 
-上述範例中，每個平台的原生檢視都的子系[ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)控制項，與`x:Name`屬性值，用來擷取`ContentView`中程式碼後置：
+上述範例中，每個平台的原生檢視都的子系[ `ContentView` ](xref:Xamarin.Forms.ContentView)控制項，與`x:Name`屬性值，用來擷取`ContentView`中程式碼後置：
 
 ```csharp
 public partial class NativeViewInsideContentViewPage : ContentPage
@@ -276,9 +276,9 @@ public partial class NativeViewInsideContentViewPage : ContentPage
 }
 ```
 
-[ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/)存取屬性來擷取特定平台為包裝原生檢視`NativeViewWrapper`執行個體。 `NativeViewWrapper.NativeElement`擷取原生的檢視做為其原生類型，然後存取屬性。 原生檢視的 API 則會叫用來執行所需的作業。
+[ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content)存取屬性來擷取特定平台為包裝原生檢視`NativeViewWrapper`執行個體。 `NativeViewWrapper.NativeElement`擷取原生的檢視做為其原生類型，然後存取屬性。 原生檢視的 API 則會叫用來執行所需的作業。
 
-IOS 和 Android 的原生按鈕會共用相同`OnButtonTap`事件處理常式，因為每個原生的按鈕都會耗用`EventHandler`委派以回應觸控事件。 不過，通用 Windows 平台 (UWP) 會使用個別`RoutedEventHandler`，而這又會消耗`OnButtonTap`在此範例中的事件處理常式。 因此，當原生按一下按鈕時，`OnButtonTap`事件處理常式執行的縮放和旋轉內所包含的原生控制項[ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)名為`contentViewTextParent`。 下列螢幕擷取畫面會示範如何發生這種情況在每個平台上：
+IOS 和 Android 的原生按鈕會共用相同`OnButtonTap`事件處理常式，因為每個原生的按鈕都會耗用`EventHandler`委派以回應觸控事件。 不過，通用 Windows 平台 (UWP) 會使用個別`RoutedEventHandler`，而這又會消耗`OnButtonTap`在此範例中的事件處理常式。 因此，當原生按一下按鈕時，`OnButtonTap`事件處理常式執行的縮放和旋轉內所包含的原生控制項[ `ContentView` ](xref:Xamarin.Forms.ContentView)名為`contentViewTextParent`。 下列螢幕擷取畫面會示範如何發生這種情況在每個平台上：
 
 ![](xaml-images/contentview.png "ContentView 包含原生控制項")
 
@@ -319,7 +319,7 @@ IOS 和 Android 的原生按鈕會共用相同`OnButtonTap`事件處理常式，
 </ContentPage>
 ```
 
-此頁面包含[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)顯示水果由使用者選擇從原生控制項。 `Label`繫結至`SubclassedNativeControlsPageViewModel.SelectedFruit`屬性。 [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/)的頁面設定的新執行個體`SubclassedNativeControlsPageViewModel`類別在程式碼後置檔案中，使用 ViewModel 類別實作`INotifyPropertyChanged`介面。
+此頁面包含[ `Label` ](xref:Xamarin.Forms.Label)顯示水果由使用者選擇從原生控制項。 `Label`繫結至`SubclassedNativeControlsPageViewModel.SelectedFruit`屬性。 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)的頁面設定的新執行個體`SubclassedNativeControlsPageViewModel`類別在程式碼後置檔案中，使用 ViewModel 類別實作`INotifyPropertyChanged`介面。
 
 此頁面也包含每個平台的原生的選擇器 檢視。 每個原生的檢視會顯示水果的集合繫結及其`ItemSource`屬性設`SubclassedNativeControlsPageViewModel.Fruits`集合。 這可讓使用者從中挑選的成果，如下列螢幕擷取畫面所示：
 

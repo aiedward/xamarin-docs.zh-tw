@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 545468d3b02f9651c45fcaebe159351aafea6432
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 595e673c59d23a45cbaf923a0d58faff2000c296
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30790596"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996612"
 ---
 # <a name="margin-and-padding"></a>邊界和邊框距離
 
@@ -20,26 +20,26 @@ _邊界和邊框間距屬性控制版面配置時的行為項目會呈現使用�
 
 ## <a name="overview"></a>總覽
 
-邊界和邊框距離是相關的版面配置的概念：
+邊界和邊框距離是相關的版面配置概念：
 
-- [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/)屬性代表項目和其相鄰的項目之間的距離，而且用來控制的項目呈現位置，並呈現位置的相鄰項目。 `Margin` 您可以在指定值[配置](~/xamarin-forms/user-interface/controls/layouts.md)和[檢視](~/xamarin-forms/user-interface/controls/views.md)類別。
-- [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)屬性代表其子項目，項目之間的距離，而且用來分隔控制項從它自己的內容。 `Padding` 您可以在指定值[配置](~/xamarin-forms/user-interface/controls/layouts.md)類別。
+- [ `Margin` ](xref:Xamarin.Forms.View.Margin)屬性代表項目和其相鄰的項目之間的距離，而且用來控制此項目的呈現位置，並呈現位置的與其相鄰項目。 `Margin` 值可以在上指定[版面配置](~/xamarin-forms/user-interface/controls/layouts.md)並[檢視](~/xamarin-forms/user-interface/controls/views.md)類別。
+- [ `Padding` ](xref:Xamarin.Forms.Layout.Padding)屬性代表項目與其子項目，之間的距離，而且用來區隔自身的內容控制項。 `Padding` 值可以在上指定[版面配置](~/xamarin-forms/user-interface/controls/layouts.md)類別。
 
 下圖說明兩個概念：
 
 [![](margin-and-padding-images/margins-and-padding-sml.png "邊界和邊框距離概念")](margin-and-padding-images/margins-and-padding.png#lightbox "邊界和邊框距離概念")
 
-請注意， [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/)的值為加總。 因此，如果兩個相鄰的項目指定 20 像素的邊界，項目之間的距離會 40 像素為單位。 此外，邊界和邊框距離會同時套用時，邊界和邊框距離，將會是項目及任何內容之間的距離，加法。
+請注意， [ `Margin` ](xref:Xamarin.Forms.View.Margin)的值為加總。 因此，如果兩個相鄰的項目指定 20 個像素的邊界，項目之間的距離會 40 像素。 此外，邊界和邊框距離是加總時兩者都會套用，在於項目和任何內容之間的距離會邊界，加上邊框間距。
 
 ## <a name="specifying-a-thickness"></a>指定線條粗細
 
-[ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/)和[ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)屬性都屬於型別[ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/)。 有三種可能性建立時`Thickness`結構：
+[ `Margin` ](xref:Xamarin.Forms.View.Margin)並[ `Padding` ](xref:Xamarin.Forms.Layout.Padding)屬性都屬於類型[ `Thickness` ](xref:Xamarin.Forms.Thickness)。 有三種可能性建立時`Thickness`結構：
 
-- 建立[ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/)的單一統一值所定義的結構。 單一值會套用至左、 頂端、 右側和底部的側邊的項目。
-- 建立[ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/)水平和垂直值所定義的結構。 對稱水平的值會套用到左邊和右邊的項目，以對稱套用至項目的上方和下方側邊的垂直值。
-- 建立[ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/)四個相異值套用至左、 頂端、 右側和底部的側邊的項目所定義的結構。
+- 建立[ `Thickness` ](xref:Xamarin.Forms.Thickness)單一的統一值所定義的結構。 單一值會套用至左、 頂端、 右側和底部的側邊的項目。
+- 建立[ `Thickness` ](xref:Xamarin.Forms.Thickness)水平和垂直值所定義的結構。 左邊和右邊的項目，垂直值數採對稱式套用至項目的上下兩邊對稱套用水平的值。
+- 建立[ `Thickness` ](xref:Xamarin.Forms.Thickness)四個不同的值套用至左、 頂端、 右側和底部的側邊的項目所定義的結構。
 
-下列 XAML 程式碼範例會顯示所有的三種可能性：
+下列 XAML 程式碼範例會顯示所有的三個可能值：
 
 ```xaml
 <StackLayout Padding="0,20,0,0">
@@ -63,15 +63,15 @@ var stackLayout = new StackLayout {
 ```
 
 > [!NOTE]
-> `Thickness` 值可以是負數，，這通常會裁剪，或物件內容。
+> `Thickness` 值可以是負數，，這通常會裁剪，或物件的內容。
 
 ## <a name="summary"></a>總結
 
-本文示範之間的差異[ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/)和[ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)屬性，以及如何設定這些屬性。 在使用者介面中呈現的項目時，屬性會控制配置行為。
+這篇文章示範之間的差異[ `Margin` ](xref:Xamarin.Forms.View.Margin)並[ `Padding` ](xref:Xamarin.Forms.Layout.Padding)屬性，以及如何設定它們。 當項目會呈現使用者介面中，屬性會控制版面配置行為。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [Margin](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/)
-- [填補](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)
-- [粗細](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/)
+- [邊界](xref:Xamarin.Forms.View.Margin)
+- [填補](xref:Xamarin.Forms.Layout.Padding)
+- [粗細](xref:Xamarin.Forms.Thickness)

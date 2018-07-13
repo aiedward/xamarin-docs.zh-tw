@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: 018193cf0b198fd87f0f09cbfeba52e9d2a0f68b
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 34e923e4df76680ad8d0be5f2844ef56b32af4db
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38838166"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38985987"
 ---
 # <a name="creating-a-custom-xamarinforms-theme"></a>建立自訂的 Xamarin.Forms 佈景主題
 
@@ -85,8 +85,7 @@ namespace ThemesDemo
     private static void OnChanged<TEffect, TProp>(BindableObject bindable, object oldValue, object newValue)
               where TEffect : Effect, new()
     {
-        var view = bindable as View;
-        if (view == null)
+        if (!(bindable is View view))
         {
             return;
         }

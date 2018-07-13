@@ -7,16 +7,16 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c10a3c1a0ed2755734fe351df39caadc88dd61c4
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: a02239906f5a30c068cb7eebd31308ad188696b3
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935109"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998094"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章摘要。 位置與地圖
 
-支援 Xamarin.Forms [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/)項目，衍生自`View`。 參與使用對應的特殊的平台需求，因為它們實作個別的組件中， **Xamarin.Forms.Maps**，並牽涉到不同的命名空間： `Xamarin.Forms.Maps`。
+支援 Xamarin.Forms [ `Map` ](xref:Xamarin.Forms.Maps.Map)項目，衍生自`View`。 參與使用對應的特殊的平台需求，因為它們實作個別的組件中， **Xamarin.Forms.Maps**，並牽涉到不同的命名空間： `Xamarin.Forms.Maps`。
 
 ## <a name="the-geographic-coordinate-system"></a>地理的座標系統
 
@@ -118,13 +118,13 @@ Windows 執行階段應用程式需要使用 Bing 地圖服務的授權金鑰。
 
 [ **MapDemos** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28/MapDemos)範例組成[MapsDemoHomePage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapDemosHomePage.xaml)檔案並[MapsDemoHomePage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapDemosHomePage.xaml.cs)程式碼後置檔案可讓瀏覽至各種示範程式。
 
-[BasicMapPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/BasicMapPage.xaml)檔案示範如何顯示[ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/)檢視。 依預設它會顯示城市的羅馬，但可以由使用者操作對應。
+[BasicMapPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/BasicMapPage.xaml)檔案示範如何顯示[ `Map` ](xref:Xamarin.Forms.Maps.Map)檢視。 依預設它會顯示城市的羅馬，但可以由使用者操作對應。
 
-若要停用水平和垂直捲動，請設定[ `HasScrollEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.HasScrollEnabled/)屬性設`false`。 若要停用縮放，請設定[ `HasZoomEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.HasZoomEnabled/)至`false`。 這些屬性可能無法在所有平台上。
+若要停用水平和垂直捲動，請設定[ `HasScrollEnabled` ](xref:Xamarin.Forms.Maps.Map.HasScrollEnabled)屬性設`false`。 若要停用縮放，請設定[ `HasZoomEnabled` ](xref:Xamarin.Forms.Maps.Map.HasZoomEnabled)至`false`。 這些屬性可能無法在所有平台上。
 
 ### <a name="streets-and-terrain"></a>或街道及地形模型
 
-您可以藉由設定顯示不同類型的地圖`Map`屬性[ `MapType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.MapType/)型別的[ `MapType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapType/)，含有三個成員的列舉類型：
+您可以藉由設定顯示不同類型的地圖`Map`屬性[ `MapType` ](xref:Xamarin.Forms.Maps.Map.MapType)型別的[ `MapType` ](xref:Xamarin.Forms.Maps.MapType)，含有三個成員的列舉類型：
 
 - [`Street`](xref:Xamarin.Forms.Maps.MapType.Street)預設值
 - [`Satellite`](xref:Xamarin.Forms.Maps.MapType.Satellite)
@@ -134,32 +134,32 @@ Windows 執行階段應用程式需要使用 Bing 地圖服務的授權金鑰。
 
 ### <a name="map-coordinates"></a>地圖座標
 
-程式可以取得目前的區域`Map`顯示透過[ `VisibleRegion` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.VisibleRegion/)屬性。 這個屬性就*不*後盾可繫結的屬性，並沒有通知機制，以指出它已變更時，因此想要監視內容的程式應該針對該目的使用計時器。
+程式可以取得目前的區域`Map`顯示透過[ `VisibleRegion` ](xref:Xamarin.Forms.Maps.Map.VisibleRegion)屬性。 這個屬性就*不*後盾可繫結的屬性，並沒有通知機制，以指出它已變更時，因此想要監視內容的程式應該針對該目的使用計時器。
 
-`VisibleRegion` 屬於類型[ `MapSpan` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapSpan/)，具有四個唯讀屬性的類別：
+`VisibleRegion` 屬於類型[ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan)，具有四個唯讀屬性的類別：
 
-- [`Center`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.Center/) 型別 [`Position`](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Position/)
-- [`LatitudeDegrees`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.LatitudeDegrees/) 型別的`double`，表示地圖顯示區域的高度
-- [`LongitudeDegrees`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.LongitudeDegrees/) 型別的`double`，表示地圖顯示區域寬度
-- [`Radius`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.Radius/) 型別的[ `Distance` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Distance/)，表示顯示在對應的最大循環區域的大小
+- [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center) 型別 [`Position`](xref:Xamarin.Forms.Maps.Position)
+- [`LatitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees) 型別的`double`，表示地圖顯示區域的高度
+- [`LongitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees) 型別的`double`，表示地圖顯示區域寬度
+- [`Radius`](xref:Xamarin.Forms.Maps.MapSpan.Radius) 型別的[ `Distance` ](xref:Xamarin.Forms.Maps.Distance)，表示顯示在對應的最大循環區域的大小
 
-`Position` 和`Distance`是這兩個結構。 `Position` 透過設定的兩個唯讀屬性會定義[`Position`建構函式](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.Position.Position/p/System.Double/System.Double/):
+`Position` 和`Distance`是這兩個結構。 `Position` 透過設定的兩個唯讀屬性會定義[`Position`建構函式](xref:Xamarin.Forms.Maps.Position.%23ctor(System.Double,System.Double)):
 
-- [`Latitude`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Position.Latitude/)
-- [`Longitude`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Position.Longitude/)
+- [`Latitude`](xref:Xamarin.Forms.Maps.Position.Latitude)
+- [`Longitude`](xref:Xamarin.Forms.Maps.Position.Longitude)
 
 `Distance` 被要提供獨立單位的距離計量和英制單位之間轉換。 A`Distance`值可由數種方式：
 
-- [`Distance` 建構函式](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.Distance.Distance/p/System.Double/)以公尺為單位的距離
-- [`Distance.FromMeters`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Distance.FromMeters/p/System.Double/) 靜態方法
-- [`Distance.FromKilometers`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Distance.FromKilometers/p/System.Double/) 靜態方法
-- [`Distance.FromMiles`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Distance.FromMiles/p/System.Double/) 靜態方法
+- [`Distance` 建構函式](xref:Xamarin.Forms.Maps.Distance.%23ctor(System.Double))以公尺為單位的距離
+- [`Distance.FromMeters`](xref:Xamarin.Forms.Maps.Distance.FromMeters(System.Double)) 靜態方法
+- [`Distance.FromKilometers`](xref:Xamarin.Forms.Maps.Distance.FromKilometers(System.Double)) 靜態方法
+- [`Distance.FromMiles`](xref:Xamarin.Forms.Maps.Distance.FromMiles(System.Double)) 靜態方法
 
 這個值是可從三個屬性：
 
-- [`Meters`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Distance.Meters/) 型別 `double`
-- [`Kilometers`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Distance.Kilometers/) 型別 `double`
-- [`Miles`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Distance.Miles/) 型別 `double`
+- [`Meters`](xref:Xamarin.Forms.Maps.Distance.Meters) 型別 `double`
+- [`Kilometers`](xref:Xamarin.Forms.Maps.Distance.Kilometers) 型別 `double`
+- [`Miles`](xref:Xamarin.Forms.Maps.Distance.Miles) 型別 `double`
 
 [MapCoordinatesPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapCoordinatesPage.xaml)檔案包含數個`Label`顯示的項目`MapSpan`資訊。 [MapCoordinatesPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapCoordinatesPage.xaml.cs)程式碼後置檔案會使用計時器，將更新的使用者管理對應資訊。
 
@@ -169,16 +169,16 @@ Windows 執行階段應用程式需要使用 Bing 地圖服務的授權金鑰。
 
 ### <a name="setting-an-initial-location"></a>設定初始的位置
 
-您可以呼叫[ `MoveToRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Map.MoveToRegion/p/Xamarin.Forms.Maps.MapSpan/)方法`Map`以程式設計方式設定在地圖上的位置中與縮放層級。 引數的型別是`MapSpan`。 您可以建立`MapSpan`物件使用下列其中一項：
+您可以呼叫[ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan))方法`Map`以程式設計方式設定在地圖上的位置中與縮放層級。 引數的型別是`MapSpan`。 您可以建立`MapSpan`物件使用下列其中一項：
 
-- [`MapSpan` 建構函式](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.MapSpan.MapSpan/p/Xamarin.Forms.Maps.Position/System.Double/System.Double/)與`Position`，以及緯度和經度的範圍
-- [`MapSpan.FromCenterAndRadius`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius/p/Xamarin.Forms.Maps.Position/Xamarin.Forms.Maps.Distance/) 使用`Position`和 radius
+- [`MapSpan` 建構函式](xref:Xamarin.Forms.Maps.MapSpan.%23ctor(Xamarin.Forms.Maps.Position,System.Double,System.Double))與`Position`，以及緯度和經度的範圍
+- [`MapSpan.FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius(Xamarin.Forms.Maps.Position,Xamarin.Forms.Maps.Distance)) 使用`Position`和 radius
 
-您也可建立新`MapSpan`從現有的方式[ `ClampLatitude` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.MapSpan.ClampLatitude/p/System.Double/System.Double/)或是[ `WithZoom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.MapSpan.WithZoom/p/System.Double/)。
+您也可建立新`MapSpan`從現有的方式[ `ClampLatitude` ](xref:Xamarin.Forms.Maps.MapSpan.ClampLatitude(System.Double,System.Double))或是[ `WithZoom` ](xref:Xamarin.Forms.Maps.MapSpan.WithZoom(System.Double))。
 
 [WyomingPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/WyomingPage.xaml)檔案並[WyomingPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/WyomingPage.xaml.cs)程式碼後置檔案示範如何使用`MoveToRegion`方法，以顯示懷俄明的狀態。
 
-您也可以使用[`Map`建構函式](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.Map.Map/p/Xamarin.Forms.Maps.MapSpan/)使用`MapSpan`物件來初始化對應的位置。 [XamarinHQPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/XamarinHQPage.xaml)檔案示範如何執行這項操作，完全以 XAML 來顯示於舊金山的 Xamarin 的總部。
+您也可以使用[`Map`建構函式](xref:Xamarin.Forms.Maps.Map.%23ctor(Xamarin.Forms.Maps.MapSpan))使用`MapSpan`物件來初始化對應的位置。 [XamarinHQPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/XamarinHQPage.xaml)檔案示範如何執行這項操作，完全以 XAML 來顯示於舊金山的 Xamarin 的總部。
 
 ### <a name="dynamic-zooming"></a>動態縮放
 
@@ -188,7 +188,7 @@ Windows 執行階段應用程式需要使用 Bing 地圖服務的授權金鑰。
 
 ### <a name="the-phones-location"></a>手機上的位置
 
-[ `IsShowingUser` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.IsShowingUser/)屬性`Map`運作方式有點不同和三個平台上[ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml)檔會示範：
+[ `IsShowingUser` ](xref:Xamarin.Forms.Maps.Map.IsShowingUser)屬性`Map`運作方式有點不同和三個平台上[ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml)檔會示範：
 
 - 在 iOS 上，藍點表示手機上的位置，但您必須以手動方式瀏覽那里
 - 圖示會顯示在 Android 上，當推入移到手機上的位置對應
@@ -200,12 +200,12 @@ Windows 執行階段應用程式需要使用 Bing 地圖服務的授權金鑰。
 
 ### <a name="pins-and-science-museums"></a>Pin 和科學博物館一樣
 
-最後，`Map`類別會定義[ `Pins` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.Pins/)型別的屬性`IList<Pin>`。 [ `Pin` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Pin/)類別會定義四個屬性：
+最後，`Map`類別會定義[ `Pins` ](xref:Xamarin.Forms.Maps.Map.Pins)型別的屬性`IList<Pin>`。 [ `Pin` ](xref:Xamarin.Forms.Maps.Pin)類別會定義四個屬性：
 
-- [`Label`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Label/) 型別的`string`、 必要的屬性
-- [`Address`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Address/) 型別的`string`，選擇性人類看得懂的地址
-- [`Position`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Position/) 型別的`Position`，指出其中 pin 會在地圖上顯示
-- [`Type`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Type/) 型別的[ `PinType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.PinType/)，列舉型別，不會使用
+- [`Label`](xref:Xamarin.Forms.Maps.Pin.Label) 型別的`string`、 必要的屬性
+- [`Address`](xref:Xamarin.Forms.Maps.Pin.Address) 型別的`string`，選擇性人類看得懂的地址
+- [`Position`](xref:Xamarin.Forms.Maps.Pin.Position) 型別的`Position`，指出其中 pin 會在地圖上顯示
+- [`Type`](xref:Xamarin.Forms.Maps.Pin.Type) 型別的[ `PinType` ](xref:Xamarin.Forms.Maps.PinType)，列舉型別，不會使用
 
 **MapDemos**專案中包含的檔案[ScienceMuseums.xml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Data/ScienceMuseums.xml)，其中會列出美國境內的科學博物館及[ `Locations` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Locations.cs)和[`Site` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Site.cs)進行還原序列化此資料的類別。
 
@@ -223,7 +223,7 @@ Windows 執行階段應用程式需要使用 Bing 地圖服務的授權金鑰。
 
 ## <a name="geocoding-and-back-again"></a>地理編碼來回
 
-[ **Xamarin.Forms.Maps** ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/)組件也包含[ `Geocoder` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Geocoder/)類別[ `GetPositionsForAddressAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync/p/System.String/)將轉換的方法零或更多可能的地理位置，和另一種方法的文字位址[ `GetAddressesForPositionAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync/p/Xamarin.Forms.Maps.Position/)以將轉換成另一個方向。
+[ **Xamarin.Forms.Maps** ](xref:Xamarin.Forms.Maps)組件也包含[ `Geocoder` ](xref:Xamarin.Forms.Maps.Geocoder)類別[ `GetPositionsForAddressAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String))將轉換的方法零或更多可能的地理位置，和另一種方法的文字位址[ `GetAddressesForPositionAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position))以將轉換成另一個方向。
 
 [GeocoderRoundTrip.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml)檔案並[GeocoderRoundTrip.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml.cs)程式碼後置檔案會示範這項功能。
 

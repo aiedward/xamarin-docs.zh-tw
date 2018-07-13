@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 7f68b7c8affc11b50bdb4a2fc9589f8dcbfb45ec
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 34fb58f44e3f341fa34eef512d61f20f5d035a9b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38830476"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998192"
 ---
 # <a name="gtk-platform-setup"></a>GTK # 平台安裝程式
 
@@ -211,7 +211,7 @@ GtkThemes.LoadCustomTheme ("Themes/gtkrc");
 
 ### <a name="native-forms"></a>原生格式
 
-原生格式可讓 Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-衍生原生專案，包括 GTK # 專案所使用的頁面。 這可藉由建立的執行個體[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-衍生頁面，並將它轉換成原生 GTK # 型別使用`CreateContainer`擴充方法：
+原生格式可讓 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生原生專案，包括 GTK # 專案所使用的頁面。 這可藉由建立的執行個體[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面，並將它轉換成原生 GTK # 型別使用`CreateContainer`擴充方法：
 
 ```csharp
 var settingsView = new SettingsView().CreateContainer();
