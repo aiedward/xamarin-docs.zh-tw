@@ -9,11 +9,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
 ms.openlocfilehash: 5b5f8c80e49d66ed3bd8b008c975d1cfeda93ed4
-ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36321401"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38832380"
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms Quickstart
 

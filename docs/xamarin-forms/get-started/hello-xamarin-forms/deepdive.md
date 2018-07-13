@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 7c8eee5fc7075f23221c06dab29b83b1d5e01ffc
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: f51992ec5311bdf0c7df7478651398f6ed8491a9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36269066"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996229"
 ---
 # <a name="xamarinforms-deep-dive"></a>Xamarin.Forms 深度剖析
 
@@ -118,7 +118,7 @@ namespace Phoneword
 }
 ```
 
-此程式碼會將 `App` 類別的 `MainPage` 屬性設定為 [`MainPage`](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) 類別的新執行個體。 此外，[`XamlCompilation`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilationAttribute/) 屬性還會開啟 XAML 編譯器，以便將 XAML 直接編譯成中繼語言。 如需詳細資訊，請參閱 [XAML 編譯](~/xamarin-forms/xaml/xamlc.md)。
+此程式碼會將 `App` 類別的 `MainPage` 屬性設定為 [`MainPage`](xref:Xamarin.Forms.Application.MainPage) 類別的新執行個體。 此外，[`XamlCompilation`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) 屬性還會開啟 XAML 編譯器，以便將 XAML 直接編譯成中繼語言。 如需詳細資訊，請參閱 [XAML 編譯](~/xamarin-forms/xaml/xamlc.md)。
 
 ## <a name="launching-the-application-on-each-platform"></a>啟動每個平台上的應用程式
 
@@ -214,14 +214,14 @@ Xamarin.Forms 應用程式是以 `LoadApplication` 方法來載入。
 
 有四個主要的控制項群組可用來建立 Xamarin.Forms 應用程式的使用者介面。
 
-1. **頁面** - Xamarin.Forms 頁面代表跨平台行動應用程式畫面。 Phoneword 應用程式使用 [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) 類別顯示單一畫面。 如需有關頁面的詳細資訊，請參閱 [Xamarin.Forms 頁面](~/xamarin-forms/user-interface/controls/pages.md)。
-1. **版面配置** - Xamarin.Forms 版面配置是將檢視構成邏輯結構所使用的容器。 Phoneword 應用程式使用 [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) 類別，以水平堆疊排列控制項。 如需有關版面配置的詳細資訊，請參閱 [Xamarin.Forms 版面配置](~/xamarin-forms/user-interface/controls/layouts.md)。
-1. **檢視** - Xamarin.Forms 檢視是顯示在使用者介面上的控制項，例如標籤、按鈕和文字輸入方塊。 Phoneword 應用程式會使用 [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)、[`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) 和 [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) 控制項。 如需有關檢視的詳細資訊，請參閱 [Xamarin.Forms 檢視](~/xamarin-forms/user-interface/controls/views.md)。
+1. **頁面** - Xamarin.Forms 頁面代表跨平台行動應用程式畫面。 Phoneword 應用程式使用 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 類別顯示單一畫面。 如需有關頁面的詳細資訊，請參閱 [Xamarin.Forms 頁面](~/xamarin-forms/user-interface/controls/pages.md)。
+1. **版面配置** - Xamarin.Forms 版面配置是將檢視構成邏輯結構所使用的容器。 Phoneword 應用程式使用 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 類別，以水平堆疊排列控制項。 如需有關版面配置的詳細資訊，請參閱 [Xamarin.Forms 版面配置](~/xamarin-forms/user-interface/controls/layouts.md)。
+1. **檢視** - Xamarin.Forms 檢視是顯示在使用者介面上的控制項，例如標籤、按鈕和文字輸入方塊。 Phoneword 應用程式會使用 [`Label`](xref:Xamarin.Forms.Label)、[`Entry`](xref:Xamarin.Forms.Entry) 和 [`Button`](xref:Xamarin.Forms.Button) 控制項。 如需有關檢視的詳細資訊，請參閱 [Xamarin.Forms 檢視](~/xamarin-forms/user-interface/controls/views.md)。
 1. **資料格** - Xamarin.Forms 資料格是在清單中用於項目的特定元素，並描述如何在清單中繪製每個項目。 Phoneword 應用程式不會使用任何資料格。 如需有關資料格的詳細資訊，請參閱 [Xamarin.Forms 資料格](~/xamarin-forms/user-interface/controls/cells.md)。
 
 在執行階段，每個控制項將會對應到其原生對等項目，也就是將呈現的項目。
 
-在任何平台上執行 Phoneword 應用程式時，它會顯示對應至 Xamarin.Forms 中 [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) 的單一畫面。 `Page` 在 Android 中代表「ViewGroup」、在 iOS 中代表「檢視控制器」、在通用 Windows 平台上則代表「頁面」。 Phoneword 應用程式也會將代表 `MainPage` 類別的 [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) 物件具現化，其 XAML 標記如下列程式碼範例所示：
+在任何平台上執行 Phoneword 應用程式時，它會顯示對應至 Xamarin.Forms 中 [`Page`](xref:Xamarin.Forms.Page) 的單一畫面。 `Page` 在 Android 中代表「ViewGroup」、在 iOS 中代表「檢視控制器」、在通用 Windows 平台上則代表「頁面」。 Phoneword 應用程式也會將代表 `MainPage` 類別的 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件具現化，其 XAML 標記如下列程式碼範例所示：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -238,13 +238,13 @@ Xamarin.Forms 應用程式是以 `LoadApplication` 方法來載入。
 </ContentPage>
 ```
 
-`MainPage` 類別會使用 [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) 控制項自動在大小不同的螢幕上排列控制項。 每個子項目都是以它們加入的順序，一個接著一個地垂直放置。 `StackLayout` 控制項包含一個在頁面上顯示文字的 [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) 控制項、一個接受使用者文字輸入的 [`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) 控制項，以及兩個用來執行程式碼以回應觸控事件的 [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) 控制項。
+`MainPage` 類別會使用 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 控制項自動在大小不同的螢幕上排列控制項。 每個子項目都是以它們加入的順序，一個接著一個地垂直放置。 `StackLayout` 控制項包含一個在頁面上顯示文字的 [`Label`](xref:Xamarin.Forms.Label) 控制項、一個接受使用者文字輸入的 [`Entry`](xref:Xamarin.Forms.Entry) 控制項，以及兩個用來執行程式碼以回應觸控事件的 [`Button`](xref:Xamarin.Forms.Button) 控制項。
 
 如需有關 Xamarin.Forms 中 XAML 的詳細資訊，請參閱 [Xamarin.Forms XAML 基本概念](~/xamarin-forms/xaml/xaml-basics/index.md)。
 
 ### <a name="responding-to-user-interaction"></a>回應使用者互動
 
-在 XAML 中定義的物件可以引發程式碼後置檔案中處理的事件。 下列程式碼範例在 `MainPage` 類別的程式碼後置中示範 `OnTranslate` 方法，執行此類別可回應在 [翻譯] 按鈕上引發的 [`Clicked`](https://developer.xamarin.com/api/event/Xamarin.Forms.Button.Clicked/) 事件。
+在 XAML 中定義的物件可以引發程式碼後置檔案中處理的事件。 下列程式碼範例在 `MainPage` 類別的程式碼後置中示範 `OnTranslate` 方法，執行此類別可回應在 [翻譯] 按鈕上引發的 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件。
 
 ```csharp
 void OnTranslate(object sender, EventArgs e)
@@ -272,13 +272,13 @@ void OnTranslate(object sender, EventArgs e)
 
 適用於 Xamarin.Forms 的 Phoneword 應用程式導入了幾個未涵蓋在本文中的概念。 這些概念包括：
 
-- 啟用和停用按鈕。 變更 [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) 的 [`IsEnabled`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/) 屬性可以將它開啟或關閉。 例如，下列程式碼範例會停用 `callButton`：
+- 啟用和停用按鈕。 變更 [`Button`](xref:Xamarin.Forms.Button) 的 [`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled) 屬性可以將它開啟或關閉。 例如，下列程式碼範例會停用 `callButton`：
 
     ```csharp
     callButton.IsEnabled = false;
     ```
 
-- 顯示警示對話方塊。 當使用者按下撥號**按鈕**時，Phoneword 應用程式會顯示一個「警示對話方塊」，其中包含撥號或取消撥號的選項。 [`DisplayAlert`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/System.String/) 方法用來建立對話方塊，如下列程式碼範例所示：
+- 顯示警示對話方塊。 當使用者按下撥號**按鈕**時，Phoneword 應用程式會顯示一個「警示對話方塊」，其中包含撥號或取消撥號的選項。 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String,System.String)) 方法用來建立對話方塊，如下列程式碼範例所示：
 
     ```csharp
     await this.DisplayAlert (
@@ -288,7 +288,7 @@ void OnTranslate(object sender, EventArgs e)
             "No");
     ```
 
-- 透過 [`DependencyService`](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) 類別存取原生功能。 Phoneword 應用程式會使用 `DependencyService` 類別，將 `IDialer` 介面解析為平台專屬的電話撥號實作，如 Phoneword 專案中的下列程式碼範例所示：
+- 透過 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 類別存取原生功能。 Phoneword 應用程式會使用 `DependencyService` 類別，將 `IDialer` 介面解析為平台專屬的電話撥號實作，如 Phoneword 專案中的下列程式碼範例所示：
 
     ```csharp
     async void OnCall (object sender, EventArgs e)
@@ -299,7 +299,7 @@ void OnTranslate(object sender, EventArgs e)
     }
     ```
 
-  如需有關 [`DependencyService`](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) 類別的詳細資訊，請參閱[透過 DependencyService 存取原生功能](~/xamarin-forms/app-fundamentals/dependency-service/index.md)。
+  如需有關 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 類別的詳細資訊，請參閱[透過 DependencyService 存取原生功能](~/xamarin-forms/app-fundamentals/dependency-service/index.md)。
 
 - 透過 URL 撥打電話。 Phoneword 應用程式會使用 `OpenURL` 啟動系統電話應用程式。 URL 是由 `tel:` 首碼後面緊接著要撥打的電話號碼所組成，如 iOS 專案中的下列程式碼範例所示：
 
@@ -307,7 +307,7 @@ void OnTranslate(object sender, EventArgs e)
     return UIApplication.SharedApplication.OpenUrl (new NSUrl ("tel:" + number));
     ```
 
-- 調整平台版面配置。 [`Device`](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/) 類別可讓開發人員針對各個平台，自訂應用程式版面配置和功能，如下列在不同平台上使用不同 [`Padding`](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) 值以正確顯示每個頁面的程式碼範例所示：
+- 調整平台版面配置。 [`Device`](xref:Xamarin.Forms.Device) 類別可讓開發人員針對各個平台，自訂應用程式版面配置和功能，如下列在不同平台上使用不同 [`Padding`](xref:Xamarin.Forms.Layout.Padding) 值以正確顯示每個頁面的程式碼範例所示：
 
     ```xaml
     <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" ... >

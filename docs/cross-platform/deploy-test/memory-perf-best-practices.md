@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 66234bb44bb0cae9580c119c6029603a528f882e
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: c529d1d42d582cb49a906ad6fc39a191a7389f58
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781978"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997435"
 ---
 # <a name="cross-platform-performance"></a>跨平台效能
 
@@ -87,7 +87,7 @@ public void ReadText (string filename)
 
 `StreamReader` 類別會實作 `IDisposable`，而 `finally` 區塊則會呼叫 `StreamReader.Dispose` 方法來釋放資源。
 
-如需詳細資訊，請參閱 [IDisposable 介面](https://developer.xamarin.com/api/type/System.IDisposable/)。
+如需詳細資訊，請參閱 [IDisposable 介面](xref:System.IDisposable)。
 
 <a name="events" />
 
@@ -379,5 +379,5 @@ Android 應用程式也可以將每個 ABI (「架構」) 分割成個別的 APK
 - [Xamarin Profiler 簡介](~/tools/profiler/index.md)
 - [Xamarin.Forms 效能](~/xamarin-forms/deploy-test/performance.md)
 - [非同步支援概觀](~/cross-platform/platform/async.md)
-- [IDisposable](https://developer.xamarin.com/api/type/System.IDisposable/)
+- [IDisposable](xref:System.IDisposable)
 - [在 Xamarin 應用程式中避免常見錯誤 (影片)](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps) \(英文\)

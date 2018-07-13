@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: bae3e7323596cc88f2b76aceeb5a4d1df4ce2d0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f62842c3b2aea93d28303b7f47c5d50df6381387
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30774378"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998423"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android：深度剖析
 
@@ -98,9 +98,9 @@ Visual Studio for Mac 遵循 Visual Studio 的做法，將程式碼組織成「�
 
 檢視專案內的所有項目，查看每個資料夾及其用途：
 
--   **Properties** &ndash; 包含 [AndroidManifest.xml](~/android/platform/android-manifest.md) 檔案，其中描述 Xamarin.Android 應用程式的所有需求，包括名稱、版本號碼和權限。 **Properties** 資料夾也包含 [AssemblyInfo.cs](http://msdn.microsoft.com/en-us/library/microsoft.visualbasic.applicationservices.assemblyinfo(v=vs.110).aspx)，也就是 .NET 組件中繼資料檔案。 建議您在此檔案填入您應用程式的一些基本資訊。
+-   **Properties** &ndash; 包含 [AndroidManifest.xml](~/android/platform/android-manifest.md) 檔案，其中描述 Xamarin.Android 應用程式的所有需求，包括名稱、版本號碼和權限。 **Properties** 資料夾也包含 [AssemblyInfo.cs](xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo)，也就是 .NET 組件中繼資料檔案。 建議您在此檔案填入您應用程式的一些基本資訊。
 
--   **References** &ndash; 包含建置及執行應用程式所需的組件。 如果您展開 References 目錄，您將會看到對 .NET 組件的參考 (例如 [System](http://msdn.microsoft.com/en-us/library/system%28v=vs.110%29.aspx)、System.Core 和 [System.Xml](http://msdn.microsoft.com/en-us/library/system.xml%28v=vs.110%29.aspx))，以及對 Xamarin 之 Mono.Android 組件的參考。
+-   **References** &ndash; 包含建置及執行應用程式所需的組件。 如果您展開 References 目錄，您將會看到對 .NET 組件的參考 (例如 [System](xref:System)、System.Core 和 [System.Xml](xref:System.Xml))，以及對 Xamarin 之 Mono.Android 組件的參考。
 
 
 -   **Assets** &ndash; 包含應用程式需要執行的檔案，包括字型、本機資料檔案和文字檔。 此處包含的檔案可透過產生的 `Assets` 類別來存取。 如需 Android 資產的詳細資訊，請參閱 Xamarin 的[使用 Android 資產](~/android/app-fundamentals/resources-in-android/android-assets.md)指南。

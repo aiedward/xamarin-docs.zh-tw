@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 806ed841ec4db037a063bb458e1eed13226e08bd
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: bf8dfb43115806f28935c6dec0ebd2d6d7bd2cdc
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
-ms.locfileid: "32019707"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998234"
 ---
 # <a name="build-process"></a>建置流程
 
@@ -76,7 +76,7 @@ Xamarin.Android 建置程序是以 MSBuild 作為基礎，而這也是 Visual St
 
 ## <a name="build-properties"></a>組建屬性
 
-MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.csproj**) 的 [MSBuild PropertyGroup 元素](http://msdn.microsoft.com/en-us/library/t4w159bs.aspx)內指定這些屬性。 
+MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.csproj**) 的 [MSBuild PropertyGroup 元素](https://docs.microsoft.com/visualstudio/msbuild/propertygroup-element-msbuild)內指定這些屬性。
 
 -   **組態** &ndash; 指定要使用的組建組態，例如「偵錯」或「發行」。 組態屬性可用來決定其他會決定目標行為之屬性的預設值。 您可以在 IDE 內建立其他組態。
 
@@ -86,7 +86,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
 -   **DebugSymbols** &ndash; 搭配 `$(DebugType)` 屬性來決定 Android 套件是否可偵錯的布林值。 可偵錯的套件會包含偵錯符號、將 `//application/@android:debuggable` 屬性設定為 `true`，並且會自動新增 `INTERNET` 權限讓偵錯工具可以附加至程序。 如果 `DebugSymbols` 是 `True` 且 `DebugType` 為空字串或 `Full`，則應用程式是可偵錯的。
 
--   **DebugType** &ndash; 指定要在建置過程中產生的[偵錯符號類型](http://msdn.microsoft.com/en-us/library/s5c8athz.aspx)，此值也會影響應用程式是否可偵錯。 可能的值包括：
+-   **DebugType** &ndash; 指定要在建置過程中產生的[偵錯符號類型](https://docs.microsoft.com/visualstudio/msbuild/csc-task)，此值也會影響應用程式是否可偵錯。 可能的值包括：
 
     - **完整**：產生完整符號。 如果 `DebugSymbols` MSBuild 屬性也是 `True`，則應用程式套件是可偵錯的。
 
@@ -484,7 +484,7 @@ Enter key password for keystore.alias
 
 ## <a name="build-actions"></a>建置動作
 
-建置動作會[套用至專案內的檔案](http://msdn.microsoft.com/en-us/library/bb629388.aspx)並控制檔案的處理方式。 
+建置動作會[套用至專案內的檔案](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-items)並控制檔案的處理方式。 
 
 <a name="AndroidEnvironment" />
 
