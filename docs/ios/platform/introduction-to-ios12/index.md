@@ -6,13 +6,13 @@ ms.assetid: 99EA7090-315D-493C-87D3-26AB73D9E1A9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 06/25/2018
-ms.openlocfilehash: 05ccae0415e450365a50fe4dbd8412ccd38b48ac
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.date: 07/08/2018
+ms.openlocfilehash: 865a06e9fa430e195ce4ea3c6088785d9513dbf6
+ms.sourcegitcommit: cfb72be633e335147d156af3ef9527151b9e31d9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38830424"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39030700"
 ---
 # <a name="introduction-to-ios-12"></a>IOS 12 簡介
 
@@ -23,17 +23,21 @@ ms.locfileid: "38830424"
 
 > [!NOTE]
 > - 檢閱[開始使用](get-started.md)指南的指示，有關如何開始建置使用 Xamarin iOS 12 應用程式。
-> - 如需詳細資訊，請參閱[版本資訊](https://releases.xamarin.com/preview-release-xcode-10-beta/)xamarin 預覽版本。
+> - 如需詳細資訊，請閱讀 Xamarin 預覽版[釋放部落格文章](https://releases.xamarin.com/preview-release-xcode-10-beta-3/)。
 
 本文件提供的 Xamarin 預覽版本提供 C# 繫結的某些 iOS 12 Api 的高層級描述。
 
 ## <a name="arkit-2"></a>ARKit 2
 
-ARKit 是隨附於 iOS 擴增的實境架構。 ARKit 2 可讓多位使用者彼此互動以擴增的實境場景，讓您能夠保存空間中的物件，並在稍後的時間，傳回它們，並提供 2D 和 3D 影像辨識和追蹤。 iOS 12 也提供 AR 快速尋找，呈現 usdz AR 模型，在您的應用程式的方式。
+ARKit 是隨附於 iOS 擴增的實境架構。 ARKit 2 可讓多位使用者彼此互動以擴增的實境場景，讓您能夠保存空間中的物件，並在稍後的時間，傳回它們，並提供 2D 影像辨識，以及追蹤和 3D 物件辨識。 iOS 12 也提供 AR 快速尋找，呈現 usdz AR 模型，在您的應用程式的方式。
 
 ## <a name="siri-shortcuts"></a>Siri 快速鍵
 
 Siri 快速鍵可讓開發人員更深入整合 Siri 他們的應用程式。 使用 Siri 快速鍵，使用者可以使用語音命令，以開啟內容，或開始在自己的應用程式中的工作。 Siri 將了解特定快速鍵時更容易使用，並建議這些使用者可透過通知。
+
+## <a name="core-ml-2"></a>核心機器學習服務 2
+
+核心 ML 2 可減少應用程式的大小，透過模型量化和彈性的模型、 改善與新的批次預測 API 的應用程式效能和使用自訂的模型來支援在 machine learning 中的進階功能。
 
 ## <a name="notification-improvements"></a>通知改良
 
@@ -41,9 +45,9 @@ Siri 快速鍵可讓開發人員更深入整合 Siri 他們的應用程式。 �
 
 IOS 12 中的通知內容延伸模組可讓自訂使用者介面和動態的動作。 這些功能可讓使用者通知中的更豐富、 更有意義的體驗。
 
-## <a name="core-ml-2-natural-language-framework"></a>核心 ML 2： 自然語言架構
+## <a name="natural-language-framework"></a>自然語言架構
 
-該自然語言架構中，組件的核心 ML 2，可讓應用程式，以執行各種類型的語言分析。 比方說，它可以用來識別組件的語音，並判斷由文字區塊的語言。
+自然語言架構可讓應用程式，以執行各種類型的語言分析。 比方說，它可以用來識別組件的語音，並判斷由文字區塊的語言。
 
 ## <a name="carplay"></a>CarPlay
 
@@ -57,8 +61,16 @@ iOS 12 會建議，並儲存使用者名稱和包含建立帳戶 畫面的應用
 
 Ios 12、 第三方密碼管理員 」 應用程式可以提供擴充功能來提供使用者名稱和密碼登入欄位的值。
 
+## <a name="healthkit-updates"></a>HealthKit 更新
+
+導入的 iOS 11.3[醫療記錄](https://www.apple.com/healthcare/health-records/)，可讓使用者下載其健全狀況記錄從各種醫療保健機構的資訊，並在其 iOS 裝置上檢視。 iOS 12 加入 Api，可讓協力廠商應用程式，安全地存取此資料。
+
+## <a name="imessage-app-presentation-contexts"></a>iMessage 應用程式的簡報內容
+
+在 iOS 12、 iMessage 應用程式支援簡報內容，允許做為一般 iMessage 應用程式或相片或視訊效果的內容中執行的應用程式。
+
 ## <a name="related-links"></a>相關連結
 
 - [準備開始使用適用於 iOS (Apple) 12](https://developer.apple.com/ios/)
 - [iOS 12 預覽 (Apple)](https://www.apple.com/ios/ios-12-preview/)
-- Xamarin 預覽[版本資訊](https://releases.xamarin.com/preview-release-xcode-10-beta/)
+- Xamarin 預覽[版本部落格文章](https://releases.xamarin.com/preview-release-xcode-10-beta-3/)
