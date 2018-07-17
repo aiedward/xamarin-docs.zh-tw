@@ -370,6 +370,7 @@
 #### [功能表 (用力長按)](watchos/user-interface/menu.md)
 #### [文字輸入](watchos/user-interface/text-input.md)
 ### [平台功能](watchos/platform/index.md)
+#### [watchOS 5 簡介](watchos/platform/introduction-to-watchos5/index.md)
 #### [watchOS 4 簡介](watchos/platform/introduction-to-watchos4.md)
 #### [watchOS 3 簡介](watchos/platform/introduction-to-watchos3/index.md)
 ##### [其他 watchOS 3 架構變更](watchos/platform/introduction-to-watchos3/additional-framework-changes.md)
