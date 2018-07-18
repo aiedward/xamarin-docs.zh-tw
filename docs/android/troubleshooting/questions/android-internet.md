@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30762080"
 ---
 # <a name="why-cant-my-android-release-build-connect-to-the-internet"></a>為何我的 Android 版本組建無法網際網路連線？
 
@@ -24,7 +25,7 @@ ms.lasthandoff: 04/04/2018
 
 若要解決此問題，您可以要求網際網路中的權限 Android 資訊清單。 這可以透過資訊清單編輯器] 或 [資訊清單的 sourcecode 完成：
 
--   在編輯器中修正： 在 Android 專案中，移至**屬性]-> [AndroidManifest.xml 必要權限]-> [**並檢查**網際網路**
+-   在編輯器中修正： 在 Android 專案中，移至**屬性]-> [AndroidManifest.xml 必要權限]-> [** 並檢查**網際網路**
 
 -   修正在 Sourcecode： 原始檔編輯器中開啟 AndroidManifest 並加入標記內的權限`<Manifest>`標記：
 

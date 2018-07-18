@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms 淺色佈景主題
-description: 本文說明如何使用 Xamarin.Forms 淺色佈景主題的應用程式中。
+title: Xamarin.Forms Light 佈景主題
+description: 這篇文章說明如何使用 Xamarin.Forms Light 佈景主題，應用程式中。
 ms.prod: xamarin
 ms.assetid: D5D16AE3-F51F-4359-B37A-E1087ECE512B
 ms.technology: xamarin-forms
@@ -8,20 +8,20 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 7f40e375d653acec60f8848627234ab46fcce8de
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245243"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38842748"
 ---
-# <a name="xamarinforms-light-theme"></a>Xamarin.Forms 淺色佈景主題
+# <a name="xamarinforms-light-theme"></a>Xamarin.Forms Light 佈景主題
 
-![](~/media/shared/preview.png "這個 API 目前處於預覽狀態")
+![](~/media/shared/preview.png "此 API 目前為預覽狀態")
 
 > [!NOTE]
-> 佈景主題需要 Xamarin.Forms 2.3 預覽版本。 請檢查[疑難排解提示](~/xamarin-forms/user-interface/themes/index.md)如果發生錯誤。
+> 主題會要求 Xamarin.Forms 2.3 預覽版本。 請檢查[疑難排解祕訣](~/xamarin-forms/user-interface/themes/index.md)如果發生錯誤。
 
-若要使用淺色佈景主題：
+若要使用 Light 佈景主題：
 
 ## <a name="1-add-nuget-packages"></a>1.新增 Nuget 封裝
 
@@ -30,7 +30,7 @@ ms.locfileid: "35245243"
 
 ## <a name="2-add-to-the-resource-dictionary"></a>2.加入資源字典
 
-在**App.xaml**檔案新增新的自訂`xmlns`佈景主題，然後確定 佈景主題的資源會合併與應用程式的資源字典。
+在  **App.xaml**檔案並新增新的自訂`xmlns`佈景主題，然後確定 佈景主題的資源會與應用程式的資源字典合併。
 XAML 檔案的範例如下所示：
 
 ```xaml
@@ -45,13 +45,13 @@ XAML 檔案的範例如下所示：
 
 ## <a name="3-load-theme-classes"></a>3.載入佈景主題類別
 
-後面要接著[疑難排解步驟](~/xamarin-forms/user-interface/themes/index.md)並新增必要的程式碼中的 iOS 和 Android 應用程式專案。
+請遵循這[疑難排解步驟](~/xamarin-forms/user-interface/themes/index.md)iOS 和 Android 應用程式專案中加入必要的程式碼。
 
 ## <a name="4-use-styleclass"></a>4.使用 StyleClass
 
-以下是範例的按鈕和淺色佈景主題，以及產生它們的標記中的標籤。
+以下是範例的按鈕和淺色佈景主題，以及產生它們的標記的標籤。
 
-[![](light-images/light-theme-sml.png "按鈕和淺色佈景主題標籤")](light-images/light-theme.png#lightbox "按鈕和標籤淺色佈景主題")
+[![](light-images/light-theme-sml.png "按鈕和標籤淺色佈景主題")](light-images/light-theme.png#lightbox "按鈕和標籤淺色佈景主題")
 
 ```xaml
 <StackLayout Padding="20">
@@ -68,4 +68,4 @@ XAML 檔案的範例如下所示：
 </StackLayout>
 ```
 
-[內建類別的完整清單](~/xamarin-forms/user-interface/themes/index.md)顯示何種樣式的一些常見的控制項可用。
+[內建類別的完整清單](~/xamarin-forms/user-interface/themes/index.md)顯示何種樣式可供一些常見的控制項。

@@ -1,23 +1,21 @@
 ---
 title: 跨平台效能
-description: 有許多技巧可增加利用 Xamarin 平台建置之應用程式的效能。 這些技巧可共同大幅減少 CPU 所執行的工作量和應用程式所耗用的記憶體數量。 本文將描述並討論這些技巧。
+description: 本文件描述可用來改善行動應用程式效能的各種技術。 它討論分析工具、IDisposable 資源、弱式參考、SGen 記憶體回收行程、大小縮減技術，以及更多。
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: f011a92b4789da7328827f184449fd957abdf3ba
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: c529d1d42d582cb49a906ad6fc39a191a7389f58
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997435"
 ---
 # <a name="cross-platform-performance"></a>跨平台效能
 
-_有許多技巧可增加利用 Xamarin 平台建置之應用程式的效能。這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。本文將描述並討論這些技巧。_
-
 不佳的應用程式效能會以許多方式表現。 它可能會讓應用程式看起來沒有回應、造成捲動緩慢，以及減少電池壽命。 不過，最佳化效能不僅僅只牽涉到實作有效率的程式碼而已。 同時也必須考量使用者對於應用程式效能的體驗。 例如，確保作業能在不封鎖使用者執行其他活動的情況下執行，將可以協助改善使用者體驗。
-
 
 <a name="profiler" />
 
@@ -89,7 +87,7 @@ public void ReadText (string filename)
 
 `StreamReader` 類別會實作 `IDisposable`，而 `finally` 區塊則會呼叫 `StreamReader.Dispose` 方法來釋放資源。
 
-如需詳細資訊，請參閱 [IDisposable 介面](https://developer.xamarin.com/api/type/System.IDisposable/)。
+如需詳細資訊，請參閱 [IDisposable 介面](xref:System.IDisposable)。
 
 <a name="events" />
 
@@ -381,5 +379,5 @@ Android 應用程式也可以將每個 ABI (「架構」) 分割成個別的 APK
 - [Xamarin Profiler 簡介](~/tools/profiler/index.md)
 - [Xamarin.Forms 效能](~/xamarin-forms/deploy-test/performance.md)
 - [非同步支援概觀](~/cross-platform/platform/async.md)
-- [IDisposable](https://developer.xamarin.com/api/type/System.IDisposable/)
+- [IDisposable](xref:System.IDisposable)
 - [在 Xamarin 應用程式中避免常見錯誤 (影片)](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps) \(英文\)

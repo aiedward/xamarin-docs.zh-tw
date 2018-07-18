@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33921660"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>第 2 – 實作 WalkingGame 部分
 
@@ -52,7 +53,7 @@ _本逐步解說示範如何加入遊戲邏輯和空 MonoGame 專案來建立動
 
 ### <a name="creating-a-texture2d"></a>建立 Texture2D
 
-我們必須建立`Texture2D`轉譯我們精靈時所要使用的執行個體。 最終包含在名為資料夾中所有遊戲內容**內容，**平台專屬專案中。 MonoGame 共用專案不能包含的內容，內容必須使用平台專屬的建置動作。 CocosSharp 開發人員會覺得熟悉概念內容的資料夾，位於 CocosSharp 和 MonoGame 專案中的相同位置。 中的 iOS 專案，並在 Android 專案的 Assets 資料夾內，就可以找到的內容資料夾。
+我們必須建立`Texture2D`轉譯我們精靈時所要使用的執行個體。 最終包含在名為資料夾中所有遊戲內容**內容，** 平台專屬專案中。 MonoGame 共用專案不能包含的內容，內容必須使用平台專屬的建置動作。 CocosSharp 開發人員會覺得熟悉概念內容的資料夾，位於 CocosSharp 和 MonoGame 專案中的相同位置。 中的 iOS 專案，並在 Android 專案的 Assets 資料夾內，就可以找到的內容資料夾。
 
 若要加入我們遊戲的內容，以滑鼠右鍵按一下**內容**資料夾，然後選取**新增 > 新增檔案...** 瀏覽至 content.zip 檔案已解壓縮的位置，然後選取**charactersheet.png**檔案。 如果系統詢問如何將檔案加入資料夾，我們應該選取**複製**選項：
 

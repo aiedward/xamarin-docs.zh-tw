@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33921985"
 ---
 # <a name="part-1--creating-a-cross-platform-monogame"></a>第 1 – 建立跨平台 MonoGame 部分
 

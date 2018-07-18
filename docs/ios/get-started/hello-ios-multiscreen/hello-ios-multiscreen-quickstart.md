@@ -1,6 +1,6 @@
 ---
-title: Hello, iOS 多重畫面
-description: 在這份含有兩部分的指南中，將擴充我們在 Hello, iOS 指南中所建立的 Phoneword 應用程式來處理第二個畫面。 過程中，我們將介紹「模型-檢視-控制器」設計模式、實作第一個 iOS 瀏覽，並且更深入了解 iOS 應用程式結構和功能。
+title: Hello, iOS 多重畫面 – 快速入門
+description: 本文件示範如何擴充 Phoneword 範例應用程式以新增第二個畫面，說明模型-檢視-控制器、iOS 巡覽和一路以來的其他核心 iOS 開發概念。
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: d72e6230-c9ee-4bee-90ec-877d256821aa
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 3b59b942b3c256418d60436a1c4ba8b4aea14aa4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 469032dc7caa46c6a89b350dc37bc9a93366066a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785667"
 ---
-# <a name="helloios-multiscreen-quickstart"></a>Hello, iOS 多重畫面快速入門
+# <a name="hello-ios-multiscreen--quickstart"></a>Hello, iOS 多重畫面 – 快速入門
 
 此逐步解說的這個部分會在 Phoneword 應用程式中新增第二個畫面，其中將顯示使用應用程式所撥打之電話號碼的歷程記錄。 最終的應用程式將具有第二個畫面來顯示通話記錄，如下列螢幕擷取畫面所示：
 

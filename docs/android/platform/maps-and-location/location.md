@@ -12,6 +12,7 @@ ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34546134"
 ---
 # <a name="location-services"></a>位置服務
 

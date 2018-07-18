@@ -1,32 +1,32 @@
 ---
-title: Xamarin.Essentials： 迴轉儀
-description: Xamarin.Essentials 迴轉儀類別可讓您監視裝置的迴轉儀感應器，用於測量繞裝置的三個主要的軸旋轉。
+title: Xamarin.Essentials： 陀螺儀
+description: Xamarin.Essentials 陀螺儀類別可讓您監視裝置的陀螺儀感應器會測量裝置的三個主要軸旋轉。
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 2f2961c6cb78293891e186e7e0f749a7aa2fb8fc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 3c83b3a9d8a7801e531006f50f8db2e1ad23e48c
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783011"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947211"
 ---
-# <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials： 迴轉儀
+# <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials： 陀螺儀
 
 ![發行前版本的 NuGet](~/media/shared/pre-release.png)
 
-**迴轉儀**類別可讓您監視裝置的迴轉儀感應器即繞裝置的三個主要的軸旋轉。
+**陀螺儀**類別可讓您監視裝置的陀螺儀感應器也就是裝置的三個主要軸旋轉。
 
-## <a name="using-gyroscope"></a>使用 迴轉儀
+## <a name="using-gyroscope"></a>使用陀螺儀
 
-在您類別中加入 Xamarin.Essentials 的參考：
+在您的類別加入 Xamarin.Essentials 的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-迴轉儀的功能的運作方式是呼叫`Start`和`Stop`方法，以接聽迴轉儀的變更。 任何變更會透過送回`ReadingChanged`事件。 以下是範例使用方式：
+陀螺儀功能的運作方式是呼叫`Start`和`Stop`方法，以接聽的變更陀螺儀。 任何變更會傳送回到`ReadingChanged`事件。 以下是範例使用方式：
 
 ```csharp
 
@@ -69,14 +69,9 @@ public class GyroscopeTest
 }
 ```
 
-## <a name="sensor-speedxrefxamarinessentialssensorspeed"></a>[感應器速度](xref:Xamarin.Essentials.SensorSpeed)
-
-- **最快**– 盡量 （不保證會傳回在 UI 執行緒上） 取得感應器資料。
-- **遊戲**– 速率適合遊戲 （不保證會傳回在 UI 執行緒上）。
-- **一般**– 適用於螢幕方向變更預設速率。
-- **Ui** – 速率適用於一般使用者介面。
+[!include[](~/essentials/includes/sensor-speed.md)]
 
 ## <a name="api"></a>API
 
-- [迴轉儀的原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Gyroscope)
-- [迴轉儀的 API 文件](xref:Xamarin.Essentials.Gyroscope)
+- [陀螺儀原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Gyroscope)
+- [陀螺儀 API 文件](xref:Xamarin.Essentials.Gyroscope)

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30785314"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello，tvOS 快速入門指南
 
@@ -51,7 +52,7 @@ Xamarin.tvOS 可讓您可以在 C# 和.NET 使用相同的 OS X 程式庫和中�
 1. 啟動 Visual Studio for Mac：
 
     [![](hello-tvos-images/setup01.png "Visual Studio for Mac")](hello-tvos-images/setup01.png#lightbox)
-2. 按一下**新方案...**連結來開啟螢幕左上角**新專案** 對話方塊。
+2. 按一下**新方案...** 連結來開啟螢幕左上角**新專案** 對話方塊。
 3. 選取**tvOS** > **應用程式** > **單一檢視應用程式**按一下**下一步**按鈕：
 
     [![](hello-tvos-images/setup02.png "選取單一檢視應用程式")](hello-tvos-images/setup02.png#lightbox)

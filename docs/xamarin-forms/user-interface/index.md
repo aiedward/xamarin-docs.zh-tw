@@ -1,74 +1,74 @@
 ---
 title: Xamarin.Forms 使用者介面檢視
-description: 本文介紹的控制項和概念，在 Xamarin.Forms 應用程式中建立使用者介面時才能使用。
+description: 這篇文章介紹控制項和可在建立 Xamarin.Forms 應用程式中的使用者介面的概念。
 ms.prod: xamarin
 ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 55c461a7dee26462e0b9daebeb10e47afa4e5f6f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: a89bce4f35a73d0b881fd38b2ae246d2eb86ef7b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244366"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996817"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 使用者介面檢視
 
-_如何使用 Xamarin.Forms 提供的檢視_
+_如何使用 Xamarin.Forms 所提供的檢視_
 
 ## <a name="animationanimationindexmd"></a>[動畫](animation/index.md)
 
-Xamarin.Forms 包含本身可以直接建立簡單的動畫，同時也會多到足以的用途，來建立複雜的動畫的動畫基礎結構。
+Xamarin.Forms 包含自己的動畫基礎結構直接建立簡單的動畫，同時也很多方面足敷建立複雜的動畫。
 
 ## <a name="boxviewboxviewmd"></a>[BoxView](boxview.md)
 
-`BoxView`只是簡單彩色矩形，但是它可以用裝飾項目的基本圖形，以及取得 interative 具備觸控輸入。
+`BoxView`只是簡單彩色矩形，但是它可以用為裝飾性項目、 基本圖形，以及取得互動式的觸控輸入。
 
 ## <a name="buttonbuttonmd"></a>[Button](button.md)
 
-`Button`回應點選或按一下，以引導應用程式來執行特定工作。
+`Button`回應點選或按一下，以指示應用程式執行特定工作。
 
 ## <a name="colorscolorsmd"></a>[色彩](colors.md)
 
-定義和跨平台使用色彩時可能會很難解釋每個平台都有它自己的標準和預設值。
+定義和跨平台使用色彩可能很難時每個平台有它自己的標準和預設值。
 
 ## <a name="controls-referencecontrolsindexmd"></a>[控制項參考](controls/index.md)
 
-本文是快速參考至組成 Xamarin.Forms 架構，例如 UI 檢視[頁面](~/xamarin-forms/user-interface/controls/pages.md)，[配置](~/xamarin-forms/user-interface/controls/layouts.md)，[檢視](~/xamarin-forms/user-interface/controls/views.md)和[儲存格](~/xamarin-forms/user-interface/controls/cells.md).
+這份文件會構成 Xamarin.Forms 架構，例如 [檢視] 的快速參考[頁](~/xamarin-forms/user-interface/controls/pages.md)，[版面配置](~/xamarin-forms/user-interface/controls/layouts.md)，[檢視](~/xamarin-forms/user-interface/controls/views.md)並[資料格](~/xamarin-forms/user-interface/controls/cells.md).
 
 ## <a name="datapagesdatapagesindexmd"></a>[DataPages](datapages/index.md)
 
-DataPages 提供 API，以快速且輕鬆地資料來源繫結至預先建立的檢視。 清單項目和詳細資料 頁面將會自動轉譯資料，並使用佈景主題來自訂。
+DataPages 提供 API，以快速且輕鬆地繫結資料來源至預先建立的檢視。 清單項目和詳細資料頁面會自動轉譯資料，並使用佈景主題來自訂。
 
 ## <a name="datepickerdatepickermd"></a>[DatePicker](datepicker.md)
 
-`DatePicker`可讓使用者選取日期，以指定的範圍內。 它是使用特定的平台執行程式所支援的日期選擇器所實作的。
+`DatePicker`可讓使用者選取日期，以指定的範圍內。 它是使用特定程式執行所在平台支援的日期選擇器所實作的。
 
 ## <a name="graphicsgraphicsindexmd"></a>[圖形](graphics/index.md)
 
-如何將圖形和遊戲引擎視覺效果合併至 Xamarin.Forms 應用程式。
+如何將圖形和遊戲引擎視覺效果新增至 Xamarin.Forms 應用程式。
 
 ## <a name="imagesimagesmd"></a>[影像](images.md)
 
-可以跨平台與 Xamarin.Forms 共用映像、 可以載入特別針對每個平台，或它們可以顯示為下載。
+映像可以跨平台與 Xamarin.Forms 共用、 可以載入特別針對每個平台，或它們可以下載供顯示。
 
 ## <a name="layoutslayoutsindexmd"></a>[版面配置](layouts/index.md)
 
-Xamarin.Forms 會有數個配置用於組織的螢幕上的內容。 `StackLayout``Grid`， `FlexLayout`， `AbsoluteLayout`， `ScrollView`，和`RelativeLayout`每個可用來建立美觀、 可回應使用者介面。
+Xamarin.Forms 會有數個版面配置組織螢幕上的內容。 `StackLayout``Grid`， `FlexLayout`， `AbsoluteLayout`， `ScrollView`，和`RelativeLayout`每個可用來建立美觀的回應式使用者介面。
 
 ## <a name="listviewlistviewindexmd"></a>[ListView](listview/index.md)
 
-Xamarin.Forms 提供清單檢視控制項，以顯示捲動的資料列的資料。 這個控制項包含內容的動作，`HasUnevenRows`自動調整大小、 分隔符號自訂，以更新提取和頁首和頁尾。
+Xamarin.Forms 提供清單檢視控制項以顯示捲動的資料列的資料。 這個控制項包含內容的動作，`HasUnevenRows`自動調整大小、 分隔符號的自訂，以更新提取和頁首和頁尾。
 
 ## <a name="mapsmapmd"></a>[地圖](map.md)
 
-新增對應需要額外的 NuGet 封裝下載以及一些平台特定設定。 一旦完成設定，可以在短短幾行程式碼新增對應和 pin 碼標記。
+新增對應需要額外的 NuGet 封裝下載和某些平台特定設定。 完成組態之後，可以在短短幾行程式碼加入地圖和 pin 碼標記。
 
 ## <a name="pickerpickerindexmd"></a>[選擇器](picker/index.md)
 
-[ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)檢視是從資料清單中選取的文字項目控制項。
+[ `Picker` ](xref:Xamarin.Forms.Picker)檢視是從資料的清單中選取的文字項目控制項。
 
 ## <a name="sliderslidermd"></a>[Slider](slider.md)
 
@@ -76,30 +76,30 @@ Xamarin.Forms 提供清單檢視控制項，以顯示捲動的資料列的資料
 
 ## <a name="stylesstylesindexmd"></a>[樣式](styles/index.md)
 
-字型、 色彩和其他屬性都可以分為可控制項、 版面配置或使用用於 ResourceDictionaries 整個應用程式之間共用的樣式。
+字型、 色彩和其他屬性，都可以分組為控制項、 版面配置，或使用 Resourcedictionary 的整個應用程式可共用的樣式。
 
 ## <a name="tableviewtableviewmd"></a>[TableView](tableview.md)
 
-資料表檢視類似於清單檢視中，但它適用於資料項目樣式畫面捲動控制項或簡單的捲動功能表而不是所針對的資料詳細清單。
+資料表檢視類似於清單檢視中，但它適用於資料項目樣式畫面捲動控制項或簡單的捲動功能表而不是較長的資料清單所設計。
 
 ## <a name="texttextindexmd"></a>[Text](text/index.md)
 
-Xamarin.Forms 有呈現及接收文字的多個檢視。 可格式化並針對平台自訂文字檢視。 特定字型設定，可以啟用與協助工具功能的相容性。
+Xamarin.Forms 會有數種檢視來呈現和接收的文字。 文字檢視可以加以自訂和格式化的平台。 特定字型設定可以讓協助工具功能與相容性。
 
 ## <a name="themesthemesindexmd"></a>[佈景主題](themes/index.md)
 
-Xamarin.Forms 佈景主題定義適用於標準控制特定的視覺外觀。 一旦您將主題加入應用程式的資源字典時，將會變更的標準控制項的外觀。
+Xamarin.Forms 佈景主題定義特定標準控制項的視覺外觀。 當您新增至應用程式的資源字典的佈景主題時，會變更標準控制項的外觀。
 
 ## <a name="visual-state-managervisual-state-managermd"></a>[Visual State Manager](visual-state-manager.md)
 
-Visual State Manager 提供的結構化的方式觸發從程式碼，包括變更裝置方向或大小會調整的版面配置的使用者介面中的變更。
+Visual State Manager 提供的結構化的方式觸發從程式碼，包括變更裝置方向 」 或 「 大小調整的版面配置的使用者介面中的變更。
 
 ## <a name="webviewwebviewmd"></a>[WebView](webview.md)
 
-Xamarin.Forms 使用原生 web 瀏覽器控制項，每個平台上，並可以顯示的網站、 本機資源和產生的 Html 字串。
+Xamarin.Forms 會使用每個平台上的原生 web 瀏覽器控制項，並可以顯示網站、 本機資源，以及產生的 Html 字串。
 
 
 ## <a name="related-links"></a>相關連結
 
 - [Xamarin.Forms 簡介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
-- [Xamarin.Forms 圖庫 （範例）](https://developer.xamarin.com/samples/FormsGallery/)
+- [Xamarin.Forms 組件庫 （範例）](https://developer.xamarin.com/samples/FormsGallery/)

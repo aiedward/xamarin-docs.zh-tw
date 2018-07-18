@@ -12,6 +12,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33920651"
 ---
 # <a name="where-can-i-find-the-dsym-file-to-symbolicate-ios-crash-logs"></a>可以在哪裡找到要 symbolicate iOS 當機記錄檔的.dSYM 檔案？
 

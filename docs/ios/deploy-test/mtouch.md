@@ -1,23 +1,23 @@
 ---
-title: mtouch
+title: 使用 mtouch 搭售 Xamarin.iOS 應用程式
+description: 本文件描述 mtouch，此工具會驅動許多步驟，將 Xamarin.iOS 應用程式變成搭售方案、在模擬器中啟動它，並將它部署到實體裝置。
 ms.prod: xamarin
 ms.assetid: BCA491DA-E4C1-8689-3EC9-E4C72495A798
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 933ad24a8778ffbee3a1b6089c6ebcf33d26bf84
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9aaa79f929898f6765b97ab0a0c4a30a271d945a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784949"
 ---
-# <a name="mtouch"></a>mtouch
-
+# <a name="using-mtouch-to-bundle-xamarinios-apps"></a>使用 mtouch 搭售 Xamarin.iOS 應用程式
 
 iPhone 應用程式會以應用程式套件組合的形式來提供。 這些套件組合是副檔名為 `.app` 的目錄，內含您的程式碼、資料、組態檔以及 iPhone 用來了解您應用程式的資訊清單。
 
 將 .NET 可執行檔轉變為應用程式的程序大多由 `mtouch` 命令來驅動，這個工具會整合許多將應用程式轉變為套件組合所需的步驟。 此工具也可用來在模擬器中啟動您的應用程式，以及將軟體部署到實際的 iPhone 或 iPod Touch 裝置。
-
 
 ## <a name="detailed-instructions"></a>詳細指示
 

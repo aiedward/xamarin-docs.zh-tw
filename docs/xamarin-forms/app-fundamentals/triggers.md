@@ -1,41 +1,41 @@
 ---
-title: Xamarin.Forms 觸發程序
-description: 本文說明如何使用 Xamarin.Forms 觸發程序來回應具有 XAML 使用者介面變更。 觸發程序可讓您表示在 XAML 中以宣告方式變更的事件或變更屬性，依據控制項的外觀的動作。
+title: Xamarin.Forms 的觸發程序
+description: 這篇文章說明如何使用 Xamarin.Forms 觸發程序來回應具有 XAML 使用者介面的變更。 觸發程序可讓您以宣告方式在 XAML 中變更的事件或屬性變更為基礎的控制項外觀的動作。
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: b28ebb8845b7eae0d818e1279b4d6eaef4ad5b8b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 954a0967e034e0321964e12ca0725ae2a85e3bc6
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241431"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995533"
 ---
-# <a name="xamarinforms-triggers"></a>Xamarin.Forms 觸發程序
+# <a name="xamarinforms-triggers"></a>Xamarin.Forms 的觸發程序
 
-觸發程序可讓您表示在 XAML 中以宣告方式變更的事件或變更屬性，依據控制項的外觀的動作。
+觸發程序可讓您以宣告方式在 XAML 中變更的事件或屬性變更為基礎的控制項外觀的動作。
 
-您可以直接為控制項中，指定觸發程序，或將它加入至要套用至多個控制項的頁面層級或應用程式層級的資源字典。
+您可以直接為控制項中，指定觸發程序，或將它新增至要套用至多個控制項的頁面層級或應用程式層級資源字典。
 
 有四種類型的觸發程序：
 
-* [屬性觸發程序](#property)-發生於控制項的屬性設定為特定值。
+* [屬性觸發程序](#property)-發生於控制項上的屬性設定為特定值。
 
-* [資料觸發程序](#data)-使用資料繫結至觸發程序根據另一個控制項的屬性。
+* [資料觸發程序](#data)-使用資料繫結至另一個控制項的屬性為基礎的觸發程序。
 
-* [事件觸發程序](#event)-在控制項上發生事件時，就會發生。
+* [事件觸發程序](#event)-控制項上發生事件時，就會發生。
 
-* [多重觸發程序](#multi)-可讓多個觸發程序條件在動作發生之前設定。
+* [多個觸發程序](#multi)-可讓多個觸發程序條件在動作發生之前設定。
 
 <a name="property" />
 
 ## <a name="property-triggers"></a>屬性觸發程序
 
-簡單的觸發程序可以表示只在 XAML 中，加入`Trigger`項目，來控制觸發程序的集合。
-這個範例會示範變更觸發程序`Entry`收到焦點時，背景色彩：
+簡單的觸發程序完全以 XAML，新增`Trigger`至控制項的項目觸發程序的集合。
+此範例示範變更的觸發程序`Entry`收到焦點時，背景色彩：
 
 ```xaml
 <Entry Placeholder="enter name">
@@ -48,21 +48,21 @@ ms.locfileid: "35241431"
 </Entry>
 ```
 
-重要的組件的觸發程序的宣告如下：
+觸發程序的重要部分是宣告的：
 
-* **TargetType** -適用於觸發程序的控制項類型。
+* **TargetType** -觸發程序套用至的控制項類型。
 
 * **屬性**-監視控制項上的屬性。
 
-* **值**-值受監視的屬性時，會導致啟動觸發程序。
+* **值**-的值，針對受監視的內容時，導致啟動的觸發程序。
 
-* **Setter** -集合`Setter`可以加入項目，而且當觸發程序符合條件。 您必須指定`Property`和`Value`設定。
+* **Setter** -集合`Setter`可以加入項目和觸發程序條件符合時。 您必須指定`Property`和`Value`設定。
 
-* **EnterActions 和 ExitActions** （未顯示）-撰寫的程式碼，而且可用除了 （或 instead of）`Setter`項目。 它們是[下述](#enterexit)。
+* **EnterActions 和 ExitActions** （未顯示）： 以程式碼撰寫，並可用除了 （或 instead of）`Setter`項目。 它們[下述](#enterexit)。
 
 ### <a name="applying-a-trigger-using-a-style"></a>套用樣式的觸發程序
 
-觸發程序也可以加入至`Style` 頁面上或應用程式中，將控制項上的宣告`ResourceDictionary`。 這個範例會宣告為隱含的樣式 (ie。 沒有`Key`設定) 表示不會套用至所有`Entry`頁面上的控制項。
+觸發程序也可以加入至`Style`控制項，在頁面上或應用程式上的宣告`ResourceDictionary`。 這個範例會宣告隱含樣式 (亦即。 沒有`Key`設定) 表示不會套用至所有`Entry`頁面上的控制項。
 
 ```xaml
 <ContentPage.Resources>
@@ -83,9 +83,9 @@ ms.locfileid: "35241431"
 
 ## <a name="data-triggers"></a>資料觸發程序
 
-資料觸發程序監視會造成另一個控制項使用資料繫結`Setter`來呼叫。 而不是`Property`屬性觸發程序中的屬性，設定`Binding`屬性，以監視指定的值。
+資料觸發程序來監視另一個控制項，讓使用資料繫結`Setter`來呼叫。 而不是`Property`屬性的屬性觸發程序，請設定`Binding`屬性，以監視指定的值。
 
-下列範例會使用資料繫結語法`{Binding Source={x:Reference entry}, Path=Text.Length}`也就是我們如何參考另一個控制項的屬性。 當長度`entry`是零，則會啟動觸發程序。 在此範例中觸發程序停用按鈕時輸入是空的。
+下列範例會使用資料繫結語法`{Binding Source={x:Reference entry}, Path=Text.Length}`也就是我們參照另一個控制項的屬性。 當長度`entry`為零，在啟動觸發程序。 在此範例中的觸發程序停用按鈕，當輸入是空的。
 
 ```xaml
 <!-- the x:Name is referenced below in DataTrigger-->
@@ -108,15 +108,15 @@ ms.locfileid: "35241431"
 </Button>
 ```
 
-提示： 評估時`Path=Text.Length`一律提供預設值 （例如之目標屬性 `Text=""`) 否則它將會因為`null`和觸發程序將無法運作如您預期。
+提示： 評估時`Path=Text.Length`一律提供目標屬性 （例如預設值。 `Text=""`) 否則它將會因為`null`和觸發程序將無法運作如您預期。
 
-除了指定`Setter`s，您也可以提供[`EnterActions`和`ExitActions` ](#enterexit)。
+除了指定`Setter`您也可以提供的 s [ `EnterActions`並`ExitActions` ](#enterexit)。
 
 <a name="event" />
 
 ## <a name="event-triggers"></a>事件觸發程序
 
-`EventTrigger`元素只需要`Event`屬性，例如`"Clicked"`在下列範例中。
+`EventTrigger`項目只需要`Event`屬性，例如`"Clicked"`在下列範例中。
 
 ```xaml
 <EventTrigger Event="Clicked">
@@ -124,7 +124,7 @@ ms.locfileid: "35241431"
 </EventTrigger>
 ```
 
-請注意，有任何`Setter`元素，但是所定義類別而不是參考`local:NumericValidationTriggerAction`需要`xmlns:local`頁面中宣告的 XAML:
+請注意，有沒有`Setter`元素，但是而不是所定義的類別的參考`local:NumericValidationTriggerAction`需要`xmlns:local`在頁面中宣告的 XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -132,15 +132,15 @@ ms.locfileid: "35241431"
              xmlns:local="clr-namespace:WorkingWithTriggers;assembly=WorkingWithTriggers"
 ```
 
-此類別本身會實作`TriggerAction`這表示它應該提供的覆寫`Invoke`在觸發程序事件發生時呼叫的方法。
+此類別本身會實作`TriggerAction`表示不應提供的覆寫`Invoke`每次觸發程序事件發生時呼叫的方法。
 
 觸發程序動作實作應該：
 
-* 實作泛型`TriggerAction<T>`類別，與對應的觸發程序將會套用到控制項類型的泛型參數。 您可以使用超級類別，例如`VisualElement`撰寫使用各種不同的控制項，或指定的控制項類型的觸發程序動作`Entry`。
+* 實作泛型`TriggerAction<T>`類別，且對應的觸發程序將會套用至的控制項類型的泛型參數。 您可以使用例如 superclasses`VisualElement`撰寫使用各種控制項，或指定的控制項類型的觸發程序動作`Entry`。
 
-* 覆寫`Invoke`方法-這每當呼叫符合觸發程序準則。
+* 覆寫`Invoke`-這呼叫方法時符合觸發程序準則。
 
-* 選擇性地公開觸發程序是在宣告可以在 XAML 中設定的屬性 (例如`Anchor`， `Scale`，和`Length`在此範例中)。
+* 選擇性地公開 （expose) 可以在觸發程序宣告時在 XAML 中設定的屬性 (例如`Anchor`， `Scale`，和`Length`在此範例中)。
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -154,7 +154,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 }
 ```
 
-觸發程序動作所公開的屬性可以設定中的 XAML 宣告，如下所示：
+觸發程序動作所公開的屬性可以設定在 XAML 宣告，如下所示：
 
 ```xaml
 <EventTrigger Event="TextChanged">
@@ -162,17 +162,17 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 </EventTrigger>
 ```
 
-共用觸發程序中的時請小心`ResourceDictionary`，將控制項之間共用一個執行個體，因此任何設定一次的狀態將會套用至全部。
+共用觸發程序中的時請小心`ResourceDictionary`，將會在控制項之間共用一個執行個體，因此設定一次的任何狀態將會套用至全部。
 
-請注意，事件觸發程序不支援`EnterActions`和`ExitActions`[下述](#enterexit)。    
+請注意，不支援事件觸發程序`EnterActions`並`ExitActions`[下述](#enterexit)。    
 
 <a name="multi" />
 
-## <a name="multi-triggers"></a>多重觸發程序
+## <a name="multi-triggers"></a>多個觸發程序
 
-A`MultiTrigger`看起來類似`Trigger`或`DataTrigger`除了可以有多個條件。 所有條件都必須成立之前`Setter`s 觸發。
+A`MultiTrigger`看起來類似`Trigger`或`DataTrigger`除了可以有多個條件。 所有條件必須都為 true 之前`Setter`s 會觸發。
 
-以下是一個按鈕，將繫結至兩個不同輸入的觸發程序的範例 (`email`和`phone`):
+以下是範例會將繫結至兩個不同的輸入的按鈕觸發程序 (`email`和`phone`):
 
 ```xaml
 <MultiTrigger TargetType="Button">
@@ -190,7 +190,7 @@ A`MultiTrigger`看起來類似`Trigger`或`DataTrigger`除了可以有多個條�
 </MultiTrigger>
 ```
 
-`Conditions`集合也可以包含`PropertyCondition`項目如下所示：
+`Conditions`可能也會包含集合`PropertyCondition`項目如下所示：
 
 ```xaml
 <PropertyCondition Property="Text" Value="OK" />
@@ -198,9 +198,9 @@ A`MultiTrigger`看起來類似`Trigger`或`DataTrigger`除了可以有多個條�
 
 ### <a name="building-a-require-all-multi-trigger"></a>建置 「 需要所有 「 多重觸發程序
 
-所有條件都都成立時，多重觸發程序只會更新它的控制項。 因為您想要的條件測試 「 所有的欄位長度為零 」 （例如必須完成所有輸入的登入頁面） 是很難解釋"其中 Text.Length > 0"，但這不表示在 XAML 中。
+多個觸發程序在所有條件都都成立時，只會更新其控制項。 測試 「 所有的欄位長度為零 」 （例如必須完成所有輸入的登入頁面） 相當困難，因為您想要條件 」 其中 Text.Length > 0"，但這不表示在 XAML 中。
 
-這可以透過`IValueConverter`。 轉換器下列程式碼轉換`Text.Length`繫結到`bool`，指出欄位是否為空白：
+這可以透過完成`IValueConverter`。 轉換器以下的程式碼轉換`Text.Length`繫結至`bool`，指出欄位是否為空白：
 
 
 ```csharp
@@ -223,7 +223,7 @@ public class MultiTriggerConverter : IValueConverter
 }
 ```
 
-若要使用這個轉換子中的多重觸發程序，先將它加入至頁面的資源字典 (以及自訂`xmlns:local`命名空間定義):
+若要在多個觸發程序中使用這個轉換子，先將其新增至頁面的資源字典 (以及自訂`xmlns:local`命名空間定義):
 
 ```xaml
 <ResourceDictionary>
@@ -231,11 +231,11 @@ public class MultiTriggerConverter : IValueConverter
 </ResourceDictionary>
 ```
 
-XAML 會如下所示。 請注意第一個多重觸發程序範例中的下列差異：
+XAML 如下所示。 請注意下列差異的第一個多重觸發程序範例：
 
-* 按鈕的`IsEnabled="false"`預設設定。
-* 多重觸發條件使用轉換程式來開啟`Text.Length`值轉換為 boolean。
-* 當所有條件都都`true`，setter 使按鈕的`IsEnabled`屬性`true`。
+* 按鈕具有`IsEnabled="false"`預設設定。
+* 多重觸發條件使用轉換器來開啟`Text.Length`成布林值的值。
+* 在所有條件都都`true`，setter 會讓按鈕的`IsEnabled`屬性`true`。
 
 ```xaml
 <Entry x:Name="user" Text="" Placeholder="user name" />
@@ -264,8 +264,8 @@ XAML 會如下所示。 請注意第一個多重觸發程序範例中的下列�
 </Button>
 ```
 
-這些螢幕擷取畫面顯示上述兩個多重觸發程序範例之間的差異。 文字輸入中只有一個螢幕的上半部，`Entry`即已足夠讓**儲存** 按鈕。
-在畫面的下半部**登入**按鈕保持非使用中，直到這兩個欄位包含的資料。
+這些螢幕擷取畫面顯示上述的兩個多重觸發程序範例之間的差異。 在畫面頂端的文字輸入中只有一個`Entry`即可啟用**儲存** 按鈕。
+在畫面底部**登入**按鈕保持非使用中，直到兩個欄位包含資料。
 
 
 ![](triggers-images/multi-requireall.png "MultiTrigger 範例")
@@ -274,9 +274,9 @@ XAML 會如下所示。 請注意第一個多重觸發程序範例中的下列�
 
 ## <a name="enteractions-and-exitactions"></a>EnterActions 和 ExitActions
 
-若要實作變更時觸發程序，就會發生另一個方法是加入`EnterActions`和`ExitActions`集合，並指定`TriggerAction<T>`實作。
+若要實作變更，觸發程序發生時的另一個方法是藉由新增`EnterActions`並`ExitActions`集合，並指定`TriggerAction<T>`實作。
 
-您可以提供*兩者*`EnterActions`和`ExitActions`以及`Setter`中觸發程序，但請注意， `Setter`s 會立即呼叫 (它們不會等待`EnterAction`或`ExitAction`至完成）。 或者，您便可以在程式碼中執行的所有項目上，並不使用`Setter`所有 s。
+您可以提供*兩者*`EnterActions`並`ExitActions`，以及`Setter`中觸發程序，但請注意， `Setter`s 會立即呼叫 (它們不會等待`EnterAction`或`ExitAction`來完成）。 或者，您便可以在程式碼中執行的所有項目上，並不使用`Setter`完全 s。
 
 ```xaml
 <Entry Placeholder="enter job title">
@@ -296,7 +296,7 @@ XAML 會如下所示。 請注意第一個多重觸發程序範例中的下列�
 </Entry>
 ```
 
-因為一律，當類別參考在 XAML 中應該這類宣告命名空間`xmlns:local`如下所示：
+如往常，當參考類別在 XAML 中應該這類宣告的命名空間`xmlns:local`如下所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -326,11 +326,11 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 }
 ```
 
-注意：`EnterActions`和`ExitActions`會略過**事件觸發程序**。
+注意︰`EnterActions`並`ExitActions`上會忽略**事件觸發程序**。
 
 
 
 ## <a name="related-links"></a>相關連結
 
 - [觸發程序範例](https://developer.xamarin.com/samples/WorkingWithTriggers)
-- [Xamarin.Forms 應用程式開發介面文件](https://developer.xamarin.com/api/type/Xamarin.Forms.TriggerAction%3CT%3E/)
+- [Xamarin.Forms API 文件](xref:Xamarin.Forms.TriggerAction`1)

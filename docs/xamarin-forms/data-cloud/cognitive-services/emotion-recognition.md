@@ -12,6 +12,7 @@ ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34049762"
 ---
 # <a name="emotion-recognition-using-the-face-api"></a>使用應用程式開發介面的字體情緒辨識
 

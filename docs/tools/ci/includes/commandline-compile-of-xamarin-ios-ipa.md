@@ -8,7 +8,7 @@
            /p:IpaPackageDir="$HOME/Builds" \
            /t:Build MyProject.sln
 
-**Xbuild**命令通常位於目錄**/Library/Frameworks/Mono.framework/Commands**。
+**Xbuild**命令通常位於目錄 **/Library/Frameworks/Mono.framework/Commands**。
 
  - 在 Windows 中，使用**msbuild**:
 

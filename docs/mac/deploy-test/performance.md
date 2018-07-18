@@ -1,17 +1,18 @@
 ---
 title: Xamarin.Mac 效能
-description: 本文提供 Xamarin.Mac 應用程式的一些效能考量。
+description: 本文提供 Xamarin.Mac 應用程式的一些效能考量。 並討論現代化目標 Framework、連結器、AOT、委派、Cocoa API，以重複使用檢視和非同步程式碼。
 ms.prod: xamarin
 ms.assetid: 54B07DED-FDF2-49B2-A5FB-3A9357E65922
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: 273fb1980695a3dcd4a4fc2123b1ebafef1756a2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ab02fd5048503d73390c2d64892dbec411dfd5a8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791809"
 ---
 # <a name="xamarinmac-performance"></a>Xamarin.Mac 效能
 

@@ -1,32 +1,32 @@
 ---
 title: Xamarin.Essentials： 資料傳輸
-description: Xamarin.Essentials DataTransfer 類別可讓共用資料，例如文字和網頁的連結，在裝置上的其他應用程式的應用程式。
+description: Xamarin.Essentials DataTransfer 類別可讓應用程式共用資料，例如在裝置上的其他應用程式的文字和 web 連結。
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 69d429b1cdbbbd6dbb53e3cefa89695666494ba7
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: c1ed298e1317d0a3f78f4dbd9fc89a2b01c6958c
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782381"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855106"
 ---
 # <a name="xamarinessentials-data-transfer"></a>Xamarin.Essentials： 資料傳輸
 
 ![發行前版本的 NuGet](~/media/shared/pre-release.png)
 
-**DataTransfer**類別可讓共用資料，例如文字和網頁的連結，在裝置上的其他應用程式的應用程式。
+**DataTransfer**類別可讓應用程式共用資料，例如在裝置上的其他應用程式的文字和 web 連結。
 
 ## <a name="using-data-transfer"></a>使用資料傳輸
 
-在您類別中加入 Xamarin.Essentials 的參考：
+在您的類別加入 Xamarin.Essentials 的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-資料傳輸的功能的運作方式是呼叫`RequestAsync`包含了可共用給其他應用程式資訊的資料要求承載的方法。 文字和 Uri 可以混合，每個平台將會處理內容為基礎的篩選。
+資料傳輸功能的運作方式是呼叫`RequestAsync`方法具有資料的要求承載，其中包含要共用其他應用程式的資訊。 可以混合文字和 Uri，以及每個平台將會處理內容為基礎的篩選。
 
 ```csharp
 
@@ -52,21 +52,29 @@ public class DataTransferTest
 }
 ```
 
-外部應用程式會出現提出要求時，要共用的使用者介面：
+要共用外部的應用程式提出要求時所顯示的使用者介面：
 
 ![資料傳輸](data-transfer-images/data-transfer.png)
 
 ## <a name="platform-differences"></a>平台差異
 
-| 平台 | 差異 |
-| --- | --- |
-| Android | Subject 屬性適用於想要的郵件主旨。 |
-| iOS | 未使用的主旨。 |
-| iOS | 未使用的標題。 |
-| UWP | 標題會預設為應用程式名稱如果未設定。 |
-| UWP | 未使用的主旨。 |
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+* `Subject` 屬性用於訊息的所需的主旨。
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+* `Subject` 不使用。
+* `Title` 不使用。 
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+* `Title` 將預設為應用程式名稱，如果未設定。
+* `Subject` 不使用。
+
+-----
 
 ## <a name="api"></a>API
 
-- [資料傳輸的原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DataTransfer)
+- [資料傳輸原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DataTransfer)
 - [資料傳輸的 API 文件](xref:Xamarin.Essentials.DataTransfer)

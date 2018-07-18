@@ -1,19 +1,20 @@
 ---
-title: 與 Mac 配對
-description: 本指南說明如何使用 [與 Mac 配對] 將 Visual Studio 2017 連線至 Mac 組建主機。
+title: 為 Xamarin.iOS 開發與 Mac 配對
+description: 本指南說明如何使用 [與 Mac 配對] 將 Visual Studio 2017 連線至 Mac 組建主機。 並討論如何啟用遠端登入 Mac、從 Visual Studio 2017 連線到 Mac、以手動方式將 Mac 組建主機新增至 Windows 電腦等等。
 ms.prod: xamarin
 ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 04/16/2018
-ms.openlocfilehash: e2f9b23bb298b0bb01f7e5491963daed4521ac9c
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.date: 05/29/2018
+ms.openlocfilehash: c4e28c1f3e058977d6f9072b70f17717a2b27585
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786073"
 ---
-# <a name="pair-to-mac"></a>與 Mac 配對
+# <a name="pair-to-mac-for-xamarinios-development"></a>為 Xamarin.iOS 開發與 Mac 配對
 
 _本指南說明如何使用 [與 Mac 配對] 將 Visual Studio 2017 連線至 Mac 組建主機。_
 
@@ -38,6 +39,7 @@ Visual Studio 2017 的 [與 Mac 配對] 功能會探索、連線至、驗證並�
 - 您可以使用 Windows 命令列建置 iOS 應用程式。
 
 > [!NOTE]
+> 
 > 遵循本指南中的指示，完成下列步驟： 
 > 
 > - 在 Windows 電腦上，[安裝 Visual Studio 2017](~/cross-platform/get-started/installation/windows.md)
@@ -161,6 +163,7 @@ Visual Studio 2017 的 [與 Mac 配對] 功能會探索、連線至、驗證並�
 > [!IMPORTANT]
 > - [與 Mac 配對] 無法安裝 Xcode；您必須在 Mac 組建主機上手動安裝它。 它是進行 Xamarin.iOS 開發的必要項目。
 > - 自動 Mac 佈建需要在 Mac 上啟用遠端登入，而且 Mac 必須可透過網路存取 Windows 電腦。 如需詳細資訊，請參閱[在 Mac 上啟用遠端登入](#enable-remote-login-on-the-mac)。
+> - 自動化的 Mac 佈建需要 Mac 有 3 GB 的可用空間，才能安裝 Xamarin.iOS。
 
 [與 Mac 配對] 會在 Visual Studio 2017 [連線至 Mac](#connect-to-the-mac-from-visual-studio-2017) 時執行必要的軟體安裝/更新。
 

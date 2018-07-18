@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30773988"
 ---
 # <a name="local-notifications"></a>本機的通知
 
@@ -590,7 +591,7 @@ builder.SetStyle (picStyle);
 // Create notification and publish it ...
 ```
 
-在此範例中，映像檔位於**/sdcard/Pictures/my-tshirt.jpg**會載入、 重新調整回其原始大小的一半，然後轉換為在通知中使用的點陣圖：
+在此範例中，映像檔位於 **/sdcard/Pictures/my-tshirt.jpg**會載入、 重新調整回其原始大小的一半，然後轉換為在通知中使用的點陣圖：
 
 ![通知中的範例 t 恤映像](local-notifications-images/19-tshirt-notification.png)
 

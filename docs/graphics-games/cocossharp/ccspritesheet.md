@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33922544"
 ---
 # <a name="improving-frame-rate-with-ccspritesheet"></a>提高畫面播放速率與 CCSpriteSheet
 

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30765996"
 ---
 # <a name="how-can-i-manually-install-the-android-support-libraries-required-by-the-xamarinandroidsupport-packages"></a>如何手動安裝 Xamarin.Android.Support 套件所需的 Android 支援程式庫？
 
@@ -52,11 +53,11 @@ $url = "https://dl-ssl.google.com/android/repository/android_m2repository_r32.zi
 F16A3455987DBAE5783F058F19F7FCDF
 ```
 
-複製**android\_m2repository.zip**到**%LOCALAPPDATA%\\Xamarin\\送達\\**資料夾。 若要使用從先前的 MD5 雜湊計算步驟的 MD5 雜湊檔案重新命名。 例如: 
+複製**android\_m2repository.zip**到 **%LOCALAPPDATA%\\Xamarin\\送達\\**資料夾。 若要使用從先前的 MD5 雜湊計算步驟的 MD5 雜湊檔案重新命名。 例如: 
 
 **%LOCALAPPDATA%\\Xamarin\\zips\\F16A3455987DBAE5783F058F19F7FCDF.zip**
 
-（選擇性）解壓縮檔案貼入**%LOCALAPPDATA%\\Xamarin\\Xamarin.Android.Support.v4\\23.4.0.0\\內容\\** (建立**內容\\m2repository**子目錄)。 如果您略過此步驟中，然後使用該程式庫的第一個組建需要較長的時間因為它將需要完成這個步驟。
+（選擇性）解壓縮檔案貼入 **%LOCALAPPDATA%\\Xamarin\\Xamarin.Android.Support.v4\\23.4.0.0\\內容\\** (建立**內容\\m2repository**子目錄)。 如果您略過此步驟中，然後使用該程式庫的第一個組建需要較長的時間因為它將需要完成這個步驟。
 子目錄的版本號碼 (**23.4.0.0**在此範例中) 不是 NuGet 封裝版本完全相同。 您可以使用`ildasm`來尋找正確的版本號碼：
 
 ```cmd
@@ -74,7 +75,7 @@ property string 'Version' = string('23.4.0.0')}
 
 下載所需的 Xamarin.Android.Support NuGet 封裝 （例如藉由使用 NuGet 封裝管理員安裝）。
 
-按兩下_Xamarin.Android.Support.v4_組件_參考_區段適用於 Mac 的組件瀏覽器中開啟組件的 Visual Studio 中的 Android 專案。 請確認_語言_下拉式清單設定為_C#_和選取最上層_Xamarin.Android.Support.v4_從組件的瀏覽器瀏覽樹狀目錄的組件。 找出`SourceUrl`下的其中一個屬性`IncludeAndroidResourcesFrom`或`JavaLibraryReference`屬性：
+按兩下_Xamarin.Android.Support.v4_組件_參考_區段適用於 Mac 的組件瀏覽器中開啟組件的 Visual Studio 中的 Android 專案。 請確認_語言_下拉式清單設定為_C#_ 和選取最上層_Xamarin.Android.Support.v4_從組件的瀏覽器瀏覽樹狀目錄的組件。 找出`SourceUrl`下的其中一個屬性`IncludeAndroidResourcesFrom`或`JavaLibraryReference`屬性：
 
 ```csharp
 [assembly: IncludeAndroidResourcesFrom ("./", PackageName = "Xamarin.Android.Support.v4", SourceUrl = "https://dl-ssl.google.com/android/repository/android_m2repository_r32.zip", EmbeddedArchive = "m2repository/com/android/support/support-v4/23.4.0/support-v4-23.4.0.aar", Version = "23.4.0.0")]
@@ -104,7 +105,7 @@ csharp -e 'var url = "https://dl-ssl.google.com/android/repository/android_m2rep
 F16A3455987DBAE5783F058F19F7FCDF
 ```
 
-複製**android\_m2repository.zip**至**$HOME/.local/share/Xamarin/zips/**資料夾。 若要使用從先前的 MD5 雜湊計算步驟的 MD5 雜湊檔案重新命名。 例如: 
+複製**android\_m2repository.zip**至 **$HOME/.local/share/Xamarin/zips/** 資料夾。 若要使用從先前的 MD5 雜湊計算步驟的 MD5 雜湊檔案重新命名。 例如: 
 
 **$HOME/.local/share/Xamarin/zips/F16A3455987DBAE5783F058F19F7FCDF.zip**
 

@@ -1,15 +1,17 @@
 ---
 title: 行動裝置應用程式開發簡介
+description: 本文件提供行動裝置開發的簡介、討論 Xamarin、它的運作方式，以及它輸出的應用程式。
 ms.prod: xamarin
 ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: 81b9dc62587bec8c5edc468d6bd94f5868c6858e
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: c6f0233d736c51142d6d83996361558709fd2070
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781916"
 ---
 # <a name="introduction-to-mobile-development"></a>行動裝置應用程式開發簡介
 

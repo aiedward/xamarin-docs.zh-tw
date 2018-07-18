@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: fd45528446c9d3d4bdfa1b8f9f4010babb2ad044
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 3d5fe936da9086dd7201b7ee7d91185b81eb65a1
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245627"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269027"
 ---
 # <a name="fonts-in-xamarinforms"></a>Xamarin.Forms 中的字型
 
-本文說明如何 Xamarin.Forms 可讓您指定的字型屬性 （包括權數和大小） 上顯示文字的控制項。 字型資訊可以是[程式碼中指定](#Setting_Font_in_Code)或[Xaml 中指定](#Setting_Font_in_Xaml)。
+本文說明如何 Xamarin.Forms 可讓您指定的字型屬性 （包括權數和大小） 上顯示文字的控制項。 字型資訊可以是[程式碼中指定](#Setting_Font_in_Code)或[XAML 中指定](#Setting_Font_in_Xaml)。
 它也可使用[自訂字型](#Using_a_Custom_Font)。
 
 <a name="Setting_Font_in_Code" />
@@ -55,7 +55,6 @@ label.FontSize = 24;
 -  **小**
 -  **媒體**
 -  **大型**
-
 
 `NamedSize`列舉型別可以是任一處使用`FontSize`您可以使用指定`Device.GetNamedSize`方法將值轉換成`double`:
 
@@ -103,7 +102,6 @@ fs.Spans.Add (new Span { Text=" and green!", ForegroundColor = Color.Green, Font
 labelFormatted.FormattedText = fs;
 ```
 
-
 ### <a name="setting-font-info-per-platform"></a>設定每個平台的字型資訊
 
 或者，`Device.RuntimePlatform`屬性可用來設定不同的字型名稱，每個平台上，在此程式碼所示：
@@ -119,16 +117,16 @@ label.FontSize = Device.RuntimePlatform == Device.iOS ? 24 :
 
 <a name="Setting_Font_in_Xaml" />
 
-## <a name="setting-the-font-in-xaml"></a>在 Xaml 中設定字型
+## <a name="setting-the-font-in-xaml"></a>在 XAML 中設定字型
 
-Xamarin.Forms 控制顯示文字全都有`Font`可以在 Xaml 中設定的屬性。 在 Xaml 中設定字型最簡單的方式是使用具名的大小的列舉值，這個範例中所示：
+Xamarin.Forms 控制顯示文字全都有`Font`可以在 XAML 中設定的屬性。 在 XAML 中設定字型最簡單的方式是使用具名的大小的列舉值，這個範例中所示：
 
 ```xaml
 <Label Text="Login" FontSize="Large"/>
 <Label Text="Instructions" FontSize="Small"/>
 ```
 
-沒有內建的轉換器`Font`屬性，可讓所有字型設定，以在 Xaml 中的字串值。 下列範例顯示如何指定的字型屬性和大小在 Xaml 中：
+沒有內建的轉換器`Font`屬性，可讓所有字型設定，以在 XAML 中的字串值。 下列範例顯示如何指定的字型屬性和大小在 XAML 中：
 
 ```xaml
 <Label Text="Italics are supported" FontAttributes="Italic" />
@@ -136,11 +134,12 @@ Xamarin.Forms 控制顯示文字全都有`Font`可以在 Xaml 中設定的屬性
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-若要指定多個`Font`設定，結合成單一的字型屬性字串所需的設定。 字型屬性字串的格式應為`"[font-face],[attributes],[size]"`。 參數的順序很重要，所有參數都是選擇性的與多重`attributes`可以指定，例如：
+若要指定多個`Font`設定，結合成單一的必要的設定`Font`屬性字串。 字型屬性字串的格式應為`"[font-face],[attributes],[size]"`。 參數的順序很重要，所有參數都是選擇性的與多重`attributes`可以指定，例如：
 
 ```xaml
-<Label Text="Small bold text" FontAttributes="Bold" FontSize="Micro" />
-<Label Text="Really big italic text" FontAttributes="Italic" FontSize="72" />
+<Label Text="Small bold text" Font="Bold, Micro" />
+<Label Text="Medium custom font" Font="MarkerFelt-Thin, 42" />
+<Label Text="Really big bold and italic text" Font="Bold, Italic, 72"  />
 ```
 
 `FormattedString`類別也可用在 XAML 中，如下所示：
@@ -253,7 +252,7 @@ new Label
 
 Xamarin.Forms 提供簡單的預設設定，讓您輕鬆地針對所有支援平台的文字的大小。 也可讓您指定的字體和大小&ndash;甚至不同的每個平台&ndash;需要更細部的掌控時。 `FormattedString`類別可以用來建構字串，包含使用不同的字型規格`Span`類別。
 
-您也可以在 Xaml 中使用的格式正確的字型屬性指定字型資訊或`FormattedString`具有項目`Span`子系。
+您也可以在 XAML 中使用的格式正確的字型屬性指定字型資訊或`FormattedString`具有項目`Span`子系。
 
 
 ## <a name="related-links"></a>相關連結

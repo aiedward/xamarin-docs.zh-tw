@@ -12,6 +12,7 @@ ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34458350"
 ---
 # <a name="advanced-concepts-and-internals"></a>進階的概念和內部項目
 

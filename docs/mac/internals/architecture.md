@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30785552"
 ---
 # <a name="xamarinmac-architecture"></a>Xamarin.Mac 架構
 
@@ -45,7 +46,7 @@ Xamarin 開發時條款*原生*和*管理*通常會使用程式碼。 Managed �
 
 ## <a name="compilation"></a>編譯
 
-當您編譯任何 Xamarin 平台應用程式時，Mono C# （或 F #） 編譯器會執行，並將您 C# 和 F # 程式碼編譯成 Microsoft Intermediate Language （MSIL 或 IL）。 接著會使用 Xamarin.Mac *Just in Time (JIT)*編譯器來編譯原生程式碼，讓正確的架構上執行，視需要執行階段。
+當您編譯任何 Xamarin 平台應用程式時，Mono C# （或 F #） 編譯器會執行，並將您 C# 和 F # 程式碼編譯成 Microsoft Intermediate Language （MSIL 或 IL）。 接著會使用 Xamarin.Mac *Just in Time (JIT)* 編譯器來編譯原生程式碼，讓正確的架構上執行，視需要執行階段。
 
 這是相較於使用 AOT 編譯 Xamarin.iOS。 使用 AOT 編譯器時，所有組件與其中的所有方法都會編譯在建置階段中。 使用 JIT 編譯發生狀況的方法所執行的需求。
 

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33917963"
 ---
 # <a name="portable-visual-basicnet"></a>移植 Visual basic.net
 
@@ -41,7 +42,7 @@ Xamarin.Android 4.10.1 Xamarin.iOS 7.0.4 和 Xamarin Studio 4.2，這表示使�
 
 建立 PCL 並選擇其設定檔的步驟如下：
 
-1.  在**新專案**畫面上，選取**Visual Basic > 類別庫 （可攜式）**選項：
+1.  在**新專案**畫面上，選取**Visual Basic > 類別庫 （可攜式）** 選項：
 
     [![](images/image1-sml.png "建立新的 Visual Basic 可攜式程式庫")](images/image1.png#lightbox)
 

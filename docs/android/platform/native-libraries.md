@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30774807"
 ---
 # <a name="using-native-libraries"></a>使用原生程式庫
 
@@ -44,7 +45,7 @@ Xamarin.Android 支援原生程式庫，透過標準的 PInvoke 機制使用。 
 ## <a name="debugging-native-code-with-visual-studio-2015"></a>使用 Visual Studio 2015 偵錯原生程式碼
 
 如果您使用*Visual Studio 2015*，您不需要修改您的專案檔案 （如上面所述）。
-您可以建置和偵錯 c + + 內 Xamarin.Android 方案時，只需將專案參考加入 c + +**動態共用程式庫 (Android)**專案。
+您可以建置和偵錯 c + + 內 Xamarin.Android 方案時，只需將專案參考加入 c + +**動態共用程式庫 (Android)** 專案。
 
 Visual Studio c + + 開發人員可查看[SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)範例來嘗試偵錯 c + +，Visual Studio 2015 和 Xamarin; 與參照我們[部落格文章](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)如需詳細資訊。
 

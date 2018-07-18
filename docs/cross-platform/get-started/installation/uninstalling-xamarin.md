@@ -1,16 +1,17 @@
 ---
 title: 解除安裝 Xamarin
-description: 從電腦解除安裝 Xamarin 產品
+description: 本文件描述如何在 Mac 和 Windows 上解除安裝 Xamarin。 提供有關解除安裝 Mono、Xamarin.Android、Xamarin.iOS 和其他工具的特定指示。
 ms.prod: xamarin
 ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: d1b88ad97a1cecaadd84226bca61c7f2b262438d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 265833c3b1453dfb21064860a747651d45c2c4a0
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066464"
 ---
 # <a name="uninstalling-xamarin"></a>解除安裝 Xamarin
 
@@ -26,7 +27,7 @@ ms.lasthandoff: 05/09/2018
 - [Xamarin.Android](#uninstallandroid)
 - [Xamarin.iOS](#uninstallios)
 - [Xamarin.Mac](#uninstallmac)
-- [Inspector 與 Workbooks](#uninstallworkbooks)
+- [活頁簿](#uninstallworkbooks)
 - [Xamarin Profiler](#uninstallprofiler)
 - [安裝程式](#uninstallinstaller)
 
@@ -145,9 +146,9 @@ rm -rf ~/Library/Xamarin.Mac
 
 <a name="uninstallworkbooks" />
 
-### <a name="uninstall-workbooks-and-inspector"></a>解除安裝 Workbooks 和 Inspector
+### <a name="uninstall-workbooks"></a>解除安裝 Workbooks
 
-若要移除 Xamarin Inspector 與 Workbooks 1.2.2 版及更新版本，請在終端機內使用下列命令：
+若要移除 Xamarin Workbooks 1.2.2 版及更新版本，請在終端機內使用下列命令：
 
 ```bash
 sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
@@ -268,7 +269,7 @@ rm -rf "~/Library/Preferences/Visual Studio/"
 
 ### <a name="visual-studio-2015-and-earlier"></a>Visual Studio 2015 和更早版本
 
-若要完全移除 Visual Studio 2015，請使用 [visualstudio.com 上的支援解答](https://www.visualstudio.com/vs/support/vs2015/uninstall-visual-studio-2015/)。
+若要完全移除 Visual Studio 2015，請使用 [visualstudio.com 上的支援解答](https://visualstudio.microsoft.com/vs/support/vs2015/uninstall-visual-studio-2015/)。
 
 您可以透過**控制台**從 Windows 電腦解除安裝 Xamarin。 巡覽至 [程式和功能] 或 [程式] > [解除安裝程式]，如下圖所示：
 

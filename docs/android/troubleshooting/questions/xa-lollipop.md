@@ -12,10 +12,11 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30764461"
 ---
 # <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>哪些版本的 Xamarin.Android 加入棒棒糖符號支援？
 
-**注意：**本指南原本針對 Android L 預覽所撰寫。
+**注意：** 本指南原本針對 Android L 預覽所撰寫。
 
 -   [Xamarin.Android 4.17](https://developer.xamarin.com/releases/android/xamarin.android_4/xamarin.android_4.17/)新增 Android L 預覽支援。
 -   [Xamarin.Android 4.20](https://developer.xamarin.com/releases/android/xamarin.android_4/xamarin.android_4.20/)新增 Android 棒棒糖符號的支援。
@@ -44,7 +45,7 @@ Error 1 Could not find android.jar for API Level 21.
 
 3. 暫時降級回 Android API 層級 21"L"預覽 [1]:
 
-    1.  刪除**%LOCALAPPDATA%\\Android\\android sdk\\平台\\android 21** 
+    1.  刪除 **%LOCALAPPDATA%\\Android\\android sdk\\平台\\android 21** 
     2.  展開 [1] 到**c:\\使用者\\<username>\\AppData\\本機\\Android\\android sdk\\平台**建立**android L**資料夾。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
@@ -69,7 +70,7 @@ Error: Could not find android.jar for API Level 21.**
 3. 暫時降級回 Android API 層級 21"L"預覽 [1]:
 
     1.  Delete **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/android-21**
-    2.  展開 [1] 到**/Users/username/Library/Developer/Xamarin/android-sdk-macosx**建立**android L**資料夾。
+    2.  展開 [1] 到 **/Users/username/Library/Developer/Xamarin/android-sdk-macosx**建立**android L**資料夾。
 
 -----
 

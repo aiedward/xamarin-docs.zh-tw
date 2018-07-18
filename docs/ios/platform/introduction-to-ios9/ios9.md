@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30777547"
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 相容性
 
@@ -58,9 +59,9 @@ _即使您不打算立即更新您的應用程式與 iOS 9 功能，建議您在
 
 ### <a name="uicollectionviewcellcontentview-is-null-in-constructors"></a>UICollectionViewCell.ContentView 中為 null 的建構函式
 
-**原因：**在 iOS 9`initWithFrame:`建構函式現在是必要項目，因為在為 iOS 9 中的行為變更[UICollectionView 文件狀態](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)。 如果您註冊指定的識別項的類別，並且必須建立新的儲存格，資料格現在藉由呼叫初始化其`initWithFrame:`方法。
+**原因：** 在 iOS 9`initWithFrame:`建構函式現在是必要項目，因為在為 iOS 9 中的行為變更[UICollectionView 文件狀態](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)。 如果您註冊指定的識別項的類別，並且必須建立新的儲存格，資料格現在藉由呼叫初始化其`initWithFrame:`方法。
 
-**修正：**新增`initWithFrame:`建構函式，就像這樣：
+**修正：** 新增`initWithFrame:`建構函式，就像這樣：
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -78,7 +79,7 @@ public YourCellClassName (CGRect frame) : base (frame)
 
 **原因：** `initWithCoder:`建構函式是從介面產生器 Xib 檔案載入檢視時呼叫。 如果這個建構函式不會匯出 unmanaged 程式碼無法呼叫它的我們受管理的版本。 之前 （例如。 在 iOS 8)`IntPtr`建構函式已叫用來初始化檢視。
 
-**修正：**建立和匯出`initWithCoder:`建構函式，就像這樣：
+**修正：** 建立和匯出`initWithCoder:`建構函式，就像這樣：
 
 ```csharp
 [Export ("initWithCoder:")]
@@ -100,9 +101,9 @@ Dyld Error Message:
 Dyld Message: no cache image with name (/System/Library/PrivateFrameworks/JavaScriptCore.framework/JavaScriptCore)
 ```
 
-**原因：**這是 Apple 的原生連結器，以致它們公開私用的 framework 中的 bug （JavaScriptCore 已公開在 iOS 7，之前它是私用架構），和應用程式的部署目標是 iOS 版本時架構是私人的。 在此情況下 Apple 的連結器會使用私用的版本，而不是公用版本的 framework 的連結。
+**原因：** 這是 Apple 的原生連結器，以致它們公開私用的 framework 中的 bug （JavaScriptCore 已公開在 iOS 7，之前它是私用架構），和應用程式的部署目標是 iOS 版本時架構是私人的。 在此情況下 Apple 的連結器會使用私用的版本，而不是公用版本的 framework 的連結。
 
-**修正：**這將會解決 ios 9，但沒有簡單的解決方法，您可以同時套用自行： 只為目標的更新版本的 iOS 版本專案中 （您在此情況下可以嘗試 iOS 7）。 其他架構可能會表現出類似的問題，例如 WebKit framework 已公開在 iOS 8 （和目標 iOS 7 時，會導致此錯誤，因此您應將目標設 iOS 應用程式中使用 WebKit 8）。
+**修正：** 這將會解決 ios 9，但沒有簡單的解決方法，您可以同時套用自行： 只為目標的更新版本的 iOS 版本專案中 （您在此情況下可以嘗試 iOS 7）。 其他架構可能會表現出類似的問題，例如 WebKit framework 已公開在 iOS 8 （和目標 iOS 7 時，會導致此錯誤，因此您應將目標設 iOS 應用程式中使用 WebKit 8）。
 
 
 

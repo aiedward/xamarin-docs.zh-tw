@@ -1,67 +1,70 @@
 ---
-title: 使用及建立 Xamarin.Forms 外掛程式
-description: 本文說明如何使用及建立 Xamarin.Forms 外掛程式。 外掛程式通常可用來輕鬆地公開的原生平台功能。
+title: 使用和建立 Xamarin.Forms 外掛程式
+description: 這篇文章說明如何使用及建立 Xamarin.Forms 外掛程式。 外掛程式通常會用來輕鬆地公開原生平台功能。
 ms.prod: xamarin
 ms.assetid: 8A06A420-A9D0-4BCB-B9AF-3AEA6A648A8B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/07/2016
-ms.openlocfilehash: dff9fad0da30475a0fb91c0af76a25ea50d34439
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 07/05/2018
+ms.openlocfilehash: 4d121c2dfcca380e1735da1a4ca47c42d1957b8a
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242553"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37854736"
 ---
-# <a name="consuming-and-creating-xamarinforms-plugins"></a>使用及建立 Xamarin.Forms 外掛程式
+# <a name="consuming-and-creating-xamarinforms-plugins"></a>使用和建立 Xamarin.Forms 外掛程式
 
-存在於所有平台之間的許多原生平台功能，不過有稍微不同的應用程式開發介面。 開發人員撰寫外掛程式，以建立抽象跨平台介面也可以與其他人共用這些功能。
+有許多存在跨所有平台的原生平台功能，但有稍微不同的 Api。 適用於開發人員可以使用這些功能的方法之一是藉由建立跨平台抽象的介面，並接著在各種平台上實作該介面。 接著，Xamarin.Forms 應用程式存取使用這些平台實作[ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md)。
 
-這些功能包括： 電池狀態、 指南針、 影片感應器、 地理位置，文字轉換語音，和更多。 外掛程式可讓由 Xamarin.Forms 應用程式輕鬆地存取這些功能。
+開發人員可以共用這項工作，藉由撰寫_外掛程式_並將其發佈至 NuGet。
+
+> [!NOTE]
+> 許多先前僅能透過外掛程式的跨平台功能現在是開放原始碼的一部分**[Xamarin.Essentials](~/essentials/index.md)** 程式庫。 這些功能包括： 電池狀態、 羅盤、 動作感應器、 地理位置、 文字轉換語音，和更多。 未來**Xamarin.Essentials**會用於 Xamarin.Forms 應用程式的跨平台功能的主要來源。 雖然開發人員仍然可以建立和發行外掛程式，請考慮參與**Xamarin.Essentials**。
 
 ## <a name="finding-and-adding-plugins"></a>尋找及加入外掛程式
 
-Xamarin 社群已建立許多跨平台外掛程式 Xamarin.Forms-與相容的大型集合，請參閱：
+Xamarin 社群已建立許多跨平台外掛程式與 Xamarin.Forms 相容。 大型集合位於：
 
-[**Xamarin 外掛程式**](https://github.com/xamarin/plugins)
+[**Xamarin 外掛程式**](https://github.com/xamarin/XamarinComponents)
 
-將 NuGet 封裝加入您專案的指引，請參閱我們的逐步解說上,[包括您的專案中的 NuGet 封裝](/visualstudio/mac/nuget-walkthrough/)。
+將 NuGet 套件新增至您的專案的指南，請參閱我們的逐步解說，在[在專案中包含 NuGet 套件](/visualstudio/mac/nuget-walkthrough/)。
 
+## <a name="creating-plugins"></a>建立外掛程式
 
-## <a name="creating-plugins"></a>建立的外掛程式
+它也可建立和發行您自己的外掛程式為 Nuget 套件 （及 Xamarin 元件）。 許多現有的外掛程式都是開放原始碼，因此您可以檢閱其程式碼，以了解如何已 writtern。
 
-它也可建立和發行您自己的外掛程式為 Nuget 封裝 （和 Xamarin 元件）。 許多現有的外掛程式都是開放原始碼，因此您可以檢閱其程式碼，以了解如何已 writtern。
+比方說，下列的外掛程式清單是所有的開放原始碼，和它們對應中的一些範例[ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md)區段：
 
-例如，外掛程式下方的清單是所有的開放原始碼，和它們對應中的範例[ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md) > 一節：
+- **文字轉換語音**James Montemagno 所&ndash; [GitHub](https://github.com/jamesmontemagno/TextToSpeechPlugin)和[NuGet  ](https://www.nuget.org/packages/Xam.Plugins.TextToSpeech)
+- **Stav Baterie** James Montemagno 所&ndash; [GitHub](https://github.com/jamesmontemagno/BatteryPlugin)和[NuGet](https://www.nuget.org/packages/Xam.Plugin.Battery)
 
-- **文字轉換語音**James Montemagno 的&ndash; [GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/TextToSpeech)和[NuGet](https://www.nuget.org/packages/Xam.Plugin.Battery)
-- **電池狀態**James Montemagno 的&ndash; [GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery)和[NuGet](https://www.nuget.org/packages/Xam.Plugins.TextToSpeech/)
+Github 專案，才可以提供很好的起點來建立您自己跨平台的外掛程式，一樣的這些指示[建立適用於 Xamarin 的外掛程式](https://github.com/xamarin/XamarinComponents#create-a-plugin-for-xamarin)。
 
-這些 Github 專案可以提供很好的起點來建立您自己跨平台的外掛程式，與這些指示[xamarin 建立外掛程式](https://github.com/xamarin/plugins#create-a-plugin-for-xamarin)。
+### <a name="structuring-cross-platform-plugin-projects"></a>結構化和跨平台外掛程式的專案
 
-### <a name="structuring-cross-platform-plugin-projects"></a>結構化的跨平台增益集專案
+雖然有沒有特定的需求設計的 NuGet 套件，但有一些指導方針建立跨平台應用程式封裝。
 
-雖然有沒有特定的需求設計 NuGet 封裝，但有一些指導方針建立跨平台應用程式套件。
+在過去，跨平台的外掛程式通常包括下列元件：
 
-跨平台外掛程式通常應該包含下列元件：
+- 表示為外掛程式 API 介面的 PCL
+- iOS、 Android 和通用 Windows 平台 (UWP) 的類別程式庫與介面的實作。
 
-- PCL 與表示外掛程式 API 介面
-- iOS、 Android 和 Windows 類別程式庫與介面的實作。
+讀取 James Montemagno 的[部落格文章](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms/)描述為 Xamarin 建立外掛程式的程序。
 
-讀取 James Montemagno 的[部落格文章](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms/)描述 xamarin 建立外掛程式的程序。
+最近，外掛程式可以是使用來建立單一多目標平台。 這個方法會討論 James Montemagno[部落格文章](https://montemagno.com/converting-xamarin-libraries-to-sdk-style-multi-targeted-projects/)。 這個方法會在連結上方，James Montemagno 的外掛程式和格式中也使用**Xamarin.Essentials**。
 
-最好避免直接從外掛程式參考 Xamarin.Forms。
-其他開發人員嘗試使用外掛程式時，這樣就可以建立版本衝突問題。 改為嘗試設計應用程式開發介面，讓任何 Xamarin 或.NET 應用程式可以使用它。
+建議您最好避免直接從外掛程式參考 Xamarin.Forms。
+其他開發人員嘗試使用外掛程式時，這可以建立版本衝突問題。 請改為試用設計 API，讓它可供任何 Xamarin 或.NET 應用程式。
 
-### <a name="publishing-nuget-packages"></a>發行的 NuGet 封裝
+### <a name="publishing-nuget-packages"></a>發行 NuGet 套件
 
-NuGet 封裝有**nuspec**是定義在封裝中發佈您的專案中哪些部分的 xml 檔案的檔案。 **Nuspec**檔案還包含封裝，例如識別碼、 標題和作者的相關資訊。
+NuGet 套件**nuspec**是定義在封裝中發佈您的專案的哪些部分的 xml 檔案的檔案。 **Nuspec**檔案也包含封裝，例如識別碼、 標題和作者的相關資訊。
 
-請參閱[NuGet 的文件](http://docs.nuget.org/create/creating-and-publishing-a-package)如需有關建立和發佈 NuGet 套件。
-
+請參閱[NuGet 的文件](/nuget/create-packages/creating-a-package.md)如需有關建立和發行 NuGet 套件。
 
 ## <a name="related-links"></a>相關連結
 
-- [建立可重複使用的外掛程式的 Xamarin.Forms](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms)
-- [使用 （& s） 開發適用於 Xamarin （視訊） 的外掛程式](https://university.xamarin.com/guestlectures/using-developing-plugins-for-xamarin)
+- [適用於 Xamarin.Forms 建立可重複使用的外掛程式](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms)
+- [使用 & 開發適用於 Xamarin （影片） 的外掛程式](https://university.xamarin.com/guestlectures/using-developing-plugins-for-xamarin)

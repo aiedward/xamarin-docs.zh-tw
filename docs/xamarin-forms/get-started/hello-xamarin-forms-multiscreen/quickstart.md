@@ -1,16 +1,18 @@
 ---
 title: Xamarin.Forms 多重畫面快速入門
+description: 本文會說明如何新增另一個畫面來延伸 Phoneword 應用程式，以追蹤應用程式的通話記錄。
 ms.prod: quickstart
 ms.assetid: 255d93b9-518c-4e5d-a9cd-4dd8a7945a7f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/06/2018
-ms.openlocfilehash: 066f084187a486ca2f88882890b5e9ad277b8cff
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 06/13/2018
+ms.openlocfilehash: a4e27f1810a16b5d13838d2e2c1067950586fab3
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996177"
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Xamarin.Forms 多重畫面快速入門
 
@@ -57,11 +59,11 @@ ms.lasthandoff: 04/27/2018
 
     按下 **CTRL+S** 以將變更儲存到 **CallHistoryPage.xaml**，然後關閉檔案。
 
-5. 在 [方案總管] 中，按兩下 **App.xaml.cs** 以將它開啟：
+5. 在 [方案總管] 中，連按兩下共用 **Phoneword** 專案的 **App.xaml.cs** 檔案，開啟它：
 
     ![](quickstart-images/vs/open-app-class.png "開啟 App.xaml.cs")
 
-6. 在 **App.xaml.cs** 中，匯入 `System.Collections.Generic` 命名空間、新增 `PhoneNumbers` 屬性的宣告、初始化 `App` 建構函式中的屬性，然後將 [`MainPage`](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) 屬性初始化為 [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)。 `PhoneNumbers` 集合將用來儲存應用程式所撥打之轉譯電話號碼的清單：
+6. 在 **App.xaml.cs** 中，匯入 `System.Collections.Generic` 命名空間、新增 `PhoneNumbers` 屬性的宣告、初始化 `App` 建構函式中的屬性，然後將 [`MainPage`](xref:Xamarin.Forms.Application.MainPage) 屬性初始化為 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)。 `PhoneNumbers` 集合將用來儲存應用程式所撥打之轉譯電話號碼的清單：
 
     ```csharp
     using System.Collections.Generic;
@@ -88,11 +90,11 @@ ms.lasthandoff: 04/27/2018
 
     按下 **CTRL+S** 以將變更儲存到 **App.xaml.cs**，然後關閉檔案。
 
-7. 在 [方案總管] 中，按兩下 **MainPage.xaml** 以將它開啟：
+7. 在 [方案總管] 中，連按兩下共用 **Phoneword** 專案的 **MainPage.xaml** 檔案，開啟它：
 
     ![](quickstart-images/vs/open-mainpage-xaml.png "開啟 MainPage.xaml")
 
-8. 在 **MainPage.xaml** 中，將 [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) 控制項新增到 [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) 控制項的結尾。 此按鈕將用來瀏覽至 [通話記錄] 頁面：
+8. 在 **MainPage.xaml** 中，將 [`Button`](xref:Xamarin.Forms.Button) 控制項新增到 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 控制項的結尾。 此按鈕將用來瀏覽至 [通話記錄] 頁面：
 
     ```xaml
     <StackLayout VerticalOptions="FillAndExpand"
@@ -207,7 +209,7 @@ ms.lasthandoff: 04/27/2018
 
     ![](quickstart-images/xs/open-app-class.png "開啟 App.xaml.cs")
 
-7. 在 **App.xaml.cs** 中，匯入 `System.Collections.Generic` 命名空間、新增 `PhoneNumbers` 屬性的宣告、初始化 `App` 建構函式中的屬性，然後將 [`MainPage`](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) 屬性初始化為 [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)。 `PhoneNumbers` 集合將用來儲存應用程式所撥打之轉譯電話號碼的清單：
+7. 在 **App.xaml.cs** 中，匯入 `System.Collections.Generic` 命名空間、新增 `PhoneNumbers` 屬性的宣告、初始化 `App` 建構函式中的屬性，然後將 [`MainPage`](xref:Xamarin.Forms.Application.MainPage) 屬性初始化為 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)。 `PhoneNumbers` 集合將用來儲存應用程式所撥打之轉譯電話號碼的清單：
 
     ```csharp
     using System.Collections.Generic;
@@ -238,7 +240,7 @@ ms.lasthandoff: 04/27/2018
 
     ![](quickstart-images/xs/open-mainpage-xaml.png "開啟 MainPage.xaml")
 
-9. 在 **MainPage.xaml** 中，將 [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) 控制項新增到 [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) 控制項的結尾。 此按鈕將用來瀏覽至 [通話記錄] 頁面：
+9. 在 **MainPage.xaml** 中，將 [`Button`](xref:Xamarin.Forms.Button) 控制項新增到 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 控制項的結尾。 此按鈕將用來瀏覽至 [通話記錄] 頁面：
 
     ```xaml
     <StackLayout VerticalOptions="FillAndExpand"

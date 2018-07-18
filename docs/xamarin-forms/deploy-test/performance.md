@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: bcc265c4d8410bb1aa2305f8a137c96a63c60fae
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: d7719f231a6d70594985a1158340104d68367ffe
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847715"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998603"
 ---
 # <a name="xamarinforms-performance"></a>Xamarin.Forms 效能
 
@@ -59,7 +59,7 @@ XAML 可選擇性地使用 XAML 編譯器 (XAMLC) 直接編譯成中繼語言 (I
 
 ## <a name="choose-the-correct-layout"></a>選擇正確的版面配置
 
-能顯示多個子系但卻只有單一子系的版面配置，是很浪費資源的。 例如，下列程式碼範例會示範具有單一子系的 [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)：
+能顯示多個子系但卻只有單一子系的版面配置，是很浪費資源的。 例如，下列程式碼範例會示範具有單一子系的 [`StackLayout`](xref:Xamarin.Forms.StackLayout)：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -73,7 +73,7 @@ XAML 可選擇性地使用 XAML 編譯器 (XAMLC) 直接編譯成中繼語言 (I
 </ContentPage>
 ```
 
-這很浪費資源，因此應將 [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) 元素移除，如下列程式碼範例所示：
+這很浪費資源，因此應將 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 元素移除，如下列程式碼範例所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -85,7 +85,7 @@ XAML 可選擇性地使用 XAML 編譯器 (XAMLC) 直接編譯成中繼語言 (I
 </ContentPage>
 ```
 
-此外，請勿嘗試使用其他版面配置的組合來重現特定版面配置的外觀，這會導致執行不必要的版面配置計算。 例如，請勿嘗試使用 [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) 執行個體的組合，重現 [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) 版面配置。 下列程式碼範例會示範此錯誤作法的範例：
+此外，請勿嘗試使用其他版面配置的組合來重現特定版面配置的外觀，這會導致執行不必要的版面配置計算。 例如，請勿嘗試使用 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 執行個體的組合，重現 [`Grid`](xref:Xamarin.Forms.Grid) 版面配置。 下列程式碼範例會示範此錯誤作法的範例：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -115,7 +115,7 @@ XAML 可選擇性地使用 XAML 編譯器 (XAMLC) 直接編譯成中繼語言 (I
 </ContentPage>
 ```
 
-這很浪費資源，因為會執行不必要的版面配置計算。 改用 [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) 可以更恰當地實現所需的版面配置，如下列程式碼範例所示：
+這很浪費資源，因為會執行不必要的版面配置計算。 改用 [`Grid`](xref:Xamarin.Forms.Grid) 可以更恰當地實現所需的版面配置，如下列程式碼範例所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -163,7 +163,7 @@ XAML 可選擇性地使用 XAML 編譯器 (XAMLC) 直接編譯成中繼語言 (I
 
 ## <a name="reduce-unnecessary-bindings"></a>減少不必要的繫結
 
-請勿針對能輕易靜態設定的內容使用繫結。 將不需繫結的資料繫結並不會帶來任何好處，因為繫結本身並不符合成本效益。 例如，比起將 [`Button.Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Text/) 繫結到含有 "Accept" 值的 ViewModel `string` 屬性，設定 `Button.Text = "Accept"` 的額外負荷將會較少。
+請勿針對能輕易靜態設定的內容使用繫結。 將不需繫結的資料繫結並不會帶來任何好處，因為繫結本身並不符合成本效益。 例如，比起將 [`Button.Text`](xref:Xamarin.Forms.Button.Text) 繫結到含有 "Accept" 值的 ViewModel `string` 屬性，設定 `Button.Text = "Accept"` 的額外負荷將會較少。
 
 <a name="optimizelayout" />
 
@@ -171,36 +171,36 @@ XAML 可選擇性地使用 XAML 編譯器 (XAMLC) 直接編譯成中繼語言 (I
 
 Xamarin.Forms 2 導入會影響版面配置更新的最佳化版面配置引擎。 如果要獲得最佳的版面配置效能，請遵循下列指導方針：
 
-- 指定 [`Margin`](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) 屬性值，允許建立換行檢視數目較少的版面配置，以減少版面配置階層的深度。 如需詳細資訊，請參閱[邊界和邊框距離](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
-- 使用 [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) 時，請盡可能不要將資料列和資料行設為 [`Auto`](https://developer.xamarin.com/api/property/Xamarin.Forms.GridLength.Auto/) 大小。 每個自動調整大小的資料列或資料行都會導致版面配置引擎執行額外的版面配置計算。 可能的話，請改用固定大小的資料列和資料行。 或是使用 [`GridUnitType.Star`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Star/) 列舉值將資料列和資料行設定為佔用成比例的空間量，前提是父樹狀結構也遵循這些版面配置指導方針。
-- 除非必要，請勿設定版面配置的 [`VerticalOptions`](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) 和 [`HorizontalOptions`](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) 屬性。 [`LayoutOptions.Fill`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Fill/) 和 [`LayoutOptions.FillAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.FillAndExpand/) 的預設值可提供最優異的版面配置最佳化。 變更這些屬性會衍生成本，同時也會消耗記憶體，即使是將它們設為預設值也一樣。
-- 盡量避免使用 [`RelativeLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/)。 它會導致 CPU 必須執行更多工作。
-- 使用 [`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) 時，請盡可能避免使用 [`AbsoluteLayout.AutoSize`](https://developer.xamarin.com/api/property/Xamarin.Forms.AbsoluteLayout.AutoSize/) 屬性。
-- 使用 [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) 時，請確定只將一個子系設為 [`LayoutOptions.Expands`](https://developer.xamarin.com/api/property/Xamarin.Forms.LayoutOptions.Expands/)。 此屬性可確保指定的子系會佔用 `StackLayout` 所能提供的最大空間，重複執行這些計算將會浪費資源。
-- 請勿呼叫 [`Layout`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) 類別的任一方法，因為它們會導致執行高成本的版面配置計算。 所需的版面配置行為通常可以透過改為設定 [`TranslationX`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/) 和 [`TranslationY`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) 屬性來取得。 或是將 [`Layout<View>`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) 類別子類別化，以實現所需的版面配置行為。
-- 請勿過度頻繁地更新任何 [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) 執行個體，因為變更標籤大小會使系統需重新計算整個畫面的版面配置。
-- 除非必要，請勿設定 [`Label.VerticalTextAlignment`](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.VerticalTextAlignment/) 屬性。
-- 盡可能將任一 [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) 執行個體的 [`LineBreakMode`](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.LineBreakMode/) 設為 [`NoWrap`](https://developer.xamarin.com/api/field/Xamarin.Forms.LineBreakMode.NoWrap/)。
+- 指定 [`Margin`](xref:Xamarin.Forms.View.Margin) 屬性值，允許建立換行檢視數目較少的版面配置，以減少版面配置階層的深度。 如需詳細資訊，請參閱[邊界和邊框距離](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
+- 使用 [`Grid`](xref:Xamarin.Forms.Grid) 時，請盡可能不要將資料列和資料行設為 [`Auto`](xref:Xamarin.Forms.GridLength.Auto) 大小。 每個自動調整大小的資料列或資料行都會導致版面配置引擎執行額外的版面配置計算。 可能的話，請改用固定大小的資料列和資料行。 或是使用 [`GridUnitType.Star`](xref:Xamarin.Forms.GridUnitType.Star) 列舉值將資料列和資料行設定為佔用成比例的空間量，前提是父樹狀結構也遵循這些版面配置指導方針。
+- 除非必要，請勿設定版面配置的 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 和 [`HorizontalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性。 [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) 和 [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) 的預設值可提供最優異的版面配置最佳化。 變更這些屬性會衍生成本，同時也會消耗記憶體，即使是將它們設為預設值也一樣。
+- 盡量避免使用 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)。 它會導致 CPU 必須執行更多工作。
+- 使用 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) 時，請盡可能避免使用 [`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize) 屬性。
+- 使用 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 時，請確定只將一個子系設為 [`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands)。 此屬性可確保指定的子系會佔用 `StackLayout` 所能提供的最大空間，重複執行這些計算將會浪費資源。
+- 請勿呼叫 [`Layout`](xref:Xamarin.Forms.Layout) 類別的任一方法，因為它們會導致執行高成本的版面配置計算。 所需的版面配置行為通常可以透過改為設定 [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) 和 [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) 屬性來取得。 或是將 [`Layout<View>`](xref:Xamarin.Forms.Layout`1) 類別子類別化，以實現所需的版面配置行為。
+- 請勿過度頻繁地更新任何 [`Label`](xref:Xamarin.Forms.Label) 執行個體，因為變更標籤大小會使系統需重新計算整個畫面的版面配置。
+- 除非必要，請勿設定 [`Label.VerticalTextAlignment`](xref:Xamarin.Forms.Label.VerticalTextAlignment) 屬性。
+- 盡可能將任一 [`Label`](xref:Xamarin.Forms.Label) 執行個體的 [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) 設為 [`NoWrap`](xref:Xamarin.Forms.LineBreakMode.NoWrap)。
 
 <a name="optimizelistview" />
 
 ## <a name="optimize-listview-performance"></a>最佳化 ListView 效能
 
-使用 [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) 控制項時，有許多使用者體驗應進行最佳化：
+使用 [`ListView`](xref:Xamarin.Forms.ListView) 控制項時，有許多使用者體驗應進行最佳化：
 
 - **初始化**：自控制項建立時開始，並於畫面上顯示項目時結束的時間間隔。
 - **捲動**：能夠捲動清單並確保 UI 跟得上觸控手勢。
 - **互動**：加入、刪除和選取項目的互動。
 
-[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) 控制項需要應用程式提供資料和儲存格範本。 實現此目標的方式將對控制項的效能產生很大的影響。 如需詳細資訊，請參閱 [ListView 效能](~/xamarin-forms/user-interface/listview/performance.md)。
+[`ListView`](xref:Xamarin.Forms.ListView) 控制項需要應用程式提供資料和儲存格範本。 實現此目標的方式將對控制項的效能產生很大的影響。 如需詳細資訊，請參閱 [ListView 效能](~/xamarin-forms/user-interface/listview/performance.md)。
 
 <a name="optimizeimages" />
 
 ## <a name="optimize-image-resources"></a>最佳化影像資源
 
-顯示影像資源可能會大幅增加應用程式的記憶體使用量。 因此應該只有在必要時才建立它們，且應在應用程式不再需要它們時應立即釋出。 例如，如果某應用程式是藉由從資料流讀取影像資料來顯示影像，請務必只在必要時才建立資料流，且務必於不再需要資料流時將它釋出。 若要實現此目標，可藉由在頁面建立時或 [`Page.Appearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) 事件觸發時建立資料流，然後在 [`Page.Disappearing`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Disappearing/) 事件觸發時處置資料流。
+顯示影像資源可能會大幅增加應用程式的記憶體使用量。 因此應該只有在必要時才建立它們，且應在應用程式不再需要它們時應立即釋出。 例如，如果某應用程式是藉由從資料流讀取影像資料來顯示影像，請務必只在必要時才建立資料流，且務必於不再需要資料流時將它釋出。 若要實現此目標，可藉由在頁面建立時或 [`Page.Appearing`](xref:Xamarin.Forms.Page.Appearing) 事件觸發時建立資料流，然後在 [`Page.Disappearing`](xref:Xamarin.Forms.Page.Disappearing) 事件觸發時處置資料流。
 
-使用 [`ImageSource.FromUri`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) 方法下載要顯示的影像時，務必將 [`UriImageSource.CachingEnabled`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CachingEnabled/) 屬性設為 `true` 以快取下載的影像。 如需詳細資訊，請參閱[使用影像](~/xamarin-forms/user-interface/images.md)。
+使用 [`ImageSource.FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) 方法下載要顯示的影像時，務必將 [`UriImageSource.CachingEnabled`](xref:Xamarin.Forms.UriImageSource.CachingEnabled) 屬性設為 `true` 以快取下載的影像。 如需詳細資訊，請參閱[使用影像](~/xamarin-forms/user-interface/images.md)。
 
 如需詳細資訊，請參閱[最佳化影像資源](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages)。
 
@@ -208,9 +208,9 @@ Xamarin.Forms 2 導入會影響版面配置更新的最佳化版面配置引擎�
 
 ## <a name="reduce-the-visual-tree-size"></a>減少視覺化樹狀結構
 
-減少頁面上的元素數目，可讓頁面轉譯速度變得更快。 有兩個主要技巧可以實現此目標。 其一是隱藏看不見的元素。 每個元素的 [`IsVisible`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/) 屬性會決定該元素是否應成為視覺化樹狀結構的一部分。 因此，如果某個元素因為隱藏在其他元素背後而看不見，請移除該元素或將其 `IsVisible` 屬性設為 `false`。
+減少頁面上的元素數目，可讓頁面轉譯速度變得更快。 有兩個主要技巧可以實現此目標。 其一是隱藏看不見的元素。 每個元素的 [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) 屬性會決定該元素是否應成為視覺化樹狀結構的一部分。 因此，如果某個元素因為隱藏在其他元素背後而看不見，請移除該元素或將其 `IsVisible` 屬性設為 `false`。
 
-第二個技巧是移除不必要的元素。 例如，下列程式碼範例顯示的頁面版面配置，會顯示一系列的 [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) 元素：
+第二個技巧是移除不必要的元素。 例如，下列程式碼範例顯示的頁面版面配置，會顯示一系列的 [`Label`](xref:Xamarin.Forms.Label) 元素：
 
 ```xaml
 <ContentPage.Content>
@@ -314,7 +314,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 }
 ```
 
-當 `Control` 屬性是 `null` 時，新的原生控制項只應具現化一次。 應該只在自訂控制項附加於新的 Xamarin.Forms 元素時，才設定控制項並訂閱事件處理常式。 同樣地，應該只在轉譯器附加到的元素變更時，才取消訂閱任何已訂閱的事件處理常式。 採用這個方法將有助於建立有效執行的自訂轉譯器，避免發生記憶體流失。
+當 `Control` 屬性是 `null` 時，新的原生控制項只應具現化一次。 應該只在自訂控制項附加於新的 Xamarin.Forms 元素時，才設定控制項並訂閱事件處理常式。 同樣地，應該只在轉譯器所附加到的元素發生變更時，才取消訂閱任何已訂閱的事件處理常式。 採用這個方法將有助於建立有效執行的自訂轉譯器，避免發生記憶體流失。
 
 如需自訂轉譯器的詳細資訊，請參閱[在每個平台上自訂控制項](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)。
 
@@ -330,5 +330,5 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 - [快速轉譯器](~/xamarin-forms/internals/fast-renderers.md)
 - [版面配置壓縮](~/xamarin-forms/user-interface/layouts/layout-compression.md)
 - [Xamarin.Forms 影像調整器範例](https://developer.xamarin.com/samples/xamarin-forms/XamFormsImageResize/)
-- [XamlCompilation](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilation/)
-- [XamlCompilationOptions](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilationOptions/)
+- [XamlCompilation](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute)
+- [XamlCompilationOptions](xref:Xamarin.Forms.Xaml.XamlCompilationOptions)

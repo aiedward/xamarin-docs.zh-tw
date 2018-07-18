@@ -6,11 +6,11 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: a93a67b83ea8f435a5e3ad5d26e1d6cbbb7092f7
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783083"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815593"
 ---
 # <a name="xamarinessentials-sms"></a>Xamarin.Essentials: SMS
 
@@ -20,13 +20,13 @@ ms.locfileid: "34783083"
 
 ## <a name="using-sms"></a>使用 Sms
 
-在您類別中加入 Xamarin.Essentials 的參考：
+在您的類別加入 Xamarin.Essentials 的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-SMS 功能的運作方式是呼叫`ComposeAsync`方法`SmsMessage`包含訊息的收件者和訊息，兩者都是選擇性的本文。
+SMS 功能的運作方式是呼叫`ComposeAsync`方法`SmsMessage`，其中包含訊息的收件者和訊息，這兩者都是選擇性的主體。
 
 ```csharp
 public class SmsTest
@@ -52,5 +52,5 @@ public class SmsTest
 
 ## <a name="api"></a>API
 
-- [Sms 來源的程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Sms)
+- [Sms 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Sms)
 - [Sms API 文件](xref:Xamarin.Essentials.Sms)

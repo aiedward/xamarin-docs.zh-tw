@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: topgenorth
 ms.author: toopge
 ms.date: 06/03/2018
-ms.openlocfilehash: 42a8a2e3751d111f6ba8ccbea32e0446460f9a29
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8882cb9cd84940e12865a730f75e36ecbaf9b6f0
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793871"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066672"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -28,7 +28,7 @@ Xamarin 分析工具有許多可用的程式碼剖析工具： 配置、 週期�
 ## <a name="download-and-install"></a>下載並安裝
 
 > [!NOTE]
-> 您必須是[Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/)解除這項功能在 Windows 上的其中一個 Visual Studio Enterprise 或 Visual Studio 在 mac 上的 mac 的訂閱者
+> 您必須是[Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/compare/)解除這項功能在 Windows 上的其中一個 Visual Studio Enterprise 或 Visual Studio 在 mac 上的 mac 的訂閱者
 
 Xamarin 分析工具是獨立應用程式，以及與 Visual Studio for Mac 和 Visual Studio 啟用程式碼剖析從 IDE 中整合。
 

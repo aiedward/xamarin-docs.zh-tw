@@ -1,20 +1,19 @@
 ---
 title: 行動軟體開發生命週期簡介
-description: 本文將討論行動應用程式相關軟體的開發生命週期，以及建置行動專案時的一些考量事項。 對於希望直接開始建置的開發人員，可先跳過此指南並稍後再閱讀，以便更完整地解行動裝置應用程式開發。
+description: 本文件描述行動軟體開發生命週期，涉及 UX 設計、UI 設計、開發、穩定、發佈和更多。
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: c93a063c9c933e1b9f397d172115471473cf8f35
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 8a95f89ad41ab793d8c26631f1a967180b4c1779
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782329"
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>行動軟體開發生命週期簡介
-
-_本文將探討行動應用程式相關的軟體開發生命週期，並探討建置行動專案時的一些考量事項。對於希望直接開始建置的開發人員，可先跳過此指南並稍後再閱讀，以便更完整地了解行動應用程式開發。_
 
 建置行動裝置應用程式可以像開啟 IDE、將一些內容放在一起、快速做一些測試、提交 App Store 一樣簡單：一個下午即可全部完成。 或者也可以是涉及下列操作的極端複雜流程：嚴苛的預先設計、可用性測試、在數以千計的裝置上進行 QA 測試、完整的 Beta 生命週期；再透過許多不同的方式進行部署。
 

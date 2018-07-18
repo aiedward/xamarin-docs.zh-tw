@@ -1,35 +1,35 @@
 ---
-title: Xamarin.Forms 中的色彩
-description: Xamarin.Forms 提供彈性的跨平台色彩類別。 本文說明的色彩類別，以及如何使用它所提供的功能。
+title: 在 Xamarin.Forms 中的色彩
+description: Xamarin.Forms 提供彈性的跨平台色彩類別。 這篇文章說明色彩類別，以及如何使用它所提供的功能。
 ms.prod: xamarin
 ms.assetid: 22288ABF-57BE-47A9-ACC3-AC604D787C46
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 45adcb8a0fe25e729211e8b166be51ce2c4d93bd
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1017f108d6808155cac84e98a811a30d09afa134
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243014"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986079"
 ---
-# <a name="colors-in-xamarinforms"></a>Xamarin.Forms 中的色彩
+# <a name="colors-in-xamarinforms"></a>在 Xamarin.Forms 中的色彩
 
 _Xamarin.Forms 提供彈性的跨平台色彩類別。_
 
-本文介紹各種`Color`類別可以用在 Xamarin.Forms。
+這篇文章介紹的各種方式`Color`類別可用於 Xamarin.Forms。
 
-`Color`類別會提供多種方法來建置色彩執行個體
+`Color`類別提供多種方法來建立色彩的執行個體
 
--  **名為色彩**-的通用命名的色彩，包括集合`Red`， `Green`，和`Blue`。
--  **FromHex** -字串值，在 HTML 中，例如"00FF00 」 使用的語法類似。 Alpha 可以選擇性地指定為第一對的字元 ("CC00FF00")。
--  **FromHsla** -色調、 飽和度和亮度`double`值，並選擇性的 alpha 值 (0.0-1.0)。
+-  **命名色彩**-集合的一般具名色彩，包括`Red`， `Green`，和`Blue`。
+-  **FromHex** -字串值，類似於 HTML，例如"00FF00 」 中使用的語法。 Alpha 會選擇性地指定為第一組字元 ("CC00FF00 」)。
+-  **FromHsla** -色調、 飽和度和亮度`double`具選擇性的 alpha 值 (介於 0.0-1.0) 的值。
 -  **FromRgb** -紅色、 綠色和藍色`int`值 (0-255)。
--  **FromRgba** -紅色、 綠色、 藍色及 alpha`int`值 (0-255)。
--  **FromUint** -設定單一`double`值代表**argb**。
+-  **FromRgba** -紅色、 綠色、 藍色和 alpha`int`值 (0-255)。
+-  **FromUint** -將單一`double`值，表示**argb**。
 
-以下是一些範例色彩，指派給`BackgroundColor`的使用不同的變化，允許語法的一些標籤：
+以下是一些範例的色彩，指派給`BackgroundColor`的某些標籤，使用不同的允許的語法變化：
 
 ```csharp
 var red    = new Label { Text = "Red",   BackgroundColor = Color.Red };
@@ -45,15 +45,15 @@ var @default = new Label    { Text = "Default",    BackgroundColor = Color.Defau
 var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accent };
 ```
 
-這些色彩會顯示下列每個平台上。 請注意的完稿色彩- `Accent` -為 iOS 和 Android; blue-ish 色彩這個值由 Xamarin.Forms 所定義。
+這些色彩會顯示下列每個平台上。 請注意完稿色彩- `Accent` -blue-ish 的色彩，適用於 iOS 和 Android; 此值 Xamarin.Forms 所定義。
 
  [![色彩示範](colors-images/colors-sml.png "色彩示範")](colors-images/colors.png#lightbox "色彩示範")
 
 ## <a name="colordefault"></a>Color.Default
 
-使用`Default`來設定 （或重新設定） 色彩值還原為平台預設值 （了解這代表每一個屬性的每個平台上的不同基礎色彩）。
+使用`Default`來設定 （或重新設定） 色彩值還原為平台預設值 （了解這代表每一個屬性的每個平台上不同的基礎色彩）。
 
-開發人員可以使用此值來設定`Color`屬性但應該**不**查詢它的元件 RGB 值 （這些所有設定為-1） 的這個執行個體。
+開發人員可以使用此值來設定`Color`屬性但應該**不**查詢其元件 RGB 值 （所有設定為-1） 這個執行個體。
 
 ## <a name="colortransparent"></a>Color.Transparent
 
@@ -61,17 +61,17 @@ var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accen
 
 ## <a name="coloraccent"></a>Color.Accent
 
-IOS 和 Android 上這個執行個體設定為對比的色彩，會顯示預設的背景，但不是相同的預設文字色彩。
+IOS 和 Android 上這個執行個體設定為以對比的色彩，會顯示在預設的背景上，但不是相同的預設文字色彩。
 
 ## <a name="additional-methods"></a>其他方法
 
-`Color` 執行個體包含額外的方法可以用來建立新的色彩：
+`Color` 執行個體包含額外的方法，可用來建立新的色彩：
 
--  **AddLuminosity** -傳回新的色彩亮度修改所提供的差異。
+-  **AddLuminosity** -藉由提供差異所修改的明暗度會傳回新的色彩。
 -  **WithHue** -傳回新的色彩，以提供的值取代色調。
--  **WithLuminosity** -傳回新的色彩，以提供的值取代亮度。
--  **WithSaturation** -傳回新的色彩、 飽和度取代成所提供的值。
--  **MultiplyAlpha** -藉由修改 alpha，乘以所提供的 alpha 值會傳回新的色彩。
+-  **WithLuminosity** -傳回新的色彩，以提供的值取代的明暗度。
+-  **WithSaturation** -傳回新的色彩、 飽和度取代所提供的值。
+-  **MultiplyAlpha** -藉由修改的 alpha，乘以所提供的 alpha 值傳回新的色彩。
 
 ## <a name="implicit-conversions"></a>隱含轉換
 
@@ -90,7 +90,7 @@ Xamarin.Forms.Color xfColor2 = sdColor;
 
 ## <a name="deviceruntimeplatform"></a>Device.RuntimePlatform
 
-此程式碼片段會使用`Device.RuntimePlatform`屬性選擇性地設定色彩`ActivityIndicator`:
+此程式碼片段會使用`Device.RuntimePlatform`屬性來選擇性地設定的色彩`ActivityIndicator`:
 
 ```csharp
 ActivityIndicator activityIndicator = new ActivityIndicator
@@ -100,9 +100,9 @@ ActivityIndicator activityIndicator = new ActivityIndicator
 };
 ```
 
-## <a name="using-from-xaml"></a>使用從 XAML
+## <a name="using-from-xaml"></a>使用 XAML
 
-色彩可以輕鬆地參考在 XAML 中使用的已定義的色彩名稱或十六進位表示法，如下所示：
+色彩也可以輕鬆地參考在 XAML 使用的已定義的色彩名稱或十六進位表示法，如下所示：
 
 ```xaml
 <Label Text="Sea color" BackgroundColor="Aqua" />
@@ -112,9 +112,12 @@ ActivityIndicator activityIndicator = new ActivityIndicator
 <Label Text="Tiny Alpha plus RGB" BackgroundColor="#C0F0" />
 ```
 
+> [!NOTE]
+> 在使用 XAML 編譯時，色彩名稱不區分大小寫，因此可以撰寫以小寫字母。 如需 XAML 編譯的詳細資訊，請參閱[XAML 編譯](~/xamarin-forms/xaml/xamlc.md)。
+
 ## <a name="summary"></a>總結
 
-Xamarin.Forms`Color`類別用來建立參考感知平台的色彩。 它可以用於共用程式碼和 XAML。
+Xamarin.Forms`Color`類別用來建立平台感知色彩的參考。 它可以用於共用程式碼和 XAML。
 
 
 ## <a name="related-links"></a>相關連結

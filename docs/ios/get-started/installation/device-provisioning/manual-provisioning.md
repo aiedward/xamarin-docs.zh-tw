@@ -1,21 +1,22 @@
 ---
-title: 手動佈建
-description: 成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。 本指南將探索如何要求開發憑證和設定檔、使用應用程式服務，以及將應用程式部署至裝置。
+title: Xamarin.iOS 的手動佈建
+description: 成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。 本指南會探討使用手動佈建來設定開發憑證和設定檔。
 ms.prod: xamarin
 ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: f604d41990a7a592a3d5207e7a12075c35ae661f
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: c0404a1fd8f7e878638b9483c65c637f6b4faa66
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786099"
 ---
-# <a name="manual-provisioning"></a>手動佈建
+# <a name="manual-provisioning-for-xamarinios"></a>Xamarin.iOS 的手動佈建
 
-_成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。本指南將探索如何要求開發憑證和設定檔、使用應用程式服務，以及將應用程式部署至裝置。_
+_成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。本指南會探討使用手動佈建來設定開發憑證和設定檔。_
 
 <a name="signingidentity" />
 

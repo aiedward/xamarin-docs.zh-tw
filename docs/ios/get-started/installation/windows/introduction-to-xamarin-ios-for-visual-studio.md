@@ -1,21 +1,20 @@
 ---
 title: Xamarin.iOS for Visual Studio 簡介
-description: 本文說明如何使用 Visual Studio 來組建和測試 Xamarin iOS 應用程式。 其中會說明如何使用 Visual Studio 來建立新的 iOS 專案、組建 iOS 應用程式，然後使用已連上網路的 Mac 來裝載 Apple 的編譯器和模擬器及 Xamarin 的組建工具鏈，以進行編譯、測試和偵錯。
+description: 本文件描述如何使用 Visual Studio 來建置和測試 Xamarin iOS 應用程式。 並討論建立專案、執行和偵錯應用程式，並從 Windows 連線到 Mac 組建主機。
 ms.prod: xamarin
 ms.assetid: bf3c779f-959f-428d-babb-428f363f7e4e
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2018
-ms.openlocfilehash: fbd48deb0b18dcd3ac0d40e379e21d5967f81e0d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: e07119bee6478a503ca6c586fa3348206ccd16f7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786196"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio 簡介
-
-_本文說明如何使用 Visual Studio 來建置和測試 Xamarin iOS 應用程式。其中會說明如何使用 Visual Studio 來建立新的 iOS 專案、建置 iOS 應用程式，然後使用已連上網路的 Mac 來裝載 Apple 的編譯器和模擬器及 Xamarin 的建置工具鏈，以進行編譯、測試和偵錯。_
 
 「適用於 Windows 的 Xamarin」可允許在 Visual Studio 內撰寫和測試 iOS 應用程式，並且會由已連上網路的 Mac 提供組建和部署服務。
 
@@ -27,7 +26,6 @@ _本文說明如何使用 Visual Studio 來建置和測試 Xamarin iOS 應用程
 -  將慣用的 Visual Studio 工具 (例如 **Resharper** 和 **Team Foundation Server**) 用於所有跨平台專案，包括 iOS 原始程式碼。
 -  既能與慣用的 IDE 搭配運作，又能利用 Xamarin.iOS 的所有 Apple API 繫結。
 
-
 <a name="Requirements_and_Installation" />
 
 ## <a name="requirements-and-installation"></a>需求與安裝
@@ -38,7 +36,6 @@ _本文說明如何使用 Visual Studio 來建置和測試 Xamarin iOS 應用程
 
 -  使用 Mac 作為您的主要開發電腦，然後執行已安裝 Visual Studio 的 Windows 虛擬機器。 建議您使用 VM 軟體，例如 [Parallels](http://www.parallels.com/products/desktop/) \(英文\) 或 [VMWare](http://www.vmware.com/products/fusion/) \(英文\)。
 -  僅將 Mac 當作組建主機使用。 在此案例中，它會連線至與已安裝[必要](~/cross-platform/get-started/installation/windows.md#installation)工具之 Windows 電腦相同的網路。
-
 
 在上述任一情況中，您都應該依照下列步驟進行操作：
 
@@ -64,7 +61,6 @@ Xamarin iOS for Visual Studio 會在標準工具列和新的 iOS 工具列中新
 -  **方案組態** – 可讓您選取要使用的組態 (例如 [偵錯]、[發行])。
 -  **方案平台** - 可讓您選取 [iPhone] 或 [iPhoneSimulator] 來進行部署。
 
-
 ### <a name="ios-toolbar"></a>iOS 工具列
 
 Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來都相似。 這些全部顯示如下：
@@ -77,10 +73,7 @@ Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來�
 -  **顯示 iOS 模擬器** – 將 [iOS 模擬器] 視窗顯示在 Mac 的最上層。
 -  **顯示組建伺服器上的 IPA 檔案** – 將 Mac 上的 Finder 開啟在應用程式 IPA 輸出檔的位置。
 
-
-
 ## <a name="ios-output-options"></a>iOS 輸出選項
-
 
 ### <a name="output-window"></a>輸出視窗
 
@@ -108,29 +101,23 @@ Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來�
 
     [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild 輸出")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
-
 ## <a name="ios-project-properties"></a>iOS 專案屬性
 
 若要存取 Visual Studio 的「專案屬性」，請在專案名稱上按一下滑鼠右鍵，然後選取操作功能表中的 [屬性]。 這將可讓您設定 iOS 應用程式，如以下螢幕擷取畫面所示：
-
 
  ![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "設定 iOS 應用程式")
 
 -  iOS 套件組合簽署 – 連線到 Mac 以填入程式碼簽署身分識別和佈建設定檔：
 
-
  ![](introduction-to-xamarin-ios-for-visual-studio-images/bundlesigning.png "填入程式碼簽署身分識別和佈建設定檔")
 
 -  iOS IPA 選項 – IPA 檔案將會儲存在 Mac 的檔案系統上：
-
 
  ![](introduction-to-xamarin-ios-for-visual-studio-images/ipaoptions.png "iOS IPA 選項")
 
 -  iOS 執行選項 – 設定額外的參數：
 
  ![](introduction-to-xamarin-ios-for-visual-studio-images/iosrunoptions.png "iOS 執行選項")
-
-
 
 ## <a name="creating-a-new-project-for-ios-applications"></a>為 iOS 應用程式建立新專案
 
@@ -156,7 +143,6 @@ Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來�
 
  如需有關使用 iOS 設計工具的詳細資訊，請參閱[設計工具](~/ios/user-interface/designer/index.md)指南。
 
-
 ## <a name="running--debugging-ios-applications"></a>執行 iOS 應用程式和進行偵錯
 
 ### <a name="device-logging"></a>裝置記錄
@@ -175,7 +161,6 @@ Visual Studio 的新 [裝置記錄檔] 工具視窗可允許顯示 Android 和 i
 
 此工具視窗會提供：記錄項目表、可選取裝置的下拉式清單、清除記錄項目的方式、搜尋方塊，以及播放/停止/暫停按鈕。
 
-
 ### <a name="set-debugging-stops"></a>設定偵錯停止點
 
 您可以在應用程式中的任何一點設定中斷點，以向偵錯工具發出訊號來暫時停止程式執行。 若要在您的 Visual Studio 中設定中斷點，請按一下您想要中斷之程式碼行號旁邊的編輯器邊界區域：
@@ -185,7 +170,6 @@ Visual Studio 的新 [裝置記錄檔] 工具視窗可允許顯示 Android 和 i
 開始偵錯，然後使用模擬器或裝置將應用程式巡覽至中斷點。 達到中斷點時，將會醒目提示程式碼行並啟用 Visual Studio 的一般偵錯行為：您可以逐步執行、不進入或跳離程式碼、檢查區域變數，或是使用「即時運算視窗」。
 
 以下螢幕擷取畫面顯示在 OS X 上使用 Parallels 於 Visual Studio 旁邊執行的「iOS 模擬器」：
-
 
 ![](introduction-to-xamarin-ios-for-visual-studio-images/image19.png "此螢幕擷取畫面顯示在 OS X 上使用 Parallels 於 Visual Studio 旁邊執行的「iOS 模擬器」")
 

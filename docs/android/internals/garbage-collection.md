@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30772964"
 ---
 # <a name="garbage-collection"></a>記憶體回收
 
@@ -139,7 +140,7 @@ GC 有不完整的處理程序，可能無法執行時記憶體不足因為 GC �
 例如，執行個體[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)型別或衍生型別是至少 20 個位元組大小 (恕不另行通知，以此類推，等。)。 
 [管理可呼叫包裝函式](~/android/internals/architecture.md)因此未加入其他執行個體成員，當您有[Android.Graphics.Bitmap](https://developer.xamarin.com/api/type/Android.Graphics.Bitmap/) 10 MB 的記憶體，blob 參考執行個體 Xamarin.Android 的 GC 不會知道&ndash;GC將會看到 20 位元組物件，且將無法判斷其連結，而導致 10 MB 的記憶體運作 Android runtime 配置的物件。 
 
-若要協助 GC 經常必須。 不幸的是， *GC。AddMemoryPressure()*和*GC。RemoveMemoryPressure()*不支援，因此，如果您*知道*只釋放大型 Java 配置的物件圖形，您可能需要手動呼叫[GC。Collect()](xref:System.GC.Collect)提示 GC 釋放 Java 端的記憶體，或者您可以明確處置*Java.Lang.Object*子類別，請中斷受管理的可呼叫包裝函式和 Java 執行個體之間的對應。 例如，請參閱[Bug 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6)。 
+若要協助 GC 經常必須。 不幸的是， *GC。AddMemoryPressure()* 和*GC。RemoveMemoryPressure()* 不支援，因此，如果您*知道*只釋放大型 Java 配置的物件圖形，您可能需要手動呼叫[GC。Collect()](xref:System.GC.Collect)提示 GC 釋放 Java 端的記憶體，或者您可以明確處置*Java.Lang.Object*子類別，請中斷受管理的可呼叫包裝函式和 Java 執行個體之間的對應。 例如，請參閱[Bug 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6)。 
 
 
 > [!NOTE]

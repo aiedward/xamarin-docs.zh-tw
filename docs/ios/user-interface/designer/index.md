@@ -7,22 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/31/2018
-ms.openlocfilehash: eadc2147a44d6077436e394a4757d367ce42e5fa
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a931373a6abba3084af3c7aefcdddc903ad1b577
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789999"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209228"
 ---
 # <a name="building-user-interfaces-with-the-ios-designer"></a>建置 iOS 設計工具使用者介面
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-=======
-# <a name="ios-designer"></a>iOS 設計工具
-
 _適用於 iOS Xamarin 設計工具是完全整合適用於 Mac 和 Visual Studio 與 Visual Studio 的 iOS 分鏡腳本和介面產生器格式的視覺化設計工具。IOS 設計工具會維護與分鏡腳本和.xib 格式，完全相容，因此您可以在 Visual Studio for Mac 或除了 Xcode 的介面產生器的 Visual Studio 中編輯檔案。此外，適用於 iOS Xamarin 設計工具支援進階的功能，例如在設計階段在編輯器中呈現的自訂控制項。_
->>>>>>> 主要
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

@@ -7,12 +7,13 @@ ms.assetid: 4b3ac51d-18dd-4034-87b4-4365194e4ece
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: dcfc5e406e60ac72fb1ca1e9cfb0395d17074b2c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/18/2018
+ms.openlocfilehash: 979bf4572e0e0865c2254c3e1c2f707c8eecae8d
+ms.sourcegitcommit: 57f9a9ba2f199697cb75e7be67f1a372c35a861b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36269656"
 ---
 # <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>如何更新 Java Development Kit (JDK) 版本？
 
@@ -38,7 +39,7 @@ Xamarin.Android 使用 Java Development Kit (JDK) 來搭配 Android SDK 建置 A
 
 4.  開啟 Visual Studio 和更新**Java Development Kit 位置**以指向新的 JDK 下**工具 > 選項 > Xamarin > Android 設定 > Java Development Kit 位置 > 變更**:
 
-    ![在 IDE [Android 選項] 設定頁面 jdk 路徑設定](update-jdk-images/image4.png)
+    [![在 IDE [Android 選項] 設定頁面 jdk 路徑設定](update-jdk-images/image4-sml.png)](update-jdk-images/image4.png#lightbox)
 
 請務必重新啟動 Visual Studio 之後更新的位置。
 
@@ -52,7 +53,7 @@ Xamarin.Android 使用 Java Development Kit (JDK) 來搭配 Android SDK 建置 A
 
     ![MacOS 上執行的 JDK 安裝程式](update-jdk-images/image5.png)
 
-Mac OS 將會自動設定新的 JDK 版本做為預設藉由更新**/System/Library/Frameworks/JavaVM.framework/Versions/Current**。 您可以接著請仔細檢查， **Java SDK (JDK)**位置會設定為預期的預設值是**libodbc**下**Visual Studio for Mac > 喜好設定 > 專案 > SDK 位置 >Android > Java SDK (JDK) > 位置**:
+Mac OS 將會自動設定新的 JDK 版本做為預設藉由更新 **/System/Library/Frameworks/JavaVM.framework/Versions/Current**。 您可以接著請仔細檢查， **Java SDK (JDK)** 位置會設定為預期的預設值是**libodbc**下**Visual Studio for Mac > 喜好設定 > 專案 > SDK 位置 >Android > Java SDK (JDK) > 位置**:
 
 ![在 [Android SDK 的位置] 頁面中設定 JDK 位置](update-jdk-images/image6.png)
 

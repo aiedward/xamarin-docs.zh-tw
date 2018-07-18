@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30771615"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>多核心裝置和 Xamarin.Android
 
@@ -86,7 +87,7 @@ Xamarin.Android 5.1 針對此架構提供了實驗性支援 (如需詳細資訊�
 -  SSE4 的任何變化。
 
 
-**注意：**Google TV 雖然在 x86 上執行，但提供支援的對象並不包括 Android 的 NDK 或
+**注意：** Google TV 雖然在 x86 上執行，但提供支援的對象並不包括 Android 的 NDK 或
 
 
 
@@ -99,7 +100,7 @@ Xamarin.Android 5.1 針對此架構提供了實驗性支援 (如需詳細資訊�
 
 針對至少支援 `MIPS32r1` 指令集的 MIPS 架構 CPU，這是其 ABI 的名稱。 Android 支援既不支援 MIPS 16，也不支援 `micromips`。
 
-**注意：**MIPS 裝置目前不受 Xamarin.Android 支援，但會在未來的版本中支援。
+**注意：** MIPS 裝置目前不受 Xamarin.Android 支援，但會在未來的版本中支援。
 
 
 

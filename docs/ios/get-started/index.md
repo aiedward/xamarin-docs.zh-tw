@@ -1,6 +1,6 @@
 ---
-title: 開始使用 iOS
-description: 從 Hello World 到 Hello App Store
+title: 開始使用 Xamarin.iOS
+description: 本文件連結的指南會描述如何設定 Xamarin.iOS 以及如何建置第一個應用程式，並向 Objective-C 開發人員提供 Xamarin 資訊。
 ms.prod: xamarin
 ms.assetid: FA802CCF-3BA4-4F26-A7BF-FBB7D0AA889B
 ms.technology: xamarin-ios
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/23/2016
-ms.openlocfilehash: be25d976cc58d6c1dd0154cbdc06aab7039c544e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 237480c91a40e6ee08481664ce3981af10f97599
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785591"
 ---
-# <a name="getting-started-with-ios"></a>開始使用 iOS
+# <a name="getting-started-with-xamarinios"></a>開始使用 Xamarin.iOS
 
 除了具備現代化語言 (C#) 的彈性和簡潔、.NET 基底類別庫 (BCL) 的強大功能，以及兩個頂級的 IDE (Visual Studio for Mac 和 Visual Studio) 之外，Xamarin.iOS 還可讓開發人員使用 Objective-C 和 Xcode 中可用的相同 UI 控制項來建立原生 iOS 應用程式。 此系列介紹如何設定及安裝 Xamarin.iOS，並說明 Xamarin.iOS 開發的基本概念。
 

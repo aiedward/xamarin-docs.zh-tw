@@ -1,5 +1,5 @@
 ---
-title: 使用 TestFlight
+title: 使用 TestFlight 散發 Xamarin.iOS 應用程式
 description: TestFlight 現在由 Apple 所擁有，是對 Xamarin.iOS 應用程式進行 Beta 測試的主要方法。 本文會引導您完成 TestFlight 程序的所有步驟，從上傳應用程式到使用 iTunes Connect。
 ms.prod: xamarin
 ms.assetid: BA880768-2BC8-41E4-B57E-A56F8EED4690
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 5a6e90aab3aae408d4daace81875e44f075818bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: efb0a59ac43ca3e0c4959caa8478a51512e29a3a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785683"
 ---
-# <a name="using-testflight"></a>使用 TestFlight
+# <a name="using-testflight-to-distribute-xamarinios-apps"></a>使用 TestFlight 散發 Xamarin.iOS 應用程式
 
 _TestFlight 現在由 Apple 所擁有，是對 Xamarin.iOS 應用程式進行 Beta 測試的主要方法。本文會引導您完成 TestFlight 程序的所有步驟，從上傳應用程式到使用 iTunes Connect。_
 

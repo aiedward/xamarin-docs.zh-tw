@@ -1,21 +1,20 @@
 ---
-title: 發行至 App Store
-description: 本指南逐步說明使用 Visual Studio for Mac 部署 Xamarin.Mac 應用程式。 文中說明如何設定 Mac 開發人員帳戶、逐步說明建立用於程式碼簽署之憑證的程序，以及示範如何使用它們以建置可直接散發或透過 Mac App Store 散發的 Mac 應用程式。
+title: 將 Xamarin.Mac 應用程式發佈到 Mac App Store
+description: 本文件會描述如何使用 Visual Studio for Mac 部署 Xamarin.Mac 應用程式。 並說明如何設定 Mac 開發人員帳戶、如何建立用於程式碼簽署之憑證，以及如何使用它們來建置可直接散發或透過 Mac App Store 散發的 Mac 應用程式。
 ms.prod: xamarin
 ms.assetid: D26C5E54-EAD2-5487-264D-4263AEA1EBF2
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3b21dd0adfd96e1190660aa97b2850f968b5473f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eba359dac70e31325235f6145fe06902e25df7af
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791962"
 ---
-# <a name="publishing-to-the-app-store"></a>發佈至 App Store
-
-_本指南逐步說明使用 Visual Studio for Mac 部署 Xamarin.Mac 應用程式。文中說明如何設定 Mac 開發人員帳戶、逐步說明建立用於程式碼簽署之憑證的程序，以及示範如何使用它們以建置可直接散發或透過 Mac App Store 散發的 Mac 應用程式。_
+# <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>將 Xamarin.Mac 應用程式發佈到 Mac App Store
 
 ## <a name="overview"></a>總覽
 

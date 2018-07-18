@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30773611"
 ---
 # <a name="lollipop-features"></a>棒棒糖符號功能
 
@@ -72,7 +73,7 @@ Android 5.0 （棒棒糖符號） 導入了新的設計語言，*材料設計*�
    如需使用 Android SDK Manager 的詳細資訊，請參閱[SDK Manager](http://developer.android.com/tools/help/sdk-manager.html)。
 
 4. 建立新的 Xamarin.Android 專案。 如果您是使用 Xamarin Android 開發的新手，請參閱[Hello，Android](~/android/get-started/hello-android/index.md)來了解如何建立 Android 專案。 當您建立 Android 專案時，請務必設定 Android 5.0 的版本設定。
-   在 Visual Studio for Mac，瀏覽至**專案選項&gt;建置&gt;一般**並設定**目標 framework**至**Android 5.0 （棒棒糖符號）**或更新版本：
+   在 Visual Studio for Mac，瀏覽至**專案選項&gt;建置&gt;一般**並設定**目標 framework**至**Android 5.0 （棒棒糖符號）** 或更新版本：
 
     ![設定目標 Framwework 至 Android 5.0 棒棒糖符號](lollipop-images/target-framework.png)
 

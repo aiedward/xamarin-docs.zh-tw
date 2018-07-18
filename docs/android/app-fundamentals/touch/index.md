@@ -12,6 +12,7 @@ ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32436286"
 ---
 # <a name="touch-and-gestures-in-xamarinandroid"></a>觸控與手勢 Xamarin.Android 中
 

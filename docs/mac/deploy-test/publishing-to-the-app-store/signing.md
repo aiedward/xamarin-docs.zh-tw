@@ -1,19 +1,20 @@
 ---
-title: 使用開發人員識別碼簽署
-description: 本指南逐步說明使用開發人員識別碼簽署 Xamarin.Mac 應用程式以供發行。
+title: 使用開發人員識別碼簽署 Xamarin.Mac 應用程式
+description: 本文件描述如何使用開發人員識別碼簽署 Xamarin.Mac 應用程式，以便在 Mac App Store 外散發。 並討論程式碼簽署選項及建置。
 ms.prod: xamarin
 ms.assetid: cf7b733b-e08f-4f56-a233-264b29ee4c97
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 1a2726ec46ac51ae9848b318798afba74183360c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 130766ef7f9ab8e311db97a7209f4ec62a2ceee4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792299"
 ---
-# <a name="sign-with-developer-id"></a>使用開發人員識別碼簽署
+# <a name="signing-xamarinmac-apps-with-a-developer-id"></a>使用開發人員識別碼簽署 Xamarin.Mac 應用程式
 
 如果開發人員打算直接向 macOS 使用者散發應用程式，Apple 建議使用他們的開發人員識別碼來簽署應用程式，以便在啟用**閘道管理員**的 macOS 系統上安裝。 如果尚未簽署應用程式，**閘道管理員**會透過警示訊息來阻止使用者安裝 (啟動時按住 Control 鍵即可略過此限制)。
 

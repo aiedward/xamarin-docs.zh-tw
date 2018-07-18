@@ -12,6 +12,7 @@ metadata:
   ms.translationtype: HT
   ms.contentlocale: zh-TW
   ms.lasthandoff: 04/04/2018
+  ms.locfileid: "30768424"
 abstract:
   description: Xamarin 跨平台範例應用程式和程式碼示範，可協助您使用 C# 和 Xamarin 開始建置行動裝置應用程式。
   menu:
