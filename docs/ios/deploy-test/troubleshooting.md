@@ -1,19 +1,20 @@
 ---
-title: 疑難排解
-description: 順利建立部署的祕訣與技巧
+title: Xamarin.iOS 測試及部署 - 疑難排解
+description: 本文件提供與程式碼簽署和佈建、TestFlight，以及將 iOS 應用程式套件組合從 Mac 組建主機複製到 Windows 的相關疑難排解祕訣。
 ms.prod: xamarin
 ms.assetid: 65286D09-F74D-4F22-B6CD-D1BCD7FC7992
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: fe7425bbf6440317cc856d2c727874298f66bc33
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 056b9ba5c1625093cd7fdd2914fa5df919a2f426
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785381"
 ---
-# <a name="troubleshooting"></a>疑難排解
+# <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Xamarin.iOS 測試及部署 - 疑難排解
 
 ## <a name="code-signing--provisioning"></a>程式碼簽署與佈建
 
@@ -32,7 +33,6 @@ ms.lasthandoff: 04/04/2018
 * 請確認所有必要的憑證和對應的私密金鑰都可以使用。 因為每個小組都需要一個開發人員憑證 (以便在自己的裝置上安裝應用程式)，以及一個散發憑證 (以安裝在其他裝置上)
 
 * 安裝新的佈建設定檔或憑證時，重新啟動 Xcode 和 Visual Studio for Mac / Visual Studio。
-
 
 ## <a name="testflight"></a>TestFlight
 

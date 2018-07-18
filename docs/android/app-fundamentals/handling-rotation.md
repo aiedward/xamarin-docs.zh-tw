@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30768892"
 ---
 # <a name="handling-rotation"></a>處理旋轉
 
@@ -45,7 +46,7 @@ _本主題描述如何處理在 Xamarin.Android 裝置方向變更。其中涵�
 
 [![預設專案範本的結構](handling-rotation-images/00.png)](handling-rotation-images/00.png#lightbox)
 
-此專案會建立單一**Main.axml**檔案**資源/配置**資料夾。 當活動的`OnCreate`方法呼叫，它會擴大中定義的檢視**Main.axml，**其中宣告按鈕，如下列 XML 所示：
+此專案會建立單一**Main.axml**檔案**資源/配置**資料夾。 當活動的`OnCreate`方法呼叫，它會擴大中定義的檢視**Main.axml，** 其中宣告按鈕，如下列 XML 所示：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -107,7 +108,7 @@ _本主題描述如何處理在 Xamarin.Android 裝置方向變更。其中涵�
 
 在旋轉期間 Android 會將 drawable 資源同樣地配置資源。 在此情況下，系統會取得從 drawables**資源/drawable**和**資源/drawable 土地**資料夾，分別。
 
-例如，專案包含名為 Monkey.png 中的映像**drawable 資源/**資料夾，drawable 參考是從`ImageView`xml 如下：
+例如，專案包含名為 Monkey.png 中的映像**drawable 資源/** 資料夾，drawable 參考是從`ImageView`xml 如下：
 
 ```xml
 <ImageView

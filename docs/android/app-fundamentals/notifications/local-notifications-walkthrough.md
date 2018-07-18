@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30766578"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>逐步解說-Xamarin.Android 中使用本機的通知
 
@@ -170,7 +171,7 @@ namespace LocalNotifications
 
 ### <a name="add-a-notification-icon"></a>加入通知圖示
 
-最後，讓我們加入我們的通知啟動時，會出現在通知區域中的小圖示。 您可以複製[這個圖示](local-notifications-walkthrough-images/ic-stat-button-click.png)至您的專案或建立您自己自訂的圖示。 圖示檔案**ic\_stat\_按鈕\_click.png**並將它複製到**資源/drawable**資料夾。 請務必使用**新增 > 現有項目...**專案中包含這個圖示檔。
+最後，讓我們加入我們的通知啟動時，會出現在通知區域中的小圖示。 您可以複製[這個圖示](local-notifications-walkthrough-images/ic-stat-button-click.png)至您的專案或建立您自己自訂的圖示。 圖示檔案**ic\_stat\_按鈕\_click.png**並將它複製到**資源/drawable**資料夾。 請務必使用**新增 > 現有項目...** 專案中包含這個圖示檔。
 
 
 ### <a name="run-the-application"></a>執行應用程式

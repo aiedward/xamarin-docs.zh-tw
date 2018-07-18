@@ -1,19 +1,20 @@
 ---
 title: 針對 Mac App Store 進行統合
-description: 本指南逐步說明統合 Xamarin.Mac 應用程式以發行至 Mac App Store。
+description: 本文件描述如何搭售供發行之用的 Xamarin.Mac 應用程式和 Mac App Store。 並討論程式碼簽署選項及建置。
 ms.prod: xamarin
 ms.assetid: 00a36d7c-937d-4657-bf6a-0de9684b8f94
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 88d813331dfce437f3668ada8f008bbbd5fdc3de
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3aeda97fa4a5a63d51623335c0721026b2394d2f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792056"
 ---
-# <a name="bundle-for-mac-app-store"></a>Mac App Store 的套件組合
+# <a name="bundling-for-the-mac-app-store"></a>針對 Mac App Store 進行統合
 
 本節說明使用 Visual Studio for Mac 建置應用程式以供在 Mac App Store 中發行的基本要點。 視額外功能 (例如 iCloud 存取與推播通知) 而定，可能會需要進一步的設定，但這不在本文的討論範圍內。
 

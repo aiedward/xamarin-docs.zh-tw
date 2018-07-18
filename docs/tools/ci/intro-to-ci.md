@@ -6,12 +6,12 @@ ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 333e672b054c38370847338e9a4ffad94c90bb5d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 67fc32fc9f79d54274642fbab2d0c2f8afd14d8c
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793658"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066503"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>使用 Xamarin 的連續整合簡介
 
@@ -48,14 +48,14 @@ _持續整合是軟體工程作法自動化的組建會編譯並新增或變更�
 
 ### <a name="visual-studio-team-services-and-team-foundation-server"></a>Visual Studio Team Services 和 Team Foundation Server
 
-[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs) (VSTS) 和[Team Foundation Server](http://msdn.microsoft.com/vstudio/ff637362.aspx) (TFS) 是 Microsoft 的共同作業工具，如持續整合建置服務、 追蹤工作、 敏捷式計劃和報告工具，以及版本控制項。 與版本控制 VSTS 和 TFS 可以處理它自己的系統 （Team Foundation 版本控制或 TFVC） 或裝載於 GitHub 上的專案。
+[Visual Studio Team Services](https://visualstudio.microsoft.com/team-services/) (VSTS) 和[Team Foundation Server](https://visualstudio.microsoft.com/tfs/) (TFS) 是 Microsoft 的共同作業工具，如持續整合建置服務、 追蹤工作、 敏捷式計劃和報告工具，以及版本控制項。 與版本控制 VSTS 和 TFS 可以處理它自己的系統 （Team Foundation 版本控制或 TFVC） 或裝載於 GitHub 上的專案。
 
  - Visual Studio Team Services 提供透過雲端服務。 它的主要優點是它不需要專用的硬體或基礎結構，並可從任何地方透過網頁瀏覽器和款知名開發工具，例如 Visual Studio 中，讓您吸引分佈各地的小組散發。 它是免費的五個開發人員的小組或更少之後可以購買哪些額外的授權來容納不斷增長的小組。
  - TFS 是設計在內部部署 Windows 伺服器，並透過區域網路或該網路的 VPN 連線存取。 其主要的優點是您完全控制的組建伺服器組態和可以安裝任何其他軟體或服務所需。 TFS 有免費的入門級 Express 版本對於小型小組。
 
 TFS 和 VSTS 與 Visual Studio 緊密整合，可讓開發人員執行許多的版本控制和 CI 工作的單一 IDE 中。 也可以使用 Team Explorer Everywhere plugin for Eclipse （請參閱下文）。 Visual Studio for Mac 不提供任何支援 TFS 或 VSTS。
 
-Visual Studio Team 服務的建置系統可直接支援 Xamarin 專案中，您可以在其中建立您想要目標 （Android、 iOS 和 Windows） 的每個平台的組建定義。 適當的 Xamarin 授權所需的每個組建定義。 您也可連線本機、 Xamarin 支援 TFS 組建伺服器，以針對此用途的 Visual Studio Team Services。 使用這個設定，組建已排入佇列 VSTS 委派到本機伺服器。 如需詳細資訊，請參閱[部署和設定組建伺服器](https://msdn.microsoft.com/library/ms181712.aspx)。 或者，您可以使用其他建置工具，例如 Jenkins 或小組縣 （市）。
+Visual Studio Team 服務的建置系統可直接支援 Xamarin 專案中，您可以在其中建立您想要目標 （Android、 iOS 和 Windows） 的每個平台的組建定義。 適當的 Xamarin 授權所需的每個組建定義。 您也可連線本機、 Xamarin 支援 TFS 組建伺服器，以針對此用途的 Visual Studio Team Services。 使用這個設定，組建已排入佇列 VSTS 委派到本機伺服器。 如需詳細資訊，請參閱[部署和設定組建伺服器](https://docs.microsoft.com/vsts/pipelines/agents/agents?view=vsts)。 或者，您可以使用其他建置工具，例如 Jenkins 或小組縣 （市）。
 
 所有的應用程式生命週期管理 (ALM) 功能的 Visual Studio、 Visual Studio Team Services 和 Team Foundation Server，請參閱完整的摘要[與 Xamarin 應用程式的應用程式生命週期管理](https://msdn.microsoft.com/library/mt162217(v=vs.140).aspx)MSDN 上。
 
@@ -107,7 +107,7 @@ Visual Studio Team Services 和 Team Foundation Server 所述，提供兩個版�
 
 ### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services 和 Jenkins
 
-如果您使用 Jenkins 建置您的應用程式時，您可以在 Visual Studio Team Services 或 Team Foundation Server 中儲存您的程式碼，並繼續使用 Jenkins CI 組建。 您可以在程式碼推送至您的 team 專案的 Git 儲存機制或當您檢查程式碼 TFVC 時觸發 Jenkins 組建。 如需詳細資訊，請參閱[與 Visual Studio Team Services Jenkins](https://www.visualstudio.com/docs/marketplace/integrate/service-hooks/services/jenkins)。
+如果您使用 Jenkins 建置您的應用程式時，您可以在 Visual Studio Team Services 或 Team Foundation Server 中儲存您的程式碼，並繼續使用 Jenkins CI 組建。 您可以在程式碼推送至您的 team 專案的 Git 儲存機制或當您檢查程式碼 TFVC 時觸發 Jenkins 組建。 如需詳細資訊，請參閱[與 Visual Studio Team Services Jenkins](https://docs.microsoft.com/en-us/vsts/service-hooks/services/jenkins?view=vsts)。
 
 [![](intro-to-ci-images/intro04-small.png "如果您使用 Jenkins 建置您的應用程式時，您可以在 Visual Studio Team Services 或 Team Foundation Server 中儲存您的程式碼，並繼續使用 Jenkins CI 組建")](intro-to-ci-images/intro04.png#lightbox)
 

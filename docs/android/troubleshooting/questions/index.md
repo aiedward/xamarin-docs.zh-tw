@@ -6,12 +6,13 @@ ms.assetid: 0F0FDD2B-FFB1-476F-B674-81DB3A5E1CF3
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/19/2018
-ms.openlocfilehash: 2deeb4309be44c1c5f8d78980707336ac8301761
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/21/2018
+ms.openlocfilehash: bbb1e92596fe69246a608eb0758e789f5b99e954
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935460"
 ---
 # <a name="frequently-asked-questions"></a>常見問題集
 
@@ -49,7 +50,7 @@ Xamarin.Android 需要 JDK 8，而不是 JDK 9。 本文列出一些常見的錯
 
 ### <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vmconnect-android-emulator-mac-windowsmd"></a>[是否可能從 Windows VM 連線到在 Mac 上執行的 Android 模擬器？](connect-android-emulator-mac-windows.md)
 
-使用 Google Android 模擬器時，本指南涵蓋的方法。
+本指南涵蓋方法時使用的 Android 模擬器。
 
 ## <a name="general-questions"></a>一般問題
 

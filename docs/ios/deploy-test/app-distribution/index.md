@@ -1,5 +1,5 @@
 ---
-title: 應用程式散發概觀
+title: Xamarin.iOS 應用程式散發概觀
 description: 本文件提供散發技巧的概觀，其適用於 Xamarin iOS 應用程式，並作為本主題中更詳細文件的指標。
 ms.prod: xamarin
 ms.assetid: 341D36DB-BB07-FA94-BCC9-5F8C0B18C179
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 76de5b46559676e36b9d1f9b71575323beec414e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 815277e9a4f9384d92bf17376f426cacd40dbc9f
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209436"
 ---
-# <a name="app-distribution-overview"></a>應用程式散發概觀
+# <a name="xamarinios-app-distribution-overview"></a>Xamarin.iOS 應用程式散發概觀
 
 本文件提供散發技術的概觀，其適用於 Xamarin iOS 應用程式，並作為本主題中更詳細文件的指標。
 
@@ -34,6 +35,9 @@ Apple 提供以下方式散發 iOS 應用程式，這些方式都受到 Xamarin.
 <a name="App_Store_Distribution"/>
 
 ## <a name="app-store-distribution"></a>App Store 散發
+
+> [!IMPORTANT]
+> Apple [已宣告](https://developer.apple.com/news/?id=05072018a)從 2018 年 7 月開始，提交至 App Store 的所有應用程式和更新都必須是使用 iOS 11 SDK 建置，且必須[支援 iPhone X 顯示器](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)。
 
 這是將 iOS 應用程式散發給 iOS 裝置使用者的主要方式。 提交到 App Store 的所有應用程式都需經過 Apple 核准。
 

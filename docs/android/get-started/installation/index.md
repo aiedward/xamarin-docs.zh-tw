@@ -1,16 +1,18 @@
 ---
 title: 安裝和設定 Xamarin.Android
+description: 如何安裝及設定 Xamarin.Android 以搭配 Visual Studio 使用。
 ms.prod: xamarin
 ms.assetid: 4BE549B8-5696-2BA7-DA32-8C0EE90A879D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/25/2018
-ms.openlocfilehash: b2f83c8f8ab6ab730a586b30394454f6bf6f6ba9
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 06/22/2018
+ms.openlocfilehash: 5991c907b85188581db105a8db9d17460954f56f
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935486"
 ---
 # <a name="setup-and-installation"></a>設定與安裝
 
@@ -31,7 +33,7 @@ Visual Studio 包含會取代 Google 獨立 Android SDK 管理員的 Android SDK
 
 ## <a name="android-emulator-setupandroidget-startedinstallationandroid-emulatorindexmd"></a>[Android Emulator 安裝](~/android/get-started/installation/android-emulator/index.md)
 
-這些文章說明如何設定用於測試和偵錯 Xamarin.Android 應用程式的 Google Android 模擬器。
+這些文章說明如何設定用於測試和偵錯 Xamarin.Android 應用程式的 Android Emulator。
 
 ## <a name="android-device-setupandroidget-startedinstallationset-up-device-for-developmentmd"></a>[Android 裝置設定](~/android/get-started/installation/set-up-device-for-development.md)
 

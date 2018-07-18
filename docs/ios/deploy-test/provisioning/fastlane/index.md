@@ -1,21 +1,20 @@
 ---
 title: 適用於 iOS 的 fastline 簡介
-description: 本指南介紹可用來對 iOS 應用程式進行程式碼簽署的 fastlane 工具
+description: 本指南介紹可用來對 iOS 應用程式進行程式碼簽署的 fastlane 工具。 描述如何更新、安裝及使用 fastlane 工具。
 ms.prod: xamarin
 ms.assetid: 8202C57D-22FF-4224-A5B1-AAEF12B7C106
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 68c252edecc4ebffb764c0de328ab605975471c4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ffb7e0a088bcd227f45b97229f089ef59d4d6608
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785485"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>適用於 iOS 的 fastline 簡介
-
-本指南介紹可用來對 iOS 應用程式進行程式碼簽署的 fastlane 工具。
 
 fastlane 是一個開放原始碼專案，其建立目的是要將發行 iOS 和 Android 應用程式時既容易混淆又通常乏味冗長的流程簡化。 它是由數個公用程式所組成，每個公用程式都處理特定的應用程式發行層面，例如：
 

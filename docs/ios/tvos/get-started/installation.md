@@ -7,18 +7,21 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: a278a4715ffbcd4b1457f846be6bdf8394143cb4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9168b84b169d2f7919acaf88597919a48cd6710c
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788978"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066841"
 ---
 # <a name="installing-tvos-support-in-xamarin"></a>在 Xamarin 安裝 tvOS 支援
 
+> [!TIP]
+> 若要啟動實驗 Xamarin 的預覽支援 iOS 12 和 tvOS 12，讀取[iOS 12 使用者入門指南](~/ios/platform/introduction-to-ios12/get-started.md)。
+
 Apple 已發行的 Apple TV 4k 和 tvOS 11。 Apple TV 平台會開啟開發人員，讓它們來建立豐富、 沈浸式應用程式，並釋放它們透過 Apple 電視遙控器的內建應用程式市集。
 
-Xamarin.iOS 11 和更新版本支援 tvOS 11 Apple Xcode 9 SDK 隨附。 
+Xamarin.iOS 11 和更新版本支援 tvOS 11 Apple Xcode 9 SDK 隨附。
 
 - [Xamarin.iOS 的版本資訊](https://developer.xamarin.com/releases/ios/)
 - [Xcode 的版本資訊](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html#//apple_ref/doc/uid/TP40001051-CH1-SW876)

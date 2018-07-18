@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: 06758fd8fac62a63c309b173738a8ee889716143
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 7f05243196a9b916ac5c7b73df957262604ccb11
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785262"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268806"
 ---
 # <a name="localization-in-xamarinios"></a>當地語系化的 Xamarin.iOS
 
@@ -55,6 +55,16 @@ var lang = NSBundle.MainBundle.PreferredLocalizations[0];
 - `NSLocale.AutoUpdatingCurrentLocale.LocaleIdentifier`
 
 第一個值可以快取的作業系統，因此可能不一定會反映使用者的目前選取的地區設定。 您可以使用第二個值，取得目前選取的地區設定。
+
+> [!NOTE]
+> 單聲道 (Xamarin.iOS 所依據的.NET runtime) 和 Apple iOS 應用程式開發介面不支援的語言/地區組合的同一組。
+> 因為這個緣故，便可在 iOS 中選取 語言/地區組合**設定**不會對應到有效的單聲道值的應用程式。 例如，在 iPhone 的語言為英文和其地區設定為西班牙將會導致下列應用程式開發介面，以產生不同的值：
+> 
+> - `CurrentThead.CurrentCulture`: EN-US (Mono API)
+> - `CurrentThread.CurrentUICulture`: EN-US (Mono API)
+> - `NSLocale.CurrentLocale.LocaleIdentifier`: en_ES （Apple 應用程式開發介面）
+>
+> 因為使用單聲道`CurrentThread.CurrentUICulture`到選取的資源和`CurrentThread.CurrentCulture`格式化日期和貨幣，Mono 架構 （例如，具有.resx 檔） 的當地語系化可能不會產生預期的結果，如需這些語言/地區的組合。 在這些情況下，依賴當地語系化視的 Apple 應用程式開發介面。
 
 ### <a name="nscurrentlocaledidchangenotification"></a>NSCurrentLocaleDidChangeNotification
 

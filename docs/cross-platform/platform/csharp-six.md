@@ -7,11 +7,12 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: e120b917a106d01067e073219bbe2688c2811448
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: fffb78d6f2599c231617ed025d41282beffd319b
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066451"
 ---
 # <a name="c-6-new-features-overview"></a>C# 6 的新功能概觀
 
@@ -48,7 +49,7 @@ _最新版的 C# 語言 – 第 6 版 – 會持續發展成具有較少的未�
 單聲道 C# 6 編譯器隨附於 Mono 4.0 和更新版本，也就是[免費下載](http://www.mono-project.com/download/)。
 適用於 Mac 的 visual Studio 會自動更新系統上的安裝單聲道。
 
-Windows 使用者必須擁有[Visual Studio 2015 或 2017年 ^](https://www.visualstudio.com/)安裝 （即使您選擇適用於 Windows 的 Xamarin Studio 為您的 IDE） 編譯 C# 6 程式碼。
+Windows 使用者必須擁有[Visual Studio 2015 或 2017年 ^](https://visualstudio.microsoft.com/)安裝 （即使您選擇適用於 Windows 的 Xamarin Studio 為您的 IDE） 編譯 C# 6 程式碼。
 
 ^ 或 *[Microsoft 建置工具 2015年](http://www.microsoft.com/download/details.aspx?id=48159)* 命令列編譯或組建伺服器，例如。
 

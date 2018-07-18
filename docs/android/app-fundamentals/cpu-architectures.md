@@ -12,6 +12,7 @@ ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/19/2018
+ms.locfileid: "34311685"
 ---
 # <a name="cpu-architectures"></a>CPU 架構
 

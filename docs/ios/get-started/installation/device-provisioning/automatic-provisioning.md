@@ -1,5 +1,5 @@
 ---
-title: 自動化佈建
+title: Xamarin.iOS 的自動佈建
 description: 成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。 本指南將探索使用自動化簽署來要求開發憑證和設定檔。
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/22/2018
-ms.openlocfilehash: d324e469ba392b14c635990d607bf04c949ad5db
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.openlocfilehash: a0c3179dc8e349c23d5521230e0957d1be9384ec
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986183"
 ---
-# <a name="automatic-provisioning"></a>自動化佈建
+# <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS 的自動佈建
 
 _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。本指南將探索使用自動化簽署來要求開發憑證和設定檔。_
 
@@ -70,9 +71,9 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 
 1. 依[與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南所述配對 Visual Studio 2017 和 Mac。
 
-2. 選取 [專案] > [佈建內容] 開啟 [佈建] 選項
+2. 在**方案總管**中，以滑鼠右鍵按一下專案名稱，然後選取 [屬性]。 接著瀏覽到 [iOS 套件組合簽署] 索引標籤。
 
-3. 選取 [自動化佈建] 配置：
+3. 選取 [自動佈建] 配置：
 
     ![選取自動配置](automatic-provisioning-images/prov4.png)
 

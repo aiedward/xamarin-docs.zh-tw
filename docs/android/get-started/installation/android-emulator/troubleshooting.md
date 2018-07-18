@@ -1,29 +1,30 @@
 ---
-title: Google Android 模擬器疑難排解
-description: 如何識別及解決 Google Android 模擬器問題
+title: Android Emulator 疑難排解
+description: 本文說明如何診斷和因應使用 Android Emulator 時可能發生的問題。
 ms.prod: xamarin
-ms.assetid: 4B05C3C5-E1F6-47A9-B098-C31E630194F6
+ms.assetid: 4F053CC9-9378-47CB-8002-978A6558C4D0
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/04/2018
-ms.openlocfilehash: 001fc21a519a251715d24b43acfdd4251b5fbc91
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 06/22/2018
+ms.openlocfilehash: 241f38cbfe013776b2e36b8102ae4b90cf610d80
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935278"
 ---
-# <a name="google-android-emulator-troubleshooting"></a>Google Android 模擬器疑難排解
+# <a name="android-emulator-troubleshooting"></a>Android Emulator 疑難排解
 
-在本文中，將會說明 Google Android 模擬器 (和其解決方案) 的最常見警告訊息和問題。
- 
+_本文說明設定和執行 Android Emulator 時，最常發生的警告訊息和問題，以及因應措施和秘訣。_
+
 <a name="perfwarn" />
 
 ## <a name="performance-warnings"></a>效能警告
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-從 Visual Studio 2017 15.4 版開始，當您第一次將應用程式部署至「Android SDK 模擬器」時，可能會顯示效能警告對話方塊。 以下會說明這些警告對話方塊。
+從 Visual Studio 2017 15.4 版開始，當您第一次將應用程式部署至 Android Emulator 時，可能會顯示效能警告對話方塊。 以下會說明這些警告對話方塊。
 
 ### <a name="computer-does-not-contain-an-intel-procesor"></a>電腦未包含 Intel 處理器
 
@@ -67,8 +68,7 @@ SERVICE_NAME: intelhaxm
     WAIT_HINT          : 0x0
 ```
 
-
-如果 **STATE** 不是設定為 **RUNNING**，請參閱[如何使用 Intel Hardware Accelerated Execution Manager](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator) \(英文\) 來解決問題。
+如果 `STATE` 不是設定為 `RUNNING`，請參閱 [How to Use the Intel Hardware Accelerated Execution Manager](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator) (如何使用 Intel Hardware Accelerated Execution Manager) 來解決問題。
 
 
 ### <a name="other-failures"></a>其他失敗
@@ -84,9 +84,10 @@ SERVICE_NAME: intelhaxm
 
 [![停用 AVD 加速警告](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png#lightbox)
 
+
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-從 Visual Studio for Mac 組建 7.2 (組建 559) 開始，當您第一次將應用程式部署至 Google Android 模擬器時，可能會顯示效能警告對話方塊。 以下會說明這些警告對話方塊。
+從 Visual Studio for Mac 組建 7.2 (組建 559) 開始，當您第一次將應用程式部署至 Android Emulator 時，可能會顯示效能警告對話方塊。 以下會說明這些警告對話方塊。
 
 ### <a name="haxm-is-not-installed"></a>未安裝 HAXM
 
@@ -109,17 +110,11 @@ SERVICE_NAME: intelhaxm
 
 -----
 
-
-## <a name="solutions-to-common-problems"></a>常見問題的解決方案
-
-許多常見的 Google Android 模擬器問題都可透過對電腦進行設定變更或安裝額外軟體來解決。 下列各節將說明這些問題並提供解決方案。
-
-
-### <a name="deployment-issues"></a>部署問題
+## <a name="deployment-issues"></a>部署問題
 
 如果您收到有關無法在模擬器上安裝 APK 或無法執行 Android Debug Bridge (**adb**) 的錯誤，請確認 Android SDK 可連線至您的模擬器。 若要這麼做，請使用下列步驟：
 
-1. 從 **Android 虛擬裝置 (AVD) 管理員**啟動模擬器 (選取您的虛擬裝置並按一下 [啟動])。
+1. 從 **Android Device Manager**啟動模擬器 (選取您的虛擬裝置並按一下 [啟動])。
 
 2. 開啟「命令提示字元」，然後移至安裝 **adb** 的資料夾。 例如，在 Windows 上，這可能位於：**C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools\\adb.exe**。
 
@@ -139,48 +134,40 @@ SERVICE_NAME: intelhaxm
 5. 如果模擬器未出現在此清單中，請啟動 [Android SDK 管理員]、套用所有更新，然後重新嘗試啟動模擬器。
 
 
-
-### <a name="haxm-issues"></a>HAXM 問題
+## <a name="haxm-issues"></a>HAXM 問題
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-如果 Google Android 模擬器未正確啟動，這通常是 HAXM 的相關問題所造成。 HAXM 問題通常是與其他虛擬化技術發生衝突、設定不正確或 HAXM 驅動程式過期所導致的結果。
+如果 Android Emulator 未正確啟動，這通常是 HAXM 的相關問題所致。 HAXM 問題通常是與其他虛擬化技術發生衝突、設定不正確或 HAXM 驅動程式過期所導致的結果。
 
 <a name="virt-conflicts" />
 
-#### <a name="haxm-virtualization-conflicts"></a>HAXM 虛擬化衝突
+### <a name="haxm-virtualization-conflicts"></a>HAXM 虛擬化衝突
 
 HAXM 可能與其他使用虛擬化的技術發生衝突，例如 Hyper-V、Windows Device Guard 及某些防毒軟體：
 
-- **Hyper-V** &ndash; 如果您使用已啟用 Hyper-V 的 Windows，請依照[停用 Hyper-V](#disable-hyperv) 中所述的步驟進行操作。
+- **Hyper-V** &ndash; 如果您使用的是 **Windows 10 2018 4 月更新 (1803 組建)** 以前的 Windows 版本，而且啓用了 Hyper-V，請遵循[停用 Hyper-V](#disable-hyperv) 中的步驟執行作業。
 
 - **Device Guard** &ndash; Device Guard 和 Credential Guard 可防止在 Windows 機器上停用 Hyper-V。 若要停用 Device Guard 和 Credential Guard，請參閱[停用 Device Guard](#disable-devguard)。
 
 - **防毒軟體** &ndash; 如果您正在執行使用硬體輔助虛擬化的防毒軟體 (例如 Avast)，請將此軟體停用或解除安裝、重新開機，然後重試「Android SDK 模擬器」。
 
 
-#### <a name="incorrect-bios-settings"></a>不正確的 BIOS 設定
+### <a name="incorrect-bios-settings"></a>不正確的 BIOS 設定
 
-如果您在 Windows PC 上使用 HAXM，除非在 BIOS 中啟用虛擬化技術 (Intel VT-x)，否則 HAXM 將無法運作。 如果已停用 VT-x，則在嘗試啟動 Google Android 模擬器時，您將會收到類似下方的錯誤：
+如果您在 Windows PC 上使用 HAXM，除非在 BIOS 中啟用虛擬化技術 (Intel VT-x)，否則 HAXM 將無法運作。 如果已停用 VT-x，則當您嘗試啟動 Android Emulator 時，會收到類似下列錯誤：
 
 **此電腦符合 HAXM 的要求，但未開啟 Intel 虛擬化技術 (VT-x)。**
 
 若要更正此錯誤，請讓電腦開機進入 BIOS，同時啟用 VT-x 和 SLAT (第二層位址轉譯)，然後讓電腦重新啟動回到 Windows。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-如果 Google Android 模擬器未正確啟動，這通常是 HAXM 的相關問題所造成。 HAXM 問題通常是與其他虛擬化技術發生衝突、設定不正確或 HAXM 驅動程式過期所導致的結果。 請使用[安裝 HAXM](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm)中所述的步驟，來嘗試重新安裝 HAXM 驅動程式。
-
------
-
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 <a name="disable-hyperv" />
 
 ### <a name="disabling-hyper-v"></a>停用 Hyper-V
 
-如果您使用 Windows 且已啟用 Hyper-V，您必須將 Hyper-V 停用並重新啟動電腦，才能安裝並使用 HAXM。 您可以遵循下列步驟從控制台停用 Hyper-V：
+如果您使用的是 **Windows 10 2018 4 月更新 (1803 組建)** 以前的 Windows 版本，而且啟用了 HYPER-V，您必須停用 HYPER-V 並重新啟動電腦，才能安裝及使用 HAXM。 如果您使用 **Windows 10 2018 4 月更新 (1803 組建)** 或更新版本，Android Emulator 27.2.7 版或更新版本可以使用 HYPER-V (不是 HAXM) 為硬體加速，因此沒有必要停用 HYPER-V。
+
+您可以遵循下列步驟從控制台停用 Hyper-V：
 
 1. 在 Windows 搜尋方塊中，輸入**程式和**，然後按一下 [程式和功能] 搜尋結果。
 
@@ -196,13 +183,13 @@ HAXM 可能與其他使用虛擬化的技術發生衝突，例如 Hyper-V、Wind
 
 `Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor`
 
-Intel HAXM 和 Microsoft Hyper-V 不可同時啟動。 不幸的是，目前並沒有任何方法可在未重新啟動電腦的情況下，於 Hyper-V 和 HAXM 之間進行切換。 如果您想要使用 [Visual Studio 的 Android 模擬器](~/android/deploy-test/debugging/visual-studio-android-emulator.md) (其需要使用 Hyper-V)，您將無法在未重新開機的情況下使用 Android SDK 模擬器。 同時使用 Hyper-V 和 HAXM 的其中一種方式是建立多重開機設定，如[建立沒有 Hypervisor 的開機項目](https://blogs.msdn.microsoft.com/virtual_pc_guy/2008/04/14/creating-a-no-hypervisor-boot-entry/) \(英文\) 中所述。
+Intel HAXM 和 Microsoft Hyper-V 不可同時啟動。 不幸的是，不重新啟動電腦就沒有辦法切換 Hyper-V 和 HAXM。 
 
 如果已啟用 Device Guard 和 Credential Guard，在某些情況下使用上述步驟將無法成功停用 Hyper-V。 如果您無法停用 Hyper-V (或是在停用後仍然無法安裝 HAXM)，請使用下一節的步驟來停用 Device Guard 和 Credential Guard。
 
 <a name="disable-devguard" />
 
-#### <a name="disabling-device-guard"></a>停用 Device Guard
+### <a name="disabling-device-guard"></a>停用 Device Guard
 
 Device Guard 和 Credential Guard 可能會防止在 Windows 電腦上停用 Hyper-V。 此問題通常會發生在已加入網域且由組織進行設定和控制的電腦上。
 在 Windows 10 上，使用下列步驟來查看 **Device Guard** 是否正在執行：
@@ -248,10 +235,9 @@ Device Guard 和 Credential Guard 可能會防止在 Windows 電腦上停用 Hyp
 
 如果 Hyper-V 仍未停用，您已加入網域之電腦的原則可能正在阻止您停用 Device Guard 或 Credential Guard。 在此情況下，您可以要求網域管理員給予特例，讓您能夠選擇不使用 Credential Guard。 或者，您可以使用未加入網域的電腦來使用 HAXM。
 
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-# <a name="visual-studiotabvsmac"></a>[Visual Studio](#tab/vsmac)
-
-OS X 或 macOS 不提供 Hyper-V。
+如果 Android Emulator 未正確啟動，這通常是 HAXM 的相關問題所致。 HAXM 問題通常是與其他虛擬化技術發生衝突、設定不正確或 HAXM 驅動程式過期所導致的結果。 請使用[安裝 HAXM](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm)中所述的步驟，來嘗試重新安裝 HAXM 驅動程式。
 
 -----
 

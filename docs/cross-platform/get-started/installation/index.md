@@ -1,18 +1,19 @@
 ---
-title: 安裝
+title: 安裝 Xamarin
 description: 本節提供可用於在 Visual Studio 上設定 Xamarin 之安裝及設定做法的概觀。
 ms.prod: xamarin
 ms.assetid: 0f813a14-2f0c-415d-8667-4563f3dc06e8
 author: asb3993
 ms.author: amburns
 ms.date: 09/29/2017
-ms.openlocfilehash: 9c5483579f08793da8fff3fc65e1c5e7ad3b94e4
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 71d5f743a5c1e2bd159a7267ddecfdc611eb2db8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780413"
 ---
-# <a name="installation"></a>安裝
+# <a name="installing-xamarin"></a>安裝 Xamarin
 
 本節提供可用於在 Visual Studio 上設定 Xamarin 之安裝及設定做法的概觀。
 

@@ -6,12 +6,12 @@ ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 247a18cf7f645ea90d100cb3f4900f30ac7754cc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 71faf79ef9b783480dbb6ff4674859a9148abca3
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793847"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066906"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin 分析工具疑難排解
 
@@ -67,7 +67,7 @@ Xamarin 小組有助於追蹤問題，如果您提供使用資訊，包括：
 - 請確定平台是[支援](~/tools/profiler/index.md#Profiler_Support)。
 - 請確定您具有正確的授權。
 - 確認您已登入，並正確通過驗證。
-- [Visual Studio]您必須使用[Visual Studio Enterprise](https://www.visualstudio.com/vs/enterprise/)而且具有有效的企業授權。
+- [Visual Studio]您必須使用[Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/enterprise/)而且具有有效的企業授權。
 
 #### <a name="i-get-an-error-when-i-try-to-launch-the-profiler"></a>當我嘗試啟動分析工具時收到錯誤
 

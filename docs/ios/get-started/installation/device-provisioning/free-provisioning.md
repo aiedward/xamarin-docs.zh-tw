@@ -1,21 +1,22 @@
 ---
-title: 免費佈建
-description: 隨著 Apple 的 Xcode 7 發行，有一項針對所有 iOS 和 Mac 開發人員的重要變更 – 免費佈建。
+title: Xamarin.iOS 應用程式的免費佈建
+description: 本文件描述 Xamarin.iOS 開發人員如何在實體裝置上測試其應用程式，而不必註冊 Apple 的付費開發人員計畫。
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 03/19/2017
-ms.openlocfilehash: 09244ebaefedb991289e5a1f67b59491ee84ed28
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 623f79f482170c6b1d8ecdb642afb2fc7acf061d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786018"
 ---
-# <a name="free-provisioning"></a>免費佈建
+# <a name="free-provisioning-for-xamarinios-apps"></a>Xamarin.iOS 應用程式的免費佈建
 
-_隨著 Apple 的 Xcode 7 發行，有一個針對所有 iOS 和 Mac 開發人員的重要變更 – 免費佈建。_
+_隨著 Apple 的 Xcode 7 發行，有一個針對所有 iOS 和 Mac 開發人員的重要變更：免費佈建。_
 
 免費佈建可讓開發人員**無須**加入任何 **Apple Developer Program** \(Apple 開發人員計劃\)，即可將其 Xamarin.iOS 應用程式部署到 iOS 裝置。 這對開發人員來說極為有利，因為在裝置上進行測試比在模擬器上進行測試多出許多優點，包括但不限於記憶體、儲存體、網路連線能力等。
 

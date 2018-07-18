@@ -1,50 +1,50 @@
 ---
-title: 自訂 ListView 資料格的外觀
-description: 這篇文章探討 Xamarin.Forms 應用程式中呈現資料，同時利用 ListView 控制項的方便性，不論選項。
+title: 自訂 ListView 儲存格的外觀
+description: 本文章探討，同時利用方便的 ListView 控制項將資料呈現在 Xamarin.Forms 應用程式的選項。
 ms.prod: xamarin
 ms.assetid: FD45CB91-1A8F-46FB-B432-6BC20492E456
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 86447afbabca1384f9e46f5128a9dc00253a798c
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 7a0f55b6d8a61f52f4ef137d83c56d86149bc3c9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244752"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996252"
 ---
-# <a name="customizing-listview-cell-appearance"></a>自訂 ListView 資料格的外觀
+# <a name="customizing-listview-cell-appearance"></a>自訂 ListView 儲存格的外觀
 
-清單檢視會顯示可捲動清單，您可以透過使用的自訂`ViewCell`s。 `ViewCells` 可以用於顯示文字和影像，表示 true/false 狀態和接收使用者輸入。
+ListView 顯示可捲動清單，您可以使用自訂`ViewCell`s。 `ViewCells` 可以用於顯示文字和影像，表示 true/false 狀態且接收使用者輸入。
 
-有兩種方法來取得想要從 ListView 資料格的外觀：
+有兩種方法來取得您想要從 ListView 儲存格的外觀：
 
-- **[自訂內建的儲存格](#Built_in_Cells)** &ndash;更容易實作和更佳的效能，但會犧牲自訂。
-- **[建立自訂的資料格](#customcells)** &ndash;更多控制的最終結果，但有潛在的效能問題，如果未正確實作。
+- **[自訂內建的儲存格](#Built_in_Cells)** &ndash;更容易實作和更佳的效能，但會犧牲的自訂功能。
+- **[建立自訂的資料格](#customcells)** &ndash;更充分掌控最後的結果，但有可能會有效能問題，如果未正確實作。
 
 <a name="Built_in_Cells" />
 
-## <a name="built-in-cells"></a>內建資料格
-Xamarin.Forms 隨附內建的儲存格可用於許多簡單的應用程式：
+## <a name="built-in-cells"></a>內建的儲存格
+Xamarin.Forms 隨附的許多簡單的應用程式使用的內建資料格：
 
 - **TextCell** &ndash;顯示文字
-- **ImageCell** &ndash;來顯示文字的影像。
+- **ImageCell** &ndash;顯示文字與影像。
 
-兩個額外的儲存格[ `SwitchCell` ](~/xamarin-forms/user-interface/tableview.md#switchcell)和[ `EntryCell` ](~/xamarin-forms/user-interface/tableview.md#entrycell)可供使用，但是它們通常不搭配`ListView`。 請參閱[ `TableView` ](~/xamarin-forms/user-interface/tableview.md)如需有關這些資料格。
+兩個額外的儲存格[ `SwitchCell` ](~/xamarin-forms/user-interface/tableview.md#switchcell)並[ `EntryCell` ](~/xamarin-forms/user-interface/tableview.md#entrycell)可供使用，但它們通常不搭配`ListView`。 請參閱[ `TableView` ](~/xamarin-forms/user-interface/tableview.md)如需有關這些資料格。
 
 <a name="TextCell" />
 
 ### <a name="textcell"></a>TextCell
 
-[`TextCell`](http://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) 是資料格的顯示文字，並選擇性地使用第二行以詳細資料的文字。
+[`TextCell`](xref:Xamarin.Forms.TextCell) 是顯示文字，並選擇性地使用以文字詳細資料的第二行的資料格。
 
-TextCells 轉譯為原生控制項在執行階段，因此效能是很好相較於自訂`ViewCell`。 TextCells 是可自訂，可讓您設定：
+TextCells 轉譯為原生控制項，在執行階段，因此效能非常好相較於自訂`ViewCell`。 TextCells 可自訂，可讓您設定：
 
-- `Text` &ndash; 在第一行，大字型顯示文字。
-- `Detail` &ndash; 底下的第一行，以較小的字型顯示文字。
+- `Text` &ndash; 第一行中，使用大字型顯示文字。
+- `Detail` &ndash; 下方第一行中，以較小的字型顯示文字。
 - `TextColor` &ndash; 文字的色彩。
-- `DetailColor` &ndash; 詳細資訊文字的色彩
+- `DetailColor` &ndash; 詳細資料的文字色彩
 
 ![](customizing-cell-appearance-images/text-cell-default.png "預設 TextCell 範例")
 
@@ -54,14 +54,14 @@ TextCells 轉譯為原生控制項在執行階段，因此效能是很好相較�
 
 ### <a name="imagecell"></a>ImageCell
 
-[`ImageCell`](http://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/)例如`TextCell`、 可以用於顯示文字與次要的詳細資料，並使用每個平台的原生控制項提供絕佳的效能。 `ImageCell` 不同於`TextCell`，它會映像顯示之文字的左邊。
+[`ImageCell`](xref:Xamarin.Forms.ImageCell)例如`TextCell`，可用於顯示文字和次要的詳細資料的文字，和使用每個平台的原生控制項提供絕佳的效能。 `ImageCell` 不同於`TextCell`，因為它會映像顯示之文字的左邊。
 
-`ImageCell` 您需要顯示一份的視覺外觀，例如連絡人的電影清單的資料時很有用。 ImageCells 是可自訂，可讓您設定：
+`ImageCell` 您需要顯示一份資料的視覺外觀，例如連絡人或電影的清單時很有用。 ImageCells 可自訂，可讓您設定：
 
-- `Text` &ndash; 在第一行，大字型顯示文字
-- `Detail` &ndash; 較小的字型中的第一行底下顯示的文字
+- `Text` &ndash; 第一行中，使用大字型顯示文字
+- `Detail` &ndash; 下方第一行中，以較小的字型顯示文字
 - `TextColor` &ndash; 文字的色彩
-- `DetailColor` &ndash; 詳細資訊文字的色彩
+- `DetailColor` &ndash; 詳細資料的文字色彩
 - `ImageSource` &ndash; 要顯示的文字旁邊的影像
 
 ![](customizing-cell-appearance-images/image-cell-default.png "預設 ImageCell 範例")
@@ -70,19 +70,19 @@ TextCells 轉譯為原生控制項在執行階段，因此效能是很好相較�
 
 <a name="customcells" />
 
-## <a name="custom-cells"></a>自訂儲存格
-當內建資料格不提供必要的配置時，自訂資料格會實作必要的配置。 比方說，您可能要呈現的資料格具有兩個具有相同的權重的標籤。 A`TextCell`會不足因為`TextCell`具有較小的一個標籤。 大多數的儲存格自訂新增額外的唯讀資料 （例如額外的標籤、 影像或其他顯示資訊）。
+## <a name="custom-cells"></a>自訂資料格
+當內建的儲存格未提供必要的配置時，自訂資料格會實作必要的配置。 例如，您可能要使用具有相同的權重的兩個標籤呈現儲存格。 A`TextCell`就是不足因為`TextCell`有一個較小的標籤。 大部分的資料格自訂新增額外的唯讀資料 （例如額外的標籤、 影像或其他顯示的資訊）。
 
-所有自訂儲存格必須衍生自[ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)，類型之所有內建的儲存格使用相同的基底類別。
+所有自訂儲存格必須衍生自[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)，所有的內建的儲存格類型使用的相同基底類別。
 
-Xamarin.Forms 2 導入新[快取行為](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)上`ListView`控制項可改善某些類型的自訂儲存格的捲動效能設定。
+Xamarin.Forms 2 導入的新[快取行為](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)上`ListView`可設定以改善捲動效能對於某些類型的自訂資料格的控制項。
 
-這是自訂的儲存格的範例：
+這是自訂的資料格的範例：
 
 ![](customizing-cell-appearance-images/custom-cell.png "自訂儲存格範例")
 
 ### <a name="xaml"></a>XAML
-若要建立上述配置 XAML 如下：
+若要建立上述的版面配置 XAML 如下：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -113,17 +113,17 @@ x:Class="demoListView.ImageCellPage">
 </ContentPage>
 ```
 
-正在經常進行上面的 XAML。 讓我們將它分解：
+上述 XAML 進行的很多。 我們細分：
 
-- 自訂儲存格是否位於`DataTemplate`，這是內部`ListView.ItemTemplate`。 這是相同的程序使用任何其他資料格。
-- `ViewCell` 是自訂的儲存格類型。 子系`DataTemplate`元素必須屬於或衍生自型別`ViewCell`。
-- 請注意該內部`ViewCell`，版面配置由管理`StackLayout`。 此配置可讓我們以自訂的背景色彩。 請注意，任何屬性`StackLayout`也就是可繫結可以雖然未在此顯示內自訂儲存格時，繫結。
+- 自訂儲存格在巢狀`DataTemplate`，這是內部`ListView.ItemTemplate`。 這是相同的程序，與使用任何其他資料格。
+- `ViewCell` 是自訂的資料格類型。 子系`DataTemplate`項目必須是或衍生自類型`ViewCell`。
+- 請注意內`ViewCell`，版面配置由`StackLayout`。 此配置可讓我們自訂的背景色彩。 請注意，任何屬性`StackLayout`也就是可繫結可以雖然，未在此處顯示的自訂儲存格，內部繫結。
 
 ### <a name="cnum"></a>C&num;
 
-在 C# 中指定的自訂儲存格是更詳細的資訊比 XAML 對等項目。 讓我們來看一下：
+在 C# 中指定自訂的資料格會更詳細的資訊比 XAML 對等項目。 讓我們來看一下：
 
-首先，來定義自訂儲存格類別，`ViewCell`的基底類別：
+首先，定義自訂的儲存格類別，`ViewCell`的基底類別：
 
 ```csharp
 public class CustomCell : ViewCell
@@ -159,7 +159,7 @@ public class CustomCell : ViewCell
     }
 ```
 
-在您的網頁的建構函式`ListView`，設定 ListView 的`ItemTemplate`屬性至新`DataTemplate`:
+在您建構函式，該網頁具有`ListView`，設定 ListView`ItemTemplate`屬性，以新`DataTemplate`:
 
 ```csharp
 public partial class ImageCellPage : ContentPage
@@ -172,13 +172,13 @@ public partial class ImageCellPage : ContentPage
     }
 ```
 
-請注意，建構函式`DataTemplate`採用型別。 Typeof 運算子取得的 CLR 類型`CustomCell`。
+請注意，建構函式`DataTemplate`採用型別。 Typeof 運算子取得的 CLR 型別`CustomCell`。
 
 <a name="binding-context-changes" />
 
 ### <a name="binding-context-changes"></a>繫結內容變更
 
-繫結至自訂儲存格類型時[ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)例項，UI 控制項會顯示`BindableProperty`值應該使用[ `OnBindingContextChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.OnBindingContextChanged()/)覆寫設定中顯示資料每個資料格，而不是資料格建構函式，如下列程式碼範例所示：
+繫結至自訂的資料格型別時[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)執行個體，顯示的 UI 控制項`BindableProperty`的值應該使用[ `OnBindingContextChanged` ](xref:Xamarin.Forms.Cell.OnBindingContextChanged)設定中顯示的資料覆寫每個資料格，而不是資料格建構函式，如下列程式碼範例所示：
 
 ```csharp
 public class CustomCell : ViewCell
@@ -221,14 +221,14 @@ public class CustomCell : ViewCell
 }
 ```
 
-[ `OnBindingContextChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.OnBindingContextChanged()/)覆寫時將會呼叫[ `BindingContextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.BindableObject.BindingContextChanged/)事件引發，以回應的值[ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/)屬性變更。 因此，當`BindingContext`變更時，UI 控制項會顯示[ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)值應該設定其資料。 請注意，`BindingContext`應檢查`null`值，這可以進行記憶體回收，又會導致設定由 Xamarin.Forms`OnBindingContextChanged`覆寫所呼叫。
+[ `OnBindingContextChanged` ](xref:Xamarin.Forms.Cell.OnBindingContextChanged)覆寫時將會呼叫[ `BindingContextChanged` ](xref:Xamarin.Forms.BindableObject.BindingContextChanged)事件引發時，以回應的值[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)屬性變更。 因此，當`BindingContext`變更時，顯示的 UI 控制項[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)值應該設定其資料。 請注意，`BindingContext`應檢查`null`值，因為這可以進行記憶體回收，這接著會設定由 Xamarin.Forms`OnBindingContextChanged`覆寫呼叫。
 
-此外，UI 控制項可以繫結至[ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)顯示其值，便不需要覆寫的執行個體`OnBindingContextChanged`方法。
+或者，UI 控制項可以繫結至[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)執行個體，以顯示其值，這樣就不需要覆寫`OnBindingContextChanged`方法。
 
 > [!NOTE]
-> 在覆寫`OnBindingContextChanged`，請確定基底類別的`OnBindingContextChanged`呼叫方法，使已註冊的委派能接收`BindingContextChanged`事件。
+> 在覆寫`OnBindingContextChanged`，請確認基底類別的`OnBindingContextChanged`方法呼叫，讓已註冊的委派收到`BindingContextChanged`事件。
 
-在 XAML 中，繫結至資料的自訂儲存格類型可以達到下列程式碼範例所示：
+在 XAML 中，繫結至資料的自訂資料格類型可以達成下列程式碼範例所示：
 
 ```xaml
 <ListView x:Name="listView">
@@ -240,7 +240,7 @@ public class CustomCell : ViewCell
 </ListView>
 ```
 
-這會將繫結`Name`， `Age`，和`Location`可繫結屬性`CustomCell`執行個體，為`Name`， `Age`，和`Location`基礎的集合中每個物件的屬性。
+這會將繫結`Name`， `Age`，並`Location`中的可繫結屬性`CustomCell`執行個體，為`Name`， `Age`，和`Location`基礎集合中每個物件的屬性。
 
 在 C# 中相等的繫結是以下列程式碼範例所示：
 
@@ -256,10 +256,10 @@ var listView = new ListView {
 };
 ```
 
-IOS 和 Android 上如果[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)循環項目和自訂資料格會使用自訂轉譯器、 自訂轉譯器必須正確實作屬性變更告知。 重複使用的資料格時繫結內容所使用的資料格，以更新時，會變更其屬性值`PropertyChanged`所引發的事件。 如需詳細資訊，請參閱[自訂 ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)。 如需儲存格回收的詳細資訊，請參閱[快取策略](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)。
+IOS 和 Android 上，如果[ `ListView` ](xref:Xamarin.Forms.ListView)正在回收處理項目和自訂的儲存格使用的自訂轉譯器、 自訂轉譯器必須正確實作屬性變更通知。 重複使用的儲存格時其屬性值，將繫結內容更新時所使用的資料格，`PropertyChanged`所引發的事件。 如需詳細資訊，請參閱 <<c0> [ 自訂 ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)。 如需有關儲存格所回收的詳細資訊，請參閱[快取策略](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)。
 
 ## <a name="related-links"></a>相關連結
 
 - [內建的儲存格 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BuiltInCells)
-- [自訂儲存格 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
+- [自訂資料格 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
 - [繫結內容變更 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BindingContextChanged)

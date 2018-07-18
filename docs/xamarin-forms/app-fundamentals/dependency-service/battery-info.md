@@ -1,30 +1,30 @@
 ---
 title: 檢查電池狀態
-description: 本文說明如何使用 Xamarin.Forms DependencyService 類別來存取原生的每個平台的電池資訊。
+description: 這篇文章說明如何使用 Xamarin.Forms DependencyService 類別存取原生方式在每個平台時電池資訊。
 ms.prod: xamarin
 ms.assetid: CF1C5A73-84ED-407D-BDC5-EB1D83D2D3DB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 74e191cd6a87626e887d45f823e65d57000d7463
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cbb4a01ac2c6d933fe40a0b3c2571d1fe3ce75c0
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241080"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998389"
 ---
 # <a name="checking-battery-status"></a>檢查電池狀態
 
-本文逐步解說之應用程式會檢查電池狀態建立。 這篇文章根據 James Montemagno 電池外掛程式。 如需詳細資訊，請參閱[GitHub 儲存機制](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery)。
+這篇文章會逐步建立會檢查電池狀態的應用程式。 這篇文章根據電池外掛程式中，James Montemagno 所建立。 如需詳細資訊，請參閱 < [GitHub 存放庫](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery)。
 
-因為 Xamarin.Forms 不包含功能來檢查目前的電池狀態，此應用程式必須使用[ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/)利用原生 Api。  本文將說明如何使用下列步驟`DependencyService`:
+因為 Xamarin.Forms 不包含功能來檢查目前的電池狀態，此應用程式必須使用[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)利用原生 Api。  本文將介紹下列步驟使用`DependencyService`:
 
-- **[建立介面](#Creating_the_Interface)** &ndash;了解如何建立共用的程式碼中的介面。
-- **[iOS 實作](#iOS_Implementation)** &ndash;了解如何在原生 iOS 程式碼中實作介面。
-- **[Android 實作](#Android_Implementation)** &ndash;了解如何在原生程式碼中實作的介面，適用於 Android。
-- **[通用 Windows 平台實作](#UWPImplementation)** &ndash;深入了解如何在原生程式碼中的通用 Windows 平台 (UWP) 上實作介面。
-- **[在共用程式碼中實作](#Implementing_in_Shared_Code)** &ndash;了解如何使用`DependencyService`來呼叫原生實作共用的程式碼。
+- **[建立介面](#Creating_the_Interface)** &ndash;了解如何建立共用程式碼中的介面。
+- **[iOS 實作](#iOS_Implementation)** &ndash;了解如何在適用於 iOS 的原生程式碼中實作的介面。
+- **[Android 的實作](#Android_Implementation)** &ndash;了解如何在原生程式碼中實作的介面，適用於 Android。
+- **[通用 Windows 平台實作](#UWPImplementation)** &ndash;了解如何在原生程式碼適用於通用 Windows 平台 (UWP) 中實作介面。
+- **[在共用程式碼中實作](#Implementing_in_Shared_Code)** &ndash;了解如何使用`DependencyService`呼叫原生實作共用的程式碼。
 
 完成時，應用程式使用`DependencyService`會有下列結構：
 
@@ -34,7 +34,7 @@ ms.locfileid: "35241080"
 
 ## <a name="creating-the-interface"></a>建立介面
 
-首先，建立共用的程式碼表示所需的功能中的介面。 電池，檢查應用程式，在相關的資訊是電池的剩餘百分比，無論裝置充電，而且裝置如何接收電源：
+首先，表示所需的功能的共用程式碼中建立的介面。 在檢查應用程式的電池的情況下的相關資訊是電池的剩餘百分比，裝置是否收費，以及如何在裝置接收電源：
 
 ```csharp
 namespace DependencyServiceSample
@@ -66,16 +66,16 @@ namespace DependencyServiceSample
 }
 ```
 
-撰寫程式碼中的共用程式碼是此介面可讓 Xamarin.Forms 應用程式存取每個平台上的電源管理應用程式開發介面。
+針對這個介面，在共用的程式碼中撰寫程式碼，可讓 Xamarin.Forms 應用程式存取每個平台上的電源管理的 Api。
 
 > [!NOTE]
-> 實作介面的類別都必須有參數的建構函式，才能使用`DependencyService`。 無法由介面定義建構函式。
+> 實作介面的類別必須具有無參數的建構函式，才能使用`DependencyService`。 無法由介面定義建構函式。
 
 <a name="iOS_Implementation" />
 
-## <a name="ios-implementation"></a>iOS 實作
+## <a name="ios-implementation"></a>iOS 的實作
 
-`IBattery`介面必須實作每個平台專屬的應用程式專案中。 IOS 實作會使用原生[ `UIDevice` ](https://developer.xamarin.com/api/type/UIKit.UIDevice/) Api 來存取電池資訊。 請注意，下列類別的無參數建構函式，讓`DependencyService`可以建立新的執行個體：
+`IBattery`介面必須實作每個平台專屬的應用程式專案中。 IOS 實作會使用原生[ `UIDevice` ](https://developer.xamarin.com/api/type/UIKit.UIDevice/) Api 來存取電池資訊。 請注意，下列類別會具有無參數建構函式，讓`DependencyService`可以建立新的執行個體：
 
 ```csharp
 using UIKit;
@@ -138,7 +138,7 @@ namespace DependencyServiceSample.iOS
 }
 ```
 
-最後，加入下列`[assembly]`屬性上方類別 （和任何已定義的命名空間之外），包括任何必要`using`陳述式：
+最後，新增這`[assembly]`屬性在類別上方 （和任何已定義的命名空間之外），包括任何必要`using`陳述式：
 
 ```csharp
 using UIKit;
@@ -152,13 +152,13 @@ namespace DependencyServiceSample.iOS
     ...
 ```
 
-此屬性做為實作的註冊類別`IBattery`介面，這表示`DependencyService.Get<IBattery>`可以共用的程式碼中用來建立它的執行個體：
+這個屬性會註冊類別實作`IBattery`介面，這表示`DependencyService.Get<IBattery>`可以共用程式碼中用來建立它的執行個體：
 
 <a name="Android_Implementation" />
 
 ## <a name="android-implementation"></a>Android 的實作
 
-Android 的實作會使用[ `Android.OS.BatteryManager` ](https://developer.xamarin.com/api/type/Android.OS.BatteryManager/)應用程式開發介面。 這個實作是更複雜的 iOS 版本，需要檢查，以處理電池的權限不足：
+Android 的實作會使用[ `Android.OS.BatteryManager` ](https://developer.xamarin.com/api/type/Android.OS.BatteryManager/) API。 這項實作是更複雜的 iOS 版本，需要檢查，以處理沒有電池權限：
 
 ```csharp
 using System;
@@ -295,7 +295,7 @@ namespace DependencyServiceSample.Droid
 }
 ```
 
-加入這個`[assembly]`屬性上方類別 （和任何已定義的命名空間之外），包括任何必要`using`陳述式：
+新增這`[assembly]`屬性在類別上方 （和任何已定義的命名空間之外），包括任何必要`using`陳述式：
 
 ```csharp
 ...
@@ -309,7 +309,7 @@ namespace DependencyServiceSample.Droid
     ...
 ```
 
-此屬性做為實作的註冊類別`IBattery`介面，這表示`DependencyService.Get<IBattery>`可用於共用程式碼可以建立它的執行個體。
+這個屬性會註冊類別實作`IBattery`介面，這表示`DependencyService.Get<IBattery>`可用於共用程式碼可以建立它的執行個體。
 
 <a name="UWPImplementation" />
 
@@ -409,13 +409,13 @@ namespace DependencyServiceSample.UWP
 }
 ```
 
-`[assembly]`上述命名空間宣告屬性做為實作的註冊類別`IBattery`介面，這表示`DependencyService.Get<IBattery>`可以共用的程式碼中用來建立它的執行個體。
+`[assembly]`命名空間宣告上方的屬性會註冊類別的實作作為`IBattery`介面，這表示`DependencyService.Get<IBattery>`可以共用程式碼中用來建立它的執行個體。
 
 <a name="Implementing_in_Shared_Code" />
 
 ## <a name="implementing-in-shared-code"></a>在共用程式碼中實作
 
-現在，每個平台已實作的介面，您就可以寫入共用的應用程式利用.net framework。 應用程式將會包含使用按鈕的頁面，當點選更新其目前的電池狀態文字。 它會使用`DependencyService`來取得執行個體的`IBattery`介面。 在執行階段，這個執行個體將會具有完整存取權的原生 SDK 的平台特定實作。
+現在，每個平台已實作的介面，您就可以寫入共用的應用程式加以利用。 應用程式將會包含具有按鈕的頁面，當點選更新它與目前的電池狀態的文字。 它會使用`DependencyService`若要取得的執行個體`IBattery`介面。 在執行階段，這個執行個體將會擁有完整存取權的原生 SDK 的平台特定實作。
 
 ```csharp
 public MainPage ()
@@ -469,7 +469,7 @@ public MainPage ()
 }
 ```
 
-在 iOS 上執行此應用程式、 Android 或 UWP 和按下按鈕會產生更新以反映目前的裝置的電源狀態的按鈕文字。
+在 iOS 上執行此應用程式、 Android 或 UWP 和按下按鈕會導致更新以反映目前的電源狀態，裝置的按鈕文字。
 
 ![](battery-info-images/battery.png "電池狀態範例")
 

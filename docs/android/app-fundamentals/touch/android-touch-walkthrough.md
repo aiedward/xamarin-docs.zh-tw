@@ -1,38 +1,39 @@
 ---
-title: 逐步解說-Android 中使用觸控
+title: 逐步解說-在 Android 中使用觸控
 ms.prod: xamarin
 ms.assetid: E281F89B-4142-4BD8-8882-FB65508BF69E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/09/2018
-ms.openlocfilehash: 625ba800ce498f80c0344c67e26bd79360de4002
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: d379630e3b7fa2b42bd9530e1dccd75e9634dd2f
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935523"
 ---
-# <a name="walkthrough---using-touch-in-android"></a>逐步解說-Android 中使用觸控
+# <a name="walkthrough---using-touch-in-android"></a>逐步解說-在 Android 中使用觸控
 
-讓我們了解如何使用上一節中可用的應用程式的概念。 我們將建立應用程式的四個活動。 第一個活動將功能表或切換表單，將會啟動，以示範各種應用程式開發介面的其他活動。 下列螢幕擷取畫面顯示主要的活動：
+讓我們了解如何使用上一節中可用的應用程式的概念。 我們將建立應用程式，使用下列四個活動。 功能表或切換表單，將會啟動其他活動，以示範各種 Api，將會第一個活動。 下列螢幕擷取畫面顯示的主要活動：
 
 [![範例螢幕擷取畫面與觸控我按鈕](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png#lightbox)
 
-第一個活動，觸控範例中，會顯示如何使用事件處理常式碰觸的檢視。 筆勢辨識器活動將示範如何以子類別`Android.View.Views`和處理事件，以及如何處理捏合手勢。 第三個和最後一個活動，**自訂軌跡**，將會顯示如何使用自訂的筆勢。 若要讓您更輕鬆地遵循和吸收概念，我們會分割此逐步解說分成區段，每個章節將焦點放在其中一個活動。
+第一個活動，也就是觸控式的範例中，將示範如何使用事件處理常式，如碰觸的檢視。 筆勢辨識器活動將示範如何以子類別`Android.View.Views`和處理事件，以及示範如何處理捏合手勢。 第三個和最後一個活動，**自訂筆勢**，將示範如何使用自訂的筆勢。 若要讓事情容易遵循，並吸收，我們將分成本逐步解說幾節中，將焦點放在其中一個活動的每個部分。
 
 ## <a name="touch-sample-activity"></a>觸控範例活動
 
--   開啟專案**TouchWalkthrough\_啟動**。 **MainActivity**是全部設定為移&ndash;負責我們實作觸控行為的活動。 如果您執行應用程式，然後按一下**觸控範例**，應該啟動下列活動：
+-   開啟專案**TouchWalkthrough\_啟動**。 **MainActivity**已就緒，可移&ndash;則由我們實作活動中的觸控行為。 如果您執行應用程式，然後按一下**Touch 範例**，應該啟動的下列活動：
 
-    [![活動的接觸開始顯示的螢幕擷取畫面](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
+    [![活動的使用觸控開始顯示螢幕擷取畫面](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
--   既然我們已經確認活動啟動，請開啟檔案**TouchActivity.cs**和加入的處理常式`Touch`事件`ImageView`:
+-   既然我們已確認活動啟動，請開啟檔案**TouchActivity.cs**並加入的處理常式`Touch`事件的`ImageView`:
 
     ```csharp
     _touchMeImageView.Touch += TouchMeImageViewOnTouch;
     ```
 
--   接下來，加入下列方法加入**TouchActivity.cs**:
+-   接下來，新增下列方法加入**TouchActivity.cs**:
 
     ```csharp
     private void TouchMeImageViewOnTouch(object sender, View.TouchEventArgs touchEventArgs)
@@ -58,20 +59,20 @@ ms.lasthandoff: 05/10/2018
     }
     ```
 
-請注意上述程式碼中，我們將`Move`和`Down`是相同的動作。 這是因為即使使用者可能不手指他們`ImageView`、 可能會移動，或由使用者諸的壓力可能會變更。 這些類型的變更將會產生`Move`動作。
+請注意，在上述程式碼對待`Move`和`Down`視為相同的動作。 這是因為即使使用者可能不提起他們的手指`ImageView`，它可能會移動，或可能會變更使用者所施加的壓力。 這些類型的變更將會產生`Move`動作。
 
-每次使用者修飾`ImageView`、`Touch`會引發事件，並會顯示訊息，我們的處理常式**觸控開始**在畫面上，如下列螢幕擷取畫面所示：
+每次使用者修飾`ImageView`，則`Touch`就會引發事件，並會顯示訊息，我們的處理常式**觸控開始**在畫面上，如下列螢幕擷取畫面所示：
 
-[![活動的接觸開始的螢幕擷取畫面](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
+[![活動的使用觸控開始螢幕擷取畫面](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
-只要使用者會接觸`ImageView`，**觸控開始**將顯示在`TextView`。 當使用者不再碰觸`ImageView`，訊息**觸控結束**將顯示在`TextView`，如下列螢幕擷取畫面所示：
+只要在使用者觸碰`ImageView`， **Touch 開始**將會顯示在`TextView`。 當使用者不再觸碰`ImageView`，訊息**Touch 結束**將會顯示在`TextView`，如下列螢幕擷取畫面所示：
 
-[![活動的接觸結束的螢幕擷取畫面](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png#lightbox)
+[![活動的螢幕擷取畫面，與觸控結束](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png#lightbox)
 
 
 ## <a name="gesture-recognizer-activity"></a>筆勢辨識器活動
 
-現在可讓實作此筆勢辨識器的活動。 此活動將示範如何將螢幕上的檢視，並說明如何實作縮小-放大。
+現在可讓實作筆勢辨識器的活動。 此活動將示範如何將檢視在螢幕上的拖曳，並說明實作縮小-放大一種方式。
 
 -   將新的活動加入至呼叫的應用程式`GestureRecognizer`。
     編輯此活動的程式碼，使它類似下列程式碼：
@@ -88,7 +89,7 @@ ms.lasthandoff: 05/10/2018
     }
     ```
 
--   加入新的 Android 專案中，檢視並將其命名`GestureRecognizerView`。 這個類別中加入下列變數：
+-   加入新的 Android 專案中，檢視並將它命名`GestureRecognizerView`。 這個類別中加入下列變數：
 
     ```csharp
     private static readonly int InvalidPointerId = -1;
@@ -104,7 +105,7 @@ ms.lasthandoff: 05/10/2018
     private float _scaleFactor = 1.0f;
     ```
 
--   將下列建構函式來加入`GestureRecognizerView`。 這個建構函式會將`ImageView`到我們的活動。 此時該程式碼仍將不會編譯&ndash;我們需要將類別建立`MyScaleListener`，這可協助調整大小`ImageView`使用者當 pinches 它：
+-   新增下列建構函式來`GestureRecognizerView`。 這個建構函式會將新增`ImageView`至我們的活動。 此時程式碼仍將不會編譯&ndash;我們要建立類別`MyScaleListener`，將幫助您調整大小`ImageView`使用者當 pinches 它：
 
     ```csharp
     public GestureRecognizerView(Context context): base(context, null, 0)
@@ -115,7 +116,7 @@ ms.lasthandoff: 05/10/2018
     }
     ```
 
--   若要在我們的活動上繪製影像，我們需要覆寫`OnDraw`檢視類別，如下列程式碼片段所示的方法。 此程式碼會移動`ImageView`所指定的位置`_posX`和`_posY`也為調整影像的大小根據縮放比例：
+-   若要在我們的活動上繪製影像，我們需要覆寫`OnDraw`檢視類別，如下列程式碼片段所示的方法。 此程式碼會移動`ImageView`所指定的位置`_posX`和`_posY`也做為調整大小的縮放比例根據映像：
 
     ```csharp
     protected override void OnDraw(Canvas canvas)
@@ -129,8 +130,8 @@ ms.lasthandoff: 05/10/2018
     }
     ```
 
--   接下來我們要更新執行個體變數`_scaleFactor`以使用者身分 pinches `ImageView`。 我們將會加入一種類別稱為`MyScaleListener`。 這個類別會接聽時，系統會引發由 Android 使用者 pinches 標尺事件`ImageView`。
-    將下列內部類別加入`GestureRecognizerView`。 這個類別是`ScaleGesture.SimpleOnScaleGestureListener`。 這個類別是接聽程式可以子類別，當您感興趣的筆勢子集的方便類別：
+-   接下來我們需要更新的執行個體變數`_scaleFactor`使用者身分 pinches `ImageView`。 我們會新增一個叫做類別`MyScaleListener`。 這個類別會接聽擴展事件，當使用者 pinches 會引發由 Android `ImageView`。
+    新增下列內部類別`GestureRecognizerView`。 這個類別是`ScaleGesture.SimpleOnScaleGestureListener`。 這個類別是接聽程式可以子類別，當您感興趣的筆勢子集的方便類別：
 
     ```csharp
     private class MyScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener
@@ -156,19 +157,19 @@ ms.lasthandoff: 05/10/2018
                 _view._scaleFactor = 0.1f;
             }
 
-            _iconview.Invalidate();
+            _view.Invalidate();
             return true;
         }
     }
     ```
 
--   我們需要覆寫中的下一個方法`GestureRecognizerView`是`OnTouchEvent`。 下列程式碼會列出這個方法的完整實作。 有很多的程式碼在這裡，因此就讓我們花點時間，並尋找狀況這裡。 這個方法會執行第一件事是縮放圖示，如有必要&ndash;這由呼叫`_scaleDetector.OnTouchEvent`。 接下來，我們嘗試找出哪些動作會呼叫這個方法：
+-   我們要覆寫中的下一個方法`GestureRecognizerView`是`OnTouchEvent`。 下列程式碼會列出這個方法的完整實作。 有很多程式碼，因此就讓我們花點時間，並尋找以下情形。 這個方法會執行第一件事是調整圖示，視&ndash;這由呼叫`_scaleDetector.OnTouchEvent`。 接下來，我們試著找出哪些動作會呼叫這個方法：
 
-    - 如果使用者接觸到螢幕，我們會記錄的 X 和 Y 位置，第一個接觸到螢幕的指標的識別碼。
+    - 如果使用者接觸到的畫面，我們會記錄的 X 和 Y 位置和接觸到螢幕的第一個指標的識別碼。
 
-    - 如果使用者移動其觸控式螢幕上，我們找出使用者移動滑鼠指標的幅度。
+    - 如果使用者在螢幕上移動其觸控，我們找出使用者移動滑鼠指標的幅度。
 
-    - 如果使用者已消除他手指關閉螢幕，我們將會停止追蹤的筆勢。
+    - 如果使用者具有提高他的手指在螢幕，我們將會停止追蹤的筆勢。
 
     ```csharp
     public override bool OnTouchEvent(MotionEvent ev)
@@ -230,24 +231,24 @@ ms.lasthandoff: 05/10/2018
     }
     ```
 
--   現在，執行應用程式，並啟動筆勢辨識器活動。
-    在啟動時的畫面看起來應該像下列螢幕擷取畫面：
+-   現在，執行應用程式，並啟動筆勢辨識器的活動。
+    啟動時的畫面應該看起來像下列螢幕擷取畫面：
 
-    [![筆勢辨識器開始畫面與 Android 的圖示](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
+    [![筆勢辨識器 Android 圖示與啟動畫面](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
 
--   現在觸控圖示，並將它拖曳到螢幕上。 請嘗試縮小-放大手勢。 在某個時間點您的畫面可能看起來像下列螢幕擷取畫面：
+-   現在觸圖示，並將它拖曳畫面。 請嘗試縮小-放大手勢。 在某個時間點您的畫面可能看起來像下列螢幕擷取畫面：
 
     [![在螢幕上的手勢移動圖示](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
 
-此時，您應該提供您自己 pat 背面： 您只在 Android 應用程式中實作捏合以縮放 ！ 快速休息一下，可讓您移至本逐步解說的第三個和最後一個活動&ndash;使用自訂的筆勢。
+此時您應該提供您自己 pat 背面： 您只在 Android 應用程式中實作捏合以縮放 ！ 快速休息一下，讓 移至本逐步解說的第三個也是最後一個活動&ndash;使用自訂的筆勢。
 
 ## <a name="custom-gesture-activity"></a>自訂動作活動
 
 在此逐步解說中的最後一個畫面將會使用自訂的筆勢。
 
-基於本逐步解說的目的，筆勢程式庫已經使用筆勢工具建立並加入至專案檔中**資源/原始/筆勢**。 使用此位元的例行性的方式，可讓得到上的逐步解說中的最後一個活動。
+基於本逐步解說的目的，手勢 library 已使用筆勢工具建立並新增至檔案中的專案**資源/原始/筆勢**。 使用此位元的例行性的方式，可讓開始本逐步解說中的最後一個活動。
 
--   將名為配置檔**自訂\_筆勢\_layout.axml**專案包含下列內容。 專案已包含所有映像中**資源**資料夾：
+-   新增名為的版面配置檔案**自訂\_筆勢\_layout.axml**到專案中下列內容。 這個專案已經有的所有映像**資源**資料夾：
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -273,15 +274,15 @@ ms.lasthandoff: 05/10/2018
     </LinearLayout>
     ```
 
--   接下來將新的活動加入至專案並將其命名`CustomGestureRecognizerActivity.cs`。 類別中加入兩個執行個體變數，以顯示在下列兩行程式碼：
+-   接下來將新的活動加入至專案並將它命名`CustomGestureRecognizerActivity.cs`。 類別中加入兩個執行個體變數，如下列兩行程式碼中：
 
     ```csharp
     private GestureLibrary _gestureLibrary;
     private ImageView _imageView;
     ```
 
--   編輯`OnCreate`方法，這個活動內，使它類似下列的程式碼。 可讓一分鐘即可為您解說這段程式碼中。 第一件事是具現化`GestureOverlayView`並將其設定為 [根] 檢視的活動。
-    我們也會指派到的事件處理常式`GesturePerformed`事件`GestureOverlayView`。 接下來我們擴大稍早建立的配置檔案，並新增為的子檢視`GestureOverlayView`。 最後一個步驟是將變數初始化`_gestureLibrary`並從應用程式資源載入筆勢檔案。 如果基於某些原因無法載入筆勢檔案，不是此活動可執行的動作而關閉：
+-   編輯`OnCreate`方法，這個活動中，讓它類似下列的程式碼。 可讓花點時間說明情形在此程式碼。 我們所做的第一件事是具現化`GestureOverlayView`並將其設定為 [根] 檢視的活動。
+    我們也將指定的事件處理常式`GesturePerformed`事件的`GestureOverlayView`。 接下來我們擴大稍早建立的配置檔案，並將它加入為的子檢視`GestureOverlayView`。 最後一個步驟是將變數初始化`_gestureLibrary`，並從應用程式資源載入筆勢檔案。 如果基於某些原因無法載入筆勢檔案，不多可以執行這項活動，因此很關機：
 
     ```csharp
     protected override void OnCreate(Bundle bundle)
@@ -305,9 +306,9 @@ ms.lasthandoff: 05/10/2018
     }
     ```
 
--   我們必須要實作此方法的最後一個項目`GestureOverlayViewOnGesturePerformed`如下列程式碼片段所示。 當`GestureOverlayView`偵測到筆勢，它會呼叫回至這個方法。 我們嘗試取得第一件事`IList<Prediction>`符合筆勢藉由呼叫物件的`_gestureLibrary.Recognize()`。 我們使用 LINQ 的位元來取得`Prediction`具有分數最高的筆勢。
+-   我們要實作此方法的最後一件事`GestureOverlayViewOnGesturePerformed`如下列程式碼片段所示。 當`GestureOverlayView`偵測到筆勢，它會呼叫回至這個方法。 我們嘗試取得第一件事`IList<Prediction>`物件，而且藉由呼叫符合筆勢`_gestureLibrary.Recognize()`。 我們使用的 LINQ 來取得`Prediction`具有最高分數的筆勢。
 
-    如果是沒有相符的軌跡高效能有足夠的分數，則事件處理常式結束而不做任何事。 否則我們會檢查預測的名稱，並將變更影像顯示，根據筆勢的名稱：
+    如果是沒有相符的軌跡具有高，因此足夠的分數，則事件處理常式會結束而不執行任何動作。 否則我們會檢查預測的名稱，並變更所顯示的影像根據筆勢的名稱：
 
     ```csharp
     private void GestureOverlayViewOnGesturePerformed(object sender, GestureOverlayView.GesturePerformedEventArgs gesturePerformedEventArgs)
@@ -338,19 +339,19 @@ ms.lasthandoff: 05/10/2018
     }
     ```
 
--   執行應用程式和啟動自訂的筆勢辨識器活動。 看起來應該像下列螢幕擷取畫面：
+-   執行應用程式，並啟動自訂筆勢辨識器的活動。 它看起來應該類似下列螢幕擷取畫面：
 
-    [![螢幕擷取畫面，以檢查我映像](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png#lightbox)
+    [![螢幕擷取畫面與檢查我映像](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png#lightbox)
 
-    現在螢幕上繪製一個核取記號，並不會再顯示點陣圖看起來應該類似的下一個螢幕擷取畫面所示：
+    現在在畫面上，繪製核取記號，並顯示點陣圖應該看起來像下一步 的螢幕擷取畫面所示：
 
-    [![辨識繪製核取記號，核取記號](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
+    [![繪製核取記號，核取記號會辨識](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
 
     最後，在螢幕上繪製徒手畫。 核取方塊應該變更回其原始映像，如下列螢幕擷取畫面所示：
 
-    [![會顯示在畫面中，原始的映像的手繪多邊形](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
+    [![會顯示在畫面上，原始的映像的 scribble](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
 
-您現在有了解如何整合觸控與手勢使用 Xamarin.Android Android 應用程式中。
+您現在有了解如何整合觸控和筆勢使用 Xamarin.Android 的 Android 應用程式中。
 
 
 ## <a name="related-links"></a>相關連結

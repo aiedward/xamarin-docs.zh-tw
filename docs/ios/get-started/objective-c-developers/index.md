@@ -1,20 +1,19 @@
 ---
 title: 適用於 Objective-C 開發人員的 Xamarin
-description: 如果您是 Objective-C 開發人員，您應該已經開始在 Xamarin 平台上運用自己的技巧和現有的 Objective-C 程式碼，並享受 C# 的程式碼重複使用優勢。 本節的目的是作為 Xamarin.iOS 的進入點，並指引您取得有關使用來自 C# 之現有 Objective-C 程式碼的豐富資訊。
+description: 本文件會為 Objective-C的開發人員提供 Xamarin.iOS 的說明。 它連結的指南會描述如何從 Objective-C 轉換成 C#、如何繫結 Objective-C 程式庫供 C# 使用，以及如何建置跨平台行動應用程式。
 ms.prod: xamarin
 ms.assetid: 9F3C86A3-403E-4025-99CA-99FCA86DC828
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e29762fb258f7d796878c85bfe6f7aaa93207c5e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 027ef8cabc55ace41bcf201b8355aab8ca6ec625
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786047"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>適用於 Objective-C 開發人員的 Xamarin
-
-_如果您是 Objective-C 開發人員，您應該已經開始在 Xamarin 平台上運用自己的技巧和現有的 Objective-C 程式碼，並享受 C# 的程式碼重複使用優勢。本節的目的是作為 Xamarin.iOS 的進入點，並指引您取得有關使用來自 C# 之現有 Objective-C 程式碼的豐富資訊。_
 
 Xamarin 能提供以 iOS 為目標的開發人員將其非使用者介面程式碼移至平台無從驗證 C# 的路徑，使得該程式碼可用於任何可使用 C# 的地方，包括 Android (透過 Xamarin.Android) 及各種 Windows 版本。 不過，雖然您是搭配 Xamarin 使用 C#，這並不代表您不能運用自身既有的技巧及 Objective-C 程式碼。 事實上，了解 Objective-C 可讓您成為更佳的 Xamarin.iOS 開發人員，因為 Xamarin 會公開所有您熟悉且喜愛的原生 iOS 及 OS X 平台 API，例如 UIKit、Core Animation、Core Foundation 及 Core Graphics 等。 同時，您將能取得 C# 語言的強大功能 (包括 LINQ 及泛型等)，以及可用於原生應用程式的豐富 .NET 基底類別。
 

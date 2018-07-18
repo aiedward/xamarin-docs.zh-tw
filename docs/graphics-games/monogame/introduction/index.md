@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33920802"
 ---
 # <a name="introduction-to-game-development-with-monogame"></a>與 MonoGame 遊戲應用程式開發簡介
 

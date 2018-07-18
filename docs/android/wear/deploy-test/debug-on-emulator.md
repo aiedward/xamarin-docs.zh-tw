@@ -6,13 +6,13 @@ ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 9be9b91a0ed7e7607469bf8d74087b6f93677559
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/21/2018
+ms.openlocfilehash: baa8df87caf2c05d7b6202d5160c930e51656e10
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732979"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36934975"
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>偵錯 Android 模擬器上損耗
 
@@ -22,7 +22,7 @@ _這些文件說明如何偵錯 Xamarin.Android 損耗上的應用程式的模�
 
 開發 Android 戴上的應用程式需要執行應用程式，請在實體硬體上，或使用模擬器。 使用硬體是最佳方式，但並不一定是最務實的做法。 在許多情況下，它可以是簡單且更符合成本效益模擬/模擬 Android 戴上的硬體如下所述，使用模擬器。 如果您尚不熟悉的程序部署和執行的 Android 戴上的應用程式，請參閱[Hello，穿](~/android/wear/get-started/hello-wear.md)。
 
-## <a name="configure-the-google-android-emulator"></a>設定 Google Android 模擬器
+## <a name="configure-the-android-emulator"></a>設定 Android 模擬器
 
 損耗上執行應用程式模擬器，您必須安裝 Android SDK Android 模擬器和 Android 戴上設定它。 整體的 Android SDK 模擬器安裝和組態資訊，請參閱[Android 模擬器設定](~/android/get-started/installation/android-emulator/index.md)。
 
@@ -48,4 +48,4 @@ Android 模擬器啟動之後，Xamarin.Android 會損耗應用程式部署至�
  
 ## <a name="summary"></a>總結
  
-本指南說明如何設定 Google Android 模擬器損耗開發和啟動偵錯損耗虛擬裝置。
+本指南說明如何設定損耗開發 Android 模擬器並啟動偵錯損耗虛擬裝置。

@@ -8,7 +8,7 @@ ms.author: amburns
 ms.date: 04/12/2017
 ms.openlocfilehash: 82a89309e6462462471f42c3504d109ff0722917
 ms.sourcegitcommit: 5db075bdd0b62d5d1d1567c267303a6a1888c8f2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/06/2018
 ms.locfileid: "34806786"

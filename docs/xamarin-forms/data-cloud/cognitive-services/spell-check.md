@@ -12,6 +12,7 @@ ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34049905"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>拼字檢查使用 Bing 拼字檢查應用程式開發介面
 

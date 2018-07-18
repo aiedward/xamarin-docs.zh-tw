@@ -1,61 +1,61 @@
 ---
 title: 階層式導覽
-description: 這篇文章會示範如何使用 NavigationPage 類別來執行瀏覽整疊後進先出 (LIFO) 頁面中。
+description: 這篇文章會示範如何使用 NavigationPage 類別來執行導覽一疊後進先出 (LIFO) 頁面中。
 ms.prod: xamarin
 ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 20dfb6e935d08c35da73a81fb401a613aa6c9bac
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f8f8f9b4e5755e8b1707178fef633321b64e4e94
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242452"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994672"
 ---
 # <a name="hierarchical-navigation"></a>階層式導覽
 
-_NavigationPage 類別會提供使用者所在的能向前及向後，視需要執行頁面，瀏覽階層式導覽體驗。類別會實作瀏覽後進先出 (LIFO) 堆疊的頁面物件。本文示範如何使用 NavigationPage 類別來執行瀏覽的頁面堆疊中。_
+_NavigationPage 類別會提供使用者所在能向前及向後，視需要執行頁面，瀏覽的階層式導覽體驗。此類別會實作後進先出 (LIFO) 堆疊的頁面物件導覽。這篇文章會示範如何使用 NavigationPage 類別來執行導覽一疊頁面中。_
 
-本文將討論下列主題：
+這篇文章討論下列主題：
 
-- [執行巡覽](#Performing_Navigation)– 建立根頁面、 將頁面推送到巡覽堆疊、 取出巡覽堆疊中，從頁面和動畫畫面轉換。
+- [執行瀏覽](#Performing_Navigation)– 建立根頁面、 將頁面推送至導覽堆疊、 拉出頁面從導覽堆疊上，以及以動畫顯示轉換頁面。
 - [瀏覽時，將資料傳遞](#Passing_Data_when_Navigating)– 傳遞資料透過頁面的建構函式，以及透過`BindingContext`。
-- [操作在巡覽堆疊](#Manipulating_the_Navigation_Stack)– 藉由插入或移除頁面管理堆疊。
+- [操作在巡覽堆疊](#Manipulating_the_Navigation_Stack)– 管理堆疊插入或移除頁面。
 
 ## <a name="overview"></a>總覽
 
-從一頁移到另一個，應用程式將推送至巡覽堆疊中，新的頁面位置就會變成作用中的頁面上，如下列圖表所示：
+若要從一頁移到另一個，應用程式會推送到導覽堆疊上，新的頁面，它會變成作用中的頁面上，如下圖所示：
 
-![](hierarchical-images/pushing.png "將頁面推送到巡覽堆疊")
+![](hierarchical-images/pushing.png "將頁面推送至導覽堆疊")
 
-若要傳回至前一頁，應用程式就會出現在巡覽堆疊中，目前的網頁和新的最上層頁面會變成作用中的頁面上，如下列圖表所示：
+若要傳回至上一頁，應用程式會快顯目前的頁面，從導覽堆疊上，以及新的最上層頁面會變成作用中的頁面上，如下圖所示：
 
-![](hierarchical-images/popping.png "取出巡覽這個頁面的頁面")
+![](hierarchical-images/popping.png "快顯的頁面從導覽堆疊")
 
-所公開的巡覽方法[ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/)上任何屬性[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)衍生型別。 這些方法提供推送 pop 頁面巡覽堆疊中，從網頁瀏覽堆疊，並執行堆疊操作的能力。
+瀏覽方法會藉由公開[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation)屬性上任何[ `Page` ](xref:Xamarin.Forms.Page)衍生型別。 這些方法可讓您將頁面到導覽堆疊上，推送到導覽堆疊上，從 pop 的頁面，以及執行堆疊操作。
 
 <a name="Performing_Navigation" />
 
-## <a name="performing-navigation"></a>執行巡覽
+## <a name="performing-navigation"></a>執行導覽
 
-在階層式導覽中，[`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) 類別用來導覽一疊 [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) 物件。 下列螢幕擷取畫面顯示的主要元件`NavigationPage`上每個平台：
+在階層式導覽中，[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 類別用來導覽一疊 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件。 下列螢幕擷取畫面顯示的主要元件`NavigationPage`每個平台：
 
 ![](hierarchical-images/navigationpage-components.png "NavigationPage 元件")
 
-配置[ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)取決於平台：
+版面配置[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)取決於平台：
 
-- 在 iOS 上，出現在頁面會顯示標題，並具有的最上方導覽列就*回*回到前一頁的按鈕。
-- 在 Android 上，導覽列是出現在頂端顯示標題、 圖示、 頁面和*回*回到前一頁的按鈕。 中所定義的圖示`[Activity]`裝飾的屬性`MainActivity`Android 平台專屬專案中的類別。
-- 通用 Windows 平台上，導覽列是出現在頁面頂端的顯示標題。
+- 在 iOS 上，瀏覽列會出現在頁面頂端的顯示標題，且具有*回*回到前一頁的按鈕。
+- 在 Android 上，瀏覽列會出現在頁面頂端的顯示標題、 圖示和*回*回到前一頁的按鈕。 中所定義的圖示`[Activity]`裝飾的屬性`MainActivity`Android 平台專屬專案中的類別。
+- 通用 Windows 平台上，瀏覽列則會出現在頁面頂端的顯示標題項目。
 
-所有平台上，值[ `Page.Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/)屬性將會顯示為頁面標題。
+所有平台上的值[ `Page.Title` ](xref:Xamarin.Forms.Page.Title)屬性將會顯示為頁面標題。
 
 > [!NOTE]
-> 建議`NavigationPage`應該填入`ContentPage`僅限執行個體。
+> 建議`NavigationPage`應該填入`ContentPage`只執行個體。
 
-### <a name="creating-the-root-page"></a>在建立根頁面
+### <a name="creating-the-root-page"></a>建立根頁面
 
 加入至導覽堆疊中的第一頁指的是應用程式的*根*頁面，下列程式碼範例會示範如何完成此作業：
 
@@ -66,16 +66,16 @@ public App ()
 }
 ```
 
-這會導致`Page1Xaml` [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)推入巡覽堆疊，此時報表便成為使用中的頁面和應用程式的根頁面的執行個體。 下列螢幕擷取畫面所示：
+這會導致`Page1Xaml` [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)推送到導覽堆疊上，而變成使用中的頁面和 [根] 頁面的應用程式的執行個體。 這是由下列的螢幕擷取畫面所示：
 
 ![](hierarchical-images/mainpage.png "根頁面的巡覽堆疊")
 
 > [!NOTE]
-> [ `RootPage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.NavigationPage.RootPage/)屬性[ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)執行個體會提供存取權的巡覽堆疊中的第一頁。
+> [ `RootPage` ](xref:Xamarin.Forms.NavigationPage.RootPage)屬性[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)執行個體可存取在巡覽堆疊中的第一頁。
 
-### <a name="pushing-pages-to-the-navigation-stack"></a>將頁面推送到巡覽堆疊
+### <a name="pushing-pages-to-the-navigation-stack"></a>將頁面推送至導覽堆疊
 
-若要瀏覽至`Page2Xaml`，就必須叫用[ `PushAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)/)方法[ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/)屬性目前的頁面上，為下列程式碼範例示範：
+若要瀏覽至`Page2Xaml`，就必須叫用[ `PushAsync` ](xref:Xamarin.Forms.NavigationPage.PushAsync*)方法[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation)屬性目前的頁面上，如下列程式碼範例所示：
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -84,26 +84,26 @@ async void OnNextPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-這會使 `Page2Xaml` 執行個體推送至導覽堆疊上，而變成使用中的頁面。 下列螢幕擷取畫面所示：
+這會使 `Page2Xaml` 執行個體推送至導覽堆疊上，而變成使用中的頁面。 這是由下列的螢幕擷取畫面所示：
 
-![](hierarchical-images/secondpage.png "在巡覽堆疊推入頁面")
+![](hierarchical-images/secondpage.png "頁面推送至導覽堆疊")
 
-當[ `PushAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)/)叫用方法時，發生下列事件：
+當[ `PushAsync` ](xref:Xamarin.Forms.NavigationPage.PushAsync*)叫用方法時，會發生下列事件：
 
-- 頁面呼叫`PushAsync`具有其[ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/)叫用的覆寫。
-- 正要巡覽頁面具有其[ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/)叫用的覆寫。
+- 頁面上呼叫`PushAsync`有其[ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing)叫用的覆寫。
+- 巡覽至頁面具有其[ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing)叫用的覆寫。
 - `PushAsync`工作完成。
 
-不過，這些事件會發生的順序取決於平台。 如需詳細資訊，請參閱[章 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold Xamarin.Forms 活頁簿。
+不過，發生這些事件的確切順序取決於平台。 如需詳細資訊，請參閱 <<c0> [ 第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)Charles Petzold 的 Xamarin.Forms 的書籍。
 
 > [!NOTE]
-> 呼叫[ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/)和[ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/)覆寫無法被視為錯誤的頁面巡覽的保證指示。 例如，在 iOS、`OnDisappearing`應用程式終止時，覆寫在使用中的頁面上呼叫。
+> 呼叫[ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing)並[ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing)覆寫無法被視為保證找出的頁面巡覽的跡象。 例如，在 iOS 上，`OnDisappearing`應用程式終止時，將會呼叫使用中頁面的覆寫。
 
-### <a name="popping-pages-from-the-navigation-stack"></a>在巡覽堆疊中的雜訊頁面
+### <a name="popping-pages-from-the-navigation-stack"></a>從導覽堆疊彈出頁面
 
 無論是裝置上的實體按鈕還是螢幕上的按鈕，按下裝置上的 [上一頁] 按鈕都可以從導覽堆疊快顯使用中的頁面。
 
-若要以程式設計的方式返回原始頁面，`Page2Xaml` 執行個體必須叫用 [`PopAsync`](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PopAsync()/) 方法，如下列程式碼範例所示：
+若要以程式設計的方式返回原始頁面，`Page2Xaml` 執行個體必須叫用 [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) 方法，如下列程式碼範例所示：
 
 ```csharp
 async void OnPreviousPageButtonClicked (object sender, EventArgs e)
@@ -112,15 +112,15 @@ async void OnPreviousPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-這會使 `Page2Xaml` 執行個體從導覽堆疊中移除，進而使新的最上層頁面變成使用中的頁面。 當[ `PopAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PopAsync()/)叫用方法時，發生下列事件：
+這會使 `Page2Xaml` 執行個體從導覽堆疊中移除，進而使新的最上層頁面變成使用中的頁面。 當[ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync)叫用方法時，會發生下列事件：
 
-- 頁面呼叫`PopAsync`具有其[ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/)叫用的覆寫。
-- 傳回此頁面具有其[ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/)叫用的覆寫。
+- 頁面上呼叫`PopAsync`有其[ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing)叫用的覆寫。
+- 所傳回的頁面具有其[ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing)叫用的覆寫。
 - `PopAsync`工作傳回。
 
-不過，這些事件會發生的順序取決於平台。 如需詳細資訊，請參閱[章 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold Xamarin.Forms 活頁簿。
+不過，發生這些事件的確切順序取決於平台。 如需詳細資訊，請參閱[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)Charles Petzold 的 Xamarin.Forms 的書籍。
 
-以及[ `PushAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)/)和[ `PopAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PopAsync()/)方法[ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/)屬性時，每個頁面也提供[ `PopToRootAsync`](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PopToRootAsync()/)方法，下列程式碼範例所示：
+以及[ `PushAsync` ](xref:Xamarin.Forms.NavigationPage.PushAsync*)並[ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync)方法[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation)屬性的每一頁也會提供[ `PopToRootAsync`](xref:Xamarin.Forms.NavigationPage.PopToRootAsync)方法，以下列程式碼範例所示：
 
 ```csharp
 async void OnRootPageButtonClicked (object sender, EventArgs e)
@@ -129,11 +129,11 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-這個方法會將根目錄以外的所有[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)導覽堆疊，因此讓應用程式使用中頁面的 [根] 頁面。
+此方法會顯示根目錄以外的所有[ `Page` ](xref:Xamarin.Forms.Page)關閉導覽堆疊上，因此進行應用程式的使用中頁面的 [根] 頁面。
 
-### <a name="animating-page-transitions"></a>動畫畫面轉換
+### <a name="animating-page-transitions"></a>以動畫顯示轉換頁面
 
-[ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/)屬性時，每個頁面也提供覆寫的 push 和 pop 方法，包含了`boolean`控制是否顯示頁面動畫期間瀏覽，如下列程式碼所示的參數範例：
+[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation)每個頁面的屬性也會提供覆寫的 push 和 pop 方法，包括`boolean`控制是否要顯示的頁面動畫期間瀏覽，如下列程式碼所示的參數範例：
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -155,17 +155,17 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-設定`boolean`參數`false`停用時將參數設定為相同的動畫網頁切換`true`假設基礎平台支援，可讓網頁轉換動畫。 不過，缺少此參數的 push 和 pop 方法會預設啟用動畫。
+設定`boolean`參數來`false`會停用時將參數設定的頁面轉換動畫`true`前提是它支援基礎平台，可讓頁面轉換動畫。 不過，缺少此參數的 push 和 pop 方法會依預設啟用動畫。
 
 <a name="Passing_Data_when_Navigating" />
 
-## <a name="passing-data-when-navigating"></a>瀏覽時傳遞資料
+## <a name="passing-data-when-navigating"></a>瀏覽時將資料傳遞
 
-有時候，很有必要的頁面巡覽期間，將資料傳遞至另一個頁面。 完成這兩項技術會傳遞資料透過頁面的建構函式，並藉由設定新的頁面[ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/)資料。 每個將現在會依次討論。
+有時是必要的頁面，即可將資料傳遞至另一個頁面中，在巡覽期間。 兩個技術可完成這項作業會將資料透過頁面的建構函式，並藉由設定新的頁面傳遞[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)資料。 每個會現在會依次討論。
 
-### <a name="passing-data-through-a-page-constructor"></a>將資料傳遞到頁面的建構函式
+### <a name="passing-data-through-a-page-constructor"></a>將資料傳遞到網頁的建構函式
 
-在巡覽期間，將資料傳遞至另一個頁面的最簡單技巧是透過頁面建構函式參數，而是以下列程式碼範例所示：
+將資料傳遞至另一個頁面中，在巡覽期間的最簡單技巧是透過頁面的建構函式參數中的下列程式碼範例所示：
 
 ```csharp
 public App ()
@@ -174,7 +174,7 @@ public App ()
 }
 ```
 
-此程式碼建立`MainPage`執行個體，將目前的日期和時間的 ISO8601 格式中，這會包裝在[ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)執行個體。
+此程式碼會建立`MainPage`執行個體，傳入目前的日期和時間 ISO8601 格式，其中會包裝在[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)執行個體。
 
 `MainPage`的執行個體收到的資料，透過建構函式參數，如下列程式碼範例所示：
 
@@ -186,13 +186,13 @@ public MainPage (string date)
 }
 ```
 
-資料隨即顯示在頁面設定[ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/)屬性，如下列螢幕擷取畫面所示：
+資料隨即顯示在頁面上設定[ `Label.Text` ](xref:Xamarin.Forms.Label.Text)屬性，如下列螢幕擷取畫面所示：
 
-![](hierarchical-images/passing-data-constructor.png "透過頁面的建構函式傳遞資料")
+![](hierarchical-images/passing-data-constructor.png "透過頁面的建構函式傳遞的資料")
 
-### <a name="passing-data-through-a-bindingcontext"></a>透過其他的傳遞資料
+### <a name="passing-data-through-a-bindingcontext"></a>將資料傳遞到 BindingContext
 
-將資料傳遞至另一個頁面中，巡覽期間的替代方式是藉由設定新的頁面[ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/)資料，如下列程式碼範例所示：
+將資料傳遞至另一個頁面中，在巡覽期間的替代方式是藉由設定新的頁面[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)資料，如下列程式碼範例所示：
 
 ```csharp
 async void OnNavigateButtonClicked (object sender, EventArgs e)
@@ -210,9 +210,9 @@ async void OnNavigateButtonClicked (object sender, EventArgs e)
 }
 ```
 
-這個程式碼設定[ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/)的`SecondPage`執行個體`Contact`執行個體，並瀏覽至`SecondPage`。
+此程式碼會設定[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)的`SecondPage`執行個體`Contact`執行個體，並瀏覽至`SecondPage`。
 
-`SecondPage`然後使用資料繫結來顯示`Contact`執行個體資料，如下列 XAML 程式碼範例所示：
+`SecondPage`接著會使用資料繫結顯示`Contact`執行個體資料，如下列 XAML 程式碼範例所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -272,9 +272,9 @@ public class SecondPageCS : ContentPage
 }
 ```
 
-資料隨即顯示在頁面的一系列的[ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)控制項，如下列螢幕擷取畫面所示：
+資料隨即顯示在頁面的一系列[ `Label` ](xref:Xamarin.Forms.Label)控制項，如下列螢幕擷取畫面所示：
 
-![](hierarchical-images/passing-data-bindingcontext.png "傳遞到其他資料")
+![](hierarchical-images/passing-data-bindingcontext.png "透過 BindingContext 傳遞資料")
 
 如需有關資料繫結的詳細資訊，請參閱[資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
 
@@ -282,17 +282,17 @@ public class SecondPageCS : ContentPage
 
 ## <a name="manipulating-the-navigation-stack"></a>操作在巡覽堆疊
 
-[ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/)屬性會公開[ `NavigationStack` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INavigation.NavigationStack/)可以從中取得的頁面巡覽堆疊中的屬性。 雖然 Xamarin.Forms 維護巡覽堆疊，存取`Navigation`屬性提供[ `InsertPageBefore` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.InsertPageBefore(Xamarin.Forms.Page,Xamarin.Forms.Page)/)和[ `RemovePage` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.RemovePage(Xamarin.Forms.Page)/)管理堆疊所插入的方法頁面，或移除它們。
+[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation)屬性會公開[ `NavigationStack` ](xref:Xamarin.Forms.INavigation.NavigationStack)屬性可以從中取得導覽堆疊中的頁面。 Xamarin.Forms 會維護存取導覽堆疊上，而`Navigation`屬性會提供[ `InsertPageBefore` ](xref:Xamarin.Forms.INavigation.InsertPageBefore*)並[ `RemovePage` ](xref:Xamarin.Forms.INavigation.RemovePage*)方法，以插入操作堆疊頁面或移除它們。
 
-[ `InsertPageBefore` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.InsertPageBefore(Xamarin.Forms.Page,Xamarin.Forms.Page)/)方法會插入之前現有的指定頁面上，在巡覽堆疊中指定的頁面如下圖所示：
+[ `InsertPageBefore` ](xref:Xamarin.Forms.INavigation.InsertPageBefore*)方法會插入之前現有的指定頁面上，在巡覽堆疊中指定的頁面如下圖所示：
 
 ![](hierarchical-images/insert-page-before.png "在巡覽堆疊中插入頁面")
 
-[ `RemovePage` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.RemovePage(Xamarin.Forms.Page)/)方法會移除指定的頁面巡覽堆疊，如下列圖表所示：
+[ `RemovePage` ](xref:Xamarin.Forms.INavigation.RemovePage*)方法會移除指定的頁面從導覽堆疊上，如下圖所示：
 
-![](hierarchical-images/remove-page.png "在巡覽堆疊中移除頁面")
+![](hierarchical-images/remove-page.png "從導覽堆疊中移除頁面")
 
-這些方法可讓自訂瀏覽經驗，例如取代新的頁面上，下列登入成功的登入頁面。 下列程式碼範例示範此案例：
+這些方法可讓自訂的瀏覽體驗，例如登入頁面取代為新的頁面上，遵循成功的登入。 下列程式碼範例示範此案例：
 
 ```csharp
 async void OnLoginButtonClicked (object sender, EventArgs e)
@@ -310,11 +310,11 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 
 ```
 
-前提是使用者的認證正確無誤，`MainPage`執行個體插入至目前的頁面之前瀏覽堆疊。 [ `PopAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PopAsync()/)方法然後移除目前的頁面巡覽堆疊中，從具有`MainPage`成為使用中頁面的執行個體。
+前提是使用者的認證正確無誤，`MainPage`執行個體插入至導覽堆疊上目前頁面的上一頁。 [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync)方法然後移除目前的頁面上，從導覽堆疊上，具有`MainPage`成為使用中頁面的執行個體。
 
 ## <a name="summary"></a>總結
 
-本文示範如何使用[ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)執行瀏覽的頁面堆疊中的類別。 這個類別會提供使用者所在的能向前及向後，視需要執行頁面，瀏覽的階層式導覽體驗。 此類別會實作一堆後進先出 (LIFO) 的 [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) 物件導覽。
+這篇文章示範如何使用[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)執行導覽一疊頁面中的類別。 這個類別會提供使用者所在能向前及向後，視需要執行頁面，瀏覽的階層式導覽體驗。 此類別會實作一堆後進先出 (LIFO) 的 [`Page`](xref:Xamarin.Forms.Page) 物件導覽。
 
 
 ## <a name="related-links"></a>相關連結
@@ -323,6 +323,6 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 - [階層 （範例）](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
 - [PassingData （範例）](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)
 - [LoginFlow （範例）](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)
-- [如何建立 Xamarin.Forms （Xamarin 大學影片） 範例中的螢幕流程中的正負號](http://xamarinuniversity.blob.core.windows.net/lightninglectures/CreateASignIn.zip)
-- [如何建立 Xamarin.Forms （Xamarin 大學影片） 中的螢幕流程中的正負號](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
-- [NavigationPage](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)
+- [如何在 Xamarin.Forms （Xamarin University 影片） 範例中的畫面 Flow 中建立一個符號](http://xamarinuniversity.blob.core.windows.net/lightninglectures/CreateASignIn.zip)
+- [如何在 Xamarin.Forms （Xamarin University 影片） 中的畫面 Flow 中建立一個符號](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
+- [NavigationPage](xref:Xamarin.Forms.NavigationPage)

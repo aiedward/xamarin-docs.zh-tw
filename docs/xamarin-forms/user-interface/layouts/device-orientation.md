@@ -1,50 +1,50 @@
 ---
 title: 裝置方向
-description: 這篇文章說明如何在縱向或橫向方向中更棒的版面配置 Xamarin.Forms 應用程式。
+description: 這篇文章說明如何在直向和橫向方向中更美觀的版面配置 Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 9245a17423d97887d2032856b10427685b25c29b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f6ca8f0900c8bc325cc49a7484dabe5bf2534257
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244347"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38999069"
 ---
 # <a name="device-orientation"></a>裝置方向
 
-請務必考慮您的應用程式的使用方式以及如何合併，來改善使用者經驗。 個別的配置可以設計來容納多個方向，最好使用可用的空間。 應用程式層級，可以停用或啟用旋轉。
+請務必考慮應用程式使用的方式，以及如何合併橫向，來改善使用者經驗。 個別的版面配置可以設計來容納多個方向，最好使用的可用空間。 應用程式層級，可以停用或啟用旋轉。
 
 <a name="Controlling_Orientation" />
 
 ## <a name="controlling-orientation"></a>控制方向
 
-使用 Xamarin.Forms 時，控制裝置方向的支援的方法時使用的設定，針對每個個別的專案。
+使用 Xamarin.Forms 時，控制裝置方向支援的方法時要用於每個個別的專案中的設定。
 
 ### <a name="ios"></a>iOS
 
-在 iOS 上，設定應用程式使用裝置方向**Info.plist**檔案。 如果應用程式所包含的是它做為目標，這個檔案將包含方向設定為 iPhone 和 iPod，以及適用於 iPad 的設定。 以下是您的 IDE 特有的指示。 使用這份文件頂端的 IDE 選項，選取您想要查看哪些指示：
+在 iOS 上，設定應用程式使用裝置方向**Info.plist**檔案。 如果應用程式所包含的是它做為目標，此檔案會包含方向設定 iPhone 和 iPod，以及適用於 iPad 的設定。 以下是您的 IDE 特有的指示。 使用這份文件頂端的 IDE 選項，來選取您想要看到的指示：
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-在 Visual Studio 中開啟的 iOS 專案，並開啟**Info.plist**。 檔案會開啟到組態面板中，從 iPhone 部署資訊 索引標籤：
+在 Visual Studio 中開啟 iOS 專案，然後開啟**Info.plist**。 檔案將會開啟至 [設定] 面板中，開頭為 [iPhone 部署資訊] 索引標籤：
 
-![iPhone Visual Studio 中的部署資訊](device-orientation-images/orientation-vs-iphone.png)
+![iPhone 部署 Visual Studio 中的資訊](device-orientation-images/orientation-vs-iphone.png)
 
-若要設定 iPad 方向，請選取**iPad 部署資訊**位於左上方的面板，然後選取從可用的方向 索引標籤：
+若要設定 [iPad 方向，請選取**iPad 部署資訊**位於左上方的窗格中，然後選取從可用的方向] 索引標籤：
 
 ![在 Visual Studio 中支援的裝置方向](device-orientation-images/orientation-vs-ipad.png)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-在適用於 Mac 的 Visual Studio 中開啟的 iOS 專案，並開啟**Info.plist**。 在下**應用程式**索引標籤上，各節將可設定的方向：
+在 Visual Studio for Mac 中，開啟 iOS 專案，然後開啟**Info.plist**。 底下**應用程式** 索引標籤，區段可設定的方向：
 
-![iPhone 適用於 Mac 的 Visual Studio 中的部署資訊](device-orientation-images/orientation-xam-ui.png)
+![iPhone 部署資訊，在 Visual Studio for Mac](device-orientation-images/orientation-xam-ui.png)
 
-如果您想要編輯使用索引鍵-值編輯器介面，選取的值**來源**> 在畫面底部的索引標籤：
+如果您想要編輯使用索引鍵 / 值編輯器的介面，而選取的值**來源**> 在畫面底部的索引標籤：
 
 ![在 Visual Studio for Mac 支援裝置方向](device-orientation-images/orientation-xam-source.png)
 
@@ -52,52 +52,51 @@ ms.locfileid: "35244347"
 
 ### <a name="android"></a>Android
 
-若要控制在 Android 上的方向，請開啟**Weatherapp**和設定使用屬性裝飾的方向`MainActivity`類別：
+若要控制在 Android 上的方向，開啟**MainActivity.cs**並設定使用屬性裝飾的方向`MainActivity`類別：
 
 ```csharp
 namespace MyRotatingApp.Droid
 {
-    [Activity (Label = "MyRotatingApp.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
-    ScreenOrientation = ScreenOrientation.Landscape)] //This is what controls orientation
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    [Activity (Label = "MyRotatingApp.Droid", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Landscape)] //This is what controls orientation
+    public class MainActivity : FormsAppCompatActivity
     {
         protected override void OnCreate (Bundle bundle)
 ...
 ```
 
-Xamarin.Android 支援數個選項的指定方向：
+Xamarin.Android 支援數個選項來指定方向：
 
-- **橫向**&ndash;強制應用程式方向是橫向，不論感應器資料。
-- **縱向**&ndash;強制為直向，不論感應器資料的應用程式方向。
-- **使用者**&ndash;導致應用程式可以使用使用者的慣用的方向顯示。
+- **橫向**&ndash;強制應用程式方向為橫向，無論感應器資料。
+- **直向**&ndash;強制應用程式方向是直向，不論感應器資料。
+- **使用者**&ndash;導致應用程式能使用使用者的慣用的方向。
 - **後置**&ndash;會導致應用程式的方向的方向相同[活動](https://developer.xamarin.com/api/type/Android.App.Activity/)背後。
-- **感應器**&ndash;會導致以感應器，來判斷應用程式的方向，即使使用者已停用自動旋轉。
-- **SensorLandscape** &ndash;會導致應用程式使用同時使用來變更 （以便螢幕不被視為顛倒） 遇到螢幕方向的感應器資料。
-- **SensorPortrait** &ndash;會導致應用程式使用直式方向時使用變更 （以便螢幕不被視為顛倒） 遇到螢幕方向的感應器資料。
-- **ReverseLandscape** &ndash;會導致應用程式使用面對相反的方向，從平常久時，才會出現 「 顛倒。 」
-- **ReversePortrait** &ndash;會導致應用程式使用直式方向，面對相反的方向，從平常久時，才會出現 「 顛倒。 」
+- **感應器**&ndash;導致應用程式的方向感應器，來判斷，即使使用者已停用自動旋轉。
+- **SensorLandscape** &ndash;會導致應用程式使用橫向時使用感應器資料變更 （以便讓畫面未顯示為 面朝下），面向螢幕的方向。
+- **SensorPortrait** &ndash;會導致應用程式使用直式方向，同時使用感應器資料變更 （以便讓畫面未顯示為 面朝下），面向螢幕的方向。
+- **ReverseLandscape** &ndash;會導致應用程式使用橫向，面向相反的方向，從一般，才會出現 「 上下顚倒。 」
+- **ReversePortrait** &ndash;會導致應用程式使用直式方向，面向相反的方向，從一般，才會出現 「 上下顚倒。 」
 - **FullSensor** &ndash;導致應用程式依賴感應器資料，以選取正確的方向 （從可能的 4)。
-- **FullUser** &ndash;會導致應用程式使用使用者的方向偏好設定。 如果啟用自動旋轉，則可以使用所有 4 個方向。
-- **UserLandscape** &ndash; _\[不支援\]_ 會導致應用程式使用，除非使用者具有自動旋轉啟用，在此情況下，它會使用若要判斷方向的感應器。 此選項將會中斷編譯。
-- **UserPortrait** &ndash; _\[不支援\]_ 除非使用者具有自動旋轉啟用，它會使用在此情況下，會導致應用程式使用直式方向若要判斷方向的感應器。 此選項將會中斷編譯。
-- **鎖定** &ndash; _\[不支援\]_ 會導致應用程式使用螢幕方向，不論其所處啟動，而不會變更裝置回應的實體方向。 此選項將會中斷編譯。
+- **FullUser** &ndash;會導致應用程式使用使用者的方向偏好設定。 如果已啟用 自動旋轉，則可以使用所有 4 個方向。
+- **UserLandscape** &ndash; _\[不支援\]_ 導致使用橫向，應用程式，除非使用者具有自動旋轉啟用，在此情況下，它會使用若要判斷方向的感應器。 此選項會中斷編譯。
+- **UserPortrait** &ndash; _\[不支援\]_ 會導致應用程式使用直式方向，除非使用者具有自動旋轉啟用，在此情況下，它會使用若要判斷方向的感應器。 此選項會中斷編譯。
+- **鎖住** &ndash; _\[不支援\]_ 會導致應用程式使用螢幕方向，無論它是在啟動時，未回應裝置中的變更的實體方向。 此選項會中斷編譯。
 
-請注意，原生 Android Api 提供許多控制管理方向的方式，包括明確有所出入的使用者的選項來表示喜好設定。
+請注意，原生的 Android Api 提供了眾多控制管理方向的方式，包括明確相互抵觸的使用者的選項來表示喜好設定。
 
 ### <a name="universal-windows-platform"></a>通用 Windows 平台
 
-在通用 Windows 平台 (UWP)，在中設定支援的方向**Package.appxmanifest**檔案。 開啟資訊清單會顯示組態面板，其中可以選取支援的方向。
+在通用 Windows 平台 (UWP)，在中設定支援的方向**Package.appxmanifest**檔案。 開啟資訊清單會顯示設定面板，其中可選取支援的方向。
 
 <a name="Reacting_to_Changes_in_Orientation" />
 
-## <a name="reacting-to-changes-in-orientation"></a>對回應方向中的變更
+## <a name="reacting-to-changes-in-orientation"></a>回應方向的變更
 
-Xamarin.Forms 不提供任何原生事件通知的共用程式碼中的方向變更您的應用程式。 不過，`SizeChanged`事件`Page`時引發寬度或高度`Page`變更。 當的寬度`Page`大於高度，裝置會以橫向模式。 如需詳細資訊，請參閱[顯示根影像](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)。
+Xamarin.Forms 不提供任何原生事件來通知您的應用程式的方向共用程式碼中的變更。 不過，`SizeChanged`事件的`Page`時，會引發寬度或高度`Page`變更。 當寬度`Page`大於高度，裝置會以橫向模式。 如需詳細資訊，請參閱 <<c0> [ 顯示基礎  堶菾  的映像](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)。
 
 > [!NOTE]
-> 沒有現有的、 可用的 NuGet 封裝共用的程式碼中接收通知的方向變更。 請參閱[GitHub 儲存機制](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)如需詳細資訊。
+> 沒有現有的免費適用於 NuGet 套件共用程式碼中接收通知的方向的變更。 請參閱[GitHub 存放庫](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)如需詳細資訊。
 
-另外，它是可以覆寫[ `OnSizeAllocated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnSizeAllocated(System.Double,System.Double)/)方法`Page`，插入所有版面配置變更那里邏輯。 `OnSizeAllocated`方法呼叫時`Page`會配置新的大小，這種的 whenver 裝置旋轉。 請注意的基底實作`OnSizeAllocated`執行重要的配置函式，所以請務必呼叫基底實作，在覆寫：
+或者，您可覆寫[ `OnSizeAllocated` ](xref:Xamarin.Forms.Page.OnSizeAllocated*)方法`Page`，插入的任何版面配置變更邏輯。 `OnSizeAllocated`就會呼叫方法時`Page`配置新的大小，會發生的 whenver 旋轉了裝置。 請注意的基底實作`OnSizeAllocated`執行重要的配置函式，因此請務必呼叫基底實作覆寫中：
 
 ```csharp
 protected override void OnSizeAllocated(double width, double height)
@@ -106,9 +105,9 @@ protected override void OnSizeAllocated(double width, double height)
 }
 ```
 
-若要執行該步驟失敗會導致非正常運作的頁面。
+若要執行這個步驟會導致未作用的頁面。
 
-請注意，`OnSizeAllocated`方法可能會呼叫多次旋轉裝置時。 每次變更您的配置是一種浪費的資源，而且可能會造成閃爍。 請考慮使用您在網頁內的執行個體變數來追蹤是否方向為橫向或縱向，並只重繪變更時：
+請注意，`OnSizeAllocated`方法可能會多次呼叫旋轉裝置時。 每次變更您的配置是一種浪費的資源，並可能會導致閃爍。 請考慮使用您的頁面中的執行個體變數來追蹤是否方向為橫向或縱向，並只重繪時有所變更：
 
 ```csharp
 private double width = 0;
@@ -126,41 +125,41 @@ protected override void OnSizeAllocated(double width, double height)
 }
 ```
 
-一旦偵測到變更裝置方向中的，您可能想要新增或移除額外的檢視，從您的使用者介面中可用空間的變更做出回應。 例如，請考慮在直向每個平台的內建計算器：
+一旦偵測到裝置方向變更，您可能想要新增或移除額外的檢視，從您的使用者介面中可用空間的變更做出回應。 例如，請考慮在直向每個平台上內建的計算機：
 
-![](device-orientation-images/calculator-portrait.png "在直向 [小算盤] 應用程式")
+![](device-orientation-images/calculator-portrait.png "計算機應用程式，以直向")
 
-然後橫印：
+和橫向：
 
-![](device-orientation-images/calculator-landscape.png "在橫向 [小算盤] 應用程式")
+![](device-orientation-images/calculator-landscape.png "架構中的計算機應用程式")
 
-請注意，應用程式善用可用空間在橫向中加入更多的功能。
+請注意，應用程式利用可用空間的架構中新增更多的功能。
 
 <a name="Responsive_Layout" />
 
 ## <a name="responsive-layout"></a>回應式配置
 
-它可使用內建的版面配置，以便依正常程序轉換旋轉裝置時的設計介面。 設計介面，仍將繼續保有吸引人時回應變更方向時請考慮下列一般規則：
+您可使用內建的版面配置，如此一來，當在旋轉裝置時依正常程序轉換的設計介面。 設計介面，仍然是吸引人，當回應方向變更時，請考慮下列一般規則：
 
-- **請注意比例**&ndash;方向中的變更可能會造成問題，做出特定假設大致相同比例進行時。 例如，會有足夠的空間 1/3 的直螢幕的垂直空間中的檢視可能不符合 1/3 橫向的垂直空間。
-- **請謹慎使用絕對值**&ndash;直印在合理的絕對 （像素） 值不合理橫印中。 需要絕對值時，使用巢狀的配置，以找出其影響。 比方說，它會合理地使用中的絕對值`TableView``ItemTemplate`當項目範本已保證統一的高度。
+- **請注意比例**&ndash;方向中的變更可能會造成問題，做出特定假設進行關於比例時。 例如，1/3 的垂直間距，以橫向放不下會有足夠的空間中的垂直空間，以直向螢幕的 1/3 的檢視。
+- **請謹慎使用絕對值** &ndash; （像素） 絕對值，以直向有意義可能毫無意義架構中。 絕對值，必要時，請使用巢狀的配置，以找出其影響。 例如，可合理地使用中的絕對值`TableView``ItemTemplate`當項目範本有保證的統一高度。
 
-通常實作介面的多個螢幕大小和都視為最佳作法，也適用於上述規則。 本指南的其餘部分將說明特定的回應使用 Xamarin.Forms 中的每個主要的版面配置的版面配置範例。
+通常實作介面的多個螢幕大小和會被視為最佳做法時，也適用於上述規則。 本指南的其餘部分將說明在 Xamarin.Forms 中使用每個主要的版面配置的回應式配置的特定範例。
 
 > [!NOTE]
-> 為了清楚起見，下列各節將示範如何實作使用一種回應版面配置`Layout`一次。 在實務上，它通常是較簡單混合`Layout`來達成所需的版面配置，使用簡單或很直覺式 s`Layout`每個元件。
+> 為了清楚起見，下列各節會示範如何實作使用只是一種類型的回應式版面配置`Layout`一次。 在實務上，它通常是混合的工作變得更容易`Layout`來達成所需的版面配置，使用更簡單、 直覺`Layout`每個元件。
 
 ### <a name="stacklayout"></a>StackLayout
 
-請考慮下列應用程式，以直向顯示：
+請考慮下列的應用程式，以直向顯示：
 
-![](device-orientation-images/photo-stack-portrait.png "在直向相片應用程式")
+![](device-orientation-images/photo-stack-portrait.png "相片應用程式，以直向")
 
-然後橫印：
+和橫向：
 
 ![](device-orientation-images/photo-stack-landscape.png "在橫向的相片應用程式")
 
-以下列 XAML 達成：
+是以下列 XAML 中完成：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -203,7 +202,7 @@ Title="Stack Photo Editor - XAML">
 </ContentPage>
 ```
 
-某些 C# 用來變更方向`outerStack`根據裝置的方向：
+C# 用來變更方向`outerStack`根據裝置的方向：
 
 ```csharp
 protected override void OnSizeAllocated (double width, double height){
@@ -222,20 +221,20 @@ protected override void OnSizeAllocated (double width, double height){
 
 請注意下列事項：
 
-- `outerStack` 會調整成水平或垂直方向，以充分利用可用的空間依據堆疊中呈現映像和控制項。
+- `outerStack` 調整，以作為根據方向，以充分利用可用空間的水平或垂直堆疊顯示的映像和控制項。
 
 
 ### <a name="absolutelayout"></a>AbsoluteLayout
 
-請考慮下列應用程式，以直向顯示：
+請考慮下列的應用程式，以直向顯示：
 
-![](device-orientation-images/photo-abs-portrait.png "在直向相片應用程式")
+![](device-orientation-images/photo-abs-portrait.png "相片應用程式，以直向")
 
-然後橫印：
+和橫向：
 
 ![](device-orientation-images/photo-abs-landscape.png "在橫向的相片應用程式")
 
-以下列 XAML 達成：
+是以下列 XAML 中完成：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -274,21 +273,21 @@ Title="AbsoluteLayout - XAML" BackgroundImage="deer.jpg">
 
 請注意下列事項：
 
-- 頁面配置的方式，因為沒有導入回應性的程序程式碼需要。
-- `ScrollView`用來允許皆可看到即使螢幕的高度是固定的按鈕和影像高度的總和小於標籤。
+- 頁面配置的方式，因為沒有必要程序性程式碼造成回應性。
+- `ScrollView`用來允許標籤會顯示即使螢幕的高度是固定的按鈕和影像的高度的總和小於。
 
 
 ### <a name="relativelayout"></a>RelativeLayout
 
-請考慮下列應用程式，以直向顯示：
+請考慮下列的應用程式，以直向顯示：
 
-![](device-orientation-images/photo-rel-portrait.png "在直向相片應用程式")
+![](device-orientation-images/photo-rel-portrait.png "相片應用程式，以直向")
 
-然後橫印：
+和橫向：
 
 ![](device-orientation-images/photo-rel-landscape.png "在橫向的相片應用程式")
 
-以下列 XAML 達成：
+是以下列 XAML 中完成：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -366,20 +365,20 @@ BackgroundImage="deer.jpg">
 
 請注意下列事項：
 
-- 頁面配置的方式，因為沒有導入回應性的程序程式碼需要。
-- `ScrollView`用來允許皆可看到即使螢幕的高度是固定的按鈕和影像高度的總和小於標籤。
+- 頁面配置的方式，因為沒有必要程序性程式碼造成回應性。
+- `ScrollView`用來允許標籤會顯示即使螢幕的高度是固定的按鈕和影像的高度的總和小於。
 
 ### <a name="grid"></a>Grid
 
-請考慮下列應用程式，以直向顯示：
+請考慮下列的應用程式，以直向顯示：
 
-![](device-orientation-images/photo-grid-portrait.png "在直向相片應用程式")
+![](device-orientation-images/photo-grid-portrait.png "相片應用程式，以直向")
 
-然後橫印：
+和橫向：
 
 ![](device-orientation-images/photo-grid-landscape.png "在橫向的相片應用程式")
 
-以下列 XAML 達成：
+是以下列 XAML 中完成：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -435,7 +434,7 @@ Title="Grid - XAML">
 </ContentPage>
 ```
 
-以及下列程序性程式碼來處理旋轉的變更：
+以及下列程序性程式碼來處理循環的變更：
 
 ```csharp
 private double width;
@@ -468,7 +467,7 @@ protected override void OnSizeAllocated (double width, double height){
 
 請注意下列事項：
 
-- 頁面配置的方式，因為有一個方法是變更方格控制項的位置。
+- 頁面配置的方式，因為沒有方法來變更控制項的格線位置。
 
 
 ## <a name="related-links"></a>相關連結
@@ -476,4 +475,4 @@ protected override void OnSizeAllocated (double width, double height){
 - [版面配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [BusinessTumble 範例 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
 - [回應式配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
-- [顯示根據影像](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)
+- [顯示基礎  堶菾  的映像](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)

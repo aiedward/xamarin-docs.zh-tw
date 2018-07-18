@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30768697"
 ---
 # <a name="toolbar-compatibility"></a>工具列相容性
 
@@ -37,7 +38,7 @@ ms.lasthandoff: 04/04/2018
 
 ## <a name="set-the-minimum-and-target-android-version"></a>設定最小值和目標 Android 版本
 
-應用程式開發介面層級 21 為或更高，必須設定應用程式的目標 Framework 或應用程式將無法正確部署。 如果這類錯誤**沒有資源識別碼屬性 'tileModeX' 封裝 'android' 中找到**出現時部署應用程式，這是因為不目標 Framework 設定為**Android 5.0 (API 層級 21-棒棒糖符號)**或更高。 
+應用程式開發介面層級 21 為或更高，必須設定應用程式的目標 Framework 或應用程式將無法正確部署。 如果這類錯誤**沒有資源識別碼屬性 'tileModeX' 封裝 'android' 中找到**出現時部署應用程式，這是因為不目標 Framework 設定為**Android 5.0 (API 層級 21-棒棒糖符號)** 或更高。 
 
 目標 Framework 設定為應用程式開發介面層級 21 層級或更高，然後設定 Android API 層級的專案設定，應用程式是要支援的最小 Android 版本。 如需有關設定 Android API 層級的詳細資訊，請參閱[了解 Android API 層級](~/android/app-fundamentals/android-api-levels.md)。 在`ToolbarFun`範例中，最低的 Android 版本設為 KitKat (4.4 API 層級)。 
 

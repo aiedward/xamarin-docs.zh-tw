@@ -13,6 +13,7 @@ ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32435812"
 ---
 # <a name="getting-started-series"></a>使用者入門系列
 

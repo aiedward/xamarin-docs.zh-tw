@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30787905"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>沙箱 Xamarin.Mac 應用程式
 
@@ -148,7 +149,7 @@ public override void AwakeFromNib ()
 1. 啟動 Xcode，並選取**喜好設定**從**Xcode**功能表： 
 
     ![編輯帳戶在 Xcode 中的](sandboxing-images/sign11.png "編輯在 Xcode 中的帳戶")
-2. 按一下**檢視詳細資料...**按鈕： 
+2. 按一下**檢視詳細資料...** 按鈕： 
 
     ![按一下 [檢視詳細資料] 按鈕](sandboxing-images/sign12.png "按一下 [檢視詳細資料] 按鈕")
 3. 按一下**重新整理**按鈕 （在較低的左下角）。
@@ -225,11 +226,11 @@ public override void AwakeFromNib ()
 
 ### <a name="debugging-a-sandboxed-app"></a>偵錯的沙箱化應用程式
 
-偵錯工具連接到 Xamarin.Mac 應用程式，透過 TCP，這表示，依預設啟用沙箱，當它是無法連線到應用程式，因此如果您嘗試執行應用程式沒有啟用適當的權限，您會收到錯誤*「 無法連接到偵錯工具 」*。 
+偵錯工具連接到 Xamarin.Mac 應用程式，透過 TCP，這表示，依預設啟用沙箱，當它是無法連線到應用程式，因此如果您嘗試執行應用程式沒有啟用適當的權限，您會收到錯誤 *「 無法連接到偵錯工具 」*。 
 
 [![設定所需的選項](sandboxing-images/debug01.png "設定所需的選項")](sandboxing-images/debug01-large.png#lightbox)
 
-**允許傳出網路連線 （用戶端）**權限就是所需的偵錯工具，啟用此選項將允許正常地偵錯。 您無法偵錯，而它，因為我們已更新`CompileEntitlements`目標`msbuild`為沙箱化針對偵錯任何應用程式只建置的自動將該權限新增至權利。 發行組建應該使用未經修改的權利檔案中指定的權利。
+**允許傳出網路連線 （用戶端）** 權限就是所需的偵錯工具，啟用此選項將允許正常地偵錯。 您無法偵錯，而它，因為我們已更新`CompileEntitlements`目標`msbuild`為沙箱化針對偵錯任何應用程式只建置的自動將該權限新增至權利。 發行組建應該使用未經修改的權利檔案中指定的權利。
 
 ### <a name="resolving-an-app-sandbox-violation"></a>解決應用程式沙箱違規
 
@@ -258,7 +259,7 @@ public override void AwakeFromNib ()
 請執行下列動作：
 
 1. 在**方案板**，連按兩下**Entitlements.plist**檔案，以開啟它進行編輯。
-2. 在下**權利**區段中，按一下**允許傳出網路連線 （用戶端）**核取方塊： 
+2. 在下**權利**區段中，按一下**允許傳出網路連線 （用戶端）** 核取方塊： 
 
     [![編輯權利](sandboxing-images/sign17.png "編輯權利")](sandboxing-images/sign17-large.png#lightbox)
 3. 將變更儲存至應用程式。

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30787085"
 ---
 # <a name="how-xamarinmac-works"></a>Xamarin.Mac 的運作方式
 
@@ -103,7 +104,7 @@ JIT 編譯單聲道的執行階段所花費的時間此機器的程式碼可能�
 
 ### <a name="enabling-aot-compilation"></a>啟用 AOT 編譯
 
-AOT Xamarin.Mac 中啟用按兩下**專案名稱**中**方案總管 中**、 瀏覽至**Mac 建置**並加入`--aot:[options]`至**其他 mmp 引數：**欄位 (其中`[options]`為一或多個選項控制 AOT 類型，如下所示)。 例如: 
+AOT Xamarin.Mac 中啟用按兩下**專案名稱**中**方案總管 中**、 瀏覽至**Mac 建置**並加入`--aot:[options]`至**其他 mmp 引數：** 欄位 (其中`[options]`為一或多個選項控制 AOT 類型，如下所示)。 例如: 
 
 ![加入其他 mmp 引數的 AOT](how-it-works-images/aot01.png "加入 AOT 其他 mmp 引數")
 
@@ -145,7 +146,7 @@ AOT Xamarin.Mac 中啟用按兩下**專案名稱**中**方案總管 中**、 瀏
 
 ### <a name="enabling-the-partial-static-registrar"></a>啟用部分的靜態註冊機構
 
-部分的靜態註冊機構 Xamarin.Mac 中啟用按兩下**專案名稱**中**方案總管 中**、 瀏覽至**Mac 建置**並加入`--registrar:static`至**其他 mmp 引數：**欄位。 例如: 
+部分的靜態註冊機構 Xamarin.Mac 中啟用按兩下**專案名稱**中**方案總管 中**、 瀏覽至**Mac 建置**並加入`--registrar:static`至**其他 mmp 引數：** 欄位。 例如: 
 
 ![加入其他 mmp 引數，部分的靜態註冊機構](how-it-works-images/psr01.png "部分的靜態註冊機構加入其他 mmp 引數")
 

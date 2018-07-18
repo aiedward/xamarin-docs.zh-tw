@@ -1,16 +1,18 @@
 ---
 title: 適用於 iOS 的 fastlane - cert
+description: 本文件描述 fastlane，它是一種可自動化許多 iOS 應用程式佈建程序部分的工具：要求憑證、在 Apple 開發人員入口網站中新增裝置、建立應用程式識別碼等等。
 ms.prod: xamarin
 ms.assetid: 900FA6FF-F3C9-4D35-993E-B0D88E6B1883
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0b9db3d7b8f28e4b3e1bbb1ec167c73414845be3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fac90f4738046f91183a1acd080a0d0e480c6cbf
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785193"
 ---
 # <a name="fastlane-for-ios--cert"></a>適用於 iOS 的 fastlane - cert
 

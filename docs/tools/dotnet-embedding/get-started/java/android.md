@@ -6,18 +6,18 @@ ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
 author: topgenorth
 ms.author: toopge
 ms.date: 03/28/2018
-ms.openlocfilehash: 6fbd46578f07692f266d97279031f1893bb96a1f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 0bb27df901d306e97151cfeaad5c26130508e5b1
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793913"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066477"
 ---
 # <a name="getting-started-with-android"></a>Android 使用者入門
 
 除了從需求[入門 Java](~/tools/dotnet-embedding/get-started/java/index.md)指南也需要：
 
-* [Xamarin.Android 7.5](https://www.visualstudio.com/xamarin/)或更新版本
+* [Xamarin.Android 7.5](https://visualstudio.microsoft.com/xamarin/)或更新版本
 * [Android Studio 3.x](https://developer.android.com/studio/index.html) java 1.8
 
 為概觀，我們將：

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30773656"
 ---
 # <a name="running-android-services-in-remote-processes"></a>遠端處理序中執行 Android 的服務
 
@@ -82,7 +83,7 @@ _一般而言，Android 應用程式中的所有元件將會都執行相同的�
 
 此服務會在執行程序的種類取決於值`Process`屬性。 Android 識別三種不同的處理序：
 
--   **私用程序**&ndash;私用程序是指只可用於啟動應用程式。 若要識別為私用程序，其名稱開頭必須**:** （以分號分隔）。 先前的程式碼片段和螢幕擷取畫面所示的服務是私用程序。 下列程式碼片段是範例`ServiceAttribute`:
+-   **私用程序**&ndash;私用程序是指只可用於啟動應用程式。 若要識別為私用程序，其名稱開頭必須 **:** （以分號分隔）。 先前的程式碼片段和螢幕擷取畫面所示的服務是私用程序。 下列程式碼片段是範例`ServiceAttribute`:
 
     ```csharp
     [Service(Name = "com.xamarin.TimestampService",

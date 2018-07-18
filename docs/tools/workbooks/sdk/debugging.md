@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
 author: topgenorth
 ms.author: toopge
-ms.date: 03/30/2017
-ms.openlocfilehash: fa8806345a364a70535a91b2ba99e3bfee8d47bc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: 6e37b1ac3d0fb78b5737ebe97b5a28ab40adb648
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34794016"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269053"
 ---
 # <a name="debugging-integrations"></a>偵錯的整合
 
@@ -23,8 +23,8 @@ MacOS，在記錄檔訊息，會出現在記錄檔檢視器功能表 (**視窗 >
 
 用戶端記錄檔位於 macOS 及 Windows 上的下列位置：
 
-- Mac: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
-- Windows：`%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
+- Mac: `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
+- Windows：`%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
 要注意的一點是，當載入透過一般整合`#r`在開發期間的機制，整合組件將會挑選做為_相依性_活頁簿和隨附的絕對路徑是否未使用。 這可能會造成似乎不會傳播，如同重建整合並沒有變更。
 
@@ -39,7 +39,7 @@ MacOS，在記錄檔訊息，會出現在記錄檔檢視器功能表 (**視窗 >
 若要啟用 Xamarin Mac 上的活頁簿的開發人員工具，請在您的終端機中執行下列命令：
 
 ```shell
-defaults write com.xamarin.Inspector WebKitDeveloperExtras -bool true
+defaults write com.xamarin.Workbooks WebKitDeveloperExtras -bool true
 ```
 
 然後再重新啟動 Xamarin 活頁簿。 一旦您這樣做，您應該會看到**檢查項目**出現在您以滑鼠右鍵按一下內容功能表上，以及新**開發人員**窗格將可在活頁簿喜好設定。 此選項可讓您選擇要在啟動時開啟開發人員工具：

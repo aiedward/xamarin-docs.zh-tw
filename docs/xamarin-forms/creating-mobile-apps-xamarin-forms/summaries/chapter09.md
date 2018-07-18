@@ -1,48 +1,48 @@
 ---
-title: 第 9 章的摘要。 平台專屬的 API 呼叫
-description: 使用 Xamarin.Forms 建立行動裝置應用程式： 第 9 章的摘要。 平台專屬的 API 呼叫
+title: 第 9 章的摘要。 平台特定 API 呼叫
+description: 使用 Xamarin.Forms 建立行動應用程式： 第 9 章的摘要。 平台特定 API 呼叫
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 719f075ada576f87d4533697209deedcbb7003c4
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 8a035da3dec468df291a19849ca89964c6707589
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35239925"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994753"
 ---
-# <a name="summary-of-chapter-9-platform-specific-api-calls"></a>第 9 章的摘要。 平台專屬的 API 呼叫
+# <a name="summary-of-chapter-9-platform-specific-api-calls"></a>第 9 章的摘要。 平台特定 API 呼叫
 
-有時候會需要執行一些不同的程式碼的平台。 這一章探討技術。
+它有時候是必要的平台執行一些程式碼，而有所不同。 本章將探討的技巧。
 
-## <a name="preprocessing-in-the-shared-asset-project"></a>前置處理共用的資產專案中
+## <a name="preprocessing-in-the-shared-asset-project"></a>共用的資產專案中的前置處理
 
 Xamarin.Forms 共用資產專案可以執行不同的程式碼，每個平台使用的 C# 前置處理器指示詞`#if`， `#elif`，和`endif`。 這示範於[ **PlatInfoSap1**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/PlatInfoSap1):
 
-[![變數的三個螢幕擷取畫面格式化段落](images/ch09fg01-small.png "裝置型號和作業系統")](images/ch09fg01-large.png#lightbox "裝置型號和作業系統")
+[![變數的三個螢幕擷取畫面會格式化段落](images/ch09fg01-small.png "裝置機型與作業系統")](images/ch09fg01-large.png#lightbox "裝置機型與作業系統")
 
-但是，產生的程式碼很雜亂，難以閱讀。
+不過，產生的程式碼可能會不美觀且難以讀取。
 
 ## <a name="parallel-classes-in-the-shared-asset-project"></a>共用資產專案中的平行類別
 
-更結構化的方式來執行 SAP 中的平台專屬程式碼會示範[ **PlatInfoSap2** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/PlatInfoSap2)範例。 每個平台的專案包含同名的類別和方法，但實作該特定平台。 SAP 然後只具現化類別，並呼叫方法。
+更結構化的方法，來執行 SAP 平台特定程式碼所示[ **PlatInfoSap2** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/PlatInfoSap2)範例。 每個平台專案包含同名的類別和方法，但針對該特定的平台實作。 SAP 然後只具現化類別，並呼叫方法。
 
 ## <a name="dependencyservice-and-the-portable-class-library"></a>DependencyService 和可攜式類別庫
 
-程式庫通常無法存取應用程式專案中的類別。 這項限制似乎防止中所示範的技術**PlatInfoSap2**使用 PCL 中。 不過，Xamarin.Forms 包含類別，名為[ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) ，會使用.NET 反映，以從 PCL 存取應用程式專案中的公用類別。
+程式庫通常無法存取應用程式專案中的類別。 這項限制似乎防止所示的技巧**PlatInfoSap2** PCL 中無法使用。 不過，Xamarin.Forms 包含類別，名為[ `DependencyService` ](xref:Xamarin.Forms.DependencyService) ，會使用.NET 反映來存取從 PCL 中的應用程式專案中的公用類別。
 
-必須定義 PCL`interface`與它需要在每個平台使用的成員。 然後，每個平台會包含該介面的實作。 實作介面的類別必須用來識別[DependencyAttribute](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyAttribute/)組件層級上。
+必須定義 PCL`interface`需要在每個平台使用的成員。 然後，每個平台包含該介面的實作。 實作介面的類別必須用來識別[DependencyAttribute](xref:Xamarin.Forms.DependencyAttribute)組件層級。
 
-PCL 接著會使用泛型[ `Get` ](https://developer.xamarin.com/api/member/Xamarin.Forms.DependencyService.Get{T}/p/Xamarin.Forms.DependencyFetchTarget/)方法`DependencyService`取得平台類別實作之介面的執行個體。
+然後使用 PCL 中的泛型[ `Get` ](xref:Xamarin.Forms.DependencyService.Get*)方法`DependencyService`取得平台類別可實作介面的執行個體。
 
 這示範於[ **DisplayPlatformInfo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/DisplayPlatformInfo)範例。
 
-## <a name="platform-specific-sound-generation"></a>平台專屬的聲音產生
+## <a name="platform-specific-sound-generation"></a>產生特定平台音效
 
-[ **MonkeyTapWithSound** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/MonkeyTapWithSound)範例會將嗶聲，以**MonkeyTap**藉由存取聲音產生設備中每個平台的程式。
+[ **MonkeyTapWithSound** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/MonkeyTapWithSound)範例會新增至的嗶聲**MonkeyTap**藉由存取中每個平台的聲音產生功能的程式。
 
 
 

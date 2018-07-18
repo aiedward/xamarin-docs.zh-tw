@@ -1,16 +1,17 @@
 ---
 title: Xamarin 防火牆組態指示
-description: 您需要在您的防火牆中加入允許清的主機清單，以讓 Xamarin 平台能在您的公司中使用。
+description: 本文件提供的主機清單，必須列在防火牆的白名單中，讓 Xamarin 在公司環境中運作。
 ms.prod: xamarin
 ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
 author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
-ms.openlocfilehash: 34ac0b0eb2563b2122d7b093b19ac3a6ac78cbe5
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: dab4aeccd58da22736aea3139f11cbdff259ef7b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781087"
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin 防火牆組態指示
 

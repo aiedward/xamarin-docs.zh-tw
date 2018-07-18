@@ -1,6 +1,6 @@
 ---
 title: 第 3 部分。 XAML 標記延伸
-description: XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定為物件或間接參考來自其他來源的值。
+description: XAML 標記延伸模組組成允許屬性設為物件或間接參考來自其他來源的值的 XAML 中的重要功能。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
@@ -8,29 +8,29 @@ author: charlespetzold
 ms.author: chape
 ms.date: 3/27/2018
 ms.openlocfilehash: 6fcb051d2c24c7da169106b06ad5ebfc91edafa6
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245907"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935611"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 標記延伸
 
-_XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定為物件或間接參考來自其他來源的值。XAML 標記延伸是特別重要的共用物件，並參考整個應用程式，所使用的常數，但他們資料繫結中找到其最大的公用程式。_
+_XAML 標記延伸模組組成允許屬性設為物件或間接參考來自其他來源的值的 XAML 中的重要功能。XAML 標記延伸是特別重要，共用物件，以及參考整個應用程式，所使用的常數，但他們在資料繫結中找到其最大的公用程式。_
 
 ## <a name="xaml-markup-extensions"></a>XAML 標記延伸
 
-一般情況下，您可以使用 XAML 設定明確的值，例如字串、 數字、 列舉成員，或是轉換成在幕後值的字串物件的屬性。
+一般情況下，您可以使用 XAML 物件的屬性設定為明確的值，例如字串、 數字、 列舉成員或轉換成在幕後值的字串。
 
-有時候，不過，屬性必須改為參考其他，地方定義的值，或可能需要很少的處理程式碼在執行階段。 針對這些用途，XAML*標記延伸*可用。
+有時候，不過，屬性必須改為參考其他，定義於某處的值，或可能需要處理在執行階段的程式碼。 對於這些用途，XAML*標記延伸*可用。
 
-這些 XAML 標記延伸不是 XML 的擴充功能。 XAML 是完全合法的 XML。 因為它們都由類別中實作的程式碼被稱為"extensions" `IMarkupExtension`。 您可以撰寫您自己的自訂標記延伸。
+這些 XAML 標記延伸模組不是 XML 的延伸模組。 XAML 是完全合法的 XML。 它們之所以稱為"extensions"，因為它們由類別中實作的程式碼支援`IMarkupExtension`。 您可以撰寫自己的自訂標記延伸模組。
 
-許多情況下，XAML 標記延伸會立即辨識在 XAML 檔案，因為它們會顯示以大括號分隔的屬性設定為: {和}，但有時標記延伸會出現在標記做為傳統的項目。
+在許多情況下，XAML 標記延伸是 XAML 檔案中立即辨識出因為它們會顯示以大括號分隔的屬性設定為: {和}，但有時標記延伸模組會出現在標記中做為傳統的項目。
 
 ## <a name="shared-resources"></a>共用的資源
 
-某些 XAML 頁面會包含數個檢視的屬性設定為相同的值。 例如，有許多的屬性設定為這些`Button`物件是否相同：
+某些 XAML 頁面會包含數個檢視屬性設成相同的值。 例如，有很多的屬性設定為這些`Button`物件是否相同：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -67,11 +67,11 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
 </ContentPage>
 ```
 
-如果其中一個屬性必須變更，您可能想要進行的變更就可以一次，而不是三次。 如果這是程式碼，您會很可能會使用常數和靜態的唯讀物件維持一致且輕鬆地修改這類值。
+如果其中一個屬性需要變更，您可能想要進行的變更，就可以一次，而不是三次。 如果這是程式碼時，您會有可能使用常數和靜態的唯讀物件為了保護這類值一致且輕鬆地修改。
 
-在 XAML 中，一個常用來儲存這類值或方案中的物件*資源字典*。 `VisualElement`類別會定義名為的屬性`Resources`型別的`ResourceDictionary`，這是類型的索引鍵的字典`string`和類型的值`object`。 您可以將物件放入此字典，並從標記，在 XAML 中的所有參考。
+在 XAML 中，一個常用的解決方案是用來儲存這類值或物件中*資源字典*。 `VisualElement`類別會定義名為的屬性`Resources`型別的`ResourceDictionary`，這是類型的索引鍵的字典`string`型別的和值`object`。 您可以把物件放到這個字典，然後再從標記中，所有在 XAML 中參考它們。
 
-若要在網頁上使用的資源字典，包含一組`Resources`屬性項目標記。 它是最方便的方式將這些頁面的頂端：
+若要在頁面上使用的資源字典，包含一組`Resources`屬性項目標記。 它是最方便的方式將這些頁面的頂端：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -86,7 +86,7 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
 </ContentPage>
 ```
 
-它也是必要明確包含`ResourceDictionary`標記：
+它也是需要明確包含`ResourceDictionary`標記：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -103,7 +103,7 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
 </ContentPage>
 ```
 
-現在物件的各種類型的值可以加入至資源字典。 這些類型必須是可具現化。 它們不能是抽象類別，例如。 這些型別也必須擁有公用的無參數建構函式。 每個項目需要使用指定的字典索引鍵`x:Key`屬性。 例如: 
+現在物件的各種類型的值可以新增至資源字典。 這些類型必須是可具現化。 它們不能是抽象類別，例如。 這些類型也必須有公用的無參數建構函式。 每個項目需要使用指定的字典索引鍵`x:Key`屬性。 例如: 
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -125,9 +125,9 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
 </ContentPage>
 ```
 
-這兩個項目為結構類型的值`LayoutOptions`，和每個有唯一的索引鍵和一個或兩個屬性設定。 在程式碼和標記中，會更常使用的靜態欄位`LayoutOptions`，但以下是更方便地設定屬性。
+這些兩個項目是結構類型的值`LayoutOptions`，和每個都有唯一的索引鍵和一個或兩個屬性設定。 在程式碼和標記，它是更為普遍使用的靜態欄位`LayoutOptions`，但以下是更方便地設定屬性。
 
-現在就必須設定`HorizontalOptions`和`VerticalOptions`到這些資源，這些按鈕的屬性和可透過`StaticResource`XAML 標記延伸：
+現在就必須設定`HorizontalOptions`並`VerticalOptions`這些資源，這些按鈕的屬性並完成與`StaticResource`XAML 標記延伸模組：
 
 ```xaml
 <Button Text="Do this!"
@@ -139,11 +139,11 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
         FontSize="24" />
 ```
 
-`StaticResource`標記延伸一律以大括號，分隔並包含字典的索引鍵。
+`StaticResource`標記延伸模組一律會以大括號，並包含字典索引鍵。
 
-名稱`StaticResource`區分從`DynamicResource`，Xamarin.Forms 也支援。 `DynamicResource` 適用於在執行階段中，可能會變更的值相關聯的字典索引鍵時`StaticResource`一次的項目頁面上的建構時存取從字典的項目。
+名稱`StaticResource`使得它與`DynamicResource`，Xamarin.Forms 也支援。 `DynamicResource` 適用於在執行階段，可能會變更的值相關聯的字典索引鍵時`StaticResource`存取來自字典的項目，一次 頁面上的項目建構的時。
 
-如`BorderWidth`屬性，就必須在字典中儲存成雙精度浮點數。 XAML 方便地定義像一般資料類型的標記`x:Double`和`x:Int32`:
+針對`BorderWidth`屬性，就必須儲存在字典中的雙精度浮點數。 XAML 輕鬆定義標記等的一般資料型別`x:Double`和`x:Int32`:
 
 ```xaml
 <ContentPage.Resources>
@@ -183,7 +183,7 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
 </ContentPage.Resources>
 ```
 
-這些兩個資源可以參考相同的方式`LayoutOptions`值：
+這兩個資源中的相同方式來參考`LayoutOptions`值：
 
 ```xaml
 <Button Text="Do this!"
@@ -195,19 +195,19 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
         FontSize="24" />
 ```
 
-類型資源`Color`，您可以使用直接指派這些型別的屬性時，您使用的相同字串表示。 建立資源時，會叫用型別轉換子。 以下是類型的資源`Color`:
+資源類型的`Color`，您可以使用直接指派一種類型的屬性時，您使用的相同字串表示。 建立資源時，會叫用型別轉換子。 以下是一種資源類型的`Color`:
 
 ```xaml
 <Color x:Key="textColor">Red</Color>
 ```
 
-通常，程式組`FontSize`屬性成員的`NamedSize`列舉型別，例如`Large`。 `FontSizeConverter`類別將它轉換成平台相依的值，使用在幕後運作`Device.GetNamedSized`方法。 不過，當您定義字型大小資源，合理的多個使用數字的值，並顯示為`x:Double`類型：
+通常，程式設定`FontSize`屬性的成員`NamedSize`列舉型別，例如`Large`。 `FontSizeConverter`類別將它轉換成平台相依的值，使用在幕後的運作方式`Device.GetNamedSized`方法。 不過，當定義字型大小資源，較為合理使用數字的值，並顯示為`x:Double`類型：
 
 ```xaml
 <x:Double x:Key="fontSize">24</x:Double>
 ```
 
-現在的所有屬性除外`Text`資源設定所定義：
+現在所有屬性除了`Text`資源設定所定義：
 
 ```xaml
 <Button Text="Do this!"
@@ -219,7 +219,7 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
         FontSize="{StaticResource fontSize}" />
 ```
 
-它也可使用`OnPlatform`內定義的平台的不同值的資源字典。 以下是如何`OnPlatform`物件可以是不同的文字色彩的資源字典的一部分：
+您也可使用`OnPlatform`內定義不同的值，平台的資源字典。 以下是如何`OnPlatform`物件可以是不同的文字色彩的資源字典的一部分：
 
 ```xaml
 <OnPlatform x:Key="textColor"
@@ -230,9 +230,9 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
 </OnPlatform>
 ```
 
-請注意，`OnPlatform`取得兩者`x:Key`屬性，因為它是在字典中的物件和`x:TypeArguments`屬性，因為它是泛型類別。 `iOS`， `Android`，和`UWP`屬性都會轉換成`Color`時初始化物件的值。
+請注意，`OnPlatform`取得兩者`x:Key`屬性，因為它是在字典中的物件和`x:TypeArguments`屬性，因為它是泛型類別。 `iOS`， `Android`，並`UWP`屬性會轉換成`Color`值物件初始化時。
 
-以下是最終完成 XAML 檔案，以存取共用的六個值的三個按鈕：
+以下是最後一個完整的 XAML 檔案具有存取共用的六個值的三個按鈕：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -293,11 +293,11 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
 </ContentPage>
 ```
 
-螢幕擷取畫面會確認一致的樣式，平台相依樣式：
+一致的樣式，以及平台相依的樣式，請確認螢幕擷取畫面：
 
 [![](xaml-markup-extensions-images/sharedresources.png "樣式的控制項")](xaml-markup-extensions-images/sharedresources-large.png#lightbox "樣式的控制項")
 
-雖然它是最常用來定義`Resources`集合頂端的頁面上，請記住，`Resources`屬性由定義`VisualElement`，而且可以有`Resources`在頁面上的其他項目上的集合。 例如，再次嘗試新增一個`StackLayout`在此範例中：
+雖然它是最常用來定義`Resources`集合，頂端的頁面上，請記住，`Resources`屬性由定義`VisualElement`，而且可以有`Resources`在頁面上的其他元素的集合。 例如，再次嘗試新增一個`StackLayout`在此範例中：
 
 ```xaml
 <StackLayout>
@@ -310,24 +310,24 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
 </StackLayout>
 ```
 
-您會發現按鈕的文字色彩現在是藍色。 基本上，每當 XAML 剖析器遇到`StaticResource`標記延伸，它會搜尋視覺化樹狀結構，並使用第一個`ResourceDictionary`遇到包含該索引鍵。
+您會發現按鈕的文字色彩現在是藍色。 基本上，每當 XAML 剖析器碰到`StaticResource`標記延伸，它會搜尋在視覺樹狀結構並使用第一個`ResourceDictionary`遇到包含該索引鍵。
 
-最常見的資源字典中儲存的物件類型的其中一個方法是透過 Xamarin.Forms `Style`，其定義的屬性設定的集合。 文章中討論樣式[樣式](~/xamarin-forms/user-interface/styles/index.md)。
+最常見的資源字典中儲存的物件類型的其中一個方法是透過 Xamarin.Forms `Style`，其定義的屬性設定集合。 樣式會在本文中討論[樣式](~/xamarin-forms/user-interface/styles/index.md)。
 
-有時 xaml 新的開發人員不知道他們可以將放視覺項目例如`Label`或`Button`中`ResourceDictionary`。 雖然它一定可以，它不太合理。 目的`ResourceDictionary`是共用物件。 無法共用視覺項目。 相同的執行個體不能出現在單一頁面上的兩倍。
+有時候 XAML 新手開發人員想知道是否它們可以這類放視覺化項目`Label`或是`Button`在`ResourceDictionary`。 雖然您當然可以，它不太合理。 目的`ResourceDictionary`是共用的物件。 無法共用的視覺元素。 相同的執行個體不能出現在單一頁面上的兩倍。
 
 ## <a name="the-xstatic-markup-extension"></a>X:static 標記延伸
 
-儘管其名稱，則相似性`x:Static`和`StaticResource`非常不同。 `StaticResource` 傳回的物件從資源字典時`x:Static`存取下列其中之一：
+儘管其名稱的相似之處`x:Static`和`StaticResource`非常不同。 `StaticResource` 從資源字典，同時傳回物件`x:Static`存取下列其中之一：
 
 - 公用靜態欄位
-- 公用靜態屬性
+- 公用的靜態屬性
 - 公用常數欄位
 - 列舉的成員。
 
-`StaticResource`標記延伸支援 XAML 實作所定義的資源字典，雖然`x:Static`屬於內建的 XAML，做為`x`前置詞會顯示。
+`StaticResource`標記延伸支援 XAML 實作，定義資源字典，雖然`x:Static`屬於內建的 XAML，做為`x`前置詞會顯示。
 
-以下是幾個範例會示範如何`x:Static`可以明確地參考靜態欄位和列舉成員：
+以下是幾個範例示範如何`x:Static`可以明確地參考靜態欄位和列舉成員：
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -336,7 +336,7 @@ _XAML 標記延伸會構成一項重要功能在 XAML 中，可將屬性設定�
        TextColor="{x:Static Color.Aqua}" />
 ```
 
-目前為止，這不是很令人驚嘆。 但`x:Static`標記延伸也可以參考靜態欄位或屬性中自己的程式碼。 例如，以下是`AppConstants`類別，其中包含一些您可能想要使用整個應用程式的多個頁面上的靜態欄位：
+到目前為止，這不是很令人印象深刻。 但`x:Static`標記延伸也可以參考靜態欄位或是屬性從您自己的程式碼。 例如，以下是`AppConstants`類別，其中包含一些您可能想要使用整個應用程式的多個頁面上的靜態欄位：
 
 ```csharp
 using System;
@@ -378,22 +378,22 @@ namespace XamlSamples
 }
 ```
 
-若要參考這個類別的 XAML 檔案中的靜態欄位，您必須使用某種方式來表示此檔案所在的 XAML 檔案中。 您使用 XML 命名空間宣告。
+若要參考的 XAML 檔案中的這個類別的靜態欄位，您將需要某種方式來表示此檔案所在的 XAML 檔案中。 要這麼做，使用 XML 命名空間宣告。
 
-前文提過標準 Xamarin.Forms XAML 範本的過程中建立的 XAML 檔案包含兩個 XML 命名空間宣告： 一個用於存取 Xamarin.Forms 類別和另一個用於參考標記和屬性對 XAML 內建函式：
+重新叫用標準的 Xamarin.Forms XAML 範本的過程中建立的 XAML 檔案包含兩個 XML 命名空間宣告： 一個用於存取 Xamarin.Forms 類別，而另一個參考標記和屬性的 XAML 內建函式：
 
 ```csharp
 xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
-您將需要額外的 XML 命名空間宣告來存取其他類別。 每個額外的 XML 命名空間宣告會定義新的前置詞。 若要存取類別本機共用應用程式的.NET 標準程式庫，例如`AppConstants`，XAML 程式設計人員通常會使用前置詞`local`。 命名空間宣告必須指出 CLR (Common Language Runtime) 命名空間名稱，也就是.NET 命名空間名稱，這就是出現在 C# 中的名稱`namespace`定義或`using`指示詞：
+您將需要額外的 XML 命名空間宣告，來存取其他類別。 每個額外的 XML 命名空間宣告會定義新的前置詞。 若要存取類別本機共用應用程式的.NET Standard 程式庫，例如`AppConstants`，XAML 程式設計人員通常會使用前置詞`local`。 命名空間宣告必須指出 CLR (Common Language Runtime) 命名空間名稱，也就是.NET 命名空間名稱，也就是名稱出現在 C#`namespace`定義或`using`指示詞：
 
 ```csharp
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-您也可以定義標準.NET 程式庫參考任何組件中的.NET 命名空間的 XML 命名空間宣告。 例如，以下是`sys`前置詞為標準.net`System`命名空間中的**mscorlib**組件，這一次名人的 「 Microsoft 通用物件執行階段程式庫，"，但現在表示 「 多語系標準一般物件執行階段程式庫。 」 因為這是另一個組件，您也必須指定組件名稱，在此情況下**mscorlib**:
+您也可以定義.NET Standard 程式庫參考任何組件中的.NET 命名空間的 XML 命名空間宣告。 例如，以下是`sys`標準的.NET 的前置詞`System`命名空間，也就是**mscorlib**組件中，一次建立 「 Microsoft 通用物件執行階段程式庫，」 這項，但現在表示 「 多語系標準通用物件執行階段程式庫。 」 因為這是另一個組件時，您也必須指定組件名稱，在此情況下**mscorlib**:
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
@@ -401,9 +401,9 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 請注意，關鍵字`clr-namespace`後面接著冒號及.NET 命名空間名稱，後面接著一個分號，關鍵字`assembly`，等號，以及組件名稱。
 
-冒號後面的是，`clr-namespace`但是等號遵循`assembly`。 刻意方式定義在這個語法： 最 XML 命名空間宣告會參考 URI，例如開始 URI 配置名稱`http`，這一律後面接上冒號。 `clr-namespace`這個字串的一部分要模擬的慣例。
+是的之後要加冒號`clr-namespace`等號後面，但`assembly`。 語法中定義此方式刻意： 最 XML 命名空間宣告參考的 URI，例如開始一個 URI 配置名稱`http`，這一律後接冒號。 `clr-namespace`這個字串的一部分要模擬這個慣例。
 
-這些命名空間宣告中包含**StaticConstantsPage**範例。 請注意，`BoxView`維度會設為`Math.PI`和`Math.E`，但已縮放的 100 倍：
+中包含下列命名空間宣告**StaticConstantsPage**範例。 請注意，`BoxView`維度會設為`Math.PI`和`Math.E`，但縮放為 100 倍：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -431,24 +431,24 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-結果的大小`BoxView`與相對螢幕會因平台而異：
+結果大小`BoxView`相對於畫面是 平台相關：
 
  [![](xaml-markup-extensions-images/staticconstants.png "控制項使用 X:static 標記延伸")](xaml-markup-extensions-images/staticconstants-large.png#lightbox "控制項使用 X:static 標記延伸")
 
-## <a name="other-standard-markup-extensions"></a>其他標準的標記延伸
+## <a name="other-standard-markup-extensions"></a>其他標準標記延伸模組
 
-數個標記延伸都內建到 XAML，和支援 Xamarin.Forms XAML 檔中。 其中有些不會經常使用，但是需要它們時是不可或缺：
+數個標記延伸是 XAML 內建函式，並支援 Xamarin.Forms XAML 檔案中。 其中某些不常使用，但在需要時是不可或缺：
 
--  如果屬性有非`null`值由預設值，而您想要將它設定為`null`，將它設定為`{x:Null}`標記延伸。
--  如果屬性的型別`Type`，您可以將它指派給`Type`物件使用標記延伸`{x:Type someClass}`。
--  您可以定義在 XAML 中使用的陣列`x:Array`標記延伸。 這個標記延伸具有必要的屬性，名為`Type`表示陣列中項目的類型。
-- `Binding`標記延伸述[第 4 部分。資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
+-  如果屬性的非`null`數值，依預設，但您想要將它設定為`null`，將它設定為`{x:Null}`標記延伸。
+-  如果屬性型別的`Type`，您可以將它指派給`Type`物件使用標記延伸`{x:Type someClass}`。
+-  您可以定義在 XAML 中使用的陣列`x:Array`標記延伸。 這個標記延伸具有必要的屬性，名為`Type`表示陣列中的項目型別。
+- `Binding`標記延伸述[第 4 部分。資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
 
 ## <a name="the-constraintexpression-markup-extension"></a>ConstraintExpression 標記延伸
 
-標記延伸可以有屬性，但它們不設定類似 XML 屬性。 在標記延伸，屬性設定為以逗號分隔，而且沒有引號會出現在大括號。
+標記延伸模組可以有屬性，但它們不設定類似 XML 屬性。 在標記延伸模組屬性設定為以逗號分隔，而且沒有引號會出現大括弧括住。
 
-這可使用名為 Xamarin.Forms 標記延伸說明`ConstraintExpression`，能在`RelativeLayout`類別。 您可以指定的位置或子檢視的大小為常數，或相對於父代或其他具名的檢視。 語法`ConstraintExpression`可讓您設定的位置或大小檢視使用`Factor`屬性的另一個檢視，再加上一次`Constant`。 比這個更複雜的任何項目需要程式碼。
+這可以利用名為 Xamarin.Forms 標記延伸說明`ConstraintExpression`，能在`RelativeLayout`類別。 做為常數，或相對於父代或其他具名的檢視，您可以指定的位置或子檢視的大小。 語法`ConstraintExpression`可讓您設定的位置或大小的檢視，使用`Factor`屬性的另一個檢視，再加上一次`Constant`。 比這個更複雜的任何項目需要程式碼。
 
 以下為範例：
 
@@ -545,15 +545,15 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-此範例中，您應該採取最重要的課程或許是標記延伸語法： 沒有引號必須出現在標記延伸的大括號。 輸入標記延伸在 XAML 檔案中，時，自然想要以引號括住屬性值。 抵抗誘惑 ！
+此範例中，您應該採取最重要的一課可能是標記延伸語法： 沒有引號必須出現在標記延伸的大括號。 鍵入時標記延伸在 XAML 檔案中，很自然地想要以引號括住屬性的值。 抵禦常見的錯誤 ！
 
 以下是執行的程式：
 
-[![](xaml-markup-extensions-images/relativelayout.png "使用條件約束的相對配置")](xaml-markup-extensions-images/relativelayout-large.png#lightbox "相對的版面配置使用條件約束")
+[![](xaml-markup-extensions-images/relativelayout.png "使用條件約束的相對版面配置")](xaml-markup-extensions-images/relativelayout-large.png#lightbox "相對的版面配置使用條件約束")
 
 ## <a name="summary"></a>總結
 
-XAML 標記延伸，如下所示的 XAML 檔案，提供重要的支援。 可能是最有價值的 XAML 標記延伸，但是`Binding`，其說明本系列的下一個部分[第 4 部分。資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
+如下所示的 XAML 標記延伸提供 XAML 檔案的重要的支援。 但或許是最有價值的 XAML 標記延伸`Binding`，其中涵蓋在本系列的下一個部分[第 4 部分。資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
 
 
 

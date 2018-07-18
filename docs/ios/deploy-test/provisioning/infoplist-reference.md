@@ -1,18 +1,20 @@
 ---
-title: Info.plist 參考
+title: Xamarin.iOS 的 Info.plist 參考
+description: 本文件描述各種可在 Xamarin.iOS 應用程式之 Info.plist 檔案中設定的索引鍵/值組。 如果您的應用程式執行特定工作，例如存取位置、相片、麥克風或相機，這些索引鍵即為必要。
 ms.prod: xamarin
 ms.assetid: 944DFDB5-ADBA-4D6E-984C-5AEC19A1CC57
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/18/2017
-ms.openlocfilehash: 8ad2c5e8137dede71d9858aa144e440d984c1a75
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fa40add67155bd982041b829264a10b9764aa950
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785472"
 ---
-# <a name="infoplist-reference"></a>Info.plist 參考
+# <a name="infoplist-reference-for-xamarinios"></a>Xamarin.iOS 的 Info.plist 參考
 
 如需有關使用 Info.Plist 機碼的詳細資訊，請參閱[使用安全性與隱私權](~/ios/app-fundamentals/security-privacy.md)指南。 
 

@@ -1,21 +1,21 @@
 ---
-title: System.Data Xamarin.iOS 中
+title: 在 Xamarin.iOS 中的 System.Data
 description: 本文件說明如何使用 System.Data 和 Mono.Data.Sqlite.dll 存取 SQLite Xamarin.iOS 應用程式中的資料。
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: f20bdbdb9fe0d25e1ba545633e271af912aab3ba
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 183079c150ad4df05424d4dbf2980a307a889352
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784712"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997194"
 ---
-# <a name="systemdata-in-xamarinios"></a>System.Data Xamarin.iOS 中
+# <a name="systemdata-in-xamarinios"></a>在 Xamarin.iOS 中的 System.Data
 
-Xamarin.iOS 8.10 新增支援[System.Data](https://developer.xamarin.com/api/namespace/System.Data/)，包括`Mono.Data.Sqlite.dll`ADO.NET 提供者。 支援包括下列新增[組件](~/cross-platform/internals/available-assemblies.md):
+Xamarin.iOS 8.10 加入對[System.Data](xref:System.Data)，包括`Mono.Data.Sqlite.dll`ADO.NET 提供者。 支援包括下列的加法[組件](~/cross-platform/internals/available-assemblies.md):
 
 -  `System.Data.dll`
 -  `System.Data.Service.Client.dll`
@@ -27,7 +27,7 @@ Xamarin.iOS 8.10 新增支援[System.Data](https://developer.xamarin.com/api/nam
 
 ## <a name="example"></a>範例
 
-下列程式會建立在資料庫`Documents/mydb.db3`，如果資料庫先前沒有它，並會填入範例資料。 然後查詢資料庫，並將輸出寫入`stderr`。
+下列程式會建立在資料庫`Documents/mydb.db3`，如果資料庫先前沒有它，會填入範例資料。 然後查詢資料庫，並將輸出寫入`stderr`。
 
 ### <a name="add-references"></a>加入參考
 
@@ -37,7 +37,7 @@ Xamarin.iOS 8.10 新增支援[System.Data](https://developer.xamarin.com/api/nam
 
 ### <a name="sample-code"></a>程式碼範例
 
-下列程式碼顯示建立資料表並使用內嵌的 SQL 命令插入資料列的簡單範例：
+下列程式碼顯示建立資料表，並使用內嵌的 SQL 命令插入資料列的簡單範例：
 
 ```csharp
 using System;
@@ -107,12 +107,12 @@ class Demo {
 ```
 
 > [!IMPORTANT]
-> 如上述程式碼範例中所述，SQL 命令中內嵌字串，因為它會讓您的程式碼容易遭到不正確的作法是[SQL 資料隱碼](http://en.wikipedia.org/wiki/SQL_injection)。
+> 如上述程式碼範例中所述，它是不建議您將字串內嵌 SQL 命令中，因為它可讓您的程式碼容易遭到[SQL 資料隱碼](http://en.wikipedia.org/wiki/SQL_injection)。
 
 
 ### <a name="using-command-parameters"></a>使用命令參數
 
-下列程式碼會示範如何使用命令參數，將使用者輸入的文字安全地插入資料庫 （即使文字包含單一所有格符號之類的特殊 SQL 字元）：
+下列程式碼示範如何使用命令參數，將使用者輸入的文字放心地插入資料庫 （即使文字包含特殊 SQL 字元，例如單一撇號）：
 
 ```csharp
 // user input from Textbox control
@@ -131,38 +131,38 @@ using (var addCmd = conn.CreateCommand ()) {
 
 <a name="Missing_Functionality" />
 
-## <a name="missing-functionality"></a>遺漏的功能
+## <a name="missing-functionality"></a>缺少的功能
 
-同時**System.Data**和**Mono.Data.Sqlite**遺失某些功能。
+兩者**System.Data**並**Mono.Data.Sqlite**缺少一些功能。
 
 <a name="System.Data" />
 
 ### <a name="systemdata"></a>System.Data
 
-功能中遺漏**System.Data.dll**所組成：
+遺漏的功能**System.Data.dll**所組成：
 
--  任何項目需要[System.CodeDom](https://developer.xamarin.com/api/namespace/System.CodeDom/) （例如： [System.Data.TypedDataSetGenerator](https://developer.xamarin.com/api/type/System.Data.TypedDataSetGenerator/) )
--  XML 設定檔支援 （例如： [System.Data.Common.DbProviderConfigurationHandler](https://developer.xamarin.com/api/type/System.Data.Common.DbProviderConfigurationHandler/) )
--   [System.Data.Common.DbProviderFactories](https://developer.xamarin.com/api/type/System.Data.Common.DbProviderFactories/) （取決於 XML 組態檔支援）
--   [System.Data.OleDb](https://developer.xamarin.com/api/namespace/System.Data.OleDb/)
--   [System.Data.Odbc](https://developer.xamarin.com/api/namespace/System.Data.Odbc/)
--  `System.EnterpriseServices.dll`的相依性為*移除*從`System.Data.dll`，並產生移除[SqlConnection.EnlistDistributedTransaction(ITransaction)](https://developer.xamarin.com/api/member/System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction/(System.EnterpriseServices.ITransaction))方法。
+-  任何需要[System.CodeDom](xref:System.CodeDom) （例如： [System.Data.TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) )
+-  （例如 XML 組態檔的支援 [System.Data.Common.DbProviderConfigurationHandler](xref:System.Data.Common.DbProviderConfigurationHandler) )
+-   [System.Data.Common.DbProviderFactories](xref:System.Data.Common.DbProviderFactories) （取決於 XML 組態檔支援）
+-   [System.Data.OleDb](xref:System.Data.OleDb)
+-   [System.Data.Odbc](xref:System.Data.Odbc)
+-  `System.EnterpriseServices.dll`相依性已*移除*從`System.Data.dll`，產生的移除[SqlConnection.EnlistDistributedTransaction(ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*)方法。
 
 
 <a name="Mono.Data.Sqlite" />
 
 ### <a name="monodatasqlite"></a>Mono.Data.Sqlite
 
-同時， **Mono.Data.Sqlite.dll**不發生任何來源的程式碼變更時，但可能會改為主機的數目*執行階段*發出自`Mono.Data.Sqlite.dll`SQLite 3.5 會繫結。 iOS 8，同時，隨附於 SQLite 3.8.5。 部分就說，某些作業的兩個版本之間已經變更的。
+同時， **Mono.Data.Sqlite.dll**不發生任何原始程式碼變更，但可能會改為主機的數目*runtime*自發出`Mono.Data.Sqlite.dll`SQLite 3.5 會繫結。 iOS 8，則會隨附 SQLite 3.8.5。 您只要知道就說，有些事項已經改變兩個版本。
 
-較舊 iOS 版本隨附的 SQLite 下列版本：
+較舊 iOS 版本隨附的 SQLite 的下列版本：
 
-- **iOS 7** -3.7.13 版本。
-- **iOS 6** -3.7.13 版本。
-- **iOS 5** -3.7.7 版本。
-- **iOS 4** -3.6.22 版本。
+- **iOS 7** -3.7.13 的版本。
+- **iOS 6** -3.7.13 的版本。
+- **iOS 5** -3.7.7 的版本。
+- **iOS 4** -3.6.22 的版本。
 
-最常見的問題會顯示有關資料庫結構描述查詢，例如判斷在執行階段，資料行存在於指定的資料表，例如`Mono.Data.Sqlite.SqliteConnection.GetSchema`(覆寫[DbConnection.GetSchema](https://developer.xamarin.com/api/member/System.Data.Common.DbConnection.GetSchema/)) 和`Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable`(覆寫[DbDataReader.GetSchemaTable](https://developer.xamarin.com/api/member/System.Data.Common.DbDataReader.GetSchemaTable/))。 簡單地說，它看起來也任何項目使用[DataTable](https://developer.xamarin.com/api/type/System.Data.DataTable/)太運作。
+最常見的問題會顯示有關資料庫結構描述查詢，例如判斷在執行階段資料行存在指定的資料表，例如`Mono.Data.Sqlite.SqliteConnection.GetSchema`(覆寫[DbConnection.GetSchema](xref:System.Data.Common.DbConnection.GetSchema)和`Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable`（覆寫[DbDataReader.GetSchemaTable](xref:System.Data.Common.DbDataReader.GetSchemaTable)。 簡單地說，它看起來，任何使用[DataTable](xref:System.Data.DataTable)太運作。
 
 <a name="Data_Binding" />
 

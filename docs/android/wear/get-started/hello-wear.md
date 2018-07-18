@@ -12,6 +12,7 @@ ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33798410"
 ---
 # <a name="hello-wear"></a>Hello 損耗
 
@@ -44,13 +45,13 @@ _建立第一個 Android 戴上應用程式和損耗模擬器或裝置上執行�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-請確認**最小值 Android 目標**設**Android 5.0 （棒棒糖符號）**或更新版本： 
+請確認**最小值 Android 目標**設**Android 5.0 （棒棒糖符號）** 或更新版本： 
 
 [![將目標 Framework 設定為 Visual Studio 中的 Android 5.0](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-請確定目標架構設為**Android 5.0 （棒棒糖符號）**或更新版本：
+請確定目標架構設為**Android 5.0 （棒棒糖符號）** 或更新版本：
 
 [![設定 Android 5.0 Visual Studio 中的目標 Framework for Mac](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png#lightbox)
 

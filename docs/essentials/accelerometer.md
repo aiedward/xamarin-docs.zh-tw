@@ -1,32 +1,32 @@
 ---
 title: Xamarin.Essentials： 加速計
-description: 加速計中的類別 Xamarin.Essentials 可讓您監視裝置的加速計感應器，表示之三個維度空間中的裝置。
+description: Xamarin.Essentials 加速計類別可讓您監視裝置的加速計感應器，表示這三個維度空間中的裝置加速。
 ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 99529f08348254dff7577b7e82da739fabd63a14
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 15e2cb69806f281e88e226b7bcd87a20e149d508
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781861"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947305"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials： 加速計
 
 ![發行前版本的 NuGet](~/media/shared/pre-release.png)
 
-**加速計**類別可讓您監視裝置的加速計感應器表示之三個維度空間中的裝置。
+**加速計**類別可讓您監視裝置的加速計感應器表示的三個維度空間中的裝置加速。
 
 ## <a name="using-accelerometer"></a>使用加速計
 
-在您類別中加入 Xamarin.Essentials 的參考：
+在您的類別加入 Xamarin.Essentials 的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-加速計功能的運作方式是呼叫`Start`和`Stop`接聽的加速功能變更的方法。 任何變更會透過送回`ReadingChanged`事件。 以下是範例使用方式：
+加速計功能的運作方式是呼叫`Start`和`Stop`接聽變更為 加速的方法。 任何變更會傳送回到`ReadingChanged`事件。 以下是範例使用方式：
 
 ```csharp
 
@@ -69,26 +69,21 @@ public class AccelerometerTest
 }
 ```
 
-加速計讀數會回報中。G 是 gravitation 單位強制等於諸地球重力欄位 (9.81 m/s ^2)。
+加速計的數據會回報中。G 是 gravitation 單位強制等於所施加的地球重力欄位 (9.81 m/s ^2)。
 
-座標系統定義的預設方向電話螢幕。 裝置的螢幕方向變更時，不會交換這兩個軸。
+座標系統被定義相對於其預設方向電話的畫面。 裝置的螢幕方向變更時，不會交換這兩個軸。
 
-X 軸是水平和右邊的點，Y 軸是垂直和點和外部的螢幕的正面朝向點的 Z 軸。 在此系統中，座標至螢幕後方，會有負面的 Z 值。
+X 軸是水平及點向右，Y 軸是垂直的並指向上方和 Z 軸點往螢幕的正面的外部。 在此系統中，至螢幕後方的座標會有負面的 Z 值。
 
 例如：
 
-* 當裝置位於資料表上的一般模式，其左邊向右推入 x 加速值為正數。
+* 當裝置位於一般的資料表上，且會在其左側向右推入時，x 加速值為正數。
 
-* 裝置所在的資料表上的一般模式，加速值時，+1.00 G 或 (+ 9.81 m/s ^2)，這對應到裝置的加速 (0 m/s ^2) 重力 force 減號 (-9.81 m/s ^2) 及標準化如同 g。
+* 裝置位於一般的資料表上，加速值時，+1.00 G 或 (+ 9.81 m/s ^2)，對應到裝置的加速 (0 m/s ^2) 受到重力強制減 (-9.81 m/s ^2) 和正規化與 g。
 
-* 當裝置所在的資料表上的一般模式，推向 m/s 的加速功能 sky ^2，加速值等於 + 9.81 其對應至裝置的加速 (+ m/s ^2) 重力 force 減號 (-9.81 m/s ^2) 及標準化中。 
+* 裝置何時位於一般的資料表上，並加速 m/s 的天空推向 ^2 加速值會等於 + 9.81 分別對應至裝置的加速 (+ m/s ^2) 受到重力強制減 (-9.81 m/s ^2) 及標準化中。 
 
-## <a name="sensor-speedxrefxamarinessentialssensorspeed"></a>[感應器速度](xref:Xamarin.Essentials.SensorSpeed)
-
-- **最快**– 盡量 （不保證會傳回在 UI 執行緒上） 取得感應器資料。
-- **遊戲**– 速率適合遊戲 （不保證會傳回在 UI 執行緒上）。
-- **一般**– 適用於螢幕方向變更預設速率。
-- **Ui** – 速率適用於一般使用者介面。
+[!include[](~/essentials/includes/sensor-speed.md)]
 
 ## <a name="api"></a>API
 

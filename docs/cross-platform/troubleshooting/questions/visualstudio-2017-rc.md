@@ -12,6 +12,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33946716"
 ---
 # <a name="can-i-use-visual-studio-2017-release-candidate-with-xamarin"></a>可以使用 Visual Studio 2017 發行候選版本使用 Xamarin 嗎？
 
@@ -42,7 +43,7 @@ ms.lasthandoff: 05/10/2018
 
   [![](visualstudio-2017-rc-images/reinstall1-sml.png "Visual Studio 安裝程式的應用程式的搜尋結果")](visualstudio-2017-rc-images/reinstall1-orig.png#lightbox)
 
-2. 選取：。 **行動裝置開發的.NET （預覽）**中工作負載 索引標籤，或
+2. 選取：。 **行動裝置開發的.NET （預覽）** 中工作負載 索引標籤，或
 
   [![](visualstudio-2017-rc-images/reinstall2-sml.png "VS 安裝程式工作負載 索引標籤")](visualstudio-2017-rc-images/reinstall2-orig.png#lightbox) b。 **Xamarin**中**個別元件** 索引標籤
 
@@ -58,7 +59,7 @@ ms.lasthandoff: 05/10/2018
     [![](visualstudio-2017-rc-images/reinstall5-sml.png "新的專案畫面")](visualstudio-2017-rc-images/reinstall5-orig.png#lightbox)
 4. 選取：
     
-    a. **行動裝置開發的.NET （預覽）**中工作負載 索引標籤，或
+    a. **行動裝置開發的.NET （預覽）** 中工作負載 索引標籤，或
 
     [![](visualstudio-2017-rc-images/reinstall2-sml.png "VS 安裝程式工作負載 索引標籤")](visualstudio-2017-rc-images/reinstall2-orig.png#lightbox) b。 **Xamarin**中**個別元件** 索引標籤
 

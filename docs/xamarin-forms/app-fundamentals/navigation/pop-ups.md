@@ -1,37 +1,38 @@
 ---
 title: 顯示快顯視窗
-description: Xamarin.Forms 提供兩個 pop up 類似使用者介面項目 – 警示和動作工作表。 本文示範如何使用警示和動作表應用程式開發介面，詢問使用者簡單的問題，以及引導使用者進行的工作。
+description: Xamarin.Forms 提供兩個快顯註冊類似使用者介面項目 – 警示和動作的工作表。 這篇文章示範如何使用警示和動作表 Api，詢問使用者簡單的問題，並引導使用者完成工作。
 ms.prod: xamarin
 ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 97f0917e4e8670ab379aae1b2707ae08cb29bb70
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 156c2f9dca47a7755d4f810d7921a05662388ded
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996710"
 ---
 # <a name="displaying-pop-ups"></a>顯示快顯視窗
 
-_Xamarin.Forms 提供兩個 pop up 類似使用者介面項目 – 警示和動作工作表。本文示範如何使用警示和動作表應用程式開發介面，詢問使用者簡單的問題，以及引導使用者進行的工作。_
+_Xamarin.Forms 提供兩個快顯註冊類似使用者介面項目 – 警示和動作的工作表。這篇文章示範如何使用警示和動作表 Api，詢問使用者簡單的問題，並引導使用者完成工作。_
 
-顯示警示，或要求使用者做出選擇，是常見的 UI 工作。 Xamarin.Forms 有兩種方法[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)與快顯視窗透過使用者互動的類別： [ `DisplayAlert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)/)和[ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])/)。 它們會轉譯與每個平台上的適當原生控制項。
+顯示警示，或要求使用者做出的選擇是常見 UI 的工作。 Xamarin.Forms 有兩種方法[ `Page` ](xref:Xamarin.Forms.Page)與快顯視窗，透過使用者互動的類別： [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*)並[ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*)。 它們會與每個平台上的適當原生控制項呈現。
 
 ## <a name="displaying-an-alert"></a>顯示警示
 
-所有 Xamarin.Forms 支援的平台都有強制回應的快顯視窗，警告使用者，或詢問簡單的問題。 若要顯示這些警示，在 Xamarin.Forms 中，使用[ `DisplayAlert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)/)方法上任何[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)。 下列程式碼顯示簡單訊息給使用者：
+所有的 Xamarin.Forms 支援平台會有以警示使用者，或詢問簡單的問題，其中的強制回應快顯視窗。 若要顯示在 Xamarin.Forms 中的這些警示，請使用[ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*)方法在任何[ `Page` ](xref:Xamarin.Forms.Page)。 下列程式碼會顯示簡單訊息給使用者：
 
 ```csharp
 DisplayAlert ("Alert", "You have been alerted", "OK");
 ```
 
-![](pop-ups-images/alert.png "具有一個按鈕的警示 對話方塊")
+![](pop-ups-images/alert.png "具有一個按鈕的警示對話方塊")
 
-此範例不會從使用者收集資訊。 警示會顯示為強制回應和關閉使用者之後會繼續與應用程式互動。
+此範例不會從使用者收集資訊。 會以強制回應方式顯示的警示和關閉使用者之後會繼續與應用程式互動。
 
-[ `DisplayAlert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)/)方法也可用來擷取使用者的回應，藉由呈現兩個按鈕，並傳回`boolean`。 若要從警示取得回應，提供兩個按鈕的文字和`await`方法。 在使用者選取其中一個選項之後的回應會傳回您的程式碼。 請注意`async`和`await`在下列範例程式碼中的關鍵字：
+[ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*)方法也可用來擷取使用者的回應呈現兩個按鈕，並傳回`boolean`。 若要從警示取得回應，提供這兩個按鈕的文字和`await`方法。 在使用者選取其中一個選項之後的回應會傳回您的程式碼。 附註`async`和`await`在下列範例程式碼中的關鍵字：
 
 ```csharp
 async void OnAlertYesNoClicked (object sender, EventArgs e)
@@ -43,11 +44,11 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 
 [![DisplayAlert](pop-ups-images/alert2-sml.png "警示有兩個按鈕的對話方塊")](pop-ups-images/alert2.png#lightbox "警示有兩個按鈕的對話方塊")
 
-## <a name="guiding-users-through-tasks"></a>工作的逐步指導使用者
+## <a name="guiding-users-through-tasks"></a>引導使用者完成工作
 
-[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html)是常見的 UI 項目，在 iOS 中。 Xamarin.Forms [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])/)方法可讓您在跨平台應用程式中，呈現在 Android 和 UWP 原生的替代項目中包含此控制項。
+[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html)是在 iOS 中的常見 UI 項目。 Xamarin.Forms [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*)方法可讓您跨平台的應用程式，呈現在 Android 和 UWP 的原生替代項目加入此控制項。
 
-若要顯示動作的工作表， `await` [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])/)任何[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)、 將訊息傳遞和按鈕標籤字串設定為。 方法會傳回已由使用者所按下按鈕的字串標籤。 簡單的範例如下所示：
+若要顯示的動作工作表中， `await` [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*)任何[ `Page` ](xref:Xamarin.Forms.Page)、 將訊息傳遞和按鈕標籤為字串。 方法會傳回使用者所按按鈕的字串標籤。 簡單的範例如下所示：
 
 ```csharp
 async void OnActionSheetSimpleClicked (object sender, EventArgs e)
@@ -59,7 +60,7 @@ async void OnActionSheetSimpleClicked (object sender, EventArgs e)
 
 ![](pop-ups-images/action.png "ActionSheet 對話方塊")
 
-`destroy`按鈕呈現方式不同於其他項目，並可以保留`null`或指定為第三個字串參數。 下列範例會使用`destroy`按鈕：
+`destroy`  按鈕的方式不同於其他轉譯，可以保留`null`或指定為第三個字串參數。 下列範例會使用`destroy`按鈕：
 
 ```csharp
 async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
@@ -69,11 +70,11 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 }
 ```
 
-[![DisplayActionSheet](pop-ups-images/action2-sml.png "終結按鈕動作的工作表對話方塊")](pop-ups-images/action2.png#lightbox "終結按鈕動作的工作表對話方塊")
+[![DisplayActionSheet](pop-ups-images/action2-sml.png "Destroy 按鈕動作的工作表對話方塊")](pop-ups-images/action2.png#lightbox "終結按鈕動作的工作表對話方塊")
 
 ## <a name="summary"></a>總結
 
-本文示範使用警示和動作表應用程式開發介面，詢問使用者簡單的問題，以及引導使用者進行的工作。 Xamarin.Forms 有兩種方法[ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)與快顯視窗透過使用者互動的類別： [ `DisplayAlert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)/)和[ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])/)，而且它們可同時使用每個平台上的適當原生控制項呈現。
+這篇文章示範如何使用警示和動作表 Api，詢問使用者簡單的問題，並引導使用者完成工作。 Xamarin.Forms 有兩種方法[ `Page` ](xref:Xamarin.Forms.Page)與快顯視窗，透過使用者互動的類別： [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*)並[ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*)，而且是同時使用每個平台上的適當原生控制項呈現。
 
 
 

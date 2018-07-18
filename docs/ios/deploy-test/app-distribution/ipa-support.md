@@ -1,5 +1,5 @@
 ---
-title: IPA 支援
+title: Xamarin.iOS 中的 IPA 支援
 description: 本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 IPA 檔案，以供測試或內部應用程式的內部作業散發使用。
 ms.prod: xamarin
 ms.assetid: D253C2DB-852E-6FC6-C9FD-574730B8DB19
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d63624ed486079f44e9756ee84612863e6176d7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4fd64a1ebf05dd149304f49d8282ee1b38bfcf03
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321359"
 ---
-# <a name="ipa-support"></a>IPA 支援
+# <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS 中的 IPA 支援
 
 _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 IPA 檔案，以供測試或內部應用程式的內部作業散發使用。_
 
@@ -131,10 +132,10 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
      ![](ipa-support-images/imagexs03.png "從清單中選取 iTunesMetadata.plist")
 
-1. 直接呼叫 **xbuild** (或 Classic API 的 **mdtool**)，並在命令列上傳遞此屬性：
+1. 在命令列上直接呼叫 **msbuild** 並傳遞這個屬性：
 
     ```bash
-    /Library/Frameworks/Mono.framework/Commands/xbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
+    /Library/Frameworks/Mono.framework/Commands/msbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
     ```
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -177,9 +178,9 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 新屬性有數個可能的使用方式：
 
-例如，若要將 **.ipa** 檔案輸出至舊的預設目錄 (如 Xamarin.iOS 9.6 和較舊版本)，您可以使用下列其中一種方法來將 `IpaPackageDir` 屬性設定為 `$(OutputPath)`。 兩種方法都與所有 Unified API Xamarin.iOS 組建相容，包括 IDE 組建以及使用 **xbuild**、**msbuild** 或 **mdtool** 的命令列組建：
+例如，若要將 **.ipa** 檔案輸出至舊的預設目錄 (如 Xamarin.iOS 9.6 和較舊版本)，您可以使用下列其中一種方法來將 `IpaPackageDir` 屬性設定為 `$(OutputPath)`。 兩種方法都與所有 Unified API Xamarin.iOS 組建相容，包括 IDE 組建以及使用 **msbuild**、**xbuild** 或 **mdtool** 的命令列組建：
 
-- 第一種選擇是在 **MSBuild** 檔案的 `<PropertyGroup>` 元素內設定 `IpaPackageDir` 屬性。 例如，您可以將下列 `<PropertyGroup>` 新增至 iOS 應用程式專案 **.csproj** 檔案的底部 (在結尾的 `</Project>` 標記之前)：
+- 第一種選擇是在 **MSBuild** 檔案的 `<PropertyGroup>` 項目內設定 `IpaPackageDir` 屬性。 例如，您可以將下列 `<PropertyGroup>` 新增至 iOS 應用程式專案 **.csproj** 檔案的底部 (在結尾的 `</Project>` 標記之前)：
 
     ```xml
     <PropertyGroup>
@@ -211,19 +212,17 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
     </PropertyGroup>
     ```
 
-**msbuild** 或 **xbuild** 命令列組建這項替代技術是新增 `/p:` 命令列引數來設定 `IpaPackageDir` 屬性。 在此情況下，請注意 **msbuild** 不會展開命令列上傳入的 `$()` 運算式，因此無法使用 `$(OutputPath)` 語法。 您必須改為提供完整路徑名稱。 Mono 的 **xbuild** 命令不會展開 `$()` 運算式，但仍偏好使用完整路徑名稱，因為未來版本最終會改用 [**msbuild** 的跨平台版本](http://www.mono-project.com/docs/about-mono/releases/4.4.0/#msbuild-preview-for-os-x)來取代 **xbuild**。
+**msbuild** 或 **xbuild** 命令列組建這項替代技術是新增 `/p:` 引數來設定 `IpaPackageDir` 屬性。 在此情況下，請注意 **msbuild** 不會展開命令列上傳入的 `$()` 運算式，因此無法使用 `$(OutputPath)` 語法。 您必須改為提供完整路徑名稱。 Mono 的 **xbuild** 命令不會展開 `$()` 運算式，但仍偏好使用完整路徑名稱，原因是已改用 [**msbuild** 的跨平台版本](https://www.mono-project.com/docs/about-mono/releases/5.0.0/#msbuild)來取代 **xbuild**。
 
 使用這種方法的完整範例在 Windows 上看起來可能會類似下列內容：
-
 
 ```bash
 msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:ServerAddress="192.168.1.3" /p:ServerUser="macuser" /p:IpaPackageDir="%USERPROFILE%\Builds" /t:Build SingleViewIphone1.sln
 ```
-
 或在 Mac 上可能如下：
 
 ```bash
-xbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
+msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
 ```
 
 <a name="installipa" />

@@ -1,28 +1,30 @@
 ---
 title: App Store 散發
-description: 本文件涵蓋將應用程式散發至 Apple App Store 的需求。
+description: 本文件描述如何在 App Store 上發佈 Xamarin.iOS 應用程式。 它討論如何建立發佈憑證、如何建立散發佈建設定檔，以及如何設定 iTunes Connect 和提交應用程式。
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 7a38c77dde7a66f2db194cd8888a2c32a3529a9a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b763407797cf635908cf34cce4f1a6a06325000d
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209255"
 ---
 # <a name="app-store-distribution"></a>App Store 散發
-
-本文件涵蓋將應用程式散發至 Apple App Store 的需求。
 
 完成 Xamarin.iOS 應用程式開發之後，軟體開發生命週期的下一步就是使用 iTunes App Store 將應用程式散發給使用者。 這是散發應用程式最常用的方式。 藉由 Apple 的 App Store 來發佈應用程式，可提供給全球使用者使用。
 
 > [!IMPORTANT]
-> **重要：**您**必須**是 Apple Developer Program 的個人或組織成員身分，才可使用 iTunes Connect 並將應用程式發佈至 App Store。 如果您是 Apple Developer **Enterprise** Program 的成員，將無法執行此頁面的操作步驟。
+> Apple [已宣告](https://developer.apple.com/news/?id=05072018a)從 2018 年 7 月開始，提交至 App Store 的所有應用程式和更新都必須是使用 iOS 11 SDK 建置，且必須[支援 iPhone X 顯示器](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)。
 
 如同開發應用程式，散發應用程式需使用適當的「佈建設定檔」來佈建應用程式。 佈建設定檔是一種檔案，其包含程式碼簽署資訊、應用程式身分識別及預期的散發機制。 對於非 App Store 的散發，佈建設定檔也包含可用來部署應用程式之裝置的相關資訊。
+
+> [!IMPORTANT]
+> **重要：** 您**必須**是 Apple Developer Program 的個人或組織成員身分，才可使用 iTunes Connect 並將應用程式發佈至 App Store。 如果您是 Apple Developer **Enterprise** Program 的成員，將無法執行此頁面的操作步驟。
 
 <a name="provisioning" />
 

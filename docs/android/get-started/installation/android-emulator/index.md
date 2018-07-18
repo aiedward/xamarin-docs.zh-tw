@@ -1,44 +1,52 @@
 ---
 title: Android Emulator 安裝
-description: 本節描述如何準備 Google Android 模擬器來測試您的應用程式。 其中說明如何加速模擬器以達到最大效能，並示範如何使用模擬器管理員來建立和自訂虛擬裝置。
+description: Android Emulator 模擬器可在各種不同組態中執行，以模擬不同裝置。 本指南說明如何準備 Android 模擬器來測試您的應用程式。
 ms.prod: xamarin
 ms.assetid: 889963B7-F4DA-41D9-9B8D-B733BB71A329
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/25/2018
-ms.openlocfilehash: 215e298068b7a3a23b2e469e923f172c8303bbcb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 06/22/2018
+ms.openlocfilehash: f281227ae6ee17548e9c4653d52c7ae6d2bfff2d
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935031"
 ---
 # <a name="android-emulator-setup"></a>Android Emulator 安裝
 
-_本節描述如何準備 Google Android 模擬器來測試您的應用程式。_ 其中說明如何加速模擬器以達到最大效能，並示範如何使用模擬器管理員來建立和自訂虛擬裝置。
+_本指南說明如何準備 Android Emulator 來測試您的應用程式。_
 
 
 ## <a name="overview"></a>總覽
 
-Google Android SDK 模擬器可在各種不同組態中執行，以模擬不同裝置。 這其中每一種組態都會建立為「虛擬裝置」。 在本指南中，您將了解如何加速 Android Emulator 以提升效能，並使用 Xamarin Android Emulator 管理員或舊版 Google 模擬器管理員來建立虛擬裝置。
+Android Emulator 可在各種不同組態中執行，以模擬不同裝置。 每個組態都稱為_虛擬裝置_。 當您在模擬器上部署和測試您的應用程式時，您要選取模擬如 Nexus 或像素電話等實體 Android 裝置的預先設定或自訂虛擬裝置。
 
-
-> [!NOTE]
-> 自 Android SDK Tools **26.0.1** 版起，Google 移除了對現有 AVD/SDK 管理員的支援，改而提供其新推出的 CLI (命令列介面) 工具。 由於此項取代變更，因此，現在會針對 Android 工具 26.0.1 和更新版本改用 Xamarin SDK/裝置管理員，而非 Google SDK/模擬器管理  (如需 Xamarin SDK Manager 的詳細資訊，請參閱 [Android SDK 安裝](~/android/get-started/installation/android-sdk.md))。
-
+下列章節說明如何加速 Android 模擬器以達到最大效能，如何使用 Android Device Manager 建立及自訂虛擬裝置，以及如何自訂虛擬裝置的設定檔內容。 此外，疑難排解一節會說明常見的模擬器問題和因應措施。
 
 ## <a name="sections"></a>章節
 
-### <a name="hardware-accelerationandroidget-startedinstallationandroid-emulatorhardware-accelerationmd"></a>[硬體加速](~/android/get-started/installation/android-emulator/hardware-acceleration.md)
+### <a name="hardware-acceleration-for-emulator-performanceandroidget-startedinstallationandroid-emulatorhardware-accelerationmd"></a>[硬體加速以提升模擬器效能](~/android/get-started/installation/android-emulator/hardware-acceleration.md)
 
-如何準備您的電腦以達到最大的 Google Android 模擬器效能。 由於 Google Android 模擬器在沒有硬體加速的情況下可能非常緩慢；因此，建議您先在電腦上啟用硬體加速，然後再使用 Google Android 模擬器。
+如何準備您的電腦以達到最大的 Android 模擬器效能。
+由於 Android Emulator 在沒有硬體加速的情況下可能非常緩慢，因此建議您先在電腦上啟用硬體加速，再使用此模擬器。
 
-### <a name="xamarin-android-device-managerandroidget-startedinstallationandroid-emulatorxamarin-device-managermd"></a>[Xamarin Android 裝置管理員](~/android/get-started/installation/android-emulator/xamarin-device-manager.md)
+### <a name="managing-virtual-devices-with-the-android-device-managerandroidget-startedinstallationandroid-emulatordevice-managermd"></a>[使用 Android Device Manager 管理虛擬裝置](~/android/get-started/installation/android-emulator/device-manager.md)
 
-如何使用 Xamarin Android 裝置管理員，來建立和自訂 Google Android 模擬器虛擬裝置。 **Xamarin Android 裝置管理員** (目前處於預覽狀態) 旨在取代舊版 Google 模擬器管理員。 如果您的目標是 Android Oreo 8.0 或更新版本，就必須使用 Xamarin Android 裝置管理員，而非 Google 模擬器管理員。
+如何使用 Android Device Manager 建立與自訂虛擬裝置。
 
-### <a name="google-emulator-managerandroidget-startedinstallationandroid-emulatorgoogle-emulator-managermd"></a>[Google 模擬器管理員](~/android/get-started/installation/android-emulator/google-emulator-manager.md)
+### <a name="editing-android-virtual-device-propertiesandroidget-startedinstallationandroid-emulatordevice-propertiesmd"></a>[編輯 Android 虛擬裝置屬性](~/android/get-started/installation/android-emulator/device-properties.md)
 
-如何使用舊版 Google 模擬器管理員，來建立和自訂 Google Android 模擬器虛擬裝置。 只要保持在 Android SDK 工具 25.2.5 版或更低版本，您就能使用原本的 Google 模擬器管理員繼續執行 Google Android Emulator。
+如何使用 Android Device Manager 編輯虛擬裝置的設定檔內容。
 
-當您設定 Android SDK 模擬器之後，請參閱 [Google Android 模擬器](~/android/deploy-test/debugging/android-sdk-emulator/index.md)，以了解如何啟動模擬器，並使用它來測試和偵錯應用程式的相關資訊。
+### <a name="android-emulator-troubleshootingandroidget-startedinstallationandroid-emulatortroubleshootingmd"></a>[Android Emulator Troubleshooting](~/android/get-started/installation/android-emulator/troubleshooting.md) (Android Emulator 疑難排解)
+
+本文說明執行 Android Emulator 時最常發生的警告訊息和問題，以及因應措施和秘訣。
+
+在您設定好 Android Emulator 之後，請參閱 [Debugging on the Android Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) (在 Android Emulator 上偵錯)，以了解如何啟動模擬器，並用其測試和偵錯應用程式的相關資訊。
+
+
+> [!NOTE]
+> 自 Android SDK Tools **26.0.1** 版起，Google 移除了對現有 AVD/SDK 管理員的支援，改而提供其新推出的 CLI (命令列介面) 工具。 由於此項取代變更；因此，現在會針對 Android Tools 26.0.1 和更新版本改用 Xamarin SDK/Device Manager，而非 Google SDK/Device Manager。 如需 Xamarin SDK Manager 的詳細資訊，請參閱[設定 Xamarin.Android 的 Android SDK](~/android/get-started/installation/android-sdk.md)。
+

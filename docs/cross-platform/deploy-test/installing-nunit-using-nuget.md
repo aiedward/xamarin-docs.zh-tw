@@ -1,16 +1,17 @@
 ---
 title: 使用 NuGet 安裝 NUnit 2.6.4
-description: 本指南涵蓋如何使用 NuGet 將 NUnit 3.0 降級至 NUnit 2.6.4。
+description: 本文件描述如何使用 NuGet 將 NUnit 3.0 降級至 NUnit 2.6.4。 這在使用 Xamarin.UITest 時是必要的，因為它不支援 NUnit 3.x。
 ms.prod: xamarin
 ms.assetid: 7683F2B8-7FDF-48C4-8E7D-649D4D4E79F0
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: e74975864dc7f3f00c6b04fe48139589c1f52ad5
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: fb0ffd87a61f20744e68eafdd7eb8de691df6f75
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781516"
 ---
 # <a name="installing-nunit-264-using-nuget"></a>使用 NuGet 安裝 NUnit 2.6.4
 

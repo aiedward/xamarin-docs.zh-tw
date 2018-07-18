@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: topgenorth
 ms.author: toopge
-ms.date: 03/29/2017
-ms.openlocfilehash: 80bf3cb4e8e27355ccf6213dbfd07a17e992961b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: 690329aa1577c66b3aa2794342a8e367477d3a74
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793804"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066919"
 ---
 # <a name="inspector-installation-and-requirements"></a>偵測器的安裝和需求
 
@@ -19,13 +19,15 @@ ms.locfileid: "34793804"
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-1. 下載並安裝[Xamarin 活頁簿 （& s) 偵測器適用於 Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi)。
-2. [檢查您的應用程式 ！](~/tools/inspector/inspect.md)
+1. 下載並安裝[Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/)選取**行動應用程式開發的.NET**工作負載。
+1. [登入](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio)啟用您的企業訂閱。
+1. [檢查](~/tools/inspector/inspect.md)您自己的應用程式 ！
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-1. 下載並安裝[Xamarin 活頁簿 （& s) 適用於 Mac 的偵測器](https://dl.xamarin.com/interactive/XamarinInteractive.pkg)。
-2. [檢查您的應用程式 ！](~/tools/inspector/inspect.md)
+1. 下載並安裝[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)。
+1. [登入](https://docs.microsoft.com/visualstudio/mac/activation)啟用您的企業訂閱。
+1. [檢查](~/tools/inspector/inspect.md)您自己的應用程式 ！
 
 -----
 
@@ -38,10 +40,8 @@ ms.locfileid: "34793804"
 
 ### <a name="supported-ides"></a>支援的 Ide
 
-- 6.2 或更高的 Xamarin Studio
-- Visual Studio for Mac Preview 4 或更新版本
-- Visual Studio 2015 和 Xamarin 4.3.x 或更新版本
-- Visual Studio 2017 搭配 Xamarin 的工作負載
+- Visual Studio for Mac
+- 使用 visual Studio 2017**行動應用程式開發的.NET**工作負載
 
 企業客戶可使用即時應用程式檢查。
 
@@ -51,10 +51,10 @@ ms.locfileid: "34793804"
 
 |應用程式平台|IDE 支援|注意|
 |--- |--- |--- |
-|Mac （整合）|在 Mac 上才支援|
-|iOS （整合）|支援 XS 和 Visual Studio 中|檢查從 Windows 的 iOS 應用程式需要相同版本的 Mac 組建主機上也會安裝的偵測器。|
-|Android|支援 XS 和 Visual Studio 中|必須為目標 Android > = 4.0.3， **fastdev**啟用。<br />必須使用 Google、 Visual Studio 或 Xamarin Android 模擬器。 Android 7 模擬器可能不允許在此階段的檢查。|
-|WPF|在 Windows 上的 Visual Studio 中才支援|
+|Mac|只支援 Visual Studio for Mac|
+|iOS|在 Visual Studio 2017 和 Visual Studio for Mac 支援| |
+|Android|在 Visual Studio 2017 和 Visual Studio for Mac 支援|必須為目標 Android > = 4.0.3， **fastdev**啟用。<br />必須使用 Google、 Visual Studio 或 Xamarin Android 模擬器。 Android 7 模擬器可能不允許在此階段的檢查。|
+|WPF|在 Visual Studio 2017 中才支援|
 
 <a name="reporting-bugs" />
 
@@ -73,11 +73,6 @@ ms.locfileid: "34793804"
 Visual Studio For Mac
 
 - **Visual Studio > 有關 Visual Studio > 顯示詳細資料 > 複製資訊**
-- 貼到 錯誤報告
-
-Xamarin Studio
-
-- **Xamarin Studio > 有關 Xamarin Studio > 顯示詳細資料 > 複製資訊**
 - 貼到 錯誤報告
 
 Visual Studio
@@ -102,10 +97,6 @@ Visual Studio For Mac
 
 - `~/Library/Logs/VisualStudio/7.0/Ide.log`
 
-Xamarin Studio
-
-- `~/Library/Logs/XamarinStudio-6.0/Ide.log`
-
 Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
@@ -129,42 +120,3 @@ Visual Studio
 - 裝置是否有網路連線能力 （透過 web 瀏覽器檢查）？
 
 [client-bugs]: https://github.com/Microsoft/workbooks/issues/new
-
-## <a name="uninstall"></a>解除安裝
-
-### <a name="windows"></a>Windows
-
-根據您如何取得活頁簿 （& s） 偵測器，您可能執行兩個解除安裝程序。 請檢查這兩個完全解除安裝軟體。
-
-#### <a name="visual-studio-installer"></a>Visual Studio 安裝程式
-
-如果您有 Visual Studio 2017，開啟**Visual Studio 安裝程式**，然後查看**個別元件**如**Xamarin 活頁簿**。 如果已核取，請取消選取，然後按一下 解除安裝的 修改。
-
-#### <a name="system-uninstall"></a>系統解除安裝
-
-如果您已安裝的活頁簿 （& s） 偵測器自行下載安裝程式，就會需要透過解除安裝**應用程式和功能**系統設定 頁面在 Windows 10 上或透過**新增/移除程式**較舊版本的 Windows 控制台中。
-
-> **開始 > 設定 > System > 應用程式和功能**
-
-![](install-images/windows-remove.png "Xamarin 活頁簿和 [應用程式與功能] 中列出的偵測器")
-
-**您仍應遵循 Visual Studio 安裝程式，以便確定活頁簿的程序 （& s) 偵測器不會不取得重新安裝您不知情的情況下。**
-
-### <a name="macos"></a>macOS
-
-從開始[1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/)，Xamarin 活頁簿 （& s） 偵測器可以從解除安裝終端機執行：
-
-```bash
-sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
-```
-
-檔案和目錄，則會移除，並要求確認才能繼續解除安裝程式將會詳細說明。
-
-傳遞`-help`引數`uninstall`更進階案例中的指令碼。
-
-對於較舊版本，您必須手動移除下列項目：
-
-1. 刪除 `"/Applications/Xamarin Workbooks.app"` 上的 Workbooks 應用程式
-2. 刪除 `"Applications/Xamarin Inspector.app"` 上的 Inspector 應用程式
-3. 刪除增益集：`"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` 和 `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
-4. 刪除這裡的 Inspector 和支援檔：`/Library/Frameworks/Xamarin.Interactive.framework` 和 `/Library/Frameworks/Xamarin.Inspector.framework`

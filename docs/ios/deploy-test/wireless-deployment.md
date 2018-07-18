@@ -1,19 +1,20 @@
 ---
-title: 無線部署
-description: 此功能可讓您透過網路連線來部署至 iOS 或 Apple TV 裝置
+title: 適用於 Xamarin.iOS 和 tvOS 應用程式的無線部署
+description: 本文件描述如何以無線方式，從 Visual Studio fro Mac 或 Visual Studio 2017 將 Xamarin.iOS 應用程式部署到 iOS 裝置。
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/09/2018
-ms.openlocfilehash: b331ea61915b4f202aa971658a5a54d1a8038d64
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ade7eb7ff26fec8df616401801585e499ddf4206
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785514"
 ---
-# <a name="wireless-deployment"></a>無線部署
+# <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>適用於 Xamarin.iOS 和 tvOS 應用程式的無線部署
 
 開發人員工作流程中有一項重要工作是部署至裝置。 Xcode 9 引進了透過網路部署至 iOS 裝置或 Apple TV 的選項，使您不用在每次想要針對應用程式進行部署及偵錯時，都必須以實體纜線連接您的裝置。 此功能已於 Visual Studio for Mac 7.4 和 Visual Studio 15.6 版本中導入。
 

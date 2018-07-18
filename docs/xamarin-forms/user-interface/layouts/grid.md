@@ -1,62 +1,62 @@
 ---
 title: Xamarin.Forms 方格
-description: 本文說明如何使用 Xamarin.Forms 方格類別來處理資料列和資料行的方格中，呈現檢視。
+description: 這篇文章說明如何使用 Xamarin.Forms 方格類別來呈現檢視擁有的資料列和資料行的方格中。
 ms.prod: xamarin
 ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: a50144f5e0962bd74858bb7731e30cef5dd31b6d
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 01dd59d5e94b473316b03f9035d38305fad42880
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245149"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994498"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms 方格
 
-[`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) 排列成資料列和資料行的檢視表的支援。 資料列和資料行，都可以設定成比例的大小或絕對大小。 `Grid`配置不能與傳統資料表混淆，而不是呈現表格式資料。 `Grid` 沒有資料列、 資料行或資料格格式化的概念。 不同於 HTML 表格`Grid`純粹供配置內容。
+[`Grid`](xref:Xamarin.Forms.Grid) 排列成資料列和資料行的檢視表的支援。 資料列和資料行，都可以設定成比例的大小或絕對的大小。 `Grid`版面配置不應混淆與傳統的資料表，而不是呈現表格式資料。 `Grid` 沒有資料列、 資料行或資料格的格式化概念。 不同於 HTML 資料表，`Grid`純粹是用來配置內容。
 
-[![](grid-images/layouts-sml.png "Xamarin.Forms 配置")](grid-images/layouts.png#lightbox "Xamarin.Forms 版面配置")
+[![](grid-images/layouts-sml.png "Xamarin.Forms 版面配置")](grid-images/layouts.png#lightbox "Xamarin.Forms 版面配置")
 
-本文將說明如何：
+本文將介紹：
 
-- **[目的](#Purpose)** &ndash;的常見用法`Grid`。
-- **[使用量](#Usage)** &ndash;如何使用`Grid`達到您所需的設計。
-  - **[資料列和資料行](#Rows_and_Columns)** &ndash;指定資料列和資料行`Grid`。
-  - **[將檢視](#Placing_Views)** &ndash;將檢視加入到特定的資料列和資料行上的方格。
+- **[用途](#Purpose)** &ndash;的常見用法`Grid`。
+- **[使用方式](#Usage)** &ndash;如何使用`Grid`以達到您所需的設計。
+  - **[資料列和資料行](#Rows_and_Columns)** &ndash;指定的資料列和資料行`Grid`。
+  - **[將檢視放](#Placing_Views)** &ndash;將檢視加入至方格的特定資料列和資料行。
   - **[間距](#Spacing)** &ndash;設定資料列和資料行之間的空格。
-  - **[範圍](#Spans)** &ndash;設定跨越多個資料列或資料行的項目。
+  - **[Span](#Spans)**  &ndash;設定跨越多個資料列或資料行的項目。
 
-![](grid-images/grid.png "方格瀏覽")
+![](grid-images/grid.png "方格探勘")
 
 ## <a name="purpose"></a>用途
 
-`Grid` 可用來排列成方格檢視。 這是在許多情況下很有用：
+`Grid` 可用來排列方格的檢視。 這是在許多情況下很有用：
 
-- 排列中的 [小算盤] 應用程式按鈕
+- 排列的計算機應用程式中的按鈕
 - 排列按鈕/選擇在方格中，例如 iOS 或 Android 的主畫面
-- 排列檢視，使其在一個維度 （與在某些工具列中） 中的相同大小的
+- 排列檢視，使其在一個維度 （如某些工具列） 中的相同大小的
 
 ## <a name="usage"></a>使用量
 
-不同於傳統的資料表`Grid`不會推斷的數目和大小的資料列和資料行的內容。 相反地，`Grid`具有`RowDefinitions`和`ColumnDefinitions`集合。 這些保留多少資料列和資料行配置的定義。若要加入檢視`Grid`與指定的資料列和資料行索引，其識別哪些資料列和資料行應置於檢視。
+不同於傳統的資料表，`Grid`不會推斷的資料列和資料行內容的大小與數量。 相反地，`Grid`已經`RowDefinitions`和`ColumnDefinitions`集合。 這些保留資料列和資料行的數目會配置的定義。檢視會新增至`Grid`與指定的資料列和資料行索引，其識別哪些資料列和資料行應置於檢視。
 
 <a name="Rows_and_Columns" />
 
 ### <a name="rows-and-columns"></a>資料列和資料行
 
-資料列和資料行的資訊會儲存在`Grid`的`RowDefinitions`  &  `ColumnDefinitions`屬性，這是每個集合的[ `RowDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RowDefinition/)和[ `ColumnDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColumnDefinition/)分別物件。 `RowDefinition` 具有單一內容， `Height`，和`ColumnDefinition`具有單一內容， `Width`。 高度和寬度的選項如下所示：
+資料列和資料行的資訊會儲存在`Grid`的`RowDefinitions`  &  `ColumnDefinitions`屬性，也就是每個集合的[ `RowDefinition` ](xref:Xamarin.Forms.RowDefinition)並[ `ColumnDefinition` ](xref:Xamarin.Forms.ColumnDefinition)物件，分別。 `RowDefinition` 具有單一屬性， `Height`，並`ColumnDefinition`具有單一屬性， `Width`。 高度和寬度的選項如下所示：
 
-- **自動**&ndash;自動大小以符合資料列或資料行中的內容。 指定為[ `GridUnitType.Auto` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/) C# 中，或做為`Auto`在 XAML 中。
-- **Proportional(*)** &ndash;大小為剩餘的空間所佔百分比的資料行和資料列。 指定為值和`GridUnitType.Star`C# 中以及`#*`在 XAML 中，與`#`所需要的值。 指定一個資料列/資料行具有`*`會使它填滿可用空間。
-- **絕對**&ndash;調整資料行和特定的固定高度和寬度的值的資料列的大小。 指定為值和`GridUnitType.Absolute`C# 中以及`#`在 XAML 中，與`#`所需要的值。
+- **自動**&ndash;自動以符合內容中的資料列或資料行的大小。 指定為[ `GridUnitType.Auto` ](xref:Xamarin.Forms.GridUnitType) C# 中，或為`Auto`在 XAML 中。
+- **Proportional(*)** &ndash;大小為剩餘的空間所佔百分比的資料行和資料列。 指定為值和`GridUnitType.Star`C# 中，以及`#*`XAML，在使用`#`所需的值。 指定一個資料列/資料行具有`*`會讓它填滿可用空間。
+- **絕對**&ndash;大小資料行和資料列以特定的固定高度和寬度的值。 指定為值和`GridUnitType.Absolute`C# 中，以及`#`XAML，在使用`#`所需的值。
 
 > [!NOTE]
-> 資料行的寬度值會設定為 '*' 依預設，在 Xamarin.Forms，並確保資料行，將會填滿可用空間。
+> 資料行的寬度值會設定為 '*' 藉由在 Xamarin.Forms 中的預設值，這可確保資料行，將會填滿可用空間。
 
-請考慮需要三個資料列和兩個資料行的應用程式。 下方的資料列必須是完全 200px 高而且上方資料列必須是兩次中間的資料列的高度。 左側資料行必須是寬度不足以容納內容，右邊的資料行必須以填滿剩餘的空間。
+請考慮需要三個資料列和兩個資料行的應用程式。 下方的資料列必須是完全 200px 高，第一列必須是兩次中間的資料列一樣高。 左邊的資料行必須是寬度不足以容納內容，並正確的資料行必須以填滿剩餘的空間。
 
 在 XAML 中：
 
@@ -86,13 +86,13 @@ grid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (200) }
 
 <a name="Placing_Views" />
 
-### <a name="placing-views-in-a-grid"></a>放在方格中檢視
+### <a name="placing-views-in-a-grid"></a>將檢視放置在方格中
 
-若要將檢視在`Grid`必須先將它們做為子系加入至方格中，然後指定哪些資料列和資料行所屬中。
+若要將檢視在`Grid`您必須將它們做為子系加入方格中，則指定哪些資料列和資料行所屬中。
 
-在 XAML 中，使用`Grid.Row`和`Grid.Column`上每個個別的檢視，以指定的位置。 請注意，`Grid.Row`和`Grid.Column`指定基礎清單的資料列和資料行中以零為起始的位置。 這表示在 4 x 4 方格中，左上資料格為 (0，0) 和右下方儲存格是 (3，3)。
+在 XAML 中，使用`Grid.Row`和`Grid.Column`上每個個別的檢視，以指定位置。 請注意，`Grid.Row`和`Grid.Column`指定基礎資料列和資料行的清單中以零為起始的位置。 這表示在 4x4 方格中，左上角儲存格為 (0，0) 和右下方儲存格是 (3，3)。
 
-`Grid`顯示以下包含四個資料格：
+`Grid`顯示下面包含四個資料格：
 
 ![](grid-images/label-grid.png "具有四個檢視方格")
 
@@ -136,9 +136,9 @@ grid.Children.Add(bottomLeft, 0, 1);
 grid.Children.Add(bottomRight, 1, 1);
 ```
 
-上述程式碼會建立方格具有四個標籤、 兩個資料行，以及兩個資料列。 請注意每個標籤會有相同的大小和資料列就會擴展來使用所有可用的空間。
+上述程式碼建立四個標籤、 兩個資料行，與兩個資料列的格線。 請注意，每個標籤會有相同的大小和擴充資料列時，會以使用所有可用的空間。
 
-在上述範例中，檢視會加入至[ `Grid.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.Children/)集合使用[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/)指定左端和頂端的引數的多載。 當使用[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/)多載，指定左、 右、 上框線和下引數，而左邊和最上層的引數一律會參考儲存格內[ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/)，右邊和底部引數可能會參考儲存格以外的`Grid`。 這是因為右引數必須永遠大於左邊的引數，而且下引數必須永遠大於最上層的引數。 下列範例示範使用這兩個對等的程式碼`Add`多載：
+在上述範例中，檢視會新增至[ `Grid.Children` ](xref:Xamarin.Forms.Grid.Children)集合[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/)指定左邊和頂端的引數的多載。 使用時[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/)多載，指定左、 右、 上框線和下引數，而左邊和頂端的引數一律會參考儲存格內[ `Grid` ](xref:Xamarin.Forms.Grid)，右邊和下方的引數可能會參考儲存格以外的`Grid`。 這是因為右引數一律必須晚於左邊的引數，以及底部引數一律必須晚於最上層的引數。 下列範例示範使用這兩個對等的程式碼`Add`多載：
 
 ```csharp
 // left, top
@@ -161,7 +161,7 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2);
 - **ColumnSpacing** &ndash;的資料行之間的空間量。
 - **RowSpacing** &ndash;的資料列之間的空間量。
 
-下列 XAML 指定`Grid`兩個資料行、 一個資料列，與 5 像素的資料行之間的間距大小：
+下列 XAML 指定`Grid`使用兩個資料行、 一個資料列和 5 的資料行之間的間距像素：
 
 ```xaml
 <Grid ColumnSpacing="5">
@@ -182,11 +182,11 @@ grid.ColumnDefnitions.Add(new ColumnDefinition { Width = new GridLength (1, Grid
 
 ### <a name="spans"></a>跨越
 
-使用方格時，通常沒有多個資料列或資料行應佔據的項目。 請考慮一個簡單的計算機應用程式：
+通常使用一個方格，時不應佔據多個資料列或資料行的項目。 請考慮一個簡單的計算機應用程式：
 
 ![](grid-images/calculator.png "Calulator 應用程式")
 
-請注意，0 按鈕跨越兩個資料行，就像每個平台內建的計算機上。 這利用完成`ColumnSpan`屬性，指定資料行數目的項目應佔據。 適用於該按鈕的 XAML:
+請注意，[0] 按鈕跨越兩個資料行，就像每個平台內建的計算機上。 這利用完成`ColumnSpan`屬性，指定資料行數目的項目應佔據。 這個按鈕 XAML:
 
 ```xaml
 <Button Text = "0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" />
@@ -200,9 +200,9 @@ controlGrid.Children.Add (zeroButton, 0, 4);
 Grid.SetColumnSpan (zeroButton, 2);
 ```
 
-請注意，在程式碼的靜態方法`Grid`類別用來執行定位的變更包括變更`ColumnSpan`和`RowSpan`。 也請注意，像可以在任何時間設定其他屬性，設定使用的靜態方法的屬性必須已先在方格中有變更。
+請注意，在程式碼中，靜態方法`Grid`類別用來執行定位的變更，包括變更`ColumnSpan`和`RowSpan`。 也請注意，不像可以隨時設定其他屬性，設定使用的靜態方法的屬性必須已先在方格中有變更。
 
-適用於上述的 [小算盤] 應用程式的完整 XAML 如下所示：
+上述的計算機應用程式的完整 XAML 如下所示：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -294,7 +294,7 @@ BackgroundColor="#404040">
 </ContentPage>
 ```
 
-請注意，在方格頂端的標籤和 [零] 按鈕都 occuping 多超過一個資料行。 雖然無法使用巢狀的方格，達成類似的版面配置`ColumnSpan`  &  `RowSpan`方法是比較簡單。
+請注意，在方格頂端標籤和 [零] 按鈕都 occuping 多個資料行。 雖然可以使用巢狀的方格，來達成類似的版面配置`ColumnSpan`  &  `RowSpan`方法是更簡單。
 
 C# 實作：
 
@@ -383,7 +383,7 @@ public CalculatorGridCode ()
 
 ## <a name="related-links"></a>相關連結
 
-- [透過 Xamarin.Forms，第 17 章建立行動應用程式](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
-- [格線](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/)
+- [使用 Xamarin.Forms 時，第 17 章建立行動應用程式](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
+- [格線](xref:Xamarin.Forms.Grid)
 - [版面配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [BusinessTumble 範例 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)

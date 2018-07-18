@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/13/2018
-ms.openlocfilehash: 29fc698e6ed1cfe02ce329813342916d5e7a1651
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 92bcfc888c52f9f74c8484295666da8f5ef7a14c
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209332"
 ---
 # <a name="xamarin-for-java-developers"></a>適用於 Java 開發人員的 Xamarin
 
@@ -50,7 +51,7 @@ Java 和 C# 都會編譯為要在受控執行環境中執行的中繼語言。 C
 
 -   Java 不支援像是 `#define` 的前置處理器指示詞。
 
--   Java 不支援不帶正負號的整數類型，但 C 提供不帶正負號的整數類型，例如 `ulong`、`uint`、`ushort` 和 `byte`。
+-   Java 不支援不帶正負號的整數類型，而 C# 則能提供不帶正負號的整數類型，例如 `ulong`、`uint`、`ushort` 和 `byte`。
 
 -   Java 不支援運算子多載；您可以在 C# 中多載運算子和轉換。
 

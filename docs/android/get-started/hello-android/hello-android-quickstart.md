@@ -7,12 +7,13 @@ ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/25/2018
-ms.openlocfilehash: 7faf4ef090815ea799209e76816113f06889bd21
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/30/2018
+ms.openlocfilehash: 9e4349b807c98e6f5cfbc55fa57153f99054d474
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732462"
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android：快速入門
 
@@ -48,7 +49,7 @@ _在這份含有兩部分的指南中，您將會建置您的第一個 Xamarin.A
 
 ## <a name="configuring-emulators"></a>設定模擬器
 
-如果您使用 Google 的 Android SDK 模擬器，我們建議您設定模擬器以使用硬體加速。 設定硬體加速的指示位於[硬體加速](~/android/get-started/installation/android-emulator/hardware-acceleration.md)。
+如果您使用 Google 的 Android SDK 模擬器，我們建議您設定模擬器以使用硬體加速。 設定硬體加速的指示請參閱[硬體加速以提升模擬器效能](~/android/get-started/installation/android-emulator/hardware-acceleration.md)。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 

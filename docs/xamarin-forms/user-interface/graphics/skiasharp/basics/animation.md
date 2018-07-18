@@ -1,31 +1,31 @@
 ---
-title: 在 SkiaSharp 基本動畫
-description: 本文章說明如何建立動畫 SkiaSharp 圖形 Xamarin.Forms 應用程式中，並示範此範例程式碼。
+title: SkiaSharp 中的基本動畫
+description: 本文說明如何以動畫顯示 SkiaSharp 圖形在 Xamarin.Forms 應用程式，並示範此範例程式碼。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 08583a62719927b900c6aeede1b3b4398ed803de
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 393716e17b042224f2b0bae8c526132489af26c6
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243339"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994807"
 ---
-# <a name="basic-animation-in-skiasharp"></a>在 SkiaSharp 基本動畫
+# <a name="basic-animation-in-skiasharp"></a>SkiaSharp 中的基本動畫
 
-_了解如何製作動畫 SkiaSharp 圖形_
+_探索如何以動畫顯示 SkiaSharp 圖形_
 
-您可以依據造成 SkiaSharp 圖形，在 Xamarin.Forms`PaintSurface`方法呼叫頻率很高，每當稍有不同繪製圖形。 以下是動畫同心圓看似展開從中心與本文稍後所示：
+您可以動畫 SkiaSharp 在 Xamarin.Forms 中的圖形顯示造成`PaintSurface`每個方法呼叫頻率很高，時間稍有不同繪製圖形。 以下是動畫看似展開從管理中心的同心圓這篇文章稍後所示：
 
-![](animation-images/animationexample.png "數個同心圓看似展開從中心")
+![](animation-images/animationexample.png "數個同心圓看似擴充從中心")
 
-**Pulsating 橢圓形**頁面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式繪製橢圓形的兩個軸，使其顯示來 pulsating，而且您甚至可以控制這個 pulsation 速率：
+**Pulsating 橢圓形**頁面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式繪製橢圓形的兩個軸，使它看起來像是 pulsating，和您甚至可以控制此 pulsation 的速率：
 
 
-[ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)檔案會具現化 Xamarin.Forms`Slider`和`Label`來顯示目前滑桿的值。 這是整合的常見方式`SKCanvasView`與其他 Xamarin.Forms 檢視：
+[ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)檔案會具現化 Xamarin.Forms`Slider`和`Label`顯示滑桿的目前值。 這是常見的方式來整合`SKCanvasView`與其他 Xamarin.Forms 檢視：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -60,7 +60,7 @@ _了解如何製作動畫 SkiaSharp 圖形_
 </ContentPage>
 ```
 
-程式碼後置檔案會具現化`Stopwatch`物件做為高有效位數時鐘。 `OnAppearing`覆寫設定`pageIsActive`欄位設為`true`，並呼叫方法，名為`AnimationLoop`。 `OnDisappearing`覆寫設定的`pageIsActive`欄位設為`false`:
+程式碼後置檔案會具現化`Stopwatch`物件做為高有效位數時鐘。 `OnAppearing`設定會覆寫`pageIsActive`欄位設為`true`，並呼叫方法，名為`AnimationLoop`。 `OnDisappearing`覆寫集`pageIsActive`欄位設為`false`:
 
 ```csharp
 Stopwatch stopwatch = new Stopwatch();
@@ -86,7 +86,7 @@ protected override void OnDisappearing()
 }
 ```
 
-`AnimationLoop`方法啟動`Stopwatch`，然後迴圈時`pageIsActive`是`true`。 這是基本上是 「 無限迴圈 」 頁面為作用中，但是它並不會造成程式停止回應，因為迴圈結束時，呼叫`Task.Delay`與`await`運算子，可讓程式函式的其他部分。 引數`Task.Delay`導致其完成之後 1/30 秒。 這會定義動畫的畫面播放速率。
+`AnimationLoop`方法啟動`Stopwatch`，然後在迴圈`pageIsActive`是`true`。 這是基本上是 「 無限迴圈 」，而頁面為作用中，但它不會造成程式停止回應，因為迴圈結尾呼叫`Task.Delay`與`await`運算子，可讓程式函式的其他部分。 引數`Task.Delay`導致其在 1/30 秒後完成。 這會定義動畫的畫面播放速率。
 
 ```csharp
 async Task AnimationLoop()
@@ -107,7 +107,7 @@ async Task AnimationLoop()
 
 ```
 
-`while`迴圈一開始會取得從循環時間`Slider`。 這是以秒為單位，例如，5 的時間。 第二個陳述式會計算值為`t`如*時間*。 如`cycleTime`5，`t`會增加從 0 到 1 每隔 5 秒。 引數`Math.Sin`函式中第二個陳述式的範圍從 0 到 2 π 每隔 5 秒。 `Math.Sin`函式會傳回值，範圍從 0 到 1 的最下層為 0，然後以&ndash;1 和 0 每 5 秒，但速度更慢變更時的值是 1 或-1 的值。 值 1 加入的值永遠為正數，因此然後它會除以 2，因此值範圍是從 ½ 設為 1，0 到 ½，但大約 1 和 0 值時，速度較慢的 ½。 這存放在`scale` 欄位中，而`SKCanvasView`失效。
+`while`迴圈，一開始會取得從循環時間`Slider`。 這是以秒為單位，例如，5 的時間。 第二個陳述式會計算的值`t`for*時間*。 針對`cycleTime`為 5，`t`會增加從 0 到 1 每隔 5 秒。 引數`Math.Sin`函式，在第二個陳述式的範圍從 0 到 2 π 每隔 5 秒。 `Math.Sin`函式傳回值，這個值範圍從 0 到 1 後到 0，然後到&ndash;1 和 0 每隔 5 秒，但速度變更時的值是 1 或-1 的值。 值 1 加入的值一律是正數，因此再它除以 2，因此值範圍從 ½ ½ 為 ½，但約 1 和 0 的值時，速度較慢的 0 到 1。 這會儲存在`scale`欄位中，而`SKCanvasView`失效。
 
 `PaintSurface`方法會使用此`scale`來計算兩個橢圓形的軸的值：
 
@@ -140,17 +140,17 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-方法會計算最大的 radius 根據顯示區域大小，以及根據最大的 radius 最小 radius。 `scale`值以動畫方式介於 0 和 1 之間，再回到 0，因此方法所使用的是，用來計算`xRadius`和`yRadius`的範圍之間`minRadius`和`maxRadius`。 若要繪製填滿橢圓形會使用這些值：
+方法會計算根據顯示區域的大小上限 radius 和最大的 radius 為基礎的最小半徑。 `scale`值以動畫顯示介於 0 和 1 之間，再回復成 0，因此這個方法所使用的是，來計算`xRadius`並`yRadius`其範圍之間`minRadius`和`maxRadius`。 這些值會用來繪製並填滿橢圓形：
 
-[![](animation-images/pulsatingellipse-small.png "震動橢圓形頁面的三個螢幕擷取畫面")](animation-images/pulsatingellipse-large.png#lightbox "震動橢圓形頁面的三個螢幕擷取畫面")
+[![](animation-images/pulsatingellipse-small.png "震動的省略符號 頁面的三個螢幕擷取畫面")](animation-images/pulsatingellipse-large.png#lightbox "震動的省略符號 頁面的三個螢幕擷取畫面")
 
-請注意，`SKPaint`中建立物件`using`區塊。 例如許多 SkiaSharp 類別`SKPaint`衍生自`SKObject`，其衍生自`SKNativeObject`，它會實作[ `IDisposable` ](https://developer.xamarin.com/api/type/System.IDisposable/)介面。 `SKPaint` 覆寫`Dispose`方法來釋放 unmanaged 的資源。
+請注意，`SKPaint`中建立物件`using`區塊。 和許多 SkiaSharp 類別一樣`SKPaint`衍生自`SKObject`，其衍生自`SKNativeObject`，它會實作[ `IDisposable` ](xref:System.IDisposable)介面。 `SKPaint` 覆寫`Dispose`方法來釋放 unmanaged 的資源。
 
- 放置`SKPaint`中`using`區塊可確保`Dispose`呼叫釋放這些 unmanaged 的資源的區塊的結尾。 發生這種情況還是時所使用的記憶體`SKPaint`物件將會釋出.NET 記憶體回收行程，但是在動畫程式碼中，所以最好先稍微積極方式更有條理地釋放記憶體。
+ 將放`SKPaint`中`using`區塊可確保`Dispose`稱為釋放這些 unmanaged 的資源區塊的結尾。 發生這種情況還是時所使用的記憶體`SKPaint`物件釋放.NET 記憶體回收行程，但在動畫的程式碼中，最好是有點主動在釋放記憶體，以更有條理地的方式。
 
- 在此特定情況下更好的解決方案，可建立兩個`SKPaint`物件一次，並將它們儲存為欄位。
+ 更好的解決方案，在這個案例會建立兩個`SKPaint`物件一次，並將它們儲存為欄位。
 
-這就是**展開圓形**動畫沒有。 [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs)類別開始會定義數個欄位，包括`SKPaint`物件：
+這正是**展開圓形**動畫沒有。 [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs)類別一開始會定義數個欄位，包括`SKPaint`物件：
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage
@@ -178,7 +178,7 @@ public class ExpandingCirclesPage : ContentPage
 }
 ```
 
-此程式會使用不同的方法來根據 Xamarin.Forms 動畫`Device.StartTimer`。 `t`欄位以動畫方式從 0 到 1 每`cycleTime`（毫秒):
+此程式會使用不同的方法來以 Xamarin.Forms 為基礎的動畫`Device.StartTimer`。 `t`欄位以動畫顯示從 0 到 1 每`cycleTime`毫秒：
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage
@@ -212,7 +212,7 @@ public class ExpandingCirclesPage : ContentPage
 }
 ```
 
-`PaintSurface`處理常式繪製 5 同心圓，具有動畫的半徑。 如果`baseRadius`變數的計算方式為 100，然後為`t`會從 0 動畫為 1，5 的圓形增加從 0 到 100、 100 到 200、 200 至 300、 400 到 300 和 400 到 500 的半徑。 適用於大部分的圓形`strokeWidth`是 50，但第一個圓形`strokeWidth`繪製從 0 到 50。 適用於大部分的圓形，顏色是藍色，但最後的圓形，色彩由藍色動畫為透明：
+`PaintSurface`處理常式繪製 5 個同心圓，具有動畫效果的半徑。 如果`baseRadius`變數的計算方式為 100，然後為`t`從 0 至 1，5 的圓形增加從 0 到 100、 100 到 200、 200 到 300、 300 到 400 和 400 到 500 部半徑動畫顯示。 適用於大部分的圓圈`strokeWidth`是 50，但第一個圓形`strokeWidth`會從 0 展示動畫至 50。 對於大部分的圓圈，藍色的色彩就是，但最後一個圓形，色彩會從以動畫顯示藍色為透明：
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage
@@ -243,12 +243,12 @@ public class ExpandingCirclesPage : ContentPage
 }
 ```
 
-結果是影像看起來相同時`t`等於 0 時為`t`等於 1，而圓形似乎繼續永遠展開：
+結果就是影像看起來相同 when`t`等於 0 時一樣，因此`t`等於 1，而圓形似乎持續不斷擴展：
 
-[![](animation-images/expandingcircles-small.png "展開的圓形呈現頁面的三個螢幕擷取畫面")](animation-images/expandingcircles-large.png#lightbox "展開圓形頁面的三個螢幕擷取畫面")
+[![](animation-images/expandingcircles-small.png "展開的圓形頁面的三個螢幕擷取畫面")](animation-images/expandingcircles-large.png#lightbox "展開圓形頁面的三個螢幕擷取畫面")
 
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

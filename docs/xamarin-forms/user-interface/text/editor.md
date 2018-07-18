@@ -1,33 +1,33 @@
 ---
 title: Xamarin.Forms 編輯器
-description: 本文說明如何使用 Xamarin.Forms 編輯器控制項，可接受應用程式中的多行文字輸入。
+description: 這篇文章說明如何使用 Xamarin.Forms 編輯器控制項接受應用程式中的多行文字輸入。
 ms.prod: xamarin
 ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: 7ad8c8aa77e23c5a8fb7649736ecb271f835d1a7
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 4879ff88d5bbdab5aa92024bee7f50239a141e3b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245520"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995860"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms 編輯器
 
 _多行文字輸入_
 
-`Editor`控制項用來接受多行的輸入。 本文將說明如何：
+`Editor`控制項用來接受多行的輸入。 本文將介紹：
 
 - **[自訂](#customization)** &ndash;鍵盤和色彩選項。
-- **[互動功能](#interactivity)** &ndash;提供互動功能可以接聽的事件。
+- **[互動](#interactivity)** &ndash;可以接聽的以提供互動功能的事件。
 
 ## <a name="customization"></a>自訂
 
-### <a name="setting-and-reading-text"></a>設定及讀取文字
+### <a name="setting-and-reading-text"></a>設定和讀取文字
 
-`Editor`，像其他文字呈現的檢視，公開`Text`屬性。 這個屬性可以用來設定並閱讀所呈現的文字`Editor`。 下列範例會示範設定`Text`在 XAML 中的屬性：
+`Editor`，例如其他文字呈現的檢視，公開`Text`屬性。 這個屬性可用來設定和讀取所呈現的文字`Editor`。 下列範例示範如何設定`Text`在 XAML 中的屬性：
 
 ```xaml
 <Editor Text="I am an Editor" />
@@ -45,9 +45,9 @@ var MyEditor = new Editor { Text = "I am an Editor" };
 var text = MyEditor.Text;
 ```
 
-### <a name="limiting-input-length"></a>輸入的長度的限制
+### <a name="limiting-input-length"></a>限制的輸入的長度
 
-[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)屬性可以用來限制所允許輸入的長度[ `Editor` ](xref:Xamarin.Forms.Editor)。 這個屬性應該設定為正整數：
+[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)屬性可以用來限制所允許的輸入的長度[ `Editor` ](xref:Xamarin.Forms.Editor)。 這個屬性應該設定為正整數：
 
 ```xaml
 <Editor ... MaxLength="10" />
@@ -57,28 +57,28 @@ var text = MyEditor.Text;
 var editor = new Editor { ... MaxLength = 10 };
 ```
 
-A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)屬性值為 0 表示會允許任何輸入項目，而值為`int.MaxValue`，這是預設值[ `Editor` ](xref:Xamarin.Forms.Editor)，表示沒有任何可能輸入的字元數的有效限制。
+A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)屬性值為 0 表示將會允許任何輸入項目，並針對`int.MaxValue`，這是預設值[ `Editor` ](xref:Xamarin.Forms.Editor)，指出已沒有可以輸入的字元數的有效限制。
 
 ### <a name="keyboards"></a>鍵盤
 
-當使用者互動時顯示鍵盤`Editor`可以透過程式設計方式設定[ ``Keyboard`` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Keyboard/)屬性。
+當使用者互動時，會顯示鍵盤`Editor`可以透過程式設計方式設定[ ``Keyboard`` ](xref:Xamarin.Forms.Keyboard)屬性。
 
 鍵盤類型的選項如下：
 
-- **預設**&ndash;預設鍵盤
-- **交談**&ndash;用於文字行動 （& s） 上的芳鄰 emoji 的非常有用
+- **預設值**&ndash;預設鍵盤
+- **對談**&ndash;用於傳簡訊到數位 emoji 適合的位置
 - **電子郵件**&ndash;輸入電子郵件地址時，使用
 - **數值**&ndash;輸入數字時，使用
 - **電話**&ndash;輸入電話號碼時，使用
-- **Url** &ndash;為用來輸入檔案路徑 （& s） 之 web 位址
+- **Url** &ndash;為用來輸入檔案路徑 & 網址
 
-沒有[範例的每個鍵盤](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/)我們配方一節。
+沒有[範例中的每個鍵盤](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/)配方 區段中。
 
 ### <a name="enabling-and-disabling-spell-checking"></a>啟用和停用拼字檢查
 
-[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性會控制是否拼字檢查已啟用。 根據預設，此屬性設定為`true`。 在使用者輸入文字，也會指出拼字錯誤。
+[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性會控制是否拼字檢查已啟用。 根據預設，此屬性設為`true`。 當使用者輸入文字，則會指出拼字錯誤。
 
-不過，某些文字項目的情況下，輸入使用者名稱，例如拼字檢查會提供負的經驗，因此應該停用設定[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性`false`:
+不過，某些文字項目的情況下，輸入使用者名稱，例如拼字檢查提供的負數的體驗，因此應該停用藉由設定[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性設`false`:
 
 ```xaml
 <Editor ... IsSpellCheckEnabled="false" />
@@ -89,11 +89,11 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 ```
 
 > [!NOTE]
-> 當[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性設定為`false`，而且在不使用自訂的鍵盤，原生拼字檢查將會停用。 不過，如果[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)具有已設定，以停用拼字檢查，例如[ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat)、`IsSpellCheckEnabled`屬性會被忽略。 因此，屬性不能用來啟用拼字檢查`Keyboard`，明確地停用。
+> 當[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性設定為`false`，並在不使用自訂的鍵盤，將會停用原生的拼字檢查工具。 不過，如果[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)具有已設定，以停用拼字檢查，例如[ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat)，則`IsSpellCheckEnabled`屬性會被忽略。 因此，無法使用屬性來啟用拼字檢查`Keyboard`，明確地停用。
 
 ### <a name="colors"></a>色彩
 
-`Editor` 可以設定為使用自訂背景色彩，透過`BackgroundColor`屬性。 若要確保色彩將會使用每個平台上必須特別注意。 因為每個平台都有不同的文字色彩的預設值，您可能需要設定每個平台自訂的背景色彩。 請參閱[使用平台 Tweaks](~/xamarin-forms/platform/device.md)最佳化每個平台 UI 相關的詳細資訊。
+`Editor` 可以設定為使用自訂的背景色彩透過`BackgroundColor`屬性。 特別是為了確保會在每個平台上的可用色彩。 因為每個平台都有不同的預設值的文字色彩，您可能需要設定每個平台自訂的背景色彩。 請參閱[使用平台調整](~/xamarin-forms/platform/device.md)如需有關最佳化每個平台的 UI。
 
 在 C# 中：
 
@@ -137,18 +137,18 @@ public partial class EditorPage : ContentPage
 
 ![](editor-images/textbackgroundcolor.png "使用 BackgroundColor 範例編輯器")
 
-請確定您選擇的背景和文字色彩可以在每個平台上使用，而且不會遮住任何預留位置文字。
+請確定您選擇的背景和文字色彩在每個平台上使用，而且不會遮住任何預留位置文字。
 
 ## <a name="interactivity"></a>互動
 
 `Editor` 會公開兩個事件：
 
-- [TextChanged](http://developer.xamarin.com/api/event/Xamarin.Forms.Editor.TextChanged/) &ndash;在編輯器中的文字變更時引發。 變更之前和之後，請提供的文字。
-- [完成](http://developer.xamarin.com/api/event/Xamarin.Forms.Editor.Completed/)&ndash;使用者輸入鍵盤上按 return 鍵結束時引發。
+- [TextChanged](xref:Xamarin.Forms.Editor.TextChanged) &ndash;在編輯器中的文字變更時引發。 變更之前和之後，請提供的文字。
+- [已完成](xref:Xamarin.Forms.Editor.Completed)&ndash;使用者已結束輸入鍵盤上按 return 鍵時引發。
 
 ### <a name="completed"></a>已完成
 
-`Completed` 」 事件可用來做出回應的互動完成`Editor`。 `Completed` 使用者輸入鍵盤上的 return 鍵結束與欄位的輸入時引發。 事件處理常式會採取寄件者的一般事件處理常式和`EventArgs`:
+`Completed`事件用來做出回應的互動完成`Editor`。 `Completed` 當使用者在鍵盤上輸入 return 鍵結束與欄位的輸入，就會引發。 事件處理常式是泛用事件處理常式，採取寄件者和`EventArgs`:
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)
@@ -157,7 +157,7 @@ void EditorCompleted (object sender, EventArgs e)
 }
 ```
 
-已完成的事件可以在程式碼和 XAML 訂閱：
+已完成的事件可以訂閱此發行集的程式碼和 XAML 中：
 
 在 C# 中：
 
@@ -194,9 +194,9 @@ Title="Editor Demo">
 
 ### <a name="textchanged"></a>TextChanged
 
-`TextChanged` 」 事件可用來對欄位的內容中的變更做出回應。
+`TextChanged`事件用來對欄位的內容中的變更做出回應。
 
-`TextChanged` 每當引發`Text`的`Editor`變更。 事件處理常式可接受的執行個體`TextChangedEventArgs`。 `TextChangedEventArgs` 提供舊的和新值的存取權`Editor``Text`透過`OldTextValue`和`NewTextValue`屬性：
+`TextChanged` 每當引發`Text`的`Editor`變更。 事件處理常式可接受的執行個體`TextChangedEventArgs`。 `TextChangedEventArgs` 提供的舊和新值的存取權`Editor``Text`透過`OldTextValue`和`NewTextValue`屬性：
 
 ```csharp
 void EditorTextChanged (object sender, TextChangedEventArgs e)
@@ -206,7 +206,7 @@ void EditorTextChanged (object sender, TextChangedEventArgs e)
 }
 ```
 
-已完成的事件可以在程式碼和 XAML 訂閱：
+已完成的事件可以訂閱此發行集的程式碼和 XAML 中：
 
 程式碼：
 
@@ -245,4 +245,4 @@ Title="Editor Demo">
 ## <a name="related-links"></a>相關連結
 
 - [文字 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [編輯器應用程式開發介面](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/)
+- [編輯器 API](xref:Xamarin.Forms.Editor)

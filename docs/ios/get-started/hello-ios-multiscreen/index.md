@@ -1,6 +1,6 @@
 ---
 title: Hello, iOS 多重畫面
-description: 在這份含有兩部分的指南中，將擴充我們在 Hello, iOS 指南中所建立的 Phoneword 應用程式來處理第二個畫面。 過程中，我們將介紹「模型-檢視-控制器」設計模式、實作第一個 iOS 瀏覽，並且更深入了解 iOS 應用程式結構和功能。
+description: 本文件連結的逐步解說會擴展 Phoneword 範例應用程式，以新增第二個畫面。 此逐步解說會探討模型-檢視-控制器設計模式、iOS 巡覽，以及其他核心 iOS 開發概念。
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 79f57ac0-37d0-4593-9dcf-fca93ad0be65
@@ -8,11 +8,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 95be7bd39aced5dad680efbae0bd7e0f4d040f7c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 573ab05c066c7ecd064942ba502634c97224d1d7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786031"
 ---
 # <a name="hello-ios-multiscreen"></a>Hello, iOS 多重畫面
 
@@ -22,10 +23,7 @@ ms.lasthandoff: 04/04/2018
 
 ##  <a name="part-2-deep-diveiosget-startedhello-ios-multiscreenhello-ios-multiscreen-deepdivemd"></a>[第二部分：深度剖析](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md)
 
-
-
 在本文件的第二部分中，我們將檢閱已建置的內容並討論架構、巡覽，以及過程中遇到的其他 iOS 新概念。
-
 
 ## <a name="related-links"></a>相關連結
 

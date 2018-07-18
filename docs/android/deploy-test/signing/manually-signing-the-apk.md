@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30767231"
 ---
 # <a name="manually-signing-the-apk"></a>手動簽署 APK
 
@@ -145,7 +146,7 @@ $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore xample.keysto
 ```
 
 > [!NOTE]
-> 使用 **jarsigner** 時，務必_「先」_簽署 APK，然後再使用 **zipalign**。  
+> 使用 **jarsigner** 時，務必 _「先」_ 簽署 APK，然後再使用 **zipalign**。  
 
 
 

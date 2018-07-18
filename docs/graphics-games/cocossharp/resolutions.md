@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33920815"
 ---
 # <a name="handling-multiple-resolutions-in-cocossharp"></a>處理 CocosSharp 在多種解析度
 

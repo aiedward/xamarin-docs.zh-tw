@@ -1,32 +1,32 @@
 ---
-title: Xamarin.Essentials： 指南針
-description: 本文件描述的指南針類別 Xamarin.Essentials，可讓您監視裝置的磁性 north 標題中。
+title: Xamarin.Essentials： 羅盤
+description: 本文件說明 Xamarin.Essentials，可讓您監視裝置的磁性北部標題中的羅盤類別。
 ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 30ef4c7c155b09c06c8bc36404b92c2a91b7eb0d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: cf41948c55c742140896bfb48d9bb4abf25c8d68
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782290"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947409"
 ---
-# <a name="xamarinessentials-compass"></a>Xamarin.Essentials： 指南針
+# <a name="xamarinessentials-compass"></a>Xamarin.Essentials： 羅盤
 
 ![發行前版本的 NuGet](~/media/shared/pre-release.png)
 
-**指南針**類別可讓您監視裝置的磁性 north 標題。
+**羅盤**類別可讓您監視裝置的磁性北部標題。
 
-## <a name="using-compass"></a>使用指南針
+## <a name="using-compass"></a>使用羅盤
 
-在您類別中加入 Xamarin.Essentials 的參考：
+在您的類別加入 Xamarin.Essentials 的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-指南針功能的運作方式是呼叫`Start`和`Stop`方法，以接聽羅盤的變更。 任何變更會透過送回`ReadingChanged`事件。 請看以下範例：
+Compass 功能的運作方式是呼叫`Start`和`Stop`方法，以接聽的羅盤的變更。 任何變更會傳送回到`ReadingChanged`事件。 請看以下範例：
 
 ```csharp
 public class CompassTest
@@ -68,26 +68,21 @@ public class CompassTest
 }
 ```
 
-## <a name="sensor-speedxrefxamarinessentialssensorspeed"></a>[感應器速度](xref:Xamarin.Essentials.SensorSpeed)
-
-- **最快**– 盡量 （不保證會傳回在 UI 執行緒上） 取得感應器資料。
-- **遊戲**– 速率適合遊戲 （不保證會傳回在 UI 執行緒上）。
-- **一般**– 適用於螢幕方向變更預設速率。
-- **Ui** – 速率適用於一般使用者介面。
+[!include[](~/essentials/includes/sensor-speed.md)]
 
 ## <a name="platform-implementation-specifics"></a>平台實作的特性
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Android 不提供 API 來擷取羅盤的標題。 我們利用加速計和磁力計計算磁性 north 標題、 Google 建議這樣做。 
+Android 不會提供 API 擷取羅盤的方位。 我們使用加速計和計算磁性北部標題下，建議使用由 Google 磁力計。 
 
-在罕見情況下，您可能看到不一致的結果因為感應器需要校正，牽涉到圖 8 移動中移動您的裝置。 這是開啟 Google 地圖、 點選做為位置的點，然後選取這樣做，最好**校正指南針**。
+在罕見情況下，您可能看到不一致的結果感應器需要校正，因為這牽涉到在 圖 8 影片中移動您的裝置。 開啟 Google 地圖、 點選做為位置的點，然後選取 這是這麼做，最好**校正羅盤**。
 
-請注意，在相同的時間，從您的應用程式執行多個感應器可能需要調整感應器速度。
+請注意，從您的應用程式中執行多個感應器，在相同的時間可能需要調整的感應器速度。
 
 --------------
 
 ## <a name="api"></a>API
 
-- [指南針原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
+- [羅盤的原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
 - [羅盤的 API 文件](xref:Xamarin.Essentials.Compass)
