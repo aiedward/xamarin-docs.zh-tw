@@ -7,16 +7,16 @@ ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0f9b9e27afd5dbbf52f3653995470136e794f17b
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: b27df7f63ac83206c50858175dc2945937142f78
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935195"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995465"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>第 13 章摘要。 點陣圖
 
-Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)項目顯示的點陣圖。 所有的 Xamarin.Forms 平台支援的 JPEG、 PNG、 GIF 及 BMP 檔案格式。
+Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image)項目顯示的點陣圖。 所有的 Xamarin.Forms 平台支援的 JPEG、 PNG、 GIF 及 BMP 檔案格式。
 
 在 Xamarin.Forms 中的點陣圖來自於四個位置︰
 
@@ -27,30 +27,30 @@ Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.I
 
 PCL 中的點陣圖資源是平台無關，而是平台特定的平台專案中的點陣圖資源。
 
-藉由設定指定的點陣圖[ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Source/)屬性`Image`物件的型別[ `ImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/)，具有三個衍生的抽象類別：
+藉由設定指定的點陣圖[ `Source` ](xref:Xamarin.Forms.Image.Source)屬性`Image`物件的型別[ `ImageSource` ](xref:Xamarin.Forms.ImageSource)，具有三個衍生的抽象類別：
 
-- [`UriImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/) 根據在 web 存取的點陣圖`Uri`物件設定為其[ `Uri` ](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.Uri/)屬性
-- [`FileImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/) 用於存取儲存在平台應用程式專案中的點陣圖根據 資料夾和檔案的路徑設定為與其[ `File` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FileImageSource.File/)屬性
-- [`StreamImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.StreamImageSource/) 載入使用.NET 的點陣圖`Stream`藉由傳回指定的物件`Stream`從`Func`設為其[ `Stream` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StreamImageSource.Stream/)屬性
+- [`UriImageSource`](xref:Xamarin.Forms.UriImageSource) 根據在 web 存取的點陣圖`Uri`物件設定為其[ `Uri` ](xref:Xamarin.Forms.UriImageSource.Uri)屬性
+- [`FileImageSource`](xref:Xamarin.Forms.FileImageSource) 用於存取儲存在平台應用程式專案中的點陣圖根據 資料夾和檔案的路徑設定為與其[ `File` ](xref:Xamarin.Forms.FileImageSource.File)屬性
+- [`StreamImageSource`](xref:Xamarin.Forms.StreamImageSource) 載入使用.NET 的點陣圖`Stream`藉由傳回指定的物件`Stream`從`Func`設為其[ `Stream` ](xref:Xamarin.Forms.StreamImageSource.Stream)屬性
 
 或者 （和更常見） 您可以使用下列靜態方法`ImageSource`類別，全部都會傳回`ImageSource`物件：
 
-- [`ImageSource.FromUri`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) 根據在 web 存取的點陣圖`Uri`物件
-- [`ImageSource.FromResource`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) 用於存取點陣圖儲存為 PCL 中，應用程式中的內嵌資源或[ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/System.Type/)或是[ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/System.Reflection.Assembly/)存取另一個來源組件中的點陣圖
-- [`ImageSource.FromFile`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromFile/p/System.String/) 從平台應用程式專案中存取的點陣圖
-- [`ImageSource.FromStream`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromStream/p/System.Func%7BSystem.IO.Stream%7D/) 載入點陣圖，根據`Stream`物件
+- [`ImageSource.FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) 根據在 web 存取的點陣圖`Uri`物件
+- [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) 用於存取點陣圖儲存為 PCL; 的應用程式中的內嵌資源[ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource(System.String,System.Type))或是[ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource(System.String,System.Reflection.Assembly))存取另一個來源組件中的點陣圖
+- [`ImageSource.FromFile`](xref:Xamarin.Forms.ImageSource.FromFile(System.String)) 從平台應用程式專案中存取的點陣圖
+- [`ImageSource.FromStream`](xref:Xamarin.Forms.ImageSource.FromStream(System.Func{System.IO.Stream})) 載入點陣圖，根據`Stream`物件
 
 沒有任何類別相當於`Image.FromResource`方法。 `UriImageSource`類別就很有用，如果您要控制快取。 `FileImageSource`類別會在 XAML 中很有用。 `StreamImageSource` 適合用來非同步載入`Stream`物件，而`ImageSource.FromStream`是同步的。
 
 ## <a name="platform-independent-bitmaps"></a>平台無關的點陣圖
 
-[ **WebBitmapCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapCode)專案要載入點陣圖 web 使用`ImageSource.FromUri`。 `Image`元素設定為`Content`屬性`ContentPage`，因此它會受限於頁面的大小。 不論點陣圖的大小，受條件約束`Image`項目會自動縮放以其容器的大小，而點陣圖會顯示在其大小上限內`Image`維持點陣圖的長寬比的項目。 領域`Image`點陣圖可以加上的未來展望[ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/)。
+[ **WebBitmapCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapCode)專案要載入點陣圖 web 使用`ImageSource.FromUri`。 `Image`元素設定為`Content`屬性`ContentPage`，因此它會受限於頁面的大小。 不論點陣圖的大小，受條件約束`Image`項目會自動縮放以其容器的大小，而點陣圖會顯示在其大小上限內`Image`維持點陣圖的長寬比的項目。 領域`Image`點陣圖可以加上的未來展望[ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)。
 
-[ **WebBitmapXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapXaml)範例類似，但只要設定`Source`屬性設為 URL。 轉換由[ `ImageSourceConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSourceConverter/)類別。
+[ **WebBitmapXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapXaml)範例類似，但只要設定`Source`屬性設為 URL。 轉換由[ `ImageSourceConverter` ](xref:Xamarin.Forms.ImageSourceConverter)類別。
 
 ### <a name="fit-and-fill"></a>調整和填滿
 
-您可以控制如何藉由設定自動縮放點陣圖[ `Aspect` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/)屬性`Image`的下列成員的其中一個[ `Aspect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Aspect/)列舉型別：
+您可以控制如何藉由設定自動縮放點陣圖[ `Aspect` ](xref:Xamarin.Forms.Image.Aspect)屬性`Image`的下列成員的其中一個[ `Aspect` ](xref:Xamarin.Forms.Aspect)列舉型別：
 
 - [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit)： 會遵守外觀比例 （預設值）
 - [`Fill`](xref:Xamarin.Forms.Aspect.Fill)： 填滿區域，不會遵守外觀比例
@@ -84,7 +84,7 @@ PCL 中的點陣圖資源是平台無關，而是平台特定的平台專案中�
 
 [ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser)範例可讓使用者瀏覽儲存在 Xamarin 的網站上的原廠映像。 它會使用.NET`WebRequest`類別來下載 JSON 檔案的清單中的點陣圖。
 
-程式會使用[ `ActivityIndicator` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ActivityIndicator/)表示的項目即將。 載入每個點陣圖，唯讀[ `IsLoading` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.IsLoading/)屬性`Image`是`true`。 `IsLoading`屬性做為後盾的可繫結的屬性，因此`PropertyChanged`該屬性變更時引發事件。 程式將處理常式附加至這個事件，並使用目前的設定`IsLoaded`來設定[ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/)屬性`ActivityIndicator`。
+程式會使用[ `ActivityIndicator` ](xref:Xamarin.Forms.ActivityIndicator)表示的項目即將。 載入每個點陣圖，唯讀[ `IsLoading` ](xref:Xamarin.Forms.Image.IsLoading)屬性`Image`是`true`。 `IsLoading`屬性做為後盾的可繫結的屬性，因此`PropertyChanged`該屬性變更時引發事件。 程式將處理常式附加至這個事件，並使用目前的設定`IsLoaded`來設定[ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/)屬性`ActivityIndicator`。
 
 ## <a name="streaming-bitmaps"></a>資料流的點陣圖
 
@@ -102,11 +102,11 @@ PCL 中的點陣圖資源是平台無關，而是平台特定的平台專案中�
 
 ## <a name="platform-specific-bitmaps"></a>平台專屬的點陣圖
 
-所有的 Xamarin.Forms 平台可讓您將點陣圖儲存在平台應用程式組件。 這些平台點陣圖時擷取 Xamarin.Forms 應用程式，都屬於型別[ `FileImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/)。 您可以使用這些電腦進行：
+所有的 Xamarin.Forms 平台可讓您將點陣圖儲存在平台應用程式組件。 這些平台點陣圖時擷取 Xamarin.Forms 應用程式，都屬於型別[ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource)。 您可以使用這些電腦進行：
 
-- [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Icon/)屬性 [`MenuItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/)
-- [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/)屬性 [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/)
-- [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)屬性 `Button`
+- [ `Icon` ](xref:Xamarin.Forms.MenuItem.Icon)屬性 [`MenuItem`](xref:Xamarin.Forms.MenuItem)
+- [ `Icon` ](xref:Xamarin.Forms.MenuItem.Icon)屬性 [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)
+- [ `Image` ](xref:Xamarin.Forms.Button)屬性 `Button`
 
 平台組件尚未包含的圖示和啟動顯示畫面的點陣圖：
 
@@ -170,23 +170,23 @@ Windows 執行階段專案支援命名配置，其中包含的像素為單位，
 
 ### <a name="toolbars-and-their-icons"></a>工具列和其圖示
 
-其中一個平台專屬點陣圖的主要用途是建構加上的 [Xamarin.Forms] 工具列[ `ToolbarItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/)物件來[ `ToolbarItems` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.ToolbarItems/) 所定義的集合`Page`. `ToobarItem` 衍生自[ `MenuItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/)從中繼承某些屬性。
+其中一個平台專屬點陣圖的主要用途是建構加上的 [Xamarin.Forms] 工具列[ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem)物件來[ `ToolbarItems` ](xref:Xamarin.Forms.Page.ToolbarItems) 所定義的集合`Page`. `ToobarItem` 衍生自[ `MenuItem` ](xref:Xamarin.Forms.MenuItem)從中繼承某些屬性。
 
 最重要`ToolbarItem`屬性：
 
-- [`Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Text/) 根據平台可能會出現的文字和 `Order`
-- [`Icon`](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/) 型別的`FileImageSource`可能會顯示根據平台映像和 `Order`
+- [`Text`](xref:Xamarin.Forms.MenuItem.Text) 根據平台可能會出現的文字和 `Order`
+- [`Icon`](xref:Xamarin.Forms.MenuItem.Icon) 型別的`FileImageSource`可能會顯示根據平台映像和 `Order`
 - [`Order`](xref:Xamarin.Forms.ToolbarItem.Order) 型別的[ `ToolbarItemOrder` ](xref:Xamarin.Forms.ToolbarItemOrder)，具有三個成員，列舉[ `Default` ](xref:Xamarin.Forms.ToolbarItemOrder.Default)， [ `Primary` ](xref:Xamarin.Forms.ToolbarItemOrder.Primary)，以及[ `Secondary` ](xref:Xamarin.Forms.ToolbarItemOrder.Secondary).
 
 數目`Primary`應該限制為三或四個項目。 您應該在包含`Text`設定的所有項目。 針對大部分平台，只能`Primary`項目需要`Icon`但需要 Windows 8.1`Icon`的所有項目。 圖示應該是 32 裝置獨立單位正方形。 `FileImageSource`類型表示它們是特定平台。
 
-`ToolbarItem`引發[ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.MenuItem.Clicked/)事件，當點選，很像`Button`。 `ToolbarItem` 也支援[ `Command` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Command/)並[ `CommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.CommandParameter/) MVVM 與常用的屬性。 (請參閱[第 18 章、 MVVM](chapter18.md))。
+`ToolbarItem`引發[ `Clicked` ](xref:Xamarin.Forms.MenuItem.Clicked)事件，當點選，很像`Button`。 `ToolbarItem` 也支援[ `Command` ](xref:Xamarin.Forms.MenuItem.Command)並[ `CommandParameter` ](xref:Xamarin.Forms.MenuItem.CommandParameter) MVVM 與常用的屬性。 (請參閱[第 18 章、 MVVM](chapter18.md))。
 
-IOS 和 Android 都需要頁面，其中顯示工具列[ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)或巡覽至頁面`NavigationPage`。 [ **ToolbarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo)程式集`MainPage`屬性其`App`類別[`NavigationPage`建構函式](https://developer.xamarin.com/api/constructor/Xamarin.Forms.NavigationPage.NavigationPage/p/Xamarin.Forms.Page/)與`ContentPage`引數，並示範如何建構和事件處理常式的工具列。
+IOS 和 Android 都需要頁面，其中顯示工具列[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)或巡覽至頁面`NavigationPage`。 [ **ToolbarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo)程式集`MainPage`屬性其`App`類別[`NavigationPage`建構函式](xref:Xamarin.Forms.NavigationPage.%23ctor(Xamarin.Forms.Page))與`ContentPage`引數，並示範如何建構和事件處理常式的工具列。
 
 ### <a name="button-images"></a>按鈕的影像
 
-您也可以設定使用平台專屬點陣圖[ `Image` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Image/)屬性`Button`32 裝置獨立單位正方形，如所示的點陣圖[ **ButtonImage**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage)範例。
+您也可以設定使用平台專屬點陣圖[ `Image` ](xref:Xamarin.Forms.Button.Image)屬性`Button`32 裝置獨立單位正方形，如所示的點陣圖[ **ButtonImage**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage)範例。
 
 
 

@@ -1,30 +1,30 @@
 ---
-title: Xamarin.Forms 項目
-description: 本文說明如何接受單行文字或密碼輸入應用程式中的使用 Xamarin.Forms 項目類別。
+title: Xamarin.Forms 的項目
+description: 這篇文章說明如何使用 Xamarin.Forms 項目類別，以單行文字] 或 [應用程式中的密碼輸入接受。
 ms.prod: xamarin
 ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: b6188b986589a56229ad2e092d4100ff3f75dbe4
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 95afdfde878759d4a598e200d16fe6fb1fa2005e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245549"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998225"
 ---
-# <a name="xamarinforms-entry"></a>Xamarin.Forms 項目
+# <a name="xamarinforms-entry"></a>Xamarin.Forms 的項目
 
 _單行文字或輸入的密碼_
 
-Xamarin.Forms`Entry`用於單行文字輸入。 `Entry`、 Like`Editor`檢視中，支援多個鍵盤類型。 此外，`Entry`可用來當作密碼欄位。
+Xamarin.Forms`Entry`用於單行文字輸入。 `Entry`，例如`Editor`檢視中，支援多個鍵盤類型。 此外，`Entry`可用來當做密碼欄位。
 
 ## <a name="display-customization"></a>顯示的自訂
 
-### <a name="setting-and-reading-text"></a>設定及讀取文字
+### <a name="setting-and-reading-text"></a>設定和讀取文字
 
-`Entry`，像其他文字呈現的檢視，公開`Text`屬性。 這個屬性可以用來設定並閱讀所呈現的文字`Entry`。 下列範例會示範設定`Text`在 XAML 中的屬性：
+`Entry`，例如其他文字呈現的檢視，公開`Text`屬性。 這個屬性可用來設定和讀取所呈現的文字`Entry`。 下列範例示範如何設定`Text`在 XAML 中的屬性：
 
 ```xaml
 <Entry Text="I am an Entry" />
@@ -43,11 +43,11 @@ var text = MyEntry.Text;
 ```
 
 > [!NOTE]
-> 寬度`Entry`可以藉由設定定義其`WidthRequest`屬性。 請不要依賴的寬度`Entry`被定義為基礎的值及其`Text`屬性。
+> 寬度`Entry`可以藉由設定定義其`WidthRequest`屬性。 不依賴的寬度`Entry`的值所定義根據其`Text`屬性。
 
-### <a name="limiting-input-length"></a>輸入的長度的限制
+### <a name="limiting-input-length"></a>限制的輸入的長度
 
-[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)屬性可以用來限制所允許輸入的長度[ `Entry` ](xref:Xamarin.Forms.Entry)。 這個屬性應該設定為正整數：
+[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)屬性可以用來限制所允許的輸入的長度[ `Entry` ](xref:Xamarin.Forms.Entry)。 這個屬性應該設定為正整數：
 
 ```xaml
 <Entry ... MaxLength="10" />
@@ -57,28 +57,28 @@ var text = MyEntry.Text;
 var entry = new Entry { ... MaxLength = 10 };
 ```
 
-A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)屬性值為 0 表示會允許任何輸入項目，而值為`int.MaxValue`，這是預設值[ `Entry` ](xref:Xamarin.Forms.Entry)，表示沒有任何可能輸入的字元數的有效限制。
+A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)屬性值為 0 表示將會允許任何輸入項目，並針對`int.MaxValue`，這是預設值[ `Entry` ](xref:Xamarin.Forms.Entry)，指出已沒有可以輸入的字元數的有效限制。
 
 ### <a name="keyboards"></a>鍵盤
 
-當使用者互動時顯示鍵盤`Entry`可以透過程式設計方式設定`Keyboard`屬性。
+當使用者互動時，會顯示鍵盤`Entry`可以透過程式設計方式設定`Keyboard`屬性。
 
 鍵盤類型的選項如下：
 
-- **預設**&ndash;預設鍵盤
-- **交談**&ndash;用於文字行動 （& s） 上的芳鄰 emoji 的非常有用
+- **預設值**&ndash;預設鍵盤
+- **對談**&ndash;用於傳簡訊到數位 emoji 適合的位置
 - **電子郵件**&ndash;輸入電子郵件地址時，使用
 - **數值**&ndash;輸入數字時，使用
 - **電話**&ndash;輸入電話號碼時，使用
-- **Url** &ndash;為用來輸入檔案路徑和網址
+- **Url** &ndash;為用來輸入檔案路徑和 web 位址
 
-沒有[範例的每個鍵盤](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/)我們配方一節。
+沒有[範例中的每個鍵盤](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/)配方 區段中。
 
 ### <a name="enabling-and-disabling-spell-checking"></a>啟用和停用拼字檢查
 
-[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性會控制是否拼字檢查已啟用。 根據預設，此屬性設定為`true`。 在使用者輸入文字，也會指出拼字錯誤。
+[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性會控制是否拼字檢查已啟用。 根據預設，此屬性設為`true`。 當使用者輸入文字，則會指出拼字錯誤。
 
-不過，某些文字項目的情況下，輸入使用者名稱，例如拼字檢查會提供負的經驗，因此應該停用設定[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性`false`:
+不過，某些文字項目的情況下，輸入使用者名稱，例如拼字檢查提供的負數的體驗，因此應該停用藉由設定[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性設`false`:
 
 ```xaml
 <Entry ... IsSpellCheckEnabled="false" />
@@ -89,11 +89,11 @@ var entry = new Entry { ... IsSpellCheckEnabled = false };
 ```
 
 > [!NOTE]
-> 當[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性設定為`false`，而且在不使用自訂的鍵盤，原生拼字檢查將會停用。 不過，如果[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)具有已設定，以停用拼字檢查，例如[ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat)、`IsSpellCheckEnabled`屬性會被忽略。 因此，屬性不能用來啟用拼字檢查`Keyboard`，明確地停用。
+> 當[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性設定為`false`，並在不使用自訂的鍵盤，將會停用原生的拼字檢查工具。 不過，如果[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)具有已設定，以停用拼字檢查，例如[ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat)，則`IsSpellCheckEnabled`屬性會被忽略。 因此，無法使用屬性來啟用拼字檢查`Keyboard`，明確地停用。
 
 ### <a name="placeholders"></a>預留位置
 
-`Entry` 可以將它不會儲存使用者輸入時顯示預留位置文字。 在實務上，這是通常示表單以釐清適用於給定欄位的內容。 預留位置文字色彩無法自訂，而且不論相同`TextColor`設定。 如果您的設計呼叫預留位置的自訂色彩，您必須改為使用[自訂轉譯器]()。 將會建立下列`Entry`"Username"做為預留位置，在 XAML 中使用：
+`Entry` 可以設定為顯示預留位置文字，它不會儲存使用者輸入時。 在實務上，這通常被認為是在表單中釐清適用於指定欄位的內容。 預留位置文字色彩無法自訂，因此不論相同`TextColor`設定。 如果您的設計呼叫自訂的預留位置色彩時，您必須切換回[自訂轉譯器]()。 將建立下列`Entry`使用"Username"做為 XAML 中的預留位置：
 
 ```xaml
 <Entry Placeholder="Username" />
@@ -109,7 +109,7 @@ var MyEntry = new Entry { Placeholder = "Username" };
 
 ### <a name="password-fields"></a>密碼欄位
 
-`Entry` 提供`IsPassword`屬性。 當`IsPassword`是`true`，欄位的內容會呈現為黑色圓圈：
+`Entry` 提供`IsPassword`屬性。 當`IsPassword`是`true`，欄位的內容會顯示為黑色圓圈：
 
 在 XAML 中：
 
@@ -125,7 +125,7 @@ var MyEntry = new Entry { IsPassword = true };
 
 ![](entry-images/password.png "項目 IsPassword 範例")
 
-執行個體可用於預留位置`Entry`做為密碼欄位設定：
+預留位置可能使用的執行個體`Entry`做為密碼欄位設定：
 
 在 XAML 中：
 
@@ -139,19 +139,19 @@ var MyEntry = new Entry { IsPassword = true };
 var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 ```
 
-![](entry-images/passwordplaceholder.png "項目 IsPassword 和預留位置範例")
+![](entry-images/passwordplaceholder.png "項目 IsPassword 和版面配置區範例")
 
 
 ### <a name="colors"></a>色彩
 
-項目可以設定為使用自訂背景和文字色彩，透過下列繫結屬性：
+若要使用的自訂背景和文字色彩，透過下列繫結的屬性，可以設定項目：
 
 - **TextColor** &ndash;設定文字的色彩。
 - **BackgroundColor** &ndash;設定顯示的文字後面的色彩。
 
-若要確保色彩將會使用每個平台上必須特別注意。 因為每個平台都有不同的預設值的文字和背景色彩，您通常必須同時設定，如果您將其中一個。
+特別是為了確保會在每個平台上的可用色彩。 由於每個平台有不同的預設值的文字和背景色彩，因此您常需要同時設定，如果您設定一個。
 
-使用下列程式碼以設定文字色彩的項目：
+下列程式碼可用於設定項目的文字色彩：
 
 在 XAML 中：
 
@@ -168,7 +168,7 @@ entry.TextColor = Color.Green;
 
 ![](entry-images/textcolor.png "項目 TextColor 範例")
 
-請注意，將預留位置是不受指定`TextColor`。
+請注意，不是預留位置受到指定`TextColor`。
 
 若要在 XAML 中設定的背景色彩：
 
@@ -183,20 +183,20 @@ var entry = new Entry();
 entry.BackgroundColor = Color.FromHex("#2c3e50");
 ```
 
-![](entry-images/textbackgroundcolor.png "項目 BackgroundColor 範例")
+![](entry-images/textbackgroundcolor.png "項目的 BackgroundColor 範例")
 
-請小心確定在每個平台上，您可以使用您選擇的背景和文字色彩，而且不會遮住任何預留位置文字。
+務必確定您選擇的背景和文字色彩在每個平台上使用，而且不會遮住任何預留位置文字。
 
-## <a name="events-and-interactivity"></a>事件和互動功能
+## <a name="events-and-interactivity"></a>事件與互動性
 
 項目會公開兩個事件：
 
-- [TextChanged](http://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) &ndash;項目中的文字變更時引發。 變更之前和之後，請提供的文字。
-- [完成](http://developer.xamarin.com/api/event/Xamarin.Forms.Entry.Completed/)&ndash;使用者輸入鍵盤上按 return 鍵結束時引發。
+- [TextChanged](xref:Xamarin.Forms.Entry.TextChanged) &ndash;文字變更的項目中時引發。 變更之前和之後，請提供的文字。
+- [已完成](xref:Xamarin.Forms.Entry.Completed)&ndash;使用者已結束輸入鍵盤上按 return 鍵時引發。
 
 ### <a name="completed"></a>已完成
 
-`Completed` 」 事件可用來做出回應的互動，以及項目完成。 `Completed` 使用者輸入鍵盤上的 return 鍵結束與欄位的輸入時引發。 事件處理常式會採取寄件者的一般事件處理常式和`EventArgs`:
+`Completed`事件用來回應完成的項目互動。 `Completed` 當使用者在鍵盤上輸入 return 鍵結束與欄位的輸入，就會引發。 事件處理常式是泛用事件處理常式，採取寄件者和`EventArgs`:
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -220,9 +220,9 @@ entry.Completed += Entry_Completed;
 
 ### <a name="textchanged"></a>TextChanged
 
-`TextChanged` 」 事件可用來對欄位的內容中的變更做出回應。
+`TextChanged`事件用來對欄位的內容中的變更做出回應。
 
-`TextChanged` 每當引發`Text`的`Entry`變更。 事件處理常式可接受的執行個體`TextChangedEventArgs`。 `TextChangedEventArgs` 提供舊的和新值的存取權`Entry``Text`透過`OldTextValue`和`NewTextValue`屬性：
+`TextChanged` 每當引發`Text`的`Entry`變更。 事件處理常式可接受的執行個體`TextChangedEventArgs`。 `TextChangedEventArgs` 提供的舊和新值的存取權`Entry``Text`透過`OldTextValue`和`NewTextValue`屬性：
 
 ```csharp
 void Entry_TextChanged (object sender, TextChangedEventArgs e)
@@ -232,7 +232,7 @@ void Entry_TextChanged (object sender, TextChangedEventArgs e)
 }
 ```
 
-`TextChanged`可以在 XAML 中來訂閱事件：
+`TextChanged`可以在 XAML 中以訂閱事件：
 
 ```xaml
 <Entry TextChanged="Entry_TextChanged" />
@@ -249,4 +249,4 @@ entry.TextChanged += Entry_TextChanged;
 ## <a name="related-links"></a>相關連結
 
 - [文字 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [應用程式開發介面項目](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)
+- [項目 API](xref:Xamarin.Forms.Entry)
