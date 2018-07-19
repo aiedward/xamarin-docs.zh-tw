@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
-ms.date: 04/03/2017
-ms.openlocfilehash: dec6fa1534f14836ae98677ad33e280ff510fb97
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/17/2018
+ms.openlocfilehash: cbce6f414586597dc2b2788aa18b03228c128018
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995181"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130955"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp 點陣圖基本概念
 
@@ -22,7 +22,7 @@ SkiaSharp 點陣圖的支援是很龐大。 本文章涵蓋的基本概念&mdash
 
 ![](bitmaps-images/bitmapssample.png "顯示的兩個點陣圖")
 
-SkiaSharp 點陣圖必須是類型的物件[ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/)。 有許多方式可建立點陣圖，但這篇文章會限制本身[ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/SkiaSharp.SKStream/)方法，以便載入點陣圖[ `SKStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStream/)參考點陣圖檔案的物件。 它使用很方便[ `SKManagedStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKManagedStream/)類別衍生自`SKStream`因為它會接受.NET 建構函式[ `Stream` ](xref:System.IO.Stream)物件。
+SkiaSharp 點陣圖必須是類型的物件[ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/)。 有許多方式可建立點陣圖，但這篇文章會限制本身[ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/System.IO.Stream/)方法，從.NET 載入點陣圖`Stream`物件。
 
 **基本點陣圖**頁面**SkiaSharpFormsDemos**程式示範如何從三個不同的來源載入點陣圖：
 
@@ -55,39 +55,46 @@ public class BasicBitmapsPage : ContentPage
 
 ## <a name="loading-a-bitmap-from-the-web"></a>從 Web 載入點陣圖
 
-若要載入點陣圖，URL 為基礎，您可以使用[ `WebRequest` ](xref:System.Net.WebRequest)類別，執行中的下列程式碼所示`BasicBitmapsPage`建構函式。 URL 會指向使用一些範例點陣圖 Xamarin 網站上的區域。 在網站上的套件可讓附加調整大小的點陣圖為特定寬度的規格：
+若要載入點陣圖，URL 為基礎，您可以使用[ `HttpClient` ](/dotnet/api/system.net.http.httpclient?view=netstandard-2.0)類別。 您應該只有一個執行個體具現化`HttpClient`並重複使用它，因此將它儲存為欄位：
 
 ```csharp
-Uri uri = new Uri("http://developer.xamarin.com/demo/IMG_3256.JPG?width=480");
-WebRequest request = WebRequest.Create(uri);
-request.BeginGetResponse((IAsyncResult arg) =>
+HttpClient httpClient = new HttpClient();
+```
+
+使用時`HttpClient`iOS 和 Android 應用程式，您會想要設定專案屬性中所述的文件上**[傳輸層安全性 (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)**。
+
+因為它是最方便的方式使用`await`運算子搭配`HttpClient`，不能在執行的程式碼`BasicBitmapsPage`建構函式。 相反地，它屬於`OnAppearing`覆寫。 URL 會指向使用一些範例點陣圖 Xamarin 網站上的區域。 在網站上的套件可讓附加調整大小的點陣圖為特定寬度的規格：
+
+
+```csharp
+protected override async void OnAppearing()
 {
+    base.OnAppearing();
+
+    // Load web bitmap.
+    string url = "https://developer.xamarin.com/demo/IMG_3256.JPG?width=480";
+
     try
     {
-        using (Stream stream = request.EndGetResponse(arg).GetResponseStream())
+        using (Stream stream = await httpClient.GetStreamAsync(url))
         using (MemoryStream memStream = new MemoryStream())
         {
-            stream.CopyTo(memStream);
+            await stream.CopyToAsync(memStream);
             memStream.Seek(0, SeekOrigin.Begin);
 
-            using (SKManagedStream skStream = new SKManagedStream(memStream))
-            {
-                webBitmap = SKBitmap.Decode(skStream);
-            }
-        }
+            webBitmap = SKBitmap.Decode(stream);
+            canvasView.InvalidateSurface();
+        };
     }
     catch
     {
     }
-
-    Device.BeginInvokeOnMainThread(() => canvasView.InvalidateSurface());
-
-}, null);
+}
 ```
 
-已成功下載點陣圖，回呼方法會傳遞至`BeginGetResponse`方法執行。 `EndGetResponse`呼叫必須在`try`封鎖萬一發生錯誤。 `Stream`物件將會取自`GetResponseStream`不適當，在某些平台，因此點陣圖內容會複製到`MemoryStream`物件。 此時，`SKManagedStream`可以建立物件。 這會參考點陣圖檔案，這可能是 JPEG 或 PNG 檔案。 `SKBitmap.Decode`方法將解碼的點陣圖檔案，並將結果儲存在內部 SkiaSharp 格式。
+Android 使用時，會引發例外狀況`Stream`傳回從`GetStreamAsync`在`SKBitmap.Decode`方法因為它正在執行主執行緒上的長時間作業。 基於這個理由，點陣圖檔案的內容複製到`MemoryStream`物件使用`CopyToAsync`。
 
-回呼方法傳遞給`BeginGetResponse`回合之後建構函式已完成執行，這表示`SKCanvasView`需要失效，以允許`PaintSurface`處理常式來更新顯示。 不過，`BeginGetResponse`回呼會在執行時，次要執行緒中執行，因此必須使用`Device.BeginInvokeOnMainThread`執行`InvalidateSurface`使用者介面執行緒中的方法。
+靜態`SKBitmap.Decode`方法會負責解碼點陣圖檔案。 它會搭配 JPEG、 PNG、 GIF 和其他數種熱門的點陣圖格式，並將結果儲存在內部 SkiaSharp 格式。 在此時`SKCanvasView`需要失效，以允許`PaintSurface`處理常式來更新顯示。 
 
 ## <a name="loading-a-bitmap-resource"></a>正在載入點陣圖資源
 
@@ -100,19 +107,18 @@ string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
 Assembly assembly = GetType().GetTypeInfo().Assembly;
 
 using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-using (SKManagedStream skStream = new SKManagedStream(stream))
 {
-    resourceBitmap = SKBitmap.Decode(skStream);
+    resourceBitmap = SKBitmap.Decode(stream);
 }
 ```
 
-這`Stream`物件可以直接轉換成`SKManagedStream`物件。
+這`Stream`物件可以直接傳遞`SKBitmap.Decode`方法。
 
 ## <a name="loading-a-bitmap-from-the-photo-library"></a>從相片庫載入點陣圖
 
 您也可讓使用者從裝置的圖片庫載入相片。 Xamarin.Forms 本身所未提供這項功能。 作業要求的相依性服務，例如本文所述[挑選相片圖片庫從](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)。
 
-**IPicturePicker.cs**檔案和三個**PicturePickerImplementation.cs**該文中的檔案已複製到的各種專案**SkiaSharpFormsDemos**解決方案，並提供新的命名空間名稱。 此外，Android **MainActivity.cs**一文所述，檔案已修改和 iOS 專案具有權限可存取兩行的底端與相片媒體櫃**info.plist**檔案。
+**IPhotoLibrary.cs**中的檔案**SkiaSharpFormsDemos**專案和三個**PhotoLibrary.cs**平台專案中的檔案已經過修改從那篇文章。 此外，Android **MainActivity.cs**一文所述，檔案已修改和 iOS 專案具有權限可存取兩行的底端與相片媒體櫃**info.plist**檔案。
 
 `BasicBitmapsPage`建構函式加入`TapGestureRecognizer`到`SKCanvasView`點選的通知。 在點選，收到`Tapped`處理常式會取得存取圖片選擇器相依性服務和呼叫`GetImageStreamAsync`。 如果`Stream`會傳回物件，則內容會複製到`MemoryStream`、 視需要一些平台。 程式碼的其餘部分則類似於其他兩種技術：
 
@@ -122,22 +128,13 @@ TapGestureRecognizer tapRecognizer = new TapGestureRecognizer();
 tapRecognizer.Tapped += async (sender, args) =>
 {
     // Load bitmap from photo library
-    IPicturePicker picturePicker = DependencyService.Get<IPicturePicker>();
+    IPhotoLibrary photoLibrary = DependencyService.Get<IPhotoLibrary>();
 
-    using (Stream stream = await picturePicker.GetImageStreamAsync())
+    using (Stream stream = await photoLibrary.PickPhotoAsync())
     {
         if (stream != null)
         {
-            using (MemoryStream memStream = new MemoryStream())
-            {
-                stream.CopyTo(memStream);
-                memStream.Seek(0, SeekOrigin.Begin);
-
-                using (SKManagedStream skStream = new SKManagedStream(memStream))
-                {
-                    libraryBitmap = SKBitmap.Decode(skStream);
-                }
-            }
+            libraryBitmap = SKBitmap.Decode(stream);
             canvasView.InvalidateSurface();
         }
     }
