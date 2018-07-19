@@ -1,48 +1,48 @@
 ---
-title: '使用 F # 的程式設計 UrhoSharp'
+title: '使用 F # 進行 UrhoSharp 程式設計'
 description: '本文件說明如何建立簡單的 hello world UrhoSharp 應用程式使用 F # 在 Visual Studio for mac。'
 ms.prod: xamarin
 ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 64d69de70d6bc6f23b9907b498622b00c42b6f50
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a4e1a31a2591c799a153e1333e4a4a4a0719a107
+ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783268"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39111195"
 ---
-# <a name="programming-urhosharp-with-f"></a>使用 F # 的程式設計 UrhoSharp
+# <a name="programming-urhosharp-with-f"></a>使用 F # 進行 UrhoSharp 程式設計
 
-UrhoSharp 可以使用 F # 使用相同的程式庫和 C# 程式設計人員所使用的概念端進行程式設計。 [使用 UrhoSharp](~/graphics-games/urhosharp/using.md)文章 UrhoSharp 引擎的概觀，並應一併閱讀本文之前。
+UrhoSharp 可以編寫使用 F # 使用相同的程式庫和 C# 程式設計人員所使用的概念。 [使用 UrhoSharp](~/graphics-games/urhosharp/using.md)文章概述 UrhoSharp 引擎，並應該在這篇文章之前閱讀。
 
-在 c + + 世界中產生的許多程式庫，例如許多 UrhoSharp 函式會傳回布林值或整數，指出成功或失敗。 您應該使用`|> ignore`忽略這些值。
+在 c + + 世界裡產生的許多程式庫，例如許多 UrhoSharp 函式會傳回布林值或整數，指出成功或失敗。 您應該使用`|> ignore`要略過這些值。
 
 [範例程式](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)UrhoSharp 從 F # 中為"Hello World"。
 
 ## <a name="creating-an-empty-project"></a>建立空專案
 
-沒有 UrhoSharp 的 F # 範本，但您可以開始使用可用的因此若要建立您自己的 UrhoSharp 專案[範例](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)或遵循下列步驟：
+UrhoSharp 沒有 F # 範本，但您可以使用開始可用的因此，若要建立您自己的 UrhoSharp 專案[範例](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)或遵循下列步驟：
 
-1. 從 Visual Studio for Mac，建立新**方案**。 選擇**iOS > 應用程式 > 單一檢視應用程式**選取**F #** 做為實作語言。 
-1. 刪除**Main.storyboard**檔案。 開啟**Info.plist**檔案並在**iPhone / iPod 部署資訊** 窗格中，刪除`Main`中**主要介面**下拉式清單。
+1. 從 Visual Studio for Mac 中，建立新**解決方案**。 選擇**iOS > 應用程式 > 單一檢視應用程式**，然後選取**F #** 做為實作語言。 
+1. 刪除**Main.storyboard**檔案。 開啟**Info.plist**檔案並在**iPhone / iPod 部署資訊**窗格中，刪除`Main`字串**主要介面**下拉式清單。
 1. 刪除**ViewController.fs**檔案。
 
-## <a name="building-hello-world-in-urho"></a>建置 Urho 中的 Hello World
+## <a name="building-hello-world-in-urho"></a>Urho 建置 Hello World
 
-現在您已經準備好開始定義遊戲的類別。 最少，您必須定義的子類別`Urho.Application`並覆寫其`Start`方法。 若要建立這個檔案，以滑鼠右鍵按一下您的 F # 專案中，選擇**新增新的檔案...** 並將空的 F # 類別加入至您的專案。 新的檔案會加入至您的專案中的檔案清單的結尾，但您必須將它拖曳，使它顯示*之前*在**AppDelegate.fs**。
+您現在已準備好開始定義您的遊戲類別。 至少，您必須定義的子類別`Urho.Application`，並覆寫其`Start`方法。 若要建立此檔案，以滑鼠右鍵按一下您的 F # 專案中，選擇**新增新的檔案...** 並將空的 F # 類別新增至您的專案。 新的檔案會新增至您的專案中的檔案清單的結尾，但您必須將它拖曳，使其出現*之前*它使用於**AppDelegate.fs**。
 
 1. 加入 Urho NuGet 套件的參考。
-1. 從現有 Urho 專案中，複製 （大型） 目錄**發生 CoreData /** 和**資料 /** 到您的專案**資源 /** 目錄。 在 F # 專案中，以滑鼠右鍵按一下**資源**資料夾，然後使用**新增] / [加入現有資料夾**將所有的這些檔案新增至您的專案。
+1. 從現有 Urho 專案中，複製 （大） 的目錄**CoreData /** 並**資料 /** 至您的專案**資源 /** 目錄。 在 F # 專案中，以滑鼠右鍵按一下**資源**資料夾，然後使用**Add / 新增現有資料夾**將所有這些檔案新增至您的專案。
 
-您的專案結構應該看起來像：
+您的專案結構現在看起來應該類似：
 
-![](fsharp-images/solutionpane.png "專案結構應該看起來像")
+![](fsharp-images/solutionpane.png "專案結構現在看起來應該像")
 
-您新建立的類別定義為的子類型`Urho.Application`並覆寫其`Start`方法：
+您新建立的類別定義為的子型別`Urho.Application`，並覆寫其`Start`方法：
 
-```csharp
+```fsharp
 namespace HelloWorldUrho1
 
 open Urho
@@ -71,11 +71,11 @@ override this.Start() =
 
 程式碼是非常簡單。 它會使用`Urho.Gui.Text`類別，以顯示與特定字型和色彩大小置中對齊的字串。 
 
-這段程式碼執行之前，不過，必須先初始化 UrhoSharp。 
+執行此程式碼之前，不過，必須先初始化 UrhoSharp。 
 
 開啟並修改 AppDelegate.fs 檔案`FinishedLaunching`方法，如下所示：
 
-```csharp
+```fsharp
 namespace HelloWorldUrho1
 
 open System
@@ -99,7 +99,7 @@ type AppDelegate () =
 
 `ApplicationOptions.Default`提供橫向模式應用程式的預設選項。 傳遞這些`ApplicationOptions`的預設建構函式您`Application`子類別 (請注意，當您定義`HelloWorld`類別，行`inherit Application(o)`呼叫基底類別建構函式)。 
 
-`Run`方法您`Application`啟動程式。 它定義為傳回`int`，這可以經由管道輸出至`ignore`。 
+`Run`方法的程式`Application`啟動程式。 它定義為傳回`int`，這可以輸送到`ignore`。 
 
 產生的程式看起來應該像：
 
@@ -114,4 +114,4 @@ type AppDelegate () =
 
 ## <a name="related-links"></a>相關連結
 
-- [瀏覽 github （範例）](https://github.com/xamarinhttps://developer.xamarin.com/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)
+- [瀏覽 GitHub （範例）](https://github.com/xamarinhttps://developer.xamarin.com/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)

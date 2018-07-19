@@ -1,36 +1,36 @@
 ---
 title: SkiaSharp 中的 3D 旋轉
-description: 本文章說明如何使用非仿射轉換旋轉 2D 物件在 3D 空間中，並示範此範例程式碼。
+description: 本文說明如何以旋轉 2D 物件在 3D 空間中，使用非仿射轉換，並示範此範例程式碼。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: ad4bce6eff7df65185fc3bd754c747fd0db0c9f1
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 53102b735b4b64bff4456e5e252f2342d0c4002f
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244295"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130890"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>SkiaSharp 中的 3D 旋轉
 
-_使用非仿射轉換旋轉 2D 在 3D 空間中的物件。_
+_您可以使用非仿射轉換，旋轉 3D 空間中的 2D 物件。_
 
-一個常見的應用程式的非仿射轉換為模擬旋轉的 3D 空間中的 2D 物件：
+非仿射轉換的常見用法模擬 3D 空間中的 2D 物件的旋轉：
 
-![](3d-rotation-images/3drotationsexample.png "旋轉的 3D 空間中的文字字串")
+![](3d-rotation-images/3drotationsexample.png "在 3D 空間中旋轉的文字字串")
 
-這項作業包括使用 3d 旋轉，以及衍生 非仿射`SKMatrix`執行這些 3D 旋轉的轉換。
+這項作業牽涉到使用三維旋轉，以及接著衍生非仿射`SKMatrix`執行這些 3D 旋轉轉換。
 
-很難開發這`SKMatrix`轉換只在兩個維度內正常運作。 這個 3-3 的矩陣衍生自 4-4 矩陣，用於 3D 圖形時，作業就會更容易。 包含 SkiaSharp [ `SKMatrix44` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.PreConcat/p/SkiaSharp.SKMatrix44/)達到此目的，但某些背景的 3D 圖形的類別是需要了解 3D 旋轉和 4-4 轉換矩陣。
+很難開發這`SKMatrix`轉換只會在兩個維度內正常運作。 當這個 3-3 矩陣衍生自 3D 圖形中所使用的 4 乘 4 矩陣，作業就容易多了。 包含 SkiaSharp [ `SKMatrix44` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.PreConcat/p/SkiaSharp.SKMatrix44/)此目的，但在 3D 圖形中的一些背景的類別是需要了解 3D 旋轉和 4 x 4 轉換矩陣。
 
-三維的座標系統新增隨後在概念上呼叫第三個軸，Z 軸是直角至螢幕。 在 3D 空間中的座標點會以三個數字來表示: （x，y，z）。 以 3D 本文中，增加的 X 值中使用的座標系統是權限，以及增加 Y 的值會跟著中斷，如同兩個維度。 增加正數的 Z 值送出螢幕。 原點是左上角，就像 2D 圖形一樣。 您可以將螢幕的視為直角到此平面在 Z 軸 XY 平面。
+3d 座標系統中加入 z 在概念上呼叫第三個軸、 Z 軸為直角至畫面。 在 3D 空間中的座標點會以三個數字來表示: （x，y，z）。 3D 中用於本文中，增加的 X 值的座標系統是權限，以及兩個維度中一樣，所發生故障，增加值的 Y。 增加正 Z 值都是由螢幕。 原點是左上角的 2D 圖形一樣。 您可以想像螢幕的 Z 軸直角此平面與 XY 平面。
 
-這稱為左邊的座標系統。 如果您指向左手朝其方向的 X 座標 （至右邊），正如食指中間手指方向增加 Y 座標 （下），然後您捲動方塊中的點增加 Z 座標的方向，從出延伸畫面。
+這稱為左側的座標系統。 如果點的 X 座標 （向右），正方向的左側的食指，並將中指的方向增加 Y 座標 （下），然後拇指指向遞增的 Z 座標的方向，從擴充出[] 畫面。
 
-在 3D 圖形中，轉換取決於 4-4 矩陣。 以下是 4-4 身分識別矩陣：
+在 3D 圖形中，轉換為基礎的 4 乘 4 矩陣。 以下是 4 x 4 單位矩陣：
 
 <pre>
 |  1  0  0  0  |
@@ -39,7 +39,7 @@ _使用非仿射轉換旋轉 2D 在 3D 空間中的物件。_
 |  0  0  0  1  |
 </pre>
 
-在處理 4-4 矩陣，並方便其資料列和資料行的數字指定的資料格：
+在使用 4 x 4 矩陣，是很方便識別資料格，其資料列和資料行的數字：
 
 <pre>
 |  M11  M12  M13  M14  |
@@ -48,9 +48,9 @@ _使用非仿射轉換旋轉 2D 在 3D 空間中的物件。_
 |  M41  M42  M43  M44  |
 </pre>
 
-不過，SkiaSharp`Matrix44`類別是稍有不同。 若要設定或取得個別資料格的值中的唯一方式`SKMatrix44`使用[ `Item` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Item/p/System.Int32/System.Int32/)索引子。 資料列和資料行的索引以零為起始而不是一個為基礎，而且交換的資料列和資料行。 使用索引子存取上述圖表中的資料格 M14`[3, 0]`中`SKMatrix44`物件。
+不過，SkiaSharp`Matrix44`類別是有點不同。 設定或取得個別資料格的值的唯一辦法`SKMatrix44`是使用[ `Item` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Item/p/System.Int32/System.Int32/)索引子。 資料列和資料行索引是以零為起始，而非一個為基礎，並會進行交換的資料列和資料行。 使用索引子來存取在上圖中的儲存格 M14`[3, 0]`在`SKMatrix44`物件。
 
-在 3D 圖形系統中，3D 的點 （x，y，z） 會轉換成 4-4 轉換矩陣乘以的 1-4 矩陣：
+在 3D 圖形系統中，至 1 x 4 矩陣中的 4 乘 4 轉換矩陣乘以轉換的 3D 點 （x，y，z）：
 
 <pre>
                  |  M11  M12  M13  M14  |
@@ -59,7 +59,7 @@ _使用非仿射轉換旋轉 2D 在 3D 空間中的物件。_
                  |  M41  M42  M43  M44  |
 </pre>
 
-類似於 2D 轉換在三個維度中的所發生 3D 轉換會假設採用四個維度中的位置。 第四個維度指 W，並會假設 3D 空間 W 座標會等於 1，4 D 空間內。 轉換公式如下所示：
+類似於 2D 轉換在三個維度中的所發生 3D 轉換會假設在四個維度。 第四個維度指 W、 和 3D 空間會假設為存在於其中 W 座標會等於 1 的 4 維空間內。 轉換公式如下所示：
 
 x' = M11·x + M21·y + M31·z + M41
 
@@ -69,21 +69,21 @@ z' = M13·x + M23·y + M33·z + M43
 
 w' = M14·x + M24·y + M34·z + M44
 
-很明顯的轉換公式的資料格`M11`， `M22`，`M33`以 X、 Y 和 Z 方向中，調整係數和`M41`， `M42`，和`M43`是轉譯因素 X、 Y 和 Z指示。
+很明顯地，從轉換公式的儲存格`M11`， `M22`，`M33`縮放係數中的 X、 Y 和 Z 的指示，與`M41`， `M42`，和`M43`是 X、 Y 和 Z 轉譯因素指示進行。
 
-若要將這些座標轉換回 W 其中等於 1，x 的 3D 空間 '，y'、 z' 座標是所有除以 w':
+若要將這些座標轉換回其中 W 等於 1，x 的 3D 空間 '，y'，與 z '座標所有分為 「 w':
 
-x"= x' /w '
+x"= x' / w'
 
-y"= y' /w '
+y"= y' / w'
 
-z"= z' /w '
+z"= z' / w'
 
-w"= w' /w ' = 1
+w"= w' / w' = 1
 
-該除以 w' 提供在 3D 空間中的檢視方塊。 如果 w' 等於 1，則沒有檢視方塊，就會發生。
+該除數 w' 提供在 3D 空間中的檢視方塊。 如果 w' 等於 1，則沒有檢視方塊，就會發生。
 
-在 3D 空間中的旋轉可能相當複雜，但最簡單的旋轉那些在 X、 Y 和 Z 軸。 將角度 α 繞 X 軸的旋轉是此矩陣：
+在 3D 空間中的旋轉可能相當複雜，但最簡單的旋轉是 X、 Y 和 Z 軸周圍。 角度 α 繞著 X 軸的旋轉是此矩陣：
 
 <pre>
 |  1     0       0     0  |
@@ -92,7 +92,7 @@ w"= w' /w ' = 1
 |  0     0       0     1  |
 </pre>
 
-X 的值保持不變時進行這項轉換。 繞 Y 軸旋轉會保留不變的 Y 值：
+X 值維持不變時遇到這項轉換。 繞著 Y 軸旋轉會保留不變的 Y 值：
 
 <pre>
 |  cos(α)  0  –sin(α)  0  |
@@ -101,7 +101,7 @@ X 的值保持不變時進行這項轉換。 繞 Y 軸旋轉會保留不變的 Y
 |    0     0     0     1  |
 </pre>
 
-繞 Z 軸旋轉是與 2D 圖形中的相同：
+繞著 Z 軸旋轉為 2D 圖形相同：
 
 <pre>
 |  cos(α)  sin(α)  0  0  |
@@ -110,17 +110,17 @@ X 的值保持不變時進行這項轉換。 繞 Y 軸旋轉會保留不變的 Y
 |    0       0     0  1  |
 </pre>
 
-座標系統的慣用右手或左手所隱含的方向旋轉。 這是慣用左手系統，因此，如果您指向的左手朝向增加特定的座標軸值軸之捲動方塊 — 繞 X 軸旋轉右邊繞 Z 軸旋轉旋轉繞著 Y 軸，並朝向您的向下 — 的曲線 yo其他手指表示旋轉正面角度的方向。
+法線慣用手的座標系統被隱含的方向旋轉。 這是慣用左手的系統，因此，如果您指向您朝向提高特定的座標軸值的左邊的縮圖，向右旋轉繞著 X 軸，繞著 Z 軸旋轉的旋轉繞著 Y 軸，而是使用您的向下 — 然後的曲線 yo其他手指表示旋轉的正角度的方向。
 
-`SKMatrix44` 已經一般化靜態[ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/)和[ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/)方法可讓您指定的軸的旋轉角度，就會發生：
+`SKMatrix44` 已一般化靜態[ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/)並[ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/)方法，可讓您指定著它旋轉的軸：
 
 ```csharp
 public static SKMatrix44 CreateRotationDegrees (Single x, Single y, Single z, Single degrees)
 ```
 
-繞 X 軸旋轉，為設定的前三個引數為 1，0，0。 繞 Y 軸旋轉，將它們設定為 0，1，0，以及針對繞著 Z 軸旋轉、 將它們設定為 0，0，1。
+繞著 X 軸的旋轉，如設定前三個引數為 1，0，0。 繞著 Y 軸的旋轉，將它們設定為 0、 1、 0，以及用於繞著 Z 軸旋轉，將它們設定為 0，0，1。
 
-4-4 的第四個資料行是檢視方塊。 `SKMatrix44`沒有方法建立檢視方塊轉換，但是您可以建立一個自行使用下列程式碼：
+第四個資料行 x 4 4 是檢視方塊。 `SKMatrix44`不有任何方法來建立檢視方塊的轉換，但您可以自行建立使用下列程式碼：
 
 ```csharp
 SKMatrix44 perspectiveMatrix = SKMatrix44.CreateIdentity();
@@ -136,21 +136,21 @@ perspectiveMatrix[3, 2] = -1 / depth;
 |  0  0  0      1     |
 </pre>
 
-轉換公式會導致下列計算 w':
+轉換公式會導致下列計算的 w':
 
 w' = – z / 深度 + 1
 
-這樣有助於減少 X 和 Y 座標的 Z 值為小於零 （概念上 XY 平面） 後面時，以增加 X 和 Y 座標的 Z 的正數值。Z 座標等於時`depth`，然後 w' 為零，並成為無限的座標。 3d 圖形系統根據相機的字眼，來建立和`depth`的值，表示從座標系統的原點相機的距離。 如果在圖形化的物件具有 Z，也就是協調`depth`單位從原點，它會在概念上接觸相機的觀點，並會變成無限大。
+這可降低時的 Z 值會小於零 （在概念上 XY 平面） 後面的 X 和 Y 座標，以及增加的正值 Z 的 X 和 Y 座標。Z 座標等於時`depth`，然後 w' 是零，而且座標成為無限。 3d 圖形系統是以數位相機的比喻，和`depth`的值，表示相機的距離，座標系統的原點。 如果的圖形化的物件具有 Z，也就是協調`depth`單位從原點方法，它可以在概念上會觸碰觀景窗的情況下的，並變得可無限大。
 
-請記住，您可能要使用這`perspectiveMatrix`搭配旋轉的矩陣中的值。 如果正在被輪替的圖形物件具有 X 或 Y 座標大於`depth`，旋轉的 3D 空間中的此物件是有可能涉及 Z 座標大於`depth`。 必須避免 ！ 建立時`perspectiveMatrix`您想要設定`depth`圖形物件，不論旋轉方式中的所有座標夠大的值。 這可確保絕對沒有任何除數為零。
+請記住，您可能要使用這`perspectiveMatrix`旋轉矩陣結合的值。 如果要旋轉圖形物件具有 X 或 Y 座標大於`depth`，此物件在 3D 空間中的旋轉很可能牽涉到 Z 座標大於`depth`。 必須避免這樣 ！ 建立時`perspectiveMatrix`您想要設定`depth`夠大，不論如何，它會旋轉圖形物件中的所有座標的值。 這可確保絕對沒有任何除數為零。
 
-結合 3D 旋轉和檢視方塊需要 4-4 矩陣一起相乘。 基於此目的，`SKMatrix44`定義串連方法。 如果`A`和`B`是`SKMatrix44`物件時，下列程式碼會將等設 × b:
+結合 3D 旋轉和觀點來看，需要 4 x 4 矩陣一起相乘。 基於此目的，`SKMatrix44`定義串連的方法。 如果`A`並`B`是`SKMatrix44`物件，則下列程式碼會將一個設 × b:
 
 ```csharp
 A.PostConcat(B);
 ```
 
-4-4 轉換矩陣 2D 圖形系統中使用時，它會套用至 2D 物件。 這些物件是一般，而且會假設具有零的 Z 座標。 轉換乘法會稍微比轉換稍早所示：
+2D 圖形系統中使用 4 x 4 轉換矩陣時，它會套用到 2D 的物件。 這些物件是一般，而且會假設為零的 Z 座標。 轉換乘法運算是比較簡單比轉換稍早所示：
 
 <pre>
                  |  M11  M12  M13  M14  |
@@ -169,17 +169,17 @@ z' = M13·x + M23·y + M43
 
 w' = M14·x + M24·y + M44
 
-此外，z' 座標也會是不相關這裡。 2D 圖形系統中顯示為 3D 物件時，它會摺疊二維物件以忽略 Z 座標值。 轉換公式是其實只是這兩個：
+此外，z' 座標無關這裡也是。 2D 圖形系統中顯示為 3D 物件時，它會摺疊的二維物件來忽略 Z 座標值。 其實這兩個轉換公式︰
 
-x"= x' /w '
+x"= x' / w'
 
-y"= y' /w '
+y"= y' / w'
 
-這表示第三個資料列*和*可以忽略 4-4 矩陣的第三個資料行。
+這表示第三個資料列*和*可以忽略的 4 乘 4 矩陣的第三個資料行。
 
-但如果這是，原因是 4-4 矩陣甚至不必在第一次？
+但如果是這樣，為什麼一開始是 4 x 4 矩陣真的必要？
 
-雖然第三個資料列和第三個資料行 x 4 4 是二維轉換、 第三個資料列和資料行無關*不要*扮演的角色之前，當各種`SKMatrix44`值相乘。 例如，假設您乘以繞 Y 軸和檢視方塊的轉換：
+雖然第三個資料列和第三個資料行 x 4 4 是二維轉換、 第三個資料列和資料行無關*請勿*扮演角色之前，當各種`SKMatrix44`值相乘。 例如，假設您將繞著 Y 軸角度轉換的旋轉：
 
 <pre>
 |  cos(α)  0  –sin(α)  0  |   |  1  0  0      0     |   |  cos(α)  0  –sin(α)   sin(α)/depth  |
@@ -188,7 +188,7 @@ y"= y' /w '
 |    0     0     0     1  |   |  0  0  0      1     |   |    0     0     0           1        |
 </pre>
 
-在產品中，資料格`M14`現在包含檢視方塊的值。 如果您想要將該矩陣套用至 2D 物件，第三個資料列和資料行中刪除，將轉換的 3-3 的矩陣：
+在產品中，儲存格`M14`現在包含 檢視方塊的值。 如果您想要將該矩陣套用至 2D 物件時，會將它轉換成 3-3 矩陣刪除第三個資料列和資料行：
 
 <pre>
 |  cos(α)  0  sin(α)/depth  |
@@ -196,7 +196,7 @@ y"= y' /w '
 |    0     0       1        |
 </pre>
 
-現在可以用來轉換 2D 點：
+現在它可以用來轉換 2D 點：
 
 <pre>
                 |  cos(α)  0  sin(α)/depth  |
@@ -204,7 +204,7 @@ y"= y' /w '
                 |    0     0       1        |
 </pre>
 
-轉換公式是：
+轉換公式如下：
 
 x' = cos(α)·x
 
@@ -218,11 +218,11 @@ x"= cos （α） ·x / ((sin （α） / 深度) ·x + 1)
 
 y"= y / ((sin （α） / 深度) ·x + 1)
 
-X 值時繞著 Y 軸，然後正數正面角度的 2D 物件會循環 recede 負數時背景的 X 值會回到前景。 X 值看起來與 furthest from Y 軸座標接近移動 Y 軸 （其中係由的餘弦值） 會變成較小或移動的檢視器之間的距離越遠較大或較接近檢視器。
+以背景工作，而負數時 2D 物件會具有正數的角度繞著 Y 軸，則正旋轉 recede X 值的 X 值會造成前景。 X 值看起來可以更接近的 Y 軸 （受到所餘弦值） 為 furthest from Y 軸座標變得較小或較大，因為它們將檢視器更仔細的檢視器。
 
-當使用`SKMatrix44`，乘以各種執行所有的 3D 旋轉和檢視方塊作業`SKMatrix44`值。 然後您可以從 x 4 4 擷取的二維 3-3 矩陣矩陣使用[ `Matrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Matrix/)屬性`SKMatrix44`類別。 這個屬性會傳回熟悉`SKMatrix`值。
+使用時`SKMatrix44`，執行所有的 3D 旋轉和觀點來看作業乘以各種`SKMatrix44`值。 然後您可以從 x 4 4 擷取的二維 3-3 矩陣使用矩陣[ `Matrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Matrix/)屬性`SKMatrix44`類別。 這個屬性會傳回熟悉`SKMatrix`值。
 
-**旋轉 3D**頁面可讓您試驗 3D 旋轉。 [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml)檔案具現化的四個滑桿，以設定繞 X、 Y 和 Z 軸，並設定深度值：
+**旋轉 3D**頁面可讓您試驗 3D 旋轉。 [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml)檔案具現化的四個滑桿來設定繞著 X、 Y 和 Z 軸旋轉，並設定深度值：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -301,9 +301,9 @@ X 值時繞著 Y 軸，然後正數正面角度的 2D 物件會循環 recede 負
 </ContentPage>
 ```
 
-請注意，`depthSlider`初始化`Minimum`值為 250。 這表示這裡旋轉的 2D 物件具有限制為 250 像素半徑的原點所定義的圓形的 X 和 Y 座標。 此物件在 3D 空間中的任何輪替永遠會導致小於 250 座標值。
+請注意，`depthSlider`會使用初始化`Minimum`值為 250。 這表示這裡旋轉的 2D 物件已限制為 250 像素半徑原點為中心所定義的圓形的 X 和 Y 座標。 此物件在 3D 空間中的任何旋轉永遠會導致座標值小於 250。
 
-[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs)為 300 像素正方形點陣圖中載入的程式碼後置檔案：
+[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs)載入為 300 像素的正方形的點陣圖中的程式碼後置檔案：
 
 ```csharp
 public partial class Rotation3DPage : ContentPage
@@ -318,9 +318,8 @@ public partial class Rotation3DPage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
 
@@ -335,9 +334,9 @@ public partial class Rotation3DPage : ContentPage
 }
 ```
 
-如果 3D 轉換為此點陣圖上置中，然後 X 和 Y 座標 –150 和 150 之間的範圍時角落 212 像素為單位，從中心，讓一切皆維持在 250 像素的範圍內。
+如果 3D 轉換會在這個點陣圖上置中，然後 X 和 Y 座標 –150 和 150 之間的範圍時邊角 212 的像素的中心，所以內容都 250 像素半徑內。
 
-`PaintSurface`處理常式會建立`SKMatrix44`物件根據滑桿，並將它們一起使用`PostConcat`。 `SKMatrix`從最後擷取的值`SKMatrix44`住物件是由將轉譯為置中的螢幕旋轉中心的轉換：
+`PaintSurface`處理常式會建立`SKMatrix44`物件根據滑桿和乘以它們一起使用`PostConcat`。 `SKMatrix`擷取從最後的值`SKMatrix44`物件必須括住的轉譯轉換至螢幕的中心旋轉的中心：
 
 ```csharp
 public partial class Rotation3DPage : ContentPage
@@ -352,9 +351,8 @@ public partial class Rotation3DPage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
 
@@ -407,11 +405,11 @@ public partial class Rotation3DPage : ContentPage
 }
 ```
 
-當您試驗第四個滑桿時，您會注意到不同的深度設定不將物件移進一步遠離檢視器中，但改為 alter 的觀點來看效果範圍：
+當您試驗第四個滑桿時，您會發現不同的深度設定不會移動遠離檢視器，進一步的物件，但而改變的觀點來看作用範圍：
 
-[![](3d-rotation-images/rotation3d-small.png "旋轉的 3D 頁面的三個螢幕擷取畫面")](3d-rotation-images/rotation3d-large.png#lightbox "旋轉的 3D 頁面的三個螢幕擷取畫面")
+[![](3d-rotation-images/rotation3d-small.png "旋轉 3D 頁面的三個螢幕擷取畫面")](3d-rotation-images/rotation3d-large.png#lightbox "旋轉 3D 頁面的三個螢幕擷取畫面")
 
-**3D 動畫的旋轉**也會使用`SKMatrix44`以動畫方式顯示在 3D 空間中的文字字串。 `textPaint`物件設定為建構函式中使用欄位來決定文字的界限：
+**動畫的旋轉 3D**也會使用`SKMatrix44`以動畫顯示 3D 空間中的文字字串。 `textPaint`依照欄位來判斷文字的界限時，會在建構函式，設定物件：
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -443,7 +441,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-`OnAppearing`覆寫定義三個 Xamarin.Forms`Animation`以動畫方式顯示物件`xRotationDegrees`， `yRotationDegrees`，和`zRotationDegrees`欄位不同的速率。 請注意這些動畫的週期設為主要數字-5 秒，7 秒和 11 秒，讓每個 385 秒或超過 10 分鐘，只會重複整體組合：
+`OnAppearing`覆寫定義三個 Xamarin.Forms`Animation`物件來以動畫顯示`xRotationDegrees`， `yRotationDegrees`，和`zRotationDegrees`欄位不同的速率。 請注意，這些動畫的期間會設定數字就準備好-5 秒、 7、 11 秒數以及 — 因此每個 385 的秒數或超過 10 分鐘，只會重複整體的組合：
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -477,7 +475,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-如同先前的程式，`PaintCanvas`處理常式會建立`SKMatrix44`值旋轉的角度來看，並將它們一起相乘：
+前一個程式，如同`PaintCanvas`處理常式會建立`SKMatrix44`值旋轉的角度來看，並將它們一起相乘︰
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -531,12 +529,12 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-這個 3D 旋轉是括住數個 2D 轉換將旋轉的中心點移至螢幕的中央，並調整文字字串的大小，使其與螢幕的寬度相同：
+這個 3D 旋轉被用來移至螢幕的中心的旋轉中心的並相應的文字字串的大小，使它與螢幕的寬度相同的數個 2D 轉換：
 
-[![](3d-rotation-images/animatedrotation3d-small.png "三個螢幕擷取畫面的動畫旋轉的 3D 頁面")](3d-rotation-images/animatedrotation3d-large.png#lightbox "的動畫旋轉的 3D 頁面的三個螢幕擷取畫面")
+[![](3d-rotation-images/animatedrotation3d-small.png "動畫的旋轉 3D 頁面的三個螢幕擷取畫面")](3d-rotation-images/animatedrotation3d-large.png#lightbox "動畫的旋轉 3D 頁面的三個螢幕擷取畫面")
 
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

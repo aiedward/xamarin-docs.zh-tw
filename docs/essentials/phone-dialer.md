@@ -1,22 +1,22 @@
 ---
 title: Xamarin.Essentials： 電話撥號員
-description: Xamarin.Essentials PhoneDialer 類別可讓應用程式最佳化的系統慣用的瀏覽器或外部瀏覽器中開啟網頁連結。
+description: Xamarin.Essentials PhoneDialer 類別可讓應用程式以開啟 撥號員中的 電話號碼
 ms.assetid: E7457942-4D7B-4195-A2FF-417919B9537F
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 6733e43ed4174d1dd78b2e8f70268eb54adadb98
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 34a6c80836d8cb42b1f8fd95718fe248d4701c0f
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831393"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130789"
 ---
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials： 電話撥號員
 
 ![發行前版本的 NuGet](~/media/shared/pre-release.png)
 
-**PhoneDialer**類別可讓應用程式最佳化的系統慣用的瀏覽器或外部瀏覽器中開啟網頁連結。
+**PhoneDialer**類別可讓您的應用程式，以開啟 撥號員中的 電話號碼。
 
 ## <a name="using-phone-dialer"></a>使用電話撥號員
 
