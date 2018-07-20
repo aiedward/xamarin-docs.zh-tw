@@ -7,12 +7,12 @@ ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b5257ca6df09c95b425b8a0929d25e3575bc9d8c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 83a445555f9f184f735c105370de20665ad704a3
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996138"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156752"
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>第 23 章的摘要。 觸發程序和行為
 
@@ -152,7 +152,7 @@ ms.locfileid: "38996138"
 
 [ **FormattedTextToggle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/FormattedTextToggle)範例會將這個概念延伸藉由切換兩個`FormattedString`物件。
 
-[ `ToggleBase` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBase.cs)類別**Xamarin.FormsBook.Toolkit**文件庫衍生自`ContentView`，定義`IsToggled`屬性，並結合`ToggleBehavior`切換邏輯。 這可讓您更輕鬆地在 XAML 中，定義 [切換] 按鈕如所示[ **TranditionalCheckBox** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalCheckBox)範例。
+[ `ToggleBase` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBase.cs)類別**Xamarin.FormsBook.Toolkit**文件庫衍生自`ContentView`，定義`IsToggled` 屬性，並結合`ToggleBehavior`切換邏輯。 這可讓您更輕鬆地在 XAML 中，定義 [切換] 按鈕如所示[ **TranditionalCheckBox** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalCheckBox)範例。
 
 [ **SwitchCloneDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/SwitchCloneDemo)包含[ `SwitchClone` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter23/SwitchCloneDemo/SwitchCloneDemo/SwitchCloneDemo/SwitchClone.cs)類別衍生自`ToggleBase`，並使用[ `TranslateAction` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/TranslateAction.cs)類別來建構類似於 Xamarin.Forms 的切換按鈕`Switch`。
 

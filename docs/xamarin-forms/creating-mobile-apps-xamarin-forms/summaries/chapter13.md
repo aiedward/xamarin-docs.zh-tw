@@ -6,26 +6,32 @@ ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: b27df7f63ac83206c50858175dc2945937142f78
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: d863ce1c6195ddaef164c3a15817a4ff87a3c332
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995465"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156622"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>第 13 章摘要。 點陣圖
+
+> [!NOTE] 
+> 在此頁面上的附註表示其中 Xamarin.Forms 有分歧活頁簿中所呈現的題材的區域。
 
 Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image)項目顯示的點陣圖。 所有的 Xamarin.Forms 平台支援的 JPEG、 PNG、 GIF 及 BMP 檔案格式。
 
 在 Xamarin.Forms 中的點陣圖來自於四個位置︰
 
 - 透過所指定 URL 的網頁
-- 內嵌做為一般的可攜式類別庫中的資源
+- 內嵌做為共用的文件庫中的資源
 - 平台應用程式專案中內嵌為資源
 - 從任何地方，您可以參考.NET`Stream`物件，包括 `MemoryStream`
 
-PCL 中的點陣圖資源是平台無關，而是平台特定的平台專案中的點陣圖資源。
+共用的文件庫中的點陣圖資源是平台無關，而是平台特定的平台專案中的點陣圖資源。
+
+> [!NOTE] 
+> 本書的文字可讓可攜式類別庫，.NET Standard 程式庫已取代的參考。 活頁簿中的所有範例程式碼已經都轉換成使用.NET 標準程式庫。
 
 藉由設定指定的點陣圖[ `Source` ](xref:Xamarin.Forms.Image.Source)屬性`Image`物件的型別[ `ImageSource` ](xref:Xamarin.Forms.ImageSource)，具有三個衍生的抽象類別：
 
@@ -63,7 +69,7 @@ PCL 中的點陣圖資源是平台無關，而是平台特定的平台專案中�
 程式設定`VerticalOptions`並`HorizontalOptions`的屬性`Image`來`LayoutOptions.Center`，這可讓`Image`未受限制的項目。 `Image`和點陣圖大小都相同：
 
 - 在 iOS 和 Android 上`Image`是點陣圖的像素大小。 沒有點陣圖的像素與螢幕像素之間的一對一對應。
-- 在 Windows 執行階段平台上`Image`是裝置獨立單位點陣圖的像素大小。 在大部分的裝置上每個點陣圖像素會佔用多個螢幕像素。
+- 通用 Windows 平台上`Image`是裝置獨立單位點陣圖的像素大小。 在大部分的裝置上每個點陣圖像素會佔用多個螢幕像素。
 
 [ **StackedBitmap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/StackedBitmap)範例 puts`Image`垂直`StackLayout`在 XAML 中。 名為標記延伸[ `ImageResourceExtension` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter13/StackedBitmap/StackedBitmap/StackedBitmap/ImageResourceExtension.cs)可協助您在 XAML 中的內嵌的資源的參考。 這個類別只會從載入資源的組件中的位置，因此它不能放在程式庫。
 
@@ -82,7 +88,10 @@ PCL 中的點陣圖資源是平台無關，而是平台特定的平台專案中�
 
 ### <a name="browsing-and-waiting"></a>瀏覽和等候
 
-[ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser)範例可讓使用者瀏覽儲存在 Xamarin 的網站上的原廠映像。 它會使用.NET`WebRequest`類別來下載 JSON 檔案的清單中的點陣圖。
+[ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser)範例可讓使用者瀏覽儲存在 Xamarin 的網站上的原廠映像。 它會使用.NET [ `WebRequest` ](xref:System.Net.WebRequest)類別來下載 JSON 檔案的清單中的點陣圖。
+
+> [!NOTE]
+> Xamarin.Forms 程式應該使用[ `HttpClient` ](xref:System.Net.Http.HttpClient)而非[ `WebRequest` ](xref:System.Net.WebRequest)透過網際網路存取的檔案。 
 
 程式會使用[ `ActivityIndicator` ](xref:Xamarin.Forms.ActivityIndicator)表示的項目即將。 載入每個點陣圖，唯讀[ `IsLoading` ](xref:Xamarin.Forms.Image.IsLoading)屬性`Image`是`true`。 `IsLoading`屬性做為後盾的可繫結的屬性，因此`PropertyChanged`該屬性變更時引發事件。 程式將處理常式附加至這個事件，並使用目前的設定`IsLoaded`來設定[ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/)屬性`ActivityIndicator`。
 
@@ -154,7 +163,7 @@ PCL 中的點陣圖資源是平台無關，而是平台特定的平台專案中�
 
 點陣圖一律會呈現在 160 裝置無關的單位。 （標準的 Xamarin.Forms 方案範本只包括 hdpi、 xhdpi 和 xxhdpi 資料夾）。
 
-Windows 執行階段專案支援命名配置，其中包含的像素為單位，每個裝置獨立單位的縮放比例百分比，例如點陣圖：
+UWP 專案支援點陣圖的命名配置，其中包含的像素為單位，每個裝置獨立單位的縮放比例百分比，例如：
 
 - MyImage.scale-200.jpg 320 像素的正方形
 
@@ -164,7 +173,7 @@ Windows 執行階段專案支援命名配置，其中包含的像素為單位，
 
 - iOS: **BundleResource**
 - Android: **AndroidResource**
-- Windows 執行階段：**內容**
+- UWP:**內容**
 
 [ **ImageTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageTap)範例會建立兩個按鈕類似的物件，其中包含`Image`項目`TapGestureRecognizer`安裝。 它可能是物件是一英吋正方形。 `Source`的屬性`Image`會使用設定`OnPlatform`和`On`參考可能位在不同的平台上的檔案名稱的物件。 點陣圖影像包含的數字表示其像素大小，以便您可以看到哪些大小點陣圖會擷取並呈現。
 
@@ -182,16 +191,18 @@ Windows 執行階段專案支援命名配置，其中包含的像素為單位，
 
 `ToolbarItem`引發[ `Clicked` ](xref:Xamarin.Forms.MenuItem.Clicked)事件，當點選，很像`Button`。 `ToolbarItem` 也支援[ `Command` ](xref:Xamarin.Forms.MenuItem.Command)並[ `CommandParameter` ](xref:Xamarin.Forms.MenuItem.CommandParameter) MVVM 與常用的屬性。 (請參閱[第 18 章、 MVVM](chapter18.md))。
 
-IOS 和 Android 都需要頁面，其中顯示工具列[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)或巡覽至頁面`NavigationPage`。 [ **ToolbarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo)程式集`MainPage`屬性其`App`類別[`NavigationPage`建構函式](xref:Xamarin.Forms.NavigationPage.%23ctor(Xamarin.Forms.Page))與`ContentPage`引數，並示範如何建構和事件處理常式的工具列。
+IOS 和 Android 都需要頁面，其中顯示工具列[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)或 巡覽至頁面`NavigationPage`。 [ **ToolbarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo)程式集`MainPage`屬性其`App`類別[`NavigationPage`建構函式](xref:Xamarin.Forms.NavigationPage.%23ctor(Xamarin.Forms.Page))與`ContentPage`引數，並示範如何建構和事件處理常式的工具列。
 
 ### <a name="button-images"></a>按鈕的影像
 
 您也可以設定使用平台專屬點陣圖[ `Image` ](xref:Xamarin.Forms.Button.Image)屬性`Button`32 裝置獨立單位正方形，如所示的點陣圖[ **ButtonImage**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage)範例。
 
-
+> [!NOTE]
+> 已增強的按鈕上的映像使用。 請參閱[使用的點陣圖按鈕](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons)。
 
 ## <a name="related-links"></a>相關連結
 
 - [第 13 章全文檢索 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch13-Apr2016.pdf)
 - [第 13 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
 - [使用影像](~/xamarin-forms/user-interface/images.md)
+- [使用的點陣圖按鈕](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons)

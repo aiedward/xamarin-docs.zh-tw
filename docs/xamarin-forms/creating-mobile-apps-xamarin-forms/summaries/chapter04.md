@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 3571774ddec4182f35cac6f13d4582235e2ff31a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: 49f2d96fb7f95ab880d5cfafa420afbbe933c1ad
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997422"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156713"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章的摘要。 捲動堆疊
 
@@ -20,13 +20,16 @@ ms.locfileid: "38997422"
 
 版面配置包含數個類別衍生自[ `Layout` ](xref:Xamarin.Forms.Layout)並[ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)。 本章著重[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)。
 
+> [!NOTE]
+> [ `FlexLayout` ](~/xamarin-forms/user-interface/layouts/flex-layout.md)中導入 Xamarin.Forms 3.0 可以用類似的方式`StackLayout`但具有更大的彈性。
+
 也引進了在這一章所[ `ScrollView` ](xref:Xamarin.Forms.ScrollView)， [ `Frame` ](xref:Xamarin.Forms.Frame)，以及[ `BoxView` ](xref:Xamarin.Forms.BoxView)類別。
 
 ## <a name="stacks-of-views"></a>檢視的堆疊
 
 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 衍生自`Layout<View>`會繼承[ `Children` ](xref:Xamarin.Forms.Layout`1)型別的屬性`IList<View>`。 您將多個檢視項目新增至這個集合中，和`StackLayout`水平或垂直堆疊中顯示它們。
 
-設定[ `Orientation` ](xref:Xamarin.Forms.StackLayout.Orientation)屬性`StackLayout`成員[ `StackOrientation` ](xref:Xamarin.Forms.StackOrientation)列舉型別，任一[ `Vertical` ](xref:Xamarin.Forms.StackOrientation.Vertical)或[`Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal). 預設值為 `Vertical`。
+設定[ `Orientation` ](xref:Xamarin.Forms.StackLayout.Orientation)屬性`StackLayout`成員[ `StackOrientation` ](xref:Xamarin.Forms.StackOrientation)列舉型別，任一[ `Vertical` ](xref:Xamarin.Forms.StackOrientation.Vertical)或[`Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal). 預設為 `Vertical`。
 
 設定[ `Spacing` ](xref:Xamarin.Forms.StackLayout.Spacing)屬性`StackLayout`到`double`值，以指定的子系之間的間距。 預設值為 6。
 
@@ -38,7 +41,7 @@ ms.locfileid: "38997422"
 
 設定[ `Content` ](xref:Xamarin.Forms.ScrollView.Content)屬性`ScrollView`至您想要捲動的檢視。 這通常是`StackLayout`，但它可以是任何檢視。
 
-設定[ `Orientation` ](xref:Xamarin.Forms.ScrollView.Orientation)屬性`ScrollView`成員[ `ScrollOrientation` ](xref:Xamarin.Forms.ScrollOrientation)屬性[ `Vertical` ](xref:Xamarin.Forms.ScrollOrientation.Vertical)， [ `Horizontal` ](xref:Xamarin.Forms.ScrollOrientation.Horizontal)，或[ `Both` ](xref:Xamarin.Forms.ScrollOrientation.Both)。 預設值為 `Vertical`。 如果內容`ScrollView`是`StackLayout`，這兩個方向應該一致。
+設定[ `Orientation` ](xref:Xamarin.Forms.ScrollView.Orientation)屬性`ScrollView`成員[ `ScrollOrientation` ](xref:Xamarin.Forms.ScrollOrientation)屬性[ `Vertical` ](xref:Xamarin.Forms.ScrollOrientation.Vertical)， [ `Horizontal` ](xref:Xamarin.Forms.ScrollOrientation.Horizontal)，或[ `Both` ](xref:Xamarin.Forms.ScrollOrientation.Both)。 預設為 `Vertical`。 如果內容`ScrollView`是`StackLayout`，這兩個方向應該一致。
 
 [ **ReflectedColors** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ReflectedColors)範例示範如何使用`ScrollView`和`StackLayout`來顯示可用的色彩。 此範例也示範如何使用.NET 反映來取得所有的公用靜態屬性和欄位`Color`結構，而不需要明確地列出它們。
 
@@ -104,7 +107,7 @@ ms.locfileid: "38997422"
 
 訣竅是給予`ScrollView`的子系`StackLayout``VerticalOptions`設定`FillAndExpand`。 這示範於[ **BlackCat** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCat)範例。
 
-**BlackCat**範例也會示範如何定義及存取內嵌可攜式類別庫 (PCL) 程式資源。 這也可透過共用資產專案 (SAPs)，但程序比較困難，作為[ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap)範例會示範。
+**BlackCat**範例也會示範如何定義及存取內嵌於共用的程式庫中的程式。 這也可透過共用資產專案 (SAPs)，但程序比較困難，作為[ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap)範例會示範。
 
 
 
@@ -115,3 +118,4 @@ ms.locfileid: "38997422"
 - [第 4 章 F # 範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
 - [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)
 - [ScrollView](~/xamarin-forms/user-interface/layouts/scroll-view.md)
+- [BoxView](~/xamarin-forms/user-interface/boxview.md)
