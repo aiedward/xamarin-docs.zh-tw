@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: a04f72d0577c7b8bf467ee73df233e483f6aa401
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: 01985cf253c0f33c52128386b36c11af50381ee1
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996421"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156680"
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>第 19 章的摘要。 集合檢視
+
+> [!NOTE] 
+> 在此頁面上的附註表示其中 Xamarin.Forms 有分歧活頁簿中所呈現的題材的區域。
 
 Xamarin.Forms 可定義三個檢視維護集合，並顯示其項目：
 
@@ -39,6 +42,9 @@ Xamarin.Forms 可定義三個檢視維護集合，並顯示其項目：
 ### <a name="data-binding-the-picker"></a>資料繫結選擇器
 
 `SelectedIndex`屬性做為後盾的可繫結的屬性，但`Items`不是，使用資料繫結與`Picker`並不容易。 一個解決方案是使用`Picker`結合[ `ObjectToIndexConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ObjectToIndexConverter.cs)例如[ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)程式庫。 [ **PickerBinding** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerBinding)示範其運作方式。
+
+> [!NOTE] 
+> Xamarin.Forms`Picker`現在包含`ItemsSource`和`SelectedItem`支援資料繫結的屬性。 請參閱[選擇器](~/xamarin-forms/user-interface/picker/index.md)。
 
 ## <a name="rendering-data-with-listview"></a>使用 ListView 的轉譯資料
 
@@ -224,5 +230,6 @@ Xamarin.Forms 可定義三個檢視維護集合，並顯示其項目：
 
 - [第 19 章全文檢索 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch19-Apr2016.pdf)
 - [第 19 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19)
+- [選擇器](~/xamarin-forms/user-interface/picker/index.md)
 - [ListView](~/xamarin-forms/user-interface/listview/index.md)
 - [TableView](~/xamarin-forms/user-interface/tableview.md)

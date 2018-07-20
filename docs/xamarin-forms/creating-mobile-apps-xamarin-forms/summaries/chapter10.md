@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 1ee19d96e39534ccce5238eca3a90ba5c8d9d451
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: 74f7e2846a9e8d8390a8322c57db0845718bbba7
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997503"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156999"
 ---
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>第 10 章的摘要。 XAML 標記延伸
 
@@ -91,9 +91,8 @@ XAML 標記延伸是實作的類別[ `IMarkupExtension` ](xref:Xamarin.Forms.Xam
 
 [ **CustomExtensionDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/CustomExtensionDemo)範例示範如何參考此文件庫，並使用自訂標記延伸模組。
 
-
-
 ## <a name="related-links"></a>相關連結
 
 - [第 10 章全文檢索 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf)
 - [第 10 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)
+- [XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)

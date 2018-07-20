@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 36d208f2326c7584bc03c351b4a5b05a3f3928c9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: c82e222fd47f3a3f13043c076c488b4769659352
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995449"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156492"
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>第 5 章的摘要。 因應大小
+
+> [!NOTE] 
+> 在此頁面上的附註表示其中 Xamarin.Forms 有分歧活頁簿中所呈現的題材的區域。
 
 到目前為止已發生在 Xamarin.Forms 中的數種大小：
 
@@ -36,7 +39,10 @@ Apple Mac 和 Microsoft Windows 的歷程記錄，在早期程式設計師曾以
 
 Android 很類似。 程式設計人員使用的單位*密度無關的像素*(dps)，且 dps 和像素為單位之間的關聯性根據 160 dp 英吋。
 
-Windows 執行階段也已經建立表示幾近 160 英吋的裝置獨立單位的縮放比例。
+Windows 手機和行動裝置也建立了表示幾近 160 英吋的裝置獨立單位的縮放比例。
+
+> [!NOTE]
+> Xamarin.Forms 不再支援任何以 Windows 為基礎的電話或行動裝置。
 
 在 [摘要] 以電話和平板電腦為目標的 Xamarin.Forms 程式設計師可以假設所有度量單位都根據下列準則：
 

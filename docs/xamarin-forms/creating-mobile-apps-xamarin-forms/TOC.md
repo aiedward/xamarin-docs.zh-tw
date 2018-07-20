@@ -1,5 +1,4 @@
 # [使用 Xamarin.Forms Book 建立行動應用程式](index.md)
-## [章節摘要](summaries/index.md)
 ## [1.Xamarin.Forms 如何適應？](summaries/chapter01.md)
 ## [2.應用程式剖析](summaries/chapter02.md)
 ## [3.Deeper into text](summaries/chapter03.md)

@@ -7,12 +7,12 @@ ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b512b15ea40d963cd35379cf3162856d132e38dc
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 30fa06364e49294a71d37c29d4b9f1e95deac12f
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995258"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156921"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>第 18 章的摘要。 MVVM
 
@@ -97,3 +97,4 @@ MVVM 搭配資料繫結和資料繫結處理屬性，因此 MVVM 似乎不足時
 
 - [第 18 章全文檢索 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf)
 - [第 18 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
+- [使用 Xamarin.Forms 電子書的企業應用程式模式](~/xamarin-forms/enterprise-application-patterns/index.md)
