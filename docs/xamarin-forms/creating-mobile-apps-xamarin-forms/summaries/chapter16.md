@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: c4ad067778203759a54ed8141db0b82602e40f6c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: 083cb4ed57df989a55a26394cbf8440d53a9e769
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997448"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156654"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>第 16 章的摘要。 資料繫結
+
+> [!NOTE] 
+> 在此頁面上的附註表示其中 Xamarin.Forms 有分歧活頁簿中所呈現的題材的區域。
 
 程式設計人員通常會發現自己撰寫一個物件的屬性已變更，當偵測的事件處理常式，然後使用它來的另一個物件中的屬性值變更。 此程序可以使用的技術來自動化*資料繫結*。 資料繫結通常在 XAML 中定義，並成為使用者介面的定義的一部分。
 
@@ -85,6 +88,9 @@ ms.locfileid: "38997448"
 - [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) 來源與目標中的變更會影響彼此
 - [`Default`](xref:Xamarin.Forms.BindingMode.Default) 若要使用[ `DefaultBindingMode` ](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode)時指定目標`BindableProperty`所建立。 如果未指定，預設值是`OneWay`一般可繫結的屬性，以及`OneWayToSource`唯讀的可繫結屬性。
 
+> [!NOTE]
+> `BindingMode`列舉型別現在也包含`OnTime`套用繫結，而繫結內容變更時才不會在 [來源] 屬性變更。
+
 屬性通常是在 MVVM 案例中的資料繫結的目標可能會有`DefaultBindingMode`的`TwoWay`。 這些是：
 
 - `Value` 屬性`Slider`和 `Stepper`
@@ -137,3 +143,4 @@ ms.locfileid: "38997448"
 
 - [第 16 章全文檢索 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch16-Apr2016.pdf)
 - [第 16 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
+- [資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)

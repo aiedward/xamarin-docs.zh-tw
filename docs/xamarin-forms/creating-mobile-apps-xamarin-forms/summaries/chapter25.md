@@ -7,12 +7,12 @@ ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 148388b80137bd335bbb977ea230726da1f4a32d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 3496504ed6326992aabfceb1d4d3476223c9e4e0
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995881"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156544"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>第 25 章的摘要。 頁面變化
 

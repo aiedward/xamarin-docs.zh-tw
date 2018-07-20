@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 34671C48-0ED4-4B76-A33D-D6505390DC5B
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 78a0a7d4ce3a3de52f281237429cebb38f3b8e52
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: 9f3c077d7bae3557178236b81073afaf4892a272
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998777"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156557"
 ---
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>第 11 章摘要。 可繫結的基礎結構
 
@@ -89,9 +89,8 @@ Xamarin.Forms 可定義增強的屬性定義中稱為*可繫結的屬性*由封�
 
 這示範於[ `CountedLabel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CountedLabel.cs)中所使用的類別[ **BaskervillesCount** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/BaskervillesCount)範例。
 
-
-
 ## <a name="related-links"></a>相關連結
 
 - [第 11 章全文檢索 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch11-Apr2016.pdf)
 - [第 11 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11)
+- [可繫結的屬性](~/xamarin-forms/xaml/bindable-properties.md)

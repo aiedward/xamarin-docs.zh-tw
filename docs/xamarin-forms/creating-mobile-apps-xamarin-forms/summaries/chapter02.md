@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: d1daceba29e45adf64947c89555cc4e75a850d32
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/17/2018
+ms.openlocfilehash: fe6a8c3d17cf1fe6f489f6425bbdaa3cd30f390a
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995273"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156675"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第 2 章的摘要。 應用程式剖析
+
+> [!NOTE] 
+> 在此頁面上的附註表示其中 Xamarin.Forms 有分歧活頁簿中所呈現的題材的區域。
 
 在 Xamarin.Forms 應用程式中，所佔用的空間，在螢幕上的物件稱為*視覺項目*、 由封裝[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)類別。 視覺項目可以分成三個類別對應至這些類別：
 
@@ -28,7 +31,12 @@ A`Page`衍生項目會佔用整個螢幕或幾乎整個螢幕。 頁面的子系
 
 ## <a name="say-hello"></a>迎接嶄新
 
-安裝 Xamarin 平台的情況下，您可以建立新的 Xamarin.Forms 方案在 Visual Studio 或 Visual Studio for mac。 [ **Hello** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello)解決方案會使用通用的程式碼的可攜式類別庫。 它會示範 Xamarin.Forms 方案在 Visual Studio 中建立並進行任何修改。 方案是由六個專案 （其中兩個不會使用目前的 Xamarin.Forms 方案範本建立的最後一個） 所組成：
+安裝 Xamarin 平台的情況下，您可以建立新的 Xamarin.Forms 方案在 Visual Studio 或 Visual Studio for mac。 [ **Hello** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello)解決方案會使用通用的程式碼的可攜式類別庫。 
+
+> [!NOTE] 
+> .NET Standard 程式庫已取代的可攜式類別庫。 活頁簿中的所有範例程式碼已經都轉換成使用.NET 標準程式庫。
+
+這個範例會示範 Xamarin.Forms 方案在 Visual Studio 中建立並進行任何修改。 方案是由六個專案所組成：
 
 - [**Hello**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello)，由其他專案共用的可攜式類別庫 (PCL)
 - [**Hello.Droid**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Droid)，適用於 Android 的應用程式專案
@@ -37,13 +45,19 @@ A`Page`衍生項目會佔用整個螢幕或幾乎整個螢幕。 頁面的子系
 - [**Hello.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Windows)，Windows 8.1 應用程式專案
 - [**Hello.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.WinPhone)，適用於 Windows Phone 8.1 應用程式專案
 
+> [!NOTE] 
+> Xamarin.Forms 也不再支援 Windows 8.1、 Windows Phone 8.1 或 Windows 10 行動裝置，但 Xamarin.Forms 應用程式執行 Windows 10 桌面上。 
+
 您可以進行任何這類應用程式專案啟始專案，然後建置並在裝置或模擬器上執行程式。
 
-在許多 Xamarin.Forms 應用程式中，您將不會修改應用程式專案。 這些通常會保留小的虛設常式，只是為了啟動程式。 大部分的焦點會通用於所有應用程式的可攜式類別庫。
+在許多 Xamarin.Forms 應用程式中，您將不會修改應用程式專案。 這些通常會保留小的虛設常式，只是為了啟動程式。 大部分的焦點會通用於所有應用程式的程式庫。
 
 ## <a name="inside-the-files"></a>檔案內
 
 所顯示的視覺效果**Hello**的建構函式中所定義的程式[ `App` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs)類別。 `App` 衍生自 Xamarin.Forms 類別[ `Application` ](xref:Xamarin.Forms.Application)。
+
+> [!NOTE] 
+> Visual Studio 解決方案範本，適用於 Xamarin.Forms 與 XAML 檔案建立頁面。 此活頁簿之前並未涵蓋 XAML[第 7 章](chapter07.md)。
 
 **參考**一節**Hello** PCL 專案，包括下列的 Xamarin.Forms 組件：
 
@@ -60,21 +74,20 @@ A`Page`衍生項目會佔用整個螢幕或幾乎整個螢幕。 頁面的子系
 - **Xamarin.Forms.Platform.WinRT.Tablet**
 - **Xamarin.Forms.Platform.WinRT.Phone**
 
+> [!NOTE] 
+> **參考**這些專案的區段不會再列出的組件。 相反地，專案檔內含**PackageReference**參考 Xamarin.Forms NuGet 套件的標記。 **參考**Visual Studio 清單中的 區段**Xamarin.Forms**封裝而不是 Xamarin.Forms 組件。 
+
 每個應用程式專案包含呼叫靜態`Forms.Init`方法中的`Xamarin.Forms`命名空間。 這會初始化 Xamarin.Forms 程式庫。 不同版本的`Forms.Init`定義每個平台。 呼叫此方法位於下列類別：
 
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
 - UWP: [ `App`類別，`OnLaunched`方法](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
-- Windows 8.1: [ `App`類別，`OnLaunched`方法](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/App.xaml.cs#L65)
-- Windows Phone 8.1: [ `App`類別，`OnLaunched`方法](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WinPhone/App.xaml.cs#L67)
 
-此外，每個平台必須具現化`App`類別在 PCL 中的位置。 這個問題發生在呼叫`LoadApplication`中的下列類別：
+此外，每個平台必須具現化`App`類別共用的文件庫中的位置。 這個問題發生在呼叫`LoadApplication`中的下列類別：
 
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
 - UWP: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.UWP/MainPage.xaml.cs)
-- Windows 8.1： [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/MainPage.xaml.cs)
-- Windows Phone 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WindowsPhone/MainPage.xaml.cs)
 
 否則，這些應用程式專案會是一般的"do nothing"程式。
 
@@ -82,30 +95,20 @@ A`Page`衍生項目會佔用整個螢幕或幾乎整個螢幕。 頁面的子系
 
 您可使用可攜式類別庫 (PCL) 或共用資產專案 (SAP) 中的通用程式碼會建立 Xamarin.Forms 方案。 若要建立的 SAP 解決方案，請在 Visual Studio 中選取 [共用] 選項。 [ **HelloSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap)解決方案示範不需要修改的 SAP 範本。
 
-PCL 方法組合的平台應用程式專案所參考的程式庫專案中的所有常見的程式都碼。 使用 SAP 方法時，常見的程式碼，有效地存在於所有平台應用程式專案，並在它們之間共用。
+> [!NOTE] 
+> 已取代的可攜式類別庫的.NET Standard 程式庫。 活頁簿中的所有範例程式碼已經都轉換成使用.NET 標準程式庫。 否則，PCL 和.NET Standard 程式庫會在概念上非常類似。
 
-大部分的 Xamarin.Forms 開發人員偏好使用 PCL 方法。 在本書中，大部分的解決方案會是 PCL。 使用 SAP 包含**Sap**中的專案名稱後置字元。
+平台應用程式專案所參考的程式庫專案中的所有常見的程式都碼程式庫方法的組合。 使用 SAP 方法時，常見的程式碼，有效地存在於所有平台應用程式專案，並在它們之間共用。
 
-若要支援所有的 Xamarin.Forms 平台，使用 PCL 的.NET 版本必須滿足下列平台：
-
-- .NET Framework 4.5
-- Windows 8
-- Windows Phone 8.1
-- Xamarin.Android
-- Xamarin.iOS
-- Xamarin.IOS （傳統）
-
-這就是電腦設定檔 111。
+大部分的 Xamarin.Forms 開發人員偏好使用的程式庫方法。 在本書中，大部分的解決方案會使用文件庫。 使用 SAP 包含**Sap**中的專案名稱後置字元。
 
 使用 SAP 方法共用專案中的程式碼可以使用 C# 前置處理器指示詞執行不同的程式碼適用於各種平台 (`#if`，#`elif`，和`#endif`) 使用這些預先定義的識別項：
 
 - iOS: `__IOS__`
 - Android: `__ANDROID__`
 - UWP: `WINDOWS_UWP`
-- Windows 8.1： `WINDOWS_APP`
-- Windows Phone 8.1: `WINDOWS_PHONE_APP`
 
-PCL 中，如您在本章稍後所見，可以判斷您在執行階段，在執行何種平台。
+共用的程式庫，在中，您可以決定您在執行階段，在執行何種平台，您會看到在本章稍後。
 
 ## <a name="labels-for-text"></a>標籤文字
 
@@ -138,17 +141,13 @@ Xamarin.Forms 用於活頁簿，新版`Padding`可以選取 iOS 的 PCL 」 或 
 
 - [`iOS`](xref:Xamarin.Forms.TargetPlatform.iOS)
 - [`Android`](xref:Xamarin.Forms.TargetPlatform.Android)
-- [`Windows`](xref:Xamarin.Forms.TargetPlatform.Windows) Windows 8.1、 Windows Phone 8.1，和 UWP 的所有裝置。
-- [`WinPhone`](xref:Xamarin.Forms.TargetPlatform.WinPhone)之前用來識別 Windows Phone 8.0，但會現在未使用
-- [`Other`](xref:Xamarin.Forms.TargetPlatform.Other) 未使用
+- [`Windows`](xref:Xamarin.Forms.TargetPlatform.Windows) 適用於 UWP 的裝置。
 
 `Device.OnPlatform`方法，`Device.OS`屬性，而`TargetPlatform`列舉型別都現在已過時。 請改用[ `Device.RuntimePlatform` ](xref:Xamarin.Forms.Device.RuntimePlatform)屬性及比較`string`傳回具有下列靜態欄位的值：
 
 - [`iOS`](xref:Xamarin.Forms.Device.iOS)「 iOS"的字串
 - [`Android`](xref:Xamarin.Forms.Device.Android)"Android"的字串
-- [`UWP`](xref:Xamarin.Forms.Device.UWP)字串"UWP"，指的 Windows 執行階段平台
-- `Windows`字串"Windows"Windows 執行階段 （Windows 8.1 和 Windows Phone 8.1，已被取代）
-- `WinPhone`字串"WinPhone 「 適用於 Windows Phone 8.0 （已過時）
+- [`UWP`](xref:Xamarin.Forms.Device.UWP)字串"UWP"，指的通用 Windows 平台
 
 [ `Device.Idiom` ](xref:Xamarin.Forms.Device.Idiom)靜態的唯讀屬性相關。 這會傳回的成員[ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom)，其中包含這些成員：
 
@@ -157,7 +156,7 @@ Xamarin.Forms 用於活頁簿，新版`Padding`可以選取 iOS 的 PCL 」 或 
 - [`Phone`](xref:Xamarin.Forms.TargetIdiom.Phone)
 - [`Unsupported`](xref:Xamarin.Forms.TargetIdiom.Unsupported) 未使用
 
-適用於 iOS 和 Android 之間截止`Tablet`和`Phone`是直向寬度為 600 的單位。 適用於 Windows 平台`Desktop`表示執行 Windows 10 UWP 應用程式`Tablet`是 Windows 8.1 的程式，和`Phone`指出 Windows 10 或 Windows Phone 8.1 應用程式執行的 UWP 應用程式。
+適用於 iOS 和 Android 之間截止`Tablet`和`Phone`是直向寬度為 600 的單位。 適用於 Windows 平台`Desktop`表示執行 Windows 10 UWP 應用程式和`Phone`表示執行 Windows 10 的應用程式的 UWP 應用程式。
 
 ## <a name="solution-3a-set-margin-on-the-label"></a>方案 3a。 設定邊界標籤
 
@@ -199,8 +198,6 @@ Xamarin.Forms 用於活頁簿，新版`Padding`可以選取 iOS 的 PCL 」 或 
 - [`End`](xref:Xamarin.Forms.TextAlignment.End)表示右方或下方 （根據方向）
 
 這兩個屬性定義只有`Label`，而`HorizontalAlignment`並`VerticalAlignment`來定義屬性`View`，而且所有繼承`View`衍生項目。 視覺效果可能看似雷同，但它們是非常不同，如下一章中所示。
-
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 58a8976b054ac7fad5c4e24f0561d1b4e468c1b2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: abf30f2cd828d67ef6fb04f809fce6235e1add9b
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995127"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156479"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 章的摘要。 Xamarin.Forms 如何適應？
+
+> [!NOTE] 
+> 在此頁面上的附註表示其中 Xamarin.Forms 有分歧活頁簿中所呈現的題材的區域。
 
 其中一個程式設計中最不愉快的作業移植程式碼基底到另一個平台，特別是當該平台牽涉到不同的程式設計語言。 當移植重新建構，程式碼時，會有嘗試，但如果必須以平行方式維持兩種平台，然後兩個程式碼基底之間的差異將使未來的維護更加困難。
 
@@ -32,6 +35,9 @@ Xamarin 目前會提供原生 Mac、 iOS 和 Android Api 使用 C# 和.NET 為�
 
 開發人員可以使用 C# 中撰寫的應用程式，該目標 Mac、 iOS 或 Android 的 Xamarin 平台。 但當以多個平台為目標，是很合理地共用相同的目標平台之間的程式碼。 這牽涉到分成 （通常包含使用者介面） 的平台相關程式碼，以及平台獨立程式碼中，這通常需要的基底.NET framework 中的程式。 此平台獨立程式碼可以是位於可攜式類別庫 (PCL) 或共用的專案，通常稱為共用資產專案或 SAP。
 
+> [!NOTE] 
+> .NET Standard 程式庫已取代的可攜式類別庫。 活頁簿中的所有範例程式碼已經都轉換成使用.NET 標準程式庫。
+
 ## <a name="introducing-xamarinforms"></a>Xamarin.Forms 簡介
 
 當多個行動平台為目標，則 Xamarin.Forms 可讓更多的程式碼共用。 適用於 Xamarin.Forms 撰寫的單一程式可以以五個不同的平台為目標：
@@ -42,13 +48,21 @@ Xamarin 目前會提供原生 Mac、 iOS 和 Android Api 使用 C# 和.NET 為�
 - Windows 8.1 的 Windows 執行階段 API
 - Windows Phone 8.1 的 Windows 執行階段 API
 
-目前的 Xamarin.Forms 方案範本不包含在 Windows 8.1 和 Windows Phone 8.1 平台的專案範本。
+> [!NOTE] 
+> Xamarin.Forms 也不再支援 Windows 8.1、 Windows Phone 8.1 或 Windows 10 行動裝置，但 Xamarin.Forms 應用程式執行 Windows 10 桌面上。 另外還有提供預覽支援[Mac](~/xamarin-forms/platform/mac.md)， [WPF](~/xamarin-forms/platform/wpf.md)， [GTK #](~/xamarin-forms/platform/gtk.md)，以及[Tizen](/xamarin-forms/platform/tizen.md)平台。
 
-大部分的 Xamarin.Forms 程式存在於 PCL 或 SAP。 每個平台所組成的小型應用程式虛設常式會呼叫到 PCL。 Xamarin.Forms Api 對應至每個平台上的原生控制項，讓每個平台會維持其特性的外觀及操作：
+大部分的 Xamarin.Forms 程式存在於文件庫 」 或 「 SAP。 每個平台所組成的小型應用程式虛設常式會呼叫此共用的程式碼。 
+
+Xamarin.Forms Api 對應至每個平台上的原生控制項，讓每個平台會維持其特性的外觀及操作：
 
 [![三重的螢幕擷取畫面的平台共用的視覺效果](images/ch01fg03-small.png "每個平台上的 Xamarin.Forms 控制項")](images/ch01fg03-large.png#lightbox "Xamarin.Forms 控制項在每個平台上")
 
-從左到右顯示在 iPhone、 Android 手機和 Windows 10 行動電話螢幕擷取畫面。 在每個畫面上，此頁面包含 Xamarin.Forms [ `Label` ](xref:Xamarin.Forms.Label)來顯示文字[ `Button` ](xref:Xamarin.Forms.Button)用來起始動作， [ `Switch` ](xref:Xamarin.Forms.Switch)的選擇開啟/關閉的值，以及[ `Slider` ](xref:Xamarin.Forms.Slider)來指定連續的範圍內的值。 這些檢視的所有四個屬性的子系[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)上[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)。
+從左到右顯示在 iPhone、 Android 手機和 Windows 10 行動電話螢幕擷取畫面。 
+
+> [!NOTE] 
+> Xamarin.Forms 不再支援 Windows 10 行動裝置。
+
+在每個畫面上，此頁面包含 Xamarin.Forms [ `Label` ](xref:Xamarin.Forms.Label)來顯示文字[ `Button` ](xref:Xamarin.Forms.Button)用來起始動作， [ `Switch` ](xref:Xamarin.Forms.Switch)的選擇開啟/關閉的值，以及[ `Slider` ](xref:Xamarin.Forms.Slider)來指定連續的範圍內的值。 這些檢視的所有四個屬性的子系[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)上[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)。
 
 也會附加到該網頁是包含數個 Xamarin.Forms 工具列[ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem)物件。 這些是顯示為 iOS 和 Android 的畫面頂端和底部的 [Windows 10 行動裝置] 畫面的圖示。
 
@@ -79,8 +93,6 @@ Xamarin 與 Microsoft web sites 包含有關如何執行這項操作：
 - [Windows 開發人員中心](http://dev.windows.com)
 
 您可以建立一次，並執行這些個別的平台的專案，您應該會有任何問題建立並執行 Xamarin.Forms 應用程式。
-
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,12 +7,12 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/17/2018
-ms.openlocfilehash: cbce6f414586597dc2b2788aa18b03228c128018
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: 5a535d60dd01e32dc1d888d3372db13312cc069a
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130955"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156960"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp 點陣圖基本概念
 
@@ -21,6 +21,8 @@ _從各種來源載入點陣圖並加以顯示。_
 SkiaSharp 點陣圖的支援是很龐大。 本文章涵蓋的基本概念&mdash;如何載入點陣圖，以及如何顯示它們：
 
 ![](bitmaps-images/bitmapssample.png "顯示的兩個點陣圖")
+
+一節中可以找到更深入探索的點陣圖[SkiaSharp 點陣圖](../bitmaps/index.md)。
 
 SkiaSharp 點陣圖必須是類型的物件[ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/)。 有許多方式可建立點陣圖，但這篇文章會限制本身[ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/System.IO.Stream/)方法，從.NET 載入點陣圖`Stream`物件。
 
