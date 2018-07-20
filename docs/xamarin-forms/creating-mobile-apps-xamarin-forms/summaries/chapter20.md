@@ -6,21 +6,27 @@ ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 2ff54b65b1dca9798c91f147da7e8482649e40d2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: d606432174807498fd458470647109de4fa0b6b4
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996278"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156726"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第 20 章的摘要。 非同步與檔案 I/O
+
+> [!NOTE] 
+> 在此頁面上的附註表示其中 Xamarin.Forms 有分歧活頁簿中所呈現的題材的區域。
 
  圖形化使用者介面必須以循序方式回應使用者輸入事件。 這表示所有使用者輸入事件的處理必須都存在於單一執行緒，通常稱為*主執行緒*或*UI 執行緒*。
 
 使用者會預期有回應的圖形化使用者介面。 這表示程式必須快速處理使用者輸入事件。 如果不可行，然後處理必須是屈就將文件執行的次要執行緒。
 
 這個活頁簿中的數個範例程式已經使用[ `WebRequest` ](xref:System.Net.WebRequest)類別。 此類別中[ `BeginGetReponse` ](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object))方法會啟動背景工作執行緒，完成時呼叫的回呼函式。 不過，該回撥函式以執行背景工作執行緒，因此，程式必須呼叫[ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))存取使用者介面的方法。
+
+> [!NOTE]
+> Xamarin.Forms 程式應該使用[ `HttpClient` ](xref:System.Net.Http.HttpClient)而非[ `WebRequest` ](xref:System.Net.WebRequest)透過網際網路存取的檔案。 `HttpClient` 支援非同步作業。
 
 使用.NET 和 C# 中以更現代化的方法來非同步處理。 這牽涉到[ `Task` ](xref:System.Threading.Tasks.Task)並[ `Task<TResult>` ](xref:System.Threading.Tasks.Task`1)類別和其他類型中的[ `System.Threading` ](xref:System.Threading)並[ `System.Threading.Tasks` ](xref:System.Threading.Tasks)命名空間，以及 C# 5.0`async`和`await`關鍵字。 這就是這一章的重點。
 
@@ -74,13 +80,16 @@ Xamarin.iOS 和 Xamarin.Android 程式庫包含 Xamarin 已明確為量身訂作
 
 這表示您必須使用[ `DependencyService` ](xref:Xamarin.Forms.DependencyService) (先討論[**第 9 章。平台特定 API 呼叫**](chapter09.md)實作檔案 I/O。
 
+> [!NOTE]
+> 可攜式類別庫已取代為.NET Standard 2.0 程式庫，並支援.NET Standard 2.0 [ `System.IO` ](xref:System.IO)適用於所有的 Xamarin.Forms 平台的型別。 已不再需要使用`DependencyService`大部分的檔案 I/O 工作。 請參閱[Xamarin.Forms 中的檔案處理](~/xamarin-forms/app-fundamentals/files.md)檔案 I/O 以更現代化的方法。
+
 ### <a name="a-first-shot-at-cross-platform-file-io"></a>在跨平台檔案 I/O 的第一個擷取畫面
 
 [ **TextFileTryout** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileTryout)範例會定義[ `IFileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/TextFileTryout/TextFileTryout/TextFileTryout/IFileHelper.cs)檔案 I/O，以及在所有平台上的這個介面的實作的介面。 不過，Windows 執行階段實作不適用這個介面中的方法，因為 Windows 執行階段檔案 I/O 方法為非同步。
 
 ### <a name="accommodating-windows-runtime-file-io"></a>配合 Windows 執行階段檔案 I/O
 
-Windows 執行階段下執行的程式使用中的類別[ `Windows.Storage` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.aspx)並[ `Windows.Storage.Streams` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.aspx)檔案 I/O，包括應用程式的本機儲存體的命名空間。 Microsoft 認為需要超過 50 毫秒應該以非同步方式來避免封鎖 UI 執行緒的任何作業，因為這些檔案 I/O 方法大部分是非同步的。
+Windows 執行階段下執行的程式使用中的類別[ `Windows.Storage` ](/uwp/api/Windows.Storage)並[ `Windows.Storage.Streams` ](/uwp/api/Windows.Storage.Streams)檔案 I/O，包括應用程式的本機儲存體的命名空間。 Microsoft 認為需要超過 50 毫秒應該以非同步方式來避免封鎖 UI 執行緒的任何作業，因為這些檔案 I/O 方法大部分是非同步的。
 
 示範這個新方法的程式碼會在文件庫中，供其他應用程式。
 
@@ -94,8 +103,6 @@ Windows 執行階段下執行的程式使用中的類別[ `Windows.Storage` ](ht
 - [**Xamarin.FormsBook.Platform.iOS**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS)，iOS 類別庫
 - [**Xamarin.FormsBook.Platform.Android**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android)，Android 類別庫
 - [**Xamarin.FormsBook.Platform.UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.UWP)，通用 Windows 類別庫
-- [**Xamarin.FormsBook.Platform.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Windows)，Windows 8.1 的 PCL。
-- [**Xamarin.FormsBook.Platform.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinPhone)，適用於 Windows Phone 8.1 的 PCL
 - [**Xamarin.FormsBook.Platform.WinRT**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT)，通用於所有 Windows 平台的程式碼的共用的專案
 
 所有個別的平台專案 (除了**Xamarin.FormsBook.Platform.WinRT**) 有參考**Xamarin.FormsBook.Platform**。 三個 Windows 專案有參考**Xamarin.FormsBook.Platform.WinRT**。

@@ -7,12 +7,12 @@ ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 885a281d57a8ec83a949eba199667ea95679c5eb
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 16fcdb345fd9aeb9201a00a0bb98d143e6468f01
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998283"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156765"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>第 21 章的摘要。 轉換
 
