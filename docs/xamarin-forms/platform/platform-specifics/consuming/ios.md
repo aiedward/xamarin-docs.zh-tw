@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 68a38fc43cd744e0382f35baa83643a9f0f7e53d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: ab810a2fdfc659e2f5f24d2646c044e9c8638258
+ms.sourcegitcommit: 3697c2aa4208fe2ac954a8c0297394d3bcb53ede
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998982"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39175186"
 ---
-# <a name="ios-platform-specifics"></a>iOS 平台特性
+# <a name="ios-platform-specifics"></a>iOS 平台特性 
 
 _平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。這篇文章會示範如何使用 iOS 平台特性 Xamarin.Forms 內建。_
 
@@ -620,7 +620,7 @@ boxView.On<iOS>()
 
 當[ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)附加到在捲動檢視中，所有筆勢會擷取藉由移動瀏覽檢視`PanGestureRecognizer`並不會傳遞給捲動檢視。 因此，將不會再捲動捲動檢視。
 
-啟用此平台專屬`PanGestureRecognizer`捲動檢視來擷取，並分享捲動檢視中的移動瀏覽軌跡中。 它由在 XAML 中設定[ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.pangesturerecognizershouldrecognizesimultaneouslyproperty?view=xamarin-forms) ; 附加屬性`true`:
+啟用此平台專屬`PanGestureRecognizer`捲動檢視來擷取，並分享捲動檢視中的移動瀏覽軌跡中。 它由在 XAML 中設定[ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.PanGestureRecognizerShouldRecognizeSimultaneouslyProperty) ; 附加屬性`true`:
 
 ```xaml
 <Application ...
@@ -640,7 +640,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 Xamarin.Forms.Application.Current.On<iOS>().SetPanGestureRecognizerShouldRecognizeSimultaneously(true);
 ```
 
-`Application.On<iOS>`方法可讓您指定這個平台專屬只會在 iOS 上執行。 [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.setpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms)方法，請在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空間，可用來控制是否在捲動檢視中的移動瀏覽筆勢辨識器會擷取為移動瀏覽鍵筆勢，或擷取並共用取景位置調整手勢與捲動檢視。 颾魤 ㄛ [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.getpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms)方法可以用來傳回包含捲動檢視是否為共用取景位置調整筆勢[ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)。
+`Application.On<iOS>`方法可讓您指定這個平台專屬只會在 iOS 上執行。 [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.SetPanGestureRecognizerShouldRecognizeSimultaneously(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Application},System.Boolean))方法，請在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空間，可用來控制是否在捲動檢視中的移動瀏覽筆勢辨識器會擷取為移動瀏覽鍵筆勢，或擷取並共用取景位置調整手勢與捲動檢視。 颾魤 ㄛ [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.GetPanGestureRecognizerShouldRecognizeSimultaneously(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Application}))方法可以用來傳回包含捲動檢視是否為共用取景位置調整筆勢[ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)。
 
 因此，使用已啟用，當此平台專屬[ `ListView` ](xref:Xamarin.Forms.ListView)包含[ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)，這兩個`ListView`而`PanGestureRecognizer`會收到取景位置調整筆勢和處理它。 不過，若使用時停用此平台專屬`ListView`包含`PanGestureRecognizer`，則`PanGestureRecognizer`會擷取取景位置調整動作並加以處理，而`ListView`就不會收到移動瀏覽軌跡。
 
