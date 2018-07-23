@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 571b5bb37ee10bb83dceef058613f955a8b7bff9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3525541ba0795f4e0b174b155c0ca219e3257bac
+ms.sourcegitcommit: 6433b424410a850f504e0f934bbb5baf8f093e49
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30772896"
+ms.lasthandoff: 07/16/2018
+ms.locfileid: "39067356"
 ---
 # <a name="publishing-to-google-play"></a>發行至 Google Play
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: cdeea6d78ec1262a0b5b613b4f483012c9df2c19
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: eaf77dd68895a3fbf677e1d0aa68125d81d709c1
+ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785654"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39111221"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS 多重畫面 – 深度剖析
 
@@ -43,7 +43,6 @@ MVC 模式很實用，因為它提供 GUI 應用程式之不同組件間的邏�
 > [!NOTE]
 > MVC 模式大致上類似於 ASP.NET 網頁或 WPF 應用程式的結構。 在這些範例中，檢視是實際上負責描述 UI 的元件，而且對應至 ASP.NET 中的 ASPX (HTML) 網頁，或對應至 WPF 應用程式中的 XAML。 控制器是負責管理檢視的元件，對應至 ASP.NET 或 WPF 中的程式碼後置。
 
-
 ### <a name="model"></a>型號
 
 模型物件通常是要顯示於檢視或輸入到檢視之資料的應用程式專用表示法。 模型通常是鬆散定義的，例如，在 **Phoneword_iOS** 應用程式中，電話號碼的清單 (顯示為字串清單) 即為模型。 如果我們正在建置跨平台應用程式，則可選擇在 iOS 和 Android 應用程式之間共用 **PhonewordTranslator** 程式碼。 我們也可以將該共用程式碼視為模型。
@@ -54,7 +53,6 @@ MVC 完全不知道模型的「資料持續性」和「存取」。 換句話說
 
 > [!NOTE]
 > 在某些文獻中，MVC 模式的模型部分可以參考整個應用程式後端，而不只是顯示於 UI 的資料。 在本指南中，我們會使用模型的新詮釋，但差別不是特別重要。
-
 
 ### <a name="view"></a>檢視
 
@@ -86,27 +84,24 @@ MVC 完全不知道模型的「資料持續性」和「存取」。 換句話說
     [![](hello-ios-multiscreen-deepdive-images/03.png "此圖說明如何從堆疊中取出卡片")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
 
--  **提供標題列**：**瀏覽控制器**的上半部稱為「標題列」。 它負責顯示檢視控制器標題，如下圖所示：  
+-  **提供標題列**：瀏覽控制器的上半部稱為「標題列」。 它負責顯示檢視控制器標題，如下圖所示：  
 
     [![](hello-ios-multiscreen-deepdive-images/04.png "標題列負責顯示檢視控制器標題")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
-
-
-
 ### <a name="root-view-controller"></a>根檢視控制器
 
-**瀏覽控制器**不會管理內容檢視階層，因此，其本身沒有什麼可以顯示。
-**瀏覽控制器**會改為與「根檢視控制器」配對：
+瀏覽控制器不會管理內容檢視階層，因此，其本身沒有什麼可以顯示。
+瀏覽控制器會改為與「根檢視控制器」配對：
 
  [![](hello-ios-multiscreen-deepdive-images/05.png "瀏覽控制器會與根檢視控制器配對")](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
 
-根檢視控制器代表**瀏覽控制器**堆疊中的第一個檢視控制器，而根檢視控制器的內容檢視階層則是第一個要載入到視窗的內容檢視階層。 如果想要將整個應用程式放置於瀏覽控制器的堆疊上，可將無來源的 Segue 移到**瀏覽控制器**，並將第一個畫面的檢視控制器設定為根檢視控制器，就像我們在 Phoneword 應用程式中所做的：
+根檢視控制器代表瀏覽控制器堆疊中的第一個檢視控制器，而根檢視控制器的內容檢視階層則是第一個要載入到視窗的內容檢視階層。 如果想要將整個應用程式放置於瀏覽控制器的堆疊上，可將無來源的 Segue 移到瀏覽控制器，並將第一個畫面的檢視控制器設定為根檢視控制器，就像我們在 Phoneword 應用程式中所做的：
 
  [![](hello-ios-multiscreen-deepdive-images/06.png "無來源的 Segue 會將第一個畫面的檢視控制器設定為根檢視控制器")](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
 
 ### <a name="additional-navigation-options"></a>其他瀏覽選項
 
-**瀏覽控制器**是在 iOS 中處理瀏覽的常見方式，但不是唯一選項。 [索引標籤列控制器](~/ios/user-interface/controls/creating-tabbed-applications.md)可將應用程式分割成不同的功能區域；[分割檢視控制器](https://developer.xamarin.com/recipes/ios/content_controls/split_view/use_split_view_to_show_two_controllers)可以建立主要/詳細資料檢視；而[彈出式視窗瀏覽控制器](http://components.xamarin.com/view/flyoutnavigation) \(英文\) 會建立使用者可以從側邊向內撥動的瀏覽。 這些所有項目都可與**瀏覽控制器**相結合，以直覺方式呈現內容。
+瀏覽控制器是在 iOS 中處理瀏覽的常見方式，但不是唯一選項。 例如，[索引標籤列控制器](~/ios/user-interface/controls/creating-tabbed-applications.md)可以將應用程式分割成不同的功能區域，而[分割檢視控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/split_view/use_split_view_to_show_two_controllers)可用來建立主要/詳細資料檢視。 將瀏覽控制器與這些其他的瀏覽架構相結合，便可以彈性地在 iOS 中呈現和瀏覽內容。
 
 ## <a name="handling-transitions"></a>處理轉換
 
@@ -194,14 +189,13 @@ CallHistoryButton.TouchUpInside += (object sender, EventArgs e) => {
 };
 ```
 
-## <a name="additional-concepts-introduced-in-phoneword"></a>Phoneword 中導入的其他概念
+## <a name="additional-concepts-introduced-in-phoneword"></a>Phoneword 中引入的其他概念
 
 Phoneword 應用程式引入本指南未涵蓋的數個概念。 這些概念包括：
 
 -  **自動建立檢視控制器**：當我們在 [Properties Pad] 中輸入檢視控制器的類別名稱時，iOS 設計工具會檢查該類別是否存在，接著為我們產生檢視控制器支援類別。 如需此功能與其他 iOS 設計工具功能的詳細資訊，請參閱 [iOS 設計工具簡介](~/ios/user-interface/designer/introduction.md)指南。
 -  **資料表檢視控制器**：`CallHistoryController` 是一個資料表檢視控制器。 資料表檢視控制器包含資料表檢視，這是 iOS 中最常見的版面配置與資料顯示工具。 資料表已超出本指南的範圍。 如需有關資料表檢視控制器的詳細資訊，請參閱[使用資料表和資料格](~/ios/user-interface/controls/tables/index.md)指南。
 -   **分鏡腳本識別碼**：設定分鏡腳本識別碼會在 Objective-C 中建立檢視控制器類別，其中包含適用於分鏡腳本中之檢視控制器的程式碼後置。 我們使用分鏡腳本識別碼來尋找 Objective-C 類別，並將分鏡腳本中的檢視控制器具現化。 如需有關分鏡腳本識別碼的詳細資訊，請參閱[分鏡腳本簡介](~/ios/user-interface/storyboards/index.md)指南。
-
 
 ## <a name="summary"></a>總結
 
@@ -210,7 +204,6 @@ Phoneword 應用程式引入本指南未涵蓋的數個概念。 這些概念包
 在本指南中，我們導入了 MVC 模式，並使用它來建立一個多重畫面的應用程式。 我們也探索了巡覽控制器，以及它們在提供 iOS 瀏覽功能中所扮演的角色。 現在您已經具備可開始開發自己的 Xamarin.iOS 應用程式的穩固基礎。
 
 接下來，讓我們利用[行動應用程式開發簡介](~/cross-platform/get-started/introduction-to-mobile-development.md)和[建置跨平台應用程式](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)指南，以了解如何使用 Xamarin 來建置跨平台應用程式。
-
 
 ## <a name="related-links"></a>相關連結
 

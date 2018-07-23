@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 241f38cbfe013776b2e36b8102ae4b90cf610d80
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 1d13a3dae509fea4a2e955c4ad206a81a57e75ed
+ms.sourcegitcommit: 6433b424410a850f504e0f934bbb5baf8f093e49
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935278"
+ms.lasthandoff: 07/16/2018
+ms.locfileid: "39067330"
 ---
 # <a name="android-emulator-troubleshooting"></a>Android Emulator 疑難排解
 
@@ -87,7 +87,7 @@ SERVICE_NAME: intelhaxm
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-從 Visual Studio for Mac 組建 7.2 (組建 559) 開始，當您第一次將應用程式部署至 Android Emulator 時，可能會顯示效能警告對話方塊。 以下會說明這些警告對話方塊。
+從 Visual Studio for Mac 版本 7.2 (組建 559) 開始，當您第一次將應用程式部署至 Android Emulator 時，可能會顯示效能警告對話方塊。 以下會說明這些警告對話方塊。
 
 ### <a name="haxm-is-not-installed"></a>未安裝 HAXM
 

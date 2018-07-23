@@ -7,18 +7,19 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: c0404a1fd8f7e878638b9483c65c637f6b4faa66
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: dd0afe03adbd021717a88cd4409e3e1351ba9b50
+ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786099"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39111182"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Xamarin.iOS 的手動佈建
 
 _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。本指南會探討使用手動佈建來設定開發憑證和設定檔。_
 
-<a name="signingidentity" />
+> [!NOTE]
+> 此頁面上的指示與已付費存取 Apple 開發人員計劃的開發人員相關。 如果您有免費帳戶，請查看[免費佈建](~/ios/get-started/installation/device-provisioning/free-provisioning.md)指南，了解有關裝置上測試的詳細資訊。
 
 ## <a name="creating-a-signing-identity"></a>建立簽署身分識別
 
@@ -27,9 +28,9 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 - 開發憑證
 - 私密金鑰
 
-開發憑證和關聯的[金鑰](#keypairs)對 iOS 開發人員而言非常重要：它們會向 Apple 確立您的身分識別，並將您與指定的裝置和設定檔建立關聯以進行開發，類似於將您的數位簽章放在應用程式上。 Apple 會檢查憑證，以針對允許您部署的裝置控制存取權。
+開發憑證和關聯的[金鑰](#understanding-certificate-key-pairs)對 iOS 開發人員而言非常重要：它們會向 Apple 確立您的身分識別，並將您與指定的裝置和設定檔建立關聯以進行開發，類似於將您的數位簽章放在應用程式上。 Apple 會檢查憑證，以針對允許您部署的裝置控制存取權。
 
-您可以存取 Apple Member Center (Apple 成員中心) 的 [Certificates, Identifiers & Profiles](https://developer.apple.com/account/overview.action) \(憑證、識別碼及設定檔\) 區段來管理開發小組、憑證及設定檔。 Apple 會要求您必須要有簽署身分識別，才能為裝置或模擬器組建程式碼。  
+您可以存取 Apple 成員中心的[憑證、識別碼及設定檔](https://developer.apple.com/account/overview.action) (需要登入) 區段來管理開發小組、憑證及設定檔。 Apple 會要求您必須要有簽署身分識別，才能為裝置或模擬器組建程式碼。  
 
 > [!IMPORTANT]
 > 請務必注意，在任一時間，您都只能有兩個 iOS 開發憑證。 如果您需要再多建立任何憑證，將必須撤銷現有的憑證。 任何使用已撤銷之憑證的電腦都將無法簽署其應用程式。
@@ -69,8 +70,6 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 8. 按兩下已下載的憑證以啟動 [鑰匙圈存取]，然後開啟 [我的憑證] 面板，其中會顯示新的憑證和關聯的私密金鑰：
 
     [![](manual-provisioning-images/keychain.png "[鑰匙圈存取] 中的憑證")](manual-provisioning-images/keychain.png#lightbox)
-
-<a name="keypairs" />
 
 ### <a name="understanding-certificate-key-pairs"></a>了解憑證金鑰組
 
@@ -135,7 +134,6 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 請針對將用來進行 Xamarin.iOS 應用程式測試或偵錯的所有 iOS 裝置，重複上述步驟。
 
 將裝置新增至開發人員入口網站之後，就必須建立佈建設定檔，並將裝置新增至此設定檔。
-
 
 <a name="provisioningprofile" />
 
@@ -228,8 +226,6 @@ Apple 提供一組可針對 Xamarin.iOS 應用程式啟用的精選特別「應�
 * 建立包含此 App ID (應用程式識別碼) 的新[佈建設定檔](#provisioningprofile)。
 * 在 Xamarin.iOS 專案中設定權利
 
-<a name="deploy" />
-
 ## <a name="deploying-to-a-device"></a>部署至裝置
 
 此時佈建應該已完成，已可將應用程式部署至裝置。 若要這樣做，請依照下列步驟進行操作：
@@ -276,7 +272,6 @@ Apple 提供一組可針對 Xamarin.iOS 應用程式啟用的精選特別「應�
 ## <a name="summary"></a>總結
 
 本指南涵蓋了為 Xamarin.iOS 設定開發環境所需的步驟。 其中探索如何使用開發人員、開發人員的小組、可執行應用程式的裝置及個別應用程式識別碼的相關資訊，對應用程式進行程式碼簽署。
-
 
 ## <a name="related-links"></a>相關連結
 
