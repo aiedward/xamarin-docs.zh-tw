@@ -1,25 +1,29 @@
 ---
 title: 進階概念與內部項目
-description: 本指南介紹 Xamarin.Forms 進階的概念和內部項目。 目前，它會包含有關快速的轉譯器，而標準.NET 文件。
+description: 本指南會介紹 Xamarin.Forms 的進階的概念與內部項目。 目前，它會包含有關快速轉譯器和.NET Standard 的文章。
 ms.prod: xamarin
 ms.assetid: 2273a31c-4022-42ba-befe-0d23ce2ff3b5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/24/2017
-ms.openlocfilehash: 53e833da405596bf2503851ac9e12648d17ea032
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 07/19/2017
+ms.openlocfilehash: 292b0814cba446c97042ba1fe52ad9414ba74760
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243462"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203055"
 ---
 # <a name="advanced-concepts--internals"></a>進階概念與內部項目
 
 ## <a name="fast-renderersfast-renderersmd"></a>[快速轉譯器](fast-renderers.md)
 
-本文介紹快速轉譯器，減少所產生的原生控制項階層簡維擴大和 Xamarin.Forms 控制項在 Android 上的轉譯成本。
+這篇文章介紹透過壓平所產生的原生控制項階層減少膨脹和轉譯成本 Xamarin.Forms 控制項在 Android 上的快速轉譯器。
 
 ## <a name="net-standardnet-standardmd"></a>[.NET Standard](net-standard.md)
 
-本文說明如何將轉換為使用.NET 標準 2.0 Xamarin.Forms 應用程式。
+這篇文章說明如何使用.NET Standard 2.0 將 Xamarin.Forms 應用程式。
+
+## <a name="dependency-resolutiondependency-resolutionmd"></a>[相依性解析](dependency-resolution.md)
+
+這篇文章說明如何在 Xamarin.Forms 中插入相依性解析方法，使應用程式的相依性插入容器具有控制建構和存留期的自訂轉譯器，效果並`DependencyService`實作。

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 4fee67f08e86c40709aa226c40c0f7721dc26800
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 351119a8b0089f78d4ce98729a1516c3cd7bae7b
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998295"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203081"
 ---
 # <a name="customizing-a-map-pin"></a>自訂地圖釘選
 
@@ -240,7 +240,7 @@ namespace CustomRenderer.iOS
 `GetViewForAnnotation`方法會接受`IMKAnnotation`會包含註解的資料，並傳回`MKAnnotationView`顯示在地圖上，以及下列的程式碼範例所示：
 
 ```csharp
-MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
+protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
 {
     MKAnnotationView annotationView = null;
 
@@ -273,12 +273,12 @@ MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotatio
 1. `GetCustomPin`方法呼叫以傳回自訂的釘選資料的註解。
 1. 為了節省記憶體，集中重複使用的呼叫註解的檢視[ `DequeueReusableAnnotation` ](https://developer.xamarin.com/api/member/MapKit.MKMapView.DequeueReusableAnnotation/(System.String)/)。
 1. `CustomMKAnnotationView`類別會擴充`MKAnnotationView`類別`Id`並`Url`屬性會對應至相同的屬性，在`CustomPin`執行個體。 新執行個體`CustomMKAnnotationView`建立，前提是註解是`null`:
-  - `CustomMKAnnotationView.Image`屬性設定為 映像，以代表地圖上的註解。
-  - `CustomMKAnnotationView.CalloutOffset`屬性設定為`CGPoint`，指定將會在圖說文字置中，上方的註解。
-  - `CustomMKAnnotationView.LeftCalloutAccessoryView`屬性設為註解的標題和位址的左邊會出現 monkey 的映像。
-  - `CustomMKAnnotationView.RightCalloutAccessoryView`屬性設定為*資訊*按鈕，將會出現在右邊的註解的標題和地址。
-  - `CustomMKAnnotationView.Id`屬性設定為`CustomPin.Id`所傳回的屬性`GetCustomPin`方法。 這可讓識別，使其具有註釋[圖說文字，可以進一步自訂](#Selecting_the_Annotation)視。
-  - `CustomMKAnnotationView.Url`屬性設定為`CustomPin.Url`所傳回的屬性`GetCustomPin`方法。 將瀏覽 URL 時使用者[點選按鈕顯示在右邊的圖說文字配件檢視](#Tapping_on_the_Right_Callout_Accessory_View)。
+    - `CustomMKAnnotationView.Image`屬性設定為 映像，以代表地圖上的註解。
+    - `CustomMKAnnotationView.CalloutOffset`屬性設定為`CGPoint`，指定將會在圖說文字置中，上方的註解。
+    - `CustomMKAnnotationView.LeftCalloutAccessoryView`屬性設為註解的標題和位址的左邊會出現 monkey 的映像。
+    - `CustomMKAnnotationView.RightCalloutAccessoryView`屬性設定為*資訊*按鈕，將會出現在右邊的註解的標題和地址。
+    - `CustomMKAnnotationView.Id`屬性設定為`CustomPin.Id`所傳回的屬性`GetCustomPin`方法。 這可讓識別，使其具有註釋[圖說文字，可以進一步自訂](#Selecting_the_Annotation)視。
+    - `CustomMKAnnotationView.Url`屬性設定為`CustomPin.Url`所傳回的屬性`GetCustomPin`方法。 將瀏覽 URL 時使用者[點選按鈕顯示在右邊的圖說文字配件檢視](#Tapping_on_the_Right_Callout_Accessory_View)。
 1. [ `MKAnnotationView.CanShowCallout` ](https://developer.xamarin.com/api/property/MapKit.MKAnnotationView.CanShowCallout/)屬性設定為`true`，因此圖說文字會顯示在點選註解時。
 1. 註解就會傳回顯示在地圖上。
 
