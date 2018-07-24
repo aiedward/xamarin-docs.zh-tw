@@ -310,6 +310,7 @@
 ## [進階概念與內部項目](internals/index.md)
 ### [快速轉譯器](internals/fast-renderers.md)
 ### [.NET Standard](internals/net-standard.md)
+### [相依性解析](internals/dependency-resolution.md)
 ## [疑難排解](troubleshooting/index.md)
 ### [常見問題集](troubleshooting/questions/index.md)
 #### [我可以將 Xamarin.Forms 預設範本更新為較新的 NuGet 套件嗎？](troubleshooting/questions/update-forms-template.md)
