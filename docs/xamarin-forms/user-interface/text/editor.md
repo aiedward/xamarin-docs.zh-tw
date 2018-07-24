@@ -6,19 +6,19 @@ ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/31/2018
-ms.openlocfilehash: 4879ff88d5bbdab5aa92024bee7f50239a141e3b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/13/2018
+ms.openlocfilehash: 2ec9ba6e39673b5a60911f9a9ae70474dbe2443b
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995860"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203107"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms 編輯器
 
 _多行文字輸入_
 
-`Editor`控制項用來接受多行的輸入。 本文將介紹：
+[ `Editor` ](xref:Xamarin.Forms.Editor)控制項用來接受多行的輸入。 本文涵蓋：
 
 - **[自訂](#customization)** &ndash;鍵盤和色彩選項。
 - **[互動](#interactivity)** &ndash;可以接聽的以提供互動功能的事件。
@@ -27,7 +27,7 @@ _多行文字輸入_
 
 ### <a name="setting-and-reading-text"></a>設定和讀取文字
 
-`Editor`，例如其他文字呈現的檢視，公開`Text`屬性。 這個屬性可用來設定和讀取所呈現的文字`Editor`。 下列範例示範如何設定`Text`在 XAML 中的屬性：
+[ `Editor` ](xref:Xamarin.Forms.Editor)，例如其他文字呈現的檢視，公開`Text`屬性。 這個屬性可用來設定和讀取所呈現的文字`Editor`。 下列範例示範如何設定`Text`在 XAML 中的屬性：
 
 ```xaml
 <Editor Text="I am an Editor" />
@@ -59,24 +59,90 @@ var editor = new Editor { ... MaxLength = 10 };
 
 A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)屬性值為 0 表示將會允許任何輸入項目，並針對`int.MaxValue`，這是預設值[ `Editor` ](xref:Xamarin.Forms.Editor)，指出已沒有可以輸入的字元數的有效限制。
 
-### <a name="keyboards"></a>鍵盤
+### <a name="auto-sizing-an-editor"></a>自動調整大小的編輯器
 
-當使用者互動時，會顯示鍵盤`Editor`可以透過程式設計方式設定[ ``Keyboard`` ](xref:Xamarin.Forms.Keyboard)屬性。
+[ `Editor` ](xref:Xamarin.Forms.Editor)可以對藉由設定其內容自動調整大小[ `Editor.AutoSize` ](xref:Xamarin.Forms.Editor.AutoSize)屬性設[ `TextChanges` ](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges)，這是值為[ `EditoAutoSizeOption` ](xref:Xamarin.Forms.EditorAutoSizeOption)列舉型別。 這個列舉型別有兩個值：
 
-鍵盤類型的選項如下：
+- [`Disabled`](xref:Xamarin.Forms.EditorAutoSizeOption.Disabled) 指出，自動調整大小已停用，而且是預設值。
+- [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) 表示已啟用 自動調整大小。
 
-- **預設值**&ndash;預設鍵盤
-- **對談**&ndash;用於傳簡訊到數位 emoji 適合的位置
-- **電子郵件**&ndash;輸入電子郵件地址時，使用
-- **數值**&ndash;輸入數字時，使用
-- **電話**&ndash;輸入電話號碼時，使用
-- **Url** &ndash;為用來輸入檔案路徑 & 網址
+這可在程式碼，如下所示：
 
-沒有[範例中的每個鍵盤](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/)配方 區段中。
+```xaml
+<Editor Text="Enter text here" AutoSize="TextChanges" />
+```
+
+```csharp
+var editor = new Editor { Text = "Enter text here", AutoSize = EditorAutoSizeOption.TextChanges };
+```
+
+當啟用自動調整大小、 高度[ `Editor` ](xref:Xamarin.Forms.Editor)使用者會將它填入文字，並為使用者刪除文字，將會減少高度時，會增加。
+
+> [!NOTE]
+> [ `Editor` ](xref:Xamarin.Forms.Editor)會未自動調整大小 if [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)屬性已設定。
+
+### <a name="customizing-the-keyboard"></a>自訂鍵盤
+
+當使用者互動時，會顯示鍵盤[ `Editor` ](xref:Xamarin.Forms.Editor)可以透過程式設計方式設定[ `Keyboard` ](xref:Xamarin.Forms.InputView.Keyboard)屬性，其中一個的下列屬性[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)類別：
+
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) – 用於 傳簡訊到和 emoji 所在有用的地方。
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default) – 預設鍵盤。
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email) – 用於輸入電子郵件地址時。
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) – 輸入數字時使用。
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) – 使用輸入文字，不含任何時[ `KeyboardFlags` ](xref:Xamarin.Forms.KeyboardFlags)指定。
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) – 使用輸入電話號碼時。
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text) – 輸入文字時使用。
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url) – 用於輸入檔案路徑 & 網址。
+
+這可在 XAML，如下所示：
+
+```xaml
+<Editor Keyboard="Chat" />
+```
+
+對等的 C# 程式碼是：
+
+```csharp
+var editor = new Editor { Keyboard = Keyboard.Chat };
+```
+
+每個鍵盤的範例可在我們[配方](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/)存放庫。
+
+[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)類別也有[ `Create` ](xref:Xamarin.Forms.Keyboard.Create*)可用來指定大小寫、 拼字檢查和建議的行為，以自訂鍵盤的 factory 方法。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 列舉值，指定為引數的方法，以自訂`Keyboard`傳回。 `KeyboardFlags`列舉型別包含下列值：
+
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) – 沒有功能新增至鍵盤。
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) – 指出將會自動大寫的每個輸入句子的第一個單字的第一個字母。
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) – 表示該拼字檢查將會執行上輸入的文字。
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) – 表示該文字自動完成，就會收到上輸入的文字。
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) – 指出將會自動大寫的每個單字的第一個字母。
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) – 指出將會自動大寫的每個字元。
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) – 指出將會發生任何自動的大小寫。
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) – 表示拼字檢查、 字組自動完成和句子大小寫，會發生在輸入的文字。
+
+下列 XAML 程式碼範例示範如何自訂預設值[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)提供字組自動完成，並充分利用每個輸入的字元：
+
+```xaml
+<Editor>
+    <Editor.Keyboard>
+        <Keyboard x:FactoryMethod="Create">
+            <x:Arguments>
+                <KeyboardFlags>Suggestions,CapitalizeCharacter</KeyboardFlags>
+            </x:Arguments>
+        </Keyboard>
+    </Editor.Keyboard>
+</Editor>
+```
+
+對等的 C# 程式碼是：
+
+```csharp
+var editor = new Editor();
+editor.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.CapitalizeCharacter);
+```
 
 ### <a name="enabling-and-disabling-spell-checking"></a>啟用和停用拼字檢查
 
-[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性會控制是否拼字檢查已啟用。 根據預設，此屬性設為`true`。 當使用者輸入文字，則會指出拼字錯誤。
+[`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性會控制是否拼字檢查已啟用。 根據預設，此屬性設為`true`。 當使用者輸入文字，則會指出拼字錯誤。
 
 不過，某些文字項目的情況下，輸入使用者名稱，例如拼字檢查提供的負數的體驗，因此應該停用藉由設定[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性設`false`:
 
