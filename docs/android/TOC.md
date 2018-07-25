@@ -113,6 +113,8 @@
 ## [平台功能](platform/index.md)
 ### [Android Beam](platform/android-beam.md)
 ### [Android 資訊清單](platform/android-manifest.md)
+### [使用 Xamarin.Android 的檔案存取](platform/files/index.md)
+#### [外部儲存體](platform/files/external-storage.md)
 ### [指紋驗證](platform/fingerprint-authentication/index.md)
 #### [快速入門](platform/fingerprint-authentication/get-started.md)
 #### [掃描指紋](platform/fingerprint-authentication/scanning.md)
