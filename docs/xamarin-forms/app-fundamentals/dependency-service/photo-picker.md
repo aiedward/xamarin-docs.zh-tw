@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: b593815df9ce942a98496806116bacfa63e2a2d9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: dafa60ff57f34bd4169af48e380079d9637d8d26
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38999058"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241103"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>從 圖片庫挑選相片
 
@@ -48,7 +48,7 @@ namespace DependencyServiceSample
 
 ## <a name="ios-implementation"></a>iOS 的實作
 
-IOS 實作`IPicturePicker`介面會使用[ `UIImagePickerController` ](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/)中所述[**從資源庫選擇相片**](https://developer.xamarin.com/recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery/)配方和[範例程式碼](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)。
+IOS 實作`IPicturePicker`介面會使用[ `UIImagePickerController` ](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/)中所述[**從資源庫選擇相片**](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)配方和[範例程式碼](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)。
 
 IOS 實作包含在[ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/iOS/PicturePickerImplementation.cs) iOS 專案中的範例程式碼的類別。 若要讓這個類別看見`DependencyService`管理員中，類別必須用來識別 [`assembly`] 類型的屬性`Dependency`，類別必須是公用的並明確地實作`IPicturePicker`介面：
 
@@ -146,7 +146,7 @@ IOS 應用程式需要從使用者的權限存取手機上的相片媒體櫃。 
 
 ## <a name="android-implementation"></a>Android 的實作
 
-Android 的實作會使用所述的技巧[**選取映像**](https://developer.xamarin.com/recipes/android/other_ux/pick_image/)配方和[程式碼範例](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)。 不過，當使用者從圖片庫選取映像時所呼叫的方法是`OnActivityResult`衍生自的類別中覆寫`Activity`。 基於這個理由，法線[ `MainActivity` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/MainActivity.cs) Android 專案中的類別具有已增添欄位、 屬性，並覆寫`OnActivityResult`方法：
+Android 的實作會使用所述的技巧[**選取映像**](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)配方和[程式碼範例](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)。 不過，當使用者從圖片庫選取映像時所呼叫的方法是`OnActivityResult`衍生自的類別中覆寫`Activity`。 基於這個理由，法線[ `MainActivity` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/MainActivity.cs) Android 專案中的類別具有已增添欄位、 屬性，並覆寫`OnActivityResult`方法：
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity
@@ -314,6 +314,6 @@ pickPictureButton.Clicked += async (sender, e) =>
 
 ## <a name="related-links"></a>相關連結
 
-- [從資源庫 (iOS) 中選擇相片](https://developer.xamarin.com/recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery/)
-- [選取映像 (Android)](https://developer.xamarin.com/recipes/android/other_ux/pick_image/)
+- [從資源庫 (iOS) 中選擇相片](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)
+- [選取映像 (Android)](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)
 - [DependencyService （範例）](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample)

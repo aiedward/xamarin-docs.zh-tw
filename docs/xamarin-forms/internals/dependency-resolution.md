@@ -1,22 +1,22 @@
 ---
 title: 在 Xamarin.Forms 中的相依性解析
-description: 這篇文章說明如何在 Xamarin.Forms 中插入相依性解析方法，使應用程式的相依性插入容器具有控制建構和存留期的自訂轉譯器、 效果及 DependencyService 實作.
+description: 這篇文章說明如何將 Xamarin.Forms 插入的相依性解析方法，使應用程式的相依性插入容器具有控制建構和存留期的自訂轉譯器、 效果及 DependencyService 實作。
 ms.prod: xamarin
 ms.assetid: 491B87DC-14CB-4ADC-AC6C-40A7627B2524
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/23/2018
-ms.openlocfilehash: b9e49d32dd4b0b02c742cd829eafabd1c55230f0
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.openlocfilehash: 8235b6fb5fda2a414cf192dd66007d1d02f232aa
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203179"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242377"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>在 Xamarin.Forms 中的相依性解析
 
-_這篇文章說明如何在 Xamarin.Forms 中插入相依性解析方法，使應用程式的相依性插入容器具有控制建構和存留期的自訂轉譯器、 效果及 DependencyService 實作.程式碼範例都取自[相依性解析](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/)範例。_
+_這篇文章說明如何將 Xamarin.Forms 插入的相依性解析方法，使應用程式的相依性插入容器具有控制建構和存留期的自訂轉譯器、 效果及 DependencyService 實作。程式碼範例都取自[相依性解析](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/)範例。_
 
 在內容中使用的 Model View ViewModel (MVVM) 模式的 Xamarin.Forms 應用程式，來註冊及解析檢視模型，以及註冊服務和插入檢視模型可以使用相依性插入容器。 檢視模型在建立期間，容器會插入任何所需的相依性。 如果尚未建立這些相依性，會建立容器，並先解析相依性。 如需相依性插入，包括範例相依性插入檢視模型的詳細資訊，請參閱[相依性插入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)。
 
@@ -170,7 +170,7 @@ void RegisterTypes()
 }
 ```
 
-在此範例中，`App.RegisterTypeWithParameters`方法會註冊`VideoPlayerRenderer`具有相依性插入容器中，使用註冊方法確保`MainActivity`執行個體將會插入做為`Context`引數，且`Logger`型別將會插入做為`ILogger`引數。
+在此範例中，`App.RegisterTypeWithParameters`方法會註冊`VideoPlayerRenderer`與相依性插入容器。 註冊方法可確保`MainActivity`執行個體將會插入做為`Context`引數，且`Logger`型別將會插入做為`ILogger`引數。
 
 ### <a name="registering-effects"></a>註冊效果
 

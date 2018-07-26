@@ -6,68 +6,68 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/28/2017
-ms.openlocfilehash: 42af02d2ed2a679d89425257d92f03a3764675ce
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 26576fe31919822237022572a4e490cf6fc19d65
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "31646985"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241439"
 ---
 # <a name="introduction"></a>簡介
 
 ## <a name="when-to-use-a-database"></a>使用資料庫的時機
 
-雖然行動裝置的儲存和處理能力會增加，手機和平板電腦仍落後與其桌上型及膝上型電腦的對應項目。 基於這個理由值得花一些時間來規劃您的應用程式的資料儲存體架構，而不是只假設資料庫正確的答案所有時間。 有數個不同的選項，使其符合不同的需求，例如：
+雖然行動裝置的儲存體和處理功能會增加，手機和平板電腦仍會落後桌上型電腦和膝上型電腦與其。 基於這個理由值得花一些時間來規劃您的應用程式的資料儲存體架構，而非只假設資料庫正確的答案所有時間。 有許多不同的選項符合不同的需求，例如：
 
--  **喜好設定**– Android 提供內建的機制來儲存資料的簡單索引鍵-值配對。 如果您儲存簡單的使用者設定或小型資料 （例如個人化資訊） 然後使用平台的原生功能來儲存這種類型的資訊。
--  **文字檔**– 使用者輸入或快取的下載內容 （例如。 HTML) 可以直接在檔案系統上儲存。 使用適當的檔案命名慣例可協助您組織的檔案，以及尋找資料。
--  **序列化資料檔案**– 物件可以保存為 XML 或 JSON，在檔案系統上。 .NET framework 包含進行序列化和還原序列化物件的簡單的程式庫。 您可以使用適當的名稱來組織資料檔案。
--  **資料庫**SQLite 資料庫引擎-適用於 Android 平台，而且用於儲存結構化資料，您需要查詢、 排序或進行操作。 資料庫儲存體適合用於許多內容與資料的清單。
--  **影像檔**– 雖然很可能在行動裝置上的資料庫中儲存二進位資料，建議您將其儲存直接在檔案系統中。 必要時您可以關聯之映像與其他資料的資料庫中儲存的檔名。 當處理大型影像或大量的影像，它是計劃中刪除您不再需要避免耗用所有使用者的存放裝置空間檔案快取策略很好的作法。
+-  **喜好設定**– Android 提供內建的機制，用來儲存資料的簡單索引鍵 / 值組。 如果您要儲存簡單的使用者設定或小型資料 （例如個人化資訊） 則使用平台的原生功能，來儲存這種類型的資訊。
+-  **文字檔**– 使用者輸入或快取的下載內容 （例如。 可以直接在檔案系統上儲存 HTML)。 您可以使用適當的檔案命名慣例來協助您組織的檔案，並尋找資料。
+-  **序列化資料檔案**– 物件可以保存為 XML 或 JSON 檔案系統上。 .NET framework 包含程式庫，讓序列化和還原序列化物件的簡單。 您可以使用適當的名稱來組織資料檔案。
+-  **資料庫**– SQLite 資料庫引擎是可在 Android 平台，並適用於儲存結構化資料，您需要查詢、 排序或進行操作。 資料庫儲存體被適合具有許多屬性的資料清單。
+-  **影像檔**– 雖然可以在行動裝置上的資料庫中儲存二進位資料，但建議您將它們儲存在檔案系統直接。 必要時您可以在映像相關聯的其他資料的資料庫中儲存檔案名稱。 在處理大型映像或大量的影像，最好規劃會刪除您不再需要以避免消耗所有使用者的儲存空間的檔案快取策略。
 
-如果資料庫是您的應用程式的右邊的儲存體機制，此文件的其餘部分將討論如何使用 SQLite Xamarin 平台上。
+如果資料庫是您的應用程式的正確的儲存機制，此文件的其餘部分將討論如何在 Xamarin 平台上使用 SQLite。
 
 ## <a name="advantages-of-using-a-database"></a>使用資料庫的優點
 
-有許多行動應用程式中使用 SQL database 優勢：
+有許多行動應用程式中使用 SQL database 的優點：
 
--  SQL 資料庫允許有效率的儲存結構化的資料。
--  複雜的查詢，可以擷取特定的資料。
+-  SQL database 可讓您有效率地儲存結構化資料。
+-  使用複雜的查詢可以擷取特定資料。
 -  可以排序查詢結果。
--  查詢結果可以彙總資料。
--  使用現有的資料庫技術的開發人員可以利用其專業知識，來設計資料庫和資料存取程式碼。
--  連接的應用程式的伺服器元件中的資料模型可能會重複使用 （整個或部分） 的行動應用程式中。
+-  可彙總查詢結果。
+-  使用現有的資料庫技術的開發人員可以利用他們的知識來設計資料庫和資料存取程式碼。
+-  從連接的應用程式的伺服器元件的資料模型可能會重複使用 （全部或部分） 的行動應用程式中。
 
 
-## <a name="sqlite-database-engine"></a>SQLite Database Engine
+## <a name="sqlite-database-engine"></a>SQLite 資料庫引擎
 
-SQLite 是已採用 Google 他們的行動平台的開放原始碼資料庫引擎。 SQLite database engine 是內建於這兩個作業系統，所以開發人員利用它的任何額外的工作。 SQLite 是適用於跨平台行動開發的因為：
+SQLite 是一種開放原始碼資料庫引擎，已為其行動裝置平台採用由 Google。 SQLite 資料庫引擎是內建於這兩個作業系統，因此開發人員充分發揮它的任何其他工作。 SQLite 是適合用來跨平台行動開發的因為：
 
--  Database engine 是小型、 快速和輕鬆移植。
+-  Database engine 是小型、 快速且容易移植。
 -  資料庫會儲存在單一檔案，可以輕鬆地管理行動裝置上。
--  跨平台很容易使用的檔案格式： 是否 32 或 64 位元和大-或由小到大系統。
--  它會實作大部分的 SQL92 標準。
+-  跨平台很容易使用的檔案格式： 是否 32 或 64 位元，與巨量-或由小到大系統。
+-  它會實作 SQL92 標準的大部分。
 
 
-SQLite 設計為小型且快速，因為某些注意事項上有其用途：
+SQLite 設計為小型且快速，因為有一些注意事項用法：
 
--  不支援某些 OUTER join 語法。
--  只有資料表重新命名，並支援 ADDCOLUMN。 您無法執行您的結構描述的其他修改。
--  檢視處於唯讀狀態。
+-  不支援某些外部聯結語法。
+-  只有資料表重新命名，並且支援 ADDCOLUMN。 您無法執行您的結構描述的其他修改。
+-  檢視是唯讀的。
 
 
-您可以進一步了解 SQLite 網站- [SQLite.org](http://SQLite.org) -但是您需要使用 SQLite 來搭配 Xamarin 的所有資訊包含在這份文件，而且相關聯的範例。 自 Android 2，已在 Android 支援 SQLite 資料庫引擎。
-未涵蓋在本章中，雖然 SQLite 是也可用於 Windows Phone 和 Windows 應用程式。
+您可以深入了解 SQLite 網站- [SQLite.org](http://SQLite.org) -但是您必須搭配 Xamarin 使用 SQLite 的所有資訊包含在這份文件和相關聯的範例。 自 Android 2，已在 Android 中支援 SQLite 資料庫引擎。
+雖然未涵蓋在本章中，SQLite 是也可用於 Windows Phone 和 Windows 應用程式。
 
 ## <a name="windows-and-windows-phone"></a>Windows 及 Windows Phone
 
 SQLite 也可用在 Windows 平台，雖然這份文件未涵蓋這些平台。
-深入了解[Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)和[Tasky Pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)案例研究，並檢閱[Tim Heuer 部落格](http://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx)。
+深入了解[Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)並[Tasky Pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)案例研究，並檢閱[Tim Heuer 的部落格](http://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx)。
 
 
 ## <a name="related-links"></a>相關連結
 
 - [DataAccess Basic （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [資料存取進階 （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Android 資料配方](https://developer.xamarin.com/recipes/android/data/)
+- [DataAccess 進階 （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [Android 資料配方](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
 - [Xamarin.Forms 資料存取](~/xamarin-forms/app-fundamentals/databases.md)

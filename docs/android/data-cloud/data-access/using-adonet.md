@@ -6,24 +6,24 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 29e81afdf2c46cdefc68e2c2fae4e6e47999a346
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 9e0c1be2e37355242db2fb70857d90127c3b5259
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "31646777"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242208"
 ---
 # <a name="using-adonet-with-android"></a>使用 ADO.NET 與 Android
 
-Xamarin 具有內建支援可在 Android 上且可以使用熟悉的 ADO.NET 類似語法公開 SQLite 資料庫。 使用這些 Api 會要求您撰寫 SQL 陳述式所 SQLite，例如處理`CREATE TABLE`，`INSERT`和`SELECT`陳述式。
+Xamarin 的內建支援可在 Android 上取得，且可使用熟悉的 ADO.NET 類似的語法中公開的 SQLite 資料庫。 使用這些 Api 會要求您撰寫這類處理的 SQLite，SQL 陳述式`CREATE TABLE`，`INSERT`和`SELECT`陳述式。
 
 ## <a name="assembly-references"></a>組件參考
 
-若要使用存取透過 ADO.NET，您必須新增 SQLite`System.Data`和`Mono.Data.Sqlite`參考至您的 Android 專案，如下所示：
+若要使用存取透過 ADO.NET，您必須新增 SQLite`System.Data`和`Mono.Data.Sqlite`參考您的 Android 專案，如下所示：
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin) 
 
-![在 Visual Studio 中的 android 參考](using-adonet-images/image7.png "Android 參考 Visual Studio 中") 
+![Visual Studio 中的 android 參考](using-adonet-images/image7.png "參考 Visual Studio 中的 Android") 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac) 
 
@@ -32,16 +32,16 @@ Xamarin 具有內建支援可在 Android 上且可以使用熟悉的 ADO.NET 類
 -----
 
 
-以滑鼠右鍵按一下**參考 > 編輯參考...** ，然後按一下以選取必要的組件。
+以滑鼠右鍵按一下**參考 > 編輯參考...** 然後按一下以選取必要的組件。
 
 ## <a name="about-monodatasqlite"></a>關於 Mono.Data.Sqlite
 
-我們將使用`Mono.Data.Sqlite.SqliteConnection`類別來建立空白的資料庫檔案然後再執行個體化`SqliteCommand`我們可以使用來執行對資料庫的 SQL 指令的物件。
+我們將使用`Mono.Data.Sqlite.SqliteConnection`類別來建立空白的資料庫檔案，然後具現化`SqliteCommand`物件，我們可以使用來執行對資料庫的 SQL 指令。
 
-**建立空白資料庫**&ndash;呼叫`CreateFile`方法的有效 (ie。 可寫入) 檔案路徑。 您應該檢查是否檔案已經存在之前呼叫這個方法，透過頂端的舊密碼，否則會建立新的 （空白） 資料庫和舊的檔案中的資料將會遺失。
-`Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);` `dbPath`變數應該根據這份文件稍早所述的規則決定。
+**建立空白的資料庫**&ndash;呼叫`CreateFile`使用有效的方法 (亦即。 可寫入) 的檔案路徑。 您應該檢查是否檔案已經存在之前呼叫這個方法，否則會建立新的 （空白） 資料庫舊的 replicaset，頂端和舊的檔案中的資料將會遺失。
+`Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);` `dbPath`變數應該根據本文件稍早所述的規則決定。
 
-**建立資料庫連接** &ndash; SQLite 資料庫檔案建立之後，您就可以建立連接物件來存取資料。 連接的連接字串，它使用的格式，建構`Data Source=file_path`，如下所示：
+**建立資料庫連接** &ndash; SQLite 資料庫檔案建立之後，您就可以建立連接物件來存取資料。 連接的連接字串，其使用的格式建構`Data Source=file_path`，如下所示：
 
 ```csharp
 var connection = new SqliteConnection ("Data Source=" + dbPath);
@@ -50,9 +50,9 @@ connection.Open();
 connection.Close();
 ```
 
-如先前所述，連接也不應重複使用多個不同的執行緒。 不確定，建立所需連接並且將它關閉，當您完成時;但請留意這個超過通常太需要執行這項。
+如先前所述，連線應該永遠不會是重複使用多個不同的執行緒。 如果有疑問，建立所需的連接，並關閉它，當您完成時，但請注意，執行此超過通常太必要。
 
-**建立和執行資料庫命令**&ndash;一旦連接我們可以執行任意的 SQL 命令，對它。 程式碼所示`CREATE TABLE`正在執行陳述式。
+**建立和執行資料庫命令**&ndash;一旦連線，我們就可以執行任意的 SQL 命令，對它。 以下顯示的程式碼`CREATE TABLE`正在執行的陳述式。
 
 ```csharp
 using (var command = connection.CreateCommand ()) {
@@ -61,15 +61,15 @@ using (var command = connection.CreateCommand ()) {
 }
 ```
 
-直接對資料庫執行 SQL 時，您應該採取正常的預防措施，不以提出無效的項目，例如嘗試建立已存在的資料表。 追蹤的資料庫的結構，因此不會導致`SqliteException`例如**SQLite 錯誤資料表 [項目] 已經存在**。
+直接對資料庫執行 SQL 時，您應該採取一般的預防措施，不以提出無效的項目，例如嘗試建立已經存在的資料表。 追蹤的資料庫的結構，讓您不會造成`SqliteException`這類**SQLite 錯誤資料表 [項目] 已經存在**。
 
-## <a name="basic-data-access"></a>基本的資料存取
+## <a name="basic-data-access"></a>基本資料存取
 
-*DataAccess_Basic*時在 Android 上執行這份文件的範例程式碼看起來像這樣：
+*DataAccess_Basic*在 Android 上執行時的這份文件的範例程式碼看起來像這樣：
 
-![Android ADO.NET 範例](using-adonet-images/image8.png "Android ADO.NET 範例")
+![Android 的 ADO.NET 範例](using-adonet-images/image8.png "Android ADO.NET 範例")
 
-下列程式碼說明如何執行簡單的 SQLite 作業，並為應用程式的主視窗中的文字會顯示在結果。
+下列程式碼說明如何執行簡單的 SQLite 作業，並為應用程式的主視窗中的文字顯示結果。
 
 您必須加入這些命名空間：
 
@@ -143,11 +143,11 @@ public static string DoSomeDataAccess ()
 
 ## <a name="more-complex-queries"></a>更複雜的查詢
 
-因為 SQLite 允許任意的 SQL 命令，以針對資料執行，所以您可以執行任何`CREATE`， `INSERT`， `UPDATE`， `DELETE`，或`SELECT`您喜歡的陳述式。 您可以閱讀 SQLite 支援 Sqlite 網站上的 SQL 命令。 執行 SQL 陳述式上使用三種方法之一`SqliteCommand`物件：
+由於 SQLite 允許任意的 SQL 命令，以對資料執行，您可以執行任何`CREATE`， `INSERT`， `UPDATE`， `DELETE`，或`SELECT`您喜歡的陳述式。 您可以閱讀 SQLite 支援 Sqlite 網站上的 SQL 命令。 使用其中一種方法在執行 SQL 陳述式`SqliteCommand`物件：
 
--   **ExecuteNonQuery** &ndash;通常用於資料表建立或資料插入。 某些作業的傳回值的受影響的資料列數目，否則它便是-1。
+-   **ExecuteNonQuery** &ndash;通常用於資料表建立或資料插入。 某些作業的傳回值會受到影響的資料列數目，否則就是-1。
 
--   **ExecuteReader** &ndash;應該做為傳回的資料列集合時使用`SqlDataReader`。
+-   **ExecuteReader** &ndash;應該做為傳回資料列的集合時使用`SqlDataReader`。
 
 -   **ExecuteScalar** &ndash;擷取單一值 （例如彙總）。
 
@@ -165,8 +165,8 @@ using (var c = connection.CreateCommand ()) {
 
 ### <a name="executereader"></a>EXECUTEREADER
 
-下列方法示範`WHERE`中的子句`SELECT`陳述式。
-程式碼製作完整的 SQL 陳述式，因為它必須謹慎地逸出保留的字元，例如字串周圍的引號 （'）。
+下列方法示範`WHERE`子句中的`SELECT`陳述式。
+因為程式碼會製作完整的 SQL 陳述式，所以它必須謹慎地逸出保留的字元，例如字串周圍的引號 （'）。
 
 ```csharp
 public static string MoreComplexQuery ()
@@ -193,7 +193,7 @@ public static string MoreComplexQuery ()
 }
 ```
 
-`ExecuteReader` 方法會傳回 `SqliteDataReader` 物件。 除了`Read`方法範例中顯示其他有用的屬性包括：
+`ExecuteReader` 方法會傳回 `SqliteDataReader` 物件。 除了`Read`方法在範例中，顯示其他有用的屬性包括：
 
 -   **RowsAffected** &ndash;查詢所影響的資料列計數。
 
@@ -202,7 +202,7 @@ public static string MoreComplexQuery ()
 
 ### <a name="executescalar"></a>EXECUTESCALAR
 
-使用此作業對於`SELECT`傳回單一值 （例如彙總） 的陳述式。
+使用此項目，`SELECT`傳回單一值 （例如彙總） 的陳述式。
 
 ```csharp
 using (var contents = connection.CreateCommand ()) {
@@ -211,13 +211,13 @@ using (var contents = connection.CreateCommand ()) {
 }
 ```
 
-`ExecuteScalar`方法的傳回型別是`object`&ndash;您應該根據資料庫查詢結果的轉換。 結果可能會從整數`COUNT`查詢或單一資料行的字串`SELECT`查詢。 請注意，這不同於其他`Execute`傳回讀取器物件或影響的資料列數的方法。
+`ExecuteScalar`方法的傳回型別`object`&ndash;您應該根據資料庫查詢結果轉換。 此結果可能會從整數`COUNT`查詢或從單一資料行的字串`SELECT`查詢。 請注意，這不同於其他`Execute`方法會傳回讀取器物件或受影響的資料列數目的計數。
 
 
 
 ## <a name="related-links"></a>相關連結
 
 - [DataAccess Basic （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [資料存取進階 （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Android 資料配方](https://developer.xamarin.com/recipes/android/data/)
+- [DataAccess 進階 （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [Android 資料配方](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
 - [Xamarin.Forms 資料存取](~/xamarin-forms/app-fundamentals/databases.md)

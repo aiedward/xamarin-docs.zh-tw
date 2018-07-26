@@ -6,12 +6,12 @@ ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: a4e1a31a2591c799a153e1333e4a4a4a0719a107
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+ms.openlocfilehash: 430c4eca7c6dbd7107692246b70ff93bafa44d01
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111195"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241830"
 ---
 # <a name="programming-urhosharp-with-f"></a>使用 F # 進行 UrhoSharp 程式設計
 
@@ -19,11 +19,11 @@ UrhoSharp 可以編寫使用 F # 使用相同的程式庫和 C# 程式設計人�
 
 在 c + + 世界裡產生的許多程式庫，例如許多 UrhoSharp 函式會傳回布林值或整數，指出成功或失敗。 您應該使用`|> ignore`要略過這些值。
 
-[範例程式](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)UrhoSharp 從 F # 中為"Hello World"。
+[範例程式](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)UrhoSharp 從 F # 中為"Hello World"。
 
 ## <a name="creating-an-empty-project"></a>建立空專案
 
-UrhoSharp 沒有 F # 範本，但您可以使用開始可用的因此，若要建立您自己的 UrhoSharp 專案[範例](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)或遵循下列步驟：
+UrhoSharp 沒有 F # 範本，但您可以使用開始可用的因此，若要建立您自己的 UrhoSharp 專案[範例](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)或遵循下列步驟：
 
 1. 從 Visual Studio for Mac 中，建立新**解決方案**。 選擇**iOS > 應用程式 > 單一檢視應用程式**，然後選取**F #** 做為實作語言。 
 1. 刪除**Main.storyboard**檔案。 開啟**Info.plist**檔案並在**iPhone / iPod 部署資訊**窗格中，刪除`Main`字串**主要介面**下拉式清單。
@@ -114,4 +114,4 @@ type AppDelegate () =
 
 ## <a name="related-links"></a>相關連結
 
-- [瀏覽 GitHub （範例）](https://github.com/xamarinhttps://developer.xamarin.com/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)
+- [瀏覽 GitHub （範例）](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)

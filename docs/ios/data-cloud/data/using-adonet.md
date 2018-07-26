@@ -1,52 +1,52 @@
 ---
-title: 使用 ADO.NET 與 Xamarin.iOS
-description: 本文件說明如何使用 ADO.NET 做為方法，來存取 SQLite Xamarin.iOS 應用程式中。 它討論的組件參考、 Mono.Data.Sqlite 和 BasicDataAccess 範例。
+title: 與 Xamarin.iOS 中使用 ADO.NET
+description: 本文件說明如何使用 ADO.NET 做為方法，來存取 SQLite 中的 Xamarin.iOS 應用程式。 它討論的組件參考、 Mono.Data.Sqlite 和 BasicDataAccess 範例。
 ms.prod: xamarin
 ms.assetid: 79078A4D-2D24-44F3-9543-B50418A7A000
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 8240e3052b4deb4bfdf0ec94e67fbd6827a34dab
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 83f6059c405b2156270f4359cbba33177861af02
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784825"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241234"
 ---
-# <a name="using-adonet-with-xamarinios"></a>使用 ADO.NET 與 Xamarin.iOS
+# <a name="using-adonet-with-xamarinios"></a>與 Xamarin.iOS 中使用 ADO.NET
 
-Xamarin 可 SQLite 資料庫，可在 iOS 上，使用熟悉的 ADO.NET 類似的語法所公開的內建支援。 使用這些 Api 會要求您撰寫 SQL 陳述式所 SQLite，例如處理`CREATE TABLE`，`INSERT`和`SELECT`陳述式。
+Xamarin 的內建支援可在 iOS，使用熟悉的 ADO.NET 類似的語法所公開之 SQLite 資料庫。 使用這些 Api 會要求您撰寫這類處理的 SQLite，SQL 陳述式`CREATE TABLE`，`INSERT`和`SELECT`陳述式。
 
 ## <a name="assembly-references"></a>組件參考
 
-若要使用存取透過 ADO.NET，您必須新增 SQLite`System.Data`和`Mono.Data.Sqlite`參考至您的 iOS 專案 （適用於 Mac 和 Visual Studio 的 Visual Studio 中的範例） 如下所示：
+若要使用存取透過 ADO.NET，您必須新增 SQLite`System.Data`和`Mono.Data.Sqlite`參考您的 iOS 專案，如下所示 （適用於 Visual Studio for Mac 和 Visual Studio 中的範例）：
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
- ![](using-adonet-images/image4.png "適用於 Mac 的 Visual Studio 中的組件參考")
+ ![](using-adonet-images/image4.png "Visual Studio for Mac 中的組件參考")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  ![](using-adonet-images/image6.png "在 Visual Studio 中的組件參考")
+  ![](using-adonet-images/image6.png "Visual Studio 中的組件參考")
 
 -----
 
-以滑鼠右鍵按一下**參考 > 編輯參考...** ，然後按一下以選取必要的組件。
+以滑鼠右鍵按一下**參考 > 編輯參考...** 然後按一下以選取必要的組件。
 
 ## <a name="about-monodatasqlite"></a>關於 Mono.Data.Sqlite
 
-我們將使用`Mono.Data.Sqlite.SqliteConnection`類別來建立空白的資料庫檔案然後再執行個體化`SqliteCommand`我們可以使用來執行對資料庫的 SQL 指令的物件。
+我們將使用`Mono.Data.Sqlite.SqliteConnection`類別來建立空白的資料庫檔案，然後具現化`SqliteCommand`物件，我們可以使用來執行對資料庫的 SQL 指令。
 
 
-1. **建立空白資料庫**-呼叫`CreateFile`方法的有效 (ie。 可寫入) 檔案路徑。 您應該檢查是否檔案已經存在之前呼叫這個方法，透過頂端的舊密碼，否則會建立新的 （空白） 資料庫和舊的檔案中的資料將會遺失：
+1. **建立空白的資料庫**-呼叫`CreateFile`使用有效的方法 (亦即。 可寫入) 的檔案路徑。 您應該檢查是否檔案已經存在之前呼叫這個方法，否則將舊的 replicaset，之上建立新的 （空白） 資料庫和舊的檔案中的資料將會遺失：
 
     `Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);`
 
     > [!NOTE]
-    > `dbPath`變數應該根據這份文件稍早所述的規則決定。
+    > `dbPath`變數應該根據本文件稍早所述的規則決定。
 
-2. **建立資料庫連接**-SQLite 資料庫檔案建立後，您可以建立連線物件來存取資料。 連接的連接字串，它使用的格式，建構`Data Source=file_path`，如下所示：
+2. **建立資料庫連接**-SQLite 資料庫檔案建立之後，您可以建立連接物件來存取資料。 連接的連接字串，其使用的格式建構`Data Source=file_path`，如下所示：
 
     ```csharp
     var connection = new SqliteConnection ("Data Source=" + dbPath);
@@ -55,9 +55,9 @@ Xamarin 可 SQLite 資料庫，可在 iOS 上，使用熟悉的 ADO.NET 類似�
     connection.Close();
     ```
 
-    如先前所述，連接也不應重複使用多個不同的執行緒。 不確定，建立所需連接並且將它關閉，當您完成時;但請留意這個超過通常太需要執行這項。
+    如先前所述，連線應該永遠不會是重複使用多個不同的執行緒。 如果有疑問，建立所需的連接，並關閉它，當您完成時，但請注意，執行此超過通常太必要。
     
-3. **建立和執行資料庫命令**-一旦我們可以執行任意的 SQL 命令，對它的連接。 下列程式碼會顯示正在執行 CREATE TABLE 陳述式。
+3. **建立和執行資料庫命令**-一旦我們擁有我們可以執行任意的 SQL 命令，對它的連線。 下列程式碼會顯示正在執行 CREATE TABLE 陳述式。
 
     ```csharp
     using (var command = connection.CreateCommand ()) {
@@ -66,15 +66,15 @@ Xamarin 可 SQLite 資料庫，可在 iOS 上，使用熟悉的 ADO.NET 類似�
     }
     ```
 
-直接對資料庫執行 SQL 時，您應該採取正常的預防措施，不以提出無效的項目，例如嘗試建立已存在的資料表。 追蹤的資料庫的結構，因此您不會導致 SqliteException 例如 「 SQLite 錯誤資料表 [項目] 已經存在 」。
+直接對資料庫執行 SQL 時，您應該採取一般的預防措施，不以提出無效的項目，例如嘗試建立已經存在的資料表。 因此，例如 「 SQLite 錯誤資料表 [項目] 已經存在 」，不會造成 SqliteException，持續追蹤的資料庫的結構。
 
-## <a name="basic-data-access"></a>基本的資料存取
+## <a name="basic-data-access"></a>基本資料存取
 
 *DataAccess_Basic*時在 iOS 上執行這份文件的範例程式碼看起來像這樣：
 
  ![](using-adonet-images/image9.png "iOS ADO.NET 範例")
 
-下列程式碼說明如何執行簡單的 SQLite 作業，並為應用程式的主視窗中的文字會顯示在結果。
+下列程式碼說明如何執行簡單的 SQLite 作業，並為應用程式的主視窗中的文字顯示結果。
 
 您必須加入這些命名空間：
 
@@ -147,10 +147,10 @@ public static string DoSomeDataAccess ()
 
 ## <a name="more-complex-queries"></a>更複雜的查詢
 
-因為 SQLite 允許任意的 SQL 命令，以針對資料執行，所以您可以執行任何建立、 插入、 更新、 刪除或選取您要的陳述式。 您可以閱讀 SQLite 支援 Sqlite 網站上的 SQL 命令。 使用三種方法之一 SqliteCommand 物件上執行的 SQL 陳述式：
+由於 SQLite 允許任意的 SQL 命令，以對資料執行，您可以執行任何建立、 插入、 更新、 刪除或選取您要的陳述式。 您可以閱讀 SQLite 支援 Sqlite 網站上的 SQL 命令。 使用三種方法之一 SqliteCommand 物件上執行的 SQL 陳述式：
 
--  **ExecuteNonQuery** – 通常用於資料表建立或資料插入。 某些作業的傳回值的受影響的資料列數目，否則它便是-1。
--  **ExecuteReader** – 應該做為傳回的資料列集合時使用`SqlDataReader`。
+-  **ExecuteNonQuery** ： 通常用於資料表建立或資料插入。 某些作業的傳回值會受到影響的資料列數目，否則就是-1。
+-  **ExecuteReader** – 使用時應該傳回的資料列的集合，做為`SqlDataReader`。
 -  **ExecuteScalar** – 擷取單一值 （例如彙總）。
 
 
@@ -167,7 +167,7 @@ using (var c = connection.CreateCommand ()) {
 
 ### <a name="executereader"></a>EXECUTEREADER
 
-下列方法示範 WHERE 子句，SELECT 陳述式中。 程式碼製作完整的 SQL 陳述式，因為它必須謹慎地逸出保留的字元，例如字串周圍的引號 （'）。
+下列方法會顯示 SELECT 陳述式中 WHERE 子句。 因為程式碼會製作完整的 SQL 陳述式，所以它必須謹慎地逸出保留的字元，例如字串周圍的引號 （'）。
 
 ```csharp
 public static string MoreComplexQuery ()
@@ -194,7 +194,7 @@ public static string MoreComplexQuery ()
 }
 ```
 
-ExecuteReader 方法會傳回 SqliteDataReader 物件。 Read 方法範例所示，除了其他有用的屬性包括：
+ExecuteReader 方法會傳回 SqliteDataReader 物件。 Read 方法的範例所示的情況下，除了其他有用的屬性包括：
 
 -  **RowsAffected** – 查詢所影響的資料列計數。
 -  **HasRows** – 是否傳回任何資料列。
@@ -202,7 +202,7 @@ ExecuteReader 方法會傳回 SqliteDataReader 物件。 Read 方法範例所示
 
 ### <a name="executescalar"></a>EXECUTESCALAR
 
-您可以使用這個 SELECT 陳述式會傳回單一值 （例如彙總）。
+您可以使用此傳回單一值 （例如彙總） 的 SELECT 陳述式。
 
 ```csharp
 using (var contents = connection.CreateCommand ()) {
@@ -211,12 +211,12 @@ using (var contents = connection.CreateCommand ()) {
 }
 ```
 
-`ExecuteScalar`方法的傳回型別是`object`– 您應該根據資料庫查詢結果的轉換。 COUNT 查詢的整數或字串，以從單一資料行的 SELECT 查詢，可能是結果。 請注意，這不同於其他 Execute 方法傳回讀取器物件或受影響的資料列數目的計數。
+`ExecuteScalar`方法的傳回型別是`object`– 您應該根據資料庫查詢結果轉換。 COUNT 查詢的整數或字串，以從單一資料行的 SELECT 查詢，可能是結果。 請注意，這不同於其他 Execute 方法傳回的讀取器物件或受影響的資料列數目的計數。
 
 
 ## <a name="related-links"></a>相關連結
 
 - [DataAccess Basic （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [資料存取進階 （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [iOS 資料配方](https://developer.xamarin.com/recipes/ios/data/sqlite/)
+- [DataAccess 進階 （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [iOS 資料配方](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
 - [Xamarin.Forms 資料存取](~/xamarin-forms/app-fundamentals/databases.md)

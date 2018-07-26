@@ -1,33 +1,33 @@
 ---
-title: 使用核心圖形和核心動畫 Xamarin.iOS 中
-description: 本文逐步解說示範如何建立使用核心圖形和核心動畫的應用程式。 它會顯示以回應使用者觸控式螢幕上繪製的方式，以及如何建立動畫沿著路徑移動映像。
+title: 在 Xamarin.iOS 中使用核心圖形和 Core 動畫
+description: 本文逐步解說示範如何建立使用核心圖形和核心動畫的應用程式。 它會顯示以回應使用者的觸控式螢幕上繪製的方式，以及如何以動畫顯示沿著路徑移動映像。
 ms.prod: xamarin
 ms.assetid: 4B96D5CD-1BF5-4520-AAA6-2B857C83815C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7a4399a5d62e2000c2a15a65da8e0e427dc039e0
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: cecfd7f3a9678f298af3ed547aa7b50a18238729
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787051"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242000"
 ---
-# <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>使用核心圖形和核心動畫 Xamarin.iOS 中
+# <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>在 Xamarin.iOS 中使用核心圖形和 Core 動畫
 
-此逐步解說中，我們即將繪製觸控輸入回應中使用核心圖形的路徑。 然後，我們會加入`CALayer`包含我們會沿著路徑製作動畫的影像。
+此逐步解說中我們將繪製採用回應中的核心圖形，以觸控輸入的路徑。 然後，我們會新增`CALayer`包含映像，我們會以動畫顯示的路徑。
 
 下列螢幕擷取畫面顯示完成的應用程式：
 
 ![](graphics-animation-walkthrough-images/00-final-app.png "完成的應用程式")
 
-我們開始下載之前*GraphicsDemo*隨附本指南範例。 您可以下載[這裡](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)和位於**GraphicsWalkthrough**目錄啟動專案名為**GraphicsDemo_starter**上，按兩下和開啟`DemoView`類別。
+我們開始下載之前請先*GraphicsDemo*本指南隨附的範例。 您可以下載[以下](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)和位於內**GraphicsWalkthrough**目錄啟動專案，命名為**GraphicsDemo_starter**上，按兩下和開啟`DemoView`類別。
 
 ## <a name="drawing-a-path"></a>繪製路徑
 
 
-1. 在`DemoView`新增`CGPath`變數至類別和其具現化建構函式。 同時宣告兩個`CGPoint`變數`initialPoint`和`latestPoint`，我們將使用來擷取觸控點，我們可以從中建構路徑：
+1. 在`DemoView`新增`CGPath`變數設為類別和其具現化建構函式。 也會宣告兩個`CGPoint`變數`initialPoint`和`latestPoint`，我們將使用來擷取觸控點，我們可以從中建構路徑：
     
     ```csharp
     public class DemoView : UIView
@@ -45,7 +45,7 @@ ms.locfileid: "34787051"
     }
     ```
 
-2. 加入下列 using 指示詞：
+2. 新增下列 using 指示詞：
 
     ```csharp
     using CoreGraphics;
@@ -53,7 +53,7 @@ ms.locfileid: "34787051"
     using Foundation;
     ```
 
-3. 接下來，覆寫`TouchesBegan`和`TouchesMoved,`並加入下列實作分別擷取每個後續的觸控點與初始觸控點：
+3. 接下來，覆寫`TouchesBegan`和`TouchesMoved,`並新增下列實作分別擷取初始的觸控點和每個後續的觸控點：
 
     ```csharp
     public override void TouchesBegan (NSSet touches, UIEvent evt){
@@ -80,9 +80,9 @@ ms.locfileid: "34787051"
     }
     ```
 
-    `SetNeedsDisplay` 將會呼叫修飾移動順序每次`Draw`下個階段中執行的迴圈上呼叫。
+    `SetNeedsDisplay` 將會呼叫修飾移動以便每次`Draw`呼叫在下一步 執行的迴圈行程上。
 
-4. 我們會加入在路徑行`Draw`方法和用法紅色、 虛線的線條，以使用繪製。 [實作`Draw`](~/ios/platform/graphics-animation-ios/core-graphics.md)以程式碼如下所示：
+4. 我們會將行新增至路徑中`Draw`方法，並使用紅色、 虛線的線條，以使用繪圖。 [實作`Draw`](~/ios/platform/graphics-animation-ios/core-graphics.md)以程式碼如下所示：
 
     ```csharp
     public override void Draw (CGRect rect){
@@ -116,15 +116,15 @@ ms.locfileid: "34787051"
     }
     ```
 
-當我們執行應用程式現在，我們可以觸控繪製在畫面上，如下列螢幕擷取畫面所示：
+如果我們執行應用程式現在，我們可以觸控以繪製畫面上，如下列螢幕擷取畫面所示：
 
 ![](graphics-animation-walkthrough-images/01-path.png "在螢幕上繪圖")
 
-## <a name="animating-along-a-path"></a>沿著路徑製作動畫
+## <a name="animating-along-a-path"></a>沿著路徑以動畫顯示
 
-既然我們已經實作的程式碼，來繪製路徑的使用者，讓我們加入的程式碼，以動畫方式顯示圖層繪製的路徑。
+既然我們已實作的程式碼，以允許使用者繪製的路徑，讓我們新增的程式碼，以動畫顯示圖層繪製的路徑。
 
-1. 首先，新增[ `CALayer` ](~/ios/platform/graphics-animation-ios/core-animation.md)類別變數並建立於建構函式：
+1. 首先，新增[ `CALayer` ](~/ios/platform/graphics-animation-ios/core-animation.md)變數至類別，並建立建構函式：
 
     ```csharp
     public class DemoView : UIView
@@ -149,9 +149,9 @@ ms.locfileid: "34787051"
             }
     ```
 
-2. 接下來，我們會將圖層新增為檢視的圖層的副層，當使用者取消其手指從螢幕上。 然後，我們會建立使用路徑主要畫面格動畫建立動畫的圖層`Position`。
+2. 接下來，我們將新增圖層為檢視的圖層的副層，當使用者將他們的手指從螢幕向上移。 接著，我們將建立使用的路徑中，主要畫面格動畫以動畫顯示圖層的`Position`。
 
-    若要完成此我們需要覆寫`TouchesEnded`並加入下列程式碼：
+    若要這麼做我們要覆寫`TouchesEnded`並加入下列程式碼：
 
     ```csharp
     public override void TouchesEnded (NSSet touches, UIEvent evt)
@@ -172,17 +172,17 @@ ms.locfileid: "34787051"
         }
     ```
 
-3. 現在，並在 繪圖之後，請執行應用程式，包含影像的圖層會加入往返繪製的路徑：
+3. 現在，並在繪圖之後，請執行應用程式，與映像圖層加入和傳輸沿著繪製的路徑：
 
-![](graphics-animation-walkthrough-images/00-final-app.png "使用影像圖層會加入往返繪製路徑")
+![](graphics-animation-walkthrough-images/00-final-app.png "與映像圖層加入，並且傳送繪製路徑")
 
 ## <a name="summary"></a>總結
 
-在本文中，我們會逐步執行範例的連結在一起的圖形和動畫的概念。 首先，我們也示範了如何使用核心圖形中繪製的路徑`UIView`以回應使用者觸控。 然後我們示範了如何使用核心動畫，請沿著路徑移動的映像。
+在本文中，我們會逐步執行的圖形和動畫概念繫結在一起的範例。 首先，我們示範了如何使用以繪製路徑的核心圖形`UIView`以回應使用者的觸控。 然後，我們會示範如何使用核心動畫若要沿該路徑移動映像。
 
 
 ## <a name="related-links"></a>相關連結
 
 - [Core 動畫](~/ios/platform/graphics-animation-ios/core-animation.md)
 - [Core 圖形](~/ios/platform/graphics-animation-ios/core-graphics.md)
-- [核心動畫配方](https://developer.xamarin.com/recipes/ios/animation/coreanimation)
+- [Core 動畫配方](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)
