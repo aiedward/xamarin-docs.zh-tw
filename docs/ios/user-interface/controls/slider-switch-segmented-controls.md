@@ -1,34 +1,34 @@
 ---
-title: 滑桿、 交換器及 Xamarin.iOS 中的分段的控制項
-description: 本文將討論投影片、 交換器及分割的 Xamarin.iOS，說明如何使用它們，以程式設計方式和 iOS 設計工具中的控制項。
+title: 滑桿、 交換器及在 Xamarin.iOS 中的分段的控制項
+description: 本文件討論的投影片、 交換器和分段的控制項在 Xamarin.iOS，描述如何使用它們，以程式設計方式並在 iOS 設計工具中。
 ms.prod: xamarin
 ms.assetid: 85BF0EC8-E581-49CD-B9E7-98BE4C5A0F6B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 09a5d9e76c41eba4e16cab041daa67d3a5d8a584
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 7df79cb6f225326dda6656fa9dfe9534e35f2457
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790025"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241987"
 ---
-# <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>滑桿、 交換器及 Xamarin.iOS 中的分段的控制項
+# <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>滑桿、 交換器及在 Xamarin.iOS 中的分段的控制項
 
 <a name="Sliders" />
 
 ## <a name="sliders"></a>滑桿
 
-滑桿控制項允許的範圍內的數字值的簡單的選取項目。 控制項的預設值為 0 到 1 之間的值，但您可以自訂這些限制。
+滑桿控制項允許的範圍內的數字值的簡單的選取項目。 控制項的預設值為介於 0 和 1 之間的值，但您可以自訂這些限制。
 
  [![](slider-switch-segmented-controls-images/image25a.png "滑桿")](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
-下列螢幕擷取畫面會顯示在設計工具中編輯的屬性：
+下列螢幕擷取畫面顯示在設計工具中編輯的屬性：
 
  [![](slider-switch-segmented-controls-images/image26a.png "滑桿屬性")](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
-您可以在程式碼中設定這些值，如下所示，包括以顯示目前選取的值中的處理常式連接`UILabel`控制項：
+您可以在程式碼中設定這些值，如下所示，包括連接處理常式，以顯示目前選取的值在`UILabel`控制項：
 
 ```csharp
 slider1.MinValue = -1;
@@ -45,26 +45,26 @@ slider1.MinimumTrackTintColor = UIColor.Gray;
 slider1.MaximumTrackTintColor = UIColor.Green;
 ```
 
-自訂的滑桿看起來像這樣：
+自訂滑桿看起來像這樣：
 
- [![](slider-switch-segmented-controls-images/image27a.png "自訂的滑桿")](slider-switch-segmented-controls-images/image28a.png#lightbox)
+ [![](slider-switch-segmented-controls-images/image27a.png "自訂滑桿")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 > [!IMPORTANT]
-> 目前沒有[bug](http://stackoverflow.com/a/19496179)造成`ThumbTint`未如預期般呈現在執行階段。 您可以加入下列程式碼行**之前**上方的程式碼，以解決這個問題。 [[來源](http://stackoverflow.com/a/21396794)]:
+> 目前沒有[bug](http://stackoverflow.com/a/19496179)造成`ThumbTint`不在執行階段呈現如預期般運作。 您可以新增下列程式碼行**之前**上述程式碼因應措施。 [[來源](http://stackoverflow.com/a/21396794)]:
 >
 > `slider1.SetThumbImage(UIImage.FromBundle("thumb.png"),UIControlState.Normal);`
 > 
-> 您可以使用任何影像，它將會覆寫，但請確定它用來放置_中_資源目錄，而且呼叫程式碼中。
+> 您可以使用任何影像，它將會覆寫，但請確定它會放置_在_資源目錄，而且呼叫程式碼中。
 
 <a name="Switch" />
 
 ## <a name="switch"></a>參數
 
-使用 iOS`UISwitch`布林值的輸入，可能會由其他平台上使用選項按鈕。 使用者可以藉由移動操作控制項*thumb*之間**開/關**位置。
+iOS 使用`UISwitch`布林值的輸入，可能會由其他平台上使用選項按鈕。 使用者可以藉由移動操作控制項*thumb*之間**開/關**位置。
 
- [![](slider-switch-segmented-controls-images/image28a.png "參數")](slider-switch-segmented-controls-images/image28a.png#lightbox)
+ [![](slider-switch-segmented-controls-images/image28a.png "交換器")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
-參數的外觀，可以以自訂**屬性板**設計工具，可讓您控制的預設狀態，**開/關濃淡**色彩和**on/off 映像**. 下圖所示：
+可以以自訂參數的外觀**Properties Pad**設計工具，可讓您控制的預設狀態，**開/關濃淡**色彩和**on/off 映像**. 下圖所示：
 
  [![](slider-switch-segmented-controls-images/image29a.png "參數屬性")](slider-switch-segmented-controls-images/image29a.png#lightbox)
 
@@ -77,23 +77,23 @@ switch1.On = true;
  <a name="Segmented_Controls" />
 
 
-## <a name="segmented-controls"></a>分割的控制項
+## <a name="segmented-controls"></a>分段的控制項
 
-分割控制項是組織的方式，可讓使用者互動少數的選項。 在水平配置和每個區段會做為獨立的按鈕。 分割的控制項時使用設計工具，可以找到下**工具箱 > 控制項**，並看起來應該像下圖：
+分段控制項是組織的方式，以允許使用者與少數選項的互動。 它以水平方式配置和每個區段函式做為個別的按鈕。 當使用設計工具，可以找到分段控制項下**工具箱 > 控制項**，且看起來應該如下圖所示：
 
- [![](slider-switch-segmented-controls-images/segmentedcontrol.png "分割的控制項")](slider-switch-segmented-controls-images/segmentedcontrol.png#lightbox)
+ [![](slider-switch-segmented-controls-images/segmentedcontrol.png "分段的控制項")](slider-switch-segmented-controls-images/segmentedcontrol.png#lightbox)
 
-如下所示的設計介面上，個別選取每個區段可讓設計工具的一項獨特功能：
+如下圖所示的設計介面上，個別選取每個區段可讓設計工具的一項獨特功能：
 
- [![](slider-switch-segmented-controls-images/segmentedcontrolselection.png "分割的控制項")](slider-switch-segmented-controls-images/segmentedcontrolselection.png#lightbox)
+ [![](slider-switch-segmented-controls-images/segmentedcontrolselection.png "分段的控制項")](slider-switch-segmented-controls-images/segmentedcontrolselection.png#lightbox)
 
-這可讓屬性板，用來更精確地控制每個區段的屬性。 您可以看到下面的螢幕擷取畫面中可編輯的屬性：
+這可讓 [屬性] 面板，來更精確地控制每個區段的屬性。 您可以看到下面的螢幕擷取畫面中可編輯的屬性：
 
- [![](slider-switch-segmented-controls-images/segmentedcontrolproperties.png "分割的控制項")](slider-switch-segmented-controls-images/segmentedcontrolproperties.png#lightbox)
+ [![](slider-switch-segmented-controls-images/segmentedcontrolproperties.png "分段的控制項")](slider-switch-segmented-controls-images/segmentedcontrolproperties.png#lightbox)
 
-您應該注意中 iOS7，已被取代分割控制項樣式，因此，調整此 iOS7 應用程式中的選項不會影響。
+請注意，區隔市場的控制項樣式中的過時 iOS7，因此，調整此 iOS7 應用程式中的選項不會影響。
 
 ## <a name="related-links"></a>相關連結
 
 - [控制項 （範例）](https://developer.xamarin.com/samples/Controls/)
-- [警示的控制站](https://developer.xamarin.com/recipes/ios/standard_controls/alertcontroller/)
+- [警示控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)
