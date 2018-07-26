@@ -9,6 +9,7 @@
 ##### [裝置屬性](get-started/installation/android-emulator/device-properties.md)
 ##### [疑難排解](get-started/installation/android-emulator/troubleshooting.md)
 #### [Android 裝置設定](get-started/installation/set-up-device-for-development.md)
+#### [Microsoft OpenJDK Preview](get-started/installation/openjdk.md)
 ### [Hello, Android](get-started/hello-android/index.md)
 #### [第一部分：快速入門](get-started/hello-android/hello-android-quickstart.md)
 #### [第二部分：深度剖析](get-started/hello-android/hello-android-deepdive.md)
