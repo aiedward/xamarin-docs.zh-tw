@@ -1,43 +1,42 @@
 ---
 title: 在多個平台上的共用程式碼
-description: 描述用於共用程式碼，包括可攜式類別庫、 共用的專案、 標準.NET 與 NuGet 技術的各種指南的這個文件連結。
+description: 本文件所連結到各種描述技術來共用程式碼，包括可攜式類別庫、 共用的專案、.NET Standard 和 NuGet 的輔助線。
 ms.prod: xamarin
 ms.assetid: 7D179ACF-09A6-46EE-B49D-E27AB5F09CD4
-author: asb3993
-ms.author: amburns
-ms.date: 02/18/2018
-ms.openlocfilehash: 61377afa61e2c2006c2fdf8ef9b21fe7d567b3de
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: conceptdev
+ms.author: crdun
+ms.date: 07/18/2018
+ms.openlocfilehash: 3a2c3f98e3ba83db0794a68ff1d62a9845a111c0
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780061"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270185"
 ---
-# <a name="sharing-code-on-multiple-platforms"></a>在多個平台上的共用程式碼
+# <a name="sharing-code-on-multiple-platforms"></a>共用多個平台上的程式碼
 
-此章節提供一些較常見的工作項目或概念，開發人員需要開發行動應用程式時應該注意的指南。
+這些文章會說明適用於跨平台，包括 Windows、 Android、 iOS 和多個共用程式碼的不同選項。
 
 ## <a name="code-sharing-overviewcode-sharingmd"></a>[程式碼共用概觀](code-sharing.md)
 
-深入了解不同的程式碼共用選項適用於 Xamarin 專案，包括可攜式類別庫 (PCLs)、 共用的專案，以及.NET 標準程式庫。
+深入了解不同的程式碼共用選項適用於 Xamarin 專案，包括.NET 標準程式庫及共用專案。 也支援可攜式類別庫，但是會將它們視為取代為.NET Standard。
 
+## <a name="net-standardcross-platformapp-fundamentalsnet-standardmd"></a>[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)
 
-##  <a name="portable-class-librariescross-platformapp-fundamentalspclmd"></a>[可攜式類別庫](~/cross-platform/app-fundamentals/pcl.md)
+.NET standard 是跨平台共用程式碼的慣用的選項。 程式碼建置針對特定版本 （2.0 會提供最佳的 API 相容性與現有的.NET Framework 程式碼），您可以使用其他支援的層級的專案或更高版本。 .NET standard 專案支援在 Visual Studio 2017 和 Visual Studio for mac。
 
-可攜式類別庫專案可讓您建置和發佈包含共用程式碼，在多個平台上執行的組件。 針對.NET Framework 所提供的平台所定義的設定檔中的子集，建立您第一次選取哪一個平台為目標，然後撰寫程式碼的可攜式類別庫 （或 「 PCL"）。 本文件說明如何建立及使用 PCLs 來搭配 Xamarin。
+## <a name="shared-projectscross-platformapp-fundamentalsshared-projectsmd"></a>[共用的專案](~/cross-platform/app-fundamentals/shared-projects.md)
 
-##  <a name="shared-projectscross-platformapp-fundamentalsshared-projectsmd"></a>[共用的專案](~/cross-platform/app-fundamentals/shared-projects.md)
+共用的專案可讓您撰寫數個不同的應用程式專案所參考的通用程式碼。 程式碼編譯為一部分的每個參考的專案，而且可以包含編譯器指示詞，可幫助這些共用的程式碼基底平台專屬功能。 這篇文章討論共用專案的運作方式，以及如何建立及使用 Xamarin 專案。
 
-共用的專案可讓您撰寫正由許多不同的應用程式專案的通用程式碼。 程式碼會編譯為組件的每個參考的專案，而且可包含編譯器指示詞，可幫助這些特定平台共用程式碼基底中的功能。 這篇文章會討論共用專案的運作方式，以及如何建立並與 Xamarin 專案搭配使用。
+## <a name="portable-class-librariescross-platformapp-fundamentalspclmd"></a>[可攜式類別庫](~/cross-platform/app-fundamentals/pcl.md)
 
-##  <a name="net-standardcross-platformapp-fundamentalsnet-standardmd"></a>[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)
+可攜式類別庫專案可讓您建置及散發包含共用程式碼，以在多個平台上執行的組件。 若要建立您第一次選取哪一個平台為目標，然後撰寫程式碼的可攜式類別庫 （或 「 PCL 」），針對.NET Framework 所提供的平台所定義的設定檔中的子集。 Pcl 會被視為在 Visual Studio; 的最新版本中被取代開發人員都要改為使用.NET Standard 2.0。
 
-標準.NET 是跨平台共用程式碼的新選項。 它適用於可攜式類別庫; 類似的方式程式碼針對特定的版本 (目前透過 1.6 1.0) 所建立，並接著可以使用其他支援的層級的專案或更高版本。 標準.NET 支援專案 Xamarin Studio 6.2、 Visual Studio 針對 Windows 和 Visual Studio for mac。
+## <a name="nuget-projects-multiplatform-libraries-for-code-sharingcross-platformapp-fundamentalsnuget-multiplatform-librariesindexmd"></a>[NuGet 專案： 適用於共用程式碼的多平台程式庫](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
 
-##  <a name="nuget-projects-multiplatform-libraries-for-code-sharingcross-platformapp-fundamentalsnuget-multiplatform-librariesindexmd"></a>[NuGet 的專案： 多平台程式庫共用的程式碼](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
+NuGet 套件可以自動產生的 PCL 或.NET standard 專案;和共用專案可以封裝到 「 誘導轉向 」 使用個別的 NuGet 專案類型的 NuGet 套件。 本節說明如何建立 NuGet 套件，針對每個程式碼共用的案例。
 
-NuGet 封裝可以自動產生從 PCL 或.NET 標準專案的專案。和共用的專案可以封裝到使用個別的 NuGet 專案型別。 上鉤 and 的交換器 」 NuGet 封裝。 本節說明如何建立每個程式碼共用案例的 NuGet 封裝。
+## <a name="manually-creating-nuget-packages-for-xamarincross-platformapp-fundamentalsnuget-manualmd"></a>[以手動方式為 Xamarin 建立 NuGet 套件](~/cross-platform/app-fundamentals/nuget-manual.md)
 
-##  <a name="manually-creating-nuget-packages-for-xamarincross-platformapp-fundamentalsnuget-manualmd"></a>[手動建立 Xamarin NuGet 套件](~/cross-platform/app-fundamentals/nuget-manual.md)
-
-建立搭配 Xamarin 平台的 NuGet 封裝的提示。
+建立使用 Xamarin 平台的 NuGet 套件的秘訣。

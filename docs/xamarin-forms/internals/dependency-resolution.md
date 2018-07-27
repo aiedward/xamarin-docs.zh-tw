@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/23/2018
-ms.openlocfilehash: 8235b6fb5fda2a414cf192dd66007d1d02f232aa
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 2379c8ddc4bea6dd97bc4febd055dd8dfef39beb
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242377"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270484"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>在 Xamarin.Forms 中的相依性解析
 
@@ -111,7 +111,7 @@ public partial class App : Application
 
 從平台專案中，下列型別註冊`IContainer`物件必須先建置，這透過呼叫`BuildContainer`方法。 這個方法會叫用的 Autofac`Build`方法`ContainerBuilder`執行個體，建立新的相依性插入容器，其中包含已註冊。
 
-下列各節，在`Logger`類別，可實作`ILogger`介面中，類別建構函式會插入。 `Logger`類別會實作簡單的記錄功能使用`Debug.WriteLine`方法，以及用來示範服務如何插入自訂轉譯器，效果並[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)實作。
+下列各節，在`Logger`可實作類別`ILogger`介面插入類別建構函式。 `Logger`類別會實作簡單的記錄功能使用`Debug.WriteLine`方法，以及用來示範服務如何插入自訂轉譯器，效果並[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)實作。
 
 ### <a name="registering-custom-renderers"></a>註冊自訂轉譯器
 
