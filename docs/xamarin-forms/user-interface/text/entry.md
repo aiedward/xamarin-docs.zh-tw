@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/16/2018
-ms.openlocfilehash: 57304f2f07a0834c31e32bb89a4742a2de7e861c
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.openlocfilehash: 5ccd2a653e5190df11a58477905e868b25878e44
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202990"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270108"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms 的項目
 
@@ -84,9 +84,9 @@ A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)屬性值為 0 表示�
 var entry = new Entry { Keyboard = Keyboard.Chat };
 ```
 
-每個鍵盤的範例可在我們[配方](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/)存放庫。
+每個鍵盤的範例可在我們[配方](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry)存放庫。
 
-[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)類別也有[ `Create` ](xref:Xamarin.Forms.Keyboard.Create*)可用來指定大小寫、 拼字檢查和建議的行為，以自訂鍵盤的 factory 方法。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 列舉值，指定為引數的方法，以自訂`Keyboard`傳回。 `KeyboardFlags`列舉型別包含下列值：
+[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)類別也有[ `Create` ](xref:Xamarin.Forms.Keyboard.Create*)可用來指定大小寫、 拼字檢查和建議的行為，以自訂鍵盤的 factory 方法。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 列舉值會指定為引數的方法，以自訂`Keyboard`傳回。 `KeyboardFlags`列舉型別包含下列值：
 
 - [`None`](xref:Xamarin.Forms.KeyboardFlags.None) – 沒有功能新增至鍵盤。
 - [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) – 指出將會自動大寫的每個輸入句子的第一個單字的第一個字母。
@@ -148,7 +148,7 @@ var entry = new Entry { ReturnType = ReturnType.Send };
 
 ### <a name="enabling-and-disabling-spell-checking"></a>啟用和停用拼字檢查
 
-[`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性會控制是否拼字檢查已啟用。 根據預設，此屬性設為`true`。 當使用者輸入文字，則會指出拼字錯誤。
+[`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性會控制是否拼字檢查 已啟用。 根據預設，此屬性設為`true`。 當使用者輸入文字，則會指出拼字錯誤。
 
 不過，某些文字項目的情況下，輸入使用者名稱，例如拼字檢查可提供負體驗和藉由設定，應該停用[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性設`false`:
 
