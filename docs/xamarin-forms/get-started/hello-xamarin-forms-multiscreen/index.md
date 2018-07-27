@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 2132e1d0732a727d90e3eb7f36085f13c78c2e7c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6a7d3b29bd9d3ab3cfee07a30bb23daab76de22a
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30789510"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241714"
 ---
 # <a name="hello-xamarinforms-multiscreen"></a>Hello, Xamarin.Forms 多重畫面
 
@@ -32,6 +32,6 @@ _本指南會擴展在 Hello, Xamarin.Forms 指南中建立的 Phoneword 應用�
 
 - [Xamarin.Forms 簡介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Visual Studio 偵錯](http://msdn.microsoft.com/library/k0k771bt%28v=vs.90%29.aspx)
-- [Visual Studio for Mac 配方 - 偵錯](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/) \(英文\)
+- [Visual Studio for Mac 配方 - 偵錯](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging) \(英文\)
 - [免費的自我引導式學習 (影片)](https://university.xamarin.com/self-guided) \(英文\)
 - [開始使用 Xamarin (影片)](https://developer.xamarin.com/videos/) \(英文\)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 494dfad0ba3d26147604ce1bca1de49fac318811
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4b21a69e49c8c7fd79de8edac9858c4714657f1c
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785430"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242312"
 ---
 # <a name="debugging-xamarinios-apps"></a>偵錯 Xamarin.iOS 應用程式
 
@@ -30,7 +30,7 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](http://www.mono-project
 
 ## <a name="setting-breakpoints"></a>設定中斷點
 
-當您準備好開始針對您的應用程式進行偵錯時，第一步就是[設定應用程式的中斷點](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/)。 這可以透過按一下編輯器的邊界區域來完成，就在您想要中斷的程式碼行號旁邊：
+當您準備好開始針對您的應用程式進行偵錯時，第一步就是[設定應用程式的中斷點](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)。 這可以透過按一下編輯器的邊界區域來完成，就在您想要中斷的程式碼行號旁邊：
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -121,7 +121,7 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](http://www.mono-project
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-若要在 Visual Studio 2015 中設定條件式中斷點，請先[設定一般中斷點](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/)。 以滑鼠右鍵按一下中斷點，以顯示其快顯功能表：
+若要在 Visual Studio 2015 中設定條件式中斷點，請先[設定一般中斷點](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)。 以滑鼠右鍵按一下中斷點，以顯示其快顯功能表：
 
  [![](debugging-in-xamarin-ios-images/image4vs.png "[中斷點] 操作功能表")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
 
@@ -241,6 +241,6 @@ Xamarin.iOS 隨附 Mono 類別庫的原始程式碼，您可以使用它從偵�
 
 - [以 Xamarin 偵錯](/visualstudio/mac/debugging/)
 - [資料視覺效果](/visualstudio/mac/data-visualizations/)
-- [設定中斷點](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/)
-- [逐步執行程式碼](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/)
-- [輸出資訊至記錄視窗](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/)
+- [設定中斷點](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)
+- [逐步執行程式碼](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code)
+- [輸出資訊至記錄視窗](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window)

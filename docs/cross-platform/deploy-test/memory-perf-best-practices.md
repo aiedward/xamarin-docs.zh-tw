@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: c529d1d42d582cb49a906ad6fc39a191a7389f58
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: bd08e1f83f7b1752a2830bda1390ffae4f86b360
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997435"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242403"
 ---
 # <a name="cross-platform-performance"></a>跨平台效能
 
@@ -340,7 +340,7 @@ Android 應用程式也可以將每個 ABI (「架構」) 分割成個別的 APK
 
 ## <a name="optimize-image-resources"></a>最佳化影像資源
 
-影像是應用程式所使用之資源中成本最高的一種資源，且經常以高解析度擷取。 雖然這可以建立充滿細節的鮮明影像，但顯示這種影像的應用程式通常會需要更多 CPU 使用量來解碼影像，以及更多的記憶體來儲存解碼後的影像。 當影像可以縮小以供顯示之用時，在記憶體中解碼高解析度的影像便相當浪費。 您可以藉由為儲存的影像建立多個接近預測顯示大小的解析度版本，來減少 CPU 使用量和記憶體使用量。 例如，相較於在全螢幕中顯示的影像，在清單檢視中顯示的影像應為較低的解析度。 此外，載入高解析度影像的縮小版本也能更有效率的進行顯示，且只會對記憶體造成極小的影響。 如需詳細資訊，請參閱[有效率的載入大型點陣圖](https://developer.xamarin.com/recipes/android/resources/general/load_large_bitmaps_efficiently/)。
+影像是應用程式所使用之資源中成本最高的一種資源，且經常以高解析度擷取。 雖然這可以建立充滿細節的鮮明影像，但顯示這種影像的應用程式通常會需要更多 CPU 使用量來解碼影像，以及更多的記憶體來儲存解碼後的影像。 當影像可以縮小以供顯示之用時，在記憶體中解碼高解析度的影像便相當浪費。 您可以藉由為儲存的影像建立多個接近預測顯示大小的解析度版本，來減少 CPU 使用量和記憶體使用量。 例如，相較於在全螢幕中顯示的影像，在清單檢視中顯示的影像應為較低的解析度。 此外，載入高解析度影像的縮小版本也能更有效率的進行顯示，且只會對記憶體造成極小的影響。 如需詳細資訊，請參閱[有效率的載入大型點陣圖](https://github.com/xamarin/recipes/tree/master/Recipes/android/resources/general/load_large_bitmaps_efficiently)。
 
 與影像解析度無關，顯示影像資源可能會大幅增加應用程式的記憶體使用量。 因此應該只有在必要時才建立它們，且應在應用程式不再需要它們時應立即釋出。
 

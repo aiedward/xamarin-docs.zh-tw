@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 1292db3534570dace90639958a3d5be9f6466716
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 886cc1de87bd8225bd0389d2e7b84b546ffb39d7
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30765242"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241493"
 ---
 # <a name="gdb"></a>GDB
 
@@ -145,7 +145,7 @@ GNU gdb (GDB) 7.3.1-gg2
 2.  啟用應用程式偵錯。
 3.  可存取的 `gdbserver`。
 
-根據預設，偵錯應用程式中會啟用 `INTERNET` 權限。 若您的應用程式中尚未存在，您可以藉由編輯 **Properties/AndroidManifest.xml** 或編輯[專案屬性](https://developer.xamarin.com/recipes/android/general/projects/add_permissions_to_android_manifest/)來新增它。
+根據預設，偵錯應用程式中會啟用 `INTERNET` 權限。 若您的應用程式中尚未存在，您可以藉由編輯 **Properties/AndroidManifest.xml** 或編輯[專案屬性](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest)來新增它。
 
 應用程式偵錯可藉由將 [ApplicationAttribute.Debugging](https://developer.xamarin.com/api/property/Android.App.ApplicationAttribute.Debuggable/) 自訂屬性內容設為 `true`，或編輯 **Properties/AndroidManifest.xml** 並將 `//application/@android:debuggable` 屬性設為 `true` 來啟用：
 
