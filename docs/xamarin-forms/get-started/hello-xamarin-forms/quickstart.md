@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 5b5f8c80e49d66ed3bd8b008c975d1cfeda93ed4
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 7399cab611b726eb7bb72928f504086fb842fb74
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38832380"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242429"
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms Quickstart
 
@@ -306,7 +306,7 @@ ms.locfileid: "38832380"
     }
     ```
 
-    按下 **CTRL+S**，將變更儲存到 **PhoneDialer.cs**，然後關閉檔案。
+    請注意，此程式碼假設您是使用最新的 Android API。 按下 **CTRL+S**，將變更儲存到 **PhoneDialer.cs**，然後關閉檔案。
 
 21. 在 [方案總管] 的 [Phoneword.Android] 專案中，按兩下 [MainActivity.cs] 來開啟它、移除所有範本程式碼，然後以下列程式碼取代：
 
@@ -729,7 +729,7 @@ ms.locfileid: "38832380"
     }
     ```
 
-    選擇 [檔案] > [儲存] (或按下 **&#8984; + S**)，將變更儲存到 **PhoneDialer.cs**，然後關閉檔案。
+    請注意，此程式碼假設您是使用最新的 Android API。 選擇 [檔案] > [儲存] (或按下 **&#8984; + S**)，將變更儲存到 **PhoneDialer.cs**，然後關閉檔案。
 
 21. 在 [Solution Pad] 的 [Phoneword.Droid] 專案中，按兩下 [MainActivity.cs] 來開啟它、移除所有範本程式碼，然後以下列程式碼取代：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 685a29eea4b03361b185e25ae0e146be7b5e69b6
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9c81138aea57c0027ad0f53e3116878ffb800eae
+ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792030"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39276037"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Xamarin.Mac 應用程式的應用程式圖示
 
@@ -23,9 +23,9 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 
 在 Xamarin.Mac 應用程式中使用 C# 和 .NET 時，開發人員可以存取在 *Objective-C* 和 *Xcode* 中工作的開發人員可以存取的相同影像與圖示工具。
 
-優良的圖示應會傳達 Xamarin.Mac 應用程式的用途，且提示使用者在使用應用程式時預期會有的體驗。 本文涵蓋建立圖示所需的影像資產、將這些資產封裝至 `AppIcons.appiconset` 檔案，以及在 Xamarin.Mac 應用程式中取用該檔案的所有必要步驟。
+優良的圖示應會傳達 Xamarin.Mac 應用程式的用途，且提示使用者在使用應用程式時預期會有的體驗。 本文涵蓋建立圖示所需的影像資產、將這些資產封裝至 `AppIcon.appiconset` 檔案，以及在 Xamarin.Mac 應用程式中取用該檔案的所有必要步驟。
 
-![AppIcons.appiconset 編輯器](app-icon-images/intro01.png "AppIcons.appiconset 編輯器")
+![AppIcon.appiconset 編輯器](app-icon-images/intro01.png "AppIcon.appiconset 編輯器")
 
 
 ## <a name="application-icon"></a>應用程式圖示
@@ -85,7 +85,7 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 
 1. 在 [Solution Pad] 中，開啟 [Assets.xcassets] > [AppIcons.appiconset]： 
 
-    ![編輯 AppIcons.appiconset](app-icon-images/intro01.png "編輯 AppIcons.appiconset")
+    ![編輯 AppIcon.appiconset](app-icon-images/intro01.png "編輯 AppIcon.appiconset")
 2. 對於必要的各種圖示大小，按一下該圖示，然後選取依上述建立的對應影像檔案： 
 
     [![選取圖示影像](app-icon-images/intro02.png "選取圖示影像")](app-icon-images/intro02-large.png#lightbox)
@@ -94,12 +94,12 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 
 ## <a name="using-the-icon"></a>使用圖示
 
-建置 `AppIcons.appiconset` 檔案之後，您必須在 Visual Studio for Mac 中將它指派給 Xamarin.Mac 專案。
+建置 `AppIcon.appiconset` 檔案之後，您必須在 Visual Studio for Mac 中將它指派給 Xamarin.Mac 專案。
 
 請執行下列動作：
 
 1. 在 [Solution Pad] 中，按兩下 [Info.plist] 以開啟 [專案選項]。
-2. 在 [Mac OS X 應用程式目標] 區段中，按一下 [應用程式圖示] 以選取 `AppIcons.appiconset` 檔案： 
+2. 在 [Mac OS X 應用程式目標] 區段中，按一下 [應用程式圖示] 以選取 `AppIcon.appiconset` 檔案： 
 
     [![設定圖示集](app-icon-images/icon01.png "設定圖示集")](app-icon-images/icon01-large.png#lightbox)
 3. 儲存變更。

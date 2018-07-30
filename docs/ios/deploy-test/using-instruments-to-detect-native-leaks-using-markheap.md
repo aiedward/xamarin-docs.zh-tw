@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 25129d532af0b146afedf28865649ffc9e38ee17
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9b6168eba91a87af88891b9e07e3dd395301cc48
+ms.sourcegitcommit: 021027b78cb2f8061b03a7c6ae59367ded32d587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785608"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39182204"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>使用 Instruments 分析 Xamarin.iOS 應用程式
 
@@ -27,11 +27,11 @@ Xcode Instruments 只能在 Mac 上執行。
 
 選取裝置，並執行 Instruments 應用程式：
 
-1.  在 Visual Studio for Mac 中開啟 Xamarin.iOS 專案。
-2.  選取 [偵錯|iPhone] 設定。
-3.  將 iOS 裝置連接到電腦。
-4.  在 [執行] 功能表中，選取 [上傳至裝置]。 現在將會建置應用程式，並上傳至裝置。
-5.  在 [工具] 功能表中，選取 [啟動 Instruments]。
+1. 在 Visual Studio for Mac 中開啟 Xamarin.iOS 專案。
+2. 選取 [偵錯|iPhone] 設定。
+3. 將 iOS 裝置連接到電腦。
+4. 在 [執行] 功能表中，選取 [上傳至裝置]。 現在將會建置應用程式，並上傳至裝置。
+5. 在 [工具] 功能表中，選取 [啟動 Instruments]。
 
 
 Instruments 現在將會開啟，並顯示下列對話方塊：
@@ -65,4 +65,4 @@ Instruments 現在將會開啟，並顯示下列對話方塊：
 ## <a name="related-links"></a>相關連結
 
 - [Instruments 逐步解說](~/ios/deploy-test/walkthrough-apples-instrument.md)
-- [Xamarin.iOS 記憶體回收](https://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/)
+- [Xamarin.iOS 記憶體回收 (部落格文章)](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)

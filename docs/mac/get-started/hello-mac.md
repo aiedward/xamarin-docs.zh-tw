@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 438bb8141818ccdb1aaf2fa604707d2fb7601cd5
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f06bf6736b427a4d77ac34957d75cd321f3dae3a
+ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792781"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39275933"
 ---
 # <a name="hello-mac--walkthrough"></a>Hello, Mac – 逐步解說
 
@@ -249,7 +249,7 @@ namespace Hello_Mac
 
 [![](hello-mac-images/infoplist01.png "Visual Studio for Mac Plist 編輯器")](hello-mac-images/infoplist01.png#lightbox)
 
-它也會定義_分鏡腳本_，以用來顯示 [主要介面] 下拉式清單底下的 Xamarin.Mac 應用程式使用者介面。 在上述範例的案例中，下拉式清單中的 [`Main`] 與 [方案總管]  中專案的來源樹狀目錄中的 [`Main.storyboard`] 相關。 它也會定義應用程式的圖示，方法是指定包含它們的「資產目錄」(在本案例中是 AppIcons)。
+它也會定義_分鏡腳本_，以用來顯示 [主要介面] 下拉式清單底下的 Xamarin.Mac 應用程式使用者介面。 在上述範例的案例中，下拉式清單中的 [`Main`] 與 [方案總管]  中專案的來源樹狀目錄中的 [`Main.storyboard`] 相關。 它也會定義應用程式的圖示，方法是指定包含它們的「資產目錄」(在本案例中是 **AppIcon**)。
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 

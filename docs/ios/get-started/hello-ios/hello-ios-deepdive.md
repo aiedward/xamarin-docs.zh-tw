@@ -8,38 +8,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: f7869f572bfd6f6c8a0bc710c6e28671c22ad7eb
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 16920f27a1830dc6a3ab1a3cb0a267eb3b1d90ea
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786396"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203019"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – 深度剖析
 
 ＜快速入門＞逐步解說，介紹如何建置和執行基本的 Xamarin.iOS 應用程式。 現在是時候更深入了解 iOS 應用程式的運作方式，讓您能夠建置更複雜的程式。 本指南會檢閱在 Hello, iOS 逐步解說中，能夠用來了解 iOS 應用程式開發基本概念的步驟。
-
-此文章中會探索下列主題：
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-- **Visual Studio for Mac 簡介**：介紹 Visual Studio for Mac，並建立新的應用程式。
-- **Xamarin.iOS 應用程式的結構**：導覽 Xamarin.iOS 應用程式的基本組件。
-- **架構和應用程式基本概念**：檢閱 iOS 應用程式的組件以及組件之間的關聯性。
-- **使用者介面 (UI)**：使用 iOS 設計工具來建立使用者介面。
-- **檢視控制器和檢視生命週期**：介紹檢視生命週期，以及如何使用檢視控制器來管理內容檢視階層。
-- **測試、部署及最後的修飾**：透過測試、部署、產生作品等等的建議來完成應用程式。
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-- **Visual Studio 簡介**：介紹 Visual Studio，以及如何建立新的應用程式。
-- **Xamarin.iOS 應用程式的結構**：導覽 Xamarin.iOS 應用程式的基本組件。
-- **架構和應用程式基本概念**：檢閱 iOS 應用程式的組件以及組件之間的關聯性。
-- **使用者介面 (UI)**：使用 iOS 設計工具來建立使用者介面。
-- **檢視控制器和檢視生命週期**：介紹檢視生命週期，以及如何使用檢視控制器來管理內容檢視階層。
-- **測試、部署及最後的修飾**：透過測試、部署、產生作品等等的建議來完成應用程式。
-
------
 
 本指南將協助您發展建置單一畫面之 iOS 應用程式所需的技能與知識。 透過它運作之後，您應該能夠了解 Xamarin.iOS 應用程式的不同組件，以及如何將它們結合在一起。
 
@@ -64,8 +42,6 @@ Visual Studio 會將程式碼組織成「方案」和「專案」。 方案是�
 ![](hello-ios-deepdive-images/vs-image30.png "最初方案的螢幕擷取畫面")
 
 -----
-
-<a name="anatomy" />
 
 ## <a name="anatomy-of-a-xamarinios-application"></a>Xamarin.iOS 應用程式的結構
 
@@ -322,7 +298,7 @@ public partial class ViewController : UIViewController
 
 將自訂程式碼新增至生命週期的任何階段時，必須「覆寫」該生命週期方法的「基底實作」。 達成此目的之方法是點選至現有的生命週期方法 (其中具有已經附加至該方法的一些程式碼)，並使用額外的程式碼加以擴充。 基底實作是從方法內部呼叫，以確定原始程式碼會在新的程式碼之前執行。 下一節將示範此範例。
 
-如需運用檢視控制器的詳細資訊，請參閱 Apple 的[適用於 iOS 的檢視控制器程式設計指南](https://developer.apple.com/library/ios/featuredarticles/ViewControllerPGforiPhoneOS/ViewLoadingandUnloading/ViewLoadingandUnloading.html) \(英文\) 和 [UIViewController 參考](https://developer.apple.com/library/ios/documentation/uikit/reference/UIViewController_Class/Reference/Reference.html) \(英文\)。
+如需運用檢視控制器的詳細資訊，請參閱 Apple 的[適用於 iOS 的檢視控制器程式設計指南](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html#//apple_ref/doc/uid/TP40007457-CH2-SW1) \(英文\) 和 [UIViewController 參考](https://developer.apple.com/documentation/uikit/uiviewcontroller?language=objc) \(英文\)。
 
 ### <a name="responding-to-user-interaction"></a>回應使用者互動
 
@@ -369,7 +345,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-## <a name="additional-concepts-introduced-in-phoneword"></a>Phoneword 中導入的其他概念
+## <a name="additional-concepts-introduced-in-phoneword"></a>Phoneword 中引入的其他概念
 
 Phoneword 應用程式引入本指南未涵蓋的數個概念。 這些概念包括：
 
@@ -379,7 +355,7 @@ Phoneword 應用程式引入本指南未涵蓋的數個概念。 這些概念包
     CallButton.SetTitle ("Call", UIControlState.Normal);
     ```
 - **啟用和停用按鈕**：**按鈕**可以處於 `Enabled` 或 `Disabled` 狀態。 已停用的**按鈕**將不會回應使用者輸入。 例如，下列程式碼會停用 `CallButton`：CallButton.Enabled = false；如需有關按鈕的詳細資訊，請參閱[按鈕](~/ios/user-interface/controls/buttons.md)指南。
-- **關閉鍵盤**：當使用者點選文字欄位時，iOS 會顯示鍵盤，讓使用者能夠進行輸入。 不幸的是，沒有任何內建的功能可關閉鍵盤。 您可以將下列程式碼新增至 `TranslateButton`，在使用者按下 `TranslateButton` 時關閉鍵盤：PhoneNumberText.ResignFirstResponder ()；如需關閉鍵盤的其他範例，請參閱[關閉鍵盤](https://developer.xamarin.com/recipes/ios/input/keyboards/dismiss_the_keyboard)配方。
+- **關閉鍵盤**：當使用者點選文字欄位時，iOS 會顯示鍵盤，讓使用者能夠進行輸入。 不幸的是，沒有任何內建的功能可關閉鍵盤。 您可以將下列程式碼新增至 `TranslateButton`，在使用者按下 `TranslateButton` 時關閉鍵盤：PhoneNumberText.ResignFirstResponder ()；如需關閉鍵盤的其他範例，請參閱[關閉鍵盤](https://github.com/xamarin/recipes/tree/master/Recipes/ios/input/keyboards/dismiss_the_keyboard)配方。
 - **使用 URL 進行通話**：在 Phoneword 應用程式中，使用 Apple URL 配置來啟動系統手機應用程式。 自訂的 URL 配置包含 “tel:” 首碼和轉譯的電話號碼，如下列程式碼所示：
 
     ```csharp
@@ -399,7 +375,7 @@ Phoneword 應用程式引入本指南未涵蓋的數個概念。 這些概念包
                 }
     ```
 
-如需 iOS 警示檢視的詳細資訊，請參閱[警示控制器配方](https://developer.xamarin.com/recipes/ios/standard_controls/alertcontroller/)。
+如需 iOS 警示檢視的詳細資訊，請參閱[警示控制器配方](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)。
 
 ## <a name="testing-deployment-and-finishing-touches"></a>測試、部署及最後的修飾
 
@@ -407,11 +383,11 @@ Visual Studio for Mac 和 Visual Studio 都會提供許多選項來測試和部�
 
 ### <a name="debugging-tools"></a>偵錯工具
 
-應用程式程式碼中的問題有時很難診斷。 若要協助診斷複雜的程式碼問題，您可以[設定中斷點](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/)、[逐步執行程式碼](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/)或[將資訊輸出至記錄視窗](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/)。
+應用程式程式碼中的問題有時很難診斷。 若要協助診斷複雜的程式碼問題，您可以[設定中斷點](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)、[逐步執行程式碼](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code)或[將資訊輸出至記錄視窗](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window)。
 
 ### <a name="deploy-to-a-device"></a>部署到裝置
 
-iOS 模擬器是一個快速測試應用程式的方式。 此模擬器有數個實用的最佳化可用來進行測試，包括模擬位置、[模擬移動](https://developer.xamarin.com/recipes/ios/multitasking/test_location_changes_in_simulator/)，以及更多項目。 不過，使用者將不會取用模擬器中的最終應用程式。 所有應用程式都應儘早且經常在實際裝置上進行測試。
+iOS 模擬器是一個快速測試應用程式的方式。 此模擬器有數個實用的最佳化可用來進行測試，包括模擬位置、[模擬移動](https://github.com/xamarin/recipes/tree/master/Recipes/ios/multitasking/test_location_changes_in_simulator)，以及更多項目。 不過，使用者將不會取用模擬器中的最終應用程式。 所有應用程式都應儘早且經常在實際裝置上進行測試。
 
 裝置需要時間佈建，並且需要 Apple 開發人員帳戶。 [裝置佈建](~/ios/get-started/installation/device-provisioning/index.md)指南提供準備好裝置以進行開發的完整指示。
 
@@ -464,5 +440,5 @@ iOS 模擬器是一個快速測試應用程式的方式。 此模擬器有數個
 ## <a name="related-links"></a>相關連結
 
 - [Hello, iOS (範例)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/) \(英文\)
-- [iOS 人性化介面指導方針](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html) \(英文\)
-- [iOS 佈建入口網站](https://developer.apple.com/ios/manage/overview/index.action) \(英文\)
+- [iOS 人性化介面指導方針](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/) \(英文\)
+- [iOS 佈建入口網站](http://developer.apple.com/account/#/overview) \(英文\)

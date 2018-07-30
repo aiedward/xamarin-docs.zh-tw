@@ -7,13 +7,13 @@ ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 9e4349b807c98e6f5cfbc55fa57153f99054d474
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 07/20/2018
+ms.openlocfilehash: beb90587e0d720de7770056c8b51264099edecdc
+ms.sourcegitcommit: fb55eba393e43bcc9e9d1fef9ef1f1310e99f620
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732462"
+ms.lasthandoff: 07/21/2018
+ms.locfileid: "39189017"
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android：快速入門
 
@@ -49,15 +49,8 @@ _在這份含有兩部分的指南中，您將會建置您的第一個 Xamarin.A
 
 ## <a name="configuring-emulators"></a>設定模擬器
 
-如果您使用 Google 的 Android SDK 模擬器，我們建議您設定模擬器以使用硬體加速。 設定硬體加速的指示請參閱[硬體加速以提升模擬器效能](~/android/get-started/installation/android-emulator/hardware-acceleration.md)。
+如果您使用 Android 模擬器，我們建議您設定模擬器以使用硬體加速。 設定硬體加速的指示請參閱[硬體加速以提升模擬器效能](~/android/get-started/installation/android-emulator/hardware-acceleration.md)。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-如果您使用 Visual Studio Android Emulator，必須在電腦上啟用 Hyper-V。 如需設定 Visual Studio Android Emulator 的詳細資訊，請參閱 [Visual Studio Emulator for Android 的系統需求](https://msdn.microsoft.com/en-us/library/mt228280.aspx)。
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
------
 
 ## <a name="walkthrough"></a>逐步解說
 
@@ -66,16 +59,20 @@ _在這份含有兩部分的指南中，您將會建置您的第一個 Xamarin.A
 啟動 Visual Studio。  按一下 [檔案] > [新增] > [專案]，建立新的專案。
 
 在 [新增專案] 對話方塊中，按一下 [Android 應用程式] 範本。
-將新專案命名為 `Phoneword`。 按一下 [確定] 建立新專案：
+將新專案命名為 `Phoneword`。 按一下 [確定]：
 
-[![新的專案是 Phoneword](hello-android-quickstart-images/vs/02-new-project-name-sml.w157.png)](hello-android-quickstart-images/vs/02-new-project-name.w157.png#lightbox)
+[![新的專案是 Phoneword](hello-android-quickstart-images/vs/01-new-project-name-w157-sml.png)](hello-android-quickstart-images/vs/01-new-project-name-w157.png#lightbox)
+
+在 [新增 Android 應用程式] 對話方塊中，按一下 [空白應用程式]，然後按一下 [確定] 以建立新應用程式：
+
+[![選取空白應用程式範本](hello-android-quickstart-images/vs/02-blank-app-w157-sml.png)](hello-android-quickstart-images/vs/02-blank-app-w157.png#lightbox)
 
 ### <a name="creating-the-layout"></a>建立版面配置
 
 建立新專案之後，請展開 [資源] 資料夾，然後在方案總管中展開 [配置] 資料夾。
-按兩下 **Main.axml** 以在 Android Designer 中開啟它。 這是應用程式螢幕的配置檔案：
+按兩下 [activity_main.axml] 以在 Android Designer 中開啟它。 這是應用程式螢幕的配置檔案：
 
-[![開啟 Main.axml](hello-android-quickstart-images/vs/04-open-layout-sml.png)](hello-android-quickstart-images/vs/04-open-layout.png#lightbox)
+[![開啟 activity main.axml](hello-android-quickstart-images/vs/04-open-layout-sml.png)](hello-android-quickstart-images/vs/04-open-layout.png#lightbox)
 
 從 [工具箱] (左側區域)，在搜尋欄位中輸入 `text`，然後將 [Text (Large)] (文字 (大型)) 小工具拖曳至設計介面 (中央區域)：
 
@@ -115,7 +112,7 @@ _在這份含有兩部分的指南中，您將會建置您的第一個 Xamarin.A
 
 在 [新增項目] 對話方塊中選取 [Visual C#] > [程式碼] > [程式碼檔案] 並將新的程式碼檔案命名為 **PhoneTranslator.cs**：
 
-[![新增 PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-sml.w157.png)](hello-android-quickstart-images/vs/14-add-class.w157.png#lightbox)
+[![新增 PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-sml-w157.png)](hello-android-quickstart-images/vs/14-add-class-w157.png#lightbox)
 
 這會建立新的空白 C# 類別。 將下列程式碼插入這個檔案中：
 
@@ -287,6 +284,8 @@ namespace Phoneword
 
 [![完成時的應用程式螢幕擷取畫面](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png#lightbox)
 
+
+
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 從 [Applications] 資料夾，或從 [Spotlight]，啟動 Visual Studio for Mac。 
@@ -418,7 +417,7 @@ namespace Core
 下一個步驟是將支援程式碼新增到 `MainActivity` 類別，以便新增程式碼來連接使用者介面。
 在 **Solution Pad** 中，按兩下 **MainActivity.cs**，將其開啟。
 
-開始新增事件處理常式至 [翻譯] 按鈕。 在 `MainActivity` 類別中找到 `OnCreate` 方法。 將按鈕程式碼新增在 `OnCreate` 內，`base.OnCreate(bundle)` 和 `SetContentView (Resource.Layout.Main)` 呼叫底下。 移除範本按鈕處理程式碼，讓 `OnCreate` 方法如下所示：
+開始新增事件處理常式至 [翻譯] 按鈕。 在 `MainActivity` 類別中找到 `OnCreate` 方法。 將按鈕程式碼新增在 `OnCreate` 內，`base.OnCreate(bundle)` 和 `SetContentView (Resource.Layout.Main)` 呼叫底下。 移除任何現有的按鈕處理程式碼 (亦即參考 `Resource.Id.myButton` 並為它建立點擊處理常式的程式碼) 以便 `OnCreate` 方法看起來像下面這樣：
 
 ```csharp
 using System;

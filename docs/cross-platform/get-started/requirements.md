@@ -3,19 +3,17 @@ title: 系統需求
 description: 本文件列出在 Mac 和 Windows 電腦上使用 Xamarin 建置應用程式的系統需求。 它也連結到安裝指示。
 ms.prod: xamarin
 ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
-author: asb3993
-ms.author: amburns
-ms.date: 08/28/2017
-ms.openlocfilehash: 04db2fe4e3385c55ecf653b002b909f16e99a101
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: conceptdev
+ms.author: crdun
+ms.date: 07/24/2018
+ms.openlocfilehash: 6d16f01965b6b3bcba35cf14d4000f53a4400653
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780720"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241974"
 ---
 # <a name="system-requirements"></a>系統需求
-
-_使用 Xamarin 的必要條件_
 
 Xamarin 產品依賴 Apple 和 Google 中的平台 SDK 來定位 iOS 或 Android，所以我們的系統需求與這些平台的需求相符。 此頁面列出了 Xamarin 平台的系統相容性、建議的開發環境與 SDK 版本。
 
@@ -54,36 +52,27 @@ Xamarin 產品依賴 Apple 和 Google 中的平台 SDK 來定位 iOS 或 Android
 
 [!include[](~/cross-platform/includes/macos-testing.md)]
 
-
 <a name="windows" />
 
 ## <a name="windows-requirements"></a>Windows 需求
 
 使用 Windows 電腦進行 Xamarin 開發需要以下軟體和 SDK 版本。
 檢查您的作業系統版本 (請確認您使用的不是 Visual Studio 的 *Express* 版本：如果您使用的是該版本，請考慮更新至 *Community* 版本)。
-Visual Studio 2015 和 2017 安裝程式包含自動安裝 Xamarin 的選項。
+Visual Studio 2017 安裝程式包括自動安裝 Xamarin 的選項 ([使用 .NET 進行行動開發])。
 
 [!include[](~/cross-platform/includes/windows-requirements.md)]
 
-
 > [!NOTE]
 >
->* Xamarin for Visual Studio 支援任何版本的 Visual Studio 2015 或 2017 (Community、Professional 和 Enterprise)。
+>- Xamarin for Visual Studio 支援任何版本的 Visual Studio 2017 (Community、Professional 和 Enterprise)。
 >
->* 若要在通用 Windows 平台 (UWP) 開發 Xamarin.Forms 應用程式，需要安裝有 Visual Studio 2015 或 2017 的 Windows 10。
-
+>- 若要在通用 Windows 平台 (UWP) 開發 Xamarin.Forms 應用程式，需要已安裝 Visual Studio 2017 的 Windows 10。
 
 ### <a name="testing--debugging-on-windows"></a>Windows 上的測試和偵錯
 
 您可透過 USB 將 Xamarin 行動應用程式部署到實體裝置以進行測試和偵錯 (iOS 裝置必須連線到 Mac 電腦，而不是執行 Visual Studio 的電腦)。
 
 [!include[](~/cross-platform/includes/windows-testing.md)]
-
-
-> [!NOTE]
->
->* [Windows Phone 8.1 模擬器下載](https://www.microsoft.com/download/details.aspx?id=43719)。
->* Windows Phone 10 模擬器隨附於 Visual Studio 2015 UWP SDK。
 
 <a name="install" />
 
@@ -101,8 +90,7 @@ Visual Studio 2015 和 2017 安裝程式包含自動安裝 Xamarin 的選項。
 
 這裡也提供有關 [Xamarin.Forms 需求和支援平台](~/xamarin-forms/get-started/installation.md)的其他資訊。
 
-
 ## <a name="related-links"></a>相關連結
 
-- [下載 Xamarin](https://xamarin.com/download/)
+- [下載 Xamarin](https://visualstudio.microsoft.com/xamarin/)
 - [目前版本](https://developer.xamarin.com/releases/current/)
