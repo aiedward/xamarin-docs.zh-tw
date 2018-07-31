@@ -5,12 +5,12 @@ ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 9383411074bc43af1034138aadbb6ac5494c2c01
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: ba822870edafce44140caa66b01f4da242fb7779
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38815657"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353609"
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials： 文字轉換語音
 
@@ -38,7 +38,7 @@ public async Task SpeakNowDefaultSettings()
 
 public void SpeakNowDefaultSettings2()
 {
-    TextToSpeech.SpeakAsync("Hello World").ContinueWith((t) => 
+    TextToSpeech.SpeakAsync("Hello World").ContinueWith((t) =>
     {
         // Logic that will run after utterance finishes.
 
@@ -46,7 +46,8 @@ public void SpeakNowDefaultSettings2()
 }
 ```
 
-這個方法會採用選擇性的 CancellationToken 一旦開始之後，停止 [utterance]。 
+這個方法會採用選擇性`CancellationToken`一旦開始之後，停止 [utterance]。
+
 ```csharp
 CancellationTokenSource cts;
 public async Task SpeakNowDefaultSettings()
@@ -66,7 +67,7 @@ public void CancelSpeech()
 }
 ```
 
-文字轉換語音將會自動排入佇列語音要求，從相同的執行緒。 
+文字轉換語音將會自動排入佇列語音要求，從相同的執行緒。
 
 ```csharp
 bool isBusy = false;

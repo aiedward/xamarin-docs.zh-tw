@@ -5,12 +5,12 @@ ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: ca6d4f1ec60a80b483c79dd75267144e67d80c0b
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 4a45587c79cfbbcd1198f100915e698289f74950
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831760"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353746"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials： 喜好設定
 
@@ -83,6 +83,10 @@ Preferences.Clear();
 [ApplicationDataContainer](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdatacontainer)用來將值儲存在裝置上。 如果沒有`sharedName`指定`LocalSettings`會使用，否則名稱用來建立新的容器內的`LocalSettings`。
 
 --------------
+
+## <a name="persistence"></a>持續性
+
+解除安裝應用程式會讓所有_喜好設定_移除。 沒有唯一的例外，其中的目標，並執行 Android 6.0 （API 層級 23） 或更新版本的應用程式中使用之[__自動備份__](https://developer.android.com/guide/topics/data/autobackup)。 這項功能預設為開啟，並保留應用程式資料，包括__共用的喜好設定__，這是什麼**喜好設定**API 會利用。 您可以透過下列 Google 的停用此[文件](https://developer.android.com/guide/topics/data/autobackup)。
 
 ## <a name="limitations"></a>限制
 

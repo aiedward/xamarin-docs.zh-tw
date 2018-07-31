@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 07/16/2018
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: fc4f851d25837690cd3412ca142a52b1312a08b3
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: d78c0e52b96403ad27a7c5ac69a367746781b589
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270198"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351739"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>認證來傳遞行動解決方案的諮詢合作夥伴
 
@@ -112,6 +112,7 @@ _許多協力廠商列出主要位置，對外提供服務。_
 |[Interknowlogy](http://www.interknowlogy.com/)|聖地牙哥，CA，USA|自訂應用程式開發的全球領先地位，InterKnowlogy 會利用目前及新興的技術，可讓透過觸控、 手勢及語音的連接的體驗|
 |[Intouch 解決方案](http://www.intouchsol.com )|Overland Park，KS，USA;倫敦，英國;芝加哥，IL，USA;New York，NY，USA|我們是領先的數位機構 Pharma 和醫療保健的空間內|
 |[iTexico](http://www.itexico.com)|美國，德州奧斯丁的|iTexico 是著重於幫助企業專案過程中的行動裝置開發全域軟體科技公司 ' 透過 nearshore 外包 Äôs 生命週期。|
+|[JBS](https://www.jbssolutions.com)|賓夕法尼亞州 USA|JBS 是自訂軟體解決方案提供者。|
 |[Kaonsoft](http://www.kaonsoft.net/)|Palo Alto，CA，USA;芝加哥，IL，USA;托，哦，USA;Seongnam si，Gyeonggi-請勿、 南韓|Kaonsoft 是創新的軟體公司，提供完整的端對端解決方案，以建立適用於跨平台的行動應用程式的企業。|
 |[Katalyst Technologies Inc. ](http://www.katalysttech.com )|Evanston，IL，USA;亞特蘭大，GA，USA;孟買，Maharashtra，印度;海德拉巴，Telangana，印度;Pune，Maharashtra 印度|在 Katalyst，我們相信技術真的可以是啟用器。 具有為何業界領導公司信任我們不只是提供產品和服務，但也會變更其核心業務透過自訂的開發具有影響力的解決方案，跨企業的運作的方式。|
 |[Kleio Technology LLC](http://kleiotechnology.com)|皇家 Palm Beach 奧蘭多市|傳統上，我們擁有已處理的教育、 品牌和身分識別。 我們研究用戶端的商務問題解決程式設計、 UX，和內容的策略。 我們幫助 bussiness 到達用戶端需求，並使其更具獲利能力|

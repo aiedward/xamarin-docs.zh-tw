@@ -5,12 +5,12 @@ ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: a5c559653bff38c692f0b1d881d5d8f4cac3d383
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 8c471f64c14a2e41693c450e02f89e7ac845d060
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831407"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353356"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials： 手電筒
 
@@ -42,7 +42,7 @@ ms.locfileid: "38831407"
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-或 Anroid 專案上按一下滑鼠右鍵，然後開啟專案的內容。 底下**Android 資訊清單**尋找**必要權限：** 區域，並檢查**手電筒**並**相機**權限。 這樣會自動更新**AndroidManifest.xml**檔案。
+或以滑鼠右鍵按一下 Android 專案，並開啟專案的內容。 底下**Android 資訊清單**尋找**必要權限：** 區域，並檢查**手電筒**並**相機**權限。 這樣會自動更新**AndroidManifest.xml**檔案。
 
 藉由新增這些權限[Google Play 將會自動篩選掉裝置](http://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features)而不需要特定的硬體。 您可以將下列內容新增至您在您的 Android 專案的 AssemblyInfo.cs 檔案，取得解決這個問題：
 
@@ -96,9 +96,9 @@ catch (Exception ex)
 
 ## <a name="platform-implementation-specifics"></a>平台實作的特性
 
-### <a name="androidtabandroid-specifics"></a>[Android](#tab/android-specifics)
+### <a name="androidtabandroid"></a>[Android](#tab/android)
 
-手電筒類別已 optmized 根據裝置的作業系統。
+手電筒類別已最佳化並根據裝置的作業系統。
 
 #### <a name="api-level-23-and-higher"></a>API 層級 23 和更新版本
 
@@ -108,11 +108,11 @@ catch (Exception ex)
 
 若要開啟或關閉建立相機表面的材質`FlashMode`相機單位。 
 
-### <a name="iostabios-specifics"></a>[iOS](#tab/ios-specifics)
+### <a name="iostabios"></a>[iOS](#tab/ios)
 
 [AVCaptureDevice](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureDevice/)用來開啟和關閉 Torch 和裝置的模式。
 
-### <a name="uwptabuwp-specifics"></a>[UWP](#tab/uwp-specifics)
+### <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 [Lamp](https://docs.microsoft.com/en-us/uwp/api/windows.devices.lights.lamp)可用來偵測第一個 lamp，若要開啟或關閉裝置的背面。
 

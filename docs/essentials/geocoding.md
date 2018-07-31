@@ -5,18 +5,18 @@ ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 063adba82d96e7fcc64d7ec49a0c0133e1cef8ef
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: a4d6e4d9b32e665893d82693a3c858630b63d372
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831444"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353671"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials： 地理編碼
 
 ![發行前版本的 NuGet](~/media/shared/pre-release.png)
 
-**地理編碼**類別提供的 Api 以地理編碼位置的座標 placemark 和 placemark 反轉地理編碼 coordincates。
+**地理編碼**類別提供的 Api 以地理編碼位置的座標 placemark 和 placemark 反轉地理編碼的座標。
 
 ## <a name="getting-started"></a>快速入門
 
@@ -32,7 +32,7 @@ ms.locfileid: "38831444"
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Bing 地圖服務 API 金鑰，才能使用地理編碼 funcationality。 免費註冊[Bing 地圖服務](https://www.bingmapsportal.com/)帳戶。 底下**我的帳戶 > 我的金鑰**建立新的金鑰，並填妥 根據您的應用程式類型的資訊 (應該**公開的 Windows 應用程式 (UWP，8.x 和更早版本)** UWP 應用程式)。
+Bing 地圖服務 API 金鑰，才能使用地理編碼功能。 免費註冊[Bing 地圖服務](https://www.bingmapsportal.com/)帳戶。 底下**我的帳戶 > 我的金鑰**建立新的金鑰，並填妥 根據您的應用程式類型的資訊 (應該**公開的 Windows 應用程式 (UWP，8.x 和更早版本)** UWP 應用程式)。
 
 早在您的應用程式生命週期，然後再呼叫任何**地理編碼**方法設定 API 金鑰：
 
@@ -70,11 +70,11 @@ catch (FeatureNotSupportedException fnsEx)
 }
 catch (Exception ex)
 {
-    // Handle exception that may have occured in geocoding
+    // Handle exception that may have occurred in geocoding
 }
 ```
 
-高度不一定可用。 如果不是的話`Altitude`屬性可能是`null`值可能為零。 高度可用，如果值是以公尺為單位以上之上。 
+高度不一定可用。 如果不是的話`Altitude`屬性可能是`null`值可能為零。 高度可用，如果值是以公尺為單位以上之上。
 
 取得[placemarks](xref:Xamarin.Essentials.Placemark)的一組現有的座標：
 

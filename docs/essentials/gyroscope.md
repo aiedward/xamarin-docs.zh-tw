@@ -5,12 +5,12 @@ ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 3c83b3a9d8a7801e531006f50f8db2e1ad23e48c
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: f1e1199ae32158889ec569eb5f7e9742f37d45d4
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947211"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353622"
 ---
 # <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials： 陀螺儀
 
@@ -33,7 +33,7 @@ using Xamarin.Essentials;
 public class GyroscopeTest
 {
     // Set speed delay for monitoring changes.
-    SensorSpeed speed = SensorSpeed.Ui;
+    SensorSpeed speed = SensorSpeed.UI;
 
     public GyroscopeTest()
     {
@@ -41,7 +41,7 @@ public class GyroscopeTest
         Gyroscope.ReadingChanged += Gyroscope_ReadingChanged;
     }
 
-    void Gyroscope_ReadingChanged(GyroscopeChangedEventArgs e)
+    void Gyroscope_ReadingChanged(object sender, GyroscopeChangedEventArgs e)
     {
         var data = e.Reading;
         // Process Angular Velocity X, Y, and Z

@@ -5,12 +5,12 @@ ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 530273543c6cb71038613c22fa4a6bfbde4928d7
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 622689342dd961a63318a88f098dea4d1a60e277
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947253"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353863"
 ---
 # <a name="xamarinessentials-vibration"></a>Xamarin.Essentials： 震動
 
@@ -40,7 +40,7 @@ ms.locfileid: "37947253"
 <uses-permission android:name="android.permission.VIBRATE" />
 ```
 
-或 Anroid 專案上按一下滑鼠右鍵，然後開啟專案的內容。 底下**Android 資訊清單**尋找**必要權限：** 區域，並檢查**震動**權限。 這樣會自動更新**AndroidManifest.xml**檔案。
+或以滑鼠右鍵按一下 Android 專案，並開啟專案的內容。 底下**Android 資訊清單**尋找**必要權限：** 區域，並檢查**震動**權限。 這樣會自動更新**AndroidManifest.xml**檔案。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 

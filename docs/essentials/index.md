@@ -5,12 +5,12 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 97dc5494f37da1590178bc90feb673889598bdd7
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 6a49f16f935f058b002d260825cfb005df0c6eef
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831549"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353759"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -44,7 +44,8 @@ Android、 iOS 和 UWP 提供唯一的作業系統與平台開發人員可以存
 * [地理位置](geolocation.md?context=xamarin/xamarin-forms)– 擷取裝置的 GPS 位置。
 * [陀螺儀](gyroscope.md?context=xamarin/xamarin-forms)– 追蹤裝置的三個主要軸旋轉。
 * [磁力計](magnetometer.md?context=xamarin/xamarin-forms)– 偵測到裝置的方向相對於地球磁場。
-* [MainThread](main-thread.md?content=xamarin/xamarin-forms) – 應用程式的主執行緒上執行的程式碼。 
+* [MainThread](main-thread.md?content=xamarin/xamarin-forms) – 應用程式的主執行緒上執行的程式碼。
+* [對應](maps.md?content=xamarin/xamarin-forms)– 開啟至特定位置的地圖應用程式。
 * [開啟瀏覽器](open-browser.md?context=xamarin/xamarin-forms)– 快速且輕鬆地瀏覽器開啟至特定網站。
 * [方向感應器](orientation-sensor.md?context=xamarin/xamarin-forms)– 擷取三個維度空間中裝置的方向。
 * [電話撥號員](phone-dialer.md?context=xamarin/xamarin-forms)– 開啟 電話撥號員。

@@ -5,12 +5,12 @@ ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 15e2cb69806f281e88e226b7bcd87a20e149d508
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: b5a24e214eb129b4d53b94586632791c8827447b
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947305"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353837"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials： 加速計
 
@@ -33,7 +33,7 @@ using Xamarin.Essentials;
 public class AccelerometerTest
 {
     // Set speed delay for monitoring changes.
-    SensorSpeed speed = SensorSpeed.Ui;
+    SensorSpeed speed = SensorSpeed.UI;
 
     public AccelerometerTest()
     {
@@ -41,7 +41,7 @@ public class AccelerometerTest
         Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
     }
 
-    void Accelerometer_ReadingChanged(AccelerometerChangedEventArgs e)
+    void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
     {
         var data = e.Reading;
         Console.WriteLine($"Reading: X: {data.Acceleration.X}, Y: {data.Acceleration.Y}, Z: {data.Acceleration.Z}");
@@ -81,7 +81,7 @@ X 軸是水平及點向右，Y 軸是垂直的並指向上方和 Z 軸點往螢�
 
 * 裝置位於一般的資料表上，加速值時，+1.00 G 或 (+ 9.81 m/s ^2)，對應到裝置的加速 (0 m/s ^2) 受到重力強制減 (-9.81 m/s ^2) 和正規化與 g。
 
-* 裝置何時位於一般的資料表上，並加速 m/s 的天空推向 ^2 加速值會等於 + 9.81 分別對應至裝置的加速 (+ m/s ^2) 受到重力強制減 (-9.81 m/s ^2) 及標準化中。 
+* 裝置何時位於一般的資料表上，並加速 m/s 的天空推向 ^2 加速值會等於 + 9.81 分別對應至裝置的加速 (+ m/s ^2) 受到重力強制減 (-9.81 m/s ^2) 及標準化中。
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 

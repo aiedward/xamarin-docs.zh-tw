@@ -6,12 +6,13 @@ ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 804a99817f664989bbac67a4c662357f4ee628c5
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.date: 07/24/2018
+ms.openlocfilehash: 621a2d25a8b800ad95be2c8b71a5e6cdf6abca21
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242273"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351199"
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>在 iOS 中背景簡介
 

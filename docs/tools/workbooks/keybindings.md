@@ -1,26 +1,27 @@
 ---
 title: Xamarin 活頁簿編輯器鍵盤快速鍵
-description: 本文件說明可在 Xamarin 活頁簿編輯器中使用的鍵盤快速鍵。 特別是，它會查看傳回的索引鍵使用的各種方式。
+description: 本文件說明可在 Xamarin Workbooks 編輯器中使用的鍵盤快速鍵。 特別是，它會查看的各種資訊，請使用 Return 鍵。
 ms.prod: xamarin
 ms.assetid: 6375A371-3215-4A7C-B97B-A19E58BE96D6
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: b0ba268367ebf6a9eb55bd00dd84014de247649b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 03/30/2017
+ms.openlocfilehash: c2b4a8c1bcb8f7b88ab2ae1e2906b1c9c702b76a
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793900"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351674"
 ---
 # <a name="xamarin-workbooks-editor-keyboard-shortcuts"></a>Xamarin 活頁簿編輯器鍵盤快速鍵
 
-## <a name="the-return-key-and-its-nuances"></a>傳回索引鍵和其細節
+## <a name="the-return-key-and-its-nuances"></a>傳回索引鍵和其細節，
 
-下表描述各種索引鍵繫結的執行程式碼，並撰寫 markdown。 我們已十分小心選擇合理且一致的熟悉且流暢按鍵繫結。
+下表描述執行程式碼和撰寫 markdown 的各種不同的按鍵繫結。 我們已十分小心選擇相當直覺且一致的按鍵繫結所熟悉且流暢。
 
-|索引鍵繫結|程式碼的儲存格|Markdown 資料格|
+|索引鍵繫結|程式碼儲存格|Markdown 資料格|
 |--- |--- |--- |
-|<kbd>Return</kbd>|<p>如果插入號是在儲存格緩衝區的結尾，而且可以成功地剖析資料格，將會執行結果將會顯示以下緩衝區，及新的程式碼儲存格就插入和焦點之後執行的資料格的資料格。</p><p>如果剖析不成功，將緩衝區中插入新行。 如果未成功剖析，將不會產生編譯器診斷。</p>|<p><kbd>傳回</kbd>會表現不同行為根據插入號的 Markdown 內容。</p><ul><li>如果插入號是在 Markdown 程式碼區塊，則會插入常值的新行。</li><li>如果插入號是在 Markdown 清單區塊中，建立新的清單項目，或分割目前的清單項目。</li><li>如果插入號位於其他任何類型的 Markdown 區塊，建立新的段落區塊或分割目前的區塊。</li></ul>|
-|<dl><dt>Mac</dt><dd><kbd>Command‑Return</kbd></dd><dt>Win</dt><dd><kbd>Control‑Return</kbd></dd></dl>|<p>一律會嘗試剖析和執行資料格內容。 以下緩衝區，如果編譯成功，會顯示結果 （包括執行例外狀況），然後新如果有任何後續的資料格，會建立並已取得焦點。</p><p>如果沒有任何編譯錯誤，將會顯示診斷和緩衝區會保留不變的插入號位置已取得焦點。</p>|插入，並著重在目前的 markdown 儲存格後新的程式碼儲存格。|
-|<dl><dt>Mac</dt><dd><kbd>Command‑Shift‑Return</kbd><dd><dt>Win</dt><dd><kbd>Control‑Shift‑Return</kbd></dd></dl>|插入，並將新的 markdown 儲存格著重之後的目前儲存格。|相同的行為<kbd>傳回</kbd>|
-|<kbd>Shift‑Return</kbd>|一律插入新行，不論插入號位置或內容。|插入目前的 Markdown 區塊內硬碟分行符號。|
+|<kbd>Return</kbd>|<p>如果插入號位於資料格緩衝區的結尾，而且可以成功地剖析資料格，就會執行緩衝區，下方會顯示結果和新的程式碼儲存格將會插入和焦點之後執行的資料格的資料格。</p><p>如果剖析不成功，新行就會插入至緩衝區。 如果未成功剖析，將不會產生編譯器診斷。</p>|<p><kbd>傳回</kbd>表現不同行為的插入號位置的 Markdown 內容而定。</p><ul><li>如果插入點，Markdown 程式碼區塊中會插入常值的新行。</li><li>如果插入點，Markdown 清單區塊中建立新的清單項目，或分割目前的清單項目。</li><li>如果插入號位於 Markdown 區塊的任何其他型別，建立新的段落區塊或分割目前的區塊。</li></ul>|
+|<dl><dt>Mac</dt><dd><kbd>Command‑Return</kbd></dd><dt>Win</dt><dd><kbd>Control‑Return</kbd></dd></dl>|<p>一律會嘗試剖析及執行資料格內容。 下方的緩衝區，如果編譯成功，會顯示結果 （包括執行例外狀況） 和一個新沒有後續的資料格時，會建立並已取得焦點。</p><p>如果有任何編譯錯誤，將會顯示診斷和使用插入號位置保持不變，緩衝區將繼續專注。</p>|插入，並著重在目前的 markdown 儲存格後的新的程式碼儲存格。|
+|<dl><dt>Mac</dt><dd><kbd>Command‑Shift‑Return</kbd><dd><dt>Win</dt><dd><kbd>Control‑Shift‑Return</kbd></dd></dl>|插入，並著重的目前儲存格後的新的 markdown 儲存格。|相同的行為<kbd>傳回</kbd>|
+|<kbd>Shift‑Return</kbd>|一律會將新的一行，無論插入號位置或內容。|插入目前的 Markdown 區塊內硬碟分行符號。|

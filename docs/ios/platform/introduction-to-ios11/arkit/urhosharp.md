@@ -1,66 +1,66 @@
 ---
-title: 使用中 Xamarin.iOS UrhoSharp ARKit
-description: 此文件描述如何設定 Xamarin.iOS，ARKit 應用程式，然後查看畫面格呈現方式，如何調整相機如何偵測平面，如何使用光線等等。 此外，它也會討論 UrhoSharp 和 HoloLens 為撰寫程式碼。
+title: ARKit 使用 UrhoSharp 在 Xamarin.iOS 中
+description: 本文件說明如何設定 Xamarin.iOS，ARKit 應用程式，然後查看畫面格呈現方式，如何調整相機、 如何偵測平面，如何使用光線和更多功能。 此外，它也會討論 UrhoSharp 和撰寫程式碼的 HoloLens。
 ms.prod: xamarin
 ms.assetid: 877AF974-CC2E-48A2-8E1A-0EF9ABF2C92D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/01/2016
-ms.openlocfilehash: 0d70b1f751d5aa6b6c8fa578f53ba1ac8260cfa1
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/01/2017
+ms.openlocfilehash: 728082eb27684c2176feb2038b7948986ce6a694
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787099"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351687"
 ---
-# <a name="using-arkit-with-urhosharp-in-xamarinios"></a>使用中 Xamarin.iOS UrhoSharp ARKit
+# <a name="using-arkit-with-urhosharp-in-xamarinios"></a>ARKit 使用 UrhoSharp 在 Xamarin.iOS 中
 
-透過推出[ARKit](https://developer.apple.com/arkit/)，Apple，變成開發人員可以建立擴增的實境的應用程式。 ARKit 可以追蹤您的裝置的確切位置，並偵測世界上的各種介面，並由開發人員可以 blend 凸出 ARKit 插入程式碼中的資料。
+引進[ARKit](https://developer.apple.com/arkit/)，Apple 已將結構簡化的開發人員建立擴增的實境應用程式。 ARKit 可以追蹤您的裝置的確切位置，並偵測在世界上的各種介面，然後是由開發人員，blend 超出 ARKit 進入您的程式碼的資料。
 
-[UrhoSharp](~/graphics-games/urhosharp/index.md)提供完整且更容易使用的 3D API 可讓您建立 3D 應用程式。   這兩種可以混合在一起，ARKit 提供世界中，實體的資訊和 Urho 來呈現結果。
+[UrhoSharp](~/graphics-games/urhosharp/index.md)提供全方位且容易使用的 3D API，可用來建立 3D 應用程式。   這兩種都可以是混合在一起，，來提供實體世界的相關資訊的 ARKit 和 Urho 來呈現結果。
 
-此頁面說明如何連接這些兩者一起以建立絕佳的擴增的實境應用程式。
+此頁面說明如何連接在一起，建立絕佳的擴增的實境應用程式的這兩個世界。
 
 
 ## <a name="the-basics"></a>基本概念
 
-偵測到的 iPhone，我們想要做什麼是世界上的呈現 3D 內容。   這個概念是將 blend 來自電話的攝影機與 3D 內容，內容，當使用者的電話上移動聊天室，確保 3D 物件行為，因為是在該空間的一部分-這由錨定至這個世界的物件。
+IPhone 所見，我們要做什麼是世界上的呈現 3D 內容。   這個構想是將 blend 來自電話的相機使用 3D 內容，內容，以確保移動房間周圍的行動電話的使用者屬於它們的這個聊天室如同 3D 物件-這是藉由錨定到此世界的物件。
 
-![在 ARKit 動畫的圖](urhosharp-images/image1.gif)
+![ARKit 中的動畫的圖形](urhosharp-images/image1.gif)
 
 
-我們將載入 3D 的資產，並將它們放置在世界中，使用 Urho 程式庫和，我們將使用 ARKit 取得視訊資料流來自相機與世界各地的電話的位置。   使用者移動具有其電話時，我們將使用的位置所做的變更來更新 Urho 引擎正在顯示之座標系統。
+我們將載入 3D 資產，並將它們放置在世界中，使用 Urho 程式庫，而且我們將使用 ARKit 取得來自相機，以及位置的世界中的電話的視訊資料流。   當使用者移動使用他的電話，我們將使用位置中所做的變更來更新顯示 Urho 引擎座標系統。
 
-如此一來，當您將物件放在 3D 空間中，使用者移動，3D 物件的位置會反映和放置位置的位置。
+如此一來，當您放置在 3D 空間中的物件，並在使用者移動，3D 物件的位置會反映的位置和放置位置的位置。
 
 ## <a name="setting-up-your-application"></a>設定您的應用程式
 
 ### <a name="ios-application-launch"></a>iOS 應用程式啟動
 
-您的 iOS 應用程式需求來建立並啟動 3D 內容，您可以建立實作的子類別[ `Urho.Application` ](https://developer.xamarin.com/api/type/Urho.Application/) ，並提供您安裝的程式碼覆寫`Start`方法。  這是其中場景取得填入資料，事件處理常式會安裝，依此類推。
+您的 iOS 應用程式，就必須建立並啟動您的 3D 內容，您可以建立實作的子類別[ `Urho.Application` ](https://developer.xamarin.com/api/type/Urho.Application/) ，並提供您的安裝程式碼，藉由覆寫`Start`方法。  這是其中場景取得填入資料，事件處理常式會設定等等。
 
-我們已引入`Urho.ArkitApp`類別的子類別`Urho.Application`然後在其`Start`方法會執行大部分的工作。   您只需要執行應用程式是您現有 Urho 變更類型的基底類別`Urho.ArkitApp`，並可將執行您 urho 場景世界的應用程式。
+我們引進了`Urho.ArkitApp`類別子類別化`Urho.Application`並在其`Start`方法會執行繁重的工作。   您只需要執行應用程式是您現有 Urho 變更類型的基底類別`Urho.ArkitApp`，而且您有會執行您 urho 場景世界中的應用程式。
 
 ### <a name="the-arkitapp-class"></a>ArkitApp 類別
 
-由作業系統傳遞時，這個類別會提供一組方便的預設值，這兩個場景以某些索引鍵的物件以及 ARKit 事件的處理。
+由作業系統傳遞時，這個類別會提供一組方便的預設值，這兩個場景中填入某些索引鍵的物件以及 ARKit 事件的處理。
 
-安裝程式會發生`Start`虛擬方法。   當您覆寫這個方法在子類別上時，您必須確定鏈結至您的家長使用`base.Start()`上您自己的實作。
+安裝程式會發生在`Start`虛擬方法。   當您覆寫此方法，在您的子類別上時，您必須先確定鏈結至您的家長使用`base.Start()`上您自己的實作。
 
-`Start`方法設定場景、 檢視區、 相機和方向的光線，並且呈現以公用屬性：
+`Start`方法設定場景、 檢視區、 相機和方向的光線，並呈現這些為公用屬性：
 
-- [ `Scene` ](https://developer.xamarin.com/api/type/Urho.Scene/)來保存您的物件
-- 方向[ `Light` ](https://developer.xamarin.com/api/type/Urho.Light/)具有陰影，和其位置已透過使用`LightNode`屬性
-- [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/) ARKit 會傳遞至應用程式的更新時就會更新元件和
+- [ `Scene` ](https://developer.xamarin.com/api/type/Urho.Scene/)來保存您的物件，
+- 方向性[ `Light` ](https://developer.xamarin.com/api/type/Urho.Light/)陰影及的位置均可透過使用`LightNode`屬性
+- [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/) ARKit 提供給應用程式的更新時，會更新其元件和
 - [ `ViewPort` ](https://developer.xamarin.com/api/type/Urho.Viewport/)顯示結果。
 
 
 ### <a name="your-code"></a>您的程式碼
 
-您接著需要子類別化`ArkitApp`類別並覆寫`Start`方法。   您的方法應該執行的第一件事是鏈結最多`ArkitApp.Start`藉由呼叫`base.Start()`。  之後，您可以使用的任何屬性設定由 ArkitApp 若要將物件加入至場景，自訂燈、 shadows 或您想要處理的事件。
+您接著需要子類別`ArkitApp`類別並覆寫`Start`方法。   您的方法應該做的第一件事是鏈結最多`ArkitApp.Start`藉由呼叫`base.Start()`。  在那之後，您可以使用任何 ArkitApp 屬性設定若要將物件加入至場景，自訂的號誌、 shadows 或您想要處理的事件。
 
-ARKit/UrhoSharp 範例載入材質動畫的字元，並播放的動畫，具有下列實作：
+ARKit/UrhoSharp 範例載入紋理動畫的字元，並播放動畫，使用下列實作：
 
     ```csharp
     public class MutantDemo : ArkitApp
@@ -90,43 +90,43 @@ ARKit/UrhoSharp 範例載入材質動畫的字元，並播放的動畫，具有�
     }
     ```
 
-而這是真的，您只需要在此時有 3D 內容擴增實境方式顯示。
+而這是真的，您只需要在此時有您在擴增實境中顯示的 3D 內容。
 
-Urho 3D 模型和動畫，對使用自訂格式，因此您需要為此格式匯出您的資產。   您可以使用類似的工具[Urho3D Blender 增益集](https://github.com/reattiva/Urho3D-Blender)和[UrhoAssetImporter](https://github.com/EgorBo/UrhoAssetImporter) ，可以將轉換這些資產 DBX、 DAE、 OBJ、 Blend，等常見的格式從 Urho 所需的 3D 最大的格式。
+Urho 3D 模型和動畫，使用自訂的格式，因此您必須將您的資產匯出成此格式。   您可以使用工具，像是[Urho3D Blender 增益集](https://github.com/reattiva/Urho3D-Blender)並[UrhoAssetImporter](https://github.com/EgorBo/UrhoAssetImporter) ，可以將轉換這些資產從熱門的格式，例如 DBX、 DAE、 OBJ、 Blend，Urho 所需的 3D-最大值的格式。
 
-若要了解有關建立使用 Urho 3D 應用程式的詳細資訊，請造訪[簡介 UrhoSharp](~/graphics-games/urhosharp/introduction.md)指南。
+若要了解如何建立使用 Urho 的 3D 應用程式，請造訪[UrhoSharp 簡介](~/graphics-games/urhosharp/introduction.md)指南。
 
-## <a name="arkitapp-in-depth"></a>ArkitApp 深度
+## <a name="arkitapp-in-depth"></a>深入了解 ArkitApp
 
 > [!NOTE]
-> 本節適用於開發人員想要自訂預設經驗 UrhoSharp 和 ARKit，或者想要獲得更深層的了解整合如何運作。   您不需要在閱讀本節。
+> 本節適用於開發人員想要自訂預設的經驗 UrhoSharp 和 ARKit，或者想要更深入的了解整合的運作方式。   您不需要在閱讀本節。
 
-ARKit API 是很簡單，您建立及設定[ARSession](https://developer.apple.com/documentation/arkit/arsession)的物件，然後啟動傳遞[ARFrame](https://developer.apple.com/documentation/arkit/arframe)物件。   其中包含這兩個映像擷取的相機，以及裝置的估計的實際位置。
+ARKit API 很簡單，您建立並設定[ARSession](https://developer.apple.com/documentation/arkit/arsession)的物件，然後開始傳遞[ARFrame](https://developer.apple.com/documentation/arkit/arframe)物件。   其中包含這兩個擷取的相機，以及裝置之估計的實際位置的映像。
 
-我們會撰寫一同由相機我們傳遞具有我們 3D 內容、 影像及調整攝影機中 UrhoSharp 要比對中的裝置位置和位置的機會。
+我們將撰寫觀景窗我們傳遞 3D 內容，使用的映像和調整以符合在裝置的位置和位置的機會 UrhoSharp 觀景窗。
 
-下圖顯示項目正在進行`ArkitApp`類別：
+下圖顯示正在進行什麼`ArkitApp`類別：
 
 [![類別和 ArkitApp 螢幕的圖表](urhosharp-images/image2.png)](urhosharp-images/image2.png#lightbox)
 
 ### <a name="rendering-the-frames"></a>轉譯畫面格
 
-這個概念很簡單，結合來自相機與我們 3D 圖形產生結合的映像的視訊。     我們將會在順序中，取得一系列的這些擷取的映像，我們會混合這項輸入與 Urho 場景。
+這個概念十分簡單，結合來自我們的 3D 圖形，以產生結合的映像使用相機的視訊。     我們將會依序出現一系列的這些擷取的映像，我們將使用 Urho 場景混用這項輸入。
 
-簡單的方法會插入[ `RenderPathCommand` ](https://developer.xamarin.com/api/type/Urho.RenderPathCommand/)到主[ `RenderPath` ](https://developer.xamarin.com/api/type/Urho.RenderPath/)。  這是一組繪製單一畫面格時所執行的命令。  此命令將會填滿任何紋理，我們將傳遞給它與檢視區。    我們設定此項目是程序，在第一個框架上和實際的定義是在第**ARRenderPath.xml**此時載入檔案。
+簡單的方法是插入[ `RenderPathCommand` ](https://developer.xamarin.com/api/type/Urho.RenderPathCommand/)貼入 main [ `RenderPath` ](https://developer.xamarin.com/api/type/Urho.RenderPath/)。  這是一組繪製單一畫面格時所執行的命令。  此命令將會填滿與任何我們傳遞給它的紋理檢視區。    我們設定此功能的程序的第一個畫面上，且實際的定義在第進行**ARRenderPath.xml**目前載入的檔案。
 
-不過，我們正面臨著這些兩者混合在一起的兩個問題：
+不過，我們都面臨來混合這兩個世界在一起的兩個問題：
 
 
-1. 在 iOS、 GPU 紋理必須是 2 的乘冪，解析，但我們會相機中的畫面格沒有解決方式是 2 的乘冪，例如： 1280 x 720。
-2. 框架會以編碼[YUV](https://en.wikipedia.org/wiki/YUV)格式，由兩個映像-luma 及色度。
+1. 在 iOS 上，GPU 紋理必須是二的次方的解析度，但我們將會收到來自相機的畫面格沒有例如是二的次方的解析度： 1280 x 720。
+2. 畫面格會以編碼[YUV](https://en.wikipedia.org/wiki/YUV)格式，由兩個映像-luma 與色度。
 
-YUV 框架有兩個不同的解決方法。  代表亮度 （基本上灰階映像） 和多小 640x360 色度元件 1280 x 720 映像：
+YUV 框架有兩個不同的解析度。  1280 x 720 影像，表示明亮度 （基本上灰階映像） 和多小 640x360 色度元件：
 
 ![示範結合 Y 和 UV 元件的映像](urhosharp-images/image3.png)
 
 
-若要繪製使用 OpenGL ES 完整彩色的影像我們必須撰寫採用明亮 （Y 元件） 和色度 （UV 平面） 從紋理位置的小型著色器。  在 UrhoSharp 它們有名稱為"sDiffMap"和"sNormalMap 」，並將它們轉換成 RGB 格式：
+若要繪製完整的彩色映像，以使用 OpenGL ES 我們必須撰寫小型的著色器材質的位置從採用明亮度 （Y 元件） 及色度 （UV 平面）。  在 UrhoSharp 它們有名稱為"sDiffMap"和"sNormalMap 」，並將它們轉換成 RGB 格式：
 
 ```csharp
 mat4 ycbcrToRGBTransform = mat4(
@@ -140,7 +140,7 @@ vec4 ycbcr = vec4(texture2D(sDiffMap, vTexCoord).r,
 gl_FragColor = ycbcrToRGBTransform * ycbcr;
 ```
 
-若要呈現紋理沒有兩個解析的乘冪，我們必須定義 Texture2D 具備下列參數：
+要呈現沒有兩個解析的乘冪的材質我們必須定義 Texture2D 具備下列參數：
 
 ```chsarp
 // texture for UV-plane;
@@ -152,13 +152,13 @@ cameraUVtexture.SetAddressMode(TextureCoordinate.U, TextureAddressMode.Clamp);
 cameraUVtexture.SetAddressMode(TextureCoordinate.V, TextureAddressMode.Clamp);
 ```
 
-因此，我們就能夠呈現擷取的映像作為背景和類似的嚇人 mutant 呈現其上方任何場景。
+因此，我們就能夠呈現擷取的影像作為背景和呈現任何場景上方的嚇人 mutant。
 
-### <a name="adjusting-the-camera"></a>調整相機
+### <a name="adjusting-the-camera"></a>調整觀景窗
 
-`ARFrame`物件也包含估計的裝置位置。  我們現在我們要移動遊戲相機 ARFrame-ARKit 之前不是追蹤裝置方向 （向前復原、 音高和繞） 及呈現釘選在視訊頂端防偽-但如果您的位元移動您的裝置-非同小可粗製濫造會漂移。
+`ARFrame`物件還包含預估的裝置位置。  我們現在我們需要移動遊戲相機 ARFrame-ARKit 之前仍無法追蹤裝置方向 （向前復原，字幅和繞） 而轉譯已釘選在視訊頂端雷射-但如果您有點移動您的裝置-大不了全像投影會漂移。
 
-發生這種情況，所以例如迴轉儀的內建感應器沒有能夠追蹤動作，他們可以只加速。  ARKit 分析每個框架和擷取功能點追蹤，因此能夠提供正確的轉換矩陣包含移動和旋轉的資料。
+因為陀螺儀等的內建感應器不能追蹤移動，所以發生此情況，他們可以只加速。  ARKit 分析每個框架和擷取功能來追蹤點，並因此可得到正確轉換包含資料移動和旋轉的矩陣。
 
 比方說，這是我們要如何取得目前的位置：
 
@@ -167,12 +167,12 @@ var row = arCamera.Transform.Row3;
 CameraNode.Position = new Vector3(row.X, row.Y, -row.Z);
 ```
 
-我們使用`-row.Z`因為 ARKit 使用慣用右手座標系統。
+我們使用`-row.Z`因為 ARKit 使用右手性座標系統。
 
 
 ### <a name="plane-detection"></a>平面偵測
 
-ARKit 能夠偵測到水平平面和這項功能可讓您與真實世界互動，例如，我們可以置於 mutant 真正的資料表或樓層。 若要這樣做，最簡單的方式是使用 HitTest 方法 (raycasting)。 轉換螢幕座標 (0.5，0.5 是中心) 為真實世界座標 (0，0，0 是第一個畫面格的位置)。
+ARKit 能夠偵測水平平面和這項功能可讓您與真實世界互動，例如，我們可以在這裡放置 mutant 實際的資料表上鋪設的地磚。 若要這樣做，最簡單的方式是使用 HitTest 方法 (raycasting)。 它會將轉換螢幕座標 (0.5，0.5 中心) 成實際的座標 (0，0; 0 是第一個畫面格位置)。
 
 ```chsarp
 protected Vector3? HitTest(float screenX = 0.5f, float screenY = 0.5f)
@@ -188,7 +188,7 @@ protected Vector3? HitTest(float screenX = 0.5f, float screenY = 0.5f)
 }
 ```
 
-現在我們可以根據 where 我們點選至裝置螢幕上水平的介面上放置 mutant:
+現在我們可以將 mutant 放在哪裡而定我們點選裝置畫面上水平的介面上：
 
 ```chsarp
 void OnTouchEnd(TouchEndEventArgs e)
@@ -201,11 +201,11 @@ void OnTouchEnd(TouchEndEventArgs e)
 }
 ```
 
-![與檢視移動平面變更動畫的圖](urhosharp-images/image4.gif)
+![變更的動畫的圖平面檢視移](urhosharp-images/image4.gif)
 
-### <a name="realistic-lighting"></a>實際的光源
+### <a name="realistic-lighting"></a>逼真的光源
 
-根據真實世界光線條件中，虛擬場景應該深淺以更符合隔離。 ARFrame 包含 LightEstimate 屬性可讓我們調整 Urho 環境光線，這是以這種方式：
+依據真實世界光線的條件，較淺或較深，使其更符合其周圍環境，應該是虛擬的場景。 ARFrame 包含 LightEstimate 屬性，我們可以使用它來調整 Urho 環境光線，這是如下所示：
 
 
     var ambientIntensity = (float) frame.LightEstimate.AmbientIntensity / 1000f;
@@ -215,14 +215,14 @@ void OnTouchEnd(TouchEndEventArgs e)
 
 ### <a name="beyond-ios---hololens"></a>IOS-HoloLens 之外
 
-UrhoSharp[所有主要的作業系統上執行](~/graphics-games/urhosharp/platform/index.md)，因此您可以重複使用現有的程式碼其他位置。
+UrhoSharp[會在所有主流作業系統上執行](~/graphics-games/urhosharp/platform/index.md)，因此您可以重複使用現有的程式碼在其他地方。
 
-HoloLens 是其中一個最令人興奮的平台執行。   這表示，您可以輕鬆地切換 iOS 和 HoloLens 建置使用 UrhoSharp 臻夾帶現實應用程式。
+HoloLens 是其中一個最令人興奮的平台執行。   這表示，您可以輕鬆地切換 iOS 和 HoloLens 建置使用 UrhoSharp awesome 擴增實境應用程式。
 
-您可以找到 MutantDemo 來源的[github.com/EgorBo/ARKitXamarinDemo](https://github.com/EgorBo/ARKitXamarinDemo)。
+您可以找到在 MutantDemo 來源[github.com/EgorBo/ARKitXamarinDemo](https://github.com/EgorBo/ARKitXamarinDemo)。
 
 
 ## <a name="related-links"></a>相關連結
 
 - [UrhoSharp](~/graphics-games/urhosharp/index.md)
-- [（含 UrhoSharp) ARKitXamarinDemo （範例）](https://github.com/EgorBo/ARKitXamarinDemo)
+- [（使用 UrhoSharp) ARKitXamarinDemo （範例）](https://github.com/EgorBo/ARKitXamarinDemo)

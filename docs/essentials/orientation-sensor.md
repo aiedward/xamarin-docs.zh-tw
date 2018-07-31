@@ -5,12 +5,12 @@ ms.assetid: F3091D93-E779-41BA-8696-23D296F2F6F5
 author: charlespetzold
 ms.author: chape
 ms.date: 05/21/2018
-ms.openlocfilehash: c01fa28e495eb3eceec62885060dce8f096c4086
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: a15338795424885882ed9c86288342d196f6fda2
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947386"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353811"
 ---
 # <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials: OrientationSensor
 
@@ -36,7 +36,7 @@ using Xamarin.Essentials;
 public class OrientationSensorTest
 {
     // Set speed delay for monitoring changes.
-    SensorSpeed speed = SensorSpeed.Ui;
+    SensorSpeed speed = SensorSpeed.UI;
 
     public OrientationSensorTest()
     {
@@ -44,7 +44,7 @@ public class OrientationSensorTest
         OrientationSensor.ReadingChanged += OrientationSensor_ReadingChanged;
     }
 
-    void OrientationSensor_ReadingChanged(AccelerometerChangedEventArgs e)
+    void OrientationSensor_ReadingChanged(object sender, OrientationSensorChangedEventArgs e)
     {
         var data = e.Reading;
         Console.WriteLine($"Reading: X: {data.Orientation.X}, Y: {data.Orientation.Y}, Z: {data.Orientation.Z}, W: {data.Orientation.W}");

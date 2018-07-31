@@ -5,12 +5,12 @@ ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 1ed0ef5e013967545e739733c887702325f60c3f
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: 1deafed85e9400bf7d4592fc06f71c22cc0015f0
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855051"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353450"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials： 電池
 
@@ -29,7 +29,7 @@ ms.locfileid: "37855051"
 開啟**AssemblyInfo.cs**下方的檔案**屬性**資料夾，並新增：
 
 ```csharp
-[assembly: UsesPermission(Android.Manifest.Permission.Battery)]
+[assembly: UsesPermission(Android.Manifest.Permission.BatteryStats)]
 ```
 
 或更新 Android 資訊清單：
@@ -37,10 +37,10 @@ ms.locfileid: "37855051"
 開啟**AndroidManifest.xml**下方檔案**屬性**資料夾，並新增下列內**資訊清單**節點。
 
 ```xml
-<uses-permission android:name="android.permission.BATTERY" />
+<uses-permission android:name="android.permission.BATTERY_STATS" />
 ```
 
-或 Anroid 專案上按一下滑鼠右鍵，然後開啟專案的內容。 底下**Android 資訊清單**尋找**必要權限：** 區域，並檢查**電池**權限。 這樣會自動更新**AndroidManifest.xml**檔案。
+或以滑鼠右鍵按一下 Android 專案，並開啟專案的內容。 底下**Android 資訊清單**尋找**必要權限：** 區域，並檢查**電池**權限。 這樣會自動更新**AndroidManifest.xml**檔案。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -93,7 +93,7 @@ switch (source)
     case BatteryPowerSource.Battery:
         // Being powered by the battery
         break;
-    case BatteryPowerSource.Ac:
+    case BatteryPowerSource.AC:
         // Being powered by A/C unit
         break;
     case BatteryPowerSource.Usb:
@@ -138,12 +138,12 @@ public class BatteryTest
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
 * 裝置必須用來測試 Api。 
-* 只會傳回`Ac`或是`Battery`如`PowerSource`。 
+* 只會傳回`AC`或是`Battery`如`PowerSource`。
 * 無法取消震動。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-* 只會傳回`Ac`或是`Battery`如`PowerSource`。 
+* 只會傳回`AC`或是`Battery`如`PowerSource`。
 
 -----
 

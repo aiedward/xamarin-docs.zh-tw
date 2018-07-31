@@ -6,12 +6,13 @@ ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: d8708e518e967083bcfb95c88f8c20fddbb44b53
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/12/2017
+ms.openlocfilehash: 3083770fd2874eca317585b6bf949f3efe56f879
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998790"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351726"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>在 Xamarin.iOS 中的 OBJECTIVE-C 選取器
 

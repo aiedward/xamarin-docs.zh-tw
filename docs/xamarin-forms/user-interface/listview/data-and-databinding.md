@@ -6,27 +6,49 @@ ms.assetid: B5571660-1E82-4379-95C3-0725288CF5D9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 17c353844a7ddc808e5d9f0632434472913170a4
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/30/2018
+ms.openlocfilehash: 71e1655b6bc05c621ee97fcf826ce8b468f0dd48
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995202"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351492"
 ---
 # <a name="listview-data-sources"></a>ListView 的資料來源
 
-ListView 是用來顯示資料的清單。 我們將了解填入 ListView 與資料，以及我們如何可以將繫結至選取的項目。
+A [ `ListView` ](xref:Xamarin.Forms.ListView)用於顯示資料的清單。 我們將了解填入 ListView 與資料，以及我們如何可以將繫結至選取的項目。
 
 - **[設定 ItemsSource](#ItemsSource)**  &ndash;使用簡易清單或陣列。
 - **[資料繫結](#Data_Binding)** &ndash;建立模型與 ListView 之間的關聯性。 繫結適合 MVVM 模式。
 
 ## <a name="itemssource"></a>ItemsSource
-使用資料填入 ListView`ItemsSource`屬性，它可以接受任何集合，實作`IEnumerable`。 最簡單的方式，來填入`ListView`牽涉到使用字串的陣列：
+
+A [ `ListView` ](xref:Xamarin.Forms.ListView)填入資料使用[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)屬性，它可以接受任何集合，實作`IEnumerable`。 最簡單的方式，來填入`ListView`牽涉到使用字串的陣列：
+
+```xaml
+<ListView>
+      <ListView.ItemsSource>
+          <x:Array Type="{x:Type x:String}">
+            <x:String>mono</x:String>
+            <x:String>monodroid</x:String>
+            <x:String>monotouch</x:String>
+            <x:String>monorail</x:String>
+            <x:String>monodevelop</x:String>
+            <x:String>monotone</x:String>
+            <x:String>monopoly</x:String>
+            <x:String>monomodal</x:String>
+            <x:String>mononucleosis</x:String>
+          </x:Array>
+      </ListView.ItemsSource>
+</ListView>
+```
+
+對等的 C# 程式碼是：
 
 ```csharp
 var listView = new ListView();
-listView.ItemsSource = new string[]{
+listView.ItemsSource = new string[]
+{
   "mono",
   "monodroid",
   "monotouch",
@@ -145,10 +167,6 @@ XAML 的上一個位元會定義`ContentPage`，其中包含`ListView`。 資料
 
 假設`listView`的`ItemsSource`是一份字串`SomeLabel`會有繫結至其 text 屬性`SelectedItem`。
 
-
-
 ## <a name="related-links"></a>相關連結
 
 - [雙向繫結 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
-- [1.4 的版本資訊](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
-- [1.3 的版本資訊](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

@@ -5,12 +5,12 @@ ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 3060d56e14fb0d3801a96ec0fe6e24c9efda4dac
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: cb42da4c8c2d0e381a5b00f7e60da6f427d19c66
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38816512"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353824"
 ---
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials： 裝置顯示資訊
 
@@ -58,7 +58,7 @@ public class ScreenMetricsTest
     public ScreenMetricsTest()
     {
         // Subscribe to changes of screen metrics
-        DeviceDisplay.ScreenMetricsChanaged += OnScreenMetricsChanged;
+        DeviceDisplay.ScreenMetricsChanged += OnScreenMetricsChanged;
     }
 
     void OnScreenMetricsChanged(ScreenMetricsChangedEventArgs  e)

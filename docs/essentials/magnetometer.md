@@ -5,12 +5,12 @@ ms.assetid: 64DD0D41-03E2-40DD-9EC8-101CA0ED852B
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 52790f78c2d78347a35f111b3c4db63900c24ec7
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 3827b9a57ec2667a8716f5b56bfb4631b979d43a
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947357"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353785"
 ---
 # <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials： 磁力計
 
@@ -33,7 +33,7 @@ using Xamarin.Essentials;
 public class MagnetometerTest
 {
     // Set speed delay for monitoring changes.
-    SensorSpeed speed = SensorSpeed.Ui;
+    SensorSpeed speed = SensorSpeed.UI;
 
     public MagnetometerTest()
     {
@@ -41,7 +41,7 @@ public class MagnetometerTest
         Magnetometer.ReadingChanged += Magnetometer_ReadingChanged;
     }
 
-    void Magnetometerr_ReadingChanged(MagnetometerChangedEventArgs e)
+    void Magnetometer_ReadingChanged(object sender, MagnetometerChangedEventArgs e)
     {
         var data = e.Reading;
         // Process MagneticField X, Y, and Z

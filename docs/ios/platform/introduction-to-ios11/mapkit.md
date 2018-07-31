@@ -1,41 +1,41 @@
 ---
-title: 在 iOS 11 MapKit 的新功能
-description: 本文件描述新 MapKit 功能 iOS 11： 群組標記、 羅盤的按鈕、 [小數位數] 檢視和使用者的 [追蹤] 按鈕。
+title: IOS 11 上 MapKit 中新功能
+description: 本文件說明 iOS 11 中的新 MapKit 功能： 群組標記、 羅盤的按鈕、 [縮放] 檢視中和使用者的 [追蹤] 按鈕。
 ms.prod: xamarin
 ms.assetid: 304AE5A3-518F-422F-BE24-92D62CE30F34
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/30/2016
-ms.openlocfilehash: f73078a2dcbaeefeb5608ce7ec1e2c12b261acad
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/30/2017
+ms.openlocfilehash: c060a7bbc8d5968aeaca5f84743cdf22513dfbec
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787402"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350582"
 ---
-# <a name="new-features-in-mapkit-on-ios-11"></a>在 iOS 11 MapKit 的新功能
+# <a name="new-features-in-mapkit-on-ios-11"></a>IOS 11 上 MapKit 中新功能
 
-iOS 11 MapKit 來新增下列功能：
+iOS 11 MapKit 中加入下列新功能：
 
 - [叢集的註解](#clustering)
-- [指南針按鈕](#compass)
-- [標尺的檢視](#scale)
-- [使用者追蹤按鈕](#user-tracking)
+- [羅盤的按鈕](#compass)
+- [刻度檢視](#scale)
+- [使用者 [追蹤] 按鈕](#user-tracking)
 
-![對應顯示叢集的標記和指南針按鈕](mapkit-images/cyclemap-heading.png)
+![對應顯示叢集的標記和羅盤按鈕](mapkit-images/cyclemap-heading.png)
 
 <a name="clustering" />
 
-## <a name="automatically-grouping-markers-while-zooming"></a>自動縮放時群組標記
+## <a name="automatically-grouping-markers-while-zooming"></a>自動群組標記時縮放
 
 此範例[MapKit 範例 」 Tandm"](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)示範如何實作新叢集功能的 iOS 11 註釋。
 
 ### <a name="1-create-an-mkpointannotation-subclass"></a>1.建立`MKPointAnnotation`子類別
 
-點註解類別代表地圖上的每個標記。 可以將它們加入使用個別`MapView.AddAnnotation()`或陣列使用`MapView.AddAnnotations()`。
+點註解類別代表地圖上的每個標記。 它們可以加入使用個別`MapView.AddAnnotation()`或從陣列使用`MapView.AddAnnotations()`。
 
-點的註解類別並沒有視覺表示法，只需要表示與標記相關聯的資料 (最重要的是，`Coordinate`屬性為其緯度和經度地圖上的)，以及任何自訂屬性：
+點的註解類別並沒有視覺表示法，他們只需要代表與標記相關聯的資料 (最重要的是，`Coordinate`也就是其緯度和經度，在地圖上的屬性)，以及任何自訂屬性：
 
 ```csharp
 public class Bike : MKPointAnnotation
@@ -59,16 +59,16 @@ public class Bike : MKPointAnnotation
 
 ### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2.建立`MKMarkerAnnotationView`單一標記的子類別
 
-標記註解檢視的視覺表示的每個註釋，並使用下列屬性的樣式：
+標記註釋檢視每個註釋的視覺表示法，並使用下列屬性的樣式：
 
 - **MarkerTintColor** – 標記的色彩。
-- **GlyphText** – 爦挴齌顯示文字。
+- **GlyphText** – 在標記中顯示文字。
 - **GlyphImage** – 設定會顯示在標記的影像。
-- **DisplayPriority** – 決定疊置順序 （堆疊行為） 的對應是擠滿標記時。 使用其中一種`Required`， `DefaultHigh`，或`DefaultLow`。
+- **DisplayPriority** – 決定疊置順序 （堆疊行為） 對應時太過擁擠時標記。 使用其中一種`Required`， `DefaultHigh`，或`DefaultLow`。
 
 若要支援自動的叢集，您也必須設定：
 
-- **ClusteringIdentifier** – 這會控制哪些標記取得叢集在一起。 您可以使用相同的識別項，您所有的標記，或使用不同的識別項來控制它們群組在一起的方式。
+- **ClusteringIdentifier** – 這會控制哪些標記取得叢集在一起。 您可以使用相同的識別項，針對您所有的標記，或使用不同的識別項來控制它們會群組在一起的方式。
 
 ```csharp
 [Register("BikeView")]
@@ -106,13 +106,13 @@ public class BikeView : MKMarkerAnnotationView
 
 ### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3.建立`MKAnnotationView`來代表叢集的標記
 
-雖然代表叢集的標記的註釋檢視_無法_是簡單的映像，使用者應該要提供有關多少標記分組在一起的視覺提示的應用程式。
+雖然表示標記的叢集中的註釋檢視_無法_是簡單的映像，使用者期望應用程式提供視覺提示，多少標記分組在一起。
 
 [範例程式碼](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)使用 CoreGraphics 呈現的叢集，以及每個標記類型的比例的圓形圖形表示法中的標記數目。
 
 您也應該設定：
 
-- **DisplayPriority** – 決定疊置順序 （堆疊行為） 的對應是擠滿標記時。 使用其中一種`Required`， `DefaultHigh`，或`DefaultLow`。
+- **DisplayPriority** – 決定疊置順序 （堆疊行為） 對應時太過擁擠時標記。 使用其中一種`Required`， `DefaultHigh`，或`DefaultLow`。
 - **CollisionMode** –`Circle`或`Rectangle`。
 
 ```csharp
@@ -181,7 +181,7 @@ public class ClusterView : MKAnnotationView
 
 ### <a name="4-register-the-view-classes"></a>4.註冊檢視類別
 
-當正在建立地圖的檢視控制項，並加入到檢視，登錄要啟用自動的叢集行為，因為對應放大和縮小的註解檢視類型：
+當正在建立地圖的檢視控制項，並加入至檢視，註冊若要啟用自動的叢集行為，因為對應縮放的註解檢視類型：
 
 ```csharp
 MapView.Register(typeof(BikeView), MKMapViewDefault.AnnotationViewReuseIdentifier);
@@ -190,23 +190,23 @@ MapView.Register(typeof(ClusterView), MKMapViewDefault.ClusterAnnotationViewReus
 
 ### <a name="5-render-the-map"></a>5.呈現地圖 ！
 
-轉譯對應時，將叢集或轉譯的縮放層級根據註解標記。 當縮放層級變更時，標記以動畫顯示出叢集。
+轉譯的對應時，將叢集化或轉譯根據縮放層級註解標記。 當縮放層級變更時，標記以動畫顯示流入和流出叢集。
 
-![叢集的標記顯示在地圖上的模擬器](mapkit-images/cyclemap-sml.png)
+![顯示叢集的標記在地圖上的模擬器](mapkit-images/cyclemap-sml.png)
 
-請參閱[對應區段](~/ios/user-interface/controls/ios-maps/index.md)如需有關利用 MapKit 顯示資料。
+請參閱[對應區段](~/ios/user-interface/controls/ios-maps/index.md)如需有關使用 MapKit 顯示資料。
 
 <a name="compass" />
 
-## <a name="compass-button"></a>指南針按鈕
+## <a name="compass-button"></a>羅盤的按鈕
 
-iOS 11 加入快顯對應超出指南針並呈現檢視中的其他功能。 請參閱[Tandm 範例應用程式](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)的範例。
+iOS 11 加入快顯縮小圖羅盤和其他轉譯檢視中的功能。 請參閱[Tandm 範例應用程式](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)的範例。
 
 建立按鈕看起來像羅盤 （包括即時動畫對應方向變更時），並在另一個控制項上呈現。
 
-![在導覽列羅盤的按鈕](mapkit-images/compass-sml.png)
+![在導覽列中的羅盤按鈕](mapkit-images/compass-sml.png)
 
-下列程式碼會建立羅盤的按鈕，並呈現在瀏覽列上：
+下列程式碼會建立羅盤的按鈕，並瀏覽列上呈現：
 
 ```csharp
 var compass = MKCompassButton.FromMapView(MapView);
@@ -219,11 +219,11 @@ MapView.ShowsCompass = false; // so we don't have two compasses!
 
 <a name="scale" />
 
-## <a name="scale-view"></a>標尺的檢視
+## <a name="scale-view"></a>刻度檢視
 
-檢視使用中的其他位置中加入標尺`MKScaleView.FromMapView()`方法來取得標尺檢視，以檢視階層中其他位置新增執行個體。
+檢視使用中的其他位置新增 scale`MKScaleView.FromMapView()`方法取得檢視階層中其他地方加入刻度檢視的執行個體。
 
-![在地圖上顯示的小數位數檢視](mapkit-images/scale-sml.png)
+![重疊在地圖上的刻度檢視](mapkit-images/scale-sml.png)
 
 ```csharp
 var scale = MKScaleView.FromMapView(MapView);
@@ -237,11 +237,11 @@ MapView.ShowsScale = false; // so we don't have two scale displays!
 
 <a name="user-tracking" />
 
-## <a name="user-tracking-button"></a>使用者追蹤按鈕
+## <a name="user-tracking-button"></a>使用者 [追蹤] 按鈕
 
-使用者的 [追蹤] 按鈕會將使用者的目前位置上的地圖置中。 使用`MKUserTrackingButton.FromMapView()`方法來取得按鈕的執行個體、 套用格式設定的變更，檢視階層中其他位置加入。
+使用者的 [追蹤] 按鈕會將使用者的目前位置上的地圖置中。 使用`MKUserTrackingButton.FromMapView()`來取得按鈕的執行個體、 套用格式設定的變更，以及加入其他地方檢視階層中的方法。
 
-![在地圖上顯示使用者位置 按鈕](mapkit-images/user-location-sml.png)
+![重疊在地圖上的使用者位置 按鈕](mapkit-images/user-location-sml.png)
 
 ```csharp
 var button = MKUserTrackingButton.FromMapView(MapView);

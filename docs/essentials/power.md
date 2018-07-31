@@ -5,12 +5,12 @@ ms.assetid: C176D177-8B77-4A9C-9F3B-27852A8DCD5F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/27/2018
-ms.openlocfilehash: 6d8ccb5be69eb1ea7ea63d3f5c373d9284089679
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 760a305280269734034a817182a8c2a07894ca2b
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831516"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353486"
 ---
 # <a name="xamarinessentials-power-energy-saver-status"></a>Xamarin.Essentials： 電源能源省電狀態
 
@@ -49,10 +49,10 @@ public class EnergySaverTest
     public EnergySaverTest()
     {
         // Subscribe to changes of energy-saver status
-        Power.EnergySaverStatusChanaged += OnEnergySaverStatusChanaged;
+        Power.EnergySaverStatusChanged += OnEnergySaverStatusChanged;
     }
 
-    private void OnEnergySaverStatusChanaged(EnergySaverStatusChanagedEventArgs e)
+    private void OnEnergySaverStatusChanged(EnergySaverStatusChangedEventArgs e)
     {
         // Process change
         var status = e.EnergySaverStatus;
