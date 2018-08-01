@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: f2bccc9140c4c1c9d5d543a4240178f9301852bb
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 54fdec74a6e1d0aee71ec0ca6809a5b40680de9f
+ms.sourcegitcommit: 0a1c392829454468dbe92f81d975e124a22b7014
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997357"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39360808"
 ---
 # <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
@@ -22,11 +22,11 @@ ms.locfileid: "38997357"
 
 本文涵蓋：
 
-- **[用途](#Purpose)** &ndash;的目的`ScrollView`和搭配使用時。
-- **[使用方式](#Usage)** &ndash;如何使用`ScrollView`實務。
-- **[屬性](#Properties)** &ndash;可以讀取和修改的公用屬性。
-- **[方法](#Methods)** &ndash;可以捲動檢視呼叫的公用方法。
-- **[事件](#Events)** &ndash;可以用來接聽檢視狀態變更的事件。
+- **[用途](#purpose)** &ndash;的目的`ScrollView`和搭配使用時。
+- **[使用方式](#usage)** &ndash;如何使用`ScrollView`實務。
+- **[屬性](#properties)** &ndash;可以讀取和修改的公用屬性。
+- **[方法](#methods)** &ndash;可以捲動檢視呼叫的公用方法。
+- **[事件](#events)** &ndash;可以用來接聽檢視狀態變更的事件。
 
 ## <a name="purpose"></a>用途
 

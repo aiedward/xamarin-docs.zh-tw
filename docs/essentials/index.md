@@ -4,13 +4,13 @@ description: 本文件所連結到各種描述 Xamarin.Essentials，為開發人
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 6a49f16f935f058b002d260825cfb005df0c6eef
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
+ms.date: 07/30/2018
+ms.openlocfilehash: 5c625e32a70e196b5562225bdf985cd4b3a6f5db
+ms.sourcegitcommit: 0e1b64b0aa8fc0e78f0feff3c8b39a4cb8c1da61
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353759"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39360998"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -43,6 +43,7 @@ Android、 iOS 和 UWP 提供唯一的作業系統與平台開發人員可以存
 * [地理編碼](geocoding.md?context=xamarin/xamarin-forms)– Geocode 和反向地理編碼地址與座標。
 * [地理位置](geolocation.md?context=xamarin/xamarin-forms)– 擷取裝置的 GPS 位置。
 * [陀螺儀](gyroscope.md?context=xamarin/xamarin-forms)– 追蹤裝置的三個主要軸旋轉。
+* [啟動器](launcher.md?context=xamarin/xamarin-forms)– 讓應用程式開啟系統的 URI。
 * [磁力計](magnetometer.md?context=xamarin/xamarin-forms)– 偵測到裝置的方向相對於地球磁場。
 * [MainThread](main-thread.md?content=xamarin/xamarin-forms) – 應用程式的主執行緒上執行的程式碼。
 * [對應](maps.md?content=xamarin/xamarin-forms)– 開啟至特定位置的地圖應用程式。

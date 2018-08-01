@@ -6,13 +6,13 @@ ms.assetid: A50520D2-1214-40E1-9B27-B0891FE11584
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 07/13/2018
-ms.openlocfilehash: abc21c3830126346ffb877639657c973da474812
-ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
+ms.date: 07/30/2018
+ms.openlocfilehash: d48796b3c62fc342bd86f2d58e74c5f1710174bb
+ms.sourcegitcommit: 0a1c392829454468dbe92f81d975e124a22b7014
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39038387"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39360834"
 ---
 # <a name="a-basic-recyclerview-example"></a>基本的 RecyclerView 範例
 
@@ -368,7 +368,15 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 
 [![檢視應用程式，使用垂直捲動相片卡片的相片的兩個螢幕擷取畫面](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png#lightbox)
 
+如果繪製陰影時未被 （如上述螢幕擷取畫面所示），編輯**properties/Androidmanifest.xml** ，並新增下列屬性設定加入`<application>`項目：
+
+```xml
+android:hardwareAccelerated="true"
+```
+
 此基本應用程式只支援把相簿沖印瀏覽。 它不會回應項目的觸控事件，也不會處理基礎資料中的變更。 這項功能會新增[延伸 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/extending-the-example.md)。
+
+
 
 
 ### <a name="changing-the-layoutmanager"></a>變更 LayoutManager
