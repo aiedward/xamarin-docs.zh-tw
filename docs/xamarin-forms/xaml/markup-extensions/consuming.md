@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 6f0c15976871129362fb3d6d3287215d1fba2cb9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a630d7c2acb95b7551c9f5f870078a0efcfc075c
+ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995978"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39393668"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 標記延伸
 
@@ -24,12 +24,12 @@ XAML 標記延伸模組可協助增強的威力與彈性的 XAML，藉由將從�
 - [`x:Array`](#array) &ndash; 建構特定類型之物件的陣列。
 - [`x:Null`](#null) &ndash; 將屬性設定為`null`值。
 
-其他三個 XAML 標記延伸在過去已經支援其他 XAML 實作中，和 Xamarin.Forms 也支援。 這些是其他文章中更完整說明：
+其他的 XAML 標記延伸在過去已經支援其他 XAML 實作中，和 Xamarin.Forms 也支援。 這些是其他文章中更完整說明：
 
 - `StaticResource` &ndash; 從資源字典，參考物件，如本文所述[**的資源字典**](~/xamarin-forms/xaml/resource-dictionaries.md)。
 - `DynamicResource` &ndash; 回應物件中的資源字典中，變更文件中所述[**動態樣式**](~/xamarin-forms/user-interface/styles/dynamic.md)。
 - `Binding` &ndash; 之間建立連結屬性的兩個物件，如本文所述[**資料繫結**](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
-- `TemplateBinding` &ndash; 文件中所述，執行資料繫結控制項範本，從 [**繫結控制項範本**] 輔助線/xamarin forms/應用程式-基本概念/範本/控制項-範本/範本-繫結 /)
+- `TemplateBinding` &ndash; 從 [控制項] 範本中，執行資料繫結，如本文所述[**控制項範本中的繫結**](/guides/xamarin-forms/application-fundamentals/templates/control-templates/template-binding/)。
 
 [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)版面配置會使用自訂標記延伸[ `ConstraintExpression` ](xref:Xamarin.Forms.ConstraintExpression)。 這個標記延伸文件中所述[ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md)。
 
