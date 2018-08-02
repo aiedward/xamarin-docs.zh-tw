@@ -113,7 +113,7 @@ ms.locfileid: "34792753"
 
 <a name="MM0071" />
 
-#### <a name="mm0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinmac-please-file-a-bug-report-at-httpsbugzillaxamarincom-with-a-test-case"></a>MM0071： 未知的平台: *。 這通常表示 Xamarin.Mac; 中的 bug請檔案錯誤報告在https://bugzilla.xamarin.com與測試案例。
+#### <a name="mm0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinmac-please-file-a-bug-report-at-httpsbugzillaxamarincom-with-a-test-case"></a>MM0071： 未知的平台: *。 這通常表示 Xamarin.Mac; 中的 bug請檔案錯誤報告在 https://bugzilla.xamarin.com 與測試案例。
 
 這通常表示 Xamarin.Mac; 中的 bug請檔案錯誤報告在[ https://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=Xamarin.Mac)與測試案例。
 
@@ -308,7 +308,7 @@ Xamarin.Mac 需要的標頭檔，從要建置應用程式的靜態註冊機構�
 
 連結器無法處理混合模式組件。
 
-請參閱https://msdn.microsoft.com/library/x0w2664k.aspx如需有關混合模式組件。
+請參閱 https://msdn.microsoft.com/library/x0w2664k.aspx 如需有關混合模式組件。
 
 ## <a name="mm3xxx-aot"></a>MM3xxx: AOT
 

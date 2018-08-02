@@ -195,7 +195,7 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
 
 偶爾您會看到更新的 Xamarin.Forms NuGet 套件之後，這類似的錯誤。 NuGet updater 並不會完全移除來自較舊版本的參考時發生您**csproj**檔案。
 
->您\_PROJECT.csproj： 錯誤： 此專案參考這部電腦所缺少的 NuGet 套件。 請啟用 NuGet 封裝還原，以下載。  如需詳細資訊，請參閱http://go.microsoft.com/fwlink/?LinkID=322105。 遺失的檔案是.../../packages/Xamarin.Forms.1.2.3.6257/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.targets。 (您\_專案)
+>您\_PROJECT.csproj： 錯誤： 此專案參考這部電腦所缺少的 NuGet 套件。 請啟用 NuGet 封裝還原，以下載。  如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105 。 遺失的檔案是.../../packages/Xamarin.Forms.1.2.3.6257/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.targets。 (您\_專案)
 
 若要修正這些錯誤，請開啟**csproj**檔案文字編輯器中，並尋找`<Target`舊版透過 Xamarin.Forms，例如如下所示的項目是指的項目。 您應該手動刪除這個整個項目從**csproj**檔案及儲存所做的變更。
 
