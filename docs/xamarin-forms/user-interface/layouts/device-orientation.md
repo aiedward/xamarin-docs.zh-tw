@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: f6ca8f0900c8bc325cc49a7484dabe5bf2534257
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7f0e1c27f7d6a62dc43ac447c4f796d685a6cd91
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38999069"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241207"
 ---
 # <a name="device-orientation"></a>裝置方向
 
@@ -91,7 +91,7 @@ Xamarin.Android 支援數個選項來指定方向：
 
 ## <a name="reacting-to-changes-in-orientation"></a>回應方向的變更
 
-Xamarin.Forms 不提供任何原生事件來通知您的應用程式的方向共用程式碼中的變更。 不過，`SizeChanged`事件的`Page`時，會引發寬度或高度`Page`變更。 當寬度`Page`大於高度，裝置會以橫向模式。 如需詳細資訊，請參閱 <<c0> [ 顯示基礎  堶菾  的映像](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)。
+Xamarin.Forms 不提供任何原生事件來通知您的應用程式的方向共用程式碼中的變更。 不過，`SizeChanged`事件的`Page`時，會引發寬度或高度`Page`變更。 當寬度`Page`大於高度，裝置會以橫向模式。 如需詳細資訊，請參閱 <<c0> [ 顯示基的映像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)。
 
 > [!NOTE]
 > 沒有現有的免費適用於 NuGet 套件共用程式碼中接收通知的方向的變更。 請參閱[GitHub 存放庫](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)如需詳細資訊。
@@ -219,7 +219,7 @@ protected override void OnSizeAllocated (double width, double height){
 }
 ```
 
-請注意下列事項：
+請注意以下各點：
 
 - `outerStack` 調整，以作為根據方向，以充分利用可用空間的水平或垂直堆疊顯示的映像和控制項。
 
@@ -271,7 +271,7 @@ Title="AbsoluteLayout - XAML" BackgroundImage="deer.jpg">
 </ContentPage>
 ```
 
-請注意下列事項：
+請注意以下各點：
 
 - 頁面配置的方式，因為沒有必要程序性程式碼造成回應性。
 - `ScrollView`用來允許標籤會顯示即使螢幕的高度是固定的按鈕和影像的高度的總和小於。
@@ -363,12 +363,12 @@ BackgroundImage="deer.jpg">
 
 ```
 
-請注意下列事項：
+請注意以下各點：
 
 - 頁面配置的方式，因為沒有必要程序性程式碼造成回應性。
 - `ScrollView`用來允許標籤會顯示即使螢幕的高度是固定的按鈕和影像的高度的總和小於。
 
-### <a name="grid"></a>Grid
+### <a name="grid"></a>格線
 
 請考慮下列的應用程式，以直向顯示：
 
@@ -465,7 +465,7 @@ protected override void OnSizeAllocated (double width, double height){
 }
 ```
 
-請注意下列事項：
+請注意以下各點：
 
 - 頁面配置的方式，因為沒有方法來變更控制項的格線位置。
 
@@ -475,4 +475,4 @@ protected override void OnSizeAllocated (double width, double height){
 - [版面配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [BusinessTumble 範例 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
 - [回應式配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
-- [顯示基礎  堶菾  的映像](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)
+- [顯示基的映像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)
