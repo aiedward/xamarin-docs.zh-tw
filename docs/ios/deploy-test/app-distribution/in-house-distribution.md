@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 657370705233e923b482b67fc5afed12631c8187
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 1dff0e614943805930cf7d838110c4a42eee6f48
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785024"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353200"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS 應用程式的內部作業散發
 
@@ -98,7 +98,7 @@ Apple Developer Enterprise Program 憑證將持續三年，而佈建設定檔將
 1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，瀏覽到「憑證、識別碼與設定檔」區段。 選取 [識別碼] 下的 [應用程式識別碼]。
 2. 按一下 [+] 按鈕，並提供可在入口網站中識別應用程式的**名稱**。
 3. 應用程式前置詞應該已設定為您的小組識別碼，且無法變更。 選取 [明確應用程式識別碼] 或 [萬用字元應用程式識別碼]，並以反向 DNS 格式輸入套件組合識別碼，例如：**明確**：com.[DomainName].[AppName] **萬用字元**：com.[DomainName].*
-4. 選取您的應用程式所需要的任何[應用程式服務](~/ios/get-started/installation/device-provisioning/index.md#appservices)。
+4. 選取您的應用程式所需要的任何[應用程式服務](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)。
 5. 按一下 [繼續] 按鈕，並遵循畫面指示來建立新的應用程式識別碼。
 
 一旦您有建立散發設定檔所需的元件之後，請遵循下列步驟來建立散發設定檔：

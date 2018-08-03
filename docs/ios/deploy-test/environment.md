@@ -6,12 +6,13 @@ ms.assetid: 9801644A-89BB-4491-AD28-7F3B97D2CD62
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 246c65729f9327dd1ccf549603b4c2b1feb023e8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2017
+ms.openlocfilehash: 5296f03cae28e1025c760004c520a2b415ec493d
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784962"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351576"
 ---
 # <a name="execution-environment-for-xamarinios-apps"></a>Xamarin.iOS 應用程式的執行環境
 

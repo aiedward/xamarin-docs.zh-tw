@@ -64,7 +64,7 @@ ms.locfileid: "38831328"
 
 **步驟 4： 產生的 GUID**
 
-移至：https://www.guidgenerator.com/online-guid-generator.aspx並產生新的 guid，並確定在大寫。
+移至： https://www.guidgenerator.com/online-guid-generator.aspx 並產生新的 guid，並確定在大寫。
 
 **步驟 5： 設定裝置**
 

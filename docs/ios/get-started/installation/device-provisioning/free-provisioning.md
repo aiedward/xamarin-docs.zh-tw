@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/16/2018
-ms.openlocfilehash: 22ac17e211562eccbc49cc213e06079e77dd08c0
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+ms.openlocfilehash: 0f2418994e02c9e83506071f14901d22af4b8a66
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111153"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353317"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Xamarin.iOS 應用程式的免費佈建
 
@@ -35,7 +35,7 @@ ms.locfileid: "39111153"
 - 您的 Xamarin.iOS 應用程式必須使用明確的應用程式識別碼，而不是萬用應用程式識別碼。
 - 您 Xamarin.iOS 應用程式中使用的套件組合識別碼必須是唯一的，且先前不曾在其他應用程式中使用。 任何與免費佈建搭配使用的套件組合識別碼都**無法**再重複使用。
 - 如果您已經散發某個應用程式，就不能使用免費佈建來部署該應用程式。
-- 如果您的應用程式使用「應用程式服務」，則將需要建立佈建設定檔，如[裝置佈建](~/ios/get-started/installation/device-provisioning/index.md#appservices)所述。 
+- 如果您的應用程式使用「應用程式服務」，則將需要建立佈建設定檔，如[裝置佈建](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)所述。 
 
 如需與免費佈建相關限制的詳細資訊，請查看本文件的[限制](#limitations)一節，如需散發 iOS 應用程式的詳細資訊，請參閱[應用程式散發指南](~/ios/deploy-test/app-distribution/index.md)。
 
@@ -144,4 +144,4 @@ Apple 針對使用免費佈建在 iOS 裝置上執行應用程式的時機和方
 ## <a name="related-links"></a>相關連結
 
 - [裝置佈建](~/ios/get-started/installation/device-provisioning/index.md)
-- [應用程式服務的佈建](~/ios/get-started/installation/device-provisioning/index.md#appservices)
+- [應用程式服務的佈建](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)
