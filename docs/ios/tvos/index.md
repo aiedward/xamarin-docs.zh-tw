@@ -1,6 +1,6 @@
 ---
-title: 在 Xamarin tvOS 簡介
-description: 這個文件會連結至不同的指南及範例會示範如何建置使用 Xamarin tvOS 應用程式。 這些指南討論各種功能，例如使用者介面開發人員、 資料存放區、 圖示和多個。
+title: 在 Xamarin 中 tvOS 簡介
+description: 本文件所連結到各種不同的指南和範例，示範如何建置使用 Xamarin 的 tvOS 應用程式。 指南會討論各種功能，例如使用者介面開發、 資料儲存體、 圖示等。
 ms.prod: xamarin
 ms.assetid: 14345503-1742-41F5-B2EF-EE31AB7C3516
 ms.technology: xamarin-ios
@@ -8,75 +8,75 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: 45a509f6ee86e42279ec7877272965e8f6d7338f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 5d9cb189c124c8b1bfc2dafc48ec782bb74a852e
+ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788682"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514384"
 ---
-# <a name="introduction-to-tvos-in-xamarin"></a>在 Xamarin tvOS 簡介
+# <a name="introduction-to-tvos-in-xamarin"></a>在 Xamarin 中 tvOS 簡介
 
-## <a name="introducing-tvos"></a>介紹 tvOS
+## <a name="introducing-tvos"></a>簡介 tvOS
 
-Apple 已發行的第 5 個層代 Apple TV 硬體，Apple TV 4 K 執行 tvOS 作業系統，根據 iOS 11 的最新版本。
+Apple 已發行的 Apple TV 的硬體、 Apple TV 4k、 5 代執行最新版的 tvOS，基礎作業系統 iOS 11。
 
-Apple TV 平台會開啟開發人員，讓它們來建立豐富、 沈浸式應用程式，並釋放它們透過 Apple 電視遙控器的內建應用程式市集。
+開放給開發人員，讓他們能夠建立豐富的沉浸式應用程式並將它們發行至 Apple TV 的內建應用程式市集的 Apple TV 平台。
 
-如需有關 tvOS 的詳細資訊，請參閱[入門](~/ios/tvos/get-started/index.md)文件。
+如需有關 tvOS 的詳細資訊，請參閱[開始使用](~/ios/tvos/get-started/index.md)文件。
 
 > [!VIDEO https://youtube.com/embed/Q04oIYymfGM]
 
-**使用 Xamarin，tvOS 由[Xamarin 大學](https://university.xamarin.com/)**
+**使用 Xamarin，tvOS 的[Xamarin University](https://university.xamarin.com/)**
 
 ## <a name="documentation"></a>文件
 
-下列文件將協助您開始建置使用 Xamarin tvOS 應用程式：
+下列文件將協助您開始建置使用 Xamarin 的 tvOS 應用程式：
 
-- [簡介 tvOS 11](~/ios/tvos/platform/introduction-to-tvos11.md) -這篇文章描述 Xamarin.tvOS 開發人員提供 tvOS 11 的新功能。
-- [簡介 tvOS 10](~/ios/tvos/platform/introduction-to-tvos10/index.md) -這篇文章導入的所有新的及修改應用程式開發介面和功能中 tvOS 10 Xamarin.tvOS 開發人員。
-- [簡介 tvOS 9](~/ios/tvos/platform/tvos9.md) – 這篇文章導入 Xamarin.tvOS 開發人員的所有新的及修改應用程式開發介面和 tvOS 9 中可用的功能。 
-- [Hello，tvOS 快速入門指南](~/ios/tvos/get-started/hello-tvos.md)– 本指南逐步引導您建立第一個 Xamarin.tvOS 應用程式，並在程序中導入開發工具鏈，包括用於 Mac、 Xcode 和介面產生器的 Visual Studio。 它也會導致插座和動作，會顯示 UI 控制項加入至程式碼，以及最後，它說明如何建置、 執行及測試 Xamarin.tvOS 應用程式。
-- [使用圖示和映像](~/ios/tvos/app-fundamentals/icons-images.md)– 本文涵蓋設計和使用圖示和 Xamarin.tvOS 應用程式內的映像。
-- [使用導覽和焦點](~/ios/tvos/app-fundamentals/navigation-focus.md)– 本文章涵蓋的概念焦點時，使用處理 Xamarin.tvOS 應用程式內瀏覽及呈現方式。
-- [資源和資料存放區](~/ios/tvos/app-fundamentals/resources-data-storage.md)– 本文章涵蓋使用資源和永續性資料儲存在 Xamarin.tvOS 應用程式。
-- [Siri 遠端和藍芽控制器](~/ios/tvos/platform/remote-bluetooth.md)– 本文章涵蓋 Xamarin.tvOS 應用程式中支援的新 Siri 遠端和藍芽遊戲控制器。
-- [使用者介面](~/ios/tvos/user-interface/index.md)– 一般使用者經驗 (UX) 涵蓋範圍包括使用者介面 (UI) 控制項，使用 Xcode 的介面產生器及 UX 設計原則使用 Xamarin.tvOS 時。
-- [部署、 測試和度量](~/ios/tvos/deploy-test/index.md)– 本章節涵蓋用來測試應用程式，以及如何將它散發的主題。 此處的主題包含用來偵錯，測試人員，以及如何發佈至 Apple TV 應用程式市集應用程式部署工具等。
-- [支援的組件](~/ios/tvos/internals/assemblies.md)– 這是支援 Xamarin Xamarin.tvOS 應用程式的組件清單。
-- [支援和不支援的架構](~/ios/tvos/internals/frameworks.md)– 這是支援 Xamarin Xamarin.tvOS 應用程式架構的清單。
+- [TvOS 11 簡介](~/ios/tvos/platform/introduction-to-tvos11.md)-這篇文章描述 Xamarin.tvOS 開發人員 tvOS 11 中可用的新功能。
+- [TvOS 10 簡介](~/ios/tvos/platform/introduction-to-tvos10/index.md)-這篇文章介紹的所有新的及修改 Api 和 tvOS 10 中可用的功能適用於 Xamarin.tvOS 開發人員。
+- [TvOS 9 簡介](~/ios/tvos/platform/tvos9.md)– 這篇文章介紹的所有新的及修改 Api 和 tvOS 9 中可用的功能適用於 Xamarin.tvOS 開發人員。 
+- [Hello，tvOS 快速入門指南](~/ios/tvos/get-started/hello-tvos.md)– 本指南逐步引導您建立第一個 Xamarin.tvOS 應用程式，並在程序中導入開發工具鏈，包括 Visual Studio for Mac、 Xcode 和 Interface Builder。 它也引進了輸出和動作，公開到程式碼的 UI 控制項，以及最後並說明如何建置、 執行和測試 Xamarin.tvOS 應用程式。
+- [使用圖示和影像](~/ios/tvos/app-fundamentals/icons-images.md)-本文涵蓋設計和使用圖示和 Xamarin.tvOS 應用程式內的影像。
+- [使用導覽和焦點](~/ios/tvos/app-fundamentals/navigation-focus.md)– 這篇文章涵蓋的概念，焦點，以及如何用來呈現，並在 Xamarin.tvOS 應用程式內處理巡覽。
+- [資源和資料存放區](~/ios/tvos/app-fundamentals/resources-data-storage.md)– 這篇文章涵蓋資源與 Xamarin.tvOS 應用程式中的永續性資料儲存體。
+- [Siri 遠端和藍牙控制器](~/ios/tvos/platform/remote-bluetooth.md)– 這篇文章涵蓋 Xamarin.tvOS 應用程式中支援新 Siri 遠端和藍牙的遊戲控制器。
+- [使用者介面](~/ios/tvos/user-interface/index.md)– 一般使用者體驗 (UX) 涵蓋範圍包括使用者介面 (UI) 控制項、 使用 Xcode 的 Interface Builder 和 UX 設計原則與 xamarin.tvos 搭配使用時。
+- [部署、 測試及度量](~/ios/tvos/deploy-test/index.md)– 本章節包含用來測試應用程式，以及如何將它散發的主題。 此處的主題包括偵錯、 測試人員，以及如何在應用程式發行至 Apple TV App Store 的部署工具等項目。
+- [支援的組件](~/ios/tvos/internals/assemblies.md)– 這是支援 xamarin Xamarin.tvOS 應用程式的組件清單。
+- [支援和不支援的架構](~/ios/tvos/internals/frameworks.md)– 這是一份支援 xamarin Xamarin.tvOS 應用程式的架構。
 
 ## <a name="sample-projects"></a>範例專案
 
-使用 Xamarin 建置範例 tvOS 應用程式：
+使用 Xamarin 建置的範例 tvOS 應用程式：
 
-- [Hello、 tvOS](https://developer.xamarin.com/samples/monotouch/tvos/Hello-tvOS/) – 這個範例會實作簡單的"Hello World"應用程式中 Xamarin.tvOS 並呈現 tvOS 所使用的基本概念。
+- [Hello，tvOS](https://developer.xamarin.com/samples/monotouch/tvos/Hello-tvOS/) – 此範例中 Xamarin.tvOS 實作簡單的"Hello World"應用程式，並提供使用 tvOS 的基本概念。
 - [tvAlerts](https://developer.xamarin.com/samples/monotouch/tvos/tvAlerts/) – 此範例示範如何使用 Xamarin.tvOS 應用程式中的警示。
 - [tvButtons](https://developer.xamarin.com/samples/monotouch/tvos/tvButtons/) – 此範例會示範如何使用按鈕是 Xamarin.tvOS 應用程式。
-- [tvRemote](https://developer.xamarin.com/samples/monotouch/tvos/tvRemote/) – 此範例顯示數種 Xamarin.tvOS 應用程式可以與 Siri 遙控器來瀏覽您的使用者介面互動的方式。
-- [tvCollection](https://developer.xamarin.com/samples/monotouch/tvos/tvCollection/) – 這個範例示範如何使用集合檢視控制器 Xamarin.tvOS 應用程式中。
-- [tvNavBars](https://developer.xamarin.com/samples/monotouch/tvos/tvNavBars/) – 這個範例示範如何使用導覽列 Xamarin.tvOS 應用程式中。
-- [tvPages](https://developer.xamarin.com/samples/monotouch/tvos/tvPages/) – 這個範例示範如何使用頁面控制項 Xamarin.tvOS 應用程式中。
-- [tvProgress](https://developer.xamarin.com/samples/monotouch/tvos/tvProgress/) – 這個範例示範如何使用進度指標 Xamarin.tvOS 應用程式中。
-- [tvSplit](https://developer.xamarin.com/samples/monotouch/tvos/tvSplit/) – 這個範例示範如何使用分割檢視控制器 Xamarin.tvOS 應用程式中。
+- [tvRemote](https://developer.xamarin.com/samples/monotouch/tvos/tvRemote/) – 此範例顯示 Xamarin.tvOS 應用程式可以與 Siri 遠端瀏覽您的使用者介面互動的數種方式。
+- [tvCollection](https://developer.xamarin.com/samples/monotouch/tvos/tvCollection/) – 此範例示範如何使用集合檢視控制器 Xamarin.tvOS 應用程式中。
+- [tvNavBars](https://developer.xamarin.com/samples/monotouch/tvos/tvNavBars/) – 此範例示範如何使用導覽列中的 Xamarin.tvOS 應用程式。
+- [tvPages](https://developer.xamarin.com/samples/monotouch/tvos/tvPages/) – 此範例示範如何使用 Xamarin.tvOS 應用程式中的頁面控制項。
+- [tvProgress](https://developer.xamarin.com/samples/monotouch/tvos/tvProgress/) – 此範例示範如何在 Xamarin.tvOS 應用程式中處理的進度指示器。
+- [tvSplit](https://developer.xamarin.com/samples/monotouch/tvos/tvSplit/) – 此範例示範如何使用 Xamarin.tvOS 應用程式中的 分割檢視控制器。
 - [tvStackView](https://developer.xamarin.com/samples/monotouch/tvos/tvStackView/) -此範例示範如何使用 Xamarin.tvOS 應用程式中的 堆疊檢視。
-- [UICatalog](https://developer.xamarin.com/samples/monotouch/tvos/UICatalog/) -示範如何使用許多檢視，並控制 tvOS UIKit 架構中。 如果您要尋找特定控制項或系統所提供的檢視，請參閱此範例。
+- [UICatalog](https://developer.xamarin.com/samples/monotouch/tvos/UICatalog/) – 示範如何使用許多檢視，並控制在 tvOS 的 UIKit 架構中。 如果您要尋找特定的控制項或系統所提供的檢視，請參閱此範例。
 
-此外，Apple 提供下列的範例應用程式可能是轉碼為 C# 來搭配 Xamarin 的支援 tvOS 應用程式：
+此外，Apple 提供下列的範例應用程式可以轉碼成 C#，以使用 Xamarin 的 tvOS 應用程式的支援：
 
-- [DemoBots： 建置跨平台遊戲 SpriteKit 與 GameplayKit](https://developer.apple.com/library/prerelease/tvos/samplecode/DemoBots/)
+- [DemoBots： 建立使用 SpriteKit 和 GameplayKit 跨平台遊戲](https://developer.apple.com/library/prerelease/tvos/samplecode/DemoBots/)
 
 ## <a name="known-issues-and-troubleshooting"></a>已知的問題與疑難排解
 
-如果您遇到建置 xamarin tvOS 任何問題，請檢查[版本資訊](http://releases.xamarin.com/)， [Xamarin.iOS 論壇](https://forums.xamarin.com/categories/ios)， [Xamarin Bugzilla Tracker](https://bugzilla.xamarin.com/query.cgi?product=iOS)，和[GitHub](https://github.com/xamarin/xamarin-macios/issues)針對現有的問題。 
+如果您遇到任何建置使用 Xamarin 的 tvOS 的問題，請檢查[版本資訊](http://releases.xamarin.com/)， [Xamarin.iOS 論壇](https://forums.xamarin.com/categories/ios)， [Xamarin Bugzilla Tracker](https://bugzilla.xamarin.com/query.cgi?product=iOS)，和[GitHub](https://github.com/xamarin/xamarin-macios/issues)現有問題。
 
-報告新問題和建議[GitHub 上](https://github.com/xamarin/xamarin-macios/issues)。 
+回報新問題和建議[GitHub 上](https://github.com/xamarin/xamarin-macios/issues)。
 
 
 ## <a name="related-links"></a>相關連結
 
 - [tvOS 範例](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvOS 人性化介面輔助線](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [tvOS 人性化介面指南](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Tvos 應用程式設計指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
-- [建置 tvOS （影片） 的 xamarin 應用程式](https://university.xamarin.com/lightninglectures/tvos-with-xamarin)
+- [建置使用 Xamarin （影片） 的 tvOS 應用程式](https://university.xamarin.com/lightninglectures/tvos-with-xamarin)

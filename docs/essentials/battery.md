@@ -5,12 +5,12 @@ ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 1deafed85e9400bf7d4592fc06f71c22cc0015f0
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
+ms.openlocfilehash: 6b87625b3305d0a9ec40593d8b3fe29eb551bbf4
+ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353450"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514306"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials： 電池
 
@@ -119,7 +119,7 @@ public class BatteryTest
         Battery.BatteryChanged += Battery_BatteryChanged;
     }
 
-    void Battery_BatteryChanged(BatteryChangedEventArgs   e)
+    void Battery_BatteryChanged(object sender, BatteryChangedEventArgs   e)
     {
         var level = e.ChargeLevel;
         var state = e.State;
