@@ -329,6 +329,7 @@
 ### [Xamarin.iOS 分析規則](troubleshooting/xamarin-ios-analysis.md)
 ### [錯誤訊息 (mtouch)](troubleshooting/mtouch-errors.md)
 ### [常見問題集](troubleshooting/questions/index.md)
+#### [使用 Xcode 偵錯](troubleshooting/questions/debugging-with-xcode.md)
 #### [我可以使用 Mac VM 搭配 Xamarin 嗎？](troubleshooting/questions/mac-vm.md)
 #### [下載先前版本的 Xcode](troubleshooting/questions/previous-xcode.md)
 #### [我在哪裡可以設定 iOS SDK 的位置？](troubleshooting/questions/ios-sdk.md)

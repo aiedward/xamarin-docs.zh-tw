@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 9721cc40319f0b4d6f0869eabccb84256122fb02
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f0d6d2343350455a101033aced7cec0c31695503
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785784"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353226"
 ---
 # <a name="device-provisioning-for-xamarinios"></a>Xamarin.iOS 的裝置佈建
 
@@ -29,7 +29,6 @@ ms.locfileid: "34785784"
 - **Apple Developer Program** \(Apple 開發人員計劃\) – 不論您是個人還是代表組織，Apple Developer Program (Apple 開發人員計劃) 都可讓您開發、測試及散發應用程式。
 - **Apple Developer Enterprise Program** \(Apple 開發人員企業計劃\)– 企業計劃最適合只想要在內部開發及散發應用程式的組織。 企業計劃的成員無法存取 iTunes Connect，也無法將所建立的應用程式發行至 App Store。
 
-
 若要註冊上述任一計劃，請瀏覽 [Apple Developer Portal](https://developer.apple.com/programs/enroll/) \(Apple 開發人員入口網站\) 來進行註冊。 請注意，若要註冊成為 Apple 開發人員，必須具有 [Apple ID](https://appleid.apple.com/)。 建立本指南時，即假設您**是** Apple Developer Program (Apple 開發人員計劃) 的成員。
 
 或者，Apple 也在 Xcode 7 中導入了[免費佈建](~/ios/get-started/installation/device-provisioning/free-provisioning.md)，可讓您「無須」成為 Apple Developer Program (Apple 開發人員計劃) 的成員，即可在單一裝置上執行單一應用程式。 以此方式佈建時有一些限制，如[這裡](~/ios/get-started/installation/device-provisioning/free-provisioning.md#limitations)所述。
@@ -44,8 +43,6 @@ ms.locfileid: "34785784"
 
 這些步驟可確保在開發過程中所建立或使用的所有項目 (包括應用程式和裝置) 都可回溯至 Apple 開發人員帳戶。
 
-<a name="Provisioning_Profile" />
-
 ## <a name="provisioning-your-device"></a>佈建您的裝置
 
 佈建 iOS 裝置的方式有兩種：
@@ -54,15 +51,12 @@ ms.locfileid: "34785784"
 
 * **手動** – 可以透過 Apple Developer Portal (Apple 開發人員入口網站) 來建立和管理「簽署身分識別」、「應用程式識別碼」及「佈建設定檔」，如[手動佈建](manual-provisioning.md)指南所述。 您可以依照 [Apple 帳戶管理](~/cross-platform/macios/apple-account-management.md)指南所述，管理這些成品。
 
-
-<a name="appservices" />
-
 ## <a name="provisioning-for-application-services"></a>應用程式服務的佈建
 
 Apple 提供一組可針對 Xamarin.iOS 應用程式啟用的精選特別「應用程式服務」(也稱為功能)。 不論是在 iOS Provisioning Portal (iOS 佈建入口網站) 中於建立 **App ID** \(應用程式識別碼\) 時，還是在 Xamarin.iOS 應用程式專案所含的 **Entitlements.plist** 檔案中，都必須設定這些「應用程式服務」。 如需有關將「應用程式服務」新增至您應用程式的資訊，請參閱[功能簡介](~/ios/deploy-test/provisioning/capabilities/index.md)指南和[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
 
 * 建立具有所需應用程式服務的 App ID (應用程式識別碼)。
-* 建立包含此 App ID (應用程式識別碼) 的新[佈建設定檔](#Provisioning_Profile)。
+* 建立包含此 App ID (應用程式識別碼) 的新[佈建設定檔](#provisioning-your-device)。
 * 在 Xamarin.iOS 專案中設定權利
 
 ## <a name="related-links"></a>相關連結
