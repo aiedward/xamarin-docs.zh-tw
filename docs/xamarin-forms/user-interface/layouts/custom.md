@@ -410,7 +410,7 @@ async Task<ImageList> GetImageListAsync()
 
 ![](custom-images/landscape-ios.png "範例 iOS 應用程式橫向螢幕擷取畫面")
 ![](custom-images/landscape-android.png "範例 Android 應用程式橫向螢幕擷取畫面")
- ![ ] (custom-images/landscape-uwp.png "範例 UWP 應用程式橫向螢幕擷取畫面")
+![](custom-images/landscape-uwp.png "範例 UWP 應用程式橫向螢幕擷取畫面")
 
 每個資料列中的資料行的數目取決於相片大小、 螢幕的寬度和每個裝置獨立單位的像素數目。 [ `Image` ](xref:Xamarin.Forms.Image)項目以非同步方式載入的相片，因此`WrapLayout`類別將會收到經常呼叫其[ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))方法的每個`Image`項目收到新的大小，以載入的相片。
 
