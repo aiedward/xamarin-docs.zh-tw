@@ -49,7 +49,7 @@ DismissController();
 
 呈現的場景，像堆疊可巡覽回透過、 類似的方式一樣`UINavigationController`可在 iOS 上運作。 場景可以推入至巡覽堆疊及推出 （以程式設計方式或依使用者選取範圍）。
 
-![](navigation-images/hierarchy-1.png "場景可以放入巡覽堆疊") ![ ](navigation-images/hierarchy-2.png "運作原理可以從瀏覽堆疊取出")
+![](navigation-images/hierarchy-1.png "場景可以放入巡覽堆疊") ![](navigation-images/hierarchy-2.png "運作原理可以從瀏覽堆疊取出")
 
 如同 iOS 左邊緣撥動巡覽回父控制器階層式巡覽堆疊中。
 
@@ -94,7 +94,7 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 
 頁面為基礎的介面撥動左到右，其方式類似於`UIPageViewController`可在 iOS 上運作。 點指示器會顯示螢幕才能顯示目前顯示哪一頁的底部。
 
-![](navigation-images/paged-1.png "範例的第一頁") ![ ](navigation-images/paged-2.png "範例的第二頁") ![ ](navigation-images/paged-5.png "範例的第五頁")
+![](navigation-images/paged-1.png "範例的第一頁") ![](navigation-images/paged-2.png "範例的第二頁") ![](navigation-images/paged-5.png "範例的第五頁")
 
 
 若要讓頁面為基礎的介面監看式應用程式的主要 UI，使用`ReloadRootControllers`介面控制站及內容的陣列：

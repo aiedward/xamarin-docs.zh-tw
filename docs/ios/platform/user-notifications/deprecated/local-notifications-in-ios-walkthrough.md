@@ -116,7 +116,7 @@ _這一節我們將逐步解說如何在 Xamarin.iOS 應用程式中使用本機
 
 1. 最後，執行應用程式。 在 iOS 8 您將會提示允許通知。 按一下 [ **[確定]** ，然後按一下**加入通知**] 按鈕。 在之後短暫的暫停中，您應該看到警示對話方塊中，如下列螢幕擷取畫面所示：
 
-    ![](local-notifications-in-ios-walkthrough-images/image0.png "確認能夠傳送通知") ![ ](local-notifications-in-ios-walkthrough-images/image1.png "加入通知按鈕") ![ ](local-notifications-in-ios-walkthrough-images/image2.png "通知的警示對話方塊")
+    ![](local-notifications-in-ios-walkthrough-images/image0.png "確認能夠傳送通知") ![](local-notifications-in-ios-walkthrough-images/image1.png "加入通知按鈕") ![](local-notifications-in-ios-walkthrough-images/image2.png "通知的警示對話方塊")
 
 ## <a name="summary"></a>總結
 

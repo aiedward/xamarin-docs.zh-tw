@@ -29,7 +29,7 @@ Xamarin.iOS 使用控制項來公開大部分的使用者互動的事件。
 
 為了說明通訊協定與委派，我們會建置一個簡單的對應應用程式，將註解加入至地圖，如下所示：
 
- [![](delegates-protocols-and-events-images/01-map.png "將註解加入至對應的簡單的對應應用程式的範例")](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ](delegates-protocols-and-events-images/04-annotation-with-callout.png "範例註解加入至地圖")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
+ [![](delegates-protocols-and-events-images/01-map.png "將註解加入至對應的簡單的對應應用程式的範例")](delegates-protocols-and-events-images/01-map.png#lightbox) [![](delegates-protocols-and-events-images/04-annotation-with-callout.png "範例註解加入至地圖")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 之前解決這個應用程式，讓我們開始吧藉由查看下 UIKit.NET 事件。
 

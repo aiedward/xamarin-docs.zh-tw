@@ -109,8 +109,8 @@ Apple 必須核准每個產品之前它就會在銷售 – name、 description �
 
 將新的產品的程序有兩個步驟：
 
-1.   選擇的產品類型： [ ![ ](in-app-purchase-basics-and-configuration-images/image8.png "選擇的產品類型")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
-2.   輸入產品的屬性，包括產品識別碼、 定價層和當地語系化的描述： [ ![ ](in-app-purchase-basics-and-configuration-images/image9.png "輸入的產品屬性")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
+1.   選擇的產品類型： [![](in-app-purchase-basics-and-configuration-images/image8.png "選擇的產品類型")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2.   輸入產品的屬性，包括產品識別碼、 定價層和當地語系化的描述： [![](in-app-purchase-basics-and-configuration-images/image9.png "輸入的產品屬性")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
 每個應用程式內購買的產品所需的欄位如下所示：
 

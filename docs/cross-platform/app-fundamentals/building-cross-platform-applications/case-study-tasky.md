@@ -479,7 +479,7 @@ MainPage 類別會使用`TaskListViewModel`使用 XAML 的資料繫結功能顯�
 
 應用程式使用 iOS 標準使用者介面的設計，例如 'add' 按鈕放在導覽列中，使用內建**加號 （+）** 圖示。 它也會使用預設`UINavigationController`[上一頁] 按鈕的行為，並支援 ' 撥動-delete' 資料表中的。
 
- [![](case-study-tasky-images/ios-taskylist.png "它也會使用預設 UINavigationController 上一頁按鈕行為，並支援資料表撥動至刪除")](case-study-tasky-images/ios-taskylist.png#lightbox) [ ![ ](case-study-tasky-images/ios-taskylist.png "它也會使用預設 UINavigationController備份按鈕的行為，並支援表撥動-delete")](case-study-tasky-images/ios-taskylist.png#lightbox)
+ [![](case-study-tasky-images/ios-taskylist.png "它也會使用預設 UINavigationController 上一頁按鈕行為，並支援資料表撥動至刪除")](case-study-tasky-images/ios-taskylist.png#lightbox) [![](case-study-tasky-images/ios-taskylist.png "它也會使用預設 UINavigationController備份按鈕的行為，並支援表撥動-delete")](case-study-tasky-images/ios-taskylist.png#lightbox)
 
  <a name="Android" />
 
@@ -495,7 +495,7 @@ Android 應用程式會使用內建控制項，包括內建的配置需要 '刻�
 
 Windows Phone 應用程式使用的標準版面配置，填入應用程式列，而不是在上方導覽列螢幕的底部。
 
- [![](case-study-tasky-images/wp-taskylist.png "Windows Phone 應用程式中使用的標準版面配置，填入應用程式列，而不是在上方導覽列螢幕底部")](case-study-tasky-images/wp-taskylist.png#lightbox) [ ![ ] (case-study-tasky-images/wp-taskylist.png "Windows Phone 應用程式會使用標準版面配置，填入應用程式列，而不是在上方導覽列螢幕底部")](case-study-tasky-images/wp-taskylist.png#lightbox)
+ [![](case-study-tasky-images/wp-taskylist.png "Windows Phone 應用程式中使用的標準版面配置，填入應用程式列，而不是在上方導覽列螢幕底部")](case-study-tasky-images/wp-taskylist.png#lightbox) [![](case-study-tasky-images/wp-taskylist.png "Windows Phone 應用程式會使用標準版面配置，填入應用程式列，而不是在上方導覽列螢幕底部")](case-study-tasky-images/wp-taskylist.png#lightbox)
 
  <a name="Summary" />
 

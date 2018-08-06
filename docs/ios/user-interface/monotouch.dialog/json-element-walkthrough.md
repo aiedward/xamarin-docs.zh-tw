@@ -21,7 +21,7 @@ MTD 支援在 JSON 中宣告的建立使用者介面。 當使用 JSON，MT 宣�
 
 MTD 支援時，可以使用元素 API 中使用 JSON 功能的完整範圍。 比方說，下列螢幕擷取畫面中的應用程式的完全宣告使用 JSON 中：
 
-[![](json-element-walkthrough-images/01-load-from-file.png "例如，此螢幕擷取畫面中的應用程式完全宣告使用 JSON") ](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ ](json-element-walkthrough-images/01-load-from-file.png "比方說，此螢幕擷取畫面中的應用程式完全使用宣告JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
+[![](json-element-walkthrough-images/01-load-from-file.png "例如，此螢幕擷取畫面中的應用程式完全宣告使用 JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![](json-element-walkthrough-images/01-load-from-file.png "比方說，此螢幕擷取畫面中的應用程式完全使用宣告JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
 從範例重新瀏覽[項目 API 逐步解說](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)教學課程中，顯示如何加入 工作詳細資料螢幕使用 JSON。
 

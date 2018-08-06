@@ -63,7 +63,7 @@ var userName = shared.StringForKey ("name_preference");
 
 使用者透過新的設定與互動**Apple Watch**其 iPhone 上的應用程式。 此應用程式可讓使用者顯示/隱藏應用程式在監看式，以及設定公開使用的編輯**設定 Watch.bundle**。
 
-![](settings-images/applewatch-1.png "應用程式設定的範例") ![ ](settings-images/applewatch-2.png "應用程式設定的範例")
+![](settings-images/applewatch-1.png "應用程式設定的範例") ![](settings-images/applewatch-2.png "應用程式設定的範例")
 
 
 

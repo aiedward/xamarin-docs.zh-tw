@@ -121,7 +121,7 @@ Xamarin 方法是群組到兩個專案類型的程式碼：
 
 應用程式專案每個參考共用專案，而且包含呈現給使用者，功能所需的使用者介面程式碼，這些螢幕擷取畫面所示：
 
-![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "應用程式專案中 Shared 專案的每個參考") ![ ](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "應用程式專案中每個參考共用專案")
+![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "應用程式專案中 Shared 專案的每個參考") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "應用程式專案中每個參考共用專案")
 
 
 在這些案例研究會提供特定的專案結構的方式的範例。

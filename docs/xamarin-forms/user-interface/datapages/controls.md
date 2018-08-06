@@ -62,11 +62,11 @@ Xamarin.Forms DataPages Nuget 包括可以利用資料來源繫結的控制項�
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "在 Android 上的 HeroImage 控制項") ![ ] (controls-images/heroimage-dark-android.png "HeroImage 在 Android 上的控制項")
+![](controls-images/heroimage-light-android.png "在 Android 上的 HeroImage 控制項") ![](controls-images/heroimage-dark-android.png "HeroImage 在 Android 上的控制項")
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "在 iOS 上的 HeroImage 控制項") ![ ] (controls-images/heroimage-dark-ios.png "HeroImage 在 iOS 上的控制項")
+![](controls-images/heroimage-light-ios.png "在 iOS 上的 HeroImage 控制項") ![](controls-images/heroimage-dark-ios.png "HeroImage 在 iOS 上的控制項")
 
 
 <a name="listitem" />
@@ -128,11 +128,11 @@ Xamarin.Forms DataPages Nuget 包括可以利用資料來源繫結的控制項�
 
 **Android**
 
-![](controls-images/cardview-light-android.png "在 Android 上的 CardView 自訂控制項") ![ ] (controls-images/cardview-dark-android.png "CardView 自訂控制項，在 Android 上")
+![](controls-images/cardview-light-android.png "在 Android 上的 CardView 自訂控制項") ![](controls-images/cardview-dark-android.png "CardView 自訂控制項，在 Android 上")
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "在 iOS 上的 CardView 自訂控制項") ![ ] (controls-images/cardview-dark-ios.png "CardView 在 iOS 上的自訂控制項")
+![](controls-images/cardview-light-ios.png "在 iOS 上的 CardView 自訂控制項") ![](controls-images/cardview-dark-ios.png "CardView 在 iOS 上的自訂控制項")
 
 <a name="custom" />
 

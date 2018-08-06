@@ -22,7 +22,7 @@ ms.locfileid: "34788663"
 推播通知應該保持簡短，而且只可包含足夠的資料來告知它應該與伺服器應用程式取得更新的行動應用程式。 例如，當新的電子郵件送達時，伺服器應用程式只會通知到達新電子郵件的行動應用程式。 通知不會包含新的電子郵件本身。 行動應用程式會擷取新的電子郵件伺服器從適當時
 
 中間的推播通知，在 iOS 中的是*Apple 推播通知閘道 Service (APNS)*。 這是由負責傳閱通知從應用程式伺服器到 iOS 裝置的 Apple 提供的服務。
-下圖顯示適用於 iOS 的推播通知拓樸： ![ ](remote-notifications-in-ios-images/image4.png "此映像說明適用於 iOS 的推播通知拓樸")
+下圖顯示適用於 iOS 的推播通知拓樸： ![](remote-notifications-in-ios-images/image4.png "此映像說明適用於 iOS 的推播通知拓樸")
 
 遠端通知會自行而 JSON 格式化遵守格式的字串中指定的通訊協定[通知裝載](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1)區段[本機和推播通知程式設計指南](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)中[iOS 開發人員文件](https://developer.apple.com/devcenter/ios/index.action)。
 

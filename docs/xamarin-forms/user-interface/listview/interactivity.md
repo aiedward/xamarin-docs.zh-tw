@@ -157,7 +157,7 @@ listView.IsPullToRefreshEnabled = true;
 
 ![](interactivity-images/refresh-start.png "ListView 拖動以重新整理進行中")
 
-提取以更新使用者身分已發行的提取。 這是什麼使用者會看到當您更新的清單： ![ ] (interactivity-images/refresh-in-progress.png "ListView 提取以重新整理完成")
+提取以更新使用者身分已發行的提取。 這是什麼使用者會看到當您更新的清單： ![](interactivity-images/refresh-in-progress.png "ListView 提取以重新整理完成")
 
 ListView 會公開一些可讓您回應提取以重新整理事件的事件。
 

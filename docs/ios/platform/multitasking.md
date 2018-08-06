@@ -19,7 +19,7 @@ ms.locfileid: "34787951"
 
 _iOS 9 支援在同一時間、 透過使用投影片或分割檢視執行的兩個應用程式。它也支援視訊播放圖片的圖片。_
 
-![](multitasking-images/about02-sml.png "分割畫面範例") ![ ](multitasking-images/about03-sml.png "圖片中圖片的範例")
+![](multitasking-images/about02-sml.png "分割畫面範例") ![](multitasking-images/about03-sml.png "圖片中圖片的範例")
 
 iOS 9 加入多工作業支援特定的 iPad 硬體上同時執行兩個應用程式。 適用於 iPad 的多工可支援透過下列功能：
 
