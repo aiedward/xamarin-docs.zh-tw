@@ -1,42 +1,42 @@
 ---
-title: IOS 設計工具搭配使用的自訂控制項
-description: 本文件說明如何建立自訂控制項，並使用它搭配 Xamarin 的設計工具，適用於 iOS。 它會顯示如何將控制項設為 iOS 設計工具的工具箱中可用、 實作控制項，讓它正確轉譯和設計階段，等等。
+title: 使用 iOS 設計工具中的自訂控制項
+description: 本文件說明如何建立自訂控制項，並將它與 Xamarin 設計工具，適用於 iOS。 它會顯示如何將控制項設為 iOS 設計工具的工具箱中可用、 實作控制項，讓它正確轉譯，以及設計時間，以及更多。
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: dae675d65cb2be93ac828a1aebe560354630ab54
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 0097cdf006944a51d938ea91d3ea0b0c2aee08cf
+ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790161"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39573577"
 ---
-# <a name="using-custom-controls-with-the-ios-designer"></a>IOS 設計工具搭配使用的自訂控制項
+# <a name="using-custom-controls-with-the-ios-designer"></a>使用 iOS 設計工具中的自訂控制項
 
 ## <a name="requirements"></a>需求
 
-針對 Mac 和 Visual Studio 2015 2017 Windows 上的 Visual Studio 中使用 Xamarin 設計工具，適用於 iOS。
+使用適用於 Mac 和 Visual Studio 2015 和 2017年在 Windows 上的 Visual Studio 中適用於 iOS 的 Xamarin 設計工具。
 
-本指南假設熟悉內容涵蓋[快速入門引導](~/ios/get-started/index.md)。
+本指南假設您熟悉內容涵蓋[快速入門引導](~/ios/get-started/index.md)。
 
 ## <a name="walkthrough"></a>逐步解說
 
 > [!IMPORTANT]
-> 從開始 Xamarin.Studio 5.5，在其中建立自訂控制項的方式會稍有不同於舊版。 若要建立自訂控制項，或是`IComponent`介面 （具有相關聯的實作的方法） 或需要的類別可以是以註解`[DesignTimeVisible(true)]`。 第二個方法用於下列逐步解說範例。
+> 在 Xamarin.Studio 5.5 中從開始，在其中建立自訂控制項的方式是稍有不同於舊版。 若要建立自訂控制項，即`IComponent`介面 （具有相關聯的實作方法中） 或需要的類別可以是以註解`[DesignTimeVisible(true)]`。 第二個方法是在下列範例中，逐步解說使用。
 
 
-1. 建立新的方案從**iOS > 應用程式 > 單一檢視應用程式 > C#** 範本，其命名`ScratchTicket`，然後繼續進行 [新增專案] 精靈：
+1. 建立新的方案，從**iOS > 應用程式 > 單一檢視應用程式 > C#** 範本，其命名為`ScratchTicket`，然後繼續執行 [新增專案] 精靈：
 
     [![](ios-designable-controls-walkthrough-images/01new.png "建立新的方案")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
 
-1. 建立新的空的類別檔案命名為`ScratchTicketView`:
+1. 建立新的空的類別檔案，名為`ScratchTicketView`:
 
     [![](ios-designable-controls-walkthrough-images/02new.png "建立新的 ScratchTicketView 類別")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
 
-1. 加入下列程式碼`ScratchTicketView`類別：
+1. 新增下列程式碼`ScratchTicketView`類別：
 
     ```csharp
     using System;
@@ -158,58 +158,58 @@ ms.locfileid: "34790161"
     ```
 
 
-1. 新增`FillTexture.png`，`FillTexture2.png`和`Monkey.png`檔案 (使用[從 GitHub](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)) 至**資源**資料夾。
+1. 新增`FillTexture.png`，`FillTexture2.png`並`Monkey.png`檔案 (可用[從 GitHub](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)) 來**資源**資料夾。
     
-1. 按兩下`Main.storyboard`在設計工具中開啟的檔案：
+1. 按兩下`Main.storyboard`檔案，以在設計工具中開啟它：
 
     [![](ios-designable-controls-walkthrough-images/03new.png "IOS 設計工具")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
 
 
-1. 拖放**影像檢視**從**工具箱**到分鏡腳本中的檢視。
+1. 拖放**映像檢視**從**工具箱**拖曳至腳本中的檢視。
 
-    [![](ios-designable-controls-walkthrough-images/04new.png "影像檢視加入至配置")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/04new.png "映像檢視加入至版面配置")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
 
 
-1. 選取**影像檢視**並變更其**映像**屬性`Monkey.png`。
+1. 選取 **映像檢視**並變更其**映像**屬性設`Monkey.png`。
 
-    [![] (ios-設計-控制項的逐步解說-映像/05new.png Monkey.png 至 「 設定映像檢視映像屬性)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/05new.png "將映像檢視映像屬性設定為 Monkey.png")](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
     
-1. 當我們使用大小類別我們需要以限制此映像的檢視。 按兩次，將它放入條件約束模式映像上。 讓我們來限制它中央按一下 center 固定控制代碼，並將其對齊垂直和水平：
+1. 因為我們會使用大小類別我們需要以限制此映像檢視。 按兩次，以將它放入條件約束模式映像上。 讓我們圖形中央 center 釘選的控制代碼，即可限制，並且垂直和水平對齊：
 
-    [![](ios-designable-controls-walkthrough-images/06new.png "置中顯示的影像")](ios-designable-controls-walkthrough-images/06new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/06new.png "將影像置中")](ios-designable-controls-walkthrough-images/06new.png#lightbox)
 
-1. 若要限制的高度和寬度，按一下大小釘選的控制代碼 （'骨' 形狀控點），分別選取寬度和高度：
+1. 若要限制的高度和寬度，大小固定的控制代碼 （'骨' 形狀控點） 上按一下並選取寬度和高度分別：
 
-    [![](ios-designable-controls-walkthrough-images/07new.png "加入條件約束")](ios-designable-controls-walkthrough-images/07new.png#lightbox)
-
-
-1. 更新依據條件約束，依序按一下 [更新] 按鈕，在工具列上的框架：
-
-    [![](ios-designable-controls-walkthrough-images/08new.png "條件約束工具列")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/07new.png "新增條件約束")](ios-designable-controls-walkthrough-images/07new.png#lightbox)
 
 
-1. 接下來，建置專案，讓**Scratch 票證檢視**會出現在 **「 自訂 」 元件**工具箱中：
+1. 更新根據條件約束，依序按一下 [更新] 按鈕的工具列中的框架：
 
-    [![](ios-designable-controls-walkthrough-images/09new.png "「 自訂 」 元件工具箱")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
-
-
-1. 將拖放**Scratch 票證檢視**使其顯示透過猴子映像。 調整拖曳控點，讓 Scratch 票證檢視涵蓋猴子完全，如下所示：
-
-    [![](ios-designable-controls-walkthrough-images/10new.png "在影像檢視可用的票證檢視")](ios-designable-controls-walkthrough-images/10new.png#lightbox)
-
-1. 限制在影像檢視 Scratch 票證檢視藉由繪製以選取這兩個檢視的周框。 選取選項，以限制它根據條件約束、 寬度、 高度、 中央和中介和更新的畫面格，如下所示：
-
-    [![](ios-designable-controls-walkthrough-images/11new.png "置中和加入條件約束")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/08new.png "限制式工具列")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
 
-1. 執行應用程式，「 scratch 關閉 」 以顯示猴子映像。
+1. 接下來，建置專案，讓**臨時票證檢視**下方會出現 **「 自訂 」 元件**[工具箱] 中：
+
+    [![](ios-designable-controls-walkthrough-images/09new.png "自訂元件 [工具箱]")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
+
+
+1. 將拖放**臨時票證檢視**，使其出現透過 monkey 映像。 調整拖曳控點，讓 [Scratch] 票證檢視涵蓋 monkey 完全，如下所示：
+
+    [![](ios-designable-controls-walkthrough-images/10new.png "透過映像檢視一個臨時票證檢視")](ios-designable-controls-walkthrough-images/10new.png#lightbox)
+
+1. 藉由繪製以選取這兩個檢視的周框限制臨時票證檢視到映像檢視。 選取選項，以限制根據條件約束，寬度、 高度、 中央和中間和更新畫面格，如下所示：
+
+    [![](ios-designable-controls-walkthrough-images/11new.png "置中顯示與新增的條件約束")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
+
+
+1. 執行應用程式，並 「 臨時關閉 」 以顯示 monkey 映像。
 
     [![](ios-designable-controls-walkthrough-images/10-app.png "執行範例應用程式")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
-## <a name="adding-design-time-properties"></a>將設計階段屬性
+## <a name="adding-design-time-properties"></a>新增設計階段屬性
 
-在設計工具也包含的屬性類型的數值、 列舉、 字串、 bool、 CGSize UIColor 和 UIImage 自訂控制項的設計階段支援。 為了示範，我們將屬性加入至`ScratchTicketView`設為 「 向關閉。 」 的映像
+設計工具也會包含自訂控制項的屬性類型的數值、 列舉、 字串、 bool、 CGSize、 UIColor 和 UIImage 的設計階段支援。 為了示範，讓我們將屬性新增至`ScratchTicketView`設為"稍微示範一下關閉。 」 的映像
 
 將下列程式碼加入`ScratchTicketView`屬性類別：
 
@@ -225,7 +225,7 @@ public UIImage Image
 }
 ```
 
-我們也可能想要加入 null 檢查，以`Draw`方法，就像這樣：
+我們可能也想要新增 null 檢查，以`Draw`方法，就像這樣：
 
 ```csharp
 public override void Draw(CGRect rect)
@@ -265,17 +265,17 @@ public override void Draw(CGRect rect)
 }
 ```
 
-包括`ExportAttribute`和`BrowsableAttribute`引數設定為與`true`在設計工具中顯示的屬性會導致**屬性**面板。 屬性變更為另一個映像包含的專案，例如`FillTexture2.png`，導致控制項更新在設計階段，如下所示：
+包括`ExportAttribute`並`BrowsableAttribute`引數設定為使用`true`顯示在設計工具的屬性會導致**屬性**面板。 屬性變更為另一個映像包含的專案，例如`FillTexture2.png`，導致在設計階段控制項更新，如下所示：
 
  [![](ios-designable-controls-walkthrough-images/11-customproperty.png "編輯設計階段屬性")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="summary"></a>總結
 
-本文章中我們逐步解說如何建立自訂控制項，以及使用 iOS 設計工具的 iOS 應用程式中使用該程式。 我們了解如何建立並建置該控制項以將其提供給應用程式在設計工具中**工具箱**。 此外，我們討論了如何實作控制項，如此可正確轉譯在設計階段和執行階段，以及如何將自訂控制項設計工具中的屬性公開。
+在本文中我們逐步解說如何建立自訂控制項，以及使用 iOS 設計工具的 iOS 應用程式中使用該程式。 我們了解如何建立並建置將它提供給應用程式在設計工具中的控制項**工具箱**。 此外，我們探討了如何實作控制項，使它正確轉譯在設計階段和執行階段，以及如何公開 （expose） 的設計工具中的自訂控制項屬性。
 
 
 
 ## <a name="related-links"></a>相關連結
 
 - [ScratchTicket （範例）](https://developer.xamarin.com/samples/monotouch/ScratchTicket/)
-- [必要的映像 （範例）](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)
+- [所需的映像 （範例）](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)

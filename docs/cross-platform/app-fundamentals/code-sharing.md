@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: B73675D2-09A3-14C1-E41E-20352B819B53
 author: conceptdev
 ms.author: crdun
-ms.date: 07/18/2018
-ms.openlocfilehash: 82a73619e4c0507e8857cc91d88ababa870013de
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 08/06/2018
+ms.openlocfilehash: 98b5786ae4f071b4d8e8f854561db97aee037fdc
+ms.sourcegitcommit: aa7b0182d117e2af66ffaa4fa29b8c214ceecae1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270468"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39520281"
 ---
 # <a name="sharing-code-overview"></a>共用程式碼概觀
 
@@ -19,7 +19,7 @@ _這份文件比較跨平台專案間共用程式碼的不同方法：.NET Stand
 
 有三種方法來跨平台應用程式間共用程式碼：
 
-- [**.NET 標準程式庫**](#Net_Standard) –.NET Standard 專案可實作跨多個平台上共用的程式碼，而且可以存取大量的.NET Api （視版本而定）。 過大的.NET standard 1.0-1.6 實作設定的 Api，而.NET Standard 2.0 提供的最佳涵蓋範圍。
+- [**.NET 標準程式庫**](#Net_Standard) –.NET Standard 專案可實作跨多個平台上共用的程式碼，而且可以存取大量的.NET Api （視版本而定）。 .NET standard 1.0-1.6 實作 Api，以漸進方式較大的集，而.NET Standard 2.0 提供 （包括適用於 Xamarin 應用程式的.NET Api） 的.NET BCL 的最佳涵蓋範圍。
 - [**共用專案**](#Shared_Projects) – 使用共用資產專案類型來組織您的原始程式碼，並使用`#if`編譯器指示詞為必要項目來管理特定平台需求。
 - [**可攜式類別庫**](#Portable_Class_Libraries) （已過時）-可攜式類別庫 (Pcl) 可以使用常見的 API 介面、 多重平台為目標並使用介面來提供平台特有的功能。 Visual Studio 的最新版本中已被取代的 Pcl&ndash;改為使用.NET Standard。
 
