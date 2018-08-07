@@ -254,7 +254,7 @@ Xamarin.Mac 需要的標頭檔，從要建置應用程式的靜態註冊機構�
 
 <a name="MM2009" />
 
-#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009: 所參考{0}。{1}    * * 此訊息是否關係到 MM2006 * *
+#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009: 所參考{0}。{1}    ** 此訊息是否關係到 MM2006 **
 
 <a name="MM2010" />
 
@@ -266,7 +266,7 @@ Xamarin.Mac 需要的標頭檔，從要建置應用程式的靜態註冊機構�
 
 <a name="MM2012" />
 
-#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: 只有第一個{0}的{1}「 參考 」 所示的警告。 * * 此訊息相關 2009 * *
+#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: 只有第一個{0}的{1}「 參考 」 所示的警告。 ** 此訊息相關 2009 \*\*
 
 <a name="MM2013" />
 
@@ -274,7 +274,7 @@ Xamarin.Mac 需要的標頭檔，從要建置應用程式的靜態註冊機構�
 
 <a name="MM2014" />
 
-#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>Xamarin.Mac 延伸 MM2014： 不支援連結。 將略過連結要求。 * * 這個訊息是 XML 3.6 + 中的過時 * *
+#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>Xamarin.Mac 延伸 MM2014： 不支援連結。 將略過連結要求。 ** 這個訊息是 XML 3.6 + 中的過時 \*\*
 
 <!-- 2015 used by mtouch -->
 
