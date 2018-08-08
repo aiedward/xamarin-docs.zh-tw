@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/08/2018
-ms.openlocfilehash: 865a06e9fa430e195ce4ea3c6088785d9513dbf6
-ms.sourcegitcommit: cfb72be633e335147d156af3ef9527151b9e31d9
+ms.openlocfilehash: 4e1249b7a9c1e9797cbc758c3bd1b83f87d47431
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39030700"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615144"
 ---
 # <a name="introduction-to-ios-12"></a>IOS 12 簡介
 
@@ -21,11 +21,12 @@ ms.locfileid: "39030700"
 > [!WARNING]
 > Xamarin iOS 12 支援目前為預覽狀態，它可能包含錯誤，這表示不具備完整功能，而且可能變更。 您可以使用它僅用於進行測試。
 
-> [!NOTE]
-> - 檢閱[開始使用](get-started.md)指南的指示，有關如何開始建置使用 Xamarin iOS 12 應用程式。
-> - 如需詳細資訊，請閱讀 Xamarin 預覽版[釋放部落格文章](https://releases.xamarin.com/preview-release-xcode-10-beta-3/)。
-
 本文件提供的 Xamarin 預覽版本提供 C# 繫結的某些 iOS 12 Api 的高層級描述。
+
+若要開始建置使用 Xamarin iOS 12 應用程式，看看：
+
+- [入門指南](get-started.md)
+- Xamarin 預覽[版本部落格文章](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
 
 ## <a name="arkit-2"></a>ARKit 2
 
@@ -69,8 +70,12 @@ Ios 12、 第三方密碼管理員 」 應用程式可以提供擴充功能來�
 
 在 iOS 12、 iMessage 應用程式支援簡報內容，允許做為一般 iMessage 應用程式或相片或視訊效果的內容中執行的應用程式。
 
+## <a name="vision-framework"></a>視覺架構
+
+視覺架構包含可以在不同的方向，偵測臉改良的臉部偵測器。 此外，要求修訂現在可用來選取特定的目標 framework 演算法修訂。
+
 ## <a name="related-links"></a>相關連結
 
 - [準備開始使用適用於 iOS (Apple) 12](https://developer.apple.com/ios/)
 - [iOS 12 預覽 (Apple)](https://www.apple.com/ios/ios-12-preview/)
-- Xamarin 預覽[版本部落格文章](https://releases.xamarin.com/preview-release-xcode-10-beta-3/)
+- Xamarin 預覽[版本部落格文章](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)

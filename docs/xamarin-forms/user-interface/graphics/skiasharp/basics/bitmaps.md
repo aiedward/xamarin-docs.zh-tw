@@ -2,17 +2,17 @@
 title: SkiaSharp 點陣圖基本概念
 description: 本文說明如何從各種來源載入 SkiaSharp 點陣圖並將它們顯示在 Xamarin.Forms 應用程式，並示範此範例程式碼。
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/17/2018
-ms.openlocfilehash: 5a535d60dd01e32dc1d888d3372db13312cc069a
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 92863ff9e843cabc26c568e95aab52c6d199c35e
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156960"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615199"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp 點陣圖基本概念
 

@@ -1,40 +1,40 @@
 ---
 title: 聚合線條和參數化的方程式
-description: 本文說明方式來使用 SkiaSharp 轉譯任何一行您可以定義之參數的方程式，並以範例程式碼為其示範。
+description: 本文說明如何使用 SkiaSharp 呈現任何列到您可以定義參數化的方程式，並示範此範例程式碼。
 ms.prod: xamarin
 ms.assetid: 85AEBB33-E954-4364-A6E1-808FAB197BEE
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9539a21b7dbc91da63795639610886233ed705be
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 9118ca8e23e4c4a9023a1add89e26c4484979c8f
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245305"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615791"
 ---
 # <a name="polylines-and-parametric-equations"></a>聚合線條和參數化的方程式
 
-_使用 SkiaSharp 轉譯任何一行您可以定義之參數的方程式_
+_呈現任何列，您可以定義參數化的方程式中使用 SkiaSharp_
 
-在本指南稍後的部分，您會看到的各種方法，`SKPath`定義來呈現特定類型的曲線。 不過，則有時需要繪製曲線不直接支援的一種`SKPath`。 在這種情況下，您可以使用多線 （連接的直線的集合） 來繪製以數學方式可以定義任何曲線。 如果您讓行夠小，而且許多足夠，結果看起來像曲線。 此老舊是實際的 3600 小行：
+在本指南後半部分，您會看到的各種方法，`SKPath`定義來呈現特定類型的曲線。 不過，有時候是必要的繪製不直接支援的曲線類型`SKPath`。 在此情況下，您可以使用聚合線 （已連接的線條的集合） 來繪製以數學方式可以定義任何曲線。 如果您讓行夠小，許多足夠，結果將看起來曲線。 此螺旋是實際 3,600 的少幾行：
 
-![](polylines-images/spiralexample.png "老舊")
+![](polylines-images/spiralexample.png "螺旋")
 
-通常最好定義參數化的方程式的一組根據曲線。 這些是方程式的 X 和 Y 座標，取決於第三個變數，有時也稱為`t`時間。 例如，下列參數的方程式定義圓形半徑為 （0，0） 的點置中對齊的 1 *t*從 0 到 1:
+通常最好是定義一組參數化的方程式方面的曲線。 這些是方程式的 X 和 Y 座標，取決於第三個變數，有時也稱為`t`時間。 比方說，下列參數化的方程式定義半徑為 1 的中心點 （0，0） 位於圓形*t*從 0 到 1:
 
  x = cos(2πt) y = sin(2πt)
 
- 如果您想大於 1 的半徑，只是可以的正弦函數 」 與 「 餘弦值乘以該 radius，及您需要將中央移到其他位置，如果加入這些值：
+ 如果您想 radius 大於 1，可以只的正弦和餘弦函數值乘以該 radius，，和如果您需要將中央移到其他位置，將這些值加入：
 
  x = xCenter + radius·cos(2πt) y = yCenter + radius·sin(2πt)
 
-要水平及垂直軸平行橢圓形，牽涉到兩個半徑：
+針對至水平及垂直軸平行橢圓形，牽涉到兩個的半徑：
 
 x = xCenter + xRadius·cos(2πt) y = yCenter + yRadius·sin(2πt)
 
-然後，您就可以計算不同的點，並新增至路徑的迴圈中放置對等的 SkiaSharp 程式碼。 下列 SkiaSharp 程式碼會建立`SKPath`橢圓形填滿顯示介面的物件。 迴圈循環 360 度直接。 中心 是一半的寬度和高度顯示介面，並因此是兩個半徑：
+然後，您可以將對等的 SkiaSharp 程式碼放在迴圈中，會計算不同的點，以及將這些路徑。 下列 SkiaSharp 程式碼會建立`SKPath`橢圓形的填滿顯示介面的物件。 迴圈循環 360 度直接。 Center 是一半的寬度和高度顯示介面上，因此是兩個的半徑：
 
 ```csharp
 SKPath path = new SKPath();
@@ -57,11 +57,11 @@ for (float angle = 0; angle < 360; angle += 1)
 path.Close();
 ```
 
-這會導致 360 小行所定義的橢圓形。 轉譯時，它會顯示平滑。
+這會導致 360 小線條所定義的橢圓形。 轉譯時，它會顯示平滑。
 
-當然，您不需要建立橢圓形使用的聚合線條，因為`SKPath`包含`AddOval`會為您的方法。 但您可能想要繪製的視覺物件不由提供`SKPath`。
+當然，您不需要建立使用多線，因為橢圓形`SKPath`包含`AddOval`會為您的方法。 但您可能想要繪製的視覺物件不由提供`SKPath`。
 
-**Archimedean 老舊**頁面具有類似的程式碼的省略符號的程式碼，但重要的差異。 它迴圈循環 360 度的圓形 10 次，持續調整半徑：
+**Archimedean 螺旋**頁面有類似的程式碼的省略符號的程式碼，但重要的差異。 它迴圈循環 360 度的圓形 10 次，持續調整半徑：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -107,14 +107,14 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-也稱為結果*算術老舊*因為每個迴圈之間的位移是常數：
+其結果也稱為*算術螺旋*因為每個迴圈之間的位移保持不變：
 
-[![](polylines-images/archimedeanspiral-small.png "三個螢幕擷取畫面的 Archimedean 老舊頁面")](polylines-images/archimedeanspiral-large.png#lightbox "Archimedean 老舊頁面的三個螢幕擷取畫面")
+[![](polylines-images/archimedeanspiral-small.png "Archimedean 螺旋頁面的三個螢幕擷取畫面")](polylines-images/archimedeanspiral-large.png#lightbox "Archimedean 螺旋頁面的三個螢幕擷取畫面")
 
-請注意，`SKPath`中建立`using`區塊。 這`SKPath`會消耗更多的記憶體比`SKPath`物件在先前的程式中，建議`using`區塊會更適當地處置任何 unmanaged 的資源。
+請注意，`SKPath`中建立`using`區塊。 這`SKPath`耗用記憶體比`SKPath`物件，在先前的程式中，暗示著`using`區塊會更適當處置任何 unmanaged 的資源。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -1,44 +1,44 @@
 ---
-title: 路徑中 SkiaSharp 的基本概念
-description: 本文探討結合連接的直線和曲線的 SkiaSharp SKPath 物件，並示範此範例程式碼。
+title: SkiaSharp 中路徑的基本概念
+description: 本文將探討結合連接的直線和曲線的 SkiaSharp SKPath 物件，並示範此範例程式碼。
 ms.prod: xamarin
 ms.assetid: A7EDA6C2-3921-4021-89F3-211551E430F1
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 2fc492f723a7a009da506d241ddf2e8459908633
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 3c07614c12fb503638d3d5e63b24eb5367ba691a
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244041"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615531"
 ---
-# <a name="path-basics-in-skiasharp"></a>路徑中 SkiaSharp 的基本概念
+# <a name="path-basics-in-skiasharp"></a>SkiaSharp 中路徑的基本概念
 
-_瀏覽結合連接的直線和曲線的 SkiaSharp SKPath 物件_
+_探索結合連接的直線和曲線的 SkiaSharp SKPath 物件_
 
-能夠定義多行應該連接時，和當他們不應該連接其中一個最重要的受的圖形路徑。 這些兩個三角形的上緣示範可以是完全可見，差異：
+其中一個最重要的圖形路徑是受的定義多行應該連接時和當他們不應該連接的能力。 這些兩個三角形的短片示範可以是相當可見，差異：
 
 ![](paths-images/connectedlinesexample.png "兩個三角形顯示連線和中斷的線條之間的差異")
 
-封裝的圖形路徑[ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/)物件。 路徑是一或多個集合*分佈*。 每個分佈是一組*連接*直線和曲線。 分佈未彼此連線，但它們以視覺化方式可能會重疊。 有時單一分佈可以重疊本身。
+封裝的圖形路徑[ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/)物件。 路徑是一或多個集合*輪廓*。 每個分佈是一堆*連線*直線和曲線。 輪廓未彼此連線，但它們可能會以視覺化方式重疊。 有時單一 contour 可以重疊本身。
 
-以下列方法的呼叫通常開頭分佈`SKPath`:
+Contour 通常開始的下列方法呼叫`SKPath`:
 
 - `MoveTo` 若要開始新的分佈
 
-該方法的引數是單一點，您可以表示為`SKPoint`或做為個別的 X 和 Y 座標值。 `MoveTo`呼叫建立的點開頭的分佈和初始*目前點*。 您可以呼叫下列方法，以繼續進行的分佈與線條或曲線從目前的位置中指定的方法，就會變成新的目前點的點：
+該方法的引數是單一點，您可以表示為`SKPoint`值，或作為個別的 X 和 Y 座標。 `MoveTo`呼叫會建立在開始點的分佈和初始*目前的點*。 您可以呼叫下列方法，以繼續使用線條或曲線從目前的點來指定在方法中，就會變成新的目前點的點分佈：
 
-- `LineTo` 要加入的路徑為直線
+- `LineTo` 若要新增至路徑的一條直線
 - `ArcTo` 若要新增的弧形，這是圓形或橢圓形的圓周上的線上
-- `CubicTo` 若要加入的三次方貝茲曲線
-- `QuadTo` 若要加入的二次方貝茲曲線
-- `ConicTo` 若要加入的合理二次方貝茲曲線，可以正確地轉譯 conic 區段 （省略符號、 parabolas 和 hyperbolas）
+- `CubicTo` 若要新增的三次方貝茲曲線
+- `QuadTo` 若要新增的二次方貝茲曲線
+- `ConicTo` 若要新增 rational 二次方貝茲曲線，可正確轉譯 conic 區段 （省略符號，parabolas 和 hyperbolas）
 
-這些五個方法都包含描述線條或曲線所需的所有資訊。 每個五個方法是與搭配目前立即在它前面的方法呼叫所建立的點。 例如，`LineTo`方法會將直線線段來根據目前的點，因此參數`LineTo`是單一點。
+這些五個方法都包含描述線條或曲線所需的所有資訊。 每個五個方法和目前的點建立立即在它前面的方法呼叫的方法是搭配。 例如，`LineTo`方法會加入一條直線線段來根據目前的點，因此參數`LineTo`是單一點。
 
-`SKPath`類別也會定義具有相同的名稱為下列六種方法，但具有方法`R`開頭：
+`SKPath`類別也會定義具有相同的名稱為這些六種方法，但方法`R`開頭：
 
 - `RMoveTo`
 - `RLineTo`
@@ -47,11 +47,11 @@ _瀏覽結合連接的直線和曲線的 SkiaSharp SKPath 物件_
 - `RQuadTo`
 - `RConicTo`
 
-`R`代表*相對*。 它們有沒有對應的方法與相同的語法`R`但相對於目前的點。 這些是路徑的很方便用來繪製類似的組件的多次呼叫的方法中。
+`R`代表*相對*。 它們有相同的語法，為對應的方法，而不必`R`但相對於目前的點。 這些是路徑的很方便的繪製類似的組件的多次呼叫的方法中。
 
-分佈的結尾是另一個呼叫`MoveTo`或`RMoveTo`，其開始新的分佈或呼叫`Close`，這會關閉分佈。 `Close`方法會自動將附加至直線從目前點的第一個點的分佈，並將路徑標示為已關閉，這表示，它將不會呈現任何筆觸端點。
+Contour 結束再呼叫一次`MoveTo`或是`RMoveTo`，其會開始新的分佈或呼叫`Close`，這會關閉分佈。 `Close`方法會自動附加一條直線從目前點的第一個點的分佈，並將路徑標示為已關閉，這表示，它將不會呈現任何筆觸端點。
 
-開啟或關閉分佈之間的差異如下所示**兩個三角形分佈**頁面上，它會使用`SKPath`物件具有兩個分佈來呈現兩個三角形。 第一個分佈是開啟和關閉第二個。 以下是[ `TwoTriangleContours` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs)類別：
+開啟和關閉的輪廓之間的差異所示**兩個三角形輪廓**頁面上，使用`SKPath`呈現兩個三角形的兩個分佈物件。 第一個線段是開啟和關閉第二個。 以下是[ `TwoTriangleContours` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs)類別：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -97,33 +97,33 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-第一個分佈所組成的呼叫[ `MoveTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.MoveTo/p/System.Single/System.Single/)使用 X 和 Y 座標，而非`SKPoint`值，後面接著三次呼叫[ `LineTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.LineTo/p/System.Single/System.Single/)繪製的三個邊三角形。 第二個分佈都有只有兩個呼叫`LineTo`但在完成呼叫分佈[ `Close` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Close()/)，這會關閉分佈。 差異十分重要：
+呼叫包含的第一個分佈[ `MoveTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.MoveTo/p/System.Single/System.Single/)使用 X 和 Y 座標，而非`SKPoint`值，後面接著三次呼叫[ `LineTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.LineTo/p/System.Single/System.Single/)繪製的三個邊三角形。 第二個分佈都有只有兩個呼叫`LineTo`但完成藉由呼叫 contour [ `Close` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Close()/)，這會關閉的分佈。 差異十分重要：
 
-[![](paths-images/twotrianglecontours-small.png "三個螢幕擷取畫面的兩個三角形分佈頁面")](paths-images/twotrianglecontours-large.png#lightbox "的兩個三角形分佈頁面的三個螢幕擷取畫面")
+[![](paths-images/twotrianglecontours-small.png "兩個三角形輪廓頁面的三個螢幕擷取畫面")](paths-images/twotrianglecontours-large.png#lightbox "的兩個三角形輪廓頁面的三個螢幕擷取畫面")
 
-如您所見，第一個分佈顯然是一系列的三個連接的直線，但並不會起始連接結束。 上方，重疊兩行。 第二個分佈會很明顯地關閉，並使用較少的其中一個已完成`LineTo`呼叫因為`Close`方法會自動將關閉分佈的最後一行。
+如您所見，第一個分佈顯然是一系列的三個連接的直線，但結束時未連線開頭。 上方，重疊兩條線。 第二個分佈很明顯地關閉，並使用較少的其中一個已完成`LineTo`呼叫因為`Close`方法會自動新增以關閉 線段的最後一行。
 
-`SKCanvas` 僅定義一個[ `DrawPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawPath/p/SkiaSharp.SKPath/SkiaSharp.SKPaint/)方法，該方法在此示範中呼叫兩次來填滿與繪製路徑。 所有的分佈會填滿，即使未關閉的。 為了填入未封閉的路徑，直線會假設之間的開始和結束點的分佈。 如果您移除最後一個`LineTo`從第一個分佈或移除`Close`從第二個分佈，也就是每個分佈的呼叫將會有填滿，就好像三角形但將只有兩個邊。
+`SKCanvas` 只會定義一個[ `DrawPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawPath/p/SkiaSharp.SKPath/SkiaSharp.SKPaint/)方法，這在這段示範影片中呼叫兩次以填滿和繪製路徑。 所有的分佈會填滿，即使未關閉的。 一條直線的填滿封閉的路徑的目的，假設之間的開始和結束點的輪廓。 如果您移除最後一個`LineTo`從第一個分佈或移除`Close`從第二個分佈，也就是每個分佈的呼叫必須如同它是一個三角形填滿但將只有兩個邊。
 
-`SKPath` 定義許多其他方法和屬性。 下列方法會加入至路徑，它可能已關閉或未根據方法關閉整個分佈：
+`SKPath` 定義許多其他方法和屬性。 下列方法會新增至路徑，它可能已關閉或未根據方法關閉整個的輪廓：
 
 - `AddRect`
 - [`AddRoundedRect`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddRoundedRect/p/SkiaSharp.SKRect/System.Single/System.Single/SkiaSharp.SKPathDirection/)
 - [`AddCircle`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddCircle/p/System.Single/System.Single/System.Single/SkiaSharp.SKPathDirection/)
 - [`AddOval`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddOval/p/SkiaSharp.SKRect/SkiaSharp.SKPathDirection/)
-- [`AddArc`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddArc/p/SkiaSharp.SKRect/System.Single/System.Single/) 若要加入的橢圓形的圓周上曲線
-- `AddPath` 若要加入另一個路徑至目前的路徑
-- [`AddPathReverse`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddPathReverse/p/SkiaSharp.SKPath/) 若要加入另一個路徑以反向方向
+- [`AddArc`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddArc/p/SkiaSharp.SKRect/System.Single/System.Single/) 將曲線上的橢圓形的圓周
+- `AddPath` 若要將另一個路徑新增至目前的路徑
+- [`AddPathReverse`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddPathReverse/p/SkiaSharp.SKPath/) 若要反向新增另一個路徑
 
-請注意，`SKPath`物件定義的幾何&mdash;一連串的點和連接。 只有當`SKPath`結合`SKPaint`物件是以特定色彩、 筆劃寬度等呈現的路徑。 此外，請注意，`SKPaint`物件傳遞至`DrawPath`方法所定義的完整路徑的特性。 如果您想要繪製項目需要數個色彩，您必須使用個別的路徑為每個色彩。
+請記住`SKPath`物件會定義只幾何&mdash;一連串的點和連接。 只有當`SKPath`結合`SKPaint`物件是使用特定的色彩、 筆觸粗細等呈現的路徑。 此外，請記住`SKPaint`物件傳遞給`DrawPath`方法定義特性的完整路徑。 如果您想要繪製項目需要幾個色彩，您必須使用不同的路徑，每一種色彩。
 
-兩行之間的連線的外觀就像筆觸端點定義的開始和結束的線條的外觀，由定義*筆劃聯結*。 您可以設定這指定[ `StrokeJoin` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeJoin/)屬性`SKPaint`成員[ `SKStrokeJoin` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeJoin/)列舉型別：
+就像筆觸端點所定義的開始和結束行的外觀，由定義兩行之間的連線的外觀*筆劃聯結*。 您可以設定指定這[ `StrokeJoin` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeJoin/)屬性`SKPaint`成員[ `SKStrokeJoin` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeJoin/)列舉型別：
 
 - [`Miter`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Miter/) 尖聯結
 - [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Round/) 圓角聯結
-- [`Bevel`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Bevel/) 切碎關閉聯結
+- [`Bevel`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Bevel/) 已關閉聯結
 
-**筆劃聯結**頁面上的顯示這三個筆觸與類似的程式碼的聯結**筆觸端點**頁面。 這是`PaintSurface`中的事件處理常式[ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs)類別：
+**筆劃聯結**頁面上的顯示這三個描邊與類似的程式碼的聯結**筆觸端點**頁面。 這是`PaintSurface`中的事件處理常式[ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs)類別：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -189,12 +189,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 以下是三個平台上執行的程式：
 
-[![](paths-images/strokejoins-small.png "筆觸加入頁面的三個螢幕擷取畫面")](paths-images/strokejoins-large.png#lightbox "筆劃加入頁面的三個螢幕擷取畫面")
+[![](paths-images/strokejoins-small.png "筆劃加入頁面的三個螢幕擷取畫面")](paths-images/strokejoins-large.png#lightbox "筆劃加入頁面的三個螢幕擷取畫面")
 
-斜接角聯結尖點，其中線條的連接所組成。 當兩行程式碼加入小角時，斜接角聯結可能會變得很冗長。 若要避免過長斜接角聯結時，斜接角聯結的長度會受到值[ `StrokeMiter` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeMiter/)屬性`SKPaint`。 超過此長度斜接角聯結砍變成斜面聯結。
+斜接角聯結是由井字點，其中線條的連接所組成。 當兩行進入小角時，斜接角聯結可能會變得很長。 若要防止過長斜接角聯結時，斜接角聯結的長度會受到的值[ `StrokeMiter` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeMiter/)屬性`SKPaint`。 超過此長度斜接角聯結砍成為斜面聯結。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

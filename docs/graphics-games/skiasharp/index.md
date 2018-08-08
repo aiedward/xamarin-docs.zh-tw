@@ -2,16 +2,17 @@
 title: 使用 SkiaSharp 2D 繪圖
 description: 本文件概述的跨平台 2D 與 SkiaSharp 繪圖。 它會連結到各種描述 SkiaSharp 的輔助線和各種 Api。
 ms.prod: xamarin
+ms.techonology: xamarin-skiasharp
 ms.assetid: A8A61421-4544-422A-A7E0-9355C67DF21E
 author: charlespetzold
 ms.author: chape
 ms.date: 07/17/2018
-ms.openlocfilehash: 0c8cbc14308c8c4131e5aaa2bcc0ddfa798af610
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: 7207f33e56f566a5528d93f9957e2ff780a22a65
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130916"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615518"
 ---
 # <a name="2d-drawing-with-skiasharp"></a>使用 SkiaSharp 2D 繪圖
 
@@ -62,12 +63,12 @@ SkiaSharp 和範例的核心概念的概觀來呈現圖形、 文字、 點陣�
   * [路徑資訊與列舉](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
 - [點陣圖](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/index.md)
   * [顯示點陣圖](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/displaying.md)
-  * [建立和繪製點陣圖](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/drawing.md)
+  * [建立及繪製點陣圖](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/drawing.md)
   * [裁剪點陣圖](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/cropping.md)
-  * [分段的顯示的點陣圖](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/segmented.md)
+  * [分段顯示的點陣圖](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/segmented.md)
   * [將點陣圖儲存至檔案](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/saving.md)
-  * [存取的點陣圖像素位元](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/pixel-bits.md)
-  * [以動畫顯示點陣圖](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/animating.md)
+  * [存取點陣圖像素位元](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/pixel-bits.md)
+  * [動畫顯示點陣圖](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/animating.md)
 
 ## <a name="platform-specific-notesgraphics-gamesskiasharpplatformmd"></a>[平台專用備註](~/graphics-games/skiasharp/platform.md)
 

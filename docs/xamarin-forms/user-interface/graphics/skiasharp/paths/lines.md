@@ -1,42 +1,42 @@
 ---
 title: 線條和筆觸端點
-description: 本文章說明如何使用 SkiaSharp Xamarin.Forms 應用程式，以繪製線條會有不同的筆觸端點，並示範此範例程式碼。
+description: 本文說明如何使用 SkiaSharp 繪製線條使用不同的筆觸端點在 Xamarin.Forms 應用程式，並示範此範例程式碼。
 ms.prod: xamarin
 ms.assetid: 1F854DDD-5D1B-4DE4-BD2D-584439429FDB
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: f63d14ae0dff5f94580c86d1c5bfdfc66bbee7f9
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 000bf24c1b06baab892f0b165c8b9eeebebce49d
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244090"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615258"
 ---
 # <a name="lines-and-stroke-caps"></a>線條和筆觸端點
 
-_了解如何使用 SkiaSharp 使用不同的筆觸端點繪製線條_
+_了解如何使用 SkiaSharp 繪製線條使用不同的筆觸端點_
 
-在 SkiaSharp，繪製單一線條是非常不同轉譯一系列連接的直線。 即使當繪製單一線條，不過，通常是為了提供特定筆劃寬度和寬的線條的線條，更重要會成為一條線，呼叫端的外觀*筆觸端點*:
+SkiaSharp，在轉譯程式會非常不同於轉譯一系列連接的直線。 即使當繪製單一線條，不過，通常是特定的筆劃寬度和寬的線條，讓各行所需，更重要的會變成一條線，呼叫端的外觀*筆觸端點*:
 
 ![](lines-images/strokecapsexample.png "三個筆劃 cap 選項")
 
-用於繪製單一線條`SKCanvas`定義簡單[ `DrawLine` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawLine/p/System.Single/System.Single/System.Single/System.Single/SkiaSharp.SKPaint/)方法的引數表示的起始和結束的那一行座標`SKPaint`物件：
+繪製單一線條`SKCanvas`定義簡單[ `DrawLine` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawLine/p/System.Single/System.Single/System.Single/System.Single/SkiaSharp.SKPaint/)方法的起始和結束的那一行的座標，其引數指出`SKPaint`物件：
 
 ```csharp
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-根據預設，`StrokeWidth`屬性的新具現化`SKPaint`物件為 0，其具有值為 1 中呈現一個像素的線條粗細中相同的效果。 因此您可能會想要設定顯示針對高解析度裝置，例如手機，非常細`StrokeWidth`到較大的值。 但是，一旦您開始繪製可調整大小的粗細的線條，會引發另一個問題： 如何應該開始和結束這些粗線的呈現？
+根據預設，`StrokeWidth`屬性的新具現化`SKPaint`物件為 0，且具有值為 1，呈現一個像素的線條粗細中相同的效果。 因此您可能會想要設定顯示在高解析度裝置，例如手機上非常精簡`StrokeWidth`到較大的值。 但是，一旦您開始繪製可調整大小的粗細的線條，會引發另一個問題： 應該如何啟動和這些粗的行尾呈現？
 
-啟動和行尾的外觀會呼叫*線條端點*或在 Skia，*筆觸端點*。 在此內容中的 「 cap 」 這個字是指一種 hat&mdash;置放在桌上一行結尾的項目。 您設定[ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/)屬性`SKPaint`物件的下列成員的其中一個[ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/)列舉型別：
+在呼叫開始和結束的行的外觀*線條端點*或者 Skia，在*筆觸端點*。 在此內容中的 「 cap"是指一種 hat&mdash;位於該行結尾的項目。 您設定[ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/)屬性`SKPaint`物件的下列成員的其中一個[ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/)列舉型別：
 
 - [`Butt`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Butt/) （預設值）
 - [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 - [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 
-這些最好說明與範例程式。 第二個區段的 [首頁] 的[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式開始與頁面標題為**筆觸端點**根據[ `StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs)類別。 此頁面定義`PaintSurface`迴圈的三個成員的事件處理常式`SKStrokeCap`列舉型別，顯示列舉成員的名稱和繪製線條，使用該筆劃的端點：
+這些最佳說明與範例程式。 首頁上的第二部分[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式開頭的網頁標題**筆觸端點**根據[ `StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs)類別。 此頁面定義`PaintSurface`迴圈的三個成員的事件處理常式`SKStrokeCap`列舉型別，來顯示列舉成員的名稱，並繪製一條線使用該筆觸端點：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -90,25 +90,25 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-針對每個成員`SKStrokeCap`列舉型別，此處理常式繪製兩行，一個 50 像素和另一個位於頂端，使用 2 個像素的筆劃粗細的線條的筆劃粗細。 此第二行僅供示範幾何的開始與結束線條的粗細和筆觸端點獨立的一行：
+針對每個成員`SKStrokeCap`列舉型別，這個處理常式繪製兩行，其中一個筆劃粗細是 50 個像素並另一行筆觸粗細是 2 個像素定位在最上層。 此第二行的目的是要說明的幾何的開始和結束的線條的粗細和筆觸端點的獨立的一行：
 
-[![](lines-images/strokecaps-small.png "三個螢幕擷取畫面的筆觸端點頁面")](lines-images/strokecaps-large.png#lightbox "筆觸端點頁面的三個螢幕擷取畫面")
+[![](lines-images/strokecaps-small.png "筆觸端點 頁面的三個螢幕擷取畫面")](lines-images/strokecaps-large.png#lightbox "筆觸端點 頁面的三個螢幕擷取畫面")
 
-如您所見，`Square`和`Round`筆觸端點有效地擴充行長度的筆劃寬度的一半在一行的開頭和結尾一次。 需要判斷呈現的圖形物件的維度時，這項擴充功能變得很重要。
+如您所見，`Square`和`Round`筆觸端點有效地擴充一半筆觸粗細在一行的開頭和結尾一次一行的長度。 需要判斷轉譯的圖形物件的維度時，此延伸模組變得重要。
 
-`SKCanvas`類別還包括繪製多個線條會稍微罕見的另一個方法：
+`SKCanvas`類別也包含繪製多行是有點罕見的另一種方法：
 
 ```csharp
 DrawPoints (SKPointMode mode, points, paint)
 ```
 
-`points`參數為陣列`SKPoint`值和`mode`隸屬[ `SKPointMode` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPointMode/)列舉型別，有三個成員：
+`points`參數是陣列`SKPoint`值並`mode`隸屬[ `SKPointMode` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPointMode/)列舉型別，有三個成員：
 
 - [`Points`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Points/) 要呈現個別的點
-- [`Lines`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Lines/) 連線點每一對
+- [`Lines`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Lines/) 連接點每一對
 - [`Polygon`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Polygon/) 所有連續點的連線
 
-**多行**頁面會示範這個方法。 [ `MultipleLinesPage` XAML 檔案](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml)會呈現兩個`Picker`檢視，可讓您選取的成員`SKPointMode`列舉型別和成員`SKStrokeCap`列舉型別：
+**多行**頁面會示範這個方法。 [ `MultipleLinesPage` XAML 檔案](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml)具現化兩個`Picker`檢視，可讓您選取的成員`SKPointMode`列舉型別和成員`SKStrokeCap`列舉型別：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -178,9 +178,9 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs args)
 }
 ```
 
-這個處理常式需要檢查是否存在`SKCanvasView`因為事件處理常式是第一個呼叫物件時`SelectedIndex`屬性`Picker`設為 0，在 XAML 檔案中，而且會出現之前`SKCanvasView`具現化。
+這個處理常式需要檢查是否存在`SKCanvasView`物件因為這是第一次的事件處理常式時呼叫`SelectedIndex`屬性`Picker`設定為 0，在 XAML 檔案中，而且會出現之前`SKCanvasView`已具現化。
 
-`PaintSurface`處理常式存取泛型的方法，以取得兩個選取的項目，從`Picker`檢視，並將它們轉換為列舉值：
+`PaintSurface`處理常式會存取的泛型方法，以取得兩個選取的項目，從`Picker`檢視，並將它們轉換成列舉值：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -230,18 +230,18 @@ T GetPickerItem<T>(Picker picker)
 
 螢幕擷取畫面顯示各種`Picker`三個平台上的選取項目：
 
-[![](lines-images/multiplelines-small.png "多行網頁的三個螢幕擷取畫面")](lines-images/multiplelines-large.png#lightbox "多行網頁的三個螢幕擷取畫面")
+[![](lines-images/multiplelines-small.png "多行 頁面的三個螢幕擷取畫面")](lines-images/multiplelines-large.png#lightbox "多行 頁面的三個螢幕擷取畫面")
 
-在左邊顯示 iPhone 如何`SKPointMode.Points`列舉成員會造成`DrawPoints`來呈現每個在點`SKPoint`線條端點是否為方形陣列`Butt`或`Square`。 線條端點時，會轉譯圓形`Round`。
+左側顯示在 iPhone 如何`SKPointMode.Points`列舉成員會導致`DrawPoints`為了轉譯每個中的點`SKPoint`陣列為方形線條端點是否`Butt`或`Square`。 圓形線條端點是否呈現`Round`。
 
-當您改為使用`SKPointMode.Lines`，如在中心，Android 螢幕上顯示`DrawPoints`方法每對之間繪製一條線`SKPoint`值，在此情況下使用指定的線條端點`Round`。
+當您改為使用`SKPointMode.Lines`，在 [中心] 的 Android 畫面所示`DrawPoints`方法的兩個配對之間繪製線條`SKPoint`值，在此情況下使用指定的直線帽緣， `Round`。
 
-UWP 螢幕擷取畫面顯示的結果`SKPointMode.Polygon`值。 陣列中的連續點之間繪製一條線，但如果您非常仔細看，您會看到這些線條未連線。 每個別一行的開始和結束與指定的線條端點時。 如果您選取`Round`cap，線條可能似乎可以連接，但實際上未連接。
+UWP 螢幕擷取畫面顯示的結果`SKPointMode.Polygon`值。 陣列中的連續點之間繪製一條線，但如果您非常仔細看，您會看到這幾行未連線。 每個這些個別的行開始和結尾指定的線條端點。 如果您選取`Round`大寫字、 行可能會連線，但他們真的不連線。
 
-線條會連接或未連接是使用圖形路徑的重要層面。
+線條是連線或未連接是使用的圖形路徑的重要層面。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp 應用程式開發介面](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

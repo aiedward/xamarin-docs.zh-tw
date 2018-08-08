@@ -2,17 +2,17 @@
 title: SkiaSharp SVG 路徑資料
 description: 本文說明如何定義 SkiaSharp 路徑使用可擴充的向量圖形格式的文字字串，並示範此範例程式碼。
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 84b77313ec9cad4d0add3540fe4d26910e593ada
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: f3c06198ae9e677c667c9216b3ace8784a6056b2
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996778"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615323"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SkiaSharp SVG 路徑資料
 

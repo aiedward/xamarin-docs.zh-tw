@@ -2,17 +2,17 @@
 title: 存取 SkiaSharp 像素位元
 description: 探索各種不同的技術，用於存取和修改 SkiaSharp 點陣圖的像素位元。
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
 author: charlespetzold
 ms.author: chape
 ms.date: 07/11/2018
-ms.openlocfilehash: 51252a1c18602c704b87f7b01efe7cc5a7549ac1
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: 5d79dd89b5313d5d7ead665c54e9a27026cea38c
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39131214"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615622"
 ---
 # <a name="accessing-skiasharp-pixel-bits"></a>存取 SkiaSharp 像素位元
 

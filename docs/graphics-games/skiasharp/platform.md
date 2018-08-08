@@ -1,23 +1,24 @@
 ---
 title: SkiaSharp 平台專屬附註
-description: 本文件說明 SkiaSharp 與相關的特定平台詳細資料。 它會提供範例程式碼而言，iOS、 Android、 macOS、 Windows 和 Xamarin.Forms。
+description: 本文件說明與 SkiaSharp 有關的特定平台的詳細資料。 它會提供範例程式碼適用於 iOS、 Android、 macOS、 Windows 和 Xamarin.Forms。
 ms.prod: xamarin
+ms.techonology: xamarin-skiasharp
 ms.assetid: 1D90E0B3-A3A8-4286-BC54-9D67188A1C6C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: bcec8f2c850396f45cba795555b924d3cbc4ef22
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 05c6ae6553a2e869b9eb7e038abd7b1c34350551
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783525"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615804"
 ---
 # <a name="skiasharp-platform-specific-notes"></a>SkiaSharp 平台專屬附註
 
-下列範例手動配置映像緩衝區，這麼做是為了說明常見的平台模式也就是平台所提供的現有 RBGA 緩衝區上繪製。
+下列範例手動配置的映像的緩衝區，這為了說明常見的平台模式也就是平台所提供的現有 RBGA 緩衝區上繪製。
 
-您不需要使用這個慣用語，如果您不想要。  沒有多載，將會建立並為您管理您的映像的備份儲存體。
+您不需要使用這個慣用語，如果您不想要。  沒有多載會建立及管理您的映像的支援儲存體。
 
 ## <a name="ios"></a>iOS
 
@@ -118,7 +119,7 @@ using (var bitmap = new Bitmap(width, height, PixelFormat.Format32bppPArgb)) {
 
 ## <a name="xamarinforms"></a>Xamarin.Forms
 
-要包含在您 Xamarin.Forms SkiaSharp 應用程式，請參閱指南[Xamarin.Forms 中使用的 SkiaSharp](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)。
+SkiaSharp 納入您的 Xamarin.Forms 應用程式，請參閱指南[Xamarin.Forms 中的使用 SkiaSharp](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)。
 
 ## <a name="related-links"></a>相關連結
 

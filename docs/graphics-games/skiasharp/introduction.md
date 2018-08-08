@@ -1,27 +1,28 @@
 ---
 title: SkiaSharp 簡介
-description: 本文件提供核心 SkiaSharp 概念的簡介。 特別是，討論取得及 SKCanvas 上繪製。
+description: 本文件提供核心 SkiaSharp 概念的簡介。 特別是，它討論取得和 SKCanvas 上繪製。
 ms.prod: xamarin
+ms.techonology: xamarin-skiasharp
 ms.assetid: 19506F08-2603-465E-A806-6BD01638DE90
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: a42836a49560a73b9e35ef97bfb2ba83d15812e3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: eb4a391c52c598c6d276b75028337bf54455e7b4
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783057"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615485"
 ---
 # <a name="an-introduction-to-skiasharp"></a>SkiaSharp 簡介
 
-_這提供 SkiaSharp 背後的概念簡介_
+_這提供 SkiaSharp 的基本概念的簡介_
 
-SkiaSharp 提供功能強大且豐富 2D 圖形 API，可用來轉譯成 2D 緩衝區。  您可以使用這些來實作自訂使用者介面項目與 2D 圖形可以被包含於您的應用程式。  SkiaSharp 是.NET 繫結至[Skia](https://skia.org)程式庫和繼承的功能和此媒體櫃的電源。
+SkiaSharp 提供豐富且功能強大 2D 圖形 API，可用來呈現到 2D 的緩衝區。  您可以使用這些來實作自訂使用者介面項目和可整合到您的應用程式的 2D 圖形。  SkiaSharp 是.NET 繫結至[Skia](https://skia.org)程式庫會繼承此文件庫的強大的功能。
 
-媒體櫃是跨平台目前可供[NuGet 封裝](https://www.nuget.org/packages/SkiaSharp)，您可以將它加入您的專案中加入 NuGet 參考。
+程式庫是跨平台目前可供[NuGet 套件](https://www.nuget.org/packages/SkiaSharp)，您可以將它加入您的專案的 NuGet 參考。
 
-若要繪製，您的程式碼會建立`SkCanvas`用來描述在其中繪製作業會發生的介面。
+若要繪製，您的程式碼會建立`SkCanvas`其中描述在其中繪製作業會進行的介面。
 
 ## <a name="obtaining-an-skcanvas"></a>取得 SKCanvas
 
@@ -35,11 +36,11 @@ using (var surface = SKSurface.Create (width: 640, height: 480, SKImageInfo.Plat
 
 ## <a name="drawing-on-skcanvas"></a>SKCanvas 的繪圖
 
-`SKCanvas`使用夠用類似於其他繪圖繪圖模型的模型，您可能已經熟悉，它與選擇性透明度通道使用的色彩，並可以繪製線條、 弧線、 文字和影像。
+`SKCanvas`使用繪圖模型精神類似於其他繪圖模型，您可能很熟悉，它會與選擇性的透明度通道使用的色彩，並可以繪製線條、 弧線、 文字和影像。
 
-以下是幾個可以使用 SkiaSharp 許多不同項目。  在範例中，下列變數`canvas`的型別 SKCanvas。
+以下是幾個可以使用 SkiaSharp 許多不同的因素。  下列變數範例`canvas`屬於 SKCanvas 的型別。
 
-### <a name="drawing-xamagon"></a>繪圖 Xamagon
+### <a name="drawing-xamagon"></a>繪製 Xamagon
 
 這個範例會繪製 Xamarin 的標誌 Xamagon:
 
@@ -134,7 +135,7 @@ using (var paint = new SKPaint()) {
 
 ## <a name="more-information"></a>詳細資訊
 
-使用 SkiaSharp 詳細資訊可以找到上[線上應用程式開發介面文件](https://developer.xamarin.com/api/namespace/SkiaSharp/)
+使用 SkiaSharp 的詳細資訊可於[線上 API 文件](https://developer.xamarin.com/api/namespace/SkiaSharp/)
 
 
 ## <a name="related-links"></a>相關連結
