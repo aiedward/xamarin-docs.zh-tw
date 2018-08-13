@@ -8,10 +8,10 @@ author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
 ms.openlocfilehash: f11f5d1cbde0f5eae27215af8eb6544be46c0206
-ms.sourcegitcommit: ef04a4ae1b19c1854a8e4e8315516d4030f4bbd6
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/08/2018
+ms.lasthandoff: 08/13/2018
 ms.locfileid: "39654811"
 ---
 # <a name="push-notifications-in-ios"></a>在 iOS 中的推播通知
