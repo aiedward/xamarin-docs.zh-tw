@@ -6,13 +6,13 @@ ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 07/10/2018
-ms.openlocfilehash: 895496f6a198f679ce08322ae48fe88e03b85629
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.date: 08/03/2018
+ms.openlocfilehash: 92b2eec32aed27e630ac68f3522aa3b40cfc940a
+ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947266"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514486"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>設定 Xamarin.Android 的 Android SDK
 
@@ -38,12 +38,15 @@ Xamarin Android SDK 管理員 (與**使用 .NET 的行動開發**工作負載一
 
 - Visual Studio Tools for Xamarin 4.10.0 或更新版本。 
 
-Xamarin Android SDK 管理員不相容於 Visual Studio
-2015. Visual Studio 2015 的使用者應該使用由 Google 在 Android SDK 中所提供的 SDK 管理員工具。
+Xamarin Android SDK 管理員不相容於 Visual Studio 2015。 Visual Studio 2015 的使用者應該使用由 Google 在 Android SDK 中所提供的 SDK 管理員工具。
 
+Xamarin Android SDK 管理員也需要 Java 開發套件 (會隨 Xamarin.Android 自動安裝)。 有多個 JDK 替代項目可供選擇：
 
-Xamarin Android SDK 管理員也需要 Java 開發套件 (會隨 Xamarin.Android 自動安裝)。
-Xamarin.Android 會使用 [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) \(英文\)，如果您正在針對 API 層級 24 或更高層級進行開發，則需要此項 (JDK 8 也支援早於 24 的 API 層級)。 如果您是針對 API 層級 23 或更早的層級進行開發，則可繼續使用 [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
+-   根據預設，Xamarin.Android 會使用 [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，如果您正在針對 API 層級 24 或更高層級進行開發，則需要此項 (JDK 8 也支援早於 24 的 API 層級)。
+
+-   如果您是針對 API 層級 23 或更早的層級進行開發，則可繼續使用 [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
+
+-   若您正在使用 Visual Stuidio 15.8 Preview 5 或更新版本，可嘗試使用 [OpenJDK 的 Microsoft 散發](openjdk.md)的 Microsoft 散發 (目前處於預覽階段) 來替代 JDK 8。
 
 > [!IMPORTANT]
 > Xamarin.Android 不支援 JDK 9。
@@ -55,7 +58,7 @@ Xamarin.Android 會使用 [JDK 8](http://www.oracle.com/technetwork/java/javase/
 
 [![[Android SDK 管理員] 功能表項目的位置](android-sdk-images/win/02-sdk-manager-menu-item-sml.png)](android-sdk-images/win/02-sdk-manager-menu-item.png#lightbox)
 
-[Xamarin Android SDK 管理員] 會在 [Android SDK 及工具] 畫面中開啟。 此畫面有兩個索引標籤 &ndash; [平台] 和 [工具]：
+Android SDK 管理員會在 [Android SDKs and Tools] \(Android SDK 與工具\) 畫面中開啟。 此畫面有兩個索引標籤 &ndash; [平台] 和 [工具]：
 
 [![Android SDK 管理員在 [平台] 索引標籤中開啟的螢幕擷取畫面](android-sdk-images/win/03-sdk-manager-platforms-sml.png)](android-sdk-images/win/03-sdk-manager-platforms.png#lightbox)
 
@@ -64,21 +67,20 @@ Xamarin.Android 會使用 [JDK 8](http://www.oracle.com/technetwork/java/javase/
 
 ### <a name="android-sdk-location"></a>Android SDK 位置
 
-Android SDK 位置是在 [Android SDK 及工具] 畫面頂端設定，如上圖所示。 您必須先正確設定此位置，[平台] 和 [工具] 索引標籤才能正常運作。 您可能會因為下列一或多個原因，而需要設定 Android SDK 的位置：
+Android SDK 位置可在 [Android SDKs and Tools] \(Android SDK 與工具\) 畫面頂端設定，如先前的螢幕擷取畫面所示。 您必須先正確設定此位置，[平台] 和 [工具] 索引標籤才能正常運作。 您可能會因為下列一或多個原因，而需要設定 Android SDK 的位置：
 
-1. Xamarin SDK 管理員找不到 Android SDK。 
+1. Android SDK 管理員找不到 Android SDK。 
 
 2. 您已將 Android SDK 安裝於替代 (非預設) 位置。 
 
-若要設定 Android SDK 的位置，請按一下 [Android SDK 位置] 最右側的 &hellip; 按鈕。 這會開啟 [瀏覽資料夾] 對話方塊，以用來瀏覽至 Android SDK 位置。 在下列螢幕擷取畫面中，會選取位於 **Program Files (x86)\\Android** 下方的 Android SDK：
+若要設定 Android SDK 的位置，請按一下 [Android SDK Location] \(Android SDK 位置\) 最右側的省略符號 (&hellip;) 按鈕。 這會開啟 [瀏覽資料夾] 對話方塊，以用來瀏覽至 Android SDK 位置。 在下列螢幕擷取畫面中，會選取位於 **Program Files (x86)\\Android** 下方的 Android SDK：
 
 ![尋找 Android SDK 之 Windows [瀏覽資料夾] 對話方塊的螢幕擷取畫面](android-sdk-images/win/05-browse-for-folder.png)
 
-當您按一下 [確定] 時，Xamarin Android SDK 管理員將會管理安裝於所選取位置的 Android SDK。
+當您按一下 [確定] 時，SDK 管理員將會管理安裝於所選位置的 Android SDK。
 
 
-
-### <a name="tools-tab"></a>[工具] 索引標籤
+### <a name="tools-tab"></a>[Tools] \(工具\) 索引標籤
 
 [工具] 索引標籤會顯示 [工具] 和 [額外項目] 的清單。 使用此索引標籤來安裝 Android SDK 工具、平台工具及建置工具。
 此外，您還能安裝 Android Emulator、低階除錯程式 (LLDB)、NDK、HAXM 加速，以及 Google Play 程式庫。
@@ -88,62 +90,46 @@ Android SDK 位置是在 [Android SDK 及工具] 畫面頂端設定，如上圖�
 
 [![從 [工具] 索引標籤安裝 Android Emulator](android-sdk-images/win/06-install-emulator-sml.png)](android-sdk-images/win/06-install-emulator.png#lightbox)
 
-
-
-系統可能會顯示對話方塊並含有下列訊息：「有可更新的元件。是否要立即更新它們？」 按一下 [ **是**]。 接下來會顯示 [接受授權] 對話方塊：
-
+可能會顯示具有以下訊息的對話方塊：_下列套件需要您先接受其授權條款，然後才能安裝_：
 
 ![[接受授權] 畫面](android-sdk-images/win/07-license-acceptance.png)
 
-
 如果您接受條款及條件，請按一下 [接受]。 在視窗底部，進度列會指出下載及安裝的進度。 安裝完成之後，[工具] 索引標籤將會顯示已安裝所選取的工具和額外項目。
 
+### <a name="platforms-tab"></a>[Platforms] \(平台\) 索引標籤
 
-
-### <a name="platforms-tab"></a>[平台] 索引標籤
-
-[平台] 索引標籤會顯示平台 SDK 版本，以及適用於每個平台之其他資源 (例如系統映像) 的清單。
-
+[Platforms] \(平台\) 索引標籤會顯示平台 SDK 版本，以及適用於每個平台之其他資源 (例如系統映像) 的清單：
 
 [![[平台] 窗格的螢幕擷取畫面](android-sdk-images/win/08-platforms-pane-sml.png)](android-sdk-images/win/08-platforms-pane.png#lightbox)
 
+此畫面列出了 Android 版本 (例如 **Android 8.0**)、代號 (**Oreo**)、API 層級 (例如 **26**)，以及該平台的元件大小 (例如 **1 GB**)。 您可使用 [Platforms] \(平台\) 索引標籤來為您想要設為目標的 Android API 層級安裝元件。 如需 Android 版本與 API 層級的詳細資訊，請參閱 [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)(了解 Android API 層級)。
 
-這個畫面會列出 Android 版本 (例如 **Android 7.0**)、代號 (**Nougat**)、API 層級 (例如 **24**) 及狀態 (若已安裝平台則為 [已安裝])。 您會使用 [平台] 索引標籤來安裝目標 Android API 層級的元件 (如需 Android 版本和 API 層級的詳細資訊，請參閱[了解 Android API 層級](~/android/app-fundamentals/android-api-levels.md))。
-
-如果已安裝平台的所有元件，平台名稱旁就會出現一個核取記號。 如果尚未安裝平台的所有元件，則會填滿該平台的方塊。 
-
-
-您可以按一下平台左邊的 **+** 方塊，來展開平台來查看其元件 (以及已安裝哪些元件)。
+當平台的所有元件均安裝完成時，平台名稱旁就會出現一個選取記號。 如果尚未安裝平台的所有元件，則會填滿該平台的方塊。 您可以按一下平台左邊的 **+** 方塊，來展開平台來查看其元件 (以及已安裝哪些元件)。
 按一下 **-** 來取消展開平台的元件清單。
-
 
 若要將其他平台新增至 SDK，請按一下平台旁邊的方塊，直到核取符號出現以安裝其所有元件為止，然後按一下 [套用變更]:
 
-
 [![將 Android 7.1 Nougat 元件新增至 Android SDK 的範例](android-sdk-images/win/09-adding-a-platform-sml.png)](android-sdk-images/win/09-adding-a-platform.png#lightbox)
 
-
-若只要安裝 SDK，請按一下平台旁邊的方塊一次。 您接著可以選取任何所需的個別元件：
-
+若只要安裝特定元件，請按一下平台旁邊的方塊。 您接著可以選取任何所需的個別元件：
 
 [![新增部分 Android 7.1 元件的範例](android-sdk-images/win/10-adding-some-components-sml.png)](android-sdk-images/win/10-adding-some-components.png#lightbox)
 
-
-
-
-請注意，要安裝的元件數目會出現在 [套用變更] 按鈕旁邊。 在上述範例中，已準備好安裝六個元件。 按一下 [套用變更] 按鈕之後，您將會看到 [接受授權] 畫面：
-
-
-
-![[平台] 索引標籤的 [接受授權] 對話方塊](android-sdk-images/win/11-license-screen.png)
-
-
+請注意，要安裝的元件數目會出現在 [套用變更] 按鈕旁邊。 按一下 [Apply Changes] \(套用變更\) 按鈕後，您會看到先前顯示的 [License Acceptance] \(授權接受\) 畫面。
 如果您接受條款及條件，請按一下 [接受]。 如果有多個要安裝的元件，您可能會多次看到這個對話方塊。 在視窗底部，進度列將會指出下載及安裝的進度。 當下載及安裝程序完成時 (視需要下載的元件數目而定，這可能需要花費幾分鐘)，系統會以核取記號標示已新增的元件，並將其列為 [已安裝]。
 
+### <a name="respository-selection"></a>存放庫選取項目
+
+根據預設，Android SDK 管理員會從 Microsoft 管理的存放庫下載平台元件與工具。 若您需要存取 Microsoft 存放庫中尚無法使用的實驗性 alpha/beta 平台與元件，您可以切換 SDK 管理員為使用 Google 的存放庫。 若要進行此切換，請按一下右下角的齒輪圖示，並選取 [Repository] > [Google (Unsupported)] \([存放庫] > [Google (不支援)]\)：
+
+[![選取 Google 的存放庫](android-sdk-images/win/11-google-repo-w157-sml.png)](android-sdk-images/win/11-google-repo-w157.png#lightbox)
+
+選取 Google 存放庫時，先前無法使用的其他套件可能會出現在 [Platforms] \(平台\) 索引標籤中。 (在上方的螢幕擷取畫面中，切換至 Google 存放庫後就新增了 **Android SDK Platform 28**。)請記得使用 Google 存放庫並不受支援，因此不建議在平日的開發中使用。
+
+若要切換回支援的平台與工具存放庫，請按一下 Microsoft (Recommended) \(Microsoft (建議)\)。 這會將套件與工具的清單還原至預設選取項目。
 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
 
 ## <a name="requirements"></a>需求
 
@@ -151,98 +137,89 @@ Android SDK 位置是在 [Android SDK 及工具] 畫面頂端設定，如上圖�
 
 -   Visual Studio for Mac 7.5 (或更新版本)。
 
-Xamarin Android SDK 管理員也需要 Java 開發套件 (會隨 Xamarin.Android 自動安裝)。
-Xamarin.Android 會使用 [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) \(英文\)，如果您正在針對 API 層級 24 或更高層級進行開發，則需要此項 (JDK 8 也支援早於 24 的 API 層級)。 如果您是針對 API 層級 23 或更早的層級進行開發，則可繼續使用 [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
+Xamarin Android SDK 管理員也需要 Java 開發套件 (會隨 Xamarin.Android 自動安裝)。 有多個 JDK 替代項目可供選擇：
+
+-   根據預設，Xamarin.Android 會使用 [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，如果您正在針對 API 層級 24 或更高層級進行開發，則需要此項 (JDK 8 也支援早於 24 的 API 層級)。
+
+-   如果您是針對 API 層級 23 或更早的層級進行開發，則可繼續使用 [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
+
+-   若您正在使用 Visual Studio for Mac 7.7 或更新版本，可嘗試使用 [OpenJDK 的 Microsoft 散發](openjdk.md)的 Microsoft 散發 (目前處於預覽階段) 來替代 JDK 8。
 
 > [!IMPORTANT]
 > Xamarin.Android 不支援 JDK 9。
-
  
 ## <a name="sdk-manager"></a>SDK 管理員 
 
 若要在 Visual Studio for Mac 中啟動 SDK 管理員，按一下 [工具] > [SDK 管理員]：
  
-![[Android SDK 管理員] 功能表項目的位置](android-sdk-images/mac/sdkmanager-01.png )
+[![[Android SDK 管理員] 功能表項目的位置](android-sdk-images/mac/01-sdk-manager-menu-item-m75-sml.png)](android-sdk-images/mac/01-sdk-manager-menu-item-m75.png#lightbox)
 
 **Android SDK 管理員** 會在[喜好設定] 視窗中開啟，該視窗會包含三個索引標籤：[平台]、[工具] 和 [位置]：
 
-![Android SDK 管理員在 [平台] 索引標籤中開啟的螢幕擷取畫面](android-sdk-images/mac/sdkmanager-02.png)
+[![Android SDK 管理員在 [平台] 索引標籤中開啟的螢幕擷取畫面](android-sdk-images/mac/02-sdk-manager-platforms-m75-sml.png)](android-sdk-images/mac/02-sdk-manager-platforms-m75.png#lightbox)
 
-後續各節將說明 Xamarin Android SDK 管理員的索引標籤。
+後續各節將說明 Android SDK 管理員的索引標籤。
 
 
-### <a name="locations-tab"></a>[位置] 索引標籤
+### <a name="locations-tab"></a>[Locations] \(位置\) 索引標籤
 
 [位置] 索引標籤有三種設定，可用來設定 Android SDK、Android NDK 及 Java SDK (JDK) 的位置。 您必須先正確設定這些位置，[平台] 和 [工具] 索引標籤才能正常運作。
 
 當 SDK 管理員啟動時，它會自動判斷每個安裝套件的路徑，並藉由在路徑旁邊放置綠色核取記號圖示來指出**已找到**它：
 
-![[位置] 索引標籤的螢幕擷取畫面](android-sdk-images/mac/sdkmanager-03.png)
+[![[Locations] \(位置\) 索引標籤的螢幕擷取畫面](android-sdk-images/mac/03-locations-tab-m75-sml.png)](android-sdk-images/mac/03-locations-tab-m75.png#lightbox)
 
 按一下 [重設為預設] 按鈕，讓 SDK 管理員在 SDK、NDK 及 JDK 的預設位置上搜尋它們。 
 
 通常，您會使用 [位置] 索引標籤來修改 Android SDK 和/或 Java JDK 的位置。 您不需要安裝 NDK 來開發 Xamarin.Android 應用程式 &ndash; 唯有當您需要使用機器碼語言 (例如 C 和 C++) 來開發部分應用程式時，才需使用 NDK。
 
-### <a name="tools-tab"></a>[工具] 索引標籤
+### <a name="tools-tab"></a>[Tools] \(工具\) 索引標籤
 
 [工具] 索引標籤會顯示 [工具] 和 [額外項目] 的清單。 使用此索引標籤來安裝 Android SDK 工具、平台工具及建置工具。
 此外，您還能安裝 Android Emulator、低階除錯程式 (LLDB)、NDK、HAXM 加速，以及 Google Play 程式庫。
 
+例如，若要下載 Google Android Emulator 套件，請按一下 [Android Emulator] 旁的核取記號，然後按一下 [套用變更] 按鈕：
 
-例如，若要下載 Google Android Emulator 套件，請按一下 [Android Emulator] 旁的核取記號，然後按一下 [安裝更新] 按鈕：
+[![從 [工具] 索引標籤安裝 Android Emulator](android-sdk-images/mac/04-tools-tab-m75-sml.png)](android-sdk-images/mac/04-tools-tab-m75.png#lightbox)
 
-![從 [工具] 索引標籤安裝 Android Emulator](android-sdk-images/mac/sdkmanager-08.png)
+可能會顯示具有以下訊息的對話方塊：_下列套件需要您先接受其授權條款，然後才能安裝_：
 
-
-系統可能會顯示對話方塊並含有下列訊息：「有可更新的元件。是否要立即更新它們？」 按一下 [ **是**]。 接下來會顯示 [接受授權] 對話方塊：
-
-
-![[接受授權] 畫面](android-sdk-images/mac/sdkmanager-09.png)
-
+[![[License acceptance] \(授權接受\) 畫面](android-sdk-images/mac/05-license-acceptance-m75-sml.png)](android-sdk-images/mac/05-license-acceptance-m75.png#lightbox)
 
 如果您接受條款及條件，請按一下 [接受]。 在視窗底部，進度列會指出下載及安裝的進度。 安裝完成之後，[工具] 索引標籤將會顯示已安裝所選取的工具和額外項目。
 
 
+### <a name="platforms-tab"></a>[Platforms] \(平台\) 索引標籤
 
-### <a name="platforms-tab"></a>[平台] 索引標籤
+[Platforms] \(平台\) 索引標籤會顯示平台 SDK 版本，以及適用於每個平台之其他資源 (例如系統映像) 的清單：
 
-[平台] 索引標籤會顯示平台 SDK 版本，以及適用於每個平台之其他資源 (例如系統映像) 的清單。
+[![[平台] 窗格的螢幕擷取畫面](android-sdk-images/mac/06-platforms-tab-m75-sml.png)](android-sdk-images/mac/06-platforms-tab-m75.png#lightbox)
 
+此畫面列出了 Android 版本 (例如 **Android 8.1**)、代號 (**Oreo**)、API 層級 (例如 **27**)，以及該平台的元件大小 (例如 **1 GB**)。 您可使用 [Platforms] \(平台\) 索引標籤來為您想要設為目標的 Android API 層級安裝元件。 如需 Android 版本與 API 層級的詳細資訊，請參閱 [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)(了解 Android API 層級)。
 
-![[平台] 窗格的螢幕擷取畫面](android-sdk-images/mac/sdkmanager-11.png)
-
-
-這個畫面會列出 Android 版本 (例如 **Android 7.0**)、代號 (**Nougat**)、API 層級 (例如 **24**) 及狀態 (若已安裝平台則為 [已安裝])。 您會使用 [平台] 索引標籤來安裝目標 Android API 層級的元件 (如需 Android 版本和 API 層級的詳細資訊，請參閱[了解 Android API 層級](~/android/app-fundamentals/android-api-levels.md))。
-
-如果已安裝平台的所有元件，平台名稱旁就會出現一個核取記號。 如果尚未安裝平台的所有元件，則會填滿該平台的方塊。 
-
-
-您可以按一下平台左邊的**箭頭**，來展開平台來查看其元件 (以及已安裝哪些元件)。
+當平台的所有元件均安裝完成時，平台名稱旁就會出現一個選取記號。 如果尚未安裝平台的所有元件，則會填滿該平台的方塊。 您可以按一下平台左邊的**箭頭**，來展開平台來查看其元件 (以及已安裝哪些元件)。
 按一下 **向下箭頭** 來取消展開平台的元件清單。
-
 
 若要將其他平台新增至 SDK，請按一下平台旁邊的方塊，直到核取符號出現以安裝其所有元件為止，然後按一下 [套用變更]:
 
+[![新增所有平台元件的範例](android-sdk-images/mac/07-install-all-m75-sml.png)](android-sdk-images/mac/07-install-all-m75.png#lightbox)
 
-![將 Android 4.4 元件新增至 Android SDK 的範例](android-sdk-images/mac/sdkmanager-12.png)
+若只要安裝部分元件，請按一下平台旁邊的方塊。 您接著可以選取任何所需的個別元件：
 
+[![新增部分元件的範例](android-sdk-images/mac/08-individual-components-m75-sml.png)](android-sdk-images/mac/08-individual-components-m75.png#lightbox)
 
-若只要安裝 SDK，請按一下平台旁邊的方塊一次。 您接著可以選取任何所需的個別元件：
-
-
-![新增部分 Android 4.4 元件的範例](android-sdk-images/mac/sdkmanager-13.png)
-
-
-
-
-請注意，要安裝的元件數目會出現在 [套用變更] 按鈕旁邊。 按一下 [套用變更] 按鈕之後，您將會看到 [接受授權] 畫面：
-
-
-
-![[平台] 索引標籤的 [接受授權] 對話方塊](android-sdk-images/mac/sdkmanager-14.png)
-
-
+請注意，要安裝的元件數目會出現在 [套用變更] 按鈕旁邊。 按一下 [Apply Changes] \(套用變更\) 按鈕後，您會看到先前顯示的 [License Acceptance] \(授權接受\) 畫面。
 如果您接受條款及條件，請按一下 [接受]。 如果有多個要安裝的元件，您可能會多次看到這個對話方塊。 在視窗底部，進度列將會指出下載及安裝的進度。 當下載及安裝程序完成時 (視需要下載的元件數目而定，這可能需要花費幾分鐘)，系統會以核取記號標示已新增的元件，並將其列為 [已安裝]。
+
+### <a name="respository-selection"></a>存放庫選取項目
+
+根據預設，Android SDK 管理員會從 Microsoft 管理的存放庫下載平台元件與工具。 若您需要存取 Microsoft 存放庫中尚無法使用的實驗性 alpha/beta 平台與元件，您可以切換 SDK 管理員為使用 Google 的存放庫。 若要進行此切換，請按一下右下角的齒輪圖示，並選取 [Repository] > [Google (Unsupported)] \([存放庫] > [Google (不支援)]\)：
+
+[![選取 Google 的存放庫](android-sdk-images/mac/09-google-repo-m75-sml.png)](android-sdk-images/mac/09-google-repo-m75.png#lightbox)
+
+選取 Google 存放庫時，先前無法使用的其他套件可能會出現在 [Platforms] \(平台\) 索引標籤中。 (在上方的螢幕擷取畫面中，切換至 Google 存放庫後就新增了 **Android SDK Platform 28**。)請記得使用 Google 存放庫並不受支援，因此不建議在平日的開發中使用。
+
+若要切換回支援的平台與工具存放庫，請按一下 Microsoft (Recommended) \(Microsoft (建議)\)。 這會將套件與工具的清單還原至預設選取項目。
 
 -----
 
@@ -254,7 +231,5 @@ Xamarin.Android 會使用 [JDK 8](http://www.oracle.com/technetwork/java/javase/
 
 ## <a name="related-links"></a>相關連結
 
-- [對 Android SDK 工具所做的變更](~/android/troubleshooting/sdk-cli-tooling-changes.md)
 - [了解 Android API 層級](~/android/app-fundamentals/android-api-levels.md)
-- [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
-- [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)
+- [對 Android SDK 工具所做的變更](~/android/troubleshooting/sdk-cli-tooling-changes.md)

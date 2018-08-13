@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 776e2b52d6b8860c5fb5fa16253c2e1d42aa962a
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: fcc2ce5e45cd9094a9987ce12267850e19da9d75
+ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241411"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39573512"
 ---
 # <a name="setup-and-installation"></a>設定與安裝
 
@@ -39,6 +39,6 @@ Visual Studio 包含會取代 Google 獨立 Android SDK 管理員的 Android SDK
 
 本文章說明如何設定實體 Android 裝置，並將它連接到開發電腦，以便裝置可用來執行和偵錯 Xamarin.Android 應用程式。
 
-## <a name="microsoft-openjdk-previewandroidget-startedinstallationopenjdkmd"></a>[Microsoft OpenJDK Preview](~/android/get-started/installation/openjdk.md)
+## <a name="microsoft-mobile-openjdk-previewandroidget-startedinstallationopenjdkmd"></a>[Microsoft Mobile OpenJDK Preview](~/android/get-started/installation/openjdk.md)
 
-此指南描述切換到 Microsoft OpenJDK 發行版本預覽版的步驟。
+此指南描述切換到 Microsoft OpenJDK 發行版本預覽版的步驟。 此 OpenJDK 的散發適用於行動開發。

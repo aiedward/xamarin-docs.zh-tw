@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/29/2016
-ms.openlocfilehash: afff9d3924c673edc363292efa1a9b7df43a9218
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 40a2acf28819279b2a0d5c1d50c651a79b455465
+ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33798586"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514459"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS 效能
 
