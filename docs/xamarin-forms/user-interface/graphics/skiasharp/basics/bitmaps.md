@@ -63,7 +63,7 @@ public class BasicBitmapsPage : ContentPage
 HttpClient httpClient = new HttpClient();
 ```
 
-使用時`HttpClient`iOS 和 Android 應用程式，您會想要設定專案屬性中所述的文件上**[傳輸層安全性 (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)**。
+使用時`HttpClient`iOS 和 Android 應用程式，您會想要設定專案屬性中所述的文件上 **[傳輸層安全性 (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)**。
 
 因為它是最方便的方式使用`await`運算子搭配`HttpClient`，不能在執行的程式碼`BasicBitmapsPage`建構函式。 相反地，它屬於`OnAppearing`覆寫。 URL 會指向使用一些範例點陣圖 Xamarin 網站上的區域。 在網站上的套件可讓附加調整大小的點陣圖為特定寬度的規格：
 

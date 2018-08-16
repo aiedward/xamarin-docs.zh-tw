@@ -49,7 +49,7 @@ Apple 會維護兩個環境的 APNS:*沙箱*並*生產*環境。 沙箱環境為
 
     [![](remote-notifications-in-ios-images/image6new.png "瀏覽至 [應用程式識別碼] 區段，並建立新的應用程式識別碼")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
-3.  當您按一下**+**  按鈕，您將能夠應用程式識別碼中，輸入描述和套件組合識別碼，在下一步 的螢幕擷取畫面所示：
+3.  當您按一下 **+**  按鈕，您將能夠應用程式識別碼中，輸入描述和套件組合識別碼，在下一步 的螢幕擷取畫面所示：
 
     [![](remote-notifications-in-ios-images/image7new.png "輸入應用程式識別碼描述和套件組合識別碼")](remote-notifications-in-ios-images/image7new.png#lightbox)
 
