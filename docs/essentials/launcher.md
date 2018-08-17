@@ -7,7 +7,7 @@ ms.author: jamont
 ms.date: 07/25/2018
 ms.openlocfilehash: 252bb873c1494265aafb2285057490ca29ce7419
 ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/06/2018
 ms.locfileid: "39573629"
@@ -16,7 +16,7 @@ ms.locfileid: "39573629"
 
 ![發行前版本的 NuGet](~/media/shared/pre-release.png)
 
-**啟動器**類別可讓您的應用程式，來開啟系統的 URI。 這是通常時使用深層連結到另一個應用程式的自訂 URI 配置。 如果您想要在瀏覽器開啟至網站，則您應該參閱**[瀏覽器](open-browser.md)** API。
+**啟動器**類別可讓您的應用程式，來開啟系統的 URI。 這是通常時使用深層連結到另一個應用程式的自訂 URI 配置。 如果您想要在瀏覽器開啟至網站，則您應該參閱 **[瀏覽器](open-browser.md)** API。
 
 ## <a name="using-launcher"></a>使用啟動程式
 

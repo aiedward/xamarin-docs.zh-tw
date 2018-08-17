@@ -582,7 +582,7 @@ public partial class PhotoPuzzlePage1 : ContentPage
 
 您可從程式庫中選取的照片不導向，因為它出現在相片媒體櫃中，但會旋轉或上下。 （這是特別的 iOS 裝置的問題）。基於這個理由，`PhotoPuzzlePage2`可讓您將影像旋轉成所需的方向。 XAML 檔案中包含三個按鈕，分別為**90&#x00B0;權限**（依順時針方向表示）， **90&#x00B0;左側**（逆時針算起），以及**完成**。
 
-程式碼後置檔案會實作一文中顯示的點陣圖旋轉邏輯**[建立和上 SkiaSharp 點陣圖繪製](drawing.md#rotating-bitmaps)**。 使用者可以將影像旋轉 90 度順時針或逆時針旋轉任意數目的時間： 
+程式碼後置檔案會實作一文中顯示的點陣圖旋轉邏輯 **[建立和上 SkiaSharp 點陣圖繪製](drawing.md#rotating-bitmaps)** 。 使用者可以將影像旋轉 90 度順時針或逆時針旋轉任意數目的時間： 
 
 ```csharp
 public partial class PhotoPuzzlePage2 : ContentPage

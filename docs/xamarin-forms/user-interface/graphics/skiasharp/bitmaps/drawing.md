@@ -111,7 +111,7 @@ public partial class HelloBitmapPage : ContentPage
 
 `PaintSurface`處理常式可以呈現多個時間的資料列和資料行中顯示的點陣圖。 請注意，`Clear`方法中的`PaintSurface`處理常式有引數的`SKColors.Aqua`，其色彩的顯示表面背景：
 
-[![Hello，點陣圖 ！] (drawing-images/HelloBitmap.png "Hello，點陣圖 ！")](drawing-images/HelloBitmap-Large.png#lightbox)
+[![Hello，點陣圖 ！](drawing-images/HelloBitmap.png "Hello，點陣圖 ！")](drawing-images/HelloBitmap-Large.png#lightbox)
 
 青色背景的外觀顯示點陣圖是透明的文字除外。
 
@@ -260,9 +260,9 @@ public partial class MonkeyMoustachePage : ContentPage
 
 方法`SKCanvas`您可以使用上繪製點陣圖包含`DrawBitmap`。 這表示，您可以繪製一個點陣圖另一個，通常以某種方式加以修改。
 
-若要修改點陣圖的最具彈性的方式是透過存取實際的像素位元、 主旨的文章涵蓋**[存取 SkiaSharp 點陣圖像素](pixel-bits.md)**。 但有許多其他技術來修改並不需要存取的像素位元的點陣圖。
+若要修改點陣圖的最具彈性的方式是透過存取實際的像素位元、 主旨的文章涵蓋 **[存取 SkiaSharp 點陣圖像素](pixel-bits.md)** 。 但有許多其他技術來修改並不需要存取的像素位元的點陣圖。
 
-隨附下列點陣圖**[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式是 360 像素寬度和高度 480 像素：
+隨附下列點陣圖 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式是 360 像素寬度和高度 480 像素：
 
 ![Mountain Climbers](drawing-images/MountainClimbers.jpg "Mountain Climbers")
 

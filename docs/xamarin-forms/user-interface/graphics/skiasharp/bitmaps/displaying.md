@@ -20,7 +20,7 @@ ms.locfileid: "39615310"
 
 ![顯示範例](displaying-images/DisplayingSample.png "顯示範例")
 
-`DrawBitmapLattice`並`DrawBitmapNinePatch`文章中所討論的方法會**[分段顯示 SkiaSharp 點陣圖](segmented.md)**。
+`DrawBitmapLattice`並`DrawBitmapNinePatch`文章中所討論的方法會 **[分段顯示 SkiaSharp 點陣圖](segmented.md)** 。
 
 在此頁面上的範例是來自**[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式。 從該應用程式的首頁上，選擇**SkiaSharp 點陣圖**，然後移至**顯示點陣圖**一節。
 
