@@ -1,32 +1,32 @@
 ---
-title: Xamarin.Essentials： 加速計
-description: Xamarin.Essentials 加速計類別可讓您監視裝置的加速計感應器，表示這三個維度空間中的裝置加速。
+title: Xamarin.Essentials：Accelerometer
+description: Xamarin.Essentials 中的 Accelerometer 類別可讓您監視裝置的加速度感應器，該感應器指出裝置在三維空間中的加速度。
 ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: b5a24e214eb129b4d53b94586632791c8827447b
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 53e7ca70184270662d27043387da836ad44432fe
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353837"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40184425"
 ---
-# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials： 加速計
+# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials：Accelerometer
 
-![發行前版本的 NuGet](~/media/shared/pre-release.png)
+![發行前的 NuGet](~/media/shared/pre-release.png)
 
-**加速計**類別可讓您監視裝置的加速計感應器表示的三個維度空間中的裝置加速。
+**Accelerometer** 類別可讓您監視裝置的加速度感應器，該感應器指出裝置在三維空間中的加速度。
 
-## <a name="using-accelerometer"></a>使用加速計
+## <a name="using-accelerometer"></a>使用 Accelerometer
 
-在您的類別加入 Xamarin.Essentials 的參考：
+在類別中新增對 Xamarin.Essentials 的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-加速計功能的運作方式是呼叫`Start`和`Stop`接聽變更為 加速的方法。 任何變更會傳送回到`ReadingChanged`事件。 以下是範例使用方式：
+Accelerometer 功能的運作方式是呼叫 `Start` 和 `Stop` 方法，以觀察加速度的變化。 所有變化都會透過 `ReadingChanged` 事件傳回。 以下是範例使用方式：
 
 ```csharp
 
@@ -48,7 +48,7 @@ public class AccelerometerTest
         // Process Acceleration X, Y, and Z
     }
 
-    public void ToggleAcceleromter()
+    public void ToggleAccelerometer()
     {
         try
         {
@@ -69,23 +69,23 @@ public class AccelerometerTest
 }
 ```
 
-加速計的數據會回報中。G 是 gravitation 單位強制等於所施加的地球重力欄位 (9.81 m/s ^2)。
+Accelerometer 讀數會以 G 為單位回報。G 是一個重力單位，等於地球重力場所作用的重力 (9.81 m/s^2)。
 
-座標系統被定義相對於其預設方向電話的畫面。 裝置的螢幕方向變更時，不會交換這兩個軸。
+座標系統的定義，相對於手機螢幕的預設方向。 當裝置的螢幕方向變更時，軸不會換位。
 
-X 軸是水平及點向右，Y 軸是垂直的並指向上方和 Z 軸點往螢幕的正面的外部。 在此系統中，至螢幕後方的座標會有負面的 Z 值。
+X 軸是指向右方的水平軸，Y 軸是指向上方的垂直軸，Z 軸則指向螢幕正面的外側。 在這個系統中，螢幕背面的座標會有負的 Z 值。
 
 例如：
 
-* 當裝置位於一般的資料表上，且會在其左側向右推入時，x 加速值為正數。
+* 當裝置平放在桌上，然後從裝置左側往右側推時，x 加速度值為正。
 
-* 裝置位於一般的資料表上，加速值時，+1.00 G 或 (+ 9.81 m/s ^2)，對應到裝置的加速 (0 m/s ^2) 受到重力強制減 (-9.81 m/s ^2) 和正規化與 g。
+* 當裝置平放在桌上時，加速度值為 +1.00 G 或 (+9.81 m/s^2)，也就是裝置加速度 (0 m/s^2) 減掉重力 (-9.81 m/s^2)，然後以 G 標準化。
 
-* 裝置何時位於一般的資料表上，並加速 m/s 的天空推向 ^2 加速值會等於 + 9.81 分別對應至裝置的加速 (+ m/s ^2) 受到重力強制減 (-9.81 m/s ^2) 及標準化中。
+* 當裝置平放在桌上，然後以 A m/s^2 的加速度向上空推動時，加速度值等於 A+9.81，也就是裝置加速度 (+A m/s^2) 減掉重力 (-9.81 m/s^2)，然後以 G 標準化。
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 
 ## <a name="api"></a>API
 
-- [加速計原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
-- [加速計 API 文件](xref:Xamarin.Essentials.Accelerometer)
+- [Accelerometer 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
+- [Accelerometer API 文件](xref:Xamarin.Essentials.Accelerometer)
