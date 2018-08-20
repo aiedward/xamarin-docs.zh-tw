@@ -61,7 +61,7 @@ Android、 iOS 和 UWP 提供唯一的作業系統與平台開發人員可以存
 
 ## <a name="troubleshootingtroubleshootingmdcontextxamarinxamarin-forms"></a>[疑難排解](troubleshooting.md?context=xamarin/xamarin-forms)
 
-如果您遇到問題，請找到說明。
+如果您遇到問題，請尋找說明。
 
 ## <a name="api-documentationxrefxamarinessentials"></a>[API 文件](xref:Xamarin.Essentials)
 
