@@ -1,6 +1,6 @@
 ---
-title: iOS Xamarin.iOS 中延伸模組
-description: 本文件描述擴充功能，也就是 iOS 的標準環境，如通知中心內所顯示的小工具。 它討論如何建立擴充功能，並從父應用程式溝通。
+title: iOS 在 Xamarin.iOS 中的延伸模組
+description: 本文件說明擴充功能，其為 iOS，例如通知中心內的標準內容中所顯示的小工具。 它討論如何建立擴充功能，並從父應用程式與其通訊。
 ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
@@ -8,207 +8,170 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: c26f951ddaff34cf23662f701395e636e1258b7d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 831625c88bb3c0f8403d3b330054050488956cb6
+ms.sourcegitcommit: b6f3e55d4f3dcdc505abc8dc9241cff0bb5bd154
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786726"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40251238"
 ---
-# <a name="ios-extensions-in-xamarinios"></a>iOS Xamarin.iOS 中延伸模組
+# <a name="ios-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的 iOS 延伸模組
 
 > [!VIDEO https://youtube.com/embed/Sd0-ch9Udmk]
 
-**藉由在 iOS 中，建立擴充功能[Xamarin 大學](https://university.xamarin.com/)**
+**藉由建立延伸模組在 iOS 中， [Xamarin University](https://university.xamarin.com/)**
 
-擴充功能，推出 iOS 8，進行特製化`UIViewControllers`所帶來的標準內容內的 iOS 例如中**通知中心**，如要求使用者所執行的自訂鍵盤類型特製化輸入或其他內容，例如編輯的相片，擴充功能可以提供特殊效果的篩選器的位置。
+專門擴充功能，為 iOS 8 中引進`UIViewControllers`，會依標準的內容內的 iOS 滿足下列條件為內**通知中心**，如使用者所要求執行自訂的鍵盤類型特製化輸入或其他內容，例如編輯的相片的延伸模組可以在其中提供的特殊效果的篩選器。
 
-所有擴充功能會隨搭配容器應用程式 （使用 64 位元統一的 Api 撰寫兩個項目），並從特定的擴充點，在主機應用程式完成啟用。 因為它們會使用現有的系統函數的增補，它們必須是 「 精實 」，且功能強大的高效能。 
-
-本文涵蓋下列主題：
-
-- [擴充點](#Extension-Points)-列出可用的擴充點的類型和可由每個點的延伸的型別。
-- [限制](#Limitations)-延伸模組有許多限制，其中有些是所有類型通用的雖然其他類型的擴充功能可能會有特定限制，其使用方式。
-- [將、 安裝、 以及執行擴充功能](#Distributing-Installing-and-Running-Extensions)-擴充功能會從容器應用程式，其，依次送出，並透過應用程式市集散發中散發。 此時，安裝應用程式一起散發的擴充功能，但使用者必須明確啟用每個擴充功能。 不同類型的擴充功能會啟用以不同的方式。
-- [延伸模組的生命週期](#Extension-Lifecycle)-的擴充功能的`UIViewController`會具現化，並開始正常檢視控制器生命週期。 不過，不同於一般的應用程式中，延伸模組會載入、 執行和終止重複。
-- [建立擴充](#Creating-an-Extension)-開發擴充功能，當您的方案會包含至少兩個專案： 容器應用程式，另一個專案用於容器的每個擴充功能提供。
-- [逐步解說](#Walkthrough)-涵蓋如何建立簡單**今天**小工具擴充功能，提供其使用者介面使用分鏡腳本或程式碼中，安裝此擴充功能，並在 iOS 模擬器中測試。
-- [主機應用程式與通訊](#Communicating-with-the-Host-App)-簡要討論主機應用程式擴充功能與通訊。
-- [父應用程式與通訊](#Communicating-with-the-Parent-App)-簡要討論與延伸父應用程式進行通訊。
-- [預防措施和考量](#Precautions-and-Considerations)-某些知道預防措施，以及應該列入考量，設計和實作的擴充功能時的考量的清單。
- 
-
-<a name="Extension-Points" />
+所有擴充功能會隨搭配容器應用程式 （使用 64 位元 Unified Api 所撰寫的這兩個項目），並從特定的擴充點，在主機應用程式會啟動。 而且，因為它們會使用現有的系統函數的增補，必須是精簡，且功能強大的高效能。 
 
 ## <a name="extension-points"></a>擴充點
 
 |類型|描述|擴充點|主機應用程式|
 |--- |--- |--- |--- |
-|動作|特殊的編輯器或特定媒體類型的檢視器|`com.apple.ui-services`|任何|
-|文件提供者|允許應用程式使用遠端的文件存放區|`com.apple.fileprovider-ui`|使用應用程式[UIDocumentPickerViewController](https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/)|
+|動作|特製化的編輯器或特定媒體類型的檢視器|`com.apple.ui-services`|任何|
+|文件提供者|可讓應用程式以使用遠端的文件存放區|`com.apple.fileprovider-ui`|使用應用程式[UIDocumentPickerViewController](https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/)|
 |鍵盤|替代鍵盤|`com.apple.keyboard-service`|任何|
-|編輯相片|相片管理和編輯|`com.apple.photo-editing`|Photos.app 編輯器|
-|共用|共用與社交網路、 訊息處理服務等的資料。|`com.apple.share-services`|任何|
-|今天|今天螢幕或通知中心上會出現 「 小工具 」|`com.apple.widget-extensions`|今天和通知中心|
+|相片編輯|相片操作和編輯|`com.apple.photo-editing`|Photos.app 編輯器|
+|共用|共用資料與傳訊服務等社交網路。|`com.apple.share-services`|任何|
+|今天|通知中心的 [Today] 畫面上顯示 「 widget 」|`com.apple.widget-extensions`|今天和通知中心|
 
-[其他擴充點](~/ios/platform/introduction-to-ios10/index.md#app-extensions)iOS 10 中已加入。
-
-<a name="Limitations" />
+[其他擴充點](~/ios/platform/introduction-to-ios10/index.md#app-extensions)已新增 ios 10。
 
 ## <a name="limitations"></a>限制
 
-延伸模組有許多限制，其中有些是通用所有類型 （如執行個體，再使用類型的延伸模組可以存取的相機或麥克風） 雖然其他類型的擴充功能可能會有特定限制，其使用方式 （例如，自訂鍵盤無法用於保護資料輸入欄位，例如密碼）。 
+延伸模組有幾項限制，其中有些是通用所有類型 （如執行個體，任何類型的延伸模組可以存取的相機或麥克風） 而其他類型的擴充功能可能會有特定限制，其使用方式 （例如自訂鍵盤不能用於保護資料輸入欄位，例如密碼）。 
 
 通用的限制如下：
 
-- [健全狀況套件](~/ios/platform/healthkit.md)和[事件套件 UI](~/ios/platform/eventkit.md)架構皆不是使用
+- [健全狀況 Kit](~/ios/platform/healthkit.md)並[事件套件 UI](~/ios/platform/eventkit.md)架構不提供
 - 擴充功能無法使用[擴充背景模式](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/backgrounding/part_3_ios_backgrounding_techniques/registering_applications_to_run_in_background/)
-- 擴充功能無法存取裝置的相機或麥克風，（雖然它們可能會存取現有的媒體檔案）
-- 擴充功能無法接收空中卸除的資料 （雖然它們可以傳輸透過無線方式卸除的資料）
-- [UIActionSheet](https://developer.xamarin.com/api/type/UIKit.UIActionSheet/)和[UIAlertView](https://developer.xamarin.com/api/type/UIKit.UIAlertView/)無法使用; 必須使用延伸模組[UIAlertController](https://developer.xamarin.com/api/type/UIKit.UIAlertController/)
+- 延伸模組無法存取裝置的相機或麥克風，（雖然他們可以存取現有的媒體檔案）
+- 延伸模組無法接收空氣卸除的資料 （雖然它們可以傳輸透過無線方式卸除的資料）
+- [UIActionSheet](https://developer.xamarin.com/api/type/UIKit.UIActionSheet/)並[UIAlertView](https://developer.xamarin.com/api/type/UIKit.UIAlertView/)無法使用; 延伸模組必須使用[UIAlertController](https://developer.xamarin.com/api/type/UIKit.UIAlertController/)
 - 數個成員[uiapplication #](https://developer.xamarin.com/api/type/UIKit.UIApplication/)無法使用： [UIApplication.SharedApplication](https://developer.xamarin.com/api/property/UIKit.UIApplication.SharedApplication/)， `UIApplication.OpenURL`，`UIApplication.BeginIgnoringInteractionEvents`和 `UIApplication.EndIgnoringInteractionEvents`
-- iOS 會強制執行今天的擴充功能上的 16 MB 記憶體使用限制。
-- 根據預設鍵盤擴充功能不需要存取網路。 這會影響偵錯在裝置上 （這項限制不會強制執行在模擬器中），因為 Xamarin.iOS 需要網路存取偵錯才能運作。 您可要求網路存取設定`Requests Open Access`中專案的 Info.plist，以值`Yes`。 請參閱 Apple[自訂鍵盤指南](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html)如需有關鍵盤延伸限制。
+- iOS 會強制執行今天的延伸模組的 16 MB 記憶體使用量限制。
+- 預設鍵盤擴充功能不需要存取網路。 這會影響偵錯在裝置上 （這項限制不會強制執行在模擬器中），因為 Xamarin.iOS 進行偵錯運作需要網路存取。 就可以要求網路存取設定`Requests Open Access`至專案的 Info.plist 中的值`Yes`。 請參閱 Apple[自訂鍵盤指南](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html)如需鍵盤擴充功能限制的詳細資訊。
 
-如需個別的限制，請參閱 Apple[應用程式擴充功能的程式設計指南](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/)。
+如需個別的限制，請參閱 Apple[應用程式擴充功能程式設計指南](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/)。
 
-<a name="Distributing-Installing-and-Running-Extensions" />
+## <a name="distributing-installing-and-running-extensions"></a>散發、 安裝及執行擴充功能
 
-## <a name="distributing-installing-and-running-extensions"></a>散發、 安裝和執行擴充功能
+延伸模組會從散發內這，接著提交並透過 App Store 散發的容器應用程式。 分散式應用程式延伸模組會安裝到那時，但使用者必須明確啟用每個延伸模組。 不同類型的延伸模組會啟用以不同的方式;數個會要求使用者瀏覽至**設定**應用程式，並從該處啟用它們。 雖然其他人會啟用在時間點的使用，例如傳送相片時，啟用共用延伸模組。 
 
-延伸模組會從散發容器應用程式，而，後者是提交和分散式透過應用程式存放區中。 此時，安裝應用程式一起散發的擴充功能，但使用者必須明確啟用每個擴充功能。 不同類型的擴充功能會啟用以不同的方式;數個需要使用者瀏覽至**設定**應用程式，並讓它們從該處。 其他人會在時間點的使用，例如傳送相片時，啟用共用擴充功能啟用。 
+應用程式中使用擴充功能 （在使用者遇到擴充點） 指**主機應用程式**，因為它是裝載擴充功能時，它會執行的應用程式。 安裝擴充功能的應用程式**容器應用程式**，因為它是安裝時，所包含的擴充功能的應用程式。  
 
-應用程式中使用延伸模組 （使用者遇到擴充點） 指**主機應用程式**，因為它是裝載在執行時的擴充功能的應用程式。 安裝擴充功能的應用程式已**容器應用程式**，因為它包含在安裝時的擴充功能的應用程式。  
-
-一般而言，容器應用程式描述擴充功能，並會引導使用者進行啟用它的程序。
-
-<a name="Extension-Lifecycle" />
+通常，容器應用程式說明擴充功能，並逐步完成啟用程序的使用者。
 
 ## <a name="extension-lifecycle"></a>延伸模組的生命週期
 
-擴充功能可以為單一一樣簡單[UIViewController](https://developer.xamarin.com/api/type/UIKit.UIViewController/)或更複雜的延伸模組，都沒有多個螢幕的 UI。 當使用者遇到_擴充點_(例如當共用映像)，它們將會有機會選擇從註冊的擴充點延伸。 
+延伸模組可以非常簡單，為單一[UIViewController](https://developer.xamarin.com/api/type/UIKit.UIViewController/)或更複雜的延伸模組，都沒有多個畫面的 UI。 當使用者遇到_擴充點_(例如當共用映像)，他們將有機會選擇註冊該擴充點的擴充功能。 
 
-如果他們選擇其中一個應用程式的延伸模組，其`UIViewController`會具現化，並開始正常檢視控制器生命週期。 不過，不同於標準的應用程式，其中已暫停，但通常不會終止使用者完成與其互動時，延伸模組會載入、 執行和終止重複。
+如果他們選擇其中一個應用程式的延伸模組，其`UIViewController`會具現化，並開始正常的檢視控制器生命週期。 不過，不同於一般的應用程式，這會暫停，但通常不會終止使用者完成與其進行互動時，延伸模組會載入、 執行和重複，然後終止。
 
-擴充功能可以透過其主機應用程式與通訊[NSExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)物件。 一些擴充功能有接收結果的非同步回呼的作業。 會在背景執行緒上執行這些回呼和擴充功能必須將這點納入考量。比方說，藉由[NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/member/Foundation.NSObject.InvokeOnMainThread/)如果他們想要更新的使用者介面。 請參閱[主機應用程式與通訊](#Communicating-with-the-Host-App)下面章節以取得詳細資料。
+擴充功能可以透過其主應用程式與通訊[NSExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)物件。 有些延伸模組有接收結果的非同步回呼的作業。 這些回呼會在背景執行緒上執行和擴充功能必須將此列入考量。比方說，是藉由使用[NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/member/Foundation.NSObject.InvokeOnMainThread/)如果他們想要更新的使用者介面。 請參閱[主機應用程式與通訊](#Communicating-with-the-Host-App)節以取得詳細資料。
 
-根據預設，擴充功能和其容器應用程式可以通訊，儘管一起安裝。 在某些情況下，容器應用程式本質上是空 「 運送 」 容器的目的提供安裝擴充功能之後。 不過，如果指定的情況下，容器應用程式和延伸模組可能會共用資源的一般區域。 此外，**今天延伸**可能會要求其容器應用程式中開啟 URL。 這種行為如下所示[發展倒數計時 Widget](http://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo)。
-
-<a name="Creating-an-Extension" />
+根據預設，擴充功能和其容器應用程式可以通訊，儘管一起安裝。 在某些情況下，容器應用程式本質上是空"shipping"容器安裝擴充功能之後，會提供其用途。 不過，如果指定的情況下，容器應用程式和延伸模組可能共用資源從常見的區域。 此外，**今天擴充功能**可能會要求它的容器應用程式，以開啟 URL。 此行為所示[發展倒數小工具](http://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo)。
 
 ## <a name="creating-an-extension"></a>建立擴充功能
 
-擴充功能 （和其容器應用程式） 必須是 64 位元二進位檔案，並使用 Xamarin.iOS 建置[統一的 Api](http://developer.xamarin.com/guides/cross-platform/macios/unified)。 當開發擴充功能，您的方案將會包含至少兩個專案： 容器應用程式，另一個專案用於容器的每個擴充功能提供。 
+擴充功能 （和其容器應用程式） 必須是 64 位元二進位檔案，且使用 Xamarin.iOS 建置[Unified Api](http://developer.xamarin.com/guides/cross-platform/macios/unified)。 在開發擴充功能時，您的解決方案將包含至少兩個專案： 容器應用程式，另一個專案容器的每個擴充功能提供。 
 
-<a name="Container-App-Project-Requirements" />
+### <a name="container-app-project-requirements"></a>容器應用程式的專案需求
 
-### <a name="container-app-project-requirements"></a>容器應用程式專案的需求
+用來安裝擴充功能的容器應用程式必須符合下列需求：
 
-容器應用程式用來安裝擴充功能具有下列需求：
+- 它必須維護延伸模組專案的參考。   
+- 它必須是完整的應用程式 （必須是能夠啟動並順利執行），即使它沒有多個可用來安裝擴充功能。 
+- 它必須是擴充功能的配套識別碼的基礎套件組合識別碼專案 （請參閱下的一節，如需詳細資訊）。
 
-- 它必須維護擴充功能專案中的參考。   
-- 它必須是完整的應用程式 （必須先啟動並執行成功），即使它不做任何動作超過提供的方式來安裝擴充功能。 
-- 它必須是擴充功能的配套識別碼為基礎的配套識別碼專案 （請參閱下的一節，如需詳細資訊）。
-
-<a name="Extension-Project-Requirements" />
-
-### <a name="extension-project-requirements"></a>擴充專案需求
+### <a name="extension-project-requirements"></a>延伸模組專案需求
 
 此外，擴充功能的專案具有下列需求：
 
-- 它必須以其容器應用程式配套識別碼開頭的配套識別碼。 例如，如果容器的應用程式的配套識別碼`com.myCompany.ContainerApp`，可能會擴充功能的識別碼`com.myCompany.ContainerApp.MyExtension`: 
+- 您必須以其容器應用程式套件組合識別碼開頭的套件組合識別碼。 例如，如果容器應用程式的套件組合識別碼`com.myCompany.ContainerApp`，可能的延伸模組識別碼`com.myCompany.ContainerApp.MyExtension`: 
 
     ![](extensions-images/bundleidentifiers.png) 
-- 它必須定義索引鍵`NSExtensionPointIdentifier`，使用適當的值 (例如`com.apple.widget-extension`如**今天**通知中心 widget)，請在其`Info.plist`檔案。
-- 它也必須定義*任一*`NSExtensionMainStoryboard`索引鍵或`NSPrincipalClass`索引鍵中其`Info.plist`檔案具有適當的值：
-    - 使用`NSExtensionMainStoryboard`鍵，以指定的分鏡腳本所呈現的主要 UI 延伸模組名稱 (減去`.storyboard`)。 例如，`Main`如`Main.storyboard`檔案。
-    - 使用`NSPrincipalClass`鍵，以指定之類別的擴充功能啟動時將會初始化。 值必須符合**註冊**值您`UIViewController`: 
+- 它必須定義索引鍵`NSExtensionPointIdentifier`，使用適當的值 (例如`com.apple.widget-extension`如**今天**通知中心小工具)，請在其`Info.plist`檔案。
+- 它也必須定義*任一*`NSExtensionMainStoryboard`金鑰或`NSExtensionPrincipalClass`中的索引鍵其`Info.plist`檔案使用適當的值：
+    - 使用`NSExtensionMainStoryboard`索引鍵，指定分鏡腳本所呈現的主要 UI 延伸模組的名稱 (減去`.storyboard`)。 例如，`Main`針對`Main.storyboard`檔案。
+    - 使用`NSExtensionPrincipalClass`索引鍵來指定將在擴充功能啟動時初始化的類別。 此值必須符合**註冊**的值您`UIViewController`: 
 
     ![](extensions-images/registerandprincipalclass.png)
 
-特定類型的擴充功能可能有其他需求。 比方說，**今天**或**通知中心**擴充功能的主要類別必須實作[INCWidgetProviding](https://developer.xamarin.com/api/type/NotificationCenter.INCWidgetProviding/)。
+特定類型的延伸模組可能有其他需求。 比方說，**今天**或是**通知中心**延伸模組的主要類別必須實作[INCWidgetProviding](https://developer.xamarin.com/api/type/NotificationCenter.INCWidgetProviding/)。
 
 > [!IMPORTANT]
-> 如果您開始使用其中一個 Visual Studio 所提供適用於 Mac 的延伸模組範本專案，將提供大多數 （若非全部） 這些需求，並為您自動符合範本。
-
-<a name="Walkthrough" />
+> 如果您開始使用其中一個 Visual Studio for Mac 所提供的延伸模組範本的專案時，會提供大部分 （若非全部） 這些需求，並自動符合您的範本。
 
 ## <a name="walkthrough"></a>逐步解說 
 
-在下列逐步解說中，您將建立範例**今天**計算的日期和年份中的剩餘天數的 widget:
+在下列的逐步解說中，您將建立範例**今天**小工具會計算的日期和年份中的剩餘天數：
 
-[![](extensions-images/carpediemscreenshot-sm.png "計算的日期和年份中的剩餘天數範例今天 widget")](extensions-images/carpediemscreenshot.png#lightbox)
+[![](extensions-images/carpediemscreenshot-sm.png "計算的日期和年份中的剩餘天數範例今天小工具")](extensions-images/carpediemscreenshot.png#lightbox)
 
-<a name="Creating-the-Solution" />
-
-### <a name="creating-the-solution"></a>建立方案
+### <a name="creating-the-solution"></a>建立解決方案
 
 若要建立必要的方案，執行下列作業：
 
 1. 首先，建立新的 iOS**單一檢視應用程式**專案，然後按一下**下一步**按鈕： 
 
-    [![](extensions-images/today01.png "首先，建立新的 iOS、 單一檢視應用程式專案，然後按一下 [下一步] 按鈕")](extensions-images/today01.png#lightbox)
-2. 呼叫專案`TodayContainer`按一下**下一步**按鈕： 
+    [![](extensions-images/today01.png "首先，建立新的 iOS、 單一檢視應用程式專案，然後按 [下一步] 按鈕")](extensions-images/today01.png#lightbox)
+2. 呼叫專案`TodayContainer`，按一下 [**下一步]** 按鈕： 
 
-    [![](extensions-images/today02.png "呼叫專案 TodayContainer 並按一下 [下一步] 按鈕")](extensions-images/today02.png#lightbox)
-3. 確認**專案名稱**和**SolutionName**按一下**建立**按鈕以建立方案： 
+    [![](extensions-images/today02.png "呼叫 TodayContainer 專案，然後按一下 [下一步] 按鈕")](extensions-images/today02.png#lightbox)
+3. 請確認**專案名稱**並**SolutionName** ，按一下 **建立**按鈕，以建立方案： 
 
-    [![](extensions-images/today03.png "請確認 SolutionName 與專案名稱，然後按一下 [建立] 按鈕，即可建立方案")](extensions-images/today03.png#lightbox)
-4. 接下來，在**方案總管 中**，以滑鼠右鍵按一下方案，並加入新**iOS 延伸**從專案**今天延伸**範本： 
+    [![](extensions-images/today03.png "確認 SolutionName 與專案名稱，然後按一下 [建立] 按鈕，以建立方案")](extensions-images/today03.png#lightbox)
+4. 接下來，在**方案總管**，以滑鼠右鍵按一下方案，並加入新**iOS 延伸模組**從專案**今天擴充功能**範本： 
 
-    [![](extensions-images/today04.png "接下來，在 [方案總管] 中，以滑鼠右鍵按一下方案，並從今天延伸範本加入新的 iOS 擴充功能專案")](extensions-images/today04.png#lightbox)
-5. 呼叫專案`DaysRemaining`按一下**下一步**按鈕： 
+    [![](extensions-images/today04.png "接下來，在 [方案總管] 中，以滑鼠右鍵按一下方案，並從目前的延伸模組範本新增新的 iOS 延伸模組專案")](extensions-images/today04.png#lightbox)
+5. 呼叫專案`DaysRemaining`，按一下 [**下一步]** 按鈕： 
 
-    [![](extensions-images/today05.png "呼叫專案 DaysRemaining 並按一下 [下一步] 按鈕")](extensions-images/today05.png#lightbox)
+    [![](extensions-images/today05.png "呼叫 DaysRemaining 專案，然後按一下 [下一步] 按鈕")](extensions-images/today05.png#lightbox)
 6. 檢閱專案，然後按一下**建立** 按鈕來建立它： 
 
-    [![](extensions-images/today06.png "檢閱專案，然後按一下 [建立] 按鈕，建立")](extensions-images/today06.png#lightbox)
+    [![](extensions-images/today06.png "檢閱專案，然後按一下 [建立] 按鈕來建立它")](extensions-images/today06.png#lightbox)
 
-所產生的解決方案現在應該有兩個專案，如下所示：
+所產生的方案現在應該有兩個專案，如下所示：
 
-[![](extensions-images/today07.png "所產生的解決方案現在應該會有兩個專案，如下所示")](extensions-images/today07.png#lightbox)
-
-<a name="Creating-the-Extension-User-Interface" />
+[![](extensions-images/today07.png "所產生的方案現在應該有兩個專案，如下所示")](extensions-images/today07.png#lightbox)
 
 ### <a name="creating-the-extension-user-interface"></a>建立擴充功能使用者介面
 
-接下來，您必須設計介面您**今天**widget。 這可能是可以使用分鏡腳本，或透過程式碼中建立 UI。 在詳細資料，將以下涵蓋這兩種方法。
-
-<a name="Using-Storyboards" />
+接下來，您必須設計的介面您**今天**小工具。 可能是這可以使用分鏡腳本，或在程式碼中建立 UI。 這兩種方法將會詳細說明如下。
 
 #### <a name="using-storyboards"></a>使用分鏡腳本
 
 若要建置使用分鏡腳本 UI，執行下列作業：
 
-1. 在**方案總管] 中**，連按兩下 [擴充功能專案`Main.storyboard`檔案，以開啟它進行編輯： 
+1. 在 **方案總管 中**，連按兩下 擴充功能專案的`Main.storyboard`檔案，以開啟它進行編輯： 
 
-    [![](extensions-images/today08.png "按兩下要開啟它進行編輯的延伸模組專案 Main.storyboard 檔案")](extensions-images/today08.png#lightbox)
-2. 選取已自動加入至 UI 之範本的標籤，並賦予**名稱**`TodayMessage`中**Widget**  索引標籤**屬性總管**: 
+    [![](extensions-images/today08.png "按兩下以開啟它進行編輯的延伸模組專案 Main.storyboard 檔案")](extensions-images/today08.png#lightbox)
+2. 選取已自動加入至 UI 之範本的標籤，並為它提供**名稱**`TodayMessage`中**Widget**索引標籤**屬性總管**: 
 
     [![](extensions-images/today09.png "選取已自動加入至 UI 之範本的標籤，並給予其名稱 TodayMessage Widget 索引標籤的 [屬性總管] 中")](extensions-images/today09.png#lightbox)
 3. 將變更儲存到分鏡腳本。
 
-<a name="Using-Code" />
-
 #### <a name="using-code"></a>使用程式碼
 
-若要建置程式碼中的 UI，執行下列作業： 
+若要建置的 UI 程式碼中，執行下列作業： 
 
 1. 在**方案總管 中**，選取**DaysRemaining**專案中，加入新的類別並呼叫它`CodeBasedViewController`: 
 
-    [![](extensions-images/code01.png "Aelect DaysRemaining 專案中，加入新的類別並呼叫它 CodeBasedViewController")](extensions-images/code01.png#lightbox)
-2. 同樣地，在**方案總管] 中**，連按兩下 [擴充功能的`Info.plist`檔案，以開啟它進行編輯： 
+    [![](extensions-images/code01.png "Aelect DaysRemaining 專案中，加入新的類別，並取名為 CodeBasedViewController")](extensions-images/code01.png#lightbox)
+2. 同樣地，在**方案總管**，連按兩下 延伸模組的`Info.plist`檔案，以開啟它進行編輯： 
 
-    [![](extensions-images/code02.png "按兩下以開啟檔案進行編輯的擴充功能的 Info.plist 檔案")](extensions-images/code02.png#lightbox)
-3. 選取**來源檢視**（從畫面底部），然後開啟`NSExtension`節點： 
+    [![](extensions-images/code02.png "按兩下以開啟它進行編輯的延伸模組 Info.plist 檔案")](extensions-images/code02.png#lightbox)
+3. 選取 **原始碼檢視**（從畫面底部），然後開啟`NSExtension`節點： 
 
-    [![](extensions-images/code03.png "從畫面底部選取來源檢視，然後開啟 NSExtension 節點")](extensions-images/code03.png#lightbox)
-4. 移除`NSExtensionMainStoryboard`索引鍵，並新增`NSPrincipalClass`值`CodeBasedViewController`: 
+    [![](extensions-images/code03.png "從畫面底部選取 [來源] 檢視，並開啟 NSExtension 節點")](extensions-images/code03.png#lightbox)
+4. 移除`NSExtensionMainStoryboard`鍵，並新增`NSExtensionPrincipalClass`的值`CodeBasedViewController`: 
 
-    [![](extensions-images/code04.png "移除 NSExtensionMainStoryboard 金鑰，並加入值 CodeBasedViewController NSPrincipalClass")](extensions-images/code04.png#lightbox)
+    [![](extensions-images/code04.png "移除 NSExtensionMainStoryboard 索引鍵，然後新增具有值 CodeBasedViewController NSExtensionPrincipalClass")](extensions-images/code04.png#lightbox)
 5. 儲存您的變更。
 
-接著，編輯`CodeBasedViewController.cs`檔案，並讓它看起來如下所示：
+接著，編輯`CodeBasedViewController.cs`檔案，並使它看起來如下：
 
 ```csharp
 using System;
@@ -219,7 +182,7 @@ using CoreGraphics;
 
 namespace DaysRemaining
 {
-    [Register("CodeBasedViewContoller")]
+    [Register("CodeBasedViewController")]
     public class CodeBasedViewController : UIViewController, INCWidgetProviding
     {
         public CodeBasedViewController ()
@@ -244,13 +207,11 @@ namespace DaysRemaining
 }
 ```
 
-請注意，`[Register("CodeBasedViewContoller")]`符合您為指定的值`NSPrincipalClass`上方。
-
-<a name="Coding-the-Extension" />
+請注意，`[Register("CodeBasedViewController")]`符合您指定的值`NSExtensionPrincipalClass`上方。
 
 ### <a name="coding-the-extension"></a>撰寫程式碼擴充功能
 
-所建立的使用者介面，以開啟 `TodayViewController.cs`或`CodeBasedViewController.cs`檔案 （用來建立上述使用者介面的方法的基礎） 的變更**ViewDidLoad**方法並看起來如下所示：
+建立使用者介面後，開啟`TodayViewController.cs`或`CodeBasedViewController.cs`檔案 （用來建立上述的使用者介面的方法的基礎） 的變更**ViewDidLoad**方法，使它看起來如下所示：
 
 ```csharp
 public override void ViewDidLoad ()
@@ -271,53 +232,45 @@ public override void ViewDidLoad ()
 }
 ```
 
-如果使用的程式碼使用者介面的方法，取代`// Insert code to power extension here...`從上方的新程式碼註解。 之後呼叫的基底實作 （和插入程式碼為主版本的標籤），此程式碼執行簡單的計算，若要取得的年份和還剩下多少天後的天數。 然後它會在標籤中顯示的訊息 (`TodayMessage`) UI 設計中所建立。
+如果使用程式碼型使用者介面的方法，取代`// Insert code to power extension here...`與新的程式碼，從上方的註解。 之後呼叫的基底實作 （和插入的程式碼架構版本的標籤），此程式碼會執行簡單的計算，若要取得的年份和剩餘多少天的日期。 然後它會在標籤中顯示的訊息 (`TodayMessage`) 您在 UI 設計中建立。
 
-請注意，類似這個程序是撰寫應用程式的一般程序。 擴充功能的`UIViewController`除了延伸模組並沒有背景模式並不會暫停，當使用者完成，已為檢視控制站相同的生命週期，應用程式中使用它們。 相反地，擴充功能會重複初始化，並視需要取消配置。
-
-<a name="Creating-the-Container-App-User-Interface" />
+請注意如何類似此程序是撰寫應用程式的一般程序。 延伸模組的`UIViewController`在應用程式中，具有相同的生命週期，為檢視控制器，但延伸模組沒有背景模式，而且不會暫停，當使用者已完成使用它們。 相反地，擴充功能會重複地初始化，並解除配置所需。
 
 ### <a name="creating-the-container-app-user-interface"></a>建立容器應用程式使用者介面
 
-這個逐步解說中，容器應用程式只用於做為方法出貨，而且安裝擴充功能，並不提供它自己的任何功能。 編輯 TodayContainer`Main.storyboard`檔案，並加入一些文字定義的延伸模組的函式，以及如何安裝它：
+此逐步解說中，容器應用程式只做為方法用來交付及安裝擴充功能，並不提供其本身的任何功能。 編輯 TodayContainer`Main.storyboard`檔案，並加入一些文字定義延伸模組的函式，以及如何加以安裝：
 
-[![](extensions-images/today10.png "編輯 TodayContainers Main.storyboard 檔案，並加入一些文字定義延伸模組函式和安裝方法")](extensions-images/today10.png#lightbox)
+[![](extensions-images/today10.png "編輯 TodayContainers Main.storyboard 檔案，並加入一些文字定義的延伸模組函式，以及如何將它安裝")](extensions-images/today10.png#lightbox)
 
 將變更儲存到分鏡腳本。
 
-<a name="Testing-the-Extension" />
+### <a name="testing-the-extension"></a>測試延伸模組
 
-### <a name="testing-the-extension"></a>測試擴充功能
+若要在 iOS 模擬器中測試您的延伸模組，請執行**TodayContainer**應用程式。 容器的主要檢視會顯示：
 
-若要在 iOS 模擬器中測試您的擴充功能，請執行**TodayContainer**應用程式。 容器的主要檢視會顯示：
+[![](extensions-images/run01.png "主要檢視會顯示容器")](extensions-images/run01.png#lightbox)
 
-[![](extensions-images/run01.png "將會顯示主要檢視容器")](extensions-images/run01.png#lightbox)
+接下來，點擊**首頁**按鈕，在模擬器中，從開啟畫面頂端向下撥動**通知中心**，選取**今天**索引標籤，然後按一下**編輯**按鈕：
 
-接下來，叫用**首頁**按鈕在模擬器中，從開啟畫面頂端向下撥動**通知中心**，選取**今天**索引標籤上，按一下  **編輯**按鈕：
+[![](extensions-images/run02.png "叫用在模擬器中，向下撥動以開啟通知中心，選取 [今天] 索引標籤，然後按一下 [編輯] 按鈕螢幕頂端的 [首頁] 按鈕")](extensions-images/run02.png#lightbox)
 
-[![](extensions-images/run02.png "叫用 [首頁] 按鈕，在模擬器中，從頂端畫面開啟 [通知中心] 選取 [今日] 索引標籤，按一下 [編輯] 按鈕的向下撥動")](extensions-images/run02.png#lightbox)
+新增**DaysRemaining**延伸模組**今天**檢視，然後按一下**完成**按鈕：
 
-新增**DaysRemaining**延伸**今天**檢視，並按一下**完成**按鈕：
+[![](extensions-images/run03.png "今日檢視新增 DaysRemaining 延伸模組，然後按一下 [完成] 按鈕")](extensions-images/run03.png#lightbox)
 
-[![](extensions-images/run03.png "DaysRemaining 延伸模組加入今日檢視，然後按一下 [完成] 按鈕")](extensions-images/run03.png#lightbox)
+將會加入新的 widget**今天**檢視結果才會顯示：
 
-將加入新的 widget**今天**檢視結果才會顯示：
+[![](extensions-images/run04.png "新增小工具會加入 [今日] 檢視，而且會顯示結果")](extensions-images/run04.png#lightbox)
 
-[![](extensions-images/run04.png "新的 widget 會加入今日檢視，並且會顯示結果")](extensions-images/run04.png#lightbox)
+## <a name="communicating-with-the-host-app"></a>與主應用程式通訊
 
-<a name="Communicating-with-the-Host-App" />
+今天您先前建立的延伸模組的範例不會和其主機應用程式的通訊 (**今天**螢幕)。 如果有，它會使用[ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)屬性`TodayViewController`或`CodeBasedViewController`類別。 
 
-## <a name="communicating-with-the-host-app"></a>主機應用程式與通訊
+會從其主機應用程式接收資料的擴充功能，資料會位於陣列的形式[NSExtensionItem](https://developer.xamarin.com/api/type/Foundation.NSExtensionItem/)中儲存的物件[InputItems](https://developer.xamarin.com/api/property/Foundation.NSExtensionContext.InputItems/)屬性[ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)延伸模組的`UIViewController`。
 
-範例今天先前建立的延伸模組不會與其主機應用程式通訊 (**今天**螢幕)。 如果該參數，它會使用[ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)屬性`TodayViewController`或`CodeBasedViewController`類別。 
+其他擴充功能，例如相片編輯擴充功能，可能會區分使用者完成或取消使用方式。 這將會收到信號給主機應用程式，透過[CompleteRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CompleteRequest/)並[CancelRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CancelRequest/)方法[ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)屬性。
 
-針對會從其主機應用程式接收資料的擴充功能，資料是陣列的形式[NSExtensionItem](https://developer.xamarin.com/api/type/Foundation.NSExtensionItem/)物件儲存在[InputItems](https://developer.xamarin.com/api/property/Foundation.NSExtensionContext.InputItems/)屬性[ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)的擴充功能的`UIViewController`。
-
-其他副檔名，例如相片編輯擴充功能可能會區分使用者完成或取消使用方式。 這將會收到信號回主機應用程式透過[CompleteRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CompleteRequest/)和[CancelRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CancelRequest/)方法[ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)屬性。
-
-如需詳細資訊，請參閱 Apple[應用程式擴充功能的程式設計指南](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214-CH20-SW1)。
-
-<a name="Communicating-with-the-Parent-App" />
+如需詳細資訊，請參閱 Apple[應用程式擴充功能程式設計指南](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214-CH20-SW1)。
 
 ## <a name="communicating-with-the-parent-app"></a>父應用程式與通訊
 
@@ -327,15 +280,13 @@ public override void ViewDidLoad ()
 - [共用 NSUserDefaults](~/ios/app-fundamentals/user-defaults.md)。
 - [共用檔案](~/ios/watchos/app-fundamentals/parent-app.md#files)。
 
-如需詳細資訊，請參閱[應用程式群組](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)區段我們**功能使用**文件。
-
-<a name="MobileCoreServices" />
+如需詳細資訊，請參閱[應用程式群組](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)一節我們**使用功能**文件。
 
 ## <a name="mobilecoreservices"></a>MobileCoreServices
 
-當使用擴充功能，使用統一類型識別項 (UTI) 來建立及管理應用程式、 其他應用程式和/或服務之間交換的資料。
+當使用延伸模組，請使用統一的型別識別項 (UTI) 來建立及管理應用程式、 其他應用程式和/或服務之間交換的資料。
 
-`MobileCoreServices.UTType`靜態類別會定義下列協助程式屬性，與 Apple`kUTType...`定義：
+`MobileCoreServices.UTType`靜態類別會定義下列協助程式屬性與 Apple 的`kUTType...`定義：
 
 - `kUTTypeAlembic` - `Alembic`
 - `kUTTypeAliasFile` - `AliasFile`
@@ -481,7 +432,7 @@ public override void ViewDidLoad ()
 - `kUTTypeXPCService` - `XPCService`
 - `kUTTypeZipArchive` - `ZipArchive`
 
-請參閱下列範例：
+下列範例，請參閱：
 
 ```csharp
 using MobileCoreServices;
@@ -497,25 +448,19 @@ results.ObjectForKey("NSExtensionJavaScriptPreprocessingResultsKey");
 });
 ```
 
-如需詳細資訊，請參閱[應用程式群組](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)區段我們**功能使用**文件。
-
-
-<a name="Precautions-and-Considerations" />
+如需詳細資訊，請參閱[應用程式群組](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)一節我們**使用功能**文件。
 
 ## <a name="precautions-and-considerations"></a>預防措施和考量
 
-延伸模組包含極少記憶體提供給他們的應用程式一樣。 它們應該執行快速且最少使用者和應用程式裝載於入侵。 不過，擴充功能也應該提供具有加上品牌的 UI，讓使用者識別擴充功能的開發人員使用的應用程式，或者其所屬的容器應用程式的不同，這種作法函式。
+延伸模組有更少的記憶體提供給他們相較於應用程式。 它們應該執行快速並給使用者，與裝載於應用程式的最小入侵。 不過，擴充功能也應該提供特殊且實用的函式，加上品牌的 ui 可讓使用者識別擴充功能的開發人員使用的應用程式或其所屬的容器應用程式。
 
-假設這些嚴格的需求，您應該只部署延伸模組已徹底測試並最佳化效能和記憶體耗用量。 
-
-<a name="Summary" />
+指定這些緊密的需求，您應該只部署已徹底測試並最佳化效能和記憶體耗用量的延伸模組。 
 
 ## <a name="summary"></a>總結
 
-這份文件已涵蓋擴充功能，它們是什麼，擴充點以及 iOS 所加諸的擴充功能上的已知的限制的類型。 它也將討論建立、 散發、 安裝和執行擴充功能和擴充功能的生命週期。 它提供建立簡單的逐步解說**今天**widget 顯示兩種方式可以建立使用分鏡腳本或程式碼的小工具的 UI。 它示範如何在 iOS 模擬器中測試擴充功能。 最後，它簡要討論溝通主機應用程式和幾個預防措施和開發擴充功能時，應該採取的考量。 
-
+本文件涵蓋延伸模組、 認證、 有什麼類型的擴充點以及 iOS 所加諸於延伸模組的已知的限制。 它討論建立、 散發、 安裝和執行擴充功能和擴充生命週期。 它提供建立簡單的逐步解說**今天**widget，顯示兩種方式可以建立小工具的 UI 使用分鏡腳本] 或 [程式碼。 它示範了如何在 iOS 模擬器中測試延伸模組。 最後，它簡短討論與主機應用程式和一些預防措施和開發擴充功能時應採取的考量進行通訊。 
 
 ## <a name="related-links"></a>相關連結
 
 - [ContainerApp （範例）](https://developer.xamarin.com/samples/monotouch/intro-to-extensions)
-- [建立 Xamarin.iOS 的擴充功能 （影片）](https://university.xamarin.com/lightninglectures/creating-extensions-in-ios)
+- [建立在 Xamarin.iOS 中的擴充功能 （影片）](https://university.xamarin.com/lightninglectures/creating-extensions-in-ios)

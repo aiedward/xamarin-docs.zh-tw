@@ -1,56 +1,56 @@
 ---
 title: Xamarin.Mac 中的來源清單
-description: 本文件涵蓋使用 Xamarin.Mac 應用程式中的來源清單。 它說明建立和維護 Xcode 和介面產生器中的來源清單，並在 C# 程式碼中與它們互動。
+description: 本文涵蓋在 Xamarin.Mac 應用程式中的來源清單。 它說明建立和維護在 Xcode 和 Interface Builder 中的來源清單，並與其互動以 C# 程式碼。
 ms.prod: xamarin
 ms.assetid: 651A3649-5AA8-4133-94D6-4873D99F7FCC
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: c93d4b0855fb96897da2018596766b16e5385ab4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: de51395192ab009f5c7fa338a4414ba553610b8c
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792768"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40251257"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Xamarin.Mac 中的來源清單
 
-_本文件涵蓋使用 Xamarin.Mac 應用程式中的來源清單。它說明建立和維護 Xcode 和介面產生器中的來源清單，並在 C# 程式碼中與它們互動。_
+_本文涵蓋在 Xamarin.Mac 應用程式中的來源清單。它說明建立和維護在 Xcode 和 Interface Builder 中的來源清單，並與其互動以 C# 程式碼。_
 
-當 Xamarin.Mac 應用程式中使用 C# 和.NET，您可以存取相同來源清單，工作的開發人員*OBJECTIVE-C*和*Xcode*沒有。 由於直接與 Xcode 整合 Xamarin.Mac，您可以使用 Xcode 的_介面產生器_建立，並維護您的來源清單 （或您可以選擇直接在 C# 程式碼中建立它們）。
+當在 Xamarin.Mac 應用程式中使用 C# 和.NET，您可以存取的相同來源清單，工作的開發人員*OBJECTIVE-C*並*Xcode*沒有。 由於 Xamarin.Mac 直接與 Xcode 整合，您可以使用 Xcode 的_Interface Builder_來建立，並維護您的來源清單 （或選擇直接在 C# 程式碼中建立它們）。
 
-來源清單是一種特殊的大綱檢視用來顯示動作，像是在搜尋或 iTunes 提要欄位的來源。
+來源清單是一種特殊的大綱檢視用來顯示動作，例如提要欄位，搜尋或 iTunes 中的來源。
 
-[![](source-list-images/source05.png "清單範例來源")](source-list-images/source05.png#lightbox)
+[![](source-list-images/source05.png "範例的來源 清單中選取")](source-list-images/source05.png#lightbox)
 
-在本文中，我們將討論的基本概念 Xamarin.Mac 應用程式中使用的來源清單。 強烈建議您逐步[Hello、 Mac](~/mac/get-started/hello-mac.md)發行項的第一次，具體來說[Xcode 和介面產生器簡介](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder)和[插座和動作](~/mac/get-started/hello-mac.md#Outlets_and_Actions)區段中的，因為它涵蓋重要概念和技術，我們將在本文中使用。
+在本文中，我們將涵蓋在 Xamarin.Mac 應用程式中使用的來源清單的基本概念。 強烈建議您逐步[Hello，Mac](~/mac/get-started/hello-mac.md)發行項的第一次，具體來說[Xcode 和 Interface Builder 簡介](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)並[輸出和動作](~/mac/get-started/hello-mac.md#outlets-and-actions)各節中的，因為它涵蓋重要概念和技術，我們將在本文中使用。
 
-您可能想要看看[公開 C# 類別 / Objective C 的方法](~/mac/internals/how-it-works.md)區段[Xamarin.Mac 內部](~/mac/internals/how-it-works.md)文件，它會說明`Register`和`Export`命令用於網路接您的 C# 類別 OBJECTIVE-C 物件和 UI 項目。
+您可能想要看看[公開 C# 類別 / 方法，以 OBJECTIVE-C](~/mac/internals/how-it-works.md)一節[Xamarin.Mac 內部](~/mac/internals/how-it-works.md)文件，它會說明`Register`和`Export`命令用於連線接您的 C# 類別 OBJECTIVE-C 物件和 UI 項目。
 
 <a name="Introduction_to_Outline_Views" />
 
-## <a name="introduction-to-source-lists"></a>Introduction to 來源清單
+## <a name="introduction-to-source-lists"></a>來源清單簡介
 
-如前所述，來源清單是一種特殊的大綱檢視用來顯示動作，像是在搜尋或 iTunes 提要欄位的來源。 來源清單是一種可讓使用者展開或摺疊的階層式資料列。 與資料表檢視中，來源清單中的項目不是一般的清單中，它們會組織在階層中，例如硬碟機上檔案和資料夾。 如果來源清單中的項目會包含其他項目，它可以展開或摺疊，只要使用者。
+如上所述，來源清單是一種特殊的大綱檢視用來顯示動作，例如提要欄位，搜尋或 iTunes 中的來源。 來源清單是一種資料表，可讓使用者展開或摺疊的階層式資料的資料列。 不同於資料表檢視中，來源清單中的項目不一般的清單中，其組織在階層中，例如硬碟機上檔案和資料夾。 如果來源清單中的項目包含其他項目，它可展開或摺疊，只要使用者。
 
-來源清單是特別樣式的大綱檢視 (`NSOutlineView`)，而其本身是 [資料表] 檢視的子類別 (`NSTableView`)，因此，從其父類別繼承其大部分的行為。 如此一來，大綱模式中，所支援的許多作業也支援的來源清單。 Xamarin.Mac 應用程式控制了這些功能，而且可以設定來允許或禁止特定作業的來源清單的參數 （無論是在程式碼或介面產生器）。
+[來源] 清單是特別指定樣式的大綱檢視 (`NSOutlineView`)，而其本身是 [資料表] 檢視的子類別 (`NSTableView`)，因此，將其行為繼承其父類別。 如此一來，大綱模式中，所支援的許多作業也支援的來源清單。 Xamarin.Mac 應用程式的這些功能的控制，而且可以設定要允許或禁止特定作業的來源清單的參數 （無論是程式碼或 Interface Builder 中）。
 
-來源清單不會儲存它本身的資料，而是它會仰賴資料來源 (`NSOutlineViewDataSource`) 來提供資料列和資料行所需，以視需要為基礎。
+來源清單不會儲存它本身的資料，而是它會依賴資料來源 (`NSOutlineViewDataSource`) 提供資料列和資料行所需，以視需要為基礎。
 
-可以自訂來源清單的行為，藉由提供大綱檢視委派的子類別 (`NSOutlineViewDelegate`) 若要支援大綱型別以選取的功能，項目選取和編輯、 自訂的追蹤和自訂檢視的個別項目。
+來源清單的行為可以自訂所提供的大綱檢視委派子類別 (`NSOutlineViewDelegate`) 若要支援外框類型選取 [功能]，項目選取和編輯、 自訂追蹤和自訂檢視的個別項目。
 
-因為來源清單共用許多它的行為與功能以及資料表檢視表和大綱檢視，您可能想要瀏覽我們[資料表檢視](~/mac/user-interface/table-view.md)和[大綱檢視](~/mac/user-interface/outline-view.md)文件，然後再繼續與此發行項。
+因為來源清單會與資料表檢視 」 和 「 大綱檢視的大部分的行為和功能共用，您可能想要瀏覽我們[資料表檢視](~/mac/user-interface/table-view.md)並[大綱檢視](~/mac/user-interface/outline-view.md)文件，然後再繼續與此發行項。
 
 <a name="Working_with_Source_Lists" />
 
 ## <a name="working-with-source-lists"></a>使用來源清單
 
-來源清單是一種特殊的大綱檢視用來顯示動作，像是在搜尋或 iTunes 提要欄位的來源。 不同於大綱檢視中，我們在介面產生器定義來源清單之前，我們來建立支援類別 Xamarin.Mac 中。
+來源清單是一種特殊的大綱檢視用來顯示動作，例如提要欄位，搜尋或 iTunes 中的來源。 不同於大綱檢視中，我們定義介面產生器中的來源清單之前，讓我們建立支援類別 xamarin.mac。
 
-首先，我們來建立新`SourceListItem`類別，以保存資料來源清單。 在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...** 選取**一般** > **空類別**，輸入`SourceListItem`如**名稱**按一下**新增**按鈕：
+首先，讓我們來建立 新`SourceListItem`類別來保存資料來源清單。 在 **方案總管**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...** 選取**一般** > **空類別**，輸入`SourceListItem`如**名稱**然後按一下**新增**按鈕：
 
-[![](source-list-images/source01.png "加入空的類別")](source-list-images/source01.png#lightbox)
+[![](source-list-images/source01.png "新增空的類別")](source-list-images/source01.png#lightbox)
 
 請`SourceListItem.cs`檔案外觀如下所示： 
 
@@ -270,7 +270,7 @@ namespace MacOutlines
 }
 ```
 
-在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...** 選取**一般** > **空類別**，輸入`SourceListDataSource`如**名稱**按一下**新增** 按鈕。 請`SourceListDataSource.cs`檔案外觀如下所示：
+在 [**方案總管**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...** 選取**一般** > **空類別**，輸入`SourceListDataSource`如**名稱**然後按一下**新增**] 按鈕。 請`SourceListDataSource.cs`檔案外觀如下所示：
 
 ```csharp
 using System;
@@ -352,9 +352,9 @@ namespace MacOutlines
 }
 ```
 
-這將提供的資料來源清單。
+這會提供資料的來源清單。
 
-在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...** 選取**一般** > **空類別**，輸入`SourceListDelegate`如**名稱**按一下**新增** 按鈕。 請`SourceListDelegate.cs`檔案外觀如下所示：
+在 [**方案總管**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...** 選取**一般** > **空類別**，輸入`SourceListDelegate`如**名稱**然後按一下**新增**] 按鈕。 請`SourceListDelegate.cs`檔案外觀如下所示：
 
 ```csharp
 using System;
@@ -444,9 +444,9 @@ namespace MacOutlines
 }
 ```
 
-這會提供來源清單的行為。
+這會提供我們的來源清單的行為。
 
-最後，在**方案總管 中**，以滑鼠右鍵按一下專案，然後選取**新增** > **新的檔案...** 選取**一般** > **空類別**，輸入`SourceListView`如**名稱**按一下**新增** 按鈕。 請`SourceListView.cs`檔案外觀如下所示：
+最後，在**方案總管**，以滑鼠右鍵按一下專案，然後選取**新增** > **新檔...** 選取**一般** > **空類別**，輸入`SourceListView`如**名稱**然後按一下**新增** 按鈕。 請`SourceListView.cs`檔案外觀如下所示：
 
 ```csharp
 using System;
@@ -524,35 +524,35 @@ namespace MacOutlines
 }
 ```
 
-這會建立自訂、 可重複使用的子類別`NSOutlineView`(`SourceListView`) 可讓我們，我們不提供任何 Xamarin.Mac 應用程式中的磁碟機 [來源] 清單。
+這會建立自訂、 可重複使用的子`NSOutlineView`(`SourceListView`)，我們可以使用我們所做的任何 Xamarin.Mac 應用程式中的磁碟機來源 清單中的色彩。
 
 <a name="Creating_and_Maintaining_Source_Lists_in_Xcode" />
 
 ## <a name="creating-and-maintaining-source-lists-in-xcode"></a>建立和維護在 Xcode 中的來源清單
 
-現在，讓我們設計介面產生器中我們來源清單。 按兩下`Main.storyboard`檔案以開啟介面產生器中進行編輯，並拖曳，分割檢視從**程式庫偵測器**、 將它加入至檢視控制器，並將它設定為與檢視中調整大小**條件約束編輯器**:
+現在，讓我們設計介面產生器中我們來源清單。 按兩下`Main.storyboard`檔案以開啟它進行編輯介面產生器 中，並拖曳，分割檢視，從**程式庫偵測器**、 將它新增至檢視控制器，並將它調整大小以在檢視與設定**條件約束編輯器**:
 
 [![](source-list-images/source00.png "編輯條件約束")](source-list-images/source00.png#lightbox)
 
-接下來，將從來源清單**程式庫偵測器**、 將它加入至左側的 分割檢視，並將它與檢視中調整大小設定**條件約束編輯器**:
+接下來，將從來源清單**程式庫偵測器**、 將它新增至左側的 [分割] 檢視，並將它調整大小以在檢視與設定**條件約束編輯器**:
 
 [![](source-list-images/source02.png "編輯條件約束")](source-list-images/source02.png#lightbox)
 
-接下來，切換至**識別檢視**，選取 [來源] 清單中，並變更它的**類別**至`SourceListView`:
+接下來，切換至**識別檢視**，選取 [來源] 清單中，並變更它的**類別**到`SourceListView`:
 
-[![](source-list-images/source03.png "設定類別名稱")](source-list-images/source03.png#lightbox)
+[![](source-list-images/source03.png "設定的類別名稱")](source-list-images/source03.png#lightbox)
 
-最後，建立**插座**我們來源清單稱為`SourceList`中`ViewController.h`檔案：
+最後，建立**插座**來源清單，稱為`SourceList`在`ViewController.h`檔案：
 
 [![](source-list-images/source04.png "設定輸出")](source-list-images/source04.png#lightbox)
 
-儲存變更並返回 Visual Studio for Mac 使用 Xcode 進行同步處理。
+儲存變更並返回 Visual Studio for Mac 與 Xcode 同步處理。
 
 <a name="Populating the Source List" />
 
 ## <a name="populating-the-source-list"></a>填入來源清單
 
-開始編輯`RotationWindow.cs`檔案在 Visual Studio for Mac，並讓它的`AwakeFromNib`方法看起來像下列：
+讓我們編輯`RotationWindow.cs`檔案在 Visual Studio for Mac，並使它的`AwakeFromNib`方法外觀如下所示：
 
 ```csharp
 public override void AwakeFromNib ()
@@ -591,7 +591,7 @@ public override void AwakeFromNib ()
 }
 ```
 
-`Initialize ()`方法需要針對我們的來源清單呼叫**插座**_之前_加入任何項目。 每個群組的項目，我們會建立父項目，然後將子項目加入至該群組項目。 每個群組會再加入至來源清單集合`SourceList.AddItem (...)`。 最後兩行載入資料來源清單，並展開所有群組：
+`Initialize ()`方法需要呼叫針對來源名單**插座**_之前_加入任何項目。 每個群組的項目，我們會建立父項目，並接著將子項目新增至該群組項目。 每個群組接著會新增至來源清單集合`SourceList.AddItem (...)`。 最後兩行載入資料的來源清單，並展開所有群組：
 
 ```csharp
 // Display side list
@@ -599,7 +599,7 @@ SourceList.ReloadData ();
 SourceList.ExpandItem (null, true);
 ```
 
-最後，編輯`AppDelegate.cs`檔案並製作`DidFinishLaunching`方法看起來像下列：
+最後，編輯`AppDelegate.cs`檔案，並讓`DidFinishLaunching`方法外觀如下所示：
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -612,7 +612,7 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-當我們執行我們的應用程式時，以下將會顯示：
+如果我們執行我們的應用程式時，將會顯示下列：
 
 [![](source-list-images/source05.png "執行範例應用程式")](source-list-images/source05.png#lightbox)
 
@@ -620,7 +620,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 ## <a name="summary"></a>總結
 
-這篇文章已取得詳細的探討 Xamarin.Mac 應用程式中使用的來源清單。 我們了解如何建立和維護 Xcode 的介面產生器中會列出來源以及如何使用 C# 程式碼的來源清單。
+本文所深入了解在 Xamarin.Mac 應用程式中使用的來源清單。 我們看到如何建立和維護在 Xcode 的 Interface Builder 中列出的來源以及如何使用 C# 程式碼中的來源清單。
 
 ## <a name="related-links"></a>相關連結
 
@@ -629,7 +629,7 @@ public override void DidFinishLaunching (NSNotification notification)
 - [資料表檢視](~/mac/user-interface/table-view.md)
 - [大綱檢視](~/mac/user-interface/outline-view.md)
 - [OS X 人性化介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) \(英文\)
-- [Introduction to 大綱檢視](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
+- [大綱檢視的簡介](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
 - [NSOutlineView](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSOutlineView_Class/index.html#//apple_ref/doc/uid/TP40004079)
 - [NSOutlineViewDataSource](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSOutlineViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40004175)
 - [NSOutlineViewDelegate](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/NSOutlineViewDelegate_Protocol/index.html#//apple_ref/doc/uid/TP40008609)

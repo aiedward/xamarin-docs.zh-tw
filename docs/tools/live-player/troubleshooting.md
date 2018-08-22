@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
 author: topgenorth
 ms.author: toopge
-ms.date: 05/17/2017
-ms.openlocfilehash: 3db14db2c64e024ef1c04275661f610f9407dfb7
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.date: 08/08/2018
+ms.openlocfilehash: ceb8964ac378957dcf5883bbbfff9e984b079294
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831328"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40251049"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>疑難排解 Xamarin Live Player
 
@@ -78,24 +78,6 @@ ms.locfileid: "38831328"
 </DeviceList>
 ```
 
-**加入 iOS 裝置：**
-
-```xml
-<PlayerDevice>
-<SecretCode>ENTER-PAIR-CODE-HERE</SecretCode>
-<UniqueIdentifier>ENTER-GUID-HERE</UniqueIdentifier>
-<Name>iPhone Player</Name>
-<Platform>iOS</Platform>
-<AndroidApiLevel>0</AndroidApiLevel>
-<DebuggerEndPoint>ENTER-IP-HERE:37847</DebuggerEndPoint>
-<HostEndPoint />
-<NeedsAppInstall>false</NeedsAppInstall>
-<IsSimulator>false</IsSimulator>
-<SimulatorIdentifier />
-<LastConnectTimeUtc>2018-01-08T20:36:03.9492291Z</LastConnectTimeUtc>
-</PlayerDevice>
-```
-
 **新增 Android 裝置：**
 
 ```xml
@@ -118,7 +100,7 @@ ms.locfileid: "38831328"
 
 ## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>在 IDE 中的 「 型別或命名空間無法找到 」 訊息
 
-您已選取的核取**啟始專案**符合您的裝置類型 （iOS 或 Android） 和設定與該裝置類型 （例如。 **偵錯 | iPhone 模擬器**適用於 iOS)。
+您已選取的核取**啟始專案**符合您的裝置類型 （例如。 Android) 和設定與該裝置類型 （例如。 **偵錯**適用於 Android)。
 
 ## <a name="constructor-on-type-interpretedxamarinformsbutton-not-found-message-in-player"></a>在 Player 中的 「 型別 'InterpretedXamarin.Forms.Button' 找不到上的建構函式 」 訊息
 

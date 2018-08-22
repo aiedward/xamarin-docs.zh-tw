@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: topgenorth
 ms.author: toopge
-ms.date: 05/14/2017
-ms.openlocfilehash: 88f7f62650484007c221aa7baaa684f872e0a8e9
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.date: 08/08/2017
+ms.openlocfilehash: b3166aa440cbe2981d597771b360373fadc6451b
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38830409"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40250979"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player 應用程式
 
@@ -19,17 +19,17 @@ ms.locfileid: "38830409"
 
 當您在手機上安裝應用程式時，請遵循[安裝指示](~/tools/live-player/install.md)連線到您的電腦。 請嘗試[範例應用程式](~/tools/live-player/samples.md)讓它運作。
 
-在啟動時，Xamarin Live Player 應用程式看起來像這樣 (iOS 和 Android 上分別):
+在啟動時，Xamarin Live Player 應用程式看起來像這樣：
 
-![Live Player iOS 應用程式螢幕擷取畫面](player-images/app-iphone-sml.png) ![即時玩家 Android 的應用程式螢幕擷取畫面](player-images/app-android-sml.png)
+![即時玩家 Android 的應用程式螢幕擷取畫面](player-images/app-android-sml.png)
 
 當您按下**與 Visual Studio 配對**，使用相機來掃描條碼，顯示您的電腦上：
 
-![IOS 條碼掃描器的螢幕擷取畫面](player-images/scan-iphone-sml.png) ![Android 的條碼掃描器的螢幕擷取畫面](player-images/scan-android-sml.png)
+![Android 的條碼掃描器的螢幕擷取畫面](player-images/scan-android-sml.png)
 
 如果連線成功，應該立即執行程式碼在裝置上幾乎 (例如[計算機範例](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator)):
 
-![在裝置上執行的範例計算機應用程式](player-images/basic-calculator-iphone-sml.png)
+![在裝置上執行的範例計算機應用程式](player-images/basic-calculator-sml.png)
 
 ## <a name="options"></a>選項
 
@@ -51,7 +51,7 @@ ms.locfileid: "38830409"
 
 ## <a name="managing-devices"></a>管理裝置
 
-若要第一次連接裝置，請依照下列中的指示[需求與安裝](~/tools/live-player/install.md)。 您可以配對 （例如 iOS 和 Android） 的多個裝置，然後透過 IDE 進行管理。
+若要第一次連接裝置，請依照下列中的指示[需求與安裝](~/tools/live-player/install.md)。 您可以配對多個裝置，然後透過 IDE 進行管理。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
