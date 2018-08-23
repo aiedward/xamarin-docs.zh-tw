@@ -112,7 +112,7 @@ UISwitch.Appearance.OnTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 
 這些兩個螢幕擷取畫面顯示預設值`UISwitch`在左方和自訂的版本控制 (設定`Appearance`) 在右邊[待辦事項範例](https://developer.xamarin.com/samples/xamarin-forms/Todo/):
 
-![](theme-images/switch-default.png "預設色彩 UISwitch") ![ ](theme-images/switch-custom.png "自訂 UISwitch 色彩")
+![](theme-images/switch-default.png "預設色彩 UISwitch") ![](theme-images/switch-custom.png "自訂 UISwitch 色彩")
 
 ### <a name="other-controls"></a>其他控制項
 
