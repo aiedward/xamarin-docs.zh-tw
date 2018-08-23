@@ -76,7 +76,7 @@ try {
 
 這是因為 Objective C 的堆疊 unwinder 不知道 managed`catch`子句，而且不會`finally`子句會執行。
 
-當上述的程式碼範例_是_有效，它是因為 Objective C 的未處理的 Objective C 例外狀況的通知方法[ `NSSetUncaughtExceptionHandler` ] [ 2]，Xamarin.iOS 和 Xamarin.Mac 使用，並在該點嘗試 managed 例外狀況轉換成 Objective C 中的任何例外狀況。
+當上述的程式碼範例_是_有效，它是因為 Objective C 的未處理的 Objective C 例外狀況的通知方法 [`NSSetUncaughtExceptionHandler`][2]，Xamarin.iOS 和 Xamarin.Mac 使用，並在該點嘗試 managed 例外狀況轉換成 Objective C 中的任何例外狀況。
 
 ## <a name="scenarios"></a>案例
 
