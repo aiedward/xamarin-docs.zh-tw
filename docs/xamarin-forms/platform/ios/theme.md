@@ -116,7 +116,7 @@ UISwitch.Appearance.OnTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 
 ### <a name="other-controls"></a>其他控制項
 
-其預設色彩和其他設定使用的屬性，可以有許多的 iOS 使用者介面控制項[ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)。
+其預設色彩和其他設定使用的屬性，可以有許多的 iOS 使用者介面控制項[`UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)。
 
 
 
