@@ -443,7 +443,7 @@ class PhotoCropperCanvasView : SKCanvasView
 
 ## <a name="hosting-the-photo-cropper-canvas-view"></a>裝載相片 cropper 畫布檢視
 
-與處理裁剪的邏輯，這兩個類別**裁剪相片**頁面**[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式有很少的工作来執行。 XAML 檔案會具現化`Grid`主機`PhotoCropperCanvasView`並**完成**按鈕：
+與處理裁剪的邏輯，這兩個類別**裁剪相片**頁面 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式有很少的工作来執行。 XAML 檔案會具現化`Grid`主機`PhotoCropperCanvasView`並**完成**按鈕：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -534,7 +534,7 @@ photoCropper = new PhotoCropperCanvasView(bitmap, 1.78f);
 
 知名的 Xamarin.Forms 版本 14 或 15 謎題出現在本書第 22 章[_使用 Xamarin.Forms 建立行動應用程式_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)而且可以下載作為[ **XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)。 不過，拼圖會變得更多樂趣 （且通常更具挑戰性） 當它根據您自己的相片媒體櫃中的影像。
 
-這個版本的 14-15 個謎題是一部分**[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式中，組成一連串的頁面標題為**相片拼圖**。
+這個版本的 14-15 個謎題是一部分 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式中，組成一連串的頁面標題為**相片拼圖**。
 
 **PhotoPuzzlePage1.xaml**檔案的組成`Button`:
 
