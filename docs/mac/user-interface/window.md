@@ -762,7 +762,7 @@ void OpenDialog (NSObject sender)
 5. 刪除現有的視窗，並將從面板拖曳**程式庫偵測器**中**介面編輯器**: 
 
     [![](window-images/panels01.png "刪除現有的視窗")](window-images/panels01.png#lightbox)
-6. 最多可連結面板 **檔案的擁有者*-**視窗*- **插座**: 
+6. 最多可連結面板 **檔案的擁有者*- **視窗*- **插座**: 
 
     [![](window-images/panels02.png "拖曳面板的連結")](window-images/panels02.png#lightbox)
 7. 切換至**身分識別偵測器**而設定的面板類別為`DocumentPanel`: 
