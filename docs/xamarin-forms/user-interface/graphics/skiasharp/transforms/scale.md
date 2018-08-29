@@ -44,7 +44,7 @@ Translate 因素的預設值為 0;縮放比例的預設值為 1。
 public void Scale (Single s)
 ```
 
-這就所謂*dbi*100*調整&mdash;調整也就相同的兩個方向。 Dbi*100 調整保留物件的長寬比。
+dbi100這就所謂 *dbi100* 調整&mdash;調整也就相同的兩個方向。 Dbi100 調整保留物件的長寬比。
 
 第二個[ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/)方法可讓您指定的水平和垂直縮放的不同值：
 
@@ -292,7 +292,7 @@ using (SKPaint textPaint = new SKPaint
 
 [![](scale-images/anisotropictext-small.png "非等向性測試頁的三個螢幕擷取畫面")](scale-images/anisotropictext-large.png#lightbox "的非等向性測試頁的三個螢幕擷取畫面")
 
-如果您需要保留的圖形物件的外觀比例，您會想要使用 dbi*100 縮放。 **Dbi*100 調整**頁面所示範的是此為 11 星形。 就概念而言，具有 dbi*100 調整頁面的中央顯示圖形物件的步驟如下：
+如果您需要保留的圖形物件的外觀比例，您會想要使用 dbi100 縮放。 **Dbi100 調整**頁面所示範的是此為 11 星形。 就概念而言，具有 dbi100 調整頁面的中央顯示圖形物件的步驟如下：
 
 - 轉譯圖形物件左上角的中心。
 - 縮放的水平和垂直頁面尺寸除以 圖形物件維度的最小值為基礎的物件。
@@ -339,7 +339,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 程式碼也會顯示星號十次，每次減少縮放因素 10%，然後逐漸從紅色變成藍色中變更 色彩：
 
-[![](scale-images/isotropicscaling-small.png "Dbi*100 調整頁面的三個螢幕擷取畫面")](scale-images/isotropicscaling-large.png#lightbox "Dbi*100 調整頁面的三個螢幕擷取畫面")
+[![](scale-images/isotropicscaling-small.png "Dbi100 調整頁面的三個螢幕擷取畫面")](scale-images/isotropicscaling-large.png#lightbox "Dbi100 調整頁面的三個螢幕擷取畫面")
 
 
 ## <a name="related-links"></a>相關連結
