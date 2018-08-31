@@ -8,10 +8,10 @@ author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
 ms.openlocfilehash: f11f5d1cbde0f5eae27215af8eb6544be46c0206
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.sourcegitcommit: ee66db647ae9d94b54b1c5d9093075a620d0c6b4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
+ms.lasthandoff: 08/28/2018
 ms.locfileid: "39654811"
 ---
 # <a name="push-notifications-in-ios"></a>在 iOS 中的推播通知
@@ -81,12 +81,10 @@ Apple 會維護兩個環境的 APNS:*沙箱*並*生產*環境。 沙箱環境為
 
 8.  若要建立佈建設定檔的開發，瀏覽至**佈建設定檔**區段，然後遵循步驟來建立，使用我們剛才建立的應用程式識別碼。
 
-9.  一旦您已建立佈建設定檔，開啟**Xcode Organizer**並加以重新整理。 如果您建立的佈建設定檔未出現您可能必須從 iOS 佈建入口網站下載的設定檔，然後手動將它匯入。 下列螢幕擷取畫面顯示召集人的範例，以佈建的設定檔加入：
-
+9.  一旦您已建立佈建設定檔，開啟**Xcode Organizer**並加以重新整理。 如果您建立的佈建設定檔未出現您可能必須從 iOS 佈建入口網站下載的設定檔，然後手動將它匯入。 下列螢幕擷取畫面顯示召集人的範例，以佈建的設定檔加入：  
     [![](remote-notifications-in-ios-images/image13new.png "此螢幕擷取畫面顯示召集人的範例，以佈建的設定檔新增")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
-10.  此時，我們需要設定 Xamarin.iOS 專案以使用這個新建立的佈建設定檔。 這是從**專案選項** 對話方塊底下**iOS 套件組合簽署** 索引標籤，如下列螢幕擷取畫面：
-
+10.  此時，我們需要設定 Xamarin.iOS 專案以使用這個新建立的佈建設定檔。 這是從**專案選項** 對話方塊底下**iOS 套件組合簽署** 索引標籤，如下列螢幕擷取畫面：  
     [![](remote-notifications-in-ios-images/image11.png "Xamarin.iOS 專案設定為使用這個新建立的佈建設定檔")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 此時應用程式設定為使用推播通知。 不過，仍有幾個步驟，所需的憑證。 此憑證是 DER PushSharp，需要個人資訊交換 (PKCS12) 憑證與不相容的格式。 若要將憑證轉換，如此就可供 PushSharp，執行最後一個步驟執行：

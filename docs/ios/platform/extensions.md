@@ -9,10 +9,10 @@ author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
 ms.openlocfilehash: 831625c88bb3c0f8403d3b330054050488956cb6
-ms.sourcegitcommit: b6f3e55d4f3dcdc505abc8dc9241cff0bb5bd154
+ms.sourcegitcommit: f9fb316344fc4dce2fdce0dde3c5f4c2e4a42d08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/10/2018
+ms.lasthandoff: 08/30/2018
 ms.locfileid: "40251238"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的 iOS 延伸模組
