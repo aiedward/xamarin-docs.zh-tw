@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
 ms.openlocfilehash: 2369b249681b926476cf3938c51c99745eba9098
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.sourcegitcommit: 8888cb7d75f4469f2a1195b9a426a2e1fbf46bd8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 08/31/2018
 ms.locfileid: "38995738"
 ---
 # <a name="customizing-a-contentpage"></a>自訂 ContentPage
@@ -197,7 +197,7 @@ namespace CustomRenderer.Droid
 
 呼叫基底類別的`OnElementChanged`方法具現化 Android`ViewGroup`控制項，也就是檢視的群組。 提供，轉譯器不已經附加到現有的 Xamarin.Forms 元素，前提是 page 執行個體存在，會呈現的自訂轉譯器，則只會呈現即時的相機串流。
 
-然後藉由叫用一系列的方法，使用自訂頁面`Camera`API，以提供即時資料流從相機，並且能夠擷取相片，之前`AddView`方法會叫用來新增即時的相機串流處理至 UI `ViewGroup`。
+然後藉由叫用一系列的方法，使用自訂頁面`Camera`API，以提供即時資料流從相機，並且能夠擷取相片，之前`AddView`方法會叫用來新增即時的相機串流處理至 UI `ViewGroup`。 請注意，在 Android 上也需要覆寫`OnLayout`方法執行量值和版面配置檢視上的作業。 如需詳細資訊，請參閱 < [ContentPage 轉譯器範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/contentpage/)。
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>建立 UWP 上的頁面轉譯器
 

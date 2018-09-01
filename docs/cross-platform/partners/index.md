@@ -9,10 +9,10 @@ ms.date: 07/16/2018
 hide_comments: true
 hideEdit: true
 ms.openlocfilehash: d78c0e52b96403ad27a7c5ac69a367746781b589
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.sourcegitcommit: 8888cb7d75f4469f2a1195b9a426a2e1fbf46bd8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
+ms.lasthandoff: 08/31/2018
 ms.locfileid: "39351739"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>認證來傳遞行動解決方案的諮詢合作夥伴
@@ -431,7 +431,7 @@ _許多協力廠商列出主要位置，對外提供服務。_
 |[Sasken 通訊技術限制](http://www.sasken.com)|孟買，印度|Sasken 協助使用者保持聯繫無論他們身處何處。 更多的產業，包括自動電子，消費性電子產品、 零售和醫療保健看到雲端的連線以及的必要性，以及資料驅動即時決策。 使用中的通訊和媒體處理的無與倫比的領域實力，也就是準備擔任產業資訊清單的重大挑戰。 它們搭配與其生態系統中提供新的、 不斷演變的環境中連接的裝置最高的服務。|
 |[ServPRO 技術 Pvt Ltd](http://www.servpro.in)|孟買，印度|ServPRO，代表 「 主動提供 「 品牌所 Mr.Pushpinder Bhatia 成立於 2009年。 ServPRO 是前置 IT 解決方案和專用的服務提供者來提供商務關鍵性與創新的 IT 解決方案，跨許多垂直區段，包括方式 & Garments、 零售、 石油與天然氣、 Pharmaceuticals、 製造、 銀行、 Agro，FMCG/CPG、 Bullion、 EXIM 和各種其他產業縱向市場。|
 |[Taritas 軟體解決方案 Pvt。Ltd.](http://www.taritas.com/)|Bengaluru，Karnataka，印度;Jabalpur，Madhya 得印度|Taritas 是軟體外包公司，提供許多產業的頂尖解決方案。 結合境外的成本效益的軟體和應用程式開發的全方位知識可讓我們將提供高品質開發服務，主要著重於盡量降低專案成本，並將用戶端的收益最大化。 我們遵循的 「 時間和預算，右第一次 」 的方法。 |
-|[Tech Mahindra](https://techmahindra.com)|Bengaluru|Tech Mahindra 代表連線的世界裡，提供創新和以客戶為中心的資訊技術服務和解決方案，讓企業、 關聯和上升協會 ' 及參與狀況。 我們很 4.4 億 USD 的公司 117,600 + 專業人員跨 90 個國家/地區，協助超過 840 + 全球的客戶包括財星 500 大公司。|
+|[Tech Mahindra](https://techmahindra.com)|Bengaluru|Tech Mahindra 代表連線的世界裡，提供創新和以客戶為中心的資訊技術服務和解決方案，讓企業、 關聯和以 Rise™ 協會。 我們很 4.4 億 USD 的公司 117,600 + 專業人員跨 90 個國家/地區，協助超過 840 + 全球的客戶包括財星 500 大公司。|
 |[TechAhead 軟體 Pvt。Ltd.](http://www.techaheadcorp.com)|普林斯頓，紐澤西州;印度諾伊達|我們會建立行動性解決方案來加速工作場所數位轉型、 提高生產力的方法，強制執行安全性，並讓人們能夠隨時隨地在任何時間。 開發自動調整的行動性解決方案，為您企業的模型和 resonate 完全與品牌認知、 市場的滲透、 服務整合和客戶期望的商務目標。|
 |[逐一查看樹狀結構顧問服務](http://www.walkingtree.in/)|海德拉巴，印度|逐一查看樹狀結構會辨識其熱愛科技 IT 軟體和服務提供者。 它們可做為產品開發團隊或後端的工程小組的客戶在全球各地。|
 |[Web 編目程式](http://www.webspiders.com)|紐約州紐約市;倫敦，英國;新加坡;印度|Web 編目程式 (WS) 是企業軟體公司，專門開發產品行銷及磁碟機的 HR 轉送使用者參與使用行動和人工智慧導向的機器人。|
@@ -719,7 +719,7 @@ _許多協力廠商列出主要位置，對外提供服務。_
 |[不可能很少](http://www.rarelyimpossible.com)|Bournemouth，英國|很少無法協助公司建置行動應用程式和 IoT 雲端解決方案來解決商務問題，並著重於設計和開發階段的使用者體驗。 專案和產品，我們建立我們的用戶端透過我們的目標是讓所有人的工具，協助他們在其每一天中的組織內。|
 |[Rock 穩固的知識](http://www.rocksolidknowledge.com)|Bristol，英國|因為 Xamarin 合作夥伴，我們可以建置跨平台行動裝置的解決方案，在 iOS 和 Android 上使用 Xamarin Forms 與原生 UI。 我們是有經驗的開發，原生 UI 覺得同時共用，或很大的程式碼中，平台之間傳遞的解決方案。|
 |[Screenmedia](http://www.screenmedia.co.uk)|格拉斯哥，英國|Screenmedia 認為，若要建立用戶端和使用者的人類看得 centred 解決方案，它們必須是人類 centred 的商務。 他們對願景和值完全反映這一點，當然也變得人員。 Screenmedia 的做法是文化特性是他們成功的關鍵。 它 ' Äôs 哪些磁碟機，並維持在新興技術; 他們持續創新可協助建立敏捷式軟體開發的合作關係，與用戶端;而且 ' 如何成為非常具挑戰性的 Äôs 工作變得有樂趣。|
-|[順序](https://www.sequence.co.uk/)|卡地夫，英國;倫敦，英國|序列是建立於 1995 年創意數位機構。 Specialising 設計、 策略和使用者體驗中，他們已工作與一些英國的範圍從製造到旅遊及觀光產業中最大的組織。 連接與他們的客戶透過熱情和創新的品牌。|
+|[Sequence](https://www.sequence.co.uk/)|卡地夫，英國;倫敦，英國|序列是建立於 1995 年創意數位機構。 Specialising 設計、 策略和使用者體驗中，他們已工作與一些英國的範圍從製造到旅遊及觀光產業中最大的組織。 連接與他們的客戶透過熱情和創新的品牌。|
 |[ShinobiSolutions](https://www.shinobicontrols.com/shinobienterprise)|Newcastle upon Tyne，英國|自 2011 年創立，Shinobicontrols 已建立完整的強大互動式 UI 控制項適用於 iOS 和 Android 開發人員。 2012，他們可以啟動 shinobicharts，其第一個產品。 從那時起，它們 ' Äôve 急速成長，而且現在它們提供數千個客戶使用我們快速擴充的 portfolio，產品的 UI 解決方案。|
 |[Skillweb](http://www.skillweb.co.uk)|高 Wycombe，英國|Skillweb 是英國為基礎的私人擁有商務提供技術解決方案，可協助組織管理其行動工作力及追蹤其貨物的移動。 該公司在歐洲與英國復活節自 1999年管理部署，並會負責最多 100 萬筆交易每個月且不斷成長。|
 |[解決的軟體](http://www.softwaresolved.com/)|Exeter 英國;倫敦，英國;曼徹斯特，英國|與我們信任和未處理的軟體傳遞為基礎的用戶端，我們就會建置長期合作關係。 我們是 Microsoft 金級合作夥伴，我們的程序是 ISO 9001 認證。  這表示我們公認最高的品質標準，在軟體開發。|
