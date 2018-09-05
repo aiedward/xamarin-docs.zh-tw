@@ -18,7 +18,7 @@ ms.locfileid: "39202938"
 
 ListView 支援透過下列方式提供資料互動：
 
-- [**選取範圍] & [點選**](#selectiontaps) &ndash;回應點選，以及選取項目/deselections 的項目。 啟用或停用 （預設為啟用） 的資料列選取範圍。
+- [**選取範圍 & 點選**](#selectiontaps) &ndash;回應點選，以及選取項目/deselections 的項目。 啟用或停用 （預設為啟用） 的資料列選取範圍。
 - [**內容動作**](#Context_Actions) &ndash;公開功能每個項目，例如撥動--刪除。
 - [**若要重新整理提取**](#Pull_to_Refresh) &ndash;實作使用者都是從原生體驗提取以重新整理慣用語。
 

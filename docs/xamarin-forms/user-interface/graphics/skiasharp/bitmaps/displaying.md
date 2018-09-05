@@ -32,7 +32,7 @@ SkiaSharp 應用程式通常使用的點陣圖來自三個不同來源的其中�
 - 從資源內嵌在可執行檔
 - 從使用者的相片媒體櫃
 
-您也可建立新的點陣圖，然後在其上繪製或演算法來設定點陣圖位元 SkiaSharp 應用程式。 在文章中討論這些技巧**[建立和上 SkiaSharp 點陣圖繪製](drawing.md)** 並**[存取 SkiaSharp 點陣圖像素](pixel-bits.md)**.
+您也可建立新的點陣圖，然後在其上繪製或演算法來設定點陣圖位元 SkiaSharp 應用程式。 在文章中討論這些技巧 **[建立和上 SkiaSharp 點陣圖繪製](drawing.md)** 並 **[存取 SkiaSharp 點陣圖像素](pixel-bits.md)**.
 
 在下列三個程式碼範例中的載入點陣圖，類別會假設包含型別的欄位`SKBitmap`:
 
@@ -46,7 +46,7 @@ SKBitmap bitmap;
 HttpClient httpClient = new HttpClient();
 ```
 
-使用時`HttpClient`iOS 和 Android 應用程式，您會想要設定專案屬性中所述的文件上**[傳輸層安全性 (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)**。
+使用時`HttpClient`iOS 和 Android 應用程式，您會想要設定專案屬性中所述的文件上 **[傳輸層安全性 (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)**。
 
 使用程式碼`HttpClient`通常會涉及`await`運算子，因此它必須位於`async`方法：
 
@@ -90,7 +90,7 @@ using (Stream stream = assembly.GetManifestResourceStream(resourceID))
 
 點陣圖檔也可以儲存為 iOS、 Android 和通用 Windows 平台 (UWP) 的個別平台專案中的資源。 不過，載入這些點陣圖所需要的平台專案中的程式碼。
 
-取得點陣圖的第三個方法是從使用者的圖片媒體櫃。 下列程式碼會使用相依性服務中包含**[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式。 **SkiaSharpFormsDemo** .NET Standard 程式庫包含`IPhotoLibrary`介面，而每個平台專案包含`PhotoLibrary`實作該介面的類別。
+取得點陣圖的第三個方法是從使用者的圖片媒體櫃。 下列程式碼會使用相依性服務中包含 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式。 **SkiaSharpFormsDemo** .NET Standard 程式庫包含`IPhotoLibrary`介面，而每個平台專案包含`PhotoLibrary`實作該介面的類別。
 
 ```csharp
 IPhotoicturePicker picturePicker = DependencyService.Get<IPhotoLibrary>();
@@ -128,7 +128,7 @@ DrawBitmap(SKBitmap bitmap, float x, float y, SKPaint paint = null)
 
 選擇性`SKPaint`參數可讓您顯示點陣圖使用混合模式或篩選的效果。 這些將會在之後的文章中示範。
 
-**像素尺寸**頁面**[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 範例程式會顯示為 320 像素寬 240 像素高的點陣圖資源：
+**像素尺寸**頁面 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 範例程式會顯示為 320 像素寬 240 像素高的點陣圖資源：
 
 ```csharp
 public class PixelDimensionsPage : ContentPage
@@ -178,7 +178,7 @@ public class PixelDimensionsPage : ContentPage
 
 ## <a name="a-method-for-loading-resource-bitmaps"></a>正在載入資源點陣圖方法
 
-接下來的範例有許多需要載入點陣圖資源。 靜態`BitmapExtensions`類別內**[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 方案包含可以助一臂之力的方法：
+接下來的範例有許多需要載入點陣圖資源。 靜態`BitmapExtensions`類別內 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 方案包含可以助一臂之力的方法：
 
 ```csharp
 static class BitmapExtensions

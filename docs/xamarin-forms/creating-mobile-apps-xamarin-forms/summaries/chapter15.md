@@ -92,7 +92,7 @@ Xamarin.Forms 包含 20 的可具現化類別，衍生自`View`而非`Layout`。
 
 - [`Increment`](xref:Xamarin.Forms.Stepper.Increment) 型別的`double`，初始化為 1
 
-在視覺上，`Stepper`包含兩個按鈕，分別為**&ndash;** 並**+**。 按下**&ndash;** 減少`Value`由`Increment`最低`Minimum`。 按下**+** 增加`Value`由`Increment`最大值`Maximum`。
+在視覺上，`Stepper`包含兩個按鈕，分別為 **&ndash;** 並 **+**。 按下 **&ndash;** 減少`Value`由`Increment`最低`Minimum`。 按下 **+** 增加`Value`由`Increment`最大值`Maximum`。
 
 最好的證明[ **StepperDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/StepperDemo)範例。
 

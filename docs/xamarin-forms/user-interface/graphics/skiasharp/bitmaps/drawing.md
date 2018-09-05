@@ -54,7 +54,7 @@ using (SKCanvas canvas = new SKCanvas(bitmap))
 
 然後可以顯示點陣圖。 稍後，程式可以建立新`SKCanvas`上相同的點陣圖，，和在其上繪製多型的物件。
 
-**Hello 點陣圖**頁面**[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式寫入的文字"Hello，點陣圖"！ 在點陣圖，則將顯示的點陣圖多次。  
+**Hello 點陣圖**頁面 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式寫入的文字"Hello，點陣圖"！ 在點陣圖，則將顯示的點陣圖多次。  
 
 建構函式`HelloBitmapPage`一開始先建立`SKPaint`顯示文字的物件。 它會判斷文字字串的維度，並會使用這些維度建立的點陣圖。 然後它會建立`SKCanvas`物件會根據該點陣圖，呼叫`Clear`，然後呼叫`DrawText`。 它一律是個不錯的主意，呼叫`Clear`與新的點陣圖因為新建立的點陣圖可能包含隨機資料。
 
@@ -494,7 +494,7 @@ public partial class BitmapRotatorPage : ContentPage
 
 呼叫另一個作業通常對點陣圖_翻轉_。 就概念而言，在垂直軸或透過中央的點陣圖的水平軸周圍的三個維度旋轉點陣圖。 垂直翻轉建立鏡像映像。
 
-**點陣圖擋板**頁面**[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式 demonstates 這些程序。 XAML 檔案包含`SKCanvasView`和的垂直和水平翻轉的兩個按鈕：
+**點陣圖擋板**頁面 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式 demonstates 這些程序。 XAML 檔案包含`SKCanvasView`和的垂直和水平翻轉的兩個按鈕：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
