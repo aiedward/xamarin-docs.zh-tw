@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: df84e78709b0ff16087c4bb9816c5d45f6ec33ed
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4145368281c2967bd1311389e5e1b1432af2c9b8
+ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30772353"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43780506"
 ---
 # <a name="ios-build-mechanics"></a>iOS 組建機制
 
@@ -97,7 +97,7 @@ Apple 提供模擬器來進行 iOS 開，藉由建立一個較不受限制的程
 - 其他秘訣
   - 建置好過重建，因為在建置前會先清除重建。 清除會移除可使用的參考，因此需要很長的時間。
   - 請利用模擬器不會強制建立沙箱的事實。 將視訊或其他資產等大型資源納入專案中，將會因為每次在模擬器中啟動應用程式時需要進行檔案複製作業，而產生高昂成本。 請將這些檔案放在主目錄中以避免進行這些成本高昂的作業，並在應用程式中以完整檔案路徑參考這些檔案。  
-  - 有疑慮時，請使用 `–time –time` 旗標來測量您的變更
+  - 有疑慮時，請使用 `--time --time` 旗標來測量您的變更
 
 下列螢幕擷取畫面說明如何在 iOS 選項中設定模擬器的這些選項：
 
@@ -137,7 +137,7 @@ Apple 提供模擬器來進行 iOS 開，藉由建立一個較不受限制的程
 應避免的事項如下：
 
 - Fat 二進位檔 (偵錯) 
-- 停用連結器 `–nolink` 
+- 停用連結器 `--nolink` 
 - 停用移除 
   - 符號 `--nosymbolstrip` 
   - IL (發行) `--nostrip`.  
@@ -151,7 +151,7 @@ Apple 提供模擬器來進行 iOS 開，藉由建立一個較不受限制的程
 - 避免在每個組件 (偵錯) 部署大型的靜態檔案 
   - 使用 UIFileSharingEnabled (info.plist) 
     - 資產可以一次全部上傳 
-- 有疑慮時，請使用 `–time –time` 旗標來測量您的變更
+- 有疑慮時，請使用 `--time --time` 旗標來測量您的變更
 
 下列螢幕擷取畫面說明如何在 iOS 選項中設定模擬器的這些選項：
 
