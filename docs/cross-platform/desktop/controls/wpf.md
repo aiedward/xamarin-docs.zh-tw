@@ -35,7 +35,7 @@ XAML 是做為宣告式標記語言用於 WPF 和 Xamarin.Forms。 大部分的�
 
 - 支援 Xamarin.Forms [XAML 2009 規格](/dotnet/framework/xaml-services/xaml-2009-language-features/); 這可讓您更輕鬆地定義資料，例如`string`s， `int`s、 等等，以及定義的泛型型別和引數傳遞給建構函式。
 
-- 目前沒有任何方法可以使用的 WPF 動態載入 XAML `XamlReader`。 您可以取得相同的基本功能[NuGet 套件](https://www.nuget.org/packages/Xamarin.Forms.Dynamic/)雖然。
+- 目前沒有任何方法可以使用的 WPF 動態載入 XAML `XamlReader`，但您能透過 [NuGet 套件](https://www.nuget.org/packages/Xamarin.Forms.Dynamic/) 取得類似的基本功能。
 
 ### <a name="markup-extensions"></a>標記延伸
 
