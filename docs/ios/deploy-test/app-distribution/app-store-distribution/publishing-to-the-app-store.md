@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/25/2018
-ms.openlocfilehash: 60aa177ccb14c443f1599b4ce42c07faa695baed
-ms.sourcegitcommit: 7d766f8a080ee6999e47c873a9f2ccec8fa5dd5a
+ms.openlocfilehash: 7560f66acc3a3ea683e75be2ae85f908036e008c
+ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439170"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43780526"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>將 Xamarin.iOS 應用程式發佈到 App Store
 
@@ -121,17 +121,16 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. 從 [方案總管] 中開啟 **Info.plist**。 選取 [手動佈建]。 儲存並關閉檔案。
-2. 確定 Visual Studio 2017 已[與 Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
-3. 以滑鼠右鍵按一下 [方案總管] 中的 [專案名稱]，選取 [屬性]，然後巡覽至 [iOS 組建] 索引標籤。
-4. 將 [組態] 設定為 [發行]，並將 [平台] 設定為 [iPhone]。
-5. 若要使用特定的 iOS SDK 建置，請從 [SDK 版本] 清單中進行選取。 否則，請將此值保留為 [預設]。
-6. 連結可藉由移除未使用的程式碼，減少應用程式的整體大小。 在大部分情況下，[連結器行為] 應該設定為預設值 [僅連結 Framework SDK]。 在某些情況下，例如使用某些協力廠商程式庫時，可能需要將此值設定為 [不要連結]，以確保不會移除所需的程式碼。 如需詳細資訊，請參閱[連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)指南。
-7. 核取 [最佳化 PNG 影像]，進一步減少您的應用程式大小。
-8. 因為偵錯會使組建產生不必要的大小，所以建議不要啟用。
-9. 針對 iOS 11，請選取支援 **ARM64** 的其中一個裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 [32/64 位元平台考量](~/cross-platform/macios/32-and-64/index.md)文件中的**啟用 Xamarin.iOS 應用程式的 64 位元組建**一節。
-10. 您可能想要使用 **LLVM** 編譯器來建置較小且更快速的程式碼。 不過，此選項會增加編譯時間。
-11. 根據您的應用程式需求，也可以考慮調整要使用的 [記憶體回收] 類型與 [國際化] 設定。
+1. 確定 Visual Studio 2017 已[與 Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+2. 以滑鼠右鍵按一下 [方案總管] 中的 [專案名稱]，並選取 [屬性]。
+3. 瀏覽到 [iOS 組建] 索引標籤，並將 [組態] 設定為 [發行]，然後將 [平台] 設定為 [iPhone]。
+4. 若要使用特定的 iOS SDK 建置，請從 [SDK 版本] 清單中進行選取。 否則，請將此值保留為 [預設]。
+5. 連結可藉由移除未使用的程式碼，減少應用程式的整體大小。 在大部分情況下，[連結器行為] 應該設定為預設值 [僅連結 Framework SDK]。 在某些情況下，例如使用某些協力廠商程式庫時，可能需要將此值設定為 [不要連結]，以確保不會移除所需的程式碼。 如需詳細資訊，請參閱[連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)指南。
+6. 核取 [最佳化 PNG 影像]，進一步減少您的應用程式大小。
+7. 因為偵錯會使組建產生不必要的大小，所以建議不要啟用。
+8. 針對 iOS 11，請選取支援 **ARM64** 的其中一個裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 [32/64 位元平台考量](~/cross-platform/macios/32-and-64/index.md)文件中的**啟用 Xamarin.iOS 應用程式的 64 位元組建**一節。
+9. 您可能想要使用 **LLVM** 編譯器來建置較小且更快速的程式碼。 不過，此選項會增加編譯時間。
+10. 根據您的應用程式需求，也可以考慮調整要使用的 [記憶體回收] 類型與 [國際化] 設定。
 
     設定上述選項之後，您的組建設定看起來應該像這樣：
 
@@ -139,27 +138,26 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
     另請查看 [iOS 組建機制](~/ios/deploy-test/ios-build-mechanics.md)指南，該指南會進一步描述組建設定。
 
-12. 巡覽至 [iOS 套件組合簽署] 索引標籤。如果此處的選項不可編輯，請確定已在 **Info.plist** 檔案中選取 [手動佈建]。
-13. 確定 [組態] 設定為 [發行]，且 [平台] 設定為 [iPhone]。
-14. 將 [簽署身分識別] 設定為 [散發 (自動)]。
-15. 針對 [佈建設定檔]，選取[上方建立](#create-and-install-an-app-store-provisioning-profile)的 App Store 佈建設定檔。
+11. 巡覽至 [iOS 套件組合簽署] 索引標籤。確定 [組態] 已設定為 [發行]，且 [平台] 已設定為 [iPhone]，且已選取 [手動佈建]。
+12. 將 [簽署身分識別] 設定為 [散發 (自動)]。
+13. 針對 [佈建設定檔]，選取[上方建立](#create-and-install-an-app-store-provisioning-profile)的 App Store 佈建設定檔。
 
     您的專案套件組合簽署選項現在看起來像這樣：
 
     ![iOS 套件組合簽署設定](publishing-to-the-app-store-images/bundleSigning-w157.png "iOS 套件組合簽署設定")
 
-16. 巡覽至 [iOS IPA 選項] 索引標籤。
-17. 確定 [組態] 設定為 [發行]，且 [平台] 設定為 [iPhone]。
-18. 核取 [建置 iTunes 套件封存檔 (IPA)] 核取方塊。 此設定會導致每個 [發行] 組建 (因為這是選取的組態) 產生 .ipa 檔案。 這個檔案可以提交給 Apple，以便在 App Store 上發行。
+14. 巡覽至 [iOS IPA 選項] 索引標籤。
+15. 確定 [組態] 設定為 [發行]，且 [平台] 設定為 [iPhone]。
+16. 核取 [建置 iTunes 套件封存檔 (IPA)] 核取方塊。 此設定會導致每個 [發行] 組建 (因為這是選取的組態) 產生 .ipa 檔案。 這個檔案可以提交給 Apple，以便在 App Store 上發行。
 
     > [!NOTE]
     > App Store 發行並不需要 **iTunes 中繼資料**和 **iTunesArtwork**。 如需詳細資訊，請查看 [Xamarin.iOS 應用程式中的 iTunesMetadata.plist 檔案](~/ios/deploy-test/app-distribution/itunesmetadata.md)和 [iTunes 插圖](~/ios/app-fundamentals/images-icons/app-icons.md#itunes-artwork)。
 
-19. 若要指定不同於 Xamarin.iOS 專案名稱的 .ipa 檔名，請在 [套件名稱] 欄位中輸入它。
+17. 若要指定不同於 Xamarin.iOS 專案名稱的 .ipa 檔名，請在 [套件名稱] 欄位中輸入它。
 
     ![iOS 套件組合簽署設定](publishing-to-the-app-store-images/ipaOptions-w157.png "iOS 套件組合簽署設定")
 
-20. 儲存組建組態並關閉它。
+18. 儲存組建組態並關閉它。
 
 -----
 

@@ -6,13 +6,13 @@ ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 08/03/2018
-ms.openlocfilehash: 92b2eec32aed27e630ac68f3522aa3b40cfc940a
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.date: 08/09/2018
+ms.openlocfilehash: 55b6c10a9014b89534c37faeac2faf84f02339cd
+ms.sourcegitcommit: b6f3e55d4f3dcdc505abc8dc9241cff0bb5bd154
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514486"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43780534"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>設定 Xamarin.Android 的 Android SDK
 
@@ -36,7 +36,7 @@ Xamarin Android SDK 管理員 (與**使用 .NET 的行動開發**工作負載一
 
 - Visual Studio 2017 (Community、Professional 或 Enterprise 版本)。 需要 Visual Studio 2017 15.7 版或更新版本。
 
-- Visual Studio Tools for Xamarin 4.10.0 或更新版本。 
+- Visual Studio Tools for Xamarin 4.10.0 版或更新版本 (隨著**用 .NET 進行行動裝置開發**工作負載安裝)。 
 
 Xamarin Android SDK 管理員不相容於 Visual Studio 2015。 Visual Studio 2015 的使用者應該使用由 Google 在 Android SDK 中所提供的 SDK 管理員工具。
 
