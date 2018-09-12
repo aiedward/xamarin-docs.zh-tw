@@ -163,7 +163,7 @@ Xamarin.Forms 繫結中完全支援這兩個介面。 不同於許多以 XAML �
 
 ## <a name="navigation"></a>巡覽
 
-WPF 很少使用像是在 Xamarin.Forms 中所提供的 `NavigationService` 這一種「類瀏覽器」功能，來作為巡覽應用程式中不同頁面資料的操作方式。大部分的 WPF 應用程式會改用使用不同 `Window` 的控制處理，來顯示或區分不同區段所需呈現的資料。
+WPF 包含可用來提供「類瀏覽器」瀏覽功能的罕用 `NavigationService`。大部分的應用程式不會為此費心，而會改為使用 `Window` 或不同的視窗區段來顯示資料。
 
 在不同的電話裝置上_螢幕_通常解決方案，並因此 Xamarin.Forms 包含數種形式的導覽的支援：
 
