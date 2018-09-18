@@ -1,6 +1,6 @@
 ---
-title: 以片段 ViewPager
-description: ViewPager 是可讓您實作 gestural 巡覽配置管理員。 左邊和右邊來逐步執行的資料頁，gestural 瀏覽可讓使用者撥動。 本指南說明如何實作 swipeable ViewPager，使用片段做為資料頁與 UI。
+title: ViewPager 與 Fragment
+description: ViewPager 是可讓您實作手勢導覽的佈局管理員。 手勢導覽允許用戶向左和向右滑動以逐步瀏覽資料頁面。本指南說明如何使用 Fragments 作為資料頁面，使用 ViewPager 實作可滑動的UI。
 ms.prod: xamarin
 ms.assetid: 62B6286F-3680-48F3-B91B-453692E457E5
 ms.technology: xamarin-android
@@ -14,16 +14,16 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 04/04/2018
 ms.locfileid: "30772412"
 ---
-# <a name="viewpager-with-fragments"></a>以片段 ViewPager
+# <a name="viewpager-with-fragments"></a> ViewPager 與 Fragment
 
-_ViewPager 是可讓您實作 gestural 巡覽配置管理員。左邊和右邊來逐步執行的資料頁，gestural 瀏覽可讓使用者撥動。本指南說明如何實作 swipeable ViewPager，使用片段做為資料頁與 UI。_
+_ViewPager 是可讓您實作手勢導覽的佈局管理員。手勢導覽允許用戶向左和向右滑動以逐步瀏覽資料頁面。本指南說明如何使用 Fragments 作為資料頁面，使用 ViewPager 實作可滑動的UI。
 
  
 ## <a name="overview"></a>總覽
 
-`ViewPager` 通常用於搭配片段，讓您更輕鬆地管理生命週期中每個頁面`ViewPager`。 在本逐步解說，`ViewPager`用來建立應用程式呼叫**FlashCardPager**其中會提供一系列的數學問題快閃記憶卡上。 每個 flash 卡會實作為片段。 使用者 swipes 左或向右快閃記憶卡，並點選以顯示其回應數學問題。 此應用程式會建立`Fragment`配接器會衍生自每個 flash 卡和實作的執行個體`FragmentPagerAdapter`。 在[Viewpager 和檢視表](~/android/user-interface/controls/view-pager/viewpager-and-views.md)，大部分的工作中完成的`MainActivity`存留週期方法。 在**FlashCardPager**，大部分的工作會完成的`Fragment`中其中一個存留週期方法。 
+`ViewPager` 通常用於搭配 Fragment，讓您更輕鬆地管理生命週期中每個頁面`ViewPager`。 在此逐步說明中，ViewPager 用於建立一個名為 FlashCardPager 的應用程式，該應用程式在字卡上顯示一系列數學問題。 每個字卡會透過 Framgent 實作。 使用者左右滑動字卡卡並點擊數學問題以顯示其答案。此應用程序為每個字卡創建一個 `Fragment` 實例，並實作從 `FragmentPagerAdapter` 衍生的適配器。 在[Viewpager 和檢視表](~/android/user-interface/controls/view-pager/viewpager-and-views.md)，大部分工作都是在 `MainActivity` 生命週期方法完成。 在**FlashCardPager**，大部分工作將由 `Fragment` 在其生命週期方法之一內完成。 
 
-本指南未涵蓋的基本概念的片段&ndash;如果您還不熟悉 Xamarin.Android 中的片段，請參閱[片段](~/android/platform/fragments/index.md)可協助您開始使用片段。 
+本指南未涵蓋 Fragments 的基本概念&ndash;如果您還不熟悉 Xamarin.Android 中的 Fragments，請參閱[Fragments](~/android/platform/fragments/index.md)可協助您開始使用 Fragments。 
 
 
 
