@@ -1,5 +1,5 @@
 ---
-title: Agree with slight modification
+title: 在 Xamarin.Forms 中的影像
 description: 圖像可以跨平台與 Xamarin.Forms 共用、 可以載入特別針對每個平台，或它們可以供下載顯示。
 ms.prod: xamarin
 ms.assetid: C025AB53-05CC-49BA-9815-75D6DF9E40B7
@@ -14,7 +14,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38996265"
 ---
-# <a name="images-in-xamarinforms"></a>Agree with slight modification
+# <a name="images-in-xamarinforms"></a>在 Xamarin.Forms 中的影像
 
 _映像可以跨平台與 Xamarin.Forms 共用、 可以載入特別針對每個平台，或它們可以下載供顯示。_
 
@@ -29,7 +29,7 @@ _映像可以跨平台與 Xamarin.Forms 共用、 可以載入特別針對每個
 - [ **下載映像**](#Downloading_Images) -下載，並顯示影像。
 - [ **圖示和啟動顯示畫面**](#Icons_and_splashscreens) -平台專屬圖示和啟動影像。
 
-## <a name="displaying-images"></a>Agree with slight modification
+## <a name="displaying-images"></a>顯示影像
 
 使用 Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image)檢視來顯示網頁上的映像。 它有兩個重要屬性：
 
@@ -53,7 +53,7 @@ _映像可以跨平台與 Xamarin.Forms 共用、 可以載入特別針對每個
 
 <a name="Local_Images" />
 
-## <a name="local-images"></a>Agree with slight modification
+## <a name="local-images"></a>本機影像
 
 映像檔可以加入至每個應用程式專案，並從 Xamarin.Forms 共用程式碼參考。 跨所有應用程式，使用單一映像*必須在每個平台上使用相同的檔案名稱*，而且它應該是有效的 Android 資源名稱 (亦即。 允許小寫字母、 數字、 底線和句點)。
 
@@ -64,7 +64,7 @@ _映像可以跨平台與 Xamarin.Forms 共用、 可以載入特別針對每個
 > [!IMPORTANT]
 > 在 iOS 9 之前, 的映像通常被放入**資源**資料夾中的，使用**建置動作： BundleResource**。 不過，apple 已被取代的 iOS 應用程式中的映像使用此方法。 如需詳細資訊，請參閱 <<c0> [ 映像大小和檔案名稱](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
 
-Agree with slight modification
+遵守這些檔案命名和放置規則可讓下列 XAML 在所有平台上載入並顯示影像：
 
 ```xaml
 <Image Source="waterfront.jpg" />
@@ -76,7 +76,7 @@ Agree with slight modification
 var image = new Image { Source = "waterfront.jpg" };
 ```
 
-Agree with slight modification
+下列螢幕擷取畫面顯示在每個平台上顯示本機影像的結果：
 
 [![本機的 ImageSource](images-images/local-sml.png "範例應用程式顯示本機映像")](images-images/local.png#lightbox "範例顯示本機映像的應用程式")
 
@@ -161,7 +161,7 @@ var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithIm
 
 目前沒有任何隱含的轉換，資源識別元。 相反地，您必須使用[ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource*)或`new ResourceImageSource()`載入內嵌的影像。
 
-Agree with slight modification
+下列螢幕擷取畫面顯示在每個平台上顯示內嵌影像的結果：
 
 [![ResourceImageSource](images-images/resource-sml.png "範例應用程式顯示內嵌的影像")](images-images/resource.png#lightbox "範例應用程式顯示內嵌的影像")
 
@@ -211,7 +211,7 @@ public class ImageResourceExtension : IMarkupExtension
 </ContentPage>
 ```
 
-### <a name="troubleshooting-embedded-images"></a>Agree with slight modification
+### <a name="troubleshooting-embedded-images"></a>針對內嵌影像進行疑難排解
 
 <a name="Debugging_Embedded_Images" />
 
@@ -230,7 +230,7 @@ foreach (var res in assembly.GetManifestResourceNames())
 }
 ```
 
-#### <a name="images-embedded-in-other-projects"></a>Agree with slight modification
+#### <a name="images-embedded-in-other-projects"></a>內嵌在其他專案中的影像
 
 根據預設，`ImageSource.FromResource`方法只會尋找與程式碼呼叫相同的組件中的映像`ImageSource.FromResource`方法。 使用上方的偵錯程式碼，可以判斷哪些組件包含特定的資源，藉由變更`typeof()`陳述式來`Type`已知為每個組件中。
 
@@ -242,9 +242,9 @@ var imageSource = ImageSource.FromResource("filename.png", typeof(MyClass).GetTy
 
 <a name="Downloading_Images" />
 
-## <a name="downloading-images"></a>Agree with slight modification
+## <a name="downloading-images"></a>下載影像
 
-Agree with slight modification
+您可以自動下載要顯示的影像，如下列 XAML 所示：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -273,13 +273,13 @@ var webImage = new Image { Source = ImageSource.FromUri(new Uri("https://xamarin
 webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.png";
 ```
 
-Agree with slight modification
+下列螢幕擷取畫面顯示在每個平台上顯示遠端影像的結果：
 
 [![下載 ImageSource](images-images/download-sml.png "範例應用程式顯示下載的映像")](images-images/download.png#lightbox "範例顯示下載的映像的應用程式")
 
 <a name="Image_Caching" />
 
-### <a name="downloaded-image-caching"></a>Agree with slight modification
+### <a name="downloaded-image-caching"></a>下載的影像快取
 
 A [ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource)也支援快取的下載映像，透過下列屬性：
 
@@ -292,7 +292,7 @@ A [ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource)也支援快取的下�
 image.Source = new UriImageSource { CachingEnabled = false, Uri="http://server.com/image" };
 ```
 
-Agree with slight modification
+若要設定特定快取期間 (例如，5 天)，請具現化影像來源，如下所示：
 
 ```csharp
 webImage.Source = new UriImageSource
@@ -303,7 +303,7 @@ webImage.Source = new UriImageSource
 };
 ```
 
-Agree with slight modification
+內建的快取可以很容易支援如影像的捲動清單的案例，在此案例中，您可以在每個呼叫中設定 (或繫結) 影像，並讓內建快取負責在儲存格捲動回檢視中時重新載入影像。
 
 <a name="Icons_and_splashscreens" />
 
@@ -319,7 +319,7 @@ Agree with slight modification
 
 ## <a name="splashscreens"></a>啟動顯示畫面
 
-Agree with slight modification
+只有 iOS 和 UWP 應用程式需要啟動顯示畫面 (亦稱為啟動畫面或預設影像)。
 
 請參閱文件[iOS 處理映像](~/ios/app-fundamentals/images-icons/index.md)並[啟動顯示畫面](/windows/uwp/launch-resume/splash-screens/)Windows 開發人員中心上。
 
@@ -327,7 +327,7 @@ Agree with slight modification
 
 Xamarin.Forms 提供各種不同的方式，跨平台應用程式，允許跨平台使用相同的映像，或指定的特定平台映像中包含映像。 已下載的映像也會自動快取，自動化常見的程式碼撰寫案例。
 
-Agree with slight modification
+應用程式圖示和啟動顯示畫面影像已設定，而且是針對非 Xamarin.Forms 應用程式所設定 - 遵循用於特定平台應用程式的相同指導方針。
 
 ## <a name="related-links"></a>相關連結
 
