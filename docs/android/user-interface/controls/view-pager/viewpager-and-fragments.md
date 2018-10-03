@@ -21,7 +21,7 @@ _ViewPager 是可讓您實作 gestural 巡覽配置管理員。手勢導覽允�
  
 ## <a name="overview"></a>總覽
 
-`ViewPager` 通常用於搭配片段，讓您更輕鬆地管理生命週期中每個頁面`ViewPager`。 在本逐步解說，`ViewPager`用來建立應用程式呼叫**FlashCardPager**其中會提供一系列的數學問題快閃記憶卡上。 每個 flash 卡會實作為片段。 使用者 swipes 左或向右快閃記憶卡，並點選以顯示其回應數學問題。 此應用程式會建立`Fragment`配接器會衍生自每個 flash 卡和實作的執行個體`FragmentPagerAdapter`。 在[Viewpager 和檢視表](~/android/user-interface/controls/view-pager/viewpager-and-views.md)，大部分的工作中完成的`MainActivity`存留週期方法。 在**FlashCardPager**，大部分的工作會完成的`Fragment`中其中一個存留週期方法。 
+`ViewPager` 通常用於搭配片段，讓您更輕鬆地管理生命週期中每個頁面`ViewPager`。 在本逐步解說，`ViewPager`用來建立應用程式呼叫**FlashCardPager**其中會提供一系列的數學問題字卡上。 每個字卡會實作為片段。 使用者 swipes 左或向右字卡，並點選以顯示其回應數學問題。 此應用程式會建立`Fragment`配接器會衍生自每個字卡和實作的執行個體`FragmentPagerAdapter`。 在[Viewpager 和檢視表](~/android/user-interface/controls/view-pager/viewpager-and-views.md)，大部分的工作中完成的`MainActivity`存留週期方法。 在**FlashCardPager**，大部分的工作會完成的`Fragment`中其中一個存留週期方法。 
 
 本指南未涵蓋 Fragments 的基本概念&ndash;如果您還不熟悉 Xamarin.Android 中的 Fragments，請參閱[Fragments](~/android/platform/fragments/index.md)可協助您開始使用 Fragments。 
 
@@ -35,13 +35,13 @@ _ViewPager 是可讓您實作 gestural 巡覽配置管理員。手勢導覽允�
 
 ## <a name="add-an-example-data-source"></a>將範例資料來源
 
-在**FlashCardPager**，資料來源是由快閃記憶卡一疊紙牌`FlashCardDeck`類別，不過這項資料來源提供`ViewPager`與項目內容。 `FlashCardDeck` 包含現成數學問題和解答的集合。 `FlashCardDeck`建構函式不需要引數： 
+在**FlashCardPager**，資料來源是由一疊字卡的紙牌`FlashCardDeck`類別，不過這項資料來源提供`ViewPager`與項目內容。 `FlashCardDeck` 包含現成數學問題和解答的集合。 `FlashCardDeck`建構函式不需要引數： 
 
 ```csharp
 FlashCardDeck flashCards = new FlashCardDeck();
 ```
 
-快閃記憶卡中的集合`FlashCardDeck`的排序方式每個 flash 卡可依索引子存取。 比方說，下列程式碼會擷取投影片的第四個 flash 卡問題： 
+字卡中的集合`FlashCardDeck`的排序方式每個字卡可依索引子存取。 比方說，下列程式碼會擷取投影片的第四個字卡問題： 
 
 ```csharp
 string problem = flashCardDeck[3].Problem;
@@ -74,12 +74,12 @@ string answer = flashCardDeck[3].Answer;
     </android.support.v4.view.ViewPager>
 ```
 
-這段 XML 會定義`ViewPager`所佔滿整個螢幕。 請注意，您必須使用完整限定名稱**android.support.v4.view.ViewPager**因為`ViewPager`封裝在支援程式庫中。 `ViewPager` 就只能從[Android 支援程式庫 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/); 不是可在 Android SDK。
+這段 XML 會所定義`ViewPager`會佔滿整個螢幕。 請注意，您必須使用完整符合**android.support.v4.view.ViewPager**名稱，因為`ViewPager`封裝在支援程式庫中。 `ViewPager` 就只能從[Android 支援程式庫 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)使用; 不是透過 Android SDK。
 
 
 ## <a name="set-up-viewpager"></a>設定 ViewPager
 
-編輯**Weatherapp**並加入下列`using`陳述式：
+編輯 **MainActivity.cs** 並加入下列`using`陳述式：
 
 ```csharp
 using Android.Support.V4.View;
@@ -110,7 +110,7 @@ protected override void OnCreate(Bundle bundle)
 
 2.  擷取參考`ViewPager`與配置。
 
-3.  具現化新`FlashCardDeck`做為資料來源。
+3.  實例化新`FlashCardDeck`做為資料來源。
 
 當您建置並執行此程式碼時，您應該會看到類似下列的螢幕擷取畫面顯示： 
 
@@ -118,14 +118,14 @@ protected override void OnCreate(Bundle bundle)
 
 此時，`ViewPager`是空白因為缺乏可用的片段填入`ViewPager`，和它缺少配接器中的資料，建立這些片段**FlashCardDeck**。 
 
-在下列章節中，`FlashCardFragment`是建立來實作每個 flash 卡功能和`FragmentPagerAdapter`是用來連接`ViewPager`從資料中建立的片段`FlashCardDeck`。 
+在下列章節中，`FlashCardFragment`是建立來實作每個字卡功能和`FragmentPagerAdapter`是用來連接`ViewPager`從資料中建立的片段`FlashCardDeck`。 
 
 
 
 ## <a name="create-the-fragment"></a>建立片段
 
-每個 flash 卡會受呼叫 UI 片段`FlashCardFragment`。 `FlashCardFragment`檢視會顯示具有單一 flash 卡所包含的資訊。 每個執行個體`FlashCardFragment`可由裝載`ViewPager`。 
-`FlashCardFragment`檢視將會包含`TextView`會顯示 flash 卡問題的文字。 此檢視會實作事件處理常式使用`Toast`顯示當使用者點選 flash 卡問題的答案。 
+每個字卡會受呼叫 UI 片段`FlashCardFragment`。 `FlashCardFragment`檢視會顯示具有單一字卡所包含的資訊。 每個執行個體`FlashCardFragment`可由裝載`ViewPager`。 
+`FlashCardFragment`檢視將會包含`TextView`會顯示字卡問題的文字。 此檢視會實作事件處理常式使用`Toast`顯示當使用者點選字卡問題的答案。 
 
 
 
@@ -152,7 +152,7 @@ protected override void OnCreate(Bundle bundle)
     </RelativeLayout>
 ```
 
-此配置會定義單一 flash 卡片段;每個片段組成`TextView`，會顯示使用大型 (100sp) 字型數學問題。 此文字置中以垂直和水平 flash 卡上。 
+此配置會定義單一字卡片段;每個片段組成`TextView`，會顯示使用大型 (100sp) 字型數學問題。 此文字置中以垂直和水平字卡上。 
 
 
 
@@ -189,7 +189,7 @@ namespace FlashCardPager
 }
 ```
 
-此程式碼會虛設出基本`Fragment`會用來顯示 flash 卡的定義。 請注意，`FlashCardFragment`衍生自的支援程式庫版本`Fragment`中定義`Android.Support.V4.App.Fragment`。 是空的建構函式，讓`newInstance`factory 方法用於建立新`FlashCardFragment`而不是建構函式。 
+此程式碼會虛設出基本`Fragment`會用來顯示字卡的定義。 請注意，`FlashCardFragment`衍生自的支援程式庫版本`Fragment`中定義`Android.Support.V4.App.Fragment`。 是空的建構函式，讓`newInstance`factory 方法用於建立新`FlashCardFragment`而不是建構函式。 
 
 `OnCreateView`存留週期方法會建立並設定`TextView`。 它會擴大的版面配置，此片段`TextView`並傳回擴大`TextView`給呼叫者。 `LayoutInflater` 和`ViewGroup`傳遞至`OnCreateView`，讓它可以擴大版面配置。 `savedInstanceState`配套包含資料的`OnCreateView`用於重新建立`TextView`從儲存狀態。 
 
@@ -199,7 +199,7 @@ namespace FlashCardPager
 
 ### <a name="add-state-code-to-flashcardfragment"></a>將狀態的程式碼加入 FlashCardFragment
 
-如同活動，具有片段`Bundle`用來儲存和擷取其狀態。 在**FlashCardPager**，這個`Bundle`用來儲存這個問題，並回答 flash 卡相關聯的文字。 在**FlashCardFragment.cs**，加入下列`Bundle`頂端的索引鍵`FlashCardFragment`類別定義： 
+如同活動，具有片段`Bundle`用來儲存和擷取其狀態。 在**FlashCardPager**，這個`Bundle`用來儲存這個問題，並回答字卡相關聯的文字。 在**FlashCardFragment.cs**，加入下列`Bundle`頂端的索引鍵`FlashCardFragment`類別定義： 
 
 ```csharp
 private static string FLASH_CARD_QUESTION = "card_question";
@@ -322,7 +322,7 @@ public override int Count
 
 ### <a name="implement-getitem"></a>實作 GetItem
 
-`GetItem`方法會傳回與指定的位置相關聯的片段。 當`GetItem`稱為 flash 牌中的位置則會傳回`FlashCardFragment`設定為該位置顯示 flash 卡問題。 以下列程式碼取代 `GetItem` 方法： 
+`GetItem`方法會傳回與指定的位置相關聯的片段。 當`GetItem`稱為 flash 牌中的位置則會傳回`FlashCardFragment`設定為該位置顯示字卡問題。 以下列程式碼取代 `GetItem` 方法： 
 
 ```csharp
 public override Android.Support.V4.App.Fragment GetItem(int position)
@@ -339,11 +339,11 @@ public override Android.Support.V4.App.Fragment GetItem(int position)
 
 2.  查閱中的回應字串`FlashCardDeck`指定之位置的投影片。 
 
-3.  呼叫`FlashCardFragment`factory 方法`newInstance`、 flash 卡問題和解答字串中傳遞。 
+3.  呼叫`FlashCardFragment`factory 方法`newInstance`、字卡問題和解答字串中傳遞。 
 
-4.  建立並傳回新的 flash 卡`Fragment`，其中包含該位置的問題和答案文字。 
+4.  建立並傳回新的字卡`Fragment`，其中包含該位置的問題和答案文字。 
 
-當`ViewPager`呈現`Fragment`在`position`，它會顯示`TextBox`包含內建數學問題字串`position`flash 卡紙牌。 
+當`ViewPager`呈現`Fragment`在`position`，它會顯示`TextBox`包含內建數學問題字串`position`字卡紙牌。 
 
 
 
@@ -368,7 +368,7 @@ viewPager.Adapter = adapter;
 
 ## <a name="add-a-pager-indicator"></a>加入頁面巡覽區指標
 
-此最小`ViewPager`實作紙牌，顯示每個 flash 卡，但是它會提供使用者所在的紙牌內任何指示。 下一個步驟是加入`PagerTabStrip`。 `PagerTabStrip`會通知的使用者有關的問題數字顯示，並提供所顯示的提示之前及後續的快閃記憶卡的瀏覽內容。 
+此最小`ViewPager`實作紙牌，顯示每個字卡，但是它會提供使用者所在的紙牌內任何指示。 下一個步驟是加入`PagerTabStrip`。 `PagerTabStrip`會通知的使用者有關的問題數字顯示，並提供所顯示的提示之前及後續的快閃記憶卡的瀏覽內容。 
 
 開啟**Resources/layout/Main.axml**並加入`PagerTabStrip`版面配置：
 
@@ -390,7 +390,7 @@ viewPager.Adapter = adapter;
 </android.support.v4.view.ViewPager>
 ```
 
-當您建置並執行應用程式時，您應該會看到空白`PagerTabStrip`顯示在每個 flash 卡的最上方： 
+當您建置並執行應用程式時，您應該會看到空白`PagerTabStrip`顯示在每個字卡的最上方： 
 
 [![經過的 PagerTabStrip 不包含文字](viewpager-and-fragments-images/03-empty-pagetabstrip-sml.png)](viewpager-and-fragments-images/03-empty-pagetabstrip.png#lightbox)
 
@@ -411,13 +411,13 @@ public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
 
 [![螢幕擷取畫面的 FlashCardPager 與每一頁上方顯示的問題數目](viewpager-and-fragments-images/04-pagetabstrip-sml.png)](viewpager-and-fragments-images/04-pagetabstrip.png#lightbox)
 
-您可以查看問題中的數字會顯示在每個 flash 卡頂端 flash 紙牌花色來回撥動。 
+您可以查看問題中的數字會顯示在每個字卡頂端 flash 紙牌花色來回撥動。 
 
 
 
 ## <a name="handle-user-input"></a>處理使用者輸入
 
-**FlashCardPager**提供一系列中的片段型快閃記憶卡`ViewPager`，但它還沒有可以顯示每個問題的解答。 在本節中，加入事件處理常式`FlashCardFragment`來顯示答案，當使用者點選 flash 卡問題文字。 
+**FlashCardPager**提供一系列中的片段型快閃記憶卡`ViewPager`，但它還沒有可以顯示每個問題的解答。 在本節中，加入事件處理常式`FlashCardFragment`來顯示答案，當使用者點選字卡問題文字。 
 
 開啟**FlashCardFragment.cs**並將下列程式碼加入至結尾`OnCreateView`之前檢視會傳回給呼叫端的方法： 
 
@@ -429,7 +429,7 @@ questionBox.Click += delegate
 };
 ```
 
-這`Click`事件處理常式會出現在使用者點選時快顯通知中顯示答案`TextBox`。 `answer`時狀態資訊已從組合傳遞給先前初始化變數`OnCreateView`。 建置並執行應用程式，然後點選以查看回應每個 flash 卡上的問題文字： 
+這`Click`事件處理常式會出現在使用者點選時快顯通知中顯示答案`TextBox`。 `answer`時狀態資訊已從組合傳遞給先前初始化變數`OnCreateView`。 建置並執行應用程式，然後點選以查看回應每個字卡上的問題文字： 
 
 [![螢幕擷取畫面的 FlashCardPager 應用程式快顯通知時所點選數學問題](viewpager-and-fragments-images/05-answer-sml.png)](viewpager-and-fragments-images/05-answer.png#lightbox)
 
@@ -439,7 +439,7 @@ questionBox.Click += delegate
 
 ## <a name="summary"></a>總結
 
-本逐步解說提供如何建立基本的逐步範例`ViewPager`為基礎的應用程式使用`Fragment`s。 它會顯示包含 flash 卡問題和解答，範例資料來源`ViewPager`版面配置，以顯示快閃記憶卡中，與`FragmentPagerAdapter`連接的子類別`ViewPager`到資料來源。 為了幫助使用者瀏覽快閃記憶卡，已包含指示，說明如何加入`PagerTabStrip`顯示每個頁面頂端的問題數。 最後，加入事件處理程式碼顯示當使用者點選 flash 卡問題的答案。 
+本逐步解說提供如何建立基本的逐步範例`ViewPager`為基礎的應用程式使用`Fragment`s。 它會顯示包含字卡問題和解答，範例資料來源`ViewPager`版面配置，以顯示快閃記憶卡中，與`FragmentPagerAdapter`連接的子類別`ViewPager`到資料來源。 為了幫助使用者瀏覽快閃記憶卡，已包含指示，說明如何加入`PagerTabStrip`顯示每個頁面頂端的問題數。 最後，加入事件處理程式碼顯示當使用者點選字卡問題的答案。 
 
 
 
