@@ -21,7 +21,7 @@ _ViewPager 是可讓您實作手勢導覽的佈局管理員。手勢導覽允許
  
 ## <a name="overview"></a>總覽
 
-`ViewPager` 通常用於搭配 Fragment，讓您更輕鬆地管理生命週期中每個頁面`ViewPager`。 在此逐步說明中，`ViewPager` 用於建立一個名為 FlashCardPager 的應用程式，該應用程式在字卡上顯示一系列數學問題。 每個字卡會透過 Framgent 實作。 使用者左右滑動字卡卡並點擊數學問題以顯示其答案。 此應用程序為每個字卡創建一個 `Fragment` 實例，並實作從 `FragmentPagerAdapter` 衍生的適配器。 在[Viewpager 和檢視表](~/android/user-interface/controls/view-pager/viewpager-and-views.md)，大部分工作都是在 `MainActivity` 生命週期方法完成。 在**FlashCardPager**，大部分工作將由 `Fragment` 在其生命週期方法之一內完成。 
+`ViewPager` 通常用於搭配片段，讓您更輕鬆地管理 `ViewPager` 中每個頁面的生命週期。 在此逐步解說中，`ViewPager` 是用來建立稱為 **FlashCardPager** 的應用程式，此應用程式會在字卡上呈現一系列的數學問題。 每張字卡都是實作為片段。 使用者向左或向右撥動字卡，並點選數學問題以顯示其答案。 此應用程式會為每張字卡建立 `Fragment` 執行個體，並實作衍生自 `FragmentPagerAdapter` 的配接器。 在[Viewpager 與檢視表](~/android/user-interface/controls/view-pager/viewpager-and-views.md) 中，大部分的工作都是在 `MainActivity` 生命週期方法中完成的。 在 **FlashCardPager** 中，大部分的工作都會由它的其中一個生命週期方法中的 `Fragment` 來完成。 
 
 本指南未涵蓋 Fragments 的基本概念&ndash;如果您還不熟悉 Xamarin.Android 中的 Fragments，請參閱[Fragments](~/android/platform/fragments/index.md)可協助您開始使用 Fragments。 
 
@@ -152,7 +152,7 @@ protected override void OnCreate(Bundle bundle)
     </RelativeLayout>
 ```
 
-此配置會定義單一 flash 卡片段;每個片段組成`TextView`，會顯示使用大型 (100sp) 字型數學問題。 此文字置中以垂直和水平 flash 卡上。 
+此配置會定義單一字卡片段；每個片段都由 `TextView` 組成，會顯示使用大型 (100sp) 字型的數學問題。 此文字在字卡上置中對齊且水平對齊。 
 
 
 
