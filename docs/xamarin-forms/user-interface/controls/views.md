@@ -57,7 +57,7 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 | [`OpenGLView`](xref:Xamarin.Forms.OpenGLView) OpenGL 圖形顯示 iOS 和 Android 專案中。 沒有適用於通用 Windows 平台支援。 IOS 和 Android 專案需要的參考**OpenTK 1.0**組件或有**OpenTK** 1.0.0.0 版的組件。 `OpenGLView` 共用專案; 中使用的工作變得更容易如果使用.NET Standard 程式庫，然後相依性服務也會需要 （如程式碼範例所示）。<br /><br />這是唯一的圖形設施內建於 Xamarin.Forms，但 Xamarin.Forms 應用程式也可以轉譯圖形使用[ `CocosSharp` ](~/xamarin-forms/user-interface/graphics/cocossharp.md)， [ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)，或[ `UrhoSharp`](~/xamarin-forms/user-interface/graphics/urhosharp.md).<br /><br />[API 文件](xref:Xamarin.Forms.OpenGLView)<br /><br /> | [![OpenGLView 範例](views-images/OpenGLView.png "OpenGLView 範例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml)使用[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
 |     |     |
 
-### <a name="map"></a>對應
+### <a name="map"></a>地圖
 
 |     |     |
 | --- | --- |
