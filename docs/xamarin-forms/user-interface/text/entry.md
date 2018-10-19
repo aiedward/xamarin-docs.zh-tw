@@ -6,25 +6,25 @@ ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/16/2018
-ms.openlocfilehash: 5ccd2a653e5190df11a58477905e868b25878e44
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 07/27/2018
+ms.openlocfilehash: 08eb77878dad9c89754585b87394d2c33900fe83
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39270108"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms 的項目
 
 _單行文字或輸入的密碼_
 
-Xamarin.Forms`Entry`用於單行文字輸入。 `Entry`，例如`Editor`檢視中，支援多個鍵盤類型。 此外，`Entry`可用來當做密碼欄位。
+Xamarin.Forms [ `Entry` ](xref:Xamarin.Forms.Entry)用於單行文字輸入。 `Entry`，例如[ `Editor` ](xref:Xamarin.Forms.Editor)檢視中，支援多個鍵盤類型。 此外，`Entry`可用來當做密碼欄位。
 
 ## <a name="display-customization"></a>顯示的自訂
 
 ### <a name="setting-and-reading-text"></a>設定和讀取文字
 
-`Entry`，例如其他文字呈現的檢視，公開`Text`屬性。 這個屬性可用來設定和讀取所呈現的文字`Entry`。 下列範例示範如何設定`Text`在 XAML 中的屬性：
+`Entry`，例如其他文字呈現的檢視，公開[ `Text` ](xref:Xamarin.Forms.Entry.Text)屬性。 這個屬性可用來設定和讀取所呈現的文字`Entry`。 下列範例示範如何設定`Text`在 XAML 中的屬性：
 
 ```xaml
 <Entry Text="I am an Entry" />
@@ -58,6 +58,32 @@ var entry = new Entry { ... MaxLength = 10 };
 ```
 
 A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)屬性值為 0 表示將會允許任何輸入項目，並針對`int.MaxValue`，這是預設值[ `Entry` ](xref:Xamarin.Forms.Entry)，指出已沒有可以輸入的字元數的有效限制。
+
+### <a name="setting-the-cursor-position-and-text-selection-length"></a>設定資料指標位置和文字選取範圍長度
+
+[ `CursorPosition` ](xref:Xamarin.Forms.Entry.CursorPosition)屬性可以用來傳回或設定下一個字元會插入儲存在字串中的位置[ `Text` ](xref:Xamarin.Forms.Entry.Text)屬性：
+
+```xaml
+<Entry Text="Cursor position set" CursorPosition="5" />
+```
+
+```csharp
+var entry = new Entry { Text = "Cursor position set", CursorPosition = 5 };
+```
+
+預設值[ `CursorPosition` ](xref:Xamarin.Forms.Entry.CursorPosition)屬性為 0，表示文字會插入開頭`Entry`。
+
+颾魤 ㄛ [ `SelectionLength` ](xref:Xamarin.Forms.Entry.SelectionLength)屬性可以用來傳回或設定文字選取範圍中的長度`Entry`:
+
+```xaml
+<Entry Text="Cursor position and selection length set" CursorPosition="2" SelectionLength="10" />
+```
+
+```csharp
+var entry = new Entry { Text = "Cursor position and selection length set", CursorPosition = 2, SelectionLength = 10 };
+```
+
+預設值[ `SelectionLength` ](xref:Xamarin.Forms.Entry.SelectionLength)屬性為 0，表示未選取任何文字。
 
 ### <a name="customizing-the-keyboard"></a>自訂鍵盤
 
@@ -180,21 +206,17 @@ var entry = new Entry { ... IsTextPredictionEnabled = false };
 > [!NOTE]
 > 當[ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled)屬性設定為`false`，，而不是自訂的鍵盤用文字預測和自動文字更正已停用。 不過，如果[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)已設定該停用文字預測`IsTextPredictionEnabled`屬性會被忽略。 因此，無法使用屬性來啟用文字預測`Keyboard`，明確地停用。
 
-### <a name="placeholders"></a>預留位置
+### <a name="setting-placeholder-text"></a>設定預留位置文字
 
-`Entry` 可以設定為顯示預留位置文字，它不會儲存使用者輸入時。 在實務上，這通常被認為是在表單中釐清適用於指定欄位的內容。 預留位置文字色彩無法自訂，因此不論相同`TextColor`設定。 如果您的設計呼叫自訂的預留位置色彩時，您必須切換回[自訂轉譯器]()。 將建立下列`Entry`使用"Username"做為 XAML 中的預留位置：
+[ `Entry` ](xref:Xamarin.Forms.Entry)可以設定為顯示預留位置文字，它不會儲存使用者輸入時。 這可以藉由設定[ `Placeholder` ](xref:Xamarin.Forms.Entry.Placeholder)屬性設`string`，和通常用來表示的內容適用於類型`Entry`。 此外，控制的預留位置文字的色彩，藉由設定[ `PlaceholderColor` ](xref:Xamarin.Forms.Entry.PlaceholderColor)屬性設[ `Color` ](xref:Xamarin.Forms.Color):
 
 ```xaml
-<Entry Placeholder="Username" />
+<Entry Placeholder="Username" PlaceholderColor="Olive" />
 ```
-
-在 C# 中：
 
 ```csharp
-var MyEntry = new Entry { Placeholder = "Username" };
+var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive };
 ```
-
-![](entry-images/placeholder.png "項目預留位置範例")
 
 ### <a name="password-fields"></a>密碼欄位
 

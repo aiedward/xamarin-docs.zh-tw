@@ -1,5 +1,5 @@
 ---
-title: 新增點選 筆勢筆勢辨識器
+title: 新增 tap 的筆勢辨識器
 description: 這篇文章說明如何使用 Xamarin.Forms 應用程式中點選偵測的點選手勢。 點選偵測是透過 TapGestureRecognizer 類別實作。
 ms.prod: xamarin
 ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: e602ae1f140640d9a895b65d78feab3d0a3b7861
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a28afb30770f15861aef06643e7f51070199ea9b
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38994850"
 ---
-# <a name="adding-a-tap-gesture-gesture-recognizer"></a>新增點選 筆勢筆勢辨識器
+# <a name="adding-a-tap-gesture-recognizer"></a>新增 tap 的筆勢辨識器
 
 _點選手勢來點選偵測，並使用 TapGestureRecognizer 類別實作。_
-
-## <a name="overview"></a>總覽
 
 若要讓使用者介面項目可點按以點選手勢，建立[ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)執行個體，處理[ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped)事件，並新增至新的筆勢辨識器[`GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers)使用者介面項目的集合。 下列程式碼範例所示`TapGestureRecognizer`附加至[ `Image` ](xref:Xamarin.Forms.Image)項目：
 
@@ -72,7 +70,7 @@ void OnTapGestureRecognizerTapped(object sender, EventArgs args)
 
 ## <a name="using-icommand"></a>使用 ICommand
 
-通常使用 Mvvm 模式的應用程式使用`ICommand`而不是直接連接事件處理常式。 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)可以輕鬆地支援`ICommand`藉由在程式碼中設定繫結：
+通常使用 Model View ViewModel (MVVM) 模式的應用程式使用`ICommand`而不是直接連接事件處理常式。 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)可以輕鬆地支援`ICommand`藉由在程式碼中設定繫結：
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -113,10 +111,6 @@ public class TapViewModel : INotifyPropertyChanged
     //region INotifyPropertyChanged code omitted
 }
 ```
-
-## <a name="summary"></a>總結
-
-點選手勢用於點選偵測，而且透過實作[ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)類別。 可以辨識點選兩下指定分接器數目 (或三重下或多個點選) 的行為。
 
 
 ## <a name="related-links"></a>相關連結

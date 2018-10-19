@@ -1,24 +1,24 @@
 ---
-title: SkiaSharp 簡介
+title: SkiaSharp 平台無關的範例
 description: 本文件提供核心 SkiaSharp 概念的簡介。 特別是，它討論取得和 SKCanvas 上繪製。
 ms.prod: xamarin
 ms.techonology: xamarin-skiasharp
 ms.assetid: 19506F08-2603-465E-A806-6BD01638DE90
-author: charlespetzold
-ms.author: chape
-ms.date: 09/14/2017
-ms.openlocfilehash: eb4a391c52c598c6d276b75028337bf54455e7b4
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/03/2018
+ms.openlocfilehash: 4d0e57b98a479112b9fdf4f9c503418f3966cc73
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615485"
 ---
-# <a name="an-introduction-to-skiasharp"></a>SkiaSharp 簡介
+# <a name="skiasharp-platform-independent-examples"></a>SkiaSharp 平台無關的範例
 
-_這提供 SkiaSharp 的基本概念的簡介_
+_這提供平台無關的簡介 SkiaSharp 的基本概念_
 
-SkiaSharp 提供豐富且功能強大 2D 圖形 API，可用來呈現到 2D 的緩衝區。  您可以使用這些來實作自訂使用者介面項目和可整合到您的應用程式的 2D 圖形。  SkiaSharp 是.NET 繫結至[Skia](https://skia.org)程式庫會繼承此文件庫的強大的功能。
+SkiaSharp 提供豐富且功能強大 2D 圖形 API，可用來呈現到 2D 的緩衝區。  您可以使用這些來實作自訂使用者介面項目和可整合到您的應用程式的 2D 圖形。 SkiaSharp 是.NET 繫結至[Skia](https://skia.org)程式庫會繼承此文件庫的強大的功能。
 
 程式庫是跨平台目前可供[NuGet 套件](https://www.nuget.org/packages/SkiaSharp)，您可以將它加入您的專案的 NuGet 參考。
 
@@ -135,9 +135,4 @@ using (var paint = new SKPaint()) {
 
 ## <a name="more-information"></a>詳細資訊
 
-使用 SkiaSharp 的詳細資訊可於[線上 API 文件](https://developer.xamarin.com/api/namespace/SkiaSharp/)
-
-
-## <a name="related-links"></a>相關連結
-
-- [SkiaSharp iOS 活頁簿](https://developer.xamarin.com/workbooks/graphics/skiasharp/logo/skialogo-ios.workbook)
+使用 SkiaSharp 的詳細資訊可在[API 文件](https://docs.microsoft.com/dotnet/api/skiasharp)

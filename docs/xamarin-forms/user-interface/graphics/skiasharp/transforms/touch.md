@@ -4,14 +4,14 @@ description: 本文說明如何使用實作拖曳觸控、 捏合、 和旋轉�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
-author: charlespetzold
-ms.author: chape
-ms.date: 04/03/2018
-ms.openlocfilehash: e2c1529980681ed1013c53343c2d077297352b95
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/14/2018
+ms.openlocfilehash: 6f7236a3650c04098edbef92f3d6ed620be501c3
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615388"
 ---
 # <a name="touch-manipulations"></a>觸控操作
@@ -22,12 +22,385 @@ _使用矩陣轉換來實作拖曳觸控、 捏合、 和旋轉_
 
 ![](touch-images/touchmanipulationsexample.png "受到平移、 縮放和旋轉點陣圖")
 
-## <a name="manipulating-one-bitmap"></a>操作一個點陣圖
+如下所示的所有範例都使用 Xamarin.Forms 觸控追蹤效果一文所述[**叫用事件影響**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)。
 
-**觸控的操作**頁面會示範在單一點陣圖上的觸控操作。
-此範例會利用文中所呈現的點觸控追蹤效果[叫用事件效果](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)。
+## <a name="dragging-and-translation"></a>拖曳和轉譯
 
-數個其他檔案提供的支援**觸控的操作**頁面。 第一個是[ `TouchManipulationMode` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationMode.cs)列舉型別，這表示您會看到程式碼實作的觸控操作的不同類型：
+其中一個最重要的應用程式的矩陣轉換是觸控處理。 單一[ `SKMatrix` ](xref:SkiaSharp.SKMatrix)值可以彙總一系列的觸控式作業。 
+
+單指拖曳，`SKMatrix`值執行轉譯。 這示範於**點陣圖拖曳**頁面。 XAML 檔案會具現化`SKCanvasView`Xamarin.Forms 中`Grid`。 A`TouchEffect`已新增至物件`Effects`集合， `Grid`:
+
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:tt="clr-namespace:TouchTracking"
+             x:Class="SkiaSharpFormsDemos.Transforms.BitmapDraggingPage"
+             Title="Bitmap Dragging">
+    
+    <Grid BackgroundColor="White">
+        <skia:SKCanvasView x:Name="canvasView"
+                           PaintSurface="OnCanvasViewPaintSurface" />
+        <Grid.Effects>
+            <tt:TouchEffect Capture="True"
+                            TouchAction="OnTouchEffectAction" />
+        </Grid.Effects>
+    </Grid>
+</ContentPage>
+```
+
+理論上，`TouchEffect`物件無法直接加入`Effects`的集合`SKCanvasView`，但無法在所有平台上運作。 因為`SKCanvasView`是相同的大小`Grid`在此組態中，將它附加`Grid`一樣好。
+
+程式碼後置檔案載入點陣圖資源在其建構函式中，並顯示在`PaintSurface`處理常式：
+
+```csharp
+public partial class BitmapDraggingPage : ContentPage
+{
+    // Bitmap and matrix for display
+    SKBitmap bitmap;
+    SKMatrix matrix = SKMatrix.MakeIdentity();
+    ···
+
+    public BitmapDraggingPage()
+    {
+        InitializeComponent();
+
+        string resourceID = "SkiaSharpFormsDemos.Media.SeatedMonkey.jpg";
+        Assembly assembly = GetType().GetTypeInfo().Assembly;
+
+        using (Stream stream = assembly.GetManifestResourceStream(resourceID))
+        {
+            bitmap = SKBitmap.Decode(stream);
+        }
+    }
+    ···
+    void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
+    {
+        SKImageInfo info = args.Info;
+        SKSurface surface = args.Surface;
+        SKCanvas canvas = surface.Canvas;
+
+        canvas.Clear();
+
+        // Display the bitmap
+        canvas.SetMatrix(matrix);
+        canvas.DrawBitmap(bitmap, new SKPoint());
+    }
+}
+```
+
+不需要任何進一步的程式碼，`SKMatrix`值一律是身分識別矩陣，就會不會影響顯示的點陣圖。 目標`OnTouchEffectAction`改變以反映觸控操作矩陣值，是在 XAML 檔案中設定的處理常式。
+
+`OnTouchEffectAction`處理常式開始轉換 Xamarin.Forms `Point` SkiaSharp 值`SKPoint`值。 這是簡單的調整依據`Width`並`Height`的屬性`SKCanvasView`（這些是裝置獨立單位） 和`CanvasSize`屬性，這是以像素為單位：
+
+```csharp
+public partial class BitmapDraggingPage : ContentPage
+{
+    ···
+    // Touch information
+    long touchId = -1;
+    SKPoint previousPoint;
+    ···
+    void OnTouchEffectAction(object sender, TouchActionEventArgs args)
+    {
+        // Convert Xamarin.Forms point to pixels
+        Point pt = args.Location;
+        SKPoint point = 
+            new SKPoint((float)(canvasView.CanvasSize.Width * pt.X / canvasView.Width),
+                        (float)(canvasView.CanvasSize.Height * pt.Y / canvasView.Height));
+
+        switch (args.Type)
+        {
+            case TouchActionType.Pressed:
+                // Find transformed bitmap rectangle
+                SKRect rect = new SKRect(0, 0, bitmap.Width, bitmap.Height);
+                rect = matrix.MapRect(rect);
+
+                // Determine if the touch was within that rectangle
+                if (rect.Contains(point))
+                {
+                    touchId = args.Id;
+                    previousPoint = point;
+                }
+                break;
+
+            case TouchActionType.Moved:
+                if (touchId == args.Id)
+                {
+                    // Adjust the matrix for the new position
+                    matrix.TransX += point.X - previousPoint.X;
+                    matrix.TransY += point.Y - previousPoint.Y;
+                    previousPoint = point;
+                    canvasView.InvalidateSurface();
+                }
+                break;
+
+            case TouchActionType.Released:
+            case TouchActionType.Cancelled:
+                touchId = -1;
+                break;
+        }
+    }
+    ···
+}
+```
+
+在手指先觸控螢幕，類型的事件`TouchActionType.Pressed`引發。 第一項工作是判斷手指會觸碰點陣圖。 這類工作通常稱為_點擊測試_。 在此情況下，叫用測試將可藉由建立`SKRect`對應至點陣圖，將矩陣轉換套用至它與值`MapRect`，接著再判斷 觸控點是否在轉換後的矩形內。
+
+如果這種情況，則`touchId`欄位設為 touch ID，並儲存手指的位置。
+
+針對`TouchActionType.Moved`事件、 的翻譯因素`SKMatrix`會調整值目前位置的手指，和手指的新位置。 新的位置下一次，透過儲存和`SKCanvasView`失效。
+
+實驗與此程式時，記下，您可以只拖曳點陣圖時您的手指接觸到的區域會顯示點陣圖。 雖然這項限制不是非常重要，此程式，它會變成重要管理多個點陣圖時。
+
+## <a name="pinching-and-scaling"></a>進行捏合和縮放比例
+
+兩隻手指觸控的點陣圖時，就會發生什麼？ 如果兩指移動以平行方式，然後您可能想要移動以及手指的點陣圖。 如果兩指執行縮小或延伸作業，您可能想要 （若要在下一節中討論） 旋轉或縮放點陣圖。 當縮放點陣圖，它最有意義的兩指保留在相同的位置，相對於點陣圖，以及要據以調整的點陣圖。
+
+一次處理兩指看起來複雜，但請記住，`TouchAction`處理常式只會接收一次一隻手指的相關資訊。 如果兩隻指頭正在操作點陣圖，每個事件，一隻手指已變更位置，但其他尚未變更。 在 **點陣圖縮放**以下頁面程式碼，呼叫尚未變更位置的手指_樞紐分析_點，因為轉換是相對於該點。
+
+這項計畫和前一個程式的其中一個差異是識別碼，必須先儲存該多個觸控。 字典用於此目的，其中 touch ID 是字典索引鍵，而字典值是該手指的目前位置而定：
+
+```csharp
+public partial class BitmapScalingPage : ContentPage
+{
+    ···
+    // Touch information
+    Dictionary<long, SKPoint> touchDictionary = new Dictionary<long, SKPoint>();
+    ···
+    void OnTouchEffectAction(object sender, TouchActionEventArgs args)
+    {
+        // Convert Xamarin.Forms point to pixels
+        Point pt = args.Location;
+        SKPoint point =
+            new SKPoint((float)(canvasView.CanvasSize.Width * pt.X / canvasView.Width),
+                        (float)(canvasView.CanvasSize.Height * pt.Y / canvasView.Height));
+
+        switch (args.Type)
+        {
+            case TouchActionType.Pressed:
+                // Find transformed bitmap rectangle
+                SKRect rect = new SKRect(0, 0, bitmap.Width, bitmap.Height);
+                rect = matrix.MapRect(rect);
+
+                // Determine if the touch was within that rectangle
+                if (rect.Contains(point) && !touchDictionary.ContainsKey(args.Id))
+                {
+                    touchDictionary.Add(args.Id, point);
+                }
+                break;
+
+            case TouchActionType.Moved:
+                if (touchDictionary.ContainsKey(args.Id))
+                {
+                    // Single-finger drag
+                    if (touchDictionary.Count == 1)
+                    {
+                        SKPoint prevPoint = touchDictionary[args.Id];
+
+                        // Adjust the matrix for the new position
+                        matrix.TransX += point.X - prevPoint.X;
+                        matrix.TransY += point.Y - prevPoint.Y;
+                        canvasView.InvalidateSurface();
+                    }
+                    // Double-finger scale and drag
+                    else if (touchDictionary.Count >= 2)
+                    {
+                        // Copy two dictionary keys into array
+                        long[] keys = new long[touchDictionary.Count];
+                        touchDictionary.Keys.CopyTo(keys, 0);
+
+                        // Find index of non-moving (pivot) finger
+                        int pivotIndex = (keys[0] == args.Id) ? 1 : 0;
+
+                        // Get the three points involved in the transform
+                        SKPoint pivotPoint = touchDictionary[keys[pivotIndex]];
+                        SKPoint prevPoint = touchDictionary[args.Id];
+                        SKPoint newPoint = point;
+
+                        // Calculate two vectors
+                        SKPoint oldVector = prevPoint - pivotPoint;
+                        SKPoint newVector = newPoint - pivotPoint;
+
+                        // Scaling factors are ratios of those
+                        float scaleX = newVector.X / oldVector.X;
+                        float scaleY = newVector.Y / oldVector.Y;
+
+                        if (!float.IsNaN(scaleX) && !float.IsInfinity(scaleX) &&
+                            !float.IsNaN(scaleY) && !float.IsInfinity(scaleY))
+                        {
+                            // If smething bad hasn't happened, calculate a scale and translation matrix
+                            SKMatrix scaleMatrix = 
+                                SKMatrix.MakeScale(scaleX, scaleY, pivotPoint.X, pivotPoint.Y);
+
+                            SKMatrix.PostConcat(ref matrix, scaleMatrix);
+                            canvasView.InvalidateSurface();
+                        }
+                    }
+
+                    // Store the new point in the dictionary
+                    touchDictionary[args.Id] = point;
+                }
+
+                break;
+
+            case TouchActionType.Released:
+            case TouchActionType.Cancelled:
+                if (touchDictionary.ContainsKey(args.Id))
+                {
+                    touchDictionary.Remove(args.Id);
+                }
+                break;
+        }
+    }
+    ···
+}
+```
+
+處理`Pressed`動作幾乎是相同先前的程式不同之處在於識別碼與接觸點會加入至字典。 `Released`和`Cancelled`動作移除字典項目。
+
+處理長達`Moved`動作將會更複雜，不過。 如果沒有涉及的只有一隻手指，然後處理是前一個程式幾乎完全相同。 針對兩個或多根手指，程式必須也涉及不移動手指字典中取得資訊。 它會將字典索引鍵複製到陣列，然後再比較第一個索引鍵，識別碼為正在移動手指。 這可讓程式，以取得對應到不移動手指的樞紐分析點。
+
+接下來，程式會計算兩個向量的新手指的位置相對於軸點和舊的手指相對於位置的樞紐分析點。 這些向量的比例縮放係數。 因為可能被除數為零，這些必須檢查無限值或 NaN （不是數字） 的值。 如果一切正常，就會與串連縮放轉換`SKMatrix`儲存為欄位的值。
+
+嘗試使用此頁面，您會注意到，您可以拖曳以一或兩個手指點陣圖或調整使用兩根手指。 調整大小_非等向性_，這表示縮放可以水平和垂直方向不同。 這會扭曲外觀比例，但也可讓您翻轉的點陣圖，以進行鏡像映像。 您也可能會發現，您可以壓縮點陣圖的零個維度，它就會消失。 在實際程式碼，您會想要防範這種。
+
+## <a name="two-finger-rotation"></a>雙指的旋轉
+
+**旋轉點陣圖** 頁面可讓您使用兩指的旋轉或 dbi*100 調整。 點陣圖一律會保留其正確的外觀比例。 運用兩指的旋轉和非等向性調整無法運作得非常順利因為移動指的是這兩項工作非常類似。
+
+此程式中第一個主要的差別在於的點擊測試的邏輯。 使用上一個程式`Contains`方法的`SKRect`判斷觸控點是否在轉換對應至點陣圖的矩形。 使用者管理的點陣圖，可能是點陣圖，但旋轉，和`SKRect`無法正確表示旋轉的矩形。 您可能會擔心的點擊測試的邏輯必須在此情況下實作相當複雜的分析幾何圖形。
+
+不過，捷徑，可以： 判斷點所在的已轉換的矩形界限內是否等同於判斷是否會反向已轉換的點位於未轉換的矩形界限內。 更簡單的計算，且邏輯可以繼續使用方便`Contains`方法：
+
+```csharp
+public partial class BitmapRotationPage : ContentPage
+{
+    ···
+    // Touch information
+    Dictionary<long, SKPoint> touchDictionary = new Dictionary<long, SKPoint>();
+    ···
+    void OnTouchEffectAction(object sender, TouchActionEventArgs args)
+    {
+        // Convert Xamarin.Forms point to pixels
+        Point pt = args.Location;
+        SKPoint point =
+            new SKPoint((float)(canvasView.CanvasSize.Width * pt.X / canvasView.Width),
+                        (float)(canvasView.CanvasSize.Height * pt.Y / canvasView.Height));
+
+        switch (args.Type)
+        {
+            case TouchActionType.Pressed:
+                if (!touchDictionary.ContainsKey(args.Id))
+                {
+                    // Invert the matrix
+                    if (matrix.TryInvert(out SKMatrix inverseMatrix))
+                    {
+                        // Transform the point using the inverted matrix
+                        SKPoint transformedPoint = inverseMatrix.MapPoint(point);
+
+                        // Check if it's in the untransformed bitmap rectangle
+                        SKRect rect = new SKRect(0, 0, bitmap.Width, bitmap.Height);
+
+                        if (rect.Contains(transformedPoint))
+                        {
+                            touchDictionary.Add(args.Id, point);
+                        }
+                    }
+                }
+                break;
+
+            case TouchActionType.Moved:
+                if (touchDictionary.ContainsKey(args.Id))
+                {
+                    // Single-finger drag
+                    if (touchDictionary.Count == 1)
+                    {
+                        SKPoint prevPoint = touchDictionary[args.Id];
+
+                        // Adjust the matrix for the new position
+                        matrix.TransX += point.X - prevPoint.X;
+                        matrix.TransY += point.Y - prevPoint.Y;
+                        canvasView.InvalidateSurface();
+                    }
+                    // Double-finger rotate, scale, and drag
+                    else if (touchDictionary.Count >= 2)
+                    {
+                        // Copy two dictionary keys into array
+                        long[] keys = new long[touchDictionary.Count];
+                        touchDictionary.Keys.CopyTo(keys, 0);
+
+                        // Find index non-moving (pivot) finger
+                        int pivotIndex = (keys[0] == args.Id) ? 1 : 0;
+
+                        // Get the three points in the transform
+                        SKPoint pivotPoint = touchDictionary[keys[pivotIndex]];
+                        SKPoint prevPoint = touchDictionary[args.Id];
+                        SKPoint newPoint = point;
+
+                        // Calculate two vectors
+                        SKPoint oldVector = prevPoint - pivotPoint;
+                        SKPoint newVector = newPoint - pivotPoint;
+
+                        // Find angles from pivot point to touch points
+                        float oldAngle = (float)Math.Atan2(oldVector.Y, oldVector.X);
+                        float newAngle = (float)Math.Atan2(newVector.Y, newVector.X);
+
+                        // Calculate rotation matrix
+                        float angle = newAngle - oldAngle;
+                        SKMatrix touchMatrix = SKMatrix.MakeRotation(angle, pivotPoint.X, pivotPoint.Y);
+
+                        // Effectively rotate the old vector
+                        float magnitudeRatio = Magnitude(oldVector) / Magnitude(newVector);
+                        oldVector.X = magnitudeRatio * newVector.X;
+                        oldVector.Y = magnitudeRatio * newVector.Y;
+
+                        // Isotropic scaling!
+                        float scale = Magnitude(newVector) / Magnitude(oldVector);
+
+                        if (!float.IsNaN(scale) && !float.IsInfinity(scale))
+                        {
+                            SKMatrix.PostConcat(ref touchMatrix,
+                                SKMatrix.MakeScale(scale, scale, pivotPoint.X, pivotPoint.Y));
+
+                            SKMatrix.PostConcat(ref matrix, touchMatrix);
+                            canvasView.InvalidateSurface();
+                        }
+                    }
+
+                    // Store the new point in the dictionary
+                    touchDictionary[args.Id] = point;
+                }
+
+                break;
+
+            case TouchActionType.Released:
+            case TouchActionType.Cancelled:
+                if (touchDictionary.ContainsKey(args.Id))
+                {
+                    touchDictionary.Remove(args.Id);
+                }
+                break;
+        }
+    }
+
+    float Magnitude(SKPoint point)
+    {
+        return (float)Math.Sqrt(Math.Pow(point.X, 2) + Math.Pow(point.Y, 2));
+    }
+    ···
+}
+```
+
+邏輯`Moved`事件開頭就像先前的程式。 名為兩個向量`oldVector`和`newVector`會根據計算先前和目前的點移動手指與 unmoving 手指的樞紐分析點。 然後這些向量角度決定權，但差別的旋轉角度。
+
+調整可能會也涉及，讓舊的向量上的旋轉角度旋轉基礎。 縮放比例的現在兩個向量的相對大小。 請注意，相同`scale`值會用於水平及垂直調整，以便調整為 dbi*100。 `matrix`欄位會調整旋轉矩陣並調整矩陣。
+
+如果您的應用程式必須實作觸控處理單一的點陣圖 （或其他物件），您可以調整這些三個範例的程式碼為您自己的應用程式。 但如果您需要實作觸控處理多個點陣圖，您可能需要將這些封裝 touch 的其他類別中的作業。
+
+## <a name="encapsulating-the-touch-operations"></a>封裝的觸控操作
+
+**觸控的操作**頁面會示範觸控操作單一點陣圖，但使用數個其他封裝許多邏輯，如上所示的檔案。 這些檔案的第一個是[ `TouchManipulationMode` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationMode.cs)列舉型別，這表示您會看到程式碼實作的觸控操作的不同類型：
 
 ```csharp
 enum TouchManipulationMode
@@ -43,17 +416,19 @@ enum TouchManipulationMode
 
 `PanOnly` 是一個手指拖曳實作進行轉譯。 所有後續的選項也會包含移動瀏覽，但牽涉到兩隻手指：`IsotropicScale`是縮小作業會導致同樣調整水平和垂直方向的物件。 `AnisotropicScale` 可讓不相等的縮放比例。
 
-`ScaleRotate`選項是用於雙指縮放和旋轉。 調整為 dbi*100 就行了。 實作雙指循環與非等向性調整是有問題，因為手指移動基本上都相同。
+`ScaleRotate`選項是用於雙指縮放和旋轉。 調整為 dbi*100 就行了。 如先前所述，實作雙指循環與非等向性調整是有問題因為手指移動基本上都相同。
 
 `ScaleDualRotate`選項會新增一個指的旋轉。 當一根手指拖曳物件時，被拖曳的物件第一次旋轉中心，讓物件的中心對齊拖曳的向量。
 
 [ **TouchManipulationPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationPage.xaml)檔案包含`Picker`的成員`TouchManipulationMode`列舉型別：
 
 ```xaml
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              xmlns:tt="clr-namespace:TouchTracking"
+             xmlns:local="clr-namespace:SkiaSharpFormsDemos.Transforms"
              x:Class="SkiaSharpFormsDemos.Transforms.TouchManipulationPage"
              Title="Touch Manipulation">
     <Grid>
@@ -65,22 +440,24 @@ enum TouchManipulationMode
         <Picker Title="Touch Mode"
                 Grid.Row="0"
                 SelectedIndexChanged="OnTouchModePickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>None</x:String>
-                <x:String>PanOnly</x:String>
-                <x:String>IsotropicScale</x:String>
-                <x:String>AnisotropicScale</x:String>
-                <x:String>ScaleRotate</x:String>
-                <x:String>ScaleDualRotate</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type local:TouchManipulationMode}">
+                    <x:Static Member="local:TouchManipulationMode.None" />
+                    <x:Static Member="local:TouchManipulationMode.PanOnly" />
+                    <x:Static Member="local:TouchManipulationMode.IsotropicScale" />
+                    <x:Static Member="local:TouchManipulationMode.AnisotropicScale" />
+                    <x:Static Member="local:TouchManipulationMode.ScaleRotate" />
+                    <x:Static Member="local:TouchManipulationMode.ScaleDualRotate" />
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 4
             </Picker.SelectedIndex>
         </Picker>
-
+        
         <Grid BackgroundColor="White"
               Grid.Row="1">
-
+            
             <skia:SKCanvasView x:Name="canvasView"
                                PaintSurface="OnCanvasViewPaintSurface" />
             <Grid.Effects>
@@ -133,9 +510,7 @@ public partial class TouchManipulationPage : ContentPage
         if (bitmap != null)
         {
             Picker picker = (Picker)sender;
-            TouchManipulationMode mode;
-            Enum.TryParse(picker.Items[picker.SelectedIndex], out mode);
-            bitmap.TouchManager.Mode = mode;
+            bitmap.TouchManager.Mode = (TouchManipulationMode)picker.SelectedItem;
         }
     }
     ...
@@ -244,11 +619,7 @@ class TouchManipulationBitmap
 }
 ```
 
-`HitTest`方法會傳回`true`如果使用者接觸到螢幕的某一點界限內的點陣圖。 使用者管理的點陣圖，點陣圖會可能被輪替，或甚至是 （透過非等向性縮放和旋轉的組合） 會在圖形中的平行四邊形。 您可能會擔心，`HitTest`方法必須在此情況下實作相當複雜的分析幾何圖形。
-
-不過，捷徑，可以：
-
-判斷點所在的已轉換的矩形界限內是否等同於判斷是否會反向已轉換的點位於未轉換的矩形界限內。 這是更簡單的計算，並可以使用方便`Contains`所定義的方法`SKRect`:
+`HitTest`方法會傳回`true`如果使用者接觸到螢幕的某一點界限內的點陣圖。 這會使用先前顯示於邏輯**點陣圖旋轉**頁面：
 
 ```csharp
 class TouchManipulationBitmap
@@ -850,7 +1221,7 @@ public partial class SingleFingerCornerScalePage : ContentPage
 
 `Moved`動作類型會計算對應於觸控活動手指按下此次螢幕的時間的矩陣。 它實際上在手指第一次按下點陣圖會該矩陣與矩陣。 在調整作業一律是相對於手指接觸到的一個相角。
 
-針對小型或尾巴的點陣圖，可能會佔用大部分的點陣圖內部的省略符號，並將其保留在角落以調整點陣圖非常小的區域中。 您可能會想稍微不同的方法，在此情況下，您可以取代該整個`if`設定的區塊`isScaling`到`true`以下列程式碼：
+小型或尾巴的點陣圖，可能會佔用大部分的點陣圖內部的省略符號，並將其保留在縮放點陣圖的角落的小區域中。 您可能會想稍微不同的方法，在此情況下，您可以取代該整個`if`設定的區塊`isScaling`到`true`以下列程式碼：
 
 ```csharp
 float halfHeight = rect.Height / 2;
@@ -898,6 +1269,6 @@ else
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [叫用事件的效果](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

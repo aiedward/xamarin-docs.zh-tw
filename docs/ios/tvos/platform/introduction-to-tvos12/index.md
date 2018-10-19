@@ -4,29 +4,21 @@ description: 本文件提供高層次概觀中的 Xamarin 預覽版本的 tvOS 1
 ms.prod: xamarin
 ms.assetid: 037F7FFF-2155-4017-B99A-839CE7EC5C9C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 06/25/2018
-ms.openlocfilehash: 5cbec23aa81a4637a18f83d9955a78183dadaa21
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: f7fb8cc379a070b848c5154c9c1d4fbfc8186266
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615195"
 ---
 # <a name="introduction-to-tvos-12"></a>TvOS 12 簡介
 
-![預覽](~/media/shared/preview.png)
+本文件提供新增和更新 tvOS 12 的高階概觀。
 
-> [!WARNING]
-> Xamarin 的 tvOS 12 支援目前為預覽狀態，它可能包含錯誤，這表示不具備完整功能，而且可能變更。 您可以使用它僅用於進行測試。
-
-本文件提供的全新和更新的 tvOS 概觀 12 的 Xamarin 預覽版本目前提供 C# 繫結的功能。
-
-若要開始建置使用 Xamarin 的 tvOS 12 應用程式，看看：
-
-- [入門指南](~/ios/platform/introduction-to-ios12/get-started.md)
-- Xamarin 預覽[版本部落格文章](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
+若要開始建置使用 Xamarin 的 tvOS 12 應用程式，看看[快速入門指南](~/ios/platform/introduction-to-ios12/get-started.md)。
 
 ## <a name="tvuikit"></a>TVUIKit
 
@@ -48,10 +40,13 @@ tvOS 12 可讓所有的應用程式，無論它們呈現的方式，與焦點引
 
 自然語言架構可讓應用程式，以執行各種類型的語言分析。 比方說，它可以用來識別組件的語音，並判斷由文字區塊的語言。
 
+## <a name="deprecations"></a>棄用功能
+
+使用 tvOS 12，Apple 已取代 OpenGL ES[鼓勵開發人員](https://developer.apple.com/tvos/whats-new/)採用裸機。
+
 ## <a name="related-links"></a>相關連結
 
 - [tvOS 範例](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS – Apple 開發人員 (Apple)](https://developer.apple.com/tvos/)
 - [TvOS 12 (Apple) （影片） 中最新消息](https://developer.apple.com/videos/play/wwdc2018/208/)
 - [電視節目 (Apple)](https://www.apple.com/tv/)
-- Xamarin 預覽[版本部落格文章](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)

@@ -1,38 +1,40 @@
 ---
 title: 使用 Xamarin 的連續整合簡介
-description: 描述使用 Xamarin 的連續整合的指南的這個文件連結。 連結的內容提供連續整合的概觀，並討論應用程式中心建置、 TeamCity 和 Jenkins。
+description: 描述使用 Xamarin 的連續整合指南的這個文件連結。 連結的內容會提供設定連續整合的概觀，並討論 App Center 建置、 TeamCity 和 Jenkins。
 ms.prod: xamarin
 ms.assetid: 99484E96-DC69-4697-8BBB-1B44C5CBB5ED
-author: topgenorth
-ms.author: toopge
-ms.date: 05/04/2017
-ms.openlocfilehash: 1a38160b4f1536c0e0e393cb9ec3482624a40681
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.date: 10/03/2018
+ms.openlocfilehash: 06392448682a5b3be02562578542919b42242c13
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "34793739"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>使用 Xamarin 的連續整合簡介
 
 > [!Video https://youtube.com/embed/wXgnh2Q7Uv8]
 
-##  <a name="introduction-to-continuous-integrationtoolsciintro-to-cimd"></a>[連續整合簡介](~/tools/ci/intro-to-ci.md)
+## <a name="introduction-to-continuous-integrationtoolsciintro-to-cimd"></a>[連續整合簡介](~/tools/ci/intro-to-ci.md)
 
-本節涵蓋使用連續整合和其關聯性相關的不同元件。 本文將概述特定的以下各節中討論的連續整合環境。
-
-[!include[](~/tools/ci/includes/firewall-information.md)]
+本節涵蓋使用持續整合和其關聯性相關的不同元件。 其中概述特定的以下各節中討論的連續整合環境。
 
 ## <a name="working-with-continuous-integration-environments"></a>使用持續整合環境
 
-### <a name="using-app-center-build-with-xamarinappcenterbuildxamarin"></a>[使用 App Center 組建搭配 Xamarin](/appcenter/build/xamarin/)
+### <a name="build-xamarin-apps-with-azure-pipelineshttpsdocsmicrosoftcomazuredevopspipelineslanguagesxamarin"></a>[建置 Xamarin 應用程式與 Azure 的管線](https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin/)
 
-直接從 GitHub、 VSTS 或 Bitbucket 來建置應用程式中心 Xamarin.iOS 和 Xamarin.Android 方案。
+若要自動建置 Android 和 iOS 的 Xamarin 應用程式中使用 Azure 的管線。
 
-### <a name="using-teamcity-with-xamarintoolsciteamcitymd"></a>[使用 TeamCity 搭配 Xamarin](~/tools/ci/teamcity.md)
+### <a name="build-xamarin-apps-using-app-centerhttpsdocsmicrosoftcomappcenterbuildxamarin"></a>[建置 Xamarin 應用程式使用 App Center](https://docs.microsoft.com/appcenter/build/xamarin/)
 
-本指南會討論與使用 TeamCity 編譯行動應用程式，然後將它們提交至應用程式中心測試所需的步驟。
+直接從 GitHub、 Azure DevOps 或 Bitbucket 建置 Xamarin.iOS 和 Xamarin.Android 使用 App Center 的解決方案。
 
-### <a name="using-jenkins-with-xamarintoolscijenkins-walkthroughmd"></a>[使用 Jenkins 搭配 Xamarin](~/tools/ci/jenkins-walkthrough.md)
+### <a name="build-xamarin-apps-with-teamcitytoolsciteamcitymd"></a>[建置具有 TeamCity Xamarin 應用程式](~/tools/ci/teamcity.md)
 
-本指南說明如何設定為持續整合伺服器 Jenkins 和自動化編譯建立使用 Xamarin 的行動裝置應用程式。 說明如何安裝 Jenkins OS X 上、 設定，以及設定變更認可至版本控制系統時，編譯 Xamarin.iOS 和 Xamarin.Android 應用程式的作業。
+本指南會討論使用 TeamCity 編譯行動應用程式，並再將它們提交到 App Center 測試所需的步驟。
+
+### <a name="build-xamarin-apps-with-jenkinstoolscijenkins-walkthroughmd"></a>[建置 Xamarin 應用程式與 Jenkins](~/tools/ci/jenkins-walkthrough.md)
+
+本指南說明如何設定 Jenkins 持續整合伺服器，並將自動化編譯建立使用 Xamarin 的行動裝置應用程式。 它說明如何在 OS X 上安裝 Jenkins、 加以設定，以及設定來變更認可至版本控制系統時，編譯 Xamarin.iOS 和 Xamarin.Android 應用程式的作業。

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2018
-ms.openlocfilehash: c0c433ab44c5b16fda6a01d520c41b31cb94bcc7
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 0069e59c1c09e242a74573ae66c8efade7d7f2a5
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38998221"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms 滑桿
@@ -44,8 +44,8 @@ Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider)是可由使用者選取操
 
 - [`MinimumTrackColor`](xref:Xamarin.Forms.Slider.MinimumTrackColorProperty) 是一個長條色彩捲動方塊的左邊。
 - [`MaximumTrackColor`](xref:Xamarin.Forms.Slider.MaximumTrackColorProperty) 是一個長條色彩捲動方塊的右邊。
-- [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) 是捲動方塊的色彩。 通用 Windows 平台上不支援這個屬性。
-- [`ThumbImage`](xref:Xamarin.Forms.Slider.ThumbImageProperty) 是要用於基本原則是，類型的映像[ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource)。 通用 Windows 平台上不支援這個屬性。
+- [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) 是捲動方塊的色彩。
+- [`ThumbImage`](xref:Xamarin.Forms.Slider.ThumbImageProperty) 是要用於基本原則是，類型的映像[ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource)。
 
 > [!NOTE]
 > `ThumbColor`和`ThumbImage`屬性互斥。 如果設定這兩個屬性，`ThumbImage`屬性將會優先。
@@ -109,7 +109,7 @@ public class BasicSliderCodePage : ContentPage
 
 [![基本的滑桿的程式碼](slider-images/BasicSliderCode.png "基本的滑桿的程式碼")](slider-images/BasicSliderCode-Large.png#lightbox)
 
-第二個`Label`會顯示"（未初始化） 」 的文字，直到`Slider`操作的情況下，第一個`ValueChanged`引發的事件。 請注意，所顯示的小數位數的三個平台不同。 這些差異相關的平台實作`Slider`稍後一節中的這篇文章討論[平台實作差異](#implementations)。
+第二個`Label`會顯示"（未初始化） 」 的文字，直到`Slider`操作，因而導致第一個`ValueChanged`引發的事件。 請注意，所顯示的小數位數的三個平台不同。 這些差異相關的平台實作`Slider`稍後一節中的這篇文章討論[平台實作差異](#implementations)。
 
 ### <a name="creating-a-slider-in-xaml"></a>在 XAML 中建立滑桿
 
@@ -228,7 +228,7 @@ Slider slider = new Slider
 };
 ```
 
-設定`Maximum`為 20 並不成問題，因為它大於預設值`Minimum`設定為 0。 當`Minimum`設定，這個值是小於`Maximum`值為 20。
+設定`Maximum`為 20 並不成問題，因為它大於預設值`Minimum`值為 0。 當`Minimum`設定，這個值是小於`Maximum`值為 20。
 
 在 XAML 中，有相同的問題。 設定屬性的順序可確保`Maximum`一律是大於`Minimum`:
 
@@ -292,8 +292,6 @@ Android 的實作`Slider`為基礎的 Android [ `SeekBar` ](https://developer.xa
 UWP 實作`Slider`為基礎的 UWP [ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider)控制項。 `StepFrequency`屬性的 UWP`Slider`設定的差異`Maximum`和`Minimum`屬性除以 10，但不是能大於 1。
 
 例如，針對預設範圍 0 到 1`StepFrequency`屬性設定為 0.1。 作為`Slider`操作，`Value`屬性會限制為 0、 0.1、 0.2、 0.3、 0.4、 0.5，0.6，0.7，0.8、 0.9 及 1.0。 (這是最後一頁中明顯[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)範例。)時之間的差異`Maximum`並`Minimum`屬性可為 10 或更新版本，然後`StepFrequency`設定為 1，而`Value`屬性具有整數值。
-
-颾魤 ㄛ [ `ThumbColor` ](xref:Xamarin.Forms.Slider.ThumbColorProperty)並[ `ThumbImage` ](xref:Xamarin.Forms.Slider.ThumbImageProperty) UWP 上不支援屬性。
 
 ### <a name="the-stepslider-solution"></a>StepSlider 解決方案
 
