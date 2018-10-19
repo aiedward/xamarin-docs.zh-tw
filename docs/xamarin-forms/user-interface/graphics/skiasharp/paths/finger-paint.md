@@ -4,14 +4,14 @@ description: 本文說明如何使用手指來繪製 SkiaSharp 畫布的 Xamarin
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 04/05/2017
-ms.openlocfilehash: b0f28cd3e8a928a6da3169dee96ec089178a64e2
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 03a6de3b6297e57620655e3697fe729e6fb06501
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615817"
 ---
 # <a name="finger-painting-in-skiasharp"></a>在 SkiaSharp 手指繪製
@@ -76,7 +76,7 @@ public partial class FingerPaintPage : ContentPage
 }
 ```
 
-如同名稱所暗示，`inProgressPaths`字典會儲存目前由一個或多根手指繪製的路徑。 字典索引鍵是隨附於觸控事件的觸控式識別碼。 `completedPaths`欄位是已完成時手指繪製提昇的路徑，從螢幕的路徑的集合。
+顧名思義，`inProgressPaths`字典會儲存目前由一個或多根手指繪製的路徑。 字典索引鍵是隨附於觸控事件的觸控式識別碼。 `completedPaths`欄位是當已繪製路徑的手指提高從畫面已完成的路徑的集合。
 
 `TouchAction`處理常式來管理這兩個集合。 當第一次在手指觸控的畫面中，新`SKPath`新增至`inProgressPaths`。 當該手指移動時，其他的點會新增至路徑中。 手指發行時，路徑會轉移至`completedPaths`集合。 您可以同時繪製多個根手指。 其中一個路徑或集合，每次變更後`SKCanvasView`無效：
 
@@ -141,7 +141,7 @@ public partial class FingerPaintPage : ContentPage
 ```csharp
 public partial class FingerPaintPage : ContentPage
 {
-    ,,,
+    ...
     void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
     {
         SKCanvas canvas = args.Surface.Canvas;
@@ -165,10 +165,11 @@ public partial class FingerPaintPage : ContentPage
 
 [![](finger-paint-images/fingerpaint-small.png "手指繪製頁面的三個螢幕擷取畫面")](finger-paint-images/fingerpaint-large.png#lightbox "手指繪製頁面的三個螢幕擷取畫面")
 
+您現在已了解如何繪製線條，以及如何定義使用參數化的方程式的曲線。 在稍後的章節[ **SkiaSharp 曲線和路徑**](../curves/index.md)涵蓋各種類型的曲線，`SKPath`支援。 但很有用的必要條件的探勘[ **SkiaSharp 轉換**](../transforms/index.md)。
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [追蹤觸控效果示範 （範例）](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/)
 - [叫用事件的效果](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)
