@@ -6,77 +6,67 @@ ms.assetid: f619595f-3ee7-439b-a1bc-d13e5106e6e9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/02/2016
-ms.openlocfilehash: 95b0744cdd52ac1c3f5d7c62c18139a30400ab04
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 09/25/2018
+ms.openlocfilehash: c5d2f93c8cb97c50f9d35d9ad91adf4c6437a3db
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38999009"
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Xamarin.Forms 簡介
 
-_Xamarin.Forms 是一個以原生方式跨平台支援的 UI 工具組抽象概念，可讓開發人員輕鬆地建立可以跨 Android、iOS、Windows 和通用 Windows 平台共用的使用者介面。系統會使用目標平台的原生控制項呈現使用者介面，讓 Xamarin.Forms 應用程式保留每個平台適當的外觀及操作。本文介紹 Xamarin.Forms，以及如何開始使用它來撰寫應用程式。_
+Xamarin.Forms 是一個架構，可讓開發人員建置適用於 Android、iOS 與 Windows 的跨平台應用程式。程式碼與使用者介面定義會跨平台共用，但會以原生控制項轉譯。此文章介紹 Xamarin.Forms 並說明如何開始在 Visual Studio 中使用 C# 與 XAML 來撰寫應用程式。
 
-<a name="Overview" />
+Xamarin.Forms 應用程式使用 [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md) 專案來包含共用程式碼，並使用不同的應用程式專案來取用共用程式碼並建置每個平台所需的輸出。 當您建立新的 Xamarin.Forms 應用程式時，該方案將會包含共用程式碼專案 (包含 C# 與 XAML 檔案)，加上平台特定專案，如下列螢幕擷取畫面所示：
 
-## <a name="overview"></a>總覽
+![Visual Studio 中的 Xamarin.Forms 範本方案](introduction-to-xamarin-forms-images/solution-both.png)
 
-Xamarin.Forms 是一個可讓開發人員快速建立跨平台使用者介面的架構。 它對於使用者介面有自己的抽象概念，會使用 iOS、Android 或通用 Windows 平台 (UWP) 上的原生控制項來呈現。 也就是說，應用程式可以共用大部分的使用者介面程式碼，而且仍然保留目標平台的原生外觀及操作。
+撰寫 Xamarin.Forms 應用程式時，您的程式碼與使用者介面將新增到頂端，也就是由 Android、iOS 與 UWP 專案參考的 .NET Standard 專案。 您將建置並執行 Android、iOS 與 UWP 專案以測試並部署您的應用程式。
 
-Xamarin.Forms 允許快速開發可能會隨著時間的推移而演化為複雜應用程式的應用程式原型。 Xamarin.Forms 應用程式屬於原生應用程式，因此沒有其他工具組的限制，例如，瀏覽器沙箱功能、受限的 API 或效能不佳。 使用 Xamarin.Forms 撰寫的應用程式可以使用任何 API 或基礎平台的功能，例如 (但不限於) iOS 上的 CoreMotion、PassKit 和 StoreKit；Android 上的 NFC 和 Google Play 服務；以及 Windows 上的磚。 此外，您可以建立將使用 Xamarin.Forms 建立其使用者介面部分，同時使用原生 UI 工具組建立其他部分的應用程式。
+## <a name="examining-a-xamarinforms-application"></a>檢查 Xamarin.Forms 應用程式
 
-Xamarin.Forms 應用程式的架構方式與傳統的跨平台應用程式相同。 最常見的方法是使用[可攜式類別庫](~/cross-platform/app-fundamentals/pcl.md)或[共用專案](~/cross-platform/app-fundamentals/shared-projects.md)存放共用程式碼，並建立將會取用共用程式碼的平台專屬應用程式。
+Visual Studio 中的預設 Xamarin.Forms 應用程式範本會顯示單一文字標籤。 如果您執行應用程式，其外觀應該類似以下的螢幕擷取畫面：
 
-在 Xamarin.Forms 中建立使用者介面有兩種技術。 第一種技術是完全使用 C# 原始程式碼建立 UI。 第二種技術是使用*可延伸應用程式標記語言* (XAML)，這是一種宣告式的標記語言，用於描述使用者介面。 如需 XAML 的詳細資訊，請參閱 [XAML 基本知識](~/xamarin-forms/xaml/xaml-basics/index.md)。
-
-本文討論 Xamarin.Forms 架構的基本概念，並涵蓋下列主題：
-
--  [檢查 Xamarin.Forms 應用程式](#Examining_A_Xamarin.Forms_Application)。
--  [如何使用 Xamarin.Forms 頁面和控制項](#Views_and_Layouts)。
--  [如何使用顯示資料清單](#Lists_in_Xamarin.Forms)。
--  [如何設定資料繫結](#Data_Binding)。
--  [如何在頁面之間導覽](#Navigation)。
--  [後續步驟](#Next_Steps)。
-
-<a name="Examining_A_Xamarin_Forms_Application" />
-
-### <a name="examining-a-xamarinforms-application"></a>檢查 Xamarin.Forms 應用程式
-
-在 Visual Studio for Mac 和 Visual Studio 中，預設 Xamarin.Forms 應用程式範本會建立可向使用者顯示文字的最簡單 Xamarin.Forms 方案。 如果您執行應用程式，其外觀應該類似以下的螢幕擷取畫面：
-
-[![](introduction-to-xamarin-forms-images/image05-sml.png "預設 Xamarin.Forms 應用程式")](introduction-to-xamarin-forms-images/image05.png#lightbox "預設 Xamarin.Forms 應用程式")
+[![](introduction-to-xamarin-forms-images/image05-sml.png "預設 Xamarin.Forms 應用程式")](introduction-to-xamarin-forms-images/image05.png#lightbox)
 
 螢幕擷取畫面中的每個畫面都對應至 Xamarin.Forms 中的*頁面*。 [`Page`](xref:Xamarin.Forms.Page) 在 Android 中代表「活動」、在 iOS 中代表「檢視控制器」、在通用 Windows 平台上 (UWP) 則代表「頁面」。 上方螢幕擷取畫面中的範例會將 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件具現化，並使用該物件顯示 [`Label`](xref:Xamarin.Forms.Label)。
 
-若要將啟動程式碼的重複使用發揮到極致，Xamarin.Forms 應用程式有一個名為 `App` 的單一類別，此類別負責具現化將顯示的第一個 [`Page`](xref:Xamarin.Forms.Page)。 下列程式碼中可以看到 `App` 類別的範例：
+若要將啟動程式碼的重複使用發揮到極致，Xamarin.Forms 應用程式有一個名為 `App` 的單一類別，此類別負責具現化將顯示的第一個 [`Page`](xref:Xamarin.Forms.Page)。 您可以在下列程式碼 (在 **App.xaml.cs** 中) 中看到 `App` 類別的範例：
 
 ```csharp
-public class App : Application
+public partial class App : Application
 {
   public App ()
   {
-    MainPage = new ContentPage {
-      Content =  new Label
-      {
-          Text = "Hello, Forms !",
-          VerticalOptions = LayoutOptions.CenterAndExpand,
-          HorizontalOptions = LayoutOptions.CenterAndExpand,
-      }
-      };
+    InitializeComponent();
+    MainPage = new MainPage(); // sets the App.MainPage property to an instance of the MainPage class
   }
 }
 ```
 
-此程式碼會將頁面上以垂直置中和水平置中顯示單一 [`Label`](xref:Xamarin.Forms.Label) 的新 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件具現化。
+此程式碼將會具現化名為 `MainPage` 的新 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件，它會在頁面上顯示垂直並水平置中的單一 [`Label`](xref:Xamarin.Forms.Label)。 **MainPage.xaml**檔案中的 XAML 看起來像這樣：
 
-<a name="Launching_the_Initial_Xamarin_Forms_Page_on_Each_Platform" />
+```xaml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AwesomeApp" x:Class="AwesomeApp.MainPage">
+    <StackLayout>
+        <Label Text="Hello Xamarin.Forms"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+</ContentPage>
+```
 
-### <a name="launching-the-initial-xamarinforms-page-on-each-platform"></a>在每個平台上啟動 Xamarin.Forms 初始頁面
+### <a name="launching-the-initial-xamarinforms-page-on-each-platform"></a>在每個平台上啟動初始 Xamarin.Forms 頁面
 
-若要使用應用程式內的這個 [`Page`](xref:Xamarin.Forms.Page)，每個平台應用程式都必須將 Xamarin.Forms 架構初始化，並在啟動時提供 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 的執行個體。 這個初始化步驟會因為平台不同而互異，以下各節將會討論該步驟。
+> [!TIP]
+> 此節中的平台設定資訊旨在協助您了解 Xamarin.Forms 如何運作。
+> 專案範本已包括這些類別，因此您不需要自行撰寫。
+>
+> 您可以跳到[使用者介面](#user-interface)一節並稍後再閱讀此部分。
 
-<a name="Launching_in_iOS" />
+若要使用應用程式內的頁面 (例如上面範例中的 **MainPage**)，每個平台應用程式都必須初始化 Xamarin.Forms 架構，並在頁面啟動時提供頁面的執行個體。 這個初始化步驟會因為平台不同而互異，以下各節將會討論該步驟。
 
 #### <a name="ios"></a>iOS
 
@@ -95,9 +85,7 @@ public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsAppli
 }
 ```
 
-`FinishedLoading` 覆寫會呼叫 `Init` 方法，藉此初始化 Xamarin.Forms 架構。 如此會在 `LoadApplication` 方法的呼叫設定根檢視控制器之前，先在應用程式中載入 iOS 專用的 Xamarin.Forms 實作。
-
-<a name="Launching_in_Android" />
+`FinishedLaunching` 覆寫會呼叫 `Init` 方法，藉此初始化 Xamarin.Forms 架構。 如此會在 `LoadApplication` 方法的呼叫設定根檢視控制器之前，先在應用程式中載入 iOS 專用的 Xamarin.Forms 實作。
 
 #### <a name="android"></a>Android
 
@@ -122,7 +110,7 @@ namespace HelloXamarinFormsWorld.Android
 
 `OnCreate` 覆寫會呼叫 `Init` 方法，藉此初始化 Xamarin.Forms 架構。 如此會在載入 Xamarin.Forms 應用程式之前，先在應用程式中載入 Android 專用的 Xamarin.Forms 實作。
 
-#### <a name="universal-windows-platform"></a>通用 Windows 平台
+#### <a name="universal-windows-platform-uwp"></a>通用 Windows 平台 (UWP)
 
 在通用 Windows 平台 (UWP) 應用程式中，初始化 Xamarin.Forms 架構的 `Init` 方法是從 `App` 類別叫用的：
 
@@ -148,26 +136,31 @@ public partial class MainPage
 }
 ```
 
-Xamarin.Forms 應用程式是以 `LoadApplication` 方法來載入。
+Xamarin.Forms 應用程式是以 `LoadApplication` 方法來載入。 當您建立新的 Xamarin.Forms 專案時，Visual Studio 會新增上面的所有程式碼。
 
-<a name="Views_and_Layouts" />
+## <a name="user-interface"></a>使用者介面
 
-### <a name="views-and-layouts"></a>檢視和版面配置
+在 Xamarin.Forms 中建立使用者介面有兩種技術：
+
+- 完全使用 C# 原始程式碼建立使用者介面。
+- *Extensible Application Markup Language* (XAML)，這是一種可用來描述使用者介面的宣告式標記語言。
+
+不論您使用哪種方法，都可以達到相同的結果 (下面說說明這兩者)。 如需 Xamarin.Forms XAML 的詳細資訊，請參閱 [XAML 基本知識](~/xamarin-forms/xaml/xaml-basics/index.md)。
+
+### <a name="views-and-layouts"></a>檢視與版面配置
 
 有四個主要的控制項群組可用來建立 Xamarin.Forms 應用程式的使用者介面。
 
-1. **頁面** - Xamarin.Forms 頁面代表跨平台行動應用程式畫面。 如需有關頁面的詳細資訊，請參閱 [Xamarin.Forms 頁面](~/xamarin-forms/user-interface/controls/pages.md)。
-1. **版面配置** - Xamarin.Forms 版面配置是將檢視構成邏輯結構所使用的容器。 如需有關版面配置的詳細資訊，請參閱 [Xamarin.Forms 版面配置](~/xamarin-forms/user-interface/controls/layouts.md)。
-1. **檢視** - Xamarin.Forms 檢視是顯示在使用者介面上的控制項，例如標籤、按鈕和文字輸入方塊。 如需有關檢視的詳細資訊，請參閱 [Xamarin.Forms 檢視](~/xamarin-forms/user-interface/controls/views.md)。
-1. **資料格** - Xamarin.Forms 資料格是在清單中用於項目的特定元素，並描述如何在清單中繪製每個項目。 如需有關資料格的詳細資訊，請參閱 [Xamarin.Forms 資料格](~/xamarin-forms/user-interface/controls/cells.md)。
+- **頁面** - Xamarin.Forms 頁面代表跨平台行動應用程式畫面。 如需有關頁面的詳細資訊，請參閱 [Xamarin.Forms 頁面](~/xamarin-forms/user-interface/controls/pages.md)。
+- **版面配置** - Xamarin.Forms 版面配置是將檢視構成邏輯結構所使用的容器。 如需有關版面配置的詳細資訊，請參閱 [Xamarin.Forms 版面配置](~/xamarin-forms/user-interface/controls/layouts.md)。
+- **檢視** - Xamarin.Forms 檢視是顯示在使用者介面上的控制項，例如標籤、按鈕和文字輸入方塊。 如需有關檢視的詳細資訊，請參閱 [Xamarin.Forms 檢視](~/xamarin-forms/user-interface/controls/views.md)。
+- **資料格** - Xamarin.Forms 資料格是在清單中用於項目的特定元素，並描述如何在清單中繪製每個項目。 如需有關資料格的詳細資訊，請參閱 [Xamarin.Forms 資料格](~/xamarin-forms/user-interface/controls/cells.md)。
 
-在執行階段，每個控制項將會對應到其原生對等項目，也就是將呈現的項目。
+在執行階段，每個控制項都會對應到其原生對等項目，也就是在畫面上呈現的項目。
 
-控制項裝載在版面配置內。 實作常用版面配置的 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 類別現在會經過檢查。
+控制項裝載在版面配置內。 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 類別 &ndash; 常用版面配置 &ndash; 將在下面討論。
 
-<a name="StackLayout" />
-
-#### <a name="stacklayout"></a>StackLayout
+### <a name="stacklayout"></a>StackLayout
 
 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 會自動在不同大小的螢幕上排列控制項，藉以簡化跨平台應用程式的開發。 每個子項目都是以加入這些子項目的順序，一個接著一個地水平或垂直放置。 `StackLayout` 將使用的空間量將取決於設定 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性的方式，但預設 `StackLayout` 會嘗試使用整個螢幕。
 
@@ -238,7 +231,7 @@ public class StackLayoutExample: ContentPage
 {
     public StackLayoutExample()
     {
-        // Code that creates labels removed for clarity
+        // Code that creates red, yellow, green labels removed for clarity (see above)
         Content = new StackLayout
         {
             Spacing = 10,
@@ -296,11 +289,9 @@ Content = new StackLayout
 
 下列螢幕擷取畫面顯示產生的版面配置：
 
-[![](introduction-to-xamarin-forms-images/image11-sml.png "具有 LayoutOptions 的水平 StackLayout")](introduction-to-xamarin-forms-images/image11.png#lightbox "具有 LayoutOptions 的水平 StackLayout")
+[![](introduction-to-xamarin-forms-images/image11-sml.png "具有 LayoutOptions 的水平 StackLayout")](introduction-to-xamarin-forms-images/image11.png#lightbox)
 
 如需 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 類別的詳細資訊，請參閱 [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)。
-
-<a name="Lists_in_Xamarin_Forms" />
 
 ## <a name="lists-in-xamarinforms"></a>Xamarin.Forms 中的清單
 
@@ -329,8 +320,6 @@ Content = new StackLayout
  ![](introduction-to-xamarin-forms-images/image13.png "ListView")
 
 如需 [`ListView`](xref:Xamarin.Forms.ListView) 控制項的詳細資訊，請參閱 [ListView](~/xamarin-forms/user-interface/listview/index.md)。
-
-<a name="Binding_to_a_Custom_Class" />
 
 ### <a name="binding-to-a-custom-class"></a>繫結至自訂類別
 
@@ -369,8 +358,6 @@ listView.ItemTemplate.SetBinding(TextCell.TextProperty, "Name");
 
 如需有關繫結至自訂類別的詳細資訊，請參閱 [ListView 資料來源](~/xamarin-forms/user-interface/listview/data-and-databinding.md)。
 
-<a name="Selecting_an_Item_in_a_ListView" />
-
 ### <a name="selecting-an-item-in-a-listview"></a>在 ListView 中選取項目
 
 若要回應觸碰 [`ListView`](xref:Xamarin.Forms.ListView) 中資料格的使用者，應該處理 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 事件，如下列程式碼範例所示：
@@ -394,8 +381,6 @@ listView.ItemSelected += async (sender, e) => {
 每個平台都會以自己的方式實作內建的向後導覽功能。 如需詳細資訊，請參閱[導覽](#Navigation)。
 
 如需有關 [`ListView`](xref:Xamarin.Forms.ListView) 選取項目的詳細資訊，請參閱 [ListView 互動性](~/xamarin-forms/user-interface/listview/interactivity.md)。
-
-<a name="Customizing_the_appearance_of_a_cell" />
 
 ### <a name="customizing-the-appearance-of-a-cell"></a>自訂資料格外觀
 
@@ -476,8 +461,6 @@ listView.ItemTemplate = new DataTemplate(typeof(EmployeeCell));
 
 如需有關自訂資料格外觀的詳細資訊，請參閱[資料格外觀](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)。
 
-<a name="Using_XAML_to_Create_and_Customize_A_List" />
-
 ### <a name="using-xaml-to-create-and-customize-a-list"></a>使用 XAML 建立與自訂清單
 
 上一節中 [`ListView`](xref:Xamarin.Forms.ListView) 的 XAML 對等項目會顯示在下列程式碼範例中：
@@ -511,8 +494,6 @@ listView.ItemTemplate = new DataTemplate(typeof(EmployeeCell));
 ```
 
 此 XAML 會定義包含 [`ListView`](xref:Xamarin.Forms.ListView) 的 [`ContentPage`](xref:Xamarin.Forms.ContentPage)。 `ListView` 的資料來源是透過 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性設定的。 `ItemsSource` 中每個資料列的配置都是在 [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) 元素內定義的。
-
-<a name="Data_Binding" />
 
 ## <a name="data-binding"></a>資料繫結
 
@@ -578,8 +559,6 @@ someLabel.SetBinding(Label.TextProperty, new Binding("."));
 
 點語法會告知 Xamarin.Forms 使用 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 作為資料來源，而不是 `BindingContext` 上的屬性。 這在 `BindingContext` 為簡單類型 (例如 `string` 或 `int`) 時非常實用。
 
-<a name="INotifyPropertyChanged" />
-
 ### <a name="property-change-notification"></a>屬性變更通知
 
 根據預設，建立繫結時，*目標*物件只會接收*來源*物件的值。 為了讓 UI 與資料來源同步，當*來源*物件變更時，必須有一種方法通知*目標*物件。 這項機制是由 `INotifyPropertyChanged` 介面提供。 當基礎屬性值變更時，實作這個介面將會通知所有資料繫結的控制項。
@@ -623,8 +602,6 @@ public class MyObject : INotifyPropertyChanged
 
 請注意，在 `OnPropertyChanged` 方法中，`propertyName` 參數是以 `CallerMemberName` 屬性裝飾。 這可確保使用 `null` 值叫用 `OnPropertyChanged` 方法時，`CallerMemberName` 屬性將提供叫用 `OnPropertyChanged` 之方法的名稱。
 
-<a name="Navigation" />
-
 ## <a name="navigation"></a>巡覽
 
 Xamarin.Forms 會根據所使用的 [`Page`](xref:Xamarin.Forms.Page) 類型，提供多種不同的網頁導覽體驗。 若是 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體，則有兩種導覽體驗：
@@ -634,9 +611,7 @@ Xamarin.Forms 會根據所使用的 [`Page`](xref:Xamarin.Forms.Page) 類型，�
 
 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 和 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 類別會提供替代的導覽體驗。 如需詳細資訊，請參閱[導覽](~/xamarin-forms/app-fundamentals/navigation/index.md)。
 
-<a name="Hierarchical_Navigation" />
-
-### <a name="hierarchical-navigation"></a>階層式導覽
+### <a name="hierarchical-navigation"></a>階層式瀏覽
 
 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 類別提供的階層式導覽體驗讓使用者能夠視需要，向前及向後導覽頁面。 此類別會實作一堆後進先出 (LIFO) 的 [`Page`](xref:Xamarin.Forms.Page) 物件導覽。
 
@@ -667,9 +642,7 @@ await Navigation.PopAsync();
 
 如需有關階層式導覽的詳細資訊，請參閱[階層式導覽](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)。
 
-<a name="Modal_Navigation" />
-
-### <a name="modal-navigation"></a>強制回應導覽
+### <a name="modal-navigation"></a>強制回應瀏覽
 
 Xamarin.Forms 可支援強制回應頁面。 強制回應頁面鼓勵使用者完成各自獨立且無法離開的工作，直到完成或取消工作為止。
 
@@ -698,8 +671,6 @@ await Navigation.PopModalAsync();
 
 如需有關強制回應導覽的詳細資訊，請參閱[強制回應頁面](~/xamarin-forms/app-fundamentals/navigation/modal.md)。
 
-<a name="Next_Steps" />
-
 ## <a name="next-steps"></a>後續步驟
 
 本簡介文章應該可讓您開始撰寫 Xamarin.Forms 應用程式。 建議的後續步驟包括了解下列功能：
@@ -711,12 +682,7 @@ await Navigation.PopModalAsync();
 - 系統會在每個平台上使用 `Renderer` 類別，以不同的方式呈現每個頁面、版面配置和控制項，進而建立原生控制項、將其排列在畫面上，然後加入在共用程式碼中指定的行為。 開發人員可以實作自己的自訂 `Renderer` 類別，以自訂控制項的外觀及/或行為。 如需詳細資訊，請參閱[自訂呈現方式](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)。
 - 效果也可以允許在每個平台上自訂原生控制項。 系統會在平台專屬的專案中，透過將 [`PlatformEffect`](xref:Xamarin.Forms.PlatformEffect`2) 控制項子類別化來建立效果，然後透過將其附加至適當的 Xamarin.Forms 控制項來取用。 如需詳細資訊，請參閱[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 
-或者，Charles Petzold 的書籍《使用 Xamarin.Forms 建立行動應用程式》是深入了解 Xamarin.Forms 的絕佳選擇。 如需詳細資訊，請參閱[使用 Xamarin.Forms 建立行動應用程式](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)。
-
-## <a name="summary"></a>總結
-
-本文提供 Xamarin.Forms 的簡介，以及如何使用它開始撰寫應用程式。 Xamarin.Forms 是一個以原生方式跨平台支援的 UI 工具組抽象概念，可讓開發人員輕鬆地建立可以跨 Android、iOS 和通用 Windows 平台共用的使用者介面。 系統會使用目標平台的原生控制項呈現使用者介面，讓 Xamarin.Forms 應用程式保留每個平台適當的外觀及操作。
-
+或者，Charles Petzold 的書籍[_使用 Xamarin.Forms 建立行動應用程式_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)是深入了解 Xamarin.Forms 的絕佳選擇。 此書籍以 PDF 形式或多種電子書格式提供。
 
 ## <a name="related-links"></a>相關連結
 
@@ -725,6 +691,5 @@ await Navigation.PopModalAsync();
 - [使用者介面](~/xamarin-forms/user-interface/index.md)
 - [Xamarin.Forms 範例](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [使用者入門範例](https://developer.xamarin.com/samples/xamarin-forms/GettingStarted/)
-- [Xamarin.Forms](xref:Xamarin.Forms)
+- [Xamarin.Forms API 參考](xref:Xamarin.Forms)
 - [免費的自我引導式學習 (影片)](https://university.xamarin.com/self-guided) \(英文\)
-- [Hello, Xamarin.Forms iOS 活頁簿](https://developer.xamarin.com/workbooks/xamarin-forms/getting-started/GettingStartedWithXamarinForms-ios.workbook)
