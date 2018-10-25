@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 12b677c8cc4a709a865d2eaee3ea44a6babf1b05
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: ce48c4d271167b657505c52518e79c955e53b02e
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38860663"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin 即時重新載入
@@ -26,10 +26,12 @@ Xamarin 即時重新載入可讓您**對您的 XAML 中的變更並看到其反�
 
 即時重新載入目前僅提供的 Visual Studio 2017 中。
 
+[![加入在聊天室 https://gitter.im/xamarin/live-reload](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xamarin/live-reload?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## <a name="requirements"></a>需求
 
-* [Visual Studio 2017 15.7 版或更新版本](https://visualstudio.microsoft.com/vs/)或更新版本使用**使用.NET 進行行動開發**工作負載。
-* [Xamarin.Forms 3.0.0 以上](https://www.nuget.org/packages/Xamarin.Forms/)或更新版本。
+* [Visual Studio 2017 15.7 版或更新版本](https://visualstudio.microsoft.com/vs/)具有**使用.NET 進行行動開發**工作負載。
+* [Xamarin.Forms 3.0.0 以上](https://www.nuget.org/packages/Xamarin.Forms/)。
 
 ## <a name="getting-started"></a>快速入門
 ### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1.從 Visual Studio Marketplace 安裝 Xamarin 即時重新載入
@@ -121,6 +123,8 @@ Xamarin 即時重新載入的初始預覽版本僅適用於 Visual Studio 2017�
 * 只有在 Visual Studio 中。
 * 連結必須設為**不要連結**或**僅連結 Framework Sdk** 
 * 重新載入整個應用程式的資源 (亦即**App.xaml**或共用資源字典)，就會重設應用程式瀏覽。 這將會在下一個預覽版本中修正。
+* 重新載入 ContentView 目前需要重新載入包含的頁面。 這將會在下一個預覽版本中修正。
+* 包含 AutomationId 的項目可能會造成重新載入失敗。
 * 編輯 XAML，而偵錯 UWP 可能會導致執行階段當機。 因應措施： 使用**但不偵錯 （Ctrl + F5） 開始**而不是**開始偵錯 (F5)**。
 
 ## <a name="troubleshooting"></a>疑難排解

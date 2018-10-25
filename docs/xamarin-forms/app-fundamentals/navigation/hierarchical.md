@@ -6,25 +6,17 @@ ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/10/2017
-ms.openlocfilehash: f8f8f9b4e5755e8b1707178fef633321b64e4e94
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 08/14/2018
+ms.openlocfilehash: a0a58cf05c97221a73cd0784b7859bb9c84cef86
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38994672"
 ---
 # <a name="hierarchical-navigation"></a>階層式導覽
 
 _NavigationPage 類別會提供使用者所在能向前及向後，視需要執行頁面，瀏覽的階層式導覽體驗。此類別會實作後進先出 (LIFO) 堆疊的頁面物件導覽。這篇文章會示範如何使用 NavigationPage 類別來執行導覽一疊頁面中。_
-
-這篇文章討論下列主題：
-
-- [執行瀏覽](#Performing_Navigation)– 建立根頁面、 將頁面推送至導覽堆疊、 拉出頁面從導覽堆疊上，以及以動畫顯示轉換頁面。
-- [瀏覽時，將資料傳遞](#Passing_Data_when_Navigating)– 傳遞資料透過頁面的建構函式，以及透過`BindingContext`。
-- [操作在巡覽堆疊](#Manipulating_the_Navigation_Stack)– 管理堆疊插入或移除頁面。
-
-## <a name="overview"></a>總覽
 
 若要從一頁移到另一個，應用程式會推送到導覽堆疊上，新的頁面，它會變成作用中的頁面上，如下圖所示：
 
@@ -312,10 +304,58 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 
 前提是使用者的認證正確無誤，`MainPage`執行個體插入至導覽堆疊上目前頁面的上一頁。 [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync)方法然後移除目前的頁面上，從導覽堆疊上，具有`MainPage`成為使用中頁面的執行個體。
 
-## <a name="summary"></a>總結
+## <a name="displaying-views-in-the-navigation-bar"></a>在導覽列中顯示檢視
 
-這篇文章示範如何使用[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)執行導覽一疊頁面中的類別。 這個類別會提供使用者所在能向前及向後，視需要執行頁面，瀏覽的階層式導覽體驗。 此類別會實作一堆後進先出 (LIFO) 的 [`Page`](xref:Xamarin.Forms.Page) 物件導覽。
+任何 Xamarin.Forms [ `View` ](xref:Xamarin.Forms.View)可以顯示在導覽列中的[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)。 這可以藉由設定[ `NavigationPage.TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) ; 附加屬性`View`。 此附加的屬性可以設定任何[ `Page` ](xref:Xamarin.Forms.Page)，以及當`Page`推入至`NavigationPage`、`NavigationPage`會採用屬性的值。
 
+下列範例取自[Title 檢視範例](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/)，示範如何設定[ `NavigationPage.TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)從 XAML 附加屬性：
+
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigationPageTitleView.TitleViewPage">
+    <NavigationPage.TitleView>
+        <Slider HeightRequest="44" WidthRequest="300" />
+    </NavigationPage.TitleView>
+    ...
+</ContentPage>
+```
+
+以下是對等項目C#程式碼：
+
+```csharp
+public class TitleViewPage : ContentPage
+{
+    public TitleViewPage()
+    {
+        var titleView = new Slider { HeightRequest = 44, WidthRequest = 300 };
+        NavigationPage.SetTitleView(this, titleView);
+        ...
+    }
+}
+```
+
+這會導致[ `Slider` ](xref:Xamarin.Forms.Slider)導覽列中顯示在[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage):
+
+[![滑桿 TitleView](hierarchical-images/titleview-small.png "滑桿 TitleView")](hierarchical-images/titleview-large.png#lightbox "滑桿 TitleView")
+
+> [!IMPORTANT]
+> 許多檢視就不會出現在導覽列中，除非指定檢視的大小[ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)並[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)屬性。 或者，檢視可以包裝在[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)具有[ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)並[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)屬性設定為適當的值。
+
+請注意，因為[ `Layout` ](xref:Xamarin.Forms.Layout)類別衍生自[ `View` ](xref:Xamarin.Forms.View)類別[ `TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)附加的屬性可以設定為顯示版面配置包含多個檢視的類別。 在 iOS 和通用 Windows 平台 (UWP) 上，導覽列的高度無法變更，而且如果檢視的導覽列中顯示的導覽列的預設大小大於，裁剪因此就會發生。 不過，在 Android 上，瀏覽列的高度可設定即可變更[ `NavigationPage.BarHeight` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty)可繫結的屬性，以`double`代表新的高度。 如需詳細資訊，請參閱 < [NavigationPage 上設定瀏覽列高度](~/xamarin-forms/platform/platform-specifics/consuming/android.md#navigationpage-barheight)。
+
+或者，可以建議擴充的導覽列中，將一些導覽列中的內容和部分在檢視中放在頁面內容，您的色彩比對的導覽列頂端。 此外，在 iOS 上的分隔線和位於導覽列底部的陰影可以移除 splittunneling [ `NavigationPage.HideNavigationBarSeparator` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty)可繫結的屬性，以`true`。 如需詳細資訊，請參閱 <<c0> [ 隱藏巡覽列上的分隔符號 NavigationPage](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#navigationpage-hideseparatorbar)。
+
+> [!NOTE]
+> [ `BackButtonTitle` ](xref:Xamarin.Forms.NavigationPage.BackButtonTitleProperty)， [ `Title` ](xref:Xamarin.Forms.Page.Title)， [ `TitleIcon` ](xref:Xamarin.Forms.NavigationPage.TitleIconProperty)，以及[ `TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)全都可以定義屬性所佔用的空間巡覽列上的值。 雖然瀏覽列大小各有不同的平台和螢幕大小，設定所有這些屬性會導致衝突，因為有限的可用空間。 而不是嘗試使用這些屬性的組合，您可能會發現，您可以進一步達到您想要瀏覽列的設計只設定`TitleView`屬性。
+
+### <a name="limitations"></a>限制
+
+有一些要注意的顯示時的限制[ `View` ](xref:Xamarin.Forms.View)中的巡覽列[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage):
+
+- 在 iOS 上，檢視會放在導覽列中的`NavigationPage`出現在不同的位置取決於是否已啟用大型的標題。 如需啟用大型標題的詳細資訊，請參閱[顯示的大型標題](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#large_title)。
+- 在 Android 上，將檢視放在導覽列中的`NavigationPage`只能使用應用程式相容性應用程式中完成。
+- 不建議將大型且複雜的檢視，例如[ `ListView` ](xref:Xamarin.Forms.ListView)並[ `TableView` ](xref:Xamarin.Forms.TableView)，在導覽列中的`NavigationPage`。
 
 ## <a name="related-links"></a>相關連結
 
@@ -323,6 +363,7 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 - [階層 （範例）](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
 - [PassingData （範例）](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)
 - [LoginFlow （範例）](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)
+- [TitleView （範例）](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/)
 - [如何在 Xamarin.Forms （Xamarin University 影片） 範例中的畫面 Flow 中建立一個符號](http://xamarinuniversity.blob.core.windows.net/lightninglectures/CreateASignIn.zip)
 - [如何在 Xamarin.Forms （Xamarin University 影片） 中的畫面 Flow 中建立一個符號](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
 - [NavigationPage](xref:Xamarin.Forms.NavigationPage)

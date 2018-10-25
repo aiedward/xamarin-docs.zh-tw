@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 16d1970b5e9d8f9c2b7c8be875c81136525c4fb7
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: b52f249b184d49731fd5decdb5877c70e29a3b84
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38998068"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms 基本繫結
@@ -197,6 +197,9 @@ public partial class AlternativeCodeBindingPage : ContentPage
 問題在於`Slider`初始的值為 0。 這會導致`Scale`屬性`Label`也設定為 0，覆寫其預設值為 1。 這會導致`Label`正在一開始不可見。 如 Android 和通用 Windows 平台 (UWP) 的螢幕擷取畫面所示，您可以使用操作`Slider`讓`Label`出現一次，但其初始消失令人不安。
 
 在中，您會發現[下一篇文章](binding-mode.md)如何避免這個問題，初始化`Slider`的預設值從`Scale`屬性。
+
+> [!NOTE]
+> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)類別也會定義[ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX)並[ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY)屬性，可以調整`VisualElement`以不同的方式在水平和垂直方向。
 
 **替代 XAML 繫結**頁面會顯示在 XAML 中的相等的繫結：
 

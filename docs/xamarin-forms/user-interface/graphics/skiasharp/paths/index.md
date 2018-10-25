@@ -4,25 +4,25 @@ description: 本文說明如何在 Xamarin.Forms 應用程式中，繪製線條�
 ms.prod: xamarin
 ms.assetid: 316A15FE-383D-4D06-8641-BAC7EE7474CA
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 9febfabb7b44b1ec09abda4b352691b37565cb48
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 3f2597c67459e407ac066ee19d54d134d60f3076
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615131"
 ---
 # <a name="skiasharp-lines-and-paths"></a>SkiaSharp 線條和路徑
 
 _若要繪製線條和圖形的路徑中使用 SkiaSharp_
 
-[上一節](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md)示範，SkiaSharp`SKCanvas`類別包含數種方法來繪製矩形、 橢圓形和圓角的矩形。 本節和稍後的章節涵蓋與建立和轉譯連線的各種類別*圖形路徑*。
+[上一節](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md)示範，SkiaSharp`SKCanvas`類別包含數種方法來繪製圓形、 橢圓形、 矩形、 圓角的矩形、 文字和點陣圖。 本節和稍後的章節涵蓋與建立和轉譯連線的各種類別*圖形路徑*。
 
-圖形路徑是繪製線條和曲線中 SkiaSharp 最通用的方法。 本章節將說明如何使用`SKPath`物件來繪製直線，並使用很小的直線，線條的集合 (稱為*聚合線條*) 繪製曲線，您可以在數學上定義。 下節將討論各種支援的曲線`SKPath`。
+圖形路徑是繪製線條和曲線中 SkiaSharp 最通用的方法。 本章節將說明如何使用[ `SKPath` ](xref:SkiaSharp.SKPath)物件來繪製直線，並使用很小的直線，線條的集合 (稱為*聚合線條*) 繪製曲線，您可以在演算法來定義。 在稍後的章節[ **SkiaSharp 曲線和路徑**](../curves/index.md)討論的各種支援的曲線各種`SKPath`。
 
-在本節中的所有範例程式會都出現標題底下**線條和路徑**在首頁上的[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式，然後在[**路徑**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths)方案的資料夾。
+在本節中的所有範例程式會都出現標題底下**線條和路徑**在首頁上的[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式，然後在[**路徑**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths)該方案的資料夾。
 
 ## <a name="lines-and-stroke-capslinesmd"></a>[線條和筆觸端點](lines.md)
 
@@ -30,7 +30,7 @@ _若要繪製線條和圖形的路徑中使用 SkiaSharp_
 
 ## <a name="path-basicspathsmd"></a>[路徑的基本概念](paths.md)
 
-瀏覽的 SkiaSharp SKPath 物件結合的直線和曲線。
+瀏覽 SkiaSharp`SKPath`組合在一起的直線和曲線的物件。
 
 ## <a name="the-path-fill-typesfill-typesmd"></a>[路徑填滿類型](fill-types.md)
 
@@ -51,5 +51,5 @@ _若要繪製線條和圖形的路徑中使用 SkiaSharp_
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

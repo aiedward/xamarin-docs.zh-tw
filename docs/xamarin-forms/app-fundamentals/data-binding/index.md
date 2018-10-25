@@ -6,12 +6,12 @@ ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/16/2018
-ms.openlocfilehash: 60bf0bdc5f1a4472dfd12424c3cc0375d3f34c24
-ms.sourcegitcommit: 11c1df7594064e4e141470e092e55cc50c138068
+ms.date: 10/23/2018
+ms.openlocfilehash: def97ab77781c7a7156d4c4178097184614f3e8b
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "35240349"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms 資料繫結
@@ -64,6 +64,10 @@ Xamarin.Forms 應用程式包含一或多個頁面，其中每個通常包含多
 ## <a name="the-command-interfacecommandingmd"></a>[命令介面](commanding.md)
 
 實作`Command`以資料繫結的屬性。
+
+## <a name="compiled-bindingscompiled-bindingsmd"></a>[已編譯的繫結](compiled-bindings.md)
+
+您可以使用編譯的繫結來改善資料繫結的效能。
 
 ## <a name="related-links"></a>相關連結
 

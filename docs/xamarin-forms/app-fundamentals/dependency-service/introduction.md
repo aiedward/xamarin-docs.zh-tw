@@ -6,12 +6,12 @@ ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/06/2017
-ms.openlocfilehash: 558a05b5fdc4c4f08194b708de886bca342dd860
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 09/15/2018
+ms.openlocfilehash: 28c6daa361b7de09a0d9332b21f1b6f75e035850
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38995410"
 ---
 # <a name="introduction-to-dependencyservice"></a>DependencyService 簡介
@@ -20,7 +20,10 @@ ms.locfileid: "38995410"
 
 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 允許呼叫共用的程式碼的平台專屬功能的應用程式。 這項功能可讓您執行原生應用程式可執行的任何動作的 Xamarin.Forms 應用程式。
 
-`DependencyService` 是相依性解析程式。 在實務上，定義介面和`DependencyService`找到正確實作該介面從各種平台專案。
+`DependencyService` 是服務定位程式。 在實務上，定義介面和`DependencyService`找到正確實作該介面從各種平台專案。
+
+> [!NOTE]
+> 根據預設， [ `DependencyService` ](xref:Xamarin.Forms.DependencyService)將唯一的解決平台實作具有無參數建構函式。 不過，相依性解析方法可以插入 Xamarin.Forms 使用來解決平台實作的相依性插入容器或 factory 方法。 這種方法可用來解決有參數的建構函式的平台實作。 如需詳細資訊，請參閱 < [Xamarin.Forms 中的相依性解析](~/xamarin-forms/internals/dependency-resolution.md)。
 
 ## <a name="how-dependencyservice-works"></a>DependencyService 的運作方式
 
@@ -144,7 +147,6 @@ DependencyService.Get<ITextToSpeech>().Speak("Hello from Xamarin Forms");
 
 > [!NOTE]
 > 您**必須**提供每個平台專案中的實作。 如果沒有介面實作已註冊，則`DependencyService`無法解析`Get<T>()`方法在執行階段。
-
 
 ## <a name="related-links"></a>相關連結
 

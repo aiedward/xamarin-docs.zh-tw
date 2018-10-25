@@ -1,20 +1,20 @@
 ---
-title: 存取 SkiaSharp 像素位元
+title: 存取 SkiaSharp 點陣圖像素位元
 description: 探索各種不同的技術，用於存取和修改 SkiaSharp 點陣圖的像素位元。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 5d79dd89b5313d5d7ead665c54e9a27026cea38c
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 6d223dd051dccf7af84e4e6c35238f4ad026b00a
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615622"
 ---
-# <a name="accessing-skiasharp-pixel-bits"></a>存取 SkiaSharp 像素位元
+# <a name="accessing-skiasharp-bitmap-pixel-bits"></a>存取 SkiaSharp 點陣圖像素位元
 
 如您所見文中所[**檔案的儲存 SkiaSharp 點陣圖**](saving.md)，點陣圖通常儲存在壓縮的格式，例如 JPEG 或 PNG 檔案。 相較之下，在不壓縮 SkiaSharp 點陣圖儲存在記憶體中。 它會儲存為循序的一連串的像素為單位。 此未壓縮的格式讓點陣圖的傳輸到顯示介面。
 
@@ -39,7 +39,7 @@ SkiaSharp 會提供數種技術來存取點陣圖的像素位元。 您選擇哪
 
 ### <a name="the-setpixel-method"></a>不要方法
 
-如果您只需要設定或取得數個個別的像素[ `SetPixel` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.SetPixel/p/System.Int32/System.Int32/SkiaSharp.SKColor/)並[ `GetPixel` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.GetPixel/p/System.Int32/System.Int32/)方法很適合。 針對每個這兩個方法中，您可以指定整數資料行和資料列。 不論像素格式，這兩種方法可讓您取得或設定以像素`SKColor`值：
+如果您只需要設定或取得數個個別的像素[ `SetPixel` ](xref:SkiaSharp.SKBitmap.SetPixel(System.Int32,System.Int32,SkiaSharp.SKColor))並[ `GetPixel` ](xref:SkiaSharp.SKBitmap.GetPixel(System.Int32,System.Int32))方法很適合。 針對每個這兩個方法中，您可以指定整數資料行和資料列。 不論像素格式，這兩種方法可讓您取得或設定以像素`SKColor`值：
 
 ```csharp
 bitmap.SetPixel(col, row, color);
@@ -85,7 +85,7 @@ public class GradientBitmapPage : ContentPage
 
 ### <a name="the-pixels-property"></a>像素為單位的屬性
 
-`SKBitmap` 定義[ `Pixels` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Pixels/)屬性，傳回的陣列`SKColor`整個點陣圖的值。 您也可以使用`Pixels`設定點陣圖的色彩值的陣列：
+`SKBitmap` 定義[ `Pixels` ](xref:SkiaSharp.SKBitmap.Pixels)屬性，傳回的陣列`SKColor`整個點陣圖的值。 您也可以使用`Pixels`設定點陣圖的色彩值的陣列：
 
 ```csharp
 SKColor[] pixels = bitmap.Pixels;
@@ -129,7 +129,7 @@ SKBitmap FillBitmapPixelsProp(out string description, out int milliseconds)
 
 ### <a name="the-getpixels-pointer"></a>GetPixels 指標
 
-要存取的點陣圖像素的最強大的技術是潛在[ `GetPixels` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.GetPixels()/)，而不會與混淆`GetPixel`方法或`Pixels`屬性。 您會立即注意到與差異`GetPixels`，會傳回不在 C# 程式設計中很常見的項目：
+要存取的點陣圖像素的最強大的技術是潛在[ `GetPixels` ](xref:SkiaSharp.SKBitmap.GetPixels)，而不會與混淆`GetPixel`方法或`Pixels`屬性。 您會立即注意到與差異`GetPixels`，會傳回不在 C# 程式設計中很常見的項目：
 
 ```csharp
 IntPtr pixelsAddr = bitmap.GetPixels();
@@ -145,7 +145,7 @@ byte* ptr = (byte*)pixelsAddr.ToPointer();
 
 `ptr`變數屬於類型_位元組指標_。 這`ptr`變數可讓您存取個別的記憶體位元組是用來儲存點陣圖的像素為單位。 您可以使用如下的程式碼從這個記憶體讀取一個位元組，或寫入記憶體中的位元組：
 
-```sharp
+```csharp
 byte pixelComponent = *ptr;
 
 *ptr = pixelComponent;
@@ -282,7 +282,7 @@ SKBitmap FillBitmapUintPtrColor(out string description, out int milliseconds)
 
 ### <a name="the-setpixels-method"></a>SetPixels 方法
 
-`SKBitmap` 也會定義名為的方法[ `SetPixels` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.SetPixels/p/System.IntPtr/)，您呼叫像這樣：
+`SKBitmap` 也會定義名為的方法[ `SetPixels` ](xref:SkiaSharp.SKBitmap.SetPixels(System.IntPtr))，您呼叫像這樣：
 
 ```csharp
 bitmap.SetPixels(intPtr);
@@ -741,7 +741,55 @@ public partial class ColorAdjustmentPage : ContentPage
 
 很可能無法藉由建立不同的方法的來源和目的地點陣圖的色彩類型的各種組合來更進一步改善這個方法的效能，並避免檢查每個像素的類型。 另一個選項是有多個`for`迴圈的`col`變數根據色彩類型。
 
+## <a name="posterization"></a>色調分離
+
+另一個常見的作業涉及存取像素位元正在_色調分離_。 如果色彩編碼點陣圖的像素為單位的數目會減少，使結果類似使用有限的色彩調色盤的手繪海報。
+
+**Posterize**網頁上其中一個 monkey 映像執行此程序：
+
+```csharp
+public class PosterizePage : ContentPage
+{
+    SKBitmap bitmap =
+        BitmapExtensions.LoadBitmapResource(typeof(FillRectanglePage),
+                                            "SkiaSharpFormsDemos.Media.Banana.jpg");
+    public PosterizePage()
+    {
+        Title = "Posterize";
+
+        unsafe
+        {
+            uint* ptr = (uint*)bitmap.GetPixels().ToPointer();
+            int pixelCount = bitmap.Width * bitmap.Height;
+
+            for (int i = 0; i < pixelCount; i++)
+            {
+                *ptr++ &= 0xE0E0E0FF; 
+            }
+        }
+
+        SKCanvasView canvasView = new SKCanvasView();
+        canvasView.PaintSurface += OnCanvasViewPaintSurface;
+        Content = canvasView;
+    }
+
+    void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
+    {
+        SKImageInfo info = args.Info;
+        SKSurface surface = args.Surface;
+        SKCanvas canvas = surface.Canvas;
+
+        canvas.Clear();
+        canvas.DrawBitmap(bitmap, info.Rect, BitmapStretch.Uniform;
+    }
+}
+```
+
+建構函式中的程式碼存取每個像素執行 0xE0E0E0FF，值的位元 AND 運算，然後將結果儲存回在點陣圖中。 0xE0E0E0FF 的值會保留 3 個高位元的每個色彩元件，並將較低的 5 位元設為 0。 而不是 2<sup>24</sup>或 16777216 色彩點陣圖會減少到 2<sup>9</sup>或 512 色彩：
+
+[![Posterize](pixel-bits-images/Posterize.png "Posterize")](pixel-bits-images/Posterize-Large.png#lightbox)
+
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: e4b060c703077e140e0f0d2f8c4c2b824c890e8d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a0054c79bf0f356bcfcc48389a0a28f68f73a48b
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38997111"
 ---
 # <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms 快速轉譯器
@@ -32,6 +32,7 @@ _這篇文章介紹透過壓平所產生的原生控制項階層減少膨脹和�
 - [`Button`](xref:Xamarin.Forms.Button)
 - [`Image`](xref:Xamarin.Forms.Image)
 - [`Label`](xref:Xamarin.Forms.Label)
+- [`Frame`](xref:Xamarin.Forms.Frame)
 
 在功能上，這些快速轉譯器是沒有不同，原始的轉譯器。 不過，目前在實驗，只用於藉由將下列這一行的程式碼，以您`MainActivity`類別，然後再呼叫`Forms.Init`:
 

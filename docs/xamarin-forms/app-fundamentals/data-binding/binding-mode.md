@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/01/2018
-ms.openlocfilehash: a6eaf08d17f70c43f451361e27555a09c39f26a9
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 420c1de0691de419180dd497a9031ea5e7dd1054
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "37935663"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms 繫結模式
@@ -312,6 +312,9 @@ public class HslColorViewModel : INotifyPropertyChanged
 ```
 
 現在`Slider`初始化為 1 (預設值`Scale`) 但操作`Slider`不會影響`Scale`屬性，因此這不是很有用。
+
+> [!NOTE]
+> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)類別也會定義[ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX)並[ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY)屬性，可以調整`VisualElement`以不同的方式在水平和垂直方向。
 
 類別會覆寫的預設繫結模式很有幫助應用程式`TwoWay`涉及`SelectedItem`屬性`ListView`。 預設繫結模式是`OneWayToSource`。 當設定資料繫結上`SelectedItem`屬性來參考在 ViewModel，在 來源 屬性，則該資料來源 屬性會設定從`ListView`選取項目。 不過，在某些情況下，您可能也想`ListView`從 ViewModel 初始化。
 

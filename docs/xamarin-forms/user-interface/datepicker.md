@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/04/2018
-ms.openlocfilehash: 553957bfa06c7b7a9c5261e426ebee4190de5ebb
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7917510e910223fc6ca276bf47b1878c19557a38
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38994922"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 
-_Xamarin.Forms 檢視，可讓使用者選取日期_
+_Xamarin.Forms 檢視，可讓使用者選取日期。_
 
 Xamarin.Forms [ `DatePicker` ](xref:Xamarin.Forms.DatePicker)叫用平台的日期選擇器控制項，並可讓使用者選取日期。 `DatePicker` 定義八個屬性：
 
@@ -184,6 +184,9 @@ public partial class MainPage : ContentPage
 點選其中一種`DatePicker`顯示叫用平台的日期選擇器。 三個平台實作此日期選擇器以非常不同的方式，但是每一種方法是該平台的使用者熟悉：
 
 [![選取的日期之間的天數](datepicker-images/DaysBetweenDatesSelect.png "天的日期之間選取")](datepicker-images/DaysBetweenDatesSelect-Large.png#lightbox "選取日期之間的天數")
+
+> [!TIP]
+> 在 Android 上， `DatePicker`  對話方塊可以藉由覆寫自訂`CreateDatePickerDialog`中自訂轉譯器的方法。 這可讓，比方說，可以加入至對話方塊中的其他按鈕。
 
 選取兩個日期之後，應用程式會顯示這些日期之間的天數：
 

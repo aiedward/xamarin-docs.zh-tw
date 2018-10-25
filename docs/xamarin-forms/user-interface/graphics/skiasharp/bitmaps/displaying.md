@@ -4,14 +4,14 @@ description: 了解如何顯示的 SkiaSharp 點陣圖中像素大小，並展�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 8E074F8D-4715-4146-8CC0-FD7A8290EDE9
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: cbe3166c4edb147f7179f2c719901b382db8ec80
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: f4cc13a5e8794eb5f2f883f35d6a0e4d34788507
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615310"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>顯示 SkiaSharp 點陣圖
@@ -71,7 +71,7 @@ catch
 
 請注意，`Stream`物件將會取自`GetStreamAsync`複製到`MemoryStream`。 Android 不允許`Stream`從`HttpClient`處理由主執行緒中非同步的方法除外。 
 
-[ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/System.IO.Stream/)會執行許多工作：`Stream`傳遞給它的物件參考包含其中一種常見的點陣圖檔案格式、 通常 JPEG、 PNG 或 GIF 整個點陣圖的記憶體區塊。 `Decode`方法必須決定的格式，並再將點陣圖檔解碼 SkiaSharp 自己內部的點陣圖格式。
+[ `SKBitmap.Decode` ](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream))會執行許多工作：`Stream`傳遞給它的物件參考包含其中一種常見的點陣圖檔案格式、 通常 JPEG、 PNG 或 GIF 整個點陣圖的記憶體區塊。 `Decode`方法必須決定的格式，並再將點陣圖檔解碼 SkiaSharp 自己內部的點陣圖格式。
 
 在您程式碼會呼叫後`SKBitmap.Decode`，它可能會失效`CanvasView`以便`PaintSurface`處理常式可以顯示新載入的點陣圖。
 
@@ -107,16 +107,16 @@ using (Stream stream = await picturePicker.GetImageStreamAsync())
 
 一般而言，這類程式碼也會讓`CanvasView`以便`PaintSurface`處理常式可以顯示新的點陣圖。
 
-`SKBitmap`類別會定義數個實用的屬性，包括[ `Width` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Width/)並[ `Height` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Height/)，所顯示的點陣圖，以及許多方法，包括的像素尺寸若要建立點陣圖，複製它們，並公開 （expose） 的像素位元的方法。 
+`SKBitmap`類別會定義數個實用的屬性，包括[ `Width` ](xref:SkiaSharp.SKBitmap.Width)並[ `Height` ](xref:SkiaSharp.SKBitmap.Height)，所顯示的點陣圖，以及許多方法，包括的像素尺寸若要建立點陣圖，複製它們，並公開 （expose） 的像素位元的方法。 
 
 ## <a name="displaying-in-pixel-dimensions"></a>顯示像素尺寸
 
-SkiaSharp [ `Canvas` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCanvas/)類別會定義四個`DrawBitmap`方法。 這些方法可以讓兩個完全不同的方式顯示的點陣圖： 
+SkiaSharp [ `Canvas` ](xref:SkiaSharp.SKCanvas)類別會定義四個`DrawBitmap`方法。 這些方法可以讓兩個完全不同的方式顯示的點陣圖： 
 
 - 指定`SKPoint`值 (或個別`x`和`y`值) 顯示點陣圖的像素尺寸。 點陣圖的像素會直接對應到像素為單位的視訊的顯示。
 - 指定的矩形，會導致要自動縮放以的大小和矩形之形狀的點陣圖。 
 
-您可以顯示點陣圖中使用的像素尺寸[ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKPoint/SkiaSharp.SKPaint/)具有`SKPoint`參數或[ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/System.Single/System.Single/SkiaSharp.SKPaint/)使用不同`x`和`y`參數：
+您可以顯示點陣圖中使用的像素尺寸[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKPoint,SkiaSharp.SKPaint))具有`SKPoint`參數或[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,System.Single,System.Single,SkiaSharp.SKPaint))使用不同`x`和`y`參數：
 
 ```csharp
 DrawBitmap(SKBitmap bitmap, SKPoint pt, SKPaint paint = null)
@@ -126,7 +126,21 @@ DrawBitmap(SKBitmap bitmap, float x, float y, SKPaint paint = null)
 
 這兩種方法會在功能上完全相同的。 指定的點表示相對於畫布點陣圖左上角的位置。 因為行動裝置的像素解析度相當高，所以較小的點陣圖通常會出現在這些裝置上非常小。
 
-選擇性`SKPaint`參數可讓您顯示點陣圖使用混合模式或篩選的效果。 這些將會在之後的文章中示範。
+選擇性`SKPaint`參數可讓您顯示使用透明度的點陣圖。 若要這樣做，請建立`SKPaint`物件，並設定`Color`屬性，以任何`SKColor`值和 alpha 通道小於 1。 例如: 
+
+```csharp
+paint.Color = new SKColor(0, 0, 0, 0x80);
+```
+
+最後一個引數傳遞 0x80 表示 50%透明效果。 您也可以設定 alpha 色板，其中一個預先定義的色彩：
+
+```csharp
+paint.Color = SKColors.Red.WithAlpha(0x80);
+```
+
+不過，是色彩本身無關。 當您使用時，會檢查 alpha 色頻`SKPaint`物件中`DrawBitmap`呼叫。
+
+`SKPaint`物件也扮演的角色，當顯示的點陣圖使用混合模式或篩選的效果。 這些文章中示範[SkiaSharp 複合 （compositing） 和 blend 模式](../effects/blend-modes/index.md)並[SkiaSharp 映像篩選](../effects/image-filters.md)。
 
 **像素尺寸**頁面 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 範例程式會顯示為 320 像素寬 240 像素高的點陣圖資源：
 
@@ -202,7 +216,7 @@ static class BitmapExtensions
 
 ## <a name="stretching-to-fill-a-rectangle"></a>自動縮放以填滿矩形
 
-`SKCanvas`類別也會定義[ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKPaint/)呈現到矩形中，而另一個點陣圖方法[ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKRect/SkiaSharp.SKPaint/)呈現的點陣圖矩形子集方法矩形：
+`SKCanvas`類別也會定義[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKPaint))呈現到矩形中，而另一個點陣圖方法[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint))呈現的點陣圖矩形子集方法矩形：
 
 ```
 DrawBitmap(SKBitmap bitmap, SKRect dest, SKPaint paint = null)
@@ -242,7 +256,7 @@ public class FillRectanglePage : ContentPage
 }
 ```
 
-請注意，使用新`BitmapExtensions.LoadBitmapResource`方法來設定`SKBitmap`欄位。 目的矩形取自[ `Rect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKImageInfo.Rect/)屬性`SKImageInfo`，此描述顯示介面的大小：
+請注意，使用新`BitmapExtensions.LoadBitmapResource`方法來設定`SKBitmap`欄位。 目的矩形取自[ `Rect` ](xref:SkiaSharp.SKImageInfo.Rect)屬性`SKImageInfo`，此描述顯示介面的大小：
 
 [![填滿矩形](displaying-images/FillRectangle.png "填滿矩形")](displaying-images/FillRectangle-Large.png#lightbox)
 
@@ -649,6 +663,6 @@ public partial class ScalingModesPage : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 

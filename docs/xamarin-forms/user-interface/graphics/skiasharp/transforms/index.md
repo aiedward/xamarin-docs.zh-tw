@@ -4,21 +4,21 @@ description: 本文將探討在 Xamarin.Forms 應用程式，顯示 SkiaSharp �
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 89aa29d5bf03b1d6f9668ef2aee6ce0c1a277cc5
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: aa4042bb2971739238bd8b8f2c1936306d08a5f7
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615856"
 ---
 # <a name="skiasharp-transforms"></a>SkiaSharp 轉換
 
 _深入了解顯示 SkiaSharp 圖形的轉換_
 
-SkiaSharp 支援傳統的圖形會實作為方法的轉換[ `SKCanvas` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCanvas/)物件。 轉換以數學方式，改變您在中指定的大小與座標`SKCanvas`呈現圖形物件的繪圖功能。 轉換通常會繪製重複性的圖形或動畫很方便的。 一些技巧&mdash;例如旋轉點陣圖或文字&mdash;不一定要使用的轉換。
+SkiaSharp 支援傳統的圖形會實作為方法的轉換[ `SKCanvas` ](xref:SkiaSharp.SKCanvas)物件。 轉換以數學方式，改變您在中指定的大小與座標`SKCanvas`呈現圖形物件的繪圖功能。 轉換通常會繪製重複性的圖形或動畫很方便的。 一些技巧&mdash;例如旋轉點陣圖或文字&mdash;不一定要使用的轉換。
 
 SkiaSharp 轉換支援下列作業：
 
@@ -29,15 +29,15 @@ SkiaSharp 轉換支援下列作業：
 
 這些值稱為*仿射*轉換。 仿射轉換一律保留平行線，並永遠不會造成座標或大小，成為無限。 正方形永遠不會轉換成的平行四邊形以外的任何項目和圓形永遠不會轉換成橢圓形以外的任何項目。
 
-SkiaSharp 也支援非仿射轉換 (也稱為*投射*或是*觀點來看*轉換) 為基礎的標準 3-3 轉換矩陣。 非仿射轉換可讓方塊，以轉換成任何凸面的方形 （四邊圖與所有內部角度小於 180 度為單位）。 座標或大小，成為無限的可能會導致非仿射轉換，但它們都是很重要的 3D 效果。
+SkiaSharp 也支援非仿射轉換 (也稱為*投射*或是*觀點來看*轉換) 為基礎的標準 3-3 轉換矩陣。 非仿射轉換可讓方塊，以轉換成任何凸面的方形，也就是所有的內部角度四邊圖小於 180 度。 座標或大小，成為無限的可能會導致非仿射轉換，但它們都是很重要的 3D 效果。
 
 ## <a name="differences-between-skiasharp-and-xamarinforms-transforms"></a>SkiaSharp 和 Xamarin.Forms 轉換之間的差異
 
 Xamarin.Forms 也支援類似於在 SkiaSharp 的轉換。 Xamarin.Forms [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)類別會定義下列轉換屬性：
 
-- `TranslationX` 和 `TranslationY`
-- `Scale`
-- `Rotation`、`RotationX` 和 `RotationY`
+- [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) 和 [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY)
+- [`Scale`](xref:Xamarin.Forms.VisualElement.Scale)
+- [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation)[ `RotationX` ](xref:Xamarin.Forms.VisualElement.RotationX)，及 [`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY)
 
 `RotationX`和`RotationY`屬性都是建立準 3D 效果的觀點來看轉換。
 
@@ -49,7 +49,7 @@ SkiaSharp 轉換是相對於左上角`SKCanvas`左上角相對 Xamarin.Forms 轉
 
 真的很大的差異是 SKiaSharp 轉換*方法*Xamarin.Forms 轉換時*屬性*。 這是除了的語法差異的語意差異： SkiaSharp 轉換執行的作業，而 Xamarin.Forms 轉換設定狀態。 SkiaSharp 轉換套用至後續繪製的圖形物件，但不是會繪製前套用轉換的圖形物件。 相反地，Xamarin.Forms 轉換適用於先前呈現的項目，此屬性設定。 SkiaSharp 轉換是累計的因為方法會呼叫;當此屬性設定與另一個值，會取代 Xamarin.Forms 轉換。
 
-在本節中的所有範例程式會都出現標題底下**轉換**在首頁上的[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式，然後在[**轉換**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms)方案的資料夾。
+在本節中的所有範例程式會都出現在**SkiaSharp 轉換**一節[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式。 中可以找到原始程式碼[**轉換**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms)方案的資料夾。
 
 ## <a name="the-translate-transformtranslatemd"></a>[平移轉換](translate.md)
 
@@ -65,7 +65,7 @@ SkiaSharp 轉換是相對於左上角`SKCanvas`左上角相對 Xamarin.Forms 轉
 
 ## <a name="the-skew-transformskewmd"></a>[傾斜轉換](skew.md)
 
-了解如何傾斜轉換時，可以在 SkiaSharp 建立傾斜的圖形物件。
+了解如何傾斜轉換可建立傾斜的圖形物件。
 
 ## <a name="matrix-transformsmatrixmd"></a>[矩陣轉換](matrix.md)
 
@@ -86,5 +86,5 @@ SkiaSharp 轉換是相對於左上角`SKCanvas`左上角相對 Xamarin.Forms 轉
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

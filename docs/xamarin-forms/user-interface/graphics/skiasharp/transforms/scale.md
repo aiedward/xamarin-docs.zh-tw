@@ -4,21 +4,21 @@ description: 即文章將探討 SkiaSharp 縮放轉換的縮放比例，各種�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 94105cbb83e4c6eb3558ca3fc55e505ab41f28fe
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: d4ab7ad5a0fc645c13388d76eb11cbd4e2dd72f8
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615599"
 ---
 # <a name="the-scale-transform"></a>縮放轉換
 
 _探索 SkiaSharp 縮放轉換，調整以各種不同大小的物件_
 
-如您所見中[轉譯轉換](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/translate.md)文件： 平移轉換可以圖形物件從一個位置移到另一個。 相反地，縮放轉換變更圖形化的物件的大小：
+如您所見中[**轉譯轉換**](translate.md)文件： 平移轉換可以圖形物件從一個位置移到另一個。 相反地，縮放轉換變更圖形化的物件的大小：
 
 ![](scale-images/scaleexample.png "高文字的大小調整")
 
@@ -38,7 +38,7 @@ y' = sy ·y
 
 Translate 因素的預設值為 0;縮放比例的預設值為 1。
 
-`SKCanvas`類別會定義四個`Scale`方法。 第一個[ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/)方式的情況下，當您想要相同水平和垂直縮放因素：
+`SKCanvas`類別會定義四個`Scale`方法。 第一個[ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single))方式的情況下，當您想要相同水平和垂直縮放因素：
 
 ```csharp
 public void Scale (Single s)
@@ -46,14 +46,14 @@ public void Scale (Single s)
 
 dbi100這就所謂 *dbi100* 調整&mdash;調整也就相同的兩個方向。 Dbi100 調整保留物件的長寬比。
 
-第二個[ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/)方法可讓您指定的水平和垂直縮放的不同值：
+第二個[ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single))方法可讓您指定的水平和垂直縮放的不同值：
 
 ```csharp
 public void Scale (Single sx, Single sy)
 ```
 
 這會導致*非等向性*縮放比例。
-第三個[ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/SkiaSharp.SKPoint/)方法會結合兩個的縮放比例，在單一`SKPoint`值：
+第三個[ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(SkiaSharp.SKPoint))方法會結合兩個的縮放比例，在單一`SKPoint`值：
 
 ```csharp
 public void Scale (SKPoint size)
@@ -61,7 +61,7 @@ public void Scale (SKPoint size)
 
 第四個`Scale`將短時間內所述方法。
 
-**基本的擴展**頁面會示範`Scale`方法。 [ **BasicScalePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml) XAML 檔案包含兩個`Slider`元素，讓您選取介於 0 到 10 之間的水平和垂直縮放比例。 [ **BasicScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml.cs)程式碼後置檔案會使用這些值來呼叫`Scale`顯示圓角的矩形圖案並以虛線和調整大小以符合在左上角中的某些文字之前邊角的畫布：
+**基本的擴展**頁面會示範`Scale`方法。 [ **BasicScalePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml)檔包含兩個`Slider`元素，讓您選取介於 0 到 10 之間的水平和垂直縮放比例。 [ **BasicScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml.cs)程式碼後置檔案會使用這些值來呼叫`Scale`顯示圓角的矩形圖案並以虛線和調整大小以符合在左上角中的某些文字之前邊角的畫布：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -113,7 +113,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 非等向性調整原因變成不同的行筆觸寬度與對齊水平和垂直軸。 （這也是明顯的是從第一個映像，在此頁面上。）如果您不想筆觸粗細會受到縮放比例，將它設定為 0 和它一律為一個像素寬不論`Scale`設定。
 
-調整為相對於畫布左上角。 這可能是完全您要的結果，但它可能不是。 假設您想要放置在畫布上的文字和矩形的任一處，而您想要調整相對於其中心點。 在此情況下，您可以使用的第四個新版[ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/System.Single/System.Single/)方法，其中包含兩個額外的參數來指定縮放的中心：
+調整為相對於畫布左上角。 這可能是完全您要的結果，但它可能不是。 假設您想要放置在畫布上的文字和矩形的任一處，而您想要調整相對於其中心點。 在此情況下，您可以使用的第四個新版[ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single,System.Single,System.Single))方法，其中包含兩個額外的參數來指定縮放的中心：
 
 ```csharp
 public void Scale (Single sx, Single sy, Single px, Single py)
@@ -170,7 +170,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `Slider`在這個程式中的項目有不同的&ndash;10 到 10。 如您所見，負值的垂直縮放比例 （例如在 Android 上畫面中間） 會導致要翻轉繞著水平軸縮放的中心為通過的物件。 負值的水平調整 （例如 [UWP] 畫面右側） 導致翻轉繞著垂直軸縮放的中心為通過的物件。
 
-這個第四個版本的`Scale`方法實際上是捷徑。 您可能要查看其運作方式取代`Scale`中此程式碼使用下列方法：
+新版[ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single,System.Single,System.Single))方法與樞紐分析點是一系列三個捷徑`Translate`和`Scale`呼叫。 您可能要查看其運作方式取代`Scale`方法中的**置中對齊的縮放比例**具有下列頁面：
 
 ```csharp
 canvas.Translate(-px, -py);
@@ -191,7 +191,7 @@ canvas.Translate(–px, –py);
 
 使用連續`Scale`和`Translate`呼叫、 圓角矩形的中心是仍在左上角，但您現在可以調整其相對於左上角的畫布，這也是圓角矩形的中心。
 
-現在，是在那之前`Scale`呼叫新增另一個`Translate`呼叫置中顯示的值：
+現在，是在那之前`Scale`呼叫時，新增另一個`Translate`呼叫置中顯示的值：
 
 ```csharp
 canvas.Translate(px, py);
@@ -215,7 +215,7 @@ canvas.Scale(sx, sy, px, py);
 
 當您合併`Translate`和`Scale`呼叫，順序會影響結果。 如果`Translate`後出現`Scale`，轉譯因素會有效地調整縮放比例。 如果`Translate`前面`Scale`，轉譯因素不會進行縮放。 此程序會稍微比較清楚 (雖然更數學) 時引進轉換矩陣的主旨。
 
-`SKPath`類別會定義唯讀[ `Bounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.Bounds/)屬性，傳回`SKRect`座標的範圍定義的路徑中。 例如，當`Bounds`屬性取自稍早建立的 hendecagram 路徑`Left`並`Top`矩形的內容是大約 – 100，`Right`和`Bottom`屬性大約 100，而`Width`和`Height`屬性都是大約 200。 （因為星星的點由半徑為 100 的圓形，但只有最上層的重點是平行具有水平或垂直軸大部分的實際值是一些較低）。
+`SKPath`類別會定義唯讀[ `Bounds` ](xref:SkiaSharp.SKPath.Bounds)屬性，傳回`SKRect`座標的範圍定義的路徑中。 例如，當`Bounds`屬性取自稍早建立的 hendecagram 路徑`Left`並`Top`矩形的內容是大約 – 100，`Right`和`Bottom`屬性大約 100，而`Width`和`Height`屬性都是大約 200。 （因為星星的點由半徑為 100 的圓形，但只有最上層的重點是平行具有水平或垂直軸大部分的實際值是一些較低）。
 
 這項資訊的可用性表示，應該可以衍生小數位數，並轉譯因素適用於調整畫布大小的路徑。 [**非等向性調整**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicScalingPage.cs)頁可示範這 11 星形。 *非等向性*擴展表示它是不相等的水平和垂直方向，這表示星號將不會保留其原始外觀比例。 以下是相關的程式碼中`PaintSurface`處理常式：
 
@@ -337,12 +337,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-程式碼也會顯示星號十次，每次減少縮放因素 10%，然後逐漸從紅色變成藍色中變更 色彩：
+程式碼也會顯示星號 10 次以上，每次減少縮放因素 10%，然後逐漸從紅色變成藍色中變更 色彩：
 
 [![](scale-images/isotropicscaling-small.png "Dbi100 調整頁面的三個螢幕擷取畫面")](scale-images/isotropicscaling-large.png#lightbox "Dbi100 調整頁面的三個螢幕擷取畫面")
 
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

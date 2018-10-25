@@ -1,38 +1,44 @@
 ---
 title: 聚合線條和參數化的方程式
-description: 本文說明如何使用 SkiaSharp 呈現任何列到您可以定義參數化的方程式，並示範此範例程式碼。
+description: 這篇文章說明如何使用 SkiaSharp 呈現至任何行您可以定義參數化的方程式，並示範此範例程式碼。
 ms.prod: xamarin
 ms.assetid: 85AEBB33-E954-4364-A6E1-808FAB197BEE
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 9118ca8e23e4c4a9023a1add89e26c4484979c8f
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: d5896a9d4f1aac2ea90d544d638e4adf68d24140
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615791"
 ---
 # <a name="polylines-and-parametric-equations"></a>聚合線條和參數化的方程式
 
 _呈現任何列，您可以定義參數化的方程式中使用 SkiaSharp_
 
-在本指南後半部分，您會看到的各種方法，`SKPath`定義來呈現特定類型的曲線。 不過，有時候是必要的繪製不直接支援的曲線類型`SKPath`。 在此情況下，您可以使用聚合線 （已連接的線條的集合） 來繪製以數學方式可以定義任何曲線。 如果您讓行夠小，許多足夠，結果將看起來曲線。 此螺旋是實際 3,600 的少幾行：
+在[ **SkiaSharp 曲線和路徑**](../curves/index.md)一節的本指南中，您會看到的各種方法， [ `SKPath` ](xref:SkiaSharp.SKPath)定義來呈現特定類型的曲線。 不過，有時候是必要的繪製不直接支援的曲線類型`SKPath`。 在此情況下，您可以使用聚合線 （已連接的線條的集合） 來繪製以數學方式可以定義任何曲線。 如果您讓行夠小，許多足夠，結果將看起來曲線。 此螺旋是實際 3,600 的少幾行：
 
 ![](polylines-images/spiralexample.png "螺旋")
 
 通常最好是定義一組參數化的方程式方面的曲線。 這些是方程式的 X 和 Y 座標，取決於第三個變數，有時也稱為`t`時間。 比方說，下列參數化的方程式定義半徑為 1 的中心點 （0，0） 位於圓形*t*從 0 到 1:
 
- x = cos(2πt) y = sin(2πt)
+x = cos(2πt)
+
+y = sin(2πt)
 
  如果您想 radius 大於 1，可以只的正弦和餘弦函數值乘以該 radius，，和如果您需要將中央移到其他位置，將這些值加入：
 
- x = xCenter + radius·cos(2πt) y = yCenter + radius·sin(2πt)
+x = xCenter + radius·cos(2πt)
+
+y = yCenter + radius·sin(2πt)
 
 針對至水平及垂直軸平行橢圓形，牽涉到兩個的半徑：
 
-x = xCenter + xRadius·cos(2πt) y = yCenter + yRadius·sin(2πt)
+x = xCenter + xRadius·cos(2πt)
+
+y = yCenter + yRadius·sin(2πt)
 
 然後，您可以將對等的 SkiaSharp 程式碼放在迴圈中，會計算不同的點，以及將這些路徑。 下列 SkiaSharp 程式碼會建立`SKPath`橢圓形的填滿顯示介面的物件。 迴圈循環 360 度直接。 Center 是一半的寬度和高度顯示介面上，因此是兩個的半徑：
 
@@ -116,5 +122,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -4,14 +4,14 @@ description: 本文將探討 SkiaSharp 路徑和文字的交集，並示範此�
 ms.prod: xamarin
 ms.assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 08/01/2017
-ms.openlocfilehash: 3576af56d48eec58f3fe5fee42aef143e2edea70
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 74bd4b5600f3d5ef8b64556a9e454bb7fb0e2d21
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615451"
 ---
 # <a name="paths-and-text-in-skiasharp"></a>路徑及 SkiaSharp 中的文字
@@ -20,19 +20,19 @@ _探索路徑及文字的交集_
 
 在現代化圖形系統中，文字字型會是字元外框輪廓，通常由二次方貝茲曲線所定義的集合。 因此，許多現代化圖形系統包含的功能，將文字字元轉換成圖形路徑。
 
-您所見，您可以繪製的文字字元外框輪廓，以及填入。 這可讓您顯示與特定的筆劃寬度，甚至是路徑的效果，這些字元外框輪廓中所述[**路徑效果**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)文章。 但也字元字串轉換成`SKPath`物件。 這表示文字外框輪廓，可用來裁剪，以及所述的技術[**使用路徑和地區裁剪**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)文章。
+您所見，您可以繪製的文字字元外框輪廓，以及填入。 這可讓您顯示與特定的筆劃寬度，甚至是路徑的效果，這些字元外框輪廓中所述[**路徑效果**](effects.md)文章。 但也字元字串轉換成`SKPath`物件。 這表示文字外框輪廓，可用來裁剪，以及所述的技術[**使用路徑和地區裁剪**](clipping.md)文章。
 
-除了使用路徑效果繪製字元外框，您也可以建立以路徑為基礎的效果衍生自字元字串的路徑，以及您甚至可以結合兩個效果：
+除了使用路徑效果繪製字元外框，您也可以建立衍生自字元字串，路徑為基礎的路徑效果，以及您甚至可以結合兩個效果：
 
 ![](text-paths-images/pathsandtextsample.png "文字路徑效果")
 
-在 [前一篇文章](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)您所見如何[ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/)方法`SKPaint`可以取得繪製路徑的外框。 您也可以使用這個方法，以衍生自字元外框輪廓的路徑。
+在上一篇文章中上[**路徑效果**](effects.md)，您已看到如何[ `GetFillPath` ](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,SkiaSharp.SKRect,System.Single))方法`SKPaint`可以取得繪製路徑的外框。 您也可以使用這個方法，以衍生自字元外框輪廓的路徑。
 
-最後，本文會示範另一個的路徑及文字的交集︰ [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/)方法`SKCanvas`可讓您顯示的文字字串，以便基準線的文字後面的彎曲的路徑。
+最後，本文會示範另一個的路徑及文字的交集︰ [ `DrawTextOnPath` ](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint))方法`SKCanvas`可讓您顯示的文字字串，以便基準線的文字後面的彎曲的路徑。
 
 ## <a name="text-to-path-conversion"></a>路徑轉換成文字
 
-[ `GetTextPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetTextPath/p/System.String/System.Single/System.Single/)方法`SKPaint`的字元字串轉換為`SKPath`物件：
+[ `GetTextPath` ](xref:SkiaSharp.SKPaint.GetTextPath(System.String,System.Single,System.Single))方法`SKPaint`的字元字串轉換為`SKPath`物件：
 
 ```csharp
 public SKPath GetTextPath (String text, Single x, Single y)
@@ -73,7 +73,7 @@ public class ClippingTextPage : ContentPage
 }
 ```
 
-`PaintSurface`處理常式一開始先建立`SKPaint`適用於文字的物件。 `Typeface`屬性設定，以及`TextSize`、 針對此特定的應用程式雖然`TextSize`屬性是純粹 arbirtrary。 另請注意有沒有`Style`設定。
+`PaintSurface`處理常式一開始先建立`SKPaint`適用於文字的物件。 `Typeface`屬性設定，以及`TextSize`、 針對此特定的應用程式雖然`TextSize`屬性純粹是任意。 另請注意有沒有`Style`設定。
 
 `TextSize`並`Style`屬性設定不需要因為這`SKPaint`物件只用於`GetTextPath`呼叫使用文字字串"CODE"。 處理常式，然後測量結果`SKPath`物件，並套用它置並調整頁面大小為三個轉換。 路徑可以設定為裁剪路徑：
 
@@ -120,7 +120,7 @@ public class ClippingTextPage : ContentPage
 }
 ```
 
-裁剪路徑設定後，可以顯示點陣圖，，則會裁剪以字元外框。 請注意，使用[ `AspectFill` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRect.AspectFill/p/SkiaSharp.SKSize/)方法`SKRect`計算矩形來填滿頁面，同時維持外觀比例。
+裁剪路徑設定後，可以顯示點陣圖，，則會裁剪以字元外框。 請注意，使用[ `AspectFill` ](xref:SkiaSharp.SKRect.AspectFill(SkiaSharp.SKSize))方法`SKRect`計算矩形來填滿頁面，同時維持外觀比例。
 
 **文字路徑效果**頁面會將單一連字號字元轉換成路徑，以建立 1d 路徑效果。 此路徑效果繪製物件再來繪製外框的該相同字元的較大版本：
 
@@ -209,7 +209,7 @@ public class TextPathEffectPage : ContentPage
 
 ## <a name="outlines-of-character-outlines"></a>字元外框輪廓的大綱
 
-通常[ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/)方法`SKPaint`藉由套用 [小畫家] 屬性，將一個路徑轉換成另一個最值得注意的是筆劃寬度及路徑的效果。 未路徑的效果，搭配使用時`GetFillPath`實際上會建立概述另一個路徑的路徑。 這所示**點選以外框路徑**頁面[**路徑效果**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)文章。
+通常[ `GetFillPath` ](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,SkiaSharp.SKRect,System.Single))方法`SKPaint`藉由套用 [小畫家] 屬性，將一個路徑轉換成另一個最值得注意的是筆劃寬度及路徑的效果。 未路徑的效果，搭配使用時`GetFillPath`實際上會建立概述另一個路徑的路徑。 這所示**點選以外框路徑**頁面[**路徑效果**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)文章。
 
 您也可以呼叫`GetFillPath`所傳回的路徑上`GetTextPath`但一開始您可能不完全確定什麼樣子。
 
@@ -277,7 +277,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 文字通常會顯示在水平的基準線中。 文字可旋轉以便執行垂直或對角線方式，但是基準仍是一條直線。
 
-有的時間，不過，當您想要執行沿著曲線的文字。 這是目的[ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/)方法`SKCanvas`:
+有的時間，不過，當您想要執行沿著曲線的文字。 這是目的[ `DrawTextOnPath` ](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint))方法`SKCanvas`:
 
 ```csharp
 public Void DrawTextOnPath (String text, SKPath path, Single hOffset, Single vOffset, SKPaint paint)
@@ -285,7 +285,7 @@ public Void DrawTextOnPath (String text, SKPath path, Single hOffset, Single vOf
 
 第一個引數中指定的文字對執行做為第二個引數所指定的路徑。 您可以開始使用做為路徑開頭的位移文字`hOffset`引數。 路徑通常 form 基準線的文字： 文字包含上格其中一端的路徑，而文字的伸尾部分其他。 但您可以位移之路徑的文字基準`vOffset`引數。
 
-這個方法沒有任何設備可提供設定的指引`TextSize`屬性`SKPaint`，使大小完全執行路徑的開頭到結尾的文字。 有時候您找出您自己的文字大小。 有時候，您必須使用路徑測量函式會在未來的文章所述。
+這個方法沒有任何設備可提供設定的指引`TextSize`屬性`SKPaint`，使大小完全執行路徑的開頭到結尾的文字。 有時候您找出您自己的文字大小。 有時候，您必須使用路徑測量函式中的下一篇文章上所述[**路徑資訊和列舉型別**](information.md)。
 
 **循環的文字**程式將文字換行圓圈。 它很容易，方便您以完全符合的文字大小，決定圓形的圓周。 `PaintSurface`處理常式[ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs)類別就會計算根據頁面大小圓形的半徑。 該圓圈會變成`circularPath`:
 
@@ -328,5 +328,5 @@ public class CircularTextPage : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
