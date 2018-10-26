@@ -1,86 +1,86 @@
 ---
 title: 第 1 部分。 開始使用 XAML
-description: Xamarin.Forms 應用程式中 XAML 大多用來定義頁面和程式碼後置檔案共同運作的視覺化內容。
+description: 在 Xamarin.Forms 應用程式中，XAML 是大部分會用來定義頁面和程式碼後置檔案搭配運作的視覺化內容。
 ms.prod: xamarin
 ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2018
-ms.openlocfilehash: 5883564841a4ef0e19518dd3b12ee00fe35ed778
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: f75e49c04ded99b3f7468709926277648f9f3729
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34049723"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103162"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 開始使用 XAML
 
-_Xamarin.Forms 應用程式中 XAML 大多用來定義頁面和 C# 程式碼後置檔案共同運作的視覺化內容。_
+_在 Xamarin.Forms 應用程式中，XAML 大多用來定義頁面的視覺內容及一起運作C#程式碼後置檔案。_
 
-程式碼後置檔案提供的標記程式碼支援。 在一起，這兩個檔案會構成新的類別定義，其中包含子檢視和內容初始化。 在 XAML 檔案中，類別和屬性所參考 XML 項目和屬性，以及建立標記和程式碼之間的連結。
+程式碼後置檔案提供的標記程式碼支援。 在一起，這兩個檔案會導致新的類別定義，其中包含子檢視和屬性初始設定。 在 XAML 檔案中，類別和屬性會參考 XML 項目和屬性，而且建立標記和程式碼之間的連結。
 
 ## <a name="creating-the-solution"></a>建立方案
 
-若要開始編輯您的第一個 XAML 檔案，請使用 Visual Studio 或 Visual Studio for Mac 來建立新的 Xamarin.Forms 方案。 （選取下面為您環境的對應索引標籤）。
+若要開始編輯您的第一個 XAML 檔案，請使用 Visual Studio 或 Visual Studio for Mac 建立新的 Xamarin.Forms 方案。 （選取下方為您環境的對應的索引標籤）。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-在 Windows 中，使用 Visual Studio 選取**檔案 > 新增 > 專案**從功能表。 在**新專案**對話方塊中，選取**Visual C# > 跨平台**左邊，然後**行動裝置應用程式 (Xamarin.Forms)** 從中心中的清單。 
+在 Windows，使用 以選取 Visual Studio**檔案 > 新增 > 專案**從功能表。 中**新的專案**對話方塊中，選取**Visual C# > 跨平台**左邊，然後**行動應用程式 (Xamarin.Forms)** 從中央清單中。 
 
 ![](get-started-with-xaml-images/win/newprojectdialog.w157.png "新增專案 對話方塊")
 
-選取方案的位置，將名稱**XamlSamples** （或您偏好的任何內容），然後按**確定**。
+選取方案的位置，並提供它的名稱**XamlSamples** （或您偏好的任何內容），然後按**確定**。
 
-在下一個畫面上，選取**空白應用程式**範本和 **.NET 標準**程式碼共用策略：
+在下一個畫面上，選取**空白應用程式**範本並 **.NET Standard**程式碼共用策略：
 
 ![](get-started-with-xaml-images/win/newcrossplatformapp.png "新的應用程式 對話方塊")
 
-Press **OK**. 
+按下**確定**。 
 
-在方案中建立四個專案： **XamlSamples** .NET 標準程式庫， **XamlSamples.Android**， **XamlSamples.iOS**，與通用 Windows 平台方案， **XamlSamples.UWP**。
+在方案中建立四個專案： **XamlSamples** .NET 標準程式庫**XamlSamples.Android**， **XamlSamples.iOS**，與通用 Windows 平台解決方案中， **XamlSamples.UWP**。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-在 Visual Studio for Mac 選取**檔案 > 新的方案**從功能表。 在**新專案**對話方塊中，選取**多平台 > 應用程式**左邊和**空白表單應用程式**(*不* **Form 應用程式**) 從範本清單：
+在 Visual Studio for Mac 中，選取**檔案 > 新的方案**從功能表。 在 **新的專案**對話方塊中，選取**多平台 > 應用程式**左邊，和**空白的 Forms App** (*不* **Forms 應用程式**) 從範本清單：
 
 ![](get-started-with-xaml-images/mac/newprojectdialog1.png "新增專案 對話方塊 1")
 
-按**下一步**。
+按下**下一步**。
 
-在下一步 對話方塊中，提供給專案的名稱**XamlSamples** （或您偏好的任何內容）。 請確定**使用標準.NET**選取選項按鈕：
+在下一步 對話方塊中，提供專案名稱**XamlSamples** （或您偏好的任何內容）。 請確定**使用.NET Standard**選取選項按鈕：
 
 ![](get-started-with-xaml-images/mac/newprojectdialog2.png "新增專案 對話方塊 2")
 
-按**下一步**。 
+按下**下一步**。 
 
 在下列對話方塊中，您可以選取專案的位置：
 
 ![](get-started-with-xaml-images/mac/newprojectdialog3.png "新增專案 對話方塊 3")
 
-按**建立**
+按下**建立**
 
-在方案中建立三個專案： **XamlSamples** .NET 標準程式庫， **XamlSamples.Android**，和**XamlSamples.iOS**。 
+在方案中建立三個專案： **XamlSamples** .NET 標準程式庫**XamlSamples.Android**，並**XamlSamples.iOS**。 
 
 -----
 
-在建立之後**XamlSamples**解決方案，您可能想要為方案的啟始專案，選取不同的平台專案來測試您的開發環境，以及所建立的建置和部署簡單的應用程式專案範本，在 phone 模擬器或實際裝置上。
+在建立後**XamlSamples**解決方案，您可能想要為方案的啟始專案，選取不同的平台專案來測試您的開發環境，以及建置和部署簡單的應用程式所建立專案範本，在 phone 模擬器或實際裝置上。
 
-除非您需要撰寫平台專屬程式碼中，共用**XamlSamples** .NET 標準程式庫專案時，您將會花費幾乎所有的開發時間。 這些文件不會積極該專案之外。
+除非您要撰寫平台特定程式碼，共用**XamlSamples** .NET Standard 程式庫專案時，您將會花費幾乎所有的程式設計的時間。 這些文件不會積極該專案之外。
 
 ### <a name="anatomy-of-a-xaml-file"></a>XAML 檔案的結構
 
-內**XamlSamples** .NET 標準程式庫是一組具有下列名稱的檔案：
+內**XamlSamples** .NET Standard 程式庫是一組具有下列名稱的檔案：
 
-- **App.xaml**，XAML 檔案; 和
-- **App.xaml.cs**，C#*程式碼後置*相關聯的 XAML 檔案的檔案。
+- **App.xaml**，XAML 檔案; 以及
+- **App.xaml.cs**、 C# *程式碼後置*XAML 檔案相關聯的檔案。
 
 您必須按一下箭號旁**App.xaml**若要查看程式碼後置檔案。 
 
-同時**App.xaml**和**App.xaml.cs**參與類別，名為`App`衍生自`Application`。 XAML 檔案與大多數其他類別從中衍生的類別參與`ContentPage`; 這些檔案使用 XAML 來定義整個頁面的視覺內容。 這是中的其他兩個檔案，則為 true **XamlSamples**專案：
+兩者**App.xaml**並**App.xaml.cs**類別，名為參與`App`衍生自`Application`。 使用 XAML 檔案的大部分其他類別衍生自的類別參與`ContentPage`; 這些檔案會使用 XAML 來定義整個頁面的視覺內容。 這是中的其他兩個檔案，則為 true **XamlSamples**專案：
 
-- **MainPage.xaml**，XAML 檔案; 和
-- **MainPage.xaml.cs**，C# 程式碼後置檔案。
+- **MainPage.xaml**，XAML 檔案; 以及
+- **MainPage.xaml.cs**、C#程式碼後置檔案。
 
 **MainPage.xaml** （雖然格式可能會稍有不同） 檔案看起來像這樣：
 
@@ -100,19 +100,19 @@ Press **OK**.
 </ContentPage>
 ```
 
-兩個 XML 命名空間 ( `xmlns`) 宣告的 Uri，看似在 Xamarin 的網站上的第一個和 on Microsoft 的第二個會參考。 不要檢查哪些這些 Uri 指向。 沒有有項目。 他們只需 Xamarin 和 Microsoft 所擁有的 Uri，它們基本上作為版本識別碼。
+兩個 XML 命名空間 ( `xmlns`) 宣告的 Uri，看似在 Xamarin 的網站上的第一個和第二個在 Microsoft 的參考。 不需要檢查哪些這些 Uri 指向。 裡面沒有東西。 他們只是由 Xamarin 與 Microsoft 所擁有的 Uri，它們基本上函式做為版本識別碼。
 
-第一個 XML 命名空間宣告表示，沒有前置詞在 XAML 檔中定義的標籤是指類別中透過 Xamarin.Forms，例如`ContentPage`。 第二個命名空間宣告定義的前置詞`x`。 這用數個項目和屬性都內建到 XAML 本身的支援和 XAML 的其他實作。 不過，這些項目和屬性會根據內嵌在 URI 中的年份而稍有不同的。 Xamarin.Forms 支援 XAML 2009 的規格，但不是它全部。
+第一個 XML 命名空間宣告表示，沒有前置詞在 XAML 檔中定義的標記是指類別在 Xamarin.Forms 中，例如`ContentPage`。 第二個命名空間宣告中定義的前置詞`x`。 這用數個項目和屬性的 XAML 內建函式本身的支援和 XAML 的其他實作。 不過，這些項目和屬性會內嵌在 URI 中的年份而略有不同。 Xamarin.Forms 可支援在 2009 XAML 規格中，但不是它全部。
 
-`local`命名空間宣告可讓您存取.NET 標準程式庫專案中的其他類別。
+`local`命名空間宣告可讓您存取.NET Standard 程式庫專案中的其他類別。
 
-在第一個標籤，結尾`x`前置詞則用於名為屬性`Class`。 因為這個使用`x`前置詞是這類幾乎通用 XAML 命名空間，而 XAML 屬性`Class`幾乎都稱為`x:Class`。
+在該第一個標記，結尾處`x`前置詞用於名為屬性`Class`。 因為使用 this`x`前置詞是這類的 XAML 命名空間，而 XAML 屬性幾乎通用`Class`幾乎都稱為`x:Class`。
 
-`x:Class`屬性會指定完整的.NET 類別名稱：`MainPage`類別`XamlSamples`命名空間。 這表示此 XAML 檔案定義新的類別，名為`MainPage`中`XamlSamples`衍生自命名空間`ContentPage`— 所在標記`x:Class`屬性隨即顯示。
+`x:Class`屬性會指定完整的.NET 類別名稱：`MainPage`類別中`XamlSamples`命名空間。 這表示，此 XAML 檔案會定義名為的新類別`MainPage`中`XamlSamples`命名空間衍生自`ContentPage`— 在其中標記`x:Class`屬性會出現。
 
-`x:Class`屬性只能出現在要衍生的 C# 類別定義的 XAML 檔案的根項目。 這是唯一的 XAML 檔案中定義的類別。 所有其他項目出現在 XAML 檔案中是只要從現有類別具現化而初始化。
+`x:Class`屬性只可以出現在 XAML 檔案，以定義 衍生的根項目C#類別。 這是唯一的新 XAML 檔案中定義的類別。 所有其他項目出現在 XAML 檔案中是直接從現有類別具現化而初始化。
 
-**MainPage.xaml.cs**檔案看起來像這樣 (除了用未使用`using`指示詞):
+**MainPage.xaml.cs**檔案看起來像這樣 (除了未使用`using`指示詞):
 
 ```csharp
 using Xamarin.Forms;
@@ -129,41 +129,41 @@ namespace XamlSamples
 }
 ```
 
-`MainPage`類別衍生自`ContentPage`，但請注意`partial`類別定義。 這可能表示應該會有另一個部分類別定義`MainPage`，但它嗎？ 為何，`InitializeComponent`方法？ 
+`MainPage`類別衍生自`ContentPage`，但請注意`partial`類別定義。 這可能表示，應該是另一個部分類別定義`MainPage`，但在哪裡可以找到？ 為何，`InitializeComponent`方法？ 
 
-當 Visual Studio 建置專案時，它會剖析 XAML 檔案來產生 C# 程式碼檔案。 若您查看**XamlSamples\XamlSamples\obj\Debug**目錄中，您可以找到名為**XamlSamples.MainPage.xaml.g.cs**。 產生代表 'g'。 這是其他部分類別定義`MainPage`，其中包含定義`InitializeComponent`方法呼叫從`MainPage`建構函式。 這些兩個部分`MainPage`類別定義然後一起編譯。 根據是否或不可以編譯 XAML，XAML 檔案或 XAML 檔案以二進位格式會內嵌在可執行檔。
+當 Visual Studio 建置專案時，它會剖析 XAML 檔案來產生C#程式碼檔案。 如果您查看**XamlSamples\XamlSamples\obj\Debug**目錄中，您可以找到名為的檔案**XamlSamples.MainPage.xaml.g.cs**。 產生代表 'g'。 這是其他部分類別定義`MainPage`，其中包含定義`InitializeComponent`方法呼叫從`MainPage`建構函式。 這些兩個部分`MainPage`類別定義然後一起編譯。 根據 XAML 是否經過編譯後，XAML 檔案或二進位格式的 XAML 檔案內嵌在可執行檔。
 
-在執行階段程式碼在特定平台的專案呼叫`LoadApplication`方法，傳遞給它的新執行個體`App`.NET 標準文件庫中的類別。 `App`類別建構函式具現化`MainPage`。 該類別的建構函式呼叫`InitializeComponent`，然後呼叫`LoadFromXaml`擷取.NET 標準程式庫中的 XAML 檔案 （或其已編譯的二進位檔） 的方法。 `LoadFromXaml` 初始化 XAML 檔案中定義的所有物件、 一起連接中父子式關聯性、 附加在 XAML 檔案中，設定事件的程式碼中定義的事件處理常式以及設定物件的結果樹狀結構頁面的內容。
+在執行階段，程式碼中的特定平台專案呼叫`LoadApplication`方法，傳遞給它的新執行個體`App`.NET Standard 程式庫中的類別。 `App`類別建構函式具現化`MainPage`。 該類別的建構函式呼叫`InitializeComponent`，接著呼叫`LoadFromXaml`擷取.NET Standard 程式庫中的 XAML 檔案 （或其已編譯的二進位檔） 的方法。 `LoadFromXaml` 初始化 XAML 檔案中定義的所有物件、 所有連線中父子式關聯性、 附加在 XAML 檔案中，設定事件的程式碼中定義的事件處理常式，並設定物件的結果樹狀結構頁面的內容。
 
-雖然您通常不需要花費的時間產生的程式碼檔案，有時執行階段引發例外狀況是程式碼在產生的檔案，因此您應該熟悉這些。
+雖然您通常不需要花太多時間使用產生的程式碼檔案，有時執行階段會引發例外狀況程式碼在產生的檔案，因此您應該先熟悉這些。
 
-當您編譯和執行此程式，`Label`如所示的 XAML 項目會出現在頁面的中央。 從左到右的三個平台為 iOS、 Android 和 UWP:
+當您編譯和執行此程式，`Label`元素會出現在頁面中央，XAML 所示。 從左到右的三個平台是 iOS、 Android 和 UWP:
 
-[![](get-started-with-xaml-images/xamlsamples.png "預設 Xamarin.Forms 顯示")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "預設 Xamarin.Forms 顯示")
+[![](get-started-with-xaml-images/xamlsamples.png "預設 Xamarin.Forms 顯示器")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "預設 Xamarin.Forms 顯示")
 
-更有趣的視覺效果，您只需要為更多有趣的 XAML。
+針對更有趣的視覺效果，您只需要更多有趣的 XAML。
 
 ## <a name="adding-new-xaml-pages"></a>加入新的 XAML 頁面
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-若要加入其他以 XAML 為基礎`ContentPage`類別加入您專案中，選取**XamlSamples** .NET 標準程式庫專案，並叫用**專案 > 加入新項目**功能表項目。 左邊的**加入新項目**對話方塊中，選取**Visual C#** 和**Xamarin.Forms**。 從清單中選取**內容頁面**(不**內容頁面 (C#)**，它會建立僅限程式碼頁面上，或**內容檢視**，不是頁面)。 指定頁面名稱，例如**HelloXamlPage.xaml**:
+若要新增其他 XAML 為基礎`ContentPage`類別，以您的專案中，選取**XamlSamples** .NET Standard 程式庫專案，然後叫用**專案 > 加入新項目**功能表項目。 在左邊**加入新項目**對話方塊中，選取**視覺化C#** 並**Xamarin.Forms**。 從清單中選取**內容頁面**(不**內容頁面 (C#)**，這會建立僅限程式碼的頁面上，或**內容檢視**，這不是頁面)。 指定頁面名稱，例如**HelloXamlPage.xaml**:
 
 ![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "加入新項目 對話方塊")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-若要加入其他以 XAML 為基礎`ContentPage`類別加入您專案中，選取**XamlSamples** .NET 標準程式庫專案，並叫用**檔案 > 新的檔案**功能表項目。 左邊的**新檔案**對話方塊中，選取**Form**左邊和**Form ContentPage Xaml** (不**Form ContentPage**，建立僅限程式碼頁面上，或**內容檢視**，不是頁面)。 指定頁面名稱，例如**HelloXamlPage**:
+若要新增其他 XAML 為基礎`ContentPage`類別，以您的專案中，選取**XamlSamples** .NET Standard 程式庫專案，然後叫用**檔案 > 新的檔案**功能表項目。 左邊的**新的檔案**對話方塊中，選取**Form**左邊，並**Forms ContentPage Xaml** (不**Forms ContentPage**，建立僅限程式碼的頁面上，或是**內容檢視**，這不是頁面)。 指定頁面名稱，例如**HelloXamlPage**:
 
-![](get-started-with-xaml-images/mac/newfiledialog.png "新的檔案對話方塊")
+![](get-started-with-xaml-images/mac/newfiledialog.png "新增檔案 對話方塊")
 
 -----
 
-兩個檔案加入至專案， **HelloXamlPage.xaml**和程式碼後置檔案**HelloXamlPage.xaml.cs**。 
+兩個檔案新增至專案中， **HelloXamlPage.xaml**和 程式碼後置檔案**HelloXamlPage.xaml.cs**。 
 
 ## <a name="setting-page-content"></a>設定頁面內容
 
-編輯**HelloXamlPage.xaml**檔案，所以只有標記，這些會用於`ContentPage`和`ContentPage.Content`:
+編輯**HelloXamlPage.xaml**檔案，以便唯一的標記是用來`ContentPage`和`ContentPage.Content`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -175,9 +175,9 @@ namespace XamlSamples
 </ContentPage>
 ```
 
-`ContentPage.Content`標籤是唯一的 XAML 語法的一部分。 首先，它們可能會顯示無效的 XML，但是可以合法。 在期限不在 XML 中的特殊字元。
+`ContentPage.Content`標籤是唯一的 XAML 語法的一部分。 首先，它們看起來好像是無效的 XML，但是而言是合法的。 句號不是 XML 中的特殊字元。
 
-`ContentPage.Content`標記稱為*屬性項目*標記。 `Content` 是的屬性`ContentPage`，而且通常設定為單一檢視] 或 [子檢視的版面配置。 屬性通常會變成屬性在 XAML 中，但很難設定`Content`屬性設定為複雜物件。 基於這個原因，屬性會表示為類別名稱和以句號分隔的屬性名稱所組成的 XML 項目。 現在`Content`屬性可以設定成介於`ContentPage.Content`標記，像這樣：
+`ContentPage.Content`標記稱為*property 項目*標記。 `Content` 是的屬性`ContentPage`，且通常設定為單一檢視或子檢視版面配置。 屬性通常會變成 XAML 中的屬性，但它可能難以設定`Content`屬性的複雜物件。 基於這個理由，屬性會表示為類別名稱和以句號分隔屬性名稱所組成的 XML 項目。 現在`Content`屬性可以設定之間`ContentPage.Content`標記，像這樣：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -199,49 +199,49 @@ namespace XamlSamples
 </ContentPage>
 ```
 
-也請注意，`Title`根標記上設定屬性。
+也請注意，`Title`屬性已設定根標記上。
 
-在這個階段中，類別、 屬性和 XML 之間的關聯性應該能看出： Xamarin.Forms 類別 (例如`ContentPage`或`Label`) 會出現在 XAML 檔案儲存為 XML 項目。 該類別的屬性，包括`Title`上`ContentPage`和七項屬性的`Label`— 通常會顯示為 XML 屬性。
+在此階段中，類別、 屬性和 XML 之間的關聯性應顯而易見： Xamarin.Forms 類別 (例如`ContentPage`或`Label`) 會出現在 XAML 檔案的 XML 項目。 該類別的屬性，包括`Title`上`ContentPage`和七個屬性`Label`— 通常會顯示為 XML 屬性。
 
-若要設定這些屬性的值存在許多的快速鍵。 有些屬性是基本資料型別:，例如`Title`和`Text`屬性屬於類型`String`，`Rotation`的型別`Double`，和`IsVisible`(也就是`true`依預設，而且僅適用於此處設定圖例所示） 是型別`Boolean`。
+若要設定這些屬性的值存在許多捷徑。 有些屬性是基本資料類型:，例如`Title`和`Text`屬性都屬於類型`String`，`Rotation`屬於型別`Double`，和`IsVisible`(也就是`true`預設和僅適用於此處設定圖） 的類型是`Boolean`。
 
-`HorizontalTextAlignment`屬性屬於型別`TextAlignment`，這是列舉型別。 對於任何列舉類型的屬性，您只需要提供是成員名稱。
+`HorizontalTextAlignment`屬性的類型是`TextAlignment`，這是列舉型別。 對於任何列舉類型的屬性，您只需要提供是成員名稱。
 
-對於更複雜型別的屬性，不過，轉換器會用於剖析 XAML。 這些是衍生自 Xamarin.Forms 中的類別`TypeConverter`。 許多都是公用類別，但某些則不會。 針對這個特定的 XAML 檔案，這些類別的數個播放在幕後的角色：
+針對更複雜類型的屬性，不過，轉換器會用於剖析的 XAML。 這些是衍生自的 Xamarin.Forms 中的類別`TypeConverter`。 有許多是公用類別，但有些不是。 這個特定的 XAML 檔案，這些類別的數個播放在幕後的角色：
 
--  `LayoutOptionsConverter` 如`VerticalOptions`屬性
--  `FontSizeConverter` 如`FontSize`屬性
--  `ColorTypeConverter` 如`TextColor`屬性
+-  `LayoutOptionsConverter` 針對`VerticalOptions`屬性
+-  `FontSizeConverter` 針對`FontSize`屬性
+-  `ColorTypeConverter` 針對`TextColor`屬性
 
-這些轉換會控管的屬性設定可允許的語法。
+這些轉換子控管的屬性設定可允許的語法。
 
-`ThicknessTypeConverter`可以處理其中一個、 兩個或四個以逗號分隔的數字。 如果提供一個數字，它適用於所有的四個邊。 兩個數字，與第一個是 left 和 right 填補，而第二個上方和下方。 四個號碼都順序左邊、 上方、 右側，與下方。
+`ThicknessTypeConverter`可以處理其中一個、 兩個或四個以逗號分隔的數字。 如果提供一個數字，它適用於所有四個邊。 有兩個數字，第一個左側和右側填補，而第二個頂端和底部。 四個數字位於順序左側、 上方、 右側，與下方。
 
-`LayoutOptionsConverter`可轉換的公用靜態欄位的名稱`LayoutOptions`結構類型的值以`LayoutOptions`。
+`LayoutOptionsConverter`可轉換的公用靜態欄位的名稱`LayoutOptions`類型的值結構`LayoutOptions`。
 
 `FontSizeConverter`可以處理`NamedSize`成員或數值的字型大小。
 
-`ColorTypeConverter`可接受的公用靜態欄位的名稱`Color`結構或十六進位 RGB 值，不論 alpha 色板，前面加上數字符號 （#）。 以下是沒有 alpha 色板語法：
+`ColorTypeConverter`可接受的公用靜態欄位的名稱`Color`結構或十六進位的 RGB 值，包含或不含 alpha 色板，前面加上數字符號 （#）。 以下是不含 alpha 色板的語法：
 
  `TextColor="#rrggbb"`
 
-每個小的字母是十六進位數字。 以下是如何 alpha 色板就會包含：
+每個小小的字母是十六進位數字。 以下是包含 alpha 色頻的方式：
 
  `TextColor="#aarrggbb">`
 
-Alpha 色板，請記住，FF 會完全不透明，和 00 是完全透明。
+Alpha 通道，請記住，FF 完全不透明且 00 是完全透明。
 
-其他兩種格式可讓您指定只是單一十六進位數字的每個通道：
+其他兩種格式可讓您指定只有單一十六進位數字每個通道：
 
  `TextColor="#rgb"` `TextColor="#argb"`
 
-在這些情況下，該數字會形成值重複。 例如，#CF3 是 RGB 色彩副本-F-33。
+在這些情況下，會重複以表單值的數字。 例如，#CF3 是 RGB 色彩 CC-FF-33。
 
 ## <a name="page-navigation"></a>頁面巡覽
 
-當您執行**XamlSamples**程式`MainPage`隨即出現。 若要查看新`HelloXamlPage`可以設定它作為新的啟動頁面**App.xaml.cs**檔案，或瀏覽至新的頁面從`MainPage`。
+當您執行**XamlSamples**計劃，`MainPage`隨即出現。 若要查看新`HelloXamlPage`您可以設定它作為新的啟動頁面**App.xaml.cs**檔案，或瀏覽至新的頁面從`MainPage`。
 
-若要實作導覽，請先變更中的程式碼**App.xaml.cs**建構函式，讓`NavigationPage`建立物件：
+若要實作導覽，第一次變更中的程式碼**App.xaml.cs**建構函式，讓`NavigationPage`建立物件：
 
 ```csharp
 public App()
@@ -251,7 +251,7 @@ public App()
 }
 ```
 
-在**MainPage.xaml.cs**建構函式，您可以建立簡單`Button`並瀏覽至使用此事件處理常式`HelloXamlPage`:
+在  **MainPage.xaml.cs**建構函式，您可以建立簡單`Button`，並使用 瀏覽至 事件處理常式`HelloXamlPage`:
 
 ```csharp
 public MainPage()
@@ -274,23 +274,23 @@ public MainPage()
 }
 ```
 
-設定`Content`頁的屬性會取代的設定`Content`XAML 檔案中的屬性。 當您編譯和部署此程式的新版本時，按鈕會出現在螢幕上。 按下它瀏覽至`HelloXamlPage`。 以下是 [結果] 頁面上 iPhone、 Android 和 UWP:
+設定`Content`頁的屬性會取代設定`Content`XAML 檔案中的屬性。 當您編譯和部署新的版本，此程式時，按鈕會出現在螢幕上。 按下它瀏覽至`HelloXamlPage`。 以下是 iPhone、 Android 及 UWP 上的 [結果] 頁面：
 
 [![](get-started-with-xaml-images/helloxaml1.png "旋轉標籤文字")](get-started-with-xaml-images/helloxaml1-large.png#lightbox "旋轉標籤文字")
 
-您可以瀏覽回到`MainPage`使用 **< 回**在 iOS 上，使用向左箭號，在頁面頂端或底部的電話，在 Android 上，或在頁面頂端的 Windows 10 上使用向左箭號按鈕。
+您可以瀏覽回到`MainPage`使用 **< 上一步**在 iOS 上，使用向左箭號，在頁面頂端或底部的 行動電話在 Android 上，或使用向左箭號，在 Windows 10 上的頁面頂端的按鈕。
 
-請放心試驗不同的方式來呈現的 XAML `Label`。 如果您要內嵌在文字中的任何 Unicode 字元，您可以使用標準的 XML 語法。 比方說，若要將問候語智慧引號中，使用：
+歡迎您試驗不同的方式來呈現的 XAML `Label`。 如果您需要在文字中內嵌任何 Unicode 字元，您可以使用標準的 XML 語法。 比方說，若要將招呼語設智慧引號，請使用：
 
  `<Label Text="&#x201C;Hello, XAML!&#x201D;" … />`
 
 看起來如下：
 
-[![](get-started-with-xaml-images/helloxaml2.png "使用 Unicode 字元的標籤文字的旋轉")](get-started-with-xaml-images/helloxaml2-large.png#lightbox "旋轉標籤文字使用 Unicode 字元")
+[![](get-started-with-xaml-images/helloxaml2.png "使用 Unicode 字元的標籤文字的旋轉")](get-started-with-xaml-images/helloxaml2-large.png#lightbox "旋轉使用 Unicode 字元的標籤文字")
 
 ## <a name="xaml-and-code-interactions"></a>XAML 和程式碼互動
 
-**HelloXamlPage**範例包含只有一個`Label`在頁面上，但這是很常見的事。 大部分`ContentPage`衍生項目集`Content`的部分的配置屬性排序，例如`StackLayout`。 `Children`屬性`StackLayout`定義型別`IList<View>`但實際類型的物件，則`ElementCollection<View>`，和集合可以填入多個檢視或其他鍵盤配置。 在 XAML 中，這些父子式關聯性會建立與一般 XML 階層。 以下是名為的新頁面的 XAML 檔案**XamlPlusCodePage**:
+**HelloXamlPage**範例只包含一個單一`Label`在頁面上，但這是極不尋常。 大部分`ContentPage`衍生項目組`Content`部分的版面配置的屬性排序，例如`StackLayout`。 `Children`屬性`StackLayout`定義為類型`IList<View>`但就實際型別的物件`ElementCollection<View>`，和集合可以填入多個檢視或其他版面配置。 在 XAML 中，這些父子式關聯性被建立使用一般的 XML 階層。 以下是名為的新頁面的 XAML 檔案**XamlPlusCodePage**:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -312,13 +312,13 @@ public MainPage()
 </ContentPage>
 ```
 
-此 XAML 檔案語法完成，且它起來：
+此 XAML 檔案語法完成，且它如下：
 
 [![](get-started-with-xaml-images/xamlpluscode1.png "在頁面上的多個控制項")](get-started-with-xaml-images/xamlpluscode1-large.png#lightbox "頁面上的多個控制項")
 
-不過，您可能會考慮此程式會在功能上缺點。 可能是`Slider`應該會造成`Label`來顯示目前的值，而`Button`可能會執行在程式內的項目。
+不過，您可能會考慮此程式是功能不足。 或許`Slider`應該會導致`Label`來顯示目前的值，而`Button`可能預期的作業在程式內的項目。
 
-您會發現在[第 4 部分。資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)，顯示的工作`Slider`值使用`Label`可以處理在 XAML 中，資料繫結。 但很有用，可以先查看程式碼方案。 即便如此，處理`Button`按一下絕對需要的程式碼。 這表示的程式碼後置檔案`XamlPlusCodePage`必須包含的處理常式`ValueChanged`事件`Slider`和`Clicked`事件`Button`。 讓我們加入它們：
+如您所見中[第 4 部分。資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)，顯示的工作`Slider`值使用`Label`可以完全在 XAML 中處理資料繫結。 但是，您最好先查看程式碼解決方案。 即便如此，處理`Button`按一下絕對需要的程式碼。 這表示的程式碼後置檔案`XamlPlusCodePage`必須包含的處理常式`ValueChanged`事件`Slider`並`Clicked`事件`Button`。 讓我們來新增它們：
 
 ```csharp
 namespace XamlSamples
@@ -343,9 +343,9 @@ namespace XamlSamples
 }
 ```
 
-這些事件處理常式不需要是公用的。
+這些事件處理常式不必是公用的。
 
-傳回在 XAML 檔案中，`Slider`和`Button`標記要包含的屬性`ValueChanged`和`Clicked`參考這些處理常式的事件：
+回在 XAML 檔案中，`Slider`並`Button`標記要包含的屬性`ValueChanged`和`Clicked`參考這些處理常式的事件：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -369,9 +369,9 @@ namespace XamlSamples
 </ContentPage>
 ```
 
-請注意，指派的事件處理常式有與指派給屬性的值相同的語法。
+請注意，將處理常式指派給事件有與指派給屬性的值相同的語法。
 
-如果處理常式`ValueChanged`事件`Slider`將使用`Label`若要顯示的目前值，這個處理常式需要從程式碼中參考該物件。 `Label`需要指定名稱`x:Name`屬性。
+如果處理常式`ValueChanged`事件的`Slider`將使用`Label`若要顯示目前的值，這個處理常式需要從程式碼中參考該物件。 `Label`需要使用指定名稱`x:Name`屬性。
 
 ```xaml
 <Label x:Name="valueLabel"
@@ -381,9 +381,9 @@ namespace XamlSamples
        VerticalOptions="CenterAndExpand" />
 ```
 
-`x`的前置詞`x:Name`屬性會指出這個屬性是為 XAML 內建函式。
+`x`前置詞`x:Name`屬性會指出這個屬性是 XAML 內建函式。
 
-指派給`x:Name`屬性具有相同的規則，做為 C# 變數名稱。 例如，它必須以字母或底線開頭，而且不得包含內嵌的空格。
+您指派給`x:Name`屬性具有相同的規則C#變數的名稱。 比方說，它必須以字母或底線開頭，並不包含內嵌的空格。
 
 現在`ValueChanged`事件處理常式可以設定`Label`以顯示新`Slider`值。 新的值是可從事件引數：
 
@@ -394,7 +394,7 @@ void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
 }
 ```
 
-或處理常式無法取得`Slider`物件會將產生此事件從`sender`引數，並取得`Value`不同的屬性：
+或無法取得處理常式`Slider`會產生此事件的物件`sender`引數，並取得`Value`與屬性：
 
 ```csharp
 void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
@@ -403,11 +403,11 @@ void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
 }
 ```
 
-當您第一次執行程式時，`Label`不會顯示`Slider`值，因為`ValueChanged`尚未還會引發事件。 但操作`Slider`會使顯示值：
+當您第一次執行程式時，`Label`不會顯示`Slider`值，因為`ValueChanged`還尚未引發事件。 但操作`Slider`會導致要顯示的值：
 
-[![](get-started-with-xaml-images/xamlpluscode2.png "顯示的滑桿值")](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox "滑桿顯示的值")
+[![](get-started-with-xaml-images/xamlpluscode2.png "顯示的滑桿值")](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox "顯示滑桿值")
 
-現在針對`Button`。 讓我們來模擬的回應`Clicked`所顯示之警示的事件`Text` 按鈕。 此事件處理常式可以安全地轉型`sender`引數`Button`，然後存取其屬性：
+現在`Button`。 讓我們模擬的回應`Clicked`所顯示的警示事件`Text`的按鈕。 可以安全地將事件處理常式`sender`引數`Button`，然後存取其屬性：
 
 ```csharp
 async void OnButtonClicked(object sender, EventArgs args)
@@ -419,11 +419,11 @@ async void OnButtonClicked(object sender, EventArgs args)
 }
 ```
 
-這個方法定義為`async`因為`DisplayAlert`方法為非同步且應該前面加上`await`運算子，就會傳回此方法完成時。 因為這個方法會取得`Button`引發的事件`sender`引數，相同的處理常式可用於多個按鈕。
+方法定義成`async`因為`DisplayAlert`方法是非同步，而且應該前面加上`await`運算子，就會傳回方法完成時。 因為這個方法會取得`Button`引發事件`sender`引數，相同的處理常式可用於多個按鈕。
 
-在 XAML 中定義的物件可以引發事件會在程式碼後置檔案中，處理和程式碼後置檔案都可以存取的物件定義在 XAML 中使用的名稱指派給它與您已看過`x:Name`屬性。 這些是互動的程式碼和 XAML 的兩種基本方式。
+您已了解在 XAML 中定義的物件可以引發事件處理在程式碼後置檔案中，而且程式碼後置檔案可以存取使用指派給它的名稱的 XAML 中定義的物件`x:Name`屬性。 這些是程式碼與 XAML 互動兩種基本方法。
 
-某些其他深入了解如何非法 XAML 運作方式，藉由檢查新產生**XamlPlusCode.xaml.g.cs 檔案**，現在包含指派給任何任何名稱`x:Name`的私用欄位的屬性。 以下是該檔案的簡化的版本：
+某些額外的深入了解如何收集 XAML 的運作方式，藉由檢查新產生**XamlPlusCode.xaml.g.cs 檔案**，它現在包含任何名稱指派給任何`x:Name`的私用欄位的屬性。 以下是該檔案的簡化的版本：
 
 ```csharp
 public partial class XamlPlusCodePage : ContentPage {
@@ -437,15 +437,15 @@ public partial class XamlPlusCodePage : ContentPage {
 }
 ```
 
-這個欄位的宣告，可讓 「 自由內任何位置使用的變數`XamlPlusCodePage`您管轄區下的部分類別檔案。 在執行階段，在已剖析 XAML，會被指派的欄位。 這表示`valueLabel`欄位是`null`時`XamlPlusCodePage`建構函式開始之後但有效`InitializeComponent`呼叫。
+此欄位的宣告讓變數可自由地在任何地方使用`XamlPlusCodePage`您管轄權下的部分類別檔案。 在執行階段，在已剖析的 XAML，會被指派的欄位。 這表示`valueLabel`欄位是`null`當`XamlPlusCodePage`建構函式開始之後但有效`InitializeComponent`呼叫。
 
-之後`InitializeComponent`傳回控制項回到建構函式，就如同必須已具現化，而且在程式碼中初始化已經建構頁面的視覺效果。 XAML 檔案不在類別中扮演任何角色。 您可以使用這些物件在任何您想要的方式，比方說，藉由新增檢視 頁面上操作`StackLayout`，或設定`Content`屬性時，為其他項目頁面完全。 您可以 「 查核樹狀結構 」 藉由檢查`Content`屬性頁面中的項目`Children`的版面配置的集合。 您可以設定這種方式，存取檢視的屬性，或動態指派給它們的事件處理常式。
+之後`InitializeComponent`回到建構函式的傳回控制項、 頁面的視覺效果就如同它們具有已具現化並初始化程式碼中建構。 XAML 檔案不再在類別中扮演任何角色。 您可以在任何您想要的方式，比方說，藉由新增至檢視的頁面上的這些物件來處理`StackLayout`，或設定`Content`為其他項目頁面的屬性完全。 您可以 「 查核樹狀結構 」 藉由檢查`Content`屬性頁面中的項目`Children`的版面配置的集合。 您可以設定這種方式，存取檢視的屬性，或以動態方式將事件處理常式指派給他們。
 
-您可以任意去。 它是您的網頁，且 XAML 建置其內容的工具。
+請放心。 它是您的頁面，而且 XAML 來建置其內容的工具。
 
 ## <a name="summary"></a>總結
 
-使用本簡介，您已經看到如何 XAML 檔案和程式碼檔案構成類別定義，以及 XAML 和程式碼檔案的互動方式。 但是 XAML 也有自己唯一的語法功能，讓它使用非常大的彈性的方式。 您可以開始瀏覽這些[第 2 部分。基本 XAML 語法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)。
+與此簡介中，您已了解如何 XAML 檔案和程式碼檔案構成類別定義，以及的 XAML 和程式碼檔案互動的方式。 但是 XAML 也有自己獨特的語法功能，以便用於極具彈性的方式。 您可以開始探索這些功能[第 2 部分。基本 XAML 語法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)。
 
 
 

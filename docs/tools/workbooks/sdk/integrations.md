@@ -1,35 +1,35 @@
 ---
-title: 進階的 Integration 主題
-description: 本文件說明 Xamarin 活頁簿整合功能的相關進階的主題。 它討論的 Xamarin.Workbook.Integrations NuGet 套件和應用程式開發介面公開在 Xamarin 活頁簿中。
+title: 進階的整合主題
+description: 本文件說明與 Xamarin Workbooks 整合相關的進階的主題。 它討論的 Xamarin.Workbook.Integrations NuGet 套件和 API 在 Xamarin 活頁簿中的曝光度。
 ms.prod: xamarin
 ms.assetid: 002CE0B1-96CC-4AD7-97B7-43B233EF57A6
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 1aa6b5d0ca574345e1d349ea53df96f554c06bc4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 56ee709b78b8587c2717dc9d25a6357041812d23
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793832"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104202"
 ---
-# <a name="advanced-integration-topics"></a>進階的 Integration 主題
+# <a name="advanced-integration-topics"></a>進階的整合主題
 
-整合組件應該參考[ `Xamarin.Workbooks.Integrations` NuGet][nuget]。 請查看我們[快速入門文件](~/tools/workbooks/sdk/index.md)如需開始使用 NuGet 封裝。
+整合組件應該參考[ `Xamarin.Workbooks.Integrations` NuGet][nuget]。 請查看我們[快速入門文件](~/tools/workbooks/sdk/index.md)如需開始使用 NuGet 套件的詳細資訊。
 
-用戶端整合也支援，並藉由將代理程式的整合組件與同名的 JavaScript 或 CSS 檔案放在相同的目錄。 例如，如果名為代理程式 」 整合組件 （即在參考的 NuGet） `SampleExternalIntegration.dll`，然後`SampleExternalIntegration.js`和`SampleExternalIntegration.css`會整合到的用戶端中，如果有的話。 用戶端整合是選擇性的。
+用戶端的整合也支援，並藉由將整合代理程式的組件同名的 JavaScript 或 CSS 檔案放在相同的目錄。 例如，如果名為代理程式 」 整合組件 （即在參考 NuGet） `SampleExternalIntegration.dll`，然後`SampleExternalIntegration.js`和`SampleExternalIntegration.css`將會在用戶端整合，如果有的話。 用戶端的整合是選擇性的。
 
-外部整合本身可以封裝為 NuGet、 提供並直接在裝載代理程式，或只是放置在一起的應用程式參照`.workbook`想要使用它的檔案。
+外部整合本身可以是封裝為 NuGet、 提供和裝載代理程式，或只是放置在一起的應用程式內的直接參考`.workbook`想要使用它的檔案。
 
-封裝參考時，根據的快速入門文件，來參考它，因此需要與活頁簿一起出貨的整合組件時，就會自動載入 NuGet 封裝中的外部整合 （代理程式和用戶端）：
+封裝參考時，根據的快速入門文件，來參考它，因此需要與活頁簿一起出貨的整合組件時，就會自動載入 NuGet 套件中的外部整合 （代理程式和用戶端）：
 
 ```csharp
 #r "SampleExternalIntegration.dll"
 ```
 
-在參考時整合這種方式，它將不會載入用戶端立即&mdash;必須先從的整合，讓它載入呼叫某些程式碼。 我們會解決此錯誤在未來。
+當參考整合如此一來，它將不會載入用戶端立即&mdash;您要從整合，以將它載入呼叫某些程式碼。 我們將會解決這個錯誤未來。
 
-`Xamarin.Interactive` PCL 提供幾個重要的整合應用程式開發介面。 每個整合至少必須提供整合的進入點：
+`Xamarin.Interactive` PCL 提供幾個重要整合 Api。 每個整合至少必須提供整合的進入點：
 
 ```csharp
 using Xamarin.Interactive;
@@ -47,15 +47,15 @@ class AgentIntegration : IAgentIntegration
 }
 ```
 
-此時，一旦整合組件參考時，用戶端會以隱含方式會載入 JavaScript 和 CSS 整合檔案。
+到目前為止之後的整合組件參考時，, 用戶端將會隱含地載入 JavaScript 和 CSS 整合檔案。
 
 ## <a name="apis"></a>API
 
-與任何組件參考的活頁簿或即時檢查工作階段，任何其公用 Api 是可存取工作階段。 因此就一定要有安全又實用的 API 介面，讓使用者瀏覽。
+如有任何該組件是參考活頁簿或即時檢查工作階段，任何其公開的 Api 都可存取工作階段項目。 因此，它是一定要有安全且實用的 API 介面，讓使用者瀏覽。
 
-整合組件實際上就是應用程式或感興趣的 SDK 與工作階段之間的橋樑。 它可以提供有意義特別是在內容的活頁簿或即時檢查工作階段，或提供任何公用 Api 和直接執行 「 幕後 」 工作，例如產生物件的新 Api[表示](~/tools/workbooks/sdk/representations.md)。
+整合的組件實際上是應用程式或感興趣的 SDK 與工作階段之間的橋樑。 它可以提供有意義的特別是在內容的活頁簿或即時檢查工作階段中，或提供沒有公用 Api，而且只需執行 「 幕後 」 工作，例如產生物件的新 Api[表示](~/tools/workbooks/sdk/representations.md)。
 
 > [!NOTE]
-> 這必須是公用的但不是應該顯示 IntelliSense 透過應用程式開發介面都可以使用一般標記`[EditorBrowsable (EditorBrowsableState.Never)]`屬性。
+> 應用程式開發介面必須是公用的但不是會顯示透過 IntelliSense 都可以使用一般標記`[EditorBrowsable (EditorBrowsableState.Never)]`屬性。
 
 [nuget]: https://nuget.org/packages/Xamarin.Workbooks.Integration

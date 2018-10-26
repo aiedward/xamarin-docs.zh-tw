@@ -6,13 +6,13 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/12/2016
-ms.openlocfilehash: 52d8d5f6eb38e5cb501d6284d08f7317981e0dcf
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 18/10/2018
+ms.openlocfilehash: a51a3bb7726baa9142579a518767dc722870ee06
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998969"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107523"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms 檢視
 
@@ -93,7 +93,7 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 |     |     |
 | --- | --- |
-| [`Stepper`](xref:Xamarin.Forms.Stepper) 可讓使用者選取`double`使用指定的累加值的範圍介於[ `Minimum` ](xref:Xamarin.Forms.Stepper.Minimum)， [ `Maximum` ](xref:Xamarin.Forms.Stepper.Maximum)，並[ `Increment` ](xref:Xamarin.Forms.Stepper.Increment)屬性。<br /><br />[API 文件](xref:Xamarin.Forms.Stepper) | [![步進範例](views-images/Stepper.png "步進範例")](views-images/Stepper-Large.png#lightbox "步進範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StepperDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StepperDemoPage.xaml) |
+| [`Stepper`](xref:Xamarin.Forms.Stepper) 可讓使用者選取`double`使用指定的累加值的範圍介於[ `Minimum` ](xref:Xamarin.Forms.Stepper.Minimum)， [ `Maximum` ](xref:Xamarin.Forms.Stepper.Maximum)，並[ `Increment` ](xref:Xamarin.Forms.Stepper.Increment)屬性。<br /><br />[API 文件](xref:Xamarin.Forms.Stepper)  / [指南](~/xamarin-forms/user-interface/stepper.md) / [範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos) | [![步進範例](views-images/Stepper.png "步進範例")](views-images/Stepper-Large.png#lightbox "步進範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StepperDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StepperDemoPage.xaml) |
 |     |     |
 
 ### <a name="switch"></a>參數
@@ -114,7 +114,7 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 |     |     |
 | --- | --- |
-| [`TimePicker`](xref:Xamarin.Forms.TimePicker) 可讓使用者與平台時間選擇器選取的時間。 [ `Time` ](xref:Xamarin.Forms.TimePicker.Time)屬性是在選取的時間。 應用程式可以監視中的變更`Time`屬性所安裝的處理常式[ `PropertyChanged` ](xref:Xamarin.Forms.BindableObject.PropertyChanged)事件。<br /><br />[API 文件](xref:Xamarin.Forms.TimePicker) | [![TimePicker 範例](views-images/TimePicker.png "TimePicker 範例")](views-images/TimePicker-Large.png#lightbox "TimePicker 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TimePickerDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TimePickerDemoPage.xaml) |
+| [`TimePicker`](xref:Xamarin.Forms.TimePicker) 可讓使用者與平台時間選擇器選取的時間。 [ `Time` ](xref:Xamarin.Forms.TimePicker.Time)屬性是在選取的時間。 應用程式可以監視中的變更`Time`屬性所安裝的處理常式[ `PropertyChanged` ](xref:Xamarin.Forms.BindableObject.PropertyChanged)事件。<br /><br />[API 文件](xref:Xamarin.Forms.TimePicker) / [指南](~/xamarin-forms/user-interface/timepicker.md) / [範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TimePicker) | [![TimePicker 範例](views-images/TimePicker.png "TimePicker 範例")](views-images/TimePicker-Large.png#lightbox "TimePicker 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TimePickerDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TimePickerDemoPage.xaml) |
 |     |     |
 
 ## <a name="views-for-editing-text"></a>編輯文字的檢視

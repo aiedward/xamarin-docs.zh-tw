@@ -1,33 +1,33 @@
 ---
-title: Xamarin.iOS 中的訊息應用程式整合
-description: 這些發行項會告訴您如何包含訊息應用程式擴充功能之 Xamarin.iOS 方案中的訊息應用程式，以向使用者顯示的新功能與整合。
+title: 在 Xamarin.iOS 中的訊息應用程式整合
+description: 這些文章會告訴您如何包含訊息 」 應用程式呈現給使用者的新功能與整合的 Xamarin.iOS 方案中的訊息應用程式擴充功能。
 ms.prod: xamarin
 ms.assetid: 00AF2D4C-9BA8-4265-A11F-989C93BDF723
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 08/29/2016
-ms.openlocfilehash: 91c0f8c536a672fb9ae2276aaa8f5ec4953ddf00
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8343c186082303988154fd3e6ee9781c93f5d601
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787675"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113543"
 ---
-# <a name="message-app-integration-in-xamarinios"></a>Xamarin.iOS 中的訊息應用程式整合
+# <a name="message-app-integration-in-xamarinios"></a>在 Xamarin.iOS 中的訊息應用程式整合
 
-_這些發行項會告訴您如何包含訊息應用程式擴充功能之 Xamarin.iOS 方案中的訊息應用程式，以向使用者顯示的新功能與整合。_
+_這些文章會告訴您如何包含訊息 」 應用程式呈現給使用者的新功能與整合的 Xamarin.iOS 方案中的訊息應用程式擴充功能。_
 
-新訊息應用程式擴充功能整合到 iOS 10、**訊息**應用程式並呈現給使用者的新功能。 擴充功能可以傳送文字、 貼紙、 媒體檔案和互動式的訊息。
+新增至 iOS 10，訊息應用程式擴充功能則是與整合**訊息**給使用者的應用程式並為您介紹新功能。 延伸模組可以傳送文字、 貼紙、 媒體檔案和互動式訊息。
 
     
 ## <a name="message-app-extension-basicsiosplatformmessage-app-integrationintro-to-message-app-extensionsmd"></a>[訊息應用程式延伸模組基本概念](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md)
 
-這篇文章顯示如何包含訊息的應用程式擴充功能與整合的 Xamarin.iOS 方案**訊息**應用程式並呈現給使用者的新功能。
+這篇文章示範如何包含訊息的應用程式擴充功能在 Xamarin.iOS 解決方案，整合了**訊息**給使用者的應用程式並為您介紹新功能。
 
 ## <a name="advanced-message-app-extensionsiosplatformmessage-app-integrationintro-to-message-app-extensionsmd"></a>[進階的訊息應用程式延伸模組](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md)
 
-本文將說明在整合與 Xamarin.iOS 方案中使用的訊息應用程式擴充功能的進階的技術**訊息**應用程式並呈現給使用者的新功能。
+本文說明在整合了 Xamarin.iOS 解決方案中使用的訊息應用程式擴充功能的進階的技巧**訊息**給使用者的應用程式並為您介紹新功能。
 
 
 ## <a name="related-links"></a>相關連結

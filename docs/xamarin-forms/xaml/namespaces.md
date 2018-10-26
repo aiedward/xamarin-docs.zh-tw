@@ -6,13 +6,13 @@ ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 06/18/2018
-ms.openlocfilehash: 30cbb2c3aebdafe2ebf35598c520ae725e01ce65
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 08/21/2018
+ms.openlocfilehash: a83e31cd117689e3af2f5357331408de55edaecf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995140"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102746"
 ---
 # <a name="xaml-namespaces-in-xamarinforms"></a>在 Xamarin.Forms 中的 XAML 命名空間
 
@@ -42,13 +42,14 @@ XAML 會使用前置詞來宣告非預設的命名空間，以參考在命名空
 |--- |--- |
 |`x:Arguments`|指定非預設建構函式或 factory 方法物件宣告的建構函式引數。|
 |`x:Class`|指定在 XAML 中定義的類別的命名空間和類別名稱。 類別名稱必須符合類別名稱的程式碼後置檔案。 請注意，此建構只會出現在 XAML 檔案的根項目。|
+|`x:DataType`|指定之物件的 XAML 項目和它的子系，將繫結至型別。|
 |`x:FactoryMethod`|指定可用來初始化物件的 factory 方法。|
 |`x:FieldModifier`|指定 產生具名 XAML 項目欄位的存取層級。|
 |`x:Key`|指定的唯一使用者定義索引鍵中每個資源`ResourceDictionary`。 索引鍵的值用來擷取 XAML 資源，和通常做為引數`StaticResource`標記延伸。|
 |`x:Name`|指定的 XAML 項目執行階段物件名稱。 設定`x:Name`類似於宣告中的程式碼的變數。|
 |`x:TypeArguments`|指定泛型型別的建構函式的泛型型別引數。|
 
-如需詳細資訊`x:FieldModifier`屬性，請參閱[欄位修飾詞](~/xamarin-forms/xaml/field-modifiers.md)。 如需詳細資訊`x:Arguments`， `x:FactoryMethod`，並`x:TypeArguments`屬性，請參閱[在 XAML 中傳遞的引數](~/xamarin-forms/xaml/passing-arguments.md)。
+如需詳細資訊`x:DataType`屬性，請參閱[編譯的繫結](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)。 如需詳細資訊`x:FieldModifier`屬性，請參閱[欄位修飾詞](~/xamarin-forms/xaml/field-modifiers.md)。 如需詳細資訊`x:Arguments`， `x:FactoryMethod`，並`x:TypeArguments`屬性，請參閱[在 XAML 中傳遞的引數](~/xamarin-forms/xaml/passing-arguments.md)。
 
 在 XAML 中，命名空間宣告繼承自父項目子系項目中。 因此，當定義命名空間中的 XAML 檔案的根項目，該檔案中的所有項目會繼承命名空間宣告。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/30/2018
-ms.openlocfilehash: 71e1655b6bc05c621ee97fcf826ce8b468f0dd48
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 4f80682c5d8c4f5231fbdd2e081fdcf7962aa969
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351492"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103721"
 ---
 # <a name="listview-data-sources"></a>ListView 的資料來源
 
@@ -89,7 +89,7 @@ employeeList.Add(new Employee(){ DisplayName="Mr. Mono"});
 如需有關資料繫結的詳細資訊，請參閱 <<c0> [ 資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)這是部分的四[Xamarin.Forms XAML 基本知識文章系列](~/xamarin-forms/xaml/xaml-basics/index.md)。
 
 ### <a name="binding-cells"></a>儲存格繫結
-資料格 （和資料格的子系） 的屬性可以繫結中物件的屬性至`ItemsSource`。 比方說，ListView 可用來呈現的映像的員工清單。
+資料格 （和資料格的子系） 的屬性可以繫結中物件的屬性至`ItemsSource`。 比方說，ListView 可用來呈現的員工清單。
 
 「 員工 」 類別：
 
@@ -149,7 +149,7 @@ Title="Employee List">
 
 XAML 的上一個位元會定義`ContentPage`，其中包含`ListView`。 資料來源`ListView`透過設定`ItemsSource`屬性。 每個資料列的版面配置`ItemsSource`內定義`ListView.ItemTemplate`項目。
 
-結果如下：
+以下是結果：
 
 ![](data-and-databinding-images/bound-data.png "使用資料繫結的 ListView")
 

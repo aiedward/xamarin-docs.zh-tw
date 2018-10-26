@@ -4,15 +4,15 @@ description: 本文件說明如何讀取 OBJECTIVE-C 選取器以及如何在 Xa
 ms.prod: xamarin
 ms.assetid: 9F7451FA-E07E-4C7B-B5CF-27AFC157ECDA
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/02/2017
-ms.openlocfilehash: 6dfaa3c7bf988228bfbacefe7c8e7268edc8117a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 209ce2b5fb2fbb357f23e6ccc9bb849fbfedc81d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994308"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115649"
 ---
 # <a name="macos-apis-for-xamarinmac-developers"></a>macOS Xamarin.Mac 開發人員的 Api
 

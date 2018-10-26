@@ -4,15 +4,15 @@ description: 本文討論如何在 Xamarin.iOS 中使用的進度和活動的指
 ms.prod: xamarin
 ms.assetid: 7AA887E4-51F7-4867-82C5-A8D2EA48AE07
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: 24ad47bd37693eccf38033159acef72a9d4942be
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: cb56af300444020a543c16afb0dfb48015fc2153
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242175"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102590"
 ---
 # <a name="progress-and-activity-indicators-in-xamarinios"></a>進度和活動在 Xamarin.iOS 中的指標
 

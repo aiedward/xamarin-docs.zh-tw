@@ -1,33 +1,33 @@
 ---
 title: Xamarin 活頁簿中的表示法
-description: 本文件說明 Xamarin 活頁簿表示管線，可讓豐富結果傳回值的任何程式碼的轉譯。
+description: 本文件說明 Xamarin Workbooks 表示管線中，可讓任何傳回值的程式碼的豐富結果的呈現。
 ms.prod: xamarin
 ms.assetid: 5C7A60E3-1427-47C9-A022-720F25ECB031
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: d4d8fa164b9f52e2c5331aa2c08fdddf232572d4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: d9aafbe13e06875b6577a4d2308e419932fd1589
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34794159"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103708"
 ---
 # <a name="representations-in-xamarin-workbooks"></a>Xamarin 活頁簿中的表示法
 
 ## <a name="representations"></a>表示法
 
-在活頁簿或偵測器工作階段中執行，而且產生的結果 （例如方法傳回的值或運算式的結果） 的程式碼是透過管線來處理表示代理程式中。 除了基本型別，例如整數、 以外的所有物件會反映以產生圖形互動的成員，並且會透過提供用戶端可能會造成更豐富的替代表示程序。 （包括循環和無限的可列舉值） 安全地支援的任何大小和深度物件因延遲和互動式反映和遠端執行功能。
+活頁簿或偵測器工作階段中，程式碼執行時，所產生的結果 （例如方法傳回值或運算式的結果） 會透過管線來處理表示在代理程式。 基本型別，例如整數、 除外的所有物件會反映產生互動式成員圖形，並且會瀏覽處理序能夠提供替代用戶端可以呈現更豐富的表示法。 （包括週期和無限的可列舉值） 因延遲和互動式的反映和遠端處理而安全地支援任何大小和深度的物件。
 
-Xamarin 活頁簿會提供所有代理程式和用戶端，它提供豐富的轉譯結果的一些常見的類型。 [`Color`][xir-color] 是一種這類類型，例如在 iOS 上，代理程式負責將`CGColor`或`UIColor`物件至`Xamarin.Interactive.Representations.Color`物件。
+Xamarin 活頁簿會提供所有代理程式和用戶端以進行豐富的轉譯結果的幾個常見的類型。 [`Color`][xir-color] 是這種類型的其中一個範例，例如在 iOS 上，則代理程式便會負責將轉換`CGColor`或是`UIColor`物件到`Xamarin.Interactive.Representations.Color`物件。
 
-共通的表示，除了整合 SDK 會提供應用程式開發介面來序列化自訂的表示法，在代理程式和轉譯的用戶端中的表示法。
+除了常見的表示法，整合 SDK 會提供 Api，用來序列化自訂的表示法，在代理程式和轉譯的用戶端中的表示法。
 
-## <a name="external-representations"></a>外部表示
+## <a name="external-representations"></a>外部的表示法
 
-[`Xamarin.Interactive.IAgent.RepresentationManager`][repman] 可讓您註冊[ `RepresentationProvider` ] [ repp]，其整合必須實作以將任意的物件轉換為無從驗證的形式來呈現。 必須實作這些無從驗證的表單[ `ISerializableObject` ] [ serobj]介面。
+[`Xamarin.Interactive.IAgent.RepresentationManager`][repman] 讓您能夠註冊[ `RepresentationProvider` ] [ repp]，整合必須實作從任意的物件轉換為無從驗證的表單來呈現。 必須實作這些無從驗證的 forms [ `ISerializableObject` ] [ serobj]介面。
 
-實作`ISerializableObject`介面加入序列化方法，以精確控制如何序列化物件。 `Serialize`方法必須要有哪些屬性要序列化，以及最終的名稱將會為開發人員將完全指定。 查看`Person`物件存放至我們 [`KitchenSink`範例] [範例]，我們可以看到此運作方式：
+實作`ISerializableObject`介面將精確地控制如何序列化物件的序列化方法。 `Serialize`方法預期開發人員會完全指定哪一個屬性，則為序列化，和最後一個名稱會是。 看看`Person`物件中我們 [`KitchenSink`範例] [範例]，我們可以查看其運作方式：
 
 ```csharp
 public sealed class Person : ISerializableObject
@@ -41,7 +41,7 @@ public sealed class Person : ISerializableObject
 }
 ```
 
-如果我們想要提供超集或從原始物件的屬性子集，我們可以透過達成`Serialize`。 例如，我們可能會執行類似下面的提供預先計算`Age`屬性`Person`:
+如果我們想要提供的超集或從原始物件的屬性子集，我們可以透過達成`Serialize`。 比方說，我們可能會執行類似下面的提供預先計算`Age`屬性上的`Person`:
 
 ```csharp
 public sealed class Person : ISerializableObject
@@ -65,15 +65,15 @@ public sealed class Person : ISerializableObject
 ```
 
 > [!NOTE]
-> 產生的 Api`ISerializableObject`物件直接不需要由`RepresentationProvider`。 如果您想要顯示的物件**不** `ISerializableObject`，您會想要處理包裝在您`RepresentationProvider`。
+> 產生的 Api`ISerializableObject`物件直接不需要由`RepresentationProvider`。 您想要顯示的物件是否**未** `ISerializableObject`，您會想要處理包裝在您`RepresentationProvider`。
 
 ### <a name="rendering-a-representation"></a>轉譯表示法
 
-轉譯器會實作在 JavaScript 中，而且可以透過下列方式表示物件的 JavaScript 版本存取`ISerializableObject`。 也會有 JavaScript 複製`$type`字串表示.NET 型別名稱的屬性。
+轉譯器會在 JavaScript 中實作，而可存取的物件，表示透過 JavaScript 版本`ISerializableObject`。 也會有 JavaScript 複製`$type`字串表示的.NET 型別名稱的屬性。
 
-我們建議使用適用於用戶端整合程式碼，當然會編譯成 JavaScript 的香草 TypeScript。 無論如何，SDK 會提供[類型][ typings]其可以直接參考 TypeScript 或只參考以手動方式如果撰寫香草最好使用 JavaScript。
+我們建議針對用戶端整合程式碼，當然會編譯成標準 JavaScript 般地使用 TypeScript。 無論如何，SDK 會提供[typings] [ typings]可以直接由 TypeScript 參考或直接參考手動如果撰寫香草，最好使用 JavaScript。
 
-轉譯的主要整合點是`xamarin.interactive.RendererRegistry`:
+轉譯的主要的整合點是`xamarin.interactive.RendererRegistry`:
 
 ```js
 xamarin.interactive.RendererRegistry.registerRenderer(
@@ -85,7 +85,7 @@ xamarin.interactive.RendererRegistry.registerRenderer(
 );
 ```
 
-在這裡，`PersonRenderer`實作`Renderer`介面。 請參閱[類型][ typings]如需詳細資訊。
+在這裡，`PersonRenderer`實作`Renderer`介面。 請參閱[typings] [ typings]如需詳細資訊。
 
 [typings]: https://github.com/xamarin/Workbooks/blob/master/SDK/typings/xamarin-interactive.d.ts
 [xir-color]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.Color/

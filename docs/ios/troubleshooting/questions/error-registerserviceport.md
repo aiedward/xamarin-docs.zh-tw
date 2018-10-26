@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 929A0080-B126-4744-BF88-A4A1EFBB6CC2
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 04/03/2018
-ms.openlocfilehash: 9edcc822b170c3463908b9f5fb1db8b798346e3e
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: fc4c143d6b5f7c211d24e6e3ed2ed3bb8d264410
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350702"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104723"
 ---
 # <a name="ios-designer-error-with-registerserviceport"></a>iOS 設計工具錯誤，含 RegisterServicePort
 
