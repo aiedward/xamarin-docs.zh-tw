@@ -4,15 +4,15 @@ description: 如何開始使用 Xamarin.Android 開發 Android Nougat 應用程�
 ms.prod: xamarin
 ms.assetid: 5C74ABE2-C862-4ED0-8EA5-C7FEE5251D4B
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: 2e15de944f05fede802dbf52987d80a46fb890ef
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: bf2842679aded21c9677d9cef31910f273518acd
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242149"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119172"
 ---
 # <a name="nougat-features"></a>Nougat 功能
 
@@ -150,7 +150,7 @@ Android Nougat 導入了各種新功能和功能，例如支援多重視窗、 �
 
 [![在直向和橫向的多視窗模式中執行的範例應用程式](nougat-images/multi-window-mode.png)](nougat-images/multi-window-mode.png#lightbox)
 
-您可以設定活動的 Xamarin.Android 應用程式如何支援多視窗模式。 例如，您可以設定多視窗模式中設定的最小的預設高度和寬度，您的應用程式的屬性。 您可以使用新`Activity.IsInMultiWindowMode`來判斷您的活動是否多視窗模式中的屬性。 例如:
+您可以設定活動的 Xamarin.Android 應用程式如何支援多視窗模式。 例如，您可以設定多視窗模式中設定的最小的預設高度和寬度，您的應用程式的屬性。 您可以使用新`Activity.IsInMultiWindowMode`來判斷您的活動是否多視窗模式中的屬性。 例如: 
 
 ```csharp
 if (!IsInMultiWindowMode) {

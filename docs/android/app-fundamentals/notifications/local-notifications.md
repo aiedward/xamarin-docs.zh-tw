@@ -4,15 +4,15 @@ description: 本節說明如何在 Xamarin.Android 中實作本機通知。 它�
 ms.prod: xamarin
 ms.assetid: 03E19D14-7C81-4D5C-88FC-C3A3A927DB46
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 221fa9b70eeba2c4ca08433c627e5648470a7fac
-ms.sourcegitcommit: 7ffbecf4a44c204a3fce2a7fb6a3f815ac6ffa21
+ms.openlocfilehash: a4ffae0bde39450778b340b4a4c4da8fe90d0bec
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "39514527"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117677"
 ---
 <a name="compatibility"></a>
 
@@ -26,7 +26,7 @@ Android 提供兩個系統控制區域向使用者顯示通知圖示和通知資
 
 ![在裝置上的範例通知區域](local-notifications-images/01-notification-shade.png)
 
-若要取得有關該通知的詳細資料，使用者可以開啟通知抽屜 （這會展開以顯示通知內容的每個通知圖示），並執行與通知相關聯的任何動作。 下列螢幕擷取畫面顯示*通知抽屜*，其對應於通知區域上方顯示：
+若要取得有關該通知的詳細資料，使用者可以開啟通知抽屜 （這會展開以顯示通知內容的每個通知圖示），並執行與通知相關聯的任何動作。 下列螢幕擷取畫面示*通知抽屜*，其對應於通知區域上方顯示：
 
 [![顯示三個通知的範例通知抽屜](local-notifications-images/02-notification-drawer-sml.png)](local-notifications-images/02-notification-drawer.png#lightbox)
 
@@ -68,7 +68,7 @@ Android 的所有通知都建置在基底的配置格式，其中至少包含下
 
 [![範例鎖定畫面通知](local-notifications-images/05-lockscreen-notification-sml.png)](local-notifications-images/05-lockscreen-notification.png#lightbox)
 
-使用者可以點選兩下解除鎖定裝置，並跳至產生該通知，應用程式的鎖定畫面通知或撥動以關閉通知。 應用程式可以設定來控制的鎖定畫面上顯示的內容通知的可視性層級，使用者可以選擇是否允許要在鎖定畫面通知中顯示的敏感性內容。
+使用者可以點選鎖定螢幕通知，以解除鎖定裝置，並跳至產生該通知，應用程式或撥動以關閉通知。 應用程式可以設定來控制鎖定畫面上顯示的內容通知的可視性層級，使用者可以選擇是否允許要在鎖定螢幕通知中顯示的敏感性內容。
 
 Android 5.0 引進稱為 「 高優先順序通知的呈現格式*抬頭*。 抬頭通知向下滑動從畫面頂端幾秒鐘的時間，然後撤退往 [通知] 區域：
 
@@ -76,7 +76,7 @@ Android 5.0 引進稱為 「 高優先順序通知的呈現格式*抬頭*。 抬
 
 抬頭通知可讓系統 UI 放入在使用者之前的重要資訊，而不會中斷目前執行活動的狀態。
 
-Android 支援通知的中繼資料，讓通知可以排序，並以智慧方式顯示。 通知中繼資料也會控制在鎖定畫面上和抬頭格式通知的呈現方式。 應用程式可以設定下列類型的通知中繼資料：
+Android 支援通知的中繼資料，讓通知可以排序，並以智慧方式顯示。 通知中繼資料也會控制在鎖定畫面上，抬頭格式通知的呈現方式。 應用程式可以設定下列類型的通知中繼資料：
 
 -   **優先權**&ndash;優先順序層級可讓您決定如何及何時會顯示通知。 例如，在 Android 5.0，高優先順序通知會顯示為抬頭通知。
 
@@ -657,14 +657,14 @@ builder.SetPriority (NotificationPriority.High);
 
 ### <a name="visibility-settings"></a>可見性設定
 
-從 Android 5.0*可視性*設定是可用來控制多少通知內容出現在安全的鎖定畫面上。
+從 Android 5.0*可視性*設定是可用來控制多少通知內容會出現在安全的鎖定畫面上。
 Xamarin.Android 會定義下列列舉來設定通知可見性：
 
 -   `NotificationVisibility.Public` &ndash; 在安全的鎖定畫面上顯示通知的完整內容。
 
--   `NotificationVisibility.Private` &ndash; 只有必要的資訊會顯示在安全的鎖定畫面 （例如 [通知] 圖示和張貼其應用程式名稱），但通知的詳細資料的其餘部分會隱藏。 所有通知都預設為`NotificationVisibility.Private`。
+-   `NotificationVisibility.Private` &ndash; 只有重要的資訊會顯示在安全的鎖定畫面 （例如 [通知] 圖示和張貼其應用程式名稱），但通知的詳細資料的其餘部分會隱藏。 所有通知都預設為`NotificationVisibility.Private`。
 
--   `NotificationVisibility.Secret` &ndash; 不會顯示在安全的鎖定畫面，甚至不通知圖示。 使用者解除鎖定裝置時，才使用通知內容。
+-   `NotificationVisibility.Secret` &ndash; 不會顯示在安全的鎖定畫面上，甚至不通知圖示。 使用者解除鎖定裝置時，才使用通知內容。
 
 若要設定通知，應用程式呼叫的可視性`SetVisibility`方法的`NotificationCompat.Builder`物件以傳遞的可見性設定。 例如，此呼叫`SetVisibility`可讓通知`Private`:
 
@@ -672,11 +672,11 @@ Xamarin.Android 會定義下列列舉來設定通知可見性：
 builder.SetVisibility (NotificationVisibility.Private);
 ```
 
-當`Private`通知公佈時，只有名稱和應用程式的圖示會顯示安全的鎖定畫面上。 而非通知訊息，使用者會看到 「 解除鎖定您的裝置若要查看此通知 」:
+當`Private`通知張貼時，只有名稱和應用程式的圖示會顯示在安全的鎖定畫面上。 而非通知訊息，使用者會看到 「 解除鎖定您的裝置若要查看此通知 」:
 
 ![解除鎖定您裝置的通知訊息](local-notifications-images/25-lockscreen-private.png)
 
-在此範例中， **NotificationsLab**是原始的應用程式的名稱。 此修訂的版本的通知會出現鎖定畫面時才安全 （亦即，透過 PIN、 圖樣或密碼保護）&ndash;鎖定畫面並不安全，通知的完整內容是否可在鎖定畫面上取得。
+在此範例中， **NotificationsLab**是原始的應用程式的名稱。 此修訂的版本的通知會出現在鎖定畫面時才安全 （亦即，透過 PIN、 圖樣或密碼保護）&ndash;鎖定畫面並不安全，通知的完整內容是否可在鎖定畫面上。
 
 
 ### <a name="category-settings"></a>類別目錄設定
@@ -755,9 +755,9 @@ if ((int) Android.OS.Build.Version.SdkInt >= BuildVersionCodes.Lollipop) {
 在此範例中，應用程式的**目標 Framework**設為 Android 5.0 和**最低 Android 版本**設定為**Android 4.1 (API 層級 16)**。 因為`SetCategory`是可在 API 層級 21 及更新版本中，此程式碼範例會呼叫`SetCategory`它時才可用&ndash;它將不會呼叫`SetCategory`API 層級時小於 21。
 
 
-### <a name="lockscreen-visibility"></a>鎖定畫面的可見性
+### <a name="lock-screen-visibility"></a>鎖定螢幕的可見性
 
-因為 Android 不支援 Android 5.0 (API level 21) 之前的鎖定畫面通知`NotificationCompat.Builder`不支援`SetVisibility`方法。 如前文所述的`SetCategory`，您的程式碼可以檢查在執行階段和呼叫的 API 層級`SetVisiblity`它時才可用：
+因為 Android 不支援鎖定螢幕通知，Android 5.0 (API level 21)，再`NotificationCompat.Builder`不支援`SetVisibility`方法。 如前文所述的`SetCategory`，您的程式碼可以檢查在執行階段和呼叫的 API 層級`SetVisiblity`它時才可用：
 
 ```csharp
 if ((int) Android.OS.Build.Version.SdkInt >= 21) {
@@ -768,7 +768,7 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 
 ## <a name="summary"></a>總結
 
-這篇文章說明如何在 Android 中建立本機通知。 它說明通知的結構，它說明如何使用`NotificationCompat.Builder`若要建立通知，如何在大型圖示，樣式通知*大型文字*，*映像*和*收件匣*格式、 如何設定通知的中繼資料的設定，例如優先順序、 可見性和類別目錄和如何啟動通知的活動。 本文也說明了這些通知設定如何使用新的抬頭，鎖定畫面，並 *「 請勿打擾 」* Android 5.0 中引進的功能。 最後，您已了解如何使用`NotificationCompat.Builder`為了維持與舊版 Android 通知相容性。
+這篇文章說明如何在 Android 中建立本機通知。 它說明通知的結構，它說明如何使用`NotificationCompat.Builder`若要建立通知，如何在大型圖示，樣式通知*大型文字*，*映像*和*收件匣*格式、 如何設定通知的中繼資料的設定，例如優先順序、 可見性和類別目錄和如何啟動通知的活動。 這篇文章也會說明如何使用新的抬頭，鎖定畫面上，這些通知設定並 *「 請勿打擾 」* Android 5.0 中引進的功能。 最後，您已了解如何使用`NotificationCompat.Builder`為了維持與舊版 Android 通知相容性。
 
 如需有關設計適用於 Android 的通知的指導方針，請參閱[通知](http://developer.android.com/guide/topics/ui/notifiers/notifications.html)。
 

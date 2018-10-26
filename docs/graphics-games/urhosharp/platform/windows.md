@@ -1,37 +1,37 @@
 ---
 title: UrhoSharp Windows 支援
-description: 本文件討論 UrhoSharp Windows 支援。 說明如何建立專案、 設定和啟動 Urho、 WPF 中，與整合和 UWP 與整合。
+description: 本文件討論 UrhoSharp 的 Windows 支援。 它會描述如何建立專案、 設定和啟動 Urho、 整合與 WPF 和 UWP 與整合。
 ms.prod: xamarin
 ms.assetid: A4F36014-AE4E-4F07-A1AC-F264AAA68ACF
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 094eaf0ebe84ce8c1771bd6481ee897463349856
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8aca028ec1015616a9884cd09b7ffa5e04f2e43d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783229"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119601"
 ---
 # <a name="urhosharp-windows-support"></a>UrhoSharp Windows 支援
 
-雖然 Urho 是可攜式類別程式庫，並可讓相同的 API，用於在各種平台間之遊戲的邏輯，您仍然需要初始化 Urho 驅動程式中的平台特定，並在某些情況下，您會想要利用平台特定的功能.
+雖然 Urho 是可攜式類別庫，並可讓相同的 API，來使用於各種平台的遊戲邏輯，您仍然需要初始化 Urho，在您的平台特定的驅動程式，以及在某些情況下，您會想要充分利用平台特定功能.
 
 在下列頁面中，假設`MyGame`是子類別的`Application`類別。
 
 **支援的架構：** 只有 64 位元 Windows。
 
-您可以看到完整的範例顯示如何使用這個在我們[範例](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples)
+您可以看到完整的範例示範如何使用這我們[範例](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples)
 
 ## <a name="standalone-project"></a>獨立專案
 
 ### <a name="creating-a-project"></a>建立專案
 
-建立主控台專案參考 Urho NuGet，請確定您可以找到資產 （包含的資料目錄的目錄）。
+建立主控台專案參考 Urho NuGet，請確定您可以找出資產 （包含的資料目錄的目錄）。
 
-### <a name="configuring-and-launching-urho"></a>設定並啟動 Urho
+### <a name="configuring-and-launching-urho"></a>設定和啟動 Urho
 
-若要啟動您的應用程式，請執行下列動作：
+若啟動您的應用程式，請執行下列動作：
 
 ```csharp
 DesktopUrhoInitializer.AssetsDirectory = "../Assets";
@@ -40,15 +40,15 @@ new MyGame().Run();
 
 ### <a name="example"></a>範例
 
-[完整範例](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/Desktop)
+[完整的範例](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/Desktop)
 
-## <a name="integrated-with-wpf"></a>使用 WPF 整合
+## <a name="integrated-with-wpf"></a>WPF 與整合
 
 ### <a name="creating-a-project"></a>建立專案
 
-建立 WPF 專案參考 Urho NuGet，請確定您可以找到資產 （包含的資料目錄的目錄）。
+建立 WPF 專案參考 Urho NuGet，請確定您可以找出資產 （包含的資料目錄的目錄）。
 
-### <a name="configuring-and-launching-urho-from-wpf"></a>設定並啟動 Urho 從 WPF
+### <a name="configuring-and-launching-urho-from-wpf"></a>設定和啟動 Urho 從 WPF
 
 建立的子類別`Window`並設定您的資產，像這樣：
 
@@ -84,15 +84,15 @@ new MyGame().Run();
 
 ### <a name="example"></a>範例
 
-[完整範例](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/WPF)
+[完整的範例](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/WPF)
 
 ## <a name="integrated-with-uwp"></a>UWP 與整合
 
 ### <a name="creating-a-project"></a>建立專案
 
-建立 UWP 專案參考 Urho NuGet，請確定您可以找到資產 （包含的資料目錄的目錄）。
+建立 UWP 專案參考 Urho NuGet，請確定您可以找出資產 （包含的資料目錄的目錄）。
 
-### <a name="configuring-and-launching-urho-from-uwp"></a>設定並啟動 Urho 從 UWP
+### <a name="configuring-and-launching-urho-from-uwp"></a>設定和啟動 Urho 從 UWP
 
 建立的子類別`Window`並設定您的資產，像這樣：
 
@@ -117,14 +117,14 @@ new MyGame().Run();
 
 ### <a name="example"></a>範例
 
-[完整範例](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/UWP)
+[完整的範例](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/UWP)
 
 ## <a name="integrated-with-windowsforms"></a>Windows.Forms 與整合
 
 ### <a name="creating-a-project"></a>建立專案
 
-建立 Windows.Forms 專案參考 Urho NuGet，請確定您可以找到資產 （包含的資料目錄的目錄）。
+建立 Windows.Forms 專案參考 Urho NuGet，請確定您可以找出資產 （包含的資料目錄的目錄）。
 
-### <a name="configuring-and-launching-urho-from-windowsforms"></a>設定並啟動從 Windows.Forms Urho
+### <a name="configuring-and-launching-urho-from-windowsforms"></a>設定和啟動從 Windows.Forms Urho
 
 啟動 Urho 從您的表單，請參閱[完整的範例](https://github.com/xamarin/urho-samples/blob/master/FeatureSamples/WinForms/SamplesForm.cs)

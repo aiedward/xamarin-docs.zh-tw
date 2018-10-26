@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: d74ad52a2926fb30a528aeba29156259390c3edf
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: f787adcba78a13f6d4cad3fb446350a65e960aca
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947240"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123605"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms 對應
 
@@ -180,7 +180,7 @@ map.MapType == MapType.Street;
 
 ### <a name="map-region-and-mapspan"></a>對應區域和 MapSpan
 
-上述程式碼片段所示，提供`MapSpan`map 建構函式的執行個體設定的初始檢視 （中心點和縮放層級） 時就會載入對應。 `MoveToRegion` Map 類別上的方法則可用來變更對應的位置或縮放層級。 有兩種方式來建立新的`MapSpan`執行個體：
+上述程式碼片段所示，提供`MapSpan`map 建構函式的執行個體設定的初始檢視 （中心點和縮放層級） 時就會載入對應。 `MoveToRegion` Map 類別上的方法可以再用來變更對應的位置或縮放層級。 有兩種方式來建立新的`MapSpan`執行個體：
 
 -  **MapSpan.FromCenterAndRadius()** -靜態方法，以建立來自`Position`並指定`Distance`。
 -  **新的 MapSpan （)** -使用的建構函式`Position`和緯度和經度來顯示度。

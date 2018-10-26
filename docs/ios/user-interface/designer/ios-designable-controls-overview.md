@@ -4,15 +4,15 @@ description: 適用於 iOS 的 Xamarin 設計工具支援在專案中建立，�
 ms.prod: xamarin
 ms.assetid: D8F07D63-B006-4050-9D1B-AC6FCDA71B99
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 05b190f4bfd4058e9e2f6e465e6026fa76dce6f4
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 00bf7290d5f7165feb5b67cd91c15a96b7d3eaf8
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995693"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118366"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>IOS 的 Xamarin 設計工具中的自訂控制項
 

@@ -3,15 +3,15 @@ title: 使用原生程式庫
 ms.prod: xamarin
 ms.assetid: 7AA6CEC8-C09E-BBDA-FDD6-E40559143548
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 9175996f516a980d915d1501b4b18ea23ec86cef
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
+ms.openlocfilehash: 0df39dc51cf17e1b9ecfd2279d047020f0237cb6
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353576"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123087"
 ---
 # <a name="using-native-libraries"></a>使用原生程式庫
 
