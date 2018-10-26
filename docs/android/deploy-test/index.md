@@ -4,15 +4,15 @@ description: 本節所包含的指南說明如何測試應用程式、將其效�
 ms.prod: xamarin
 ms.assetid: 568C0B85-EFF3-AF6F-5605-95055193D367
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: ce86590b2d05f3b9141d1a5ba42df9274544f9ae
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: 4c9ab8c14db131427329cef51e7b74e982a1c7b8
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34549232"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103682"
 ---
 # <a name="deployment-and-testing"></a>部署及測試
 

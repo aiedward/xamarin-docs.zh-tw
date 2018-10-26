@@ -4,15 +4,15 @@ description: 本文件提供臨機操作散發技術的概觀，此技術主要�
 ms.prod: xamarin
 ms.assetid: 3B621CAD-103C-478A-97C3-829015F48D1A
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 0907c3bcca9e0955e5ad9f8ed48adac03202cbaa
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 5950143532b2d1d026f73bb254507d7d3022cbf1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784799"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112295"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Xamarin.iOS 應用程式的臨機操作散發
 
@@ -111,11 +111,11 @@ Xamarin.iOS 應用程式可透過「臨機操作」散發進行使用者測試�
 
 7. 按一下 [產生] 按鈕，以建立新的設定檔，並完成流程。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 您可能需要結束 Visual Studio for Mac 並讓 Xcode 重新整理其可用「簽署身分識別」和「佈建設定檔」的清單 (遵循[在 Xcode 中下載設定檔和憑證](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)一節中的指示)，之後才能在 Visual Studio for Mac 中使用新的散發設定檔。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 您可能需要結束 Visual Studio 並讓 Xcode (在建置主機的 Mac 上) 重新整理其可用「簽署身分識別」和「佈建設定檔」的清單 (遵循[在 Xcode 中下載設定檔和憑證](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)一節中的指示)，之後才能在 Visual Studio 中使用新的散發設定檔。
 
@@ -127,7 +127,7 @@ Xamarin.iOS 應用程式可透過「臨機操作」散發進行使用者測試�
 
 當您準備好進行 Xamarin.iOS 應用程式的最終建置，請選取上面所建立的散發設定檔。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  請在 Visual Studio for Mac 中執行下列動作：
 
@@ -143,7 +143,7 @@ Xamarin.iOS 應用程式可透過「臨機操作」散發進行使用者測試�
     ![](ad-hoc-distribution-images/releasexs03.png "選取 [簽署識別] 和 [散發設定檔]")
 5. 按一下 [確定] 按鈕以儲存所做的變更。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
  請在 Visual Studio 中執行下列動作：
 
 1. 請以滑鼠右鍵按一下方案總管 中的專案名稱，並且選取 [屬性]，將其開啟進行編輯。

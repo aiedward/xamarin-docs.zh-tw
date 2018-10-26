@@ -4,15 +4,15 @@ description: 本文件描述適合 Objective-C 開發人員使用的 C#。 它�
 ms.prod: xamarin
 ms.assetid: 00285CBD-AE5E-4126-8F22-6B231B9467EA
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 7fbc37a561b0a1c0b0d5a16fea2892e7faf1a86b
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: bfb20e8eddb4969f3418d0a0dddfcd19f2eeba02
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351505"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117547"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>適用於 Objective-C 開發人員的 C# Primer
 

@@ -5,15 +5,15 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: D82EC193-2CB7-44C3-8688-0CEBDF60C3D6
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 12/02/2016
-ms.openlocfilehash: 7db11e9c824ac46d2c9c8fce87f16154e8007ab4
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: f6c544a9a4955ad24cc4ba1992aff4605f43af97
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242481"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111817"
 ---
 # <a name="hello-android-multiscreen"></a>Hello, Android 多重畫面
 

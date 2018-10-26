@@ -4,15 +4,15 @@ description: 本指南逐步引導您建立發行 Xamarin.Mac 應用程式所需
 ms.prod: xamarin
 ms.assetid: bdff6c32-f7e3-4a97-a093-dbda48be8227
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 04/12/2017
-ms.openlocfilehash: 9660d5373cc5213f648b145ef38ddbf25c7633ce
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 2b5c6ed77d7bf1c60b9424a138786dafb7a86706
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792147"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108414"
 ---
 # <a name="provisioning-profiles-for-xamarinmac-apps"></a>Xamarin.Mac 應用程式的佈建設定檔
 

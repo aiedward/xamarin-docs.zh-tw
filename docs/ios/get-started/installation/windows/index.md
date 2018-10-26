@@ -4,15 +4,15 @@ description: 本文件會描述如何設定 Windows 電腦、設定 Mac 組建�
 ms.prod: xamarin
 ms.assetid: abf85d3e-a365-44a2-b1a4-6c572c7f76dd
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 04/16/2018
-ms.openlocfilehash: 2bff37aba9b961b7308bf261377951dc96bd8e34
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 5e7b8a3fb703d8857312b15f4884399ee951b2d4
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786060"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118535"
 ---
 # <a name="installing-xamarinios-on-windows"></a>在 Windows 上安裝 Xamarin.iOS
 

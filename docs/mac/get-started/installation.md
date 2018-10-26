@@ -5,15 +5,15 @@ description: 本文件會連結到 Visual Studio for Mac 安裝指南，描述�
 ms.prod: xamarin
 ms.assetid: 68E2A17F-7C10-EF1C-8362-C60E7F2FD94D
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 04/12/2017
-ms.openlocfilehash: f1de3e903ee8a82c36770d0e447d81750b4d5b27
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: ecbe3bf5d0506e17e5b958a05adf150753d56aa8
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792176"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119042"
 ---
 # <a name="xamarinmac-installation"></a>Xamarin.Mac 安裝
 

@@ -9,10 +9,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/24/2018
 ms.openlocfilehash: eafdc103cfda2db94d46977df1323f88a822eb58
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "35242436"
 ---
 # <a name="get-started-with-xamarinforms"></a>開始使用 Xamarin.Forms

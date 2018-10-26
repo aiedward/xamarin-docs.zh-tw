@@ -3,15 +3,15 @@ title: 建置應用程式
 ms.prod: xamarin
 ms.assetid: F14D737A-8AAA-4416-ADA4-029D5A1B5076
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 10/13/2017
-ms.openlocfilehash: 6b82a3b06a4ef97a6f6e9aed2c02a4819a6dfc07
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 69c584d518b04b73776608ff86d50f29eb93d2b1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762567"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102603"
 ---
 # <a name="building-apps"></a>建置應用程式
 

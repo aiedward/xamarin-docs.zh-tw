@@ -4,15 +4,15 @@ description: 有許多技巧可增加利用 Xamarin.Android 建置之應用程�
 ms.prod: xamarin
 ms.assetid: dc2e27f2-7f71-4d57-9cf9-165528276613
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: a22190adc97cb80f5900dda4a073bdcdf80ef99b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: deabecc0dc96f8963122afebc0dc0ba256fd92e8
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30770351"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115558"
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android 效能
 

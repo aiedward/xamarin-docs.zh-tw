@@ -4,15 +4,15 @@ description: 本文件描述如何在 App Store 上發佈 Xamarin.iOS 應用程�
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: b763407797cf635908cf34cce4f1a6a06325000d
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: de3af76b8479562ba048c5b62167df0f2b2a51f9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209255"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115129"
 ---
 # <a name="app-store-distribution"></a>App Store 散發
 
@@ -121,11 +121,11 @@ ms.locfileid: "36209255"
 7. 按一下 [產生] 按鈕，以建立新的設定檔，並完成流程。
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  您可能需要結束 Visual Studio for Mac 並讓 Xcode 重新整理其可用「簽署身分識別」和「佈建設定檔」的清單 (遵循[要求簽署身分識別](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)一節中的指示)，之後才能在 Visual Studio for Mac 中使用新的散發設定檔。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  您可能需要結束 Visual Studio 並讓 Xcode (在組建 主機的 Mac 上) 重新整理其可用「簽署身分識別」和「佈建設定檔」的清單 (遵循[要求簽署身分識別](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)一節中的指示)，之後才能在 Visual Studio 中使用新的散發設定檔。
 
@@ -137,7 +137,7 @@ ms.locfileid: "36209255"
 
 當您準備好為將於 iTunes App Store 上銷售的 Xamarin.iOS 應用程式進行最終建置，請選取上面所建立的散發設定檔。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  請在 Visual Studio for Mac 中執行下列動作：
 
@@ -153,7 +153,7 @@ ms.locfileid: "36209255"
     ![](images/releasexs03.png "選取 [簽署識別] 和 [散發設定檔]")
 5. 按一下 [確定] 按鈕以儲存所做的變更。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  請在 Visual Studio 中執行下列動作：
 

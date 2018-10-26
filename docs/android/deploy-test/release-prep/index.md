@@ -3,15 +3,15 @@ title: 準備可供發行的應用程式
 ms.prod: xamarin
 ms.assetid: 9C8145B3-FCF1-4649-8C6A-49672DDA4159
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: 18c49afdd08921b81573da94c23e66f1dd48a25f
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: a8858839c51e519ac50dd59d223a6c15cee9e6bf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
-ms.locfileid: "32020422"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123449"
 ---
 # <a name="preparing-an-application-for-release"></a>準備可供發行的應用程式
 
@@ -42,13 +42,13 @@ ms.locfileid: "32020422"
 
 強烈建議每個 Xamarin.Android 應用程式都指定應用程式圖示。 某些應用程式市集要求一定要有圖示，才能發行 Android 應用程式。 `Application` 屬性的 `Icon` 屬性可用來指定 Xamarin.Android 專案的應用程式圖示。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 在 Visual Studio 2015 和更新版本中，透過專案 [屬性] 的 [Android 資訊清單] 區段來指定應用程式圖示，如下列螢幕擷取畫面所示：
 
 [![設定應用程式圖示](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 在 Visual Studio for Mac 中，也可以透過 [專案選項] 的 [Android 應用程式] 區段來指定應用程式圖示，如下列螢幕擷取畫面所示：
 
@@ -75,13 +75,13 @@ ms.locfileid: "32020422"
 
 -   **版本名稱** &ndash; 此字串只用來和使用者通訊有關應用程式版本的資訊 (安裝在特定裝置時)。 版本名稱主要是向使用者顯示或在 Google Play 中顯示。 Android 不會在內部使用此字串。 可幫助使用者識別其裝置上所安裝組建的任何字串值，都可以是版本名稱。 此值會在 **AndroidManifest.xml** 檔案中儲存為 `android:versionName`。 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 在 Visual Studio 中，可在專案 [屬性] 的 [Android 資訊清單] 區段中設定這些值，如下列螢幕擷取畫面所示：
 
 [![設定版本號碼](images/vs/02-versioning-sml.png)](images/vs/02-versioning.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 這些值可以透過 [專案選項] 的 [建置] > [Android 應用程式] 區段來設定，如下列螢幕擷取畫面所示：
 
@@ -104,7 +104,7 @@ ms.locfileid: "32020422"
 
 -   設定：僅限 SDK 組件 &ndash; Xamarin.Android 4.2.5 大小 = 3.0 MB。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 透過專案 [屬性] 的 [Android 選項] 區段來設定連結器選項：
 
@@ -119,7 +119,7 @@ ms.locfileid: "32020422"
 
 -   **SDK 與使用者組件** &ndash; 這會連結應用程式所需的所有組件，而不只是 Xamarin.Android 所需的組件。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 在 [專案選項] 的 [Android 組建] 區段中，透過 [連結器] 索引標籤來設定連結器選項 ，如下列螢幕擷取畫面所示：
 
@@ -146,11 +146,11 @@ ProGuard 並非要替代 Xamarin.Android 連結器。 Xamarin.Android 受控碼�
 
 已勾選 [啟用 ProGuard] 時，Xamarin.Android 會在產生的 APK 上執行 ProGuard 工具。 ProGuard 會在建置階段產生並使用 ProGuard 組態檔。 Xamarin.Android 也支援自訂 *ProguardConfiguration* 建置動作。 您可以將自訂 ProGuard 組態檔加入至專案，以滑鼠右鍵按一下，並選取做為建置動作，如此範例所示： 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![ProGuard 建置動作](images/vs/05-proguard-build-action-sml.png)](images/vs/05-proguard-build-action.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![ProGuard 建置動作](images/xs/05-proguard-build-action-sml.png)](images/xs/05-proguard-build-action.png#lightbox)
 
@@ -190,7 +190,7 @@ Android 資訊清單包含 `android:debuggable` 屬性，可控制是否能對�
 
 ### <a name="application-protection-with-dotfuscator"></a>使用 Dotfuscator 保護應用程式
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 即使[已停用偵錯](#Disable_Debugging)，攻擊者還是可以重新封裝應用程式、新增或移除組態選項或權限。 這可讓他們進行還原工程、偵錯，或竄改應用程式。
 [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) 可用來混淆受控碼，並在建置階段將執行階段安全性狀態偵測程式碼插入 Xamarin.Android 應用程式，以偵測應用程式是否正在 Root 破解的裝置上執行並回應。
@@ -200,7 +200,7 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 若要設定 Dotfuscator CE，請參閱[搭配 Xamarin 使用 Dotfuscator Community Edition](https://www.preemptive.com/obfuscating-xamarin-with-dotfuscator)。
 一旦設定之後，Dotfuscator CE 會自動保護建立的每個組建。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 即使[已停用偵錯](#Disable_Debugging)，攻擊者還是可以重新封裝應用程式、新增或移除組態選項或權限。 這可讓他們進行還原工程、偵錯，或竄改應用程式。
 雖然不支援 Visual Studio for Mac，但您可以使用 Visual Studio 所附的 [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) 來混淆受控碼，並在建置階段將執行階段安全性狀態偵測程式碼插入 Xamarin.Android 應用程式，以偵測應用程式是否正在 Root 破解的裝置上執行並回應。
@@ -241,13 +241,13 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 ## <a name="set-packaging-properties"></a>設定封裝屬性
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 封裝屬性可以在專案 [屬性] 的 [Android 選項] 區段中設定，如下列螢幕擷取畫面所示：
 
 [![封裝屬性](images/vs/04-packaging-sml.png)](images/vs/04-packaging.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 封裝屬性可以在 [專案選項] 中設定，如下列螢幕擷取畫面所示：
 
@@ -280,13 +280,13 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 ## <a name="compile"></a>編譯
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 上述所有步驟都完成後，應用程式已準備好進行編譯。 選取[建置] > [重建方案]，來確認可在發行模式中成功建置。 請注意，此步驟還不會產生 APK。
 
 [簽署應用程式套件](~/android/deploy-test/signing/index.md)會詳細討論封裝和簽署。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 完成所有上述步驟之後，請編譯應用程式 (選取 [建置] > [全部建置])，來確認可在發行模式中成功建置。 請注意，此步驟還不會產生 APK。
 
@@ -297,7 +297,7 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 ## <a name="archive-for-publishing"></a>封存以供發行
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 若要開始發行程序，請以滑鼠右鍵按一下 [方案總管] 中的專案，然後選取 [封存] 操作功能表項目：
 
@@ -356,7 +356,7 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 * **Google Play** &ndash; 可將簽署的 APK 發佈至 Google Play。 繼續前往[發佈至 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)，了解如何在 Google Play 商店中簽署和發佈 APK。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 若要開始發佈流程，請選取 [建置] > [封存以供發行]：
 

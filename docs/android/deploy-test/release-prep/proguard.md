@@ -4,15 +4,15 @@ description: Xamarin.Android ProGuard 是 Java 類別檔案壓縮工具、最佳
 ms.prod: xamarin
 ms.assetid: 29C0E850-3A49-4618-9078-D59BE0284D5A
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: efb9c73eb9bddb2b22b84fb6f3388281f32a82ab
-ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
+ms.openlocfilehash: 998232119159c5dc3a284dd51d55dc381271a4e0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36321372"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117391"
 ---
 # <a name="proguard"></a>ProGuard
 
@@ -323,11 +323,11 @@ C:\Program Files (x86)\Java\jdk1.8.0_92\\bin\java.exe -jar C:\Android\android-sd
 
 此問題通常是在 Windows 上發生，原因是 `.cfg` 檔案的編碼錯誤。 ProGuard 無法處理可能會以文字檔呈現的「位元組順序標記」(BOM)。 如果有 BOM 存在，ProGuard 會隨即結束並出現上述錯誤。 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 若要避免這個問題，請從儲存檔案時允許不含 BOM 的文字編輯器中編輯自訂組態檔。 若要解決此問題，請確定文字編輯器將其編碼設定為 `UTF-8`。 例如，在儲存檔案時，在文字編輯器 [Notepad++](https://notepad-plus-plus.org/) 選取 [編碼] &gt; [編譯成 UTF-8 碼〈檔首無 BOM〉]，即可儲存不含 BOM 的檔案。 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 若要避免這個問題，請從可讓您省略 BOM 的文字編輯器儲存自訂組態檔。 
 

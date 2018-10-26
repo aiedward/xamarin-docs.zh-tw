@@ -3,15 +3,15 @@ title: 手動簽署 APK
 ms.prod: xamarin
 ms.assetid: 08549E1C-7F04-4D20-9E7A-794B9D09FD12
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 9e1b168b7212f093b50a36c40550fba2e7d63e77
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e9340aaae56da9314c20658b2b05570505fbd742
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30767231"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111404"
 ---
 # <a name="manually-signing-the-apk"></a>手動簽署 APK
 

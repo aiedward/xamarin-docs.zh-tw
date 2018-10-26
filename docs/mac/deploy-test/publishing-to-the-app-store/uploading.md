@@ -4,15 +4,15 @@ description: 本文件描述如何使用 iTunes Connect 將 Xamarin.Mac 應用�
 ms.prod: xamarin
 ms.assetid: 30cd0e47-1b2e-47ef-93f6-4bed20b15c03
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 7e51171f0f5153f48237ebe76e393c2077453bbd
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: fa5c8a72a469f1a798cbdcfc63c07860363f6608
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792160"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109844"
 ---
 # <a name="upload-to-mac-app-store"></a>上傳至 Mac App Store
 

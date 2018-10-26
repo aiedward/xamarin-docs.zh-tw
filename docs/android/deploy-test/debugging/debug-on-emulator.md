@@ -4,15 +4,15 @@ description: 本指南說明如何在 Visual Studio 中使用 Android Emulator �
 ms.prod: xamarin
 ms.assetid: AEA165A4-D81A-411B-91DF-2DED2EED27B5
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 9e0eade7a2e033838f78f24270ec2bf9d4abc171
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: e40178e43cfcfd261434fab9dd5ca0a9061d3f59
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935709"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113777"
 ---
 # <a name="debugging-on-the-android-emulator"></a>在 Android Emulator 上偵錯
 
@@ -25,7 +25,7 @@ Android Emulator (安裝作為**使用 .NET 開發行動裝置應用程式**工�
 
 ## <a name="using-a-pre-configured-virtual-device"></a>使用預先設定的虛擬裝置
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Visual Studio 包含預先設定的虛擬裝置，這些裝置會顯示在裝置下拉式功能表中。 例如，在以下 Visual Studio 2017 螢幕擷取畫面中，有數個可用的預先設定虛擬裝置：
 
@@ -48,7 +48,7 @@ Visual Studio 包含預先設定的虛擬裝置，這些裝置會顯示在裝置
 您可以按一下 [變更最低 Android 目標] 來變更專案的「最低 Android 版本」，以讓它符合可用虛擬裝置的 API 層級。 或者，您也可以使用 [Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md) 建立支援您目標 API 層級的新虛擬裝置。
 若要設定新 API 層級的虛擬裝置，您必須先安裝該 API 層級的對應系統映像 (請參閱[設定 Xamarin.Android 的 Android SDK](~/android/get-started/installation/android-sdk.md))。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac 包含預先設定的虛擬裝置，這些裝置會顯示在裝置下拉式功能表中。 例如，在以下螢幕擷取畫面中，有兩個可用的預先設定虛擬裝置：
 
@@ -73,11 +73,11 @@ Visual Studio for Mac 包含預先設定的虛擬裝置，這些裝置會顯示�
 
 在 Visual Studio 頂端附近有一個下拉式功能表，可用來選取 [偵錯] 或 [發行] 模式。 選擇 [偵錯] 會讓偵錯工具在應用程式啓動後連接至在模擬器內執行的應用程式處理序。 選擇 [發行] 模式會停用偵錯工具 (但您仍然可以執行應用程式並使用記錄陳述式偵錯)。 從裝置下拉式功能表中選擇虛擬裝置之後，請選取 [偵錯] 或 [發行] 模式，然後按一下 [播放] 按鈕來執行應用程式：
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![[偵錯] 和 [發行] 模式、[播放] 按鈕](debug-on-emulator-images/win/17-debug-release-sml.png)](debug-on-emulator-images/win/17-debug-release.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![[偵錯] 和 [發行] 模式、[播放] 按鈕](debug-on-emulator-images/mac/16-debug-release-sml.png)](debug-on-emulator-images/mac/16-debug-release.png#lightbox)
 

@@ -4,15 +4,15 @@ description: 本文涵蓋如何使用臨機操作散發建立可用來部署應�
 ms.prod: xamarin
 ms.assetid: D253C2DB-852E-6FC6-C9FD-574730B8DB19
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 4fd64a1ebf05dd149304f49d8282ee1b38bfcf03
-ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
+ms.openlocfilehash: 70d6b908beb0d04788365b104b5e4a2679b0ebe1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36321359"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113244"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS 中的 IPA 支援
 
@@ -54,7 +54,7 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 ## <a name="creating-an-ipa"></a>建立 IPA
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 建立 IPA 現在內建於新的發行工作流程。 若要執行此動作，請依照下列指示來封存、簽署應用程式以及儲存 IPA。
 
@@ -138,7 +138,7 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
     /Library/Frameworks/Mono.framework/Commands/msbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
     ```
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 在 Visual Studio 中，建立並選取佈建設定檔，建立選擇性的 **iTunesMetadata.plist** 和設定 iTunes 插圖之後，即可建置 IPA 以進行散發。 接著，您必須設定專案。 請執行下列動作：
 
@@ -233,11 +233,11 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 新的 iOS 應用程式會顯示在 [我的應用程式] 區段，您可以在應用程式上按一下滑鼠右鍵並取得相關資訊：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  ![](ipa-support-images/installxs01.png "新的 iOS 應用程式在 [我的應用程式] 區段中")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  ![](ipa-support-images/installvs01.png "新的 iOS 應用程式在 [我的應用程式] 區段中")
 

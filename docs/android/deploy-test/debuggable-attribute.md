@@ -3,15 +3,15 @@ title: 可偵錯的屬性
 ms.prod: xamarin
 ms.assetid: 1ABF90F1-6A70-45AE-9271-D90DC42807D0
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 85b2462605f76e3be8bae589e9fe6cf655741746
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 66bbc7015daaba04f8431b31f639c9173484c790
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762680"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108661"
 ---
 # <a name="debuggable-attribute"></a>可偵錯的屬性
 

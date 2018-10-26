@@ -4,15 +4,15 @@ description: 本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提�
 ms.prod: xamarin
 ms.assetid: 70676eba-6a99-4a3a-bccc-84359fe9c2c3
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 39e1af5edf91ffd6811fa8d221fd56580f3b33da
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: af1ad32e605bbbe899ec8596a60cdabf226372db
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784897"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111300"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Xamarin.iOS 應用程式中的 iTunesMetadata.plist 檔案
 
@@ -285,7 +285,7 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 
 ## <a name="creating-an-itunesmetadataplist-file"></a>建立 iTunesMetadata.plist 檔案
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  在 Visual Studio for Mac 中處理 `iTunesMetadata.plist` 檔案時，您有兩個選項：
 
@@ -337,7 +337,7 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 6. 在 [開啟檔案] 對話方塊中，選取上面所建立的 `iTunesMetadata.plist` 檔案，然後按一下 [確定] 按鈕。
 7. 將此檔案的 [建置動作] 保持設定為 [無]。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 適用於 Visual Studio 的 Xamarin 外掛程式僅支援 `Info.plist` 和 `Entitlement.plist` 檔案的視覺化編輯器，因此您必須在標準文字編輯器中建立 `iTunesMetadata.plist` 檔案，並將它手動包含到 Xamarin.iOS 專案中。
 

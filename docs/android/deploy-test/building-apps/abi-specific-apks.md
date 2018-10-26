@@ -4,15 +4,15 @@ description: 本文將討論如何使用 Xamarin.Android 建置瞄準單一 ABI 
 ms.prod: xamarin
 ms.assetid: D21B195B-4530-4EB2-8704-5C4349A2CDD8
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 89a78c8dd1243dcfea9d14bd9758c5403d1d21ef
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4cb0a1e598953af0c2bdb5afa6047bfb069c5588
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30769074"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110260"
 ---
 # <a name="building-abi-specific-apks"></a>建置特定 ABI 的 APK
 

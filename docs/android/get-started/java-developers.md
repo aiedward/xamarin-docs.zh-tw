@@ -4,15 +4,15 @@ description: 如果您是 Java 開發人員，您應該已經開始在 Xamarin �
 ms.prod: xamarin
 ms.assetid: A3B6C041-4052-4E7D-999C-C4FA10BE3D67
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 92bcfc888c52f9f74c8484295666da8f5ef7a14c
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: eb1d08c5dee6c7944fa42e7446b34a5dbbb45ad3
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209332"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120407"
 ---
 # <a name="xamarin-for-java-developers"></a>適用於 Java 開發人員的 Xamarin
 
@@ -473,7 +473,7 @@ Java 中使用的許多語言關鍵字也會在 C# 中使用。 另外有些 Jav
 |[struct](https://msdn.microsoft.com/en-us/library/ah19swz4.aspx)|封裝相關變數群組的實值類型。|
 |[typeof](https://msdn.microsoft.com/en-us/library/58918ffs.aspx)|取得物件類型。|
 |[var](https://msdn.microsoft.com/en-us/library/bb383973.aspx)|宣告隱含類型的區域變數。|
-|[value](https://msdn.microsoft.com/en-us/library/a1khb4f8.aspx)|參考用戶端程式碼想要指派給屬性的值。|
+|[值](https://msdn.microsoft.com/en-us/library/a1khb4f8.aspx)|參考用戶端程式碼想要指派給屬性的值。|
 |[virtual](https://msdn.microsoft.com/en-us/library/9fkccyh4.aspx)|允許在衍生類別中覆寫方法。|
 
 

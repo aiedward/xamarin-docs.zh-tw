@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: a466a6591316b908ca26cb20906fd7866a20fca2
-ms.sourcegitcommit: 00a3505a73ce2213ba35bc85c06738edd1155060
+ms.openlocfilehash: 9b28ecb6c2e489a3d7033b2c9effbc7ed75fc03c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42751877"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115688"
 documentType: LandingData
 title: Xamarin 工具
 metadata:
@@ -28,7 +28,7 @@ sections:
     style: cards
     className: cardsC
     items:
-    - href: ~/tools/ios-simulator.md
+    - href: ~/tools/ios-simulator/index.md.md
       html: 在 Windows 上使用 Visual Studio 與 iOS 模擬器互動。
       image:
         src: ~/media/index/xamarin-tools-windows-simulator.svg?branch=master

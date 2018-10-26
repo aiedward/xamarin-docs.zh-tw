@@ -4,20 +4,20 @@ description: 本文將介紹在 iTunes Connect 中設定和維護 Xamarin.iOS �
 ms.prod: xamarin
 ms.assetid: 74587317-4b15-4904-9582-dcd914827cbc
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 05492f866bb083326ef1eccb8db3d624d8dc4806
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: 97b3e5323329d2df024e05f1829b12b239b37299
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209306"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103042"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>在 iTunes Connect 中設定應用程式
 
 > [!IMPORTANT]
-> Apple [已宣布](https://developer.apple.com/news/?id=05072018a) \(英文\) 從 2018 年 7 月開始，提交至 App Store 的所有應用程式和更新都必須是使用 iOS 11 SDK 建置，且必須[支援 iPhone X 顯示器](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)。
+> Apple [已宣告](https://developer.apple.com/news/?id=05072018a)從 2018 年 7 月開始，提交至 App Store 的所有應用程式和更新都必須是使用 iOS 11 SDK 建置，且必須[支援 iPhone X 顯示器](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)。
 
 iTunes Connect 是一套 Web 架構工具，可在 App Store 上管理 iOS 應用程式或進行其他作業。 您必須先在 iTunes Connect 中正確安裝並設定 Xamarin.iOS 應用程式，才能將其提交給 Apple 進行檢閱，最終達到在 App Store 作為付費或免費應用程式發行的目標。
 

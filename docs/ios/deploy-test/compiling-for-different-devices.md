@@ -4,26 +4,26 @@ description: 本文件描述各種可以用來自訂不同裝置之 Xamarin.iOS 
 ms.prod: xamarin
 ms.assetid: 3B259248-887E-3E4F-E09C-7AD28C2A8CEE
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 1b1bfab36646256eee706316c70004aef8399994
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: aac558f52423132bef53f1754307e743c69f6f22
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784841"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121201"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>Xamarin.iOS 不同裝置的編譯
 
 可執行檔的組建屬性可從專案的 [iOS 組建] 屬性頁面來設定，若要找到此頁面，請在專案名稱上按一下滑鼠右鍵，然後瀏覽至 [選項] > [iOS 組建]\(在 Visual Studio for Mac 中) 和 [屬性]\(在 Visual Studio 中)：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 
 [![](compiling-for-different-devices-images/image1.png "專案的 iOS 組建屬性頁面")](compiling-for-different-devices-images/image1.png#lightbox) 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](compiling-for-different-devices-images/image1a.png "專案的 iOS 組建屬性頁面")](compiling-for-different-devices-images/image1a.png#lightbox)
 

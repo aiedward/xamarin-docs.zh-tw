@@ -4,15 +4,15 @@ description: 本文件會為 Objective-C的開發人員提供 Xamarin.iOS 的說
 ms.prod: xamarin
 ms.assetid: 9F3C86A3-403E-4025-99CA-99FCA86DC828
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 574bd4c0b6bed639230dbfb6209eb78216e8e47b
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 415a888a61b4c4ca9164166aadb1983df2d828dd
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351004"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107335"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>適用於 Objective-C 開發人員的 Xamarin
 

@@ -6,12 +6,12 @@ ms.assetid: 7683F2B8-7FDF-48C4-8E7D-649D4D4E79F0
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: fb0ffd87a61f20744e68eafdd7eb8de691df6f75
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: c43b3f3204cba890cb2fa9c4cfc33a23250e0550
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781516"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112048"
 ---
 # <a name="installing-nunit-264-using-nuget"></a>使用 NuGet 安裝 NUnit 2.6.4
 
@@ -19,11 +19,11 @@ _本指南涵蓋如何使用 NuGet 將 NUnit 3.0 降級至 NUnit 2.6.4。_
 
 在 Visual Studio for Mac 中撰寫測試或使用 Xamarin.UITest 的開發人員應使用 [NUnit 2.6.4](http://nunit.org/index.php?p=docHome&r=2.6.4)，因為 NUnit 3.0 或更新版本和 Visual Studio for Mac 或 Xamarin.UITest 不相容。 使用 NUnit 3.0 嘗試在 Visual Studio for Mac 或 Xamarin.UITests 中執行單位測試會失敗。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 本指南會討論如何為 Visual Studio for Mac 使用 NuGet 來安裝 NUnit 2.6.4。 如有必要，這些步驟也會將 NUnit 3.0 解除安裝。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 本指南會討論如何在 Visual Studio 2015 中使用 NuGet 來將 NUnit 3.0 降級至 NUnit 2.6.4。
 
@@ -33,7 +33,7 @@ _本指南涵蓋如何使用 NuGet 將 NUnit 3.0 降級至 NUnit 2.6.4。_
 
 本指南假設現有的解決方案內含行動應用程式專案和測試專案。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="installing-nunit-264-in-visual-studio-for-mac"></a>在 Visual Studio for Mac 中安裝 NUnit 2.6.4
 
@@ -58,7 +58,7 @@ _本指南涵蓋如何使用 NuGet 將 NUnit 3.0 降級至 NUnit 2.6.4。_
 本指南討論如何在 Visual Studio for Mac 中使用套件管理員主控台將 NUnit 3.0 降級至 NUnit 2.6.4。
 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ## <a name="installing-nunit-264-in-visual-studio"></a>在 Visual Studio 中安裝 NUnit 2.6.4
 

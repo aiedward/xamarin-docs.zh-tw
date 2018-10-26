@@ -5,15 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8C823FEE-A6F6-4C31-9EB6-E51407A2FD8E
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: fd9ebc7922428d2779e6985379c3118274a46aff
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.openlocfilehash: 9ea2b3ddef731efb9e4bf291ec836248c13d6390
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37066659"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113130"
 ---
 # <a name="profiling-android-apps"></a>分析 Android 應用程式
 

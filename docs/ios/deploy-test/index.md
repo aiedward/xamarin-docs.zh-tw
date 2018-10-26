@@ -4,15 +4,15 @@ description: 本文件連結的各種指南，描述與部署與測試 Xamarin.i
 ms.prod: xamarin
 ms.assetid: 2DBF3BF9-79E7-4E24-AF26-E34C972B0169
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: a96eeefa631eb4055d8bd0af5b89160ab0899907
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: eea8b37c7fe6f9c252635fa8dab6420058ad87fb
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785180"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114024"
 ---
 # <a name="deploying-and-testing-xamarinios-apps"></a>部署和測試 Xamarin.iOS 應用程式
 

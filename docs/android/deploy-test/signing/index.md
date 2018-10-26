@@ -4,27 +4,27 @@ description: 如何簽署要發佈的 Android 應用程式套件 (APK)
 ms.prod: xamarin
 ms.assetid: 8E3EFBB2-F8AD-C126-5F32-7FD140791E53
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/02/2018
-ms.openlocfilehash: 4afcf42750cd9366bfd9fa5855fe1e7c0f114162
-ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
+ms.openlocfilehash: f05de5185f224f8606f38011d8f307ed62d64541
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37403308"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112867"
 ---
 # <a name="signing-the-android-application-package"></a>簽署 Android 應用程式套件
 
 在[準備要發行的應用程式](~/android/deploy-test/release-prep/index.md)中，使用**封存管理員**來建置應用程式，並將它放入封存以進行簽署和發行。 本節說明如何建立 Android 簽署身分識別、建立適用於 Android 應用程式的新簽署憑證，並透過「臨機操作」將封存的應用程式發行至磁碟。 產生的 APK 可以側載到 Android 裝置，而不需透過應用程式市集 。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 在[封存以供發行](~/android/deploy-test/release-prep/index.md#archive)中，[散發通道] 對話方塊顯示了兩個用於散發的選項。 選取 [臨機操作]：
 
 [![[散發通道] 對話方塊](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 在[封存以供發行](~/android/deploy-test/release-prep/index.md#archive)中，[簽署並散發] 對話方塊顯示了兩個用於散發的選項。 選取 [臨機操作]，然後按一下 [下一步]：
 
@@ -38,7 +38,7 @@ ms.locfileid: "37403308"
 
 ## <a name="create-a-new-certificate"></a>建立新的憑證
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 選取 [臨機操作] 之後，Visual Studio 會開啟對話方塊的 [簽署身分識別] 頁面，如下一個螢幕擷取畫面所示。 若要發行 .APK，必須先使用簽署金鑰 (也稱為憑證) 來簽署它。
 
@@ -67,7 +67,7 @@ ms.locfileid: "37403308"
 
 如需金鑰儲存區的詳細資訊，請參閱[尋找金鑰儲存區的 MD5 或 SHA1 簽章](~/android/deploy-test/signing/keystore-signature.md)。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 按一下 [臨機操作] 之後，Visual Studio for Mac 即會開啟 [Android 簽署識別] 對話方塊，如下一個螢幕擷取畫面所示。 若要發行 .APK，必須先使用簽署金鑰 (也稱為憑證) 來簽署它。 如果憑證已經存在，按一下 [匯入現有的金鑰] 按鈕來匯入它，然後繼續[簽署 APK](#signapkxs)；否則，按一下 [建立新的金鑰] 按鈕來建立新的憑證： 
 
@@ -97,7 +97,7 @@ ms.locfileid: "37403308"
 
 ## <a name="sign-the-apk"></a>簽署 APK
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 按一下 [建立] 時，新的金鑰儲存區 (包含新的憑證) 將會儲存並列於 [簽署身分識別] 下方，如下一個螢幕擷取畫面所示。 若要在 Google Play 上發行應用程式，按一下[取消]，然後移至[發行至 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)。
 若要透過「臨機操作」發行，請選取要用來簽署的簽署身分識別，然後按一下 [另存新檔] 以發行要獨立散發的應用程式。 例如，此螢幕擷取畫面中已選取 **chimp** 簽署身分識別 (先前建立的)：
@@ -121,7 +121,7 @@ ms.locfileid: "37403308"
 
 [![Windows 檔案總管中顯示的 APK](images/vs/09-generated-app-vs-sml.png)](images/vs/09-generated-app-vs.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 
 如此處所示，已將新的憑證新增至金鑰儲存區。 若要在 Google Play 上發行應用程式，按一下[取消]，然後移至[發行至 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)。

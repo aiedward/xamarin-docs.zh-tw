@@ -4,15 +4,15 @@ description: 本文件提供如何對 Xamarin.iOS 應用程式進行單元測試
 ms.prod: xamarin
 ms.assetid: BD959779-3239-79B6-5289-3A9ECDFBD973
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: ce2b452d50222ac3561dab5b76915b7ae634934b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: dd590b65fdf1f83ade3453fa1266d1f6724bb8de
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785459"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121824"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>單元測試 Xamarin.iOS 應用程式
 
@@ -21,13 +21,13 @@ ms.locfileid: "34785459"
 
 ## <a name="setting-up-a-test-project"></a>設定測試專案
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 若要為您的專案設定單元測試架構，只需要將 [iOS 單元測試專案] 類型的專案新增至您的方案即可。 在您的方案上按一下滑鼠右鍵，然後選取 [新增] > [新增專案] 即可完成此動作。 從清單中選取 [iOS] > [測試] > [Unified API] > [iOS 單元測試專案] (您可以選擇 C# 或 F#)。
 
 ![](touch.unit-images/00.png "選擇 C# 或 F#")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 若要為您的專案設定單元測試架構，只需要將 [iOS 單元測試專案] 類型的專案新增至您的方案即可。 在您的方案上按一下滑鼠右鍵，然後選取 [新增] > [新增專案] 即可完成此動作。從清單中選取 [Visual C#] > [iOS] > [單元測試應用程式 (iOS)]。
 
@@ -37,11 +37,11 @@ ms.locfileid: "34785459"
 
 上面的動作將會建立其中包含基本執行器程式，並會參考新 MonoTouch.NUnitLite 組件的基本專案，您的專案看起來像這樣：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![](touch.unit-images/01.png "[方案總管] 中的專案")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![](touch.unit-images/01a.png "[方案總管] 中的專案")
 

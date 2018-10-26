@@ -1,4 +1,10 @@
 ### YamlMime:YamlDocument
+ms.openlocfilehash: 605f44bf94c37629985f623788b3e25f12e00cff
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112789"
 documentType: LandingData
 title: 圖形和遊戲
 metadata:
@@ -7,12 +13,6 @@ metadata:
   ms.author: crdun
   ms.date: 02/17/2018
   ms.topic: landing-page
-  ms.openlocfilehash: b27c8714501fab2a202092668fc5bcdb6257f07c
-  ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
-  ms.translationtype: HT
-  ms.contentlocale: zh-TW
-  ms.lasthandoff: 03/09/2018
-  ms.locfileid: "29825385"
 abstract:
   description: 適用於行動裝置和桌上型電腦平台的跨平台圖形、2D 及 3D 遊戲。
   menu:
@@ -28,10 +28,10 @@ sections:
     style: cards
     className: cardsC
     items:
-    - href: ~/graphics-games/skiasharp/index.md
+    - href: ~/xamarin-forms/user-interface/graphics/skiasharp/index.md
       image:
         src: ~/media/index/xamarin-graphics-skia.svg
-        href: ~/graphics-games/skiasharp/index.md
+        href: ~/xamarin-forms/user-interface/graphics/skiasharp/index.md
       title: SkiaSharp
       html: 適用於行動裝置和桌上型電腦的跨平台 2D 圖形。
     - href: ~/graphics-games/urhosharp/index.md
