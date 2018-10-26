@@ -4,19 +4,19 @@ description: 了解如何建立 SkiaSharp 點陣圖，然後藉由建立根據�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: c8ddf8c0829cea319dd93dd9c3686b94ed8eb89e
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: acdee7d34f913b125887f021dab39220c9560191
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615586"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109233"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>建立和上 SkiaSharp 點陣圖繪製
 
-您已了解如何應用程式可以載入點陣圖從網站、 應用程式資源和使用者的相片媒體櫃。 它也可建立新應用程式內的點陣圖。 最簡單的方法牽涉到其中的建構函式[ `SKBitmap` ](https://developer.xamarin.com/api/constructor/SkiaSharp.SKBitmap.SKBitmap/p/System.Int32/System.Int32/System.Boolean/):
+您已了解如何應用程式可以載入點陣圖從網站、 應用程式資源和使用者的相片媒體櫃。 它也可建立新應用程式內的點陣圖。 最簡單的方法牽涉到其中的建構函式[ `SKBitmap` ](xref:SkiaSharp.SKBitmap.%23ctor(System.Int32,System.Int32,System.Boolean)):
 
 ```csharp
 SKBitmap bitmap = new SKBitmap(width, height);
@@ -37,7 +37,7 @@ SKBitmap bitmap = new SKBitmap(width, height);
 
 ## <a name="drawing-on-the-bitmap"></a>點陣圖的繪圖
 
-點陣圖的介面上繪製等同於在視訊顯示器上繪圖。 若要繪製視訊的顯示畫面上，您取得`SKCanvas`物件從`PaintSurface`事件引數。 若要繪製點陣圖上，建立`SKCanvas`物件使用[ `SKCanvas` ](https://developer.xamarin.com/api/constructor/SkiaSharp.SKCanvas.SKCanvas/p/SkiaSharp.SKBitmap/)建構函式：
+點陣圖的介面上繪製等同於在視訊顯示器上繪圖。 若要繪製視訊的顯示畫面上，您取得`SKCanvas`物件從`PaintSurface`事件引數。 若要繪製點陣圖上，建立`SKCanvas`物件使用[ `SKCanvas` ](xref:SkiaSharp.SKCanvas.%23ctor(SkiaSharp.SKBitmap))建構函式：
 
 ```csharp
 SKCanvas canvas = new SKCanvas(bitmap);
@@ -123,9 +123,9 @@ public partial class HelloBitmapPage : ContentPage
 
 `Clear` 有兩種不同的版本： 
 
-- [ `Clear` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Clear/p/SkiaSharp.SKColor/)方法`SKColor`參數會取代該顏色的像素中的顯示表面的像素為單位。
+- [ `Clear` ](xref:SkiaSharp.SKCanvas.Clear(SkiaSharp.SKColor))方法`SKColor`參數會取代該顏色的像素中的顯示表面的像素為單位。
 
-- [ `Clear` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Clear()/)不含任何參數的方法會取代以像素[ `SKColors.Empty` ](https://developer.xamarin.com/api/property/SkiaSharp.SKColors.Empty/)色彩，也就是其中的所有元件 （紅色、 綠色、 藍色和 alpha） 會設定為零的色彩。 這個色彩有時稱為 「 透明的黑色。 」
+- [ `Clear` ](xref:SkiaSharp.SKCanvas.Clear)不含任何參數的方法會取代以像素[ `SKColors.Empty` ](xref:SkiaSharp.SKColors.Empty)色彩，也就是其中的所有元件 （紅色、 綠色、 藍色和 alpha） 會設定為零的色彩。 這個色彩有時稱為 「 透明的黑色。 」
 
 呼叫`Clear`上新的點陣圖不含引數初始化整個點陣圖是完全透明。 後續繪製點陣圖上的任何項目通常會是不透明或部分的不透明。
 
@@ -151,7 +151,7 @@ Color = new SKColor(0, 0, 0, 0)
 
 ## <a name="bitmap-color-types"></a>點陣圖色彩類型
 
-最簡單`SKBitmap`建構函式可讓您指定整數像素寬度] 和 [點陣圖的高度。 其他`SKBitmap`建構函式是更複雜。 這些建構函式需要兩個列舉類型的引數： [ `SKColorType` ](https://developer.xamarin.com/api/type/SkiaSharp.SKColorType/)並[ `SKAlphaType` ](https://developer.xamarin.com/api/type/SkiaSharp.SKAlphaType/)。 其他建構函式使用[ `SKImageInfo` ](https://developer.xamarin.com/api/type/SkiaSharp.SKImageInfo/)結構中，會將此項資訊合併。
+最簡單`SKBitmap`建構函式可讓您指定整數像素寬度] 和 [點陣圖的高度。 其他`SKBitmap`建構函式是更複雜。 這些建構函式需要兩個列舉類型的引數： [ `SKColorType` ](xref:SkiaSharp.SKColorType)並[ `SKAlphaType` ](xref:SkiaSharp.SKAlphaType)。 其他建構函式使用[ `SKImageInfo` ](xref:SkiaSharp.SKImageInfo)結構中，會將此項資訊合併。
 
 `SKColorType`列舉型別有 9 的成員。 每一個這些成員會描述特定的方式儲存的點陣圖像素的：
 
@@ -161,7 +161,7 @@ Color = new SKColor(0, 0, 0, 0)
 - `Argb4444` &mdash; 每個像素都是 16 位元，每個對於 4 alpha、 紅色、 綠色和藍色
 - `Rgba8888` &mdash; 每個像素都是 32 位元，每個為 8 紅色、 綠色、 藍色和 alpha
 - `Bgra8888` &mdash; 每個像素都是 32 位元，8 每個藍色、 綠色、 紅色和 alpha
-- `Index8` &mdash; 每個像素 8 位元，並代表內的索引 [`SKColorTable`](https://developer.xamarin.com/api/type/SkiaSharp.SKColorTable/)
+- `Index8` &mdash; 每個像素 8 位元，並代表內的索引 [`SKColorTable`](xref:SkiaSharp.SKColorTable)
 - `Gray8` &mdash; 每個像素都是從黑色的灰色陰影代表白色的 8 位元
 - `RgbaF16` &mdash; 每個像素都是 64 位元，具有紅色、 綠色、 藍色和 alpha 以 16 位元浮點數格式
 
@@ -596,5 +596,5 @@ public partial class BitmapFlipperPage : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 14345503-1742-41F5-B2EF-EE31AB7C3516
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: 5d9cb189c124c8b1bfc2dafc48ec782bb74a852e
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.openlocfilehash: cbec49844d34ab8ad04282b383de15093ecdd891
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514384"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118275"
 ---
 # <a name="introduction-to-tvos-in-xamarin"></a>在 Xamarin 中 tvOS 簡介
 

@@ -1,28 +1,28 @@
 ---
-title: 多點觸控手指 Xamarin.iOS 中追蹤
-description: 本文件說明如何追蹤個別隻手指放在 Xamarin.iOS 應用程式中的多點觸控筆勢。 它著重於 finger-painting 的應用程式範例。
+title: 多點觸控手指在 Xamarin.iOS 中追蹤
+description: 本文件說明如何追蹤個人的手指在 Xamarin.iOS 應用程式中的多點觸控筆勢。 它著重於手指繪製的應用程式範例。
 ms.prod: xamarin
 ms.assetid: 48E8B20D-0833-43D2-976A-0605DDB386E3
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 85dbd3c158408026f4ecef5fb2b01c265747140e
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a1ddcda84d51b5a8a9220558ddaf9476a2321ee8
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784399"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105047"
 ---
-# <a name="multi-touch-finger-tracking-in-xamarinios"></a>多點觸控手指 Xamarin.iOS 中追蹤
+# <a name="multi-touch-finger-tracking-in-xamarinios"></a>多點觸控手指在 Xamarin.iOS 中追蹤
 
-_本文件將示範如何從多個指追蹤觸控事件_
+_本文件將示範如何追蹤多個根手指觸控事件_
 
-有多點觸控應用程式需要追蹤個別隻手指放在螢幕上同時移動的時間。 一個典型的應用程式是 finger-paint 程式。 您想要能夠使用單指，繪製，也同時繪製多個手指與使用者。 當您的程式處理多個觸控事件時，它需要區分這些手指。
+有多點觸控應用程式需要追蹤個人的手指，同時在螢幕上移動時的時間。 一個典型的應用程式是 finger-paint 程式。 您的使用者可繪製具有一根手指，但一次使用多個根手指繪製。 當您的程式會處理多個觸控事件，它需要區別這些手指。
 
-當第一次，手指接觸到螢幕時，iOS 會建立[ `UITouch` ](https://developer.xamarin.com/api/type/UIKit.UITouch/)該指的物件。 手指在螢幕上移動，然後在畫面中，物件已處置的時間點取消，因為此物件會維持相同。 若要追蹤的手指，程式應該避免儲存這`UITouch`直接物件。 相反地，它可以使用[ `Handle` ](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)型別的屬性`IntPtr`來唯一識別這些`UITouch`物件。
+當第一次，手指接觸到螢幕時，會建立 iOS [ `UITouch` ](https://developer.xamarin.com/api/type/UIKit.UITouch/)該手指的物件。 手指在螢幕上移動，並在畫面中，時間點處置物件之後再將這個物件會保持相同。 若要追蹤的手指，程式應該避免儲存這`UITouch`直接物件。 相反地，它可以使用[ `Handle` ](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)屬性的型別`IntPtr`來唯一識別這些`UITouch`物件。
 
-幾乎，追蹤個別指的程式會維護追蹤觸控的字典。 為 iOS 程式中，字典索引鍵是`Handle`識別特定指紋的值。 字典值取決於應用程式。 在[FingerPaint](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)程式 （從發行的觸控式） 每個手指筆劃趨物件，包含呈現該食指繪製的線條所需的所有資訊與相關聯。 程式會定義一個小型`FingerPaintPolyline`針對此用途的類別：
+幾乎就一律會追蹤個人的手指的程式會維護追蹤觸控式的字典。 為 iOS 程式中，字典索引鍵則`Handle`識別特定的手指的值。 字典值取決於應用程式。 在  [FingerPaint](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)程式 （從釋放觸控） 每個手指筆觸是物件，包含呈現該手指繪製的線條所需的所有資訊與相關聯。 程式會定義一個小型`FingerPaintPolyline`針對此用途的類別：
 
 ```csharp
 class FingerPaintPolyline
@@ -40,24 +40,24 @@ class FingerPaintPolyline
 }
 ```
 
-每個聚合線條的色彩、 筆劃寬度，，iOS 圖形[ `CGPath` ](https://developer.xamarin.com/api/type/CoreGraphics.CGPath/)累積並轉譯為所繪製的線的多個點的物件。
+每一個聚合線條的色彩、 筆觸寬度，，iOS 圖形[ `CGPath` ](https://developer.xamarin.com/api/type/CoreGraphics.CGPath/)累積和轉譯線條的多個點，因為它所繪製的物件。
 
 
-所有其他的如下所示的程式碼都包含在`UIView`衍生名為`FingerPaintCanvasView`。 類別會維護的物件類型的字典`FingerPaintPolyline`它們會主動繪製由一或多個隻手指放在時間：
+如下所示的程式碼的所有其餘部分包含在`UIView`衍生名為`FingerPaintCanvasView`。 類別會負責維護的物件類型的字典`FingerPaintPolyline`主動由一個或多根手指正在繪製之時間內：
 
 ```csharp
 Dictionary<IntPtr, FingerPaintPolyline> inProgressPolylines = new Dictionary<IntPtr, FingerPaintPolyline>();
 ```
 
-這個字典可讓快速取得檢視`FingerPaintPolyline`食指每個相關聯的資訊根據`Handle`屬性`UITouch`物件。
+這個字典可讓檢視，以快速取得`FingerPaintPolyline`每根手指與相關聯的資訊為基礎`Handle`屬性`UITouch`物件。
 
-`FingerPaintCanvasView`類別也會維護`List`已完成的聚合線條的物件：
+`FingerPaintCanvasView`類別也會維護`List`物件已完成多線條：
 
 ```csharp
 List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
 ```
 
-在這個物件`List`所繪製的順序相同。
+在此物件`List`所畫的相同順序。
 
 `FingerPaintCanvasView` 所定義的五個方法會覆寫`View`:
 
@@ -69,7 +69,7 @@ List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
 
 各種`Touches`覆寫累積組成聚合線條的點。
 
-[`Draw`] 已完成的聚合線條，然後再進行中的聚合線條會繪製覆寫：
+[`Draw`] 覆寫繪製已完成的多線條，然後進行中的多線條：
 
 ```csharp
 public override void Draw(CGRect rect)
@@ -103,7 +103,7 @@ public override void Draw(CGRect rect)
 }
 ```
 
-每個`Touches`覆寫可能報告的多個指，由一或多個動作`UITouch`物件儲存在`touches`方法引數。 `TouchesBegan`覆寫這些物件的迴圈。 每個`UITouch`物件，該方法會建立並初始化新`FingerPaintPolyline`物件，包括儲存取自手指的初始位置`LocationInView`方法。 這`FingerPaintPolyline`物件加入至`InProgressPolylines`字典使用`Handle`屬性`UITouch`做為字典索引鍵的物件：
+每個`Touches`覆寫可能報告的多個根手指，由一或多個動作`UITouch`中儲存的物件`touches`方法引數。 `TouchesBegan`覆寫這些物件的迴圈。 每個`UITouch`物件，此方法會建立並初始化新`FingerPaintPolyline`物件，包括儲存取自手指的初始位置`LocationInView`方法。 這`FingerPaintPolyline`物件加入至`InProgressPolylines`字典使用`Handle`屬性`UITouch`做為字典索引鍵的物件：
 
 ```csharp
 public override void TouchesBegan(NSSet touches, UIEvent evt)
@@ -126,9 +126,9 @@ public override void TouchesBegan(NSSet touches, UIEvent evt)
 }
 ```
 
-此方法結束時，會呼叫`SetNeedsDisplay`來產生呼叫`Draw`覆寫，並更新畫面。
+方法最後會呼叫`SetNeedsDisplay`來產生呼叫`Draw`覆寫，並更新畫面。
 
-當手指移動螢幕上`View`取得多個呼叫其`TouchesMoved`覆寫。 此覆寫同樣的循環`UITouch`物件儲存在`touches`引數並將目前位置的指紋加入至圖形路徑：
+當手指移動在畫面上，`View`取得多個呼叫其`TouchesMoved`覆寫。 此覆寫同樣的循環`UITouch`中儲存的物件`touches`引數，並將手指的目前位置加入至圖形路徑：
 
 ```csharp
 public override void TouchesMoved(NSSet touches, UIEvent evt)
@@ -144,9 +144,9 @@ public override void TouchesMoved(NSSet touches, UIEvent evt)
 }
 ```
 
-`touches`集合包含只有`UITouch`物件之後，最後呼叫移動的指`TouchesBegan`或`TouchesMoved`。 如果您需要`UITouch`物件對應至*所有*目前與其螢幕接觸指，該資訊是透過`AllTouches`屬性`UIEvent`方法引數。
+`touches`集合包含只有`UITouch`物件的最後一個呼叫之後移動手指`TouchesBegan`或`TouchesMoved`。 如果您需要`UITouch`對應至物件*所有*目前接觸到螢幕的指，該資訊是透過`AllTouches`屬性`UIEvent`方法引數。
 
-`TouchesEnded`覆寫具有兩個工作。 它必須加入的圖形路徑和傳輸的最後一個點`FingerPaintPolyline`物件從`inProgressPolylines`字典`completedPolylines`清單：
+`TouchesEnded`覆寫有兩項作業。 它必須新增的最後一個點的圖形路徑和傳輸`FingerPaintPolyline`物件從`inProgressPolylines`字典`completedPolylines`清單：
 
 ```csharp
 public override void TouchesEnded(NSSet touches, UIEvent evt)
@@ -167,7 +167,7 @@ public override void TouchesEnded(NSSet touches, UIEvent evt)
 }
 ```
 
-`TouchesCancelled`覆寫由只要放棄`FingerPaintPolyline`字典中的物件：
+`TouchesCancelled`覆寫由直接放棄`FingerPaintPolyline`字典中的物件：
 
 ```csharp
 public override void TouchesCancelled(NSSet touches, UIEvent evt)
@@ -182,11 +182,11 @@ public override void TouchesCancelled(NSSet touches, UIEvent evt)
 }
 ```
 
-這項處理，讓[FingerPaint](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)程式以追蹤個別手指和繪製在螢幕上的結果：
+總之，這項處理可讓[FingerPaint](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)程式以追蹤個人的手指，並在螢幕上繪製結果：
 
-[![](touch-tracking-images/image01.png "追蹤個別手指與螢幕上繪製結果")](touch-tracking-images/image01.png#lightbox)
+[![](touch-tracking-images/image01.png "追蹤個人的手指與螢幕上繪製結果")](touch-tracking-images/image01.png#lightbox)
 
-您現在已經瞭解如何追蹤個別隻手指放在畫面上，並加以區別。
+您現在已了解如何追蹤個人的手指在螢幕上，並區別它們。
 
 
 

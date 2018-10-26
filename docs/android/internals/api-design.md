@@ -3,15 +3,15 @@ title: Xamarin.Android API 設計原則
 ms.prod: xamarin
 ms.assetid: 3E52D815-D95D-5510-0D8F-77DAC7E62EDE
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 8abb78f335b159223e9394b7845eccbba8d124da
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 53348e15d1ecc74f50cacdd422da5c80af802d1b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996343"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110711"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Xamarin.Android API 設計原則
 
@@ -167,7 +167,8 @@ button.Click += (sender, e) => {
 
 我們想要新增的其他方法和公開的委派基礎連接的 ctor 多載。 此外，多個回呼的接聽程式需要一些額外的檢驗，以決定是否實作個別的回撥是合理的因此我們會將轉換成這些所識別。 如果沒有任何對應的事件，接聽程式必須使用在 C# 中，但請將任何您認為可能會有委派的使用量，對我們的注意。 清除獲益的委派替代項目時，我們也已完成介面，而不需要 「 接聽程式 」 後置詞的某些的轉換。
 
-所有接聽程式的介面實作[ `Android.Runtime.IJavaObject` ](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/)介面，因為繫結，因此接聽程式的類別必須實作此介面的實作詳細資料。 這可以藉由實作的子類別上的接聽程式介面[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)或任何其他包裝 Java 物件，例如 Android 活動。
+所有接聽程式的介面實作 [`Android.Runtime.IJavaObject`](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/)
+「 介面 」，因為繫結，因此接聽程式的類別必須實作此介面的實作詳細資料。 這可以藉由實作的子類別上的接聽程式介面[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)或任何其他包裝 Java 物件，例如 Android 活動。
 
 
 ### <a name="runnables"></a>Runnables
@@ -262,7 +263,7 @@ Java 介面會轉譯成兩種類型：
 如此一來，Java 運算式*MediaStore.Video.VideoColumns.TITLE*繫結至 C# 運算式必須*MediaStore.Video.MediaColumnsConsts.Title*即難以探索而不閱讀許多 Java 文件。 1.9，對等的 C# 運算式都[ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/)。
 
 此外，請考慮[android.os.Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/)實作的 Java 型別*Parcelable*介面。 由於它會實作介面，該介面上的所有常數都會存取 「 透過 「 套件組合類型，例如*Bundle.CONTENTS_FILE_DESCRIPTOR*是完全有效的 Java 運算式。
-過去，如果要移植到 C# 這個運算式您需要查看以查看從哪一個型別所實作的所有介面*CONTENTS_FILE_DESCRIPTOR*的來源。 開始在 Xamarin.Android 1.9 版中，實作包含常數的 Java 介面的類別會有巢狀*InterfaceConsts*型別，其中會包含所有繼承的介面常數。 這可讓翻譯*Bundle.CONTENTS_FILE_DESCRIPTOR*要[ *Bundle.InterfaceConsts.ContentsFileDescriptor*](https://developer.xamarin.com/api/field/Android.OS.Bundle+InterfaceConsts.ContentsFileDescriptor/)。
+先前，這個運算式的連接埠C#想要查看以查看從哪一個型別所實作的所有介面*CONTENTS_FILE_DESCRIPTOR*來自。 開始在 Xamarin.Android 1.9 版中，實作包含常數的 Java 介面的類別會有巢狀*InterfaceConsts*型別，其中會包含所有繼承的介面常數。 這可讓翻譯*Bundle.CONTENTS_FILE_DESCRIPTOR*要[ *Bundle.InterfaceConsts.ContentsFileDescriptor*](https://developer.xamarin.com/api/field/Android.OS.Bundle+InterfaceConsts.ContentsFileDescriptor/)。
 
 最後，使用類型*個月的成本*這類尾碼*Android.OS.ParcelableConsts*現在已淘汰，而非新引入的 InterfaceConsts 巢狀型別。 在 Xamarin.Android 3.0 中，將移除它們。
 

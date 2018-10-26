@@ -4,15 +4,15 @@ description: 選取 使用 TimePickerDialog 和 DialogFragment 時間
 ms.prod: xamarin
 ms.assetid: EB4E8206-E8AD-9F04-AC1C-82AC9364A9DD
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 85d887cba7a596226d44bc13ca7155bc4a0d03ee
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 911101d44e3ae401910b35b93d85ba3f79ddd35a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242299"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103981"
 ---
 # <a name="time-picker"></a>時間選擇器
 

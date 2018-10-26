@@ -4,15 +4,15 @@ description: 大部分的應用程式有一些需求，將資料儲存在本機�
 ms.prod: xamarin
 ms.assetid: 6B47E864-C6E7-4AA2-8DEF-2C8BF551D17C
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 0ee89728395134f26972ebefa28ca96925b98c84
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 19a2842fa7d29ed40052166b880bf4b26dc09e9c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241090"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120693"
 ---
 # <a name="xamarinandroid-data-access"></a>Xamarin.Android 資料存取
 

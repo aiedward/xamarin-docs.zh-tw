@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
-ms.openlocfilehash: 61e0fa2587ce9a8794dbd32ff9de1f13da857342
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 4e65f31d76d9540bed6110198d7cafaab9fe78f5
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38838006"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114895"
 ---
 # <a name="xaml-standard-preview"></a>XAML 標準 （預覽）
 
@@ -20,7 +20,7 @@ ms.locfileid: "38838006"
 
 遵循下列步驟來試驗標準 Xamarin.Forms XAML:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 下載[預覽以下 NuGet 套件](https://aka.ms/xf-xamlstandard-nuget)。
 2. 新增**Xamarin.Forms.Alias**至 Xamarin.Forms.NET Standard 與平台專案的 NuGet 套件。
@@ -28,7 +28,7 @@ ms.locfileid: "38838006"
 4. 新增`xmlns:a`參考 `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
 5. 使用 XAML 中的類型-請參閱[控制項參考](controls.md)如需詳細資訊。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 下載[預覽以下 NuGet 套件](https://aka.ms/xf-xamlstandard-nuget)。
 2. 新增**Xamarin.Forms.Alias**至 Xamarin.Forms.NET Standard 與平台專案的 NuGet 套件。

@@ -4,15 +4,15 @@ description: 本文章涵蓋包括在 Xamarin.iOS 應用程式和使用 C# 程�
 ms.prod: xamarin
 ms.assetid: 60288B12-49E3-4E87-8690-D04A5EC7A664
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: 4b2bddeb6b04b5c5288f501fce0d6bb03e0b6584
-ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
+ms.openlocfilehash: b29820cb69702f7570e10a555ebe9e3e0824653f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40251009"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104150"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>在 Xamarin.iOS 中顯示影像
 
@@ -22,7 +22,7 @@ _本文章涵蓋包括在 Xamarin.iOS 應用程式和使用 C# 程式碼，或�
 
 開發人員加入時使用的映像的 Xamarin.iOS 應用程式中，將會使用_資產目錄_以支援每個 iOS 裝置和應用程式所需的解析度。
 
-在 iOS 7 中新增**資產目錄映像集**包含的所有版本或映像的支援各種裝置和縮放因數的應用程式所需的表示法。 而不是依賴影像資產檔案名稱 (請參閱[解析度獨立的映像和映像的專門用語](~/ios/app-fundamentals/images-icons/displaying-an-image.md))，**映像集**使用 Json 檔案來指定哪些裝置和/或解析屬於哪一個映像. 這是慣用的方式來管理和支援 iOS （從 iOS 9 或更新版本) 中的映像。
+在 iOS 7 中新增**資產目錄映像集**包含的所有版本或映像的支援各種裝置和縮放因數的應用程式所需的表示法。 而不是依賴映像的資產檔案名稱，**映像集**使用 Json 檔案，以指定哪一個映像屬於哪些裝置和/或解析。 這是慣用的方式來管理和支援 iOS （從 iOS 9 或更新版本) 中的映像。
 
 ## <a name="adding-images-to-an-asset-catalog-image-set"></a>將映像新增至資產目錄映像集
 
@@ -30,7 +30,7 @@ _本文章涵蓋包括在 Xamarin.iOS 應用程式和使用 C# 程式碼，或�
 
 若要建立新的映像集，並將影像加入至它，執行下列作業：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在 [**方案總管] 中**，連按兩下`Assets.xcassets`檔案，以開啟它進行編輯：
 
@@ -48,7 +48,7 @@ _本文章涵蓋包括在 Xamarin.iOS 應用程式和使用 C# 程式碼，或�
 
 ![](displaying-an-image-images/imageset06.png "從下拉式清單中選取映像集的名稱")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 開啟資產目錄，從**方案總管**，然後在左上角，按一下 **加上**按鈕：
 
@@ -88,11 +88,11 @@ MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 
 從 iOS 8 中，特殊開始**向量**類別也已經加入至**映像集**，可讓開發人員包含**PDF**格式改為包括紙匣中的向量映像以不同的解析度的個別點陣圖檔案。 使用此方法中，提供單一的向量檔案以供`@1x`解析度 （格式為向量的 PDF 檔案） 和`@2x`和`@3x`會產生編譯時期和應用程式的組合中所包含的檔案版本。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![](displaying-an-image-images/imageset05.png "在 資產目錄編輯器的向量影像")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![](displaying-an-image-images/asset8.png "在 資產目錄編輯器的向量影像")
 
@@ -116,11 +116,11 @@ IOS 應用程式的設計為基礎，可能的有時候開發人員需要自訂�
 
 若要輕鬆地達成此效果，請切換_呈現模式_的映像資產**範本映像**:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](displaying-an-image-images/templateimage01.png "轉譯模式設定為範本映像")](displaying-an-image-images/templateimage01.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](displaying-an-image-images/templateimage01vs.png "轉譯模式設定為範本")](displaying-an-image-images/templateimage01vs.png#lightbox)
 
@@ -128,11 +128,11 @@ IOS 應用程式的設計為基礎，可能的有時候開發人員需要自訂�
 
 IOS 設計工具中，將影像資產指派至 UI 控制項，然後設定**濃淡**以顏色標示影像：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](displaying-an-image-images/templateimage03.png "設定以顏色標示影像濃淡")](displaying-an-image-images/templateimage03.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](displaying-an-image-images/templateimage03vs.png "設定以顏色標示影像濃淡")](displaying-an-image-images/templateimage03vs.png#lightbox)
 
@@ -169,14 +169,14 @@ if (MyIcon.Image != null) {
 
 將新的資產目錄加入至專案：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 以滑鼠右鍵按一下**專案名稱**中**方案總管**，然後選取**新增** > **新的檔案...**
 2. 選取  **iOS** > **資產目錄**，輸入**名稱**集合，然後按一下 **新增**按鈕：
 
     ![](displaying-an-image-images/asset01.png "建立新的資產目錄")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 在 [方案總管] 中，以滑鼠右鍵按一下**資產目錄**資料夾，然後選取**新增 > 新的資產目錄**。
 2. 給它的名稱，然後按一下**新增**:
@@ -219,7 +219,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 
 映像新增至 Xamarin.iOS 專案使用資產目錄之後, 就可以輕鬆地顯示在分鏡腳本，使用`UIImageView`iOS 設計工具中。 例如，如果已加入下列的影像資產：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![](displaying-an-image-images/display01.png "已新增範例映像資產")
 
@@ -242,7 +242,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 7. 拖曳"T"形狀控點，每個邊緣**映像檢視**到螢幕上以 「 釘選 」 側邊的映像的對應端。 如此一來，**映像檢視**會壓縮，並隨著螢幕重新調整大小。
 8. 將變更儲存到分鏡腳本。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![](displaying-an-image-images/display01vs.png "已新增範例映像資產")
 

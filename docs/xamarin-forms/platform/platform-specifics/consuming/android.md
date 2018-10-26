@@ -6,13 +6,13 @@ ms.assetid: C5D4AA65-9BAA-4008-8A1E-36CDB78A435D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/03/2018
-ms.openlocfilehash: c422b9ac5af9417523f349537fda1bb0c01aa7bc
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.date: 10/01/2018
+ms.openlocfilehash: 50c7b05261cf3f07ea37373cdcdcc8f250243647
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39175173"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108973"
 ---
 # <a name="android-platform-specifics"></a>Android 平台特性
 
@@ -310,6 +310,7 @@ webView.On<Android>().SetMixedContentMode(MixedContentHandling.AlwaysAllow);
 在 Android 上，為 Xamarin.Forms 頁面提供了下列平台特有的功能：
 
 - 設定導覽列的高度[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)。 如需詳細資訊，請參閱 < [NavigationPage 上設定瀏覽列高度](#navigationpage-barheight)。
+- 瀏覽頁面時，停用轉換動畫[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)。 如需詳細資訊，請參閱 < [TabbedPage 中停用頁面轉換動畫](#tabbedpage-transition-animations)。
 - 啟用頁面間撥動[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)。 如需詳細資訊，請參閱 <<c0> [ 啟用撥動頁之間的中 TabbedPage](#enable_swipe_paging)。
 - 設定工具列位置和色彩[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)。 如需詳細資訊，請參閱 <<c0> [ 設定 TabbedPage 工具列位置和色彩](#tabbedpage-toolbar)。
 
@@ -348,6 +349,36 @@ public class AndroidNavigationPageCS : Xamarin.Forms.NavigationPage
 結果是，在導覽列的高度[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)可以設定：
 
 ![](android-images/navigationpage-barheight.png "NavigationPage 導覽列的高度")
+
+<a name="tabbedpage-transition-animations" />
+
+### <a name="disabling-page-transition-animations-in-a-tabbedpage"></a>停用 TabbedPage 中的頁面轉換動畫
+
+此平台專屬用來瀏覽頁面，或是以程式設計方式或使用索引標籤列中時，停用轉換動畫[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)。 它由在 XAML 中設定`TabbedPage.IsSmoothScrollEnabled`可繫結的屬性，以`false`:
+
+```xaml
+<TabbedPage ...
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.IsSmoothScrollEnabled="false">
+    ...
+</TabbedPage>
+```
+
+或者，它可以取用從 C# 使用 fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+On<Android>().SetIsSmoothScrollEnabled(false);
+```
+
+`TabbedPage.On<Android>`方法可讓您指定這個平台專屬只會在 Android 上執行。 `TabbedPage.SetIsSmoothScrollEnabled`方法，請在[ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)命名空間，可用來控制是否在之間瀏覽頁面時，就會顯示轉換動畫[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)。 颾魤 ㄛ`TabbedPage`類別中`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`命名空間也會有下列方法：
+
+- `IsSmoothScrollEnabled`用來擷取是否會在之間瀏覽頁面時，顯示轉換動畫`TabbedPage`。
+- `EnableSmoothScroll`用來在頁面之間巡覽時，啟用轉換動畫`TabbedPage`。
+- `DisableSmoothScroll`用來在頁面之間巡覽時，停用轉換動畫`TabbedPage`。
 
 <a name="enable_swipe_paging" />
 

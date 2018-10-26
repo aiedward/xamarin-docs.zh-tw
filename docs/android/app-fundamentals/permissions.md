@@ -3,15 +3,15 @@ title: 在 Xamarin.Android 中的權限
 ms.prod: xamarin
 ms.assetid: 3C440714-43E3-4D31-946F-CA59DAB303E8
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 3e12aa47404d8ee4e52ddada3d99f91250e6c54d
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: a5295ef05eae213206fada135801bb4fadbcf6dd
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242260"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106334"
 ---
 # <a name="permissions-in-xamarinandroid"></a>在 Xamarin.Android 中的權限
 
@@ -78,7 +78,7 @@ Android 支援程式庫反向移植的一些新的權限較舊版本的 Android 
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 ```
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 它是可以宣告使用 Visual Studio 內建工具支援的權限：
 
@@ -94,7 +94,7 @@ Android 支援程式庫反向移植的一些新的權限較舊版本的 Android 
 
     [![選取範例相機權限](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 它是可以宣告使用建置到 Visual Studio for Mac 的工具支援的權限：
 

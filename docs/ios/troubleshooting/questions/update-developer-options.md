@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: F38BD21E-0C21-43FF-80A6-BB4A88DB88A5
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 04/03/2018
-ms.openlocfilehash: 80a705f64a1079ced204b677715f5566c410fd36
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 42f7f63c1da54bc7596d52c78cbcc1ed76931424
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350871"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112340"
 ---
 # <a name="how-can-i-reenable-developer-options-after-updating-ios"></a>如何重新開發人員選項啟用更新 iOS 之後
 

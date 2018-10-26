@@ -6,13 +6,13 @@ ms.assetid: D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 47cd79611cfeaf48c0422772d8f3e75eb57ba771
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 10/04/2018
+ms.openlocfilehash: b8e851e735fa39d015e22ce511c39ad825bc97c9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996049"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119983"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms TableView
 
@@ -216,7 +216,67 @@ C# 上面執行很多。 我們細分：
 
 請注意，永遠不會定義自訂的儲存格的類別。 相反地，`ViewCell`的檢視設定的特定執行個體`ViewCell`。
 
+## <a name="row-height"></a>資料列高度
 
+[ `TableView` ](xref:Xamarin.Forms.TableView)類別具有可用來變更資料格的資料列高度的兩個屬性：
+
+- [`RowHeight`](xref:Xamarin.Forms.TableView.RowHeight) – 設定每個資料列的高度`int`。
+- [`HasUnevenRows`](xref:Xamarin.Forms.TableView.HasUnevenRows) -資料列有不同的高度，如果設定為`true`。 請注意，當此屬性設定為`true`，資料列高度會自動計算並套用 Xamarin.Forms。
+
+當內容中的資料格的高度[ `TableView` ](xref:Xamarin.Forms.TableView)變更時，資料列高度會隱含地更新 Android 和通用 Windows 平台 (UWP) 上。 不過，在 iOS 上它必須強制設定，更新[ `HasUnevenRows` ](xref:Xamarin.Forms.TableView.HasUnevenRows)屬性設`true`並藉由呼叫[ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize)方法。
+
+下列 XAML 範例所示[ `TableView` ](xref:Xamarin.Forms.TableView) ，其中包含[ `ViewCell` ](xref:Xamarin.Forms.ViewCell):
+
+```xaml
+<ContentPage ...>
+    <TableView ...
+               HasUnevenRows="true">
+        <TableRoot>
+            ...
+            <TableSection ...>
+                ...
+                <ViewCell x:Name="_viewCell"
+                          Tapped="OnViewCellTapped">
+                    <Grid Margin="15,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label Text="Tap this cell." />
+                        <Label x:Name="_target"
+                               Grid.Row="1"
+                               Text="The cell has changed size."
+                               IsVisible="false" />
+                    </Grid>
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>
+```
+
+當[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)點選時，`OnViewCellTapped`事件處理常式會執行：
+
+```csharp
+void OnViewCellTapped(object sender, EventArgs e)
+{
+    _target.IsVisible = !_target.IsVisible;
+    _viewCell.ForceUpdateSize();
+}
+```
+
+`OnViewCellTapped`事件處理常式顯示或隱藏第二個[ `Label` ](xref:Xamarin.Forms.Label)中[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)，並明確更新資料格的大小，藉由呼叫[ `Cell.ForceUpdateSize`](xref:Xamarin.Forms.Cell.ForceUpdateSize)方法。
+
+下列螢幕擷取畫面顯示儲存格之前被點選時：
+
+![](tableview-images/cell-beforeresize.png "調整大小之前的 ViewCell")
+
+下列螢幕擷取畫面會顯示儲存格後被點選時：
+
+![](tableview-images/cell-afterresize.png "調整大小之後的 ViewCell")
+
+> [!IMPORTANT]
+> 如果這項功能過度使用而使，沒有強式可能的效能降低。
 
 ## <a name="related-links"></a>相關連結
 

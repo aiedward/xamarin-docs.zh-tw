@@ -4,15 +4,15 @@ description: 本文件說明如何在 Xamarin.iOS 中使用替代的應用程式
 ms.prod: xamarin
 ms.assetid: 302fa818-33b9-4ea1-ab63-0b2cb312299a
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: 3f009d84d1d38c379f65de52949c66f3e86fc654
-ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
+ms.openlocfilehash: cc5052c8988a27605cf7680a3853f80e7afd38b7
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39275985"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105489"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>在 Xamarin.iOS 中的其他應用程式圖示
 

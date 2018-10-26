@@ -4,15 +4,15 @@ description: 這篇文章將說明如何使用 iOS 9 所提供的新應用程式
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 4e73e1bc34df8628790a3734e5b3b32a687fdf14
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 799d6dd532e530f5ee9c9a974b2d93b6a3be0efb
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351648"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122409"
 ---
 # <a name="search-apis-in-xamarinios"></a>在 Xamarin.iOS 中的搜尋 Api
 

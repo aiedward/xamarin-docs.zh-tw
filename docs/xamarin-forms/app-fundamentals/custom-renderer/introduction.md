@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: 180a196e0b95854815c8a74ef1d2df63407dd04f
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 2b2b5726f4ca28ae37f027a700abdd688aa0b1d7
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998000"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108427"
 ---
 # <a name="introduction-to-custom-renderers"></a>自訂轉譯器簡介
 

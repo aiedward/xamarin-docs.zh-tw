@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2018
-ms.openlocfilehash: 9bac53f71178ac321dea162d346295556a8f7adb
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 070602f05170f7d37a38b184ecd3dbb7864ac73d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998747"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118756"
 ---
 # <a name="xamarinforms-platform-features"></a>Xamarin.Forms 的平台功能
 
@@ -60,11 +60,11 @@ Xamarin.Forms 現在已提供 macOS 應用程式的預覽支援。
 
 ## <a name="tizentizenmd"></a>[Tizen](tizen.md)
 
-Tizen.NET 可讓您建置使用 Xamarin.Forms 和 Tizen.NET framework 的.NET 應用程式。
+Tizen.NET 可讓您建置使用 Xamarin.Forms 和 Tizen.NET Framework 的.NET 應用程式。
 
 ## <a name="windowswindowsindexmd"></a>[Windows](windows/index.md)
 
-Xamarin.Forms 提供 Windows 10 上的支援，適用於通用 Windows 平台 (UWP)。 本文說明如何新增至現有的 Xamarin.Forms 方案的 UWP 專案。
+Xamarin.Forms 提供 Windows 10 上的支援，適用於通用 Windows 平台 (UWP)。 本文說明如何將 UWP 專案新增至現有的 Xamarin.Forms 方案。
 
 ## <a name="wpfwpfmd"></a>[WPF](wpf.md)
 

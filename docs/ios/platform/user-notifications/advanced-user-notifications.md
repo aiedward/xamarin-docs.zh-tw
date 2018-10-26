@@ -1,71 +1,71 @@
 ---
-title: Xamarin.iOS 中的進階的使用者通知
-description: 本文會深入探討使用者通知架構，在 iOS 10 中導入。 它討論使用者通知、 使用者通知介面、 媒體附件、 自訂使用者介面，等等。
+title: 在 Xamarin.iOS 中的進階的使用者通知
+description: 這篇文章會帶您深入探討使用者通知架構，在 iOS 10 中引進。 它討論使用者通知、 使用者通知介面、 媒體附件、 自訂使用者介面等。
 ms.prod: xamarin
 ms.assetid: 4E0C60AE-6F54-4098-8FA0-AADF9AC86805
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 09a73ebc3dab90e6342a45c0f1fb5a40184d18a6
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b0571f826101576b402368923c2147e35aa9299e
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788524"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116325"
 ---
-# <a name="advanced-user-notifications-in-xamarinios"></a>Xamarin.iOS 中的進階的使用者通知
+# <a name="advanced-user-notifications-in-xamarinios"></a>在 Xamarin.iOS 中的進階的使用者通知
 
-新增 iOS 10、 傳遞和處理的本機和遠端通知架構可讓使用者通知。 使用此架構，應用程式或應用程式擴充功能可以排程傳遞本機通知藉由指定的一組條件，例如位置或一天的時間。
+新 iOS 10，使用者通知架構可讓傳遞和本機及遠端通知的處理。 使用此架構，應用程式或應用程式擴充功能可以排程傳遞本機通知藉由指定一組條件，例如位置或一天的時間。
 
-## <a name="about-user-notifications"></a>關於使用者通知
+## <a name="about-user-notifications"></a>使用者通知的相關資訊
 
-新的使用者通知架構允許的傳遞與處理本機與遠端的通知。 使用此架構，應用程式或應用程式擴充功能可以排程傳遞本機通知藉由指定的一組條件，例如位置或一天的時間。
+新的使用者通知架構用來傳遞和本機及遠端通知的處理。 使用此架構，應用程式或應用程式擴充功能可以排程傳遞本機通知藉由指定一組條件，例如位置或一天的時間。
 
-此外，應用程式或延伸模組可以接收 （且可能會修改） 本機和遠端的通知時傳送至使用者的 iOS 裝置。
+此外，應用程式或延伸模組可以接收 （並可能修改） 本機及遠端通知時傳送至使用者的 iOS 裝置。
 
-新的使用者通知 UI 架構可讓應用程式或自訂的本機和遠端通知的外觀，提供給使用者的應用程式擴充功能。
+新的使用者通知 UI 架構可讓應用程式或自訂本機及遠端通知的外觀，提供給使用者的應用程式擴充功能。
 
-此架構提供下列應用程式可以傳送通知給使用者的方式：
+此架構提供下列應用程式可以將通知傳遞給使用者的方式：
 
-- **視覺警示**-向下通知會從做為橫幅螢幕頂端位置。
-- **聲音和振動的情況下**-可以與通知相關聯。
-- **應用程式圖示徽章**-應用程式的圖示會顯示徽章，顯示是否有新的內容。 例如，未讀取的電子郵件訊息數目。
+- **Visual 警示**-關閉通知會從畫面頂端的橫幅為位置。
+- **音效和振動的情況下**-可以與通知相關聯。
+- **應用程式圖示徽章**-如有應用程式的圖示會顯示徽章，顯示新的內容可供使用。 例如，未讀取電子郵件訊息的數目。
 
-此外，根據使用者的目前內容中，有不同的方式，將會顯示通知：
+此外，根據使用者的目前內容中，有許多種通知將會看到：
 
-- 如果裝置已解除鎖定，通知會向下滾動從畫面頂端做為橫幅。
-- 鎖定裝置時，如果將使用者的鎖定螢幕上顯示通知。
+- 如果裝置已解除鎖定，通知會向下捲動從畫面頂端做為橫幅。
+- 如果裝置已鎖定，則會在使用者的鎖定畫面上顯示通知。
 - 如果使用者已錯過通知，他們可以開啟通知中心，並檢視任何可用，等待通知那里。
 
-Xamarin.iOS 應用程式有兩種類型的使用者可以傳送的通知：
+Xamarin.iOS 應用程式有兩種類型的使用者就能夠向傳送的通知：
 
-- **本機通知**-這些在使用者裝置上本機安裝的應用程式所傳送。
-- **遠端通知**-從遠端伺服器，然後向使用者顯示傳送或觸發程序的背景更新應用程式的內容。
+- **本機通知**-這些在本機安裝在使用者裝置上的應用程式所傳送。
+- **遠端通知**-從遠端伺服器，而是向使用者傳送或觸發程序的背景更新應用程式的內容。
 
 如需詳細資訊，請參閱我們[增強使用者通知](~/ios/platform/user-notifications/enhanced-user-notifications.md)文件。
 
 ## <a name="the-new-user-notification-interface"></a>新的使用者通知介面
 
-在鎖定畫面上，提供更多的內容，例如標題、 子標題和可以呈現的選擇性媒體附件，做為橫幅頂端的裝置或通知中心中的新 UI 設計會出現在 iOS 10 中的使用者通知。
+在 iOS 10 中的使用者通知會顯示新的 UI 設計做為橫幅上方的裝置，或在通知中心，在鎖定畫面上，提供更多的內容，例如標題、 子標題和選擇性的媒體附件可顯示。
 
-不論其中會顯示使用者通知 iOS 10 中，它會使用相同的外觀及操作與相同的特性和功能。
+不論其中會顯示使用者通知，iOS 10 中，它會顯示具有相同的外觀及操作，並以相同的特性和功能。
 
-在 iOS 8，Apple 導入了可採取動作的通知，開發人員無法通知附加自訂動作，讓使用者對通知採取行動，而不需要啟動應用程式。 Apple iOS 9，增強可採取動作以回應與文字項目告知使用者可快速回覆通知。
+在 iOS 8 中，Apple 已引進可採取動作的通知，開發人員無法附加自訂動作的通知，並允許使用者對通知採取動作，而不必啟動應用程式。 在 iOS 9 中，Apple 會增強可採取動作的通知和快速回覆可讓使用者回應通知與文字項目。
 
-使用者通知整數更屬於 iOS 10 中的使用者經驗，因為 Apple 進一步擴充之後可採取動作的通知，以支援 3D Touch，其中，使用者按下通知和自訂使用者介面的顯示畫面來提供豐富的互動與通知。
+因為使用者通知是在 iOS 10 中的使用者體驗更加不可或缺的一部分，Apple 已進一步擴充可採取動作的通知，以支援 3D 觸控，其中使用者按下通知和自訂使用者介面的顯示畫面來提供豐富的互動與通知。
 
-顯示自訂的使用者通知 UI 時，如果使用者互動的通知附加任何動作，自訂使用者介面可以立即更新以提供回應已變更。
+顯示自訂的使用者通知 UI 時，如果使用者所互動的任何動作附加至通知，自訂使用者介面可以立即更新以提供有關已變更的意見反應。
 
-新增 ios 10，使用者通知 UI API 可讓 Xamarin.iOS 應用程式輕鬆地利用這些新的使用者通知 UI 功能。
+新增至 iOS 10，使用者通知 UI API 可讓 Xamarin.iOS 應用程式輕鬆地利用這些新的使用者通知 UI 功能。
 
-## <a name="adding-media-attachments"></a>新增媒體的附件
+## <a name="adding-media-attachments"></a>新增媒體附件
 
-取得使用者之間共用的常見項目是 conte 的相片，因此 iOS 10 新增，能夠連線媒體項目 （例如相片） 直接通知，它將會呈現和通知的其餘部分以及使用者方便使用nt。
+取得使用者之間共用的常見項目是 conte 的相片，因此 iOS 10 新增能力以附加媒體項目 （例如相片） 直接通知，將可在其中呈現和方便使用的使用者，以及剩餘的通知nt。
 
-不過，由於傳送相關大小甚至的小型影像，將它附加到遠端的通知裝載會變得不切實際。 若要處理這種情況下，開發人員可以 iOS 10 使用新的服務延伸模組從其他來源 （例如 CloudKit 資料存放區） 下載映像，並將它附加至通知的內容，顯示給使用者之前。
+不過，因為傳送相關的大小甚至小型影像，將它附加到遠端的通知裝載會變得不切實際。 若要處理這種情況下，開發人員可以使用新的服務延伸模組在 iOS 10 中從其他來源 （例如 CloudKit 資料存放區） 中下載映像，並將它附加至通知的內容，顯示給使用者之前。
 
-修改服務延伸模組為遠端通知，其裝載必須標示為可變動。 例如: 
+服務延伸模組所要修改遠端通知，其裝載必須標示為可變動。 例如: 
 
 ```csharp
 {
@@ -81,9 +81,9 @@ Xamarin.iOS 應用程式有兩種類型的使用者可以傳送的通知：
 
 [![](advanced-user-notifications-images/extension02.png "新增媒體附件處理程序")](advanced-user-notifications-images/extension02.png#lightbox)
 
-一旦遠端通知傳遞至裝置 （透過 APNs) 時，服務延伸模組然後可以下載所需的映像，透過任何想要的方式 (例如`NSURLSession`) 與它接收到影像之後，它就可以修改的通知和顯示的內容它給使用者。
+一旦遠端通知傳遞到裝置 （透過 APNs)，服務延伸模組可以下載所需的映像，透過任何想要的方式 (例如`NSURLSession`) 和它接收到影像之後，它可以修改的通知和顯示的內容它的使用者。
 
-此程序可能會如何處理程式碼中的範例如下：
+此程序可能會如何處理在程式碼中的範例如下：
 
 ```csharp
 using System;
@@ -134,67 +134,67 @@ namespace MonkeyNotification
 }
 ```
 
-來自 APNs 收到通知時，影像的自訂位址讀取內容，並從伺服器下載檔案。 然後`UNNotificationAttachement`建立映像的本機位置與唯一識別碼 (為`NSUrl`)。 建立可變動通知內容的副本，並加入媒體附件。 最後，會顯示通知給使用者藉由呼叫`contentHandler`。
+來自 APNs 收到通知時，映像的自訂位址讀取內容，並從伺服器下載檔案。 然後`UNNotificationAttachement`建立的唯一識別碼與本機映像的位置 (為`NSUrl`)。 建立 Notification Content 的可變動複本，並加入媒體附件。 最後，通知會顯示給使用者藉由呼叫`contentHandler`。
 
-一旦加入附件通知，系統會接管移動和管理的檔案。
+通知加入附件之後, 系統會移動和管理的檔案。
 
-除了上述遠端通知時，媒體附件也支援從本機通知，其中`UNNotificationAttachement`會建立並附加至通知以及其內容。
+除了上述遠端通知時，媒體附件也支援從本機通知，其中`UNNotificationAttachement`在建立並連接至通知以及其內容。
 
-通知 iOS 10 中的支援的映像的媒體附件 (靜態和 Gif)、 音訊或視訊及系統會自動顯示正確的自訂使用者介面的這兩種類型的附件時通知呈現給使用者。
+通知在 iOS 10 支援的映像的媒體附件 (靜態和 Gif)，音訊或視訊和系統會自動顯示正確的自訂 UI 的每一種類型的附件時向使用者顯示通知。
 
 > [!NOTE]
-> 應該小心最佳化媒體大小且花費的時間下載媒體，從遠端伺服器 （或本機通知組合媒體） 做為系統嚴格限制同時執行的應用程式服務延伸模組時。 例如，請考慮傳送映像的簡易的版本或小剪輯的視訊顯示在通知。
+> 應該小心以最佳化媒體大小和執行應用程式的服務延伸模組時花費的時間下載媒體，從遠端伺服器 （或本機通知的組合媒體） 做為系統加諸兩者的嚴格限制。 比方說，請考慮將映像的簡要的版本或小剪輯的視訊顯示在通知中傳送。
 
 ## <a name="creating-custom-user-interfaces"></a>建立自訂使用者介面
 
-若要建立其使用者通知的自訂使用者介面，開發人員必須將 （新增 iOS 10） 的通知內容延伸加入至應用程式的方案。
+若要建立其使用者通知的自訂使用者介面，開發人員必須將 （新增 iOS 10） Notification Content 延伸模組加入至應用程式的方案。
 
-通知內容延伸模組可讓開發人員將自己的檢視加入至通知 UI，並繪製出他們想要的任何內容。 不過，（例如按鈕或文字欄位） 的互動式 UI widgets 是**不**受到通知 UI，而且永遠不會加入自訂的 UI 設計。
+通知內容延伸模組可讓開發人員將他們自己的檢視加入至通知 UI，並繪製出他們想要的任何內容。 從 iOS 12，通知內容延伸模組支援互動式 UI 控制項，例如按鈕和滑桿。 如需詳細資訊，請參閱 <<c0> [ 互動式的通知，在 iOS 12](~/ios/platform/introduction-to-ios12/notifications/interactive.md)文件。
 
-若要支援使用者通知與使用者互動，自訂動作都應該建立、 向系統和排程與系統之前附加到通知。 通知內容延伸模組將被呼叫來處理這些動作的處理。 請參閱[使用通知動作](~/ios/platform/user-notifications/enhanced-user-notifications.md)區段[增強使用者通知](~/ios/platform/user-notifications/enhanced-user-notifications.md)文件，如需有關自訂動作。
+若要支援使用者通知的使用者互動，自訂動作都應該建立，向系統，排程與系統之前，連接到通知。 Notification Content 延伸模組將被呼叫來處理這些動作的處理。 請參閱[使用 通知動作](~/ios/platform/user-notifications/enhanced-user-notifications.md)一節[增強使用者通知](~/ios/platform/user-notifications/enhanced-user-notifications.md)如需詳細資訊，請在 自訂動作上的文件。
 
-當使用者通知與自訂 UI 呈現給使用者時，它會有下列項目：
+當使用者通知中使用自訂 UI 呈現給使用者時，它會具有下列項目：
 
 [![](advanced-user-notifications-images/customui01.png "使用者通知與自訂 UI 項目")](advanced-user-notifications-images/customui01.png#lightbox)
 
-如果使用者互動 （通知下方所顯示） 的自訂動作時，您就可以更新使用者介面提供的使用者意見反應，做為其叫用指定的動作時，發生了什麼事。
+如果使用者所互動的自訂動作 （通知下方顯示），則可以更新使用者介面，以提供使用者意見反應，做為其叫用指定的動作時，發生了什麼事。
 
-### <a name="adding-a-notification-content-extension"></a>正在將通知內容擴充功能
+### <a name="adding-a-notification-content-extension"></a>新增 notification content 延伸模組
 
-若要實作自訂使用者通知 UI Xamarin.iOS 應用程式中，執行下列作業：
+若要實作自訂使用者通知 UI 的 Xamarin.iOS 應用程式中，執行下列作業：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在 Visual Studio 中開啟應用程式的方案，for mac。
-2. 以滑鼠右鍵按一下方案名稱在**方案板**選取**新增** > **加入新的專案**。
-3. 選取**iOS** > **延伸** > **通知內容延伸**按一下**下一步**按鈕： 
+1. 應用程式的方案在 Visual Studio for mac 中開啟
+2. 中的方案名稱上按一下滑鼠右鍵**Solution Pad** ，然後選取**新增** > **加入新的專案**。
+3. 選取 [ **iOS** > **延伸模組** > **通知內容延伸模組**然後按一下**下一步]** 按鈕： 
 
-    [![](advanced-user-notifications-images/notify01.png "選取通知內容的延伸模組")](advanced-user-notifications-images/notify01.png#lightbox)
-4. 輸入**名稱**延伸模組，然後按一下**下一步**按鈕： 
+    [![](advanced-user-notifications-images/notify01.png "選取通知內容延伸模組")](advanced-user-notifications-images/notify01.png#lightbox)
+4. 請輸入**名稱**延伸模組，然後按一下 [**下一步]** 按鈕： 
 
-    [![](advanced-user-notifications-images/notify02.png "輸入副檔名的名稱")](advanced-user-notifications-images/notify02.png#lightbox)
-5. 調整**專案名稱**及/或**方案名稱**如果需要，然後按一下 **建立**按鈕： 
+    [![](advanced-user-notifications-images/notify02.png "輸入延伸模組的名稱")](advanced-user-notifications-images/notify02.png#lightbox)
+5. 調整**專案名稱**及/或**方案名稱**如果需要，然後按一下**建立**按鈕： 
 
     [![](advanced-user-notifications-images/notify03.png "調整的專案名稱和/或方案名稱")](advanced-user-notifications-images/notify03.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 在 Visual Studio 中開啟應用程式的方案，for mac。
-2. 以滑鼠右鍵按一下方案名稱在**方案總管 中**選取**新增 > 新的專案...**.
-3. 選取**Visual C# > iOS 擴充功能 > 通知內容延伸**:
+1. 應用程式的方案在 Visual Studio for mac 中開啟
+2. 中的方案名稱上按一下滑鼠右鍵**方案總管**，然後選取**新增 > 新增專案...**.
+3. 選取  **Visual C# > iOS 延伸模組 > Notification Content 延伸模組**:
 
-    [![](advanced-user-notifications-images/notify01.w157-sml.png "選取通知內容的延伸模組")](advanced-user-notifications-images/notify01.w157.png#lightbox)
-4. 輸入**名稱**延伸模組，然後按一下**確定** 按鈕。
+    [![](advanced-user-notifications-images/notify01.w157-sml.png "選取通知內容延伸模組")](advanced-user-notifications-images/notify01.w157.png#lightbox)
+4. 請輸入**名稱**延伸模組，然後按一下 [**確定**] 按鈕。
 
 -----
 
-通知內容延伸加入至方案時，將會擴充功能的專案中建立三個檔案：
+Notification Content 延伸模組加入至方案時，將會在擴充功能的專案中建立三個檔案：
 
-1. `NotificationViewController.cs` -這是通知內容延伸的主要檢視控制站。
-2. `MainInterface.storyboard` -其中開發人員會配置看 UI iOS 設計工具的通知內容延伸模組。
-3. `Info.plist` -控制通知內容擴充的組態。
+1. `NotificationViewController.cs` -這是 Notification Content 延伸模組的主要檢視控制器。
+2. `MainInterface.storyboard` -其中開發人員會配置視覺化 UI 的 Notification Content 延伸模組在 iOS 設計工具中。
+3. `Info.plist` -控制 Notification Content 延伸模組的組態。
 
-預設值`NotificationViewController.cs`檔看起來如下所示：
+預設值`NotificationViewController.cs`檔案看起來如下所示：
 
 ```csharp
 using System;
@@ -239,67 +239,67 @@ namespace MonkeyChatNotifyExtension
 }
 ```
 
-`DidReceiveNotification`呼叫方法時，以便通知內容延伸可以填入自訂使用者介面的內容，通知由使用者展開`UNNotification`。 如上述範例中，標籤已加入至檢視，公開給具有名稱的程式碼`label`並用來顯示通知的本文。
+`DidReceiveNotification`方法呼叫時，讓 Notification Content 延伸模組可以填入內容的自訂 UI，通知會根據使用者展開`UNNotification`。 如上述範例中，標籤已新增至檢視，公開到程式碼名稱`label`和用來顯示通知的主體。
 
-### <a name="setting-the-notification-content-extensions-categories"></a>設定為通知內容延伸類別
+### <a name="setting-the-notification-content-extensions-categories"></a>設定 Notification Content 延伸模組的分類
 
-系統必須了解如何尋找其回應的特定類別為基礎的應用程式的通知內容延伸。 請執行下列動作：
+系統需要以了解如何尋找應用程式的 Notification Content 延伸模組會根據其回應的特定類別。 請執行下列動作：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 按兩下副檔名`Info.plist`檔案中**方案板**開啟進行編輯。
-2. 切換至**來源**檢視。
+1. 按兩下副檔名`Info.plist`檔案中**Solution Pad**以開啟它進行編輯。
+2. 若要切換**來源**檢視。
 3. 展開`NSExtension`索引鍵。
-4. 新增`UNNotificationExtensionCategory`金鑰類型為**字串**副檔名所屬的類別目錄的值 (在此範例中 ' 事件邀請): 
+4. 新增`UNNotificationExtensionCategory`金鑰做為類型**字串**與擴充功能屬於類別目錄的值 (在此範例中 ' 事件邀請): 
 
     [![](advanced-user-notifications-images/customui02.png "新增 UNNotificationExtensionCategory 機碼")](advanced-user-notifications-images/customui02.png#lightbox)
 5. 儲存您的變更。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 按兩下副檔名`Info.plist`檔案**方案總管 中**開啟進行編輯。
+1. 按兩下副檔名`Info.plist`檔案中**方案總管 中**以開啟它進行編輯。
 3. 展開`NSExtension`索引鍵。
-4. 新增`UNNotificationExtensionCategory`金鑰類型為**字串**副檔名所屬的類別目錄的值 (在此範例中 ' 事件邀請): 
+4. 新增`UNNotificationExtensionCategory`金鑰做為類型**字串**與擴充功能屬於類別目錄的值 (在此範例中 ' 事件邀請): 
 
     [![](advanced-user-notifications-images/customui02w.png "新增 UNNotificationExtensionCategory 機碼")](advanced-user-notifications-images/customui02w.png#lightbox)
 5. 儲存您的變更。
 
 -----
 
-通知內容的延伸模組類別 (`UNNotificationExtensionCategory`) 使用相同的類別值，可用來註冊通知動作。 其中的應用程式會使用相同的 UI 的多個分類的情況下，切換`UNNotificationExtensionCategory`類型**陣列**並提供所有必要的類別。 例如: 
+通知內容延伸模組類別 (`UNNotificationExtensionCategory`) 使用相同的類別目錄值用來註冊通知動作。 在其中的應用程式時，會針對多個類別使用相同的 UI 的情況下，切換`UNNotificationExtensionCategory`型別**陣列**，並提供所有必要的類別。 例如: 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](advanced-user-notifications-images/customui03.png "通知內容的延伸模組類別")](advanced-user-notifications-images/customui03.png#lightbox)
+[![](advanced-user-notifications-images/customui03.png "通知內容延伸模組類別")](advanced-user-notifications-images/customui03.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](advanced-user-notifications-images/customui03w.png "通知內容的延伸模組類別")](advanced-user-notifications-images/customui03w.png#lightbox)
+[![](advanced-user-notifications-images/customui03w.png "通知內容延伸模組類別")](advanced-user-notifications-images/customui03w.png#lightbox)
 
 -----
 
-### <a name="hiding-the-default-notification-content"></a>隱藏預設的通知內容
+### <a name="hiding-the-default-notification-content"></a>隱藏預設通知內容
 
-在其中自訂通知 UI 將會顯示相同的內容做為預設值 （標題、 子標題和自動顯示在通知 UI 底部的主體） 的通知的情況下，可以隱藏這項預設資訊加`UNNotificationExtensionDefaultContentHidden`鍵`NSExtensionAttributes`金鑰類型為**布林**值是`YES`中的延伸模組`Info.plist`檔案：
+在其中自訂通知 UI 將會顯示相同的內容為預設值 （標題、 副標題和內文會自動顯示在 UI 底部的通知） 的通知的情況下，可以隱藏這項預設資訊加上`UNNotificationExtensionDefaultContentHidden`機碼`NSExtensionAttributes`金鑰做為類型**布林**值為`YES`中的延伸模組`Info.plist`檔案：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](advanced-user-notifications-images/customui04.png "尋找預設的資訊")](advanced-user-notifications-images/customui04.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](advanced-user-notifications-images/customui04w.png "尋找預設的資訊")](advanced-user-notifications-images/customui04w.png#lightbox)
 
 -----
 
-### <a name="designing-the-custom-ui"></a>設計自訂使用者介面
+### <a name="designing-the-custom-ui"></a>設計自訂的 UI
 
-若要設計通知內容擴充功能的自訂使用者介面，按兩下`MainInterface.storyboard`檔案以開啟設計工具中，在 iOS 中進行編輯，拖曳項目，您必須先建置所需的介面中 (例如`UILabels`和`UIImageViews`)。
+若要設計 Notification Content 延伸模組的自訂使用者介面，按兩下`MainInterface.storyboard`拖曳建置所需的介面所需的項目中的檔案將它開啟以在 iOS 設計工具中編輯 (例如`UILabels`和`UIImageViews`)。
 
 > [!NOTE]
-> 沒有通知 UI_不_通知內容的延伸模組中支援互動式的控制項，例如文字欄位或按鈕。 雖然可以將它們加入分鏡腳本，使用者將無法與它們互動。 若要加入自訂的通知使用者介面中的使用者互動，請改用自訂動作。
+> 從 iOS 12，開始 Notification Content 延伸模組可以包含互動的控制項，例如按鈕和文字欄位。 如需詳細資訊，請參閱 <<c0> [ 互動式的通知，在 iOS 12](~/ios/platform/introduction-to-ios12/notifications/interactive.md)文件。
 
-一旦 UI 配置，並以 C# 程式碼公開必要的控制項，開啟`NotificationViewController.cs`進行編輯和修改`DidReceiveNotification`填入 UI，當使用者展開通知的方法。 例如: 
+當 UI 配置，而且必要的控制項公開至C#程式碼中，開啟`NotificationViewController.cs`編輯和修改`DidReceiveNotification`來填入 UI，當使用者展開通知的方法。 例如: 
 
 ```csharp
 using System;
@@ -355,29 +355,29 @@ namespace MonkeyChatNotifyExtension
 }
 ```
 
-### <a name="setting-the-content-area-size"></a>將內容區域的大小設定
+### <a name="setting-the-content-area-size"></a>設定內容區域大小
 
-下列程式碼設定來調整內容區域對使用者顯示的大小，`PreferredContentSize`屬性`ViewDidLoad`至所需大小的方法。 這個大小可能也會套用到 iOS 設計工具中檢視的條件約束來調整，會維持到開發人員選擇最適合這些方法。
+下列程式碼設定來調整內容區域向使用者顯示的大小，請`PreferredContentSize`屬性中的`ViewDidLoad`至所需大小的方法。 這個大小可能也會藉由將條件約束套用至 iOS 設計工具中檢視調整，它就到開發人員挑選最適合他們的方法。
 
-因為系統已在執行之前叫用內容延伸時的通知內容區域的通知將會開始完整大小，和動畫顯示到呈現給使用者時所要求的大小。
+因為系統已在執行之前叫用內容的延伸模組時的通知內容區域的通知將會開始完整大小，和動畫顯示到時向使用者顯示要求的大小。
 
-若要消除這種效果，請編輯`Info.plist`檔案延伸模組和組`UNNotificationExtensionInitialContentSizeRatio`索引鍵`NSExtensionAttributes`輸入的索引鍵**數目**與值，代表所要的比率。 例如: 
+若要消除這種效果，請編輯`Info.plist`延伸模組並將設定檔`UNNotificationExtensionInitialContentSizeRatio`的索引鍵`NSExtensionAttributes`類型的索引鍵**數目**與值，表示所需的比率。 例如: 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](advanced-user-notifications-images/customui05.png "UNNotificationExtensionInitialContentSizeRatio 金鑰")](advanced-user-notifications-images/customui05.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](advanced-user-notifications-images/customui05w.png "UNNotificationExtensionInitialContentSizeRatio 金鑰")](advanced-user-notifications-images/customui05w.png#lightbox)
 
 -----
 
-### <a name="using-media-attachments-in-custom-ui"></a>在自訂 UI 中使用媒體的附件
+### <a name="using-media-attachments-in-custom-ui"></a>使用自訂的 UI 中的媒體附件
 
-因為媒體附加檔案 (如中所示[新增媒體附件](#Adding-Media-Attachments)上一節) 通知裝載的一部分，可以存取並顯示在通知內容延伸，就像它們會在預設UI 的通知。
+因為媒體附件 (如中所示[新增媒體附件](#Adding-Media-Attachments)上一節) 會通知承載的一部分，可以存取並顯示在 Notification Content 延伸模組，就像您在 預設值時，其方式是UI 的通知。
 
-例如，如果包含上述的自訂 UI `UIImageView` ，已公開給 C# 程式碼中，下列程式碼無法用來填入從媒體附件：
+例如，如果上述的自訂 UI 包含`UIImageView`的已公開至C#程式碼，下列程式碼可用來從填入媒體附件：
 
 ```csharp
 using System;
@@ -440,22 +440,20 @@ namespace MonkeyChatNotifyExtension
 }
 ```
 
-媒體附件已由系統管理，因為它是外部應用程式的沙箱。 延伸模組必須對系統通知它想存取的檔案，藉由呼叫`StartAccessingSecurityScopedResource`方法。 當擴充功能完成與檔案時，需要呼叫`StopAccessingSecurityScopedResource`釋放其連線。
+媒體的附件由系統管理，因為它是外部應用程式的沙箱。 延伸模組必須通知系統，它想存取的檔案，藉由呼叫`StartAccessingSecurityScopedResource`方法。 延伸模組完成時的檔案，還需要呼叫`StopAccessingSecurityScopedResource`釋放它的連線。
 
-### <a name="adding-custom-actions-to-a-custom-ui"></a>加入自訂的 UI 自訂動作
+### <a name="adding-custom-actions-to-a-custom-ui"></a>將自訂動作加入至自訂 UI
 
-如前所述，通知 UI 不支援使用者互動讓 UI 設計中不支援控制項，例如文字欄位或按鈕。
+自訂動作按鈕可用來將互動功能加入至自訂通知 UI。 請參閱[使用 通知動作](~/ios/platform/user-notifications/enhanced-user-notifications.md)一節[增強使用者通知](~/ios/platform/user-notifications/enhanced-user-notifications.md)文件的自訂動作的更多詳細資料。
 
-相反地，標準自訂動作機制用於自訂的通知使用者介面中加入互動功能。 請參閱[使用通知動作](~/ios/platform/user-notifications/enhanced-user-notifications.md)區段[增強使用者通知](~/ios/platform/user-notifications/enhanced-user-notifications.md)文件，如需有關自訂動作。
+除了自訂動作，下列內建動作也可以回應 Notification Content 延伸模組：
 
-自訂動作，除了下列內建動作也可以回應通知內容延伸：
+- **預設動作**-這是當使用者點選通知以開啟應用程式，並顯示特定的通知的詳細資料。
+- **關閉動作**-此動作會傳送至應用程式，當使用者關閉特定的通知。
 
-- **預設動作**-這是當使用者點選通知，開啟應用程式，並顯示指定的通知的詳細資料。
-- **關閉動作**-當使用者關閉指定的通知時，將會傳送至應用程式的這項動作。
+通知內容延伸模組也可以在使用者叫用其中一個自訂動作時，更新其 UI，例如顯示為已接受時的日期在使用者點選**接受**自訂動作按鈕。 此外，通知內容延伸模組可以告訴系統以延遲的通知 ui dismissal，所以通知關閉之前，使用者可以看到其動作的效果。
 
-通知內容的擴充功能也必須更新其 UI，當使用者叫用其中一個自訂動作的能力，例如顯示為已接受時的日期在使用者點選**接受**自訂動作按鈕。 此外，通知內容延伸模組可以告訴延後的通知 ui dismissal，讓使用者可以查看其動作的影響，通知關閉之前的系統。
-
-這是藉由實作第二個版本`DidReceiveNotification`包含完成處理常式方法。 例如: 
+這是藉由實作第二個版本`DidReceiveNotification`包含完成處理常式的方法。 例如: 
 
 ```csharp
 using System;
@@ -529,16 +527,16 @@ namespace myApp {
 }
 ```
 
-藉由新增`Server.PostEventResponse`處理常式，以`DidReceiveNotification`通知內容延伸模組，擴充功能的方法*必須*處理所有的自訂動作。 延伸模組也可以藉由變更轉送到包含應用程式的自訂動作`UNNotificationContentExtensionResponseOption`。 例如: 
+藉由新增`Server.PostEventResponse`處理常式，以便`DidReceiveNotification`Notification Content 延伸模組，擴充功能方法*必須*處理所有的自訂動作。 擴充功能也可以藉由變更轉送至包含應用程式的自訂動作`UNNotificationContentExtensionResponseOption`。 例如: 
 
 ```csharp
 // Close Notification
 completionHandler (UNNotificationContentExtensionResponseOption.DismissAndForwardAction);
 ```
 
-### <a name="working-with-the-text-input-action-in-custom-ui"></a>使用自訂 UI 中的文字輸入動作
+### <a name="working-with-the-text-input-action-in-custom-ui"></a>使用自訂的 UI 中的文字輸入動作
 
-根據應用程式和通知的設計，可能需要將文字輸入 （例如，回覆郵件） 的通知使用者的時間。 就像標準通知未通知的內容延伸會有內建文字輸入動作的存取。
+根據應用程式和通知的設計，可能需要使用者輸入文字 （例如，回覆訊息） 通知的時間。 Notification Content 延伸模組有內建的文字輸入動作的存取權，就像沒有標準的通知。
 
 例如: 
 
@@ -679,7 +677,7 @@ namespace MonkeyChatNotifyExtension
 }
 ```
 
-此程式碼會建立新的文字輸入的動作，並將它加入擴充功能的類別 (在`MakeExtensionCategory`) 方法。 在`DidReceive`覆寫方法，它會處理使用者輸入文字以下列程式碼：
+此程式碼會建立新的文字輸入的動作，並將它加入至擴充功能的類別目錄 (在`MakeExtensionCategory`) 方法。 在 `DidReceive`覆寫方法，它會處理使用者輸入文字，以下列程式碼：
 
 ```csharp
 // Is text input?
@@ -692,7 +690,7 @@ if (response is UNTextInputNotificationResponse) {
 }
 ```
 
-如果設計呼叫會將自訂按鈕加入至文字輸入欄位，加入下列程式碼，以將其包含：
+如果設計呼叫會在文字輸入欄位中加入自訂按鈕，新增下列程式碼，以將其包含：
 
 ```csharp
 // Allow to take input
@@ -707,7 +705,7 @@ public override UIView InputAccessoryView {
 }
 ```
 
-使用者所觸發的註解動作時，需要啟用檢視控制器和自訂文字輸入的欄位：
+使用者所觸發的註解動作時，需要啟用檢視控制器和自訂的文字輸入的欄位：
 
 ```csharp
 // Update UI when the user interacts with the
@@ -728,16 +726,13 @@ Server.PostEventResponse += (response) {
 };
 ```
 
-<a name="Summary" />
-
 ## <a name="summary"></a>總結
 
-這篇文章已取得進階的查看 Xamarin.iOS 應用程式中使用新的使用者通知架構。 它涵蓋新增媒體的附件給本機和遠端的通知，它涵蓋使用新的使用者通知 UI 來建立自訂通知 Ui。
-
+這篇文章已在 Xamarin.iOS 應用程式中使用新的使用者通知架構的進階的檢視。 它涵蓋新增至本機和遠端通知的媒體附件，其中涵蓋了使用新的使用者通知 UI 來建立自訂的通知 Ui。
 
 ## <a name="related-links"></a>相關連結
 
 - [iOS 10 範例](https://developer.xamarin.com/samples/ios/iOS10/)
-- [UserNotifications Framework 參考](https://developer.apple.com/reference/usernotifications)
+- [UserNotifications 架構參考](https://developer.apple.com/reference/usernotifications)
 - [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
 - [本機和遠端通知程式設計指南](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html)

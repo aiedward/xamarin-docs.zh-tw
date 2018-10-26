@@ -3,15 +3,15 @@ title: 在 Android 應用程式中使用資料
 ms.prod: xamarin
 ms.assetid: D5932AEB-0B6E-4F37-8B32-9BE4775AEE85
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: 563c04ef1c8eec00108844894c5f9bdc0e9950e3
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: e9af8df3cbe6f125788f298be6a181472c1cd27d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241886"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108284"
 ---
 # <a name="using-data-in-an-app"></a>在應用程式中使用資料
 

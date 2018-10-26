@@ -4,15 +4,15 @@ description: 這篇文章涵蓋使用 「 映像和在 Xamarin.Mac 應用程式�
 ms.prod: xamarin
 ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 3bc3c731729f92ae3c5ad6126166892a236e2eab
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 8df7e14088486d0eff9a6370303e83c5e69d4484
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40250994"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119095"
 ---
 # <a name="images-in-xamarinmac"></a>Xamarin.Mac 中的映像
 

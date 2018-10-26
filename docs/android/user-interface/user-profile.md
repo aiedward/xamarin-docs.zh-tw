@@ -3,19 +3,19 @@ title: 使用者設定檔
 ms.prod: xamarin
 ms.assetid: 6BB01F75-5E98-49A1-BBA0-C2680905C59D
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2018
-ms.openlocfilehash: 1eaae86ab9eacf007eca792d96e889db6f367922
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2d9dc54801c4df084007a2903becf0c68bf1c6df
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30765502"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109961"
 ---
 # <a name="user-profile"></a>使用者設定檔
 
-Android 已支援的列舉連絡人[ContactsContract](https://developer.xamarin.com/api/type/Android.Provider.ContactsContract/)自應用程式開發介面層級 5 提供者。 例如，列出連絡人很簡單，只使用[ContactContracts.Contacts](https://developer.xamarin.com/api/type/Android.Provider.ContactsContract+Contacts/)類別，如下列程式碼範例所示：
+Android 支援列舉連絡人[ContactsContract](https://developer.xamarin.com/api/type/Android.Provider.ContactsContract/) API 層級 5 之後的提供者。 例如，列出連絡人是只要使用[ContactContracts.Contacts](https://developer.xamarin.com/api/type/Android.Provider.ContactsContract+Contacts/)類別，如下列程式碼範例所示：
 
 ```csharp
 // Get the URI for the user's contacts:
@@ -45,18 +45,18 @@ if (cursor != null)
 }
 ```
 
-從 Android 4 (API 層級 14) [ContactsContact.Profile](https://developer.xamarin.com/api/type/Android.Provider.ContactsContract+Profile/)類別是可透過`ContactsContract`提供者。 `ContactsContact.Profile`可存取個人的設定檔之裝置，包括裝置擁有者的名稱和電話號碼等連絡資料擁有者。
+Android 4 (API 層級 14) 為開頭[ContactsContact.Profile](https://developer.xamarin.com/api/type/Android.Provider.ContactsContract+Profile/)類別是可透過`ContactsContract`提供者。 `ContactsContact.Profile`提供存取個人設定檔的裝置，其中包括將裝置擁有者名稱 」 和 「 電話號碼等連絡資料擁有者。
 
 
 ## <a name="required-permissions"></a>必要的權限
 
-若要讀取和寫入連絡資料，應用程式必須要求`READ_CONTACTS`和`WRITE_CONTACTS`權限，分別。
+若要讀取和寫入的連絡資料，應用程式必須要求`READ_CONTACTS`和`WRITE_CONTACTS`權限，分別。
 此外，若要閱讀和編輯使用者設定檔，應用程式必須要求`READ_PROFILE`和`WRITE_PROFILE`權限。
 
 
 ## <a name="updating-profile-data"></a>更新設定檔資料
 
-一旦已設定這些權限，應用程式可以使用 Android 的一般技術與使用者設定檔的資料互動。 例如，若要更新的設定檔的顯示名稱，請呼叫[ContentResolver.Update](https://developer.xamarin.com/api/member/Android.Content.ContentResolver.Update)與`Uri`透過擷取[ContactsContract.Profile.ContentRawContactsUri](https://developer.xamarin.com/api/property/Android.Provider.ContactsContract+Profile.ContentRawContactsUri/)屬性，如下所示如下：
+一旦有尚未設定這些權限，應用程式可以使用一般 Android 的技術，使用者設定檔的資料進行互動。 例如，若要更新設定檔的顯示名稱，請呼叫[ContentResolver.Update](https://developer.xamarin.com/api/member/Android.Content.ContentResolver.Update)具有`Uri`透過擷取[ContactsContract.Profile.ContentRawContactsUri](https://developer.xamarin.com/api/property/Android.Provider.ContactsContract+Profile.ContentRawContactsUri/)屬性，如所示下面：
 
 ```csharp
 var values = new ContentValues ();
@@ -68,7 +68,7 @@ ContentResolver.Update (ContactsContract.Profile.ContentRawContactsUri, values, 
 
 ## <a name="reading-profile-data"></a>讀取設定檔資料
 
-發出查詢，以便[ContactsContact.Profile.ContentUri](https://developer.xamarin.com/api/property/Android.Provider.ContactsContract+Profile.ContentUri/)讀取備份設定檔資料。 例如，下列程式碼會讀取使用者設定檔的顯示名稱：
+發出查詢來[ContactsContact.Profile.ContentUri](https://developer.xamarin.com/api/property/Android.Provider.ContactsContract+Profile.ContentUri/)讀取回設定檔資料。 例如，下列程式碼會讀取使用者設定檔的顯示名稱：
 
 ```csharp
 // Read the profile
@@ -92,7 +92,7 @@ if (cursor != null)
 
 ## <a name="navigating-to-the-user-profile"></a>瀏覽至 使用者設定檔
 
-最後，巡覽至 使用者設定檔，建立與意圖`ActionView`動作和`ContactsContract.Profile.ContentUri`然後將它傳遞給`StartActivity`方法如下：
+最後，瀏覽至 使用者設定檔、 建立與意圖`ActionView`動作，`ContactsContract.Profile.ContentUri`然後將它傳遞給`StartActivity`方法如下：
 
 ```csharp
 var intent = new Intent (Intent.ActionView,
@@ -100,16 +100,16 @@ var intent = new Intent (Intent.ActionView,
 StartActivity (intent);
 ```
 
-執行上述程式碼，當使用者設定檔會顯示如下列螢幕擷取畫面所示：
+當執行上述程式碼時，使用者設定檔會顯示如下列螢幕擷取畫面所示：
 
-[![螢幕擷取畫面顯示 John Doe 的使用者設定檔的設定檔](user-profile-images/01-profile-screen-sml.png)](user-profile-images/01-profile-screen.png#lightbox)
+[![顯示 John Doe 的使用者設定檔的設定檔的螢幕擷取畫面](user-profile-images/01-profile-screen-sml.png)](user-profile-images/01-profile-screen.png#lightbox)
 
-使用使用者設定檔是類似於與 Android 中的其他資料互動，並且提供一層額外的裝置個人化。
+使用使用者設定檔是類似於在 Android 中，其他資料互動，並提供一層額外的裝置個人化。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [ContactsProviderDemo (sample)](https://developer.xamarin.com/samples/monodroid/ContactsProviderDemo/)
-- [介紹的冰淇淋三明治](http://www.android.com/about/ice-cream-sandwich/)
+- [ContactsProviderDemo （範例）](https://developer.xamarin.com/samples/monodroid/ContactsProviderDemo/)
+- [簡介 Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
 - [Android 4.0 平台](http://developer.android.com/sdk/android-4.0.html)

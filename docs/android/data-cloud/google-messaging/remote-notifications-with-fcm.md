@@ -4,15 +4,15 @@ description: 本逐步解說提供如何使用 Firebase 雲端通訊實作遠端
 ms.prod: xamarin
 ms.assetid: 4D7C5F46-C997-49F6-AFDA-6763E68CDC90
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: 36ac1be1274ff90d573aa53e5c86ae0a97709505
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.openlocfilehash: de0e2c5ff10de9136c4cb5987c80ce22c7b18c4d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514423"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105541"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>遠端通知使用 Firebase 雲端傳訊
 
@@ -53,7 +53,7 @@ _本逐步解說提供如何使用 Firebase 雲端通訊實作遠端通知 （�
 
 在  [Firebase 雲端通訊](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)，指定 FCM 功能的應用程式的套件名稱。 此封裝名稱也會成為[*應用程式識別碼*](./firebase-cloud-messaging.md#fcm-in-action-app-id)相關聯[API 金鑰](firebase-cloud-messaging.md#fcm-in-action-api-key)。 設定應用程式使用此封裝名稱：
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1.  開啟的內容**FCMClient**專案。
 
@@ -65,7 +65,7 @@ _本逐步解說提供如何使用 Firebase 雲端通訊實作遠端通知 （�
 
 雖然您正在**Android 資訊清單**，也請確定`Internet`權限已啟用。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1.  開啟的內容**FCMClient**專案。
 
@@ -86,7 +86,7 @@ _本逐步解說提供如何使用 Firebase 雲端通訊實作遠端通知 （�
 
 Firebase 雲端通訊取決於 Google Play 服務，因為[Xamarin Google Play 服務-基底](https://www.nuget.org/packages/Xamarin.GooglePlayServices.Base/)NuGet 套件必須新增至 Xamarin.Android 專案。 您需要新版 29.0.0.2 或更新版本。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1.  在 Visual Studio 中，以滑鼠右鍵按一下**參考 > 管理 NuGet 套件...**.
 
@@ -96,7 +96,7 @@ Firebase 雲端通訊取決於 Google Play 服務，因為[Xamarin Google Play �
 
     [![安裝 Google Play 服務基底](remote-notifications-with-fcm-images/02-google-play-services-vs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-vs.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1.  在 Visual Studio for Mac，請以滑鼠右鍵按一下**封裝 > 新增套件...**.
 
@@ -123,7 +123,7 @@ using Android.Gms.Common;
 
 若要從 FCM，接收訊息[Xamarin Firebase-傳訊](https://www.nuget.org/packages/Xamarin.Firebase.Messaging/)NuGet 套件必須新增至應用程式專案。 沒有這個套件中，Android 應用程式從 FCM 伺服器無法接收訊息。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1.  在 Visual Studio 中，以滑鼠右鍵按一下**參考 > 管理 NuGet 套件...**.
 
@@ -133,7 +133,7 @@ using Android.Gms.Common;
 
     [![安裝 Xamarin Firebase 傳訊](remote-notifications-with-fcm-images/03-firebase-messaging-vs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-vs.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1.  在 Visual Studio for Mac，請以滑鼠右鍵按一下**封裝 > 新增套件...**.
 
@@ -161,7 +161,7 @@ using Android.Util;
 
 下一個步驟是新增**google-services.json**至您的專案根目錄的檔案：
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1.  複製**google-services.json**到專案資料夾。
 
@@ -169,11 +169,14 @@ using Android.Util;
 
 3.  選取 [ **google-services.json**中**方案總管] 中**視窗。
 
-4.  在 **屬性**窗格中，將**建置動作**來**GoogleServicesJson** (如果**GoogleServicesJson**未顯示 建置動作，儲存並關閉方案，然後將它重新開啟）：
+4.  在 **屬性**窗格中，將**建置動作**來**GoogleServicesJson**:
 
     [![將建置動作設定為 GoogleServicesJson](remote-notifications-with-fcm-images/04-google-services-json-vs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-vs.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+    > [!NOTE] 
+    > 如果**GoogleServicesJson**建置動作不會顯示，儲存並關閉方案，然後重新開啟它。
+
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1.  複製**google-services.json**到專案資料夾。
 
@@ -273,7 +276,7 @@ void CreateNotificationChannel()
         return;
     }
 
-    var channel = new NotificationChannel(MyFirebaseMessagingService.CHANNEL_ID,
+    var channel = new NotificationChannel(CHANNEL_ID,
                                           "FCM Notifications",
                                           NotificationImportance.Default)
                   {
@@ -419,7 +422,7 @@ void SendRegistrationToAppServer (string token)
 
 [![記錄檔的語彙基元 按鈕新增至應用程式畫面](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png#lightbox)
 
-### <a name="log-tokes"></a>記錄 tokes
+### <a name="log-tokens"></a>記錄檔的語彙基元
 
 在此步驟中新增的程式碼僅供示範之用&ndash;實際執行用戶端應用程式會有不需要記錄註冊權杖。 編輯**Resources/layout/Main.axml**並新增下列`Button`宣告之後立即`TextView`項目：
 
@@ -432,7 +435,7 @@ void SendRegistrationToAppServer (string token)
   android:text="Log Token" />
 ```
 
-將下列程式碼新增至結尾`MainActivity.OnCreate`方法：
+請在 `MainActivity.OnCreate` 方法的結尾新增下列程式碼：
 
 ```csharp
 var logTokenButton = FindViewById<Button>(Resource.Id.logTokenButton);
@@ -774,7 +777,7 @@ unSubscribeButton.Click += delegate {
 FirebaseInstanceId.Instance.DeleteInstanceId();
 ```
 
-這個方法呼叫將會刪除執行個體識別碼和與其相關聯的資料。 如此一來，定期傳送到裝置的 FCM 資料就會中止。
+這個方法呼叫刪除的執行個體識別碼和與其相關聯的資料。 如此一來，定期傳送到裝置的 FCM 資料就會中止。
 
 
 ## <a name="troubleshooting"></a>疑難排解

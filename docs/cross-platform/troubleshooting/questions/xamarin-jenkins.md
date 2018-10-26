@@ -1,5 +1,5 @@
 ---
-title: 為什麼不支援 Jenkins xamarin？
+title: 為什麼不支援 Jenkins microsoft？
 description: 本文件說明，在高的層級，與 Jenkins CI 系統的 Xamarin 的互動。 它也會討論一些常見的問題時使用 Jenkins 出現。
 ms.topic: troubleshooting
 ms.prod: xamarin
@@ -7,14 +7,14 @@ ms.assetid: 9951F980-2C6C-47C0-8A35-A78F06C20BEB
 author: asb3993
 ms.author: amburns
 ms.date: 06/05/2018
-ms.openlocfilehash: 54947d04d6241120df4b3a0f60947ed5cc2b7ffd
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: c2e409b796d5ef2525079e02aafdd0c6e8db5d81
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351155"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113439"
 ---
-# <a name="why-isnt-jenkins-supported-by-xamarin"></a>為什麼不支援 Jenkins xamarin？
+# <a name="why-isnt-jenkins-supported-by-microsoft"></a>為什麼不支援 Jenkins microsoft？
 
 ## <a name="jenkins-support-explanation"></a>Jenkins 支援說明
 

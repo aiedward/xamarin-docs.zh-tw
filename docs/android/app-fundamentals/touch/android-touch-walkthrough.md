@@ -3,15 +3,15 @@ title: 逐步解說-在 Android 中使用觸控
 ms.prod: xamarin
 ms.assetid: E281F89B-4142-4BD8-8882-FB65508BF69E
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 05/09/2018
-ms.openlocfilehash: d379630e3b7fa2b42bd9530e1dccd75e9634dd2f
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: c4192f22ebd0ad1cde27745f5439c2d18a268ed3
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935523"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111021"
 ---
 # <a name="walkthrough---using-touch-in-android"></a>逐步解說-在 Android 中使用觸控
 

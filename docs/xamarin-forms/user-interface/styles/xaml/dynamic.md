@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: cedf9e3daed9a2d5f8bfa0962bf66510748b592a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 2f336bff19302228b9c8c3a1aa87930414c44ac2
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997142"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108401"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的動態樣式
 
@@ -121,8 +121,6 @@ public class DynamicStylesPageCS : ContentPage
 ```
 
 在 C# 中， [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行個體會使用[ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*)方法，以參考`searchBarStyle`。 `OnButtonClicked`事件處理常式程式碼等同於 XAML 的範例，並執行時，`searchBarStyle`將會切換`blueSearchBarStyle`和`greenSearchBarStyle`。
-
-<a name="dynamic-style-inheritance">
 
 ## <a name="dynamic-style-inheritance"></a>動態樣式繼承
 

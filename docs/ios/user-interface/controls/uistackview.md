@@ -5,22 +5,22 @@ ms.prod: xamarin
 ms.assetid: 20246E87-2A49-438A-9BD7-756A1B50A617
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: a894efebe4089adefeb02007bd394c13fc77974c
-ms.sourcegitcommit: 213b0315f1d6d0791e255794f87512fb253c492f
+ms.openlocfilehash: d04ce6827f6695163c7d9a8d34acc3891d854c8d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "34790096"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122669"
 ---
 # <a name="stack-views-in-xamarinios"></a>在 Xamarin.iOS 中的堆疊檢視
 
 _這篇文章說明如何使用新 UIStackView 控制項中的 Xamarin.iOS 應用程式，來管理一組子檢視中的水平或垂直排列的堆疊。_
 
 > [!IMPORTANT]
-> 請注意，雖然 StackView 都支援在 iOS 設計工具中，您可能會遇到可用性有關的錯誤，使用穩定通道時。 切換 Beta 和 Alpha 通道應該可以解決此問題。 我們已經決定要呈現此逐步解說中使用 Xcode，直到為穩定通道中實作必要的修正程式。
+> 請注意，雖然 StackView 都支援在 iOS 設計工具中，您可能會遇到可用性有關的錯誤，使用穩定通道時。 切換 Beta 和 Alpha 通道應該有助於解決此問題。 我們已經決定要呈現此逐步解說中使用 Xcode，直到為穩定通道中實作必要的修正程式。
 
 堆疊檢視控制項 (`UIStackView`) 利用自動版面配置和大小類別來管理子檢視的堆疊水平或垂直方向和螢幕大小的 iOS 裝置會以動態方式回應。
 

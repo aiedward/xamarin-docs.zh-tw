@@ -1,17 +1,17 @@
 ---
 title: C 使用者入門
-description: 本文件說明如何使用.NET 內嵌 C 應用程式中內嵌的.NET 程式碼。 其中也會討論如何使用.NET 內嵌在 Visual Studio 2017 和 Visual Studio for mac。
+description: 本文件說明如何使用.NET 內嵌 C 應用程式中內嵌.NET 程式碼。 它討論如何使用.NET 內嵌在 Visual Studio 2017 和 Visual Studio for mac。
 ms.prod: xamarin
 ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 04/19/2018
-ms.openlocfilehash: 248d44f23495e45d9d35b34622de0f3b85ca3e8d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a16821e83dc169d7800162e1eaf45c4be661185a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34794094"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106802"
 ---
 # <a name="getting-started-with-c"></a>C 使用者入門
 
@@ -21,7 +21,7 @@ ms.locfileid: "34794094"
 
 ### <a name="macos"></a>macOS
 
-* macOS 10.12 （利也） 或更新版本
+* macOS 10.12 (Sierra) 或更新版本
 * Xcode 8.3.2 或更新版本
 * [Mono](http://www.mono-project.com/download/)
 
@@ -30,11 +30,11 @@ ms.locfileid: "34794094"
 * Windows 7、 8、 10 或更新版本
 * Visual Studio 2015 或更新版本
 
-## <a name="installing-net-embedding-from-nuget"></a>安裝.NET NuGet 內嵌
+## <a name="installing-net-embedding-from-nuget"></a>安裝來自 NuGet 的.NET 內嵌
 
-請遵循這些[指示](~/tools/dotnet-embedding/get-started/install/install.md)安裝及設定專案的.NET 內嵌。
+請遵循這些[指示](~/tools/dotnet-embedding/get-started/install/install.md)安裝及設定.NET 內嵌為您的專案。
 
-（可能具有不同的版本號碼和路徑），您應該設定的命令引動過程看起來像：
+（可能使用不同的版本號碼和路徑），您應該設定的命令引動過程看起來像：
 
 ### <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
@@ -50,9 +50,9 @@ $(SolutionDir)\packages\Embeddinator-4000.0.2.0.80\tools\Embeddinator-4000.exe -
 
 ## <a name="generation"></a>產生
 
-### <a name="output-files"></a>輸出檔
+### <a name="output-files"></a>輸出檔案
 
-如果一切順利，將會看見下列輸出：
+如果一切順利，您會看到下列輸出：
 
 ```shell
 Parsing assemblies...
@@ -71,12 +71,12 @@ Generating binding code...
     Generated: mono_embeddinator.h
 ```
 
-因為`--compile`旗標傳遞至工具，.NET 內嵌應該也已編譯輸出檔至共用的程式庫，您可以尋找產生的檔案旁邊、 **libmanaged.dylib** macOS 和上的檔案**managed.dll** Windows 上。
+由於`--compile`旗標傳遞至工具，.NET 內嵌應該也已編譯的輸出檔至共用的程式庫，您可以找到產生的檔案旁邊， **libmanaged.dylib**檔案在 macOS 和**managed.dll**在 Windows 上。
 
-若要使用共用媒體櫃，您可以包含**managed.h** C 標頭檔，提供對應至個別的 C 宣告 managed 程式庫 Api 並與先前所述的連結編譯共用程式庫。
+若要取用共用程式庫，您可以加入**managed.h** C 標頭檔，提供對應至個別的 C 宣告 managed 程式庫 Api，並使用先前所述的連結編譯的共用程式庫。
 
 ## <a name="further-reading"></a>進一步閱讀
 
 * [.NET 內嵌限制](~/tools/dotnet-embedding/limitations.md)
 * [參與開放原始碼專案](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
-* [錯誤碼與描述](~/tools/dotnet-embedding/errors.md)
+* [錯誤碼和描述](~/tools/dotnet-embedding/errors.md)

@@ -4,15 +4,15 @@ description: 這篇文章涵蓋使用 「 windows 」 和 「 在 Xamarin.Mac �
 ms.prod: xamarin
 ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: b60b8a6a7c56347d6abf71f8c5149ddd556d3da8
-ms.sourcegitcommit: ee66db647ae9d94b54b1c5d9093075a620d0c6b4
+ms.openlocfilehash: 2d129c72366224cedca26df6fa1499f65d04e92d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "40251119"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106971"
 ---
 # <a name="windows-in-xamarinmac"></a>Xamarin.Mac 中的 Windows
 
@@ -347,14 +347,14 @@ using Foundation;
 
 namespace SourceWriter
 {
-    public class EditorWidowDelegate : NSWindowDelegate
+    public class EditorWindowDelegate : NSWindowDelegate
     {
         #region Computed Properties
         public NSWindow Window { get; set;}
         #endregion
 
         #region constructors
-        public EditorWidowDelegate (NSWindow window)
+        public EditorWindowDelegate (NSWindow window)
         {
             // Initialize
             this.Window = window;
@@ -427,7 +427,7 @@ namespace SourceWriter
 
 ```csharp
 // Set delegate
-Window.Delegate = new EditorWidowDelegate(Window);
+Window.Delegate = new EditorWindowDelegate(Window);
 ```
 
 ### <a name="saving-changes-before-closing-the-app"></a>正在儲存變更，再關閉應用程式
@@ -489,7 +489,7 @@ void NewDocument (NSObject sender) {
 
 如果我們開啟**Windows**  功能表中，您可以看到應用程式會自動追蹤並處理我們開啟的視窗：
 
-[![](window-images/display05.png "視窗功能表")](window-images/display05.png#lightbox)
+[![](window-images/display05.png "Windows 功能表")](window-images/display05.png#lightbox)
 
 如需有關在 Xamarin.Mac 應用程式中使用功能表的詳細資訊，請參閱我們[使用功能表](~/mac/user-interface/menu.md)文件。
 

@@ -4,15 +4,15 @@ description: 本文件說明如何實作拖放和卸除在使用 iOS 11 中導�
 ms.prod: xamarin
 ms.assetid: 0D39C4C3-D169-42F8-B3FA-7F98CF0B6F1F
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 09/05/2017
-ms.openlocfilehash: bc58c866a4a754bccea8d851f79e73fe5a415eed
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: aa93e015a399e733a2bb52f087a1e482bc23a00a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351131"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112074"
 ---
 # <a name="drag-and-drop-in-xamarinios"></a>將拖放在 Xamarin.iOS 中
 

@@ -4,15 +4,15 @@ description: 本指南介紹 Android 應用程式中的位置感知，並說明�
 ms.prod: xamarin
 ms.assetid: 0008682B-6CEF-0C1D-3200-56ECF58F5D3C
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: 2cd49441ec9ba15cd7fd2647fa74b39b32ea8acd
-ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
+ms.openlocfilehash: e3cfc9a345c8ab92b35ad428b550ec42de6312e5
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40251102"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120290"
 ---
 # <a name="location-services"></a>位置服務
 

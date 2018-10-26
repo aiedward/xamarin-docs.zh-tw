@@ -1,31 +1,31 @@
 ---
-title: 開始使用 Android 損耗
-description: 這一節的指南介紹 Android 穿、 描述如何安裝及設定您的電腦進行損耗開發，並提供可協助您建立並執行第一個 Android 戴上應用程式的步驟。
+title: 開始使用 Android Wear
+description: 在本節中的指南介紹 Android Wear、 描述如何安裝和設定您的電腦進行 Wear 開發和提供步驟，協助您建立並執行第一個 Android Wear 應用程式。
 ms.prod: xamarin
 ms.assetid: 8B9DC98A-773F-4E06-84A7-BA8208C4E864
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 12/18/2017
-ms.openlocfilehash: a0b022225dd670ca6da09abbca6b3db75a55f38b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 88259afe72715a0c369472b1a5c0609b56db8143
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763835"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102226"
 ---
-# <a name="getting-started-with-android-wear"></a>開始使用 Android 損耗
+# <a name="get-started-with-android-wear"></a>開始使用 Android Wear
 
-_這一節的指南介紹 Android 穿、 描述如何安裝及設定您的電腦進行損耗開發，並提供可協助您建立並執行第一個 Android 戴上應用程式的步驟。_
+_在本節中的指南介紹 Android Wear、 描述如何安裝和設定您的電腦進行 Wear 開發和提供步驟，協助您建立並執行第一個 Android Wear 應用程式。_
 
-## <a name="introduction-to-wearandroidwearget-startedintro-to-wearmd"></a>[損耗簡介](~/android/wear/get-started/intro-to-wear.md)
+## <a name="introduction-to-wearandroidwearget-startedintro-to-wearmd"></a>[Wear 簡介](~/android/wear/get-started/intro-to-wear.md)
 
-提供 Android 戴上的基本概觀、 說明其重要功能，列出一些常見的 Android 穿裝置，並提供基本的 Google Android 穿文件，如需進一步閱讀的連結。
+提供 Android Wear 的基本概觀，說明其重要功能，列出一些較受歡迎的 Android Wear 裝置，並提供基本的 Google Android Wear 文件，如需進一步閱讀的連結。
 
 ## <a name="setup--installationandroidwearget-startedinstallationmd"></a>[設定與安裝](~/android/wear/get-started/installation.md)
 
-逐步解說的安裝步驟及準備您的電腦和裝置的 Android 戴上開發所需的組態詳細資料。
+逐步解說的安裝步驟及準備您的電腦和裝置進行 Android Wear 開發所需的組態詳細資料。
 
 ## <a name="hello-wearandroidwearget-startedhello-wearmd"></a>[Hello, Wear](~/android/wear/get-started/hello-wear.md)
 
-本逐步解說提供建立小型處理按鈕按一下動作，並按一下計數器顯示損耗裝置上的 Android 穿專案的逐步指示。
+本逐步解說提供建立小型的 Android Wear 專案處理按下按鈕後，按一下計數器會顯示在 Wear 裝置的逐步指示。

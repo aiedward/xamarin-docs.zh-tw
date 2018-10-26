@@ -4,15 +4,15 @@ description: 本文說明如何以旋轉 2D 物件在 3D 空間中，使用非�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 04/14/2017
-ms.openlocfilehash: 84ebdd007d17eaf0bcfc1be119cb4130299503bc
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 750f357819a85077b3f272a7a10cbd3928186681
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615661"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110286"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>SkiaSharp 中的 3D 旋轉
 
@@ -24,7 +24,7 @@ _您可以使用非仿射轉換，旋轉 3D 空間中的 2D 物件。_
 
 這項作業牽涉到使用三維旋轉，以及接著衍生非仿射`SKMatrix`執行這些 3D 旋轉轉換。
 
-很難開發這`SKMatrix`轉換只會在兩個維度內正常運作。 當這個 3-3 矩陣衍生自 3D 圖形中所使用的 4 乘 4 矩陣，作業就容易多了。 包含 SkiaSharp [ `SKMatrix44` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.PreConcat/p/SkiaSharp.SKMatrix44/)此目的，但在 3D 圖形中的一些背景的類別是需要了解 3D 旋轉和 4 x 4 轉換矩陣。
+很難開發這`SKMatrix`轉換只會在兩個維度內正常運作。 當這個 3-3 矩陣衍生自 3D 圖形中所使用的 4 乘 4 矩陣，作業就容易多了。 包含 SkiaSharp [ `SKMatrix44` ](xref:SkiaSharp.SKMatrix44)此目的，但在 3D 圖形中的一些背景的類別是需要了解 3D 旋轉和 4 x 4 轉換矩陣。
 
 3d 座標系統中加入 z 在概念上呼叫第三個軸、 Z 軸為直角至畫面。 在 3D 空間中的座標點會以三個數字來表示: （x，y，z）。 3D 中用於本文中，增加的 X 值的座標系統是權限，以及兩個維度中一樣，所發生故障，增加值的 Y。 增加正 Z 值都是由螢幕。 原點是左上角的 2D 圖形一樣。 您可以想像螢幕的 Z 軸直角此平面與 XY 平面。
 
@@ -48,7 +48,7 @@ _您可以使用非仿射轉換，旋轉 3D 空間中的 2D 物件。_
 |  M41  M42  M43  M44  |
 </pre>
 
-不過，SkiaSharp`Matrix44`類別是有點不同。 設定或取得個別資料格的值的唯一辦法`SKMatrix44`是使用[ `Item` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Item/p/System.Int32/System.Int32/)索引子。 資料列和資料行索引是以零為起始，而非一個為基礎，並會進行交換的資料列和資料行。 使用索引子來存取在上圖中的儲存格 M14`[3, 0]`在`SKMatrix44`物件。
+不過，SkiaSharp`Matrix44`類別是有點不同。 設定或取得個別資料格的值的唯一辦法`SKMatrix44`是使用[ `Item` ](xref:SkiaSharp.SKMatrix44.Item(System.Int32,System.Int32))索引子。 資料列和資料行索引是以零為起始，而非一個為基礎，並會進行交換的資料列和資料行。 使用索引子來存取在上圖中的儲存格 M14`[3, 0]`在`SKMatrix44`物件。
 
 在 3D 圖形系統中，至 1 x 4 矩陣中的 4 乘 4 轉換矩陣乘以轉換的 3D 點 （x，y，z）：
 
@@ -112,7 +112,7 @@ X 值維持不變時遇到這項轉換。 繞著 Y 軸旋轉會保留不變的 Y
 
 法線慣用手的座標系統被隱含的方向旋轉。 這是慣用左手的系統，因此，如果您指向您朝向提高特定的座標軸值的左邊的縮圖，向右旋轉繞著 X 軸，繞著 Z 軸旋轉的旋轉繞著 Y 軸，而是使用您的向下 — 然後的曲線 yo其他手指表示旋轉的正角度的方向。
 
-`SKMatrix44` 已一般化靜態[ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/)並[ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/)方法，可讓您指定著它旋轉的軸：
+`SKMatrix44` 已一般化靜態[ `CreateRotation` ](xref:SkiaSharp.SKMatrix44.CreateRotation(System.Single,System.Single,System.Single,System.Single))並[ `CreateRotationDegrees` ](xref:SkiaSharp.SKMatrix44.CreateRotationDegrees(System.Single,System.Single,System.Single,System.Single))方法，可讓您指定著它旋轉的軸：
 
 ```csharp
 public static SKMatrix44 CreateRotationDegrees (Single x, Single y, Single z, Single degrees)
@@ -220,7 +220,7 @@ y"= y / ((sin （α） / 深度) ·x + 1)
 
 以背景工作，而負數時 2D 物件會具有正數的角度繞著 Y 軸，則正旋轉 recede X 值的 X 值會造成前景。 X 值看起來可以更接近的 Y 軸 （受到所餘弦值） 為 furthest from Y 軸座標變得較小或較大，因為它們將檢視器更仔細的檢視器。
 
-使用時`SKMatrix44`，執行所有的 3D 旋轉和觀點來看作業乘以各種`SKMatrix44`值。 然後您可以從 x 4 4 擷取的二維 3-3 矩陣使用矩陣[ `Matrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Matrix/)屬性`SKMatrix44`類別。 這個屬性會傳回熟悉`SKMatrix`值。
+使用時`SKMatrix44`，執行所有的 3D 旋轉和觀點來看作業乘以各種`SKMatrix44`值。 然後您可以從 x 4 4 擷取的二維 3-3 矩陣使用矩陣[ `Matrix` ](xref:SkiaSharp.SKMatrix44.Matrix)屬性`SKMatrix44`類別。 這個屬性會傳回熟悉`SKMatrix`值。
 
 **旋轉 3D**頁面可讓您試驗 3D 旋轉。 [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml)檔案具現化的四個滑桿來設定繞著 X、 Y 和 Z 軸旋轉，並設定深度值：
 
@@ -441,7 +441,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-`OnAppearing`覆寫定義三個 Xamarin.Forms`Animation`物件來以動畫顯示`xRotationDegrees`， `yRotationDegrees`，和`zRotationDegrees`欄位不同的速率。 請注意，這些動畫的期間會設定數字就準備好-5 秒、 7、 11 秒數以及 — 因此每個 385 的秒數或超過 10 分鐘，只會重複整體的組合：
+`OnAppearing`覆寫定義三個 Xamarin.Forms`Animation`物件來以動畫顯示`xRotationDegrees`， `yRotationDegrees`，和`zRotationDegrees`欄位不同的速率。 請注意，這些動畫的期間會設定為質數數字 （5 秒、 7、 11 秒數以及），因此每個 385 的秒數或超過 10 分鐘，只會重複整體的組合：
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -536,5 +536,5 @@ public class AnimatedRotation3DPage : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

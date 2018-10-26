@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: 65bb3fa070c082fa6c6c489e326a870a80fb9502
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 04d435b29f6f2f577df5025995fcc074ba5d9d9d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997508"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122747"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>在 Xamarin 原生專案中的 Xamarin.Forms
 
@@ -33,7 +33,7 @@ Xamarin.Forms 應用程式通常包含一或多個頁面衍生自[ `ContentPage`
 > [!NOTE]
 > **NativeForms**範例應用程式方案不包含所有的 Xamarin.Forms 專案。 相反地，它包含在 Xamarin.iOS 專案、 的 Xamarin.Android 專案和 UWP 專案。 每個專案是原生專案使用原生格式來取用[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生的頁面。 不過，沒有的理由為何要使用原生專案無法`ContentPage`-來自.NET Standard 程式庫專案或共用專案中的頁面。
 
-當使用原生格式，Xamarin.Forms 這類功能[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)， [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)，和資料繫結引擎，所有工作。
+當使用原生格式，Xamarin.Forms 這類功能[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)， [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)，和資料繫結引擎，所有工作。 不過，您必須使用原生的瀏覽 API 會執行頁面導覽。
 
 ## <a name="ios"></a>iOS
 

@@ -4,15 +4,15 @@ description: RecyclerView 範例應用程式中加入項目 click 事件處理�
 ms.prod: xamarin
 ms.assetid: 707EE1CE-C164-485B-944C-82C6795E8A24
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: 73c14e76a4a65c73c5fe0cc3d43329a9f4965c74
-ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
+ms.openlocfilehash: eca0f58a470228ce8e6331defe88c1ef727cef57
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39038517"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105177"
 ---
 # <a name="extending-the-recyclerview-example"></a>延伸 RecyclerView 範例
 

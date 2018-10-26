@@ -6,12 +6,12 @@ ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 256d5c81475be095c8fa0ab0408cbcf673c6b301
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: f397cf595a9ae151c5f105341733b2c57023fe99
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997080"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109714"
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>使用 Visual Basic.NET 的 Xamarin.Forms
 
@@ -79,7 +79,7 @@ Xamarin 不直接支援 Visual Basic-依此頁面，即可建立 C# Xamarin.Form
     ```
 
 9. 現在我們需要使其指向新的 Visual Basic 專案中的 iOS 和 Android 專案。
-以滑鼠右鍵按一下**參考**節點中的 iOS 和 Android 專案，以開啟**參考管理員**。 取消刻度的 C# 可攜式程式庫和刻度 VB 可攜式程式庫 （不要忘了，對 iOS 和 Android 專案執行此動作）。
+以滑鼠右鍵按一下**參考**節點中的 iOS 和 Android 專案，以開啟**參考管理員**。 取消勾號C#可攜式程式庫和刻度 VB 可攜式程式庫 （不要忘了，對 iOS 和 Android 專案執行此動作）。
 
    [![](xamarin-forms-images/add-vb-8-sml.png "移除舊的專案參考、 新增 Visual Basic 參考")](xamarin-forms-images/add-vb-8.png#lightbox)
 

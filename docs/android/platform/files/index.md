@@ -4,15 +4,15 @@ description: 本指南將說明在 Xamarin.Android 中的檔案存取
 ms.prod: xamarin
 ms.assetid: FC1CFC58-B799-4DD6-8ED1-DE36B0E56856
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: 5a4ddf606bb71bef10cf99660c198c5a8fdb1b69
-ms.sourcegitcommit: 9bb9e8297d3edd9a50585f4ba53c1b4f0bcd1d3e
+ms.openlocfilehash: 476f1c50a2f1a4199dfaf1996fc9c16615b40598
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39212187"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116793"
 ---
 # <a name="file-storage-and-access-with-xamarinandroid"></a>檔案儲存體和搭配 Xamarin.Android 的存取
 
@@ -24,7 +24,7 @@ Android 應用程式的一個常見需求是操控檔案&ndash;儲存圖片、 �
 這些群組則概念，並不一定是指單一資料分割或裝置上的目錄。 Android 裝置一律會提供資料分割內部儲存體和外部儲存體。 就某些裝置可能會有多個資料分割，會被視為外部儲存體。 無論磁碟分割進行讀取的 Api，撰寫，或建立檔案都相同。 有兩個 Xamarin.Android 應用程式可能使用之檔案存取的 Api 集：
 
 1. **.NET Api （由 單聲道和 Xamarin.Android 所包裝）** &ndash; include[檔案系統協助程式](~/essentials/file-system-helpers.md?context=xamarin/android)所提供[Xamarin.Essentials](~/essentials/index.md?context=xamarin/android)。 .NET Api 提供最佳的跨平台相容性，因此本指南的重點會在這些 Api。
-1. **原生的 Java 檔案存取 Api （由 Java 和 Xamarin.Android 所包裝）** &ndash; Java 提供它自己的 Api 來讀取和寫入檔案。 這些是使用.NET Api，若要完全可以接受替代方式專屬於 Android，但並不適合主要做為跨平台的應用程式。
+1. **原生的 Java 檔案存取 Api （由 Java 和 Xamarin.Android 所包裝）** &ndash; Java 提供它自己的 Api 來讀取和寫入檔案。 這些是使用.NET Api，完全可以接受替代方式專屬於 Android，但並不適合主要做為跨平台的應用程式。
 
 讀取和寫入檔案是在 Xamarin.Android 中幾乎完全相同，因為它是任何其他.NET 應用程式。 Xamarin.Android 應用程式會判斷檔案要操作，然後使用標準.NET 語言存取檔案的路徑。 因為內部和外部存放裝置的實際路徑可能不同裝置，或從 Android 版本的 Android 版本，不建議以硬編碼檔案的路徑。 相反地，使用 Xamarin.Android Api 來判斷檔案的路徑。 如此一來，用於讀取和寫入檔案的.NET Api 會公開原生 Android Api，將幫助您判斷內部和外部的儲存體上檔案的路徑。
 
@@ -79,7 +79,7 @@ Android 配置到作業系統的 Apk，以及個別的應用程式的靜態記�
 
 ### <a name="reading-or-writing-to-files-on-internal-storage"></a>讀取或寫入在內部儲存體上的檔案
 
-任一[撰寫 C# Api](https://docs.microsoft.com/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)檔案就已足夠; 只需要取得配置給目錄中檔案的路徑是應用程式。 強烈建議您使用的非同步版本的.NET Api 用來減少任何可能的問題建立關聯，以封鎖主執行緒的檔案存取權。
+任一[C#撰寫的 Api](https://docs.microsoft.com/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)檔案就已足夠; 只需要為取得配置給應用程式的目錄中檔案的路徑。 強烈建議您使用的非同步版本的.NET Api 用來減少任何可能的問題建立關聯，以封鎖主執行緒的檔案存取權。
 
 此程式碼片段是一個範例中的整數寫入至應用程式的內部儲存體目錄的 utf-8 文字檔案：
 

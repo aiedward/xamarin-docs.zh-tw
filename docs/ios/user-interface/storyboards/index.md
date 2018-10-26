@@ -4,15 +4,15 @@ description: 本文件提供在 Xamarin.iOS 中的分鏡腳本的簡介。 它�
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: bd8fee1b8f1941203bb0e6f00e261cbfbbccc9a7
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: e1e5ec5d064ad7610c5b7be8d18284d3610352c9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242338"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106880"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中的分鏡腳本簡介
 
@@ -86,7 +86,7 @@ A *Segue*，或*Segue 物件*，iOS 開發用來代表場景之間的轉換。 �
 |--- |--- |
 |顯示|這是非常類似的 segue 推播，但會將帳戶的畫面內容。|
 |顯示詳細資料|如果應用程式會顯示主要和詳細的檢視 （例如，在 iPad 上分割檢視控制器），內容會取代 [詳細資料] 檢視。 如果只有 master 或詳細資料，則會顯示應用程式，內容會取代檢視控制器堆疊的頂端。|
-|簡報|這類似於的強制回應的 segue，並允許的簡報和轉換樣式選取範圍。|
+|Presentation|這類似於的強制回應的 segue，並允許的簡報和轉換樣式選取範圍。|
 |Popover 簡報|這顯示為 popover 的內容|
 
 ### <a name="transferring-data-with-segues"></a>傳輸資料使用 Segue
@@ -129,7 +129,7 @@ if (callHistoryContoller != null) {
 
 在某些情況下，您可能需要將分鏡腳本新增至先前非腳本檔案。 一次這麼做的 Visual Studio for Mac 可以簡化藉由遵循下列步驟：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 建立新的分鏡腳本檔案，瀏覽至**檔案 > 新的檔案 > iOS > 分鏡腳本**，如下所示： 
     
@@ -148,7 +148,7 @@ if (callHistoryContoller != null) {
             set;
             }
             
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 以滑鼠右鍵按一下專案，以建立新的分鏡腳本檔案**新增 > 新的檔案 > iOS > 空白分鏡腳本**，如下所示： 
     

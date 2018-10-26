@@ -4,15 +4,15 @@ description: 即使您不打算立即將 iOS 9 功能新增至您的應用程式
 ms.prod: xamarin
 ms.assetid: 69A05B0E-8A0A-489F-8165-B10AC46FAF3C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 2f22fdeaad1b276bb94d2b1ee5af4a6c24d22cb7
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 6ade1c05c8e1cc64a4d24df1284d86175083ab80
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350777"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119843"
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 相容性
 

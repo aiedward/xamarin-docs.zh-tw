@@ -1,22 +1,22 @@
 ---
 title: Xamarin.Android 平台功能
-description: 在本節中的文件涵蓋特定的 Android 功能。 您可以在這裡找到主題，例如使用片段、 對應與使用封裝內容提供者使用的資料。
+description: 在本節中的文件涵蓋特定的 Android 功能。 您可以在這裡找到主題，例如使用片段中，使用對應，以及封裝內容提供者使用的資料。
 ms.prod: xamarin
 ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 07/27/2018
-ms.openlocfilehash: 8e2bb43f885c162eb6dca0cf4a8ed14490ff092b
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+author: conceptdev
+ms.author: crdun
+ms.date: 08/21/2018
+ms.openlocfilehash: 8ce50ab9a1bcd029a0db97e6dd66518d646d82ef
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351560"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104696"
 ---
 # <a name="platform-features"></a>平台功能
 
-_在本節中的文件涵蓋特定的 Android 功能。您可以在這裡找到主題，例如使用片段、 對應與使用封裝內容提供者使用的資料。_
+_在本節中的文件涵蓋特定的 Android 功能。您可以在這裡找到主題，例如使用片段中，使用對應，以及封裝內容提供者使用的資料。_
 
 ## <a name="android-beamandroidplatformandroid-beammd"></a>[Android Beam](~/android/platform/android-beam.md)
 
@@ -46,9 +46,9 @@ Android 3.0 導入片段，示範如何在手機和平板電腦上找到的許�
 本指南會討論如何支援 Android 6.0_應用程式連結_，回應 Url 在網站上的行動裝置應用程式的技術。 它將討論如何實作應用程式連結在 Android 6.0 應用程式以及如何設定網站要授與行動應用程式的權限，以處理網域的應用程式連結。
 
 
-##  <a name="android-p-previewandroidplatformandroid-pmd"></a>[Android P 預覽](~/android/platform/android-p.md)
+##  <a name="android-9-pieandroidplatformpiemd"></a>[Android 9 的圓形圖](~/android/platform/pie.md)
 
-本文概述 Android P 預覽版的新功能，說明如何準備 Xamarin.Android 開發 Android P，並提供說明如何在 Xamarin.Android 應用程式使用金鑰的 Android P 功能的範例程式碼。
+這篇文章概述 Android 圓形圖中的新功能，說明如何準備 Xamarin.Android 開發 Android 的圓形圖，並提供說明如何使用 Android 的圓形圖顯示空心和通知中新功能的範例應用程式Xamarin.Android 應用程式。
 
 
 ##  <a name="android-8-oreoandroidplatformoreomd"></a>[Android 8 Oreo](~/android/platform/oreo.md)
@@ -59,7 +59,7 @@ Android 3.0 導入片段，示範如何在手機和平板電腦上找到的許�
 
 ##  <a name="android-7-nougatandroidplatformnougatmd"></a>[Android 7 Nougat](~/android/platform/nougat.md)
 
-本文章提供 Android 7.0 Nougat 中引進的新功能的高階的概觀。
+本文章提供 Android 7.0 Nougat 中引進的新功能的高階概觀。
 
 
 
@@ -98,12 +98,12 @@ Android 4.4 (KitKat) 會載入與很多個使用者和開發人員的功能。 �
 
 ##  <a name="working-with-the-android-manifestandroid-manifestmd"></a>[使用 Android 資訊清單](android-manifest.md)
 
-本文章說明 introducts AndroidManifest.xml 檔案中，而且如何也許是用來控制功能，並描述 Mono for Android 應用程式的需求。
+這篇文章介紹 AndroidManifest.xml 檔案，以及它可能是用來控制功能，並描述 Mono for Android 應用程式的需求。
 
 
 ##  <a name="introduction-to-content-providersandroidplatformcontent-providersindexmd"></a>[內容提供者簡介](~/android/platform/content-providers/index.md)
 
-ContentProvider 封裝資料儲存機制，並提供 API 來存取它。 提供者存在於 Android 應用程式通常也有提供 UI 來顯示/管理資料的一部分。 使用內容提供者的主要優點讓其他應用程式輕鬆地存取封裝的資料，使用提供者用戶端物件 （稱為 ContentResolver）。 在一起的內容提供者和內容解析程式提供一致的應用程式間 API，很容易建置和取用的資料存取。 這份文件會示範如何存取及建置使用 Xamarin.Android ContentProviders。
+ContentProvider 封裝資料儲存機制，並提供 API 來存取它。 提供者存在於 Android 應用程式，也提供 UI，來顯示/管理資料的一部分。 使用內容提供者的主要優點讓其他應用程式輕鬆地存取封裝的資料，使用提供者用戶端物件 （稱為 ContentResolver）。 在一起的內容提供者和內容解析程式提供一致的應用程式間 API，很容易建置和取用的資料存取。 這份文件會示範如何存取及建置使用 Xamarin.Android ContentProviders。
 
 
 

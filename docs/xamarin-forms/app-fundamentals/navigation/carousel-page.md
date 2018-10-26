@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: bce3a60f3647a537906cfa11fc1dcfcc6f5cf365
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 48c009b836ac109e0d54cd2fdb036c46e17c4387
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998600"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121499"
 ---
 # <a name="xamarinforms-carousel-page"></a>Xamarin.Forms 浮動切換頁面
 
@@ -22,7 +22,7 @@ _Xamarin.Forms CarouselPage 是內容的使用者可以向側邊撥動可巡覽�
 
 下列螢幕擷取畫面所示[ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage)每個平台：
 
-![](carousel-page-images/thirdpage.png "CarouselPage Thid 項目")
+![](carousel-page-images/thirdpage.png "CarouselPage 第三個項目")
 
 版面配置[ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage)每個平台上都相同。 頁面可以瀏覽，撥動由右至左瀏覽集合中，透過轉送和撥動左到右向後巡覽集合。 下列螢幕擷取畫面顯示的第一頁[ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage)執行個體：
 
@@ -81,7 +81,7 @@ _Xamarin.Forms CarouselPage 是內容的使用者可以向側邊撥動可巡覽�
 </CarouselPage>
 ```
 
-下列程式碼範例顯示 C# 中的對等的 UI:
+下列程式碼範例顯示中的對等的 UI C#:
 
 ```csharp
 public class MainPageCS : CarouselPage
@@ -186,7 +186,7 @@ public MainPage ()
 }
 ```
 
-下列程式碼範例示範相當[ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) C# 建立的：
+下列程式碼範例示範相當[ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage)建立C#:
 
 ```csharp
 public class MainPageCS : CarouselPage

@@ -3,21 +3,23 @@ title: TableLayout
 ms.prod: xamarin
 ms.assetid: 0C7B9C95-5E5F-A069-BA37-984E49F7DCAD
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: f9a77655091e4b552bd4a9d440f50b6a3cbeabcc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 25b2393d2133c0a1f3f8354584c276fcd7ddaa4b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763643"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114947"
 ---
 # <a name="tablelayout"></a>TableLayout
 
-[`TableLayout`](https://developer.xamarin.com/api/type/Android.Widget.TableLayout/) 是[ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)顯示子[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)資料列和資料行中的項目。
+[`TableLayout`](https://developer.xamarin.com/api/type/Android.Widget.TableLayout/) 是 [`ViewGroup`](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)
+顯示子系 [`View`](https://developer.xamarin.com/api/type/Android.Views.View/)
+資料列和資料行中的項目。
 
-啟動新的專案，名為**HelloTableLayout**。
+開始新的專案，名為**HelloTableLayout**。
 
 開啟**Resources/Layout/Main.axml**檔案，並插入下列：
 
@@ -100,9 +102,13 @@ ms.locfileid: "30763643"
 </TableLayout>
 ```
 
-請注意這類似於 HTML 資料表結構的方式。 [ `TableLayout` ](https://developer.xamarin.com/api/type/Android.Widget.TableLayout/)項目就像是 HTML`<table>`項目。[ `TableRow` ](https://developer.xamarin.com/api/type/Android.Widget.TableRow/)就像是`<tr>`項目，但對於儲存格，您可以使用任何種類的[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)項目。 在此範例中， [ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/)用於每個資料格。 中間部分的資料列，另外還有基本[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)，用來繪製水平列。
+請注意，這類似於 HTML 表格結構的方式。 的 [`TableLayout`](https://developer.xamarin.com/api/type/Android.Widget.TableLayout/)
+項目就像是 HTML`<table>`項目; [`TableRow`](https://developer.xamarin.com/api/type/Android.Widget.TableRow/)
+就像是`<tr>`項目; 資料格，您可以使用任何種類的但[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)項目。 在此範例中， [`TextView`](https://developer.xamarin.com/api/type/Android.Widget.TextView/)
+用於每個資料格。 中間部分的資料列，另外還有基本[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)，這用來繪製一條水平線。
 
-請確定您**HelloTableLayout**活動載入在此配置[ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)方法：
+請確定您**HelloTableLayout**活動載入中的這個版面配置 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)
+方法：
 
 ```csharp
 protected override void OnCreate (Bundle savedInstanceState)
@@ -112,11 +118,11 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-[ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.SetContentView/(System.Int32))方法會將載入的版面配置檔案[ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/)、 資源識別碼所指定&mdash;`Resource.Layout.Main`指**配置資源 / /Main.axml**配置檔案。
+[ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.SetContentView/(System.Int32))方法會載入的配置檔案[ `Activity`](https://developer.xamarin.com/api/type/Android.App.Activity/)資源識別碼所指定&mdash;`Resource.Layout.Main`是指**資源/配置 /Main.axml**版面配置檔。
 
 執行應用程式。 您應該會看到下列：
 
-[![顯示多個資料表資料列的 TableLayout 應用程式的範例螢幕擷取畫面](table-layout-images/helloviews3.png)](table-layout-images/helloviews3.png#lightbox)
+[![顯示多個資料表的資料列的 TableLayout 應用程式的範例螢幕擷取畫面](table-layout-images/helloviews3.png)](table-layout-images/helloviews3.png#lightbox)
 
 
 
@@ -128,5 +134,5 @@ protected override void OnCreate (Bundle savedInstanceState)
 
 -   [`TextView`](https://developer.xamarin.com/api/type/Android.Widget.TextView/) 
 
-*此頁面上的部分是修改依據工作建立及 Android 的開放原始碼專案所共用，並依據條款中所述來使用*
-[*Creative Commons 2.5 Attribution 授權*](http://creativecommons.org/licenses/by/2.5/).
+*此頁面上的部分是根據工作建立及 Android 的開放原始碼專案所共用，並依據所述的條款來使用修改*
+[*Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/).

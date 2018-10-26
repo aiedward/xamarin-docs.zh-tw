@@ -6,13 +6,13 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/06/2018
-ms.openlocfilehash: 98d4ce241c01bd09c68d86c583f12fdc7a11db0f
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.date: 10/01/2018
+ms.openlocfilehash: 69f754db0fd9661fb317f43c7cda546b0b510265
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39175186"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119399"
 ---
 # <a name="ios-platform-specifics"></a>iOS 平台特性
 
@@ -377,6 +377,7 @@ slider.On<iOS>().SetUpdateOnTap(true);
 - 控制是否要將頁面標題顯示為頁面巡覽列中的大型標題。 如需詳細資訊，請參閱 <<c0> [ 顯示的大型標題](#large_title)。
 - 設定狀態軸可見度[ `Page` ](xref:Xamarin.Forms.Page)。 如需詳細資訊，請參閱 <<c0> [ 頁面上設定狀態列可見性](#set_status_bar_visibility)。
 - 確保內容該頁面位於而言是安全的所有 iOS 裝置的螢幕區域。 如需詳細資訊，請參閱 <<c0> [ 啟用安全區域版面配置輔助線](#safe_area_layout)。
+- 在 iPad 上設定強制回應頁面的呈現樣式。 如需詳細資訊，請參閱 < [iPad 上設定強制回應頁面呈現樣式](#modal-page-presentation-style)。
 
 <a name="navigationpage-hideseparatorbar" />
 
@@ -681,6 +682,51 @@ protected override void OnAppearing()
     Padding = safeInsets;
 }
 ```
+
+<a name="modal-page-presentation-style" />
+
+### <a name="setting-the-modal-page-presentation-style-on-an-ipad"></a>在 iPad 上設定強制回應頁面呈現樣式
+
+此平台專屬用來在 iPad 上設定強制回應頁面的呈現樣式。 它由在 XAML 中設定`Page.ModalPresentationStyle`可繫結的屬性，以`UIModalPresentationStyle`列舉值：
+
+```xaml
+<ContentPage ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.ModalPresentationStyle="FormSheet">
+    ...
+</ContentPage>
+```
+
+或者，它可以取用從 C# 使用 fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+public class iOSModalFormSheetPageCS : ContentPage
+{
+    public iOSModalFormSheetPageCS()
+    {
+        On<iOS>().SetModalPresentationStyle(UIModalPresentationStyle.FormSheet);
+        ...
+    }
+}
+```
+
+`Page.On<iOS>`方法可讓您指定這個平台專屬只會在 iOS 上執行。 `Page.SetModalPresentationStyle`方法，請在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空間，用來設定強制回應的展示樣式[ `Page` ](xref:Xamarin.Forms.Page)藉由指定下列其中一種`UIModalPresentationStyle`列舉值：
+
+- `FullScreen`可設定以涵蓋整個畫面的強制回應的呈現樣式。 根據預設，強制回應頁面會顯示使用此簡報樣式。
+- `FormSheet`其中設定上置中並小於螢幕的強制回應的呈現樣式。
+
+颾魤 ㄛ`GetModalPresentationStyle`方法可用來擷取目前的值`UIModalPresentationStyle`套用至列舉型別[ `Page` ](xref:Xamarin.Forms.Page)。
+
+結果是強制回應的展示樣式[ `Page` ](xref:Xamarin.Forms.Page)可以設定：
+
+[![](ios-images/modal-presentation-style-small.png "在 iPad 上的強制回應的展示樣式")](ios-images/modal-presentation-style-large.png#lightbox "iPad 上的強制回應的展示樣式")
+
+> [!NOTE]
+> 使用此平台特定設定的強制回應的展示樣式的網頁都必須使用強制回應導覽。 如需詳細資訊，請參閱 < [Xamarin.Forms 強制回應頁面](~/xamarin-forms/app-fundamentals/navigation/modal.md)。
 
 ## <a name="layouts"></a>版面配置
 

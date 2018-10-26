@@ -3,15 +3,15 @@ title: 疑難排解 Xamarin 在 Android 上的活頁簿
 description: 本文件提供使用 Xamarin 在 Android 上的活頁簿的疑難排解秘訣。 它討論模擬器支援，就不會載入的活頁簿和其他主題。
 ms.prod: xamarin
 ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: b0333e1a40570374ee6218b7a848d2dd1c06b872
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: a93288829ff99027a4b33e7720a7f849df37e9b1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351713"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112607"
 ---
 # <a name="troubleshooting-xamarin-workbooks-on-android"></a>疑難排解 Xamarin 在 Android 上的活頁簿
 

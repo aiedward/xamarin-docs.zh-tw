@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 99484E96-DC69-4697-8BBB-1B44C5CBB5ED
 author: lobrien
 ms.author: laobri
-ms.date: 10/03/2018
-ms.openlocfilehash: 06392448682a5b3be02562578542919b42242c13
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.date: 10/23/2018
+ms.openlocfilehash: 9171eeb461f2e4d363de6e01ea92fa448f04d41a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "34793739"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121629"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>使用 Xamarin 的連續整合簡介
 
@@ -20,6 +20,10 @@ ms.locfileid: "34793739"
 ## <a name="introduction-to-continuous-integrationtoolsciintro-to-cimd"></a>[連續整合簡介](~/tools/ci/intro-to-ci.md)
 
 本節涵蓋使用持續整合和其關聯性相關的不同元件。 其中概述特定的以下各節中討論的連續整合環境。
+
+## <a name="devops-with-xamarintoolscidevopsmd"></a>[使用 Xamarin 的 DevOps](~/tools/ci/devops.md)
+
+本節會說明哪些 DevOps 功能在 Azure 和 Visual Studio，您可以預期與 Xamarin 專案搭配良好。
 
 ## <a name="working-with-continuous-integration-environments"></a>使用持續整合環境
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: ce48c4d271167b657505c52518e79c955e53b02e
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: f05b79e58a9fa87e13aeb45af2dbb46139051005
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "38860663"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109987"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin 即時重新載入
 
@@ -22,11 +22,10 @@ Xamarin 即時重新載入可讓您**對您的 XAML 中的變更並看到其反�
 
 使用即時重新載入時，會編譯您的應用程式，因為它適用於所有的程式庫和協力廠商控制項。 即時重新載入適用於所有平台 Xamarin.Forms 支援，包括 Android、 iOS 和 UWP 和適用於所有有效的部署目標，包括模擬器，模擬器，以及實體裝置上。
 
-> [!Video https://www.youtube.com/embed/-5WJZpeXlC8]
-
-即時重新載入目前僅提供的 Visual Studio 2017 中。
-
-[![加入在聊天室 https://gitter.im/xamarin/live-reload](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xamarin/live-reload?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+> [!NOTE]
+> [在即時重新載入預覽已結束](https://github.com/xamarin/Xamarin.Forms/issues/4155#issuecomment-431596130)
+>
+> 在沒有討論這[ ![，參加在聊天室 https://gitter.im/xamarin/live-reload](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xamarin/live-reload?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## <a name="requirements"></a>需求
 

@@ -1,36 +1,36 @@
 ---
-title: watchOS Xamarin 中的專案參考
-description: 本文件說明 iOS 應用程式、 監看式應用程式和監看式應用程式擴充功能之間的關聯性。 其中也會討論專案參照和套件組合識別碼。
+title: watchOS 在 Xamarin 中的專案參考
+description: 本文件說明 iOS 應用程式、 監控應用程式和監看式應用程式擴充功能之間的關聯性。 它討論的專案參考 」 和 「 套件組合識別碼。
 ms.prod: xamarin
 ms.assetid: C366E062-C33D-406A-B3FF-CBE82E5D1E7E
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: 1bd950d0929beae7133b0eb8ef6b2a69bc116f50
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: c900ab714fed2bb1e02367ba39ad3c5a0a76121e
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791484"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106659"
 ---
-# <a name="watchos-project-references-in-xamarin"></a>watchOS Xamarin 中的專案參考
+# <a name="watchos-project-references-in-xamarin"></a>watchOS 在 Xamarin 中的專案參考
 
-_IOS 應用程式、 監看式應用程式，並監看式延伸模組之間的關聯性的說明。_
+_IOS 應用程式、 監看式應用程式和監看式延伸模組之間的關聯性的說明。_
 
-WatchOS 方案中的三個專案都*自動設定*來建置和正確配套 watchOS 3 應用程式以特定方式互相參考。 這些專案參考和套件組合識別碼設定如下所述的參考。
+WatchOS 方案中的三個專案都*自動設定*彼此參考 watchOS 3 應用程式，建置和正確配套以特定方式。 如需參考，會將這些專案參考 」 和 「 套件組合識別碼設定說明如下。
 
 ## <a name="project-references"></a>專案參考
 
-每個專案的參考節點上按兩下，檢視的參考：
+針對每個專案的參考節點上按兩下來檢視參考：
 
-- **iPhone 應用程式**參考**監看式應用程式**
+- **iPhone 應用程式**參考**Watch 應用程式**
 
-![](project-references-images/catalog-reference1.png "iPhone 應用程式參考監看式應用程式")
+![](project-references-images/catalog-reference1.png "iPhone 應用程式參考 Watch 應用程式")
 
 - **監看應用程式**參考**監看式應用程式擴充功能**
 
-![](project-references-images/catalog-reference2.png "iPhone 應用程式參考監看式應用程式")
+![](project-references-images/catalog-reference2.png "iPhone 應用程式參考 Watch 應用程式")
 
 
  - **監看式應用程式擴充功能**不參考任何其他專案
@@ -41,39 +41,39 @@ WatchOS 方案中的三個專案都*自動設定*來建置和正確配套 watchO
 
 ## <a name="bundle-identifiers"></a>套件組合識別碼
 
-您也需要確定您**套件組合識別碼**正確無誤。
-應該有三個專案*相同*識別碼前置詞，以具有預先定義的擴充功能的兩個監看式專案`watchkitextension`和`watchkitapp`、，如下所示 (如**WatchKitCatalog**範例）：
+您也必須先確定您**套件組合識別碼**正確無誤。
+這三個專案應該有*相同*識別碼的前置詞，與具有預先定義的延伸模組的兩個監看式專案`watchkitextension`和`watchkitapp`，如下 (如**WatchKitCatalog**範例）：
 
- - Xamarin.iOS 整合專案- `com.xamarin.WatchKitCatalog`
+ - Xamarin.iOS 統一專案- `com.xamarin.WatchKitCatalog`
 
  - WatchKit 擴充功能專案- `com.xamarin.WatchKitCatalog.watchkitextension`
 
  - 監看式應用程式專案- `com.xamarin.WatchKitCatalog.watchkitapp`
 
-也請確定這些**Info.plist**設定正確無誤：
+此外，請確定這些**Info.plist**設定是否正確：
 
- - 監看式應用程式專案的`WKCompanionAppBundleIdentifier`符合父代/容器應用程式套件組合識別碼 (ie。 在 iPhone 執行的一個)。
+ - Watch 應用程式專案的`WKCompanionAppBundleIdentifier`與父代/容器應用程式的套件組合識別碼 」 相符 (ie。 在 iPhone 執行的);
 
- - 監看式套件擴充功能專案中的**WKApp 套件組合識別碼**符合監看式應用程式專案的配套識別碼。
+ - 監看式套件延伸模組專案的**WKApp 套件組合識別碼**符合 Watch 應用程式專案的套件組合識別碼。
 
-您可以按兩下，即可編輯識別碼**Info.plist**每個專案中的檔案。
+您可以編輯的識別項，方法是按兩下**Info.plist**每個專案中的檔案。
 
-這個螢幕擷取畫面， **Watch 擴充功能**Info.plist 檔案，顯示**監看式應用程式的**以及識別項：
+此螢幕擷取畫面**監看式延伸模組**Info.plist 檔案中，顯示**監看式應用程式的**識別碼以及：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
     
-![](project-references-images/infoplist-extension.png "這個螢幕擷取畫面會監看式擴充功能的 Info.plist 檔案")
+![](project-references-images/infoplist-extension.png "此螢幕擷取畫面是監看式延伸模組的 Info.plist 檔案")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
     
-![](project-references-images/infoplist-extension-vs.png "這個螢幕擷取畫面會監看式擴充功能的 Info.plist 檔案")
+![](project-references-images/infoplist-extension-vs.png "此螢幕擷取畫面是監看式延伸模組的 Info.plist 檔案")
 
 -----
 
-這個螢幕擷取畫面，**監看式應用程式的**Info.plist 檔案。
-目前**監看式 OS**版本是 8.2，所以**部署目標**監看式應用程式應該是**8.2**。 請注意，如果您有已安裝 Xcode 6.3，這個值可能會設定為 dos 8.3 格式應該將它變更 8.2。
+此螢幕擷取畫面**監看式應用程式的**Info.plist 檔案。
+目前**監看式 OS**版本是 8.2，因此**部署目標**Watch 應用程式應**8.2**。 請注意，如果您有安裝的 Xcode 6.3，這個值可能會設定為 8.3 應變更 8.2。
 
 ![](project-references-images/infoplist-watchapp.png "監看式 Info.plist 檔案")
 
-監看式應用程式的部署目標可以不同於 Watch 擴充功能和 iOS 應用程式。
+Watch 應用程式的部署目標可以是不同於 iOS 應用程式與監控擴充功能。
 

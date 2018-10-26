@@ -4,14 +4,14 @@ description: 本文件說明 MonoTouch.Dialog (MTD)，來利用 Xamarin.iOS 的�
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.openlocfilehash: bee4b460552c7273021b16955b52ba3d95d3e07c
-ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
+author: lobrien
+ms.author: laobri
+ms.openlocfilehash: a948d5beca6c09dc77e5c86d3f281851e4839ff0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39038400"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107985"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>適用於 Xamarin.iOS MonoTouch.Dialog 簡介
 
@@ -54,7 +54,7 @@ public class Expense
 MTD 簡化，將全部程式碼封裝成一個一般的 API，以建立資料表。 然後，它會提供繫結語法，可讓您更輕鬆地為宣告式物件可讓該 API 之上的抽象概念。 因此，有兩個 Api 用於 MTD:
 
 -   **低層級的項目 API** –*項目 API*根據建立的項目代表螢幕和其元件的階層式樹狀結構。 項目 API 讓開發人員最大的彈性及控制建立 Ui。 此外，項目 API 具有 JSON，這非常快速地宣告，以及從伺服器動態 UI 的產生是用來透過進階支援宣告式的定義。 
--   **高層級的反映 API** – 也稱為*繫結**API*中的類別已標註 UI 提示，然後 MTD 會自動建立以物件為基礎的畫面，並提供功能之間的繫結是顯示 （和選擇性地編輯） 在畫面上，以及基礎物件支援。   上述範例所示使用反映 API。 此 API 不提供精細的控制中的項目 API，但可減少複雜性更進一步所自動建立根據類別屬性的項目階層。 
+-   **高層級的反映 API** – 也稱為*繫結**API*中的類別已標註 UI 提示，然後 MTD 會自動建立以物件為基礎的畫面，並提供功能之間的繫結是顯示 （和選擇性地編輯） 在畫面上，以及基礎物件支援。 上述範例所示使用反映 API。 此 API 不提供精細的控制中的項目 API，但可減少複雜性更進一步所自動建立根據類別屬性的項目階層。 
 
 
 MTD 是封裝使用的一大組內建的畫面建立的 UI 項目，但它也會辨識需要自訂的項目和進階的畫面版面配置。 因此，擴充性是第一級的功能內建 API。 開發人員可以擴充現有的項目或建立新的和無縫整合。

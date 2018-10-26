@@ -1,35 +1,35 @@
 ---
-title: Objective C 平台
-description: 本文件說明各種平台.NET 內嵌可設為目標時使用 Objective C 程式碼。 它討論 macOS、 iOS、 tvOS 和 watchOS。
+title: OBJECTIVE-C 平台
+description: 本文件說明各種使用 OBJECTIVE-C 程式碼時以內嵌.NET 目標平台。 它討論 macOS、 iOS、 tvOS 和 watchOS。
 ms.prod: xamarin
 ms.assetid: 43253BE4-A03A-4646-9A14-32C05174E672
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 11/14/2017
-ms.openlocfilehash: 6eeb776959d1a2a37d67bfae6603971d0e5a22b7
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8091fb4e8328f61f1471d061b51b4735de3c089c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793887"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108872"
 ---
-# <a name="objective-c-platforms"></a>Objective C 平台
+# <a name="objective-c-platforms"></a>OBJECTIVE-C 平台
 
-.NET 內嵌可以各種平台為目標時產生 Objective C 程式碼：
+.NET 內嵌可以各種不同平台為目標時產生 OBJECTIVE-C 程式碼：
 
 * macOS
 * iOS
 * tvOS
 * watchOS [尚未實作]
 
-平台會選取傳遞`--platform=<platform>`.NET 內嵌的命令列引數。
+選取平台傳遞`--platform=<platform>`.NET 內嵌的命令列引數。
 
-針對 iOS 建置時，tvOS 和 watchOS 平台，.NET 內嵌一律將建立內嵌 Xamarin.iOS，因為 Xamarin.iOS 包含多個執行階段支援程式碼在這些平台所需的架構。
+針對 iOS 建置時，tvOS 和 watchOS 平台，.NET 內嵌一律會建立內嵌 Xamarin.iOS，因為 Xamarin.iOS 包含許多執行階段支援程式碼必須在這些平台上的架構。
 
-不過，針對 macOS 平台建置時，便可選擇產生的 framework 是否應內嵌 Xamarin.Mac。 可內嵌 Xamarin.Mac 如果繫結的組件並未參考 Xamarin.Mac.dll，（直接或間接），且選取此選項將傳遞`--platform=macOS`.NET 內嵌的工具。
+不過，針對 macOS 平台建置時，就可以選擇產生的 framework 是否應內嵌 Xamarin.Mac。 就可以不內嵌 Xamarin.Mac，如果繫結的組件並未參考 Xamarin.Mac.dll，（直接或間接），且選取此項目傳遞`--platform=macOS`.NET 內嵌工具。
 
-如果繫結的組件包含 Xamarin.Mac.dll 的參考，則需要內嵌 Xamarin.Mac，並另外 embeddinator 必須知道要使用哪一個目標架構。
+如果繫結的組件包含 Xamarin.Mac.dll 的參考，就必須內嵌 Xamarin.Mac 和此外 embeddinator 必須知道要使用哪一個目標架構。
 
-有三個可能的 Xamarin.Mac 目標架構： `modern` (先前稱為`mobile`)，`full`和`system`(每個差異述 Xamarin.Mac 的[目標 framework][ 1]文件)，且每個為已選取傳遞`--platform=macOS-modern`，`--platform=macOS-full`或`--platform=macOS-system`.NET 內嵌的工具。
+有三種可能的 Xamarin.Mac 目標架構： `modern` (先前稱為`mobile`)，`full`並`system`(說明 Xamarin.Mac 的每個之間的差異[目標 framework][ 1]文件)，以及每個已選取傳遞`--platform=macOS-modern`，`--platform=macOS-full`或`--platform=macOS-system`.NET 內嵌工具。
 
 [1]: ~/mac/platform/target-framework.md

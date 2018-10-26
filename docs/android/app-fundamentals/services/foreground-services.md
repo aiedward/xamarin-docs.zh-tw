@@ -3,15 +3,15 @@ title: 前景服務
 ms.prod: xamarin
 ms.assetid: C10FD999-7A91-4708-B642-0C1B0901BD24
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: 47e1eda2f701b654f81f664050847677fba8bcc5
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.openlocfilehash: df917896f901060a5518076afa859d34a03f4d6d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986030"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108349"
 ---
 # <a name="foreground-services"></a>前景服務
 
@@ -78,7 +78,7 @@ public override StartCommandResult OnStartCommand(Intent intent, StartCommandFla
 }
 ```
 
-這是類似下面的狀態列通知時，就會顯示先前的通知：
+先前的通知會顯示狀態列通知，如下所示：
 
 ![在狀態列中顯示通知的映像](foreground-services-images/foreground-services-01.png "狀態列中顯示通知的影像")
 

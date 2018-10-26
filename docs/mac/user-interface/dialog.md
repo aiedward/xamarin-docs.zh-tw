@@ -4,15 +4,15 @@ description: 本文涵蓋在 Xamarin.Mac 應用程式中的強制回應視窗與
 ms.prod: xamarin
 ms.assetid: 55451990-B77B-4D44-B8BB-F874EC503B0C
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 2f28b52b4904b73f97cd9da575e90ef583e443da
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 8c176944d1bec4850f084043fdab81b5c2d51ceb
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40250967"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105203"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin.mac 的對話方塊
 
@@ -833,7 +833,7 @@ using Foundation;
 
 namespace SourceWriter
 {
-    public class PreferenceWidowDelegate : NSWindowDelegate
+    public class PreferenceWindowDelegate : NSWindowDelegate
     {
         #region Application Access
         public static AppDelegate App {
@@ -846,7 +846,7 @@ namespace SourceWriter
         #endregion
 
         #region constructors
-        public PreferenceWidowDelegate (NSWindow window)
+        public PreferenceWindowDelegate (NSWindow window)
         {
             // Initialize
             this.Window = window;
@@ -893,7 +893,7 @@ namespace SourceWriter
             base.WindowDidLoad ();
 
             // Initialize
-            Window.Delegate = new PreferenceWidowDelegate(Window);
+            Window.Delegate = new PreferenceWindowDelegate(Window);
             Toolbar.SelectedItemIdentifier = "General";
         }
         #endregion

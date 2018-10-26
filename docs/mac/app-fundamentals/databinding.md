@@ -4,15 +4,15 @@ description: 這篇文章說明如何使用索引鍵-值撰寫程式碼，以便
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 0adb8cda71ca8803c535679da2aecf00f3fa46a5
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 4a391160f2102fd1f069a45eb7c16aec91dfd7e0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251258"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110377"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>資料繫結和鍵值編碼 xamarin.mac
 
@@ -334,7 +334,7 @@ public NSArray People {
 這裡要注意兩件事：
 
 1. 我們使用了`NSMutableArray`而不是標準的 C# 陣列或集合，因為這是完整 AppKit 控制項需要資料繫結，例如**資料表檢視**，**大綱檢視**和**集合**.
-2. 我們轉換到公開 employee 陣列`NSArray`適用於資料繫結的目的，並變更其 C# 格式化名稱， `People`，其中一個預期的資料繫結，`personModelArray`形式 **{class_name} 陣列**（附註第一個字元已經成為小寫）。
+2. 我們轉換到公開 employee 陣列`NSArray`資料繫結的考量，以及變更其C#格式的名稱， `People`，其中一個預期的資料繫結，`personModelArray`形式 **{class_name} 陣列**（請注意，第一個字元已小寫）。
 
 接下來，我們需要新增一些特殊名稱公用方法，以支援**陣列控制站**並**樹狀結構控制器**:
 
@@ -904,4 +904,4 @@ For more information on working with Collection Views, please see our [Collectio
 - [簡介程式設計主題的 Cocoa 繫結](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)
 - [Cocoa 繫結參考的簡介](https://developer.apple.com/library/content/documentation/Cocoa/Reference/CocoaBindingsRef/CocoaBindingsRef.html)
 - [NSCollectionView](https://developer.apple.com/documentation/appkit/nscollectionview)
-- [macOS 人性化介面指導方針](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
+- [macOS 人性化介面指導方針](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/) \(英文\)

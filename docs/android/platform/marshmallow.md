@@ -4,15 +4,15 @@ description: 這篇文章可協助您開始使用 Xamarin.Android 開發 Android
 ms.prod: xamarin
 ms.assetid: E4D6F183-98D2-460A-9D65-937639A899E0
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 4f0bcd25662d3def719a89ccf833e845eb1728f2
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 0393b9a994c1fd62f51cff01a88aa73f71019d53
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242234"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113452"
 ---
 # <a name="marshmallow-features"></a>Marshmallow 功能
 

@@ -3,15 +3,15 @@ title: 在 Android 上的資料儲存體簡介
 ms.prod: xamarin
 ms.assetid: FDAC0771-4749-4758-865A-F1BD190CA54B
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 26576fe31919822237022572a4e490cf6fc19d65
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 8c90e1c3013ec61cbb4641f19af3424f55b1a465
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241439"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103812"
 ---
 # <a name="introduction"></a>簡介
 

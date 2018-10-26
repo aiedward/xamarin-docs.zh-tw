@@ -4,15 +4,15 @@ description: 如何使用接受使用者輸入的 EditText 小工具。
 ms.prod: xamarin
 ms.assetid: E513BCBC-438E-15E8-B83A-4B768A8E8B32
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: bb2cb13472e7e17eb1b0438ed67033f2b04defe2
-ms.sourcegitcommit: b6f3e55d4f3dcdc505abc8dc9241cff0bb5bd154
+ms.openlocfilehash: e708ceb4b0487cb07ae5a55fae5e96f0e41f17f6
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40251013"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119497"
 ---
 # <a name="edit-text"></a>編輯文字
 

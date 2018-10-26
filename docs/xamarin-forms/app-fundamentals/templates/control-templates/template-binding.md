@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 86de2ad6009365b3debbe1a2310651002b023219
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 13730dce5d4698085abe10cb93da5ba50b87ab01
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995560"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106425"
 ---
 # <a name="binding-from-a-xamarinforms-controltemplate"></a>從 Xamarin.Forms ControlTemplate 的繫結
 
@@ -156,13 +156,24 @@ public class HomePageCS : ContentPage
 }
 ```
 
+您也可以繫結至檢視模型屬性直接，使您不需要宣告`BindableProperty`s`HeaderText`並`FooterText`上`ContentPage`，繫結至 Parent.BindingContext 的控制項範本。_PropertyName_例如：
+
+```xaml
+<ControlTemplate x:Key="TealTemplate">
+  <Grid>
+    ...
+    <Label Text="{TemplateBinding Parent.BindingContext.HeaderText}" ... />
+    ...
+    <Label Text="{TemplateBinding Parent.BindingContext.FooterText}" ... />
+  </Grid>
+</ControlTemplate>
+```
+
 如需有關資料繫結至 Viewmodel 的詳細資訊，請參閱[從資料繫結至 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
 
 ## <a name="summary"></a>總結
 
 示範使用範本繫結來執行資料繫結控制項範本，從這篇文章。 範本繫結可讓控制項的控制項範本，以資料繫結至公用屬性，啟用 [控制項] 範本，輕鬆地變更中的控制項上的屬性值。
-
-
 
 ## <a name="related-links"></a>相關連結
 

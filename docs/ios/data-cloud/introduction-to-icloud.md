@@ -4,15 +4,15 @@ description: 本文件說明 iCloud 與 Xamarin.iOS 應用程式中的使用。 
 ms.prod: xamarin
 ms.assetid: C6F3B87C-C195-4434-EF14-D66E63894F09
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/09/2016
-ms.openlocfilehash: b72ecc40994d9336c4941f3db700796edd80e81f
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
+ms.openlocfilehash: d40c932c560b3827cccacd4f9bafa155dcf26056
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353213"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113322"
 ---
 # <a name="using-icloud-with-xamarinios"></a>與 Xamarin.iOS 使用 iCloud
 

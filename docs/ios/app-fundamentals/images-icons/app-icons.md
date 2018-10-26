@@ -4,15 +4,15 @@ description: 本文件說明如何使用在 Xamarin.iOS 中的各種應用程式
 ms.prod: xamarin
 ms.assetid: B7791574-4A0F-4CB6-8C18-36D40B5C91EB
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/22/2017
-ms.openlocfilehash: cd67c564461721ade6f3eb269b461ddea5e2d2c4
-ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
+ms.openlocfilehash: ef8e694bc3c617774035ad5cf7902ca3f5b06813
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39275998"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118509"
 ---
 # <a name="application-icons-in-xamarinios"></a>在 Xamarin.iOS 中的應用程式圖示
 
@@ -109,7 +109,7 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 
 若要使用資產目錄，執行下列作業：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 按兩下`Info.plist`檔案中**方案總管 中**以開啟它進行編輯。
 2. 向下捲動至**應用程式圖示**一節。
@@ -126,7 +126,7 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 7. 按一下 **開啟**納入專案中的映像，並將它設 xcasset 中的按鈕。
 8. 重複的所需的所有映像。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 按兩下**Info.plist**中的檔案**方案總管 中**:
 
@@ -155,7 +155,7 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 
 請執行下列動作：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 按兩下`Info.plist`檔案中**方案總管 中**以開啟它進行編輯。
 2. 向下捲動至**應用程式圖示**一節。
@@ -166,7 +166,7 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 
      ![](app-icons-images/migrate03.png "Assets.xcassets AppIcons 映像集合")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 按兩下`Info.plist`檔案中**方案總管 中**以開啟它進行編輯。
 2. 在 iPhone 上按一下圖示 > 一節： 
@@ -187,7 +187,7 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 
 若要指定 iTunes 插圖，請執行下列動作：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 按兩下`Info.plist`檔案中**方案總管 中**以開啟它進行編輯。
 2. 若要捲動**iTunes 插圖**編輯器區段： 
@@ -196,7 +196,7 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 3. 針對任何缺少的影像，按一下 在編輯器中縮圖上選取所需的 iTunes 插圖的影像檔案，從 開啟檔案 對話方塊中，按一下 **確定** 按鈕。
 4. 重複此步驟直到所有所需的映像已指定應用程式。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 按兩下`Info.plist`檔案中**方案總管 中**以開啟它進行編輯。
 

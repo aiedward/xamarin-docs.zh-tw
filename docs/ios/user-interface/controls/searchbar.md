@@ -4,15 +4,15 @@ description: 本文件說明如何在 Xamarin.iOS 中使用搜尋列。 它討�
 ms.prod: xamarin
 ms.assetid: 22A8249A-19C6-4734-8331-E49FE3170771
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: fdd9fe647f1a2f63b2a86a64ad92d1e71d6fcd2e
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 923eebc2674abdbbd66d9db11bebf9f503928569
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242075"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107316"
 ---
 # <a name="search-bars-in-xamarinios"></a>在 Xamarin.iOS 中的搜尋列
 

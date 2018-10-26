@@ -1,0 +1,17 @@
+### YamlMime:ZonePivotGroups
+groups:
+- id: platform
+  title: Platform
+  prompt: 選擇您的開發環境
+  pivots:
+  - id: windows
+    title: Visual Studio 2017
+  - id: macos
+    title: Visual Studio for Mac
+metadata:
+  ms.openlocfilehash: a8e0e12466eb4433f959d94cd82257a145e536f2
+  ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+  ms.translationtype: MT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 10/25/2018
+  ms.locfileid: "50131136"

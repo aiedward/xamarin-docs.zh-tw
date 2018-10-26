@@ -4,15 +4,15 @@ description: RecyclerView 配置管理員配接器及檢視的持有者的概觀
 ms.prod: xamarin
 ms.assetid: 54F999BE-2732-4BC7-A466-D17373961C48
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: 4d55124e9a02489d1f55e900c537939ff3450509
-ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
+ms.openlocfilehash: 13678d3b1bca102e6f608ad1c11838db1f14cd08
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39038504"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104995"
 ---
 # <a name="recyclerview-parts-and-functionality"></a>RecyclerView 組件和功能
 

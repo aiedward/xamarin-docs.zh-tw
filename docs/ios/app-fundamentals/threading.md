@@ -4,15 +4,15 @@ description: 本文件說明如何使用 System.Threading Api 的 Xamarin.iOS �
 ms.prod: xamarin
 ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 8e4ee10fdabdcbb4c6cefe02b15dc93459708364
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: b90c59f09217077262c3aced9ee9e5d07849c25c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350416"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106581"
 ---
 # <a name="threading-in-xamarinios"></a>在 Xamarin.iOS 中執行緒
 
