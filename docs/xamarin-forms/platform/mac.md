@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: ae0fbfc7862a0d2147b2c3bbdbae7dd53dfce78f
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: e0a8d08c30d99eef398f6a3f35ac2351572def6f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831685"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120342"
 ---
 # <a name="mac-platform-setup"></a>Mac 平台設定
 
@@ -90,7 +90,6 @@ ms.locfileid: "38831685"
         {
             Forms.Init();
             LoadApplication(new App());
-            base.DidFinishLaunching(notification);
         }
     }
     ```

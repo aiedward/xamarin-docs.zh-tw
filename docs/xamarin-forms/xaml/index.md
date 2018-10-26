@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/18/2018
-ms.openlocfilehash: f593e5d084d8cd7071d17195663478d430d994b7
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 4045f3a1d31b1c0c8b69e840d3943b6ce258b894
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995478"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113582"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>可延伸應用程式標記語言 (XAML)
 
@@ -37,7 +37,7 @@ XAML 可選擇性地使用 XAML 編譯器 (XAMLC) 直接編譯成中繼語言 (I
 
 ## <a name="xaml-previewerxaml-previewermd"></a>[XAML 預覽程式](xaml-previewer.md)
 
-[XAML 預覽程式](~/xamarin-forms/xaml/xaml-previewer.md)宣布在 Xamarin 發展 2016年是供測試的 Alpha 色板。
+[XAML 預覽程式](~/xamarin-forms/xaml/xaml-previewer.md)呈現頁面的並行以 XAML 標記，可讓您查看您呈現您所輸入的使用者介面的即時預覽。
 
 ## <a name="xaml-namespacesnamespacesmd"></a>[XAML 命名空間](namespaces.md)
 

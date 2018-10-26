@@ -1,52 +1,52 @@
 ---
-title: 使用 watchOS 螢幕大小，請在 Xamarin
-description: 本文件說明如何使用各種 watchOS 螢幕大小。 其中也會討論 watchOS 介面設計工具中，watchOS 模擬器，以及影像資源。
+title: 運用 watchOS 螢幕大小，在 Xamarin 中使用
+description: 本文件說明如何使用各種 watchOS 螢幕大小。 它討論 watchOS 介面設計工具，watchOS 模擬器，以及影像資源。
 ms.prod: xamarin
 ms.assetid: 840DF939-2F59-4ABA-87D8-92AAC8A92BC4
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 30866c70879950acd8f43fd5880b1b24ba127fa4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b2f4cc71c1993e51ed55b51edd7c50d393e60873
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790707"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117495"
 ---
-# <a name="working-with-watchos-screen-sizes-in-xamarin"></a>使用 watchOS 螢幕大小，請在 Xamarin
+# <a name="working-with-watchos-screen-sizes-in-xamarin"></a>運用 watchOS 螢幕大小，在 Xamarin 中使用
 
 Apple Watch 有兩個螢幕大小：
 
 - **38mm**
-  - 136 x 170 邏輯像素 （272 x 340 實體像素為單位）
+  - 第 136 x 170 邏輯像素 （272 x 340 實體像素為單位）
 
 - **42mm**
-  - 156 x 195 邏輯像素 （312 x 390 實體像素為單位）。
+  - 156 x 195 邏輯像素 （312 x 390 實體像素）。
 
-您應該考量設計和測試您的應用程式時採取的螢幕大小。
+您應該考慮到設計和測試您的應用程式時的螢幕大小。
 
 ## <a name="watchos-interface-designer"></a>watchOS 介面設計工具
 
-根據預設，Visual Studio for Mac 設計工具會顯示觀賞介面控制站在**Any Apple Watch**。
+根據預設，Visual Studio for Mac 設計工具會顯示監看在介面控制器**Any 的 Apple Watch**。
 
 ![](screen-sizes-images/screen-any-sml.png "設計工具顯示監看式介面控制站，在任何 Apple Watch")
 
-使用大小功能表來編輯和預覽您在其中一個可用的螢幕大小的分鏡腳本： **38 公釐**或**42 公釐**:
+使用 [大小] 功能表編輯和預覽您的分鏡腳本，在這兩個可用的螢幕大小： **38 公釐**或是**42 mm**:
 
 ![](screen-sizes-images/screen-menu-sml.png "選擇38mm或42mm的尺寸")
 
-較大的螢幕大小有時會轉譯為就是較小螢幕上截斷/隱藏的內容。
-請務必先測試兩個大小。
+較大的螢幕大小有時候會呈現會是較小螢幕上截斷/隱藏的內容。
+請務必在這兩種大小上進行測試。
 
 
 ### <a name="interface-design"></a>介面設計
 
-您的應用程式應該將不論大小為何，在螢幕上顯示相同的內容，並應展開或收縮適當的項目。 在 Visual Studio for Mac 的設計工具中，在屬性偵測器中，您應該使用**相對於容器**或**大小，以使內容**而非固定大小。
+您的應用程式應該將不論大小為何，在螢幕上顯示相同的內容，並應該展開或收縮適當的項目。 在 Visual Studio for Mac 的設計工具中，在屬性偵測器中，您應該使用**相對於容器**或是**大小，以符合內容**而非固定的大小。
 
-![](screen-sizes-images/sizeattributepanel-sml.png "使用容器的相對或大小，以容納內容，而非固定的大小")
+![](screen-sizes-images/sizeattributepanel-sml.png "使用容器的相對或大小，以符合內容，而非固定的大小")
 
-[監看式] 畫面會以黑色的邊框住，因為不建議提供您的介面周圍的填補。 可讓項目將對螢幕的邊緣，並讓邊框形成自然框線應用程式。
+因為 [監看式] 畫面會圍繞著黑色的邊框，不建議提供您的介面周圍的填補。 可讓 rest 對螢幕的邊緣，並讓形成自然的框線，應用程式周圍邊框的項目。
 
 
 ## <a name="watchos-simulator"></a>watchOS 模擬器
@@ -58,7 +58,7 @@ Apple Watch 有兩個螢幕大小：
 
 ## <a name="image-resources"></a>影像資源
 
-如果單一資產看起來並無不同大小的理想，您應該使用多個影像資產。 指定每個大小都允許不同的點陣圖影像資產目錄：
+如果單一資產不會尋找擅長使用不同的大小，您應該使用多個影像資產。 影像資產目錄允許個別點陣圖，指定每種大小：
 
 ![](screen-sizes-images/images-xcassets.png "影像資產目錄編輯器")
 
@@ -67,7 +67,7 @@ Apple Watch 有兩個螢幕大小：
 staticImage.SetImage(UIImage.FromBundle("Walkway"));
 ```
 
-或者，使用程式碼至判斷螢幕大小，並完全載入不同的影像：
+或者，使用程式碼來判斷螢幕大小，並完全載入不同的映像：
 
 ```csharp
 bool large = WKInterfaceDevice.CurrentDevice.ScreenBounds.Size.Width > 136.0;

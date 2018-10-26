@@ -4,15 +4,15 @@ description: 這篇文章說明如何在任何解析度和方向，使用單一�
 ms.prod: xamarin
 ms.assetid: 31A489CA-756B-4B9B-B386-4BADF18EDD33
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/02/2018
-ms.openlocfilehash: 40b8c38e89e96223bbf657ff06356d9fb2e9d9b3
-ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
+ms.openlocfilehash: 0ec1defa29a4fe85c4ae3e809d8733e68cc268ac
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40251183"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116916"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Xamarin.iOS 應用程式啟動畫面
 
@@ -28,7 +28,7 @@ IOS 8 之前建立的 iOS 應用程式啟動畫面需要開發人員的各種裝
 
 在 iOS 8 （和更新版本） 中，開發人員可以建立特殊統一的腳本，以提供啟動畫面，而不是使用一或多個靜態的啟動影像。 建立時啟動分鏡腳本 iOS 設計工具中，使用大小類別和自動版面配置來定義不同的顯示環境的不同版面配置。 使用大小類別和自動版面配置，可以建立單一的啟動螢幕看起來沒問題，在所有裝置上，開發人員，並將其顯示環境中。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在 Visual Studio for Mac，請選取建立新的專案**檔案 > 新的解決方案**，然後選擇**單一檢視應用程式**: 
 
@@ -95,7 +95,7 @@ IOS 8 之前建立的 iOS 應用程式啟動畫面需要開發人員的各種裝
 
 13. 將變更儲存到分鏡腳本。 在模擬器或裝置上執行應用程式，並啟動畫面會顯示，因為在啟動應用程式。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 建立新的專案。 在 Visual Studio 中，選取**檔案 > 新增 > 專案 > Visual C# > iPhone 與 iPad > iOS 應用程式 (Xamarin)**:
 
@@ -187,7 +187,7 @@ IOS 8 之前建立的 iOS 應用程式啟動畫面需要開發人員的各種裝
 
 ## <a name="migrating-to-launch-screen-storyboards"></a>移轉至啟動螢幕的分鏡腳本
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 在更新現有的應用程式来用於其啟動畫面上的分鏡腳本，以滑鼠右鍵按一下**專案名稱**中**方案總管**，然後選取**新增** > **新檔...**.選取  **iOS** > **啟動螢幕**，按一下 **新增**按鈕：
 
@@ -205,7 +205,7 @@ IOS 8 之前建立的 iOS 應用程式啟動畫面需要開發人員的各種裝
 
     ![](launch-screens-images/storyboard08.png "設定啟動螢幕到分鏡腳本")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 中的專案名稱上按一下滑鼠右鍵**方案總管**，然後選取**新增** > **新檔...**: 
 

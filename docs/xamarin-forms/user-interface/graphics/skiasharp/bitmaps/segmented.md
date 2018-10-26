@@ -4,15 +4,15 @@ description: 如此會延展，某些區域，而且某些區域中不會顯示 
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 79AE2033-C41C-4447-95A6-76D22E913D19
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: e5bfa076a8746abd6275e9d7a8393c7c8ab53294
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 71997acde4545fec801dfdc8147ab1a9ace7ab24
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615232"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119224"
 ---
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>分段的顯示的 SkiaSharp 點陣圖
 
@@ -26,7 +26,7 @@ SkiaSharp`SKCanvas`物件會定義一個名為方法`DrawBitmapNinePatch`和名�
 
 ## <a name="the-nine-patch-display"></a>修補程式的、 包含九部顯示 
 
-就概念而言， [ `DrawBitmapNinePatch` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmapNinePatch/p/SkiaSharp.SKBitmap/SkiaSharp.SKRectI/SkiaSharp.SKRect/SkiaSharp.SKPaint/)分成九個矩形的點陣圖：
+就概念而言， [ `DrawBitmapNinePatch` ](xref:SkiaSharp.SKCanvas.DrawBitmapNinePatch(SkiaSharp.SKBitmap,SkiaSharp.SKRectI,SkiaSharp.SKRect,SkiaSharp.SKPaint))分成九個矩形的點陣圖：
 
 ![九個修補](segmented-images/NinePatch.png "九個修補程式")
 
@@ -119,14 +119,14 @@ SKRectI centerRect = new SKRectI(150, 150, 350, 350);
 
 這兩個`DrawBitmapLattice`方法很類似`DrawBitmapNinePatch`，但它們已經被一般化的任意數目的水平或垂直分割。 這些部門會定義對應到像素為單位的整數的陣列。 
 
-[ `DrawBitmapLattice` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmapLattice/p/SkiaSharp.SKBitmap/System.Int32[]/System.Int32[]/SkiaSharp.SKRect/SkiaSharp.SKPaint/)方法參數的整數的這些陣列似乎無法運作。 [ `DrawBitmapLattice` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmapLattice/p/SkiaSharp.SKBitmap/SkiaSharp.SKLattice/SkiaSharp.SKRect/SkiaSharp.SKPaint/)具有類型參數的方法`SKLattice`運作，且可在如下所示的範例中使用。
+[ `DrawBitmapLattice` ](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,System.Int32[],System.Int32[],SkiaSharp.SKRect,SkiaSharp.SKPaint))方法參數的整數的這些陣列似乎無法運作。 [ `DrawBitmapLattice` ](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,SkiaSharp.SKLattice,SkiaSharp.SKRect,SkiaSharp.SKPaint))具有類型參數的方法`SKLattice`運作，且可在如下所示的範例中使用。
 
-[ `SKLattice` ](https://developer.xamarin.com/api/type/SkiaSharp.SKLattice/)結構會定義四個屬性：
+[ `SKLattice` ](xref:SkiaSharp.SKLattice)結構會定義四個屬性：
 
-- [`XDivs`](https://developer.xamarin.com/api/property/SkiaSharp.SKLattice.XDivs/)整數的陣列
-- [`YDivs`](https://developer.xamarin.com/api/property/SkiaSharp.SKLattice.YDivs/)整數的陣列
-- [`Flags`](https://developer.xamarin.com/api/property/SkiaSharp.SKLattice.Flags/)陣列`SKLatticeFlags`，列舉型別
-- [`Bounds`](https://developer.xamarin.com/api/property/SkiaSharp.SKLattice.Bounds/) 型別的`Nullable<SKRectI>`指定點陣圖內的選擇性來源矩形
+- [`XDivs`](xref:SkiaSharp.SKLattice.XDivs)整數的陣列
+- [`YDivs`](xref:SkiaSharp.SKLattice.YDivs)整數的陣列
+- [`Flags`](xref:SkiaSharp.SKLattice.Flags)陣列`SKLatticeFlags`，列舉型別
+- [`Bounds`](xref:SkiaSharp.SKLattice.Bounds) 型別的`Nullable<SKRectI>`指定點陣圖內的選擇性來源矩形
 
 `XDivs`陣列分成垂直帶狀線的點陣圖的寬度。 從要的像素 0 左邊的第一個區域擴充`XDivs[0]`。 這個區域會呈現其像素寬度。 第二個帶狀始`XDivs[0]`至`XDivs[1]`，和自動縮放。 第三個區域始`XDivs[1]`至`XDivs[2]`並呈現其像素寬度。 點陣圖的右邊緣，從陣列的最後一個項目延伸的最後一個區域。 如果陣列中有偶數數目的項目，它會顯示在其像素寬度。 否則，它會自動縮放。 垂直帶狀線的總數是其中的陣列中的項目數目範圍內。
 
@@ -134,7 +134,7 @@ SKRectI centerRect = new SKRectI(150, 150, 350, 350);
 
 共同`XDivs`和`YDivs`陣列分割成矩形，矩形的點陣圖。 矩形的數目等於水平帶狀線的數字和垂直帶狀線的數字的乘積。
 
-根據 Skia 文件，`Flags`陣列包含一個項目針對每個矩形中，第一次頂端列的矩形，然後第二個資料列，等等。 `Flags`陣列屬於類型[ `SKLatticeFlags` ](https://developer.xamarin.com/api/type/SkiaSharp.SKLatticeFlags/)，列舉型別具有下列成員：
+根據 Skia 文件，`Flags`陣列包含一個項目針對每個矩形中，第一次頂端列的矩形，然後第二個資料列，等等。 `Flags`陣列屬於類型[ `SKLatticeFlags` ](xref:SkiaSharp.SKLatticeFlags)，列舉型別具有下列成員：
 
 - `Default` 值為 0 的
 - `Transparent` 具有值 1
@@ -225,5 +225,5 @@ public class LatticeDisplayPage : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

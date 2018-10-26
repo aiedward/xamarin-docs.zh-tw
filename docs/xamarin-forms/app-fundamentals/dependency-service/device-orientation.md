@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 620404a217b2e8a31192ae6613dcec023ac366cd
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 52b82033cbd6fe0e1a44f5729c815074852230bf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995637"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115411"
 ---
 # <a name="checking-device-orientation"></a>檢查裝置方向
 
@@ -29,7 +29,7 @@ ms.locfileid: "38995637"
 ![](device-orientation-images/orientation-diagram.png "DependencyService 應用程式結構")
 
 > [!NOTE]
-> 可偵測裝置是否在直向或橫向方向中，共用的程式碼中所示的 [裝置 Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation)。 這篇文章中所述的方法會使用原生功能，以取得詳細資訊包括裝置是否面朝下的方向。
+> 可偵測裝置是否在直向或橫向方向中，共用的程式碼中所示[裝置方向](~/xamarin-forms/user-interface/layouts/device-orientation.md#Reacting_to_Changes_in_Orientation)。 這篇文章中所述的方法會使用原生功能，以取得詳細資訊包括裝置是否面朝下的方向。
 
 <a name="Creating_the_Interface" />
 
@@ -215,7 +215,7 @@ public MainPage ()
 }
 ```
 
-在 iOS、 Android 或 Windows 平台上執行此應用程式，以及按下按鈕會導致更新裝置的方向與按鈕的文字。
+在 iOS、 Android 或 Windows 平台上執行此應用程式，然後按  按鈕會導致更新裝置的方向與按鈕的文字。
 
 ![](device-orientation-images/orientation.png "裝置方向範例")
 

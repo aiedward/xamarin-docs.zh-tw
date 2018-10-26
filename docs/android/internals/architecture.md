@@ -3,15 +3,15 @@ title: 架構
 ms.prod: xamarin
 ms.assetid: 7DC22A08-808A-DC0C-B331-2794DD1F9229
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: e6a30247c13deab871bf230aba53b9963981fd02
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 219c6bb4cd5718c969ba83a55596ad7b0bab8baf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997396"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121122"
 ---
 # <a name="architecture"></a>架構
 
@@ -71,7 +71,7 @@ Xamarin.Android 應用程式也包含*Android 可呼叫包裝函式*以允許 An
 受管理的可呼叫包裝函式的子類別是可能的所在的 「 有趣 」 的應用程式特定邏輯。 這些包括自訂[Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)子類別 (例如[Activity1](https://github.com/xamarin/monodroid-samples/blob/master/HelloM4A/Activity1.cs#L13)預設專案範本中的型別)。 (具體而言，這些是任何*Java.Lang.Object*子類別來完成此動作*不*包含[RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)自訂屬性或[RegisterAttribute.DoNotGenerateAcw](https://developer.xamarin.com/api/property/Android.Runtime.RegisterAttribute.DoNotGenerateAcw/)已*false*，這是預設值。)
 
 像是 managed 可呼叫包裝函式，管理可呼叫包裝函式的子類別也包含全域參考，可透過存取[Java.Lang.Object.Handle](https://developer.xamarin.com/api/property/Java.Lang.Object.Handle/)屬性。 就像 managed 可呼叫包裝函式，全域參考可以明確地釋放藉由呼叫[Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/)。
-不同於受管理的可呼叫包裝函式，*小心*應該再處置這類情況下，做為進入*dispose （)* ing 的執行個體將會中斷 Java 執行個體之間的對應 (的執行個體Android 可呼叫包裝函式） 和受管理的執行個體。
+不同於受管理的可呼叫包裝函式，*小心*應該再處置這類情況下，做為進入*dispose （)*-ing 的執行個體將會中斷 Java 執行個體之間的對應 (的執行個體Android 可呼叫包裝函式） 和受管理的執行個體。
 
 
 ### <a name="java-activation"></a>Java 啟用
@@ -88,7 +88,7 @@ Xamarin.Android 應用程式也包含*Android 可呼叫包裝函式*以允許 An
 
 
 請注意，(2) 是溢位的抽象概念。 在 Java 中，和在 C# 中，從建構函式呼叫虛擬方法一律會叫用最具衍生性的方法實作。 例如， [TextView (內容，AttributeSet，int) 建構函式](https://developer.xamarin.com/api/constructor/Android.Widget.TextView.TextView/p/Android.Content.Context/Android.Util.IAttributeSet/System.Int32/)叫用虛擬方法[TextView.getDefaultMovementMethod()](http://developer.android.com/reference/android/widget/TextView.html#getDefaultMovementMethod())，這會繫結為[TextView.DefaultMovementMethod 屬性](https://developer.xamarin.com/api/property/Android.Widget.TextView.DefaultMovementMethod/)。
-因此，如果型別[LogTextBox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs) (1) 要[子類別 TextView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L26)、 (2)[覆寫 TextView.DefaultMovementMethod](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L45)，以及 (3)[啟動的執行個體透過 XML 類別](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Resources/layout/log_text_box_1.xml#L29)覆寫*DefaultMovementMethod* ACW 建構函式有機會執行，以及 C# 建構函式有機會執行之前，它會發生之前，會叫用屬性。
+因此，如果型別[LogTextBox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs) (1) 要[子類別 TextView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L26)、 (2)[覆寫 TextView.DefaultMovementMethod](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L45)，以及 (3)[啟動的執行個體透過 XML 類別](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Resources/layout/log_text_box_1.xml#L29)覆寫*DefaultMovementMethod*之前 ACW 建構函式有機會執行，而且它會發生之前，會叫用屬性C#建構函式有機會執行。
 
 這支援具現化執行個體 LogTextBox 透過[LogTextView （IntPtr，JniHandleOwnership）](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L28)建構函式時 ACW LogTextBox 執行個體第一次進入 managed 程式碼，然後叫用[(內容，IAttributeSet，int) LogTextBox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L41)建構函式*相同的執行個體上*ACW 建構函式在執行時。
 

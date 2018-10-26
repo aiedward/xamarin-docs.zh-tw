@@ -4,15 +4,15 @@ description: 這篇文章審視 Core 動畫架構中，顯示如何讓高效能�
 ms.prod: xamarin
 ms.assetid: D4744147-FACB-415B-8155-3A6B3C35E527
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 3d26e58822385c20f3c08d0b75ba468467c2c9b1
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 3b214833de10848e69a65181cff12e3223a6b24a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242127"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111840"
 ---
 # <a name="core-animation-in-xamarinios"></a>在 Xamarin.iOS 中的核心動畫
 
@@ -100,11 +100,11 @@ UIView.Transition (
 
 UIKit 支援建立各種不同屬性的動畫上`UIView`類別供免費使用，包括：
 
--  畫面格
+-  Frame
 -  繫結
 -  置中
 -  Alpha
--  Transform
+-  資料轉換
 -  色彩
 
 

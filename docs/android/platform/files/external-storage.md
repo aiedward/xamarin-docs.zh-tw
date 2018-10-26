@@ -4,15 +4,15 @@ description: 本指南會討論在 Xamarin.Android 中的外部儲存體上的�
 ms.prod: xamarin
 ms.assetid: 40da10b2-a207-4f9c-a2dd-165d9b662f33
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: 380100d38febf567fde94096455fd846d9d3d2d3
-ms.sourcegitcommit: 9bb9e8297d3edd9a50585f4ba53c1b4f0bcd1d3e
+ms.openlocfilehash: fa0ad282fedecec8f5ca4e94e7119c36ef182261
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39212188"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116013"
 ---
 # <a name="external-storage"></a>外部儲存體
 
@@ -140,13 +140,13 @@ Android 會考慮存取外部儲存體以進行_危險的使用權限_，通常�
 > [!NOTE]
 > 如果使用者授與`WRITE_EXTERNAL_STORAGE`，然後`READ_EXTERNAL_STORAGE`還有以隱含方式授與。 您不需要要求中的兩個權限**AndroidManifest.xml**。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 權限可能也會加入使用**Android 資訊清單**索引標籤**方案屬性**:
 
 ![方案總管-適用於 Visual Studio 2017 的必要權限](./images/required-permissions.w157.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 權限可能也會加入使用**Android 資訊清單**索引標籤**方案屬性板**:
 

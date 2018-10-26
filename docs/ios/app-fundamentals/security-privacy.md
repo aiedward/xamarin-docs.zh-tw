@@ -4,15 +4,15 @@ description: 這份文件描述的安全性和隱私權功能 iOS，並討論如
 ms.prod: xamarin
 ms.assetid: 718C8721-C359-4650-878A-D68E159A3F53
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 1a28bf394d29c09bfd264f03e0eea6c8b582f271
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: 1c88a5c16dbe5559f0b551a97a27ebb893991187
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854749"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120498"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS 的安全性和隱私權功能
 
@@ -72,7 +72,7 @@ Apple 進行了數個增強功能的安全性和隱私權，在 iOS 10 （和更
 
 ![範例 NSHomeKitUsageDescription 警示](security-privacy-images/info01.png "範例 NSHomeKitUsageDescription 警示")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 目前 Xamarin.iOS for Visual Studio 不支援編輯**Info.plist**預設 iOS 內的隱私金鑰從資訊清單編輯器。 您必須改為使用一般的 PList 編輯器中，因此執行下列動作：
 
@@ -90,7 +90,7 @@ Apple 進行了數個增強功能的安全性和隱私權，在 iOS 10 （和更
     ![輸入的描述](security-privacy-images/InfoPListSetValue.png "輸入的描述")
 7. 將變更儲存到檔案。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 若要設定任何隱私機碼，執行下列作業：
 

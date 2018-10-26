@@ -4,15 +4,15 @@ description: 本文章涵蓋沙箱 Xamarin.Mac 應用程式在 App Store 上發�
 ms.prod: xamarin
 ms.assetid: 06A2CA8D-1E46-410F-8C31-00EA36F0735D
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 9e6cfd39260b76c5097d8faa24f406f45681ac8d
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 6bf2f63e944e178d80f76fe363ef24410ff052ce
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251151"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123774"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>沙箱 Xamarin.Mac 應用程式
 

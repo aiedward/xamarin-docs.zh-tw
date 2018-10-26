@@ -6,12 +6,12 @@ ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 4557d3b055e5c49842b9fdcff1dac9ee996e8bab
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.openlocfilehash: 1e353aceaf0e2c0525b82c0ccb7e7bcb73df3075
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986014"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106061"
 ---
 # <a name="apple-account-management"></a>Apple 帳戶管理
 
@@ -44,7 +44,7 @@ Apple 帳戶管理位於 Visual Studio for Mac 和 Visual Studio 2017 （15.7 �
 
 ## <a name="adding-an-apple-developer-account"></a>新增 Apple 開發人員帳戶
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 若要開啟 帳戶管理對話方塊，請移至**Visual Studio > 喜好設定 > Apple 開發人員帳戶**:
 
@@ -68,7 +68,7 @@ Apple 帳戶管理位於 Visual Studio for Mac 和 Visual Studio 2017 （15.7 �
 
     ![簽署身分識別和佈建設定檔，您的電腦上檢視詳細資料畫面顯示](apple-account-management-images/image6.png)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 您開始將您的 Apple ID 新增至 Visual Studio 2017 之前，請確定您的開發環境[至 Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 
@@ -109,11 +109,11 @@ Apple 帳戶管理位於 Visual Studio for Mac 和 Visual Studio 2017 （15.7 �
 
 如果下拉式清單中的選項會呈現灰色，而且未選取，這表示您沒有正確的小組權限來建立這種類型的憑證。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![建立憑證選項](apple-account-management-images/image8.png)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![建立憑證選項](apple-account-management-images/prov3.png)
 
@@ -123,11 +123,11 @@ Apple 帳戶管理位於 Visual Studio for Mac 和 Visual Studio 2017 （15.7 �
 
 小組的詳細資料 對話方塊也會顯示一份所有連線到您的開發人員帳戶的佈建設定檔。 您也可以按到本機電腦下載所有佈建設定檔**下載所有設定檔**按鈕
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![下載佈建的設定檔區段](apple-account-management-images/image9.png)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![下載佈建的設定檔區段](apple-account-management-images/prov4.png)
 

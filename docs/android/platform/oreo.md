@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: EAEF7341-7A00-4439-9FAF-43882637BEF8
 ms.technology: xamarin-android
 ms.custom: video
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: af560848240fec9558cc63969bcc269eedbd5424
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: e4f0138c0177c046c1e967a3d3625604f73327d6
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947282"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103188"
 ---
 # <a name="oreo-features"></a>Oreo 功能
 
@@ -58,7 +58,7 @@ _如何開始使用 Xamarin.Android 開發 Android 的最新版本的應用程�
 
 若要新增至 Visual Studio 的 Android Oreo 的支援，請執行下列作業：
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 -   如果您使用 Visual Studio 2017: 
 
@@ -68,7 +68,7 @@ _如何開始使用 Xamarin.Android 開發 Android 的最新版本的應用程�
 
 -   如果您使用 Visual Studio 2015 中，我們建議為 25 降級 SDK Tools，並使用舊版 Google 模擬器管理員 GUI。 SDK 工具 25 仍可使用與 API 26、 27、 及更新版本，並不會影響新的平台的開發。 這將提供介面給您管理您的 Android SDK 適用於 VS 的舊版。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 -   中所述，更新至最新的穩定版本的 Visual Studio 2017 for Mac[更新 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/update)。
 
@@ -82,7 +82,7 @@ _如何開始使用 Xamarin.Android 開發 Android 的最新版本的應用程�
 
 若要建立專案時使用 Xamarin.Android 8.0，您必須先使用 Xamarin Android SDK 管理員安裝的 SDK 平台**Android 8.0-Oreo**或更新版本。 您也必須安裝 Android SDK Tools 26.0 或更新版本。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 啟動 SDK 管理員 (在 Visual Studio 中，按一下**工具 > Android > Android SDK 管理員**)。
 
@@ -94,7 +94,7 @@ _如何開始使用 Xamarin.Android 開發 Android 的最新版本的應用程�
 
     [![選取 Android SDK 管理員中的 Android SDK Tools 26](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 啟動 SDK 管理員 (在 Visual Studio for Mac 中，按一下**工具 > SDK 管理員**)。
 
@@ -121,11 +121,11 @@ _如何開始使用 Xamarin.Android 開發 Android 的最新版本的應用程�
 
 如果您嘗試啟動預設 Google GUI 型 AVD Manager 之後安裝 Android SDK Tools 26.0 或更新版本中，您可能會收到下列錯誤對話方塊，指示您使用命令列 AVD 管理員工具**avdmanager**改為:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![Android Emulator 管理員警告對話方塊](oreo-images/win/03-avd-warning.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![Android Emulator 管理員警告對話方塊](oreo-images/mac/03-avd-warning.png)
 
@@ -141,7 +141,7 @@ _如何開始使用 Xamarin.Android 開發 Android 的最新版本的應用程�
 
 若要使用**avdmanager**若要建立新的虛擬裝置，請遵循下列步驟：
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1.  開啟命令提示字元視窗，並設定`JAVA_HOME`至您的電腦上的 Java sdk 的位置。 針對一般的 Xamarin 安裝中，您可以使用下列命令：
 
@@ -168,7 +168,7 @@ _如何開始使用 Xamarin.Android 開發 Android 的最新版本的應用程�
 
 [![新的 AVD 新增至裝置下拉式功能表](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1.  開啟**終端機**視窗，並切換至您的 mac 上的 Android SDK tools 目錄的位置 針對一般的 Xamarin 安裝中，您可以使用下列命令：
 
@@ -182,7 +182,7 @@ _如何開始使用 Xamarin.Android 開發 Android 的最新版本的應用程�
     avdmanager create avd -n AVD-Oreo-8.0 -k "system-images;android-26;google_apis;x86"
     ```
 
-3.  您使用的提示時**您想要建立自訂硬體設定檔 [否]** 您可以輸入**沒有**並接受預設的硬體設定檔。 如果您說出 **[是]**， **avdmanager**會提示您的自訂清單的硬體設定檔。
+3.  您使用的提示時**您想要建立自訂硬體設定檔 [否]** 您可以輸入**沒有**並接受預設的硬體設定檔。 如果您說出 **[是]**， **avdmanager**會提示您的自訂硬體設定檔的問題清單。
 
 使用之後**avdmanager**若要建立您的虛擬裝置，它將會包含在裝置下拉式功能表：
 

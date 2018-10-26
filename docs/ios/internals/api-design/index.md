@@ -4,15 +4,15 @@ description: 本文件說明的一些指導原則，用來建構 Xamarin.iOS Api
 ms.prod: xamarin
 ms.assetid: 322D2724-AF27-6FFE-BD21-AA1CFE8C0545
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 275db96435639a60be89e0e3ddb7fa120a30de1c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: cd25e5c78885f53902c577a900958b842a70219c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996408"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116949"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API 設計
 
@@ -494,7 +494,7 @@ public class MyCallbacks : NSObject {
 }
 ```
 
-方法的 C# 名稱並不重要;最重要的是傳遞給 [匯出] 屬性的字串。
+C#方法並不重要; 名稱最重要的是傳遞給 [匯出] 屬性的字串。
 
 當使用這種程式設計樣式，請確定 C# 參數符合執行階段引擎會傳遞的實際型別。
 

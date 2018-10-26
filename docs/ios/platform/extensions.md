@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 831625c88bb3c0f8403d3b330054050488956cb6
-ms.sourcegitcommit: f9fb316344fc4dce2fdce0dde3c5f4c2e4a42d08
+ms.openlocfilehash: 9c28cc892536ebe841fb28e8313cf380c7f051b6
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "40251238"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120420"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的 iOS 延伸模組
 

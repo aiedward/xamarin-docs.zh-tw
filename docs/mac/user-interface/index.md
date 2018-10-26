@@ -4,15 +4,15 @@ description: 描述各種使用者介面控制項 Xamarin.Mac 開發人員可使
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/27/2018
-ms.openlocfilehash: b2392f05a03015f903918f15013919be14b99292
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: a12553cf0b7b9584bb8ff7bc04ed326ad4a7ad2a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251270"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107829"
 ---
 # <a name="macos-user-interface-controls-in-xamarinmac"></a>Xamarin.Mac 中的 macOS 使用者介面控制項
 
@@ -38,7 +38,7 @@ _本文會連結至說明各種 macOS UI 控制項的指南。_
 
 ## <a name="menusmacuser-interfacemenumd"></a>[功能表](~/mac/user-interface/menu.md)
 
-Mac 應用程式的使用者介面; 的各個部分中使用功能表從應用程式的主功能表頂端的螢幕快顯功能表和可以出現在視窗中的任何位置的內容功能表。 功能表是 Mac 應用程式的使用者體驗中不可或缺的一部分。 本文涵蓋使用 「 Cocoa 功能表在 Xamarin.Mac 應用程式。
+Mac 應用程式的使用者介面; 的各個部分中使用功能表從應用程式的主功能表頂端的螢幕快顯功能表和可以出現在視窗中的任何位置的內容功能表。 功能表是 Mac 應用程式使用者體驗不可或缺的一部分。 本文涵蓋使用 「 Cocoa 功能表在 Xamarin.Mac 應用程式。
 
 ## <a name="standard-controlsmacuser-interfacestandard-controlsmd"></a>[標準控制項](~/mac/user-interface/standard-controls.md)
 
@@ -74,4 +74,4 @@ Mac 應用程式的使用者介面; 的各個部分中使用功能表從應用�
 
 ## <a name="related-links"></a>相關連結
 
-- [macOS 人性化介面指導方針](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
+- [macOS 人性化介面指導方針](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/) \(英文\)

@@ -3,15 +3,15 @@ title: 使用 Android 資訊清單
 ms.prod: xamarin
 ms.assetid: CB7CCF60-FEF1-3B28-215F-159391E74347
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 0857b70e6e1d9104f62ec2e26f8edbab385d06f3
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 655f988cc54cf54e346e68109271775dee2918a9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242247"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111248"
 ---
 # <a name="working-with-the-android-manifest"></a>使用 Android 資訊清單
 
@@ -37,7 +37,8 @@ namespace Demo
 }
 ```
 
-這會導致執行任何動作中產生**AndroidManifest.xml**。 如果您想`<activity/>`項目來產生，您必須使用[ `[Activity]` ](https://developer.xamarin.com/api/type/Android.App.Activity/Attribute)自訂屬性： 
+這會導致執行任何動作中產生**AndroidManifest.xml**。 如果您想`<activity/>`項目來產生，您必須使用 [`[Activity]`](https://developer.xamarin.com/api/type/Android.App.Activity/Attribute) 
+自訂屬性： 
 
 ```csharp
 namespace Demo
@@ -84,7 +85,7 @@ public class MyActivity : Activity
 ### <a name="activity-title-bar"></a>活動標題列
 
 根據預設，Android 可讓您的應用程式標題列會在執行時。 使用這個值是[ `/manifest/application/activity/@android:label` ](http://developer.android.com/guide/topics/manifest/activity-element.html#label)。 在大部分情況下，這個值會與您的類別名稱不同。 若要指定您的應用程式標籤標題列上，使用[ `Label` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Label/)屬性。
-例如: 
+例如:  
 
 ```csharp
 [Activity (Label="Awesome Demo App")]
@@ -103,7 +104,7 @@ public class MyActivity : Activity
 
 ### <a name="launchable-from-application-chooser"></a>從 應用程式選擇器
 
-根據預設，活動才會顯示在 Android 的應用程式啟動程式螢幕。 這是因為在您的應用程式，可能會有許多活動，而您不要針對每個圖示。 若要指定哪一個應該是可從應用程式啟動程式啟動，請使用[ `MainLauncher` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.MainLauncher/)屬性。 例如: 
+根據預設，活動才會顯示在 Android 的應用程式啟動程式螢幕。 這是因為在您的應用程式，可能會有許多活動，而您不要針對每個圖示。 若要指定哪一個應該是可從應用程式啟動程式啟動，請使用[ `MainLauncher` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.MainLauncher/)屬性。 例如:  
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true)] 
@@ -128,7 +129,7 @@ public class MyActivity : Activity
 
 ### <a name="activity-icon"></a>活動圖示
 
-根據預設，您的活動將會提供系統所提供的預設啟動程式圖示。 若要使用自訂圖示，請先將您 **.png**要**資源/drawable**，將其建置動作設定為**AndroidResource**，然後使用[ `Icon` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Icon/)屬性來指定要使用的圖示。 例如: 
+根據預設，您的活動將會提供系統所提供的預設啟動程式圖示。 若要使用自訂圖示，請先將您 **.png**要**資源/drawable**，將其建置動作設定為**AndroidResource**，然後使用[ `Icon` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Icon/)屬性來指定要使用的圖示。 例如:  
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 
@@ -150,7 +151,7 @@ public class MyActivity : Activity
 ```
 
 
-### <a name="permissions"></a>使用權限
+### <a name="permissions"></a>權限
 
 當您將權限加入 Android 資訊清單 (如中所述[新增至 Android 資訊清單的權限](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest))，這些權限會記錄在**properties/Androidmanifest.xml**。 例如，如果您設定`INTERNET`權限，下列項目加入至**properties/Androidmanifest.xml**: 
 
@@ -177,7 +178,10 @@ public class MyActivity : Activity
 
 ### <a name="intent-actions-and-features"></a>意圖動作與功能
 
-Android 資訊清單可讓您描述您的活動的功能。 這透過完成[意圖](http://developer.android.com/guide/topics/manifest/intent-filter-element.html)並[ `[IntentFilter]` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)自訂屬性。 您可以指定哪些動作適用於您的活動，具有[ `IntentFilter` ](https://developer.xamarin.com/api/constructor/Android.App.IntentFilterAttribute.IntentFilterAttribute/p/System.String[]/)建構函式，而哪些類別具有適當[ `Categories` ](https://developer.xamarin.com/api/property/Android.App.IntentFilterAttribute.Categories/)屬性。 至少一個活動必須提供 （這就是為什麼建構函式中所提供的活動）。 `[IntentFilter]` 可提供很多次，並每次使用會導致個別`<intent-filter/>`內的項目`<activity/>`。 例如:
+Android 資訊清單可讓您描述您的活動的功能。 這透過完成[意圖](http://developer.android.com/guide/topics/manifest/intent-filter-element.html)和 [`[IntentFilter]`](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) 
+自訂屬性。 您可以指定哪些動作適用於您使用的活動 [`IntentFilter`](https://developer.xamarin.com/api/constructor/Android.App.IntentFilterAttribute.IntentFilterAttribute/p/System.String[]/) 
+建構函式，並與適合哪一個類別目錄 [`Categories`](https://developer.xamarin.com/api/property/Android.App.IntentFilterAttribute.Categories/) 
+屬性。 至少一個活動必須提供 （這就是為什麼建構函式中所提供的活動）。 `[IntentFilter]` 可提供很多次，並每次使用會導致個別`<intent-filter/>`內的項目`<activity/>`。 例如: 
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 

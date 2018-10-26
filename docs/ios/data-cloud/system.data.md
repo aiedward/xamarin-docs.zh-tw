@@ -4,14 +4,14 @@ description: 本文件說明如何使用 System.Data 和 Mono.Data.Sqlite.dll �
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.openlocfilehash: 183079c150ad4df05424d4dbf2980a307a889352
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+author: lobrien
+ms.author: laobri
+ms.openlocfilehash: 4e9b782cf266a96f30c79eaf139ef88332e02dca
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997194"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119824"
 ---
 # <a name="systemdata-in-xamarinios"></a>在 Xamarin.iOS 中的 System.Data
 

@@ -3,31 +3,31 @@ title: 在 Android 上的協助工具
 ms.prod: xamarin
 ms.assetid: 157F0899-4E3E-4538-90AF-B59B8A871204
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 2a49d15651b8c6ab7417a69d934af5d20bfc13d0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4eb4a97a346f3906c925dc9e324ed9378af0b560
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763900"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116168"
 ---
 # <a name="accessibility-on-android"></a>在 Android 上的協助工具
 
-此頁面描述如何使用 Android 的協助工具應用程式開發介面建置應用程式根據[網頁可及性檢查清單](~/cross-platform/app-fundamentals/accessibility.md)。
-請參閱[iOS 協助工具](~/ios/app-fundamentals/accessibility.md)和[OS X 的協助工具](~/mac/app-fundamentals/accessibility.md)其他平台應用程式開發介面的頁面。
+此頁面說明如何使用 Android 的協助工具 Api 來建置應用程式，根據[協助工具檢查清單](~/cross-platform/app-fundamentals/accessibility.md)。
+請參閱[iOS 協助工具](~/ios/app-fundamentals/accessibility.md)並[OS X 的協助工具](~/mac/app-fundamentals/accessibility.md)其他平台 Api 的頁面。
 
 
-## <a name="describing-ui-elements"></a>描述 UI 項目
+## <a name="describing-ui-elements"></a>描述的 UI 項目
 
-Android 提供`ContentDescription`屬性，供螢幕助讀 Api 用來提供存取控制項的用途的描述。
+Android 提供`ContentDescription`供螢幕助讀 Api 用來提供控制項的用途的可存取描述的屬性。
 
-在 C# 或 AXML 配置檔案中，可以設定內容的描述。
+可以設定內容的描述，在C#或 AXML 版面配置檔案中。
 
 **C#**
 
-描述可以設定任何字串 （或字串資源） 的程式碼中：
+描述可以在任何字串 （或字串資源） 的程式碼中設定：
 
 ```csharp
 saveButton.ContentDescription = "Save data";
@@ -44,14 +44,14 @@ saveButton.ContentDescription = "Save data";
     android:contentDescription="Save data" />
 ```
 
-### <a name="use-hint-for-textview"></a>TextView 使用提示
+### <a name="use-hint-for-textview"></a>TextView 的 use Hint
 
-如`EditText`和`TextView`資料輸入的控制項使用`Hint`屬性以提供預期何種輸入的描述 (而不是`ContentDescription`)。
-輸入一些文字時文字本身會是 「 讀取 」 而不是此提示。
+針對`EditText`並`TextView`資料輸入的控制項使用`Hint`屬性，以提供預期輸入的描述 (而不是`ContentDescription`)。
+在輸入一些文字，文字本身將會是 「 讀取 」 而不是提示。
 
 **C#**
 
-設定`Hint`程式碼中的屬性：
+設定`Hint`在程式碼中的屬性：
 
 ```csharp
 someText.Hint = "Enter some text"; // displays (and is "read") when control is empty
@@ -59,7 +59,7 @@ someText.Hint = "Enter some text"; // displays (and is "read") when control is e
 
 **AXML 版面配置**
 
-在 XML 中配置檔案使用`android:hint`屬性：
+在 XML 中使用版面配置檔`android:hint`屬性：
 
 ```xml
 <EditText
@@ -70,11 +70,11 @@ someText.Hint = "Enter some text"; // displays (and is "read") when control is e
 
 ### <a name="labelfor-links-input-fields-with-labels"></a>LabelFor 連結輸入標籤的欄位
 
-若要將標籤與輸入控制項的資料產生關聯，使用`LabelFor`屬性
+若要關聯資料的輸入控制項中的標籤，使用`LabelFor`屬性
 
 **C#**
 
-在 C# 中，設定`LabelFor`資源識別碼，這是此內容控制項的屬性描述 （通常可在標籤上設定和一些其他的輸入的控制項的參考這個屬性）：
+在C#，將`LabelFor`資源識別碼，這是此內容之控制項的屬性描述 （通常這個屬性被設定在標籤上，參考其他輸入的控制項）：
 
 ```csharp
 EditText edit = FindViewById<EditText> (Resource.Id.editFirstName);
@@ -84,7 +84,7 @@ tv.LabelFor = Resource.Id.editFirstName;
 
 **AXML 版面配置**
 
-在配置中使用 XML`android:labelFor`屬性來參考另一個控制項的識別項：
+在配置中使用 XML`android:labelFor`來參考另一個控制項的識別項的屬性：
 
 ```xml
 <TextView
@@ -96,9 +96,9 @@ tv.LabelFor = Resource.Id.editFirstName;
     android:hint="Enter some text" />
 ```
 
-### <a name="announce-for-accessibility"></a>通知協助工具
+### <a name="announce-for-accessibility"></a>宣布的協助工具
 
-使用`AnnounceForAccessibility`方法在任何檢視通訊的使用者事件或狀態變更時已啟用協助工具的控制項。 這個方法不需要內建的旁白其中提供足夠的意見反應，但其中的其他資訊會很有幫助使用者應該使用的大部分作業。
+使用`AnnounceForAccessibility`任何方法檢視通訊使用者事件或狀態變更時啟用協助工具的控制項。 這個方法就不需要進行大部分的操作，其中的內建的旁白提供足夠的意見反應，但應該適用於會很有幫助使用者的其他資訊。
 
 下列程式碼示範簡單的範例呼叫`AnnounceForAccessibility`:
 
@@ -111,11 +111,11 @@ button.Click += delegate {
 
 ## <a name="changing-focus-settings"></a>變更焦點設定
 
-可存取的巡覽依賴控制項具有焦點，以協助使用者了解哪些作業。 Android 提供`Focusable`可以標記與特別能夠瀏覽時接收焦點的控制項屬性。
+可存取的導覽會依賴控制項具有焦點，以協助使用者了解哪些作業。 Android 提供`Focusable`可以標記為特別能夠在巡覽期間接收焦點的控制項屬性。
 
 **C#**
 
-若要防止控制項取得焦點，使用 C#，請設定`Focusable`屬性`false`:
+若要防止控制項取得焦點C#，將`Focusable`屬性，以`false`:
 
 ```csharp
 label.Focusable = false;
@@ -123,18 +123,18 @@ label.Focusable = false;
 
 **AXML 版面配置**
 
-版面配置中的 XML 檔案組`android:focusable`屬性：
+在配置中的 XML 檔案集`android:focusable`屬性：
 
 ```xml
 <android:focusable="false" />
 ```
 
-您也可以控制焦點順序與`nextFocusDown`， `nextFocusLeft`， `nextFocusRight`，`nextFocusUp`通常配置 AXML 中設定的屬性。 使用這些屬性，以確保使用者可以輕鬆地瀏覽螢幕上的控制項。
+您也可以控制與焦點順序`nextFocusDown`， `nextFocusLeft`， `nextFocusRight`，`nextFocusUp`通常 AXML 版面配置中設定的屬性。 使用這些屬性，以確保使用者可以輕鬆地瀏覽螢幕上的控制項。
 
 
 ## <a name="accessibility-and-localization"></a>協助工具和當地語系化
 
-上述範例中的提示與內容描述會直接設定為顯示值。 最好是使用中的值**Strings.xml**檔案，這類：
+上述範例中的提示和內容描述會直接設定為顯示值。 建議您最好使用中的值**Strings.xml**檔案，如下：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -144,11 +144,11 @@ label.Focusable = false;
 </resources>
 ```
 
-使用文字字串檔案如下所示在 C# 和 AXML 版面配置檔案：
+使用文字字串檔案如下所示的C#和 AXML 版面配置檔案：
 
 **C#**
 
-而不是在程式碼中使用字串常值，查詢已翻譯值字串以從檔案`Resources.GetText`:
+而不是在程式碼中使用字串常值，查詢已翻譯值從字串檔案`Resources.GetText`:
 
 ```csharp
 someText.Hint = Resources.GetText (Resource.String.enter_info);
@@ -157,7 +157,7 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 
 **AXML**
 
-協助工具屬性要在配置 XML`hint`和`contentDescription`可設為字串識別項：
+配置 XML 中的協助工具屬性喜歡`hint`和`contentDescription`可以設定為字串識別項：
 
 ```xml
 <TextView
@@ -169,17 +169,17 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
     android:contentDescription="@string/save_info" />
 ```
 
-將文字儲存在個別檔案的優點是多個語言翻譯的檔案可供您的應用程式。 請參閱[Android 當地語系化指南](~/android/app-fundamentals/localization.md)若要了解如何將當地語系化的字串的檔案新增至應用程式專案。
+將文字儲存在個別的檔案的優點是您的應用程式可以提供多個語言翻譯的檔案。 請參閱[Android 當地語系化指南](~/android/app-fundamentals/localization.md)若要了解如何將當地語系化的字串的檔案新增至應用程式專案。
 
 
 ## <a name="testing-accessibility"></a>測試協助工具
 
-請遵循[步驟](http://developer.android.com/training/accessibility/testing.html#how-to)啟用 TalkBack 和觸控的瀏覽測試在 Android 裝置上的協助工具。
+請遵循[這些步驟](http://developer.android.com/training/accessibility/testing.html#how-to)啟用 TalkBack，以及透過觸控的瀏覽測試在 Android 裝置上的協助工具。
 
-您可能需要安裝[TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)從 Google Play，如果它不會顯示在**設定 > 協助工具**。
+您可能需要安裝[TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)從 Google Play，如果它不會出現在**設定 > 存取範圍**。
 
 
 ## <a name="related-links"></a>相關連結
 
 - [跨平台的協助工具](~/cross-platform/app-fundamentals/accessibility.md)
-- [Android 的協助工具應用程式開發介面](http://developer.android.com/guide/topics/ui/accessibility/index.html)
+- [Android 的協助工具 Api](http://developer.android.com/guide/topics/ui/accessibility/index.html)

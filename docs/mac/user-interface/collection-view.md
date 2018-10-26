@@ -4,15 +4,15 @@ description: 這篇文章說明如何使用 Xamarin.Mac 應用程式中的集合
 ms.prod: xamarin
 ms.assetid: 6EE32256-5948-4AE4-8133-6D0B3F4173E8
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/24/2017
-ms.openlocfilehash: c8b4b5ff8bebf5fbbded410ae84d1aefcca2d6cc
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 904db0b97a8b21fd51722b70a63386a53e3f5347
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40250954"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104033"
 ---
 # <a name="collection-views-in-xamarinmac"></a>Xamarin.mac 的集合檢視
 
@@ -375,7 +375,7 @@ public override bool Selected
 
 集合檢視的資料來源 (`NSCollectionViewDataSource`) 的集合檢視中提供的所有資料和建立及擴展集合檢視儲存格 (使用`.xib`原型) 視需要針對集合中的每個項目。
 
-將新類別加入專案中，呼叫它`CollectionViewDataSource`，使它看起來如下所示：
+加入新的類別專案中，呼叫它`CollectionViewDataSource`，使它看起來如下所示：
 
 ```csharp
 using System;

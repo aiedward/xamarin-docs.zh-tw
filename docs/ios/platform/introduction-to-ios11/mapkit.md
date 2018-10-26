@@ -4,15 +4,15 @@ description: 本文件說明 iOS 11 中的新 MapKit 功能： 群組標記、 �
 ms.prod: xamarin
 ms.assetid: 304AE5A3-518F-422F-BE24-92D62CE30F34
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 08/30/2017
-ms.openlocfilehash: c060a7bbc8d5968aeaca5f84743cdf22513dfbec
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 3c1b29a4aba03ffe8a3131625ef29cf64766bb6c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350582"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116911"
 ---
 # <a name="new-features-in-mapkit-on-ios-11"></a>IOS 11 上 MapKit 中新功能
 

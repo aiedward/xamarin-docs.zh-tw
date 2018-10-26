@@ -4,15 +4,15 @@ description: 如何新增至特定檢視的錨定的快顯功能表。
 ms.prod: xamarin
 ms.assetid: 1C58E12B-4634-4691-BF59-D5A3F6B0E6F7
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: d7cadde88e9ae7ee30815ee9323785038dbb1a39
-ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
+ms.openlocfilehash: 1e74c8b7745936f6e9a8890fd26acafe2f2fb6d5
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39393655"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113881"
 ---
 # <a name="popup-menu"></a>快顯功能表
 

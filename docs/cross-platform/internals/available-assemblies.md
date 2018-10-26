@@ -6,12 +6,12 @@ ms.assetid: AEF4ED0E-391F-4FA4-9F18-842BC24C272D
 author: asb3993
 ms.author: amburns
 ms.date: 03/13/2018
-ms.openlocfilehash: d005d6c5e1dcfe7e9bcff44b308cea0ce7ab73e9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 213632ae26ae60797e39bc718a95057fb7238609
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998643"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113348"
 ---
 # <a name="available-assemblies"></a>可用的組件
 
@@ -21,16 +21,17 @@ Xamarin 平台不是與現有的組件編譯為不同的設定檔相容的 ABI�
 
 Xamarin.Mac 應用程式可以在三種模式中編譯： 使用 Xamarin 的策劃行動設定檔、 Xamarin.Mac.NET 4.5 Framework 可讓您的目標現有完整桌面組件，以及使用.NET API，不支援的一個位於系統 Mono安裝。 如需詳細資訊，請參閱我們[目標 Framework](~/mac/platform/target-framework.md)文件。
 
-
 ## <a name="net-standard-libraries"></a>.NET 標準程式庫
 
 除了 iOS、 Android 及 Mac 繫結，Xamarin 專案均可取[.NET Standard 程式庫](~/cross-platform/app-fundamentals/net-standard.md)。
 
 ## <a name="portable-class-libraries"></a>可攜式類別庫
- 
+
 也可以使用 Xamarin 專案[.NET 可攜式類別庫](~/cross-platform/app-fundamentals/pcl.md)，不過這項技術已被取代，而.NET Standard。
 
 ## <a name="supported-assemblies"></a>支援的組件
+
+這些是在 可用的組件**參考管理員 > 組件 > Framework** (Visual Studio 2017) 和**編輯參考 > 封裝**(Visual Studio for Mac)，和其相容性使用 Xamarin 平台。
 
 > [!div class="mx-tdCol2BreakAll"]
 > |Assembly|API 相容性|Xamarin iOS|Xamarin Android|Xamarin Mac|
@@ -78,4 +79,4 @@ Xamarin.Mac 應用程式可以在三種模式中編譯： 使用 Xamarin 的策�
 > |Xamarin.Android.&#8203;NUnitLite.dll| | |✓| |
 > |Mono.CompilerServices.&#8203;SymbolWriter.dll|編譯器寫入器。| | |✓|
 > |Xamarin.Mac.dll| | | |✓|
-> |System.&#8203;Drawing.dll|System.Drawing API-傳統的 API。統一的 API 不支援 System.Drawing Xamarin.Mac.NET 4.5 或行動裝置的架構。可以新增 System.Drawing 支援 iOS 和 OS X 使用[sysdrawing coregraphics](https://github.com/mono/sysdrawing-coregraphics)文件庫|✓| |✓|
+> |System.&#8203;Drawing.dll|統一的 API 不支援 System.Drawing Xamarin.Mac、.NET 4.5 中，或行動裝置的架構。 可以新增 System.Drawing 支援 iOS 和 macOS 使用[sysdrawing coregraphics](https://github.com/mono/sysdrawing-coregraphics)文件庫|✓| |✓|

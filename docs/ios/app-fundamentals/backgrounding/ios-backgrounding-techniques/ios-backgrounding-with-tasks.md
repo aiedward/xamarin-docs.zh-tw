@@ -4,15 +4,15 @@ description: 本文件說明如何使用背景工作之後的應用程式會放�
 ms.prod: xamarin
 ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 9d304ee64e7716413febc475e721f5eb39043109
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 48859afe2c988c1afe67d5c4350cef734f879fdf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351534"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120992"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS 背景與工作
 
@@ -20,7 +20,7 @@ ms.locfileid: "39351534"
 
 背景工作可分成三個類別：
 
-1.  **背景安全工作**-中的任何位置呼叫應用程式，您可在其中擁有的工作不想中斷應用程式應該輸入背景。
+1.  **背景安全工作**-被呼叫任何地方，您有一項工作的應用程式中不想中斷應用程式應該輸入背景。
 1.  **DidEnterBackground 工作**呼叫期間-`DidEnterBackground`應用程式生命週期方法，協助清除和儲存狀態。
 1.  **背景傳輸 (iOS 7 +)** -一種特殊的背景工作用來在 iOS 7 上執行網路傳輸。 不同於一般工作，背景傳送沒有預先決定的時間限制。
 

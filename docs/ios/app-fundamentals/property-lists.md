@@ -4,15 +4,15 @@ description: 本文件會介紹 Visual Studio for Mac 的圖形化和進階屬�
 ms.prod: xamarin
 ms.assetid: 5E687043-0443-377C-9A12-9C5A05958646
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: b102f268fd457ca42f3d64b5766a2b3824e3849d
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 7056f7beb623bee32c767a3f2827efa6eb2a6136
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242325"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118795"
 ---
 # <a name="working-with-property-lists-in-xamarinios"></a>使用 Xamarin.iOS 中的屬性清單
 

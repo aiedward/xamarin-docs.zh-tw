@@ -4,15 +4,15 @@ description: 本文件所連結之說明的 iOS 11 中，包括 ARKit、 CoreML�
 ms.prod: xamarin
 ms.assetid: 22C38EA6-6DA9-4B92-B41B-814E589033F6
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 09/19/2017
-ms.openlocfilehash: e4e544679dbed2701c50d5596d4907451653090e
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 5e75a7872081d82c289db0312bbc7d84bce77b4e
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351053"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116715"
 ---
 # <a name="introduction-to-ios-11"></a>IOS 11 簡介
 

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: a6c1b0a4e0df1c25f595ca4eb53079c74b84972e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 49a0d1dd67959c5949ebe500036b849180795660
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998579"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108739"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
@@ -66,7 +66,7 @@ Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout)是 Xamarin.Forms 3
 
 三個屬性`FlexLayout`如下所示**SimpleStackPage.xaml**檔案：
 
-- [ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction)屬性設定為值[ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection)列舉型別。 預設值為 `Row`。 將屬性設定為`Column`會導致的子系`FlexLayout`排列成單一資料行的項目。
+- [ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction)屬性設定為值[ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection)列舉型別。 預設為 `Row`。 將屬性設定為`Column`會導致的子系`FlexLayout`排列成單一資料行的項目。
 
     當中的項目`FlexLayout`會排列在資料行中，`FlexLayout`即具有垂直_主軸_和水平_交叉軸_。
 
@@ -486,7 +486,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 [![[實驗] 頁面中： 內容對齊](flex-layout-images/ExperimentAlignContent.png "實驗 頁面上的內容對齊。")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
 
-在頂端;，在 iOS 螢幕擷取畫面中，是兩個資料列它們在 center，在 Android 的螢幕擷取畫面也在 UWP 螢幕擷取畫面底部。 資料列也以各種方式設定間距：
+IOS 螢幕擷取畫面，這兩個資料列會在頂端;它們在 center，在 Android 的螢幕擷取畫面也在 UWP 螢幕擷取畫面底部。 資料列也以各種方式設定間距：
 
 [![[實驗] 頁面中： 對齊內容 2](flex-layout-images/ExperimentAlignContent2.png "[實驗] 頁面中-對齊內容 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
 
@@ -606,7 +606,7 @@ XAML，在中，您可以使用數字以裝置獨立單位大小：
 
 [![壓縮實驗頁面](flex-layout-images/ShrinkExperiment.png "壓縮實驗頁面")](flex-layout-images/ShrinkExperiment-Large.png#lightbox)
 
-Android 的螢幕擷取畫面，`Shrink`值，第二個`Label`設為 0，而且，`Label`會顯示在其完整的寬度。 此外，第四個`Label`有`Shrink`值大於一，而且它已壓縮。 UWP 螢幕擷取畫面會顯示`Label`所指定的項目`Shrink`值為 0，如果該讓它們顯示在其完整的大小，有可能。
+在 Android 螢幕擷取畫面`Shrink`第二個值`Label`設定為 0，且`Label`會顯示在其完整的寬度。 此外，第四個`Label`有`Shrink`值大於一，而且它已壓縮。 UWP 螢幕擷取畫面會顯示`Label`所指定的項目`Shrink`值為 0，如果該讓它們顯示在其完整的大小，有可能。
 
 您可以同時設定`Grow`並`Shrink`值，以容納其中彙總的子系大小有時可能會小於或有時大於大小的情況下`FlexLayout`。
 
