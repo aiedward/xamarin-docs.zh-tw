@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 887a20f1791a190c182e6d179cfabb46c6e0eb48
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 8340e952d30e21a5249edd0fa3319462bbd5ff8b
+ms.sourcegitcommit: 913763498b5d23fa4a92e877760c51164bf1aa41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998943"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50150232"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms 繫結路徑
 
@@ -84,7 +84,7 @@ ms.locfileid: "38998943"
 
         <Label Text="{Binding Source={x:Reference page},
                               Path=Content.Children[1].Text.Length,
-                              StringFormat='The first Label has {0} characters'}" />
+                              StringFormat='The second Label has {0} characters'}" />
     </StackLayout>
 </ContentPage>
 ```
