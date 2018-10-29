@@ -1,0 +1,198 @@
+items:
+- name: Cross-Platform
+  href: index.yml
+  items:
+  - name: 開始使用
+    href: get-started/index.md
+    items:
+    - name: 需求
+      displayName: System requirements
+      href: get-started/requirements.md
+    - name: 安裝
+      href: get-started/installation/index.md
+      items:
+      - name: 在 Windows 上安裝 Xamarin
+        href: get-started/installation/windows.md
+        items:
+        - name: 安裝 Xamarin 預覽 (Windows)
+          href: get-started/installation/windows-preview.md
+      - name: 安裝 Visual Studio for Mac
+        href: /visualstudio/mac/installation/
+        items:
+        - name: 安裝 Xamarin 預覽 (Mac)
+          href: /visualstudio/mac/update/
+      - name: Xamarin 防火牆組態指示
+        href: get-started/installation/firewall.md
+      - name: 解除安裝 Xamarin
+        href: get-started/installation/uninstalling-xamarin.md
+    - name: 行動裝置應用程式開發簡介
+      href: get-started/introduction-to-mobile-development.md
+    - name: 行動裝置 SDLC 簡介
+      href: get-started/introduction-to-mobile-sdlc.md
+    - name: 建置跨平台應用程式
+      href: app-fundamentals/building-cross-platform-applications/index.md
+      items:
+      - name: 總覽
+        href: app-fundamentals/building-cross-platform-applications/overview.md
+      - name: 第 1 部分 - 了解 Xamarin 行動裝置平台
+        href: app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md
+      - name: 第 2 部分 - 架構
+        href: app-fundamentals/building-cross-platform-applications/architecture.md
+      - name: 第 3 部分 - 設定 Xamarin 跨平台解決方案
+        href: app-fundamentals/building-cross-platform-applications/setting-up-a-xamarin-cross-platform-solution.md
+      - name: 第 4 部分 - 處理多個平台
+        href: app-fundamentals/building-cross-platform-applications/platform-divergence-abstraction-divergent-implementation.md
+      - name: 第 5 部分 - 實用的程式碼共用策略
+        href: app-fundamentals/building-cross-platform-applications/practical-code-sharing-strategies.md
+      - name: 第 6 部分 - 測試和 App Store 核准
+        href: app-fundamentals/building-cross-platform-applications/testing-and-app-store-approvals.md
+      - name: 案例研究：Tasky
+        href: app-fundamentals/building-cross-platform-applications/case-study-tasky.md
+    expanded: true
+  - name: 共用程式碼
+    href: app-fundamentals/index.md
+    items:
+    - name: 總覽
+      href: app-fundamentals/code-sharing.md
+    - name: .NET Standard
+      href: app-fundamentals/net-standard.md
+    - name: 共用的專案
+      href: app-fundamentals/shared-projects.md
+    - name: 可攜式類別庫 (PCL)
+      href: app-fundamentals/pcl.md
+    - name: NuGet 多平台程式庫專案
+      displayName: Nugetizer 3000
+      href: app-fundamentals/nuget-multiplatform-libraries/index.md
+      items:
+      - name: 現有的程式庫專案
+        href: app-fundamentals/nuget-multiplatform-libraries/existing-library.md
+      - name: 新的多平台程式庫
+        href: app-fundamentals/nuget-multiplatform-libraries/single-codebase.md
+      - name: 新的平台專用程式庫
+        href: app-fundamentals/nuget-multiplatform-libraries/platform-specific.md
+      - name: 中繼資料指南
+        href: app-fundamentals/nuget-multiplatform-libraries/metadata.md
+    - name: NuGet 套件 (手動)
+      href: app-fundamentals/nuget-manual.md
+  - name: 語言支援
+    href: platform/index.md
+    items:
+    - name: C#
+      items:
+      - name: 非同步支援概觀
+        href: platform/async.md
+      - name: C# 6 語言功能
+        href: platform/csharp-six.md
+    - name: F#
+      href: platform/fsharp/index.md
+      items:
+      - name: 快速入門
+        href: platform/fsharp/overview.md
+      - name: F# 範例
+        href: platform/fsharp/samples.md
+    - name: Visual Basic.NET
+      href: platform/visual-basic/index.md
+      items:
+      - name: Xamarin iOS 和 Android
+        href: platform/visual-basic/native-apps.md
+      - name: Xamarin.Forms
+        href: platform/visual-basic/xamarin-forms.md
+    - name: Razor HTML 範本
+      href: platform/razor-html-templates/index.md
+  - name: 效能與安全性
+    href: deploy-test/performance.md
+    items:
+    - name: 效能
+      href: deploy-test/memory-perf-best-practices.md
+      items:
+      - name: Android 效能
+        href: ~/android/deploy-test/performance.md?context=xamarin/cross-platform
+      - name: iOS 效能
+        href: ~/ios/deploy-test/performance.md?context=xamarin/cross-platform
+      - name: Mac 效能
+        href: ~/mac/deploy-test/performance.md?context=xamarin/cross-platform
+    - name: 傳輸層安全性 (TLS)
+      href: app-fundamentals/transport-layer-security.md
+      items:
+      - name: Android
+        href: ~/android/app-fundamentals/http-stack.md?context=xamarin/cross-platform
+      - name: iOS 和 Mac
+        href: ~/cross-platform/macios/http-stack.md?context=xamarin/cross-platform
+  - name: 部署和偵錯
+    href: deploy-test/index.md
+    items:
+    - name: 自訂連結器組態
+      href: deploy-test/linker.md
+    - name: 使用 NuGet 安裝 NUnit 2.6.4
+      href: deploy-test/installing-nunit-using-nuget.md
+    - name: 多重處理序偵錯
+      href: deploy-test/multi-process-debugging.md
+  - name: 桌面開發人員
+    displayName: Windows Forms (WinForms), Windows Presentation Foundation (WPF), and UWP Developers
+    href: desktop/index.md
+    items:
+    - name: 應用程式生命週期的比較
+      href: desktop/lifecycle.md
+    - name: UI 控制項的比較
+      href: desktop/controls/index.md
+      items:
+      - name: WPF 和 Xamarin.Forms
+        href: desktop/controls/wpf.md
+    - name: 移植指南
+      href: desktop/porting.md
+    - name: 範例
+      href: desktop/samples.md
+  - name: 疑難排解
+    href: troubleshooting/index.md
+    items:
+    - name: 常見問題集
+      displayName: FAQ
+      href: troubleshooting/questions/index.md
+      items:
+      - name: 如何檢視 PCL 中所支援的程式庫？
+        href: troubleshooting/questions/pcl-support-libraries.md
+      - name: PCL 反映 API
+        href: troubleshooting/questions/pcl-reflection.md
+      - name: PCL 案例研究：如何解決 Microsoft TPL Dataflow NuGet 套件有關 System.Diagnostics.Tracing 的問題？
+        href: troubleshooting/questions/pcl-case-study.md
+      - name: 如何更新 NuGet？
+        href: troubleshooting/questions/nuget-update.md
+      - name: 如何降級 NuGet 套件？
+        href: troubleshooting/questions/nuget-package-downgrade.md
+      - name: 更新 Nuget 套件之後的遺失套件錯誤
+        href: troubleshooting/questions/nuget-packages-missing.md
+      - name: 整合 Google Play Services 元件和 NuGet
+        href: troubleshooting/questions/gps-components-nuget.md
+      - name: 元件儲存在我電腦上的何處？
+        href: troubleshooting/questions/component-storage.md
+      - name: 可以在哪裡找到我的版本資訊和記錄？
+        href: troubleshooting/questions/version-logs.md
+      - name: 提出 Bug 報告的時機與方式為何？
+        href: troubleshooting/questions/howto-file-bug.md
+      - name: Xamarin 為什麼不支援 Jenkins？
+        href: troubleshooting/questions/xamarin-jenkins.md
+      - name: 偵錯工具需要哪些專案設定？
+        href: troubleshooting/questions/debugger-settings.md
+    - name: Visual Studio 問題
+      items:
+      - name: Configuration Manager 中的 [部署] 核取方塊無法使用
+        href: troubleshooting/questions/deploy-checkboxes.md
+      - name: 在安裝後遺漏 Visual Studio 延伸模組
+        href: troubleshooting/questions/missing-vs-extensions.md
+      - name: 如何徹底將 Xamarin for Visual Studio 解除安裝？
+        href: troubleshooting/questions/uninstall-xamarin-vs.md
+      - name: 如何收集 Visual Studio 處理序的目前呼叫堆疊？
+        href: troubleshooting/questions/vs-callstack.md
+      - name: 為什麼 Visual Studio 不在我的組建中包括參考的程式庫專案？
+        href: troubleshooting/questions/vs-config-manager.md
+    - name: 將元件參考更新為 NuGet
+      href: troubleshooting/component-nuget.md
+  - name: 範例
+    href: samples/index.yml
+  expanded: true
+ms.openlocfilehash: 6de69aacc37d17086e49ae1a7571879686168a42
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50130212"

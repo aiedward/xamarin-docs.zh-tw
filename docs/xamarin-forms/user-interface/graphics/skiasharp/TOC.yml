@@ -1,0 +1,134 @@
+items:
+- name: Xamarin.Forms 中的 SkiaSharp 圖形
+  href: index.md
+  items:
+  - name: 繪圖的基本概念
+    href: basics/index.md
+    items:
+    - name: 繪製簡單的圓形
+      href: basics/circle.md
+    - name: 與 Xamarin.Forms 整合
+      href: basics/integration.md
+    - name: 像素與裝置獨立單位
+      href: basics/pixels.md
+    - name: 基本動畫
+      href: basics/animation.md
+    - name: 整合文字與圖形
+      href: basics/text.md
+    - name: 點陣圖的基本概念
+      href: basics/bitmaps.md
+    - name: 透明度
+      href: basics/transparency.md
+    expanded: true
+  - name: 線條與路徑
+    href: paths/index.md
+    items:
+    - name: 線條和筆觸端點
+      href: paths/lines.md
+    - name: 路徑的基本概念
+      href: paths/paths.md
+    - name: 路徑填滿類型
+      href: paths/fill-types.md
+    - name: 聚合線條和參數化的方程式
+      href: paths/polylines.md
+    - name: 點和虛線
+      href: paths/dots.md
+    - name: 手指繪製
+      href: paths/finger-paint.md
+  - name: 轉換
+    href: transforms/index.md
+    items:
+    - name: 平移轉換
+      href: transforms/translate.md
+    - name: 縮放轉換
+      href: transforms/scale.md
+    - name: 旋轉轉換
+      href: transforms/rotate.md
+    - name: 傾斜轉換
+      href: transforms/skew.md
+    - name: 矩陣轉換
+      href: transforms/matrix.md
+    - name: 觸控操作
+      href: transforms/touch.md
+    - name: 非仿射轉換
+      href: transforms/non-affine.md
+    - name: 3D 旋轉
+      displayName: Three-D Rotation
+      href: transforms/3d-rotation.md
+  - name: 曲線和路徑
+    href: curves/index.md
+    items:
+    - name: 繪製弧形的三種方式
+      href: curves/arcs.md
+    - name: 三種類型的貝茲曲線
+      href: curves/beziers.md
+    - name: SVG 路徑資料
+      href: curves/path-data.md
+    - name: 使用路徑和區域裁剪
+      href: curves/clipping.md
+    - name: 路徑效果
+      href: curves/effects.md
+    - name: 路徑及文字
+      href: curves/text-paths.md
+    - name: 路徑資訊與列舉
+      href: curves/information.md
+  - name: 點陣圖
+    href: bitmaps/index.md
+    items:
+    - name: 顯示點陣圖
+      href: bitmaps/displaying.md
+    - name: 建立及繪製點陣圖
+      href: bitmaps/drawing.md
+    - name: 裁剪點陣圖
+      href: bitmaps/cropping.md
+    - name: 分段顯示的點陣圖
+      href: bitmaps/segmented.md
+    - name: 將點陣圖儲存至檔案
+      href: bitmaps/saving.md
+    - name: 存取點陣圖像素位元
+      href: bitmaps/pixel-bits.md
+    - name: 動畫點陣圖
+      href: bitmaps/animating.md
+  - name: 效果
+    href: effects/index.md
+    items:
+    - name: 著色器
+      href: effects/shaders/index.md
+      items:
+      - name: 線性漸層
+        href: effects/shaders/linear-gradient.md
+      - name: 圓形漸層
+        href: effects/shaders/circular-gradients.md
+      - name: 點陣圖並排顯示
+        href: effects/shaders/bitmap-tiling.md
+      - name: 雜訊
+        href: effects/shaders/noise.md
+    - name: 混合模式
+      href: effects/blend-modes/index.md
+      items:
+      - name: Porter Duff 混合模式
+        href: effects/blend-modes/porter-duff.md
+      - name: 可分隔的混合模式
+        href: effects/blend-modes/separable.md
+      - name: 不可分隔的混合模式
+        href: effects/blend-modes/non-separable.md
+    - name: 遮罩濾鏡
+      href: effects/mask-filters.md
+    - name: 影像濾鏡
+      href: effects/image-filters.md
+    - name: 色彩濾鏡
+      href: effects/color-filters.md
+  - name: 不限於平台的範例
+    href: ~/graphics-games/skiasharp/introduction.md
+    items:
+    - name: 平台專屬的注意事項
+      href: ~/graphics-games/skiasharp/platform.md
+  - name: 應用程式開發介面參考
+    href: /dotnet/api/skiasharp/
+  expanded: true
+ms.openlocfilehash: 59cc8bbb28a912ae32ef189c83c5d2e4f3209f31
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50130204"
