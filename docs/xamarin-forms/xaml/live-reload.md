@@ -1,31 +1,26 @@
 ---
-title: 即時重新載入
+title: Xamarin 即時重新載入 （預覽）
 description: 請參閱變更您的 XAML 反映即時的而不需要其他的編譯和部署。
 ms.prod: xamarin
 ms.assetid: 4917273d-32f9-401a-a52c-5cfb53a2170d
 ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
-ms.date: 05/11/2018
-ms.openlocfilehash: f05b79e58a9fa87e13aeb45af2dbb46139051005
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+robots: noindex
+ms.date: 10/26/2018
+ms.openlocfilehash: bb30f9264cb5f3b762088e3523223b2bff8416b9
+ms.sourcegitcommit: ebc0b3838836ee5cf9e54d58866d23916664a43d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109987"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50142332"
 ---
-# <a name="xamarin-live-reload"></a>Xamarin 即時重新載入
-
-![預覽](~/media/shared/preview.png)
-
-Xamarin 即時重新載入可讓您**對您的 XAML 中的變更並看到其反映即時的而不需要其他的編譯及部署**。 將要重新部署您的 XAML 所做的變更上儲存，並反映在您的部署目標上。
-
-使用即時重新載入時，會編譯您的應用程式，因為它適用於所有的程式庫和協力廠商控制項。 即時重新載入適用於所有平台 Xamarin.Forms 支援，包括 Android、 iOS 和 UWP 和適用於所有有效的部署目標，包括模擬器，模擬器，以及實體裝置上。
+# <a name="xamarin-live-reload-preview"></a>Xamarin 即時重新載入 （預覽）
 
 > [!NOTE]
-> [在即時重新載入預覽已結束](https://github.com/xamarin/Xamarin.Forms/issues/4155#issuecomment-431596130)
->
-> 在沒有討論這[ ![，參加在聊天室 https://gitter.im/xamarin/live-reload](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xamarin/live-reload?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+> Xamarin 即時重新載入的預覽版本已結束，且我們想要感謝您的意見反應和註解的所有人。 請閱讀我們[藍圖](https://docs.microsoft.com/en-us/visualstudio/productinfo/vs-roadmap)for Visual Studio 2019，若要深入了解我們正在開發適用於 Xamarin.Forms 的新生產力功能。 此擴充功能的 Visual Studio 2017，仍可供使用，但將不會接收未來的更新。
+
+Xamarin 即時重新載入可讓您**對您的 XAML 中的變更並看到其反映即時的而不需要其他的編譯及部署**。 將要重新部署您的 XAML 所做的變更上儲存，並反映在您的部署目標上。
 
 ## <a name="requirements"></a>需求
 
@@ -86,7 +81,7 @@ public partial class App : Application
 ## <a name="frequently-asked-questions"></a>常見問題集 
 ### <a name="is-xamarin-live-reload-available-on-visual-studio-for-mac"></a>位於 Xamarin 即時重新載入 Visual Studio for Mac 嗎？ 
 
-Xamarin 即時重新載入的初始預覽版本僅適用於 Visual Studio 2017。 適用於 Visual Studio for Mac 的支援已規劃在未來的版本。
+否，僅適用於 Visual Studio 2017 預覽版本的 Xamarin 即時重新載入。
 
 ### <a name="does-this-work-with-all-libraries-such-as-prism"></a>這與所有的程式庫，例如 Prism 運作？ 
 
@@ -94,7 +89,7 @@ Xamarin 即時重新載入的初始預覽版本僅適用於 Visual Studio 2017�
 
 ### <a name="what-changes-does-live-reload-redeploy"></a>即時重新載入重新部署的哪些變更？ 
 
-即時重新載入只適用於 XAML 或 CSS 所做的變更。 如果您變更 C# 檔案時，就必須使用重新編譯。 重新載入 C# 的支援已規劃在未來的版本。
+即時重新載入只適用於 XAML 或 CSS 所做的變更。 如果您變更 C# 檔案時，就必須使用重新編譯。 
 
 ### <a name="what-platforms-are-supported"></a>支援哪些平台？ 
 
@@ -121,8 +116,8 @@ Xamarin 即時重新載入的初始預覽版本僅適用於 Visual Studio 2017�
 
 * 只有在 Visual Studio 中。
 * 連結必須設為**不要連結**或**僅連結 Framework Sdk** 
-* 重新載入整個應用程式的資源 (亦即**App.xaml**或共用資源字典)，就會重設應用程式瀏覽。 這將會在下一個預覽版本中修正。
-* 重新載入 ContentView 目前需要重新載入包含的頁面。 這將會在下一個預覽版本中修正。
+* 重新載入整個應用程式的資源 (亦即**App.xaml**或共用資源字典)，就會重設應用程式瀏覽。 
+* 重新載入 ContentView 目前需要重新載入包含的頁面。
 * 包含 AutomationId 的項目可能會造成重新載入失敗。
 * 編輯 XAML，而偵錯 UWP 可能會導致執行階段當機。 因應措施： 使用**但不偵錯 （Ctrl + F5） 開始**而不是**開始偵錯 (F5)**。
 
