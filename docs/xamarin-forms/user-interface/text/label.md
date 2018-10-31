@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/04/2018
-ms.openlocfilehash: c98dcc30ac89e3df0338df02e14a32575c0dc847
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: a6c0cd057082a6fa4793ca3de18cefd00243e9e3
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39203032"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50235060"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms 標籤
 
@@ -22,13 +22,13 @@ _在 Xamarin.Forms 中的顯示文字_
 
 ## <a name="text-decorations"></a>文字裝飾
 
-可套用至底線和刪除線文字裝飾[ `Label` ](xref:Xamarin.Forms.Label)藉由設定執行個體`Label.TextDecoration`一或多個屬性`TextDecoration`列舉成員：
+可套用至底線和刪除線文字裝飾[ `Label` ](xref:Xamarin.Forms.Label)藉由設定執行個體`Label.TextDecorations`一或多個屬性`TextDecorations`列舉成員：
 
 - `None`
 - `Underline`
 - `Strikethrough`
 
-下列 XAML 範例示範如何設定`Label.TextDecoration`屬性：
+下列 XAML 範例示範如何設定`Label.TextDecorations`屬性：
 
 ```xaml
 <Label Text="This is underlined text." TextDecorations="Underline"  />
@@ -44,7 +44,7 @@ var strikethroughLabel = new Label { Text = "This is text with strikethrough.", 
 var bothLabel = new Label { Text = "This is underlined text with strikethrough.", TextDecorations = TextDecorations.Underline | TextDecorations.Strikethrough };
 ```
 
-下列螢幕擷取畫面所示`TextDecoration`套用至列舉成員[ `Label` ](xref:Xamarin.Forms.Label)執行個體：
+下列螢幕擷取畫面所示`TextDecorations`套用至列舉成員[ `Label` ](xref:Xamarin.Forms.Label)執行個體：
 
 ![](label-images/label-textdecorations.png "使用文字裝飾的標籤")
 
@@ -158,7 +158,7 @@ var label =
 - [`Style`](xref:Xamarin.Forms.Span.Style) – 要套用至範圍的樣式。
 - [`Text`](xref:Xamarin.Forms.Span.Text) – 範圍的文字。
 - [`TextColor`](xref:Xamarin.Forms.Span.TextColor) – 範圍中文字的色彩。
-- `TextDecoration` -要套用至範圍中文字的裝飾。 如需詳細資訊，請參閱 <<c0> [ 文字裝飾](#text-decorations)。
+- `TextDecorations` -要套用至範圍中文字的裝飾。 如需詳細資訊，請參閱 <<c0> [ 文字裝飾](#text-decorations)。
 
 颾魤 ㄛ [ `GestureRecognizers` ](xref:Xamarin.Forms.GestureElement.GestureRecognizers)屬性可以用來定義的筆勢辨識器所將回應筆勢在集合[ `Span` ](xref:Xamarin.Forms.Span)。
 

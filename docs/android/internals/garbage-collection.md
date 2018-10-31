@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 327547f6a5440feb372e2197d816c44aefbd5282
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 814e975f57023424618c5ea403126f36f87467a7
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114551"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50235008"
 ---
 # <a name="garbage-collection"></a>記憶體回收
 

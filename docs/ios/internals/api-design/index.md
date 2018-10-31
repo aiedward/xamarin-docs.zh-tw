@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: cd25e5c78885f53902c577a900958b842a70219c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 56f9cbdae565f0d89463742377ec2311d8e375ac
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116949"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50235047"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API 設計
 
@@ -107,7 +107,7 @@ Xamarin.iOS 鏡像在 C# 中的從 OBJECTIVE-C 類別階層 比方說，OBJECTIV
 
 ##### <a name="nsobject"></a>NSObject
 
-[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)類型是所有 OBJECTIVE-C 繫結的基礎。 Xamarin.iOS 類型反映的類型從 iOS CocoaTouch Api 的兩個類別： C 類型 （通常稱為 CoreFoundation 類型） 和 Objective C 類型 （這些都是衍生自 NSObject 類別）。
+[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)類型是所有 OBJECTIVE-C 繫結的基礎。 Xamarin.iOS 類型反映的類型從 iOS CocoaTouch Api 的兩個類別: （通常稱為 CoreFoundation 類型） 的 C 類型和 OBJECTIVE-C 型別 （這些都是衍生自 NSObject 類別）。
 
 每個類型對映 unmanaged 型別，就可以取得的原生物件透過[處理](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)屬性。
 

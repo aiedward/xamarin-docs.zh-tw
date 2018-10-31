@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/27/2018
-ms.openlocfilehash: 3c7b7c39eb714dbd47049c9440c188667a75e48f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 640d1adc048bec167508d8c288b62d498f061b0d
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106269"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234969"
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin.Mac 的錯誤訊息 (mmp)
 
@@ -23,9 +23,9 @@ ms.locfileid: "50106269"
 
 <a name="MM0000" />
 
-#### <a name="mm0000-unexpected-error---please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MM0000： 未預期的錯誤-請檔案錯誤報告在 http://bugzilla.xamarin.com
+#### <a name="mm0000-unexpected-error---please-file-a-bug-report-at-httpsgithubcomxamarinxamarin-maciosissuesnew"></a>MM0000： 未預期的錯誤-請檔案錯誤報告在 https://github.com/xamarin/xamarin-macios/issues/new
 
-發生未預期的錯誤狀況。 請[提出 bug 報告](https://bugzilla.xamarin.com/enter_bug.cgi?product=Xamarin.Mac)盡可能最多資訊，包括：
+發生未預期的錯誤狀況。 請[提出 bug 報告](https://github.com/xamarin/xamarin-macios/issues/new)盡可能最多資訊，包括：
 
 * 完整建置記錄檔，並以最詳細 (例如`-v -v -v -v`中**其他 mmp 引數**);
 * 最少重現錯誤，測試案例和

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/19/2018
-ms.openlocfilehash: cf85f8d64026b436c7552033525b9d0f381fd687
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: c7a84a8bd00c5685feef84bfc4aacf02e5891c55
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156973"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234982"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>使用 Xamarin.Forms book 建立行動應用程式
 
-<p><img src="Images/Cover-sml.png" title="使用 Xamarin.Forms Book 建立行動應用程式" align="left" />本書<i>使用 Xamarin.Forms 建立行動應用程式</i>Charles petzold 的是了解如何撰寫 Xamarin.Forms 應用程式的指南。 唯一的先決條件是 C# 程式設計語言的知識。 本書提供廣泛的瀏覽至 Xamarin.Forms 的使用者介面，並且也涵蓋動畫、 MVVM、 觸發程序、 行為、 自訂版面配置、 自訂轉譯器及其他更多。 
+<p><img src="images/cover-sml.png" title="使用 Xamarin.Forms Book 建立行動應用程式" align="left" />本書<i>使用 Xamarin.Forms 建立行動應用程式</i>Charles petzold 的是了解如何撰寫 Xamarin.Forms 應用程式的指南。 唯一的先決條件是知識的C#程式設計語言。 本書提供廣泛的瀏覽至 Xamarin.Forms 的使用者介面，並且也涵蓋動畫、 MVVM、 觸發程序、 行為、 自訂版面配置、 自訂轉譯器及其他更多。 
 
 本書已在 2016 年春季發行，並且未在那之後更新。 有很多活頁簿中，仍有價值，但某些[資料已過期](#ways-in-which-the-book-is-outdated)，而且某些主題也無法再完全正確或已完成。 
 

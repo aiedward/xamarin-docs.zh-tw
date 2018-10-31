@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 12/05/2017
-ms.openlocfilehash: daece8029bd6a97923d6469f9b42d69efbd3f905
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a2fbb44587eed7f7158c813e45b810cf7f15d0d4
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119839"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234891"
 ---
 # <a name="installing-and-using-watchos-in-xamarin"></a>安裝並在 Xamarin 中使用 watchOS
 
@@ -161,7 +161,7 @@ Visual Studio 的使用者也可以使用 Xcode 來建置其使用者介面，�
 下列的錯誤會出現在**應用程式輸出**如果您嘗試啟動模擬器，並沒有配對的監看式：
 
 ```csharp
-error MT0000: Unexpected error - Please file a bug report at http://bugzilla.xamarin.com
+error MT0000: Unexpected error - Please file a bug report at https://github.com/xamarin/xamarin-macios/issues/new
 error HE0020: Could not find a paired Watch device for the iOS device 'iPhone 6'.
 ```
 

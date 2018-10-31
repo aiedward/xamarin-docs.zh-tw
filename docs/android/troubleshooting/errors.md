@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: b51e8b3d931ccbb511afe7d06d9be66fa104fb46
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f3721ad661f4b817375b0d625c9b5cc293e6d44c
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121837"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50235073"
 ---
 # <a name="xamarinandroid-errors-matrix"></a>Xamarin.Android 錯誤矩陣
 
@@ -40,7 +40,7 @@ ms.locfileid: "50121837"
 
 |錯誤碼|描述|
 |--- |--- |
-|XA0000|未預期的錯誤-請填寫[bug 報表](http://bugzilla.xamarin.com)。|
+|XA0000|未預期的錯誤-請填寫[bug 報表](https://github.com/xamarin/xamarin-android/issues/new)。|
 |XA0001|'-devname 提供不執行任何裝置特定動作。|
 |XA0002|無法剖析環境變數 '{0}'。|
 |XA0003|應用程式名稱 '{0}.exe' je v konfliktu SDK 或產品組件 (.dll) 名稱。|
