@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: 01359d8b5fc402c83006c1c227375557fd2d7149
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a9d7f1eb0051035d6bfcc47e18fb0bdd00b60f5d
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122448"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50235112"
 ---
 # <a name="xamarinios-errors"></a>Xamarin.iOS 錯誤
 
@@ -28,9 +28,9 @@ ms.locfileid: "50122448"
 
 <a name="MT0000" />
 
-### <a name="mt0000-unexpected-error---please-fill-a-bug-report-at-httpbugzillaxamarincom"></a>MT0000： 未預期的錯誤-請填寫在錯誤報告 http://bugzilla.xamarin.com
+### <a name="mt0000-unexpected-error---please-fill-a-bug-report-at-httpsgithubcomxamarinxamarin-maciosissuesnew"></a>MT0000： 未預期的錯誤-請填寫在錯誤報告 https://github.com/xamarin/xamarin-macios/issues/new
 
-發生未預期的錯誤狀況。 請[提出 bug 報告](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)盡可能最多資訊，包括：
+發生未預期的錯誤狀況。 請[提出 bug 報告](https://github.com/xamarin/xamarin-macios/issues/new)盡可能最多資訊，包括：
 
 * 完整建置記錄檔，並以最詳細 (例如`-v -v -v -v`中**其他 mtouch 引數**);
 * 最少重現錯誤，測試案例和

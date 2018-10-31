@@ -1,85 +1,85 @@
 ---
-title: 提高畫面播放速率與 CCSpriteSheet
-description: CCSpriteSheet 提供合併，並使用一種材質中的多個映像檔案的功能。 減少紋理計數可以改善遊戲的載入次數與畫面播放速率。
+title: 改善 CCSpriteSheet 的畫面播放速率
+description: CCSpriteSheet 提供功能結合，並使用一種材質中的許多映像檔。 減少紋理計數可以改善遊戲的載入時間和畫面播放速率。
 ms.prod: xamarin
 ms.assetid: A1334030-750C-4C60-8B84-1A8A54B0D00E
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 9b0f58554b26b1a5334970b8c1288234acbf8db7
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: eab6153653a8c8df2068aaaf879d84d35473c541
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33922544"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123556"
 ---
-# <a name="improving-frame-rate-with-ccspritesheet"></a>提高畫面播放速率與 CCSpriteSheet
+# <a name="improving-frame-rate-with-ccspritesheet"></a>改善 CCSpriteSheet 的畫面播放速率
 
-_CCSpriteSheet 提供合併，並使用一種材質中的多個映像檔案的功能。減少紋理計數可以改善遊戲的載入次數與畫面播放速率。_
+_CCSpriteSheet 提供功能結合，並使用一種材質中的許多映像檔。減少紋理計數可以改善遊戲的載入時間和畫面播放速率。_
 
-許多遊戲都需要順暢執行，並在行動硬體上的快速載入的最佳化工作。 `CCSpriteSheet`類別可協助解決 CocosSharp 遊戲所遇到的許多常見效能問題。 本指南涵蓋了常見效能問題，以及如何解決使用`CCSpriteSheet`類別。
-
-
-## <a name="what-is-a-sprite-sheet"></a>在精靈的工作表是什麼？
-
-A*精靈表*，這可以也稱為*紋理 atlas*，是會結合成一個檔案的多個映像的映像。 這可以改善執行階段效能，以及內容的載入時間。
-
-例如下, 圖是三個不同的映像所建立的簡單精靈工作表。 個別映像可以是任何規模，並產生的精靈工作表並不需要完全填滿：
-
-![](ccspritesheet-images/image1.png "個別映像可以是任何規模，以及產生的精靈工作表並不需要完全填滿")
+多數遊戲需要最佳化工作，以順利執行，並在行動裝置的硬體上快速載入。 `CCSpriteSheet`類別可以協助解決許多 CocosSharp 的遊戲所遇到的常見效能問題。 本指南涵蓋的常見效能問題，以及如何解決使用`CCSpriteSheet`類別。
 
 
-### <a name="render-states"></a>呈現的狀態
+## <a name="what-is-a-sprite-sheet"></a>什麼是 sprite 表？
 
-CocosSharp 的視覺物件 (例如`CCSprite`) 簡化轉譯程式碼透過傳統圖形化的應用程式開發介面轉譯程式碼，例如 MonoGame 或 OpenGL，需要建立頂點緩衝區 (如中所述[繪圖與 3D 圖形MonoGame 的頂點](~/graphics-games/monogame/3d/part2.md)指南)。 其簡化，儘管 CocosSharp 不排除設定成本*呈現狀態*，這是轉譯程式碼必須切換材質或其他呈現相關狀態的次數。
+A *sprite 表*，這可以也稱為*紋理圖集*，是會結合成一個檔案的多個映像的映像。 這可以改善執行階段效能，以及內容的載入時間。
 
-CocosSharp 的內部程式碼呈現每個視覺項目，循序往返，與目前的視覺化樹狀結構開頭`CCScene`。 例如，請考慮下列場景：
+例如下, 圖是三個不同的映像所建立的簡單 sprite 工作表。 個別的映像可以是任何規模大小，並產生 sprite 工作表則不需要完全填滿：
+
+![](ccspritesheet-images/image1.png "個別的映像可以是任何規模大小，而且產生的 sprite 表不需要完全填滿")
+
+
+### <a name="render-states"></a>呈現狀態
+
+CocosSharp 的視覺物件 (例如`CCSprite`) 簡化轉譯程式碼透過傳統圖形化的 API 轉譯程式碼，例如 MonoGame 或 OpenGL，需要建立頂點緩衝區 (中所述[繪圖與 3D 圖形頂點 MonoGame](~/graphics-games/monogame/3d/part2.md)指南)。 儘管其單純性，CocosSharp 不能免除設定的成本*呈現狀態*，這是轉譯程式碼必須切換紋理或轉譯相關的其他狀態的次數。
+
+CocosSharp 的內部程式碼呈現每個視覺項目以循序方式，藉由周遊視覺化樹狀結構開頭與目前`CCScene`。 例如，請考慮下列場景：
 
 ![](ccspritesheet-images/image2.png "請考慮此場景")
 
-CocosSharp 會導致四顆星轉譯序列中：
+CocosSharp 會呈現四顆星，序列中：
 
-![](ccspritesheet-images/image3.png "CocosSharp 順序呈現四顆星")
+![](ccspritesheet-images/image3.png "CocosSharp 會依序呈現四顆星")
 
-由於每個`CCSprite`使用相同紋理，CocosSharp 可以群組所有四顆星在一起。 此程式碼需要每個畫面格的只有一個呈現狀態指派 （指派的星型的紋理）。 這個案例是非常有效率。
+由於每個`CCSprite`會使用相同的材質，CocosSharp 可以群組所有的四顆星在一起。 此程式碼需要每個畫面的只有一個呈現狀態指派 （星狀材質的指派）。 此案例中是非常有效率。
 
-當然，很少的遊戲會使用只有一個映像。 下列場景導入了地球圖形：
+當然，很少的遊戲使用只有一個影像。 下列的場景導入了全球圖形：
 
-![](ccspritesheet-images/image4.png "此畫面導入了地球圖形")
+![](ccspritesheet-images/image4.png "此場景導入了全球圖形")
 
-在理想情況下 CocosSharp 應繪製所有小使用一個映像，第一次 （例如顆星），然後依照使用的映像 （地球） 的其餘部分：
+在理想情況下 CocosSharp 應該繪製所有 sprite 使用一個映像第一次 （例如顆星），則使用的映像 （全球） 精靈的其餘部分：
 
-![](ccspritesheet-images/image5.png "在理想情況下 CocosSharp 應繪製所有小例如顆星，然後依照使用的映像世界各地的其餘部分的第一次使用一個映像")
+![](ccspritesheet-images/image5.png "在理想情況下 CocosSharp 應繪製所有第一次使用一個映像，例如顆星，然後使用映像全球 sprite 的其餘部分的 sprite")
 
-以上所述的順序需要兩個呈現狀態： 一個在第一個世界各地星號，第一個。
+以上所述的順序需要兩個呈現狀態： 一個在第一顆星，地球上的第一個。
 
-如果要將所有`CCSprite`執行個體都是相同的子系`CCNode`，然後 CocosSharp 會最佳化來減少呈現狀態變更的繪製順序。 另一方面，如果`CCSprite`編排，因此無法最佳化呈現 CocosSharp 執行個體 (例如，如果它們是不同的實體的一部分`CCNode`執行個體)，則可能無法達到最佳順序。 下列範例顯示五個呈現狀態所導致的最差可能的繪製順序：
+如果要將所有`CCSprite`執行個體是相同的子系`CCNode`，然後 CocosSharp 會最佳化來減少呈現狀態變更的繪製順序。 另一方面，如果`CCSprite`執行個體，因此無法最佳化呈現 CocosSharp 組織 (例如，如果它們屬於不同的實體`CCNode`執行個體)，則可能無法達到最佳的順序。 下列範例顯示五種呈現狀態所導致的最差可能的繪製順序：
 
-![](ccspritesheet-images/image6.png "這會顯示五個呈現狀態所導致的最差可能的繪圖順序")
+![](ccspritesheet-images/image6.png "這會顯示最差的可能的繪製順序，導致五種呈現狀態")
 
-很難進行最佳化，因為繪圖順序必須遵守的視覺化樹狀結構呈現狀態`CCNode`執行個體。 此樹狀結構通常是結構化以容易使用 （例如實體包含及其視覺子系），或演出者所定義，因為所需的視覺化配置而組織。
+呈現狀態很難進行最佳化的繪圖順序必須遵守的視覺化樹狀結構因為`CCNode`執行個體。 此樹狀結構通常很容易使用 （例如實體包含其視覺子系），結構化或組織因為所需的視覺化版面配置，如演出者所定義。
 
-當然，理想的情況是具有單一轉譯狀態，雖然具有多個映像。 CocosSharp 遊戲可以完成這項作業結合成單一檔案中，所有映像，然後載入該檔案 (連同伴隨 **.plist**檔案) 至`CCSpriteSheet`。 使用`CCSpriteSheet`類別變得更為重要的遊戲，其具有大量的映像，或其具有非常複雜的配置。 
+當然，理想的情況下是具有單一轉譯狀態，而不論具有多個映像。 CocosSharp 的遊戲可以完成這項作業將所有映像結合成單一檔案，然後載入該檔案 (以及伴隨 **.plist**檔案) 至`CCSpriteSheet`。 使用`CCSpriteSheet`類別變得更為重要的遊戲，其中有大量映像，或具有非常複雜的版面配置。 
 
 ### <a name="load-times"></a>載入時間
 
-將多個映像結合成一個檔案時，也會提升多種原因所造成的遊戲的載入時間：
+將多個映像結合成一個檔案時，也會改善多種原因所造成的遊戲的載入時間：
 
- - 結合成單一檔案的多個映像可以減少整體的特質，透過使用像素
- - 載入較少的檔案表示每個檔案額外負荷較少，例如剖析.png 標頭
- - 載入較少的檔案需要小於搜尋時間，這一點很重要的磁碟為基礎的媒體，例如 Dvd 和傳統電腦硬碟
+ - 將多個映像結合成單一檔案可減少透過特質的像素為單位的總數
+ - 正在載入較少的檔案表示小於每個檔案的額外負荷，例如剖析.png 標頭
+ - 載入較少的檔案需要較少搜尋時間，也就是很重要的 Dvd 等傳統電腦硬碟的磁碟為基礎的媒體
 
 ## <a name="using-ccspritesheet-in-code"></a>程式碼中使用 CCSpriteSheet
 
-若要建立`CCSpriteSheet`執行個體，該程式碼必須提供的映像和檔案會定義要用於每個畫面格的影像區域。 可以載入影像，做為 **.png**或 **.xnb**檔案 (如果使用[內容的管線](~/graphics-games/cocossharp/content-pipeline/index.md))。 定義框架檔案是 **.plist**可以以手動方式建立的檔案或*TexturePacker* （其中討論如下）。
+若要建立`CCSpriteSheet`執行個體，此程式碼必須提供的映像和檔案會定義要用於每個畫面格的影像區域。 可以做為載入影像 **.png**或是 **.xnb**檔案 (如果使用[Content Pipeline](~/graphics-games/cocossharp/content-pipeline/index.md))。 檔案定義畫面格數 **.plist**可以用手動方式建立的檔案或*TexturePacker* （將於稍後討論如下）。
 
-範例應用程式，其中[可以在這裡下載](https://developer.xamarin.com/samples/mobile/SpriteSheetDemo/)，建立`CCSpriteSheet`從 **.png**和 **.plist**檔案使用下列程式碼：
+範例應用程式，其中[可以在這裡下載](https://developer.xamarin.com/samples/mobile/SpriteSheetDemo/)，會建立`CCSpriteSheet`從 **.png**並 **.plist**檔案中，使用下列程式碼：
 
 ```csharp
-CCSpriteSheet sheet = new CCSpriteSheet ("sheet.plist", "sheet.png"); 
+CCSpriteSheet sheet = new CCSpriteSheet ("sheet.plist", "sheet.png"); 
 ```
 
-一次載入，`CCSpriteSheet`包含`List`的`CCSpriteFrame`執行個體 – 對應至其中一個用來建立整個工作表的來源映像的每個執行個體。 如果是**SpriteSheetDemo**專案，`CCSpriteSheet`包含三個映像。 **.Plist**可以檢查檔案，在 Visual Studio for Mac 或任何文字編輯器中若要查看可用的映像。 如果我們檢視 **.plist**我們可以看到三個畫面格 （省略要強調的索引鍵名稱的區段） 的文字編輯器中的檔案：
+一次載入，`CCSpriteSheet`包含`List`的`CCSpriteFrame`執行個體 – 對應至其中一個用來建立整個工作表的來源映像的每個執行個體。 若是**SpriteSheetDemo**專案，`CCSpriteSheet`包含三個映像。 **.Plist**可以檢查檔案，在 Visual Studio for Mac，或以任何文字編輯器，若要查看可用的映像。 如果我們檢視 **.plist**我們可以看到三個畫面格 （區段省略，則強調索引鍵名稱） 的文字編輯器中的檔案：
 
 
 ```csharp
@@ -95,59 +95,59 @@ CCSpriteSheet sheet = new CCSpriteSheet ("sheet.plist", "sheet.png");
 ...
 ```
 
-我們可以使用`Find`方法，如下所示的名稱，尋找框架 (省略來強調程式碼`CCSpriteFrame`使用量):
+我們可以使用`Find`方法來依名稱尋找畫面格時，也將，如下所示 (程式碼省略，則強調`CCSpriteFrame`使用量):
 
 
 ```csharp
-CCSpriteFrame frame;
+CCSpriteFrame frame;
 ...
-frame = sheet.Frames.Find(item=>item.TextureFilename == "farBackground.png"); 
-CCSprite sprite = new CCSprite (frame); 
+frame = sheet.Frames.Find(item=>item.TextureFilename == "farBackground.png"); 
+CCSprite sprite = new CCSprite (frame); 
 ...
 ```
 
-因為`CCSprite`建構函式可以採用`CCSpriteFrame`參數時，程式碼永遠不會有要調查的詳細資料`CCSpriteFrame`，例如哪些紋理它使用，或主要精靈工作表中的影像區域。
+由於`CCSprite`建構函式可以採用`CCSpriteFrame`參數，程式碼永遠不會有要調查的詳細資料`CCSpriteFrame`，例如哪些材質中，它會使用，或在主要的 sprite 工作表中影像的區域。
 
 
-## <a name="creating-a-sprite-sheet-plist"></a>建立精靈的工作表.plist
+## <a name="creating-a-sprite-sheet-plist"></a>建立 sprite 表.plist
 
-.Plist 檔案是以 xml 為基礎的檔案，可建立和編輯。 同樣地，可以使用編輯程式的映像將多個檔案合併成一個大型的檔案。 建立和維護精靈工作表可能會非常耗時，因為我們將探討 TexturePacker 程式可以匯出 CocosSharp 格式的檔案。 TexturePacker 提供一套免費和 「 Pro"的版本，且適用於 Windows 和 Mac OS。 本指南的其餘部分後面可以接著使用免費版本。 
+.Plist 檔案是以 xml 為基礎的檔案，來建立和編輯以手動方式。 同樣地，編輯程式的映像可用來將多個檔案合併成一個較大的檔案。 建立和維護 sprite 表仍相當耗時，因為我們將探討可以匯出 CocosSharp 格式的檔案之 TexturePacker 程式。 TexturePacker 提供免費和 「 專業 」 版本，因此適用於 Windows 和 Mac OS。 使用免費版本，可遵循本指南的其餘部分。 
 
-可以是 TexturePacker[從 TexturePacker 網站下載](https://www.codeandweb.com/texturepacker)。 開啟時，TexturePacker 沒有載入專案。 [開始] 畫面可讓您新增小開啟最近使用的專案 （如果尚未建立其他專案），然後選取要使用精靈的工作表的格式。 CocosSharp 使用 Cocos2D 資料格式：
+可以是 TexturePacker[從 TexturePacker 網站下載](https://www.codeandweb.com/texturepacker)。 開啟時，TexturePacker 並沒有載入的專案。 [開始] 畫面可讓您新增 sprite，開啟最近使用的專案 （如果尚未建立其他專案），並選取要使用 sprite 工作表的格式。 CocosSharp 使用 Cocos2D 資料格式：
 
 ![](ccspritesheet-images/image7.png "CocosSharp 使用 Cocos2D 資料格式")
 
-映像檔案 (例如 **.png**) 可以新增至 TexturePacker 拖他們從 Windows 檔案總管上 Windows 或 mac 上的搜尋工具 TexturePacker 加入檔案時，會自動更新精靈的工作表預覽：
+影像檔 (例如 **.png**) 可以新增至 TexturePacker 拖它們從 Windows 檔案總管在 Windows 或 mac 上的搜尋工具 TexturePacker 中新增檔案時，會自動更新 sprite 表預覽：
 
-![](ccspritesheet-images/image8.png "TexturePacker 會自動更新精靈工作表的預覽，每當加入檔案")
+![](ccspritesheet-images/image8.png "TexturePacker 會自動更新 sprite 表預覽版中新增檔案時")
 
-若要匯出精靈的工作表，請按一下**發行精靈的工作表**按鈕，然後選取精靈工作表的位置。 .Plist 檔案和影像檔時，會將儲存 TexturePacker。
+若要匯出的 sprite 工作表，請按一下**發佈 sprite 表**按鈕，然後選取 sprite 工作表的位置。 TexturePacker 節省.plist 檔案和影像檔。
 
-若要使用產生的檔案，加入.png 和.plist CocosSharp 專案。 如需將檔案加入至 CocosSharp 專案資訊，請參閱[BouncingGame 指南](~/graphics-games/cocossharp/bouncing-game.md)。 一旦加入檔案之後，可以載入到`CCSpriteSheet`是稍早在上述程式碼中所示：
+若要使用產生的檔案，加入.png 和.plist CocosSharp 專案。 如需將檔案新增至 CocosSharp 專案的詳細資訊，請參閱[BouncingGame 指南](~/graphics-games/cocossharp/bouncing-game.md)。 將檔案新增之後，他們可以載入`CCSpriteSheet`是稍早在上述程式碼中所示：
 
 ```csharp
-CCSpriteSheet sheet = new CCSpriteSheet ("sheet.plist", "sheet.png"); 
+CCSpriteSheet sheet = new CCSpriteSheet ("sheet.plist", "sheet.png"); 
 ```
 
-### <a name="considerations-for-maintaining-a-texturepacker-sprite-sheet"></a>維護 TexturePacker 精靈工作表的考量
+### <a name="considerations-for-maintaining-a-texturepacker-sprite-sheet"></a>維護 TexturePacker sprite 工作表的考量
 
-遊戲會開發，如演出者可能會加入、 移除或修改封面。 任何變更都需要更新的精靈工作表。 下列考量可簡化精靈頁維護工作：
+開發遊戲，如演出者可能會新增、 移除或修改封面。 任何變更都需要更新的 sprite 工作表。 下列考量可簡化 sprite 表維護：
 
- - 在資料夾在專案中，保留原始的檔案 （用來建立精靈的工作表的檔案），並確定它們會加入至版本控制。 每當變更是重新建立精靈的工作表，將會需要這些檔案。
- - 請勿原始檔案加入 Visual Studio for Mac/Visual Studio，或如果加入，將**建置動作**至**無**。 如果檔案會加入，而且具有特定平台**建置動作**，則將會不必要地增加產生的應用程式檔案的大小。
- - 請考慮使用*智慧資料夾*TexturePacker 中。 智慧型資料夾自動加入任何自主映像精靈工作表。 這項功能可以使用大量的映像儲存許多開發遊戲時的時間。 
+ - 在資料夾在專案中，保留原始的檔案 （用來建立 sprite 試算表檔案），並確定它們加入至版本控制。 重新建立 sprite 工作表，每次變更時，會需要這些檔案。
+ - 請勿將原始的檔案新增至 Visual Studio 中，適用於 Mac/Visual Studio 中，或新增，如果設定**建置動作**要**無**。 如果檔案已加入，且具有特定平台**建置動作**，則將會不必要地增加產生的應用程式檔案的大小。
+ - 請考慮使用*智慧型資料夾*TexturePacker 中。 智慧型資料夾自動加入原件工作表包含的任何映像。 這項功能可以儲存大量開發的遊戲時的時間，且含有大量映像。 
 
-    ![](ccspritesheet-images/image9.png "這項功能可以節省很多開發遊戲時的時間使用大量的影像")
- - 特別注意落在精靈的紋理大小。 有些較舊的電話硬體不支援大於 2048 x 2048 的紋理大小。 此外，2048 x 2048 的 32 位元映像會使用 17 幾乎 mb 的 RAM – 大量的記憶體。
- - TexturePacker 不包含資料夾名稱精靈中依預設，因此可能會有名稱衝突。 最好決定是否要包含資料夾名稱，或不在開發的開頭。 較大的遊戲應該考慮使用資料夾名稱以避免衝突。 若要包含資料夾路徑，請按一下**w advanced<** 中**資料**區段，並檢查**前面加上的資料夾名稱**。 
+    ![](ccspritesheet-images/image9.png "這項功能可以儲存大量開發的遊戲時的時間，且含有大量映像")
+ - 敬請期待 sprite 紋理大小。 某些較舊的電話硬體不支援大於 2048x2048 的紋理大小。 此外，2048x2048 的 32 位元映像會使用幾乎 17 mb 的 RAM – 大量的記憶體。
+ - TexturePacker 不包含資料夾 sprite 名稱在預設情況下，名稱衝突可能會讓。 最好的方式是決定是否要包含資料夾名稱，或不在開發的開頭。 較大的遊戲應該考慮使用資料夾名稱，以防止發生衝突。 若要包含資料夾路徑，請按一下**advanced<** 中**資料**區段，並檢查**前面加上的資料夾名稱**。 
 
-    ![](ccspritesheet-images/image10.png "若要包含資料夾路徑，請按一下顯示在資料區段的 進階並檢查前面加上的資料夾名稱")
+    ![](ccspritesheet-images/image10.png "若要包含資料夾路徑，按一下 [顯示資料] 區段中的進階並檢查前面加上資料夾名稱")
 
 ## <a name="summary"></a>總結
 
-本指南涵蓋如何建立及使用`CCSpriteSheet`類別。 其中也涵蓋如何建構可載入的檔案`CCSpriteSheet`TexturePacker 程式執行個體。
+本指南涵蓋如何建立和使用`CCSpriteSheet`類別。 其中也涵蓋如何建構檔案，可以將其載入至`CCSpriteSheet`TexturePacker 程式執行個體。
 
-## <a name="related-links"></a>相關的連結
+## <a name="related-links"></a>相關連結
 
 - [CCSpriteSheet](https://developer.xamarin.com/api/type/CocosSharp.CCSpriteSheet/)
-- [完整示範 （範例）](https://developer.xamarin.com/samples/mobile/SpriteSheetDemo/)
+- [完整的示範 （範例）](https://developer.xamarin.com/samples/mobile/SpriteSheetDemo/)
