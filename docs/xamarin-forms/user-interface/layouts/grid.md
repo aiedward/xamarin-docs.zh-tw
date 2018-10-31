@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 01dd59d5e94b473316b03f9035d38305fad42880
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 392a0e6c76357ce106477ec4d5037673e5702b43
+ms.sourcegitcommit: 19b37f33b0eb9a927633a3198574b779374775ff
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994498"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50301236"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms 方格
 
@@ -22,12 +22,12 @@ ms.locfileid: "38994498"
 
 本文將介紹：
 
-- **[用途](#Purpose)** &ndash;的常見用法`Grid`。
-- **[使用方式](#Usage)** &ndash;如何使用`Grid`以達到您所需的設計。
-  - **[資料列和資料行](#Rows_and_Columns)** &ndash;指定的資料列和資料行`Grid`。
-  - **[將檢視放](#Placing_Views)** &ndash;將檢視加入至方格的特定資料列和資料行。
-  - **[間距](#Spacing)** &ndash;設定資料列和資料行之間的空格。
-  - **[Span](#Spans)**  &ndash;設定跨越多個資料列或資料行的項目。
+- **[用途](#purpose)** &ndash;的常見用法`Grid`。
+- **[使用方式](#usage)** &ndash;如何使用`Grid`以達到您所需的設計。
+  - **[資料列和資料行](#rows-and-columns)** &ndash;指定的資料列和資料行`Grid`。
+  - **[將檢視放](#placing-views-in-a-grid)** &ndash;將檢視加入至方格的特定資料列和資料行。
+  - **[間距](#spacing)** &ndash;設定資料列和資料行之間的空格。
+  - **[Span](#spans)**  &ndash;設定跨越多個資料列或資料行的項目。
 
 ![](grid-images/grid.png "方格探勘")
 
@@ -42,8 +42,6 @@ ms.locfileid: "38994498"
 ## <a name="usage"></a>使用量
 
 不同於傳統的資料表，`Grid`不會推斷的資料列和資料行內容的大小與數量。 相反地，`Grid`已經`RowDefinitions`和`ColumnDefinitions`集合。 這些保留資料列和資料行的數目會配置的定義。檢視會新增至`Grid`與指定的資料列和資料行索引，其識別哪些資料列和資料行應置於檢視。
-
-<a name="Rows_and_Columns" />
 
 ### <a name="rows-and-columns"></a>資料列和資料行
 
@@ -83,8 +81,6 @@ grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength (1, GridUni
 grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength(200)});
 grid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (200) });
 ```
-
-<a name="Placing_Views" />
 
 ### <a name="placing-views-in-a-grid"></a>將檢視放置在方格中
 
