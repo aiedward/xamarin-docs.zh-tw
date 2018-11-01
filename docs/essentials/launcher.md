@@ -5,18 +5,22 @@ ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 07/25/2018
-ms.openlocfilehash: 8f5ef8ef97999e9e85944d9fa9d4e57660779a48
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b9dc211a8b8b007e6975448a6c6c35f870021cc6
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115779"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674791"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: Launcher
 
 ![發行前的 NuGet](~/media/shared/pre-release.png)
 
 **Launcher** 類別可讓應用程式依系統開啟 URI。 當深層連結到其他應用程式的自訂 URI 配置時，通常會使用它。 若您要開啟瀏覽器並瀏覽網站，您應該參考**[瀏覽器](open-browser.md)** API。
+
+## <a name="get-started"></a>開始使用
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## <a name="using-launcher"></a>使用 Launcher
 

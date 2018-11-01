@@ -5,12 +5,12 @@ ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: b0d5f28aca5d836608bc5a3423f3dc234a551ca0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bc0cd206881356a92128c758f0225f98f88c2814
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111996"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675402"
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: Connectivity
 
@@ -18,7 +18,9 @@ ms.locfileid: "50111996"
 
 **Connectivity** 類別可讓您監視裝置網路狀況的變更、檢查目前的網路存取，以及目前連線方式。
 
-## <a name="getting-started"></a>快速入門
+## <a name="get-started"></a>開始使用
+
+[!include[](~/essentials/includes/get-started.md)]
 
 若要存取 **Connectivity** 功能，需要下列平台特定設定。
 

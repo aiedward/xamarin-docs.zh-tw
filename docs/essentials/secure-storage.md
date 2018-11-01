@@ -5,12 +5,12 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: a5b5385af991ff988902bb3ed9670cd71d421bc6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d9367b7bbaa906ce39d1fafb3d09e56bfd0dc238
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116026"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675216"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Secure Storage
 
@@ -18,7 +18,9 @@ ms.locfileid: "50116026"
 
 **SecureStorage** 類別有助於安全地存放簡單的機碼/值組。
 
-## <a name="getting-started"></a>快速入門
+## <a name="get-started"></a>開始使用
+
+[!include[](~/essentials/includes/get-started.md)]
 
 若要存取 **SecureStorage** 功能，需要下列平台特定設定：
 

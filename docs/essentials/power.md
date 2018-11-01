@@ -5,12 +5,12 @@ ms.assetid: C176D177-8B77-4A9C-9F3B-27852A8DCD5F
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 06/27/2018
-ms.openlocfilehash: 5a89dba16a93b007c5d7312221d8d33e00c7404a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 96b4aef3a8df571392d43836d46b03b025c80888
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110000"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675376"
 ---
 # <a name="xamarinessentials-power-energy-saver-status"></a>Xamarin.Essentials: Power Energy Saver Status
 
@@ -23,6 +23,10 @@ ms.locfileid: "50110000"
 以電池電力運作的裝置可能會進入低電源省電狀態。 有時候裝置會自動切換到此狀態，例如當電池電力低於總容量的 20% 時。 針對省電模式，作業系統會減少可能會耗電的活動。 當進入省電模式時，應用程式也可以透過避免進行背景處理或執行其他耗電量大的活動，以降低耗電量。
 
 針對 Android 裝置，**Power** 類別只會針對 Android 5.0 版 (Lollipop) 與更高版本傳回有意義的資訊。
+
+## <a name="get-started"></a>開始使用
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## <a name="using-the-power-class"></a>使用 Power 類別
 

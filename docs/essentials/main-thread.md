@@ -5,12 +5,12 @@ ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 06/26/2018
-ms.openlocfilehash: 608cd00a2134e6e3fee89c7ae25bf4627d8b23be
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: db2e79ed5c471c11e2d3dc1afe360843e5dfea6a
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112308"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675441"
 ---
 # <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials: MainThread
 
@@ -23,6 +23,10 @@ ms.locfileid: "50112308"
 大部分的作業系統 (包括 iOS、Android 與通用 Windows 平台) 都為牽涉到使用者介面的程式碼使用單一執行緒處理模型。 需要此此模型才能適當地序列化使用者介面事件，包括按鍵點擊與觸控輸入。 此執行緒通常稱為「主執行緒」或「使用者介面執行緒」或「UI 執行緒」。 此模型的缺點是存取使用者介面元素的所有程式碼都必須在應用程式的主執行緒上執行。 
 
 應用程式有時候需要使用呼叫次要執行緒上之事件處理常式的事件。 (Xamarin.Essentials 類別 [`Accelerometer`](accelerometer.md)、[`Compass`](compass.md)、[`Gyroscope`](gyroscope.md)、[`Magnetometer`](magnetometer.md) 與 [`OrientationSensor`](orientation-sensor.md) 全都可能傳回次要執行緒的資訊 (當以較快的速度使用時)。)若事件處理常式需要存取使用者介面元素，它必須在主執行緒上執行該程式碼。 **MainThread** 類別可讓應用程式在主執行緒上執行此程式碼。
+
+## <a name="get-started"></a>開始使用
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## <a name="running-code-on-the-main-thread"></a>在只執行緒上執行程式碼
 
