@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 3a11fe56da6076ba53e97643e6890f0fa14b8036
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8514d3b2c423e524d03a800f5f56359f3aee4b75
+ms.sourcegitcommit: 650fd5813e243d67eea13c4bc76683c0f8134123
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113933"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50737189"
 ---
 # <a name="running-android-services-in-remote-processes"></a>執行 Android 的服務，在遠端處理程序
 
@@ -56,7 +56,7 @@ _一般而言，Android 應用程式中的所有元件將會都執行相同的�
 本指南會討論實作的跨處理序服務的詳細資料。 它將討論如何實作自己的處理序中執行的服務和用戶端可能會與該服務使用的通訊方式`Messenger`framework。 它同時也概述將討論的雙向通訊： 傳送訊息至服務和服務將訊息傳送回用戶端的用戶端。 因為服務可以在不同的應用程式之間共用，則本指南也會討論的技巧，可以使用 Android 的權限來限制用戶端服務的存取權。
 
 > [!IMPORTANT]
-> [Bugzilla 51940-隔離的程序與自訂應用程式類別的服務無法正確解析多載](https://bugzilla.xamarin.com/show_bug.cgi?id=51940)Xamarin.Android 服務將無法啟動正確的報表時`IsolatedProcess`設定為`true`。 本指南可供參考。 Xamarin.Android 應用程式應該仍然能夠與以 Java 撰寫的跨處理序服務進行通訊。
+> [Bugzilla 51940/GitHub 1950-隔離的程序與自訂應用程式類別的服務無法正確解析多載](https://github.com/xamarin/xamarin-android/issues/1950)Xamarin.Android 服務將無法啟動正確的報表時`IsolatedProcess`設定為`true`。 本指南可供參考。 Xamarin.Android 應用程式應該仍然能夠與以 Java 撰寫的跨處理序服務進行通訊。
 
 ## <a name="requirements"></a>需求
 
