@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: cebdd6fafafae7d1cd6258e6200808731e3c4f29
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9acd1b8f25696267578f5cc269eb1b0c738be571
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118808"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675090"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms 應用程式類別
 
@@ -208,7 +208,7 @@ public class MainActivity : FormsAppCompatActivity
 </forms:WindowsPage>
 ```
 
-C# 程式碼後置的建構必須呼叫`LoadApplication`來建立您的 Xamarin.Forms 的執行個體`App`。 請注意，它是很好的作法，明確地使用應用程式命名空間來限定`App`因為 UWP 應用程式也有自己`App`Xamarin.Forms 不相關的類別。
+C#建構背後的程式碼必須呼叫`LoadApplication`若要建立您的 Xamarin.Forms 的執行個體`App`。 請注意，它是很好的作法，明確地使用應用程式命名空間來限定`App`因為 UWP 應用程式也有自己`App`Xamarin.Forms 不相關的類別。
 
 ```csharp
 public sealed partial class MainPage

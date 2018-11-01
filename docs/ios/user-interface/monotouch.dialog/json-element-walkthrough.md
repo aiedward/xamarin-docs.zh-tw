@@ -4,14 +4,15 @@ description: MonoTouch.Dialog (MTD） 包含支援動態 UI 透過 JSON 資料�
 ms.prod: xamarin
 ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
+ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 4c04edc5dd66917dbf83385ab88fd5f01e232c2d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 24d73bfcc28601f6a7ebbecb71d8c0e9f6864ac3
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105190"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675337"
 ---
 # <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>若要建立的使用者介面在 Xamarin.iOS 中使用 JSON
 

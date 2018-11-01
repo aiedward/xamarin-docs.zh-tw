@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: d418cb174861b962060757d4d1e0914e82ecd6fb
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ac44981c3b82f0fbec6b18396e15502428b9d62f
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119796"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675272"
 ---
 # <a name="configuration"></a>組態
 

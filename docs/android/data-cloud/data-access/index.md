@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 19a2842fa7d29ed40052166b880bf4b26dc09e9c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 08720734de73af12d8a7383fa7d523dc350c4462
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120693"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674750"
 ---
 # <a name="xamarinandroid-data-access"></a>Xamarin.Android 資料存取
 
@@ -20,18 +20,18 @@ _大部分的應用程式有一些需求，將資料儲存在本機裝置上。�
 
 ## <a name="data-access-overview"></a>資料存取概觀
 
-大部分的應用程式有一些需求，將資料儲存在本機裝置上。 除非資料總量很微小，這通常需要的資料庫和資料層應用程式來管理資料庫存取權。 這兩個 android 提供 Sqlite 資料庫引擎 」 內建 」 和 Xamarin 平台的 SQLite 資料提供者所隨附的簡化資料的存取權。
+大部分的應用程式有一些需求，將資料儲存在本機裝置上。 除非資料總量很微小，這通常需要的資料庫和資料層應用程式來管理資料庫存取權。 這兩個 android 提供 SQLite 資料庫引擎 」 內建 」 和 Xamarin 平台的 SQLite 資料提供者所隨附的簡化資料的存取權。
 
 Xamarin.Android 支援資料庫存取 Api，例如：
 
--  ADO.NET 架構。
--  SQLite NET 第 3 方程式庫。
+- ADO.NET 架構。
+- SQLite NET 第 3 方程式庫。
 
 在本節中的程式碼大多是完全跨平台，並會在 iOS 或 Android 上執行，而不需修改。 有兩個所討論的範例應用程式：
 
--  [**DataAccess_Basic** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic) &ndash;簡單的資料作業寫入以文字顯示結果顯示控制項;
+- [**DataAccess_Basic** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic) &ndash;簡單的資料作業寫入以文字顯示結果顯示控制項;
 
--  [**DataAccess_Advanced** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced) &ndash;整合小型的工作應用程式，列出編輯簡單的資料結構中的資料作業。
+- [**DataAccess_Advanced** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced) &ndash;整合小型的工作應用程式，列出編輯簡單的資料結構中的資料作業。
 
 這兩個範例方案包含 iOS 和 Android 範例應用程式專案。
 

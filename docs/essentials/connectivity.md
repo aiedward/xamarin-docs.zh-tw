@@ -1,32 +1,32 @@
 ---
-title: Xamarin.Essentials： 連線
-description: Xamarin.Essentials 連線類別可讓您監視裝置的網路狀況中的變更，請檢查目前的網路存取，與目前連接方式。
+title: 'Xamarin.Essentials: Connectivity'
+description: Xamarin.Essentials 中的 Connectivity 類別可讓您監視裝置網路狀況的變更、檢查目前的網路存取，以及目前連線方式。
 ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 96b4ee0487034c651bec1dfb168fed7567b63c96
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: b0d5f28aca5d836608bc5a3423f3dc234a551ca0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353694"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111996"
 ---
-# <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials： 連線
+# <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: Connectivity
 
-![發行前版本的 NuGet](~/media/shared/pre-release.png)
+![發行前的 NuGet](~/media/shared/pre-release.png)
 
-**連線**類別可讓您監視的變更，在裝置的網路情況下，檢查目前的網路存取，與目前連接方式。
+**Connectivity** 類別可讓您監視裝置網路狀況的變更、檢查目前的網路存取，以及目前連線方式。
 
 ## <a name="getting-started"></a>快速入門
 
-若要存取**連線**須有下列的平台特定設定的功能。
+若要存取 **Connectivity** 功能，需要下列平台特定設定。
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-`AccessNetworkState`權限是必要的而且必須設定 Android 專案中。 這可以透過下列方式新增：
+需要 `AccessNetworkState` 權限，而且必須在 Android 專案中設定。 能以下列方式新增：
 
-開啟**AssemblyInfo.cs**下方的檔案**屬性**資料夾，並新增：
+開啟 [Properties] 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.AccessNetworkState)]
@@ -34,33 +34,33 @@ ms.locfileid: "39353694"
 
 或更新 Android 資訊清單：
 
-開啟**AndroidManifest.xml**下方檔案**屬性**資料夾，並新增下列內**資訊清單**節點。
+開啟 [Properties] 資料夾下的 **AndroidManifest.xml** 檔案並在 [manifest] 節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-或以滑鼠右鍵按一下 Android 專案，並開啟專案的內容。 底下**Android 資訊清單**尋找**必要權限：** 區域，並檢查**存取網路狀態**權限。 這樣會自動更新**AndroidManifest.xml**檔案。
+禍以滑鼠右鍵按一 Android 專案並開啟專案的屬性。 在 [Android 資訊清單] 下，尋找 [必要權限] 區域並檢查 [存取網路狀態] 權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-不需要其他設定。
+不需要進行額外設定。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-不需要其他設定。
+不需要進行額外設定。
 
 -----
 
-## <a name="using-connectivity"></a>使用連線
+## <a name="using-connectivity"></a>使用 Connectivity
 
-在您的類別加入 Xamarin.Essentials 的參考：
+在類別中新增對 Xamarin.Essentials 的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-檢查目前的網路存取權：
+檢查目前的網路存取：
 
 ```csharp
 var current = Connectivity.NetworkAccess;
@@ -71,15 +71,15 @@ if (current == NetworkAccess.Internet)
 }
 ```
 
-[網路存取](xref:Xamarin.Essentials.NetworkAccess)分為下列類別：
+[網路存取](xref:Xamarin.Essentials.NetworkAccess)可分為下列類別：
 
-* **網際網路**-本機和網際網路存取。
-* **ConstrainedInternet** – 受限的網際網路存取。 指出網頁驗證入口網站的連線能力，其中提供入口網站的本機存取，但存取網際網路需要透過入口網站提供了特定的憑證。
-* **本機**– 本機網路僅限存取。
-* **無**– 沒有連線可用。
-* **未知**– 無法判定網際網路連線。
+* **網際網路** – 本機與網際網路存取。
+* **ConstrainedInternet** – 受限網際網路存取。 指出 網頁驗證與入口網站連線能力，其中提供對 Web 入口網站的本機存取，但對網際網路的存取要求該特定認證必須透過入口網站提供。
+* **本機** –僅限本機網路存取。
+* **無** – 無連線能力。
+* **未知** – 無法判斷網際網路連線能力。
 
-您可以檢查何種[連線設定檔](xref:Xamarin.Essentials.ConnectionProfile)正在使用的裝置：
+您可以檢查裝置目前正在使用哪種類型的[連線設定檔](xref:Xamarin.Essentials.ConnectionProfile)：
 
 ```csharp
 var profiles = Connectivity.Profiles;
@@ -89,7 +89,7 @@ if (profiles.Contains(ConnectionProfile.WiFi))
 }
 ```
 
-每當連線設定檔或網路存取的變更，您可以接收事件時觸發：
+每當連線設定檔或網路存取變更時，您都會在觸發時收到事件：
 
 ```csharp
 public class ConnectivityTest
@@ -100,7 +100,7 @@ public class ConnectivityTest
         Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
     }
 
-    void Connectivity_ConnectivityChanged(ConnectivityChangedEventArgs  e)
+    void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs  e)
     {
         var access = e.NetworkAccess;
         var profiles = e.Profiles;
@@ -110,9 +110,9 @@ public class ConnectivityTest
 
 ## <a name="limitations"></a>限制
 
-請務必請注意，您可以可`Internet`回報`NetworkAccess`但無法使用完整 web 存取權。 每個平台連線的運作方式，因為它只能保證的連接可用。 比方說裝置可能會連線到 Wi-fi 網路，但與網際網路中斷連線的路由器。 在這個執行個體可能會報告網際網路，但作用中連線無法使用。
+請務必注意，`NetworkAccess` 有可能回報 `Internet`，但對 Web 的完整存取不可用。 由於連線能力在每個平台上的運作方式，它只能保證連線可用。 例如，裝置可能連線到 Wi-Fi 網路，但路由器與網際網路之間的連線中斷。 在此情況中，可能回報網際網路，但沒有作用中連線可用。
 
 ## <a name="api"></a>API
 
-* [連線來源的程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
-* [連線 API 文件](xref:Xamarin.Essentials.Connectivity)
+* [Connectivity 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
+* [Connectivity API 文件](xref:Xamarin.Essentials.Connectivity)

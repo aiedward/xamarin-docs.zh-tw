@@ -4,14 +4,15 @@ description: 本文件說明 MonoTouch.Dialog (MTD)，來利用 Xamarin.iOS 的�
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
+ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: a948d5beca6c09dc77e5c86d3f281851e4839ff0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c291a440a1937d2b0f1c229e3fa969caedba9ab9
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107985"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675454"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>適用於 Xamarin.iOS MonoTouch.Dialog 簡介
 

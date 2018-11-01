@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b18d042e34146a72b488da9017648a430c9cd353
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 68c7869254ae861cef8307431d925368082be921
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996369"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675242"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms 命令介面
 
@@ -22,7 +22,7 @@ ms.locfileid: "38996369"
 
 若要允許之間的資料繫結`Button`以及 ViewModel，`Button`定義兩個屬性：
 
-- [`Command`](xref:Xamarin.Forms.Button.Command) 型別 <xref:System.Windows.Input.ICommand>
+- [`Command`](xref:Xamarin.Forms.Button.Command) 型別 [`System.Windows.Input.ICommand`](xref:System.Windows.Input.ICommand)
 - [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) 型別 `Object`
 
 若要使用命令介面，您會定義為目標的資料繫結`Command`的屬性`Button`來源所在的屬性類型的 ViewModel `ICommand`。 ViewModel 含有與它相關的程式碼`ICommand`按一下按鈕時執行的屬性。 您可以設定`CommandParameter`來區別多個按鈕，如果所有的任意資料繫結至相同`ICommand`在 ViewModel 的屬性。
@@ -39,7 +39,7 @@ ms.locfileid: "38996369"
 
 ## <a name="the-icommand-interface"></a>ICommand 介面
 
-<xref:System.Windows.Input.ICommand>介面不是 Xamarin.Forms 的一部分。 它改為定義於[System.Windows.Input](xref:System.Windows.Input)命名空間，而且包含兩個方法和一個事件：
+[ `System.Windows.Input.ICommand` ](xref:System.Windows.Input.ICommand)介面不是 Xamarin.Forms 的一部分。 它改為定義於[System.Windows.Input](xref:System.Windows.Input)命名空間，而且包含兩個方法和一個事件：
 
 ```csharp
 public interface ICommand
@@ -76,7 +76,7 @@ ViewModel 還必須參考實作的類別`ICommand`介面。 這個類別會短�
 
 ## <a name="the-command-class"></a>命令類別
 
-當您的 ViewModel 定義屬性的型別`ICommand`、 ViewModel 必須也包含或參考類別可實作`ICommand`介面。 這個類別必須包含或參考`Execute`並`CanExecute`方法，並引發`CanExecuteChanged`事件每當`CanExecute`方法可能會傳回不同的值。
+當您的 ViewModel 定義類型的屬性`ICommand`、 ViewModel 必須也包含或參考類別可實作`ICommand`介面。 這個類別必須包含或參考`Execute`並`CanExecute`方法，並引發`CanExecuteChanged`事件每當`CanExecute`方法可能會傳回不同的值。
 
 您可以自行撰寫這種類別，或者您可以使用其他人所撰寫的類別。 因為`ICommand`屬於 Microsoft Windows 的已使用多年來 Windows MVVM 應用程式。 使用 Windows 類別可實作`ICommand`可讓您共用您 Windows 應用程式和 Xamarin.Forms 應用程式之間的 Viewmodel。
 
@@ -285,7 +285,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 所有的邏輯**新增**，**提交**，並**取消**按鈕會在處理`PersonCollectionViewModel`透過定義`NewCommand`， `SubmitCommand`，和`CancelCommand`屬性。 建構函式`PersonCollectionViewModel`類型的物件來設定這三個屬性`Command`。  
 
-A[建構函式](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))的`Command`類別可讓您傳遞引數的型別`Action`並`Func<bool>`對應`Execute`和`CanExecute`方法。 它是最簡單的方式定義這些動作和函式為 lamda 函式直接在`Command`建構函式。 以下是定義`Command`物件`NewCommand`屬性：
+A[建構函式](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))的`Command`類別可讓您傳遞引數的型別`Action`並`Func<bool>`對應`Execute`和`CanExecute`方法。 它是最簡單的方式定義這些動作和函式做為 lambda 函式直接在`Command`建構函式。 以下是定義`Command`物件`NewCommand`屬性：
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -378,7 +378,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 `execute`函式**提交**移除屬性變更處理常式，從`PersonViewModel`，將物件加入`Persons`集合，並傳回所有項目到初始的情況。
 
-`execute`函式**取消**按鈕執行作業的所有項目所**提交**按鈕會 execept 將物件加入至集合：
+`execute`函式**取消**按鈕執行作業的所有項目，**提交**除外 按鈕加入至集合的物件：
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -693,7 +693,6 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 
 命令是實作導覽功能表，例如，在方便[**資料繫結示範**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)程式本身。 以下是部份**MainPage.xaml**:
 
-
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -763,8 +762,6 @@ public partial class MainPage : ContentPage
 設定兩者`NavigateCommand`並`BindingContext`（依任意順序） 之前呼叫`InitializeComponent`會運作，因為 XAML 剖析器遇到繫結定義時，會設定繫結的兩個元件。
 
 資料繫結有時可能需要一些技巧，但是您在這一系列的文章中所見，這些功能強大而且靈活，而且來組織您的程式碼分隔從使用者介面的基礎邏輯的大有幫助。
-
-
 
 ## <a name="related-links"></a>相關連結
 

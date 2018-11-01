@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b52f249b184d49731fd5decdb5877c70e29a3b84
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: e31cba5c61624b0bca03443262b95d7497564750
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "38998068"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675194"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms 基本繫結
 
@@ -94,7 +94,7 @@ label.SetBinding(RotationProperty, "Value");
 
 您操作`Slider`，則`Label`據以旋轉：
 
-[![繫結的程式碼 Basice](basic-bindings-images/basiccodebinding-small.png "基本程式碼繫結")](basic-bindings-images/basiccodebinding-large.png#lightbox "基本程式碼繫結")
+[![基本程式碼繫結](basic-bindings-images/basiccodebinding-small.png "基本程式碼繫結")](basic-bindings-images/basiccodebinding-large.png#lightbox "基本程式碼繫結")
 
 **基本 Xaml 繫結**是相同的頁面**基本的程式碼繫結**不同之處在於它會在 XAML 中定義的整個資料繫結：
 

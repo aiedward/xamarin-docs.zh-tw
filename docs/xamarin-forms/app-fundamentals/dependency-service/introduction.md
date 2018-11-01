@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/15/2018
-ms.openlocfilehash: 28c6daa361b7de09a0d9332b21f1b6f75e035850
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 3c8cc31c21f354b60001cefb919b51bf4d42da9f
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "38995410"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675012"
 ---
 # <a name="introduction-to-dependencyservice"></a>DependencyService 簡介
 
@@ -42,7 +42,7 @@ Xamarin.Forms 應用程式需要使用四個元件`DependencyService`:
 
 ### <a name="interface"></a>介面
 
-您在設計介面會定義您與平台專屬功能的互動。 要小心，如果您正在開發共用為元件或 Nuget 套件的元件。 API 設計的成敗封裝。 下列範例會指定簡單介面說到要讀出允許為指定文字的彈性，但會保留自訂每個平台實作的文字：
+您在設計介面會定義您與平台專屬功能的互動。 要小心，如果您正在開發共用為元件或 NuGet 套件的元件。 API 設計的成敗封裝。 下列範例會指定簡單介面說到要讀出允許為指定文字的彈性，但會保留自訂每個平台實作的文字：
 
 ```csharp
 public interface ITextToSpeech {

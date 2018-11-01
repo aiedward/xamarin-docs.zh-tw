@@ -6,12 +6,13 @@ ms.assetid: F5117294-28BB-4583-B6A0-A339B050FDE1
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 7c59b6f1ac269c57ab720aeb6999c0f0d178bab3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 04/28/2017
+ms.openlocfilehash: db24c8677b0a3099193132575e92bc43a4c31dea
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112492"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675558"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>在 Xamarin.iOS 中的國際化編碼
 

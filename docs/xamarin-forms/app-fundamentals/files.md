@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: ddffb45b8cd8d47371e4ab57f30a467cea45b27d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: e31bb46569ed96d514ec87eacaf9f3912dcf3237
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117768"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675155"
 ---
 # <a name="file-handling-in-xamarinforms"></a>在 Xamarin.Forms 中處理的檔案
 
@@ -107,7 +107,7 @@ listView.ItemsSource = monkeys;
 
 <a name="Embedding_in_Shared_Projects" />
 
-### <a name="embedding-in-shared-projects"></a>在共用專案中內嵌
+## <a name="embedding-in-shared-projects"></a>在共用專案中內嵌
 
 不過，前置詞用於共用專案的內容會編譯到參考的專案，因為內嵌檔案資源識別碼可以變更共用專案也可以做為內嵌資源，包含檔案。 這表示每個內嵌檔案的資源識別碼可能會不同，每個平台。
 

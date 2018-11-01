@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 954a0967e034e0321964e12ca0725ae2a85e3bc6
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: e9ec9288e2b8ea991ef8d41f9b601d0897631b9d
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995533"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675207"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 的觸發程序
 
@@ -85,7 +85,8 @@ ms.locfileid: "38995533"
 
 資料觸發程序來監視另一個控制項，讓使用資料繫結`Setter`來呼叫。 而不是`Property`屬性的屬性觸發程序，請設定`Binding`屬性，以監視指定的值。
 
-下列範例會使用資料繫結語法`{Binding Source={x:Reference entry}, Path=Text.Length}`也就是我們參照另一個控制項的屬性。 當長度`entry`為零，在啟動觸發程序。 在此範例中的觸發程序停用按鈕，當輸入是空的。
+下列範例會使用資料繫結語法 `{Binding Source={x:Reference entry}, Path=Text.Length}`
+這是指另一個控制項的屬性。 當長度`entry`為零，在啟動觸發程序。 在此範例中的觸發程序停用按鈕，當輸入是空的。
 
 ```xaml
 <!-- the x:Name is referenced below in DataTrigger-->
@@ -164,7 +165,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 
 共用觸發程序中的時請小心`ResourceDictionary`，將會在控制項之間共用一個執行個體，因此設定一次的任何狀態將會套用至全部。
 
-請注意，不支援事件觸發程序`EnterActions`並`ExitActions`[下述](#enterexit)。    
+請注意，不支援事件觸發程序`EnterActions`並`ExitActions`[下述](#enterexit)。
 
 <a name="multi" />
 
@@ -202,7 +203,6 @@ A`MultiTrigger`看起來類似`Trigger`或`DataTrigger`除了可以有多個條�
 
 這可以透過完成`IValueConverter`。 轉換器以下的程式碼轉換`Text.Length`繫結至`bool`，指出欄位是否為空白：
 
-
 ```csharp
 public class MultiTriggerConverter : IValueConverter
 {
@@ -234,7 +234,7 @@ public class MultiTriggerConverter : IValueConverter
 XAML 如下所示。 請注意下列差異的第一個多重觸發程序範例：
 
 * 按鈕具有`IsEnabled="false"`預設設定。
-* 多重觸發條件使用轉換器來開啟`Text.Length`成布林值的值。
+* 多重觸發條件使用轉換器來開啟`Text.Length`值貼`boolean`。
 * 在所有條件都都`true`，setter 會讓按鈕的`IsEnabled`屬性`true`。
 
 ```xaml
@@ -266,7 +266,6 @@ XAML 如下所示。 請注意下列差異的第一個多重觸發程序範例�
 
 這些螢幕擷取畫面顯示上述的兩個多重觸發程序範例之間的差異。 在畫面頂端的文字輸入中只有一個`Entry`即可啟用**儲存** 按鈕。
 在畫面底部**登入**按鈕保持非使用中，直到兩個欄位包含資料。
-
 
 ![](triggers-images/multi-requireall.png "MultiTrigger 範例")
 

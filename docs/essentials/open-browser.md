@@ -1,32 +1,36 @@
 ---
 title: Xamarin.Essentials 開啟瀏覽器
-description: 瀏覽器中的類別 Xamarin.Essentials 讓應用程式最佳化的系統慣用的瀏覽器或外部瀏覽器中開啟網頁連結。
+description: Xamarin.Essentials 中的 Browser 類別可讓應用程式在最佳化系統偏好瀏覽器或外部瀏覽器中開啟網頁連結。
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 7e58d439f5a6eaafe9b1b5e7ca874a986e468cb9
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: a68837ac4447dabcf52a1d1b27913adf80b4cbd7
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353278"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675389"
 ---
-# <a name="xamarinessentials-browser"></a>Xamarin.Essentials： 瀏覽器
+# <a name="xamarinessentials-browser"></a>Xamarin.Essentials: Browser
 
-![發行前版本的 NuGet](~/media/shared/pre-release.png)
+![發行前的 NuGet](~/media/shared/pre-release.png)
 
-**瀏覽器**類別可讓應用程式最佳化的系統慣用的瀏覽器或外部瀏覽器中開啟網頁連結。
+**Browser** 類別可讓應用程式在最佳化系統偏好瀏覽器或外部瀏覽器中開啟網頁連結。
 
-## <a name="using-browser"></a>使用瀏覽器
+## <a name="get-started"></a>開始使用
 
-在您的類別加入 Xamarin.Essentials 的參考：
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-browser"></a>使用 Browser
+
+在類別中新增對 Xamarin.Essentials 的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-瀏覽器功能的運作方式是呼叫`OpenAsync`方法`Uri`和`BrowserLaunchMode`。
+Browser 功能的運作方式是使用 `Uri` 與 `BrowserLaunchMode` 呼叫 `OpenAsync` 方法。
 
 ```csharp
 
@@ -39,37 +43,37 @@ public class BrowserTest
 }
 ```
 
-## <a name="platform-implementation-specifics"></a>平台實作的特性
+## <a name="platform-implementation-specifics"></a>平台實作特性
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-啟動模式決定如何啟動瀏覽器：
+「啟動模式」決定瀏覽器的啟動方式：
 
-## <a name="system-preferred"></a>慣用的系統
+## <a name="system-preferred"></a>系統偏好
 
-[Chrome 自訂索引標籤](https://developer.chrome.com/multidevice/android/customtabs)會嘗試使用載入的 Uri，並保留瀏覽感知。
+將嘗試使用 [Chrome 自訂索引標籤](https://developer.chrome.com/multidevice/android/customtabs)來載入 Uri 並維持瀏覽感知。
 
 ## <a name="external"></a>外部
 
-`Intent`將用來要求 Uri 會透過系統一般的瀏覽器開啟。
+將使用 `Intent` 來要求透過系統一般瀏覽器來開啟 Uri。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-## <a name="system-preferred"></a>慣用的系統
+## <a name="system-preferred"></a>系統偏好
 
-[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)用於載入 Uri，並保留瀏覽感知。
+會使用 [SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) 來載入 Uri 並維持瀏覽感知。
 
 ## <a name="external"></a>外部
 
-標準`OpenUrl`上主要的應用程式用來啟動預設瀏覽器外應用程式。
+將使用主應用程式上的標準 `OpenUrl` 來在應用程式之外啟動預設瀏覽器。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-使用者的預設瀏覽器將一律啟動不論`BrowserLaunchMode`。
+一律會啟動使用者的預設瀏覽器，不論 `BrowserLaunchMode` 為何。
 
 --------------
 
 ## <a name="api"></a>API
 
-- [瀏覽器的原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Browser)
-- [瀏覽器 API 文件](xref:Xamarin.Essentials.Browser)
+- [Browser 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Browser)
+- [Browser API 文件](xref:Xamarin.Essentials.Browser)

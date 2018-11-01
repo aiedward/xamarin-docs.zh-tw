@@ -6,12 +6,13 @@ ms.assetid: D4937080-7865-48C0-8FE5-310E90229BC3
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: e0da7dcdaa41dec244ff81a6ee6a9a9ed99c02e6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 03/18/2017
+ms.openlocfilehash: 5a4be4ff5f8c5322db2e50ba11dd81a188fbae61
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116871"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675350"
 ---
 # <a name="ios-backgrounding-walkthroughs"></a>iOS 背景逐步解說
 

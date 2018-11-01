@@ -4,14 +4,15 @@ description: 本文件描述 MonoTouch.Dialog 屬性型反映 API，其會建立
 ms.prod: xamarin
 ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
+ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: bbc49e5f830a8711e5ead90fe02113e654d5da93
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9ea31d977352c5cc9609136c74099c99c08bdc30
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107777"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675173"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>建立 Xamarin.iOS 應用程式使用反映 API
 

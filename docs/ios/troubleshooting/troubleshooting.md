@@ -7,13 +7,13 @@ ms.assetid: B50FE9BD-9E01-AE88-B178-10061E3986DA
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 05/22/0201
-ms.openlocfilehash: cd10d4469ccfe60fd5afa25275fb08b09ed693a7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 05/22/2018
+ms.openlocfilehash: 80f37e1753362ec0503b70e49a2206684c0fedb5
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106685"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675324"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>疑難排解秘訣適用於 Xamarin.iOS 
 

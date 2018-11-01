@@ -4,14 +4,15 @@ description: 本文件說明可用來建置使用 MonoTouch.Dialog Xamarin.iOS �
 ms.prod: xamarin
 ms.assetid: 59F3E18C-3A73-69B8-DA5E-21B19B9DFB98
 ms.technology: xamarin-ios
+ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: d084094ab52e317fbb42f6b8c8c553d9d6158251
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 775f378be383674e2bf90e2e8a72d82033ef0fbf
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106867"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675229"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json 標記
 

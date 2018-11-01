@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 92d0f393ff8d96ac9c0040ab7c46a364418cf956
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3cc568298ba3710f7d4f092acbb2139bebe5976b
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109610"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675285"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>可重複使用 EventToCommandBehavior
 
@@ -25,7 +25,7 @@ _行為可用來使命令無法正確命令與互動的控制項產生關聯。�
 下列的行為屬性必須設定為使用行為：
 
 - **EventName** – 事件的名稱來接聽的行為。
-- **命令**– **ICommand**執行。 若要尋找的行為必須要有`ICommand`執行個體[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)附加的控制項，可能會從父元素繼承。
+- **命令**–`ICommand`執行。 若要尋找的行為必須要有`ICommand`執行個體[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)附加的控制項，可能會從父元素繼承。
 
 也可以設定下列選擇性行為屬性：
 
