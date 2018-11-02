@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/24/2017
-ms.openlocfilehash: 7f45ea53429b30e634c99403b4159606fc616a4a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 667c98d3140d460a6d4b3a26bd898f4c169d6d85
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120108"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234878"
 ---
 # <a name="linking-xamarinios-apps"></a>連結 Xamarin.iOS 應用程式
 
@@ -53,7 +53,7 @@ ms.locfileid: "50120108"
 
 ### <a name="dont-link"></a>不要連結
 
-停用連結可確保不會有修改過的組件。 基於效能考量，這是 IDE 以 iOS 模擬器作為目標時的預設設定。 若為裝置組建，這只應作為每當連結器包含的錯誤會讓應用程式無法執行時的因應措施。 如果應用程式只能在搭配 -nolink 時運作，請提交[錯誤報告](http://bugzilla.xamarin.com)。
+停用連結可確保不會有修改過的組件。 基於效能考量，這是 IDE 以 iOS 模擬器作為目標時的預設設定。 若為裝置組建，這只應作為每當連結器包含的錯誤會讓應用程式無法執行時的因應措施。 如果應用程式只能在搭配 -nolink 時運作，請提交[錯誤報告](https://github.com/xamarin/xamarin-macios/issues/new)。
 
 此選項對應至使用命令列工具 mtouch 時的 *-nolink* 選項。
 
