@@ -429,7 +429,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 六個這些屬性的效果 (不包括`FontFamily`並`FontAttributes`) 中會示範**按鈕外觀**頁面。 另一個屬性[ `Image` ](xref:Xamarin.Forms.Button.Image)，一節所述[**點陣圖使用按鈕**](#image-button)。
 
-中的檢視和資料繫結的所有** 按鈕外觀**XAML 檔案中所定義的頁面：
+中的檢視和資料繫結的所有 **按鈕外觀** XAML 檔案中所定義的頁面：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
