@@ -1,19 +1,20 @@
 ---
 title: Xamarin.Forms Quickstart
 description: 本文說明如何建立可將使用者輸入的英數字元電話號碼轉譯成數字電話號碼，然後再撥打該號碼的應用程式。
+zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/13/2018
-ms.openlocfilehash: 7399cab611b726eb7bb72928f504086fb842fb74
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.date: 09/13/2018
+ms.openlocfilehash: fd9b3032166470a960e97f1754d2133a5ef22631
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242429"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109363"
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms Quickstart
 
@@ -21,9 +22,9 @@ ms.locfileid: "39242429"
 
 [![](quickstart-images/intro-app-examples-sml.png "Phoneword 應用程式")](quickstart-images/intro-app-examples.png#lightbox "Phoneword 應用程式")
 
-建立 Phoneword 應用程式，如下所示：
+::: zone pivot="windows"
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+## <a name="get-started-with-visual-studio"></a>Visual Studio 使用者入門
 
 1. 在 [開始] 畫面中，啟動 Visual Studio。 這樣會開啟 [開始] 頁面：
 
@@ -38,7 +39,8 @@ ms.locfileid: "39242429"
     ![](quickstart-images/vs/new-project.w157.png "跨平台專案範本")
 
     > [!NOTE]
-    > 無法將方案命名為 **Phoneword** 會導致產生許多建置錯誤。
+    > 本快速入門中的 C# 和 XAML 程式碼片段要求將解決方案命名為 **Phoneword**。
+    > 使用不同的解決方案名稱，會導致當您將這些指示中的程式碼複製到專案時，產生許多的建置錯誤。
 
 4. 在 [新增跨平台應用程式] 對話方塊中，按一下 [空白應用程式]，並選取 [.NET Standard] 作為 [程式碼共用策略]，然後按一下 [確定] 按鈕：
 
@@ -64,7 +66,7 @@ ms.locfileid: "39242429"
         <StackLayout>
           <Label Text="Enter a Phoneword:" />
           <Entry x:Name="phoneNumberText" Text="1-855-XAMARIN" />
-          <Button x:Name="translateButon" Text="Translate" Clicked="OnTranslate" />
+          <Button Text="Translate" Clicked="OnTranslate" />
           <Button x:Name="callButton" Text="Call" IsEnabled="false" Clicked="OnCall" />
         </StackLayout>
     </ContentPage>
@@ -349,105 +351,19 @@ ms.locfileid: "39242429"
 
     按下 **CTRL+S**，將變更儲存到資訊清單，然後關閉檔案。
 
-24. 在 [方案總管] 中，以滑鼠右鍵按一下 **Phoneword.UWP** 專案，然後選取 [加入] > [新項目]：
+24. 以滑鼠右鍵按一下 Android 應用程式專案，然後選擇 [設定為啟始專案]。
 
-    ![](quickstart-images/vs/add-new-item-uwp.png "加入新項目")
+25. 使用「綠色箭號」工具列按鈕執行 Android 應用程式，或從功能表選取 [偵錯] > [開始偵錯]。
 
-25. 在 [加入新項目] 對話方塊中，選取 [Visual C#] > [程式碼] > [類別]、將新檔案命名為 **PhoneDialer**，然後按一下 [新增] 按鈕：
+    > [!WARNING]
+    > 所有模擬器都不支援通話功能，因此該功能可能無法運作。
 
-    ![](quickstart-images/vs/new-phone-dialer-uwp.w157.png "加入新類別")
+26. 如果您有 iOS 裝置，而且符合 Xamarin.Forms 開發的 Mac 系統需求，請使用類似的技術將應用程式部署至 iOS 裝置。 或者，您也可以將應用程式部署至 [iOS 遠端模擬器](~/tools/ios-simulator/index.md)。
 
-26. 在 **PhoneDialer.cs** 中，移除所有範本程式碼，並取代為下列程式碼。 此程式碼會建立將在通用 Windows 平台上使用的 `Dial` 方法和 Helper 方法，才能撥打轉譯的電話號碼：
+::: zone-end
+::: zone pivot="macos"
 
-    ```csharp
-    using Phoneword.UWP;
-    using System;
-    using System.Threading.Tasks;
-    using Windows.ApplicationModel.Calls;
-    using Windows.UI.Popups;
-    using Xamarin.Forms;
-
-    [assembly: Dependency(typeof(PhoneDialer))]
-    namespace Phoneword.UWP
-    {
-        public class PhoneDialer : IDialer
-        {
-            bool dialled = false;
-
-            public bool Dial(string number)
-            {
-                DialNumber(number);
-                return dialled;
-            }
-
-            async Task DialNumber(string number)
-            {
-                var phoneLine = await GetDefaultPhoneLineAsync();
-                if (phoneLine != null)
-                {
-                    phoneLine.Dial(number, number);
-                    dialled = true;
-                }
-                else
-                {
-                    var dialog = new MessageDialog("No line found to place the call");
-                    await dialog.ShowAsync();
-                    dialled = false;
-                }
-            }
-
-            async Task<PhoneLine> GetDefaultPhoneLineAsync()
-            {
-                var phoneCallStore = await PhoneCallManager.RequestStoreAsync();
-                var lineId = await phoneCallStore.GetDefaultLineAsync();
-                return await PhoneLine.FromIdAsync(lineId);
-            }
-        }
-    }
-    ```
-
-    按下 **CTRL+S**，將變更儲存到 **PhoneDialer.cs**，然後關閉檔案。
-
-27. 在 [方案總管] 的 **Phoneword.UWP** 專案中，以滑鼠右鍵按一下 [參考]，然後選取 [加入參考]：
-
-    ![](quickstart-images/vs/uwp-add-reference.png "加入參考")
-
-28. 在 [參考管理員] 對話方塊中，選取 [通用 Windows] > [延伸模組] > [UWP 的 Windows Mobile 延伸模組]，然後按一下 [確定] 按鈕：
-
-    ![](quickstart-images/vs/uwp-add-reference-extensions.png "新增 UWP 的 Windows Mobile 延伸模組")
-
-29. 在 [方案總管] 的 **Phoneword.UWP** 專案中，按兩下 **Package.appxmanifest**：
-
-    ![](quickstart-images/vs/uwp-manifest.png "開啟 UWP 資訊清單")
-
-30. 在 [功能] 頁面上，啟用 [通話] 功能。 這可為應用程式提供撥打電話的權限：
-
-    ![](quickstart-images/vs/uwp-manifest-changed.png "啟用通話功能")
-
-    按下 **CTRL+S**，將變更儲存到資訊清單，然後關閉檔案。
-
-31. 在 Visual Studio 中，選取 [建置] > [建置方案] 功能表項目 (或按下 **CTRL+SHIFT+B**)。 系統將建置應用程式，且 Visual Studio 狀態列中將會出現成功訊息：
-
-    ![](quickstart-images/vs/build-successful.png "建置成功")
-
-    如果發生錯誤，請重複上述步驟並更正任何錯誤，直到應用程式建置成功為止。
-
-32. 在 [方案總管] 中，以滑鼠右鍵按一下 **Phoneword.UWP** 專案，然後選取 [設定為啟始專案]：
-
-    ![](quickstart-images/vs/uwp-set-as-startup-project.png "設定為啟始專案")
-
-33. 在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕) 以啟動應用程式：
-
-    ![](quickstart-images/vs/start.png "Visual Studio 工具列")
-    ![](quickstart-images/vs/phone-result-uwp.png "Phoneword 應用程式 UWP")
-
-34. 在 [方案總管] 中，以滑鼠右鍵按一下 **Phoneword.Android** 專案，然後選取 [設定為啟始專案]。
-35. 在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕) 以啟動 Android 模擬器內的應用程式。
-36. 如果您有 iOS 裝置，而且符合 Xamarin.Forms 開發的 Mac 系統需求，請使用類似的技術將應用程式部署至 iOS 裝置。 或者，您也可以將應用程式部署至 [iOS 遠端模擬器](~/tools/ios-simulator.md)。
-
-    注意：所有模擬器都不支援通話功能。
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+## <a name="get-started-with-visual-studio-for-mac"></a>Visual Studio for Mac 使用者入門
 
 1. 啟動 Visual Studio for Mac，然後在起始頁面上按一下 [新增專案] 以建立新專案：
 
@@ -466,7 +382,8 @@ ms.locfileid: "39242429"
     ![](quickstart-images/xs/configure-project.png "設定表單專案")
 
     > [!NOTE]
-    > 無法將方案和專案命名為 **Phoneword** 會導致產生許多建置錯誤。
+    > 本快速入門中的 C# 和 XAML 程式碼片段要求將解決方案命名為 **Phoneword**。
+    > 使用不同的解決方案名稱，會導致當您將這些指示中的程式碼複製到專案時，產生許多的建置錯誤。
 
 5. 在 [Solution Pad] 中，按兩下 **MainPage.xaml** 以將其開啟：
 
@@ -488,7 +405,7 @@ ms.locfileid: "39242429"
         <StackLayout>
           <Label Text="Enter a Phoneword:" />
           <Entry x:Name="phoneNumberText" Text="1-855-XAMARIN" />
-          <Button x:Name="translateButon" Text="Translate" Clicked="OnTranslate" />
+          <Button Text="Translate" Clicked="OnTranslate" />
           <Button x:Name="callButton" Text="Call" IsEnabled="false" Clicked="OnCall" />
         </StackLayout>
     </ContentPage>
@@ -792,12 +709,12 @@ ms.locfileid: "39242429"
 
     ![](quickstart-images/xs/phoneword-result-android.png "Android 模擬器")
 
-    注意：Android 模擬器不支援通話功能。
+    > [!WARNING]
+    > Android 模擬器不支援通話功能。
 
------
+::: zone-end
 
 恭喜您完成 Xamarin.Forms 應用程式。 本指南中的[下一個主題](~/xamarin-forms/get-started/hello-xamarin-forms/deepdive.md)會檢閱此逐步解說中所採取的步驟，以了解使用 Xamarin.Forms 開發應用程式的基本概念。
-
 
 ## <a name="related-links"></a>相關連結
 

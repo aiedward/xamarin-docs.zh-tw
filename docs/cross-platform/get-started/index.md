@@ -1,5 +1,5 @@
 ---
-title: 開始使用 Xamarin
+title: Xamarin 使用者入門
 description: 本文件連結各種指南，描述如何開始使用 Xamarin 開發。 連結的內容會討論如何建置第一個應用程式、提供行動應用程式開發的一般簡介，並會查看 Xamarin University 的訓練。
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
@@ -7,14 +7,14 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: 35c7605f9682bef9e93fb4f25404659662126a9d
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 3b1769dec78f65544e8996e21cb8ae003e4af198
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242023"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111326"
 ---
-# <a name="getting-started-with-xamarin"></a>開始使用 Xamarin
+# <a name="get-started-with-xamarin"></a>Xamarin 使用者入門
 
 在您開始之前，請先參閱[系統需求](requirements.md)及[安裝指示](installation/index.md)，以確認您已將一切準備就緒。
 
@@ -27,7 +27,6 @@ ms.locfileid: "39242023"
 
 - [Android 快速入門](~/android/get-started/hello-android/hello-android-quickstart.md)
 - [iOS 快速入門](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
-- [Mac 快速入門](~/mac/get-started/hello-mac.md)
 
 ## <a name="getting-started-with-mobile-development"></a>行動裝置應用程式開發快速入門
 

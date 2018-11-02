@@ -1,32 +1,30 @@
 ---
 title: Hello, Android 多重畫面：快速入門
 description: 這份兩個部分的指南會展開 Phoneword 應用程式以處理第二個畫面。 過程中，會介紹基本 Android 應用程式建置組塊，並深入剖析 Android 架構。
+zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: ED99584A-BA3B-429A-AEE5-CF3CB0116762
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 04/30/2018
-ms.openlocfilehash: d8f909ab522b5bbf08a2b666fd4f64340e60b3e5
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+author: conceptdev
+ms.author: crdun
+ms.date: 10/05/2018
+ms.openlocfilehash: 774661b36a41e4791207a54892663af13de3b3d3
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32436927"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120485"
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android 多重畫面：快速入門
 
 _這份含有兩部分的指南會擴充 Phoneword 應用程式來處理第二個畫面。在此過程中，會介紹基本 Android 應用程式建置組塊，並深入剖析 Android 架構。_
-
-## <a name="hello-android-multiscreen-quickstart"></a>Hello, Android 多重畫面：快速入門
 
 在本指南的逐步解說部分，您會在 [Phoneword](https://developer.xamarin.com/samples/monodroid/Phoneword/) 應用程式中新增第二個畫面，以便持續追蹤使用應用程式翻譯之號碼的記錄。 [最終應用程式](https://developer.xamarin.com/samples/monodroid/PhonewordMultiscreen/)將具有第二個畫面來顯示「已翻譯」的號碼，如右邉螢幕擷取畫面所示：
 
 [![範例應用程式螢幕擷取畫面](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 所附的[深入剖析](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)會檢閱建置的內容並討論架構、導覽和在過程中遇到的其他新 Android 概念。
-
 
 ## <a name="requirements"></a>需求
 
@@ -37,13 +35,13 @@ _這份含有兩部分的指南會擴充 Phoneword 應用程式來處理第二�
 
 在此逐步解說中，您將新增 [Translation History] (翻譯記錄) 畫面到 **Phoneword** 應用程式。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="windows"
 
 先在 Visual Studio 開啟 **Phoneword** 應用程式，並從方案總管編輯 **Main.axml** 檔案。
 
 ### <a name="updating-the-layout"></a>更新版面配置
 
-從 [工具箱]，將**按鈕**拖曳至設計介面，並將它放置於 **TranslatedPhoneWord** 文字檢視下方。 在 [屬性] 窗格中，將按鈕 **Id** 變更為 `@+id/TranslationHistoryButton` 
+從 [工具箱]，將**按鈕**拖曳至設計介面，並將它放置於 **TranslatedPhoneWord** 文字檢視下方。 在 [屬性] 窗格中，將按鈕 **Id** 變更為 `@+id/TranslationHistoryButton`
 
 [![拖曳新按鈕](hello-android-multiscreen-quickstart-images/vs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/vs/02-new-button.png#lightbox)
 
@@ -107,7 +105,7 @@ namespace Phoneword
 
 在此類別中，您會建立 `ListActivity`，然後以程式設計的方式填入它，因此您不需要為這個活動建立新的版面配置檔案。 這會在 [Hello, Android 多重畫面深度剖析](~/android/get-started/hello-android/hello-android-deepdive.md)中更詳細地討論。
 
-### <a name="adding-translation-history-code"></a>新增翻譯記錄程式碼
+### <a name="adding-a-list"></a>新增清單
 
 此應用程式會收集電話號碼 (使用者已在第一個畫面中翻譯)，然後將它們傳送至第二個畫面。 電話號碼會儲存為字串清單。 若要支援清單 (及稍後使用的意圖)，請將下列 `using` 指示詞新增至 **MainActivity.cs** 的頂端：
 
@@ -175,13 +173,14 @@ translateButton.Click += (sender, e) =>
 
 [![螢幕擷取畫面範例](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
 
 先在 Visual Studio for Mac 開啟 **Phoneword** 專案，並從 **Solution Pad** 編輯 **Main.axml** 檔案。
 
 ### <a name="updating-the-layout"></a>更新版面配置
 
-從 [工具箱]，將**按鈕**拖曳至設計介面，並將它放置於 **TranslatedPhoneWord** 文字檢視下方。 在 **Properties** Pad 中，將按鈕 **Id** 變更為 `@+id/TranslationHistoryButton` 
+從 [工具箱]，將**按鈕**拖曳至設計介面，並將它放置於 **TranslatedPhoneWord** 文字檢視下方。 在 **Properties** Pad 中，將按鈕**識別碼**變更為 `@+id/TranslationHistoryButton`：
 
 [![拖曳新按鈕](hello-android-multiscreen-quickstart-images/xs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/xs/02-new-button.png#lightbox)
 
@@ -189,11 +188,9 @@ translateButton.Click += (sender, e) =>
 
 [![設定翻譯記錄按鈕文字](hello-android-multiscreen-quickstart-images/xs/03-call-history-string-sml.png)](hello-android-multiscreen-quickstart-images/xs/03-call-history-string.png#lightbox)
 
-
 在 **Solution Pad** 中，展開 [資源] 資料夾下的 [值] 節點，然後連按兩下字串資源檔 **Strings.xml**：
 
 [![開啟字串](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file.png#lightbox)
-
 
 將 `translationHistory` 字串名稱和值新增至 **Strings.xml** 檔案，並加以儲存：
 
@@ -246,7 +243,7 @@ namespace Phoneword
 
 在此類別中，會建立 `ListActivity`，然後以程式設計的方式填入它，因此您不必為這個活動建立新的版面配置檔案。 這會在 [Hello, Android 多重畫面深度剖析](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)中更詳細地說明。
 
-### <a name="adding-translation-history-code"></a>新增翻譯記錄程式碼
+### <a name="adding-a-list"></a>新增清單
 
 此應用程式會收集電話號碼 (使用者已在第一個畫面中翻譯)，然後將它們傳送至第二個畫面。 電話號碼會儲存為字串清單。 若要支援清單 (及稍後使用的意圖)，請將下列 `using` 指示詞新增至 **MainActivity.cs** 的頂端：
 
@@ -309,10 +306,9 @@ translateButton.Click += (sender, e) =>
 
 [![螢幕擷取畫面範例](hello-android-multiscreen-quickstart-images/screenshot.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
------
+::: zone-end
 
 恭喜您完成第一個多重畫面的 Xamarin.Android 應用程式！ 現在是時候仔細分析您剛解到的工具與技能 &ndash; 接下來是 [Hello, Android 多重畫面深度剖析](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)。
-
 
 ## <a name="related-links"></a>相關連結
 

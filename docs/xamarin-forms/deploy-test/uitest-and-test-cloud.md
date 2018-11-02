@@ -1,18 +1,19 @@
 ---
 title: 使用 App Center 自動化 Xamarin.Forms 測試
 description: Xamarin UITest 元件可搭配 Xamarin.Forms 使用來撰寫 UI 測試，以在雲端中的數百個裝置上執行。
+zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: b674db3d-c526-4e31-a9f4-b6d6528ce7a9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/31/2016
-ms.openlocfilehash: dc43d8b5623b83be16d437e30290bc8b059be4bb
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cd46aac653d6477f3fc8240e4f193ec1c4a7bb4c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35242943"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122435"
 ---
 # <a name="automate-xamarinforms-testing-with-app-center"></a>使用 App Center 自動化 Xamarin.Forms 測試
 
@@ -76,19 +77,20 @@ Xamarin.Calabash.Start();
 Calabash 組件會使用非公用的 Apple API，這會導致 App Store 拒絕該應用程式。 但如果未在程式碼中明確參考 Calabash 組件，則 Xamarin.iOS 連結器會從最終 IPA 中移除它。
 
 > [!NOTE]
->  發行組建並未包含 `ENABLE_TEST_CLOUD` 編譯器變數，這會導致從應用程式套件組合中移除 Calabash 組件。 但偵錯組建定義了編譯器指示詞，因此連結器無法移除該組件。
+> 發行組建並未包含 `ENABLE_TEST_CLOUD` 編譯器變數，這會導致從應用程式套件組合中移除 Calabash 組件。 但偵錯組建定義了編譯器指示詞，因此連結器無法移除該組件。
 
 下列螢幕擷取畫面顯示針對偵錯組建設定的 `ENABLE_TEST_CLOUD` 編譯器變數：
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="windows"
 
 ![](uitest-and-test-cloud-images/12-compiler-directive-vs.png "組建選項")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
 
 ![](uitest-and-test-cloud-images/11-compiler-directive-xs.png "編譯器選項")
 
------
+::: zone-end
 
 ### <a name="android-application-project"></a>Android 應用程式專案
 
@@ -101,20 +103,6 @@ Calabash 組件會使用非公用的 Apple API，這會導致 App Store 拒絕�
 ### <a name="use-automationid-in-the-xamarinforms-ui"></a>在 Xamarin.Forms UI 中使用 AutomationId
 
 Xamarin.Forms 應用程式使用者介面必須處於可撰寫指令碼的狀態，才可以撰寫任何 UITest。 請確定使用者介面中的所有控制項都具有 `AutomationId`，以在測試程式碼中參考它們。
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-### <a name="adding-a-uitest-project-to-a-new-solution"></a>將 UITest 專案加入到新方案
-
-使用 Visual Studio for Mac 建立新的 Xamarin.Forms 專案時，可透過選取 [Xamarin Test Cloud: 新增自動化 UI 測試專案] 來將新的 UITest 專案加入到方案：
-
-![](uitest-and-test-cloud-images/01-new-solution-xs.png "設定新專案")
-
-系統會自動設定新的專案，以針對 Xamarin.Forms 應用程式執行 Xamarin.UITest。
-
------
 
 #### <a name="referring-to-the-automationid-in-uitests"></a>在 UITest 中參考 AutomationId
 
@@ -133,18 +121,18 @@ app.Query(c=>c.Marked("MyButton"))
 
 ### <a name="adding-a-uitest-project-to-an-existing-solution"></a>將 UITest 專案加入到現有方案
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="windows"
 
 Visual Studio 有提供範本，以協助將 Xamarin.UITest 專案加入到現有的 Xamarin.Forms 方案：
 
 1. 以滑鼠右鍵按一下方案，然後選取 [檔案] > [新增專案]。
 1. 從 [Visual C#] 範本中選取 [測試] 類別。 選取 [UI 測試應用程式] > [跨平台] 範本：
 
-    ![](uitest-and-test-cloud-images/08-new-uitest-project-vs.png "新增專案")
+    ![新增專案](uitest-and-test-cloud-images/08-new-uitest-project-vs.png "新增專案")
 
     這會將含有 **NUnit**、**Xamarin.UITest** 和 **NUnitTestAdapter** NuGet 套件的新專案加入到方案：
 
-    ![](uitest-and-test-cloud-images/09-new-uitest-project-xs.png "NuGet 套件管理員")
+    ![NuGet 套件管理員](uitest-and-test-cloud-images/09-new-uitest-project-xs.png "NuGet 套件管理員")
 
     **NUnitTestAdapter** 是可讓 Visual Studio 從 Visual Studio 執行 NUnit 測試的協力廠商測試執行器。
 
@@ -152,31 +140,32 @@ Visual Studio 有提供範本，以協助將 Xamarin.UITest 專案加入到現�
 
 1. 將來自 UITest 專案的專案參考加入到 Xamarin.Android 專案：
 
-    ![](uitest-and-test-cloud-images/10-test-apps-vs.png "專案參考管理員")
+    ![專案參考管理員](uitest-and-test-cloud-images/10-test-apps-vs.png "專案參考管理員")
 
     這可讓 **NUnitTestAdapter** 從 Visual Studio 執行適用於 Android 應用程式的 UITest。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
 
 您可手動將新的 Xamarin.UITest 專案加入到現有的方案：
 
 1. 選取方案，按一下 [檔案] > [新增專案] 以開始新增專案。 在 [新增專案] 對話方塊中，選取 [跨平台] > [測試] > [Xamarin Test Cloud] > [UI 測試應用程式]：
 
-    ![](uitest-and-test-cloud-images/02-new-uitest-project-xs.png "選擇範本")
+    ![選擇範本](uitest-and-test-cloud-images/02-new-uitest-project-xs.png "選擇範本")
 
     這會在方案中加入已具有 **NUnit** 和 **Xamarin.UITest** NuGet 套件的新專案：
 
-    ![](uitest-and-test-cloud-images/03-new-uitest-project-xs.png "Xamarin UITest NuGet 套件")
+    ![Xamarin UITest NuGet 套件](uitest-and-test-cloud-images/03-new-uitest-project-xs.png "Xamarin UITest NuGet 套件")
 
     新專案也包含兩個類別。 **AppInitializer** 包含程式碼，可協助初始化和設定測試。 另一個類別 **Tests** 包含未定案程式碼，可協助開始 UITest。
 
 1. 選取 [檢視] > [板] > [單元測試] 以顯示 [單元測試] 板。 展開 [UsingUITest] > [UsingUITest.UITests] > [測試應用程式]：
 
-    ![](uitest-and-test-cloud-images/04-unit-test-pad-xs.png "[單元測試] 板")
+    ![單元測試面板](uitest-and-test-cloud-images/04-unit-test-pad-xs.png "單元測試面板")
 
 1. 以滑鼠右鍵按一下 [測試應用程式]，按一下 [新增應用程式專案]，在出現的對話方塊中選取 iOS 和 Android 專案：
 
-    ![](uitest-and-test-cloud-images/05-add-test-apps-xs.png "[測試應用程式] 對話方塊")
+    ![測試應用程式對話方塊](uitest-and-test-cloud-images/05-add-test-apps-xs.png "測試應用程式對話方塊")
 
     [單元測試] 板現在應該有針對 iOS 和 Android 專案的參考。 這可讓 Visual Studio for Mac 測試執行器在本機針對兩個 Xamarin.Forms 專案執行 UITest。
 
@@ -186,26 +175,26 @@ Visual Studio 有提供範本，以協助將 Xamarin.UITest 專案加入到現�
 
 1. 加入 **Xamarin Test Cloud Agent** NuGet 套件。 以滑鼠右鍵按一下 [套件]，選取 [新增套件]，搜尋 **Xamarin Test Cloud Agent** 的 NuGet，並將它加入到 Xamarin.iOS 專案：
 
-    ![](uitest-and-test-cloud-images/07-add-test-cloud-agent-xs.png "新增 NuGet 套件")
+    ![新增 NuGet 套件](uitest-and-test-cloud-images/07-add-test-cloud-agent-xs.png "新增 NuGet 套件")
 
 1. 編輯 **AppDelegate** 類別的 `FinishedLaunching` 方法，以在 iOS 應用程式啟動時初始化 Xamarin Test Cloud Agent，並設定檢視的 `AutomationId` 屬性。 `FinishedLaunching` 方法應類似於下列程式碼範例：
 
 ```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 {
-        #if ENABLE_TEST_CLOUD
-        Xamarin.Calabash.Start();
-        #endif
+    #if ENABLE_TEST_CLOUD
+    Xamarin.Calabash.Start();
+    #endif
 
-        global::Xamarin.Forms.Forms.Init();
+    global::Xamarin.Forms.Forms.Init();
 
-        LoadApplication(new App());
+    LoadApplication(new App());
 
-        return base.FinishedLaunching(app, options);
+    return base.FinishedLaunching(app, options);
 }
 ```
 
------
+::: zone-end
 
 將 Xamarin.UITest 加入到 Xamarin.Forms 方案後，就可以建立 UITest，在本機執行它們，並將它們提交到 Xamarin Test Cloud。
 
@@ -214,7 +203,6 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 透過簡單的機制將 `AutomationId` 公開為測試自動化的唯一檢視識別碼，就能輕鬆使用 **Xamarin.UITest** 來測試 Xamarin.Forms 應用程式。 一旦將 UITest 專案加入到 Xamarin.Forms 方案，針對 Xamarin.Forms 應用程式撰寫和執行測試的步驟，將會和 Xamarin.Android 或 Xamarin.iOS 應用程式的步驟相同。
 
 如需如何將測試提交至 App Center 測試的相關資訊，請參閱[提交 UITest](/appcenter/test-cloud/preparing-for-upload/uitest/) \(英文\)。 如需 UITest 的詳細資訊，請參閱 [App Center 測試文件](/appcenter/test-cloud/) \(英文\)。
-
 
 ## <a name="related-links"></a>相關連結
 

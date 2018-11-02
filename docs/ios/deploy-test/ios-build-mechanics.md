@@ -4,15 +4,15 @@ description: 本指南探索如何測定應用程式的時間，以及如何使�
 ms.prod: xamarin
 ms.assetid: 06FD3940-D666-4C9E-BC3E-BBE481EF8012
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 4145368281c2967bd1311389e5e1b1432af2c9b8
-ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
+ms.openlocfilehash: 602a530e1c185ffeda2c6ac80a96f7795cec4cae
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "43780506"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104839"
 ---
 # <a name="ios-build-mechanics"></a>iOS 組建機制
 
@@ -27,7 +27,7 @@ Xamarin 建置速度也會受到各種容量和電腦功能所影響，進而影
 
 ## <a name="timing-apps"></a>對應用程式計時
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 若要在 Visual Studio for Mac 內啟用診斷 MSBuild 輸出：
 
@@ -40,7 +40,7 @@ Xamarin 建置速度也會受到各種容量和電腦功能所影響，進而影
 7. 按一下 [建置輸出] 按鈕，檢視錯誤板內的診斷輸出 ([檢視] > [板] > [錯誤])
 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 若要在 Visual Studio 內啟用診斷 MSBuild 輸出：
 
@@ -69,7 +69,7 @@ Total time: 1554 ms
 
 就技術上來說，Xamarin 工具能夠適用於任何可執行 OS X 10.10 Yosemite 或更新版本的 Mac。 不過，開發人員體驗和建置時間可能會因為 Mac 的效能而受到影響。
 
-在中斷連線的狀態下，Windows 上的 Visual Studio 只會執行 C# 編譯階段，而不會嘗試執行連結或 AOT 編譯、將應用程式封裝至 .app 套件組合或簽署應用程式套件組合  (效能瓶頸不太會出現在 C# 編譯階段)。請嘗試在 Visual Studio for Mac 中，直接於 Mac 組建主機上進行建置，以找出組建是在管線中的哪個位置變慢的。
+在中斷連線的狀態下，Windows 上的 Visual Studio 只會執行 C# 編譯階段，而不會嘗試執行連結或 AOT 編譯、將應用程式封裝至  _.app_  套件組合或簽署應用程式套件組合。 (效能瓶頸不太會出現在 C# 編譯階段)。請嘗試在 Visual Studio for Mac 中，直接於 Mac 組建主機上進行建置，以找出組建是在管線中的哪個位置變慢的。
 
 
 此外，其中一個更常見會造成速度變慢的位置是 Windows 機器和 Mac 組建主機之間的網路連線。 這可能是因為網路上有實體阻礙，例如使用無線連線，或是必須行經飽和的機器 (例如 Mac-in-the-cloud 服務)。
@@ -131,7 +131,7 @@ Apple 提供模擬器來進行 iOS 開，藉由建立一個較不受限制的程
   - 建置單一架構 (例如 ARM64) 的速度快過 FAT 二進位檔 (例如 ARMv7 + ARM64)
   - 避免在偵錯時對 PNG 檔案最佳化
   - 考慮連結所有組件。 將每個組件最佳化 
-  - 使用 `--dsym=false` 來停用偵錯符號的建立。 但請注意，停用此功能代表著您只能在建置應用程式的該部機器上將當機報告符號化，而且只能在應用程式未移除的情況下進行。
+  - 使用  `--dsym=false` 來停用偵錯符號的建立。 但請注意，停用此功能代表著您只能在建置應用程式的該部機器上將當機報告符號化，而且只能在應用程式未移除的情況下進行。
 
  
 應避免的事項如下：

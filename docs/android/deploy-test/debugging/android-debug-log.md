@@ -4,15 +4,15 @@ description: 如何使用偵錯記錄檔偵錯 Xamarin.Android 應用程式。
 ms.prod: xamarin
 ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 442606f456e6f42ee178cd93253883a1d9de52c4
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 8cf6c11675f0f3ddca0d5aea69e5e07160ef8454
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935213"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114778"
 ---
 # <a name="android-debug-log"></a>Android 偵錯記錄檔
 
@@ -33,7 +33,7 @@ ms.locfileid: "36935213"
 
 ## <a name="accessing-the-debug-log-from-visual-studio"></a>從 Visual Studio 存取偵錯記錄檔
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 若要開啟 [偵錯記錄檔] 工具，請按一下工具列上的 [裝置記錄檔 (logcat)] 圖示：
 
@@ -65,10 +65,10 @@ ms.locfileid: "36935213"
 
 [![[裝置選取器] 的位置](android-debug-log-images/vswin-02-devices-combo-sml.png)](android-debug-log-images/vswin-02-devices-combo.png#lightbox)
 
-選取裝置之後，[裝置記錄檔] 工具會自動新增來自執行中應用程式的記錄檔項目 &ndash; 這些記錄檔項目會顯示於記錄檔項目的資料表中。 在裝置之間切換會停止及啟動裝置記錄。 請注意，必須先載入 Android 專案，裝置才會出現在裝置選取器中。 若裝置沒有出現在裝置選取器中，請確認該裝置是否有出現在位於 [啟動] 按鈕旁邊的 Visual Studio 裝置下拉式功能表中。
+選取裝置之後，[裝置記錄] 工具會自動新增來自執行中應用程式的記錄項目 &ndash; 這些記錄項目會顯示於記錄項目的資料表中。 在裝置之間切換會停止及啟動裝置記錄。 請注意，必須先載入 Android 專案，裝置才會出現在裝置選取器中。 若裝置沒有出現在裝置選取器中，請確認該裝置是否有出現在位於 [啟動] 按鈕旁邊的 Visual Studio 裝置下拉式功能表中。
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 若要開啟 [裝置記錄檔]，請按一下 [檢視] > [面板] > [裝置記錄檔]：
 
@@ -100,14 +100,14 @@ ms.locfileid: "36935213"
 
 [![[裝置選取器] 的位置](android-debug-log-images/vsmac-02-devices-combo-sml.png)](android-debug-log-images/vsmac-02-devices-combo.png#lightbox)
 
-選取裝置之後，[裝置記錄檔] 工具會自動新增來自執行中應用程式的記錄檔項目 &ndash; 這些記錄檔項目會顯示於記錄檔項目的資料表中。 在裝置之間切換會停止及啟動裝置記錄。 請注意，必須先載入 Android 專案，裝置才會出現在裝置選取器中。 若裝置沒有出現在裝置選取器中，請確認該裝置是否有出現在位於 [啟動] 按鈕旁邊的 Visual Studio 裝置下拉式功能表中。
+選取裝置之後，[裝置記錄] 工具會自動新增來自執行中應用程式的記錄項目 &ndash; 這些記錄項目會顯示於記錄項目的資料表中。 在裝置之間切換會停止及啟動裝置記錄。 請注意，必須先載入 Android 專案，裝置才會出現在裝置選取器中。 若裝置沒有出現在裝置選取器中，請確認該裝置是否有出現在位於 [啟動] 按鈕旁邊的 Visual Studio 裝置下拉式功能表中。
 
 -----
 
 
 ## <a name="accessing-from-the-command-line"></a>從命令列存取
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 另一個檢視偵錯記錄檔的方式是透過命令列。 開啟命令提示字元視窗，並瀏覽至 Android SDK 平台工具資料夾 (SDK 平台工具資料夾通常位於 **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools**)。
 
@@ -117,7 +117,7 @@ ms.locfileid: "36935213"
 $ adb logcat
 ```
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 另一個檢視偵錯記錄檔的方式是透過命令列。 開啟終端機視窗，並瀏覽至 Android SDK 平台工具資料夾 (SDK 平台工具資料夾通常位於 **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/platform-tools**)。
 

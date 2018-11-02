@@ -4,15 +4,15 @@ description: 本文件說明在 Xamarin.iOS 應用程式中用來改善效能和
 ms.prod: xamarin
 ms.assetid: 02b1f628-52d9-49de-8479-f2696546ca3f
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: 40a2acf28819279b2a0d5c1d50c651a79b455465
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.openlocfilehash: caf35ab601d20e1cb235ab9ebb131e6dffc614fc
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514459"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108871"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS 效能
 
@@ -101,7 +101,9 @@ container.AddSubview (new MyView (container));
 
 在此，所包含的物件不讓父項保持運作。 但是，父項透過對 `container.AddSubView` 的呼叫保持子項運作。
 
-這也會發生在使用委派或資料來源模式的 iOS API 中，其中對等類別將包含實作，例如，當在 [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) 類別中設定 [`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/) 屬性或 [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/) 時。
+這也會發生在使用委派或資料來源模式的 iOS API 中，其中對等類別將包含實作；例如，當在 [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) 類別中設定 [`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/)
+屬性或 [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/)
+時。
 
 在類別純粹是為了實作通訊協定而建立的情況下 (例如 [`IUITableViewDataSource`](https://developer.xamarin.com/api/type/MonoTouch.UIKit.IUITableViewDataSource/))，您可以僅實作類別中的介面並覆寫方法，然後將 `DataSource` 屬性指派給 `this`，而非建立子類別。
 

@@ -3,15 +3,15 @@ title: 建置流程
 ms.prod: xamarin
 ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2018
-ms.openlocfilehash: bf8dfb43115806f28935c6dec0ebd2d6d7bd2cdc
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 63e86ef89c8d736640e7677fee6147feacc87bdc
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998234"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108921"
 ---
 # <a name="build-process"></a>建置流程
 
@@ -327,7 +327,8 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
     一些範例，如果 `abi` 是 `armeabi` 且資訊清單中的 `versionCode` 是 `123`，則在 `$(AndroidCreatePackagePerAbi)` 為 True 時，`{abi}{versionCode}` 會產生 `1123` 的 versionCode，否則會產生 123 的值。
     如果 `abi` 是 `x86_64` 且資訊清單中的 `versionCode` 是 `44`。 當 `$(AndroidCreatePackagePerAbi)` 為 True 時，這會產生 `544`，否則會產生 `44` 的值。
 
-    如果我們納入左側填補格式字串 `{abi}{versionCode:0000}`，它會產生 `50044`，因為我們會在 `versionCode` 左側填補 `0`。 或者，您也可以使用小數點填補 (例如 `{abi}{versionCode:D4}`)，其作用與上一個範例相同。
+    如果我們納入左側填補格式字串 `{abi}{versionCode:0000}`，它會產生 `50044`，因為我們會在 `versionCode` 左側填補 `0`。 或者，您也可以使用小數點填補 (例如 `{abi}{versionCode:D4}`)，
+    其作用與上一個範例相同。
 
     值必須是整數，因此僅支援 '0' 和 'Dx' 填補格式字串。
     

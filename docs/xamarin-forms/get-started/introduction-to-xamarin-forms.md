@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/25/2018
 ms.openlocfilehash: c5d2f93c8cb97c50f9d35d9ad91adf4c6437a3db
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.sourcegitcommit: 650fd5813e243d67eea13c4bc76683c0f8134123
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
+ms.lasthandoff: 11/01/2018
 ms.locfileid: "38999009"
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Xamarin.Forms 簡介
 
-Xamarin.Forms 是一個架構，可讓開發人員建置適用於 Android、iOS 與 Windows 的跨平台應用程式。程式碼與使用者介面定義會跨平台共用，但會以原生控制項轉譯。此文章介紹 Xamarin.Forms 並說明如何開始在 Visual Studio 中使用 C# 與 XAML 來撰寫應用程式。
+Xamarin.Forms 是一個架構，可讓開發人員建置適用於 Android、iOS 與 Windows 的跨平台應用程式。程式碼與使用者介面定義會跨平台共用，但會以原生控制項轉譯。此文章介紹 Xamarin.Forms 並說明如何開始在 Visual Studio 中使用 C# 與 XAML 來撰寫應用程式。_
 
 Xamarin.Forms 應用程式使用 [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md) 專案來包含共用程式碼，並使用不同的應用程式專案來取用共用程式碼並建置每個平台所需的輸出。 當您建立新的 Xamarin.Forms 應用程式時，該方案將會包含共用程式碼專案 (包含 C# 與 XAML 檔案)，加上平台特定專案，如下列螢幕擷取畫面所示：
 

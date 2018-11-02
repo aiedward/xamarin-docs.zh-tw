@@ -1,22 +1,22 @@
 ---
 title: Android Emulator 安裝
-description: Android Emulator 模擬器可在各種不同組態中執行，以模擬不同裝置。 本指南說明如何準備 Android 模擬器來測試您的應用程式。
+description: Android Emulator 可在各種不同組態中執行，以模擬不同裝置。 本指南說明如何準備 Android Emulator 來測試您的應用程式。
 ms.prod: xamarin
 ms.assetid: 889963B7-F4DA-41D9-9B8D-B733BB71A329
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 06/22/2018
-ms.openlocfilehash: f281227ae6ee17548e9c4653d52c7ae6d2bfff2d
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+author: conceptdev
+ms.author: crdun
+ms.date: 08/27/2018
+ms.openlocfilehash: 6ce8f633cdc0fd4616673eb047d640a8703b3a30
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935031"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102525"
 ---
 # <a name="android-emulator-setup"></a>Android Emulator 安裝
 
-_本指南說明如何準備 Android Emulator 來測試您的應用程式。_
+本指南說明如何準備 Android Emulator 來測試您的應用程式。
 
 
 ## <a name="overview"></a>總覽
@@ -29,8 +29,7 @@ Android Emulator 可在各種不同組態中執行，以模擬不同裝置。 �
 
 ### <a name="hardware-acceleration-for-emulator-performanceandroidget-startedinstallationandroid-emulatorhardware-accelerationmd"></a>[硬體加速以提升模擬器效能](~/android/get-started/installation/android-emulator/hardware-acceleration.md)
 
-如何準備您的電腦以達到最大的 Android 模擬器效能。
-由於 Android Emulator 在沒有硬體加速的情況下可能非常緩慢，因此建議您先在電腦上啟用硬體加速，再使用此模擬器。
+如何使用 HYPER-V 或 HAXM 虛擬化技術來準備電腦，以達到最大的 Android Emulator 效能。 由於 Android Emulator 在沒有硬體加速的情況下可能非常緩慢，因此建議您先在電腦上啟用硬體加速，再使用此模擬器。
 
 ### <a name="managing-virtual-devices-with-the-android-device-managerandroidget-startedinstallationandroid-emulatordevice-managermd"></a>[使用 Android Device Manager 管理虛擬裝置](~/android/get-started/installation/android-emulator/device-manager.md)
 

@@ -1,31 +1,30 @@
 ---
-title: Xamarin.iOS 中的使用權利
+title: 使用 Xamarin.iOS 中的權利
 description: 權利是特殊的應用程式功能和安全性權限，其授與對象是已正確設定來使用這些功能和權限的應用程式。
 ms.prod: xamarin
 ms.assetid: 8A3961A2-02AB-4228-A41D-06CB4108D9D0
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 03/15/2017
-ms.openlocfilehash: 7e5ace306b580ba76986e89367de84e5bfd9cc40
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.date: 08/13/2018
+ms.openlocfilehash: 6e45f87b3c64abb9de22e09150935e3e5065fea4
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785300"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103409"
 ---
-# <a name="working-with-entitlements-in-xamarinios"></a>Xamarin.iOS 中的使用權利
+# <a name="working-with-entitlements-in-xamarinios"></a>使用 Xamarin.iOS 中的權利
 
 _權利是特殊的應用程式功能和安全性權限，其授與對象是已正確設定來使用這些功能和權限的應用程式。_
 
 在 iOS 中，應用程式會在「沙箱」中執行，沙箱會提供一組規則，可限制應用程式與特定系統資源或使用者資料之間的存取權。 「權利」可用來要求系統擴充沙箱，以便為您的應用程式提供額外的功能。
 
-若要延伸您應用程式的功能，必須在應用程式的 Entitlements.plist 檔案中提供權利。 您只能延伸特定功能，這些功能都列在[使用功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南中，並且會在[下方](#keyreference)提供說明。 權利會以成對的「機碼/值」形式傳遞給系統，且通常每個功能只需要一對。 特定的「機碼」和「值」會在本指南稍後的[權利機碼參考](#keyreference)一節中說明。
+若要延伸您應用程式的功能，必須在應用程式的 Entitlements.plist 檔案中提供權利。 您只能延伸特定功能，這些功能都列在[使用功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南中，並且會在[下方](#entitlement-key-reference)提供說明。 權利會以成對的「機碼/值」形式傳遞給系統，且通常每個功能只需要一對。 特定「機碼」和「值」會在本指南稍後的[權利機碼參考](#entitlement-key-reference)一節中描述。
 Visual Studio for Mac 和 Visual Studio 提供一個清楚的介面，可透過 Entitlements.plist 編輯器在 Xamarin.iOS 應用程式中新增權利。
 本指南將介紹 Entitlements.plist 編輯器及其用法。 此外，本指南也提供可針對每項功能新增至 iOS 專案中的所有權利參考。
 
 ## <a name="entitlements-and-provisioning"></a>權利和佈建
-
 
 Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式套件組合。
 
@@ -38,7 +37,7 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 
 定義「應用程式識別碼」時，除了選取並設定必要的應用程式服務之外，也必須藉由編輯 **Info.plist** 和 **Entitlements.plist** 檔案，在 Xamarin.iOS 專案中設定權利。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 若要在 Visual Studio for Mac 中設定權利，請執行下列動作：
 
@@ -55,7 +54,7 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 5. 選取並設定 Xamarin.iOS 應用程式所需的一切權利，使其與建立「應用程式識別碼」時所定義的設定相符。
 6. 儲存對 **Entitlements.plist** 檔案所做的變更。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 若要在 Visual Studio 中設定權利，請執行下列動作：
 
@@ -74,10 +73,7 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 5. 選取並設定 Xamarin.iOS 應用程式所需的一切權利，使其與建立「應用程式識別碼」時所定義的設定相符。
 6. 儲存對 **Entitlements.plist** 檔案所做的變更。
 
-
 -----
-
-<a name="add-new" />
 
 ## <a name="adding-a-new-entitlementsplist-file"></a>新增 Entitlements.plist 檔案
 
@@ -91,8 +87,6 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 2.  在 [新增檔案] 對話方塊中，選取 [iOS] > [屬性清單]，然後將它命名為 Entitlements：
 
     ![[新增檔案] 對話方塊](entitlements-images/image2.png)
-
-<a name="keyreference" />
 
 ## <a name="entitlement-key-reference"></a>權利機碼參考
 
@@ -150,11 +144,11 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 ### <a name="push-notifications"></a>推播通知
 
 - **機碼**：aps-environment
-- **字串**：`production` 或 `development`
+- **字串**：`development` 或 `production`
 
 ### <a name="siri"></a>Siri
 
-- **描述**：SiriKit 可讓 iOS 應用程式使用「應用程式擴充功能」(App Extensions) 及新的「意圖和意圖」(Intents and Intents) UI 架構，提供 iOS 裝置上 Siri 和「地圖」應用程式可存取的服務。 如需詳細資訊，請參閱《SiriKit 簡介》指南。
+- **描述**：SiriKit 可讓 iOS 應用程式使用 App 延伸模組及新的「意圖和意圖 UI」架構，提供 iOS 裝置上 Siri 和「地圖」應用程式可存取的服務。 如需詳細資訊，請參閱《SiriKit 簡介》指南。
     - **機碼**：com.apple.developer.siri
 
 ### <a name="personal-vpn"></a>個人 VPN
@@ -203,6 +197,12 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 - **描述**：使用「無線配件組態」可讓您的應用程式設定 Wi-Fi 配件
     - **機碼**：com.apple.external-accessory.wireless-configuration
     - **布林值**：YES
+
+### <a name="classkit"></a>ClassKit
+
+- **描述**：ClassKit 可讓教師在應用程式中檢視學生的指派活動進度。
+    - **機碼**：com.apple.developer.ClassKit-environment
+    - **字串**：`development` 或 `production`
 
 ## <a name="summary"></a>總結
 

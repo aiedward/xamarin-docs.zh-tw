@@ -4,15 +4,15 @@ description: 本文件描述 Xamarin.iOS 連結器，它可用來消除 Xamarin.
 ms.prod: xamarin
 ms.assetid: 3A4B2178-F264-0E93-16D1-8C63C940B2F9
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/24/2017
-ms.openlocfilehash: 4bcfc821359e74b34dc2ee11419e8ee86f8cccee
-ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
+ms.openlocfilehash: 7f45ea53429b30e634c99403b4159606fc616a4a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36321453"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120108"
 ---
 # <a name="linking-xamarinios-apps"></a>連結 Xamarin.iOS 應用程式
 
@@ -26,13 +26,13 @@ ms.locfileid: "36321453"
 
 ## <a name="linker-behavior"></a>連結器行為
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 您可以透過 [專案選項] 中的 [連結器行為] 下拉式清單自訂連結程序。 若要存取此清單，請對 iOS 專案按兩下，然後瀏覽至 [iOS 組建] > [連結器選項]，如下所示：
 
 [![](linker-images/image1.png "連結器選項")](linker-images/image1.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 您可以在 Visual Studio 中，透過 [專案屬性] 中的 [連結器行為] 下拉式清單自訂連結程序。
 
@@ -55,7 +55,7 @@ ms.locfileid: "36321453"
 
 停用連結可確保不會有修改過的組件。 基於效能考量，這是 IDE 以 iOS 模擬器作為目標時的預設設定。 若為裝置組建，這只應作為每當連結器包含的錯誤會讓應用程式無法執行時的因應措施。 如果應用程式只能在搭配 -nolink 時運作，請提交[錯誤報告](http://bugzilla.xamarin.com)。
 
-此選項對應至使用命令列工具 mtouch 時的 -nolink 選項。
+此選項對應至使用命令列工具 mtouch 時的 *-nolink* 選項。
 
 <a name="Link_SDK_assemblies_only" />
 

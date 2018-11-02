@@ -5,15 +5,15 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: c866e5f4-8154-4342-876e-efa0693d66f5
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 12/02/2016
-ms.openlocfilehash: eaf77dd68895a3fbf677e1d0aa68125d81d709c1
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: d698cd1511e82116180a8af46891973f5f90343b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111221"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118964"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS 多重畫面 – 深度剖析
 
@@ -21,8 +21,6 @@ ms.locfileid: "39111221"
 
 在本指南中，我們將介紹「模型、檢視、控制器 (MVC)」模式及其在 iOS 架構與瀏覽中所扮演的角色。
 接著會深入剖析瀏覽控制器，並了解如何使用它，在 iOS 中提供熟悉的瀏覽體驗。
-
-<a name="Model_View_Controller" />
 
 ## <a name="model-view-controller-mvc"></a>模型檢視控制器 (MVC)
 
@@ -62,13 +60,13 @@ MVC 完全不知道模型的「資料持續性」和「存取」。 換句話說
 
 控制器物件是將一切連接在一起的元件，在 iOS 中透過 `UIViewController` 來呈現。 我們可以將控制器想像為一個畫面或一組檢視的支援程式碼。 控制器負責接聽來自使用者的要求，並傳回適當的檢視階層。 它會接聽來自檢視 (按鈕按一下、文字輸入等) 的要求，並執行適當的處理、檢視修改，以及重新載入檢視。 控制器也會負責從支援的資料存放區存在於應用程式的地方建立或擷取模型，並使用它的資料填入檢視。
 
-控制器也可以管理其他控制器。 例如，如果一個控制器需要顯示不同畫面，則它可能會載入另一個控制器，或者管理控制器的堆疊來監視它們的順序及其之間的轉換。 在下一節中，我們將查看一個控制器範例，此控制器會在我們引進一種特殊類型的 iOS 檢視控制器 (名為「瀏覽控制器」) 時管理其他控制器。
+控制器也可以管理其他控制器。 例如，如果一個控制器需要顯示不同畫面，則它可能會載入另一個控制器，或者管理控制器的堆疊來監視它們的順序及其之間的轉換。 在下一節中，我們將查看一個控制器範例，此控制器會在我們引進一種特殊類型的 iOS 檢視控制器 (稱為「瀏覽控制器」) 時管理其他控制器。
 
 ## <a name="navigation-controller"></a>瀏覽控制器
 
 在 Phoneword 應用程式中，我們使用「瀏覽控制器」來協助管理多個畫面之間的瀏覽。 瀏覽控制器是由 `UINavigationController` 類別所表示的特製化 `UIViewController`。 瀏覽控制器不會管理單一內容檢視階層，而是會管理其他檢視控制器，並以瀏覽工具列形式來管理它自己特殊的內容檢視階層，工具列中包括標題、[上一頁] 按鈕及其他選擇性功能。
 
-瀏覽控制器在 iOS 應用程式中很常見，可提供常見 iOS 應用程式 (例如**設定**應用程式) 的瀏覽，如下列螢幕擷取畫面所示：
+瀏覽控制器在 iOS 應用程式中很常見，可提供常見 iOS 應用程式 (例如 [設定] 應用程式) 的瀏覽，如下列螢幕擷取畫面所示：
 
  [![](hello-ios-multiscreen-deepdive-images/01.png "如此圖所示，瀏覽控制器提供 iOS 應用程式 (例如 [設定] 應用程式) 的瀏覽")](hello-ios-multiscreen-deepdive-images/01.png#lightbox)
 
@@ -79,7 +77,7 @@ MVC 完全不知道模型的「資料持續性」和「存取」。 換句話說
     [![](hello-ios-multiscreen-deepdive-images/02.png "此圖以一疊卡片來說明導覽")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
 
--  **選擇性地提供 [上一頁] 按鈕**：當我們將新的項目推送至瀏覽堆疊時，標題列可以自動顯示「[上一頁] 按鈕」，讓使用者能夠向後瀏覽。 按 [上一頁] 按鈕即會從瀏覽堆疊中「快顯」取出目前的檢視控制器，並將上一個內容檢視階層載入到視窗：  
+-  **選擇性地提供 [上一頁] 按鈕**：當我們將新的項目推送至瀏覽堆疊時，標題列可以自動顯示「[上一頁] 按鈕」，讓使用者能夠向後瀏覽。 按 [上一頁] 按鈕即會從瀏覽堆疊中「快顯」目前的檢視控制器，並將上一個內容檢視階層載入到視窗：  
 
     [![](hello-ios-multiscreen-deepdive-images/03.png "此圖說明如何從堆疊中取出卡片")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
@@ -90,18 +88,18 @@ MVC 完全不知道模型的「資料持續性」和「存取」。 換句話說
 
 ### <a name="root-view-controller"></a>根檢視控制器
 
-瀏覽控制器不會管理內容檢視階層，因此，其本身沒有什麼可以顯示。
+瀏覽控制器不會管理內容檢視階層；因此，其本身沒有什麼可以顯示。
 瀏覽控制器會改為與「根檢視控制器」配對：
 
  [![](hello-ios-multiscreen-deepdive-images/05.png "瀏覽控制器會與根檢視控制器配對")](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
 
-根檢視控制器代表瀏覽控制器堆疊中的第一個檢視控制器，而根檢視控制器的內容檢視階層則是第一個要載入到視窗的內容檢視階層。 如果想要將整個應用程式放置於瀏覽控制器的堆疊上，可將無來源的 Segue 移到瀏覽控制器，並將第一個畫面的檢視控制器設定為根檢視控制器，就像我們在 Phoneword 應用程式中所做的：
+根檢視控制器代表瀏覽控制器堆疊中的第一個檢視控制器，而根檢視控制器的內容檢視階層則是第一個要載入到視窗的內容檢視階層。 如果想要將整個應用程式放置於瀏覽控制器的堆疊上，可將無來源的 Segue 移到瀏覽控制器，並將第一個畫面的檢視控制器設定為根檢視控制器，如同我們在 Phoneword 應用程式中所做：
 
  [![](hello-ios-multiscreen-deepdive-images/06.png "無來源的 Segue 會將第一個畫面的檢視控制器設定為根檢視控制器")](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
 
 ### <a name="additional-navigation-options"></a>其他瀏覽選項
 
-瀏覽控制器是在 iOS 中處理瀏覽的常見方式，但不是唯一選項。 例如，[索引標籤列控制器](~/ios/user-interface/controls/creating-tabbed-applications.md)可以將應用程式分割成不同的功能區域，而[分割檢視控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/split_view/use_split_view_to_show_two_controllers)可用來建立主要/詳細資料檢視。 將瀏覽控制器與這些其他的瀏覽架構相結合，便可以彈性地在 iOS 中呈現和瀏覽內容。
+瀏覽控制器是在 iOS 中處理瀏覽的常見方式，但不是唯一選項。 例如，[索引標籤列控制器](~/ios/user-interface/controls/creating-tabbed-applications.md)可以將應用程式分割成不同的功能區域，而[分割檢視控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/split_view/use_split_view_to_show_two_controllers)可用來建立主要/詳細資料檢視。 將瀏覽控制器與這些其他的瀏覽架構相結合，便可以彈性地在 iOS 中呈現和巡覽內容。
 
 ## <a name="handling-transitions"></a>處理轉換
 
@@ -109,7 +107,7 @@ MVC 完全不知道模型的「資料持續性」和「存取」。 換句話說
 
 ### <a name="prepareforsegue"></a>PrepareForSegue
 
-當我們將具有**顯示**動作的 Segue 新增到分鏡腳本時，會指示 iOS 將第二個檢視控制器推送至瀏覽控制器的堆疊：
+當我們將具有**顯示**動作的 Segue 新增至分鏡腳本時，會指示 iOS 將第二個檢視控制器推送至瀏覽控制器的堆疊：
 
  [![](hello-ios-multiscreen-deepdive-images/09.png "從下拉式清單設定 Segue 類型")](hello-ios-multiscreen-deepdive-images/09.png#lightbox)
 
@@ -154,7 +152,7 @@ public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
 ### <a name="navigation-without-segues"></a>不使用 Segue 進行瀏覽
 
 在程式碼中從第一個檢視控制器轉換到第二個的程序，與使用 Segue 的程序相同，但必須手動完成幾個步驟。
-首先，使用 `this.NavigationController` 來取得目前所在堆疊之瀏覽控制器的參考。 然後，使用瀏覽控制器的 `PushViewController` 方法，將下一個檢視控制器手動推送至堆疊，傳入檢視控制器並選擇以動畫顯示轉換 (我們將此項目設定為 `true`)。
+首先，使用 `this.NavigationController` 來取得目前所在堆疊的瀏覽控制器參考。 然後，使用瀏覽控制器的 `PushViewController` 方法，將下一個檢視控制器手動推送至堆疊，傳入檢視控制器並選擇以動畫顯示轉換 (我們將此項目設定為 `true`)。
 
 下列程式碼會處理從 Phoneword 畫面到通話記錄畫面的轉換：
 
@@ -193,15 +191,15 @@ CallHistoryButton.TouchUpInside += (object sender, EventArgs e) => {
 
 Phoneword 應用程式引入本指南未涵蓋的數個概念。 這些概念包括：
 
--  **自動建立檢視控制器**：當我們在 [Properties Pad] 中輸入檢視控制器的類別名稱時，iOS 設計工具會檢查該類別是否存在，接著為我們產生檢視控制器支援類別。 如需此功能與其他 iOS 設計工具功能的詳細資訊，請參閱 [iOS 設計工具簡介](~/ios/user-interface/designer/introduction.md)指南。
--  **資料表檢視控制器**：`CallHistoryController` 是一個資料表檢視控制器。 資料表檢視控制器包含資料表檢視，這是 iOS 中最常見的版面配置與資料顯示工具。 資料表已超出本指南的範圍。 如需有關資料表檢視控制器的詳細資訊，請參閱[使用資料表和資料格](~/ios/user-interface/controls/tables/index.md)指南。
--   **分鏡腳本識別碼**：設定分鏡腳本識別碼會在 Objective-C 中建立檢視控制器類別，其中包含適用於分鏡腳本中之檢視控制器的程式碼後置。 我們使用分鏡腳本識別碼來尋找 Objective-C 類別，並將分鏡腳本中的檢視控制器具現化。 如需有關分鏡腳本識別碼的詳細資訊，請參閱[分鏡腳本簡介](~/ios/user-interface/storyboards/index.md)指南。
+-  **自動建立檢視控制器**：當我們在 **Properties Pad** 中輸入檢視控制器的類別名稱時，iOS 設計工具會檢查該類別是否存在，然後為我們產生檢視控制器支援類別。 如需此功能與其他 iOS 設計工具功能的詳細資訊，請參閱 [iOS 設計工具簡介](~/ios/user-interface/designer/introduction.md)指南。
+-  **資料表檢視控制器**：`CallHistoryController` 是一個資料表檢視控制器。 資料表檢視控制器包含資料表檢視，這是 iOS 中最常見的版面配置與資料顯示工具。 資料表已超出本指南的範圍。 如需資料表檢視控制器的詳細資訊，請參閱[使用資料表和資料格](~/ios/user-interface/controls/tables/index.md)指南。
+-   **分鏡腳本識別碼**：設定分鏡腳本識別碼會在 Objective-C 中建立檢視控制器類別，其中包含適用於分鏡腳本中檢視控制器的程式碼後置。 我們使用分鏡腳本識別碼來尋找 Objective-C 類別，並將分鏡腳本中的檢視控制器具現化。 如需有關分鏡腳本識別碼的詳細資訊，請參閱[分鏡腳本簡介](~/ios/user-interface/storyboards/index.md)指南。
 
 ## <a name="summary"></a>總結
 
 恭喜您完成第一個多重畫面的 iOS 應用程式！
 
-在本指南中，我們導入了 MVC 模式，並使用它來建立一個多重畫面的應用程式。 我們也探索了巡覽控制器，以及它們在提供 iOS 瀏覽功能中所扮演的角色。 現在您已經具備可開始開發自己的 Xamarin.iOS 應用程式的穩固基礎。
+在本指南中，我們導入了 MVC 模式，並使用它來建立一個多重畫面的應用程式。 我們也探索了瀏覽控制器，以及它們在提供 iOS 瀏覽功能中所扮演的角色。 現在您已經具備可開始開發自己的 Xamarin.iOS 應用程式的穩固基礎。
 
 接下來，讓我們利用[行動應用程式開發簡介](~/cross-platform/get-started/introduction-to-mobile-development.md)和[建置跨平台應用程式](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)指南，以了解如何使用 Xamarin 來建置跨平台應用程式。
 

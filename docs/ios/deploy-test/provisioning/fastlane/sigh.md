@@ -4,17 +4,17 @@ description: 本文件描述 fastlane 的 sigh 命令，它用來建立、更新
 ms.prod: xamarin
 ms.assetid: CD17276F-2C8C-4A46-A54C-DD532EBD5720
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 8eedc86807035887cade48c42868649b362b7cb2
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 88cc4899956b03d7236d7aa5c2bd30a5f6880507
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785498"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119510"
 ---
-# <a name="fastlane-for-ios--sigh"></a>適用於 iOS 的 fastlane - sigh
+# <a name="fastlane-for-ios-sigh"></a>適用於 iOS 的 fastlane - sigh
 
 > [!IMPORTANT]
 > fastlane 建議使用 [`match`](~/ios/deploy-test/provisioning/fastlane/match.md) 來產生和維護您的佈建設定檔。 請只在您想要擁有完整控制權，且具備充分程式碼簽署知識的情況下，才直接使用 sigh。

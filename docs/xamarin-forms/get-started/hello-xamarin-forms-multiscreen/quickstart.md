@@ -1,18 +1,19 @@
 ---
 title: Xamarin.Forms 多重畫面快速入門
 description: 本文會說明如何新增另一個畫面來延伸 Phoneword 應用程式，以追蹤應用程式的通話記錄。
+zone_pivot_groups: platform
 ms.prod: quickstart
 ms.assetid: 255d93b9-518c-4e5d-a9cd-4dd8a7945a7f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: a4e27f1810a16b5d13838d2e2c1067950586fab3
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 957c3e0d3b0637c8b536d920a05397bc711dfb7d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996177"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123475"
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Xamarin.Forms 多重畫面快速入門
 
@@ -20,9 +21,9 @@ ms.locfileid: "38996177"
 
 [![](quickstart-images/intro-app-examples-sml.png "Phoneword 應用程式")](quickstart-images/intro-app-examples.png#lightbox "Phoneword 應用程式")
 
-延伸 Phoneword 應用程式，如下所示：
+::: zone pivot="windows"
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+## <a name="update-the-app-with-visual-studio"></a>使用 Visual Studio 更新應用程式
 
 1. 啟動 Visual Studio。 在起始頁面上，按一下 [開啟專案]，然後在 [開啟專案] 對話方塊中，選取適用於 Phoneword 專案的方案檔：
 
@@ -160,11 +161,15 @@ ms.locfileid: "38996177"
 
 13. 在 [方案總管] 中，以滑鼠右鍵按一下 **Phoneword.Droid** 專案，然後選取 [設定為啟始專案]。
 14. 在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕) 以啟動 Android 模擬器內的應用程式。
-15. 如果您有 iOS 裝置，而且符合 Xamarin.Forms 開發的 Mac 系統需求，請使用類似的技術將應用程式部署至 iOS 裝置。 或者，您也可以將應用程式部署至 [iOS 遠端模擬器](~/tools/ios-simulator.md)。
+15. 如果您有 iOS 裝置，而且符合 Xamarin.Forms 開發的 Mac 系統需求，請使用類似的技術將應用程式部署至 iOS 裝置。 或者，您也可以將應用程式部署至 [iOS 遠端模擬器](~/tools/ios-simulator/index.md)。
 
-    注意：所有模擬器都不支援通話功能。
+    > [!NOTE]
+    > 裝置模擬器不支援通話功能。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
+
+## <a name="update-the-app-with-visual-studio-for-mac"></a>使用 Visual Studio for Mac 更新應用程式
 
 1. 啟動 Visual Studio for Mac。 在起始頁面上，按一下 [開啟]，然後在對話方塊中，選取適用於 Phoneword 專案的方案檔：
 
@@ -314,12 +319,12 @@ ms.locfileid: "38996177"
 
     ![](quickstart-images/xs/phone-result-android.png "Android 模擬器")
 
-    注意：Android 模擬器不支援通話功能。
+    > [!NOTE]
+    > 裝置模擬器不支援通話功能。
 
------
+::: zone-end
 
 恭喜您完成多重畫面的 Xamarin.Forms 應用程式。 本指南中的[下一個主題](~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/deepdive.md)會檢閱此逐步解說中所採取的步驟，以了解如何使用 Xamarin.Forms 的頁面瀏覽和資料繫結。
-
 
 ## <a name="related-links"></a>相關連結
 

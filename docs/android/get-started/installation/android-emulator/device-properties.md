@@ -1,25 +1,27 @@
 ---
 title: 編輯 Android 虛擬裝置屬性
 description: 本文說明如何使用 Android Device Manager 編輯 Android 虛擬裝置的設定檔內容。
+zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: 3E33C136-8042-4184-A40C-3200D8CD99CB
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 05/30/2018
-ms.openlocfilehash: 75ac85c67825e5db1b663d00f10eee6d093bfc1f
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 9007157cfd96b82a5781b3bdc3ffb4fe63f4e422
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733412"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119614"
 ---
 # <a name="editing-android-virtual-device-properties"></a>編輯 Android 虛擬裝置屬性
 
 _本文說明如何使用 Android Device Manager 編輯 Android 虛擬裝置的設定檔內容。_
 
+::: zone pivot="windows"
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+## <a name="android-device-manager-on-windows"></a>Windows 上的 Android Device Manager
 
 **Android Device Manager** 支援編輯個別的 Android 虛擬裝置設定檔內容。 [新增裝置] 和 [裝置編輯] 畫面會在第一欄中列出虛擬裝置的屬性，並在第二欄中列出每個屬性的對應值 (如本範例所示)： 
 
@@ -41,8 +43,10 @@ _本文說明如何使用 Android Device Manager 編輯 Android 虛擬裝置的�
 
     ![變更整數屬性](device-properties-images/win/03-integer-value.png)
 
+::: zone-end
+::: zone pivot="macos"
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+## <a name="android-device-manager-on-macos"></a>macOS 上的 Android Device Manager
 
 **Android Device Manager** 支援編輯個別的 Android 虛擬裝置設定檔內容。 [新增裝置] 和 [裝置編輯] 畫面會在第一欄中列出虛擬裝置的屬性，並在第二欄中列出每個屬性的對應值 (如本範例所示)： 
 
@@ -64,7 +68,7 @@ _本文說明如何使用 Android Device Manager 編輯 Android 虛擬裝置的�
 
     ![變更整數屬性](device-properties-images/mac/03-integer-value.png)
 
------
+::: zone-end
 
 下表提供 [新裝置] 和 [裝置編輯器] 畫面中所列屬性的詳細說明：
 

@@ -5,43 +5,37 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: E4150036-7760-4023-BD33-B7BDE7B7AF5B
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: f1c19d43aa1f9010307df3fb954ac1029221ccd4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+author: conceptdev
+ms.author: crdun
+ms.date: 10/05/2018
+ms.openlocfilehash: 3eee66032a33e66d3a6a22ca43cb931fbd59888f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30767735"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122981"
 ---
 # <a name="hello-android-multiscreen-deep-dive"></a>Hello, Android 多重畫面：深度剖析
 
 _在這份含有兩部分的指南中，會擴充在《Hello, Android》指南中建立的 Phoneword 應用程式來處理第二個畫面。過程中，會介紹基本 Android 應用程式建置組塊。包含 Android 架構深入剖析，以協助您進一步了解 Android 應用程式結構和功能。_
 
-## <a name="hello-android-multiscreen-deep-dive"></a>Hello, Android 多重畫面深度剖析
-
 在 [Hello, Android 多重畫面快速入門](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)中，您已建置並執行您的第一個多重畫面 Xamarin.Android 應用程式。
-現在是時候更深入了解 Android 導覽和架構，讓您能夠建置更複雜的應用程式。
 
-在本指南中，您將隨著介紹 Android「應用程式建置組塊」，而探索更進階的 Android 架構。 會解釋 Android 導覽與「意圖」，以及探索 Android 硬體導覽選項。 在您對於與作業系統和其他應用程式的應用程式關聯性發展更全面的檢視時，會仔細分析 Phoneword 應用程式的新增項目。
-
+在本指南中，您將探索更進階的 Android 架構。 會解釋 Android 導覽與「意圖」，以及探索 Android 硬體導覽選項。 在您對於與作業系統和其他應用程式的應用程式關聯性發展更全面的檢視時，會仔細分析 Phoneword 應用程式的新增項目。
 
 ## <a name="android-architecture-basics"></a>Android 架構的基本概念
 
 在 [Hello, Android 深度剖析](~/android/get-started/hello-android/hello-android-deepdive.md)中，您已了解 Android 應用程式是唯一的程式，因為它們缺少單一進入點。 相反地，作業系統 (或另一個應用程式) 會啟動任何一個應用程式的已註冊活動，接著啟動應用程式的程序。 這項對於 Android 架構的深入探討會藉由介紹 Android 應用程式建置組塊和其功能，加強您對於 Android 應用程式建構方式的了解。
 
-
-### <a name="android-application-blocks"></a>Android 應用程式區塊
+### <a name="android-application-building-blocks"></a>Android 應用程式建置組塊
 
 Android 應用程式包含特殊 Android 類別的集合，稱為「應用程式區塊」，配合任何數目的應用程式資源 - 影像、佈景主題、協助程式類別等 &ndash; 這些由稱為「Android 資訊清單」的 XML 檔案進行協調。
 
 應用程式區塊形成了 Android 應用程式的骨幹，因為它們允許您執行通常無法使用一般類別完成的動作。 最重要的兩項區塊是「活動」和「服務」：
 
--   **活動** &ndash; 活動對應至具有使用者介面的螢幕，而且在概念上類似於 Web 應用程式中的網頁。 比方說，在新聞摘要的應用程式中，登入螢幕會是第一個活動，可捲動的新聞項目清單會是另一個活動，而每個項目的詳細資料頁面會是第三個。 您可以在[活動生命週期](~/android/app-fundamentals/activity-lifecycle/index.md)指南中進一步了解活動。
+- **活動** &ndash; 活動對應至具有使用者介面的螢幕，而且在概念上類似於 Web 應用程式中的網頁。 比方說，在新聞摘要的應用程式中，登入螢幕會是第一個活動，可捲動的新聞項目清單會是另一個活動，而每個項目的詳細資料頁面會是第三個。 您可以在[活動生命週期](~/android/app-fundamentals/activity-lifecycle/index.md)指南中進一步了解活動。
 
--   **服務** &ndash; Android 服務支援活動的方式是接管長時間執行的工作，並在背景中執行它們。 服務沒有使用者介面，可用來處理未繫結至螢幕的工作 &ndash; 例如，在背景播放歌曲，或將相片上傳至伺服器。 如需服務的詳細資訊，請參閱[建立服務](~/android/app-fundamentals/services/index.md)和 [Android 服務](~/android/app-fundamentals/services/index.md)指南。
-
+- **服務** &ndash; Android 服務支援活動的方式是接管長時間執行的工作，並在背景中執行它們。 服務沒有使用者介面，可用來處理未繫結至螢幕的工作 &ndash; 例如，在背景播放歌曲，或將相片上傳至伺服器。 如需服務的詳細資訊，請參閱[建立服務](~/android/app-fundamentals/services/index.md)和 [Android 服務](~/android/app-fundamentals/services/index.md)指南。
 
 Android 應用程式可能無法使用所有類型的區塊，並通常會有一種類型的數個區塊。 例如，來自 [Hello, Android 快速入門](~/android/get-started/hello-android/hello-android-quickstart.md)的 Phoneword 應用程式由一個活動 (螢幕) 和某些資源檔所組成。 簡單的音樂播放器應用程式可能會有數個活動和一個服務，負責在應用程式在背景時播放音樂。
 
@@ -52,17 +46,15 @@ Android 的設計圍繞著「最低權限原則」 &ndash; 應用程式只具有
 
 為了進行通訊，應用程式區塊會來回傳送稱為「意圖」的非同步訊息。 意圖包含接收區塊的相關資訊，有時還會有某些資料。 從一個應用程式元件傳送的意圖會觸發在另一個應用程式元件中發生某件事，因而繫結兩個應用程式元件，並且允許使用者進行通訊。 藉由來回傳送意圖，您可以讓區塊協調複雜的動作，例如啟動相機應用程式以拍攝並儲存、收集位置資訊，或從一個螢幕巡覽至下一個螢幕。
 
-
 ### <a name="androidmanifestxml"></a>AndroidManifest.XML
 
 當您將區塊新增至應用程式時，它會向特殊的 XML 檔案註冊，這個檔案稱為 **Android 資訊清單**。 資訊清單會追蹤應用程式中的所有應用程式區塊，以及版本需求、權限，以及連結的程式庫 &ndash; 作業系統需要知道的所有項目，以便您的應用程式能執行。 **Android 資訊清單**也適用於活動和意圖，以便控制哪些動作適用於指定活動。 Android 資訊清單的這些進階功能會在[使用 Android 資訊清單](~/android/platform/android-manifest.md)指南中介紹。
 
 在單一螢幕版本的 Phoneword 應用程式中，只有一個活動、一個意圖，而且使用 `AndroidManifest.xml`， 以及如圖示等其他資源。 在多螢幕版本的 Phoneword 中，新增了額外的活動；它是從第一個使用意圖的活動啟動。 下一節探討意圖如何協助在 Android 應用程式中建立導覽。
 
-## <a name="android-navigation"></a>Android 導覽
+## <a name="android-navigation"></a>Android 瀏覽
 
 意圖用來巡覽不同的螢幕。 請深入了解這段程式碼，以查看意圖運作的方式，並了解它們在 Android 導覽中的角色。
-
 
 ### <a name="launching-a-second-activity-with-an-intent"></a>使用意圖啟動第二個活動
 
@@ -85,8 +77,7 @@ translationHistoryButton.Click += (sender, e) =>
 };
 ```
 
-
-## <a name="additional-concepts-introduced-in-phoneword"></a>Phoneword 中引入的其他概念
+## <a name="additional-concepts-introduced-in-phoneword"></a>Phoneword 中引進的其他概念
 
 Phoneword 應用程式引入本指南未涵蓋的數個概念。 這些概念包括：
 
@@ -109,7 +100,6 @@ this.ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.Simple
 
 Listview 和 Adapter 已超出本文件的範圍，但在 [Listview 和 Adapter](~/android/user-interface/layouts/list-view/index.md) 指南中有非常詳盡的介紹。
 [在 ListView 中填入資料](~/android/user-interface/layouts/list-view/populating.md)特別說明如何使用內建的 `ListActivity` 和 `ArrayAdapter` 類別來建立和填入 `ListView` 而不定義自訂版面配置，如同在 Phoneword 範例中那樣。
-
 
 ## <a name="summary"></a>總結
 
