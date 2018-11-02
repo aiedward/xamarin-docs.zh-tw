@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 392a0e6c76357ce106477ec4d5037673e5702b43
-ms.sourcegitcommit: 19b37f33b0eb9a927633a3198574b779374775ff
+ms.openlocfilehash: 0a1aa16aca1507153d691d5ec801a75e49e5d3ad
+ms.sourcegitcommit: 06a52ac36031d0d303ac7fc8163a59c178799c80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50301236"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50911576"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms 方格
 
@@ -152,10 +152,10 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2);
 
 ### <a name="spacing"></a>間距
 
-`Grid` 具有屬性來控制資料列和資料行之間的間距。  下列屬性可供自訂`Grid`:
+`Grid` 具有屬性來控制資料列和資料行之間的間距。 下列屬性可供自訂`Grid`:
 
-- **ColumnSpacing** &ndash;的資料行之間的空間量。
-- **RowSpacing** &ndash;的資料列之間的空間量。
+- **ColumnSpacing** &ndash;的資料行之間的空間量。 這個屬性的預設值為 6。
+- **RowSpacing** &ndash;的資料列之間的空間量。 這個屬性的預設值為 6。
 
 下列 XAML 指定`Grid`使用兩個資料行、 一個資料列和 5 的資料行之間的間距像素：
 

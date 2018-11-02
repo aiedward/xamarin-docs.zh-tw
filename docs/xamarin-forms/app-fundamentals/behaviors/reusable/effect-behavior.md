@@ -1,22 +1,22 @@
 ---
 title: 可重複使用 EffectBehavior
-description: 行為是實用的方法加入至控制項，移除必不可少效果處理從程式碼後置檔案的程式碼的影響。 這篇文章示範如何使用 Xamarin.Forms 行為新增至控制項的效果。
+description: 行為是實用的方法加入至控制項，移除必不可少效果處理從程式碼後置檔案的程式碼的影響。 本文示範如何建立及使用 Xamarin.Forms 行為新增至控制項的效果。
 ms.prod: xamarin
 ms.assetid: A909B24D-960A-4023-AFF6-4B9256C55ADD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 1ce7eda6f556041cbffc3793b00e8e2cba44d3d0
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 2696f0103ce1aa969039c982fb9b82f89b37811e
+ms.sourcegitcommit: 06a52ac36031d0d303ac7fc8163a59c178799c80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995777"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50911589"
 ---
 # <a name="reusable-effectbehavior"></a>可重複使用 EffectBehavior
 
-_行為是實用的方法加入至控制項，移除必不可少效果處理從程式碼後置檔案的程式碼的影響。這篇文章示範如何使用 Xamarin.Forms 行為新增至控制項的效果。_
+_行為是實用的方法加入至控制項，移除必不可少效果處理從程式碼後置檔案的程式碼的影響。本文示範如何建立及使用 Xamarin.Forms 行為新增至控制項的效果。_
 
 ## <a name="overview"></a>總覽
 
@@ -28,6 +28,9 @@ _行為是實用的方法加入至控制項，移除必不可少效果處理從�
 - **名稱**– windows 7 [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute)效果類別的屬性。
 
 如需效果的詳細資訊，請參閱[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
+
+> [!NOTE]
+> `EffectBehavior`是自訂類別，可以在找到[效果行為範例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)，並不是 Xamarin.Forms 的一部分。
 
 ## <a name="creating-the-behavior"></a>建立行為
 

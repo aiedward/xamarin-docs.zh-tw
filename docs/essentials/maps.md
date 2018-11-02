@@ -5,18 +5,22 @@ ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 07/25/2018
-ms.openlocfilehash: ed5d909ae43ddb9e531851f5571f71517274db21
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fb4cbc2fd334d574abc57a3359fa346bc6795408
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123618"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674749"
 ---
 # <a name="xamarinessentials-maps"></a>Xamarin.Essentials: Maps
 
 ![發行前的 NuGet](~/media/shared/pre-release.png)
 
 **Maps** 類別可讓應用程式開啟已安裝的地圖應用程式，並開啟至特定位置或地標。
+
+## <a name="get-started"></a>開始使用
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## <a name="using-maps"></a>使用 Maps
 

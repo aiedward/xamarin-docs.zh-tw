@@ -5,18 +5,22 @@ ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/30/2018
-ms.openlocfilehash: 5b0d6bb2ab2621de5322a13b3b0e56e5bc6e93d8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 29eab430ae3d42934cedfdbd36d7be08e55b5d54
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123579"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675363"
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: Text-to-Speech
 
 ![發行前的 NuGet](~/media/shared/pre-release.png)
 
 **TextToSpeech** 類別可讓應用程式利用內建的文字轉換語音引擎將裝置的文字說出來，也可以查詢引擎可支援的可用語言。
+
+## <a name="get-started"></a>開始使用
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## <a name="using-text-to-speech"></a>使用文字轉換語音
 
@@ -110,7 +114,7 @@ public async Task SpeakNow()
 
 以下是這些參數支援的值：
 
-| 參數 | 最小值 | 最大值 |
+| 參數 | 最低 | 最大值 |
 | --- | :---: | :---: |
 | 音調 | 0 | 2.0 |
 | 音量 | 0 | 1.0 |

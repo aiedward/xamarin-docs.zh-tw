@@ -1,22 +1,22 @@
 ---
 title: 可重複使用 EventToCommandBehavior
-description: 行為可用來使命令無法正確命令與互動的控制項產生關聯。 這篇文章示範如何使用 Xamarin.Forms 行為與事件引發時叫用命令。
+description: 行為可用來使命令無法正確命令與互動的控制項產生關聯。 本文示範如何建立及使用的 Xamarin.Forms 行為，可與事件引發時叫用命令。
 ms.prod: xamarin
 ms.assetid: EC7F6556-9776-40B8-9424-A8094482A2F3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 3cc568298ba3710f7d4f092acbb2139bebe5976b
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 2609ce4ea677c6b03021a919599c250abff663a3
+ms.sourcegitcommit: 06a52ac36031d0d303ac7fc8163a59c178799c80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675285"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50911550"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>可重複使用 EventToCommandBehavior
 
-_行為可用來使命令無法正確命令與互動的控制項產生關聯。這篇文章示範如何使用 Xamarin.Forms 行為與事件引發時叫用命令。_
+_行為可用來使命令無法正確命令與互動的控制項產生關聯。本文示範如何建立及使用的 Xamarin.Forms 行為，可與事件引發時叫用命令。_
 
 ## <a name="overview"></a>總覽
 
@@ -31,6 +31,9 @@ _行為可用來使命令無法正確命令與互動的控制項產生關聯。�
 
 - **CommandParameter** –`object`會傳遞至命令。
 - **轉換器**– [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter)之間傳遞將會變更的事件引數的資料格式的實作*來源*並*目標*繫結引擎。
+
+> [!NOTE]
+> `EventToCommandBehavior`是自訂類別，可以在找到[EventToCommand 行為範例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)，並不是 Xamarin.Forms 的一部分。
 
 ## <a name="creating-the-behavior"></a>建立行為
 
