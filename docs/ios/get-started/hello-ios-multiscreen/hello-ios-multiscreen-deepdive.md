@@ -1,6 +1,6 @@
 ---
 title: Hello, iOS 多重畫面 – 深度剖析
-description: 本文件會深入探討擴展的 Phoneword 應用程式、進一步考量模型-檢視-控制器、iOS 巡覽和其他 iOS 開發概念。
+description: 此文件會深入探討擴展的 Phoneword 應用程式、進一步考量模型-檢視-控制器、iOS 巡覽和其他 iOS 開發概念。
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: c866e5f4-8154-4342-876e-efa0693d66f5
@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: d698cd1511e82116180a8af46891973f5f90343b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 61a90632849787e28526f83d53247a0491148148
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118964"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50235086"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS 多重畫面 – 深度剖析
 

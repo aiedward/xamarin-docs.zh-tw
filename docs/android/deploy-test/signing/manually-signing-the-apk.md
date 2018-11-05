@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: e9340aaae56da9314c20658b2b05570505fbd742
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3c00f074e2f002d82795e9bd445fdf617275089f
+ms.sourcegitcommit: 19b37f33b0eb9a927633a3198574b779374775ff
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111404"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50301262"
 ---
 # <a name="manually-signing-the-apk"></a>手動簽署 APK
 
