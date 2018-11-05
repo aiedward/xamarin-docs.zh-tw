@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
 ms.openlocfilehash: 08eb77878dad9c89754585b87394d2c33900fe83
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.sourcegitcommit: a635312ffec816ba357a92b66c8c5221c8d9044c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
+ms.lasthandoff: 11/05/2018
 ms.locfileid: "39270108"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms 的項目
