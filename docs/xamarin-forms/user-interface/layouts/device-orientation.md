@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 7f0e1c27f7d6a62dc43ac447c4f796d685a6cd91
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: a008b270d4ff670a03f18318186ca038c5c0348d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241207"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118873"
 ---
 # <a name="device-orientation"></a>裝置方向
 
@@ -28,7 +28,7 @@ ms.locfileid: "39241207"
 
 在 iOS 上，設定應用程式使用裝置方向**Info.plist**檔案。 如果應用程式所包含的是它做為目標，此檔案會包含方向設定 iPhone 和 iPod，以及適用於 iPad 的設定。 以下是您的 IDE 特有的指示。 使用這份文件頂端的 IDE 選項，來選取您想要看到的指示：
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 在 Visual Studio 中開啟 iOS 專案，然後開啟**Info.plist**。 檔案將會開啟至 [設定] 面板中，開頭為 [iPhone 部署資訊] 索引標籤：
 
@@ -38,7 +38,7 @@ ms.locfileid: "39241207"
 
 ![在 Visual Studio 中支援的裝置方向](device-orientation-images/orientation-vs-ipad.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 在 Visual Studio for Mac 中，開啟 iOS 專案，然後開啟**Info.plist**。 底下**應用程式** 索引標籤，區段可設定的方向：
 
@@ -91,7 +91,7 @@ Xamarin.Android 支援數個選項來指定方向：
 
 ## <a name="reacting-to-changes-in-orientation"></a>回應方向的變更
 
-Xamarin.Forms 不提供任何原生事件來通知您的應用程式的方向共用程式碼中的變更。 不過，`SizeChanged`事件的`Page`時，會引發寬度或高度`Page`變更。 當寬度`Page`大於高度，裝置會以橫向模式。 如需詳細資訊，請參閱 <<c0> [ 顯示基的映像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)。
+Xamarin.Forms 不提供任何原生事件來通知您的應用程式的方向共用程式碼中的變更。 不過，`SizeChanged`事件的`Page`時，會引發寬度或高度`Page`變更。 當寬度`Page`大於高度，裝置會以橫向模式。 如需詳細資訊，請參閱 <<c0> [ 顯示基礎的映像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)。
 
 > [!NOTE]
 > 沒有現有的免費適用於 NuGet 套件共用程式碼中接收通知的方向的變更。 請參閱[GitHub 存放庫](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)如需詳細資訊。
@@ -219,7 +219,7 @@ protected override void OnSizeAllocated (double width, double height){
 }
 ```
 
-請注意以下各點：
+請注意下列事項：
 
 - `outerStack` 調整，以作為根據方向，以充分利用可用空間的水平或垂直堆疊顯示的映像和控制項。
 
@@ -271,7 +271,7 @@ Title="AbsoluteLayout - XAML" BackgroundImage="deer.jpg">
 </ContentPage>
 ```
 
-請注意以下各點：
+請注意下列事項：
 
 - 頁面配置的方式，因為沒有必要程序性程式碼造成回應性。
 - `ScrollView`用來允許標籤會顯示即使螢幕的高度是固定的按鈕和影像的高度的總和小於。
@@ -363,12 +363,12 @@ BackgroundImage="deer.jpg">
 
 ```
 
-請注意以下各點：
+請注意下列事項：
 
 - 頁面配置的方式，因為沒有必要程序性程式碼造成回應性。
 - `ScrollView`用來允許標籤會顯示即使螢幕的高度是固定的按鈕和影像的高度的總和小於。
 
-### <a name="grid"></a>格線
+### <a name="grid"></a>Grid
 
 請考慮下列的應用程式，以直向顯示：
 
@@ -465,7 +465,7 @@ protected override void OnSizeAllocated (double width, double height){
 }
 ```
 
-請注意以下各點：
+請注意下列事項：
 
 - 頁面配置的方式，因為沒有方法來變更控制項的格線位置。
 
@@ -475,4 +475,4 @@ protected override void OnSizeAllocated (double width, double height){
 - [版面配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [BusinessTumble 範例 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
 - [回應式配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
-- [顯示基的映像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)
+- [顯示基礎的映像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)
