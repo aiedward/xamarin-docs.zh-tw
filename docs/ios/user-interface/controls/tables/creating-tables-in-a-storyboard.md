@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: d161a267c8ffa5040327db8e6e4f867a324b04f2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 303c96ae6cdbc9f5b327c971f962d6eac75a6fa1
+ms.sourcegitcommit: f541a92b4f896474f6a5467ccff2028dafa6fee7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105802"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50983610"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>使用 iOS 設計工具中的資料表
 
@@ -73,7 +73,7 @@ StoryboardTable 範例包含使用這兩種 UITableView 在分鏡腳本的簡單
 
 1.  選取底部的 檢視控制器的列，並將它刪除。
 2.  拖曳**巡覽控制器**並**資料表檢視控制器**到分鏡腳本，從 [工具箱]。 
-3.  從根檢視控制器的 segue 建立以剛加入第二個資料表檢視控制器中。 若要建立的 segue，控制項] + [拖曳*詳細資料格從*至新加入的 UITableViewController。 選擇選項**顯示*** 下方**Segue 的選取項目**。 
+3.  從根檢視控制器的 segue 建立以剛加入第二個資料表檢視控制器中。 若要建立的 segue，控制項] + [拖曳*詳細資料格從*至新加入的 UITableViewController。 選擇選項**顯示**下方**Segue 的選取項目**。 
 4.  選取新的 segue 您所建立，並指定其識別碼，這在程式碼中的 segue 的參考。 按一下 segue，然後輸入`TaskSegue`for**識別項**中**Properties Pad**，如下所示：    
   [![在 [屬性] 面板命名 segue](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 

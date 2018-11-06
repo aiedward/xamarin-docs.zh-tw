@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 08/08/2018
-ms.openlocfilehash: dd48d917b669e5f83eaafa2f1ba5af5d9a19a342
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 78b7235d8c9e45c2179b1cca2827f45fe6edd8b2
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107211"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675103"
 ---
 # <a name="get-started-with-xamarinessentials"></a>開始使用 Xamarin.Essentials
 
@@ -23,7 +23,7 @@ Xamarin.Essentials 提供單一跨平台 API，能夠搭配任何 iOS、Android 
 
 Xamarin.Essentials 支援下列平台與作業系統：
 
-| 平台 | 版本 |
+| Platform | 版本 |
 | --- | --- |
 | Android | 4.4 (API 19) 或更高版本 |
 | iOS |10.0 或更高版本 |
@@ -66,7 +66,7 @@ Xamarin.Essentials 是以 NuGet 套件形式提供，可讓您使用 Visual Stud
     # <a name="androidtabandroid"></a>[Android](#tab/android)
 
     Xamarin.Essentials 支援最低 Android 版本 4.4，這對應到 API 層級 19，但最高 Android 版本必須是 8.1 才能進行編譯，這對應到 API 層級 27。 (在 Visual Studio 中，這兩個版本是在 [Android 資訊清單] 索引標籤中 Android 專案的 [專案屬性] 中設定的。在 Visual Studio for Mac 中，它們是在 [Android 應用程式] 索引標籤中 [專案選項] 對話方塊中設定的。) 
-    
+
     Xamarin.Essentials 會安裝它所需的 Xamarin.Android.Support 程式庫 27.0.2.1 版。 您的應用程式所需的任何其他 Xamarin.Android.Support 程式庫都應該使用 NuGet 套件管理員更新到 27.0.2.1 版。 您的應用程式所使用的所有 Xamarin.Android.Support 程式庫都應該相同，而且必須是最新的 27.0.2.1 版。 若您有關於在方案中新增 Xamarin.Essentials NuGet 或更新 NuGet 的問題，請參閱[疑難排解介面](troubleshooting.md)。
 
     在 Android 專案的 `MainLauncher` 或任何啟動的任何 `Activity` 中，Xamarin.Essentials都必須在 `OnCreate` 方法中初始化：

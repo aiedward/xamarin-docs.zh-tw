@@ -1,32 +1,36 @@
 ---
-title: Xamarin.Essentials： 螢幕鎖定
-description: 本文件說明在 Xamarin.Essentials，可以要求將進入睡眠狀態，應用程式執行時，防止螢幕 ScreenLock 類別。
+title: Xamarin.Essentials：畫面鎖定
+description: 本文件描述 Xamarin.Essentials 中的 ScreenLock 類別，可以要求在應用程式執行時防止畫面進入睡眠狀態。
 ms.assetid: 6B67C114-315E-4199-AA72-3F90E85A4909
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 3c8110b7abc86fe1d12485579f134997718540e6
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
-ms.translationtype: MT
+ms.openlocfilehash: 3bf8c949650cf9f039a5a516366a90e717dc944b
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38848566"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675311"
 ---
-# <a name="xamarinessentials-screen-lock"></a>Xamarin.Essentials： 螢幕鎖定
+# <a name="xamarinessentials-screen-lock"></a>Xamarin.Essentials：畫面鎖定
 
-![發行前版本的 NuGet](~/media/shared/pre-release.png)
+![發行前的 NuGet](~/media/shared/pre-release.png)
 
-**ScreenLock**類別可以要求將進入睡眠狀態，應用程式執行時，防止螢幕。
+**ScreenLock** 類別可以要求在應用程式執行時防止畫面進入睡眠狀態。
+
+## <a name="get-started"></a>開始使用
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## <a name="using-screenlock"></a>使用 ScreenLock
 
-在您的類別加入 Xamarin.Essentials 的參考：
+在類別中新增對 Xamarin.Essentials 的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-畫面鎖定功能的運作方式是呼叫`RequestActive`和`RequestRelease`向關閉要求螢幕的方法。
+畫面鎖定功能的運作方式是透過呼叫 `RequestActive` 和 `RequestRelease` 方法來要求不關閉畫面。
 
 ```csharp
 public class ScreenLockTest

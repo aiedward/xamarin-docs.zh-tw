@@ -1,38 +1,42 @@
 ---
-title: 追蹤 Xamarin.Essentials： 版本
-description: Xamarin.Essentials VersionTracking 類別可讓您檢查應用程式版本和組建編號，以及查看其他資訊這類，好像第一次曾經啟動應用程式，或取得最新版本中前, 一個組建資訊及其他資訊。
+title: Xamarin.Essentials：版本追蹤
+description: Xamarin.Essentials 中的 VersionTracking 類別可讓您檢查應用程式版本和組建編號並查看其他資訊 (例如應用程式是否為第一次啟動，或針對目前版本取得先前的組建資訊等)。
 ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 81dc67fa5a4975f31d0fbf9f7219637596a827ce
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 1eae0bf7c21dd7efa7655633896bdb2897f9d782
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353655"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674856"
 ---
-# <a name="xamarinessentials-version-tracking"></a>追蹤 Xamarin.Essentials： 版本
+# <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials：版本追蹤
 
-![發行前版本的 NuGet](~/media/shared/pre-release.png)
+![發行前的 NuGet](~/media/shared/pre-release.png)
 
-**VersionTracking**類別可讓您檢查應用程式版本和組建編號，以及查看其他資訊這類，如同它是第一個時間曾經啟動應用程式，或針對最新版本中，取得上一個建置資訊及其他資訊。
+**VersionTracking** 類別可讓您檢查應用程式版本和組建編號並查看其他資訊 (例如應用程式是否為第一次啟動，或針對目前版本取得先前的組建資訊等)。
+
+## <a name="get-started"></a>開始使用
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## <a name="using-version-tracking"></a>使用版本追蹤
 
-在您的類別加入 Xamarin.Essentials 的參考：
+在類別中新增對 Xamarin.Essentials 的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-您使用第一次**VersionTracking**類別就會開始追蹤目前的版本。 您必須呼叫`Track`早期只在您的應用程式每次載入，以確保會追蹤目前的版本資訊：
+您第一次使用 **VersionTracking** 類別時，就會開始追蹤目前版本。 僅當應用程式每次載入時，您必須儘早呼叫 `Track`，以確保追蹤目前版本資訊：
 
 ```csharp
 VersionTracking.Track();
 ```
 
-完成初始`Track`呼叫可以閱讀版本資訊：
+呼叫起始的 `Track` 後，即可以讀取版本資訊：
 
 ```csharp
 
@@ -70,11 +74,11 @@ var versionHistory = VersionTracking.VersionHistory;
 var buildHistory = VersionTracking.BuildHistory;
 ```
 
-## <a name="platform-implementation-specifics"></a>平台實作的特性
+## <a name="platform-implementation-specifics"></a>平台實作特性
 
-使用儲存所有的版本資訊[喜好設定](preferences.md)Xamarin.Essentials 中的 API 和儲存的檔案名稱 **[您的應用程式-封裝-識別碼].xamarinessentials.versiontracking**會遵循相同資料持續性中所述[喜好設定](preferences.md#persistence)文件。
+所有版本資訊都使用 Xamarin.Essentials 中的[喜好設定](preferences.md) API 來儲存，並以 **[您的應用程式套件識別碼].xamarinessentials.versiontracking**  檔案名稱儲存，且遵循[喜好設定](preferences.md#persistence)文件中概述的相同資料持續性。
 
 ## <a name="api"></a>API
 
-- [版本追蹤來源的程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
+- [版本追蹤原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
 - [版本追蹤 API 文件](xref:Xamarin.Essentials.VersionTracking)

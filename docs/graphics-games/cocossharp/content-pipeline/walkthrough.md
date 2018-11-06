@@ -6,12 +6,12 @@ ms.assetid: CACFBF5F-BBD4-4D46-8DDA-1F46466725FD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: fdc57e7028d3a16f9a9d2504caf1f2414d0ac94f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 84f825c19aa1ac08fbcf3e732077304218768bcc
+ms.sourcegitcommit: f541a92b4f896474f6a5467ccff2028dafa6fee7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102980"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50983597"
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>使用 MonoGame 管線工具
 
@@ -84,7 +84,7 @@ MonoGame 管線工具專案建立之後，會顯示專案的相關資訊時根�
 
 ### <a name="output-folder"></a>輸出資料夾
 
-這是其中的資料夾 （相對於內容專案本身） 的輸出 **.xnb**將儲存檔案。 為了簡單起見，我們將保留我們的輸入和輸出檔案使用相同的資料夾。 換句話說，我們將會變更**輸出資料夾**是 **。\** :
+這是其中的資料夾 （相對於內容專案本身） 的輸出 **.xnb**將儲存檔案。 為了簡單起見，我們將保留我們的輸入和輸出檔案使用相同的資料夾。 換句話說，我們將會變更**輸出資料夾**要 **。\\** :
 
 ![](walkthrough-images/image10.png "")
 

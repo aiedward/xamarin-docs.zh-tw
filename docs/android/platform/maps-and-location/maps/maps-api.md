@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: a89211e4576b8d22b45bb4f675241d47c49270e6
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: fb7d18e6434e32941531d2c37cd8b938ec21ba90
+ms.sourcegitcommit: 28dbb5fa2fbcc7e66cd09c1d0077496fcdefac56
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235034"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51027323"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>應用程式中使用 Google Maps API
 
@@ -40,7 +40,7 @@ Xamarin.Android 應用程式必須符合某些必要的先決條件，才可以�
 
 ### <a name="a-nameobtain-maps-key-obtain-a-google-maps-api-key"></a><a name="obtain-maps-key" />取得 Google Maps API 金鑰
 
-最後一個步驟是取得 Google Maps API 金鑰 （請注意，您無法重複使用舊版 Google Maps v1 API 所提供的 API 金鑰）。 如需有關如何取得和搭配 Xamarin.Android 使用 API 金鑰的資訊，請參閱 <<c0> [ 取得 Google Maps API 金鑰](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)。
+第一個步驟是取得 Google Maps API 金鑰 （請注意，您無法重複使用舊版 Google Maps v1 API 所提供的 API 金鑰）。 如需有關如何取得和搭配 Xamarin.Android 使用 API 金鑰的資訊，請參閱 <<c0> [ 取得 Google Maps API 金鑰](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)。
  
 
 ### <a name="a-nameinstall-gps-sdk--install-the-google-play-services-sdk"></a><a name="install-gps-sdk" /> 安裝 Google Play 服務 SDK
@@ -183,7 +183,7 @@ Xamarin.Android 應用程式可以使用地圖服務 API 之前，必須使用�
               class="com.google.android.gms.maps.MapFragment" />
     ```
 
--   **Programmaatically** -`MapFragment`可以以程式設計方式使用具現化[ `MapFragment.NewInstance` ](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment.html#newInstance())方法然後新增至活動。 此程式碼片段顯示的最簡單的方式來具現化`MapFragment`物件，並加入活動：
+-   **以程式設計方式**-`MapFragment`可以以程式設計方式使用具現化[ `MapFragment.NewInstance` ](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment.html#newInstance())方法然後新增至活動。 此程式碼片段顯示的最簡單的方式來具現化`MapFragment`物件，並加入活動：
     
     ```csharp
         var mapFrag = MapFragment.NewInstance();

@@ -1,32 +1,36 @@
 ---
-title: Xamarin.Essentials： 資料傳輸
-description: Xamarin.Essentials DataTransfer 類別可讓應用程式共用資料，例如在裝置上的其他應用程式的文字和 web 連結。
+title: Xamarin.Essentials：資料傳輸
+description: Xamarin.Essentials 中的 DataTransfer 類別，能讓應用程式將資料 (例如文字和 Web 連結) 共用於裝置上的其他應用程式。
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 31e27556a6681b144084d2177cf3fde8fe8e5459
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 179d4327aa768e7aa2c81dbbffd694d078327400
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353515"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674830"
 ---
-# <a name="xamarinessentials-data-transfer"></a>Xamarin.Essentials： 資料傳輸
+# <a name="xamarinessentials-data-transfer"></a>Xamarin.Essentials：資料傳輸
 
-![發行前版本的 NuGet](~/media/shared/pre-release.png)
+![發行前的 NuGet](~/media/shared/pre-release.png)
 
-**DataTransfer**類別可讓應用程式共用資料，例如在裝置上的其他應用程式的文字和 web 連結。
+**DataTransfer** 類別能讓應用程式將資料 (例如文字和 Web 連結) 共用於裝置上的其他應用程式。
+
+## <a name="get-started"></a>開始使用
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## <a name="using-data-transfer"></a>使用資料傳輸
 
-在您的類別加入 Xamarin.Essentials 的參考：
+在類別中新增對 Xamarin.Essentials 的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-資料傳輸功能的運作方式是呼叫`RequestAsync`方法具有資料的要求承載，其中包含要共用其他應用程式的資訊。 可以混合文字和 Uri，以及每個平台將會處理內容為基礎的篩選。
+資料傳輸功能透過呼叫具有資料要求承載的 `RequestAsync` 方法來運作，該承載包含要與其他應用程式共用的資訊。 文字和 URI 可以混合使用，每個平台都將根據內容來處理篩選。
 
 ```csharp
 
@@ -52,7 +56,7 @@ public class DataTransferTest
 }
 ```
 
-要共用外部的應用程式提出要求時所顯示的使用者介面：
+提出要求時，會顯示要與外部應用程式共用的使用者介面：
 
 ![資料傳輸](data-transfer-images/data-transfer.png)
 
@@ -60,21 +64,21 @@ public class DataTransferTest
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-* `Subject` 屬性用於訊息的所需的主旨。
+* `Subject` 屬性用於所需的訊息主旨。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-* `Subject` 不使用。
-* `Title` 不使用。
+* `Subject` 未使用。
+* `Title` 未使用。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 * `Title` 將預設為應用程式名稱，如果未設定。
-* `Subject` 不使用。
+* `Subject` 未使用。
 
 -----
 
 ## <a name="api"></a>API
 
 - [資料傳輸原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DataTransfer)
-- [資料傳輸的 API 文件](xref:Xamarin.Essentials.DataTransfer)
+- [資料傳輸 API 文件](xref:Xamarin.Essentials.DataTransfer)

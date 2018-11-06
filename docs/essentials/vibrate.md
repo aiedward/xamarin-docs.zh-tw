@@ -1,32 +1,34 @@
 ---
-title: Xamarin.Essentials： 震動
-description: 本文件說明在 Xamarin.Essentials，可讓您啟動和停止震動功能所需的一段時間的震動類別。
+title: Xamarin.Essentials：震動
+description: 本文件描述 Xamarin.Essentials 中的震動類別，可讓您在所需的時間內啟動和停止震動功能。
 ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 622689342dd961a63318a88f098dea4d1a60e277
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: ff2e718953d86eb59b28fcaa8640e04f6bf422f3
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353863"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675298"
 ---
-# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials： 震動
+# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials：震動
 
-![發行前版本的 NuGet](~/media/shared/pre-release.png)
+![發行前的 NuGet](~/media/shared/pre-release.png)
 
-**震動**類別可讓您啟動和停止震動功能所需的一段時間。
+**震動**類別可讓您在所需的時間內啟動和停止震動功能。
 
-## <a name="getting-started"></a>快速入門
+## <a name="get-started"></a>開始使用
 
-若要存取**震動**須有下列的平台特定設定的功能。
+[!include[](~/essentials/includes/get-started.md)]
+
+若要存取**震動**功能，需要下列平台特定設定。
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-震動權限是必要的而且必須設定 Android 專案中。 這可以透過下列方式新增：
+需要震動權限，而且必須在 Android 專案中設定。 能以下列方式新增：
 
-開啟**AssemblyInfo.cs**下方的檔案**屬性**資料夾，並新增：
+開啟 [Properties] 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Vibrate)]
@@ -34,33 +36,33 @@ ms.locfileid: "39353863"
 
 或更新 Android 資訊清單：
 
-開啟**AndroidManifest.xml**下方檔案**屬性**資料夾，並新增下列內**資訊清單**節點。
+開啟 [Properties] 資料夾下的 **AndroidManifest.xml** 檔案並在 [manifest] 節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.VIBRATE" />
 ```
 
-或以滑鼠右鍵按一下 Android 專案，並開啟專案的內容。 底下**Android 資訊清單**尋找**必要權限：** 區域，並檢查**震動**權限。 這樣會自動更新**AndroidManifest.xml**檔案。
+禍以滑鼠右鍵按一 Android 專案並開啟專案的屬性。 在 [Android 資訊清單] 下，尋找 [必要權限] 區域並選取 [震動] 權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-不需要其他設定。
+不需要進行額外設定。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-任何平台差異。
+無平台差異。
 
 -----
 
 ## <a name="using-vibration"></a>使用震動
 
-在您的類別加入 Xamarin.Essentials 的參考：
+在類別中新增對 Xamarin.Essentials 的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-設定量的時間或 500 毫秒的預設值，您可以要求震動功能。
+可以要求震動功能一段時間或預設的 500 毫秒。
 
 ```csharp
 try
@@ -82,7 +84,7 @@ catch (Exception ex)
 }
 ```
 
-可以使用要求的裝置震動的取消`Cancel`方法：
+可以使用 `Cancel` 方法要求取消裝置震動：
 
 ```csharp
 try
@@ -103,17 +105,17 @@ catch (Exception ex)
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-任何平台差異。
+無平台差異。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-* 只有組裝置設定為 「 在通道上的震動"時。
-* 一律組 500 毫秒。
+* 僅在裝置設定為「鈴響時震動」時震動。
+* 一律震動 500 毫秒。
 * 無法取消震動。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-任何平台差異。
+無平台差異。
 
 -----
 
