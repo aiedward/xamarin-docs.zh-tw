@@ -5,12 +5,12 @@ ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 00419fb746609464b49be343938905614c59ab29
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 62ecf890ba6b3276db89e93c2699e0406dbe4d45
+ms.sourcegitcommit: a635312ffec816ba357a92b66c8c5221c8d9044c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675129"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50965613"
 ---
 # <a name="xamarinessentials-app-information"></a>Xamarin.Essentials：應用程式資訊
 
@@ -54,7 +54,7 @@ var build = AppInfo.BuildString;
 
 ```csharp
 // Display settings page
-AppInfo.OpenSettings();
+AppInfo.ShowSettingsUI();
 ```
 
 此設定頁面可讓使用者變更應用程式權限，並執行其他平台特定的工作。
