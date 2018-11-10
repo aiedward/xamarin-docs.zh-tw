@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/31/2018
-ms.openlocfilehash: e9c2a42b9108c04f18252a410d40dbc03013f6dd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8622c40e41071d6c05b05abbe2d5d8a8a844ebde
+ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123748"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51285582"
 ---
 # <a name="ios-designer-basics"></a>iOS 設計工具基本概念
 
@@ -459,6 +459,14 @@ IOS 設計工具也可以顯示成外框的介面的控制項階層架構。 外
 在 Xcode Interface Builder 中進行編輯後, 儲存檔案，並返回 Visual Studio for mac。 所做的變更會同步處理至 Xamarin.iOS 專案。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+
+## <a name="revert-to-xcode"></a>還原為 Xcode
+
+不過，才可用在 mac 上 Xcode Interface Builder 就可以交換，使用 iOS 設計工具和 Xcode 的 Interface Builder 若要開啟 Mac 上 Xcode Interface Builder 分鏡腳本或.xib 檔案，開啟 包含的 Xamarin.iOS 專案中的方案[Visual Studio for Mac](/visualstudio/mac/)，以滑鼠右鍵按一下檔案，然後選取**開啟 > Xcode 介面產生器**，如以下螢幕擷取畫面所示：
+
+[![在 Xcode Interface Builder 中開啟分鏡腳本](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "Xcode Interface Builder 中開啟分鏡腳本")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
+
+在 Xcode Interface Builder 中進行編輯後, 儲存檔案，並返回 Visual Studio for mac。 所做的變更會同步處理至 Xamarin.iOS 專案。
 
 -----
 

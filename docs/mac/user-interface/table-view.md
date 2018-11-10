@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 1361f81c20b070c73b1f1f308ea4a5a351c4840d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9a8c55c8b4ff3fbd515aad8bf45c52a0b549af9f
+ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104670"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51285595"
 ---
 # <a name="table-views-in-xamarinmac"></a>Xamarin.Mac 中的資料表檢視
 
@@ -762,7 +762,7 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
             // Wireup events
             button.Activated += (sender, e) => {
                 // Get button and product
-                var btw = sender as NSButton;
+                var btn = sender as NSButton;
                 var product = DataSource.Products [(int)btn.Tag];
 
                 // Configure alert
@@ -803,8 +803,8 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
         break;
     case "Action":
         foreach (NSView subview in view.Subviews) {
-            var btw = subview as NSButton;
-            if (btw != null) {
+            var btn = subview as NSButton;
+            if (btn != null) {
                 btn.Tag = row;
             }
         }
@@ -837,7 +837,7 @@ view.AddSubview (button);
 // Wireup events
 button.Activated += (sender, e) => {
     // Get button and product
-    var btw = sender as NSButton;
+    var btn = sender as NSButton;
     var product = DataSource.Products [(int)btn.Tag];
 
     // Configure alert
@@ -883,8 +883,8 @@ case "Details":
     break;
 case "Action":
     foreach (NSView subview in view.Subviews) {
-        var btw = subview as NSButton;
-        if (btw != null) {
+        var btn = subview as NSButton;
+        if (btn != null) {
             btn.Tag = row;
         }
     }
