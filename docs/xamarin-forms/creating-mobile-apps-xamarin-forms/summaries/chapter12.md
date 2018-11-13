@@ -4,15 +4,15 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 第 12 章摘要�
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 3EAE6BDC-8EFB-464B-A87B-1C35B8387BB3
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 55168f8f401cca711422dc49027b2b055fba5f1f
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
-ms.translationtype: HT
+ms.openlocfilehash: b37a32df9944cd7b312decd9cd9312669b777bc1
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526750"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563365"
 ---
 # <a name="summary-of-chapter-12-styles"></a>第 12 章的摘要。 樣式
 
