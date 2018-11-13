@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 9a6f7f5c82808b6430ba1aa6178a543945ae2634
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a25a1c3be8c952536c0ef40b7f7c4a64f5748516
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104904"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527231"
 ---
 # <a name="touch-in-android"></a>Android 中的觸控
 
@@ -80,7 +80,7 @@ public override bool OnTouchEvent(MotionEvent e)
 -  *OnSingleTapUp* -只要點選一下發生時呼叫。
 
 
-在許多情況下應用程式可能只會感興趣的筆勢子集。 在此情況下，應用程式應該擴充 GestureDetector.SimpleOnGestureListener 類別並覆寫對應的事件的方法，他們感興趣。
+在許多情況下應用程式可能只會感興趣的筆勢子集。 在此情況下，應用程式應該擴充 GestureDetector.SimpleOnGestureListener 類別並覆寫對應到他們感興趣的事件的方法。
 
 ## <a name="custom-gestures"></a>自訂軌跡
 
@@ -134,7 +134,7 @@ SetContentView(gestureOverlayView);
     android:layout_height="match_parent" />
 ```
 
-`GestureOverlayView`有數個會繪製筆勢的程序期間引發的事件。 最感興趣的事件是`GesturePeformed`。 當使用者完成繪製其筆勢時，會引發這個事件。
+`GestureOverlayView`有數個會繪製筆勢的程序期間引發的事件。 最感興趣的事件是`GesturePerformed`。 當使用者完成繪製其筆勢時，會引發這個事件。
 
 活動會引發這個事件，當要求`GestureLibrary`，試著符合筆勢與筆勢的其中一個使用者所建立之筆勢的工具。 `GestureLibrary` 會傳回預測的物件清單。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 8f7094cebf284f301e08faae8d94c99a73964d55
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4ca9856251d35a741d496b6e8b45b07e851e0e89
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114284"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528607"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>其他 tvOS 10 架構變更
 
@@ -85,7 +85,7 @@ tvOS 10 可讓 Core 映像架構的下列增強功能：
 
  - 使用新[NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval)類別，例如持續時間，來比較的間隔，並測試間隔交集的日期和時間間隔計算。
  - 已新增數個新屬性[NSLocal](https://developer.apple.com/reference/foundation/nslocale)類別來取得本機資訊和可用的顯示格式。
- - 使用新[NSMeasuerment](https://developer.apple.com/reference/foundation/nsmeasurement)類別來轉換之間不同單位的量值 (UOM)，或在不同的 UOMs 中的值上執行計算。
+ - 使用新[NSMeasurement](https://developer.apple.com/reference/foundation/nsmeasurement)類別來轉換之間不同單位的量值 (UOM)，或在不同的 UOMs 中的值上執行計算。
  - 使用新[NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)格式化當地語系化的度量單位，顯示給使用者的類別。
  - 使用新[NSUnit](https://developer.apple.com/reference/foundation/nsunit)並[NSDimension](https://developer.apple.com/reference/foundation/nsdimension)類別，表示特定 UOMs。
 
@@ -182,7 +182,7 @@ tvOS 10 可讓 Core 映像架構的下列增強功能：
  - 新`UIGraphicsRender`類別會提供物件導向的方法從 UIKit 轉譯或 Core 圖形建立點陣圖或 Pdf，並取代已被取代`UIGraphicsBeginImageContext`方法。
  - `UIUserInterfaceStyle`類別加入至判斷目前作用中的使用者介面佈景主題 （暗色或亮色）。
  - 已新增新的具全面互動性、 物件為基礎、 可中斷的動畫支援和 van 連結筆勢。 請參閱 Apple 的[UIViewAnimating 通訊協定參考](https://developer.apple.com/reference/uikit/uiviewanimating)， [UIViewPropertyAnimator 類別參考](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)， [UITimingCurveProvider 通訊協定參考](https://developer.apple.com/reference/uikit/uitimingcurveprovider)， [UICubicTimingParameters 類別參考](https://developer.apple.com/reference/uikit/uicubictimingparameters)並[UISpringTimingParameter 類別參考](https://developer.apple.com/reference/uikit/uispringtimingparameters)如需詳細資訊。
- - 新`UIPreviewInteraction`和`UIPreviewInteractionDelegate`允許應用程式應用程式，以查看和 pop 作業提供一種自訂介面。
+ - 新`UIPreviewInteraction`和`UIPreviewInteractionDelegate`允許應用程式提供一種自訂介面，查看和 pop 的作業。
  - 新`UIAccessibilityCustomRotor`類別可讓應用程式提供自訂的特定內容的功能，例如 Voiceover 的輔助技術。
  - 使用`UIAccessibilityIsAssistiveTouchRunning`和`UIAccessibilityAssistiveTouchStatusDidChangeNotification`符號來判斷是否已啟用 AssistiveTouch。
  - 使用`UIAccessibilityHearingDevicePairedEar`和`UIAccessibilityHearingDevicePairedEarDidChangeNotification`符號，可取得的任何狀態配對 MFi 期待輔助工具。

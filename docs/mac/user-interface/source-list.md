@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 7fa6b128572490ce1fe330b722181e33bbad1ffd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 82e4dfb9add7002fd7d3568d0ec946ea38dfd530
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122045"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526388"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Xamarin.Mac 中的來源清單
 
 _本文涵蓋在 Xamarin.Mac 應用程式中的來源清單。它說明建立和維護在 Xcode 和 Interface Builder 中的來源清單，並與其互動以 C# 程式碼。_
 
-當在 Xamarin.Mac 應用程式中使用 C# 和.NET，您可以存取的相同來源清單，工作的開發人員*OBJECTIVE-C*並*Xcode*沒有。 由於 Xamarin.Mac 直接與 Xcode 整合，您可以使用 Xcode 的_Interface Builder_來建立，並維護您的來源清單 （或選擇直接在 C# 程式碼中建立它們）。
+使用時C#和.NET Xamarin.Mac 應用程式中的，您可以存取相同的來源清單工作的開發人員*Objective C*並*Xcode*沒有。 由於 Xamarin.Mac 直接與 Xcode 整合，您可以使用 Xcode 的_Interface Builder_來建立，並維護您的來源清單 （或選擇直接在 C# 程式碼中建立它們）。
 
 來源清單是一種特殊的大綱檢視用來顯示動作，例如提要欄位，搜尋或 iTunes 中的來源。
 

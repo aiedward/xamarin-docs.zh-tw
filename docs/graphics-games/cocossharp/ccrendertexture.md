@@ -5,12 +5,13 @@ ms.prod: xamarin
 ms.assetid: F02147C2-754B-4FB4-8BE0-8261F1C5F574
 author: conceptdev
 ms.author: crdun
-ms.openlocfilehash: 2e4d9a8fdefd0c543c29061da37098e443d1c092
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 03/27/2017
+ms.openlocfilehash: 95227689303a8367785202956a6aaef921c1c593
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123111"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526438"
 ---
 # <a name="performance-and-visual-effects-with-ccrendertexture"></a>效能和使用 CCRenderTexture 的視覺效果
 

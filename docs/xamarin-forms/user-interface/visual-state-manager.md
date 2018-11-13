@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 17296F14-640D-484B-A24C-A4E9B7013E4F
 ms.technology: xamarin-forms
 ms.custom: xamu-video
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 0fdcbd6467547647089b436a894b1bc490ba5ee1
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: c2944aba05c2f0ea87f675b8830f3a1ee20b5ac1
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854814"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563862"
 ---
 # <a name="the-xamarinforms-visual-state-manager"></a>Xamarin.Forms 視覺狀態管理員
 

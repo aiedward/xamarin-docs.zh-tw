@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 8514d3b2c423e524d03a800f5f56359f3aee4b75
-ms.sourcegitcommit: 650fd5813e243d67eea13c4bc76683c0f8134123
+ms.openlocfilehash: db312c4c102feb98791109af19185762bb25856e
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737189"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528841"
 ---
 # <a name="running-android-services-in-remote-processes"></a>執行 Android 的服務，在遠端處理程序
 
@@ -76,7 +76,7 @@ _一般而言，Android 應用程式中的所有元件將會都執行相同的�
 
 1. `Exported` &ndash; 此屬性必須設為`true`允許其他應用程式與服務互動。 此屬性的預設值為 `false`。
 2. `Process` &ndash; 必須設定此屬性。 它用來指定此服務會在執行程序的名稱。
-3. `IsolatedProcess` &ndash; 此屬性可讓額外的安全性，告知 Android 在隔離的沙箱，具有 iteract 與系統的其餘部分的最小權限執行服務。 請參閱[隔離的程序與自訂應用程式類別的 Bugzilla 51940-服務無法正確解析多載](https://bugzilla.xamarin.com/show_bug.cgi?id=51940)。
+3. `IsolatedProcess` &ndash; 此屬性可讓額外的安全性，告知 Android 在隔離的沙箱，具有系統的其餘部分互動的最小權限執行服務。 請參閱[隔離的程序與自訂應用程式類別的 Bugzilla 51940-服務無法正確解析多載](https://bugzilla.xamarin.com/show_bug.cgi?id=51940)。
 4. `Permission` &ndash; 您可指定用戶端必須要求 （並授與） 的權限來控制用戶端服務的存取權。
 
 若要執行 service fabric 自己的處理序`Process`屬性上的`ServiceAttribute`必須設定為服務的名稱。 與外部的應用程式互動`Exported`屬性應設為`true`。 如果`Exported`是`false`，則只有在同一個 APK （也就是相同的應用程式） 中的用戶端並執行相同的程序都能夠與服務互動。
@@ -129,7 +129,7 @@ _一般而言，Android 應用程式中的所有元件將會都執行相同的�
 
 ### <a name="implementing-a-handler"></a>實作處理常式
 
-若要處理用戶端要求，服務必須實作`Handler`，並覆寫`HandleMessage`methodThis 是此方法會採用`Message`哪些其封裝方法呼叫從用戶端，而且會轉譯成某些動作呼叫執行個體或此服務會執行的工作。 `Message`物件會公開一個稱為屬性`What`這是整數值，其意義用戶端與服務之間共用，以及與相關聯的服務是用戶端執行一些工作。
+若要處理用戶端要求，服務必須實作`Handler`，並覆寫`HandleMessage`methodThis 是此方法會採用`Message`封裝方法呼叫從用戶端，並將轉譯成某些動作或工作呼叫執行個體會執行服務。 `Message`物件會公開一個稱為屬性`What`這是整數值，其意義用戶端與服務之間共用，以及與相關聯的服務是用戶端執行一些工作。
 
 下列程式碼片段來自範例應用程式顯示的其中一個範例`HandleMessage`。 在此範例中，有兩個動作，用戶端可以要求的服務：
 
@@ -153,7 +153,7 @@ public class TimestampRequestHandler : Android.OS.Handler
                 break;
 
             case Constants.GET_UTC_TIMESTAMP:
-                // Call methods on the service to retrive a timestamp message.
+                // Call methods on the service to retrieve a timestamp message.
                 break;
             default:
                 Log.Warn(TAG, $"Unknown messageType, ignoring the value {messageType}.");
@@ -168,7 +168,7 @@ public class TimestampRequestHandler : Android.OS.Handler
 
 ### <a name="instantiating-the-messenger"></a>具現化 Messenger
 
-如先前所討論，還原序列化`Message`物件，並叫用`Handler.HandleMessage`是的 responsibilty`Messenger`物件。 `Messenger`類別也會提供`IBinder`物件，用戶端將用來將訊息傳送至服務。  
+如先前所討論，還原序列化`Message`物件，並叫用`Handler.HandleMessage`負責`Messenger`物件。 `Messenger`類別也會提供`IBinder`物件，用戶端將用來將訊息傳送至服務。  
 
 當服務啟動時，它會執行個體化`Messenger`，並將`Handler`。 執行這類初始化的好地方位於`OnCreate`服務方法。 此程式碼片段是一項服務，初始化它自己的其中一個範例`Handler`和`Messenger`:
 
@@ -296,7 +296,7 @@ catch (RemoteException ex)
 
 有數種不同形式的`Message.Obtain`方法。 先前的範例使用[ `Message.Obtain(Handler h, Int32 what)` ](https://developer.xamarin.com/api/member/Android.OS.Message.Obtain/p/Android.OS.Handler/System.Int32/)。 因為這是非同步要求，以跨處理序服務;會有任何服務回應中，因此`Handler`設為`null`。 第二個參數， `Int32 what`，將會儲存在`.What`屬性`Message`物件。 `.What`屬性可由服務處理序中的程式碼來叫用服務上的方法。
 
-`Message`類別也會公開兩個額外的屬性可能需要的收件者的使用：`Arg1`和`Arg2`。 這兩個屬性都可能有一些特殊同意值有意義的用戶端與服務之間的整數值。 例如，`Arg1`可能會保存客戶識別碼和`Arg2`可能含有該客戶的訂單編號。 [ `Method.Obtain(Handler h, Int32 what, Int32 arg1, Int32 arg2)` ](https://developer.xamarin.com/api/member/Android.OS.Message.Obtain/p/Android.OS.Handler/System.Int32/System.Int32/System.Int32/)可用來設定兩個屬性時`Message`建立。 填入這兩個值的另一個方法是設定`.Arg`並`.Arg2`屬性直接在`Message`物件之後建立。
+`Message`類別也會公開兩個可能可以使用的收件者的額外屬性：`Arg1`和`Arg2`。 這兩個屬性都可能有一些特殊同意值有意義的用戶端與服務之間的整數值。 例如，`Arg1`可能會保存客戶識別碼和`Arg2`可能含有該客戶的訂單編號。 [ `Method.Obtain(Handler h, Int32 what, Int32 arg1, Int32 arg2)` ](https://developer.xamarin.com/api/member/Android.OS.Message.Obtain/p/Android.OS.Handler/System.Int32/System.Int32/System.Int32/)可用來設定兩個屬性時`Message`建立。 填入這兩個值的另一個方法是設定`.Arg`並`.Arg2`屬性直接在`Message`物件之後建立。
 
 ### <a name="passing-additional-values-to-the-service"></a>其他的值傳遞至服務
 

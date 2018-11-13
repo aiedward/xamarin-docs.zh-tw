@@ -4,15 +4,15 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 摘要的第 22 �
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 47C2B9AB-E688-4412-8AF5-9F633B3DA695
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: c4d92784654db8e566b41c8270dbe2095bd28b94
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 82ffecd41115bc91df9732793f5e22e721dbdee4
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156596"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563897"
 ---
 # <a name="summary-of-chapter-22-animation"></a>第 22 章摘要。 動畫
 
@@ -48,7 +48,7 @@ ms.locfileid: "39156596"
 
 ### <a name="composite-animations"></a>複合的動畫
 
-您可以混合受期待與非等候建立複合的動畫的動畫。 這些是中的動畫`ViewExtensions`目標`TranslatonX`， `TranslationY`，和`Scale`轉換屬性：
+您可以混合受期待與非等候建立複合的動畫的動畫。 這些是中的動畫`ViewExtensions`目標`TranslationX`， `TranslationY`，和`Scale`轉換屬性：
 
 - [`TranslateTo`](xref:Xamarin.Forms.ViewExtensions.TranslateTo(Xamarin.Forms.VisualElement,System.Double,System.Double,System.UInt32,Xamarin.Forms.Easing))
 - [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))
@@ -134,7 +134,7 @@ ms.locfileid: "39156596"
 
 ## <a name="deeper-into-animations"></a>更深入到動畫
 
-Xamarin.Forms 動畫系統可以是稍嫌複雜。 除了`Easing`類別，動畫系統組成`ViewExtensions`， `Animation`，和`AnimationExtension`classses。
+Xamarin.Forms 動畫系統可以是稍嫌複雜。 除了`Easing`類別，動畫系統組成`ViewExtensions`， `Animation`，和`AnimationExtension`類別。
 
 ### <a name="viewextensions-class"></a>ViewExtensions 類別
 
@@ -144,7 +144,7 @@ Xamarin.Forms 動畫系統可以是稍嫌複雜。 除了`Easing`類別，動畫
 
 [ `Animation` ](xref:Xamarin.Forms.AnimationExtensions)類別具有[建構函式](xref:Xamarin.Forms.Animation.%23ctor(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Action))具有五個引數，定義回呼和已完成的方法，以及動畫的參數。
 
-可以新增其子動畫，而[ `Add` ](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation))， [ `Insert` ](xref:Xamarin.Forms.Animation.Insert(System.Double,System.Double,Xamarin.Forms.Animation))， [ `WithConcurrent` ](xref:Xamarin.Forms.Animation.WithConcurrent(Xamarin.Forms.Animation,System.Double,System.Double))，並和多載[ `WithConcurrent` ](xref:Xamarin.Forms.Animation.WithConcurrent(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Double,System.Double)).
+可以新增其子動畫，而[ `Add` ](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation))， [ `Insert` ](xref:Xamarin.Forms.Animation.Insert(System.Double,System.Double,Xamarin.Forms.Animation))， [ `WithConcurrent` ](xref:Xamarin.Forms.Animation.WithConcurrent(Xamarin.Forms.Animation,System.Double,System.Double))，以及多載[ `WithConcurrent` ](xref:Xamarin.Forms.Animation.WithConcurrent(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Double,System.Double)).
 
 然後啟動動畫物件呼叫[ `Commit` ](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean}))方法。
 
@@ -162,7 +162,7 @@ Xamarin.Forms 動畫系統可以是稍嫌複雜。 除了`Easing`類別，動畫
 
 ### <a name="beyond-the-high-level-animation-methods"></a>高階動畫方法之外
 
-[ **ConcurrentAnimations** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations)範例也會示範如何執行超越屬性指定為目標的動畫`ViewExtensions`方法。 在一個範例中，一系列的期間取得較長的;另舉一例，`BackgroundColor`屬性顯示動畫。
+[ **ConcurrentAnimations** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations)範例也會示範如何執行超越由目標屬性的動畫`ViewExtensions`方法。 在一個範例中，一系列的期間取得較長的;另舉一例，`BackgroundColor`屬性顯示動畫。
 
 ### <a name="more-of-your-own-awaitable-methods"></a>多個您自己的 awaitable 方法
 

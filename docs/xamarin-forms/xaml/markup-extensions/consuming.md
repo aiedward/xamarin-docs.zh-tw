@@ -4,15 +4,15 @@ description: 這篇文章說明如何使用 Xamarin.Forms XAML 標記延伸來�
 ms.prod: xamarin
 ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 08/01/2018
-ms.openlocfilehash: e483716952aa97de4411733006f4fa12c3e6da98
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: ecb0adb09c7d6b8bca2f1ee228b8cbdaad1d0314
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39393668"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563949"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 標記延伸
 

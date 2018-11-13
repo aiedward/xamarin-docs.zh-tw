@@ -4,15 +4,15 @@ description: XAML 是一種宣告式標記的語言，可用來定義使用者�
 ms.prod: xamarin
 ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 06/18/2018
-ms.openlocfilehash: 4045f3a1d31b1c0c8b69e840d3943b6ce258b894
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: adebd5fe7e05d6698a7d69cef56a1d4035b6d8e7
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113582"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563066"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>可延伸應用程式標記語言 (XAML)
 

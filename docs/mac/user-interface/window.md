@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 2d129c72366224cedca26df6fa1499f65d04e92d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ec907e71074a97bd5d1714e79dd504013f5c8a4b
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106971"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526971"
 ---
 # <a name="windows-in-xamarinmac"></a>Xamarin.Mac 中的 Windows
 
 _這篇文章涵蓋使用 「 windows 」 和 「 在 Xamarin.Mac 應用程式中的面板。它說明建立 windows 和在 Xcode 和 Interface Builder 分鏡腳本和.xib 檔案載入它們，並以程式設計方式處理它們的面板。_
 
-Xamarin.Mac 應用程式中使用 C# 和.NET，當您存取相同的 Windows 和面板，工作的開發人員*OBJECTIVE-C*並*Xcode*沒有。 由於 Xamarin.Mac 直接與 Xcode 整合，您可以使用 Xcode 的_Interface Builder_來建立，並維護您的 Windows 和面板 （或選擇直接在 C# 程式碼中建立它們）。
+使用時C#和.NET Xamarin.Mac 應用程式中，存取相同的 Windows 和面板的工作的開發人員*OBJECTIVE-C*並*Xcode*沒有。 由於 Xamarin.Mac 直接與 Xcode 整合，您可以使用 Xcode 的_Interface Builder_來建立，並維護您的 Windows 和面板 （或選擇直接在 C# 程式碼中建立它們）。
 
 根據其用途，Xamarin.Mac 應用程式可以呈現一或多個 Windows 在畫面上管理與協調的資訊，它會顯示，並搭配。 視窗的主體的函式為：
 
@@ -284,7 +284,7 @@ public override void ViewWillAppear ()
 MyWindow.PerformClose(this);
 ```
 
-會嘗試關閉`MyWindow``NSWindow`執行個體。 如果已順利完成，視窗將會關閉、 否則將會發出警示音效和將會保持開啟狀態。
+會嘗試關閉`MyWindow``NSWindow`執行個體。 如果已順利完成，將會關閉視窗，否則將會發出警示音效且將保持開啟狀態。
 
 <a name="Close" />
 
@@ -377,7 +377,7 @@ namespace SourceWriter
                 alert.AddButton ("Cancel");
                 var result = alert.RunSheetModal (Window);
 
-                // Take action based on resu;t
+                // Take action based on result
                 switch (result) {
                 case 1000:
                     // Grab controller
@@ -758,7 +758,7 @@ void OpenDialog (NSObject sender)
 3. 輸入 `DocumentPanel` 作為 [名稱]，然後按一下 [新增] 按鈕。
 4. 按兩下`DocumentPanel.xib`以開啟它進行編輯介面產生器中的檔案： 
 
-    [![](window-images/new02.png "編輯然後")](window-images/new02.png#lightbox)
+    [![](window-images/new02.png "編輯面板")](window-images/new02.png#lightbox)
 5. 刪除現有的視窗，並將從面板拖曳**程式庫偵測器**中**介面編輯器**: 
 
     [![](window-images/panels01.png "刪除現有的視窗")](window-images/panels01.png#lightbox)

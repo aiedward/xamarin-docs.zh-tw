@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 8f84b688998251db52c8c2be71949e1a2e665dc0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6545b1423b809e42293302baf3eba9521848edc1
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103955"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526389"
 ---
 # <a name="alerts-in-xamarinmac"></a>Xamarin.Mac 中的警示
 
 _本文涵蓋在 Xamarin.Mac 應用程式中的警示。建立和顯示的警示，它會描述C#程式碼和回應使用者互動。_
 
-使用時C#和.NET Xamarin.Mac 應用程式中的，您可以存取相同警示，工作的開發人員*OBJECTIVE-C*並*Xcode*沒有。 
+使用時C#和.NET Xamarin.Mac 應用程式中的，您可以存取相同警示工作的開發人員*OBJECTIVE-C*並*Xcode*沒有。 
 
 表示警示是一種特殊的嚴重問題發生 （例如錯誤） 時，會出現的對話方塊或警告 （例如正在準備刪除檔案）。 由於警示是一個對話方塊，它還需要使用者回應之前予以關閉。
 

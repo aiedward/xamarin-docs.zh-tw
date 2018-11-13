@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/28/2018
-ms.openlocfilehash: 72bb4c359717f419eb500d471fe436d1ca195ae6
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: bcc18672257338e74e7a0c7114876129ae661acb
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "34794081"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527413"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用階層式樣式表 (CSS) 樣式設定 Xamarin.Forms 應用程式
 
@@ -374,7 +374,7 @@ Xamarin.Forms 所支援下列的 CSS 屬性 (在**值**資料行中，類型為_
 |`background-color`|`VisualElement`|_色彩_ \| `initial` |`background-color: springgreen;`|
 |`background-image`|`Page`|_字串_ \| `initial` |`background-image: bg.png;`|
 |`border-color`|`Button`、 `Frame`|_色彩_ \| `initial`|`border-color: #9acd32;`|
-|`border-radius`|`BoxView`|_雙精度浮點數_ \| `intial` |`border-radius: 10;`|
+|`border-radius`|`BoxView`|_雙精度浮點數_ \| `initial` |`border-radius: 10;`|
 |`border-width`|`Button`|_雙精度浮點數_ \| `initial` |`border-width: .5;`|
 |`color`|`ActivityIndicator`, `BoxView`, `Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_色彩_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
 |`column-gap`|`Grid`|_雙精度浮點數_ \| `initial`|`column-gap: 9;`|
@@ -385,7 +385,7 @@ Xamarin.Forms 所支援下列的 CSS 屬性 (在**值**資料行中，類型為_
 |`flex-shrink`|`VisualElement`|_浮點數_ \| `initial`|`flex-shrink: 1;`|
 |`flex-wrap`|`VisualElement`| `nowrap` \| `wrap` \| `reverse` \| `wrap-reverse` \| `initial`|`flex-wrap: wrap-reverse;`|
 |`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_字串_ \| `initial` |`font-family: Consolas;`|
-|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_雙精度浮點_\| _namedsize_  \| `initial` |`font-size: 12;`|
+|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_雙精度浮點_\| _namedsize_ \| `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
 |`height`|`VisualElement`|_雙精度浮點數_ \| `initial` |`min-height: 250;`|
 |`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
@@ -426,7 +426,7 @@ Xamarin.Forms 所支援下列的 CSS 屬性 (在**值**資料行中，類型為_
 |`-xf-bar-text-color`|`NavigationPage`、 `TabbedPage`|_色彩_ \| `initial` |`-xf-bar-text-color: gray`|
 |`-xf-orientation`|`ScrollView`、 `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both` 僅支援`ScrollView`。 |`-xf-orientation: horizontal;`|
 |`-xf-horizontal-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-horizontal-scroll-bar-visibility: never;`|
-|`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visbility: always;`|
+|`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
 |`-xf-min-track-color`|`Slider`|_色彩_ \| `initial` |`-xf-min-track-color: yellow;`|
 |`-xf-max-track-color`|`Slider`|_色彩_ \| `initial` |`-xf-max-track-color: red;`|
 |`-xf-thumb-color`|`Slider`|_色彩_ \| `initial` |`-xf-thumb-color: limegreen;`|

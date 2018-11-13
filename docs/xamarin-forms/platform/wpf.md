@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 650723F2-4279-4B7B-B0A1-D7F8FF26BF1E
 ms.technology: xamarin-forms
 ms.custom: xamu-video
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 04/05/2018
-ms.openlocfilehash: 416e33f131c6e1ef144608f98964fd8372f454f8
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: cdf115c4ea6d6613a1da2d0d2cfa14ed500086f8
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831315"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563130"
 ---
 # <a name="wpf-platform-setup"></a>WPF 平台安裝程式
 

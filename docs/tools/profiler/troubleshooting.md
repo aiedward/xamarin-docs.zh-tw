@@ -6,12 +6,12 @@ ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: lobrien
 ms.author: laobri
 ms.date: 10/27/2017
-ms.openlocfilehash: 34406ce8d4276ba36ab2ddd49e73681ff2fef773
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f9b4da5b6dfe3f0254340d9175b08198bd52a45a
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103747"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563338"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin Profiler 疑難排解
 
@@ -79,7 +79,7 @@ Xamarin 小組可協助追蹤問題，如果您提供的詳細資訊，包括：
 
 #### <a name="to-watch-a-specific-thread"></a>若要觀看特定執行緒
 
-如果您有一個您想要特別注意的執行緒，它會命名執行緒中的最開頭建立，以便取得取得理想`ThreadName`而不是`0x0`。 為了確保做為 UI 中設定執行緒名稱的範例，您可以使用下列程式碼：
+如果您有一個您想要特別注意的執行緒，很適合用來命名的執行緒，以取得其建立的最開頭`ThreadName`而不是`0x0`。 例如若要設定執行緒名稱做為`UI`，您可以使用下列程式碼：
 
 ```csharp
 RunOnUiThread (() => {

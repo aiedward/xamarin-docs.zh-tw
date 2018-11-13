@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/04/2018
-ms.openlocfilehash: 420fabf7b1f4c5bf4cacdeaf10823ae3233f5bd0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c0adee0dae1135bdfd076082e85a471db1cd1ecf
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113231"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528555"
 ---
 # <a name="bound-services-in-xamarinandroid"></a>在 Xamarin.Android 中繫結的服務
 
@@ -234,7 +234,7 @@ namespace BoundServiceDemo
 
 * **`Intent`**  &ndash;意圖應該明確地識別連線到哪個服務。
 * **`IServiceConnection`物件**&ndash;這個物件會提供繫結的服務啟動及停止時，通知用戶端的回呼方法的媒介。
-* **[`Android.Content.Bind`](https://developer.xamarin.com/api/type/Android.Content.Bind/) 列舉**&ndash;這個參數是一組旗標是由系統用於當繫結的物件。 最常使用的值是[ `Bind.AutoCreate` ](https://developer.xamarin.com/api/field/Android.Content.Bind.AutoCreate/)，如果它不正在執行，這會自動啟動服務。
+* **[`Android.Content.Bind`](https://developer.xamarin.com/api/type/Android.Content.Bind/) 列舉**&ndash;這個參數是系統會使用一組旗標時繫結的物件。 最常使用的值是[ `Bind.AutoCreate` ](https://developer.xamarin.com/api/field/Android.Content.Bind.AutoCreate/)，如果它不正在執行，這會自動啟動服務。
 
 下列程式碼片段是如何在活動中使用明確意圖啟動繫結的服務的範例：
 

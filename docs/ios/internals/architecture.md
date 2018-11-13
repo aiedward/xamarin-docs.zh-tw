@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 106357e9442d51fdd31bb30b4f0342e2b59f67fd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d08f7e3a35cd82f4262ef1f145d4b4648f7baef8
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118483"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526659"
 ---
 # <a name="ios-app-architecture"></a>iOS 應用程式架構
 
@@ -118,7 +118,7 @@ Managed 程式碼可包含屬性，`[Register]`和`[Export]`，註冊機構會�
 
 ## <a name="generator"></a>Generator
 
-Xamarin.iOS 將包含每個單一的 iOS API 定義。 您可以在瀏覽任一[MaciOS github 存放庫](https://github.com/xamarin/xamarin-macios/tree/master/src)。 這些定義會包含介面的屬性，以及任何必要的方法和屬性。 例如，下列程式碼是用來定義 UIKit UIToolbar[命名空間](https://github.com/xamarin/xamarin-macios/blob/master/src/uikit.cs#L11277-L11327)。 請注意，它含有一些方法和屬性的介面：
+Xamarin.iOS 將包含每個單一的 iOS API 定義。 您可以在瀏覽任一[MaciOS github 存放庫](https://github.com/xamarin/xamarin-macios/tree/master/src)。 這些定義會包含介面的屬性，以及任何必要的方法和屬性。 例如，下列程式碼用以定義 UIToolbar 中 UIKit[命名空間](https://github.com/xamarin/xamarin-macios/blob/master/src/uikit.cs#L11277-L11327)。 請注意，它含有一些方法和屬性的介面：
 
 ```csharp
 [BaseType (typeof (UIView))]

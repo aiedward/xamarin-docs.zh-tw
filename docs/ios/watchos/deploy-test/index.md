@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: a0738b03c4fa0ad975b872307bb17f387b1c5fd5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7d626b8a968835813d87c93e3cead57a00c14000
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120953"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528594"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>部署和測試 xamarin 的 watchOS 應用程式
 
@@ -50,7 +50,7 @@ ms.locfileid: "50120953"
 
 ### <a name="explicit-app-ids"></a>明確的應用程式識別碼
 
-建立**應用程式識別碼**每個每個專案的套件組合識別碼 （這看起來像這樣在 ios 開發人員中心）：
+建立**應用程式識別碼**每個專案的套件組合識別碼 （這看起來像這樣在 ios 開發人員中心）：
 
 ![IOS 開發人員中心中的套件組合識別碼](images/appids-specific-sml.png)
 
@@ -88,7 +88,7 @@ ms.locfileid: "50120953"
 
 一旦建立群組時，它可以參考在您**應用程式識別碼**組態。 將它包含這兩個 iOS 應用程式與監控擴充功能，請記得**應用程式識別碼**。
 
-![可用的 consifurations](images/appgroups-sml.png)
+![可用的組態](images/appgroups-sml.png)
 
 請勿**不**啟用應用程式群組中的 Apple Watch 應用程式識別碼。 您不需要在 watch 本身上啟用。
 

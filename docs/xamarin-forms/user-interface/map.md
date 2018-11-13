@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: f787adcba78a13f6d4cad3fb446350a65e960aca
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: cfa450c977ac9f1d6370f40d27f5d704cc774767
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123605"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526672"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms 對應
 
@@ -141,7 +141,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 <a name="Using_Maps" />
 
-## <a name="using-maps"></a>使用對應
+## <a name="using-maps"></a>使用 Maps
 
 請參閱[MapPage.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/MobileCRM/MobileCRM.Shared/Pages/MapPage.cs)在 MobileCRM 範例中，如需如何使用地圖控制項，在程式碼中的範例。 簡單`MapPage`類別可能類似此-請注意，新`MapSpan`會建立以位置地圖的檢視：
 
@@ -183,7 +183,7 @@ map.MapType == MapType.Street;
 上述程式碼片段所示，提供`MapSpan`map 建構函式的執行個體設定的初始檢視 （中心點和縮放層級） 時就會載入對應。 `MoveToRegion` Map 類別上的方法可以再用來變更對應的位置或縮放層級。 有兩種方式來建立新的`MapSpan`執行個體：
 
 -  **MapSpan.FromCenterAndRadius()** -靜態方法，以建立來自`Position`並指定`Distance`。
--  **新的 MapSpan （)** -使用的建構函式`Position`和緯度和經度來顯示度。
+-  **新的 MapSpan （)** -使用的建構函式`Position`和程度的緯度和經度來顯示。
 
 
 若要變更地圖的縮放層級但是不會改變位置，建立新`MapSpan`使用目前的位置，從`VisibleRegion.Center`地圖控制項的屬性。 A`Slider`可用來控制地圖縮放，像這樣 （不過，縮放直接在地圖控制項中目前無法更新滑桿的值）：

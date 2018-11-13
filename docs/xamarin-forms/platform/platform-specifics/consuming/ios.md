@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/01/2018
-ms.openlocfilehash: 69f754db0fd9661fb317f43c7cda546b0b510265
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: afecf5c173e919bd20015aadd8a874f492dc4e34
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119399"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527075"
 ---
 # <a name="ios-platform-specifics"></a>iOS 平台特性
 
@@ -332,7 +332,7 @@ switch (picker.On<iOS>().UpdateMode())
 
 結果是，指定`UpdateMode`套用至[ `Picker` ](xref:Xamarin.Forms.Picker)，這會控制當項目選取項目，就會發生：
 
-[![](ios-images/picker-updatemode.png "選擇器 UpdateMode 平台專屬")](ios-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Plaform-Specific")
+[![](ios-images/picker-updatemode.png "選擇器 UpdateMode 平台專屬")](ios-images/picker-updatemode-large.png#lightbox "選擇器 UpdateMode 平台專屬")
 
 <a name="slider-updateontap" />
 
@@ -777,7 +777,7 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 結果是[ `ScrollView` ](xref:Xamarin.Forms.ScrollView)可以停用延遲接收內容的風格，因此，在此案例[ `Slider` ](xref:Xamarin.Forms.Slider)接收筆勢而不是[ `Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail)頁面的[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage):
 
-[![](ios-images/scrollview-delay-content-touches.png "ScrollView 延遲內容觸及特定平台")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Plaform-Specific")
+[![](ios-images/scrollview-delay-content-touches.png "ScrollView 延遲內容觸及平台專屬")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView 延遲內容觸及特定平台")
 
 ## <a name="application"></a>應用程式
 

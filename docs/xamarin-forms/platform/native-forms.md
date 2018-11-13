@@ -6,13 +6,13 @@ ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/11/2018
-ms.openlocfilehash: 04d435b29f6f2f577df5025995fcc074ba5d9d9d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 11/09/2018
+ms.openlocfilehash: 6232c6b561a791f170ebedd4d441f7be2a8ef92e
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122747"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563728"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>在 Xamarin 原生專案中的 Xamarin.Forms
 
@@ -25,7 +25,7 @@ Xamarin.Forms 應用程式通常包含一或多個頁面衍生自[ `ContentPage`
 1. 加入原生專案中的 Xamarin.Forms NuGet 套件。
 1. 新增[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面上，以及任何相依，原生專案。
 1. 呼叫 `Forms.Init` 方法。
-1. 建構的執行個體[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面，並將它轉換成適當的原生類型，使用下列的擴充方法的其中一個：`CreateViewController`適用於 iOS、`CreateFragment`或`CreateSupportFragment`適用於 Android，或`CreateFrameworkElement`適用於 UWP。
+1. 建構的執行個體[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面，並將它轉換成適當的原生類型，使用下列的擴充方法的其中一個：`CreateViewController`適用於 iOS、`CreateSupportFragment`適用於 Android、 或`CreateFrameworkElement`的UWP。
 1. 瀏覽至的原生類型表示法[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生使用原生的瀏覽 API 的頁面。
 
 必須由呼叫初始化 Xamarin.Forms`Forms.Init`方法之前原生專案可以建構[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面。 當它是最方便的方式在您的應用程式流程中，選擇時若要這樣做主要是取決於 – 它可以在應用程式啟動時，或執行之前`ContentPage`-建構衍生的頁面。 在本文中，並隨附的範例應用程式，`Forms.Init`應用程式啟動時呼叫方法。
@@ -134,8 +134,8 @@ public class MainActivity : AppCompatActivity
         SetSupportActionBar(toolbar);
         SupportActionBar.Title = "Phoneword";
 
-        var mainPage = new PhonewordPage().CreateFragment(this);
-        FragmentManager
+        var mainPage = new PhonewordPage().CreateSupportFragment(this);
+        SupportFragmentManager
             .BeginTransaction()
             .Replace(Resource.Id.fragment_frame_layout, mainPage)
             .Commit();
@@ -151,13 +151,10 @@ public class MainActivity : AppCompatActivity
 - 參考`MainActivity`類別會儲存在`static``Instance`欄位。 這是為了提供機制來呼叫方法中定義其他類別`MainActivity`類別。
 - `Activity`內容由版面配置資源設定。 在範例應用程式版面配置包含`LinearLayout`，其中包含`Toolbar`，和`FrameLayout`做為片段的容器。
 - `Toolbar`擷取和設定的動作列為`Activity`，而且會設定動作列標題。
-- `PhonewordPage`類別，這是 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面中 XAML 所定義、 建構及轉換成`Fragment`使用`CreateFragment`擴充方法。
-- `FragmentManager`類別會建立並認可交易，它會取代`FrameLayout`執行個體`Fragment`如`PhonewordPage`類別。
+- `PhonewordPage`類別，這是 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面中 XAML 所定義、 建構及轉換成`Fragment`使用`CreateSupportFragment`擴充方法。
+- `SupportFragmentManager`類別會建立並認可交易，它會取代`FrameLayout`執行個體`Fragment`如`PhonewordPage`類別。
 
 如需有關片段的詳細資訊，請參閱[片段](~/android/platform/fragments/index.md)。
-
-> [!NOTE]
-> 除了`CreateFragment`擴充方法，也包含 Xamarin.Forms`CreateSupportFragment`方法。 `CreateFragment`方法會建立`Android.App.Fragment`就會使用目標 API 11 的應用程式和更新版本。 `CreateSupportFragment`方法會建立`Android.Support.V4.App.Fragment`，可用以在 11 之前的 API 版本為目標的應用程式中。
 
 一次`OnCreate`已經執行方法，在 Xamarin.Forms 中的 UI 定義`PhonewordPage`，也將會顯示類別，如下列螢幕擷取畫面所示：
 
@@ -177,8 +174,8 @@ void OnCallHistory(object sender, EventArgs e)
 ```csharp
 public void NavigateToCallHistoryPage()
 {
-    var callHistoryPage = new CallHistoryPage().CreateFragment(this);
-    FragmentManager
+    var callHistoryPage = new CallHistoryPage().CreateSupportFragment(this);
+    SupportFragmentManager
         .BeginTransaction()
         .AddToBackStack(null)
         .Replace(Resource.Id.fragment_frame_layout, callHistoryPage)
@@ -186,7 +183,7 @@ public void NavigateToCallHistoryPage()
 }
 ```
 
-`NavigateToCallHistoryPage`方法會將轉換的 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面，即可`Fragment`具有`CreateFragment`擴充方法，並將`Fragment`片段回堆疊。 因此，UI 定義在 Xamarin.Forms 中`CallHistoryPage`將會顯示，如下列螢幕擷取畫面所示：
+`NavigateToCallHistoryPage`方法會將轉換的 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面，即可`Fragment`具有`CreateSupportFragment`擴充方法，並將`Fragment`片段回堆疊。 因此，UI 定義在 Xamarin.Forms 中`CallHistoryPage`將會顯示，如下列螢幕擷取畫面所示：
 
 [![](native-forms-images/android-callhistorypage.png "Android CallHistoryPage")](native-forms-images/android-callhistorypage-large.png#lightbox "Android CallHistoryPage")
 
@@ -194,12 +191,12 @@ public void NavigateToCallHistoryPage()
 
 ### <a name="enabling-back-navigation-support"></a>啟用向後巡覽支援
 
-`FragmentManager`類別具有`BackStackChanged`片段上一頁堆疊的內容變更時，就會引發的事件。 `OnCreate`方法中的`MainActivity`類別包含此事件的匿名事件處理常式：
+`SupportFragmentManager`類別具有`BackStackChanged`片段上一頁堆疊的內容變更時，就會引發的事件。 `OnCreate`方法中的`MainActivity`類別包含此事件的匿名事件處理常式：
 
 ```csharp
-FragmentManager.BackStackChanged += (sender, e) =>
+SupportFragmentManager.BackStackChanged += (sender, e) =>
 {
-    bool hasBack = FragmentManager.BackStackEntryCount > 0;
+    bool hasBack = SupportFragmentManager.BackStackEntryCount > 0;
     SupportActionBar.SetHomeButtonEnabled(hasBack);
     SupportActionBar.SetDisplayHomeAsUpEnabled(hasBack);
     SupportActionBar.Title = hasBack ? "Call History" : "Phoneword";
@@ -211,9 +208,9 @@ FragmentManager.BackStackChanged += (sender, e) =>
 ```csharp
 public override bool OnOptionsItemSelected(Android.Views.IMenuItem item)
 {
-    if (item.ItemId == global::Android.Resource.Id.Home && FragmentManager.BackStackEntryCount > 0)
+    if (item.ItemId == global::Android.Resource.Id.Home && SupportFragmentManager.BackStackEntryCount > 0)
     {
-        FragmentManager.PopBackStack();
+        SupportFragmentManager.PopBackStack();
         return true;
     }
     return base.OnOptionsItemSelected(item);

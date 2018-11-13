@@ -5,12 +5,13 @@ ms.prod: xamarin
 ms.assetid: 2BC895E5-BDFD-443D-A96D-86BA7042CB70
 author: conceptdev
 ms.author: crdun
-ms.openlocfilehash: dc30279e2fd02198bbffb4c8f97d34a9bcd65b75
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 03/27/2017
+ms.openlocfilehash: 32dc98143bc45482dc863d412d678d452b634890
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113557"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526958"
 ---
 # <a name="cocossharp-content-pipeline"></a>CocosSharp 內容管線
 

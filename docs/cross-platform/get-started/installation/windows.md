@@ -6,12 +6,12 @@ ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: cd87c33394b21ce6a9338d239de8f013cc8ec1fa
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: d9f4717a4dd76e2fb3767c7baf9aaa868cfc21ff
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "37066948"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528581"
 ---
 # <a name="installing-xamarin-in-visual-studio-2017"></a>在 Visual Studio 2017 中安裝 Xamarin
 
@@ -23,7 +23,7 @@ ms.locfileid: "37066948"
 
 [!include[](~/cross-platform/includes/install-xamarin-windows.md)]
 
-在 Visual Studio 2017 中，按一下 [說明] 功能表，確認是否已安裝 Xamarin。 如果已安裝 Xamarin，您應該會看見 [Xamarin] 功能表項目，如此螢幕擷取畫面所示：
+在 Visual Studio 2017 中，按一下 [說明] 功能表，確認是否已安裝 Xamarin。 如果已安裝 Xamarin，您應會看見 [Xamarin] 功能表項目，如此螢幕擷取畫面所示：
 
 ![[說明] 功能表上的 [Xamarin] 功能表項目](windows-images/12-xamarin-menu-item.png "[說明] 功能表上的 [Xamarin] 功能表項目")
 

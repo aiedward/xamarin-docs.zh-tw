@@ -4,15 +4,15 @@ description: 這篇文章示範如何使用可用來將引數傳遞至非預設�
 ms.prod: xamarin
 ms.assetid: 8F3B267F-499E-4D79-9193-FCA99F199519
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 10/25/2016
-ms.openlocfilehash: 51b72d9143895543715c519a65cf8c82aa4d12f7
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 60ca55999033adc375a139195c9c3e62da6d0184
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996544"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563754"
 ---
 # <a name="passing-arguments-in-xaml"></a>在 XAML 中傳遞引數
 

@@ -7,12 +7,12 @@ ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: acdee7d34f913b125887f021dab39220c9560191
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a4fbf2bc38726ad50a07744ed4c2512efbb615bc
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109233"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527244"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>建立和上 SkiaSharp 點陣圖繪製
 
@@ -494,7 +494,7 @@ public partial class BitmapRotatorPage : ContentPage
 
 呼叫另一個作業通常對點陣圖_翻轉_。 就概念而言，在垂直軸或透過中央的點陣圖的水平軸周圍的三個維度旋轉點陣圖。 垂直翻轉建立鏡像映像。
 
-**點陣圖擋板**頁面 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式 demonstates 這些程序。 XAML 檔案包含`SKCanvasView`和的垂直和水平翻轉的兩個按鈕：
+**點陣圖擋板**頁面**[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式會示範這些程序。 XAML 檔案包含`SKCanvasView`和的垂直和水平翻轉的兩個按鈕：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

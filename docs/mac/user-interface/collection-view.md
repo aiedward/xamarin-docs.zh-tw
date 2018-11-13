@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 05/24/2017
-ms.openlocfilehash: 904db0b97a8b21fd51722b70a63386a53e3f5347
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 82dd175222289676c3dacd80522c55e71ba12180
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104033"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526829"
 ---
 # <a name="collection-views-in-xamarinmac"></a>Xamarin.mac 的集合檢視
 
 _這篇文章說明如何使用 Xamarin.Mac 應用程式中的集合檢視。它涵蓋了建立和維護在 Xcode 和 Interface Builder 中的集合檢視，並以程式設計方式處理它們。_
 
-當使用 C# 和.NET 在 Xamarin.Mac 應用程式，開發人員可以存取相同 AppKit 集合檢視控制項工作的開發人員*OBJECTIVE-C*並*Xcode*沒有。 由於 Xamarin.Mac 直接與 Xcode 整合，開發人員會使用 Xcode 的_Interface Builder_來建立和維護集合檢視。
+使用時C#以及在 Xamarin.Mac 應用程式的.NET，開發人員能夠存取相同 AppKit 集合檢視控制項工作的開發人員*OBJECTIVE-C*並*Xcode*沒有。 由於 Xamarin.Mac 直接與 Xcode 整合，開發人員會使用 Xcode 的_Interface Builder_來建立和維護集合檢視。
 
 A`NSCollectionView`顯示的組織使用的子檢視方格`NSCollectionViewLayout`。 在方格中的每一個子檢視由`NSCollectionViewItem`會管理從檢視表的內容載入`.xib`檔案。
 

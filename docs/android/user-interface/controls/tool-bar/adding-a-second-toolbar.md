@@ -6,19 +6,19 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: b8da13afb7fd8d7198e8bfe7476b40a5cd09769a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fc95c05c1945464cd9cac8565d8a11ff1b4c7e1d
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112544"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527283"
 ---
 # <a name="adding-a-second-toolbar"></a>新增第二個工具列
 
 
 ## <a name="overview"></a>總覽 
 
-`Toolbar`可以執行多個取代動作列&ndash;它可用於多次的活動，它可以是自訂螢幕上的任何位置的放置，將它設定為橫跨只有部分螢幕的寬度。 以下範例說明如何建立第二個`Toolbar`並將它放在畫面底部。 這`Toolbar`會實作**複製**，**剪下**，和**貼上**功能表項目。 
+`Toolbar`可以執行多個取代動作列&ndash;它可用於多次的活動，您可以自訂 [] 畫面上的任何位置的放置和它可以設定成跨越只有部分螢幕的寬度。 以下範例說明如何建立第二個`Toolbar`並將它放在畫面底部。 這`Toolbar`會實作**複製**，**剪下**，和**貼上**功能表項目。 
 
 
 ## <a name="define-the-second-toolbar"></a>定義第二個工具列 

@@ -1,5 +1,5 @@
 ---
-title: Firebase 作業發送器
+title: Firebase 工作發送器
 description: 本指南會討論如何使用 Google 的 Firebase 作業發送器程式庫的背景工作的排程。
 ms.prod: xamarin
 ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: 4ae1fb71209f8116b17ee7e2cb44318ef790d831
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 91bafbbdaee805ad128766bf0a770cb711597a85
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116160"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526919"
 ---
-# <a name="firebase-job-dispatcher"></a>Firebase 作業發送器
+# <a name="firebase-job-dispatcher"></a>Firebase 工作發送器
 
 _本指南會討論如何使用 Google 的 Firebase 作業發送器程式庫的背景工作的排程。_
 
@@ -44,9 +44,9 @@ Firebase 作業發送器是 Google 可提供簡化的排程背景工作的 fluen
 * A`Firebase.JobDispatcher.RetryStrategy`包含應該要如何處理工作無法正確執行時的相關資訊。 重試策略指定想要再次執行該工作之前要等待的時間。 
 * A`Firebase.JobDispatcher.Constraint`是選擇性的值，描述之前必須符合可執行工作，例如裝置 unmetered 網路上的條件或收費。
 * `Firebase.JobDispatcher.Job`是一種 API，可統一--工作單位，可由排程中的前一個 Api `JobDispatcher`。 `Job.Builder`類別用來具現化`Job`。
-* A`Firebasee.JobDispatcher.JobDispatcher`排程與作業系統的工作，以及提供方法來取消作業，如有必要，請使用先前的三個 Api。
+* A`Firebase.JobDispatcher.JobDispatcher`排程與作業系統的工作，以及提供方法來取消作業，如有必要，請使用先前的三個 Api。
 
-若要排程工作與 Firebase 作業發送器，Xamarin.Android 應用程式必須封裝此型別擴充中的程式碼`JobService`類別。 `JobService` 有三個生命週期方法，可以呼叫作業的存留期間：
+若要排程工作與 Firebase 作業發送器，Xamarin.Android 應用程式必須封裝此型別擴充中的程式碼`JobService`類別。 `JobService` 有三個可以呼叫作業的存留期間的生命週期方法：
 
 * **`bool OnStartJob(IJobParameters parameters)`** &ndash; 這個方法是，工作會發生，而且應該永遠。 在主執行緒上執行。 這個方法會傳回`true`剩餘，如果有工作或`false`如果工作已完成。 
 * **`bool OnStopJob(IJobParameters parameters)`** &ndash; 這稱為因故停止工作時。 它應該傳回`true`如果應該重新排程作業，以便稍後使用。
@@ -177,7 +177,7 @@ int scheduleResult = dispatcher.Schedule(myJob);
 
 <a name="Passing_Parameters_to_a_Job" />
 
-#### <a name="passing-jarameters-to-a-job"></a>將 jarameters 傳遞至作業
+#### <a name="passing-parameters-to-a-job"></a>將參數傳遞至作業
 
 藉由建立的參數傳遞至作業`Bundle`連同傳遞`Job.Builder.SetExtras`方法：
 
@@ -252,7 +252,7 @@ Job myJob = dispatcher.NewJobBuilder()
 您可定義自訂`RetryStrategy`與`FirebaseJobDispatcher.NewRetryStrategy`方法。 它會採用三個參數：
 
 1. `int policy` &ndash; _原則_是其中一個先前`RetryStrategy`值`RetryStrategy.RetryPolicyLinear`，或`RetryStrategy.RetryPolicyExponential`。
-2. `int intialBackoffSeconds` &ndash; _初始輪詢_延遲，以秒為單位，然後再嘗試再次執行該工作所需。 此設定的預設值為 30 秒。 
+2. `int initialBackoffSeconds` &ndash; _初始輪詢_延遲，以秒為單位，然後再嘗試再次執行該工作所需。 此設定的預設值為 30 秒。 
 3. `int maximumBackoffSeconds` &ndash; _最大輪詢_值宣告的最大嘗試再次執行工作前所延遲的秒數。 預設值為 3600 秒。 
 
 ```csharp

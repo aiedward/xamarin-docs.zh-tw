@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 469ae19021ae524c302b8a9920aaa64bb4a681f4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 61d598f90747cf47b613012328f77b4bd8953a41
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117287"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528454"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>使用 xamarin.mac 的分鏡腳本
 
@@ -68,7 +68,7 @@ controller.ShowWindow(this);
 - `ViewDidDisappear` -從螢幕中移除檢視後，會直接呼叫此方法。
 - `UpdateViewConstraints` -定義檢視的條件約束會自動更新的版面配置位置和大小需求時，會呼叫此方法。
 - `ViewWillLayout` -此方法稱為之前將子檢視這份檢視會顯示的畫面。
-- `ViewDidLayout` -將子檢視的檢視，檢視所顯示的畫面之後，會直接呼叫此方法。
+- `ViewDidLayout` -將子檢視的檢視所顯示的畫面之後，會直接呼叫此方法。
 
 <a name="The-Responder-Chain" />
 
@@ -150,7 +150,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 }
 ```
 
-（選擇性） 您可以覆寫`ShouldPerfromSegue`方法和控制項的 Segue 是否實際執行透過C#程式碼。 針對以手動方式呈現的檢視控制器，呼叫其`DismissController`不再需要時從顯示移除它們的方法。
+（選擇性） 您可以覆寫`ShouldPerformSegue`方法和控制項的 Segue 是否實際執行透過C#程式碼。 針對以手動方式呈現的檢視控制器，呼叫其`DismissController`不再需要時從顯示移除它們的方法。
 
 <a name="Creating-Custom-Segues" />
 
@@ -227,7 +227,7 @@ namespace OnCardMac
 2. `Storyboard`屬性會包含視窗控制器從載入，否則將分鏡腳本`null`如果未載入的分鏡腳本。
 3. 您可以呼叫`DismissController`方法來關閉指定的視窗，並從檢視中移除。
 
-檢視與控制器類似，實作視窗的控制站`PerformSegue`，`PrepareForSegue`而`ShouldPerfromSegue`方法及可用來當做 Segue 作業的來源。
+檢視與控制器類似，實作視窗的控制站`PerformSegue`，`PrepareForSegue`而`ShouldPerformSegue`方法及可用來當做 Segue 作業的來源。
 
 視窗控制器負責 macOS 應用程式的下列功能：
 
@@ -259,7 +259,7 @@ namespace OnCardMac
 
 ## <a name="using-storyboard-references"></a>使用分鏡腳本的參考
 
-分鏡腳本參考可讓您採用大型且複雜的分鏡腳本設計，並將它切為取得參考原始的較小的分鏡腳本，因此移除，則移除複雜度，並使所產生的個別分鏡腳本更輕鬆地設計和維護。
+分鏡腳本參考可讓您取得大型且複雜的分鏡腳本設計，並將它分割成較小的分鏡腳本取得參考從原始，因此移除複雜度，並且讓產生個別的分鏡腳本設計和維護變得更加容易。
 
 此外，分鏡腳本參考可提供_錨點_至相同的分鏡腳本或不同的特定場景中的另一個場景。
 

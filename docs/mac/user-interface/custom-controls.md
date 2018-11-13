@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 7fde60d48c23bc48ce1602a0643a3af8ad492ec6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 015c1e315b6070777542a8f8c5871c00cf336b5c
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104007"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527062"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>建立 xamarin.mac 的自訂控制項
 
-當在 Xamarin.Mac 應用程式中使用 C# 和.NET，您可以存取的相同使用者控制項，工作的開發人員*Objective C*， *Swift*並*Xcode*沒有. 由於 Xamarin.Mac 直接與 Xcode 整合，您可以使用 Xcode 的_Interface Builder_來建立，並維護您的使用者控制項 （或選擇直接在 C# 程式碼中建立它們）。
+使用時C#和.NET Xamarin.Mac 應用程式中的，您可以存取相同的使用者控制項工作的開發人員*OBJECTIVE-C*， *Swift*並*Xcode*沒有。 由於 Xamarin.Mac 直接與 Xcode 整合，您可以使用 Xcode 的_Interface Builder_來建立，並維護您的使用者控制項 （或選擇直接在 C# 程式碼中建立它們）。
 
 雖然 macOS 提供豐富的內建的使用者控制項，可能會有您需要建立自訂控制項以提供不提供的立即可用的功能，或符合自訂 UI 佈景主題 （例如遊戲的介面） 的時間。
 
@@ -221,7 +221,7 @@ public override void DrawRect (CGRect dirtyRect)
 
 #### <a name="handling-user-input-with-override-methods"></a>處理使用者輸入，以覆寫方法
 
-物件，繼承自`NSControl`(或`NSView`) 有數個覆寫方法來處理滑鼠或鍵盤輸入。 我們範例中的控制項，我們想要翻轉的狀態之間切換**上**並**關閉**當使用者按一下滑鼠左按鈕控制項上。 我們可以新增下列覆寫方法以`NSFliwSwitch`類別來處理這種情形：
+物件，繼承自`NSControl`(或`NSView`) 有數個覆寫方法來處理滑鼠或鍵盤輸入。 我們範例中的控制項，我們想要翻轉的狀態之間切換**上**並**關閉**當使用者按一下滑鼠左按鈕控制項上。 我們可以新增下列覆寫方法以`NSFlipSwitch`類別來處理這種情形：
 
 ```csharp
 #region Mouse Handling Methods
@@ -344,7 +344,7 @@ if (this.Action !=null)
 
 [![](custom-controls-images/custom04.png "設定檢視的類別")](custom-controls-images/custom04.png#lightbox)
 
-切換至**輔助編輯器**並建立**輸出**自訂控制項 (務必將它在繫結`ViewControler.h`檔案而非`.m`檔案):
+切換至**輔助編輯器**並建立**輸出**自訂控制項 (務必將它在繫結`ViewController.h`檔案而非`.m`檔案):
 
 [![](custom-controls-images/custom05.png "設定新的輸出")](custom-controls-images/custom05.png#lightbox)
 

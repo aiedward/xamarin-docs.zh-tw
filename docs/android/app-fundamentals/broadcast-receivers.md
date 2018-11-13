@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: 51bd3dd4c27dce19344f7660c31a0d4e741e1ad4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a411d4d85877c9868ec49f92b53ca8d7a81f9959
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121135"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528529"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>在 Xamarin.Android 中的廣播的接收器
 

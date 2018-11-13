@@ -7,12 +7,12 @@ ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 7f34bd5bbab4accaa30c22266dacd30692bf9ccc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 876594440c28fb0f30e0438f2ef02ae7fe89040c
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107569"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526503"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>將 SkiaSharp 點陣圖儲存至檔案
 
@@ -54,7 +54,7 @@ public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality
 
 這個方法會更詳細描述短時間內。 寫入的資料流寫入編碼的點陣圖。 (在 'W'`SKWStream`代表 「 寫入 」。)第二個和第三個引數指定的檔案格式並 （適用於失真格式） 所需的品質，範圍從 0 到 100。
 
-颾魤 ㄛ [ `SKImage` ](xref:SkiaSharp.SKImage)並[ `SKPixmap` ](xref:SkiaSharp.SKPixmap)類別也定義`Encode`稍微更具彈性，而且這可能會偏好的方法。 您可以輕鬆地建立`SKImage`物件從`SKBitmap`物件使用靜態[ `SKImage.FromBitmap` ](xref:SkiaSharp.SKImage.FromBitmap(SkiaSharp.SKBitmap))方法。 您可以取得`SKPixmap`物件從`SKBitmp`物件使用[ `PeekPixels` ](xref:SkiaSharp.SKBitmap.PeekPixels)方法。
+颾魤 ㄛ [ `SKImage` ](xref:SkiaSharp.SKImage)並[ `SKPixmap` ](xref:SkiaSharp.SKPixmap)類別也定義`Encode`稍微更具彈性，而且這可能會偏好的方法。 您可以輕鬆地建立`SKImage`物件從`SKBitmap`物件使用靜態[ `SKImage.FromBitmap` ](xref:SkiaSharp.SKImage.FromBitmap(SkiaSharp.SKBitmap))方法。 您可以取得`SKPixmap`物件從`SKBitmap`物件使用[ `PeekPixels` ](xref:SkiaSharp.SKBitmap.PeekPixels)方法。
 
 其中一個[ `Encode` ](xref:SkiaSharp.SKImage.Encode)所定義的方法`SKImage`沒有參數並會自動儲存成 PNG 格式。 無參數的方法是非常好用。
 

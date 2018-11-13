@@ -4,15 +4,15 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 第 2 章摘要。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: fe6a8c3d17cf1fe6f489f6425bbdaa3cd30f390a
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: fcb832e851d7467679d979841dad60d117240b59
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156675"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563864"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第 2 章的摘要。 應用程式剖析
 
@@ -102,7 +102,7 @@ A`Page`衍生項目會佔用整個螢幕或幾乎整個螢幕。 頁面的子系
 
 大部分的 Xamarin.Forms 開發人員偏好使用的程式庫方法。 在本書中，大部分的解決方案會使用文件庫。 使用 SAP 包含**Sap**中的專案名稱後置字元。
 
-使用 SAP 方法共用專案中的程式碼可以使用 C# 前置處理器指示詞執行不同的程式碼適用於各種平台 (`#if`，#`elif`，和`#endif`) 使用這些預先定義的識別項：
+使用 SAP 方法共用專案中的程式碼可以使用執行不同的程式碼適用於各種平台C#前置處理器指示詞 (`#if`，#`elif`，並`#endif`) 使用這些預先定義的識別項：
 
 - iOS: `__IOS__`
 - Android: `__ANDROID__`
@@ -112,7 +112,7 @@ A`Page`衍生項目會佔用整個螢幕或幾乎整個螢幕。 頁面的子系
 
 ## <a name="labels-for-text"></a>標籤文字
 
-[ **Greetings** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Greetings)解決方案示範如何將新 C# 檔案新增至**Greetings**專案。 這個檔案會定義名為類別`GreetingsPage`衍生自`ContentPage`。 在本書中，大部分的專案包含單一`ContentPage`衍生項目，其名稱是後置詞的專案名稱`Page`附加。
+[ **Greetings** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Greetings)解決方案示範如何新增C#檔案**Greetings**專案。 這個檔案會定義名為類別`GreetingsPage`衍生自`ContentPage`。 在本書中，大部分的專案包含單一`ContentPage`衍生項目，其名稱是後置詞的專案名稱`Page`附加。
 
 `GreetingsPage`建構函式具現化[ `Label` ](xref:Xamarin.Forms.Label)檢視中，也就是 [Xamarin.Forms] 檢視會顯示文字。 [ `Text` ](xref:Xamarin.Forms.Label.Text)屬性設定為所顯示的文字`Label`。 此程式設定`Label`要`Content`屬性`ContentPage`。 建構函式`App`類別接著會執行個體化`GreetingsPage`並將它設定為其`MainPage`屬性。
 
@@ -131,7 +131,7 @@ A`Page`衍生項目會佔用整個螢幕或幾乎整個螢幕。 頁面的子系
 
 ### <a name="solution-2-include-padding-just-for-ios-sap-only"></a>解決方案 2。 包含與邊框距離只適用於 iOS (只有 SAP)
 
-只使用在 iOS 上的 SAP 以 C# 前置處理器指示詞中設定 'Padding' 屬性。 這示範於[ **GreetingsSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/GreetingsSap)解決方案。
+設定 'Padding' 屬性只使用在 iOS 上使用 SAPC#前置處理器指示詞。 這示範於[ **GreetingsSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/GreetingsSap)解決方案。
 
 ### <a name="solution-3-include-padding-just-for-ios-pcl-or-sap"></a>解決方案 3。 包含與邊框距離只適用於 iOS （PCL 或 SAP）
 
@@ -203,5 +203,5 @@ Xamarin.Forms 用於活頁簿，新版`Padding`可以選取 iOS 的 PCL 」 或 
 
 - [第 2 章全文檢索 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf)
 - [第 2 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
-- [第 2 章 F # 範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
+- [第 2 章F#範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
 - [開始使用 Xamarin.Forms](~/xamarin-forms/get-started/index.md)

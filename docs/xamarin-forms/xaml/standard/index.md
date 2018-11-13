@@ -4,15 +4,15 @@ description: 這篇文章說明如何開始探索在 Xamarin.Forms 中 XAML Stan
 ms.prod: xamarin
 ms.assetid: 24382DF1-BE70-4608-B86F-B79FB23E4A78
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 11/15/2017
-ms.openlocfilehash: 4e65f31d76d9540bed6110198d7cafaab9fe78f5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d9fb19fb233c25e5dd525c7c157013ef66f4a4f3
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114895"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51562753"
 ---
 # <a name="xaml-standard-preview"></a>XAML 標準 （預覽）
 

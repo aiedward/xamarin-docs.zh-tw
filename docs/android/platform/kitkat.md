@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: b62943fce8a1137c3bde1c629cc4cee9b2b44f3f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b1ea26afff1477d762d106db004be82010a2d557
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103305"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527324"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
@@ -215,7 +215,7 @@ public class MainActivity : Activity
 </merge>
 ```
 
-上述範例使用`merge`縮短檢視程式碼，並簡化檢視階層。 您可以深入了解`merge`版面配置[這裡](http://android-developers.blogspot.com/2009/03/android-layout-tricks-3-optimize-by.html)。
+上述範例使用`merge`縮短檢視程式碼，並簡化的檢視階層。 您可以深入了解`merge`版面配置[這裡](http://android-developers.blogspot.com/2009/03/android-layout-tricks-3-optimize-by.html)。
 
 透過呼叫建立場景[ `Scene.GetSceneForLayout` ](https://developer.xamarin.com/api/member/Android.Transitions.Scene.GetSceneForLayout/p/Android.Views.ViewGroup/System.Int32/Android.Content.Context/)，並在容器物件中，資源識別碼場景的版面配置檔，以及目前傳遞`Context`，如下列程式碼範例所示：
 
@@ -282,7 +282,7 @@ TransitionManager.Go (scene1, transition);
 
 ### <a name="translucent-ui"></a>半透明的 UI
 
-KitKat 可讓您更充分掌控佈景主題與選擇性 transclucent 狀態和導覽列的應用程式。 您可以變更您用來定義您的 Android 佈景主題相同的 XML 檔案中的系統 UI 項目透明度。 KitKat 導入了下列屬性：
+KitKat 可讓您更充分掌控佈景主題使用選擇性的半透明狀態和導覽列的應用程式。 您可以變更您用來定義您的 Android 佈景主題相同的 XML 檔案中的系統 UI 項目透明度。 KitKat 導入了下列屬性：
 
 -  `windowTranslucentStatus` -設定為 true，可頂端的狀態列半透明。
 
@@ -322,7 +322,7 @@ KitKat 可讓您更充分掌控佈景主題與選擇性 transclucent 狀態和�
 
 儲存體存取 Framework (SAF) 是使用者與儲存的內容，例如影像、 影片和文件互動的新方式。 而不是向使用者顯示對話方塊並選擇 應用程式的內容，KitKat 會開啟新的 UI，可讓使用者存取其資料放在一個彙總的位置。 內容已選擇後，使用者將會傳回給要求內容的應用程式和應用程式體驗將會繼續如往常。
 
-這項變更需要在開發人員端上的兩個動作： 首先，需要來自提供者的內容的應用程式需要更新為 reqesting 內容的新方式。 第二個，應用程式將資料寫入`ContentProvider`需要修改成使用新的架構。 這兩個情況取決於新 [`DocumentsProvider`](https://developer.xamarin.com/api/type/Android.Provider.DocumentsProvider/)
+這項變更需要在開發人員端上的兩個動作： 首先，需要來自提供者的內容的應用程式需要更新的要求內容的新方式。 第二個，應用程式將資料寫入`ContentProvider`需要修改成使用新的架構。 這兩個情況取決於新 [`DocumentsProvider`](https://developer.xamarin.com/api/type/Android.Provider.DocumentsProvider/)
 API。
 
 #### <a name="documentsprovider"></a>DocumentsProvider
@@ -344,7 +344,7 @@ StartActivityForResult (intent, save_request_code);
 
 呼叫`StartActivityForResult`啟動 SAF UI 中，使用者可以再瀏覽 選擇映像：
 
-[![使用瀏覽至映像的儲存體存取架構的應用程式的範例螢幕擷取畫面](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
+[![使用適用於瀏覽至映像的儲存體存取架構的應用程式的範例螢幕擷取畫面](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
 
 使用者已選擇映像之後,`OnActivityResult`傳回`Android.Net.Uri`的所選的檔案。 下列程式碼範例會顯示使用者的映像選取項目：
 
@@ -424,7 +424,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 [列印] 選項通常會出現在活動的[選項功能表](http://developer.android.com/guide/topics/ui/menus.html#options-menu)。
 [選項] 功能表可讓使用者在活動上執行的動作。 它是在螢幕的右上角中，並看起來像這樣：
 
-[![在畫面的右上角中的列印功能表項目 dispalyed 範例螢幕擷取畫面](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
+[![範例螢幕擷取畫面顯示在畫面的右上角的列印功能表項目](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
 
 
 其他功能表項目可以在定義* 功能表*目錄下*資源*。 下列程式碼定義範例功能表項目呼叫[列印](https://developer.xamarin.com/api/type/Android.Print.PrintManager/):
@@ -505,7 +505,7 @@ void PrintPage ()
 
 `Print` 會當作引數: ("MyWebPage 」 在此範例中)，列印工作的名稱 [`PrintDocumentAdapter`](https://developer.xamarin.com/api/type/Android.Print.PrintDocumentAdapter/)
 從內容中，產生列印文件和 [`PrintAttributes`](https://developer.xamarin.com/api/type/Android.Print.PrintAttributes/)
-(`null`在上述範例中)。 您可以指定`PrintAttributes`協助配置內容在列印的頁面上，雖然預設的屬性應該處理大部分的案例。
+(`null`在上述範例中)。 您可以指定`PrintAttributes`協助配置內容在列印的頁面上，雖然預設的屬性應該處理大部分的情況。
 
 呼叫`Print`載入列印的 UI 中，列出列印工作的選項。 UI 可讓使用者選擇列印或 HTML 內容儲存成 PDF，如以下螢幕擷取畫面所示：
 
@@ -547,7 +547,7 @@ HCE 服務也必須向應用程式的資訊清單中，並使用適當的權限�
 ```csharp
 [Service(Exported=true, Permission="android.permissions.BIND_NFC_SERVICE"),
     IntentFilter(new[] {"android.nfc.cardemulation.HOST_APDU_SERVICE"}),
-    MetaData("andorid.nfc.cardemulation.host.apdu_service",
+    MetaData("android.nfc.cardemulation.host.apdu_service",
     Resource="@xml/hceservice")]
 
 class HceService : HostApduService
@@ -599,7 +599,7 @@ KitKat 也會隨附兩個新的感應器類型用於追蹤使用者的步驟。 
 
 [![顯示步驟計數器 SensorsActivity 應用程式的螢幕擷取畫面](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png#lightbox)
 
-您可以建立`SensorManager`藉由呼叫`GetSystemService(SensorService)`並將轉換結果當做`SensorManager`。 若要使用的步驟計數器，請呼叫`GetDeafultSensor`上`SensorManager`。 您可以註冊的感應器，並接聽中的協助步驟計數的變更 [`ISensorEventListener`](https://developer.xamarin.com/api/type/Android.Hardware.ISensorEventListener/)
+您可以建立`SensorManager`藉由呼叫`GetSystemService(SensorService)`並將轉換結果當做`SensorManager`。 若要使用的步驟計數器，請呼叫`GetDefaultSensor`上`SensorManager`。 您可以註冊的感應器，並接聽中的協助步驟計數的變更 [`ISensorEventListener`](https://developer.xamarin.com/api/type/Android.Hardware.ISensorEventListener/)
 介面，如下列程式碼範例所示：
 
 ```csharp
@@ -689,7 +689,7 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 -  *暫停動畫*-暫停和繼續與所建立的動畫 [`Animator`](https://developer.xamarin.com/api/type/Android.Animation.Animator/)
    類別的新執行個體。
 
--  *讀取動態變更文字*-表示 UI 的與新的 「 即時地區 」 的新文字以動態方式更新的組件 [ `accesibilityLiveRegion`](http://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
+-  *讀取動態變更文字*-表示 UI 的與新的 「 即時地區 」 的新文字以動態方式更新的組件 [ `accessibilityLiveRegion`](http://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
    因此會自動讀取新的文字，以協助工具模式的屬性。
 
 -  *增強音訊體驗*-請大聲點會追蹤與 [`LoudnessEnhancer`](https://developer.xamarin.com/api/type/Android.Media.Audiofx.LoudnessEnhancer/)

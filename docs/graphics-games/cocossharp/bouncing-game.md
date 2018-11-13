@@ -6,12 +6,12 @@ ms.assetid: AC9FD56F-6E4A-40DA-8168-45A761D869FD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: 42155eb541849f365e7fab0a3d5c3ad583e760b7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9fd6c9108695f58bd69a1c4aa307ca2e4be6dede
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109402"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528737"
 ---
 # <a name="bouncinggame-details"></a>BouncingGame 詳細資料
 
@@ -100,7 +100,7 @@ namespace BouncingGame
 
 ![新增檔案到資料夾 對話方塊](bouncing-game-images/image2.png "到資料夾] 對話方塊的 [新增檔案")
 
-接下來，我們會將檔案加入 Android 專案。 以滑鼠右鍵按一下或 Control + 按一下 內容 資料夾 (位於**資產**Android 專案的資料夾)，然後選取 選取**新增** > **新增檔案...**.此時，瀏覽至 iOS 專案**內容**資料夾。 當詢問有關如何新增檔案時，請選取**將連結加入**選項：
+接下來，我們會將檔案加入 Android 專案。 以滑鼠右鍵按一下或 Control + 按一下 [內容] 資料夾 (位於**資產**Android 專案的資料夾)，然後選取**新增** > **新增檔案...**.此時，瀏覽至 iOS 專案**內容**資料夾。 當詢問有關如何新增檔案時，請選取**將連結加入**選項：
 
 ![新增檔案到資料夾 對話方塊](bouncing-game-images/addalink.png "將檔案新增到資料夾 對話方塊")
 

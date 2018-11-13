@@ -4,15 +4,15 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 摘要的第 6 章
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D4F9C429-A6CF-40FA-AC68-3F149307A5F9
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 464fbdb043ac35eba7a4cc2d9ec76b78cc91ac5b
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 0f1da94031e658d42205e6346d41b02c5822d992
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156508"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563676"
 ---
 # <a name="summary-of-chapter-6-button-clicks"></a>第 6 章的摘要。 按下按鈕
 
@@ -87,5 +87,5 @@ ms.locfileid: "39156508"
 
 - [第 6 章全文檢索 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf)
 - [第 6 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
-- [第 6 章 F # 範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
+- [第 6 章F#範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
 - [Xamarin.Forms 按鈕](~/xamarin-forms/user-interface/button.md)

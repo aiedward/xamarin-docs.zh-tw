@@ -4,15 +4,15 @@ description: Xamarin.Forms 滑桿是可由使用者選取從連續範圍的雙�
 ms.prod: xamarin
 ms.assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 0069e59c1c09e242a74573ae66c8efade7d7f2a5
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 12a97989ac675d2504a2c626da73ebccb596b99b
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "38998221"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563559"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms 滑桿
 

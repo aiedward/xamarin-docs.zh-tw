@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: e31bb46569ed96d514ec87eacaf9f3912dcf3237
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 87084a0ccc2970f56e7ef7a6d2f4c59c49032aa0
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675155"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527361"
 ---
 # <a name="file-handling-in-xamarinforms"></a>在 Xamarin.Forms 中處理的檔案
 
@@ -20,7 +20,7 @@ _使用 Xamarin.Forms 處理的檔案，可以使用程式碼，在.NET Standard
 
 ## <a name="overview"></a>總覽
 
-Xamarin.Forms 程式碼會在多個平台上執行 - 每一個都有自己的檔案系統。 先前，也就是說，讀取和寫入檔案是最容易執行每個平台上使用原生檔案 Api。 或者，內嵌的資源會是更簡單的解決方案，可將資料檔案與應用程式。 不過，透過.NET Standard 2.0 就可以共用.NET Standard 程式庫中的檔案存取程式碼。
+Xamarin.Forms 程式碼會在多個平台上執行 - 每一個都有自己的檔案系統。 先前，也就是說，讀取和寫入檔案最容易執行每個平台上使用原生檔案 Api。 或者，內嵌的資源會是更簡單的解決方案，可將資料檔案與應用程式。 不過，透過.NET Standard 2.0 就可以共用.NET Standard 程式庫中的檔案存取程式碼。
 
 如需處理映像檔的資訊，請參閱[處理映像](~/xamarin-forms/user-interface/images.md)頁面。
 

@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: a202dd32bcde5cf91cce3f597c9ea7c17f4adbcd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fd97dbbe102c5a755c4a8974cf1a952c0050ac7c
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113562"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527179"
 ---
 # <a name="outline-views-in-xamarinmac"></a>Xamarin.mac 的大綱檢視
 
 _本文涵蓋在 Xamarin.Mac 應用程式中的大綱檢視。它說明建立和維護在 Xcode 和 Interface Builder 中的大綱檢視，並以程式設計方式處理它們。_
 
-當在 Xamarin.Mac 應用程式中使用 C# 和.NET，您可以為相同的存取大綱檢視，工作的開發人員*OBJECTIVE-C*並*Xcode*沒有。 由於 Xamarin.Mac 直接與 Xcode 整合，您可以使用 Xcode 的_Interface Builder_來建立，並維護您的大綱檢視 （或選擇直接在 C# 程式碼中建立它們）。
+使用時C#和.NET Xamarin.Mac 應用程式中的，您可以存取相同的大綱檢視的工作的開發人員*Objective C*並*Xcode*沒有。 由於 Xamarin.Mac 直接與 Xcode 整合，您可以使用 Xcode 的_Interface Builder_來建立，並維護您的大綱檢視 （或選擇直接在 C# 程式碼中建立它們）。
 
 大綱檢視是一種資料表，可讓使用者展開或摺疊的階層式資料的資料列。 資料表檢視中，例如大綱檢視會顯示一組相關的項目資料與代表個別項目和代表這些項目之屬性的資料行的資料列。 不同於資料表檢視中，在大綱檢視中的項目不一般的清單中，其組織在階層中，例如硬碟機上檔案和資料夾。
 

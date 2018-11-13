@@ -4,15 +4,15 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 摘要的第 4 章
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 17e62d68f8ad2c7deff500216c0bb095ca8f4275
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: daa2c2f3b43633fd9b3359763b9d740b0def9144
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117443"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563071"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章的摘要。 捲動堆疊
 

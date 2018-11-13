@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: e1e5ec5d064ad7610c5b7be8d18284d3610352c9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 554c96cdb46041b75a48523cc2952f05d2a7b1db
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106880"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51564001"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中的分鏡腳本簡介
 
@@ -100,11 +100,11 @@ NSObject sender)
 {
     base.PrepareForSegue (segue, sender);
 
-    var callHistoryContoller = segue.DestinationViewController 
+    var callHistoryController = segue.DestinationViewController 
                                   as CallHistoryController;
 
-    if (callHistoryContoller != null) {
-        callHistoryContoller.PhoneNumbers = PhoneNumbers;
+    if (callHistoryController != null) {
+        callHistoryController.PhoneNumbers = PhoneNumbers;
     }
 }
 ```
@@ -112,14 +112,14 @@ NSObject sender)
 在此範例中， `PrepareForSegue` segue 觸發使用者時，就會呼叫方法。 首先我們需要建立 '接收' 的檢視控制器的執行個體，並將此設為 segue 的目的地檢視控制器。 這是由下列程式碼行：
 
 ```csharp
-var callHistoryContoller = segue.DestinationViewController as CallHistoryController;
+var callHistoryController = segue.DestinationViewController as CallHistoryController;
 ```
 
 方法現在已設定屬性的能力`DestinationViewController`。 在此範例中我們已利用這藉由傳遞清單，稱為`PhoneNumbers`至`CallHistoryController`並將它指派至具有相同名稱的物件：
 
 ```csharp
-if (callHistoryContoller != null) {
-        callHistoryContoller.PhoneNumbers = PhoneNumbers;
+if (callHistoryController != null) {
+        callHistoryController.PhoneNumbers = PhoneNumbers;
     }
 ```
 
@@ -368,7 +368,7 @@ public partial class MainViewController : UIViewController
 
 ## <a name="using-storyboard-references"></a>使用分鏡腳本的參考
 
-分鏡腳本參考可讓您採用大型且複雜的分鏡腳本設計，並將它切為取得參考原始的較小的分鏡腳本，因此移除，則移除複雜度，並使所產生的個別分鏡腳本更輕鬆地設計和維護。
+分鏡腳本參考可讓您取得大型且複雜的分鏡腳本設計，並將它分割成較小的分鏡腳本取得參考從原始，因此移除複雜度，並且讓產生個別的分鏡腳本設計和維護變得更加容易。
 
 此外，分鏡腳本參考可提供_錨點_至相同的分鏡腳本或不同的特定場景中的另一個場景。
 

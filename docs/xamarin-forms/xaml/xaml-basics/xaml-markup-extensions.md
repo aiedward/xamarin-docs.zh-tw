@@ -4,15 +4,15 @@ description: XAML 標記延伸模組組成允許屬性設為物件或間接參�
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 3/27/2018
-ms.openlocfilehash: 6fcb051d2c24c7da169106b06ad5ebfc91edafa6
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: bffddfdb67238287b868b01edad88bc8d43e5bb1
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935611"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563832"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 標記延伸
 
@@ -387,7 +387,7 @@ xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
-您將需要額外的 XML 命名空間宣告，來存取其他類別。 每個額外的 XML 命名空間宣告會定義新的前置詞。 若要存取類別本機共用應用程式的.NET Standard 程式庫，例如`AppConstants`，XAML 程式設計人員通常會使用前置詞`local`。 命名空間宣告必須指出 CLR (Common Language Runtime) 命名空間名稱，也就是.NET 命名空間名稱，也就是名稱出現在 C#`namespace`定義或`using`指示詞：
+您將需要額外的 XML 命名空間宣告，來存取其他類別。 每個額外的 XML 命名空間宣告會定義新的前置詞。 若要存取類別本機共用應用程式的.NET Standard 程式庫，例如`AppConstants`，XAML 程式設計人員通常會使用前置詞`local`。 命名空間宣告必須指出 CLR (Common Language Runtime) 命名空間名稱，也就是.NET 命名空間名稱，也就是名稱出現在C#`namespace`定義或在`using`指示詞：
 
 ```csharp
 xmlns:local="clr-namespace:XamlSamples"

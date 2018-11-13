@@ -4,15 +4,15 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 第 7 章的摘要
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: d04012d5d2ea6a7617d5c7559aa3e1532dad15d1
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 1dc4fe12d3ca23a9ca87c3be7819c970683db469
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156908"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563494"
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>第 7 章的摘要。 XAML 與程式碼
 
@@ -82,5 +82,5 @@ Xamarin.Forms 有 XAML 編譯器，但其使用是選擇性使用基礎[ `XamlCo
 
 - [第 7 章全文檢索 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf)
 - [第 7 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
-- [第 7 章 F # 範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
+- [第 7 章F#範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
 - [XAML 基本知識](~/xamarin-forms/xaml/xaml-basics/index.md)

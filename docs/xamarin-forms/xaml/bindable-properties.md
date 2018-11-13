@@ -4,15 +4,15 @@ description: 這篇文章介紹可繫結的屬性，並示範如何建立和使�
 ms.prod: xamarin
 ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: 241579d51d1f0af84655f439bad3adb879404e91
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 8dc53c37894af70d5183fe5c44b018fdf25af616
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995384"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563845"
 ---
 # <a name="bindable-properties"></a>可繫結屬性
 

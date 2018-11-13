@@ -8,18 +8,18 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: e4f0138c0177c046c1e967a3d3625604f73327d6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0c5e048dd3f3496691b83eb10d377d012efedc72
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103188"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528763"
 ---
 # <a name="oreo-features"></a>Oreo 功能
 
 _如何開始使用 Xamarin.Android 開發 Android 的最新版本的應用程式。_
 
-[Android 8.0 Oreo](https://developer.android.com/index.html)是 Google 提供的最新 Android 版本。 在 android Oreo 提供 Xamarin.Android 開發人員感興趣的許多新功能。 這些功能包括 XML、 可下載的字型、 自動填滿及 picture in picture (PIP) 中的通知通道、 通知徽章、 自訂字型。 在 android Oreo 包含新的 Api，針對這些新功能，而這些 Api 供 Xamarin.Android 應用程式，當您使用 Xamarin.Android 8.0 及更新版本。
+[Android 8.0 Oreo](https://developer.android.com/index.html)是 Google 提供的最新 Android 版本。 在 android Oreo 提供 Xamarin.Android 開發人員感興趣的許多新功能。 這些功能包括 XML、 可下載的字型、 自動填滿及 picture in picture (PIP) 中的通知通道、 通知徽章、 自訂字型。 Android oreo 版包括新的 Api，這些新功能，以及這些 Api 是供 Xamarin.Android 應用程式，當您使用 Xamarin.Android 8.0 及更新版本。
 
 [![Android Oreo 英雄影像](oreo-images/01-android-o-logo-sml.png)](oreo-images/01-android-o-logo.png#lightbox)
 
@@ -66,7 +66,7 @@ _如何開始使用 Xamarin.Android 開發 Android 的最新版本的應用程�
 
     2. 使用[SDK 管理員](~/android/get-started/installation/android-sdk.md)安裝 26.0 或更新版本的 API 層級。
 
--   如果您使用 Visual Studio 2015 中，我們建議為 25 降級 SDK Tools，並使用舊版 Google 模擬器管理員 GUI。 SDK 工具 25 仍可使用與 API 26、 27、 及更新版本，並不會影響新的平台的開發。 這將提供介面給您管理您的 Android SDK 適用於 VS 的舊版。
+-   如果您使用 Visual Studio 2015，我們會建議降級 SDK Tools 為 25，然後使用舊版 Google 模擬器管理員 GUI。 SDK 工具 25 仍可使用與 API 26、 27、 及更新版本，並不會影響新的平台的開發。 這將提供介面給您管理您的 Android SDK 適用於 VS 的舊版。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

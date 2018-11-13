@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 8c176944d1bec4850f084043fdab81b5c2d51ceb
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.openlocfilehash: 0c95e4bcecb2ae787714b8ac6973646caada1b3e
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105203"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528854"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin.mac 的對話方塊
 
-當在 Xamarin.Mac 應用程式中使用 C# 和.NET，您可以存取相同的對話方塊和強制回應的 Windows，工作的開發人員*Objective C*並*Xcode*沒有。 由於 Xamarin.Mac 直接與 Xcode 整合，您可以使用 Xcode 的_Interface Builder_來建立，並維護您的強制回應 Windows （或選擇直接在 C# 程式碼中建立它們）。
+使用時C#和.NET 在 Xamarin.Mac 應用程式中，您可以存取相同的對話方塊和強制回應的 Windows，工作的開發人員*Objective C*並*Xcode*沒有。 由於 Xamarin.Mac 直接與 Xcode 整合，您可以使用 Xcode 的_Interface Builder_來建立，並維護您的強制回應 Windows （或選擇直接在 C# 程式碼中建立它們）。
 
 對話方塊會出現在回應使用者動作，而且通常會提供使用者可以完成的動作。 可被關閉前，對話方塊會要求使用者回應。
 
@@ -1090,7 +1090,7 @@ void ShowSaveAs (NSObject sender)
 
 [![](dialog-images/save04.png "擴充的儲存工作表")](dialog-images/save04.png#lightbox)
 
-如需使用 [儲存] 對話方塊中更詳細資訊，請參閱 Apple [NSSavePanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/index.html#//apple_ref/doc/uid/TP40004098)文件。
+如需有關使用 [儲存] 對話方塊的詳細資訊，請參閱 Apple [NSSavePanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/index.html#//apple_ref/doc/uid/TP40004098)文件。
 
 <a name="Summary" />
 

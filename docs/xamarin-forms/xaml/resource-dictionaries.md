@@ -4,15 +4,15 @@ description: XAML 資源是可共用及重複使用在 Xamarin.Forms 應用程�
 ms.prod: xamarin
 ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: d305de651f6e770d02ca35f5f8f8ffcf08424e28
-ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
+ms.openlocfilehash: 30eb8522f39438ca4006379b3b9e0d3a613ba112
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39573642"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563026"
 ---
 # <a name="resource-dictionaries"></a>資源字典
 

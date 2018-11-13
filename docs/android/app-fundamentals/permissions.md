@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: a5295ef05eae213206fada135801bb4fadbcf6dd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1a73896e4f98a6535bcd7ed66f478d168b01157f
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106334"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526880"
 ---
 # <a name="permissions-in-xamarinandroid"></a>在 Xamarin.Android 中的權限
 
@@ -194,7 +194,7 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
         if ((grantResults.Length == 1) && (grantResults[0] == Permission.Granted)) {
             // Location permission has been granted, okay to retrieve the location of the device.
             Log.Info(TAG, "Location permission has now been granted.");
-            Snackbar.Make(layout, Resource.String.permision_available_camera, Snackbar.LengthShort).Show();            
+            Snackbar.Make(layout, Resource.String.permission_available_camera, Snackbar.LengthShort).Show();            
         } 
         else 
         {

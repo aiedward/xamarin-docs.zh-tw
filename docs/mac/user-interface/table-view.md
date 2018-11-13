@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 9a8c55c8b4ff3fbd515aad8bf45c52a0b549af9f
-ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
-ms.translationtype: MT
+ms.openlocfilehash: 0d89fff81d1d13baa578068bcaef11dd5af00e14
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51285595"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527049"
 ---
 # <a name="table-views-in-xamarinmac"></a>Xamarin.Mac 中的資料表檢視
 
 _本文涵蓋在 Xamarin.Mac 應用程式中的資料表檢視。它會描述在 Xcode 和 Interface Builder 並與其互動的程式碼中建立的資料表檢視。_
 
-當在 Xamarin.Mac 應用程式中使用 C# 和.NET，您可以存取的相同資料表檢視，工作的開發人員*Objective C*並*Xcode*沒有。 由於 Xamarin.Mac 直接與 Xcode 整合，您可以使用 Xcode 的_Interface Builder_來建立，並維護您的資料表檢視 （或選擇直接在 C# 程式碼中建立它們）。
+使用時C#和.NET Xamarin.Mac 應用程式中的，您可以存取相同的資料表檢視，工作的開發人員*Objective C*並*Xcode*沒有。 由於 Xamarin.Mac 直接與 Xcode 整合，您可以使用 Xcode 的_Interface Builder_來建立，並維護您的資料表檢視 （或選擇直接在 C# 程式碼中建立它們）。
 
 資料表檢視中包含一或多個資料行的多個資料列中的資訊以表格格式顯示資料。 根據所建立的資料表檢視的類型，使用者可以排序資料行、 重新組織資料行、 加入資料行、 移除資料行或編輯在資料表中所包含的資料。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: d755160043191f93247fd09e99f23eb85831fa8b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fd677aa802adf32ac81396f81c67264d88639967
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113894"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528776"
 ---
 # <a name="watchos-workout-apps-in-xamarin"></a>watchOS 健身應用程式，在 Xamarin 中
 
@@ -469,7 +469,7 @@ public override void DidGenerateEvent (HKWorkoutSession workoutSession, HKWorkou
 
 也會新增到 watchOS 3，會移動已暫停 (`HKWorkoutEventType.MotionPaused`) 和動作繼續 (`HKWorkoutEventType.MotionResumed`) 事件。 會引發這些事件會自動由 HealthKit 期間執行了使用者啟動和停止移動時。
 
-當應用程式收到移動已暫停的事件時，應該會停止收集資料，直到使用者恢復執行動作，並收到繼續動作的事件。 應用程式的應用程式應該不會暫停健身工作階段，以回應移動已暫停的事件。
+當應用程式收到移動已暫停的事件時，應該會停止收集資料，直到使用者恢復執行動作，並收到繼續動作的事件。 應用程式應該不會暫停健身工作階段，以回應移動已暫停的事件。
 
 > [!IMPORTANT]
 > 移動已暫停] 和 [動作恢復事件僅支援 RunningWorkout 活動型別 (`HKWorkoutActivityType.Running`)。

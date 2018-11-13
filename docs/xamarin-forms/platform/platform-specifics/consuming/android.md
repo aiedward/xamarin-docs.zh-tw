@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/01/2018
-ms.openlocfilehash: 50c7b05261cf3f07ea37373cdcdcc8f250243647
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3249a9706ba96ec3690a3a3a6b80a5eb261625e4
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108973"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527270"
 ---
 # <a name="android-platform-specifics"></a>Android 平台特性
 
@@ -270,7 +270,7 @@ listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScro
 
 結果是透過資料在該快速捲動[ `ListView` ](xref:Xamarin.Forms.ListView)可以啟用，如此會變更捲軸捲動方塊的大小：
 
-[![](android-images/fastscroll.png "ListView FastScroll 平台專屬")](android-images/fastscroll-large.png#lightbox "ListView FastScroll Plaform-Specific")
+[![](android-images/fastscroll.png "ListView FastScroll 平台專屬")](android-images/fastscroll-large.png#lightbox "ListView FastScroll 平台專屬")
 
 <a name="webview-mixed-content" />
 
@@ -490,7 +490,7 @@ App.Current.On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust
 
 結果是螢幕小鍵盤輸入的區域輸入的控制項具有焦點時，就可以設定作業模式：
 
-[![](android-images/pan-resize.png "螢幕小鍵盤操作模式特定的平台")](android-images/pan-resize-large.png#lightbox "Soft Keyboard Operating Mode Plaform-Specific")
+[![](android-images/pan-resize.png "虛鍵盤作業模式平台專屬")](android-images/pan-resize-large.png#lightbox "運作模式特定的平台的螢幕小鍵盤")
 
 <a name="disable_lifecycle_events" />
 

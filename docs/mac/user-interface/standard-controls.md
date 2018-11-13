@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 9f5bdc9a79c514f0310d29b3d054fb7e9659d669
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.openlocfilehash: 150d5a35a2ccae63a1ff9969f5751b0e93c12454
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123787"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526997"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Xamarin.mac 的標準控制項
 
 _這篇文章涵蓋使用標準的完整 AppKit 控制項，例如按鈕、 標籤、 文字欄位、 核取方塊，以及區隔 Xamarin.Mac 應用程式中的控制項。它會描述將它們新增至介面產生器的介面，並與其互動的程式碼中。_
 
-當在 Xamarin.Mac 應用程式中使用 C# 和.NET，您可以存取的相同 AppKit 控制項工作的開發人員*Objective C*並*Xcode*沒有。 由於 Xamarin.Mac 直接與 Xcode 整合，您可以使用 Xcode 的_Interface Builder_來建立，並維護完整 Appkit 控制項 （或選擇直接在 C# 程式碼中建立它們）。
+使用時C#和.NET Xamarin.Mac 應用程式中的，您可以存取相同 AppKit 控制項工作的開發人員*Objective C*並*Xcode*沒有。 由於 Xamarin.Mac 直接與 Xcode 整合，您可以使用 Xcode 的_Interface Builder_來建立，並維護完整 Appkit 控制項 （或選擇直接在 C# 程式碼中建立它們）。
 
 完整 AppKit 控制項是用來建立 Xamarin.Mac 應用程式的使用者介面的 UI 項目。 它們包含項目，例如按鈕、 標籤、 文字欄位中，核取方塊和分段控制項，而且會導致立即動作或顯示的結果時使用者操作它們。
 

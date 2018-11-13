@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: a008b270d4ff670a03f18318186ca038c5c0348d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 881b465643b576f5d3f4fc8121c5a873087a876c
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118873"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527325"
 ---
 # <a name="device-orientation"></a>裝置方向
 
@@ -91,12 +91,12 @@ Xamarin.Android 支援數個選項來指定方向：
 
 ## <a name="reacting-to-changes-in-orientation"></a>回應方向的變更
 
-Xamarin.Forms 不提供任何原生事件來通知您的應用程式的方向共用程式碼中的變更。 不過，`SizeChanged`事件的`Page`時，會引發寬度或高度`Page`變更。 當寬度`Page`大於高度，裝置會以橫向模式。 如需詳細資訊，請參閱 <<c0> [ 顯示基礎的映像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)。
+Xamarin.Forms 不提供任何原生事件來通知您的應用程式的方向共用程式碼中的變更。 不過，`SizeChanged`事件的`Page`時，會引發寬度或高度`Page`變更。 當寬度`Page`大於高度，裝置會以橫向模式。 如需詳細資訊，請參閱 <<c0> [ 顯示基的映像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)。
 
 > [!NOTE]
 > 沒有現有的免費適用於 NuGet 套件共用程式碼中接收通知的方向的變更。 請參閱[GitHub 存放庫](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)如需詳細資訊。
 
-或者，您可覆寫[ `OnSizeAllocated` ](xref:Xamarin.Forms.Page.OnSizeAllocated*)方法`Page`，插入的任何版面配置變更邏輯。 `OnSizeAllocated`就會呼叫方法時`Page`配置新的大小，會發生的 whenver 旋轉了裝置。 請注意的基底實作`OnSizeAllocated`執行重要的配置函式，因此請務必呼叫基底實作覆寫中：
+或者，您可覆寫[ `OnSizeAllocated` ](xref:Xamarin.Forms.Page.OnSizeAllocated*)方法`Page`，插入的任何版面配置變更邏輯。 `OnSizeAllocated`就會呼叫方法時`Page`配置新的大小，每當裝置旋轉。 請注意的基底實作`OnSizeAllocated`執行重要的配置函式，因此請務必呼叫基底實作覆寫中：
 
 ```csharp
 protected override void OnSizeAllocated(double width, double height)
@@ -475,4 +475,4 @@ protected override void OnSizeAllocated (double width, double height){
 - [版面配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [BusinessTumble 範例 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
 - [回應式配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
-- [顯示基礎的映像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)
+- [顯示基的映像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)

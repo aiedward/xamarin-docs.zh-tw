@@ -4,15 +4,15 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 第 10 章的摘�
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 74f7e2846a9e8d8390a8322c57db0845718bbba7
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 2c9493706930bd3c2ffd54835d963d9847e82e76
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156999"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563793"
 ---
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>第 10 章的摘要。 XAML 標記延伸
 

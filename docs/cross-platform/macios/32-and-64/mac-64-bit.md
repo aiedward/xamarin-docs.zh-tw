@@ -6,12 +6,12 @@ ms.assetid: C3810A74-539C-4FFB-B47F-68CA5F7BCDAD
 author: conceptdev
 ms.author: crdun
 ms.date: 02/22/2018
-ms.openlocfilehash: 3667f129cb566f71e9afd2969af13fe5b9682882
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9bd70fec5d6d3bbbc4855980e1542bd4e486acaa
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109376"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528516"
 ---
 # <a name="updating-xamarinmac-unified-applications-to-64-bit"></a>更新的統一的 Xamarin.Mac 應用程式，到 64 位元
 
@@ -21,7 +21,7 @@ ms.locfileid: "50109376"
 
 ## <a name="targeting-64-bit"></a>目標為 64 位元
 
-1. 開啟**專案選項**為您的視窗是您的 Xamarin.Mac 應用程式：
+1. 開啟**專案選項**Xamarin.Mac 應用程式的視窗：
 
    ![專案操作功能表](mac-64-bit-images/1-contextual_menu-vsmac.png "專案操作功能表")
 
@@ -36,7 +36,7 @@ ms.locfileid: "50109376"
 第一次建置或執行您的應用程式，64 位元的支援，您可能會發生連結錯誤從 clang 或執行階段問題。 可能會發生這些錯誤，如果協力廠商相依性 — 比方說，原生參考 Xamarin.Mac 或繫結專案或手動載入整個系統的架構中，尚未更新為 64 位元。
 
 > [!TIP]
-> 將您的專案轉換成 64 位元是一項重大變更，並間接可能會發現各種不同的程式設計錯誤。 特別是它可能會變更的大小和 p/invoke 簽章，並在您的專案中連結的原生程式碼會影響的資料結構的對齊方式。 請考慮檢閱任何指定的建置警告並測試您的應用程式 throughly 之後以攔截潛在問題。
+> 將您的專案轉換成 64 位元是一項重大變更，並間接可能會發現各種不同的程式設計錯誤。 特別是它可能會變更的大小和 p/invoke 簽章，並在您的專案中連結的原生程式碼會影響的資料結構的對齊方式。 請考慮檢閱任何建置指定的警告，並且徹底測試您的應用程式之後，以攔截潛在問題。
 
 #### <a name="example-error-resulting-from-a-dynamically-linked-third-party-dependency-that-does-not-target-64-bit"></a>範例錯誤所產生的未鎖定 64 位元的動態連結協力廠商相依性：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: e3cfc9a345c8ab92b35ad428b550ec42de6312e5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bc7da76084075b03ca346949b7bb764ae1313c2a
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120290"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563507"
 ---
 # <a name="location-services"></a>位置服務
 
@@ -190,7 +190,7 @@ await fusedLocationProviderClient.RequestLocationUpdatesAsync(locationRequest, l
 
 若要通知的位置更新的 Xamarin.Android 應用程式，將會叫用積的位置提供者`LocationCallBack.OnLocationResult(LocationResult result)`。 `Android.Gms.Location.LocationResult`參數會包含更新位置資訊。
 
-當積的位置提供者偵測到的位置資料可用性的變更時，它會呼叫`LocationProvider.OnLocationAvaibility(LocationAvailability
+當積的位置提供者偵測到的位置資料可用性的變更時，它會呼叫`LocationProvider.OnLocationAvailability(LocationAvailability
 locationAvailability)`方法。 如果`LocationAvailability.IsLocationAvailable`屬性會傳回`true`，則可以假設所報告裝置位置結果`OnLocationResult`精確且為最新狀態所需的`LocationRequest`。 如果`IsLocationAvailable`為 false，則不會傳回任何位置結果`OnLocationResult`。
 
 此程式碼片段是範例實作`LocationCallback`物件：
@@ -253,9 +253,9 @@ LocationManager locationManager = (LocationManager) GetSystemService(Context.Loc
 
 ### <a name="request-location-updates-from-the-locationmanager"></a>從 LocationManager 要求位置更新
 
-參考應用程式一旦`LocationManager`，它需要向`LocationManager`何種位置資訊的需要，而且該資訊是要更新的頻率。 執行這項操作，藉由呼叫`RequestionLocationUpdates`上`LocationManager`物件，並傳入部分更新和回呼，會收到位置更新的準則。 此回呼是一種類型，必須實作`ILocationListener`（稍後在本指南詳細說明） 的介面。
+參考應用程式一旦`LocationManager`，它需要向`LocationManager`何種位置資訊的需要，而且該資訊是要更新的頻率。 執行這項操作，藉由呼叫`RequestLocationUpdates`上`LocationManager`物件，並傳入部分更新和回呼，會收到位置更新的準則。 此回呼是一種類型，必須實作`ILocationListener`（稍後在本指南詳細說明） 的介面。
 
-`RequestionLocationUpdates`方法會告訴系統位置服務，您的應用程式想要開始接收位置更新。 這個方法可讓您指定的提供者，以及時間和距離的臨界值來控制更新頻率。 例如下, 面的要求位置底下的方法更新從 GPS 位置提供者每個 2000年毫秒為單位，並只有位置有所變更時超過 1 metre:
+`RequestLocationUpdates`方法會告訴系統位置服務，您的應用程式想要開始接收位置更新。 這個方法可讓您指定的提供者，以及時間和距離的臨界值來控制更新頻率。 例如，下列方法，要求位置從 GPS 位置提供者會更新每個 2000年毫秒為單位，並只有位置有所變更時超過 1 metre:
 
 ```csharp
 // For this example, this method is part of a class that implements ILocationListener, described below

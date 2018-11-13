@@ -4,15 +4,15 @@ description: DatePicker 是 Xamarin.Forms 檢視，可讓使用者選取日期�
 ms.prod: xamarin
 ms.assetid: 68E8EF8A-42E7-4939-8ABE-64D060E609D9
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 06/04/2018
-ms.openlocfilehash: 7917510e910223fc6ca276bf47b1878c19557a38
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 104985a4221cc6e5e6aa56420c1a41ee4c736b8d
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "38994922"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563689"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 

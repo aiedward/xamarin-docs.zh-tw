@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/05/2018
-ms.openlocfilehash: 4d121c2dfcca380e1735da1a4ca47c42d1957b8a
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: ac8e5323a2a2e05ac03294bb6919e8dfadc93655
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854736"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526516"
 ---
 # <a name="consuming-and-creating-xamarinforms-plugins"></a>使用和建立 Xamarin.Forms 外掛程式
 
@@ -53,7 +53,7 @@ Github 專案，才可以提供很好的起點來建立您自己跨平台的外�
 
 讀取 James Montemagno 的[部落格文章](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms/)描述為 Xamarin 建立外掛程式的程序。
 
-最近，外掛程式可以是使用來建立單一多目標平台。 這個方法會討論 James Montemagno[部落格文章](https://montemagno.com/converting-xamarin-libraries-to-sdk-style-multi-targeted-projects/)。 這個方法會在連結上方，James Montemagno 的外掛程式和格式中也使用**Xamarin.Essentials**。
+最近，外掛程式可以使用單一的多目標平台建立。 這個方法會討論 James Montemagno[部落格文章](https://montemagno.com/converting-xamarin-libraries-to-sdk-style-multi-targeted-projects/)。 這個方法會在連結上方，James Montemagno 的外掛程式和格式中也使用**Xamarin.Essentials**。
 
 建議您最好避免直接從外掛程式參考 Xamarin.Forms。
 其他開發人員嘗試使用外掛程式時，這可以建立版本衝突問題。 請改為試用設計 API，讓它可供任何 Xamarin 或.NET 應用程式。

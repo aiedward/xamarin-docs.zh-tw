@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: b9aa29507ebb37e3912b1027419e47c82832dfa9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dfc0e1cb7239381ef2f495b0f9774d390b0dc82e
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116507"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527192"
 ---
 # <a name="creating-android-services"></a>建立 Android 服務
 
@@ -59,7 +59,7 @@ Android 應用程式都至少一個下列四個主要元件所組成：_活動_�
 
 ### <a name="background-execution-limits-in-android-80"></a>Android 8.0 中的背景執行限制
 
-啟動 Android 8.0 （API 層級 26），在 Android 應用程式不再能夠自由地在背景執行。 在前景，當應用程式可以啟動並執行不受限制的服務。 當應用程式移到背景時，Android 會授與應用程式一段時間才能啟動，並使用服務。 一旦經過這段時間，應用程式不會再開始任何服務，並啟動任何服務將會終止。 在此點是不可能的應用程式可以執行任何工作。 Android 會考量應用程式處於前景，如果符合下列條件之一：
+啟動 Android 8.0 （API 層級 26），在 Android 應用程式不再能夠自由地在背景執行。 在前景，當應用程式可以啟動並執行不受限制的服務。 當應用程式移到背景時，Android 會授與應用程式一段時間才能啟動，並使用服務。 一旦經過這段時間，應用程式不會再開始任何服務，並啟動任何服務將會終止。 此時不可能的應用程式可以執行任何工作。 Android 會考量應用程式處於前景，如果符合下列條件之一：
 
 * 沒有可見的活動 （啟動或暫停）。
 * 應用程式已啟動前景服務。
@@ -70,7 +70,7 @@ Android 應用程式都至少一個下列四個主要元件所組成：_活動_�
 * 應用程式會收到廣播。 
 * 應用程式收到執行`PendingIntent`通知回應。
 
-現有的 Xamarin.Android 應用程式可能需要變更執行背景工作，以避免可能發生在 Android 8.0 上的任何問題。 以下是一些實用的 alterantives Android 服務：
+現有的 Xamarin.Android 應用程式可能需要變更執行背景工作，以避免可能發生在 Android 8.0 上的任何問題。 以下是一些實用的替代方案，Android 服務：
 
 * **排程在背景中使用 Android 工作排程器中執行的工作或有[Firebase 作業發送器](~/android/platform/firebase-job-dispatcher.md)** &ndash;這些兩個程式庫可提供用來區隔中的背景工作的應用程式的架構_作業_，離散的工作單位。 應用程式可以然後作業排程與作業系統以及一些準則有關時可以執行此工作。
 * **啟動服務，在前景**&ndash;前景服務很適合用於當應用程式時，必須在背景中執行一些工作，但使用者可能需要定期互動與該工作。 前景服務會顯示持續性的通知，讓使用者知道應用程式正在執行背景工作，並也提供監視或工作與互動的方式。 這個範例會向使用者播放 podcast 或可能下載播客影片，以便稍後喜歡 podcasting 應用程式。 

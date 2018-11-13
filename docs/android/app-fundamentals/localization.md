@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 4f50efb7b78db67b310ccddec3eb94bfe4d2e521
-ms.sourcegitcommit: 19b37f33b0eb9a927633a3198574b779374775ff
-ms.translationtype: MT
+ms.openlocfilehash: 833bdc0fd087fcf8dbb8cce3b8b23f427302f5e7
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50301249"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526867"
 ---
 # <a name="android-localization"></a>Android 的當地語系化
 
@@ -207,7 +207,7 @@ var translated = Resources.GetQuantityString (
 
 您也可以提供其他類型的替代方案，包括版面配置、 動畫和原始檔案的語言特定資源。 這表示您可以提供一個或多個目標語言的特定畫面版面配置時，例如您可以建立版面配置專為德文，以便很長的文字標籤。
 
-Android 4.2 導入的支援[由右至左 (RTL) 語言](http://android-developers.blogspot.fr/2013/03/native-rtl-support-in-android-42.html)如果您將應用程式設定`android:supportsRtl="true"`。 資源限定詞`"ldrtl"`可以包含在 directory 名稱以包含自訂的版面配置為從右至左顯示而設計。
+Android 4.2 導入的支援[由右至左 (RTL) 語言](http://android-developers.blogspot.fr/2013/03/native-rtl-support-in-android-42.html)如果您將應用程式設定`android:supportsRtl="true"`。 資源限定詞`"ldrtl"`可以納入包含專為從右至左顯示的自訂配置目錄名稱。
 
 如需有關資源目錄命名和後援的詳細資訊，請參閱 Android 文件[提供替代資源](http://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources)。
 
@@ -225,7 +225,7 @@ Android 4.2 導入的支援[由右至左 (RTL) 語言](http://android-developers
 
 Android 4.2 和更新版本提供完整支援從右至左配置，詳述[原生支援的從右至左的部落格](http://android-developers.blogspot.dk/2013/03/native-rtl-support-in-android-42.html)。
 
-使用 Android 4.2 (API level 17) 時和更新版本中，您可以使用指定值的 aligment`start`並`end`而不是`left`並`right`(例如`android:paddingStart`)。 另外還有新的 Api，例如`LayoutDirection`， `TextDirection`，和`TextAlignment`可協助您從右至左的讀取器中建立調整的畫面。
+使用 Android 4.2 (API level 17) 時和更新版本中，您可以使用指定值的對齊`start`並`end`而不是`left`並`right`(例如`android:paddingStart`)。 另外還有新的 Api，例如`LayoutDirection`， `TextDirection`，和`TextAlignment`可協助您從右至左的讀取器中建立調整的畫面。
 
 下列螢幕擷取畫面示[當地語系化**Tasky**範例](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)以阿拉伯數字：
 

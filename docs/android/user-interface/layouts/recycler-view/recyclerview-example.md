@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/30/2018
-ms.openlocfilehash: 67bf38c11fd6e82e05b2a10704973ca10de03083
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d71c4f0f3221d06c22876329a5933273d8d6f92d
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108648"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526763"
 ---
 # <a name="a-basic-recyclerview-example"></a>基本的 RecyclerView 範例
 
@@ -118,7 +118,7 @@ mRecyclerView.SetLayoutManager (mLayoutManager);
 
 此程式碼位於主要活動`OnCreate`方法。 配置管理員建構函式需要*內容*，因此`MainActivity`傳遞使用`this`如上所示。
 
-而不是使用 predefind `LinearLayoutManager`，您可以插入會顯示兩個自訂的版面配置管理員`CardView`-並存，實作來周遊集合的相片的翻頁動畫效果的項目。 稍後在本指南中，您會看到如何藉由交換在不同的版面配置管理員中修改版面配置的範例。
+而不是使用預先定義`LinearLayoutManager`，您可以插入會顯示兩個自訂的版面配置管理員`CardView`-並存，實作來周遊集合的相片的翻頁動畫效果的項目。 稍後在本指南中，您會看到如何藉由交換在不同的版面配置管理員中修改版面配置的範例。
 
 <a name="view-holder" />
 
@@ -391,7 +391,7 @@ mLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.Horizontal, fa
 
 [![使用中格線的水平捲動相片的應用程式的範例螢幕擷取畫面](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png#lightbox)
 
-藉由變更只有一行程式碼，是可以修改相片檢視應用程式使用不同的版面配置使用不同的行為。
+藉由變更只有一行程式碼，就可以修改相片檢視應用程式使用不同的版面配置使用不同的行為。
 請注意，配接器程式碼和 XML 的配置都不需要修改，以變更配置樣式。 
 
 在下一個主題中，[延伸 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/extending-the-example.md)，此基本範例應用程式將會擴充以處理項目按一下事件，並更新`RecyclerView`當基礎資料來源變更。

@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 80f37e1753362ec0503b70e49a2206684c0fedb5
-ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
+ms.openlocfilehash: 4d887d5a57aa3a632bd2f6795052c5b38f66a75a
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "50675324"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527166"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>疑難排解秘訣適用於 Xamarin.iOS 
 
@@ -187,7 +187,7 @@ Stacktrace:
 
 ## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1getcount-"></a>System.ExecutionEngineException： 嘗試 JIT 編譯方法 （managed 至 managed 包裝函式） Foo[]:System.Collections.Generic.ICollection'1.get_Count （）
 
-[] 後置詞表示，您或類別庫會呼叫方法的泛型集合，例如 ienumerable<>、 icollection<> 或 IList <> 透過在陣列上。 因應措施，您可以明確強制 AOT 編譯器包含這類方法呼叫的方法，並確定觸發例外狀況的呼叫之前執行此程式碼。 在此情況下，您可以撰寫：
+[] 後置詞表示，您或類別庫會呼叫方法的泛型集合，例如 ienumerable<>、 icollection<> 或 IList <> 透過在陣列上。 因應措施，您可以明確地強制 AOT 編譯器包含這類方法呼叫的方法，並確定觸發例外狀況的呼叫之前執行此程式碼。 在此情況下，您可以撰寫：
 
 ```csharp
 Foo [] array = null;
@@ -354,11 +354,11 @@ actionSheet.Clicked += delegate (sender, args){
 
 ## <a name="project-always-runs-in-the-ipad-simulator"></a>專案一律會在執行 iPad 模擬器
 
-IPhone SDK 4.0 安裝程式會安裝 2 Sdk-3.2 的 SDK，建置僅限 iPad 應用程式和 4.0 的 SDK，用於建置 iPhone 及通用應用程式。 它也會安裝 3.2 模擬器會模擬只 iPad 和 4.0 的模擬器來模擬 iPhone 或 iPhone 4。 會移除所有舊版的 Sdk 和模擬器。
+IPhone SDK 4.0 安裝程式會安裝 2 Sdk-3.2 的 SDK，建置僅限 iPad 應用程式和 4.0 的 SDK，用於建立 iPhone 及通用應用程式。 它也會安裝 3.2 模擬器會模擬只 iPad 和 4.0 的模擬器來模擬 iPhone 或 iPhone 4。 會移除所有舊版的 Sdk 和模擬器。
 
 Visual Studio for Mac iPhone 專案組建選項中建置您的應用程式，包括將使用的 SDK 版本的設定。 此設定可在**專案選項]-> [組建]-> [iPhone 組建**。
 
-在 Visual Studio for Mac 的新專案使用最舊的已安裝的 SDK，為其預設的 SDK 設定，以及如果不存在指定的 SDK，Visual Studio for Mac 將會使用它來建置您的應用程式可以找到最接近。 這麼做是為了讓專案不一定會 requre 最新的 SDK。 不過，這目前會導致 3.2 的 SDK 正在使用-這會導致 iPad 模擬器所使用。
+在 Visual Studio for Mac 的新專案使用最舊的已安裝的 SDK，為其預設的 SDK 設定，以及如果不存在指定的 SDK，Visual Studio for Mac 將會使用它來建置您的應用程式可以找到最接近。 這項作業完成，因此專案就不一定需要最新的 SDK。 不過，這目前會導致 3.2 的 SDK 正在使用-這會導致 iPad 模擬器所使用。
 
 若要使用 4.0 的 SDK 來修正此問題，請前往**專案選項]-> [組建]-> [iPhone 組建**> 並將 SDK 值變更為"4.0"使用下拉式方塊。 您必須針對每個組態與平台組合，使用下拉式清單頂端的 [面板] 中存取此動作。
 

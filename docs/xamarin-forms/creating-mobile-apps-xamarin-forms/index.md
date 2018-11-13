@@ -4,15 +4,15 @@ description: 了解 Xamarin.Forms 應用程式開發與使用 Charles petzold �
 ms.prod: xamarin
 ms.assetid: CDE99818-689B-4376-9DC4-C4102AC0F931
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: c7a84a8bd00c5685feef84bfc4aacf02e5891c55
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: d694d58b994309f26264459a69517c2bc3b526e2
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50234982"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563626"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>使用 Xamarin.Forms book 建立行動應用程式
 

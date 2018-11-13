@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: a519af9e4bddb949b6e0547387d804f1437deb21
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0d5bfa83bee74a799398912f77f21cba10c7be45
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104605"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526310"
 ---
 # <a name="building-tvos-user-interfaces-with-xamarin"></a>建立 tvOS 使用 Xamarin 的使用者介面
 
 _與 xamarin.tvos 搭配使用時，一般使用者體驗 (UX) 涵蓋範圍包括使用者介面 (UI) 控制項，便會使用 Xcode 的 Interface Builder 和 UX 設計原則。_
 
-當使用C#並在以 Xamarin 為基礎的 tvOS.NET，您可以存取在 OBJECTIVE-C 或 Swift 和 Xcode 開發人員必須執行的相同使用者介面控制項。 Xcode 的 Interface Builder 可用來建立和維護您的使用者介面 (或選擇性地建立它們直接在C#程式碼)。
+當使用C#並在以 Xamarin 為基礎的 tvOS.NET，您可以存取開發人員使用 OBJECTIVE-C 或 Swift 和 Xcode 的相同使用者介面控制項。 Xcode 的 Interface Builder 可用來建立和維護您的使用者介面 (或選擇性地建立它們直接在C#程式碼)。
 
 下列指南提供使用 tvOS Xamarin.tvOS 應用程式中的 UI 項目相關的詳細的資訊。 強烈建議您逐步[Hello，tvOS 快速入門指南](~/ios/tvos/get-started/hello-tvos.md)第一次，因為其中包含重要概念和技術，我們將使用每篇文章中。
 

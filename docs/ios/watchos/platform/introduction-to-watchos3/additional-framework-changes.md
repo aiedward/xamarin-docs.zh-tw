@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 745c39dab1f73870ce036791434ed9a0b05d681b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: e3eb4e3454aeab08d1333c5dbc3d4808fa4d676c
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122617"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528399"
 ---
 # <a name="additional-watchos-3-frameworks-changes"></a>其他 watchOS 3 架構變更
 
@@ -38,7 +38,7 @@ IOS 的主要變更，除了 Apple 方面所做的修改以及數個現有的架
 
 下列增強功能會對監看式 3 作業系統的核心移動架構：
 
-- 新的裝置動作事件會提供動作和方向的更新使用加速計和陀螺儀。 此更新 （按最多 100 Hz 的費率），可以註冊應用程式的應用程式。
+- 新的裝置動作事件會提供動作和方向的更新使用加速計和陀螺儀。 應用程式可註冊這項更新 （最多 100 Hz 的費率）。
 - 新的 Pedometer 事件可讓快速、 即時的通知，當使用者暫停和繼續執行。 使用[CMPedometer](https://developer.apple.com/reference/coremotion/cmpedometer)前景或背景 pedometer 事件註冊。
 
 
@@ -48,7 +48,7 @@ IOS 的主要變更，除了 Apple 方面所做的修改以及數個現有的架
 
 - 使用新[NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval)類別，例如持續時間，來比較的間隔，並測試間隔交集的日期和時間間隔計算。
 - 已新增數個新屬性[NSLocal](https://developer.apple.com/reference/foundation/nslocale)類別來取得本機資訊和可用的顯示格式。
-- 使用新[NSMeasuerment](https://developer.apple.com/reference/foundation/nsmeasurement)類別來轉換之間不同單位的量值 (UOM)，或在不同的 UOMs 中的值上執行計算。
+- 使用新[NSMeasurement](https://developer.apple.com/reference/foundation/nsmeasurement)類別來轉換之間不同單位的量值 (UOM)，或在不同的 UOMs 中的值上執行計算。
 - 使用新[NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)格式化當地語系化的度量單位，顯示給使用者的類別。
 - 使用新[NSUnit](https://developer.apple.com/reference/foundation/nsunit)並[NSDimension](https://developer.apple.com/reference/foundation/nsdimension)類別，表示特定 UOMs。
 

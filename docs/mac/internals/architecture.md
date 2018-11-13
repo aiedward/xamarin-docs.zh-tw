@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 04/12/2017
-ms.openlocfilehash: b51dd4f2a6bf0e3e5ec206953e60c264c70107a5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.openlocfilehash: 7b9b3b648f6ac66859714052e916407026da10d4
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122279"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526932"
 ---
 # <a name="xamarinmac-architecture"></a>Xamarin.Mac 架構
 
@@ -105,7 +105,7 @@ Xamarin.Mac 啟動邏輯會隨是否內嵌，或使用系統 Mono。 若要檢�
 
 ## <a name="generator"></a>Generator
 
-Xamarin.Mac 包含每一種 Mac api 的定義。 您可以在瀏覽任一[MaciOS github 存放庫](https://github.com/xamarin/xamarin-macios/tree/master/src)。 這些定義會包含介面的屬性，以及任何必要的方法和屬性。 例如，下列程式碼是用來定義在 NSBox [AppKit 命名空間](https://github.com/xamarin/xamarin-macios/blob/master/src/appkit.cs#L1465-L1526)。 請注意，它含有一些方法和屬性的介面：
+Xamarin.Mac 包含每一種 Mac api 的定義。 您可以在瀏覽任一[MaciOS github 存放庫](https://github.com/xamarin/xamarin-macios/tree/master/src)。 這些定義會包含介面的屬性，以及任何必要的方法和屬性。 比方說，下列程式碼用來定義在 NSBox [AppKit 命名空間](https://github.com/xamarin/xamarin-macios/blob/master/src/appkit.cs#L1465-L1526)。 請注意，它含有一些方法和屬性的介面：
 
 ```csharp
 [BaseType (typeof (NSView))]

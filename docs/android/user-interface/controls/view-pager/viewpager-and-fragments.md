@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: def46f69b139ef52bb6e65a1c415b9c899e63897
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1b6e1c8ce91eaad46e779527c5ba12e2187cad24
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109415"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528425"
 ---
 # <a name="viewpager-with-fragments"></a>ViewPager 與 Fragment
 
@@ -21,7 +21,7 @@ _ViewPager 是可讓您實作手勢導覽的佈局管理員。手勢導覽允許
  
 ## <a name="overview"></a>總覽
 
-`ViewPager` 通常用於搭配片段，讓您更輕鬆地管理 `ViewPager` 中每個頁面的生命週期。 在此逐步解說中，`ViewPager` 是用來建立稱為 **FlashCardPager** 的應用程式，此應用程式會在字卡上呈現一系列的數學問題。 每張字卡都是實作為片段。 使用者向左或向右撥動字卡，並點選數學問題以顯示其答案。 此應用程式會為每張字卡建立 `Fragment` 執行個體，並實作衍生自 `FragmentPagerAdapter` 的配接器。 在[Viewpager 與檢視表](~/android/user-interface/controls/view-pager/viewpager-and-views.md) 中，大部分的工作都是在 `MainActivity` 生命週期方法中完成的。 在 **FlashCardPager** 中，大部分的工作都會由它的其中一個生命週期方法中的 `Fragment` 來完成。 
+`ViewPager` 通常用於搭配片段，讓您更輕鬆地管理 `ViewPager` 中每個頁面的生命週期。 本逐步解說`ViewPager`用來建立應用程式呼叫**FlashCardPager** ，快閃記憶卡上顯示一連串數學問題。 每張字卡都是實作為片段。 使用者向左或向右撥動字卡，並點選數學問題以顯示其答案。 此應用程式會為每張字卡建立 `Fragment` 執行個體，並實作衍生自 `FragmentPagerAdapter` 的配接器。 在[Viewpager 與檢視表](~/android/user-interface/controls/view-pager/viewpager-and-views.md) 中，大部分的工作都是在 `MainActivity` 生命週期方法中完成的。 在 **FlashCardPager** 中，大部分的工作都會由它的其中一個生命週期方法中的 `Fragment` 來完成。 
 
 本指南未涵蓋 Fragments 的基本概念&ndash;如果您還不熟悉 Xamarin.Android 中的 Fragments，請參閱[Fragments](~/android/platform/fragments/index.md)可協助您開始使用 Fragments。 
 

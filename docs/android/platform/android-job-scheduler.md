@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: 4bbb217fa8a3192905d016763b961e182224aa67
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c0f638afbf044a2e3e6f309839cb22137cf95912
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108765"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527010"
 ---
 # <a name="android-job-scheduler"></a>Android 工作排程器
 
@@ -42,7 +42,7 @@ Android 工作排程器是內建 Android 作業系統可提供簡化的排程背
 * `Android.App.Job.JobService`是抽象類別必須使用會在應用程式的主執行緒執行作業的邏輯擴充。 這表示`JobService`負責是以非同步方式執行工作的方式。
 * `Android.App.Job.JobInfo`物件會保存引導 Android 時，工作應該執行的準則。
 
-若要排程與 Android 的工作排程器工作，Xamarin.Android 應用程式必須封裝可擴充的類別中的程式碼`JobService`類別。 `JobService` 有三個生命週期方法，可以呼叫作業的存留期間：
+若要排程與 Android 的工作排程器工作，Xamarin.Android 應用程式必須封裝可擴充的類別中的程式碼`JobService`類別。 `JobService` 有三個可以呼叫作業的存留期間的生命週期方法：
 
 * **bool （JobParameters 參數） OnStartJob** &ndash;藉由呼叫這個方法`JobScheduler`執行工作和應用程式的主執行緒上執行的。 它負責`JobService`來以非同步方式執行的工作並`true`剩餘，如果沒有工作或`false`如果工作已完成。
     
@@ -130,10 +130,10 @@ public static class JobSchedulerHelpers
     }
 }
 
-// Sample usage - creates a JobBuilder for a DownloadJob andsets the Job ID to 1.
+// Sample usage - creates a JobBuilder for a DownloadJob and sets the Job ID to 1.
 var jobBuilder = this.CreateJobBuilderUsingJobId<DownloadJob>(1);
 
-var jobInfo = jobBuilder.Build();  // creats a JobInfo object.
+var jobInfo = jobBuilder.Build();  // creates a JobInfo object.
 ```
 
 Android 工作排程器的強大功能之一是能夠控制作業的執行，或在什麼條件作業可能會執行。 下表描述的一些方法上`JobInfo.Builder`，可讓應用程式，以影響作業可以執行時：  
@@ -186,7 +186,7 @@ public override bool OnStartJob(JobParameters jobParameters)
 
 若要排程的作業，Xamarin.Android 應用程式會參考`JobScheduler`系統服務，並呼叫`JobScheduler.Schedule`方法`JobInfo`在上一個步驟中建立的物件。 `JobScheduler.Schedule` 會立即傳回並提供兩個整數值的其中一個：
 
-* **JobScheduler.ResultSuccess** &ndash;作業已排程的成功。 
+* **JobScheduler.ResultSuccess** &ndash;作業順利排程。 
 * **JobScheduler.ResultFailure** &ndash;無法排程工作。 這種情形通常因衝突`JobInfo`參數。
 
 此程式碼是排程工作和通知使用者有排程嘗試的結果範例：
@@ -211,7 +211,7 @@ else
 
 ```csharp
 // Cancel all jobs
-jobSchduler.CancelAll(); 
+jobScheduler.CancelAll(); 
 
 // to cancel a job with jobID = 1
 jobScheduler.Cancel(1)

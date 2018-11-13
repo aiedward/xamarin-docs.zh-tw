@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: feaa0c3547c01490a8ada82b17b4c7a824e03b0b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7bfb0cad8bbc025bc5dba39abe3699ae77ee83ba
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114641"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526477"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 疑難排解
 
@@ -35,7 +35,7 @@ ms.locfileid: "50114641"
 
 <a name="deploy" />
 
-- 舊版的 Visual Studio for Mac 不正確地顯示其中一個**AppleCompanionSettings**圖示，為 88 x 88 像素為單位; 這會導致**遺漏圖示錯誤**如果您嘗試提交至應用程式存放區。
+- 舊版的 Visual Studio for Mac 不正確地顯示其中一個**AppleCompanionSettings**圖示，為 88 x 88 像素為單位; 這會導致**遺漏圖示錯誤**如果您嘗試提交至 App Store。
     此圖示應為 87 x 87 個像素 (29 單位**@3x** Retina 畫面)。 您無法修正此問題在 Visual Studio for Mac-影像資產在 Xcode 中編輯，或以手動方式編輯**Contents.json**檔案 (比對[本例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。
 
 - 如果監看式延伸模組專案的**Info.plist > WKApp 套件組合識別碼**不是[正確設定](~/ios/watchos/get-started/project-references.md)符合 Watch 應用程式**套件組合識別碼**，偵錯工具將無法連線和視覺化Studio for Mac 將會以訊息等候 *「 正在等候偵錯工具連線 「*。

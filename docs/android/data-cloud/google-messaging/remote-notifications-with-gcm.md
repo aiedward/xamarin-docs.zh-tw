@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/12/2018
-ms.openlocfilehash: e361444f2c717ff44e0771710836f156f90cfcb8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: be96683a2e63ed802169543dcee55a3431e42130
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118886"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528802"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>使用 Google 雲端通訊的遠端通知
 
@@ -91,7 +91,7 @@ Android 應用程式必須設定才能從 Google Cloud Messaging 接收通知的
 -   `com.google.android.c2dm.permission.RECEIVE` &ndash; 授與我們註冊，並接收來自 Google 雲端通訊的訊息的應用程式的權限。 (用途`c2dm`表示？ 這代表_雲端到裝置傳訊_，也就是現在已被取代前置任務至 GCM。 
     仍會使用 GCM`c2dm`許多其權限字串中。) 
 
--   `android.permission.WAKE_LOCK` &ndash; （選擇性）進入睡眠時接聽訊息可防止裝置的 CPU。 
+-   `android.permission.WAKE_LOCK` &ndash; （選擇性）防止裝置 CPU 進入睡眠時接聽訊息。 
 
 -   `android.permission.INTERNET` &ndash; 授與網際網路存取，讓用戶端應用程式能夠與 GCM 通訊。 
 
@@ -117,7 +117,7 @@ Android 應用程式必須設定才能從 Google Cloud Messaging 接收通知的
 </manifest>
 ```
 
-在上述 XML 中，變更*YOUR_PACKAGE_NAME*用戶端應用程式專案的封裝名稱。 例如，`com.xamarin.gcmexample`。 
+在上述 XML 中，變更*YOUR_PACKAGE_NAME*用戶端應用程式專案的封裝名稱。 例如， `com.xamarin.gcmexample` 。 
 
 ### <a name="check-for-google-play-services"></a>檢查 Google Play 服務
 
@@ -649,7 +649,7 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 此外，您應該會注意到，通知系統匣中出現新的 [通知] 圖示： 
 
-[![Notiication 圖示會出現在裝置上](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
+[![通知圖示會出現在裝置上](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
 
 當您開啟以檢視通知的通知紙匣時，您應該會看到我們遠端通知：
 
@@ -657,7 +657,7 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 恭喜，您的應用程式已收到其第一個遠端通知 ！
 
-請注意，是否應用程式強制停止，不會再將收到 GCM 訊息。 若要繼續通知之後強制停止，則應用程式必須用手動方式重新啟動。 如需有關此 Android 的原則的詳細資訊，請參閱[啟動已停止的應用程式上的控制項](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)，而這[堆疊溢位 post](http://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267)。 
+請注意，是否應用程式強制停止，不會再將收到 GCM 訊息。 若要強制停止後繼續通知，應用程式必須以手動方式重新啟動。 如需有關此 Android 的原則的詳細資訊，請參閱[啟動已停止的應用程式上的控制項](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)，而這[堆疊溢位 post](http://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267)。 
 
  
 ## <a name="summary"></a>總結

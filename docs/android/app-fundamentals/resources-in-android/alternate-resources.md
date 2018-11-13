@@ -1,19 +1,19 @@
 ---
-title: 其他資源
+title: 替代資源
 ms.prod: xamarin
 ms.assetid: AE5A864E-192D-475E-C731-99249C2E7D9E
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 0384d96ddc96f8d0b16a42f691305f26ea25881d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 16ef0d5a309281767f0fff27436dd5bec322169d
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108752"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527387"
 ---
-# <a name="alternate-resources"></a>其他資源
+# <a name="alternate-resources"></a>替代資源
 
 替代的資源為目標的特定裝置或執行階段組態，例如目前的語言、 特定的螢幕大小或像素密度這些資源。 如果 Android 可以比對特定裝置或設定預設的資源比更特定的資源，則該資源將會改用。 如果找不到符合目前的組態的其他資源，然後將其載入的預設資源。 如何決定 Android 應用程式將使用哪些資源將涵蓋更詳細，在 [資源位置] 區段
 
@@ -54,10 +54,10 @@ ms.locfileid: "50108752"
 
 - **可用的寬度**&ndash;格式 w 中螢幕的最小寬度*N*dp 時，其中*N*是無關的像素的寬度，密度。
   在使用者旋轉裝置時可能會變更此值。 中的更詳細地討論[建立的資源，針對不同螢幕](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)。 
-  適用於在 API 層級 13 (Android 3.2) 及更新版本。 範例： 限定詞 w720dp 可具有的最低 720dp 寬度的裝置為目標。
+  在 API 層級 13 (Android 3.2) 及更新版本可用。 範例： 限定詞 w720dp 可具有的最低 720dp 寬度的裝置為目標。
 
 - **可用高度**&ndash;螢幕格式小時內的最小高度*N*dp 時，其中*N*中 dp 的高度。 在使用者旋轉裝置時可能會變更此值。 中的更詳細地討論[建立的資源，針對不同螢幕](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)。 
-  適用於在 API 層級 13 (Android 3.2) 及更新版本。 比方說，將限定詞 h720dp 用的最少 720dp 高度的裝置為目標
+  在 API 層級 13 (Android 3.2) 及更新版本可用。 比方說，將限定詞 h720dp 用的最少 720dp 高度的裝置為目標
 
 - **螢幕大小**&ndash;這個限定詞為一般化的這些資源是螢幕大小。 它涵蓋更詳細地[建立的資源，針對不同螢幕](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)。 
   可能的值為 `small`、`normal`、`large` 和 `xlarge`。 在 API 層級 9 (Android 2.3/Android 2.3.1/Android 2.3.2) 中新增

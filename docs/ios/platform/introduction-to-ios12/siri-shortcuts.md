@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 9954a27b0cc857efa158e8cbc0281737c822f0c7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f9034799355d01a3ade20a78540d6ecac43d9cc8
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131147"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526893"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>在 Xamarin.iOS 中 Siri 快速鍵
 
@@ -292,7 +292,7 @@ void HandleUserActivity()
 請注意，特別是此專案包含：
 
 - **ApiDefinitions.cs** – 檔案的目標 Sharpie 上面所產生，並新增至此專案。 這個檔案**建置動作**設為**ObjcBindingApiDefinition**。
-- **StructsAndEnums.cs** – 另一個檔案的目標 Sharpie 上方 genrated，並加入至這個專案。 這個檔案**建置動作**設為**ObjcBindingCoreSource**。
+- **StructsAndEnums.cs** – 另一個檔案的目標 Sharpie 上面所產生，並加入至這個專案。 這個檔案**建置動作**設為**ObjcBindingCoreSource**。
 - A**原生參考**要**libOrderSoupIntentStaticLib.a**，上方建置靜態程式庫。
 
 > [!NOTE]
@@ -336,7 +336,7 @@ void DonateInteraction(Order order)
 `INInteraction`指定 [`Identifier`](https://developer.xamarin.com/api/property/Intents.INInteraction.Identifier/)
 符合 （這會很有幫助稍後刪除已不再有效的意圖捐贈時） 的順序的唯一識別碼。 然後，互動會捐獻給 Siri。
 
-呼叫`order.Intent`getter 提取`OrderSoupIntent`表示 splittunneling 順序其`Quantity`， `Soup`， `Options`，和映像，並和引動過程的片語時要使用建議的形式使用者記錄 Siri 片語相關聯的意圖：
+呼叫`order.Intent`getter 提取`OrderSoupIntent`表示 splittunneling 順序及其`Quantity`， `Soup`， `Options`，和映像，以及使用建議的形式，使用者記錄建立關聯的 Siri 片語時叫用片語與意圖：
 
 ```csharp
 public OrderSoupIntent Intent

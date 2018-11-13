@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: b72246968c9b321329e56fd51eaaa98a1625922e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b2a9e757e8a3407bbb19ae0580e5788eabe84cf0
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123072"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528867"
 ---
 # <a name="understanding-sirikit-concepts"></a>了解 SiriKit 概念
 
@@ -148,7 +148,7 @@ Siri 知道更多，就需要傳送比只是收件者的訊息，因此它會快
 
 每個網域都組知道*動作*零到多個參數可能會包含在目的，可以在其中執行及根據網域和動作，傳送至應用程式。
 
-意圖會再傳送至應用程式擴充功能處理。 如此一來處理目的，應用程式將會產生**IntentResponse**這將會配套在意圖，而且包含參數所描述的應用程式的應用程式未與意圖。
+意圖會再傳送至應用程式擴充功能處理。 如此一來處理目的，應用程式將會產生**IntentResponse**這將會配套在意圖，並包含參數所描述的應用程式未與意圖。
 
 也會包含每個 IntentResponse**回應碼**告知 Siri 應用程式是否可以或無法完成要求。 有些網域有非常特定的錯誤回應碼，也可以一併傳送。
 
