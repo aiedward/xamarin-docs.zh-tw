@@ -5,12 +5,12 @@ ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: af6453cdc9a2c48a4de96d8fea95954df7107711
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 3202d4ace85c68042425ca5f23641ca7a76a6c7e
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674869"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528386"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials：地理編碼
 
@@ -76,7 +76,7 @@ catch (Exception ex)
 }
 ```
 
-高度不一定可用。 如果不可用，則 `Altitude` 屬性可能為 `null`，或值可能為零。 如果高度可用，則值為海平面以上 (以公尺為單位)。
+高度不一定可用。 如果不可用，則 `Altitude` 屬性可能為 `null`，或值可能為零。 如可使用高度，此值 (公尺) 會高於海平面。
 
 取得一組現有座標的[地標](xref:Xamarin.Essentials.Placemark)：
 

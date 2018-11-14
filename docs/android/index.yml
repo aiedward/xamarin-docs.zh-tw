@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: f1e860bd5fe08e923fbec90b7ff7da142e7e5871
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 0c8ab21b0f70eed4cbdba882503ee8f82de7f11b
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39350647"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617328"
 documentType: LandingData
 title: Xamarin.Android
 metadata:
@@ -47,7 +47,7 @@ sections:
       text: 多重畫面應用程式
       href: ~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md
     - image:
-        src: https://docs.microsoft.com/en-us/media/common/i_mobile-app-developement.svg
+        src: https://docs.microsoft.com/media/common/i_mobile-app-developement.svg
       text: Android Pie
       href: ~/android/platform/pie.md
 - title: 輔助線
@@ -59,7 +59,7 @@ sections:
     - href: ~/android/get-started/index.md
       html: 帶您動手操作 Xamarin.Android 的教學課程。 請確定一切都已正確安裝，並建置您的第一個 Mac 應用程式。
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
         href: ~/android/get-started/index.md
       title: 快速入門
     - href: ~/android/app-fundamentals/
@@ -83,7 +83,7 @@ sections:
     - href: ~/essentials/index.md?context=xamarin/android
       html: 行動應用程式的跨平台 API。
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_multi-connect.svg
+        src: https://docs.microsoft.com/media/common/i_multi-connect.svg
         href: ~/essentials/index.md?context=xamarin/android
       title: Xamarin.Essentials
     - href: ~/android/data-cloud/
@@ -101,7 +101,7 @@ sections:
     - href: ~/android/internals/
       html: 關於 Xamarin.Android 內部的詳細資訊，以及透過如當地語系化和協助工具之類的協助功能。
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_advanced.svg
+        src: https://docs.microsoft.com/media/common/i_advanced.svg
         href: ~/android/internals/
       title: 進階概念與內部項目
     - href: ~/android/wear/
@@ -118,7 +118,7 @@ sections:
     items:
     - title: API
       href: https://developer.xamarin.com/api/root/MonoAndroid-lib/
-      html: <p><a href="https://developer.xamarin.com/api/root/MonoAndroid-lib/">Android API 文件</a> \(英文\)</p><p><a href="https://docs.microsoft.com/en-us/dotnet/api/?view=xamarinandroid-7.1">基底類別程式庫</a></p>
+      html: <p><a href="https://developer.xamarin.com/api/root/MonoAndroid-lib/">Android API 文件</a> \(英文\)</p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinandroid-7.1">基底類別程式庫</a></p>
     - title: 範例
       href: https://developer.xamarin.com/samples/android/all/
       html: <p><a href="https://developer.xamarin.com/samples/android/all/">Android 範例</a></p>

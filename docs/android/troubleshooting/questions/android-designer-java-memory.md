@@ -1,5 +1,5 @@
 ---
-title: Android 設計工具中調整 Java 記憶體參數
+title: 調整適用於 Android Designer 的 JAVA 記憶體參數
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 62FAF21C-8090-4AF3-9D88-05A4CFCAFFDC
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: cf0df42ba398944a99cc4179b94f0d3cb8ba503e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9c564789f704180e9acc9f96dcba5e7d6eb20634
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118054"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617237"
 ---
-# <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>Android 設計工具中調整 Java 記憶體參數
+# <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>調整適用於 Android Designer 的 JAVA 記憶體參數
 
 啟動時會用到的預設記憶體參數`java`處理 Android 設計工具可能與某些系統組態不相容。
 
@@ -35,7 +35,7 @@ ms.locfileid: "50118054"
 
 1.  在 Visual Studio 中開啟您的方案。
 
-2.  在 [方案總管] 中選取一個接著一個的每個 Android 專案，然後按一下[顯示所有檔案](https://msdn.microsoft.com/en-us/library/4afxey9h.aspx)兩次上每個專案。 您可以略過不包含任何專案`.axml`版面配置檔。 此步驟可確保每個專案目錄包含`.csproj.user`檔案。
+2.  在 [方案總管] 中選取一個接著一個的每個 Android 專案，然後按一下[顯示所有檔案](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/4afxey9h(v=vs.90))兩次上每個專案。 您可以略過不包含任何專案`.axml`版面配置檔。 此步驟可確保每個專案目錄包含`.csproj.user`檔案。
 
 3.  結束 Visual Studio。
 

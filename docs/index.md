@@ -6,12 +6,12 @@ description: Xamarin 可讓您使用 .NET 程式碼和平台專屬的使用者�
 ms.date: 08/08/2018
 featureFlags:
 - clicktale
-ms.openlocfilehash: 79bf14362d142c5db4c590cc547bfafdd3100682
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4cea75c2790096a55456018ed47d5899d94171ae
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121209"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617734"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -319,7 +319,7 @@ ms.locfileid: "50121209"
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
+                                                        <img alt="Samples" src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -514,7 +514,7 @@ ms.locfileid: "50121209"
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
+                                                        <img alt="Samples" src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -728,7 +728,7 @@ ms.locfileid: "50121209"
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
+                                                        <img alt="Samples" src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -866,7 +866,7 @@ ms.locfileid: "50121209"
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
+                                                        <img alt="Samples" src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -1004,7 +1004,7 @@ ms.locfileid: "50121209"
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
+                                                        <img alt="Samples" src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -1176,7 +1176,7 @@ ms.locfileid: "50121209"
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img src="https://docs.microsoft.com/en-us/media/illustrations/dynamics-resource-library.svg" alt="Xamarin Workbooks" />
+                                                        <img src="https://docs.microsoft.com/media/illustrations/dynamics-resource-library.svg" alt="Xamarin Workbooks" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -1214,7 +1214,7 @@ ms.locfileid: "50121209"
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img src="https://docs.microsoft.com/en-us/media/illustrations/teams-fast-track.svg" alt="Continuous Integration" />
+                                                        <img src="https://docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt="Continuous Integration" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">

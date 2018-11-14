@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 0d89fff81d1d13baa578068bcaef11dd5af00e14
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
-ms.translationtype: HT
+ms.openlocfilehash: c6d7971c8418c8038f5fcbfcf0e8f2acd928edcb
+ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527049"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51579891"
 ---
 # <a name="table-views-in-xamarinmac"></a>Xamarin.Mac 中的資料表檢視
 
@@ -186,7 +186,7 @@ namespace MacTables
 {
     public class Product
     {
-        #region Computed Propoperties
+        #region Computed Properties
         public string Title { get; set;} = "";
         public string Description { get; set;} = "";
         #endregion

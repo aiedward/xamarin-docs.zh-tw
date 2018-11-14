@@ -8,17 +8,17 @@ author: pierceboggan
 ms.author: piboggan
 robots: noindex
 ms.date: 10/26/2018
-ms.openlocfilehash: bb30f9264cb5f3b762088e3523223b2bff8416b9
-ms.sourcegitcommit: ebc0b3838836ee5cf9e54d58866d23916664a43d
+ms.openlocfilehash: 21ff09f2af93ee46578b959111bf744ba05a74d7
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50142332"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617653"
 ---
 # <a name="xamarin-live-reload-preview"></a>Xamarin 即時重新載入 （預覽）
 
 > [!NOTE]
-> Xamarin 即時重新載入的預覽版本已結束，且我們想要感謝您的意見反應和註解的所有人。 請閱讀我們[藍圖](https://docs.microsoft.com/en-us/visualstudio/productinfo/vs-roadmap)for Visual Studio 2019，若要深入了解我們正在開發適用於 Xamarin.Forms 的新生產力功能。 此擴充功能的 Visual Studio 2017，仍可供使用，但將不會接收未來的更新。
+> Xamarin 即時重新載入的預覽版本已結束，且我們想要感謝您的意見反應和註解的所有人。 請閱讀我們[藍圖](https://docs.microsoft.com/visualstudio/productinfo/vs-roadmap)for Visual Studio 2019，若要深入了解我們正在開發適用於 Xamarin.Forms 的新生產力功能。 此擴充功能的 Visual Studio 2017，仍可供使用，但將不會接收未來的更新。
 
 Xamarin 即時重新載入可讓您**對您的 XAML 中的變更並看到其反映即時的而不需要其他的編譯及部署**。 將要重新部署您的 XAML 所做的變更上儲存，並反映在您的部署目標上。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: 47c9ddf3f1a61b0ec7e2a8ed993ad665267993fd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 680fe2f8980d66b6dc80ec9a98898f9925df25f4
+ms.sourcegitcommit: f3f28722198e172d81c16bdeab0cb0a581a08dd0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114271"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51598882"
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>HttpClient 堆疊和適用於 Android 的 SSL/TLS 實作選擇器
 

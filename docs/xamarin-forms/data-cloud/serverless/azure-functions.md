@@ -7,12 +7,12 @@ author: conceptdev
 ms.author: crdun
 ms.custom: video
 ms.date: 08/08/2018
-ms.openlocfilehash: 3c7f3558557c5ecf4df961b58c2dd147a6f89691
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d8dd6927daab563b4331e9e87c7b069d84078f66
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111531"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617432"
 ---
 # <a name="get-started-with-azure-functions"></a>開始使用 Azure Functions
 
@@ -24,7 +24,7 @@ _開始建置您第一個 Azure 函式互動使用 Xamarin.Forms。_
 
 ## <a name="step-by-step-instructions"></a>逐步指示
 
-除了影片中，您可以遵循這些指示[建置您使用 Visual Studio 2017 的第一個函式](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-your-first-function-visual-studio)。
+除了影片中，您可以遵循這些指示[建置您使用 Visual Studio 2017 的第一個函式](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio)。
 
 ## <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -32,7 +32,7 @@ _開始建置您第一個 Azure 函式互動使用 Xamarin.Forms。_
 
 ## <a name="step-by-step-instructions"></a>逐步指示
 
-除了這段影片中，還有[逐步教學課程](https://docs.microsoft.com/en-us/visualstudio/mac/azure-functions-lab)，示範如何建立和 Visual Studio 內的 Azure Functions 偵錯 for mac。
+除了這段影片中，還有[逐步教學課程](https://docs.microsoft.com/visualstudio/mac/azure-functions-lab)，示範如何建立和 Visual Studio 內的 Azure Functions 偵錯 for mac。
 
 -----
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 150d5a35a2ccae63a1ff9969f5751b0e93c12454
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
-ms.translationtype: HT
+ms.openlocfilehash: 4e236f2517482665406008d0b86af487e2d799dd
+ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526997"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51579878"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Xamarin.mac 的標準控制項
 
@@ -508,7 +508,7 @@ FeedbackLabel.StringValue = string.Format("Stepper Value: {0:###}",TickedSlider.
 特殊控制項 （例如也色彩和影像也） 有特定的屬性，其實值型別。 例如：
 
 ```csharp
-CollorWell.Color = NSColor.Red;
+ColorWell.Color = NSColor.Red;
 ImageWell.Image = NSImage.ImageNamed ("tag.png");
 
 ```

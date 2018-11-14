@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/22/2018
-ms.openlocfilehash: 008fc22d654478df3151706101ef07bc0a23acb8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4d5319005b28c5afa0906c44cfa59f0cad40de76
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111471"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617614"
 ---
 # <a name="arkit-2-in-xamarinios"></a>在 Xamarin.iOS 中 ARKit 2
 
@@ -373,7 +373,7 @@ ARKit 2 的最後一個標題功能是 Apple 的 Pixar 的採用[通用的場景
 
 在 ARKit，就必須以手動方式管理資源。 不只這允許高的畫面播放速率，實際上就_必要_以避免混淆 」 畫面凍結 」。 ARKit framework 會提供新的相機框架的相關延遲 ([`ARSession.CurrentFrame`](https://developer.xamarin.com/api/property/ARKit.ARSession.CurrentFrame/))。 到目前[ `ARFrame` ](https://developer.xamarin.com/api/type/ARKit.ARFrame/)已`Dispose()`在它上面呼叫，ARKit 就不會提供新的框架 ！ 這會導致 「 凍結 」 即使應用程式的其餘部分是回應式的影片。 解決方法是一律存取`ARSession.CurrentFrame`具有`using`封鎖或手動呼叫`Dispose()`在其上。
 
-所有物件都衍生自`NSObject`都`IDisposable`並`NSObject`實作[處置模式](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/dispose-pattern)，因此您通常應該遵循[實作此模式`Dispose`上都衍生類別](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose)。
+所有物件都衍生自`NSObject`都`IDisposable`並`NSObject`實作[處置模式](https://docs.microsoft.com/dotnet/standard/design-guidelines/dispose-pattern)，因此您通常應該遵循[實作此模式`Dispose`上都衍生類別](https://docs.microsoft.com/dotnet/standard/garbage-collection/implementing-dispose)。
 
 ### <a name="manipulating-transform-matrices"></a>操作轉換矩陣
 

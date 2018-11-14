@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 0c95e4bcecb2ae787714b8ac6973646caada1b3e
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
-ms.translationtype: HT
+ms.openlocfilehash: 329984d44318b2204f2f5ee253402eb158c85b9f
+ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528854"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51579852"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin.mac 的對話方塊
 
@@ -535,16 +535,16 @@ namespace SourceWriter
     public class AppPreferences : NSObject
     {
         #region Computed Properties
-        [Export("DefaultLangauge")]
+        [Export("DefaultLanguage")]
         public int DefaultLanguage {
             get { 
-                var value = LoadInt ("DefaultLangauge", 0);
+                var value = LoadInt ("DefaultLanguage", 0);
                 return value; 
             }
             set {
-                WillChangeValue ("DefaultLangauge");
-                SaveInt ("DefaultLangauge", value, true);
-                DidChangeValue ("DefaultLangauge");
+                WillChangeValue ("DefaultLanguage");
+                SaveInt ("DefaultLanguage", value, true);
+                DidChangeValue ("DefaultLanguage");
             }
         }
 

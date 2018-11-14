@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 833bdc0fd087fcf8dbb8cce3b8b23f427302f5e7
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
-ms.translationtype: HT
+ms.openlocfilehash: 634131025b322b64e89ece3b4c9d092e6b17a373
+ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526867"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51579813"
 ---
 # <a name="android-localization"></a>Android 的當地語系化
 

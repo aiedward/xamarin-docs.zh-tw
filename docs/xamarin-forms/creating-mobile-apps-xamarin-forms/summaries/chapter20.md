@@ -7,12 +7,12 @@ ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 527ecfa03adb78d8b97e95d0b6b81ceb12f0a107
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: a795b382b9bcc727b0b0872d29d30a501cfed0a6
+ms.sourcegitcommit: f3f28722198e172d81c16bdeab0cb0a581a08dd0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563767"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51598895"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第 20 章的摘要。 非同步與檔案 I/O
 
@@ -23,7 +23,7 @@ ms.locfileid: "51563767"
 
 使用者會預期有回應的圖形化使用者介面。 這表示程式必須快速處理使用者輸入事件。 如果不可行，然後處理必須是屈就將文件執行的次要執行緒。
 
-這個活頁簿中的數個範例程式已經使用[ `WebRequest` ](xref:System.Net.WebRequest)類別。 此類別中[ `BeginGetReponse` ](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object))方法會啟動背景工作執行緒，完成時呼叫的回呼函式。 不過，該回撥函式以執行背景工作執行緒，因此，程式必須呼叫[ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))存取使用者介面的方法。
+這個活頁簿中的數個範例程式已經使用[ `WebRequest` ](xref:System.Net.WebRequest)類別。 此類別中[ `BeginGetResponse` ](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object))方法會啟動背景工作執行緒，完成時呼叫的回呼函式。 不過，該回撥函式以執行背景工作執行緒，因此，程式必須呼叫[ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))存取使用者介面的方法。
 
 > [!NOTE]
 > Xamarin.Forms 程式應該使用[ `HttpClient` ](xref:System.Net.Http.HttpClient)而非[ `WebRequest` ](xref:System.Net.WebRequest)透過網際網路存取的檔案。 `HttpClient` 支援非同步作業。

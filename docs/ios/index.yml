@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 4dd0968baf02635f43843333f2767119116efd1f
-ms.sourcegitcommit: 650fd5813e243d67eea13c4bc76683c0f8134123
+ms.openlocfilehash: 315c7356a3d36686d36a32c9ad1cc93b61908a81
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "39350264"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617302"
 documentType: LandingData
 title: Xamarin.iOS
 metadata:
@@ -47,7 +47,7 @@ sections:
       text: 多重畫面應用程式
       href: ~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-quickstart.md
     - image:
-        src: https://docs.microsoft.com/en-us/media/common/i_mobile-app-developement.svg
+        src: https://docs.microsoft.com/media/common/i_mobile-app-developement.svg
       text: iOS 12
       href: ~/ios/platform/introduction-to-ios12/index.md
 - title: 輔助線
@@ -59,7 +59,7 @@ sections:
     - href: ~/ios/get-started/index.md
       html: 帶您動手操作 Xamarin.iOS 的教學課程。 請確定一切都已正確安裝，並建置您的第一個 iOS 應用程式。
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
         href: ~/ios/get-started/index.md
       title: 快速入門
     - href: ~/ios/app-fundamentals/
@@ -83,7 +83,7 @@ sections:
     - href: ~/essentials/index.md?context=xamarin/ios
       html: 行動應用程式的跨平台 API。
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_multi-connect.svg
+        src: https://docs.microsoft.com/media/common/i_multi-connect.svg
         href: ~/essentials/index.md?context=xamarin/ios
       title: Xamarin.Essentials
     - href: ~/ios/data-cloud/
@@ -101,7 +101,7 @@ sections:
     - href: ~/ios/internals/
       html: Xamarin.iOS 運作方式的詳細資訊。
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_config-tools.svg
+        src: https://docs.microsoft.com/media/common/i_config-tools.svg
         href: ~/ios/internals/
       title: 進階概念與內部項目
     - href: ~/ios/watchos/
@@ -124,7 +124,7 @@ sections:
     items:
     - title: API
       href: https://developer.xamarin.com/api/root/ios-unified/
-      html: <p><a href="https://developer.xamarin.com/api/root/ios-unified/">iOS API 文件</a></p><p><a href="https://docs.microsoft.com/en-us/dotnet/api/?view=xamarinios-10.8">基底類別程式庫</a></p>
+      html: <p><a href="https://developer.xamarin.com/api/root/ios-unified/">iOS API 文件</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8">基底類別程式庫</a></p>
     - title: 範例
       href: https://developer.xamarin.com/samples
       html: <p><a href="https://developer.xamarin.com/samples/ios/all/">iOS 範例</a></p><p><a href="https://developer.xamarin.com/samples/ios/all/">watchOS 範例</a></p><p><a href="https://developer.xamarin.com/samples/ios/all/">tvOS 範例</a></p>

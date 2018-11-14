@@ -5,12 +5,12 @@ description: 這份文件相比較，並對照 WPF Xamarin.Forms。 它討論控
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 43eadacebf7ed877dfa28381ad77117d5988ca4b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d3e772c270f6003d01e3e7b487f69f682fec2d61
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119820"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617588"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF 和。Xamarin.Forms： 相似性與差異
 
@@ -60,7 +60,7 @@ Xamarin.Forms 支援以及-自訂標記延伸模組，但其實作稍有不同�
 
 ## <a name="binding-infrastructure"></a>繫結基礎結構
 
-結轉的核心概念是資料繫結基礎結構連線至.NET 資料屬性的 視覺屬性。 這可讓等 MVVM 架構模式。 基本的設計完全相同-您必須在可繫結的基底類別[BindableObject](xref:Xamarin.Forms.BindableObject)，這是 wpf [DependencyObject](https://msdn.microsoft.com/en-us/library/system.windows.dependencyobject(v=vs.110).aspx)類別。 這個基底類別作為根上階的所有物件，將加入為資料繫結中的目標。 在衍生的類別然後公開[BindableProperty](xref:Xamarin.Forms.BindableProperty)物件做為屬性值的備份儲存體 (這些定義為[DependencyProperty](https://msdn.microsoft.com/library/system.windows.dependencyproperty(v=vs.110).aspx)在 WPF 中的物件)。
+結轉的核心概念是資料繫結基礎結構連線至.NET 資料屬性的 視覺屬性。 這可讓等 MVVM 架構模式。 基本的設計完全相同-您必須在可繫結的基底類別[BindableObject](xref:Xamarin.Forms.BindableObject)，這是 wpf [DependencyObject](xref:System.Windows.DependencyObject)類別。 這個基底類別作為根上階的所有物件，將加入為資料繫結中的目標。 在衍生的類別然後公開[BindableProperty](xref:Xamarin.Forms.BindableProperty)物件做為屬性值的備份儲存體 (這些定義為[DependencyProperty](xref:System.Windows.DependencyProperty)在 WPF 中的物件)。
 
 ### <a name="defining-bindable-properties"></a>定義可繫結屬性
 

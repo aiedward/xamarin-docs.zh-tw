@@ -5,12 +5,12 @@ ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: d1a2ad675d615b48b8e8f8433065c5bd0bbae1d0
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: dcc90e21fd3ba84019fddd345fbec561871e1408
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675077"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617459"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials：手電筒
 
@@ -116,7 +116,7 @@ catch (Exception ex)
 
 ### <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[Lamp](https://docs.microsoft.com/en-us/uwp/api/windows.devices.lights.lamp) 用於偵測裝置背面的第一個燈是否開啟或關閉。
+[Lamp](https://docs.microsoft.com/uwp/api/windows.devices.lights.lamp) 用於偵測裝置背面的第一個燈是否開啟或關閉。
 
 -----
 

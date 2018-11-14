@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 9b28ecb6c2e489a3d7033b2c9effbc7ed75fc03c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fa842bbca57dc6df8937949f83e1266e0c5bb189
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115688"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617497"
 documentType: LandingData
 title: Xamarin 工具
 metadata:
@@ -49,7 +49,7 @@ sections:
     - href: ~/tools/workbooks/index.md
       html: 以互動方式了解 C# 和 Xamarin 平台。
       image:
-        src: https://docs.microsoft.com/en-us/media/illustrations/dynamics-resource-library.svg
+        src: https://docs.microsoft.com/media/illustrations/dynamics-resource-library.svg
         href: ~/tools/workbooks/index.md
       title: Xamarin Workbooks
     - href: ~/tools/dotnet-embedding/index.md

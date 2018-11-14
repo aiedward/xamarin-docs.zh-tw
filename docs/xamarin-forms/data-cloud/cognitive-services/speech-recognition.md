@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 282ebe330a370e0dda3af54287107b380c85cd80
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 175c7f17d70c1aa6b8d6bf388cc24fd0f97e7f00
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102811"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617640"
 ---
 # <a name="speech-recognition-using-the-microsoft-speech-api"></a>使用 Microsoft Speech API 的語音辨識
 
@@ -102,7 +102,7 @@ public async Task<SpeechResult> RecognizeSpeechAsync(string filename)
 string GenerateRequestUri(string speechEndpoint)
 {
     // To build a request URL, you should follow:
-    // https://docs.microsoft.com/en-us/azure/cognitive-services/speech/getstarted/getstartedrest
+    // https://docs.microsoft.com/azure/cognitive-services/speech/getstarted/getstartedrest
     string requestUri = speechEndpoint;
     requestUri += @"dictation/cognitiveservices/v1?";
     requestUri += @"language=en-us";

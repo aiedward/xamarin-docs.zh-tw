@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/15/2018
-ms.openlocfilehash: 79215d84307c03c0d34e6314b1c8b07e4f83fdd0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2d62e42e755a0d3088283adb863dfd684ddeae28
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131179"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617575"
 ---
 # <a name="core-ml-2-in-xamarinios"></a>核心機器學習服務 2 在 Xamarin.iOS 中
 
@@ -125,6 +125,6 @@ async Task FetchBatchResults(int num)
 - [範例應用程式 – MarsHabitatCoreMLTimer](https://developer.xamarin.com/samples/monotouch/iOS12/MarsHabitatCoreMLTimer)
 - [在核心 ML 中，第 1 部分 (WWDC 2018) 最新消息](https://developer.apple.com/videos/play/wwdc2018/708/)
 - [在核心 ML 中，第 2 部分 (WWDC 2018) 最新消息](https://developer.apple.com/videos/play/wwdc2018/709/)
-- [在 Xamarin.iOS 中的核心機器學習服務簡介](https://docs.microsoft.com/en-us/xamarin/ios/platform/introduction-to-ios11/coreml)
+- [在 Xamarin.iOS 中的核心機器學習服務簡介](https://docs.microsoft.com/xamarin/ios/platform/introduction-to-ios11/coreml)
 - [核心機器學習服務 (Apple)](https://developer.apple.com/documentation/coreml?language=objc)
 - [使用核心機器學習服務模型](https://developer.apple.com/machine-learning/build-run-models/)
