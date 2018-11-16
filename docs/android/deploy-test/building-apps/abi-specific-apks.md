@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 4cb0a1e598953af0c2bdb5afa6047bfb069c5588
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bb9be2140c69578de85128cf7c3a013ad12aa511
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110260"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617562"
 ---
 # <a name="building-abi-specific-apks"></a>建置特定 ABI 的 APK
 
@@ -174,7 +174,7 @@ Rake 工作完成之後，便會有三個 `bin` 資料夾，以及一個 `xamari
 
 
 > [!NOTE]
-> 本指南中描述的建置過程可在許多不同建置系統的其中一個內實作。 雖然我們並未預先撰寫範例，但它也可以使用 [Powershell](http://technet.microsoft.com/en-ca/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) 或 [Fake](http://fsharp.github.io/FAKE/) 來進行。
+> 本指南中描述的建置過程可在許多不同建置系統的其中一個內實作。 雖然我們並未預先撰寫範例，但它也可以使用 [Powershell](http://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) 或 [Fake](http://fsharp.github.io/FAKE/) 來進行。
 
 
 ## <a name="summary"></a>總結

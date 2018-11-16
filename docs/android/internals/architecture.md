@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 219c6bb4cd5718c969ba83a55596ad7b0bab8baf
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 815e3ddf44ae94b6b26a325599de1f4c1f6714a8
+ms.sourcegitcommit: ae34d048aeb23a99678ae768cdeef0c92ca36b51
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121122"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51681536"
 ---
 # <a name="architecture"></a>架構
 
@@ -33,7 +33,8 @@ Xamarin.Android 開發人員存取作業系統透過他們的專業知識的.NET
 
 Android 應用程式封裝是使用 ZIP 容器 *.apk*副檔名。 Xamarin.Android 應用程式套件會有相同的結構和配置為一般 Android 套件的詳細資訊，加上下列各項：
 
--   （包含 IL） 的應用程式組件*預存*內未壓縮*組件*資料夾。 程序期間在版本中啟動組建 *.apk*是*mmap()* ed，到處理程序和組件會從記憶體載入。 這可讓應用程式啟動較快，因為組件不需要在執行之前要擷取。 - *注意：* 組件位置資訊，例如[Assembly.Location](xref:System.Reflection.Assembly.Location)並[Assembly.CodeBase](xref:System.Reflection.Assembly.CodeBase)
+-   （包含 IL） 的應用程式組件*預存*內未壓縮*組件*資料夾。 程序期間在版本中啟動組建 *.apk*是*mmap()* ed，到處理程序和組件會從記憶體載入。 這可讓應用程式啟動較快，因為組件不需要在執行之前要擷取。  
+-   *注意：* 組件位置資訊，例如[Assembly.Location](xref:System.Reflection.Assembly.Location)並[Assembly.CodeBase](xref:System.Reflection.Assembly.CodeBase)
     *不能指望*版本組建。 沒有為不同的檔案系統項目，而且有任何可用的位置。
 
 

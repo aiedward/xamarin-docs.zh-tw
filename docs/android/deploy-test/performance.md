@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: deabecc0dc96f8963122afebc0dc0ba256fd92e8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 10e45ec438f1e698a9f09223cecea5934de54da8
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115558"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617710"
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android 效能
 
@@ -233,7 +233,7 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 ## <a name="dispose-of-unused-image-resources"></a>未使用的影像資源處置
 
-為了節省記憶體使用量，最好對不再需要的大型影像資源進行處置。 不過，請務必確保正確地處置影像。 不要使用明確的 `.Dispose()` 引動過程，請改用 [using](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-statement) 陳述式以確保正確使用 `IDisposable` 物件。 
+為了節省記憶體使用量，最好對不再需要的大型影像資源進行處置。 不過，請務必確保正確地處置影像。 不要使用明確的 `.Dispose()` 引動過程，請改用 [using](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/using-statement) 陳述式以確保正確使用 `IDisposable` 物件。 
 
 例如，[Bitmap](https://developer.xamarin.com/api/type/Android.Graphics.Bitmap/) 類別會實作 `IDisposable`。 將 `BitMap` 物件的具現化包裝在 `using` 區塊中，可確保從區塊結束時會正確處置物件：
 

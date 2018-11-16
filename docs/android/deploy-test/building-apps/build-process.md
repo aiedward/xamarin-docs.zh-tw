@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2018
-ms.openlocfilehash: 63e86ef89c8d736640e7677fee6147feacc87bdc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b63efb3f9bfa432f15415e652cd5d59f929c4488
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108921"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617783"
 ---
 # <a name="build-process"></a>建置流程
 
@@ -195,7 +195,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
 -   **AndroidTlsProvider** &ndash; 指定應用程式中應該使用哪一個 TLS 提供者的字串值。 可能的值為：
 
-    - `btls`：使用 [Boring SSL](https://boringssl.googlesource.com/boringssl) 以利用 [HttpWebRequest](https://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.aspx) 進行 TLS 通訊。
+    - `btls`：使用 [Boring SSL](https://boringssl.googlesource.com/boringssl) 以利用 [HttpWebRequest](xref:System.Net.HttpWebRequest) 進行 TLS 通訊。
       這允許在所有的 Android 版本上使用 TLS 1.2。
 
     - `legacy`：在網路互動中使用過往的受控 SSL 實作。 這不支援 TLS 1.2。

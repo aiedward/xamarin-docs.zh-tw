@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 61a90632849787e28526f83d53247a0491148148
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: e8b3881db99d569008ce1290f81891f1b3b183d7
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235086"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563806"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS 多重畫面 – 深度剖析
 
@@ -125,13 +125,13 @@ iOS 會在轉換發生之前先呼叫 `PrepareForSegue`，並將我們在分鏡�
 此時，必須手動設定 Segue 的目的地檢視控制器。 下列程式碼會取得目的地檢視控制器的控制代碼，並轉換成適當的類別 (在此案例中為 CallHistoryController)：
 
 ```csharp
-CallHistoryController callHistoryContoller = segue.DestinationViewController as CallHistoryController;
+CallHistoryController callHistoryController = segue.DestinationViewController as CallHistoryController;
 ```
 
 最後，透過將 `CallHistoryController` 的 `PhoneHistory` 屬性設定為已撥號電話號碼清單，將電話號碼清單 (模型) 從 `ViewController` 傳遞到 `CallHistoryController`：
 
 ```csharp
-callHistoryContoller.PhoneNumbers = PhoneNumbers;
+callHistoryController.PhoneNumbers = PhoneNumbers;
 ```
 
 使用 Segue 傳遞資料的完整程式碼如下所示：
@@ -141,10 +141,10 @@ public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
 {
     base.PrepareForSegue (segue, sender);
 
-    var callHistoryContoller = segue.DestinationViewController as CallHistoryController;
+    var callHistoryController = segue.DestinationViewController as CallHistoryController;
 
-    if (callHistoryContoller != null) {
-         callHistoryContoller.PhoneNumbers = PhoneNumbers;
+    if (callHistoryController != null) {
+         callHistoryController.PhoneNumbers = PhoneNumbers;
     }
  }
 ```

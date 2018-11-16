@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 3a88359eb9d5c382753566bc4d0c3b4f556490ac
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b9cecc8863cb4e68338d3226c5bf3744b7010e43
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117508"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617406"
 ---
 # <a name="setup-and-installation"></a>設定與安裝
 
@@ -23,7 +23,7 @@ ms.locfileid: "50117508"
 
 本指南會引導您完成在 Windows 上安裝 Xamarin.Android 所需的安裝步驟和組態詳細資料。 這篇文章結束時，您將擁有可運行的 Xamarin.Android 安裝並整合至 Visual Studio，而且您將可以開始建置第一個 Xamarin.Android 應用程式。
 
-## <a name="mac-installationhttpsdocsmicrosoftcomen-usvisualstudiomacinstallation"></a>[Mac 安裝](https://docs.microsoft.com/en-us/visualstudio/mac/installation)
+## <a name="mac-installationhttpsdocsmicrosoftcomvisualstudiomacinstallation"></a>[Mac 安裝](https://docs.microsoft.com/visualstudio/mac/installation)
 
 本文會引導您完成在 Mac 上安裝 Xamarin.Android 所需的安裝步驟和組態詳細資料。 在本文結束時，您將擁有可運行的 Xamarin.Android 安裝並整合至 Visual Studio for Mac ，而且您將可以開始建置第一個 Xamarin.Android 應用程式。
 
