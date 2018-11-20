@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/25/2018
-ms.openlocfilehash: 944b10c579abd3fa6e68a2c0497602600af4f4c1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6e4ff817bcf59f071277b653175066c9727167c1
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111430"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527153"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>將 Xamarin.iOS 應用程式發佈到 App Store
 
@@ -123,7 +123,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 1. 確定 Visual Studio 2017 已[與 Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. 以滑鼠右鍵按一下 [方案總管] 中的 [專案名稱]，並選取 [屬性]。
-3. 瀏覽到 [iOS 組建] 索引標籤，並將 [組態] 設定為 [發行]，然後將 [平台] 設定為 [iPhone]。
+3. 瀏覽至 [iOS 組建] 索引標籤，並將 [組態] 設定為 [發行]，同時將 [平台] 設定為 [iPhone]。
 4. 若要使用特定的 iOS SDK 建置，請從 [SDK 版本] 清單中進行選取。 否則，請將此值保留為 [預設]。
 5. 連結可藉由移除未使用的程式碼，減少應用程式的整體大小。 在大部分情況下，[連結器行為] 應該設定為預設值 [僅連結 Framework SDK]。 在某些情況下，例如使用某些協力廠商程式庫時，可能需要將此值設定為 [不要連結]，以確保不會移除所需的程式碼。 如需詳細資訊，請參閱[連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)指南。
 6. 核取 [最佳化 PNG 影像]，進一步減少您的應用程式大小。

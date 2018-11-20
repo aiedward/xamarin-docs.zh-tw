@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: caf35ab601d20e1cb235ab9ebb131e6dffc614fc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f01074823f865b1717920d8364c67828453b6437
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108871"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617733"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS 效能
 
@@ -101,15 +101,15 @@ container.AddSubview (new MyView (container));
 
 在此，所包含的物件不讓父項保持運作。 但是，父項透過對 `container.AddSubView` 的呼叫保持子項運作。
 
-這也會發生在使用委派或資料來源模式的 iOS API 中，其中對等類別將包含實作；例如，當在 [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) 類別中設定 [`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/)
-屬性或 [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/)
-時。
+這也會發生在使用委派或資料來源模式的 iOS API 中，其中對等類別將包含實作；例如，設定 [`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/) 時
+屬性或 [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/) 時
+在 [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) 類別中。
 
 在類別純粹是為了實作通訊協定而建立的情況下 (例如 [`IUITableViewDataSource`](https://developer.xamarin.com/api/type/MonoTouch.UIKit.IUITableViewDataSource/))，您可以僅實作類別中的介面並覆寫方法，然後將 `DataSource` 屬性指派給 `this`，而非建立子類別。
 
 #### <a name="weak-attribute"></a>弱式屬性
 
-[Xamarin.iOS 11.10](https://developer.xamarin.com/releases/ios/xamarin.ios_11/xamarin.ios_11.10/#WeakAttribute) 引入 `[Weak]` 屬性。 例如 `WeakReference <T>`，`[Weak]` 可用來中斷[強式循環參考](https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/performance#avoid-strong-circular-references)，但使用更少的程式碼。
+[Xamarin.iOS 11.10](https://developer.xamarin.com/releases/ios/xamarin.ios_11/xamarin.ios_11.10/#WeakAttribute) 引入 `[Weak]` 屬性。 例如 `WeakReference <T>`，`[Weak]` 可用來中斷[強式循環參考](https://docs.microsoft.com/xamarin/ios/deploy-test/performance#avoid-strong-circular-references)，但使用更少的程式碼。
 
 請考慮下列使用 `WeakReference <T>` 的程式碼：
 

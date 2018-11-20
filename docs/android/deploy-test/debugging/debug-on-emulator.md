@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: e40178e43cfcfd261434fab9dd5ca0a9061d3f59
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6d595a487d87c7e30c87a0347d25404d0b2f7dbc
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113777"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527309"
 ---
 # <a name="debugging-on-the-android-emulator"></a>在 Android Emulator 上偵錯
 
@@ -87,7 +87,7 @@ Visual Studio for Mac 包含預先設定的虛擬裝置，這些裝置會顯示�
 
 ![執行空白應用程式的模擬器](debug-on-emulator-images/emulator-running.png)
 
-您可以讓模擬器保持執行：無須在每次啓動執行應用程式時關閉它再重新啟動。 第一次在模擬器中執行 Xamarin.Android 應用程式時，會安裝目標 API 層級的 Xamarin.Android 共用執行階段，再接著安裝應用程式。 安裝執行階段可能需要一些時間，因此請耐心等候。 只有在將第一個 Xamarin.Android 應用程式部署至模擬器時，才會安裝執行階段 &ndash; 後續部署速度會較快，因為要複製到模擬器的只有應用程式。
+您可以讓模擬器保持執行：無須在每次啓動執行應用程式時關閉它再重新啟動。 第一次在模擬器中執行 Xamarin.Android 應用程式時，會安裝目標 API 層級的 Xamarin.Android 共用執行階段，接著再安裝應用程式。 安裝執行階段可能需要一些時間，因此請耐心等候。 只有在將第一個 Xamarin.Android 應用程式部署至模擬器時，才會安裝執行階段 &ndash; 後續部署速度會較快，因為要複製到模擬器的只有應用程式。
 
 <a name="quick-boot" />
 

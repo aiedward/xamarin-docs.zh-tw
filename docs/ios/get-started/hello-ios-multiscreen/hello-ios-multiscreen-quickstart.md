@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: e9ec7bc9186193c8a87bd1ddfabd3e72153d7e81
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 09db1075ef787041e806ef3afb569e4830f51575
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103318"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563819"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Hello, iOS 多重畫面 – 快速入門
 
@@ -156,7 +156,7 @@ ms.locfileid: "50103318"
 
     ![](hello-ios-multiscreen-quickstart-images/18new.png "在 Properties Pad 中，將檢視控制器標題變更為通話記錄")
 
-16. 當應用程式執行時，**通話記錄按鈕**將開啟 [通話記錄] 畫面，但資料表檢視將是空白，因為沒有可追蹤和顯示電話號碼的程式碼。
+16. 執行應用程式時，**通話記錄按鈕**將會開啟 [通話記錄] 畫面，但資料表檢視會是空白，這是因為沒有可追蹤和顯示電話號碼的程式碼。
 
     此應用程式會將電話號碼儲存為字串清單。
 
@@ -240,14 +240,14 @@ ms.locfileid: "50103318"
           // set the view controller that’s powering the screen we’re
           // transitioning to
 
-          var callHistoryContoller = segue.DestinationViewController as CallHistoryController;
+          var callHistoryController = segue.DestinationViewController as CallHistoryController;
 
           //set the table view controller’s list of phone numbers to the
           // list of dialed phone numbers
 
-          if (callHistoryContoller != null)
+          if (callHistoryController != null)
           {
-            callHistoryContoller.PhoneNumbers = PhoneNumbers;
+            callHistoryController.PhoneNumbers = PhoneNumbers;
           }
         }
       }
@@ -398,7 +398,7 @@ ms.locfileid: "50103318"
 
     ![](hello-ios-multiscreen-quickstart-images/image16.png "將 [檢視控制器] 標題變更為通話記錄")
 
-16. 當執行應用程式時，**通話記錄按鈕**將開啟 [通話記錄] 畫面，但資料表檢視將是空白，因為沒有可追蹤和顯示電話號碼的程式碼。
+16. 執行應用程式時，**通話記錄按鈕**將會開啟 [通話記錄] 畫面，但資料表檢視會是空白，這是因為沒有可追蹤和顯示電話號碼的程式碼。
 
     此應用程式會將電話號碼儲存為字串清單。
 
@@ -482,14 +482,14 @@ ms.locfileid: "50103318"
           // set the view controller that’s powering the screen we’re
           // transitioning to
 
-          var callHistoryContoller = segue.DestinationViewController as CallHistoryController;
+          var callHistoryController = segue.DestinationViewController as CallHistoryController;
 
           //set the table view controller’s list of phone numbers to the
           // list of dialed phone numbers
 
-          if (callHistoryContoller != null)
+          if (callHistoryController != null)
           {
-            callHistoryContoller.PhoneNumbers = PhoneNumbers;
+            callHistoryController.PhoneNumbers = PhoneNumbers;
           }
         }
       }

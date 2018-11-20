@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 092b67ba13a3c8e5405b894929f6e00fb8b21240
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0ec24e49e03237829474515a9abe9b014d10014f
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122656"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527114"
 ---
 # <a name="hello-ios--quickstart"></a>Hello, iOS – 快速入門
 
@@ -257,7 +257,7 @@ Xamarin.iOS 可與下列設定搭配運作：
     ![](hello-ios-quickstart-images/image27.png "選取模擬器並按 [啟動]")
 
     > [!NOTE]
-    > 目前，由於 Apple 的要求，因此可能需要具有開發憑證或簽署身分識別，才能針對裝置或模擬器建置程式碼。 請依照[裝置佈建指南](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)中的步驟來設定此項。
+    > 目前因為 Apple 的需求，可能必須擁有開發憑證或*簽署身分識別*，才可針對裝置或模擬器建置您的程式碼。 請依照[裝置佈建指南](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)中的步驟來設定此項。
 
 28. 這樣將會在 iOS 模擬器內啟動應用程式：
 

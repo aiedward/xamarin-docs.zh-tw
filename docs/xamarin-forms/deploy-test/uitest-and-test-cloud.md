@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/31/2016
-ms.openlocfilehash: cd46aac653d6477f3fc8240e4f193ec1c4a7bb4c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 215aa88b7e97a67242bd991dde0e66c445b47b0a
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122435"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526400"
 ---
 # <a name="automate-xamarinforms-testing-with-app-center"></a>使用 App Center 自動化 Xamarin.Forms 測試
 
@@ -28,7 +28,7 @@ _Xamarin UITest 元件可搭配 Xamarin.Forms 使用來撰寫 UI 測試，以在
 - [App Center 測試簡介](/appcenter/test-cloud/) \(英文\)
 - [UITest 簡介](/appcenter/test-cloud/preparing-for-upload/uitest/) \(英文\)
 
-一旦將 UITest 專案加入到 Xamarin.Forms 方案，針對 Xamarin.Forms 應用程式撰寫和執行測試的步驟，將會和 Xamarin.Android 或 Xamarin.iOS 應用程式的步驟相同。
+一旦將 UITest 專案加入到 Xamarin.Forms 解決方案之後，針對 Xamarin.Forms 應用程式撰寫和執行測試的步驟，將會和 Xamarin.Android 或 Xamarin.iOS 應用程式的步驟相同。
 
 ## <a name="requirements"></a>需求
 
@@ -200,7 +200,7 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 
 ## <a name="summary"></a>總結
 
-透過簡單的機制將 `AutomationId` 公開為測試自動化的唯一檢視識別碼，就能輕鬆使用 **Xamarin.UITest** 來測試 Xamarin.Forms 應用程式。 一旦將 UITest 專案加入到 Xamarin.Forms 方案，針對 Xamarin.Forms 應用程式撰寫和執行測試的步驟，將會和 Xamarin.Android 或 Xamarin.iOS 應用程式的步驟相同。
+透過簡單的機制將 `AutomationId` 公開為測試自動化的唯一檢視識別碼，就能輕鬆使用 **Xamarin.UITest** 來測試 Xamarin.Forms 應用程式。 一旦將 UITest 專案加入到 Xamarin.Forms 解決方案之後，針對 Xamarin.Forms 應用程式撰寫和執行測試的步驟，將會和 Xamarin.Android 或 Xamarin.iOS 應用程式的步驟相同。
 
 如需如何將測試提交至 App Center 測試的相關資訊，請參閱[提交 UITest](/appcenter/test-cloud/preparing-for-upload/uitest/) \(英文\)。 如需 UITest 的詳細資訊，請參閱 [App Center 測試文件](/appcenter/test-cloud/) \(英文\)。
 

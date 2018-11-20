@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/06/2018
-ms.openlocfilehash: 8cf11056881af6fd622cae901d518fe27f61d08f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 67ab5b9bd711cb10a20b1365effea1627d0f7688
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115389"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526984"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>使用 Android Device Manager 管理虛擬裝置
 
@@ -307,7 +307,7 @@ Xamarin Studio 與 Android Device Manager 不相容。
 
 9. Android Device Manager 會將新裝置新增至已安裝的虛擬裝置清單中，並在建立裝置期間顯示 [正在建立] 進度列指示器：
 
-   [![建立進度列指示器](device-manager-images/mac/19-creating-the-device-m76-sml.png)](device-manager-images/mac/19-creating-the-device-m76.png#lightbox)
+   [![建立進度指標](device-manager-images/mac/19-creating-the-device-m76-sml.png)](device-manager-images/mac/19-creating-the-device-m76.png#lightbox)
 
 10. 當建立程序完成時，即會在已安裝的虛擬裝置清單中顯示新裝置，並具有 [啟動] 按鈕，準備好可供啟動：
 
@@ -492,7 +492,7 @@ Android SDK 通常會安裝於下列位置：
 
 ## <a name="summary"></a>總結
 
-本指南引進適用於 Visual Studio Tools for Xamarin 和 Visual Studio for Mac 的 Android Device Manager。 其中說明了必要的功能，例如，啟動和停止 Android 模擬器、選取要執行的 Android 虛擬裝置 (AVD)、建立新的虛擬裝置，以及如何編輯虛擬裝置。 它說明如何編輯設定檔硬體內容，以進一步自訂，並提供常見問題的疑難排解的秘訣。
+此指南介紹適用於 Xamarin 的 Visual Studio Tools 以及適用於 Mac 的 Visual Studio 所提供的 Android Device Manager。 其中說明了必要的功能，例如，啟動和停止 Android 模擬器、選取要執行的 Android 虛擬裝置 (AVD)、建立新的虛擬裝置，以及如何編輯虛擬裝置。 它說明如何編輯設定檔硬體內容，以進一步自訂，並提供常見問題的疑難排解的秘訣。
 
 
 ## <a name="related-links"></a>相關連結

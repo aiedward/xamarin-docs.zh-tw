@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 10/19/2016
-ms.openlocfilehash: 6cf19efcd2fa0f9d74034214bfa6a4e60ce0f9e2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 777e8d2880313b5a793d6257cc0fd9d8299cb94d
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103877"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528477"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>在 Xamarin.Mac 應用程式中偵錯原生損毀
 
@@ -159,7 +159,7 @@ Thread 0 Crashed:: Dispatch queue: com.apple.main-thread
 
 ```
 
-本指南將協助您在此性質的 Bug 發生時進行追蹤、正確地回報它們以便加以修正，直到在您的程式碼中一一解決它們為止。
+此指南可協助您在發生此種現象時，追蹤這類 Bug、正確地進行回報，同時在您的程式碼中避開它們直到錯誤修復為止。
 
 ### <a name="locating"></a>找出問題
 

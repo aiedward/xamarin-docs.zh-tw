@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: af1ad32e605bbbe899ec8596a60cdabf226372db
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c03815776921a61c1f54136e3f09c0996dff71d3
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111300"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528411"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Xamarin.iOS 應用程式中的 iTunesMetadata.plist 檔案
 
@@ -20,13 +20,13 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 
 在 iTunes Connect 中建立 iOS 應用程式時 (無論是要在 iTunes App Store 銷售或免費發行)，開發人員可指定像是應用程式的內容類型、子內容類型、著作權聲明、支援的 iOS 裝置以及所需裝置功能等資訊。 針對透過臨機操作散發提供給測試人員或企業使用者的 iOS 應用程式，則會缺少這項資訊。
 
-若要將缺少的資訊提供給臨機操作散發，可以建立選擇性的 `iTunesMetadata.plist` 檔案，並將其包含在應用程式 IPA 檔案中。 此 plist 檔案為特殊格式的 XML 檔案 (如需詳細資訊，請參閱 Apple 的[屬性清單程式設計指南](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html) \(英文\))，其中包含定義指定 iOS 應用程式之相關資訊的索引鍵/值組。
+若要將缺少的資訊提供給臨機操作散發，可以建立選擇性的 `iTunesMetadata.plist` 檔案，並將其包含在應用程式 IPA 檔案中。 此 plist 檔案為特定格式的 XML 檔案 (如需詳細資訊，請參閱 Apple 的[屬性清單程式設計指南](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html))，其包含多組定義指定之 iOS 應用程式的索引鍵與值。
 
 <a name="iTunesMetadata_contents" />
 
 ## <a name="the-itunesmetadataplist-contents"></a>iTunesMetadata.plist 內容
 
-以下是典型 `iTunesMetadata.plist` 檔案的範例，此檔案可用來針對臨機操作散發定義 iTunes 資訊：
+以下是典型 `iTunesMetadata.plist` 檔案的範例，此檔案可用來定義臨機操作散發的 iTunes 資訊：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

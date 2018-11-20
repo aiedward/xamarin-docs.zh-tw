@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 88b09070f41ec586ab0eed82173763bb1706dc62
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ce102f189321cbd49b37e7718c1f3d478c322f55
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103370"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526685"
 ---
 # <a name="set-up-device-for-development"></a>設定裝置以進行開發
 
@@ -62,7 +62,7 @@ _本文章將探討如何設定 Android 裝置，並將它連接到電腦，以�
 
 ## <a name="install-usb-drivers"></a>安裝 USB 驅動程式
 
-OS X 不需要這個步驟。只要用 USB 纜線將裝置連接到 Mac。
+OS X 不需要此步驟。只要利用 USB 傳輸線將裝置連接到 Mac 即可。
 
 可能需要安裝某些額外的驅動程式，Windows 電腦才能辨識透過 USB 連接的 Android 裝置。
 
