@@ -5,12 +5,12 @@ ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: c8d4a83caf6832f911193067324915fd6226b380
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 3c2958cc4572c2f87c46c9edc5fc194284658f24
+ms.sourcegitcommit: 704d4cfd418c17b0e85a20c33a16d2419db0be71
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674960"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51691746"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials：電子郵件
 
@@ -60,6 +60,23 @@ public class EmailTest
     }
 }
 ```
+
+
+## <a name="platform-differences"></a>平台差異
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+無平台差異。
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+無平台差異。
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+因為嘗試傳送 `Html` 的 `BodyFormat` 會擲回 `FeatureNotSupportedException`，所以僅支援 `PlainText`。
+
+-----
 
 ## <a name="api"></a>API
 
