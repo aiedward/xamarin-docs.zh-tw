@@ -6,13 +6,13 @@ ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/10/2017
-ms.openlocfilehash: 3eb978780222da2050fc91dfa41c68ef4bd3b6f4
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 10/24/2018
+ms.openlocfilehash: 85a6bce8a1021c75064ba06f3a5daf69b7fe3e57
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996291"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171374"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Xamarin.Forms 索引標籤式的頁面
 
@@ -32,13 +32,13 @@ _Xamarin.Forms TabbedPage 清單所組成的索引標籤和較大的 [詳細資�
 
 - 在 iOS 上，索引標籤的清單會顯示螢幕的底部，在詳細資料區域是上方。 每個索引標籤也會有圖示影像應該是 x 30 png，並且具有一般解析的透明度 30、 60 x 60 的高解析度和 90x90 適用於 iPhone 6 Plus 解析。 如果有五個以上的索引標籤*更多* 索引標籤會出現，這可用來存取其他索引標籤。 如需有關載入 Xamarin.Forms 應用程式中的映像的詳細資訊，請參閱[處理映像](~/xamarin-forms/user-interface/images.md)。 如需圖示需求的詳細資訊，請參閱[建立索引標籤式應用程式](~/ios/user-interface/controls/creating-tabbed-applications.md)。
 
-    > [!NOTE]
+  > [!NOTE]
   > 請注意， `TabbedRenderer` iOS 具有可覆寫`GetIcon`方法，可用來載入指定之來源的索引標籤圖示。 此覆寫可讓您使用 SVG 影像與圖示上`TabbedPage`。 此外，您可以提供圖示選取或未選取版本。
 
 - 在 Android 上，依預設，索引標籤的清單會出現在畫面頂端，並在詳細資料區域如下。 不過，索引標籤清單可以移動與平台特定畫面的底部。 如需詳細資訊，請參閱 <<c0> [ 設定 TabbedPage 工具列位置和色彩](~/xamarin-forms/platform/platform-specifics/consuming/android.md#tabbedpage-toolbar)。
 
-    > [!NOTE]
-  > 請注意，當使用 AppCompat 在 Android 上，每個索引標籤也會顯示圖示。 颾魤 ㄛ `TabbedPageRenderer` Android AppCompat 具有可覆寫`SetTabIcon`方法，可用來從自訂載入索引標籤圖示`Drawable`。 此覆寫可讓您使用 SVG 影像與圖示上`TabbedPage`。
+  > [!NOTE]
+  > 請注意，當使用 AppCompat 在 Android 上，每個索引標籤也會顯示圖示。 颾魤 ㄛ `TabbedPageRenderer` Android AppCompat 具有可覆寫`GetIconDrawable`方法，可用來從自訂載入索引標籤圖示`Drawable`。 此覆寫可讓您使用 SVG 影像與圖示上`TabbedPage`，並同時使用前幾大和 [底端] 索引標籤列。 或者，可覆寫`SetTabIcon`方法可用來從自訂載入索引標籤圖示`Drawable`頂端索引標籤列。
 
 - Windows 平板電腦-尺寸，在索引標籤不會永遠顯示，而使用者必須向撥動向下 （或按一下滑鼠右鍵，如果它們有附加的滑鼠），檢視中的索引標籤`TabbedPage`（如下所示）。
 
@@ -76,7 +76,7 @@ _Xamarin.Forms TabbedPage 清單所組成的索引標籤和較大的 [詳細資�
 </TabbedPage>
 ```
 
-下列程式碼範例示範相當[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) C# 建立的：
+下列程式碼範例示範相當[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)建立C#:
 
 ```csharp
 public class MainPageCS : TabbedPage
@@ -96,9 +96,9 @@ public class MainPageCS : TabbedPage
 [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)會填入這兩個子[ `Page` ](xref:Xamarin.Forms.Page)物件。 第一個子系[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)執行個體，，而第二個索引標籤[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)包含`ContentPage`執行個體。
 
 > [!NOTE]
-> [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)不支援 UI 虛擬化。 因此，效能可能會影響如果`TabbedPage`包含太多子項目。
+> [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)不支援 UI 虛擬化。 因此，效能可能會影響如果`TabbedPage`包含太多子項目。
 
-下列螢幕擷取畫面所示`TodayPage` [`ContentPage`](xref:Xamarin.Forms.ContentPage)執行個體，會顯示*今天*索引標籤：
+下列螢幕擷取畫面所示`TodayPage` [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)執行個體，會顯示*今天*] 索引標籤：
 
 ![](tabbed-page-images/today-page.png "在 TabbedPage ContentPage")
 
@@ -174,7 +174,7 @@ public TabbedPageDemoPage ()
 }
 ```
 
-下列程式碼範例示範相當[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) C# 建立的：
+下列程式碼範例示範相當[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)建立C#:
 
 ```csharp
 public class TabbedPageDemoPageCS : TabbedPage
@@ -232,7 +232,7 @@ public class TabbedPageDemoPageCS : TabbedPage
 }
 ```
 
-每個索引標籤會顯示[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)使用的一系列[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)並[ `Label` ](xref:Xamarin.Forms.Label)執行個體，以顯示索引標籤的資料。下列螢幕擷取畫面顯示的內容*Tamarin* 索引標籤：
+每個索引標籤會顯示[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)使用的一系列[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)並[ `Label` ](xref:Xamarin.Forms.Label)執行個體，以顯示索引標籤的資料。下列螢幕擷取畫面顯示的內容*Tamarin* ] 索引標籤：
 
 ![](tabbed-page-images/tab3.png "填入 TabbedPage 使用範本")
 
