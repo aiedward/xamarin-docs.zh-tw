@@ -1,5 +1,5 @@
 ---
-title: 像素與裝置無關的單位
+title: 像素與裝置獨立單位
 description: 本文將探討 SkiaSharp 座標和 Xamarin.Forms 座標之間的差異，並示範此範例程式碼。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
@@ -7,14 +7,14 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/09/2017
-ms.openlocfilehash: 9da46f128eeb502e0f40e5861f3d04c66491565b
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: d4c890853cb6db334416fc31feb2205a203faa4a
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615297"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171920"
 ---
-# <a name="pixels-and-device-independent-units"></a>像素與裝置無關的單位
+# <a name="pixels-and-device-independent-units"></a>像素與裝置獨立單位
 
 _探索 SkiaSharp 座標和 Xamarin.Forms 座標之間的差異_
 
@@ -97,7 +97,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 這個方法一開始的第一行文字與 20 （適用於在左邊的小邊界） 的 X 座標和 Y 座標的`fontSpacing`，這是比什麼，才能在顯示介面的頂端顯示完整文字的第一行的高度。 在每次呼叫之後`DrawText`，一或兩個遞增量增加的 Y 座標`fontSpacing`。
 
-以下是所有三個平台上執行的程式：
+以下是執行的程式：
 
 [![](pixels-images/surfacesize-small.png "三重的螢幕擷取畫面的介面大小頁面")](pixels-images/surfacesize-large.png#lightbox "介面大小頁面的三個螢幕擷取畫面")
 
@@ -140,7 +140,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-這裡執行三個平台上：
+以下執行：
 
 [![](pixels-images/ellipsefill-small.png "三重的螢幕擷取畫面的介面大小頁面")](pixels-images/ellipsefill-large.png#lightbox "介面大小頁面的三個螢幕擷取畫面")
 

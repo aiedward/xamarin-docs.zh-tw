@@ -6,13 +6,13 @@ ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/02/2018
-ms.openlocfilehash: 8d68afaf0edf178bba6f18d3071de029e111edee
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 10/24/2018
+ms.openlocfilehash: 02ea94fa67491384e6ca6768e429ee96b46c6143
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118665"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171335"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms web 檢視
 
@@ -37,7 +37,8 @@ ms.locfileid: "50118665"
 若要顯示來自網際網路的網站，請設定`WebView`的[ `Source` ](xref:Xamarin.Forms.WebViewSource)屬性至字串的 URL:
 
 ```csharp
-var browser = new WebView {
+var browser = new WebView
+{
   Source = "http://xamarin.com"
 };
 ```
@@ -70,6 +71,8 @@ var browser = new WebView {
             </dict>
         </dict>
     </dict>
+    ...
+</key>
 ```
 
 它是只讓某些網域略過 ATS，讓您可以使用信任的網站，同時享有不受信任網域上的其他安全性的最佳作法。 以下示範對應用程式停用 ATS 較不安全的方式：
@@ -80,6 +83,8 @@ var browser = new WebView {
         <key>NSAllowsArbitraryLoads </key>
         <true/>
     </dict>
+    ...
+</key>
 ```
 
 請參閱[應用程式的傳輸安全性](~/ios/app-fundamentals/ats.md)如需 iOS 9 中這項新功能詳細資訊。
@@ -178,9 +183,12 @@ source.BaseUrl = DependencyService.Get<IBaseUrl>().Get();
 
 ```csharp
 [assembly: Dependency (typeof (BaseUrl_iOS))]
-namespace WorkingWithWebview.iOS{
-  public class BaseUrl_iOS : IBaseUrl {
-    public string Get() {
+namespace WorkingWithWebview.iOS
+{
+  public class BaseUrl_iOS : IBaseUrl
+  {
+    public string Get()
+    {
       return NSBundle.MainBundle.BundlePath;
     }
   }
@@ -205,9 +213,12 @@ namespace WorkingWithWebview.iOS{
 
 ```csharp
 [assembly: Dependency (typeof(BaseUrl_Android))]
-namespace WorkingWithWebview.Android {
-  public class BaseUrl_Android : IBaseUrl {
-    public string Get() {
+namespace WorkingWithWebview.Android
+{
+  public class BaseUrl_Android : IBaseUrl
+  {
+    public string Get()
+    {
       return "file:///android_asset/";
     }
   }
@@ -218,7 +229,8 @@ namespace WorkingWithWebview.Android {
 
 ```csharp
 var assetManager = MainActivity.Instance.Assets;
-using (var streamReader = new StreamReader (assetManager.Open ("local.html"))) {
+using (var streamReader = new StreamReader (assetManager.Open ("local.html")))
+{
   var html = streamReader.ReadToEnd ();
 }
 ```
@@ -261,50 +273,49 @@ WebView 支援瀏覽一些方法和屬性，可讓：
 開始建立瀏覽器檢視的頁面：
 
 ```xaml
-<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-x:Class="WebViewDemo.InAppDemo"
-Title="In App Browser">
-    <ContentPage.Content>
-        <StackLayout>
-            <StackLayout Orientation="Horizontal" Padding="10,10">
-                <Button Text="Back" HorizontalOptions="StartAndExpand" Clicked="backClicked" />
-                <Button Text="Forward" HorizontalOptions="End" Clicked="forwardClicked" />
-            </StackLayout>
-            <WebView x:Name="Browser" WidthRequest="1000" HeightRequest="1000" />
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WebViewSample.InAppBrowserXaml"
+             Title="Browser">
+    <StackLayout Margin="20">
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Back" HorizontalOptions="StartAndExpand" Clicked="OnBackButtonClicked" />
+            <Button Text="Forward" HorizontalOptions="EndAndExpand" Clicked="OnForwardButtonClicked" />
         </StackLayout>
-    </ContentPage.Content>
+        <!-- WebView needs to be given height and width request within layouts to render. -->
+        <WebView x:Name="webView" WidthRequest="1000" HeightRequest="1000" />
+    </StackLayout>
 </ContentPage>
 ```
 
-在我們的程式碼後置：
+在 程式碼後置：
 
 ```csharp
-public partial class InAppDemo : ContentPage
+public partial class InAppBrowserXaml : ContentPage
 {
-  //sets the URL for the browser in the page at creation
-    public InAppDemo (string URL)
+    public InAppBrowserXaml(string URL)
     {
-        InitializeComponent ();
-        Browser.Source = URL;
+        InitializeComponent();
+        webView.Source = URL;
     }
 
-
-    private void backClicked(object sender, EventArgs e)
+    async void OnBackButtonClicked(object sender, EventArgs e)
     {
-    // Check to see if there is anywhere to go back to
-        if (Browser.CanGoBack) {
-            Browser.GoBack ();
-        } else { // If not, leave the view
-            Navigation.PopAsync ();
+        if (webView.CanGoBack)
+        {
+            webView.GoBack();
+        }
+        else
+        {
+            await Navigation.PopAsync();
         }
     }
 
-    private void forwardClicked(object sender, EventArgs e)
+    void OnForwardButtonClicked(object sender, EventArgs e)
     {
-        if (Browser.CanGoForward) {
-            Browser.GoForward ();
+        if (webView.CanGoForward)
+        {
+            webView.GoForward();
         }
     }
 }
@@ -316,45 +327,38 @@ public partial class InAppDemo : ContentPage
 
 ## <a name="events"></a>事件
 
-Web 檢視中，會引發兩個事件，以協助您回應狀態的變更：
+WebView 中，會引發下列事件，以協助您回應狀態的變更：
 
-- **瀏覽** &ndash; web 檢視可讓您開始載入新的頁面時引發的事件。
-- **瀏覽**&ndash;載入頁面，並瀏覽已停止時引發的事件。
+- **瀏覽**– web 檢視可讓您開始載入新的頁面時引發的事件。
+- **瀏覽**– 當頁面載入和瀏覽已停止時引發的事件。
+- **ReloadRequested** – 重新載入目前的內容提出要求時所引發的事件。
 
-如果您預計使用需要長的時間載入的網頁，請考慮使用這些事件來實作狀態指標。 比方說的 XAML 看起來像這樣：
+如果您預計使用需要長的時間載入的網頁，請考慮使用`Navigating`和`Navigated`事件，以實作狀態指標。 比方說的 XAML 看起來像這樣：
 
 ```xaml
-<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-x:Class="WebViewDemo.LoadingDemo" Title="Loading Demo">
-  <ContentPage.Content>
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WebViewSample.LoadingLabelXaml"
+             Title="Loading Demo">
     <StackLayout>
-      <Label x:Name="LoadingLabel"
-        Text="Loading..."
-        HorizontalOptions="Center"
-        IsVisible="false" />
-      <WebView x:Name="Browser"
-      HeightRequest="1000"
-      WidthRequest="1000"
-      Navigating="webOnNavigating"
-      Navigated="webOnEndNavigating" />
+        <!--Loading label should not render by default.-->
+        <Label x:Name="labelLoading" Text="Loading..." IsVisible="false" />
+        <WebView HeightRequest="1000" WidthRequest="1000" Source="http://www.xamarin.com" Navigated="webviewNavigated" Navigating="webviewNavigating" />
     </StackLayout>
-  </ContentPage.Content>
 </ContentPage>
 ```
 
 兩個事件處理常式中：
 
 ```csharp
-void webOnNavigating (object sender, WebNavigatingEventArgs e)
+void webviewNavigating(object sender, WebNavigatingEventArgs e)
 {
-    LoadingLabel.IsVisible = true;
+    labelLoading.IsVisible = true;
 }
 
-void webOnEndNavigating (object sender, WebNavigatedEventArgs e)
+void webviewNavigated(object sender, WebNavigatedEventArgs e)
 {
-    LoadingLabel.IsVisible = false;
+    labelLoading.IsVisible = false;
 }
 ```
 
@@ -365,6 +369,18 @@ void webOnEndNavigating (object sender, WebNavigatedEventArgs e)
 完成的載入：
 
 ![](webview-images/loading-end.png "WebView 巡覽事件範例")
+
+## <a name="reloading-content"></a>重新載入內容
+
+[`WebView`](xref:Xamarin.Forms.WebView) 具有`Reload`方法，可用來重新載入目前的內容：
+
+```csharp
+var webView = new WebView();
+...
+webView.Reload();
+```
+
+當`Reload`方法會叫用`ReloadRequested`引發事件時，表示要求，已重新載入目前的內容。
 
 ## <a name="performance"></a>效能
 
@@ -447,7 +463,7 @@ AbsoluteLayout*而不需要*WidthRequest & HeightRequest:
 
 ## <a name="invoking-javascript"></a>叫用的 JavaScript
 
-[ `WebView` ](xref:Xamarin.Forms.WebView)包括能夠叫用的 JavaScript 函式，從 C# 中，並呼叫 C# 程式碼會傳回任何結果。 這可完成[ `WebView.EvaluateJavaScriptAsync` ](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*)方法，從下列範例所示[WebView](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView)範例：
+[`WebView`](xref:Xamarin.Forms.WebView) 包括能夠叫用的 JavaScript 函式，從C#，並傳回任何結果呼叫C#程式碼。 這可完成[ `WebView.EvaluateJavaScriptAsync` ](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*)方法，從下列範例所示[WebView](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView)範例：
 
 ```csharp
 var numberEntry = new Entry { Text = "5" };

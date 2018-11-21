@@ -7,16 +7,16 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 1e42fdfdf7f90a4efb639ce8ca94f45a49f59c35
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: eaee5d7921b99ea5e14cca9f03e33699a74b06f3
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563975"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172245"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章摘要。 位置與地圖
 
-> [!NOTE] 
+> [!NOTE]
 > 在此頁面上的附註表示其中 Xamarin.Forms 有分歧活頁簿中所呈現的題材的區域。
 
 支援 Xamarin.Forms [ `Map` ](xref:Xamarin.Forms.Maps.Map)項目，衍生自`View`。 參與使用對應的特殊的平台需求，因為它們實作個別的組件中， **Xamarin.Forms.Maps**，並牽涉到不同的命名空間： `Xamarin.Forms.Maps`。
@@ -194,7 +194,7 @@ IOS 應用程式使用`Map`需要在 info.plist 檔案中的兩行。
 
 ### <a name="the-phones-location"></a>手機上的位置
 
-[ `IsShowingUser` ](xref:Xamarin.Forms.Maps.Map.IsShowingUser)屬性`Map`運作方式有點不同和三個平台上[ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml)檔會示範：
+[ `IsShowingUser` ](xref:Xamarin.Forms.Maps.Map.IsShowingUser)屬性`Map`運作方式有點不同上為每個平台[ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml)檔會示範：
 
 - 在 iOS 上，藍點表示手機上的位置，但您必須以手動方式瀏覽那里
 - 圖示會顯示在 Android 上，當推入移到手機上的位置對應

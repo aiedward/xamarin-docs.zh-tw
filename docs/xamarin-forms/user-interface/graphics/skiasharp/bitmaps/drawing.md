@@ -7,12 +7,12 @@ ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: a4fbf2bc38726ad50a07744ed4c2512efbb615bc
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 02ee84560b29fa95d0a16259d5bbbd6bc0144063
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527244"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171205"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>建立和上 SkiaSharp 點陣圖繪製
 
@@ -169,7 +169,7 @@ Color = new SKColor(0, 0, 0, 0)
 
 如今，程式設計人員幾乎一律使用全彩點陣圖並不必擔心會有其他格式。 例外狀況是`RgbaF16`允許更高的色彩解析度比甚至是全彩格式的格式。 不過，這種格式使用於特製化的用途，例如醫學造影，而且沒什麼特別意義與標準的全彩顯示搭配使用時。
 
-這一系列的文章會限制本身`SKBitmap`色彩，依預設，若未使用的格式`SKColorType`成員會指定別名。 這個預設的格式根據基礎平台。 Xamarin.Forms 所支援的平台的預設色彩類型是：
+這一系列的文章會限制本身`SKBitmap`色彩，依預設，若未使用的格式`SKColorType`指定成員。 這個預設的格式根據基礎平台。 Xamarin.Forms 所支援的平台的預設色彩類型是：
 
 - `Rgba8888` 適用於 iOS 和 Android
 - `Bgra8888` 適用於 UWP

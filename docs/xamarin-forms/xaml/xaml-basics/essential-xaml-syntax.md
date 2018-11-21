@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 985ca3b34b4b85ef234f12fe3f25edd1d1556e23
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 0c7e0d01a75d72204ca086fc1b0639d584220651
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563234"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171569"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分。 基本 XAML 語法
 
@@ -251,7 +251,7 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 
 `Grid.Row`和`Grid.Column`並不需要設定為 0，但通常包含為了清楚起見。
 
-以下是看起來像是所有三個平台上：
+看起來如下：
 
 [![](essential-xaml-syntax-images/griddemo.png "格線版面配置")](essential-xaml-syntax-images/griddemo-large.png#lightbox "格線版面配置")
 

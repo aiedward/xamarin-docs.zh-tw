@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: 2bb5729ff369abb6e432bfd72ab240c0ce07f28a
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 49b2ee9cf9c8fbdb2f850461241459126750b123
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615401"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172219"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>繪製弧形的三種方式
 
@@ -412,7 +412,7 @@ public partial class TangentArcPage : InteractivePage
 }
 ```
 
-以下是**正切函數弧線**所有三個平台上執行的頁面：
+以下是**正切函數弧線**執行頁面：
 
 [![](arcs-images/tangentarc-small.png "反正切函數頁面的三個螢幕擷取畫面")](arcs-images/tangentarc-large.png#lightbox "的弧形正切函數頁面的三個螢幕擷取畫面")
 
@@ -487,7 +487,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-以下是三個平台上執行的程式：
+以下是執行的程式：
 
 [![](arcs-images/roundedheptagon-small.png "捨入 Heptagon 頁面的三個螢幕擷取畫面")](arcs-images/roundedheptagon-large.png#lightbox "捨入 Heptagon 頁面的三個螢幕擷取畫面")
 
@@ -582,7 +582,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-這裡執行三個平台上：
+以下執行：
 
 [![](arcs-images/ellipticalarc-small.png "橢圓形弧線頁面的三個螢幕擷取畫面")](arcs-images/ellipticalarc-large.png#lightbox "橢圓形弧線頁面的三個螢幕擷取畫面")
 

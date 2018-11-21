@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2018
-ms.openlocfilehash: 9a534c39d514fec9a0de4bc810f33c972453baa2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f5fdaa55f91656d8560fb9ad2eb2b938d5c9a02f
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111552"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171842"
 ---
 # <a name="xamarinforms-timepicker"></a>Xamarin.Forms TimePicker
 
@@ -158,7 +158,7 @@ public partial class MainPage : ContentPage
 
 計時器刻度執行的每秒`OnTimerTick`方法，以檢查是否[ `Switch` ](xref:Xamarin.Forms.Switch)是以及在目前的時間大於或等於計時器時間。 當計時器時間發生時， [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*)方法對提醒您使用者顯示警示對話方塊。
 
-當第一次執行範例時， [ `TimePicker` ](xref:Xamarin.Forms.TimePicker)檢視會初始化為上午 11 點。 點選`TimePicker`叫用平台時間選擇器。 三個平台實作時間選擇器以非常不同的方式，但是每一種方法是以該平台的使用者熟悉：
+當第一次執行範例時， [ `TimePicker` ](xref:Xamarin.Forms.TimePicker)檢視會初始化為上午 11 點。 點選`TimePicker`叫用平台時間選擇器。 平台實作時間選擇器以非常不同的方式，但是每一種方法是以該平台的使用者熟悉：
 
 [![選取時間](timepicker-images/timepicker-open.png "選取時間")](timepicker-images/timepicker-open-large.png#lightbox "選取時間")
 

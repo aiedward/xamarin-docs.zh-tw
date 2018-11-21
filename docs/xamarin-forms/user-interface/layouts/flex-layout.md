@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 44d75322f151850b11e4da90486168c04496eca7
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 731eb8cbcf062556e4c37b444376825527f662df
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51564014"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171556"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
@@ -31,7 +31,7 @@ Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout)是 Xamarin.Forms 3
 
 ## <a name="common-usage-scenarios"></a>常見使用案例
 
-**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** 程式範例包含數個頁面，示範一些常見的用法`FlexLayout`，並可讓您嘗試使用其屬性。
+**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** 程式範例包含數個頁面會示範一些常見的用法`FlexLayout`，並可讓您嘗試使用其屬性。
 
 ### <a name="using-flexlayout-for-a-simple-stack"></a>使用簡單的堆疊 FlexLayout
 
@@ -187,7 +187,7 @@ public partial class PhotoWrappingPage : ContentPage
 }
 ```
 
-以下是漸進式捲動到底部的 從上方的三個平台上執行的程式：
+以下是程式執行，以漸進方式捲動從上到下：
 
 [![相片文繞圖頁面](flex-layout-images/PhotoWrapping.png "相片文繞圖頁面")](flex-layout-images/PhotoWrapping-Large.png#lightbox)
 
@@ -242,7 +242,7 @@ public partial class PhotoWrappingPage : ContentPage
 </ContentPage>
 ```
 
-這裡執行三個平台上：
+以下執行：
 
 [![所見所聞版面配置頁](flex-layout-images/HolyGrailLayout.png "所見所聞版面配置頁")](flex-layout-images/HolyGrailLayout-Large.png#lightbox)
 
@@ -384,7 +384,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 ## <a name="the-bindable-properties-in-detail"></a>在 詳細資料可繫結的屬性
 
-既然您已了解的一些常見應用`FlexLayout`，屬性`FlexLayout`可以更詳細地探索。 
+既然您已了解的一些常見應用`FlexLayout`，屬性`FlexLayout`可以更詳細地探索。
 `FlexLayout` 定義您在設定的六個可繫結屬性`FlexLayout`本身，程式碼或 XAML，來控制方向和對齊方式。 (這些屬性，其中[ `Position` ](xref:Xamarin.Forms.FlexLayout.Position)，未涵蓋在本文中。)
 
 您可以試驗的五種剩餘可繫結使用的屬性**實驗**頁**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** 範例。 此頁面可讓您新增或移除子系從`FlexLayout`，並設定五個可繫結的屬性組合。 所有子系`FlexLayout`都`Label`各種色彩和大小，檢視與`Text`屬性設定為在其位置對應數字`Children`集合。
@@ -532,7 +532,7 @@ FlexAlign.SetAlignSelf(label, FlexAlignSelf.Center);
 
 ### <a name="the-basis-property"></a>基礎屬性
 
-[ `Basis` ](xref:Xamarin.Forms.FlexLayout.BasisProperty)附加可繫結的屬性表示的子系的配置的空間量`FlexLayout`主要軸上。 依大小指定別名`Basis`屬性是父代的主座標軸的大小`FlexLayout`。 因此，`Basis`表示子系的寬度，當子系會排列在資料行時，將會排列在資料列或高度的子系。
+[ `Basis` ](xref:Xamarin.Forms.FlexLayout.BasisProperty)附加可繫結的屬性表示的子系的配置的空間量`FlexLayout`主要軸上。 所指定的大小`Basis`屬性是父代的主座標軸的大小`FlexLayout`。 因此，`Basis`表示子系的寬度，當子系會排列在資料行時，將會排列在資料列或高度的子系。
 
 `Basis`屬性的類型是[ `FlexBasis` ](xref:Xamarin.Forms.FlexBasis)，結構。 可以指定大小，可能是裝置獨立單位或大小的百分比`FlexLayout`。 預設值`Basis`屬性是靜態屬性`FlexBasis.Auto`，這表示子系的要求會使用寬度或高度。
 
@@ -735,7 +735,7 @@ button {
 
 數個`FlexLayout`附加可繫結的屬性會參考以下。 在 `label.empty`選取器中，您會看到`flex-grow`屬性，其設定樣式的空`Label`提供上述的一些空白空間`Button`。 `image`選取器包含`order`屬性並`align-self`屬性，這兩者都對應至`FlexLayout`附加可繫結的屬性。
 
-您已了解您可以直接在設定屬性`FlexLayout`您可以設定可繫結的附加的屬性的子系`FlexLayout`。 或者，您可以設定這些屬性會間接使用以 XAML 為基礎的傳統樣式或 CSS 樣式。 重點是了解，並了解這些屬性。 這些屬性就是讓`FlexLayout`真正有彈性。 
+您已了解您可以直接在設定屬性`FlexLayout`您可以設定可繫結的附加的屬性的子系`FlexLayout`。 或者，您可以設定這些屬性會間接使用以 XAML 為基礎的傳統樣式或 CSS 樣式。 重點是了解，並了解這些屬性。 這些屬性就是讓`FlexLayout`真正有彈性。
 
 ## <a name="flexlayout-with-xamarinuniversity"></a>使用 Xamarin.University FlexLayout
 

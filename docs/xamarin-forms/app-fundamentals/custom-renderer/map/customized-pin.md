@@ -6,13 +6,13 @@ ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/29/2017
-ms.openlocfilehash: 351119a8b0089f78d4ce98729a1516c3cd7bae7b
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.date: 10/24/2018
+ms.openlocfilehash: ab5315d169615430f5f5a733c0fa8c2ca9caa4b0
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203081"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172297"
 ---
 # <a name="customizing-a-map-pin"></a>自訂地圖釘選
 
@@ -422,9 +422,10 @@ protected override MarkerOptions CreateMarker(Pin pin)
 }
 ```
 
-這個方法會建立新`MarkerOption`針對每個執行個體`Pin`執行個體。 設定位置、 標籤和標記的位址之後, 設定其圖示`SetIcon`方法。 這個方法會採用`BitmapDescriptor`物件，其中包含要呈現的圖示，使用所需的資料`BitmapDescriptorFactory`類別提供 helper 方法，以簡化建立`BitmapDescriptor`。
+這個方法會建立新`MarkerOption`針對每個執行個體`Pin`執行個體。 設定位置、 標籤和標記的位址之後, 設定其圖示`SetIcon`方法。 這個方法會採用`BitmapDescriptor`物件，其中包含要呈現的圖示，使用所需的資料`BitmapDescriptorFactory`類別提供 helper 方法，以簡化建立`BitmapDescriptor`。 如需使用詳細資訊`BitmapDescriptorFactory`類別，以自訂的標記，請參閱[自訂標記](~/android/platform/maps-and-location/maps/maps-api.md)。
 
-如需使用詳細資訊`BitmapDescriptorFactory`類別，以自訂的標記，請參閱[自訂標記](~/android/platform/maps-and-location/maps/maps-api.md)。
+> [!NOTE]
+> 如有需要，`GetMarkerForPin`可以叫用方法，在您的地圖轉譯器，來擷取`Marker`從`Pin`。
 
 <a name="Customizing_the_Info_Window" />
 

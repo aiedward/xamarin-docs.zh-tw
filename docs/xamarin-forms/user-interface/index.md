@@ -6,13 +6,13 @@ ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/17/2018
-ms.openlocfilehash: 62e170558fc908b0ec13669b60eb08495c183b09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 11/14/2018
+ms.openlocfilehash: 452596d3eda9daae4b985490929c1e920a9d936e
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104945"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52170906"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 使用者介面檢視
 
@@ -46,13 +46,17 @@ DataPages 提供 API，以快速且輕鬆地繫結資料來源至預先建立的
 
 `DatePicker`可讓使用者選取日期，以指定的範圍內。 它是使用特定的平台上執行應用程式所支援的日期選擇器所實作的。
 
-## <a name="graphics-with-skiasharpgraphicsskiasharpindexmd"></a>[使用 SkiaSharp 圖形](graphics/skiasharp/index.md)
+## <a name="graphics-with-skiasharpgraphicsskiasharpindexmd"></a>[使用 Skiasharp 的圖形](graphics/skiasharp/index.md)
 
 如何將圖形加入使用 SkiaSharp 的 Xamarin.Forms 應用程式。
 
 ## <a name="imagesimagesmd"></a>[影像](images.md)
 
 圖像可以跨平台與 Xamarin.Forms 共用、 可以載入特別針對每個平台，或它們可以供下載顯示。
+
+## <a name="imagebutonimagebuttonmd"></a>[ImageButon](imagebutton.md)
+
+`ImageButton`顯示影像，並回應點選或按一下，以指示應用程式執行特定工作。
 
 ## <a name="layoutslayoutsindexmd"></a>[版面配置](layouts/index.md)
 
@@ -74,7 +78,7 @@ Xamarin.Forms 提供清單檢視控制項以顯示捲動的資料列的資料。
 
 `Slider`可讓使用者從連續範圍選取一個數字值。
 
-## <a name="steppersteppermd"></a>[步進](stepper.md)
+## <a name="steppersteppermd"></a>[Stepper](stepper.md)
 
 `Stepper`可讓使用者從某個範圍的值中選取一個數字值。 它包含兩個按鈕加上減號和加號。 操作的兩個按鈕會變更選取的值，以累加方式所示。
 

@@ -7,12 +7,12 @@ ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: b55067f7b4df66ccce23a7409281f4b8bbc4e9e9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d4029cbd4100b3ad83343b3bee73868b385a02e5
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111545"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171816"
 ---
 # <a name="skiasharp-image-filters"></a>SkiaSharp 映像篩選器
 
@@ -29,8 +29,8 @@ ms.locfileid: "50111545"
 建立此模糊效果[ `SKImageFilter.CreateBlur` ](xref:SkiaSharp.SKImageFilter.CreateBlur*)靜態方法具有重大中的模糊方法優於[ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter)類別： 映像篩選器可以模糊整個點陣圖。 方法具有下列語法：
 
 ```csharp
-public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY, 
-                                                  SKImageFilter input = null, 
+public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
+                                                  SKImageFilter input = null,
                                                   SKImageFilter.CropRect cropRect = null);
 ```
 
@@ -44,7 +44,7 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
              xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              x:Class="SkiaSharpFormsDemos.Effects.ImageBlurExperimentPage"
              Title="Image Blur Experiment">
-    
+
     <StackLayout>
         <skia:SKCanvasView x:Name="canvasView"
                            VerticalOptions="FillAndExpand"
@@ -59,7 +59,7 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
                               Path=Value,
                               StringFormat='Sigma X = {0:F1}'}"
                HorizontalTextAlignment="Center" />
-        
+
         <Slider x:Name="sigmaYSlider"
                 Maximum="10"
                 Margin="10, 0"
@@ -145,11 +145,11 @@ public partial class ImageBlurExperimentPage : ContentPage
 [ `SKImageFilter.CreateDropShadow` ](xref:SkiaSharp.SKImageFilter.CreateDropShadow*)靜態方法會建立`SKImageFilter`下拉式陰影的物件：
 
 ```csharp
-public static SKImageFilter CreateDropShadow (float dx, float dy, 
-                                              float sigmaX, float sigmaY, 
-                                              SKColor color, 
-                                              SKDropShadowImageFilterShadowMode shadowMode, 
-                                              SKImageFilter input = null, 
+public static SKImageFilter CreateDropShadow (float dx, float dy,
+                                              float sigmaX, float sigmaY,
+                                              SKColor color,
+                                              SKDropShadowImageFilterShadowMode shadowMode,
+                                              SKImageFilter input = null,
                                               SKImageFilter.CropRect cropRect = null);
 ```
 
@@ -159,7 +159,7 @@ public static SKImageFilter CreateDropShadow (float dx, float dy,
 
 `sigmaX`和`sigmaY`參數非常模糊的陰影的因素。
 
-`color`參數是延伸陰影的色彩。 這`SKColor`值可以包含透明效果。 其中一個可能性是色彩值`SKColors.Black.WithAlpha(0x80)`變暗任何色彩背景。 
+`color`參數是延伸陰影的色彩。 這`SKColor`值可以包含透明效果。 其中一個可能性是色彩值`SKColors.Black.WithAlpha(0x80)`變暗任何色彩背景。
 
 最後兩個參數是選擇性的。
 
@@ -265,7 +265,7 @@ public partial class DropShadowExperimentPage : ContentPage
                                     sigmaX,
                                     sigmaY,
                                     SKColors.Red,
-                                    SKDropShadowImageFilterShadowMode.DrawShadowAndForeground); 
+                                    SKDropShadowImageFilterShadowMode.DrawShadowAndForeground);
 
             SKRect textBounds = new SKRect();
             paint.MeasureText(TEXT, ref textBounds);
@@ -280,7 +280,7 @@ public partial class DropShadowExperimentPage : ContentPage
 }
 ```
 
-以下是所有三個平台上執行的程式：
+以下是執行的程式：
 
 [![卸除陰影實驗](image-filters-images/DropShadowExperiment.png "卸除陰影實驗")](image-filters-images/DropShadowExperiment-Large.png#lightbox)
 
@@ -299,22 +299,22 @@ public partial class DropShadowExperimentPage : ContentPage
 
 這些方法會建立映像篩選器，模擬立體表面的不同類型光線的影響。 產生的映像篩選器會位於二維物件，如同它們存在於 3D 空間中，這可能會導致出現提高權限或下凹的這些物件，或使用反射反白顯示。
 
-`Distant`淺方法假設遠距離燈。 為了清楚的物件，燈光會假設為指向在 3D 空間中，如同在地球的範圍縮小 Sun 一個一致的方向。 `Point`淺方法模擬燈泡，放在發出往所有方向的光線的 3D 空間中。 `Spot`光有位置與方向，如同手電筒。 
+`Distant`淺方法假設遠距離燈。 為了清楚的物件，燈光會假設為指向在 3D 空間中，如同在地球的範圍縮小 Sun 一個一致的方向。 `Point`淺方法模擬燈泡，放在發出往所有方向的光線的 3D 空間中。 `Spot`光有位置與方向，如同手電筒。
 
-位置和方向在 3D 空間中的同時指定值[ `SKPoint3` ](xref:SkiaSharp.SKPoint3)結構，也就是類似`SKPoint`具有名為的三個屬性，但`X`， `Y`，和`Z`。 
+位置和方向在 3D 空間中的同時指定值[ `SKPoint3` ](xref:SkiaSharp.SKPoint3)結構，也就是類似`SKPoint`具有名為的三個屬性，但`X`， `Y`，和`Z`。
 
 數目和複雜度，這些方法的參數會使對它們進行實驗困難。 若要開始，**較遠的光線實驗**頁面可讓您試驗參數`CreateDistantLightDiffuse`方法：
 
 ```csharp
-public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction, 
-                                                     SKColor lightColor, 
-                                                     float surfaceScale, 
-                                                     float kd, 
-                                                     SKImageFilter input = null, 
+public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
+                                                     SKColor lightColor,
+                                                     float surfaceScale,
+                                                     float kd,
+                                                     SKImageFilter input = null,
                                                      SKImageFilter.CropRect cropRect = null);
 ```
 
-頁面不會使用最後兩個選擇性參數。 
+頁面不會使用最後兩個選擇性參數。
 
 三個`Slider`檢視中的 XAML 檔案可讓您選取`Z`座標`SKPoint3`值，`surfaceScale`參數，而`kd`參數，為 「 擴散光源常數 」 的 API 文件中定義：
 
@@ -331,7 +331,7 @@ public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
                            PaintSurface="OnCanvasViewPaintSurface"
                            VerticalOptions="FillAndExpand" />
 
-        <Slider x:Name="zSlider" 
+        <Slider x:Name="zSlider"
                 Minimum="-10"
                 Maximum="10"
                 Margin="10, 0"
@@ -342,7 +342,7 @@ public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
                               StringFormat='Z = {0:F0}'}"
                HorizontalTextAlignment="Center" />
 
-        <Slider x:Name="surfaceScaleSlider" 
+        <Slider x:Name="surfaceScaleSlider"
                 Minimum="-1"
                 Maximum="1"
                 Margin="10, 0"
@@ -353,7 +353,7 @@ public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
                               StringFormat='Surface Scale = {0:F1}'}"
                HorizontalTextAlignment="Center" />
 
-        <Slider x:Name="lightConstantSlider" 
+        <Slider x:Name="lightConstantSlider"
                 Minimum="-1"
                 Maximum="1"
                 Margin="10, 0"

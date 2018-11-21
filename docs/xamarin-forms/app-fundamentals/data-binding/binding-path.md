@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 8340e952d30e21a5249edd0fa3319462bbd5ff8b
-ms.sourcegitcommit: 913763498b5d23fa4a92e877760c51164bf1aa41
+ms.openlocfilehash: 5ffc167b1e5695663dff6005f3d7e0ba0ea958db
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50150232"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172102"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms 繫結路徑
 
@@ -134,7 +134,7 @@ ms.locfileid: "50150232"
 
 是該子`Label`，其中包含`Text`型別的屬性`String`，其中包含`Length`屬性。 第一個`Label`報表`TimeSpan`集中`TimePicker`，因此，當該文字會變更，最終`Label`跟著變更。
 
-以下是所有三個平台上執行的程式：
+以下是執行的程式：
 
 [![路徑變化](binding-path-images/pathvariations-small.png "路徑變化")](binding-path-images/pathvariations-large.png#lightbox "路徑變化")
 

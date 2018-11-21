@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: 8952f98045d9830e9b8f25a7d4b93a5e4310cb32
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 9226e1d26dcc49b6ec82b71f7757eb0e22cd66ec
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351575"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171972"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>在 Xamarin.Forms 中的相依性解析
 
@@ -149,7 +149,7 @@ public VideoPlayerRenderer(ILogger logger)
 }
 ```
 
-所有的三個平台上所執行的相依性插入容器的型別註冊`RegisterTypes`方法之前載入的應用程式的平台叫用`LoadApplication(new App())`方法。 下列範例所示`RegisterTypes`iOS 平台上的方法：
+在所有平台，以執行與相依性插入容器的型別註冊`RegisterTypes`方法之前載入的應用程式的平台叫用`LoadApplication(new App())`方法。 下列範例所示`RegisterTypes`iOS 平台上的方法：
 
 ```csharp
 void RegisterTypes()
@@ -196,7 +196,7 @@ boxView.Effects.Add(touchEffect);
 
 `TouchEffect`類別是[ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect)的每個平台上實作`TouchEffect`類別，具有`PlatformEffect`。 平台`TouchEffect`類別提供的拖曳功能`BoxView`周圍的頁面。 如需有關這些效果類別的詳細資訊，請參閱[叫用事件效果](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)。
 
-所有的三個平台上`TouchEffect`類別具有下列建構函式，這需要`ILogger`引數：
+在所有平台，`TouchEffect`類別具有下列建構函式，這需要`ILogger`引數：
 
 ```csharp
 public TouchEffect(ILogger logger)
@@ -205,7 +205,7 @@ public TouchEffect(ILogger logger)
 }
 ```
 
-所有的三個平台上所執行的相依性插入容器的型別註冊`RegisterTypes`方法之前載入的應用程式的平台叫用`LoadApplication(new App())`方法。 下列範例所示`RegisterTypes`Android 平台上的方法：
+在所有平台，以執行與相依性插入容器的型別註冊`RegisterTypes`方法之前載入的應用程式的平台叫用`LoadApplication(new App())`方法。 下列範例所示`RegisterTypes`Android 平台上的方法：
 
 ```csharp
 void RegisterTypes()
@@ -240,7 +240,7 @@ public PhotoPicker(ILogger logger)
 }
 ```
 
-所有的三個平台上所執行的相依性插入容器的型別註冊`RegisterTypes`方法之前載入的應用程式的平台叫用`LoadApplication(new App())`方法。 下列範例所示`RegisterTypes`UWP 上的方法：
+在所有平台，以執行與相依性插入容器的型別註冊`RegisterTypes`方法之前載入的應用程式的平台叫用`LoadApplication(new App())`方法。 下列範例所示`RegisterTypes`UWP 上的方法：
 
 ```csharp
 void RegisterTypes()

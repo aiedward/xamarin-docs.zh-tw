@@ -7,12 +7,12 @@ ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 876594440c28fb0f30e0438f2ef02ae7fe89040c
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: cd91f145d41d5e3bbb2f8061e04d87fdc495f1aa
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526503"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171049"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>將 SkiaSharp 點陣圖儲存至檔案
 
@@ -44,7 +44,7 @@ SkiaSharp 應用程式已建立或修改點陣圖之後，應用程式可能會�
 
 颾魤 ㄛ [ `SKCodec` ](xref:SkiaSharp.SKCodec)類別有兩個方法，名為`Create`，可以建立`SKCodec`從壓縮的來源物件，並允許應用程式在解密程序中取得更複雜。 (`SKCodec`類別會顯示在 發行項[**動畫 SkiaSharp 點陣圖**](animating.md#gif-animation)與解碼的動畫的 GIF 檔案。)
 
-當編碼點陣圖時的詳細資訊，:，編碼器必須知道應用程式想要使用 （JPEG 或 PNG 或其他項目） 的特定檔案格式。 如果需要失真格式，則編碼也必須知道所需的等級的品質。 
+當編碼點陣圖時的詳細資訊，:，編碼器必須知道應用程式想要使用 （JPEG 或 PNG 或其他項目） 的特定檔案格式。 如果需要失真格式，則編碼也必須知道所需的等級的品質。
 
 `SKBitmap`類別會定義其中一個[ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32))方法，使用下列語法：
 
@@ -60,7 +60,7 @@ public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality
 
 ## <a name="platform-specific-code-for-saving-bitmap-files"></a>平台特定程式碼，來儲存點陣圖檔
 
-當您想要編碼`SKBitmap`物件至特定檔案格式，通常您會得到一些排序的資料流物件或資料的陣列。 部份`Encode`方法 (包括不含任何參數所定義的一個`SKImage`) 會傳回[ `SKData` ](xref:SkiaSharp.SKData)物件，它可以轉換成使用的位元組陣列[ `ToArray` ](xref:SkiaSharp.SKData.ToArray)方法。 此資料必須儲存至檔案。 
+當您想要編碼`SKBitmap`物件至特定檔案格式，通常您會得到一些排序的資料流物件或資料的陣列。 部份`Encode`方法 (包括不含任何參數所定義的一個`SKImage`) 會傳回[ `SKData` ](xref:SkiaSharp.SKData)物件，它可以轉換成使用的位元組陣列[ `ToArray` ](xref:SkiaSharp.SKData.ToArray)方法。 此資料必須儲存至檔案。
 
 正在儲存至應用程式的本機儲存體中的檔案是相當簡單，因為您可以使用標準`System.IO`類別和方法，這項工作。 本文會示範這項技術[**動畫 SkiaSharp 點陣圖**](animating.md#bitmap-animation)與以動畫顯示一連串點陣圖的 Mandelbrot 集合。
 
@@ -81,7 +81,7 @@ public interface IPhotoLibrary
 
 針對`SavePhotoAsync`，第一個引數是位元組陣列，包含已編碼為特定檔案格式，例如 JPEG 或 PNG 的點陣圖。 就可以應用程式可能會想要找出它的下一個參數，後面接著檔案名稱中指定的特定資料夾中建立的所有點陣圖。 方法會傳回布林值，指出成功與否。
 
-以下是如何`SavePhotoAsync`三個平台上實作：
+下列各節將討論如何`SavePhotoAsync`實作每個平台。
 
 ### <a name="the-ios-implementation"></a>IOS 實作
 
@@ -107,7 +107,7 @@ public class PhotoLibrary : IPhotoLibrary
 }
 ```
 
-不幸的是，沒有辦法指定檔案名稱或映像的資料夾。 
+不幸的是，沒有辦法指定檔案名稱或映像的資料夾。
 
 **Info.plist** iOS 專案中的檔案需要索引鍵，以指定它將映像新增至相片媒體櫃：
 
@@ -276,7 +276,7 @@ using (SKManagedWStream wstream = new SKManagedWStream(memStream))
 }
 ```
 
-`SKManagedWStream`類別衍生自`SKWStream`（這代表 「 可寫入資料流 」）。 `Encode`方法會寫入該資料流中的編碼的點陣圖檔案。 該程式碼中的註解，請參閱檢查可能需要執行一些錯誤。 
+`SKManagedWStream`類別衍生自`SKWStream`（這代表 「 可寫入資料流 」）。 `Encode`方法會寫入該資料流中的編碼的點陣圖檔案。 該程式碼中的註解，請參閱檢查可能需要執行一些錯誤。
 
 **儲存的檔案格式**頁面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)應用程式會使用類似的程式碼可讓您試驗不同的格式儲存點陣圖。
 
@@ -341,7 +341,7 @@ XAML 檔案中包含`SKCanvasView`顯示點陣圖、 應用程式頁面的其餘
                    HorizontalOptions="FillAndExpand" />
         </StackLayout>
 
-        <Button Text="Save" 
+        <Button Text="Save"
                 Clicked="OnButtonClicked">
             <Button.Triggers>
                 <DataTrigger TargetType="Button"
@@ -435,9 +435,9 @@ public partial class SaveFileFormatsPage : ContentPage
 
 `Clicked`處理常式`Button`所有的實際運作。 它會取得兩個引數`Encode`從`Picker`並`Slider`，然後使用 建立稍早所示的程式碼`SKManagedWStream`如`Encode`方法。 這兩個`Entry`檢視提供資料夾和檔案名稱`SavePhotoAsync`方法。
 
-這個方法大部分被用來處理問題或發生錯誤。 如果`Encode`會建立空的陣列，這表示，不支援的特定檔案格式。 如果`SavePhotoAsync`傳回`false`，則檔案不成功儲存。 
+這個方法大部分被用來處理問題或發生錯誤。 如果`Encode`會建立空的陣列，這表示，不支援的特定檔案格式。 如果`SavePhotoAsync`傳回`false`，則檔案不成功儲存。
 
-以下是三個平台上執行的程式：
+以下是執行的程式：
 
 [![儲存檔案格式](saving-images/SaveFileFormats.png "儲存檔案格式")](saving-images/SaveFileFormats-Large.png#lightbox)
 
@@ -688,7 +688,7 @@ public partial class FingerPaintSavePage : ContentPage
 }
 ```
 
-**儲存** 按鈕處理常式會使用簡化[ `Encode` ](xref:SkiaSharp.SKImage.Encode)方法從`SKImage`。 這個方法會將編碼使用 PNG 格式。 `SKImage`物件會根據建立`saveBitmap`，和`SKData`物件包含已編碼的 PNG 檔案。 
+**儲存** 按鈕處理常式會使用簡化[ `Encode` ](xref:SkiaSharp.SKImage.Encode)方法從`SKImage`。 這個方法會將編碼使用 PNG 格式。 `SKImage`物件會根據建立`saveBitmap`，和`SKData`物件包含已編碼的 PNG 檔案。
 
 `ToArray`方法的`SKData`取得位元組陣列。 這是傳遞至`SavePhotoAsync`方法中，固定的資料夾名稱，以及唯一的檔名，建構自目前的日期和時間。
 

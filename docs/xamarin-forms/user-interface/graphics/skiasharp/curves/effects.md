@@ -7,12 +7,12 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: bd865471e3efe42c44a8996a8e364b1c478b69e7
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 8354539288613353dcb7a792ace335daa5dc8f27
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615674"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171140"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp 路徑效果
 
@@ -923,7 +923,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-您可以使用這種效果繪製或根據填滿`Style`屬性`SKPaint`物件。 以下是所有三個平台上：
+您可以使用這種效果繪製或根據填滿`Style`屬性`SKPaint`物件。 以下執行：
 
 [![](effects-images/anotherroundedheptagon-small.png "另一個的捨入 Heptagon 頁面的三個螢幕擷取畫面")](effects-images/anotherroundedheptagon-large.png#lightbox "的另一個的捨入 Heptagon 頁面的三個螢幕擷取畫面")
 
@@ -1068,7 +1068,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-這裡它所有三個平台上執行以橫向模式：
+這裡執行以橫向模式：
 
 [![](effects-images/jittertext-small.png "三倍抖動文字頁面的螢幕擷取畫面")](effects-images/jittertext-large.png#lightbox "Triple screenshot of the JitterText page")
 

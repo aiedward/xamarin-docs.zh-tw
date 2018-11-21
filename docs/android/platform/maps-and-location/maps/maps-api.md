@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: fb7d18e6434e32941531d2c37cd8b938ec21ba90
-ms.sourcegitcommit: 28dbb5fa2fbcc7e66cd09c1d0077496fcdefac56
+ms.openlocfilehash: 8df8a4f5e59675164e7d06b682c61094078edc4f
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51027323"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171036"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>應用程式中使用 Google Maps API
 
@@ -223,7 +223,7 @@ public class MapWithMarkersActivity : AppCompatActivity, IOnMapReadyCallback
 
 有五個不同類型的地圖可從 Google Maps API:
 
--  **一般**-這是預設的對應型別。 它會顯示道路和重要的自然功能，以及感興趣 （例如建築物和橋接器） 的某些 artifical 點。
+-  **一般**-這是預設的對應型別。 它會顯示道路和重要的自然功能，以及感興趣 （例如建築物和橋接器） 的一些人為分數。
 
 -  **附屬**-此地圖顯示附屬攝影。
 

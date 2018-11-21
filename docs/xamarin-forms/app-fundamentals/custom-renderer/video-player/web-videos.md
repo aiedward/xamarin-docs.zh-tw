@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 566f056bd616c918ce274b9c7406d94fdc265ea2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7f40d0d11fc932121b4ff7789969bbb1e354024c
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994555"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172206"
 ---
 # <a name="playing-a-web-video"></a>播放網頁視訊
 
@@ -465,7 +465,7 @@ namespace FormsVideoLibrary.UWP
 
 [![播放網頁視訊](web-videos-images/playwebvideo-small.png "播放網頁視訊")](web-videos-images/playwebvideo-large.png#lightbox "播放網頁視訊")
 
-在每個三個平台上傳輸控制淡出如果它們不會被使用，但可以還原成藉由點選影片的檢視。
+在每個平台，傳輸控制淡出如果它們不會被使用，但可以還原成藉由點選影片的檢視。
 
 您可以防止自動啟動設定視訊`AutoPlay`屬性設`false`:
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2018
-ms.openlocfilehash: bd8973b59853a4898336ba153de4835bad46e232
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 75b78f27fd6b3a726de9075ce36364168401ec60
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113049"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171466"
 ---
 # <a name="android-wear"></a>Android Wear
 
@@ -51,7 +51,7 @@ Android 開發人員網站會提供這類金鑰穿戴式 Api 的詳細的資訊[
 |範例|描述|螢幕擷取畫面|
 |--- |--- |--- |
 |[SkeletonWear](https://developer.xamarin.com/samples/SkeletonWear/)|到穿戴的專案，包括 GridViewPager 和互動式的通知的基本概念的簡單範例。|![Skeletonwear 的螢幕擷取畫面](images/skeleton.png)|
-|[WatchViewStub](https://developer.xamarin.com/samples/WatchViewStub/)|偵測到畫面的圖形，並自動載入正確的版面配置的 WatchViewStub 控制項的簡單示範。  請參閱 WatchViewStub 中的運作方式**Resources/layout/main_actvity.xml**版面配置。|![WatchViewStub 的螢幕擷取畫面](images/watchview.png)|
+|[WatchViewStub](https://developer.xamarin.com/samples/WatchViewStub/)|偵測到畫面的圖形，並自動載入正確的版面配置的 WatchViewStub 控制項的簡單示範。  請參閱 WatchViewStub 中的運作方式**Resources/layout/main_activity.xml**版面配置。|![WatchViewStub 的螢幕擷取畫面](images/watchview.png)|
 |[RecipeAssistant](https://developer.xamarin.com/samples/RecipeAssistant/)|中的配方步驟形式的損耗通知頁面的示範。 通知被建立在 RecipeService.cs。|![RecipeAssistant 的螢幕擷取畫面](images/recipeassist.png)|
 |[ElizaChat](https://developer.xamarin.com/samples/ElizaChat/)|與 「 個人助理 」 互動的有趣的範例會呼叫 Eliza，若要建立使用現成的回應的交談使用 Wear 互動式的通知。|![ElizaChat 的螢幕擷取畫面](images/eliza.png)|
 |[GridViewPager](https://developer.xamarin.com/samples/GridViewPager/)|GridViewPager 實作 2D 瀏覽模式中，其中使用者 swipes 垂直和水平擴展至瀏覽選項和內容。|![GridViewPager 的螢幕擷取畫面](images/gridviewpager.png)|

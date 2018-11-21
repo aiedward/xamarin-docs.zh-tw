@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: e0ad67db0671996e594f9c5d48b329a5d676fc1d
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: aa576e4af5d804eb5b8d78643ffa762b8a15c6dc
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563429"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171764"
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部分。 資料繫結的基本概念
 
@@ -327,7 +327,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 </ContentPage>
 ```
 
-請注意，使用`OnPlatform`若要定義的大小`BoxView`與高度`ListView`資料列。 雖然所有的三個平台的值相同，但很可能為了適合微調顯示，其他值標記。
+請注意，使用`OnPlatform`若要定義的大小`BoxView`與高度`ListView`資料列。 雖然所有平台的值相同，但很可能為了適合微調顯示，其他值標記。
 
 ## <a name="binding-value-converters"></a>繫結值轉換器
 

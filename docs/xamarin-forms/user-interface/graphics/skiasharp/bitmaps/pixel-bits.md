@@ -7,12 +7,12 @@ ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 6d223dd051dccf7af84e4e6c35238f4ad026b00a
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: eebfe40bca6db92bae1f2fdcc9cbff3173dc4e51
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615622"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172011"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>存取 SkiaSharp 點陣圖像素位元
 
@@ -35,7 +35,7 @@ SkiaSharp 會提供數種技術來存取點陣圖的像素位元。 您選擇哪
 
 您可以想像為 「 高的層級 」 前兩項技術，兩個為 「 低層級 」。 有一些其他方法和屬性，您可以使用，但這些最有價值。
 
-若要讓您查看這些技術，效能差異[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)應用程式包含名為的頁面**漸層停駐的點陣圖**，建立使用結合紅色和藍色陰影，來建立漸層的像素的點陣圖。 程式會建立八個不同複本的此點陣圖，全都必須使用不同的技術設定點陣圖像素為單位。 每個這些八個點陣圖會建立在不同的方法，也會設定此技術的簡短文字描述，並計算來設定所有的像素所需的時間。 每一種方法執行迴圈的像素設定邏輯 100 次取得的效能較佳評估。 
+若要讓您查看這些技術，效能差異[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)應用程式包含名為的頁面**漸層停駐的點陣圖**，建立使用結合紅色和藍色陰影，來建立漸層的像素的點陣圖。 程式會建立八個不同複本的此點陣圖，全都必須使用不同的技術設定點陣圖像素為單位。 每個這些八個點陣圖會建立在不同的方法，也會設定此技術的簡短文字描述，並計算來設定所有的像素所需的時間。 每一種方法執行迴圈的像素設定邏輯 100 次取得的效能較佳評估。
 
 ### <a name="the-setpixel-method"></a>不要方法
 
@@ -55,7 +55,7 @@ SKColor color = bitmap.GetPixel(col, row);
 public class GradientBitmapPage : ContentPage
 {
     const int REPS = 100;
-        
+
     Stopwatch stopwatch = new Stopwatch();
     ···
     SKBitmap FillBitmapSetPixel(out string description, out int milliseconds)
@@ -107,7 +107,7 @@ SKBitmap FillBitmapPixelsProp(out string description, out int milliseconds)
 
     stopwatch.Restart();
 
-    SKColor[] pixels = new SKColor[256 * 256]; 
+    SKColor[] pixels = new SKColor[256 * 256];
 
     for (int rep = 0; rep < REPS; rep++)
         for (int row = 0; row < 256; row++)
@@ -135,7 +135,7 @@ SKBitmap FillBitmapPixelsProp(out string description, out int milliseconds)
 IntPtr pixelsAddr = bitmap.GetPixels();
 ```
 
-.NET [ `IntPtr` ](xref:System.IntPtr)類型表示的指標。 它會呼叫`IntPtr`因為它是在原生處理器機器執行程式時，通常 32 位元或 64 位元長度的整數的長度。 `IntPtr` ，`GetPixels`傳回是實際的點陣圖物件用來儲存其像素為單位的記憶體區塊的位址。 
+.NET [ `IntPtr` ](xref:System.IntPtr)類型表示的指標。 它會呼叫`IntPtr`因為它是在原生處理器機器執行程式時，通常 32 位元或 64 位元長度的整數的長度。 `IntPtr` ，`GetPixels`傳回是實際的點陣圖物件用來儲存其像素為單位的記憶體區塊的位址。
 
 您可以將轉換`IntPtr`C# 指標類型使用[ `ToPointer` ](xref:System.IntPtr.ToPointer)方法。 C# 指標語法等同於 C 和 c + +:
 
@@ -313,7 +313,7 @@ SKBitmap FillBitmapByteBuffer(out string description, out int milliseconds)
                 buffer[row, col, 2] = (byte)row;   // blue
                 buffer[row, col, 3] = 0xFF;        // alpha
             }
-    
+
     unsafe
     {
         fixed (byte* ptr = buffer)
@@ -459,7 +459,7 @@ public class GradientBitmapPage : ContentPage
 
     void Display(SKCanvas canvas, int index, SKRect rect)
     {
-        string text = String.Format("{0}: {1:F1} msec", descriptions[index], 
+        string text = String.Format("{0}: {1:F1} msec", descriptions[index],
                                     (double)elapsedTimes[index] / REPS);
 
         SKRect bounds = new SKRect();
@@ -497,7 +497,7 @@ public class GradientBitmapPage : ContentPage
 
 如預期般，呼叫`SetPixel`65536 的時候，是設定點陣圖的像素為單位的最少 effeicient 方式。 填滿`SKColor`陣列和設定`Pixels`屬性是更好的而且甚至會比較有利的某些`GetPixels`和`SetPixels`技術。 使用`uint`像素值的速度通常比設定的個別`byte`元件，並將轉換`SKColor`為不帶正負號的整數值的程序會增加負擔。
 
-有趣的是也比較各種的漸層： 前的資料列的所有三個平台是相同的而且顯示之漸層，為其設計目的。 這表示`SetPixel`方法和`Pixels`屬性正確建立像素為單位的色彩，不論其基礎的像素格式。
+有趣的是也比較各種的漸層： 前的資料列，每個平台是相同的而且顯示之漸層，為其設計目的。 這表示`SetPixel`方法和`Pixels`屬性正確建立像素為單位的色彩，不論其基礎的像素格式。
 
 IOS 和 Android 的螢幕擷取畫面的下面兩個資料列也會相同，這會確認的小`MakePixel`方法已正確定義預設`Rgba8888`這些平台的像素格式。
 
@@ -511,13 +511,13 @@ BB GG RR AA
 
 這是`Bgra8888`順序而非`Rgba8888`排序。 `Brga8888`格式是針對通用 Windows 平台，這就是為什麼在該螢幕擷取畫面的最後一個資料列的漸層的第一個資料列與相同的預設值。 但中間的兩個資料列不正確，因為建立這些點陣圖的程式碼假設`Rgba8888`排序。
 
-如果您想要使用相同的程式碼存取所有的三個平台上的像素位元，您明確地可以建立`SKBitmap`採用`Rgba8888`或`Bgra8888`格式。 如果您想要轉型`SKColor`值的點陣圖像素為單位，以使用`Bgra8888`。
+如果您想要使用相同的程式碼存取每個平台上的像素位元，您明確地可以建立`SKBitmap`採用`Rgba8888`或`Bgra8888`格式。 如果您想要轉型`SKColor`值的點陣圖像素為單位，以使用`Bgra8888`。
 
 ## <a name="random-access-of-pixels"></a>像素的隨機存取
 
-`FillBitmapBytePtr`並`FillBitmapUintPtr`中的方法**漸層停駐的點陣圖**受惠於頁面`for`迴圈設計成循序填滿點陣圖，從頂端列下方的列，並以從左到右的每個資料列。 遞增指標的相同陳述式，可以設定像素。 
+`FillBitmapBytePtr`並`FillBitmapUintPtr`中的方法**漸層停駐的點陣圖**受惠於頁面`for`迴圈設計成循序填滿點陣圖，從頂端列下方的列，並以從左到右的每個資料列。 遞增指標的相同陳述式，可以設定像素。
 
-有時候很需要隨機而不是以循序方式存取像素為單位。 如果您使用`GetPixels`方法時，您必須計算的資料列和資料行的指標。 這示範於**彩虹正弦**網頁，當中會建立一個循環的正弦曲線形式顯示彩虹的點陣圖。 
+有時候很需要隨機而不是以循序方式存取像素為單位。 如果您使用`GetPixels`方法時，您必須計算的資料列和資料行的指標。 這示範於**彩虹正弦**網頁，當中會建立一個循環的正弦曲線形式顯示彩虹的點陣圖。
 
 彩虹的色彩是最簡單的方式使用 （色調、 飽和度、 亮度） HSL 色彩模型所建立的。 `SKColor.FromHsl`方法會建立`SKColor`使用範圍從 0 到 360 （例如的角度圓形，但從紅色、 綠色和藍色，並回到 red） 的色相值的值，範圍從 0 到 100 的飽和度和亮度值。 彩虹的色彩，則應該設定為最多 100 和以點為 50 的明暗度的飽和度。
 
@@ -617,7 +617,7 @@ uint* ptr = basePtr + bitmap.Width * row + col;
 
 每個像素的色彩，第一個`Slider`0 的值將 360 色調，但接著會使用模數運算子来保留的結果，介於 0 和 360 之間，有效地轉移以及頻譜色彩 （如 UWP 螢幕擷取畫面所示）。 第二個`Slider`可讓您選取介於 0.5 至 2 套用至飽和度和第三個乘法因數`Slider`對執行相同作業亮度，Android 的螢幕擷取畫面所示。
 
-程式會維護兩個點陣圖，名為原始的來源點陣圖`srcBitmap`和名為已調整的目的地點陣圖`dstBitmap`。 每次`Slider`移動時，程式會計算在所有新的像素`dstBitmap`。 當然，使用者會利用移動來試驗`Slider`非常快速地檢視，因此您可以管理的最佳效能。 這牽涉到`GetPixels`方法在來源和目的地點陣圖。 
+程式會維護兩個點陣圖，名為原始的來源點陣圖`srcBitmap`和名為已調整的目的地點陣圖`dstBitmap`。 每次`Slider`移動時，程式會計算在所有新的像素`dstBitmap`。 當然，使用者會利用移動來試驗`Slider`非常快速地檢視，因此您可以管理的最佳效能。 這牽涉到`GetPixels`方法在來源和目的地點陣圖。
 
 **色彩調整**頁面未控制的來源和目的地點陣圖的色彩格式。 相反地，其中包含稍有不同的邏輯，如`SKColorType.Rgba8888`和`SKColorType.Bgra8888`格式。 來源和目的地可以是不同的格式，以及程式仍然可以運作。
 
@@ -764,7 +764,7 @@ public class PosterizePage : ContentPage
 
             for (int i = 0; i < pixelCount; i++)
             {
-                *ptr++ &= 0xE0E0E0FF; 
+                *ptr++ &= 0xE0E0E0FF;
             }
         }
 

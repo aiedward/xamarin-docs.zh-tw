@@ -6,13 +6,13 @@ ms.assetid: C5D4AA65-9BAA-4008-8A1E-36CDB78A435D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/01/2018
-ms.openlocfilehash: 3249a9706ba96ec3690a3a3a6b80a5eb261625e4
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.date: 11/19/2018
+ms.openlocfilehash: 5de5899b01965a33025c8af0c1ae6c09ac60dc9b
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527270"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171283"
 ---
 # <a name="android-platform-specifics"></a>Android 平台特性
 
@@ -143,6 +143,7 @@ _legacyColorModeDisabledButton.On<Android>().SetIsLegacyColorModeEnabled(false);
 
 - 使用預設填補和 Android 的按鈕的陰影值。 如需詳細資訊，請參閱 <<c0> [ 使用 Android 按鈕](#button-padding-shadow)。
 - 設定輸入的法編輯器選項的螢幕小鍵盤[ `Entry` ](xref:Xamarin.Forms.Entry)。 如需詳細資訊，請參閱 <<c0> [ 設定項目輸入法編輯器選項](#entry-imeoptions)。
+- 在啟用下拉式陰影`ImageButton`。 如需詳細資訊，請參閱 <<c0> [ 啟用陰影上 ImageButton](#imagebutton-drop-shadow)。
 - 啟用快速捲動[ `ListView` ](xref:Xamarin.Forms.ListView)如需詳細資訊，請參閱[啟用在 ListView 中的快速捲動](#fastscroll)。
 - 控制是否[ `WebView` ](xref:Xamarin.Forms.WebView)可以顯示混合的內容。 如需詳細資訊，請參閱 <<c0> [ 啟用混合內容的 WebView 中](#webview-mixed-content)。
 
@@ -227,6 +228,67 @@ entry.On<Android>().SetImeOptions(ImeFlags.Send);
 結果是，指定[ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)值套用至的螢幕小鍵盤[ `Entry` ](xref:Xamarin.Forms.Entry)，可設定的輸入的法編輯器的選項：
 
 [![項目輸入方法編輯器平台專屬](android-images/entry-imeoptions.png "項目輸入方法編輯器平台專屬")](android-images/entry-imeoptions-large.png#lightbox "項目輸入方法編輯器平台專屬")
+
+<a name="imagebutton-drop-shadow" />
+
+### <a name="enabling-a-drop-shadow-on-a-imagebutton"></a>啟用下拉式陰影 ImageButton 上
+
+此平台專屬來啟用下拉式陰影`ImageButton`。 它由在 XAML 中設定`ImageButton.IsShadowEnabled`可繫結的屬性，以`true`，以及數個控制陰影的其他選擇性可繫結屬性：
+
+```xaml
+<ContentPage ...
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout Margin="20">
+       <ImageButton ...
+                    Source="XamarinLogo.png"
+                    BackgroundColor="GhostWhite"
+                    android:ImageButton.IsShadowEnabled="true"
+                    android:ImageButton.ShadowColor="Gray"
+                    android:ImageButton.ShadowRadius="12">
+            <android:ImageButton.ShadowOffset>
+                <Size>
+                    <x:Arguments>
+                        <x:Double>10</x:Double>
+                        <x:Double>10</x:Double>
+                    </x:Arguments>
+                </Size>
+            </android:ImageButton.ShadowOffset>
+        </ImageButton>
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+或者，它可以取用從 C# 使用 fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+var imageButton = new Xamarin.Forms.ImageButton { Source = "XamarinLogo.png", BackgroundColor = Color.GhostWhite, ... };
+imageButton.On<Android>()
+           .SetIsShadowEnabled(true)
+           .SetShadowColor(Color.Gray)
+           .SetShadowOffset(new Size(10, 10))
+           .SetShadowRadius(12);
+```
+
+> [!IMPORTANT]
+> 做為一部分繪製陰影`ImageButton`背景，以及背景只繪製如果`BackgroundColor`屬性設定。 因此，陰影就不會繪製如果`ImageButton.BackgroundColor`屬性未設定。
+
+`ImageButton.On<Android>`方法可讓您指定這個平台專屬只會在 Android 上執行。 `ImageButton.SetIsShadowEnabled`方法，請在[ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)命名空間，可用來控制是否已啟用下拉式陰影`ImageButton`。 此外，下列方法可以叫用來控制陰影：
+
+- `SetShadowColor` – 設定延伸陰影的色彩。 預設色彩是[ `Color.Default` ](xref:Xamarin.Forms.Color.Default*)。
+- `SetShadowOffset` – 設定延伸陰影的位移。 位移會變更陰影轉換，並指定為方向[ `Size` ](xref:Xamarin.Forms.Size)值。 `Size`結構的值會以裝置獨立單位，與正在向左 （負值） 或向右 （正值），距離的第一個值和第二個值在上述的距離 （負值） 或下方 （正值）. 這個屬性的預設值是 （0.0，0.0），這會導致陰影正在轉換周圍每一端`ImageButton`。
+- `SetShadowRadius`– 設定柔化半徑，用來呈現下拉式陰影。 預設半徑值為 10.0。
+
+> [!NOTE]
+> 可查詢下拉式陰影的狀態，藉由呼叫`GetIsShadowEnabled`， `GetShadowColor`， `GetShadowOffset`，和`GetShadowRadius`方法。
+
+結果是，您可以上啟用下拉式陰影`ImageButton`:
+
+![](android-images/imagebutton-drop-shadow.png "使用下拉式陰影的 ImageButton")
 
 <a name="fastscroll" />
 

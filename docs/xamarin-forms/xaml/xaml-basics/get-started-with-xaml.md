@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 7ee701c659e0051f5509934dbf0d86e9b3890c9a
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 150818379a31fe7b22c1f04a49aba146df84c11c
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563863"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171114"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 開始使用 XAML
 
@@ -26,7 +26,7 @@ _在 Xamarin.Forms 應用程式中，XAML 大多用來定義頁面的視覺內�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-在 Windows，使用 以選取 Visual Studio**檔案 > 新增 > 專案**從功能表。 中**新的專案**對話方塊中，選取**Visual C# > 跨平台**左邊，然後**行動應用程式 (Xamarin.Forms)** 從中央清單中。 
+在 Windows，使用 以選取 Visual Studio**檔案 > 新增 > 專案**從功能表。 中**新的專案**對話方塊中，選取**Visual C# > 跨平台**左邊，然後**行動應用程式 (Xamarin.Forms)** 從中央清單中。
 
 ![](get-started-with-xaml-images/win/newprojectdialog.w157.png "新增專案 對話方塊")
 
@@ -36,7 +36,7 @@ _在 Xamarin.Forms 應用程式中，XAML 大多用來定義頁面的視覺內�
 
 ![](get-started-with-xaml-images/win/newcrossplatformapp.png "新的應用程式 對話方塊")
 
-按下**確定**。 
+按下**確定**。
 
 在方案中建立四個專案： **XamlSamples** .NET 標準程式庫**XamlSamples.Android**， **XamlSamples.iOS**，與通用 Windows 平台解決方案中， **XamlSamples.UWP**。
 
@@ -52,7 +52,7 @@ _在 Xamarin.Forms 應用程式中，XAML 大多用來定義頁面的視覺內�
 
 ![](get-started-with-xaml-images/mac/newprojectdialog2.png "新增專案 對話方塊 2")
 
-按下**下一步**。 
+按下**下一步**。
 
 在下列對話方塊中，您可以選取專案的位置：
 
@@ -60,7 +60,7 @@ _在 Xamarin.Forms 應用程式中，XAML 大多用來定義頁面的視覺內�
 
 按下**建立**
 
-在方案中建立三個專案： **XamlSamples** .NET 標準程式庫**XamlSamples.Android**，並**XamlSamples.iOS**。 
+在方案中建立三個專案： **XamlSamples** .NET 標準程式庫**XamlSamples.Android**，並**XamlSamples.iOS**。
 
 -----
 
@@ -75,7 +75,7 @@ _在 Xamarin.Forms 應用程式中，XAML 大多用來定義頁面的視覺內�
 - **App.xaml**，XAML 檔案; 以及
 - **App.xaml.cs**、 C# *程式碼後置*XAML 檔案相關聯的檔案。
 
-您必須按一下箭號旁**App.xaml**若要查看程式碼後置檔案。 
+您必須按一下箭號旁**App.xaml**若要查看程式碼後置檔案。
 
 兩者**App.xaml**並**App.xaml.cs**類別，名為參與`App`衍生自`Application`。 使用 XAML 檔案的大部分其他類別衍生自的類別參與`ContentPage`; 這些檔案會使用 XAML 來定義整個頁面的視覺內容。 這是中的其他兩個檔案，則為 true **XamlSamples**專案：
 
@@ -92,8 +92,8 @@ _在 Xamarin.Forms 應用程式中，XAML 大多用來定義頁面的視覺內�
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin Forms!" 
-               VerticalOptions="Center" 
+        <Label Text="Welcome to Xamarin Forms!"
+               VerticalOptions="Center"
                HorizontalOptions="Center" />
     </StackLayout>
 
@@ -129,7 +129,7 @@ namespace XamlSamples
 }
 ```
 
-`MainPage`類別衍生自`ContentPage`，但請注意`partial`類別定義。 這可能表示，應該是另一個部分類別定義`MainPage`，但在哪裡可以找到？ 為何，`InitializeComponent`方法？ 
+`MainPage`類別衍生自`ContentPage`，但請注意`partial`類別定義。 這可能表示，應該是另一個部分類別定義`MainPage`，但在哪裡可以找到？ 為何，`InitializeComponent`方法？
 
 當 Visual Studio 建置專案時，它會剖析 XAML 檔案來產生C#程式碼檔案。 如果您查看**XamlSamples\XamlSamples\obj\Debug**目錄中，您可以找到名為的檔案**XamlSamples.MainPage.xaml.g.cs**。 產生代表 'g'。 這是其他部分類別定義`MainPage`，其中包含定義`InitializeComponent`方法呼叫從`MainPage`建構函式。 這些兩個部分`MainPage`類別定義然後一起編譯。 根據 XAML 是否經過編譯後，XAML 檔案或二進位格式的 XAML 檔案內嵌在可執行檔。
 
@@ -137,7 +137,7 @@ namespace XamlSamples
 
 雖然您通常不需要花太多時間使用產生的程式碼檔案，有時執行階段會引發例外狀況程式碼在產生的檔案，因此您應該先熟悉這些。
 
-當您編譯和執行此程式，`Label`元素會出現在頁面中央，XAML 所示。 從左到右的三個平台是 iOS、 Android 和 UWP:
+當您編譯和執行此程式，`Label`元素會出現在頁面中央，XAML 所示：
 
 [![](get-started-with-xaml-images/xamlsamples.png "預設 Xamarin.Forms 顯示器")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "預設 Xamarin.Forms 顯示")
 
@@ -159,7 +159,7 @@ namespace XamlSamples
 
 -----
 
-兩個檔案新增至專案中， **HelloXamlPage.xaml**和 程式碼後置檔案**HelloXamlPage.xaml.cs**。 
+兩個檔案新增至專案中， **HelloXamlPage.xaml**和 程式碼後置檔案**HelloXamlPage.xaml.cs**。
 
 ## <a name="setting-page-content"></a>設定頁面內容
 
@@ -170,7 +170,7 @@ namespace XamlSamples
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamlSamples.HelloXamlPage">
     <ContentPage.Content>
-        
+
     </ContentPage.Content>
 </ContentPage>
 ```

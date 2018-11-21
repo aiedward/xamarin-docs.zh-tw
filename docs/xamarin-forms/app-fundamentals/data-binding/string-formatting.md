@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: a876e81c67b6ec61a2cb29143cb001a7d6160032
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 8efd93204b848113e0ed95c8066a5506eb517ac6
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998143"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52170945"
 ---
 # <a name="xamarinforms-string-formatting"></a>Xamarin.Forms 的字串格式化
 
@@ -119,7 +119,7 @@ ms.locfileid: "38998143"
 
 最後一個區段集合`BindingContext`的值`Math.PI`並顯示預設的格式設定和兩種不同的數字格式化。
 
-以下是所有三個平台上執行的程式：
+以下是執行的程式：
 
 [![字串格式化](string-formatting-images/stringformatting-small.png "字串格式化")](string-formatting-images/stringformatting-large.png#lightbox "字串格式化")
 

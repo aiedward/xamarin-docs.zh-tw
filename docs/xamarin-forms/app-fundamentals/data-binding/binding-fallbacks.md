@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/16/2018
-ms.openlocfilehash: fa375720730630065609e328b343e16578c6f1df
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2a4b29df9148ce695f8f3ca5377e5848af1b775a
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131191"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171595"
 ---
 # <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms 繫結後援
 
@@ -44,7 +44,7 @@ ms.locfileid: "50131191"
 > [!NOTE]
 > 不可以設定`FallbackValue`屬性繫結運算式。
 
-以下是所有三個平台上執行的程式：
+以下是執行的程式：
 
 ![FallbackValue 繫結](binding-fallbacks-images/bindingunavailable-detail-cropped.png "FallbackValue 繫結")
 
@@ -93,7 +93,7 @@ ms.locfileid: "50131191"
 > [!NOTE]
 > 不可以設定`TargetNullValue`屬性繫結運算式。
 
-以下是所有三個平台上執行的程式：
+以下是執行的程式：
 
 [![TargetNullValue 繫結](binding-fallbacks-images/bindingunavailable-small.png "TargetNullValue 繫結")](binding-fallbacks-images/bindingunavailable-large.png#lightbox "TargetNullValue 繫結")
 

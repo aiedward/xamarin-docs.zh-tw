@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/23/2018
-ms.openlocfilehash: f46e0d27a39c7734e63bf5603ef2e47cd5fa7aa9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 067a39838fbfe3f1b33ac0d30b5069366b11e407
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105528"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171998"
 ---
 # <a name="creating-a-watch-face"></a>建立錶面
 
@@ -302,7 +302,7 @@ public override void OnTimeTick()
 
 3.  宣告的可繪製的映像，稱為`preview`，會顯示 [監看式選擇器選擇] 畫面。
 
-4.  包含`intent-filter`可讓 Android 知道`MyWatchFaceSevice`將要顯示 watch 錶面。
+4.  包含`intent-filter`可讓 Android 知道`MyWatchFaceService`將要顯示 watch 錶面。
 
 完成基本的程式碼`WatchFace`範例。 下一個步驟是新增必要的資源。
 

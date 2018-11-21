@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 08fa9000a1fd9c97f7881a4a13c15fabfa6dda47
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: faf2c35b49b0b02b9f3b16e19494d2e447361d84
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617666"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171647"
 ---
 # <a name="time-picker"></a>時間選擇器
 
@@ -45,7 +45,7 @@ ms.locfileid: "51617666"
 在  `TimePickerDialog`、 選取一次，然後按一下 **[確定]** 按鈕會導致`TimePickerDialog`叫用方法[IOnTimeSetListener.OnTimeSet](https://developer.xamarin.com/api/member/Android.App.TimePickerDialog+IOnTimeSetListener.OnTimeSet/p/Android.Widget.TimePicker/System.Int32/System.Int32/System.Int32/)。
 此介面由裝載實作`DialogFragment`(`TimePickerFragment`，如下所述)。 按一下 **取消**按鈕會導致片段，以關閉對話方塊。
 
-`DialogFragment` 會在選取的時間傳回裝載的 Actvity 三種方式之一︰
+`DialogFragment` 傳回所裝載的活動，其中三種方式，在選取的時間：
 
 1. **叫用方法或設定屬性**&ndash;活動可以提供的屬性或方法專為設定此值。
 

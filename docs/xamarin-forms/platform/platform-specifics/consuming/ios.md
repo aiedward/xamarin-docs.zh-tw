@@ -6,13 +6,13 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/01/2018
-ms.openlocfilehash: afecf5c173e919bd20015aadd8a874f492dc4e34
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.date: 10/24/2018
+ms.openlocfilehash: 12fd9e477e24058d36128e52b7b5dd9074598be8
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527075"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171790"
 ---
 # <a name="ios-platform-specifics"></a>iOS 平台特性
 
@@ -783,7 +783,34 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 在 iOS 上，下列平台特有的功能提供適用於 Xamarin.Forms [ `Application` ](xref:Xamarin.Forms.Application)類別：
 
+- 啟用控制項的版面配置，並呈現在主執行緒上執行的更新。 如需詳細資訊，請參閱 <<c0> [ 主執行緒上處理控制項更新](#update-on-main-thread)。
 - 啟用[ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)捲動檢視來擷取，並分享捲動檢視中的移動瀏覽軌跡中。 如需詳細資訊，請參閱 <<c0> [ 啟用同時移動瀏覽軌跡辨識](#simultaneous-pan-gesture)。
+
+<a name="update-on-main-thread" />
+
+### <a name="handling-control-updates-on-the-main-thread"></a>在主執行緒上處理控制項更新
+
+控制項的配置和轉譯要對主執行緒，而不是在背景執行緒上執行的更新，可讓此平台專屬。 它應該很少需要但在某些情況下可能會導致當機。 藉由設定其已在使用的 XAML`Application.HandleControlUpdatesOnMainThread`可繫結的屬性，以`true`:
+
+```xaml
+<Application ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Application.HandleControlUpdatesOnMainThread="true">
+    ...
+</Application>
+```
+
+或者，它可以取用從 C# 使用 fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+Xamarin.Forms.Application.Current.On<iOS>().SetHandleControlUpdatesOnMainThread(true);
+```
+
+`Application.On<iOS>`方法可讓您指定這個平台專屬只會在 iOS 上執行。 `Application.SetHandleControlUpdatesOnMainThread`方法，請在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空間，可用來控制是否控制配置和轉譯的更新，會對主執行緒，而不是在背景執行緒上執行。 颾魤 ㄛ`Application.GetHandleControlUpdatesOnMainThread`方法可以用來傳回是否正在執行控制項的配置和轉譯更新主執行緒上。
 
 <a name="simultaneous-pan-gesture" />
 

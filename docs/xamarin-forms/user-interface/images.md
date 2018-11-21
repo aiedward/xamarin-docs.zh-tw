@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: f79ee7af9106eea8a4792c0e4bb10c5ad5a367a9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 53179170afa1381a562699a39baaa716ecc6a5a6
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111073"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171192"
 ---
 # <a name="images-in-xamarinforms"></a>在 Xamarin.Forms 中的影像
 
@@ -40,7 +40,7 @@ _影像可以使用 Xamarin.Forms 進行跨平台共用、可以針對每個平�
 
 - [`Fill`](xref:Xamarin.Forms.Aspect.Fill) - 會自動縮放以完全填滿顯示區域。 這可能導致影像失真。
 - [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -裁剪影像，同時保留長寬滿顯示區域 (亦即。 不失真)。
-- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) - 將影像設定為上下黑邊 (若有必要)，讓整個影像放入顯示區域，並視影像寬或高而定在頂端/底部或側邊加上空白空間。
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -上下黑邊 （如有必要） 的映像讓整個影像放入顯示區域，具有空白空間加入至頂端/底端或側邊，取決於是否該影像是寬或高。
 
 可從[本機檔案](#Local_Images)、[內嵌資源](#embedded-images)或透過 [下載](#Downloading_Images)方式載入影像。
 

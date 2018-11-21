@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: b1ea26afff1477d762d106db004be82010a2d557
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 7b7fa2ea99a58b875bc1dc579455511aa9bf72d1
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527324"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172089"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
@@ -413,7 +413,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 #### <a name="printing-html-content"></a>列印 HTML 內容
 
-會自動建立 KitKat [ `PrintDocumentAdapter` ](https://developer.xamarin.com/api/type/Android.Print.PrintDocumentAdapter/) web 檢視與`WebView.CreatePrintDocumentAdapter`。 列印網頁的內容是人員之間[ `WebViewClient` ](https://developer.xamarin.com/api/type/Android.Webkit.WebViewClient/) ，等候要載入的 HTML 內容，並可讓活動知道要在 [選項] 功能表中提供的列印選項和 Actvity，會等候使用者選取 [列印] 選項，然後呼叫`Print`上`PrintManager`。 本節涵蓋螢幕上列印所需的基本設定的 HTML 內容。
+會自動建立 KitKat [ `PrintDocumentAdapter` ](https://developer.xamarin.com/api/type/Android.Print.PrintDocumentAdapter/) web 檢視與`WebView.CreatePrintDocumentAdapter`。 列印網頁的內容是人員之間[ `WebViewClient` ](https://developer.xamarin.com/api/type/Android.Webkit.WebViewClient/) ，等候要載入的 HTML 內容，並可讓活動知道要在 [選項] 功能表中提供的列印選項和活動，會等候使用者選取 [列印] 選項，然後呼叫`Print`上`PrintManager`。 本節涵蓋螢幕上列印所需的基本設定的 HTML 內容。
 
 請注意，載入和列印的網頁內容都需要網際網路權限：
 

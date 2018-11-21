@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: b47b7611665dc3e935bba1bf89ecf9f82291fe08
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c41aecf5f8c65ad5bfba5361b77d7c7fc047cda4
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118951"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171608"
 ---
 # <a name="binding-a-java-library"></a>繫結 Java 程式庫
 

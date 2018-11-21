@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 84870de28ffd30b2d29fb5d8fbea815e1fd0d9c4
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 3397c931dcb23a29b0682699512a5b4c9018de38
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996434"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171062"
 ---
 # <a name="custom-video-transport-controls"></a>自訂影片傳輸控制項
 
@@ -212,7 +212,7 @@ namespace FormsVideoLibrary.UWP
 
 實作**播放**，**暫停**，並**停止**函式是不夠的支援傳輸控制項。 通常**播放**並**暫停**命令都實作與同一個按鈕，變更其外觀，指出是否影片目前正在播放或暫停。 此外，如果影片尚未載入，不應該甚至啟用 按鈕。
 
-這些需求表示，視訊播放程式必須提供目前狀態，指出它是播放或暫停，則它尚未準備好播放視訊。 (三個平台也支援的屬性，指出是否影片可以暫停，或可以移至新位置，但這些屬性是適用於串流視訊，而不是視訊檔案，因此它們不支援在`VideoPlayer`此處所述。)
+這些需求表示，視訊播放程式必須提供目前狀態，指出它是播放或暫停，則它尚未準備好播放視訊。 (每個平台也支援的屬性，指出是否影片可以暫停，或可以移至新位置，但這些屬性是適用於串流視訊，而不是視訊檔案，因此它們不支援在`VideoPlayer`此處所述。)
 
 **VideoPlayerDemos**專案包含`VideoStatus`列舉有三個成員：
 
@@ -532,7 +532,7 @@ namespace FormsVideoLibrary.UWP
 
 - 0x25B6 （黑色向右三角形） 或&#x25B6;針對**播放**
 
-這是所有三個平台支援不同之處在於它是一般的黑色三角形不像的 3D 外觀**暫停**並**停止**。 其中一個可能性是遵循 0x25B6 字碼指標，以變數的程式碼：
+這是每個平台支援的不同之處在於它是一般的黑色三角形不像的 3D 外觀**暫停**並**停止**。 其中一個可能性是遵循 0x25B6 字碼指標，以變數的程式碼：
 
 - 0x25B6 後面 0xFE0F （variant 型別 16） 或&#x25B6; &#xFE0F; for**播放**
 

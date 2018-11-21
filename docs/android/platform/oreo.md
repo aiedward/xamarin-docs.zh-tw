@@ -8,12 +8,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: 0c5e048dd3f3496691b83eb10d377d012efedc72
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: ca9c4ed0871b91bed82f746ccb36af9fb32816c0
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528763"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171777"
 ---
 # <a name="oreo-features"></a>Oreo 功能
 
@@ -248,7 +248,7 @@ Android oreo 版導入了*在 XML 中的字型*，這可讓您將自訂字型做
 
 ### <a name="downloadable-fonts"></a>可下載的字型
 
-從 Android oreo 版開始，應用程式可以要求字型，從提供者，而不是將它們繫結至 APK。 只有在必要時，會從網路下載字型。 這項功能可減少 APK 大小，以節省電話記憶體和行動數據資料的使用方式。 您也可以在 Android API 版本 14 和更新版本上使用這項功能，透過安裝 Android 支援 Libary 26 套件。
+從 Android oreo 版開始，應用程式可以要求字型，從提供者，而不是將它們繫結至 APK。 只有在必要時，會從網路下載字型。 這項功能可減少 APK 大小，以節省電話記憶體和行動數據資料的使用方式。 您也可以在 Android API 版本 14 和更新版本上使用這項功能，透過安裝 Android 支援程式庫 26 套件。
 
 當應用程式所需字型時，您會建立`FontsRequest`物件 （指定要下載的字型），然後將它傳遞給`FontsContract`方法下載字型。 下列步驟描述字型下載程序，在更多詳細資料：
 

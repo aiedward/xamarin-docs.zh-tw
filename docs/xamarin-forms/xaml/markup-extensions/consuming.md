@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/01/2018
-ms.openlocfilehash: ecb0adb09c7d6b8bca2f1ee228b8cbdaad1d0314
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 2ab7381baefc6ca013b6c8a5c9f7bf7b5cae8b10
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563949"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171712"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 標記延伸
 
@@ -137,7 +137,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </Label>
 ```
 
-以下是所有三個平台上執行範例：
+以下是執行範例：
 
 [![X:static 示範](consuming-images/staticdemo-small.png "X:static 示範")](consuming-images/staticdemo-large.png#lightbox "X:static 示範")
 
@@ -181,7 +181,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-兩者`x:Reference`運算式使用的縮寫的版本`ReferenceExtension`類別名稱，並消除`Name=`運算式的一部分。 在第一個範例中，`x:Reference`標記延伸模組會內嵌在`Binding`標記延伸。 請注意，`Source`和`StringFormat`設定會以逗號分隔。 以下是所有三個平台上執行的程式：
+兩者`x:Reference`運算式使用的縮寫的版本`ReferenceExtension`類別名稱，並消除`Name=`運算式的一部分。 在第一個範例中，`x:Reference`標記延伸模組會內嵌在`Binding`標記延伸。 請注意，`Source`和`StringFormat`設定會以逗號分隔。 以下是執行的程式：
 
 [![X:reference 示範](consuming-images/referencedemo-small.png "X:reference 示範")](consuming-images/referencedemo-large.png#lightbox "X:reference 示範")
 
@@ -449,7 +449,7 @@ public partial class TypeDemoPage : ContentPage
 
 然後您會發現其中一個`Label`項目，您想要在隱含的所有屬性設定`Style`除了`FontFamily`，您想要的預設值。 您可以定義另一個`Style`針對該目的，但更簡單的方法是直接設定`FontFamily`屬性的特定`Label`要`x:Null`中心 」 所示， `Label`。
 
-以下是三個平台上執行的程式：
+以下是執行的程式：
 
 [![X:null 示範](consuming-images/nulldemo-small.png "X:null 示範")](consuming-images/nulldemo-large.png#lightbox "X:null 示範")
 
@@ -493,7 +493,7 @@ public partial class TypeDemoPage : ContentPage
 
 在此範例中，這三`OnPlatform`運算式使用的縮寫的版本`OnPlatformExtension`類別名稱。 三個`OnPlatform`標記延伸模組組[ `Color` ](xref:Xamarin.Forms.BoxView.Color)， [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)，並[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)屬性[`BoxView` ](xref:Xamarin.Forms.BoxView) iOS、 Android 及 UWP 上的不同值。 標記延伸也提供預設值為未指定，同時不在平台上的這些屬性`Default=`運算式的一部分。 請注意，在以逗號分隔的標記延伸模組屬性所設定。
 
-以下是所有三個平台上執行的程式：
+以下是執行的程式：
 
 [![OnPlatform 示範](consuming-images/onplatformdemo-small.png "OnPlatform 示範")](consuming-images/onplatformdemo-large.png#lightbox "OnPlatform 示範")
 
@@ -531,7 +531,7 @@ public partial class TypeDemoPage : ContentPage
 
 在此範例中，這三`OnIdiom`運算式使用的縮寫的版本`OnIdiomExtension`類別名稱。 三個`OnIdiom`標記延伸模組組[ `Color` ](xref:Xamarin.Forms.BoxView.Color)， [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)，並[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)屬性[`BoxView` ](xref:Xamarin.Forms.BoxView)電話、 平板電腦和桌上型電腦的習慣用語上的不同值。 標記延伸也提供預設值，這些屬性中未指定，同時避免慣用語`Default=`運算式的一部分。 請注意，在以逗號分隔的標記延伸模組屬性所設定。
 
-以下是所有三個平台上執行的程式：
+以下是執行的程式：
 
 [![OnIdiom 示範](consuming-images/onidiomdemo-small.png "OnIdiom 示範")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom 示範")
 

@@ -7,12 +7,12 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 1da0ee6155548a38057e4c7bf49ae5b90d445d79
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 60024be0c39bd215a828acfd8a4ac6294eeac9d8
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615336"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172349"
 ---
 # <a name="three-types-of-bzier-curves"></a>三種類型的貝茲曲線
 
@@ -89,7 +89,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-這裡，它會執行所有三個平台上：
+以下執行：
 
 [![](beziers-images/beziercurve-small.png "貝茲曲線頁面的三個螢幕擷取畫面")](beziers-images/beziercurve-large.png#lightbox "的貝茲曲線頁面的三個螢幕擷取畫面")
 
@@ -207,7 +207,7 @@ float Magnitude(SKPoint v)
 
 開始和結束點 (`point0`和`point3`) 會計算是根據圓形一般參數化的方程式。 因為圓形中心位於 （0，0），這些點也可視為星形向量從圓形的中心來圓周。 控制點位於行的正切函數為圓形，讓它們為直角成這些星形的向量。 呈直角到另一個向量是只要原始向量與交換的 X 和 Y 座標和其中所做的負值。
 
-以下是三個不同的角度的三個平台上執行的程式：
+以下是執行不同的角度的程式：
 
 [![](beziers-images/beziercirculararc-small.png "貝茲圓弧頁面的三個螢幕擷取畫面")](beziers-images/beziercirculararc-large.png#lightbox "的貝茲圓弧頁面的三個螢幕擷取畫面")
 
@@ -289,7 +289,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-根據 sinusoidally 不穩定的值插補點`t`。 插補的點接著會用於建構一系列的四個連接的貝茲曲線。 以下是顯示從圓形進度，以正方形的三個平台上執行的動畫：
+根據 sinusoidally 不穩定的值插補點`t`。 插補的點接著會用於建構一系列的四個連接的貝茲曲線。 以下是執行動畫：
 
 [![](beziers-images/squaringthecircle-small.png "三重的螢幕擷取畫面的 Squaring 圓形頁面")](beziers-images/squaringthecircle-large.png#lightbox "Squaring 的三個螢幕擷取畫面 [圓形] 頁面")
 
@@ -338,7 +338,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 它可能是很好的演練來繪製圖形紙張上的這些座標，以查看它們相關。 無限大符號為中心點 （0，0），還有兩個迴圈的中心 （–150，0） 和 150 (0） 和半徑為 100。 中的一系列`CubicTo`命令，您可以看到 X 座標的控制點，採用 –95 和 –205 的值 （這些值都 –150 加號和減號 55） 205 和 95 (150 加號和減號 55)，以及 250 和左右兩邊的 –250。 唯一的例外狀況時，infinity 登跨越本身在中心。 在此情況下，控點會有 50 和組合 –50 矯正出中央附近的曲線的座標。
 
-以下是無限大登上所有的三個平台：
+以下是無限大符號：
 
 [![](beziers-images/bezierinfinity-small.png "貝茲無限大頁面的三個螢幕擷取畫面")](beziers-images/bezierinfinity-large.png#lightbox "的貝茲無限大頁面的三個螢幕擷取畫面")
 
@@ -401,7 +401,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-和以下所有的三個平台上執行它：
+並執行以下：
 
 [![](beziers-images/quadraticcurve-small.png "二次方曲線頁面的三個螢幕擷取畫面")](beziers-images/quadraticcurve-large.png#lightbox "二次方曲線頁面的三個螢幕擷取畫面")
 
@@ -479,7 +479,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-這裡，它會執行所有三個平台上：
+以下執行：
 
 [![](beziers-images/coniccurve-small.png "Conic 曲線頁面的三個螢幕擷取畫面")](beziers-images/coniccurve-large.png#lightbox "Conic 曲線頁面的三個螢幕擷取畫面")
 
