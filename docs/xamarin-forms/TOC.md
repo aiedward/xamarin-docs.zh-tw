@@ -134,6 +134,7 @@
 ### [DatePicker](user-interface/datepicker.md)
 ### [使用 Skiasharp 的圖形](user-interface/graphics/skiasharp/index.md)
 ### [影像](user-interface/images.md)
+### [ImageButton](user-interface/imagebutton.md)
 ### [版面配置](user-interface/layouts/index.md)
 #### [StackLayout](user-interface/layouts/stack-layout.md)
 #### [AbsoluteLayout](user-interface/layouts/absolute-layout.md)
