@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 0a1aa16aca1507153d691d5ec801a75e49e5d3ad
-ms.sourcegitcommit: 06a52ac36031d0d303ac7fc8163a59c178799c80
+ms.openlocfilehash: ff485774b8e9ee47aae4808701e8b9d20c308e03
+ms.sourcegitcommit: 676c5a6795ab4896ccd1b288424bf2040b1208aa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50911576"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52280474"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms 方格
 
@@ -172,8 +172,8 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2);
 
 ```csharp
 var grid = new Grid { ColumnSpacing = 5 };
-grid.ColumnDefnitions.Add(new ColumnDefinition { Width = new GridLength (1, GridUnitType.Star)});
-grid.ColumnDefnitions.Add(new ColumnDefinition { Width = new GridLength (1, GridUnitType.Star)});
+grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength (1, GridUnitType.Star)});
+grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength (1, GridUnitType.Star)});
 ```
 
 ### <a name="spans"></a>跨越
