@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: df6ef208957d8dae229ebb8aee2304444b7d18fe
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4f0378f7e2fe29a5d11c2cbc02fc736adf12577c
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111276"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171725"
 ---
 # <a name="manually-uploading-the-apk"></a>手動上傳 APK
 
@@ -125,7 +125,7 @@ Google Play 不允許將免費應用程式變更為付費應用程式 (不過，
 
 ### <a name="manage-countries"></a>管理國家/地區
 
-下一個區段 [管理國家/地區] 可控制可將應用程式發行至哪些國家/地區：
+下一個區段 [管理國家/地區] 可控制應用程式能發行到哪些國家/地區：
 
 [![[管理國家/地區] 對話方塊](manually-uploading-the-apk-images/13-manage-countries-sml.png)](manually-uploading-the-apk-images/13-manage-countries.png#lightbox)
 
@@ -169,7 +169,7 @@ Google Play 不允許將免費應用程式變更為付費應用程式 (不過，
 
 -   [uses-feature](http://developer.android.com/guide/topics/manifest/uses-feature-element.html) &ndash; 此資訊清單元素會宣告應用程式運作所需的裝置必備硬體或軟體功能。 此屬性只用來提供資訊。 Google Play 不會對不符合此篩選條件的裝置顯示此應用程式。 您仍可透過其他方式 (手動或下載) 安裝此應用程式。 此元素必須以手動方式新增至 **AndroidManifest.xml**。 
 
--   [uses-library](http://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; 此元素會指定裝置上必須要有特定的共用程式庫，例如 Google Maps。 指定此元素時，也可以使用 `Android.App.UsesLibaryAttribute` 來指定。 例如:  
+-   [uses-library](http://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; 此元素會指定裝置上必須要有特定的共用程式庫，例如 Google Maps。 指定此元素時，也可以使用 `Android.App.UsesLibraryAttribute` 來指定。 例如:  
 
     ```csharp
     [assembly: UsesLibrary("com.google.android.maps", true)]
