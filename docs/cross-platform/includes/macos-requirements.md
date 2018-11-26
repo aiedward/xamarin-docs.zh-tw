@@ -1,4 +1,4 @@
-||建議|附註|
+||建議|注意|
 |---|---|---|
 |**作業系統**|macOS High Sierra|[Xcode 9](https://developer.apple.com/library/archive/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html#//apple_ref/doc/uid/TP40001051-CH1-SW876) 需要 macOS High Sierra 或更新版本。|
 |**Xamarin.iOS**|iOS 11 SDK|iOS 11 SDK 隨附 [Xcode 9](https://developer.apple.com/library/archive/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html#//apple_ref/doc/uid/TP40001051-CH1-SW876)|

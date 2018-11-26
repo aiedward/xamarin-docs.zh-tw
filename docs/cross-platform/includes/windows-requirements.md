@@ -1,4 +1,4 @@
-||建議|附註|
+||建議|注意|
 |---|---|---|
 |**作業系統**|Windows 10|最低作業系統版本是 Windows 7。 Xamarin.Forms UWP 支援需要 Windows 10。
 |**Xamarin.iOS**|iOS 10 SDK (安裝在 Mac 上)|若要在 Windows 上建置 iOS 專案，需要：<ul><li>Visual Studio 2017 與</li><li>可從 Windows 電腦<a href="~/ios/get-started/installation/windows/connecting-to-mac/index.md">透過網路存取</a>的 Mac 電腦，此電腦須符合在 macOS 上執行 Xamarin 的最低需求。</li></ul>|
