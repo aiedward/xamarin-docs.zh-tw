@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 5145572b30302e58c36250fff40e8b637fcd221f
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 2607298bdc0842f60a1d1a3299bed61bbea925a1
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995071"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459859"
 ---
 # <a name="styling-xamarinforms-apps-using-xaml-styles"></a>使用 XAML 樣式的樣式設定 Xamarin.Forms 應用程式
 
 ## <a name="introductionintroductionmd"></a>[簡介](introduction.md)
 
-Xamarin.Forms 應用程式通常會包含多個具有相同的外觀的控制項。 設定每個個別控制項的外觀可能重複又容易出錯。 相反地，樣式可以建立自訂控制項外觀的群組和控制項型別上可用的設定屬性。
+Xamarin.Forms 應用程式通常會包含多個具有相同的外觀的控制項。 設定每個個別控制項的外觀可能重複又容易出錯。 相反地，樣式可以建立群組並設定上的控制項類型的屬性可用來自訂控制項外觀。
 
 ## <a name="explicit-stylesexplicitmd"></a>[明確樣式](explicit.md)
 

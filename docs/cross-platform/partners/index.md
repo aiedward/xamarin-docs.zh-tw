@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 09/17/2018
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: 5165d8f61973b82105c1b2e39d8bf316d0c2b42b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c61ed731f22122637963c28c42f44b84ec7fa9f4
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121421"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459950"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>認證來傳遞行動解決方案的諮詢合作夥伴
 
@@ -290,7 +290,7 @@ _許多協力廠商列出主要位置，對外提供服務。_
 
 | Partner | 位置 | 描述 |
 | --- | --- | --- |
-|[高檢視軟體](http://www.highviewsoft.com)|北京，中國|Visionsoft 軟體著重於提供跨平台應用程式和雲端服務的程式設計、 開發、 實作、 技術訓練和其他諮詢服務|
+|[高檢視軟體](http://www.highviewsoft.com)|北京，中國|高檢視軟體著重於提供跨平台應用程式和雲端服務的程式設計、 開發、 實作、 技術訓練和其他諮詢服務|
 
 
 ## <a name="colombia"></a>哥倫比亞

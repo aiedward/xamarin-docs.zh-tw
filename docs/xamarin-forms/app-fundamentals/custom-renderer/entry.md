@@ -6,13 +6,13 @@ ms.assetid: 7B5DD10D-0411-424F-88D8-8A474DF16D8D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/29/2017
-ms.openlocfilehash: 30326b8d52f39268015bdcbee1b84b9d9e5516b9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 11/26/2018
+ms.openlocfilehash: 7fea736b0a04a69fd64100ae1d6bcd42c244359f
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998956"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459846"
 ---
 # <a name="customizing-an-entry"></a>自訂項目
 
@@ -31,6 +31,9 @@ _Xamarin.Forms 的項目控制項可讓單行編輯的文字。這篇文章會�
 1. [建立](#Creating_the_Custom_Renderer_on_each_Platform)自訂轉譯器，針對每個平台上的控制項。
 
 每個項目會現在依次討論實作[ `Entry` ](xref:Xamarin.Forms.Entry)每個平台有不同的背景色彩的控制項。
+
+> [!IMPORTANT]
+> 這篇文章說明如何建立簡單的自訂轉譯器。 不過，不需要建立自訂轉譯器來實作`Entry`每個平台上具有不同的背景色彩。 這可更輕鬆地透過使用[ `Device` ](xref:Xamarin.Forms.Device)類別，或`OnPlatform`標記延伸，以提供平台特定的值。 如需詳細資訊，請參閱 <<c0> [ 提供的平台特定的值](~/xamarin-forms/platform/device.md#providing-platform-specific-values)並[OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
 
 <a name="Creating_the_Custom_Entry_Control" />
 

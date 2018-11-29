@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: bb70dac34847cf46bd06cc20b87df8ea5f72105a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 40d4a6cbd3bb8e3bd4c55c50c69f85f91d94feac
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115181"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459924"
 ---
 # <a name="callkit-in-xamarinios"></a>在 Xamarin.iOS 中 CallKit
 
@@ -423,14 +423,14 @@ namespace MonkeyCall
             // Define handle types
             var handleTypes = new [] { (NSNumber)(int)CXHandleType.PhoneNumber };
 
-            // Get Image Mask
-            var maskImage = UIImage.FromFile ("telephone_receiver.png");
+            // Get Image Template
+            var templateImage = UIImage.FromFile ("telephone_receiver.png");
 
             // Setup the initial configurations
             Configuration = new CXProviderConfiguration ("MonkeyCall") {
                 MaximumCallsPerCallGroup = 1,
                 SupportedHandleTypes = new NSSet<NSNumber> (handleTypes),
-                IconMaskImageData = maskImage.AsPNG(),
+                IconTemplateImageData = templateImage.AsPNG(),
                 RingtoneSound = "musicloop01.wav"
             };
 
@@ -459,14 +459,14 @@ namespace MonkeyCall
             activeCall.StartingConnectionChanged += (call) => {
                 if (call.isConnecting) {
                     // Inform system that the call is starting
-                    Provider.ReportConnectingOutgoingCall (call.UUID, call.StartedConnectingOn.ToNsDate());
+                    Provider.ReportConnectingOutgoingCall (call.UUID, call.StartedConnectingOn.ToNSDate());
                 }
             };
 
             activeCall.ConnectedChanged += (call) => {
                 if (call.isConnected) {
                     // Inform system that the call has connected
-                    provider.ReportConnectedOutgoingCall (call.UUID, call.ConnectedOn.ToNsDate ());
+                    provider.ReportConnectedOutgoingCall (call.UUID, call.ConnectedOn.ToNSDate ());
                 }
             };
 
@@ -606,11 +606,11 @@ namespace MonkeyCall
 var handleTypes = new [] { (NSNumber)(int)CXHandleType.PhoneNumber };
 ```
 
-然後它會取得在進行呼叫時將套用至應用程式的圖示的遮罩：
+然後它會取得範本映像，在進行呼叫時將套用至應用程式的圖示：
 
 ```csharp
-// Get Image Mask
-var maskImage = UIImage.FromFile ("telephone_receiver.png");
+// Get Image Template
+var templateImage = UIImage.FromFile ("telephone_receiver.png");
 ```
 
 這些值取得打包成`CXProviderConfiguration`會用來設定`CXProvider`:
@@ -620,7 +620,7 @@ var maskImage = UIImage.FromFile ("telephone_receiver.png");
 Configuration = new CXProviderConfiguration ("MonkeyCall") {
     MaximumCallsPerCallGroup = 1,
     SupportedHandleTypes = new NSSet<NSNumber> (handleTypes),
-    IconMaskImageData = maskImage.AsPNG(),
+    IconTemplateImageData = templateImage.AsPNG(),
     RingtoneSound = "musicloop01.wav"
 };
 ```
@@ -959,14 +959,14 @@ public override void PerformStartCallAction (CXProvider provider, CXStartCallAct
     activeCall.StartingConnectionChanged += (call) => {
         if (call.IsConnecting) {
             // Inform system that the call is starting
-            Provider.ReportConnectingOutgoingCall (call.UUID, call.StartedConnectingOn.ToNsDate());
+            Provider.ReportConnectingOutgoingCall (call.UUID, call.StartedConnectingOn.ToNSDate());
         }
     };
 
     activeCall.ConnectedChanged += (call) => {
         if (call.IsConnected) {
             // Inform system that the call has connected
-            Provider.ReportConnectedOutgoingCall (call.UUID, call.ConnectedOn.ToNsDate ());
+            Provider.ReportConnectedOutgoingCall (call.UUID, call.ConnectedOn.ToNSDate ());
         }
     };
 
@@ -1044,7 +1044,7 @@ public void EndCall (ActiveCall call)
 
 - 顯示當地語系化的名稱。
 - 啟用視訊通話的支援。
-- 自訂中呼叫 UI 上的按鈕會呈現其本身的遮罩的影像圖示。 具有自訂按鈕的使用者互動會直接傳送至應用程式進行處理。 
+- 自訂中呼叫 UI 上的按鈕會呈現它自己的範本影像圖示。 具有自訂按鈕的使用者互動會直接傳送至應用程式進行處理。 
 
 ### <a name="action-errors"></a>動作錯誤
 

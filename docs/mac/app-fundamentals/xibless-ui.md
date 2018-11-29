@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: e41f19c1a2d02537f300ae82b7f3d45bc6571e1b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 076c6464359a58c2b36d157d9620673b0644cd4a
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112445"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459833"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>xamarin.mac.storyboard/.xib-less 使用者介面設計
 
@@ -34,7 +34,7 @@ _本文涵蓋建立 Xamarin.Mac 應用程式的使用者介面，直接從C#程�
 
 若要切換至應用程式的 Xibless 視窗，執行下列作業：
 
-1. 開啟您想要停止使用該應用程式`.stroyboard`或.xib 檔案，用於定義在 Visual Studio 中的使用者介面，for mac。
+1. 開啟您想要停止使用該應用程式`.storyboard`或.xib 檔案，用於定義在 Visual Studio 中的使用者介面，for mac。
 2. 在  **Solution Pad**，以滑鼠右鍵按一下**Main.storyboard**或是**MainWindow.xib**檔案，然後選取**移除**: 
 
     ![移除 [主要腳本] 或視窗](xibless-ui-images/switch01.png "移除主要腳本或視窗")

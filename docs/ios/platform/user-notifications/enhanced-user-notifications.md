@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: d1b1a59b432315532844f8fca3b613ff3392a7b5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bfbb8c2b189defeb6efb07388ea34425c239c061
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108238"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459885"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>在 Xamarin.iOS 中增強的使用者通知
 
@@ -58,7 +58,7 @@ IOS 應用程式可以傳送本機通知具有下列功能和屬性：
 - 提醒警示
 - 位置感知的觸發程序
 
-如需詳細資訊，請參閱 Apple[本機和遠端通知程式設計指南](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)文件。
+如需詳細資訊，請參閱 Apple[本機和遠端通知程式設計指南](https://developer.apple.com/documentation/usernotifications)文件。
 
 ### <a name="about-remote-notifications"></a>關於遠端通知
 
@@ -80,7 +80,7 @@ IOS 應用程式可以傳送遠端通知具有下列功能和屬性：
 - **使用者對象**-使用者在裝置上看到這些。
 - **無訊息更新**-這些提供一個機制來更新 iOS 應用程式在背景中的內容。 當收到無訊息的更新時，應用程式可以連到移除的伺服器會下拉最新的內容。
 
-如需詳細資訊，請參閱 Apple[本機和遠端通知程式設計指南](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)文件。
+如需詳細資訊，請參閱 Apple[本機和遠端通知程式設計指南](https://developer.apple.com/documentation/usernotifications)文件。
 
 ### <a name="about-the-existing-notifications-api"></a>現有的通知 API 的相關資訊
 
@@ -202,7 +202,7 @@ UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 
 語彙基元做為繫結在一起的通知和應用程式用來開啟或回應通知的索引鍵。
 
-如需詳細資訊，請參閱 Apple[本機和遠端通知程式設計指南](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)文件。
+如需詳細資訊，請參閱 Apple[本機和遠端通知程式設計指南](https://developer.apple.com/documentation/usernotifications)文件。
 
 ## <a name="notification-delivery"></a>通知傳遞
 
@@ -672,4 +672,4 @@ namespace myApp {
 - [iOS 10 範例](https://developer.xamarin.com/samples/ios/iOS10/)
 - [UserNotifications 架構參考](https://developer.apple.com/reference/usernotifications)
 - [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
-- [本機和遠端通知程式設計指南](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
+- [本機和遠端通知程式設計指南](https://developer.apple.com/documentation/usernotifications)
