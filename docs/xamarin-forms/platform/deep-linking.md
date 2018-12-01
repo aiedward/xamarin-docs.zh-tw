@@ -1,23 +1,23 @@
 ---
 title: 應用程式編製索引和深層連結
-description: 這篇文章會示範如何使用應用程式編製索引和深層連結，讓 Xamarin.Forms 應用程式內容的可搜尋在 iOS 和 Android 裝置上。
+description: 這篇文章說明如何使用應用程式編製索引和深層連結，讓 Xamarin.Forms 應用程式內容的可搜尋在 iOS 和 Android 裝置上。
 ms.prod: xamarin
 ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
 ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/11/2016
-ms.openlocfilehash: 7a102765a3633b8abaf01b3f090d8253230bc16b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 11/28/2018
+ms.openlocfilehash: f73760e2dc2310a9c1cd7a63a03ead37283a415f
+ms.sourcegitcommit: 215cad17324ba3fbc23487ce66cd4e1cc74eb879
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996092"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52710006"
 ---
 # <a name="application-indexing-and-deep-linking"></a>應用程式編製索引和深層連結
 
-_應用程式編製索引，可讓會否則會被遺忘後幾個使用的搜尋結果中出現掌握新知的應用程式。深層連結，可讓應用程式，以回應包含應用程式資料，通常由巡覽至頁面的深層連結從參考的搜尋結果。這篇文章會示範如何使用應用程式編製索引和深層連結，讓 Xamarin.Forms 應用程式內容的可搜尋在 iOS 和 Android 裝置上。_
+_應用程式編製索引，可讓會否則會被遺忘後幾個使用的搜尋結果中出現掌握新知的應用程式。深層連結，可讓應用程式，以回應包含應用程式資料，通常由巡覽至頁面的深層連結從參考的搜尋結果。這篇文章說明如何使用應用程式編製索引和深層連結，讓 Xamarin.Forms 應用程式內容的可搜尋在 iOS 和 Android 裝置上。_
 
 > [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
 
@@ -32,10 +32,10 @@ Xamarin.Forms 應用程式編製索引和深層連結提供的 API 應用程式�
 
 每個`TodoItem`使用者所建立的執行個體也會編製索引。 平台特有的搜尋可用來找出索引的資料，從應用程式。 當使用者點選應用程式在搜尋結果項目上時，啟動應用程式，`TodoItemPage`巡覽，而`TodoItem`參考從深層連結會顯示。
 
-如需使用 SQLite 資料庫的詳細資訊，請參閱[使用本機資料庫](~/xamarin-forms/app-fundamentals/databases.md)。
+如需使用 SQLite 資料庫的詳細資訊，請參閱[Xamarin.Forms 本機資料庫](~/xamarin-forms/app-fundamentals/databases.md)。
 
 > [!NOTE]
-> Xamarin.Forms 應用程式編製索引和深層連結功能僅適用於 iOS 和 Android 平台，而且分別需要 iOS 9 和 API 23。
+> Xamarin.Forms 應用程式編製索引和深層連結功能只適用於 iOS 和 Android 平台，而且分別需要 iOS 9 和 API 23 的最小值。
 
 ## <a name="setup"></a>安裝程式
 
@@ -43,7 +43,15 @@ Xamarin.Forms 應用程式編製索引和深層連結提供的 API 應用程式�
 
 ### <a name="ios"></a>iOS
 
-IOS 平台上沒有不需要額外的設定，才能使用這項功能。
+在 iOS 平台，請確定您的 iOS 平台專案設定**Entitlements.plist**與自訂權利檔案來簽署套件組合的檔案。
+
+若要使用 iOS 通用連結：
+
+1. 新增您的應用程式的相關聯的網域權利`applinks`您的應用程式將支援索引鍵，包括所有定義域。
+1. 將 Apple 應用程式的站台關聯的檔案新增至您的網站。
+1. 新增`applinks`Apple 應用程式的站台關聯的檔案索引鍵。
+
+如需詳細資訊，請參閱 <<c0> [ 可讓應用程式和連結至您內容的網站](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content)developer.apple.com 上。
 
 ### <a name="android"></a>Android
 
@@ -56,12 +64,20 @@ Android 平台上，有一些必須符合，以使用應用程式編製索引和
 一旦符合這些必要條件，下列的其他設定，才能使用 Xamarin.Forms 應用程式編製索引和深層連結的 Android 平台：
 
 1. 安裝[Xamarin.Forms.AppLinks](https://www.nuget.org/packages/Xamarin.Forms.AppLinks/)到 Android 應用程式專案的 NuGet 套件。
-1. 在 `MainActivity.cs`檔案中，匯入`Xamarin.Forms.Platform.Android.AppLinks`命名空間。
+1. 在  **MainActivity.cs**檔案中，將宣告新增至使用`Xamarin.Forms.Platform.Android.AppLinks`命名空間。
+1. 在  **MainActivity.cs**檔案中，將宣告新增至使用`Firebase`命名空間。
+1. 在 web 瀏覽器中，會建立新的專案，透過[Firebase 主控台](https://console.firebase.google.com/)。
+1. 在 Firebase 主控台中，將 Firebase 新增至 Android 應用程式，並輸入所需的資料。
+1. 下載產生**google-services.json**檔案。
+1. 新增**google-services.json**檔案至 Android 專案的根目錄，並設定其**建置動作**來**GoogleServicesJson**。
 1. 在 `MainActivity.OnCreate`覆寫，加入下列這一行下方的程式碼`Forms.Init(this, bundle)`:
 
 ```csharp
-AndroidAppLinks.Init (this);
+FirebaseApp.InitializeApp(this);
+AndroidAppLinks.Init(this);
 ```
+
+當**google-services.json**加入至專案 (而*GoogleServicesJson** 建置動作設定)，建置程序會擷取用戶端識別碼和 API 金鑰，並將新增到這些認證產生的資訊清單檔案。
 
 如需詳細資訊，請參閱 <<c0> [ 深層連結內容的 URL 導覽 Xamarin.Forms](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/) Xamarin 部落格上。
 
@@ -75,29 +91,33 @@ AndroidAppLinks.Init (this);
 下列程式碼範例示範如何建立[ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry)執行個體：
 
 ```csharp
-AppLinkEntry GetAppLink (TodoItem item)
+AppLinkEntry GetAppLink(TodoItem item)
 {
-  var pageType = GetType ().ToString ();
-  var pageLink = new AppLinkEntry {
-    Title = item.Name,
-    Description = item.Notes,
-    AppLinkUri = new Uri (string.Format ("http://{0}/{1}?id={2}",
-      App.AppName, pageType, WebUtility.UrlEncode (item.ID)), UriKind.RelativeOrAbsolute),
-    IsLinkActive = true,
-    Thumbnail = ImageSource.FromFile ("monkey.png")
-  };
+    var pageType = GetType().ToString();
+    var pageLink = new AppLinkEntry
+    {
+        Title = item.Name,
+        Description = item.Notes,
+        AppLinkUri = new Uri($"http://{App.AppName}/{pageType}?id={item.ID}", UriKind.RelativeOrAbsolute),
+        IsLinkActive = true,
+        Thumbnail = ImageSource.FromFile("monkey.png")
+    };
 
-  return pageLink;
+    pageLink.KeyValues.Add("contentType", "TodoItemPage");
+    pageLink.KeyValues.Add("appName", App.AppName);
+    pageLink.KeyValues.Add("companyName", "Xamarin");
+
+    return pageLink;
 }
 ```
 
 [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry)執行個體會包含其值是 [索引] 頁面及建立所需的深層連結的屬性數目。 [ `Title` ](xref:Xamarin.Forms.IAppLinkEntry.Title)， [ `Description` ](xref:Xamarin.Forms.IAppLinkEntry.Description)，以及[ `Thumbnail` ](xref:Xamarin.Forms.IAppLinkEntry.Thumbnail)屬性用來識別索引的內容，當它出現在搜尋結果。 [ `IsLinkActive` ](xref:Xamarin.Forms.IAppLinkEntry.IsLinkActive)屬性設定為`true`表示目前檢視索引的內容。 [ `AppLinkUri` ](xref:Xamarin.Forms.IAppLinkEntry.AppLinkUri)屬性是`Uri`，其中包含要傳回至目前頁面並顯示目前所需的資訊`TodoItem`。 下列範例示範`Uri`範例應用程式：
 
 ```csharp
-http://deeplinking/DeepLinking.TodoItemPage?id=ec38ebd1-811e-4809-8a55-0d028fce7819
+http://deeplinking/DeepLinking.TodoItemPage?id=2
 ```
 
-這`Uri`包含啟動所需的所有資訊`deeplinking`應用程式中，瀏覽至`DeepLinking.TodoItemPage`，並顯示`TodoItem`具有`ID`的`ec38ebd1-811e-4809-8a55-0d028fce7819`。
+這`Uri`包含啟動所需的所有資訊`deeplinking`應用程式中，瀏覽至`DeepLinking.TodoItemPage`，並顯示`TodoItem`具有`ID`為 2。
 
 ## <a name="registering-content-for-indexing"></a>註冊內容編製索引
 
@@ -138,30 +158,28 @@ Application.Current.AppLinks.DeregisterLink (appLink);
 ```csharp
 public class App : Application
 {
-  ...
+    ...
+    protected override async void OnAppLinkRequestReceived(Uri uri)
+    {
+        string appDomain = "http://" + App.AppName.ToLowerInvariant() + "/";
+        if (!uri.ToString().ToLowerInvariant().StartsWith(appDomain, StringComparison.Ordinal))
+            return;
 
-  protected override async void OnAppLinkRequestReceived (Uri uri)
-  {
-    string appDomain = "http://" + App.AppName.ToLowerInvariant () + "/";
-    if (!uri.ToString ().ToLowerInvariant ().StartsWith (appDomain)) {
-      return;
+        string pageUrl = uri.ToString().Replace(appDomain, string.Empty).Trim();
+        var parts = pageUrl.Split('?');
+        string page = parts[0];
+        string pageParameter = parts[1].Replace("id=", string.Empty);
+
+        var formsPage = Activator.CreateInstance(Type.GetType(page));
+        var todoItemPage = formsPage as TodoItemPage;
+        if (todoItemPage != null)
+        {
+            var todoItem = await App.Database.GetItemAsync(int.Parse(pageParameter));
+            todoItemPage.BindingContext = todoItem;
+            await MainPage.Navigation.PushAsync(formsPage as Page);
+        }
+        base.OnAppLinkRequestReceived(uri);
     }
-
-    string pageUrl = uri.ToString ().Replace (appDomain, string.Empty).Trim ();
-    var parts = pageUrl.Split ('?');
-    string page = parts [0];
-    string pageParameter = parts [1].Replace ("id=", string.Empty);
-
-    var formsPage = Activator.CreateInstance (Type.GetType (page));
-    var todoItemPage = formsPage as TodoItemPage;
-    if (todoItemPage != null) {
-      var todoItem = App.Database.Find (pageParameter);
-      todoItemPage.BindingContext = todoItem;
-      await MainPage.Navigation.PushAsync (formsPage as Page);
-    }
-
-    base.OnAppLinkRequestReceived (uri);
-  }
 }
 ```
 
@@ -174,23 +192,25 @@ public class App : Application
 下列程式碼範例示範如何設定[ `AppLinkEntry.IsLinkActive` ](xref:Xamarin.Forms.IAppLinkEntry.IsLinkActive)屬性設`true`中[ `Page.OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing)覆寫：
 
 ```csharp
-protected override void OnAppearing ()
+protected override void OnAppearing()
 {
-  appLink = GetAppLink (BindingContext as TodoItem);
-  if (appLink != null) {
-    appLink.IsLinkActive = true;
-  }
+    appLink = GetAppLink(BindingContext as TodoItem);
+    if (appLink != null)
+    {
+        appLink.IsLinkActive = true;
+    }
 }
 ```
 
 同樣地，當您巡覽離開的表示的深層連結的網頁是，才[ `AppLinkEntry.IsLinkActive` ](xref:Xamarin.Forms.IAppLinkEntry.IsLinkActive)屬性可以設定為`false`。 在 iOS 和 Android 上，這樣會阻止[ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry)通告搜尋索引，然後在 iOS，it 也的執行個體停止廣告`AppLinkEntry`遞移式的執行個體。 這可在[ `Page.OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing)覆寫，如下列程式碼範例所示：
 
 ```csharp
-protected override void OnDisappearing ()
+protected override void OnDisappearing()
 {
-  if (appLink != null) {
-    appLink.IsLinkActive = false;
-  }
+    if (appLink != null)
+    {
+        appLink.IsLinkActive = false;
+    }
 }
 ```
 
@@ -199,8 +219,9 @@ protected override void OnDisappearing ()
 在 iOS 上，應用程式專屬資料可以儲存在索引頁面時。 做法是將資料加入至[ `KeyValues` ](xref:Xamarin.Forms.IAppLinkEntry.KeyValues)集合，也就是`Dictionary<string, string>`將使用的索引鍵 / 值組儲存在遞移式。 遞移式是方法，以讓使用者針對其裝置的其中一個開始活動，並繼續該活動在其裝置的另一個 （識別使用者的 iCloud 帳戶）。 下列程式碼顯示將儲存應用程式特定索引鍵 / 值組的範例：
 
 ```csharp
-var pageLink = new AppLinkEntry {
-  ...  
+var pageLink = new AppLinkEntry
+{
+    ...
 };
 pageLink.KeyValues.Add("appName", App.AppName);
 pageLink.KeyValues.Add("companyName", "Xamarin");
@@ -221,8 +242,7 @@ pageLink.KeyValues.Add("companyName", "Xamarin");
 
 ## <a name="summary"></a>總結
 
-這篇文章會示範如何使用應用程式編製索引和深層連結，讓 Xamarin.Forms 應用程式內容的可搜尋在 iOS 和 Android 裝置上。 應用程式編製索引，可讓應用程式，以藉由將否則會忘記後幾個使用的搜尋結果中出現掌握新知。
-
+這篇文章說明如何使用應用程式編製索引和深層連結，讓 Xamarin.Forms 應用程式內容的可搜尋在 iOS 和 Android 裝置上。 應用程式編製索引，可讓應用程式，以藉由將否則會忘記後幾個使用的搜尋結果中出現掌握新知。
 
 ## <a name="related-links"></a>相關連結
 

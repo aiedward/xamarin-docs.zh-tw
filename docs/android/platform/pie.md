@@ -1,5 +1,5 @@
 ---
-title: Android 9 的圓形圖
+title: Android 9 Pie
 description: 如何開始使用 Xamarin.Android 的 Android 9 圓形圖中開發應用程式。
 ms.prod: xamarin
 ms.assetid: 6575DD32-9DC8-44E6-85EF-1F8BD07D3780
@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: c353341af8899960b12437d55602415a02953cbc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: cd1c374fa68420e1923ef4dee0bb37a4665f3535
+ms.sourcegitcommit: 215cad17324ba3fbc23487ce66cd4e1cc74eb879
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111560"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52710019"
 ---
 # <a name="android-pie-features"></a>Android 的圓形圖功能
 
@@ -24,9 +24,7 @@ _如何開始使用 Xamarin.Android 的 Android 9 圓形圖中開發應用程式
 
 這篇文章是結構化，以協助您開始在 Android 圓形圖開發 Xamarin.Android 應用程式。 它會說明如何安裝必要的更新、 設定 SDK，以及準備的模擬器或裝置上的進行測試。 它也概述 Android 圓形圖中的新功能，並提供說明如何使用一些關鍵的 Android 圓形圖功能的範例原始程式碼。
 
-![預覽](~/media/shared/preview.png)
-
-Xamarin.Android 9.0 提供 Android 圓形圖的預覽支援。 如需 Android 圓形圖的 Xamarin.Android 支援的詳細資訊，請參閱[Android P Developer Preview 3](https://developer.xamarin.com/releases/android/xamarin.android_9/xamarin.android_9.0/#android-p-dp1)版本資訊。
+Xamarin.Android 9.0 提供支援 Android 的圓形圖。 如需 Android 圓形圖的 Xamarin.Android 支援的詳細資訊，請參閱[Android P Developer Preview 3](https://developer.xamarin.com/releases/android/xamarin.android_9/xamarin.android_9.0/#android-p-dp1)版本資訊。
 
 ## <a name="requirements"></a>需求
 
@@ -142,7 +140,7 @@ Window.Attributes.LayoutInDisplayCutoutMode =
 
 如果您需要在裝置上的裁剪區域的詳細的資訊，您可以使用新[DisplayCutout](https://developer.android.com/reference/android/view/DisplayCutout.html)類別。 `DisplayCutout` 表示不能用來顯示內容的顯示區域。 若要擷取的位置和形狀裁剪，讓您的應用程式不會嘗試在此非功能性的區域中顯示內容，您可以使用這項資訊。
 
-如需 Android P 中新的裁剪功能的詳細資訊，請參閱[顯示空心支援](https://developer.android.com/preview/features#cutout)。
+如需 Android P 中新的裁剪功能的詳細資訊，請參閱[顯示空心支援](https://developer.android.com/about/versions/pie/android-9.0#cutout)。
 
 
 
@@ -223,12 +221,12 @@ Android 的圓形圖提供支援 IEEE 802.11mc (也稱為_WiFi Round 來回時�
 
 ### <a name="multi-camera-support"></a>多重攝影機支援
 
-許多較新的 Android 裝置有雙重前端和/或雙重後可用於這類功能是立體聲的願景、 增強的視覺效果，以及改善的縮放功能的相機。 Android P 導入了新[多重攝影機](https://developer.android.com/preview/features#camera)可讓您的應用程式使用的 API*邏輯相機*(或*邏輯多相機*) 由二或多個備份實體的相機。
+許多較新的 Android 裝置有雙重前端和/或雙重後可用於這類功能是立體聲的願景、 增強的視覺效果，以及改善的縮放功能的相機。 Android P 導入了新[多重攝影機](https://developer.android.com/about/versions/pie/android-9.0#camera)可讓您的應用程式使用的 API*邏輯相機*(或*邏輯多相機*) 由二或多個備份實體的相機。
 若要判斷是否裝置支援邏輯的多個相機，您可以查看每個裝置上的相機的功能，以查看它是否支援[RequestAvailableCapabilitiesLogicalMultiCamera](https://developer.android.com/reference/android/hardware/camera2/CameraMetadata#REQUEST_AVAILABLE_CAPABILITIES_LOGICAL_MULTI_CAMERA)。
 
 Android 的圓形圖也包含新[SessionConfiguration](https://developer.android.com/reference/android/hardware/camera2/params/SessionConfiguration.html)可用來協助減少延遲，在初始擷取期間並不需要啟動，並啟動相機資料流的類別。
 
-如需有關多重攝影機支援 Android P，請參閱 <<c0> [ 多重攝影機支援和相機更新](https://developer.android.com/preview/features#camera)。
+如需有關多重攝影機支援 Android P，請參閱 <<c0> [ 多重攝影機支援和相機更新](https://developer.android.com/about/versions/pie/android-9.0#camera)。
 
 
 ### <a name="other-features"></a>其他功能
@@ -256,7 +254,7 @@ Android 的圓形圖也包含新[SessionConfiguration](https://developer.android
 
 -  不再允許直接存取另一個應用程式的資料目錄的路徑。
 
-如需目標 Android P 的應用程式的行為變更的詳細資訊，請參閱[行為變更](https://developer.android.com/preview/behavior-changes.html#p-apps)。
+如需目標 Android P 的應用程式的行為變更的詳細資訊，請參閱[行為變更](https://developer.android.com/about/versions/pie/android-9.0-changes-all#p-apps)。
 
 
 ## <a name="sample-code"></a>範例程式碼
