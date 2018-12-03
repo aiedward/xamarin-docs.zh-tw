@@ -427,7 +427,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 [![範例螢幕擷取畫面顯示在畫面的右上角的列印功能表項目](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
 
 
-其他功能表項目可以在定義* 功能表*目錄下*資源*。 下列程式碼定義範例功能表項目呼叫[列印](https://developer.xamarin.com/api/type/Android.Print.PrintManager/):
+其他功能表項目可以在定義 *功能表* 目錄下 *資源*。 下列程式碼定義範例功能表項目呼叫[列印](https://developer.xamarin.com/api/type/Android.Print.PrintManager/):
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -439,7 +439,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 ```
 
 在活動中的 [選項] 功能表的互動會透過`OnCreateOptionsMenu`和`OnOptionsItemSelected`方法。
-`OnCreateOptionsMenu` 可供新增新的功能表項目，例如 列印 選項中，從* 功能表*資源目錄。
+`OnCreateOptionsMenu` 可供新增新的功能表項目，例如 列印 選項中，從 * 功能表* 資源目錄。
 `OnOptionsItemSelected` 會接聽在使用者從功能表中，選取 [列印] 選項，並開始列印：
 
 ```csharp

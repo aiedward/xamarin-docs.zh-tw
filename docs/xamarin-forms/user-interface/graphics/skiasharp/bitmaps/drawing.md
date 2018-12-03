@@ -494,7 +494,7 @@ public partial class BitmapRotatorPage : ContentPage
 
 呼叫另一個作業通常對點陣圖_翻轉_。 就概念而言，在垂直軸或透過中央的點陣圖的水平軸周圍的三個維度旋轉點陣圖。 垂直翻轉建立鏡像映像。
 
-**點陣圖擋板**頁面**[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式會示範這些程序。 XAML 檔案包含`SKCanvasView`和的垂直和水平翻轉的兩個按鈕：
+**點陣圖擋板**頁面 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式會示範這些程序。 XAML 檔案包含`SKCanvasView`和的垂直和水平翻轉的兩個按鈕：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

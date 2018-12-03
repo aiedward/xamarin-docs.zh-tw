@@ -211,7 +211,7 @@ AppKit 控制項可以存取 C# 程式碼之前，必須為公開**插座**或�
 
 [![](standard-controls-images/edit12.png "拖曳以建立輸出或動作")](standard-controls-images/edit12.png#lightbox)
 
-選取 建立並讓公開的型別**插座**或是**動作****名稱**: 
+選取 建立並讓公開的型別 **插座** 或是 **動作** **名稱** : 
 
 [![](standard-controls-images/edit13.png "設定動作的輸出")](standard-controls-images/edit13.png#lightbox)
 

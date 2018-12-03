@@ -21,7 +21,7 @@ ms.locfileid: "51526516"
 開發人員可以共用這項工作，藉由撰寫_外掛程式_並將其發佈至 NuGet。
 
 > [!NOTE]
-> 許多先前僅能透過外掛程式的跨平台功能現在是開放原始碼的一部分**[Xamarin.Essentials](~/essentials/index.md)** 程式庫。 這些功能包括： 電池狀態、 羅盤、 動作感應器、 地理位置、 文字轉換語音，和更多。 未來**Xamarin.Essentials**會用於 Xamarin.Forms 應用程式的跨平台功能的主要來源。 雖然開發人員仍然可以建立和發行外掛程式，請考慮參與**Xamarin.Essentials**。
+> 許多先前僅能透過外掛程式的跨平台功能現在是開放原始碼的一部分 **[Xamarin.Essentials](~/essentials/index.md)** 程式庫。 這些功能包括： 電池狀態、 羅盤、 動作感應器、 地理位置、 文字轉換語音，和更多。 未來**Xamarin.Essentials**會用於 Xamarin.Forms 應用程式的跨平台功能的主要來源。 雖然開發人員仍然可以建立和發行外掛程式，請考慮參與**Xamarin.Essentials**。
 
 ## <a name="finding-and-adding-plugins"></a>尋找及加入外掛程式
 
