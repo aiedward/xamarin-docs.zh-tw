@@ -394,8 +394,6 @@ items:
       href: ~/essentials/compass.md?context=xamarin/android
     - name: 連線能力
       href: ~/essentials/connectivity.md?context=xamarin/android
-    - name: 資料傳輸
-      href: ~/essentials/data-transfer.md?context=xamarin/android
     - name: 裝置顯示資訊
       href: ~/essentials/device-display.md?context=xamarin/android
     - name: 裝置資訊
@@ -426,14 +424,12 @@ items:
       href: ~/essentials/orientation-sensor.md?context=xamarin/android
     - name: 電話撥號程式
       href: ~/essentials/phone-dialer.md?context=xamarin/android
-    - name: 電源
-      href: ~/essentials/power.md?context=xamarin/android
     - name: 偏好設定
       href: ~/essentials/preferences.md?context=xamarin/android
-    - name: 螢幕鎖定
-      href: ~/essentials/screen-lock.md?context=xamarin/android
     - name: 安全存放裝置
       href: ~/essentials/secure-storage.md?context=xamarin/android
+    - name: 共用
+      href: ~/essentials/share.md?context=xamarin/android
     - name: SMS
       href: ~/essentials/sms.md?context=xamarin/android
     - name: 文字轉換語音
@@ -657,9 +653,9 @@ items:
   - name: 範例
     href: samples/index.yml
   expanded: true
-ms.openlocfilehash: 2ca84f556d0822272c8d2b680835322056b0d7bd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 32586284f802f35db4ea558e6f7183173830943d
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50130207"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52899144"
