@@ -6,12 +6,12 @@ ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: lobrien
 ms.author: laobri
 ms.date: 11/14/2018
-ms.openlocfilehash: 21229bc9d56865d6365f8ddfe4dd2046fbabc03d
-ms.sourcegitcommit: ae34d048aeb23a99678ae768cdeef0c92ca36b51
+ms.openlocfilehash: 4a45d4fb7aaad504c7bb5628f1e521a39463b06f
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51681523"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52899066"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>適用於 Windows 的遠端 iOS 模擬器
 
@@ -34,7 +34,7 @@ ms.locfileid: "51681523"
 
 - **家用**– 模擬 iOS 裝置上的 [首頁] 按鈕。
 - **鎖定**– 鎖定模擬器 （撥動以解除鎖定）。
-- **螢幕擷取畫面**– 儲存模擬器的螢幕擷取畫面 (儲存在 **Pictures\Xamarin\iOS 模擬器\**)。
+- **螢幕擷取畫面**– 儲存模擬器的螢幕擷取畫面 (儲存在**Pictures\Xamarin\iOS 模擬器\\**)。
 - [**設定**](#settings) – 顯示鍵盤、 位置和其他設定。
 - [**其他選項**](#other-options) -會顯示各種模擬器選項，例如旋轉、 搖晃手勢和 Touch id。
 
