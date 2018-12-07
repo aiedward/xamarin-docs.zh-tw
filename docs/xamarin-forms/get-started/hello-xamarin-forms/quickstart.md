@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/13/2018
-ms.openlocfilehash: fd9b3032166470a960e97f1754d2133a5ef22631
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f836d6212dfdff6c9840e2d780def3df72bc7c27
+ms.sourcegitcommit: 744c0a50420bb091fca8b92a84c20e61c741cf9e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109363"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742881"
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms Quickstart
 
