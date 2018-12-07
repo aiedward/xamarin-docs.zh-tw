@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: 08eb77878dad9c89754585b87394d2c33900fe83
-ms.sourcegitcommit: a635312ffec816ba357a92b66c8c5221c8d9044c
+ms.openlocfilehash: 39af3b0e28bbbf9397ceece55adc330e364dcc3d
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "39270108"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061781"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms 的項目
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
 
 _單行文字或輸入的密碼_
 

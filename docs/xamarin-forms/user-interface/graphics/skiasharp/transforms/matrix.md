@@ -7,14 +7,16 @@ ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/12/2017
-ms.openlocfilehash: 07b6a13a8bba1e30db1d69e49aa87420bbbdf601
-ms.sourcegitcommit: a635312ffec816ba357a92b66c8c5221c8d9044c
+ms.openlocfilehash: dd38d91a808bed715c92c0fc7d98d6786fc43f67
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "39615427"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054644"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp 中的矩陣轉換
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _更深入了解 SkiaSharp 轉換具有多樣化的轉換矩陣_
 
