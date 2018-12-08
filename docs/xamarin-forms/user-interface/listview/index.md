@@ -7,16 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: dc039a7a984fae9bd856a9e7147ad899f86f0592
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 9da3bd65dfb5cc6f9ca6bd0e2930003e6ac3d182
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "35244996"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059255"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
-ListView 是呈現資料，需要捲動，特別是較長的清單的清單檢視。 本指南將示範如何使用 ListView:
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/WorkingWithListview)
+
+檢視是檢視，以呈現資料，需要捲動，特別是較長的清單的清單。 本指南將示範如何使用 ListView:
 
 1. **[資料來源](data-and-databinding.md)** &ndash;填入資料，不論資料繫結的 ListView。
 2. **[資料格外觀](customizing-cell-appearance.md)** &ndash;自訂內建的儲存格的外觀，或建立您自己自訂的資料格。

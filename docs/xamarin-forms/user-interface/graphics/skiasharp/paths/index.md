@@ -7,14 +7,16 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 3f2597c67459e407ac066ee19d54d134d60f3076
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: b266ef96513ac392afa83bc672d41db7cfe3ce16
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615131"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054618"
 ---
 # <a name="skiasharp-lines-and-paths"></a>SkiaSharp 線條和路徑
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _若要繪製線條和圖形的路徑中使用 SkiaSharp_
 

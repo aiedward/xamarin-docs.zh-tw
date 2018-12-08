@@ -7,14 +7,16 @@ ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/12/2018
-ms.openlocfilehash: 6eacc7f2688a563f9facf651b0a6da85bd75360f
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: de27e151a475856f0789285dddc1526613e0b828
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171348"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053140"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>以動畫顯示 SkiaSharp 點陣圖
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 通常建立動畫 SkiaSharp 圖形的應用程式呼叫`InvalidateSurface`上`SKCanvasView`以固定費率，通常每隔 16 毫秒。 讓介面失效，觸發程序呼叫`PaintSurface`重繪其顯示的處理常式。 當視覺效果會重新繪製 60 次第二個，看起來就像順利建立動畫。
 

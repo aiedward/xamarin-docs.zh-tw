@@ -7,16 +7,18 @@ ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 0e99d15bbecf6640b714b499997144eb18268183
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: fd6694de756938ff564bed0923427fe62153116a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51562701"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056080"
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>第 5 章的摘要。 因應大小
 
-> [!NOTE] 
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05)
+
+> [!NOTE]
 > 在此頁面上的附註表示其中 Xamarin.Forms 有分歧活頁簿中所呈現的題材的區域。
 
 到目前為止已發生在 Xamarin.Forms 中的數種大小：

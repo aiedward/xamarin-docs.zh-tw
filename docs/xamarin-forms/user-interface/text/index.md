@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2018
-ms.openlocfilehash: 60dd54ff8ed06cbeea3a3e202e7058ea7747ea3d
-ms.sourcegitcommit: 06a52ac36031d0d303ac7fc8163a59c178799c80
+ms.openlocfilehash: 0563921a59bc698e2360a06b482c7f4994e56f6e
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50911563"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53060008"
 ---
 # <a name="text-in-xamarinforms"></a>在 Xamarin.Forms 中的文字
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
 
 _使用 Xamarin.Forms 來輸入或顯示的文字。_
 

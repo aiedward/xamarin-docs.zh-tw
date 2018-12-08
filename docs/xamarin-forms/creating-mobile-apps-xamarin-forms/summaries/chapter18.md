@@ -7,14 +7,16 @@ ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 99378a2974891ec78977b29adc99350395b5ad14
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: db837ac8bfa1b7a946ee606e9481f9feb2a8a31f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563299"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050112"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>第 18 章的摘要。 MVVM
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
 
 一種架構應用程式的最佳方式是從基礎的程式碼，這有時稱為分隔的使用者介面*商務邏輯*。 有數種技術，但會以 XAML 為基礎的環境量身訂做的一個稱為 Model View ViewModel 或 MVVM。
 

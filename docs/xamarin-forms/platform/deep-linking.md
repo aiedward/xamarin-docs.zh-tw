@@ -8,14 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/28/2018
-ms.openlocfilehash: f73760e2dc2310a9c1cd7a63a03ead37283a415f
-ms.sourcegitcommit: 215cad17324ba3fbc23487ce66cd4e1cc74eb879
+ms.openlocfilehash: c4e634ce51080ad38b093e1355767c73c72e837a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52710006"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059622"
 ---
 # <a name="application-indexing-and-deep-linking"></a>應用程式編製索引和深層連結
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/deeplinking/)
 
 _應用程式編製索引，可讓會否則會被遺忘後幾個使用的搜尋結果中出現掌握新知的應用程式。深層連結，可讓應用程式，以回應包含應用程式資料，通常由巡覽至頁面的深層連結從參考的搜尋結果。這篇文章說明如何使用應用程式編製索引和深層連結，讓 Xamarin.Forms 應用程式內容的可搜尋在 iOS 和 Android 裝置上。_
 

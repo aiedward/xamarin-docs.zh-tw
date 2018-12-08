@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/14/2018
-ms.openlocfilehash: 452596d3eda9daae4b985490929c1e920a9d936e
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: ecf8a1e6d7c248c7141039844324d45d28700854
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52170906"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53049338"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 使用者介面檢視
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/FormsGallery/)
 
 _如何使用 Xamarin.Forms 所提供的檢視_
 
@@ -29,6 +31,10 @@ Xamarin.Forms 包含自己的動畫基礎結構直接建立簡單的動畫，同
 ## <a name="buttonbuttonmd"></a>[Button](button.md)
 
 `Button`回應點選或按一下，以指示應用程式執行特定工作。
+
+## <a name="collectionviewcollectionviewmd"></a>[CollectionView](collectionview.md)
+
+`CollectionView`是一種有彈性且高效能的檢視，來呈現資料使用不同的版面配置規格的清單。
 
 ## <a name="colorscolorsmd"></a>[色彩](colors.md)
 
@@ -54,7 +60,7 @@ DataPages 提供 API，以快速且輕鬆地繫結資料來源至預先建立的
 
 圖像可以跨平台與 Xamarin.Forms 共用、 可以載入特別針對每個平台，或它們可以供下載顯示。
 
-## <a name="imagebutonimagebuttonmd"></a>[ImageButon](imagebutton.md)
+## <a name="imagebuttonimagebuttonmd"></a>[ImageButton](imagebutton.md)
 
 `ImageButton`顯示影像，並回應點選或按一下，以指示應用程式執行特定工作。
 
@@ -102,6 +108,10 @@ Xamarin.Forms 佈景主題定義特定標準控制項的視覺外觀。 當您�
 
 `TimePicker`可讓使用者選取的時間。 它是使用特定的平台上執行應用程式所支援的時間選擇器所實作的。
 
+## <a name="visualvisualmd"></a>[視覺效果](visual.md)
+
+本文介紹 Xamarin.Forms 視覺效果，在 iOS 和 Android 相同，或大致相同，呈現檢視。
+
 ## <a name="visual-state-managervisual-state-managermd"></a>[Visual State Manager](visual-state-manager.md)
 
 Visual State Manager 提供的結構化的方式觸發從程式碼，包括變更裝置方向 」 或 「 大小調整的版面配置的使用者介面中的變更。
@@ -109,7 +119,6 @@ Visual State Manager 提供的結構化的方式觸發從程式碼，包括變�
 ## <a name="webviewwebviewmd"></a>[WebView](webview.md)
 
 Xamarin.Forms 會使用每個平台上的原生 web 瀏覽器控制項，並可以顯示網站、 本機資源，以及產生的 Html 字串。
-
 
 ## <a name="related-links"></a>相關連結
 

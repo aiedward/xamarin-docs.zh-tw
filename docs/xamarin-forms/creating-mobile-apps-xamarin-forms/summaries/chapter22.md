@@ -7,14 +7,16 @@ ms.assetid: 47C2B9AB-E688-4412-8AF5-9F633B3DA695
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 82ffecd41115bc91df9732793f5e22e721dbdee4
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 7b3695ce145c2ca58238e2c9a601923cbcefa182
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563897"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053113"
 ---
 # <a name="summary-of-chapter-22-animation"></a>第 22 章摘要。 動畫
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22)
 
 您已了解您可以建立您自己的動畫使用 Xamarin.Forms 計時器或`Task.Delay`，但通常可以更輕鬆使用 Xamarin.Forms 所提供的動畫功能。 三個類別會實作這些動畫：
 

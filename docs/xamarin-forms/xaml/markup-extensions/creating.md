@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: e11f7c95ccc65371ec5d844505682103025cd8af
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 531fb9500bdbf9d07ac3f781113768395465bd50
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172232"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050552"
 ---
 # <a name="creating-xaml-markup-extensions"></a>建立 XAML 標記延伸
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
 
 以程式設計方式層級中，XAML 標記延伸是實作的類別[ `IMarkupExtension` ](xref:Xamarin.Forms.Xaml.IMarkupExtension)或是[ `IMarkupExtension<T>` ](xref:Xamarin.Forms.Xaml.IMarkupExtension`1)介面。 您可以瀏覽原始程式碼，如下所述的標準標記延伸[ **Markupextension** directory](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) Xamarin.Forms GitHub 存放庫。
 

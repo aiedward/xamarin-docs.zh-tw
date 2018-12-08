@@ -7,14 +7,16 @@ ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 008c1b5eb30c3bae05d0d88b37fdef54be4066c5
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: db6c329c029f52180fe508f277a1cf4834ab493a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563000"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059161"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>第 25 章的摘要。 頁面變化
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25)
 
 到目前為止您已了解兩個類別衍生自`Page`:`ContentPage`和`NavigationPage`。 本章介紹其他兩個：
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: fbdb611df558c547a2470a8c8a9d7848ef7aa31f
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 7108b24f73d1f7389bf37fe8640061ae3e077300
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171387"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054420"
 ---
 # <a name="xamarinforms-button"></a>Xamarin.Forms 按鈕
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)
 
 _按鈕會回應點選或按一下，以指示應用程式執行特定工作。_
 

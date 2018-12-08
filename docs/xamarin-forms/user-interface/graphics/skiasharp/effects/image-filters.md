@@ -7,14 +7,16 @@ ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: d4029cbd4100b3ad83343b3bee73868b385a02e5
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 517ebfb529dd26236ba157d40168fa7c75288d27
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171816"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050370"
 ---
 # <a name="skiasharp-image-filters"></a>SkiaSharp 映像篩選器
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 映像篩選器是構成影像的像素的所有色彩位元上操作的效果。 它們具有更多功能以上遮罩篩選，如本文所述 pracovat pouze alpha 色頻[ **SkiaSharp 遮罩篩選**](mask-filters.md)。 若要使用的映像篩選器，將[ `ImageFilter` ](xref:SkiaSharp.SKPaint.ImageFilter)屬性`SKPaint`物件的型別[ `SKImageFilter` ](xref:SkiaSharp.SKImageFilter)您已藉由呼叫其中一種類別的靜態方法。
 

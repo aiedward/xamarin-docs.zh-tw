@@ -7,14 +7,16 @@ ms.assetid: 90C2D00A-2876-43EA-A836-538C3318CF93
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 3c0ee238e0fc72aaea2f73e11317fea7b7a63fb7
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 4801aa12acf8eca2384cc5b41d677f7cb0bdd90d
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171491"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052047"
 ---
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp 雜訊和撰寫
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 簡單的向量圖形，通常看起來不自然。 直線，線條平滑的曲線，純色不類似真實世界物件缺陷的而。 使用的電腦產生的圖形： 1982年電影時，才能_仲恩_，電腦科學家 Ken Perlin 開始開發使用隨機的程序讓這些映像更真實的紋理的演算法。 在 1997 年 Ken Perlin 會贏得技術分別 Academy 獎。 他的工作都可稱為 Perlin 雜訊和 SkiaSharp 中支援它。 以下為範例：
 

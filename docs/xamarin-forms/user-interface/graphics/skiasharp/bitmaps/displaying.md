@@ -7,14 +7,16 @@ ms.assetid: 8E074F8D-4715-4146-8CC0-FD7A8290EDE9
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: f4cc13a5e8794eb5f2f883f35d6a0e4d34788507
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 73fdccf1f6ccee4f6610c1078f5aab14c2be3d78
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615310"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054916"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>顯示 SkiaSharp 點陣圖
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 發行項中引進了 SkiaSharp 點陣圖的主旨 **[SkiaSharp 點陣圖基本概念](../basics/bitmaps.md)**。 該文章會說明三種方式可以載入點陣圖並顯示點陣圖的三種方式。 這篇文章會檢閱載入點陣圖的技術，並將進入更深入`DrawBitmap`方法的`SKCanvas`。
 

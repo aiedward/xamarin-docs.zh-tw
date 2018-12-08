@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 777ba2035511dfd632d64b11c2265e239a646b3a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2fa554264578ec626567ef7d28377ac80bde21d3
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109532"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53060170"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>在 Xamarin.iOS 中的程式碼建立 iOS 使用者介面
 
@@ -204,7 +204,7 @@ public class AppDelegate : UIApplicationDelegate
 
  [![](ios-code-only-images/image2.png "瀏覽控制器內的巢狀控制站")](ios-code-only-images/image2.png#lightbox)
 
-## <a name="creating-a-view-vontroller"></a>建立檢視 vontroller
+## <a name="creating-a-view-controller"></a>建立檢視控制器
 
 既然我們已了解如何新增做為控制器`RootViewController`的視窗中，我們來看看如何在程式碼中建立自訂檢視控制器。
 

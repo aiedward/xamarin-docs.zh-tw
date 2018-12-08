@@ -7,14 +7,16 @@ ms.assetid: 20A2A8C4-FEB7-478D-BF57-C92E26117B6A
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: de563c4780a57e439abab61378919501ce88b11b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9551a3b8e093dbb49a55a3761543602c40e81023
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131079"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053571"
 ---
 # <a name="the-skiasharp-linear-gradient"></a>SkiaSharp 線性漸層
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 [ `SKPaint` ](xref:SkiaSharp.SKPaint)類別會定義[ `Color` ](xref:SkiaSharp.SKPaint.Color)用來繪製線條，或使用純色填滿區域的屬性。 或者繪製線條或填滿的區域_漸層_，這是漸進式混合色彩：
 

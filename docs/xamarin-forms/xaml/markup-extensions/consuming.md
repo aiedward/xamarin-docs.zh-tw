@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/01/2018
-ms.openlocfilehash: 2ab7381baefc6ca013b6c8a5c9f7bf7b5cae8b10
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 53c5f17672cc46ef097e979154a8911f8cdaef63
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171712"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054122"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 標記延伸
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
 
 XAML 標記延伸模組可協助增強的威力與彈性的 XAML，藉由將從各種來源的項目屬性。 數個 XAML 標記延伸是 XAML 2009 規格的一部分。 這些會出現在具有自訂的 XAML 檔案`x`命名空間前置詞，而且通常參照此前置詞。 這篇文章討論下列標記延伸模組：
 

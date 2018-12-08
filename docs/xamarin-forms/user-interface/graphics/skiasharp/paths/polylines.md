@@ -7,14 +7,16 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: d5896a9d4f1aac2ea90d544d638e4adf68d24140
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: c6328135e0310c7b10b89bf2e32ce62869b15cfb
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615791"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059982"
 ---
 # <a name="polylines-and-parametric-equations"></a>聚合線條和參數化的方程式
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _呈現任何列，您可以定義參數化的方程式中使用 SkiaSharp_
 

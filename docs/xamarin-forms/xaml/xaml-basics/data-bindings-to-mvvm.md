@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 2376ff986db985c3764c90c3af76ea74c2936a29
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: c7bf7ca28200004e2383631c68cdaa4299348ecb
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563143"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054029"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分。 從資料繫結至 MVVM
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
 _記住，使用 XAML 發明的 Model View ViewModel (MVVM) 架構模式。此模式會強制執行三個軟體層之間的區隔，XAML 使用者介面，稱為檢視;基礎資料，稱為模型;而檢視與模型之間的媒介稱為 ViewModel。檢視和 ViewModel 通常是透過 XAML 檔案中定義的資料繫結連接。檢視 BindingContext 通常是 ViewModel 的執行個體。_
 

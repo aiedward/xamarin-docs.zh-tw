@@ -7,14 +7,16 @@ ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: cf757976be1a95fb7ed56ba6c014389fbe520408
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 75f153499edb6d979f9a0269a1439eaf8ca53878
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563572"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061063"
 ---
 # <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>第 8 章的摘要。 程式碼和 XAML 搭配
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)
 
 這一章探討 XAML 更深入，並特別的程式碼和 XAML 的互動方式。
 

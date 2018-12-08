@@ -7,16 +7,18 @@ ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 1dc4fe12d3ca23a9ca87c3be7819c970683db469
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: ce4dde3716176daf826678809339afb84c25d84a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563494"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052565"
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>第 7 章的摘要。 XAML 與程式碼
 
-> [!NOTE] 
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
+
+> [!NOTE]
 > 在此頁面上的附註表示其中 Xamarin.Forms 有分歧活頁簿中所呈現的題材的區域。
 
 Xamarin.Forms 可支援稱為 Extensible Application Markup Language 的以 XML 為基礎的標記語言或 XAML （發音為"zammel 」）。 XAML 會提供替代 C# 中定義的 Xamarin.Forms 應用程式的使用者介面版面配置，並在定義使用者介面項目之間的繫結和基礎資料。
@@ -39,7 +41,7 @@ Xamarin.Forms 類別和結構變成 XML 項目中 XAML，而且這些類別和�
 
 當第一次建立時，或您可以加入現有的專案中的 XAML 頁面時，Xamarin.Forms 可攜式類別庫可包含的 XAML 頁面。 在加入新項目對話方塊中，選擇 [XAML] 頁面上，是指的項目或`ContentPage`和 XAML。 (不`ContentView`。)
 
-> [!NOTE] 
+> [!NOTE]
 > Visual Studio 選項已變更，因為這一章所撰寫。
 
 會建立兩個檔案： 檔案名稱副檔名.xaml 的 XAML 檔案和副檔名的 C# 檔案。 xaml.cs。 C# 檔案通常稱為*程式碼後置*的 XAML 檔案。 程式碼後置檔案是衍生自的部分類別定義`ContentPage`。 在建置階段，在剖析 XAML，和另一個部分類別定義會產生相同的類別。 這個產生的類別包含一個名為方法`InitializeComponent`，從程式碼後置檔案的建構函式呼叫。

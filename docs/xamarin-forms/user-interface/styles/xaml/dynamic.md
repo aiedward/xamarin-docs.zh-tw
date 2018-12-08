@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 2f336bff19302228b9c8c3a1aa87930414c44ac2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f1c491bd2e19f44151e2efb317fe40d2d122ecae
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108401"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058516"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的動態樣式
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/DynamicStyles/)
 
 _樣式，請勿回應屬性的變更和應用程式的持續期間保持不變。例如，指派樣式來視覺化項目，如果其中一個 Setter 執行個體已經過修改，移除或加入新的 set 存取子執行個體之後, 所做的變更不會套用至的視覺化項目。不過，應用程式可以使用動態資源回應在執行階段動態的樣式變更。_
 

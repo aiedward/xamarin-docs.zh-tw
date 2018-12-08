@@ -8,14 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 7ea7a9bb66e039289e8ce09e77c223c98f90e4c1
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 79547277b00ae1f1d9b035d5fb08685562cefc79
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617627"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052578"
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>使用 Azure Cosmos DB 文件資料庫
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDB/)
 
 _Azure Cosmos DB 文件資料庫是提供低延遲存取 JSON 文件，提供快速、 高可用性、 可調整的資料庫服務的應用程式，需要能夠順暢調整和全域複寫的 NoSQL 資料庫。這篇文章說明如何使用 Azure Cosmos DB.NET Standard 用戶端程式庫，若要將 Xamarin.Forms 應用程式中整合 Azure Cosmos DB 文件資料庫。_
 

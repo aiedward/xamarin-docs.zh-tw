@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: 8d911108d7d72586a37a3281803eab9c0841f16c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 5eb3348df39b8931d8cdd89d8c6f54b8bb3024a0
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997104"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057427"
 ---
 # <a name="adding-data-to-a-pickers-items-collection"></a>將資料加入選擇器的項目集合
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
 
 _選擇器 檢視是從資料的清單中選取的文字項目控制項。這篇文章說明如何藉由將它加入項目集合中，填入資料的選擇器，以及如何回應使用者的項目選取。_
 

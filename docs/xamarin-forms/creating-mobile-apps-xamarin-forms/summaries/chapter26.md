@@ -7,14 +7,16 @@ ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 18bfb7088d5dcb1476716e881ea54052e62d2504
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 9fa9802f94e10612c4b0fe02c84ddcabc89820a8
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563962"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053126"
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>第 26 章的摘要。 自訂版面配置
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26)
 
 Xamarin.Forms 包含數個類別衍生自[ `Layout<View>` ](xref:Xamarin.Forms.Layout`1):
 

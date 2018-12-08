@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 4a1393e60422313c781010c0d70a1a85eb671d34
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8587cade1c5b4a6882f21603ee869f94f38fd04a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112383"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058830"
 ---
 # <a name="native-views-in-c"></a>在 C# 中的原生檢視
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeEmbedding/)
 
 _從使用 C# 建立的 Xamarin.Forms 頁面，可直接參考原生 iOS、 Android 和 UWP 的檢視。這篇文章會示範如何將原生檢視新增至 Xamarin.Forms 版面配置建立使用 C# 中，以及如何覆寫的自訂檢視，以更正其度量 API 使用方式配置。_
 

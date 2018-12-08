@@ -7,14 +7,16 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/09/2017
-ms.openlocfilehash: d4c890853cb6db334416fc31feb2205a203faa4a
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: c1e4a76a70dcac3414d384469f25bad7908ae77f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171920"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059781"
 ---
 # <a name="pixels-and-device-independent-units"></a>像素與裝置獨立單位
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _探索 SkiaSharp 座標和 Xamarin.Forms 座標之間的差異_
 
