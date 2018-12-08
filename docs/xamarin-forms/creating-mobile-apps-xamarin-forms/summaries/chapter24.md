@@ -7,14 +7,16 @@ ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: d90bef4da589215247f412450905a5db541b0444
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 764a148ffffc2c69dbab5aeca872e2d10ce9f159
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563156"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052737"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>第 24 章的摘要。 頁面巡覽
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)
 
 許多應用程式是由使用者所巡覽之多個頁面所組成。 應用程式一定有*主要*頁面或*家用* 頁面上，並從該處使用者巡覽至其他頁面，會保存在向後巡覽堆疊中。 其他瀏覽選項所述[**第 25 章。頁面上各種**](chapter25.md)。
 

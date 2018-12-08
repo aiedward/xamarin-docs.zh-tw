@@ -7,14 +7,16 @@ ms.assetid: B62F9487-C30E-4C63-BAB1-4C091FF50378
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: f99c5c2b60dec091e07ef11e62955de399d12164
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 577eb19106ffa0ebd19c54aeeb155a9c6c85feac
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131206"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53062039"
 ---
 # <a name="skiasharp-transparency"></a>SkiaSharp 透明度
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 如您所見， [ `SKPaint` ](xref:SkiaSharp.SKPaint)類別包含[ `Color` ](xref:SkiaSharp.SKPaint.Color)屬性的型別[ `SKColor` ](xref:SkiaSharp.SKColor)。 `SKColor` 包含 alpha 色板，因此任何您色彩與`SKColor`值可以是部分透明。 
 

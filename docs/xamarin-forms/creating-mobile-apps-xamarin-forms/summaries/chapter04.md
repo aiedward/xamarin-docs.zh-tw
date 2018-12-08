@@ -7,14 +7,16 @@ ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: daa2c2f3b43633fd9b3359763b9d740b0def9144
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 87846eba71278295ae6f266f6e786c0992aebd34
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563071"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052034"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章的摘要。 捲動堆疊
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
 
 本章主要用來介紹的概念*版面配置*，這是整體一詞的類別和 Xamarin.Forms 使用來組織頁面上的多個檢視的視覺顯示的技術。
 

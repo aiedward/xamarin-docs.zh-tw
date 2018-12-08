@@ -7,14 +7,16 @@ ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: eebfe40bca6db92bae1f2fdcc9cbff3173dc4e51
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: cd7c8484827a038bbcf11180296547ea6fedf929
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172011"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059200"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>存取 SkiaSharp 點陣圖像素位元
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 如您所見文中所[**檔案的儲存 SkiaSharp 點陣圖**](saving.md)，點陣圖通常儲存在壓縮的格式，例如 JPEG 或 PNG 檔案。 相較之下，在不壓縮 SkiaSharp 點陣圖儲存在記憶體中。 它會儲存為循序的一連串的像素為單位。 此未壓縮的格式讓點陣圖的傳輸到顯示介面。
 

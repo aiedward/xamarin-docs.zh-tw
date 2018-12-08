@@ -1,5 +1,5 @@
 ---
-title: 整合 Xamarin.Forms
+title: 與 Xamarin.Forms 整合
 description: 本文說明如何建立回應觸控的 SkiaSharp 圖形和 Xamarin.Forms 的項目，並示範此範例程式碼。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
@@ -7,14 +7,16 @@ ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/09/2017
-ms.openlocfilehash: bf9b0388ff3b024439cfc3488e4057ba32fdab6b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c4ca44488a4d10d3936e7bd8e664e3ffcb2a140a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115077"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051726"
 ---
-# <a name="integrating-with-xamarinforms"></a>整合 Xamarin.Forms
+# <a name="integrating-with-xamarinforms"></a>與 Xamarin.Forms 整合
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _建立回應觸控和 Xamarin.Forms 元素的 SkiaSharp 圖形_
 

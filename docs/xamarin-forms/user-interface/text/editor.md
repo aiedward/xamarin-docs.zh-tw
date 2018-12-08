@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/31/2018
-ms.openlocfilehash: 23ba73eb4099a9db9e989c68ae7f381e1c96541d
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 2fe1ad168186740fd71d25814e68b1109e097597
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39270452"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052620"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms 編輯器
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
 
 _多行文字輸入_
 

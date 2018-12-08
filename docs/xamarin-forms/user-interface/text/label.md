@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/04/2018
-ms.openlocfilehash: a6c0cd057082a6fa4793ca3de18cefd00243e9e3
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: c611828e2dc3ee7a373836ec01af90d4899f97f6
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235060"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53062214"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms 標籤
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
 
 _在 Xamarin.Forms 中的顯示文字_
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 02ea94fa67491384e6ca6768e429ee96b46c6143
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 6d3355b1ebac5001984677eb8cc527fe619b8349
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171335"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052247"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms web 檢視
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithWebview/)
 
 [`WebView`](xref:Xamarin.Forms.WebView) 會顯示在您的應用程式中的 web 和 HTML 內容的檢視。 不同於`OpenUri`，其採用使用者裝置上的網頁瀏覽器`WebView`會顯示在您的應用程式內的 HTML 內容。
 

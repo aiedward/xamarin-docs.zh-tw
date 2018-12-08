@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: d694d58b994309f26264459a69517c2bc3b526e2
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: a1458d53cb6e57b73317bce77ebdfd5aea64acca
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563626"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061942"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>使用 Xamarin.Forms book 建立行動應用程式
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples)
 
 <p><img src="images/cover-sml.png" title="使用 Xamarin.Forms Book 建立行動應用程式" align="left" />本書<i>使用 Xamarin.Forms 建立行動應用程式</i>Charles petzold 的是了解如何撰寫 Xamarin.Forms 應用程式的指南。 唯一的先決條件是知識的C#程式設計語言。 本書提供廣泛的瀏覽至 Xamarin.Forms 的使用者介面，並且也涵蓋動畫、 MVVM、 觸發程序、 行為、 自訂版面配置、 自訂轉譯器及其他更多。 
 

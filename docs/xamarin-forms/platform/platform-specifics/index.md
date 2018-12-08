@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/01/2018
-ms.openlocfilehash: 0b062a99954d4200a343d502f7577208e5e5dd8d
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 09a4bd6d51de7768bb1a976e04d4548e44a3b04e
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171296"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056067"
 ---
 # <a name="platform-specifics"></a>平台特性
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 _平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。_
 

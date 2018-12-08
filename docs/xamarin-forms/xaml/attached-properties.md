@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: f9bd7e5be26b4721abe6756ecb6c5ff387c6f5e8
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 130f4e3efdd7b3792f6458ad28fc85654e6e38c8
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563368"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056184"
 ---
 # <a name="attached-properties"></a>附加屬性
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffect/)
 
 _附加的屬性是特殊類型的可繫結的屬性，定義一個類別中，但連接至其他物件，並可辨識在 XAML 做為屬性中包含的類別，以句號分隔屬性名稱。本文章提供附加屬性的簡介，並示範如何建立和使用它們。_
 

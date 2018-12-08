@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: b7ea75c13d84cf9fe74d7a606f6127aaa6bbe3b2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 4b33d1d149d3ac85d01dfcbe0d144416fd953426
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996330"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052882"
 ---
 # <a name="native-views-in-xaml"></a>在 XAML 中的原生檢視
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeSwitch/)
 
 _從 iOS、 Android 和通用 Windows 平台的原生檢視可以直接參考從 Xamarin.Forms XAML 檔案。原生的檢視，可以設定屬性和事件處理常式，它們可以與 Xamarin.Forms 檢視互動。這篇文章會示範如何使用 Xamarin.Forms XAML 檔案中的原生檢視。_
 

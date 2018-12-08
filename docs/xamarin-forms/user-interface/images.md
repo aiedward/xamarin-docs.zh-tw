@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 53179170afa1381a562699a39baaa716ecc6a5a6
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: f6815b54867b47bb32ede41470712dac65b6d410
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171192"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53062171"
 ---
 # <a name="images-in-xamarinforms"></a>在 Xamarin.Forms 中的影像
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/)
 
 _影像可以使用 Xamarin.Forms 進行跨平台共用、可以針對每個平台特別載入，或它們可以下載供顯示。_
 

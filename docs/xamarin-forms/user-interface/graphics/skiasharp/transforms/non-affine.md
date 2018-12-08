@@ -7,14 +7,16 @@ ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/14/2017
-ms.openlocfilehash: da5306ed9c301a7229d2fc5e913a4217e844bbba
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: da820b0c48eaec52da76504b1aed8e9793c1e74d
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116143"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057268"
 ---
 # <a name="non-affine-transforms"></a>非仿射轉換
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _使用轉換矩陣的第三個資料行建立檢視方塊和錐形效果_
 

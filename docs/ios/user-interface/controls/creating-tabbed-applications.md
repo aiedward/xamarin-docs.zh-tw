@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 6a0081a9d4ee4df72dc3eecfd5c4da318c5c5d78
-ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
+ms.openlocfilehash: 6f5af4cea0c223b9ddc7cd72331676f5f92f2509
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52459911"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53055195"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>索引標籤列和在 Xamarin.iOS 中的索引標籤列控制器
 
@@ -81,31 +81,31 @@ using System;
 using UIKit;
 
 namespace TabbedApplication {
-        public class TabController : UITabBarController {
+    public class TabController : UITabBarController {
 
-                UIViewController tab1, tab2, tab3;
+        UIViewController tab1, tab2, tab3;
 
-                public TabController ()
-                {
+        public TabController ()
+        {
             tab1 = new UIViewController();
-                        tab1.Title = "Green";
-                        tab1.View.BackgroundColor = UIColor.Green;
+            tab1.Title = "Green";
+            tab1.View.BackgroundColor = UIColor.Green;
 
-                        tab2 = new UIViewController();
-                        tab2.Title = "Orange";
-                        tab2.View.BackgroundColor = UIColor.Orange;
+            tab2 = new UIViewController();
+            tab2.Title = "Orange";
+            tab2.View.BackgroundColor = UIColor.Orange;
 
-                        tab3 = new UIViewController();
-                        tab3.Title = "Red";
-                        tab3.View.BackgroundColor = UIColor.Red;
+            tab3 = new UIViewController();
+            tab3.Title = "Red";
+            tab3.View.BackgroundColor = UIColor.Red;
 
-                        var tabs = new UIViewController[] {
-                                tab1, tab2, tab3
-                        };
+            var tabs = new UIViewController[] {
+                tab1, tab2, tab3
+            };
 
-                        ViewControllers = tabs;
-                }
+            ViewControllers = tabs;
         }
+    }
 }
 ```
 
@@ -125,16 +125,16 @@ public partial class AppDelegate : UIApplicationDelegate
 {
     UIWindow window;
     TabController tabController;
-
+    
     public override bool FinishedLaunching (UIApplication app, NSDictionary options)
     {
         window = new UIWindow (UIScreen.MainScreen.Bounds);
-
+        
         tabController = new TabController ();
         window.RootViewController = tabController;
-
+        
         window.MakeKeyAndVisible ();
-
+        
         return true;
     }
 }
@@ -259,8 +259,8 @@ tab3.TabBarItem.BadgeValue = null;
 
     ```csharp
     public override UIWindow Window {
-      get;
-      set;
+        get;
+        set;
     }
     ```
 
@@ -349,9 +349,9 @@ partial void InitialActionCompleted (UIButton sender)
 ```csharp
 public override void ViewDidLoad ()
 {
-     if (ParentViewController != null){
-       aButton.Hidden = true;
-     }
+    if (ParentViewController != null){
+        aButton.Hidden = true;
+    }
 }
 ```
 

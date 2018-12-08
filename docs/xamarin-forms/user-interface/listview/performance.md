@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: c6a6ed38ec64c681075ffa3e42f3ffaf58c576ec
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 98212483481b2ce60c73a40c014816ee3c3f110c
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997213"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059242"
 ---
 # <a name="listview-performance"></a>ListView 效能
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
 
 在撰寫行動應用程式時，效能很重要。 使用者都是順暢的捲動和快速的載入時間。 無法符合使用者的期望，將會花費您的應用程式存放區中的評等，或在特定業務應用程式的情況下的成本您組織時間和金錢。
 
@@ -127,7 +129,7 @@ var listView = new ListView(ListViewCachingStrategy.RecycleElement);
 </ListView>
 ```
 
-這有相同的效果與在 C# 中; 建構函式中設定快取策略引數請注意，沒有任何`CachingStrategy`屬性上的`ListView`。
+這已設定的快取策略引數的建構函式中相同的效果C#;請注意，沒有任何`CachingStrategy`屬性上的`ListView`。
 
 #### <a name="setting-the-caching-strategy-in-a-subclassed-listview"></a>在 子類別化之 ListView 中設定快取策略
 

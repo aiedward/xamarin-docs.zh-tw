@@ -7,14 +7,16 @@ ms.assetid: 79AE2033-C41C-4447-95A6-76D22E913D19
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 71997acde4545fec801dfdc8147ab1a9ace7ab24
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: be2d998916c81cb2216251e2112ff8ca2af5d87a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119224"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061364"
 ---
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>分段的顯示的 SkiaSharp 點陣圖
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 SkiaSharp`SKCanvas`物件會定義一個名為方法`DrawBitmapNinePatch`和名為兩個方法`DrawBitmapLattice`非常類似。 這些方法會呈現目的地矩形的大小的點陣圖同時而不是一致的方式自動縮放點陣圖，顯示部分點陣圖的像素尺寸的人員，並自動縮放點陣圖的其他部分，使其符合矩形：
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/09/2018
-ms.openlocfilehash: 6232c6b561a791f170ebedd4d441f7be2a8ef92e
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: e02c04afe656b0eca3b7ae12b8b30f35836b9368
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563728"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054809"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>在 Xamarin 原生專案中的 Xamarin.Forms
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/Native2Forms/)
 
 _原生格式允許 Xamarin.Forms ContentPage 衍生的頁面，以供原生的 Xamarin.iOS、 Xamarin.Android 和通用 Windows 平台 (UWP) 專案。原生專案均可取 ContentPage 衍生頁面直接新增至專案，或從.NET Standard 程式庫、.NET Standard 程式庫或共用專案。這篇文章說明如何使用 ContentPage 衍生的頁面，都會直接加入至原生專案，以及如何之間瀏覽。_
 

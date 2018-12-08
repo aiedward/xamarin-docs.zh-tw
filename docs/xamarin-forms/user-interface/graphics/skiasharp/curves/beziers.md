@@ -7,14 +7,16 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 60024be0c39bd215a828acfd8a4ac6294eeac9d8
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 58cf11b2a88e0c399ee197e9c8365d7deafd0f39
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172349"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53055468"
 ---
 # <a name="three-types-of-bzier-curves"></a>三種類型的貝茲曲線
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _探索如何使用 SkiaSharp 呈現三次方、 二次方，以及 conic 貝茲曲線_
 

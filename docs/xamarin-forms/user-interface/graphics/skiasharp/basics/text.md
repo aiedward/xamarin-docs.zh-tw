@@ -7,14 +7,16 @@ ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 45b959c2d9b40cee4d86eb5eefaad724d857b4b9
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 995291c438bdb510536294d4c3bb0e4e37ac737d
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615157"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051593"
 ---
 # <a name="integrating-text-and-graphics"></a>整合文字與圖形
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _了解如何決定要與 SkiaSharp 圖形中的文字轉譯的文字字串的大小_
 
