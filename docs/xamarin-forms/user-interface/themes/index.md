@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: 0f49eeba072d6aeb7ead40d5d56d4af9e9bf5e27
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 1c5b2635dca6aa74fd0dfb92d7e62e6da3140538
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38814703"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051104"
 ---
 # <a name="xamarinforms-themes"></a>Xamarin.Forms 佈景主題
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/Themes/ThemesDemo)
 
 ![](~/media/shared/preview.png "此 API 目前為預覽狀態")
 

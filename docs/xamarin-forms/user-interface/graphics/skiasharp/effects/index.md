@@ -7,14 +7,16 @@ ms.assetid: B3E06572-8E2A-49FA-90D1-444C394CD516
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/22/2018
-ms.openlocfilehash: 768fd0e1cd5ed08f42310d9aaf5993de7ec32e6b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 121d505d578aa20e86977c0da5d69626bbad1f53
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131104"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53049216"
 ---
 # <a name="skiasharp-effects"></a>SkiaSharp 效果
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 SkiaSharp [ `SKPaint` ](xref:SkiaSharp.SKPaint)類別會定義可以分類底下的一般詞彙的六個屬性_效果_。 這些是改變正常的圖形以某種方式顯示的屬性。 SkiaSharp 效果分為六個類別：
 

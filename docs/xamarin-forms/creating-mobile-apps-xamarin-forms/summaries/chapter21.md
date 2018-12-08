@@ -7,14 +7,16 @@ ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 6c666329664ad7dfaa8439068a60b6135d59d229
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 56c4345dffe71f79e9d89c64478a9c6c38fc1d84
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563052"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53048813"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>第 21 章的摘要。 轉換
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21)
 
 Xamarin.Forms 檢視中的位置和大小取決於其父代，這通常是螢幕上出現`Layout`或`Layout<View>`衍生項目。 *轉換*是可以修改該位置、 大小或甚至方向的 Xamarin.Forms 功能。
 

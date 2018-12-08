@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 175c7f17d70c1aa6b8d6bf388cc24fd0f97e7f00
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: dbcb86c6076d717966639a8c6117bc59c17e86bf
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617640"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050178"
 ---
 # <a name="speech-recognition-using-the-microsoft-speech-api"></a>使用 Microsoft Speech API 的語音辨識
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
 
 _Microsoft Speech API 是以雲端為基礎的 API，可口語的語言處理演算法。這篇文章說明如何使用 Microsoft 語音辨識的 REST API 將轉換成在 Xamarin.Forms 應用程式中的文字。_
 
