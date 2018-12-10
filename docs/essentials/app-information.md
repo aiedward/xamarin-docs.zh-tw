@@ -4,17 +4,15 @@ description: 本文件描述 Xamarin.Essentials 中的 AppInfo 類別，可提�
 ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 00419fb746609464b49be343938905614c59ab29
-ms.sourcegitcommit: 704d4cfd418c17b0e85a20c33a16d2419db0be71
+ms.date: 11/04/2018
+ms.openlocfilehash: 3e67b605e485b724ec11f2ac94dcf3d1aa77d5cf
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51691759"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057289"
 ---
 # <a name="xamarinessentials-app-information"></a>Xamarin.Essentials：應用程式資訊
-
-![發行前的 NuGet](~/media/shared/pre-release.png)
 
 **AppInfo** 類別會提供您應用程式的相關資訊。
 
@@ -54,10 +52,42 @@ var build = AppInfo.BuildString;
 
 ```csharp
 // Display settings page
-AppInfo.OpenSettings();
+AppInfo.ShowSettingsUI();
 ```
 
 此設定頁面可讓使用者變更應用程式權限，並執行其他平台特定的工作。
+
+## <a name="platform-implementation-specifics"></a>平台實作特性
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+應用程式資訊會依據下列欄位，從 `AndroidManifest.xml` 中取得：
+
+- **組建** - `manifest` 節點中的 `android:versionCode`
+- **名稱** - `application` 節點中的 `android:label`
+- **套件名稱**：`manifest` 節點中的 `package`
+- **VersionString** - `application` 節點中的 `android:versionName`
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+應用程式資訊會依據下列欄位，從 `Info.plist` 中取得：
+
+- **組建** - `CFBundleVersion`
+- **名稱** - 如有設定，即為 `CFBundleDisplayName`；否則為 `CFBundleName`
+- **套件名稱**：`CFBundleIdentifier`
+- **VersionString** - `CFBundleShortVersionString`
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+應用程式資訊會依據下列欄位，從 `Package.appxmanifest` 中取得：
+
+- **組建** - 使用 `Identity` 節點上 `Version` 中的 `Build`
+- **名稱** - `Properties` 節點上的 `DisplayName`
+- **PackageName**：`Identity` 節點上的 `Name`
+- **VersionString** - `Identity` 節點上的 `Version`
+
+
+--------------
 
 ## <a name="api"></a>API
 
