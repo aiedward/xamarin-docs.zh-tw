@@ -7,14 +7,18 @@ ms.assetid: 9ED14E07-4DC8-4B03-8A33-772838BF51EA
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 5bd063f82cc1d09c6b2e9100429889a23a2eda7f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 24c33c61002130fe645bba54c307394bbc2e0656
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111477"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53060374"
 ---
 # <a name="skiasharp-bitmap-tiling"></a>SkiaSharp 點陣圖並排顯示
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/CatClock/)
 
 當您在兩個先前的文章中所見[ `SKShader` ](xref:SkiaSharp.SKShader)類別可以建立線性或循環的漸層。 本文著重於`SKShader`利用點陣圖來並排顯示區域的物件。 可重複的點陣圖，水平及垂直，在其原始的方向或或者翻轉水平和垂直大小。 開關，可避免磚之間的不連續：
 

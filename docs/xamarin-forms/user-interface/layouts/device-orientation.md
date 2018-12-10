@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 881b465643b576f5d3f4fc8121c5a873087a876c
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 762d4752eb3882398f212e634c66305f74d5a459
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527325"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052659"
 ---
 # <a name="device-orientation"></a>裝置方向
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
 
 請務必考慮應用程式使用的方式，以及如何合併橫向，來改善使用者經驗。 個別的版面配置可以設計來容納多個方向，最好使用的可用空間。 應用程式層級，可以停用或啟用旋轉。
 

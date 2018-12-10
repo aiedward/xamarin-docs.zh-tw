@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 519368031384e72a2d2e0a7c99053be44ea4cffc
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 157e044fd96cdeff87d8fb56029fe625b7312bf4
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995215"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056236"
 ---
 # <a name="custom-animations-in-xamarinforms"></a>在 Xamarin.Forms 中的自訂動畫
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/custom/)
 
 _動畫類別是所有的 Xamarin.Forms 動畫，以建立一或多個動畫物件 ViewExtensions 類別的擴充方法的建置組塊。這篇文章會示範如何使用動畫類別來建立及取消動畫，並同步處理多個動畫，並建立自訂動畫顯示屬性不是由現有的動畫方法建立動畫的動畫。_
 
@@ -173,7 +175,7 @@ await this.ColorTo(Color.FromRgb(0, 0, 0), Color.FromRgb(255, 255, 255), c => Ba
 await boxView.ColorTo(Color.Blue, Color.Red, c => boxView.Color = c, 4000);
 ```
 
-在此範例中，`ColorTo`方法以動畫顯示[ `TextColor` ](xref:Xamarin.Forms.Label.TextColor)並[ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)屬性[ `Label` ](xref:Xamarin.Forms.Label)， `BackgroundColor`屬性頁面上，而[ `Color` ](xref:Xamarin.Forms.BoxView.Color)屬性[ `BoxView` ](xref:Xamarin.Forms.BoxView)。
+在此範例中，`ColorTo`方法以動畫顯示[ `TextColor` ](xref:Xamarin.Forms.Label.TextColor)並[ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)屬性[ `Label` ](xref:Xamarin.Forms.Label)， `BackgroundColor`屬性 頁面上，而[ `Color` ](xref:Xamarin.Forms.BoxView.Color)屬性[ `BoxView` ](xref:Xamarin.Forms.BoxView)。
 
 ## <a name="summary"></a>總結
 

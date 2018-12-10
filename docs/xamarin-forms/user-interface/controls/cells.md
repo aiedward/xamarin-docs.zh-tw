@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 34e28d8532c232549c6f45e549787885a9155684
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: ac65122e35849786307afd2a4d6e64e186cad466
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526854"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53060196"
 ---
 # <a name="xamarinforms-cells"></a>Xamarin.Forms 資料格
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 
 _Xamarin.Forms 資料格可以加入至 Listview 和 TableViews。_
 
@@ -53,7 +55,7 @@ Xamarin.Forms 可支援下列資料格類型：
 
 |     |     |
 | --- | --- |
-| [ `EntryCell` ](xref:Xamarin.Forms.EntryCell)定義[ `Label` ](xref:Xamarin.Forms.EntryCell.Label)屬性，識別資料格，而單行中可編輯的文字[ `Text` ](xref:Xamarin.Forms.EntryCell.Text)屬性。 處理[`Completed`](xref:Xamarin.Forms.EntryCell.Completed)使用者完成文字 項目時收到通知的事件。<br /><br />[API 文件](xref:Xamarin.Forms.EntryCell) / [指南](~/xamarin-forms/user-interface/tableview.md#entrycell) | [![EntryCell 範例](cells-images/EntryCell.png "EntryCell 範例")](cells-images/EntryCell-Large.png#lightbox "EntryCell 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EntryCellDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EntryCellDemoPage.xaml) |
+| [ `EntryCell` ](xref:Xamarin.Forms.EntryCell)定義[ `Label` ](xref:Xamarin.Forms.EntryCell.Label)屬性，識別資料格，而單行中可編輯的文字[ `Text` ](xref:Xamarin.Forms.EntryCell.Text)屬性。 處理[ `Completed` ](xref:Xamarin.Forms.EntryCell.Completed)使用者完成文字 項目時收到通知的事件。<br /><br />[API 文件](xref:Xamarin.Forms.EntryCell) / [指南](~/xamarin-forms/user-interface/tableview.md#entrycell) | [![EntryCell 範例](cells-images/EntryCell.png "EntryCell 範例")](cells-images/EntryCell-Large.png#lightbox "EntryCell 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EntryCellDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EntryCellDemoPage.xaml) |
 |     |     |
 
 

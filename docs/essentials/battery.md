@@ -4,19 +4,17 @@ description: 本文件描述 Xamarin.Essentials 中的電池類別，可讓您�
 ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 6a14c939064538a405a1fe64061e0bb2e903fedd
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 3d69d082495f11c48273e9329bd2a4a61451b33f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675428"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058684"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials：電池
 
-![發行前的 NuGet](~/media/shared/pre-release.png)
-
-**電池**類別可讓您檢查裝置的電池資訊並監視變更。
+**Battery** 類別可讓您檢查裝置的電池資訊和監視變更，並提供裝置的省電狀態資訊，這說明裝置是否正在低耗電模式中執行。 若裝置已開啟低電源狀態，應用程式應該避免背景處理。
 
 ## <a name="get-started"></a>開始使用
 
@@ -65,7 +63,7 @@ using Xamarin.Essentials;
 檢查目前的電池資訊：
 
 ```csharp
-var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or -1.0 if unable to determine.
+var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or 1.0 when on AC or no battery.
 
 var state = Battery.State;
 
@@ -121,7 +119,7 @@ public class BatteryTest
         Battery.BatteryChanged += Battery_BatteryChanged;
     }
 
-    void Battery_BatteryChanged(object sender, BatteryChangedEventArgs   e)
+    void Battery_BatteryChanged(object sender, BatteryInfoChangedEventArgs   e)
     {
         var level = e.ChargeLevel;
         var state = e.State;
@@ -130,6 +128,39 @@ public class BatteryTest
     }
 }
 ```
+
+以電池電力運作的裝置可能會進入低電源省電狀態。 有時候裝置會自動切換到此狀態，例如當電池電力低於總容量的 20% 時。 針對省電模式，作業系統會減少可能會耗電的活動。 當進入省電模式時，應用程式也可以透過避免進行背景處理或執行其他耗電量大的活動，以降低耗電量。
+
+您也可以使用靜態 `Battery.EnergySaverStatus` 屬性取得裝置目前的省電狀態：
+
+```csharp
+// Get energy saver status
+var status = Battery.EnergySaverStatus;
+```
+
+此屬性會傳回 `EnergySaverStatus` 列舉的成員，亦即 `On`, `Off` 或 `Unknown`。 若屬性傳回 `On`，應用程式應該避免進行背景處理或執行其他耗電量大的活動。
+
+應用程式也應該安裝事件處理常式。 **Power** 類別會公開當省電狀態變更時所觸發的事件：
+
+```csharp
+public class EnergySaverTest
+{
+    public EnergySaverTest()
+    {
+        // Subscribe to changes of energy-saver status
+        Batter.EnergySaverStatusChanged += OnEnergySaverStatusChanged;
+    }
+
+    private void OnEnergySaverStatusChanged(EnergySaverStatusChangedEventArgs e)
+    {
+        // Process change
+        var status = e.EnergySaverStatus;
+    }
+}
+```
+
+若省電狀態變更為 `On`，應用程式應該停止執行背景處理。 若狀態變更為 `Unknown` 或 `Off`，應用程式可以繼續進行背景處理。
+
 
 ## <a name="platform-differences"></a>平台差異
 
@@ -141,7 +172,6 @@ public class BatteryTest
 
 * 裝置必須用來測試 API。 
 * 針對 `PowerSource`，只會傳回 `AC` 或 `Battery`。
-* 無法取消震動。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
