@@ -34,7 +34,7 @@ _繫結的服務是 Android 提供用戶端-伺服器介面的用戶端 （例�
 
 ![圖表，顯示的服務元件如何與相關](bound-services-images/bound-services-02.png "圖表，顯示的服務元件如何互相關聯性。")
 
-本指南會討論如何擴充`Service`類別來實作繫結的服務。 它也會涵蓋實作`IServiceConnection`及擴充`Binder`以允許用戶端與服務通訊。 範例應用程式隨附於本指南中，其中包含的方案使用單一的 Xamarin.Android 專案，稱為**[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)** 。 這是非常基本的應用程式示範如何實作服務以及如何將活動繫結到它。 繫結的服務有個簡單的 API，只有一個方法， `GetFormattedTimestamp`，它會傳回字串，會告知使用者，當服務開始時，多久它已經執行。 應用程式也可讓使用者以手動方式解除繫結和繫結至服務。
+本指南會討論如何擴充`Service`類別來實作繫結的服務。 它也會涵蓋實作`IServiceConnection`及擴充`Binder`以允許用戶端與服務通訊。 範例應用程式隨附於本指南中，其中包含的方案使用單一的 Xamarin.Android 專案，稱為 **[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)** 。 這是非常基本的應用程式示範如何實作服務以及如何將活動繫結到它。 繫結的服務有個簡單的 API，只有一個方法， `GetFormattedTimestamp`，它會傳回字串，會告知使用者，當服務開始時，多久它已經執行。 應用程式也可讓使用者以手動方式解除繫結和繫結至服務。
 
 [![在 Android 手機上執行的應用程式的螢幕擷取畫面](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png#lightbox)
 
