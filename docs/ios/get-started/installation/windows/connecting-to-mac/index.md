@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/29/2018
-ms.openlocfilehash: befeb92529aa066f6106e855ed1fbdfe49c51e66
-ms.sourcegitcommit: c59e1882aa4af3ce36fba5c6eaeb5cf73a9cb289
+ms.openlocfilehash: 8e87a284e684dff14a2ea0fcfbf34158ed8adefa
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50919038"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52899131"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>為 Xamarin.iOS 開發與 Mac 配對
 

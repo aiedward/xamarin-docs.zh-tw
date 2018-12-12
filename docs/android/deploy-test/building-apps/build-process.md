@@ -5,13 +5,13 @@ ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 03/14/2018
-ms.openlocfilehash: b63efb3f9bfa432f15415e652cd5d59f929c4488
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.date: 12/03/2018
+ms.openlocfilehash: ae005b487e13ab4d2d39b26b10c7ca08e263ef67
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617783"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52899170"
 ---
 # <a name="build-process"></a>建置流程
 
@@ -76,7 +76,7 @@ Xamarin.Android 建置程序是以 MSBuild 作為基礎，而這也是 Visual St
 
 ## <a name="build-properties"></a>組建屬性
 
-MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.csproj**) 的 [MSBuild PropertyGroup 元素](https://docs.microsoft.com/visualstudio/msbuild/propertygroup-element-msbuild)內指定這些屬性。
+MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.csproj**) 的 [MSBuild PropertyGroup 元素](https://docs.microsoft.com/visualstudio/msbuild/propertygroup-element-msbuild)內指定這些屬性。 
 
 -   **組態** &ndash; 指定要使用的組建組態，例如「偵錯」或「發行」。 組態屬性可用來決定其他會決定目標行為之屬性的預設值。 您可以在 IDE 內建立其他組態。
 
@@ -94,7 +94,8 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
     如果 `DebugType` 未設定或者是空字串，則 `DebugSymbols` 屬性會控制應用程式是否可偵錯。
 
-
+    - **AndroidGenerateLayoutBindings** &ndash; 若設定為 `true`即可產生[配置程式碼後置](https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/LayoutCodeBehind.md)；若設定為 `false`，則會完全予以停用。 預設值是 `false`。
+    
 ### <a name="install-properties"></a>安裝屬性
 
 安裝屬性可控制 `Install` 和 `Uninstall` 目標的行為。
@@ -129,6 +130,16 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
     在 Xamarin.Android 7.1 之後已新增這個屬性的支援。
 
     這個屬性的預設值是 `False`。
+
+-   **AndroidD8JarPath** &ndash; `d8.jar` 的路徑，用於 D8 Dex 編譯器。 預設為 Xamarin.Android 安裝中的路徑。 如需進一步的詳細資訊，請參閱有關 [D8 和 R8][d8-r8] 的文件。
+
+-   **AndroidDexTool** &ndash; 有效值為 `dx` 或 `d8` 的列舉樣式屬性。 指出在 Xamarin.Android 建置流程期間使用哪一個 Android [dex][dex] 編譯器。
+    目前預設為 `dx`。 如需進一步的詳細資訊，請參閱有關 [D8 和 R8][d8-r8] 的文件。
+
+    [dex]: https://source.android.com/devices/tech/dalvik/dalvik-bytecode
+    [d8-r8]: https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/D8andR8.md
+
+-   **AndroidEnableDesugar** &ndash; 用來決定是否啟用 `desugar` 的布林屬性值。 Android 目前不支援所有 Java 8 功能，預設工具鏈會藉由在 `javac` 編譯器的輸出上執行位元組程式碼轉換 (稱為 `desugar`)，以實作新的語言功能。 若使用 `AndroidDexTool=dx`，預設即為 `False`；若使用 `AndroidDexTool=d8`，預設則為 `True`。
 
 -   **AndroidEnableMultiDex** &ndash; 決定是否會在最終的 `.apk` 內使用 Multi-Dex 支援的布林值屬性。
 
@@ -229,6 +240,14 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
     <AndroidLinkSkip>Assembly1;Assembly2</AndroidLinkSkip>
     ```
 
+-   **AndroidLinkTool** &ndash; 有效值為 `proguard` 或 `r8` 的列舉樣式屬性。 指出哪一個程式碼壓縮工具用於 Java 程式碼。 目前預設為空字串，如果 `$(AndroidEnableProguard)` 為 `True`，則預設為 `proguard`。 如需進一步的詳細資訊，請參閱有關 [D8 和 R8][d8-r8] 的文件。
+
+    [d8-r8]: https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/D8andR8.md
+
+-   **LinkerDumpDependencies** &ndash; 可產生連結器相依性檔案的布林屬性。 此檔案可作為 [illinkanalyzer](https://github.com/mono/linker/tree/master/analyzer) 工具的輸入使用。
+
+    預設值為 False。
+
 -   **AndroidManagedSymbols** &ndash; 布林值屬性，可控制是否產生序列點以便可從 `Release` 堆疊追蹤擷取檔案名稱和行號資訊。
 
     已在 Xamarin.Android 6.1 中新增。
@@ -236,6 +255,8 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 -   **AndroidManifest** &ndash; 指定要作為應用程式之 [`AndroidManifest.xml`](~/android/platform/android-manifest.md) 範本的檔案名稱。
     建置期間會合併任何其他必要值以產生實際的 `AndroidManifest.xml`。
     `$(AndroidManifest)` 必須在 `/manifest/@package` 屬性中包含套件名稱。
+
+-   **AndroidR8JarPath** &ndash; `r8.jar` 的路徑，用於 R8 Dex 編譯器和壓縮工具。 預設為 Xamarin.Android 安裝中的路徑。 如需進一步的詳細資訊，請參閱有關 [D8 和 R8][d8-r8] 的文件。
 
 -   **AndroidSdkBuildToolsVersion** &ndash; Android SDK 建置工具套件提供 **aapt** 和 **zipalign** 等工具。 您可以同時安裝建置工具套件的多個不同版本。 如果「慣用的」建置工具版本存在，可藉由檢查及使用該版本來完成選擇要封裝的建置工具套件，如果「慣用的」版本不存在，則會使用已安裝的建置工具套件中版本最高者。
 
@@ -245,7 +266,6 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
     支援的值包括：
 
-    -   `armeabi`
     -   `armeabi-v7a`
     -   `x86`
     -   `arm64-v8a`：需要 Xamarin.Android 5.1 和更新版本。
@@ -284,10 +304,11 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
     若為 `True`，則會使用 [ProguardConfiguration](#ProguardConfiguration) 檔案來控制 `proguard` 執行。
 
 -   **JavaMaximumHeapSize** &ndash; 指定在封裝程序進行期間建置 `.dex` 檔案時，所要使用之 **java**
-    `-Xmx` 參數值的值。 若未指定，則不會對 **java** 提供 `-Xmx` 選項。
+    `-Xmx` 參數值的值。 如果未指定，則 `-Xmx` 選項會為 **java** 提供值 `1G`。 相較於其他平台，這在 Windows 上通常是必要項目。
 
     如果 [`_CompileDex` 目標擲回 `java.lang.OutOfMemoryError`](https://bugzilla.xamarin.com/show_bug.cgi?id=18327)，則必須指定這個屬性。
 
+    藉由變更下列項目來自訂值：
     ```xml
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
     ```
@@ -335,7 +356,6 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
     預先定義的索引鍵項目
 
     -   **abi** &ndash; 為應用程式插入設為目標的 abi
-        -   1 &ndash; `armeabi`
         -   2 &ndash; `armeabi-v7a`
         -   3 &ndash; `x86`
         -   4 &ndash; `arm64-v8a`
@@ -351,7 +371,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
     已在 Xamarin.Android 7.2 中新增。
 
--   **AndroidVersionCodeProperties** &ndash; 字串屬性可讓開發人員定義要與 `AndroidVersionCodePattern` 搭配使用的自訂項目。 其格式為 `key=value` 組。 `value` 中的所有項目都應該是整數值。 例如：`screen=23;target=$(_SupportedApiLevel)`。 如您所見，您可以在字串中利用現有或自訂的 MSBuild 屬性。
+-   **AndroidVersionCodeProperties** &ndash; 字串屬性可讓開發人員定義要與 `AndroidVersionCodePattern` 搭配使用的自訂項目。 其格式為 `key=value` 組。 `value` 中的所有項目都應該是整數值。 例如：`screen=23;target=$(_AndroidApiLevel)`。 如您所見，您可以在字串中利用現有或自訂的 MSBuild 屬性。
 
     已在 Xamarin.Android 7.2 中新增。
 
@@ -370,6 +390,65 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 -  **AndroidApkSignerAdditionalArguments** &ndash;字串屬性，允許開發人員將額外引數提供給 `apksigner` 工具。
 
     已在 Xamarin.Android 8.2 中新增。
+
+-  **AndroidLintEnabled** &ndash;允許開發人員在封裝流程期間執行 Android `lint` 工具的布林屬性。
+
+    -   **AndroidLintEnabledIssues** &ndash; 要啟用的 Lint 問題清單 (以逗號分隔)。
+
+    -   **AndroidLintDisabledIssues** &ndash; 要停用的 Lint 問題清單 (以逗號分隔)。
+
+    -   **AndroidLintCheckIssues** &ndash; 要檢查的 Lint 問題清單 (以逗號分隔)。 
+       注意：只會檢查這些問題。
+
+    -   **AndroidLintConfig** &ndash; 這是 Lint 樣式組態檔的建置動作。 這可用來啟用/停用要檢查的問題。 多個檔案可以使用此建置動作，因為其內容將會合併。
+
+    如需 Android `lint` 工具的詳細資訊，請參閱 [Lint 說明](http://www.androiddocs.com/tools/help/lint.html)。
+
+-  **AndroidGenerateJniMarshalMethods** &ndash; 可在建置流程期間產生 JNI 封送處理方法的布林屬性。 這可大幅減少 System.Reflection 在繫結協助程式碼中的使用量。
+
+   根據預設，這會設定為 False。 如果開發人員想要使用新的 JNI 封送處理方法功能，他們可以在其 csproj 中設定下列程式碼：
+
+    ```xml
+    <AndroidGenerateJniMarshalMethods>True</AndroidGenerateJniMarshalMethods>
+    ```
+
+    。 或者，透過下列參數在命令列上提供屬性：
+
+    `/p:AndroidGenerateJniMarshalMethods=True`
+
+    **實驗**。 已在 Xamarin.Android 9.2 中新增。
+    預設值為 False。
+
+- **AndroidGenerateJniMarshalMethodsAdditionalArguments** &ndash; 可用來將額外的參數新增至 `jnimarshalmethod-gen.exe` 引動過程的字串屬性。  這適用於偵錯，因此可以使用 `-v`、`-d` 或 `--keeptemp` 等選項。
+
+   預設值為空字串。 它可以在 csproj 檔案或在命令列中設定。 例如: 
+
+    ```xml
+    <AndroidGenerateJniMarshalMethodsAdditionalArguments>-v -d --keeptemp</AndroidGenerateJniMarshalMethodsAdditionalArguments>
+    ```
+
+   或：
+
+    `/p:AndroidGenerateJniMarshalMethodsAdditionalArguments="-v -d --keeptemp"`
+
+    已在 Xamarin.Android 9.2 中新增。
+
+- **AndroidMultiDexClassListExtraArgs** &ndash; 可讓開發人員在產生 `multidex.keep` 檔案時，將額外的引數傳遞給 `com.android.multidex.MainDexListBuilder` 的字串屬性。 
+
+    其中一個特定情況是您在 `dx` 編譯期間收到下列錯誤時。
+
+        com.android.dex.DexException: Too many classes in --main-dex-list, main dex capacity exceeded
+
+    如果您收到這個錯誤，則可以將下列程式碼新增至 .csproj。
+
+    ```xml
+    <DxExtraArguments>--force-jumbo </DxExtraArguments>
+    <AndroidMultiDexClassListExtraArgs>--disable-annotation-resolution-workaround</AndroidMultiDexClassListExtraArgs>
+    ```
+
+    此舉應該可讓 `dx` 步驟成功完成。
+
+    已在 Xamarin.Android 8.3 中新增。
 
 ### <a name="binding-project-build-properties"></a>繫結專案組建屬性
 
@@ -408,9 +487,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
       - 以 `jmethodID` 快取受控子類別的 Java 可呼叫包裝函式建構函式。
 
-    預設值是 `XamarinAndroid`。
-
-    未來版本的預設值會變更。
+    預設值是 `XAJavaInterop1`。
 
 
 ### <a name="resource-properties"></a>資源屬性
@@ -427,8 +504,31 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
 -   **AndroidExplicitCrunch** &ndash; 如果您要使用非常大量的本機可繪製資源來建置應用程式，則初始建置 (或重建) 可能需要幾分鐘的時間才能完成。 若要加快建置程序，請嘗試納入此屬性並將它設定為 `True`。 若設定了這個屬性，建置程序就會預先處理 .png 檔案。
 
+    注意：此選項與 `$(AndroidUseAapt2)` 選項不相容。 如果啟用 `$(AndroidUseAapt2)`，將會停用這項功能。 如果您想要繼續使用此功能，請將 `$(AndroidUseAapt2)` 設定為 `False`。
+
     **實驗**。 已在 Xamarin.Android 7.0 中新增。
 
+-  **AndroidUseAapt2** &ndash; 可讓開發人員控制 `aapt2` 工具的使用以進行封裝的布林屬性。
+    根據預設，這會設定為 False，而我們將使用 `aapt`。
+    如果開發人員想要使用新的 `aapt2`，他們可以在其 csproj 中設定下列程式碼：
+        
+    ```xml
+    <AndroidUseAapt2>True</AndroidUseAapt2>
+    ```
+        
+    。 或者，透過下列參數在命令列上提供屬性：
+
+    `/p:AndroidUseAapt2=True`
+
+    已在 Xamarin.Android 8.3 中新增。
+
+-   **AndroidAapt2CompileExtraArgs** &ndash; 指定要在處理 Android 資產和資源時，傳遞給 **aapt2 compile** 命令的其他命令列選項。
+
+    已在 Xamarin.Android 9.1 中新增。
+
+-   **AndroidAapt2LinkExtraArgs** &ndash; 指定要在處理 Android 資產和資源時，傳遞給 **aapt2 link** 命令的其他命令列選項。
+
+    已在 Xamarin.Android 9.1 中新增。
 
 <a name="Signing_Properties" />
 
@@ -542,6 +642,18 @@ Enter key password for keystore.alias
 </ItemGroup>
 ```
 
+### <a name="androidboundlayout"></a>AndroidBoundLayout
+
+表示在 `AndroidGenerateLayoutBindings` 屬性設定為 `false` 的情況下，配置檔案將為其產生程式碼後置。 在所有其他層面上，它與上述的 `AndroidResource` 相同。 此動作**只**能與配置檔案搭配使用：
+
+```xml
+<AndroidBoundLayout Include="Resources\layout\Main.axml" />
+```
+
+### <a name="androidfragmenttype"></a>AndroidFragmentType
+
+指定在產生配置繫結程式碼時，要用於所有 `<fragment>`配置元素的預設完整類型。 此屬性預設為標準 Android `Android.App.Fragment` 類型。
+
 
 ### <a name="androidnativelibrary"></a>AndroidNativeLibrary
 
@@ -552,7 +664,7 @@ Enter key password for keystore.alias
 1.  路徑「探查」。
 2.  使用 `Abi` 項目屬性。
 
-路徑探查會使用原生程式庫的父目錄名稱來指定程式庫的目標 ABI。 因此，如果您將 `lib/armeabi/libfoo.so` 新增至組建，則會以 `armeabi` 的形式來「探查」ABI。 
+路徑探查會使用原生程式庫的父目錄名稱來指定程式庫的目標 ABI。 因此，如果您將 `lib/armeabi-v7a/libfoo.so` 新增至組建，則會以 `armeabi-v7a` 的形式來「探查」ABI。 
 
 
 #### <a name="item-attribute-name"></a>項目屬性名稱
@@ -562,7 +674,7 @@ Enter key password for keystore.alias
 ```xml
 <ItemGroup>
   <AndroidNativeLibrary Include="path/to/libfoo.so">
-    <Abi>armeabi</Abi>
+    <Abi>armeabi-v7a</Abi>
   </AndroidNativeLibrary>
 </ItemGroup>
 ```
@@ -572,7 +684,13 @@ Enter key password for keystore.alias
 
 `AndroidAarLibrary` 的建置動作應用來直接參考 .aar 檔案。 Xamarin 元件最常使用此建置動作。 也就是要包含 .aar 檔案的參考，這些檔案是讓 Google Play 和其他服務運作的必要項目。
 
-針對使用此建置動作的檔案，其處理方式類似於在程式庫專案中找到的內嵌資源。 .aar 將擷取到中繼目錄中。 然後，所有資產、資源和 .jar 檔案將會包含在適當的項目群組中。  
+針對使用此建置動作的檔案，其處理方式類似於在程式庫專案中找到的內嵌資源。 .aar 將擷取到中繼目錄中。 然後，所有資產、資源和 .jar 檔案將會包含在適當的項目群組中。 
+
+### <a name="androidlintconfig"></a>AndroidLintConfig
+
+建置動作 'AndroidLintConfig' 應該與 `AndroidLintEnabled` 建置屬性一起使用。 具有此建置動作的檔案會合併在一起，並傳遞給 Android `lint` 工具。 它們應該是 xml 檔案，其中包含要啟用/停用哪些測試的相關資訊。
+
+如需詳細資訊，請參閱 [Lint 文件](http://www.androiddocs.com/tools/help/lint.html)。
 
 ### <a name="content"></a>內容
 

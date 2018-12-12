@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 315c7356a3d36686d36a32c9ad1cc93b61908a81
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: dea9d128efd777a84e166ccd066a7a2357b5c9e3
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617302"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267477"
 documentType: LandingData
 title: Xamarin.iOS
 metadata:
@@ -20,7 +20,7 @@ abstract:
     items:
     - href: ~/ios/samples/index.yml
       text: iOS 範例
-    - href: https://developer.xamarin.com/releases/ios/
+    - href: https://docs.microsoft.com/xamarin/ios/release-notes/
       text: 版本資訊
     - href: https://developer.apple.com/documentation/
       text: Apple 的開發人員文件

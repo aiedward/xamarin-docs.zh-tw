@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 7e6831a78d13cf3ae46a3a921c4b4420c430e28a
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 892c6d4903724eaa4cd2f482b550841bfa6f63ae
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617419"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267322"
 documentType: LandingData
 title: Xamarin.Mac
 metadata:
@@ -20,7 +20,7 @@ abstract:
     items:
     - href: ~/mac/samples/index.yml
       text: Mac 範例
-    - href: https://developer.xamarin.com/releases/mac/
+    - href: https://docs.microsoft.com/xamarin/mac/release-notes/
       text: 版本資訊
     - href: https://developer.apple.com/documentation/
       text: Apple 的開發人員文件

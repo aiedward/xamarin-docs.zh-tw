@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 70d6b908beb0d04788365b104b5e4a2679b0ebe1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 100b98d12d45713b0d5f6dfb435f3aa879e7da9f
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113244"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52899118"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS 中的 IPA 支援
 
@@ -262,4 +262,5 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 - [iTunesMetadata.plist 檔案](~/ios/deploy-test/app-distribution/itunesmetadata.md)
 - [疑難排解](~/ios/deploy-test/troubleshooting.md)
 - [iTunes 插圖](~/ios/app-fundamentals/images-icons/app-icons.md#itunes)
-- [散發適用於 iOS 裝置的企業應用程式](http://developer.apple.com/library/ios/#featuredarticles/FA_Wireless_Enterprise_App_Distribution/Introduction/Introduction.html)
+- [Develop and distribute enterprise apps (Apple)](https://help.apple.com/xcode/mac/current/#/devba5e7054d) (開發與散發企業應用程式 (Apple))
+- [Distributing Enterprise Apps (WWDC Video)](https://developer.apple.com/videos/play/wwdc2014/705/) (散發企業應用程式 (WWDC 影片))
