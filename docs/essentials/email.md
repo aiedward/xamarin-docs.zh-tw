@@ -4,17 +4,15 @@ description: Xamarin.Essentials 中的電子郵件類別使應用程式能夠開
 ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 3c2958cc4572c2f87c46c9edc5fc194284658f24
-ms.sourcegitcommit: 704d4cfd418c17b0e85a20c33a16d2419db0be71
+ms.date: 11/04/2018
+ms.openlocfilehash: d7d2536fca32fe3ae9f9692031645c42edb4ea61
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51691746"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898654"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials：電子郵件
-
-![發行前的 NuGet](~/media/shared/pre-release.png)
 
 **電子郵件**類別使應用程式能夠開啟包含主題、本文和收件者 (收件者、副本、密件副本) 等指定資訊的預設電子郵件應用程式。
 
@@ -66,7 +64,7 @@ public class EmailTest
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-無平台差異。
+並非所有 Android 電子郵件用戶端都支援 `Html`，原因是完全無法偵測該項目，建議在傳送電子郵件時使用 `PlainText`。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 

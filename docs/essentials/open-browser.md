@@ -4,17 +4,15 @@ description: Xamarin.Essentials 中的 Browser 類別可讓應用程式在最佳
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: a68837ac4447dabcf52a1d1b27913adf80b4cbd7
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: ea2a10c11a77fcb2b3ce142d176522ebf0310725
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675389"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898866"
 ---
 # <a name="xamarinessentials-browser"></a>Xamarin.Essentials: Browser
-
-![發行前的 NuGet](~/media/shared/pre-release.png)
 
 **Browser** 類別可讓應用程式在最佳化系統偏好瀏覽器或外部瀏覽器中開啟網頁連結。
 
@@ -36,12 +34,14 @@ Browser 功能的運作方式是使用 `Uri` 與 `BrowserLaunchMode` 呼叫 `Ope
 
 public class BrowserTest
 {
-    public async Task OpenBrowser(Uri uri)
+    public async Task<bool> OpenBrowser(Uri uri)
     {
-        await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+        return await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
     }
 }
 ```
+
+當瀏覽器已由使用者「啟動」但未必由其「關閉」後，會傳回此方法。  `bool` 結果會指出是否啟動成功。
 
 ## <a name="platform-implementation-specifics"></a>平台實作特性
 

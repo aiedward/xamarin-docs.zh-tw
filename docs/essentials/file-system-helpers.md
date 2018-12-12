@@ -4,17 +4,15 @@ description: Xamarin.Essentials 中的 FileSystem 類別包含一系列協助程
 ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 37a4fdbdc3f7e1ee309ee9d49c7ad67374035ab4
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.date: 11/04/2018
+ms.openlocfilehash: 74089d55006555168d9774924c484cb8866cfb37
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617523"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898841"
 ---
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials：檔案系統協助程式
-
-![發行前的 NuGet](~/media/shared/pre-release.png)
 
 **FileSystem** 類別包含一系列協助程式，用於尋找應用程式的快取和資料目錄，並開啟應用程式套件內的檔案。
 

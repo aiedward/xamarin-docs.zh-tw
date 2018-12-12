@@ -4,19 +4,17 @@ description: 本文件描述 Xamarin.Essentials 中的 DeviceDisplay 類別，�
 ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: ebe97cf7fbb78bff17196110e835bd35ff76b826
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: d3102f0a4ed5f16c77c4a4768feb4a1565f2dd1a
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674882"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898887"
 ---
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials：裝置顯示資訊
 
-![發行前的 NuGet](~/media/shared/pre-release.png)
-
-**DeviceDisplay** 類別提供執行應用程式之裝置的畫面計量。
+**DeviceDisplay** 類別提供應用程式執行所在的裝置畫面計量資訊，並可要求防止畫面在應用程式正在執行時休眠。
 
 ## <a name="get-started"></a>開始使用
 
@@ -30,45 +28,57 @@ ms.locfileid: "50674882"
 using Xamarin.Essentials;
 ```
 
-## <a name="screen-metrics"></a>畫面計量
+## <a name="main-display-info"></a>主要顯示資訊
 
 除了基本的裝置資訊外，**DeviceDisplay** 類別也包含裝置畫面和方向的相關資訊。
 
 ```csharp
 // Get Metrics
-var metrics = DeviceDisplay.ScreenMetrics;
+var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
 
 // Orientation (Landscape, Portrait, Square, Unknown)
-var orientation = metrics.Orientation;
+var orientation = mainDisplayInfo.Orientation;
 
 // Rotation (0, 90, 180, 270)
-var rotation = metrics.Rotation;
+var rotation = mainDisplayInfo.Rotation;
 
 // Width (in pixels)
-var width = metrics.Width;
+var width = mainDisplayInfo.Width;
 
 // Height (in pixels)
-var height = metrics.Height;
+var height = mainDisplayInfo.Height;
 
 // Screen density
-var density = metrics.Density;
+var density = mainDisplayInfo.Density;
 ```
 
 **DeviceDisplay** 類別也會公開可以訂閱的事件，只要畫面計量有任何變更，就會觸發該事件：
 
 ```csharp
-public class ScreenMetricsTest
+public class DisplayInfoTest
 {
-    public ScreenMetricsTest()
+    public DisplayInfoTest()
     {
         // Subscribe to changes of screen metrics
-        DeviceDisplay.ScreenMetricsChanged += OnScreenMetricsChanged;
+        DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
     }
 
-    void OnScreenMetricsChanged(ScreenMetricsChangedEventArgs  e)
+    void OnMainDisplayInfoChanged(DisplayInfoChangedEventArgs  e)
     {
         // Process changes
-        var metrics = e.Metrics;
+        var displayInfo = e.DisplayInfo;
+    }
+}
+```
+
+**DeviceDisplay** 類別公開稱為 `KeepScreenOn` 的 `bool` 屬性，其可設定為嘗試防止裝置顯示關閉或鎖定。
+
+```csharp
+public class KeepScreenOnTest
+{
+    public void ToggleScreenLock()
+    {
+        DeviceDisplay.KeepScreenOn = !DeviceDisplay.KeepScreenOn;
     }
 }
 ```
@@ -81,7 +91,7 @@ public class ScreenMetricsTest
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-* 必須在 UI 執行緒上存取 `ScreenMetrics`，否則將擲回例外狀況。 您可以使用 [`MainThread.BeginInvokeOnMainThread`](~/essentials/main-thread.md) 方法，在 UI 執行緒上執行該程式碼。
+* 必須在 UI 執行緒上存取 `DeviceDisplay`，否則將擲回例外狀況。 您可以使用 [`MainThread.BeginInvokeOnMainThread`](~/essentials/main-thread.md) 方法，在 UI 執行緒上執行該程式碼。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 

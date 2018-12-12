@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: a0054c79bf0f356bcfcc48389a0a28f68f73a48b
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 42889e3805391e9e586cda61d26103398ba16269
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "38997111"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898520"
 ---
 # <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms 快速轉譯器
+
+![預覽](~/media/shared/preview.png)
 
 _這篇文章介紹透過壓平所產生的原生控制項階層減少膨脹和轉譯成本 Xamarin.Forms 控制項在 Android 上的快速轉譯器。_
 

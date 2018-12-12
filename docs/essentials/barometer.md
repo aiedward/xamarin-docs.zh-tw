@@ -4,17 +4,15 @@ description: Xamarin.Essentials 中的 Barometer 類別可讓您監視裝置的�
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 08/16/2018
-ms.openlocfilehash: 9172d816fe9a15993ba8f015310d0e79874c2d84
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 342ae1b64fefebaa4b3fa82e9f48c6e9a58d4751
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675025"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52899040"
 ---
 # <a name="xamarinessentials-barometer"></a>Xamarin.Essentials: Barometer
-
-![發行前的 NuGet](~/media/shared/pre-release.png)
 
 **Barometer** 類別可讓您監視裝置的氣壓計感應器，其會測量壓力。
 
@@ -30,7 +28,7 @@ ms.locfileid: "50675025"
 using Xamarin.Essentials;
 ```
 
-Barometer 功能的運作方式是呼叫 `Start` 與 `Stop` 方法，以觀察氣壓計壓力的變更 (讀數為千帕)。 所有變化都會透過 `ReadingChanged` 事件傳回。 以下是範例使用方式：
+Barometer 功能的運作方式是呼叫 `Start` 與 `Stop` 方法，以觀察氣壓計壓力的變更 (讀數單位為百帕)。 所有變化都會透過 `ReadingChanged` 事件傳回。 以下是範例使用方式：
 
 ```csharp
 
@@ -49,7 +47,7 @@ public class BarometerTest
     {
         var data = e.Reading;
         // Process Pressure
-        Console.WriteLine($"Reading: Pressure: {data.Pressure} kilopascals");
+        Console.WriteLine($"Reading: Pressure: {data.PressureInHectopascals} hectopascals");
     }
 
     public void ToggleBarometer()

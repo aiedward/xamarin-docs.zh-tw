@@ -4,17 +4,15 @@ description: 本文件描述 Xamarin.Essentials 中的羅盤類別，可讓您�
 ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 51812f9b4f88d77bf553a26ef3a6802239e338e0
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 55dd10bff21b7d082b225277d0100232d5efd4f3
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675493"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898780"
 ---
 # <a name="xamarinessentials-compass"></a>Xamarin.Essentials：羅盤
-
-![發行前的 NuGet](~/media/shared/pre-release.png)
 
 **羅盤**類別可讓您監視裝置的磁北方位。
 
@@ -86,13 +84,13 @@ Android 不會提供用於擷取羅盤方位的 API。 我們利用加速計和�
 
 ## <a name="low-pass-filter"></a>低通濾器
 
-由於 Android 羅盤值的更新和計算方式，可能需要將值平滑。 可以套用「低通濾器」來平均角度的正弦和餘弦值，並且可以透過在 `Compass` 類別上設定 `ApplyLowPassFilter` 屬性來開啟：
+由於 Android 羅盤值的更新和計算方式，可能需要將值平滑。 可以套用「低通濾器」來平均角度的正弦和餘弦值，並且可以透過使用接受 `bool applyLowPassFilter` 參數的 `Start` 方法多載來開啟：
 
 ```csharp
-Compass.ApplyLowPassFilter = true;
+Compass.Start(SensorSpeed.UI, applyLowPassFilter: true);
 ```
 
-這只會在 Android 平台上套用。 可以在[這裡](https://github.com/xamarin/Essentials/pull/354#issuecomment-405316860)閱讀詳細資訊。
+僅會在 Android 平台上套用此項，在 iOS 及 UWP 上則會略過此參數。  可以在[這裡](https://github.com/xamarin/Essentials/pull/354#issuecomment-405316860)閱讀詳細資訊。
 
 --------------
 

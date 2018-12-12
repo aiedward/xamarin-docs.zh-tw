@@ -4,17 +4,15 @@ description: 本文件描述 Xamarin.Essentials 中的 DeviceInfo 類別，可�
 ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 530b04446703d78452357b2c9f9089e59ebf6e6c
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: b78c04d30871552f9b1e18a42c871e24464c4802
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674809"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898949"
 ---
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials：裝置資訊
-
-![發行前的 NuGet](~/media/shared/pre-release.png)
 
 **DeviceInfo** 類別可提供執行應用程式的裝置相關資訊。
 
@@ -57,22 +55,23 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="platformsxrefxamarinessentialsdeviceinfoplatforms"></a>[平台](xref:Xamarin.Essentials.DeviceInfo.Platforms)
 
-`DeviceInfo.Platform` 與對應至作業系統的常數字串相互關聯。 可以使用 `Platforms` 類別來檢查值：
+`DeviceInfo.Platform` 與對應至作業系統的常數字串相互關聯。 可以使用 `DevicePlatform` 結構來檢查值：
 
-- **DeviceInfo.Platforms.iOS** - iOS
-- **DeviceInfo.Platforms.Android** - Android
-- **DeviceInfo.Platforms.UWP** - UWP
-- **DeviceInfo.Platforms.Unsupported** – 不支援
+- **DevicePlatform.iOS**：iOS
+- **DevicePlatform.Android**：Android
+- **DevicePlatform.UWP**：UWP
+- **DevicePlatform.Unknown**：未知
 
 ## <a name="idiomsxrefxamarinessentialsdeviceinfoidioms"></a>[慣用語](xref:Xamarin.Essentials.DeviceInfo.Idioms)
 
-`DeviceInfo.Idiom` 與對應至執行應用程式之裝置類型的常數字串相互關聯。 可以使用 `Idioms` 類別來檢查值：
+`DeviceInfo.Idiom` 與對應至執行應用程式之裝置類型的常數字串相互關聯。 可以使用 `DeviceIdiom` 結構來檢查值：
 
-- **DeviceInfo.Idioms.Phone** – 手機
-- **DeviceInfo.Idioms.Tablet** – 平板電腦
-- **DeviceInfo.Idioms.Desktop** – 電腦
-- **DeviceInfo.Idioms.TV** – 電視
-- **DeviceInfo.Idioms.Unsupported** - 不支援
+- **DeviceIdiom.Phone**：手機
+- **DeviceIdiom.Tablet**：平板電腦
+- **DeviceIdiom.Desktop**：電腦
+- **DeviceIdiom.TV**：TV
+- **DeviceIdiom.Watch**：手錶
+- **DeviceIdiom.Unknown**：未知
 
 ## <a name="device-type"></a>裝置類型
 

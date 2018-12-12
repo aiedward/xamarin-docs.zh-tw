@@ -4,17 +4,15 @@ description: 此文件連結到描述 Xamarin.Essentials 的各種指南，提�
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 07/30/2018
-ms.openlocfilehash: b81102c6c0e0d65aaa46b2d32e34db536ab58e03
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.date: 11/04/2018
+ms.openlocfilehash: 0f4271e5c0c9de53a83a840f7fe0a83b594a06fa
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "39360998"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898637"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
-
-![發行前的 NuGet](~/media/shared/pre-release.png)
 
 Xamarin.Essentials 提供開發人員適用於其行動應用程式的跨平台 API。
 
@@ -35,7 +33,6 @@ Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人
 * [剪貼簿](clipboard.md?context=xamarin/xamarin-forms)：輕鬆快速地設定或讀取剪貼簿上的文字。
 * [羅盤](compass.md?context=xamarin/xamarin-forms)：監視羅盤的變更。
 * [連線](connectivity.md?context=xamarin/xamarin-forms)：檢查連線狀態和偵測變更。
-* [資料轉送](data-transfer.md?context=xamarin/xamarin-forms)：將文字與網站 URI 傳送到其他應用程式。
 * [裝置顯示器資訊](device-display.md?context=xamarin/xamarin-forms)：取得裝置的螢幕計量與方向。
 * [裝置資訊](device-information.md?context=xamarin/xamarin-forms)：輕鬆地了解裝置。
 * [電子郵件](email.md?context=xamarin/xamarin-forms)：輕鬆地傳送電子郵件訊息。
@@ -51,10 +48,9 @@ Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人
 * [開啟瀏覽器](open-browser.md?context=xamarin/xamarin-forms)：輕鬆快速地開啟瀏覽器至特定網站。
 * [方向感應器](orientation-sensor.md?context=xamarin/xamarin-forms)：擷取裝置在三維空間中的方向。
 * [電話撥號程式](phone-dialer.md?context=xamarin/xamarin-forms)：開啟電話撥號程式。
-* [電源](power.md?context=xamarin/xamarin-forms)：取得裝置的省電狀態。
 * [偏好設定](preferences.md?context=xamarin/xamarin-forms)：輕鬆快速地新增永續性偏好設定。
-* [螢幕鎖定](screen-lock.md?context=xamarin/xamarin-forms)：讓裝置螢幕保持恆亮。
 * [保護儲存體](secure-storage.md?context=xamarin/xamarin-forms)：安全地儲存資料。
+* [Share](share.md?context=xamarin/xamarin-forms)：將文字與網站 URI 傳送到其他應用程式。
 * [SMS](sms.md?context=xamarin/xamarin-forms)：建立簡訊以傳送。
 * [文字轉換語音](text-to-speech.md?context=xamarin/xamarin-forms)：將裝置上的文字說出來。
 * [版本追蹤](version-tracking.md?context=xamarin/xamarin-forms)：追蹤應用程式版本與組建編號。

@@ -4,17 +4,15 @@ description: Xamarin.Essentials 中的陀螺儀類別可讓您監視裝置的陀
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 1d42658160855e260e0d159c58a1f95e7a8c7d4c
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 1e19585e238d66568364be7ccdbdb52d22b04066
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674701"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898507"
 ---
 # <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials：陀螺儀
-
-![發行前的 NuGet](~/media/shared/pre-release.png)
 
 **陀螺儀**類別可讓您監視裝置的陀螺儀感應器，該感應器是裝置三個主軸周圍的旋轉。
 
@@ -30,7 +28,7 @@ ms.locfileid: "50674701"
 using Xamarin.Essentials;
 ```
 
-陀螺儀功能的運作方式是呼叫 `Start` 和 `Stop` 方法，以觀察陀螺儀的變化。 所有變化都會透過 `ReadingChanged` 事件傳回。 以下是範例使用方式：
+陀螺儀功能的運作方式是呼叫 `Start` 和 `Stop` 方法，以觀察陀螺儀的變化。 所有變更都會透過 `ReadingChanged` 事件以每秒弧度為單位傳回。 以下是範例使用方式：
 
 ```csharp
 
@@ -48,7 +46,7 @@ public class GyroscopeTest
     void Gyroscope_ReadingChanged(object sender, GyroscopeChangedEventArgs e)
     {
         var data = e.Reading;
-        // Process Angular Velocity X, Y, and Z
+        // Process Angular Velocity X, Y, and Z reported in rad/s
         Console.WriteLine($"Reading: X: {data.AngularVelocity.X}, Y: {data.AngularVelocity.Y}, Z: {data.AngularVelocity.Z}");
     }
 

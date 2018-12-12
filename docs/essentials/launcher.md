@@ -4,17 +4,15 @@ description: Xamarin.Essentials 中的 Launcher 類別可讓應用程式依系�
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 07/25/2018
-ms.openlocfilehash: b9dc211a8b8b007e6975448a6c6c35f870021cc6
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 502ccaf8ef4fbeadb4b46f47668ac11f2747b89d
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674791"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898263"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: Launcher
-
-![發行前的 NuGet](~/media/shared/pre-release.png)
 
 **Launcher** 類別可讓應用程式依系統開啟 URI。 當深層連結到其他應用程式的自訂 URI 配置時，通常會使用它。 若您要開啟瀏覽器並瀏覽網站，您應該參考**[瀏覽器](open-browser.md)** API。
 

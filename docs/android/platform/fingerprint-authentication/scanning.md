@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/23/2016
-ms.openlocfilehash: ed7f31b011c32b25f431801e47c570900589e131
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 843a3a8a347e3de48efbbbba3a1088c617e9e7cb
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106321"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898728"
 ---
 # <a name="scanning-for-fingerprints"></a>掃描指紋
 
@@ -36,7 +36,7 @@ protected void FingerPrintAuthenticationExample()
     // cancellationSignal can be used to manually stop the fingerprint scanner. 
     cancellationSignal = new Android.Support.V4.OS.CancellationSignal();
     
-    FingerprintManagerCompat fingerPrintManager = FingerprintManagerCompat.From(this);
+    FingerprintManagerCompat fingerprintManager = FingerprintManagerCompat.From(this);
     
     // AuthenticationCallback is a base class that will be covered later on in this guide.
     FingerprintManagerCompat.AuthenticationCallback authenticationCallback = new MyAuthCallbackSample(this);

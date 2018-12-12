@@ -4,17 +4,15 @@ description: Xamarin.Essentials 中的 Connectivity 類別可讓您監視裝置�
 ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: bc0cd206881356a92128c758f0225f98f88c2814
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 3c29fc85d20e3a4d91a1ae63feca1cb668af141e
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675402"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52899015"
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: Connectivity
-
-![發行前的 NuGet](~/media/shared/pre-release.png)
 
 **Connectivity** 類別可讓您監視裝置網路狀況的變更、檢查目前的網路存取，以及目前連線方式。
 
@@ -84,7 +82,7 @@ if (current == NetworkAccess.Internet)
 您可以檢查裝置目前正在使用哪種類型的[連線設定檔](xref:Xamarin.Essentials.ConnectionProfile)：
 
 ```csharp
-var profiles = Connectivity.Profiles;
+var profiles = Connectivity.ConnectionProfiles;
 if (profiles.Contains(ConnectionProfile.WiFi))
 {
     // Active Wi-Fi connection.
@@ -105,7 +103,7 @@ public class ConnectivityTest
     void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs  e)
     {
         var access = e.NetworkAccess;
-        var profiles = e.Profiles;
+        var profiles = e.ConnectionProfiles;
     }
 }
 ```

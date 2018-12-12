@@ -4,17 +4,15 @@ description: 本文件描述 Xamarin.Essentials 中的地理位置類別，可�
 ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 55d33181b2a0de1f939ebd28b83a67a9af64716e
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.date: 11/04/2018
+ms.openlocfilehash: 651da789dcd87810ef6650d87fc2df4f91ce58e1
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528490"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898923"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials：地理位置
-
-![發行前的 NuGet](~/media/shared/pre-release.png)
 
 **地理位置**類別會提供 API 來擷取裝置的目前地理位置座標。
 
@@ -191,7 +189,7 @@ catch (Exception ex)
 ```csharp
 Location boston = new Location(42.358056, -71.063611);
 Location sanFrancisco = new Location(37.783333, -122.416667);
-double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Miles);
+double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnit.Miles);
 ```
 
 `Location` 建構函式在該順序中具有緯度與經度的引數。 正緯度值位於赤道以北，正經度值位於本初子午線以東。 使用 `CalculateDistance` 的最後引數來指定英里或公里。 `Location` 類別也會定義在兩個單位之間進行轉換的 `KilometersToMiles` 和 `MilesToKilometers` 方法。

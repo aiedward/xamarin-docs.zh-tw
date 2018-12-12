@@ -4,17 +4,15 @@ description: Xamarin.Essentials 中的 Accelerometer 類別可讓您監視裝置
 ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 70f41e6242b62577b6aa42cc207802ead020499e
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: f443cc094c7d7be6ec782df27332bafe5d51dda3
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674744"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898793"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials：Accelerometer
-
-![發行前的 NuGet](~/media/shared/pre-release.png)
 
 **Accelerometer** 類別可讓您監視裝置的加速計感應器，此感應器指出裝置在三維空間中的加速度。
 
