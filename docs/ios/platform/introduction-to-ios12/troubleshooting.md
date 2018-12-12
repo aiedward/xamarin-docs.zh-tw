@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/5/2018
-ms.openlocfilehash: 416dfef5520be39ca37945ea25cb9426e9ad653a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 02c95fbdde8b264fc34d5a8785be03b2dfcddba7
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131163"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267348"
 ---
 # <a name="troubleshooting-ios-12-development-with-xamarin"></a>使用 Xamarin 進行 iOS 12 開發的疑難排解
 
@@ -24,7 +24,7 @@ ms.locfileid: "50131163"
 
 - 版本資訊
     - [Xamarin 版本](http://releases.xamarin.com/)部落格
-    - Xamarin[版本資訊](https://developer.xamarin.com/releases/)封存
+    - Xamarin[版本資訊](https://docs.microsoft.com/xamarin/ios/release-notes/)封存
     - Visual Studio for Mac ([穩定](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-mac-relnotes)，[預覽](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-mac-preview-relnotes))
     - Visual Studio 2017 ([穩定](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)，[預覽](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-preview-relnotes))
 - [Developer Community](https://developercommunity.visualstudio.com/search.html)

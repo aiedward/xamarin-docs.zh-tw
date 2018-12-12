@@ -1,5 +1,5 @@
 ---
-title: MacOS Mojave 簡介
+title: macOS Mojave 簡介
 description: 本文件提供高層級的 macOS Mojave 中新增和更新功能的概觀。
 ms.prod: xamarin
 ms.assetid: 4A41CD85-C807-44C9-85AB-B5441B145A73
@@ -7,14 +7,14 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: ce293a7c97a2cb4975baef807ded9a8fd0a90476
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: a9975eeec445ac59dc71a44a1156804835795982
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39615830"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267400"
 ---
-# <a name="introduction-to-macos-mojave"></a>MacOS Mojave 簡介
+# <a name="introduction-to-macos-mojave"></a>macOS Mojave 簡介
 
 本文件提供高層級的 macOS Mojave 中新增和更新功能的概觀。
 
@@ -48,4 +48,4 @@ ms.locfileid: "39615830"
 
 - [Xamarin.Mac 範例](https://developer.xamarin.com/samples/mac/)
 - [macOS-Apple 開發人員](https://developer.apple.com/macos/)
-- [Xamarin.Mac 5.0 版本資訊](https://developer.xamarin.com/releases/mac/xamarin.mac_5/xamarin.mac_5.0/)
+- [Xamarin.Mac 5.0 版本資訊](https://docs.microsoft.com/xamarin/mac/release-notes/5/5.0/)

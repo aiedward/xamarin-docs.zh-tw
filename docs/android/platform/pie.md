@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: cd1c374fa68420e1923ef4dee0bb37a4665f3535
-ms.sourcegitcommit: 215cad17324ba3fbc23487ce66cd4e1cc74eb879
+ms.openlocfilehash: 49e3a0189d0887343f2636d6931a00cc819800c0
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52710019"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267634"
 ---
 # <a name="android-pie-features"></a>Android 的圓形圖功能
 
@@ -24,7 +24,7 @@ _如何開始使用 Xamarin.Android 的 Android 9 圓形圖中開發應用程式
 
 這篇文章是結構化，以協助您開始在 Android 圓形圖開發 Xamarin.Android 應用程式。 它會說明如何安裝必要的更新、 設定 SDK，以及準備的模擬器或裝置上的進行測試。 它也概述 Android 圓形圖中的新功能，並提供說明如何使用一些關鍵的 Android 圓形圖功能的範例原始程式碼。
 
-Xamarin.Android 9.0 提供支援 Android 的圓形圖。 如需 Android 圓形圖的 Xamarin.Android 支援的詳細資訊，請參閱[Android P Developer Preview 3](https://developer.xamarin.com/releases/android/xamarin.android_9/xamarin.android_9.0/#android-p-dp1)版本資訊。
+Xamarin.Android 9.0 提供支援 Android 的圓形圖。 如需 Android 圓形圖的 Xamarin.Android 支援的詳細資訊，請參閱[Android P Developer Preview 3](https://docs.microsoft.com/xamarin/android/release-notes/9/9.0/#android-p-dp1)版本資訊。
 
 ## <a name="requirements"></a>需求
 

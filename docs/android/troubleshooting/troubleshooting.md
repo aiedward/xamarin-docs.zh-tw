@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 140307dbfe55d5445c329ea83eafedd467fe58fa
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ccf5d97ff553fd304c4a3af158085d490bb665b7
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109350"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267595"
 ---
 # <a name="troubleshooting-tips"></a>疑難排解秘訣
 
@@ -66,7 +66,7 @@ Xamarin.Android 會有幾個地方，來追蹤各種 bug 時的外觀。
 4.  在您的桌面上 monodroid.log 檔案會寫入記錄訊息。
 
 
-Visual Studio for Mac 一律會寫入裝置的部署記錄檔。 找到這些物件是略為困難;*AndroidUtils*記錄檔會為每個日期 + 時間部署，例如建立： **AndroidTools-2012-10-24_12-35-45.log**。
+Visual Studio for Mac 一律會寫入裝置的部署記錄檔。 找到這些物件是略為困難;*AndroidUtils*每個日期 + 時間部署，例如建立記錄檔：**AndroidTools-2012-10-24_12-35-45.log**。
 
 -  在 Windows 中，記錄檔會寫入至`%LOCALAPPDATA%\XamarinStudio-{VERSION}\Logs`。
 -  在 OS X 上記錄檔會寫入至`$HOME/Library/Logs/XamarinStudio-{VERSION}`。
@@ -91,28 +91,28 @@ adb shell setprop PROPERTY_NAME PROPERTY_VALUE
 
 Xamarin.Android 支援下列系統屬性：
 
--   *debug.mono.debug*： 如果非空白字串，這就相當於`*mono-debug*`。
+-   *debug.mono.debug*:如果非空白字串，這就相當於`*mono-debug*`。
 
--   *debug.mono.env*： 以管道分隔 ('*|*') 的應用程式在啟動期間，匯出的環境變數清單*之前*mono 已初始化。 這可讓設定環境變數，控制 mono 的記錄功能。
+-   *debug.mono.env*:以管道分隔 ('*|*') 的應用程式在啟動期間，匯出的環境變數清單*之前*mono 已初始化。 這可讓設定環境變數，控制 mono 的記錄功能。
 
-    - *附註*： 由於的值為 '*|*'-分隔，值必須具有額外的層級的引號，作為\` *adb 殼層*\`命令會移除一組雙引號。
+    - *請注意*:由於的值為 '*|*'-分隔，值必須具有額外的層級的引號，作為\` *adb 殼層*\`命令會移除引號括住的一組。
 
-    - *請注意*: Android 系統屬性值可以是不超過 92 個字元的長度。
+    - *請注意*:Android 系統屬性值可以是不超過 92 個字元的長度。
 
     - 範例：
 
             adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
 
--   *debug.mono.log*： 以逗號分隔 ('*，*') 的列印到 Android 偵錯記錄檔的其他訊息的元件清單。 根據預設，不會設定。 元件包括：
+-   *debug.mono.log*:以逗號分隔 ('*，*') 的列印到 Android 偵錯記錄檔的其他訊息的元件清單。 根據預設，不會設定。 元件包括：
 
-    -   *所有*： 列印的所有訊息
-    -   *gc*： 列印 GC 相關的訊息。
-    -   *grf*： 列印弱式 （通用） 的參考配置和解除配置的訊息。
-    -   *lref*： 列印本機參考的配置和解除配置的訊息。
+    -   *所有*:列印所有訊息
+    -   *gc*:列印與 GC 相關的訊息。
+    -   *grf*:列印弱式 （通用） 的參考配置和解除配置的訊息。
+    -   *lref*:列印本機參考的配置和解除配置的訊息。
 
     *附註*： 這些是*極*詳細資訊。 除非您真的需要否則請不要啟用。
 
--   *debug.mono.trace*： 允許您設定[mono-追蹤](http://docs.go-mono.com/?link=man%3amono(1))`=PROPERTY_VALUE`設定。
+-   *debug.mono.trace*:允許您設定[mono-追蹤](http://docs.go-mono.com/?link=man%3amono(1))`=PROPERTY_VALUE`設定。
 
 
 
@@ -250,63 +250,6 @@ Android 4.0，不過，已移動的收集器，而且不會再將 Android 執行
 
 
 
-## <a name="offline-activation"></a>離線啟用
-
-如果您是無法啟用 Windows，在 Xamarin.Android 或無法在 Mac OS X 上安裝 Xamarin.Android 的完整版本，請參閱[離線啟用](~/android/get-started/installation/index.md)頁面。
-
-
-
-## <a name="cant-upgrade-to-indiebusiness-from-trial-account"></a>無法從試用帳戶升級至獨立製作/business Edition
-
-如果您最近購買 Xamarin.Android，且先前已啟動 Xamarin.Android 試用版，您可能需要完成下列步驟來取得由 Visual Studio for Mac 或 Visual Studio 這個授權變更。
-
--  關閉 Visual Studio for Mac/Visual Studio
--  移除所有檔案從 Mac 上的 ~/Library/MonoAndroid 或 %PROGRAMDATA%\Mono Android\License\ for Windows
--  重新開啟 Visual Studio for Mac/Visual Studio，並建置 Xamarin.Android 專案
-
-
-這應該讓您啟動並執行。 如果您仍然遇到問題，您可能想嘗試[離線啟用](~/android/get-started/installation/index.md)以完成您的工作站啟用。
-
-
-
-## <a name="receiving-activation-incomplete-error-message"></a>接收 ' 啟動不完整的錯誤訊息
-
-使用 Xamarin.Android for Visual Studio 時，可能會發生此問題。 若要解決此問題，請將記錄傳送從下列位置，即可*contact@xamarin.com*。
-
--  記錄位置： **%localappdata%\\Xamarin\\記錄檔**
-
-
-
-
-## <a name="receiving-error-retrieving-update-information-error-message"></a>收到 '擷取更新資訊時發生錯誤' 錯誤訊息
-
-有時，更新將會失敗，與這個通常會在檢查更新時所發生的下列錯誤：
-
-大部分的時間，可以解決此錯誤，只要您的 Xamarin 帳戶登出，然後再記錄設回中。
-
-若要這麼做，請找到下面使用自選平台，並遵循的步驟：
-
-**在 Mac 上**：
-1. 開啟 Visual Studio for Mac
-2. 選取 Visual Studio for Mac > 帳戶...
-3. 按一下 記錄檔
-4. 按一下 登入
-5. 輸入您的認證
-6. 檢查更新
-
-**在電腦上使用 Visual Studio:**
-1. 開啟 Visual Studio
-2. 選取 [工具] > 的 「 Xamarin 帳戶
-3. 按一下 記錄檔
-4. 按一下 登入
-5. 輸入您的認證
-6. 檢查更新
-
-如果此錯誤訊息持續出現，請傳送電子郵件**contact@xamarin.com**。
-
-
-
-
 ## <a name="android-debug-logs"></a>Android 偵錯記錄檔
 
 [Android 偵錯記錄檔](~/android/deploy-test/debugging/android-debug-log.md)可能會提供有關您所見的任何執行階段錯誤的其他內容。
@@ -365,7 +308,7 @@ HTC 同步處理軟體可能會阻止**adb 開始伺服器**無法正常運作�
 
 ## <a name="monodroidexe-or-aresgenexe-exited-with-code-1"></a>monodroid.exe 或 aresgen.exe 已結束，代碼 1
 
-若要協助您偵錯這個問題，請移至 Visual Studio 然後變更 MSBuild 詳細資訊層級，若要這樣做，請選取：**工具 > 選項 > 專案**並**解決方案 > 建置**和**執行 >MSBuild 專案建置輸出詳細等級**並將此值設定為**正常**。
+若要協助您偵錯這個問題，請到 Visual Studio 變更 MSBuild 詳細資訊層級，若要這樣做，請選取：**工具 > 選項 > 專案**並**解決方案 > 建置**並**執行 > MSBuild 專案建置輸出詳細等級**並將此值設定為**一般**。
 
 重建和檢查 Visual Studio 輸出 窗格，其中應包含完整的錯誤。
 
