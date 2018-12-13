@@ -30,16 +30,16 @@ items:
     - name: Hello, Android
       href: get-started/hello-android/index.md
       items:
-      - name: 第 1 部分：快速入門
+      - name: 第 1 部份：快速入門
         href: get-started/hello-android/hello-android-quickstart.md
-      - name: 第 2 部分：深度剖析
+      - name: 第 2 部分：深入了解
         href: get-started/hello-android/hello-android-deepdive.md
     - name: Hello, Android 多重畫面
       href: get-started/hello-android-multiscreen/index.md
       items:
-      - name: 第 1 部分：快速入門
+      - name: 第 1 部份：快速入門
         href: get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md
-      - name: 第 2 部分：深度剖析
+      - name: 第 2 部分：深入了解
         href: get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md
     - name: 適用於 Java 開發人員的 Xamarin
       href: get-started/java-developers.md
@@ -649,13 +649,13 @@ items:
       - name: 封裝
         href: wear/deploy-test/packaging.md
   - name: 版本資訊
-    href: https://developer.xamarin.com/releases/android/
+    href: https://docs.microsoft.com/xamarin/android/release-notes/
   - name: 範例
     href: samples/index.yml
   expanded: true
-ms.openlocfilehash: 32586284f802f35db4ea558e6f7183173830943d
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: dd20e7ebd9d5384a02a953aba5415fa748f7b7ab
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899144"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267569"
