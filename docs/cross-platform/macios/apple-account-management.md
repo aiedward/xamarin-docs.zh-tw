@@ -15,9 +15,9 @@ ms.locfileid: "50106061"
 ---
 # <a name="apple-account-management"></a>Apple 帳戶管理
 
-Apple 帳戶管理介面提供方法來檢視所有的開發小組相關聯的 Apple id。 它也可讓您藉由顯示一份檢視每個小組的更多詳細_簽署身分識別_並_佈建設定檔_安裝在電腦上。
+Apple 帳戶管理介面提供方法來檢視所有的開發小組相關聯的 Apple ID。 它也可讓您藉由顯示一份檢視每個小組的更多詳細_簽署身分識別_並_佈建設定檔_安裝在電腦上。
 
-使用命令列上執行您的 Apple ID 的驗證[fastlane](https://fastlane.tools/)。 您已成功驗證您的電腦上必須安裝 fastlane。 Fastlane 並安裝方式的更多有關詳述[fastlane](~/ios/deploy-test/provisioning/fastlane/index.md)輔助線。
+使用命令列上執行您的 Apple ID 的驗證[fastlane](https://fastlane.tools/)。 您已成功驗證您的電腦上必須安裝 fastlane。 fastlane 並安裝方式的更多有關詳述 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md) 輔助線。
 
 Apple 帳戶 對話方塊可讓您執行下列作業：
 
@@ -50,13 +50,13 @@ Apple 帳戶管理位於 Visual Studio for Mac 和 Visual Studio 2017 （15.7 �
 
     ![Apple 開發人員帳戶選項](apple-account-management-images/image1.png)
 
-2. 按下**+** 按鈕以顯示登入 對話方塊，如下所述： 
+2. 按下 **+** 按鈕以顯示登入 對話方塊，如下所述： 
 
     ![fastlane 對話方塊。](apple-account-management-images/image2.png)
 
-4. 輸入您的 Apple ID 和密碼，然後按一下**登入** 按鈕。 這會儲存在安全的金鑰鏈的認證，這部電腦上。 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md)來安全地處理您的認證，並將其傳遞至 Apple 開發人員入口網站。
+4. 輸入您的 Apple ID 和密碼，然後按一下**登入**按鈕。 這會儲存在安全的金鑰鏈的認證，這部電腦上。 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md) 來安全地處理您的認證，並將其傳遞至 Apple 開發人員入口網站。
  
-5. 選取 **永遠允許**上警示的對話方塊，讓 Visual Studio 來使用您的認證：
+5. 選取**永遠允許**上警示的對話方塊，讓 Visual Studio 來使用您的認證：
 
     ![一律允許 [警示] 對話方塊](apple-account-management-images/image4.png)
 
@@ -82,14 +82,14 @@ Apple 帳戶管理位於 Visual Studio for Mac 和 Visual Studio 2017 （15.7 �
 
 1. 已成功新增您的帳戶，您會看到您的 Apple ID 和您的 Apple ID 是一部分的任何小組。
  
-1. 選取任何小組，然後按**檢視詳細資料...** 按鈕。 這會顯示一份所有 「 簽署身分識別和安裝在您的電腦的佈建設定檔：
+1. 選取任何小組，然後按**檢視詳細資料...** 按鈕。 這會顯示一份所有「簽署身分識別和安裝在您的電腦的佈建設定檔」：
 
     ![使用者名稱和密碼對話方塊](apple-account-management-images/prov2.png)
 
 -----
 
 
-## <a name="managing-signing-identities-and-provisioning-profiles"></a>管理 「 簽署身分識別和佈建設定檔
+## <a name="managing-signing-identities-and-provisioning-profiles"></a>管理「簽署身分識別和佈建設定檔」
 
 小組的詳細資料 對話方塊會顯示一份簽署身分識別，依型別。 **狀態**資料行建議您憑證是否： 
 
@@ -105,7 +105,7 @@ Apple 帳戶管理位於 Visual Studio for Mac 和 Visual Studio 2017 （15.7 �
 
 ## <a name="create-a-signing-identities"></a>建立簽署身分識別
 
-若要建立新的簽署身分識別，請選取**Create Certificate**下拉式按鈕，然後選取您所需要的類型。 如果您有正確的權限的新簽署身分識別會出現在幾秒之後。
+若要建立新的簽署身分識別，請選取 **Create Certificate** 下拉式按鈕，然後選取您所需要的類型。 如果您有正確的權限的新簽署身分識別會出現在幾秒之後。
 
 如果下拉式清單中的選項會呈現灰色，而且未選取，這表示您沒有正確的小組權限來建立這種類型的憑證。
 
