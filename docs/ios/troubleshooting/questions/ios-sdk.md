@@ -18,11 +18,11 @@ ms.locfileid: "50109558"
 
 ## <a name="visual-studio"></a>Visual Studio
 
-**工具]-> [選項]-> [Xamarin]-> [iOS 設定**
+**[工具]-> [選項]-> [Xamarin]-> [iOS 設定]**
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
-**Visual Studio for Mac]-> [喜好設定]-> [專案]-> [SDK 位置]-> [iOS**
+**[Visual Studio for Mac]-> [喜好設定]-> [專案]-> [SDK 位置]-> [iOS]**
 
 ## <a name="default-ios-sdk-paths"></a>預設 iOS SDK 路徑
 
