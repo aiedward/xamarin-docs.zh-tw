@@ -1,6 +1,6 @@
 ---
 title: 建立 ControlTemplate
-description: 控制項範本可以定義應用程式層級或頁面層級。 這篇文章會示範如何建立和使用控制項範本。
+description: 控制項範本可在應用程式層級或頁面層級定義。 本文示範如何建立和使用控制項範本。
 ms.prod: xamarin
 ms.assetid: A9AEB052-FBF5-4589-9BD4-6D6F62BED7F1
 ms.technology: xamarin-forms
@@ -9,18 +9,18 @@ ms.author: dabritch
 ms.date: 03/08/2016
 ms.openlocfilehash: b83668f6836b1d5d98f67592bf3e2b01e7319edc
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38998182"
 ---
 # <a name="creating-a-controltemplate"></a>建立 ControlTemplate
 
-_控制項範本可以定義應用程式層級或頁面層級。這篇文章會示範如何建立和使用控制項範本。_
+_控制項範本可在應用程式層級或頁面層級定義。本文示範如何建立和使用控制項範本。_
 
 ## <a name="creating-a-controltemplate-in-xaml"></a>在 XAML 中建立 ControlTemplate
 
-若要定義[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)應用程式層級， [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)必須新增至`App`類別。 根據預設，所有從範本建立的 Xamarin.Forms 應用程式使用**應用程式**類別來實作[ `Application` ](xref:Xamarin.Forms.Application)子類別。 若要宣告`ControlTemplate`應用程式層級，在應用程式的`ResourceDictionary`使用 XAML，預設值**應用程式**類別必須取代 XAML**應用程式**類別和相關聯的程式碼後置，做為下列程式碼範例所示：
+若要在應用程式層級定義 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)，則 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 必須新增至 `App` 類別。 根據預設，所有從範本建立的 Xamarin.Forms 應用程式會使用**應用程式**類別來實作 [`Application`](xref:Xamarin.Forms.Application) 子類別。 若要在應用程式層級宣告 `ControlTemplate`，請在應用程式的 `ResourceDictionary` 中使用 XAML，預設的 **App** 類別必須取代為 XAML **App** 類別和相關聯的程式碼後置，如下列程式碼範例所示：
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.App">
@@ -48,9 +48,9 @@ _控制項範本可以定義應用程式層級或頁面層級。這篇文章會�
 </Application>
 ```
 
-每個[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)當做可重複使用物件建立執行個體[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)。  做法是讓每個宣告的唯一`x:Key`屬性，它提供描述性的索引鍵中`ResourceDictionary`。
+每個 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 執行個體會在 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 中作為可重複使用的物件建立。  做法是為每個宣告提供唯一的 `x:Key` 屬性，這會在 `ResourceDictionary` 中為其提供描述性索引鍵。
 
-下列程式碼範例會顯示相關聯`App`程式碼後置：
+下列程式碼範例顯示相關聯的 `App` 程式碼後置：
 
 ```csharp
 public partial class App : Application
@@ -63,9 +63,9 @@ public partial class App : Application
 }
 ```
 
-以及設定[ `MainPage` ](xref:Xamarin.Forms.Application.MainPage)屬性，程式碼後置還必須呼叫`InitializeComponent`方法來載入及剖析相關聯的 XAML。
+除了設定 [`MainPage`](xref:Xamarin.Forms.Application.MainPage) 屬性之外，程式碼後置還必須呼叫 `InitializeComponent` 方法來載入及剖析相關聯的 XAML。
 
-下列程式碼範例所示[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)套用`TealTemplate`來[ `ContentView` ](xref:Xamarin.Forms.ContentView):
+下列程式碼範例顯示會將 `TealTemplate` 套用於 [`ContentView`](xref:Xamarin.Forms.ContentView) 的 [`ContentPage`](xref:Xamarin.Forms.ContentPage)：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.HomePage">
@@ -79,13 +79,13 @@ public partial class App : Application
 </ContentPage>
 ```
 
-`TealTemplate`指派給[ `ContentView.ControlTemplate` ](xref:Xamarin.Forms.TemplatedView.ControlTemplate)使用的屬性`StaticResource`標記延伸。 [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content)屬性設定為[ `StackLayout` ](xref:Xamarin.Forms.StackLayout) ，定義要顯示在內容[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)。 此內容會顯示所[ `ContentPresenter` ](xref:Xamarin.Forms.ContentPresenter)中所包含`TealTemplate`。 這會導致下列的螢幕擷取畫面所示的外觀：
+使用 `StaticResource` 標記延伸，將 `TealTemplate` 指派給 [`ContentView.ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) 屬性。 [`ContentView.Content`](xref:Xamarin.Forms.ContentView.Content) 屬性會設定為 [`StackLayout`](xref:Xamarin.Forms.StackLayout)，此屬性會定義要在 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 上顯示的內容。 此內容將由包含在 `TealTemplate` 中的 [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter) 顯示。 這會導致下列螢幕擷取畫面中顯示的外觀：
 
-![](creating-images/teal-theme.png "藍綠色的控制項範本")
+![](creating-images/teal-theme.png "藍綠色控制項範本")
 
-### <a name="re-theming-an-application-at-runtime"></a>Re 佈景主題在執行階段應用程式
+### <a name="re-theming-an-application-at-runtime"></a>在執行階段對應用程式進行重新佈景主題
 
-按一下 **變更佈景主題**按鈕會執行`OnButtonClicked`方法，以下列程式碼範例所示：
+按一下 [變更佈景主題] 按鈕會執行 `OnButtonClicked` 方法，如下列程式碼範例所示：
 
 ```csharp
 void OnButtonClicked (object sender, EventArgs e)
@@ -95,16 +95,16 @@ void OnButtonClicked (object sender, EventArgs e)
 }
 ```
 
-這個方法會取代現用[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)執行個體與第一種`ControlTemplate`執行個體，導致下列的螢幕擷取畫面：
+此方法會將使用中的 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 執行個體取代為 `ControlTemplate` 執行個體，如下列螢幕擷取畫面所示：
 
 ![](creating-images/aqua-theme.png "青色控制項範本")
 
 > [!NOTE]
-> 在上`ContentPage`，則`Content`屬性可以指派和`ControlTemplate`也可以設定屬性。 發生此狀況時，如果`ControlTemplate`包含`ContentPresenter`執行個體，將內容指派給`Content`屬性會出示`ContentPresenter`內`ControlTemplate`。
+> 在 `ContentPage` 上可以指派 `Content` 屬性，且也可以設定 `ControlTemplate` 屬性。 發生此狀況時，如果 `ControlTemplate` 包含 `ContentPresenter` 執行個體，則指派給 `Content` 屬性的內容會由 `ControlTemplate` 內的 `ContentPresenter` 呈現。
 
-### <a name="setting-a-controltemplate-with-a-style"></a>設定樣式的 ControlTemplate
+### <a name="setting-a-controltemplate-with-a-style"></a>使用樣式來設定 ControlTemplate
 
-A [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)也可透過套用[ `Style` ](xref:Xamarin.Forms.Style)進一步展開佈景主題的能力。 這可藉由建立*隱含*或*明確*樣式中的目標檢視[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，以及設定`ControlTemplate`目標屬性在中檢視[ `Style` ](xref:Xamarin.Forms.Style)執行個體。 下列程式碼範例所示*隱含*已新增至應用程式層級的樣式[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary):
+[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 也可透過 [`Style`](xref:Xamarin.Forms.Style) 套用，以進一步擴展佈景主題能力。 這可藉由為 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 中的目標檢視建立「隱含」或「明確」樣式，以及設定 [`Style`](xref:Xamarin.Forms.Style) 執行個體中目標檢視的 `ControlTemplate` 屬性來達成。 下列程式碼範例示範已新增至應用程式層級 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 的「隱含」樣式：
 
 ```xaml
 <Style TargetType="ContentView">
@@ -112,7 +112,7 @@ A [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)也可透過套用[ `
 </Style>
 ```
 
-因為[ `Style` ](xref:Xamarin.Forms.Style)執行個體*隱含*，它將會套用至所有`ContentView`應用程式中的執行個體。 因此，它不再需要設定[ `ContentView.ControlTemplate` ](xref:Xamarin.Forms.TemplatedView.ControlTemplate)屬性，如下列程式碼範例所示：
+因為 [`Style`](xref:Xamarin.Forms.Style) 執行個體為「隱含」，所以會套用至應用程式中的所有 `ContentView` 執行個體。 因此，該執行個體不再需要設定 [`ContentView.ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) 屬性，如下列程式碼範例所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.HomePage">
@@ -122,11 +122,11 @@ A [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)也可透過套用[ `
 </ContentPage>
 ```
 
-如需有關樣式的詳細資訊，請參閱 <<c0> [ 樣式](~/xamarin-forms/user-interface/styles/index.md)。
+如需樣式的詳細資訊，請參閱[樣式](~/xamarin-forms/user-interface/styles/index.md)。
 
-### <a name="creating-a-controltemplate-at-page-level"></a>頁面層級建立 ControlTemplate
+### <a name="creating-a-controltemplate-at-page-level"></a>在頁面層級建立 ControlTemplate
 
-除了建立[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)應用程式層級的執行個體，它們也可以建立在頁面層級，如下列程式碼範例所示：
+除了將 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 執行個體建立於應用程式層級，也可以建立於頁面層級，如下列程式碼範例所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.HomePage">
@@ -146,11 +146,11 @@ A [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)也可透過套用[ `
 </ContentPage>
 ```
 
-新增時[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)在頁面層級， [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)新增至[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)，然後`ControlTemplate`執行個體是包含在 `ResourceDictionary`。
+在頁面層級新增 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 時，[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 會新增至 [`ContentPage`](xref:Xamarin.Forms.ContentPage)，然後 `ControlTemplate` 執行個體會包含在 `ResourceDictionary` 中。
 
-## <a name="creating-a-controltemplate-in-c35"></a>在 C 中建立 ControlTemplate&#35;
+## <a name="creating-a-controltemplate-in-c35"></a>在 C&#35; 中建立 ControlTemplate
 
-若要定義[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)應用程式層級，`class`必須建立代表`ControlTemplate`。 類別應該衍生自[版面配置](~/xamarin-forms/user-interface/layouts/index.md)範本中，使用下列程式碼範例所示：
+若要在應用程式層級定義 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)，則必須建立表示 `ControlTemplate` 的 `class`。 類別應該衍生自用於範本的[配置](~/xamarin-forms/user-interface/layouts/index.md)中，如下列程式碼範例所示：
 
 ```csharp
 class TealTemplate : Grid
@@ -171,9 +171,9 @@ class AquaTemplate : Grid
 }
 ```
 
-`AquaTemplate`類別是與相同`TealTemplate`類別，不同之處在於會使用不同的色彩，如[ `BoxView.Color` ](xref:Xamarin.Forms.BoxView.Color)並[ `Label.TextColor` ](xref:Xamarin.Forms.Label.TextColor)屬性。
+`AquaTemplate` 類別與 `TealTemplate` 類別相同，但會將不同色彩用於 [`BoxView.Color`](xref:Xamarin.Forms.BoxView.Color) 和 [`Label.TextColor`](xref:Xamarin.Forms.Label.TextColor) 屬性。
 
-下列程式碼範例所示[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)套用`TealTemplate`來[ `ContentView` ](xref:Xamarin.Forms.ContentView):
+下列程式碼範例顯示會將 `TealTemplate` 套用於 [`ContentView`](xref:Xamarin.Forms.ContentView) 的 [`ContentPage`](xref:Xamarin.Forms.ContentPage)：
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -202,19 +202,19 @@ public class HomePageCS : ContentPage
 }
 ```
 
-[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)會建立指定類型的定義中的控制項範本的類別執行個體`ControlTemplate`建構函式。
+[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 執行個體會透過在 `ControlTemplate` 建構函式中指定會定義控制項範本的類別類型來建立。
 
-[ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content)屬性設定為[ `StackLayout` ](xref:Xamarin.Forms.StackLayout) ，定義要顯示在內容[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)。 此內容會顯示所[ `ContentPresenter` ](xref:Xamarin.Forms.ContentPresenter)中所包含`TealTemplate`。 之前所述的相同機制將可用來在執行階段主題變更`AquaTheme`。
+[`ContentView.Content`](xref:Xamarin.Forms.ContentView.Content) 屬性會設定為 [`StackLayout`](xref:Xamarin.Forms.StackLayout)，此屬性會定義要在 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 上顯示的內容。 此內容將由包含在 `TealTemplate` 中的 [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter) 顯示。 前述的相同機制會用於在執行階段將佈景主題變更為 `AquaTheme`。
 
 ## <a name="summary"></a>總結
 
-這篇文章會示範如何建立和使用控制項範本。 控制項範本可以定義應用程式層級或頁面層級。
+本文示範了如何建立和使用控制項範本。 控制項範本可在應用程式層級或頁面層級定義。
 
 
 ## <a name="related-links"></a>相關連結
 
 - [樣式](~/xamarin-forms/user-interface/styles/index.md)
-- [簡單的佈景主題 （範例）](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simpletheme/)
+- [Simple Theme (Samples)](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simpletheme/) (簡單的佈景主題 (範例))
 - [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)
 - [ContentPresenter](xref:Xamarin.Forms.ContentPresenter)
 - [ContentView](xref:Xamarin.Forms.ContentView)

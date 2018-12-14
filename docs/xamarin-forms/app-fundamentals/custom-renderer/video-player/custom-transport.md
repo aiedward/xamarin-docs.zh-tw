@@ -1,6 +1,6 @@
 ---
 title: 自訂影片傳輸控制項
-description: 這篇文章說明如何使用 Xamarin.Forms 的視訊播放器應用程式中實作自訂傳輸控制項。
+description: 本文說明如何使用 Xamarin.Forms，在影片播放程式應用程式中實作自訂傳輸控制項。
 ms.prod: xamarin
 ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
 ms.technology: xamarin-forms
@@ -9,20 +9,20 @@ ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 3397c931dcb23a29b0682699512a5b4c9018de38
 ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/20/2018
 ms.locfileid: "52171062"
 ---
 # <a name="custom-video-transport-controls"></a>自訂影片傳輸控制項
 
-傳輸控制的影片播放程式包含執行的函式的按鈕**播放**，**暫停**，並**停止**。 這些按鈕的識別一般是使用熟悉的圖示，而不是文字，而**播放**並**暫停**函式通常會結合成一個按鈕。
+影片播放程式的傳輸控制項包括執行 [播放]、[暫停] 和 [停止] 功能的按鈕。 這些按鈕通常會以熟悉的圖示而非文字呈現，且 [播放] 及 [暫停] 功能常會合併為一個按鈕。
 
-根據預設，`VideoPlayer`顯示傳輸每個平台所支援的控制項。 當您設定`AreTransportControlsEnabled`屬性設`false`，會隱藏這些控制項。 然後您可以控制`VideoPlayer`以程式設計方式或提供您自己的傳輸控制項。
+根據預設，`VideoPlayer` 會顯示由各平台支援的傳輸控制項。 當您將 `AreTransportControlsEnabled` 屬性設定為 `false` 時，就會隱藏這些控制項。 接著可以用程式設計的方式來控制 `VideoPlayer` 或支援您本身的傳輸控制項。
 
-## <a name="the-play-pause-and-stop-methods"></a>播放、 暫停和停止方法
+## <a name="the-play-pause-and-stop-methods"></a>Play、Pause 和 Stop 方法
 
-`VideoPlayer`類別會定義三個方法，名為`Play`， `Pause`，和`Stop`實作藉由引發事件：
+`VideoPlayer` 類別會定義名為 `Play`、`Pause`、`Stop`，且由引發事件實作的三個方法：
 
 ```csharp
 namespace FormsVideoLibrary
@@ -54,11 +54,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-這些事件的事件處理常式由設定`VideoPlayerRenderer`類別中每個平台，如下所示：
+這些事件的事件處理常式會由各平台的 `VideoPlayerRenderer` 類別設定，如下所示：
 
 ### <a name="ios-transport-implementations"></a>iOS 傳輸實作
 
-IOS 版本`VideoPlayerRenderer`會使用`OnElementChanged`方法來設定這三個事件處理常式時`NewElement`屬性不是`null`，並卸離的事件處理常式時`OldElement`不是`null`:
+當 `NewElement` 屬性不是 `null` 時，iOS 版的 `VideoPlayerRenderer` 會使用 `OnElementChanged` 方法設定這三個事件的處理常式，並在 `OldElement` 不是 `null` 時，將事件處理常式中斷連結：
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -107,11 +107,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-事件處理常式實作上呼叫方法`AVPlayer`物件。 沒有任何`Stop`方法`AVPlayer`，因此它模擬暫停影片，並將位置移至開頭。
+事件處理常式是透過呼叫 `AVPlayer` 物件上的方法實作。 因為沒有適用於 `AVPlayer` 的 `Stop` 方法，所以它會以暫停影片並將位置移至開頭來進行模擬。
 
-### <a name="android-transport-implementations"></a>Android 的傳輸實作
+### <a name="android-transport-implementations"></a>Android 傳輸實作
 
-Android 的實作是類似於 iOS 實作。 三個函式的處理常式時，會設定`NewElement`不是`null`卸離時以及`OldElement`不是`null`:
+Android 實作近似於 iOS 實作。 當 `NewElement` 不是 `null` 時，會設定這三個功能的處理常式，並在 `OldElement` 不是 `null` 時，中斷連結：
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -158,11 +158,11 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-三個函式呼叫所定義的方法`VideoView`。
+這三個功能會呼叫由 `VideoView` 定義的方法。
 
 ### <a name="uwp-transport-implementations"></a>UWP 傳輸實作
 
-UWP 的實作三個傳輸函式是非常類似於 iOS 和 Android 的實作：
+這三個傳輸功能的 UWP 實作非常近似於 iOS 和 Android 實作：
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -208,13 +208,13 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-## <a name="the-video-player-status"></a>視訊播放器狀態
+## <a name="the-video-player-status"></a>影片播放程式狀態
 
-實作**播放**，**暫停**，並**停止**函式是不夠的支援傳輸控制項。 通常**播放**並**暫停**命令都實作與同一個按鈕，變更其外觀，指出是否影片目前正在播放或暫停。 此外，如果影片尚未載入，不應該甚至啟用 按鈕。
+實作**播放**、**暫停**、和**停止**功能並不足以支援傳輸控制項。 **播放**和**暫停**命令通常會以相同的按鈕實作，且該按鈕會指出影片正在播放或暫停。 此外，若影片尚未載入，就不應啟用按鈕。
 
-這些需求表示，視訊播放程式必須提供目前狀態，指出它是播放或暫停，則它尚未準備好播放視訊。 (每個平台也支援的屬性，指出是否影片可以暫停，或可以移至新位置，但這些屬性是適用於串流視訊，而不是視訊檔案，因此它們不支援在`VideoPlayer`此處所述。)
+這些需求指出影片播放程式需要提供目前狀態，指出其正在播放、暫停或仍未準備好播放影片。 (各平台也支援指出影片可以暫停或移至新位置的屬性，但這些屬性適用於串流影片而非影片檔案，所以此處描述的 `VideoPlayer` 中不支援這些屬性。)
 
-**VideoPlayerDemos**專案包含`VideoStatus`列舉有三個成員：
+**VideoPlayerDemos** 專案包含具有三個成員的 `VideoStatus` 列舉：
 
 ```csharp
 namespace FormsVideoLibrary
@@ -228,7 +228,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-`VideoPlayer`類別會定義名為僅限真實的可繫結屬性`Status`型別的`VideoStatus`。 這個屬性被定義為唯讀，因為它應該只從平台轉譯器設定：
+`VideoPlayer` 類別可定義類型為 `VideoStatus` 且名為 `Status` 的唯讀可繫結屬性。 因為此屬性應只從平台轉譯器設定，所以其定義為唯讀：
 
 ```csharp
 using System;
@@ -260,9 +260,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-通常，唯讀的可繫結屬性會有私用`set`存取子上的`Status`允許它在類別中，從設定的屬性。 針對`View`衍生項目轉譯器，不過，支援的屬性必須設定從類別之外，但只能由平台轉譯器。
+通常，唯讀可繫結屬性擁有 `Status` 屬性上專用的 `set` 存取子，使其可以從類別內設定。 不過，對於轉譯器支援的 `View` 導數，則必須從類別外設定屬性，且只能由平台轉譯器進行設定。
 
-基於這個理由，另一個屬性定義名稱`IVideoPlayerController.Status`。 這是明確介面實作，並可透過`IVideoPlayerController`介面，`VideoPlayer`類別會實作：
+因此，會為另一個屬性定義名稱 `IVideoPlayerController.Status`。 此為明確介面實作，且 `VideoPlayer` 類別實作的 `IVideoPlayerController` 介面使其變得可行：
 
 ```csharp
 namespace FormsVideoLibrary
@@ -276,11 +276,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-這是類似於如何[ `WebView` ](xref:Xamarin.Forms.WebView)控制項會使用[ `IWebViewController` ](xref:Xamarin.Forms.IWebViewController)實作的介面`CanGoBack`和`CanGoForward`屬性。 (請參閱原始程式碼[ `WebView` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/WebView.cs)和其轉譯器，如需詳細資訊。)
+這近似於 [`WebView`](xref:Xamarin.Forms.WebView) 控制項使用 [`IWebViewController`](xref:Xamarin.Forms.IWebViewController) 介面實作 `CanGoBack` 和 `CanGoForward` 屬性的方式。 (如需詳細資料，請參閱 [`WebView`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/WebView.cs) 原始程式碼及其轉譯器。)
 
-這可讓類別外部`VideoPlayer`來設定`Status`屬性，藉由參考`IVideoPlayerController`介面。 （您很快將程式碼。）屬性可以設定從其他類別，但它不太可能會不小心設定。 最重要的是，`Status`無法透過資料繫結設定屬性。
+這讓 `VideoPlayer` 之外的類別可以藉由參考 `IVideoPlayerController` 介面設定 `Status` 屬性。 (您很快就可以看到程式碼。)屬性雖然也可以從其他類別設定，但不太可能發生不小心設定的情形。 最重要的是，`Status` 屬性無法透過資料繫結設定。
 
-為了協助保持此轉譯器`Status`更新的屬性`VideoPlayer`類別會定義`UpdateStatus`事件觸發的每個十分之一秒：
+為了讓轉譯器持續更新此 `Status` 屬性，`VideoPlayer` 類別會定義每十分之一秒就觸發一次的 `UpdateStatus` 事件：
 
 ```csharp
 namespace FormsVideoLibrary
@@ -302,9 +302,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-### <a name="the-ios-status-setting"></a>IOS 狀態設定
+### <a name="the-ios-status-setting"></a>iOS 狀態設定
 
-IOS`VideoPlayerRenderer`設定的處理常式`UpdateStatus`事件 (並卸離該處理常式時的基礎`VideoPlayer`項目不存在)，然後使用處理常式來設定`Status`屬性：
+iOS `VideoPlayerRenderer` 會設定 `UpdateStatus` 事件的處理常式 (且會在缺少基礎 `VideoPlayer` 元素時，將該處理常式中斷連結)，並使用處理常式設定 `Status` 屬性：
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -358,11 +358,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-兩個屬性`AVPlayer`必須存取： [ `Status` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/)型別的屬性`AVPlayerStatus`而[ `TimeControlStatus` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/)型別的屬性`AVPlayerTimeControlStatus`。 請注意，`Element`屬性 (也就是`VideoPlayer`) 必須轉換成`IVideoPlayerController`若要設定`Status`屬性。
+必須存取 `AVPlayer` 的兩個屬性：類型 `AVPlayerStatus` 的 [`Status`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/) 屬性及類型 `AVPlayerTimeControlStatus` 的 [`TimeControlStatus`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/) 屬性。 請注意，必須將 `Element` 屬性 (即為 `VideoPlayer`) 轉換為 `IVideoPlayerController` 以設定 `Status` 屬性。
 
-### <a name="the-android-status-setting"></a>Android 的狀態設定
+### <a name="the-android-status-setting"></a>Android 狀態設定
 
-[ `IsPlaying` ](https://developer.xamarin.com/api/property/Android.Widget.VideoView.IsPlaying/) Android 屬性`VideoView`是布林值，只表示如果視訊播放或暫停。 若要判斷是否`VideoView`可以不播放或暫停影片，`Prepared`事件的`VideoView`必須處理。 這些兩個處理常式中設定`OnElementChanged`方法，並卸離期間`Dispose`覆寫：
+Android `VideoView` 的 [`IsPlaying`](https://developer.xamarin.com/api/property/Android.Widget.VideoView.IsPlaying/) 屬性為布林值，只會指出影片是否正在播放或已暫停。 若要判斷 `VideoView` 是否尚無法播放及暫停影片，那麼必須處理 `VideoView` 的 `Prepared` 事件。 這兩個處理常式會在 `OnElementChanged` 方法中設定，以及在執行 `Dispose` 覆寫期間中斷連結：
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -415,7 +415,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-`UpdateStatus`處理常式會使用`isPrepared`欄位 (在中設定`Prepared`處理常式) 和`IsPlaying`屬性來設定`Status`屬性：
+`UpdateStatus` 處理常式會使用 `isPrepared` 欄位 (在 `Prepared` 處理常式中設定) 及 `IsPlaying` 屬性，以設定 `Status` 屬性：
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -449,7 +449,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="the-uwp-status-setting"></a>UWP 狀態設定
 
-UWP`VideoPlayerRenderer`利用`UpdateStatus`事件，但是它不需要它的設定`Status`屬性。 `MediaElement`定義[ `CurrentStateChanged` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentStateChanged)允許轉譯器的事件時收到通知[ `CurrentState` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentState)屬性已變更。 在卸離屬性`Dispose`覆寫：
+UWP `VideoPlayerRenderer` 會使用 `UpdateStatus` 事件，但不需要該事件來設定 `Status` 屬性。 `MediaElement` 會定義 [`CurrentStateChanged`](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentStateChanged) 事件，且該事件會於變更 [`CurrentState`](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentState) 屬性時，讓轉譯器可收到通知。 屬性會在 `Dispose` 覆寫內中斷連結：
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -487,7 +487,7 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-`CurrentState`屬性的類型是[ `MediaElementState` ](/uwp/api/windows.ui.xaml.media.mediaelementstate)，並輕鬆地對應到`VideoStatus`:
+`CurrentState` 屬性的類型為 [`MediaElementState`](/uwp/api/windows.ui.xaml.media.mediaelementstate)，且可以輕易地對應至 `VideoStatus`：
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -518,27 +518,27 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-## <a name="play-pause-and-stop-buttons"></a>播放、 暫停和停止按鈕
+## <a name="play-pause-and-stop-buttons"></a>[播放]、[停止] 和 [暫停] 按鈕
 
-使用 Unicode 字元的符號**播放**，**暫停**，並**停止**映像會造成問題。 [其他技術](https://unicode-table.com/en/blocks/miscellaneous-technical/)區段 Unicode 標準會定義三個似乎適用於此用途的符號字元。 這些是：
+使用 Unicode 字元來代表 [播放]、[暫停] 和 [停止] 的影像可能會有問題。 但 Unicode 標準的 [Miscellaneous Technical](https://unicode-table.com/en/blocks/miscellaneous-technical/) (其他專門符號) 一節判定這三個符號字元應該適合此用途。 這些是：
 
-- 0x23F5 （黑色中型向右三角形） 或&#x23F5;針對**播放**
-- 0x23F8 （雙垂直線） 或&#x23F8;針對**暫停**
-- 0x23F9 （黑色方塊） 或&#x23F9;針對**停止**
+- 0x23F5 (指向右方的黑色中型三角形) 或 &#x23F5;，代表 [播放]
+- 0x23F8 (雙垂直長條) 或 &#x23F8;，代表 [暫停]
+- 0x23F9 (黑色正方形) 或 &#x23F9;，代表 [停止]
 
-不論如何這些符號出現在您的瀏覽器 （和不同的瀏覽器則會以不同方式處理它們），它們不會顯示以一致的方式在 Xamarin.Forms 所支援的平台。 IOS 和 UWP 裝置上**暫停**並**停止**字元具有圖形化的外觀，以藍色的 3D 背景及白色的前景。 這不是在 Android 上，其中的符號就是只是藍色的情況。 不過，0x23F5 字碼指標**播放**沒有相同的外觀，UWP，和它甚至不受支援 iOS 和 Android 上。
+無論這些符號是如何出現在您的瀏覽器中 (不同的瀏覽器會以不同方式處理它們)，它們都不會在 Xamarin.Forms 支援的平台上持續地顯示。 在 iOS 及 UWP 裝置上，[暫停] 及 [停止] 字元擁有圖形化的外觀，且帶有藍色 3D 的背景以及白色的前景。 但這在 Android 上就不一樣了，其符號為單純的藍色。 不過，[播放] 的 0x23F5 字碼指標在 UWP 上沒有相同的外觀，且甚至在 iOS 和 Android 上都不支援。
 
-基於這個理由，0x23F5 字碼指標無法用於**播放**。 不錯替代方式是：
+基於此原因，0x23F5 字碼指標無法作為 [播放] 使用。 適合的替代字碼指標為：
 
-- 0x25B6 （黑色向右三角形） 或&#x25B6;針對**播放**
+- 0x25B6 (指向右方的黑色三角形) 或 &#x25B6;，代表 [播放]
 
-這是每個平台支援的不同之處在於它是一般的黑色三角形不像的 3D 外觀**暫停**並**停止**。 其中一個可能性是遵循 0x25B6 字碼指標，以變數的程式碼：
+除了其為全黑的三角形，且不像 3D 外觀的 [暫停] 及 [停止] 之外，各平台皆對其支援。 其中一種可能性為使用變體程式碼來追隨 0x25B6 字碼指標：
 
-- 0x25B6 後面 0xFE0F （variant 型別 16） 或&#x25B6; &#xFE0F; for**播放**
+- 後面接著 0xFE0F (變體 16) 的 0x25B6 或 &#x25B6;&#xFE0F;，代表 [播放]
 
-這是用於下方所顯示的標記。 在 iOS 上，它可讓**播放**符號做為相同的 3D 外觀**暫停**並**停止**按鈕，但在 variant 不作用於 Android 和 UWP。
+這是下方所示標記使用的項目。 在 iOS 上，它提供 [播放] 符號與 [暫停] 及 [停止] 按鈕相同的 3D 外觀，但變體在 Android 和 UWP 上無效。
 
-**自訂傳輸**頁面上設定**AreTransportControlsEnabled**屬性設**false** ，並包含`ActivityIndicator`載入影片時, 顯示，另外兩個按鈕。 `DataTrigger` 物件用來啟用和停用`ActivityIndicator`和按鈕，以及切換的第一個按鈕之間**播放**並**暫停**:
+**自訂傳輸**頁面會將 **AreTransportControlsEnabled** 屬性設定為 **false**，以及包含載入影片時顯示的 `ActivityIndicator` 和兩個按鈕。 `DataTrigger` 物件可用來啟用、停用 `ActivityIndicator` 和按鈕，以及切換在 [播放] 和 [暫停] 之間的第一個按鈕：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -611,9 +611,9 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-一文中詳細說明資料觸發程序[資料觸發程序](~/xamarin-forms/app-fundamentals/triggers.md#data)。
+資料觸發程序在[資料觸發程序](~/xamarin-forms/app-fundamentals/triggers.md#data)一文中有詳盡的描述。
 
-程式碼後置檔案具有按鈕的處理常式`Clicked`事件：
+程式碼後置檔案具有按鈕 `Clicked` 事件的處理常式：
 
 ```csharp
 namespace VideoPlayerDemos
@@ -645,17 +645,17 @@ namespace VideoPlayerDemos
 }
 ```
 
-因為`AutoPlay`設定為`false`中**CustomTransport.xaml**檔案中，您必須按下**播放**按鈕時若要開始影片變成啟用狀態。 按鈕的定義，因此上面所討論的 Unicode 字元都會伴隨其文字對等項目。 當播放視訊的按鈕在每個平台上有一致的外觀：
+因為在 **CustomTransport.xaml** 檔案中 `AutoPlay` 設定為 `false`，所以您必須在其啟用時按 [播放] 按鈕以開始影片。 因為定義了這些按鈕，所以上面討論的 Unicode 字元都會附有其相對應文字。 當影片播放時，按鈕在各平台上都有一致的外觀：
 
 [![自訂傳輸播放](custom-transport-images/customtransportplaying-small.png "自訂傳輸播放")](custom-transport-images/customtransportplaying-large.png#lightbox "自訂傳輸播放")
 
-但在 Android 和 UWP**播放**暫停視訊時按鈕看起來非常不同：
+但在影片暫停時，Android 及 UWP 上的 [播放] 看起來大不相同：
 
-[![自訂傳輸暫停](custom-transport-images/customtransportpaused-small.png "自訂傳輸已暫停")](custom-transport-images/customtransportpaused-large.png#lightbox "自訂傳輸已暫停")
+[![自訂傳輸暫停](custom-transport-images/customtransportpaused-small.png "自訂傳輸暫停")](custom-transport-images/customtransportpaused-large.png#lightbox "自訂傳輸暫停")
 
-在生產環境應用程式中，您可能要使用您自己的點陣圖影像的按鈕以達到視覺一致性。
+在生產應用程式中，您可能會想要使用自己的點陣圖影像讓按鈕達成視覺上的一致性。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [示範影片播放程式 （範例）](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [影片播放程式示範 (範例)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

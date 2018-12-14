@@ -1,6 +1,6 @@
 ---
 title: 建立 Xamarin.Forms DataTemplate
-description: 在 ResourceDictionary，或從自訂型別或適當的 Xamarin.Forms 資料格類型，資料範本可以建立內嵌。 本文章探討每一種技巧。
+description: 您可以在 ResourceDictionary 中，或是從自訂類型或適當的 Xamarin.Forms 資料格類型，以內嵌方式建立資料範本。 本文將探索各種方法。
 ms.prod: xamarin
 ms.assetid: CFF4AB5E-9069-461C-84D8-F9F6C38510AB
 ms.technology: xamarin-forms
@@ -9,30 +9,30 @@ ms.author: dabritch
 ms.date: 09/11/2017
 ms.openlocfilehash: 63f9bf82bc8e637aced1afa5d5699ac1e8dc3f8c
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38994611"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>建立 Xamarin.Forms DataTemplate
 
-_在 ResourceDictionary，或從自訂型別或適當的 Xamarin.Forms 資料格類型，資料範本可以建立內嵌。本文章探討每一種技巧。_
+_您可以在 ResourceDictionary 中，或是從自訂類型或適當的 Xamarin.Forms 資料格類型，以內嵌方式建立資料範本。本文將探索各種方法。_
 
-常見的使用案例，如[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)顯示資料中的物件集合[ `ListView` ](xref:Xamarin.Forms.ListView)。 在每一個資料格資料的外觀[ `ListView` ](xref:Xamarin.Forms.ListView)可以藉由設定管理[ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1)屬性設[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)。 有幾個可用來完成這項作業的方法：
+[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 的常見使用方式情節是在 [`ListView`](xref:Xamarin.Forms.ListView) 中顯示物件集合的資料。 將 [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1) 屬性設定為 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)，即可管理 [`ListView`](xref:Xamarin.Forms.ListView) 中每個資料格的資料外觀。 您可以使用一些方法來完成此作業：
 
 - [建立內嵌 DataTemplate](#inline)。
-- [建立具有類型的 DataTemplate](#type)。
-- [建立為資源 DataTemplate](#resource)。
+- [使用類型建立 DataTemplate](#type)。
+- [將 DataTemplate 建立為資源](#resource)。
 
-不論所使用的技巧，結果是在每個資料格的外觀[ `ListView` ](xref:Xamarin.Forms.ListView)由此[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)，如下列螢幕擷取畫面所示：
+不論使用哪種方法，結果都是 [`ListView`](xref:Xamarin.Forms.ListView) 中每個資料格的外觀會由 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 定義，如下列螢幕擷取畫面所示：
 
-![](creating-images/data-template-appearance.png "使用 DataTemplate 的 ListView")
+![](creating-images/data-template-appearance.png "具有 DataTemplate 的 ListView")
 
 <a name="inline" />
 
 ## <a name="creating-an-inline-datatemplate"></a>建立內嵌 DataTemplate
 
-[ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1)屬性可以設定為內嵌[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)。 如果不需要重複使用資料範本其他位置，則應該使用內嵌範本，也就是會放置在適當的控制項屬性的直接子系的其中一個。 在指定的項目`DataTemplate`定義的每個資料格，外觀，如下列 XAML 程式碼範例所示：
+[`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1) 屬性可以設定為內嵌 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)。 如果不需要在他處重複使用資料範本，則應該使用以適當控制項屬性直接子系形式放置的內嵌範本。 在 `DataTemplate` 中指定的項目會定義每個資料格的外觀，如下列 XAML 程式碼範例所示：
 
 ```xaml
 <ListView Margin="0,20,0,0">
@@ -61,7 +61,7 @@ _在 ResourceDictionary，或從自訂型別或適當的 Xamarin.Forms 資料格
 </ListView>
 ```
 
-內嵌的子系[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)必須是的或衍生自、 輸入[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)。 內的版面配置`ViewCell`由以下[ `Grid` ](xref:Xamarin.Forms.Grid)。 `Grid`包含三種[ `Label` ](xref:Xamarin.Forms.Label)執行個體的繫結其[ `Text` ](xref:Xamarin.Forms.Label.Text)屬性，以適當的屬性，每個`Person`集合中的物件。
+內嵌 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 的子系必須是 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 類型或衍生自該類型。 `ViewCell` 內的配置在此處由 [`Grid`](xref:Xamarin.Forms.Grid) 管理。 `Grid` 包含三個 [`Label`](xref:Xamarin.Forms.Label) 執行個體，會將其 [`Text`](xref:Xamarin.Forms.Label.Text) 屬性繫結至集合中每個 `Person` 物件的適當屬性。
 
 對等的 C# 程式碼會顯示在以下程式碼範例中：
 
@@ -108,13 +108,13 @@ public class WithDataTemplatePageCS : ContentPage
 }
 ```
 
-在 C# 中，內嵌[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)會使用指定的建構函式多載建立`Func`引數。
+在 C# 中，內嵌 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 是使用指定 `Func` 引數的建構函式多載所建立。
 
 <a name="type" />
 
-## <a name="creating-a-datatemplate-with-a-type"></a>建立具有類型的 DataTemplate
+## <a name="creating-a-datatemplate-with-a-type"></a>使用類型建立 DataTemplate
 
-[ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1)屬性也設定為[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)所建立的資料格類型。 這種方法的優點是可以在整個應用程式的多個資料範本重複使用資料格類型所定義的外觀。 下列 XAML 程式碼顯示這種方法的範例：
+[`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1) 屬性也可設定為從資料格類型建立的 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)。 使用這種方法的優點為，資料格類型所定義的外觀可供多個資料範本重複用於整個應用程式。 下列 XAML 程式碼顯示此方法的範例：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -140,7 +140,7 @@ public class WithDataTemplatePageCS : ContentPage
 </ContentPage>
 ```
 
-在這裡， [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1)屬性設定為[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)所建立的儲存格的外觀會定義自訂類型。 自訂型別必須衍生自類型[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)，如下列程式碼範例所示：
+在此，[`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1) 屬性會設定為從自訂類型建立並定義資料格外觀的 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)。 自訂類型必須衍生自 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 類型，如下列程式碼範例所示：
 
 ```xaml
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -159,9 +159,9 @@ public class WithDataTemplatePageCS : ContentPage
 </ViewCell>
 ```
 
-內[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)，版面配置由以下[ `Grid` ](xref:Xamarin.Forms.Grid)。 `Grid`包含三種[ `Label` ](xref:Xamarin.Forms.Label)執行個體的繫結其[ `Text` ](xref:Xamarin.Forms.Label.Text)屬性，以適當的屬性，每個`Person`集合中的物件。
+[`ViewCell`](xref:Xamarin.Forms.ViewCell) 內的配置在此處由 [`Grid`](xref:Xamarin.Forms.Grid) 管理。 `Grid` 包含三個 [`Label`](xref:Xamarin.Forms.Label) 執行個體，會將其 [`Text`](xref:Xamarin.Forms.Label.Text) 屬性繫結至集合中每個 `Person` 物件的適當屬性。
 
-對等的 C# 程式碼是由下列範例所示：
+對等的 C# 程式碼會顯示在下列範例中：
 
 ```csharp
 public class WithDataTemplatePageFromTypeCS : ContentPage
@@ -187,7 +187,7 @@ public class WithDataTemplatePageFromTypeCS : ContentPage
 }
 ```
 
-在 C# 中， [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)會使用指定的資料格類型做為引數的建構函式多載來建立。 資料格類型必須衍生自類型[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)，如下列程式碼範例所示：
+在 C# 中，[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 是使用指定資料格類型作為引數的建構函式多載所建立。 資料格類型必須衍生自 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 類型，如下列程式碼範例所示：
 
 ```csharp
 public class PersonCellCS : ViewCell
@@ -214,13 +214,13 @@ public class PersonCellCS : ViewCell
 ```
 
 > [!NOTE]
-> 請注意，Xamarin.Forms 也包含可用來顯示簡單的資料中的儲存格型別[ `ListView` ](xref:Xamarin.Forms.ListView)資料格。 如需詳細資訊，請參閱 <<c0> [ 儲存格的外觀](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)。
+> 請注意，Xamarin.Forms 也會包含資料格類型，可用來在 [`ListView`](xref:Xamarin.Forms.ListView) 資料格中顯示簡單資料。 如需詳細資訊，請參閱[資料格外觀](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)。
 
 <a name="resource" />
 
-## <a name="creating-a-datatemplate-as-a-resource"></a>DataTemplate 建立為資源
+## <a name="creating-a-datatemplate-as-a-resource"></a>將 DataTemplate 建立為資源
 
-資料範本也可以為可重複使用物件來建立[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)。 做法是讓每個宣告的唯一`x:Key`屬性，它提供描述性的索引鍵中`ResourceDictionary`，如下列 XAML 程式碼範例所示：
+您也可以將資料範本建立為 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 中可重複使用的物件。 做法是為每個宣告提供唯一的 `x:Key` 屬性，這會在 `ResourceDictionary` 中為它提供描述性索引鍵，如下列 XAML 程式碼範例所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -251,9 +251,9 @@ public class PersonCellCS : ViewCell
 </ContentPage>
 ```
 
-[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)指派給[ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1)屬性使用`StaticResource`標記延伸。 請注意，雖然`DataTemplate`頁面中定義[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，它也可定義控制項的層級或應用程式層級。
+使用 `StaticResource` 標記延伸，將 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 指派給 [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1) 屬性。 請注意，雖然 `DataTemplate` 是在頁面的 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 中定義，但也可以在控制項層級或應用程式層級定義。
 
-下列程式碼範例顯示 C# 中的對等的頁面：
+下列程式碼範例顯示 C# 中的對等頁面：
 
 ```csharp
 public class WithDataTemplatePageCS : ContentPage
@@ -281,15 +281,15 @@ public class WithDataTemplatePageCS : ContentPage
 }
 ```
 
-[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)加入至[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)使用[ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object))方法，以指定`Key`是用來的字串參考`DataTemplate`擷取它時。
+使用 [`Add`](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) 方法將 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 新增至 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)，這會指定擷取 `DataTemplate` 時用來參考它的 `Key` 字串。
 
 ## <a name="summary"></a>總結
 
-這篇文章說明如何從自訂類型，或在建立資料範本，內嵌[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)。 如果不需要重複使用資料範本其他位置，則應該使用內嵌範本。 或者，可以藉由定義它，做為自訂類型，或做為控制層級、 頁面層級或應用程式層級資源重複資料範本。
+本文說明了如何從自訂類型或在 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 中，以內嵌方式建立資料範本。 如果不需要在他處重複使用資料範本，則應該使用內嵌範本。 或者，您可以將資料範本定義為自訂類型，或是定義為控制項層級、頁面層級或應用程式層級資源，來重複使用它。
 
 
 ## <a name="related-links"></a>相關連結
 
 - [儲存格外觀](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
-- [資料範本 （範例）](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
+- [Data Templates (Samples)](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/) (資料範本 (範例))
 - [DataTemplate](xref:Xamarin.Forms.DataTemplate)
