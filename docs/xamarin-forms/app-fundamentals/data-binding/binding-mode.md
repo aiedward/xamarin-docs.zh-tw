@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms 繫結模式
-description: 這篇文章說明如何控制的來源和目標使用繫結模式，指定與 BindingMode 列舉的成員之間的資訊。 每個可繫結的屬性具有預設繫結模式下，當該屬性是資料繫結目標時，作用中指出的模式。
+description: 本文說明如何使用繫結模式控制來源和目標的資訊流程，而繫結模式是使用 BindingMode 列舉的成員來指定。 每個可繫結的屬性都具有預設繫結模式，表示當該屬性是資料繫結目標時模式即已生效。
 ms.prod: xamarin
 ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
 ms.technology: xamarin-forms
@@ -9,16 +9,16 @@ ms.author: dabritch
 ms.date: 05/01/2018
 ms.openlocfilehash: 03dbaa36cc1fa4a6a169f9456e0fd5b0fdc0d295
 ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/12/2018
 ms.locfileid: "51563936"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms 繫結模式
 
-中[前一篇文章](basic-bindings.md)，則**替代方案的程式碼繫結**並**替代 XAML 繫結**精選頁面`Label`與其`Scale`屬性繫結至`Value`屬性`Slider`。 因為`Slider`初始值為 0，這造成`Scale`屬性`Label`設為 0，而不是 1，而`Label`消失。
+在[前一篇文章](basic-bindings.md)中，[替代程式碼繫結] 和 [替代 XAML 繫結] 頁面顯示的 `Label`，其 `Scale` 屬性繫結至 `Slider` 的 `Value` 屬性。 因為 `Slider` 初始值為 0，這導致 `Label` 的 `Scale` 屬性設為 0，而不是 1，並讓 `Label` 消失。
 
-在  [ **DataBindingDemos** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)範例中，**反向繫結**頁面是類似的程式在上一篇文章中，不同之處在於上定義的資料繫結`Slider`而非在`Label`:
+在 [**DataBindingDemos**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) 範例中，[反向繫結] 頁面與上一篇文章中的程式類似，不同之處在於其資料繫結是定義於 `Slider` 之上，而非 `Label`：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -41,78 +41,78 @@ ms.locfileid: "51563936"
 </ContentPage>
 ```
 
-一開始，這看起來似乎回溯： 現在`Label`是資料繫結來源，而`Slider`做為目標。 繫結參考`Opacity`屬性`Label`，其具有預設值為 1。
+這乍看之下似乎是反向：現在，`Label` 是資料繫結來源，而 `Slider` 則是目標。 繫結參考 `Label` 的 `Opacity` 屬性，其預設值為 1。
 
-如您所料，`Slider`會初始化為值 1，從初始`Opacity`的值`Label`。 在左側的 iOS 螢幕擷取畫面所示：
+如您所料，`Slider` 會從 `Label` 的初始 `Opacity` 值初始化為值 1。 如左側的 iOS 螢幕擷取畫面所示：
 
-[![反轉繫結](binding-mode-images/reversebinding-small.png "反向繫結")](binding-mode-images/reversebinding-large.png#lightbox "反向繫結")
+[![反向繫結](binding-mode-images/reversebinding-small.png "反向繫結")](binding-mode-images/reversebinding-large.png#lightbox "反向繫結")
 
-但您可能會很訝異，`Slider`會繼續運作，如 Android 和 UWP 的螢幕擷取畫面所示。 這似乎顯示資料繫結運作效果較佳`Slider`是繫結目標而不是`Label`由於像預期可能的運作方式初始化。
+但您可能會覺得奇怪為何 `Slider` 仍繼續運作，如 Android 和 UWP 的螢幕擷取畫面所示。 這似乎表示由於初始化如我們預期般運作，因此當繫結目標是 `Slider` 而非 `Label` 時，資料繫結運作效果較佳。
 
-之間的差異**反向繫結**範例和較早的範例包括*繫結模式*。
+**反向繫結**範例和稍早範例之間的差異與「繫結模式」有關。
 
 ## <a name="the-default-binding-mode"></a>預設繫結模式
 
-繫結模式指定的成員[ `BindingMode` ](xref:Xamarin.Forms.BindingMode)列舉型別：
+繫結模式會以 [`BindingMode`](xref:Xamarin.Forms.BindingMode) 列舉的成員來指定：
 
 - [`Default`](xref:Xamarin.Forms.BindingMode.Default)
-- [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) &ndash; 資料來源和目標之間進入這兩種方式
+- [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) &ndash; 資料會在來源和目標之間雙向移動
 - [`OneWay`](xref:Xamarin.Forms.BindingMode.OneWay) &ndash; 資料會從來源移到目標
-- [`OneWayToSource`](xref:Xamarin.Forms.BindingMode.OneWayToSource) &ndash; 資料會從目標到來源
-- [`OneTime`](xref:Xamarin.Forms.BindingMode.OneWayToSource) &ndash; 資料會從來源移到目標，但只有在`BindingContext`變更 （新增使用 Xamarin.Forms 3.0）
+- [`OneWayToSource`](xref:Xamarin.Forms.BindingMode.OneWayToSource) &ndash; 資料會從目標移到來源
+- [`OneTime`](xref:Xamarin.Forms.BindingMode.OneWayToSource) &ndash; 資料會從來源移到目標，但只有在 `BindingContext` 變更時才會發生 (Xamarin.Forms 3.0 新功能)
 
-每個可繫結的屬性已繫結模式所設定的可繫結屬性建立時，預設值，並可從[ `DefaultBindingMode` ](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode)屬性`BindableProperty`物件。 作用中時，該屬性是資料繫結目標時，此預設繫結模式將指出的模式。
+每個可繫結屬性都會在可繫結屬性建立時設定預設繫結模式，並可透過 `BindableProperty` 物件的 [`DefaultBindingMode`](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode) 屬性取得。 這個預設繫結模式表示當該屬性是資料繫結目標時，模式即已生效。
 
-這類的大部分屬性的預設繫結模式`Rotation`， `Scale`，並`Opacity`是`OneWay`。 當這些屬性是資料繫結目標時，則會設定從來源目標屬性。
+針對 `Rotation`、`Scale` 和 `Opacity` 等大部分屬性，預設繫結模式是 `OneWay`。 當這些屬性是資料繫結目標時，即會從來源設定目標屬性。
 
-不過的預設繫結模式`Value`的屬性`Slider`是`TwoWay`。 這表示當`Value`屬性資料繫結目標，則目標設定從來源 （如往常般） 但來源也會從目標設定。 這可讓`Slider`若要設定從初始`Opacity`值。
+不過，`Slider` 的 `Value` 屬性預設繫結模式是 `TwoWay`。 這表示當 `Value` 屬性是資料繫結目標時，即會從來源設定目標 (如往常般)，但也會從目標設定來源。 這樣才可以從初始 `Opacity` 值設定 `Slider`。
 
-這個雙向繫結可能會建立無限迴圈，但是，不會發生。 除非屬性會實際變更，可繫結的屬性就發出信號屬性變更。 這可防止無限迴圈。
+這個雙向繫結看似會建立無限迴圈，但其實不會發生這種情況。 除非屬性實際變更，否則可繫結的屬性就不會通知屬性變更。 這可防止無限迴圈。
 
 ### <a name="two-way-bindings"></a>雙向繫結
 
-最可繫結的屬性具有預設繫結模式`OneWay`下列屬性具有預設繫結模式，但`TwoWay`:
+大多數可繫結屬性的預設繫結模式都是 `OneWay`，但下列屬性的預設繫結模式為 `TwoWay`：
 
-- `Date` 屬性 `DatePicker`
-- `Text` 屬性`Editor`， `Entry`， `SearchBar`，及 `EntryCell`
-- `IsRefreshing` 屬性 `ListView`
-- `SelectedItem` 屬性 `MultiPage`
-- `SelectedIndex` 和`SelectedItem`屬性 `Picker`
-- `Value` 屬性`Slider`和 `Stepper`
-- `IsToggled` 屬性 `Switch`
-- `On` 屬性 `SwitchCell`
-- `Time` 屬性 `TimePicker`
+- `DatePicker` 的 `Date` 屬性
+- `Editor`、`Entry`、`SearchBar` 及 `EntryCell` 的 `Text` 屬性
+- `ListView` 的 `IsRefreshing` 屬性
+- `MultiPage` 的 `SelectedItem` 屬性
+- `Picker` 的 `SelectedIndex` 和 `SelectedItem` 屬性
+- `Slider`和 `Stepper` 的 `Value` 屬性
+- `Switch` 的 `IsToggled` 屬性
+- `SwitchCell` 的 `On` 屬性
+- `TimePicker` 的 `Time` 屬性
 
-這些特定的屬性會定義為`TwoWay`的很好的理由：
+基於一項非常重要的理由，我們將這些特定屬性定義為 `TwoWay`：
 
-資料繫結會搭配 Model View ViewModel (MVVM) 應用程式架構，ViewModel 類別時，資料繫結來源，以及檢視，其中包含檢視這類`Slider`，是資料繫結的目標。 MVVM 繫結類似於**反向繫結**大於先前的範例中的繫結的範例。 就很可能是您想要使用 ViewModel 中的對應屬性的值來初始化 頁面上的每個檢視，但在檢視中的變更也會影響 ViewModel 屬性。
+當您搭配使用資料繫結與 Model-View-ViewModel (MVVM) 應用程式架構時，ViewModel 類別是資料繫結來源，而檢視 (其中包含 `Slider` 這類檢視) 是資料繫結的目標。 比起先前範例中的繫結，MVVM 繫結更類似於**反向繫結**範例。 您很可能想要使用 ViewModel 中的對應屬性值來初始化頁面上的每個檢視，但在檢視中的變更也會影響 ViewModel 屬性。
 
-使用預設繫結模式的屬性`TwoWay`是最有可能會使 MVVM 案例中使用這些屬性。
+預設繫結模式為 `TwoWay` 的屬性，是最有可能在 MVVM 案例中使用的屬性。
 
-### <a name="one-way-to-source-bindings"></a>單次-單向到來源的繫結
+### <a name="one-way-to-source-bindings"></a>單向至來源的繫結
 
-唯讀的可繫結屬性具有預設繫結模式的`OneWayToSource`。 只有一個讀取/寫入可繫結屬性具有預設繫結模式`OneWayToSource`:
+唯讀可繫結屬性的預設繫結模式為 `OneWayToSource`。 只有一個讀取/寫入可繫結屬性的預設繫結模式為 `OneWayToSource`：
 
-- `SelectedItem` 屬性 `ListView`
+- `ListView` 的 `SelectedItem` 屬性
 
-基本原理是繫結的`SelectedItem`屬性應該會導致設定繫結來源。 在本文稍後的範例會覆寫該行為。
+其原理是 `SelectedItem` 屬性的繫結應該會導致設定繫結來源。 本文稍後的範例會覆寫該行為。
 
 ### <a name="one-time-bindings"></a>一次性繫結
 
-數個屬性具有預設繫結模式的`OneTime`。 這些是：
+有數個屬性的預設繫結模式為 `OneTime`。 這些是：
 
-- `IsTextPredictionEnabled` 屬性 `Entry`
-- `Text``BackgroundColor`，並`Style`的屬性`Span`。
+- `Entry` 的 `IsTextPredictionEnabled` 屬性
+- `Span` 的 `Text`、`BackgroundColor` 和 `Style` 屬性。
 
-目標屬性的繫結模式`OneTime`繫結內容變更時，才會更新。 如需這些目標屬性的繫結，這樣會簡化繫結基礎結構，因為不需要監視的來源屬性中的變更。
+繫結模式為 `OneTime` 的目標屬性只有在繫結內容變更時才會更新。 針對這些目標屬性的繫結，這麼做可以簡化繫結基礎結構，因為不需要監視來源屬性中的變更。
 
-## <a name="viewmodels-and-property-change-notifications"></a>Viewmodel 和屬性變更通知
+## <a name="viewmodels-and-property-change-notifications"></a>ViewModel 和屬性變更通知
 
-**簡單的色彩選取器**頁面會示範如何使用簡單的 ViewModel。 資料繫結可讓使用者選取色彩，使用三個`Slider`色調、 飽和度和亮度的項目。
+[Simple Color Selector] \(簡易色彩選取器\) 頁面會示範如何使用簡易的 ViewModel。 資料繫結可讓使用者透過色調、飽和度和亮度三個 `Slider` 項目來選取色彩。
 
-ViewModel 是資料繫結來源。 ViewModel 沒有*不*定義可繫結的屬性，但它實作可讓繫結基礎結構的屬性值變更時接獲通知的通知機制。 此通知機制[ `INotifyPropertyChanged` ](xref:System.ComponentModel.INotifyPropertyChanged)介面，其會定義單一屬性，名為[ `PropertyChanged` ](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged)。 通常會實作這個介面的類別就會引發事件的其中一個公用的屬性變更值時。 如果此屬性永遠不會變更引發事件不需要。 (`INotifyPropertyChanged`也會實作介面`BindableObject`和`PropertyChanged`可繫結的屬性值變更時會引發事件。)
+ViewModel 是資料繫結來源。 ViewModel「不會」定義可繫結的屬性，但它會實作通知機制，以在屬性值變更時通知繫結基礎結構。 此通知機制是 [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) 介面，其會定義名為 [`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) 的單一屬性。 實作這個介面的類別通常會在其中一個公用屬性變更值時引發事件。 如果屬性從不變更，就不需要引發事件  (`BindableObject` 也會實作 `INotifyPropertyChanged` 介面，並在可繫結的屬性值變更時引發 `PropertyChanged` 事件)。
 
-`HslColorViewModel`類別會定義五個屬性： `Hue`， `Saturation`， `Luminosity`，和`Color`相互關聯屬性。 其中的三個色彩元件變更的值，當`Color`屬性會重新計算，和`PropertyChanged`所有四個屬性不會引發事件：
+`HslColorViewModel` 類別會定義五個屬性：`Hue`、`Saturation`、`Luminosity` 和 `Color` 則相互關聯。 當這三個色彩元件其中之一變更值時，即會重新計算 `Color` 屬性，並引發所有四個屬性的 `PropertyChanged` 事件：
 
 ```csharp
 public class HslColorViewModel : INotifyPropertyChanged
@@ -206,13 +206,13 @@ public class HslColorViewModel : INotifyPropertyChanged
 }
 ```
 
-當`Color`屬性變更、 靜態`GetNearestColorName`方法中的`NamedColor`類別 (也包含在**DataBindingDemos**方案) 取得最接近的命名的色彩，並設定`Name`屬性。 這`Name`屬性具有私用`set`存取子，因此無法從中設定的類別之外。
+當 `Color` 屬性變更時，`NamedColor` 類別中的靜態 `GetNearestColorName` 方法 (也包含在 **DataBindingDemos** 方案中) 會取得最接近的具名色彩，並設定 `Name` 屬性。 這個 `Name` 屬性具有私用 `set` 存取子，因此無法從類別外部設定。
 
-當 ViewModel 設定做為繫結來源時，繫結基礎結構會將附加處理常式`PropertyChanged`事件。 如此一來，繫結屬性，變更就可以收到，然後從變更的值設定的目標屬性。
+當 ViewModel 設定為繫結來源時，繫結基礎結構會將處理常式附加至 `PropertyChanged` 事件。 如此一來，繫結就可以收到屬性變更的通知，然後從變更的值來設定目標屬性。
 
-不過，當目標屬性 (或`Binding`目標屬性的定義) 已`BindingMode`的`OneTime`，不需要將連接上的處理常式的繫結基礎結構`PropertyChanged`事件。 目標屬性更新時，才`BindingContext`變更和未本身的 [來源] 屬性變更時。
+不過，當目標屬性 (或目標屬性上的 `Binding` 定義) 具有 `OneTime` 的 `BindingMode` 時，繫結基礎結構就不需要將處理常式附加到 `PropertyChanged` 事件。 只有在 `BindingContext` 變更時 (而非來源屬性本身變更時)，才會更新目標屬性。
 
-**簡單的色彩選取器**XAML 檔案會具現化`HslColorViewModel`在頁面的資源字典，並初始化`Color`屬性。 `BindingContext`的屬性`Grid`設定為`StaticResource`繫結來參考該資源的延伸模組：
+[Simple Color Selector] \(簡易色彩選取器\) XAML 檔案會具現化頁面資源字典中的 `HslColorViewModel`，並初始化 `Color` 屬性。 `Grid` 的 `BindingContext` 屬性會設為 `StaticResource` 繫結延伸模組以參考該資源：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -256,17 +256,17 @@ public class HslColorViewModel : INotifyPropertyChanged
 </ContentPage>
 ```
 
-`BoxView`， `Label`，和三個`Slider`檢視繼承繫結內容從`Grid`。 這些檢視會參考在 ViewModel 的來源屬性的所有繫結目標。 針對`Color`屬性`BoxView`，，`Text`屬性`Label`，資料繫結`OneWay`: 檢視中的屬性會設定從 ViewModel 的屬性。
+`BoxView`、`Label` 和三個 `Slider` 檢視會繼承 `Grid` 的繫結內容。 這些檢視都是參考 ViewModel 中來源屬性的繫結目標。 若是 `BoxView` 的 `Color` 屬性和 `Label` 的 `Text` 屬性，資料繫結為 `OneWay`：檢視中的屬性會從 ViewModel 屬性來設定。
 
-`Value`的屬性`Slider`，不過， `TwoWay`。 這可讓每個`Slider`從 ViewModel，以及從每個設定 ViewModel 設定`Slider`。
+不過，`Slider` 的 `Value` 屬性則為 `TwoWay`。 這可讓每個 `Slider` 從 ViewModel 設定，而 ViewModel 則從每個 `Slider` 來設定。
 
-當第一次執行程式時， `BoxView`， `Label`，和三個`Slider`項目都會從 ViewModel 根據初始設定`Color`ViewModel 具現化時設定的屬性。 這是由左邊的 iOS 螢幕擷取畫面所示：
+第一次執行程式時，`BoxView`、`Label` 和三個 `Slider` 項目都會從 ViewModel 來設定，並以 ViewModel 具現化時設定的初始 `Color` 屬性為依據。 如左側的 iOS 螢幕擷取畫面所示：
 
-[![簡單的色彩選取器](binding-mode-images/simplecolorselector-small.png "簡單色彩選取器")](binding-mode-images/simplecolorselector-large.png#lightbox "簡單色彩選取器")
+[![簡易色彩選取器](binding-mode-images/simplecolorselector-small.png "簡易色彩選取器")](binding-mode-images/simplecolorselector-large.png#lightbox "簡易色彩選取器")
 
-您操作滑桿`BoxView`和`Label`會隨之更新、 Android 及 UWP 螢幕擷取畫面所示。
+當您操作滑桿時，`BoxView` 和 `Label` 會隨之更新，如 Android 及 UWP 螢幕擷取畫面所示。
 
-資源字典中的 ViewModel 具現化是一個常見的方法。 您也可在屬性項目標記的 ViewModel 具現化`BindingContext`屬性。 在 **簡單色彩選取器**XAML 檔案中，請嘗試移除`HslColorViewModel`從資源字典並將它設定為`BindingContext`屬性`Grid`如下所示：
+具現化資源字典中的 ViewModel 是一個常見的方法。 您也可以針對 `BindingContext` 屬性，具現化屬性項目標記內的 ViewModel。 在 [Simple Color Selector] \(簡易色彩選取器\) XAML 檔案中，嘗試從資源字典中移除 `HslColorViewModel`，並將它設定為 `Grid` 的 `BindingContext` 屬性，如下所示：
 
 ```xaml
 <Grid>
@@ -279,13 +279,13 @@ public class HslColorViewModel : INotifyPropertyChanged
 </Grid>
 ```
 
-繫結內容可以設定各種不同的方式。 某些情況下，程式碼後置檔案 ViewModel 具現化，並將它設定為`BindingContext`頁的屬性。 這些是所有有效的方法。
+您可以藉由各種不同的方式來設定繫結內容。 有時候，程式碼後置檔案會具現化 ViewModel，並將它設定為頁面的 `BindingContext` 屬性。 這些是所有有效的方法。
 
 ## <a name="overriding-the-binding-mode"></a>覆寫繫結模式
 
-如果目標屬性的預設繫結模式不是適用於特定的資料繫結，就可以設定覆寫它[ `Mode` ](xref:Xamarin.Forms.BindingBase.Mode)屬性`Binding`(或[ `Mode` ](xref:Xamarin.Forms.Xaml.BindingExtension.Mode)的屬性`Binding`標記延伸) 至其中的成員`BindingMode`列舉型別。
+如果目標屬性的預設繫結模式不適用於特定資料繫結，您可以將 `Binding` 的 [`Mode`](xref:Xamarin.Forms.BindingBase.Mode) 屬性 (或 `Binding` 標記延伸的 [`Mode`](xref:Xamarin.Forms.Xaml.BindingExtension.Mode) 屬性) 設為其中一個 `BindingMode` 列舉成員，以將其覆寫。
 
-不過，設定`Mode`屬性設`TwoWay`不一定永遠行得通，跟您預期的一樣。 例如，請嘗試修改**替代 XAML 繫結**XAML 檔案，以包含`TwoWay`繫結定義中：
+不過，將 `Mode` 屬性設為 `TwoWay` 不一定一律如預期般有效。 例如，嘗試修改 [替代 XAML 繫結] XAML 檔案，以在繫結定義中包含 `TwoWay`：
 
 ```xaml
 <Label Text="TEXT"
@@ -297,9 +297,9 @@ public class HslColorViewModel : INotifyPropertyChanged
                        Mode=TwoWay}" />
 ```
 
-它可能會有可`Slider`會初始化為初始值的`Scale`屬性，也就是 1，但是，不會發生。 當`TwoWay`初始化繫結，目標會設定來源的第一次，這表示`Scale`屬性設定為`Slider`預設值為 0。 當`TwoWay`上設定繫結`Slider`，然後在`Slider`值最初會設定從來源。
+您可能預期 `Slider` 會初始化為 `Scale` 屬性的初始值，也就是 1，但實際並不會發生。 當 `TwoWay` 繫結初始化時，會先從來源設定目標，這表示 `Scale` 屬性會設為 `Slider` 預設值 0。 當 `Slider` 設定了 `TwoWay` 繫結時，一開始會從來源設定 `Slider`。
 
-您可以將繫結模式設定為`OneWayToSource`中**替代 XAML 繫結**範例：
+您可以將 [替代 XAML 繫結] 範例中的繫結模式設定為 `OneWayToSource`：
 
 ```xaml
 <Label Text="TEXT"
@@ -311,14 +311,14 @@ public class HslColorViewModel : INotifyPropertyChanged
                        Mode=OneWayToSource}" />
 ```
 
-現在`Slider`初始化為 1 (預設值`Scale`) 但操作`Slider`不會影響`Scale`屬性，因此這不是很有用。
+現在，`Slider` 即會初始化為 1 (`Scale` 的預設值) 但操作 `Slider` 時不會影響 `Scale` 屬性，因此並不太實用。
 
 > [!NOTE]
-> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)類別也會定義[ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX)並[ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY)屬性，可以調整`VisualElement`以不同的方式在水平和垂直方向。
+> [`VisualElement`](xref:Xamarin.Forms.VisualElement) 類別也會定義 [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) 和 [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) 屬性，它們可以在水平和垂直方向以不同的方式調整 `VisualElement`。
 
-類別會覆寫的預設繫結模式很有幫助應用程式`TwoWay`涉及`SelectedItem`屬性`ListView`。 預設繫結模式是`OneWayToSource`。 當設定資料繫結上`SelectedItem`屬性來參考在 ViewModel，在 來源 屬性，則該資料來源 屬性會設定從`ListView`選取項目。 不過，在某些情況下，您可能也想`ListView`從 ViewModel 初始化。
+若要使用 `TwoWay` 覆寫預設繫結模式，其中一個實用的應用程式牽涉到 `ListView` 的 `SelectedItem` 屬性。 預設繫結模式為 `OneWayToSource`。 當 `SelectedItem` 屬性設定了資料繫結以參考 ViewModel 中的來源屬性時，則會從 `ListView` 選取項目設定該來源屬性。 不過，在某些情況下，您可能也希望從 ViewModel 初始化 `ListView`。
 
-**範例設定**頁面會示範這項技術。 此頁面表示應用程式設定，通常會定義在 ViewModel，這類的簡單實作`SampleSettingsViewModel`檔案：
+[範例設定] 頁面會示範這項技術。 此頁面表示簡易的應用程式設定實作，其通常定義於 ViewModel 中，例如這個 `SampleSettingsViewModel` 檔案：
 
 ```csharp
 public class SampleSettingsViewModel : INotifyPropertyChanged
@@ -412,13 +412,13 @@ public class SampleSettingsViewModel : INotifyPropertyChanged
 }
 ```
 
-每個應用程式設定是儲存在名為方法中的 Xamarin.Forms 屬性字典屬性`SaveState`並從該字典的建構函式載入。 此類別的底端兩個方法可協助簡化 Viewmodel，並將其設定為較不容易發生錯誤。 `OnPropertyChanged`底部的方法有選擇性參數，設定為呼叫端的屬性。 指定的屬性名稱做為字串時，這可避免拼字錯誤。
+每個應用程式設定都是一種屬性，其會儲存至名為 `SaveState` 方法中的 Xamarin.Forms 屬性字典，並從該字典載入建構函式中。 此類別底端的兩個方法可協助簡化 ViewModel，並使其較不容易發生錯誤。 `OnPropertyChanged` 方法底部有設為呼叫屬性的選擇性參數。 將屬性名稱指定為字串時，這可避免拼字錯誤。
 
-`SetProperty`類別中的方法會執行更多： 它會比較儲存為欄位的值設為屬性的值，且只會呼叫`OnPropertyChanged`當兩個值是否不相等。
+類別中的 `SetProperty` 方法可執行更多作業：它會比較設為屬性以及儲存為欄位的值，並只會在兩個值不相等時呼叫 `OnPropertyChanged`。
 
-`SampleSettingsViewModel`類別定義的背景色彩的兩個屬性：`BackgroundNamedColor`屬性屬於型別`NamedColor`，類別也隨附於**DataBindingDemos**解決方案。 `BackgroundColor`屬性的類型是`Color`，和取自`Color`屬性`NamedColor`物件。
+`SampleSettingsViewModel` 類別定義背景色彩的兩個屬性：`BackgroundNamedColor` 屬性屬於 `NamedColor` 類型，其也是隨附於 **DataBindingDemos** 解決方案的類別。 `BackgroundColor` 屬性屬於 `Color` 類型，並取自 `NamedColor` 物件的 `Color` 屬性。
 
-`NamedColor`類別來列舉所有的靜態公用欄位在 Xamarin.Forms 中使用.NET 反映`Color`結構，並將其儲存以名稱存取靜態集合中`All`屬性：
+`NamedColor` 類別使用 .NET 反射來列舉 Xamarin.Forms `Color` 結構中所有的靜態公用欄位，並使用其名稱將它們儲存在可供靜態 `All` 屬性存取的集合中：
 
 ```csharp
 public class NamedColor : IEquatable<NamedColor>, IComparable<NamedColor>
@@ -526,7 +526,7 @@ public class NamedColor : IEquatable<NamedColor>, IComparable<NamedColor>
 }
 ```
 
-`App`類別內**DataBindingDemos**專案會定義一個名為屬性`Settings`型別的`SampleSettingsViewModel`。 這個屬性會初始化時`App`具現化類別，而`SaveState`方法時，會呼叫`OnSleep`方法呼叫：
+**DataBindingDemos** 專案中的 `App` 類別會定義一個名為 `Settings` 的屬性，其類型為 `SampleSettingsViewModel`。 當具現化 `App` 類別時會初始化這個屬性，而在呼叫 `OnSleep` 方法時會呼叫 `SaveState` 方法：
 
 ```csharp
 public partial class App : Application
@@ -560,9 +560,9 @@ public partial class App : Application
 }
 ```
 
-如需有關應用程式生命週期方法的詳細資訊，請參閱文章[**應用程式生命週期**](~/xamarin-forms/app-fundamentals/app-lifecycle.md)。
+如需應用程式生命週期方法的詳細資訊，請參閱[**應用程式生命週期**](~/xamarin-forms/app-fundamentals/app-lifecycle.md)一文。
 
-幾乎所有其他項目會在處理**SampleSettingsPage.xaml**檔案。 `BindingContext`頁面的設定使用`Binding`標記延伸模組： 繫結來源是靜態`Application.Current`屬性，這是執行個體的`App`類別，在專案中，而`Path`設為`Settings`屬性，這是`SampleSettingsViewModel`物件：
+幾乎所有其他項目都是在 **SampleSettingsPage.xaml** 檔案中處理。 您可使用 `Binding` 標記延伸來設定頁面的 `BindingContext`：繫結來源是靜態 `Application.Current` 屬性，這是專案中 `App` 類別的執行個體，而 `Path` 設為 `Settings` 屬性，其為 `SampleSettingsViewModel` 物件：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -643,19 +643,19 @@ public partial class App : Application
 </ContentPage>
 ```
 
-頁面的所有子系會繼承繫結內容。 在此頁面上的其他繫結的大部分都是中的屬性`SampleSettingsViewModel`。 `BackgroundColor`屬性用來設定`BackgroundColor`屬性`StackLayout`，而`Entry`， `DatePicker`， `Switch`，和`Stepper`屬性所有繫結到 ViewModel 的其他屬性。
+頁面的所有子系會繼承繫結內容。 此頁面上的其他繫結大部分都是 `SampleSettingsViewModel` 中的屬性。 `BackgroundColor` 屬性用來設定 `StackLayout` 的 `BackgroundColor` 屬性，而 `Entry`、`DatePicker`、`Switch` 和 `Stepper` 屬性會全部繫結到 ViewModel 中的其他屬性。
 
-`ItemsSource`的屬性`ListView`設定為靜態`NamedColor.All`屬性。 這會填滿`ListView`所有`NamedColor`執行個體。 中的每個項目的`ListView`，項目的繫結內容設定為`NamedColor`物件。 `BoxView`並`Label`中`ViewCell`繫結中的屬性至`NamedColor`。
+`ListView` 的 `ItemsSource` 屬性設定為靜態 `NamedColor.All` 屬性。 這會將 `ListView` 填滿所有 `NamedColor` 執行個體。 針對 `ListView` 中的每個項目，項目的繫結內容會設定為 `NamedColor` 物件。 `ViewCell` 中的 `BoxView` 和 `Label` 會繫結至 `NamedColor` 中的屬性。
 
-`SelectedItem`的屬性`ListView`屬於型別`NamedColor`，並繫結至`BackgroundNamedColor`屬性`SampleSettingsViewModel`:
+`ListView` 的 `SelectedItem` 屬性屬於 `NamedColor` 類型，並繫結至 `SampleSettingsViewModel` 的 `BackgroundNamedColor` 屬性：
 
 ```xaml
 SelectedItem="{Binding BackgroundNamedColor, Mode=TwoWay}"
 ```
 
-預設繫結模式`SelectedItem`是`OneWayToSource`，可從選取的項目設定的 ViewModel 屬性。 `TwoWay`模式可讓`SelectedItem`從 ViewModel 初始化。
+`SelectedItem` 的預設繫結模式是 `OneWayToSource`，其可從選取的項目來設定 ViewModel 屬性。 `TwoWay` 模式可讓 `SelectedItem` 從 ViewModel 初始化。
 
-不過，當`SelectedItem`如此一來，設定`ListView`不會自動捲動以顯示所選的項目。 在程式碼後置檔案中的一些程式碼是必要項目：
+不過，以此方式設定 `SelectedItem` 時，`ListView` 不會自動捲動以顯示所選的項目。 在程式碼後置檔案中有些程式碼是必要項目：
 
 ```csharp
 public partial class SampleSettingsPage : ContentPage
@@ -674,16 +674,16 @@ public partial class SampleSettingsPage : ContentPage
 }
 ```
 
-第一次執行時，iOS 螢幕擷取畫面，左側會顯示的程式。 建構函式`SampleSettingsViewModel`初始化的背景色彩為白色，而這就是在選取的項目`ListView`:
+第一次執行程式時，iOS 螢幕擷取畫面左側會顯示程式。 `SampleSettingsViewModel` 中的建構函式會將背景色彩初始化為白色，而這就是 `ListView` 中選取的項目：
 
 [![範例設定](binding-mode-images/samplesettings-small.png "範例設定")](binding-mode-images/samplesettings-large.png#lightbox "範例設定")
 
-其他兩個螢幕擷取畫面顯示已變更的設定。 當試驗此頁面，請記得將進入睡眠狀態或終止在裝置或模擬器正在執行的程式。 結束 Visual Studio 偵錯工具中的程式並不會造成`OnSleep`覆寫中`App`要呼叫的類別。
+其他兩個螢幕擷取畫面顯示已變更的設定。 當試驗此頁面時，請記得讓程式進入睡眠狀態，或終止裝置或模擬器正在執行的程式。 終止 Visual Studio 偵錯工具中的程式，並不會導致呼叫 `App` 類別中的 `OnSleep` 覆寫。
 
-在下一篇文章中，您會看到如何指定[**字串格式化**](string-formatting.md)上所設定的資料繫結`Text`屬性`Label`。
+在下一篇文章中，您將了解如何指定資料繫結的[**字串格式化**](string-formatting.md)，而該資料繫結是在 `Label` 的 `Text` 屬性上設定。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [資料繫結示範 （範例）](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [資料繫結 Xamarin.Forms 書籍章節](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Data Binding Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) (資料繫結示範 (範例))
+- [來自 Xamarin.Forms 書籍的資料繫結章節](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

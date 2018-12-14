@@ -1,6 +1,6 @@
 ---
-title: 新增 tap 的筆勢辨識器
-description: 這篇文章說明如何使用 Xamarin.Forms 應用程式中點選偵測的點選手勢。 點選偵測是透過 TapGestureRecognizer 類別實作。
+title: 新增點選手勢辨識器
+description: 本文說明如何使用點選手勢在 Xamarin.Forms 應用程式中進行點選偵測。 點選偵測是使用 TapGestureRecognizer 類別實作。
 ms.prod: xamarin
 ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
 ms.technology: xamarin-forms
@@ -9,16 +9,16 @@ ms.author: dabritch
 ms.date: 01/21/2016
 ms.openlocfilehash: a28afb30770f15861aef06643e7f51070199ea9b
 ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/18/2018
 ms.locfileid: "38994850"
 ---
-# <a name="adding-a-tap-gesture-recognizer"></a>新增 tap 的筆勢辨識器
+# <a name="adding-a-tap-gesture-recognizer"></a>新增點選手勢辨識器
 
-_點選手勢來點選偵測，並使用 TapGestureRecognizer 類別實作。_
+_點選手勢可用於點選偵測，並使用 TapGestureRecognizer 類別實作。_
 
-若要讓使用者介面項目可點按以點選手勢，建立[ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)執行個體，處理[ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped)事件，並新增至新的筆勢辨識器[`GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers)使用者介面項目的集合。 下列程式碼範例所示`TapGestureRecognizer`附加至[ `Image` ](xref:Xamarin.Forms.Image)項目：
+若要讓使用者介面項目可透過點選手勢點選，請建立 [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 執行個體，處理 [`Tapped`](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) 事件，然後將新的手勢辨識器新增至使用者介面項目的 [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) 集合。 下列程式碼範例顯示附加至 [`Image`](xref:Xamarin.Forms.Image) 項目的 `TapGestureRecognizer`：
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -28,19 +28,19 @@ tapGestureRecognizer.Tapped += (s, e) => {
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-預設映像會回應單一點選。 設定[ `NumberOfTapsRequired` ](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired)等候點 （或更多的點選，如有必要） 的屬性。
+根據預設，影像會回應單一點選。 將 [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) 屬性設定為等候點兩下或更多下 (如有需要)。
 
 ```csharp
 tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 ```
 
-當[ `NumberOfTapsRequired` ](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired)設定上述其中一個，事件處理常式才會執行如果點選出現在一段時間 （這期間不是可設定） 內。 如果第二個 （或後續） 點選不會發生在該期間內有效地被忽略，並點選計數重新啟動。
+當 [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) 設定為 1 以上時，只有在固定期間內 (無法設定此期間) 發生點選次數時，才會執行事件處理常式。 如果在該期間內未點第二下 (或後續幾下)，則會有效忽略並重新開始「點選計數」。
 
 <a name="Using_Xaml" />
 
-## <a name="using-xaml"></a>使用 Xaml
+## <a name="using-xaml"></a>使用 XAML
 
-筆勢辨識器可以加入至控制項，以在 Xaml 中使用附加的屬性。 若要新增的語法[ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)影像如下所示 (在此情況下定義*連點兩下*事件):
+您可以在 XAML 中使用附加屬性將手勢辨識器新增至控制項。 以下顯示將 [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 新增至影像的語法 (在本案例中定義「點兩下」事件)：
 
 ```xaml
 <Image Source="tapped.jpg">
@@ -52,7 +52,7 @@ tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 </Image>
 ```
 
-（在此範例中） 的事件處理常式的程式碼會遞增計數器，以及從色彩的映像變更為黑色&amp;白色。
+範例中事件處理常式的程式碼會遞增計數器，並將影像從彩色變成黑白。
 
 ```csharp
 void OnTapGestureRecognizerTapped(object sender, EventArgs args)
@@ -70,7 +70,7 @@ void OnTapGestureRecognizerTapped(object sender, EventArgs args)
 
 ## <a name="using-icommand"></a>使用 ICommand
 
-通常使用 Model View ViewModel (MVVM) 模式的應用程式使用`ICommand`而不是直接連接事件處理常式。 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)可以輕鬆地支援`ICommand`藉由在程式碼中設定繫結：
+使用 Model-View-ViewModel (MVVM) 模式的應用程式通常會使用 `ICommand`，而不是直接連接到事件處理常式。 [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 可以透過在程式碼中設定繫結，輕鬆地支援 `ICommand`：
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -78,7 +78,7 @@ tapGestureRecognizer.SetBinding (TapGestureRecognizer.CommandProperty, "TapComma
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-或者，使用 Xaml:
+或使用 XAML：
 
 ```xaml
 <Image Source="tapped.jpg">
@@ -90,7 +90,7 @@ image.GestureRecognizers.Add(tapGestureRecognizer);
 </Image>
 ```
 
-在此範例中，可以找到此檢視模型的完整程式碼。 相關`Command`實作詳細資料如下所示：
+您可以在範例中找到此檢視模型的完整程式碼。 相關 `Command` 實作的詳細資料如下所示：
 
 ```csharp
 public class TapViewModel : INotifyPropertyChanged
@@ -115,6 +115,6 @@ public class TapViewModel : INotifyPropertyChanged
 
 ## <a name="related-links"></a>相關連結
 
-- [TapGesture （範例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/TapGesture/)
+- [TapGesture (Samples)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/TapGesture/)
 - [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
 - [TapGestureRecognizer](xref:Xamarin.Forms.TapGestureRecognizer)

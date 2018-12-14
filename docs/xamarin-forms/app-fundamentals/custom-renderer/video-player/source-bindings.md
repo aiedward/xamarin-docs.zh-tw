@@ -1,6 +1,6 @@
 ---
-title: 繫結到播放程式的視訊來源
-description: 本文說明如何將視訊來源繫結至視訊播放程式中，使用 Xamarin.Forms。
+title: 將影片來源繫結至播放程式
+description: 本文說明如何使用 Xamarin.Forms 將影片來源繫結至影片播放程式。
 ms.prod: xamarin
 ms.assetid: 504E0C7E-051A-4AF2-B654-BAB4D0957928
 ms.technology: xamarin-forms
@@ -9,14 +9,14 @@ ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: b0efdc1a20f52231f15b7a08eb86962e2079c678
 ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/08/2018
 ms.locfileid: "35240026"
 ---
-# <a name="binding-video-sources-to-the-player"></a>繫結到播放程式的視訊來源
+# <a name="binding-video-sources-to-the-player"></a>將影片來源繫結至播放程式
 
-當`Source`屬性`VideoPlayer`檢視設為新的視訊檔、 現有的視訊停止播放並開始新的視訊。 這示範**選取 Web 視訊**頁面[ **VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)範例。 此頁面包含`ListView`從參考的三個視訊的標題與**App.xaml**檔案：
+當 `VideoPlayer` 檢視的 `Source` 屬性設定為新影片檔案時，會停止播放現有的影片並開始播放新影片。 如 [**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) 範例的 [Select Web Video] \(選取網路影片\) 頁面所示。 此頁面包含 `ListView`，以及從 **App.XAML** 檔案參考的三部影片標題：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -47,7 +47,7 @@ ms.locfileid: "35240026"
 </ContentPage>
 ```
 
-選取視訊時，`ItemSelected`程式碼後置檔案中的事件處理常式會執行。 移除任何空格和所有格符號的標題中的處理常式，並使用該值做為索引鍵來取得的資源定義中的其中一個**App.xaml**檔案。 確認`UriVideoSource`物件然後將設定為`Source`屬性`VideoPlayer`。
+選取影片時，會執行程式碼後置檔案中的 `ItemSelected` 事件處理常式。 處理常式會移除標題中的任何空格與所有格符號，並以此作為索引鍵來取得 **App.XAML** 檔案中定義的其中一個資源。 然後，將該 `UriVideoSource` 物件設定為 `VideoPlayer` 的 `Source` 屬性。
 
 ```csharp
 namespace VideoPlayerDemos
@@ -71,11 +71,11 @@ namespace VideoPlayerDemos
 }
 ```
 
-當第一次載入頁面時，選取任何項目`ListView`，因此您必須選取一個開始播放的視訊：
+當頁面第一次載入時，不會在 `ListView` 中選取任何項目，因此您必須選取一個才能開始播放影片：
 
-[![選取 Web 視訊](source-bindings-images/selectwebvideo-small.png "選取 Web 視訊")](source-bindings-images/selectwebvideo-large.png#lightbox "選取 Web 視訊")
+[![選取網路影片](source-bindings-images/selectwebvideo-small.png "選取網路影片")](source-bindings-images/selectwebvideo-large.png#lightbox "選取網路影片")
 
-`Source`屬性`VideoPlayer`受到可繫結的屬性，表示它可以是資料繫結的目標。 這示範**繫結至 VideoPlayer**頁面。 中的標記**BindToVideoPlayer.xaml**檔案會受到下列類別會封裝的視訊和對應的標題`VideoSource`物件：
+`VideoPlayer` 的 `Source` 屬性受到可繫結屬性的支援，這表示它可以是資料繫結的目標。 如 [Bind to VideoPlayer] \(繫結至 VideoPlayer\) 頁面所示。 **BindToVideoPlayer.XAML** 檔案中的標記支援下列類別，其中封裝影片標題和對應的 `VideoSource` 物件：
 
 ```csharp
 namespace VideoPlayerDemos
@@ -94,7 +94,7 @@ namespace VideoPlayerDemos
 }
 ```
 
-`ListView`中**BindToVideoPlayer.xaml**檔案包含的這些陣列`VideoInfo`物件，每個視訊標題以初始化和`UriVideoSource`物件從資源字典中**App.xaml**:
+**BindToVideoPlayer.XAML** 檔案中的 `ListView` 包含這些 `VideoInfo` 物件的陣列，每個物件會以影片標題及 **App.XAML** 資源字典中的 `UriVideoSource` 物件初始化：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -133,11 +133,11 @@ namespace VideoPlayerDemos
 </ContentPage>
 ```
 
-`Source`屬性`VideoPlayer`繫結至`ListView`。 `Path`繫結會指定為`SelectedItem.VideoSource`，這是兩個屬性所組成的複合路徑：`SelectedItem`屬性`ListView`。 選取的項目屬於型別`VideoInfo`，其具有`VideoSource`屬性。
+`VideoPlayer` 的 `Source` 屬性會繫結至 `ListView`。 繫結的 `Path` 會指定為 `SelectedItem.VideoSource`，這是由兩個屬性組成的複合路徑：`SelectedItem` 是 `ListView` 的屬性。 選取的項目類型為 `VideoInfo`，其中包含 `VideoSource` 屬性。
 
-如同第一個**選取 Web 視訊** 頁面上，從一開始選取任何項目`ListView`，因此您必須選取其中一個視訊後，才開始播放。
+如同第一頁 [Select Web Video] \(選取網路影片\)，一開始不會從 `ListView` 選取任何項目，因此您必須選取其中一個影片才能開始播放。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [視訊播放程式示範 （範例）](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) (影片播放程式示範 (範例))

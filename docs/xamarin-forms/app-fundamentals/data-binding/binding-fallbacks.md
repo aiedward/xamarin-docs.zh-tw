@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms 繫結後援
-description: 這篇文章說明如何讓繫結的更穩固，藉由定義後援的值，如果繫結會失敗。
+description: 本文說明如何定義繫結失敗時要使用的後援值，以讓繫結更穩固。
 ms.prod: xamarin
 ms.assetid: 637ACD9D-3E5D-4014-86DE-A77D1FEF238A
 ms.technology: xamarin-forms
@@ -9,32 +9,32 @@ ms.author: dabritch
 ms.date: 08/16/2018
 ms.openlocfilehash: 2a4b29df9148ce695f8f3ca5377e5848af1b775a
 ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/20/2018
 ms.locfileid: "52171595"
 ---
 # <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms 繫結後援
 
-有時資料繫結失敗，因為繫結來源不能解析，或繫結成功，但卻傳回`null`值。 雖然可以處理這些情況下，值轉換器或其他額外的程式碼，資料繫結可以成為更強固藉由定義要使用的繫結程序失敗時的後援值。 這可藉由定義[ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue)並[ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue)繫結運算式中的屬性。 因為這些屬性位於[ `BindingBase` ](xref:Xamarin.Forms.BindingBase)類別，它們可以用於搭配繫結，已編譯的繫結，與`Binding`標記延伸。
+有時，資料繫結會因為無法解析繫結來源，或繫結成功但卻傳回 `null` 值而失敗。 雖然這些情況都可以透過值轉換器或其他額外程式碼來處理，但您可以藉由定義繫結程序失敗時要使用的後援值，讓資料繫結更穩固。 您可以在繫結運算式中定義 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 和 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 屬性來完成上述作業。 因為這些屬性位於 [ `BindingBase` ](xref:Xamarin.Forms.BindingBase) 類別中，因此可以搭配使用繫結、編譯的繫結與 `Binding` 標記延伸。
 
 > [!NOTE]
-> 利用[ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue)並[ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue)是選擇性的繫結運算式中的屬性。
+> 您可以選擇性地使用繫結運算式中的 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 和 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 屬性。
 
 ## <a name="defining-a-fallback-value"></a>定義後援值
 
-[ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue)屬性允許將使用後援值定義時繫結*來源*無法解析。 繫結至異質性類型的繫結集合中的所有物件可能不存在的來源屬性時設定這個屬性的常見案例。
+[`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 屬性可讓您定義在無法解析繫結「來源」時要使用的後援值。 設定這個屬性的常見案例是：當您要繫結之來源屬性並未存在於異質類型繫結集合中的所有物件時。
 
-**MonkeyDetail**頁說明設定[ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue)屬性：
+**MonkeyDetail** 頁面說明如何設定 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 屬性：
 
 ```xaml
 <Label Text="{Binding Population, FallbackValue='Population size unknown'}"
        ... />   
 ```
 
-上的繫結[ `Label` ](xref:Xamarin.Forms.Label)定義[ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue)會在目標設定，當繫結來源不能解析的值。 因此，所定義的值`FallbackValue`會顯示屬性，如果`Population`屬性不存在繫結物件上。 請注意，這裡`FallbackValue`屬性值以單引號 （撇號） 字元分隔。
+[`Label`](xref:Xamarin.Forms.Label) 上的繫結可定義當無法解析繫結來源時要在目標上設定的 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 值。 因此，如果繫結物件上不存在 `Population` 屬性，即會顯示 `FallbackValue` 屬性所定義的值。 請注意，這裡的 `FallbackValue` 屬性值會以單引號字元分隔。
 
-而不是定義[ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue)內嵌屬性值，建議您將其定義為中的資源[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)。 這種方法的優點是這類值在單一位置中，定義一次，並會更方便進行當地語系化。 資源可以再使用擷取`StaticResource`標記延伸模組：
+建議您將 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 屬性值定義為 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 中的資源，而不是定義為內嵌。 這種方法的優點是這類值在單一位置中只會定義一次，並更容易進行當地語系化。 接著，即可使用 `StaticResource` 標記延伸來擷取資源：
 
 ```xaml
 <Label Text="{Binding Population, FallbackValue={StaticResource populationUnknown}}"
@@ -42,22 +42,22 @@ ms.locfileid: "52171595"
 ```
 
 > [!NOTE]
-> 不可以設定`FallbackValue`屬性繫結運算式。
+> 您無法使用繫結運算式設定 `FallbackValue` 屬性。
 
-以下是執行的程式：
+以下是程式執行情況：
 
 ![FallbackValue 繫結](binding-fallbacks-images/bindingunavailable-detail-cropped.png "FallbackValue 繫結")
 
-當`FallbackValue`屬性未設定繫結運算式和繫結路徑或路徑的一部分仍未解析， [ `BindableProperty.DefaultValue` ](xref:Xamarin.Forms.BindableProperty.DefaultValue)設定在目標上。 不過，當`FallbackValue`屬性是設定和繫結路徑或路徑的一部分無法解決，值`FallbackValue`value 屬性會設定在目標上。 因此，在**MonkeyDetail**頁[ `Label` ](xref:Xamarin.Forms.Label)會顯示 「 未知的母體大小 」，因為在繫結的物件缺少`Population`屬性。
+若繫結運算式未設定 `FallbackValue` 屬性，且未解析繫結路徑或部分路徑時，會在目標上設定 [`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue)。 不過，若已設定 `FallbackValue` 屬性，但未解析繫結路徑或部分路徑時，則會在目標上設定 `FallbackValue` 值屬性的值。 因此，**MonkeyDetail** 頁面中的 [`Label`](xref:Xamarin.Forms.Label) 會顯示 "Population size unknown" (母體大小未知)，因為繫結物件缺少 `Population` 屬性。
 
 > [!IMPORTANT]
-> 繫結運算式中不會執行已定義的值轉換器時[ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue)屬性設定。
+> 設定 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 屬性時，繫結運算式不會執行已定義的值轉換器。
 
-## <a name="defining-a-null-replacement-value"></a>定義為 null 的取代值
+## <a name="defining-a-null-replacement-value"></a>定義 Null 取代值
 
-[ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue)屬性允許將使用的取代值定義時繫結*來源*即解決，但值為`null`。 設定這個屬性的常見案例是當繫結至來源屬性可能`null`繫結集合中。
+[`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 屬性可讓您定義在已解析繫結「來源」但值為 `null` 時要使用的取代值。 設定這個屬性的常見案例是：當您要繫結的來源屬性可能是繫結集合中的 `null` 時。
 
-**猴仔**頁說明設定[ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue)屬性：
+**Monkeys** 頁面說明如何設定 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 屬性：
 
 ```xaml
 <ListView ItemsSource="{Binding Monkeys}"
@@ -79,9 +79,9 @@ ms.locfileid: "52171595"
 </ListView>
 ```
 
-上的繫結[ `Image` ](xref:Xamarin.Forms.Image)並[ `Label` ](xref:Xamarin.Forms.Label)均定義[ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue)值將會套用，如果繫結路徑傳回`null`. 因此，所定義的值`TargetNullValue`屬性會顯示集合中的任何物件所在`ImageUrl`和`Location`屬性未定義。 請注意，這裡`TargetNullValue`屬性值以單引號 （撇號） 字元分隔。
+[`Image`](xref:Xamarin.Forms.Image) 和 [`Label`](xref:Xamarin.Forms.Label) 上的繫結均可定義當繫結路徑傳回 `null` 時要套用的 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 值。 因此，針對集合中未定義 `ImageUrl` 和 `Location` 屬性的任何物件，即會顯示 `TargetNullValue` 屬性所定義的值。 請注意，這裡的 `TargetNullValue` 屬性值會以單引號字元分隔。
 
-而不是定義[ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue)內嵌屬性值，建議您將其定義為中的資源[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)。 這種方法的優點是這類值在單一位置中，定義一次，並會更方便進行當地語系化。 資源可以再使用擷取`StaticResource`標記延伸模組：
+建議您將 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 屬性值定義為 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 中的資源，而不是定義為內嵌。 這種方法的優點是這類值在單一位置中只會定義一次，並更容易進行當地語系化。 接著，即可使用 `StaticResource` 標記延伸來擷取資源：
 
 ```xaml
 <Image Source="{Binding ImageUrl, TargetNullValue={StaticResource fallbackImageUrl}}"
@@ -91,17 +91,17 @@ ms.locfileid: "52171595"
 ```
 
 > [!NOTE]
-> 不可以設定`TargetNullValue`屬性繫結運算式。
+> 您無法使用繫結運算式來設定 `TargetNullValue` 屬性。
 
-以下是執行的程式：
+以下是程式執行情況：
 
 [![TargetNullValue 繫結](binding-fallbacks-images/bindingunavailable-small.png "TargetNullValue 繫結")](binding-fallbacks-images/bindingunavailable-large.png#lightbox "TargetNullValue 繫結")
 
-當`TargetNullValue`屬性未設定在繫結運算式中，來源值的`null`會被轉換，如果已定義的值轉換器，格式化如果`StringFormat`定義，則結果然後設定在目標上。 不過，當`TargetNullValue`設定屬性時，來源值`null`如果已定義的值轉換器，，和其仍會被轉換`null`轉換之後，windows 7`TargetNullValue`目標上設定屬性。
+當繫結運算式未設定 `TargetNullValue` 屬性時，會轉換 `null` 的來源值 (如果已定義值轉換器)，並加以格式化 (如果已定義 `StringFormat`)，然後在目標上設定結果。 不過，若已設定 `TargetNullValue` 屬性，則會轉換 `null` 的來源值 (如果已定義值轉換器)；如果轉換後仍為 `null`，就會在目標上設定 `TargetNullValue`。
 
 > [!IMPORTANT]
-> 字串格式不會套用繫結運算式時`TargetNullValue`屬性設定。
+> 若已設定 `TargetNullValue` 屬性，字串格式就不會套用到繫結運算式中。
 
 ## <a name="related-links"></a>相關連結
 
-- [資料繫結示範 （範例）](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Data Binding Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) (資料繫結示範 (範例))

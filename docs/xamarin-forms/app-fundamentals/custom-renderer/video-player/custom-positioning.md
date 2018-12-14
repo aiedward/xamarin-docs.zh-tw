@@ -1,6 +1,6 @@
 ---
-title: 自訂視訊定位
-description: 本文說明如何實作影片播放器應用程式，使用 Xamarin.Forms 中的自訂位置列。
+title: 自訂影片定位
+description: 本文說明如何使用 Xamarin.Forms 在影片播放程式應用程式中實作自訂位置列。
 ms.prod: xamarin
 ms.assetid: 6D792264-30FF-46F7-8C1B-2FEF9D277DF4
 ms.technology: xamarin-forms
@@ -9,20 +9,20 @@ ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: b5f3c9dcbaa6ba1a9e86568ccabe38416cc653f2
 ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/08/2018
 ms.locfileid: "35241906"
 ---
-# <a name="custom-video-positioning"></a>自訂視訊定位
+# <a name="custom-video-positioning"></a>自訂影片定位
 
-每個平台所實作的傳輸控制項包括位置列。 此列類似的滑桿或捲軸，且其總持續時間內顯示視訊的目前位置。 此外，使用者可以操作位置列來前後移動瀏視訊中的新位置。
+每個平台實作的傳輸控制項都包括位置列。 此列類似於滑桿或捲軸，而且會顯示影片在其總持續時間內的目前位置。 此外，使用者可以操作位置列，向前或向後移至影片中的新位置。
 
-本文示範如何實作您自己的自訂位置列。
+本文說明如何實作您自己的自訂位置列。
 
 ## <a name="the-duration-property"></a>Duration 屬性
 
-資訊的一個項目，`VideoPlayer`必須支援自訂位置列是視訊的時間長度。 `VideoPlayer`定義唯讀`Duration`型別的屬性`TimeSpan`:
+影片持續時間是 `VideoPlayer` 支援自訂位置列所需的其中一項資訊。 `VideoPlayer` 定義 `TimeSpan` 類型的唯讀 `Duration` 屬性：
 
 ```csharp
 namespace FormsVideoLibrary
@@ -52,7 +52,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-像`Status`屬性中所述[前一篇文章](custom-transport.md)，這個`Duration`屬性是唯讀的。 它定義為具有私用`BindablePropertyKey`和只能藉由參考設定`IVideoPlayerController`介面，其中包含這`Duration`屬性：
+如同[前一篇文章](custom-transport.md)中所述的 `Status` 屬性，這個 `Duration` 屬性為唯讀。 它是由私用 `BindablePropertyKey` 所定義，而且只能透過參考 `IVideoPlayerController` 介面 (其中包含這個 `Duration` 屬性) 來設定：
 
 ```csharp
 namespace FormsVideoLibrary
@@ -66,15 +66,15 @@ namespace FormsVideoLibrary
 }
 ```
 
-同時也請注意屬性變更處理常式呼叫方法，名為`SetTimeToEnd`，會在本文稍後描述。
+另請注意呼叫 `SetTimeToEnd` 方法的屬性變更處理常式，本文稍後將加以描述。
 
-視訊的持續時間會*不*後立即可用`Source`屬性`VideoPlayer`設定。 視訊檔案必須先部分下載基礎視訊播放程式可以判斷其持續時間。
+在設定 `VideoPlayer` 的 `Source` 屬性之後，「無法」立即取得影片的持續時間。 必須下載一部分的影片檔案，基礎影片播放程式才能判斷其持續時間。
 
-以下是每個平台轉譯器如何取得視訊的持續時間：
+以下說明每個平台轉譯器如何取得影片的持續時間：
 
-### <a name="video-duration-in-ios"></a>在 iOS 中視訊的持續時間
+### <a name="video-duration-in-ios"></a>iOS 中的影片持續時間
 
-在 iOS 中，視訊的持續時間取自`Duration`屬性`AVPlayerItem`，但不是能立即晚於`AVPlayerItem`建立。 您可設定的 iOS 觀察者`Duration`屬性，但`VideoPlayerRenderer`取得持續時間，以`UpdateStatus`方法，這個方法會呼叫 10 次第二個：
+在 iOS 中，影片持續時間是從 `AVPlayerItem` 的 `Duration` 屬性取得，但無法在建立 `AVPlayerItem` 之後立即取得。 您可以為 `Duration` 屬性設定 iOS 觀察者，但 `VideoPlayerRenderer` 會在每秒呼叫 10 次的 `UpdateStatus` 方法中取得持續時間：
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -102,11 +102,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-`ConvertTime`方法轉換`CMTime`物件`TimeSpan`值。
+`ConvertTime` 方法會將 `CMTime` 物件轉換為 `TimeSpan` 值。
 
-### <a name="video-duration-in-android"></a>在 Android 影片持續時間
+### <a name="video-duration-in-android"></a>Android 中的影片持續時間
 
-`Duration`屬性 Android`VideoView`報告有效的持續時間，以毫秒為單位時`Prepared`事件`VideoView`引發。 在 Android`VideoPlayerRenderer`類別用來取得該處理常式`Duration`屬性：
+Android `VideoView` 的 `Duration` 屬性會在引發 `VideoView` 的 `Prepared` 事件時，回報有效的持續時間 (以毫秒為單位)。 Android `VideoPlayerRenderer` 類別使用該處理常式來取得 `Duration` 屬性：
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -124,9 +124,9 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-### <a name="video-duration-in-uwp"></a>在 UWP 中視訊的持續時間
+### <a name="video-duration-in-uwp"></a>UWP 中的影片持續時間
 
-`NaturalDuration`屬性`MediaElement`是`TimeSpan`值和生效時`MediaElement`引發`MediaOpened`事件：
+`MediaElement` 的 `NaturalDuration` 屬性是 `TimeSpan` 值，並會在 `MediaElement` 引發 `MediaOpened` 事件時生效：
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -143,9 +143,9 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-## <a name="the-position-property"></a>位置屬性
+## <a name="the-position-property"></a>Position 屬性
 
-`VideoPlayer` 也需要`Position`屬性，從零到提高`Duration`為播放視訊的。 `VideoPlayer` 實作此屬性視為`Position`屬性在 UWP `MediaElement`，這是一般可繫結屬性與公用`set`和`get`存取子：
+`VideoPlayer` 也需要 `Position` 屬性，這會隨著影片播放從零增加到 `Duration`。 `VideoPlayer` 實作此屬性的方式類似於 UWP `MediaElement` 中的 `Position` 屬性，這是具有公用 `set` 和 `get` 存取子的一般可繫結屬性：
 
 ```csharp
 namespace FormsVideoLibrary
@@ -168,15 +168,15 @@ namespace FormsVideoLibrary
 }
 ```
 
-`get`存取子會傳回目前位置的視訊，因為它正在執行，但`set`存取子為了回應使用者的位置列操作的向前或向後移動視訊的位置。
+`get` 存取子會傳回目前播放影片的位置，但 `set` 存取子目的則是透過前後移動影片位置來回應使用者對位置列的操作。
 
-在 iOS 和 Android，取得目前位置的屬性只剩`get`存取子和`Seek`方法可用於執行此第二個工作。 如果您認為其個別相關`Seek`方法似乎是更實用的方法比單一個`Position`屬性。 單一`Position`屬性具有固有的問題： 播放視訊時`Position`屬性必須持續更新來反映新的位置。 您不想大多數的變更，但`Position`屬性，以移至新位置視訊中視訊播放程式。 如果發生這種情況，視訊播放程式就會搜尋到最後一個值的回應`Position`屬性，與視訊不會前進。
+在 iOS 和 Android 中，取得目前位置的屬性只有 `get` 存取子，並有 `Seek` 方法可用來執行上述第二項工作。 如果您仔細想一下，個別 `Seek` 方法似乎是比單一 `Position` 屬性更明智的做法。 單一 `Position` 屬性的固有問題是：當影片播放時，`Position` 屬性必須持續更新以反映新位置。 但您不想要大部分的 `Position` 屬性變更使得影片播放程式移至影片中新位置。 如果發生這種情況，影片播放程式會搜尋 `Position` 屬性的最後一個值來回應，因此影片不會前進。
 
-儘管實作的困難`Position`屬性`set`和`get`存取子中，這個方法已選擇，因為它是與 UWP 一致`MediaElement`，而且它具有資料繫結很大的好處： `Position`屬性`VideoPlayer`可以繫結至滑桿用來顯示位置及搜尋到新位置。 不過，幾個預防措施，就需要實作此`Position`屬性，以避免迴圈意見反應。
+除了難以實作具有 `set` 和 `get` 存取子的 `Position` 屬性之外，選擇這個方法的原因還包括它與 UWP `MediaElement` 一致，而且在資料繫結方面有很大的優勢：`VideoPlayer` 的 `Position` 屬性可以繫結至用來顯示位置和搜尋新位置的滑桿。 不過，實作這個 `Position` 屬性時需要幾個預防措施，以避免回饋迴圈。
 
 ### <a name="setting-and-getting-ios-position"></a>設定和取得 iOS 位置
 
-在 iOS 中，`CurrentTime`屬性`AVPlayerItem`物件可指出播放視訊的目前位置。 IOS`VideoPlayerRenderer`設定`Position`屬性`UpdateStatus`處理常式，它會設定的同時`Duration`屬性：
+在 iOS 中，`AVPlayerItem` 物件的 `CurrentTime` 屬性會指出目前播放影片的位置。 iOS `VideoPlayerRenderer` 會在設定 `Duration` 屬性的同時，設定 `UpdateStatus` 處理常式中的 `Position` 屬性：
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -198,7 +198,7 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-轉譯器會偵測何時`Position`屬性設定為`VideoPlayer`中已經變更`OnElementPropertyChanged`覆寫，並使用該新值來呼叫`Seek`方法`AVPlayer`物件：
+轉譯器會偵測到從 `VideoPlayer` 設定的 `Position` 屬性在 `OnElementPropertyChanged` 覆寫中已變更，並使用該新值在 `AVPlayer` 物件上呼叫 `Seek` 方法：
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -224,13 +224,13 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-請注意，每次`Position`屬性`VideoPlayer`設定從`OnUpdateStatus`處理常式，`Position`屬性引發`PropertyChanged`中偵測到的事件`OnElementPropertyChanged`覆寫。 這些變更，大部分`OnElementPropertyChanged`方法應該執行任何動作。 否則，每次變更視訊的位置中，它會移到它達到相同的位置 ！
+請記住，每次從 `OnUpdateStatus` 處理常式設定 `VideoPlayer` 中的 `Position` 屬性，`Position` 屬性都會引發 `PropertyChanged` 事件，並在 `OnElementPropertyChanged` 覆寫中偵測到此事件。 對於大部分變更，`OnElementPropertyChanged` 方法不應執行任何動作。 否則，每次影片的位置有所變更，其就會移至剛抵達的相同位置！
 
-若要避免這種意見，`OnElementPropertyChanged`方法只會呼叫`Seek`時之間的差異`Position`屬性和目前的位置`AVPlayer`大於一秒。
+為了避免此回饋迴圈，只有在 `Position` 屬性與 `AVPlayer` 的目前位置相差大於一秒時，`OnElementPropertyChanged` 方法才會呼叫 `Seek`。
 
 ### <a name="setting-and-getting-android-position"></a>設定和取得 Android 位置
 
-如同 iOS 轉譯器，在 Android`VideoPlayerRenderer`設定的新值`Position`屬性`OnUpdateStatus`處理常式。 `CurrentPosition`屬性`VideoView`包含毫秒的單位中的新位置：
+如同 iOS 轉譯器，Android `VideoPlayerRenderer` 會在 `OnUpdateStatus` 處理常式中設定 `Position` 屬性的新值。 `VideoView` 的 `CurrentPosition` 屬性包含新位置 (以毫秒為單位)：
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -249,7 +249,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-此外，如同 iOS 轉譯器中，Android 轉譯器會呼叫`SeekTo`方法`VideoView`時`Position`屬性已變更，但僅限於時變更為一秒從不同`CurrentPosition`值`VideoView`:
+此外，如同 iOS 轉譯器，Android 轉譯器會在 `Position` 屬性變更時呼叫 `VideoView` 的 `SeekTo` 方法，但僅限於變更與 `VideoView` 的 `CurrentPosition` 值相差大於一秒時：
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -275,7 +275,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="setting-and-getting-uwp-position"></a>設定和取得 UWP 位置
 
-UWP`VideoPlayerRenderer`控點`Position`iOS 和 Android 的轉譯器，為相同的方式，但因為`Position`屬性 UWP`MediaElement`也`TimeSpan`值，不不需要任何轉換：
+UWP `VideoPlayerRenderer` 處理 `Position` 的方式如同 iOS 和 Android 轉譯器，但由於 UWP `MediaElement` 的 `Position` 屬性同時為 `TimeSpan` 值，因此不需要轉換：
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -306,9 +306,9 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="calculating-a-timetoend-property"></a>計算 TimeToEnd 屬性
 
-有時視訊播放程式顯示視訊中的剩餘時間。 這個值會開始於何時會開始將視訊及視訊結束時，會減少向零的視訊的持續時間。
+有時影片播放程式會顯示影片中的剩餘時間。 這個值在影片開始時是以影片的持續時間起始，並會在影片結束時減少至零。
 
-`VideoPlayer` 包含唯讀`TimeToEnd`處理完全類別內的屬性會根據變更`Duration`和`Position`屬性：
+`VideoPlayer` 包含唯讀 `TimeToEnd` 屬性，會根據 `Duration` 和 `Position` 屬性的變更，完全在類別內進行處理：
 
 ```csharp
 namespace FormsVideoLibrary
@@ -336,11 +336,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-`SetTimeToEnd`從這兩者的屬性變更處理常式呼叫方法`Duration`和`Position`。
+`SetTimeToEnd` 方法是從 `Duration` 和 `Position` 的屬性變更處理常式呼叫。
 
-## <a name="a-custom-slider-for-video"></a>自訂的滑桿，以視訊
+## <a name="a-custom-slider-for-video"></a>影片的自訂滑桿
 
-您可撰寫自訂控制項位置列，或使用 Xamarin.Forms`Slider`或衍生自類別`Slider`，如下所示`PositionSlider`類別。 類別會定義兩個新的內容，名為`Duration`和`Position`型別的`TimeSpan`是資料繫結中的相同名稱的兩個屬性要`VideoPlayer`。 請注意，預設的繫結模式`Position`屬性是雙向：
+您可以撰寫位置列的自訂控制項，或是使用 Xamarin.Forms `Slider` 或衍生自 `Slider` 的類別，例如下列 `PositionSlider` 類別。 此類別會定義 `TimeSpan` 類型的兩個新屬性 `Duration` 和 `Position`，旨在將資料繫結至 `VideoPlayer` 中同名的兩個屬性。 請注意，`Position` 屬性的預設繫結模式為雙向：
 
 ```csharp
 namespace FormsVideoLibrary
@@ -395,11 +395,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-屬性變更處理常式，如`Duration`屬性集`Maximum`基礎屬性`Slider`至`TotalSeconds`屬性`TimeSpan`值。 同樣地，屬性變更處理常式`Position`設定`Value`屬性`Slider`。 如此一來，基礎`Slider`追蹤的位置`PositionSlider`。
+`Duration` 屬性的屬性變更處理常式會將基礎 `Slider` 之 `Maximum` 屬性設定為 `TimeSpan` 值的 `TotalSeconds` 屬性。 同樣地，`Position` 屬性之屬性變更處理常式會設定 `Slider` 的 `Value` 屬性。 如此一來，基礎 `Slider` 就會追蹤 `PositionSlider` 的位置。
 
-`PositionSlider`會從基礎更新`Slider`中只有一個執行個體： 當使用者操控`Slider`，表示應該進階視訊，或還原到新位置。 這中偵測到`PropertyChanged`的建構函式中的處理常式`PositionSlider`。 此處理常式會檢查在變更`Value`屬性，而且如果它是不同於`Position`屬性，則`Position`屬性會設定從`Value`屬性。
+從基礎 `Slider` 更新 `PositionSlider` 的情況只有一種：當使用者操作 `Slider` 指定影片應該前進或倒退到新位置時。 這是在 `PositionSlider` 建構函式的 `PropertyChanged` 處理常式中進行偵測。 處理常式會檢查 `Value` 屬性中的變更，如果不同於 `Position` 屬性，則會從 `Value` 屬性設定 `Position` 屬性。
 
-理論上來說，內部`if`陳述式，可以撰寫如下：
+理論上，內部 `if` 陳述式可以撰寫如下：
 
 ```csharp
 if (newPosition.Seconds != Position.Seconds)
@@ -408,15 +408,15 @@ if (newPosition.Seconds != Position.Seconds)
 }
 ```
 
-不過，Android 實作`Slider`具有只有 1,000 個獨立的步驟，不論`Minimum`和`Maximum`設定。 視訊的長度大於 1000 秒，則兩個不同`Position`值就會對應至相同`Value`設定`Slider`，而這`if`陳述式會觸發使用者操作的誤判`Slider`。 它是安全的作法是檢查新的位置和現有的位置會大於百分之一整體持續期間。
+不過，無論 `Minimum` 和 `Maximum` 設定為何，Android `Slider` 實作都只有 1,000 個離散步驟。 如果影片長度大於 1,000 秒，則兩個不同 `Position` 值會對應至 `Slider` 的相同 `Value` 設定，而且這個 `if` 陳述式針對使用者對 `Slider` 的操作會觸發誤判。 較安全的做法是改為確保新位置和現有位置大於整體持續時間的百分之一。
 
 ## <a name="using-the-positionslider"></a>使用 PositionSlider
 
-文件 UWP [ `MediaElement` ](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/)繫結會警告`Position`屬性因為經常更新的屬性。 文件建議用於計時器查詢`Position`屬性。
+UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) 的文件針對繫結至 `Position` 屬性提出警告，因為該屬性經常更新。 文件建議使用計時器來查詢 `Position` 屬性。
 
-這是很好的建議，但是三個`VideoPlayerRenderer`類別會間接已更新使用計時器`Position`屬性。 `Position`中的處理常式屬性變更`UpdateStatus`只有 10 的次秒引發的事件。
+這是很好的建議，但已有三個 `VideoPlayerRenderer` 類別間接使用計時器來更新 `Position` 屬性。 若發生 `UpdateStatus` 事件 (每秒僅引發 10 次)，則會變更處理常式中的 `Position` 屬性。
 
-因此，`Position`屬性`VideoPlayer`可以繫結至`Position`屬性`PositionSlider`沒有效能問題，如下所示**自訂位置列**頁面：
+因此，`VideoPlayer` 的 `Position` 屬性可以繫結至 `PositionSlider` 的 `Position` 屬性，而不會有效能問題，如 [Custom Position Bar] \(自訂位置列\) 頁面所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -471,12 +471,12 @@ if (newPosition.Seconds != Position.Seconds)
 </ContentPage>
 ```
 
-第一個的省略符號 （···） 會隱藏`ActivityIndicator`; 它會與先前相同**自訂傳輸**頁面。 請注意兩個`Label`顯示的項目`Position`和`TimeToEnd`屬性。 這兩者之間的省略符號`Label`項目會隱藏兩個`Button`中顯示的項目**自訂傳輸**頁面播放、 暫停和停止。 程式碼後置邏輯也是相同**自訂傳輸**頁面。
+第一個省略符號 (···) 會隱藏 `ActivityIndicator`，這與上一頁 [Custom Transport] \(自訂傳輸\) 相同。 注意顯示 `Position` 和 `TimeToEnd` 屬性的兩個 `Label` 項目。 這兩個 `Label` 項目之間的省略符號會隱藏 [Custom Transport] \(自訂傳輸\) 頁面中所顯示兩個 `Button` 項目 (用於播放、暫停和停止)。 程式碼後置邏輯也與 [Custom Transport] \(自訂傳輸\) 頁面相同。
 
 [![自訂定位](custom-positioning-images/custompositioning-small.png "自訂定位")](custom-positioning-images/custompositioning-large.png#lightbox "自訂定位")
 
-以上總結的討論`VideoPlayer`。
+`VideoPlayer` 的討論到此結束。
 
 ## <a name="related-links"></a>相關連結
 
-- [視訊播放程式示範 （範例）](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) (影片播放程式示範 (範例))
