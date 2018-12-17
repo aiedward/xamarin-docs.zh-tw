@@ -439,7 +439,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 ```
 
 在活動中的 [選項] 功能表的互動會透過`OnCreateOptionsMenu`和`OnOptionsItemSelected`方法。
-`OnCreateOptionsMenu` 可供新增新的功能表項目，例如 列印 選項中，從 * 功能表* 資源目錄。
+`OnCreateOptionsMenu` 可供新增新的功能表項目，例如 [列印] 選項中，從 *功能表* 資源目錄。
 `OnOptionsItemSelected` 會接聽在使用者從功能表中，選取 [列印] 選項，並開始列印：
 
 ```csharp
