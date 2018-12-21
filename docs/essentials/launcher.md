@@ -14,7 +14,7 @@ ms.locfileid: "52898263"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: Launcher
 
-**Launcher** 類別可讓應用程式依系統開啟 URI。 當深層連結到其他應用程式的自訂 URI 配置時，通常會使用它。 若您要開啟瀏覽器並瀏覽網站，您應該參考**[瀏覽器](open-browser.md)** API。
+**Launcher** 類別可讓應用程式依系統開啟 URI。 當深層連結到其他應用程式的自訂 URI 配置時，通常會使用它。 若您要開啟瀏覽器並瀏覽網站，您應該參考 **[瀏覽器](open-browser.md)** API。
 
 ## <a name="get-started"></a>開始使用
 
