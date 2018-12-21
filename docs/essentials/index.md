@@ -20,11 +20,11 @@ Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人
 
 ## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>[開始使用 Xamarin.Essentials](get-started.md?context=xamarin/xamarin-forms)
 
-遵循[快速入門指南](get-started.md)，將 **Xamarin.Essentials** NuGet 套件安裝到您現有或新的 Xamarin.Forms、Android、iOS 或 UWP 專案。
+遵循[快速入門指南](get-started.md)，將 **Xamarin.Essentials** NuGet 套件安裝到您現有或新的 Xamarin.Forms、Android、iOS 或 UWP 專案中。
 
-## <a name="feature-guides"></a>功能指南
+## <a name="feature-guides"></a>功能指引
 
-遵循指南以將這些 Xamarin.Essentials 功能整合到您的應用程式：
+請遵循本功能指引的介紹將 Xamarin.Essentials 套件的功能整合到您的應用程式：
 
 * [加速計](accelerometer.md?context=xamarin/xamarin-forms)：擷取裝置在三維空間中的加速度資料。
 * [應用程式資訊](app-information.md?context=xamarin/xamarin-forms)：了解應用程式的相關資訊。
@@ -49,12 +49,12 @@ Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人
 * [方向感應器](orientation-sensor.md?context=xamarin/xamarin-forms)：擷取裝置在三維空間中的方向。
 * [電話撥號程式](phone-dialer.md?context=xamarin/xamarin-forms)：開啟電話撥號程式。
 * [偏好設定](preferences.md?context=xamarin/xamarin-forms)：輕鬆快速地新增永續性偏好設定。
-* [保護儲存體](secure-storage.md?context=xamarin/xamarin-forms)：安全地儲存資料。
+* [安全儲存體](secure-storage.md?context=xamarin/xamarin-forms)：安全地儲存資料。
 * [Share](share.md?context=xamarin/xamarin-forms)：將文字與網站 URI 傳送到其他應用程式。
 * [SMS](sms.md?context=xamarin/xamarin-forms)：建立簡訊以傳送。
-* [文字轉換語音](text-to-speech.md?context=xamarin/xamarin-forms)：將裝置上的文字說出來。
+* [文字轉換語音](text-to-speech.md?context=xamarin/xamarin-forms)：將裝置上的文字轉換成語音。
 * [版本追蹤](version-tracking.md?context=xamarin/xamarin-forms)：追蹤應用程式版本與組建編號。
-* [震動](vibrate.md?context=xamarin/xamarin-forms)：讓裝置震動。
+* [震動](vibrate.md?context=xamarin/xamarin-forms)：裝置的震動。
 
 ## <a name="troubleshootingtroubleshootingmdcontextxamarinxamarin-forms"></a>[疑難排解](troubleshooting.md?context=xamarin/xamarin-forms)
 
@@ -62,4 +62,4 @@ Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人
 
 ## <a name="api-documentationxrefxamarinessentials"></a>[API 文件](xref:Xamarin.Essentials)
 
-瀏覽 API 文件以了解 Xamarin.Essentials 的每個功能。
+瀏覽 API 文件，以了解 Xamarin.Essentials 的更多功能。
