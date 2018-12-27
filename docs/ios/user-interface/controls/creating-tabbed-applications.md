@@ -330,7 +330,7 @@ partial void InitialActionCompleted (UIButton sender)
 
 **按一下 Ctrl 以** 和 **拖曳** 從 [TabBarController] 按鈕。 在滑鼠向上上會出現內容功能表。 我們想要使用強制回應的 segue。 
  
-若要設定每個索引標籤中， **Ctrl + 按一下** 從我們的檢視控制器在順序中的每個從一到三個，然後選取關聯性 TabBarController ** 索引標籤** 從內容功能表中，如下所示：
+若要設定每個索引標籤中， **Ctrl + 按一下** 從我們的檢視控制器在順序中的每個從一到三個，然後選取關聯性 TabBarController **索引標籤** 從內容功能表中，如下所示：
 
 [![](creating-tabbed-applications-images/context-menu.png "選取索引標籤關聯性")](creating-tabbed-applications-images/context-menu.png#lightbox)
 
