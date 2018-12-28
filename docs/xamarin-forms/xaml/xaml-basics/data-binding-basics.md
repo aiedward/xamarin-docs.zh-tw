@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: bd13163b513ea1f6b0381e99e65d0bd727f97735
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 65316bde1d1c709028eae39c19e5dc318821ff70
+ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055724"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53746878"
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部分。 資料繫結的基本概念
 
@@ -22,7 +22,7 @@ _資料繫結可讓連結，以便變更一個變更造成另兩個物件的屬�
 
 ## <a name="data-bindings"></a>資料繫結
 
-資料繫結連接屬性的兩個物件，稱為*來源*並*目標*。 在程式碼，則需要兩個步驟：`BindingContext`目標物件的屬性必須設定為來源物件，而`SetBinding`方法 (通常用於搭配`Binding`類別) 上的屬性繫結目標物件必須呼叫物件的來源物件的屬性。
+資料繫結連接屬性的兩個物件，稱為*來源*並*目標*。 在程式碼，則需要兩個步驟：`BindingContext`目標物件的屬性必須設定為來源物件，而`SetBinding`方法 (通常用於搭配`Binding`類別) 必須在目標物件，該物件的屬性繫結至來源屬性上呼叫物件。
 
 目標屬性必須是可繫結的屬性，表示目標物件必須衍生自`BindableObject`。 線上 Xamarin.Forms 文件會指出哪一個屬性是可繫結的屬性。 屬性`Label`這類`Text`可繫結的屬性相關聯`TextProperty`。
 
@@ -71,7 +71,7 @@ _資料繫結可讓連結，以便變更一個變更造成另兩個物件的屬�
 
 `x:Reference`繫結延伸模組會定義名為的屬性`Name`設為所參考的項目的名稱在此情況下`slider`。 不過，`ReferenceExtension`類別來定義`x:Reference`標記延伸也會定義`ContentProperty`屬性`Name`，這表示它不是明確需要。 只針對各種不同，第一個`x:Reference`包含 「 名稱 ="但第二個則不然：
 
-```csharp
+```xaml
 BindingContext="{x:Reference Name=slider}"
 …
 BindingContext="{x:Reference slider}"
@@ -79,7 +79,7 @@ BindingContext="{x:Reference slider}"
 
 `Binding`標記延伸模組本身可以有數個屬性，如同`BindingBase`和`Binding`類別。 `ContentProperty` For`Binding`是`Path`，但 「 路徑 ="可以省略標記延伸模組的一部分，如果路徑中的第一個項目`Binding`標記延伸。 第一個範例中有"路徑 ="，但是第二個範例省略它：
 
-```csharp
+```xaml
 Rotation="{Binding Path=Value}"
 …
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
@@ -87,7 +87,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 屬性都可以在同一行，或是分成多行：
 
-```csharp
+```xaml
 Text="{Binding Value,
                StringFormat='The angle is {0:F0} degrees'}"
 ```
@@ -96,7 +96,7 @@ Text="{Binding Value,
 
 請注意`StringFormat`中，第二個屬性`Binding`標記延伸。 在 Xamarin.Forms 中，繫結不會執行任何隱含類型轉換，而且如果您要顯示為字串的非字串物件您必須提供類型轉換器，或是使用`StringFormat`。 在幕後，靜態`String.Format`方法用來實作`StringFormat`。 這是潛在問題，因為.NET 格式規格包含大括號，也可以用來分隔標記延伸。 這會建立令人困惑，XAML 剖析器的風險。 若要避免這種情況，將放在單引號中的整個的格式化字串：
 
-```csharp
+```xaml
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 ```
 
@@ -117,7 +117,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 下列程式會示範常見用法之一`OneWayToSource`和`TwoWay`繫結模式。 四個`Slider`檢視要控制`Scale`， `Rotate`， `RotateX`，並`RotateY`屬性`Label`。 首先，它看起來好像這四個屬性的`Label`應該是資料繫結目標，因為每個正在設定`Slider`。 不過，`BindingContext`的`Label`可以只有一個物件，而且有四個不同的滑桿。
 
-基於這個理由，所有繫結中設定看似回溯方式：`BindingContext`的每四個滑桿設`Label`，並繫結上設定`Value`滑桿的屬性。 藉由使用`OneWayToSource`並`TwoWay`模式，這些`Value`屬性可以設定來源屬性，也就是`Scale`， `Rotate`， `RotateX`，和`RotateY`屬性`Label`:
+基於這個理由，所有繫結中設定看似回溯的方式：`BindingContext`的每四個滑桿設`Label`，並繫結上設定`Value`滑桿的屬性。 藉由使用`OneWayToSource`並`TwoWay`模式，這些`Value`屬性可以設定來源屬性，也就是`Scale`， `Rotate`， `RotateX`，和`RotateY`屬性`Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

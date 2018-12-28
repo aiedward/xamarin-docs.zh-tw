@@ -1,18 +1,18 @@
 ---
 title: 第 1 章的摘要。 Xamarin.Forms 如何適應？
-description: 使用 Xamarin.Forms 建立行動應用程式： 第 1 章的摘要。 Xamarin.Forms 如何適應？
+description: 使用 Xamarin.Forms 建立行動應用程式：第 1 章的摘要。 Xamarin.Forms 如何適應？
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 552cff71911b0f5ee118e15cb543e16bbfa19bd3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 40f319a67ecc2ca81243c8ac7c415266c1ea0b5c
+ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050961"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53746852"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 章的摘要。 Xamarin.Forms 如何適應？
 
@@ -25,9 +25,9 @@ ms.locfileid: "53050961"
 
 ## <a name="cross-platform-mobile-development"></a>跨平台行動裝置程式開發
 
-以行動平台為目標時，常會使用此問題。 目前，有兩個主要的行動平台、 Iphone 和 Ipad 執行 iOS 作業系統和各種不同的手機和平板電腦執行 Android 作業系統的 Apple 系列。 另一個重要的平台是 Microsoft 的通用 Windows 平台 (UWP)，可讓單一的程式，以 Windows 10 和 Windows 10 行動裝置為目標。
+以行動平台為目標時，常會使用此問題。 目前，有兩個主要的行動平台、 Iphone 和 Ipad 執行 iOS 作業系統和各種不同的手機和平板電腦執行 Android 作業系統的 Apple 系列。 另一個重要的平台是 Microsoft 的通用 Windows 平台 (UWP)，可讓單一的程式，以這兩個 Windows 10 為目標。
 
-希望這些平台為目標的軟體廠商必須處理不同的使用者介面思維，三個不同的開發環境，三個不同的程式設計介面，並&mdash;或許是最姿&mdash;三個不同的程式設計語言： OBJECTIVE-C iPhone 與 iPad，適用於 Android、 Java 和C#的 Windows。
+希望這些平台為目標的軟體廠商必須處理不同的使用者介面思維，三個不同的開發環境，三個不同的程式設計介面，並&mdash;或許是最姿&mdash;三個不同的程式設計語言：OBJECTIVE-C iPhone 與 iPad，適用於 Android、 Java 和C#的 Windows。
 
 ## <a name="the-c-and-net-solution"></a>C# 和.NET 方案
 
@@ -42,16 +42,14 @@ Xamarin 目前會提供原生 Mac、 iOS 和 Android Api 使用 C# 和.NET 為�
 
 ## <a name="introducing-xamarinforms"></a>Xamarin.Forms 簡介
 
-當多個行動平台為目標，則 Xamarin.Forms 可讓更多的程式碼共用。 適用於 Xamarin.Forms 撰寫的單一程式可以以五個不同的平台為目標：
+當多個行動平台為目標，則 Xamarin.Forms 可讓更多的程式碼共用。 適用於 Xamarin.Forms 撰寫的單一程式可鎖定這些平台：
 
 - iOS 的 iPhone、 iPad 及 iPod touch 上執行的程式
 - 在 Android 手機和平板電腦上執行之程式的 android
-- 通用 Windows 平台目標 Windows 10 和 Windows 10 行動裝置
-- Windows 8.1 的 Windows 執行階段 API
-- Windows Phone 8.1 的 Windows 執行階段 API
+- 目標 Windows 10 通用 Windows 平台
 
 > [!NOTE]
-> Xamarin.Forms 也不再支援 Windows 8.1、 Windows Phone 8.1 或 Windows 10 行動裝置，但 Xamarin.Forms 應用程式執行 Windows 10 桌面上。 另外還有提供預覽支援[Mac](~/xamarin-forms/platform/mac.md)， [WPF](~/xamarin-forms/platform/wpf.md)， [GTK #](~/xamarin-forms/platform/gtk.md)，以及[Tizen](/xamarin-forms/platform/tizen.md)平台。
+> Xamarin.Forms 也不再支援 Windows 8.1、 Windows Phone 8.1 或 Windows 10 行動裝置，但 Xamarin.Forms 應用程式執行 Windows 10 桌面上。 另外還有提供預覽支援[Mac](~/xamarin-forms/platform/mac.md)， [WPF](~/xamarin-forms/platform/wpf.md)， [GTK #](~/xamarin-forms/platform/gtk.md)，以及[Tizen](~/xamarin-forms/platform/tizen.md)平台。
 
 大部分的 Xamarin.Forms 程式存在於文件庫 」 或 「 SAP。 每個平台所組成的小型應用程式虛設常式會呼叫此共用的程式碼。
 
@@ -59,10 +57,7 @@ Xamarin.Forms Api 對應至每個平台上的原生控制項，讓每個平台�
 
 [![三重的螢幕擷取畫面的平台共用的視覺效果](images/ch01fg03-small.png "每個平台上的 Xamarin.Forms 控制項")](images/ch01fg03-large.png#lightbox "Xamarin.Forms 控制項在每個平台上")
 
-從左到右顯示在 iPhone、 Android 手機和 Windows 10 行動電話螢幕擷取畫面。
-
-> [!NOTE]
-> Xamarin.Forms 不再支援 Windows 10 行動裝置。
+從左到右顯示在 iPhone 和 Android 手機的螢幕擷取畫面：
 
 在每個畫面上，此頁面包含 Xamarin.Forms [ `Label` ](xref:Xamarin.Forms.Label)來顯示文字[ `Button` ](xref:Xamarin.Forms.Button)用來起始動作， [ `Switch` ](xref:Xamarin.Forms.Switch)的選擇開啟/關閉的值，以及[ `Slider` ](xref:Xamarin.Forms.Slider)來指定連續的範圍內的值。 這些檢視的所有四個屬性的子系[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)上[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)。
 

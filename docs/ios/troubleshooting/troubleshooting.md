@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 4ab6b217190ea633611a9c869ec7e93befcc3c56
-ms.sourcegitcommit: ae34d048aeb23a99678ae768cdeef0c92ca36b51
+ms.openlocfilehash: 146b05cf7ca2bbd05e952ecc9064fbb9168d179a
+ms.sourcegitcommit: d294c967a18e6d91f3909c052eeff98ede1a21f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51681562"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53609931"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>疑難排解秘訣適用於 Xamarin.iOS 
 
@@ -98,7 +98,7 @@ public partial class MyImageView : UIView {
    public MyImageView (IntPtr handle) : base (handle {}
 }
 ```
-## <a name="systemmissingmethodexception-no-constructor-found-for-foobarctorsystemintptr"></a>System.MissingMethodException： 沒有建構函式找到 Foo.Bar::ctor(System.IntPtr)
+## <a name="systemmissingmethodexception-no-constructor-found-for-foobarctorsystemintptr"></a>System.MissingMethodException:找到 Foo.Bar::ctor(System.IntPtr) 沒有建構函式
 
 當程式碼嘗試將您從您的介面產生器檔案參考的類別的執行個體具現化時，會在執行階段產生這個錯誤。 這表示您忘記新增單一的 IntPtr 做為參數的建構函式。
 
@@ -123,13 +123,13 @@ public Bar (IntPtr handle) : base (handle) { }
 
 命名空間設定位於 [專案選項] 對話方塊。 預設命名空間中找到**一般]-> [主要設定**一節。 如果空白，預設會使用您的專案名稱。 更多進階命名空間設定可在**原始碼.NET 命名原則]-> [** 一節。
 
-## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>動作的警告: 'Foo' 從未使用過的私用方法。 (CS0169)
+## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>動作的警告：絕不會使用私用方法 'Foo'。 (CS0169)
 
 介面產生器檔案的動作會連線到 widget 反映在執行階段，因此預期會有此警告。
 
 您可以使用 [#pragma 警告停用 0169年]"#pragma 警告啟用 0169 」 解決您的動作如果您想要隱藏這個警告只針對這些方法，或新增 0169 編譯器選項中的 「 略過警告 」 欄位，如果您想要將它整個專案 （請不要停用建議使用）。
 
-## <a name="mtouch-failed-with-the-following-message-cannot-open-assembly-pathtoyourprojectexe"></a>mtouch 失敗並出現下列訊息： 無法開啟組件 ' / path/to/yourproject.exe'
+## <a name="mtouch-failed-with-the-following-message-cannot-open-assembly-pathtoyourprojectexe"></a>mtouch 失敗並出現下列訊息：無法開啟組件 ' / path/to/yourproject.exe'
 
 如果您看到此錯誤訊息，通常問題是您專案的絕對路徑包含空格。 這將會修正的 Xamarin.iOS，未來版本中，但您可以暫時解決此問題，將專案移至不含空格的資料夾。
 
@@ -144,7 +144,7 @@ public Bar (IntPtr handle) : base (handle) { }
 
 問題在於 Mono 可挑出 OS X `libsqlite3.dylib`，不 iPhoneSimulator 的`libsqlite3.dylib`檔案。 您的應用程式*將*公司裝置，而不只是您的模擬器。
 
-## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>部署至裝置失敗，System.Exception: AMDeviceInstallApplication 傳回 3892346901
+## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>將部署至裝置失敗，System.Exception:傳回 3892346901 AMDeviceInstallApplication
 
 此錯誤表示您的憑證/套件組合識別碼的程式碼簽署設定不符合您裝置上安裝佈建設定檔。  確認您有適當的憑證在 專案選項中選取 iPhone 套件組合簽署-> 專案選項中指定正確的套件組合識別碼-> iPhone 應用程式
 
@@ -186,7 +186,7 @@ Stacktrace:
 
 這表示您要連結到您的專案編譯捲動方塊的程式碼的靜態程式庫。 IPhone SDK 版本 3.1 （或更高版本，在撰寫本文時） Apple 已引進其連結器中的 bug 連結非捲動方塊的程式碼 (Xamarin.iOS) 與捲動方塊 （靜態程式庫） 時。您必須使用靜態程式庫來解決這個問題的非 Thumb 版本連結。
 
-## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1getcount-"></a>System.ExecutionEngineException： 嘗試 JIT 編譯方法 （managed 至 managed 包裝函式） Foo[]:System.Collections.Generic.ICollection'1.get_Count （）
+## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1getcount-"></a>System.ExecutionEngineException:嘗試將 JIT 編譯方法 （managed 至 managed 包裝函式） Foo[]:System.Collections.Generic.ICollection'1.get_Count （）
 
 [] 後置詞表示，您或類別庫會呼叫方法的泛型集合，例如 ienumerable<>、 icollection<> 或 IList <> 透過在陣列上。 因應措施，您可以明確地強制 AOT 編譯器包含這類方法呼叫的方法，並確定觸發例外狀況的呼叫之前執行此程式碼。 在此情況下，您可以撰寫：
 
@@ -212,7 +212,7 @@ int count = ((ICollection<Foo>) array).Count;
 
 請附加 XS 記錄檔 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**， **AndroidTools-{TIMESTAMP}.log**，和**元件-{TIMESTAMP}.log**(在舊版的 X/MonoDevelop 中，只傳送 **~/Library/Logs/MonoDevelop-(3.0|2.8|2.6)/MonoDevelop.log**)。
 
- **注意： 在 XS 2.2 最終，已修正上述問題**
+ **注意：上述的問題已修正在 XS 2.2 最終**
 
 ## <a name="compiled-application-is-very-large"></a>編譯的應用程式是非常大
 
@@ -281,9 +281,9 @@ IMT Thunk trampolines 的預設數目為 128。  請嘗試增加這個數字，�
 
 Visual Studio for Mac 2.2 有問題，而不是用來偵測包含逗號的散發憑證。 請更新至 Visual Studio for Mac 2.2.1。
 
-## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>錯誤"傳回 AFCFileRefWrite: 1 」 上傳期間
+## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>錯誤"AFCFileRefWrite 傳回：1-在上傳期間
 
-將應用程式上傳至您的裝置時，您可能會收到錯誤 「 傳回的 AFCFileRefWrite: 1"。 如果您擁有長度為零的檔案，會發生這項目。
+將應用程式上傳至您的裝置時，您可能會收到錯誤 「 AFCFileRefWrite 傳回：1"。 如果您擁有長度為零的檔案，會發生這項目。
 
 ## <a name="error-mtouch-failed-with-no-output"></a>錯誤"失敗，沒有輸出的 mtouch"
 
@@ -317,7 +317,7 @@ Visual Studio for Mac 2.2 有問題，而不是用來偵測包含逗號的散發
 -  建立自訂的 Info.plist 專案，並明確設定為 3.0 中的 MinimumOSVersion。   這會覆寫設定 Xamarin.iOS 的 MinimumOSVersion 3.2 值。   如果不這麼做，應用程式將無法在 iPhone 上執行。
 -  重建、 郵遞區號和上的傳至 iTunes connect。
 
-## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>未處理的例外狀況： System.Exception： 找不到選取器 someSelector： 在 {type}
+## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>未處理的例外狀況：System.Exception:找不到選取器 someSelector： 在 {type}
 
 這個例外狀況是由三個事項之一造成：
 
@@ -398,7 +398,7 @@ SDK 版本不應使用 「 最小 OS 版本 」 設定相混淆。
 
  *"值不應包含任何延伸模組名稱 」。- [http://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](http://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
 
-## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>錯誤:"自訂屬性型別 0x43 不支援 」 時按兩下.xib 檔案
+## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>錯誤：「 不支援自訂屬性型別 0x43 」 時按兩下.xib 檔案
 
 這被因為嘗試開啟.xib 檔案時未正確設定環境變數。 這應該不會與 Visual studio 的一般使用方式，針對 Mac/Xamarin.iOS，並重新開啟 Visual Studio for Mac 從 /Applications 應可修正此問題。
 
@@ -411,28 +411,8 @@ SDK 版本不應使用 「 最小 OS 版本 」 設定相混淆。
 若要檢查的建置動作，以滑鼠右鍵按一下.xib 檔案，然後選擇**建置動作**。
 
 
-## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>沒有資料也可用來編碼 437 System.NotSupportedException:
+## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System.NotSupportedException:沒有資料也可用來編碼 437
 
-在 Xamarin.iOS 應用程式中包含第 3 個廠商程式庫，您可能會發生錯誤，在表單中 「 System.NotSupportedException： 沒有資料也可用來編碼 437 」 嘗試編譯及執行應用程式時。 比方說，程式庫，例如`Ionic.Zip.ZipFile`，可能會擲回這個例外狀況，在作業期間。
+在 Xamarin.iOS 應用程式中包含第 3 個廠商程式庫，您可能會發生錯誤，在表單中 「 System.NotSupportedException:沒有資料可供編碼 437 」 嘗試編譯及執行應用程式時。 比方說，程式庫，例如`Ionic.Zip.ZipFile`，可能會擲回這個例外狀況，在作業期間。
 
 解決此問題的 Xamarin.iOS 專案中，移至的選項 %installationdirectory **iOS 組建** > **國際化**並檢查**西部**國際化。
-
-
-
-<a name="Can't_upgrade_to_Indie/Business_from_Trial_Account" />
-
-
-## <a name="cant-upgrade-to-indiebusiness-from-trial-account"></a>無法從試用帳戶升級至獨立製作/business Edition
-
-如果您最近購買 Xamarin.iOS，且先前已啟動 Xamarin.iOS 試用版，您可能需要完成下列步驟來取得由 Visual Studio for Mac 或 Visual Studio 這個授權變更。
-
--  關閉 Visual Studio for Mac/Visual Studio
--  從 Mac 上的 ~/Library/MonoTouch 或 %PROGRAMDATA%\MonoTouch\License\ 移除所有檔案，如 Windows
--  重新開啟 Visual Studio for Mac/Visual Studio，並建置 Xamarin.iOS 專案
-
-
-## <a name="receiving-activation-incomplete-error-message"></a>接收的 '不完整的啟動' 錯誤訊息
-
-當使用 Xamarin.iOS for Visual Studio 時，可能會發生此問題。 若要解決此問題，請將記錄傳送從下列位置，即可[ contact@xamarin.com ](mailto:contact@xamarin.com)。
-
--  記錄位置： %LocalAppData%/Xamarin/Logs

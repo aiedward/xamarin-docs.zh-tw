@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 1a73896e4f98a6535bcd7ed66f478d168b01157f
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 204dd903586164691d068a956e741c406df10b36
+ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526880"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53746865"
 ---
 # <a name="permissions-in-xamarinandroid"></a>在 Xamarin.Android 中的權限
 
@@ -139,7 +139,7 @@ else
 
 它是以通知使用者權限為何是必要的應用程式，以便可以進行明智的決策，授與權限的最佳作法。 舉例來說，這會是應用程式採用相片和地理標記它們。 很顯然給使用者，相機的權限是必要的但它可能不清楚為什麼應用程式也需要裝置的位置。 基本原理應該會顯示訊息來幫助使用者了解 [位置] 使用權限為何偏向和需要的相機的權限。
 
-`ActivityCompat.ShouldShowRequestPermissionRational`方法用來判斷是否應該向使用者顯示的基本原理。 這個方法會傳回`true`如果應顯示指定的權限的基本原理。 此螢幕擷取畫面顯示 Snackbar，說明為什麼應用程式必須知道裝置位置的應用程式所顯示的範例：
+`ActivityCompat.ShouldShowRequestPermissionRationale`方法用來判斷是否應該向使用者顯示的基本原理。 這個方法會傳回`true`如果應顯示指定的權限的基本原理。 此螢幕擷取畫面顯示 Snackbar，說明為什麼應用程式必須知道裝置位置的應用程式所顯示的範例：
 
 ![位置的基本原理](permissions-images/07-rationale-snackbar.png) 
 

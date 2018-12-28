@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: 7108b24f73d1f7389bf37fe8640061ae3e077300
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 250b3de2ef41ce488165f3149c72ce28c39e53a3
+ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054420"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53746891"
 ---
 # <a name="xamarinforms-button"></a>Xamarin.Forms 按鈕
 
@@ -409,7 +409,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 [![按下再放開按鈕](button-images/PressAndReleaseButton.png "按下再放開按鈕")](button-images/PressAndReleaseButton-Large.png)
 
-這種行為有適用於遊戲的應用程式： 手指上保留`Button`可能會讓特定的方向移動在畫面物件。
+這種行為有遊戲的應用程式：手指上保留`Button`可能會讓特定的方向移動在畫面物件。
 
 <a name="button-appearance" />
 
@@ -573,7 +573,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
         </VisualStateGroup>
     </VisualStateManager.VisualStateGroups>
-</ImageButton>
+</Button>
 ```
 
 `Pressed` [ `VisualState` ](xref:Xamarin.Forms.VisualState)指定[ `Button` ](xref:Xamarin.Forms.Button)按下時，其[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)屬性會變更其預設值為 1 到 0.8。 `Normal` `VisualState`指定`Button`處於正常狀態，其`Scale`屬性會設定為 1。 因此，整體的影響是，當`Button`是按下，它會重新調整為稍微較小，且當`Button`是發行時，它會重新調整為其預設大小。
@@ -582,7 +582,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 ## <a name="creating-a-toggle-button"></a>建立切換按鈕
 
-子類別可以`Button`使其運作方式類似 on-off 開關： 點選一次 按鈕來切換按鈕上，點選一次以關閉它。
+子類別可以`Button`使其運作方式類似的開啟 / 關閉交換器：點選按鈕一次上切換按鈕，然後點選 一次以關閉它。
 
 下列`ToggleButton`類別衍生自`Button`，並定義新的事件，名為`Toggled`和布林值屬性，名為`IsToggled`。 這些是相同的兩個屬性，定義由 Xamarin.Forms [ `Switch` ](xref:Xamarin.Forms.Switch):
 

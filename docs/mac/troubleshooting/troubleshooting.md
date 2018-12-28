@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: c2c0e516c864ec4073d5bb54b77754f58064d6b0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f498aab5bfaffc08a22f62a318f8f9f73ab0afca
+ms.sourcegitcommit: d294c967a18e6d91f3909c052eeff98ede1a21f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116741"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53609905"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Xamarin.Mac 的疑難排解秘訣
 
@@ -77,7 +77,7 @@ ms.locfileid: "50116741"
 
 ### <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>沒有資料也可用來編碼 437 System.NotSupportedException:
  
-在 Xamarin.Mac 應用程式中包含第 3 個廠商程式庫，您可能會發生錯誤，在表單中 「 System.NotSupportedException： 沒有資料也可用來編碼 437 」 嘗試編譯及執行應用程式時。 比方說，程式庫，例如`Ionic.Zip.ZipFile`，可能會擲回這個例外狀況，在作業期間。
+在 Xamarin.Mac 應用程式中包含第 3 個廠商程式庫，您可能會發生錯誤，在表單中 「 System.NotSupportedException:沒有資料可供編碼 437 」 嘗試編譯及執行應用程式時。 比方說，程式庫，例如`Ionic.Zip.ZipFile`，可能會擲回這個例外狀況，在作業期間。
 
 藉由開啟 Xamarin.Mac 專案中，移至的選項來解決此**Mac 組建** > **國際化**並檢查**西部**國際化：
 
@@ -110,10 +110,6 @@ ms.locfileid: "50116741"
 請輸入`Entitlements`的名稱，然後按一下**新增** 按鈕。 如果您的專案之前包含權利檔案中，系統會提示您將它新增至專案，而不是建立新的檔案：
 
 [![正在驗證檔案的覆寫](troubleshooting-images/entitlements04.png "驗證檔案的覆寫")](troubleshooting-images/entitlements04-large.png#lightbox)
-
-## <a name="contacting-support-business-or-enterprise-licenses"></a>連絡支援服務 （商務或企業授權）
-
-如果您有商務或企業版授權，即符合資格要求直接從透過支援票證的 Xamarin 工程師的協助。 請參閱[xamarin.com/support](http://xamarin.com/support)如需詳細資訊。
 
 ## <a name="community-support-on-the-forums"></a>社群支援論壇
 
