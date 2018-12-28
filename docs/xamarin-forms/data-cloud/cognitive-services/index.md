@@ -38,7 +38,7 @@ _Microsoft 認知服務是一組 Api、 Sdk 和適用於開發人員可以藉由
 
 ![](images/sample-application-1.png "TodoListPage")
 
-先建立新的項目，請按一下*+* 按鈕，巡覽至`TodoItemPage`。 此頁面也可以巡覽至選取的工作：
+先建立新的項目，請按一下 *+* 按鈕，巡覽至`TodoItemPage`。 此頁面也可以巡覽至選取的工作：
 
 ![](images/sample-application-2.png "TodoItemPage")
 
