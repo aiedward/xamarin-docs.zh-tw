@@ -15,7 +15,7 @@ ms.locfileid: "50106061"
 ---
 # <a name="apple-account-management"></a>Apple 帳戶管理
 
-Apple 帳戶管理介面提供方法來檢視所有的開發小組相關聯的 Apple id。 它也可讓您藉由顯示一份檢視每個小組的更多詳細_簽署身分識別_並_佈建設定檔_安裝在電腦上。
+Apple 帳戶管理介面提供方法來檢視所有的開發小組相關聯的 Apple ID。 它也可讓您藉由顯示一份檢視每個小組的更多詳細_簽署身分識別_並_佈建設定檔_安裝在電腦上。
 
 使用命令列上執行您的 Apple ID 的驗證[fastlane](https://fastlane.tools/)。 您已成功驗證您的電腦上必須安裝 fastlane。 fastlane 並安裝方式的更多有關詳述 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md) 輔助線。
 
@@ -50,7 +50,7 @@ Apple 帳戶管理位於 Visual Studio for Mac 和 Visual Studio 2017 （15.7 �
 
     ![Apple 開發人員帳戶選項](apple-account-management-images/image1.png)
 
-2. 按下**+** 按鈕以顯示登入 對話方塊，如下所述： 
+2. 按下 **+** 按鈕以顯示登入 對話方塊，如下所述：  
 
     ![fastlane 對話方塊。](apple-account-management-images/image2.png)
 
