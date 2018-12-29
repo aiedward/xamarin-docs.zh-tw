@@ -1,26 +1,24 @@
 ---
 title: 儲存和存取 Azure 儲存體中的資料
-description: Azure 儲存體是可以用來儲存非結構化及結構化資料的可調整的雲端儲存體解決方案。 這篇文章會示範如何使用 Xamarin.Forms 來將文字和二進位資料儲存在 Azure 儲存體，以及如何存取資料。
+description: Azure 儲存體是可以用來儲存非結構化及結構化資料的可調整的雲端儲存體解決方案。 這篇文章說明如何使用 Xamarin.Forms 來將文字和二進位資料儲存在 Azure 儲存體，以及如何存取資料。
 ms.prod: xamarin
 ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/16/2017
-ms.openlocfilehash: 1f920eb36eab3e451b20aa91734f00cee5ba6485
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/28/2018
+ms.openlocfilehash: 4ecffa0902d186b659e7df07dbcf17053e29c818
+ms.sourcegitcommit: f890b5ec9b7c2702875070859e1a8cbf6e870e46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059216"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53814007"
 ---
 # <a name="storing-and-accessing-data-in-azure-storage"></a>儲存和存取 Azure 儲存體中的資料
 
 [![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureStorage/)
 
 _Azure 儲存體是可以用來儲存非結構化及結構化資料的可調整的雲端儲存體解決方案。這篇文章會示範如何使用 Xamarin.Forms 來將文字和二進位資料儲存在 Azure 儲存體，以及如何存取資料。_
-
-## <a name="overview"></a>總覽
 
 Azure 儲存體提供四個儲存體服務：
 
@@ -69,9 +67,6 @@ Azure 儲存體中儲存的每個物件具有唯一的 URL 位址。 儲存體�
 1. 新增[Azure Storage Client Library](https://www.nuget.org/packages/WindowsAzure.Storage/) Xamarin.Forms 應用程式。
 1. 設定儲存體連接字串。 如需詳細資訊，請參閱 <<c0> [ 連接到 Azure 儲存體](#connecting)。
 1. 新增`using`指示詞`Microsoft.WindowsAzure.Storage`和`Microsoft.WindowsAzure.Storage.Blob`命名空間，以將存取 Azure 儲存體的類別。
-
-> [!NOTE]
-> 這個範例會使用共用存取專案，而 Azure 儲存體用戶端程式庫現在也支援從可攜式類別庫 (PCL) 專案正在使用。
 
 <a name="connecting" />
 
@@ -263,15 +258,10 @@ public static async Task<bool> DeleteFileAsync(ContainerType containerType, stri
 
 在擷取之後為容器參考，方法會擷取指定的 blob 的 blob 參考。 Blob 刪除與`DeleteIfExistsAsync`方法。
 
-## <a name="summary"></a>總結
-
-這篇文章會示範如何使用 Xamarin.Forms 來將文字和二進位資料儲存在 Azure 儲存體，以及如何存取資料。 Azure 儲存體是用於儲存非結構化及結構化資料的可調整的雲端儲存體解決方案。
-
-
 ## <a name="related-links"></a>相關連結
 
 - [Azure 儲存體 （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureStorage/)
 - [儲存體簡介](https://azure.microsoft.com/documentation/articles/storage-introduction/)
 - [如何使用 Xamarin 的 Blob 儲存體](https://azure.microsoft.com/documentation/articles/storage-xamarin-blob-storage/)
 - [使用共用的存取簽章 (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
-- [Windows Azure 儲存體](https://www.nuget.org/packages/WindowsAzure.Storage/)
+- [Windows Azure 儲存體 (NuGet)](https://www.nuget.org/packages/WindowsAzure.Storage/)

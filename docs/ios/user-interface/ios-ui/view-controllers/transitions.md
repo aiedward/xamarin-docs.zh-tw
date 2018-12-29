@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: c143d01a5e68bf8ce9b9b69fdaf79d445f372357
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6711d3af06619aa54a2d735cb83862ed64abacec
+ms.sourcegitcommit: 06f88979db160fb8dd1c9ee0d5000d8749107489
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118067"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53806895"
 ---
 # <a name="view-controller-transitions-in-xamarinios"></a>在 Xamarin.iOS 中的檢視控制器轉換
 
@@ -51,7 +51,7 @@ showTwo.TouchUpInside += (object sender, EventArgs e) => {
 showTwo.TouchUpInside += (object sender, EventArgs e) => {
 
     controllerTwo = new ControllerTwo () {
-        ModalPresentationStyle = UIModalPresentationStyle.Custom;
+        ModalPresentationStyle = UIModalPresentationStyle.Custom
         };
 
     transitioningDelegate = new TransitioningDelegate ();
@@ -99,22 +99,22 @@ public class CustomTransitionAnimator : UIViewControllerAnimatedTransitioning
     }
 
     public override void AnimateTransition (IUIViewControllerContextTransitioning transitionContext)
-        {
-            var inView = transitionContext.ContainerView;
-            var toVC = transitionContext.GetViewControllerForKey (UITransitionContext.ToViewControllerKey);
-            var toView = toVC.View;
+    {
+        var inView = transitionContext.ContainerView;
+        var toVC = transitionContext.GetViewControllerForKey (UITransitionContext.ToViewControllerKey);
+        var toView = toVC.View;
 
-            inView.AddSubview (toView);
+        inView.AddSubview (toView);
 
-            var frame = toView.Frame;
-            toView.Frame = CGRect.Empty;
+        var frame = toView.Frame;
+        toView.Frame = CGRect.Empty;
 
-            UIView.Animate (TransitionDuration (transitionContext), () => {
-                toView.Frame = new CGRect (20, 20, frame.Width - 40, frame.Height - 40);
-            }, () => {
-                transitionContext.CompleteTransition (true);
-            });
-        }
+        UIView.Animate (TransitionDuration (transitionContext), () => {
+            toView.Frame = new CGRect (20, 20, frame.Width - 40, frame.Height - 40);
+        }, () => {
+            transitionContext.CompleteTransition (true);
+        });
+    }
 }
 ```
 
@@ -161,8 +161,8 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
     };
 
     viewController = new ImagesCollectionViewController (layout) {
-            UseLayoutToLayoutNavigationTransitions = false;
-        }
+            UseLayoutToLayoutNavigationTransitions = false
+        };
 
     navController = new UINavigationController (viewController);
 
@@ -184,13 +184,13 @@ ImagesCollectionViewController controller2;
 public override void ItemSelected (UICollectionView collectionView, NSIndexPath indexPath)
 {
     // UseLayoutToLayoutNavigationTransitions when item is selected
-        circleLayout = new CircleLayout (Monkeys.Instance.Count){
-                ItemSize = new CGSize (100, 100)
-            };
+    circleLayout = new CircleLayout (Monkeys.Instance.Count){
+        ItemSize = new CGSize (100, 100)
+    };
             
     controller2 = new ImagesCollectionViewController (circleLayout) {
-        UseLayoutToLayoutNavigationTransitions = true;
-        }
+        UseLayoutToLayoutNavigationTransitions = true
+        };
 
     NavigationController.PushViewController (controller2, true);
 }

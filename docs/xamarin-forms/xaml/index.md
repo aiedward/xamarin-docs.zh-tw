@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/18/2018
-ms.openlocfilehash: adebd5fe7e05d6698a7d69cef56a1d4035b6d8e7
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 9924e588808783fe35dbd830bbc9af288f37e7ea
+ms.sourcegitcommit: f890b5ec9b7c2702875070859e1a8cbf6e870e46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563066"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53813956"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>可延伸應用程式標記語言 (XAML)
 
@@ -20,7 +20,7 @@ _XAML 是一種宣告式標記的語言，可用來定義使用者介面。使�
 
 > [!VIDEO https://youtube.com/embed/H6UOrSyhTEE]
 
-**Evolve 2016： 成為 XAML Master**
+**Evolve 2016:成為 XAML Master**
 
 > [!NOTE]
 > 試試看[XAML Standard 預覽版](standard/index.md)
@@ -29,7 +29,7 @@ _XAML 是一種宣告式標記的語言，可用來定義使用者介面。使�
 
 ## <a name="xaml-basicsxaml-basicsindexmd"></a>[XAML 基本知識](xaml-basics/index.md)
 
-XAML 可讓開發人員在 Xamarin.Forms 應用程式中使用標記，而不是程式碼定義使用者介面。 Xamarin.Forms 程式永遠不會需要 XAML，但它是靈活，並經常會以視覺化方式一致且更簡潔，比對等的程式碼。 XAML 是非常適合用於搭配熱門的 Model View ViewModel (MVVM) 應用程式架構： XAML 定義的檢視，透過以 XAML 為基礎的資料繫結連結到 ViewModel 的程式碼。
+XAML 可讓開發人員在 Xamarin.Forms 應用程式中使用標記，而不是程式碼定義使用者介面。 Xamarin.Forms 程式永遠不會需要 XAML，但它是靈活，並經常會以視覺化方式一致且更簡潔，比對等的程式碼。 XAML 是非常適合用於搭配熱門的 Model View ViewModel (MVVM) 應用程式架構：XAML 會定義連結到 ViewModel 的程式碼透過以 XAML 為基礎的資料繫結的檢視。
 
 ## <a name="xaml-compilationxamlcmd"></a>[XAML 編譯](xamlc.md)
 
@@ -66,3 +66,7 @@ XAML 可以用來將引數傳遞至非預設建構函式或 factory 方法中。
 ## <a name="resource-dictionariesresource-dictionariesmd"></a>[資源字典](resource-dictionaries.md)
 
 XAML 資源都可以使用一次以上的物件的定義。 A [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)允許在單一位置中，定義及重複使用在 Xamarin.Forms 應用程式的資源。 這篇文章示範如何建立及取用`ResourceDictionary`，以及如何合併其中`ResourceDictionary`到另一個。
+
+## <a name="loading-xaml-at-runtimeruntime-loadmd"></a>[載入 XAML 在執行階段](runtime-load.md)
+
+XAML 可載入和使用在執行階段剖析[ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)擴充方法。

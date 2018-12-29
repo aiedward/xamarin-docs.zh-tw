@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 24d86827ab93dcf7dfc4da39c4a03a0a2805f332
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8c2086025ccb5fe41b3ffddc9cd650c1e0c81fbc
+ms.sourcegitcommit: f890b5ec9b7c2702875070859e1a8cbf6e870e46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107426"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53813981"
 ---
 # <a name="creating-a-service"></a>建立服務
 
