@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: de0e2c5ff10de9136c4cb5987c80ce22c7b18c4d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0c84f530f759285c2cfc71f60d7b6f80fba6a03d
+ms.sourcegitcommit: f890b5ec9b7c2702875070859e1a8cbf6e870e46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105541"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53814033"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>遠端通知使用 Firebase 雲端傳訊
 
@@ -137,7 +137,7 @@ using Android.Gms.Common;
 
 1.  在 Visual Studio for Mac，請以滑鼠右鍵按一下**封裝 > 新增套件...**.
 
-2.  請檢查**顯示發行前版本套件**並搜尋**Xamarin.Firebase.Messaging**。
+2.  搜尋**Xamarin.Firebase.Messaging**。
 
 3.  安裝此套件到**FCMClient**專案：
 
@@ -793,8 +793,7 @@ Java.Lang.IllegalStateException: Default FirebaseApp is not initialized in this 
 Make sure to call FirebaseApp.initializeApp(Context) first.
 ```
 
-這是您可以藉由清除方案並重建專案解決的已知的問題 (**建置 > 清除方案**，**建置 > 重建方案**)。 如需詳細資訊，請參閱此[論壇討論](https://forums.xamarin.com/discussion/96263/default-firebaseapp-is-not-initialized-in-this-process)。
-
+這是您可以藉由清除方案並重建專案解決的已知的問題 (**建置 > 清除方案**，**建置 > 重建方案**)。
 
 ## <a name="summary"></a>總結
 
