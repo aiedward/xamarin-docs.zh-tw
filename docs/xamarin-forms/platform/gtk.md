@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 132f31f4c9426dfceeef38f464231d1545f4db50
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dcfcf6c29b0a055c59501d6d95d4f97c16475bb3
+ms.sourcegitcommit: 6e84adf7358dc05f4d888ab2674de70d88214090
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115168"
+ms.lasthandoff: 12/31/2018
+ms.locfileid: "53815226"
 ---
 # <a name="gtk-platform-setup"></a>GTK # 平台安裝程式
 
@@ -106,7 +106,7 @@ GTK # 適用於 macOS 和 Linux 安裝的一部分[Mono](http://www.mono-project
 
     ![變更專案的輸出型別](gtk-images/win/change-project-output-type.png "變更專案的輸出類型")
 
-13. 在 **方案總管**，以滑鼠右鍵按一下 WPF 專案，然後選取**設定為啟始專案**。 按 f5 鍵以執行 Visual Studio 偵錯工具在 Windows 桌面上的程式：
+13. 在 **方案總管**，以滑鼠右鍵按一下 GTK 專案，然後選取**設定為啟始專案**。 按 f5 鍵以執行 Visual Studio 偵錯工具在 Windows 桌面上的程式：
 
     ![GTK # 遊戲的生命循環](gtk-images/win/gtk-gameoflife.png "GTK # 遊戲生命週期")
 
