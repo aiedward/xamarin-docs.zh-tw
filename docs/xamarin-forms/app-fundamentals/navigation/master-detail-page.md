@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 25f6cf341fcf47d5dc5320f73855bb2a4e29a9e8
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 3bfb8a10eab1a8a75a3f2048de1ce219df9bde66
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675519"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057661"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms Master-Detail Page
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Navigation/MasterDetailPage/)
 
 _Xamarin.Forms MasterDetailPage 是管理兩個相關資訊頁面的頁面 – 顯示項目的主版頁面，和顯示主版頁面上項目相關詳細資料的詳細資料頁面。本文說明如何使用 MasterDetailPage 及在其資訊頁面之間巡覽。_
 

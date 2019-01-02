@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/16/2018
-ms.openlocfilehash: 2a4b29df9148ce695f8f3ca5377e5848af1b775a
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 505b5bfb9681e5bc30ff84aa90c8e148ed6db4b1
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171595"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058281"
 ---
 # <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms 繫結後援
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 有時，資料繫結會因為無法解析繫結來源，或繫結成功但卻傳回 `null` 值而失敗。 雖然這些情況都可以透過值轉換器或其他額外程式碼來處理，但您可以藉由定義繫結程序失敗時要使用的後援值，讓資料繫結更穩固。 您可以在繫結運算式中定義 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 和 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 屬性來完成上述作業。 因為這些屬性位於 [ `BindingBase` ](xref:Xamarin.Forms.BindingBase) 類別中，因此可以搭配使用繫結、編譯的繫結與 `Binding` 標記延伸。
 
@@ -42,7 +44,7 @@ ms.locfileid: "52171595"
 ```
 
 > [!NOTE]
-> 您無法使用繫結運算式設定 `FallbackValue` 屬性。
+> 您無法使用繫結運算式來設定 `FallbackValue` 屬性。
 
 以下是程式執行情況：
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: a0a58cf05c97221a73cd0784b7859bb9c84cef86
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 0511cd1a4cf76368623c56ef53cd98323114f98e
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "38994672"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058986"
 ---
 # <a name="hierarchical-navigation"></a>階層式導覽
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
 
 _NavigationPage 類別提供的階層式導覽體驗讓使用者能夠視需要，向前及向後巡覽頁面。此類別會實作一堆後進先出 (LIFO) 的 Page 物件導覽。本文示範如何使用 NavigationPage 類別，在一堆頁面中執行導覽。_
 

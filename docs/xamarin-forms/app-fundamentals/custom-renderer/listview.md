@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: b3b73d542faebdb8ab85c989d7812368f4f3ffac
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 39ba281f036b9c57f85629390f5ba76377c99dd8
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997480"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054207"
 ---
 # <a name="customizing-a-listview"></a>自訂 ListView
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/listview/)
 
 _Xamarin.Forms ListView 是將資料集合顯示為垂直清單的檢視。本文示範如何建立自訂轉譯器，其會封裝平台特定清單控制項和原生資料格配置，讓您對原生清單控制效能擁有更多掌控權。_
 
@@ -538,7 +540,7 @@ namespace CustomRenderer.UWP
 </DataTemplate>
 ```
 
-`DataTemplate` 指定顯示資料格內容及其配置和外觀所用的控制項。 透過資料繫結使用兩個 `TextBlock` 控制項和一個 `Image` 控制項顯示資料格的內容。 此外，使用 `ConcatImageExtensionConverter` 的執行個體將 `.jpg` 副檔名串連到每個影像檔案名稱。 這可確保 `Image` 控制項在設定 `Source` 屬性後，可以載入及轉譯影像。
+`DataTemplate` 指定顯示資料格內容及其配置和外觀所用的控制項。 透過資料繫結使用兩個 `TextBlock` 控制項和一個 `Image` 控制項來顯示資料格的內容。 此外，使用 `ConcatImageExtensionConverter` 的執行個體將 `.jpg` 副檔名串連到每個影像檔案名稱。 這可確保 `Image` 控制項在設定 `Source` 屬性後，可以載入及轉譯影像。
 
 #### <a name="responding-to-a-property-change-on-the-custom-control"></a>回應自訂控制項上的屬性變更
 

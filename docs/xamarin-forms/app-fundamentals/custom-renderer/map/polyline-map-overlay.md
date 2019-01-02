@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 786f050495d4682b719178f2723c482929544678
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 184aa18ac8c0f27ce92a23b06b9dd0364f977abc
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998716"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050880"
 ---
 # <a name="highlighting-a-route-on-a-map"></a>醒目提示地圖上的路線
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
 
 _本文說明如何將聚合線條重疊新增至地圖。聚合線條重疊是一系列的連接線段，通常用來顯示地圖上的路線，或形成任何需要的圖形。_
 
@@ -24,11 +26,11 @@ _本文說明如何將聚合線條重疊新增至地圖。聚合線條重疊是�
 
 ![](polyline-map-overlay-images/screenshots.png)
 
-當 iOS 中的 Xamarin.Forms 應用程式轉譯 [`Map`](xref:Xamarin.Forms.Maps.Map) 控制項時，會先具現化 `MapRenderer` 類別，接著具現化原生的 `MKMapView` 控制項。 在 Android 平台上，`MapRenderer` 類別會具現化原生 `MapView` 控制項。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 類別會具現化原生的 `MapControl`。 您可在每個平台上建立 `Map` 的自訂轉譯器，利用轉譯程序實作平台特定的地圖自訂。 執行這項作業的程序如下：
+當 iOS 中的 Xamarin.Forms 應用程式轉譯 [`Map`](xref:Xamarin.Forms.Maps.Map) 控制項時，會先具現化 `MapRenderer` 類別，接著具現化原生的 `MKMapView` 控制項。 在 Android 平台上，`MapRenderer` 類別會具現化原生 `MapView` 控制項。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 類別會具現化原生的 `MapControl`。 您可在每個平台上建立適用於 `Map` 的自訂轉譯器，利用轉譯程序實作平台特定的地圖自訂。 執行這項作業的流程如下：
 
 1. [建立](#Creating_the_Custom_Map) Xamarin.Forms 自訂地圖。
-1. [取用](#Consuming_the_Custom_Map) Xamarin.Forms 的自訂地圖。
-1. 在每個平台上建立地圖自訂轉譯器，[自訂](#Customizing_the_Map)地圖。
+1. [使用](#Consuming_the_Custom_Map) Xamarin.Forms 的自訂地圖。
+1. 在每個平台上建立地圖自訂轉譯器以[自訂](#Customizing_the_Map)地圖。
 
 > [!NOTE]
 > 您必須先初始化及設定 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)，才能使用。 如需詳細資訊，請參閱 [`Maps Control`](~/xamarin-forms/user-interface/map.md)。
@@ -72,7 +74,7 @@ public class CustomMap : Map
 </ContentPage>
 ```
 
-或者，在 C# 頁面執行個體中宣告它的執行個體，藉以使用 `CustomMap` 控制項：
+或者，在 C# 頁面執行個體中宣告其執行個體，藉以使用 `CustomMap` 控制項：
 
 ```csharp
 public class MapPageCS : ContentPage

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 129ce7a04b93bfb3cb1b9a1639aee61cd56d09d5
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: bcea44688a64e741868e7ad2adf6c4dc65a5071a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998909"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052273"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms 資料範本簡介
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
 
 _Xamarin.Forms 資料範本可以在支援的控制項上定義資料呈現方式。本文提供資料範本的簡介，探討為何資料範本是必要的。_
 

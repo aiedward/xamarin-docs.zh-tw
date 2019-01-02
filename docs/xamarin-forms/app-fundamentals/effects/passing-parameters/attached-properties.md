@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 9483e424a74a88ce3f0eb49624bb5315551f2062
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 642a4a63ca2c451c6a085f0e99cebd93babe078d
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996447"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058752"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>將效果參數傳遞為附加屬性
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffectruntimechange/)
 
 _附加屬性可用來定義會回應執行階段屬性變更的效果參數。本文示範如何使用附加屬性將參數傳遞給效果，並在執行階段變更參數。_
 

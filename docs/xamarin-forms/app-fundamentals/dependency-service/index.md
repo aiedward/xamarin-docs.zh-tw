@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: a017cfaa6f96c95f4b501f189fe778fbd5ece3f2
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f07b26ed06e85e1b20a29459d2f8f0d2626a2855
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241621"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054864"
 ---
 # <a name="xamarinforms-dependencyservice"></a>Xamarin.Forms DependencyService
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/UsingDependencyService)
 
 _Xamarin.Forms 可讓開發人員定義平台特定專案中的行為。DependencyService 接著會找到正確的平台實作，讓共用的程式碼存取原生功能。_
 
@@ -30,5 +32,5 @@ _Xamarin.Forms 可讓開發人員定義平台特定專案中的行為。Dependen
 ## <a name="related-links"></a>相關連結
 
 - [使用 DependencyService (範例)](https://developer.xamarin.com/samples/UsingDependencyService)
-- [DependencyService (範例)](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample)
+- [Dependency Service (Samples)](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample) (相依性服務 (範例))
 - [Xamarin.Forms 範例](https://github.com/xamarin/xamarin-forms-samples)

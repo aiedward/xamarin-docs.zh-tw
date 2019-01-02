@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2018
-ms.openlocfilehash: def97ab77781c7a7156d4c4178097184614f3e8b
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: c607cecf6c7044fa4c8d0270a5b8d1471d3f9227
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "35240349"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059057"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms 資料繫結
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 _資料繫結是連結兩個物件屬性的技術，以便在其中一個屬性變更時，自動反映在另一個屬性上。資料繫結是 Model-View-ViewModel (MVVM) 應用程式架構不可或缺的一部分。_
 
@@ -71,6 +73,6 @@ Xamarin.Forms 應用程式包含一或多個頁面，通常每個頁面都包含
 
 ## <a name="related-links"></a>相關連結
 
-- [資料繫結示範 (範例)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Data Binding Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) (資料繫結示範 (範例))
 - [來自 Xamarin.Forms 書籍的資料繫結章節](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 - [XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)

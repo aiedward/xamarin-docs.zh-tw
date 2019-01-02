@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: cbb4a01ac2c6d933fe40a0b3c2571d1fe3ce75c0
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: bdfef88e0cf5916b1eec08ddfaa09165a057765a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998389"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058574"
 ---
 # <a name="checking-battery-status"></a>檢查電池狀態
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/DependencyService)
 
 本文會逐步解說如何建立可檢查電池狀態的應用程式。 本文是以 James Montemagno 的電池外掛程式為依據。 如需詳細資訊，請參閱 [GitHub 存放庫](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery)。
 

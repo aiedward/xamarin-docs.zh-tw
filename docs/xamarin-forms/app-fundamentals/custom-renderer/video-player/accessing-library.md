@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 619469e4c4fd3901491c20d6215ec0a25c49f69d
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 2754e135bee090ce47796dfa1ae39eed2b5f27c5
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171179"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059583"
 ---
 # <a name="accessing-the-devices-video-library"></a>存取裝置的影片庫
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 現今多數行動裝置和桌上型電腦都能使用裝置的相機錄影。 然後使用者建立的影片會以檔案的形式儲存在裝置上。 這些檔案可以從影像庫中擷取，並透過 `VideoPlayer` 類別進行播放，與其他影片無異。
 

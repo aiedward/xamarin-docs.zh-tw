@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 85a6bce8a1021c75064ba06f3a5daf69b7fe3e57
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: d19d8590171e585b6f65b2a63fc9847d7d672a56
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171374"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058399"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Xamarin.Forms 索引標籤式頁面
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TabbedPageWithNavigationPage)
 
 _Xamarin.Forms TabbedPage 由索引標籤清單和較大的詳細資料區域所組成，每個索引標籤會將內容載入至詳細資料區域中。本文示範如何使用 TabbedPage 來巡覽頁面集合。_
 
@@ -164,7 +166,7 @@ async void OnUpcomingAppointmentsButtonClicked (object sender, EventArgs e)
 </TabbedPage>
 ```
 
-[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 會透過在程式碼後置檔案的建構函式中設定 [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) 屬性來進行填入：
+[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 會藉由在程式碼後置檔案的建構函式中設定 [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) 屬性來填入資料：
 
 ```csharp
 public TabbedPageDemoPage ()

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: b0efdc1a20f52231f15b7a08eb86962e2079c678
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 0fe170aaa880aebcaff7899c440a0522e1f83a0c
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240026"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051117"
 ---
 # <a name="binding-video-sources-to-the-player"></a>將影片來源繫結至播放程式
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 當 `VideoPlayer` 檢視的 `Source` 屬性設定為新影片檔案時，會停止播放現有的影片並開始播放新影片。 如 [**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) 範例的 [Select Web Video] \(選取網路影片\) 頁面所示。 此頁面包含 `ListView`，以及從 **App.XAML** 檔案參考的三部影片標題：
 
@@ -140,4 +142,4 @@ namespace VideoPlayerDemos
 
 ## <a name="related-links"></a>相關連結
 
-- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) (影片播放程式示範 (範例))
+- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) (視訊播放程式示範 (範例))

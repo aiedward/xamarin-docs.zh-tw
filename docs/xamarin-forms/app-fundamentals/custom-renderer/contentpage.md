@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 2369b249681b926476cf3938c51c99745eba9098
-ms.sourcegitcommit: 8888cb7d75f4469f2a1195b9a426a2e1fbf46bd8
+ms.openlocfilehash: e310726ae4ad72d10e8e2890e9fbf07dda9bc48e
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "38995738"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052325"
 ---
 # <a name="customizing-a-contentpage"></a>自訂 ContentPage
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/contentpage/)
 
 _ContentPage 是可見的項目，會顯示單一檢視，並佔用螢幕的大部分空間。本文示範如何建立 ContentPage 頁面的自訂轉譯器，讓開發人員以自己的平台特定自訂來覆寫預設原生轉譯。_
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 0a11e9c25922531727ad2fee3bbed9c8d4e2b80c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 9859df6856f118dcfbc6bb4553b10882295866b2
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998130"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057243"
 ---
 # <a name="highlighting-a-region-on-a-map"></a>醒目提示地圖上的區域
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polygon/)
 
 _本文說明了如何將多邊形重疊新增至地圖，以醒目提示地圖上的區域。多邊形是封閉圖形，且其內部已填滿。_
 
@@ -24,11 +26,11 @@ _本文說明了如何將多邊形重疊新增至地圖，以醒目提示地圖�
 
 ![](polygon-map-overlay-images/screenshots.png)
 
-當 Xamarin.Forms 應用程式轉譯 [`Map`](xref:Xamarin.Forms.Maps.Map) 控制項時，在 iOS 中會先具現化 `MapRenderer` 類別，再由該類別具現化原生 `MKMapView` 控制項。 在 Android 平台上，`MapRenderer` 類別會具現化原生 `MapView` 控制項。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 類別會具現化原生 `MapControl`。 您可在每個平台上建立 `Map` 的自訂轉譯器，利用轉譯程序實作平台特定的地圖自訂。 執行這項作業的程序如下：
+當 Xamarin.Forms 應用程式轉譯 [`Map`](xref:Xamarin.Forms.Maps.Map) 控制項時，在 iOS 中會先具現化 `MapRenderer` 類別，再由該類別具現化原生 `MKMapView` 控制項。 在 Android 平台上，`MapRenderer` 類別會具現化原生 `MapView` 控制項。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 類別會具現化原生的 `MapControl`。 您可在每個平台上建立適用於 `Map` 的自訂轉譯器，利用轉譯程序實作平台特定的地圖自訂。 執行這項作業的流程如下：
 
 1. [建立](#Creating_the_Custom_Map) Xamarin.Forms 自訂地圖。
-1. 從 Xamarin.Forms [使用](#Consuming_the_Custom_Map)自訂地圖。
-1. 在每個平台上建立地圖自訂轉譯器，[自訂](#Customizing_the_Map)地圖。
+1. [使用](#Consuming_the_Custom_Map) Xamarin.Forms 的自訂地圖。
+1. 在每個平台上建立地圖自訂轉譯器以[自訂](#Customizing_the_Map)地圖。
 
 > [!NOTE]
 > 您必須先初始化及設定 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)，才能使用。 如需詳細資訊，請參閱 [`Maps Control`](~/xamarin-forms/user-interface/map.md)。
@@ -72,7 +74,7 @@ public class CustomMap : Map
 </ContentPage>
 ```
 
-或者，在 C# 頁面執行個體中宣告 `CustomMap` 控制項的執行個體來使用它：
+或者，在 C# 頁面執行個體中宣告其執行個體，藉以使用 `CustomMap` 控制項：
 
 ```csharp
 public class MapPageCS : ContentPage

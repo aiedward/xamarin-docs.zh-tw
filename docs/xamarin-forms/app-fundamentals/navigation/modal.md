@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 44aee8500c7de2ae56b59049368d6025ec49cc5e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 32d0775baa75b70ebc118457945efc0f6c0acec2
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994813"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057057"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms 強制回應頁面
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Modal/)
 
 _Xamarin.Forms 可支援強制回應頁面。強制回應頁面鼓勵使用者完成各自獨立且無法離開的工作，直到完成或取消工作為止。本文示範如何巡覽至強制回應頁面。_
 

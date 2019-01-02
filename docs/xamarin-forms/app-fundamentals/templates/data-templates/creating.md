@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 63f9bf82bc8e637aced1afa5d5699ac1e8dc3f8c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 4eea0db32bcfae4dc2ecdec8c2e494989515ef00
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994611"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53060222"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>建立 Xamarin.Forms DataTemplate
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
 
 _您可以在 ResourceDictionary 中，或是從自訂類型或適當的 Xamarin.Forms 資料格類型，以內嵌方式建立資料範本。本文將探索各種方法。_
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 7f40d0d11fc932121b4ff7789969bbb1e354024c
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 06b95c40b12aa93b79f25c3adf12b74bda232267
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172206"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056622"
 ---
 # <a name="playing-a-web-video"></a>播放 Web 視訊
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 `VideoPlayer` 類別會定義 `Source` 屬性，用於指定視訊檔案的來源，以及 `AutoPlay` 屬性。 `AutoPlay` 的預設設定為 `true`，表示視訊會在設定 `Source` 之後自動開始播放：
 

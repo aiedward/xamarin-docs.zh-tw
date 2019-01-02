@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 3064296d4c78a3342fb27afc971c37a029987e5e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: ed671063aad55cb6c4730494f024a2ec2a016de1
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998553"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051927"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>醒目提示地圖上的循環區域
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/circle/)
 
 _本文說明如何將循環重疊新增至地圖中，以醒目提示地圖的循環區域。_
 
@@ -62,7 +64,7 @@ public class CustomMap : Map
 
 ### <a name="consuming-the-custom-map"></a>使用自訂地圖
 
-在 XAML 頁面執行個體中宣告其執行個體，藉以使用 `CustomMap` 控制項：
+您可以在 XAML 頁面執行個體中宣告 `CustomMap` 控制項的執行個體來使用它：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

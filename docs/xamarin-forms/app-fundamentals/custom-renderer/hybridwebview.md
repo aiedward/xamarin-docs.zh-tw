@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/19/2018
-ms.openlocfilehash: aa060bd16bc0220f6a6026106ff6c8d786daebc1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f3b8cf7ec8a42ed031699d8f5e02f32c6eb61458
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105034"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053857"
 ---
 # <a name="implementing-a-hybridwebview"></a>實作 HybridWebView
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/hybridwebview/)
 
 _Xamarin.Forms 自訂使用者介面控制項應該衍生自用來在螢幕上放置配置和控制項的 View 類別。本文示範如何建立 HybridWebView 自訂控制項的自訂轉譯器，該自訂控制項會示範如何強化平台特定的 Web 控制項，允許從 JavaScript 叫用 C# 程式碼。_
 

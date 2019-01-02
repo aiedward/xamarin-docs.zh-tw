@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/15/2018
-ms.openlocfilehash: 3c8cc31c21f354b60001cefb919b51bf4d42da9f
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 8f32255b6451b5b672293c8db42bb8b1ab38a7fd
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675012"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061834"
 ---
 # <a name="introduction-to-dependencyservice"></a>DependencyService 簡介
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
 
 ## <a name="overview"></a>總覽
 

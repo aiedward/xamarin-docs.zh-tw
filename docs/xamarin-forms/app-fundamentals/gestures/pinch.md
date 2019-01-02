@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: f67cbb136c42a4bc476c1715ea6fd15255d71dc7
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 2eb6e6f94887301b78f401bf73a4ffaa01559c37
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "38998695"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059388"
 ---
 # <a name="adding-a-pinch-gesture-recognizer"></a>新增捏合手勢辨識器
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/PinchGesture/)
 
 _捏合手勢用於執行互動式縮放，由 PinchGestureRecognizer 類別實作。捏合手勢的常見案例是在捏合位置執行影像的互動式縮放。這可透過在檢視區的內容中調整影像來完成，如本文所示。_
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/26/2018
-ms.openlocfilehash: 7fea736b0a04a69fd64100ae1d6bcd42c244359f
-ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
+ms.openlocfilehash: 775ef2a38cf423536072358299ac4f30db974d9a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52459846"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056992"
 ---
 # <a name="customizing-an-entry"></a>自訂 Entry
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/entry/)
 
 _Xamarin.Forms Entry 控制項允許單行文字的編輯。本文示範如何建立 Entry 控制項的自訂轉譯器，讓開發人員以自己的平台特定自訂來覆寫預設原生轉譯。_
 

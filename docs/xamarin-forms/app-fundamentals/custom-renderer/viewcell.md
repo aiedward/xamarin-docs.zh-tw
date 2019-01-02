@@ -7,18 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: b1ebe2694ad5fa996b8b679cfb31a203588de05c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 1e7a96b2f33d7dc89c4373ab612ac3d26692f64e
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998995"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53060455"
 ---
 # <a name="customizing-a-viewcell"></a>自訂 ViewCell
 
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/viewcell/)
+
 _Xamarin.Forms ViewCell 是可以新增至 ListView 或 TableView 的資料格，其包含開發人員定義檢視。本文示範如何建立裝載在 Xamarin.Forms ListView 控制項內的自訂 ViewCell 轉譯器。這會停止在 ListView 捲動期間重複呼叫 Xamarin.Forms 配置計算。_
 
-每個 Xamarin.Forms 資料格都隨附每個平台的轉譯器，這些平台可建立原生控制項的執行個體。 當 Xamarin.Forms 應用程式轉譯 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 時，在 iOS 中，`ViewCellRenderer` 類別會具現化，並依序具現化原生的 `UITableViewCell` 控制項。 在 Android 平台上，`ViewCellRenderer` 類別會具現化原生的 `View` 控制項。 在通用 Windows 平台 (UWP) 上，`ViewCellRenderer` 類別會具現化原生的 `DataTemplate`。 如需轉譯器和 Xamarin.Forms 控制項對應之原生控制項類別的詳細資訊，請參閱[轉譯器基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
+每個 Xamarin.Forms 資料格都隨附每個平台的轉譯器，這些平台可建立原生控制項的執行個體。 當 Xamarin.Forms 應用程式轉譯 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 時，在 iOS 中，`ViewCellRenderer` 類別會具現化，並依序具現化原生的 `UITableViewCell` 控制項。 在 Android 平台上，`ViewCellRenderer` 類別會具現化原生的 `View` 控制項。 在通用 Windows 平台 (UWP) 上，`ViewCellRenderer` 類別會具現化原生的 `DataTemplate`。 如需 Xamarin.Forms 控制項對應的轉譯器和原生控制項類別詳細資訊，請參閱[轉譯器基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
 下圖說明 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 和實作它之對應原生控制項間的關聯性：
 
@@ -358,7 +360,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-呼叫 `GetCellCore` 方法來建置要顯示的每個資料格。 每個資料格都是 `NativeAndroidCell` 執行個體，定義資料格的配置及其資料。 `GetCellCore` 方法的操作取決於 [`ListView`](xref:Xamarin.Forms.ListView) 快取策略：
+呼叫 `GetCellCore` 方法來建置要顯示的每個資料格。 每個資料格都是 `NativeAndroidCell` 執行個體，其定義資料格的配置及其資料。 `GetCellCore` 方法的操作取決於 [`ListView`](xref:Xamarin.Forms.ListView) 快取策略：
 
 - 當 [`ListView`](xref:Xamarin.Forms.ListView) 快取策略為 [`RetainElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement) 時，每個資料格都需要叫用 `GetCellCore` 方法。 畫面最初顯示的每個 `NativeCell` 執行個體都需要建立 `NativeAndroidCell`。 當使用者捲動 `ListView` 時，會重複使用 `NativeAndroidCell` 執行個體。 如需 Android 資料格重複使用的詳細資訊，請參閱[資料列檢視重複使用](~/android/user-interface/layouts/list-view/populating.md)。
 

@@ -9,14 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/13/2018
-ms.openlocfilehash: f836d6212dfdff6c9840e2d780def3df72bc7c27
-ms.sourcegitcommit: 744c0a50420bb091fca8b92a84c20e61c741cf9e
+ms.openlocfilehash: fcd7f1b9d88b7305f9cccd12a799d71c793c42b4
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52742881"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057453"
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms Quickstart
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Phoneword/)
 
 本逐步解說示範如何建立可將使用者輸入的英數字元電話號碼轉譯成數字電話號碼，然後再撥打該號碼的應用程式。 最終的應用程式如下所示：
 

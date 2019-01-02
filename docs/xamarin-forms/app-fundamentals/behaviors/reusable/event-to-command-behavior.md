@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/09/2018
-ms.openlocfilehash: 8bf8f86cf708806d1c17b3fe4eda0755f98fd646
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 1c2aea9a5dead1962cfd4bb71d1a1211e8b98ee9
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563182"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056703"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>可重複使用的 EventToCommandBehavior
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
 
 _針對設計用意並非與命令互動的控制項，您可以使用行為來建立其與命令的關聯。本文示範如何建立及使用 Xamarin.Forms 行為，在事件引發時叫用命令。_
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 17e9e7061e4329431a0f34abdbbb616a1aff1b43
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 0fb9ed06ef58c4350f479021f0c18e48c693cf7f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171322"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059878"
 ---
 # <a name="loading-application-resource-videos"></a>載入應用程式資源影片
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 用於 `VideoPlayer` 檢視的自訂轉譯器，可以播放內嵌在個別平台專案中作為應用程式資源的視訊檔案。 不過，目前的 `VideoPlayer` 版本無法存取內嵌在 .NET Standard 程式庫中的資源。
 
@@ -64,7 +66,7 @@ namespace FormsVideoLibrary.iOS
             {
                 string path = (Element.Source as ResourceVideoSource).Path;
 
-                if (!String.IsNullOrWhitespace(path))
+                if (!String.IsNullOrWhiteSpace(path))
                 {
                     string directory = Path.GetDirectoryName(path);
                     string filename = Path.GetFileNameWithoutExtension(path);
@@ -182,4 +184,4 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>相關連結
 
-- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) (影片播放程式示範 (範例))
+- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) (視訊播放程式示範 (範例))

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2017
-ms.openlocfilehash: 6d1948214b97a1b536b07b6420c32e4d27124518
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 0351436259bb782e4f8e3a3405b9620c4e8b20bb
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "38997539"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050747"
 ---
 # <a name="implementing-text-to-speech"></a>實作文字轉換語音功能
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
 
 本文會引導您建立使用 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 存取原生文字轉換語音 API 的跨平台應用程式：
 
@@ -175,4 +177,3 @@ public MainPage ()
 
 - [使用 DependencyService (範例)](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
 - [DependencyServiceSample](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample/)
-

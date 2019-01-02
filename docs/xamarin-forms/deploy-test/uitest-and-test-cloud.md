@@ -8,14 +8,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: a4a3a1d35b675091319646a03fb0362e4d250b0e
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 41b23b9521b0324aeb6e94cd48ae5525c7639e07
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171881"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052105"
 ---
 # <a name="automate-xamarinforms-testing-with-app-center"></a>使用 App Center 自動化 Xamarin.Forms 測試
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/UsingUITest/)
 
 _Xamarin UITest 元件可搭配 Xamarin.Forms 使用來撰寫 UI 測試，以在雲端中的數百個裝置上執行。_
 

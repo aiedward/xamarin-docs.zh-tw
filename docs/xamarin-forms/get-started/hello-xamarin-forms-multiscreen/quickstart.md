@@ -8,14 +8,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 957c3e0d3b0637c8b536d920a05397bc711dfb7d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 406a7e780136f87dc85b28b970de2bfd02db36ec
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123475"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052367"
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Xamarin.Forms 多重畫面快速入門
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/PhonewordMultiscreen/)
 
 本快速入門會示範如何新增另一個畫面來延伸 Phoneword 應用程式，以追蹤應用程式的通話記錄。 最終的應用程式如下所示：
 

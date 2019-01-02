@@ -8,14 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 67b0d90290b18c7a5b55c5e3496b54970a8cfc38
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: c4098bfe40a252da2adbe7a7a2cd4c0f105ad1c8
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617601"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050409"
 ---
 # <a name="right-to-left-localization"></a>由右至左當地語系化
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalizedRTL/)
 
 _從右至左的當地語系化，會將由右至左文字方向的支援新增至 Xamarin.Forms 應用程式。_
 

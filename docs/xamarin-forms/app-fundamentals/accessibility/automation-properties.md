@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: c720b9f38d2a34155face10b75f5f054f3313711
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f59a528916d2cc5efd19ba7c35a7b4f041ecbe09
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131139"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056158"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>在 Xamarin.Forms 中的自動化屬性
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
 
 _Xamarin.Forms 可讓協助在使用者介面項目上，使用來自 AutomationProperties 類別的附加屬性設定協助工具值，然後附加屬性會設定原生的協助工具值。本文說明如何使用 AutomationProperties 類別，讓螢幕助讀程式可以讀出頁面上的項目。_
 
