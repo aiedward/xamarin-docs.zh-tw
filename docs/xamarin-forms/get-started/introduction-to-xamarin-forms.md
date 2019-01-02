@@ -7,16 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/25/2018
-ms.openlocfilehash: c5d2f93c8cb97c50f9d35d9ad91adf4c6437a3db
-ms.sourcegitcommit: 650fd5813e243d67eea13c4bc76683c0f8134123
+ms.openlocfilehash: c716f39faad0b58159df5631bf415239a2c658b1
+ms.sourcegitcommit: 06f88979db160fb8dd1c9ee0d5000d8749107489
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "38999009"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53806947"
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Xamarin.Forms 簡介
 
-Xamarin.Forms 是一個架構，可讓開發人員建置適用於 Android、iOS 與 Windows 的跨平台應用程式。程式碼與使用者介面定義會跨平台共用，但會以原生控制項轉譯。此文章介紹 Xamarin.Forms 並說明如何開始在 Visual Studio 中使用 C# 與 XAML 來撰寫應用程式。_
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/GettingStarted/)
+
+_Xamarin.Forms 是一個架構，可讓開發人員建置適用於 Android、iOS 與 Windows 的跨平台應用程式。程式碼與使用者介面定義會跨平台共用，但會以原生控制項轉譯。此文章介紹 Xamarin.Forms 並說明如何開始在 Visual Studio 中使用 C# 與 XAML 來撰寫應用程式。_
 
 Xamarin.Forms 應用程式使用 [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md) 專案來包含共用程式碼，並使用不同的應用程式專案來取用共用程式碼並建置每個平台所需的輸出。 當您建立新的 Xamarin.Forms 應用程式時，該方案將會包含共用程式碼專案 (包含 C# 與 XAML 檔案)，加上平台特定專案，如下列螢幕擷取畫面所示：
 
@@ -424,7 +426,7 @@ class EmployeeCell : ViewCell
         var twitterLabel = new Label
         {
            HorizontalOptions = LayoutOptions.FillAndExpand,
-           Font = Fonts.Twitter
+           FontSize = 24
         };
         twitterLabel.SetBinding(Label.TextProperty, "Twitter");
 
