@@ -6,15 +6,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: a8858839c51e519ac50dd59d223a6c15cee9e6bf
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dff57b142745729d5d38db4cce892bb1d55796a6
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123449"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059726"
 ---
 # <a name="preparing-an-application-for-release"></a>準備可供發行的應用程式
-
 
 應用程式完成編碼和測試之後，必須準備可供散發的套件。 準備此套件的第一項工作是建置可供發行的應用程式，主要是設定一些應用程式屬性。
 
@@ -64,7 +63,6 @@ ms.locfileid: "50123449"
 
 一般來說，`using Android.App` 會在 **AssemblyInfo.cs** 的上方宣告 (`Application` 屬性的命名空間為 `Android.App`)，不過若 `using` 陳述式不存在，您可能需要新增它。
 
-
 <a name="Versioning" />
 
 ## <a name="version-the-application"></a>控制應用程式版本
@@ -100,9 +98,9 @@ ms.locfileid: "50123449"
 
 [發行] 模式會關閉共用的執行階段並開啟連結，以讓應用程式只隨附 Xamarin.Android 在執行階段所需的項目。 Xamarin.Android 中的「連結器」使用靜態分析以判斷 Xamarin.Android 應用程式所使用或參考的組件、類型及類型成員。 連結器接著會捨棄所有未使用 (或參考) 的組件、類型及成員。 這樣就能大幅縮小套件的大小。 例如，請考慮 [HelloWorld](~/android/deploy-test/linker.md) 範例，其 APK 最終大小的縮減達到 83%： 
 
--   設定：無 &ndash; Xamarin.Android 4.2.5 大小 = 17.4 MB。
+-   組態:無 &ndash; Xamarin.Android 4.2.5 大小 = 17.4 MB。
 
--   設定：僅限 SDK 組件 &ndash; Xamarin.Android 4.2.5 大小 = 3.0 MB。
+-   組態:僅限 SDK 組件 &ndash; Xamarin.Android 4.2.5 大小 = 3.0 MB。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -136,7 +134,6 @@ ms.locfileid: "50123449"
 -----
 
 連結會產生非預期的副作用，因此務必要在實體裝置上以發行模式重新測試應用程式。
-
 
 ### <a name="proguard"></a>ProGuard
 
@@ -184,7 +181,6 @@ Android 資訊清單包含 `android:debuggable` 屬性，可控制是否能對�
 ```
 
 請注意，偵錯組件會自動設定一些權限以方便偵錯 (例如 **Internet** 與 **ReadExternalStorage**)。 然而，發行組建只會使用您明確設定的權限。 如果您發現切換至發行組建造成應用程式失去偵錯組建中可用的權限，請確認您已在 [需要的權限] 中明確啟用此權限，如[權限](~/android/app-fundamentals/permissions.md)所述。 
- 
 
 <a name="dotfuscator" id="dotfuscator" />
 
@@ -228,14 +224,13 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 [AOT 編譯] 選項需要企業授權或更高。 只有將專案設定為 [發行] 模式時才能使用 [AOT 編譯]，且該選項預設為停用。 如需 AOT 編譯的詳細資訊，請參閱 [AOT](http://www.mono-project.com/docs/advanced/aot/) \(英文\)。
 
-
 #### <a name="llvm-optimizing-compiler"></a>LLVM 最佳化編譯器
 
 「LLVM 最佳化編譯器」會建立更小且速度更快的編譯程式碼，並將 AOT 編譯的組件轉換成機器碼，但代價是建置時間較慢。 LLVM 編譯器預設為停用。 若要使用 LLVM 編譯器，必須先啟用 [AOT 編譯] 選項 (在[封裝屬性](#Set_Packaging_Properties)頁面上)。
 
 
 > [!NOTE]
-> [LLVM 最佳化編譯器] 選項需要商務用授權。  
+> [LLVM 最佳化編譯器] 選項需要企業授權。  
 
 <a name="Set_Packaging_Properties" />
 
@@ -257,16 +252,13 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 其中許多屬性都是提供偵錯模式使用，例如 [使用共用執行階段] 和 [使用 Fast Deployment]。 不過，設定應用程式以用於發行模式時，還有其他設定可決定如何將應用程式的[大小與執行速度最佳化](#shrink_apk)、[如何保護以免遭到竄改](#protect_app)，以及如何封裝以支援不同架構與大小限制。
 
-
 ### <a name="specify-supported-architectures"></a>指定支援的架構
 
 準備 Xamarin.Android 應用程式以供發行時，必須指定支援的 CPU 架構。 單一 APK 可以包含機器碼，以支援多個不同的架構。 如需支援多個 CPU 架構的詳細資訊，請參閱 [CPU 架構](~/android/app-fundamentals/cpu-architectures.md)。
 
-
 ### <a name="generate-one-package-apk-per-selected-abi"></a>為選取的每一個 ABI 產生一個套件 (.APK)
 
 啟用此選項時，會為每個支援的 ABI 建立一個 APK (於 [進階] 索引標籤上選取，如 [CPU 架構](~/android/app-fundamentals/cpu-architectures.md)中所述) 而不是為所有支援的 ABI 建立單一的大型 APK。 只有將專案設定為 [發行] 模式時才能使用此選項，且該選項預設為停用。
-
 
 ### <a name="multi-dex"></a>Multi-Dex
 
@@ -292,7 +284,6 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 -----
 
-
 <a name="archive" />
 
 ## <a name="archive-for-publishing"></a>封存以供發行
@@ -310,7 +301,6 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 建立封存的另一種方法是，以滑鼠右鍵按一下 [方案總管] 中的解決方案，然後選取 [全部封存]，這樣會建置解決方案，並封存可產生封存的所有 Xamarin 專案：
 
 [![全部封存](images/vs/09-archive-all-sml.png)](images/vs/09-archive-all.png#lightbox)
-
 
 [封存] 與 [全部封存] 都會自動啟動 [封存管理員]。 若要直接啟動 [封存管理員]，請按一下 [工具] > [封存管理員] 功能表項目：
 
@@ -370,7 +360,6 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 [![簽署並散發](images/xs/09-sign-and-distribute-sml.png)](images/xs/09-sign-and-distribute.png#lightbox)
 
-
 您可以從這裡選擇散發通道：
 
 -   **臨機操作** &ndash; 將簽署的 APK 儲存至磁碟，以便側載至 Android 裝置。 繼續前往[簽署應用程式套件](~/android/deploy-test/signing/index.md)，了解如何建立 Android 簽署識別、建立適用於 Android 應用程式的新簽署憑證，並將應用程式的「臨機操作」&ldquo;&rdquo;版本發佈至磁碟。 這是建立 APK 進行測試的好方法。
@@ -380,7 +369,6 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
     繼續前往[發佈至 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)，了解如何在 Google Play 商店中簽署和發佈 APK。
 
 -----
-
 
 ## <a name="related-links"></a>相關連結
 

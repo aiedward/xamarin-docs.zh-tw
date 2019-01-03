@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 09fe3587e4e435383822e50bd12616747b807f82
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7eea0a4eba201d7332c5e3e5222729bcb5e14a07
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108453"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054057"
 ---
 # <a name="localization"></a>當地語系化
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/UsingResxLocalization/)
 
 _您可以使用 .NET 資源檔將 Xamarin.Forms 應用程式當地語系化。_
 
@@ -556,7 +558,7 @@ namespace UsingResxLocalization.Android
 一但將此程式碼新增至 Android 應用程式專案之後，就能夠自動顯示翻譯的字串。
 
 > [!NOTE]
->**警告：** 如果翻譯的字串可用於 Android 發行組建，但無法用於偵錯，請以滑鼠右鍵按一下 [Android 專案]，然後選取 [選項] > [組建] > [Android 組建]，並確定「未」核取 [快速部署組件]。 此選項會導致載入資源時發生問題；如果您要測試當地語系化的應用程式，則請勿使用。
+>️ **警告：** 如果翻譯的字串可用於您的 Android 發行組建，但無法用於偵錯，請以滑鼠右鍵按一下 [Android 專案]，然後選取 [選項] > [組建] > [Android 組建]，並確定「未」核取 [快速部署組件]。 此選項會導致載入資源時發生問題；如果您要測試當地語系化的應用程式，則請勿使用。
 
 如需 Android 當地語系化的詳細資訊，請參閱 [Android 當地語系化](~/android/app-fundamentals/localization.md)。
 

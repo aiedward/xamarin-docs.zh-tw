@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 3397c931dcb23a29b0682699512a5b4c9018de38
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: b0d202ff7743361207795d342b29243130f4f056
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171062"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058726"
 ---
 # <a name="custom-video-transport-controls"></a>自訂影片傳輸控制項
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 影片播放程式的傳輸控制項包括執行 [播放]、[暫停] 和 [停止] 功能的按鈕。 這些按鈕通常會以熟悉的圖示而非文字呈現，且 [播放] 及 [暫停] 功能常會合併為一個按鈕。
 
@@ -358,7 +360,7 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-必須存取 `AVPlayer` 的兩個屬性：類型 `AVPlayerStatus` 的 [`Status`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/) 屬性及類型 `AVPlayerTimeControlStatus` 的 [`TimeControlStatus`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/) 屬性。 請注意，必須將 `Element` 屬性 (即為 `VideoPlayer`) 轉換為 `IVideoPlayerController` 以設定 `Status` 屬性。
+必須存取 `AVPlayer` 的兩個屬性：類型為 `AVPlayerStatus` 的 [`Status`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/) 屬性和類型為 `AVPlayerTimeControlStatus` 的 [`TimeControlStatus`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/) 屬性。 請注意，必須將 `Element` 屬性 (即為 `VideoPlayer`) 轉換為 `IVideoPlayerController` 以設定 `Status` 屬性。
 
 ### <a name="the-android-status-setting"></a>Android 狀態設定
 
@@ -658,4 +660,4 @@ namespace VideoPlayerDemos
 
 ## <a name="related-links"></a>相關連結
 
-- [影片播放程式示範 (範例)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) (視訊播放程式示範 (範例))

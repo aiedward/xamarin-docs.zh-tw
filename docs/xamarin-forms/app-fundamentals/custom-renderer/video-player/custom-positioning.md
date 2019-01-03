@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: b5f3c9dcbaa6ba1a9e86568ccabe38416cc653f2
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cf2de96022366165e726bc3e6447bb88f30a26bb
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241906"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057135"
 ---
 # <a name="custom-video-positioning"></a>自訂影片定位
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 每個平台實作的傳輸控制項都包括位置列。 此列類似於滑桿或捲軸，而且會顯示影片在其總持續時間內的目前位置。 此外，使用者可以操作位置列，向前或向後移至影片中的新位置。
 
@@ -172,7 +174,7 @@ namespace FormsVideoLibrary
 
 在 iOS 和 Android 中，取得目前位置的屬性只有 `get` 存取子，並有 `Seek` 方法可用來執行上述第二項工作。 如果您仔細想一下，個別 `Seek` 方法似乎是比單一 `Position` 屬性更明智的做法。 單一 `Position` 屬性的固有問題是：當影片播放時，`Position` 屬性必須持續更新以反映新位置。 但您不想要大部分的 `Position` 屬性變更使得影片播放程式移至影片中新位置。 如果發生這種情況，影片播放程式會搜尋 `Position` 屬性的最後一個值來回應，因此影片不會前進。
 
-除了難以實作具有 `set` 和 `get` 存取子的 `Position` 屬性之外，選擇這個方法的原因還包括它與 UWP `MediaElement` 一致，而且在資料繫結方面有很大的優勢：`VideoPlayer` 的 `Position` 屬性可以繫結至用來顯示位置和搜尋新位置的滑桿。 不過，實作這個 `Position` 屬性時需要幾個預防措施，以避免回饋迴圈。
+儘管使用 `set` 和 `get` 存取子實作 `Position` 屬性有困難，但選擇此方法是因為它與 UWP `MediaElement` 一致，並且它在資料繫結方面具有很大優勢：`VideoPlayer` 的 `Position` 屬性可以繫結到滑桿，該滑桿同時用來顯示位置與搜尋新位置。 不過，實作這個 `Position` 屬性時需要幾個預防措施，以避免回饋迴圈。
 
 ### <a name="setting-and-getting-ios-position"></a>設定和取得 iOS 位置
 
@@ -479,4 +481,4 @@ UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) 的文件�
 
 ## <a name="related-links"></a>相關連結
 
-- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) (影片播放程式示範 (範例))
+- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) (視訊播放程式示範 (範例))

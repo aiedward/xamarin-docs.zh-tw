@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 4ce04f21a3e520fea9da5d538fb7cc0ac098ad31
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 56284f1d3c5fec479badf91852acba2bf538bddd
+ms.sourcegitcommit: cb484bd529bf2d8e48e5b3d086bdfc31895ec209
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119828"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53411735"
 ---
 # <a name="app-group-capabilities-in-xamarinios"></a>Xamarin.iOS 的應用程式群組功能
 
@@ -34,12 +34,12 @@ _為應用程式新增功能通常需要額外的佈建設定。本指南說明�
 
 1.  前往pple 的 [iOS Developer Center](https://developer.apple.com/account/) (iOS 開發人員中心)，開啟您的 [Account] \(帳戶\) ****  並登入。
 2.  選取 [Certificates, IDs & Profiles] \(憑證、識別碼及設定檔\)。
-3.  在 [Identifiers] \(識別碼\) ****  下，選取 [App Groups] \(應用程式群組\) ****，然後按一下 [+] ****  按鈕來建立新的群組。
+3.  在 [Identifiers] \(識別碼\) 底下，選取 [App Groups] \(應用程式群組\)，然後按一下 [+] 按鈕來建立新的群組。
 4.  輸入新群組的 [Name] \(名稱\) **** 和 [Identifier] \(識別碼\) **** ，然後按一下 [Continue] \(繼續\) ****  按鈕： 
    
     ![新增 App Group (應用程式群組) 詳細資料](app-groups-capabilities-images/image52.png)
 
-5.  按一下 [Register] \(註冊\) ****  按鈕來建立群組，然後按一下 [Done] \(完成\) ****  來返回已註冊的 App Group (應用程式群組) 清單。
+5.  按一下 [Register] \(註冊\) 按鈕來建立群組，然後按一下 [Done] \(完成\) 來返回已註冊的 App Group (應用程式群組) 清單。
 
 ## <a name="configure-an-app-to-use-app-groups"></a>設定讓應用程式使用應用程式群組
 
@@ -48,15 +48,15 @@ _為應用程式新增功能通常需要額外的佈建設定。本指南說明�
 請執行下列動作：
 
 1.  前往 Apple 的 [iOS Developer Center](https://developer.apple.com/account/) (iOS 開發人員中心)，然後使用 Apple 開發人員帳戶來登入。
-2.  從 [Program Resources] \(程式資源\) ****  功能表中，選取 [Certificates, IDs & Profiles] \(憑證、識別碼及設定檔\) ****。
-3.  在 [Identifiers] \(識別碼\) **** 下，選取 [App IDs] \(應用程式識別碼\) ****，然後按一下 [+] ****  按鈕來建立新的識別碼。
+2.  從 [Program Resources] \(程式資源\) 功能表中，選取 [Certificates, IDs & Profiles] \(憑證、識別碼及設定檔\)。
+3.  在 [Identifiers] \(識別碼\) 底下，選取 [App IDs] \(應用程式識別碼\)，然後按一下 [+] 按鈕來建立新的識別碼。
 4.  輸入 App ID (應用程式識別碼) 的 [Name] \(名稱\)，並為它提供 [Explicit App ID] \(明確的應用程式識別碼\)。
-5.  在 [App Services] \(應用程式服務\) ****  下，啟用 [App Group] \(應用程式群組\) ****，然後按一下 [Continue] \(繼續\) 按鈕：
+5.  在 [App Services] \(應用程式服務\) 底下，啟用 [App Group] \(應用程式群組\)，然後按一下 [Continue] \(繼續\) 按鈕：
 
     ![新增 App Group (應用程式群組) 應用程式服務](app-groups-capabilities-images/image53.png)
 
 6.  確認設定，然後按一下 [Register] \(註冊\) ****  按鈕來建立應用程式識別碼。
-7.  按一下 [Done] \(完成\) ****  來返回已註冊的應用程式識別碼清單。
+7.  按一下 [Done] \(完成\) 來返回已註冊的 App ID (應用程式識別碼) 清單。
 8.  從清單中選取新建立的應用程式識別碼，然後按一下 [Edit] \(編輯\) ****  按鈕：
 
     ![從清單中選取 App ID (應用程式識別碼)](app-groups-capabilities-images/image54.png)
@@ -69,7 +69,7 @@ _為應用程式新增功能通常需要額外的佈建設定。本指南說明�
 
     ![新增 App Group (應用程式群組)](app-groups-capabilities-images/image56.png)
 
-11. 按一下 [Assign] \(指派\) ****  按鈕，然後按一下 [Done] \(完成\) ****  按鈕來返回已註冊的應用程式識別碼清單。
+11. 按一下 [Assign] \(指派\)，然後按一下 [Done] \(完成\) 按鈕來返回已註冊的 App ID (應用程式識別碼) 清單。
 12. 針對任何將使用「應用程式群組」的應用程式 (或擴充功能) 重複上述步驟。
 
 ## <a name="next-steps"></a>後續步驟

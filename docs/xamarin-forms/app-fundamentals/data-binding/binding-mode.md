@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 03dbaa36cc1fa4a6a169f9456e0fd5b0fdc0d295
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 0e8b727fb520b6901bf397c9cfb67947897cbc8b
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563936"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056955"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms 繫結模式
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 在[前一篇文章](basic-bindings.md)中，[替代程式碼繫結] 和 [替代 XAML 繫結] 頁面顯示的 `Label`，其 `Scale` 屬性繫結至 `Slider` 的 `Value` 屬性。 因為 `Slider` 初始值為 0，這導致 `Label` 的 `Scale` 屬性設為 0，而不是 1，並讓 `Label` 消失。
 
@@ -112,7 +114,7 @@ ms.locfileid: "51563936"
 
 ViewModel 是資料繫結來源。 ViewModel「不會」定義可繫結的屬性，但它會實作通知機制，以在屬性值變更時通知繫結基礎結構。 此通知機制是 [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) 介面，其會定義名為 [`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) 的單一屬性。 實作這個介面的類別通常會在其中一個公用屬性變更值時引發事件。 如果屬性從不變更，就不需要引發事件  (`BindableObject` 也會實作 `INotifyPropertyChanged` 介面，並在可繫結的屬性值變更時引發 `PropertyChanged` 事件)。
 
-`HslColorViewModel` 類別會定義五個屬性：`Hue`、`Saturation`、`Luminosity` 和 `Color` 則相互關聯。 當這三個色彩元件其中之一變更值時，即會重新計算 `Color` 屬性，並引發所有四個屬性的 `PropertyChanged` 事件：
+`HslColorViewModel` 類別定義五個屬性：`Hue`、`Saturation`、`Luminosity` 和 `Color` 屬性相互關聯。 當這三個色彩元件其中之一變更值時，即會重新計算 `Color` 屬性，並引發所有四個屬性的 `PropertyChanged` 事件：
 
 ```csharp
 public class HslColorViewModel : INotifyPropertyChanged
@@ -256,7 +258,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 </ContentPage>
 ```
 
-`BoxView`、`Label` 和三個 `Slider` 檢視會繼承 `Grid` 的繫結內容。 這些檢視都是參考 ViewModel 中來源屬性的繫結目標。 若是 `BoxView` 的 `Color` 屬性和 `Label` 的 `Text` 屬性，資料繫結為 `OneWay`：檢視中的屬性會從 ViewModel 屬性來設定。
+`BoxView`、`Label` 和三個 `Slider` 檢視會繼承 `Grid` 的繫結內容。 這些檢視都是參考 ViewModel 中來源屬性的繫結目標。 針對 `BoxView` 的 `Color` 屬性和 `Label` 的 `Text` 屬性，資料繫結為 `OneWay`：檢視中的屬性是根據 ViewModel 中的屬性設定的。
 
 不過，`Slider` 的 `Value` 屬性則為 `TwoWay`。 這可讓每個 `Slider` 從 ViewModel 設定，而 ViewModel 則從每個 `Slider` 來設定。
 

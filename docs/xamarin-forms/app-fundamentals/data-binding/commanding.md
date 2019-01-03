@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 68c7869254ae861cef8307431d925368082be921
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 37fbc0107414521a87c263d327ffd9b8940384eb
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675242"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053460"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms 命令介面
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 在 Model-View-ViewModel (MVVM) 架構中，資料繫結是在 ViewModel (這通常是衍生自 `INotifyPropertyChanged` 的類別) 中屬性與檢視 (這通常是 XAML 檔案) 的屬性之間定義。 有時候應用程式需要超越這些屬性繫結，方法是要求使用者起始會影響 ViewModel 某些項目的命令。 這些命令通常是透過按鈕點擊或手指點選發出訊號，傳統上會以 `Button` 的 `Clicked` 事件處理常式或 `TapGestureRecognizer` 的 `Tapped` 事件處理常式在程式碼後置檔案中加以處理。
 
@@ -275,7 +277,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 </ContentPage>
 ```
 
-以下是其運作方式：使用者第一次按下 **New** 按鈕。 這會啟用項目表單，但停用 **New** 按鈕。 使用者接著輸入姓名、年齡和技能。 在編輯期間的任何時間，使用者可以按下 **Cancel** (取消) 按鈕，以便從頭開始。 只有在已輸入姓名和有效的年齡時，才會啟用 **Submit** (提交) 按鈕。 按下此 **Submit** 按鈕，就會將人員資料傳送到 `ListView` 所顯示的集合。 按下 **Cancel** 或 **Submit** 按鈕之後，系統會清除項目表單，並再次啟用 **New** 按鈕。
+以下是其運作方式：使用者第一次按下 [新增] 按鈕。 這會啟用項目表單，但停用 **New** 按鈕。 使用者接著輸入姓名、年齡和技能。 在編輯期間的任何時間，使用者可以按下 **Cancel** (取消) 按鈕，以便從頭開始。 只有在已輸入姓名和有效的年齡時，才會啟用 **Submit** (提交) 按鈕。 按下此 **Submit** 按鈕，就會將人員資料傳送到 `ListView` 所顯示的集合。 按下 **Cancel** 或 **Submit** 按鈕之後，系統會清除項目表單，並再次啟用 **New** 按鈕。
 
 左側的 iOS 畫面會顯示輸入有效年齡之前的配置。 Android 和 UWP 畫面則顯示設定年齡後啟用的 **Submit** 按鈕：
 
@@ -757,7 +759,7 @@ public partial class MainPage : ContentPage
 
 建構函式還會將頁面的 `BindingContext` 設定為其本身，以便繫結參考此類別中的 `NavigateCommand`。
 
-此建構函式中的程式碼順序有所不同：`InitializeComponent` 呼叫會導致剖析 XAML，但該時間無法解析名為 `NavigateCommand` 的屬性繫結，因為 `BindingContext` 設定為 `null`。 如果在設定 `NavigateCommand`「之前」於建構函式中設定 `BindingContext`，則可在設定 `BindingContext` 後解析繫結，但此時 `NavigateCommand` 仍為 `null`。 在 `BindingContext` 之後設定 `NavigateCommand` 不會影響繫結，因為變更 `NavigateCommand` 並不會引發 `PropertyChanged` 事件，且繫結不知道 `NavigateCommand` 現在是有效的。
+此建構函式中的程式碼順序會形成差異：`InitializeComponent` 呼叫會導致剖析 XAML，但該時間無法解析名為 `NavigateCommand` 的屬性繫結，因為 `BindingContext` 設定為 `null`。 如果在設定 `NavigateCommand`「之前」於建構函式中設定 `BindingContext`，則可在設定 `BindingContext` 後解析繫結，但此時 `NavigateCommand` 仍為 `null`。 在 `BindingContext` 之後設定 `NavigateCommand` 不會影響繫結，因為變更 `NavigateCommand` 並不會引發 `PropertyChanged` 事件，且繫結不知道 `NavigateCommand` 現在是有效的。
 
 在呼叫 `InitializeComponent` 之前同時設定 `NavigateCommand` 和 `BindingContext` (依任意順序) 可正常運作，因為 XAML 剖析器遇到繫結定義時，已設定繫結的這兩個元件。
 

@@ -6,15 +6,17 @@ ms.assetid: 6A724681-55EB-45B8-9EED-7E412AB19DD2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/01/2017
-ms.openlocfilehash: 0a5e2c1a7a7807da91fd98e617467ea251a25bc0
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.date: 12/14/2018
+ms.openlocfilehash: 9b5150eff0290ef5858198459108699be9f9b273
+ms.sourcegitcommit: cb484bd529bf2d8e48e5b3d086bdfc31895ec209
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527400"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53411761"
 ---
 # <a name="invoking-events-from-effects"></a>從效果叫用事件
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)
 
 效果可以定義並叫用事件，以通知基礎原生檢視中有變更。本文說明如何實作低層級的多點觸控手指追蹤，以及如何產生通知觸控活動的事件。
 
@@ -42,7 +44,7 @@ iOS、Android 和通用 Windows 平台都包含一個低層級的 API，可讓�
 
 此外，UWP 還會定義兩個以上名為 `PointerEntered` 和 `PointerExited` 的事件。 這些事件指出滑鼠或手指何時從某個項目移到另一個項目。 例如，假設兩個名為 A 和 B 的相鄰項目。這兩個項目已安裝指標事件的處理常式。 當手指按下 A 時，將叫用 `PointerPressed` 事件。 隨著手指移動，A 會叫用 `PointerMoved` 事件。 如果手指從 A 移到 B，A 會叫用 `PointerExited` 事件，而 B 會叫用 `PointerEntered` 事件。 如果再放開手指，B 會叫用 `PointerReleased` 事件。
 
-iOS 和 Android 平台不同於 UWP：當手指觸控視圖時，首先呼叫 `TouchesBegan` 或 `OnTouchEvent` 的檢視會繼續取得所有觸控活動，即使手指移到不同的檢視也是一樣。 UWP 在應用程式擷取指標時具有類似的行為：在 `PointerEntered` 事件處理常式中，項目會呼叫 `CapturePointer`，然後取得該手指的所有觸控活動。
+iOS 和 Android 平台不同於 UWP：當手指觸控視圖時，首先呼叫 `TouchesBegan` 或 `OnTouchEvent` 的檢視會繼續取得所有觸控活動，即使手指移到不同的檢視也是一樣。 如果應用程式會擷取指標，則 UWP 的行為類似：在 `PointerEntered` 事件處理常式中，元素會呼叫 `CapturePointer`，然後再取得該手指觸控的所有活動。
 
 UWP 方法證實非常適合某些類型的應用程式，例如音樂鍵盤。 每個按鍵可以處理該按鍵的觸控事件，並使用 `PointerEntered` 和 `PointerExited` 事件偵測手指何時從某個按鍵滑到另一個按鍵。
 
@@ -293,7 +295,7 @@ void FireEvent(TouchEffect touchEffect, int id, TouchActionType actionType, Poin
 }
 ```
 
-所有其他觸控類型都以兩種不同的方式處理：如果 `Capture` 屬性為 `true`，則觸控事件是相當簡單的 `TouchEffect` 資訊轉譯。 當 `Capture` 為 `false` 時會變得更複雜，因為觸控事件可能需要從某個檢視移到另一個檢視。 這是由移動事件期間呼叫的 `CheckForBoundaryHop` 方法負責。 此方法會使用這兩個靜態字典。 它會列舉 `viewDictionary` 來判斷手指目前觸控的檢視，並使用 `idToEffectDictionary` 來儲存與特定識別碼建立關聯的目前 `TouchEffect` 執行個體 (亦即目前的檢視)：
+其他觸控類型的處理方式有兩種方式：如果 `Capture` 屬性為 `true`，則觸控事件是對 `TouchEffect` 資訊的相當簡單的轉譯。 當 `Capture` 為 `false` 時會變得更複雜，因為觸控事件可能需要從某個檢視移到另一個檢視。 這是由移動事件期間呼叫的 `CheckForBoundaryHop` 方法負責。 此方法會使用這兩個靜態字典。 它會列舉 `viewDictionary` 來判斷手指目前觸控的檢視，並使用 `idToEffectDictionary` 來儲存與特定識別碼建立關聯的目前 `TouchEffect` 執行個體 (亦即目前的檢視)：
 
 ```csharp
 void CheckForBoundaryHop(int id, Point pointerLocation)
@@ -352,6 +354,9 @@ static Dictionary<long, TouchRecognizer> idToTouchDictionary =
 
 此 `TouchRecognizer` 類別的大部分結構類似於 Android `TouchEffect` 類別。
 
+> [!IMPORTANT]
+> `UIKit` 中的許多檢視，預設情況下未啟用觸控功能。 可以透過將 `view.UserInteractionEnabled = true;` 新增到 iOS 專案中 `TouchEffect` 類別的 `OnAttached` 覆寫來啟用觸控。 這應該在取得對應於附加效果之元素的 `UIView` 之後發生。
+
 ## <a name="putting-the-touch-effect-to-work"></a>實際使用觸控效果
 
 [**TouchTrackingEffectDemos**](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) 程式包含五個用來測試一般工作觸控追蹤效果的頁面。
@@ -379,7 +384,7 @@ void AddBoxViewToLayout()
 }
 ```
 
-`TouchAction` 事件處理常式會處理所有 `BoxView` 項目的所有觸控事件，但需要特別小心：它不允許在單一 `BoxView` 上使用兩指，因為程式只會實作拖曳，而兩個手指會相互干擾。 基於這個理由，頁面會針對目前所追蹤的每個手指定義內嵌的類別：
+`TouchAction` 事件處理常式處理所有 `BoxView` 元素的所有觸控事件，但需要特別小心：它不允許單一 `BoxView` 上的兩指，因為程式只會實作拖曳，並且兩指會彼此干擾。 基於這個理由，頁面會針對目前所追蹤的每個手指定義內嵌的類別：
 
 ```csharp
 class DragInfo

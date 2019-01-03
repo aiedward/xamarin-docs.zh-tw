@@ -6,13 +6,13 @@ ms.assetid: 1A674212-72DB-4AA4-B626-A4EC135AD1A0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/29/2018
-ms.openlocfilehash: 933368f7ca1435ece4f20945b2f8e905f7584217
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 12/11/2018
+ms.openlocfilehash: 422311c766584cbd27d0ab0c42adee042e9aac3e
+ms.sourcegitcommit: 408b78dd6eded4696469e316af7922a5991f2211
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899381"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53246291"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms Shell
 
@@ -50,7 +50,7 @@ Shell 提供根據飛出視窗和索引標籤的固定導覽使用者介面。 S
 
 ## <a name="bootstrapping-a-shell-application"></a>進行 Shell 應用程式的啟動程序
 
-藉由將 `App` 類別的 `MainPage` 屬性設定為新的 `Shell` 執行個體，以進行 Shell 應用程式的啟動程序：
+藉由將 `App` 類別的 `MainPage` 屬性設定為 Shell 檔案的執行個體，以進行 Shell 應用程式的啟動程序：
 
 ```csharp
 namespace TailwindTraders.Mobile
@@ -62,13 +62,13 @@ namespace TailwindTraders.Mobile
             InitializeComponent();
 
             Forms.SetFlags("Shell_Experimental");
-            MainPage = new Shell();
+            MainPage = new TheShell();
         }
     }
 }
 ```
 
-`Shell` 類別會說明應用程式視覺結構的 XAML 檔案。
+`TheShell` 類別會說明應用程式視覺結構的 XAML 檔案。
 
 > [!IMPORTANT]
 > Shell 目前為實驗性，只能在建立 `Shell` 執行個體之前藉由將 `Forms.SetFlags("Shell_Experimental");` 新增至您的 `App` 類別來使用，或是在叫用 `Forms.Init` 方法之前，新增至您的平台專案來使用。
@@ -83,13 +83,13 @@ Shell 檔案由三個階層式元素所組成：
 
 這些元素都不代表任何使用者介面，而是代表應用程式視覺結構的組織。 Shell 將會採用這些元素，並產生用於內容的導覽使用者介面。
 
-下列 XAML 顯示簡單的 `Shell` 檔案範例：
+下列 XAML 顯示簡單的 Shell 檔案範例：
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:TailwindTraders"
-       x:Class=" TailwindTraders.Shell"
+       xmlns:local="clr-namespace:TailwindTraders.Mobile.Features.Shell"
+       x:Class="TailwindTraders.Mobile.Features.Shell.TheShell"
        Title="TailwindTraders">
     <ShellItem Title="Home">
         <ShellSection>
@@ -97,7 +97,7 @@ Shell 檔案由三個階層式元素所組成：
                 <local:HomePage />
             </ShellContent>
         </ShellSection>
-    <ShellItem>
+    </ShellItem>
 </Shell>
 ```
 
@@ -117,8 +117,8 @@ Shell 檔案由三個階層式元素所組成：
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:TailwindTraders"
-       x:Class=" TailwindTraders.Shell"
+       xmlns:local="clr-namespace:TailwindTraders.Mobile.Features.Shell"
+       x:Class="TailwindTraders.Mobile.Features.Shell.TheShell"
        Title="TailwindTraders">
     <ShellItem Title="Home">
         <ShellSection>
@@ -349,7 +349,7 @@ Shell 檔案由三個階層式元素所組成：
 
 Shell 包含以 URI 為基礎的導覽體驗。 URI 提供已改進的導覽體驗，允許導覽至應用程式中的任何頁面，而不需要遵循設定的導覽階層。 此外，它還提供向後巡覽的能力，而不需瀏覽導覽堆疊上的所有頁面。
 
-這種以 URI 為基礎的導覽是利用路由來完成的，而路由是用來在應用程式內進行巡覽的 URI 區段。 `Shell` 檔案必須宣告路由配置、路由主機和路由：
+這種以 URI 為基礎的導覽是利用路由來完成的，而路由是用來在應用程式內進行巡覽的 URI 區段。 Shell 檔案必須宣告路由配置、路由主機和路由：
 
 ```xaml
 <Shell ...
@@ -362,9 +362,9 @@ Shell 包含以 URI 為基礎的導覽體驗。 URI 提供已改進的導覽體�
 
 合併後，`RouteScheme`、`RouteHost` 和 `Route` 屬性值會構成 `app://www.microsoft.com/tailwindtraders` 根 URI。
 
-`Shell` 類別中的每個項目，也可以定義可用於以程式設計方式巡覽的路由屬性。
+Shell 檔案中的每個項目，也可以定義可用於以程式設計方式巡覽的路由屬性。
 
-在 `Shell` 建構函式或在叫用路由之前執行的任何其他位置中，可以針對 Shell 元素 (例如 `MenuItem` 執行個體) 未代表的任何頁面，明確註冊其他路由：
+在 Shell 檔案建構函式或在叫用路由之前執行的任何其他位置中，可以針對 Shell 元素 (例如 `MenuItem` 執行個體) 未代表的任何頁面，明確註冊其他路由：
 
 ```csharp
 Routing.RegisterRoute("productcategory", typeof(ProductCategoryPage));
@@ -435,7 +435,7 @@ void OnShellNavigating(object sender, ShellNavigatingEventArgs e)
 
 `ShellNavigatingEventArgs` 類別提供下列屬性：
 
-| 屬性 | 類型 | 描述 |
+| 屬性 | 類型 | 說明 |
 |---|---|---|
 | 目前 | `ShellNavigationState` | 目前頁面的 URI。 |
 | 原始程式檔 | `ShellNavigationState` | 代表導覽起源的 URI。 |
@@ -447,7 +447,7 @@ void OnShellNavigating(object sender, ShellNavigatingEventArgs e)
 
 `ShellNavigatedEventArgs` 類別提供下列屬性：
 
-| 屬性 | 類型 | 描述 |
+| 屬性 | 類型 | 說明 |
 |---|---|---|
 | 目前 | `ShellNavigationState` | 目前頁面的 URI。 |
 | 上一步| `ShellNavigationState` | 上一頁的 URI。 |

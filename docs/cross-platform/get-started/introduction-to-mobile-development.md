@@ -6,12 +6,12 @@ ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: f3b1f5c11a02710de8d0ffd09741acb3017f5cb6
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: cefcc7084b2abab4af61f07ef1f33a4f4c363f69
+ms.sourcegitcommit: 6e84adf7358dc05f4d888ab2674de70d88214090
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "43780512"
+ms.lasthandoff: 12/31/2018
+ms.locfileid: "53815200"
 ---
 # <a name="introduction-to-mobile-development"></a>行動裝置應用程式開發簡介
 
@@ -61,7 +61,7 @@ Xamarin 提供兩個商業產品：Xamarin.iOS 和 Xamarin.Android。 它們都�
 
 Xamarin 應用程式是針對名為 Xamarin 行動設定檔的 .NET BCL 子集所建置。 此設定檔是專為行動應用程式所建立，並封裝於 MonoTouch.dll 及 Mono.Android.dll 中 (分別適用於 iOS 及 Android)。 這與 Silverlight (及 Moonlight) 應用程式是針對 Silverlight/Moonlight .NET 設定檔建置的情況相似。 事實上，Xamarin Mobile Profile 等同於新增大量 BCL 類別的 Silverlight 4.0 設定檔。
 
-如需可用組件及類別的完整清單，請參閱 [Xamarin.iOS 組件清單](~/cross-platform/internals/available-assemblies.md)及 [Xamarin.Android 組件清單](~/cross-platform/internals/available-assemblies.md)
+如需可用組件及類別的完整清單，請參閱 [Xamarin.iOS 組件清單](~/cross-platform/internals/available-assemblies.md?context=xamarin/ios)及 [Xamarin.Android 組件清單](~/cross-platform/internals/available-assemblies.md?context=xamarin/android)
 
 除 BCL 之外，這些 .dll 也包含幾乎整個 iOS SDK 和 Android SDK 的包裝函式，允許直接從 C# 叫用基礎 SDK API。
 
