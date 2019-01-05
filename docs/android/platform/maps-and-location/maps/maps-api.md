@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: 8df8a4f5e59675164e7d06b682c61094078edc4f
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: db442f45c615b680264e79262f62062eb6a6bfd5
+ms.sourcegitcommit: f5fce8308b2e7c39c5b0c904e5f38a4ce2b55c87
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171036"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012291"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>應用程式中使用 Google Maps API
 
@@ -45,7 +45,7 @@ Xamarin.Android 應用程式必須符合某些必要的先決條件，才可以�
 
 ### <a name="a-nameinstall-gps-sdk--install-the-google-play-services-sdk"></a><a name="install-gps-sdk" /> 安裝 Google Play 服務 SDK
 
-Google Play 服務是一種技術可讓 Android 應用程式，以利用各種 Google 功能，例如 Google +、 應用程式內計費及對應的 google。 這些功能都可在 Android 裝置上存取為背景服務，其包含在 f [Google Play Services APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)。
+Google Play 服務是一種技術可讓 Android 應用程式，以利用各種 Google 功能，例如 Google +、 應用程式內計費及對應的 google。 為背景服務，其包含在這些功能都可在 Android 裝置上存取[Google Play Services APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)。
 
 與 Google Play 服務的 android 應用程式是透過 Google Play 服務的用戶端程式庫互動。 此程式庫包含介面和類別，例如對應個別的服務。 下圖顯示 Android 應用程式和 Google Play 服務之間的關聯性：
 
@@ -236,7 +236,7 @@ public class MapWithMarkersActivity : AppCompatActivity, IOnMapReadyCallback
 
 下圖顯示三種不同類型的地圖，從左到右 （一般、 混合式地形）：
 
-[![三個對應範例螢幕擷取畫面： 一般、 混合和地形模型](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
+[![三個對應範例螢幕擷取畫面：一般、 混合和地形模型](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
 
 `GoogleMap.MapType`屬性用來設定或變更之地圖的類型會顯示。 下列程式碼片段示範如何顯示附屬對應。
 

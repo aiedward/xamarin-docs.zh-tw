@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 9c28cc892536ebe841fb28e8313cf380c7f051b6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f892774b4899fcbac46e8cc7bc2b0dd0336cc036
+ms.sourcegitcommit: f5fce8308b2e7c39c5b0c904e5f38a4ce2b55c87
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120420"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012278"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的 iOS 延伸模組
 
@@ -49,7 +49,7 @@ ms.locfileid: "50120420"
 - 延伸模組無法存取裝置的相機或麥克風，（雖然他們可以存取現有的媒體檔案）
 - 延伸模組無法接收空氣卸除的資料 （雖然它們可以傳輸透過無線方式卸除的資料）
 - [UIActionSheet](https://developer.xamarin.com/api/type/UIKit.UIActionSheet/)並[UIAlertView](https://developer.xamarin.com/api/type/UIKit.UIAlertView/)無法使用; 延伸模組必須使用[UIAlertController](https://developer.xamarin.com/api/type/UIKit.UIAlertController/)
-- 數個成員[uiapplication #](https://developer.xamarin.com/api/type/UIKit.UIApplication/)無法使用： [UIApplication.SharedApplication](https://developer.xamarin.com/api/property/UIKit.UIApplication.SharedApplication/)， `UIApplication.OpenURL`，`UIApplication.BeginIgnoringInteractionEvents`和 `UIApplication.EndIgnoringInteractionEvents`
+- 數個成員[uiapplication #](https://developer.xamarin.com/api/type/UIKit.UIApplication/)無法使用：[UIApplication.SharedApplication](https://developer.xamarin.com/api/property/UIKit.UIApplication.SharedApplication/)， `UIApplication.OpenURL`，`UIApplication.BeginIgnoringInteractionEvents`和 `UIApplication.EndIgnoringInteractionEvents`
 - iOS 會強制執行今天的延伸模組的 16 MB 記憶體使用量限制。
 - 預設鍵盤擴充功能不需要存取網路。 這會影響偵錯在裝置上 （這項限制不會強制執行在模擬器中），因為 Xamarin.iOS 進行偵錯運作需要網路存取。 就可以要求網路存取設定`Requests Open Access`至專案的 Info.plist 中的值`Yes`。 請參閱 Apple[自訂鍵盤指南](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html)如需鍵盤擴充功能限制的詳細資訊。
 
@@ -452,7 +452,7 @@ results.ObjectForKey("NSExtensionJavaScriptPreprocessingResultsKey");
 
 ## <a name="precautions-and-considerations"></a>預防措施和考量
 
-延伸模組有更少的記憶體提供給他們相較於應用程式。 它們應該執行快速並給使用者，與裝載於應用程式的最小入侵。 不過，擴充功能也應該提供特殊且實用的函式，加上品牌的 ui 可讓使用者識別擴充功能的開發人員使用的應用程式或其所屬的容器應用程式。
+延伸模組有提供給他們的應用程式要比更少記憶體。 它們應該執行快速並給使用者，與裝載於應用程式的最小入侵。 不過，擴充功能也應該提供特殊且實用的函式，加上品牌的 ui 可讓使用者識別擴充功能的開發人員使用的應用程式或其所屬的容器應用程式。
 
 指定這些緊密的需求，您應該只部署已徹底測試並最佳化效能和記憶體耗用量的延伸模組。 
 
