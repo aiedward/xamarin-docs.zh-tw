@@ -20,6 +20,8 @@ items:
     items:
     - name: 部署至 iOS 模擬器
       href: ios-simulator/deploy.md
+    - name: 版本資訊
+      href: /xamarin/tools/ios-simulator/release-notes/?context=xamarin/tools
   - name: 檢查程式
     href: inspector/index.md
     items:
@@ -27,11 +29,15 @@ items:
       href: inspector/install.md
     - name: 檢查即時應用程式
       href: inspector/inspect.md
+    - name: 版本資訊
+      href: /xamarin/tools/inspector/release-notes/
   - name: 程式碼剖析工具
     href: profiler/index.md
     items:
     - name: 疑難排解
       href: profiler/troubleshooting.md
+    - name: 版本資訊
+      href: /xamarin/tools/profiler/release-notes/
   - name: 活頁簿
     href: workbooks/index.md
     items:
@@ -66,6 +72,8 @@ items:
         href: workbooks/sdk/debugging.md
       - name: 範例整合
         href: workbooks/sdk/samples.md
+    - name: 版本資訊
+      href: /xamarin/tools/inspector/release-notes/
   - name: .NET 內嵌
     href: dotnet-embedding/index.md
     items:
@@ -102,6 +110,8 @@ items:
         href: dotnet-embedding/objective-c/platforms.md
     - name: 限制
       href: dotnet-embedding/limitations.md
+    - name: 版本資訊
+      href: /xamarin/tools/dotnet-embedding/release-notes/
   - name: 連續整合
     href: ci/index.md
     items:
@@ -116,9 +126,9 @@ items:
     - name: 搭配 Xamarin 使用 Jenkins
       href: ci/jenkins-walkthrough.md
   expanded: true
-ms.openlocfilehash: 207b6d84cfcde2a3d771bb5095cdc5f9dfcb991a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4e1f5a02b1f53d9b1f2acc75f31123f4a910c2dd
+ms.sourcegitcommit: 7db5be0bb11e8914e1d1760e5f969ed17731e3a1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50130200"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54114975"
