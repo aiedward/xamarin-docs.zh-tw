@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: a1458d53cb6e57b73317bce77ebdfd5aea64acca
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 5dae8f1907b9a61018e335a8fe19ad319d95741d
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061942"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207865"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>使用 Xamarin.Forms book 建立行動應用程式
 
 [![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples)
 
-<p><img src="images/cover-sml.png" title="使用 Xamarin.Forms Book 建立行動應用程式" align="left" />本書<i>使用 Xamarin.Forms 建立行動應用程式</i>Charles petzold 的是了解如何撰寫 Xamarin.Forms 應用程式的指南。 唯一的先決條件是知識的C#程式設計語言。 本書提供廣泛的瀏覽至 Xamarin.Forms 的使用者介面，並且也涵蓋動畫、 MVVM、 觸發程序、 行為、 自訂版面配置、 自訂轉譯器及其他更多。 
+<p><img src="images/cover-sml.png" title="使用 Xamarin.Forms Book 建立行動應用程式" align="left" />本書<i>使用 Xamarin.Forms 建立行動應用程式</i>Charles petzold 的是了解如何撰寫 Xamarin.Forms 應用程式的指南。 唯一的先決條件是知識的C#程式設計語言。 本書提供廣泛的瀏覽至 Xamarin.Forms 的使用者介面，並且也涵蓋動畫、 MVVM、 觸發程序、 行為、 自訂版面配置、 自訂轉譯器及其他更多。
 
-本書已在 2016 年春季發行，並且未在那之後更新。 有很多活頁簿中，仍有價值，但某些[資料已過期](#ways-in-which-the-book-is-outdated)，而且某些主題也無法再完全正確或已完成。 
+本書已在 2016 年春季發行，並且未在那之後更新。 有很多活頁簿中，仍有價值，但某些[資料已過期](#ways-in-which-the-book-is-outdated)，而且某些主題也無法再完全正確或已完成。
 
 ## <a name="download-ebook-for-free"></a>免費下載電子書
 
@@ -48,7 +48,7 @@ ms.locfileid: "53061942"
 
 - 如需更詳細說明的 Xamarin.Forms 類別、 結構、 屬性、 列舉和其他等等的 API 文件的連結
 
-這些摘要也會指出一章中的資料可能會當[有點過時](#ways-in-which-the-book-is-outdated)。 
+這些摘要也會指出一章中的資料可能會當[有點過時](#ways-in-which-the-book-is-outdated)。
 
 ## <a name="download-chapters-and-summaries"></a>下載章節和摘要
 
@@ -85,13 +85,13 @@ ms.locfileid: "53061942"
 
 ## <a name="ways-in-which-the-book-is-outdated"></a>本書已過期的方式
 
-因為發行<i>使用 Xamarin.Forms 建立行動應用程式</i>，多項新功能已新增至 Xamarin.Forms。 中的個別文章中所述的這些新功能[Xamarin.Forms](/xamarin/)文件。 
+因為發行<i>使用 Xamarin.Forms 建立行動應用程式</i>，多項新功能已新增至 Xamarin.Forms。 中的個別文章中所述的這些新功能[Xamarin.Forms](/xamarin/)文件。
 
 其他的變更已經造成的某些活頁簿可能已過時的內容：
 
 ### <a name="net-standard-20-libraries-have-replaced-portable-class-libraries"></a>.NET standard 2.0 程式庫已取代的可攜式類別庫
 
-Xamarin.Forms 應用程式通常會使用程式庫共用不同的平台之間的程式碼。 一開始，這是可攜式類別庫 (PCL)。 有許多參考 Pcl 整個活頁簿和章節摘要。 
+Xamarin.Forms 應用程式通常會使用程式庫共用不同的平台之間的程式碼。 一開始，這是可攜式類別庫 (PCL)。 有許多參考 Pcl 整個活頁簿和章節摘要。
 
 可攜式類別庫中已取代為.NET Standard 2.0 程式庫，本文所述[.NET Standard 2.0 支援在 Xamarin.Forms 中](~/xamarin-forms/internals/net-standard.md)。 所有[範例程式碼](https://github.com/xamarin/xamarin-forms-book-samples)活頁簿中已更新為使用.NET Standard 2.0 程式庫。
 
@@ -101,25 +101,25 @@ Xamarin.Forms 應用程式通常會使用程式庫共用不同的平台之間的
 
 ### <a name="the-role-of-xaml-has-been-elevated"></a>XAML 的角色具有更高
 
-<i>使用 Xamarin.Forms 建立行動應用程式</i>一開始會描述如何撰寫使用 C# 的 Xamarin.Forms 應用程式。 Extensible Application Markup Language (XAML) 不之前所引入[第 7 章。XAML vs。程式碼](summaries/chapter07.md)。 
+<i>使用 Xamarin.Forms 建立行動應用程式</i>一開始會描述如何撰寫使用 C# 的 Xamarin.Forms 應用程式。 Extensible Application Markup Language (XAML) 不之前所引入[第 7 章。XAML vs。程式碼](summaries/chapter07.md)。
 
 XAML 現在有更大的角色，在 Xamarin.Forms 中。 與 Visual Studio 一起散發的 Xamarin.Forms 方案範本會建立以 XAML 為基礎的分頁檔。 盡早使用 Xamarin.Forms 的開發人員應該先熟悉 XAML。 [可延伸應用程式標記語言 (XAML)](~/xamarin-forms/xaml/index.md) Xamarin.Forms 文件章節包含有關 XAML 可協助您開始的數個文件。
 
-### <a name="supported-platforms"></a>支援的平台 
+### <a name="supported-platforms"></a>支援的平台
 
-Xamarin.Forms 不再支援 Windows 8.1 和 Windows Phone 8.1。 
+Xamarin.Forms 不再支援 Windows 8.1 和 Windows Phone 8.1。
 
 本書有時甚至會使參考_Windows 執行階段_。 這是一個詞彙，包含用於數個版本的 Windows 和 Windows Phone 的 Windows API。 較新版本的 Xamarin.Forms 會限制本身支援通用 Windows 平台，這 API 適用於 Windows 10 和 Windows 10 行動裝置。
 
-.NET Standard 2.0 程式庫不支援任何版本的 Windows 10 行動裝置。 因此，使用.NET Standard 程式庫的 Xamarin.Forms 應用程式將不會執行 Windows 10 行動裝置版裝置上。 Xamarin.Forms 應用程式繼續執行 Windows 10 desktop 版本 10.0.16299.0 和更新版本。 
+.NET Standard 2.0 程式庫不支援任何版本的 Windows 10 行動裝置。 因此，使用.NET Standard 程式庫的 Xamarin.Forms 應用程式將不會執行 Windows 10 行動裝置版裝置上。 Xamarin.Forms 應用程式繼續執行 Windows 10 desktop 版本 10.0.16299.0 和更新版本。
 
-Xamarin.Forms 可預覽支援[Mac](~/xamarin-forms/platform/mac.md)， [WPF](~/xamarin-forms/platform/wpf.md)， [GTK #](~/xamarin-forms/platform/gtk.md)，以及[Tizen](/xamarin-forms/platform/tizen.md)平台。
+Xamarin.Forms 可預覽支援[Mac](~/xamarin-forms/platform/other/mac.md)， [WPF](~/xamarin-forms/platform/other/wpf.md)， [GTK #](~/xamarin-forms/platform/other/gtk.md)，以及[Tizen](/xamarin-forms/platform/other/tizen.md)平台。
 
 ### <a name="chapter-summaries"></a>章節摘要
 
 章節摘要包括有關 Xamarin.Forms 中的變更，因為本書所撰寫的資訊。 這些通常是備忘稿的形式：
 
-> [!NOTE] 
+> [!NOTE]
 > 每個頁面上的提示會指出其中 Xamarin.Forms 有分歧活頁簿中所呈現的題材。
 
 ### <a name="samples"></a>範例

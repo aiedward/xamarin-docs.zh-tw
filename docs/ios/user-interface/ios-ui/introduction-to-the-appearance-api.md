@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/15/2018
-ms.openlocfilehash: 86055932edf82f04e11c9ae8dd684a3d77c3d830
-ms.sourcegitcommit: da2260a882dbda02732e21cad5cc9a9dd35e27e7
+ms.openlocfilehash: bfbc902b0912527fea6aaa58c6706ef5a0ccbf8e
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51709224"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207917"
 ---
 # <a name="appearance-api-in-xamarinios"></a>在 Xamarin.iOS 中的外觀 API
 
@@ -69,7 +69,7 @@ progress2.TrackTintColor = UIColor.FromRGB (197,255,132);
 
 ## <a name="using-uiappearance-in-xamarinforms"></a>在 Xamarin.Forms 中使用 UIAppearance
 
-外觀 API 可能十分有用[設定的 iOS 應用程式的樣式](~/xamarin-forms/platform/ios/theme.md#uiappearance)Xamarin.Forms 方案中。 中的幾行`AppDelegate`類別可協助實作特定的色彩配置，而不需要建立[自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)。
+外觀 API 可能十分有用[設定的 iOS 應用程式的樣式](~/xamarin-forms/platform/ios/formatting.md#uiappearance)Xamarin.Forms 方案中。 中的幾行`AppDelegate`類別可協助實作特定的色彩配置，而不需要建立[自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)。
 
 ### <a name="custom-themes-and-uiappearance"></a>自訂佈景主題和 UIAppearance
 
@@ -83,7 +83,7 @@ iOS 可讓許多的視覺屬性的使用者介面控制項，若要設定使用�
 sg1.TintColor = UIColor.Magenta;
 ```
 
-或者，在設計工具的 [屬性] 面板中設定的值： 
+或者，在設計工具的 [屬性] 面板中設定的值：
 
 [![](introduction-to-the-appearance-api-images/propertiespadtint.png "屬性面板濃淡")](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
 
@@ -109,4 +109,4 @@ UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 
 - [外觀 （範例）](https://developer.xamarin.com/samples/monotouch/Appearance/)
 - [UIAppearance 通訊協定參考](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAppearance_Protocol/)
-- [在 Xamarin.Forms 中的外觀](~/xamarin-forms/platform/ios/theme.md#uiappearance)
+- [在 Xamarin.Forms 中的外觀](~/xamarin-forms/platform/ios/formatting.md#uiappearance)

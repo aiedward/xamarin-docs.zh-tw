@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: 5eb3348df39b8931d8cdd89d8c6f54b8bb3024a0
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 6eb1e9a6f9c46fd7337003e05daa10d408fb5108
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057427"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54208008"
 ---
 # <a name="adding-data-to-a-pickers-items-collection"></a>將資料加入選擇器的項目集合
 
@@ -58,7 +58,7 @@ picker.Items.Add("Japanese Macaque");
 A [ `Picker` ](xref:Xamarin.Forms.Picker)支援一次選取一個項目。 當使用者選取項目， [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged)引發事件，而[ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)屬性更新為整數，代表選取清單中項目的索引。 `SelectedIndex`屬性是以零為起始的數字，指出使用者已選取的項目。 如果未不選取任何項目，則這是當`Picker`先建立並初始化，`SelectedIndex`會是-1。
 
 > [!NOTE]
-> 項目中的選取行為[ `Picker` ](xref:Xamarin.Forms.Picker)可以自訂與特定平台在 iOS 上。 如需詳細資訊，請參閱 <<c0> [ 控制選擇器項目選取](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#picker_update_mode)。
+> 項目中的選取行為[ `Picker` ](xref:Xamarin.Forms.Picker)可以自訂與特定平台在 iOS 上。 如需詳細資訊，請參閱 <<c0> [ 控制選擇器項目選取](~/xamarin-forms/platform/ios/picker-selection.md)。
 
 下列程式碼範例示範`OnPickerSelectedIndexChanged`事件處理常式方法，也就是執行的時機[ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged)引發事件：
 

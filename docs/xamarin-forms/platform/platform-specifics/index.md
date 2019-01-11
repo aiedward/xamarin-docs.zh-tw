@@ -1,69 +1,24 @@
 ---
 title: 平台特性
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用及建立平台特性。
 ms.prod: xamarin
 ms.assetid: 4729DB9C-8800-4E29-9D66-3BE13C5F8C94
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/01/2018
-ms.openlocfilehash: 09a4bd6d51de7768bb1a976e04d4548e44a3b04e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 44d0cf3a257c00b448a6c70064af2f8e3ba63f69
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056067"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207787"
 ---
 # <a name="platform-specifics"></a>平台特性
 
 [![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 _平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。_
-
-下列平台特有的功能被供 Xamarin.Forms 檢視、 頁面和配置而定：
-
-|iOS|Android|Windows|
-|--- |--- |--- |
-|[VisualElement.BlurEffect](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#blur)|[VisualElement.Elevation](~/xamarin-forms/platform/platform-specifics/consuming/android.md#elevation)|[VisualElement.AccessKey、 VisualElement.AccessKeyPlacement、 VisualElement.AccessKeyHorizontalOffset 和 VisualElement.AccessKeyVerticalOffset](~/xamarin-forms/platform/platform-specifics/consuming/windows.md#visualelement-accesskeys)|
-|[VisualElement.IsLegacyColorModeEnabled](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#legacy-color-mode)|[VisualElement.IsLegacyColorModeEnabled](~/xamarin-forms/platform/platform-specifics/consuming/android.md#legacy-color-mode)|[VisualElement.IsLegacyColorModeEnabled](~/xamarin-forms/platform/platform-specifics/consuming/windows.md#legacy-color-mode)|
-|[VisualElement.IsShadowEnabled](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#drop-shadow)|
-
-Xamarin.Forms 檢視被提供下列平台特有的功能：
-
-|iOS|Android|Windows|
-|--- |--- |--- |
-|[Entry.AdjustsFontSizeToFitWidth](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#adjust_font_size)|[Button.UseDefaultPadding 和 Button.UseDefaultShadow](~/xamarin-forms/platform/platform-specifics/consuming/android.md#button-padding-shadow)|[InputView.DetectReadingOrderFromContent Label.DetectReadingOrderFromContent](~/xamarin-forms/platform/platform-specifics/consuming/windows.md#inputview-readingorder)|
-|[Entry.CursorColor](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#entry-cursorcolor)|[Entry.ImeOptions](~/xamarin-forms/platform/platform-specifics/consuming/android.md#entry-imeoptions)|[ListView.SelectionMode](~/xamarin-forms/platform/platform-specifics/consuming/windows.md#listview-selectionmode)|
-|[ListView.SeparatorStyle](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#listview-separatorstyle)|[ImageButton.IsShadowEnabled](~/xamarin-forms/platform/platform-specifics/consuming/android.md#imagebutton-drop-shadow)|[SearchBar.IsSpellCheckEnabled](~/xamarin-forms/platform/platform-specifics/consuming/windows.md#searchbar-spellcheck)|
-|[Picker.UpdateMode](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#picker_update_mode)|[ListView.IsFastScrollEnabled](~/xamarin-forms/platform/platform-specifics/consuming/android.md#fastscroll)|[WebView.IsJavaScriptAlertEnabled](~/xamarin-forms/platform/platform-specifics/consuming/windows.md#webview-javascript-alert)|
-|[Slider.UpdateOnTap](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#slider-updateontap)|[WebView.MixedContentMode](~/xamarin-forms/platform/platform-specifics/consuming/android.md#webview-mixed-content)|
-
-Xamarin.Forms 頁面會提供下列平台特有的功能：
-
-|iOS|Android|Windows|
-|--- |--- |--- |
-|[NavigationPage.HideSeparatorBar](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#navigationpage-hideseparatorbar)|[NavigationPage.BarHeight](~/xamarin-forms/platform/platform-specifics/consuming/android.md#navigationpage-barheight)|[MasterDetailPage.CollapsedPaneWidth 和 MasterDetailPage.CollapseStyle](~/xamarin-forms/platform/platform-specifics/consuming/windows.md#collapsable_navigation_bar)|
-|[NavigationPage.IsNavigationBarTranslucent](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#translucent_navigation_bar)|[TabbedPage.IsSmoothScrollEnabled](~/xamarin-forms/platform/platform-specifics/consuming/android.md#tabbedpage-transition-animations)|[Page.ToolbarPlacement](~/xamarin-forms/platform/platform-specifics/consuming/windows.md#toolbar_placement)|
-|[NavigationPage.StatusBarTextColorMode](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#status_bar_color_mode)|[TabbedPage.IsSwipePagingEnabled](~/xamarin-forms/platform/platform-specifics/consuming/android.md#enable_swipe_paging)|[TabbedPage.HeaderIconsEnabled 和 TabbedPage.HeaderIconsSize](~/xamarin-forms/platform/platform-specifics/consuming/windows.md#tabbedpage-icons)|
-|[NavigationPage.PrefersLargeTitles](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#large_title)|[TabbedPage.ToolbarPlacement、 TabbedPage.BarItemColor 和 TabbedPage.BarSelectedItemColor](~/xamarin-forms/platform/platform-specifics/consuming/android.md#tabbedpage-toolbar)|
-|[Page.ModalPresentationStyle](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#modal-page-presentation-style)|
-|[Page.PrefersStatusBarHidden 和 Page.PreferredStatusBarUpdateAnimation](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#set_status_bar_visibility)|
-|[Page.UseSafeArea](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#safe_area_layout)|
-
-下列平台特有的功能被供 Xamarin.Forms 版面配置：
-
-|iOS|
-|--- |
-|[ScrollView.ShouldDelayContentTouches](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#delay_content_touches)|
-
-下列平台特有的功能提供適用於 Xamarin.Forms [ `Application` ](xref:Xamarin.Forms.Application)類別：
-
-|iOS|Android|
-|--- |--- |
-|[Application.HandleControlUpdatesOnMainThread](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#update-on-main-thread)|[Application.WindowSoftInputModeAdjust](~/xamarin-forms/platform/platform-specifics/consuming/android.md#soft_input_mode)|
-|[Application.PanGestureRecognizerShouldRecognizeSimultaneously](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#simultaneous-pan-gesture)|[Application.SendDisappearingEventOnPause、 Application.SendAppearingEventOnResume 和 Application.ShouldPreserveKeyboardOnResume](~/xamarin-forms/platform/platform-specifics/consuming/android.md#disable_lifecycle_events)|
-
-## <a name="consuming-platform-specifics"></a>使用平台特性
 
 使用特定平台-透過 XAML，或透過 fluent 的程式碼 API 的程序如下所示：
 
@@ -79,11 +34,254 @@ Xamarin.Forms 頁面會提供下列平台特有的功能：
 
 透過平台特性取用`On<T>`fluent 的程式碼 API 傳回[ `IPlatformElementConfiguration` ](xref:Xamarin.Forms.IPlatformElementConfiguration`2)物件。 這可讓具有階層式方法的相同物件上叫用的多個平台特性。
 
-如需有關平台特性的詳細資訊，請參閱[耗用平台特性](~/xamarin-forms/platform/platform-specifics/consuming/index.md)並[建立平台特性](~/xamarin-forms/platform/platform-specifics/creating.md)。
+如需有關提供 Xamarin.Forms 的平台特性的詳細資訊，請參閱[iOS 平台特性](~/xamarin-forms/platform/ios/index.md)， [Android 平台特性](~/xamarin-forms/platform/android/index.md)，和[Windows 平台特性](~/xamarin-forms/platform/windows/index.md).
+
+## <a name="creating-platform-specifics"></a>建立平台特性
+
+廠商可以建立自己的平台特性，會有的效果。 效果會提供專用的功能，則透過特定平台公開。 結果是可以在透過 XAML，以及透過 fluent 的程式碼 API 更容易取用的效果。
+
+建立特定平台的程序如下所示：
+
+1. 實作特定功能的效應。 如需詳細資訊，請參閱 <<c0> [ 建立效果](~/xamarin-forms/app-fundamentals/effects/creating.md)。
+1. 建立平台特定類別會公開 （expose） 的效果。 如需詳細資訊，請參閱 <<c0> [ 建立平台特定類別](#creating)。
+1. 在平台特定類別中實作以允許特定平台-使用透過 XAML 附加的屬性。 如需詳細資訊，請參閱 <<c0> [ 將附加屬性加入](#attached_property)。
+1. 在平台特定類別中實作以允許透過 fluent 的程式碼 API 使用平台專屬的擴充方法。 如需詳細資訊，請參閱 <<c0> [ 加入擴充方法](#extension_methods)。
+1. 修改影響實作，讓效果僅適用於特定平台叫用為效果相同的平台上。 如需詳細資訊，請參閱 <<c0> [ 建立效果](#creating_the_effect)。
+
+公開為平台特定效果的結果是，效果可以更輕鬆地使用透過 XAML，以及透過 fluent 的程式碼 API。
+
+> [!NOTE]
+> 它被設想廠商會使用此技巧來建立自己平台特性，以方便取用的使用者。 雖然使用者可以選擇建立自己的平台特性，請注意，它需要更多的程式碼，比建立及使用的效果。
+
+[範例應用程式](https://developer.xamarin.com/samples/xamarin-forms/userinterface/shadowplatformspecific/)示範`Shadow`將所顯示的文字陰影的平台特定[ `Label` ](xref:Xamarin.Forms.Label)控制項：
+
+![](images/screenshots.png "陰影特定平台")
+
+[範例應用程式](https://developer.xamarin.com/samples/xamarin-forms/userinterface/shadowplatformspecific/)實作`Shadow`特定平台上，請在每個平台，為方便了解。 不過，除了每個平台特定效果實作陰影類別的實作是每個平台基本相同的。 因此，本指南著重於實作陰影類別和相關聯的單一平台上的效果。
+
+如需效果的詳細資訊，請參閱[效果的自訂控制項](~/xamarin-forms/app-fundamentals/effects/index.md)。
+
+### <a name="creating-a-platform-specific-class"></a>建立平台特定類別
+
+特定平台會建立為`public static`類別：
+
+```csharp
+namespace MyCompany.Forms.PlatformConfiguration.iOS
+{
+  public static Shadow
+  {
+    ...
+  }
+}
+```
+
+下列各節討論實作`Shadow`平台特定和相關聯的效果。
+
+#### <a name="adding-an-attached-property"></a>加入附加的屬性
+
+附加的屬性必須新增至`Shadow`平台特定，以允許透過 XAML 的耗用量：
+
+```csharp
+namespace MyCompany.Forms.PlatformConfiguration.iOS
+{
+    using System.Linq;
+    using Xamarin.Forms;
+    using Xamarin.Forms.PlatformConfiguration;
+    using FormsElement = Xamarin.Forms.Label;
+
+    public static class Shadow
+    {
+        const string EffectName = "MyCompany.LabelShadowEffect";
+
+        public static readonly BindableProperty IsShadowedProperty =
+            BindableProperty.CreateAttached("IsShadowed",
+                                            typeof(bool),
+                                            typeof(Shadow),
+                                            false,
+                                            propertyChanged: OnIsShadowedPropertyChanged);
+
+        public static bool GetIsShadowed(BindableObject element)
+        {
+            return (bool)element.GetValue(IsShadowedProperty);
+        }
+
+        public static void SetIsShadowed(BindableObject element, bool value)
+        {
+            element.SetValue(IsShadowedProperty, value);
+        }
+
+        ...
+
+        static void OnIsShadowedPropertyChanged(BindableObject element, object oldValue, object newValue)
+        {
+            if ((bool)newValue)
+            {
+                AttachEffect(element as FormsElement);
+            }
+            else
+            {
+                DetachEffect(element as FormsElement);
+            }
+        }
+
+        static void AttachEffect(FormsElement element)
+        {
+            IElementController controller = element;
+            if (controller == null || controller.EffectIsAttached(EffectName))
+            {
+                return;
+            }
+            element.Effects.Add(Effect.Resolve(EffectName));
+        }
+
+        static void DetachEffect(FormsElement element)
+        {
+            IElementController controller = element;
+            if (controller == null || !controller.EffectIsAttached(EffectName))
+            {
+                return;
+            }
+
+            var toRemove = element.Effects.FirstOrDefault(e => e.ResolveId == Effect.Resolve(EffectName).ResolveId);
+            if (toRemove != null)
+            {
+                element.Effects.Remove(toRemove);
+            }
+        }
+    }
+}
+```
+
+`IsShadowed`附加的屬性用來新增`MyCompany.LabelShadowEffect`生效，並從控制項移除的`Shadow`類別會附加至。 此連接屬性暫存器`OnIsShadowedPropertyChanged`屬性的值變更時，會執行的方法。 接著，這個方法會呼叫`AttachEffect`或`DetachEffect`值為基礎的方法來新增或移除效果`IsShadowed`附加屬性。 加入或移除控制項，藉由修改控制項的效果[ `Effects` ](xref:Xamarin.Forms.Element.Effects)集合。
+
+> [!NOTE]
+> 請注意，效果的解決方式是指定為解析群組名稱和指定效果實作的唯一識別碼的串連的值。 如需詳細資訊，請參閱 <<c0> [ 建立效果](~/xamarin-forms/app-fundamentals/effects/creating.md)。
+
+如需有關附加屬性的詳細資訊，請參閱[附加屬性](~/xamarin-forms/xaml/attached-properties.md)。
+
+#### <a name="adding-extension-methods"></a>加入擴充方法
+
+擴充方法必須新增至`Shadow`平台特定，以允許透過 fluent 的程式碼 API 的耗用量：
+
+```csharp
+namespace MyCompany.Forms.PlatformConfiguration.iOS
+{
+    using System.Linq;
+    using Xamarin.Forms;
+    using Xamarin.Forms.PlatformConfiguration;
+    using FormsElement = Xamarin.Forms.Label;
+
+    public static class Shadow
+    {
+        ...
+        public static bool IsShadowed(this IPlatformElementConfiguration<iOS, FormsElement> config)
+        {
+            return GetIsShadowed(config.Element);
+        }
+
+        public static IPlatformElementConfiguration<iOS, FormsElement> SetIsShadowed(this IPlatformElementConfiguration<iOS, FormsElement> config, bool value)
+        {
+            SetIsShadowed(config.Element, value);
+            return config;
+        }
+        ...
+    }
+}
+```
+
+`IsShadowed`並`SetIsShadowed`擴充方法叫用 get 和 set 存取子的`IsShadowed`附加屬性，分別。 每個擴充方法作`IPlatformElementConfiguration<iOS, FormsElement>`型別，指定可以在上叫用平台專屬[ `Label` ](xref:Xamarin.Forms.Label) iOS 中的執行個體。
+
+#### <a name="creating-the-effect"></a>建立的效果
+
+`Shadow`特定平台將加入`MyCompany.LabelShadowEffect`要[ `Label` ](xref:Xamarin.Forms.Label)，並將它移除。 下列程式碼範例示範`LabelShadowEffect`針對 iOS 專案的實作：
+
+```csharp
+[assembly: ResolutionGroupName("MyCompany")]
+[assembly: ExportEffect(typeof(LabelShadowEffect), "LabelShadowEffect")]
+namespace ShadowPlatformSpecific.iOS
+{
+    public class LabelShadowEffect : PlatformEffect
+    {
+        protected override void OnAttached()
+        {
+            UpdateShadow();
+        }
+
+        protected override void OnDetached()
+        {
+        }
+
+        protected override void OnElementPropertyChanged(PropertyChangedEventArgs args)
+        {
+            base.OnElementPropertyChanged(args);
+
+            if (args.PropertyName == Shadow.IsShadowedProperty.PropertyName)
+            {
+                UpdateShadow();
+            }
+        }
+
+        void UpdateShadow()
+        {
+            try
+            {
+                if (((Label)Element).OnThisPlatform().IsShadowed())
+                {
+                    Control.Layer.CornerRadius = 5;
+                    Control.Layer.ShadowColor = UIColor.Black.CGColor;
+                    Control.Layer.ShadowOffset = new CGSize(5, 5);
+                    Control.Layer.ShadowOpacity = 1.0f;
+                }
+                else if (!((Label)Element).OnThisPlatform().IsShadowed())
+                {
+                    Control.Layer.ShadowOpacity = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Cannot set property on attached control. Error: ", ex.Message);
+            }
+        }
+    }
+}
+```
+
+`UpdateShadow`方法會設定`Control.Layer`屬性，以建立陰影，前提是`IsShadowed`附加的屬性設定為`true`，並假設`Shadow`特定平台叫用相同的平台上，效果被實作的。 這項檢查會執行與`OnThisPlatform`方法。
+
+如果`Shadow.IsShadowed`附加屬性值變更在執行階段，回應所移除之陰影效果需求。 因此，覆寫的版本的`OnElementPropertyChanged`方法來呼叫回應可繫結的屬性變更`UpdateShadow`方法。
+
+如需建立效果的詳細資訊，請參閱[建立影響](~/xamarin-forms/app-fundamentals/effects/creating.md)並[傳遞為附加屬性的效果參數](~/xamarin-forms/app-fundamentals/effects/passing-parameters/attached-properties.md)。
+
+### <a name="consuming-the-platform-specific"></a>使用特定平台
+
+`Shadow`特定平台由在 XAML 中設定`Shadow.IsShadowed`; 附加屬性`boolean`值：
+
+```xaml
+<ContentPage xmlns:ios="clr-namespace:MyCompany.Forms.PlatformConfiguration.iOS" ...>
+  ...
+  <Label Text="Label Shadow Effect" ios:Shadow.IsShadowed="true" ... />
+  ...
+</ContentPage>
+```
+
+或者，它可以取用從 C# 使用 fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using MyCompany.Forms.PlatformConfiguration.iOS;
+
+...
+
+shadowLabel.On<iOS>().SetIsShadowed(true);
+```
 
 ## <a name="related-links"></a>相關連結
 
-- [使用平台特性](~/xamarin-forms/platform/platform-specifics/consuming/index.md)
-- [建立平台特性](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
-- [PlatformConfiguration](xref:Xamarin.Forms.PlatformConfiguration)
+- [ShadowPlatformSpecific （範例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/shadowplatformspecific/)
+- [iOS 平台特性](~/xamarin-forms/platform/ios/index.md)
+- [Android 平台特性](~/xamarin-forms/platform/android/index.md)
+- [Windows 平台特性](~/xamarin-forms/platform/windows/index.md)
+- [自訂控制項產生的作用](~/xamarin-forms/app-fundamentals/effects/index.md)
+- [附加屬性](~/xamarin-forms/xaml/attached-properties.md)
+- [PlatformConfiguration API](xref:Xamarin.Forms.PlatformConfiguration)

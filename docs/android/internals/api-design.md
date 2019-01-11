@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 53348e15d1ecc74f50cacdd422da5c80af802d1b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 54479a7ed66c83d1d97d51cc93e3df3241ec740f
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110711"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207930"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Xamarin.Android API 設計原則
 
@@ -111,9 +111,9 @@ if (goodSource.Count != 4) // false
 
 Java 方法會轉換成時適當的屬性：
 
--  Java 方法配對`T getFoo()`並`void setFoo(T)`轉換成`Foo`屬性。 範例： [Activity.Intent](https://developer.xamarin.com/api/property/Android.App.Activity.Intent/)。
+-  Java 方法配對`T getFoo()`並`void setFoo(T)`轉換成`Foo`屬性。 範例：[Activity.Intent](https://developer.xamarin.com/api/property/Android.App.Activity.Intent/)。
 
--  下列 Java 方法`getFoo()`轉換成 [唯讀] Foo 屬性。 範例： [Context.PackageName](https://developer.xamarin.com/api/property/Android.Content.Context.PackageName/)。
+-  下列 Java 方法`getFoo()`轉換成 [唯讀] Foo 屬性。 範例：[Context.PackageName](https://developer.xamarin.com/api/property/Android.Content.Context.PackageName/)。
 
 -  僅限集合屬性不會產生。
 
@@ -225,7 +225,7 @@ Java 介面可以包含三個集合的成員，其中兩個從 C# 會造成問�
 
 1. 方法
 
-1. 類型
+1. 型別
 
 1. 欄位
 
@@ -322,6 +322,6 @@ public class Resource {
 在這些情況下，我們儘可能相關的常數群組到.NET 的列舉型別，並重新對應的方法，以改為讓列舉型別。
 如此一來，我們就能夠提供 IntelliSense 的可能值的選取項目。
 
-上述範例中會變成： [Activity.RequestWindowFeature (WindowFeatures featureId)](https://developer.xamarin.com/api/member/Android.App.Activity.RequestWindowFeature/p/Android.Views.WindowFeatures/))。
+上述範例中會變成：[Activity.RequestWindowFeature (WindowFeatures featureId)](https://developer.xamarin.com/api/member/Android.App.Activity.RequestWindowFeature/p/Android.Views.WindowFeatures/)。
 
-請注意，這是非常手動的程序，找出哪些常數在一起，屬於哪些 Api 使用這些常數。 請提出任何常數用於 bug 中的 API，就能更表示列舉型別。
+請注意，這是非常手動的程序，找出哪些常數在一起，屬於哪些 Api 使用這些常數。 請提出 bug 會進一步列舉型別，以在 API 中使用的任何常數。
