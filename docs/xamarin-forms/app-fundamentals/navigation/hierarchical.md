@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: 0511cd1a4cf76368623c56ef53cd98323114f98e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: f69acd60d7a80607528e4a39ee6a8bfbc19711f5
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058986"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207969"
 ---
 # <a name="hierarchical-navigation"></a>階層式導覽
 
@@ -344,9 +344,9 @@ public class TitleViewPage : ContentPage
 > [!IMPORTANT]
 > 除非使用 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 和 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 屬性指定檢視的大小，否則許多檢視不會出現在導覽列中。 或者，您可以將檢視包裝在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中，並將 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性設定為適當的值。
 
-請注意，由於 [`Layout`](xref:Xamarin.Forms.Layout) 類別衍生自 [`View`](xref:Xamarin.Forms.View) 類別，因此可設定 [`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 附加屬性，顯示包含多個檢視的配置類別。 在 iOS 和通用 Windows 平台 (UWP) 上，無法變更導覽列的高度，因此如果導覽列中所顯示檢視大於導覽列的預設大小，則會發生裁剪。 不過，在 Android 上，則可以變更導覽列的高度，方法是將 [`NavigationPage.BarHeight`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty) 可繫結屬性設定為表示新高度的 `double`。 如需詳細資訊，請參閱[設定 NavigationPage 上的導覽列高度](~/xamarin-forms/platform/platform-specifics/consuming/android.md#navigationpage-barheight)。
+請注意，由於 [`Layout`](xref:Xamarin.Forms.Layout) 類別衍生自 [`View`](xref:Xamarin.Forms.View) 類別，因此可設定 [`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 附加屬性，顯示包含多個檢視的配置類別。 在 iOS 和通用 Windows 平台 (UWP) 上，無法變更導覽列的高度，因此如果導覽列中所顯示檢視大於導覽列的預設大小，則會發生裁剪。 不過，在 Android 上，則可以變更導覽列的高度，方法是將 [`NavigationPage.BarHeight`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty) 可繫結屬性設定為表示新高度的 `double`。 如需詳細資訊，請參閱[設定 NavigationPage 上的導覽列高度](~/xamarin-forms/platform/android/navigationpage-bar-height.md)。
 
-或者，您可以將一些內容放在導覽列中，並將一些內容放在色彩符合導覽列的頁面內容頂端檢視中，來建議擴充導覽列。 此外，在 iOS 上，您可以將 [`NavigationPage.HideNavigationBarSeparator`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) 可繫結屬性設定為 `true`，來移除導覽列底部的分隔線和陰影。 如需詳細資訊，請參閱[隱藏 NavigationPage 上的導覽列分隔線](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#navigationpage-hideseparatorbar)。
+或者，您可以將一些內容放在導覽列中，並將一些內容放在色彩符合導覽列的頁面內容頂端檢視中，來建議擴充導覽列。 此外，在 iOS 上，您可以將 [`NavigationPage.HideNavigationBarSeparator`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) 可繫結屬性設定為 `true`，來移除導覽列底部的分隔線和陰影。 如需詳細資訊，請參閱[隱藏 NavigationPage 上的導覽列分隔線](~/xamarin-forms/platform/ios/navigation-bar-separator.md)。
 
 > [!NOTE]
 > [`BackButtonTitle`](xref:Xamarin.Forms.NavigationPage.BackButtonTitleProperty)、[`Title`](xref:Xamarin.Forms.Page.Title)、[`TitleIcon`](xref:Xamarin.Forms.NavigationPage.TitleIconProperty) 和 [`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 屬性全都能定義佔用導覽列上空間的值。 由於導覽列大小會依平台和螢幕大小而有所不同，因此設定上述所有屬性將會由於可用空間有限而導致衝突。 與其嘗試使用這些屬性的組合，您可能會發現單獨設定 `TitleView` 屬性更容易取得您想要的導覽列設計。
@@ -355,7 +355,7 @@ public class TitleViewPage : ContentPage
 
 在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 的導覽列中顯示 [`View`](xref:Xamarin.Forms.View) 時有一些要注意的限制：
 
-- 在 iOS 上，放在 `NavigationPage` 導覽列中的檢視會根據是否啟用大型標題，出現在不同的位置。 如需啟用大型標題的詳細資訊，請參閱[顯示大型標題](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#large_title)。
+- 在 iOS 上，放在 `NavigationPage` 導覽列中的檢視會根據是否啟用大型標題，出現在不同的位置。 如需啟用大型標題的詳細資訊，請參閱[顯示大型標題](~/xamarin-forms/platform/ios/page-large-title.md)。
 - 在 Android 上，只有在使用 app-compat 的應用程式中，才能成功將檢視放在 `NavigationPage` 的導覽列中。
 - 不建議將大型且複雜的檢視 (例如 [`ListView`](xref:Xamarin.Forms.ListView) 和 [`TableView`](xref:Xamarin.Forms.TableView)) 放在 `NavigationPage` 的導覽列中。
 

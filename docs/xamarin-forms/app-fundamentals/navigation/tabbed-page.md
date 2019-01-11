@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: d19d8590171e585b6f65b2a63fc9847d7d672a56
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 4e2d33276c865695d70abb2d8e00b3b80d446839
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058399"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207982"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Xamarin.Forms 索引標籤式頁面
 
@@ -37,7 +37,7 @@ _Xamarin.Forms TabbedPage 由索引標籤清單和較大的詳細資料區域所
   > [!NOTE]
   > 請注意，iOS 的 `TabbedRenderer` 具有可覆寫的 `GetIcon` 方法，可用於從指定來源載入索引標籤圖示。 此覆寫可使用 SVG 影像作為 `TabbedPage` 上的圖示。 此外，也可以提供圖示的選取及未選取版本。
 
-- 在 Android 上，根據預設，索引標籤清單會出現在畫面的頂端，詳細資料區域則會出現在下方。 但是，索引標籤清單可使用平台特定移動到畫面底部。 如需詳細資訊，請參閱[設定 TabbedPage 工具列放置與色彩](~/xamarin-forms/platform/platform-specifics/consuming/android.md#tabbedpage-toolbar)。
+- 在 Android 上，根據預設，索引標籤清單會出現在畫面的頂端，詳細資料區域則會出現在下方。 但是，索引標籤清單可使用平台特定移動到畫面底部。 如需詳細資訊，請參閱[設定 TabbedPage 工具列放置與色彩](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md)。
 
   > [!NOTE]
   > 請注意，在 Android 上使用 AppCompat 時，每個索引標籤也都會顯示圖示。 此外，Android AppCompat 的 `TabbedPageRenderer` 具有可覆寫的 `GetIconDrawable` 方法，可用於從自訂 `Drawable` 載入索引標籤圖示。 此覆寫可使用 SVG 影像作為 `TabbedPage` 上的圖示，且可使用頂端與底部索引標籤列。 或者，可覆寫的 `SetTabIcon` 方法能用來從自訂 `Drawable` 載入頂端索引標籤列的索引標籤圖示。

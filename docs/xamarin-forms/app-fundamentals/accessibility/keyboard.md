@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/15/2018
-ms.openlocfilehash: 69fc1cd146227e464e70c347d3e28d250a7f1346
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 3e3331489c3b437366f4bdcc6990fe282d213a6a
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050435"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207878"
 ---
 # <a name="keyboard-navigation-in-xamarinforms"></a>Xamarin.Forms 的鍵盤導覽
 
@@ -58,7 +58,7 @@ ms.locfileid: "53050435"
 此處的定位順序是以資料列為主，即為 XAML 中列出的控制項順序。 因此，按下 Tab 鍵時會從名字 [`Entry`](xref:Xamarin.Forms.Entry) 執行個體，接著巡覽至姓氏 `Entry` 執行個體。 不過，更直覺式的體驗就是使用資料行優先的定位導覽，以便在按下 Tab 鍵時巡覽名字與姓氏組合。 這可藉由指定輸入控制項的定位順序來完成。
 
 > [!NOTE]
-> 您可以定義通用 Windows 平台上的鍵盤快速鍵，以提供一種直覺的方式，讓使用者透過鍵盤而非觸控或滑鼠，來快速巡覽應用程式的可見 UI 並與其互動。 如需詳細資訊，請參閱[設定 VisualElement 便捷鍵](~/xamarin-forms/platform/platform-specifics/consuming/windows.md#visualelement-accesskeys)。
+> 您可以定義通用 Windows 平台上的鍵盤快速鍵，以提供一種直覺的方式，讓使用者透過鍵盤而非觸控或滑鼠，來快速巡覽應用程式的可見 UI 並與其互動。 如需詳細資訊，請參閱[設定 VisualElement 便捷鍵](~/xamarin-forms/platform/windows/visualelement-access-keys.md)。
 
 ## <a name="setting-the-tab-order"></a>設定定位順序
 
