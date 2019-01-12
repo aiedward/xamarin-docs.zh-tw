@@ -6,12 +6,12 @@ ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: 2357003e3a855981f053c48a596b932d9ba36d90
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2bbf0bda42b7bce483d9d036ebf39314dcb73072
+ms.sourcegitcommit: fabd3b51dca6d904009d0670137c5fb5ee6c32ef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104949"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54249186"
 ---
 # <a name="inspector-installation-and-requirements"></a>偵測器安裝與需求
 
@@ -52,7 +52,7 @@ ms.locfileid: "50104949"
 |應用程式平台|IDE 支援|注意|
 |--- |--- |--- |
 |Mac|只有在 Visual Studio for Mac 支援|
-|iOS|在 Visual Studio 2017 和 Visual Studio for Mac 支援| |
+|iOS|在 Visual Studio 2017 和 Visual Studio for Mac 支援| 連結器行為必須設為**不要連結**(底下**iOS 組建**專案選項) |
 |Android|在 Visual Studio 2017 和 Visual Studio for Mac 支援|Android 的目標必須 > = 4.0.3，with **fastdev**啟用。<br />必須使用 Google、 Visual Studio 或 Xamarin Android 模擬器。 Android 7 模擬器可能不允許在此階段的檢查。|
 |WPF|只有在 Visual Studio 2017 中，|
 
@@ -114,8 +114,8 @@ Visual Studio
 
 - 您的 IDE 中所示的裝置名稱
 - 您的裝置的 OS 版本
-- Android： 請確認您使用的 x86 模擬器
-- Android： 模擬器平台使用？ Google 模擬器嗎？ Visual Studio Android 模擬器？ Xamarin Android Player？
+- Android:請確認您使用的 x86 模擬器
+- Android:您是否使用模擬器平台為何？ Google 模擬器嗎？ Visual Studio Android 模擬器？ Xamarin Android Player？
 - 顯示與裝置在運作正常進行偵錯的應用程式？
 - 裝置是否有網路連線 （透過 web 瀏覽器的核取）？
 

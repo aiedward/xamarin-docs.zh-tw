@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 1c88a5c16dbe5559f0b551a97a27ebb893991187
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 119fd478727a002622861c94462b93b75720a992
+ms.sourcegitcommit: fabd3b51dca6d904009d0670137c5fb5ee6c32ef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120498"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54249199"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS 的安全性和隱私權功能
 
@@ -27,7 +27,7 @@ Apple 進行了數個增強功能的安全性和隱私權，在 iOS 10 （和更
 下列的一般變更進行了安全性和隱私權在 iOS 10:
 
 - 常見的資料安全性架構 (CDSA) API 已被取代，應以 SecKey API，來產生非對稱金鑰來取代。
-- 新`NSAllowsArbitraryLoadsInWebContent`可以將金鑰新增至應用程式**Info.plist**檔案，並可讓應用程式的其餘部分仍啟用 Apple Transport Security (ATS) 保護而正確載入的網頁。 如需詳細資訊，請參閱我們[應用程式的傳輸安全性](~/ios/app-fundamentals/ats.md)文件。
+- 新`NSAllowsArbitraryLoadsInWebContent`金鑰可以新增至應用程式**Info.plist**檔案，並可讓應用程式的其餘部分仍啟用 Apple Transport Security (ATS) 保護而正確載入的網頁。 如需詳細資訊，請參閱我們[應用程式的傳輸安全性](~/ios/app-fundamentals/ats.md)文件。
 - 因為新的剪貼簿，在 iOS 10 和 macOS Sierra 允許複製並貼上裝置之間的使用者，所以 API 已擴充到允許的剪貼簿，受限於特定的裝置，並會自動清除在指定的時間點的時間戳記。 此外，具名的 pasteboards 不會再保存，並應該取代成共用剪貼板容器。
 - 對於所有 SSL/TLS 連線，RC4 對稱編碼器現在預設會停用。 此外，安全傳輸 API 不再支援 SSLv3，建議開發人員停止儘速使用 sha-1 和 3DES 加密。
 
@@ -51,9 +51,9 @@ Apple 進行了數個增強功能的安全性和隱私權，在 iOS 10 （和更
 - **隱私權-健康更新使用方式描述**(`NSHealthUpdateUsageDescription`)-可讓開發人員說明為什麼應用程式想要編輯使用者的健康情況資料。 如需詳細資訊，請參閱 Apple [HKHealthStore 類別參考](https://developer.apple.com/reference/healthkit/hkhealthstore)。
 - **隱私權-HomeKit 使用方式描述**(`NSHomeKitUsageDescription`)-可讓開發人員說明為什麼應用程式想要存取使用者的 HomeKit 組態資料。
 - **隱私權-位置一律使用方式描述**(`NSLocationAlwaysUsageDescription`)-可讓開發人員說明為什麼應用程式想要一律可以存取使用者的位置。
-- [取代]**隱私權-位置使用方式描述**(`NSLocationUsageDescription`)-可讓開發人員說明為什麼應用程式想要存取使用者的位置。 *注意： 在 iOS 8 （和更新版本） 中已被取代此機碼。使用`NSLocationAlwaysUsageDescription`或`NSLocationWhenInUseUsageDescription`改。*
+- [取代]**隱私權-位置使用方式描述**(`NSLocationUsageDescription`)-可讓開發人員說明為什麼應用程式想要存取使用者的位置。 *注意：此機碼已被取代，在 iOS 8 （和更新版本）。使用`NSLocationAlwaysUsageDescription`或`NSLocationWhenInUseUsageDescription`改。*
 - **隱私權-位置時在 Use Usage Description** (`NSLocationWhenInUseUsageDescription`)-可讓開發人員說明為什麼應用程式想要執行時存取使用者的位置。
-- [取代]**隱私權-媒體程式庫使用方式描述**-可讓開發人員描述應用程式想要存取使用者的媒體櫃的原因。 *注意： 在 iOS 8 （和更新版本） 中已被取代此機碼。使用`NSAppleMusicUsageDescription`改。*
+- [取代]**隱私權-媒體程式庫使用方式描述**-可讓開發人員描述應用程式想要存取使用者的媒體櫃的原因。 *注意：此機碼已被取代，在 iOS 8 （和更新版本）。使用`NSAppleMusicUsageDescription`改。*
 - **隱私權-麥克風使用方式描述**(`NSMicrophoneUsageDescription`)-可讓開發人員說明為什麼應用程式想要存取裝置的麥克風。
 - **隱私權-運動使用方式描述**(`NSMotionUsageDescription`)-可讓開發人員說明為什麼應用程式想要存取裝置的加速計。
 - **隱私權-照片圖庫使用方式描述**(`NSPhotoLibraryUsageDescription`)-可讓開發人員說明為什麼應用程式想要存取使用者的相片媒體櫃。
