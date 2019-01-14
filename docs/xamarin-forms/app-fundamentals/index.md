@@ -6,13 +6,13 @@ ms.assetid: 7B516BBC-F7E1-4387-9779-7754E2E69723
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/03/2018
-ms.openlocfilehash: 015a7dfa3d55b411e6626ae2ac70fd2930661e65
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 01/08/2018
+ms.openlocfilehash: a65946f21f8ced00e9ad64aec590df37acab1528
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898988"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207813"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Xamarin.Forms 應用程式基本概念
 
@@ -27,6 +27,10 @@ ms.locfileid: "52898988"
 ## <a name="app-lifecycleapp-lifecyclemd"></a>[應用程式生命週期](app-lifecycle.md)
 
 `Application` 類別 `OnStart`、`OnSleep` 和 `OnResume` 方法，以及強制回應導覽事件，可讓您以自訂程式碼處理應用程式生命週期事件。
+
+## <a name="application-indexing-and-deep-linkingdeep-linkingmd"></a>[應用程式編製索引和深層連結](deep-linking.md)
+
+應用程式索引讓經過少數幾次使用就遺忘的應用程式能出現在搜尋結果中，藉此保有關聯性。 深層連結可讓應用程式回應包含應用程式資料的搜尋結果，方式通常是瀏覽到參考自深層連結的頁面。
 
 ## <a name="behaviorsbehaviorsindexmd"></a>[行為](behaviors/index.md)
 
