@@ -757,7 +757,7 @@ Android 會遵循不同的配置，使用不同的**可繪製資源**和**字串
 
 請注意，Android 不會使用 zh-Hans 和 zh-Hant 代碼來表示簡體中文和繁體中文；相反地，它只支援特定國碼 (地區碼) zh-CN 和 zh-TW。
 
-若要支援高畫質螢幕的不同影像解析度，請建立字尾為 `-*dpi` 的其他語言資料夾，例如 **drawables-es-mdpi****drawables-es-xdpi**、**drawables-es-xxdpi** 等。如需詳細資訊，請參閱[提供 Android 替代資源](http://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources)。
+若要支援高畫質螢幕的不同影像解析度，請建立字尾為 `-*dpi` 的其他語言資料夾，例如 **drawables-es-mdpi** **drawables-es-xdpi**、**drawables-es-xxdpi** 等。如需詳細資訊，請參閱[提供 Android 替代資源](http://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources)。
 
 #### <a name="app-name"></a>應用程式名稱
 
