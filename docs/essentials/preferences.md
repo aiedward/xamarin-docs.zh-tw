@@ -1,18 +1,19 @@
 ---
-title: Xamarin.Essentials：喜好設定
+title: Xamarin.Essentials:偏好設定
 description: 本文件描述 Xamarin.Essentials 中的喜好設定類別，可將應用程式喜好設定儲存在鍵/值存放區中。 會討論如何使用類別和可以儲存的資料類型。
 ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 0144cdd4e12d53e0ac82af24a932825491db9e41
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 01/15/2019
+ms.custom: video
+ms.openlocfilehash: 6d57b5ce9cb61363eef24b230f6cf71894f66198
+ms.sourcegitcommit: 53f5e83f4e246be703917d7cc719c8cc959517ab
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899080"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54317878"
 ---
-# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials：喜好設定
+# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials:偏好設定
 
 **喜好設定**類別可協助將應用程式喜好設定儲存於鍵/值存放區中。
 
@@ -68,7 +69,7 @@ Preferences.Clear();
 
 ## <a name="implementation-details"></a>實作詳細資料
 
-`DateTime` 值使用 `DateTime` 類別所定義的兩種方法，以 64 位元二進位 (長整數) 格式儲存：[`ToBinary`](xref:System.DateTime.ToBinary) 方法用於編碼 `DateTime` 值，而 [`FromBinary`](xref:System.DateTime.FromBinary(System.Int64)) 方法會對值進行解碼。 請參閱這些方法的文件，以便在已儲存的 `DateTime` 並非國際標準時間 (UTC) 值時，對解碼值進行調整。
+`DateTime` 的值會使用 `DateTime` 類別定義的兩種方法，以 64 位元二進位 (長整數) 格式儲存：[`ToBinary`](xref:System.DateTime.ToBinary) 方法用於編碼 `DateTime` 的值，[`FromBinary`](xref:System.DateTime.FromBinary(System.Int64)) 方法則用於解碼該值。 請參閱這些方法的文件，以便在已儲存的 `DateTime` 並非國際標準時間 (UTC) 值時，對解碼值進行調整。
 
 ## <a name="platform-implementation-specifics"></a>平台實作特性
 
@@ -98,3 +99,9 @@ Preferences.Clear();
 
 - [喜好設定原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Preferences)
 - [喜好設定 API 文件](xref:Xamarin.Essentials.Preferences)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Preferences-Essential-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
