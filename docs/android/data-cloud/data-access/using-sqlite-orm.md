@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 741e18d84c25bb4479480949a271a5845e99daa1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3c552d97f64b28ed47a9226047862bffcfa8c9e3
+ms.sourcegitcommit: 56b2f5cda7c37874618736d6129f19a8976826f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118457"
+ms.lasthandoff: 01/21/2019
+ms.locfileid: "54418682"
 ---
 # <a name="using-sqlitenet-with-android"></a>使用 SQLite.NET android
 
@@ -21,8 +21,8 @@ Xamarin 會建議使用 SQLite.NET 程式庫是非常基本的 ORM，可讓您�
 若要包含 SQLite.NET 程式庫中的 Xamarin 應用程式，將下列 NuGet 套件加入專案：
 
 - **套件名稱：** sqlite net pcl
-- **作者：** Frank A.Krueger
-- **識別碼：** sqlite net pcl
+- **作者：** Frank A. Krueger
+- **識別碼：** sqlite-net-pcl
 - **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![SQLite.NET NuGet 套件](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet 套件")](using-sqlite-orm-images/image1a.png#lightbox)
@@ -136,7 +136,7 @@ public static void DoSomeDataAccess () {
 -   **[MaxLength(value)]** &ndash;嘗試插入的資料庫時，限制文字屬性的長度。 使用程式碼，應驗證此之前插入物件，這個屬性只有 '' 時檢查資料庫的插入或更新作業會嘗試。
 
 -   **[忽略]** &ndash;導致 SQLite.NET 忽略這個屬性。
-    這是特別適用於有無法儲存在資料庫中，類型的屬性或屬性無法自動解決的模型集合，是 SQLite。
+    這是特別適用於有無法儲存在資料庫中，類型的屬性或屬性的模型無法自動解決的 SQLite 的集合。
 
 -   **[Unique]** &ndash;可確保基礎資料庫資料行中的值是唯一。
 
@@ -205,7 +205,7 @@ var rowcount = db.Delete<Stock>(someStock.Id); // Id is the primary key
 
 ## <a name="using-sqlitenet-with-multiple-threads"></a>使用 SQLite.NET 具有多執行緒
 
-SQLite 支援三種不同的執行緒模式：*單一執行緒*，*多執行緒*，並*序列化*。 如果您想要從沒有任何限制的多個執行緒存取的資料庫，您可以設定要使用 SQLite**序列化**執行緒模式。 請務必及早在您的應用程式中設定此模式 (例如，在開頭`OnCreate`方法)。
+SQLite 支援三種不同的執行緒模式：*單一執行緒*，*多執行緒*，以及*序列化*。 如果您想要從沒有任何限制的多個執行緒存取的資料庫，您可以設定要使用 SQLite**序列化**執行緒模式。 請務必及早在您的應用程式中設定此模式 (例如，在開頭`OnCreate`方法)。
 
 若要變更執行緒的模式，請呼叫`SqliteConnection.SetConfig`。 比方說，這行程式碼會設定適用於 SQLite**序列化**模式︰ 
 
