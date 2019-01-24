@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 8bc319b53e4a93d5cac35c4f8c3263b72dfe45e2
-ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
+ms.openlocfilehash: 719efc87b8843d0d2fcd2643aab23aa6849d940a
+ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53746904"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54841376"
 ---
 # <a name="images-in-xamarinmac"></a>Xamarin.Mac 中的映像
 
@@ -82,7 +82,7 @@ _這篇文章涵蓋使用 「 映像和在 Xamarin.Mac 應用程式中的圖示�
 - 這不是完整的向量支援 PDF 將會在編譯時期和最終的應用程式中隨附的點陣圖的點陣圖的點陣化。
 - 設定資產目錄中之後，您無法調整影像的大小。 如果您嘗試調整大小的映像 （無論是在程式碼，或使用自動版面配置和大小類別） 將會扭曲映像，就像任何其他的點陣圖。
 
-使用時**集中映像**在 Xcode 的 Interface Builder 中，您可以只選取集的名稱從下拉式清單中，在**屬性偵測器**: * *
+使用時**集中映像**在 Xcode 的 Interface Builder 中，您可以只選取集的名稱從下拉式清單中，在**屬性偵測器**:
 
 ![在 Xcode 的 Interface Builder 中選取影像設定](image-images/imageset06.png "在 Xcode 的 Interface Builder 中選取映像設定")
 
