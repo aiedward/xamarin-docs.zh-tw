@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials：地理位置
+title: Xamarin.Essentials:地理位置
 description: 本文件描述 Xamarin.Essentials 中的地理位置類別，可提供用於擷取裝置目前地理位置座標的 API。
 ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 651da789dcd87810ef6650d87fc2df4f91ce58e1
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 88f973715f216f5d68eb2b3dc5582502cf5d605d
+ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898923"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54479728"
 ---
-# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials：地理位置
+# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials:地理位置
 
 **地理位置**類別會提供 API 來擷取裝置的目前地理位置座標。
 
@@ -95,6 +95,10 @@ catch (FeatureNotSupportedException fnsEx)
 {
     // Handle not supported on device exception
 }
+catch (FeatureNotEnableException fneEx)
+{
+    // Handle not enabled on device exception
+}
 catch (PermissionException pEx)
 {
     // Handle permission exception
@@ -123,6 +127,10 @@ try
 catch (FeatureNotSupportedException fnsEx)
 {
     // Handle not supported on device exception
+}
+catch (FeatureNotEnableException fneEx)
+{
+    // Handle not enabled on device exception
 }
 catch (PermissionException pEx)
 {
