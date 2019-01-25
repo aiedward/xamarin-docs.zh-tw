@@ -32,7 +32,7 @@ items:
     - name: 建置跨平台應用程式
       href: app-fundamentals/building-cross-platform-applications/index.md
       items:
-      - name: 總覽
+      - name: 概觀
         href: app-fundamentals/building-cross-platform-applications/overview.md
       - name: 第 1 部分 - 了解 Xamarin 行動裝置平台
         href: app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md
@@ -52,7 +52,7 @@ items:
   - name: 共用程式碼
     href: app-fundamentals/index.md
     items:
-    - name: 總覽
+    - name: 概觀
       href: app-fundamentals/code-sharing.md
     - name: .NET Standard
       href: app-fundamentals/net-standard.md
@@ -74,6 +74,8 @@ items:
         href: app-fundamentals/nuget-multiplatform-libraries/metadata.md
     - name: NuGet 套件 (手動)
       href: app-fundamentals/nuget-manual.md
+    - name: 在跨平台應用程式中使用 C/C++ 程式庫
+      href: cpp/index.md
   - name: 語言支援
     href: platform/index.md
     items:
@@ -153,7 +155,7 @@ items:
         href: troubleshooting/questions/pcl-support-libraries.md
       - name: PCL 反映 API
         href: troubleshooting/questions/pcl-reflection.md
-      - name: PCL 案例研究：如何解決 Microsoft TPL Dataflow NuGet 套件有關 System.Diagnostics.Tracing 的問題？
+      - name: PCL 案例研究：如何解決 Microsoft TPL Dataflow NuGet 套件之 System.Diagnostics.Tracing 的有關問題？
         href: troubleshooting/questions/pcl-case-study.md
       - name: 如何更新 NuGet？
         href: troubleshooting/questions/nuget-update.md
@@ -190,9 +192,9 @@ items:
   - name: 範例
     href: samples/index.yml
   expanded: true
-ms.openlocfilehash: 6de69aacc37d17086e49ae1a7571879686168a42
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5eb01503b809979ebbc6598cf1cde985d3431bad
+ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50130212"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54841324"
