@@ -6,13 +6,14 @@ ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: 62dae2f85abb7327e133f008e27e2519ccdc2f68
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 01/22/2019
+ms.custom: video
+ms.openlocfilehash: d1759701708c337a804471167223ef68cc3f2910
+ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051979"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54479741"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms 基本繫結
 
@@ -333,3 +334,9 @@ Scale="{Binding Value, Source={x:Reference slider}}" />
 
 - [Data Binding Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) (資料繫結示範 (範例))
 - [來自 Xamarin.Forms 書籍的資料繫結章節](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/XamarinForms-101-Data-Binding/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
