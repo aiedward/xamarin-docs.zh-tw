@@ -1,16 +1,17 @@
 ---
 title: OBJECTIVE-C 繫結的概觀
-description: 本文件提供建立 C# 繫結 OBJECTIVE-C 程式碼，包括命令列的繫結、 繫結專案及目標 Sharpie 的不同方式的概觀。 它也會討論繫結的運作方式。
+description: 本文件概述不同的方式，來建立C#繫結 OBJECTIVE-C 程式碼，包括命令列的繫結、 繫結專案及目標 Sharpie。 它也會討論繫結的運作方式。
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 97d0c5b9f61d4dafe144d2b2f22df6d465cbbccb
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.date: 11/25/2015
+ms.openlocfilehash: 3f15eaf9171ac44b870239fb5ffa14edd6210360
+ms.sourcegitcommit: ee626f215de02707b7a94ba1d0fa1d75b22ab84f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855269"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54879299"
 ---
 # <a name="overview-of-objective-c-bindings"></a>OBJECTIVE-C 繫結的概觀
 
@@ -18,14 +19,14 @@ _繫結程序的運作方式的詳細資料_
 
 繫結 Objective C 程式庫，以搭配 Xamarin 會採用三個步驟：
 
-1. 撰寫 C# [API 定義] 來描述原生 API 公開方式在.NET 中，以及它如何對應到基礎的目標 c。 這是使用標準 C# 建構類似`interface`和各種繫結**屬性**(請參閱此[簡單範例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API))。
+1. 寫入C#[API 定義] 來描述原生 API 公開方式在.NET 中，以及它如何對應到基礎的目標 c。 這是使用標準C#結構，例如`interface`和各種繫結**屬性**(請參閱此[簡單範例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API))。
 
-2. 當您撰寫完 [API 定義] 在 C# 中，您編譯它來產生 「 繫結 」 組件。 這可以在[**命令列**](#commandline) ，或使用[**繫結專案**](#bindingproject) Visual Studio for Mac 或 Visual Studio 中。
+2. 一旦您已撰寫的 [API 定義] C#，您編譯它來產生 「 繫結 」 組件。 這可以在[**命令列**](#commandline) ，或使用[**繫結專案**](#bindingproject) Visual Studio for Mac 或 Visual Studio 中。
 
 3. 「 繫結 」 該組然後會新增至您的 Xamarin 應用程式專案，因此您可以使用您所定義的 API 的原生功能。
   繫結的專案是從您的應用程式的專案完全不同。
 
-**注意︰** 步驟 1 可以自動化的協助[**目標 Sharpie**](#objectivesharpie)。 它會檢查 Objective C API，並產生建議 C# 「 API 定義 」。 您可以自訂目標 Sharpie 所建立的檔案，並在繫結專案 （或在命令列上），請使用它們來建立您的繫結組件。 目標 Sharpie 不會建立單獨的繫結，它只是大型程序的選擇性部分。
+**注意：** 步驟 1 可以自動化的協助[**目標 Sharpie**](#objectivesharpie)。 它會檢查 Objective C API，並產生建議C#[API 定義]。 您可以自訂目標 Sharpie 所建立的檔案，並在繫結專案 （或在命令列上），請使用它們來建立您的繫結組件。 目標 Sharpie 不會建立單獨的繫結，它只是大型程序的選擇性部分。
 
 您也可以閱讀更多技術細節[運作方式](#howitworks)，這可協助您撰寫您的繫結。
 
@@ -33,7 +34,7 @@ _繫結程序的運作方式的詳細資料_
 
 ## <a name="command-line-bindings"></a>命令列繫結
 
-您可以使用`btouch-native`適用於 Xamarin.iOS (或`bmac-native`如果您使用 Xamarin.Mac) 直接建立的繫結。 其運作方式是將您以手動方式建立的 C# API 定義 （或使用目標 Sharpie） 給命令列工具 (`btouch-native`適用於 iOS 或`bmac-native`for Mac)。
+您可以使用`btouch-native`適用於 Xamarin.iOS (或`bmac-native`如果您使用 Xamarin.Mac) 直接建立的繫結。 其運作方式是傳遞C#API 定義，您以手動方式建立 （或使用目標 Sharpie） 給命令列工具 (`btouch-native`適用於 iOS 或`bmac-native`for Mac)。
 
 
 叫用這些工具的一般語法是：
@@ -61,7 +62,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 <a name="objectivesharpie" />
 
-## <a name="objective-sharpie"></a>目標 Sharpie
+## <a name="objective-sharpie"></a>Objective Sharpie
 
 目標 Sharpie 是另一個、 個別的命令列工具，可協助建立繫結的初始階段進行。 它不會建立繫結本身，而是會自動產生 API 定義目標的原生程式庫的初始步驟。
 
@@ -75,7 +76,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 首先，尋找您想要繫結的型別。 討論用途 （以及簡單），我們將繫結[NSEnumerator](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html)型別 (其中具有已繫結中[Foundation.NSEnumerator](https://developer.xamarin.com/api/type/Foundation.NSEnumerator/); 下方的實作，例如只是用途)。
 
-其次，我們需要建立 C# 型別。 我們可能會想要將此資訊放置的命名空間Objective C 不支援命名空間，所以我們需要使用`[Register]`屬性來變更 Xamarin.iOS 會向 OBJECTIVE-C 執行階段的型別名稱。 C# 型別也必須繼承自[Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/):
+其次，我們需要建立C#型別。 我們可能會想要將此資訊放置的命名空間Objective C 不支援命名空間，所以我們需要使用`[Register]`屬性來變更 Xamarin.iOS 會向 OBJECTIVE-C 執行階段的型別名稱。 C#型別也必須繼承自[Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/):
 
 ```csharp
 namespace Example.Binding {
@@ -188,5 +189,5 @@ namespace Example.Binding {
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin University 課程： 建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程： 建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin University 課程：建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University 課程：建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
