@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 56284f1d3c5fec479badf91852acba2bf538bddd
-ms.sourcegitcommit: cb484bd529bf2d8e48e5b3d086bdfc31895ec209
+ms.openlocfilehash: f75c4777ce7a47e983683bf3d92ac20ab1b15c1c
+ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411735"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54841350"
 ---
 # <a name="app-group-capabilities-in-xamarinios"></a>Xamarin.iOS 的應用程式群組功能
 
@@ -26,16 +26,16 @@ _為應用程式新增功能通常需要額外的佈建設定。本指南說明�
 
 ## <a name="configure-a-new-app-group"></a>設定新的應用程式群組
 
-設定共用位置時，會使用  [App Group](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19) (應用程式群組) 來設定，這是在 [Apple Developer Center](https://developer.apple.com/account/) (Apple 開發人員中心) 上的 [Certificates, Identifiers & Profiles] \(憑證、識別碼及設定檔\) ****  區段中進行設定。 每個專案的 Entitlements.plist 中也必須參考此值。
+設定共用位置時，會使用 [App Group](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19) \(應用程式群組\) 來設定，這是在 [Apple Developer Center](https://developer.apple.com/account/).\(Apple 開發人員中心\) 上的 [Certificates, Identifiers & Profiles] \(憑證、識別碼及設定檔\) 中進行設定。 每個專案的 Entitlements.plist 中也必須參考此值。
 
 應用程式群組會有識別碼，這通常是具有群組的套件組合識別碼。 前置詞的「套件組合識別碼」。 例如，套件組合識別碼 `com.xamarin.WatchSettings` 的應用程式群組會是  `group.com.xamarin.WatchSettings`。
 
 若要建立新的「應用程式群組」，請執行下列動作：
 
-1.  前往pple 的 [iOS Developer Center](https://developer.apple.com/account/) (iOS 開發人員中心)，開啟您的 [Account] \(帳戶\) ****  並登入。
+1.  瀏覽 Apple 的  [iOS Developer Center](https://developer.apple.com/account/) \(iOS 開發人員中心\)，開啟您的 [Account] \(帳戶\) 並登入。
 2.  選取 [Certificates, IDs & Profiles] \(憑證、識別碼及設定檔\)。
 3.  在 [Identifiers] \(識別碼\) 底下，選取 [App Groups] \(應用程式群組\)，然後按一下 [+] 按鈕來建立新的群組。
-4.  輸入新群組的 [Name] \(名稱\) **** 和 [Identifier] \(識別碼\) **** ，然後按一下 [Continue] \(繼續\) ****  按鈕： 
+4.  輸入新群組的 [Name] \(名稱\) 和 [Identifier] \(識別碼\)，然後按一下 [Continue] \(繼續\) 按鈕： 
    
     ![新增 App Group (應用程式群組) 詳細資料](app-groups-capabilities-images/image52.png)
 
@@ -55,17 +55,17 @@ _為應用程式新增功能通常需要額外的佈建設定。本指南說明�
 
     ![新增 App Group (應用程式群組) 應用程式服務](app-groups-capabilities-images/image53.png)
 
-6.  確認設定，然後按一下 [Register] \(註冊\) ****  按鈕來建立應用程式識別碼。
+6.  確認設定，然後按一下 [Register] \(註冊\) 按鈕來建立 App ID (應用程式識別碼)。
 7.  按一下 [Done] \(完成\) 來返回已註冊的 App ID (應用程式識別碼) 清單。
-8.  從清單中選取新建立的應用程式識別碼，然後按一下 [Edit] \(編輯\) ****  按鈕：
+8.  從清單中選取新建立的 App ID (應用程式識別碼)，然後按一下 [Edit] \(編輯\) 按鈕：
 
     ![從清單中選取 App ID (應用程式識別碼)](app-groups-capabilities-images/image54.png)
 
-9.  在 [Service] \(服務\) 的 [App Group] \(應用程式群組\) **** 下，按一下 [Edit] \(編輯\) ****  按鈕：
+9.  在 [Service] \(服務\) 的 [App Group] \(應用程式群組\) 底下，按一下 [Edit] \(編輯\) 按鈕：
 
     ![從清單中選取 App ID (應用程式識別碼)](app-groups-capabilities-images/image55.png)
 
-10. 選取上述建立的App Group (應用程式群組)，然後按一下 [Continue] \(繼續\) ****  按鈕：
+10. 選取上述建立的App Group (應用程式群組)，然後按一下 [Continue] \(繼續\) 按鈕：
 
     ![新增 App Group (應用程式群組)](app-groups-capabilities-images/image56.png)
 
@@ -78,6 +78,6 @@ _為應用程式新增功能通常需要額外的佈建設定。本指南說明�
 
 * 在您的應用程式中使用架構命名空間。
 * 為您的應用程式新增必要的權利。 如需有關所需權利及如何新增這些權利的詳細資訊，請參閱[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
-* 在應用程式的 [iOS 套件組合簽署] **** 中，確定 [自訂權利] **** 已設定為 **Entitlements.plist**。 這「不是」 __ 「偵錯」和「iOS 模擬器」組建的預設設定。
+* 在應用程式的 [iOS 套件組合簽署] 中，確定 [自訂權利] 已設定為 **Entitlements.plist**。 這「不是」 __ 「偵錯」和「iOS 模擬器」組建的預設設定。
 
 如果您在應用程式服務方面遇到問題，請參閱主要指南的[疑難排解](~/ios/deploy-test/provisioning/capabilities/index.md)一節。

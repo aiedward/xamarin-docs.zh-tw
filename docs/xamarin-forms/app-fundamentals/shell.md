@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2018
-ms.openlocfilehash: 422311c766584cbd27d0ab0c42adee042e9aac3e
-ms.sourcegitcommit: 408b78dd6eded4696469e316af7922a5991f2211
+ms.openlocfilehash: 41530399bfc2210e7c3eda461688c12c6235ef79
+ms.sourcegitcommit: 56b2f5cda7c37874618736d6129f19a8976826f0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53246291"
+ms.lasthandoff: 01/21/2019
+ms.locfileid: "54418669"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms Shell
 
@@ -61,7 +61,6 @@ namespace TailwindTraders.Mobile
         {
             InitializeComponent();
 
-            Forms.SetFlags("Shell_Experimental");
             MainPage = new TheShell();
         }
     }
@@ -71,7 +70,46 @@ namespace TailwindTraders.Mobile
 `TheShell` 類別會說明應用程式視覺結構的 XAML 檔案。
 
 > [!IMPORTANT]
-> Shell 目前為實驗性，只能在建立 `Shell` 執行個體之前藉由將 `Forms.SetFlags("Shell_Experimental");` 新增至您的 `App` 類別來使用，或是在叫用 `Forms.Init` 方法之前，新增至您的平台專案來使用。
+> Shell 目前為實驗性，只能在叫用 `Forms.Init` 方法之前，新增 `Forms.SetFlags("Shell_Experimental");` 至您的平台專案來使用。
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+```csharp
+public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+{
+    protected override void OnCreate(Bundle savedInstanceState)
+    {
+        global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental");
+
+        TabLayoutResource = Resource.Layout.Tabbar;
+        ToolbarResource = Resource.Layout.Toolbar;
+
+        base.OnCreate(savedInstanceState);
+
+        global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+        LoadApplication(new App());
+    }
+}
+```
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+```csharp
+public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+{
+    public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+    {
+        global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental");
+
+        global::Xamarin.Forms.Forms.Init();
+        LoadApplication(new App());
+
+        return base.FinishedLaunching(app, options);
+    }
+}
+```
+
+----
 
 ## <a name="shell-file-hierarchy"></a>Shell 檔案階層
 

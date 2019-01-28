@@ -6,13 +6,14 @@ ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 02/09/2018
-ms.openlocfilehash: 6e63d60d12a80abb8f229b2daf0767ad54a83314
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.custom: video
+ms.date: 01/22/2019
+ms.openlocfilehash: 6d64acdcc84c16f33a1f543bf1c9506ae7c8e347
+ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118899"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54479689"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>適用於 Xamarin.iOS 和 tvOS 應用程式的無線部署
 
@@ -58,7 +59,7 @@ Mac 組建主機上應該安裝下列元件：
 
 1. 開啟 Xcode，然後移至 [視窗] > [裝置和模擬器]。
 2. 使用 Lightning 纜線將 iOS 裝置插入 Mac。 您可能需要在裝置上選取 [信任這台電腦]。
-3. 選取您的裝置，然後選取 [透過網路連線] 核取方塊來為裝置配對：![顯示 [透過網路連線] 選項的 [裝置和模擬器] 視窗](wireless-deployment-images/image2.png)
+3. 選取您的裝置，然後選取 [Connect via network] \(透過網路連線\) 核取方塊以將您的裝置配對：![顯示 [Connect via network] \(透過網路連線\) 選項的 [Device and Simulator] \(裝置與模擬器\) 視窗](wireless-deployment-images/image2.png)
 
 ### <a name="pairing-an-apple-tv-with-xcode"></a>讓 Apple TV 與 Xcode 配對
 
@@ -105,3 +106,9 @@ Mac 組建主機上應該安裝下列元件：
 ## <a name="related-links"></a>相關連結
 
 - [讓無線裝置與 Xcode 配對](https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devbc48d1bad)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Debug-to-iOS-Devices-Over-Wi-Fi/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

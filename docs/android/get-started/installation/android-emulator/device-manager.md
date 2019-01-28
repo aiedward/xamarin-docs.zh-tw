@@ -7,13 +7,14 @@ ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 09/06/2018
-ms.openlocfilehash: 67ab5b9bd711cb10a20b1365effea1627d0f7688
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.custom: video
+ms.date: 01/22/2019
+ms.openlocfilehash: 5618f15d60a26d2ad3d84ff0e3674936c0c01ca3
+ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526984"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54479780"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>使用 Android Device Manager 管理虛擬裝置
 
@@ -41,7 +42,7 @@ _本文說明如何使用 Android Device Manager 建立和設定可模擬實體 
 - Visual Studio Tools for Xamarin 4.9 版或更新版本。
 
 - 必須安裝 Android SDK (請參閱[設定 Xamarin.Android 的 Android SDK](~/android/get-started/installation/android-sdk.md))。
-  確定會將 Android SDK 安裝於其預設位置 (若尚未安裝)：**C:\\Program Files (x86)\\Android\\android-sdk**。
+  務必將 Android SDK 安裝在其預設位置 (若尚未安裝)：**C:\\Program Files (x86)\\Android\\android-sdk**。
 
 - 必須安裝下列套件 (透過 [Android SDK 管理員](~/android/get-started/installation/android-sdk.md))： 
     - **Android SDK Tools 26.1.1 版**或更新版本
@@ -388,7 +389,7 @@ Android SDK 通常會安裝於下列位置：
 
    ![Android Device Manager 記錄檔位置](device-manager-images/win/30-log-files.png)
 
-2. 按兩下以開啟其中一個記錄檔，並找出 **Config file path**。 例如: 
+2. 按兩下以開啟其中一個記錄檔，並找出 **Config file path**。 例如：
 
    [![記錄檔中的 Config file path](device-manager-images/win/31-config-file-path-sml.png)](device-manager-images/win/31-config-file-path.png#lightbox)
 
@@ -502,3 +503,9 @@ Android SDK 通常會安裝於下列位置：
 - [SDK 工具版本資訊 (Google)](https://developer.android.com/studio/releases/sdk-tools)
 - [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/How-to-Create-and-Manage-Your-Own-Android-Emulators/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

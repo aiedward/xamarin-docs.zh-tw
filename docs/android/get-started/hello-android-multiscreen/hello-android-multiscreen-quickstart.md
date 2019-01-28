@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 774661b36a41e4791207a54892663af13de3b3d3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dcc60243957bb1a7720c08dc7a5ce51caf585ce8
+ms.sourcegitcommit: 56b2f5cda7c37874618736d6129f19a8976826f0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120485"
+ms.lasthandoff: 01/21/2019
+ms.locfileid: "54418656"
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android 多重畫面：快速入門
 
@@ -143,7 +143,7 @@ translationHistoryButton.Click += (sender, e) =>
 };
 ```
 
-更新 [翻譯] 按鈕，將電話號碼新增至 `phoneNumbers` 清單。 `TranslateHistoryButton` 的 `Click` 處理常式應類似於下列程式碼：
+更新 [翻譯] 按鈕，將電話號碼新增至 `phoneNumbers` 清單。 `translateButton` 的 `Click` 處理常式應類似於下列程式碼：
 
 ```csharp
 // Add code to translate number
