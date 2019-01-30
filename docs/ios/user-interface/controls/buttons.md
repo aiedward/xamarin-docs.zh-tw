@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2018
-ms.openlocfilehash: 35fc743944c04dd1fdb8e035ba94ad6aeb6156ea
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: a98ddc2622682f2c105a6aff32e94bd92a5b11f2
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "38986000"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233246"
 ---
 # <a name="buttons-in-xamarinios"></a>在 Xamarin.iOS 中的按鈕
 
@@ -75,7 +75,7 @@ button.TouchUpInside += (sender, e) => {
 ```
 
 > [!NOTE]
-> `TouchUpInside` 不是唯一可用的按鈕事件。 `UIButton` 是的子類別`UIControl`，以定義[許多不同的事件](https://developer.xamarin.com/api/type/UIKit.UIControlEvent/)。
+> `TouchUpInside` 不是唯一可用的按鈕事件。 `UIButton` 是的子類別`UIControl`，以定義[許多不同的事件](xref:UIKit.UIControlEvent)。
 
 ### <a name="using-the-ios-designer-to-specify-button-event-handlers"></a>使用 iOS 設計工具，來指定按鈕事件處理常式
 
@@ -83,14 +83,14 @@ button.TouchUpInside += (sender, e) => {
 
 為適當的事件中，鍵入新的事件處理常式的名稱，或從清單中選取一個。 如此一來，將按鈕的檢視控制器的程式碼在建立事件處理常式。
 
-![事件索引標籤的 Properties Pad](buttons-images/image1.png "事件索引標籤的 [屬性] 面板")
+![事件] 索引標籤的 [Properties Pad](buttons-images/image1.png "事件 索引標籤的 [屬性] 面板")
 
 ## <a name="styling-a-button"></a>設定按鈕的樣式
 
 `UIButton` 控制項可以位於不同的狀態數目，每個由`UIControlState`值 – `Normal`， `Disabled`， `Focused`，`Highlighted`等等。唯一的樣式，並指定以程式設計方式或使用 iOS 設計工具，可以指定每個狀態。
 
 > [!NOTE]
-> 如需完整清單，所有`UIControlState`值，看看 [`UIKit.UIControlState enumeration`](https://developer.xamarin.com/api/type/UIKit.UIControlState/)
+> 如需完整清單，所有`UIControlState`值，看看 [`UIKit.UIControlState enumeration`](xref:UIKit.UIControlState)
 > 文件。
 
 例如，若要設定的標題色彩和陰影色彩`UIControlState.Normal`:
