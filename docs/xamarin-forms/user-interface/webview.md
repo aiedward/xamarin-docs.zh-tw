@@ -401,9 +401,9 @@ webView.Reload();
 
 為了讓`WebView`運作，您必須確定每個平台已設定權限。 請注意，在某些平台，`WebView`在偵錯模式中，但只有在建置要發行時，不會運作。 這是因為某些權限，例如，適用於網際網路存取，在 Android 上，依預設是由 Visual Studio for Mac 中偵錯模式時設定。
 
-- **UWP** &ndash;顯示網路內容時，需要網際網路 （用戶端和伺服器） 功能。
-- **Android** &ndash;需要`INTERNET`顯示從網路的內容時，才。 本機內容需要任何特殊權限。
-- **iOS** &ndash;需要任何特殊權限。
+- **UWP** &ndash; 顯示網路內容時，需要網際網路 (用戶端和伺服器) 功能。
+- **Android** &ndash;只有需要顯示來自網路的內容時，才需要`INTERNET`。
+- **iOS** &ndash; 不需要任何特殊權限。
 
 ## <a name="layout"></a>配置
 
