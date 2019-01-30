@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: 31b4c6e98945cd7b5dd4cea8be6f5e3857444f78
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d4a90ee0b85144269d80815820fe09fa0fcd3c58
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131217"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233149"
 ---
 # <a name="provisional-notifications-in-xamarinios"></a>在 Xamarin.iOS 中佈建通知
 
@@ -20,13 +20,13 @@ ms.locfileid: "50131217"
 
 在通知中心，使用者可以指定應用程式應該停止傳遞佈建通知，繼續將其傳遞到部份，或開始更顯著地傳遞。
 
-## <a name="sample-app-redgreennotifications"></a>範例應用程式： RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>範例應用程式：RedGreenNotifications
 
 看看[RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications)範例應用程式，這會傳送暫時的通知。
 
 ## <a name="sending-provisional-notifications"></a>傳送的佈建通知
 
-若要傳送暫時的通知，提供`UNAuthorizationOptions.Provisional`當做選項 [`RequestAuthorization`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.RequestAuthorization/)
+若要傳送暫時的通知，提供`UNAuthorizationOptions.Provisional`當做選項 [`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)
 方法`UNUserNotificationCenter`:
 
 ```csharp

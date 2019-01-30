@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/08/2018
-ms.openlocfilehash: 81375e8c66e5504604d0d4cb3be34afd58f4269d
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 99f2b98614c2b8d558dd8744b31a62b787fc955c
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39615144"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233831"
 ---
 # <a name="introduction-to-ios-12"></a>IOS 12 簡介
 
@@ -28,7 +28,7 @@ ARKit 是隨附於 iOS 擴增的實境架構。 ARKit 2 可讓多位使用者彼
 
 Siri 快速鍵可讓開發人員更深入整合 Siri 他們的應用程式。 使用 Siri 快速鍵，使用者可以使用語音命令來開啟內容或啟動背景工作，或它們可以起始這些相同的工作，透過 Siri 建議在鎖定畫面的捷徑。
 
-## <a name="core-ml-2coremlmd"></a>[核心機器學習服務 2](coreml.md)
+## <a name="core-ml-2coremlmd"></a>[Core ML 2](coreml.md)
 
 核心 ML 2 可減少應用程式的大小，透過模型量化和彈性的模型、 改善與新的批次預測 API 的應用程式效能和使用自訂的模型來支援在 machine learning 中的進階功能。
 
@@ -80,7 +80,7 @@ iOS 12 簡化了使用者和開發人員使用的密碼：
 使用 iOS 12，Apple 已取代：
 
 - OpenGL ES[鼓勵開發人員](https://developer.apple.com/ios/whats-new/)採用裸機。
-- [`UIWebView`](https://developer.xamarin.com/api/type/UIKit.UIWebView/)[的益處`WKWebView` ](https://developer.apple.com/documentation/webkit/wkwebview?language=objc)。
+- [`UIWebView`](xref:UIKit.UIWebView)[的益處`WKWebView` ](https://developer.apple.com/documentation/webkit/wkwebview?language=objc)。
 
 ## <a name="related-links"></a>相關連結
 

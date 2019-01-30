@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: 4f847a86f3f92bcf7168c2e104471e1ca052969c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 699d19228d2dee92f7a730bba4186a3aa5f21b04
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131103"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233233"
 ---
 # <a name="critical-alerts-in-xamarinios"></a>在 Xamarin.iOS 中的重大警示
 
@@ -28,8 +28,8 @@ Ios 12、 應用程式可以傳送重大警示。 重大警示播放的音效，
 
 應用程式的通知授權要求會提示使用者允許或禁止應用程式的通知。 如果通知授權要求會傳送重大警示的權限要求，應用程式也給予使用者機會參加重大警示。
 
-下列程式碼要求傳送重大警示和標準通知及聲音，藉由傳遞適當的權限 [`UNAuthorizationOptions`](https://developer.xamarin.com/api/type/UserNotifications.UNAuthorizationOptions/)
-到數值[ `RequestAuthorization` ](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.RequestAuthorization/):
+下列程式碼要求傳送重大警示和標準通知及聲音，藉由傳遞適當的權限 [`UNAuthorizationOptions`](xref:UserNotifications.UNAuthorizationOptions)
+到數值[ `RequestAuthorization` ](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*):
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -45,7 +45,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 
 ## <a name="local-critical-alerts"></a>本機的重大警示
 
-若要傳送本機的重大警示，建立 [`UNMutableNotificationContent`](https://developer.xamarin.com/api/type/UserNotifications.UNMutableNotificationContent/)
+若要傳送本機的重大警示，建立 [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
 並設定其`Sound`屬性設為：
 
 - `UNNotificationSound.DefaultCriticalSound`它會使用預設重大通知音效。

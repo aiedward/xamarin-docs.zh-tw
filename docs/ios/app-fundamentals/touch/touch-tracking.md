@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: a1ddcda84d51b5a8a9220558ddaf9476a2321ee8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 09e895714cb4bbe241e4e14facaaee52079d55d9
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105047"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233182"
 ---
 # <a name="multi-touch-finger-tracking-in-xamarinios"></a>多點觸控手指在 Xamarin.iOS 中追蹤
 
@@ -20,7 +20,7 @@ _本文件將示範如何追蹤多個根手指觸控事件_
 
 有多點觸控應用程式需要追蹤個人的手指，同時在螢幕上移動時的時間。 一個典型的應用程式是 finger-paint 程式。 您的使用者可繪製具有一根手指，但一次使用多個根手指繪製。 當您的程式會處理多個觸控事件，它需要區別這些手指。
 
-當第一次，手指接觸到螢幕時，會建立 iOS [ `UITouch` ](https://developer.xamarin.com/api/type/UIKit.UITouch/)該手指的物件。 手指在螢幕上移動，並在畫面中，時間點處置物件之後再將這個物件會保持相同。 若要追蹤的手指，程式應該避免儲存這`UITouch`直接物件。 相反地，它可以使用[ `Handle` ](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)屬性的型別`IntPtr`來唯一識別這些`UITouch`物件。
+當第一次，手指接觸到螢幕時，會建立 iOS [ `UITouch` ](xref:UIKit.UITouch)該手指的物件。 手指在螢幕上移動，並在畫面中，時間點處置物件之後再將這個物件會保持相同。 若要追蹤的手指，程式應該避免儲存這`UITouch`直接物件。 相反地，它可以使用[ `Handle` ](xref:Foundation.NSObject.Handle)屬性的型別`IntPtr`來唯一識別這些`UITouch`物件。
 
 幾乎就一律會追蹤個人的手指的程式會維護追蹤觸控式的字典。 為 iOS 程式中，字典索引鍵則`Handle`識別特定的手指的值。 字典值取決於應用程式。 在  [FingerPaint](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)程式 （從釋放觸控） 每個手指筆觸是物件，包含呈現該手指繪製的線條所需的所有資訊與相關聯。 程式會定義一個小型`FingerPaintPolyline`針對此用途的類別：
 
@@ -40,7 +40,7 @@ class FingerPaintPolyline
 }
 ```
 
-每一個聚合線條的色彩、 筆觸寬度，，iOS 圖形[ `CGPath` ](https://developer.xamarin.com/api/type/CoreGraphics.CGPath/)累積和轉譯線條的多個點，因為它所繪製的物件。
+每一個聚合線條的色彩、 筆觸寬度，，iOS 圖形[ `CGPath` ](xref:CoreGraphics.CGPath)累積和轉譯線條的多個點，因為它所繪製的物件。
 
 
 如下所示的程式碼的所有其餘部分包含在`UIView`衍生名為`FingerPaintCanvasView`。 類別會負責維護的物件類型的字典`FingerPaintPolyline`主動由一個或多根手指正在繪製之時間內：
@@ -61,11 +61,11 @@ List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
 
 `FingerPaintCanvasView` 所定義的五個方法會覆寫`View`:
 
-- [`TouchesBegan`](https://developer.xamarin.com/api/member/UIKit.UIResponder.TouchesBegan/p/Foundation.NSSet/UIKit.UIEvent/)
-- [`TouchesMoved`](https://developer.xamarin.com/api/member/UIKit.UIResponder.TouchesMoved/p/Foundation.NSSet/UIKit.UIEvent/)
-- [`TouchesEnded`](https://developer.xamarin.com/api/member/UIKit.UIResponder.TouchesEnded/p/Foundation.NSSet/UIKit.UIEvent/)
-- [`TouchesCancelled`](https://developer.xamarin.com/api/member/UIKit.UIResponder.TouchesCancelled/p/Foundation.NSSet/UIKit.UIEvent/)
-- [`Draw`](https://developer.xamarin.com/api/member/UIKit.UIView.Draw/p/CoreGraphics.CGRect/)
+- [`TouchesBegan`](xref:UIKit.UIResponder.TouchesBegan(Foundation.NSSet,UIKit.UIEvent))
+- [`TouchesMoved`](xref:UIKit.UIResponder.TouchesMoved(Foundation.NSSet,UIKit.UIEvent))
+- [`TouchesEnded`](xref:UIKit.UIResponder.TouchesEnded(Foundation.NSSet,UIKit.UIEvent))
+- [`TouchesCancelled`](xref:UIKit.UIResponder.TouchesCancelled(Foundation.NSSet,UIKit.UIEvent))
+- [`Draw`](xref:UIKit.UIView.Draw(CoreGraphics.CGRect))
 
 各種`Touches`覆寫累積組成聚合線條的點。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/20/2018
-ms.openlocfilehash: b0a5d3e75ebbcd70a60a3e4e76eebe166117d31c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0b3fb7d467ae64e2cbfdb61644b1537bc5ae1161
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131080"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233064"
 ---
 # <a name="using-the-natural-language-framework-with-xamarinios"></a>與 Xamarin.iOS 使用自然語言架構
 
@@ -20,9 +20,9 @@ ms.locfileid: "50131080"
 
 自然語言架構也可以使用自訂的核心 ML 模型以分類和標記在特製化的內容中的文字。
 
-[NSLinguisticTagger](https://developer.xamarin.com/api/type/Foundation.NSLinguisticTagger/)類別是仍然可用。 不過，自然語言架構是用於自然語言處理的慣用的機制。
+[NSLinguisticTagger](xref:Foundation.NSLinguisticTagger)類別是仍然可用。 不過，自然語言架構是用於自然語言處理的慣用的機制。
 
-## <a name="sample-app-xamarinnl"></a>範例應用程式： XamarinNL
+## <a name="sample-app-xamarinnl"></a>範例應用程式：XamarinNL
 
 若要了解如何使用 Xamarin.iOS 中的自然語言架構，看看[XamarinNL 範例應用程式](https://developer.xamarin.com/samples/monotouch/iOS12/XamarinNL)。
 此範例應用程式會示範如何使用自然語言架構：
@@ -151,7 +151,7 @@ partial void HandleLanguageProbabilitiesButtonTap(UIButton sender)
 點選**單字**或是**句子**擷取語彙基元清單 按鈕。 每個語彙基元是相關聯的文字或以原始文字的句子。
 
 `ShowTokens` 使用者的輸入為語彙基元，藉由呼叫的分割 [`GetTokens`](https://developer.xamarin.com/api/member/NaturalLanguage.NLTokenizer.GetTokens/)
-方法`NLTokenizer`。 這個方法傳回的陣列 [`NSValue`](https://developer.xamarin.com/api/type/Foundation.NSValue/)
+方法`NLTokenizer`。 這個方法傳回的陣列 [`NSValue`](xref:Foundation.NSValue)
 物件，每個換行`NSRange`對應至原始的文字中的語彙基元的值。
 
 ```csharp

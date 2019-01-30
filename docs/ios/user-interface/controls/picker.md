@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/14/2018
-ms.openlocfilehash: 0ef33c2036b1ff2d5a7e2035ca5fa8af58672867
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 525ddf3c8cfc457738099c3afbb162fd3fb9239b
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "34789908"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233571"
 ---
 # <a name="picker-control-in-xamarinios"></a>在 Xamarin.iOS 中的選擇器控制項
 
-A [ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/)讓您能夠捲動滾輪型介面的個別元件，以挑選清單中的值。
+A [ `UIPickerView` ](xref:UIKit.UIPickerView)讓您能夠捲動滾輪型介面的個別元件，以挑選清單中的值。
 
-選擇器經常用來選取日期和時間;Apple 提供 [`UIDatePicker`](https://developer.xamarin.com/api/type/UIKit.UIDatePicker/)
+選擇器經常用來選取日期和時間;Apple 提供 [`UIDatePicker`](xref:UIKit.UIDatePicker)
 針對此用途的類別。
 
 本文說明如何實作及使用`UIPickerView`和`UIDatePicker`控制項。
@@ -59,8 +59,8 @@ public override void ViewDidLoad()
 }
 ```
 
-[ `UIPickerViewModel` ](https://developer.xamarin.com/api/type/UIKit.UIPickerViewModel/)基底類別會實作兩個介面， [`IUIPickerDataSource`](https://developer.xamarin.com/api/type/UIKit.IUIPickerViewDataSource/)
-並[ `IUIPickerViewDelegate` ](https://developer.xamarin.com/api/type/UIKit.IUIPickerViewDelegate/)，其宣告指定選擇器的資料的各種方法，並處理互動的方式：
+[ `UIPickerViewModel` ](xref:UIKit.UIPickerViewModel)基底類別會實作兩個介面， [`IUIPickerDataSource`](xref:UIKit.IUIPickerViewDataSource)
+並[ `IUIPickerViewDelegate` ](xref:UIKit.IUIPickerViewDelegate)，其宣告指定選擇器的資料的各種方法，並處理互動的方式：
 
 ```csharp
 public class PeopleModel : UIPickerViewModel
@@ -126,13 +126,13 @@ public class PeopleModel : UIPickerViewModel
 
 ![具有兩個元件的選擇器](picker-images/image3.png "具有兩個元件的選擇器")
 
-若要選擇器中指定的元件數目，請使用 [`GetComponentCount`](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.GetComponentCount/p/UIKit.UIPickerView/) 
+若要選擇器中指定的元件數目，請使用 [`GetComponentCount`](xref:UIKit.UIPickerViewModel.GetComponentCount(UIKit.UIPickerView)) 
 方法。
 
 ### <a name="customizing-a-pickers-appearance"></a>自訂選擇器的外觀
 
 若要自訂的選擇器外觀，請使用 [`UIPickerView.UIPickerViewAppearance`](https://developer.xamarin.com/api/type/UIKit.UIPickerView+UIPickerViewAppearance/)
-類別或覆寫[ `GetView` ](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.GetView/p/UIKit.UIPickerView/System.nint/System.nint/UIKit.UIView/)並[ `GetRowHeight` ](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.GetRowHeight/p/UIKit.UIPickerView/System.nint/)中的方法`UIPickerViewModel`。
+類別或覆寫[ `GetView` ](xref:UIKit.UIPickerViewModel.GetView(UIKit.UIPickerView,System.nint,System.nint,UIKit.UIView))並[ `GetRowHeight` ](xref:UIKit.UIPickerViewModel.GetRowHeight(UIKit.UIPickerView,System.nint))中的方法`UIPickerViewModel`。
 
 ## <a name="uidatepicker"></a>UIDatePicker
 
@@ -161,7 +161,7 @@ UIPickerView pickerView = new UIPickerView(
 
 #### <a name="minimum-and-maximum-date"></a>最小值和最大日期
 
-[`MinimumDate`](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.MinimumDate/) 並[ `MaximumDate` ](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.MaximumDate/)限制的可用日期選擇器中的日期範圍。 例如，下列程式碼會限制以六十年導致存在目前的日期選擇器：
+[`MinimumDate`](xref:UIKit.UIDatePicker.MinimumDate) 並[ `MaximumDate` ](xref:UIKit.UIDatePicker.MaximumDate)限制的可用日期選擇器中的日期範圍。 例如，下列程式碼會限制以六十年導致存在目前的日期選擇器：
 
 ```csharp
 var calendar = new NSCalendar(NSCalendarType.Gregorian);
@@ -182,7 +182,7 @@ datePickerView.MaximumDate = NSDate.Now;
 
 #### <a name="minute-interval"></a>每分鐘的間隔
 
-[ `MinuteInterval` ](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.MinuteInterval/)屬性設定的選擇器會顯示分鐘的間隔：
+[ `MinuteInterval` ](xref:UIKit.UIDatePicker.MinuteInterval)屬性設定的選擇器會顯示分鐘的間隔：
 
 ```csharp
 datePickerView.MinuteInterval = 10;
@@ -190,7 +190,7 @@ datePickerView.MinuteInterval = 10;
 
 #### <a name="mode"></a>模式
 
-日期選擇器支援四種[模式](https://developer.xamarin.com/api/type/UIKit.UIDatePickerMode/)，如下所述：
+日期選擇器支援四種[模式](xref:UIKit.UIDatePickerMode)，如下所述：
 
 ##### <a name="uidatepickermodetime"></a>UIDatePickerMode.Time
 
@@ -243,7 +243,7 @@ datePickerView.Mode = UIDatePickerMode.DateAndTime;
 datePickerView.Mode = UIDatePickerMode.CountDownTimer;
 ```
 
-![「 UIDatePickerMode.CountDownTimer"](picker-images/image5.png "UIDatePickerMode.CountDownTimer")
+!["UIDatePickerMode.CountDownTimer"](picker-images/image5.png "UIDatePickerMode.CountDownTimer")
 
 `CountDownDuration`屬性擷取值的日期選擇器中`UIDatePickerMode.CountDownTimer`模式。 例如，若要將倒數計時值新增至目前的日期：
 
@@ -257,9 +257,9 @@ dateLabel.Text = "Alarm set for:" + coundownTimeformat.ToString(finishCountdown)
 
 #### <a name="nsdateformatter"></a>NSDateFormatter
 
-若要格式化`NSDate`，使用[ `NSDateFormatter` ](https://developer.xamarin.com/api/type/Foundation.NSDateFormatter/)。
+若要格式化`NSDate`，使用[ `NSDateFormatter` ](xref:Foundation.NSDateFormatter)。
 
-若要使用`NSDateFormatter`，呼叫其[ `ToString` ](https://developer.xamarin.com/api/member/Foundation.NSDateFormatter.ToString/p/Foundation.NSDate/)方法。 例如: 
+若要使用`NSDateFormatter`，呼叫其[ `ToString` ](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate))方法。 例如: 
 
 ```csharp
 var date = NSDate.Now;
@@ -272,7 +272,7 @@ var formattedDate = formatter.ToString(d);
 
 ##### <a name="dateformat"></a>DateFormat
 
-[ `DateFormat` ](https://developer.xamarin.com/api/property/Foundation.NSDateFormatter.DateFormat/)屬性 （字串）`NSDateFormatter`允許可自訂的日期格式規格：
+[ `DateFormat` ](xref:Foundation.NSDateFormatter.DateFormat)屬性 （字串）`NSDateFormatter`允許可自訂的日期格式規格：
 
 ```csharp
 NSDateFormatter dateFormat = new NSDateFormatter();
@@ -281,7 +281,7 @@ dateFormat.DateFormat = "yyyy-MM-dd";
 
 ##### <a name="timestyle"></a>TimeStyle
 
-[ `TimeStyle` ](https://developer.xamarin.com/api/property/Foundation.NSDateFormatter.TimeStyle/)屬性 ( [ `NSDateFormatterStyle` ](https://developer.xamarin.com/api/type/Foundation.NSDateFormatterStyle/)) 的`NSDateFormatter`指定時間格式會根據預先決定的樣式：
+[ `TimeStyle` ](xref:Foundation.NSDateFormatter.TimeStyle)屬性 ( [ `NSDateFormatterStyle` ](xref:Foundation.NSDateFormatterStyle)的`NSDateFormatter`指定時間格式會根據預先決定的樣式：
 
 ```csharp
 NSDateFormatter timeFormat = new NSDateFormatter();
@@ -290,14 +290,14 @@ timeFormat.TimeStyle = NSDateFormatterStyle.Short;
 
 各種`NSDateFormatterStyle`值會顯示時間，如下所示：
 
-- `NSDateFormatterStyle.Full`: 46： 下午 7:00 美加東部日光節約時間
-- `NSDateFormatterStyle.Long`: 7:47:00 PM EDT
-- `NSDateFormatterStyle.Medium`: 47： 下午 7:00
-- `NSDateFormatterSytle.Short`： 下午 7:47
+- `NSDateFormatterStyle.Full`：46： 下午 7:00 美加東部日光節約時間
+- `NSDateFormatterStyle.Long`：7:47:00 PM EDT
+- `NSDateFormatterStyle.Medium`：47： 下午 7:00
+- `NSDateFormatterSytle.Short`：下午 7:47
 
 ##### <a name="datestyle"></a>DateStyle
 
-[ `DateStyle` ](https://developer.xamarin.com/api/property/Foundation.NSDateFormatter.DateStyle/)屬性 ( `NSDateFormatterStyle`) 的`NSDateFormatter`指定日期格式會根據預先決定的樣式：
+[ `DateStyle` ](xref:Foundation.NSDateFormatter.DateStyle)屬性 ( `NSDateFormatterStyle`) 的`NSDateFormatter`指定日期格式會根據預先決定的樣式：
 
 ```csharp
 NSDateFormatter dateTimeformat = new NSDateFormatter();
@@ -306,10 +306,10 @@ dateTimeformat.DateStyle = NSDateFormatterStyle.Long;
 
 各種`NSDateFormatterStyle`值會顯示日期，如下所示：
 
-- `NSDateFormatterStyle.Full`： 星期三年 8 月 2日，2017 日下午 7:48
-- `NSDateFormatterStyle.Long`： 2017 年 8 月 2日日下午 7:49
-- `NSDateFormatterStyle.Medium`： 2017 年 8 月 2日日下午 7:49
-- `NSDateFormatterStyle.Short`: 8/2/17，下午 7 點 50
+- `NSDateFormatterStyle.Full`：星期三年 8 月 2日，2017 日下午 7:48
+- `NSDateFormatterStyle.Long`：2017 年 8 月 2日日下午 7:49
+- `NSDateFormatterStyle.Medium`：2017 年 8 月 2日日下午 7:49
+- `NSDateFormatterStyle.Short`：8/2/17，下午 7 點 50
 
 > [!NOTE]
 > `DateFormat` 並`DateStyle` / `TimeStyle`提供不同的方式指定日期和時間格式。 最新設定屬性會決定日期格式器的輸出。

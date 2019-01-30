@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 39faa4670b17cdf4853bfe24ff104765ca541b9f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 512280e9c298cfbcea6f693b0691236fd1cf5a5f
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106210"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233688"
 ---
 # <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>在 Xamarin.iOS 中 NSObject 的泛型子
 
 ## <a name="using-generics-with-nsobjects"></a>使用泛型搭配 NSObjects
 
-從開始，Xamarin.iOS 7.2.1 您可以使用泛型中的子`NSObject`(例如[UIView](https://developer.xamarin.com/api/type/UIKit.UIView/))。
+從開始，Xamarin.iOS 7.2.1 您可以使用泛型中的子`NSObject`(例如[UIView](xref:UIKit.UIView)。
 
 您現在可以建立泛型類別會與下列類似：
 
@@ -54,7 +54,7 @@ class Generic<T> : NSObject where T: NSObject
 }
 ```
 
-**原因**： 泛型類型參數是`NSObject`，因此選取器簽章`myMethod:`可以安全地公開以 OBJECTIVE-C (它一律是`NSObject`或它的子類別)。
+**原因**:泛型類型參數是`NSObject`，因此選取器簽章`myMethod:`可以安全地公開以 OBJECTIVE-C (它一律是`NSObject`或它的子類別)。
 
 **不正確**:
 
@@ -151,7 +151,7 @@ class MyClass : NSObject
 }
 ```
 
-**原因**： 這不允許因為 Xamarin.iOS 不知道哪種類型的類型引數使用`T`時從 OBJECTIVE-C 叫用方法。
+**原因**:這不允許因為 Xamarin.iOS 不知道哪種類型的類型引數使用`T`時從 OBJECTIVE-C 叫用方法。
 
 替代方式是建立特製化的方法，並將其改為匯出：
 
@@ -188,7 +188,7 @@ class Generic<T> : NSObject where T : NSObject
 }
 ```
 
-**原因：** 一樣泛型方法，若要能夠知道要使用的泛型型別引數為 t 類型的 Xamarin.iOS 執行階段需求
+**原因：** 就像一般方法一樣，Xamarin.iOS 執行階段必須能知道類型用於泛型類型引數 t。
 
 比方說使用本身的執行個體的成員 (因為絕對不會執行個體的泛型<T>，它一律是泛型<SomeSpecificClass>)，但是對靜態成員這項資訊不存在。
 

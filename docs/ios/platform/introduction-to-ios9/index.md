@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 2f9cc72dcbe506d22c8a986bcf59ddaa6355f043
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: becba36655a5247a11decb7dc54334f9397ecdfc
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103243"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233532"
 ---
 # <a name="introduction-to-ios-9"></a>IOS 9 簡介
 
@@ -38,7 +38,7 @@ IOS 9 和 iPhone 6s 和 iPhone 6s 新手此外，3D 觸控，請將您的 iOS �
 
 新增 iOS 9，App Transport Security (ATS) 會強制執行 （例如應用程式的後端伺服器） 的網際網路資源與您的應用程式之間的安全連線。 ATS 可確保所有的網際網路通訊符合保護連線安全的最佳作法，藉此防止意外洩露機密的資訊，直接透過您的應用程式或它正在使用的程式庫。
 
-因為在建置適用於 iOS 9 和 OS X 10.11 (El Capitan) 使用的所有連線的應用程式預設會啟用 ATS [NSUrlConnection](https://developer.xamarin.com/api/type/Foundation.NSUrlConnection/)， [CFUrl](https://developer.xamarin.com/api/type/CoreFoundation.CFUrl/)或是[NSUrlSession](https://developer.xamarin.com/api/type/Foundation.NSUrlSession/)會受限於ATS 安全性需求。 如果您的連線不符合這些需求，它們將會失敗並發生例外狀況。
+因為在建置適用於 iOS 9 和 OS X 10.11 (El Capitan) 使用的所有連線的應用程式預設會啟用 ATS [NSUrlConnection](xref:Foundation.NSUrlConnection)， [CFUrl](xref:CoreFoundation.CFUrl)或是[NSUrlSession](xref:Foundation.NSUrlSession)會受限於ATS 安全性需求。 如果您的連線不符合這些需求，它們將會失敗並發生例外狀況。
 
 若要深入了解 ATS，請參閱我們[應用程式的傳輸安全性](~/ios/app-fundamentals/ats.md)指南。
 
@@ -78,7 +78,7 @@ IOS 9 和 iPhone 6s 和 iPhone 6s 新手此外，3D 觸控，請將您的 iOS �
 
 ## <a name="new-stack-view"></a>新的堆疊檢視
 
-堆疊檢視控制項 ([UIStackView](https://developer.xamarin.com/api/type/UIKit.UIStackView/)) 運用動態回應 iOS 裝置的方向和螢幕大小自動版面配置和大小類別，來管理子檢視的堆疊 （水平或垂直） 的力量。
+堆疊檢視控制項 ([UIStackView](xref:UIKit.UIStackView)運用動態回應 iOS 裝置的方向和螢幕大小自動版面配置和大小類別，來管理子檢視的堆疊 （水平或垂直） 的力量。
 
 使用堆疊檢視控制項的工作量所需的使用者介面就會大幅減少版面配置。 附加至堆疊檢視的所有子檢視的配置是根據開發人員定義的屬性，例如軸、 發佈、 對齊及間距自動進行管理。
 
@@ -87,7 +87,7 @@ IOS 9 和 iPhone 6s 和 iPhone 6s 新手此外，3D 觸控，請將您的 iOS �
 
 ## <a name="collection-view-changes"></a>集合檢視變更
 
-在 iOS 9、 集合檢視中 ([UICollectionView](https://developer.xamarin.com/api/type/UIKit.UICollectionView/)) 現在支援拖放藉由新增新的預設筆勢辨識器和數個新的支援方法重新排列現成的項目。
+在 iOS 9、 集合檢視中 ([UICollectionView](xref:UIKit.UICollectionView)現在支援拖放藉由新增新的預設筆勢辨識器和數個新的支援方法重新排列現成的項目。
 
 使用這些新方法，可以輕鬆地實作拖放以重新排列集合檢視中和已自訂重新排序的程序任何階段中的項目外觀的選項。
 
@@ -150,9 +150,9 @@ IOS 9 和 iPhone 6s 和 iPhone 6s 新手此外，3D 觸控，請將您的 iOS �
 
 在 iOS 9 中，Apple 已呈現翻轉的使用者介面容易曾經為從右至左的語言提供完整支援。 其中包括下列項目：
 
-- 標準[UIKit](https://developer.xamarin.com/api/namespace/UIKit/)控制項將會自動翻轉從右到左取決於 iOS 裝置的地區設定和語言設定。
-- [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)類別提供可讓您定義指定的檢視應該會出現時的屬性翻轉由右至左。
-- 若要使用以程式設計方式翻轉影像的能力[FlipsForRightToLeftLayoutDirection](https://developer.xamarin.com/api/property/UIKit.UIImage.FlipsForRightToLeftLayoutDirection/)屬性[UIImage](https://developer.xamarin.com/api/type/UIKit.UIImage/)類別。
+- 標準[UIKit](xref:UIKit)控制項將會自動翻轉從右到左取決於 iOS 裝置的地區設定和語言設定。
+- [UIView](xref:UIKit.UIView)類別提供可讓您定義指定的檢視應該會出現時的屬性翻轉由右至左。
+- 若要使用以程式設計方式翻轉影像的能力[FlipsForRightToLeftLayoutDirection](xref:UIKit.UIImage.FlipsForRightToLeftLayoutDirection)屬性[UIImage](xref:UIKit.UIImage)類別。
 
 如需詳細資訊，請參閱 Apple[支援從右至左語言](https://developer.apple.com/library/prerelease/ios/documentation/MacOSX/Conceptual/BPInternational/SupportingRight-To-LeftLanguages/SupportingRight-To-LeftLanguages.html#//apple_ref/doc/uid/10000171i-CH17)文件。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: 923eebc2674abdbbd66d9db11bebf9f503928569
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3c46aa1244699671d46560b0029197981a86d005
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107316"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233324"
 ---
 # <a name="search-bars-in-xamarinios"></a>在 Xamarin.iOS 中的搜尋列
 
@@ -84,7 +84,7 @@ searchBar.SearchButtonClicked += (sender, e) => {
 
 - **文字，預留位置，提示**– 這些屬性用來提供建議，並指示使用者如何使用 [搜尋] 列。 比方說，如果您的應用程式會顯示一份存放區可以使用 prompt 屬性，使用者可以 「 輸入縣 （市）、 故事名稱或郵遞區號 」 的建議
 - **搜尋樣式**– 您可以設定讓 [搜尋] 列**Prominent**或是**最低**。 使用顯著，會設定一切在畫面上，除了列，導致將焦點轉給繪製到搜尋列搜尋的濃淡。 最小的樣式的 [搜尋] 列會融合其周圍環境而定。
-- **功能**– 讓這些屬性只會顯示 UI 項目。 必須實作的功能，藉由引發正確的事件中所述的這些[搜尋列 API 文件](https://developer.xamarin.com/api/type/UIKit.UISearchBar/)
+- **功能**– 讓這些屬性只會顯示 UI 項目。 必須實作的功能，藉由引發正確的事件中所述的這些[搜尋列 API 文件](xref:UIKit.UISearchBar)
     - 顯示搜尋結果 / 書籤按鈕-在 [搜尋] 列上顯示搜尋結果] 或 [書籤圖示
     - 顯示 [取消] 按鈕-允許使用者結束搜尋函式。 建議，選取此項目。
     - 顯示範圍列 – 這可讓使用者以限制其搜尋範圍。 比方說，在音樂應用程式中搜尋時的使用者可以選取是否想要搜尋 Apple Music 或其程式庫的特定歌曲或演出者。 若要顯示的各種選項，新增的項目陣列**ScopeBarTitles**屬性。

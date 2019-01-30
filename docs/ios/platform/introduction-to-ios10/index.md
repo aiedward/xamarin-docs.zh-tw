@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: 2d1e0df95b2665f7e3b33a901271b11e1c243b1b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f2a612eea39a3447cae03e2d7b675a46c47aad52
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123555"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233740"
 ---
 # <a name="introduction-to-ios-10"></a>IOS 10 簡介
 
@@ -135,7 +135,7 @@ iOS 10 會呈現駕駛 engagement 應用程式的新方式讓系統主動很有�
 - Siri 互動
 - QuickType 建議 
 
-應用程式未公開這項功能才能使用的技術集合，例如系統[NSUserActivity](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/)，網頁標記中，核心焦點、 MapKit、 Media Player 和 UIKit。
+應用程式未公開這項功能才能使用的技術集合，例如系統[NSUserActivity](xref:Foundation.NSUserActivity)，網頁標記中，核心焦點、 MapKit、 Media Player 和 UIKit。
 
 若要深入了解，請參閱我們[主動式建議簡介](~/ios/platform/search/proactive-suggestions.md)指南。
 
@@ -198,11 +198,11 @@ iOS 10 包含新的語音 API 可讓應用程式，以支援連續的語音辨�
 
 iOS 10 延伸的延伸範圍像素格式和整個系統，包括架構，例如核心圖形、 Core 映像、 裸機和 AVFoundation 寬色域圖色彩空間的支援。 藉由提供整個圖形堆疊在這種行為，進一步降低與寬的色彩顯示裝置的支援。
 
-此外， [UIKit](https://developer.xamarin.com/api/namespace/UIKit/)已經過修改才能在新擴充**sRGB** colorspace，方便您混合使用中而不會顯著的效能遺失的寬色域色階的色彩。
+此外， [UIKit](xref:UIKit)已經過修改才能在新擴充**sRGB** colorspace，方便您混合使用中而不會顯著的效能遺失的寬色域色階的色彩。
 
 使用各種色彩時，Apple 提供以下最佳作法：
 
-- [UIColor](https://developer.xamarin.com/api/type/UIKit.UIColor/)現在會使用 sRGB 色彩空間，並將無法再將值`0.0`至`1.0`範圍。 如果應用程式依賴舊版的 clamp 行為時，它將會需要修改適用於 iOS 10。
+- [UIColor](xref:UIKit.UIColor)現在會使用 sRGB 色彩空間，並將無法再將值`0.0`至`1.0`範圍。 如果應用程式依賴舊版的 clamp 行為時，它將會需要修改適用於 iOS 10。
 - 將繪圖的環境設定 sRGB 色彩空間時執行自訂`UIView`iPad Pro 上繪製。
 - 如果應用程式執行的自訂轉譯`UIImages`，使用新[UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer)類別，以指定要使用的擴充範圍或標準範圍的格式。
 - 當使用低層級的 API，例如核心圖形或金屬提供映像處理時，開發人員應該使用的延伸的範圍的色彩空間和像素格式支援 16 位元浮點值。 必要時，開發人員必須以手動方式將色彩元件值。
@@ -229,7 +229,7 @@ IOS 10 中，已被取代的下列 Api:
 - `CKDiscoverAllContactsOperation`， `CKDiscoveredUserInfo`，`CKDiscoverUserInfosOperation`和`CKFetchRecordChangesOperation`類別已被取代 CloudKit 適用於 iOS 10。 使用[CKDiscoverAllUserIdentitiesOperation](https://developer.xamarin.com/api/type/CloudKit.CKDiscoverUserIdentitiesOperation/)， [CKUserIdentity](https://developer.xamarin.com/api/type/CloudKit.CKUserIdentity/)並[CKFetchRecordZoneChangesOperation](https://developer.xamarin.com/api/type/CloudKit.CKFetchRecordZoneChangesOperation/) （其支援記錄共用） 類別改為。
 - 數個[CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) Api （例如區域為基礎和以查詢為基礎訂用帳戶） 已被取代。 使用[CKRecordZoneSubscription](https://developer.xamarin.com/api/type/CloudKit.CKRecordZoneSubscription/)並[CKQuerySubscription](https://developer.xamarin.com/api/type/CloudKit.CKQuerySubscription/) Api 改。
 - [NSPersistentStoreCoordnator](https://developer.xamarin.com/api/type/CoreData.NSPersistentStoreCoordinator/)無所不在的內容相關的符號已被取代。
-- `ADBannerView``ADInterstitialAd`和相關中的符號[UIViewController](https://developer.xamarin.com/api/type/UIKit.UIViewController/)類別已被取代。
+- `ADBannerView``ADInterstitialAd`和相關中的符號[UIViewController](xref:UIKit.UIViewController)類別已被取代。
 - [SKUniform](https://developer.apple.com/reference/spritekit/skuniform)與浮點值的符號已被取代。
 - `UILocalNotification`， `UIMutableUserNotificationAction`， `UIMutableUserNotificationCategory`， `UIUserNotificationAction`，`UIUserNotificationCategory`和`UIUserNotificationSettings`UIKit 類別已被取代。 使用[使用者通知](#User-Notifications)framework 改。
 - `HandleActionForLocalNotification`， `HandleActionForRemoteNotification`，`DidReceiveLocalNotification`和`DidReceiveRemoteNotification`WatchKit 方法已被取代。 使用`HandleActionForNotification`和`DidReceiveNotification`方法改為。

@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 11/04/2018
-ms.openlocfilehash: d2ce173740b6de1c628c34c3b5c1227ed0fbcd3c
-ms.sourcegitcommit: 56b2f5cda7c37874618736d6129f19a8976826f0
+ms.openlocfilehash: d359ea6e56234f14f185ea578fca3a0346e0df50
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/21/2019
-ms.locfileid: "54418643"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233714"
 ---
 # <a name="get-started-with-xamarinessentials"></a>開始使用 Xamarin.Essentials
 
@@ -67,7 +67,7 @@ Xamarin.Essentials 是以 NuGet 套件形式提供，可讓您使用 Visual Stud
     protected override void OnCreate(Bundle savedInstanceState) {
         //...
         base.OnCreate(savedInstanceState);
-        Xamarin.Essentials.Platform.Init(this, savedInstanceState); // add this line to your code
+        Xamarin.Essentials.Platform.Init(this, savedInstanceState); // add this line to your code, it may also be called: bundle
         //...
     ```
 

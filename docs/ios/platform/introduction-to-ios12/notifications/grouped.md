@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: 278986b29e629995a202f474242670f5524c45ff
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2e23bb13ad35e9a7a6386d881fe64f817ca8e216
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111522"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233259"
 ---
 # <a name="grouped-notifications-in-xamarinios"></a>在 Xamarin.iOS 中群組的通知
 
@@ -20,7 +20,7 @@ ms.locfileid: "50111522"
 
 應用程式也可以讓使用者更輕鬆地尋找並與他們感興趣的特定資訊進行互動的執行緒群組的通知。
 
-## <a name="sample-app-groupednotifications"></a>範例應用程式： GroupedNotifications
+## <a name="sample-app-groupednotifications"></a>範例應用程式：GroupedNotifications
 
 若要了解如何使用 Xamarin.iOS 中使用群組的通知，看看[GroupedNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/GroupedNotifications)範例應用程式。
 
@@ -30,7 +30,7 @@ ms.locfileid: "50111522"
 
 ## <a name="request-authorization-and-allow-foreground-notifications"></a>要求授權，並允許前景通知
 
-應用程式可以傳送本機通知之前，它必須要求權限，若要這樣做。 在範例應用程式之[ `AppDelegate` ](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/)，則[ `FinishedLaunching` ](https://developer.xamarin.com/api/member/UIKit.UIApplicationDelegate.FinishedLaunching/p/UIKit.UIApplication/Foundation.NSDictionary/)方法會要求此權限：
+應用程式可以傳送本機通知之前，它必須要求權限，若要這樣做。 在範例應用程式之[ `AppDelegate` ](xref:UIKit.UIApplicationDelegate)，則[ `FinishedLaunching` ](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary))方法會要求此權限：
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -46,7 +46,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-[ `Delegate` ](https://developer.xamarin.com/api/property/UserNotifications.UNUserNotificationCenter.Delegate/) （設定上述） [ `UNUserNotificationCenter` ](https://developer.xamarin.com/api/type/UserNotifications.UNUserNotificationCenter/)決定前景應用程式是否應該藉由呼叫傳遞給完成處理常式會顯示內送通知[`WillPresentNotification`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification/p/UserNotifications.IUNUserNotificationCenterDelegate/UserNotifications.UNUserNotificationCenter/UserNotifications.UNNotification/System.Action%7BUserNotifications.UNNotificationPresentationOptions%7D/):
+[ `Delegate` ](xref:UserNotifications.UNUserNotificationCenter.Delegate) （設定上述） [ `UNUserNotificationCenter` ](xref:UserNotifications.UNUserNotificationCenter)決定前景應用程式是否應該藉由呼叫傳遞給完成處理常式會顯示內送通知[`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions})):
 
 ```csharp
 [Export("userNotificationCenter:willPresentotification:withCompletionHandler:")]
@@ -56,7 +56,7 @@ public void WillPresentNotification(UNUserNotificationCenter center, UNNotificat
 }
 ```
 
-[ `UNNotificationPresentationOptions.Alert` ](https://developer.xamarin.com/api/type/UserNotifications.UNNotificationPresentationOptions/)參數指示應用程式應該顯示該警示，但不是播放的音效或更新徽章。
+[ `UNNotificationPresentationOptions.Alert` ](xref:UserNotifications.UNNotificationPresentationOptions)參數指示應用程式應該顯示該警示，但不是播放的音效或更新徽章。
 
 ## <a name="threaded-notifications"></a>執行緒的通知
 
@@ -80,8 +80,8 @@ void StartNewThread()
 若要傳送執行緒的通知，範例應用程式：
 
 - 檢查應用程式是否具有授權傳送通知。
-- 建立 [`UNMutableNotificationContent`](https://developer.xamarin.com/api/type/UserNotifications.UNMutableNotificationContent/)
-物件通知的內容，並設定其 [`ThreadIdentifier`](https://developer.xamarin.com/api/property/UserNotifications.UNMutableNotificationContent.ThreadIdentifier/)
+- 建立 [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
+物件通知的內容，並設定其 [`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
 以上面建立的執行緒識別項。
 - 建立要求，並排程通知：
 

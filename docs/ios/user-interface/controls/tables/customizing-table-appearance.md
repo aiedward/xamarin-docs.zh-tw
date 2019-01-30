@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 0282b4b2194411d503ef7eb54b0337272e2be3ed
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: e1e86918d29e12d2f34dd3008b8c1d8e47471c24
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121317"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233545"
 ---
 # <a name="customizing-a-tables-appearance-in-xamarinios"></a>自訂在 Xamarin.iOS 中的資料表的外觀
 
@@ -41,7 +41,7 @@ cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
 //cell = new UITableViewCell (UITableViewCellStyle.Value2, cellIdentifier);
 ```
 
-[支援的屬性](http://developer.xamarin.com/api/type/UIKit.UITableViewCell/)儲存格樣式可以設定：
+[支援的屬性](xref:UIKit.UITableViewCell)儲存格樣式可以設定：
 
 ```csharp
 cell.TextLabel.Text = tableItems[indexPath.Row].Heading;

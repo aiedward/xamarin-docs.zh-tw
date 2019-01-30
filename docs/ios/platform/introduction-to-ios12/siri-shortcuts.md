@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 38e71914d9f7f6bb46ebeee8d548968c207d3b16
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 8b3b9a5b110432f33e06edf7ab51c582681e4ea3
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617757"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233727"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>在 Xamarin.iOS 中 Siri 快速鍵
 
@@ -24,7 +24,7 @@ iOS 12 新增 Siri 快速鍵，讓所有類型的應用程式公開其功能以 
 
 快速鍵應該用來加速使用者的能力，來完成常見工作 – 在許多情況下，而不需要開啟有問題的應用程式中。
 
-## <a name="sample-app-soup-chef"></a>範例應用程式： Soup Chef
+## <a name="sample-app-soup-chef"></a>範例應用程式：Soup Chef
 
 若要進一步了解 Siri 快速鍵，看看[Soup Chef](https://developer.xamarin.com/samples/monotouch/ios12/SoupChef/)範例應用程式。 Soup Chef 可讓使用者從虛數 soup 餐廳訂購、 檢視其訂單歷程記錄，以及定義排序 soup Siri 與互動時所要使用的片語。
 
@@ -72,9 +72,9 @@ iOS 12 新增 Siri 快速鍵，讓所有類型的應用程式公開其功能以 
 </array>
 ```
 
-這`NSUserActivityTypes`Soup Chef 知道如何處理的索引鍵/值組表示`OrderSoupIntent`，和[ `NSUserActivity` ](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/)具有[ `ActivityType` ](https://developer.xamarin.com/api/property/Foundation.NSUserActivity.ActivityType/)的"com.xamarin.SoupChef.viewMenu 」。
+這`NSUserActivityTypes`Soup Chef 知道如何處理的索引鍵/值組表示`OrderSoupIntent`，和[ `NSUserActivity` ](xref:Foundation.NSUserActivity)具有[ `ActivityType` ](xref:Foundation.NSUserActivity.ActivityType)的"com.xamarin.SoupChef.viewMenu 」。
 
-處理活動和傳遞至應用程式本身，而不是其擴充功能，自訂意圖`AppDelegate`( [ `UIApplicationDelegate` ](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/)) 所[ `ContinueUserActivity` ](https://developer.xamarin.com/api/member/UIKit.UIApplicationDelegate.ContinueUserActivity/)方法。
+處理活動和傳遞至應用程式本身，而不是其擴充功能，自訂意圖`AppDelegate`( [ `UIApplicationDelegate` ](xref:UIKit.UIApplicationDelegate)由[ `ContinueUserActivity` ](xref:UIKit.UIApplicationDelegate.ContinueUserActivity*)方法。
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
@@ -89,7 +89,7 @@ iOS 12 新增 Siri 快速鍵，讓所有類型的應用程式公開其功能以 
 <true/>
 ```
 
-此設定表示應用程式使用 「 group.com.xamarin.SoupChef 」 應用程式群組。 **SoupChefIntents**應用程式擴充功能會使用這個相同的應用程式群組，可讓兩個專案共用 [`NSUserDefaults`](https://developer.xamarin.com/api/type/Foundation.NSUserDefaults/)
+此設定表示應用程式使用 「 group.com.xamarin.SoupChef 」 應用程式群組。 **SoupChefIntents**應用程式擴充功能會使用這個相同的應用程式群組，可讓兩個專案共用 [`NSUserDefaults`](xref:Foundation.NSUserDefaults)
 資料。
 
 `com.apple.developer.siri`而 key 則代表應用程式互動 Siri。
@@ -103,7 +103,7 @@ iOS 12 新增 Siri 快速鍵，讓所有類型的應用程式公開其功能以 
 
 ### <a name="setting-up-an-nsuseractivity"></a>設定 NSUserActivity
 
-在 [功能表] 畫面`SoupMenuViewController`會建立`NSUserActivity`並將它指派給檢視控制器[ `UserActivity` ](https://developer.xamarin.com/api/property/UIKit.UIResponder.UserActivity/)屬性：
+在 [功能表] 畫面`SoupMenuViewController`會建立`NSUserActivity`並將它指派給檢視控制器[ `UserActivity` ](xref:UIKit.UIResponder.UserActivity)屬性：
 
 ```csharp
 public override void ViewDidLoad()
@@ -149,8 +149,8 @@ public static NSUserActivity ViewMenuActivity {
 請注意下列特別的是：
 
 - 設定`EligibleForPrediction`至`true`指出 Siri 能夠預測此活動，與介面的捷徑。
-- [ `ContentAttributeSet` ](https://developer.xamarin.com/api/property/Foundation.NSUserActivity.ContentAttributeSet/)陣列是一種標準[ `CSSearchableItemAttributeSet` ](https://developer.xamarin.com/api/type/CoreSpotlight.CSSearchableItemAttributeSet/)用來包含`NSUserActivity`iOS 搜尋結果中。
-- [`SuggestedInvocationPhrase`](https://developer.xamarin.com/api/property/Foundation.NSUserActivity.SuggestedInvocationPhrase/) 是 Siri 會建議使用者可能選擇指派為快速鍵的片語時的片語。
+- [ `ContentAttributeSet` ](xref:Foundation.NSUserActivity.ContentAttributeSet)陣列是一種標準[ `CSSearchableItemAttributeSet` ](https://developer.xamarin.com/api/type/CoreSpotlight.CSSearchableItemAttributeSet/)用來包含`NSUserActivity`iOS 搜尋結果中。
+- [`SuggestedInvocationPhrase`](xref:Foundation.NSUserActivity.SuggestedInvocationPhrase) 是 Siri 會建議使用者可能選擇指派為快速鍵的片語時的片語。
 
 ### <a name="handling-an-nsuseractivity-shortcut"></a>處理 NSUserActivity 快顯
 
@@ -415,7 +415,7 @@ void RemoveDonation(MenuItem menuItem)
 
 #### <a name="soupchefintents-infoplist-and-entitlementsplist"></a>SoupChefIntents – Info.plist 和的 Entitlements.plist
 
-##### <a name="soupchefintents-infoplist"></a>SoupChefIntents – Info.plist
+##### <a name="soupchefintents-infoplist"></a>SoupChefIntents – Info.plist
 
 **Info.plist**中**SoupChefIntents**專案定義**套件組合識別碼**為`com.xamarin.SoupChef.SoupChefIntents`。
 
@@ -449,7 +449,7 @@ void RemoveDonation(MenuItem menuItem)
 - `NSExtensionPointIdentifier` 指定類型的應用程式擴充功能 (請參閱[Apple 的文件](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15)如需詳細資訊)。
 - `NSExtensionPrincipalClass` 指定應該用來處理此延伸模組支援的對應方式的類別。
 
-##### <a name="soupchefintents-entitlementsplist"></a>SoupChefIntents – 的 Entitlements.plist
+##### <a name="soupchefintents-entitlementsplist"></a>SoupChefIntents – Entitlements.plist
 
 **Entitlements.plist**中**SoupChefIntents**專案具有**應用程式群組**功能。 這項功能已設定為使用相同的應用程式群組，作為**SoupChef**專案：
 
@@ -517,7 +517,7 @@ Intents UI 延伸模組會提供 Intents 延伸模組中的自訂使用者介面
 
 ### <a name="soupchefintentsui--infoplist-and-entitlementsplist"></a>SoupChefIntentsUI – Info.plist 和的 Entitlements.plist
 
-#### <a name="soupchefintentsui-infoplist"></a>SoupChefIntentsUI – Info.plist
+#### <a name="soupchefintentsui-infoplist"></a>SoupChefIntentsUI – Info.plist
 
 **Info.plist**中**SoupChefIntentsUI**專案定義**套件組合識別碼**為`com.xamarin.SoupChef.SoupChefIntentsui`。
 
@@ -547,7 +547,7 @@ Intents UI 延伸模組會提供 Intents 延伸模組中的自訂使用者介面
 - `NSExtensionPointIdentifier` 指定類型的應用程式擴充功能 (請參閱[Apple 的文件](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15)如需詳細資訊)。
 - `NSExtensionMainStoryboard` 指定定義此延伸模組的主要介面將分鏡腳本
 
-#### <a name="soupchefintentsui-entitlementsplist"></a>SoupChefIntentsUI – 的 Entitlements.plist
+#### <a name="soupchefintentsui-entitlementsplist"></a>SoupChefIntentsUI – Entitlements.plist
 
 **SoupChefIntentsUI**專案不需要**Entitlements.plist**檔案。
 
@@ -600,7 +600,7 @@ public void ConfigureView(
 
 Soup Chef 提供介面將語音捷徑指派給每個訂單，使其能夠使用 Siri 的訂單詳細。 事實上，用來記錄，並指派語音快速鍵介面 iOS 所提供，而且需要一些自訂程式碼。
 
-在  `OrderDetailViewController`，當使用者點選之資料表的**加入 Siri**資料列， [ `RowSelected` ](https://developer.xamarin.com/api/member/UIKit.UITableViewSource.RowSelected/)方法顯示以新增或編輯語音快顯畫面：
+在  `OrderDetailViewController`，當使用者點選之資料表的**加入 Siri**資料列， [ `RowSelected` ](xref:UIKit.UITableViewSource.RowSelected*)方法顯示以新增或編輯語音快顯畫面：
 
 ```csharp
 public override void RowSelected(UITableView tableView, NSIndexPath indexPath)

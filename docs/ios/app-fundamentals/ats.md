@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2017
-ms.openlocfilehash: 0645b326576a68c97479bc5b59aabaa104f87ae2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f9308d3a746a5a0a43cf47cc5ea809c0f82bbe7b
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114258"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233818"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>在 Xamarin.iOS 中的應用程式的傳輸安全性
 
@@ -27,11 +27,11 @@ _應用程式的傳輸安全性 (ATS) 會強制執行 （例如應用程式的�
 
 針對現有的應用程式，實作`HTTPS`盡可能通訊協定。 針對新的 Xamarin.iOS 應用程式，您應該使用`HTTPS`與網際網路資源進行通訊時，以獨佔方式。 此外，您必須使用 TLS 1.2 版與正向加密來加密高階 API 通訊。
 
-與所做的任何連線[NSUrlConnection](https://developer.xamarin.com/api/type/Foundation.NSUrlConnection/)， [CFUrl](https://developer.xamarin.com/api/type/CoreFoundation.CFUrl/)或是[NSUrlSession](https://developer.xamarin.com/api/type/Foundation.NSUrlSession/)適用於 iOS 9 和 OS X 10.11 (El Capitan) 建置的應用程式中的預設會使用 ATS。
+與所做的任何連線[NSUrlConnection](xref:Foundation.NSUrlConnection)， [CFUrl](xref:CoreFoundation.CFUrl)或是[NSUrlSession](xref:Foundation.NSUrlSession)適用於 iOS 9 和 OS X 10.11 (El Capitan) 建置的應用程式中的預設會使用 ATS。
 
 ## <a name="default-ats-behavior"></a>預設 ATS 行為
 
-因為在建置適用於 iOS 9 和 OS X 10.11 (El Capitan) 使用的所有連線的應用程式預設會啟用 ATS [NSUrlConnection](https://developer.xamarin.com/api/type/Foundation.NSUrlConnection/)， [CFUrl](https://developer.xamarin.com/api/type/CoreFoundation.CFUrl/)或是[NSUrlSession](https://developer.xamarin.com/api/type/Foundation.NSUrlSession/)會受限於ATS 安全性需求。 如果您的連線不符合這些需求，它們將會失敗並發生例外狀況。
+因為在建置適用於 iOS 9 和 OS X 10.11 (El Capitan) 使用的所有連線的應用程式預設會啟用 ATS [NSUrlConnection](xref:Foundation.NSUrlConnection)， [CFUrl](xref:CoreFoundation.CFUrl)或是[NSUrlSession](xref:Foundation.NSUrlSession)會受限於ATS 安全性需求。 如果您的連線不符合這些需求，它們將會失敗並發生例外狀況。
 
 ### <a name="ats-connection-requirements"></a>ATS 連線需求
 
@@ -177,10 +177,10 @@ NSAppTransportSecurity
 - **NSExceptionDomains** (`Dictionary`)-網域的集合，以及 ATS 應該用於指定網域的安全性設定。
 - **< Domain-name-for-exception-as-string >** (`Dictionary`)-針對指定的網域 （例如例外狀況的集合。 `www.xamarin.com`)。
 - **NSExceptionMinimumTLSVersion** (`String`)-為的最低 TLS 版本`TLSv1.0`，`TLSv1.1`或`TLSv1.2`（此為預設值）。
-- **NSExceptionRequiresForwardSecrecy** (`Boolean`)-如果`NO`網域不需要使用轉送安全性加密。 預設值是 `YES`。
+- **NSExceptionRequiresForwardSecrecy** (`Boolean`)-如果`NO`網域不需要使用轉送安全性加密。 預設值為 `YES`。
 - **NSExceptionAllowsInsecureHTTPLoads** (`Boolean`)-如果`NO`（預設值） 中，必須是與此網域的所有通訊`HTTPS`通訊協定。
-- **NSRequiresCertificateTransparency** (`Boolean`)-如果`YES`網域的安全通訊端層 (SSL) 必須包含有效的透明資料。 預設值是 `NO`。
-- **NSIncludesSubdomains** (`Boolean`)-如果`YES`這些設定會覆寫此網域的所有子網域。 預設值是 `NO`。
+- **NSRequiresCertificateTransparency** (`Boolean`)-如果`YES`網域的安全通訊端層 (SSL) 必須包含有效的透明資料。 預設值為 `NO`。
+- **NSIncludesSubdomains** (`Boolean`)-如果`YES`這些設定會覆寫此網域的所有子網域。 預設值為 `NO`。
 - **NSThirdPartyExceptionMinimumTLSVersion** (`String`)-第 3 個合作對象服務開發人員的控制之外的網域時所使用的 TLS 版本。
 - **NSThirdPartyExceptionRequiresForwardSecrecy** (`Boolean`)-如果`YES`第 3 個合作對象網域需要正向加密。
 - **NSThirdPartyExceptionAllowsInsecureHTTPLoads** (`Boolean`)-如果`YES`ATS 會允許不安全的通訊，與第 3 個合作對象網域。

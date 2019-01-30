@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 42e357c0fbb4b858866e15d638177d6823de0f09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 33f27d2585f4fb4d65181cbfd9211ea87b837e73
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112672"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233883"
 ---
 # <a name="binding-objective-c-libraries"></a>繫結 Objective C 程式庫
 
@@ -49,7 +49,7 @@ ms.locfileid: "50112672"
 [![](objective-c-libraries-images/00vs-sml.png "iOS 繫結程式庫的 iOS")](objective-c-libraries-images/00vs.png#lightbox)
 
 > [!IMPORTANT]
-> 注意： 繫結專案**Xamarin.Mac**只支援在 Visual Studio for mac。
+> 注意:繫結專案**Xamarin.Mac**只支援在 Visual Studio for mac。
 
 -----
 
@@ -214,7 +214,7 @@ string SetText ([NullAllowed] string text);
 和 [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
 屬性。
 
-當您使用[ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)涵蓋 btouch 原生之下的屬性上屬性實際上會繫結的兩個方法： getter 和 setter。 您提供匯出的名稱**basename**且前面加上 「 set 」，開啟的第一個字母的單字計算 setter **basename**成大寫，並讓需要的選取器引數。 這表示`[Export ("label")]`上套用屬性實際上會繫結的 「 標籤 」 和 「 setLabel:"OBJECTIVE-C 方法。
+當您使用[ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)涵蓋 btouch 原生之下的屬性上屬性實際上會繫結的兩個方法： getter 和 setter。 您提供匯出的名稱**basename**且前面加上 「 set 」，開啟的第一個字母的單字計算 setter **basename**成大寫，並讓需要的選取器引數。 這表示`[Export ("label")]`上套用屬性實際上會繫結的 「 標籤 」 和 「 setLabel: 」OBJECTIVE-C 方法。
 
 有時候 OBJECTIVE-C 屬性未遵循前述的模式，且名稱是以手動方式覆寫。 在這些情況下，您可以控制使用產生的繫結的方式 [`[Bind]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAttribute) 
 屬性 getter 或 setter，例如：
@@ -674,7 +674,7 @@ CAScroll [] SupportedScrollModes { get; set; }
 
 ### <a name="binding-notifications"></a>繫結通知
 
-通知是訊息張貼至`NSNotificationCenter.DefaultCenter`並做為機制來廣播訊息到另一個應用程式的一個部分。 開發人員通常會使用通知訂閱[NSNotificationCenter](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/)的[AddObserver](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/M/AddObserver/)方法。 當應用程式張貼訊息至通知中心時，通常包含儲存在裝載[NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/)字典。 這個字典弱型別，以及取得問題的資訊是容易發生錯誤，因為使用者通常需要讀取文件索引鍵位於字典和可儲存在字典中值的型別中。 存在的索引鍵有時會使用做為布林值。
+通知是訊息張貼至`NSNotificationCenter.DefaultCenter`並做為機制來廣播訊息到另一個應用程式的一個部分。 開發人員通常會使用通知訂閱[NSNotificationCenter](xref:Foundation.NSNotificationCenter)的[AddObserver](xref:Foundation.NSNotificationCenter.AddObserver(Foundation.NSString,System.Action{Foundation.NSNotification}))方法。 當應用程式張貼訊息至通知中心時，通常包含儲存在裝載[NSNotification.UserInfo](xref:Foundation.NSNotification.UserInfo)字典。 這個字典弱型別，以及取得問題的資訊是容易發生錯誤，因為使用者通常需要讀取文件索引鍵位於字典和可儲存在字典中值的型別中。 存在的索引鍵有時會使用做為布林值。
 
 Xamarin.iOS 繫結產生器提供繫結通知的開發人員的支援。 若要這樣做，您設定 [`[Notification]`](~/cross-platform/macios/binding/binding-types-reference.md#NotificationAttribute)
 屬性也是在屬性上的加上 [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)
@@ -703,7 +703,7 @@ public class MyClass {
 }
 ```
 
-您的程式碼的使用者可以接著輕鬆訂閱通知張貼至[NSDefaultCenter](https://developer.xamarin.com/api/property/Foundation.NSNotificationCenter.DefaultCenter/)使用如下的程式碼：
+您的程式碼的使用者可以接著輕鬆訂閱通知張貼至[NSDefaultCenter](xref:Foundation.NSNotificationCenter.DefaultCenter)使用如下的程式碼：
 
 ```csharp
 var token = MyClass.Notifications.ObserverDidStart ((notification) => {
@@ -717,7 +717,7 @@ var token = MyClass.Notifications.ObserverDidStart ((notification) => {
 token.Dispose ();
 ```
 
-您也可以呼叫[NSNotification.DefaultCenter.RemoveObserver](https://developer.xamarin.com/api/member/Foundation.NSNotificationCenter.RemoveObserver/p/Foundation.NSObject/)並傳遞 token。 如果您的通知中包含參數，您應該指定 helper`EventArgs`介面，就像這樣：
+您也可以呼叫[NSNotification.DefaultCenter.RemoveObserver](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject))並傳遞 token。 如果您的通知中包含參數，您應該指定 helper`EventArgs`介面，就像這樣：
 
 ```csharp
 interface MyClass {
@@ -740,7 +740,7 @@ interface MyScreenChangedEventArgs {
 }
 ```
 
-將會產生上述`MyScreenChangedEventArgs`類別`ScreenX`並`ScreenY`屬性，可將擷取的資料[NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/) "ScreenXKey"和"ScreenYKey 」 鍵的字典分別並套用適當的轉換。 `[ProbePresence]`屬性產生器用來探查，如果已設定金鑰`UserInfo`，而不是嘗試擷取值。 這用於的情況下，索引鍵的目前狀態 （通常適用於布林值） 的值。
+將會產生上述`MyScreenChangedEventArgs`類別`ScreenX`並`ScreenY`屬性，可將擷取的資料[NSNotification.UserInfo](xref:Foundation.NSNotification.UserInfo) "ScreenXKey"和"ScreenYKey 」 鍵的字典分別並套用適當的轉換。 `[ProbePresence]`屬性產生器用來探查，如果已設定金鑰`UserInfo`，而不是嘗試擷取值。 這用於的情況下，索引鍵的目前狀態 （通常適用於布林值） 的值。
 
 這可讓您撰寫如下的程式碼：
 
@@ -918,7 +918,7 @@ public class  XyzOptions {
 
 若要這樣做，您需要執行一些作業：
 
-* 建立強型別類別，子類別化[DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/)並提供每個屬性的各種不同的 getter 和 setter。
+* 建立強型別類別，子類別化[DictionaryContainer](xref:Foundation.DictionaryContainer)並提供每個屬性的各種不同的 getter 和 setter。
 * 宣告的方法都會多載`NSDictionary`才會在新的強型別版本。
 
 您可以建立的強型別類別方法是以手動的方式，或使用產生器來為您執行的工作。  我們先探討如何執行這項操作以手動方式讓您了解發生什麼情況，然後按一下 自動的方法。
@@ -1021,7 +1021,7 @@ interface XyzPanel {
 
 <a name="Simple_Types" />
 
-### <a name="simple-types"></a>簡單類型
+### <a name="simple-types"></a>簡單型別
 
 下表顯示您從 OBJECTIVE-C 與產品 CocoaTouch 世界 Xamarin.iOS 世界的類型應該對應方式：
 
@@ -1404,5 +1404,5 @@ class Demo {
 ## <a name="related-links"></a>相關連結
 
 - [繫結範例](https://developer.xamarin.com/samples/BindingSample/)
-- [Xamarin University 課程： 建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程： 建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin University 課程：建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University 課程：建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

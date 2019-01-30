@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 25b17dbebebf7bcae92ebdc294c798101d39b987
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d5b7d4a372704079343a357c1d341a5260fcf583
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121616"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233272"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>在 Xamarin.iOS 中的使用者介面控制項
 
@@ -54,13 +54,13 @@ ms.locfileid: "50121616"
 
 ## <a name="progress-and-activity-indicatorsprogress-activity-indicatormd"></a>[進度和活動的指標](progress-activity-indicator.md)
 
-iOS 提供兩種主要的方式來表示應用程式中的進度： 活動的指標 (包括特定_網路_活動指示器) 和進度列。
+iOS 會提供兩種主要的方式來表示應用程式中的進度：活動的指標 (包括特定_網路_活動指示器) 和進度列。
 
 ## <a name="search-barssearchbarmd"></a>[搜尋列](searchbar.md)
 
 UISearchBar 用來搜尋值的清單。 
 
-## <a name="sliders-steppers-and-segmented-controlsslider-switch-segmented-controlsmd"></a>[滑桿、 Steppers，與分段的控制項](slider-switch-segmented-controls.md)
+## <a name="sliders-switches-and-segmented-controlsslider-switch-segmented-controlsmd"></a>[滑桿、開關與分段控制項](slider-switch-segmented-controls.md)
 
 滑桿控制項允許的範圍內的數字值的簡單的選取項目。 iOS 使用`UISwitch`布林值的輸入，可能會由其他平台上使用選項按鈕。 分段控制項是組織的方式，以允許使用者與少數選項的互動。
 

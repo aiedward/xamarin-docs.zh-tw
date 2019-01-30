@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 369e1a37cc75bb4d10cc71d8f79ed1dd473378ba
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9c5a3cdbc8a8d5a046db90ffa48b12709359da98
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119432"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55234026"
 ---
 # <a name="binding-types-reference-guide"></a>繫結型別參考指南
 
@@ -1181,7 +1181,7 @@ public class MyClass {
 }
 ```
 
-您的程式碼的使用者可以接著輕鬆訂閱通知張貼至[NSDefaultCenter](https://developer.xamarin.com/api/property/Foundation.NSNotificationCenter.DefaultCenter/)使用如下的程式碼：
+您的程式碼的使用者可以接著輕鬆訂閱通知張貼至[NSDefaultCenter](xref:Foundation.NSNotificationCenter.DefaultCenter)使用如下的程式碼：
 
 ```csharp
 var token = MyClass.Notifications.ObserverDidStart ((notification) => {
@@ -1203,7 +1203,7 @@ var token = MyClass.Notifications.ObserverDidStart (objectToObserve, (notificati
 token.Dispose ();
 ```
 
-您也可以呼叫[NSNotification.DefaultCenter.RemoveObserver](https://developer.xamarin.com/api/member/Foundation.NSNotificationCenter.RemoveObserver/p/Foundation.NSObject//)並傳遞 token。 如果您的通知中包含參數，您應該指定 helper`EventArgs`介面，就像這樣：
+您也可以呼叫[NSNotification.DefaultCenter.RemoveObserver](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject))並傳遞 token。 如果您的通知中包含參數，您應該指定 helper`EventArgs`介面，就像這樣：
 
 ```csharp
 interface MyClass {
@@ -1226,7 +1226,7 @@ interface MyScreenChangedEventArgs {
 }
 ```
 
-會產生上述`MyScreenChangedEventArgs`類別`ScreenX`並`ScreenY`屬性，可將擷取的資料[NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/)字典的索引鍵`ScreenXKey`和`ScreenYKey`分別並套用適當的轉換。 `[ProbePresence]`屬性產生器用來探查，如果已設定金鑰`UserInfo`，而不是嘗試擷取值。 這用於的情況下，索引鍵的目前狀態 （通常適用於布林值） 的值。
+會產生上述`MyScreenChangedEventArgs`類別`ScreenX`並`ScreenY`屬性，可將擷取的資料[NSNotification.UserInfo](xref:Foundation.NSNotification.UserInfo)字典的索引鍵`ScreenXKey`和`ScreenYKey`分別並套用適當的轉換。 `[ProbePresence]`屬性產生器用來探查，如果已設定金鑰`UserInfo`，而不是嘗試擷取值。 這用於的情況下，索引鍵的目前狀態 （通常適用於布林值） 的值。
 
 這可讓您撰寫如下的程式碼：
 
@@ -1498,7 +1498,7 @@ interface FooExplorer {
 typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 ```
 
-另請參閱： [CCallback](#CCallback)。
+另請參閱：[CCallback](#CCallback)。
 
 <a name="CCallback" />
 
@@ -1512,7 +1512,7 @@ typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 typedef returnType (*SomeTypeDefinition) (int parameter1, NSString *parameter2);
 ```
 
-另請參閱： [BlockCallback](#BlockCallback)。
+另請參閱：[BlockCallback](#BlockCallback)。
 
 ### <a name="params"></a>params
 
@@ -1942,13 +1942,13 @@ interface MyBinding {
 
 與 Xamarin.iOS 8.0 中，我們開始支援該換行時輕鬆地建立強型別類別`NSDictionaries`。
 
-雖然它一直都可以使用[DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/)資料類型以及手動的 API，現在正是執行這項操作容易許多。  如需詳細資訊，請參閱 <<c0> [ 呈現強型別](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types)。
+雖然它一直都可以使用[DictionaryContainer](xref:Foundation.DictionaryContainer)資料類型以及手動的 API，現在正是執行這項操作容易許多。  如需詳細資訊，請參閱 <<c0> [ 呈現強型別](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types)。
 
 <a name="StrongDictionary" />
 
 ### <a name="strongdictionary"></a>StrongDictionary
 
-當這個屬性套用至介面時，產生器將會產生具有相同名稱做為衍生自介面類別[DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/)並轉換成強型別介面中定義每個屬性getter 和 setter 的字典。
+當這個屬性套用至介面時，產生器將會產生具有相同名稱做為衍生自介面類別[DictionaryContainer](xref:Foundation.DictionaryContainer)並轉換成強型別介面中定義每個屬性getter 和 setter 的字典。
 
 這會自動產生的類別可以具現化，從現有`NSDictionary`，已建立或新增。
 

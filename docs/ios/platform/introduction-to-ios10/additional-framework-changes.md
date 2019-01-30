@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: 6ae08264218c8f959b351f059d73fc0aebfea39e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a7b029aad69e65192d48d969dba2b9bb9a0d7a50
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118080"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233896"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>其他 iOS 10 架構變更
 
@@ -156,7 +156,7 @@ iOS 10 可讓 Core 映像架構的下列增強功能：
 
 SceneKit framework，在 iOS 10 中，下列的增強功能所做的：
 
-- [SCNCamera](https://developer.xamarin.com/api/type/SceneKit.SCNCamera/)類別可以使用 HDR 功能及特效，提供更高的真實性。 使用調適性的曝光度，來建立自動的效果或使用 vignetting、 fringing 色彩和色彩閱卷 fillmatic 效果加入遊戲。
+- [SCNCamera](xref:SceneKit.SCNCamera)類別可以使用 HDR 功能及特效，提供更高的真實性。 使用調適性的曝光度，來建立自動的效果或使用 vignetting、 fringing 色彩和色彩閱卷 fillmatic 效果加入遊戲。
 - SceneKit 現在包含新的實際基礎呈現 (PBR) 系統，更簡單的資產編寫更實際的結果。
 - 使用新[SCNLightingModelPhysicallyBased](https://developer.apple.com/reference/scenekit/scnlightingmodelphysicallybased)陰影模型產品各種不同具真實感的陰影效果的同時要求只有三個基本屬性 (`Diffuse`，`Metalness`和`Roughness`)。
 - 因為 PBR 最陰影以環境為基礎的光源的運作方式，使用`LightingEnvironment`屬性，以將整個場景中的映像為基礎的光源。
@@ -191,8 +191,8 @@ SpriteKit framework，在 iOS 10 中，下列的增強功能所做的：
 
 若要在 iOS 10 的 UIKit 架構，下列增強功能所做的：
 
-- 新[UIPasteboard](https://developer.xamarin.com/api/type/UIKit.UIPasteboard/) API 提供新的選項 （例如存留期限制），並會自動宣告類別上的常見的相容內容類型。
-- 新的具全面互動性、 物件為基礎、 可中斷的動畫支援已加入，並可以連結至筆勢。 請參閱 Apple 的[UIViewAnimating 通訊協定參考](https://developer.apple.com/reference/uikit/uiviewanimating)， [UIViewPropertyAnimator 類別參考](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)， [UITimingCurveProvider 通訊協定參考](https://developer.apple.com/reference/uikit/uitimingcurveprovider)， [UICubicTimingParameters 類別參考](https://developer.apple.com/reference/uikit/uicubictimingparameters)並[UISpringTimingParameter 類別參考](https://developer.apple.com/reference/uikit/uispringtimingparameters)如需詳細資訊。
+- 新[UIPasteboard](xref:UIKit.UIPasteboard) API 提供新的選項 （例如存留期限制），並會自動宣告類別上的常見的相容內容類型。
+- 新的具全面互動性、 物件為基礎、 可中斷的動畫支援已加入，並可以連結至筆勢。 請參閱 Apple [UIViewAnimating 通訊協定參考](https://developer.apple.com/reference/uikit/uiviewanimating)， [UIViewPropertyAnimator 類別參考](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)， [UITimingCurveProvider 通訊協定參考](https://developer.apple.com/reference/uikit/uitimingcurveprovider)， [UICubicTimingParameters 類別參考](https://developer.apple.com/reference/uikit/uicubictimingparameters)並[UISpringTimingParameter 類別參考](https://developer.apple.com/reference/uikit/uispringtimingparameters)如需詳細資訊。
 - 新`UIPreviewInteraction`和`UIPreviewInteractionDelegate`允許開發人員應用程式，以查看和 pop 作業提供一種自訂介面。
 - 新`UIAccessibilityCustomRotor`類別可讓應用程式提供自訂的特定內容的功能，例如 Voiceover 的輔助技術。
 - 使用`UIAccessibilityIsAssistiveTouchRunning`和`UIAccessibilityAssistiveTouchStatusDidChangeNotification`符號來判斷是否已啟用 AssistiveTouch。

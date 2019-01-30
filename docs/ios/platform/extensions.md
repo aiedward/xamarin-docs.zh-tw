@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: f892774b4899fcbac46e8cc7bc2b0dd0336cc036
-ms.sourcegitcommit: f5fce8308b2e7c39c5b0c904e5f38a4ce2b55c87
+ms.openlocfilehash: 10b692099bae6f444474394144eb7e8bb46d749f
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012278"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233922"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的 iOS 延伸模組
 
@@ -30,7 +30,7 @@ ms.locfileid: "54012278"
 |類型|描述|擴充點|主機應用程式|
 |--- |--- |--- |--- |
 |動作|特製化的編輯器或特定媒體類型的檢視器|`com.apple.ui-services`|任何|
-|文件提供者|可讓應用程式以使用遠端的文件存放區|`com.apple.fileprovider-ui`|使用應用程式[UIDocumentPickerViewController](https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/)|
+|文件提供者|可讓應用程式以使用遠端的文件存放區|`com.apple.fileprovider-ui`|使用應用程式[UIDocumentPickerViewController](xref:UIKit.UIDocumentPickerViewController)|
 |鍵盤|替代鍵盤|`com.apple.keyboard-service`|任何|
 |相片編輯|相片操作和編輯|`com.apple.photo-editing`|Photos.app 編輯器|
 |共用|共用資料與傳訊服務等社交網路。|`com.apple.share-services`|任何|
@@ -48,8 +48,8 @@ ms.locfileid: "54012278"
 - 擴充功能無法使用[擴充背景模式](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/backgrounding/part_3_ios_backgrounding_techniques/registering_applications_to_run_in_background/)
 - 延伸模組無法存取裝置的相機或麥克風，（雖然他們可以存取現有的媒體檔案）
 - 延伸模組無法接收空氣卸除的資料 （雖然它們可以傳輸透過無線方式卸除的資料）
-- [UIActionSheet](https://developer.xamarin.com/api/type/UIKit.UIActionSheet/)並[UIAlertView](https://developer.xamarin.com/api/type/UIKit.UIAlertView/)無法使用; 延伸模組必須使用[UIAlertController](https://developer.xamarin.com/api/type/UIKit.UIAlertController/)
-- 數個成員[uiapplication #](https://developer.xamarin.com/api/type/UIKit.UIApplication/)無法使用：[UIApplication.SharedApplication](https://developer.xamarin.com/api/property/UIKit.UIApplication.SharedApplication/)， `UIApplication.OpenURL`，`UIApplication.BeginIgnoringInteractionEvents`和 `UIApplication.EndIgnoringInteractionEvents`
+- [UIActionSheet](xref:UIKit.UIActionSheet)並[UIAlertView](xref:UIKit.UIAlertView)無法使用; 延伸模組必須使用[UIAlertController](xref:UIKit.UIAlertController)
+- 數個成員[uiapplication #](xref:UIKit.UIApplication)無法使用：[UIApplication.SharedApplication](xref:UIKit.UIApplication.SharedApplication)， [UIApplication.OpenUrl](xref:UIKit.UIApplication.OpenUrl(Foundation.NSUrl))， [UIApplication.BeginIgnoringInteractionEvents](xref:UIKit.UIApplication.BeginIgnoringInteractionEvents)和[UIApplication.EndIgnoringInteractionEvents](xref:UIKit.UIApplication.EndIgnoringInteractionEvents)
 - iOS 會強制執行今天的延伸模組的 16 MB 記憶體使用量限制。
 - 預設鍵盤擴充功能不需要存取網路。 這會影響偵錯在裝置上 （這項限制不會強制執行在模擬器中），因為 Xamarin.iOS 進行偵錯運作需要網路存取。 就可以要求網路存取設定`Requests Open Access`至專案的 Info.plist 中的值`Yes`。 請參閱 Apple[自訂鍵盤指南](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html)如需鍵盤擴充功能限制的詳細資訊。
 
@@ -65,11 +65,11 @@ ms.locfileid: "54012278"
 
 ## <a name="extension-lifecycle"></a>延伸模組的生命週期
 
-延伸模組可以非常簡單，為單一[UIViewController](https://developer.xamarin.com/api/type/UIKit.UIViewController/)或更複雜的延伸模組，都沒有多個畫面的 UI。 當使用者遇到_擴充點_(例如當共用映像)，他們將有機會選擇註冊該擴充點的擴充功能。 
+延伸模組可以非常簡單，為單一[UIViewController](xref:UIKit.UIViewController)或更複雜的延伸模組，都沒有多個畫面的 UI。 當使用者遇到_擴充點_(例如當共用映像)，他們將有機會選擇註冊該擴充點的擴充功能。 
 
 如果他們選擇其中一個應用程式的延伸模組，其`UIViewController`會具現化，並開始正常的檢視控制器生命週期。 不過，不同於一般的應用程式，這會暫停，但通常不會終止使用者完成與其進行互動時，延伸模組會載入、 執行和重複，然後終止。
 
-擴充功能可以透過其主應用程式與通訊[NSExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)物件。 有些延伸模組有接收結果的非同步回呼的作業。 這些回呼會在背景執行緒上執行和擴充功能必須將此列入考量。比方說，是藉由使用[NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/member/Foundation.NSObject.InvokeOnMainThread/)如果他們想要更新的使用者介面。 請參閱[主機應用程式與通訊](#Communicating-with-the-Host-App)節以取得詳細資料。
+擴充功能可以透過其主應用程式與通訊[NSExtensionContext](xref:Foundation.NSExtensionContext)物件。 有些延伸模組有接收結果的非同步回呼的作業。 這些回呼會在背景執行緒上執行和擴充功能必須將此列入考量。比方說，是藉由使用[NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*)如果他們想要更新的使用者介面。 請參閱[主機應用程式與通訊](#Communicating-with-the-Host-App)節以取得詳細資料。
 
 根據預設，擴充功能和其容器應用程式可以通訊，儘管一起安裝。 在某些情況下，容器應用程式本質上是空"shipping"容器安裝擴充功能之後，會提供其用途。 不過，如果指定的情況下，容器應用程式和延伸模組可能共用資源從常見的區域。 此外，**今天擴充功能**可能會要求它的容器應用程式，以開啟 URL。 此行為所示[發展倒數小工具](http://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo)。
 
@@ -264,11 +264,11 @@ public override void ViewDidLoad ()
 
 ## <a name="communicating-with-the-host-app"></a>與主應用程式通訊
 
-今天您先前建立的延伸模組的範例不會和其主機應用程式的通訊 (**今天**螢幕)。 如果有，它會使用[ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)屬性`TodayViewController`或`CodeBasedViewController`類別。 
+今天您先前建立的延伸模組的範例不會和其主機應用程式的通訊 (**今天**螢幕)。 如果有，它會使用[ExtensionContext](xref:Foundation.NSExtensionContext)屬性`TodayViewController`或`CodeBasedViewController`類別。 
 
-會從其主機應用程式接收資料的擴充功能，資料會位於陣列的形式[NSExtensionItem](https://developer.xamarin.com/api/type/Foundation.NSExtensionItem/)中儲存的物件[InputItems](https://developer.xamarin.com/api/property/Foundation.NSExtensionContext.InputItems/)屬性[ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)延伸模組的`UIViewController`。
+會從其主機應用程式接收資料的擴充功能，資料會位於陣列的形式[NSExtensionItem](xref:Foundation.NSExtensionItem)中儲存的物件[InputItems](xref:Foundation.NSExtensionContext.InputItems)屬性[ExtensionContext](xref:Foundation.NSExtensionContext)延伸模組的`UIViewController`。
 
-其他擴充功能，例如相片編輯擴充功能，可能會區分使用者完成或取消使用方式。 這將會收到信號給主機應用程式，透過[CompleteRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CompleteRequest/)並[CancelRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CancelRequest/)方法[ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)屬性。
+其他擴充功能，例如相片編輯擴充功能，可能會區分使用者完成或取消使用方式。 這將會收到信號給主機應用程式，透過[CompleteRequest](xref:Foundation.NSExtensionContext.CompleteRequest*)並[CancelRequest](xref:Foundation.NSExtensionContext.CancelRequest*)方法[ExtensionContext](xref:Foundation.NSExtensionContext)屬性。
 
 如需詳細資訊，請參閱 Apple[應用程式擴充功能程式設計指南](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214-CH20-SW1)。
 

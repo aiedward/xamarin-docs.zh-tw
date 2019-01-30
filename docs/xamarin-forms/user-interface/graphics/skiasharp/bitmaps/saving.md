@@ -7,12 +7,12 @@ ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 428a8cbda43736c56b748374dc6f97649036302a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 885bba381e1371d273000fa0d970b465e9ca9c0b
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057122"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233701"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>將 SkiaSharp 點陣圖儲存至檔案
 
@@ -46,7 +46,7 @@ SkiaSharp 應用程式已建立或修改點陣圖之後，應用程式可能會�
 
 颾魤 ㄛ [ `SKCodec` ](xref:SkiaSharp.SKCodec)類別有兩個方法，名為`Create`，可以建立`SKCodec`從壓縮的來源物件，並允許應用程式在解密程序中取得更複雜。 (`SKCodec`類別會顯示在 發行項[**動畫 SkiaSharp 點陣圖**](animating.md#gif-animation)與解碼的動畫的 GIF 檔案。)
 
-當編碼點陣圖時的詳細資訊，:，編碼器必須知道應用程式想要使用 （JPEG 或 PNG 或其他項目） 的特定檔案格式。 如果需要失真格式，則編碼也必須知道所需的等級的品質。
+點陣圖的編碼方式，詳細資訊時需要：編碼器必須知道特定的檔案格式的應用程式想要使用 （JPEG 或 PNG 或其他項目）。 如果需要失真格式，則編碼也必須知道所需的等級的品質。
 
 `SKBitmap`類別會定義其中一個[ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32))方法，使用下列語法：
 
@@ -87,7 +87,7 @@ public interface IPhotoLibrary
 
 ### <a name="the-ios-implementation"></a>IOS 實作
 
-IOS 實作`SavePhotoAsync`會使用[ `SaveToPhotosAlbum` ](https://developer.xamarin.com/api/member/UIKit.UIImage.SaveToPhotosAlbum/)方法`UIImage`:
+IOS 實作`SavePhotoAsync`會使用[ `SaveToPhotosAlbum` ](xref:UIKit.UIImage.SaveToPhotosAlbum*)方法`UIImage`:
 
 ```csharp
 public class PhotoLibrary : IPhotoLibrary

@@ -6,12 +6,12 @@ ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: bdb401cd9fd3cfa1e33acec1252cfffbd8be3ebd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: da7064997b8a10d4a4604861a405e13dd23a08cf
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116637"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233909"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>其他 iOS 9 架構變更
 
@@ -64,7 +64,7 @@ var voices = AVSpeechSynthesisVoice.GetSpeechVoices ();
 - [CloudKit 快速入門](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987)-Apple CloudKit 簡介。
 - [CloudKit JS 參考](https://developer.apple.com/library/prerelease/ios/documentation/CloudKitJS/Reference/CloudKitJavaScriptReference/index.html#//apple_ref/doc/uid/TP40015359)-Apple 的 CloudKit JS 文件。
 - [CloudKit Web 服務參考](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloutKitWebServicesReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40015240)-Apple 的參考，描述 CloudKit HTTP 介面。
-- [CloudKit 目錄： An introduction to （Cocoa 和 JavaScript） CloudKit 簡介](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599)-使用 CloudKit 和 CloudKit JS Apple 的範例應用程式。
+- [CloudKit 目錄：（Cocoa 和 JavaScript） 的 CloudKit 簡介](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599)-使用 CloudKit 和 CloudKit JS Apple 的範例應用程式。
 
 > [!IMPORTANT]
 > Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)協助開發人員適當地處理歐盟一般資料保護規定 (GDPR)。
@@ -75,7 +75,7 @@ Apple 在 iOS 9 中包含 Foundation 架構的下列變更：
 
 ### <a name="changes-to-nsbundle"></a>NSBundle 的變更
 
-已進行下列變更來[NSBundle](https://developer.xamarin.com/api/type/Foundation.NSBundle/)適用於 iOS 9 的類別：
+已進行下列變更來[NSBundle](xref:Foundation.NSBundle)適用於 iOS 9 的類別：
 
 * `GetPreservationPriorityForTag (NSString tag)` -將目前的保留優先權取得具有指定標記的資源。 有效值範圍內`0.0`至`1.0`，將會清除資源，以最低優先權。
 * `SetPreservationPriorityForTag (double priority, NSSet tags)` -設定具有指定標記的資源的目前保留優先權。 有效值範圍內`0.0`至`1.0`，將會清除資源，以最低優先權。
@@ -84,7 +84,7 @@ Apple 在 iOS 9 中包含 Foundation 架構的下列變更：
 
 ### <a name="changes-to-nsprocessinfo"></a>NSProcessInfo 的變更
 
-在 iOS 裝置上執行每個處理序的單一_程序資訊代理程式_(PIA)。 使用[NSProcessInfo](https://developer.xamarin.com/api/type/Foundation.NSProcessInfo/)類別，以提供目前的 PIA 和控制電源和熱管理指定的處理序的相關資訊。
+在 iOS 裝置上執行每個處理序的單一_程序資訊代理程式_(PIA)。 使用[NSProcessInfo](xref:Foundation.NSProcessInfo)類別，以提供目前的 PIA 和控制電源和熱管理指定的處理序的相關資訊。
 
 比方說，以控制自動終止的處理程序，您可以使用下列程式碼：
 
@@ -103,7 +103,7 @@ NSProcessInfo.ProcessInfo.EndActivity(activity);
 
 ### <a name="reacting-to-low-power-mode"></a>低度電源模式回應
 
-使用`LowPowerModeEnabled`的屬性[NSProcessInfo](https://developer.xamarin.com/api/type/Foundation.NSProcessInfo/)類別，以判斷是否已在 iOS 裝置上執行的應用程式上啟用低度電源模式。 例如: 
+使用`LowPowerModeEnabled`的屬性[NSProcessInfo](xref:Foundation.NSProcessInfo)類別，以判斷是否已在 iOS 裝置上執行的應用程式上啟用低度電源模式。 例如: 
 
 ```csharp
 // Is the device in low power mode?
@@ -175,7 +175,7 @@ Apple 會包含下列變更[Safari 服務](https://developer.xamarin.com/api/nam
 
 - 您現在可以使用新[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)類別，以顯示 web 內容在 Xamarin.iOS 應用程式中的。 它讓您能夠分享在 Safari 應用程式中的網站資料和 cookie，並包含數個 Safari 的功能 （例如，讀取器和自動填入）。 [SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)功能**完成**在完成檢視 web 內容時，會傳回使用者到您的應用程式的按鈕。
 
-因為[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)來顯示 web 內容的單一頁面的類別量身訂做，您應該考慮使用它來取代任何[WKWebKit](https://developer.xamarin.com/api/type/WebKit.WKWebView/)或[UIWebView](https://developer.xamarin.com/api/type/UIKit.UIWebView/)對現有的 Xamarin.iOS 應用程式內的控制項。
+因為[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)來顯示 web 內容的單一頁面的類別量身訂做，您應該考慮使用它來取代任何[WKWebKit](xref:WebKit.WKWebView)或[UIWebView](xref:UIKit.UIWebView)對現有的 Xamarin.iOS 應用程式內的控制項。
 
 ### <a name="displaying-a-website"></a>顯示網站
 
@@ -191,7 +191,7 @@ PresentViewController(controller, true, null);
 
 ## <a name="uikit-framework-changes"></a>UIKit 架構變更
 
-Apple 已包含了許多增強功能的數個項目[UIKit](https://developer.xamarin.com/api/namespace/UIKit/)適用於 iOS 9 的架構。 下列各節將詳細說明這些變更。
+Apple 已包含了許多增強功能的數個項目[UIKit](xref:UIKit)適用於 iOS 9 的架構。 下列各節將詳細說明這些變更。
 
 ### <a name="3d-touch-events"></a>3D 觸控事件
 
@@ -203,7 +203,7 @@ IOS 9 和 iPhone 6s 和 iPhone 6s 新手此外，3D 觸控，請將您的 iOS �
 
 ### <a name="document-open-in-place-functionality"></a>文件就地開啟功能
 
-使用其中一種`FinishedLaunching (application, launchOptions)`或是`WillFinishLaunching (Application, launchOptions)`方法[UIApplicationDelegate](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/)類別，您現在可以開啟文件，並修改在 （相對於處理複本） 的位置。
+使用其中一種`FinishedLaunching (application, launchOptions)`或是`WillFinishLaunching (Application, launchOptions)`方法[UIApplicationDelegate](xref:UIKit.UIApplicationDelegate)類別，您現在可以開啟文件，並修改在 （相對於處理複本） 的位置。
 
 若要支援就地開放的新功能，將`LSSupportsOpeningDocumentsInPlace`Xamarin.iOS 應用程式的關鍵**Info.plist**檔案，其值為`YES`。
 
@@ -221,7 +221,7 @@ Apple 已在 iOS 9 中，以提供觸控事件數個增強功能。 這些包括
 
 ### <a name="new-layout-anchors"></a>新的版面配置錨點
 
-新`NSLayoutAnchor`和`NSLayoutDimension`版面配置錨點的類別使用的新錨點屬性[UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)類別 (例如`LeadingAnchor`和`WidthAnchor`) 若要在 iOS 9 中簡化版面配置。
+新`NSLayoutAnchor`和`NSLayoutDimension`版面配置錨點的類別使用的新錨點屬性[UIView](xref:UIKit.UIView)類別 (例如`LeadingAnchor`和`WidthAnchor`) 若要在 iOS 9 中簡化版面配置。
 
 請參閱我們[統一的分鏡腳本簡介](~/ios/user-interface/storyboards/unified-storyboards.md)如需有關使用自動版面配置和大小類別中的 Xamarin.iOS 應用程式和 Apple 的文件[NSLayoutAnchor 參考](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutAnchor)， [NSLayoutDimension 參考](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutDimension)並[UIView 參考](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/cl/UIView)如需詳細資訊。
 
@@ -231,11 +231,11 @@ Apple 已在 iOS 9 中，以提供觸控事件數個增強功能。 這些包括
 
 ### <a name="text-input-in-notifications-modifications"></a>在 通知修改的文字輸入
 
-[UIUserNotificationAction](https://developer.xamarin.com/api/type/UIKit.UIUserNotificationAction/)類別具有新`Behavior`可用來支援通知的文字輸入的屬性。
+[UIUserNotificationAction](xref:UIKit.UIUserNotificationAction)類別具有新`Behavior`可用來支援通知的文字輸入的屬性。
 
 ### <a name="uiapplicationdelegate-changes"></a>UIApplicationDelegate 變更
 
-雖然不會正式 apple 已被取代，它們建議取代的所有呼叫`FinishedLaunching (UIApplication application)`方法[UIApplicationDelegate](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/)使用的類別`FinishedLaunching (UIApplication application, NSDictionary launchOptions)`或`WillFinishLaunching (UIApplication application, NSDictionary launchOptions)`方法。
+雖然不會正式 apple 已被取代，它們建議取代的所有呼叫`FinishedLaunching (UIApplication application)`方法[UIApplicationDelegate](xref:UIKit.UIApplicationDelegate)使用的類別`FinishedLaunching (UIApplication application, NSDictionary launchOptions)`或`WillFinishLaunching (UIApplication application, NSDictionary launchOptions)`方法。
 
 請參閱 Apple [UIApplicationDelegate 參考](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intf/UIApplicationDelegate)如需詳細資訊。
 
@@ -251,7 +251,7 @@ Apple 在 iOS 9 中包含 UIKit Dynamics 的下列變更：
 
 ### <a name="uipickerview-and-uidatepicker-changes"></a>UIPickerView 和 UIDatePicker 變更
 
-在 iOS 9 之前[UIPickerView](https://developer.xamarin.com/api/type/UIKit.UIPickerView/)並[UIDatePicker](https://developer.xamarin.com/api/type/UIKit.UIDatePicker/)控制項已不可調整大小，並會自動調整大小來填滿其容器 （通常是寬度與應用程式的 iOS 裝置的寬度在上執行）。
+在 iOS 9 之前[UIPickerView](xref:UIKit.UIPickerView)並[UIDatePicker](xref:UIKit.UIDatePicker)控制項已不可調整大小，並會自動調整大小來填滿其容器 （通常是寬度與應用程式的 iOS 裝置的寬度在上執行）。
 
 在 iOS 9 中，此自動調整大小不會再發生，並將呈現控制項，在所有的 iOS 裝置，不論螢幕大小及方向 320 點寬度。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 8/29/2018
-ms.openlocfilehash: cdd57095b03c24472abec5646ee3a70350770d7c
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: cd9e92e2c96d0a0696633e49869f2661e410d343
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "34786170"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233584"
 ---
 # <a name="type-registrar-for-xamarinios"></a>適用於 Xamarin.iOS 的型別註冊機構
 
@@ -22,10 +22,10 @@ ms.locfileid: "34786170"
 
 在啟動期間，將會註冊 Xamarin.iOS:
 
-- 類別與[[註冊]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) OBJECTIVE-C 類別當做屬性。
-- 類別與[[Category]](https://developer.xamarin.com/api/type/CRuntime.CategoryAttribute) OBJECTIVE-C 類別的屬性。
-- 與互動[[通訊協定]](https://developer.xamarin.com/api/type/Foundation.ProtocolAttribute/)與 OBJECTIVE-C 通訊協定的屬性。
-- 具有成員[[匯出]](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/)，使得適用於 OBJECTIVE-C 可以存取它們。
+- 類別與[[註冊]](xref:Foundation.RegisterAttribute) OBJECTIVE-C 類別當做屬性。
+- 類別與[[Category]](xref:ObjCRuntime.CategoryAttribute) OBJECTIVE-C 類別的屬性。
+- 與互動[[通訊協定]](xref:Foundation.ProtocolAttribute)與 OBJECTIVE-C 通訊協定的屬性。
+- 具有成員[[匯出]](xref:Foundation.ExportAttribute)，使得適用於 OBJECTIVE-C 可以存取它們。
 
 例如，假設 managed`Main`在 Xamarin.iOS 應用程式中常見的方法：
 

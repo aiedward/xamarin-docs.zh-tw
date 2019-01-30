@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: fc08824ba973f5d50dbe92950d57c4ea8ecc3147
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 020afef6b2eb3743fd17118b2922bac4d4c32239
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054008"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233987"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>繪製弧形的三種方式
 
@@ -38,7 +38,7 @@ public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
 public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean forceMoveTo)
 ```
 
-這些方法完全相同，android [ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/)並[ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/)方法。 IOS [ `AddArc` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArc/p/System.Boolean/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/)方法類似，但僅限於弧線圓形的圓周上而不是一般化為橢圓形。
+這些方法完全相同，android [ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/)並[ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/)方法。 IOS [ `AddArc` ](xref:CoreGraphics.CGPath.AddArc(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.Boolean))方法類似，但僅限於弧線圓形的圓周上而不是一般化為橢圓形。
 
 這兩種方法的開頭`SKRect`定義位置和大小的橢圓形的值：
 
@@ -58,7 +58,7 @@ public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean fo
 
 ![](arcs-images/anglearc.png "單獨角度弧形")
 
-`startAngle`或是`sweepAngle`引數可以是負數： 弧線是正值的順時針`sweepAngle`和負值以逆時針方向。
+`startAngle`或`sweepAngle`引數可以是負數：弧線是正值的順時針`sweepAngle`和負值以逆時針方向。
 
 不過，`AddArc`並未*不*定義封閉的分佈。 如果您呼叫`LineTo`之後`AddArc`，從弧形結尾點的繪製線條`LineTo`方法，以及相同成立的`ArcTo`。
 
@@ -226,7 +226,7 @@ public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
 public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 ```
 
-這`ArcTo`PostScript 方法大致[ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) （頁面 532） 函式和 iOS [ `AddArcToPoint` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArcToPoint/p/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/)方法。
+這`ArcTo`PostScript 方法大致[ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) （頁面 532） 函式和 iOS [ `AddArcToPoint` ](xref:CoreGraphics.CGPath.AddArcToPoint(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat))方法。
 
 `ArcTo`方法牽涉到三個點：
 
@@ -521,7 +521,7 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 ![](arcs-images/ellipticalarcellipse1.png "第一組橢圓弧形")
 
-這些兩個弧形可以區別兩種方式： 最上層的弧形大於底部弧線，並從左到右繪製弧形，如上方繪製弧形順時針方向時以逆時針方向繪製底部弧形。
+這些兩個弧形可以區別兩種方式：最上層的弧形大於底部弧線，並從左到右繪製弧形，如上方繪製弧形順時針方向時以逆時針方向繪製底部弧形。
 
 此外，也可以符合另一種方法的兩個點之間的橢圓形：
 
@@ -535,10 +535,10 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 四種組合來區別這些四個弧形[ `SKPathArcSize` ](xref:SkiaSharp.SKPathArcSize)並[ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection)列舉型別引數`ArcTo`方法：
 
-- 紅色： SKPathArcSize.Large 和 SKPathDirection.Clockwise
-- 綠色： SKPathArcSize.Small 和 SKPathDirection.Clockwise
-- 藍色： SKPathArcSize.Small 和 SKPathDirection.CounterClockwise
-- 洋紅色： SKPathArcSize.Large 和 SKPathDirection.CounterClockwise
+- 紅色：SKPathArcSize.Large 和 SKPathDirection.Clockwise
+- 綠色：SKPathArcSize.Small 和 SKPathDirection.Clockwise
+- 藍色：SKPathArcSize.Small 和 SKPathDirection.CounterClockwise
+- 洋紅色：SKPathArcSize.Large 和 SKPathDirection.CounterClockwise
 
 如果傾斜的橢圓形不是大到足以容納兩個點之間，然後它統一縮放直到夠大。 只有兩個唯一的弧形在此情況下連接的兩個點。 這些可以區別與`SKPathDirection`參數。
 

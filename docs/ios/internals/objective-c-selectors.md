@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/12/2017
-ms.openlocfilehash: b51ee6b547cc53761f23379e7233bb710090a61b
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 5d3c8b6bd8f7f788a1de74feddf7fcb378fa5818
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39351726"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233636"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>在 Xamarin.iOS 中的 OBJECTIVE-C 選取器
 
@@ -36,9 +36,9 @@ Objective C 語言為基礎*選取器*。 選取器是可以傳送至物件的�
 此 API 具有下列特性：
 
 - 傳回的型別是`CGSize`統一的 api。
-- `font`參數是[UIFont](https://developer.xamarin.com/api/type/UIKit.UIFont/) (和型別 （間接） 衍生自[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/))，且對應至[System.IntPtr](xref:System.IntPtr)。
+- `font`參數是[UIFont](xref:UIKit.UIFont) (和型別 （間接） 衍生自[NSObject](xref:Foundation.NSObject)，且對應至[System.IntPtr](xref:System.IntPtr)。
 - `width`參數， `CGFloat`，會對應至`nfloat`。
-- `lineBreakMode`參數， [ `UILineBreakMode` ](https://developer.apple.com/documentation/uikit/uilinebreakmode?language=objc)，具有已繫結中為 Xamarin.iOS [`UILineBreakMode`](https://developer.xamarin.com/api/type/UIKit.UILineBreakMode/)
+- `lineBreakMode`參數， [ `UILineBreakMode` ](https://developer.apple.com/documentation/uikit/uilinebreakmode?language=objc)，具有已繫結中為 Xamarin.iOS [`UILineBreakMode`](xref:UIKit.UILineBreakMode)
 列舉型別。
 
 總結，`objc_msgSend`應該符合宣告：
@@ -147,9 +147,9 @@ else
 
 選取器名稱之後，您可以建立[ `ObjCRuntime.Selector` ](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/)為它的執行個體。
 
-### <a name="calling-objcmsgsend"></a>呼叫 objc_msgSend
+### <a name="calling-objcmsgsend"></a>Calling objc_msgSend
 
-`objc_msgSend` 傳送訊息 （選擇器） 的物件。 這一系列的函式會採用兩個以上的必要引數: （執行個體或處理的類別） 的選取器目標、 選取器本身及選取器所需的任何引數。 執行個體和選取器引數必須是`System.IntPtr`，而且所有剩餘的引數必須符合選取器所預期，例如類型`nint`for `int`，或`System.IntPtr`所有`NSObject`-衍生型別。 使用 [`NSObject.Handle`](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)
+`objc_msgSend` 傳送訊息 （選擇器） 的物件。 這一系列的函式會採用兩個以上的必要引數: （執行個體或處理的類別） 的選取器目標、 選取器本身及選取器所需的任何引數。 執行個體和選取器引數必須是`System.IntPtr`，而且所有剩餘的引數必須符合選取器所預期，例如類型`nint`for `int`，或`System.IntPtr`所有`NSObject`-衍生型別。 使用 [`NSObject.Handle`](xref:Foundation.NSObject.Handle)
 屬性，以取得`IntPtr`Objective C 類型執行個體。
 
 有一個以上`objc_msgSend`函式：

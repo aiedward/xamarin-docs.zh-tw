@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 146b05cf7ca2bbd05e952ecc9064fbb9168d179a
-ms.sourcegitcommit: d294c967a18e6d91f3909c052eeff98ede1a21f6
+ms.openlocfilehash: 650ed00557a3dd819ab2920a7646f93199b98b9e
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53609931"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233948"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>疑難排解秘訣適用於 Xamarin.iOS 
 
@@ -75,7 +75,7 @@ TypeName XXXX {
 
 上述的定義由自動產生 Visual Studio for Mac 的 XIB 檔案加入至 Visual Studio for Mac 中`NAME_OF_YOUR_XIB_FILE.designer.xib.cs`檔案。
 
-此外，其中包含上述的程式碼的型別必須的子類別[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)。  如果包含的型別命名空間內，它也應該[[註冊]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/)屬性以提供型別名稱沒有命名空間 （如介面產生器不支援在類型中的命名空間）：
+此外，其中包含上述的程式碼的型別必須的子類別[NSObject](xref:Foundation.NSObject)。  如果包含的型別命名空間內，它也應該[[註冊]](xref:Foundation.RegisterAttribute)屬性以提供型別名稱沒有命名空間 （如介面產生器不支援在類型中的命名空間）：
 
 ```csharp
 namespace Samples.GLPaint {
@@ -144,7 +144,7 @@ public Bar (IntPtr handle) : base (handle) { }
 
 問題在於 Mono 可挑出 OS X `libsqlite3.dylib`，不 iPhoneSimulator 的`libsqlite3.dylib`檔案。 您的應用程式*將*公司裝置，而不只是您的模擬器。
 
-## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>將部署至裝置失敗，System.Exception:傳回 3892346901 AMDeviceInstallApplication
+## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>將部署至裝置失敗，System.Exception:AMDeviceInstallApplication returned 3892346901
 
 此錯誤表示您的憑證/套件組合識別碼的程式碼簽署設定不符合您裝置上安裝佈建設定檔。  確認您有適當的憑證在 專案選項中選取 iPhone 套件組合簽署-> 專案選項中指定正確的套件組合識別碼-> iPhone 應用程式
 
@@ -283,7 +283,7 @@ Visual Studio for Mac 2.2 有問題，而不是用來偵測包含逗號的散發
 
 ## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>錯誤"AFCFileRefWrite 傳回：1-在上傳期間
 
-將應用程式上傳至您的裝置時，您可能會收到錯誤 「 AFCFileRefWrite 傳回：1"。 如果您擁有長度為零的檔案，會發生這項目。
+將應用程式上傳至您的裝置時，您可能會收到錯誤 「 AFCFileRefWrite 傳回：1". 如果您擁有長度為零的檔案，會發生這項目。
 
 ## <a name="error-mtouch-failed-with-no-output"></a>錯誤"失敗，沒有輸出的 mtouch"
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 554c96cdb46041b75a48523cc2952f05d2a7b1db
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 6294d696fe309e1952124caaaace89d40ad24bc6
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51564001"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233555"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中的分鏡腳本簡介
 
@@ -249,7 +249,7 @@ public MainViewController (IntPtr handle) : base (handle)
 ```
 
 
-建立使用設計工具的分鏡腳本，IDE 會自動加入[[註冊]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/)頂端屬性`designer.cs`類別，並傳入的字串識別項，這等同於中指定的分鏡腳本識別碼上一個步驟。 這會連結的 C# 到分鏡腳本中相關的場景。
+建立使用設計工具的分鏡腳本，IDE 會自動加入[[註冊]](xref:Foundation.RegisterAttribute)頂端屬性`designer.cs`類別，並傳入的字串識別項，這等同於中指定的分鏡腳本識別碼上一個步驟。 這會連結的 C# 到分鏡腳本中相關的場景。
 
 您可能想要加入現有的類別，也就是有些時候**不**在設計工具中建立。 在此情況下，您會註冊這個類別，如往常一樣：
 
@@ -320,13 +320,13 @@ public partial class MainViewController : UIViewController
 1. 現在，讓我們建立我們的 UI，並新增額外的檢視，列出`MainViewController`，看起來類似下面的螢幕擷取畫面中：
 
     - UITextField
-        - 名稱： PasswordTextField
-        - 版面配置區: ' 輸入祕密 '
+        - 名稱：PasswordTextField
+        - 預留位置：「 輸入祕密 」
     - UILabel
-        - 文字: ' 時發生錯誤： 錯誤的密碼。 您不應該傳遞 ！ '
-        - 色彩： 紅色
-        - 對齊方式： 中心
-        - 行： 2
+        - 文字：' 時發生錯誤：錯誤的密碼。 您不應該傳遞 ！ '
+        - 色彩：紅色
+        - 對齊方式：置中
+        - 程式行：2
         - 'Hidden' 核取的核取方塊 
         
     [![](images/passwordvc.png "Center 行")](images/passwordvc.png#lightbox)

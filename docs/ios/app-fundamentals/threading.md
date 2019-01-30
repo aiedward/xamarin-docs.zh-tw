@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: b90c59f09217077262c3aced9ee9e5d07849c25c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2dc56d9c5b63d428663d98bae4c8687c1f621a04
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106581"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233189"
 ---
 # <a name="threading-in-xamarinios"></a>在 Xamarin.iOS 中執行緒
 
@@ -35,7 +35,7 @@ Xamarin 強呤魽您畷樾[工作平行程式庫](http://msdn.microsoft.com/libr
 
 ## <a name="developing-responsive-applications"></a>開發應用程式的回應
 
-UI 項目的存取權應該限制為相同的執行緒執行您的應用程式的主迴圈。 如果您想要變更的主要 UI 執行緒，您應該使用佇列的程式碼[NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/type/Foundation.NSObject/)，如下所示：
+UI 項目的存取權應該限制為相同的執行緒執行您的應用程式的主迴圈。 如果您想要變更的主要 UI 執行緒，您應該使用佇列的程式碼[NSObject.InvokeOnMainThread](xref:Foundation.NSObject)，如下所示：
 
 ```csharp
 MyThreadedRoutine ()  
@@ -72,7 +72,7 @@ void MyThreadStart (object arg)
 }
 ```
 
-注意： 自 Xamarin.iOS 5.2 您不必提供您自己`NSAutoReleasePool`因為其中一個為您將會自動提供。
+注意:自 Xamarin.iOS 5.2 您不必提供您自己`NSAutoReleasePool`因為其中一個為您將會自動提供。
 
 
 ## <a name="related-links"></a>相關連結
