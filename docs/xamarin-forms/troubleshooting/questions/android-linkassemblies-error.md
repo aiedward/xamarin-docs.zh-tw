@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: 7360ee9064049bcebfd88f0cd36b5938d5337be3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b027dd23b9144a865bc16b55ebac71855bae0725
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105281"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292034"
 ---
 # <a name="android-build-error--the-linkassemblies-task-failed-unexpectedly"></a>Android 建置錯誤 – LinkAssemblies 工作意外失敗
 
-您可能會看到一則錯誤訊息`The "LinkAssemblies" task failed unexpectedly`建置 Xamarin.Android 專案時使用的表單。 啟用連結器時，發生這種的情況 (通常是在*版本*組建，以減少應用程式套件的大小);，它就會發生的 Android 目標不會更新為最新的架構。 (詳細資訊： [Android 需求的 Xamarin.Forms](~/xamarin-forms/get-started/installation.md#android))
+您可能會看到一則錯誤訊息`The "LinkAssemblies" task failed unexpectedly`建置 Xamarin.Android 專案時使用的表單。 啟用連結器時，發生這種的情況 (通常是在*版本*組建，以減少應用程式套件的大小);，它就會發生的 Android 目標不會更新為最新的架構。 (詳細資訊：[Android 的需求的 Xamarin.Forms](~/get-started/installation.md#android))
 
 此問題的解決方法是確定您已經支援最新 Android SDK 版本，並設定**目標 Framework**要**最新安裝的使用平台**。 也建議您設定**目標 Android 版本**要**使用目標 Framework 版本**並**最低 Android 版本**為 API 15 或更高版本。 這會被視為支援的設定。
 
@@ -24,7 +24,7 @@ ms.locfileid: "50105281"
 
 1.  以滑鼠右鍵按一下 Android 專案。
 2.  移至**建置 > 一般 > 目標 Framework**。
-3.  設定**目標 Framework： 使用最新安裝的平台**。
+3.  設定**Framework 為目標：使用最新安裝的平台**。
 4.  仍在專案選項 中，移至**建置 > Android 應用程式**。
 5.  設定**最低 Android 版本**到 15 個或更高版本的 API 層級 &**目標 Android 版本**來**自動-使用目標 framework 版本**。
 

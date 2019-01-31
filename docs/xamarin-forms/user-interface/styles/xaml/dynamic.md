@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: f1c491bd2e19f44151e2efb317fe40d2d122ecae
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 260c215df52eb31139998438cc0eda10a887be65
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058516"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55291956"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的動態樣式
 
@@ -206,12 +206,6 @@ public class DynamicStylesInheritancePageCS : ContentPage
 ```
 
 `tealSearchBarStyle`直接指派給[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)屬性[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行個體。 這`Style`會設定一些其他的屬性，並使用[ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)屬性來參考`searchBarStyle`。 [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*)方法並不需要這裡因為`tealSearchBarStyle`不會變更，除了`Style`它衍生自。 因此，`tealSearchBarStyle`會維護連結`searchBarStyle`和更改基底的樣式變更時。
-
-## <a name="summary"></a>總結
-
-樣式，請勿回應屬性的變更和應用程式的持續期間保持不變。 不過，應用程式可以使用動態資源回應在執行階段動態的樣式變更。 颾魤 ㄛ*動態*樣式可以使用衍生自[ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)屬性。
-
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 6c1c7bd12922f127ff7f4eecdc982ede419fc515
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: fd5181040c1805d3fdabdae4803bbe32c6bb6652
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055932"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292229"
 ---
 # <a name="device-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的裝置樣式
 
@@ -122,11 +122,6 @@ public class DeviceStylesPageCS : ContentPage
 下列螢幕擷取畫面示範裝置上的樣式，請在每個平台，具有最大可存取的字型大小：
 
 ![](device-images/maximum-size.png "每個平台上的可存取的大型裝置樣式")
-
-## <a name="summary"></a>總結
-
-Xamarin.Forms 包含六*動態*樣式，又稱為*裝置*樣式，在[ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)類別。 所有六個樣式只套用至[ `Label` ](xref:Xamarin.Forms.Label)執行個體。
-
 
 ## <a name="related-links"></a>相關連結
 

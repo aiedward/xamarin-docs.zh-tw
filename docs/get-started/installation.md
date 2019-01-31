@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/23/2018
 ms.openlocfilehash: 504f20f6575e559d7c4965643b74b407d5e84de8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112346"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292803"
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms 需求
 

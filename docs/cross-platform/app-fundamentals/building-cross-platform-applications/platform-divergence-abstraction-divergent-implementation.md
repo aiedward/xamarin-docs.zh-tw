@@ -1,19 +1,19 @@
 ---
-title: 第 4 部分-處理多個平台
+title: 第 4 部分 - 處理多個平台
 description: 本文件說明如何處理應用程式不一致或根據平台或功能。 它討論的螢幕大小、 瀏覽隱喻、 觸控和筆勢、 推播通知和介面思維，例如清單和索引標籤。
 ms.prod: xamarin
 ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: ef224b7410565ae15da7613c04d11e7bd6a44dcb
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f4558d5172d7dcbd2e14e6b74a347dd2f1e3a234
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117937"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292125"
 ---
-# <a name="part-4---dealing-with-multiple-platforms"></a>第 4 部分-處理多個平台
+# <a name="part-4---dealing-with-multiple-platforms"></a>第 4 部分 - 處理多個平台
 
 ## <a name="handling-platform-divergence-amp-features"></a>處理平台分歧&amp;功能
 
@@ -95,7 +95,7 @@ ms.locfileid: "50117937"
 
 ## <a name="xamarinforms"></a>Xamarin.Forms
 
-請參閱[Xamarin.Forms](~/xamarin-forms/get-started/index.md)文件。
+請參閱[Xamarin.Forms](~/get-started/index.md)文件。
 
 ### <a name="other-cross-platform-libraries"></a>其他跨平台程式庫
 

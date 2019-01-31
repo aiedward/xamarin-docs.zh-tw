@@ -9,12 +9,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 09/24/2018
-ms.openlocfilehash: 0189e264ff2285f76da7ec76d07a3286a350dcd0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.openlocfilehash: d89488e3f6e42f84fc9519eedaa38c99b90ae068
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110508"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292815"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>建置您的第一個 Xamarin.Forms 應用程式
 
@@ -122,8 +122,6 @@ ms.locfileid: "50110508"
 
 ## <a name="next-steps"></a>後續步驟
 
-- [Hello, Xamarin.Forms](~/xamarin-forms/get-started/hello-xamarin-forms/index.md) &ndash; 建置更具功能性的應用程式。
-- [Hello, Xamarin.Forms 多重畫面](~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/index.md) &ndash; 建置在兩個畫面之間巡覽的應用程式。
+- [單一頁面的快速入門](~/get-started/quickstarts/single-page.md)&ndash;建置功能較多的應用程式。
 - [Xamarin.Forms 範例](~/xamarin-forms/samples/index.yml) &ndash; 下載並執行程式碼範例和範例應用程式。
-- [Xamarin.Forms 簡介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md) &ndash; Xamarin.Forms 初學者指南。
 - [建立行動應用程式電子書](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) &ndash; 教導 Xamarin.Forms 開發的深入章節，提供 PDF 並包含數以百計的其他範例。

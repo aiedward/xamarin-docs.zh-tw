@@ -1,4 +1,4 @@
----
+﻿---
 title: Xamarin.Forms web 檢視
 description: 這篇文章會說明如何使用 Xamarin.Forms WebView 類別來提供本機或網路 web 內容和文件給使用者。
 ms.prod: xamarin
