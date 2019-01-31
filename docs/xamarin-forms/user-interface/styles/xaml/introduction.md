@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 8f84c960f17f56fce2a1bba143a215ce930f6f4e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 6f5af5fde46676cf669e6c02fb83f4aac5d31c46
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996105"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292086"
 ---
 # <a name="introduction-to-xamarinforms-styles"></a>Introduction to Xamarin.Forms 樣式
 
@@ -45,7 +45,7 @@ Xamarin.Forms 應用程式通常會包含多個具有相同的外觀的控制項
 </ContentPage>
 ```
 
-下列程式碼範例示範在 C# 中建立的對等頁面：
+下列程式碼範例示範以 C# 建立的相等頁面：
 
 ```csharp
 public class NoStylesPageCS : ContentPage
@@ -82,13 +82,13 @@ public class NoStylesPageCS : ContentPage
 }
 ```
 
-每個[ `Label` ](xref:Xamarin.Forms.Label)執行個體具有相同的屬性值，來控制所顯示之文字的外觀`Label`。 這會導致下列的螢幕擷取畫面所示的外觀：
+每個[ `Label` ](xref:Xamarin.Forms.Label)執行個體具有相同的屬性值，來控制所顯示之文字的外觀`Label`。 這會導致下列螢幕擷取畫面中顯示的外觀：
 
 [![](introduction-images/no-styles.png "標籤沒有樣式的外觀")](introduction-images/no-styles-large.png#lightbox "標籤沒有樣式的外觀")
 
 設定每個個別控制項的外觀可能重複又容易出錯。 相反地，您可以建立可定義外觀，並套用至所需的控制項。
 
-## <a name="creating-a-style"></a>建立樣式
+## <a name="create-a-style"></a>建立樣式
 
 [ `Style` ](xref:Xamarin.Forms.Style)類別分組的屬性值集合成一個物件，然後可以套用至多個視覺項目執行個體。 這有助於減少重複的標記，並可讓應用程式外觀，以更輕鬆地變更。
 
@@ -97,7 +97,7 @@ public class NoStylesPageCS : ContentPage
 - [`Style`](xref:Xamarin.Forms.Style) 在 XAML 中建立的執行個體通常定義於[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)指派給[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)控制項的集合頁面上，或[ `Resources` ](xref:Xamarin.Forms.Application.Resources)應用程式集合。
 - [`Style`](xref:Xamarin.Forms.Style) 在頁面的類別中，或可全域存取的類別中，通常被定義在 C# 中建立的執行個體。
 
-選擇要定義在何處[ `Style` ](xref:Xamarin.Forms.Style)可以用它的影響：
+選擇要在何處定義 [`Style`](xref:Xamarin.Forms.Style) 會影響其可使用的位置：
 
 - [`Style`](xref:Xamarin.Forms.Style) 在控制層級定義的執行個體只能套用至控制項和其子系。
 - [`Style`](xref:Xamarin.Forms.Style) 在頁面層級定義的執行個體只能套用至頁面和其子系。
@@ -135,13 +135,8 @@ public class NoStylesPageCS : ContentPage
 >
 > Xamarin.Forms 2.2 之前[ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)屬性用來識別應用程式識別在 UI 測試，和例如 Pixate 佈景主題引擎中的個別項目。 不過，導入了 Xamarin.Forms 2.2 [ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId)屬性，已取代[ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)屬性。 如需詳細資訊，請參閱 <<c0> [ 自動化 Xamarin.Forms 測試使用 Xamarin.UITest 和測試雲端](~/xamarin-forms/deploy-test/uitest-and-test-cloud.md)。
 
-## <a name="summary"></a>總結
-
-Xamarin.Forms 應用程式通常會包含多個具有相同的外觀的控制項。 設定每個個別控制項的外觀可能重複又容易出錯。 相反地，樣式可以建立自訂控制項外觀的群組和控制項型別上可用的設定屬性。
-
-
 ## <a name="related-links"></a>相關連結
 
 - [XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [樣式](xref:Xamarin.Forms.Style)
+- [樣式][](xref:Xamarin.Forms.Style)
 - [Setter](xref:Xamarin.Forms.Setter)
