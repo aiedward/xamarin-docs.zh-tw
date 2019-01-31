@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 0f39eb78d46b6156231a165f950f4698e63fc073
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: bd6013a0fc1d4f3dfc2d863860052310fed55e4d
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055737"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292138"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML 基本知識
 
 [![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
-XAML (eXtensible Application Markup Language) 讓開發人員可以在 Xamarin.Forms 應用程式中使用標記定義使用者介面，而不是使用程式碼。 XAML 永遠不需要在 Xamarin.Forms 程式中，但它通常會較簡潔和呈現更一致的比對等的程式碼，而且可能靈活。 XAML 是非常適合用於搭配熱門的 MVVM (模型-檢視-ViewModel) 應用程式架構： XAML 定義的檢視，透過以 XAML 為基礎的資料繫結連結到 ViewModel 的程式碼。
+XAML (eXtensible Application Markup Language) 讓開發人員可以在 Xamarin.Forms 應用程式中使用標記定義使用者介面，而不是使用程式碼。 XAML 永遠不需要在 Xamarin.Forms 程式中，但它通常會較簡潔和呈現更一致的比對等的程式碼，而且可能靈活。 XAML 是非常適合用於搭配熱門的 MVVM (模型-檢視-ViewModel) 應用程式架構：XAML 會定義連結到 ViewModel 的程式碼透過以 XAML 為基礎的資料繫結的檢視。
 
 ## <a name="xaml-basics-contents"></a>XAML 基本內容
 
@@ -101,17 +101,12 @@ XAML 會具有對等程式碼的幾項優點：
 
 ## <a name="requirements"></a>需求
 
-本文假設 Xamarin.Forms 工作熟悉。 讀取[An introduction to Xamarin.Forms 簡介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)強烈建議。
-
-本文也假設 XML，包括了解使用方式的 XML 命名空間宣告和詞彙疐裾*項目*，*標記*，並*屬性*。
+本文假設 Xamarin.Forms 工作熟悉。 本文也假設 XML，包括了解使用方式的 XML 命名空間宣告和詞彙疐裾*項目*，*標記*，並*屬性*。
 
 當您熟悉使用 Xamarin.Forms 和 XML 時，開始讀取[第 1 部分。開始使用 XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)。
-
-
 
 ## <a name="related-links"></a>相關連結
 
 - [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
-- [Xamarin.Forms 簡介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [建立 Mobile Apps 課本](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
 - [Xamarin.Forms 範例](https://developer.xamarin.com/samples/xamarin-forms/all/)

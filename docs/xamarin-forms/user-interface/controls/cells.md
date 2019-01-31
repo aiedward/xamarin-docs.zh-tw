@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: ac65122e35849786307afd2a4d6e64e186cad466
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 5ef1aba847954ccdeb230acd82ebbc5015ebd6b7
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060196"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292294"
 ---
 # <a name="xamarinforms-cells"></a>Xamarin.Forms 資料格
 
@@ -61,7 +61,6 @@ Xamarin.Forms 可支援下列資料格類型：
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.Forms 簡介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Xamarin.Forms FormsGallery 範例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 - [Xamarin.Forms 範例](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms API 文件](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)
