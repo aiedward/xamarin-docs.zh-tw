@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 3452c79621013690f967e065c7afaf0768a50c3f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 5c4d43723bc23d8a16be8fec0a895a31ab8bcfdc
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057480"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233961"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>從圖片媒體櫃挑選相片
 
@@ -50,7 +50,7 @@ namespace DependencyServiceSample
 
 ## <a name="ios-implementation"></a>iOS 實作
 
-`IPicturePicker` 介面的 iOS 實作會使用 [`UIImagePickerController`](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/)，如 [**Choose a Photo from the Gallery**](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery) (從資源庫選擇相片) 配方和[範例程式碼](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)中所述。
+`IPicturePicker` 介面的 iOS 實作會使用 [`UIImagePickerController`](xref:UIKit.UIImagePickerController)，如 [**Choose a Photo from the Gallery**](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery) (從資源庫選擇相片) 配方和[範例程式碼](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)中所述。
 
 範例程式碼 iOS 專案中的 [`PicturePickerImplementation`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/iOS/PicturePickerImplementation.cs) 類別包含 iOS 實作。 若要讓 `DependencyService` 管理員看得見此類別，該類別必須使用 `Dependency` 類型的 [`assembly`] 屬性來識別，且該類別必須為公用且明確地實作 `IPicturePicker` 介面：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/24/2017
-ms.openlocfilehash: 667c98d3140d460a6d4b3a26bd898f4c169d6d85
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: 04f92988d4d367abd5e6e864d4450aee2e6c1df2
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50234878"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233792"
 ---
 # <a name="linking-xamarinios-apps"></a>連結 Xamarin.iOS 應用程式
 
@@ -147,7 +147,7 @@ public sealed class PreserveAttribute : System.Attribute {
 
 這種情況常常發生，因為使用者不想要以手動方式在其程式碼中新增 `[Preserve]` 屬性。  副作用是不會連結第三方程式庫，這通常算是不錯的預設值，因為我們無法知道第三方程式庫是否適合搭配連結器使用。
 
-如果您的專案中有程式庫，或者您是可重複使用之程式庫的開發人員，當您想要讓連結器將您的組件視為可連結時，您只需要新增組件層級的屬性 [`LinkerSafe`](https://developer.xamarin.com/api/type/Foundation.LinkerSafeAttribute/) 即可，如下所示：
+如果您的專案中有程式庫，或者您是可重複使用之程式庫的開發人員，當您想要讓連結器將您的組件視為可連結時，您只需要新增組件層級的屬性 [`LinkerSafe`](xref:Foundation.LinkerSafeAttribute) 即可，如下所示：
 
 ```csharp
 [assembly:LinkerSafe]

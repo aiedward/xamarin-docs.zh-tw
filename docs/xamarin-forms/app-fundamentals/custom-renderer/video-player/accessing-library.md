@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 2754e135bee090ce47796dfa1ae39eed2b5f27c5
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: dedd2768bfa843e529e2eddcaed3b102c0a2efbd
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059583"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233506"
 ---
 # <a name="accessing-the-devices-video-library"></a>存取裝置的影片庫
 
@@ -40,7 +40,7 @@ namespace FormsVideoLibrary
 
 ### <a name="the-ios-video-picker"></a>iOS 影片選擇器
 
-iOS `VideoPicker` 會使用 iOS [`UIImagePickerController`](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/) 存取影像庫，指定應限制為 iOS `MediaType` 屬性中的影片 (稱為「電影」)。 請注意，`VideoPicker` 會明確實作 `IVideoPicker` 介面。 另外也請注意 `Dependency` 屬性會將此類別識別為相依性服務。 以下是可讓 Xamarin.Forms 尋找平台專案中相依性服務的兩個需求：
+iOS `VideoPicker` 會使用 iOS [`UIImagePickerController`](xref:UIKit.UIImagePickerController) 存取影像庫，指定應限制為 iOS `MediaType` 屬性中的影片 (稱為「電影」)。 請注意，`VideoPicker` 會明確實作 `IVideoPicker` 介面。 另外也請注意 `Dependency` 屬性會將此類別識別為相依性服務。 以下是可讓 Xamarin.Forms 尋找平台專案中相依性服務的兩個需求：
 
 ```csharp
 using System;

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: bdfef88e0cf5916b1eec08ddfaa09165a057765a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 08278c2bc380892706320dbd0e69642257b73005
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058574"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233779"
 ---
 # <a name="checking-battery-status"></a>檢查電池狀態
 
@@ -77,7 +77,7 @@ namespace DependencyServiceSample
 
 ## <a name="ios-implementation"></a>iOS 實作
 
-您必須在每個平台特定應用程式專案中實作 `IBattery` 介面。 iOS 實作會使用原生 [`UIDevice`](https://developer.xamarin.com/api/type/UIKit.UIDevice/) API 來存取電池資訊。 請注意，下列類別具有無參數的建構函式，以便讓 `DependencyService` 可以建立新的執行個體：
+您必須在每個平台特定應用程式專案中實作 `IBattery` 介面。 iOS 實作會使用原生 [`UIDevice`](xref:UIKit.UIDevice) API 來存取電池資訊。 請注意，下列類別具有無參數的建構函式，以便讓 `DependencyService` 可以建立新的執行個體：
 
 ```csharp
 using UIKit;

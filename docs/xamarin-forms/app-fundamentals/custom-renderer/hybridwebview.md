@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/19/2018
-ms.openlocfilehash: f3b8cf7ec8a42ed031699d8f5e02f32c6eb61458
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 997b3e8a8f847ae08eea7e022e7b3424d0fddd8d
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053857"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233935"
 ---
 # <a name="implementing-a-hybridwebview"></a>實作 HybridWebView
 
@@ -301,19 +301,19 @@ namespace CustomRenderer.iOS
 }
 ```
 
-`HybridWebViewRenderer` 類別會將 `HybridWebView.Uri` 屬性中所指定網頁載入到原生的 [`WKWebView`](https://developer.xamarin.com/api/type/WebKit.WKWebView/) 控制項中，而 `invokeCSharpAction` JavaScript 函式會插入至網頁。 一旦使用者輸入其名稱並按一下 HTML `button` 項目，即會使用網頁收到訊息後呼叫的 `DidReceiveScriptMessage` 方法來執行 `invokeCSharpAction` JavaScript 函式。 接著，此方法會叫用 `HybridWebView.InvokeAction` 方法，這樣會叫用已註冊的動作來顯示快顯。
+`HybridWebViewRenderer` 類別會將 `HybridWebView.Uri` 屬性中所指定網頁載入到原生的 [`WKWebView`](xref:WebKit.WKWebView) 控制項中，而 `invokeCSharpAction` JavaScript 函式會插入至網頁。 一旦使用者輸入其名稱並按一下 HTML `button` 項目，即會使用網頁收到訊息後呼叫的 `DidReceiveScriptMessage` 方法來執行 `invokeCSharpAction` JavaScript 函式。 接著，此方法會叫用 `HybridWebView.InvokeAction` 方法，這樣會叫用已註冊的動作來顯示快顯。
 
 執行此功能的程序如下：
 
 - 假設 `Control` 屬性是 `null`，則執行下列作業：
-  - 建立 [`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/) 執行個體，允許在網頁中張貼訊息及插入使用者指令碼。
-  - 建立 [`WKUserScript`](https://developer.xamarin.com/api/type/WebKit.WKUserScript/) 執行個體，在載入網頁後將 `invokeCSharpAction` JavaScript 函式插入至網頁。
-  - [`WKUserContentController.AddScript`](https://developer.xamarin.com/api/member/WebKit.WKUserContentController.AddUserScript/p/WebKit.WKUserScript/) 方法將 [`WKUserScript`](https://developer.xamarin.com/api/type/WebKit.WKUserScript/) 執行個體新增至內容控制站。
-  - [`WKUserContentController.AddScriptMessageHandler`](https://developer.xamarin.com/api/member/WebKit.WKUserContentController.AddScriptMessageHandler/p/WebKit.IWKScriptMessageHandler/System.String/) 方法會將名為 `invokeAction` 的指令碼訊息處理常式新增至 [`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/) 執行個體，而這會定義所有使用 `WKUserContentController` 執行個體之 Web 檢視中所有框架的 JavaScript 函式 `window.webkit.messageHandlers.invokeAction.postMessage(data)`。
-  - 建立 [`WKWebViewConfiguration`](https://developer.xamarin.com/api/type/WebKit.WKWebViewConfiguration/) 執行個體，並將 [`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/) 執行個體設為內容控制站。
-  - 具現化 [`WKWebView`](https://developer.xamarin.com/api/type/WebKit.WKWebView/) 控制項，並呼叫 `SetNativeControl` 方法將 `WKWebView` 控制項的參考指派給 `Control` 屬性。
+  - 建立 [`WKUserContentController`](xref:WebKit.WKUserContentController) 執行個體，允許在網頁中張貼訊息及插入使用者指令碼。
+  - 建立 [`WKUserScript`](xref:WebKit.WKUserScript) 執行個體，在載入網頁後將 `invokeCSharpAction` JavaScript 函式插入至網頁。
+  - [`WKUserContentController.AddUserScript`](xref:WebKit.WKUserContentController.AddUserScript(WebKit.WKUserScript)) 方法將 [`WKUserScript`](xref:WebKit.WKUserScript) 執行個體新增至內容控制站。
+  - [`WKUserContentController.AddScriptMessageHandler`](xref:WebKit.WKUserContentController.AddScriptMessageHandler(WebKit.IWKScriptMessageHandler,System.String)) 方法會將名為 `invokeAction` 的指令碼訊息處理常式新增至 [`WKUserContentController`](xref:WebKit.WKUserContentController) 執行個體，而這會定義所有使用 `WKUserContentController` 執行個體之 Web 檢視中所有框架的 JavaScript 函式 `window.webkit.messageHandlers.invokeAction.postMessage(data)`。
+  - 建立 [`WKWebViewConfiguration`](xref:WebKit.WKWebViewConfiguration) 執行個體，並將 [`WKUserContentController`](xref:WebKit.WKUserContentController) 執行個體設為內容控制站。
+  - 具現化 [`WKWebView`](xref:WebKit.WKWebView) 控制項，並呼叫 `SetNativeControl` 方法將 `WKWebView` 控制項的參考指派給 `Control` 屬性。
 - 假設自訂轉譯器附加於新的 Xamarin.Forms 項目：
-  - [`WKWebView.LoadRequest`](https://developer.xamarin.com/api/member/WebKit.WKWebView.LoadRequest/p/Foundation.NSUrlRequest/) 方法會載入 `HybridWebView.Uri` 屬性所指定的 HTML 檔案。 程式碼指定該檔案會儲存在專案的 `Content` 資料夾中。 一旦顯示網頁，即將 `invokeCSharpAction` JavaScript 函式插入至網頁。
+  - [`WKWebView.LoadRequest`](xref:WebKit.WKWebView.LoadRequest(Foundation.NSUrlRequest)) 方法會載入 `HybridWebView.Uri` 屬性所指定的 HTML 檔案。 程式碼指定該檔案會儲存在專案的 `Content` 資料夾中。 一旦顯示網頁，即將 `invokeCSharpAction` JavaScript 函式插入至網頁。
 - 當轉譯器附加至的項目變更時：
   - 釋放資源。
 
