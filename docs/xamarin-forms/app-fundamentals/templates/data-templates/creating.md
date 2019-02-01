@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 4eea0db32bcfae4dc2ecdec8c2e494989515ef00
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 0374d37027546c41305c8cd5f27de593c226fcaa
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060222"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233766"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>建立 Xamarin.Forms DataTemplate
 
@@ -63,7 +63,7 @@ _您可以在 ResourceDictionary 中，或是從自訂類型或適當的 Xamarin
 </ListView>
 ```
 
-內嵌 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 的子系必須是 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 類型或衍生自該類型。 `ViewCell` 內的配置在此處由 [`Grid`](xref:Xamarin.Forms.Grid) 管理。 `Grid` 包含三個 [`Label`](xref:Xamarin.Forms.Label) 執行個體，會將其 [`Text`](xref:Xamarin.Forms.Label.Text) 屬性繫結至集合中每個 `Person` 物件的適當屬性。
+內嵌 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 的子系必須是 [`Cell`](xref:Xamarin.Forms.Cell) 類型或衍生自該類型。 此範例使用 [`ViewCell`](xref:Xamarin.Forms.ViewCell)，它衍生自 `Cell`。 `ViewCell` 內的配置在此處由 [`Grid`](xref:Xamarin.Forms.Grid) 管理。 `Grid` 包含三個 [`Label`](xref:Xamarin.Forms.Label) 執行個體，會將其 [`Text`](xref:Xamarin.Forms.Label.Text) 屬性繫結至集合中每個 `Person` 物件的適當屬性。
 
 對等的 C# 程式碼會顯示在以下程式碼範例中：
 
@@ -285,7 +285,7 @@ public class WithDataTemplatePageCS : ContentPage
 
 使用 [`Add`](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) 方法將 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 新增至 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)，這會指定擷取 `DataTemplate` 時用來參考它的 `Key` 字串。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文說明了如何從自訂類型或在 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 中，以內嵌方式建立資料範本。 如果不需要在他處重複使用資料範本，則應該使用內嵌範本。 或者，您可以將資料範本定義為自訂類型，或是定義為控制項層級、頁面層級或應用程式層級資源，來重複使用它。
 

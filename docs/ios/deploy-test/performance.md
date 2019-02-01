@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: f01074823f865b1717920d8364c67828453b6437
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 01c743b4b0eff81bbf4c41e1c2f387e0dc40c067
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617733"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233753"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS 效能
 
@@ -25,7 +25,7 @@ ms.locfileid: "51617733"
 
 ## <a name="avoid-strong-circular-references"></a>避免強式循環參考
 
-在某些情況下，可能會建立強式參考循環，這會防止記憶體回收行程回收物件的記憶體。 例如，假設 [`NSObject`](https://developer.xamarin.com/api/type/Foundation.NSObject/) 衍生的子類別 (例如繼承自 [`UIView`](https://developer.xamarin.com/api/type/UIKit.UIView/) 的類別) 新增至 `NSObject` 衍生的容器，並從 Objective-C 進行強式參考，如下列程式碼範例所示：
+在某些情況下，可能會建立強式參考循環，這會防止記憶體回收行程回收物件的記憶體。 例如，假設 [`NSObject`](xref:Foundation.NSObject) 衍生的子類別 (例如繼承自 [`UIView`](xref:UIKit.UIView) 的類別) 新增至 `NSObject` 衍生的容器，並從 Objective-C 進行強式參考，如下列程式碼範例所示：
 
 ```csharp
 class Container : UIView
@@ -56,7 +56,7 @@ container.AddSubview (new MyView (container));
 
 當此程式碼建立 `Container` 執行個體時，C# 物件將有 Objective-C 物件的強式參考。 同樣地，`MyView` 執行個體也會有 Objective-C 物件的強式參考。
 
-此外，呼叫 `container.AddSubview` 將會增加非受控 `MyView` 執行個體上的參考計數。 當發生這種情況時，Xamarin.iOS 執行階段會建立 `GCHandle` 執行個體以保留受控程式碼中的 `MyView` 運作，因為無法保證任何受控物件會保留其參考。 從受控程式碼的觀點來看，會在 [`AddSubview`](https://developer.xamarin.com/api/member/UIKit.UIView.AddSubview/p/UIKit.UIView/) 呼叫 (若不是針對 `GCHandle`) 之後回收 `MyView` 物件。
+此外，呼叫 `container.AddSubview` 將會增加非受控 `MyView` 執行個體上的參考計數。 當發生這種情況時，Xamarin.iOS 執行階段會建立 `GCHandle` 執行個體以保留受控程式碼中的 `MyView` 運作，因為無法保證任何受控物件會保留其參考。 從受控程式碼的觀點來看，會在 [`AddSubview`](xref:UIKit.UIView.AddSubview(UIKit.UIView)) 呼叫 (若不是針對 `GCHandle`) 之後回收 `MyView` 物件。
 
 非受控 `MyView` 物件會有指向受控物件的 `GCHandle`，稱為*強式連結*。 受控物件將包含對 `Container` 執行個體的參考。 接著，`Container` 執行個體會有對 `MyView` 物件的受控參考。
 
@@ -103,7 +103,7 @@ container.AddSubview (new MyView (container));
 
 這也會發生在使用委派或資料來源模式的 iOS API 中，其中對等類別將包含實作；例如，設定 [`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/) 時
 屬性或 [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/) 時
-在 [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) 類別中。
+在 [`UITableView`](xref:UIKit.UITableView) 類別中。
 
 在類別純粹是為了實作通訊協定而建立的情況下 (例如 [`IUITableViewDataSource`](https://developer.xamarin.com/api/type/MonoTouch.UIKit.IUITableViewDataSource/))，您可以僅實作類別中的介面並覆寫方法，然後將 `DataSource` 屬性指派給 `this`，而非建立子類別。
 
@@ -211,7 +211,7 @@ class MyChild : UIView
 ```
 
 如需有關釋放強式參考的詳細資訊，請參閱[釋放 IDisposable 資源](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable)。
-此部落格文章中也有很棒的探討：[Xamarin.iOS、記憶體回收行程與我](http://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/) \(英文\)。
+此部落格文章中也有精彩的討論：[Xamarin.iOS - 記憶體回收行程與我](http://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/) \(英文\)。
 
 ### <a name="more-information"></a>詳細資訊
 
@@ -219,7 +219,7 @@ class MyChild : UIView
 
 ## <a name="optimize-table-views"></a>最佳化資料表檢視
 
-針對 [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) 執行個體，使用者期望有順暢的捲動和快速載入時間。 不過，當資料格包含深層巢狀檢視階層，或資料格包含複雜配置時，捲動效能可能會受到影響。 不過，有可用來避免 `UITableView` 效能不佳的技巧：
+針對 [`UITableView`](xref:UIKit.UITableView) 執行個體，使用者期望有順暢的捲動和快速載入時間。 不過，當資料格包含深層巢狀檢視階層，或資料格包含複雜配置時，捲動效能可能會受到影響。 不過，有可用來避免 `UITableView` 效能不佳的技巧：
 
 - 重複使用資料格。 如需詳細資訊，請參閱[重複使用資料格](#reusecells)。
 - 減少子檢視數目。
@@ -228,11 +228,11 @@ class MyChild : UIView
 - 讓資料格和任何其他檢視不透明。
 - 避免影像縮放和漸層。
 
-這些技巧可共同協助保持 [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) 執行個體捲動順暢。
+這些技巧可共同協助保持 [`UITableView`](xref:UIKit.UITableView) 執行個體捲動順暢。
 
 ### <a name="reuse-cells"></a>重複使用資料格
 
-當顯示 [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) 中數百個資料列，畫面上一次僅能顯示少數資料列時，卻建立了數百個 [`UITableViewCell`](https://developer.xamarin.com/api/type/UIKit.UITableViewCell/) 物件，是一種浪費記憶體的方式。 反之，僅有畫面上看見的資料格可以載入記憶體，且**內容**載入至這些重複使用的資料格中。 這可防止具現化數百個額外的物件，進而節省時間與記憶體。
+當顯示 [`UITableView`](xref:UIKit.UITableView) 中數百個資料列，畫面上一次僅能顯示少數資料列時，卻建立了數百個 [`UITableViewCell`](xref:UIKit.UITableViewCell) 物件，是一種浪費記憶體的方式。 反之，僅有畫面上看見的資料格可以載入記憶體，且**內容**載入至這些重複使用的資料格中。 這可防止具現化數百個額外的物件，進而節省時間與記憶體。
 
 因此，當資料格從畫面消失時，其檢視可以放置在佇列中以供重複使用，如下列程式碼範例所示：
 
@@ -250,13 +250,13 @@ class MyTableSource : UITableViewSource
 }
 ```
 
-當使用者捲動時，[`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) 會呼叫 `GetCell` 覆寫，來要求要顯示的新檢視。 此覆寫會接著呼叫 [`DequeueReusableCell`](https://developer.xamarin.com/api/member/UIKit.UITableView.DequeueReusableCell/p/Foundation.NSString/) 方法，且如果有可重複使用的資料格，將會傳回。
+當使用者捲動時，[`UITableView`](xref:UIKit.UITableView) 會呼叫 `GetCell` 覆寫，來要求要顯示的新檢視。 此覆寫會接著呼叫 [`DequeueReusableCell`](xref:UIKit.UITableView.DequeueReusableCell(Foundation.NSString)) 方法，且如果有可重複使用的資料格，將會傳回。
 
 如需詳細資訊，請參閱[使用資料填入資料表](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)中的[資料格重複使用](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)。
 
 ## <a name="use-opaque-views"></a>使用不透明檢視
 
-請確定沒有定義透明度的任何檢視都已設定其 [`Opaque`](https://developer.xamarin.com/api/property/UIKit.UIView.Opaque/) 屬性。 這可確保檢視由繪製系統以最佳方式呈現。 當檢視內嵌在 [`UIScrollView`](https://developer.xamarin.com/api/type/UIKit.UIScrollView/) 中，或者是複雜動畫的一部分時，這點非常重要。 否則繪製系統會合成檢視與其他內容，這可能會明顯影響效能。
+請確定沒有定義透明度的任何檢視都已設定其 [`Opaque`](xref:UIKit.UIView.Opaque) 屬性。 這可確保檢視由繪製系統以最佳方式呈現。 當檢視內嵌在 [`UIScrollView`](xref:UIKit.UIScrollView) 中，或者是複雜動畫的一部分時，這點非常重要。 否則繪製系統會合成檢視與其他內容，這可能會明顯影響效能。
 
 ## <a name="avoid-fat-xibs"></a>避免 FAT XIB
 
@@ -264,7 +264,7 @@ class MyTableSource : UITableViewSource
 
 ## <a name="optimize-image-resources"></a>最佳化影像資源
 
-影像是應用程式所使用之資源中成本最高的一種資源，且經常以高解析度擷取。 因此，當在 [`UIImageView`](https://developer.xamarin.com/api/type/UIKit.UIImageView/) 中顯示應用程式套件組合中的影像時，請確定影像和 `UIImageView` 大小相同。 在執行階段縮放影像可以是昂貴的作業，特別是如果 `UIImageView` 內嵌在 [`UIScrollView`](https://developer.xamarin.com/api/type/UIKit.UIScrollView/) 中時。
+影像是應用程式所使用之資源中成本最高的一種資源，且經常以高解析度擷取。 因此，當在 [`UIImageView`](xref:UIKit.UIImageView) 中顯示應用程式套件組合中的影像時，請確定影像和 `UIImageView` 大小相同。 在執行階段縮放影像可以是昂貴的作業，特別是如果 `UIImageView` 內嵌在 [`UIScrollView`](xref:UIKit.UIScrollView) 中時。
 
 如需詳細資訊，請參閱[跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)指南中的[最佳化影像資源](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages)。
 
@@ -288,7 +288,7 @@ class MyTableSource : UITableViewSource
 
 必須避免使用 `System.Reflection.Emit` 或 *Dynamic Language Runtime* 以動態方式產生程式碼，因為 iOS 核心會防止動態程式碼執行。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文章會說明與討論用來增加以 Xamarin.iOS 建置之應用程式效能的技巧。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
 
