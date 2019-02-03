@@ -8,13 +8,13 @@ ms.technology: xamarin-forms
 ms.custom: video
 author: conceptdev
 ms.author: crdun
-ms.date: 09/24/2018
-ms.openlocfilehash: d89488e3f6e42f84fc9519eedaa38c99b90ae068
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.date: 02/02/2019
+ms.openlocfilehash: 8adf52d8e08dedeebae8362cf730e5dc3c7c93a9
+ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292815"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55668559"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>建置您的第一個 Xamarin.Forms 應用程式
 
@@ -25,6 +25,8 @@ ms.locfileid: "55292815"
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Building-Your-First-Android--iOS-App-in-Visual-Studio-2017/player]
 
 ## <a name="step-by-step-instructions-for-windows"></a>適用於 Windows 的逐步指示
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
 
 請遵循下列步驟及上面的影片進行：
 
@@ -40,7 +42,7 @@ ms.locfileid: "55292815"
 
 4. 按下偵錯按鈕 (或 [偵錯] > [開始偵錯] 功能表項目) 來啟動 Android Emulator。
 
-5. 編輯 **MainPage.xaml**，並在 `</StackPanel>` 結尾前面新增此 XAML：
+5. 編輯 **MainPage.xaml**，並在 `</StackLayout>` 結尾前面新增此 XAML：
 
     ```xaml
     <Button Text="Click Me" Clicked="Button_Clicked" />
@@ -71,6 +73,8 @@ ms.locfileid: "55292815"
 
 ## <a name="step-by-step-instructions-for-mac"></a>適用於 Mac 的逐步指示
 
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
+
 請遵循下列步驟及上面的影片進行：
 
 1. 選擇 [檔案] > [新增方案...] 或按下 [新增專案...] 按鈕，然後選取 [多平台] > [應用程式] > [空白的 Forms App]：
@@ -87,7 +91,7 @@ ms.locfileid: "55292815"
 
 4. 按下偵錯按鈕 (或 [執行] > [開始偵錯]) 來啟動 Android Emulator。
 
-5. 編輯 **MainPage.xaml**，並在 `</StackPanel>` 結尾前面新增此 XAML：
+5. 編輯 **MainPage.xaml**，並在 `</StackLayout>` 結尾前面新增此 XAML：
 
     ```xaml
     <Button Text="Click Me" Clicked="Handle_Clicked" />
