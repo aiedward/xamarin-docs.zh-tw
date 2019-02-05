@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 7c19cc0f2d1f72706926d640bb7fad9323a9e17f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 067ff4758ca78f7d706c7be96ffecd10e4e57965
+ms.sourcegitcommit: d8edb1b9e7fd61979014d5f5f091ee135ab70e34
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53049452"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55712068"
 ---
 # <a name="customizing-listview-cell-appearance"></a>自訂 ListView 儲存格的外觀
 
@@ -120,6 +120,7 @@ x:Class="demoListView.ImageCellPage">
 - 自訂儲存格在巢狀`DataTemplate`，這是內部`ListView.ItemTemplate`。 這是相同的程序，與使用任何其他資料格。
 - `ViewCell` 是自訂的資料格類型。 子系`DataTemplate`項目必須是或衍生自類型`ViewCell`。
 - 請注意內`ViewCell`，版面配置由`StackLayout`。 此配置可讓我們自訂的背景色彩。 請注意，任何屬性`StackLayout`也就是可繫結可以雖然，未在此處顯示的自訂儲存格，內部繫結。
+- 內`ViewCell`，配置可以由任何 Xamarin.Forms 版面配置。 
 
 ### <a name="cnum"></a>C&num;
 

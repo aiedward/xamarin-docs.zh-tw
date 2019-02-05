@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 3c552d97f64b28ed47a9226047862bffcfa8c9e3
-ms.sourcegitcommit: 56b2f5cda7c37874618736d6129f19a8976826f0
+ms.openlocfilehash: 6525cb321537a7cefb24feb1e77b532068b098ef
+ms.sourcegitcommit: d8edb1b9e7fd61979014d5f5f091ee135ab70e34
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/21/2019
-ms.locfileid: "54418682"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55712081"
 ---
 # <a name="using-sqlitenet-with-android"></a>使用 SQLite.NET android
 
@@ -207,9 +207,11 @@ var rowcount = db.Delete<Stock>(someStock.Id); // Id is the primary key
 
 SQLite 支援三種不同的執行緒模式：*單一執行緒*，*多執行緒*，以及*序列化*。 如果您想要從沒有任何限制的多個執行緒存取的資料庫，您可以設定要使用 SQLite**序列化**執行緒模式。 請務必及早在您的應用程式中設定此模式 (例如，在開頭`OnCreate`方法)。
 
-若要變更執行緒的模式，請呼叫`SqliteConnection.SetConfig`。 比方說，這行程式碼會設定適用於 SQLite**序列化**模式︰ 
+若要變更執行緒的模式，請呼叫`SqliteConnection.SetConfig`。 比方說，這行程式碼會設定適用於 SQLite**序列化**模式︰
 
 ```csharp
+using using Mono.Data.Sqlite;
+...
 SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 ```
 
@@ -225,16 +227,17 @@ SQLite 的 Android 版本有限制需要幾個步驟。 如果在呼叫`SqliteCo
     internal static extern int sqlite3_initialize();
     ```
 
-
 2.  在開頭`OnCreate`方法，將此程式碼新增至關機 SQLite，設定它的**序列化**模式中，並重新初始化 SQLite:
 
     ```csharp
+    using using Mono.Data.Sqlite;
+    ...
     sqlite3_shutdown();
     SqliteConnection.SetConfig(SQLiteConfig.Serialized);
     sqlite3_initialize();
     ```
 
-此因應措施也適用於`Mono.Data.Sqlite`程式庫。 如需有關 SQLite，以及多執行緒處理的詳細資訊，請參閱[SQLite 和多個執行緒](https://www.sqlite.org/threadsafe.html)。 
+此因應措施也適用於`Mono.Data.Sqlite`程式庫。 如需有關 SQLite，以及多執行緒處理的詳細資訊，請參閱[SQLite 和多個執行緒](https://www.sqlite.org/threadsafe.html)。
 
 ## <a name="related-links"></a>相關連結
 
