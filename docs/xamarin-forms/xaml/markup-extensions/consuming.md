@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/01/2018
-ms.openlocfilehash: 53c5f17672cc46ef097e979154a8911f8cdaef63
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 3fdb2a3853c1320b6bd0b8a02701acd6883bf226
+ms.sourcegitcommit: 999b9f254c56ff18ebd391fd0de2f0d6e95e35b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054122"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55748078"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 標記延伸
 
@@ -33,7 +33,7 @@ XAML 標記延伸模組可協助增強的威力與彈性的 XAML，藉由將從�
 - `StaticResource` &ndash; 從資源字典，參考物件，如本文所述[**的資源字典**](~/xamarin-forms/xaml/resource-dictionaries.md)。
 - `DynamicResource` &ndash; 回應物件中的資源字典中，變更文件中所述[**動態樣式**](~/xamarin-forms/user-interface/styles/dynamic.md)。
 - `Binding` &ndash; 之間建立連結屬性的兩個物件，如本文所述[**資料繫結**](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
-- `TemplateBinding` &ndash; 從 [控制項] 範本中，執行資料繫結，如本文所述[**控制項範本中的繫結**](/guides/xamarin-forms/application-fundamentals/templates/control-templates/template-binding/)。
+- `TemplateBinding` &ndash; 從 [控制項] 範本中，執行資料繫結，如本文所述[**控制項範本中的繫結**](~/xamarin-forms/app-fundamentals/templates/control-templates/template-binding/)。
 
 [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)版面配置會使用自訂標記延伸[ `ConstraintExpression` ](xref:Xamarin.Forms.ConstraintExpression)。 這個標記延伸文件中所述[ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md)。
 
@@ -84,7 +84,7 @@ XAML 剖析器也可讓`StaticExtension`類別，以縮寫成`x:Static`:
 </Label>
 ```
 
-這可以進一步延伸，簡化，但變更導入了一些新的語法： 其中包含將放`StaticExtension`類別和成員在大括號中設定。 產生的運算式設定為直接`FontSize`屬性：
+這可以進一步延伸，簡化，但變更導入了一些新的語法：它包含將放`StaticExtension`類別和成員在大括號中設定。 產生的運算式設定為直接`FontSize`屬性：
 
 ```xaml
 <Label Text="Label No. 3"
