@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 08ac86674e4f10d6bd17d765de2bcdf7c2d3f901
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 79b973784dd978bff15c7a706083c70df83ba1c8
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061755"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831842"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>使用 Bing 拼字檢查 API 的拼字檢查
 
@@ -154,6 +154,9 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 ![](spell-check-images/before-spell-check.png "拼字檢查之前")
 
 ![](spell-check-images/after-spell-check.png "拼字檢查之後")
+
+> [!NOTE]
+> 上述範例使用`Replace`為了簡單起見，而是跨大量文字的網域控制站可以取代不正確的 token。 API 提供`offset`應該在生產環境應用程式中用來識別正確的位置，執行更新的來源文字中的值。
 
 ## <a name="summary"></a>總結
 

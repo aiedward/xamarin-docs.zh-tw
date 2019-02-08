@@ -6,24 +6,19 @@ ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 8adac1711271324b70731a085088bd8805391d31
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/13/2018
+ms.openlocfilehash: 71962c5e7d2f4c360e14b2040779498d4be95282
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059453"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831791"
 ---
 # <a name="customizing-listview-appearance"></a>自訂 ListView 的外觀
 
 [![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
 
-`ListView` 已控制整體清單中，除了基礎的呈現方式選項`ViewCell`s。 這些選項包括：
-
-- [**Grouping** ](#Grouping) &ndash; ListView 中的項目，方便瀏覽和改善的組織。
-- [**頁首和頁尾**](#Headers_and_Footers) &ndash;開頭和結尾與其他項目捲動檢視中顯示的資訊。
-- [**資料列分隔符號**](#Row_Separators) &ndash;顯示或隱藏項目之間的分隔線。
-- [**變數的高度資料列**](#Row_Heights) &ndash;預設所有資料列都有相同的高度，但是這可以變更為允許與要顯示不同高度的資料列。
+[`ListView`](xref:Xamarin.Forms.ListView) 能夠控制的清單中，除了[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)每個資料列在清單中的執行個體。
 
 <a name="Grouping" />
 
@@ -83,7 +78,7 @@ static PageTypeGroup()
 }
 ```
 
-在上述程式碼中我們也可以呼叫`Add`上的項目`groups`，這是類型的執行個體`PageTypeGroup`。 這可能是因為`PageTypeGroup`繼承自`List<PageModel>`。 這是清單的先前所述的清單模式的範例。
+在上述程式碼中，我們也可以呼叫`Add`上的項目`groups`，這是類型的執行個體`PageTypeGroup`。 這可能是因為`PageTypeGroup`繼承自`List<PageModel>`。 這是清單的先前所述的清單模式的範例。
 
 以下是 XAML 來顯示群組的清單：
 
@@ -205,6 +200,14 @@ ListView HeaderList = new ListView() {
 ```
 
 ![](customizing-list-appearance-images/header-custom.png "使用自訂的頁首和頁尾的 ListView")
+
+## <a name="scrollbar-visibility"></a>捲軸可見度
+
+[`ListView`](xref:Xamarin.Forms.ListView) 已`HorizontalScrollBarVisibility`並`VerticalScrollBarVisibility`屬性，取得或設定[ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility)值，表示水平的或垂直捲軸為可見時。 這兩個屬性可以設定為下列值：
+
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) 表示捲軸列預設平台，且與的預設值`HorizontalScrollBarVisibility`和`VerticalScrollBarVisibility`屬性。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) 表示捲軸將會顯示，即使容納不下內容檢視中。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) 表示捲軸列將不會顯示，如果內容不符合在檢視中的事件。
 
 <a name="Row_Separators" />
 

@@ -7,21 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/30/2018
-ms.openlocfilehash: 06cf5d2a862a5db2f94fca655b69c45d16375854
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 4f69e88e0abff1236dc8365d88c8efbdf58b4031
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059148"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831700"
 ---
 # <a name="listview-data-sources"></a>ListView 的資料來源
 
 [![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
 
 A [ `ListView` ](xref:Xamarin.Forms.ListView)用於顯示資料的清單。 我們將了解填入 ListView 與資料，以及我們如何可以將繫結至選取的項目。
-
-- **[設定 ItemsSource](#ItemsSource)**  &ndash;使用簡易清單或陣列。
-- **[資料繫結](#Data_Binding)** &ndash;建立模型與 ListView 之間的關聯性。 繫結適合 MVVM 模式。
 
 ## <a name="itemssource"></a>ItemsSource
 

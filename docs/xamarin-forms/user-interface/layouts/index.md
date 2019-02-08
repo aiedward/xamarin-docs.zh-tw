@@ -7,13 +7,13 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/26/2017
-ms.openlocfilehash: df2bd07ad5d91c237320b74d7a81828ba1c062c2
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/18/2018
+ms.openlocfilehash: 5bd232293c979566faed2856de7287903da94054
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053269"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831764"
 ---
 # <a name="layouts-in-xamarinforms"></a>在 Xamarin.Forms 中的版面配置
 
@@ -27,19 +27,20 @@ Xamarin.Forms 有數個版面配置和功能的組織在畫面上的內容。
 
 每個版面配置控制項是如下所述，以及如何處理螢幕方向的變更的詳細資料：
 
-* **[StackLayout](stack-layout.md)**  &ndash;用來排列檢視，以線性方式，水平或垂直。 中心，左邊或右邊的版面配置可對齊 StackLayout 中的檢視。
-* **[AbsoluteLayout](absolute-layout.md)**  &ndash;用來排列檢視，藉由設定座標 & 絕對值或比例調整大小。 AbsoluteLayout 可以用來層檢視，以及它們的錨點向左、 右或置中。
-* **[RelativeLayout](relative-layout.md)**  &ndash;用來排列檢視，藉由設定相對於其父代的維度及位置條件約束。
-* **[方格](grid.md)** &ndash;用來排列方格中的檢視。 資料列和資料行，都可以指定絕對值或比例。
-* **[FlexLayout](flex-layout.md)**  &ndash;用來水平或垂直排列檢視進行換行。
-* **[ScrollView](scroll-view.md)**  &ndash;用來提供捲動時檢視完全無法符合螢幕的界限。
-* **[LayoutOptions](layout-options.md)**  &ndash;定義對齊和展開的檢視，相對於其父代。
-* **[輸入透明度](#input_transparency)** &ndash;指定項目是否收到輸入。
-* **[邊界和邊框距離](margin-and-padding.md)** &ndash;示範如何在使用者介面中呈現的項目時，控制版面配置行為。
-* **[裝置方向](device-orientation.md)** &ndash;說明如何處理裝置方向變更。
-* **[在平板電腦及桌面裝置上的版面配置](tablet.md)** &ndash;示範如何針對每個平台的較大螢幕最佳化。
-* **[建立自訂的版面配置](custom.md)** &ndash;說明如何建立自訂的版面配置的類別。
-* **[版面配置壓縮](layout-compression.md)** &ndash;移除指定從視覺化樹狀結構的版面配置的試圖改善頁面轉譯效能。
+* **[StackLayout](stack-layout.md)**  ： 用來排列檢視，以線性方式，水平或垂直。 中心，左邊或右邊的版面配置可對齊 StackLayout 中的檢視。
+* **[AbsoluteLayout](absolute-layout.md)**  ： 用來排列檢視，藉由設定座標 & 絕對值或比例調整大小。 AbsoluteLayout 可以用來層檢視，以及它們的錨點向左、 右或置中。
+* **[RelativeLayout](relative-layout.md)**  ： 用來排列檢視，藉由設定相對於其父代的維度及位置條件約束。
+* **[方格](grid.md)** ： 用來排列方格中的檢視。 資料列和資料行，都可以指定絕對值或比例。
+* **[FlexLayout](flex-layout.md)**  ： 用來水平或垂直排列檢視進行換行。
+* **[ScrollView](scroll-view.md)**  ： 用來提供捲動時檢視完全無法符合螢幕的界限。
+* **[LayoutOptions](layout-options.md)**  – 定義對齊和展開的檢視，相對於其父代。
+* **[輸入透明度](#input_transparency)** – 指定項目是否收到輸入。
+* **[邊界和邊框距離](margin-and-padding.md)** -示範如何在使用者介面中呈現的項目時，控制版面配置行為。
+* **[裝置方向](device-orientation.md)** – 說明如何處理裝置方向變更。
+* **[在平板電腦及桌面裝置上的版面配置](tablet.md)** -示範如何針對每個平台的較大螢幕最佳化。
+* **[可繫結的版面配置](bindable-layouts.md)** – 啟用版面配置的類別，以產生其內容繫結至項目的集合。
+* **[建立自訂的版面配置](custom.md)** – 說明如何建立自訂的版面配置的類別。
+* **[版面配置壓縮](layout-compression.md)** – 移除指定從視覺化樹狀結構的版面配置的試圖改善頁面轉譯效能。
 
 平台控制項也可用在以 Xamarin.Forms 版面配置中直接[**原生內嵌**](~/xamarin-forms/platform/native-views/index.md) （新的 Xamarin.Forms 2.2 中），而且可以[**建立自訂配置**](custom.md)以符合特定需求。
 
@@ -203,6 +204,10 @@ Xamarin.Forms 和內建的版面配置是能夠處理變更裝置方向。 您�
 
 iOS、 Android 和通用 Windows 平台所有支援較大的螢幕大小上 tablet 裝置 （以及膝上型電腦和 Windows 的桌上型電腦）。 Xamarin.Forms 可讓您藉由偵測裝置類型，以及調整頁面配置，或完全使用完全不同的頁面，針對較大螢幕最佳化您的應用程式，針對較大的螢幕。
 
+### <a name="bindable-layoutsbindable-layoutsmd"></a>[可繫結的版面配置](bindable-layouts.md)
+
+`BindableLayout`類別可讓任何配置類別衍生自[ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)類別來產生其內容繫結至項目的集合，可設定的每個項目外觀的選項來[ `DataTemplate`](xref:Xamarin.Forms.DataTemplate).
+
 ### <a name="creating-a-custom-layoutcustommd"></a>[建立自訂版面配置](custom.md)
 
 Xamarin.Forms 可定義四種版面配置類別- [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)， [ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout)， [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)，以及[ `Grid` ](xref:Xamarin.Forms.Grid)，和每個以不同方式來排列其子系。 不過，有時候其組織未使用的版面配置的頁面內容的必要提供 Xamarin.Forms。 這篇文章說明如何撰寫自訂的版面配置的類別，並示範方向區分`WrapLayout`類別在頁面上，水平排列其子系，然後將包裝的後續的子系，額外的資料列顯示。
@@ -215,7 +220,6 @@ Xamarin.Forms 可定義四種版面配置類別- [ `StackLayout` ](xref:Xamarin.
 
 請注意在大部分情況下，一個以上的版面配置選項可以用來實作您所需的設計。 當有多個有效的選項時，請考慮哪種方法會是最簡單的方法為您的情況。
 大部分的設計無法實現具有只在一個配置，以便建立更複雜的設計所需的做為巢狀版面配置。
-
 
 ## <a name="related-links"></a>相關連結
 

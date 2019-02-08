@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/21/2018
-ms.openlocfilehash: 85b9297a62cfb90485be2cbd927abfdcfec2f13c
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: be6154631b8b51ec61feb4c713d925ff30505b7d
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563039"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831751"
 ---
 # <a name="xaml-namespaces-in-xamarinforms"></a>在 Xamarin.Forms 中的 XAML 命名空間
 
@@ -96,10 +96,11 @@ XAML 會使用前置詞來宣告非預設的命名空間，以參考在命名空
 </ListView>
 ```
 
+定義自訂命名空間的結構描述的詳細資訊，請參閱[XAML 自訂命名空間的結構描述](custom-namespace-schemas.md)。
+
 ## <a name="summary"></a>總結
 
 本文章會導入的 XAML 命名空間語法，並示範如何宣告 XAML 命名空間，以存取的型別。 XAML 使用`xmlns`可以在 XAML 中參考的命名空間宣告和類型的 XML 屬性，藉由宣告具有前置詞的 XAML 命名空間。
-
 
 ## <a name="related-links"></a>相關連結
 

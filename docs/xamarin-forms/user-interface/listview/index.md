@@ -7,32 +7,26 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: 9da3bd65dfb5cc6f9ca6bd0e2930003e6ac3d182
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 967d4ae65bdb47adf824f20f47c7b32e24211f9a
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059255"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831806"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
 [![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/WorkingWithListview)
 
-檢視是檢視，以呈現資料，需要捲動，特別是較長的清單的清單。 本指南將示範如何使用 ListView:
-
-1. **[資料來源](data-and-databinding.md)** &ndash;填入資料，不論資料繫結的 ListView。
-2. **[資料格外觀](customizing-cell-appearance.md)** &ndash;自訂內建的儲存格的外觀，或建立您自己自訂的資料格。
-3. **[清單外觀](customizing-list-appearance.md)** &ndash;自訂 ListView 的外觀。 設定頁首和頁尾、 啟用群組及變更資料列的高度。
-4. **[互動](interactivity.md)** &ndash;處理點選，以及選取項目，實作以更新提取，並新增內容的動作。
-5. **[效能](performance.md)** &ndash;避免發生效能問題。
+[`ListView`](xref:Xamarin.Forms.ListView) 是呈現資料，需要捲動，特別是較長的清單的清單檢視。
 
 ## <a name="use-cases"></a>使用案例
+
 請確定 ListView 右邊的控制項，為您的需求。 ListView 可用在任何情況下，您要在其中顯示資料的可捲動清單。 Listview 支援內容動作和資料繫結。
 
 ListView 不應該與混淆[TableView](~/xamarin-forms/user-interface/tableview.md)。 TableView 控制項是更好的選項，只要有一份選項或資料之間的繫結。 例如，iOS 設定應用程式，有一組主要的預先定義的選項，比較適合使用 TableView 比 ListView。
 
 請注意，ListView 是最佳也適合同質資料&ndash;也就是所有的資料應該是相同類型。 這是因為只有一個資料格類型可用來在清單中的每個資料列。 TableViews 可以支援多個資料格類型，因此當您需要混用檢視時，它們會是較好的選擇。
-
 
 ## <a name="components"></a>元件
 ListView 的可執行每個平台的原生功能的元件數目。 每個元件如下所述。
@@ -62,7 +56,6 @@ ListView 可支援多種互動樣式，包括：
 ![](images/context-default.png "ListView 內容動作")
 
 若要深入了解 ListView 的互動性功能，請參閱[動作 & ListView 互動](interactivity.md)。
-
 
 ## <a name="related-links"></a>相關連結
 

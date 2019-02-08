@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/18/2018
-ms.openlocfilehash: 9924e588808783fe35dbd830bbc9af288f37e7ea
-ms.sourcegitcommit: f890b5ec9b7c2702875070859e1a8cbf6e870e46
+ms.openlocfilehash: 7195d56cfee91544f0626a8f89c886cde36752e5
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53813956"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831713"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>可延伸應用程式標記語言 (XAML)
 
@@ -20,7 +20,7 @@ _XAML 是一種宣告式標記的語言，可用來定義使用者介面。使�
 
 > [!VIDEO https://youtube.com/embed/H6UOrSyhTEE]
 
-**Evolve 2016:成為 XAML Master**
+**Evolve 2016：成為 XAML Master**
 
 > [!NOTE]
 > 試試看[XAML Standard 預覽版](standard/index.md)
@@ -42,6 +42,10 @@ XAML 可選擇性地使用 XAML 編譯器 (XAMLC) 直接編譯成中繼語言 (I
 ## <a name="xaml-namespacesnamespacesmd"></a>[XAML 命名空間](namespaces.md)
 
 XAML 使用`xmlns`命名空間宣告的 XML 屬性。 本文介紹 XAML 命名空間語法，並示範如何宣告 XAML 命名空間，以存取的型別。
+
+## <a name="xaml-custom-namespace-schemascustom-namespace-schemasmd"></a>[XAML 自訂命名空間的結構描述](custom-namespace-schemas.md)
+
+可以使用定義 XAML 自訂命名空間的結構描述`XmlnsDefinitionAttribute`類別，指定自訂 URL 與一或多個 CLR 命名空間之間的對應。 自訂命名空間的結構描述可用的 XAML 命名空間宣告。
 
 ## <a name="xaml-markup-extensionsmarkup-extensionsindexmd"></a>[XAML 標記延伸](markup-extensions/index.md)
 
@@ -67,6 +71,6 @@ XAML 可以用來將引數傳遞至非預設建構函式或 factory 方法中。
 
 XAML 資源都可以使用一次以上的物件的定義。 A [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)允許在單一位置中，定義及重複使用在 Xamarin.Forms 應用程式的資源。 這篇文章示範如何建立及取用`ResourceDictionary`，以及如何合併其中`ResourceDictionary`到另一個。
 
-## <a name="loading-xaml-at-runtimeruntime-loadmd"></a>[載入 XAML 在執行階段](runtime-load.md)
+## <a name="loading-xaml-at-runtimeruntime-loadmd"></a>[在執行階段載入 XAML](runtime-load.md)
 
 XAML 可載入和使用在執行階段剖析[ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)擴充方法。

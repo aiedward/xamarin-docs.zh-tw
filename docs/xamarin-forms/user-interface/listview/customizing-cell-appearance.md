@@ -7,23 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 067ff4758ca78f7d706c7be96ffecd10e4e57965
-ms.sourcegitcommit: d8edb1b9e7fd61979014d5f5f091ee135ab70e34
+ms.openlocfilehash: 1e57764dacf7ae0599df46f13bd4f5505c4cc4a2
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55712068"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831777"
 ---
 # <a name="customizing-listview-cell-appearance"></a>自訂 ListView 儲存格的外觀
 
 [![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
 
-ListView 顯示可捲動清單，您可以使用自訂`ViewCell`s。 `ViewCells` 可以用於顯示文字和影像，表示 true/false 狀態且接收使用者輸入。
-
-有兩種方法來取得您想要從 ListView 儲存格的外觀：
-
-- **[自訂內建的儲存格](#Built_in_Cells)** &ndash;更容易實作和更佳的效能，但會犧牲的自訂功能。
-- **[建立自訂的資料格](#customcells)** &ndash;更充分掌控最後的結果，但有可能會有效能問題，如果未正確實作。
+[`ListView`](xref:Xamarin.Forms.ListView) 顯示可捲動清單，您可以使用自訂`ViewCell`s。 `ViewCells` 可以用於顯示文字和影像，表示 true/false 狀態且接收使用者輸入。
 
 <a name="Built_in_Cells" />
 
