@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/25/2018
-ms.openlocfilehash: 6e4ff817bcf59f071277b653175066c9727167c1
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: babfc85de645b285812421d453d51d5be6dceb1c
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527153"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831933"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>將 Xamarin.iOS 應用程式發佈到 App Store
 
@@ -30,7 +30,8 @@ ms.locfileid: "51527153"
 > - 建置您的應用程式，並將它提交給 Apple
 
 > [!IMPORTANT]
-> Apple [已宣告](https://developer.apple.com/news/?id=05072018a)從 2018 年 7 月開始，提交至 App Store 的所有應用程式和更新都必須是使用 iOS 11 SDK 建置，且[必須支援 iPhone X 顯示器](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)。
+> Apple [已宣佈](https://developer.apple.com/ios/submit/)從 2019 年 3 月開始，提交至 App Store 的所有應用程式與更新，都必須使用 iOS 12.1 SDK 或更新版本 (包含在 Xcode 10.1 或更新版本中) 進行建置。
+> 應用程式也應支援 iPhone XS 及 12.9" iPad Pro 的螢幕大小。
 
 ## <a name="app-store-guidelines"></a>App Store 指導方針
 

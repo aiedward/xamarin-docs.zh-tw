@@ -7,19 +7,20 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: de3af76b8479562ba048c5b62167df0f2b2a51f9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 14cf2910767e9c205e5ddc8f580020505f54ef46
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115129"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55832024"
 ---
 # <a name="app-store-distribution"></a>App Store 散發
 
 完成 Xamarin.iOS 應用程式開發之後，軟體開發生命週期的下一步就是使用 iTunes App Store 將應用程式散發給使用者。 這是散發應用程式最常用的方式。 藉由 Apple 的 App Store 來發佈應用程式，可提供給全球使用者使用。
 
 > [!IMPORTANT]
-> Apple [已宣告](https://developer.apple.com/news/?id=05072018a)從 2018 年 7 月開始，提交至 App Store 的所有應用程式和更新都必須是使用 iOS 11 SDK 建置，且必須[支援 iPhone X 顯示器](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)。
+> Apple [已宣佈](https://developer.apple.com/ios/submit/)從 2019 年 3 月開始，提交至 App Store 的所有應用程式與更新，都必須使用 iOS 12.1 SDK 或更新版本 (包含在 Xcode 10.1 或更新版本中) 進行建置。
+> 應用程式也應支援 iPhone XS 及 12.9" iPad Pro 的螢幕大小。
 
 如同開發應用程式，散發應用程式需使用適當的「佈建設定檔」來佈建應用程式。 佈建設定檔是一種檔案，其包含程式碼簽署資訊、應用程式身分識別及預期的散發機制。 對於非 App Store 的散發，佈建設定檔也包含可用來部署應用程式之裝置的相關資訊。
 
@@ -61,13 +62,13 @@ ms.locfileid: "50115129"
 8. 最後，**下載**完成的憑證，並按兩下檔案以進行安裝。
 9. 此時，電腦上應該已安裝憑證，但是您可能需要[重新整理設定檔](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)，以確保會顯示在 Xcode 中。
 
-或者，也可以透過 Xcode 中的 [喜好設定] 對話方塊來要求憑證。 若要這樣做，請依照下列步驟進行操作：
+或者，也可以透過 Xcode 中的 [喜好設定] 對話方塊來要求憑證。 若要這樣做，請遵循下列步驟：
 
-1.   選取您的小組，並按一下 [管理憑證]: [![](images/selectteam.png "選取小組並檢視詳細資料")](images/selectteam.png#lightbox)
+1.   選取您的小組，並按一下 [管理憑證…]：[![](images/selectteam.png "選取小組並檢視詳細資料")](images/selectteam.png#lightbox)
 
-2.   接著，按一下 [iOS Distribution Certificate] (iOS 散發憑證) 旁的 [Create] (建立) 按鈕：[![](images/selectcert.png "建立 iOS 散發憑證")](images/selectcert.png#lightbox)
+2.   接著，按一下 [iOS Distribution Certificate] (iOS 散發憑證) 旁邊的 [建立] 按鈕：[![](images/selectcert.png "建立 iOS 散發憑證")](images/selectcert.png#lightbox)
 
-3.   根據您小組的權限會產生簽署識別 (如下所示)；您也可能需要等待小組代理人或管理員批准：[![](images/generated.png "將會產生的簽署識別及顯示的對話方塊")](images/generated.png#lightbox)
+3.   如下所示，將根據您小組的權限產生簽署識別；您也可能需要等待小組專員或管理員批准：[![](images/generated.png "將產生簽署識別和顯示對話方塊")](images/generated.png#lightbox)
 
 
 <a name="creatingprofile" />

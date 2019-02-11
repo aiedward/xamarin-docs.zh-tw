@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 5ce074e3659d4c380bd02537ef2cb8ac5734aede
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 67f43c0ac6cfac2a7b58afa7046875059529500b
+ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112022"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55668585"
 ---
 # <a name="xamarinios-installation"></a>Xamarin.iOS 安裝
 
@@ -26,7 +26,7 @@ ms.locfileid: "50112022"
 
 您可以從 [iOS Developer Center](https://developer.apple.com/devcenter/ios/index.action#downloads) \(iOS 開發人員中心\) (需要登入) 或透過 Mac App Store 下載最新版的 Xcode：
 
-![](images/xcode.png "Mac App Store 中的 Xcode")
+![Mac App Store 中的 Xcode 清單頁面螢幕擷取畫面](images/xcode.png "Mac App Store 中的 Xcode")
 
 ## <a name="mac-installation"></a>Mac 安裝
 

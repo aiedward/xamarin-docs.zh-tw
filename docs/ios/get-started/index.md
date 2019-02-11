@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: f1b28c000fbc77a524097ce5a9e7d85d32a40230
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c085b515bf6618d110d95dc5a6456df182fa803f
+ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109337"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55668572"
 ---
 # <a name="get-started-with-xamarinios"></a>Xamarin.iOS 使用者入門
 
@@ -28,6 +28,8 @@ ms.locfileid: "50109337"
 - macOS High Sierra (10.13) 和更新版本
 
 您可以從 [iOS Developer Center](https://developer.apple.com/devcenter/ios/index.action#downloads) \(iOS 開發人員中心\) (需要登入) 或透過 Mac App Store 下載最新版的 Xcode：
+
+![Mac App Store 中 Xcode 清單頁面螢幕擷取畫面](installation/images/xcode.png "Mac App Store 中的 Xcode")
 
 ## <a name="getting-started-series"></a>使用者入門系列
 

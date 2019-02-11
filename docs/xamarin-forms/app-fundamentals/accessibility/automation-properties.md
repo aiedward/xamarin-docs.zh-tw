@@ -6,13 +6,13 @@ ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/24/2017
-ms.openlocfilehash: f59a528916d2cc5efd19ba7c35a7b4f041ecbe09
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/18/2018
+ms.openlocfilehash: 284e10af41429d320ce08b8d45ccd5bbcec851d1
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056158"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831985"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>在 Xamarin.Forms 中的自動化屬性
 
@@ -138,6 +138,43 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 
 > [!NOTE]
 > 請注意，[`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) 方法也可用來設定 `AutomationProperties.IsInAccessibleTree` 附加屬性 – `entry.SetValue(AutomationProperties.LabeledByProperty, nameLabel);`
+
+## <a name="accessibility-intricacies"></a>協助工具的複雜性
+
+以下章節描述在特定控制項上，設定協助工具值的複雜性。
+
+### <a name="navigationpage"></a>NavigationPage
+
+若要在 Android 上，設定螢幕助讀程式為 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 中動作列 [上一步] 箭頭朗讀的文字，請在 [`Page`](xref:Xamarin.Forms.Page) 上設定 `AutomationProperties.Name` 及 `AutomationProperties.HelpText` 屬性。 但請注意，這對 OS [上一步] 按鈕沒有任何效果。
+
+### <a name="masterdetailpage"></a>MasterDetailPage
+
+若要在 iOS 和通用 Windows 平台上，設定螢幕助讀程式為 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 上 [切換] 按鈕朗讀的文字，請在 `MasterDetailPage` 或是 `Master` 頁面的 `Icon` 屬性上，設定 `AutomationProperties.Name` 或 `AutomationProperties.HelpText` 屬性。
+
+若要在 Android 上，設定螢幕助讀程式為 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 上 [切換] 按鈕朗讀的文字，請將字串資源新增至 Android 專案：
+
+```xml
+<resources>
+        <string name="app_name">Xamarin Forms Control Gallery</string>
+        <string name="btnMDPAutomationID_open">Open Side Menu message</string>
+        <string name="btnMDPAutomationID_close">Close Side Menu message</string>
+</resources>
+```
+
+然後將 `Master` 頁面 `Icon` 屬性的 `AutomationId` 屬性，設為適當的字串：
+
+```csharp
+var master = new ContentPage { ... };
+master.Icon.AutomationId = "btnMDPAutomationID";
+```
+
+### <a name="toolbaritem"></a>ToolbarItem
+
+假如未定義 `AutomationProperties.Name` 或 `AutomationProperties.HelpText` 的值，那麼在 iOS、Android 及 UWP 上，螢幕助讀程式就會朗讀 [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) 執行個體的 `Text` 屬性值。
+
+在 iOS 及 UWP 上，`AutomationProperties.Name` 屬性值會取代螢幕助讀程式所朗讀的 `Text` 屬性值。
+
+在 Android 上，`AutomationProperties.Name` 及 (或) `AutomationProperties.HelpText` 屬性值會完全取代螢幕助讀程式可同時看到及朗讀的 `Text` 屬性值。 請注意，此為小於 26 的 API 之限制。
 
 ## <a name="related-links"></a>相關連結
 
