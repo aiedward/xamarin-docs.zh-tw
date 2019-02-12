@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 95df735c07def5b3f7a0ad2e7e3eb1e114cc5e8f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 00d8e1459501b4643dea12b1d36939534a66833f
+ms.sourcegitcommit: 5405a376fe1b1e08c834eb565aaa5b1849a0fcdc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292242"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55986483"
 documentType: LandingData
 title: Xamarin.Forms
 metadata:
@@ -62,11 +62,11 @@ sections:
     style: cards
     className: cardsB
     items:
-    - href: ~/get-started/quickstarts/index.md
+    - href: ~/get-started/index.md
       html: 帶您動手操作 Xamarin.Forms 的教學課程。 請確定一切都已正確安裝，並建置您的第一個 Xamarin.Forms 應用程式。
       image:
         src: https://docs.microsoft.com/media/common/i_get-started.svg
-        href: ~/get-started/quickstarts/index.md
+        href: ~/get-started/index.md
       title: 快速入門
     - href: ~/xamarin-forms/xaml/
       html: 以宣告方式建置使用者介面，並在行動裝置和桌面平台之間共用。
