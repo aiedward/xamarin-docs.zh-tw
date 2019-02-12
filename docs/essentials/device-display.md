@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials：裝置顯示資訊
+title: Xamarin.Essentials:裝置顯示資訊
 description: 本文件描述 Xamarin.Essentials 中的 DeviceDisplay 類別，可提供執行應用程式之裝置的畫面計量。
 ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: d3102f0a4ed5f16c77c4a4768feb4a1565f2dd1a
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 61d0a77d7a6a862ec5e06c7b693f8e23e4cdb975
+ms.sourcegitcommit: 6d41b5d48fd626d3f649809ed5480e5356755f14
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898887"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55986233"
 ---
-# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials：裝置顯示資訊
+# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials:裝置顯示資訊
 
 **DeviceDisplay** 類別提供應用程式執行所在的裝置畫面計量資訊，並可要求防止畫面在應用程式正在執行時休眠。
 
@@ -63,7 +63,7 @@ public class DisplayInfoTest
         DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
     }
 
-    void OnMainDisplayInfoChanged(DisplayInfoChangedEventArgs  e)
+    void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs  e)
     {
         // Process changes
         var displayInfo = e.DisplayInfo;
