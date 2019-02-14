@@ -315,7 +315,7 @@ ms.locfileid: "55292807"
 
 15. 建置並執行專案，每個平台。 如需詳細資訊，請參閱 <<c0> [ 建置快速入門](single-page.md#building-the-quickstart)。
 
-    在上**NotesPage**按下**+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 儲存記事應用程式將會瀏覽回到之後**NotesPage**。
+    在上**NotesPage**按下 **+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 儲存記事應用程式將會瀏覽回到之後**NotesPage**。
 
     輸入資訊，以觀察應用程式行為的不同長度的數的字。
 
@@ -600,7 +600,7 @@ ms.locfileid: "55292807"
 
 15. 建置並執行專案，每個平台。 如需詳細資訊，請參閱 <<c0> [ 建置快速入門](single-page.md#building-the-quickstart)。
 
-    在上**NotesPage**按下**+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 儲存記事應用程式將會瀏覽回到之後**NotesPage**。
+    在上**NotesPage**按下 **+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 儲存記事應用程式將會瀏覽回到之後**NotesPage**。
 
     輸入資訊，以觀察應用程式行為的不同長度的數的字。
 

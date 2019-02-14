@@ -83,7 +83,7 @@ button.TouchUpInside += (sender, e) => {
 
 為適當的事件中，鍵入新的事件處理常式的名稱，或從清單中選取一個。 如此一來，將按鈕的檢視控制器的程式碼在建立事件處理常式。
 
-![事件] 索引標籤的 [Properties Pad](buttons-images/image1.png "事件 索引標籤的 [屬性] 面板")
+![事件 索引標籤的 Properties Pad](buttons-images/image1.png "事件 索引標籤的 屬性 面板")
 
 ## <a name="styling-a-button"></a>設定按鈕的樣式
 

@@ -171,7 +171,7 @@ ms.locfileid: "55292810"
 
 6. 建置並執行專案，每個平台。 如需詳細資訊，請參閱 <<c0> [ 建置快速入門](single-page.md#building-the-quickstart)。
 
-    在上**NotesPage**按下**+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 在每個頁面上，觀察如何樣式已從先前的快速入門。
+    在上**NotesPage**按下 **+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 在每個頁面上，觀察如何樣式已從先前的快速入門。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -312,7 +312,7 @@ ms.locfileid: "55292810"
 
 6. 建置並執行專案，每個平台。 如需詳細資訊，請參閱 <<c0> [ 建置快速入門](single-page.md#building-the-quickstart)。
 
-    在上**NotesPage**按下**+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 在每個頁面上，觀察如何樣式已從先前的快速入門。
+    在上**NotesPage**按下 **+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 在每個頁面上，觀察如何樣式已從先前的快速入門。
 
 ::: zone-end
 
