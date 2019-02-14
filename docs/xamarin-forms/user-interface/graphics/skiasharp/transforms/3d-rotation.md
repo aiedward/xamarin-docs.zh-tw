@@ -7,12 +7,12 @@ ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/14/2017
-ms.openlocfilehash: a4f69287a6f97f3181d88a2d93d308df2676476a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 7ac9ec458f16357ef50e23c459a9b0e1f79bdd97
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052685"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240366"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>SkiaSharp 中的 3D 旋轉
 
@@ -63,25 +63,25 @@ _您可以使用非仿射轉換，旋轉 3D 空間中的 2D 物件。_
 
 類似於 2D 轉換在三個維度中的所發生 3D 轉換會假設在四個維度。 第四個維度指 W、 和 3D 空間會假設為存在於其中 W 座標會等於 1 的 4 維空間內。 轉換公式如下所示：
 
-x' = M11·x + M21·y + M31·z + M41
+`x' = M11·x + M21·y + M31·z + M41`
 
-y' = M12·x + M22·y + M32·z + M42
+`y' = M12·x + M22·y + M32·z + M42`
 
-z' = M13·x + M23·y + M33·z + M43
+`z' = M13·x + M23·y + M33·z + M43`
 
-w' = M14·x + M24·y + M34·z + M44
+`w' = M14·x + M24·y + M34·z + M44`
 
 很明顯地，從轉換公式的儲存格`M11`， `M22`，`M33`縮放係數中的 X、 Y 和 Z 的指示，與`M41`， `M42`，和`M43`是 X、 Y 和 Z 轉譯因素指示進行。
 
 若要將這些座標轉換回其中 W 等於 1，x 的 3D 空間 '，y'，與 z '座標所有分為 「 w':
 
-x"= x' / w'
+`x" = x' / w'`
 
-y"= y' / w'
+`y" = y' / w'`
 
-z"= z' / w'
+`z" = z' / w'`
 
-w"= w' / w' = 1
+`w" = w' / w' = 1`
 
 該除數 w' 提供在 3D 空間中的檢視方塊。 如果 w' 等於 1，則沒有檢視方塊，就會發生。
 
@@ -140,7 +140,7 @@ perspectiveMatrix[3, 2] = -1 / depth;
 
 轉換公式會導致下列計算的 w':
 
-w' = – z / 深度 + 1
+`w' = –z / depth + 1`
 
 這可降低時的 Z 值會小於零 （在概念上 XY 平面） 後面的 X 和 Y 座標，以及增加的正值 Z 的 X 和 Y 座標。Z 座標等於時`depth`，然後 w' 是零，而且座標成為無限。 3d 圖形系統是以數位相機的比喻，和`depth`的值，表示相機的距離，座標系統的原點。 如果的圖形化的物件具有 Z，也就是協調`depth`單位從原點方法，它可以在概念上會觸碰觀景窗的情況下的，並變得可無限大。
 
@@ -173,9 +173,9 @@ w' = M14·x + M24·y + M44
 
 此外，z' 座標無關這裡也是。 2D 圖形系統中顯示為 3D 物件時，它會摺疊的二維物件來忽略 Z 座標值。 其實這兩個轉換公式︰
 
-x"= x' / w'
+`x" = x' / w'`
 
-y"= y' / w'
+`y" = y' / w'`
 
 這表示第三個資料列*和*可以忽略的 4 乘 4 矩陣的第三個資料行。
 
@@ -208,17 +208,17 @@ y"= y' / w'
 
 轉換公式如下：
 
-x' = cos(α)·x
+`x' = cos(α)·x`
 
-y' = y
+`y' = y`
 
-z' = (sin （α） / 深度) ·x + 1
+`z' = (sin(α)/depth)·x + 1`
 
 現在將所有項目除以 z':
 
-x"= cos （α） ·x / ((sin （α） / 深度) ·x + 1)
+`x" = cos(α)·x / ((sin(α)/depth)·x + 1)`
 
-y"= y / ((sin （α） / 深度) ·x + 1)
+`y" = y / ((sin(α)/depth)·x + 1)`
 
 以背景工作，而負數時 2D 物件會具有正數的角度繞著 Y 軸，則正旋轉 recede X 值的 X 值會造成前景。 X 值看起來可以更接近的 Y 軸 （受到所餘弦值） 為 furthest from Y 軸座標變得較小或較大，因為它們將檢視器更仔細的檢視器。
 

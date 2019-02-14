@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: c6328135e0310c7b10b89bf2e32ce62869b15cfb
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: e7327deead917f55d1e7ac8af5302b6dccf6fead
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059982"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240353"
 ---
 # <a name="polylines-and-parametric-equations"></a>聚合線條和參數化的方程式
 
@@ -26,21 +26,21 @@ _呈現任何列，您可以定義參數化的方程式中使用 SkiaSharp_
 
 通常最好是定義一組參數化的方程式方面的曲線。 這些是方程式的 X 和 Y 座標，取決於第三個變數，有時也稱為`t`時間。 比方說，下列參數化的方程式定義半徑為 1 的中心點 （0，0） 位於圓形*t*從 0 到 1:
 
-x = cos(2πt)
+`x = cos(2πt)`
 
-y = sin(2πt)
+`y = sin(2πt)`
 
  如果您想 radius 大於 1，可以只的正弦和餘弦函數值乘以該 radius，，和如果您需要將中央移到其他位置，將這些值加入：
 
-x = xCenter + radius·cos(2πt)
+`x = xCenter + radius·cos(2πt)`
 
-y = yCenter + radius·sin(2πt)
+`y = yCenter + radius·sin(2πt)`
 
 針對至水平及垂直軸平行橢圓形，牽涉到兩個的半徑：
 
-x = xCenter + xRadius·cos(2πt)
+`x = xCenter + xRadius·cos(2πt)`
 
-y = yCenter + yRadius·sin(2πt)
+`y = yCenter + yRadius·sin(2πt)`
 
 然後，您可以將對等的 SkiaSharp 程式碼放在迴圈中，會計算不同的點，以及將這些路徑。 下列 SkiaSharp 程式碼會建立`SKPath`橢圓形的填滿顯示介面的物件。 迴圈循環 360 度直接。 Center 是一半的寬度和高度顯示介面上，因此是兩個的半徑：
 

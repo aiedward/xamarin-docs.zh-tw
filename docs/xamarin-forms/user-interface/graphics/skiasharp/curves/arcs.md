@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: 020afef6b2eb3743fd17118b2922bac4d4c32239
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: cfa96273b6c23d755925b08c9daec22c94627be7
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233987"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240431"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>繪製弧形的三種方式
 
@@ -107,9 +107,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 這個方法，來產生弧線是以最簡單，就可以輕鬆地衍生參數化的方程式描述弧形。了解的大小和位置的橢圓形，] 和 [開始] 及 [掃掠角度，開始和結束點弧線的計算使用簡單的三角函數：
 
-x = 橢圓形。MidX + （橢圓形。寬度 / 2) * cos(angle)
+`x = oval.MidX + (oval.Width / 2) * cos(angle)`
 
-y = 橢圓形。MidY + （橢圓形。高度 / 2) * sin(angle)
+`y = oval.MidY + (oval.Height / 2) * sin(angle)`
 
 `angle`值是`startAngle`或`startAngle + sweepAngle`。
 
@@ -606,9 +606,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 正切函數點的座標則可以使用這項資訊來計算：
 
-x = 112·cos(41.8) = 83
+`x = 112·cos(41.8) = 83`
 
-y = 112·sin(41.8) = 75
+`y = 112·sin(41.8) = 75`
 
 四個的正切函數點都只需要點 （0，0） 上繪製置中對齊的無限大號，具有為 100 的圓形半徑：
 

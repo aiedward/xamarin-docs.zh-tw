@@ -1,18 +1,19 @@
 ---
-title: Xamarin.Essentials：Share
+title: Xamarin.Essentials:共用
 description: Xamarin.Essentials 中的 Share 類別能讓應用程式將資料 (例如文字和 Web 連結) 共用於裝置上的其他應用程式。
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 6fd3fd90d1e2ada225dafdd855f8903688677660
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 02/12/2019
+ms.custom: video
+ms.openlocfilehash: 7e61041fa33557c4e1db3613b75b575e9d456231
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899371"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240418"
 ---
-# <a name="xamarinessentials-share"></a>Xamarin.Essentials：Share
+# <a name="xamarinessentials-share"></a>Xamarin.Essentials:共用
 
 **Share** 類別能讓應用程式將資料 (例如文字和 Web 連結) 共用於裝置上的其他應用程式。
 
@@ -80,3 +81,9 @@ public class ShareTest
 
 - [Share 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Share)
 - [Share API 文件](xref:Xamarin.Essentials.Share)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Share-Essential-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

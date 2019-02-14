@@ -7,12 +7,12 @@ ms.assetid: 774E7B55-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/28/2018
-ms.openlocfilehash: 7edb504a228612d7f1f1fee10a50a467fbb5fc6c
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 71c0495520a5dd596be2e9cafec6b63e316fb627
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057096"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240314"
 ---
 # <a name="skiasharp-color-filters"></a>SkiaSharp 色彩篩選器
 
@@ -68,13 +68,13 @@ ms.locfileid: "53057096"
 
 以下是不同的公式，R 的 '，G'，B' 和 ':
 
-R' = M11·R + M12·G + M13·B + M14·A + M15 
+`R' = M11·R + M12·G + M13·B + M14·A + M15` 
 
-G' = M21·R + M22·G + M23·B + M24·A + M25 
+`G' = M21·R + M22·G + M23·B + M24·A + M25` 
 
-B' = M31·R + M32·G + M33·B + M34·A + M35 
+`B' = M31·R + M32·G + M33·B + M34·A + M35` 
 
-A' = M41·R + M42·G + M43·B + M44·A + M45 
+`A' = M41·R + M42·G + M43·B + M44·A + M45` 
 
 大部分的矩陣乘法類的因素，通常是在 0 到 2 的範圍所組成。 不過，最後一個資料行 (透過 M45 M15) 包含在公式中新增的值。 這些值通常範圍從 0 到 255 之間。 結果會限制的值為 0 與 255 之間。
 
@@ -89,13 +89,13 @@ A' = M41·R + M42·G + M43·B + M44·A + M45
 
 這並不會變更色彩。 轉換公式如下：
 
-R' = R 
+`R' = R` 
 
-G' = G
+`G' = G`
 
-B' = B
+`B' = B`
 
-A' = A
+`A' = A`
 
 M44 儲存格是非常重要，因為它會保留不透明度。 它通常是 M41、 M42 和 M43 是所有的零，則您可能不想讓紅色、 綠色和藍色值為基礎的不透明度。 但是，如果 M44 是零，則 A' 將會是零，並不會顯示。
 
@@ -232,13 +232,13 @@ public static SKColorFilter CreateTable (byte[] table);
 public static SKColorFilter CreateTable (byte[] tableA, byte[] tableR, byte[] tableG, byte[] tableB);
 ```
 
-陣列一律包含 256 個項目。 在 `CreateTable`方法有一個資料表中，同一個資料表用於紅色、 綠色和藍色元件。 它是一個簡單的查閱資料表： 如果來源色彩是 (R、 G、 B)，而目的色彩是 (R'，B'、 G')，然後透過編製索引所取得的目的地元件`table`來源元件：
+陣列一律包含 256 個項目。 在 `CreateTable`方法有一個資料表中，同一個資料表用於紅色、 綠色和藍色元件。 它是一個簡單的查閱資料表：如果來源色彩是 (R、 G、 B)，而目的色彩是 (R'，B'、 G')，然後透過編製索引所取得的目的地元件`table`來源元件：
 
-R' = 資料表 [R]
+`R' = table[R]`
 
-G' = 資料表 [G]
+`G' = table[G]`
 
-B' = 資料表 [B]
+`B' = table[B]`
 
 在第二個方法中，每四個色彩元件可以有不同的色彩表，或可能會在兩個或多個元件之間共用相同的色彩表。
 

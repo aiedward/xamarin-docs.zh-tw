@@ -7,12 +7,12 @@ ms.assetid: 66D1A537-A247-484E-B5B9-FBCB7838FBE9
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 594e98230d4f4bd8aca27f92f4544f8c59b5f0a2
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 8c86782d5b8b8250049d0ae060ca7bd548c5a4ef
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061451"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240405"
 ---
 # <a name="the-separable-blend-modes"></a>可加以分隔的混合模式
 
@@ -127,19 +127,21 @@ public partial class LightenAndDarkenPage : ContentPage
 
 [![淡化和暗化](separable-images/LightenAndDarken.png "淡化和暗化")](separable-images/LightenAndDarken-Large.png#lightbox)
 
-此程式示範一般方式使用分隔的混合模式： 目的地是某種形式，通常是點陣圖影像。 來源是使用顯示矩形`SKPaint`物件及其`BlendMode`屬性設定為可分隔的混合模式。 （如以下所示），矩形可以是單色或漸層。 透明_不_一般與分隔 blend 模式搭配使用。
+此程式示範一般的方式，可分隔的混合模式：目的地是某種形式，通常是點陣圖影像。 來源是使用顯示矩形`SKPaint`物件及其`BlendMode`屬性設定為可分隔的混合模式。 （如以下所示），矩形可以是單色或漸層。 透明_不_一般與分隔 blend 模式搭配使用。
 
 實驗與此程式時，您會發現，這兩個混合模式不要淡化和統一暗化影像。 相反地，`Slider`似乎設定某種形式的臨界值。 例如，當您增加`Slider`針對`Lighten`模式中，映像較暗區域光第一次時取得較淺的區域維持不變。
 
 針對`Lighten`模式中，如果目的像素的 RGB 色彩值 (Dr，通訊群組，Db)，且來源像素的色彩 (Sr，Sg，Sb)，則輸出為 （或 Og，Ob） 計算，如下所示：
 
- = 最大值 （Dr，Sr） 或 Og = max （通訊群組，Sg） Ob = max （Db、 Sb）
+ `Or = max(Dr, Sr)` `Og = max(Dg, Sg)`
+ `Ob = max(Db, Sb)`
 
 另外，紅色、 綠色和藍色較大的目的地和來源的結果。 這會產生第一次 lightening 目的地的深色區域的影響。
 
 `Darken`模式很相似，不同之處在於結果會是較小的目的地和來源：
 
- 或 = 最小值 （Dr，Sr） Og = 最小值 （通訊群組，Sg） Ob = 最小值 （Db，Sb）
+ `Or = min(Dr, Sr)` `Og = min(Dg, Sg)`
+ `Ob = min(Db, Sb)`
 
 紅色、 綠色和藍色元件是每個分開處理的這就是為什麼這些混合模式指_分隔_混合模式。 基於這個理由，縮寫**Dc**並**Sc**可用於目的地和來源色彩和理解，計算套用至每個紅色、 綠色和藍色元件分開。
 
@@ -147,9 +149,9 @@ public partial class LightenAndDarkenPage : ContentPage
 
 | 混合模式   | 沒有變更 | 運算 |
 | ------------ | --------- | --------- |
-| `Plus`       | 黑色     | 藉由新增色彩淡化： Sc + Dc |
-| `Modulate`   | 白皮書     | 乘以色彩會變暗： Sc·Dc | 
-| `Screen`     | 黑色     | 補充的補充項目乘積： Sc + Dc &ndash; Sc·Dc |
+| `Plus`       | 黑色     | 調淡加上色彩：Sc + Dc |
+| `Modulate`   | 白皮書     | 乘以色彩會變暗：Sc·Dc | 
+| `Screen`     | 黑色     | 補充產品的補充項目：Sc + Dc &ndash; Sc·Dc |
 | `Overlay`    | 灰色      | 相反值 `HardLight` |
 | `Darken`     | 白皮書     | 色彩的最小值： 最小值 （Sc，Dc） |
 | `Lighten`    | 黑色     | 色彩的最大值： 最大值 （Dc 中的 Sc） |
@@ -157,9 +159,9 @@ public partial class LightenAndDarkenPage : ContentPage
 | `ColorBurn`  | 白皮書     | 來源為基礎的目的地會變暗 | 
 | `HardLight`  | 灰色      | 類似於惡劣的焦點的效果 |
 | `SoftLight`  | 灰色      | 類似於虛焦點的效果 | 
-| `Difference` | 黑色     | 減去從較深： Abs (Dc &ndash; Sc) | 
+| `Difference` | 黑色     | 減去從較深：Abs(Dc &ndash; Sc) | 
 | `Exclusion`  | 黑色     | 類似於`Difference`但較低對比 |
-| `Multiply`   | 白皮書     | 乘以色彩會變暗： Sc·Dc |
+| `Multiply`   | 白皮書     | 乘以色彩會變暗：Sc·Dc |
 
 更詳細的演算法，請參閱 W3C [**複合 （compositing） 和混合層級 1** ](https://www.w3.org/TR/compositing-1/)規格和 Skia [ **SkBlendMode 參考**](https://skia.org/user/api/SkBlendMode_Reference)，不過這些兩個來源中的標記並不相同。 請記住`Plus`通常被視為 Porter Duff 混合模式中，和`Modulate`不是 W3C 規格的一部分。
 
