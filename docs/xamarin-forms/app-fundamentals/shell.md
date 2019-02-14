@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2018
-ms.openlocfilehash: 41530399bfc2210e7c3eda461688c12c6235ef79
-ms.sourcegitcommit: 56b2f5cda7c37874618736d6129f19a8976826f0
+ms.openlocfilehash: dec1bb2f3f2eead3a1d50f37a0f1281523548b66
+ms.sourcegitcommit: 6d41b5d48fd626d3f649809ed5480e5356755f14
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/21/2019
-ms.locfileid: "54418669"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55986272"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms Shell
 
@@ -417,7 +417,7 @@ public ICommand ProductTypeCommand { get; } = new Command<string>(NavigateToProd
 
 static void NavigateToProductType(string typeId)
 {
-  (App.Current.MainPage as Xamarin.Forms.Shell).GoToAsync($"app:///tailwindtraders/productcategory?id={typeId}", true);
+  (App.Current.MainPage as Xamarin.Forms.Shell).GoToAsync($"app://tailwindtraders/productcategory?id={typeId}", true);
 }
 ```
 
@@ -473,7 +473,7 @@ void OnShellNavigating(object sender, ShellNavigatingEventArgs e)
 
 `ShellNavigatingEventArgs` 類別提供下列屬性：
 
-| 屬性 | 類型 | 說明 |
+| 屬性 | 類型 | 描述 |
 |---|---|---|
 | 目前 | `ShellNavigationState` | 目前頁面的 URI。 |
 | 原始程式檔 | `ShellNavigationState` | 代表導覽起源的 URI。 |
@@ -485,7 +485,7 @@ void OnShellNavigating(object sender, ShellNavigatingEventArgs e)
 
 `ShellNavigatedEventArgs` 類別提供下列屬性：
 
-| 屬性 | 類型 | 說明 |
+| 屬性 | 類型 | 描述 |
 |---|---|---|
 | 目前 | `ShellNavigationState` | 目前頁面的 URI。 |
 | 上一步| `ShellNavigationState` | 上一頁的 URI。 |
