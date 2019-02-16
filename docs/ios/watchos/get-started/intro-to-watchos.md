@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: ba5e7a24524f9371cbd810e18c11acc9e2e2a4cb
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 0b320955cae23b18444732c826849002d6375fe4
+ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055617"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56321138"
 ---
 # <a name="introduction-to-watchos"></a>WatchOS 簡介
 
@@ -53,10 +53,10 @@ WatchOS 1 上，他們可以分享資料，透過共用的應用程式群組，�
 
 生命週期`WKInterfaceController`物件包含下列呼叫：
 
-- [醒著](https://developer.xamarin.com/api/member/WatchKit.WKInterfaceController.Awake/)： 您應該在此方法來執行大部分的您的初始化。
-- [WillActivate](https://developer.xamarin.com/api/member/WatchKit.WKInterfaceController.WillActivate/) ： 很快就在 Watch 應用程式對使用者顯示之前呼叫。 使用此方法來執行最後一個時間初始化、 啟動動畫，依此類推。
+- [醒著](xref:WatchKit.WKInterfaceController.Awake*):在此方法中，您應該執行大部分的程式初始化。
+- [WillActivate](xref:WatchKit.WKInterfaceController.WillActivate) :不久之前呼叫 Watch 應用程式會顯示給使用者。 使用此方法來執行最後一個時間初始化、 啟動動畫，依此類推。
 - 此時，監看式應用程式會出現，擴充功能可讓您開始回應使用者輸入，並更新每個應用程式邏輯的監看式應用程式的顯示。
-- [DidDeactivate](https://developer.xamarin.com/api/member/WatchKit.WKInterfaceController.DidDeactivate/)使用者已關閉之後 Watch 應用程式，會呼叫這個方法。 這個方法傳回之後，使用者介面控制項無法修改，直到下次`WillActivate`呼叫。 如果 iPhone 的連線已中斷，也會呼叫這個方法。
+- [DidDeactivate](xref:WatchKit.WKInterfaceController.DidDeactivate)使用者已關閉之後 Watch 應用程式，會呼叫這個方法。 這個方法傳回之後，使用者介面控制項無法修改，直到下次`WillActivate`呼叫。 如果 iPhone 的連線已中斷，也會呼叫這個方法。
 - 已停用擴充功能之後，就無法存取您的程式。 暫止的非同步函式**不會**呼叫。 監看式套件延伸模組不可以使用背景處理模式。 如果使用者的程式就會重新啟動，但未由作業系統終止應用程式，將會呼叫第一個方法`WillActivate`。
 
 ![](intro-to-watchos-images/wkinterfacecontrollerlifecycle.png "應用程式生命週期概觀")
@@ -90,10 +90,10 @@ WatchOS 1 上，他們可以分享資料，透過共用的應用程式群組，�
 
 ## <a name="screen-sizes"></a>螢幕大小
 
-Apple Watch 有兩個臉部大小： 38 公釐，42 公釐，是以 5:4 顯示比例，Retina 顯示器。 其容易使用的大小如下：
+Apple Watch 有兩個臉部大小：38 公釐，42 公釐，是以 5:4 顯示比例，Retina 顯示器。 其容易使用的大小如下：
 
-- 38 公釐： 第 136 x 170 邏輯像素 （272 x 340 實體像素為單位）
-- 42 mm: 156 x 195 邏輯像素 （312 x 390 實體像素）。
+- 38 公釐：第 136 x 170 邏輯像素 （272 x 340 實體像素為單位）
+- 42 mm:156 x 195 邏輯像素 （312 x 390 實體像素）。
 
 使用`WKInterfaceDevice.ScreenBounds`來判斷哪個顯示器上執行您的監看式應用程式。
 

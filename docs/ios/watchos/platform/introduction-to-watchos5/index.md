@@ -1,27 +1,24 @@
 ---
 title: WatchOS 5 簡介
-description: 本文件提供的 Xamarin 預覽版本提供 C# 繫結某些 watchOS 5 Api 的高層級描述。
+description: 本文件提供一些 watchOS 5 的高層級描述適用於 Xamarin 的 Api。
 ms.prod: xamarin
 ms.assetid: 775BE4E4-F408-4620-AED9-2B48C7B27F38
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 6fbbd75c0daf960fd9fd01670bdea35126abfabe
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 5df751f683c530ee9f7ec58d9d6393d9f089314d
+ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39615505"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56321112"
 ---
 # <a name="introduction-to-watchos-5"></a>WatchOS 5 簡介
 
 本文件提供一些 watchOS 5 的高層級描述 Api。
 
-若要開始建置使用 Xamarin 的 watchOS 5 應用程式，看看：
-
-- [入門指南](~/ios/platform/introduction-to-ios12/get-started.md)
-- Xamarin 預覽[版本部落格文章](https://releases.xamarin.com/preview-release-xcode-10-beta-6/)
+若要開始建置使用 Xamarin 的 watchOS 5 應用程式，請參閱[入門指南](~/ios/platform/introduction-to-ios12/get-started.md)
 
 ## <a name="workout-improvements"></a>健身增強功能
 

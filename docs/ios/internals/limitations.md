@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: 1ccbea1921b4e0c4189182696c8679d041eea60b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bb8aec5a5054c28cf7862d14148e7f2000fa3a35
+ms.sourcegitcommit: c77f84a0686d16de6ac630271fccac719fd9eec4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113023"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56307914"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin.iOS 的限制
 
-使用 Xamarin.iOS iPhone 上的應用程式會編譯成靜態程式碼，因為它不使用任何需要在執行階段產生的程式碼的功能。
+使用 Xamarin.iOS 應用程式會編譯成靜態程式碼，因為它不使用任何需要在執行階段產生的程式碼的功能。
 
 相較於 Mono 桌面的 Xamarin.iOS 限制如下：
 
@@ -48,43 +48,12 @@ class Foo<T> : UIView {
 > 雖然可能會有 NSObjects 的泛型子類別，有一些限制。 讀取[NSObject 的泛型子](~/ios/internals/api-design/nsobject-generics.md)文件的詳細資訊
 
 
-
-### <a name="pinvokes-in-generic-types"></a>P/叫用泛型型別中
-
-泛型類別中的 P/Invokes 不支援：
-
-```csharp
-class GenericType<T> {
-    [DllImport ("System")]
-    public static extern int getpid ();
-}
-```
-
- <a name="Property.SetInfo_on_a_Nullable_Type_is_not_supported" />
-
-
-### <a name="propertysetinfo-on-a-nullable-type-is-not-supported"></a>不支援可為 Null 的型別上 Property.SetInfo
-
-若要設定可為 Null 的值使用反映的 Property.SetInfo&lt;T&gt;目前不支援。
-
- <a name="Value_types_as_Dictionary_Keys" />
-
-
-### <a name="value-types-as-dictionary-keys"></a>實值型別，做為字典索引鍵
-
-使用實值型別做為字典&lt;TKey，TValue&gt;機碼是有問題，做為預設字典建構函式會嘗試使用 EqualityComparer&lt;TKey&gt;。預設值。 EqualityComparer&lt;TKey&gt;。預設值，接著會嘗試使用反映來具現化新的型別會實作 IEqualityComparer&lt;TKey&gt;介面。
-
-這適用於參考型別 (反映 + 建立新類型的步驟會略過)，但值類型它當機，並快燒壞，一旦您嘗試在裝置上使用它。
-
- **因應措施**： 以手動方式實作[IEqualityComparer&lt;TKey&gt; ](xref:System.Collections.Generic.IEqualityComparer`1)介面中的新類型，並提供該類型的執行個體[字典&lt;TKey，TValue&gt; ](xref:System.Collections.Generic.Dictionary`2) [(IEqualityComparer&lt;TKey&gt;)](xref:System.Collections.Generic.IEqualityComparer`1)建構函式。
-
-
  <a name="No_Dynamic_Code_Generation" />
 
 
 ## <a name="no-dynamic-code-generation"></a>不產生動態程式碼
 
-IPhone 的核心會防止應用程式，以動態方式產生程式碼，因為在 iPhone 上的 Mono 不支援任何形式的動態程式碼產生。 它們包括：
+因為 iOS 核心會防止應用程式，以動態方式產生程式碼，Xamarin.iOS 不支援任何形式的動態程式碼產生。 它們包括：
 
 -  無法使用 System.Reflection.Emit。
 -  System.Runtime.Remoting 不支援。
@@ -105,7 +74,7 @@ System.Reflection 缺乏。 **發出**取決於執行階段程式碼產生任何
 -  遠端處理之 TransparentProxy 或任何其他項目，會導致執行階段動態產生程式碼。 
 
 
- **重要事項︰** 請勿混淆**Reflection.Emit**具有**反映**。 Reflection.Emit 即將以動態方式產生程式碼，並具有該程式碼加以 Jit 和編譯為原生程式碼。 在 iphone （沒有 JIT 編譯） 的限制不是支援此。
+ **重要：** 請勿混淆**Reflection.Emit**具有**反映**。 Reflection.Emit 即將以動態方式產生程式碼，並具有該程式碼加以 Jit 和編譯為原生程式碼。 在 iOS （沒有 JIT 編譯） 上的限制不是支援此。
 
 但是，整個的反映 API，包括 Type.GetType (「 someClass") 方法，列出屬性，擷取屬性和值可正常運作。
 
@@ -149,7 +118,7 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 在 iOS 中 Mono 執行階段已停用下列功能：
 
 -  程式碼剖析工具
--  這些事件處理常式
+-  Reflection.Emit
 -  Reflection.Emit.Save 功能
 -  COM 繫結
 -  JIT 引擎

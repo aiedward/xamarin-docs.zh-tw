@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: a9e23f1bfa6099c64a0a60d78ecc3c6283a86a96
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6a2b8c99156963ae167aecd29a618d0feeffbdc7
+ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108082"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56321125"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>watchOS 在 Xamarin 中的影像控制項
 
-提供 watchOS [ `WKInterfaceImage` ](https://developer.xamarin.com/api/type/WatchKit.WKInterfaceImage/)控制項來顯示影像和簡單的動畫。 有些控制項也可以有背景影像 （例如按鈕、 群組和介面控制器）。
+提供 watchOS [ `WKInterfaceImage` ](xref:WatchKit.WKInterfaceImage)控制項來顯示影像和簡單的動畫。 有些控制項也可以有背景影像 （例如按鈕、 群組和介面控制器）。
 
 ![](image-images/image-walkway.png "Apple Watch 顯示圖片") ![ ] (image-images/image-animation.png "Apple Watch 使用簡單的動畫")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
@@ -99,7 +99,7 @@ animatedImage.StopAnimating ();
 
 <a name="cache" />
 
-## <a name="appendix-caching-images-watchos-1"></a>附錄： 快取映像 (watchOS 1)
+## <a name="appendix-caching-images-watchos-1"></a>附錄：快取映像 (watchOS 1)
 
 > [!IMPORTANT]
 > watchOS 3 應用程式上執行整個裝置。 下列資訊是僅限 watchOS 1 應用程式。

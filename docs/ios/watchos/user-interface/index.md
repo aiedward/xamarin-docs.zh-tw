@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2016
-ms.openlocfilehash: a7be193cee60b40f70b3dd4a840e0a26ccb8c3b2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c8ef76f24b017f5e3e6bec9d39534f3626e79147
+ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108999"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56321099"
 ---
 # <a name="watchos-user-interface-controls-in-xamarin"></a>watchOS 在 Xamarin 中的使用者介面控制項
 
@@ -31,17 +31,17 @@ ms.locfileid: "50108999"
 |Image|使用`myImage.SetImage("MyWatchImage")`載入監看式 上的映像或`WKInterfaceDevice.CurrentDevice.AddCachedImage`進行快取上監看式重複使用。<br />[影像控制文件](~/ios/watchos/user-interface/image.md)<br />[類別目錄的程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/ImageDetailController.cs)|![](Images/image.png)|
 |Separator|您可以使用分隔符號來幫助您建立具吸引力的監看式 Ui。<br />[類別目錄的程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/SeparatorDetailController.cs)|![](Images/separator.png)| 
 |地圖|地圖影像會以靜態方式顯示在 監看式，但您可以控制它的外觀，包括新增圖釘的許多層面。<br />[類別目錄的程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/MapDetailController.cs)|![](Images/map.png)|
-|影片 & InlineMove|影片可以開啟其本身或內嵌<br />[類別目錄的程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/MovieDetailController.cs)|![](Images/movie.png)|
+|Movie & InlineMove|影片可以開啟其本身或內嵌<br />[類別目錄的程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/MovieDetailController.cs)|![](Images/movie.png)|
 |群組|使用群組來協助建立吸引人的監看式 Ui。<br />[類別目錄的程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/GroupDetailController.cs)|![](Images/group.png)|
 |資料表|在 iOS 上的資料表的簡化的版本。 實作`DidSelectRow`回應使用者選取 （或使用 segue）。<br />[資料表控制項文件](~/ios/watchos/user-interface/table.md)<br />[類別目錄的程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/Table%20Detail%20Controller/TableDetailController.cs)|![](Images/table.png)|
 |裝置|`WKInterfaceDevice.CurrentDevice` 包含屬性，例如`ScreenBounds`， `ScreenScale`，和`PreferredContentSizeCategory`。<br />[類別目錄的程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/DeviceDetailController.cs)|![](Images/device.png)|
 |[Menu](~/ios/watchos/user-interface/menu.md)|定義強制按下功能表中的分鏡腳本和實作程式碼中的每個按鈕的動作。<br />[功能表控制項 （強制碰觸） 文件](~/ios/watchos/user-interface/menu.md)<br />[類別目錄的程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/ControllerDetailController.cs)|![](Images/controller.png)|
 |文字輸入|使用`PresentTextInputController`而`WKTextInputMode`列舉型別。<br />[文字輸入文件](~/ios/watchos/user-interface/text-input.md)<br />[類別目錄的程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/TextInputController.cs)|![](Images/textinput.png)|
 |數位皇冠|數位皇冠可以用來驅動選擇器中，或在程式碼中可追蹤它的旋轉。<br />[類別目錄的程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/CrownDetailController.cs)|![](Images/digital-crown.png)|
-|軌跡|有四種可加入至場景的筆勢辨識： 點兩下、 撥動、 取景位置調整及 LongPress。<br />[類別目錄的程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/GestureDetailController.cs)|![](Images/gestures.png)|
+|軌跡|有四種類型的筆勢辨識可加入至場景：點兩下、 撥動、 取景位置調整及 LongPress。<br />[類別目錄的程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/GestureDetailController.cs)|![](Images/gestures.png)|
 
 
 ## <a name="related-links"></a>相關連結
 
 - [WatchKitCatalog （範例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
-- [監看式套件 API 參考](https://developer.xamarin.com/api/namespace/WatchKit/)
+- [監看式套件 API 參考](xref:WatchKit)
