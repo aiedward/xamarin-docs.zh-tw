@@ -54,7 +54,7 @@ Visual Studio 2017 的 [與 Mac 配對] 功能會探索、連線至、驗證並�
 
 若要設定 Mac 組建主機，請先啟用遠端登入：
 
-1. 在 Mac 上，開啟 [系統偏好設定]，並移至 [共用] 窗格。
+1. 在 Mac 上，開啟 [系統偏好設定]，並移至 [共享] 窗格。
 
 2. 核取 [服務] 清單中的 [遠端登入]。
 
@@ -128,9 +128,9 @@ Visual Studio 2017 的 [與 Mac 配對] 功能會探索、連線至、驗證並�
 
 1. 找到 Mac 的 IP 位址。 
 
-    - 在 Mac 上，開啟 [系統偏好設定] > [共用] > [遠端登入]：
+    - 在 Mac 上，開啟 [系統偏好設定] > [共享] > [遠端登入]：
 
-        [![[系統偏好設定] > [共用] 中 Mac 的 IP 位址](images/sharing-ipaddress.png "[系統偏好設定] > [共用] 中 Mac 的 IP 位址")](images/sharing.png#lightbox)
+        [![[系統偏好設定] > [共享] 中 Mac 的 IP 位址](images/sharing-ipaddress.png "[系統偏好設定] > [共享] 中 Mac 的 IP 位址")](images/sharing.png#lightbox)
 
     - 或者，使用命令列。 在 [終端機] 中，發出此命令： 
 
