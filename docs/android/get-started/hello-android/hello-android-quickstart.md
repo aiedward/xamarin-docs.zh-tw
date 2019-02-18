@@ -9,16 +9,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: e359defee98ada74a76726673f6d3db21c0f4db3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 378861dfecb2109269677fe13ed4df629a09da67
+ms.sourcegitcommit: 6d41b5d48fd626d3f649809ed5480e5356755f14
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121577"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55986259"
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android：快速入門
 
 在這份含有兩部分的指南中，您將會使用 Visual Studio 來建置您的第一個 Xamarin.Android 應用程式，並了解使用 Xamarin 進行 Android 應用程式開發的基本知識。
+
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/monodroid/Phoneword/)
 
 您會建立一個應用程式，將使用者輸入的英數字元電話號碼轉譯成數字電話號碼，然後將該數字電話號碼顯示給使用者。 最終的應用程式看起來如下：
 
@@ -74,6 +76,12 @@ ms.locfileid: "50121577"
 按兩下 [activity_main.axml] 以在 Android Designer 中開啟它。 這是應用程式螢幕的配置檔案：
 
 [![開啟 activity axml 檔案](hello-android-quickstart-images/vs/03-open-layout-w158-sml.png)](hello-android-quickstart-images/vs/03-open-layout-w158.png#lightbox)
+
+> [!TIP]
+> 較新版的 Visual Studio 包含稍微不同的應用程式範本。
+>
+> 1. 版面配置位於 **content_main.axml**，而非 **activity_main.axml** 中。
+> 2. 預設版面配置會是 `RelativeLayout`。 對於此頁面上要進行的其餘步驟，您應將 `<RelativeLayout>` 標籤變更為 `<LinearLayout>`，然後將另一個屬性 `android:orientation="vertical"` 新增至 `LinearLayout` 起始標籤。
 
 從 [工具箱] (左側區域)，在搜尋欄位中輸入 `text`，然後將 [Text (Large)] (文字 (大型)) 小工具拖曳至設計介面 (中央區域)：
 

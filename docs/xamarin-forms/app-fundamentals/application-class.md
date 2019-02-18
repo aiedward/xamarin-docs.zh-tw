@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 9acd1b8f25696267578f5cc269eb1b0c738be571
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: dbee8d3f55edee9c862b4c883b63b55f98972b48
+ms.sourcegitcommit: 0c2745c1593eee3ecb40ab882e854a13ca72bc86
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675090"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56078416"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms App 類別
 
@@ -149,7 +149,6 @@ public class App : Xamarin.Forms.Application
 這個類別接著便會在每個平台特定專案中具現化，並傳遞至 `LoadApplication` 方法，在這裡會載入 `MainPage` 並顯示給使用者。
 每個平台的程式碼顯示在下列各節。 最新的 Xamarin.Forms 解決方案範本已經包含此全部程式碼，並針對您的應用程式預先設定。
 
-
 ### <a name="ios-project"></a>iOS 專案
 
 iOS `AppDelegate` 類別繼承自 `FormsApplicationDelegate`。 它應該：
@@ -196,8 +195,6 @@ public class MainActivity : FormsAppCompatActivity
 
 ### <a name="universal-windows-project-uwp-for-windows-10"></a>適用於 Windows 10 的通用 Windows 平台 (UWP)
 
-如需 Xamarin.Forms 中的 UWP 支援相關資訊，請參閱[設定 Windows 專案](~/xamarin-forms/platform/windows/installation/index.md)。
-
 在 UWP 專案中的主頁面應該繼承自 `WindowsPage`：
 
 ```xaml
@@ -222,4 +219,6 @@ public sealed partial class MainPage
  }
 ```
 
-請注意，`Forms.Init()` 必須在 **App.XAML.cs** 中的第 63 行左右呼叫。
+請注意，必須從 UWP 專案中的 **App.xaml.cs** 呼叫 `Forms.Init()`。
+
+如需詳細資訊，請參閱[設定 Windows 專案](~/xamarin-forms/platform/windows/installation/index.md)，其中包含將 UWP 專案新增至現有 Xamarin.Forms 解決方案 (不以 UWP 為目標) 的步驟。
