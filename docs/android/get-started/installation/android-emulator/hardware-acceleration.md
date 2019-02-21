@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 5c79ffd824033f528eb65d07581efefcf3895a9b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6f5a5512cef6ad870f60bca397404df450775de3
+ms.sourcegitcommit: ec99e64ee346adc3c338db13e93100bafee75460
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113218"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56331879"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>硬體加速以提升模擬器效能 (Hyper-V 與 HAXM)
 
@@ -31,8 +31,8 @@ Visual Studio 讓開發人員使用 Android Emulator，在 Android 裝置無法�
 1. **Microsoft 的 Hyper-V 和 Hypervisor 平台**.
    [Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/) 是 Windows 的虛擬化功能，可讓您在實體主機電腦上執行虛擬化的電腦系統。
 
-2. **Intel Hardware Accelerated Execution Manager (HAXM)**. 
-   [HAXM](https://software.intel.com/articles/intel-hardware-accelerated-execution-manager-intel-haxm) 是執行 Intel CPU 所在電腦的虛擬化引擎。
+2. **Intel Hardware Accelerated Execution Manager (HAXM)**.
+   HAXM 是執行 Intel Cpu 之電腦的虛擬化引擎。
 
 為了取得最佳效能，建議您使用 Hyper-V 來加速 Android Emulator。 如果您的電腦上沒有 Hyper-V，則可以使用 HAXM。 如果符合下列準則，Android Emulator 會自動使用硬體加速：
 
@@ -82,7 +82,7 @@ Hyper-V 是在 Windows Hypervisor 平台上執行。 若 Hyper-V 要與 Android 
 systeminfo
 ```
 
-如果所有列出的 Hyper-V 需求值皆為 **Yes**，則表示您的電腦可支援 Hyper-V。 例如: 
+如果所有列出的 Hyper-V 需求值皆為 **Yes**，則表示您的電腦可支援 Hyper-V。 例如：
 
 [![systeminfo 輸出範例](hardware-acceleration-images/win/02-systeminfo-w158-sml.png)](hardware-acceleration-images/win/02-systeminfo-w158.png#lightbox)
 
@@ -122,7 +122,7 @@ systeminfo
     sc query intelhaxm
     ```
 
-2. 檢查輸出，查看 HAXM 處理序是否正在執行中。 如果是，您應該會看到將 `intelhaxm` 狀態列為 `RUNNING` 的輸出。 例如: 
+2. 檢查輸出，查看 HAXM 處理序是否正在執行中。 如果是，您應該會看到將 `intelhaxm` 狀態列為 `RUNNING` 的輸出。 例如：
 
     ![HAXM 可用時的 sc 查詢命令輸出](hardware-acceleration-images/win/05-sc_query-w158.png)
 
