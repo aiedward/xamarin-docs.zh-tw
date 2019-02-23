@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: fa0ad282fedecec8f5ca4e94e7119c36ef182261
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 846a8fd45b8e39fb11270374af47a5b6cb83fa01
+ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116013"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56666931"
 ---
 # <a name="external-storage"></a>外部儲存體
 
@@ -53,14 +53,14 @@ ms.locfileid: "50116013"
 
 | `Android.OS.Environment` | Directory |
 |-|-|
-| DirectoryAlarms | **_私用\_外部\_儲存體_  /警示** |
-| DirectoryDcim | **_私用\_外部\_儲存體_/DCIM** |
+| DirectoryAlarms | **_PRIVATE\_EXTERNAL\_STORAGE_/Alarms** |
+| DirectoryDcim | **_PRIVATE\_EXTERNAL\_STORAGE_/DCIM** |
 | DirectoryDownloads | **_私用\_外部\_儲存體_  /下載** |
-| DirectoryDocuments | **_私用\_外部\_儲存體_  /文件** |
-| DirectoryMovies | **_私用\_外部\_儲存體_/Movies** |
-| DirectoryMusic | **_私用\_外部\_儲存體_/Music** |
+| DirectoryDocuments | **_PRIVATE\_EXTERNAL\_STORAGE_/Documents** |
+| DirectoryMovies | **_PRIVATE\_EXTERNAL\_STORAGE_/Movies** |
+| DirectoryMusic | **_PRIVATE\_EXTERNAL\_STORAGE_/Music** |
 | DirectoryNotifications | **_私用\_外部\_儲存體_/Notifications** |
-| DirectoryPodcasts | **_私用\_外部\_儲存體_/Podcasts** |
+| DirectoryPodcasts | **_PRIVATE\_EXTERNAL\_STORAGE_/Podcasts** |
 | DirectoryRingtones | **_私用\_外部\_儲存體_/Ringtones** |
 | DirectoryPictures | **_私用\_外部\_儲存體_  /圖片** |
 
@@ -80,7 +80,7 @@ ms.locfileid: "50116013"
 這份文件會參考做為外部儲存體上的公用檔案的儲存體目錄_公開金鑰\_外部\_儲存體_。
 
 
-Android 上也支援之應用程式目錄的概念_公開金鑰\_外部\_儲存體_。 這些目錄並完全相同的應用程式 diretories`_PRIVATE\_EXTERNAL\_STORAGE_`和上一節中的表格所述。 此方法`Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)`會傳回`Java.IO.File`對應至公用應用程式目錄的物件。 `directoryType`參數是必要參數，而且不能是`null`。
+Android 上也支援之應用程式目錄的概念_公開金鑰\_外部\_儲存體_。 這些目錄並完全相同的應用程式目錄`_PRIVATE\_EXTERNAL\_STORAGE_`和上一節中的表格所述。 此方法`Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)`會傳回`Java.IO.File`對應至公用應用程式目錄的物件。 `directoryType`參數是必要參數，而且不能是`null`。
 
 例如，呼叫`Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDocuments).AbsolutePath`會傳回字串，其中會類似這樣：
 
