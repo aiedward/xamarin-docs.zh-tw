@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 3bfb8a10eab1a8a75a3f2048de1ce219df9bde66
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 854b3fdbd34444cfb052d36287cf5cd47a36a2e0
+ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057661"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56666905"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms Master-Detail Page
 
@@ -48,7 +48,7 @@ _Xamarin.Forms MasterDetailPage 是管理兩個相關資訊頁面的頁面 – �
 
 - 在 iOS 上，當主版頁面從左邊滑動時，詳細資料頁面會「滑」向右邊，詳細資料頁面的左邊部分仍然可見。
 - 在 Android 上，詳細資料頁面和主版頁面會彼此「重疊」。
-- 在 UWP 上，詳細資料頁面和主版頁面會「交換」。
+- 在 UWP 上，主版頁面投影片會從詳細資料頁面左上方華過，惟 [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) 屬性必須設定為 `Popover`。 如需詳細資訊，請參閱[控制詳細資料頁面顯示行為](#Controlling_the_Detail_Page_Display_Behavior)。
 
 在橫向模式中會觀察到類似的行為，只除了 iOS 和 Android 上的主版頁面，會具有與直向模式主版頁面類似的寬度，因此會顯示更多詳細資料頁面。
 
@@ -291,7 +291,6 @@ public class MainPageCS : MasterDetailPage
 ## <a name="summary"></a>總結
 
 本文示範如何使用 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 及在其資訊頁面之間巡覽。 Xamarin.Forms `MasterDetailPage` 是管理兩個相關資訊頁面的頁面 – 顯示項目的主版頁面，和顯示主版頁面上項目相關詳細資料的詳細資料頁面。
-
 
 ## <a name="related-links"></a>相關連結
 
