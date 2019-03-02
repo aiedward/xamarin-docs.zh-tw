@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 7696ece64da28f05bb15866214de4a7f1103d06f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: dddd41f064be5e7840b6b86d86faec8045b476bf
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292795"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197221"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>建立單一頁面 Xamarin.Forms 應用程式
 
@@ -38,7 +38,7 @@ ms.locfileid: "55292795"
 - 知識庫的C#。
 - （選擇性）配對的 Mac 建置 ios 應用程式。
 
-如需有關這些必要條件的詳細資訊，請參閱 <<c0> [ 安裝 Xamarin](~/cross-platform/get-started/installation/index.md)。 如需 Visual Studio 2017 連線至 Mac 組建主機的資訊，請參閱[進行 Xamarin.iOS 開發的 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+如需有關這些必要條件的詳細資訊，請參閱 <<c0> [ 安裝 Xamarin](~/get-started/installation/index.md)。 如需 Visual Studio 2017 連線至 Mac 組建主機的資訊，請參閱[進行 Xamarin.iOS 開發的 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 
 ## <a name="get-started-with-visual-studio"></a>Visual Studio 使用者入門
 
@@ -92,7 +92,7 @@ ms.locfileid: "55292795"
     </ContentPage>
     ```
 
-    此程式碼以宣告方式定義頁面的使用者介面，其中包含用來顯示文字的 [`Label`](xref:Xamarin.Forms.Label)、用於文字輸入的 [`Editor`](xref:Xamarin.Forms.Editor)，以及兩個指示應用程式儲存或刪除檔案的 [`Button`](xref:Xamarin.Forms.Button) 執行個體。 兩個 `Button` 執行個體以水平方式配置在 [`Grid`](xref:Xamarin.Forms.Grid) 中，而 `Label`、`Editor` 和 `Grid` 以垂直方式配置在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中。 如需建立使用者介面的詳細資訊，請參閱[使用者介面](deepdive.md#user-interface)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    此程式碼以宣告方式定義頁面上，其中包含的使用者介面[ `Label` ](xref:Xamarin.Forms.Label)來顯示文字、 [ `Editor` ](xref:Xamarin.Forms.Editor)文字輸入和兩個[ `Button`](xref:Xamarin.Forms.Button)儲存或刪除的檔案將應用程式導向的執行個體。 兩個 `Button` 執行個體以水平方式配置在 [`Grid`](xref:Xamarin.Forms.Grid) 中，而 `Label`、`Editor` 和 `Grid` 以垂直方式配置在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中。 如需建立使用者介面的詳細資訊，請參閱[使用者介面](deepdive.md#user-interface)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
 
     按下 **CTRL+S** 以將變更儲存到 **MainPage.xaml**，然後關閉檔案。
 
@@ -188,7 +188,7 @@ ms.locfileid: "55292795"
 - Xcode （最新版本）。
 - 知識庫的C#。
 
-如需有關這些必要條件的詳細資訊，請參閱 <<c0> [ 安裝 Xamarin](~/cross-platform/get-started/installation/index.md)。
+如需有關這些必要條件的詳細資訊，請參閱 <<c0> [ 安裝 Xamarin](~/get-started/installation/index.md)。
 
 ## <a name="get-started-with-visual-studio-for-mac"></a>Visual Studio for Mac 使用者入門
 
@@ -246,7 +246,7 @@ ms.locfileid: "55292795"
     </ContentPage>
     ```
 
-    此程式碼以宣告方式定義頁面的使用者介面，其中包含用來顯示文字的 [`Label`](xref:Xamarin.Forms.Label)、用於文字輸入的 [`Editor`](xref:Xamarin.Forms.Editor)，以及兩個指示應用程式儲存或刪除檔案的 [`Button`](xref:Xamarin.Forms.Button) 執行個體。 兩個 `Button` 執行個體以水平方式配置在 [`Grid`](xref:Xamarin.Forms.Grid) 中，而 `Label`、`Editor` 和 `Grid` 以垂直方式配置在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中。 如需建立使用者介面的詳細資訊，請參閱[使用者介面](deepdive.md#user-interface)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    此程式碼以宣告方式定義頁面上，其中包含的使用者介面[ `Label` ](xref:Xamarin.Forms.Label)來顯示文字、 [ `Editor` ](xref:Xamarin.Forms.Editor)文字輸入和兩個[ `Button`](xref:Xamarin.Forms.Button)儲存或刪除的檔案將應用程式導向的執行個體。 兩個 `Button` 執行個體以水平方式配置在 [`Grid`](xref:Xamarin.Forms.Grid) 中，而 `Label`、`Editor` 和 `Grid` 以垂直方式配置在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中。 如需建立使用者介面的詳細資訊，請參閱[使用者介面](deepdive.md#user-interface)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
 
     選擇 [檔案] > [儲存] (或按下 **&#8984; + S**) 以將變更儲存到 **MainPage.xaml**，然後關閉檔案。
 

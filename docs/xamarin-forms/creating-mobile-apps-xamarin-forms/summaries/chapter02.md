@@ -7,12 +7,12 @@ ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 2236faa67367fa2104280f42ee28056613d1901b
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 95defd11a9e568d1089cb2f262cb323045b6c247
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292255"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197260"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第 2 章的摘要。 應用程式剖析
 
@@ -206,4 +206,4 @@ Xamarin.Forms 用於活頁簿，新版`Padding`可以選取 iOS 的 PCL 」 或 
 - [第 2 章全文檢索 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf)
 - [第 2 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
 - [第 2 章F#範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
-- [開始使用 Xamarin.Forms](~/get-started/index.md)
+- [開始使用 Xamarin.Forms](~/get-started/index.yml)

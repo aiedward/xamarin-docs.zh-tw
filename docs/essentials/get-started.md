@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 11/04/2018
-ms.openlocfilehash: d359ea6e56234f14f185ea578fca3a0346e0df50
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 7152e37c4035ac5f9a259fa48b91d5f29752d1f7
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233714"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197130"
 ---
 # <a name="get-started-with-xamarinessentials"></a>開始使用 Xamarin.Essentials
 
@@ -31,7 +31,7 @@ Xamarin.Essentials 支援下列平台與作業系統：
 
 Xamarin.Essentials 是以 NuGet 套件形式提供，可讓您使用 Visual Studio 新增到任何現有或新的專案。
 
-1. 下載並安裝具有[適用於 Xamarin 的 Visual Studio 工具](~/cross-platform/get-started/installation/index.md)的 [Visual Studio](http://visualstudio.com)。
+1. 下載並安裝具有[適用於 Xamarin 的 Visual Studio 工具](~/get-started/installation/index.md)的 [Visual Studio](http://visualstudio.com)。
 
 2. 開啟現有專案，或建立使用 [Visual Studio C#] (Android、iPhone 與 iPad 或跨平台) 下的空白應用程式範本建立新專案。 **重要**：若新增到 UWP 專案，請確保在專案屬性中設定組建 16299 或更高版本。
 

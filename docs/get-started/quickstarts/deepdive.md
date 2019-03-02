@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: aacc63af53d7408b61f01054d49fa2b436588fc7
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 8e466c80468551f8262cfe49556d9527a147de4c
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292811"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197546"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms 快速入門深入探討
 
-在  [Xamarin.Forms 快速入門](~/get-started/index.md)，建置資訊應用程式。 本文會檢閱已經建立的項目，以了解 Xamarin.Forms 應用程式運作方式的基本概念。
+在  [Xamarin.Forms 快速入門](~/get-started/index.yml)，建置資訊應用程式。 本文會檢閱已經建立的項目，以了解 Xamarin.Forms 應用程式運作方式的基本概念。
 
 ::: zone pivot="windows"
 
@@ -373,7 +373,7 @@ await Navigation.PopAsync();
 
 資料繫結用來簡化 Xamarin.Forms 應用程式顯示其資料以及與之互動的方式。 它會在使用者介面與基礎應用程式之間建立連線。 [`BindableObject`](xref:Xamarin.Forms.BindableObject) 類別包含許多支援資料繫結的基礎結構。
 
-資料繫結會連接兩個物件，稱為*來源*和*目標*。 *來源*物件會提供資料。 *目標*物件將會取用 (而且通常會顯示) 來源物件中的資料。 例如，[`Editor`](xref:Xamarin.Forms.Editor) (*目標*物件) 通常會將其 [`Text`](xref:Xamarin.Forms.Editor.Text) 屬性繫結至*來源*物件中的公用 `string` 屬性。 下圖說明繫結關聯性：
+資料繫結會連接兩個物件，稱為*來源*和*目標*。 *來源*物件會提供資料。 *目標*物件將會取用 (而且通常會顯示) 來源物件中的資料。 例如， [ `Editor` ](xref:Xamarin.Forms.Editor) (*目標*物件) 通常會繫結其[ `Text` ](xref:Xamarin.Forms.Editor.Text)的公用屬性`string`屬性*來源*物件。 下圖說明繫結關聯性：
 
 ![](deepdive-images/data-binding.png "資料繫結")
 

@@ -1,11 +1,11 @@
 ---
 ms.topic: include
-ms.openlocfilehash: bcf68de7261e25c94f042f4479a39e449c1929fb
-ms.sourcegitcommit: 676c5a6795ab4896ccd1b288424bf2040b1208aa
-ms.translationtype: HT
+ms.openlocfilehash: 5fccbcf56037b4c4538ccfa16515ea63aa53c57c
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/25/2018
-ms.locfileid: "52294962"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57199804"
 ---
 Xamarin 可以隨著新的 Visual Studio 2017 安裝一起安裝，步驟如下：
 
@@ -15,23 +15,23 @@ Xamarin 可以隨著新的 Visual Studio 2017 安裝一起安裝，步驟如下�
 
 3. 從安裝畫面選取 [使用 .NET 進行行動開發] 工作負載：
 
-    ![[工作負載] 畫面上的 [使用 .NET 進行行動開發] 選項](~/cross-platform/get-started/installation/windows-images/01-mobile-dev-workload.png)
+    ![[工作負載] 畫面上的 [使用 .NET 進行行動開發] 選項](~/get-started/installation/windows-images/01-mobile-dev-workload.png)
 
 4. 選取 [使用 .NET 進行行動開發] 後，查看右側的 [安裝詳細資料] 面板。 您可以在這裡取消選取不想安裝的行動開發選項。
 
-    ![[安裝詳細資料] 面板，其中列出要安裝的 Xamarin 選項](~/cross-platform/get-started/installation/windows-images/02-summary.png)
+    ![[安裝詳細資料] 面板，其中列出要安裝的 Xamarin 選項](~/get-started/installation/windows-images/02-summary.png)
 
 5. 當您準備好開始 Visual Studio 2017 安裝時，請按一下右下角的 [安裝] 按鈕：
 
-    ![[安裝] 按鈕](~/cross-platform/get-started/installation/windows-images/03-click-install.png)
+    ![[安裝] 按鈕](~/get-started/installation/windows-images/03-click-install.png)
 
    根據您安裝的 Visual Studio 2017 版本，安裝程序可能需要很長一段時間才能完成。 您可以使用進度列來監視安裝：
 
-    ![安裝期間的進度列](~/cross-platform/get-started/installation/windows-images/04-progress-bars.png)
+    ![安裝期間的進度列](~/get-started/installation/windows-images/04-progress-bars.png)
 
 6. Visual Studio 2017 安裝完成之後，請按一下 [啟動] 按鈕來啟動 Visual Studio：
 
-    ![[啟動] 按鈕的位置](~/cross-platform/get-started/installation/windows-images/05-launch.png)
+    ![[啟動] 按鈕的位置](~/get-started/installation/windows-images/05-launch.png)
 
 <a name="vs2017" />
 

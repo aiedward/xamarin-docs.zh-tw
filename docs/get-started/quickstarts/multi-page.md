@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 48b1c93afa22bf069a2b47b6c9a259641e8ed70f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: f3c5ec1c6d37c74fd9b4fb4980c68a59c9864c05
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292807"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197364"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>執行瀏覽多頁 Xamarin.Forms 應用程式中
 
@@ -114,7 +114,7 @@ ms.locfileid: "55292807"
       </ContentPage>
       ```
 
-      此程式碼以宣告方式定義頁面上，其中包含的使用者介面[ `Editor` ](xref:Xamarin.Forms.Editor)文字輸入和兩個[ `Button` ](xref:Xamarin.Forms.Button)指示儲存或刪除應用程式的執行個體檔案。 這兩個`Button`執行個體以水平方式配置[ `Grid` ](xref:Xamarin.Forms.Grid)，使用`Editor`並`Grid`垂直配置[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)。 颾魤 ㄛ`Editor`會使用資料繫結至繫結`Text`屬性`Note`模型。 如需有關資料繫結的詳細資訊，請參閱 <<c0> [ 資料繫結](deepdive.md#data-binding)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+      此程式碼以宣告方式定義頁面上，其中包含的使用者介面[ `Editor` ](xref:Xamarin.Forms.Editor)文字輸入和兩個[ `Button` ](xref:Xamarin.Forms.Button)指示儲存或刪除應用程式的執行個體此檔案。 這兩個`Button`執行個體以水平方式配置[ `Grid` ](xref:Xamarin.Forms.Grid)，使用`Editor`並`Grid`垂直配置[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)。 颾魤 ㄛ`Editor`會使用資料繫結至繫結`Text`屬性`Note`模型。 如需有關資料繫結的詳細資訊，請參閱 <<c0> [ 資料繫結](deepdive.md#data-binding)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
 
       變更儲存到**NoteEntryPage.xaml**藉由按下**CTRL + S**，並關閉檔案。
 
@@ -399,7 +399,7 @@ ms.locfileid: "55292807"
       </ContentPage>
       ```
 
-      此程式碼以宣告方式定義頁面上，其中包含的使用者介面[ `Editor` ](xref:Xamarin.Forms.Editor)文字輸入和兩個[ `Button` ](xref:Xamarin.Forms.Button)指示儲存或刪除應用程式的執行個體檔案。 這兩個`Button`執行個體以水平方式配置[ `Grid` ](xref:Xamarin.Forms.Grid)，使用`Editor`並`Grid`垂直配置[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)。 颾魤 ㄛ`Editor`會使用資料繫結至繫結`Text`屬性`Note`模型。 如需有關資料繫結的詳細資訊，請參閱 <<c0> [ 資料繫結](deepdive.md#data-binding)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+      此程式碼以宣告方式定義頁面上，其中包含的使用者介面[ `Editor` ](xref:Xamarin.Forms.Editor)文字輸入和兩個[ `Button` ](xref:Xamarin.Forms.Button)指示儲存或刪除應用程式的執行個體此檔案。 這兩個`Button`執行個體以水平方式配置[ `Grid` ](xref:Xamarin.Forms.Grid)，使用`Editor`並`Grid`垂直配置[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)。 颾魤 ㄛ`Editor`會使用資料繫結至繫結`Text`屬性`Note`模型。 如需有關資料繫結的詳細資訊，請參閱 <<c0> [ 資料繫結](deepdive.md#data-binding)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
 
       變更儲存到**NoteEntryPage.xaml**選擇**檔案 > 儲存**(或按下 **&#8984; + S**)，然後關閉檔案。
 
