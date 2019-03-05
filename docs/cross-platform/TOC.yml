@@ -1,30 +1,13 @@
 items:
-- name: Cross-Platform
+- name: 跨平台
   href: index.yml
   items:
-  - name: 開始使用
+  - name: 建置行動應用程式
     href: get-started/index.md
     items:
     - name: 需求
       displayName: System requirements
       href: get-started/requirements.md
-    - name: 安裝
-      href: get-started/installation/index.md
-      items:
-      - name: 在 Windows 上安裝 Xamarin
-        href: get-started/installation/windows.md
-        items:
-        - name: 安裝 Xamarin 預覽 (Windows)
-          href: get-started/installation/windows-preview.md
-      - name: 安裝 Visual Studio for Mac
-        href: /visualstudio/mac/installation/
-        items:
-        - name: 安裝 Xamarin 預覽 (Mac)
-          href: /visualstudio/mac/update/
-      - name: Xamarin 防火牆組態指示
-        href: get-started/installation/firewall.md
-      - name: 解除安裝 Xamarin
-        href: get-started/installation/uninstalling-xamarin.md
     - name: 行動裝置應用程式開發簡介
       href: get-started/introduction-to-mobile-development.md
     - name: 行動裝置 SDLC 簡介
@@ -32,7 +15,7 @@ items:
     - name: 建置跨平台應用程式
       href: app-fundamentals/building-cross-platform-applications/index.md
       items:
-      - name: 概觀
+      - name: 總覽
         href: app-fundamentals/building-cross-platform-applications/overview.md
       - name: 第 1 部分 - 了解 Xamarin 行動裝置平台
         href: app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md
@@ -52,7 +35,7 @@ items:
   - name: 共用程式碼
     href: app-fundamentals/index.md
     items:
-    - name: 概觀
+    - name: 總覽
       href: app-fundamentals/code-sharing.md
     - name: .NET Standard
       href: app-fundamentals/net-standard.md
@@ -192,9 +175,9 @@ items:
   - name: 範例
     href: samples/index.yml
   expanded: true
-ms.openlocfilehash: 5eb01503b809979ebbc6598cf1cde985d3431bad
-ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
+ms.openlocfilehash: 083bc3dc1dbd392977b0d4902e37fe0f78513c29
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54841324"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197325"

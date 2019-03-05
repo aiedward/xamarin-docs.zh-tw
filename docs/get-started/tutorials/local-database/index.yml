@@ -1,0 +1,34 @@
+### YamlMime:Tutorial
+title: Xamarin.Forms 本機資料庫教學課程
+metadata:
+  title: Xamarin.Forms 本機資料庫教學課程
+  description: 了解如何使用 SQLite.NET NuGet 套件，將本機資料庫作業併入 Xamarin.Forms 應用程式中。
+  audience: Developer
+  level: Beginner
+  ms.topic: interactive-tutorial
+  ms.date: 12/02/2019
+  author: davidbritch
+  ms.author: dabritch
+  ms.openlocfilehash: b4cd264d11df081fb190044000e73cf012092667
+  ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+  ms.translationtype: HT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 03/01/2019
+  ms.locfileid: "57198564"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [](includes/intro.md)]
+- title: 新增 SQLite.NET
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](includes/add-sqlite.md)]
+- title: 建立資料存取類別
+  durationInMinutes: 5
+  content: >
+    [!INCLUDE [](includes/create-data-access-classes.md)]
+- title: 取用資料存取類別
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](includes/consume-data-access-classes.md)]
+- content: '[!INCLUDE [](includes/completed.md)]'
