@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: ffae20f3e62d8f735e4645143f08a94fd04744b1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7e31f9ad46a04b648a6a1f24c075426f7d98a663
+ms.sourcegitcommit: 6655cccf9d3be755773c2f774b5918e0b141bf84
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105268"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57305603"
 ---
 # <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>哪些版本的 Xamarin.Android 新增了 Lollipop 支援？
 
-**注意：** 本指南原先針對 Android L 預覽編寫。
+**注意：** 本指南原先是針對 Android L 預覽編寫。
 
 -   [Xamarin.Android 4.17](https://developer.xamarin.com/releases/android/xamarin.android_4/xamarin.android_4.17/)新增 Android L 預覽支援。
 -   [Xamarin.Android 4.20](https://developer.xamarin.com/releases/android/xamarin.android_4/xamarin.android_4.20/)新增了 Android Lollipop 支援。
@@ -33,7 +33,7 @@ Xamarin 僅主動支援目前的穩定版本的 Xamarin 工具。 提供下列�
 Error 1 Could not find android.jar for API Level 21.
 ```
 
-此訊息表示未安裝 API Level 21 的 Android SDK 平台。 在 Android SDK Manager 中安裝它 (工具 > 開啟 Android SDK 管理員...)，或變更您的 Xamarin.Android 專案目標的已安裝的 API 版本。
+此訊息表示未安裝 API Level 21 的 Android SDK 平台。 在 Android SDK Manager 中安裝它 (**工具 > 開啟 Android SDK 管理員...**)，或變更您的 Xamarin.Android 專案目標的已安裝的 API 版本。
 
 有此問題的幾個因應措施：
 
@@ -46,7 +46,7 @@ Error 1 Could not find android.jar for API Level 21.
 3. 暫時降級回 Android API Level 21"L"預覽 [1]:
 
     1.  刪除 **%LOCALAPPDATA%\\Android\\android sdk\\平台\\android 21** 
-    2.  展開 [1] 到**c:\\使用者\\<username>\\AppData\\本機\\Android\\android sdk\\平台**建立**android-L**資料夾。
+    2.  展開 [1] 到**c:\\使用者\\&lt;使用者名稱&gt;\\AppData\\本機\\Android\\android sdk\\平台**來建立**android-L**資料夾。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
