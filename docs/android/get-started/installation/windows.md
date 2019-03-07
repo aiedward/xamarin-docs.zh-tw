@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: c208bae61f425ccdb69e0543c7686891a7add358
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 26865fdbfc1cc6f11a978a70bd768e63771bcd4b
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113179"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197468"
 ---
 # <a name="windows-installation"></a>Windows 安裝
 
@@ -36,7 +36,7 @@ _本指南說明在 Windows 上安裝 Xamarin.Android for Visual Studio 的步�
 
 ## <a name="installation"></a>安裝
 
-如需在 Windows 上安裝 Xamarin 以便搭配 Visual Studio 使用的詳細資訊，請參閱 [Windows 安裝](~/cross-platform/get-started/installation/windows.md)指南。
+如需在 Windows 上安裝 Xamarin 以便搭配 Visual Studio 使用的詳細資訊，請參閱 [Windows 安裝](~/get-started/installation/windows.md)指南。
 
 
 ## <a name="configuration"></a>Configuration
@@ -119,7 +119,7 @@ Visual Studio 預設會安裝 Google Android SDK 管理員：
 ## <a name="related-links"></a>相關連結
 
 - [下載 Visual Studio](https://visualstudio.microsoft.com/vs/)
-- [安裝 Visual Studio Tools for Xamarin](~/cross-platform/get-started/installation/windows.md)
+- [安裝 Visual Studio Tools for Xamarin](~/get-started/installation/windows.md)
 - [系統需求](~/cross-platform/get-started/requirements.md)
 - [Android SDK 安裝](~/android/get-started/installation/android-sdk.md)
 - [Android Emulator 安裝](~/android/get-started/installation/android-emulator/index.md)

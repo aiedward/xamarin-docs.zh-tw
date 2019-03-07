@@ -6,12 +6,12 @@ ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: conceptdev
 ms.author: crdun
 ms.date: 07/24/2018
-ms.openlocfilehash: 87c3a189851db66e630095eae31434a590050154
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 4ea9690812675c48524393576e5509ab37e26981
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292268"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197143"
 ---
 # <a name="system-requirements"></a>系統需求
 
@@ -72,13 +72,13 @@ Visual Studio 2017 安裝程式包括自動安裝 Xamarin 的選項 ([使用 .NE
 
 我們目前產品版本的完整列表，可在[目前的版本頁面](http://developer.xamarin.com/releases/current/)中找到。 此頁面也概述了我們 Beta 和 Alpha 管道的個別產品版本 (和版本資訊的連結)。
 
-下列是特定於每個平台的[安裝](~/cross-platform/get-started/installation/index.md)指示：
+下列是特定於每個平台的[安裝](~/get-started/installation/index.md)指示：
 
 - [Xamarin.iOS](~/ios/get-started/installation/index.md)
 - [Xamarin.Android](~/android/get-started/installation/index.md)
 - [Xamarin.Mac](~/mac/get-started/installation.md)
 
-這裡也提供有關 [Xamarin.Forms 需求和支援平台](~/get-started/installation.md)的其他資訊。
+這裡也提供有關 [Xamarin.Forms 需求和支援平台](~/get-started/requirements.md)的其他資訊。
 
 ## <a name="related-links"></a>相關連結
 

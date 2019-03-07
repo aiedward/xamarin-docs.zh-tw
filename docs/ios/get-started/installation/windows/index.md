@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/16/2018
-ms.openlocfilehash: 5e7b8a3fb703d8857312b15f4884399ee951b2d4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118535"
 ---
+
 # <a name="installing-xamarinios-on-windows"></a>在 Windows 上安裝 Xamarin.iOS
 
 _本文說明如何設定 Windows 電腦和 Mac 組建主機來進行 Xamarin.iOS 開發。_
@@ -36,7 +31,7 @@ _本文說明如何設定 Windows 電腦和 Mac 組建主機來進行 Xamarin.iO
 
     Xamarin.iOS 會在獨立或虛擬機器上使用 Visual Studio 2017 Community、Professional 和 Enterprise Edition。
     
-    - [安裝 Visual Studio 2017](~/cross-platform/get-started/installation/windows.md).
+    - [安裝 Visual Studio 2017](~/get-started/installation/windows.md).
 
 2. 設定 Mac (安裝 Xcode 和 Visual Studio for Mac)
 

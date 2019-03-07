@@ -6,12 +6,12 @@ ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: 5470a70570a431c1adc3053d9f8f389cec31cf85
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 0062c5da4db206a9fe4dc0030a104ec034ab97f1
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292073"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197156"
 ---
 # <a name="introduction-to-mobile-development"></a>行動裝置應用程式開發簡介
 
@@ -83,11 +83,11 @@ Xamarin 應用程式是針對名為 Xamarin 行動設定檔的 .NET BCL 子集�
 
 ![](introduction-to-mobile-development-images/android.png "Hello, Android")
 
-* [**開始使用 Xamarin.Forms**](~/get-started/index.md)
+* [**開始使用 Xamarin.Forms**](~/get-started/index.yml)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
-本文件僅單純介紹 Xamarin 平台。 真正的樂趣在您執行第一個應用程式時才正式開始。 請參閱 [Hello, iOS](~/ios/get-started/hello-ios/index.md)、[Hello, Android](~/android/get-started/hello-android/index.md) 與[開始使用 Xamarin.Forms](~/get-started/index.md) 指南來開始。
+本文件僅單純介紹 Xamarin 平台。 真正的樂趣在您執行第一個應用程式時才正式開始。 請參閱 [Hello, iOS](~/ios/get-started/hello-ios/index.md)、[Hello, Android](~/android/get-started/hello-android/index.md) 與[開始使用 Xamarin.Forms](~/get-started/index.yml) 指南來開始。
 
 ## <a name="related-links"></a>相關連結
 

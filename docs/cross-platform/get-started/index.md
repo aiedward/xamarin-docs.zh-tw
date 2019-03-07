@@ -7,16 +7,11 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: 1b98dcb175c7e28e0ae101bea172aa2a98d3502e
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
-ms.translationtype: HT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292164"
 ---
-# <a name="get-started-with-xamarin"></a>Xamarin 使用者入門
 
-在您開始之前，請先參閱[系統需求](requirements.md)及[安裝指示](installation/index.md)，以確認您已將一切準備就緒。
+# <a name="building-mobile-apps"></a>建置行動應用程式
+
+在您開始之前，請先參閱[系統需求](requirements.md)及[安裝指示](~/get-started/installation/index.md)，以確認您已將一切準備就緒。
 
 ## <a name="build-your-first-app"></a>建置您的第一個應用程式
 
@@ -57,4 +52,4 @@ ms.locfileid: "55292164"
 ## <a name="related-links"></a>相關連結
 
 - [系統需求](requirements.md)
-- [安裝指示](~/cross-platform/get-started/installation/index.md)
+- [安裝指示](~/get-started/installation/index.md)
