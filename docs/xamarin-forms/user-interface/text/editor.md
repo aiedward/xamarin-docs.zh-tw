@@ -6,13 +6,13 @@ ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/13/2018
-ms.openlocfilehash: 4011863553935052c230def403f4ebc281c51d92
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.date: 02/26/2018
+ms.openlocfilehash: ed49c1d11e30d19b2dc60066c3c35568ade43198
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831868"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557099"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms 編輯器
 
@@ -58,6 +58,22 @@ var text = MyEditor.Text;
 ```csharp
 var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Color.Olive };
 ```
+
+### <a name="preventing-text-entry"></a>防止文字項目
+
+可以防止使用者修改中的文字[ `Editor` ](xref:Xamarin.Forms.Editor) splittunneling`IsReadOnly`屬性，其預設值的`false`至`true`:
+
+```xaml
+<Editor Text="This is a read-only Editor"
+        IsReadOnly="true" />
+```
+
+```csharp
+var editor= new Editor { Text = "This is a read-only Editor", IsReadOnly = true });
+```
+
+> [!NOTE]
+> `IsReadonly`屬性不會改變的視覺外觀[ `Editor`](xref:Xamarin.Forms.Editor)不同的是`IsEnabled`也會變更的視覺外觀的屬性`Editor`為灰色。
 
 ### <a name="limiting-input-length"></a>限制的輸入的長度
 

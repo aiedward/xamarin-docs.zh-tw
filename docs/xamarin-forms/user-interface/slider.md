@@ -6,13 +6,13 @@ ms.assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: ac5ad85f7bdd08b0d071e7c333c959e94dcbc53f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 02/27/2019
+ms.openlocfilehash: fa339d9fd404cf74aa603d853abde5f9128e57b5
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057479"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557304"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms 滑桿
 
@@ -38,6 +38,8 @@ Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider)是可由使用者選取操
 `Slider` 定義[ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged)時引發的事件`Value`變更，不論是透過使用者操作`Slider`或程式時設定`Value`直接屬性。 A`ValueChanged`引發事件時也當`Value`前段中所述，會強制轉型屬性。
 
 [ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs)隨附的物件`ValueChanged`事件有兩個屬性，這兩個型別`double`: [ `OldValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue)並[ `NewValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue). 在引發事件時，windows 7`NewValue`等同`Value`屬性`Slider`物件。
+
+`Slider` 也會定義`DragStarted`和`DragCompleted`開頭和結尾的拖曳動作所引發的事件。 不同於[ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged)事件`DragStarted`並`DragCompleted`透過使用者操作只會引發事件`Slider`。 當`DragStarted`事件引發時， `DragStartedCommand`，型別的`ICommand`，會執行。 同樣地，當`DragCompleted`事件引發時， `DragCompletedCommand`，型別的`ICommand`，會執行。
 
 > [!WARNING]
 > 請勿使用未受限制的水平版面配置選項`Center`， `Start`，或`End`使用`Slider`。 在 Android 和 UWP，`Slider`列長度為零，並在 iOS 上，列摺疊是很短。 保留預設值`HorizontalOptions`設定`Fill`，而未使用的寬度`Auto`當放置`Slider`在`Grid`版面配置。
@@ -203,7 +205,7 @@ double value = slider.Value;
 </ContentPage>
 ```
 
-`Rotation`屬性的第一個`Label`繫結至`Value`屬性`Slider`，因為`Text`第二個屬性`Label`具有`StringFormat`規格。 **基本的滑桿繫結**頁面上函式稍有不同的兩個先前的頁面： 第一次出現的頁面中，第二個`Label`顯示文字字串，其值。 這是使用資料繫結的優點。 若要顯示沒有資料繫結的文字，您必須特別初始化`Text`的屬性`Label`，或模擬的引發`ValueChanged`藉由從類別建構函式呼叫的事件處理常式的事件。
+`Rotation`屬性的第一個`Label`繫結至`Value`屬性`Slider`，因為`Text`第二個屬性`Label`具有`StringFormat`規格。 **基本的滑桿繫結**頁面函式稍有不同兩個先前的頁面：第一次出現的頁面中，第二個`Label`顯示文字字串，其值。 這是使用資料繫結的優點。 若要顯示沒有資料繫結的文字，您必須特別初始化`Text`的屬性`Label`，或模擬的引發`ValueChanged`藉由從類別建構函式呼叫的事件處理常式的事件。
 
 <a name="precautions" />
 

@@ -6,13 +6,13 @@ ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/27/2016
-ms.openlocfilehash: 1d164c8593e358a97b21f42bf7116f64d0ac460d
-ms.sourcegitcommit: 6e84adf7358dc05f4d888ab2674de70d88214090
+ms.date: 02/27/2018
+ms.openlocfilehash: edba18eea3ea2b7b843dba70ff0b4b67cbab1ab1
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/31/2018
-ms.locfileid: "53815213"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557112"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms 對應
 
@@ -20,13 +20,8 @@ ms.locfileid: "53815213"
 
 _Xamarin.Forms 會在每個平台上使用原生的對應 Api。_
 
-Xamarin.Forms.Maps 會使用原生的對應 Api，每個平台。 這對於使用者而言，提供快速、 熟悉對應體驗，但表示一些設定步驟所需遵守每個平台特定的 API 需求。
+Xamarin.Forms.Maps 會使用原生的對應 Api，每個平台。 這對於使用者而言，提供快速、 熟悉對應體驗，但表示一些設定步驟所需遵守每個平台 API 的需求。
 設定後，`Map`控制運作方式就像一般的程式碼中的任何其他 Xamarin.Forms 元素。
-
-* [對應初始化](#Maps_Initialization)-使用`Map`需要額外的初始化程式碼，在啟動時。
-* [平台組態](#Platform_Configuration)-每個平台需要對應至工作的某些設定。
-* [使用 C# 中的對應](#Using_Maps)-顯示對應，並固定使用 C#。
-* [在 XAML 中使用對應](#Using_Xaml)-顯示具有 XAML 的對應。
 
 地圖控制項用於[MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/)範例，如下所示。
 
@@ -101,7 +96,6 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 ![適用於 iOS 8 的 Info.plist](map-images/ios8-map-permissions.png "iOS 8 需要 Info.plist 項目")
 
-
 ### <a name="android"></a>Android
 
 若要使用[Google Maps API v2](https://developers.google.com/maps/documentation/android/)在 Android 上，您必須產生 API 金鑰並將它新增至您的 Android 專案。
@@ -143,7 +137,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 <a name="Using_Maps" />
 
-## <a name="using-maps"></a>使用 Maps
+## <a name="using-maps"></a>使用對應
 
 請參閱[MapPage.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/MobileCRM/MobileCRM.Shared/Pages/MapPage.cs)在 MobileCRM 範例中，如需如何使用地圖控制項，在程式碼中的範例。 簡單`MapPage`類別可能類似此-請注意，新`MapSpan`會建立以位置地圖的檢視：
 
@@ -165,7 +159,7 @@ public class MapPage : ContentPage {
 }
 ```
 
-### <a name="map-type"></a>對應類型
+### <a name="map-type"></a>地圖類型
 
 地圖內容也可以藉由設定變更`MapType`屬性，以顯示規則的街道地圖 （預設值）、 衛星影像或兩者的組合。
 
@@ -178,7 +172,6 @@ map.MapType == MapType.Street;
 -  混合式
 -  附屬
 -  Street （預設值）
-
 
 ### <a name="map-region-and-mapspan"></a>對應區域和 MapSpan
 
@@ -201,7 +194,7 @@ slider.ValueChanged += (sender, e) => {
 
  [![包含縮放地圖](map-images/maps-zoom-sml.png "地圖控制項縮放")](map-images/maps-zoom.png#lightbox "地圖控制項縮放")
 
-### <a name="map-pins"></a>對應的 Pin
+### <a name="map-pins"></a>對應的 pin
 
 位置可以在地圖上標示`Pin`物件。
 
@@ -223,30 +216,31 @@ map.Pins.Add(pin);
 -  SavedPin
 -  SearchResult
 
-
 <a name="Using_Xaml" />
 
-## <a name="using-xaml"></a>使用 Xaml
+## <a name="using-xaml"></a>使用 XAML
 
-也可以將對應放置 Xaml 的版面配置中，此程式碼片段所示。
+也可以將對應放置 XAML 的版面配置中，此程式碼片段所示。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
-    x:Class="MapDemo.MapPage">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="MapDemo.MapPage">
     <StackLayout VerticalOptions="StartAndExpand" Padding="30">
         <maps:Map WidthRequest="320" HeightRequest="200"
-            x:Name="MyMap"
-            IsShowingUser="true"
-            MapType="Hybrid"
-        />
+                  x:Name="MyMap"
+                  IsShowingUser="true"
+                  MapType="Hybrid" />
     </StackLayout>
 </ContentPage>
 ```
 
-`MapRegion`並`Pins`中的程式碼使用可設定`MyMap`參考 （或任何對應稱為）。 請注意，額外`xmlns`命名空間定義，才可參考 Xamarin.Forms.Maps 控制項。
+> [!NOTE]
+> 額外`xmlns`命名空間定義，才可參考 Xamarin.Forms.Maps 控制項。
+
+`MapRegion`並`Pins`中的程式碼使用可設定`MyMap`參考 （或任何對應稱為）。
 
 ```csharp
 MyMap.MoveToRegion(
@@ -254,14 +248,44 @@ MyMap.MoveToRegion(
         new Position(37,-122), Distance.FromMiles(1)));
 ```
 
-<a name="Summary" />
+## <a name="populating-a-map-with-data-using-data-binding"></a>使用資料繫結的資料填入對應
 
-## <a name="summary"></a>總結
+[ `Map` ](xref:Xamarin.Forms.Maps.Map)類別也會公開下列屬性：
 
-Xamarin.Forms.Maps 是個別的 NuGet，必須新增至 Xamarin.Forms 方案中的每個專案。 額外的初始化程式碼是必要項，為 iOS、 Android 和 UWP 以及一些設定步驟。
+- `ItemsSource` – 指定的集合`IEnumerable`要顯示的項目。
+- `ItemTemplate` – 指定[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)来套用至顯示的項目集合中的每個項目。
 
-一次設定對應的 API 可以用來呈現地圖釘選標記在短短幾行程式碼使用。 對應可以與進一步增強[自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)。
+因此， [ `Map` ](xref:Xamarin.Forms.Maps.Map)可以填入資料繫結中使用資料繫結其`ItemsSource`屬性設`IEnumerable`集合：
 
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="WorkingWithMaps.PinItemsSourcePage">
+    <Grid>
+        ...
+        <maps:Map x:Name="map"
+                  ItemsSource="{Binding Locations}">
+            <maps:Map.ItemTemplate>
+                <DataTemplate>
+                    <maps:Pin Position="{Binding Position}"
+                              Address="{Binding Address}"
+                              Label="{Binding Description}" />
+                </DataTemplate>
+            </maps:Map.ItemTemplate>
+        </maps:Map>
+        ...
+    </Grid>
+</ContentPage>
+```
+
+`ItemsSource`屬性的資料繫結至`Locations`屬性的已連接的檢視模型，它會傳回`ObservableCollection`的`Location`是自訂類型的物件。 每個`Location`物件會定義`Address`並`Description`類型的屬性`string`，和`Position`型別的屬性[ `Position` ](xref:Xamarin.Forms.Maps.Position)。
+
+在每個項目的外觀`IEnumerable`藉由設定定義集合`ItemTemplate`屬性設[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)包含[ `Pin` ](xref:Xamarin.Forms.Maps.Pin)物件資料繫結至適當的屬性。
+
+下列螢幕擷取畫面所示[ `Map` ](xref:Xamarin.Forms.Maps.Map)顯示[ `Pin` ](xref:Xamarin.Forms.Maps.Pin)使用資料繫結的集合：
+
+[![螢幕擷取畫面的地圖與資料繫結 iOS 和 Android 上的 pin](map-images/pins-itemssource.png "對應的資料繫結的 pin")](map-images/pins-itemssource-large.png#lightbox "對應的資料繫結的 pin")
 
 ## <a name="related-links"></a>相關連結
 

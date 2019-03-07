@@ -7,13 +7,8 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2018
-ms.openlocfilehash: 0563921a59bc698e2360a06b482c7f4994e56f6e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060008"
 ---
+
 # <a name="text-in-xamarinforms"></a>在 Xamarin.Forms 中的文字
 
 [![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
@@ -66,7 +61,7 @@ Xamarin.Forms 會具有三個主要的檢視，可搭配文字使用：
 
 ## <a name="fontsfontsmd"></a>[字型](fonts.md)
 
-`Label`控制項支援不同的字型設定的每個平台或自訂的字型，隨附於您的應用程式中使用的內建的字型。 請參閱[字型](fonts.md)一文中的詳細資訊。
+許多控制項都支援不同的字型設定的每個平台或自訂的字型，隨附於您的應用程式中使用的內建的字型。 請參閱[字型](fonts.md)一文中的詳細資訊。
 
 <a name="Styles" />
 

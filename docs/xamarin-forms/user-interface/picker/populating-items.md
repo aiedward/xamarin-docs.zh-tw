@@ -6,13 +6,13 @@ ms.assetid: 3C840F64-A430-457D-A4B2-3D7AF46F9DBE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/11/2017
-ms.openlocfilehash: 6eb1e9a6f9c46fd7337003e05daa10d408fb5108
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.date: 02/26/2019
+ms.openlocfilehash: 3bbea036efef44077ccbd28a16af06c97cd7026b
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54208008"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557226"
 ---
 # <a name="adding-data-to-a-pickers-items-collection"></a>將資料加入選擇器的項目集合
 
@@ -25,7 +25,8 @@ _選擇器 檢視是從資料的清單中選取的文字項目控制項。這篇
 Xamarin.Forms 2.3.4，填入的程序之前[ `Picker` ](xref:Xamarin.Forms.Picker)的資料已加入的資料顯示為唯讀[ `Items` ](xref:Xamarin.Forms.Picker.Items)集合，其中的型別`IList<string>`. 集合中的每個項目必須是型別`string`。 可以在 XAML 中加入項目，初始化`Items`屬性的清單`x:String`項目：
 
 ```xaml
-<Picker Title="Select a monkey">
+<Picker Title="Select a monkey"
+        TitleColor="Red">
   <Picker.Items>
     <x:String>Baboon</x:String>
     <x:String>Capuchin Monkey</x:String>
@@ -41,7 +42,7 @@ Xamarin.Forms 2.3.4，填入的程序之前[ `Picker` ](xref:Xamarin.Forms.Picke
 對等的 C# 程式碼如下所示：
 
 ```csharp
-var picker = new Picker { Title = "Select a monkey" };
+var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };
 picker.Items.Add("Baboon");
 picker.Items.Add("Capuchin Monkey");
 picker.Items.Add("Blue Monkey");
@@ -79,11 +80,6 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 
 > [!NOTE]
 > A [ `Picker` ](xref:Xamarin.Forms.Picker)可以藉由設定顯示特定的項目初始化[ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)屬性。 不過，`SelectedIndex`屬性必須設定在初始化之後[ `Items` ](xref:Xamarin.Forms.Picker.Items)集合。
-
-## <a name="summary"></a>總結
-
-[ `Picker` ](xref:Xamarin.Forms.Picker)檢視是從資料的清單中選取的文字項目控制項。 這篇文章說明如何以填入`Picker`的資料將其加入至[ `Items` ](xref:Xamarin.Forms.Picker.Items)集合，以及如何回應使用者的項目選取。 這是使用的程序`Picker`Xamarin.Forms 2.3.4 之前。
-
 
 ## <a name="related-links"></a>相關連結
 

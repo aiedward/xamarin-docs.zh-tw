@@ -6,13 +6,13 @@ ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/13/2018
-ms.openlocfilehash: ce1ba235a309e2388bd5eea7d70a1d72852fc615
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.date: 02/26/2019
+ms.openlocfilehash: e57135c5a9a90ec75ae610ad92cecaa2a9b1e482
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831855"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557034"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms 標籤
 
@@ -157,10 +157,13 @@ var label =
 - [`FontSize`](xref:Xamarin.Forms.Span.FontSize) – 範圍中文字的字型的大小。
 - [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor) – 範圍中文字的色彩。 這個屬性已經過時，已被取代`TextColor`屬性。
 - [`LineHeight`](xref:Xamarin.Forms.Span.LineHeight) -要套用至範圍的預設線條高度的乘數。 如需詳細資訊，請參閱 <<c0> [ 行高](#line-height)。
-- [`Style`](xref:Xamarin.Forms.Span.Style) – 要套用至範圍的樣式。
+- [`Text`](xref:Xamarin.Forms.Span.Text)  – 要套用至範圍的樣式。
 - [`Text`](xref:Xamarin.Forms.Span.Text) – 範圍的文字。
 - [`TextColor`](xref:Xamarin.Forms.Span.TextColor) – 範圍中文字的色彩。
 - `TextDecorations` -要套用至範圍中文字的裝飾。 如需詳細資訊，請參閱 <<c0> [ 文字裝飾](#text-decorations)。
+
+> [!NOTE]
+> [ `BackgroundColor` ](xref:Xamarin.Forms.Span.BackgroundColor)， [ `Text` ](xref:Xamarin.Forms.Span.Text)，以及[ `Text` ](xref:Xamarin.Forms.Span.Text)可繫結的屬性具有預設繫結模式[ `OneWay`](xref:Xamarin.Forms.BindingMode). 如需有關此繫結模式的詳細資訊，請參閱 <<c0> [ 的預設繫結模式](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#the-default-binding-mode)中[繫結模式](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md)指南。
 
 颾魤 ㄛ [ `GestureRecognizers` ](xref:Xamarin.Forms.GestureElement.GestureRecognizers)屬性可以用來定義的筆勢辨識器所將回應筆勢在集合[ `Span` ](xref:Xamarin.Forms.Span)。
 

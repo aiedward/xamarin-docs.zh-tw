@@ -7,13 +7,8 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/14/2018
-ms.openlocfilehash: c3759430ce40397418d2f47794e8ecc555ef3ed4
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292281"
 ---
+
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 使用者介面檢視
 
 [![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/FormsGallery/)
@@ -108,9 +103,9 @@ Xamarin.Forms 佈景主題定義特定標準控制項的視覺外觀。 當您�
 
 `TimePicker`可讓使用者選取的時間。 它是使用特定的平台上執行應用程式所支援的時間選擇器所實作的。
 
-## <a name="visualvisualmd"></a>[視覺效果](visual.md)
+## <a name="visualvisualindexmd"></a>[視覺效果](visual/index.md)
 
-本文介紹 Xamarin.Forms 視覺效果，在 iOS 和 Android 相同，或大致相同，呈現檢視。
+Xamarin.Forms 的視覺效果可讓轉譯器會選擇性地套用到`VisualElement`物件，而不需要子類別 Xamarin.Forms 控制項。
 
 ## <a name="visual-state-managervisual-state-managermd"></a>[Visual State Manager](visual-state-manager.md)
 

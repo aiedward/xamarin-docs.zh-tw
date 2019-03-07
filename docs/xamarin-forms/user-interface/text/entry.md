@@ -6,13 +6,13 @@ ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/27/2018
-ms.openlocfilehash: 303cca48defdadd69449edbd6c4c3f5e4410bbbb
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.date: 02/26/2018
+ms.openlocfilehash: bc404986a83d0150c490486c20f780bf4e7f5a9e
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831959"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557200"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms 的項目
 
@@ -58,6 +58,22 @@ var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive
 
 > [!NOTE]
 > 寬度`Entry`可以藉由設定定義其`WidthRequest`屬性。 不依賴的寬度`Entry`的值所定義根據其`Text`屬性。
+
+### <a name="preventing-text-entry"></a>防止文字項目
+
+可以防止使用者修改中的文字[ `Entry` ](xref:Xamarin.Forms.Entry) splittunneling`IsReadOnly`屬性，其預設值的`false`至`true`:
+
+```xaml
+<Entry Text="This is a read-only Entry"
+       IsReadOnly="true" />
+```
+
+```csharp
+var entry = new Entry { Text = "This is a read-only Entry", IsReadOnly = true });
+```
+
+> [!NOTE]
+> `IsReadonly`屬性不會改變的視覺外觀[ `Entry`](xref:Xamarin.Forms.Entry)不同的是`IsEnabled`也會變更的視覺外觀的屬性`Entry`為灰色。
 
 ### <a name="limiting-input-length"></a>限制的輸入的長度
 

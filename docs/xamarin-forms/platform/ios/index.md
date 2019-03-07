@@ -6,7 +6,7 @@ ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/07/2018
+ms.date: 02/22/2019
 ---
 
 # <a name="ios-platform-features"></a>iOS 平台功能
@@ -25,8 +25,11 @@ ms.date: 01/07/2018
 
 在 iOS 上的 Xamarin.Forms 檢視被提供下列平台特有的功能：
 
+- 設定[ `Cell` ](xref:Xamarin.Forms.Cell)背景色彩。 如需詳細資訊，請參閱 <<c0> [ 在 iOS 上的資料格背景色彩](cell-background-color.md)。
 - 確保所輸入文字融入[ `Entry` ](xref:Xamarin.Forms.Entry)藉由調整字型大小。 如需詳細資訊，請參閱 <<c0> [ 在 iOS 上的項目字型大小](entry-font-size.md)。
 - 在 設定資料指標色彩[ `Entry` ](xref:Xamarin.Forms.Entry)。 如需詳細資訊，請參閱 <<c0> [ 在 iOS 上的項目資料指標色彩](entry-cursor-color.md)。
+- 控制是否[ `ListView` ](xref:Xamarin.Forms.ListView)捲動期間浮點數的標頭資料格。 如需詳細資訊，請參閱 < [ListView 群組標頭樣式，在 iOS 上](listview-group-header-style.md)。
+- 控制資料列動畫是否已停用時[ `ListView` ](xref:Xamarin.Forms.ListView)正在更新項目集合。 如需詳細資訊，請參閱 < [ListView 在 iOS 上的資料列動畫](listview-row-animations.md)。
 - 設定分隔符號樣式[ `ListView` ](xref:Xamarin.Forms.ListView)。 如需詳細資訊，請參閱 < [ListView 分隔符號樣式，在 iOS 上](listview-separator-style.md)。
 - 控制中的項目選取項目發生時[ `Picker` ](xref:Xamarin.Forms.Picker)。 如需詳細資訊，請參閱 <<c0> [ 在 iOS 上的選擇器項目選取](picker-selection.md)。
 - 啟用[ `Slider.Value` ](xref:Xamarin.Forms.Slider.Value)點選位置上設定上的屬性[ `Slider` ](xref:Xamarin.Forms.Slider)列，而不是由拖曳`Slider`捲動方塊。 如需詳細資訊，請參閱 <<c0> [ 在 iOS 上的滑桿捲動方塊點選](slider-thumb.md)。

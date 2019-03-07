@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/21/2018
-ms.openlocfilehash: 8167ff00d3e4d7167772f6f5a578da6197c0d72d
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: 2e09e89fe17956efaef910638e827b69a5795bc0
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55832212"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557213"
 ---
 # <a name="xaml-custom-namespace-schemas-in-xamarinforms"></a>在 Xamarin.Forms 中 XAML 自訂命名空間的結構描述
 
@@ -144,4 +144,5 @@ namespace CustomNamespaceSchemaDemo
 ## <a name="related-links"></a>相關連結
 
 - [自訂命名空間的結構描述 （範例）](https://developer.xamarin.com/samples/xamarin-forms/XAML/CustomNamespaceSchemas/)
+- [建議的前置詞的 XAML 命名空間](custom-prefix.md)
 - [在 Xamarin.Forms 中的 XAML 命名空間](namespaces.md)

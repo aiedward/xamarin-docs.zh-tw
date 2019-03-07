@@ -6,14 +6,9 @@ ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/18/2018
-ms.openlocfilehash: 7195d56cfee91544f0626a8f89c886cde36752e5
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831713"
+ms.date: 02/28/2019
 ---
+
 # <a name="extensible-application-markup-language-xaml"></a>可延伸應用程式標記語言 (XAML)
 
 _XAML 是一種宣告式標記的語言，可用來定義使用者介面。使用 XAML 語法，雖然執行階段行為，被定義在個別的程式碼後置檔案中 XML 檔案中定義的使用者介面。_
@@ -43,9 +38,13 @@ XAML 可選擇性地使用 XAML 編譯器 (XAMLC) 直接編譯成中繼語言 (I
 
 XAML 使用`xmlns`命名空間宣告的 XML 屬性。 本文介紹 XAML 命名空間語法，並示範如何宣告 XAML 命名空間，以存取的型別。
 
-## <a name="xaml-custom-namespace-schemascustom-namespace-schemasmd"></a>[XAML 自訂命名空間的結構描述](custom-namespace-schemas.md)
+## <a name="xaml-custom-namespace-schemascustom-namespace-schemasmd"></a>[XAML 自訂命名空間結構描述](custom-namespace-schemas.md)
 
 可以使用定義 XAML 自訂命名空間的結構描述`XmlnsDefinitionAttribute`類別，指定自訂 URL 與一或多個 CLR 命名空間之間的對應。 自訂命名空間的結構描述可用的 XAML 命名空間宣告。
+
+## <a name="xaml-namespace-recommended-prefixescustom-prefixmd"></a>[建議的前置詞的 XAML 命名空間](custom-prefix.md)
+
+`XmlnsPrefixAttribute`控制項作者會使用類別來指定要與 XAML 用法的 XAML 命名空間，產生關聯的建議前置詞。
 
 ## <a name="xaml-markup-extensionsmarkup-extensionsindexmd"></a>[XAML 標記延伸](markup-extensions/index.md)
 
