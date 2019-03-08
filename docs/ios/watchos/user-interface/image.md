@@ -22,7 +22,7 @@ ms.locfileid: "56321125"
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 若要將影像加入至監看式套件應用程式中使用資產目錄映像。
-只有**@2x** 版本是必要的因為所有監看 Retina 顯示器的裝置。
+只有 **@2x** 版本是必要的因為所有監看 Retina 顯示器的裝置。
 
 ![](image-images/asset-universal-sml.png "只有 2 個 x 版本是必要的因為所有監看 Retina 顯示器的裝置")
 
