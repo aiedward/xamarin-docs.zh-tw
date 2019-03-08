@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: bc404986a83d0150c490486c20f780bf4e7f5a9e
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: c9be74bcc6e5d149856e06c98d3bef9a841d4bab
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557200"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667304"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms 的項目
 
@@ -321,6 +321,9 @@ entry.BackgroundColor = Color.FromHex("#2c3e50");
 
 - [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) &ndash; 項目中的文字變更時引發。 變更之前和之後，請提供的文字。
 - [`Completed`](xref:Xamarin.Forms.Entry.Completed) &ndash; 當使用者在鍵盤上按 return 鍵結束輸入時引發。
+
+> [!NOTE]
+> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)類別，從其中[ `Entry` ](xref:Xamarin.Forms.Entry)繼承，也有[ `Focused` ](xref:Xamarin.Forms.VisualElement.Focused)並[ `Unfocused` ](xref:Xamarin.Forms.VisualElement.Unfocused)事件。
 
 ### <a name="completed"></a>已完成
 
