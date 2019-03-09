@@ -6,12 +6,12 @@ ms.assetid: 1D3261CE-AC96-4296-8A53-A76A42B927A8
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: 6445d595c9d8ca47e187fdcd158cd5a801a96407
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 42034261c374183346c8072eb42014f43a4fe22c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103201"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667603"
 ---
 # <a name="entities-in-cocossharp"></a>CocosSharp 中的實體
 
@@ -37,7 +37,7 @@ _實體的模式是強大的方式來組織遊戲的程式碼。它可改善可�
 
 遊戲的實體會定義物件需要轉譯、 衝突、 物理條件或人工智慧邏輯的類別。 幸運的是，遊戲的程式碼基底中的實體通常會符合在遊戲中的概念物件。 在這個情況下，識別在遊戲中所需的實體可以更輕鬆地完成。 
 
-例如，空間配置其佈景主題[限定是恨死它們讓精益求精](http://en.wikipedia.org/wiki/Shoot_%27em_up)可能包含下列實體：
+例如，空間配置其佈景主題[限定是恨死它們讓精益求精](https://en.wikipedia.org/wiki/Shoot_%27em_up)可能包含下列實體：
 
  - `PlayerShip`
  - `EnemyShip`

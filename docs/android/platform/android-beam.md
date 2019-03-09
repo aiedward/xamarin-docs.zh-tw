@@ -1,19 +1,19 @@
 ---
-title: Android 資料交換
+title: Android Beam
 ms.prod: xamarin
 ms.assetid: 4172A798-89EC-444D-BC0C-0A7DD67EF98C
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: 13a0a0d9c6a9d1d5f49020b1a8096f5e054d415c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9fcabc90875dda28ecdd5d94f1ca2f263ffe4886
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114921"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670840"
 ---
-# <a name="android-beam"></a>Android 資料交換
+# <a name="android-beam"></a>Android Beam
 
 Android 資料交換是接近欄位距離無線通訊 (NFC) 技術，可讓透過 NFC 在接近時共用資訊的應用程式的 Android 4.0 中導入。
 
@@ -85,4 +85,4 @@ NdefMessage msg = (NdefMessage) rawMsgs [0];
 
 - [Android 可以示範 （範例）](https://developer.xamarin.com/samples/monodroid/AndroidBeamDemo/)
 - [簡介 Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平台](http://developer.android.com/sdk/android-4.0.html)
+- [Android 4.0 平台](https://developer.android.com/sdk/android-4.0.html)

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 9ec27402aefd28ded4cf53e7e9fa52eedd2b86b6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 63164d90419f3a49d9eb52a52d02e05fbee43dbf
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103006"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667616"
 ---
 # <a name="gridview"></a>GridView
 
@@ -22,7 +22,7 @@ ms.locfileid: "50103006"
 
 開始新的專案，名為**HelloGridView**。
 
-尋找您想要使用時，部分相片或[下載這些範例映像](http://developer.android.com/shareables/sample_images.zip)。 將影像檔新增至專案的**資源/Drawable**目錄。 在 **屬性**視窗中，將 建置動作各自**AndroidResource**。
+尋找您想要使用時，部分相片或[下載這些範例映像](https://developer.android.com/shareables/sample_images.zip)。 將影像檔新增至專案的**資源/Drawable**目錄。 在 **屬性**視窗中，將 建置動作各自**AndroidResource**。
 
 開啟**Resources/Layout/Main.axml**檔案，並插入下列：
 

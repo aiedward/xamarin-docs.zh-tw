@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2018
-ms.openlocfilehash: 75b78f27fd6b3a726de9075ce36364168401ec60
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171466"
 ---
+
 # <a name="android-wear"></a>Android Wear
 
 Android Wear 是 android 的專為到穿戴裝置，例如智慧型手錶版本。 本節包含有關如何安裝及設定 Wear 開發，建立第一個 Wear 裝置，以及一份您可以參考來建立您自己穿戴式應用程式的範例的逐步解說所需的工具。
@@ -54,7 +49,7 @@ Android 開發人員網站會提供這類金鑰穿戴式 Api 的詳細的資訊[
 |[WatchViewStub](https://developer.xamarin.com/samples/WatchViewStub/)|偵測到畫面的圖形，並自動載入正確的版面配置的 WatchViewStub 控制項的簡單示範。  請參閱 WatchViewStub 中的運作方式**Resources/layout/main_activity.xml**版面配置。|![WatchViewStub 的螢幕擷取畫面](images/watchview.png)|
 |[RecipeAssistant](https://developer.xamarin.com/samples/RecipeAssistant/)|中的配方步驟形式的損耗通知頁面的示範。 通知被建立在 RecipeService.cs。|![RecipeAssistant 的螢幕擷取畫面](images/recipeassist.png)|
 |[ElizaChat](https://developer.xamarin.com/samples/ElizaChat/)|與 「 個人助理 」 互動的有趣的範例會呼叫 Eliza，若要建立使用現成的回應的交談使用 Wear 互動式的通知。|![ElizaChat 的螢幕擷取畫面](images/eliza.png)|
-|[GridViewPager](https://developer.xamarin.com/samples/GridViewPager/)|GridViewPager 實作 2D 瀏覽模式中，其中使用者 swipes 垂直和水平擴展至瀏覽選項和內容。|![GridViewPager 的螢幕擷取畫面](images/gridviewpager.png)|
+|[GridViewPager](https://developer.xamarin.com/samples/GridViewPager/)|GridViewPager 實作 2D 瀏覽模式中，其中使用者 swipes 垂直和水平擴展至瀏覽選項和內容。|![Screenshot of GridViewPager](images/gridviewpager.png)|
 |[WatchFace](https://developer.xamarin.com/samples/monodroid/wear/WatchFace)|WatchFace 是自訂錶面與類比樣式小時、 分鐘和第二個實際操作。 這個範例會示範如何建立監看式臉部服務繪製目前的時間和環境控制代碼的模式和可見度變更事件。 它包含廣播的接收器接聽時區的變更，並會自動隨之更新的時間。|![WatchFace 的螢幕擷取畫面](images/gridviewpager.png)|
 
 
@@ -64,21 +59,21 @@ Android 開發人員網站會提供這類金鑰穿戴式 Api 的詳細的資訊[
 
 |描述|螢幕擷取畫面|
 |--- |--- |
-|[Android L 及更多](http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/) &ndash; Android L Developer Preview 導入眾多新的 Api，讓開發人員充分發揮運用，包括 Material Design、 通知和新的動畫，等等。|![簡報的影片的螢幕擷取畫面](images/video-android-l.png)|
-|[C#在我耳朵和我的眼睛： Google Glass 和 Android Wear](https://www.youtube.com/watch?v=80H8tXByZQc) &ndash;到穿戴運算可能看起來很喜歡從未來 （或偵測器的小工具集），但許多人目前已採用未來 ！ C#開發人員知道這，而且已經有的工具和技巧，以充分利用到穿戴裝置 （從發展 2014)。|![簡報的影片的螢幕擷取畫面](images/video-eyes-ears.png)|
+|[Android L 及更多](https://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/) &ndash; Android L Developer Preview 導入眾多新的 Api，讓開發人員充分發揮運用，包括 Material Design、 通知和新的動畫，等等。|![簡報的影片的螢幕擷取畫面](images/video-android-l.png)|
+|[C#是我的眼睛和我耳朵中：Google Glass 和 Android Wear](https://www.youtube.com/watch?v=80H8tXByZQc) &ndash;到穿戴運算可能看起來很喜歡從未來 （或偵測器的小工具集），但許多人目前已採用未來 ！ C#開發人員知道這，而且已經有的工具和技巧，以充分利用到穿戴裝置 （從發展 2014)。|![簡報的影片的螢幕擷取畫面](images/video-eyes-ears.png)|
 |[在 Xamarin.Android 中最新消息](https://www.youtube.com/watch?v=Gpqc2XZIQfU) &ndash; Android L、 Android Wear、 Android TV、 Android Auto、 材料設計和圖案; 此為 Xamarin 開發人員呢？ 從發展 2014年。|![簡報的影片的螢幕擷取畫面](Images/video-whats-new.png)|
 
 
 <!--
 
 March 18
-http://blog.xamarin.com/android-wear/
+https://blog.xamarin.com/android-wear/
 
 August 14
-http://blog.xamarin.com/android-l-developer-preview-android-wear-support/
+https://blog.xamarin.com/android-l-developer-preview-android-wear-support/
 
 August 27
-http://blog.xamarin.com/tips-for-your-first-android-wear-app/
+https://blog.xamarin.com/tips-for-your-first-android-wear-app/
 
 Watch Face
 https://github.com/Redth/Xamarin.Wear.WatchFace

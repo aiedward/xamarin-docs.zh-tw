@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/5/2018
-ms.openlocfilehash: 02c95fbdde8b264fc34d5a8785be03b2dfcddba7
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: 2f46638afe1aca74b572050e00bfc4a85d1d963d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267348"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669150"
 ---
 # <a name="troubleshooting-ios-12-development-with-xamarin"></a>使用 Xamarin 進行 iOS 12 開發的疑難排解
 
@@ -41,4 +41,4 @@ ms.locfileid: "53267348"
 若要討論有關如何在 Xamarin.iOS 中實作特定 iOS 12 功能的問題，看看：
 
 - [Xamarin 論壇](http://forums.xamarin.com/categories/ios)
-- [堆疊溢位](http://stackoverflow.com/search?tab=newest&q=xamarin)
+- [堆疊溢位](https://stackoverflow.com/search?tab=newest&q=xamarin)

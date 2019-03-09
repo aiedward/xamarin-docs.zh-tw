@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 22b6fd101c0b983fe7b4a7d0891dc4674a11a02a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6793190fa3278455a00d7ea08ab52a643c369a35
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121187"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672816"
 ---
 # <a name="homekit-in-xamarinios"></a>在 Xamarin.iOS 中 HomeKit
 
@@ -39,7 +39,7 @@ HomeKit 會組織成首頁集合的指定位置中的所有自動化裝置。 �
 常用的集合會儲存在常用組態資料庫，會自動備份和同步處理所有使用者的 iOS 裝置。 HomeKit 使用首頁設定資料庫提供下列類別：
 
 - `HMHome` -這是在單一實體位置 （例如保留所有資訊和組態的所有家用自動化裝置的最上層容器。 一系列的居住地)。 使用者可能會有一個以上的居住地，例如其主要的家用和休假房屋。 或者，它們可能會有不同 「 樹木上相同的屬性，例如主要的房屋和透過車庫客體房屋。 無論如何，至少一個`HMHome`物件_必須_設定和儲存之前，您可以輸入任何其他 HomeKit 資訊。
-- `HMRoom` -While 選擇性的`HMRoom`可讓使用者定義特定房間內的首頁 (`HMHome`) 這類： 廚房、 臥、 車庫或起居室的絨布。 使用者可以將群組的所有家用自動化裝置到他們家中的特定位置中`HMRoom`和做為一個單位處理它們。 例如，要求 Siri 車庫關燈。
+- `HMRoom` -While 選擇性的`HMRoom`可讓使用者定義特定房間內的首頁 (`HMHome`) 這類：廚房、 臥、 車庫或起居室的絨布。 使用者可以將群組的所有家用自動化裝置到他們家中的特定位置中`HMRoom`和做為一個單位處理它們。 例如，要求 Siri 車庫關燈。
 - `HMAccessory` -這表示個別、 實體 HomeKit 啟用自動化的裝置已安裝的使用者居住地 （例如智慧控溫器）。 每個`HMAccessory`指派給`HMRoom`。 如果使用者尚未設定任何房間，HomeKit 會將附屬應用程式指派至特殊的預設聊天室。
 - `HMService` -代表所提供的服務指定`HMAccessory`，例如光線或其色彩 （如果有色彩變更為支援） 的開啟/關閉狀態。 每個`HMAccessory`可以有一個以上的服務，例如車庫門開啟器也包含光線。 此外，指定`HMAccessory`可能服務，例如韌體更新、 外部使用者控制項。
 - `HMZone` -可讓使用者群組的集合`HMRoom`成邏輯區域，例如樓上、 Downstairs 或地下室的物件。 雖然是選擇性的這可讓互動，例如要求使用 Siri 開啟所有燈號 downstairs 關閉。
@@ -52,7 +52,7 @@ HomeKit 所加諸的安全性需求，因為使用 HomeKit 架構的 Xamarin.iOS
 
 請執行下列動作：
 
-1. 登入[Apple 開發人員入口網站](http://developer.apple.com)。
+1. 登入[Apple 開發人員入口網站](https://developer.apple.com)。
 2. 按一下 **憑證、 識別碼與設定檔**。
 3. 如果您尚未這麼做，按一下**識別碼**並建立您的應用程式的識別碼 (例如`com.company.appname`)，否則請編輯您現有的識別碼。
 4. 請確認**HomeKit**已核取指定之識別碼的服務： 
@@ -410,7 +410,7 @@ HomeKit 配件模擬器中可以找到這個數字之下**安裝程式碼**欄�
  - CurrentSecuritySystemState
  - CurrentTemperature
  - CurrentVerticalTilt
- - Firmwareversion>12
+ - FirmwareVersion
  - HardwareVersion
  - HeatingCoolingStatus
  - HeatingThreshold
@@ -667,7 +667,7 @@ Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
 這篇文章已涵蓋與 HomeKit 配件的 Xamarin.iOS 應用程式中使用所需的基本功能。 不過，有幾項進階的功能的 HomeKit 未涵蓋在本簡介：
 
 - **聊天室**-啟用 HomeKit 配件可以選擇性地分成終端使用者的聊天室。 這可讓 HomeKit 存在的附屬應用程式，讓使用者了解及使用簡單的方式。 如需有關建立和維護聊天室的詳細資訊，請參閱 Apple [HMRoom](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/cl/HMRoom)文件。
-- **區域**-聊天室可以選擇性地組織成區域為終端使用者。 區域是指使用者可能會視為單一單位的房間內的集合。 例如： 樓上、 Downstairs 或地下室。 同樣地，這可讓 HomeKit 呈現，並使用 附屬應用程式對使用者有意義的方式。 如需有關建立和維護區域的詳細資訊，請參閱 Apple [HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone)文件。
+- **區域**-聊天室可以選擇性地組織成區域為終端使用者。 區域是指使用者可能會視為單一單位的房間內的集合。 例如: 樓上，Downstairs 或地下室。 同樣地，這可讓 HomeKit 呈現，並使用 附屬應用程式對使用者有意義的方式。 如需有關建立和維護區域的詳細資訊，請參閱 Apple [HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone)文件。
 - **動作和動作設定**-動作修改配件服務特性，並可分組為設定。 動作集做為控制一群附屬應用程式，並協調其動作的指令碼。 比方說，「 監看電視 」 指令碼可能會關閉隱蔽、 變暗，並開啟電視和其音效的系統。 如需有關建立和維護動作和動作設定的詳細資訊，請參閱 Apple [HMAction](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMAction_Class/index.html#//apple_ref/occ/cl/HMAction)並[HMActionSet](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/cl/HMActionSet)文件。
 - **觸發程序**-觸發程序可以啟動其中一個或多個動作時，設定一組指定的條件已符合。 比方說，開啟 portch 光線，並收到深色之外時，鎖定所有外部的門。 如需有關建立和維護觸發程序的詳細資訊，請參閱 Apple [HMTrigger](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/cl/HMTrigger)文件。
 
@@ -691,14 +691,14 @@ Apple 已進行下列變更和新功能 HomeKit 適用於 iOS 9:
 - **持續性識別項**-所有相關的 HomeKit 類別現在包含`UniqueIdentifier`屬性來唯一識別指定的項目，跨 HomeKit 啟用應用程式 （或相同的應用程式的執行個體）。
 - **使用者管理**-加入內建的檢視控制器中的主要使用者的首頁有 HomeKit 裝置的存取權的使用者提供使用者管理。
 - **使用者功能**-HomeKit 使用者現在可以控制他們就能夠使用 HomeKit 中哪些函式的權限的一組與 HomeKit 啟用 附屬應用程式。 您的應用程式應該只會顯示目前的使用者相關功能。 比方說，只有系統管理員應該能夠維護其他使用者。
-- **預先定義的場景**-四個常見的事件發生的平均 HomeKit 使用者已建立預先定義的場景： 啟動、 保留、 傳回，請移至平台。 無法從首頁中刪除這些預先定義的場景。
+- **預先定義的場景**-四個常見的事件發生的平均 HomeKit 使用者已建立預先定義的場景：啟動、 保留、 傳回，請移至平台。 無法從首頁中刪除這些預先定義的場景。
 - **場景和 Siri** -Siri 有更深入的支援，如場景中 iOS 9 和可以辨認 HomeKit 中定義任何場景的名稱。 使用者可以執行場景，只要談到 Siri 其名稱。
 - **配件類別**-已新增至所有的附屬應用程式和可協助您識別要新增至首頁的附屬應用程式的類型或處理從應用程式內一組預先定義的類別。 這些新的類別可在附屬應用程式安裝期間。
-- **Apple Watch 支援**-HomeKit 現已供 watchOS 和 Apple Watch 都能夠 HomeKit 正在監看式附近 iPhone 不啟用裝置的控制項。 為 watchOS HomeKit 支援下列功能： 檢視住家、 控制 附屬應用程式和執行的場景。
+- **Apple Watch 支援**-HomeKit 現已供 watchOS 和 Apple Watch 都能夠 HomeKit 正在監看式附近 iPhone 不啟用裝置的控制項。 為 watchOS HomeKit 支援下列功能：檢視、 住家控制 附屬應用程式，以及執行場景。
 - **新增事件觸發程序類型**-除了支援 iOS 8，iOS 9 現在支援事件觸發程序根據附屬應用程式狀態 （例如感應器資料） 或地理位置中的計時器類型觸發程序。 事件觸發程序使用`NSPredicates`設定為其執行的條件。
 - **遠端存取**-與遠端存取，使用者現在就可以控制其 HomeKit 遠離房子的遠端位置時，請啟用家用自動化附屬應用程式。 在 iOS 8 中已當才支援此使用者具有一個 Apple TV，在家中的第 3 層代。 在 iOS 9 中，則會消除這項限制，並透過 iCloud 與 HomeKit 配件通訊協定 (HAP) 支援遠端存取。
 - **新的藍牙低功耗 (BLE) 能力**-HomeKit 現在支援更多配件的類型可透過藍牙低功耗 (BLE) 通訊協定進行通訊。 使用安全通道 HAP，HomeKit 配件可以公開其他藍牙配件透過 Wi-fi （如果它是超出藍芽範圍）。 在 iOS 9、 BLE 附屬應用程式會有完整支援通知和中繼資料。
-- **新的附屬應用程式類別目錄**-Apple 在 iOS 9 中新增下列新的附屬應用程式類別目錄： 窗簾、 機械化門和 Windows、 警報系統、 感應器和可程式化的參數。
+- **新的附屬應用程式類別目錄**-Apple 在 iOS 9 中新增下列新的附屬應用程式類別目錄：窗簾、 機械化的門和 Windows、 警報系統、 感應器和可程式化的參數。
 
 如 HomeKit iOS 9 中的新功能的相關詳細資訊，請參閱 Apple [HomeKit 索引](https://developer.apple.com/homekit/)並[What's New in HomeKit](https://developer.apple.com/videos/wwdc/2015/?id=210)視訊。
 

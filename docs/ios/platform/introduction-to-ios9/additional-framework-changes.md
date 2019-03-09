@@ -6,12 +6,13 @@ ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: da7064997b8a10d4a4604861a405e13dd23a08cf
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.date: 03/19/2017
+ms.openlocfilehash: f7106c9b23fa71b32043ef8190691d798c36370d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233909"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672569"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>其他 iOS 9 架構變更
 
@@ -195,9 +196,9 @@ Apple 已包含了許多增強功能的數個項目[UIKit](xref:UIKit)適用於 
 
 ### <a name="3d-touch-events"></a>3D 觸控事件
 
-IOS 9 和 iPhone 6s 和 iPhone 6s 新手此外，3D 觸控，請將您的 iOS 應用程式的壓力機密的筆勢。 如此一來，在 iOS 9 （或更新版本） 上執行應用程式和 iOS 裝置可以支援的 3D 觸控，如果變更在壓力會導致`TouchesMoved`會引發事件。 
+IOS 9 和 iPhone 6s 和 iPhone 6s 新手此外，3D 觸控，請將您的 iOS 應用程式的壓力機密的筆勢。 如此一來，在 iOS 9 （或更新版本） 上執行應用程式和 iOS 裝置可以支援的 3D 觸控，如果變更在壓力會導致`TouchesMoved`會引發事件。
 
-此行為變更，因為您的 iOS 應用程式應該準備`TouchesMoved`頻率，叫用事件即使 X / Y 座標維持不變。 
+此行為變更，因為您的 iOS 應用程式應該準備`TouchesMoved`頻率，叫用事件即使 X / Y 座標維持不變。
 
 如需詳細資訊，請參閱我們[3D 觸控簡介](~/ios/platform/3d-touch.md)指南。
 

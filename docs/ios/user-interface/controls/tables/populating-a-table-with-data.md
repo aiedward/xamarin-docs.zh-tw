@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 859afcf6ab9f3acfb56104fa68683ba28d913ce4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5363e3a2210bdcf1efb870ac808ecb37584de6a7
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117122"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668916"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>使用 Xamarin.iOS 中的資料填入資料表
 
@@ -34,7 +34,7 @@ A`UITableViewSource`子類別會指派至每個`UITableView`。 資料表檢視�
 
 只有兩個資料表顯示資料所需的必要方法有：
 
--   **RowsInSection** – 傳回[ `nint` ](http://developer.xamarin.com/guides/cross-platform/macios/nativetypes/)應該會顯示資料表的資料列總數的計數。
+-   **RowsInSection** – 傳回[ `nint` ](https://developer.xamarin.com/guides/cross-platform/macios/nativetypes/)應該會顯示資料表的資料列總數的計數。
 -   **GetCell** – 傳回`UITableCellView`填入傳遞給方法的對應資料列索引的資料。
 
 

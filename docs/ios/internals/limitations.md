@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: bb8aec5a5054c28cf7862d14148e7f2000fa3a35
-ms.sourcegitcommit: c77f84a0686d16de6ac630271fccac719fd9eec4
+ms.openlocfilehash: a6a4ef9fb36fde067fa58fec9a6206b1dbc1fbf0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56307914"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668344"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin.iOS 的限制
 
@@ -27,7 +27,7 @@ ms.locfileid: "56307914"
 
 不同於傳統 Mono/.NET，iPhone 上的程式碼會以靜態方式編譯而不是由 JIT 編譯器正在編譯視事先。
 
-Mono[完整 AOT](http://www.mono-project.com/docs/advanced/aot/#full-aot)技術有幾項限制對於泛型，因為您可以事先判斷不是每個可能的泛型具現化，在編譯時期，這些造成。 因為程式碼一律會在執行階段使用 Just in 編譯器編譯，這是不一般的.NET 或 Mono 執行階段發生問題。 但是，這會造成類似 Xamarin.iOS 靜態編譯器的挑戰。
+Mono[完整 AOT](https://www.mono-project.com/docs/advanced/aot/#full-aot)技術有幾項限制對於泛型，因為您可以事先判斷不是每個可能的泛型具現化，在編譯時期，這些造成。 因為程式碼一律會在執行階段使用 Just in 編譯器編譯，這是不一般的.NET 或 Mono 執行階段發生問題。 但是，這會造成類似 Xamarin.iOS 靜態編譯器的挑戰。
 
 一些常見的問題，開發人員執行，包括：
 

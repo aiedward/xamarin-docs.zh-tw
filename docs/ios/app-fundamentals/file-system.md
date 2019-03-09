@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/12/2018
-ms.openlocfilehash: 38422682849de60a3f43e513ef48011d32b030ef
-ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.openlocfilehash: 09e05fcfe10a994e14aa605b203ea67efae80d62
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579865"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672621"
 ---
 # <a name="file-system-access-in-xamarinios"></a>在 Xamarin.iOS 中的檔案系統存取
 
 [![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/FileSystemSampleCode/)
 
-您可以使用 Xamarin.iOS 和`System.IO`中的類別 *.NET 基底類別庫 (BCL)* 存取 iOS 檔案系統。 `File`類別可讓您建立、 刪除和讀取檔案，而`Directory`類別可讓您建立、 刪除或列舉目錄的內容。 您也可以使用`Stream`子類別，其可提供更高的控制檔案作業 （例如壓縮或位置搜尋檔案中）。
+您可以使用 Xamarin.iOS 和`System.IO`中的類別 *.NET 基底類別庫 (BCL)* 存取 iOS 檔案系統。 `File` 類別可讓您建立、刪除和讀取檔案，而 `Directory` 類別可讓您建立、刪除或列舉目錄內容。 您也可以使用`Stream`子類別，其可提供更高的控制檔案作業 （例如壓縮或位置搜尋檔案中）。
 
 iOS 會為應用程式可進行以檔案系統保留的應用程式資料的安全性，保護使用者免於惡意應用程式的一些限制。 這些限制屬於*應用程式沙箱*– 一組規則，以限制對檔案喜好設定、 網路資源、 硬體、 等的應用程式的存取。應用程式只限於讀取和寫入其主目錄 （安裝位置;） 中的檔案它無法存取另一個應用程式的檔案。
 
@@ -205,7 +205,7 @@ iOS 使用正斜線 '/' 做為路徑分隔符號 (這是不同於 Windows，它�
 |程式庫 /|程式庫目錄是不直接由使用者，例如資料庫或其他應用程式所產生的檔案建立的檔案儲存的好地方。 使用者可透過 iTunes 永遠不會公開此目錄的內容。<br /><br />您可以在程式庫; 來建立您自己的子目錄不過，已經有某些系統建立目錄這裡，您應該留意，包括喜好設定和快取。<br /><br />此目錄 （除了 [快取] 子目錄中） 的內容會由 iTunes。 將備份您在程式庫中建立的自訂目錄。|
 |喜好設定程式庫 / /|應用程式特定的喜好設定檔案會儲存在此目錄中。 請勿直接建立這些檔案。 請改用`NSUserDefaults`類別。<br /><br />此目錄的內容會由 iTunes。|
 |快取程式庫 / /|儲存資料檔案，可協助您的應用程式的好地方執行，但可輕鬆地重新建立快取目錄。 應用程式應該建立和刪除這些檔案，視需要以及能夠視需要重新建立這些檔案。 不過，它並不是應用程式執行時，iOS 5 可能也會刪除 （在低的儲存體的情況下），這些檔案。<br /><br />此目錄的內容不會備份透過 iTunes，這表示它們不會出現，如果使用者會將裝置還原，和他們可能不存在之後安裝您的應用程式的更新的版本。<br /><br />比方說，如果您的應用程式無法連線到網路，您可能會使用快取目錄來儲存資料或檔案，可提供良好的離線體驗。 應用程式可以儲存及快速擷取這項資料，同時等候網路回應，但它不需要進行備份，可以輕鬆地復原或還原或版本更新之後重新建立。|
-|tmp /|應用程式可以儲存只在短期間內，此目錄中所需的暫存檔案。 為了節省空間，應該在不再需要時刪除檔案。 當應用程式未在執行作業系統也可能會從這個目錄刪除檔案。<br /><br />此目錄的內容不會透過 iTunes 備份。<br /><br />比方說，tmp 目錄可能會用來儲存暫存檔案，以便顯示給使用者 （例如 Twitter 虛擬人偶或電子郵件附件），會下載，但一旦他們已被檢視 （並如有必要在未來再次下載） 無法刪除，.|
+|tmp/|應用程式可以儲存只在短期間內，此目錄中所需的暫存檔案。 為了節省空間，應該在不再需要時刪除檔案。 當應用程式未在執行作業系統也可能會從這個目錄刪除檔案。<br /><br />此目錄的內容不會透過 iTunes 備份。<br /><br />比方說，tmp 目錄可能會用來儲存暫存檔案，以便顯示給使用者 （例如 Twitter 虛擬人偶或電子郵件附件），會下載，但一旦他們已被檢視 （並如有必要在未來再次下載） 無法刪除，.|
 
 這個螢幕擷取畫面會顯示在尋找工具視窗中的目錄結構：
 
@@ -357,5 +357,5 @@ Console.WriteLine ("Group Path: " + appGroupContainerPath);
 ## <a name="related-links"></a>相關連結
 
 - [檔案系統的範例程式碼](https://developer.xamarin.com/samples/FileSystemSampleCode/)
-- [檔案系統程式設計指南](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/Introduction/Introduction.html)
-- [註冊檔案類型的應用程式支援](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html#/apple_ref/doc/uid/TP40010411-SW1)
+- [檔案系統程式設計指南](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/Introduction/Introduction.html)
+- [註冊檔案類型的應用程式支援](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html#/apple_ref/doc/uid/TP40010411-SW1)

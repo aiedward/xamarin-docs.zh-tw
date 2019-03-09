@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials：手電筒
+title: Xamarin.Essentials:手電筒
 description: 本文件描述 Xamarin.Essentials 中的手電筒類別，可以開啟或關閉裝置的相機閃光燈，將其變為手電筒。
 ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 3f8e9e2e8608467367af6523c8b89bd8f757d491
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: c2caf1583e3099903cb0b05628ed6b2984a954d9
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899053"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671412"
 ---
-# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials：手電筒
+# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials:手電筒
 
 **手電筒**類別可以開啟或關閉裝置相機閃光燈，將其變為手電筒。
 
@@ -44,7 +44,7 @@ ms.locfileid: "52899053"
 
 禍以滑鼠右鍵按一 Android 專案並開啟專案的屬性。 在 [Android 資訊清單] 下，尋找 [必要權限] 區域並選取 [手電筒] 和 [相機] 權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
 
-藉由新增這些權限，[Google Play 會自動篩選掉裝置](http://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features)，不含特定硬體。 您可以透過將下列內容新增至 Android 專案中的 AssemblyInfo.cs 檔案來解決此問題：
+藉由新增這些權限，[Google Play 會自動篩選掉裝置](https://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features)，不含特定硬體。 您可以透過將下列內容新增至 Android 專案中的 AssemblyInfo.cs 檔案來解決此問題：
 
 ```csharp
 [assembly: UsesFeature("android.hardware.camera", Required = false)]

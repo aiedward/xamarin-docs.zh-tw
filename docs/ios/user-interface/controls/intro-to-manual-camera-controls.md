@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 84c4b699ba2c046eeb70963f3df71ca9a4760f3b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c61b3fee9009afb86ccd3fd0e16d7812a8e90feb
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104176"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672790"
 ---
 # <a name="manual-camera-controls-in-xamarinios"></a>在 Xamarin.iOS 中手動相機控制項
 
@@ -276,7 +276,7 @@ AV 擷取工作階段用來控制 iOS 裝置的相機的即時視訊錄製，也
 
 允許使用者直接取得焦點的控制項，應用程式可以提供比較有藝術天份控制擷取的映像。
 
-比方說，專業攝影師可以減輕的映像以達到焦點[散景效果](http://en.wikipedia.org/wiki/Bokeh):
+比方說，專業攝影師可以減輕的映像以達到焦點[散景效果](https://en.wikipedia.org/wiki/Bokeh):
 
 [![](intro-to-manual-camera-controls-images/image2.png "散景效果")](intro-to-manual-camera-controls-images/image2.png#lightbox)
 
@@ -517,7 +517,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 三個基本項目一起控制風險︰
 
 -  **快門速度**– 這是按下快門已開啟，讓相機感應器上的光的時間長度。 較短快門已開啟，時間較少的光讓和更清晰的影像是模糊 （較少影片程度）。 長按下快門開啟時，更多的光 let 在時間和更多動作，就會發生的模糊。
--  **ISO 對應**– 這是取自影片攝影的詞彙，指的中點亮影片化學藥品敏感度。 在影片中的低 ISO 值有較少的資料粒度和更細微的色彩重現;數位感應器上的低 ISO 值有剩餘的感應器干擾較少但較少的亮度。 的 ISO 值越高，較鮮亮的映像但具有多個感應器雜訊。 數位感應器上的"ISO"是指量[electronic 提升](http://en.wikipedia.org/wiki/Gain)，不是實體的功能。 
+-  **ISO 對應**– 這是取自影片攝影的詞彙，指的中點亮影片化學藥品敏感度。 在影片中的低 ISO 值有較少的資料粒度和更細微的色彩重現;數位感應器上的低 ISO 值有剩餘的感應器干擾較少但較少的亮度。 的 ISO 值越高，較鮮亮的映像但具有多個感應器雜訊。 數位感應器上的"ISO"是指量[electronic 提升](https://en.wikipedia.org/wiki/Gain)，不是實體的功能。 
 -  **功能濾鏡 Aperture** – 這是功能濾鏡開頭的大小。 所有 iOS 裝置上功能濾鏡 aperture 被固定的因此可以用來調整曝光只有兩個值的快門和 ISO。
 
 
@@ -817,7 +817,7 @@ CaptureDevice.UnlockForConfiguration();
 
 之前討論的控制 IOS 8 應用程式中的白平衡的詳細資料。 讓我們看一下如何白平衡的運作方式：
 
-在研究的色彩 perception [CIE 1931 RGB 色彩空間和 CIE 1931 XYZ 色彩空間](http://en.wikipedia.org/wiki/CIE_1931_color_space)是第一個數學上定義的色彩空間。 它們是由國際佣金上照明 (CIE) 建立 1931年中。
+在研究的色彩 perception [CIE 1931 RGB 色彩空間和 CIE 1931 XYZ 色彩空間](https://en.wikipedia.org/wiki/CIE_1931_color_space)是第一個數學上定義的色彩空間。 它們是由國際佣金上照明 (CIE) 建立 1931年中。
 
 [![](intro-to-manual-camera-controls-images/image17.png "CIE 1931 RGB 色彩空間和 CIE 1931 XYZ 色彩空間")](intro-to-manual-camera-controls-images/image17.png#lightbox)
 
@@ -825,7 +825,7 @@ CaptureDevice.UnlockForConfiguration();
 
 為顯示在圖形中，有可超出範圍的人性化的願景，就是在圖形繪製的 X 和 Y 值，因此無法由相機重現這些色彩。
 
-會呼叫上述圖表中較小的曲線[Planckian 出自於](http://en.wikipedia.org/wiki/Planckian_locus)，這表示 （以度為單位 kelvin) 更高的數字 （建築物） 藍色一端色溫和較低數字 （冷卻器） 」 的紅色一端。 這些是一般的光源相當有用。
+會呼叫上述圖表中較小的曲線[Planckian 出自於](https://en.wikipedia.org/wiki/Planckian_locus)，這表示 （以度為單位 kelvin) 更高的數字 （建築物） 藍色一端色溫和較低數字 （冷卻器） 」 的紅色一端。 這些是一般的光源相當有用。
 
 在混合的光源條件的白平衡調整必須偏離 Planckian 出自於，來進行必要的變更。 在這些情況下，需要調整来移位到綠色或紅色/洋紅一端 CIE 縮放。
 

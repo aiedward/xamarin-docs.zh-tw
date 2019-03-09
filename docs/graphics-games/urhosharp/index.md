@@ -6,12 +6,6 @@ ms.assetid: E6C5B86C-3756-49DF-843B-0B3D981E1C01
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 8a3663a6fb0e9bfe3970bcca5769181fca34ae43
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "33920516"
 ---
 # <a name="urhosharp---3d2d-engine"></a>UrhoSharp-3D/2D 引擎
 
@@ -19,7 +13,7 @@ _UrhoSharp 是跨平台高階 3D 和 2D 引擎，可用來建立動畫的 3D 和
 
 ![範例 UrhoSharp 遊戲](images/video.gif)
 
-可以安裝在 Visual Studio 或 Visual Studio for Mac，而且可用來以任何下列平台為目標的 NuGet 套件形式散發 UrhoSharp: Android、 MacOS、 iOS、 tvOS 和 Windows。
+可以安裝在 Visual Studio 或 Visual Studio for Mac，而且可用來以任何下列平台為目標的 NuGet 套件形式散發 UrhoSharp:Android、 MacOS、 iOS、 tvOS 和 Windows。
 
 ## <a name="an-introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[簡介 UrhoSharp](~/graphics-games/urhosharp/introduction.md)
 
@@ -33,9 +27,9 @@ _UrhoSharp 是跨平台高階 3D 和 2D 引擎，可用來建立動畫的 3D 和
 
 這些指南會描述每個目標平台上的 Urho 的安裝指示，並說明 Urho 整合您現有的 Android 和 iOS 應用程式的方式。
 
-## <a name="programming-urhosharp-with-fgraphics-gamesurhosharpfsharpmd"></a>[使用 F # 進行 UrhoSharp 程式設計](~/graphics-games/urhosharp/fsharp.md)
+## <a name="programming-urhosharp-with-fgraphics-gamesurhosharpfsharpmd"></a>[與進行 UrhoSharp 程式設計F#](~/graphics-games/urhosharp/fsharp.md)
 
-本指南會逐步建立簡單"Hello，World ！" F # 和 Visual Studio for mac 中使用 UrhoSharp 解決方案
+本指南會逐步建立簡單"Hello，World ！" UrhoSharp 解決方案使用F#和 Visual Studio for mac。
 
 ## <a name="api-documentationhttpsdeveloperxamarincomapirooturho"></a>[API 文件](https://developer.xamarin.com/api/root/Urho/)
 
@@ -43,7 +37,7 @@ _UrhoSharp 是跨平台高階 3D 和 2D 引擎，可用來建立動畫的 3D 和
 
 ## <a name="samples"></a>範例
 
-我們建立了[GitHub 上的範例](http://github.com/xamarin/urho-samples)說明如何使用 UrhoSharp。
+我們建立了[GitHub 上的範例](https://github.com/xamarin/urho-samples)說明如何使用 UrhoSharp。
 
 - **FeatureSamples**顯示超過 40 個個別的範例展示的 Urho 的特定功能。
 

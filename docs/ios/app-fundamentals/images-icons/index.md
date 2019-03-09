@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 09afcac8dcecd5a1d05961c2981c0940fff00a01
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102356"
 ---
+
 # <a name="images-and-icons-in-xamarinios"></a>映像和在 Xamarin.iOS 中的圖示
 
 _本節包含各種不同的文章，涵蓋使用 Xamarin.iOS 應用程式，例如使用它們以圖示中的映像，啟動畫面，或它們包括在控制項，並提供自訂的文件類型的圖示。_
@@ -66,4 +61,4 @@ Apple iOS 10.3 可讓應用程式來管理它的圖示已新增數個增強功�
 
 - [使用映像 （範例）](https://developer.xamarin.com/samples/WorkingWithImages/)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
-- [自訂圖示和影像建立指導方針](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)
+- [自訂圖示和影像建立指導方針](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

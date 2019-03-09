@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 16ef0d5a309281767f0fff27436dd5bec322169d
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: e71e79b58d912ecb697576e92ae921a848f24f4c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527387"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671157"
 ---
 # <a name="alternate-resources"></a>替代資源
 
 替代的資源為目標的特定裝置或執行階段組態，例如目前的語言、 特定的螢幕大小或像素密度這些資源。 如果 Android 可以比對特定裝置或設定預設的資源比更特定的資源，則該資源將會改用。 如果找不到符合目前的組態的其他資源，然後將其載入的預設資源。 如何決定 Android 應用程式將使用哪些資源將涵蓋更詳細，在 [資源位置] 區段
 
-替代的資源會組織為根據的資源類型，如同預設資源的 [資源] 資料夾內的子目錄。 替代資源子目錄的名稱的格式： _ResourceType_-_限定詞_
+替代的資源會組織為根據的資源類型，如同預設資源的 [資源] 資料夾內的子目錄。 替代資源子目錄的名稱的格式：_ResourceType_-_Qualifier_
 
 *限定詞*會識別特定的裝置組態的名稱。
 名稱，每個破折號分隔，可能會有一個以上的限定詞。 例如，以下螢幕擷取畫面會顯示簡單的專案具有不同的設定，例如地區設定、 螢幕密度、 螢幕大小和方向的替代資源：
@@ -43,10 +43,10 @@ ms.locfileid: "51527387"
 
 以下列出可能的辨識符號的參考：
 
-- **MCC 和 MNC** &ndash; [行動裝置的國家/地區代碼](http://en.wikipedia.org/wiki/List_of_mobile_country_codes)(MCC) 和 （選擇性）[行動網路代碼](http://en.wikipedia.org/wiki/Mobile_Network_Code)(MNC)。 SIM 卡將提供的 MCC，而裝置連線到網路會提供 MNC。 雖然可以使用行動裝置的國家/地區程式碼的目標地區設定，但建議方法是使用下面指定的語言辨識符號。 例如，德國、 目標資源限定詞會`mcc262`。 在美國，T-行動裝置的目標資源限定詞`mcc310-mnc026`。
+- **MCC 和 MNC** &ndash; [行動裝置的國家/地區代碼](https://en.wikipedia.org/wiki/List_of_mobile_country_codes)(MCC) 和 （選擇性）[行動網路代碼](https://en.wikipedia.org/wiki/Mobile_Network_Code)(MNC)。 SIM 卡將提供的 MCC，而裝置連線到網路會提供 MNC。 雖然可以使用行動裝置的國家/地區程式碼的目標地區設定，但建議方法是使用下面指定的語言辨識符號。 例如，德國、 目標資源限定詞會`mcc262`。 在美國，T-行動裝置的目標資源限定詞`mcc310-mnc026`。
   如需完整的行動裝置的國家/地區代碼及行動網路代碼清單，請參閱<http://mcc-mnc.com/>。
 
-- **語言**&ndash;兩個字母[ISO 639-1 語言代碼](http://en.wikipedia.org/wiki/ISO_639-1)並可選擇性地跟著兩個字母[ISO 3166-alpha 2 地區碼](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)。 
+- **語言**&ndash;兩個字母[ISO 639-1 語言代碼](https://en.wikipedia.org/wiki/ISO_639-1)並可選擇性地跟著兩個字母[ISO 3166-alpha 2 地區碼](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)。 
   如果提供兩個限定詞，則會以分隔`-r`。 例如，以目標法語地區設定，然後的辨識符號`fr`用。 若要針對加拿大的法文地區設定中，`fr-rCA`可用。 語言代碼和區域碼的完整清單，請參閱 <<c0> [ 表示法的名稱的語言代碼](http://www.loc.gov/standards/iso639-2/php/English_list.php)並[國家/地區名稱和程式碼項目](http://www.iso.org/iso/country_codes/iso_3166_code_lists/country_names_and_code_elements.htm)。
 
 - **最小寬度**&ndash;指定應用程式要執行的最小的螢幕寬度。 中的更詳細地討論[建立的資源，針對不同螢幕](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)。 
@@ -123,7 +123,7 @@ ms.locfileid: "51527387"
 -  **平台版本 （API 層級）** &ndash;格式 v 裝置所支援的 API 層級*N*，其中*N*是 API 層級，其為目標。 例如，v11 將目標 API 層級 11 (Android 3.0) 裝置。
 
 
-如需完整資訊的相關資源限定詞請參閱[提供的資源](http://developer.android.com/guide/topics/resources/providing-resources.html)Android 開發人員網站上。
+如需完整資訊的相關資源限定詞請參閱[提供的資源](https://developer.android.com/guide/topics/resources/providing-resources.html)Android 開發人員網站上。
 
 
 ## <a name="how-android-determines-what-resources-to-use"></a>Android 如何決定要使用哪些資源
@@ -176,7 +176,7 @@ Android 會決定基底的資源，藉由反覆規則的下列測試：
     drawable-port-ldpi
     drawable-port-notouch-12key
 
-從上述的資料表限定詞接下來，選取第一個限定詞： MCC 和 MNC。 沒有包含這個限定詞，因此會忽略的 MCC/MNC 程式碼的資源目錄。
+接下來，從限定詞表選取第一個限定詞：MCC 和 MNC。 沒有包含這個限定詞，因此會忽略的 MCC/MNC 程式碼的資源目錄。
 
 會選取下一步的限定詞，這是語言。 沒有相符的語言代碼的資源。 不相符的語言代碼的所有資源目錄`en`會遭到拒絕，以便資源的清單現在是：
 

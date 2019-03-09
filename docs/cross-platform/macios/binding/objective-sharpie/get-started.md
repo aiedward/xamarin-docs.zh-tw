@@ -1,17 +1,17 @@
 ---
 title: Getting Started With 目標 Sharpie
-description: 本文件提供目標 Sharpie，用來自動建立的 C# 的繫結 OBJECTIVE-C 程式碼的工具的高階概觀。
+description: 本文件提供的高階目標 Sharpie，用來自動建立的工具概觀C#繫結 OBJECTIVE-C 程式碼。
 ms.prod: xamarin
 ms.assetid: 577512BF-1A90-41E5-89DE-9E056C478678
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: da8c51c4ba4df74afac950bbff867221e7307d6e
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: c1831467ca0cbb4329a1e77fb355698f2d16cd6a
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854775"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670112"
 ---
 # <a name="getting-started-with-objective-sharpie"></a>Getting Started With 目標 Sharpie
 
@@ -27,7 +27,7 @@ ms.locfileid: "37854775"
 目標 Sharpie 可以下載為標準的 OS X 套件安裝程式。
 執行安裝程式，並依照所有螢幕上從安裝精靈的提示：
 
-- **目前的版本： 3.4**
+- **目前的版本：3.4**
   - [下載最新版本](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
   - [論壇公告](https://forums.xamarin.com/discussion/104800/objective-sharpie-3-4)
 
@@ -36,7 +36,7 @@ ms.locfileid: "37854775"
 
 ## <a name="basic-walkthrough"></a>基本的逐步解說
 
-目標 Sharpie 是命令列工具，提供可協助建立的 xamarin 定義繫結所需的第 3 個合作對象 Objective C 程式庫為 C#。
+目標 Sharpie 是建立繫結第 3 的合作對象 Objective C 程式庫，以所需的定義，可以協助的 Xamarin 提供的命令列工具C#。
 即使是使用目標 Sharpie，開發人員*將*需要目標 Sharpie 完成來解決任何問題，可能不會自動處理此工具之後，修改產生的檔案。
 
 可能的話，目標 Sharpie 會加上註解有一些不確定如何正確地繫結的 Api （原生程式碼中的許多建構是模稜兩可的）。
@@ -48,7 +48,7 @@ ms.locfileid: "37854775"
 > 目標 Sharpie 隨附於**主要**適當使用方式的規則： 您必須完全將它傳遞正確的 clang 編譯器命令列引數以確保正確剖析。 這是因為剖析階段目標 Sharpie 的簡單工具[對 clang libtooling API 實作](http://clang.llvm.org/docs/LibTooling.html)。
 
 這表示目標 Sharpie Clang （實際上會編譯的原生程式庫，您將繫結的 C/目標-C/c + + 編譯器） 和所有其內部知識的繫結的標頭檔的完整功能。
-而不是轉譯之已剖析[AST](http://en.wikipedia.org/wiki/Abstract_syntax_tree)物件的程式碼，目標 Sharpie 轉譯至 C# 繫結 」 scaffold"適合輸入至 AST`bmac`和`btouch`Xamarin 繫結工具。
+而不是轉譯之已剖析[AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree)物件的程式碼，目標 Sharpie 轉譯至 ASTC#繫結 」 建立 「 適用於輸入至`bmac`並`btouch`Xamarin 繫結工具。
 
 如果目標 Sharpie 錯誤出在剖析期間，就表示發生錯誤時該 clang 其剖析階段嘗試建構 AST，而且您需要找出原因。
 
@@ -61,5 +61,5 @@ ms.locfileid: "37854775"
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin University 課程： 建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程： 建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin University 課程：建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University 課程：建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

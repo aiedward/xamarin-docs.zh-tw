@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/17/2017
-ms.openlocfilehash: 83f9651fa7fd20709c620258833ae4a152ffd0eb
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 5ccefdb5e527e67338714896905734c74278d00a
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563658"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671870"
 ---
 # <a name="events-protocols-and-delegates-in-xamarinios"></a>事件、 通訊協定與委派在 Xamarin.iOS 中
 
@@ -64,7 +64,7 @@ Xamarin.iOS 也支援連接您的程式碼就會發生與控制項互動的目�
 
 [![](delegates-protocols-and-events-images/05-interface-builder-action-sml.png "訊息將寫入至主控台，按一下按鈕時")](delegates-protocols-and-events-images/05-interface-builder-action.png#lightbox)
 
-如需 iOS 目標動作模式的詳細資訊，請參閱目標動作區段[適用於 iOS 的核心應用程式能力](http://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)Apple iOS 開發人員文件庫中。
+如需 iOS 目標動作模式的詳細資訊，請參閱目標動作區段[適用於 iOS 的核心應用程式能力](https://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)Apple iOS 開發人員文件庫中。
 
 如需如何使用 Xamarin.iOS 中的 「 iOS 設計工具的詳細資訊，請參閱[iOS 設計工具概觀](~/ios/user-interface/designer/index.md)文件。
 
@@ -388,6 +388,6 @@ map.DidSelectAnnotationView += (s,e) => {
 - [通訊協定、 委派和事件 （範例）](https://developer.xamarin.com/samples/Protocols_Delegates_Events/)
 - [Hello, iOS](~/ios/get-started/hello-ios/index.md)
 - [繫結 OBJECTIVE-C 型別](~/ios/platform/binding-objective-c/index.md)
-- [Objective C 程式設計語言](http://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
-- [設計在 Xcode 4 中的使用者介面](http://developer.apple.com/library/ios/#documentation/IDEs/Conceptual/Xcode4TransitionGuide/InterfaceBuilder/InterfaceBuilder.html)
-- [適用於 iOS 的核心應用程式能力](http://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)
+- [Objective C 程式設計語言](https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
+- [設計在 Xcode 4 中的使用者介面](https://developer.apple.com/library/ios/#documentation/IDEs/Conceptual/Xcode4TransitionGuide/InterfaceBuilder/InterfaceBuilder.html)
+- [適用於 iOS 的核心應用程式能力](https://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/21/2018
-ms.openlocfilehash: be6154631b8b51ec61feb4c713d925ff30505b7d
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: d307c128826775e6d4f7129c79e17522e7e05d6a
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831751"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671568"
 ---
 # <a name="xaml-namespaces-in-xamarinforms"></a>在 Xamarin.Forms 中的 XAML 命名空間
 
@@ -50,6 +50,9 @@ XAML 會使用前置詞來宣告非預設的命名空間，以參考在命名空
 |`x:TypeArguments`|指定泛型型別的建構函式的泛型型別引數。|
 
 如需詳細資訊`x:DataType`屬性，請參閱[編譯的繫結](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)。 如需詳細資訊`x:FieldModifier`屬性，請參閱[欄位修飾詞](~/xamarin-forms/xaml/field-modifiers.md)。 如需詳細資訊`x:Arguments`， `x:FactoryMethod`，並`x:TypeArguments`屬性，請參閱[在 XAML 中傳遞的引數](~/xamarin-forms/xaml/passing-arguments.md)。
+
+> [!NOTE]
+> 除了上面所列的命名空間屬性，Xamarin.Forms 也包含可以透過取用的標記延伸`x`命名空間前置詞。 如需詳細資訊，請參閱 <<c0> [ 耗用 XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md)。
 
 在 XAML 中，命名空間宣告繼承自父項目子系項目中。 因此，當定義命名空間中的 XAML 檔案的根項目，該檔案中的所有項目會繼承命名空間宣告。
 

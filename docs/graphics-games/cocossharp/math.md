@@ -6,12 +6,12 @@ ms.assetid: 5C241AB4-F97E-4B61-B93C-F5D307BCD517
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: 60386b3629e8ed9d2fd1ff165cd2c04d9571b51a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ac84d5b28b0f211dccb1697a4b3dbbc9cedf81e9
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106230"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670152"
 ---
 # <a name="2d-math-with-cocossharp"></a>使用 CocosSharp 的 2D 數學運算
 
@@ -24,7 +24,7 @@ _本指南涵蓋開發遊戲的 2D 數學運算。它使用 CocosSharp 示範如
  - 旋轉 CocosSharp 物件
  - 循環使用速度
 
-沒有強式數學背景，或使用者長時間-忘了從學校，這些主題的開發人員不需要擔心-這份文件會細分概念位元組大小的項目，並會伴隨理論說明實用的範例。 簡單地說，這篇文章將回答讀者的數學學生方面的問題: 「 時將我實際上需要使用此項目？ 」
+沒有強式數學背景，或使用者長時間-忘了從學校，這些主題的開發人員不需要擔心-這份文件會細分概念位元組大小的項目，並會伴隨理論說明實用的範例。 簡單地說，這篇文章將回答讀者的數學學生方面的問題：「 何時會我實際上需要使用此項目？ 」
 
 
 ## <a name="requirements"></a>需求
@@ -266,7 +266,7 @@ private void HandleInput(System.Collections.Generic.List<CCTouch> touches, C
 
 請注意，上述程式碼傳遞 Y 參數第一次，然後 X 參數，呼叫時`Atan2`方法。 回溯是從一般的 X，Y 排序的位置座標。 如需詳細資訊[，請參閱 Atan2](https://msdn.microsoft.com/library/system.math.atan2(v=vs.110).aspx)。
 
-也很值得一提的傳回值從`Atan2`是以弧度為單位，也就是另一個用來測量角度的單位。 本指南未涵蓋的弧度為單位，詳細資料，但請注意，在所有三角函數`System.Math`命名空間會使用弧度為單位，因此任何值之前必須轉換為度 CocosSharp 物件上使用。 可以找到更多有關弧度[弧度維基百科頁面在](http://en.wikipedia.org/wiki/Radian)。
+也很值得一提的傳回值從`Atan2`是以弧度為單位，也就是另一個用來測量角度的單位。 本指南未涵蓋的弧度為單位，詳細資料，但請注意，在所有三角函數`System.Math`命名空間會使用弧度為單位，因此任何值之前必須轉換為度 CocosSharp 物件上使用。 可以找到更多有關弧度[弧度維基百科頁面在](https://en.wikipedia.org/wiki/Radian)。
 
 #### <a name="forward-angle"></a>正向的角度
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 019d89261687d1139ebced9400afbdf5eaf7a128
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: cdb75207bff3f15a54d0cdd90fa0833da9c145e6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109194"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670645"
 ---
 # <a name="cardview"></a>CardView
 
@@ -37,7 +37,7 @@ _Cardview 小工具會提供類似於卡片的檢視中的文字和影像內容�
 
 -  **Android SDK** &ndash; Android 5.0 (API 21) 或更新版本必須安裝 Android SDK 管理員透過。
 
--  **Java JDK 1.8** &ndash;可以使用 JDK 1.7，如果您是特別瞄準的 API 層級 23 和更早版本。 JDK 1.8 是可從[Oracle](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)。
+-  **Java JDK 1.8** &ndash;可以使用 JDK 1.7，如果您是特別瞄準的 API 層級 23 和更早版本。 JDK 1.8 是可從[Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)。
 
 您的應用程式也必須包含`Xamarin.Android.Support.v7.CardView`封裝。 若要新增`Xamarin.Android.Support.v7.CardView`Visual Studio for Mac 中的封裝：
 
@@ -56,7 +56,7 @@ _Cardview 小工具會提供類似於卡片的檢視中的文字和影像內容�
 3. 當**Xamarin 支援程式庫 v7 CardView**出現時，請按一下 **安裝**。
 
 若要了解如何設定 Android 5.0 應用程式專案，請參閱[設定註冊的 Android 5.0 專案](~/android/platform/lollipop.md)。
-如需有關如何安裝 NuGet 套件的詳細資訊，請參閱 <<c0> [ 逐步解說： 在您的專案中包含 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。
+如需有關如何安裝 NuGet 套件的詳細資訊，請參閱[逐步解說：在專案中包含 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。
 
 
 ## <a name="introducing-cardview"></a>簡介 CardView

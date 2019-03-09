@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 2fa554264578ec626567ef7d28377ac80bde21d3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 2b3ba0a0cf31ae2c2d631da8b595390c973957d6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060170"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670668"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>在 Xamarin.iOS 中的程式碼建立 iOS 使用者介面
 
@@ -20,7 +20,7 @@ IOS 應用程式的使用者介面就像一個店面： 應用程式通常會取
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-下圖說明視窗、檢視、子檢視及檢視控制器之間的關聯性，以在裝置畫面中顯示使用者介面： 
+下圖說明視窗、檢視、子檢視及檢視控制器之間的關聯性，以在裝置畫面中顯示使用者介面：
 
 [![](ios-code-only-images/image9.png "此圖說明視窗、 檢視、 子檢視和檢視控制器之間的關聯性")](ios-code-only-images/image9.png#lightbox)
 
@@ -28,7 +28,7 @@ IOS 應用程式的使用者介面就像一個店面： 應用程式通常會取
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-下圖說明視窗、檢視、子檢視及檢視控制器之間的關聯性，以在裝置畫面中顯示使用者介面： 
+下圖說明視窗、檢視、子檢視及檢視控制器之間的關聯性，以在裝置畫面中顯示使用者介面：
 
 [![](ios-code-only-images/image9.png "此圖說明視窗、 檢視、 子檢視和檢視控制器之間的關聯性")](ios-code-only-images/image9.png#lightbox)
 
@@ -65,9 +65,9 @@ IOS 應用程式的使用者介面就像一個店面： 應用程式通常會取
 ## <a name="ios-templates"></a>iOS 範本
 
 
-Visual Studio for Mac 不提供空白的範本。 所有範本都隨附支援分鏡腳本，Apple 建議做為建立 UI 的主要方式。 不過，就可以完全在程式碼中建立您的 UI。 
+Visual Studio for Mac 不提供空白的範本。 所有範本都隨附支援分鏡腳本，Apple 建議做為建立 UI 的主要方式。 不過，就可以完全在程式碼中建立您的 UI。
 
-下列步驟會引導您完成應用程式中移除分鏡腳本： 
+下列步驟會引導您完成應用程式中移除分鏡腳本：
 
 
 1. 您可以使用單一檢視應用程式範本來建立新的 iOS 專案：
@@ -291,7 +291,7 @@ Window.RootViewController = navController;
 現在應用程式載入，`CustomViewController`內瀏覽控制器載入：
 
  [![](ios-code-only-images/customvc.png "在瀏覽控制器載入 CustomViewController")](ios-code-only-images/customvc.png#lightbox)
- 
+
 按一下按鈕，將_推播_到導覽堆疊上新的檢視控制器：
 
 [![](ios-code-only-images/customvca.png "新的檢視控制器推送至導覽堆疊")](ios-code-only-images/customvca.png#lightbox)
@@ -306,7 +306,7 @@ iOS 使用者介面是由檢視階層所組成。 額外的檢視，例如標籤
 
 ### <a name="adding-the-text-fields"></a>新增在文字欄位
 
-首先，移除已加入的按鈕和事件處理常式[初始化檢視](#Initializing_the_View)一節。 
+首先，移除已加入的按鈕和事件處理常式[初始化檢視](#initializing-the-view)一節。 
 
 新增使用者名稱的控制項，藉由建立並初始化`UITextField`然後將它們新增至檢視階層，如下所示：
 
@@ -359,7 +359,7 @@ public class CustomViewController : UIViewController
             SecureTextEntry = true
         };
 
-      View.AddSubview(usernameField); 
+      View.AddSubview(usernameField);
       View.AddSubview(passwordField);
    }
 }
@@ -414,7 +414,7 @@ submitButton.Layer.CornerRadius = 5f;
 iOS，來提供要加入的檢視階層中的多個檢視，使用設備`AddSubviews`。
 
 ```csharp
-View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton }); 
+View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton });
 ```
 
 ## <a name="adding-button-functionality"></a>加入按鈕的功能
@@ -610,12 +610,12 @@ Apple 建議.xib 或分鏡腳本檔案，用於以 iOS 8 為目標的應用程�
 
 ### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>建立啟動映像前 ios 8 的應用程式
 
-靜態影像可以使用除了.xib 或分鏡腳本啟動畫面，如果您的應用程式的目標 iOS 8 之前的版本。 
+靜態影像可以使用除了.xib 或分鏡腳本啟動畫面，如果您的應用程式的目標 iOS 8 之前的版本。
 
 在 Info.plist 檔案中，或為您的應用程式中的 （適用於 iOS 7) 的資產目錄，則可以設定此靜態映像。 您必須為每個裝置大小 （320x480，640 x 960，640 x 1136） 上執行您的應用程式，可能會提供不同的映像。 如需有關啟動螢幕大小的詳細資訊，請檢視[啟動螢幕影像](~/ios/app-fundamentals/images-icons/launch-screens.md)指南。
 
 > [!IMPORTANT]
-> 如果您的應用程式不有任何啟動畫面，您可能會注意到，它不完全符合螢幕大小。 如果發生這種情況，您應該確定至少，包含名為 640 x 1136 映像`Default-568@2x.png`至您的 Info.plist。 
+> 如果您的應用程式不有任何啟動畫面，您可能會注意到，它不完全符合螢幕大小。 如果發生這種情況，您應該確定至少，包含名為 640 x 1136 映像`Default-568@2x.png`至您的 Info.plist。
 
 ## <a name="summary"></a>總結
 

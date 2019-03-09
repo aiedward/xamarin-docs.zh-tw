@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/28/2016
-ms.openlocfilehash: a94c70bb7068847ed1b410dd7eddc70921fdf307
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 42cf10e592a37f9a979d05d7784553059923646c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106035"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667317"
 ---
 # <a name="referencing-native-libraries-in-xamarinios"></a>參考在 Xamarin.iOS 中的原生程式庫
 
@@ -115,7 +115,7 @@ lipo -info /full/path/to/libraryname.a
 -  您寄送您的應用程式的靜態程式庫。
 
 
-若要存取定義其中一種方法，您使用[Mono 的 P/Invoke 功能](http://www.mono-project.com/docs/advanced/pinvoke/)這是您在.NET 中，大約會使用的相同技術：
+若要存取定義其中一種方法，您使用[Mono 的 P/Invoke 功能](https://www.mono-project.com/docs/advanced/pinvoke/)這是您在.NET 中，大約會使用的相同技術：
 
 -  決定您想要叫用的 C 函式
 -  判斷其簽章

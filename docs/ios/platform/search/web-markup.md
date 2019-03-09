@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 243408ce6e2236b75ea35dfd17633a9a24493c1b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4ee07e4b47ed9e1bdca0efc814ad44e513f68e80
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102798"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672361"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Web 標記在 Xamarin.iOS 中使用的搜尋
 
@@ -209,7 +209,7 @@ Apple 目前支援下列的結構描述型別，從 schema.org:
 
 ```
 
-如需詳細資訊，請參閱 Apple[應用程式搜尋服務開發人員網站](http://developer.apple.com/ios/search/)。
+如需詳細資訊，請參閱 Apple[應用程式搜尋服務開發人員網站](https://developer.apple.com/ios/search/)。
 
 
 

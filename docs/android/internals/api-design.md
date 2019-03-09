@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 54479a7ed66c83d1d97d51cc93e3df3241ec740f
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: e762a286069d5ef1db90f3c45808eee0a7a04a7f
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207930"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668487"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Xamarin.Android API 設計原則
 
@@ -76,13 +76,13 @@ Xamarin.Android 包含組成組件數*MonoMobile 設定檔*。 [組件](~/cross-
 
 Android Api 會利用廣泛用來提供清單、 集合和對應的 java.util 集合。 我們將使用這些元素時，公開[System.Collections.Generic](xref:System.Collections.Generic)我們繫結中的介面。 基本的對應如下：
 
--   [java.util.Set<E> ](http://developer.android.com/reference/java/util/Set.html)對應至系統型別[ICollection<T>](xref:System.Collections.Generic.ICollection`1)，協助程式類別[Android.Runtime.JavaSet<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaSet%601/)。
+-   [java.util.Set<E> ](https://developer.android.com/reference/java/util/Set.html)對應至系統型別[ICollection<T>](xref:System.Collections.Generic.ICollection`1)，協助程式類別[Android.Runtime.JavaSet<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaSet%601/)。
 
--   [java.util.List<E> ](http://developer.android.com/reference/java/util/List.html)對應至系統型別[IList<T>](xref:System.Collections.Generic.IList`1)，協助程式類別[Android.Runtime.JavaList<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaList%601/)。
+-   [java.util.List<E> ](https://developer.android.com/reference/java/util/List.html)對應至系統型別[IList<T>](xref:System.Collections.Generic.IList`1)，協助程式類別[Android.Runtime.JavaList<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaList%601/)。
 
--   [< K，V > java.util.Map](http://developer.android.com/reference/java/util/Map.html)對應至系統型別[IDictionary < TKey，TValue >](xref:System.Collections.Generic.IDictionary`2)，協助程式類別[Android.Runtime.JavaDictionary < K，V >](https://developer.xamarin.com/api/type/Android.Runtime.JavaDictionary%602/)。
+-   [< K，V > java.util.Map](https://developer.android.com/reference/java/util/Map.html)對應至系統型別[IDictionary < TKey，TValue >](xref:System.Collections.Generic.IDictionary`2)，協助程式類別[Android.Runtime.JavaDictionary < K，V >](https://developer.xamarin.com/api/type/Android.Runtime.JavaDictionary%602/)。
 
--   [java.util.Collection<E> ](http://developer.android.com/reference/java/util/Collection.html)對應至系統型別[ICollection<T>](xref:System.Collections.Generic.ICollection`1)，協助程式類別[Android.Runtime.JavaCollection<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaCollection%601/)。
+-   [java.util.Collection<E> ](https://developer.android.com/reference/java/util/Collection.html)對應至系統型別[ICollection<T>](xref:System.Collections.Generic.ICollection`1)，協助程式類別[Android.Runtime.JavaCollection<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaCollection%601/)。
 
 我們提供協助程式類別，以便更快 copyless 封送處理這些型別。 如果可能的話，我們建議使用這些提供而不是提供架構實作的集合，像是[ `List<T>` ](xref:System.Collections.Generic.List`1)或是[ `Dictionary<TKey, TValue>` ](xref:System.Collections.Generic.Dictionary`2)。 [Android.Runtime](https://developer.xamarin.com/api/namespace/Android.Runtime/)實作在內部利用原生 Java 集合，因此不需要往返複製原生集合傳遞給 Android API 成員時。
 
@@ -240,11 +240,11 @@ Java 介面會轉譯成兩種類型：
 
 例如，請考慮[android.os.Parcelable](https://developer.xamarin.com/api/type/Android.OS.Parcelable/)介面。
 *Parcelable*介面包含方法、 巢狀的類型和常數。 *Parcelable*介面方法會放入[Android.OS.IParcelable](https://developer.xamarin.com/api/type/Android.OS.IParcelable/)介面。
-*Parcelable*介面的常數會放入[Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/)型別。 巢狀[android.os.Parcelable.ClassLoaderCreator <t> </t> ](http://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html)並[android.os.Parcelable.Creator <t> </t> ](http://developer.android.com/reference/android/os/Parcelable.Creator.html)類型目前不是由於我們泛型的支援; 的限制繫結如果它們都支援，它們會呈現為*Android.OS.IParcelableClassLoaderCreator*並*Android.OS.IParcelableCreator*介面。 例如，巢狀[android.os.IBinder.DeathRecpient](http://developer.android.com/reference/android/os/IBinder.DeathRecipient.html)介面做為繫結[Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/)介面。
+*Parcelable*介面的常數會放入[Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/)型別。 巢狀[android.os.Parcelable.ClassLoaderCreator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html)並[android.os.Parcelable.Creator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.Creator.html)類型目前不是由於我們泛型的支援; 的限制繫結如果它們都支援，它們會呈現為*Android.OS.IParcelableClassLoaderCreator*並*Android.OS.IParcelableCreator*介面。 例如，巢狀[android.os.IBinder.DeathRecpient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html)介面做為繫結[Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/)介面。
 
 
 > [!NOTE]
-> 從 Xamarin.Android 1.9，就 Java 介面常數<em>重複</em>為了簡化將 Java 移植程式碼。 這有助於改善移植的 Java 程式碼依賴[android 的提供者](http://developer.android.com/reference/android/provider/package-summary.html)常數的介面。
+> 從 Xamarin.Android 1.9，就 Java 介面常數<em>重複</em>為了簡化將 Java 移植程式碼。 這有助於改善移植的 Java 程式碼依賴[android 的提供者](https://developer.android.com/reference/android/provider/package-summary.html)常數的介面。
 
 除了上述的類型，有四個進一步的變更：
 
@@ -257,9 +257,9 @@ Java 介面會轉譯成兩種類型：
 1. *個月的成本*類型現在已過時。
 
 
-針對*android.os.Parcelable*介面，這表示會立即會有[ *Android.OS.Parcelable* ](https://developer.xamarin.com/api/type/Android.OS.Parcelable/)包含常數的類型。 例如， [Parcelable.CONTENTS_FILE_DESCRIPTOR](http://developer.android.com/reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR)常數會當做繫結[ *Parcelable.ContentsFileDescriptor* ](https://developer.xamarin.com/api/field/Android.OS.Parcelable.ContentsFileDescriptor/)常數的而不是做為*ParcelableConsts.ContentsFileDescriptor*常數。
+針對*android.os.Parcelable*介面，這表示會立即會有[ *Android.OS.Parcelable* ](https://developer.xamarin.com/api/type/Android.OS.Parcelable/)包含常數的類型。 例如， [Parcelable.CONTENTS_FILE_DESCRIPTOR](https://developer.android.com/reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR)常數會當做繫結[ *Parcelable.ContentsFileDescriptor* ](https://developer.xamarin.com/api/field/Android.OS.Parcelable.ContentsFileDescriptor/)常數的而不是做為*ParcelableConsts.ContentsFileDescriptor*常數。
 
-包含實作包含其他介面的常數，但這些常數的介面，現在會產生聯集的所有常數。 例如， [android.provider.MediaStore.Video.VideoColumns](http://developer.android.com/reference/android/provider/MediaStore.Video.VideoColumns.html)介面會實作[android.provider.MediaStore.MediaColumns](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumns/)介面。 不過，在 1.9 之前, [Android.Provider.MediaStore.Video.VideoColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+Video+VideoColumnsConsts/)型別具有無法存取上宣告的常數[Android.Provider.MediaStore.MediaColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumnsConsts/)。
+包含實作包含其他介面的常數，但這些常數的介面，現在會產生聯集的所有常數。 例如， [android.provider.MediaStore.Video.VideoColumns](https://developer.android.com/reference/android/provider/MediaStore.Video.VideoColumns.html)介面會實作[android.provider.MediaStore.MediaColumns](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumns/)介面。 不過，在 1.9 之前, [Android.Provider.MediaStore.Video.VideoColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+Video+VideoColumnsConsts/)型別具有無法存取上宣告的常數[Android.Provider.MediaStore.MediaColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumnsConsts/)。
 如此一來，Java 運算式*MediaStore.Video.VideoColumns.TITLE*繫結至 C# 運算式必須*MediaStore.Video.MediaColumnsConsts.Title*即難以探索而不閱讀許多 Java 文件。 1.9，對等的 C# 運算式都[ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/)。
 
 此外，請考慮[android.os.Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/)實作的 Java 型別*Parcelable*介面。 由於它會實作介面，該介面上的所有常數都會存取 「 透過 「 套件組合類型，例如*Bundle.CONTENTS_FILE_DESCRIPTOR*是完全有效的 Java 運算式。
@@ -270,8 +270,8 @@ Java 介面會轉譯成兩種類型：
 
 ## <a name="resources"></a>資源
 
-在您的應用程式，則可以包含影像、 版面配置描述、 二進位 blob 和字串的字典[資源檔](http://developer.android.com/guide/topics/resources/providing-resources.html)。
-各種 Android Api 旨在[操作上的資源識別碼](http://developer.android.com/guide/topics/resources/accessing-resources.html)而不是映像處理、 字串或二進位 blob 直接。
+在您的應用程式，則可以包含影像、 版面配置描述、 二進位 blob 和字串的字典[資源檔](https://developer.android.com/guide/topics/resources/providing-resources.html)。
+各種 Android Api 旨在[操作上的資源識別碼](https://developer.android.com/guide/topics/resources/accessing-resources.html)而不是映像處理、 字串或二進位 blob 直接。
 
 例如，範例 Android 應用程式，其中包含使用者介面版面配置 ( `main.axml`)，國際化資料表的字串 ( `strings.xml`) 和一些圖示 ( `drawable-*/icon.png`) 會保留其資源的應用程式的 [資源] 目錄中：
 
@@ -317,7 +317,7 @@ public class Resource {
 
 原生 Android Api 有許多方法會接受或傳回整數必須對應到常數的欄位，以判斷 int 所代表的意義。 若要使用這些方法，使用者才可參考說明文件，請參閱 的常數是適當的值，這是不盡理想。
 
-例如，請考慮[Activity.requestWindowFeature (int featureID)](http://developer.android.com/reference/android/app/Activity.html#requestWindowFeature(int))。
+例如，請考慮[Activity.requestWindowFeature (int featureID)](https://developer.android.com/reference/android/app/Activity.html#requestWindowFeature(int))。
 
 在這些情況下，我們儘可能相關的常數群組到.NET 的列舉型別，並重新對應的方法，以改為讓列舉型別。
 如此一來，我們就能夠提供 IntelliSense 的可能值的選取項目。

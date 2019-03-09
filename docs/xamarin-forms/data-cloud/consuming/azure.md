@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 1ac68992d36627eb5d6aee0d4d19564ce63a3936
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 8bd77ec4975fae3cc7245c5adc2b5ef18568b9e1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052131"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667577"
 ---
 # <a name="consuming-an-azure-mobile-app"></a>使用 Azure 行動應用程式
 
@@ -21,7 +21,7 @@ ms.locfileid: "53052131"
 _Azure Mobile Apps 可讓您開發可調整的後端裝載在 Azure App Service 中支援的行動驗證、 離線同步處理，以及推播通知與應用程式。本文章中，也就是只適用於 Azure Mobile Apps 使用 Node.js 後端，說明如何查詢、 插入、 更新和刪除儲存在 Azure Mobile Apps 執行個體中資料表的資料。_
 
 > [!NOTE]
-> 從開始於 6 月 30 日，所有新的 Azure 行動應用程式將會建立使用 TLS 1.2 預設。 此外，也建議您現有的 Azure 行動應用程式重新設定為使用 TLS 1.2。 如需如何強制執行在 Azure 行動應用程式的 TLS 1.2，請參閱[強制使用 TLS 1.2](/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-tls-1112)。 如需如何設定為使用 TLS 1.2 的 Xamarin 專案的資訊，請參閱[傳輸層安全性 (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)。
+> 從開始於 6 月 30 日，所有新的 Azure 行動應用程式將會建立使用 TLS 1.2 預設。 此外，也建議您現有的 Azure 行動應用程式重新設定為使用 TLS 1.2。 如需如何強制執行在 Azure 行動應用程式的 TLS 1.2，請參閱[強制使用 TLS 版本](/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-tls-versions)。 如需如何設定為使用 TLS 1.2 的 Xamarin 專案的資訊，請參閱[傳輸層安全性 (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)。
 
 如需如何建立可供 Xamarin.Forms Azure Mobile Apps 執行個體的資訊，請參閱[建立 Xamarin.Forms 應用程式](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started/)。 之後遵循下列指示，可下載的範例應用程式可以設定為使用 Azure Mobile Apps 執行個體，藉由設定`Constants.ApplicationURL`的 Azure Mobile Apps 執行個體的 url。 然後，執行範例應用程式時它會連線到 Azure Mobile Apps 執行個體，如下列螢幕擷取畫面所示：
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 3cce3270b9df2aad0037b1ab96f169cc4b564766
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: d004b753c89f3995e8dc511877bd115a894396fc
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528126"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671620"
 ---
 # <a name="accessibility-on-android"></a>在 Android 上的協助工具
 
@@ -174,12 +174,12 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 
 ## <a name="testing-accessibility"></a>測試協助工具
 
-請遵循[這些步驟](http://developer.android.com/training/accessibility/testing.html#how-to)啟用 TalkBack，以及透過觸控的瀏覽測試在 Android 裝置上的協助工具。
+請遵循[這些步驟](https://developer.android.com/training/accessibility/testing.html#how-to)啟用 TalkBack，以及透過觸控的瀏覽測試在 Android 裝置上的協助工具。
 
 您可能需要安裝[TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)從 Google Play，如果它不會出現在**設定 > 存取範圍**。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [跨平台的協助工具](~/cross-platform/app-fundamentals/accessibility.md)
-- [Android 的協助工具 Api](http://developer.android.com/guide/topics/ui/accessibility/index.html)
+- [跨平台協助工具](~/cross-platform/app-fundamentals/accessibility.md)
+- [Android 的協助工具 Api](https://developer.android.com/guide/topics/ui/accessibility/index.html)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: ccf5d97ff553fd304c4a3af158085d490bb665b7
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: b2f11bd09e1b1b3fd7af29a026229494a081ad11
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267595"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668552"
 ---
 # <a name="troubleshooting-tips"></a>疑難排解秘訣
 
@@ -77,7 +77,7 @@ Visual Studio for Mac 一律會寫入裝置的部署記錄檔。 找到這些物
 ## <a name="android-debug-log-output"></a>Android 偵錯記錄輸出
 
 Android 會寫入許多訊息[Android 偵錯記錄檔](~/android/deploy-test/debugging/android-debug-log.md)。
-Xamarin.Android 會使用 Android 系統屬性來控制 Android 偵錯記錄檔的其他訊息的產生。 可以透過設定 android 系統屬性*setprop*命令內[Android Debug Bridge (adb)](http://developer.android.com/guide/developing/tools/adb.html):
+Xamarin.Android 會使用 Android 系統屬性來控制 Android 偵錯記錄檔的其他訊息的產生。 可以透過設定 android 系統屬性*setprop*命令內[Android Debug Bridge (adb)](https://developer.android.com/guide/developing/tools/adb.html):
 
 ```shell
 adb shell setprop PROPERTY_NAME PROPERTY_VALUE
@@ -95,9 +95,9 @@ Xamarin.Android 支援下列系統屬性：
 
 -   *debug.mono.env*:以管道分隔 ('*|*') 的應用程式在啟動期間，匯出的環境變數清單*之前*mono 已初始化。 這可讓設定環境變數，控制 mono 的記錄功能。
 
-    - *請注意*:由於的值為 '*|*'-分隔，值必須具有額外的層級的引號，作為\` *adb 殼層*\`命令會移除引號括住的一組。
+    - *注意*：由於的值為 '*|*'-分隔，值必須具有額外的層級的引號，作為\` *adb 殼層*\`命令會移除引號括住的一組。
 
-    - *請注意*:Android 系統屬性值可以是不超過 92 個字元的長度。
+    - *注意*：Android 系統屬性值可以是不超過 92 個字元的長度。
 
     - 範例：
 
@@ -107,7 +107,7 @@ Xamarin.Android 支援下列系統屬性：
 
     -   *所有*:列印所有訊息
     -   *gc*:列印與 GC 相關的訊息。
-    -   *grf*:列印弱式 （通用） 的參考配置和解除配置的訊息。
+    -   *gref*:列印弱式 （通用） 的參考配置和解除配置的訊息。
     -   *lref*:列印本機參考的配置和解除配置的訊息。
 
     *附註*： 這些是*極*詳細資訊。 除非您真的需要否則請不要啟用。

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/04/2019
-ms.openlocfilehash: fc989ef73c9248bd359c9b1d35aaa9bdde846690
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: 530fcf638454373ae68391e4e11bca85dd2fff63
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557048"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669553"
 ---
 # <a name="fonts-in-xamarinforms"></a>在 Xamarin.Forms 中的字型
 
@@ -140,7 +140,7 @@ Xamarin.Forms 會控制所有具有該顯示文字`FontSize`可以在 XAML 中�
 ### <a name="ios"></a>iOS
 
 您可先確保已將它載入，然後使用 Xamarin.Forms 來依據名稱參考它，藉此顯示自訂字型`Font`方法。
-請依照下列中的指示[此部落格文章](http://blog.xamarin.com/custom-fonts-in-ios/):
+請依照下列中的指示[此部落格文章](https://blog.xamarin.com/custom-fonts-in-ios/):
 
 1. 加入字型檔案**建置動作：BundleResource**，及
 2. 更新**Info.plist**檔案 (**應用程式所提供的字型**，或`UIAppFonts`、 索引鍵)，然後

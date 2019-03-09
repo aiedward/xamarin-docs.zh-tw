@@ -6,12 +6,12 @@ ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.date: 03/29/2017
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: ce5c8f7cf30407e64464c412359263b52e134675
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: a5083e1d31377caece1b8fb4faf33b6e3ff88202
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267387"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672452"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>將程式碼更新至 Unified API 的祕訣
 
@@ -88,7 +88,7 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
 
  * `NSAction` 已被[取代](~/cross-platform/macios/unified/overview.md#NSAction)starndard.NET 與`Action`。 一些簡單 （單一參數） 的委派也已取代為`Action<T>`。
 
-最後，請參閱[傳統 v 統一的 API 差異](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)查閱 api 在程式碼中的變更。 搜尋[本頁](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)會協助您找出的傳統 Api 和功能他們已更新為。
+最後，請參閱[傳統 v 統一的 API 差異](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)查閱 api 在程式碼中的變更。 搜尋[本頁](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)會協助您找出的傳統 Api 和功能他們已更新為。
 
 **注意︰** `MonoTouch.Dialog`命名空間則會在移轉後保持相同。 如果您的程式碼會使用**MonoTouch.Dialog**您應該繼續使用該命名空間-請勿*不*變更`MonoTouch.Dialog`至`Dialog`！
 
@@ -170,7 +170,7 @@ public override nint NumberOfSections (UITableView tableView)
 * 覆寫 SetCoordinate 方法，以及設定您的欄位
 * 在您使用傳入的座標參數的建構函式的呼叫 SetCoordinate
 
-它看起來應該如下所示：
+看起來應類似如下：
 
 ```csharp
 class BasicPinAnnotation : MKAnnotation

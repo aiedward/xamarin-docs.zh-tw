@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 7b7fa2ea99a58b875bc1dc579455511aa9bf72d1
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: b3981572e4d2629fd88d1e255fc7459bfe8912f1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172089"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669007"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
@@ -96,7 +96,7 @@ KitKat 簡化傳訊使用者藉由彙總使用者所選取的一個預設應用�
 
 ### <a name="webview-apps"></a>WebView 應用程式
 
-[WebView](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) KitKat 中取得改造。 最大的變更會新增載入內容載入的安全性`WebView`。 雖然大部分以較舊的 API 版本為目標的應用程式能如預期般運作，測試使用的應用程式`WebView`強烈建議類別。 如需受影響的 WebView Api 的詳細資訊，請參閱 android[移轉到 WebView 中 Android 4.4](http://developer.android.com/guide/webapps/migrating.html)文件。
+[WebView](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) KitKat 中取得改造。 最大的變更會新增載入內容載入的安全性`WebView`。 雖然大部分以較舊的 API 版本為目標的應用程式能如預期般運作，測試使用的應用程式`WebView`強烈建議類別。 如需受影響的 WebView Api 的詳細資訊，請參閱 android[移轉到 WebView 中 Android 4.4](https://developer.android.com/guide/webapps/migrating.html)文件。
 
 <a name="user_experience" />
 
@@ -259,7 +259,7 @@ sceneButton.Click += (o, e) => {
 
 [![資源/轉換目錄下的 transition.xml 檔案的位置](kitkat-images/resources.png)](kitkat-images/resources.png#lightbox)
 
-下列程式碼範例定義的轉換，以動畫顯示的 5 秒，並使用[衝過 interpolator](http://developer.android.com/reference/android/views/animation/OvershootInterpolator.html):
+下列程式碼範例定義的轉換，以動畫顯示的 5 秒，並使用[衝過 interpolator](https://developer.android.com/reference/android/views/animation/OvershootInterpolator.html):
 
 ```xml
 <changeBounds
@@ -396,7 +396,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 請注意， [`ContentResolver.OpenOutputStream(Android.Net.Uri)`](https://developer.xamarin.com/api/member/Android.Content.ContentResolver.OpenOutputStream/(Android.Net.Uri))
 傳回`System.IO.Stream`，因此可以在以.NET 撰寫整串流程序。
 
-如需有關載入的詳細資訊，建立和編輯內容，以儲存體存取架構，請參閱[Android 文件儲存體存取架構](http://developer.android.com/guide/topics/providers/document-provider.html)。
+如需有關載入的詳細資訊，建立和編輯內容，以儲存體存取架構，請參閱[Android 文件儲存體存取架構](https://developer.android.com/guide/topics/providers/document-provider.html)。
 
 ### <a name="printing"></a>列印
 
@@ -421,7 +421,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 ##### <a name="print-menu-item"></a>列印功能表項目
 
-[列印] 選項通常會出現在活動的[選項功能表](http://developer.android.com/guide/topics/ui/menus.html#options-menu)。
+[列印] 選項通常會出現在活動的[選項功能表](https://developer.android.com/guide/topics/ui/menus.html#options-menu)。
 [選項] 功能表可讓使用者在活動上執行的動作。 它是在螢幕的右上角中，並看起來像這樣：
 
 [![範例螢幕擷取畫面顯示在畫面的右上角的列印功能表項目](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
@@ -466,7 +466,7 @@ public override bool OnOptionsItemSelected (IMenuItem item)
 
 上述程式碼也會定義名為`dataLoaded`來追蹤的 HTML 內容的狀態。 `WebViewClient`會設定這個變數設為 true 時載入的所有內容，讓活動知道要將列印功能表項目新增至 [選項] 功能表。
 
-##### <a name="webviewclient"></a>來處理
+##### <a name="webviewclient"></a>WebViewClient
 
 作業`WebViewClient`是為了確保資料`WebView`列印選項出現在功能表中，它會使用前是否滿載`OnPageFinished`方法。 `OnPageFinished` 會接聽 web 內容以載入結束，並告知要重新建立其與 [選項] 功能表的活動`InvalidateOptionsMenu`:
 
@@ -656,7 +656,7 @@ protected override void OnPause()
 
 ### <a name="screen-recording"></a>螢幕錄影
 
-KitKat 包含新的螢幕錄製功能，以便開發人員可以在動作記錄應用程式。 螢幕錄製已可透過[Android Debug Bridge (ADB)](http://developer.android.com/tools/help/adb.html)用戶端，可以下載 Android SDK 的一部分。
+KitKat 包含新的螢幕錄製功能，以便開發人員可以在動作記錄應用程式。 螢幕錄製已可透過[Android Debug Bridge (ADB)](https://developer.android.com/tools/help/adb.html)用戶端，可以下載 Android SDK 的一部分。
 
 若要錄製您的畫面，連接您的裝置;然後，找出您的 Android SDK 安裝中，瀏覽至**平台工具**目錄，然後執行**adb**用戶端：
 
@@ -678,18 +678,18 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 
 除了上面所述的變更，KitKat 可讓您：
 
--  *使用全螢幕*-KitKat 導入了新[沈浸式模式](http://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int))瀏覽內容、 玩遊戲，及執行其他應用程式可從全螢幕體驗幫助。
+-  *使用全螢幕*-KitKat 導入了新[沈浸式模式](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int))瀏覽內容、 玩遊戲，及執行其他應用程式可從全螢幕體驗幫助。
 
 -  *自訂通知*-取得系統通知有關的其他詳細資料 [`NotificationListenerService`](https://developer.xamarin.com/api/type/Android.Service.Notification.NotificationListenerService/)
    。 這可讓您在不同的方式，在您的應用程式中呈現的資訊。
 
--  *鏡像可繪製資源*-有新的可繪製資源 [`autoMirrored`](http://developer.android.com/reference/android/R.attr.html#autoMirrored)
+-  *鏡像可繪製資源*-有新的可繪製資源 [`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
    告訴系統的屬性建立鏡像的版本，需要由左到右配置翻轉的影像。
 
 -  *暫停動畫*-暫停和繼續與所建立的動畫 [`Animator`](https://developer.xamarin.com/api/type/Android.Animation.Animator/)
    類別的新執行個體。
 
--  *讀取動態變更文字*-表示 UI 的與新的 「 即時地區 」 的新文字以動態方式更新的組件 [ `accessibilityLiveRegion`](http://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
+-  *讀取動態變更文字*-表示 UI 的與新的 「 即時地區 」 的新文字以動態方式更新的組件 [ `accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
    因此會自動讀取新的文字，以協助工具模式的屬性。
 
 -  *增強音訊體驗*-請大聲點會追蹤與 [`LoudnessEnhancer`](https://developer.xamarin.com/api/type/Android.Media.Audiofx.LoudnessEnhancer/)
@@ -703,7 +703,7 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 -  *遙控器*-硬體和軟體端上進行一些變更，KitKat 可讓您開啟裝置的遠端控制使用科系與 IR 傳輸器`ConsumerIrService`，並與其互動與新的周邊裝置 [`RemoteController`](https://developer.xamarin.com/api/type/Android.Media.RemoteController/)
    Api。
 
-如需有關上述 API 變更的詳細資訊，請參閱 Google [Android 4.4 Api](http://developer.android.com/about/versions/android-4.4.html)概觀。
+如需有關上述 API 變更的詳細資訊，請參閱 Google [Android 4.4 Api](https://developer.android.com/about/versions/android-4.4.html)概觀。
 
 
 ## <a name="summary"></a>總結
@@ -714,5 +714,5 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 ## <a name="related-links"></a>相關連結
 
 - [KitKat 範例](https://developer.xamarin.com/samples/KitKat/)
-- [Android 4.4 的 Api](http://developer.android.com/about/versions/android-4.4.html)
-- [Android 的 KitKat](http://developer.android.com/about/versions/kitkat.html)
+- [Android 4.4 的 Api](https://developer.android.com/about/versions/android-4.4.html)
+- [Android KitKat](https://developer.android.com/about/versions/kitkat.html)

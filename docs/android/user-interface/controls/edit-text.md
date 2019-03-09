@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: e708ceb4b0487cb07ae5a55fae5e96f0e41f17f6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d42cec1ee0939bead9ede83a042f5b6cbb5298cd
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119497"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670866"
 ---
 # <a name="edit-text"></a>編輯文字
 
@@ -64,7 +64,7 @@ using Android.Views;
 
 [![文字輸入 EditText 範例](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
 
-*此頁面上的部分是根據所建立的工作修改並* [ *Android 的開放原始碼專案所共用*](http://code.google.com/policies.html) *和依據中所述的條款來使用* [ *2.5 的 creative Commons Attribution License* ](http://creativecommons.org/licenses/by/2.5/) *。本教學課程根據* [ *Android 表單項目教學課程*](http://developer.android.com/resources/tutorials/views/hello-formstuff.html) *。*
+*此頁面上的部分是根據所建立的工作修改並* [ *Android 的開放原始碼專案所共用*](http://code.google.com/policies.html) *和依據中所述的條款來使用* [ *2.5 的 creative Commons Attribution License* ](http://creativecommons.org/licenses/by/2.5/) *。本教學課程根據* [ *Android 表單項目教學課程*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *。*
 
 
 ## <a name="related-links"></a>相關連結

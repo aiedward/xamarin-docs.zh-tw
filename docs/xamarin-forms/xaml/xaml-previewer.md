@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 02/04/2019
-ms.openlocfilehash: 4258eca8e18229420ceb043a010c896137187653
-ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
+ms.openlocfilehash: 7834b87687db8fd1a3d51a40a4657b24e46bac17
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56240379"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670398"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>適用於 Xamarin.Forms XAML 預覽程式
 
@@ -21,7 +21,7 @@ _當您輸入的轉譯程式 Xamarin.Forms 版面配置，請參閱 ！_
 
 ## <a name="requirements"></a>需求
 
-專案需要 XAML 預覽程式運作的最新的 Xamarin.Forms NuGet 套件。 預覽的 Android 應用程式需要[JDK 1.8 x64](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)。
+專案需要 XAML 預覽程式運作的最新的 Xamarin.Forms NuGet 套件。 預覽的 Android 應用程式需要[JDK 1.8 x64](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)。
 
 中的詳細資訊[版本資訊](https://developer.xamarin.com/releases/studio/xamarin.studio_6.2/xamarin.studio_6.2/#Xamarin_Forms_Previewer)。
 

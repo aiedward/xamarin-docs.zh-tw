@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: f4a21e25f418cc81d5f210098ded648b3d70ae14
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9c15e9205b96a02caa182e47b71c6d36c8bff1aa
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116728"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671048"
 ---
 # <a name="testing-on-apple-watch-devices"></a>在 Apple Watch 裝置上測試
 
@@ -93,7 +93,7 @@ ms.locfileid: "50116728"
 
 如果部署使用期間發生錯誤**檢視 > 板 > 裝置記錄檔**以查看錯誤的詳細資訊。 以下列出一些錯誤和其原因：
 
-### <a name="error-mt3001-could-not-aot-the-assembly"></a>錯誤 MT3001： 無法 AOT 的組件
+### <a name="error-mt3001-could-not-aot-the-assembly"></a>錯誤 MT3001:無法 AOT 的組件
 
 若要部署到 Apple Watch 裝置的偵錯模式中建置時，也可能會發生。
 
@@ -152,7 +152,7 @@ SPErrorGizmoInstallNeverFinishedErrorMessage
 waiting for debugger to connect
 ```
 
-檢查是否有任何的專案中所包含的 Nuget 的相依性**Microsoft.Bcl.Build**。 這會自動新增某些 Microsoft 發佈的程式庫包括熱門[Microsoft Http Client Libraries](http://www.nuget.org/packages/Microsoft.Net.Http/)。
+檢查是否有任何的專案中所包含的 Nuget 的相依性**Microsoft.Bcl.Build**。 這會自動新增某些 Microsoft 發佈的程式庫包括熱門[Microsoft Http Client Libraries](https://www.nuget.org/packages/Microsoft.Net.Http/)。
 
 **Microsoft.Bcl.Build.targets**檔案加入至 **.csproj** iOS 延伸模組的封裝，在部署期間可能會妨礙。 您可以追蹤[bug](https://bugzilla.xamarin.com/show_bug.cgi?id=29912)。
 可能的解決方法是編輯.csproj 檔案，並以手動方式移動**Microsoft.Bcl.Build.targets**是最後一個項目。

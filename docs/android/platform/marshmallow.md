@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 0393b9a994c1fd62f51cff01a88aa73f71019d53
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a396f4fe59db36b134843d2538bcb470a452a85b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113452"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668578"
 ---
 # <a name="marshmallow-features"></a>Marshmallow 功能
 
@@ -23,10 +23,10 @@ _這篇文章可協助您開始使用 Xamarin.Android 開發 Android 6.0 Marshma
 
 ## <a name="overview"></a>總覽
 
-[Android 6.0 Marshmallow](http://developer.android.com/about/versions/marshmallow/index.html)，是下一步 的主要 Android Android Lollipop 之後的版本。
+[Android 6.0 Marshmallow](https://developer.android.com/about/versions/marshmallow/index.html)，是下一步 的主要 Android Android Lollipop 之後的版本。
 Xamarin.Android 支援 Android Marshmallow，並且包含：
 
--   **API 23/Android 6.0 繫結** &ndash; Android 6.0 加入許多新的 Api，如下所述的新功能，這些 API 可供 Xamarin.Android 應用程式，當您的目標 API 層級 23。 如需有關 Android 6.0 Api 的詳細資訊，請參閱[Android 6.0 Api](http://developer.android.com/preview/api-overview.html)。 
+-   **API 23/Android 6.0 繫結** &ndash; Android 6.0 加入許多新的 Api，如下所述的新功能，這些 API 可供 Xamarin.Android 應用程式，當您的目標 API 層級 23。 如需有關 Android 6.0 Api 的詳細資訊，請參閱[Android 6.0 Api](https://developer.android.com/preview/api-overview.html)。 
 
 [![Hero 平板電腦和手機執行 Marshmallow 映像](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png#lightbox)
 
@@ -66,9 +66,9 @@ Xamarin.Android 支援 Android Marshmallow，並且包含：
 
 -   **Android SDK** &ndash; Android SDK 6.0 (API 23) 或更新版本必須安裝 Android SDK 管理員透過。
 
--   **Java Developer Kit** &ndash; Xamarin.Android 需要[JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本，如果您正在開發的 API 層級 24 或更大 （JDK 1.8 也支援 API 層級早於 24，包括 Marshmallow）。 如果您使用自訂控制項或表單預覽程式需要 64 位元版本的 JDK 1.8。
+-   **Java Developer Kit** &ndash; Xamarin.Android 需要[JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本，如果您正在開發的 API 層級 24 或更大 （JDK 1.8 也支援 API 層級早於 24，包括 Marshmallow）。 如果您使用自訂控制項或表單預覽程式需要 64 位元版本的 JDK 1.8。
 
-您可以繼續使用[JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)如果您是開發特別針對 API 層級 23 或更早版本。 
+您可以繼續使用[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)如果您是開發特別針對 API 層級 23 或更早版本。 
 
 
 ## <a name="getting-started"></a>快速入門
@@ -104,7 +104,7 @@ Xamarin.Android 支援 Android Marshmallow，並且包含：
     [![選取 Android 6.0 SDK 套件中 Android SDK 管理員](marshmallow-images/mnc-preview-packages.png)](marshmallow-images/mnc-preview-packages.png#lightbox)
 
 您必須安裝 Android SDK Tools 修訂 24.3.4 或更新版本。
-如需使用 Android SDK 管理員安裝 Android 6.0 SDK 的詳細資訊，請參閱[SDK 管理員](http://developer.android.com/tools/help/sdk-manager.html)。
+如需使用 Android SDK 管理員安裝 Android 6.0 SDK 的詳細資訊，請參閱[SDK 管理員](https://developer.android.com/tools/help/sdk-manager.html)。
 
 
 
@@ -120,15 +120,15 @@ Xamarin.Android 支援 Android Marshmallow，並且包含：
 
 如果您正使用模擬器，請啟動 Android AVD Manager，並建立新的裝置，使用下列設定：
 
--   裝置： Nexus 5、 6 或 9。
--   目標： Android 6.0 API 層級 23
+-   裝置:Nexus 5、 6 或 9。
+-   目標：Android 6.0-API 層級 23
 -   ABI: x86
 
 例如，此虛擬裝置設定為模擬 Nexus 5:
 
 [![設定使用 Nexus 5 裝置、 Android 6.0 目標和 Intel Atom (x86) AVD](marshmallow-images/android-m-avd.png)](marshmallow-images/android-m-avd.png#lightbox)
 
-如果您使用實體裝置，例如 Nexus 5，6，或 9 時，您可以安裝 Android Marshmallow 的預覽映像。 如需有關如何將裝置升級至 Android Marshmallow 的詳細資訊，請參閱[硬體系統映像](http://developer.android.com/preview/download.html#images)。
+如果您使用實體裝置，例如 Nexus 5，6，或 9 時，您可以安裝 Android Marshmallow 的預覽映像。 如需有關如何將裝置升級至 Android Marshmallow 的詳細資訊，請參閱[硬體系統映像](https://developer.android.com/preview/download.html#images)。
 
 
 
@@ -143,7 +143,7 @@ Xamarin.Android 支援 Android Marshmallow，並且包含：
 已大幅最佳化並簡化自 Android Lollipop Android 權限的系統。 在 Android Marshmallow，使用者授與的權限的案例的基礎，在執行階段，而不是在安裝時間。 為了支援這項功能，在 Android Marshmallow 及更新版本，您可以設計您的應用程式會提示使用者輸入在執行階段 （在其中需要的權限的內容） 的權限。 這項變更可讓使用者更輕鬆地開始使用您的應用程式立即因為它可簡化安裝和升級您的應用程式的程序時，才。 
 
 請參閱[要求執行階段權限在 Android Marshmallow](https://blog.xamarin.com/requesting-runtime-permissions-in-android-marshmallow/)如需詳細資訊 （包括程式碼範例） 實作在 Xamarin.Android 應用程式的執行階段權限。
-Xamarin 也會提供說明如何在 Android Marshmallow （和更新版本），執行階段權限的運作方式的範例應用程式： [RuntimePermissions](https://developer.xamarin.com/samples/monodroid/android-m/RuntimePermissions)。
+Xamarin 也會提供說明如何在 Android Marshmallow （和更新版本），執行階段權限的運作方式的範例應用程式：[RuntimePermissions](https://developer.xamarin.com/samples/monodroid/android-m/RuntimePermissions)。
 
 此範例應用程式示範下列作業：
 
@@ -175,7 +175,7 @@ Android Marshmallow 包含兩個驗證增強功能，可協助消除密碼的需
 在裝置上支援的指紋掃描硬體，您可以使用新`FingerPrintManager`類別來驗證使用者。
 如需在 Android Marshmallow 的指紋驗證功能的詳細資訊，請參閱[指紋驗證](https://developer.android.com/preview/api-overview.html#fingerprint-authentication)。
 
-Xamarin 提供的範例應用程式，說明如何使用已註冊的指紋來驗證您的應用程式中的使用者： [FingerprintDialog](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog)。
+Xamarin 提供說明如何使用已註冊的指紋來驗證使用者，在您的應用程式中的範例應用程式：[FingerprintDialog](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog)。
 
 若要使用此範例應用程式：
 
@@ -201,7 +201,7 @@ Android Marshmallow 中導入新的語音互動功能可讓您的應用程式的
 使用新*確認認證*功能的 Android Marshmallow，您可以免費的使用者不需要記住並輸入應用程式特定的密碼，藉由根據多久已解除鎖定其裝置進行驗證。
 若要這樣做，您使用新`SetUserAuthenticationValidityDurationSeconds`方法的`KeyGenerator`。 使用`KeyGuardManager`的`CreateConfirmDeviceCredentialIntent`重新驗證您的應用程式使用者的方法。 如需 Android Marshmallow 這項新功能的詳細資訊，請參閱[確認認證](https://developer.android.com/preview/api-overview.html#confirm-credential)。
 
-Xamarin 提供說明如何使用裝置認證 （例如 PIN、 圖樣或密碼） 在您的應用程式中的範例應用程式： [ConfirmCredential](https://developer.xamarin.com/samples/monodroid/android-m/ConfirmCredential/)
+Xamarin 應用程式中提供說明如何使用裝置認證 （例如 PIN、 圖樣或密碼） 的範例應用程式：[ConfirmCredential](https://developer.xamarin.com/samples/monodroid/android-m/ConfirmCredential/)
 
 若要使用此範例應用程式：
 
@@ -247,7 +247,7 @@ Android Lollipop 引進[Material Design](http://www.google.com/design/spec/mater
 
 -   **Material 的索引標籤**&ndash;新`TabLayout`小工具提供水平配置在您的應用程式中實作最上層導覽的方式顯示索引標籤。
 
-若要善用[設計支援程式庫](http://developer.android.com/tools/support-library/features.html#design)在您的 Xamarin.Android 應用程式，下載並安裝 Xamarin [Xamarin 支援程式庫設計](https://www.nuget.org/packages/Xamarin.Android.Support.Design/)NuGet 套件。
+若要善用[設計支援程式庫](https://developer.android.com/tools/support-library/features.html#design)在您的 Xamarin.Android 應用程式，下載並安裝 Xamarin [Xamarin 支援程式庫設計](https://www.nuget.org/packages/Xamarin.Android.Support.Design/)NuGet 套件。
 
 請參閱[美觀的 Android 支援設計程式庫的 Material Design](https://blog.xamarin.com/add-beautiful-material-design-with-the-android-support-design-library/)如需詳細資訊 （包括程式碼範例） 使用 Xamarin.Android 應用程式中的材料設計支援程式庫。
 Xamarin 提供的範例應用程式，示範新的 Android 設計程式庫，在 Xamarin.Android &ndash; [Cheesesquare](https://developer.xamarin.com/samples/monodroid/android5.0/Cheesesquare)。
@@ -267,7 +267,7 @@ Xamarin 提供的範例應用程式，示範新的 Android 設計程式庫，在
 
 除了 Android Marshmallow，Google 宣幾個核心的 Android 程式庫的相關的更新。 Xamarin 提供 Xamarin.Android 支援透過數個預覽版本的 NuGet 套件的更新： 
 
--   [Google Play 服務](https://www.nuget.org/packages?q=Xamarin+Google+Play+Services) &ndash; Google Play 服務的最新版本包含新*應用程式邀請*功能，可讓使用者能夠與朋友分享其應用程式。 如需這項功能的詳細資訊，請參閱[展開您的應用程式使用 Google 的應用程式邀請的觸達](http://blog.xamarin.com/expand-your-apps-reach-with-googles-app-invites/)。 
+-   [Google Play 服務](https://www.nuget.org/packages?q=Xamarin+Google+Play+Services) &ndash; Google Play 服務的最新版本包含新*應用程式邀請*功能，可讓使用者能夠與朋友分享其應用程式。 如需這項功能的詳細資訊，請參閱[展開您的應用程式使用 Google 的應用程式邀請的觸達](https://blog.xamarin.com/expand-your-apps-reach-with-googles-app-invites/)。 
 
 -   [Android 支援程式庫](https://www.nuget.org/packages?q=xamarin+support+library)&ndash;這些 Nuget 提供功能，同時提供回溯相容性的 framework 版本為 Android Api 僅適用於程式庫 Api。 
 
@@ -281,7 +281,7 @@ Xamarin 提供的範例應用程式，示範新的 Android 設計程式庫，在
 
 ## <a name="related-links"></a>相關連結
 
-- [Android 6.0 Marshmallow](http://developer.android.com/about/versions/marshmallow/index.html)
+- [Android 6.0 Marshmallow](https://developer.android.com/about/versions/marshmallow/index.html)
 - [取得 Android SDK](https://developer.android.com/sdk/index.html#Other)
 - [功能概觀](https://developer.android.com/preview/api-overview.html)
 - [版本資訊](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1.99/)

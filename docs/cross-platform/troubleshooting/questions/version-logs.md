@@ -1,5 +1,5 @@
 ---
-title: 哪裡可以找到我的版本資訊和記錄檔？
+title: 可以在哪裡找到我的版本資訊和記錄？
 description: 本文件說明如何尋找 Xamarin 版本資訊和記錄檔。 診斷送出 bug，或取得支援的問題時，這項資訊是很有用。
 ms.topic: troubleshooting
 ms.prod: xamarin
@@ -7,14 +7,14 @@ ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 2c3ded2233810ff4e903596d65f64097aa3b0445
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ee4b39aed64d7339bd561cccc49a2959a6daba5c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118223"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668305"
 ---
-# <a name="where-can-i-find-my-version-information-and-logs"></a>哪裡可以找到我的版本資訊和記錄檔？
+# <a name="where-can-i-find-my-version-information-and-logs"></a>可以在哪裡找到我的版本資訊和記錄？
 
 ## <a name="outline"></a>外框
 
@@ -100,7 +100,7 @@ ms.locfileid: "50118223"
 msiexec /i Xamarin.msi /l*vx "%USERPROFILE%\Desktop\Xamarin.log"
 ```
 
-參考：[命令列選項](http://msdn.microsoft.com/library/aa367988.aspx)
+參考：[命令列選項](https://msdn.microsoft.com/library/aa367988.aspx)
 
 #### <a name="a-idvisual-studio-startup-verbose-logs-namevisual-studio-startup-verbose-logs-visual-studio-startup-verbose-logs"></a><a id="visual-studio-startup-verbose-logs" name="visual-studio-startup-verbose-logs" />Visual Studio 啟動時，詳細資訊記錄檔
 
@@ -108,7 +108,7 @@ msiexec /i Xamarin.msi /l*vx "%USERPROFILE%\Desktop\Xamarin.log"
 devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 ```
 
-參考： [/Log (devenv.exe)](http://msdn.microsoft.com/library/ms241272.aspx)
+參考： [/Log (devenv.exe)](https://msdn.microsoft.com/library/ms241272.aspx)
 
 ### <a name="a-idmac-logs-namemac-logs-mac-logs"></a><a id="mac-logs" name="mac-logs" />Mac 記錄檔
 
@@ -145,7 +145,7 @@ devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 3.  清除並重建專案。
 
 4.  複製並貼到文字檔的 IDE 的建置輸出。
-     - Visual Studio (Windows):**檢視 > 輸出 > 顯示輸出來源： 建置**
+     - Visual Studio (Windows):**檢視 > 輸出 > 顯示輸出來源：建置**
      - Visual Studio for Mac:**檢視 > 板 > 錯誤 > 建置輸出 （索引標籤）**
 
 ## <a name="a-iddebug-logs-for-xamarin-apps-namedebug-logs-for-xamarin-apps-debug-logs-for-xamarinandroid-and-xamarinios-apps"></a><a id="debug-logs-for-xamarin-apps" name="debug-logs-for-xamarin-apps" />偵錯 Xamarin.Android 和 Xamarin.iOS 應用程式的記錄檔
@@ -158,9 +158,9 @@ devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 
 ### <a name="visual-studio"></a>Visual Studio
 
-**檢視 > 輸出 > 顯示輸出來源： 偵錯**
+**檢視 > 輸出 > 顯示輸出來源：偵錯**
 
-### <a name="a-idadb-logcat-nameadb-logcat-android-adbhttpdeveloperandroidcomtoolshelpadbhtml-logcat-logs"></a><a id="adb-logcat" name="adb-logcat" />Android [ `adb` ](http://developer.android.com/tools/help/adb.html) logcat 記錄檔
+### <a name="a-idadb-logcat-nameadb-logcat-android-adbhttpsdeveloperandroidcomtoolshelpadbhtml-logcat-logs"></a><a id="adb-logcat" name="adb-logcat" />Android [ `adb` ](https://developer.android.com/tools/help/adb.html) logcat 記錄檔
 
 執行後`adb`命令，將附加後**android_logcat.txt**檔案從您的桌面。 這些指示假設您有只有一個連接的裝置。
 

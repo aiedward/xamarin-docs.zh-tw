@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 9e83c9a8c1e2740596a981598cafbbfb65e2caf2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 24fc14b0342591c56f5bf91862b0d94759a42834
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119237"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670099"
 ---
 # <a name="jelly-bean-features"></a>Jelly Bean 功能
 
@@ -79,7 +79,7 @@ animator.Start();
 
 ### <a name="application-stack-navigation"></a>應用程式堆疊導覽
 
-Android 4.1 改善 Android 3.0 中導入的應用程式堆疊導覽。 藉由指定`ParentName`的屬性`ActivityAttribute`，Android 可以開啟適當的父活動，當使用者按下[向上按鈕](http://developer.android.com/design/patterns/navigation.html#up-vs-back)動作列-Android 將會執行個體化所指定的活動`ParentName`屬性。 這可讓應用程式，以保留的活動將指定的工作階層。
+Android 4.1 改善 Android 3.0 中導入的應用程式堆疊導覽。 藉由指定`ParentName`的屬性`ActivityAttribute`，Android 可以開啟適當的父活動，當使用者按下[向上按鈕](https://developer.android.com/design/patterns/navigation.html#up-vs-back)動作列-Android 將會執行個體化所指定的活動`ParentName`屬性。 這可讓應用程式，以保留的活動將指定的工作階層。
 
 對於大部分的應用程式設定`ParentName`活動資訊就足以讓 Android 導覽應用程式堆疊，提供正確的行為Android 會藉由建立一系列的對應方式為每個父活動合成必要上一頁堆疊。 不過，因為這是人的應用程式堆疊，每個綜合活動不會自然的活動會有儲存的狀態。 若要提供綜合的父活動的已儲存的狀態，活動可能會覆寫`OnPrepareNavigationUpTaskStack`方法。 這個方法會接收`TaskStackBuilder`會有一組的意圖的執行個體物件，Android 會使用建立上一頁堆疊。 活動可以修改這些意圖，以便建立綜合活動時，它會收到適當的狀態資訊。
 
@@ -149,7 +149,7 @@ mediaActionPlayer.Release();
 
 
 
-#### <a name="android-beam"></a>Android 資料交換
+#### <a name="android-beam"></a>Android Beam
 
 Android 資料交換是一種 NFC 基礎技術，讓兩個彼此通訊的 Android 裝置。 Android 4.1 移轉大型檔案提供更好的支援。 使用新的方法時`NfcAdapter.SetBeamPushUris()`Android 會替代傳輸機制 （例如藍芽） 之間切換以達到快速傳輸速度。
 
@@ -284,6 +284,6 @@ Android 4.1 包含新的 API 的多點傳送以 DNS 為基礎的服務探索。
 ## <a name="related-links"></a>相關連結
 
 - [時間動畫範例 （範例）](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/TimeAnimatorExample/)
-- [Android 4.1 Api](http://developer.android.com/about/versions/android-4.1.html)
-- [工作和上一頁堆疊](http://developer.android.com/guide/components/tasks-and-back-stack.html)
-- [使用上一頁] 和 [向上巡覽](http://developer.android.com/design/patterns/navigation.html)
+- [Android 4.1 Api](https://developer.android.com/about/versions/android-4.1.html)
+- [工作和上一頁堆疊](https://developer.android.com/guide/components/tasks-and-back-stack.html)
+- [使用上一頁] 和 [向上巡覽](https://developer.android.com/design/patterns/navigation.html)

@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: fa7fff86e9a7e23bf332f2d62c3ec1a6ed3c54e1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117123"
 ---
+
 # <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>如何搭配 Xamarin.Android 使用 Google 地圖與位置
 
 _這篇文章討論如何使用 Xamarin.Android 的地圖與位置。它涵蓋了從運用內建的地圖應用程式直接使用 Google 對應 Android API V2 的所有項目。_
@@ -35,5 +30,5 @@ _這篇文章討論如何使用 Xamarin.Android 的地圖與位置。它涵蓋�
 - [MapsAndLocationDemo_v3 (sample)](https://developer.xamarin.com/samples/monodroid/MapsAndLocationDemo_v3/)
 - [活動生命週期](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [取得 Google Maps API 金鑰](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [Intents 清單： 叫用 Android 裝置上的 Google 應用程式](http://developer.android.com/guide/appendix/g-app-intents.html)
-- [位置與地圖](http://developer.android.com/guide/topics/location/index.html)
+- [Intents 清單：叫用 Android 裝置上的 Google 應用程式](https://developer.android.com/guide/appendix/g-app-intents.html)
+- [位置與地圖](https://developer.android.com/guide/topics/location/index.html)

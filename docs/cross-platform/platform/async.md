@@ -1,61 +1,61 @@
 ---
 title: 非同步支援概觀
-description: 本文件描述使用非同步程式設計，並等候時，若要更輕鬆地撰寫非同步程式碼的 C# 5 中的概念。
+description: 本文件描述程式設計使用 async 和 await 進行中, 導入的概念C#5，以輕鬆地撰寫非同步程式碼。
 ms.prod: xamarin
 ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 22878695d93ae79bbbfe1b99961587ff0bf957be
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 0a72dead1b6c001f1514f1a089df9b407eb90644
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782004"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671869"
 ---
 # <a name="async-support-overview"></a>非同步支援概觀
 
-_C# 5 導入了兩個關鍵字，以簡化非同步程式設計： async 和 await。這些關鍵字可讓您在另一個執行緒中撰寫簡單的程式碼，它會利用工作平行程式庫執行長時間執行的作業 （例如網路存取），並輕鬆地存取在完成的結果。最新版的 Xamarin.iOS 和 Xamarin.Android 支援 async 和 await-本文件提供說明和使用新語法中使用 Xamarin 的範例。_
+_C#5 導入兩個關鍵字，來簡化非同步程式設計： async 和 await。這些關鍵字可讓您撰寫簡單的程式碼會使用工作平行程式庫來執行長時間執行的作業 （例如網路存取），另一個執行緒，並輕鬆地存取完成的結果。Xamarin.iOS 和 Xamarin.Android 的最新版本支援 async 和 await-本文提供說明和使用 Xamarin 的新語法的範例。_
 
-Xamarin 的非同步支援單聲道 3.0 基礎上建置，並從正在行動設備友善的 Silverlight 版本是.NET 4.5 的行動設備友善版本升級應用程式開發介面的設定檔。
+Xamarin 的非同步支援 Mono 3.0 基礎上建置，並防止行動設備友善的 Silverlight 版本是.NET 4.5 的行動設備友善版本升級的 API 設定檔。
 
 ## <a name="overview"></a>總覽
 
-這份文件導入了新的非同步和 await 關鍵字，則實作非同步方法中 Xamarin.iOS 和 Xamarin.Android 一些簡單的案例會逐步解說。
+這份文件導入了新的 async 和 await 關鍵字，然後透過一些簡單的範例實作非同步方法在 Xamarin.iOS 和 Xamarin.Android 會逐步引導。
 
-如需 C# 5 （包括許多範例和不同使用案例） 的新非同步功能的更完整討論，請參閱 MSDN 文件[使用 Async 和 Await 進行非同步程式設計](http://msdn.microsoft.com/library/vstudio/hh191443.aspx)。
+如需新非同步功能的更完整討論C#5 （包括許多範例和不同的使用案例），請參閱 MSDN 文件[使用 Async 和 Await 進行非同步程式設計](https://msdn.microsoft.com/library/vstudio/hh191443.aspx)。
 
-範例應用程式提出簡單非同步的 web 要求 （而不會封鎖主執行緒），然後以下載的 html 和字元計數更新 UI。
+範例應用程式進行簡單的非同步 web 要求 （而不會封鎖主執行緒），然後使用已下載的 html 和字元計數來更新 UI。
 
- [![](async-images/AsyncAwait_427x368.png "範例應用程式而不會封鎖主執行緒會簡單非同步的 web 要求，然後以下載的 html 和字元計數更新 UI")](async-images/AsyncAwait.png#lightbox)
+ [![](async-images/AsyncAwait_427x368.png "範例應用程式而不會封鎖主執行緒發出簡單的非同步 web 要求，然後使用已下載的 html 和字元計數來更新 UI")](async-images/AsyncAwait.png#lightbox)
 
-Xamarin 的非同步支援單聲道 3.0 基礎上建置，並從正在行動設備友善的 Silverlight 版本是.NET 4.5 的行動設備友善版本升級應用程式開發介面的設定檔。
+Xamarin 的非同步支援 Mono 3.0 基礎上建置，並防止行動設備友善的 Silverlight 版本是.NET 4.5 的行動設備友善版本升級的 API 設定檔。
 
 ## <a name="requirements"></a>需求
 
-C# 5 功能都需要包含在 Xamarin.iOS 6.4 和 Xamarin.Android 4.8 的 Mono 3.0。 系統會提示您升級您 Mono、 Xamarin.iOS、 Xamarin.Android 和 Xamarin.Mac 利用它。
+C#5 個功能都需要包含在 Xamarin.iOS 6.4 和 Xamarin.Android 4.8 的 Mono 3.0。 系統會提示您升級您 Mono、 Xamarin.iOS、 Xamarin.Android 和 Xamarin.Mac 才會使用它。
 
 ## <a name="using-async-amp-await"></a>使用 async &amp; await
 
- `async` 和`await`都是新 C# 語言功能搭配使用工作平行程式庫可簡化撰寫執行長時間執行工作，而不會封鎖您的應用程式的主執行緒的執行緒程式碼。
+ `async` 並`await`熟悉C#搭配使用工作平行程式庫讓您輕鬆撰寫執行緒的程式碼來執行長時間執行的工作，而不會封鎖您的應用程式的主執行緒的語言功能。
 
 ## <a name="async"></a>async
 
 ### <a name="declaration"></a>宣告
 
-`async`關鍵字會放在方法宣告中 （或匿名方法或 lambda 上），表示它包含程式碼，以非同步的方式，可以執行 ie。 不會封鎖呼叫端執行緒。
+`async`關鍵字會放在方法宣告中 （或在 lambda 或匿名方法），表示它包含以非同步的方式，可以執行的程式碼即。 不會封鎖呼叫端的執行緒。
 
-以標記方法`async`應該至少包含一個 await 運算式或陳述式。 如果沒有`await`s 不存在的方法中，則它會以同步方式執行 (相同有沒有`async`修飾詞)。 這也會導致編譯器警告 （但不是錯誤）。
+以標記方法`async`應該至少包含一個 await 運算式或陳述式。 如果沒有`await`s 不存在於方法，則它會以同步方式執行 (相同好像沒有`async`修飾詞)。 這也會導致編譯器警告 （但不是錯誤）。
 
 ### <a name="return-types"></a>傳回型別
 
-非同步方法應傳回`Task`，`Task<TResult>`或`void`。
+非同步方法應該傳回`Task`，`Task<TResult>`或`void`。
 
 指定`Task`傳回型別，如果方法未傳回任何其他值。
 
-指定`Task<TResult>`如果方法必須傳回值，其中`TResult`所傳回的類型 (例如`int`，例如)。
+指定`Task<TResult>`如果此方法需要傳回值，其中`TResult`所傳回的類型 (例如`int`，例如)。
 
-`void`傳回類型主要用於將事件處理常式需要它。 呼叫傳回 void 的非同步方法的程式碼不能`await`的結果。
+`void`傳回型別主要用於將事件處理常式需要它。 呼叫傳回 void 的非同步方法的程式碼無法`await`的結果。
 
 ### <a name="parameters"></a>參數
 
@@ -63,17 +63,17 @@ C# 5 功能都需要包含在 Xamarin.iOS 6.4 和 Xamarin.Android 4.8 的 Mono 3
 
 ## <a name="await"></a>await
 
-Await 運算子可以套用至標示為非同步方法內的工作。 它會導致方法停止執行在該點，然後等候直到工作完成。
+Await 運算子可以套用至標示為非同步方法內的工作。 它會導致方法停止在該點執行，並等候工作完成。
 
-使用 await 不會封鎖呼叫端執行緒 – 而不是將控制權傳回給呼叫端。 這表示，不會封鎖呼叫執行緒，因此範例使用者介面執行緒將不會封鎖當等候的工作。
+使用 await 不會封鎖呼叫端執行緒 – 而不是控制回到呼叫端。 這表示，將不會封鎖呼叫執行緒，因此範例使用者介面執行緒將不會封鎖等候工作時。
 
-工作完成時，此方法會繼續執行程式碼中的相同位置。 這包括返回再試一次在區塊的範圍再試一次為 try-catch-finally （如果有的話）。 await 不能用在 catch 或 finally 區塊。
+工作完成時，此方法會繼續執行程式碼中的相同位置。 這包括回到 catch 的 try-finally 區塊的 try 範圍 （如果有的話）。 await 不能在 catch 或 finally 區塊。
 
-深入了解[await MSDN 上](http://msdn.microsoft.com/library/vstudio/hh156528.aspx)。
+深入了解[MSDN 上 await](https://msdn.microsoft.com/library/vstudio/hh156528.aspx)。
 
 ## <a name="exception-handling"></a>例外狀況處理
 
-在非同步方法內發生的例外狀況會儲存在工作，並擲回的工作時`await`ed。 這些例外狀況可以捕捉及處理 try catch 區塊內。
+在非同步方法內發生的例外狀況會儲存在工作和工作時，擲回`await`ed。 這些例外狀況可以捕捉及處理在 try / catch 區塊內。
 
 ## <a name="cancellation"></a>取消
 
@@ -83,17 +83,17 @@ Await 運算子可以套用至標示為非同步方法內的工作。 它會導�
 - `CancellationTokenSource.Token`執行個體傳遞給可取消的非同步方法。
 - 藉由呼叫要求取消`CancellationTokenSource.Cancel`方法。
 
-工作然後自行取消，並確認取消。
+然後，工作會自行取消，並確認取消。
 
-如需取消的詳細資訊，請參閱[如何取消非同步工作](http://msdn.microsoft.com/library/vstudio/jj155761.aspx)MSDN 上。
+如需有關取消的詳細資訊，請參閱 <<c0> [ 如何取消非同步工作](https://msdn.microsoft.com/library/vstudio/jj155761.aspx)MSDN 上。
 
 ## <a name="example"></a>範例
 
-下載[範例中的 Xamarin 方案](https://developer.xamarin.com/samples/mobile/AsyncAwait/)（適用於 iOS 和 Android） 的工作範例，請參閱`async`和`await`行動裝置應用程式。 本節中的更詳細地討論範例程式碼。
+下載[範例中的 Xamarin 方案](https://developer.xamarin.com/samples/mobile/AsyncAwait/)（適用於 iOS 和 Android） 的工作範例，請參閱`async`和`await`行動裝置應用程式。 在這一節中詳細討論的範例程式碼。
 
 ### <a name="writing-an-async-method"></a>撰寫非同步方法
 
-下列方法將示範如何以程式碼`async`方法`await`ed 工作：
+下列方法示範如何撰寫程式碼`async`方法使用`await`ed 工作：
 
 ```csharp
 public async Task<int> DownloadHomepage()
@@ -121,13 +121,13 @@ public async Task<int> DownloadHomepage()
 請注意下列重點：
 
 -  方法宣告包含`async`關鍵字。
--  傳回型別是`Task<int>`讓呼叫的程式碼可存取`int`中這個方法計算的值。
--  Return 陳述式是`return exampleInt;`即整數物件 – 此方法會傳回事實`Task<int>`是語言改善功能的一部分。
+-  傳回的型別是`Task<int>`讓呼叫的程式碼可以存取`int`中這個方法，計算的值。
+-  Return 陳述式是`return exampleInt;`這是整數物件 – 此方法會傳回事實`Task<int>`的語言改善功能的一部分。
 
 
 ### <a name="calling-an-async-method-1"></a>呼叫非同步方法 1
 
-這個按鈕的 click 事件處理常式可以在 Android 範例應用程式呼叫上面所討論的方法：
+此按鈕的 click 事件處理常式可在 Android 範例應用程式呼叫上述方法：
 
 ```csharp
 GetButton.Click += async (sender, e) => {
@@ -148,16 +148,16 @@ GetButton.Click += async (sender, e) => {
 
 附註：
 
--  匿名委派具有 async 關鍵字前置詞。
+-  匿名委派有 async 關鍵字前置詞。
 -  DownloadHomepage 的非同步方法傳回的工作<int>sizeTask 變數中儲存。
--  程式碼等候 sizeTask 變數上。  *這*方法會暫停，直到非同步工作完成其自己的執行緒上將控制權傳回給呼叫程式碼的位置。
--  執行沒有*不*時正在建立工作，儘管那里所建立的工作、 方法的第一行上暫停。 Await 關鍵字表示已暫停執行的位置。
--  非同步工作完成時，設定 intResult 並繼續，從 await 列在原始執行緒上執行。
+-  SizeTask 變數上，等候程式碼。  *這*方法會暫停，直到非同步工作完成自己的執行緒上將控制項傳回給呼叫程式碼的位置。
+-  執行會*不*暫停方法中，儘管那里所建立之工作的第一行上建立工作時。 Await 關鍵字表示已暫停執行的位置。
+-  當非同步工作完成時，intResult 會設定，而且從 await 列的原始執行緒會繼續執行。
 
 
 ### <a name="calling-an-async-method-2"></a>呼叫非同步方法 2
 
-在 iOS 範例應用程式範例會寫入而有稍微不同示範的替代方式。 而是使用在匿名委派比這個範例會宣告`async`指派像一般事件處理常式的事件處理常式：
+IOS 範例應用程式中的範例會寫入方式稍有不同示範另一個方法。 而是不要使用匿名委派這個範例會宣告`async`指派等的一般事件處理常式的事件處理常式：
 
 ```csharp
 GetButton.TouchUpInside += HandleTouchUpInside;
@@ -179,16 +179,16 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 }
 ```
 
-一些重點：
+有一些重要事項：
 
--  方法會標示為`async`但傳回`void`。 這通常只是事件處理常式 (否則會傳回`Task`或`Task<TResult>`)。
--  程式碼`await`上的是 s`DownloadHomepage`方法直接在指派至變數 ( `intResult` ) 不同於前一個範例使用中繼`Task<int>`變數進行參考的工作。  *這*是其中將控制權傳回給呼叫端的非同步方法完成之前完成另一個執行緒的位置。
--  當非同步方法完成，並傳回時，繼續執行`await`表示整數結果會傳回並再呈現 UI widget 中。
+-  方法會標示`async`但傳回`void`。 這通常只會進行事件處理常式 (否則您將會傳回`Task`或`Task<TResult>`)。
+-  程式碼`await`上的是 s`DownloadHomepage`直接在指派值給變數上的方法 ( `intResult` ) 不同於前一個範例是使用中繼`Task<int>`變數來參考工作。  *這*是，程式控制權回到呼叫端的非同步方法完成之前另一個執行緒的位置。
+-  當非同步方法完成，並傳回時，執行會繼續在`await`表示整數結果會傳回並再呈現 UI widget 中。
 
 
 ## <a name="summary"></a>總結
 
-使用 async 和 await 大幅簡化繁衍 （spawn） 而不會封鎖主執行緒的背景執行緒上的長時間執行作業所需的程式碼。 它們也讓您輕鬆存取工作已完成的結果。
+使用 async 和 await，大幅簡化了繁衍 （spawn） 而不會封鎖主執行緒的背景執行緒上的長時間執行作業所需的程式碼。 它們也容易存取結果，當工作完成為止。
 
 這份文件已針對 Xamarin.iOS 和 Xamarin.Android 提供新的語言關鍵字和範例的概觀。
 
@@ -197,14 +197,14 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 ## <a name="related-links"></a>相關連結
 
 - [AsyncAwait （範例）](https://developer.xamarin.com/samples/mobile/AsyncAwait/)
-- [為我們層代的回呼，請移至陳述式](http://tirania.org/blog/archive/2013/Aug-15.html)
+- [為我們層代的回呼移至陳述式](https://tirania.org/blog/archive/2013/Aug-15.html)
 - [資料 (iOS) （範例）](https://developer.xamarin.com/samples/monotouch/Data/)
 - [HttpClient (iOS) （範例）](https://developer.xamarin.com/samples/monotouch/HttpClient/)
 - [MapKitSearch (iOS) （範例）](https://github.com/xamarin/monotouch-samples/tree/master/MapKitSearch)
-- [網路研討會： C# 非同步在 iOS 和 Android （影片）](http://xamarin.wistia.com/medias/k27mc627xz)
-- [非同步程式設計使用 Async 和 Await (MSDN)](http://msdn.microsoft.com/library/vstudio/hh191443.aspx)
-- [微調非同步應用程式 (MSDN)](http://msdn.microsoft.com/library/vstudio/jj155761.aspx)
-- [等候，以及 UI 和死結 （deadlock） ！喔我 ！(MSDN)](http://blogs.msdn.com/b/pfxteam/archive/2011/01/13/10115163.aspx)
+- [網路研討會：C#IOS 和 Android （影片） 上的非同步處理](http://xamarin.wistia.com/medias/k27mc627xz)
+- [非同步程式設計使用 Async 和 Await (MSDN)](https://msdn.microsoft.com/library/vstudio/hh191443.aspx)
+- [微調非同步應用程式 (MSDN)](https://msdn.microsoft.com/library/vstudio/jj155761.aspx)
+- [等候時，UI，以及死結 （deadlock） ！對了我 ！(MSDN)](http://blogs.msdn.com/b/pfxteam/archive/2011/01/13/10115163.aspx)
 - [處理工作完成 (MSDN)](http://blogs.msdn.com/b/pfxteam/archive/2012/08/02/processing-tasks-as-they-complete.aspx)
-- [工作式非同步模式 (TAP)](http://msdn.microsoft.com/library/hh873175.aspx)
-- [C# 5 （Eric Lippert 部落格 –） 中的非同步有關關鍵字的簡介](http://blogs.msdn.com/b/ericlippert/archive/2010/11/11/whither-async.aspx)
+- [工作式非同步模式 (TAP)](https://msdn.microsoft.com/library/hh873175.aspx)
+- [在非同步C#5 （Eric Lippert 的部落格） – 相關關鍵字的簡介](http://blogs.msdn.com/b/ericlippert/archive/2010/11/11/whither-async.aspx)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 322bb630194f973d37d7ca27a0ca9fe1b548b240
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f8fae79af654339b54a8df0d2ea32eef38f34adb
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107207"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668448"
 ---
 # <a name="xamarinios-9--troubleshooting"></a>Xamarin.iOS 9 – 疑難排解
 
@@ -24,7 +24,7 @@ Xamarin iOS 設計工具還不支援 Xcode 7 功能。 分鏡腳本將無法使�
 
 iOS 設計工具支援 Xcode 7 功能被針對即將發行的循環 6 功能版本。 循環 6 的預覽版本目前可供 Alpha 色板，且新的 Xcode 7 功能的支援有限。
 
-Visual Studio for Mac 的部分因應措施： 以滑鼠右鍵按一下 分鏡腳本，然後選擇 **開啟** > **Xcode Interface Builder**。
+Visual Studio for Mac 的部分因應措施：以滑鼠右鍵按一下 分鏡腳本，然後選擇 **開啟** > **Xcode Interface Builder**。
 
 ## <a name="where-are-the-ios-8-simulators"></a>在哪裡？ iOS 8 模擬器
 
@@ -42,23 +42,23 @@ Visual Studio for Mac 的部分因應措施： 以滑鼠右鍵按一下 分鏡�
 
 如果在相同的分鏡腳本執行 iOS 9 中，它會導致例外狀況，請以下列形式：
 
-> 終止應用程式，因為發生無法攔截的例外狀況 'NSInvalidArgumentException'，原因: ' * * * + [NSLayoutConstraint constraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:]: 開頭/結尾之間無法進行的條件約束屬性和向右鍵/向的屬性。 使用前置/尾端的兩者或兩者皆非。 '
+> 終止應用程式，因為發生無法攔截的例外狀況 'NSInvalidArgumentException'，原因: ' * * * + [NSLayoutConstraint constraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:]:條件約束不可做為前置/尾端的屬性和向右鍵/向屬性之間。 使用前置/尾端的兩者或兩者皆非。 '
 
 iOS 9 強制使用的版面配置**右** & **左**_或_**前置** &  **尾端**屬性，但*不*兩者。 若要修正此問題，變更使用相同的屬性，設定您的分鏡腳本檔內的所有版面配置條件約束。
 
-如需詳細資訊，請參閱[iOS 9 的條件約束錯誤](http://stackoverflow.com/questions/32692841/ios-9-constraint-error)Stack Overflow 討論。
+如需詳細資訊，請參閱[iOS 9 的條件約束錯誤](https://stackoverflow.com/questions/32692841/ios-9-constraint-error)Stack Overflow 討論。
 
-## <a name="error-itms-90535-unexpected-cfbundleexecutable-key"></a>錯誤 ITMS-90535： 未預期的 CFBundleExecutable 金鑰
+## <a name="error-itms-90535-unexpected-cfbundleexecutable-key"></a>錯誤 ITMS-90535:未預期的 CFBundleExecutable 金鑰
 
 切換至 iOS 9 之後, 從應用程式會使用第 3 的合作對象元件 （特別是我們現有 Google 地圖元件），編譯及執行 ios 8 （或舊版），當嘗試提交新的組建至 iTunes Connect，您可以在表單中收到錯誤：
 
-> 錯誤 ITMS-90535： 非預期的 CFBundleExecutable 索引鍵。 在 'Payload/app-name.app/component.bundle' 組合不包含套件組合的可執行檔...
+> 錯誤 ITMS-90535:未預期的 CFBundleExecutable 索引鍵。 在 'Payload/app-name.app/component.bundle' 組合不包含套件組合的可執行檔...
 
 此問題通常是解決專案中，找出已命名的套件組合即可-就像此錯誤訊息建議-編輯`Info.plist`也就是說組合中藉由移除`CFBundleExecutable`索引鍵。 `CFBundlePackageType`機碼應該設定為`BNDL`以及。
 
 進行這些變更之後，請勿清除並重建整個專案。 您應該能夠進行這些變更之後提交至 iTunes Connect 不會發生問題。
 
-如需詳細資訊，請參閱這[Stack Overflow](http://stackoverflow.com/questions/32096130/unexpected-cfbundleexecutable-key)討論。
+如需詳細資訊，請參閱這[Stack Overflow](https://stackoverflow.com/questions/32096130/unexpected-cfbundleexecutable-key)討論。
 
 ## <a name="cfnetwork-sslhandshake-failed--9824-error"></a>CFNetwork SSLHandshake 失敗 (-9824) 錯誤
 
@@ -102,15 +102,15 @@ public YourCellClassName (CGRect frame) : base (frame)
 }
 ```
 
-相關範例： [MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)， [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
+相關的範例：[MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)， [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
 
 <a name="UIView-fails-to-Init-with-Coder-when-Loading-a-View-from-a-Xib/Nib" />
 
 ## <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>UIView 無法與 Coder Init Xib/Nib 從載入檢視時
 
-**原因：** `initWithCoder:`建構函式是從介面產生器 Xib 檔案載入檢視時呼叫。 如果這個建構函式不會匯出未受管理的程式碼無法呼叫我們 managed 的版本。 之前 （例如。 在 iOS 8)`IntPtr`建構函式已叫用來初始化檢視。
+**原因：**`initWithCoder:`建構函式是從介面產生器 Xib 檔案載入檢視時呼叫。 如果這個建構函式不會匯出未受管理的程式碼無法呼叫我們 managed 的版本。 之前 （例如。 在 iOS 8)`IntPtr`建構函式已叫用來初始化檢視。
 
-**修正：** 建立及匯出`initWithCoder:`建構函式如下：
+**修正：** 建立和匯出`initWithCoder:`建構函式如下：
 
 ```csharp
 [Export ("initWithCoder:")]
@@ -120,9 +120,9 @@ public YourClassName (NSCoder coder) : base (coder)
 }
 ```
 
-相關的範例：[對談](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
+相關的範例：[Chat](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
 
-## <a name="dyld-message-no-cache-image-with-name"></a>Dyld 訊息： 沒有快取映像名稱...
+## <a name="dyld-message-no-cache-image-with-name"></a>Dyld 訊息：沒有具有名稱的快取影像...
 
 您可能會遇到當機記錄檔中的下列資訊：
 
@@ -131,7 +131,7 @@ Dyld Error Message:
 Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScriptCore.framework/JavaScriptCore)
 ```
 
-**原因：** 這是 Apple 的原生連結器，當他們完成的私用的架構公用發生這種情況中的 bug （JavaScriptCore 已公開在 iOS 7，之前它是私用的架構），而應用程式的部署目標為 iOS 版本時framework 是私人的。 在此情況下 Apple 的連結器會使用私用的版本，而不是公用版本的 framework 的連結。
+**原因：** 這是 Apple 的原生連結器，當他們完成的私用的架構公用發生這種情況中的 bug （JavaScriptCore 已公開在 iOS 7，之前它是私用的架構），和私用架構時，應用程式的部署目標是 iOS 版本。 在此情況下 Apple 的連結器會使用私用的版本，而不是公用版本的 framework 的連結。
 
 **修正：** 將會解決此問題適用於 iOS 9，但同時套用自行輕鬆因應措施： 只為目標的更新版本的 iOS 版本專案中 （您在此情況下可以嘗試 iOS 7）。 其他架構可能會表現出類似的問題，例如 WebKit 架構已在 iOS 8 中公開 （和以 iOS 7 為目標時，會導致此錯誤，因此您應該為目標 iOS 8 應用程式中使用 WebKit）。
 
@@ -177,7 +177,7 @@ iOS 9 現在會強制執行的啟動螢幕的需求，因此可以不再支援�
 
 編譯及執行 iOS 9 的現有的 Xamarin.iOS 應用程式時您可能會發生錯誤，在表單中：
 
-> OBJECTIVE-C 擲回例外狀況。  名稱： NSInternalInconsistencyException 原因： windows 應用程式應包含結尾的啟動應用程式的根檢視控制器
+> OBJECTIVE-C 擲回例外狀況。  名稱：NSInternalInconsistencyException 原因：Windows 應用程式都應該有一個根檢視控制器結尾的應用程式啟動
 
 這是錯誤因為 Windows 應用程式應包含結尾的啟動應用程式的根檢視控制器，且您現有的應用程式不會引發。
 

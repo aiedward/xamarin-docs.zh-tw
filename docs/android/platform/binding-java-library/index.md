@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: c41aecf5f8c65ad5bfba5361b77d7c7fc047cda4
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171608"
 ---
+
 # <a name="binding-a-java-library"></a>繫結 Java 程式庫
 
 _Android 的社群有許多您可能想要在您的應用程式; 中的 Java 程式庫本指南說明如何藉由建立繫結程式庫併入您的 Xamarin.Android 應用程式的 Java 程式庫。_
@@ -103,7 +98,7 @@ API 文件應該是從 Java8、 Java7 或 Java6 SDK （它們是完全不同的�
 
 ## <a name="including-a-native-library-in-a-binding"></a>繫結中包含原生程式庫
 
-您可能必須包含 **.so** Xamarin.Android 繫結專案一部分的繫結 Java 程式庫中的程式庫。 若要讓 JNI 呼叫和錯誤訊息的已包裝的 Java 程式碼執行時，將會失敗 Xamarin.Android _java.lang.UnsatisfiedLinkError： 找不到的原生方法：_ 會出現在出 logcat，應用程式。
+您可能必須包含 **.so** Xamarin.Android 繫結專案一部分的繫結 Java 程式庫中的程式庫。 若要讓 JNI 呼叫和錯誤訊息的已包裝的 Java 程式碼執行時，將會失敗 Xamarin.Android _java.lang.UnsatisfiedLinkError:找不到的原生方法：_ 會出現在出 logcat，應用程式。
 
 此修正方法是手動載入 **.so**藉由呼叫的程式庫`Java.Lang.JavaSystem.LoadLibrary`。 例如假設 Xamarin.Android 專案具有共用媒體櫃**libpocketsphinx_jni.so**包含在繫結專案的建置動作**EmbeddedNativeLibrary**，下列程式碼片段（執行之前使用共用的程式庫） 會載入 **.so**程式庫：
 
@@ -145,5 +140,5 @@ Xamarin.Android 繫結產生器將會變更一些 Java 慣用語和模式，以�
 ## <a name="related-links"></a>相關連結
 
 - [使用 JNI](~/android/platform/java-integration/working-with-jni.md)
-- [GAPI 中繼資料](http://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)
+- [GAPI 中繼資料](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)
 - [使用原生程式庫](~/android/platform/native-libraries.md)

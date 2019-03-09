@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: cd80154602cc22668768fe217da7371b77ded003
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fa32783617fce99514560677184f17be904cd42d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112375"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670316"
 ---
 # <a name="launching-the-maps-application"></a>啟動對應應用程式
 
@@ -42,7 +42,7 @@ StartActivity (mapIntent);
 
 -   `geo:latitude,longitude` &ndash; 開啟對應應用程式在 lat/lon 置中。 
 
--   `geo:latitude,longitude?z=zoom` &ndash; 開啟應用程式在 lat/lon 置中與縮放比例，以指定的層級的對應。 縮放層級範圍可以從 1 到 23: 1 顯示了整個地球，23 是最接近的縮放層級。
+-   `geo:latitude,longitude?z=zoom` &ndash; 開啟應用程式在 lat/lon 置中與縮放比例，以指定的層級的對應。 縮放層級的範圍可從 1 到 23:1 會顯示整個地球，23 是最接近的縮放層級。
 
 -   `geo:0,0?q=my+street+address` &ndash; 開啟對應應用程式的街道地址的位置。 
 
@@ -55,7 +55,7 @@ StartActivity (mapIntent);
 
 
 
-如需地理 URI 配置的詳細資訊，請參閱[在地圖上顯示位置](http://developer.android.com/guide/components/intents-common.html#Maps)。
+如需地理 URI 配置的詳細資訊，請參閱[在地圖上顯示位置](https://developer.android.com/guide/components/intents-common.html#Maps)。
 
 
 ## <a name="street-view"></a>街道地檢視

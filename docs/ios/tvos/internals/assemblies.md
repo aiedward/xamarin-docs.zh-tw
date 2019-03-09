@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: 1749de49607596fa2b8e555fec471af1d18b8ce9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3b5eae4d218fdc66f7f99f0aab8aa32af3cbabf4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116676"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667357"
 ---
 # <a name="assemblies-supported-by-xamarin-for-tvos"></a>TvOS 的 xamarin 的組件支援
 
@@ -20,28 +20,28 @@ ms.locfileid: "50116676"
 
 這是一份支援 xamarin Xamarin.tvOS 應用程式的組件。這些項目的詳細的清單如下所示。  包含一些值得注意的疏忽`System.EnterpriseServices`，Windows.Forms 與 ASP.NET 堆疊。
 
-|Assembly|已加入|API 相容性|
+|Assembly|Added|API 相容性|
 |---|---|---|
 |Mono.CompilerServices.SymbolWriter.dll|1.0|編譯器寫入器。|
 |Mono.Data.Sqlite.dll|1.2|SQLite; 的 ADO.NET 提供者請參閱[限制](~/ios/data-cloud/system.data.md)。|
 |Mono.Data.Tds.dll|1.2|TDS 通訊協定支援，用於[System.Data.SqlClient](xref:System.Data.SqlClient)內支援[System.Data](~/ios/data-cloud/system.data.md)。|
 |Mono.Security.dll|1.0|密碼編譯 Api。|
 |monotouch.dll|1.0|這個組件包含[C# 繫結至 CocoaTouch API](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)。|
-|mscorlib.dll|1.0|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
+|mscorlib.dll|1.0|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
 |OpenTK.dll|1.0|OpenGL/OpenAL 物件導向 Api[延伸提供 iPhone 裝置支援](https://developer.xamarin.com/api/namespace/OpenGLES/)。|
-|System.dll|1.0|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)，再加上下列命名空間中的型別： <ul><li>System.Collections.Specialized</li> <li>System.ComponentModel</li> <li>System.ComponentModel.Design</li> <li>System.Diagnostics</li> <li>System.IO.Compression</li> <li>System.Net</li> <li>System.Net.Cache</li> <li>System.Net.Mail</li> <li>System.Net.Mime</li> <li>System.Net.NetworkInformation</li> <li>System.Net.Security</li> <li>System.Net.Sockets</li> <li>System.Security.Authentication</li> <li>System.Security.Cryptography</li> <li>System.Timers</li></ul>|
-|System.Core.dll|1.0|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
-|System.Data.dll|1.2|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx)，[移除某些功能](~/ios/data-cloud/system.data.md)。|
+|System.dll|1.0|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)，再加上下列命名空間中的型別： <ul><li>System.Collections.Specialized</li> <li>System.ComponentModel</li> <li>System.ComponentModel.Design</li> <li>System.Diagnostics</li> <li>System.IO.Compression</li> <li>System.Net</li> <li>System.Net.Cache</li> <li>System.Net.Mail</li> <li>System.Net.Mime</li> <li>System.Net.NetworkInformation</li> <li>System.Net.Security</li> <li>System.Net.Sockets</li> <li>System.Security.Authentication</li> <li>System.Security.Cryptography</li> <li>System.Timers</li></ul>|
+|System.Core.dll|1.0|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
+|System.Data.dll|1.2|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx)，[移除某些功能](~/ios/data-cloud/system.data.md)。|
 |System.Data.Service.Client.dll|3.x|完整的 oData 用戶端。|
 |System.Drawing|1.0|System.Drawing API-傳統的 API。<br />_統一的 API 不支援 System.Drawing Xamarin.Mac.NET 4.5 或行動裝置的架構。_|
-|System.Json.dll|1.1|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
-|System.Runtime.Serialization.dll|?|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
-|System.ServiceModel.dll|1.1|[WCF](http://docs.xamarin.com/guides/cross-platform/application_fundamentals/introduction_to_web_services)堆疊中顯示[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
-|System.ServiceModel.Web.dll|?|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)，再加上下列命名空間中的型別： <ul><li>系統</li><li>System.ServiceModel.Channels</li><li>System.ServiceModel.Description</li><li>System.ServiceModel.Web</li></ul>|
-|System.Transactions.dll|1.2|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx); 的一部分[System.Data](https://docs.microsoft.com/xamarin/ios/data-cloud/system.data)支援。|
+|System.Json.dll|1.1|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
+|System.Runtime.Serialization.dll|?|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
+|System.ServiceModel.dll|1.1|[WCF](http://docs.xamarin.com/guides/cross-platform/application_fundamentals/introduction_to_web_services)堆疊中顯示[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
+|System.ServiceModel.Web.dll|?|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)，再加上下列命名空間中的型別： <ul><li>系統</li><li>System.ServiceModel.Channels</li><li>System.ServiceModel.Description</li><li>System.ServiceModel.Web</li></ul>|
+|System.Transactions.dll|1.2|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx); 的一部分[System.Data](https://docs.microsoft.com/xamarin/ios/data-cloud/system.data)支援。|
 |System.Web.Services|1.1|[基本的 Web 服務](http://docs.xamarin.com/guides/cross-platform/application_fundamentals/introduction_to_web_services)從.NET 3.5 的設定檔，移除的伺服器功能。|
-|System.Xml.dll|1.0|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx)|
-|System.Xml.Linq.dll|1.0|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx)|
+|System.Xml.dll|1.0|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx)|
+|System.Xml.Linq.dll|1.0|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx)|
 
 <a name="Summary" />
 

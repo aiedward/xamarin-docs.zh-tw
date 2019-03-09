@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: c2eed44a7c684b91ceed4493a83ff3b4e1578b5f
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: cade72aaad60c30993f6b11e98704addd218ffae
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209313"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667486"
 ---
 # <a name="adding-appcompat-and-material-design"></a>新增 AppCompat 和材質設計
 
@@ -114,7 +114,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 ```
 
 有幾個屬性的索引標籤已設定，包括以索引標籤的重心`fill`要和模式`fixed`。
-如果您有許多索引標籤切換這您可能要以可捲動-閱讀 Android [TabLayout 文件](http://developer.android.com/reference/android/support/design/widget/TabLayout.html)若要深入了。
+如果您有許多索引標籤切換這您可能要以可捲動-閱讀 Android [TabLayout 文件](https://developer.android.com/reference/android/support/design/widget/TabLayout.html)若要深入了。
 
 **Resources/layout/Toolbar.axml**
 

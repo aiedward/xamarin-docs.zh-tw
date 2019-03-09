@@ -3,6 +3,8 @@ layout: HubPage
 hide_bc: true
 title: Xamarin 文件
 description: 'Xamarin 可讓您使用 .NET 程式碼和平台專屬的使用者介面，來建置 Android、iOS 和 macOS 原生應用程式。 Xamarin.Forms 可讓您透過以 C# 或 XAML 撰寫的共用 UI 程式碼，來建置原生應用程式。'
+author: conceptdev
+ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
   - clicktale
@@ -735,7 +737,7 @@ Mac</a>
         <h2>和我們保持連絡</h2>
         <ul class="links">
            <li>
-                <a href="http://blog.xamarin.com/"> 部落格 </a>
+                <a href="https://blog.xamarin.com/"> 部落格 </a>
             </li>
             <li>
                 <a href="https://forums.xamarin.com/"> 論壇 </a>

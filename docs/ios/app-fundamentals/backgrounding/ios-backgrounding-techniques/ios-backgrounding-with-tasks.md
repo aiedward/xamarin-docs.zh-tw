@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 48859afe2c988c1afe67d5c4350cef734f879fdf
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c8d1abebf6dec2b7b5fe76d57ff851fad457f2a8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120992"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669826"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS 背景與工作
 
@@ -67,7 +67,7 @@ public override void DidEnterBackground (UIApplication application) {
 首先藉由覆寫`DidEnterBackground`方法中的`AppDelegate`，其中我們註冊我們的工作，透過`BeginBackgroundTask`如同我們在上一個範例。 接下來，我們會繁衍新的執行緒，並執行我們的長時間執行工作。 請注意，`EndBackgroundTask`現在從進行呼叫，在長時間執行的工作，因為`DidEnterBackground`都已傳回方法。
 
 > [!IMPORTANT]
-> 使用 iOS[看門狗機制](http://developer.apple.com/library/ios/qa/qa1693/_index.html)以確保應用程式的 UI 保持回應。 應用程式花費太多時間在`DidEnterBackground`會變成無回應 UI 中。 開始在背景中執行的工作可讓`DidEnterBackground`傳回及時，保留 UI 回應，並避免看門狗終止應用程式。
+> 使用 iOS[看門狗機制](https://developer.apple.com/library/ios/qa/qa1693/_index.html)以確保應用程式的 UI 保持回應。 應用程式花費太多時間在`DidEnterBackground`會變成無回應 UI 中。 開始在背景中執行的工作可讓`DidEnterBackground`傳回及時，保留 UI 回應，並避免看門狗終止應用程式。
 
 
 ## <a name="handling-background-task-time-limits"></a>處理背景工作時間限制

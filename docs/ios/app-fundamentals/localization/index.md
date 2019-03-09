@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/28/2017
-ms.openlocfilehash: 906489aa3947df24662cbbd0473333caccc032c7
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527257"
 ---
+
 # <a name="localization-in-xamarinios"></a>在 Xamarin.iOS 中的當地語系化
 
 _本文件涵蓋 iOS SDK 的當地語系化功能，以及如何使用 Xamarin 來存取它們。_
@@ -22,11 +17,11 @@ _本文件涵蓋 iOS SDK 的當地語系化功能，以及如何使用 Xamarin �
 
 ## <a name="ios-platform-features"></a>iOS 平台功能
 
-本章節描述一些在 iOS 中的當地語系化功能。 請跳至[下一節](#basics)若要查看特定的程式碼和範例。
+本章節描述一些在 iOS 中的當地語系化功能。 請跳至[下一節](#Localization-basics-in-iOS)若要查看特定的程式碼和範例。
 
 ### <a name="language"></a>語言
 
-使用者選擇其語言**設定**應用程式。 此設定會影響語言字串和顯示依作業系統和應用程式中的映像。 
+使用者選擇其語言**設定**應用程式。 此設定會影響語言字串和顯示依作業系統和應用程式中的映像。
 
 若要判斷應用程式中所使用的語言，取得的第一個元素`NSBundle.MainBundle.PreferredLocalizations`:
 
@@ -59,7 +54,7 @@ var lang = NSBundle.MainBundle.PreferredLocalizations[0];
 > [!NOTE]
 > Mono (Xamarin.iOS 所依據的.NET runtime) 和 Apple iOS Api 不支援的語言/地區組合的同一組。
 > 基於這個原因，就可以選取 iOS 中的 語言/地區的組合**設定**未對應到有效的值在 Mono 中的應用程式。 例如，將以英文的 iPhone 的語言和其地區設定為西班牙將會導致下列 Api 來產生不同的值：
-> 
+>
 > - `CurrentThead.CurrentCulture`: EN-US (Mono API)
 > - `CurrentThread.CurrentUICulture`: EN-US (Mono API)
 > - `NSLocale.CurrentLocale.LocaleIdentifier`: en_ES (Apple API)
@@ -76,14 +71,14 @@ iOS 會產生`NSCurrentLocaleDidChangeNotification`當使用者更新其地區�
 
 ### <a name="specifying-default-and-supported-languages-in-infoplist"></a>指定在 Info.plist 中的預設值與支援的語言
 
-在 [技術性問與答 QA1828: iOS 如何決定語言為您的應用程式](https://developer.apple.com/library/content/qa/qa1828/_index.html)，Apple 將告訴您 iOS 如何選取要在應用程式中使用的語言。 下列因素會影響在顯示的語言：
+在 [技術性問與答 QA1828:IOS 決定語言為您的應用程式的方式](https://developer.apple.com/library/content/qa/qa1828/_index.html)，Apple 將告訴您 iOS 如何選取要在應用程式中使用的語言。 下列因素會影響在顯示的語言：
 
 - 使用者偏好的語言 (位於**設定**應用程式)
 - 隨附於應用程式 （.lproj 資料夾） 的當地語系化資源
 - `CFBundleDevelopmentRegion` (**Info.plist**值，指定應用程式的預設語言)
 - `CFBundleLocalizations` (**Info.plist**指定所有支援的當地語系化資源的陣列)
 
-技術性問與答中所示`CFBundleDevelopmentRegion`代表應用程式的預設地區和語言。 如果應用程式明確地不支援任何使用者的慣用語言，它會使用此欄位所指定的語言。 
+技術性問與答中所示`CFBundleDevelopmentRegion`代表應用程式的預設地區和語言。 如果應用程式明確地不支援任何使用者的慣用語言，它會使用此欄位所指定的語言。
 
 > [!IMPORTANT]
 > iOS 11 適用於此語言工作階段機制更嚴格地比舊版的作業系統。 因為這個緣故，未明確宣告其支援的當地語系化資源 – 藉由包括.lproj 資料夾，或設定值的任何 iOS 11 應用程式`CFBundleLocalizations`– 比在 iOS 10 中，可能會顯示不同的語言在 iOS 11。
@@ -255,7 +250,7 @@ iOS 會提供許多功能，可協助您建置從右至左感知應用程式：
 
 下列螢幕擷取畫面所示[當地語系化 Tasky 範例](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)阿拉伯文和希伯來文 （雖然已在欄位中輸入英文版）：
 
-[![](images/rtl-ar-sml.png "在 阿拉伯文的當地語系化")](images/rtl-ar.png#lightbox "Arabic") 
+[![](images/rtl-ar-sml.png "在 阿拉伯文的當地語系化")](images/rtl-ar.png#lightbox "Arabic")
 
 [![](images/rtl-he-sml.png "希伯來文的當地語系化")](images/rtl-he.png#lightbox "Hebrew")
 
@@ -345,8 +340,8 @@ someControl.Text = localizedString;
 ```
 
 > [!IMPORTANT]
-> 使用大小類別中的分鏡腳本，可能會導致不會出現在應用程式中的翻譯。 [Apple 的 Xcode 版本資訊](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html)指出，分鏡腳本或 XIB 將未當地語系化正確是否三件事是，則為 true： 它會使用大小類別、 基底的當地語系化和 「 建置 」 目標會設定為標準，以及組建目標 iOS 7.0。 修正方法是複製您的分鏡腳本字串檔案到兩個相同的檔案： **MainStoryboard~iphone.strings**並**MainStoryboard~ipad.strings**，如下列螢幕擷取畫面所示：
-> 
+> 使用大小類別中的分鏡腳本，可能會導致不會出現在應用程式中的翻譯。 [Apple 的 Xcode 版本資訊](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html)指出，分鏡腳本或 XIB 將未當地語系化正確是否三件事是，則為 true： 它會使用大小類別、 基底的當地語系化和 「 建置 」 目標會設定為標準，以及組建目標 iOS 7.0。 修正方法是複製您的分鏡腳本字串檔案到兩個相同的檔案：**MainStoryboard~iphone.strings**並**MainStoryboard~ipad.strings**，如下列螢幕擷取畫面所示：
+>
 > ![](images/xs-dup-strings.png "字串的檔案")
 
 <a name="appstore" />
@@ -368,4 +363,4 @@ someControl.Text = localizedString;
 - [Apple 當地語系化指南](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/InternationalizingYourUserInterface/InternationalizingYourUserInterface.html)
 - [跨平台當地語系化概觀](~/cross-platform/app-fundamentals/localization.md)
 - [Xamarin.Forms 當地語系化](~/xamarin-forms/app-fundamentals/localization/index.md)
-- [Android 的當地語系化](~/android/app-fundamentals/localization.md)
+- [Android 當地語系化](~/android/app-fundamentals/localization.md)

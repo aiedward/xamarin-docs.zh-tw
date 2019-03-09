@@ -6,13 +6,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: a0778de5dcc7e21ba011fe144be703b3b83b8247
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114037"
 ---
+
 # <a name="notifications-in-xamarinandroid"></a>在 Xamarin.Android 中的通知
 
 
@@ -36,7 +31,7 @@ ms.locfileid: "50114037"
 
 [Firebase 雲端通訊](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) &ndash; Firebase 雲端通訊 (FCM) 是一項服務，可協助行動裝置應用程式和伺服器應用程式之間通訊。 Firebase 雲端通訊可用來實作 （也稱為 「 推播通知 」） 的遠端通知在 Xamarin.Android 應用程式。
 
-[通知](http://developer.android.com/guide/topics/ui/notifiers/notifications.html)&ndash;此 Android 開發人員主題是 Android 通知的完整指南。 它包含的設計考量 > 一節，可協助您設計您的通知，使它們符合 Android 使用者介面的指導方針。 啟動活動時，它會提供有關 preserviing 導覽的詳細背景資訊，並說明如何在通知和控制媒體播放在鎖定畫面上顯示進度。 
+[通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)&ndash;此 Android 開發人員主題是 Android 通知的完整指南。 它包含的設計考量 > 一節，可協助您設計您的通知，使它們符合 Android 使用者介面的指導方針。 啟動活動時，它會提供有關 preserviing 導覽的詳細背景資訊，並說明如何在通知和控制媒體播放在鎖定畫面上顯示進度。 
 
 [NotificationListenerService](https://developer.xamarin.com/api/type/Android.Service.Notification.NotificationListenerService/) &ndash;此 Android 服務可讓您的應用程式，接聽 （並與其互動） 的所有通知都張貼在 Android 裝置，而不只是您的應用程式已向通知上接收。 請注意，使用者必須明確地授與您的應用程式的權限，才能夠接聽在裝置上的通知。
 

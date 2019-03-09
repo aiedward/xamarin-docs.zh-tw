@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 006e4c2b2de56fef96c561e788992649f6582d24
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 833e24e91a37b92eb5025aacdc9509f092b823cd
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054931"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672082"
 ---
 # <a name="path-basics-in-skiasharp"></a>SkiaSharp 中路徑的基本概念
 
@@ -28,26 +28,26 @@ _探索結合連接的直線和曲線的 SkiaSharp SKPath 物件_
 
 Contour 通常開始的下列方法呼叫`SKPath`:
 
-- [`MoveTo`](SkiaSharp.SKPath.MoveTo*) 若要開始新的分佈
+- [`MoveTo`](xref:SkiaSharp.SKPath.MoveTo*) 若要開始新的分佈
 
 該方法的引數是單一點，您可以表示為`SKPoint`值，或作為個別的 X 和 Y 座標。 `MoveTo`呼叫會建立在開始點的分佈和初始*目前的點*。 您可以呼叫下列方法，以繼續使用線條或曲線從目前的點來指定在方法中，就會變成新的目前點的點分佈：
 
-- [`LineTo`](SkiaSharp.SKPath.LineTo*) 若要新增至路徑的一條直線
-- [`ArcTo`](SkiaSharp.SKPath.ArcTo*) 若要新增的弧形，這是圓形或橢圓形的圓周上的線上
-- [`CubicTo`](SkiaSharp.SKPath.CubicTo*) 若要新增的三次方貝茲曲線
-- [`QuadTo`](SkiaSharp.SKPath.QuadTo*) 若要新增的二次方貝茲曲線
-- [`ConicTo`](SkiaSharp.SKPath.ConicTo*) 若要新增 rational 二次方貝茲曲線，可正確轉譯 conic 區段 （省略符號，parabolas 和 hyperbolas）
+- [`LineTo`](xref:SkiaSharp.SKPath.LineTo*) 若要新增至路徑的一條直線
+- [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo*) 若要新增的弧形，這是圓形或橢圓形的圓周上的線上
+- [`CubicTo`](xref:SkiaSharp.SKPath.CubicTo*) 若要新增的三次方貝茲曲線
+- [`QuadTo`](xref:SkiaSharp.SKPath.QuadTo*) 若要新增的二次方貝茲曲線
+- [`ConicTo`](xref:SkiaSharp.SKPath.ConicTo*) 若要新增 rational 二次方貝茲曲線，可正確轉譯 conic 區段 （省略符號，parabolas 和 hyperbolas）
 
 這些五個方法都包含描述線條或曲線所需的所有資訊。 每個五個方法和目前的點建立立即在它前面的方法呼叫的方法是搭配。 例如，`LineTo`方法會加入一條直線線段來根據目前的點，因此參數`LineTo`是單一點。
 
 `SKPath`類別也會定義具有相同的名稱為這些六種方法，但方法`R`開頭：
 
-- [`RMoveTo`]((SkiaSharp.SKPath.RMoveTo*))
-- [`RLineTo`](SkiaSharp.SKPath.RLineTo*)
-- [`RArcTo`](SkiaSharp.SKPath.RArcTo*)
-- [`RCubicTo`](SkiaSharp.SKPath.RCubicTo*)
-- [`RQuadTo`](SkiaSharp.SKPath.RQuadTo*)
-- [`RConicTo`](SkiaSharp.SKPath.RConicTo*)
+- [`RMoveTo`](xref:SkiaSharp.SKPath.RMoveTo*)
+- [`RLineTo`](xref:SkiaSharp.SKPath.RLineTo*)
+- [`RArcTo`](xref:SkiaSharp.SKPath.RArcTo*)
+- [`RCubicTo`](xref:SkiaSharp.SKPath.RCubicTo*)
+- [`RQuadTo`](xref:SkiaSharp.SKPath.RQuadTo*)
+- [`RConicTo`](xref:SkiaSharp.SKPath.RConicTo*)
 
 `R`代表*相對*。 這些方法具有相同的語法，為對應的方法，而不必`R`但相對於目前的點。 這些是路徑的很方便的繪製類似的組件的多次呼叫的方法中。
 

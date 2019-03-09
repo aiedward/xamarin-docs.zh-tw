@@ -6,15 +6,15 @@ ms.assetid: 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/20/2016
-ms.openlocfilehash: 7e8acc6e8aaf8b8e0e8cec7d5d0f3e28cf60073a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 03/08/2019
+ms.openlocfilehash: 600120b6ed8484399cf5fc48638ef4b129e9c406
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055591"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671958"
 ---
-# <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation (WCF) Web 服務
+# <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation (WCF) Web 服務
 
 [![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF/)
 
@@ -29,9 +29,10 @@ WCF 說明各種不同的合約，其中包含下列服務：
 
 ASP.NET Web 服務 (ASMX) 和 WCF 之間的差異，但請務必了解 WCF 支援同一個提供的功能，ASMX – 透過 HTTP 的 SOAP 訊息。 如需有關使用 ASMX 服務的詳細資訊，請參閱[取用 ASP.NET Web 服務 (ASMX)](~/xamarin-forms/data-cloud/consuming/asmx.md)。
 
-一般情況下，Xamarin 平台支援相同的用戶端將在隨附的 Silverlight 執行階段的 WCF 中子集。 這包括最常見的編碼和通訊協定實作的 WCF — 文字編碼的 SOAP 訊息透過 HTTP 傳輸通訊協定使用`BasicHttpBinding`類別。 此外，WCF 支援需要使用工具，僅適用於以產生 proxy 的 Windows 環境。
+> [!IMPORTANT]
+> WCF 的 Xamarin 平台支援僅限於文字編碼的 SOAP 訊息透過 HTTP/HTTPS 使用`BasicHttpBinding`類別。 此外，WCF 支援需要使用工具，僅適用於以產生 proxy 的 Windows 環境。
 
-讀我檔案所附的範例應用程式中，可以找到的 WCF 服務設定說明。 不過，當執行範例應用程式時它會連線到 Xamarin 裝載的 WCF 服務可提供唯讀存取資料，如下列螢幕擷取畫面所示：
+範例應用程式會耗用可裝載的 WCF 服務中提供**TodoWCFService**資料夾的範例，以及下列的螢幕擷取畫面所示：
 
 ![](wcf-images/portal.png "範例應用程式")
 
@@ -39,7 +40,7 @@ ASP.NET Web 服務 (ASMX) 和 WCF 之間的差異，但請務必了解 WCF 支�
 > 在 iOS 9 和更新版本中，App Transport Security (ATS) 會強制執行安全的連線 （例如應用程式的後端伺服器） 的網際網路資源與應用程式，藉此防止意外洩漏機密資訊。 針對 iOS 9 所建置的應用程式中的預設會啟用 ATS，因為所有連線將會都受限於 ATS 安全性需求。 如果連線不符合這些需求，它們將會失敗並發生例外狀況。
 > 如果無法使用，可以共選擇 ATS`HTTPS`通訊協定和安全的網際網路資源的通訊。 這可以藉由更新應用程式的達成**Info.plist**檔案。 如需詳細資訊，請參閱[應用程式的傳輸安全性](~/ios/app-fundamentals/ats.md)。
 
-## <a name="consuming-the-web-service"></a>使用 Web 服務
+## <a name="consume-the-web-service"></a>取用 web 服務
 
 WCF 服務提供下列作業：
 
@@ -51,9 +52,6 @@ WCF 服務提供下列作業：
 |DeleteTodoItem|刪除待辦事項|XML 序列化 TodoItem|
 
 如需有關使用應用程式中的資料模型的詳細資訊，請參閱[將資料模型化](~/xamarin-forms/data-cloud/walkthrough.md)。
-
-> [!NOTE]
-> 範例應用程式會取用提供唯讀存取 web 服務的 Xamarin 裝載的 WCF 服務。 因此，建立、 更新和刪除資料的作業並不會更改應用程式中使用的資料。 不過，ASMX 服務的裝載版本，可以在**TodoWCFService**隨附的範例應用程式中的資料夾。 本版可裝載 WCF 服務允許完整的建立、 更新、 讀取和刪除資料的存取權。
 
 A *proxy*必須產生取用 WCF 服務，可讓應用程式連接至服務。 Proxy 的建構方式取用的服務中繼資料定義的方法和相關聯的服務組態。 此中繼資料會產生 web 服務的 Web 服務描述語言 (WSDL) 文件的形式公開。 在 Visual Studio 2017 中使用 Microsoft WCF Web Service Reference Provider，將 web 服務的服務參考新增至.NET Standard 程式庫，可以建立 proxy。 建立 Visual Studio 2017 中使用 Microsoft WCF Web Service Reference Provider proxy 的替代方式是使用 ServiceModel Metadata Utility Tool (svcutil.exe)。 如需詳細資訊，請參閱 < [ServiceModel Metadata Utility Tool (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)。
 
@@ -67,7 +65,7 @@ Task Parallel Library (TPL) 可以簡化使用 APM begin/end 方法組，藉由�
 
 如需 APM 的詳細資訊請參閱 <<c0> [ 非同步程式設計模型](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)並[TPL 和傳統.NET Framework 非同步程式設計](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)MSDN 上。
 
-### <a name="creating-the-todoserviceclient-object"></a>建立 TodoServiceClient 物件
+### <a name="create-the-todoserviceclient-object"></a>建立 TodoServiceClient 物件
 
 產生的 proxy 類別會提供`TodoServiceClient`類別，用來透過 HTTP 與 WCF 服務通訊。 它會提供功能來叫用 web 服務方法，如非同步作業，從 URI 所識別的服務執行個體。 如需有關非同步作業的詳細資訊，請參閱 <<c0> [ 非同步支援概觀](~/cross-platform/platform/async.md)。
 
@@ -93,14 +91,15 @@ public class SoapService : ISoapService
 
 如需有關如何設定服務參考的詳細資訊，請參閱 <<c0> [ 設定服務參考](~/cross-platform/data-cloud/web-services/index.md#wcf)。
 
-### <a name="creating-data-transfer-objects"></a>建立資料傳輸物件
+### <a name="create-data-transfer-objects"></a>建立資料傳輸物件
 
 範例應用程式使用`TodoItem`模型資料的類別。 若要儲存`TodoItem`它必須先轉換成產生的 proxy web 服務中的項目`TodoItem`型別。 這可以藉由`ToWCFServiceTodoItem`方法，如下列程式碼範例所示：
 
 ```csharp
 TodoWCFService.TodoItem ToWCFServiceTodoItem (TodoItem item)
 {
-  return new TodoWCFService.TodoItem {
+  return new TodoWCFService.TodoItem
+  {
     ID = item.ID,
     Name = item.Name,
     Notes = item.Notes,
@@ -116,7 +115,8 @@ TodoWCFService.TodoItem ToWCFServiceTodoItem (TodoItem item)
 ```csharp
 static TodoItem FromWCFServiceTodoItem (TodoWCFService.TodoItem item)
 {
-  return new TodoItem {
+  return new TodoItem
+  {
     ID = item.ID,
     Name = item.Name,
     Notes = item.Notes,
@@ -128,7 +128,7 @@ static TodoItem FromWCFServiceTodoItem (TodoWCFService.TodoItem item)
 
 這個方法只擷取資料，從產生的 proxy`TodoItem`輸入，並將它設定在新建立`TodoItem`執行個體。
 
-### <a name="retrieving-data"></a>擷取資料
+### <a name="retrieve-data"></a>擷取資料
 
 `TodoServiceClient.BeginGetTodoItems`並`TodoServiceClient.EndGetTodoItems`方法來呼叫`GetTodoItems`web 服務所提供的作業。 這些非同步方法，都會封裝在`Task`物件，如下列程式碼範例所示：
 
@@ -142,7 +142,8 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
     null,
     TaskCreationOptions.None);
 
-  foreach (var item in todoItems) {
+  foreach (var item in todoItems)
+  {
     Items.Add (FromWCFServiceTodoItem (item));
   }
   ...
@@ -153,7 +154,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 `TodoServiceClient.EndGetTodoItems`方法會傳回`ObservableCollection`的`TodoWCFService.TodoItem`執行個體，然後轉換成`List`的`TodoItem`顯示的執行個體。
 
-### <a name="creating-data"></a>建立資料
+### <a name="create-data"></a>建立資料
 
 `TodoServiceClient.BeginCreateTodoItem`並`TodoServiceClient.EndCreateTodoItem`方法來呼叫`CreateTodoItem`web 服務所提供的作業。 這些非同步方法，都會封裝在`Task`物件，如下列程式碼範例所示：
 
@@ -176,7 +177,7 @@ public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 
 Web 服務擲回`FaultException`如果無法建立`TodoItem`，這由應用程式。
 
-### <a name="updating-data"></a>更新資料
+### <a name="update-data"></a>更新資料
 
 `TodoServiceClient.BeginEditTodoItem`並`TodoServiceClient.EndEditTodoItem`方法來呼叫`EditTodoItem`web 服務所提供的作業。 這些非同步方法，都會封裝在`Task`物件，如下列程式碼範例所示：
 
@@ -199,7 +200,7 @@ public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 
 Web 服務擲回`FaultException`找出或更新時`TodoItem`，這由應用程式。
 
-### <a name="deleting-data"></a>刪除資料
+### <a name="delete-data"></a>刪除資料
 
 `TodoServiceClient.BeginDeleteTodoItem`並`TodoServiceClient.EndDeleteTodoItem`方法來呼叫`DeleteTodoItem`web 服務所提供的作業。 這些非同步方法，都會封裝在`Task`物件，如下列程式碼範例所示：
 
@@ -220,12 +221,8 @@ public async Task DeleteTodoItemAsync (string id)
 
 Web 服務擲回`FaultException`找出或刪除時`TodoItem`，這由應用程式。
 
-## <a name="summary"></a>總結
-
-這篇文章會示範如何使用 Xamarin.Forms 應用程式從 WCF SOAP 服務。 一般情況下，Xamarin 平台支援相同的用戶端將在隨附的 Silverlight 執行階段的 WCF 中子集。 這包括最常見的編碼和通訊協定實作的 WCF — 文字編碼的 SOAP 訊息透過 HTTP 傳輸通訊協定使用`BasicHttpBinding`類別。 此外，WCF 支援需要使用工具，僅適用於以產生 proxy 的 Windows 環境。
-
-
 ## <a name="related-links"></a>相關連結
 
 - [TodoWCF （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF/)
-- [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult(v=vs.110).aspx)
+- [如何：建立 Windows Communication Foundation 用戶端](https://docs.microsoft.com/dotnet/framework/wcf/how-to-create-a-wcf-client)
+- [ServiceModel Metadata Utility Tool (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 7056f7beb623bee32c767a3f2827efa6eb2a6136
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 87015163eca9fdb2fb8cee35e74d5031314fd42e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118795"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670817"
 ---
 # <a name="working-with-property-lists-in-xamarinios"></a>使用 Xamarin.iOS 中的屬性清單
 
@@ -110,7 +110,7 @@ Visual Studio for Mac 功能編輯常見的圖形化介面`Info.plist`應用程�
 
 對於支援開啟特定檔案類型的應用程式，提供 iOS`CFBundleDocumentTypes`索引鍵。 如果我們想要我們的應用程式，以支援特定已知的檔案類型-例如 Pdf-我們會將 PDF 值加入至機碼。 本節提供便利的方式輸入的資料會儲存在`CFBundleDocumentTypes`中的索引鍵`Info.plist`檔案。
 
-參閱文件上[註冊檔案類型您的應用程式支援](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)如需有關如何設定這些值。
+參閱文件上[註冊檔案類型您的應用程式支援](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)如需有關如何設定這些值。
 
 ## <a name="utis"></a>Uti
 
@@ -146,7 +146,7 @@ Visual Studio for Mac 也會偵測屬性類型，如所示：
 
  [![](property-lists-images/image33.png "可用的屬性類型")](property-lists-images/image33.png#lightbox)
 
-檢閱 Apple[應用程式的相關資源](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)之選擇性的屬性上的其他資訊連結。
+檢閱 Apple[應用程式的相關資源](https://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)之選擇性的屬性上的其他資訊連結。
 
  <a name="Entitlements" />
 
@@ -158,7 +158,7 @@ Visual Studio for Mac 也會偵測屬性類型，如所示：
 ## <a name="related-links"></a>相關連結
 
 - [IDE](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide)
-- [應用程式相關資源](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)
-- [註冊檔案類型的應用程式支援](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)
+- [應用程式相關資源](https://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)
+- [註冊檔案類型的應用程式支援](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)
 - [實作自訂的 URL 配置](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)
 - [資產目錄格式參考](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_ref-Asset_Catalog_Format/index.html#//apple_ref/doc/uid/TP40015170-CH18-SW1)

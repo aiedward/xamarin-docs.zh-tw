@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d79c0563d1dc9a2cfe75b702300982bb4d38553b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d6173e1886eaf807decd960b07acc022bb17c04d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117859"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669072"
 ---
 # <a name="lollipop-features"></a>棒棒糖符號功能
 
@@ -49,9 +49,9 @@ Android 5.0 (Lollipop) 導入了新的設計語言， *Material Design*，並使
 
 -   **Android SDK** &ndash; Android 5.0 (API 21) 或更新版本必須安裝 Android SDK 管理員透過。
 
--   **Java Developer Kit** &ndash; Xamarin.Android 需要[JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本，如果您正在開發的 API 層級 24 或更大 （JDK 1.8 也支援 API 層級早於 24，包括棒棒糖符號）。 如果您使用自訂控制項或表單預覽程式需要 64 位元版本的 JDK 1.8。
+-   **Java Developer Kit** &ndash; Xamarin.Android 需要[JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本，如果您正在開發的 API 層級 24 或更大 （JDK 1.8 也支援 API 層級早於 24，包括棒棒糖符號）。 如果您使用自訂控制項或表單預覽程式需要 64 位元版本的 JDK 1.8。
 
-您可以繼續使用[JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)如果您是開發特別針對 API 層級 23 或更早版本。
+您可以繼續使用[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)如果您是開發特別針對 API 層級 23 或更早版本。
 
 
 ## <a name="setting-up-an-android-50-project"></a>設定 Android 5.0 專案
@@ -70,7 +70,7 @@ Android 5.0 (Lollipop) 導入了新的設計語言， *Material Design*，並使
 
     [![在 Android SDK 管理員安裝 Android 5.0 SDK 套件](lollipop-images/android-l-sdk-pkgs-sml.png)](lollipop-images/android-l-sdk-pkgs.png#lightbox)
 
-   如需使用 Android SDK 管理員的詳細資訊，請參閱[SDK 管理員](http://developer.android.com/tools/help/sdk-manager.html)。
+   如需使用 Android SDK 管理員的詳細資訊，請參閱[SDK 管理員](https://developer.android.com/tools/help/sdk-manager.html)。
 
 4. 建立新的 Xamarin.Android 專案。 如果您是使用 Xamarin 進行 Android 開發的新手，請參閱[Hello，Android](~/android/get-started/hello-android/index.md)來了解如何建立 Android 專案。 當您建立 Android 專案時，請務必設定 Android 5.0 的版本設定。
    在 Visual Studio for Mac 中，瀏覽至**專案選項&gt;建置&gt;一般**並設定**目標 framework**至**Android 5.0 (Lollipop)** 或更新版本：
@@ -83,7 +83,7 @@ Android 5.0 (Lollipop) 導入了新的設計語言， *Material Design*，並使
 
 5. 設定模擬器或 Android 裝置來測試您的應用程式。 如果您正使用模擬器，請參閱[Android Emulator 安裝](~/android/get-started/installation/android-emulator/index.md)以了解如何使用 Xamarin Studio 或 Visual Studio 中設定 Android 模擬器使用。 如果您使用 Android 裝置，請參閱[設定註冊預覽 SDK](https://developer.android.com/preview/setup-sdk.html)以了解如何為 Android 5.0 更新您的裝置。 若要設定 Android 裝置的執行和偵錯 Xamarin.Android 應用程式，請參閱[設定裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md)。
 
-注意： 如果您要更新現有的 Android 專案的目標 Android L 預覽，您必須更新**目標 Framework**並**Android 版本**上面所述的值。
+注意:如果您要更新現有的 Android 專案的目標 Android L 預覽，您必須更新**目標 Framework**並**Android 版本**上面所述的值。
 
 ## <a name="important-changes"></a>重要變更
 
@@ -99,7 +99,7 @@ Android 5.0 會使用預設執行階段，而不是 Dalvik 新 Android 執行階
 
 -   **改善應用程式偵錯**&ndash;圖案提供更多診斷的詳細資訊，以協助分析例外狀況和當機報告。
 
-現有的應用程式不在封面變更用於&ndash;除了惡意探索技術特有先前 Dalvik 執行階段的應用程式，這可能無法運作下美工圖案。 如需有關這些變更的詳細資訊，請參閱 <<c0> [ 驗證應用程式行為上 Android 執行階段 （藝術）](http://developer.android.com/guide/practices/verifying-apps-art.html)。
+現有的應用程式不在封面變更用於&ndash;除了惡意探索技術特有先前 Dalvik 執行階段的應用程式，這可能無法運作下美工圖案。 如需有關這些變更的詳細資訊，請參閱 <<c0> [ 驗證應用程式行為上 Android 執行階段 （藝術）](https://developer.android.com/guide/practices/verifying-apps-art.html)。
 
 
 ### <a name="notification-changes"></a>通知變更
@@ -124,12 +124,12 @@ Android 5.0 會使用預設執行階段，而不是 Dalvik 新 Android 執行階
 
 4.  設定通知的類別，讓它們能夠正確處理新的 Android 5.0 *「 請勿打擾 」* 模式。
 
-如果您的通知會顯示傳輸控制項，顯示媒體播放狀態，請使用`RemoteControlClient`，或致電`ActivityManager.GetRecentTasks`，請參閱[重要的行為變更](http://developer.android.com/preview/api-overview.html#Behaviors)如需有關更新您適用於 Android 的通知5.0。
+如果您的通知會顯示傳輸控制項，顯示媒體播放狀態，請使用`RemoteControlClient`，或致電`ActivityManager.GetRecentTasks`，請參閱[重要的行為變更](https://developer.android.com/preview/api-overview.html#Behaviors)如需有關更新您適用於 Android 的通知5.0。
 
 如需建立通知，在 Android 中的資訊，請參閱[本機通知](~/android/app-fundamentals/notifications/local-notifications.md)。 [相容性](~/android/app-fundamentals/notifications/local-notifications.md#compatibility)這篇文章的一節說明如何建立通知，向下相容舊版的 Android。
 
 
-## <a name="material-theme"></a>材料佈景主題
+## <a name="material-theme"></a>材質佈景主題
 
 新的 Android 5.0 材料佈景主題的外觀及操作 Android 的 UI 帶來重大的變更。 視覺項目現在會使用 tactile 介面上，採取粗體的圖形、 印刷樣式，以及列印型設計的明亮的色彩。 材料佈景主題的範例如下列螢幕擷取畫面所述：
 
@@ -157,7 +157,7 @@ Android 5.0 提供觸控的意見反應動畫、 活動轉換動畫，以及讓�
 
 初始的觸控與按鈕會在左邊的第一個映像，而其餘的順序 （從左到右） 說明如何產生漣漪效果分散至按鈕的邊緣。 Ripple 動畫結束時，此檢視會傳回原始外觀。 預設 ripple 動畫發生在幾分之一秒，但還長或短的時間長度，可以自訂動畫的長度。
 
-如需詳細資訊 」 的 「 修改 Android 5.0 中的意見反應動畫，請參閱 <<c0> [ 自訂觸控的意見反應](http://developer.android.com/training/material/animations.html#Touch)。
+如需詳細資訊 」 的 「 修改 Android 5.0 中的意見反應動畫，請參閱 <<c0> [ 自訂觸控的意見反應](https://developer.android.com/training/material/animations.html#Touch)。
 
 
 ### <a name="activity-transition-animations"></a>活動轉換動畫
@@ -206,7 +206,7 @@ Enter 轉換 Android 5.0 提供三種動畫類型：
 
 -   變更檢視的大小和縮放比例類型。
 
-如需有關 Android 5.0 中的活動轉換動畫的詳細資訊，請參閱[來自訂活動轉換](http://developer.android.com/training/material/animations.html#Transitions)。
+如需有關 Android 5.0 中的活動轉換動畫的詳細資訊，請參閱[來自訂活動轉換](https://developer.android.com/training/material/animations.html#Transitions)。
 
 
 ### <a name="view-state-transition-animations"></a>檢視狀態轉換動畫
@@ -217,7 +217,7 @@ Android 5.0 可讓檢視狀態變更時執行的動畫。 您可以使用下列�
 
 -   定義的檢視狀態變更時執行的動畫功能。 新`StateListAnimator`類別可讓您定義的檢視狀態變更時執行動畫。
 
-如需有關 Android 5.0 中的檢視狀態轉換動畫的詳細資訊，請參閱[以動畫顯示的檢視狀態變更](http://developer.android.com/training/material/animations.html#ViewState)。
+如需有關 Android 5.0 中的檢視狀態轉換動畫的詳細資訊，請參閱[以動畫顯示的檢視狀態變更](https://developer.android.com/training/material/animations.html#ViewState)。
 
 
 ### <a name="reveal-effect"></a>顯示效果
@@ -232,7 +232,7 @@ Android 5.0 可讓檢視狀態變更時執行的動畫。 您可以使用下列�
 
 顯示可反轉動畫;亦即裁剪圓形可以壓縮成隱藏檢視而放大視覺效果以顯示檢視。
 
-如需有關中的 Android 5.0 顯示效果的詳細資訊，請參閱[使用的顯示效果](http://developer.android.com/training/material/animations.html#Reveal)。
+如需有關中的 Android 5.0 顯示效果的詳細資訊，請參閱[使用的顯示效果](https://developer.android.com/training/material/animations.html#Reveal)。
 
 
 ### <a name="curved-motion"></a>曲線的動作
@@ -245,7 +245,7 @@ Android 5.0 可讓檢視狀態變更時執行的動畫。 您可以使用下列�
 
 -   **線性\_放大\_緩慢\_中**&ndash;與尖峰速度緩慢的開始減速的動畫結尾。
 
-您可以使用新`PathInterpolator`類別，以指定動畫內插補點進行的方式。 `PathInterpolator` 是會根據指定的控制點和影片曲線動畫路徑周遊 interpolator。 如需如何在 Android 5.0 中指定曲線的動作設定的詳細資訊，請參閱[使用曲線影片](http://developer.android.com/training/material/animations.html#CurvedMotion)。
+您可以使用新`PathInterpolator`類別，以指定動畫內插補點進行的方式。 `PathInterpolator` 是會根據指定的控制點和影片曲線動畫路徑周遊 interpolator。 如需如何在 Android 5.0 中指定曲線的動作設定的詳細資訊，請參閱[使用曲線影片](https://developer.android.com/training/material/animations.html#CurvedMotion)。
 
 
 ## <a name="view-shadows--elevation"></a>檢視陰影] & [提高權限
@@ -258,7 +258,7 @@ Android 5.0 可讓檢視狀態變更時執行的動畫。 您可以使用下列�
 
 檢視陰影設定可以是靜態 （如上所示），或用於動畫進行暫時提高，檢視的背景上方顯示的檢視。 您可以使用`ViewPropertyAnimator`類別以動畫顯示檢視的提高權限。 檢視的權限提高為其配置的總和`elevation`設定加上`translationZ`屬性，您可以透過設定`ViewPropertyAnimator`方法呼叫。
 
-如需有關 Android 5.0 中的檢視陰影的詳細資訊，請參閱[定義的陰影和裁剪檢視](http://developer.android.com/training/material/shadows-clipping.html)。
+如需有關 Android 5.0 中的檢視陰影的詳細資訊，請參閱[定義的陰影和裁剪檢視](https://developer.android.com/training/material/shadows-clipping.html)。
 
 
 ## <a name="color-features"></a>色彩功能
@@ -282,7 +282,7 @@ Android 5.0 的版面配置辨識新`tint`屬性可供您的色彩可繪製資�
 
 ![使用不同的濃淡設定上述的標誌的範例](lollipop-images/drawable-tinting.png)
 
-如需詳細資訊可繪製濃淡 Android 5.0 中，請參閱 < [Drawable 濃淡](http://developer.android.com/training/material/drawables.html#DrawableTint)。
+如需詳細資訊可繪製濃淡 Android 5.0 中，請參閱 < [Drawable 濃淡](https://developer.android.com/training/material/drawables.html#DrawableTint)。
 
 
 ### <a name="prominent-color-extraction"></a>顯著色彩擷取
@@ -307,7 +307,7 @@ Android 5.0 的版面配置辨識新`tint`屬性可供您的色彩可繪製資�
 
 在上述螢幕擷取畫面中，動作列設定為擷取的"活躍 light"色彩和背景設定為擷取 「 活躍暗色調 」 色彩。 在每個上述範例中，小型彩色方塊的資料列會包含說明從映像擷取的調色盤色彩。
 
-如需 Android 5.0 中的色彩擷取相關資訊，請參閱 <<c0> [ 從映像擷取顯著色彩](http://developer.android.com/training/material/drawables.html#ColorExtract)。
+如需 Android 5.0 中的色彩擷取相關資訊，請參閱 <<c0> [ 從映像擷取顯著色彩](https://developer.android.com/training/material/drawables.html#ColorExtract)。
 
 
 ## <a name="new-ui-widgets"></a>新的 UI Widget
@@ -410,7 +410,7 @@ Android 5.0 提供增強的相機功能的數個新的 Api。 新`Android.Hardwa
 
 -   `CaptureResult` &ndash; 提供映像擷取作業的結果。
 
-如需新的數位相機 Android 5.0 中的 Api 相關資訊，請參閱 <<c0> [ 媒體](http://developer.android.com/about/versions/android-5.0.html#Media)。
+如需新的數位相機 Android 5.0 中的 Api 相關資訊，請參閱 <<c0> [ 媒體](https://developer.android.com/about/versions/android-5.0.html#Media)。
 
 ### <a name="audio-playback"></a>音訊播放
 
@@ -422,7 +422,7 @@ Android 5.0 更新`AudioTrack`更好的音訊播放的類別：
 
 -   `WRITE_NON_BLOCKING` &ndash; 此選項可讓您簡化緩衝處理和多執行緒對於某些應用程式。
 
-如需詳細資訊`AudioTrack`改善 Android 5.0 版，請參閱[媒體](http://developer.android.com/about/versions/android-5.0.html#Media)。
+如需詳細資訊`AudioTrack`改善 Android 5.0 版，請參閱[媒體](https://developer.android.com/about/versions/android-5.0.html#Media)。
 
 ### <a name="media-playback-control"></a>媒體播放控制項
 
@@ -434,7 +434,7 @@ Android 5.0 引進新`Android.Media.MediaController`類別，取代了`RemoteCon
 
 此外，您可以使用新`Android.App.Notification.MediaStyle`類別 （例如擷取和顯示專輯封面） 的豐富內容通知內容相關聯的媒體工作階段。
 
-如需有關 Android 5.0 的新的媒體播放控制項功能的詳細資訊，請參閱[媒體](http://developer.android.com/about/versions/android-5.0.html#Media)。
+如需有關 Android 5.0 的新的媒體播放控制項功能的詳細資訊，請參閱[媒體](https://developer.android.com/about/versions/android-5.0.html#Media)。
 
 ### <a name="storage"></a>存放裝置
 
@@ -446,7 +446,7 @@ Android 5.0 更新儲存體存取架構，以簡化應用程式，以使用目�
 
 -   若要取得所有的共用的存放裝置上的媒體的目錄路徑，請呼叫新`Android.Content.Context.GetExternalMediaDirs`方法。
 
-如需有關新的儲存體 Android 5.0 中的 Api 的詳細資訊，請參閱[儲存體](http://developer.android.com/preview/api-overview.html#Storage)。
+如需有關新的儲存體 Android 5.0 中的 Api 的詳細資訊，請參閱[儲存體](https://developer.android.com/preview/api-overview.html#Storage)。
 
 ### <a name="wireless--connectivity"></a>無線與連線能力
 
@@ -458,19 +458,19 @@ Android 5.0 新增無線及連線的下列 API 增強功能：
 
 -   NFC 增強功能可讓您更輕鬆地共用資料與其他裝置使用近通訊功能。
 
-如需詳細資訊，新的無線及 Android 5.0 中的 Api 連線，請參閱 <<c0> [ 無線及連線](http://developer.android.com/preview/api-overview.html#Wireless)。
+如需詳細資訊，新的無線及 Android 5.0 中的 Api 連線，請參閱 <<c0> [ 無線及連線](https://developer.android.com/preview/api-overview.html#Wireless)。
 
 ### <a name="job-scheduling"></a>工作排程
 
 Android 5.0 引進新`JobScheduler`API，可協助使用者減少電池清空裝置插入電源時，才執行特定工作的排程和收費。 這個工作排程器功能也可以用於排程要條件更適合該工作，例如裝置透過 Wi-fi 網路，而非計量付費網路連線時下載大型檔案時執行的工作。
 
-如需詳細資訊的新的工作排程在 Android 5.0 中的 Api，請參閱 <<c0> [ 排程工作](http://developer.android.com/preview/api-overview.html#JobScheduler)。
+如需詳細資訊的新的工作排程在 Android 5.0 中的 Api，請參閱 <<c0> [ 排程工作](https://developer.android.com/preview/api-overview.html#JobScheduler)。
 
 ## <a name="summary"></a>總結
 
 這篇文章適用於 Xamarin.Android 應用程式開發人員提供 Android 5.0 中的重要新功能的概觀：
 
--   材料佈景主題
+-   材質佈景主題
 
 -   Animations
 
@@ -491,7 +491,7 @@ Android 5.0 引進新`JobScheduler`API，可協助使用者減少電池清空裝
 
 ## <a name="related-links"></a>相關連結
 
-- [Android 的 L 開發人員預覽](http://developer.android.com/preview/index.html)
+- [Android 的 L 開發人員預覽](https://developer.android.com/preview/index.html)
 - [取得 Android SDK](https://developer.android.com/sdk/index.html#Other)
-- [材料設計](http://developer.android.com/preview/material/index.html)
+- [材料設計](https://developer.android.com/preview/material/index.html)
 - [材料設計原則](http://static.googleusercontent.com/media/www.google.com/en/us/design/material-design.pdf)

@@ -6,20 +6,15 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: 237ee1a39907f9ebf0eb88db9fff1fbdab691f5e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112587"
 ---
+
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
 _本指南將探索 Xamarin Profiler 的主要功能。它看起來在程式碼剖析工具、 程式碼剖析及何時使用它們，而是在標準工作流程的 Xamarin 應用程式程式碼剖析。_
 
 應用程式的成功取決於使用者體驗。 身為開發人員您可能會有一些真的很棒的功能中實作您的應用程式，但如果應用程式效能不彰或完整的損毀，使用者將可能刪除它。
 
-在過去，Mono 具有功能強大的命令列分析工具收集有關 Mono 執行階段中執行的程式，稱為[Mono 的記錄程式碼剖析工具](http://www.mono-project.com/docs/debug+profile/profile/profiler/)。 Xamarin Profiler Mono 的記錄程式碼剖析工具，並支援 Android、 iOS、 tvOS 和在 Mac 及 Android、 iOS、 Mac 應用程式和 Windows 上的 tvOS 應用程式程式碼剖析的圖形化介面中。
+在過去，Mono 具有功能強大的命令列分析工具收集有關 Mono 執行階段中執行的程式，稱為[Mono 的記錄程式碼剖析工具](https://www.mono-project.com/docs/debug+profile/profile/profiler/)。 Xamarin Profiler Mono 的記錄程式碼剖析工具，並支援 Android、 iOS、 tvOS 和在 Mac 及 Android、 iOS、 Mac 應用程式和 Windows 上的 tvOS 應用程式程式碼剖析的圖形化介面中。
 
 Xamarin Profiler 有許多工具可供分析 — 配置、 週期和時間 Profiler。 本指南會探討這些工具的測量，以及它們如何分析您的應用程式，並釐清每個畫面上顯示資料的意義。
 
@@ -53,11 +48,11 @@ Xamarin Profiler 分析應用程式，從一種方式提供開發人員在 Visua
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-目前，Xamarin Profiler 可以用來測試 Xamarin.iOS、 Xamarin.Android 和 Xamarin.Mac Mac (透過 Visual Studio for Mac) 上的應用程式。 分析工具是不同的處理序，從 IDE，並因此，除了從 Visual Studio for Mac 所啟動，它可用來當做獨立應用程式來檢查.exe 和`.mlpd`檔案從產生[mono 的記錄程式碼剖析工具](http://www.mono-project.com/docs/debug+profile/profile/profiler/).
+目前，Xamarin Profiler 可以用來測試 Xamarin.iOS、 Xamarin.Android 和 Xamarin.Mac Mac (透過 Visual Studio for Mac) 上的應用程式。 分析工具是不同的處理序，從 IDE，並因此，除了從 Visual Studio for Mac 所啟動，它可用來當做獨立應用程式來檢查.exe 和`.mlpd`檔案從產生[mono 的記錄程式碼剖析工具](https://www.mono-project.com/docs/debug+profile/profile/profiler/).
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-目前，Xamarin Profiler 可以用來測試 （透過 Visual Studio 和 Visual Studio for Mac） 的 Windows 上的 Xamarin.Android 應用程式中。 分析工具是不同的處理序，從 IDE，並因此，除了從 Visual Studio 啟動，它可用來當做獨立應用程式來檢查.exe 和`.mlpd`從產生的檔案[mono 的記錄程式碼剖析工具](http://www.mono-project.com/docs/debug+profile/profile/profiler/).
+目前，Xamarin Profiler 可以用來測試 （透過 Visual Studio 和 Visual Studio for Mac） 的 Windows 上的 Xamarin.Android 應用程式中。 分析工具是不同的處理序，從 IDE，並因此，除了從 Visual Studio 啟動，它可用來當做獨立應用程式來檢查.exe 和`.mlpd`從產生的檔案[mono 的記錄程式碼剖析工具](https://www.mono-project.com/docs/debug+profile/profile/profiler/).
 
 -----
 
@@ -196,7 +191,7 @@ Xamarin Profiler 是如下所示的五個區段所組成：
 - **檢測清單**– 這會列出所有的 instruments 載入程式碼剖析工作階段。
 - **繪製圖表**– 這些圖表水平與相關的 instruments 工具清單中。 （時間 Profiler 下方顯示） 的滑桿可用來變更小數位數。
 - **檢測詳細資料區域**-包含所選檢視的目前檢測所要顯示的資料。 我們將探討這些在下一節中詳細的檢視。
-- **Inspector 檢視**– 這包含可以區隔控制項所選取的區段。 各節會相依於選取的工具，並包含： 組態設定、 統計資料，堆疊追蹤的詳細資訊和根目錄的路徑。
+- **Inspector 檢視**– 這包含可以區隔控制項所選取的區段。 各節會相依於選取的工具，並包含：組態設定、 統計資料，堆疊追蹤的詳細資訊和根目錄的路徑。
 
 ### <a name="allocations"></a>配置
 
@@ -323,7 +318,7 @@ Xamarin Profiler 是如下所示的五個區段所組成：
 
 ### <a name="sgen-garbage-collector-and-profiling"></a>SGen 記憶體回收行程和程式碼剖析
 
-[SGen](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/)記憶體回收行程會用於所有的 Xamarin 平台。
+[SGen](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/)記憶體回收行程會用於所有的 Xamarin 平台。
 
 SGen 會 generational GC，所配置的應用程式分成三個堆積的物件 — 托兒所、 主要堆積和大型物件空間。 這可讓您更快速執行記憶體回收。 SGen 目前是預設 GC 的 Xamarin.Android 和 Xamarin.iOS 統一的應用程式。
 

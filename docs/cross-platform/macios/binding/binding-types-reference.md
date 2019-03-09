@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 9c5a3cdbc8a8d5a046db90ffa48b12709359da98
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: d460bf867ce09e614be76d0a4a7ffef01420cf82
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55234026"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669475"
 ---
 # <a name="binding-types-reference-guide"></a>繫結型別參考指南
 
@@ -1851,7 +1851,7 @@ public class LinkWithAttribute : Attribute {
 
 `WeakFrameworks`屬性的運作方式一樣`Frameworks`屬性，但是，在連結階段`-weak_framework`規範時，會傳遞至 gcc 上，每個列出的架構。
 
-`WeakFrameworks` 可讓程式庫和應用程式，以針對平台架構的弱式連結，使其可以選擇性地使用它們如果可用，但不是會硬式相依性它們這非常有用，如果您的程式庫是上新增額外的功能更新iOS 版本。 如需弱式連結的詳細資訊，請參閱 Apple 的文件上[弱式連結](http://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WeakLinking.html)。
+`WeakFrameworks` 可讓程式庫和應用程式，以針對平台架構的弱式連結，使其可以選擇性地使用它們如果可用，但不是會硬式相依性它們這非常有用，如果您的程式庫是上新增額外的功能更新iOS 版本。 如需弱式連結的詳細資訊，請參閱 Apple 的文件上[弱式連結](https://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WeakLinking.html)。
 
 很適合使用弱式連結會`Frameworks`像是帳戶`CoreBluetooth`， `CoreImage`， `GLKit`，`NewsstandKit`和`Twitter`因為它們只可在 iOS 5 中。
 

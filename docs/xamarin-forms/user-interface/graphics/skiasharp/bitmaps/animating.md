@@ -7,12 +7,12 @@ ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/12/2018
-ms.openlocfilehash: de27e151a475856f0789285dddc1526613e0b828
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 604067ac853bd53707e059b7db4abf2cfade21ce
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053140"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668955"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>以動畫顯示 SkiaSharp 點陣圖
 
@@ -508,7 +508,7 @@ SkisSharp 擷取的畫面格動畫 GIF 檔案的使用似乎並沒有任何位�
 
 `SKCodec` 定義屬性，名為[ `Info` ](xref:SkiaSharp.SKCodec.Info)型別的[ `SKImageInfo` ](xref:SkiaSharp.SKImageInfo)，但該`SKImageInfo`值表示 (至少這個映像) 色彩類型是`SKColorType.Index8`，這表示，每個像素都是色彩類型中的索引。 若要避免麻煩色彩表，程式會使用[ `Width` ](xref:SkiaSharp.SKImageInfo.Width)並[ `Height` ](xref:SkiaSharp.SKImageInfo.Height)從該結構來建構它的資訊是擁有全彩`ImageInfo`值。 每個`SKBitmap`從所建立。
 
-`GetPixels`方法`SKBitmap`傳回`IntPtr`參考該點陣圖的像素位元。 有尚未設定這些像素位元。 該`IntPtr`傳遞至其中一個[ `GetPixels` ](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions))方法`SKCodec`。 該方法將框架從 GIF 檔案複製到所參考的記憶體空間`IntPtr`。 [ `SKCodecOptions` ](xref:SkiaSharp.SKCodecOptions.%23ctor(System.Int32,System.Boolean))建構函式會指出畫面格數目：
+`GetPixels`方法`SKBitmap`傳回`IntPtr`參考該點陣圖的像素位元。 有尚未設定這些像素位元。 該`IntPtr`傳遞至其中一個[ `GetPixels` ](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions))方法`SKCodec`。 該方法將框架從 GIF 檔案複製到所參考的記憶體空間`IntPtr`。 [ `SKCodecOptions` ](xref:SkiaSharp.SKCodecOptions)建構函式會指出畫面格數目：
 
 ```csharp
 public partial class AnimatedGifPage : ContentPage

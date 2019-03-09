@@ -6,12 +6,12 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 85e4e98cfbc96936c19642a200885b54cf745aa4
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 4799d6aaa095127e242c5e0750db686519d0c21d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617510"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670788"
 ---
 # <a name="localization"></a>當地語系化
 
@@ -111,7 +111,7 @@ double.Parse("1,999.99", CultureInfo.InvariantCulture);
 double.Parse("1 999,99", CultureInfo.CreateSpecificCulture("fr-FR"));
 ```
 
-請參閱[剖析數值字串](http://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx)並[剖析的日期和時間字串](http://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx)MSDN 文章中的其他資訊。
+請參閱[剖析數值字串](https://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx)並[剖析的日期和時間字串](https://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx)MSDN 文章中的其他資訊。
 
 <a name="rtl" />
 
@@ -131,7 +131,7 @@ IOS 和 Android 支援由右至左配置和字型轉譯，使用內建的功能�
 
 不同的語言以不同的方式，定義其字母的排序次序，即使它們使用相同的字元集。
 
-請參閱[詳細資料的字串比較](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison)中[在.NET Framework 中使用字串的最佳作法](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx)如需範例，其中的語言 (CultureInfo) 會影響排序次序。
+請參閱[詳細資料的字串比較](https://msdn.microsoft.com/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison)中[在.NET Framework 中使用字串的最佳作法](https://msdn.microsoft.com/library/dd465121(v=vs.110).aspx)如需範例，其中的語言 (CultureInfo) 會影響排序次序。
 
 不可能在行動裝置平台上的內建的資料庫功能將會支援特定語言的排序順序，因此您可能需要在您的商務邏輯中實作額外的程式碼。
 
@@ -312,5 +312,5 @@ IOS 和 Android 支援由右至左配置和字型轉譯，使用內建的功能�
 ## <a name="related-links"></a>相關連結
 
 - [Apple 的當地語系化概觀](https://developer.apple.com/internationalization/)
-- [Android 的當地語系化檢查清單](http://developer.android.com/distribute/tools/localization-checklist.html)
-- [開發世界性的應用程式 (MSDN) 的最佳作法](http://msdn.microsoft.com/library/w7x1y988%28v=vs.90%29.aspx)
+- [Android 的當地語系化檢查清單](https://developer.android.com/distribute/tools/localization-checklist.html)
+- [開發世界性的應用程式 (MSDN) 的最佳作法](https://msdn.microsoft.com/library/w7x1y988%28v=vs.90%29.aspx)

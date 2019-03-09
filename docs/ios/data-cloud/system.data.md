@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/25/2015
-ms.openlocfilehash: 014de47660f2c0ac8295495e417b3d5def135470
-ms.sourcegitcommit: ee626f215de02707b7a94ba1d0fa1d75b22ab84f
+ms.openlocfilehash: e6df2d9d45eb2f898bb3c4957ec7960956a184e0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54879312"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671776"
 ---
 # <a name="systemdata-in-xamarinios"></a>在 Xamarin.iOS 中的 System.Data
 
@@ -108,7 +108,7 @@ class Demo {
 ```
 
 > [!IMPORTANT]
-> 如上述程式碼範例中所述，它是不建議您將字串內嵌 SQL 命令中，因為它可讓您的程式碼容易遭到[SQL 資料隱碼](http://en.wikipedia.org/wiki/SQL_injection)。
+> 如上述程式碼範例中所述，它是不建議您將字串內嵌 SQL 命令中，因為它可讓您的程式碼容易遭到[SQL 資料隱碼](https://en.wikipedia.org/wiki/SQL_injection)。
 
 
 ### <a name="using-command-parameters"></a>使用命令參數

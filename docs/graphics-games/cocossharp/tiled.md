@@ -6,12 +6,12 @@ ms.assetid: 804C042C-F62A-4E6C-B10F-06528637F0E2
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 4582b59a8a441c9e22761d498126898e66db08c1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8e7ef890af264bb08827d86c635d555184f1ec00
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117924"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672504"
 ---
 # <a name="using-tiled-with-cocossharp"></a>搭配 cocossharp 使用 Tiled
 
@@ -35,7 +35,7 @@ _並排顯示是一個功能強大、 有彈性，並建立且互不影響等的
 
 ![](tiled-images/image2.png "視覺化的檢視的圖格設定如何使用將用於此示範中的磚集合加上格線")
 
-圖格對應排列磚集從個別的圖格。 我們應該注意每個圖格對應不需要儲存它自己的複本，此圖格的設定-相反地，多個圖格對應可以參考相同的牌組。 這表示除了牌組中，圖格圖需要極少的記憶體。 這可讓您建立大量的圖格的對應，即使它們用來建立大型的遊戲 區域中，例如[捲動平台遊戲](http://en.wikipedia.org/wiki/Platform_game)環境。 下列範例顯示可能的排列方式 圖格使用相同：
+圖格對應排列磚集從個別的圖格。 我們應該注意每個圖格對應不需要儲存它自己的複本，此圖格的設定-相反地，多個圖格對應可以參考相同的牌組。 這表示除了牌組中，圖格圖需要極少的記憶體。 這可讓您建立大量的圖格的對應，即使它們用來建立大型的遊戲 區域中，例如[捲動平台遊戲](https://en.wikipedia.org/wiki/Platform_game)環境。 下列範例顯示可能的排列方式 圖格使用相同：
 
 ![](tiled-images/image3.png "下圖顯示使用相同的牌組可能的排列方式")
 

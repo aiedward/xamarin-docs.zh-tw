@@ -1,5 +1,5 @@
 ---
-title: "Android.Support.v7.AppCompat-找不到資源，符合指定名稱： attr ' android: actionModeShareDrawable'"
+title: Android.Support.v7.AppCompat - 找不到符合指定名稱：attr 'android:actionModeShareDrawable' 的資源
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5814069C-FC43-41DE-B5A5-024D05E59929
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: fea681ac3b99abed09d3d3e745bd4bf6015970df
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ff2a586773e33a1f4cf78657c3c69c22e79ed047
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112412"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670229"
 ---
-# <a name="androidsupportv7appcompat---no-resource-found-that-matches-the-given-name-attr-androidactionmodesharedrawable"></a>Android.Support.v7.AppCompat-找不到資源，符合指定名稱： attr ' android: actionModeShareDrawable'
+# <a name="androidsupportv7appcompat---no-resource-found-that-matches-the-given-name-attr-androidactionmodesharedrawable"></a>Android.Support.v7.AppCompat - 找不到符合指定名稱：attr 'android:actionModeShareDrawable' 的資源
 
 1. 請確定您下載最新的額外項目，以及 Android 5.0 (API 21) SDK 透過 Android SDK 管理員。
 
@@ -24,11 +24,11 @@ ms.locfileid: "50112412"
 
 [https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)
 
-*請注意*： 如果您手動安裝這透過套件管理員主控台，請確定您也可以安裝相同版本的 Xamarin.Android.Support.v4
+*注意*：如果您手動安裝這透過套件管理員主控台，請確定您也可以安裝相同版本的 Xamarin.Android.Support.v4
 
 [https://www.nuget.org/packages/Xamarin.Android.Support.v4/](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)
 
-堆疊溢位的參考： [http://stackoverflow.com/questions/26431676/appcompat-v721-0-0-no-resource-found-that-matches-the-given-name-attr-andro](http://stackoverflow.com/questions/26431676/appcompat-v721-0-0-no-resource-found-that-matches-the-given-name-attr-andro)
+堆疊溢位的參考： [https://stackoverflow.com/questions/26431676/appcompat-v721-0-0-no-resource-found-that-matches-the-given-name-attr-andro](https://stackoverflow.com/questions/26431676/appcompat-v721-0-0-no-resource-found-that-matches-the-given-name-attr-andro)
 
 ## <a name="see-also"></a>另請參閱
 

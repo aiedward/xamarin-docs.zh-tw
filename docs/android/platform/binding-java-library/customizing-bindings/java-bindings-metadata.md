@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 858f1e5c0bd2af85b419bb9a1cffb7d484f3f7e4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ce9bf0293b846299cc7cd06773ce936f725715fa
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113400"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669891"
 ---
 # <a name="java-bindings-metadata"></a>Java 繫結中繼資料
 
@@ -77,7 +77,7 @@ Xamarin.Android **Java 繫結程式庫**嘗試自動執行許多工作所需的�
 ## <a name="metadataxml-transform-file"></a>Metadata.xml 轉換檔
 
 因為我們已經學，檔案**Metadata.xml**繫結產生器用來影響繫結組件的建立。
-中繼資料格式會使用[XPath](https://www.w3.org/TR/xpath/)語法和幾乎等同*GAPI 中繼資料*中所述[GAPI 中繼資料](http://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)指南。 此實作是幾乎 XPath 1.0 的完整實作，並因此支援標準 1.0 中的 項目。 這個檔案是強大的 XPath 型機制，來變更、 加入、 隱藏或移動 API 檔案中的任何項目或屬性。 所有中繼資料規格中的規則項目都包含路徑屬性，以識別所要套用規則的節點。 依下列順序套用規則：
+中繼資料格式會使用[XPath](https://www.w3.org/TR/xpath/)語法和幾乎等同*GAPI 中繼資料*中所述[GAPI 中繼資料](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)指南。 此實作是幾乎 XPath 1.0 的完整實作，並因此支援標準 1.0 中的 項目。 這個檔案是強大的 XPath 型機制，來變更、 加入、 隱藏或移動 API 檔案中的任何項目或屬性。 所有中繼資料規格中的規則項目都包含路徑屬性，以識別所要套用規則的節點。 依下列順序套用規則：
 
 * **新增節點**&ndash;將子節點附加至 path 屬性所指定的節點。
 * **attr** &ndash;設定路徑屬性所指定的項目屬性的值。
@@ -198,7 +198,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 此屬性位於命名的 setter 方法`EventArg`系統將產生支援 Java 接聽程式的子類別。 這中更多的詳細資料如下一節中所述[重新命名 EventArg 包裝函式類別](#Renaming_EventArg_Wrapper_Classes)以便稍後在本指南。
 
-### <a name="eventname"></a>事件名稱
+### <a name="eventname"></a>eventName
 
 指定事件的名稱。 如果是空的它會禁止事件產生。
 此說明章節標題中的更詳細[重新命名 EventArg 包裝函式類別](#Renaming_EventArg_Wrapper_Classes)。
@@ -223,7 +223,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 `managedType` 用來變更方法的傳回型別。 在某些情況下，繫結產生器會不正確地推斷 Java 方法，這會導致編譯時期錯誤的傳回型別。 一個可行的解決方案，在此情況下，就是變更方法的傳回型別。
 
-比方說，繫結產生器會認為，Java 方法`de.neom.neoreadersdk.resolution.compareTo()`應該會傳回`int`，這會導致錯誤訊息**錯誤 CS0535: ' DE。Neom.Neoreadersdk.Resolution' 未實作介面成員 'Java.Lang.IComparable.CompareTo(Java.Lang.Object)'**。 下列程式碼片段示範如何變更所產生的傳回類型C#方法從`int`要`Java.Lang.Object`: 
+比方說，繫結產生器會認為，Java 方法`de.neom.neoreadersdk.resolution.compareTo()`應該會傳回`int`，這會導致錯誤訊息**錯誤 CS0535:' DE。Neom.Neoreadersdk.Resolution' 未實作介面成員 'Java.Lang.IComparable.CompareTo(Java.Lang.Object)'**。 下列程式碼片段示範如何變更所產生的傳回類型C#方法從`int`要`Java.Lang.Object`: 
 
 ```xml
 <attr path="/api/package[@name='de.neom.neoreadersdk']/
@@ -347,4 +347,4 @@ realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 
 - [使用 JNI](~/android/platform/java-integration/working-with-jni.md)
 - [繫結 Java 程式庫](~/android/platform/binding-java-library/index.md)
-- [GAPI 中繼資料](http://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)
+- [GAPI 中繼資料](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)

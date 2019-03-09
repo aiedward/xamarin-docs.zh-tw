@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: 325f4e99e70f88ccf642253720f4229142a169ec
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 69952b0bac884fe8b14edcbb87aa8fad47594880
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526556"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670698"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>在 Xamarin.iOS 中顯示影像
 
@@ -42,7 +42,7 @@ _本文章涵蓋包括在 Xamarin.iOS 應用程式和使用 C# 程式碼，或�
 
     ![](displaying-an-image-images/imageset03.png "映像集編輯器")
 4. 從這裡開始，拖曳影像中的每個不同的裝置，以及所需的解析度。 
-5. 按兩下新的映像集合**名稱**中**資產清單**對其進行編輯： ![](displaying-an-image-images/imageset04.png "編輯新的映像集的名稱")
+5. 按兩下新的映像集合**名稱**中**資產清單**對其進行編輯：![](displaying-an-image-images/imageset04.png "編輯新的映像集的名稱")
 
 使用時**映像設定**在 iOS 設計工具中，只是集的名稱從下拉式清單選取 [屬性編輯器] 中：
 
@@ -213,7 +213,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage");
 TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 ```
 
-如需有關圖示和影像的詳細資訊，請參閱 Apple 文件上[自訂圖示和影像建立指導方針](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)。
+如需有關圖示和影像的詳細資訊，請參閱 Apple 文件上[自訂圖示和影像建立指導方針](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)。
 
 ## <a name="displaying-an-image-in-a-storyboards"></a>分鏡腳本中顯示影像
 

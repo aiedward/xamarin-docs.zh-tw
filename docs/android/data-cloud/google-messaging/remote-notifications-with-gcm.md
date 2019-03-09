@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/12/2018
-ms.openlocfilehash: be96683a2e63ed802169543dcee55a3431e42130
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: e5a5e44a61d352b5de05564ebb7192d21ed83dfa
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528802"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668890"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>使用 Google 雲端通訊的遠端通知
 
@@ -617,7 +617,7 @@ GCM，反而會將轉送此訊息至用戶端應用程式。 讓我們來建置*
 
 ### <a name="try-it"></a>請嘗試
 
-現在我們已經準備好要測試我們的用戶端應用程式。 如果您使用模擬器，或如果您的裝置在透過 Wi-fi 與 GCM 通訊，您必須透過取得的 GCM 訊息在防火牆上開啟下列 TCP 通訊埠： 5228、 5229 和 5230。
+現在我們已經準備好要測試我們的用戶端應用程式。 如果您使用模擬器，或您的裝置透過 Wi-fi 與 GCM 通訊，您就必須透過取得的 GCM 訊息在防火牆上開啟下列 TCP 通訊埠：5228、 5229 和 5230。
 
 啟動您的用戶端應用程式，並查看 [輸出] 視窗。 之後`RegistrationIntentService`成功接收，註冊自 GCM 語彙基元時，[輸出] 視窗應該會顯示此語彙基元，類似於下列的記錄輸出：
 
@@ -657,7 +657,7 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 恭喜，您的應用程式已收到其第一個遠端通知 ！
 
-請注意，是否應用程式強制停止，不會再將收到 GCM 訊息。 若要強制停止後繼續通知，應用程式必須以手動方式重新啟動。 如需有關此 Android 的原則的詳細資訊，請參閱[啟動已停止的應用程式上的控制項](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)，而這[堆疊溢位 post](http://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267)。 
+請注意，是否應用程式強制停止，不會再將收到 GCM 訊息。 若要強制停止後繼續通知，應用程式必須以手動方式重新啟動。 如需有關此 Android 的原則的詳細資訊，請參閱[啟動已停止的應用程式上的控制項](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)，而這[堆疊溢位 post](https://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267)。 
 
  
 ## <a name="summary"></a>總結

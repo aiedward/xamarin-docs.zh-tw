@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 634131025b322b64e89ece3b4c9d092e6b17a373
-ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.openlocfilehash: 1f3e6dcc81c75d12a1dbba8fefc62a85178c8c24
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579813"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670659"
 ---
 # <a name="android-localization"></a>Android 的當地語系化
 
@@ -32,7 +32,7 @@ _本文件介紹 Android SDK 以及如何加以存取，而 Xamarin 的當地語
 var lang = Resources.Configuration.Locale; // eg. "es_ES"
 ```
 
-這個值會包含語言程式碼和地區設定代碼，底線隔開的地區設定識別碼。 如需參考，以下是[Java 地區設定清單](http://www.oracle.com/technetwork/java/javase/locales-137662.html)並[Android 支援的地區設定透過 StackOverflow](http://stackoverflow.com/questions/7973023/what-is-the-list-of-supported-languages-locales-on-android)。
+這個值會包含語言程式碼和地區設定代碼，底線隔開的地區設定識別碼。 如需參考，以下是[Java 地區設定清單](https://www.oracle.com/technetwork/java/javase/locales-137662.html)並[Android 支援的地區設定透過 StackOverflow](https://stackoverflow.com/questions/7973023/what-is-the-list-of-supported-languages-locales-on-android)。
 
 常見範例包括︰
 
@@ -190,7 +190,7 @@ var translated = Resources.GetQuantityString (
 * many
 * 另一個
 
-它們會更詳細地描述[Android docs](http://developer.android.com/guide/topics/resources/string-resource.html#Plurals)。如果給定的語言不需要 「 特殊 」 處理 」，這些`quantity`會忽略字串 (例如英文只會使用`one`並`other`; 指定`zero`字串會有任何作用，它將不會使用)。
+它們會更詳細地描述[Android docs](https://developer.android.com/guide/topics/resources/string-resource.html#Plurals)。如果給定的語言不需要 「 特殊 」 處理 」，這些`quantity`會忽略字串 (例如英文只會使用`one`並`other`; 指定`zero`字串會有任何作用，它將不會使用)。
 
 ### <a name="images"></a>影像
 
@@ -209,7 +209,7 @@ var translated = Resources.GetQuantityString (
 
 Android 4.2 導入的支援[由右至左 (RTL) 語言](http://android-developers.blogspot.fr/2013/03/native-rtl-support-in-android-42.html)如果您將應用程式設定`android:supportsRtl="true"`。 資源限定詞`"ldrtl"`可以納入包含專為從右至左顯示的自訂配置目錄名稱。
 
-如需有關資源目錄命名和後援的詳細資訊，請參閱 Android 文件[提供替代資源](http://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources)。
+如需有關資源目錄命名和後援的詳細資訊，請參閱 Android 文件[提供替代資源](https://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources)。
 
 
 ### <a name="app-name"></a>應用程式名稱
@@ -264,7 +264,7 @@ adb shell setprop persist.sys.locale fr-CA;stop;sleep 5;start
 ## <a name="related-links"></a>相關連結
 
 - [Tasky （程式碼中已當地語系化） （範例）](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)
-- [Android 資源當地語系化](http://developer.android.com/guide/topics/resources/localization.html)
+- [Android 資源當地語系化](https://developer.android.com/guide/topics/resources/localization.html)
 - [跨平台當地語系化概觀](~/cross-platform/app-fundamentals/localization.md)
 - [Xamarin.Forms 當地語系化](~/xamarin-forms/app-fundamentals/localization/index.md)
 - [iOS 當地語系化](~/ios/app-fundamentals/localization/index.md)

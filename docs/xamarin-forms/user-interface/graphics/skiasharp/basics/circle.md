@@ -7,12 +7,12 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 63379a9a4195bf5128c96caaf8745df8dd0addf3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: b4cd84e9134db2b2106af3205f189fbc2a92bdcc
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050708"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669440"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp 繪圖簡單的圓形
 
@@ -108,7 +108,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 預設為 `Fill`。 您可以使用第三個選項來將線條描邊，並使用相同的色彩填滿內部。
 
-設定[ `Color` ](xref:SkiaSharp.SKPaint.Color)屬性設為值型別的[ `SKColor` ](xref:SkiaSharp.SKColor)。 其中一種方式來取得`SKColor`值是藉由轉換 Xamarin.Forms`Color`值`SKColor`值使用擴充方法[ `ToSKColor` ](SkiaSharp.Views.Forms.Extensions.ToSKColor*)。 [ `Extensions` ](xref:SkiaSharp.Views.Forms.Extensions)類別在`SkiaSharp.Views.Forms`命名空間包含的其他方法的 Xamarin.Forms 值和 SkiaSharp 值之間轉換。
+設定[ `Color` ](xref:SkiaSharp.SKPaint.Color)屬性設為值型別的[ `SKColor` ](xref:SkiaSharp.SKColor)。 其中一種方式來取得`SKColor`值是藉由轉換 Xamarin.Forms`Color`值`SKColor`值使用擴充方法[ `ToSKColor` ](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*)。 [ `Extensions` ](xref:SkiaSharp.Views.Forms.Extensions)類別在`SkiaSharp.Views.Forms`命名空間包含的其他方法的 Xamarin.Forms 值和 SkiaSharp 值之間轉換。
 
 [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth)屬性表示線條的粗細。 這裡，它設為 25 像素。
 
@@ -153,7 +153,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 > [!NOTE]
 > `SKPaint`類別會定義[ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias)啟用消除鋸齒呈現圖形。 消除鋸齒通常會產生以視覺化方式較平滑的邊緣，因此您可能會想要將此屬性設定為`true`中的大部分您`SKPaint`物件。 為了簡單起見，這個屬性就_不_中大部分的範例頁面的設定。
 
-雖然指定圓形的外框的寬度為 25 像素&mdash;或四分之一圓形的半徑的&mdash;它似乎是越窄，而且沒有做的原因： 藍色圓形被遮蔽的線條寬度的一半。 引數`DrawCircle`方法定義抽象圓形的幾何座標。 藍色的內部會調整成最接近像素，該維度，但 25 像素寬大綱 information officer 幾何圓形&mdash;一半內部和外部的下半部。
+雖然指定圓形的外框的寬度為 25 像素&mdash;或四分之一圓形的半徑的&mdash;它似乎是越窄，而且沒有做的原因：藍色圓形被遮蔽的線條寬度的一半。 引數`DrawCircle`方法定義抽象圓形的幾何座標。 藍色的內部會調整成最接近像素，該維度，但 25 像素寬大綱 information officer 幾何圓形&mdash;一半內部和外部的下半部。
 
 中的下一個範例[整合 Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)文件會以視覺化方式示範。
 

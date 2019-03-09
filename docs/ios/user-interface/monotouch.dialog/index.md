@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: c291a440a1937d2b0f1c229e3fa969caedba9ab9
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675454"
 ---
+
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>適用於 Xamarin.iOS MonoTouch.Dialog 簡介
 
 MonoTouch.Dialog，稱為 MT簡稱，D 是快速的 UI 開發工具組可讓開發人員建置應用程式畫面和瀏覽使用的詳細資訊，而不是建立檢視控制器、 資料表等的冗長工作。因此，它會提供大幅簡化的 UI 開發和程式碼降低。 例如，請考慮下列的螢幕擷取畫面：
@@ -263,7 +258,7 @@ A`StyledStringElement`允許必須存在於使用任一個內建的表格儲存�
 此外`KeyboardType`屬性可以設定在建立時，用於資料輸入所需之鍵盤類型樣式。 這可以用來設定使用的值的鍵盤`UIKeyboardType`，如下所示：
 
 -  數值
--  電話
+-  Phone
 -  URL
 -  Email
 
@@ -393,7 +388,7 @@ public class SampleOwnerDrawnElement : OwnerDrawnElement
 `JsonElement`是`RootElement`，可以具現化兩種形式。 其中一個版本建立`RootElement`，將隨選內容的載入。 這些藉由使用`JsonElement`採取額外的引數，在結束時，要載入的內容 url 的建構函式：
 
 ```csharp
-var je = new JsonElement ("Dynamic Data", "http://tirania.org/tmp/demo.json");
+var je = new JsonElement ("Dynamic Data", "https://tirania.org/tmp/demo.json");
 ```
 
 另一個表單建立將資料從本機檔案或現有`System.Json.JsonObject`您已剖析：
@@ -590,9 +585,9 @@ public override Source CreateSizingSource (bool unevenRows)
 - [螢幕錄製影片-Miguel de Icaza 建立 iOS 登入畫面 MonoTouch.Dialog](http://youtu.be/3butqB1EG0c)
 - [螢幕錄製影片-輕鬆地建立 iOS 使用者介面與 MonoTouch.Dialog](http://youtu.be/j7OC5r8ZkYg)
 - [逐步解說：使用元素 API 建立應用程式](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
-- [逐步解說：使用映射 API 建立應用程式](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
-- [逐步解說：使用 JSON 元素建立使用者介面](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
+- [逐步解說：使用反射 API 建立應用程式](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
+- [逐步解說：若要建立使用者介面中使用 JSON 元素](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
 - [MonoTouch.Dialog JSON 標記](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)
 - [在 Github 上的 MonoTouch 對話方塊](https://github.com/migueldeicaza/MonoTouch.Dialog)
-- [UITableViewController 類別參考](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
-- [UINavigationController 類別參考](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)
+- [UITableViewController 類別參考](https://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
+- [UINavigationController 類別參考](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

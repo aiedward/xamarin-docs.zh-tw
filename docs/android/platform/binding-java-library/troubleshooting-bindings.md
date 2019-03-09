@@ -1,5 +1,5 @@
 ---
-title: 疑難排解的繫結
+title: 對繫結進行疑難排解
 description: 本文摘要說明幾種常見的錯誤時產生繫結，以及可能的原因和解決這些問題的建議的方式可能會發生。
 ms.prod: xamarin
 ms.assetid: BB81FCCF-F7BF-4C78-884E-F02C49AA819A
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: f54da980834b44bbca7dc8619943769f8f429a7a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b0bb7cbb6160865af5b1e40d40c7b999a8bd5ebc
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115285"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668513"
 ---
-# <a name="troubleshooting-bindings"></a>疑難排解的繫結
+# <a name="troubleshooting-bindings"></a>對繫結進行疑難排解
 
 _本文摘要說明幾種常見的錯誤時產生繫結，以及可能的原因和解決這些問題的建議的方式可能會發生。_
 
@@ -74,12 +74,12 @@ _本文摘要說明幾種常見的錯誤時產生繫結，以及可能的原因�
 本節會列出一些常見的錯誤訊息或徵狀，我嘗試繫結 Android 程式庫時，會發生。
 
 
-### <a name="problem-java-version-mismatch"></a>問題： Java 版本不符
+### <a name="problem-java-version-mismatch"></a>問題：Java 版本不符
 
 有時不會產生型別，或因為您使用的較新或較舊的 Java 版本相較於程式庫在編譯了，可能會發生未預期的當機。 重新編譯您的 Xamarin.Android 專案使用的 jdk 的相同版本 Android 程式庫。
 
 
-### <a name="problem-at-least-one-java-library-is-required"></a>至少一個 Java 程式庫是必要問題：
+### <a name="problem-at-least-one-java-library-is-required"></a>問題：須有至少一個 Java 程式庫
 
 您會收到錯誤 「 至少一個 Java 程式庫 」，即使。已新增 JAR。
 
@@ -88,7 +88,7 @@ _本文摘要說明幾種常見的錯誤時產生繫結，以及可能的原因�
 請確定建置動作設定為`EmbeddedJar`。 由於有多個建置動作。JAR 檔案 (例如`InputJar`， `EmbeddedJar`，`ReferenceJar`和`EmbeddedReferenceJar`)，繫結產生器無法自動猜出要依預設會使用哪一個。 如需有關建置動作的詳細資訊，請參閱[建置動作](~/android/platform/binding-java-library/index.md)。
 
 
-### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>問題： 繫結工具無法載入。JAR 程式庫
+### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>問題：繫結工具無法載入。JAR 程式庫
 
 繫結程式庫產生器無法載入。JAR 程式庫。
 
@@ -98,7 +98,7 @@ _本文摘要說明幾種常見的錯誤時產生繫結，以及可能的原因�
 
 
 
-### <a name="problem-missing-c-types-in-generated-output"></a>問題： 遺漏的C#中產生的輸出型別。
+### <a name="problem-missing-c-types-in-generated-output"></a>問題：遺漏C#中產生的輸出型別。
 
 繫結 **.dll**所建置，但遺漏一些 Java 類型，或產生C#不會建立來源，這是因為發生錯誤，指出有遺漏的類型。
 
@@ -128,7 +128,7 @@ _本文摘要說明幾種常見的錯誤時產生繫結，以及可能的原因�
         name="obfuscated">false</attr>
     ```
 
-### <a name="problem-generated-c-source-does-not-build-due-to-parameter-type-mismatch"></a>問題： 產生的C#不會建立來源，這是因為參數類型不符
+### <a name="problem-generated-c-source-does-not-build-due-to-parameter-type-mismatch"></a>問題：產生C#不會建立來源，這是因為參數類型不符
 
 產生C#來源不會建置。 覆寫方法的參數類型不相符。
 
@@ -136,15 +136,15 @@ _本文摘要說明幾種常見的錯誤時產生繫結，以及可能的原因�
 
 Xamarin.Android 包含各種不同的對應至列舉中的 Java 欄位C#繫結。 在產生的繫結，這些會造成類型不相容。 若要解決此問題，從繫結產生器建立的方法簽章需要修改成使用列舉。 如需 imformation，請參閱[更正列舉](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)。
 
-### <a name="problem-noclassdeffounderror-in-packaging"></a>在封裝中的問題： NoClassDefFoundError
+### <a name="problem-noclassdeffounderror-in-packaging"></a>問題：在封裝中的 NoClassDefFoundError
 
 `java.lang.NoClassDefFoundError` 在封裝步驟會擲回。
 
 #### <a name="possible-causes"></a>可能的原因：
 
-此錯誤最可能的原因是必要的 Java 程式庫必須新增至應用程式專案 (**.csproj**)。 .JAR 檔案不會自動解析。 Java 程式庫繫結永遠不會產生針對不存在於目標裝置或模擬器的使用者組件 (例如 Google Maps **maps.jar**)。 這不是如需 Android 程式庫專案的支援，作為程式庫。JAR 會內嵌在程式庫 dll。 例如： [Bug 4288](https://bugzilla.xamarin.com/show_bug.cgi?id=4288)
+此錯誤最可能的原因是必要的 Java 程式庫必須新增至應用程式專案 (**.csproj**)。 .JAR 檔案不會自動解析。 Java 程式庫繫結永遠不會產生針對不存在於目標裝置或模擬器的使用者組件 (例如 Google Maps **maps.jar**)。 這不是如需 Android 程式庫專案的支援，作為程式庫。JAR 會內嵌在程式庫 dll。 例如: [Bug 4288](https://bugzilla.xamarin.com/show_bug.cgi?id=4288)
 
-### <a name="problem-duplicate-custom-eventargs-types"></a>問題： 重複的自訂 EventArgs 型別
+### <a name="problem-duplicate-custom-eventargs-types"></a>問題：重複的自訂 EventArgs 型別
 
 建置失敗，因為重複的自訂 EventArgs 類型。 會發生錯誤，就像這樣：
 
@@ -182,7 +182,7 @@ public interface MediationInterstitialListener {
         name="argsType">DialogClickEventArgs</attr>
 ```
 
-### <a name="problem-class-does-not-implement-interface-method"></a>問題： 類別未實作介面方法
+### <a name="problem-class-does-not-implement-interface-method"></a>問題：類別未實作介面方法
 
 會產生錯誤訊息，指出產生的類別未實作所產生的類別會實作的介面的方法。 不過，從產生的程式碼，您可以看出方法實作。
 
@@ -222,7 +222,7 @@ return type of 'Java.Lang.Object'
     </attr>
     ```
 
-### <a name="problem-name-collisions-on-inner-classes--properties"></a>問題： 命名衝突，在內部的類別 / 屬性
+### <a name="problem-name-collisions-on-inner-classes--properties"></a>問題：名稱衝突，在內部的類別 / 屬性
 
 衝突的可見性繼承的物件。
 
@@ -236,9 +236,9 @@ return type of 'Java.Lang.Object'
 <attr path="/api/package[@name='namespace']/class[@name='ClassName']/method[@name='MethodName']" name="visibility">public</attr>
 ```
 
-### <a name="problem-a-so-library-required-by-the-binding-is-not-loading"></a>問題： A **.so**繫結所需的程式庫是未載入
+### <a name="problem-a-so-library-required-by-the-binding-is-not-loading"></a>問題：A **.so**繫結所需的程式庫是未載入
 
-某些繫結專案也會取決於中的功能 **.so**程式庫。 您可 Xamarin.Android 不會自動載入 **.so**程式庫。 若要讓 JNI 呼叫和錯誤訊息的已包裝的 Java 程式碼執行時，將會失敗 Xamarin.Android _java.lang.UnsatisfiedLinkError： 找不到的原生方法：_ 會出現在出 logcat，應用程式。
+某些繫結專案也會取決於中的功能 **.so**程式庫。 您可 Xamarin.Android 不會自動載入 **.so**程式庫。 若要讓 JNI 呼叫和錯誤訊息的已包裝的 Java 程式碼執行時，將會失敗 Xamarin.Android _java.lang.UnsatisfiedLinkError:找不到的原生方法：_ 會出現在出 logcat，應用程式。
 
 此修正方法是手動載入 **.so**藉由呼叫的程式庫`Java.Lang.JavaSystem.LoadLibrary`。 例如假設 Xamarin.Android 專案具有共用媒體櫃**libpocketsphinx_jni.so**包含在繫結專案的建置動作**EmbeddedNativeLibrary**，下列程式碼片段（執行之前使用共用的程式庫） 會載入 **.so**程式庫：
 
@@ -253,7 +253,7 @@ Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 
 ## <a name="related-links"></a>相關連結
 
-- [程式庫專案](http://developer.android.com/tools/projects/index.html#LibraryProjects)
+- [程式庫專案](https://developer.android.com/tools/projects/index.html#LibraryProjects)
 - [使用 JNI](~/android/platform/java-integration/working-with-jni.md)
 - [啟用診斷輸出](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output)
 - [適用於 Android 開發人員的 Xamarin](~/android/get-started/java-developers.md)

@@ -6,12 +6,12 @@ ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: b20760d3e8d7e168b0f0508222d8ae0b743a9368
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 9fbbe7d33428c1274d78ed882ced3985b8459072
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058908"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671477"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>第 5 部分 - 實用的程式碼共用策略
 
@@ -201,7 +201,7 @@ await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 
 它是在 Windows Phone (Silverlight) 已實作在 Xamarin.iOS 和 Xamarin.Android 可讓一般的檔案存取程式碼，可寫入的檔案存取的預設機制。 `System.IO.IsolatedStorage`類別，可參考中的所有三個平台[共用專案](~/cross-platform/app-fundamentals/shared-projects.md)。
 
-請參閱[隔離儲存體概觀適用於 Windows Phone](http://msdn.microsoft.com/library/windowsphone/develop/ff402541(v=vs.105).aspx)如需詳細資訊。
+請參閱[隔離儲存體概觀適用於 Windows Phone](https://msdn.microsoft.com/library/windowsphone/develop/ff402541(v=vs.105).aspx)如需詳細資訊。
 
 隔離的儲存體 Api 不適用於[可攜式類別庫](~/cross-platform/app-fundamentals/pcl.md)。 PCL 的一個替代選項是[PCLStorage NuGet](https://pclstorage.codeplex.com/)
 
@@ -295,7 +295,7 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 -  即使在網路為可用，最好要確認與目標伺服器的連線，然後再起始其他要求。 這會防止應用程式的網路作業逾時重複，並也允許更具參考性的錯誤訊息，以顯示給使用者。
 
 
-沒有[Xamarin.iOS 範例](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample)可用 (根據 Apple[連線能力的範例程式碼](http://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html)) 來協助偵測網路可用性。
+沒有[Xamarin.iOS 範例](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample)可用 (根據 Apple[連線能力的範例程式碼](https://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html)) 來協助偵測網路可用性。
 
 
 ## <a name="webservices"></a>WebServices
@@ -387,7 +387,7 @@ static Context uiContext = TaskScheduler.FromCurrentSynchronizationContext();
 
 IOS 和 Android 的語法需要的 'context' 類別可表示的程式碼需要將這個物件傳遞至任何需要在 UI 執行緒上的回呼的方法。
 
-若要讓 UI 執行緒呼叫共用程式碼中，請遵循[IDispatchOnUIThread 範例](http://www.slideshare.net/follesoe/cross-platform-mobile-apps-using-net)(由[ @follesoe ](http://jonas.follesoe.no/))。 宣告和程式以`IDispatchOnUIThread`介面中的共用程式碼，然後再實作的平台特定類別，如下所示：
+若要讓 UI 執行緒呼叫共用程式碼中，請遵循[IDispatchOnUIThread 範例](https://www.slideshare.net/follesoe/cross-platform-mobile-apps-using-net)(由[ @follesoe ](http://jonas.follesoe.no/))。 宣告和程式以`IDispatchOnUIThread`介面中的共用程式碼，然後再實作的平台特定類別，如下所示：
 
 ```csharp
 // program to the interface in shared code

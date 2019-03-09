@@ -6,12 +6,12 @@ ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: 3946a4ba190e1d8ba5c68a2d8ac36cf42900862f
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 889eaf2b2f87b22010315f5e92dcfd1cd4c7c446
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233974"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668266"
 ---
 # <a name="transport-layer-security-tls-12"></a>傳輸層安全性 (TLS) 1.2
 
@@ -123,7 +123,7 @@ Android 專案選項也可讓您選擇哪一個是支援 SSL/TLS 實作：
 - [Xamarin.Android 環境](~/android/deploy-test/environment.md)
 - [Xamarin Cycle 9 (年 2 月 2017)](https://releases.xamarin.com/stable-release-cycle-9/)
 - [TLS (Wikipedia)](https://en.wikipedia.org/wiki/Transport_Layer_Security)
-- [Mono 4.8 版本資訊-TLS 1.2 支援](http://www.mono-project.com/docs/about-mono/releases/4.8.0/#tls-12-support)
+- [Mono 4.8 版本資訊-TLS 1.2 支援](https://www.mono-project.com/docs/about-mono/releases/4.8.0/#tls-12-support)
 - [BoringSSL](https://boringssl.googlesource.com/boringssl/)
 - [HttpClient、 HttpClientHandler 和 WebRequestHandler 說明](https://blogs.msdn.microsoft.com/henrikn/2012/08/07/httpclient-httpclienthandler-and-webrequesthandler-explained/)
 - [System.Net.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)
@@ -132,7 +132,7 @@ Android 專案選項也可讓您選擇哪一個是支援 SSL/TLS 實作：
 - [System.Net.HttpWebRequest](https://msdn.microsoft.com/library/system.net.httpwebrequest(v=vs.110).aspx)
 - [System.Net.WebClient](https://msdn.microsoft.com/library/system.net.webclient(v=vs.110).aspx)
 - [System.Net.WebRequest](https://msdn.microsoft.com/library/system.net.webrequest(v=vs.110).aspx)
-- [java.net.URLConnection](http://developer.android.com/reference/java/net/URLConnection.html)
+- [java.net.URLConnection](https://developer.android.com/reference/java/net/URLConnection.html)
 - [Foundation.CFNetwork](xref:CoreFoundation.CFNetwork)
 - [Foundation.NSUrlConnection](xref:Foundation.NSUrlConnection)
 - [System.Net.WebRequest](https://msdn.microsoft.com/library/system.net.webrequest(v=vs.110).aspx)

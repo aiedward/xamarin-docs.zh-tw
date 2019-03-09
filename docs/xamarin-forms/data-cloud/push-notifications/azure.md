@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: 42ec5ddb6846ccf733f2bf18812f43e7afd45f34
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 92c068ceb3d382ed4612318dc987d950ec7e7ef2
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058568"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672543"
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>從 Azure Mobile Apps 傳送推播通知
 
@@ -58,7 +58,7 @@ Azure Mobile Apps 都使用通知中樞的推播通知的內建支援。 從 Azu
 Azure 通知中樞整合 Azure Mobile Apps 執行個體的程序如下所示：
 
 1. 建立 Azure Mobile Apps 執行個體。 如需詳細資訊，請參閱 <<c0> [ 使用 Azure Mobile Apps](~/xamarin-forms/data-cloud/consuming/azure.md)。
-1. 設定通知中樞。 如需詳細資訊，請參閱 <<c0> [ 設定通知中樞](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#create-hub)。
+1. 設定通知中樞。 如需詳細資訊，請參閱 <<c0> [ 設定通知中樞](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#configure-hub)。
 1. 更新 Azure 行動應用程式執行個體，以傳送推播通知。 如需詳細資訊，請參閱 <<c0> [ 更新伺服器專案以傳送推播通知](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#update-the-server-project-to-send-push-notifications)。
 1. 向每個 PNS。
 1. 設定通知中樞，來與每個 PNS 通訊。

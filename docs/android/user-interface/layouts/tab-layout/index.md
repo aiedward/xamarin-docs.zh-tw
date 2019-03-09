@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2017
-ms.openlocfilehash: 5d88ffb44d12ee142314c74ca8e749164cbfe3b9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105957"
 ---
+
 # <a name="tabbed-layouts"></a>索引標籤式版面配置
 
 
@@ -34,6 +29,6 @@ ms.locfileid: "50105957"
 
 ## <a name="related-links"></a>相關連結
 
-- [材料設計-索引標籤](https://material.io/guidelines/components/tabs.html)- [ActionBar](http://developer.android.com/guide/topics/ui/actionbar.html)
+- [材料設計-索引標籤](https://material.io/guidelines/components/tabs.html)- [ActionBar](https://developer.android.com/guide/topics/ui/actionbar.html)
 - [Android 支援程式庫 v7 AppCompat NuGet 封裝](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)
-- [v7 appcompat 程式庫](http://developer.android.com/tools/support-library/features.html#v7-appcompat)
+- [v7 appcompat 程式庫](https://developer.android.com/tools/support-library/features.html#v7-appcompat)

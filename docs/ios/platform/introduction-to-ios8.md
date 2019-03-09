@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: 8e95e674f52cb23be769473e27dc8eb785a77820
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9299322eb20561444262c2b2ba87191d2bddcde4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116039"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668747"
 ---
 # <a name="introduction-to-ios-8"></a>IOS 8 簡介
 
@@ -151,7 +151,7 @@ Spritekit，Apple 的 2D 遊戲架構有一些有趣的新功能，在 iOS 8 和
 ## <a name="other-changes"></a>其他變更
 在上述的 iOS 8 中的重大變更，以及 Apple 此外已更新許多現有的架構。 這些詳述如下：
 
-- **[Core 映像](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)** – Apple 已經擴充其映像處理架構時，藉由新增更好的支援，來偵測的矩形區域，並 QR 代碼映像內。 Mike Bluestein 所探討的是這在他的部落格文章標題[在 iOS 8 中的映像偵測](http://blog.xamarin.com/image-detection-in-ios-8/)
+- **[Core 映像](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)** – Apple 已經擴充其映像處理架構時，藉由新增更好的支援，來偵測的矩形區域，並 QR 代碼映像內。 Mike Bluestein 所探討的是這在他的部落格文章標題[在 iOS 8 中的映像偵測](https://blog.xamarin.com/image-detection-in-ios-8/)
 
 ## <a name="deprecated-apis"></a>已被取代的 API
 所有的改良在 iOS 8 中，使用數個 Api 已被取代。 其中某些如下所述。

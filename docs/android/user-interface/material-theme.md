@@ -1,5 +1,5 @@
 ---
-title: 材料佈景主題
+title: 材質佈景主題
 description: 佈景主題的如何 Xamarin.Android 應用程式與資料主題
 ms.prod: xamarin
 ms.assetid: DC4CDBD0-3DF9-4B7E-B876-29128985E2A7
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 4b9c39a0ced9a264f501d78142c3bdfd556593ed
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: ff94211086956e36da377445d90359789b62fc60
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "30771316"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668318"
 ---
-# <a name="material-theme"></a>材料佈景主題
+# <a name="material-theme"></a>材質佈景主題
 
 *材料佈景主題*是判斷檢視和開頭為 Android 5.0 (Lollipop) 的活動的外觀及操作的使用者介面樣式。 材料佈景主題是內建 Android 5.0 版，所以它會使用由系統 UI 以及應用程式。 材料佈景主題不是 「 主題 」，因為使用者可以動態地選擇從 [設定] 功能表的全系統外觀選項。 相反地，材料佈景主題可以視為一組的相關內建的基底樣式可供您自訂您的應用程式的外觀與風格。
 
@@ -45,7 +45,7 @@ Android 提供三種材料佈景主題類型：
 
 -  **Android SDK** &ndash; Android 5.0 (API 21) 或更新版本必須安裝 Android SDK 管理員透過。
 
--  **Java JDK 1.8** &ndash;可以使用 JDK 1.7，如果您是特別瞄準的 API 層級 23 和更早版本。 JDK 1.8 是可從[Oracle](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)。
+-  **Java JDK 1.8** &ndash;可以使用 JDK 1.7，如果您是特別瞄準的 API 層級 23 和更早版本。 JDK 1.8 是可從[Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)。
 
 若要了解如何設定 Android 5.0 應用程式專案，請參閱[設定註冊的 Android 5.0 專案](~/android/platform/lollipop.md)。
 
@@ -278,7 +278,7 @@ Android 5.0 也可讓您設定的個別檢視的樣式。 在建立後**colors.x
 - [棒棒糖符號的簡介](../platform/lollipop.md)
 - [CardView](controls/card-view.md)
 - [替代資源](../app-fundamentals/resources-in-android/alternate-resources.md)
-- [Android 的棒棒糖符號](https://developer.android.com/about/versions/lollipop)
+- [Android Lollipop](https://developer.android.com/about/versions/lollipop)
 - [Android 的圓形圖開發人員](https://developer.android.com/about/versions/pie/)
 - [材料設計](https://developer.android.com/guide/topics/ui/look-and-feel/)
 - [材料設計原則](https://material.io/design/)

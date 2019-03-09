@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 12/05/2017
-ms.openlocfilehash: fc3a30473b4a38b21f89c5be201c8191658aae63
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 13fd84d8e23c18606696532b1c6e8db301b52f3c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050318"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668539"
 ---
 # <a name="installing-and-using-watchos-in-xamarin"></a>安裝並在 Xamarin 中使用 watchOS
 
@@ -232,5 +232,5 @@ WatchOS 範本檔案 (例如`InterfaceController`， `ExtensionDelegate`， `Not
 ## <a name="related-links"></a>相關連結
 
 - [WatchKitCatalog （範例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
-- [Watch 應用程式上的影片](http://blog.xamarin.com/your-first-watch-kit-app/)
+- [Watch 應用程式上的影片](https://blog.xamarin.com/your-first-watch-kit-app/)
 - [Apple 的 WatchKit 秘訣](https://developer.apple.com/watchkit/tips/)

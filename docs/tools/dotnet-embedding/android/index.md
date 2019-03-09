@@ -5,13 +5,8 @@ ms.assetid: EB2F967A-6D95-4448-994B-6D5C7BFAC2C7
 author: lobrien
 ms.author: laobri
 ms.date: 06/15/2018
-ms.openlocfilehash: 5c8d493bf54ee1a8a1e7d4b3266451c78a4aa51e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123676"
 ---
+
 # <a name="net-embedding-on-android"></a>內嵌在 Android 上的.NET
 
 在某些情況下，您可能想要將 Xamarin.NET 程式庫新增至現有的原生 Android 專案。 若要這樣做，您可以使用[Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/)工具，以將您的.NET 程式庫轉換成可整合到原生的 Java 型 Android 應用程式的原生程式庫。
@@ -26,7 +21,7 @@ ms.locfileid: "50123676"
 
 -   **Android Studio** &ndash; [Android Studio 3.x](https://developer.android.com/studio/)或更新版本必須安裝。
 
--   **Java Developer Kit** &ndash; [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本必須安裝。
+-   **Java Developer Kit** &ndash; [Java 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本必須安裝。
 
 
 ## <a name="using-embeddinator-4000"></a>使用 Embeddinator 4000
@@ -62,9 +57,9 @@ ms.locfileid: "50123676"
 
 -   **Android Studio** &ndash; [Android Studio 3.x](https://developer.android.com/studio/)或更新版本必須安裝。
 
--   **Java Developer Kit** &ndash; [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本必須安裝。
+-   **Java Developer Kit** &ndash; [Java 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本必須安裝。
 
--   **單聲道** &ndash; [Mono 5.0](http://www.mono-project.com/download/)或更新版本必須安裝 （單聲道會隨 Visual Studio for Mac）。
+-   **單聲道** &ndash; [Mono 5.0](https://www.mono-project.com/download/)或更新版本必須安裝 （單聲道會隨 Visual Studio for Mac）。
 
 
 ## <a name="using-embeddinator-4000"></a>使用 Embeddinator 4000

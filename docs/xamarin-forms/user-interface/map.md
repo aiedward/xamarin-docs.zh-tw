@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2018
-ms.openlocfilehash: edba18eea3ea2b7b843dba70ff0b4b67cbab1ab1
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: 20b09ab44eaaaa21535d50b947449e253652cc62
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557112"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672478"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms 對應
 
@@ -127,7 +127,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 ![適用於 Android 的必要權限](map-images/android-map-permissions.png "適用於 Android 的必要權限")
 
-這兩個所需的因為應用程式需要下載地圖資料的網路連線。 了解 Android[權限](http://developer.android.com/reference/android/Manifest.permission.html)若要深入了。
+這兩個所需的因為應用程式需要下載地圖資料的網路連線。 了解 Android[權限](https://developer.android.com/reference/android/Manifest.permission.html)若要深入了。
 
 ### <a name="universal-windows-platform"></a>通用 Windows 平台
 

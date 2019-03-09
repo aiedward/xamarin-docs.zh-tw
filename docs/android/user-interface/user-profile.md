@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2018
-ms.openlocfilehash: 2d9dc54801c4df084007a2903becf0c68bf1c6df
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0613411e5436a0ea8ed08bf4af52dae84a9a701c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109961"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670881"
 ---
 # <a name="user-profile"></a>使用者設定檔
 
@@ -48,7 +48,7 @@ if (cursor != null)
 Android 4 (API 層級 14) 為開頭[ContactsContact.Profile](https://developer.xamarin.com/api/type/Android.Provider.ContactsContract+Profile/)類別是可透過`ContactsContract`提供者。 `ContactsContact.Profile`提供存取個人設定檔的裝置，其中包括將裝置擁有者名稱 」 和 「 電話號碼等連絡資料擁有者。
 
 
-## <a name="required-permissions"></a>必要的權限
+## <a name="required-permissions"></a>必要的使用權限
 
 若要讀取和寫入的連絡資料，應用程式必須要求`READ_CONTACTS`和`WRITE_CONTACTS`權限，分別。
 此外，若要閱讀和編輯使用者設定檔，應用程式必須要求`READ_PROFILE`和`WRITE_PROFILE`權限。
@@ -112,4 +112,4 @@ StartActivity (intent);
 
 - [ContactsProviderDemo （範例）](https://developer.xamarin.com/samples/monodroid/ContactsProviderDemo/)
 - [簡介 Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平台](http://developer.android.com/sdk/android-4.0.html)
+- [Android 4.0 平台](https://developer.android.com/sdk/android-4.0.html)

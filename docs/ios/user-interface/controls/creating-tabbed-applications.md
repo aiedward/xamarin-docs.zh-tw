@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 6f5af4cea0c223b9ddc7cd72331676f5f92f2509
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: e02b5631aff76e35300ae4d7dd5e3c6652f6e3da
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055195"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668831"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>索引標籤列和在 Xamarin.iOS 中的索引標籤列控制器
 
@@ -61,7 +61,7 @@ ms.locfileid: "53055195"
 
 ### <a name="adding-the-uitabbarcontroller"></a>新增 UITabBarController
 
-接下來，新增 藉由選取 空類別**檔案 > 新的檔案**，然後選擇**一般： 空的類別**範本。 將檔案命名為`TabController`，如下所示：
+接下來，新增 藉由選取 空類別**檔案 > 新的檔案**，然後選擇**一般：空白類別**範本。 將檔案命名為`TabController`，如下所示：
 
 [![](creating-tabbed-applications-images/02-newclass.png "加入 TabController 類別")](creating-tabbed-applications-images/02-newclass.png#lightbox)
 
@@ -283,8 +283,8 @@ Visual Studio for Mac 會自動產生的類別和設計工具所需的檔案，�
 
 我們想要拖曳`Label`並`Button`到從 ViewController1**工具箱**在右手邊。 接下來我們將使用 Properties Pad 編輯名稱與文字的控制項如下：
 
--  **標籤**: `Text`  = **其中一個**
--  **按鈕**: `Title`  = **使用者採取一些初始動作**
+-  **標籤**:`Text` = **One**
+-  **按鈕**:`Title` = **使用者採取一些初始動作**
 
 
 我們會控制在按鈕的可見性`TouchUpInside`事件，我們需要在程式碼後置中參考它。 讓我們找出與其**名稱**`aButton`中 [屬性] 面板，如下列螢幕擷取畫面所示：
@@ -372,4 +372,4 @@ public override void ViewDidLoad ()
 
 - [建立索引標籤式應用程式 （範例）](https://developer.xamarin.com/samples/monotouch/CreatingTabbedApplications/)
 - [Images.zip](https://github.com/xamarin/ios-samples/blob/master/CreatingTabbedApplications/Resources/images.zip?raw=true)
-- [UITabBarController 類別參考](http://developer.apple.com/library/ios/#documentation/uikit/reference/UITabBarController_Class/Reference/Reference.html)
+- [UITabBarController 類別參考](https://developer.apple.com/library/ios/#documentation/uikit/reference/UITabBarController_Class/Reference/Reference.html)

@@ -6,18 +6,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: f13b716e6ead8db8e0adafd180790c67bb82a6bc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112035"
 ---
+
 # <a name="android-wear-controls"></a>Android Wear 控制項
 
 Android Wear 應用程式可以使用許多相同的控制項已經在使用一般的 Android 應用程式，包括`Button`， `TextView`，和映像可繪製資源來。 包括的版面配置控制項`ScrollView`， `LinearLayout`，和`RelativateLayout`也可以使用。
 
-此頁面會連結到 Android Wear 特定控制項，從[到穿戴的 UI 程式庫](https://developer.android.com/training/wearables/apps/layouts.html#UiLibrary)適用於 Xamarin 專案，透過[到穿戴支援](http://www.nuget.org/packages/Xamarin.Android.Wear/)NuGet 套件。 這些控制項包括：
+此頁面會連結到 Android Wear 特定控制項，從[到穿戴的 UI 程式庫](https://developer.android.com/training/wearables/apps/layouts.html#UiLibrary)適用於 Xamarin 專案，透過[到穿戴支援](https://www.nuget.org/packages/Xamarin.Android.Wear/)NuGet 套件。 這些控制項包括：
 
 -   **GridViewPager** &ndash;建立二維的瀏覽介面，在使用者其中捲動清單，然後跨確定選取範圍 (如需詳細資訊，請參閱[GridViewPager](~/android/wear/user-interface/controls/gridviewpager.md)):
 

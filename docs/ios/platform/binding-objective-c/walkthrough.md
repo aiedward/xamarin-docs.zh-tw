@@ -1,5 +1,5 @@
 ---
-title: 逐步解說： 繫結 iOS OBJECTIVE-C 程式庫
+title: 逐步解說：繫結 iOS OBJECTIVE-C 程式庫
 description: 本文章提供實際操作的逐步解說中，建立現有的 OBJECTIVE-C 程式庫，InfColorPicker 的 Xamarin.iOS 繫結。 它涵蓋的主題，例如編譯靜態的 Objective C 程式庫、 繫結，以及在 Xamarin.iOS 應用程式中使用的繫結。
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: a4cdb76ac1ecea3ee21e7b74314b6d3bfae09719
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fcf4e6d9b281eaac4be888c499e537f7397528a0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118990"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669267"
 ---
-# <a name="walkthrough-binding-an-ios-objective-c-library"></a>逐步解說： 繫結 iOS OBJECTIVE-C 程式庫
+# <a name="walkthrough-binding-an-ios-objective-c-library"></a>逐步解說：繫結 iOS OBJECTIVE-C 程式庫
 
 _本文章提供實際操作的逐步解說中，建立現有的 OBJECTIVE-C 程式庫，InfColorPicker 的 Xamarin.iOS 繫結。它涵蓋的主題，例如編譯靜態的 Objective C 程式庫、 繫結，以及在 Xamarin.iOS 應用程式中使用的繫結。_
 
@@ -81,11 +81,11 @@ IOS 上工作時，您可能會遇到您要使用第三方 Objective C 程式庫
     Europa:~ kmullins$ xcode-select --install
     ```
 
-    - 您需要安裝的命令列工具，請按一下**安裝**按鈕： [ ![](walkthrough-images/xcode01.png "安裝命令列工具")](walkthrough-images/xcode01.png#lightbox)
+    - 您需要安裝的命令列工具，請按一下**安裝**按鈕： [![](walkthrough-images/xcode01.png "安裝程式命令列工具")](walkthrough-images/xcode01.png#lightbox)
 
-    - 工具會下載並安裝來自 Apple 的伺服器： [ ![](walkthrough-images/xcode02.png "下載工具")](walkthrough-images/xcode02.png#lightbox)
+    - 工具會下載並安裝來自 Apple 的伺服器： [![](walkthrough-images/xcode02.png "下載工具")](walkthrough-images/xcode02.png#lightbox)
 
-- **Apple 開發人員下載**-命令列工具封裝可[Apple 開發人員下載]()網頁。 登入您的 Apple ID，然後搜尋和下載命令列工具： [ ![](walkthrough-images/xcode03.png "尋找命令列工具")](walkthrough-images/xcode03.png#lightbox)
+- **Apple 開發人員下載**-命令列工具封裝可[Apple 開發人員下載](https://developer.apple.com/downloads/index.action)網頁。 登入您的 Apple ID，然後搜尋和下載命令列工具：[![](walkthrough-images/xcode03.png "尋找命令列工具")](walkthrough-images/xcode03.png#lightbox)
 
 使用安裝命令列工具，我們準備好繼續進行本逐步解說。
 
@@ -184,7 +184,7 @@ Fat 程式庫是`.a`檔案，其中包含所有支援的架構。
 
 雖然這三個步驟是非常直接了當，並且可能需要重複執行它們未來當 OBJECTIVE-C 程式庫接收更新，或如果我們所需的 bug 修正。 如果您決定將這些步驟自動化，它會簡化未來的維護和支援的 iOS 繫結專案。
 
-有許多工具可用來自動化這類工作-殼層指令碼[rake](http://rake.rubyforge.org/)， [xbuild](http://www.mono-project.com/docs/tools+libraries/tools/xbuild/)，並[讓](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)。 當我們安裝 Xcode 命令列工具時，我們也會安裝進行，因此也就是建置系統，將會用於本逐步解說。 以下是**Makefile**可供您建立能夠在 iOS 裝置和任何文件庫的模擬器的多架構共用程式庫：
+有許多工具可用來自動化這類工作-殼層指令碼[rake](http://rake.rubyforge.org/)， [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)，並[讓](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)。 當我們安裝 Xcode 命令列工具時，我們也會安裝進行，因此也就是建置系統，將會用於本逐步解說。 以下是**Makefile**可供您建立能夠在 iOS 裝置和任何文件庫的模擬器的多架構共用程式庫：
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
@@ -708,7 +708,7 @@ public override void ViewDidLoad ()
 
 ```
 
-**處理 colorPickerControllerDidFinish： 訊息**-當`ViewController`已完成之後，iOS 會將訊息傳送`colorPickerControllerDidFinish:`至`WeakDelegate`。 我們需要建立C#可以處理此訊息的方法。 若要這樣做，我們建立C#方法，然後將它與裝飾`ExportAttribute`。 編輯`ViewController`，並將下列方法新增至類別：
+**處理 colorPickerControllerDidFinish:訊息**-當`ViewController`已完成之後，iOS 會將訊息傳送`colorPickerControllerDidFinish:`至`WeakDelegate`。 我們需要建立C#可以處理此訊息的方法。 若要這樣做，我們建立C#方法，然後將它與裝飾`ExportAttribute`。 編輯`ViewController`，並將下列方法新增至類別：
 
 ```csharp
 [Export("colorPickerControllerDidFinish:")]
@@ -733,6 +733,6 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 - [繫結詳細資料](~/cross-platform/macios/binding/overview.md)
 - [繫結型別參考指南](~/cross-platform/macios/binding/binding-types-reference.md)
 - [適用於 Objective-C 開發人員的 Xamarin](~/ios/get-started/objective-c-developers/index.md)
-- [Framework 設計方針](http://msdn.microsoft.com/library/ms229042.aspx)
-- [Xamarin University 課程： 建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程： 建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Framework 設計方針](https://msdn.microsoft.com/library/ms229042.aspx)
+- [Xamarin University 課程：建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University 課程：建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

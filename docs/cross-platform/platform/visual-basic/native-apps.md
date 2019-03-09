@@ -6,16 +6,16 @@ ms.assetid: 455fda67-3879-4299-8036-b12840e6a498
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: affebab9bb6b07f204beef24cce2b57444d45e49
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 55c08c1bd0d82f8458e0c07b4202b6275600ff38
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527296"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671100"
 ---
 # <a name="visual-basicnet-in-xamarin-ios-and-android"></a>在 Xamarin iOS 和 Android 的 visual Basic.NET
 
-[TaskyPortable](/samples/mobile/VisualBasic/TaskyPortableVB/)範例應用程式示範如何搭配 Xamarin 使用 Visual Basic 程式碼編譯成可攜式類別庫。 以下是產生在 iOS、 Android 和 Windows Phone 上執行的應用程式的一些螢幕擷取畫面：
+[TaskyPortableVB](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB)範例應用程式示範如何搭配 Xamarin 使用 Visual Basic 程式碼編譯成可攜式類別庫。 以下是產生在 iOS、 Android 和 Windows Phone 上執行的應用程式的一些螢幕擷取畫面：
 
  [![](native-apps-images/image5.png "iOS、 Android 及 Windows 手機執行使用 Visual Basic 所建置的應用程式")](native-apps-images/image5.png#lightbox)
 
@@ -26,7 +26,7 @@ IOS、 Android 和 Windows Phone 專案，在範例中會寫入在C#。 每個�
 本指南將討論 Visual Basic 中已實作如何[TaskyPortableVB](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB)適用於 iOS 和 Android 的 Xamarin 範例。
 
 > [!NOTE]
-> 檢閱上的指示[Visual Basic.NET Pcl](/guides/cross-platform/application_fundamentals/pcl/portable_visual_basic_net/)再繼續進行本指南。
+> 檢閱上的指示[可攜式 Visual Basic.NET](index.md)再繼續進行本指南。
 
 ## <a name="visualbasicportablelibrary"></a>VisualBasicPortableLibrary
 
@@ -335,4 +335,4 @@ Xamarin.iOS 和 Xamarin.Android 專案中，我們仍然可以包含 Visual Basi
 ## <a name="related-links"></a>相關連結
 
 - [TaskyPortableVB （範例）](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB)
-- [使用.NET Framework (Microsoft) 的跨平台開發](http://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)
+- [使用.NET Framework (Microsoft) 的跨平台開發](https://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)

@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 347793934b01d26d22455189c12b0f1d5213a40b
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: c5a4247b2e10706014c9f92a487803e4a718c1a6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52170971"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671972"
 ---
 # <a name="garbage-collection"></a>記憶體回收
 
-Xamarin.Android 會使用 Mono[簡單新一代的記憶體回收行程](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/)。 這是具有兩個層代的標示並清除記憶體回收行程並*大型物件空間*，有兩種類型的集合： 
+Xamarin.Android 會使用 Mono[簡單新一代的記憶體回收行程](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/)。 這是具有兩個層代的標示並清除記憶體回收行程並*大型物件空間*，有兩種類型的集合： 
 
 -   次要的集合 （收集 Gen0 堆積） 
 -   主要 （收集 Gen1 和大型物件空間堆積） 的集合。 
@@ -37,16 +37,16 @@ Xamarin.Android 會使用 Mono[簡單新一代的記憶體回收行程](http://w
 -   **受管理物件**： 完成這件事的型別*不*繼承自[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) ，例如[System.String](xref:System.String)。 
     這些會正常收集 GC。 
 
--   **Java 物件**: Java 型別有 Android 執行階段 VM 內，但不是公開給 Mono VM。 這些相當枯燥的而且不會進一步討論。 這些會正常收集 Android 執行階段的虛擬機器。 
+-   **Java 物件**:Java 型別有 Android 執行階段 VM 內，但不是公開給 Mono VM。 這些相當枯燥的而且不會進一步討論。 這些會正常收集 Android 執行階段的虛擬機器。 
 
 -   **物件對等互連**： 型別，能夠實作[IJavaObject](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/) ，例如所有[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)並[Java.Lang.Throwable](https://developer.xamarin.com/api/type/Java.Lang.Throwable/)子類別。 這些類型的執行個體具有兩個 「 halfs"*受管理的對等*並*原生對等*。 受管理的對等是的執行個體C#類別。 原生的對等是 VM，在 Android 執行階段內的 Java 類別的執行個體和C# [IJavaObject.Handle](https://developer.xamarin.com/api/property/Android.Runtime.IJavaObject.Handle/)屬性包含原生的對等的 JNI 全域參考。 
 
 
 有兩種類型的原生的對等：
 
--   **Framework 對等**:"Normal"Java 類型，例如 Xamarin.Android 中，完全不知道[android.content.Context](https://developer.xamarin.com/api/type/Android.Content.Context/)。
+-   **Framework 對等體**:「 標準 」 完全不 Xamarin.Android 中，例如了解 Java 型別[android.content.Context](https://developer.xamarin.com/api/type/Android.Content.Context/)。
 
--   **使用者對等**: [Android 可呼叫包裝函式](~/android/platform/java-integration/working-with-jni.md)產生在建置階段針對每個應用程式內出現的 Java.Lang.Object 子類別。
+-   **使用者對等體**:[Android 可呼叫包裝函式](~/android/platform/java-integration/working-with-jni.md)產生在建置階段針對每個應用程式內出現的 Java.Lang.Object 子類別。
 
 
 因為有兩個 Vm 的 Xamarin.Android 程序中，有兩種類型的記憶體回收：
@@ -69,7 +69,7 @@ Mono 的集合是有趣的地方。 正常回收受控的物件。 對等物件�
 
 ## <a name="object-cycles"></a>物件循環
 
-對等物件會以邏輯方式出現在 Android 執行階段和 Mono VM 中。 例如， [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)受管理的對等執行個體將會有對應[android.app.Activity](http://developer.android.com/reference/android/app/Activity.html) framework 對等 Java 執行個體。 所有物件，繼承自[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)可預期有這兩個 Vm 中的表示法。 
+對等物件會以邏輯方式出現在 Android 執行階段和 Mono VM 中。 例如， [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)受管理的對等執行個體將會有對應[android.app.Activity](https://developer.android.com/reference/android/app/Activity.html) framework 對等 Java 執行個體。 所有物件，繼承自[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)可預期有這兩個 Vm 中的表示法。 
 
 表示在這兩個 Vm 的所有物件都會都有延伸也就是只在單一 VM 內存在的物件相較之下的存留期 (例如[ `System.Collections.Generic.List<int>` ](xref:System.Collections.Generic.List%601))。 呼叫[GC。收集](xref:System.GC.Collect)Xamarin.Android GC 需求以確保的其中一個 VM 未參考的物件之前收集，則一定不會收集這些物件。 
 
@@ -78,7 +78,7 @@ Mono 的集合是有趣的地方。 正常回收受控的物件。 對等物件�
 
 ## <a name="automatic-collections"></a>自動的集合
 
-開頭[發行 4.1.0](https://developer.xamarin.com/releases/android/mono_for_android_4/mono_for_android_4.1.0)，Xamarin.Android 會自動執行完整的 GC 時超出 grf 閾值。 此閾值為 90%的已知的最大 grefs 平台： 1800 grefs (2000 最大)，在模擬器上的和 46800 grefs 硬體 (最大 52000) 上的。 *注意︰* Xamarin.Android 只會計算由 grefs [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/)，並不會知道在處理程序中建立的任何其他 grefs。 這是啟發學習法*只*。 
+開頭[發行 4.1.0](https://developer.xamarin.com/releases/android/mono_for_android_4/mono_for_android_4.1.0)，Xamarin.Android 會自動執行完整的 GC 時超出 grf 閾值。 此臨界值是 90%的已知的最大 grefs 平台：(2000 最大)，在模擬器上的 1800 grefs 和 46800 grefs 硬體 (最大 52000) 上。 *注意：* Xamarin.Android 只會計算由 grefs [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/)，並不會知道在處理程序中建立的任何其他 grefs。 這是啟發學習法*只*。 
 
 執行自動收集時，偵錯記錄檔將會顯示類似下面的訊息：
 
@@ -102,10 +102,10 @@ GC 橋接的運作期間 Mono 進行記憶體回收和出對等物件需要包�
 
 這個複雜的程序可讓類別的子`Java.Lang.Object`自由參考任何物件，並移除的 Java 物件可以繫結至任何限制C#。 由於這種複雜性，橋接器處理程序可以是非常耗費資源，它可能會造成明顯的暫停應用程式中。 如果應用程式發生重大暫停，值得調查下列三個 GC 橋接器實作的其中一個： 
 
--   **Tarjan** -GC 橋接器全新設計基礎[Robert Tarjan 演算法，並向後參考傳播](http://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm)。
+-   **Tarjan** -GC 橋接器全新設計基礎[Robert Tarjan 演算法，並向後參考傳播](https://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm)。
     它可提供最佳效能，在我們的模擬工作負載，但它也具有較大的實驗性的程式碼共用。 
 
--   **新**-大變革的原始的程式碼，修正的二次方的行為的兩個執行個體，但保留核心演算法 (根據[Kosaraju 的演算法](http://en.wikipedia.org/wiki/Kosaraju's_algorithm)的強式尋找連接元件)。 
+-   **新**-大變革的原始的程式碼，修正的二次方的行為的兩個執行個體，但保留核心演算法 (根據[Kosaraju 的演算法](https://en.wikipedia.org/wiki/Kosaraju's_algorithm)的強式尋找連接元件)。 
 
 -   **舊**-原始實作 （被視為最穩定的三個）。 這是應用程式應該使用橋接器`GC_BRIDGE`暫停可接受。 
 
@@ -166,7 +166,7 @@ using (var d = Drawable.CreateFromPath ("path/to/filename"))
     imageView.SetImageDrawable (d);
 ```
 
-以上是安全因為對等的[Drawable.CreateFromPath()](https://developer.xamarin.com/api/member/Android.Graphics.Drawables.Drawable.CreateFromPath/) Framework 對等，將參考傳回*不*使用者對等。 `Dispose()`呼叫的結尾`using`區塊將會中斷 managed 之間的關聯性[Drawable](https://developer.xamarin.com/api/type/Android.Graphics.Drawables.Drawable/)和 framework [Drawable](http://developer.android.com/reference/android/graphics/drawable/Drawable.html)情況下，允許在 Java 執行個體當 Android 執行階段必須收集。 這時候*未*安全，如果使用者對等的參考對等執行個體，這裡我們使用 「 外部 」 的資訊來*知道*，`Drawable`使用者對等，不能參考，因此`Dispose()`呼叫是安全的。 
+以上是安全因為對等的[Drawable.CreateFromPath()](https://developer.xamarin.com/api/member/Android.Graphics.Drawables.Drawable.CreateFromPath/) Framework 對等，將參考傳回*不*使用者對等。 `Dispose()`呼叫的結尾`using`區塊將會中斷 managed 之間的關聯性[Drawable](https://developer.xamarin.com/api/type/Android.Graphics.Drawables.Drawable/)和 framework [Drawable](https://developer.android.com/reference/android/graphics/drawable/Drawable.html)情況下，允許在 Java 執行個體當 Android 執行階段必須收集。 這時候*未*安全，如果使用者對等的參考對等執行個體，這裡我們使用 「 外部 」 的資訊來*知道*，`Drawable`使用者對等，不能參考，因此`Dispose()`呼叫是安全的。 
 
 
 #### <a name="disposing-other-types"></a>處置其他類型 
@@ -351,16 +351,16 @@ class BetterActivity : Activity {
 
 `MONO_GC_PARAMS`環境變數是以逗號分隔清單的下列參數： 
 
--   `nursery-size` = *大小*： 設定托兒所的大小。 大小以位元組為單位指定，而且必須是 2 的乘冪。 尾碼`k`，`m`和`g`可用來分別指定 kb、 百萬-和 gb。 托兒所是第一代 （兩個）。 較大的托兒所通常會加速計劃，但會很明顯地使用更多的記憶體。 預設托兒所大小 512 kb。 
+-   `nursery-size` = *大小*:設定托兒所的大小。 大小以位元組為單位指定，而且必須是 2 的乘冪。 尾碼`k`，`m`和`g`可用來分別指定 kb、 百萬-和 gb。 托兒所是第一代 （兩個）。 較大的托兒所通常會加速計劃，但會很明顯地使用更多的記憶體。 預設托兒所大小 512 kb。 
 
--   `soft-heap-limit` = *大小*： 的目標最大受管理的應用程式的記憶體耗用量。 當記憶體使用量低於指定的值時，則會將 GC 最適合執行時間 （較少的集合）。 
+-   `soft-heap-limit` = *大小*:目標最大值受管理的應用程式的記憶體耗用量。 當記憶體使用量低於指定的值時，則會將 GC 最適合執行時間 （較少的集合）。 
     超過此限制，GC 最適合的記憶體使用量 （更多的集合）。 
 
--   `evacuation-threshold` = *閾值*： 設定疏散臨界值百分比。 值必須是範圍 0 到 100 的整數。 預設為 66。 如果集合的掃掠階段發現的特定堆積區塊類型的佔用量低於這個百分比，它會執行複製的集合，該區塊型別在下一步 的主要集合中，藉此還原到接近 100%的佔用量。 0 的值會撤出關閉。 
+-   `evacuation-threshold` = *閾值*:設定疏散臨界值百分比。 值必須是範圍 0 到 100 的整數。 預設為 66。 如果集合的掃掠階段發現的特定堆積區塊類型的佔用量低於這個百分比，它會執行複製的集合，該區塊型別在下一步 的主要集合中，藉此還原到接近 100%的佔用量。 0 的值會撤出關閉。 
 
--   `bridge-implementation` = *橋接實作*： 這會將 GC 橋接器選項，以協助解決 GC 效能問題。 有三個可能的值：*舊*，*新*， *tarjan*。
+-   `bridge-implementation` = *橋接實作*:這會將 GC 橋接器選項，以協助解決 GC 效能問題。 有三個可能的值：*舊*，*新*， *tarjan*。
 
--   `bridge-require-precise-merge`： 橋接器則包含這些可能，在少數情況下，會使物件的最佳化 Tarjan 收集一個 GC 之後，第一次記憶體回收。 包括這個選項會停用最佳化，使 Gc 可能比較緩慢，但更容易預測。
+-   `bridge-require-precise-merge`：橋接器則包含這些可能，在少數情況下，會使物件的最佳化 Tarjan 收集一個 GC 之後，第一次記憶體回收。 包括這個選項會停用最佳化，使 Gc 可能比較緩慢，但更容易預測。
 
 比方說，若要設定 GC 的堆積大小限制為 128 MB，將新檔案新增到您的專案**建置動作**的`AndroidEnvironment`內容： 
 

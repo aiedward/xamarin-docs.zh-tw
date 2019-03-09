@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/17/2018
-ms.openlocfilehash: 05069272bfa25cc1f003d4aeb83e15bd223c2830
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 731aeaf0ad89a44211072962bf9891851a44ffcc
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118470"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667720"
 ---
 # <a name="getting-started-with-fingerprint-authentication"></a>開始使用指紋驗證
 
@@ -99,19 +99,19 @@ if (permissionResult == Android.Content.PM.Permission.Granted)
 else
 {
     // No permission. Go and ask for permissions and don't start the scanner. See
-    // http://developer.android.com/training/permissions/requesting.html
+    // https://developer.android.com/training/permissions/requesting.html
 }
 ```
 
 檢查所有這些條件，每次應用程式提供驗證選項可確保使用者可以獲得最佳使用者體驗。 變更或升級至他們的裝置或作業系統，可能會影響可用性的指紋驗證。 如果您選擇快取的任何這些檢查結果，請務必考量的升級案例。
 
-如需有關如何在 Android 6.0 中的要求權限的詳細資訊，請參閱 Android 指南[在執行階段要求的權限](http://developer.android.com/training/permissions/requesting.html)。
+如需有關如何在 Android 6.0 中的要求權限的詳細資訊，請參閱 Android 指南[在執行階段要求的權限](https://developer.android.com/training/permissions/requesting.html)。
 
 ## <a name="related-links"></a>相關連結
 
 - [內容](https://developer.xamarin.com/api/type/Android.Content.Context/)
 - [ContextCompat](https://developer.xamarin.com/api/type/Android.Support.V4.Content.ContextCompat/)
 - [KeyguardManager](https://developer.xamarin.com/api/type/Android.App.KeyguardManager/)
-- [FingerprintManager](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html)
-- [FingerprintManagerCompat](http://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)
-- [在執行階段的要求權限](http://developer.android.com/training/permissions/requesting.html)
+- [FingerprintManager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html)
+- [FingerprintManagerCompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)
+- [在執行階段的要求權限](https://developer.android.com/training/permissions/requesting.html)

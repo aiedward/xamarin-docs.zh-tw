@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 7cf1dde6c65d2971cecd0a59a2e11d6c2d50ee2a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: e60ed6cc49921fc7b6e8e2616a6b0bf6f8abb401
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119185"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670086"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>逐步解說-在 Xamarin.Android 中使用本機通知
 
@@ -255,7 +255,7 @@ namespace LocalNotifications
 
 [![第二個活動的螢幕擷取畫面](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png#lightbox)
 
-恭喜您！ 此時，您已完成 Android 本機通知逐步解說，並可讓您可以參考的工作範例。 有很多個通知比我們已在這裡顯示，因此如果您想要的詳細資訊，看看[Google 的文件通知](http://developer.android.com/guide/topics/ui/notifiers/notifications.html)。
+恭喜您！ 此時，您已完成 Android 本機通知逐步解說，並可讓您可以參考的工作範例。 有很多個通知比我們已在這裡顯示，因此如果您想要的詳細資訊，看看[Google 的文件通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)。
 
 
 ## <a name="summary"></a>總結

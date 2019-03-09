@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 6294d696fe309e1952124caaaace89d40ad24bc6
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233555"
 ---
+
 # <a name="introduction-to-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中的分鏡腳本簡介
 
 在本指南中，我們將說明哪些分鏡腳本並檢查一些 – Segue 等重要元件。 我們將探討分鏡腳本可以如何建立和使用，而且開發人員有哪些優點。
@@ -492,5 +487,5 @@ public partial class MainViewController : UIViewController
 
 - [手動分鏡腳本 （範例）](https://developer.xamarin.com/samples/ManualStoryboard/)
 - [IOS 設計工具簡介](~/ios/user-interface/designer/introduction.md)
-- [轉換到分鏡腳本](http://developer.apple.com/library/ios/#releasenotes/Miscellaneous/RN-AdoptingStoryboards/)
+- [轉換到分鏡腳本](https://developer.apple.com/library/ios/#releasenotes/Miscellaneous/RN-AdoptingStoryboards/)
 - [UIStoryboard 類別參考](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIStoryboard_Class/Reference/Reference.html)

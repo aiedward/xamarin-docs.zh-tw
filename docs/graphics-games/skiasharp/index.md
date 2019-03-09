@@ -8,13 +8,8 @@ ms.assetid: A8A61421-4544-422A-A7E0-9355C67DF21E
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 95f259ce054b14a2301bb9549f809d5e4f407884
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109896"
 ---
+
 # <a name="2d-drawing-with-skiasharp"></a>2D 繪圖使用 SkiaSharp
 
 SkiaSharp 提供功能強大的 C# API 進行 2D 圖形。 它由[Google Skia 文件庫](http://skia.org)，支援 Google Chrome、 Firefox 和 Android 的圖形的堆疊相同文件庫。
@@ -43,4 +38,4 @@ SkiaSharp 和範例的核心概念的概觀來呈現圖形、 文字、 點陣�
 
 SkiaSharp 是進行中的工作，我們正與我們的社群共用。 雖然我們已繫結 Skia API 的重要部分，則會在完成剩餘工時。 我們使用的穩定的 C API 呈現 Skia，和我們的計劃是以繼續參與我們的 api 提供完整的涵蓋範圍的 Skia C 繫結的工作。
 
-幫助我們引導我們繫結的工作，請保留的意見或建議問題在 GitHub 儲存機制[ http://github.com/mono/SkiaSharp ](http://github.com/mono/SkiaSharp)。
+幫助我們引導我們繫結的工作，請保留的意見或建議問題在 GitHub 儲存機制[ https://github.com/mono/SkiaSharp ](https://github.com/mono/SkiaSharp)。

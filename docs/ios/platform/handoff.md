@@ -6,12 +6,13 @@ ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 4b19d060bd8adf1c2b09bb18b7ff608381a35231
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 03/19/2017
+ms.openlocfilehash: 899e40460371933a3e1cb694618c7d33a124e76c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116663"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672699"
 ---
 # <a name="handoff-in-xamarinios"></a>在 Xamarin.iOS 中遞交
 
@@ -109,24 +110,24 @@ Apple 已引進遞移式 iOS 8 和 OS X Yosemite (10.10) 提供通用的機制�
 
 請執行下列動作：
 
-1. 登入[Apple 開發人員入口網站](http://developer.apple.com)。
+1. 登入[Apple 開發人員入口網站](https://developer.apple.com)。
 2. 按一下 **憑證、 識別碼與設定檔**。
 3. 如果您尚未這麼做，按一下**識別碼**並建立您的應用程式的識別碼 (例如`com.company.appname`)，否則請編輯您現有的識別碼。
-4. 請確認**iCloud**已核取指定之識別碼的服務： 
+4. 請確認**iCloud**已核取指定之識別碼的服務：
 
     [![](handoff-images/provision01.png "啟用指定之識別碼的 iCloud 服務")](handoff-images/provision01.png#lightbox)
 5. 儲存您的變更。
-4. 按一下 **佈建設定檔** > **開發**和應用程式建立新的開發，為您佈建設定檔： 
+4. 按一下 **佈建設定檔** > **開發**和應用程式建立新的開發，為您佈建設定檔：
 
     [![](handoff-images/provision02.png "建立新的開發，佈建應用程式設定檔")](handoff-images/provision02.png#lightbox)
 5. 下載並安裝新的佈建設定檔，或使用 Xcode 來下載並安裝設定檔。
-6. 編輯您的 Xamarin.iOS 專案選項，並確定您使用您剛才建立的佈建設定檔： 
+6. 編輯您的 Xamarin.iOS 專案選項，並確定您使用您剛才建立的佈建設定檔：
 
     [![](handoff-images/provision03.png "選取剛才建立的佈建設定檔")](handoff-images/provision03.png#lightbox)
-7. 接著，編輯您**Info.plist**檔案，並確定您使用的用來建立佈建設定檔的應用程式識別碼： 
+7. 接著，編輯您**Info.plist**檔案，並確定您使用的用來建立佈建設定檔的應用程式識別碼：
 
     [![](handoff-images/provision04.png "設定應用程式識別碼")](handoff-images/provision04.png#lightbox)
-8. 若要捲動**背景模式**區段，並檢查下列項目： 
+8. 若要捲動**背景模式**區段，並檢查下列項目：
 
     [![](handoff-images/provision05.png "啟用所需的背景模式")](handoff-images/provision05.png#lightbox)
 9. 儲存所有檔案的變更。
@@ -463,7 +464,7 @@ public override void DidFailToContinueUserActivitiy (UIApplication application, 
 }
 ```
 
-要簽署的 JSON 檔案 (使其具有正確`Content-Type`的`application/pkcs7-mime`)，使用**終端機**應用程式和`openssl`憑證與金鑰 iOS 所信任之憑證授權單位所發出的命令 (請參閱[http://support.apple.com/kb/ht5012 ](http://support.apple.com/kb/ht5012)清單)。 例如: 
+要簽署的 JSON 檔案 (使其具有正確`Content-Type`的`application/pkcs7-mime`)，使用**終端機**應用程式和`openssl`憑證與金鑰 iOS 所信任之憑證授權單位所發出的命令 (請參閱[https://support.apple.com/kb/ht5012 ](https://support.apple.com/kb/ht5012)清單)。 例如: 
 
 ```csharp
 echo '{"activitycontinuation":{"apps":["YWBN8XTPBJ.com.company.FirstApp",
@@ -606,7 +607,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 ## <a name="example-handoff-app"></a>範例遞移式應用程式
 
-為 Xamarin.iOS 應用程式中使用遞移式的範例，我們都納入[ **MonkeyBrowser** ](https://developer.xamarin.com/samples/monotouch/ios8/MonkeyBrowser/)本指南使用範例應用程式。 應用程式有四個索引標籤，使用者可以使用瀏覽網站，各有其指定的活動類型： 天氣、 我的最愛、 休息時間和工作。
+為 Xamarin.iOS 應用程式中使用遞移式的範例，我們都納入[ **MonkeyBrowser** ](https://developer.xamarin.com/samples/monotouch/ios8/MonkeyBrowser/)本指南使用範例應用程式。 應用程式有四個索引標籤，使用者可以使用瀏覽網站，各有其指定的活動類型：天氣、 我的最愛、 休息時間和工作。
 
 任何索引標籤上，當使用者輸入新的 URL 和點選**移**按鈕，新`NSUserActivity`建立該索引標籤，其中包含使用者目前瀏覽的 URL:
 

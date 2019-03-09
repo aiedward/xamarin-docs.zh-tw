@@ -6,18 +6,18 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 33f27d2585f4fb4d65181cbfd9211ea87b837e73
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: e97b211fe6a92ee0df3beed2301cf00c3d42c8f8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233883"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671802"
 ---
 # <a name="binding-objective-c-libraries"></a>繫結 Objective C 程式庫
 
 當使用 Xamarin.iOS 或 Xamarin.Mac，您可能會遇到您要使用第三方 Objective C 程式庫的情況。 在這些情況下，您可以使用 Xamarin 繫結專案來建立C#繫結至原生的 Objective C 程式庫。 專案會使用相同的工具可讓 iOS 和 Mac 的 Api，以使用C#。
 
-本文件說明如何將繫結 Objective C Api，如果您要繫結只 C Api，您應該這麼做，使用標準的.NET 機制[P/Invoke framework](http://www.mono-project.com/docs/advanced/pinvoke/)。
+本文件說明如何將繫結 Objective C Api，如果您要繫結只 C Api，您應該這麼做，使用標準的.NET 機制[P/Invoke framework](https://www.mono-project.com/docs/advanced/pinvoke/)。
 如何以靜態方式連結的 C 程式庫的詳細資訊位於[連結的原生程式庫](~/ios/platform/native-interop.md)頁面。
 
 請參閱我們的小幫手[繫結的型別參考指南](~/cross-platform/macios/binding/binding-types-reference.md)。

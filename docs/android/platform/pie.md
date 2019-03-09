@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 49e3a0189d0887343f2636d6931a00cc819800c0
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: fa41affc57714254a12623f79da3dc1396ecd009
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267634"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670128"
 ---
 # <a name="android-pie-features"></a>Android 的圓形圖功能
 
@@ -34,7 +34,7 @@ Xamarin.Android 9.0 提供支援 Android 的圓形圖。 如需 Android 圓形�
 
 -   **Xamarin.Android** &ndash; Xamarin.Android 9.0.0.17 或更新版本必須安裝 Visual studio (Xamarin.Android 自動安裝的一部分**使用.NET 進行行動開發**工作負載)。
 
--   **Java Developer Kit** &ndash; Xamarin Android 9.0 開發需要[JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (或者，您可以嘗試的 microsoft 的預覽[OpenJDK](~/android/get-started/installation/openjdk.md))。 JDK8 會自動安裝的一部分**使用.NET 進行行動開發**工作負載。
+-   **Java Developer Kit** &ndash; Xamarin Android 9.0 開發需要[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (或者，您可以嘗試的 microsoft 的預覽[OpenJDK](~/android/get-started/installation/openjdk.md))。 JDK8 會自動安裝的一部分**使用.NET 進行行動開發**工作負載。
 
 -   **Android SDK** &ndash;透過 Android SDK 管理員必須安裝 Android SDK API 28 或更新版本。
 
@@ -270,4 +270,4 @@ Android 的圓形圖也包含新[SessionConfiguration](https://developer.android
 
 ## <a name="related-links"></a>相關連結
 
-- [Android 9 的圓形圖](https://developer.android.com/about/versions/pie/)
+- [Android 9 Pie](https://developer.android.com/about/versions/pie/)

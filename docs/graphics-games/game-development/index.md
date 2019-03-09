@@ -6,13 +6,8 @@ ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: d6e9fd03025e00da5cff5ed284bdc5f0f268a22b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122604"
 ---
+
 # <a name="introduction-to-game-development-with-xamarin"></a>使用 Xamarin 的遊戲開發簡介
 
 開發遊戲可以是極度令人興奮，尤其是考慮如何輕鬆進行發佈您的工作，行動平台上。 這篇文章討論的概念，並可協助您的遊戲開發與相關的技術建立遊戲，不論您的目標是建立高品質 AAA 遊戲，或只是為了好玩的程式。
@@ -25,12 +20,12 @@ ms.locfileid: "50122604"
 - **遊戲開發技術**– 這裡，我們將列出一些跨平台提供的技術，可以改善您身為遊戲開發人員的產能。
 
 
-# <a name="game-vs-non-game-programming-concepts"></a>遊戲與非遊戲程式設計概念
+## <a name="game-vs-non-game-programming-concepts"></a>遊戲與非遊戲程式設計概念
 
 將移到遊戲開發的程式設計人員通常會遇到新的概念及開發模式。 此章節提供一些這類概念的高階檢視。
 
 
-## <a name="the-game-loop"></a>遊戲迴圈
+### <a name="the-game-loop"></a>遊戲迴圈
 
 一般遊戲需要常數的移動或變更以回應使用者互動和自動的遊戲邏輯螢幕上發生狀況。 這透過功能通常稱為達成*遊戲迴圈*。 遊戲迴圈是某種類型的迴圈陳述式 （如 while 迴圈） 可以執行非常高頻率，例如 30 或 60*每秒畫面格數*。
 
@@ -54,7 +49,7 @@ ms.locfileid: "50122604"
 記住許多上面所列的活動可以變更的狀態，整個應用程式，而許多非遊戲應用程式通常會變更狀態，以回應所引發的事件。
 
 
-## <a name="content-loading-and-unloading"></a>內容的載入和卸載作業
+### <a name="content-loading-and-unloading"></a>內容的載入和卸載作業
 
 根據哪一種技術您使用在開發過程中可能需要以手動方式載入和卸載 （或處置） 的內容。 以手動方式載入和卸載的資產可能是基於多種原因所造成：
 
@@ -65,7 +60,7 @@ ms.locfileid: "50122604"
 自訂檔案格式可能需要在載入期間，處理需要自訂載入程式碼。
 
 
-## <a name="math"></a>數學
+### <a name="math"></a>數學
 
 多數遊戲需要更進階的數學運算，比非遊戲應用程式。 當然，數學的層級的遊戲複雜度而定。 一般 3D 遊戲需要比 2D 的多個數學運算。 幸運的是您一律可以開始使用簡單的遊戲，並了解您沿用。 遊戲開發可以是適合用來了解數學運算 ！
 
@@ -82,14 +77,14 @@ ms.locfileid: "50122604"
 如果您打算讓 3D 遊戲則您可能必須熟悉線性代數 （適用於輪替和在 3D 空間中的移動），以及一些微積分 （適用於實作加速） 的概念。
 
 
-## <a name="content-pipelines"></a>內容管線
+### <a name="content-pipelines"></a>內容管線
 
 詞彙*內容管線*檔案會從其格式撰寫 （例如.png 影像檔案） 時的程序是指在遊戲中使用時，它最終的格式。 結束的格式而定在其上的內容類型正在使用以及其技術用來呈現內容。
 
 部分內容的管線可能是非常快速，而且需要任何手動工作。 例如，大多數的遊戲引擎和 Api 可以載入其未處理的格式的.png 檔案格式。 相反地，更複雜的格式 （例如 3D 模型） 可能需要進行處理之前先載入，以不同的格式，而且這項處理可能需要一些時間，取決於資產的大小和複雜度。
 
 
-# <a name="game-development-teams"></a>遊戲開發團隊
+## <a name="game-development-teams"></a>遊戲開發團隊
 
 遊戲開發程序中的個人版中引進新的角色和項目。 大多數的遊戲開發人員不能滿足一組廣泛的技能，才能發行完整的遊戲，所以幾個專業領域的存在。 請記住，這並非完整的開發 – 只是某些較常見的問題領域清單。
 
@@ -100,7 +95,7 @@ ms.locfileid: "50122604"
 - **聽起來設計師**– 音訊設計師負責遊戲的音訊資產。 有些小組可以區別負責建立音效和 「 作曲者 」，而較小的團隊可能會有負責所有音訊單一個人的個人。
 
 
-# <a name="creating-a-game-idea"></a>建立的遊戲構想
+## <a name="creating-a-game-idea"></a>建立的遊戲構想
 
 設計遊戲似乎很容易執行 – 所有的唯一需求是 「 讓一些有趣。 」 不幸的是，許多開發人員發現自己在遺失時，若要建立要啟動開發了解。
 
@@ -115,12 +110,12 @@ ms.locfileid: "50122604"
 改造現有的遊戲也是教育的經驗，雖然這可能會限制已完成的產品商業的可行性。 建立遊戲，甚至是一種是正確的複製程序提供寶貴的教育經驗。
 
 
-# <a name="game-development-technology"></a>遊戲開發技術
+## <a name="game-development-technology"></a>遊戲開發技術
 
 使用 Xamarin.Android 和 Xamarin.iOS 的開發人員有各種不同的技術提供給他們協助遊戲開發。 本節將討論一些最受歡迎的跨平台解決方案。
 
 
-## <a name="cocossharp"></a>CocosSharp
+### <a name="cocossharp"></a>CocosSharp
 
 CocosSharp 是 Cocos 2D 遊戲引擎的開放原始碼、 跨平台版本。 引擎會提供對 Android、 iOS、 Mac OS X、 Windows 桌面、 Windows RT 和 Windows Phone 的存取。
 
@@ -135,7 +130,7 @@ CocosSharp 著重於 2D 的遊戲程式開發的簡單程式設計 API。 在行
 您可以下載它，並獲得詳細資訊[AngryNinjas Github 頁面](https://github.com/xamarin/AngryNinjas)。
 
 
-## <a name="monogame"></a>MonoGame
+### <a name="monogame"></a>MonoGame
 
 MonoGame 是開放原始碼、 跨平台版本的 Microsoft 的 XNA API。 MonoGame 可用來讓適用於 iOS、 Android、 Mac OS X、 Linux、 Windows、 Windows RT、 PS4、 PSVita、 Xbox One 和交換器的遊戲。
 
@@ -156,7 +151,7 @@ FEZ:
 若要開始使用 MonoGame，請前往我們[MonoGame 指南](~/graphics-games/monogame/index.md)。
 
 
-## <a name="urhosharp"></a>UrhoSharp
+### <a name="urhosharp"></a>UrhoSharp
 
 UrhoSharp 是跨平台高階 3D 和 2D 引擎，可用來建立動畫的 3D 和 2D 場景供應用程式使用幾何、 材質、 光線和觀景窗。
 
@@ -164,18 +159,13 @@ UrhoSharp 是跨平台高階 3D 和 2D 引擎，可用來建立動畫的 3D 和 
 
 請參閱[UrhoSharp 指南](~/graphics-games/urhosharp/index.md)開始著手。
 
-## <a name="additional-technology"></a>其他技術
+### <a name="additional-technology"></a>其他技術
 
 上述反白顯示的技術是只提供技術的範例。 其他值得注意的技術包括：
 
-- **Spritekit** – Xamarin 提供支援 Apple 的 Spritekit 遊戲架構，可讓您存取所有原生 API 的功能。 Spritekit 是 Apple 所建立的技術，因為它會提供與 iOS 生態系統的其餘部分密切整合。 當然，Sprite Kit 不是跨平台讓它不能在 Android 上。 如需有關使用 Spritekit 的詳細資訊，請參閱這篇文章：  [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
-- **Scenekit** – Xamarin 也提供支援 Apple 的 Scenekit 架構，可簡化實作到 iOS 應用程式的 3D 圖形。 Scenekit 也是由 Apple，使其具有對整合和特定平台考量 Sprite Kit 如先前所述的技術。 如需有關 Scenekit 的詳細資訊，請參閱這篇文章： [http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
+- **Spritekit** – Xamarin 提供支援 Apple 的 Spritekit 遊戲架構，可讓您存取所有原生 API 的功能。 Spritekit 是 Apple 所建立的技術，因為它會提供與 iOS 生態系統的其餘部分密切整合。 當然，Sprite Kit 不是跨平台讓它不能在 Android 上。 如需有關使用 Spritekit 的詳細資訊，請參閱這篇文章：  [https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
+- **Scenekit** – Xamarin 也提供支援 Apple 的 Scenekit 架構，可簡化實作到 iOS 應用程式的 3D 圖形。 Scenekit 也是由 Apple，使其具有對整合和特定平台考量 Sprite Kit 如先前所述的技術。 如需有關 Scenekit 的詳細資訊，請參閱這篇文章： [https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
 - **OpenTK –** OpenTK （這代表開啟的工具組） 可讓您以 iOS、 Apple 和 Mac 的低階 OpenGL 存取硬體。 如需有關 OpenTK 的詳細資訊，請參閱 < 在主頁面：  [http://www.opentk.com/](http://www.opentk.com/)
-
-
-# <a name="summary"></a>總結
-
-本文涵蓋開發遊戲的主要概念，並提供如何開始製作您的第一個遊戲的相關資訊。 完成本文之後下, 一步是挑選您的技術，並開始透過我們的連結在上述的適當章節的教學課程系列的工作。
 
 ## <a name="related-links"></a>相關連結
 

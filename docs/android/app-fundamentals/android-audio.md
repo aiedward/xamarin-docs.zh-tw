@@ -1,5 +1,5 @@
 ---
-title: Android 的音訊
+title: Android Audio
 description: Android OS 可廣泛支援的多媒體，包含音訊和視訊。 本指南著重在 Android 中的音訊，並涵蓋播放及錄製音訊，使用內建的音訊播放器和記錄器類別，以及低階音訊 API。 其中也涵蓋處理音訊廣播由其他應用程式的事件，讓開發人員可以建置行為良好的應用程式。
 ms.prod: xamarin
 ms.assetid: 646ED563-C34E-256D-4B56-29EE99881C27
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 9b7e9354250881074fc6f0db5d97dc83e4d3fa77
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a1a9dd06fb3cd6899dd3a564072bb63e413edf22
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114661"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667538"
 ---
-# <a name="android-audio"></a>Android 的音訊
+# <a name="android-audio"></a>Android Audio
 
 _Android OS 可廣泛支援的多媒體，包含音訊和視訊。本指南著重在 Android 中的音訊，並涵蓋播放及錄製音訊，使用內建的音訊播放器和記錄器類別，以及低階音訊 API。其中也涵蓋處理音訊廣播由其他應用程式的事件，讓開發人員可以建置行為良好的應用程式。_
 
@@ -124,7 +124,7 @@ player.Release();
 
 2. 指定哪些硬體裝置用來擷取透過音訊的輸入[SetAudioSource](https://developer.xamarin.com/api/member/Android.Media.MediaRecorder.SetAudioSource/p/Android.Media.AudioSource/)方法。
 
-3. 設定輸出檔音訊格式使用[SetOutputFormat](https://developer.xamarin.com/api/member/Android.Media.MediaRecorder.SetOutputFormat/p/Android.Media.OutputFormat/)方法。 如需支援的音訊類型的清單，請參閱[Android 支援的媒體格式](http://developer.android.com/guide/appendix/media-formats.html)。
+3. 設定輸出檔音訊格式使用[SetOutputFormat](https://developer.xamarin.com/api/member/Android.Media.MediaRecorder.SetOutputFormat/p/Android.Media.OutputFormat/)方法。 如需支援的音訊類型的清單，請參閱[Android 支援的媒體格式](https://developer.android.com/guide/appendix/media-formats.html)。
 
 4. 呼叫[SetAudioEncoder](https://developer.xamarin.com/api/member/Android.Media.MediaRecorder.SetAudioEncoder/p/Android.Media.AudioEncoder/)方法來設定編碼類型的音訊。
 
@@ -210,7 +210,7 @@ recorder.Release();
 
 可能會立即授與音訊的焦點或一開始拒絕並授與更新版本。 例如，如果應用程式要求音訊焦點在撥打電話時，它將會遭到拒絕，但焦點可能也會授與完成通話。 在此情況下，接聽程式會註冊才能據以回應，如果音訊的焦點會消失。 要求音訊的焦點用來判斷它正常播放或錄音。
 
-如需音訊焦點的詳細資訊，請參閱[管理音訊焦點](http://developer.android.com/training/managing-audio/audio-focus.html)。
+如需音訊焦點的詳細資訊，請參閱[管理音訊焦點](https://developer.android.com/training/managing-audio/audio-focus.html)。
 
 
 
@@ -429,6 +429,6 @@ Android 作業系統提供強大的架構，來播放、 燒錄和管理音訊�
 - [使用與音訊 （範例）](https://developer.xamarin.com/samples/Example_WorkingWithAudio/)
 - [Media Player](https://developer.xamarin.com/api/type/Android.Media.MediaPlayer/)
 - [媒體錄製器](https://developer.xamarin.com/api/type/Android.Media.MediaRecorder/)
-- [音訊管理員](https://developer.xamarin.com/api/type/Android.Media.AudioManager/)
+- [Audio Manager](https://developer.xamarin.com/api/type/Android.Media.AudioManager/)
 - [音訊資料軌](https://developer.xamarin.com/api/type/Android.Media.AudioTrack/)
 - [音訊錄製器](https://developer.xamarin.com/api/type/Android.Media.AudioRecord/)

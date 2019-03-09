@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 1a08803930eaaa3c2c5c5f8b8aa9561a9a7b8d88
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: 5c1d73acfef7a4384db7220daf7319251eb61f85
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557239"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670983"
 ---
 # <a name="images-in-xamarinforms"></a>在 Xamarin.Forms 中的影像
 
@@ -44,7 +44,7 @@ _影像可以使用 Xamarin.Forms 進行跨平台共用、可以針對每個平�
 - [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -裁剪影像，同時保留長寬滿顯示區域 (亦即。 不失真)。
 - [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -上下黑邊 （如有必要） 的映像讓整個影像放入顯示區域，具有空白空間加入至頂端/底端或側邊，取決於是否該影像是寬或高。
 
-可從[本機檔案](#Local_Images)、[內嵌資源](#embedded-images)或透過 [下載](#Downloading_Images)方式載入影像。 此外，可以藉由顯示字型圖示[ `Image` ](xref:Xamarin.Forms.Image)藉由指定的字型圖示資料的檢視`FontImageSource`物件。 如需詳細資訊，請參閱 <<c0> [ 顯示的圖示字型](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)中[字型](~/xamarin-forms/user-interface/text/fonts.md)指南。
+可從[本機檔案](#local-images)、[內嵌資源](#embedded-images)或透過 [下載](#downloading-images)方式載入影像。 此外，可以藉由顯示字型圖示[ `Image` ](xref:Xamarin.Forms.Image)藉由指定的字型圖示資料的檢視`FontImageSource`物件。 如需詳細資訊，請參閱 <<c0> [ 顯示的圖示字型](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)中[字型](~/xamarin-forms/user-interface/text/fonts.md)指南。
 
 ## <a name="local-images"></a>本機影像
 
@@ -92,7 +92,7 @@ iOS、Android 與 UWP 包括針對不同影像解析度的支援，其中作業�
 
 在 iOS 9 之前，視網膜版本的影像可放在**資源**資料夾 - 具有兩倍與三倍解析度的檔案其檔案名稱後方接著 **@2x** 或 **@3x** (例如 **myimage@2x.png**). 不過，Apple 已不再使用此方法來處理 iOS 應用程式中的影像。 如需詳細資訊，請參閱 [影像大小和檔案名稱](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
 
-Android 的替代解析度影像應該放在 Android 專案中的[蓄意命名目錄](http://developer.android.com/guide/practices/screens_support.html)中，如下列螢幕擷取畫面所示：
+Android 的替代解析度影像應該放在 Android 專案中的[蓄意命名目錄](https://developer.android.com/guide/practices/screens_support.html)中，如下列螢幕擷取畫面所示：
 
 [![Android 的多解析度影像位置](images-images/xs-highdpisolution-sml.png "Android 的多解析度影像位置")](images-images/xs-highdpisolution.png#lightbox "Android 的多解析度影像位置")
 
@@ -296,7 +296,7 @@ webImage.Source = new UriImageSource
 
 ## <a name="icons"></a>圖示
 
-請參閱[iOS 處理映像](~/ios/app-fundamentals/images-icons/index.md)， [Google 遙控器](http://developer.android.com/design/style/iconography.html)，並[指導方針 圖格和圖示的資產](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)如需有關建立這些應用程式資源。
+請參閱[iOS 處理映像](~/ios/app-fundamentals/images-icons/index.md)， [Google 遙控器](https://developer.android.com/design/style/iconography.html)，並[指導方針 圖格和圖示的資產](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)如需有關建立這些應用程式資源。
 
 此外，可以藉由顯示字型圖示[ `Image` ](xref:Xamarin.Forms.Image)藉由指定的字型圖示資料的檢視`FontImageSource`物件。 如需詳細資訊，請參閱 <<c0> [ 顯示的圖示字型](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)中[字型](~/xamarin-forms/user-interface/text/fonts.md)指南。
 
@@ -316,5 +316,5 @@ Xamarin.Forms 提供各種不同的方式在跨平台應用程式中包含影像
 
 - [WorkingWithImages （範例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/)
 - [iOS 處理映像](~/ios/app-fundamentals/images-icons/index.md)
-- [Android 的遙控器](http://developer.android.com/design/style/iconography.html)
+- [Android 的遙控器](https://developer.android.com/design/style/iconography.html)
 - [圖格和圖示的資產的指導方針](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)

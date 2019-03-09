@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 2dc56d9c5b63d428663d98bae4c8687c1f621a04
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 7dbb0044f09d5bc00f2393eb647efba05a061c3f
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233189"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669540"
 ---
 # <a name="threading-in-xamarinios"></a>在 Xamarin.iOS 中執行緒
 
@@ -20,7 +20,7 @@ Xamarin.iOS 執行階段可讓開發人員存取.NET 執行緒同時使用執行
 
 
 
-Xamarin 強呤魽您畷樾[工作平行程式庫](http://msdn.microsoft.com/library/dd460717.aspx)(TPL) 來建置應用程式有幾個原因：
+Xamarin 強呤魽您畷樾[工作平行程式庫](https://msdn.microsoft.com/library/dd460717.aspx)(TPL) 來建置應用程式有幾個原因：
 -  預設 TPL 排程器會將委派工作執行的執行緒集區，接著會動態成長的程序進行，同時避免過多執行緒最後會競爭 CPU 時間的其中一個案例所需的執行緒數目。 
 -  它是您更輕鬆地思考 TPL 工作方面的作業。 輕鬆地可以操作這些、 排程、 序列化其執行或啟動許多與一組豐富的 Api。 
 -  它是使用的新 C# async 語言擴充功能進行程式設計基礎。 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 5ae425df1d2bf28428c51366de28474a040bf368
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 840dee3213bc117cff82fe52b094dc71f343dcd1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061332"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668188"
 ---
 # <a name="consuming-a-restful-web-service"></a>使用 RESTful Web 服務
 
@@ -115,7 +115,7 @@ public class RestService : IRestService
 public async Task<List<TodoItem>> RefreshDataAsync ()
 {
   ...
-  // RestUrl = http://developer.xamarin.com:8081/api/todoitems/
+  // RestUrl = https://developer.xamarin.com:8081/api/todoitems/
   var uri = new Uri (string.Format (Constants.RestUrl, string.Empty));
   ...
   var response = await client.GetAsync (uri);
@@ -138,7 +138,7 @@ HTTP 作業成功，則讀取回應的內容時，顯示。 `HttpResponseMessage
 ```csharp
 public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 {
-  // RestUrl = http://developer.xamarin.com:8081/api/todoitems/
+  // RestUrl = https://developer.xamarin.com:8081/api/todoitems/
   var uri = new Uri (string.Format (Constants.RestUrl, string.Empty));
 
   ...
@@ -194,7 +194,7 @@ REST 服務傳送的 HTTP 狀態碼`HttpResponseMessage.IsSuccessStatusCode`屬�
 ```csharp
 public async Task DeleteTodoItemAsync (string id)
 {
-  // RestUrl = http://developer.xamarin.com:8081/api/todoitems/{0}
+  // RestUrl = https://developer.xamarin.com:8081/api/todoitems/{0}
   var uri = new Uri (string.Format (Constants.RestUrl, id));
   ...
   var response = await client.DeleteAsync (uri);

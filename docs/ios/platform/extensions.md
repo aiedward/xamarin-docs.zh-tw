@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 10b692099bae6f444474394144eb7e8bb46d749f
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: e02d7a13a1fd5b554943f9facd6c9f120096a6a5
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233922"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667811"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的 iOS 延伸模組
 
@@ -45,7 +45,7 @@ ms.locfileid: "55233922"
 通用的限制如下：
 
 - [健全狀況 Kit](~/ios/platform/healthkit.md)並[事件套件 UI](~/ios/platform/eventkit.md)架構不提供
-- 擴充功能無法使用[擴充背景模式](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/backgrounding/part_3_ios_backgrounding_techniques/registering_applications_to_run_in_background/)
+- 擴充功能無法使用[擴充背景模式](https://developer.xamarin.com/guides/cross-platform/application_fundamentals/backgrounding/part_3_ios_backgrounding_techniques/registering_applications_to_run_in_background/)
 - 延伸模組無法存取裝置的相機或麥克風，（雖然他們可以存取現有的媒體檔案）
 - 延伸模組無法接收空氣卸除的資料 （雖然它們可以傳輸透過無線方式卸除的資料）
 - [UIActionSheet](xref:UIKit.UIActionSheet)並[UIAlertView](xref:UIKit.UIAlertView)無法使用; 延伸模組必須使用[UIAlertController](xref:UIKit.UIAlertController)
@@ -71,11 +71,11 @@ ms.locfileid: "55233922"
 
 擴充功能可以透過其主應用程式與通訊[NSExtensionContext](xref:Foundation.NSExtensionContext)物件。 有些延伸模組有接收結果的非同步回呼的作業。 這些回呼會在背景執行緒上執行和擴充功能必須將此列入考量。比方說，是藉由使用[NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*)如果他們想要更新的使用者介面。 請參閱[主機應用程式與通訊](#Communicating-with-the-Host-App)節以取得詳細資料。
 
-根據預設，擴充功能和其容器應用程式可以通訊，儘管一起安裝。 在某些情況下，容器應用程式本質上是空"shipping"容器安裝擴充功能之後，會提供其用途。 不過，如果指定的情況下，容器應用程式和延伸模組可能共用資源從常見的區域。 此外，**今天擴充功能**可能會要求它的容器應用程式，以開啟 URL。 此行為所示[發展倒數小工具](http://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo)。
+根據預設，擴充功能和其容器應用程式可以通訊，儘管一起安裝。 在某些情況下，容器應用程式本質上是空"shipping"容器安裝擴充功能之後，會提供其用途。 不過，如果指定的情況下，容器應用程式和延伸模組可能共用資源從常見的區域。 此外，**今天擴充功能**可能會要求它的容器應用程式，以開啟 URL。 此行為所示[發展倒數小工具](https://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo)。
 
 ## <a name="creating-an-extension"></a>建立擴充功能
 
-擴充功能 （和其容器應用程式） 必須是 64 位元二進位檔案，且使用 Xamarin.iOS 建置[Unified Api](http://developer.xamarin.com/guides/cross-platform/macios/unified)。 在開發擴充功能時，您的解決方案將包含至少兩個專案： 容器應用程式，另一個專案容器的每個擴充功能提供。 
+擴充功能 （和其容器應用程式） 必須是 64 位元二進位檔案，且使用 Xamarin.iOS 建置[Unified Api](https://developer.xamarin.com/guides/cross-platform/macios/unified)。 在開發擴充功能時，您的解決方案將包含至少兩個專案： 容器應用程式，另一個專案容器的每個擴充功能提供。 
 
 ### <a name="container-app-project-requirements"></a>容器應用程式的專案需求
 

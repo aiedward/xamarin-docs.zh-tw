@@ -1,19 +1,19 @@
 ---
-title: 資源庫
+title: Gallery
 ms.prod: xamarin
 ms.assetid: 3112E68A-7853-B147-90A6-6295CA2C4CB5
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 54c9e4fad71d74fe40fc119592a45f6c94b47056
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f9b73428531deeacc7bdea271cdc0c2872038e99
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122253"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666955"
 ---
-# <a name="gallery"></a>資源庫
+# <a name="gallery"></a>Gallery
 
 [`Gallery`](https://developer.xamarin.com/api/type/Android.Widget.Gallery/) 是用來水平捲動的清單中顯示的項目配置 widget，並將目前的選取範圍定位在檢視的中央。
 
@@ -57,7 +57,7 @@ ms.locfileid: "50122253"
 
 [![新的 Android 專案中新增解決方案 對話方塊的螢幕擷取畫面](gallery-images/hellogallery1-sml.png)](gallery-images/hellogallery1.png#lightbox)
 
-尋找您想要使用時，部分相片或[下載這些範例映像](http://developer.android.com/shareables/sample_images.zip)。
+尋找您想要使用時，部分相片或[下載這些範例映像](https://developer.android.com/shareables/sample_images.zip)。
 將影像檔新增至專案的**資源/Drawable**目錄。 在 **屬性**視窗中，將 建置動作各自**AndroidResource**。
 
 開啟**Resources/Layout/Main.axml**並插入下列：

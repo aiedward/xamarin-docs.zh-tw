@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/06/2018
-ms.openlocfilehash: f21eca052ef13fd0e3d6efa261e1ff70b3b14372
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1a9856a5b6257c82b2072e9eb44be481373abfcf
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120706"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671854"
 ---
 # <a name="splash-screen"></a>啟動顯示畫面
 
@@ -52,7 +52,7 @@ Android 應用程式需要一些時間才能啟動，尤其是在第一次在裝
 
 啟動顯示畫面會顯示 XML 可繪製背景的啟動顯示畫面活動。 必須要用來顯示的點陣圖影像 （例如 PNG 或 JPG） 映像。
 
-在本指南中，我們會使用[層清單](http://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)中央應用程式中的啟動顯示畫面影像。 下列程式碼片段是舉例`drawable`資源使用`layer-list`:
+在本指南中，我們會使用[層清單](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)中央應用程式中的啟動顯示畫面影像。 下列程式碼片段是舉例`drawable`資源使用`layer-list`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -229,5 +229,5 @@ public class MainActivity : AppCompatActivity
 ## <a name="related-links"></a>相關連結
 
 - [啟動顯示畫面 （範例）](https://developer.xamarin.com/samples/monodroid/SplashScreen)
-- [圖層清單 Drawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)
+- [layer-list Drawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)
 - [ 材料設計模式-啟動畫面](https://material.io/design/communication/launch-screen.html#usage)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: bc7da76084075b03ca346949b7bb764ae1313c2a
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 05a2187a5e8dc010f04e89757b566eaf44cb5fd6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563507"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668932"
 ---
 # <a name="location-services"></a>位置服務
 
@@ -32,7 +32,7 @@ Android 提供各種不同的位置技術，例如儲存格塔台位置、 Wi-fi
 
 數種技術是在內部用來找出使用者的位置。 類型取決於所使用的硬體*位置提供者*選取收集資料的作業。 Android 會使用三個位置提供者：
 
--   **GPS 的提供者** &ndash; GPS 提供最精確的位置、 使用的最大的電力，及最適合戶外活動。 此提供者會使用 GPS 以及輔助的 GPS 的組合 ([aGPS](http://en.wikipedia.org/wiki/Assisted_GPS))，它會傳回行動電話塔台所收集的 GPS 資料。
+-   **GPS 的提供者** &ndash; GPS 提供最精確的位置、 使用的最大的電力，及最適合戶外活動。 此提供者會使用 GPS 以及輔助的 GPS 的組合 ([aGPS](https://en.wikipedia.org/wiki/Assisted_GPS))，它會傳回行動電話塔台所收集的 GPS 資料。
 
 -   **網路提供者**&ndash;提供的 WiFi 和行動數據使用的資料，包括收集的資料格 towers aGPS 資料組合。 它使用較少的電量比 GPS 提供者，但會傳回位置資料的各種不同的精確度。
 
@@ -59,7 +59,7 @@ Android 提供各種不同的位置技術，例如儲存格塔台位置、 Wi-fi
 設定這些權限，會告知 Android 應用程式必須從使用者的權限，才能存取的位置提供者。 裝置的 API 層級 22 (Android 5.1) 或執行較低會要求這些權限授與應用程式會安裝每次使用者。 執行 API 的裝置層級 23 (Android 6.0) 或更新版本中，應用程式應該執行的執行階段權限檢查，再提出要求的位置提供者。 
 
 > [!NOTE]
->注意： 將`ACCESS_FINE_LOCATION`表示這兩個廣泛且沒問題的位置資料的存取權。 您應該永遠不需要設定這兩個權限，只有*最小*您的應用程式運作所需的權限。
+>注意:設定`ACCESS_FINE_LOCATION`表示這兩個廣泛且沒問題的位置資料的存取權。 您應該永遠不需要設定這兩個權限，只有*最小*您的應用程式運作所需的權限。
 
 此程式碼片段是如何檢查應用程式有權限的範例`ACCESS_FINE_LOCATION`權限：
 
@@ -84,7 +84,7 @@ else
  
 積的位置提供者 API 提供各種不同的其他工具，讓定位感知應用程式，包括地理柵欄和活動監視。 在本節中，我們將焦點設定的基本概念`LocationClient`、 建立提供者，以及取得使用者的位置。
 
-積的位置提供者是一部分[Google Play 服務](http://developer.android.com/google/play-services/index.html)。
+積的位置提供者是一部分[Google Play 服務](https://developer.android.com/google/play-services/index.html)。
 Google Play 服務套件必須安裝並在運作，積的位置提供者 API 的應用程式中正確設定，裝置必須擁有 Google Play Services APK 安裝。
 
 之前的 Xamarin.Android 應用程式可以使用積的位置提供者，它必須新增**Xamarin.GooglePlayServices.Maps**至專案的封裝。 此外，下列`using`陳述式應該新增至參考的類別，如下所述的任何來源檔案：
@@ -231,7 +231,7 @@ Android 的位置服務是在 Android 上使用位置資訊的較舊的 API。 �
 
 位置服務是最適合用於必須在沒有安裝的 Google Play 服務的裝置執行的應用程式。
 
-位置服務是一種特殊型別的[服務](http://developer.android.com/guide/components/services.html)系統所管理。 系統服務與裝置硬體互動，而是一律執行。 若要善用我們的應用程式中的位置更新，我們將會訂閱位置更新從系統位置服務使用`LocationManager`和`RequestLocationUpdates`呼叫。
+位置服務是一種特殊型別的[服務](https://developer.android.com/guide/components/services.html)系統所管理。 系統服務與裝置硬體互動，而是一律執行。 若要善用我們的應用程式中的位置更新，我們將會訂閱位置更新從系統位置服務使用`LocationManager`和`RequestLocationUpdates`呼叫。
 
 若要取得使用者的位置使用 Android 的位置服務牽涉到幾個步驟：
 
@@ -357,10 +357,10 @@ else
 
 - [位置 （範例）](https://developer.xamarin.com/samples/Location/)
 - [FusedLocationProvider （範例）](https://developer.xamarin.com/samples/FusedLocationProvider/)
-- [Google Play 服務](http://developer.android.com/google/play-services/index.html)
+- [Google Play 服務](https://developer.android.com/google/play-services/index.html)
 - [準則類別](https://developer.xamarin.com/api/type/Android.Locations.Criteria/)
 - [LocationManager 類別](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/)
 - [LocationListener 類別](https://developer.xamarin.com/api/type/Android.Locations.ILocationListener/)
-- [LocationClient API](http://developer.android.com/reference/com/google/android/gms/location/LocationClient.html)
-- [LocationListener API](http://developer.android.com/reference/com/google/android/gms/location/LocationListener.html)
+- [LocationClient API](https://developer.android.com/reference/com/google/android/gms/location/LocationClient.html)
+- [LocationListener API](https://developer.android.com/reference/com/google/android/gms/location/LocationListener.html)
 - [LocationRequest API](https://developer.android.com/reference/com/google/android/gms/location/LocationRequest.html)

@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: 7bef5de57b7ac709ebab4c39feedbec369e6bd14
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b1303f21225d3ae7b7d3a796e4845afbfe554a22
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122422"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667707"
 ---
 # <a name="workbooks-installation-and-requirements"></a>活頁簿安裝與需求
 
@@ -102,11 +102,11 @@ Visual Studio
 
 - 您嘗試連接到的裝置名稱
 - 您的裝置的 OS 版本
-- Android： 請確認您使用的 x86 模擬器
-- Android： 模擬器平台使用？ Google 模擬器嗎？
+- Android:請確認您使用的 x86 模擬器
+- Android:您是否使用模擬器平台為何？ Google 模擬器嗎？
   Visual Studio Android 模擬器？ Xamarin Android Player？
-- 在 Windows 上的 iOS： 哪個版本的 Xamarin 遠端 iOS 模擬器執行您已安裝 (檢查**新增/移除程式**中**控制台**)？
-- 在 Windows 上的 iOS： 請為您的 Mac 組建主機也提供平台的版本資訊
+- 在 Windows 上的 iOS:哪個版本的 Xamarin 遠端 iOS 模擬器執行您已安裝 (檢查**新增/移除程式**中**控制台**)？
+- 在 Windows 上的 iOS:請為您的 Mac 組建主機也提供平台的版本資訊
 - 裝置是否有網路連線 （透過 web 瀏覽器的核取）？
 
 [bugs]: https://github.com/Microsoft/workbooks/issues/new
@@ -160,5 +160,5 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 若要從 1.4 或更新版本才可 1.3.2 或更舊版本的降級：
 
-1. [手動解除安裝 Workbooks 和 Inspector](#macOS)
+1. [手動解除安裝 Workbooks 和 Inspector](#uninstall-macos)
 2. 執行 1.3.2 或更舊版本`.pkg`安裝程式

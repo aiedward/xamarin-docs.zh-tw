@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: df8ee3da8a1341cd1dd879e8e70687d9fbd9957b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 63cbe556783ffe22512ff5312817d522120bd15e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117430"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670567"
 ---
 # <a name="creating-resources-for-varying-screens"></a>建立針對不同螢幕的資源
 
@@ -50,7 +50,7 @@ Android 會調整的可繪製資源來為適當大小的執行階段。
 
 ### <a name="declare-the-supported-screen-size"></a>宣告支援的螢幕大小
 
-宣告的螢幕大小，可確保只有受支援的裝置可以下載應用程式。 這可以藉由設定[支援畫面](http://developer.android.com/guide/topics/manifest/supports-screens-element.html)中的項目**AndroidManifest.xml**檔案。 這個項目用來指定應用程式支援哪些螢幕大小。 如果應用程式可以正確地放置其版面配置，以填滿螢幕可支援屬於指定的螢幕。 藉由使用此資訊清單的項目，應用程式將不會顯示在[ *Google Play* ](https://play.google.com/)螢幕規格不符合的裝置。 不過，應用程式仍會使用不支援畫面中，在裝置上執行，但配置可能會出現模糊並不美觀。
+宣告的螢幕大小，可確保只有受支援的裝置可以下載應用程式。 這可以藉由設定[支援畫面](https://developer.android.com/guide/topics/manifest/supports-screens-element.html)中的項目**AndroidManifest.xml**檔案。 這個項目用來指定應用程式支援哪些螢幕大小。 如果應用程式可以正確地放置其版面配置，以填滿螢幕可支援屬於指定的螢幕。 藉由使用此資訊清單的項目，應用程式將不會顯示在[ *Google Play* ](https://play.google.com/)螢幕規格不符合的裝置。 不過，應用程式仍會使用不支援畫面中，在裝置上執行，但配置可能會出現模糊並不美觀。
 
 宣告支援的畫面 sixes **Properites/AndroidManifest.xml**解決方案檔：
 
@@ -64,7 +64,7 @@ Android 會調整的可繪製資源來為適當大小的執行階段。
 
 -----
 
-編輯**AndroidManifest.xml**包含[支援畫面](http://developer.android.com/guide/topics/manifest/supports-screens-element.html):
+編輯**AndroidManifest.xml**包含[支援畫面](https://developer.android.com/guide/topics/manifest/supports-screens-element.html):
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -178,7 +178,7 @@ Android 會調整的可繪製資源來為適當大小的執行階段。
 
 Android 上執行會令人困擾的裝置數目，而螢幕大小和螢幕密度的組合可以令人望而生畏。 下列秘訣可協助您支援各種裝置所需的投入時間降至最低：
 
-- **只設計和開發適用於您的需要**&ndash;有許多不同的裝置，但某些罕見的板型規格，可能需要更多心力來設計和開發的存在。 [**螢幕大小和密度**](http://developer.android.com/resources/dashboard/screens.html)儀表板是由提供資料的螢幕大小/螢幕密度矩陣分解的 Google 提供的頁面。 這次的中斷會提供有關如何開發工作上支援畫面的深入解析。
+- **只設計和開發適用於您的需要**&ndash;有許多不同的裝置，但某些罕見的板型規格，可能需要更多心力來設計和開發的存在。 [**螢幕大小和密度**](https://developer.android.com/resources/dashboard/screens.html)儀表板是由提供資料的螢幕大小/螢幕密度矩陣分解的 Google 提供的頁面。 這次的中斷會提供有關如何開發工作上支援畫面的深入解析。
 
 - **使用 DPs，而不是像素**-像素變得棘手螢幕密度的變更。 請勿像素值。 避免改用 dp （密度獨立像素為單位） 的像素為單位。
 

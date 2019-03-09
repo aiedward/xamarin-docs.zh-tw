@@ -6,12 +6,12 @@ ms.assetid: 76ba8f7a-9b6e-40f5-9a29-ff1274ece4f2
 author: conceptdev
 ms.author: crdun
 ms.date: 07/18/2018
-ms.openlocfilehash: 83b1da5cd10a46b8480b0755eeb16bf7434a5906
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: a1e7152ca0f24d1ac660742e97907ea9300df9a7
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270085"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666875"
 ---
 # <a name="portable-class-libraries-pcl"></a>可攜式類別庫 (PCL)
 
@@ -54,7 +54,7 @@ ms.locfileid: "39270085"
 - Windows Phone 8
 - UWP 應用程式
 
-閱讀更多不同的設定檔功能的相關[Microsoft 的網站](http://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)並查看其他社群成員的[PCL 設定檔摘要](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY)framework 資訊和其他注意事項，其中包括支援。
+閱讀更多不同的設定檔功能的相關[Microsoft 的網站](https://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)並查看其他社群成員的[PCL 設定檔摘要](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY)framework 資訊和其他注意事項，其中包括支援。
 
 **權益**
 

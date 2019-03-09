@@ -254,7 +254,6 @@
 ### [CloudKit](data-cloud/intro-to-cloudkit.md)
 
 ### [Web 服務簡介](~/cross-platform/data-cloud/web-services/index.md?context=xamarin/ios)
-#### [逐步解說：使用 WCF](~/cross-platform/data-cloud/web-services/walkthrough-working-with-wcf.md?context=xamarin/ios)
 ## [部署與測試](deploy-test/index.md)
 ### [應用程式散發](deploy-test/app-distribution/index.md)
 #### [散發](deploy-test/app-distribution/app-store-distribution/index.md)

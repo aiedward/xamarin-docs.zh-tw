@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 75904ad91df7795c538e736eabb6c6000847b449
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233649"
 ---
+
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API 設計
 
 除了基底類別庫屬於 Mono 的核心[Xamarin.iOS](http://www.xamarin.com/iOS)隨附於適用於各種不同的 iOS Api 可讓開發人員建立與 Mono 的原生 iOS 應用程式的繫結。
@@ -94,11 +89,11 @@ Xamarin.iOS 包含組成組件數*Xamarin.iOS 設定檔*。 [組件](~/cross-pla
 
 [Foundation](xref:Foundation)命名空間提供與屬於 iOS OBJECTIVE-C Foundation 架構交互操作而設計的基本資料類型，而且是物件導向程式設計在 OBJECTIVE-C 中的基底
 
-Xamarin.iOS 鏡像在 C# 中的從 OBJECTIVE-C 類別階層 比方說，OBJECTIVE-C 基底類別[NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)可以從 C# 透過[Foundation.NSObject](xref:Foundation.NSObject)。
+Xamarin.iOS 鏡像在 C# 中的從 OBJECTIVE-C 類別階層 比方說，OBJECTIVE-C 基底類別[NSObject](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)可以從 C# 透過[Foundation.NSObject](xref:Foundation.NSObject)。
 
 雖然此命名空間提供基礎的 Objective C 的基礎類型的繫結，在少數情況下已對應的基礎類型到.NET 類型。 例如: 
 
-- 而不是處理[NSString](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)並[NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)，執行階段會公開這些 C#[字串](xref:System.String)s 和強型別[陣列](xref:System.Array)整個 sAPI。
+- 而不是處理[NSString](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)並[NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)，執行階段會公開這些 C#[字串](xref:System.String)s 和強型別[陣列](xref:System.Array)整個 sAPI。
 
 - 各種協助程式 Api 會公開以下，讓開發人員可以繫結 Objective C Api、 其他 iOS Api 或目前未連結的 Xamarin.iOS 的 Api 的協力廠商。
 
@@ -293,7 +288,7 @@ OBJECTIVE-C 與 C# 有不同的意義，word 委派兩種語言。
 2.  [透過強型別`Delegate`屬性](#StrongDelegate)
 3.  [透過鬆散型別`WeakDelegate`屬性](#WeakDelegate)
 
-例如，請考慮[UIWebView](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html)類別。 這會分派至[UIWebViewDelegate](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html)執行個體，這指派給[委派](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate)屬性。
+例如，請考慮[UIWebView](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html)類別。 這會分派至[UIWebViewDelegate](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html)執行個體，這指派給[委派](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate)屬性。
 
 <a name="Via_Events" />
 
@@ -301,9 +296,9 @@ OBJECTIVE-C 與 C# 有不同的意義，word 委派兩種語言。
 
 對於許多類型，Xamarin.iOS 將會自動建立適當的委派會將轉送`UIWebViewDelegate`到 C# 事件的呼叫。 針對 `UIWebView`：
 
--  [WebViewDidStartLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:)方法會對應至[UIWebView.LoadStarted](xref:UIKit.UIWebView.LoadStarted)事件。
--  [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:)方法會對應至[UIWebView.LoadFinished](xref:UIKit.UIWebView.LoadFinished)事件。
--  [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:)方法會對應至[UIWebView.LoadError](xref:UIKit.UIWebView.LoadError)事件。
+-  [WebViewDidStartLoad](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:)方法會對應至[UIWebView.LoadStarted](xref:UIKit.UIWebView.LoadStarted)事件。
+-  [WebViewDidFinishLoad](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:)方法會對應至[UIWebView.LoadFinished](xref:UIKit.UIWebView.LoadFinished)事件。
+-  [WebView:didFailLoadWithError](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:)方法會對應至[UIWebView.LoadError](xref:UIKit.UIWebView.LoadError)事件。
 
 比方說，這個簡單的程式會記錄何時載入 web 檢視的開始和結束時間：
 
@@ -674,7 +669,7 @@ public Foo (NSObjectFlag x)
 public Foo (NSCoder coder)
 ```
 
-這個建構函式可將物件從 NSCoding 執行個體正在初始化位置。 如需詳細資訊，請參閱 Apple 的[封存與序列化程式的指南。](http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i)
+這個建構函式可將物件從 NSCoding 執行個體正在初始化位置。 如需詳細資訊，請參閱 Apple 的[封存與序列化程式的指南。](https://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i)
 
 #### <a name="exceptions"></a>例外狀況
 
@@ -694,7 +689,7 @@ Xamarin.iOS 則具有會負責為您正在釋放資源，它們不會再使用�
 
 公開`IDisposable`介面是便利的方式，來協助開發人員在釋放物件可能封裝大型記憶體區塊的 (例如`UIImage`看起來會像只是無辜的指標，但無法指向 2 mb 的映像) 和其他重要且最有限的資源 （例如視訊解碼緩衝區）。
 
-NSObject 實作 IDisposable 介面，也[.NET Dispose 模式](http://msdn.microsoft.com/library/fs2xkftw.aspx)。 這可讓開發人員覆寫 Dispose 行為和發行自己的資源，視 NSObject 的子類別。 例如，請考慮一大堆映像會保持此檢視控制器：
+NSObject 實作 IDisposable 介面，也[.NET Dispose 模式](https://msdn.microsoft.com/library/fs2xkftw.aspx)。 這可讓開發人員覆寫 Dispose 行為和發行自己的資源，視 NSObject 的子類別。 例如，請考慮一大堆映像會保持此檢視控制器：
 
 ```csharp
 class MenuViewController : UIViewController {

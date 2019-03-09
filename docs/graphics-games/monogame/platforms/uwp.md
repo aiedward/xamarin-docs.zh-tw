@@ -6,12 +6,12 @@ ms.assetid: C6B99E44-00C1-4139-A1B7-FCFBE8749AB1
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 12a07be4adb32e8d9461a00e5fdea52d9b930848
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b8eafc3c9c85ba8067b5da7b568ed7c91c9e170c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117846"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666421"
 ---
 # <a name="creating-a-monogame-uwp-project"></a>建立 MonoGame UWP 專案
 
@@ -40,11 +40,11 @@ Xbox One 遊戲可以在零售 Xbox One 的硬體上進行開發。 在開發電
 一旦已安裝所有必要的資源，並已啟用 Windows 10 電腦上的開發人員模式，我們可以建立新的 MonoGame 專案使用 Visual Studio，依照下列步驟：
 
 1. 選取 **檔案** > **新** > **專案...**
-1. 選取 **安裝** > **範本** > **Visual C#**   >  **MonoGame**類別： 
+1. 選取 **安裝** > **範本** > **Visual C#**   >  **MonoGame**類別：
 
     ![](uwp-images/image1.png "MonoGame 類別")
 
-1. 選取  **MonoGame Windows 10 的通用專案**選項： 
+1. 選取  **MonoGame Windows 10 的通用專案**選項：
 
     ![](uwp-images/image2.png "選取 MonoGame Windows 10 的通用專案選項")
 
@@ -76,7 +76,7 @@ UWP 專案可以在相同的專案部署到任何 Windows 10 裝置。 設定 Wi
 
 ![](uwp-images/remote.png "UWP 應用程式可以部署到遠端電腦切換的目標，然後輸入 Xbox 的 IP 位址")
 
-Xbox One 上白色框線會表示電視的非安全區域。 如需詳細資訊，請參閱 <<c0> [ 安全區域區段](#Safe_Area_on_Xbox_One)。
+Xbox One 上白色框線會表示電視的非安全區域。 如需詳細資訊，請參閱 <<c0> [ 安全區域區段](#safe-area-on-xbox-one)。
 
 ![](uwp-images/safearea.png "Xbox One 上白色框線會表示非安全區域的電視")
 
@@ -92,7 +92,7 @@ Xbox One MonoGame 範本會將視為安全的區域，並轉譯成白色框線�
 
 可以參照 MonoGame 專案中的內容，直接從檔案或透過[MonoGame Content Pipeline](~/graphics-games/cocossharp/content-pipeline/index.md)。 小型遊戲專案可能會受益於從檔案載入的簡單性。 較大型的專案將受益於使用內容管線以最佳化以減少大小並載入時間的內容。 不同於在 Xbox 360 的 XNA`System.IO.File`類別可用於 Xbox One UWP 應用程式。
 
-如需有關載入使用內容管線內容的詳細資訊，請參閱[內容管線指南](~/graphics-games/cocossharp/content-pipeline/index.md)。 
+如需有關載入使用內容管線內容的詳細資訊，請參閱[內容管線指南](~/graphics-games/cocossharp/content-pipeline/index.md)。
 
 ### <a name="loading-content-from-file"></a>從檔案載入內容
 

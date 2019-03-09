@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: 0b320955cae23b18444732c826849002d6375fe4
-ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
+ms.openlocfilehash: faa52c80fdb776f2c6c7320874b0d08720b4e4ec
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56321138"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670450"
 ---
 # <a name="introduction-to-watchos"></a>WatchOS 簡介
 
@@ -136,7 +136,7 @@ Apple Watch 有兩個臉部大小：38 公釐，42 公釐，是以 5:4 顯示比
 - [watchOS 3 目錄 （範例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
 - [watchOS 1 目錄 （範例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
 - [設定和安裝](~/ios/watchos/get-started/installation.md)
-- [Watch 應用程式上的影片](http://blog.xamarin.com/your-first-watch-kit-app/)
+- [Watch 應用程式上的影片](https://blog.xamarin.com/your-first-watch-kit-app/)
 - [Apple 的開發的監看式組件指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html)
 - [Apple 的 WatchKit 秘訣](https://developer.apple.com/watchkit/tips/)
 - [watchOS 3 簡介](~/ios/watchos/platform/introduction-to-watchos3/index.md)

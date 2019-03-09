@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: c49b8855bccaf2eca825096746769d7f201736c5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7f4f7fd3af1e90307a84037f01ddf8e52b1ee030
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116884"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669046"
 ---
 # <a name="graphics-and-animation"></a>圖形和動畫
 
@@ -25,7 +25,7 @@ _Android 會提供一個非常豐富且多樣化的架構，以支援 2D 圖形�
 
 幸運的是，現代的行動平台會有非常強大的架構，用於建立複雜的動畫和自訂圖形，同時保留容易使用。 這可讓開發人員將豐富的互動，事半功倍。
 
-在 Android 中的 UI API 架構大致上可以分成兩個類別： 圖形和動畫。
+在 Android 中的 UI API 架構大致上可以分成兩個類別：圖形和動畫。
 
 圖形會進一步分成不同的方法，以執行 2D 和 3D 圖形。 3D 圖形可透過數個內建架構，例如 OpenGL ES （行動裝置特定版本的 OpenGL），以及協力廠商架構，例如 MonoGame （跨平台工具組與 XNA 工具組相容）。 雖然這篇文章的範圍內，3D 圖形不是，我們將檢視的內建的 2D 繪圖技術。
 
@@ -57,7 +57,7 @@ Android 提供兩個不同 API，以建立 2D 圖形。 其中一個是高層級
 
 應用程式是更能在這些情況下，如果它們有障礙的設計： 提供提示，而在使用者介面中，瀏覽協助，並確保沒有文字內容或圖形 UI 元素的描述。
 
-請參閱[Google 的協助工具指南](http://developer.android.com/guide/topics/ui/accessibility/)如需有關如何使用 Android 的協助工具的 Api。
+請參閱[Google 的協助工具指南](https://developer.android.com/guide/topics/ui/accessibility/)如需有關如何使用 Android 的協助工具的 Api。
 
 
 
@@ -76,23 +76,23 @@ Android 提供兩個不同 API，以建立 2D 圖形。 其中一個是高層級
 在執行階段，Android 應用程式會載入這些資源，並使用包含在這些 XML 檔案中的指示來建立 2D 圖形。
 Android 會定義許多不同類型的可繪製資源：
 
--   [ShapeDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#Shape) &ndash;這是繪製基本的幾何圖形，且適用於一組有限的圖形化的效果，該圖形上的可繪製物件。 它們非常適合用於自訂按鈕，或設定 TextViews 背景等項目。 我們會看到如何使用範例`ShapeDrawable`本文稍後。
+-   [ShapeDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape) &ndash;這是繪製基本的幾何圖形，且適用於一組有限的圖形化的效果，該圖形上的可繪製物件。 它們非常適合用於自訂按鈕，或設定 TextViews 背景等項目。 我們會看到如何使用範例`ShapeDrawable`本文稍後。
 
--   [StateListDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#StateList) &ndash;這是會變更外觀的小工具/控制項的狀態為基礎的可繪製資源。 例如，按鈕可能會變更其外觀取決於是否被按下或未。
+-   [StateListDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#StateList) &ndash;這是會變更外觀的小工具/控制項的狀態為基礎的可繪製資源。 例如，按鈕可能會變更其外觀取決於是否被按下或未。
 
--   [LayerDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList) &ndash; ，就會在另一個之上堆疊數個其他可繪製資源來一本可繪製資源。 舉例*LayerDrawable*以下的螢幕擷取畫面所示：
+-   [LayerDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList) &ndash; ，就會在另一個之上堆疊數個其他可繪製資源來一本可繪製資源。 舉例*LayerDrawable*以下的螢幕擷取畫面所示：
 
     ![LayerDrawable 範例](graphics-and-animation-images/image1.png)
 
--   [TransitionDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#Transition) &ndash;這是第*LayerDrawable*但有一項差異。 A *TransitionDrawable*能夠顯示之上另一個圖層以動畫顯示。
+-   [TransitionDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Transition) &ndash;這是第*LayerDrawable*但有一項差異。 A *TransitionDrawable*能夠顯示之上另一個圖層以動畫顯示。
 
--   [LevelListDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#LevelList) &ndash;這是非常類似於*StateListDrawable* ，因為它會顯示特定條件為基礎的映像。 不過，不同於*StateListDrawable*，則*LevelListDrawable*顯示整數值為基礎的映像。 舉例*LevelListDrawable*是顯示 WiFi 訊號強度。 WiFi 訊號變更程度，作為可繪製顯示也會跟著變更。
+-   [LevelListDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LevelList) &ndash;這是非常類似於*StateListDrawable* ，因為它會顯示特定條件為基礎的映像。 不過，不同於*StateListDrawable*，則*LevelListDrawable*顯示整數值為基礎的映像。 舉例*LevelListDrawable*是顯示 WiFi 訊號強度。 WiFi 訊號變更程度，作為可繪製顯示也會跟著變更。
 
--   [ScaleDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#Scale)/[ClipDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#Clip) &ndash;正如其名，這些可繪製資源來提供調整和裁剪功能。 *ScaleDrawable*擴充另一個可繪製，while *ClipDrawable*會裁剪其他 Drawable。
+-   [ScaleDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Scale)/[ClipDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Clip) &ndash;正如其名，這些可繪製資源來提供調整和裁剪功能。 *ScaleDrawable*擴充另一個可繪製，while *ClipDrawable*會裁剪其他 Drawable。
 
--   [InsetDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#Inset) &ndash;可繪製這將會套用至內凹另一個可繪製資源側邊。 它是用來檢視必須小於檢視的實際界限的背景。
+-   [InsetDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Inset) &ndash;可繪製這將會套用至內凹另一個可繪製資源側邊。 它是用來檢視必須小於檢視的實際界限的背景。
 
--   XML [BitmapDrawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#Bitmap) &ndash;這個檔案是一組指示，在 XML 中，包含要在實際的點陣圖上執行。 Android 可以執行某些動作是 tiling、 抖色處理，並消除鋸齒。 這個非常常見的用途之一是磚的版面配置背景的點陣圖。
+-   XML [BitmapDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Bitmap) &ndash;這個檔案是一組指示，在 XML 中，包含要在實際的點陣圖上執行。 Android 可以執行某些動作是 tiling、 抖色處理，並消除鋸齒。 這個非常常見的用途之一是磚的版面配置背景的點陣圖。
 
 
 #### <a name="drawable-example"></a>可繪製的範例
@@ -148,7 +148,7 @@ tv.SetBackgroundResource(Resource.Drawable.shape_rounded_blue_rect);
 
 ![具有自訂背景，可繪製具有漸層停駐和圓角的 Textview](graphics-and-animation-images/image1.png)
 
-如需進一步瞭解 XML 項目和可繪製資源的語法的詳細資訊，請參閱[Google 的文件](http://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)。
+如需進一步瞭解 XML 項目和可繪製資源的語法的詳細資訊，請參閱[Google 的文件](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)。
 
 
 ### <a name="using-the-canvas-drawing-api"></a>使用畫布繪圖 API
@@ -443,7 +443,7 @@ protected override void OnCreate(Bundle bundle)
 ## <a name="related-links"></a>相關連結
 
 - [動畫示範 （範例）](https://developer.xamarin.com/samples/monodroid/AnimationDemo)
-- [動畫和圖形](http://developer.android.com/guide/topics/graphics/index.html)
+- [動畫和圖形](https://developer.android.com/guide/topics/graphics/index.html)
 - [若要將您的行動裝置應用程式融入生活使用動畫](http://youtu.be/ikSk_ILg3d0)
 - [AnimationDrawable](https://developer.xamarin.com/api/type/Android.Graphics.Drawables.AnimationDrawable/)
 - [Canvas](https://developer.xamarin.com/api/type/Android.Graphics.Canvas/)

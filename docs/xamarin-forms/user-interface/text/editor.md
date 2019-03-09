@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: ed49c1d11e30d19b2dc60066c3c35568ade43198
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: 3131963efa3d4ba4de9ff63c741c276a62e9d12d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557099"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670411"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms 編輯器
 
@@ -258,6 +258,9 @@ public partial class EditorPage : ContentPage
 
 - [TextChanged](xref:Xamarin.Forms.Editor.TextChanged) &ndash;在編輯器中的文字變更時引發。 變更之前和之後，請提供的文字。
 - [已完成](xref:Xamarin.Forms.Editor.Completed)&ndash;使用者已結束輸入鍵盤上按 return 鍵時引發。
+
+> [!NOTE]
+> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)類別，從其中[ `Entry` ](xref:Xamarin.Forms.Entry)繼承，也有[ `Focused` ](xref:Xamarin.Forms.VisualElement.Focused)並[ `Unfocused` ](xref:Xamarin.Forms.VisualElement.Unfocused)事件。
 
 ### <a name="completed"></a>已完成
 

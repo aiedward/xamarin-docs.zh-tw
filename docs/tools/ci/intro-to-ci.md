@@ -6,12 +6,12 @@ ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: lobrien
 ms.author: laobri
 ms.date: 07/19/2017
-ms.openlocfilehash: 5468495885e3af2afa2692ccad9191b669fa3328
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: f2db5f4acd57cbf887d9955d9ea61fce4427c1c3
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "37066503"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672400"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>使用 Xamarin 的連續整合簡介
 
@@ -39,10 +39,6 @@ _持續整合是軟體工程實務，自動化的組建會編譯並選擇性地�
 [App Center 測試](https://docs.microsoft.com/appcenter/test-cloud)測試直接在數百個實體裝置上的應用程式，以解決此特定問題。 開發人員撰寫自動化的接受測試，以允許進行功能強大的 UI 測試。 這些測試上傳到 App Center 之後, 在 CI 伺服器可以執行它們自動 CI 程序的一部分如下圖所示：
 
 [![](intro-to-ci-images/intro02-small.png "這些測試上傳到 App Center 之後, 在 CI 伺服器可以自動執行 CI 程序的一部分，在此圖中所示")](intro-to-ci-images/intro02.png#lightbox)
-
-# <a name="components-of-continuous-integration"></a>持續整合的元件
-
-沒有專門設計來支援 CI 的商業和開放原始碼工具的豐富生態系統。 本章節將說明一些最常見的。
 
 ## <a name="version-control"></a>版本控制
 
@@ -92,7 +88,7 @@ Visual Studio 2015 和 Visual Studio for Mac 提供適用於 Git; 的原生支�
 
 與 Team Foundation Server，您可以設定組建電腦，如下所示為特定的目標平台：
 
-- **Android 和 Windows:** 安裝 Visual Studio 和 Xamarin 工具 （適用於 Android 和 Windows 這兩個），並使用您的 Xamarin 授權設定。 還有，移至其中的 TFS 組建代理程式的共用位置的伺服器上的 Android SDK 可以找到它所需。 如需詳細資訊，請參閱 <<c0> [ 設定 TFVC](https://docs.microsoft.com/azure/devops/repos/tfvc/overview)。
+- **Android 和 Windows:** 安裝 Visual Studio 和 Xamarin 工具 （適用於 Android 和 Windows 這兩個），並設定您的 Xamarin 授權。 還有，移至其中的 TFS 組建代理程式的共用位置的伺服器上的 Android SDK 可以找到它所需。 如需詳細資訊，請參閱 <<c0> [ 設定 TFVC](https://docs.microsoft.com/azure/devops/repos/tfvc/overview)。
 - **iOS 和 Xamarin:** 安裝 Visual Studio 和 Xamarin 工具在 Windows 伺服器上使用適當的授權。 然後安裝 Visual Studio for Mac 在網路可存取的 Mac OS X 電腦，它會做為組建主機，建立最終的應用程式套件 (IPA 適用於 iOS、 OS x 的應用程式)。
 
 下圖說明此拓撲：
@@ -115,7 +111,3 @@ Visual Studio 2015 和 Visual Studio for Mac 提供適用於 Git; 的原生支�
 
 > [!IMPORTANT]
 > **Jenkins 已[Microsoft 不支援](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md)。**
-
-# <a name="summary"></a>總結
-
-設定連續整合的概念，以及它為軟體開發團隊帶來的優點，導入了這份文件。 版本控制的重要性，討論以及角色和責任的組建伺服器。 文件然後出在討論的一些工具可用於原始程式碼控制和組建伺服器。 我們也引進了 App Center 測試，可協助執行自動化的測試，您會發現的品質和功能的應用程式發佈優質的應用程式的開發人員。 在提交應用程式和 App Center 測試可以找到的文件的詳細[此處](https://docs.microsoft.com/appcenter/test-cloud)。 最後，若要協助您了解如何所有這些工具和元件配合，我們會概述幾個不同的 CI 環境，組織可能會建立持續整合。 使用 Xamarin 專案中的 Visual Studio Team Services 和 Team Foundation Server 的詳細資訊，請參閱[設定 TFVC](https://docs.microsoft.com/azure/devops/repos/tfvc/overview/) ，而這[連續整合簡介](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer/)。 同樣地，如果您使用 Jenkins，請參閱[使用的 Jenkins 搭配 Xamarin](~/tools/ci/jenkins-walkthrough.md)如需設定持續整合的詳細資訊。

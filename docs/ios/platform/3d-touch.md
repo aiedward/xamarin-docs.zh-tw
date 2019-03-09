@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 60751437b891579c97acee0e032defcca2b510f6
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 6a12d157b3de7c3841f5d69d209c01fbc612f79b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233857"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668734"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>在 Xamarin.iOS 中的 3D 觸控簡介
 
@@ -86,7 +86,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 
 ### <a name="checking-for-3d-touch-availability"></a>3D 觸控可用性檢查
 
-使用時[UIViewController]()您可以使用下列程式碼執行應用程式的 iOS 裝置是否支援 3D 觸控：
+當使用`UIViewController`您可以使用下列程式碼執行應用程式的 iOS 裝置是否支援 3D 觸控：
 
 ```csharp
 public override void TraitCollectionDidChange(UITraitCollection previousTraitCollection)
@@ -101,7 +101,7 @@ public override void TraitCollectionDidChange(UITraitCollection previousTraitCol
         ...
 ```
 
-之前，可能會呼叫此方法*或之後* `ViewDidLoad()`。 
+之前，可能會呼叫此方法*或之後* `ViewDidLoad()`。
 
 ### <a name="handling-peek-and-pop"></a>處理查看和 Pop
 
@@ -281,7 +281,7 @@ public override void ViewDidLoad ()
 * `UIApplicationShortcutItemType` -這是識別應用程式中的項目，我們將使用的字串值。 如需詳細資訊，請參閱下一節。
 
 > [!IMPORTANT]
-> 快速動作捷徑項目中所設定的`Info.plist`無法存取檔案，與`Application.ShortcutItems`屬性。 它們只會在給`HandleShortcutItem`事件處理常式。 
+> 快速動作捷徑項目中所設定的`Info.plist`無法存取檔案，與`Application.ShortcutItems`屬性。 它們只會在給`HandleShortcutItem`事件處理常式。
 
 
 

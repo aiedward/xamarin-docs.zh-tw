@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
-ms.openlocfilehash: 107877d0e92d3a46101812b78bc0b414c0fbb320
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3e0430b8ed9c42030441021e71c3b08b1ddccc57
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105463"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670541"
 ---
 # <a name="managing-fragments"></a>管理片段
 
@@ -40,7 +40,7 @@ fragmentTx.Commit();
 
 如果交易被認可之後`Activity.OnSaveInstanceState()`是呼叫，將會擲回例外狀況。 這是因為活動會儲存其狀態，當 Android 也會儲存任何裝載的片段的狀態。 如果任何片段的交易認可之後，還原活動時，將會遺失這些交易的狀態。
 
-可儲存活動的片段交易[上一頁堆疊](http://developer.android.com/guide/topics/fundamentals/tasks-and-back-stack.html)藉由呼叫`FragmentTransaction.AddToBackStack()`。 這可讓使用者透過向後巡覽片段時變更**回**按下按鈕時。 呼叫這個方法時，會移除的片段會終結而如果使用者巡覽回到活動將無法。
+可儲存活動的片段交易[上一頁堆疊](https://developer.android.com/guide/topics/fundamentals/tasks-and-back-stack.html)藉由呼叫`FragmentTransaction.AddToBackStack()`。 這可讓使用者透過向後巡覽片段時變更**回**按下按鈕時。 呼叫這個方法時，會移除的片段會終結而如果使用者巡覽回到活動將無法。
 
 下列範例示範如何使用`AddToBackStack`方法的`FragmentTransaction`來取代一個片段中，同時保留在上一頁堆疊上的第一個片段的狀態：
 

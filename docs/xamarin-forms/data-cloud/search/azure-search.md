@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: 81e6cbb39a522a471e739e7e9bbb8a0f451a38cd
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 640d50a45b4b7f61113b609fa6a5e4a04566b360
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052881"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667531"
 ---
 # <a name="searching-data-with-azure-search"></a>使用 Azure 搜尋服務來搜尋資料
 
@@ -156,7 +156,7 @@ static void UploadDataToSearchIndex()
 }
 ```
 
-若要匯入到索引的資料會封裝成`IndexBatch`物件，該封裝的集合物件`IndexAction`物件。 每個`IndexAction`執行個體包含文件，以及告知 Azure 搜尋服務文件上執行哪些動作的屬性。 在上述程式碼範例`IndexAction.Upload`動作指定，而導致新的如果插入索引的文件或它是否已被取代。 `IndexBatch`物件然後藉由呼叫傳送到索引`Documents.Index`方法`SearchIndexClient`物件。 如需其他索引編製動作的資訊，請參閱[決定要使用的索引編製動作](/azure/search/search-import-data-dotnet#ii-decide-which-indexing-action-to-use)。
+若要匯入到索引的資料會封裝成`IndexBatch`物件，該封裝的集合物件`IndexAction`物件。 每個`IndexAction`執行個體包含文件，以及告知 Azure 搜尋服務文件上執行哪些動作的屬性。 在上述程式碼範例`IndexAction.Upload`動作指定，而導致新的如果插入索引的文件或它是否已被取代。 `IndexBatch`物件然後藉由呼叫傳送到索引`Documents.Index`方法`SearchIndexClient`物件。 如需其他索引編製動作的資訊，請參閱[決定要使用的索引編製動作](/azure/search/search-import-data-dotnet#decide-which-indexing-action-to-use)。
 
 > [!NOTE]
 > 只有 1000 個文件可以包含在單一的索引編製要求中。

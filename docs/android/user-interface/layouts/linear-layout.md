@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2018
-ms.openlocfilehash: d8ee5f867c9a4d724c54c14b5afdd005f1b805d3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f3d0394f6b2388918f728bd5a25e9e809a832ca6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115766"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670970"
 ---
 # <a name="linearlayout"></a>LinearLayout
 
@@ -126,7 +126,7 @@ protected override void OnCreate (Bundle savedInstanceState)
 
 [![螢幕擷取畫面的第一個 LinearLayout 水平排列應用程式，第二個垂直](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png#lightbox)
 
-請注意，XML 屬性定義每個檢視的行為的方式。 嘗試實驗不同的值，如`android:layout_weight`若要查看如何分散螢幕面積根據每個項目的權數。 請參閱[常見的配置物件](http://developer.android.com/guide/topics/ui/declaring-layout.html)文件，如需詳細資訊的方式 [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)
+請注意，XML 屬性定義每個檢視的行為的方式。 嘗試實驗不同的值，如`android:layout_weight`若要查看如何分散螢幕面積根據每個項目的權數。 請參閱[常見的配置物件](https://developer.android.com/guide/topics/ui/declaring-layout.html)文件，如需詳細資訊的方式 [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)
 控制代碼`android:layout_weight`屬性。
 
 

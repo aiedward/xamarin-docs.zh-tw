@@ -6,19 +6,19 @@ ms.assetid: E3562E1B-E0EF-4C99-9F51-59DE22AFDE46
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 9/4/2018
-ms.openlocfilehash: 5a3a737360f898c2638bc5431cb8f8fc4882f3b0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 09/04/2018
+ms.openlocfilehash: e6dc2f14b36c9d6f67f1df5ad3d118fa423e0d4d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131092"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669388"
 ---
 # <a name="interactive-notification-user-interfaces-in-xamarinios"></a>在 Xamarin.iOS 中的互動式的通知使用者介面
 
 [通知內容延伸模組](~/ios/platform/user-notifications/advanced-user-notifications.md)，iOS 10 中引進，使您能夠建立通知的自訂使用者介面。 從 iOS 12，通知使用者介面可以包含互動式元素，例如按鈕和滑桿。
 
-## <a name="sample-app-redgreennotifications"></a>範例應用程式： RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>範例應用程式：RedGreenNotifications
 
 [RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications)範例應用程式包含互動式使用者介面的 notification content 延伸模組。
 

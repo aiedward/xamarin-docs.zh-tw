@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 63f0d4d7ce5f056d8e1db6bc297258c6bc070086
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 362041efc5a19dfb70430054f3e4636d4fdfbd7e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675545"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672740"
 ---
 <a name="compatibility"></a>
 
@@ -84,7 +84,7 @@ Android 支援通知的中繼資料，讓通知可以排序，並以智慧方式
 
 -   **類別目錄**&ndash;會通知系統如何處理在各種情況下，例如當裝置處於通知 *「 請勿打擾 」* 模式。
 
-**注意：** **可見性**並**分類**在 Android 5.0 和無法使用在舊版的 Android 中推出。 從 Android 8.0[通知通道](#notif-chan)用來控制向使用者通知的呈現方式。
+**注意：****可視性**並**分類**在 Android 5.0 和無法使用在舊版的 Android 中推出。 從 Android 8.0[通知通道](#notif-chan)用來控制向使用者通知的呈現方式。
 
 
 ### <a name="expanded-layouts"></a>展開的版面配置
@@ -113,7 +113,7 @@ Android 支援三種擴充的版面配置樣式，單一事件通知：
 
 從 Android 8.0 oreo （版），您可以使用*通知通道*功能來建立使用者可自訂的每一種您想要顯示的通知通道。 通知通道使您能夠為您群組的通知，讓所有通知都張貼至通道展示相同的行為。 比方說，您可能會有適用於需要立即注意的通知的通知通道和不同的 「 更安靜 」 通道用來參考用訊息。
 
-**YouTube**一起安裝的 Android Oreo 的應用程式會列出兩個通知的類別：**下載通知**並**一般通知**:
+**YouTube**會隨 Android Oreo 的應用程式會列出兩個通知的類別：**下載通知**並**一般通知**:
 
 [![在 Android Oreo 的 YouTube 的通知畫面](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
 
@@ -219,7 +219,7 @@ void CreateNotificationChannel()
 
 -   通知的文字
 
-下列程式碼範例說明如何使用`NotificationCompat.Builder`產生基本的通知。 請注意，`NotificationCompat.Builder`方法支援[方法鏈結](http://en.wikipedia.org/wiki/Method_chaining); 也就是說，每個方法會傳回產生器物件讓您可以使用最後一個方法呼叫的結果來叫用下一個方法呼叫：
+下列程式碼範例說明如何使用`NotificationCompat.Builder`產生基本的通知。 請注意，`NotificationCompat.Builder`方法支援[方法鏈結](https://en.wikipedia.org/wiki/Method_chaining); 也就是說，每個方法會傳回產生器物件讓您可以使用最後一個方法呼叫的結果來叫用下一個方法呼叫：
 
 ```csharp
 // Instantiate the builder and set notification elements:
@@ -332,7 +332,7 @@ notificationManager.Notify (notificationId, notification);
 
 -   應用程式會呼叫`NotificationManager.CancelAll`。
 
-如需詳細資訊更新 Android 的通知，請參閱 <<c0> [ 修改通知](http://developer.android.com/training/notify-user/managing.html#Updating)。
+如需詳細資訊更新 Android 的通知，請參閱 <<c0> [ 修改通知](https://developer.android.com/training/notify-user/managing.html#Updating)。
 
 
 ### <a name="starting-an-activity-from-a-notification"></a>從通知的活動
@@ -375,7 +375,7 @@ notificationManager.Notify (notificationId, notification);
 
 點選此通知，引領使用者回到原始的活動。
 
-在生產應用程式，您的應用程式必須處理*上一頁堆疊*當使用者按下**回**通知活動內的按鈕 （如果您不熟悉 Android 的工作和上一頁堆疊，請參閱[工作和上一頁堆疊](http://developer.android.com/guide/components/tasks-and-back-stack.html))。
+在生產應用程式，您的應用程式必須處理*上一頁堆疊*當使用者按下**回**通知活動內的按鈕 （如果您不熟悉 Android 的工作和上一頁堆疊，請參閱[工作和上一頁堆疊](https://developer.android.com/guide/components/tasks-and-back-stack.html))。
 在大部分情況下，向後巡覽通知活動應該會傳回使用者登出應用程式，並回到主畫面。 若要管理上一頁堆疊，也就是您的應用程式會使用[TaskStackBuilder](https://developer.xamarin.com/api/type/Android.App.TaskStackBuilder/)類別來建立`PendingIntent`上一頁堆疊使用。
 
 真實世界的另一個考量是原始的活動可能需要將資料傳送至通知活動。 例如，通知可能表示文字訊息到達，並通知活動 （訊息檢視畫面），需要向使用者顯示訊息之訊息的識別碼。 建立活動`PendingIntent`可以使用[Intent.PutExtra](https://developer.xamarin.com/api/member/Android.Content.Intent.PutExtra/p/System.String/System.String/)方法，以將資料 （例如，字串） 新增至目的，讓這項資料會傳遞至通知活動。
@@ -770,7 +770,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
 
 這篇文章說明如何在 Android 中建立本機通知。 它說明通知的結構，它說明如何使用`NotificationCompat.Builder`若要建立通知，如何在大型圖示，樣式通知*大型文字*，*映像*和*收件匣*格式、 如何設定通知的中繼資料的設定，例如優先順序、 可見性和類別目錄和如何啟動通知的活動。 這篇文章也會說明如何使用新的抬頭，鎖定畫面上，這些通知設定並 *「 請勿打擾 」* Android 5.0 中引進的功能。 最後，您已了解如何使用`NotificationCompat.Builder`為了維持與舊版 Android 通知相容性。
 
-如需有關設計適用於 Android 的通知的指導方針，請參閱[通知](http://developer.android.com/guide/topics/ui/notifiers/notifications.html)。
+如需有關設計適用於 Android 的通知的指導方針，請參閱[通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)。
 
 
 ## <a name="related-links"></a>相關連結
@@ -778,7 +778,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
 - [NotificationsLab （範例）](https://developer.xamarin.com/samples/monodroid/android5.0/NotificationsLab/)
 - [LocalNotifications （範例）](https://developer.xamarin.com/samples/monodroid/LocalNotifications/)
 - [在 Android 逐步解說中的本機通知](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md)
-- [通知使用者](http://developer.android.com/training/notify-user/index.html)
+- [通知使用者](https://developer.android.com/training/notify-user/index.html)
 - [通知](https://developer.xamarin.com/api/type/Android.App.Notification/)
 - [NotificationManager](https://developer.xamarin.com/api/type/Android.App.NotificationManager/)
 - [NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html)

@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/01/2018
-ms.openlocfilehash: d9cd6bf3ae51c6e27be88481e412995bd4113c17
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117251"
 ---
+
 # <a name="android-resources"></a>Android 資源
 
 _本文介紹在 Xamarin.Android 中的 Android 資源的概念，並將文件的使用方式。它涵蓋了如何使用 Android 應用程式中的資源，以支援應用程式的當地語系化，並包括各種螢幕大小和密度的多個裝置。_
@@ -71,6 +66,6 @@ Android 應用程式很少只是原始程式碼。 通常有許多其他檔案�
 ## <a name="related-links"></a>相關連結
 
 - [使用 Android 資產](~/android/app-fundamentals/resources-in-android/android-assets.md)
-- [應用程式基本概念](http://developer.android.com/guide/topics/fundamentals.html)
-- [應用程式資源](http://developer.android.com/guide/topics/resources/index.html)
-- [支援多個畫面](http://developer.android.com/guide/practices/screens_support.html)
+- [應用程式基本概念](https://developer.android.com/guide/topics/fundamentals.html)
+- [應用程式資源](https://developer.android.com/guide/topics/resources/index.html)
+- [支援多個畫面](https://developer.android.com/guide/practices/screens_support.html)

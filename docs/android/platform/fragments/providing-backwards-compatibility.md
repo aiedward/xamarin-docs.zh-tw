@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/12/2017
-ms.openlocfilehash: 18dac665eec1c5d3ac64065c37e73022670c1ba5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 48ef40ce8560fd9fbb842dde70622d968591ab98
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108843"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666901"
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>提供回溯相容性與 Android 支援封裝
 
-片段的用處會受限於而不需要回溯預先 Android 3.0 (API 層級 11) 裝置的相容性。 若要提供這項功能，Google 導入了[支援程式庫](http://developer.android.com/sdk/compatibility-library.html)(原本稱為*Android 的相容性程式庫*發行時) 的反向移植一些從較新版本的 Api較舊版本的 Android android。 它是 Android 支援套件，可讓執行 Android 2.3.3 Android 1.6 （API 層級 4） 的裝置。 （API 層級 10）。
+片段的用處會受限於而不需要回溯預先 Android 3.0 (API 層級 11) 裝置的相容性。 若要提供這項功能，Google 導入了[支援程式庫](https://developer.android.com/sdk/compatibility-library.html)(原本稱為*Android 的相容性程式庫*發行時) 的反向移植一些從較新版本的 Api較舊版本的 Android android。 它是 Android 支援套件，可讓執行 Android 2.3.3 Android 1.6 （API 層級 4） 的裝置。 （API 層級 10）。
 
 > [!NOTE]
 > 只有`ListFragment`而`DialogFragment`可透過 Android 的支援封裝。 沒有其他片段子類別，例如`PreferenceFragment,`支援 Android 支援封裝中。 它們不適用於預先 Android 3.0 的應用程式。 

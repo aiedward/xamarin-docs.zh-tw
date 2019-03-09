@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: ed6d3c1cfc14bd0dece5ffe494cc02fd8f608b1b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: af9be54b4509f7202618d9d68210eb534f63ccbf
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117274"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671633"
 ---
 # <a name="setup-and-installation"></a>設定與安裝
 
@@ -28,9 +28,9 @@ _這篇文章會逐步引導完成安裝步驟和準備您的電腦和裝置進�
 
 -   **Android SDK** -Android SDK 5.0.1 (API 21) 或更新版本必須安裝 Android SDK 管理員透過。
 
--   **Java Developer Kit** &ndash; Xamarin Android 開發需要[JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)如果您是開發的 API 層級 24 或更高 （JDK 1.8 也支援 API 層級早於 24）。
+-   **Java Developer Kit** &ndash; Xamarin Android 開發需要[JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)如果您是開發的 API 層級 24 或更高 （JDK 1.8 也支援 API 層級早於 24）。
 
-您可以繼續使用[JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)如果您是開發特別針對 API 層級 23 或更早版本。
+您可以繼續使用[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)如果您是開發特別針對 API 層級 23 或更早版本。
 
 > [!IMPORTANT]
 > Xamarin.Android 不支援 JDK 9。

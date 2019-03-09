@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: eb636c3b7a41adbab9162e192ead65def377a1a0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5e6d7b4bdfdf7ea48d26537cb41c763656b050e0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118977"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669645"
 ---
 # <a name="xamarinandroid-designer-material-design-features"></a>Xamarin.Android 設計工具的材料設計功能
 
@@ -20,7 +20,7 @@ _本主題會描述設計工具功能，方便開發人員建立材料設計符�
 
 > [!Video https://youtube.com/embed/E3_ZjIOzVzY]
 
-**Evolve 2016： 每個人都可以建立美觀的應用程式與材料設計**
+**Evolve 2016：每個人都可以使用材質設計來建立美觀的應用程式**
 
 ## <a name="overview"></a>總覽
 
@@ -90,7 +90,7 @@ Xamarin.Android 設計工具包含功能，可讓您更輕鬆地建立材料設�
 [![繼承 索引標籤](material-design-features-images/vs/06-inherit-tab-w158-sml.png)](material-design-features-images/vs/06-inherit-tab-w158.png#lightbox)
 
 在此範例中，**預設佈景主題**使用的樣式繼承`@color/background_material_light`但會使用覆寫`color/material_grey_50`，其中包含色彩的程式碼值`#fffafafa`。
-如需有關樣式繼承的詳細資訊，請參閱[樣式和佈景主題](http://developer.android.com/guide/topics/ui/themes.html#Inheritance)。
+如需有關樣式繼承的詳細資訊，請參閱[樣式和佈景主題](https://developer.android.com/guide/topics/ui/themes.html#Inheritance)。
 
 ### <a name="color-picker"></a>色彩選擇器
 
@@ -271,7 +271,7 @@ Xamarin.Android 設計工具包含功能，可讓您更輕鬆地建立材料設�
 [![繼承 索引標籤](material-design-features-images/xs/13-inherit-sml.png)](material-design-features-images/xs/13-inherit.png#lightbox)
 
 在此範例中，**預設佈景主題**使用的樣式繼承`@color/background_material_dark`但會使用覆寫`color/material_grey_850`，其中包含色彩的程式碼值`#ff303030`。
-如需有關樣式繼承的詳細資訊，請參閱[樣式和佈景主題](http://developer.android.com/guide/topics/ui/themes.html#Inheritance)。
+如需有關樣式繼承的詳細資訊，請參閱[樣式和佈景主題](https://developer.android.com/guide/topics/ui/themes.html#Inheritance)。
 
 ### <a name="color-picker"></a>色彩選擇器
 

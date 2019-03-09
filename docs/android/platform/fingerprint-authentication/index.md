@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: cdb18cd916ddd5daab7db9839bb15ebb098d0c09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123308"
 ---
+
 # <a name="fingerprint-authentication"></a>指紋驗證
 
 _本指南會討論如何將新增至 Xamarin.Android 應用程式在 Android 6.0 中，導入的指紋驗證。_
@@ -25,7 +20,7 @@ _本指南會討論如何將新增至 Xamarin.Android 應用程式在 Android 6.
 
 FingerprintManager Api 與指紋掃描器以裝置為目標，而且正在執行的 API 層級 23 (Android 6.0) 或更高版本。 Api 位於`Android.Hardware.Fingerprints`命名空間。 Android 支援程式庫 v4 提供指紋適用於 Android 的較舊版本的 Api 版本。 相容性中找到 Api`Android.Support.v4.Hardware.Fingerprint`命名空間，透過散發[Xamarin.Android.Support.v4 NuGet 套件](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)。
 
-[FingerprintManager](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html) (和其支援程式庫的相對[FingerprintManagerCompat](http://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)) 是使用指紋掃描硬體的主要類別。 這個類別是 Android SDK 包裝函式可管理本身的硬體互動的系統層級服務。 它會負責啟動指紋掃描器，以及從掃描器回應意見反應。 此類別具有相當簡單的介面與只有三個成員：
+[FingerprintManager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html) (和其支援程式庫的相對[FingerprintManagerCompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)) 是使用指紋掃描硬體的主要類別。 這個類別是 Android SDK 包裝函式可管理本身的硬體互動的系統層級服務。 它會負責啟動指紋掃描器，以及從掃描器回應意見反應。 此類別具有相當簡單的介面與只有三個成員：
 
 * **`Authenticate`** &ndash; 這個方法會初始化硬體掃描器，並在背景中，等候使用者掃描其指紋即可，啟動服務。
 * **`EnrolledFingerprints`** &ndash; 這個屬性會傳回`true`如果使用者已向裝置的一或多個指紋。
@@ -61,8 +56,8 @@ fingerprintManager.Authenticate(FingerprintManager.CryptoObject crypto,
 
 - [指紋指南範例應用程式](https://developer.xamarin.com/samples/monodroid/FingerprintGuide/)
 - [指紋對話方塊範例](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog/)
-- [在執行階段的要求權限](http://developer.android.com/training/permissions/requesting.html)
-- [android.hardware.fingerprint](http://developer.android.com/reference/android/hardware/fingerprint/package-summary.html)
-- [android.support.v4.hardware.fingerprint](http://developer.android.com/reference/android/support/v4/hardware/fingerprint/package-summary.html)
+- [在執行階段的要求權限](https://developer.android.com/training/permissions/requesting.html)
+- [android.hardware.fingerprint](https://developer.android.com/reference/android/hardware/fingerprint/package-summary.html)
+- [android.support.v4.hardware.fingerprint](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/package-summary.html)
 - [Android.Content.Context](https://developer.xamarin.com/api/type/Android.Content.Context/)
 - [指紋與付款 API （影片）](https://youtu.be/VOn7VrTRlA4)

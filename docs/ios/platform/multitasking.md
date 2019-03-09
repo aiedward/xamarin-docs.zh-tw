@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 78f9aa47cce2fe0059bd7f4d4ff637d14fb8c669
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 68c2ae6eace2669d2ea6c77d72f4476d767c0a7d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112516"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672439"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>適用於 iPad 的 Xamarin.iOS 的多工
 
@@ -128,8 +128,8 @@ IOS 9 之前，您可以設計您的應用程式，針對特定裝置的螢幕�
 | **方向** | **主要的應用程式** | **次要的應用程式** |
 |--- |--- |--- |
 | **直向** |75%的畫面<br />Compact 的水平<br />一般的垂直|25%的畫面<br />Compact 的水平<br />一般的垂直|
-| **橫印** |75%的畫面<br />一般的水平<br />一般的垂直|25%的畫面<br />Compact 的水平<br />一般的垂直|
-| **橫印** |50%的畫面<br />Compact 的水平<br />一般的垂直|50%的畫面<br />Compact 的水平<br />一般的垂直|
+| **Landscape** |75%的畫面<br />一般的水平<br />一般的垂直|25%的畫面<br />Compact 的水平<br />一般的垂直|
+| **Landscape** |50%的畫面<br />Compact 的水平<br />一般的垂直|50%的畫面<br />Compact 的水平<br />一般的垂直|
 
 在範例中[MuliTask](https://developer.xamarin.com/samples/monotouch/ios9/MultiTask/)應用程式，如果它以橫向模式 iPad 上執行全螢幕，它會顯示清單和詳細資料檢視，在相同的時間：
 
@@ -197,7 +197,7 @@ public void NewEntry() {
 
 [![](multitasking-images/keyboard03.png "鍵盤快速鍵快顯視窗")](multitasking-images/keyboard03.png#lightbox)
 
-此範例，請參閱[MultiTask 應用程式](http://developer.xamarin.com/samples/monotouch/ios9/MultiTask/)如需範例實作。
+此範例，請參閱[MultiTask 應用程式](https://developer.xamarin.com/samples/monotouch/ios9/MultiTask/)如需範例實作。
 
 <a name="Resource-Management-Considerations" />
 

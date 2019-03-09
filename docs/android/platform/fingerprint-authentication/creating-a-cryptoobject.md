@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 1658934bedce11a42701eb023a42fc9e617b654d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1305a8a1f39d34b5e91e478a769750911afb2b3e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113764"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669629"
 ---
 # <a name="creating-a-cryptoobject"></a>建立 CryptoObject
 
@@ -110,13 +110,13 @@ public class CryptoObjectHelper
 * 使用者已停用螢幕鎖定。
 * 使用者已變更的螢幕鎖定 （screenlock 或所使用的 PIN/模式的類型）。
 
-當發生這種情況`Cipher.Init`將會擲回[ `KeyPermanentlyInvalidatedException` ](http://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)。 上述的範例程式碼會攔截該例外狀況、 刪除機碼，和接著建立一個新。
+當發生這種情況`Cipher.Init`將會擲回[ `KeyPermanentlyInvalidatedException` ](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)。 上述的範例程式碼會攔截該例外狀況、 刪除機碼，和接著建立一個新。
 
 下一節將討論如何建立金鑰，並將它儲存在裝置上。
 
 ## <a name="creating-a-secret-key"></a>建立祕密金鑰
 
-`CryptoObjectHelper`類別會使用 Android [ `KeyGenerator` ](https://developer.xamarin.com/api/type/Javax.Crypto.KeyGenerator/)建立金鑰，並將其儲存在裝置上。 `KeyGenerator`類別可以建立金鑰，但需要一些中繼資料建立的索引鍵的類型有關。 此資訊提供的執行個體所[ `KeyGenParameterSpec` ](http://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)類別。 
+`CryptoObjectHelper`類別會使用 Android [ `KeyGenerator` ](https://developer.xamarin.com/api/type/Javax.Crypto.KeyGenerator/)建立金鑰，並將其儲存在裝置上。 `KeyGenerator`類別可以建立金鑰，但需要一些中繼資料建立的索引鍵的類型有關。 此資訊提供的執行個體所[ `KeyGenParameterSpec` ](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)類別。 
 
 A`KeyGenerator`具現化使用`GetInstance`factory 方法。 範例程式碼會使用[_進階加密標準_](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) (_AES_) 做為加密演算法。 AES 將資料分成區塊的固定大小，並加密每個這些區塊。
 
@@ -159,13 +159,13 @@ protected void FingerPrintAuthenticationExample()
 
 ## <a name="related-links"></a>相關連結
 
-- [加密](https://developer.xamarin.com/api/type/Javax.Crypto.Cipher/)
-- [FingerprintManager.CryptoObject](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.CryptoObject.html)
-- [FingerprintManagerCompat.CryptoObject](http://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.CryptoObject.html)
+- [Cipher](https://developer.xamarin.com/api/type/Javax.Crypto.Cipher/)
+- [FingerprintManager.CryptoObject](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.CryptoObject.html)
+- [FingerprintManagerCompat.CryptoObject](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.CryptoObject.html)
 - [KeyGenerator](https://developer.xamarin.com/api/type/Javax.Crypto.KeyGenerator/)
-- [KeyGenParameterSpec](http://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)
-- [KeyGenParameterSpec.Builder](http://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html)
-- [KeyPermanentlyInvalidatedException](http://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)
-- [KeyProperties](http://developer.android.com/reference/android/security/keystore/KeyProperties.html)
+- [KeyGenParameterSpec](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)
+- [KeyGenParameterSpec.Builder](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html)
+- [KeyPermanentlyInvalidatedException](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)
+- [KeyProperties](https://developer.android.com/reference/android/security/keystore/KeyProperties.html)
 - [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
-- [RFC 2315-PCKS #7](https://tools.ietf.org/html/rfc2315)
+- [RFC 2315 - PCKS #7](https://tools.ietf.org/html/rfc2315)

@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
 ms.date: 11/25/2015
-ms.openlocfilehash: c68cdc443f11ec6709a9d6fdde8ce10cd9db6733
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 4f08468d08e12ad77cacbac66b55ad8fc6ead433
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233675"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667960"
 ---
 # <a name="overview-of-objective-c-bindings"></a>OBJECTIVE-C 繫結的概觀
 
@@ -74,7 +74,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 您可使用[[註冊]](xref:Foundation.RegisterAttribute)屬性， [[匯出]](xref:Foundation.ExportAttribute)屬性，並[手動 OBJECTIVE-C 選取器引動過程](~/ios/internals/objective-c-selectors.md)在一起，以手動方式繫結新 （先前未繫結） 的 Objective C 類型。
 
-首先，尋找您想要繫結的型別。 討論用途 （以及簡單），我們將繫結[NSEnumerator](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html)型別 (其中具有已繫結中[Foundation.NSEnumerator](xref:Foundation.NSEnumerator); 下方的實作，例如只是用途)。
+首先，尋找您想要繫結的型別。 討論用途 （以及簡單），我們將繫結[NSEnumerator](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html)型別 (其中具有已繫結中[Foundation.NSEnumerator](xref:Foundation.NSEnumerator); 下方的實作，例如只是用途)。
 
 其次，我們需要建立C#型別。 我們可能會想要將此資訊放置的命名空間Objective C 不支援命名空間，所以我們需要使用`[Register]`屬性來變更 Xamarin.iOS 會向 OBJECTIVE-C 執行階段的型別名稱。 C#型別也必須繼承自[Foundation.NSObject](xref:Foundation.NSObject):
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 4d79988fc2900f1fe58774657344f19fab90f3e4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 267dac5b6aec263f1d8b69d81f34f732118c1802
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105086"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671979"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>在應用程式內購買基本概念和在 Xamarin.iOS 中的設定
 
@@ -46,7 +46,7 @@ Apple 必須核准每個產品之前它會在銷售 – 名稱、 描述以及�
 
 ## <a name="configuration"></a>組態
 
-撰寫任何應用程式內購買的程式碼之前，您必須執行一些設定工作，在 iTunes Connect 中的 ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) 和 iOS 佈建入口網站 ( [developer.apple.com/iOS](http://developer.apple.com/iOS))。
+撰寫任何應用程式內購買的程式碼之前，您必須執行一些設定工作，在 iTunes Connect 中的 ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) 和 iOS 佈建入口網站 ( [developer.apple.com/iOS](https://developer.apple.com/iOS))。
 
 撰寫任何程式碼之前應該完成這三個步驟：
 
@@ -109,8 +109,8 @@ Apple 必須核准每個產品之前它會在銷售 – 名稱、 描述以及�
 
 新增新產品的程序有兩個步驟：
 
-1.   選擇的產品類型： [![](in-app-purchase-basics-and-configuration-images/image8.png "選擇的產品類型")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
-2.   輸入產品的屬性，包括產品識別碼、 定價層和當地語系化的描述： [![](in-app-purchase-basics-and-configuration-images/image9.png "輸入的產品屬性")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
+1.   選擇產品類型：[![](in-app-purchase-basics-and-configuration-images/image8.png "選擇產品類型")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2.   輸入產品的屬性，包括產品識別碼、 定價層和當地語系化的描述：[![](in-app-purchase-basics-and-configuration-images/image9.png "輸入的產品屬性")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
 每個應用程式內購買產品所需的欄位如下所示：
 
