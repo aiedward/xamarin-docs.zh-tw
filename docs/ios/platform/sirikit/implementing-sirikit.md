@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: ea037aaaac97d9f326f1a2fbcb28d97c9d8a9b45
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c8d5c1394bee2ca2419904b077522fac9d03d825
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110247"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669438"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>在 Xamarin.iOS 中實作 SiriKit
 
@@ -175,7 +175,7 @@ namespace MonkeyChat
 5. 按兩下**專案檔**中**方案總管中**以開啟它進行編輯。
 6. 選取  **iOS 套件組合簽署**，並確定`Entitlements.plist`中選取檔案**自訂權利**欄位： 
 
-    [![](implementing-sirikit-images/setup02.png "選取 [自訂權利] 欄位中的 [Entitlements.plist] 檔案")](implementing-sirikit-images/setup02.png#lightbox)
+    [![](implementing-sirikit-images/setup02.png "選取 [自訂權利] 欄位中的 Entitlements.plist 檔案")](implementing-sirikit-images/setup02.png#lightbox)
 7. 按一下 [確定] 按鈕以儲存所做的變更。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -209,7 +209,7 @@ namespace MonkeyChat
 
 依下列方式在 Mac 上：
 
-1. 在網頁瀏覽器，瀏覽至[ http://developer.apple.com ](http://developer.apple.com)和登入您的帳戶。
+1. 在網頁瀏覽器，瀏覽至[ https://developer.apple.com ](https://developer.apple.com)和登入您的帳戶。
 2. 按一下 **憑證**，**識別項**並**設定檔**。
 3. 選取 [**佈建設定檔**，然後選取**應用程式識別碼**，然後按一下**+** ] 按鈕。
 4. 請輸入**名稱**新設定檔。
@@ -240,7 +240,7 @@ namespace MonkeyChat
 19. 以滑鼠右鍵按一下專案，然後選取**選項**。
 21. 選取 **iOS 套件組合簽署**，選取**簽署身分識別**並**佈建設定檔**上面所建立： 
 
-    [![](implementing-sirikit-images/setup07.png "選取 [簽署識別] 和 [佈建設定檔]")](implementing-sirikit-images/setup07.png#lightbox)
+    [![](implementing-sirikit-images/setup07.png "選取 [簽署識別] 和 佈建設定檔")](implementing-sirikit-images/setup07.png#lightbox)
 22. 按一下 [確定] 按鈕以儲存所做的變更。
 
 > [!IMPORTANT]
@@ -471,7 +471,7 @@ namespace MonkeyChat
     [![](implementing-sirikit-images/plist04.png "將名稱設為 ParameterNames 和陣列的型別")](implementing-sirikit-images/plist04.png#lightbox)
 6. 按一下  **+** 以新增新的金鑰，與**類型**的`String`和做為其中一個可用的參數名稱的值。 比方說， `INStartWorkoutIntent.workoutName`:
 
-    [![](implementing-sirikit-images/plist05.png "INStartWorkoutIntent.workoutName 金鑰")](implementing-sirikit-images/plist05.png#lightbox)
+    [![](implementing-sirikit-images/plist05.png "The INStartWorkoutIntent.workoutName key")](implementing-sirikit-images/plist05.png#lightbox)
 7. 新增`ParameterVocabulary`機碼`ParameterVocabularies`索引鍵**型別**的`Array`:
 
     [![](implementing-sirikit-images/plist06.png "將 ParameterVocabulary 金鑰新增至 ParameterVocabularies 具有的索引鍵類型的陣列")](implementing-sirikit-images/plist06.png#lightbox)
@@ -536,7 +536,7 @@ namespace MonkeyChat
     [![](implementing-sirikit-images/plist04w.png "將名稱設為 ParameterNames 和陣列的型別")](implementing-sirikit-images/plist04w.png#lightbox)
 6. 按一下  **+** 以新增新的金鑰，與**類型**的`String`和做為其中一個可用的參數名稱的值。 比方說， `INStartWorkoutIntent.workoutName`:
 
-    [![](implementing-sirikit-images/plist05w.png "INStartWorkoutIntent.workoutName 金鑰")](implementing-sirikit-images/plist05w.png#lightbox)
+    [![](implementing-sirikit-images/plist05w.png "The INStartWorkoutIntent.workoutName key")](implementing-sirikit-images/plist05w.png#lightbox)
 7. 新增`ParameterVocabulary`機碼`ParameterVocabularies`索引鍵**型別**的`Array`:
 
     [![](implementing-sirikit-images/plist06w.png "將 ParameterVocabulary 金鑰新增至 ParameterVocabularies 具有的索引鍵類型的陣列")](implementing-sirikit-images/plist06w.png#lightbox)

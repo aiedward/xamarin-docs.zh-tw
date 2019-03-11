@@ -1,19 +1,19 @@
 ---
-title: 使用 Jenkins 搭配 Xamarin
+title: 搭配 Xamarin 使用 Jenkins
 description: 本文件說明如何使用 Jenkins 搭配 Xamarin 應用程式進行持續整合。 它討論如何安裝、 設定及使用 Jenkins。
 ms.prod: xamarin
 ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: lobrien
 ms.author: laobri
 ms.date: 03/23/2017
-ms.openlocfilehash: f9d6775b5d31aa98087b8b8cb6aa1401429afd96
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7f66c97ce4b7880d32dfd87aec0691a26a08cfd2
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120680"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669423"
 ---
-# <a name="using-jenkins-with-xamarin"></a>使用 Jenkins 搭配 Xamarin
+# <a name="using-jenkins-with-xamarin"></a>搭配 Xamarin 使用 Jenkins
 
 _本指南說明如何設定 Jenkins 持續整合伺服器，並將自動化編譯建立使用 Xamarin 的行動應用程式。它說明如何在 OS X 上安裝 Jenkins、 加以設定，以及設定作業，若要變更認可至原始程式碼管理系統時，編譯 Xamarin.iOS 和 Xamarin.Android 應用程式。_
 
@@ -153,7 +153,7 @@ MSBuild 外掛程式必須設定為使用 **/Library/Frameworks/Mono.framework/C
     ```
     $ tf
     Team Explorer Everywhere Command Line Client (version 11.0.0.201306181526)
-    
+
     Available commands and their options:
     ```
 
@@ -173,7 +173,7 @@ TFS 的命令列用戶端安裝之後，必須使用的完整路徑中設定 Jen
 
 在上**設定全域安全性**頁面上，核取**啟用安全性**核取方塊並**存取控制**表單應該會出現，類似於下一步的螢幕擷取畫面：
 
-[![](jenkins-walkthrough-images/image19.png "在 [設定全域安全性] 頁面中，勾選啟用安全性的核取方塊和存取控制表單應該會出現，類似這個螢幕擷取畫面")](jenkins-walkthrough-images/image19.png#lightbox)
+[![](jenkins-walkthrough-images/image19.png "在 [設定全域安全性] 頁面中，勾選 啟用安全性的核取方塊和存取控制表單應該會出現，類似這個螢幕擷取畫面")](jenkins-walkthrough-images/image19.png#lightbox)
 
 切換的選項按鈕**Jenkins 自己的使用者資料庫**中**安全性領域 > 一節**，並確定**允許使用者註冊**也勾選，如所示下列螢幕擷取畫面：
 
@@ -230,7 +230,7 @@ Jenkins 會在第一個工作是從原始程式碼管理系統中擷取的原始
 
 #### <a name="using-git-for-source-code-control"></a>使用 Git 進行原始程式碼控制
 
-如果您使用 TFS 原始程式碼控制，如[略過](#Using_TFS_for_Source_Code_Management)此區段，然後繼續進行下一節中使用 TFS。
+如果您使用 TFS 原始程式碼控制，如[略過](#Using-TFS-for-Source-Code-Management)此區段，然後繼續進行下一節中使用 TFS。
 
 Jenkins 支援 Git 現成 – 沒有額外的外掛程式所需。 若要使用 Git，請按一下**Git**選項按鈕，並針對 Git 存放庫中，輸入 URL，如下列螢幕擷取畫面所示：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: aa522e5226d78c1b43bb52b97991b989491d251f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8690be7551046a26339f58029da5f3f58e18cd15
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120056"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672582"
 ---
 # <a name="understanding-android-api-levels"></a>了解 Android API 層級
 
@@ -139,7 +139,7 @@ Android 的程式碼名稱可能對應至多個版本和 API 層級 （如同下
 
 若要存取在 Visual Studio for Mac 的目標 Framework 設定，以滑鼠右鍵按一下專案名稱，然後選取**選項**; 這會開啟**專案選項**對話方塊。 在這個對話方塊中，瀏覽至**建置 > 一般**如下所示：
 
-[![建置一般區段中的 [專案選項] 頁面](android-api-levels-images/xs-target-framework-sml.png)](android-api-levels-images/xs-target-framework.png#lightbox)
+[![建置一般 區段中的 [專案選項] 頁面](android-api-levels-images/xs-target-framework-sml.png)](android-api-levels-images/xs-target-framework.png#lightbox)
 
 選取右邊的下拉式選單中的 API 層級中設定目標 Framework**目標 framework**如上所示。
 
@@ -281,5 +281,5 @@ else
 - [Android SDK 安裝](~/android/get-started/installation/android-sdk.md)
 - [SDK CLI 工具變更](~/android/troubleshooting/sdk-cli-tooling-changes.md)
 - [挑選您 compileSdkVersion、 minSdkVersion 和 targetSdkVersion](https://medium.com/google-developers/picking-your-compilesdkversion-minsdkversion-targetsdkversion-a098a0341ebd)
-- [什麼是 API 層級？](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels)
+- [什麼是 API 層級？](https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels)
 - [名稱、 標籤和組建編號](https://source.android.com/source/build-numbers)

@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials：疑難排解
+title: Xamarin.Essentials:疑難排解
 description: 本文件說明如何為使用 Xamarin.Essentials 程式庫開發時遇到的問題進行疑難排解。
 ms.assetid: 2E474FAF-F841-4E3C-B815-F7ABD8EE3361
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 3440b572514c02c8c2240dc99b09aecfde06fcb9
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: d13589680161de4c9b5d77eef6d5f823cc884136
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898741"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671425"
 ---
-# <a name="xamarinessentials-troubleshooting"></a>Xamarin.Essentials：疑難排解
+# <a name="xamarinessentials-troubleshooting"></a>Xamarin.Essentials:疑難排解
 
 ## <a name="error-version-conflict-detected-for-xamarinandroidsupportcompat"></a>錯誤：偵測到 Xamarin.Android.Support.Compat 的版本衝突
 
@@ -30,4 +30,4 @@ NU1107: Version conflict detected for Xamarin.Android.Support.Compat. Reference 
 
 如需如何解決問題的詳細資訊和影片，請參閱[此部落格文章](https://redth.codes/how-to-fix-the-dreaded-version-conflict-nuget-error-in-your-xamarin-android-projects/)。
 
-如果遇到任何問題或發現 Bug，請於 [Xamarin.Essentials GitHub 存放庫](http://github.com/xamarin/Essentials)回報。
+如果遇到任何問題或發現 Bug，請於 [Xamarin.Essentials GitHub 存放庫](https://github.com/xamarin/Essentials)回報。

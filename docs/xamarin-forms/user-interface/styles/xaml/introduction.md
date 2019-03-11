@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 6f5af5fde46676cf669e6c02fb83f4aac5d31c46
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 4048ec78d48b810b39d46fbcb7708860c478cce3
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292086"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667200"
 ---
 # <a name="introduction-to-xamarinforms-styles"></a>Introduction to Xamarin.Forms 樣式
 
@@ -133,10 +133,10 @@ public class NoStylesPageCS : ContentPage
 > [!NOTE]
 > **什麼是用於儲存 StyleId？**
 >
-> Xamarin.Forms 2.2 之前[ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)屬性用來識別應用程式識別在 UI 測試，和例如 Pixate 佈景主題引擎中的個別項目。 不過，導入了 Xamarin.Forms 2.2 [ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId)屬性，已取代[ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)屬性。 如需詳細資訊，請參閱 <<c0> [ 自動化 Xamarin.Forms 測試使用 Xamarin.UITest 和測試雲端](~/xamarin-forms/deploy-test/uitest-and-test-cloud.md)。
+> Xamarin.Forms 2.2 之前[ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)屬性用來識別應用程式識別在 UI 測試，和例如 Pixate 佈景主題引擎中的個別項目。 不過，導入 Xamarin.Forms 2.2 [ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId)屬性，已取代[ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)屬性。
 
 ## <a name="related-links"></a>相關連結
 
 - [XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [樣式][](xref:Xamarin.Forms.Style)
+- [樣式](xref:Xamarin.Forms.Style)
 - [Setter](xref:Xamarin.Forms.Setter)
