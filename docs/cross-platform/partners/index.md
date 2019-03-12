@@ -383,7 +383,7 @@ _許多協力廠商列出主要位置，對外提供服務。_
 |[InfoMantis GmbH](http://www.infomantis.de)|Osnabruck，德國|跨平台應用程式軟體開發公司|
 |[Intelligentgraphics GmbH](http://www.intelligentgraphics.biz)|Thuringia，德國|我們著重於互動式 3D 銷售的應用程式。|
 |[ISEO 線上行銷 GmbH](http://www.iseo.de)|Lübeck, Germany|我們不會提供關閉柱子但熟練的客戶價值、 絕佳的設計和成熟的技術，超過 10 年的每個用於三角理論|
-|[訊息系統 ag](http://www.msg.group/)|柏林，德國;Cologne 德國;漢堡，德國;法蘭克福，德國;Nuremberg 德國;澤西縣 （市)，NJ，USA;Basel （瑞士);維也納，奧地利|訊息是獨立、 國際公司整體服務各種創意、 策略諮詢和智慧型、 持續性和加值型 IT 解決方案的範圍廣泛的供應項目在全球超過 6,000 個員工的群組產業。|
+|[訊息系統 ag](https://www.msg.group/travel-logistics/xamarin)|柏林，德國;倫瑞克德國;Bretten 德國;Chemnitz 德國;Cologne (Köln)，德國;森，德國;法蘭克福/M.，德國;Görlitz 德國;漢堡，德國;Hannover 德國;Ingolstadt 德國;Lingen (Ems)，德國;Münster 德國;Nuremberg (Nürnberg)，德國;Passau 德國;Schortens / Wilhelmshaven 德國;聖 Georgen 德國;Stuttgart 德國;Walldorf 德國;Basel （瑞士);維也納 (Wien) 奧地利|訊息是獨立、 國際的 7,000 個以上的員工，提供各種創意、 策略諮詢和廣泛的智慧型、 持續性和加值型 IT 解決方案之間的整體服務世界各地的公司群組產業。|
 |[下一步 的幕尼黑 GmbH](http://www.next-munich.com)|德國幕尼黑|是否 B2C、 B2B、 產能或其他行動裝置的策略-行動解決方案的未來會立即開始。 下一步 的幕尼黑深入了解，並有系統地處理成功 '應用程式-企業' 參與的所有要素。 下一步 的幕尼黑收集的設計和開發，所有區域中，定位和行銷程式，使用 10 年的經驗之行動裝置。|
 |[prodot GmbH](https://prodot.de)|Duisburg，德國|Prodot 了解他們的客戶; 與其它們用手盈餘與您想要的結果對應。 直覺式使用者介面、 簡潔的設計、 技術專業知識和未來技術的兼容性是其解決方案的必要項目。 他們所開發高效率的循環，簡單地說，穩定、 複雜和長時間持續性的軟體，針對您的需求會根據 Microsoft 技術和 SAP 這類的標準產品。|
 |[SDX AG](http://www.sdx-ag.de)|法蘭克福上午 Main，Hesse 德國;德國幕尼黑;巴伐利亞德國|Sie unserem neuen Hauptsitz im Frankfurter Westhafen begrüßen zu können Wir freuen uns。 Befinden sich im 2 Büroräume unsere。 OG im Westhafenhaus，Speicherstraße 1 unmittelbar neben dem Westhafentower。|
