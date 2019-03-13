@@ -51,7 +51,7 @@ Material 的轉譯器(renderers) 目前包含在 iOS 和 Android 上的下列元
 
 基本上 Material 的轉譯器(renderers)動作對於預設的轉譯器(renderers)沒有影響。
 
-在 iOS 和 Android 上，您的平台專案必須具有 [Xamarin.Forms.Visual.Material](https://www.nuget.org/packages/ https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) 安裝的 NuGet 套件。 並且需要在安裝 NuGet 套件之後再到每個平台專案中，於`Xamarin.Forms.Forms.Init`方法呼叫*之後*使用 Material Nuget 套件的初始化方法呼叫。 專案平台是 iOS 請使用下列程式碼：
+在 iOS 和 Android 上，您的平台專案必須具有 [Xamarin.Forms.Visual.Material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) 安裝的 NuGet 套件。 並且需要在安裝 NuGet 套件之後再到每個平台專案中，於`Xamarin.Forms.Forms.Init`方法呼叫*之後*使用 Material Nuget 套件的初始化方法呼叫。 專案平台是 iOS 請使用下列程式碼：
 
 ```csharp
 global::Xamarin.Forms.Forms.Init();
