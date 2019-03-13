@@ -70,11 +70,11 @@ FormsMaterial.Init(this, bundle);
 
 下列螢幕擷取畫面會顯示包含四個檢視，如需哪些 Material 轉譯器(renderers)存在，但使用的預設轉譯器(renderers)轉譯使用者介面：
 
-[![預設的轉譯器，在 iOS 和 Android 上的螢幕擷取畫面](material-visual-images/default-renderers.png "檢視使用預設的轉譯器")](https://docs.microsoft.com/zh-tw/xamarin/xamarin-forms/user-interface/visual/material-visual-images/default-renderers-large.png#lightbox)
+![預設的轉譯器，在 iOS 和 Android 上的螢幕擷取畫面](https://docs.microsoft.com/zh-tw/xamarin/xamarin-forms/user-interface/visual/material-visual-images/default-renderers-large.png#lightbox "檢視使用預設的轉譯器")
 
 下列螢幕擷取畫面顯示相同的使用者介面使用 Material 的轉譯器(renderers)轉譯後的介面外觀：
 
-[![Material 的轉譯器，在 iOS 和 Android 上的螢幕擷取畫面](material-visual-images/material-renderers.png "檢視使用 Material 轉譯器")](https://docs.microsoft.com/zh-tw/xamarin/xamarin-forms/user-interface/visual/material-visual-images/material-renderers-large.png#lightbox)
+![Material 的轉譯器，在 iOS 和 Android 上的螢幕擷取畫面](https://docs.microsoft.com/zh-tw/xamarin/xamarin-forms/user-interface/visual/material-visual-images/material-renderers-large.png#lightbox "檢視使用 Material 轉譯器")
 
 > [!NOTE]
 > Material 轉譯器(renderers)轉譯的控制項保持原生控制項，與因此還是會有平台，例如字型、 shadows、 色彩和提高權限的區域之間的使用者介面不同。
