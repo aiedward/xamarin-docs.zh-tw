@@ -4,15 +4,15 @@ description: 本主題就會查看 MonoTouch API 設計、 組件和類別來自
 ms.prod: xamarin
 ms.assetid: 951713CD-D6AD-981C-A09E-4F2C98588D8B
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: aca113448038df8b22eeb858acb48ee17a7809e2
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 8cf3193a4fcfd716c05e45900dd1fabf3e1556b7
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350858"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107972"
 ---
 # <a name="ios-advanced-concepts-and-internals"></a>iOS 進階概念與內部項目
 

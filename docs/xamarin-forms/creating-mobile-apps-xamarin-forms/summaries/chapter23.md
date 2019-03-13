@@ -4,17 +4,19 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 第 23 章摘要�
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 83a445555f9f184f735c105370de20665ad704a3
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: ddbb96836fa1aa9611701bd7d645d9e85ad28027
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156752"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058632"
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>第 23 章的摘要。 觸發程序和行為
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23)
 
 觸發程序和行為的相似處，在於它們兩者都是使用 XAML 檔案中，以簡化之外使用的資料繫結的項目互動，以及擴充功能的 XAML 項目。 觸發程序和行為幾乎都可搭配 visual 的使用者介面物件。
 
@@ -152,7 +154,7 @@ ms.locfileid: "39156752"
 
 [ **FormattedTextToggle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/FormattedTextToggle)範例會將這個概念延伸藉由切換兩個`FormattedString`物件。
 
-[ `ToggleBase` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBase.cs)類別**Xamarin.FormsBook.Toolkit**文件庫衍生自`ContentView`，定義`IsToggled` 屬性，並結合`ToggleBehavior`切換邏輯。 這可讓您更輕鬆地在 XAML 中，定義 [切換] 按鈕如所示[ **TranditionalCheckBox** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalCheckBox)範例。
+[ `ToggleBase` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBase.cs)類別**Xamarin.FormsBook.Toolkit**文件庫衍生自`ContentView`，定義`IsToggled` 屬性，並結合`ToggleBehavior`切換邏輯。 這可讓您更輕鬆地在 XAML 中，定義 [切換] 按鈕如所示[ **TraditionalCheckBox** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalCheckBox)範例。
 
 [ **SwitchCloneDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/SwitchCloneDemo)包含[ `SwitchClone` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter23/SwitchCloneDemo/SwitchCloneDemo/SwitchCloneDemo/SwitchClone.cs)類別衍生自`ToggleBase`，並使用[ `TranslateAction` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/TranslateAction.cs)類別來建構類似於 Xamarin.Forms 的切換按鈕`Switch`。
 

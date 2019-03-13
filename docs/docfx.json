@@ -1,11 +1,11 @@
 {
   "build": {
-    "markdownEngineName": "markdig",
     "content": [
       {
         "files": [
           "**/*.md",
-          "**/*.yml"
+          "**/*.yml",
+          "**/*.html"
         ],
         "exclude": [
           "**/obj/**",
@@ -23,27 +23,51 @@
       {
         "files": [
           "**/*.png",
-          "**/*.jpg"
+          "**/*.jpg",
+          "**/*.jpeg",
+          "**/*.gif",
+          "**/*.svg"
         ],
         "exclude": [
           "**/obj/**",
-          "**/includes/**",
           "_themes/**",
-          "_themes.pdf/**"
+          "_themes.pdf/**",
+          "**/includes/**"
         ]
       }
     ],
+    "markdownEngineName": "markdig",
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-      "feedback_system": "GitHub",
-      "feedback_github_repo": "MicrosoftDocs/xamarin-docs.zh-tw",
-      "feedback_product_url": "https://developercommunity.visualstudio.com/",
-      "breadcrumb_path": "/xamarin/breadcrumb/toc.json",
       "uhfHeaderId":"MSDocsHeader-Xamarin",
-      "extendBreadcrumb": true
+      "breadcrumb_path": "/xamarin/breadcrumb/toc.json",
+      "titleSuffix": "Xamarin",
+      "extendBreadcrumb": true,
+      "manager": "crdun",
+      "audience": "developer",
+      "ms.topic": "conceptual",
+      "ms.technology": "xamarin-crossplatform",
+      "ms.prod": "xamarin",
+      "searchScope": ["Xamarin"],
+      "feedback_system": "GitHub",
+      "feedback_github_repo": "MicrosoftDocs/xamarin-docs.zh-TW",
+      "feedback_product_url": "https://developercommunity.visualstudio.com/"
     },
-    "fileMetadata": {},
+    "fileMetadata": {
+      "ms.technology": {
+        "essentials/**/**.md":"xamarin-essentials",
+        "xamarin-forms/user-interface/graphics/skiasharp/**/**.md": "xamarin-skiasharp"
+      },
+      "feedback_product_url": {
+        "essentials/**/**.md":"https://github.com/xamarin/Essentials/blob/master/PRODUCT-FEEDBACK.md"
+      },
+      "breadcrumb_path": {
+        "xamarin-forms/creating-mobile-apps-xamarin-forms/**/*.md": "/xamarin/breadcrumb/subtoc_breadcrumb/toc.json",
+        "xamarin-forms/enterprise-application-patterns/**/*.md": "/xamarin/breadcrumb/subtoc_breadcrumb/toc.json",
+        "xamarin-forms/user-interface/graphics/skiasharp/**/*.md": "/xamarin/breadcrumb/subtoc_breadcrumb/toc.json"
+      }
+    },
     "template": [],
     "dest": "xamarin-docs"
   }

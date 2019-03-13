@@ -4,15 +4,15 @@ description: 如何開始使用 Xamarin.Android 開發 Android Nougat 應用程�
 ms.prod: xamarin
 ms.assetid: 5C74ABE2-C862-4ED0-8EA5-C7FEE5251D4B
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: 2e15de944f05fede802dbf52987d80a46fb890ef
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: de2b92a4007f085a14c16f0c1e8ca9e568df1aff
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242149"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668360"
 ---
 # <a name="nougat-features"></a>Nougat 功能
 
@@ -27,7 +27,7 @@ _如何開始使用 Xamarin.Android 開發 Android Nougat 應用程式。_
 
 [![Android 平板電腦和手機執行 Android Nougat Hero 映像](nougat-images/android-n-hero-sml.png)](nougat-images/android-n-hero.png#lightbox)
 
-如需有關 Android 7.x Api 的詳細資訊，請參閱[適用於開發人員的 Android 7.1](http://developer.android.com/preview/api-overview.html)。
+如需有關 Android 7.x Api 的詳細資訊，請參閱[適用於開發人員的 Android 7.1](https://developer.android.com/preview/api-overview.html)。
 如需 Xamarin.Android 7.0 的已知問題的清單，請參閱[版本資訊](https://developer.xamarin.com/releases/android/xamarin.android_7/xamarin.android_7.0/)。
 
 Android Nougat Xamarin.Android 開發人員提供相關的許多新功能。 這些功能包括：
@@ -53,7 +53,7 @@ Android Nougat Xamarin.Android 開發人員提供相關的許多新功能。 這
 
 -   **Android SDK** -Android SDK 7.0 (API 24) 或更新版本必須安裝 Android SDK 管理員透過。
 
--   **Java Developer Kit** &ndash; Xamarin Android 7.0 開發需要[JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本，如果您正在開發的 API 層級 24 或更大 （JDK 8 也支援 API 層級早於 24）。 如果您使用自訂控制項或表單預覽程式需要 64 位元版本的 JDK 8。
+-   **Java Developer Kit** &ndash; Xamarin Android 7.0 開發需要[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本，如果您正在開發的 API 層級 24 或更大 （JDK 8 也支援 API 層級早於 24）。 如果您使用自訂控制項或表單預覽程式需要 64 位元版本的 JDK 8。
 
 > [!IMPORTANT]
 > Xamarin.Android 不支援 JDK 9。
@@ -123,8 +123,8 @@ Android Nougat Xamarin.Android 開發人員提供相關的許多新功能。 這
 
 如果您正使用模擬器，請啟動 Android AVD Manager，並建立新的裝置，使用下列設定：
 
--   裝置： Nexus 5 X Nexus 6 Nexus 6 P、 Nexus Player Nexus 9 或像素 c。
--   目標： Android 7.0-API 層級 24
+-   裝置:Nexus 5 X Nexus 6 Nexus 6 P、 Nexus Player Nexus 9 或像素 c。
+-   目標：Android 7.0-API 層級 24
 -   ABI: x86 或 x86\_64
 
 例如，此虛擬裝置設定為模擬 Nexus 6:
@@ -150,7 +150,7 @@ Android Nougat 導入了各種新功能和功能，例如支援多重視窗、 �
 
 [![在直向和橫向的多視窗模式中執行的範例應用程式](nougat-images/multi-window-mode.png)](nougat-images/multi-window-mode.png#lightbox)
 
-您可以設定活動的 Xamarin.Android 應用程式如何支援多視窗模式。 例如，您可以設定多視窗模式中設定的最小的預設高度和寬度，您的應用程式的屬性。 您可以使用新`Activity.IsInMultiWindowMode`來判斷您的活動是否多視窗模式中的屬性。 例如:
+您可以設定活動的 Xamarin.Android 應用程式如何支援多視窗模式。 例如，您可以設定多視窗模式中設定的最小的預設高度和寬度，您的應用程式的屬性。 您可以使用新`Activity.IsInMultiWindowMode`來判斷您的活動是否多視窗模式中的屬性。 例如: 
 
 ```csharp
 if (!IsInMultiWindowMode) {

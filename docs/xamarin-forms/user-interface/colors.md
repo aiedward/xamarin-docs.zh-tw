@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 1017f108d6808155cac84e98a811a30d09afa134
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.openlocfilehash: 43854929cfc232b24cad18e276b3ba51d1e5dece
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986079"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058397"
 ---
 # <a name="colors-in-xamarinforms"></a>在 Xamarin.Forms 中的色彩
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/WorkingWithColors)
 
 _Xamarin.Forms 提供彈性的跨平台色彩類別。_
 
@@ -53,7 +55,7 @@ var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accen
 
 使用`Default`來設定 （或重新設定） 色彩值還原為平台預設值 （了解這代表每一個屬性的每個平台上不同的基礎色彩）。
 
-開發人員可以使用此值來設定`Color`屬性但應該**不**查詢其元件 RGB 值 （所有設定為-1） 這個執行個體。
+開發人員可以使用此值來設定`Color`屬性但應該**不**查詢 （所有設定為-1） 其元件 RGB 值的這個執行個體。
 
 ## <a name="colortransparent"></a>Color.Transparent
 

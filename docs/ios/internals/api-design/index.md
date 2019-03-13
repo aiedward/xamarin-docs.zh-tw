@@ -4,16 +4,11 @@ description: 本文件說明的一些指導原則，用來建構 Xamarin.iOS Api
 ms.prod: xamarin
 ms.assetid: 322D2724-AF27-6FFE-BD21-AA1CFE8C0545
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 275db96435639a60be89e0e3ddb7fa120a30de1c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996408"
 ---
+
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API 設計
 
 除了基底類別庫屬於 Mono 的核心[Xamarin.iOS](http://www.xamarin.com/iOS)隨附於適用於各種不同的 iOS Api 可讓開發人員建立與 Mono 的原生 iOS 應用程式的繫結。
@@ -92,13 +87,13 @@ Xamarin.iOS 包含組成組件數*Xamarin.iOS 設定檔*。 [組件](~/cross-pla
 
 #### <a name="foundation"></a>Foundation
 
-[Foundation](https://developer.xamarin.com/api/namespace/Foundation/)命名空間提供與屬於 iOS OBJECTIVE-C Foundation 架構交互操作而設計的基本資料類型，而且是物件導向程式設計在 OBJECTIVE-C 中的基底
+[Foundation](xref:Foundation)命名空間提供與屬於 iOS OBJECTIVE-C Foundation 架構交互操作而設計的基本資料類型，而且是物件導向程式設計在 OBJECTIVE-C 中的基底
 
-Xamarin.iOS 鏡像在 C# 中的從 OBJECTIVE-C 類別階層 比方說，OBJECTIVE-C 基底類別[NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)可以從 C# 透過[Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)。
+Xamarin.iOS 鏡像在 C# 中的從 OBJECTIVE-C 類別階層 比方說，OBJECTIVE-C 基底類別[NSObject](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)可以從 C# 透過[Foundation.NSObject](xref:Foundation.NSObject)。
 
 雖然此命名空間提供基礎的 Objective C 的基礎類型的繫結，在少數情況下已對應的基礎類型到.NET 類型。 例如: 
 
-- 而不是處理[NSString](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)並[NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)，執行階段會公開這些 C#[字串](xref:System.String)s 和強型別[陣列](xref:System.Array)整個 sAPI。
+- 而不是處理[NSString](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)並[NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)，執行階段會公開這些 C#[字串](xref:System.String)s 和強型別[陣列](xref:System.Array)整個 sAPI。
 
 - 各種協助程式 Api 會公開以下，讓開發人員可以繫結 Objective C Api、 其他 iOS Api 或目前未連結的 Xamarin.iOS 的 Api 的協力廠商。
 
@@ -107,13 +102,13 @@ Xamarin.iOS 鏡像在 C# 中的從 OBJECTIVE-C 類別階層 比方說，OBJECTIV
 
 ##### <a name="nsobject"></a>NSObject
 
-[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)類型是所有 OBJECTIVE-C 繫結的基礎。 Xamarin.iOS 類型反映的類型從 iOS CocoaTouch Api 的兩個類別： C 類型 （通常稱為 CoreFoundation 類型） 和 Objective C 類型 （這些都是衍生自 NSObject 類別）。
+[NSObject](xref:Foundation.NSObject)類型是所有 OBJECTIVE-C 繫結的基礎。 Xamarin.iOS 類型反映的類型從 iOS CocoaTouch Api 的兩個類別: （通常稱為 CoreFoundation 類型） 的 C 類型和 OBJECTIVE-C 型別 （這些都是衍生自 NSObject 類別）。
 
-每個類型對映 unmanaged 型別，就可以取得的原生物件透過[處理](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)屬性。
+每個類型對映 unmanaged 型別，就可以取得的原生物件透過[處理](xref:Foundation.NSObject.Handle)屬性。
 
 而 Mono 會提供所有的物件，記憶體回收`Foundation.NSObject`會實作[System.IDisposable](xref:System.IDisposable)介面。 這表示，您可以不必等到記憶體回收行程在安排中，明確釋放任何給定的 NSObject 的資源。 當您使用大量 NSObjects，比方說，可能會保存到大型資料區塊的指標的 UIImages，這很重要。
 
-如果您的型別，就需要執行具決定性最終處理，覆寫[NSObject.Dispose(bool) 方法](https://developer.xamarin.com/api/type/Foundation.NSObject/%2fM%2fDispose)Dispose 的參數"bool disposing"，而如果設定為 true，它表示，會因為正在呼叫 Dispose 方法的使用者在物件上的明確呼叫的 Dispose （)。 如果值為 false，這表示，程式的 Dispose (bool disposing) 方法是從完成項執行緒上呼叫完成項。 []()
+如果您的型別，就需要執行具決定性最終處理，覆寫[NSObject.Dispose(bool) 方法](xref:Foundation.NSObject.Dispose(System.Boolean))Dispose 的參數"bool disposing"，而如果設定為 true，它表示，會因為正在呼叫 Dispose 方法的使用者在物件上的明確呼叫的 Dispose （)。 如果值為 false，這表示，程式的 Dispose (bool disposing) 方法是從完成項執行緒上呼叫完成項。 []()
 
 
 ##### <a name="categories"></a>分類
@@ -198,7 +193,7 @@ PreserveAttribute 是自訂屬性，以用來告知 mtouch – Xamarin.iOS 部�
 
 #### <a name="uikit"></a>UIKit
 
-[UIKit](https://developer.xamarin.com/api/namespace/UIKit/)命名空間包含所有 C# 類別的形式的產品 CocoaTouch 構成 UI 元件的一對一對應。 API 已經過修改，以遵循 C# 語言中使用的慣例。
+[UIKit](xref:UIKit)命名空間包含所有 C# 類別的形式的產品 CocoaTouch 構成 UI 元件的一對一對應。 API 已經過修改，以遵循 C# 語言中使用的慣例。
 
 C# 委派會提供適用於一般作業。 請參閱[委派](#Delegates)節的詳細資訊。
 
@@ -225,7 +220,7 @@ Xamarin.iOS 不只是基本的 Objective C 平台的繫結。 它會擴充的.NE
 
 
 
-#### <a name="types"></a>類型
+#### <a name="types"></a>型別
 
 它用來進行有意義，而不是低層級的基礎類型，以 C# universe 公開 C# 型別。  這表示[API 使用 C# 「 字串 」 類型，而不是 NSString](~/ios/internals/api-design/nsstring.md)並使用強型別的 C# 陣列而不是公開 NSArray。
 
@@ -283,7 +278,7 @@ OBJECTIVE-C 與 C# 有不同的意義，word 委派兩種語言。
 -  驅動控制項的行為。
 
 
-程式設計模式被設計成最小化建立衍生的類別，以變更控制項的行為。 此解決方案是在精神與其他 GUI 工具組已完成多年類似： Gtk 的訊號，Qt 位置、 Winforms 事件、 WPF/Silverlight 事件，依此類推。 若要避免發生數百個 （一個用於每個動作） 的介面，或需要開發人員實作不需要太多的方法，OBJECTIVE-C 支援選擇性的方法定義。 這是不同於 C# 介面需要實作的所有方法。
+程式設計模式被設計成最小化建立衍生的類別，以變更控制項的行為。 此解決方案是精神類似於其他 GUI 工具組已完成多年來：Gtk 的訊號，Qt 位置、 Winforms 事件、 WPF/Silverlight 事件，依此類推。 若要避免發生數百個 （一個用於每個動作） 的介面，或需要開發人員實作不需要太多的方法，OBJECTIVE-C 支援選擇性的方法定義。 這是不同於 C# 介面需要實作的所有方法。
 
 在 OBJECTIVE-C 類別中，您會看到使用此程式設計模式的類別公開的屬性，通常稱為`delegate`，即必須實作介面的必要組件，以及零個或多個選擇性部分。
 
@@ -293,7 +288,7 @@ OBJECTIVE-C 與 C# 有不同的意義，word 委派兩種語言。
 2.  [透過強型別`Delegate`屬性](#StrongDelegate)
 3.  [透過鬆散型別`WeakDelegate`屬性](#WeakDelegate)
 
-例如，請考慮[UIWebView](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html)類別。 這會分派至[UIWebViewDelegate](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html)執行個體，這指派給[委派](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate)屬性。
+例如，請考慮[UIWebView](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html)類別。 這會分派至[UIWebViewDelegate](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html)執行個體，這指派給[委派](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate)屬性。
 
 <a name="Via_Events" />
 
@@ -301,9 +296,9 @@ OBJECTIVE-C 與 C# 有不同的意義，word 委派兩種語言。
 
 對於許多類型，Xamarin.iOS 將會自動建立適當的委派會將轉送`UIWebViewDelegate`到 C# 事件的呼叫。 針對 `UIWebView`：
 
--  [WebViewDidStartLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:)方法會對應至[UIWebView.LoadStarted](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadStarted/)事件。
--  [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:)方法會對應至[UIWebView.LoadFinished](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadFinished/)事件。
--  [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:)方法會對應至[UIWebView.LoadError](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadError/)事件。
+-  [WebViewDidStartLoad](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:)方法會對應至[UIWebView.LoadStarted](xref:UIKit.UIWebView.LoadStarted)事件。
+-  [WebViewDidFinishLoad](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:)方法會對應至[UIWebView.LoadFinished](xref:UIKit.UIWebView.LoadFinished)事件。
+-  [WebView:didFailLoadWithError](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:)方法會對應至[UIWebView.LoadError](xref:UIKit.UIWebView.LoadError)事件。
 
 比方說，這個簡單的程式會記錄何時載入 web 檢視的開始和結束時間：
 
@@ -339,7 +334,7 @@ void SetupTextField (UITextField tf)
 
 ##### <a name="strongly-typed-via-a-delegate-property"></a>強型別透過委派屬性
 
-如果您不希望使用事件，您可以提供您自己[UIWebViewDelegate](https://developer.xamarin.com/api/type/UIKit.UIWebViewDelegate/)子類別並將它指派給[UIWebView.Delegate](https://developer.xamarin.com/api/property/UIKit.UIWebView.Delegate/)屬性。 一旦 UIWebView.Delegate 已被指派，將無法再運作 UIWebView 事件分派機制，和對應的事件發生時，會叫用 UIWebViewDelegate 方法。
+如果您不希望使用事件，您可以提供您自己[UIWebViewDelegate](xref:UIKit.UIWebViewDelegate)子類別並將它指派給[UIWebView.Delegate](xref:UIKit.UIWebView.Delegate)屬性。 一旦 UIWebView.Delegate 已被指派，將無法再運作 UIWebView 事件分派機制，和對應的事件發生時，會叫用 UIWebViewDelegate 方法。
 
 比方說，這個簡單的型別記錄載入網頁檢視所花費的時間：
 
@@ -368,9 +363,9 @@ web.Delegate = new Notifier ();
 
 上述會建立 UIWebViewer，而且它會指示它將訊息傳送至通知程式，我們建立回應訊息的類別的執行個體。
 
-此模式也會用來控制特定控制項，例如在 UIWebView 案例中，行為[UIWebView.ShouldStartLoad](https://developer.xamarin.com/api/property/UIKit.UIWebView.ShouldStartLoad/)屬性允許`UIWebView`控制項的執行個體是否`UIWebView`會載入頁面與否。
+此模式也會用來控制特定控制項，例如在 UIWebView 案例中，行為[UIWebView.ShouldStartLoad](xref:UIKit.UIWebView.ShouldStartLoad)屬性允許`UIWebView`控制項的執行個體是否`UIWebView`會載入頁面與否。
 
-此模式也會視幾個控制項提供的資料。 例如， [UITableView](https://developer.xamarin.com/api/type/UIKit.UITableView/)控制項是一個功能強大的資料表轉譯控制項 – 和外觀和內容由所驅使的執行個體[UITableViewDataSource](https://developer.xamarin.com/api/type/UIKit.UITableView/DataSource)
+此模式也會視幾個控制項提供的資料。 例如， [UITableView](xref:UIKit.UITableView)控制項是一個功能強大的資料表轉譯控制項 – 和外觀和內容由所驅使的執行個體[UITableViewDataSource](xref:UIKit.UITableViewDataSource)
 
 <a name="WeakDelegate"/>
 
@@ -379,7 +374,7 @@ web.Delegate = new Notifier ();
 除了強型別屬性，還有弱式的具型別的的委派，讓開發人員所需時以不同的方式繫結項目。
 強型別 everywhere`Delegate`屬性會公開在 Xamarin.iOS 的繫結，對應`WeakDelegate`也會公開屬性。
 
-使用時`WeakDelegate`，您必須負責適當地裝飾類別使用[匯出](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/)屬性來指定選取器。 例如: 
+使用時`WeakDelegate`，您必須負責適當地裝飾類別使用[匯出](xref:Foundation.ExportAttribute)屬性來指定選取器。 例如: 
 
 ```csharp
 class Notifier : NSObject  {
@@ -494,7 +489,7 @@ public class MyCallbacks : NSObject {
 }
 ```
 
-方法的 C# 名稱並不重要;最重要的是傳遞給 [匯出] 屬性的字串。
+C#方法並不重要; 名稱最重要的是傳遞給 [匯出] 屬性的字串。
 
 當使用這種程式設計樣式，請確定 C# 參數符合執行階段引擎會傳遞的實際型別。
 
@@ -674,7 +669,7 @@ public Foo (NSObjectFlag x)
 public Foo (NSCoder coder)
 ```
 
-這個建構函式可將物件從 NSCoding 執行個體正在初始化位置。 如需詳細資訊，請參閱 Apple 的[封存與序列化程式的指南。](http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i)
+這個建構函式可將物件從 NSCoding 執行個體正在初始化位置。 如需詳細資訊，請參閱 Apple 的[封存與序列化程式的指南。](https://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i)
 
 #### <a name="exceptions"></a>例外狀況
 
@@ -694,7 +689,7 @@ Xamarin.iOS 則具有會負責為您正在釋放資源，它們不會再使用�
 
 公開`IDisposable`介面是便利的方式，來協助開發人員在釋放物件可能封裝大型記憶體區塊的 (例如`UIImage`看起來會像只是無辜的指標，但無法指向 2 mb 的映像) 和其他重要且最有限的資源 （例如視訊解碼緩衝區）。
 
-NSObject 實作 IDisposable 介面，也[.NET Dispose 模式](http://msdn.microsoft.com/library/fs2xkftw.aspx)。 這可讓開發人員覆寫 Dispose 行為和發行自己的資源，視 NSObject 的子類別。 例如，請考慮一大堆映像會保持此檢視控制器：
+NSObject 實作 IDisposable 介面，也[.NET Dispose 模式](https://msdn.microsoft.com/library/fs2xkftw.aspx)。 這可讓開發人員覆寫 Dispose 行為和發行自己的資源，視 NSObject 的子類別。 例如，請考慮一大堆映像會保持此檢視控制器：
 
 ```csharp
 class MenuViewController : UIViewController {

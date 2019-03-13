@@ -4,17 +4,19 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 摘要的第 18 �
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 30fa06364e49294a71d37c29d4b9f1e95deac12f
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: db837ac8bfa1b7a946ee606e9481f9feb2a8a31f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156921"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050112"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>第 18 章的摘要。 MVVM
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
 
 一種架構應用程式的最佳方式是從基礎的程式碼，這有時稱為分隔的使用者介面*商務邏輯*。 有數種技術，但會以 XAML 為基礎的環境量身訂做的一個稱為 Model View ViewModel 或 MVVM。
 

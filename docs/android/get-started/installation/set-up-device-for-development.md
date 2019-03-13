@@ -4,15 +4,15 @@ description: 本文章將討論如何設定 Android 裝置，並將它連接到�
 ms.prod: xamarin
 ms.assetid: 9116A3AA-EA00-56AF-AE70-BAEEC045EF11
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 838e0df80334d6865466b189a65a3f7c590bb590
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: ce102f189321cbd49b37e7718c1f3d478c322f55
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935356"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526685"
 ---
 # <a name="set-up-device-for-development"></a>設定裝置以進行開發
 
@@ -62,7 +62,7 @@ _本文章將探討如何設定 Android 裝置，並將它連接到電腦，以�
 
 ## <a name="install-usb-drivers"></a>安裝 USB 驅動程式
 
-OS X 不需要這個步驟。只要用 USB 纜線將裝置連接到 Mac。
+OS X 不需要此步驟。只要利用 USB 傳輸線將裝置連接到 Mac 即可。
 
 可能需要安裝某些額外的驅動程式，Windows 電腦才能辨識透過 USB 連接的 Android 裝置。
 
@@ -144,7 +144,7 @@ USB 驅動程式下載之後，就必須安裝它們。
 
 ### <a name="connecting-over-wifi"></a>透過 WiFi 連接
 
-[Android Debug Bridge](http://developer.android.com/tools/help/adb.html) (*ADB*) 預設已設定為透過 USB 與 Android 裝置進行通訊。 可以重新設定為使用 TCP/IP，而不是 USB。 若要這樣做，裝置和電腦都必須在相同的 WiFi 網路上。 若要設定環境以透過 WiFi 進行偵錯，請從命令列發出下列步驟：
+[Android Debug Bridge](http://developer.android.com/tools/help/adb.html) (*ADB*) 預設已設定為透過 USB 與 Android 裝置進行通訊。 可以將其重新設定為使用 TCP/IP，而不是 USB。 若要這樣做，裝置和電腦都必須在相同的 WiFi 網路上。 若要設定環境以透過 WiFi 進行偵錯，請從命令列發出下列步驟：
 
 1.  判斷 Android 裝置的 IP 位址。 找出 IP 位址的其中一種方式，是到 [設定] > [Wi-Fi] 下，然後點選裝置連接到的 WiFi 網路。 這樣將會出現設定畫面，顯示網路連線的資訊，類似於以下螢幕擷取畫面中所見：
 

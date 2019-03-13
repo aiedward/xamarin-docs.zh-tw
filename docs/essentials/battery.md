@@ -1,32 +1,33 @@
 ---
-title: Xamarin.Essentials： 電池
-description: 本文件說明 Xamarin.Essentials，可讓您檢查裝置的電池資訊和監視的變更中的電池類別。
+title: Xamarin.Essentials:電池
+description: 本文件描述 Xamarin.Essentials 中的電池類別，可讓您檢查裝置的電池資訊並監視變更。
 ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 6b87625b3305d0a9ec40593d8b3fe29eb551bbf4
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
-ms.translationtype: MT
+ms.date: 01/22/2019
+ms.custom: video
+ms.openlocfilehash: 9ab2f960872386b68063d7af209ec0a7a24ac287
+ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514306"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54479663"
 ---
-# <a name="xamarinessentials-battery"></a>Xamarin.Essentials： 電池
+# <a name="xamarinessentials-battery"></a>Xamarin.Essentials:電池
 
-![發行前版本的 NuGet](~/media/shared/pre-release.png)
+**Battery** 類別可讓您檢查裝置的電池資訊和監視變更，並提供裝置的省電狀態資訊，這說明裝置是否正在低耗電模式中執行。 若裝置已開啟低電源狀態，應用程式應該避免背景處理。
 
-**電池**類別可讓您檢查裝置的電池資訊和監視的變更。
+## <a name="get-started"></a>開始使用
 
-## <a name="getting-started"></a>快速入門
+[!include[](~/essentials/includes/get-started.md)]
 
-若要存取**電池**須有下列的平台特定設定的功能。
+若要存取**電池**功能，需要下列平台特定設定。
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-`Battery`權限是必要的而且必須設定 Android 專案中。 這可以透過下列方式新增：
+需要 `Battery` 權限，而且必須在 Android 專案中設定。 能以下列方式新增：
 
-開啟**AssemblyInfo.cs**下方的檔案**屬性**資料夾，並新增：
+開啟 [Properties] 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.BatteryStats)]
@@ -34,36 +35,36 @@ ms.locfileid: "39514306"
 
 或更新 Android 資訊清單：
 
-開啟**AndroidManifest.xml**下方檔案**屬性**資料夾，並新增下列內**資訊清單**節點。
+開啟 [Properties] 資料夾下的 **AndroidManifest.xml** 檔案並在 [manifest] 節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.BATTERY_STATS" />
 ```
 
-或以滑鼠右鍵按一下 Android 專案，並開啟專案的內容。 底下**Android 資訊清單**尋找**必要權限：** 區域，並檢查**電池**權限。 這樣會自動更新**AndroidManifest.xml**檔案。
+禍以滑鼠右鍵按一 Android 專案並開啟專案的屬性。 在 [Android 資訊清單] 下，尋找 [必要權限] 區域並選取 [電池] 權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-不需要其他設定。
+不需要進行額外設定。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-不需要其他設定。
+不需要進行額外設定。
 
 -----
 
 ## <a name="using-battery"></a>使用電池
 
-在您的類別加入 Xamarin.Essentials 的參考：
+在類別中新增對 Xamarin.Essentials 的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-請檢查目前的電池資訊：
+檢查目前的電池資訊：
 
 ```csharp
-var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or -1.0 if unable to determine.
+var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or 1.0 when on AC or no battery.
 
 var state = Battery.State;
 
@@ -116,10 +117,10 @@ public class BatteryTest
     public BatteryTest()
     {
         // Register for battery changes, be sure to unsubscribe when needed
-        Battery.BatteryChanged += Battery_BatteryChanged;
+        Battery.BatteryInfoChanged += Battery_BatteryInfoChanged;
     }
 
-    void Battery_BatteryChanged(object sender, BatteryChangedEventArgs   e)
+    void Battery_BatteryInfoChanged(object sender, BatteryInfoChangedEventArgs   e)
     {
         var level = e.ChargeLevel;
         var state = e.State;
@@ -129,21 +130,53 @@ public class BatteryTest
 }
 ```
 
+以電池電力運作的裝置可能會進入低電源省電狀態。 有時候裝置會自動切換到此狀態，例如當電池電力低於總容量的 20% 時。 針對省電模式，作業系統會減少可能會耗電的活動。 當進入省電模式時，應用程式也可以透過避免進行背景處理或執行其他耗電量大的活動，以降低耗電量。
+
+您也可以使用靜態 `Battery.EnergySaverStatus` 屬性取得裝置目前的省電狀態：
+
+```csharp
+// Get energy saver status
+var status = Battery.EnergySaverStatus;
+```
+
+此屬性會傳回 `EnergySaverStatus` 列舉的成員，亦即 `On`, `Off` 或 `Unknown`。 若屬性傳回 `On`，應用程式應該避免進行背景處理或執行其他耗電量大的活動。
+
+應用程式也應該安裝事件處理常式。 **Power** 類別會公開當省電狀態變更時所觸發的事件：
+
+```csharp
+public class EnergySaverTest
+{
+    public EnergySaverTest()
+    {
+        // Subscribe to changes of energy-saver status
+        Battery.EnergySaverStatusChanged += OnEnergySaverStatusChanged;
+    }
+
+    private void OnEnergySaverStatusChanged(EnergySaverStatusChangedEventArgs e)
+    {
+        // Process change
+        var status = e.EnergySaverStatus;
+    }
+}
+```
+
+若省電狀態變更為 `On`，應用程式應該停止執行背景處理。 若狀態變更為 `Unknown` 或 `Off`，應用程式可以繼續進行背景處理。
+
+
 ## <a name="platform-differences"></a>平台差異
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-任何平台差異。
+無平台差異。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-* 裝置必須用來測試 Api。 
-* 只會傳回`AC`或是`Battery`如`PowerSource`。
-* 無法取消震動。
+* 裝置必須用來測試 API。 
+* 針對 `PowerSource`，只會傳回 `AC` 或 `Battery`。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-* 只會傳回`AC`或是`Battery`如`PowerSource`。
+* 針對 `PowerSource`，只會傳回 `AC` 或 `Battery`。
 
 -----
 
@@ -151,3 +184,9 @@ public class BatteryTest
 
 - [電池原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Battery)
 - [電池 API 文件](xref:Xamarin.Essentials.Battery)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Battery-Essential-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

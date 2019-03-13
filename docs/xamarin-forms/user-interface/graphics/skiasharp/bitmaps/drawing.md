@@ -4,19 +4,21 @@ description: 了解如何建立 SkiaSharp 點陣圖，然後藉由建立根據�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: c8ddf8c0829cea319dd93dd9c3686b94ed8eb89e
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 9e76558597928bafa25f6a217c6f0055657e4c22
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615586"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053074"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>建立和上 SkiaSharp 點陣圖繪製
 
-您已了解如何應用程式可以載入點陣圖從網站、 應用程式資源和使用者的相片媒體櫃。 它也可建立新應用程式內的點陣圖。 最簡單的方法牽涉到其中的建構函式[ `SKBitmap` ](https://developer.xamarin.com/api/constructor/SkiaSharp.SKBitmap.SKBitmap/p/System.Int32/System.Int32/System.Boolean/):
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+
+您已了解如何應用程式可以載入點陣圖從網站、 應用程式資源和使用者的相片媒體櫃。 它也可建立新應用程式內的點陣圖。 最簡單的方法牽涉到其中的建構函式[ `SKBitmap` ](xref:SkiaSharp.SKBitmap.%23ctor(System.Int32,System.Int32,System.Boolean)):
 
 ```csharp
 SKBitmap bitmap = new SKBitmap(width, height);
@@ -37,7 +39,7 @@ SKBitmap bitmap = new SKBitmap(width, height);
 
 ## <a name="drawing-on-the-bitmap"></a>點陣圖的繪圖
 
-點陣圖的介面上繪製等同於在視訊顯示器上繪圖。 若要繪製視訊的顯示畫面上，您取得`SKCanvas`物件從`PaintSurface`事件引數。 若要繪製點陣圖上，建立`SKCanvas`物件使用[ `SKCanvas` ](https://developer.xamarin.com/api/constructor/SkiaSharp.SKCanvas.SKCanvas/p/SkiaSharp.SKBitmap/)建構函式：
+點陣圖的介面上繪製等同於在視訊顯示器上繪圖。 若要繪製視訊的顯示畫面上，您取得`SKCanvas`物件從`PaintSurface`事件引數。 若要繪製點陣圖上，建立`SKCanvas`物件使用[ `SKCanvas` ](xref:SkiaSharp.SKCanvas.%23ctor(SkiaSharp.SKBitmap))建構函式：
 
 ```csharp
 SKCanvas canvas = new SKCanvas(bitmap);
@@ -54,7 +56,7 @@ using (SKCanvas canvas = new SKCanvas(bitmap))
 
 然後可以顯示點陣圖。 稍後，程式可以建立新`SKCanvas`上相同的點陣圖，，和在其上繪製多型的物件。
 
-**Hello 點陣圖**頁面**[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式寫入的文字"Hello，點陣圖"！ 在點陣圖，則將顯示的點陣圖多次。  
+**Hello 點陣圖**頁面 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式寫入的文字"Hello，點陣圖"！ 在點陣圖，則將顯示的點陣圖多次。  
 
 建構函式`HelloBitmapPage`一開始先建立`SKPaint`顯示文字的物件。 它會判斷文字字串的維度，並會使用這些維度建立的點陣圖。 然後它會建立`SKCanvas`物件會根據該點陣圖，呼叫`Clear`，然後呼叫`DrawText`。 它一律是個不錯的主意，呼叫`Clear`與新的點陣圖因為新建立的點陣圖可能包含隨機資料。
 
@@ -111,7 +113,7 @@ public partial class HelloBitmapPage : ContentPage
 
 `PaintSurface`處理常式可以呈現多個時間的資料列和資料行中顯示的點陣圖。 請注意，`Clear`方法中的`PaintSurface`處理常式有引數的`SKColors.Aqua`，其色彩的顯示表面背景：
 
-[![Hello，點陣圖 ！] (drawing-images/HelloBitmap.png "Hello，點陣圖 ！")](drawing-images/HelloBitmap-Large.png#lightbox)
+[![Hello，點陣圖 ！](drawing-images/HelloBitmap.png "Hello，點陣圖 ！")](drawing-images/HelloBitmap-Large.png#lightbox)
 
 青色背景的外觀顯示點陣圖是透明的文字除外。
 
@@ -123,9 +125,9 @@ public partial class HelloBitmapPage : ContentPage
 
 `Clear` 有兩種不同的版本： 
 
-- [ `Clear` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Clear/p/SkiaSharp.SKColor/)方法`SKColor`參數會取代該顏色的像素中的顯示表面的像素為單位。
+- [ `Clear` ](xref:SkiaSharp.SKCanvas.Clear(SkiaSharp.SKColor))方法`SKColor`參數會取代該顏色的像素中的顯示表面的像素為單位。
 
-- [ `Clear` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Clear()/)不含任何參數的方法會取代以像素[ `SKColors.Empty` ](https://developer.xamarin.com/api/property/SkiaSharp.SKColors.Empty/)色彩，也就是其中的所有元件 （紅色、 綠色、 藍色和 alpha） 會設定為零的色彩。 這個色彩有時稱為 「 透明的黑色。 」
+- [ `Clear` ](xref:SkiaSharp.SKCanvas.Clear)不含任何參數的方法會取代以像素[ `SKColors.Empty` ](xref:SkiaSharp.SKColors.Empty)色彩，也就是其中的所有元件 （紅色、 綠色、 藍色和 alpha） 會設定為零的色彩。 這個色彩有時稱為 「 透明的黑色。 」
 
 呼叫`Clear`上新的點陣圖不含引數初始化整個點陣圖是完全透明。 後續繪製點陣圖上的任何項目通常會是不透明或部分的不透明。
 
@@ -151,7 +153,7 @@ Color = new SKColor(0, 0, 0, 0)
 
 ## <a name="bitmap-color-types"></a>點陣圖色彩類型
 
-最簡單`SKBitmap`建構函式可讓您指定整數像素寬度] 和 [點陣圖的高度。 其他`SKBitmap`建構函式是更複雜。 這些建構函式需要兩個列舉類型的引數： [ `SKColorType` ](https://developer.xamarin.com/api/type/SkiaSharp.SKColorType/)並[ `SKAlphaType` ](https://developer.xamarin.com/api/type/SkiaSharp.SKAlphaType/)。 其他建構函式使用[ `SKImageInfo` ](https://developer.xamarin.com/api/type/SkiaSharp.SKImageInfo/)結構中，會將此項資訊合併。
+最簡單`SKBitmap`建構函式可讓您指定整數像素寬度] 和 [點陣圖的高度。 其他`SKBitmap`建構函式是更複雜。 這些建構函式需要兩個列舉類型的引數： [ `SKColorType` ](xref:SkiaSharp.SKColorType)並[ `SKAlphaType` ](xref:SkiaSharp.SKAlphaType)。 其他建構函式使用[ `SKImageInfo` ](xref:SkiaSharp.SKImageInfo)結構中，會將此項資訊合併。
 
 `SKColorType`列舉型別有 9 的成員。 每一個這些成員會描述特定的方式儲存的點陣圖像素的：
 
@@ -161,7 +163,7 @@ Color = new SKColor(0, 0, 0, 0)
 - `Argb4444` &mdash; 每個像素都是 16 位元，每個對於 4 alpha、 紅色、 綠色和藍色
 - `Rgba8888` &mdash; 每個像素都是 32 位元，每個為 8 紅色、 綠色、 藍色和 alpha
 - `Bgra8888` &mdash; 每個像素都是 32 位元，8 每個藍色、 綠色、 紅色和 alpha
-- `Index8` &mdash; 每個像素 8 位元，並代表內的索引 [`SKColorTable`](https://developer.xamarin.com/api/type/SkiaSharp.SKColorTable/)
+- `Index8` &mdash; 每個像素 8 位元，並代表內的索引 [`SKColorTable`](xref:SkiaSharp.SKColorTable)
 - `Gray8` &mdash; 每個像素都是從黑色的灰色陰影代表白色的 8 位元
 - `RgbaF16` &mdash; 每個像素都是 64 位元，具有紅色、 綠色、 藍色和 alpha 以 16 位元浮點數格式
 
@@ -169,7 +171,7 @@ Color = new SKColor(0, 0, 0, 0)
 
 如今，程式設計人員幾乎一律使用全彩點陣圖並不必擔心會有其他格式。 例外狀況是`RgbaF16`允許更高的色彩解析度比甚至是全彩格式的格式。 不過，這種格式使用於特製化的用途，例如醫學造影，而且沒什麼特別意義與標準的全彩顯示搭配使用時。
 
-這一系列的文章會限制本身`SKBitmap`色彩，依預設，若未使用的格式`SKColorType`成員會指定別名。 這個預設的格式根據基礎平台。 Xamarin.Forms 所支援的平台的預設色彩類型是：
+這一系列的文章會限制本身`SKBitmap`色彩，依預設，若未使用的格式`SKColorType`指定成員。 這個預設的格式根據基礎平台。 Xamarin.Forms 所支援的平台的預設色彩類型是：
 
 - `Rgba8888` 適用於 iOS 和 Android
 - `Bgra8888` 適用於 UWP
@@ -260,9 +262,9 @@ public partial class MonkeyMoustachePage : ContentPage
 
 方法`SKCanvas`您可以使用上繪製點陣圖包含`DrawBitmap`。 這表示，您可以繪製一個點陣圖另一個，通常以某種方式加以修改。
 
-若要修改點陣圖的最具彈性的方式是透過存取實際的像素位元、 主旨的文章涵蓋**[存取 SkiaSharp 點陣圖像素](pixel-bits.md)**。 但有許多其他技術來修改並不需要存取的像素位元的點陣圖。
+若要修改點陣圖的最具彈性的方式是透過存取實際的像素位元、 主旨的文章涵蓋 **[存取 SkiaSharp 點陣圖像素](pixel-bits.md)** 。 但有許多其他技術來修改並不需要存取的像素位元的點陣圖。
 
-隨附下列點陣圖**[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式是 360 像素寬度和高度 480 像素：
+隨附下列點陣圖 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式是 360 像素寬度和高度 480 像素：
 
 ![Mountain Climbers](drawing-images/MountainClimbers.jpg "Mountain Climbers")
 
@@ -494,7 +496,7 @@ public partial class BitmapRotatorPage : ContentPage
 
 呼叫另一個作業通常對點陣圖_翻轉_。 就概念而言，在垂直軸或透過中央的點陣圖的水平軸周圍的三個維度旋轉點陣圖。 垂直翻轉建立鏡像映像。
 
-**點陣圖擋板**頁面**[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式 demonstates 這些程序。 XAML 檔案包含`SKCanvasView`和的垂直和水平翻轉的兩個按鈕：
+**點陣圖擋板**頁面 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式會示範這些程序。 XAML 檔案包含`SKCanvasView`和的垂直和水平翻轉的兩個按鈕：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -596,5 +598,5 @@ public partial class BitmapFlipperPage : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

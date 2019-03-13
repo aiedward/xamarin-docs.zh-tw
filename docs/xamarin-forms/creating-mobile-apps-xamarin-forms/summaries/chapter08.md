@@ -4,17 +4,19 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 第 8 章摘要。
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 1aa5226e1e6867f77eea4d7679650e8d62f5b981
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 75f153499edb6d979f9a0269a1439eaf8ca53878
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156986"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061063"
 ---
 # <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>第 8 章的摘要。 程式碼和 XAML 搭配
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)
 
 這一章探討 XAML 更深入，並特別的程式碼和 XAML 的互動方式。
 
@@ -79,5 +81,5 @@ ms.locfileid: "39156986"
 
 - [第 8 章全文檢索 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf)
 - [第 8 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)
-- [第 8 章 F # 範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FS/XamlKeypad)
+- [第 8 章F#範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FS/XamlKeypad)
 - [在 XAML 中傳遞引數](~/xamarin-forms/xaml/passing-arguments.md)

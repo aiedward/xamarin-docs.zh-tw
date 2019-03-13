@@ -1,43 +1,43 @@
 ---
 title: UrhoSharp Android 支援
-description: 本文件說明特定的 Android 安裝程式和功能相關 UrhoSharp 的資訊。 它在討論支援的架構，特別是，如何建立專案時，設定和啟動 Urho，和自訂內嵌的 Urho。
+description: 本文件說明 Android 專用的安裝程式和功能相關 UrhoSharp 的資訊。 特別的是，它支援的架構，會討論如何建立專案時，設定及啟動 Urho，和自訂內嵌 Urho。
 ms.prod: xamarin
 ms.assetid: 8409BD81-B1A6-4F5D-AE11-6BBD3F7C6327
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 6e489f52712989b5f94fa52d5ec6f22a13ce6252
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: e7371fa85fd5955e9a0fd285adb32844001821b3
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783777"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105426"
 ---
 # <a name="urhosharp-android-support"></a>UrhoSharp Android 支援
 
-_Android 的特定設定和功能_
+_Android 的特定安裝程式和功能_
 
-雖然 Urho 是可攜式類別程式庫，並可讓相同的 API，用於在各種平台間之遊戲的邏輯，您仍然需要初始化 Urho 驅動程式中的平台特定，並在某些情況下，您會想要利用平台特定的功能.
+雖然 Urho 是可攜式類別庫，並可讓相同的 API，來使用於各種平台的遊戲邏輯，您仍然需要初始化 Urho，在您的平台特定的驅動程式，以及在某些情況下，您會想要充分利用平台特定功能.
 
 在下列頁面中，假設`MyGame`是子類別的`Application`類別。
 
 ## <a name="architectures"></a>架構
 
-**支援的架構**: x86、 armeabi，armeabi v7a
+**支援的架構**: x86、 armeabi，armeabi-v7a
 
 ## <a name="create-a-project"></a>建立專案
 
-建立 Android 專案，並加入 UrhoSharp NuGet 封裝。
+建立 Android 專案，並新增 UrhoSharp NuGet 套件。
 
-新增資料包含您的資產**資產**目錄，並確定所有檔案都有**AndroidAsset**為**建置動作**。
+新增資料包含您的資產**資產**目錄，並確定所有檔案都有**AndroidAsset**作為**建置動作**。
 
-![安裝程式的專案](android-images/image-3.png "包含資產目錄資產加入資料")
+![專案安裝程式](android-images/image-3.png "加入的資料，其中包含的資產的資產目錄")
 
 ## <a name="configure-and-launching-urho"></a>設定並啟動 Urho
 
 加入 using 陳述式`Urho`和`Urho.Android`命名空間，然後新增此程式碼初始化 Urho，以及啟動您的應用程式。
 
-在 MyGame 類別中實作時，執行遊戲時，最簡單的方式是呼叫
+MyGame 類別中實作執行遊戲時，最簡單的方式是呼叫
 
 ```csharp
 UrhoSurface.RunInActivity<MyGame>();
@@ -47,7 +47,7 @@ UrhoSurface.RunInActivity<MyGame>();
 
 ## <a name="custom-embedding-of-urho"></a>自訂內嵌 Urho
 
-您可以另外讓 Urho 接管整個應用程式畫面中，並使用它做為您的應用程式的元件，您可以建立`SurfaceView`透過：
+您可以或者讓 Urho 接管整個應用程式 畫面中，並將它作為您的應用程式的元件，您可以建立`SurfaceView`透過：
 
 ```csharp
 var surface = UrhoSurface.CreateSurface<MyGame>(activity)

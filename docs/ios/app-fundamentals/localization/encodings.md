@@ -1,44 +1,45 @@
 ---
-title: Xamarin.iOS 中的國際化編碼
-description: 本文件說明 Xamarin.iOS，討論可用的編碼，以及如何將它們加入至應用程式中的國際化編碼。
+title: 在 Xamarin.iOS 中的國際化編碼
+description: 本文件說明 Xamarin.iOS，討論可用的編碼，以及如何將它們新增至應用程式中的國際化編碼。
 ms.prod: xamarin
 ms.assetid: F5117294-28BB-4583-B6A0-A339B050FDE1
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.openlocfilehash: 4963b0f95ae48ee56462a82d2f82a8dcaa231a23
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.date: 04/28/2017
+ms.openlocfilehash: db24c8677b0a3099193132575e92bc43a4c31dea
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784122"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675558"
 ---
-# <a name="internationalization-encodings-in-xamarinios"></a>Xamarin.iOS 中的國際化編碼
+# <a name="internationalization-encodings-in-xamarinios"></a>在 Xamarin.iOS 中的國際化編碼
 
 並非所有的編碼預設會包含 Xamarin.iOS 類別庫中。
 
-若要減少應用程式的大小，Xamarin.iOS 不包含任何特定的編碼方式，，因此您必須以指示 mtouch 加入的組件包含您需要的編碼方式的支援。
+若要減少應用程式的大小，Xamarin.iOS 不包含任何特定的編碼方式，而且您必須指示 mtouch 以包含組件，其中包含支援，您需要的編碼方式。
 
-這是從 Visual Studio 中的 [iOS 建置] / [進階] 窗格選取額外的編碼方式，針對 Mac 或 Visual Studio:
+這是藉由 for Mac 或 Visual Studio，然後從 Visual Studio 中的 [iOS 組建] / [進階] 窗格中選取額外的編碼：
 
- [![](encodings-images/00.png "選取的額外的編碼方式")](encodings-images/00.png#lightbox)
+ [![](encodings-images/00.png "選取額外的編碼方式")](encodings-images/00.png#lightbox)
 
- [![](encodings-images/00a.png "選取的額外的編碼方式")](encodings-images/00a.png#lightbox)
+ [![](encodings-images/00a.png "選取額外的編碼方式")](encodings-images/00a.png#lightbox)
 
-您可以選取下列其中一種：
+您可以選取其中一個：
 
--  cjk： 的中文、 日文和韓文
+-  中日韓： 的中文、 日文和韓文
 -  mideast： 阿拉伯文、 希伯來文、 土耳其文和 Latin5。
--  其他： 斯拉夫文、 波羅的海、 越南文、 烏克蘭和泰文
--  罕見： EBCDIC 編碼方式和其他極少數的字碼頁
--  西： 拉丁語言時，復活節和西歐
+-  其他： 斯拉夫文、 波羅的海文、 越南文、 烏克蘭文和泰文
+-  罕見： EBCDIC 編碼方式和其他少數的字碼頁
+-  西部： 拉丁語言時，伊斯特和西歐
 -  全部
 
 
  <a name="cjk" />
 
 
-## <a name="cjk"></a>cjk
+## <a name="cjk"></a>中日韓
 
 -  CP51932
 -  CP932
@@ -125,7 +126,7 @@ ms.locfileid: "34784122"
  <a name="west" />
 
 
-## <a name="west"></a>西
+## <a name="west"></a>西部
 
 -  CP10000
 -  CP10079

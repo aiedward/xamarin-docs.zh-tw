@@ -3,15 +3,15 @@ title: 架構
 ms.prod: xamarin
 ms.assetid: 7DC22A08-808A-DC0C-B331-2794DD1F9229
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: e6a30247c13deab871bf230aba53b9963981fd02
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: ea66cda0e2a1935a430c064c9cebd4134d295729
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997396"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669228"
 ---
 # <a name="architecture"></a>架構
 
@@ -33,8 +33,9 @@ Xamarin.Android 開發人員存取作業系統透過他們的專業知識的.NET
 
 Android 應用程式封裝是使用 ZIP 容器 *.apk*副檔名。 Xamarin.Android 應用程式套件會有相同的結構和配置為一般 Android 套件的詳細資訊，加上下列各項：
 
--   （包含 IL） 的應用程式組件*預存*內未壓縮*組件*資料夾。 程序期間在版本中啟動組建 *.apk*是*mmap()* ed，到處理程序和組件會從記憶體載入。 這可讓應用程式啟動較快，因為組件不需要在執行之前要擷取。 - *注意：* 組件位置資訊，例如[Assembly.Location](xref:System.Reflection.Assembly.Location)並[Assembly.CodeBase](xref:System.Reflection.Assembly.CodeBase)
-    *不能指望*版本組建。 沒有為不同的檔案系統項目，而且有任何可用的位置。
+-   （包含 IL） 的應用程式組件*預存*內未壓縮*組件*資料夾。 程序期間在版本中啟動組建 *.apk*是*mmap()* ed，到處理程序和組件會從記憶體載入。 這可讓應用程式啟動較快，因為組件不需要在執行之前要擷取。  
+-   *注意：* 組件位置資訊，例如[Assembly.Location](xref:System.Reflection.Assembly.Location)並[Assembly.CodeBase](xref:System.Reflection.Assembly.CodeBase)
+    *不能指望*發行組建中。 沒有為不同的檔案系統項目，而且有任何可用的位置。
 
 
 -   內有包含 Mono 執行階段的原生程式庫 *.apk* 。 Xamarin.Android 應用程式必須包含原生程式庫所需/目標 Android 架構，例如*armeabi* ， *armeabi-v7a* ， *x86* 。 Xamarin.Android 應用程式無法在平台上執行，除非它包含適當的執行階段程式庫。
@@ -46,7 +47,7 @@ Xamarin.Android 應用程式也包含*Android 可呼叫包裝函式*以允許 An
 
 ## <a name="android-callable-wrappers"></a>Android 可呼叫包裝函式
 
-- **Android 可呼叫包裝函式**都[JNI](http://en.wikipedia.org/wiki/Java_Native_Interface)橋接器會使用任何 Android 執行階段需要叫用 managed 程式碼的時間。 Android 可呼叫包裝函式是虛擬的方法可以覆寫，而且可以實作的 Java 介面。 請參閱[Java 整合概觀](~/android/platform/java-integration/index.md)文件，如需詳細資訊。
+- **Android 可呼叫包裝函式**都[JNI](https://en.wikipedia.org/wiki/Java_Native_Interface)橋接器會使用任何 Android 執行階段需要叫用 managed 程式碼的時間。 Android 可呼叫包裝函式是虛擬的方法可以覆寫，而且可以實作的 Java 介面。 請參閱[Java 整合概觀](~/android/platform/java-integration/index.md)文件，如需詳細資訊。
 
 
 <a name="Managed_Callable_Wrappers" />
@@ -71,7 +72,7 @@ Xamarin.Android 應用程式也包含*Android 可呼叫包裝函式*以允許 An
 受管理的可呼叫包裝函式的子類別是可能的所在的 「 有趣 」 的應用程式特定邏輯。 這些包括自訂[Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)子類別 (例如[Activity1](https://github.com/xamarin/monodroid-samples/blob/master/HelloM4A/Activity1.cs#L13)預設專案範本中的型別)。 (具體而言，這些是任何*Java.Lang.Object*子類別來完成此動作*不*包含[RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)自訂屬性或[RegisterAttribute.DoNotGenerateAcw](https://developer.xamarin.com/api/property/Android.Runtime.RegisterAttribute.DoNotGenerateAcw/)已*false*，這是預設值。)
 
 像是 managed 可呼叫包裝函式，管理可呼叫包裝函式的子類別也包含全域參考，可透過存取[Java.Lang.Object.Handle](https://developer.xamarin.com/api/property/Java.Lang.Object.Handle/)屬性。 就像 managed 可呼叫包裝函式，全域參考可以明確地釋放藉由呼叫[Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/)。
-不同於受管理的可呼叫包裝函式，*小心*應該再處置這類情況下，做為進入*dispose （)* ing 的執行個體將會中斷 Java 執行個體之間的對應 (的執行個體Android 可呼叫包裝函式） 和受管理的執行個體。
+不同於受管理的可呼叫包裝函式，*小心*應該再處置這類情況下，做為進入*dispose （)*-ing 的執行個體將會中斷 Java 執行個體之間的對應 (的執行個體Android 可呼叫包裝函式） 和受管理的執行個體。
 
 
 ### <a name="java-activation"></a>Java 啟用
@@ -87,8 +88,8 @@ Xamarin.Android 應用程式也包含*Android 可呼叫包裝函式*以允許 An
 2. 用來自基底類別建構函式的虛擬方法引動過程。
 
 
-請注意，(2) 是溢位的抽象概念。 在 Java 中，和在 C# 中，從建構函式呼叫虛擬方法一律會叫用最具衍生性的方法實作。 例如， [TextView (內容，AttributeSet，int) 建構函式](https://developer.xamarin.com/api/constructor/Android.Widget.TextView.TextView/p/Android.Content.Context/Android.Util.IAttributeSet/System.Int32/)叫用虛擬方法[TextView.getDefaultMovementMethod()](http://developer.android.com/reference/android/widget/TextView.html#getDefaultMovementMethod())，這會繫結為[TextView.DefaultMovementMethod 屬性](https://developer.xamarin.com/api/property/Android.Widget.TextView.DefaultMovementMethod/)。
-因此，如果型別[LogTextBox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs) (1) 要[子類別 TextView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L26)、 (2)[覆寫 TextView.DefaultMovementMethod](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L45)，以及 (3)[啟動的執行個體透過 XML 類別](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Resources/layout/log_text_box_1.xml#L29)覆寫*DefaultMovementMethod* ACW 建構函式有機會執行，以及 C# 建構函式有機會執行之前，它會發生之前，會叫用屬性。
+請注意，(2) 是溢位的抽象概念。 在 Java 中，和在 C# 中，從建構函式呼叫虛擬方法一律會叫用最具衍生性的方法實作。 例如， [TextView (內容，AttributeSet，int) 建構函式](https://developer.xamarin.com/api/constructor/Android.Widget.TextView.TextView/p/Android.Content.Context/Android.Util.IAttributeSet/System.Int32/)叫用虛擬方法[TextView.getDefaultMovementMethod()](https://developer.android.com/reference/android/widget/TextView.html#getDefaultMovementMethod())，這會繫結為[TextView.DefaultMovementMethod 屬性](https://developer.xamarin.com/api/property/Android.Widget.TextView.DefaultMovementMethod/)。
+因此，如果型別[LogTextBox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs) (1) 要[子類別 TextView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L26)、 (2)[覆寫 TextView.DefaultMovementMethod](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L45)，以及 (3)[啟動的執行個體透過 XML 類別](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Resources/layout/log_text_box_1.xml#L29)覆寫*DefaultMovementMethod*之前 ACW 建構函式有機會執行，而且它會發生之前，會叫用屬性C#建構函式有機會執行。
 
 這支援具現化執行個體 LogTextBox 透過[LogTextView （IntPtr，JniHandleOwnership）](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L28)建構函式時 ACW LogTextBox 執行個體第一次進入 managed 程式碼，然後叫用[(內容，IAttributeSet，int) LogTextBox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L41)建構函式*相同的執行個體上*ACW 建構函式在執行時。
 
@@ -98,7 +99,7 @@ Xamarin.Android 應用程式也包含*Android 可呼叫包裝函式*以允許 An
 
 2.  Android 配置物件圖形中，會具現化，和具現化的執行個體*monodroid.apidemo.LogTextBox* ，如 ACW *LogTextBox* 。
 
-3.  *Monodroid.apidemo.LogTextBox*建構函式執行[android.widget.TextView](http://developer.android.com/reference/android/widget/TextView.html#TextView%28android.content.Context,%20android.util.AttributeSet%29)建構函式。
+3.  *Monodroid.apidemo.LogTextBox*建構函式執行[android.widget.TextView](https://developer.android.com/reference/android/widget/TextView.html#TextView%28android.content.Context,%20android.util.AttributeSet%29)建構函式。
 
 4.  *TextView*建構函式會叫用*monodroid.apidemo.LogTextBox.getDefaultMovementMethod()* 。
 
@@ -177,8 +178,8 @@ I/mono-stdout( 2993): [Managed: Value=]
 
 ## <a name="application-startup"></a>應用程式啟動
 
-當活動、 服務時，等啟動時，Android 會先檢查以查看是否有執行裝載活動/service/等等的程序。如果沒有這類處理序存在，則會建立新的處理序， [AndroidManifest.xml](http://developer.android.com/guide/topics/manifest/manifest-intro.html)是讀中指定的型別[ /manifest/application/@android:name ](http://developer.android.com/guide/topics/manifest/application-element.html#nm)屬性會載入並具現化。 下一步，所指定的所有型別[ /manifest/application/provider/@android:name ](http://developer.android.com/guide/topics/manifest/provider-element.html#nm)屬性值會具現化，並且具有其[ContentProvider.attachInfo%28)](https://developer.xamarin.com/api/member/Android.Content.ContentProvider.AttachInfo/p/Android.Content.Context/Android.Content.PM.ProviderInfo/)叫用方法。 藉由新增的 Xamarin.Android 攔截到這個*mono。MonoRuntimeProvider* *ContentProvider*來建置程序期間的 AndroidManifest.xml。 *Mono。MonoRuntimeProvider.attachInfo()* 方法會負責 Mono 執行階段載入處理序。
-若要使用 Mono，此點之前的任何嘗試將會失敗。 (*附註*： 這是為什麼在類型的子類別[來取代](https://developer.xamarin.com/api/type/Android.App.Application/)需要提供[（IntPtr，JniHandleOwnership） 建構函式](https://github.com/xamarin/monodroid-samples/blob/a9e8ef23/SanityTests/Hello.cs#L103)，因為應用程式執行個體建立可以初始化 Mono 之前）。
+當活動、 服務時，等啟動時，Android 會先檢查以查看是否有執行裝載活動/service/等等的程序。如果沒有這類處理序存在，則會建立新的處理序， [AndroidManifest.xml](https://developer.android.com/guide/topics/manifest/manifest-intro.html)是讀中指定的型別[ /manifest/application/@android:name ](https://developer.android.com/guide/topics/manifest/application-element.html#nm)屬性會載入並具現化。 下一步，所指定的所有型別[ /manifest/application/provider/@android:name ](https://developer.android.com/guide/topics/manifest/provider-element.html#nm)屬性值會具現化，並且具有其[ContentProvider.attachInfo%28)](https://developer.xamarin.com/api/member/Android.Content.ContentProvider.AttachInfo/p/Android.Content.Context/Android.Content.PM.ProviderInfo/)叫用方法。 藉由新增的 Xamarin.Android 攔截到這個*mono。MonoRuntimeProvider* *ContentProvider*來建置程序期間的 AndroidManifest.xml。 *Mono。MonoRuntimeProvider.attachInfo()* 方法會負責 Mono 執行階段載入處理序。
+若要使用 Mono，此點之前的任何嘗試將會失敗。 (*注意*:這就是為什麼類型的子類別[來取代](https://developer.xamarin.com/api/type/Android.App.Application/)需要提供[（IntPtr，JniHandleOwnership） 建構函式](https://github.com/xamarin/monodroid-samples/blob/a9e8ef23/SanityTests/Hello.cs#L103)、 建立應用程式執行個體時才可以初始化 Mono。)
 
-一旦處理程序初始化完成之後，`AndroidManifest.xml`查閱來尋找活動/service/等啟動的類別名稱。 例如， [ /manifest/application/activity/@android:name屬性](http://developer.android.com/guide/topics/manifest/activity-element.html#nm)用來判斷用來載入的活動名稱。 活動，此類型必須繼承[android.app.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)。
-透過載入指定的型別[Class.forName()](http://developer.android.com/reference/java/lang/Class.html#forName(java.lang.String)) (這需要的類型為 Java 類型，因此 Android 可呼叫包裝函式)，然後具現化。 建立 Android 可呼叫包裝函式執行個體將會觸發建立對應的 C# 類型的執行個體。 Android 會接著叫用[Activity.onCreate(Bundle)](http://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle)) ，這會對應[Activity.OnCreate(Bundle)](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)要叫用，以及您要關閉的競爭情況。
+一旦處理程序初始化完成之後，`AndroidManifest.xml`查閱來尋找活動/service/等啟動的類別名稱。 例如， [ /manifest/application/activity/@android:name屬性](https://developer.android.com/guide/topics/manifest/activity-element.html#nm)用來判斷用來載入的活動名稱。 活動，此類型必須繼承[android.app.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)。
+透過載入指定的型別[Class.forName()](https://developer.android.com/reference/java/lang/Class.html#forName(java.lang.String)) (這需要的類型為 Java 類型，因此 Android 可呼叫包裝函式)，然後具現化。 建立 Android 可呼叫包裝函式執行個體將會觸發建立對應的 C# 類型的執行個體。 Android 會接著叫用[Activity.onCreate(Bundle)](https://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle)) ，這會對應[Activity.OnCreate(Bundle)](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)要叫用，以及您要關閉的競爭情況。

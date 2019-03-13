@@ -4,19 +4,21 @@ description: DatePicker 是 Xamarin.Forms 檢視，可讓使用者選取日期�
 ms.prod: xamarin
 ms.assetid: 68E8EF8A-42E7-4939-8ABE-64D060E609D9
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 06/04/2018
-ms.openlocfilehash: 553957bfa06c7b7a9c5261e426ebee4190de5ebb
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 263cbb4aed47794a09341bb8c78c4835510e50c0
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994922"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059570"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 
-_Xamarin.Forms 檢視，可讓使用者選取日期_
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)
+
+_Xamarin.Forms 檢視，可讓使用者選取日期。_
 
 Xamarin.Forms [ `DatePicker` ](xref:Xamarin.Forms.DatePicker)叫用平台的日期選擇器控制項，並可讓使用者選取日期。 `DatePicker` 定義八個屬性：
 
@@ -181,9 +183,12 @@ public partial class MainPage : ContentPage
 
 [![開始日期之間的幾天](datepicker-images/DaysBetweenDatesStart.png "開始的日期之間的幾天")](datepicker-images/DaysBetweenDatesStart-Large.png#lightbox "開始日期之間的幾天")
 
-點選其中一種`DatePicker`顯示叫用平台的日期選擇器。 三個平台實作此日期選擇器以非常不同的方式，但是每一種方法是該平台的使用者熟悉：
+點選其中一種`DatePicker`顯示叫用平台的日期選擇器。 平台實作此日期選擇器以非常不同的方式，但是每一種方法是該平台的使用者熟悉：
 
 [![選取的日期之間的天數](datepicker-images/DaysBetweenDatesSelect.png "天的日期之間選取")](datepicker-images/DaysBetweenDatesSelect-Large.png#lightbox "選取日期之間的天數")
+
+> [!TIP]
+> 在 Android 上， `DatePicker`  對話方塊可以藉由覆寫自訂`CreateDatePickerDialog`中自訂轉譯器的方法。 這可讓，比方說，可以加入至對話方塊中的其他按鈕。
 
 選取兩個日期之後，應用程式會顯示這些日期之間的天數：
 

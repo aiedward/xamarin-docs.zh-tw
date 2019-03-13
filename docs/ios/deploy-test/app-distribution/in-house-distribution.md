@@ -4,15 +4,15 @@ description: 本文件針對 Apple Enterprise Developer Program 的成員，提�
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 1dff0e614943805930cf7d838110c4a42eee6f48
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
+ms.openlocfilehash: c1e1b2d7bfb43c256c71abb62e7d85a05b096419
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353200"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103578"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS 應用程式的內部作業散發
 
@@ -125,11 +125,11 @@ Apple Developer Enterprise Program 憑證將持續三年，而佈建設定檔將
 
 7. 按一下 [產生] 按鈕，以建立新的設定檔，並完成流程。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  ，您可能需要結束 Visual Studio for Mac 並讓 Xcode 重新整理其可用「簽署身分識別」和「佈建設定檔」的清單 (依照[要求簽署身分識別](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)區段中的指示)，之後才能在 Visual Studio for Mac 中使用新的散發設定檔。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 您可能需要結束 Visual Studio 並讓 Xcode (在建置主機的 Mac 上) 重新整理其可用「簽署身分識別」和「佈建設定檔」的清單 (依照[要求簽署身分識別](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)區段中的指示)，之後才能在 Visual Studio 中使用新的散發設定檔。
 

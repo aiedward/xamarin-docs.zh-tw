@@ -4,17 +4,19 @@ description: 這篇文章介紹可繫結的屬性，並示範如何建立和使�
 ms.prod: xamarin
 ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: 241579d51d1f0af84655f439bad3adb879404e91
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 0251d06ff68185990ed8b7acb46389c59c71a99a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995384"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059850"
 ---
 # <a name="bindable-properties"></a>可繫結屬性
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
 
 _在 Xamarin.Forms 中，通用語言執行平台 (CLR) 屬性的功能會擴充可繫結的屬性。可繫結的屬性是屬性的特殊類型，其中 Xamarin.Forms 屬性系統會追蹤屬性的值。這篇文章介紹可繫結的屬性，並示範如何建立和使用它們。_
 

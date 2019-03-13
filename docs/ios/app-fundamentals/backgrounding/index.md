@@ -4,15 +4,15 @@ description: 背景處理，或背景就是讓應用程式在背景中執行工�
 ms.prod: xamarin
 ms.assetid: F377440C-C5D9-4267-85D8-2C816E3A0300
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/05/2018
-ms.openlocfilehash: 73344b790bf6d4719d9a92cfa9146578dffe04e9
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: a4f5112b6e77ab6e00453c19c766d1e905df1144
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350764"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122773"
 ---
 # <a name="backgrounding-in-xamarinios"></a>在 Xamarin.iOS 中背景
 

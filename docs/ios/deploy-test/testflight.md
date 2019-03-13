@@ -4,15 +4,15 @@ description: TestFlight 現在由 Apple 所擁有，是對 Xamarin.iOS 應用程
 ms.prod: xamarin
 ms.assetid: BA880768-2BC8-41E4-B57E-A56F8EED4690
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: efb0a59ac43ca3e0c4959caa8478a51512e29a3a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 87be250bdc425558a8e386a8209596e18f13b3ed
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785683"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120512"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>使用 TestFlight 散發 Xamarin.iOS 應用程式
 
@@ -98,7 +98,7 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
 首先，請在 IDE 中建置[最終可散發項目](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)，然後透過應用程式載入器或 Xcode 中的封存功能[將您的應用程式提交到 Apple](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ###  <a name="create-an-archive"></a>建立封存
 
@@ -126,7 +126,7 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
  如需有關這些步驟的詳細資訊，請參閱[向 Apple 提交應用程式](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)一節。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ###  <a name="building-your-final-distributable"></a>建置最終可散發項目
  由於適用於 Visual Studio 的 Xamarin 外掛程式不支援封存 Xamarin.iOS 應用程式以發佈至 App Store，有兩個選項可從 Visual Studio 發佈 iOS 應用程式。 這些是：

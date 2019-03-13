@@ -4,21 +4,24 @@ description: 如何在 Xamarin.Android 應用程式中使用 RelativeLayout
 ms.prod: xamarin
 ms.assetid: AFD9C849-02C3-E728-BC78-77A563612BC5
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/29/2018
-ms.openlocfilehash: af8d37775a798fc6019106a66df75843a951c108
-ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
+ms.openlocfilehash: af2972ecc92435836a75013e6203ba47c2c04627
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37403412"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113135"
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
-[`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) 已[ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)以顯示子[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)相對位置中的項目。 位置[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)可以指定相對於同層級項目 （例如對於左邊的或指定的項目底下），或在將放置相對於[ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)區域 （例如靠下對齊，剩餘的中心）。
+[`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) 已[ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)顯示子系 [`View`](https://developer.xamarin.com/api/type/Android.Views.View/)
+相對位置中的項目。 位置[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)可以指定相對於同層級項目 （例如對於左邊的或指定的項目底下），或在將放置相對於 [`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)
+（例如對齊到底部，左側的中心） 的區域。
 
-A [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)是一個非常強大的公用程式，設計使用者介面，因為它可免除巢狀[ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)s。 如果您發現自己使用數個巢狀[ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)群組中，您可以將其取代為單一[ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)。
+A [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)是一個非常強大的公用程式，設計使用者介面，因為它可免除巢狀[ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)s。 如果您發現自己使用數個巢狀結構 [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)
+群組，您可以將其取代為單一[ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)。
 
 開始新的專案，名為**HelloRelativeLayout**。
 
@@ -62,7 +65,8 @@ A [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.Rel
 
 中的所有可用的版面配置屬性定義[ `RelativeLayout.LayoutParams` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout+LayoutParams/)。
 
-確定您將在此版面配置[ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)方法：
+確定您將在此版面配置 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)
+方法：
 
 ```csharp
 protected override void OnCreate (Bundle savedInstanceState)

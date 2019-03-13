@@ -6,15 +6,17 @@ ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/24/2017
-ms.openlocfilehash: c706d50962fb707208203a97374d4ae26f141ebf
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 08/01/2018
+ms.openlocfilehash: 4ba4bd7528b635d099868f093268d2d83e44dae0
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998257"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059752"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms 裝置類別
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
 
 [ `Device` ](xref:Xamarin.Forms.Device)類別包含多種屬性和方法，以協助開發人員自訂版面配置和每個平台為基礎的功能。
 
@@ -28,7 +30,7 @@ ms.locfileid: "38998257"
 
 不過，因為 Xamarin.Forms 2.3.4 這些 Api 已被取代並取代。 [ `Device` ](xref:Xamarin.Forms.Device)類別現在包含公用的字串常數，用以識別平台 – [ `Device.iOS` ](xref:Xamarin.Forms.Device.iOS)， [ `Device.Android` ](xref:Xamarin.Forms.Device.Android)， `Device.WinPhone`(已被取代）， `Device.WinRT` （已過時） [ `Device.UWP` ](xref:Xamarin.Forms.Device.UWP)，並[ `Device.macOS` ](xref:Xamarin.Forms.Device.macOS)。 同樣地， [ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action))多載已取代為[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)並[ `On` ](xref:Xamarin.Forms.On) Api。
 
-在 C# 中，平台專屬值可供建立`switch`陳述式[ `Device.RuntimePlatform` ](xref:Xamarin.Forms.Device.RuntimePlatform)屬性，然後再提供`case`適用於必要平台的陳述式：
+在C#，可提供平台特定的值，請建立`switch`陳述式[ `Device.RuntimePlatform` ](xref:Xamarin.Forms.Device.RuntimePlatform)屬性，然後再提供`case`適用於必要平台的陳述式：
 
 ```csharp
 double top;
@@ -60,16 +62,18 @@ layout.Margin = new Thickness(5, top, 5, 0);
 </StackLayout>
 ```
 
-[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)類別是泛型類別，因此必須具現化`x:TypeArguments`符合目標類型的屬性。 在  [ `On` ](xref:Xamarin.Forms.On)類別[ `Platform` ](xref:Xamarin.Forms.On.Platform)屬性可以接受單一`string`值或以逗號分隔的多個`string`值。
+[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)類別是必須使用具現化泛型類別`x:TypeArguments`符合目標類型的屬性。 在  [ `On` ](xref:Xamarin.Forms.On)類別[ `Platform` ](xref:Xamarin.Forms.On.Platform)屬性可以接受單一`string`值或以逗號分隔的多個`string`值。
 
 > [!IMPORTANT]
 > 提供不正確`Platform`屬性中的值`On`類別不會導致錯誤。 相反地，程式碼會執行不含套用的平台特定值。
+
+或者，`OnPlatform`標記延伸可用於在 XAML 中自訂每個平台為基礎的 UI 外觀。 如需詳細資訊，請參閱 < [OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
 
 <a name="Device_Idiom" />
 
 ## <a name="deviceidiom"></a>Device.Idiom
 
-`Device.Idiom`可以用來改變的版面配置或根據裝置執行應用程式的功能。 [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom)列舉型別包含下列值：
+`Device.Idiom`屬性可以用來更改版面配置，或根據裝置的應用程式的功能在上執行。 [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom)列舉型別包含下列值：
 
 -  **電話**– iPhone、 iPod touch 和 Android 裝置比 600 dip 窄 ^
 -  **Tablet** – iPad、 Windows 裝置和 Android 裝置的寬度超過 600 dip ^
@@ -80,7 +84,7 @@ layout.Margin = new Thickness(5, top, 5, 0);
 
 *^ dip 不一定是實體的像素計數*
 
-`Idiom` 是特別適用於建置利用較大的螢幕，像這樣的配置：
+`Idiom`屬性是特別適用於建置利用較大的螢幕，像這樣的配置：
 
 ```csharp
 if (Device.Idiom == TargetIdiom.Phone) {
@@ -89,6 +93,25 @@ if (Device.Idiom == TargetIdiom.Phone) {
     // layout views horizontally for a larger display (tablet or desktop)
 }
 ```
+
+[ `OnIdiom` ](xref:Xamarin.Forms.OnIdiom`1)類別會提供相同的功能，在 XAML 中：
+
+```xaml
+<StackLayout>
+    <StackLayout.Margin>
+        <OnIdiom x:TypeArguments="Thickness">
+            <OnIdiom.Phone>0,20,0,0</OnIdiom.Phone>
+            <OnIdiom.Tablet>0,40,0,0</OnIdiom.Tablet>
+            <OnIdiom.Desktop>0,60,0,0</OnIdiom.Desktop>
+        </OnIdiom>
+    </StackLayout.Margin>
+    ...
+</StackLayout>
+```
+
+[ `OnIdiom` ](xref:Xamarin.Forms.OnPlatform`1)類別是必須使用具現化泛型類別`x:TypeArguments`符合目標類型的屬性。
+
+或者，`OnIdiom`標記延伸模組可以在 XAML 中使用自訂 UI 的外觀，根據的裝置執行應用程式的慣用語。 如需詳細資訊，請參閱 < [OnIdiom 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onidiom)。
 
 ## <a name="deviceflowdirection"></a>Device.FlowDirection
 
@@ -104,7 +127,7 @@ if (Device.Idiom == TargetIdiom.Phone) {
 <ContentPage ... FlowDirection="{x:Static Device.FlowDirection}"> />
 ```
 
-在 C# 對等的程式碼是：
+對等的程式碼，在C#是：
 
 ```csharp
 this.FlowDirection = Device.FlowDirection;
@@ -129,7 +152,7 @@ this.FlowDirection = Device.FlowDirection;
 
 ## <a name="devicegetnamedsize"></a>Device.GetNamedSize
 
-`GetNamedSize` 設定時，可以使用[ `FontSize` ](~/xamarin-forms/user-interface/text/fonts.md) C# 程式碼：
+`GetNamedSize` 設定時，可以使用[ `FontSize` ](~/xamarin-forms/user-interface/text/fonts.md)在C#程式碼：
 
 ```csharp
 myLabel.FontSize = Device.GetNamedSize (NamedSize.Small, myLabel);

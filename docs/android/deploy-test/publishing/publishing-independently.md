@@ -3,15 +3,15 @@ title: 獨立發行
 ms.prod: xamarin
 ms.assetid: 6FB4DEF2-01AD-C5FE-0950-CE1BF088A9C6
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 2cb2167f534251e15455e11b6a2c85f53fb48b8c
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.openlocfilehash: 04cc7a911290d3c2f92fc1bbef474822d2891b2b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37066997"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114545"
 ---
 # <a name="publishing-independently"></a>獨立發行
 

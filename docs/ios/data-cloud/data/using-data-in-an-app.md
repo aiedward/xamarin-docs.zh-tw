@@ -4,15 +4,15 @@ description: 本文件說明 DataAccess_Adv 範例，示範如何收集使用者
 ms.prod: xamarin
 ms.assetid: 2CB8150E-CD2C-4E97-8605-1EE8CBACFEEC
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 10/11/2016
-ms.openlocfilehash: 35caae657700e321a7560d1e95c8551b7b10a5ca
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: e3127f85841c13422d9674bcf12373af9222afba
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242101"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115662"
 ---
 # <a name="using-data-in-an-ios-app"></a>在 iOS 應用程式中使用資料
 

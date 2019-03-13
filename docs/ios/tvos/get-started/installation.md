@@ -4,15 +4,15 @@ description: 這篇文章討論在 Xcode 9 和 Xamarin.iOS 11 中的 tvOS 的支
 ms.prod: xamarin
 ms.assetid: 0819DC93-A46B-49DC-A566-8E27CAE1B829
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: b51d4181e23a4b1339b93311ef8ca606bbe85832
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: e84ce04f3745c46ba94845ba2f815c638cf81a74
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241961"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267374"
 ---
 # <a name="installing-tvos-support-in-xamarin"></a>在 Xamarin 安裝 tvOS 支援
 
@@ -23,7 +23,7 @@ Apple 已發行的 Apple TV 4k 和 tvOS 11。 開放給開發人員，讓他們�
 
 Xamarin.iOS 11 和更新版本支援 tvOS 11 使用 Apple 的 Xcode 9 隨附 SDK。
 
-- [適用於 Xamarin.iOS 的版本資訊](https://developer.xamarin.com/releases/ios/)
+- [適用於 Xamarin.iOS 的版本資訊](https://docs.microsoft.com/xamarin/ios/release-notes/)
 - [Xcode 的版本資訊](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html#//apple_ref/doc/uid/TP40001051-CH1-SW876)
 
 ## <a name="installation"></a>安裝

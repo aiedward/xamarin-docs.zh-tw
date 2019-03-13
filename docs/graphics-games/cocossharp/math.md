@@ -3,15 +3,15 @@ title: 使用 CocosSharp 的 2D 數學運算
 description: 本指南涵蓋開發遊戲的 2D 數學運算。 它使用 CocosSharp 示範如何執行一般的遊戲開發工作，並說明這些工作背後的數學運算。
 ms.prod: xamarin
 ms.assetid: 5C241AB4-F97E-4B61-B93C-F5D307BCD517
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: 63c722b74c7dc7e034475e539f38204aca87763e
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: ac84d5b28b0f211dccb1697a4b3dbbc9cedf81e9
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242049"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670152"
 ---
 # <a name="2d-math-with-cocossharp"></a>使用 CocosSharp 的 2D 數學運算
 
@@ -24,7 +24,7 @@ _本指南涵蓋開發遊戲的 2D 數學運算。它使用 CocosSharp 示範如
  - 旋轉 CocosSharp 物件
  - 循環使用速度
 
-沒有強式數學背景，或使用者長時間-忘了從學校，這些主題的開發人員不需要擔心-這份文件會細分概念位元組大小的項目，並會伴隨理論說明實用的範例。 簡單地說，這篇文章將回答讀者的數學學生方面的問題: 「 時將我實際上需要使用此項目？ 」
+沒有強式數學背景，或使用者長時間-忘了從學校，這些主題的開發人員不需要擔心-這份文件會細分概念位元組大小的項目，並會伴隨理論說明實用的範例。 簡單地說，這篇文章將回答讀者的數學學生方面的問題：「 何時會我實際上需要使用此項目？ 」
 
 
 ## <a name="requirements"></a>需求
@@ -82,12 +82,12 @@ this.PositionY += this.VelocityY * seconds;
 
 
 ```csharp
-// We'll assume only the X axis for this example
-float distanceX = target.PositionX - missile.PositionX;
+// We'll assume only the X axis for this example
+float distanceX = target.PositionX - missile.PositionX;
 
-float secondsToReachTarget = distanceX / missile.VelocityX;
+float secondsToReachTarget = distanceX / missile.VelocityX;
 
-label.Text = secondsToReachTarget + " seconds to reach target"; 
+label.Text = secondsToReachTarget + " seconds to reach target"; 
 ```
 
 
@@ -103,10 +103,10 @@ label.Text = secondsToReachTarget + " seconds to reach target";
 
 
 ```csharp
-// No horizontal acceleration:
-icicle.AccelerationX = 0;
-// Simulate gravity with Y acceleration. Negative Y is down, so assign a negative value:
-icicle.AccelerationY = -50; 
+// No horizontal acceleration:
+icicle.AccelerationX = 0;
+// Simulate gravity with Y acceleration. Negative Y is down, so assign a negative value:
+icicle.AccelerationY = -50; 
 ```
 
 
@@ -132,15 +132,15 @@ this.PositionY += this.VelocityY * seconds;
 
 
 ```csharp
-float halfSecondsSquared = (seconds * seconds) / 2.0f;
+float halfSecondsSquared = (seconds * seconds) / 2.0f;
 
-this.PositionX += 
-    this.Velocity.X * seconds + this.AccelerationX * halfSecondsSquared;
-this.PositionY += 
-    this.Velocity.Y * seconds + this.AccelerationY * halfSecondsSquared;
+this.PositionX += 
+    this.Velocity.X * seconds + this.AccelerationX * halfSecondsSquared;
+this.PositionY += 
+    this.Velocity.Y * seconds + this.AccelerationY * halfSecondsSquared;
 
-this.VelocityX += this.AccelerationX * seconds;
-this.VelocityY += this.AccelerationY * seconds; 
+this.VelocityX += this.AccelerationX * seconds;
+this.VelocityY += this.AccelerationY * seconds; 
 ```
 
 上述程式碼的最明顯差異是`halfSecondsSquared`變數，要套用來定位的加速其使用方式。 數學的原因是超出本教學課程的範圍，但這背後的數學運算有興趣的開發人員可以找到詳細資訊[此整合加速進行的討論。](http://www.cliffsnotes.com/math/calculus/calculus/integration/distance-velocity-and-acceleration)
@@ -154,19 +154,19 @@ this.VelocityY += this.AccelerationY * seconds;
 
 
 ```csharp
-CCSprite unrotatedSprite = new CCSprite("star.png");
-unrotatedSprite.IsAntialiased = false;
-unrotatedSprite.PositionX = 100;
-unrotatedSprite.PositionY = 100;
-this.AddChild (unrotatedSprite);
+CCSprite unrotatedSprite = new CCSprite("star.png");
+unrotatedSprite.IsAntialiased = false;
+unrotatedSprite.PositionX = 100;
+unrotatedSprite.PositionY = 100;
+this.AddChild (unrotatedSprite);
 
-CCSprite rotatedSprite = new CCSprite("star.png");
-rotatedSprite.IsAntialiased = false;
+CCSprite rotatedSprite = new CCSprite("star.png");
+rotatedSprite.IsAntialiased = false;
 // This sprite is moved to the right so it doesn’t overlap the first
-rotatedSprite.PositionX = 130;
-rotatedSprite.PositionY = 100;
-rotatedSprite.Rotation = 45;
-this.AddChild (rotatedSprite); 
+rotatedSprite.PositionX = 130;
+rotatedSprite.PositionY = 100;
+rotatedSprite.Rotation = 45;
+this.AddChild (rotatedSprite); 
 ```
 
 這會產生下列項目：
@@ -205,40 +205,40 @@ this.AddChild (rotatedSprite);
 
 
 ```csharp
-// This function assumes that it is contained in a CCNode-inheriting object
-public void FacePoint(float targetX, float targetY)
+// This function assumes that it is contained in a CCNode-inheriting object
+public void FacePoint(float targetX, float targetY)
 {
-    // Calculate the offset - the target's position relative to "this"
-    float xOffset = targetX - this.PositionX;
-    float yOffset = targetY - this.PositionY;
+    // Calculate the offset - the target's position relative to "this"
+    float xOffset = targetX - this.PositionX;
+    float yOffset = targetY - this.PositionY;
 
-    // Make sure the target isn't the same point as "this". If so,
-    // then rotation cannot be calculated.
-    if (targetX != this.PositionX || targetY != this.Position.Y)
-    {
+    // Make sure the target isn't the same point as "this". If so,
+    // then rotation cannot be calculated.
+    if (targetX != this.PositionX || targetY != this.Position.Y)
+    {
 
-        // Call Atan2 to get the radians representing the angle from 
-        // "this" to the target
-        float radiansToTarget = (float)System.Math.Atan2 (yOffset, xOffset);
+        // Call Atan2 to get the radians representing the angle from 
+        // "this" to the target
+        float radiansToTarget = (float)System.Math.Atan2 (yOffset, xOffset);
 
-        // Since CCNode uses degrees for its rotation, we need to convert
-        // from radians
-        float degreesToTarget = CCMathHelper.ToDegrees (radiansToTarget);
+        // Since CCNode uses degrees for its rotation, we need to convert
+        // from radians
+        float degreesToTarget = CCMathHelper.ToDegrees (radiansToTarget);
 
-        // The direction that the entity faces when unrotated. In this case
-        // the entity is facing "up", which is 90 degrees 
-        const float forwardAngle = 90;
+        // The direction that the entity faces when unrotated. In this case
+        // the entity is facing "up", which is 90 degrees 
+        const float forwardAngle = 90;
 
-        // Adjust the angle we want to rotate by subtracting the
-        // forward angle.
-        float adjustedForDirecitonFacing = degreesToTarget - forwardAngle;
+        // Adjust the angle we want to rotate by subtracting the
+        // forward angle.
+        float adjustedForDirecitonFacing = degreesToTarget - forwardAngle;
 
-        // Invert the angle since CocosSharp uses clockwise rotation
-        float cocosSharpAngle = adjustedForDirecitonFacing * -1;
+        // Invert the angle since CocosSharp uses clockwise rotation
+        float cocosSharpAngle = adjustedForDirecitonFacing * -1;
 
-        // Finally assign the rotation
-        this.Rotation = rotation = cocosSharpAngle;
-    }
+        // Finally assign the rotation
+        this.Rotation = rotation = cocosSharpAngle;
+    }
 } 
 ```
 
@@ -246,13 +246,13 @@ public void FacePoint(float targetX, float targetY)
 
 
 ```csharp
-private void HandleInput(System.Collections.Generic.List<CCTouch> touches, CCEvent touchEvent)
+private void HandleInput(System.Collections.Generic.List<CCTouch> touches, CCEvent touchEvent)
 {
-    if(touches.Count > 0)
-    {
-        CCTouch firstTouch = touches[0];
-        FacePoint (firstTouch.Location.X, firstTouch.Location.Y);
-    }
+    if(touches.Count > 0)
+    {
+        CCTouch firstTouch = touches[0];
+        FacePoint (firstTouch.Location.X, firstTouch.Location.Y);
+    }
 } 
 ```
 
@@ -266,7 +266,7 @@ private void HandleInput(System.Collections.Generic.List<CCTouch> touches, CCEve
 
 請注意，上述程式碼傳遞 Y 參數第一次，然後 X 參數，呼叫時`Atan2`方法。 回溯是從一般的 X，Y 排序的位置座標。 如需詳細資訊[，請參閱 Atan2](https://msdn.microsoft.com/library/system.math.atan2(v=vs.110).aspx)。
 
-也很值得一提的傳回值從`Atan2`是以弧度為單位，也就是另一個用來測量角度的單位。 本指南未涵蓋的弧度為單位，詳細資料，但請注意，在所有三角函數`System.Math`命名空間會使用弧度為單位，因此任何值之前必須轉換為度 CocosSharp 物件上使用。 可以找到更多有關弧度[弧度維基百科頁面在](http://en.wikipedia.org/wiki/Radian)。
+也很值得一提的傳回值從`Atan2`是以弧度為單位，也就是另一個用來測量角度的單位。 本指南未涵蓋的弧度為單位，詳細資料，但請注意，在所有三角函數`System.Math`命名空間會使用弧度為單位，因此任何值之前必須轉換為度 CocosSharp 物件上使用。 可以找到更多有關弧度[弧度維基百科頁面在](https://en.wikipedia.org/wiki/Radian)。
 
 #### <a name="forward-angle"></a>正向的角度
 
@@ -293,36 +293,36 @@ private void HandleInput(System.Collections.Generic.List<CCTouch> touches, CCEve
 
 
 ```csharp
-// Rotates the argument vector by degrees specified by
-// cocosSharpDegrees. In other words, the rotation
-// value is expected to be clockwise.
+// Rotates the argument vector by degrees specified by
+// cocosSharpDegrees. In other words, the rotation
+// value is expected to be clockwise.
 // The vector parameter is modified, so it is both an in and out value
-void RotateVector(ref CCVector2 vector, float cocosSharpDegrees)
+void RotateVector(ref CCVector2 vector, float cocosSharpDegrees)
 {
-    // Invert the rotation to get degrees as is normally
-    // used in math (counterclockwise)
-    float mathDegrees = -cocosSharpDegrees;
+    // Invert the rotation to get degrees as is normally
+    // used in math (counterclockwise)
+    float mathDegrees = -cocosSharpDegrees;
 
-    // Convert the degrees to radians, as the System.Math
-    // object expects arguments in radians
-    float radians = CCMathHelper.ToRadians (mathDegrees);
+    // Convert the degrees to radians, as the System.Math
+    // object expects arguments in radians
+    float radians = CCMathHelper.ToRadians (mathDegrees);
 
-    // Calculate the "up" and "right" vectors. This is essentially
-    // a 2x2 matrix that we'll use to rotate the vector
-    float xAxisXComponent = (float)System.Math.Cos (radians);
-    float xAxisYComponent = (float)System.Math.Sin (radians);
-    float yAxisXComponent = (float)System.Math.Cos (radians + CCMathHelper.Pi / 2.0f);
-    float yAxisYComponent = (float)System.Math.Sin (radians + CCMathHelper.Pi / 2.0f);
+    // Calculate the "up" and "right" vectors. This is essentially
+    // a 2x2 matrix that we'll use to rotate the vector
+    float xAxisXComponent = (float)System.Math.Cos (radians);
+    float xAxisYComponent = (float)System.Math.Sin (radians);
+    float yAxisXComponent = (float)System.Math.Cos (radians + CCMathHelper.Pi / 2.0f);
+    float yAxisYComponent = (float)System.Math.Sin (radians + CCMathHelper.Pi / 2.0f);
 
-    // Store the original vector values which will be used
-    // below to perform the final operation of rotation.
-    float originalX = vector.X;
-    float originalY = vector.Y;
+    // Store the original vector values which will be used
+    // below to perform the final operation of rotation.
+    float originalX = vector.X;
+    float originalY = vector.Y;
 
-    // Use the axis values calculated above (the matrix values)
-    // to rotate and assign the vector.
-    vector.X = originalX * xAxisXComponent + originalY * yAxisXComponent;
-    vector.Y = originalX * xAxisYComponent + originalY * yAxisYComponent;
+    // Use the axis values calculated above (the matrix values)
+    // to rotate and assign the vector.
+    vector.X = originalX * xAxisXComponent + originalY * yAxisXComponent;
+    vector.Y = originalX * xAxisYComponent + originalY * yAxisYComponent;
 } 
 ```
 
@@ -330,24 +330,24 @@ void RotateVector(ref CCVector2 vector, float cocosSharpDegrees)
 
 
 ```csharp
-// Create a Bullet instance
-Bullet newBullet = new Bullet();
+// Create a Bullet instance
+Bullet newBullet = new Bullet();
 
-// Define the velocity of the bullet when 
-// rotation is 0
-CCVector2 velocity = new CCVector2 (0, 100);
+// Define the velocity of the bullet when 
+// rotation is 0
+CCVector2 velocity = new CCVector2 (0, 100);
 
-// Modify the velocity according to rotation
-RotateVector (ref velocity, rotation);
+// Modify the velocity according to rotation
+RotateVector (ref velocity, rotation);
 
-// Assign the newBullet's velocity using the
-// rotated vector
-newBullet.VelocityX = velocity.X;
-newBullet.VelocityY = velocity.Y;
+// Assign the newBullet's velocity using the
+// rotated vector
+newBullet.VelocityX = velocity.X;
+newBullet.VelocityY = velocity.Y;
 
-// Set the bullet's rotation so it faces
-// the direction that it's flying
-newBullet.Rotation = rotation; 
+// Set the bullet's rotation so it faces
+// the direction that it's flying
+newBullet.Rotation = rotation; 
 ```
 
 此程式碼可能會產生類似：

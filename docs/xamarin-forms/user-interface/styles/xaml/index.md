@@ -6,19 +6,19 @@ ms.assetid: 344A34AA-B19A-4765-BC8A-875D9A6B5EA8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/17/2016
-ms.openlocfilehash: 5145572b30302e58c36250fff40e8b637fcd221f
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 01/30/2019
+ms.openlocfilehash: ec41955ac15ab23579a5e63b9e17eed61a74e86f
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995071"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55291982"
 ---
 # <a name="styling-xamarinforms-apps-using-xaml-styles"></a>使用 XAML 樣式的樣式設定 Xamarin.Forms 應用程式
 
 ## <a name="introductionintroductionmd"></a>[簡介](introduction.md)
 
-Xamarin.Forms 應用程式通常會包含多個具有相同的外觀的控制項。 設定每個個別控制項的外觀可能重複又容易出錯。 相反地，樣式可以建立自訂控制項外觀的群組和控制項型別上可用的設定屬性。
+Xamarin.Forms 應用程式通常會包含多個具有相同的外觀的控制項。 設定每個個別控制項的外觀可能重複又容易出錯。 相反地，樣式可以建立群組並設定上的控制項類型的屬性可用來自訂控制項外觀。
 
 ## <a name="explicit-stylesexplicitmd"></a>[明確樣式](explicit.md)
 
@@ -43,3 +43,7 @@ Xamarin.Forms 應用程式通常會包含多個具有相同的外觀的控制項
 ## <a name="device-stylesdevicemd"></a>[裝置樣式](device.md)
 
 Xamarin.Forms 包含六*動態*樣式，又稱為*裝置*樣式，在[ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)類別。 所有六個樣式可以套用至[ `Label` ](xref:Xamarin.Forms.Label)只執行個體。
+
+## <a name="style-classesstyle-classmd"></a>[樣式類別](style-class.md)
+
+Xamarin.Forms 樣式類別可讓多個樣式套用至控制項，而不必樣式繼承。

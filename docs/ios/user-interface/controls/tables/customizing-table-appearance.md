@@ -1,38 +1,38 @@
 ---
-title: 自訂 Xamarin.iOS 中資料表的外觀
-description: 本文件說明如何自訂 Xamarin.iOS 中資料表的外觀。 它討論的儲存格樣式、 附屬應用程式、 資料格分隔符號和自訂儲存格的版面配置。
+title: 自訂在 Xamarin.iOS 中的資料表的外觀
+description: 本文件說明如何自訂在 Xamarin.iOS 中的資料表的外觀。 它討論的儲存格樣式、 附屬應用程式、 資料格分隔符號，以及自訂的資料格的版面配置。
 ms.prod: xamarin
 ms.assetid: 8A83DE38-0028-CB61-66F9-0FB9DE552286
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 03383c69afb6afa9282d44751475d74fdcd92d4a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: e1e86918d29e12d2f34dd3008b8c1d8e47471c24
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789950"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233545"
 ---
-# <a name="customizing-a-tables-appearance-in-xamarinios"></a>自訂 Xamarin.iOS 中資料表的外觀
+# <a name="customizing-a-tables-appearance-in-xamarinios"></a>自訂在 Xamarin.iOS 中的資料表的外觀
 
-變更資料表的外觀的最簡單方式是使用不同的儲存格樣式。 您可以變更建立每個儲存格時使用的儲存格樣式`UITableViewSource`的`GetCell`方法。
+變更資料表的外觀的最簡單方式是使用不同的儲存格樣式。 您可以建立每個儲存格時，會使用哪一個儲存格樣式來變更`UITableViewSource`的`GetCell`方法。
 
 ## <a name="cell-styles"></a>儲存格樣式
 
 有四個內建樣式：
 
--  **預設**– 支援`UIImageView`。
--  **副標題**– 支援`UIImageView`和副標題。
--  **Value1** – 右對齊的副標題，支援`UIImageView`。
--  **Value2** – 標題為靠右對齊和子標題為靠左對齊 （但無影像）。
+-  **預設值**– 支援`UIImageView`。
+-  **翻譯字幕**– 支援`UIImageView`和副標題。
+-  **Value1** -正確對齊的子標題，支援`UIImageView`。
+-  **Value2** – 標題會靠右對齊和子標題靠左對齊 （但沒有映像）。
 
 
-這些螢幕擷取畫面會顯示每個樣式的顯示方式：
+這些螢幕擷取畫面顯示每種樣式的顯示方式：
 
- [![](customizing-table-appearance-images/image7.png "這些螢幕擷取畫面顯示每個樣式的顯示方式")](customizing-table-appearance-images/image7.png#lightbox)
+ [![](customizing-table-appearance-images/image7.png "這些螢幕擷取畫面顯示每種樣式的顯示方式")](customizing-table-appearance-images/image7.png#lightbox)
 
-此範例**CellDefaultTable**包含程式碼以產生這些畫面。 儲存格樣式中設定`UITableViewCell`建構函式，就像這樣：
+此範例**CellDefaultTable**包含程式碼來產生這些畫面。 在中設定的儲存格樣式`UITableViewCell`建構函式，就像這樣：
 
 ```csharp
 cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
@@ -41,7 +41,7 @@ cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
 //cell = new UITableViewCell (UITableViewCellStyle.Value2, cellIdentifier);
 ```
 
-[支援內容](http://developer.xamarin.com/api/type/UIKit.UITableViewCell/)儲存格樣式可以設定：
+[支援的屬性](xref:UIKit.UITableViewCell)儲存格樣式可以設定：
 
 ```csharp
 cell.TextLabel.Text = tableItems[indexPath.Row].Heading;
@@ -51,19 +51,19 @@ cell.ImageView.Image = UIImage.FromFile("Images/" + tableItems[indexPath.Row].Im
 
 ## <a name="accessories"></a>附屬應用程式
 
-資料格都可以有下列的附屬應用程式檢視的右邊加入：
+資料格可以包含檢視的右邊加入下列附屬應用程式：
 
--   **核取記號**– 可用於指出多重選取資料表中。
--   **DetailButton** – 要碰觸個別資料格，讓它可以執行不同的函式要碰觸本身的儲存格的其餘部分的回應 (例如開啟快顯視窗或新的視窗不屬於`UINavigationController`堆疊)。
--   **DisclosureIndicator** -通常用來指出接觸資料格將會開啟另一個檢視。
--   **DetailDisclosureButton** – 的組合`DetailButton`和`DisclosureIndicator`。
+-   **核取記號**– 可用來指出多重選取資料表中。
+-   **DetailButton** – 回應觸控與其餘的資料格，讓它可以執行不同的函式，若要碰觸到儲存格本身無關 (例如開啟快顯視窗或新的視窗不屬於`UINavigationController`堆疊)。
+-   **DisclosureIndicator** ： 通常用來指出觸及的資料格就會開啟另一個檢視。
+-   **DetailDisclosureButton** – 組成`DetailButton`和`DisclosureIndicator`。
 
 
 這是什麼樣子：
 
  [![](customizing-table-appearance-images/image8.png "範例 附屬應用程式")](customizing-table-appearance-images/image8.png#lightbox)
 
-若要顯示這些 附屬應用程式，您可以設定的其中一個`Accessory`屬性`GetCell`方法：
+若要顯示這些 附屬應用程式，您可以設定的其中一個`Accessory`屬性中的`GetCell`方法：
 
 ```csharp
 cell.Accessory = UITableViewCellAccessory.Checkmark;
@@ -72,7 +72,7 @@ cell.Accessory = UITableViewCellAccessory.Checkmark;
 //cell.Accessory = UITableViewCellAccessory.None; // to clear the accessory
 ```
 
-當`DetailButton`或`DetailDisclosureButton`顯示，您也應該覆寫`AccessoryButtonTapped`它碰觸時執行一些動作。
+當`DetailButton`或是`DetailDisclosureButton`會顯示，您也應該覆寫`AccessoryButtonTapped`時都會被接觸到執行某些動作。
 
 ```csharp
 public override void AccessoryButtonTapped (UITableView tableView, NSIndexPath indexPath)
@@ -85,7 +85,7 @@ public override void AccessoryButtonTapped (UITableView tableView, NSIndexPath i
 }
 ```
 
-此範例**CellAccessoryTable**顯示使用附屬應用程式的範例。
+此範例**CellAccessoryTable**示範如何使用 附屬應用程式。
 
 ## <a name="cell-separators"></a>資料格分隔符號
 
@@ -108,7 +108,7 @@ var effect = UIBlurEffect.FromStyle(UIBlurEffectStyle.Light);
 TableView.SeparatorEffect = UIVibrancyEffect.FromBlurEffect(effect);
 ```
 
-在分隔符號也可以擁有內凹：
+分隔符號也可以嵌入：
 
 ```csharp
 TableView.SeparatorInset.InsetRect(new CGRect(4, 4, 150, 2));
@@ -116,17 +116,17 @@ TableView.SeparatorInset.InsetRect(new CGRect(4, 4, 150, 2));
 
 ## <a name="creating-custom-cell-layouts"></a>建立自訂儲存格的版面配置
 
-若要變更的資料表，您必須提供自訂的儲存格，以顯示的視覺化樣式。 自訂的儲存格可以具有不同色彩和控制項的版面配置。
+若要變更之視覺樣式的資料表，您必須提供自訂的資料格，才顯示。 自訂儲存格可以有不同的色彩和控制項版面配置。
 
-CellCustomTable 範例會實作`UITableViewCell`子類別，定義的自訂配置`UILabel`s 和`UIImage`以不同的字型和色彩。 產生的資料格看起來像這樣：
+CellCustomTable 範例會實作`UITableViewCell`定義的自訂版面配置的子類別`UILabel`s 和`UIImage`與不同的字型和色彩。 產生的資料格看起來像這樣：
 
  [![](customizing-table-appearance-images/image9.png "自訂儲存格的版面配置")](customizing-table-appearance-images/image9.png#lightbox)
 
-自訂儲存格類別包含只有三個方法：
+自訂儲存格類別包含三個方法：
 
--   **建構函式**– 建立 UI 控制項，並設定自訂樣式屬性 （例如。 字體、 大小和色彩）。
--   **UpdateCell** – 方法`UITableView.GetCell`用來設定儲存格的內容。
--   **LayoutSubviews** – 設定 UI 控制項的位置。 在範例中，每個資料格具有相同的配置，但更複雜的資料格 （特別是那些與不同大小） 可能需要根據要顯示的內容不同的版面配置位置。
+-   **建構函式**– 建立 UI 控制項，並設定自訂的樣式屬性 （例如。 字體、 大小和色彩）。
+-   **UpdateCell** – 一種方法`UITableView.GetCell`用來設定儲存格的屬性。
+-   **LayoutSubviews** – 設定 UI 控制項的位置。 在範例中，每個資料格具有相同的配置，但更複雜的資料格 （尤其是具有不同大小） 可能需要不同的版面配置位置，視要顯示的內容而定。
 
 
 中的完整範例程式碼**CellCustomTable > CustomVegeCell.cs**遵循：
@@ -170,7 +170,7 @@ public class CustomVegeCell : UITableViewCell  {
 }
 ```
 
-`GetCell`方法`UITableViewSource`需要加以修改才能建立自訂儲存格：
+`GetCell`方法的`UITableViewSource`需要加以修改才能建立自訂的資料格：
 
 ```csharp
 public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)

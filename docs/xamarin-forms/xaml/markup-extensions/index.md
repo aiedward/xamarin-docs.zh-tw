@@ -4,17 +4,19 @@ description: 本文說明如何使用 Xamarin.Forms XAML 標記延伸來擴充�
 ms.prod: xamarin
 ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: d507ff3c74de6bb4ea36c1a7b7dc2cd5dd60823b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: cfdd639672f7fa624c7c8e30f17fbfc9dad403af
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996736"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53060157"
 ---
 # <a name="xaml-markup-extensions"></a>XAML 標記延伸
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
 
 XAML 標記延伸模組可協助藉由使用元素屬性來設定從常值文字字串以外的來源延伸的威力與彈性的 XAML。
 

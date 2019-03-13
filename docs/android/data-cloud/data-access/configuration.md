@@ -3,15 +3,15 @@ title: 組態
 ms.prod: xamarin
 ms.assetid: 44526226-4E4E-4FFF-9A16-CA7B1E01BB8F
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: b3a7858361d25f26807ea328e8bfdd30ca8d483b
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: ac44981c3b82f0fbec6b18396e15502428b9d62f
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241873"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675272"
 ---
 # <a name="configuration"></a>組態
 

@@ -4,15 +4,15 @@ description: 本指南會討論在 Xamarin.Android 中的外部儲存體上的�
 ms.prod: xamarin
 ms.assetid: 40da10b2-a207-4f9c-a2dd-165d9b662f33
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: 380100d38febf567fde94096455fd846d9d3d2d3
-ms.sourcegitcommit: 9bb9e8297d3edd9a50585f4ba53c1b4f0bcd1d3e
+ms.openlocfilehash: 846a8fd45b8e39fb11270374af47a5b6cb83fa01
+ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39212188"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56666931"
 ---
 # <a name="external-storage"></a>外部儲存體
 
@@ -53,14 +53,14 @@ ms.locfileid: "39212188"
 
 | `Android.OS.Environment` | Directory |
 |-|-|
-| DirectoryAlarms | **_私用\_外部\_儲存體_  /警示** |
-| DirectoryDcim | **_私用\_外部\_儲存體_/DCIM** |
+| DirectoryAlarms | **_PRIVATE\_EXTERNAL\_STORAGE_/Alarms** |
+| DirectoryDcim | **_PRIVATE\_EXTERNAL\_STORAGE_/DCIM** |
 | DirectoryDownloads | **_私用\_外部\_儲存體_  /下載** |
-| DirectoryDocuments | **_私用\_外部\_儲存體_  /文件** |
-| DirectoryMovies | **_私用\_外部\_儲存體_/Movies** |
-| DirectoryMusic | **_私用\_外部\_儲存體_/Music** |
+| DirectoryDocuments | **_PRIVATE\_EXTERNAL\_STORAGE_/Documents** |
+| DirectoryMovies | **_PRIVATE\_EXTERNAL\_STORAGE_/Movies** |
+| DirectoryMusic | **_PRIVATE\_EXTERNAL\_STORAGE_/Music** |
 | DirectoryNotifications | **_私用\_外部\_儲存體_/Notifications** |
-| DirectoryPodcasts | **_私用\_外部\_儲存體_/Podcasts** |
+| DirectoryPodcasts | **_PRIVATE\_EXTERNAL\_STORAGE_/Podcasts** |
 | DirectoryRingtones | **_私用\_外部\_儲存體_/Ringtones** |
 | DirectoryPictures | **_私用\_外部\_儲存體_  /圖片** |
 
@@ -80,7 +80,7 @@ ms.locfileid: "39212188"
 這份文件會參考做為外部儲存體上的公用檔案的儲存體目錄_公開金鑰\_外部\_儲存體_。
 
 
-Android 上也支援之應用程式目錄的概念_公開金鑰\_外部\_儲存體_。 這些目錄並完全相同的應用程式 diretories`_PRIVATE\_EXTERNAL\_STORAGE_`和上一節中的表格所述。 此方法`Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)`會傳回`Java.IO.File`對應至公用應用程式目錄的物件。 `directoryType`參數是必要參數，而且不能是`null`。
+Android 上也支援之應用程式目錄的概念_公開金鑰\_外部\_儲存體_。 這些目錄並完全相同的應用程式目錄`_PRIVATE\_EXTERNAL\_STORAGE_`和上一節中的表格所述。 此方法`Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)`會傳回`Java.IO.File`對應至公用應用程式目錄的物件。 `directoryType`參數是必要參數，而且不能是`null`。
 
 例如，呼叫`Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDocuments).AbsolutePath`會傳回字串，其中會類似這樣：
 
@@ -140,13 +140,13 @@ Android 會考慮存取外部儲存體以進行_危險的使用權限_，通常�
 > [!NOTE]
 > 如果使用者授與`WRITE_EXTERNAL_STORAGE`，然後`READ_EXTERNAL_STORAGE`還有以隱含方式授與。 您不需要要求中的兩個權限**AndroidManifest.xml**。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 權限可能也會加入使用**Android 資訊清單**索引標籤**方案屬性**:
 
 ![方案總管-適用於 Visual Studio 2017 的必要權限](./images/required-permissions.w157.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 權限可能也會加入使用**Android 資訊清單**索引標籤**方案屬性板**:
 

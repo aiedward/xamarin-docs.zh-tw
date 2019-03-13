@@ -1,28 +1,30 @@
 ---
-title: Xamarin.Forms 的字串格式化
-description: 這篇文章說明如何使用 Xamarin.FOrms 資料繫結來 格式化並顯示為字串的物件。 這是藉由設定繫結的 StringFormat 以預留位置的標準.NET 格式字串來達成。
+title: Xamarin.Forms 字串格式化
+description: 本文說明如何使用 Xamarin.FOrms 資料繫結來將物件作為字串格式化和顯示。 這可透過將 Binding 的 StringFormat 設定為具有預留位置的標準 .NET 格式化字串來達成。
 ms.prod: xamarin
 ms.assetid: 978C85B7-CB58-4483-A131-21B381A865E0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: a876e81c67b6ec61a2cb29143cb001a7d6160032
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.openlocfilehash: 2dd7efb9f295143775961afb97e70b5f241d1337
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998143"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056119"
 ---
-# <a name="xamarinforms-string-formatting"></a>Xamarin.Forms 的字串格式化
+# <a name="xamarinforms-string-formatting"></a>Xamarin.Forms 字串格式化
 
-有時候很方便地使用資料繫結至顯示的物件或值的字串表示。 例如，您可能想要`Label`若要顯示的目前值`Slider`。 在此資料繫結`Slider`是來源，而且目標會`Text`屬性`Label`。
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
-在程式碼中顯示字串，最強大的工具時，靜態[ `String.Format` ](xref:System.String.Format(System.String,System.Object))方法。 格式化字串，包含格式化各種類型的物件，以特定的程式碼，您可以包含其他文字，以及要格式化的值。 請參閱[在.NET 中格式化類型](/dotnet/standard/base-types/formatting-types/)如需有關字串格式化的文件。
+有時候，使用資料繫結來顯示物件或值的字串表示相當方便。 例如，您可能想要使用 `Label` 來顯示目前 `Slider` 的值。 在此資料繫結中，`Slider` 是來源，而目標則是 `Label` 的 `Text` 屬性。
+
+當以程式碼顯示字串時，最有效的工具是靜態 [`String.Format`](xref:System.String.Format(System.String,System.Object)) 方法。 格式化字串包含各種類型物件特定的格式化程式碼，且您可在要格式化的值外包含其他文字。 如需關於字串格式化的詳細資訊，請參閱[在 .NET 中將類型格式化](/dotnet/standard/base-types/formatting-types/)。
 
 ## <a name="the-stringformat-property"></a>StringFormat 屬性
 
-這項功能會延用至資料繫結： 您設定[ `StringFormat` ](xref:Xamarin.Forms.BindingBase.StringFormat)屬性`Binding`(或[ `StringFormat` ](xref:Xamarin.Forms.Xaml.BindingExtension.StringFormat)屬性`Binding`標記延伸) 至標準.NET 格式字串與一個預留位置：
+這項功能會延用至資料繫結：您可將 `Binding` 的 [`StringFormat`](xref:Xamarin.Forms.BindingBase.StringFormat) 屬性 (或 `Binding` 標記延伸的 [`StringFormat`](xref:Xamarin.Forms.Xaml.BindingExtension.StringFormat) 屬性) 設定為具有預留位置的標準 .NET 格式化字串：
 
 ```xaml
 <Slider x:Name="slider" />
@@ -31,13 +33,13 @@ ms.locfileid: "38998143"
                       StringFormat='The slider value is {0:F2}'}" />
 ```
 
-請注意格式化的字串用來協助避免視為另一個 XAML 標記延伸的大括號，XAML 剖析器的單引號 （撇號） 字元分隔。 否則，該字串沒有單引號字元是相同的字串，您會使用的呼叫中顯示的浮點值`String.Format`。 格式規格`F2`造成會顯示具有兩個小數位數的值。
+請注意，格式化字串會以單引號字元分隔，讓 XAML 剖析器避免將大括號視作另一個的 XAML 標記延伸。 否則，沒有單引號字元的字串會和您在對 `String.Format` 的呼叫中，用來顯示浮點數值的字串相同。 `F2` 的格式化規格會讓值以兩個小數位數顯示。
 
-`StringFormat`屬性才有意義的目標屬性的型別時`string`，並繫結模式`OneWay`或`TwoWay`。 針對雙向繫結，`StringFormat`僅適用於從來源傳遞至目標的值。
+只有在目標屬性為類型 `string`，且繫結模式為 `OneWay` 或 `TwoWay` 時，`StringFormat` 屬性才有效。 對於雙向繫結，`StringFormat` 僅適用於從來源傳遞至目標的值。
 
-如您所見的下一篇文章中，在[繫結路徑](binding-path.md)，可能會變成相當複雜且迂迴的資料繫結。 當偵錯這些資料繫結，您可以加入`Label`到 XAML 檔中，使用`StringFormat`顯示某些中繼結果。 即使您可以使用它來顯示物件的類型，可幫助。
+在接下來的 [Binding Path](binding-path.md) (繫結路徑) 一文中，您會發現資料繫結可能會變得既複雜又難懂。 而您可在對這些資料繫結進行偵錯時，將 `Label` 新增至具有 `StringFormat` 的 XAML 檔案，來顯示一些中繼結果。 即便您只是要使用它來顯示物件的類型，也相當實用。
 
-**字串格式化**頁面上說明的幾種用途`StringFormat`屬性：
+**字串格式化**頁面示範了 `StringFormat` 屬性的數種用法：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -101,33 +103,33 @@ ms.locfileid: "38998143"
 </ContentPage>
 ```
 
-上的繫結`Slider`並`TimePicker`示範如何使用格式規格的特殊`double`和`TimeSpan`資料型別。 `StringFormat`會顯示從文字`Entry`檢視示範如何使用格式字串中指定雙引號`&quot;`HTML 實體。
+`Slider` 及 `TimePicker` 上的繫結顯示僅限於 `double` 和 `TimeSpan` 資料類型格式規格的用法。 顯示 `Entry` 檢視之文字的 `StringFormat` 則會示範如何透過使用 `&quot;` HTML 實體，來指定格式化字串中的雙引號。
 
-在下一節中的 XAML 檔案`StackLayout`具有`BindingContext`設為`x:Static`標記延伸參考靜態`DateTime.Now`屬性。 第一個繫結具有任何屬性：
+XAML 檔案中的下一個區段是 `StackLayout`，其 `BindingContext` 已設定為參考靜態 `DateTime.Now` 屬性的 `x:Static` 標記延伸。 第一個繫結沒有屬性：
 
 ```xaml
 <Label Text="{Binding}" />
 ```
 
-這只會顯示`DateTime`的值`BindingContext`預設格式。 第二個繫結會顯示`Ticks`的屬性`DateTime`，而其他兩個繫結顯示`DateTime`本身具有特定格式。 請注意這`StringFormat`:
+這只會以預設格式顯示 `BindingContext` 的 `DateTime` 值。 第二個繫結會顯示 `DateTime` 的 `Ticks` 屬性，而其他兩個繫結則會以特定格式自行顯示 `DateTime`。 請注意此 `StringFormat`：
 
 ```xaml
 <Label Text="{Binding StringFormat='The {{0:MMMM}} specifier produces {0:MMMM}'}" />
 ```
 
-如果您要顯示在格式化字串中的向左或右大括號，只要使用其中一組。
+若您必須在格式化字串中顯示左或右大括號，直接成對地使用它們即可。
 
-最後一個區段集合`BindingContext`的值`Math.PI`並顯示預設的格式設定和兩種不同的數字格式化。
+最後一個區段會將 `BindingContext` 設定為 `Math.PI` 的值，並以預設格式及兩種不同類型的數值格式加以顯示。
 
-以下是所有三個平台上執行的程式：
+以下是程式執行情況：
 
 [![字串格式化](string-formatting-images/stringformatting-small.png "字串格式化")](string-formatting-images/stringformatting-large.png#lightbox "字串格式化")
 
-## <a name="viewmodels-and-string-formatting"></a>Viewmodel 和格式字串
+## <a name="viewmodels-and-string-formatting"></a>ViewModel 和字串格式化
 
-當您使用`Label`並`StringFormat`若要顯示檢視，同時也是 ViewModel 的目標的值，您可以定義從檢視，以繫結`Label`或從以 ViewModel `Label`。 一般情況下，第二種方法是最佳方法，因為它會驗證正在 ViewModel 與檢視之間的繫結。
+當您使用 `Label` 及 `StringFormat` 顯示檢視的值 (同時為 ViewModel 的目標) 時，可以定義從檢視到 `Label` 或從 ViewModel 到 `Label` 的繫結。 一般來說，因為第二種方法可驗證檢視和 ViewModel 之間的繫結是否有效，所以其為最佳的方法。
 
-這種方法所示**更好的色彩選取器**範例中，它會使用相同的 ViewModel 作為**簡單色彩選取器**所示的程式[**繫結模式**](binding-mode.md)文章：
+此方法會在 **Better Color Selector** 範例中顯示，其使用與[**繫結模式**](binding-mode.md)一文所示之 **Simple Color Selector** 程式的 ViewModel 相同：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -172,18 +174,18 @@ ms.locfileid: "38998143"
 </ContentPage>    
 ```
 
-現在有三組`Slider`並`Label`繫結至相同的項目來源中的屬性`HslColorViewModel`物件。 唯一的差別在於`Label`已經`StringFormat`屬性來顯示每個`Slider`值。
+現在有三對 `Slider` 和 `Label` 元素均已繫結至 `HslColorViewModel` 物件中的相同來源屬性。 唯一的不同是`Label` 具有會顯示各 `Slider` 值的 `StringFormat` 屬性。
 
-[![更好色彩選取器](string-formatting-images/bettercolorselector-small.png "更色彩選取器")](string-formatting-images/bettercolorselector-large.png#lightbox "進一步色彩選取器")
+[![Better Color Selector](string-formatting-images/bettercolorselector-small.png "Better Color Selector")](string-formatting-images/bettercolorselector-large.png#lightbox "Better Color Selector")
 
-您可能想知道您無法在如何在傳統的兩位數字十六進位格式中顯示 RGB （紅色、 綠色、 藍色） 值。 這些整數值無法直接使用從`Color`結構。 一個解決方案是計算的 ViewModel 中的色彩元件的整數值，並將它們公開為屬性。 您無法再格式化使用`X2`格式規格。
+您可能會不清楚如何以傳統二位數十六進位格式來顯示 RGB (紅、綠、藍) 值。 這是因為這些值都無法直接從 `Color` 結構使用。 其中一種解決方法是計算 ViewModel 中色彩元件的整數值，並將它們作為屬性公開。 接著您可以使用 `X2` 格式化規格將它們格式化。
 
-另一個方法是更多一般： 您可以撰寫*繫結值轉換器*之後的文章中所述[**繫結值轉換器**](converters.md)。
+另一種方法更加常見：您可以撰寫「繫結值轉換器」，這會在之後的[**繫結值轉換器**](converters.md)一文中提到。
 
-下一篇文章中，不過，探索[**繫結路徑**](binding-path.md)更詳細說明，並顯示如何使用它來參考子屬性和集合中的項目。
+不過，下一篇文章會更詳細地探索[**繫結路徑**](binding-path.md)，並向您示範如何使用它參考子屬性及集合中的項目。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [資料繫結示範 （範例）](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [資料繫結 Xamarin.Forms 書籍章節](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Data Binding Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) (資料繫結示範 (範例))
+- [來自 Xamarin.Forms 書籍的資料繫結章節](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

@@ -1,28 +1,27 @@
 ---
 title: 開始使用 Xamarin.Essentials
-description: Xamarin.Essentials 提供單一的跨平台 API，適用於任何 iOS、 Android 或 UWP 應用程式，您可以從存取共用程式碼，不論如何建立使用者介面。
+description: Xamarin.Essentials 提供單一跨平台 API，能夠搭配任何 iOS、Android 或 UWP 應用程式使用，且無論使用者介面建立的方式為何，都能從共用的程式碼進行存取。
 ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: c72c1c66a465075770ce739270cb4b1f2c6fba7a
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.custom: video
+ms.date: 11/04/2018
+ms.openlocfilehash: 0ba748823f980f65d1a341d2b2c15610440bf05e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353772"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668292"
 ---
 # <a name="get-started-with-xamarinessentials"></a>開始使用 Xamarin.Essentials
 
-![發行前版本的 NuGet](~/media/shared/pre-release.png)
-
-Xamarin.Essentials 提供單一的跨平台 API，適用於任何 iOS、 Android 或 UWP 應用程式，您可以從存取共用程式碼，不論如何建立使用者介面。
+Xamarin.Essentials 提供單一跨平台 API，能夠搭配任何 iOS、Android 或 UWP 應用程式使用，且無論使用者介面建立的方式為何，都能從共用的程式碼進行存取。
 
 ## <a name="platform-support"></a>平台支援
 
-Xamarin.Essentials 支援下列平台和作業系統：
+Xamarin.Essentials 支援下列平台與作業系統：
 
-| 平台 | 版本 |
+| Platform | 版本 |
 | --- | --- |
 | Android | 4.4 (API 19) 或更高版本 |
 | iOS |10.0 或更高版本 |
@@ -30,51 +29,49 @@ Xamarin.Essentials 支援下列平台和作業系統：
 
 ## <a name="installation"></a>安裝
 
-Xamarin.Essentials 是可以加入至任何現有或新專案使用 Visual Studio 以 NuGet 套件形式提供。
+Xamarin.Essentials 是以 NuGet 套件形式提供，可讓您使用 Visual Studio 新增到任何現有或新的專案。
 
-1. 下載並安裝[Visual Studio](http://visualstudio.com)具有[適用於 Xamarin 的 Visual Studio 工具](~/cross-platform/get-started/installation/index.md)。
+1. 下載並安裝具有[適用於 Xamarin 的 Visual Studio 工具](~/get-started/installation/index.md)的 [Visual Studio](http://visualstudio.com)。
 
-2. 開啟現有的專案，或建立新的專案使用底下的空白應用程式範本**Visual Studio C#** （Android、 iPhone 和 iPad 或跨平台）。 **重要**： 如果將加入 UWP 專案確定組建 16299 或更新版本已設定專案屬性中。
+2. 開啟現有專案，或建立使用 [Visual Studio C#] (Android、iPhone 與 iPad 或跨平台) 下的空白應用程式範本建立新專案。 **重要**：若新增到 UWP 專案，請確保在專案屬性中設定組建 16299 或更高版本。
 
-3. 新增**Xamarin.Essentials**到每個專案的 NuGet 套件：
+3. 將 **Xamarin.Essentials** NuGet 套件新增到每個專案：
 
     # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-    在方案總管 窗格中，以滑鼠右鍵按一下方案名稱，然後選取**管理 NuGet 套件**。 搜尋**Xamarin.Essentials**並安裝此封裝**所有**包括 Android、 iOS、 UWP 和.NET Standard 程式庫的專案。
-
-    > [!TIP]
-    > 請檢查**包括發行前版本**方塊時[ **Xamarin.Essentials** NuGet](https://www.nuget.org/packages/Xamarin.Essentials)處於預覽狀態。
+    在 [方案總管] 窗格中，以滑鼠右鍵按一下方案名稱並選取 [管理 NuGet 套件]。 搜尋 **Xamarin.Essentials** 並將套件安裝到 [全部] 專案，包括 Android、iOS、UWP 與 .NET Standard 程式庫。
 
     # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-    在方案總管 窗格中，以滑鼠右鍵按一下專案名稱，然後選取**新增 > 新增 NuGet 套件...**.搜尋**Xamarin.Essentials**並安裝此封裝**所有**包括 Android、 iOS 和.NET Standard 程式庫的專案。
-
-    > [!TIP]
-    > 請檢查**顯示發行前版本套件**方塊時[ **Xamarin.Essentials** NuGet](https://www.nuget.org/packages/Xamarin.Essentials)處於預覽狀態。
+    在 [方案總管] 窗格中，以滑鼠右鍵按一下方案名稱並選取 [管理 NuGet 套件]。搜尋 **Xamarin.Essentials** 並將套件安裝到 [全部] 專案，包括 Android、iOS 與 .NET Standard 程式庫。
 
     -----
 
-4. 若要參考 Api 任何 C# 類別中新增 Xamarin.Essentials 的參考。
+4. 在任何 C# 類別中新增對 Xamarin.Essentials 的參考，以參考 API。
 
     ```csharp
     using Xamarin.Essentials;
     ```
 
-5. Xamarin.Essentials 需要平台專屬的設定：
+5. Xamarin.Essentials 需要平台特定設定：
 
     # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-    Xamarin.Essentials 支援 4.4，API level 19，相對應的最低 Android 版本，但目標 Android 版本編譯的 8.1，必須對應至 API 層級 27。 （在 Visual Studio 中，下列兩個版本是針對 Android 專案的 [Android 資訊清單索引標籤中的 [專案屬性] 對話方塊中設定。在 Visual Studio for Mac 中，設定 Android 應用程式] 索引標籤中的 Android 專案的 [專案選項] 對話方塊中。） 
-    
-    Xamarin.Essentials 安裝版本 27.0.2.1 它需要的 Xamarin.Android.Support 程式庫。 應用程式所需的任何其他 Xamarin.Android.Support 程式庫也應該更新為版本 27.0.2.1 使用 NuGet 套件管理員。 應用程式所使用的所有 Xamarin.Android.Support 程式庫應該相同，而且應該至少版本 27.0.2.1。 請參閱[疑難排解頁面](troubleshooting.md)如果您有新增 Xamarin.Essentials NuGet 或更新方案中的 Nuget 問題。
+    Xamarin.Essentials 支援最低 Android 版本 4.4，這對應到 API 層級 19，但最高 Android 版本必須是 8.1 才能進行編譯，這對應到 API 層級 27。 (在 Visual Studio 中，這兩個版本是在 [Android 資訊清單] 索引標籤中 Android 專案的 [專案屬性] 中設定的。在 Visual Studio for Mac 中，它們是在 [Android 應用程式] 索引標籤中 [專案選項] 對話方塊中設定的。) 
 
-    在 Android 專案的`MainLauncher`或任何`Activity`也就是必須在初始化啟動的 Xamarin.Essentials`OnCreate`方法：
+    Xamarin.Essentials 會安裝它所需的 Xamarin.Android.Support 程式庫 27.0.2.1 版。 您的應用程式所需的任何其他 Xamarin.Android.Support 程式庫都應該使用 NuGet 套件管理員更新到 27.0.2.1 版。 您的應用程式所使用的所有 Xamarin.Android.Support 程式庫都應該相同，而且必須是最新的 27.0.2.1 版。 若您有關於在方案中新增 Xamarin.Essentials NuGet 或更新 NuGet 的問題，請參閱[疑難排解介面](troubleshooting.md)。
+
+    在 Android 專案的 `MainLauncher` 或任何啟動的任何 `Activity` 中，Xamarin.Essentials都必須在 `OnCreate` 方法中初始化：
 
     ```csharp
-    Xamarin.Essentials.Platform.Init(this, bundle);
+    protected override void OnCreate(Bundle savedInstanceState) {
+        //...
+        base.OnCreate(savedInstanceState);
+        Xamarin.Essentials.Platform.Init(this, savedInstanceState); // add this line to your code, it may also be called: bundle
+        //...
     ```
 
-    若要處理在 Android 上的執行階段權限，Xamarin.Essentials 必須收到任何`OnRequestPermissionsResult`。 將下列程式碼新增至所有`Activity`類別：
+    若要處理 Android 上的執行階段權限，Xamarin.Essentials 必須接收任 `OnRequestPermissionsResult`。 將下列程式碼新增到所 `Activity` 類別：
 
     ```csharp
     public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -87,20 +84,24 @@ Xamarin.Essentials 是可以加入至任何現有或新專案使用 Visual Studi
 
     # <a name="iostabios"></a>[iOS](#tab/ios)
 
-    不需要其他設定。
+    不需要進行額外設定。
 
     # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-    不需要其他設定。
+    不需要進行額外設定。
 
     -----
 
-6. 請遵循[Xamarin.Essentials 指南](index.md)，可讓您複製並貼上的每個功能的程式碼片段。
+6. 依照可讓您為每個功能複製並貼上程式碼片段的 [Xamarin.Essentials 指南](index.md)執行。
+
+## <a name="xamarinessentials---cross-platform-apis-for-mobile-apps-video"></a>Xamarin.Essentials - 適用於行動應用程式的跨平台 API (影片)
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-XamarinEssentials-Cross-Platform-APIs-for-Mobile-Apps/player]
 
 ## <a name="other-resources"></a>其他資源
 
-我們建議開發人員新手 Xamarin，請造訪[Getting Started with Xamarin 開發](~/cross-platform/getting-started/index.md)。
+我們建議新的 Xamarin 開發人員瀏覽[開始使用 Xamarin 開發](~/cross-platform/getting-started/index.md)。
 
-請瀏覽[Xamarin.Essentials GitHub 存放庫](http://github.com/xamarin/Essentials)若要查看目前的原始碼，未來接下來，執行範例，並關閉存放庫。 社群投稿都是 歡迎使用 ！
+瀏覽 [Xamarin.Essentials GitHub 存放庫](https://github.com/xamarin/Essentials)以查看目前的原始程式碼、接下來有什麼新內容、執行範例，以及複製存放庫。 我們非常歡迎社群參與！
 
-瀏覽[API 文件](xref:Xamarin.Essentials)Xamarin.Essentials 的每個功能。
+瀏覽 [API 文件](xref:Xamarin.Essentials)以了解 Xamarin.Essentials 的每個功能。

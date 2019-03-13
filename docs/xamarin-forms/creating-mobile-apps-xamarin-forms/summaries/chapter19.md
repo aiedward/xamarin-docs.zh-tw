@@ -4,17 +4,19 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 第 19 章摘要�
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 01985cf253c0f33c52128386b36c11af50381ee1
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 795478805b582b956ee491bdfecd84485c1bc30e
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156680"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059440"
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>第 19 章的摘要。 集合檢視
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19)
 
 > [!NOTE] 
 > 在此頁面上的附註表示其中 Xamarin.Forms 有分歧活頁簿中所呈現的題材的區域。
@@ -60,7 +62,7 @@ Xamarin.Forms 可定義三個檢視維護集合，並顯示其項目：
 
 ### <a name="the-row-separator"></a>資料列分隔符號
 
-在 iOS 和 Android 的顯示，細線區隔資料列。 您可以控制這[ `SeparatorVisibiliy` ](xref:Xamarin.Forms.ListView.SeparatorVisibility)並[ `SeparatorColor` ](xref:Xamarin.Forms.ListView.SeparatorColor)屬性。 `SeparatorVisibility` 屬性的類型是[ `SeparatorVisbility` ](xref:Xamarin.Forms.SeparatorVisibility)，含有兩個成員的列舉類型：
+在 iOS 和 Android 的顯示，細線區隔資料列。 您可以控制這[ `SeparatorVisibility` ](xref:Xamarin.Forms.ListView.SeparatorVisibility)並[ `SeparatorColor` ](xref:Xamarin.Forms.ListView.SeparatorColor)屬性。 `SeparatorVisibility` 屬性的類型是[ `SeparatorVisibility` ](xref:Xamarin.Forms.SeparatorVisibility)，含有兩個成員的列舉類型：
 
 - [`Default`](xref:Xamarin.Forms.SeparatorVisibility.Default)預設值
 - [`None`](xref:Xamarin.Forms.SeparatorVisibility.None)

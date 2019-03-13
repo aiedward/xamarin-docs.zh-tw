@@ -1,32 +1,34 @@
 ---
 title: 檢查電池狀態
-description: 這篇文章說明如何使用 Xamarin.Forms DependencyService 類別存取原生方式在每個平台時電池資訊。
+description: 本文說明如何使用 Xamarin.Forms DependencyService 類別，以原生方式存取每個平台的電池資訊。
 ms.prod: xamarin
 ms.assetid: CF1C5A73-84ED-407D-BDC5-EB1D83D2D3DB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: cbb4a01ac2c6d933fe40a0b3c2571d1fe3ce75c0
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.openlocfilehash: 08278c2bc380892706320dbd0e69642257b73005
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998389"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233779"
 ---
 # <a name="checking-battery-status"></a>檢查電池狀態
 
-這篇文章會逐步建立會檢查電池狀態的應用程式。 這篇文章根據電池外掛程式中，James Montemagno 所建立。 如需詳細資訊，請參閱 < [GitHub 存放庫](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery)。
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/DependencyService)
 
-因為 Xamarin.Forms 不包含功能來檢查目前的電池狀態，此應用程式必須使用[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)利用原生 Api。  本文將介紹下列步驟使用`DependencyService`:
+本文會逐步解說如何建立可檢查電池狀態的應用程式。 本文是以 James Montemagno 的電池外掛程式為依據。 如需詳細資訊，請參閱 [GitHub 存放庫](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery)。
 
-- **[建立介面](#Creating_the_Interface)** &ndash;了解如何建立共用程式碼中的介面。
-- **[iOS 實作](#iOS_Implementation)** &ndash;了解如何在適用於 iOS 的原生程式碼中實作的介面。
-- **[Android 的實作](#Android_Implementation)** &ndash;了解如何在原生程式碼中實作的介面，適用於 Android。
-- **[通用 Windows 平台實作](#UWPImplementation)** &ndash;了解如何在原生程式碼適用於通用 Windows 平台 (UWP) 中實作介面。
-- **[在共用程式碼中實作](#Implementing_in_Shared_Code)** &ndash;了解如何使用`DependencyService`呼叫原生實作共用的程式碼。
+由於 Xamarin.Forms 不包含檢查目前電池狀態的功能，因此本應用程式必須使用 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 來利用原生 API。  本文涵蓋使用 `DependencyService` 的下列步驟：
 
-完成時，應用程式使用`DependencyService`會有下列結構：
+- **[建立介面](#Creating_the_Interface)** &ndash; 了解如何在共用程式碼中建立介面。
+- **[iOS 實作](#iOS_Implementation)** &ndash; 了解如何以適用於 iOS 的原生程式碼來實作介面。
+- **[Android 實作](#Android_Implementation)** &ndash; 了解如何以適用於 Android 的原生程式碼來實作介面。
+- **[通用 Windows 平台實作](#UWPImplementation)** &ndash; 了解如何以適用於通用 Windows 平台 (UWP) 的原生程式碼來實作介面。
+- **[在共用程式碼中實作](#Implementing_in_Shared_Code)** &ndash; 了解如何使用 `DependencyService` 從共用程式碼呼叫原生實作。
+
+完成時，使用 `DependencyService` 的應用程式會有下列結構：
 
 ![](battery-info-images/battery-diagram.png "DependencyService 應用程式結構")
 
@@ -34,7 +36,7 @@ ms.locfileid: "38998389"
 
 ## <a name="creating-the-interface"></a>建立介面
 
-首先，表示所需的功能的共用程式碼中建立的介面。 在檢查應用程式的電池的情況下的相關資訊是電池的剩餘百分比，裝置是否收費，以及如何在裝置接收電源：
+首先，在共用程式碼中建立介面以表示所需的功能。 如果是檢查電池的應用程式，其相關資訊包括剩餘電量百分比、裝置是否收費，以及裝置如何接收電源：
 
 ```csharp
 namespace DependencyServiceSample
@@ -66,16 +68,16 @@ namespace DependencyServiceSample
 }
 ```
 
-針對這個介面，在共用的程式碼中撰寫程式碼，可讓 Xamarin.Forms 應用程式存取每個平台上的電源管理的 Api。
+以共用程式碼撰寫這個介面的程式碼時，可讓 Xamarin.Forms 應用程式存取每個平台上的電源管理 API。
 
 > [!NOTE]
-> 實作介面的類別必須具有無參數的建構函式，才能使用`DependencyService`。 無法由介面定義建構函式。
+> 實作介面的類別必須具有無參數的建構函式，才能使用 `DependencyService`。 介面無法定義建構函式。
 
 <a name="iOS_Implementation" />
 
-## <a name="ios-implementation"></a>iOS 的實作
+## <a name="ios-implementation"></a>iOS 實作
 
-`IBattery`介面必須實作每個平台專屬的應用程式專案中。 IOS 實作會使用原生[ `UIDevice` ](https://developer.xamarin.com/api/type/UIKit.UIDevice/) Api 來存取電池資訊。 請注意，下列類別會具有無參數建構函式，讓`DependencyService`可以建立新的執行個體：
+您必須在每個平台特定應用程式專案中實作 `IBattery` 介面。 iOS 實作會使用原生 [`UIDevice`](xref:UIKit.UIDevice) API 來存取電池資訊。 請注意，下列類別具有無參數的建構函式，以便讓 `DependencyService` 可以建立新的執行個體：
 
 ```csharp
 using UIKit;
@@ -138,7 +140,7 @@ namespace DependencyServiceSample.iOS
 }
 ```
 
-最後，新增這`[assembly]`屬性在類別上方 （和任何已定義的命名空間之外），包括任何必要`using`陳述式：
+最後，將這個 `[assembly]` 屬性新增到類別上方 (且在任何已定義的命名空間外)，包括任何必要的 `using` 陳述式：
 
 ```csharp
 using UIKit;
@@ -152,13 +154,13 @@ namespace DependencyServiceSample.iOS
     ...
 ```
 
-這個屬性會註冊類別實作`IBattery`介面，這表示`DependencyService.Get<IBattery>`可以共用程式碼中用來建立它的執行個體：
+這個屬性會將類別註冊為 `IBattery` 介面的實作，這表示 `DependencyService.Get<IBattery>` 可以在共用程式碼中用來建立其執行個體：
 
 <a name="Android_Implementation" />
 
-## <a name="android-implementation"></a>Android 的實作
+## <a name="android-implementation"></a>Android 實作
 
-Android 的實作會使用[ `Android.OS.BatteryManager` ](https://developer.xamarin.com/api/type/Android.OS.BatteryManager/) API。 這項實作是更複雜的 iOS 版本，需要檢查，以處理沒有電池權限：
+Android 實作會使用 [`Android.OS.BatteryManager`](https://developer.xamarin.com/api/type/Android.OS.BatteryManager/) API。 這項實作比 iOS 版本更複雜，需要檢查以處理電池權限不足的問題：
 
 ```csharp
 using System;
@@ -295,7 +297,7 @@ namespace DependencyServiceSample.Droid
 }
 ```
 
-新增這`[assembly]`屬性在類別上方 （和任何已定義的命名空間之外），包括任何必要`using`陳述式：
+將這個 `[assembly]` 屬性新增到類別上方 (且在任何已定義的命名空間外)，包括任何必要的 `using` 陳述式：
 
 ```csharp
 ...
@@ -309,13 +311,13 @@ namespace DependencyServiceSample.Droid
     ...
 ```
 
-這個屬性會註冊類別實作`IBattery`介面，這表示`DependencyService.Get<IBattery>`可用於共用程式碼可以建立它的執行個體。
+這個屬性會將類別註冊為 `IBattery` 介面的實作，這表示 `DependencyService.Get<IBattery>` 可以在共用程式碼中用來建立其執行個體：
 
 <a name="UWPImplementation" />
 
 ## <a name="universal-windows-platform-implementation"></a>通用 Windows 平台實作
 
-UWP 實作會使用`Windows.Devices.Power`Api 來取得電池狀態資訊：
+UWP 實作會使用 `Windows.Devices.Power` API 來取得電池狀態資訊：
 
 ```csharp
 using DependencyServiceSample.UWP;
@@ -409,13 +411,13 @@ namespace DependencyServiceSample.UWP
 }
 ```
 
-`[assembly]`命名空間宣告上方的屬性會註冊類別的實作作為`IBattery`介面，這表示`DependencyService.Get<IBattery>`可以共用程式碼中用來建立它的執行個體。
+命名空間宣告上的 `[assembly]` 屬性會將類別註冊為 `IBattery` 介面的實作，這表示 `DependencyService.Get<IBattery>` 可以在共用程式碼中用來建立其執行個體：
 
 <a name="Implementing_in_Shared_Code" />
 
 ## <a name="implementing-in-shared-code"></a>在共用程式碼中實作
 
-現在，每個平台已實作的介面，您就可以寫入共用的應用程式加以利用。 應用程式將會包含具有按鈕的頁面，當點選更新它與目前的電池狀態的文字。 它會使用`DependencyService`若要取得的執行個體`IBattery`介面。 在執行階段，這個執行個體將會擁有完整存取權的原生 SDK 的平台特定實作。
+現在，每個平台均已實作介面，即可撰寫共用應用程式來加以利用。 應用程式會提供一個具有按鈕的頁面，當點選按鈕時，就會使用目前的電池狀態來更新其文字。 它會使用 `DependencyService` 來取得 `IBattery` 介面的執行個體。 在執行階段，這個執行個體將會是具有原生 SDK 完整存取權的平台特定實作。
 
 ```csharp
 public MainPage ()
@@ -469,13 +471,13 @@ public MainPage ()
 }
 ```
 
-在 iOS 上執行此應用程式、 Android 或 UWP 和按下按鈕會導致更新以反映目前的電源狀態，裝置的按鈕文字。
+在 iOS、Android 或 UWP 上執行此應用程式，然後按下按鈕，就會更新按鈕文字以反映裝置的目前電源狀態。
 
 ![](battery-info-images/battery.png "電池狀態範例")
 
 
 ## <a name="related-links"></a>相關連結
 
-- [DependencyService （範例）](https://developer.xamarin.com/samples/DependencyService)
-- [使用 DependencyService （範例）](https://developer.xamarin.com/samples/UsingDependencyService/)
+- [DependencyService (Samples)](https://developer.xamarin.com/samples/DependencyService)
+- [使用 DependencyService (範例)](https://developer.xamarin.com/samples/UsingDependencyService/)
 - [Xamarin.Forms 範例](https://github.com/xamarin/xamarin-forms-samples)

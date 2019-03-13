@@ -4,15 +4,15 @@ description: 本指南提供使用新連線管理員時可能遇到之問題 (�
 ms.prod: xamarin
 ms.assetid: A1508A15-1997-4562-B537-E4A9F3DD1F06
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 575e6705679539af6d3e5fae3ffc5721d9f79ba6
-ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
+ms.openlocfilehash: cfc4ecc5bf7ebc5e4c4dae8094fe3eb4ece34068
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291044"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112493"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS 組建主機的連線疑難排解
 
@@ -305,7 +305,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 - **Xamarin 4.1 安全性功能** – 如果您在使用 Xamarin 4.1 或更新版本之後降級成 Xamarin 4.0，就「會」發生此錯誤。 在此情況下，錯誤會伴隨有額外的警告「私密金鑰已加密，但複雜密碼是空的」。 這是一個因 Xamarin 4.1 中的新安全性功能而進行的「刻意」變更。 **建議的修正**從 **%LOCALAPPDATA%\Xamarin\MonoTouch** 中刪除 **id\_rsa** 和 **id\_rsa.pub**，然後重新連線到 Mac 組建主機。
 
-- **SSH 安全性限制** – 當此訊息伴隨有額外的警告「無法使用現有的 SSH 金鑰驗證使用者」時，最常意謂著 Mac 上 **$HOME/.ssh/authorized\_keys** 完整路徑中的其中一個檔案或目錄已針對 _other_ 或 _group_ 成員啟用寫入權限。 **一般修正**：在 Mac 上的 [終端機] 命令提示字元中執行 `chmod og-w "$HOME"`。 如需有關是哪個特定檔案或目錄造成問題的詳細資料，請在 [終端機] 中執行 `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"`，然後從您的桌面開啟 **sshd.log** 檔案並尋找 "Authentication refused: bad ownership or modes" (驗證被拒：無效的擁有權或模式)。
+- **SSH 安全性限制** - 當此訊息伴隨有額外警告「無法使用現有的 SSH 金鑰驗證使用者」時，最常意謂著 Mac 上 **$HOME/.ssh/authorized\_keys** 完整路徑中的其中一個檔案或目錄已針對 _other_ 或 _group_ 成員啟用寫入權限。 **一般修正**：在 Mac 上的 [終端機] 命令提示字元中執行 `chmod og-w "$HOME"`。 如需有關是哪個特定檔案或目錄造成問題的詳細資料，請在 [終端機] 中執行 `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"`，然後從您的桌面開啟 **sshd.log** 檔案並尋找 "Authentication refused: bad ownership or modes" (驗證被拒：無效的擁有權或模式)。
 
 ### <a name="solutions-cannot-be-loaded-from-a-network-share"></a>無法從網路共用載入解決方案
 

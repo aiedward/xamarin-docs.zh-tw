@@ -4,17 +4,19 @@ description: XAML 標記延伸模組組成允許屬性設為物件或間接參�
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
-author: charlespetzold
-ms.author: chape
-ms.date: 3/27/2018
-ms.openlocfilehash: 6fcb051d2c24c7da169106b06ad5ebfc91edafa6
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/27/2018
+ms.openlocfilehash: 86abe932e9c244e1a959042cfc995bc184f89cc9
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935611"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671282"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 標記延伸
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
 _XAML 標記延伸模組組成允許屬性設為物件或間接參考來自其他來源的值的 XAML 中的重要功能。XAML 標記延伸是特別重要，共用物件，以及參考整個應用程式，所使用的常數，但他們在資料繫結中找到其最大的公用程式。_
 
@@ -387,7 +389,7 @@ xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
-您將需要額外的 XML 命名空間宣告，來存取其他類別。 每個額外的 XML 命名空間宣告會定義新的前置詞。 若要存取類別本機共用應用程式的.NET Standard 程式庫，例如`AppConstants`，XAML 程式設計人員通常會使用前置詞`local`。 命名空間宣告必須指出 CLR (Common Language Runtime) 命名空間名稱，也就是.NET 命名空間名稱，也就是名稱出現在 C#`namespace`定義或`using`指示詞：
+您將需要額外的 XML 命名空間宣告，來存取其他類別。 每個額外的 XML 命名空間宣告會定義新的前置詞。 若要存取類別本機共用應用程式的.NET Standard 程式庫，例如`AppConstants`，XAML 程式設計人員通常會使用前置詞`local`。 命名空間宣告必須指出 CLR (Common Language Runtime) 命名空間名稱，也就是.NET 命名空間名稱，也就是名稱出現在C#`namespace`定義或在`using`指示詞：
 
 ```csharp
 xmlns:local="clr-namespace:XamlSamples"
@@ -401,7 +403,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 請注意，關鍵字`clr-namespace`後面接著冒號及.NET 命名空間名稱，後面接著一個分號，關鍵字`assembly`，等號，以及組件名稱。
 
-是的之後要加冒號`clr-namespace`等號後面，但`assembly`。 語法中定義此方式刻意： 最 XML 命名空間宣告參考的 URI，例如開始一個 URI 配置名稱`http`，這一律後接冒號。 `clr-namespace`這個字串的一部分要模擬這個慣例。
+是的之後要加冒號`clr-namespace`等號後面，但`assembly`。 語法已定義在此刻意方式：大部分的 XML 命名空間宣告參考的 URI，例如開始一個 URI 配置名稱`http`，這一律後接冒號。 `clr-namespace`這個字串的一部分要模擬這個慣例。
 
 中包含下列命名空間宣告**StaticConstantsPage**範例。 請注意，`BoxView`維度會設為`Math.PI`和`Math.E`，但縮放為 100 倍：
 
@@ -545,7 +547,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-此範例中，您應該採取最重要的一課可能是標記延伸語法： 沒有引號必須出現在標記延伸的大括號。 鍵入時標記延伸在 XAML 檔案中，很自然地想要以引號括住屬性的值。 抵禦常見的錯誤 ！
+可能是此範例中，您應該採取最重要的一課是標記延伸語法：沒有引號必須出現在標記延伸的大括號中。 鍵入時標記延伸在 XAML 檔案中，很自然地想要以引號括住屬性的值。 抵禦常見的錯誤 ！
 
 以下是執行的程式：
 

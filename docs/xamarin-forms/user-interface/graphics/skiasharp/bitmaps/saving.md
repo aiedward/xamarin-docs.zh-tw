@@ -4,17 +4,19 @@ description: 探索支援 SkiaSharp 將點陣圖儲存使用者的相片媒體�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: e957134ecceee84962e5a4fc153285ea0a2a5906
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 885bba381e1371d273000fa0d970b465e9ca9c0b
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615557"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233701"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>將 SkiaSharp 點陣圖儲存至檔案
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 SkiaSharp 應用程式已建立或修改點陣圖之後，應用程式可能會想要將點陣圖儲存到使用者的相片媒體櫃：
 
@@ -40,13 +42,13 @@ SkiaSharp 應用程式已建立或修改點陣圖之後，應用程式可能會�
 - _解碼_&mdash;讀取點陣圖的檔案格式，並將其解壓縮
 - _編碼_&mdash;壓縮點陣圖，並寫入點陣圖檔案格式
 
-[ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/)類別包含數個方法，名為`Decode`，建立`SKBitmap`從壓縮的來源。 只需要是提供檔案名稱、 資料流或位元組陣列。 可以判斷檔案格式解碼器，並將它遞交給適當的內部解碼函式。
+[ `SKBitmap` ](xref:SkiaSharp.SKBitmap)類別包含數個方法，名為`Decode`，建立`SKBitmap`從壓縮的來源。 只需要是提供檔案名稱、 資料流或位元組陣列。 可以判斷檔案格式解碼器，並將它遞交給適當的內部解碼函式。
 
-颾魤 ㄛ [ `SKCodec` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCodec/)類別有兩個方法，名為`Create`，可以建立`SKCodec`從壓縮的來源物件，並允許應用程式在解密程序中取得更複雜。 (`SKCodec`類別會顯示在 發行項[**動畫 SkiaSharp 點陣圖**](animating.md#gif-animation)與解碼的動畫的 GIF 檔案。)
+颾魤 ㄛ [ `SKCodec` ](xref:SkiaSharp.SKCodec)類別有兩個方法，名為`Create`，可以建立`SKCodec`從壓縮的來源物件，並允許應用程式在解密程序中取得更複雜。 (`SKCodec`類別會顯示在 發行項[**動畫 SkiaSharp 點陣圖**](animating.md#gif-animation)與解碼的動畫的 GIF 檔案。)
 
-當編碼點陣圖時的詳細資訊，:，編碼器必須知道應用程式想要使用 （JPEG 或 PNG 或其他項目） 的特定檔案格式。 如果需要失真格式，則編碼也必須知道所需的等級的品質。 
+點陣圖的編碼方式，詳細資訊時需要：編碼器必須知道特定的檔案格式的應用程式想要使用 （JPEG 或 PNG 或其他項目）。 如果需要失真格式，則編碼也必須知道所需的等級的品質。
 
-`SKBitmap`類別會定義其中一個[ `Encode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Encode/p/SkiaSharp.SKWStream/SkiaSharp.SKEncodedImageFormat/System.Int32/)方法，使用下列語法：
+`SKBitmap`類別會定義其中一個[ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32))方法，使用下列語法：
 
 ```csharp
 public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality)
@@ -54,13 +56,13 @@ public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality
 
 這個方法會更詳細描述短時間內。 寫入的資料流寫入編碼的點陣圖。 (在 'W'`SKWStream`代表 「 寫入 」。)第二個和第三個引數指定的檔案格式並 （適用於失真格式） 所需的品質，範圍從 0 到 100。
 
-颾魤 ㄛ [ `SKImage` ](https://developer.xamarin.com/api/type/SkiaSharp.SKImage/)並[ `SKPixmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPixmap/)類別也定義`Encode`稍微更具彈性，而且這可能會偏好的方法。 您可以輕鬆地建立`SKImage`物件從`SKBitmap`物件使用靜態[ `SKImage.FromBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKImage.FromBitmap/p/SkiaSharp.SKBitmap/)方法。 您可以取得`SKPixmap`物件從`SKBitmp`物件使用[ `PeekPixels` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.PeekPixels()/)方法。
+颾魤 ㄛ [ `SKImage` ](xref:SkiaSharp.SKImage)並[ `SKPixmap` ](xref:SkiaSharp.SKPixmap)類別也定義`Encode`稍微更具彈性，而且這可能會偏好的方法。 您可以輕鬆地建立`SKImage`物件從`SKBitmap`物件使用靜態[ `SKImage.FromBitmap` ](xref:SkiaSharp.SKImage.FromBitmap(SkiaSharp.SKBitmap))方法。 您可以取得`SKPixmap`物件從`SKBitmap`物件使用[ `PeekPixels` ](xref:SkiaSharp.SKBitmap.PeekPixels)方法。
 
-其中一個[ `Encode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKImage.Encode()/)所定義的方法`SKImage`沒有參數並會自動儲存成 PNG 格式。 無參數的方法是非常好用。
+其中一個[ `Encode` ](xref:SkiaSharp.SKImage.Encode)所定義的方法`SKImage`沒有參數並會自動儲存成 PNG 格式。 無參數的方法是非常好用。
 
 ## <a name="platform-specific-code-for-saving-bitmap-files"></a>平台特定程式碼，來儲存點陣圖檔
 
-當您想要編碼`SKBitmap`物件至特定檔案格式，通常您會得到一些排序的資料流物件或資料的陣列。 部份`Encode`方法 (包括不含任何參數所定義的一個`SKImage`) 會傳回[ `SKData` ](https://developer.xamarin.com/api/type/SkiaSharp.SKData/)物件，它可以轉換成使用的位元組陣列[ `ToArray` ](https://developer.xamarin.com/api/member/SkiaSharp.SKData.ToArray()/)方法。 此資料必須儲存至檔案。 
+當您想要編碼`SKBitmap`物件至特定檔案格式，通常您會得到一些排序的資料流物件或資料的陣列。 部份`Encode`方法 (包括不含任何參數所定義的一個`SKImage`) 會傳回[ `SKData` ](xref:SkiaSharp.SKData)物件，它可以轉換成使用的位元組陣列[ `ToArray` ](xref:SkiaSharp.SKData.ToArray)方法。 此資料必須儲存至檔案。
 
 正在儲存至應用程式的本機儲存體中的檔案是相當簡單，因為您可以使用標準`System.IO`類別和方法，這項工作。 本文會示範這項技術[**動畫 SkiaSharp 點陣圖**](animating.md#bitmap-animation)與以動畫顯示一連串點陣圖的 Mandelbrot 集合。
 
@@ -81,11 +83,11 @@ public interface IPhotoLibrary
 
 針對`SavePhotoAsync`，第一個引數是位元組陣列，包含已編碼為特定檔案格式，例如 JPEG 或 PNG 的點陣圖。 就可以應用程式可能會想要找出它的下一個參數，後面接著檔案名稱中指定的特定資料夾中建立的所有點陣圖。 方法會傳回布林值，指出成功與否。
 
-以下是如何`SavePhotoAsync`三個平台上實作：
+下列各節將討論如何`SavePhotoAsync`實作每個平台。
 
 ### <a name="the-ios-implementation"></a>IOS 實作
 
-IOS 實作`SavePhotoAsync`會使用[ `SaveToPhotosAlbum` ](https://developer.xamarin.com/api/member/UIKit.UIImage.SaveToPhotosAlbum/)方法`UIImage`:
+IOS 實作`SavePhotoAsync`會使用[ `SaveToPhotosAlbum` ](xref:UIKit.UIImage.SaveToPhotosAlbum*)方法`UIImage`:
 
 ```csharp
 public class PhotoLibrary : IPhotoLibrary
@@ -107,7 +109,7 @@ public class PhotoLibrary : IPhotoLibrary
 }
 ```
 
-不幸的是，沒有辦法指定檔案名稱或映像的資料夾。 
+不幸的是，沒有辦法指定檔案名稱或映像的資料夾。
 
 **Info.plist** iOS 專案中的檔案需要索引鍵，以指定它將映像新增至相片媒體櫃：
 
@@ -237,13 +239,13 @@ public class PhotoLibrary : IPhotoLibrary
 
 ## <a name="exploring-the-image-formats"></a>探索映像格式
 
-以下是[ `Encode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Encode/p/SkiaSharp.SKWStream/SkiaSharp.SKEncodedImageFormat/System.Int32/)方法`SKImage`一次：
+以下是[ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32))方法`SKImage`一次：
 
 ```csharp
 public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality)
 ```
 
-[`SKEncodedImageFormat`](https://developer.xamarin.com/api/type/SkiaSharp.SKEncodedImageFormat/) 是列舉型別參考為 11 個點陣圖檔案格式，其中有些是相當晦澀難懂的成員：
+[`SKEncodedImageFormat`](xref:SkiaSharp.SKEncodedImageFormat) 是列舉型別參考為 11 個點陣圖檔案格式，其中有些是相當晦澀難懂的成員：
 
 - `Astc` &mdash; 自適性調整紋理壓縮
 - `Bmp` &mdash; Windows 點陣圖
@@ -276,7 +278,7 @@ using (SKManagedWStream wstream = new SKManagedWStream(memStream))
 }
 ```
 
-`SKManagedWStream`類別衍生自`SKWStream`（這代表 「 可寫入資料流 」）。 `Encode`方法會寫入該資料流中的編碼的點陣圖檔案。 該程式碼中的註解，請參閱檢查可能需要執行一些錯誤。 
+`SKManagedWStream`類別衍生自`SKWStream`（這代表 「 可寫入資料流 」）。 `Encode`方法會寫入該資料流中的編碼的點陣圖檔案。 該程式碼中的註解，請參閱檢查可能需要執行一些錯誤。
 
 **儲存的檔案格式**頁面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)應用程式會使用類似的程式碼可讓您試驗不同的格式儲存點陣圖。
 
@@ -341,7 +343,7 @@ XAML 檔案中包含`SKCanvasView`顯示點陣圖、 應用程式頁面的其餘
                    HorizontalOptions="FillAndExpand" />
         </StackLayout>
 
-        <Button Text="Save" 
+        <Button Text="Save"
                 Clicked="OnButtonClicked">
             <Button.Triggers>
                 <DataTrigger TargetType="Button"
@@ -435,9 +437,9 @@ public partial class SaveFileFormatsPage : ContentPage
 
 `Clicked`處理常式`Button`所有的實際運作。 它會取得兩個引數`Encode`從`Picker`並`Slider`，然後使用 建立稍早所示的程式碼`SKManagedWStream`如`Encode`方法。 這兩個`Entry`檢視提供資料夾和檔案名稱`SavePhotoAsync`方法。
 
-這個方法大部分被用來處理問題或發生錯誤。 如果`Encode`會建立空的陣列，這表示，不支援的特定檔案格式。 如果`SavePhotoAsync`傳回`false`，則檔案不成功儲存。 
+這個方法大部分被用來處理問題或發生錯誤。 如果`Encode`會建立空的陣列，這表示，不支援的特定檔案格式。 如果`SavePhotoAsync`傳回`false`，則檔案不成功儲存。
 
-以下是三個平台上執行的程式：
+以下是執行的程式：
 
 [![儲存檔案格式](saving-images/SaveFileFormats.png "儲存檔案格式")](saving-images/SaveFileFormats-Large.png#lightbox)
 
@@ -688,7 +690,7 @@ public partial class FingerPaintSavePage : ContentPage
 }
 ```
 
-**儲存** 按鈕處理常式會使用簡化[ `Encode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKImage.Encode()/)方法從`SKImage`。 這個方法會將編碼使用 PNG 格式。 `SKImage`物件會根據建立`saveBitmap`，和`SKData`物件包含已編碼的 PNG 檔案。 
+**儲存** 按鈕處理常式會使用簡化[ `Encode` ](xref:SkiaSharp.SKImage.Encode)方法從`SKImage`。 這個方法會將編碼使用 PNG 格式。 `SKImage`物件會根據建立`saveBitmap`，和`SKData`物件包含已編碼的 PNG 檔案。
 
 `ToArray`方法的`SKData`取得位元組陣列。 這是傳遞至`SavePhotoAsync`方法中，固定的資料夾名稱，以及唯一的檔名，建構自目前的日期和時間。
 
@@ -704,6 +706,6 @@ public partial class FingerPaintSavePage : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [SpinPaint （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/)

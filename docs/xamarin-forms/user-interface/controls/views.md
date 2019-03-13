@@ -6,15 +6,17 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/12/2016
-ms.openlocfilehash: 52d8d5f6eb38e5cb501d6284d08f7317981e0dcf
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 13/11/2018
+ms.openlocfilehash: f5e3c5dbadeeb3cc1c019707ce7aa106e4946e36
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998969"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292008"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms 檢視
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/FormsGallery/)
 
 _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面。_
 
@@ -43,7 +45,7 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 | [`BoxView`](xref:Xamarin.Forms.BoxView) 顯示實心矩形的色彩來[ `Color` ](xref:Xamarin.Forms.BoxView.Color)屬性。 `BoxView` 已為 40 x 40 的預設大小要求。 如需其他大小，指派[ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)並[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)屬性。<br /><br />[API 文件](xref:Xamarin.Forms.BoxView) / [指南](~/xamarin-forms/user-interface/boxview.md) / [範例 1](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)， [2](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration)， [3](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ColorListBox)， [4](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife)， [5](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock)，和[6](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock) | [![BoxView 範例](views-images/BoxView.png "BoxView 範例")](views-images/BoxView-Large.png#lightbox "BoxView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/BoxViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/BoxViewDemoPage.xaml) |
 |     |     |
 
-### <a name="webview"></a>Web 檢視
+### <a name="webview"></a>WebView
 
 |     |     |
 | --- | --- |
@@ -57,7 +59,7 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 | [`OpenGLView`](xref:Xamarin.Forms.OpenGLView) OpenGL 圖形顯示 iOS 和 Android 專案中。 沒有適用於通用 Windows 平台支援。 IOS 和 Android 專案需要的參考**OpenTK 1.0**組件或有**OpenTK** 1.0.0.0 版的組件。 `OpenGLView` 共用專案; 中使用的工作變得更容易如果使用.NET Standard 程式庫，然後相依性服務也會需要 （如程式碼範例所示）。<br /><br />這是唯一的圖形設施內建於 Xamarin.Forms，但 Xamarin.Forms 應用程式也可以轉譯圖形使用[ `CocosSharp` ](~/xamarin-forms/user-interface/graphics/cocossharp.md)， [ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)，或[ `UrhoSharp`](~/xamarin-forms/user-interface/graphics/urhosharp.md).<br /><br />[API 文件](xref:Xamarin.Forms.OpenGLView)<br /><br /> | [![OpenGLView 範例](views-images/OpenGLView.png "OpenGLView 範例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml)使用[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
 |     |     |
 
-### <a name="map"></a>對應
+### <a name="map"></a>地圖
 
 |     |     |
 | --- | --- |
@@ -71,6 +73,13 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 |     |     |
 | --- | --- |
 | [`Button`](xref:Xamarin.Forms.Button) 是一個矩形的物件，顯示的文字，並引發[ `Clicked` ](xref:Xamarin.Forms.Button.Clicked)已按下時的事件。<br /><br />[API 文件](xref:Xamarin.Forms.Button) / [指南](~/xamarin-forms/user-interface/button.md) / [範例](https://developer.xamarin.com/samples/UserInterface/ButtonDemos/) | [![按鈕範例](views-images/Button.png "按鈕範例")](views-images/Button-Large.png#lightbox "按鈕範例")<br /> [此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ButtonDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml)使用[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml.cs) |
+|     |     |
+
+### <a name="imagebutton"></a>ImageButton
+
+|     |     |
+| --- | --- |
+| `ImageButton` 是矩形物件會顯示映像，這會引發`Clicked`已按下時的事件。<br /><br /> [快速入門](~/xamarin-forms/user-interface/imagebutton.md) / [範例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/) | [![ImageButton 範例](views-images/ImageButton.png "ImageButton 範例")](views-images/ImageButton-Large.png#lightbox "ImageButton 範例")<br /> [此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageButtonDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml)使用[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="searchbar"></a>SearchBar
@@ -93,7 +102,7 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 |     |     |
 | --- | --- |
-| [`Stepper`](xref:Xamarin.Forms.Stepper) 可讓使用者選取`double`使用指定的累加值的範圍介於[ `Minimum` ](xref:Xamarin.Forms.Stepper.Minimum)， [ `Maximum` ](xref:Xamarin.Forms.Stepper.Maximum)，並[ `Increment` ](xref:Xamarin.Forms.Stepper.Increment)屬性。<br /><br />[API 文件](xref:Xamarin.Forms.Stepper) | [![步進範例](views-images/Stepper.png "步進範例")](views-images/Stepper-Large.png#lightbox "步進範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StepperDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StepperDemoPage.xaml) |
+| [`Stepper`](xref:Xamarin.Forms.Stepper) 可讓使用者選取`double`使用指定的累加值的範圍介於[ `Minimum` ](xref:Xamarin.Forms.Stepper.Minimum)， [ `Maximum` ](xref:Xamarin.Forms.Stepper.Maximum)，並[ `Increment` ](xref:Xamarin.Forms.Stepper.Increment)屬性。<br /><br />[API 文件](xref:Xamarin.Forms.Stepper)  / [指南](~/xamarin-forms/user-interface/stepper.md) / [範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos) | [![步進範例](views-images/Stepper.png "步進範例")](views-images/Stepper-Large.png#lightbox "步進範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StepperDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StepperDemoPage.xaml) |
 |     |     |
 
 ### <a name="switch"></a>參數
@@ -114,7 +123,7 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 |     |     |
 | --- | --- |
-| [`TimePicker`](xref:Xamarin.Forms.TimePicker) 可讓使用者與平台時間選擇器選取的時間。 [ `Time` ](xref:Xamarin.Forms.TimePicker.Time)屬性是在選取的時間。 應用程式可以監視中的變更`Time`屬性所安裝的處理常式[ `PropertyChanged` ](xref:Xamarin.Forms.BindableObject.PropertyChanged)事件。<br /><br />[API 文件](xref:Xamarin.Forms.TimePicker) | [![TimePicker 範例](views-images/TimePicker.png "TimePicker 範例")](views-images/TimePicker-Large.png#lightbox "TimePicker 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TimePickerDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TimePickerDemoPage.xaml) |
+| [`TimePicker`](xref:Xamarin.Forms.TimePicker) 可讓使用者與平台時間選擇器選取的時間。 [ `Time` ](xref:Xamarin.Forms.TimePicker.Time)屬性是在選取的時間。 應用程式可以監視中的變更`Time`屬性所安裝的處理常式[ `PropertyChanged` ](xref:Xamarin.Forms.BindableObject.PropertyChanged)事件。<br /><br />[API 文件](xref:Xamarin.Forms.TimePicker) / [指南](~/xamarin-forms/user-interface/timepicker.md) / [範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TimePicker) | [![TimePicker 範例](views-images/TimePicker.png "TimePicker 範例")](views-images/TimePicker-Large.png#lightbox "TimePicker 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TimePickerDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TimePickerDemoPage.xaml) |
 |     |     |
 
 ## <a name="views-for-editing-text"></a>編輯文字的檢視
@@ -188,7 +197,6 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.Forms 簡介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Xamarin.Forms FormsGallery 範例](https://developer.xamarin.com/samples/FormsGallery/)
 - [Xamarin.Forms 範例](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms API 文件](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

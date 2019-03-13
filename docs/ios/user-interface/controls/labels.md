@@ -4,15 +4,15 @@ description: 本文討論如何在 Xamarin.iOS 中使用標籤。 它說明如�
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: b52bdbd41eaafbc5e6c78e1f8514b701fd78bd6b
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: cca74ac74e5077822193f6dd97a69f8d9b823561
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241909"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233285"
 ---
 # <a name="labels-in-xamarinios"></a>在 Xamarin.iOS 中的標籤
 
@@ -20,7 +20,7 @@ ms.locfileid: "39241909"
 
 ## <a name="implementing-a-label"></a>實作標籤
 
-新的標籤由具現化[ `UILabel` ](https://developer.xamarin.com/api/type/UIKit.UILabel/):
+新的標籤由具現化[ `UILabel` ](xref:UIKit.UILabel):
 
 ```csharp
 UILabel label = new UILabel();

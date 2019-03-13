@@ -5,17 +5,19 @@ ms.prod: xamarin
 ms.assetid: 17296F14-640D-484B-A24C-A4E9B7013E4F
 ms.technology: xamarin-forms
 ms.custom: xamu-video
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 0fdcbd6467547647089b436a894b1bc490ba5ee1
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: 10d62ea050296eb6d36c9861b757ca44d3a2e452
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854814"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058187"
 ---
 # <a name="the-xamarinforms-visual-state-manager"></a>Xamarin.Forms 視覺狀態管理員
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)
 
 _您可以使用 Visual State Manager 來變更視覺狀態由程式碼設定為基礎的 XAML 元素。_
 
@@ -178,7 +180,7 @@ Visual State Manager 可讓您包含在您可以變更檢視的視覺外觀，�
 
 每個`Setter`目前該狀態時，標籤會指示特定屬性的值。 所參考的任何屬性`Setter`物件必須由可繫結的屬性。
 
-如下所示的標記是的基礎**檢視上的 VSM**頁面**[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** 範例程式。 此頁面包含三個`Entry`檢視中，但第二個已連結的 VSM 標記：
+如下所示的標記是的基礎 **檢視上的 VSM** 頁面 **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** 範例程式。 此頁面包含三個`Entry`檢視中，但第二個已連結的 VSM 標記：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -428,7 +430,7 @@ VisualStateManager.GoToState(this, "Focused");
 
 如果您想要實作您自己的視覺狀態，您必須呼叫`VisualStateManager.GoToState`從程式碼。 通常您要進行此呼叫，從您的網頁類別的程式碼後置檔案。
 
-**VSM 驗證**頁面**[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** 範例示範如何使用 Visual State Manager 與輸入驗證。 XAML 檔案包含兩個`Label`項目， `Entry`，和`Button`:
+**VSM 驗證** 頁面 **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** 範例示範如何使用 Visual State Manager 與輸入驗證。 XAML 檔案包含兩個`Label`項目， `Entry`，和`Button`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

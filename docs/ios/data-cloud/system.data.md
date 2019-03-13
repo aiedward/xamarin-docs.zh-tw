@@ -4,14 +4,15 @@ description: 本文件說明如何使用 System.Data 和 Mono.Data.Sqlite.dll �
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.openlocfilehash: 183079c150ad4df05424d4dbf2980a307a889352
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+author: lobrien
+ms.author: laobri
+ms.date: 11/25/2015
+ms.openlocfilehash: e6df2d9d45eb2f898bb3c4957ec7960956a184e0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997194"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671776"
 ---
 # <a name="systemdata-in-xamarinios"></a>在 Xamarin.iOS 中的 System.Data
 
@@ -107,7 +108,7 @@ class Demo {
 ```
 
 > [!IMPORTANT]
-> 如上述程式碼範例中所述，它是不建議您將字串內嵌 SQL 命令中，因為它可讓您的程式碼容易遭到[SQL 資料隱碼](http://en.wikipedia.org/wiki/SQL_injection)。
+> 如上述程式碼範例中所述，它是不建議您將字串內嵌 SQL 命令中，因為它可讓您的程式碼容易遭到[SQL 資料隱碼](https://en.wikipedia.org/wiki/SQL_injection)。
 
 
 ### <a name="using-command-parameters"></a>使用命令參數

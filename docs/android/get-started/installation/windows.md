@@ -4,15 +4,15 @@ description: 本指南說明在 Windows 上安裝 Xamarin.Android for Visual Stu
 ms.prod: xamarin
 ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 1eb8d4ec9ad60f0f9e81676920df4d950a875088
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.openlocfilehash: 26865fdbfc1cc6f11a978a70bd768e63771bcd4b
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37066438"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197468"
 ---
 # <a name="windows-installation"></a>Windows 安裝
 
@@ -36,10 +36,10 @@ _本指南說明在 Windows 上安裝 Xamarin.Android for Visual Studio 的步�
 
 ## <a name="installation"></a>安裝
 
-如需在 Windows 上安裝 Xamarin 以便搭配 Visual Studio 使用的詳細資訊，請參閱 [Windows 安裝](~/cross-platform/get-started/installation/windows.md)指南。
+如需在 Windows 上安裝 Xamarin 以便搭配 Visual Studio 使用的詳細資訊，請參閱 [Windows 安裝](~/get-started/installation/windows.md)指南。
 
 
-## <a name="configuration"></a>組態
+## <a name="configuration"></a>Configuration
 
 Xamarin.Android 使用 Java Development Kit (JDK) 和 Android SDK 來建置應用程式。 在安裝期間，Visual Studio 安裝程式會將這些工具放在它們的預設位置中，並以適當的路徑組態來設定開發環境。 您可以檢視和變更這些位置，方法是依序按一下 [工具] > [選項] > [Xamarin] > [Android 設定]：
 
@@ -80,13 +80,13 @@ Visual Studio 預設會安裝 Google Android SDK 管理員：
 
 使用針對 x86 架構最佳化的特殊模擬器映像以及兩種虛擬化技術其中之一，在 x86 電腦上執行開發工作時可顯著改善效能：
 
-1. Microsoft Hyper-V &ndash; 支援執行 Windows 10 4 月更新的電腦。
-2. Intel 的 Hardware Accelerated Execution Manager (HAXM) &ndash; 支援執行 OS X、macOS 或舊版 Windows 的 x86 電腦。
+1. Microsoft 的 Hyper-V &ndash; 適用於執行 Windows 10 2018 年 4 月更新或更新版本的電腦。
+2. Intel 的 Hardware Accelerated Execution Manager (HAXM) &ndash; 適用於執行 OS X、macOS 或舊版 Windows 的 x86 電腦。
 
 如需 Android Emulator、Hyper-V 和 HAXM 的詳細資訊，請參閱[硬體加速以提升模擬器效能](~/android/get-started/installation/android-emulator/hardware-acceleration.md)指南。
 
 > [!NOTE]
-> 在舊版的 Windows 中，HAXM 與 Hyper-V 不相容。 在本例中，需要[停用 Hyper-V](~/android/get-started/installation/android-emulator/troubleshooting.md#disable-hyperv) 或使用沒有最佳化 x86 的較慢模擬器映像。
+> 在 Windows 10 2018 年 4 月更新以前的 Windows 版本上，HAXM 與 Hyper-V 不相容。 在本例中，需要[停用 Hyper-V](~/android/get-started/installation/android-emulator/troubleshooting.md#disable-hyperv) 或使用沒有最佳化 x86 的較慢模擬器映像。
 
 
 <a name="device" />
@@ -119,7 +119,7 @@ Visual Studio 預設會安裝 Google Android SDK 管理員：
 ## <a name="related-links"></a>相關連結
 
 - [下載 Visual Studio](https://visualstudio.microsoft.com/vs/)
-- [安裝 Visual Studio Tools for Xamarin](~/cross-platform/get-started/installation/windows.md)
+- [安裝 Visual Studio Tools for Xamarin](~/get-started/installation/windows.md)
 - [系統需求](~/cross-platform/get-started/requirements.md)
 - [Android SDK 安裝](~/android/get-started/installation/android-sdk.md)
 - [Android Emulator 安裝](~/android/get-started/installation/android-emulator/index.md)

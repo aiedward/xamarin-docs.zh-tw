@@ -4,15 +4,15 @@ description: 本文件說明如何使用背景工作之後的應用程式會放�
 ms.prod: xamarin
 ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 9d304ee64e7716413febc475e721f5eb39043109
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: c8d1abebf6dec2b7b5fe76d57ff851fad457f2a8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351534"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669826"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS 背景與工作
 
@@ -20,7 +20,7 @@ ms.locfileid: "39351534"
 
 背景工作可分成三個類別：
 
-1.  **背景安全工作**-中的任何位置呼叫應用程式，您可在其中擁有的工作不想中斷應用程式應該輸入背景。
+1.  **背景安全工作**-被呼叫任何地方，您有一項工作的應用程式中不想中斷應用程式應該輸入背景。
 1.  **DidEnterBackground 工作**呼叫期間-`DidEnterBackground`應用程式生命週期方法，協助清除和儲存狀態。
 1.  **背景傳輸 (iOS 7 +)** -一種特殊的背景工作用來在 iOS 7 上執行網路傳輸。 不同於一般工作，背景傳送沒有預先決定的時間限制。
 
@@ -67,7 +67,7 @@ public override void DidEnterBackground (UIApplication application) {
 首先藉由覆寫`DidEnterBackground`方法中的`AppDelegate`，其中我們註冊我們的工作，透過`BeginBackgroundTask`如同我們在上一個範例。 接下來，我們會繁衍新的執行緒，並執行我們的長時間執行工作。 請注意，`EndBackgroundTask`現在從進行呼叫，在長時間執行的工作，因為`DidEnterBackground`都已傳回方法。
 
 > [!IMPORTANT]
-> 使用 iOS[看門狗機制](http://developer.apple.com/library/ios/qa/qa1693/_index.html)以確保應用程式的 UI 保持回應。 應用程式花費太多時間在`DidEnterBackground`會變成無回應 UI 中。 開始在背景中執行的工作可讓`DidEnterBackground`傳回及時，保留 UI 回應，並避免看門狗終止應用程式。
+> 使用 iOS[看門狗機制](https://developer.apple.com/library/ios/qa/qa1693/_index.html)以確保應用程式的 UI 保持回應。 應用程式花費太多時間在`DidEnterBackground`會變成無回應 UI 中。 開始在背景中執行的工作可讓`DidEnterBackground`傳回及時，保留 UI 回應，並避免看門狗終止應用程式。
 
 
 ## <a name="handling-background-task-time-limits"></a>處理背景工作時間限制

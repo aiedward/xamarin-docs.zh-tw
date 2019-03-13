@@ -1,17 +1,17 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: d551a72c9954f239b68c564309da51b3d2d98d3c
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: dea9d128efd777a84e166ccd066a7a2357b5c9e3
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350264"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267477"
 documentType: LandingData
 title: Xamarin.iOS
 metadata:
   description: Xamarin.iOS 針對 .NET 開發人員公開完整的 iOS SDK。
   author: conceptdev
   ms.author: crdun
-  ms.date: 07/27/2018
+  ms.date: 09/28/2018
   ms.topic: landing-page
   ms.technology: xamarin-ios
 abstract:
@@ -20,7 +20,7 @@ abstract:
     items:
     - href: ~/ios/samples/index.yml
       text: iOS 範例
-    - href: https://developer.xamarin.com/releases/ios/
+    - href: https://docs.microsoft.com/xamarin/ios/release-notes/
       text: 版本資訊
     - href: https://developer.apple.com/documentation/
       text: Apple 的開發人員文件
@@ -46,6 +46,10 @@ sections:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
       text: 多重畫面應用程式
       href: ~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-quickstart.md
+    - image:
+        src: https://docs.microsoft.com/media/common/i_mobile-app-developement.svg
+      text: iOS 12
+      href: ~/ios/platform/introduction-to-ios12/index.md
 - title: 輔助線
   items:
   - type: list
@@ -55,7 +59,7 @@ sections:
     - href: ~/ios/get-started/index.md
       html: 帶您動手操作 Xamarin.iOS 的教學課程。 請確定一切都已正確安裝，並建置您的第一個 iOS 應用程式。
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
         href: ~/ios/get-started/index.md
       title: 快速入門
     - href: ~/ios/app-fundamentals/
@@ -79,7 +83,7 @@ sections:
     - href: ~/essentials/index.md?context=xamarin/ios
       html: 行動應用程式的跨平台 API。
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_multi-connect.svg
+        src: https://docs.microsoft.com/media/common/i_multi-connect.svg
         href: ~/essentials/index.md?context=xamarin/ios
       title: Xamarin.Essentials
     - href: ~/ios/data-cloud/
@@ -97,7 +101,7 @@ sections:
     - href: ~/ios/internals/
       html: Xamarin.iOS 運作方式的詳細資訊。
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_config-tools.svg
+        src: https://docs.microsoft.com/media/common/i_config-tools.svg
         href: ~/ios/internals/
       title: 進階概念與內部項目
     - href: ~/ios/watchos/
@@ -120,10 +124,7 @@ sections:
     items:
     - title: API
       href: https://developer.xamarin.com/api/root/ios-unified/
-      html: <p><a href="https://developer.xamarin.com/api/root/ios-unified/">iOS API 文件</a></p><p><a href="https://docs.microsoft.com/en-us/dotnet/api/?view=xamarinios-10.8">基底類別程式庫</a></p>
+      html: <p><a href="https://developer.xamarin.com/api/root/ios-unified/">iOS API 文件</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8">基底類別程式庫</a></p>
     - title: 範例
       href: https://developer.xamarin.com/samples
       html: <p><a href="https://developer.xamarin.com/samples/ios/all/">iOS 範例</a></p><p><a href="https://developer.xamarin.com/samples/ios/all/">watchOS 範例</a></p><p><a href="https://developer.xamarin.com/samples/ios/all/">tvOS 範例</a></p>
-    - title: 活頁簿
-      href: https://developer.xamarin.com/workbooks
-      html: <p><a href="https://developer.xamarin.com/workbooks#ios">iOS 活頁簿</a></p>

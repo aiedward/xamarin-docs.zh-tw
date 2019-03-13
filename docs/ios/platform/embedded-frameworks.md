@@ -4,15 +4,15 @@ description: 本文件說明如何在 Xamarin.iOS 應用程式中內嵌的架構
 ms.prod: xamarin
 ms.assetid: F8C61020-4106-46F1-AECB-B56C909F42CB
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/05/2018
-ms.openlocfilehash: cce5356fd1d3d9a5cf16370a4843c3541b00a7c0
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: b59fd7c1a9e5f528878b90e1a76fabe5a79bab81
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351430"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108234"
 ---
 # <a name="embedded-frameworks-in-xamarinios"></a>在 Xamarin.iOS 中內嵌的架構
 
@@ -34,13 +34,13 @@ Xamarin.iOS 9.0 在 Xamarin.iOS 應用程式新增支援使用這些內嵌的架
 
 - 從內容功能表新增原生參考
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 以滑鼠右鍵按一下專案，並瀏覽加入原生參考
 
 ![](embedded-frameworks-images/xam-native-refs.png "選取 Mac 在 Visual Studio 中新增原生參考")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 以滑鼠右鍵按一下專案，並瀏覽加入原生參考
 

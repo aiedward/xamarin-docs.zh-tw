@@ -4,17 +4,19 @@ description: 本文說明如何傾斜轉換時，可以在 SkiaSharp，建立傾
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/20/2017
-ms.openlocfilehash: 951fc02dfff1721c1391c5d0c8a21452a156cfdb
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: a0c65ab2d319e39b236799cd453874142206b467
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615349"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058882"
 ---
 # <a name="the-skew-transform"></a>傾斜轉換
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _了解如何傾斜轉換時，可以在 SkiaSharp 建立傾斜的圖形物件_
 
@@ -22,17 +24,17 @@ SkiaSharp，在傾斜轉換會將圖形化的物件，例如此映像中的 「 
 
 ![](skew-images/skewexample.png "扭曲扭曲陰影文字程式範例")
 
-扭曲將矩形轉換成 parallelograms，但扭曲的橢圓仍是橢圓形。
+扭曲變成平行四邊形的矩形，但扭曲的橢圓仍是橢圓形。
 
 雖然 Xamarin.Forms 定義平移、 縮放和旋轉的屬性，沒有任何對應的屬性在 Xamarin.Forms 中的扭曲。
 
-[ `Skew` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Skew/p/System.Single/System.Single/)方法`SKCanvas`接受兩個引數，水平扭曲和垂直扭曲：
+[ `Skew` ](xref:SkiaSharp.SKCanvas.Skew(System.Single,System.Single))方法`SKCanvas`接受兩個引數，水平扭曲和垂直扭曲：
 
 ```csharp
 public void Skew (Single xSkew, Single ySkew)
 ```
 
-第二個[ `Skew` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Skew/p/SkiaSharp.SKPoint/)方法會結合在單一的這些引數`SKPoint`值：
+第二個[ `Skew` ](xref:SkiaSharp.SKCanvas.Skew(SkiaSharp.SKPoint))方法會結合在單一的這些引數`SKPoint`值：
 
 ```csharp
 public void Skew (SKPoint skew)
@@ -72,7 +74,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](skew-images/skewexperiment-small.png "扭曲實驗 頁面上的三個螢幕擷取畫面")](skew-images/skewexperiment-large.png#lightbox "的扭曲實驗 頁面上的三個螢幕擷取畫面")
 
-如果`xSkew`為負`ySkew`，結果就是旋轉，但也有點如同 UWP 顯示縮放。
+如果`xSkew`值為負`ySkew`值，結果是旋轉，但也會調整為某種程度的 UWP 顯示表示。
 
 轉換公式如下所示：
 
@@ -102,7 +104,7 @@ x' = x + xSkew ·(y-py)
 
 y' = ySkew ·(x – px) + y
 
-如果`ySkew`是零，而且您只指定非零值`xSkew`，然後`px`不會使用值。 值為無關，以及同樣`ySkew`和`py`。
+如果`ySkew`為零，則`px`不會使用值。 值為無關，以及同樣`ySkew`和`py`。
 
 您可能會覺得較喜歡指定扭曲角度的傾斜，例如在此圖中的角度 α 為項目：
 
@@ -110,7 +112,7 @@ y' = ySkew ·(x – px) + y
 
 150 像素轉換到 100 像素垂直的比例為在此範例中的該角度的正切 56.3 度。
 
-XAML 檔案**扭曲角度實驗**頁面大致**扭曲角度**頁面上，不同之處在於`Slider`項目範圍是從一來-90 到 90 度。 [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs)程式碼後置檔案中心頁面上的文字，並使用`Translate`設定頁面的中央扭曲的中心。 簡短`SkewDegrees`底端的程式碼的方法將轉換的角度來扭曲值：
+XAML 檔案**扭曲角度實驗**頁面大致**扭曲角度**頁面上，不同之處在於`Slider`項目範圍是從一來-90 度到 90 度。 [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs)程式碼後置檔案中心頁面上的文字，並使用`Translate`設定頁面的中央扭曲的中心。 簡短`SkewDegrees`底端的程式碼的方法將轉換的角度來扭曲值：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -224,7 +226,7 @@ using (SKPaint textPaint = new SKPaint())
 
 [![](skew-images/skewshadowtext1-small.png "扭曲陰影效果的文字頁面的三個螢幕擷取畫面")](skew-images/skewshadowtext1-large.png#lightbox "扭曲陰影效果的文字頁面的三個螢幕擷取畫面")
 
-垂直座標傳遞給`DrawText`方法指示的文字基準線的相對位置。 這就是相同的垂直座標，用來扭曲的中心。 如果文字字串中包含的伸尾部分，這項技術將無法運作。 例如，替代 「 影子 」 和這裡的"古怪"這個字，以反映的結果：
+垂直座標傳遞給`DrawText`方法指示的文字基準線的相對位置。 這就是相同的垂直座標，用來扭曲的中心。 如果文字字串中包含的伸尾部分，這項技術將無法運作。 比方說，「 陰影 」 取代 「 怪"這個字，結果如下：
 
 [![](skew-images/skewshadowtext2-small.png "替代的文字高度扭曲陰影效果的文字頁面的三個螢幕擷取畫面")](skew-images/skewshadowtext2-large.png#lightbox "替代的文字高度扭曲陰影效果的文字頁面的三個螢幕擷取畫面")
 
@@ -251,5 +253,5 @@ canvas.Translate(-xText, -yText - textBounds.Bottom);
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

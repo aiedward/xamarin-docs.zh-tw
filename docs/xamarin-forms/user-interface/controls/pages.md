@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: fea1db6c65e533692601439f4712d15371740644
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: ce10a2e6ac91f67f8b4f664c232de2a3c97a5ba6
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995894"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55291995"
 ---
 # <a name="xamarinforms-pages"></a>Xamarin.Forms 頁面
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/FormsGallery/)
 
 _Xamarin.Forms 頁面代表跨平台行動應用程式畫面。_
 
@@ -72,7 +74,6 @@ Xamarin.Forms 可支援下列的頁面類型：
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.Forms 簡介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Xamarin.Forms FormsGallery 範例](https://developer.xamarin.com/samples/FormsGallery/)
 - [Xamarin.Forms 範例](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms API 文件](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

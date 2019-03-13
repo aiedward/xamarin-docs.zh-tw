@@ -4,15 +4,15 @@ description: 適用於 iOS 的 Xamarin 設計工具支援在專案中建立，�
 ms.prod: xamarin
 ms.assetid: D8F07D63-B006-4050-9D1B-AC6FCDA71B99
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 05b190f4bfd4058e9e2f6e465e6026fa76dce6f4
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: c409fcc018379401c1ab40573495da12a8220c5a
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995693"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233662"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>IOS 的 Xamarin 設計工具中的自訂控制項
 
@@ -24,8 +24,8 @@ _適用於 iOS 的 Xamarin 設計工具支援在專案中建立，或從外部�
 
 在設計介面上會轉譯符合下列所有需求的控制項：
 
-1.  它是直接或間接子類別的[UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)或是[UIViewController](https://developer.xamarin.com/api/type/UIKit.UIView/Controller)。 其他[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)子類別會顯示為設計介面上的圖示。
-2.  它有[RegisterAttribute](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/)公開以 OBJECTIVE-C
+1.  它是直接或間接子類別的[UIView](xref:UIKit.UIView)或是[UIViewController](xref:UIKit.UIViewController)。 其他[NSObject](xref:Foundation.NSObject)子類別會顯示為設計介面上的圖示。
+2.  它有[RegisterAttribute](xref:Foundation.RegisterAttribute)公開以 OBJECTIVE-C
 3.  它有[必要的 IntPtr 建構函式](~/ios/internals/api-design/index.md)。
 4.  它可能會實作[IComponent](xref:System.ComponentModel.IComponent)介面，或已[DesignTimeVisibleAttribute](xref:System.ComponentModel.DesignTimeVisibleAttribute)設為 True。
 
@@ -38,17 +38,17 @@ _適用於 iOS 的 Xamarin 設計工具支援在專案中建立，或從外部�
 自訂控制項所宣告的屬性會出現在 [屬性] 面板中，如果符合下列條件：
 
 1.  屬性會有公用 getter 和 setter。
-1.  屬性具有[exportattribute 標記](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/)，以及[BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute)設為 True。
-1.  屬性型別是數值類型、 列舉型別、 string、 bool、 [SizeF](xref:System.Drawing.SizeF)， [UIColor](https://developer.xamarin.com/api/type/UIKit.UIColor/)，或[UIImage](https://developer.xamarin.com/api/type/UIKit.UIImage/)。 這份支援的類型可能會在未來擴充。
+1.  屬性具有[exportattribute 標記](xref:Foundation.ExportAttribute)，以及[BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute)設為 True。
+1.  屬性型別是數值類型、 列舉型別、 string、 bool、 [SizeF](xref:System.Drawing.SizeF)， [UIColor](xref:UIKit.UIColor)，或[UIImage](xref:UIKit.UIImage)。 這份支援的類型可能會在未來擴充。
 
 
 屬性也可以使用裝飾[DisplayNameAttribute](xref:System.ComponentModel.DisplayNameAttribute)來指定其顯示在 [屬性] 面板的標籤。
 
 ## <a name="initialization"></a>初始化
 
-針對`UIViewController`子類別，您應該使用[ViewDidLoad](https://developer.xamarin.com/api/member/UIKit.UIViewController.ViewDidLoad/)取決於您在設計工具中建立的檢視的程式碼的方法。
+針對`UIViewController`子類別，您應該使用[ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad)取決於您在設計工具中建立的檢視的程式碼的方法。
 
-針對`UIView`和其他`NSObject`子類別， [AwakeFromNib](https://developer.xamarin.com/api/member/Foundation.NSObject.AwakeFromNib/)方法是執行您的自訂控制項的初始化，載入從版面配置檔之後的建議的位置。 這是因為當執行控制項的建構函式時，但它們將會設定之前，將不會設定在 [屬性] 面板中設定的任何自訂屬性`AwakeFromNib`稱為：
+針對`UIView`和其他`NSObject`子類別， [AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib)方法是執行您的自訂控制項的初始化，載入從版面配置檔之後的建議的位置。 這是因為當執行控制項的建構函式時，但它們將會設定之前，將不會設定在 [屬性] 面板中設定的任何自訂屬性`AwakeFromNib`稱為：
 
 
 ```csharp
@@ -138,7 +138,7 @@ public class CustomView : UIView {
 
 在設計介面上的自訂控制項必須遵守一些限制：
 
--  無法在設計模式中使用應用程式套件組合的資源。 映像可供透過載入時[UIImage 方法](https://developer.xamarin.com/api/type/UIKit.UIImage/%2fM)。
+-  無法在設計模式中使用應用程式套件組合的資源。 映像可供透過載入時[UIImage 方法](xref:UIKit.UIImage)。
 -  不應在設計模式中執行非同步作業，例如 web 要求。 不支援在設計介面，動畫或任何其他非同步更新控制項的 ui。
 
 

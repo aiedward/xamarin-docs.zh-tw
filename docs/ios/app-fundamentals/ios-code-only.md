@@ -4,31 +4,31 @@ description: 本文件說明如何使用程式碼建置 Xamarin.iOS 應用程式
 ms.prod: xamarin
 ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 688457ab25398e8c5b9848a7e58f6163db4c0a05
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 2b3ba0a0cf31ae2c2d631da8b595390c973957d6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242390"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670668"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>在 Xamarin.iOS 中的程式碼建立 iOS 使用者介面
 
 IOS 應用程式的使用者介面就像一個店面： 應用程式通常會取得一個視窗中，但它可以填滿視窗與許多物件它需要以及根據的應用程式，則可以變更的物件和排列方式想要顯示為。 此案例中的物件 (使用者所看見的內容) 稱為「檢視」。 若要建置單一畫面的應用程式中，檢視會彼此交互堆疊在內容檢視階層中，與階層由單一檢視控制器管理。 具有多個畫面的應用程式會有多個內容檢視階層，每個都有它自己的檢視控制器，而應用程式會將檢視放置於視窗中，以根據使用者所在畫面建立不同的內容檢視階層。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-下圖說明視窗、檢視、子檢視及檢視控制器之間的關聯性，以在裝置畫面中顯示使用者介面： 
+下圖說明視窗、檢視、子檢視及檢視控制器之間的關聯性，以在裝置畫面中顯示使用者介面：
 
 [![](ios-code-only-images/image9.png "此圖說明視窗、 檢視、 子檢視和檢視控制器之間的關聯性")](ios-code-only-images/image9.png#lightbox)
 
 這些檢視階層可以使用來建構[適用於 iOS 的 Xamarin 設計師](~/ios/user-interface/designer/index.md)在 Visual Studio 中，不過最好有基本的了解如何完全以程式碼。 這篇文章會逐步一些基本的點，以啟動及執行僅限程式碼使用者介面開發。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-下圖說明視窗、檢視、子檢視及檢視控制器之間的關聯性，以在裝置畫面中顯示使用者介面： 
+下圖說明視窗、檢視、子檢視及檢視控制器之間的關聯性，以在裝置畫面中顯示使用者介面：
 
 [![](ios-code-only-images/image9.png "此圖說明視窗、 檢視、 子檢視和檢視控制器之間的關聯性")](ios-code-only-images/image9.png#lightbox)
 
@@ -38,9 +38,9 @@ IOS 應用程式的使用者介面就像一個店面： 應用程式通常會取
 
 ## <a name="creating-a-code-only-project"></a>建立僅限程式碼的專案
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="ios-blank-project-template"></a>iOS 專案的空白範本
+## <a name="ios-blank-project-template"></a>iOS 的空白專案範本
 
 首先，建立 iOS 專案，在 Visual Studio 中使用**檔案 > 新增專案 > Visual C# > iPhone & iPad > iOS 應用程式 (Xamarin)** 專案，如下所示：
 
@@ -54,38 +54,37 @@ IOS 應用程式的使用者介面就像一個店面： 應用程式通常會取
 
 [![專案檔](ios-code-only-images/empty-project.w157-sml.png "專案檔")](ios-code-only-images/empty-project.w157.png#lightbox)
 
-
 1. **AppDelegate.cs** -包含`UIApplicationDelegate`子類別， `AppDelegate` ，這用來處理從 iOS 應用程式事件。 在中建立應用程式視窗`AppDelegate`的`FinishedLaunching`方法。
 1. **Main.cs** -包含指定的類別的應用程式的進入點的`AppDelegate`。
 1. **Info.plist** -包含應用程式的組態資訊的屬性清單檔案。
 1. **Entitlements.plist** – 包含的功能和應用程式的權限的相關資訊的屬性清單檔案。
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="ios-templates"></a>iOS 範本
 
 
-Visual Studio for Mac 不提供空白的範本。 所有範本都隨附支援分鏡腳本，Apple 建議做為建立 UI 的主要方式。 不過，就可以完全在程式碼中建立您的 UI。 
+Visual Studio for Mac 不提供空白的範本。 所有範本都隨附支援分鏡腳本，Apple 建議做為建立 UI 的主要方式。 不過，就可以完全在程式碼中建立您的 UI。
 
-下列步驟會引導您完成應用程式中移除分鏡腳本： 
+下列步驟會引導您完成應用程式中移除分鏡腳本：
 
 
 1. 您可以使用單一檢視應用程式範本來建立新的 iOS 專案：
-    
+
     [![](ios-code-only-images/single-view-app.png "使用單一檢視應用程式範本")](ios-code-only-images/single-view-app.png#lightbox)
 
 1. 刪除`Main.Storyboard`和`ViewController.cs`檔案。 請勿**未**刪除`LaunchScreen.Storyboard`。 檢視控制器應該刪除，因為它是在分鏡腳本中建立檢視控制器的程式碼後置：
 1. 請務必選取**刪除**從快顯對話方塊中：
-    
+
     [![](ios-code-only-images/delete.png "從快顯對話方塊中選取 刪除")](ios-code-only-images/delete.png#lightbox)
 
 1. 在 Info.plist 中，刪除內部資訊**部署資訊 > 主要介面**選項：
-    
+
     [![](ios-code-only-images/main-interface.png "刪除的主要介面選項內的資訊")](ios-code-only-images/main-interface.png#lightbox)
 
 1. 最後，新增下列程式碼，以您`FinishedLaunching`AppDelegate 類別中的方法：
-        
+
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             // create a new window instance based on the screen size
@@ -102,9 +101,7 @@ Visual Studio for Mac 不提供空白的範本。 所有範本都隨附支援分
 
 -----
 
-
-
-使用建置 iOS 應用程式[MVC 模式](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#Model_View_Controller)。 從視窗的根檢視控制器建立應用程式會顯示第一個畫面。 請參閱[Hello，iOS 多重畫面](~/ios/get-started/hello-ios-multiscreen/index.md)引導的更多有關 MVC 模式本身。
+使用建置 iOS 應用程式[MVC 模式](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#model-view-controller-mvc)。 從視窗的根檢視控制器建立應用程式會顯示第一個畫面。 請參閱[Hello，iOS 多重畫面](~/ios/get-started/hello-ios-multiscreen/index.md)引導的更多有關 MVC 模式本身。
 
 實作`AppDelegate`新增的範本建立應用程式 視窗中，其中只有一個每個 iOS 應用程式，並使其可見的下列程式碼：
 
@@ -213,11 +210,11 @@ public class AppDelegate : UIApplicationDelegate
 
 加入新的類別，名為`CustomViewController`，如下所示：
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](ios-code-only-images/customviewcontroller.w157-sml.png "新增名為 CustomViewController 類別")](ios-code-only-images/customviewcontroller.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](ios-code-only-images/new-file.png "新增名為 CustomViewController 類別")](ios-code-only-images/new-file.png#lightbox)
 
@@ -236,8 +233,6 @@ namespace CodeOnlyDemo
     }
 }
 ```
-
-<a name="Initializing_the_View"/>
 
 ## <a name="initializing-the-view"></a>初始化檢視
 
@@ -296,7 +291,7 @@ Window.RootViewController = navController;
 現在應用程式載入，`CustomViewController`內瀏覽控制器載入：
 
  [![](ios-code-only-images/customvc.png "在瀏覽控制器載入 CustomViewController")](ios-code-only-images/customvc.png#lightbox)
- 
+
 按一下按鈕，將_推播_到導覽堆疊上新的檢視控制器：
 
 [![](ios-code-only-images/customvca.png "新的檢視控制器推送至導覽堆疊")](ios-code-only-images/customvca.png#lightbox)
@@ -311,7 +306,7 @@ iOS 使用者介面是由檢視階層所組成。 額外的檢視，例如標籤
 
 ### <a name="adding-the-text-fields"></a>新增在文字欄位
 
-首先，移除已加入的按鈕和事件處理常式[初始化檢視](#Initializing_the_View)一節。 
+首先，移除已加入的按鈕和事件處理常式[初始化檢視](#initializing-the-view)一節。 
 
 新增使用者名稱的控制項，藉由建立並初始化`UITextField`然後將它們新增至檢視階層，如下所示：
 
@@ -364,7 +359,7 @@ public class CustomViewController : UIViewController
             SecureTextEntry = true
         };
 
-      View.AddSubview(usernameField); 
+      View.AddSubview(usernameField);
       View.AddSubview(passwordField);
    }
 }
@@ -413,18 +408,18 @@ submitButton.Layer.CornerRadius = 5f;
 經過這些變更，檢視看起來像這樣：
 
 [![](ios-code-only-images/image6.png "檢視執行的範例")](ios-code-only-images/image6.png#lightbox)
- 
+
 ## <a name="adding-multiple-views-to-the-view-hierarchy"></a>將多個檢視加入至檢視階層
 
 iOS，來提供要加入的檢視階層中的多個檢視，使用設備`AddSubviews`。
 
 ```csharp
-View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton }); 
+View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton });
 ```
 
 ## <a name="adding-button-functionality"></a>加入按鈕的功能
 
-按一下按鈕時，您的使用者會預期發生某件事。 比方說，會顯示警示，或瀏覽至另一個螢幕執行。 
+按一下按鈕時，您的使用者會預期發生某件事。 比方說，會顯示警示，或瀏覽至另一個螢幕執行。
 
 讓我們新增一些程式碼來將第二個檢視控制器推送到導覽堆疊上。
 
@@ -470,7 +465,7 @@ foreach(var subview in View.Subviews)
 
 如果在使用者旋轉裝置為橫向，控制項不調整大小，如下列螢幕擷取畫面所示：
 
- [![](ios-code-only-images/image7.png "如果在使用者旋轉裝置為橫向，控制項不調整大小適當")](ios-code-only-images/image7.png#lightbox)
+[![](ios-code-only-images/image7.png "如果在使用者旋轉裝置為橫向，控制項不調整大小適當")](ios-code-only-images/image7.png#lightbox)
 
 若要修正此問題的一種方法是設定`AutoresizingMask`上每個檢視的屬性。 在此情況下我們想要的控制項要水平延展因此我們會將每個`AutoresizingMask`。 下列範例是針對`usernameField`，但相同必須套用至檢視階層中每個小工具。
 
@@ -480,7 +475,7 @@ usernameField.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 
 現在當我們在旋轉裝置或模擬器時，所有項目會自動縮放以填滿額外的空間，如下所示：
 
- [![](ios-code-only-images/image8.png "所有控制項都伸展以填滿的額外空間")](ios-code-only-images/image8.png#lightbox)
+[![](ios-code-only-images/image8.png "所有控制項都伸展以填滿的額外空間")](ios-code-only-images/image8.png#lightbox)
 
 ## <a name="creating-custom-views"></a>建立自訂檢視
 
@@ -585,19 +580,19 @@ submitButton.TouchUpInside += delegate
 
 現在，當我們執行應用程式，並點選 [提交] 按鈕，就會顯示圓形的新檢視：
 
- [![](ios-code-only-images/circles.png "顯示圓形的新檢視")](ios-code-only-images/circles.png#lightbox)
+[![](ios-code-only-images/circles.png "顯示圓形的新檢視")](ios-code-only-images/circles.png#lightbox)
 
 ## <a name="creating-a-launch-screen"></a>建立啟動畫面
 
-A[啟動畫面](~/ios/app-fundamentals/images-icons/launch-screens.md)做為顯示給您的使用者是回應式的方式啟動您的應用程式時，會顯示。 正在載入您的應用程式時，會顯示啟動畫面，因為它無法建立程式碼中為應用程式仍在載入到記憶體。 
+A[啟動畫面](~/ios/app-fundamentals/images-icons/launch-screens.md)做為顯示給您的使用者是回應式的方式啟動您的應用程式時，會顯示。 正在載入您的應用程式時，會顯示啟動畫面，因為它無法建立程式碼中為應用程式仍在載入到記憶體。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-當您建立的 iOS.xib 檔案，可在表單中會為您提供專案在 Visual Studio 中，啟動螢幕**資源**專案內的資料夾。 
+當您在 Visual Studio 中建立 iOS 專案時，為您.xib 檔案，可以在中找到的形式提供啟動螢幕**資源**專案內的資料夾。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-當您在 Visual Studio 中建立 iOS 專案，對 Mac、 啟動螢幕為您的分鏡腳本檔案形式提供。 
+當您建立的 iOS 專案在 Visual Studio for Mac 時，就會為您的分鏡腳本檔案形式提供啟動螢幕。
 
 -----
 
@@ -615,29 +610,24 @@ Apple 建議.xib 或分鏡腳本檔案，用於以 iOS 8 為目標的應用程�
 
 ### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>建立啟動映像前 ios 8 的應用程式
 
-靜態影像可以使用除了.xib 或分鏡腳本啟動畫面，如果您的應用程式的目標 iOS 8 之前的版本。 
+靜態影像可以使用除了.xib 或分鏡腳本啟動畫面，如果您的應用程式的目標 iOS 8 之前的版本。
 
 在 Info.plist 檔案中，或為您的應用程式中的 （適用於 iOS 7) 的資產目錄，則可以設定此靜態映像。 您必須為每個裝置大小 （320x480，640 x 960，640 x 1136） 上執行您的應用程式，可能會提供不同的映像。 如需有關啟動螢幕大小的詳細資訊，請檢視[啟動螢幕影像](~/ios/app-fundamentals/images-icons/launch-screens.md)指南。
 
 > [!IMPORTANT]
-> 如果您的應用程式不有任何啟動畫面，您可能會注意到，它不完全符合螢幕大小。 如果發生這種情況，您應該確定至少，包含名為 640 x 1136 映像`Default-568@2x.png`至您的 Info.plist。 
-
-
+> 如果您的應用程式不有任何啟動畫面，您可能會注意到，它不完全符合螢幕大小。 如果發生這種情況，您應該確定至少，包含名為 640 x 1136 映像`Default-568@2x.png`至您的 Info.plist。
 
 ## <a name="summary"></a>總結
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 這篇文章討論如何開發以程式設計方式在 Visual Studio 中的 iOS 應用程式。 我們已經了解如何建置專案，以從空白專案範本，討論如何建立並加入至視窗的根檢視控制器。 然後，我們會示範如何使用從 UIKit 控制項來建立控制器內的檢視階層，開發應用程式畫面。 接下來我們檢查如何讓檢視版面配置適當地在不同的方向和我們了解如何建立自訂檢視，子類別化`UIView`、 以及如何將控制器內的檢視。 最後，我們會探討如何將啟動畫面新增至應用程式。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 這篇文章討論如何開發 iOS 應用程式以程式設計方式在 Visual Studio for mac。 我們已經了解如何建置專案，以從單一檢視範本，討論如何建立並加入至視窗的根檢視控制器。 然後，我們會示範如何使用從 UIKit 控制項來建立控制器內的檢視階層，開發應用程式畫面。 接下來我們檢查如何讓檢視版面配置適當地在不同的方向和我們了解如何建立自訂檢視，子類別化`UIView`、 以及如何將控制器內的檢視。 最後，我們會探討如何將啟動畫面新增至應用程式。
 
 -----
-
-
-
 
 ## <a name="related-links"></a>相關連結
 

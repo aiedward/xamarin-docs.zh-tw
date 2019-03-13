@@ -4,15 +4,15 @@ description: 本文件連結的指南會描述如何在 Mac 和 Windows 上安�
 ms.prod: xamarin
 ms.assetid: E5A29963-C8BD-465B-BFC1-7FAC9CC64BD3
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 12/02/2016
-ms.openlocfilehash: 58eb2c348530e6ed3caa04c5a367e01d3b98beaa
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: 67f43c0ac6cfac2a7b58afa7046875059529500b
+ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785934"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55668585"
 ---
 # <a name="xamarinios-installation"></a>Xamarin.iOS 安裝
 
@@ -20,13 +20,13 @@ ms.locfileid: "34785934"
 
 若要針對 Xamarin.iOS 進行組建，必須具備下列項目：
 
--    最新的 iOS SDK。
--    最新版的 Xcode。
--    Mac OS X Sierra(10.12) 和更新版本。
+- 最新的 iOS SDK
+- 最新版的 Xcode
+- macOS High Sierra (10.13) 和更新版本
 
 您可以從 [iOS Developer Center](https://developer.apple.com/devcenter/ios/index.action#downloads) \(iOS 開發人員中心\) (需要登入) 或透過 Mac App Store 下載最新版的 Xcode：
 
-![](images/xcode.png "Mac App Store 中的 Xcode")
+![Mac App Store 中的 Xcode 清單頁面螢幕擷取畫面](images/xcode.png "Mac App Store 中的 Xcode")
 
 ## <a name="mac-installation"></a>Mac 安裝
 

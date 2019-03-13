@@ -5,13 +5,14 @@ ms.prod: xamarin
 ms.assetid: 8C30F8D3-1920-453E-9E8B-D40696736FF2
 author: conceptdev
 ms.author: crdun
+ms.custom: video
 ms.date: 07/18/2018
-ms.openlocfilehash: 65ba1915a2a968a14f0ce21bcada76e1b83531b0
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: d07b248b36feee909db9c863eb17f1a900f58e60
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270651"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105827"
 ---
 # <a name="net-standard-library-code-sharing"></a>.NET 標準程式庫共用程式碼
 
@@ -27,7 +28,7 @@ ms.locfileid: "39270651"
 
 ### <a name="creating-a-net-standard-library"></a>建立.NET Standard 程式庫
 
-將.NET Standard 程式庫新增至您的解決方案是相當直接。
+您可以將.NET Standard 程式庫加入您的解決方案，使用下列步驟：
 
 1. 在 **加入新的專案**對話方塊中，選取 **.NET Core**分類，然後選取 **.NET 標準程式庫**:
 
@@ -86,6 +87,10 @@ ms.locfileid: "39270651"
 ![參考.NET Standard 程式庫](net-standard-images/vs04.png "在 Visual Studio 中，以滑鼠右鍵按一下 [參考] 節點並選擇 [加入參考...然後切換至方案的專案] 索引標籤所示")
 
 -----
+
+## <a name="net-standard-and-xamarinforms-for-the-net-developer-video"></a>.NET standard 和 Xamarin.Forms.NET 開發人員 （影片）
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/NET-Standard-and-XamarinForms-for-the-NET-Developer/player]
 
 ## <a name="related-links"></a>相關連結
 

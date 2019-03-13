@@ -1,45 +1,47 @@
 ---
-title: 反白顯示地圖上的路由
-description: 這篇文章說明如何新增至對應的聚合線條重疊。 聚合線條覆疊是一系列連接的直線線段，通常用來顯示在地圖上的路由，或形成所需的任何圖形。
+title: 醒目提示地圖上的路線
+description: 本文說明如何將聚合線條重疊新增至地圖。 聚合線條重疊是一系列的連接線段，通常用來顯示地圖上的路線，或形成任何需要的圖形。
 ms.prod: xamarin
 ms.assetid: FBFDC715-1654-4188-82A0-FC522548BCFF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 786f050495d4682b719178f2723c482929544678
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.openlocfilehash: 184aa18ac8c0f27ce92a23b06b9dd0364f977abc
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998716"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050880"
 ---
-# <a name="highlighting-a-route-on-a-map"></a>反白顯示地圖上的路由
+# <a name="highlighting-a-route-on-a-map"></a>醒目提示地圖上的路線
 
-_這篇文章說明如何新增至對應的聚合線條重疊。聚合線條覆疊是一系列連接的直線線段，通常用來顯示在地圖上的路由，或形成所需的任何圖形。_
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
+
+_本文說明如何將聚合線條重疊新增至地圖。聚合線條重疊是一系列的連接線段，通常用來顯示地圖上的路線，或形成任何需要的圖形。_
 
 ## <a name="overview"></a>總覽
 
-覆疊是在地圖上的多層式的圖形。 覆疊支援會隨著它已縮放比例與對應的繪製圖形內容。 下列螢幕擷取畫面顯示新增至對應的聚合線條重疊的結果：
+重疊是地圖上的多層次圖形。 重疊支援繪製隨地圖縮放比例的圖形內容。 下列螢幕擷取畫面顯示將聚合線條重疊新增至地圖的結果：
 
 ![](polyline-map-overlay-images/screenshots.png)
 
-當[ `Map` ](xref:Xamarin.Forms.Maps.Map) Xamarin.Forms 應用程式，在 iOS 中所要呈現控制項`MapRenderer`類別具現化，以依序具現化原生`MKMapView`控制項。 Android 平台上，`MapRenderer`類別會具現化原生`MapView`控制項。 在通用 Windows 平台 (UWP)，`MapRenderer`類別會具現化原生`MapControl`。 轉譯程序可以藉由建立自訂轉譯器的實作特定平台對應自訂項目採取善用`Map`每個平台。 執行此動作的程序如下所示：
+當 iOS 中的 Xamarin.Forms 應用程式轉譯 [`Map`](xref:Xamarin.Forms.Maps.Map) 控制項時，會先具現化 `MapRenderer` 類別，接著具現化原生的 `MKMapView` 控制項。 在 Android 平台上，`MapRenderer` 類別會具現化原生 `MapView` 控制項。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 類別會具現化原生的 `MapControl`。 您可在每個平台上建立適用於 `Map` 的自訂轉譯器，利用轉譯程序實作平台特定的地圖自訂。 執行這項作業的流程如下：
 
-1. [建立](#Creating_the_Custom_Map)Xamarin.Forms 自訂地圖。
-1. [取用](#Consuming_the_Custom_Map)Xamarin.Forms 自訂對應。
-1. [自訂](#Customizing_the_Map)藉由建立自訂轉譯器，對應每個平台上的對應。
+1. [建立](#Creating_the_Custom_Map) Xamarin.Forms 自訂地圖。
+1. [使用](#Consuming_the_Custom_Map) Xamarin.Forms 的自訂地圖。
+1. 在每個平台上建立地圖自訂轉譯器以[自訂](#Customizing_the_Map)地圖。
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) 必須初始化，並使用之前設定。 如需詳細資訊，請參閱 [`Maps Control`](~/xamarin-forms/user-interface/map.md)。
+> 您必須先初始化及設定 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)，才能使用。 如需詳細資訊，請參閱 [`Maps Control`](~/xamarin-forms/user-interface/map.md)。
 
-如需自訂對應，使用自訂轉譯器的資訊，請參閱[自訂地圖釘選](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)。
+如需使用自訂轉譯器自訂地圖的資訊，請參閱[自訂地圖釘選](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)。
 
 <a name="Creating_the_Custom_Map" />
 
-### <a name="creating-the-custom-map"></a>建立自訂的對應
+### <a name="creating-the-custom-map"></a>建立自訂地圖
 
-建立的子類別[ `Map` ](xref:Xamarin.Forms.Maps.Map)類別，新增`RouteCoordinates`屬性：
+建立 [`Map`](xref:Xamarin.Forms.Maps.Map) 類別的子類別，其會新增 `RouteCoordinates` 屬性：
 
 ```csharp
 public class CustomMap : Map
@@ -53,13 +55,13 @@ public class CustomMap : Map
 }
 ```
 
-`RouteCoordinates`屬性會儲存這些座標會定義要反白顯示的路由集合。
+`RouteCoordinates` 屬性會儲存座標集合，定義要醒目提示的路線。
 
 <a name="Consuming_the_Custom_Map" />
 
 ### <a name="consuming-the-custom-map"></a>使用自訂地圖
 
-取用`CustomMap`藉由宣告它的執行個體，在 XAML 頁面執行個體中的控制項：
+您可以在 XAML 頁面執行個體中宣告 `CustomMap` 控制項的執行個體來使用它：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -72,7 +74,7 @@ public class CustomMap : Map
 </ContentPage>
 ```
 
-或者，使用`CustomMap`藉由宣告它的執行個體，在 C# page 執行個體中的控制項：
+或者，在 C# 頁面執行個體中宣告其執行個體，藉以使用 `CustomMap` 控制項：
 
 ```csharp
 public class MapPageCS : ContentPage
@@ -90,7 +92,7 @@ public class MapPageCS : ContentPage
 }
 ```
 
-初始化`CustomMap`視需要控制：
+視需要初始化 `CustomMap` 控制項：
 
 ```csharp
 public partial class MapPage : ContentPage
@@ -108,17 +110,17 @@ public partial class MapPage : ContentPage
 }
 ```
 
-這項初始化指定一系列的緯度和經度座標，來定義路由會反白顯示地圖上。 它接著會將地圖的檢視[ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion*)方法，藉由建立變更的位置和地圖的縮放層級[ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan)從[ `Position`](xref:Xamarin.Forms.Maps.Position)並[ `Distance` ](xref:Xamarin.Forms.Maps.Distance)。
+這項初始化會指定一系列的經緯度座標，定義地圖上要醒目提示的路線。 然後使用 [`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) 方法定位地圖的檢視，其從 [ `Position`](xref:Xamarin.Forms.Maps.Position) 和 [`Distance`](xref:Xamarin.Forms.Maps.Distance) 建立 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 來變更地圖的位置和縮放層級。
 
 <a name="Customizing_the_Map" />
 
 ### <a name="customizing-the-map"></a>自訂地圖
 
-自訂轉譯器現在必須新增至每個應用程式專案，以新增至對應的聚合線條重疊。
+您現在必須將自訂轉譯器新增至每個應用程式專案，才能將聚合線條重疊新增至地圖。
 
 #### <a name="creating-the-custom-renderer-on-ios"></a>在 iOS 上建立自訂轉譯器
 
-建立的子類別`MapRenderer`類別並覆寫其`OnElementChanged`方法來加入聚合線條重疊：
+建立 `MapRenderer` 類別的子類別並覆寫其 `OnElementChanged` 方法，以新增聚合線條重疊：
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -164,14 +166,14 @@ namespace MapOverlay.iOS
 
 ```
 
-這個方法會執行下列設定中，前提是自訂轉譯器會附加至新的 Xamarin.Forms 元素：
+若自訂轉譯器已附加於新的 Xamarin.Forms 項目，則此方法會執行下列組態：
 
-- `MKMapView.OverlayRenderer`屬性設定為對應的委派。
-- 從擷取的緯度和經度座標集合`CustomMap.RouteCoordinates`屬性並儲存成陣列的`CLLocationCoordinate2D`執行個體。
-- 聚合線條由呼叫靜態`MKPolyline.FromCoordinates`方法，以指定的緯度與經度的每個點。
-- 聚合線條，會藉由呼叫加入至地圖`MKMapView.AddOverlay`方法。
+- `MKMapView.OverlayRenderer` 屬性設定為對應的委派。
+- 經緯度座標集合擷取自 `CustomMap.RouteCoordinates` 屬性，並儲存為 `CLLocationCoordinate2D` 執行個體的陣列。
+- 聚合線條是透過呼叫會指定每個點之經緯度的靜態 `MKPolyline.FromCoordinates` 方法來建立。
+- 聚合線條是透過呼叫 `MKMapView.AddOverlay` 方法新增至地圖。
 
-然後，實作`GetOverlayRenderer`方法，以自訂的覆疊轉譯：
+然後，實作 `GetOverlayRenderer` 方法來自訂重疊轉譯：
 
 ```csharp
 public class CustomMapRenderer : MapRenderer
@@ -197,7 +199,7 @@ public class CustomMapRenderer : MapRenderer
 
 #### <a name="creating-the-custom-renderer-on-android"></a>在 Android 上建立自訂轉譯器
 
-建立的子類別`MapRenderer`類別並覆寫其`OnElementChanged`和`OnMapReady`方法以新增聚合線條重疊：
+建立 `MapRenderer` 類別的子類別並覆寫其 `OnElementChanged` 和 `OnMapReady` 方法，以新增聚合線條重疊：
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -246,11 +248,11 @@ namespace MapOverlay.Droid
 }
 ```
 
-`OnElementChanged`方法會擷取的緯度和經度座標，從集合`CustomMap.RouteCoordinates`屬性並將它們儲存在成員變數。 然後它會呼叫`MapView.GetMapAsync`方法，以取得基礎`GoogleMap`，會繫結至檢視，前提是自訂轉譯器會附加至新的 Xamarin.Forms 元素。 一次`GoogleMap`執行個體可供使用，`OnMapReady`方法會叫用，聚合線條由具現化`PolylineOptions`物件，指定的緯度與經度的每個點。 聚合線條然後藉由呼叫加入至地圖`NativeMap.AddPolyline`方法。
+`OnElementChanged` 方法會從 `CustomMap.RouteCoordinates` 屬性擷取經緯度座標集合，並將其儲存在成員變數中。 然後它會呼叫 `MapView.GetMapAsync` 方法，取得繫結至檢視的基礎 `GoogleMap` (前提是自訂轉譯器已附加至新的 Xamarin.Forms 項目)。 一旦有 `GoogleMap` 執行個體可用，就會叫用 `OnMapReady` 方法，其藉由具現化指定每個點之經緯度的 `PolylineOptions` 物件來建立建立聚合線條。 然後呼叫 `NativeMap.AddPolyline` 方法，將聚合線條新增至地圖。
 
-#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>通用 Windows 平台上建立自訂轉譯器
+#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>在通用 Windows 平台上建立自訂轉譯器
 
-建立的子類別`MapRenderer`類別並覆寫其`OnElementChanged`方法來加入聚合線條重疊：
+建立 `MapRenderer` 類別的子類別並覆寫其 `OnElementChanged` 方法，以新增聚合線條重疊：
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -289,19 +291,19 @@ namespace MapOverlay.UWP
 }
 ```
 
-這個方法會執行下列作業，，前提是自訂轉譯器會附加至新的 Xamarin.Forms 元素：
+若自訂轉譯器已附加於新的 Xamarin.Forms 項目，則此方法會執行下列作業：
 
-- 從擷取的緯度和經度座標集合`CustomMap.RouteCoordinates`屬性和已轉換成`List`的`BasicGeoposition`座標。
-- 聚合線條由具現化`MapPolyline`物件。 `MapPolygon`類別用來在地圖上顯示一條線，藉由設定其`Path`屬性設`Geopath`包含線條座標的物件。
-- 聚合線條會轉譯在地圖上將它新增至`MapControl.MapElements`集合。
+- 經緯度座標集合擷取自 `CustomMap.RouteCoordinates` 屬性，並轉換為 `BasicGeoposition` 座標的 `List`。
+- 聚合線條是透過具現化 `MapPolyline` 物件所建立。 將其 `Path` 屬性設為包含線條座標的 `Geopath` 物件，使用 `MapPolygon` 類別來顯示地圖上的線條。
+- 藉由將聚合線條新增至 `MapControl.MapElements` 集合來將其轉譯在地圖上。
 
 ## <a name="summary"></a>總結
 
-這篇文章說明如何將聚合線條重疊影像加入至地圖中，若要顯示在地圖上的路由，或形成所需的任何圖形。
+本文說明如何將聚合線條重疊新增至地圖來顯示地圖上的路線，或形成任何需要的圖形。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [聚合線條地圖 Ovlerlay （範例）](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
+- [Polyline Map Ovlerlay (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/) (聚合線條地圖重疊 (範例))
 - [自訂地圖釘選](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

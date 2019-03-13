@@ -1,46 +1,44 @@
 ---
 title: Xamarin Workbooks
-description: Xamarin 活頁簿提供的 blend 文件，以及實驗，最適合的程式碼，學習和建立指南及教導輔助工具。
+description: Xamarin 活頁簿中將提供集結了文件及程式碼，適合供實驗、 學習及建立指南和教學輔助工具。
 ms.prod: xamarin
 ms.assetid: 04275482-0488-4F1C-8808-D03A8E21BE62
-author: topgenorth
-ms.author: toopge
-ms.date: 03/30/2017
-ms.openlocfilehash: 57ef9cb3a45dbf1c6271a1475c27fdd38d2fd96b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+author: lobrien
+ms.author: laobri
+ms.date: 10/23/2018
+ms.openlocfilehash: d0aed1b501b86a23d4008ba9618b0e459178ca24
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33922635"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121889"
 ---
 # <a name="xamarin-workbooks"></a>Xamarin Workbooks
 
-Xamarin 活頁簿提供的 blend 文件，以及實驗，最適合的程式碼，學習和建立指南及教導輔助工具。
+Xamarin 活頁簿中將提供集結了文件及程式碼，適合供實驗、 學習及建立指南和教學輔助工具。
 
-為 Android、 iOS、 Mac、 WPF 或主控台中，建立豐富的 C# 活頁簿，並取得即時的立即結果，以進一步了解這些應用程式開發介面。
+建立豐富的C#活頁簿進行 Android、 iOS、 Mac、 WPF、 或主控台中和取得立即即時的結果與您了解這些 Api。
 
-Xamarin 活頁簿是開放原始碼軟體。 開發在 GitHub 上就會發生在開啟。 我們邀請有興趣的使用者和開發人員以取得專案的相關。
+Xamarin Workbooks 是開放原始碼軟體。 開發在 GitHub 上就會發生在開啟。 我們邀請有興趣的使用者和開發人員參與專案。
 
-<a class="github-button" href="https://github.com/Microsoft/workbooks" data-size="large" aria-label="View Microsoft/workbooks on GitHub">您可以加入我們的 GitHub ！</a>
+[加入我們在 GitHub 上 ！](https://github.com/Microsoft/workbooks)
 
-請稍候再試一次，讓我們知道您的想法，或者如果您[遇到任何錯誤](~/tools/workbooks/install.md#reporting-bugs)。 我們有[論壇](https://forums.xamarin.com/categories/inspector)太 ！
+試試看，告訴我們您的想法，或如果您[遇到的任何 bug](~/tools/workbooks/install.md#reporting-bugs)。 我們有[論壇](https://forums.xamarin.com/categories/inspector)太 ！
 
-[![](images/interactive-1.0.0-urho-planet-earth-small.png "範例基礎 UrhoSharp 活頁簿")](images/interactive-1.0.0-urho-planet-earth.png#lightbox)
+[![](images/interactive-1.0.0-urho-planet-earth-small.png "範例架構的 UrhoSharp 活頁簿")](images/interactive-1.0.0-urho-planet-earth.png#lightbox)
 
 ## <a name="installation-and-requirementsinstallmd"></a>[安裝與需求](install.md)
 
-取得安裝在您 Mac 或 Windows 的電腦上的活頁簿的資訊。
+取得安裝在您的 Mac 或 Windows 電腦上的活頁簿的資訊。
 
 ## <a name="interactive-workbooksworkbookmd"></a>[互動式活頁簿](workbook.md)
 
 簡介如何使用 Xamarin 活頁簿。
 
-## <a name="samplessamplesindexmd"></a>[範例](samples/index.md)
+## <a name="samples"></a>範例
 
-有各種不同的[範例活頁簿](https://developer.xamarin.com/workbooks/)可用，包括反白顯示[這裡](samples/index.md)。
+有各種[範例可在 GitHub 上的活頁簿](https://github.com/xamarin/workbooks)。
 
 ## <a name="integration-sdksdkindexmd"></a>[整合 SDK](sdk/index.md)
 
-很可能以自訂的資料表示和轉譯器延伸 Xamarin 活頁簿。 整合會使用 C# 和 TypeScript/JavaScript 撰寫。
-
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+可以使用自訂資料表示法與轉譯器延伸 Xamarin 活頁簿。 整合以C#和 TypeScript/JavaScript。

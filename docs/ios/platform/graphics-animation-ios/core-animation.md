@@ -4,15 +4,15 @@ description: 這篇文章審視 Core 動畫架構中，顯示如何讓高效能�
 ms.prod: xamarin
 ms.assetid: D4744147-FACB-415B-8155-3A6B3C35E527
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 3d26e58822385c20f3c08d0b75ba468467c2c9b1
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: a40d0911b7dabc900a4c6e50c692e4f091f22be9
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242127"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233619"
 ---
 # <a name="core-animation-in-xamarinios"></a>在 Xamarin.iOS 中的核心動畫
 
@@ -49,7 +49,7 @@ UIKit 提供數個功能，輕鬆地將動畫加入至應用程式。 雖然它�
 
  `UIViewController` 透過檢視控制器之間轉換時，提供內建支援`PresentViewController`方法。 當使用`PresentViewController`，可以選擇性地使用動畫轉換至第二個控制站。
 
-例如，假設應用程式具有兩個控制器，其中碰觸的第一個控制器中的按鈕呼叫`PresentViewController`来顯示的第二個控制站。 若要控制哪些過場動畫用來顯示的第二個控制站，請設定其[ `ModalTransitionStyle` ](https://developer.xamarin.com/api/type/UIKit.UIModalTransitionStyle/)屬性，如下所示：
+例如，假設應用程式具有兩個控制器，其中碰觸的第一個控制器中的按鈕呼叫`PresentViewController`来顯示的第二個控制站。 若要控制哪些過場動畫用來顯示的第二個控制站，請設定其[ `ModalTransitionStyle` ](xref:UIKit.UIModalTransitionStyle)屬性，如下所示：
 
 ```csharp
 SecondViewController vc2 = new SecondViewController {
@@ -90,7 +90,7 @@ UIView.Transition (
     completion: () => { Console.WriteLine ("transition complete"); });
 ```
 
-`UIView.Transition` 也會採用`duration`參數，可控制動畫執行多久，以及[ `options` ](https://developer.xamarin.com/api/type/UIKit.UIViewAnimationOptions/)指定動畫等的項目，使用和 easing 函式。 此外，您可以指定動畫完成時所呼叫的完成處理常式。
+`UIView.Transition` 也會採用`duration`參數，可控制動畫執行多久，以及[ `options` ](xref:UIKit.UIViewAnimationOptions)指定動畫等的項目，使用和 easing 函式。 此外，您可以指定動畫完成時所呼叫的完成處理常式。
 
 以下顯示的螢幕擷取畫面之間的映像的動畫的轉換檢視時`TransitionFlipFromTop`用：
 
@@ -100,11 +100,11 @@ UIView.Transition (
 
 UIKit 支援建立各種不同屬性的動畫上`UIView`類別供免費使用，包括：
 
--  畫面格
+-  Frame
 -  繫結
 -  置中
 -  Alpha
--  Transform
+-  資料轉換
 -  色彩
 
 

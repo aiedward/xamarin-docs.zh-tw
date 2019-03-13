@@ -3,15 +3,15 @@ title: 使用 Android 資訊清單
 ms.prod: xamarin
 ms.assetid: CB7CCF60-FEF1-3B28-215F-159391E74347
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 0857b70e6e1d9104f62ec2e26f8edbab385d06f3
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 5e354f8271257ab21a855bdf5d576ce3062fadc7
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242247"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668240"
 ---
 # <a name="working-with-the-android-manifest"></a>使用 Android 資訊清單
 
@@ -37,7 +37,8 @@ namespace Demo
 }
 ```
 
-這會導致執行任何動作中產生**AndroidManifest.xml**。 如果您想`<activity/>`項目來產生，您必須使用[ `[Activity]` ](https://developer.xamarin.com/api/type/Android.App.Activity/Attribute)自訂屬性： 
+這會導致執行任何動作中產生**AndroidManifest.xml**。 如果您想`<activity/>`項目來產生，您必須使用 [`[Activity]`](https://developer.xamarin.com/api/type/Android.App.Activity/Attribute) 
+自訂屬性： 
 
 ```csharp
 namespace Demo
@@ -83,8 +84,8 @@ public class MyActivity : Activity
 
 ### <a name="activity-title-bar"></a>活動標題列
 
-根據預設，Android 可讓您的應用程式標題列會在執行時。 使用這個值是[ `/manifest/application/activity/@android:label` ](http://developer.android.com/guide/topics/manifest/activity-element.html#label)。 在大部分情況下，這個值會與您的類別名稱不同。 若要指定您的應用程式標籤標題列上，使用[ `Label` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Label/)屬性。
-例如: 
+根據預設，Android 可讓您的應用程式標題列會在執行時。 使用這個值是[ `/manifest/application/activity/@android:label` ](https://developer.android.com/guide/topics/manifest/activity-element.html#label)。 在大部分情況下，這個值會與您的類別名稱不同。 若要指定您的應用程式標籤標題列上，使用[ `Label` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Label/)屬性。
+例如:  
 
 ```csharp
 [Activity (Label="Awesome Demo App")]
@@ -103,7 +104,7 @@ public class MyActivity : Activity
 
 ### <a name="launchable-from-application-chooser"></a>從 應用程式選擇器
 
-根據預設，活動才會顯示在 Android 的應用程式啟動程式螢幕。 這是因為在您的應用程式，可能會有許多活動，而您不要針對每個圖示。 若要指定哪一個應該是可從應用程式啟動程式啟動，請使用[ `MainLauncher` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.MainLauncher/)屬性。 例如: 
+根據預設，活動才會顯示在 Android 的應用程式啟動程式螢幕。 這是因為在您的應用程式，可能會有許多活動，而您不要針對每個圖示。 若要指定哪一個應該是可從應用程式啟動程式啟動，請使用[ `MainLauncher` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.MainLauncher/)屬性。 例如:  
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true)] 
@@ -128,7 +129,7 @@ public class MyActivity : Activity
 
 ### <a name="activity-icon"></a>活動圖示
 
-根據預設，您的活動將會提供系統所提供的預設啟動程式圖示。 若要使用自訂圖示，請先將您 **.png**要**資源/drawable**，將其建置動作設定為**AndroidResource**，然後使用[ `Icon` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Icon/)屬性來指定要使用的圖示。 例如: 
+根據預設，您的活動將會提供系統所提供的預設啟動程式圖示。 若要使用自訂圖示，請先將您 **.png**要**資源/drawable**，將其建置動作設定為**AndroidResource**，然後使用[ `Icon` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Icon/)屬性來指定要使用的圖示。 例如:  
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 
@@ -150,7 +151,7 @@ public class MyActivity : Activity
 ```
 
 
-### <a name="permissions"></a>使用權限
+### <a name="permissions"></a>權限
 
 當您將權限加入 Android 資訊清單 (如中所述[新增至 Android 資訊清單的權限](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest))，這些權限會記錄在**properties/Androidmanifest.xml**。 例如，如果您設定`INTERNET`權限，下列項目加入至**properties/Androidmanifest.xml**: 
 
@@ -177,7 +178,10 @@ public class MyActivity : Activity
 
 ### <a name="intent-actions-and-features"></a>意圖動作與功能
 
-Android 資訊清單可讓您描述您的活動的功能。 這透過完成[意圖](http://developer.android.com/guide/topics/manifest/intent-filter-element.html)並[ `[IntentFilter]` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)自訂屬性。 您可以指定哪些動作適用於您的活動，具有[ `IntentFilter` ](https://developer.xamarin.com/api/constructor/Android.App.IntentFilterAttribute.IntentFilterAttribute/p/System.String[]/)建構函式，而哪些類別具有適當[ `Categories` ](https://developer.xamarin.com/api/property/Android.App.IntentFilterAttribute.Categories/)屬性。 至少一個活動必須提供 （這就是為什麼建構函式中所提供的活動）。 `[IntentFilter]` 可提供很多次，並每次使用會導致個別`<intent-filter/>`內的項目`<activity/>`。 例如:
+Android 資訊清單可讓您描述您的活動的功能。 這透過完成[意圖](https://developer.android.com/guide/topics/manifest/intent-filter-element.html)和 [`[IntentFilter]`](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) 
+自訂屬性。 您可以指定哪些動作適用於您使用的活動 [`IntentFilter`](https://developer.xamarin.com/api/constructor/Android.App.IntentFilterAttribute.IntentFilterAttribute/p/System.String[]/) 
+建構函式，並與適合哪一個類別目錄 [`Categories`](https://developer.xamarin.com/api/property/Android.App.IntentFilterAttribute.Categories/) 
+屬性。 至少一個活動必須提供 （這就是為什麼建構函式中所提供的活動）。 `[IntentFilter]` 可提供很多次，並每次使用會導致個別`<intent-filter/>`內的項目`<activity/>`。 例如: 
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 
@@ -236,18 +240,18 @@ Android 資訊清單也可讓您宣告的整個應用程式的屬性。 這透�
 
 ## <a name="list-of-custom-attributes"></a>自訂屬性清單
 
--   [Android.App.ActivityAttribute](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) ： 產生[/manifest/application/activity](http://developer.android.com/guide/topics/manifest/activity-element.html) XML 片段 
--   [Android.App.ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/) ： 產生[應用程式資訊清單/](http://developer.android.com/guide/topics/manifest/application-element.html) XML 片段 
--   [Android.App.InstrumentationAttribute](https://developer.xamarin.com/api/type/Android.App.InstrumentationAttribute/) ： 產生[/資訊清單/檢測](http://developer.android.com/guide/topics/manifest/instrumentation-element.html)XML 片段 
--   [Android.App.IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) ： 產生[//intent-filter](http://developer.android.com/guide/topics/manifest/intent-filter-element.html) XML 片段 
--   [Android.App.MetaDataAttribute](https://developer.xamarin.com/api/type/Android.App.MetaDataAttribute/) ： 產生[//meta-data](http://developer.android.com/guide/topics/manifest/meta-data-element.html) XML 片段 
--   [Android.App.PermissionAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionAttribute/) ： 產生[//permission](http://developer.android.com/guide/topics/manifest/permission-element.html) XML 片段 
--   [Android.App.PermissionGroupAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionGroupAttribute/) ： 產生[//permission-group](http://developer.android.com/guide/topics/manifest/permission-group-element.html) XML 片段 
--   [Android.App.PermissionTreeAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionTreeAttribute/) ： 產生[//permission-tree](http://developer.android.com/guide/topics/manifest/permission-tree-element.html) XML 片段 
--   [Android.App.ServiceAttribute](https://developer.xamarin.com/api/type/Android.App.ServiceAttribute/) ： 產生[/manifest/application/service](http://developer.android.com/guide/topics/manifest/service-element.html) XML 片段 
--   [Android.App.UsesLibraryAttribute](https://developer.xamarin.com/api/type/Android.App.UsesLibraryAttribute/) ： 產生[/manifest/application/uses-library](http://developer.android.com/guide/topics/manifest/uses-library-element.html) XML 片段 
--   [Android.App.UsesPermissionAttribute](https://developer.xamarin.com/api/type/Android.App.UsesPermissionAttribute/) ： 產生[/manifest/uses-permission](http://developer.android.com/guide/topics/manifest/uses-permission-element.html) XML 片段 
--   [Android.Content.BroadcastReceiverAttribute](https://developer.xamarin.com/api/type/Android.Content.BroadcastReceiverAttribute/) ： 產生[/manifest/application/receiver](http://developer.android.com/guide/topics/manifest/receiver-element.html) XML 片段 
--   [Android.Content.ContentProviderAttribute](https://developer.xamarin.com/api/type/Android.Content.ContentProviderAttribute/) ： 產生[/manifest/application/provider](http://developer.android.com/guide/topics/manifest/provider-element.html) XML 片段 
--   [Android.Content.GrantUriPermissionAttribute](https://developer.xamarin.com/api/type/Android.Content.GrantUriPermissionAttribute/) ： 產生[/manifest/application/provider/grant-uri-permission](http://developer.android.com/guide/topics/manifest/grant-uri-permission-element.html) XML 片段
+-   [Android.App.ActivityAttribute](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) :會產生[/manifest/application/activity](https://developer.android.com/guide/topics/manifest/activity-element.html) XML 片段 
+-   [Android.App.ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/) :會產生[應用程式資訊清單/](https://developer.android.com/guide/topics/manifest/application-element.html) XML 片段 
+-   [Android.App.InstrumentationAttribute](https://developer.xamarin.com/api/type/Android.App.InstrumentationAttribute/) :會產生[資訊清單/檢測](https://developer.android.com/guide/topics/manifest/instrumentation-element.html)XML 片段 
+-   [Android.App.IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) :會產生[//intent-filter](https://developer.android.com/guide/topics/manifest/intent-filter-element.html) XML 片段 
+-   [Android.App.MetaDataAttribute](https://developer.xamarin.com/api/type/Android.App.MetaDataAttribute/) :會產生[//meta-data](https://developer.android.com/guide/topics/manifest/meta-data-element.html) XML 片段 
+-   [Android.App.PermissionAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionAttribute/) :會產生[//permission](https://developer.android.com/guide/topics/manifest/permission-element.html) XML 片段 
+-   [Android.App.PermissionGroupAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionGroupAttribute/) :會產生[//permission-group](https://developer.android.com/guide/topics/manifest/permission-group-element.html) XML 片段 
+-   [Android.App.PermissionTreeAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionTreeAttribute/) :會產生[//permission-tree](https://developer.android.com/guide/topics/manifest/permission-tree-element.html) XML 片段 
+-   [Android.App.ServiceAttribute](https://developer.xamarin.com/api/type/Android.App.ServiceAttribute/) :會產生[/manifest/application/service](https://developer.android.com/guide/topics/manifest/service-element.html) XML 片段 
+-   [Android.App.UsesLibraryAttribute](https://developer.xamarin.com/api/type/Android.App.UsesLibraryAttribute/) :會產生[/manifest/application/uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) XML 片段 
+-   [Android.App.UsesPermissionAttribute](https://developer.xamarin.com/api/type/Android.App.UsesPermissionAttribute/) :會產生[/manifest/uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) XML 片段 
+-   [Android.Content.BroadcastReceiverAttribute](https://developer.xamarin.com/api/type/Android.Content.BroadcastReceiverAttribute/) :會產生[/manifest/application/receiver](https://developer.android.com/guide/topics/manifest/receiver-element.html) XML 片段 
+-   [Android.Content.ContentProviderAttribute](https://developer.xamarin.com/api/type/Android.Content.ContentProviderAttribute/) :會產生[/manifest/application/provider](https://developer.android.com/guide/topics/manifest/provider-element.html) XML 片段 
+-   [Android.Content.GrantUriPermissionAttribute](https://developer.xamarin.com/api/type/Android.Content.GrantUriPermissionAttribute/) :會產生[/manifest/application/provider/grant-uri-permission](https://developer.android.com/guide/topics/manifest/grant-uri-permission-element.html) XML 片段
 

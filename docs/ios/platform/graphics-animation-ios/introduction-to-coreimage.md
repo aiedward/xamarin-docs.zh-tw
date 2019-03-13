@@ -4,15 +4,15 @@ description: Core 映像會使用 iOS 5，以提供映像處理和即時視訊�
 ms.prod: xamarin
 ms.assetid: 91E0780B-FF8A-E70D-9CD4-419119612B2D
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 7af57856079813e8cb1831a7f22a0a098a6be771
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: d71f14c26865b71eca991910df4a68f2540f9715
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242162"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115402"
 ---
 # <a name="core-image-in-xamarinios"></a>在 Xamarin.iOS 中的核心映像
 
@@ -118,7 +118,7 @@ faceView.SetNeedsDisplay();
 
 有超過 50 個不同的內建篩選器和架構是可延伸，以便可以實作新的篩選器。
 
-## <a name="using-filters"></a>使用篩選器
+## <a name="using-filters"></a>使用篩選
 
 將篩選套用至映像包含四個不同的步驟： 載入映像、 建立篩選、 套用篩選器並儲存 （或顯示） 的結果。
 

@@ -4,48 +4,30 @@ description: 本文件提供如何對 Xamarin.iOS 應用程式進行單元測試
 ms.prod: xamarin
 ms.assetid: BD959779-3239-79B6-5289-3A9ECDFBD973
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: ce2b452d50222ac3561dab5b76915b7ae634934b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b995ed5cf8d8735e87fb18c3a69d43b5a079b82f
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785459"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674979"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>單元測試 Xamarin.iOS 應用程式
 
 本文件說明如何為 Xamarin.iOS 專案建立單元測試。
 為 Xamarin.iOS 進行單元測試時，是透過使用 Touch.Unit 架構來完成。該架構包含 iOS 測試執行器，以及修改過的 NUnit 版本 (稱為 [Touch.Unit](https://github.com/xamarin/Touch.Unit))；此版本會提供一組熟悉的 API，以供編寫單元測試之用。
 
-## <a name="setting-up-a-test-project"></a>設定測試專案
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+## <a name="setting-up-a-test-project-in-visual-studio-for-mac"></a>在 Visual Studio for Mac 中設定測試專案
 
 若要為您的專案設定單元測試架構，只需要將 [iOS 單元測試專案] 類型的專案新增至您的方案即可。 在您的方案上按一下滑鼠右鍵，然後選取 [新增] > [新增專案] 即可完成此動作。 從清單中選取 [iOS] > [測試] > [Unified API] > [iOS 單元測試專案] (您可以選擇 C# 或 F#)。
 
 ![](touch.unit-images/00.png "選擇 C# 或 F#")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-若要為您的專案設定單元測試架構，只需要將 [iOS 單元測試專案] 類型的專案新增至您的方案即可。 在您的方案上按一下滑鼠右鍵，然後選取 [新增] > [新增專案] 即可完成此動作。從清單中選取 [Visual C#] > [iOS] > [單元測試應用程式 (iOS)]。
-
-![](touch.unit-images/00a.png "單元測試應用程式 iOS")
-
------
-
 上面的動作將會建立其中包含基本執行器程式，並會參考新 MonoTouch.NUnitLite 組件的基本專案，您的專案看起來像這樣：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
 ![](touch.unit-images/01.png "[方案總管] 中的專案")
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-![](touch.unit-images/01a.png "[方案總管] 中的專案")
-
------
 
 `AppDelegate.cs` 類別包含測試執行器，而且它看起來像這樣：
 
@@ -53,27 +35,30 @@ ms.locfileid: "34785459"
 [Register ("AppDelegate")]
 public partial class AppDelegate : UIApplicationDelegate
 {
-        UIWindow window;
-        TouchRunner runner;
+    UIWindow window;
+    TouchRunner runner;
 
-        public override bool FinishedLaunching (UIApplication app, NSDictionary options)
-        {
-                // create a new window instance based on the screen size
-                window = new UIWindow (UIScreen.MainScreen.Bounds);
-                runner = new TouchRunner (window);
+    public override bool FinishedLaunching (UIApplication app, NSDictionary options)
+    {
+        // create a new window instance based on the screen size
+        window = new UIWindow (UIScreen.MainScreen.Bounds);
+        runner = new TouchRunner (window);
 
-                // register every tests included in the main application/assembly
-                runner.Add (System.Reflection.Assembly.GetExecutingAssembly ());
+        // register every tests included in the main application/assembly
+        runner.Add (System.Reflection.Assembly.GetExecutingAssembly ());
 
-                window.RootViewController = new UINavigationController (runner.GetViewController ());
+        window.RootViewController = new UINavigationController (runner.GetViewController ());
 
-                // make the window visible
-                window.MakeKeyAndVisible ();
+        // make the window visible
+        window.MakeKeyAndVisible ();
 
-                return true;
-        }
+        return true;
+    }
 }
 ```
+
+> [!NOTE]
+> iOS 單元測試專案類型在 Windows 上的 Visual Studio 2017 中不提供。
 
 ## <a name="writing-some-tests"></a>編寫一些測試
 
@@ -89,28 +74,28 @@ using NUnit.Framework;
 
 namespace Fixtures {
 
-        [TestFixture]
-        public class Tests {
+    [TestFixture]
+    public class Tests {
 
-                [Test]
-                public void Pass ()
-                {
-                        Assert.True (true);
-                }
-
-                [Test]
-                public void Fail ()
-                {
-                        Assert.False (true);
-                }
-
-                [Test]
-                [Ignore ("another time")]
-                public void Ignore ()
-                {
-                        Assert.True (false);
-                }
+        [Test]
+        public void Pass ()
+        {
+                Assert.True (true);
         }
+
+        [Test]
+        public void Fail ()
+        {
+                Assert.False (true);
+        }
+
+        [Test]
+        [Ignore ("another time")]
+        public void Ignore ()
+        {
+                Assert.True (false);
+        }
+    }
 }
 ```
 
@@ -120,15 +105,14 @@ namespace Fixtures {
 
 測試執行器可讓您查看已登錄的測試，並個別選取可以執行的測試。
 
-[![](touch.unit-images/02.png "已註冊之測試的清單")](touch.unit-images/02.png#lightbox) 
+[![](touch.unit-images/02-sml.png "已註冊之測試的清單")](touch.unit-images/02.png#lightbox) 
+[![](touch.unit-images/03-sml.png "個別文字")](touch.unit-images/03.png#lightbox) 
 
-[![](touch.unit-images/03.png "個別的文字")](touch.unit-images/03.png#lightbox) 
-
-[![](touch.unit-images/04.png "執行結果")](touch.unit-images/04.png#lightbox)
+[![](touch.unit-images/04-sml.png "執行結果")](touch.unit-images/04.png#lightbox)
 
 您可以透過從巢狀檢視中選取測試固件來執行個別的測試固件，或者您可以使用 [Run Everything] \(全部執行\) 來執行所有測試。 如果您執行預設測試，應該包括一個通過測試、一個失敗測試以及一個忽略測試。 這是報表的外觀，而且您可以直接向下切入失敗測試，並找出有關失敗的詳細資訊：
 
-[![](touch.unit-images/05.png "範例報表")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/05.png "範例報表")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/05.png "範例報表")](touch.unit-images/05.png#lightbox)
+[![](touch.unit-images/05-sml.png "範例報表")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/06-sml.png "範例報表")](touch.unit-images/06.png#lightbox) [![](touch.unit-images/07-sml.png "範例報表")](touch.unit-images/07.png#lightbox)
 
 您也可以查看 IDE 中的 [應用程式輸出] 視窗，以了解正在執行哪些測試及其目前狀態。
 
@@ -139,12 +123,7 @@ NUnitLite 是修改後的 NUnit 版本，稱為 [Touch.Unit](https://github.com/
 
 除了「判斷提示類別」方法之外，單元測試功能會在 NUnitLite 所屬的下列命名空間上分割：
 
--   [NUnit.Framework](https://developer.xamarin.com/api/namespace/NUnit.Framework/)
--   [NUnit.Constraints](https://developer.xamarin.com/api/namespace/NUnit.Framework.Constraints/)
--   [NUnitLite](https://developer.xamarin.com/api/namespace/NUnitLite/)
--   [NUniteLite.Runner](https://developer.xamarin.com/api/namespace/NUnitLite.Runner/)
-
-
-Xamarin.iOS 專屬的單元測試執行器記載於此處：
-
--   [NUnit.UI.TouchRunner](https://developer.xamarin.com/api/type/NUnit.UI.TouchRunner/)
+- [NUnit.Framework](https://developer.xamarin.com/api/namespace/NUnit.Framework/)
+- [NUnit.Constraints](https://developer.xamarin.com/api/namespace/NUnit.Framework.Constraints/)
+- [NUnitLite](https://developer.xamarin.com/api/namespace/NUnitLite/)
+- [NUniteLite.Runner](https://developer.xamarin.com/api/namespace/NUnitLite.Runner/)

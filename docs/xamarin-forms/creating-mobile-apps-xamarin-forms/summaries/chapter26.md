@@ -4,17 +4,19 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 第 26 章摘要�
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: bdd86595c3c0805d50241eac3a131a50656a9985
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 9fa9802f94e10612c4b0fe02c84ddcabc89820a8
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156583"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053126"
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>第 26 章的摘要。 自訂版面配置
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26)
 
 Xamarin.Forms 包含數個類別衍生自[ `Layout<View>` ](xref:Xamarin.Forms.Layout`1):
 

@@ -1,32 +1,34 @@
 ---
-title: Xamarin.Essentials： 磁力計
-description: Xamarin.Essentials 磁力計類別可讓您監視裝置的磁力計感應器，表示相對於地球磁場的裝置的方向。
+title: Xamarin.Essentials：磁力計
+description: Xamarin.Essentials 中的磁力計類別可讓您監視裝置的磁力計感應器，該感應器會指出裝置相對於地球磁場的方向。
 ms.assetid: 64DD0D41-03E2-40DD-9EC8-101CA0ED852B
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 3827b9a57ec2667a8716f5b56bfb4631b979d43a
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.date: 11/04/2018
+ms.openlocfilehash: bfc4916c40b47b715357692308d6b5dfa9db57bf
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353785"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898712"
 ---
-# <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials： 磁力計
+# <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials：磁力計
 
-![發行前版本的 NuGet](~/media/shared/pre-release.png)
+**磁力計**類別可讓您監視裝置的磁力計感應器，該感應器會指出裝置相對於地球磁場的方向。
 
-**磁力計**類別可讓您監視裝置的磁力計感應器表示相對於地球磁場的裝置的方向。
+## <a name="get-started"></a>開始使用
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## <a name="using-magnetometer"></a>使用磁力計
 
-在您的類別加入 Xamarin.Essentials 的參考：
+在類別中新增對 Xamarin.Essentials 的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-磁力計功能的運作方式是呼叫`Start`和`Stop`方法，以接聽磁力計的變更。 任何變更會傳送回到`ReadingChanged`事件。 以下是範例使用方式：
+磁力計功能的運作方式是呼叫 `Start` 和 `Stop` 方法，以觀察磁力計的變化。 所有變化都會透過 `ReadingChanged` 事件傳回。 以下是範例使用方式：
 
 ```csharp
 
@@ -69,7 +71,7 @@ public class MagnetometerTest
 }
 ```
 
-在 microteslas 會傳回所有資料。
+所有資料會以 µ (微特斯拉) 為單位傳回。
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 

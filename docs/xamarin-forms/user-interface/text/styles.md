@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 73aa3115e92d1e3954f5ae3eb8dcb84abf9d9efb
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: f70ab3faf6984720e395f5a41b4cabb63fe03053
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998764"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056927"
 ---
 # <a name="xamarinforms-text-styles"></a>Xamarin.Forms 文字樣式
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
 
 _在 Xamarin.Forms 中的樣式文字_
 

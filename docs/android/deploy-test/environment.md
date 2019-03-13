@@ -3,15 +3,15 @@ title: Xamarin.Android 環境
 ms.prod: xamarin
 ms.assetid: 67BFD4E1-276C-4B9F-9BD8-A5218D2BD529
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: ebac7bfe826388de83fedc4be5f268773ca2526b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f0ad51738e0bbe785773f653b06fe5f582527f0b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30766318"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120875"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android 環境
 
@@ -49,7 +49,8 @@ Xamarin.Android 支援 `XA_HTTP_CLIENT_HANDLER_TYPE` 變數，可透過 `adb she
 
 在 Xamarin.Android 6.1 中，預設不會設定環境變數，並且會使用 [HttpClientHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1)。
 
-或者，`Xamarin.Android.Net.AndroidClientHandler` 的值可以指定為針對網路存取使用 [`java.net.URLConnection`](https://developer.xamarin.com/api/type/Java.Net.URLConnection/)，「可」允許使用 TLS 1.2 (若 Android 支援它的話)。
+或者，`Xamarin.Android.Net.AndroidClientHandler` 的值可以指定為針對網路存取使用 [`java.net.URLConnection`](https://developer.xamarin.com/api/type/Java.Net.URLConnection/)，
+「可」允許使用 TLS 1.2 (若 Android 支援它的話)。
 
 已在 Xamarin.Android 6.1 中新增。
 

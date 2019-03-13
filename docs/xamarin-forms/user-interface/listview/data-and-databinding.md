@@ -7,19 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/30/2018
-ms.openlocfilehash: 71e1655b6bc05c621ee97fcf826ce8b468f0dd48
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: e53f6dce47dd7db60267d21c8d816ece554dc46c
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351492"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197110"
 ---
 # <a name="listview-data-sources"></a>ListView 的資料來源
 
-A [ `ListView` ](xref:Xamarin.Forms.ListView)用於顯示資料的清單。 我們將了解填入 ListView 與資料，以及我們如何可以將繫結至選取的項目。
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
 
-- **[設定 ItemsSource](#ItemsSource)**  &ndash;使用簡易清單或陣列。
-- **[資料繫結](#Data_Binding)** &ndash;建立模型與 ListView 之間的關聯性。 繫結適合 MVVM 模式。
+A [ `ListView` ](xref:Xamarin.Forms.ListView)用於顯示資料的清單。 我們將了解填入 ListView 與資料，以及我們如何可以將繫結至選取的項目。
 
 ## <a name="itemssource"></a>ItemsSource
 
@@ -72,11 +71,11 @@ listView.ItemsSource.Add("monochrome");
 因為`ItemsSource`已傳送到陣列中，內容將不會更新為基礎的清單或陣列變更。 如果您想要自動更新，如新增、 移除和變更的基礎清單中的項目 ListView 時，您必須使用`ObservableCollection`。 [`ObservableCollection`](xref:System.Collections.ObjectModel.ObservableCollection`1) 定義於`System.Collections.ObjectModel`一樣，而且`List`，只不過它就會通知`ListView`的任何變更：
 
 ```csharp
-ObservableCollection<Employees> employeeList = new ObservableCollection<Employess>();
-listView.ItemsSource = employeeList;
+ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
+listView.ItemsSource = employees;
 
 //Mr. Mono will be added to the ListView because it uses an ObservableCollection
-employeeList.Add(new Employee(){ DisplayName="Mr. Mono"});
+employees.Add(new Employee(){ DisplayName="Mr. Mono"});
 ```
 
 <a name="Data_Binding" />
@@ -89,12 +88,13 @@ employeeList.Add(new Employee(){ DisplayName="Mr. Mono"});
 如需有關資料繫結的詳細資訊，請參閱 <<c0> [ 資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)這是部分的四[Xamarin.Forms XAML 基本知識文章系列](~/xamarin-forms/xaml/xaml-basics/index.md)。
 
 ### <a name="binding-cells"></a>儲存格繫結
-資料格 （和資料格的子系） 的屬性可以繫結中物件的屬性至`ItemsSource`。 比方說，ListView 可用來呈現的映像的員工清單。
+資料格 （和資料格的子系） 的屬性可以繫結中物件的屬性至`ItemsSource`。 比方說，ListView 可用來呈現的員工清單。
 
 「 員工 」 類別：
 
 ```csharp
-public class Employee{
+public class Employee
+{
     public string DisplayName {get; set;}
 }
 ```
@@ -149,7 +149,7 @@ Title="Employee List">
 
 XAML 的上一個位元會定義`ContentPage`，其中包含`ListView`。 資料來源`ListView`透過設定`ItemsSource`屬性。 每個資料列的版面配置`ItemsSource`內定義`ListView.ItemTemplate`項目。
 
-結果如下：
+以下是結果：
 
 ![](data-and-databinding-images/bound-data.png "使用資料繫結的 ListView")
 

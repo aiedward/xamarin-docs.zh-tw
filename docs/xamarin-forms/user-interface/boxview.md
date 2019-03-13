@@ -6,15 +6,17 @@ ms.assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/07/2017
-ms.openlocfilehash: 813a913c2c2fb27456c9a489c73b16d5892c4b8d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/26/2018
+ms.openlocfilehash: 85edbf657382b7c85ab2c5af543431fb51fb0d4e
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997048"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053863"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)
 
 [`BoxView`](xref:Xamarin.Forms.BoxView) 呈現指定的寬度、 高度和色彩的簡單矩形。 您可以使用`BoxView`裝飾，基本圖形，以及透過觸控使用者互動。
 
@@ -35,13 +37,16 @@ Xamarin.Forms 沒有內建的向量圖形系統，因為`BoxView`補償的協助
 
 ## <a name="setting-boxview-color-and-size"></a>設定 BoxView 色彩和大小
 
-通常您會設定下列三個屬性`BoxView`:
+通常您會設定下列屬性`BoxView`:
 
 - [`Color`](xref:Xamarin.Forms.BoxView.Color) 若要設定其色彩。
+- [`CornerRadius`](xref:Xamarin.Forms.BoxView.CornerRadius) 若要設定其邊角半徑。
 - [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 若要設定的寬度`BoxView`以與裝置無關單位。
 - [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 若要設定的高度`BoxView`。
 
 `Color`屬性的類型是`Color`; 的屬性可以設定為任何`Color`的值，包括 141 靜態唯讀欄位的命名色彩範圍是依字母順序，從`AliceBlue`到`YellowGreen`。
+
+`CornerRadius`屬性的類型是[ `CornerRadius` ](xref:Xamarin.Forms.CornerRadius); 的屬性可以設定為單一`double`統一角半徑值，或有`CornerRadius`由四個定義的結構`double`會套用至的值左上方，右上方，左下方，以及右下方的`BoxView`。
 
 `WidthRequest`並`HeightRequest`屬性只扮演的角色，如果`BoxView`是*未受限制*配置中。 這種狀況時，版面配置容器必須知道子系的大小，比方說，當`BoxView`子系中的自動調整大小的資料格`Grid`版面配置。 A`BoxView`時，也不受限制其`HorizontalOptions`並`VerticalOptions`以外的其他屬性設定為值`LayoutOptions.Fill`。 如果`BoxView`是 未受限制，但`WidthRequest`和`HeightRequest`沒有設定屬性，則寬度或高度設定為 40 的單位或大約在行動裝置上的 1/4 英吋的預設值。
 
@@ -58,6 +63,7 @@ A`BoxView`可以限制在一個維度中，並在其他未受限制。 比方說
              x:Class="BasicBoxView.MainPage">
 
     <BoxView Color="CornflowerBlue"
+             CornerRadius="10"
              WidthRequest="160"
              HeightRequest="160"
              VerticalOptions="Center"

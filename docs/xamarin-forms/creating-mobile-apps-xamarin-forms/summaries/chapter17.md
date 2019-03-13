@@ -4,17 +4,19 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 第 17 章摘要�
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 4ce734f629c13b1419611c0a8fea1dfe4bbaa4ef
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: dc9d57c0edf50f7fe5a7241e64cc727413004252
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156739"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050893"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>第 17 章的摘要。 掌控格線
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
 
 [ `Grid` ](xref:Xamarin.Forms.Grid)會排列成資料列和資料行的資料格的子系的功能強大的版面配置機制。 不同於類似的 HTML`table`項目，`Grid`僅適用於版面配置，而不是簡報的目的。
 

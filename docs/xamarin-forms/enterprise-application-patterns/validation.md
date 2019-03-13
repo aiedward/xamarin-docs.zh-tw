@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 2b4be17e3c96ee223433b435a7b1011eafa8e9db
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 30c507a1b78600ef1b9a96e37f88904daaf82987
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995823"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528568"
 ---
 # <a name="validation-in-enterprise-apps"></a>在 企業應用程式的驗證
 
 接受使用者輸入的任何應用程式應該確定輸入有效。 比方說，應用程式可以檢查包含只有在特定範圍內的字元、 具有特定長度，或符合特定格式的輸入。 不需要驗證，使用者可以提供會導致應用程式失敗的資料。 驗證會強制執行商務規則，並防止攻擊者將惡意的資料。
 
-在內容的模型-ViewModel (MVVM) 模式，檢視模型或模型通常必須執行資料驗證，並發出信號至檢視的任何驗證錯誤，以便讓使用者更正。 EShopOnContainers 的行動裝置應用程式執行的檢視模型屬性的同步用戶端驗證，並通知使用者任何驗證錯誤，反白顯示控制項，其中包含無效的資料，並顯示錯誤訊息，通知使用者資料不正確的原因。 圖 6-1 顯示的類別參與在 eShopOnContainers 的行動裝置應用程式中執行驗證。
+在內容的 Model View ViewModel (MVVM) 模式，檢視模型或模型通常必須執行資料驗證，並發出信號至檢視的任何驗證錯誤，以便讓使用者更正。 EShopOnContainers 的行動裝置應用程式執行的檢視模型屬性的同步用戶端驗證，並通知使用者任何驗證錯誤，反白顯示控制項，其中包含無效的資料，並顯示錯誤訊息，通知使用者資料不正確的原因。 圖 6-1 顯示的類別參與在 eShopOnContainers 的行動裝置應用程式中執行驗證。
 
 [![](validation-images/validation.png "在 eShopOnContainers 的行動裝置應用程式中的驗證類別")](validation-images/validation-large.png#lightbox "eShopOnContainers 的行動裝置應用程式的驗證類別")
 
@@ -33,10 +33,10 @@ ms.locfileid: "38995823"
 驗證規則所建立的類別，衍生自指定`IValidationRule<T>`介面，下列程式碼範例所示：
 
 ```csharp
-public interface IValidationRule<T>  
+public interface IValidationRule<T>  
 {  
-    string ValidationMessage { get; set; }  
-    bool Check(T value);  
+    string ValidationMessage { get; set; }  
+    bool Check(T value);  
 }
 ```
 
@@ -45,20 +45,20 @@ public interface IValidationRule<T>
 下列程式碼範例所示`IsNotNullOrEmptyRule<T>`用來執行驗證的使用者名稱和密碼使用者輸入的驗證規則`LoginView`時在 eShopOnContainers 的行動裝置應用程式中使用模擬 （mock） 的服務：
 
 ```csharp
-public class IsNotNullOrEmptyRule<T> : IValidationRule<T>  
+public class IsNotNullOrEmptyRule<T> : IValidationRule<T>  
 {  
-    public string ValidationMessage { get; set; }  
+    public string ValidationMessage { get; set; }  
 
-    public bool Check(T value)  
-    {  
-        if (value == null)  
-        {  
-            return false;  
-        }  
+    public bool Check(T value)  
+    {  
+        if (value == null)  
+        {  
+            return false;  
+        }  
 
-        var str = value as string;  
-        return !string.IsNullOrWhiteSpace(str);  
-    }  
+        var str = value as string;  
+        return !string.IsNullOrWhiteSpace(str);  
+    }  
 }
 ```
 
@@ -67,23 +67,23 @@ public class IsNotNullOrEmptyRule<T> : IValidationRule<T>
 雖然不使用 eShopOnContainers 的行動裝置應用程式，下列程式碼範例會顯示驗證規則來驗證電子郵件地址：
 
 ```csharp
-public class EmailRule<T> : IValidationRule<T>  
+public class EmailRule<T> : IValidationRule<T>  
 {  
-    public string ValidationMessage { get; set; }  
+    public string ValidationMessage { get; set; }  
 
-    public bool Check(T value)  
-    {  
-        if (value == null)  
-        {  
-            return false;  
-        }  
+    public bool Check(T value)  
+    {  
+        if (value == null)  
+        {  
+            return false;  
+        }  
 
-        var str = value as string;  
-        Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");  
-        Match match = regex.Match(str);  
+        var str = value as string;  
+        Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");  
+        Match match = regex.Match(str);  
 
-        return match.Success;  
-    }  
+        return match.Success;  
+    }  
 }
 ```
 
@@ -97,46 +97,46 @@ public class EmailRule<T> : IValidationRule<T>
 在 eShopOnContainers 行動裝置應用程式，需要驗證的檢視模型屬性宣告為類型`ValidatableObject<T>`，其中`T`來驗證資料的類型。 下列程式碼範例顯示兩個這類屬性的範例：
 
 ```csharp
-public ValidatableObject<string> UserName  
+public ValidatableObject<string> UserName  
 {  
-    get  
-    {  
-        return _userName;  
-    }  
-    set  
-    {  
-        _userName = value;  
-        RaisePropertyChanged(() => UserName);  
-    }  
+    get  
+    {  
+        return _userName;  
+    }  
+    set  
+    {  
+        _userName = value;  
+        RaisePropertyChanged(() => UserName);  
+    }  
 }  
 
-public ValidatableObject<string> Password  
+public ValidatableObject<string> Password  
 {  
-    get  
-    {  
-        return _password;  
-    }  
-    set  
-    {  
-        _password = value;  
-        RaisePropertyChanged(() => Password);  
-    }  
+    get  
+    {  
+        return _password;  
+    }  
+    set  
+    {  
+        _password = value;  
+        RaisePropertyChanged(() => Password);  
+    }  
 }
 ```
 
 發生的驗證，驗證規則必須加入至`Validations`的每個集合`ValidatableObject<T>`執行個體，如下列程式碼範例所示：
 
 ```csharp
-private void AddValidations()  
+private void AddValidations()  
 {  
-    _userName.Validations.Add(new IsNotNullOrEmptyRule<string>   
-    {   
-        ValidationMessage = "A username is required."   
-    });  
-    _password.Validations.Add(new IsNotNullOrEmptyRule<string>   
-    {   
-        ValidationMessage = "A password is required."   
-    });  
+    _userName.Validations.Add(new IsNotNullOrEmptyRule<string>   
+    {   
+        ValidationMessage = "A username is required."   
+    });  
+    _password.Validations.Add(new IsNotNullOrEmptyRule<string>   
+    {   
+        ValidationMessage = "A password is required."   
+    });  
 }
 ```
 
@@ -151,39 +151,39 @@ private void AddValidations()
 檢視模型屬性可以手動觸發驗證。 比方說，這個問題發生在 eShopOnContainers 的行動裝置應用程式在使用者點選時**登入**按鈕`LoginView`，當使用模擬 （mock） 的服務。 此命令會委派呼叫`MockSignInAsync`方法中的`LoginViewModel`，其執行叫用驗證`Validate`方法，以下列程式碼範例所示：
 
 ```csharp
-private bool Validate()  
+private bool Validate()  
 {  
-    bool isValidUser = ValidateUserName();  
-    bool isValidPassword = ValidatePassword();  
-    return isValidUser && isValidPassword;  
+    bool isValidUser = ValidateUserName();  
+    bool isValidPassword = ValidatePassword();  
+    return isValidUser && isValidPassword;  
 }  
 
-private bool ValidateUserName()  
+private bool ValidateUserName()  
 {  
-    return _userName.Validate();  
+    return _userName.Validate();  
 }  
 
-private bool ValidatePassword()  
+private bool ValidatePassword()  
 {  
-    return _password.Validate();  
+    return _password.Validate();  
 }
 ```
 
 `Validate`方法會執行驗證的使用者名稱和使用者輸入的密碼`LoginView`，藉由叫用的驗證方法，在每個`ValidatableObject<T>`執行個體。 下列程式碼範例顯示的驗證方法，從`ValidatableObject<T>`類別：
 
 ```csharp
-public bool Validate()  
+public bool Validate()  
 {  
-    Errors.Clear();  
+    Errors.Clear();  
 
-    IEnumerable<string> errors = _validations  
-        .Where(v => !v.Check(Value))  
-        .Select(v => v.ValidationMessage);  
+    IEnumerable<string> errors = _validations  
+        .Where(v => !v.Check(Value))  
+        .Select(v => v.ValidationMessage);  
 
-    Errors = errors.ToList();  
-    IsValid = !Errors.Any();  
+    Errors = errors.ToList();  
+    IsValid = !Errors.Any();  
 
-    return this.IsValid;  
+    return this.IsValid;  
 }
 ```
 
@@ -194,13 +194,13 @@ public bool Validate()
 每當繫結的屬性變更時，也會觸發驗證。 例如，當中的雙向繫結`LoginView`設定`UserName`或`Password`屬性，驗證就會觸發。 下列程式碼範例示範如何發生這種情況：
 
 ```xaml
-<Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
-    <Entry.Behaviors>  
-        <behaviors:EventToCommandBehavior  
-            EventName="TextChanged"  
-            Command="{Binding ValidateUserNameCommand}" />  
-    </Entry.Behaviors>  
-    ...  
+<Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
+    <Entry.Behaviors>  
+        <behaviors:EventToCommandBehavior  
+            EventName="TextChanged"  
+            Command="{Binding ValidateUserNameCommand}" />  
+    </Entry.Behaviors>  
+    ...  
 </Entry>
 ```
 
@@ -237,14 +237,14 @@ EShopOnContainers 的行動裝置應用程式會通知任何驗證錯誤的使�
 [ `Entry` ](xref:Xamarin.Forms.Entry)控制項使用明確樣式，下列程式碼範例所示：
 
 ```xaml
-<Style x:Key="EntryStyle"  
-       TargetType="{x:Type Entry}">  
-    ...  
-    <Setter Property="behaviors:LineColorBehavior.ApplyLineColor"  
-            Value="True" />  
-    <Setter Property="behaviors:LineColorBehavior.LineColor"  
-            Value="{StaticResource BlackColor}" />  
-    ...  
+<Style x:Key="EntryStyle"  
+       TargetType="{x:Type Entry}">  
+    ...  
+    <Setter Property="behaviors:LineColorBehavior.ApplyLineColor"  
+            Value="True" />  
+    <Setter Property="behaviors:LineColorBehavior.LineColor"  
+            Value="{StaticResource BlackColor}" />  
+    ...  
 </Style>
 ```
 
@@ -253,33 +253,33 @@ EShopOnContainers 的行動裝置應用程式會通知任何驗證錯誤的使�
 時的值`ApplyLineColor`附加的屬性是集合或變更`LineColorBehavior`附加的行為執行`OnApplyLineColorChanged`方法，以下列程式碼範例所示：
 
 ```csharp
-public static class LineColorBehavior  
+public static class LineColorBehavior  
 {  
-    ...  
-    private static void OnApplyLineColorChanged(  
-                BindableObject bindable, object oldValue, object newValue)  
-    {  
-        var view = bindable as View;  
-        if (view == null)  
-        {  
-            return;  
-        }  
+    ...  
+    private static void OnApplyLineColorChanged(  
+                BindableObject bindable, object oldValue, object newValue)  
+    {  
+        var view = bindable as View;  
+        if (view == null)  
+        {  
+            return;  
+        }  
 
-        bool hasLine = (bool)newValue;  
-        if (hasLine)  
-        {  
-            view.Effects.Add(new EntryLineColorEffect());  
-        }  
-        else  
-        {  
-            var entryLineColorEffectToRemove =   
-                    view.Effects.FirstOrDefault(e => e is EntryLineColorEffect);  
-            if (entryLineColorEffectToRemove != null)  
-            {  
-                view.Effects.Remove(entryLineColorEffectToRemove);  
-            }  
-        }  
-    }  
+        bool hasLine = (bool)newValue;  
+        if (hasLine)  
+        {  
+            view.Effects.Add(new EntryLineColorEffect());  
+        }  
+        else  
+        {  
+            var entryLineColorEffectToRemove =   
+                    view.Effects.FirstOrDefault(e => e is EntryLineColorEffect);  
+            if (entryLineColorEffectToRemove != null)  
+            {  
+                view.Effects.Remove(entryLineColorEffectToRemove);  
+            }  
+        }  
+    }  
 }
 ```
 
@@ -288,11 +288,11 @@ public static class LineColorBehavior
 `EntryLineColorEffect`子類別[ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect)類別，並在下列程式碼範例所示：
 
 ```csharp
-public class EntryLineColorEffect : RoutingEffect  
+public class EntryLineColorEffect : RoutingEffect  
 {  
-    public EntryLineColorEffect() : base("eShopOnContainers.EntryLineColorEffect")  
-    {  
-    }  
+    public EntryLineColorEffect() : base("eShopOnContainers.EntryLineColorEffect")  
+    {  
+    }  
 }
 ```
 
@@ -301,76 +301,76 @@ public class EntryLineColorEffect : RoutingEffect
 下列程式碼範例示範`eShopOnContainers.EntryLineColorEffect`適用於 iOS 的實作：
 
 ```csharp
-[assembly: ResolutionGroupName("eShopOnContainers")]  
-[assembly: ExportEffect(typeof(EntryLineColorEffect), "EntryLineColorEffect")]  
-namespace eShopOnContainers.iOS.Effects  
+[assembly: ResolutionGroupName("eShopOnContainers")]  
+[assembly: ExportEffect(typeof(EntryLineColorEffect), "EntryLineColorEffect")]  
+namespace eShopOnContainers.iOS.Effects  
 {  
-    public class EntryLineColorEffect : PlatformEffect  
-    {  
-        UITextField control;  
+    public class EntryLineColorEffect : PlatformEffect  
+    {  
+        UITextField control;  
 
-        protected override void OnAttached()  
-        {  
-            try  
-            {  
-                control = Control as UITextField;  
-                UpdateLineColor();  
-            }  
-            catch (Exception ex)  
-            {  
-                Console.WriteLine("Can't set property on attached control. Error: ", ex.Message);  
-            }  
-        }  
+        protected override void OnAttached()  
+        {  
+            try  
+            {  
+                control = Control as UITextField;  
+                UpdateLineColor();  
+            }  
+            catch (Exception ex)  
+            {  
+                Console.WriteLine("Can't set property on attached control. Error: ", ex.Message);  
+            }  
+        }  
 
-        protected override void OnDetached()  
-        {  
-            control = null;  
-        }  
+        protected override void OnDetached()  
+        {  
+            control = null;  
+        }  
 
-        protected override void OnElementPropertyChanged(PropertyChangedEventArgs args)  
-        {  
-            base.OnElementPropertyChanged(args);  
+        protected override void OnElementPropertyChanged(PropertyChangedEventArgs args)  
+        {  
+            base.OnElementPropertyChanged(args);  
 
-            if (args.PropertyName == LineColorBehavior.LineColorProperty.PropertyName ||  
-                args.PropertyName == "Height")  
-            {  
-                Initialize();  
-                UpdateLineColor();  
-            }  
-        }  
+            if (args.PropertyName == LineColorBehavior.LineColorProperty.PropertyName ||  
+                args.PropertyName == "Height")  
+            {  
+                Initialize();  
+                UpdateLineColor();  
+            }  
+        }  
 
-        private void Initialize()  
-        {  
-            var entry = Element as Entry;  
-            if (entry != null)  
-            {  
-                Control.Bounds = new CGRect(0, 0, entry.Width, entry.Height);  
-            }  
-        }  
+        private void Initialize()  
+        {  
+            var entry = Element as Entry;  
+            if (entry != null)  
+            {  
+                Control.Bounds = new CGRect(0, 0, entry.Width, entry.Height);  
+            }  
+        }  
 
-        private void UpdateLineColor()  
-        {  
-            BorderLineLayer lineLayer = control.Layer.Sublayers.OfType<BorderLineLayer>()  
-                                                             .FirstOrDefault();  
+        private void UpdateLineColor()  
+        {  
+            BorderLineLayer lineLayer = control.Layer.Sublayers.OfType<BorderLineLayer>()  
+                                                             .FirstOrDefault();  
 
-            if (lineLayer == null)  
-            {  
-                lineLayer = new BorderLineLayer();  
-                lineLayer.MasksToBounds = true;  
-                lineLayer.BorderWidth = 1.0f;  
-                control.Layer.AddSublayer(lineLayer);  
-                control.BorderStyle = UITextBorderStyle.None;  
-            }  
+            if (lineLayer == null)  
+            {  
+                lineLayer = new BorderLineLayer();  
+                lineLayer.MasksToBounds = true;  
+                lineLayer.BorderWidth = 1.0f;  
+                control.Layer.AddSublayer(lineLayer);  
+                control.BorderStyle = UITextBorderStyle.None;  
+            }  
 
-            lineLayer.Frame = new CGRect(0f, Control.Frame.Height-1f, Control.Bounds.Width, 1f);  
-            lineLayer.BorderColor = LineColorBehavior.GetLineColor(Element).ToCGColor();  
-            control.TintColor = control.TextColor;  
-        }  
+            lineLayer.Frame = new CGRect(0f, Control.Frame.Height-1f, Control.Bounds.Width, 1f);  
+            lineLayer.BorderColor = LineColorBehavior.GetLineColor(Element).ToCGColor();  
+            control.TintColor = control.TextColor;  
+        }  
 
-        private class BorderLineLayer : CALayer  
-        {  
-        }  
-    }  
+        private class BorderLineLayer : CALayer  
+        {  
+        }  
+    }  
 }
 ```
 
@@ -385,17 +385,17 @@ namespace eShopOnContainers.iOS.Effects
 [ `Entry` ](xref:Xamarin.Forms.Entry)控制項也有[ `DataTrigger` ](xref:Xamarin.Forms.DataTrigger)新增至其[ `Triggers` ](xref:Xamarin.Forms.VisualElement.Triggers)集合。 下列程式碼範例示範`DataTrigger`:
 
 ```xaml
-<Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
-    ...  
-    <Entry.Triggers>  
-        <DataTrigger   
-            TargetType="Entry"  
-            Binding="{Binding UserName.IsValid}"  
-            Value="False">  
-            <Setter Property="behaviors:LineColorBehavior.LineColor"   
-                    Value="{StaticResource ErrorColor}" />  
-        </DataTrigger>  
-    </Entry.Triggers>  
+<Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
+    ...  
+    <Entry.Triggers>  
+        <DataTrigger   
+            TargetType="Entry"  
+            Binding="{Binding UserName.IsValid}"  
+            Value="False">  
+            <Setter Property="behaviors:LineColorBehavior.LineColor"   
+                    Value="{StaticResource ErrorColor}" />  
+        </DataTrigger>  
+    </Entry.Triggers>  
 </Entry>
 ```
 
@@ -414,8 +414,8 @@ namespace eShopOnContainers.iOS.Effects
 UI 會在其資料驗證失敗。 每個控制項下方的標籤控制項中顯示驗證錯誤訊息。 下列程式碼範例所示[ `Label` ](xref:Xamarin.Forms.Label) ，會顯示驗證錯誤訊息，如果使用者未輸入有效的使用者名稱：
 
 ```xaml
-<Label Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}"  
-       Style="{StaticResource ValidationErrorLabelStyle}" />
+<Label Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}"  
+       Style="{StaticResource ValidationErrorLabelStyle}" />
 ```
 
 每個[ `Label` ](xref:Xamarin.Forms.Label)繫結至`Errors`正在驗證的檢視模型物件的屬性。 `Errors`所提供屬性`ValidatableObject<T>`類別，而且屬於型`List<string>`。 因為`Errors`屬性可包含多個驗證錯誤，`FirstValidationErrorConverter`執行個體用來擷取顯示集合中的第一個錯誤。

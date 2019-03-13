@@ -6,15 +6,17 @@ ms.assetid: 8ECF390C-9DB2-4441-B9A3-101AE7E5AEC5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/11/2017
-ms.openlocfilehash: 3f82e4b7d52988bfef9736ace8c476a9cd2da02b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 02/26/2019
+ms.openlocfilehash: 2c7daca80a207d0c060fc3a867b1eda03dd65258
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994740"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557073"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>設定選擇器的 ItemsSource 屬性
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/MonkeyAppPicker/)
 
 _選擇器 檢視是從資料的清單中選取的文字項目控制項。這篇文章說明如何藉由設定 ItemsSource 屬性，填入資料的選擇器，以及如何回應使用者的項目選取。_
 
@@ -25,7 +27,9 @@ _選擇器 檢視是從資料的清單中選取的文字項目控制項。這篇
 A [ `Picker` ](xref:Xamarin.Forms.Picker)可以填入資料，藉由設定其[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)屬性設`IList`集合。 集合中的每個項目必須是的或衍生自類型`object`。 可以在 XAML 中加入項目，初始化`ItemsSource`從項目的陣列的屬性：
 
 ```xaml
-<Picker x:Name="picker" Title="Select a monkey">
+<Picker x:Name="picker"
+        Title="Select a monkey"
+        TitleColor="Red">
   <Picker.ItemsSource>
     <x:Array Type="{x:Type x:String}">
       <x:String>Baboon</x:String>
@@ -55,7 +59,7 @@ monkeyList.Add("Golden Lion Tamarin");
 monkeyList.Add("Howler Monkey");
 monkeyList.Add("Japanese Macaque");
 
-var picker = new Picker { Title = "Select a monkey" };
+var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };
 picker.ItemsSource = monkeyList;
 ```
 
@@ -64,7 +68,7 @@ picker.ItemsSource = monkeyList;
 A [ `Picker` ](xref:Xamarin.Forms.Picker)支援一次選取一個項目。 當使用者選取項目， [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged)事件引發時， [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)屬性更新為整數，表示選取的項目在清單中，索引和[`SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem)屬性更新為`object`代表選取的項目。 [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)屬性是以零為起始的數字，指出使用者已選取的項目。 如果未不選取任何項目，則這是當[ `Picker` ](xref:Xamarin.Forms.Picker)先建立並初始化，`SelectedIndex`會是-1。
 
 > [!NOTE]
-> 項目中的選取行為[ `Picker` ](xref:Xamarin.Forms.Picker)可以自訂與特定平台在 iOS 上。 如需詳細資訊，請參閱 <<c0> [ 控制選擇器項目選取](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#picker_update_mode)。
+> 項目中的選取行為[ `Picker` ](xref:Xamarin.Forms.Picker)可以自訂與特定平台在 iOS 上。 如需詳細資訊，請參閱 <<c0> [ 控制選擇器項目選取](~/xamarin-forms/platform/ios/picker-selection.md)。
 
 下列程式碼範例示範如何擷取[ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem)屬性值從[ `Picker` ](xref:Xamarin.Forms.Picker)在 XAML 中：
 
@@ -99,18 +103,21 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 > [!NOTE]
 > A [ `Picker` ](xref:Xamarin.Forms.Picker)可以藉由設定顯示特定的項目初始化[ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)或是[ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem)屬性。 不過，這些屬性必須設定在初始化之後[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)集合。
 
-## <a name="populating-a-picker-with-data-using-data-binding"></a>填入資料使用資料繫結選擇器
+## <a name="populating-a-picker-with-data-using-data-binding"></a>使用資料繫結的資料填入的選擇器
 
 A [ `Picker` ](xref:Xamarin.Forms.Picker)可以也使用資料來填入繫結中使用資料繫結其[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)屬性設`IList`集合。 在 XAML 中，這達成與[ `Binding` ](xref:Xamarin.Forms.Xaml.BindingExtension)標記延伸模組：
 
 ```xaml
-<Picker Title="Select a monkey" ItemsSource="{Binding Monkeys}" ItemDisplayBinding="{Binding Name}" />
+<Picker Title="Select a monkey"
+        TitleColor="Red"
+        ItemsSource="{Binding Monkeys}"
+        ItemDisplayBinding="{Binding Name}" />
 ```
 
 對等的 C# 程式碼如下所示：
 
 ```csharp
-var picker = new Picker { Title = "Select a monkey" };
+var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };
 picker.SetBinding(Picker.ItemsSourceProperty, "Monkeys");
 picker.ItemDisplayBinding = new Binding("Name");
 ```
@@ -135,6 +142,7 @@ public class Monkey
 
 ```xaml
 <Picker Title="Select a monkey"
+        TitleColor="Red"
         ItemsSource="{Binding Monkeys}"
         ItemDisplayBinding="{Binding Name}"
         SelectedItem="{Binding SelectedMonkey}" />
@@ -147,7 +155,7 @@ public class Monkey
 對等的 C# 程式碼如下所示：
 
 ```csharp
-var picker = new Picker { Title = "Select a monkey" };
+var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };
 picker.SetBinding(Picker.ItemsSourceProperty, "Monkeys");
 picker.SetBinding(Picker.SelectedItemProperty, "SelectedMonkey");
 picker.ItemDisplayBinding = new Binding("Name");
@@ -172,14 +180,9 @@ detailsLabel.SetBinding(Label.TextProperty, "SelectedMonkey.Details");
 > [!NOTE]
 > 請注意， [ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem)並[ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)預設屬性都支援雙向繫結。
 
-## <a name="summary"></a>總結
-
-[ `Picker` ](xref:Xamarin.Forms.Picker)檢視是從資料的清單中選取的文字項目控制項。 這篇文章說明如何以填入`Picker`藉由設定資料[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)屬性，以及如何回應使用者的項目選取。 這個方法時，所導入 Xamarin.Forms 2.3.4，是建議的方法與互動`Picker`。
-
-
 ## <a name="related-links"></a>相關連結
 
 - [選擇器示範 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
 - [Monkey 應用程式 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/MonkeyAppPicker/)
 - [可繫結選擇器 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindablePicker/)
-- [選擇器](xref:Xamarin.Forms.Picker)
+- [選擇器 API](xref:Xamarin.Forms.Picker)

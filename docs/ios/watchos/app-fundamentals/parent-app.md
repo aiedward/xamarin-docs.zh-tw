@@ -1,32 +1,32 @@
 ---
-title: 使用 watchOS 父 Xamarin 應用程式
-description: 本文件說明如何使用 Xamarin watchOS 父應用程式。 它討論 WatchKit 應用程式擴充功能、 iOS 應用程式、 共用儲存體、 等等。
+title: 運用 watchOS 父系應用程式，在 Xamarin 中使用
+description: 本文件說明如何使用 Xamarin 在 watchOS 父系應用程式。 它討論 WatchKit 應用程式擴充功能、 iOS 應用程式，共用存放裝置和更多功能。
 ms.prod: xamarin
 ms.assetid: 9AD29833-E9CC-41A3-95D2-8A655FF0B511
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 3af2cce0d84e3934eeb89917990f111d29aadef1
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 74b9243b1b985cba6d815a673d1abed054eda234
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790688"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059943"
 ---
-# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>使用 watchOS 父 Xamarin 應用程式
+# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>運用 watchOS 父系應用程式，在 Xamarin 中使用
 
 > [!IMPORTANT]
-> 存取父應用程式使用下列範例只適用於 watchOS 1 監看式應用程式。
+> 存取父應用程式只會使用下列範例適用於 watchOS 1 監看式應用程式。
 
 
-有不同的方式來監看式應用程式和其隨附的 iOS 應用程式之間進行通訊：
+有不同的方式，watch 應用程式和其隨附的 iOS 應用程式之間進行通訊：
 
-- 監看式延伸模組可以[呼叫的方法](#code)針對父應用程式，在 iPhone 上的 在背景中執行。
+- 監看式延伸模組可以[呼叫的方法](#code)針對父應用程式的 iPhone 上背景中執行。
 
-- 監看式延伸模組可以[共用的儲存位置](#storage)與父 iPhone 應用程式。
+- 監看式延伸模組可以[共用儲存體位置](#storage)與父代的 iPhone 應用程式。
 
-- 將資料從摘要或通知傳遞至監看式應用程式，將使用者傳送至應用程式中的特定介面控制站使用遞交。
+- 您可以使用遞移式來將資料從摘要或通知傳遞至監看式應用程式，將使用者傳送至應用程式中的特定介面控制站。
 
 父應用程式有時也稱為容器應用程式。
 
@@ -35,16 +35,16 @@ ms.locfileid: "34790688"
 
 ## <a name="run-code"></a>執行程式碼
 
-Watch 擴充功能和父 iPhone 應用程式之間的通訊中示範[GpsWatch 範例](https://developer.xamarin.com/samples/GpsWatch)。
-您監看的延伸模組可以要求父 iOS 應用程式進行一些處理，其代表使用`OpenParentApplication`方法。
+監控擴充功能和父 iPhone 應用程式之間通訊所示[GpsWatch 範例](https://developer.xamarin.com/samples/GpsWatch)。
+您的監看式延伸模組可以要求父 iOS 應用程式進行一些處理，其代表使用`OpenParentApplication`方法。
 
-針對長時間執行工作 （包括網路要求）-只有父系的 iOS 應用程式可以充分利用背景處理完成這些工作，並將擷取的資料儲存在監看式延伸模組可存取的位置，這是特別有用。
+針對長時間執行工作 （包括網路要求）-只有父代的 iOS 應用程式可以利用背景處理完成這些工作，並將擷取的資料儲存在監看式延伸模組可存取的位置，這會特別有用。
 
 
 
 ### <a name="watch-kit-app-extension"></a>監看式套件應用程式擴充功能
 
-呼叫`WKInterfaceController.OpenParentApplication`中監看式的應用程式擴充功能。 它會傳回`bool`，指出是否方法要求已傳送成功與否。 請檢查`error`回應中的參數`Action`來判斷是否有任何發生在 iPhone 應用程式中執行的方法。
+呼叫`WKInterfaceController.OpenParentApplication`在您的監看式應用程式擴充功能。 它會傳回`bool`，指出是否已傳送的方法要求，成功與否。 請檢查`error`回應參數`Action`以判斷是否有任何發生在 iPhone 應用程式中執行的方法。
 
 ```csharp
 WKInterfaceController.OpenParentApplication (new NSDictionary (), (replyInfo, error) => {
@@ -60,8 +60,8 @@ WKInterfaceController.OpenParentApplication (new NSDictionary (), (replyInfo, er
 
 ### <a name="ios-app"></a>iOS 應用程式
 
-透過在 iPhone 應用程式進行路由傳送來自監看式應用程式擴充功能的所有呼叫`HandleWatchKitExtensionRequest`方法。
-如果您正在監看式應用程式中不同的要求，則這個方法需要查詢`userInfo`字典，以便判斷如何處理要求。
+從監看式應用程式擴充功能的所有呼叫皆都導向的 iPhone 應用程式透過`HandleWatchKitExtensionRequest`方法。
+如果您正在監看式應用程式中不同的要求，則這個方法將會需要查詢`userInfo`字典，以便判斷如何處理要求。
 
 
 ```csharp
@@ -87,13 +87,13 @@ public partial class AppDelegate : UIApplicationDelegate
 
 ## <a name="shared-storage"></a>共用存放裝置
 
-如果您設定[應用程式群組](~/ios/watchos/app-fundamentals/app-groups.md)則 iOS 8 擴充功能 （包括監看式擴充功能） 可共用父應用程式資料。
+如果您設定[應用程式群組](~/ios/watchos/app-fundamentals/app-groups.md)則 iOS 8 的擴充功能 （包括監看式延伸模組） 可以與父應用程式共用資料。
 
 <a name="nsuserdefaults" />
 
-### <a name="nsuserdefaults"></a>NSUserDefaults
+### <a name="nsuserdefaults"></a>使用 NSUserDefaults
 
-可以在監看式應用程式擴充功能和父 iPhone 應用程式中撰寫以下的程式碼，使其可以參考一組常用的`NSUserDefaults`:
+下列程式碼可以寫成監看式應用程式擴充功能和父 iPhone 應用程式，使它們可以參考一組常用的`NSUserDefaults`:
 
 ```csharp
 NSUserDefaults shared = new NSUserDefaults(
@@ -113,7 +113,7 @@ var count = shared.IntForKey ("count");
 
 ### <a name="files"></a>檔案
 
-IOS 應用程式和監看式擴充功能也可以共用檔案使用共通的檔案路徑。
+IOS 應用程式和監看式延伸模組也可以共用使用常見的檔案路徑的檔案。
 
 ```csharp
 var FileManager = new NSFileManager ();
@@ -124,15 +124,15 @@ Console.WriteLine ("agcpath: " + appGroupContainerPath);
 // use the path to create and update files
 ```
 
-注意： 如果路徑是`null`然後檢查[應用程式群組設定](~/ios/watchos/app-fundamentals/app-groups.md)確定佈建設定檔是否已正確設定且已在開發電腦上下載/安裝。
+注意： 如果路徑是`null`然後核取[應用程式群組設定](~/ios/watchos/app-fundamentals/app-groups.md)確保佈建設定檔是否已正確設定，並已在開發電腦上下載/安裝。
 
 如需詳細資訊，請參閱[應用程式群組功能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)文件。
 
 ## <a name="wormholesharp"></a>WormHoleSharp
 
-WatchOS 1 的熱門開放原始碼機制 (根據[MMWormHole](https://github.com/mutualmobile/MMWormhole)) 父應用程式和監看式應用程式之間傳遞資料或命令。
+熱門的開放原始碼機制，適用於 watchOS 1 (根據[MMWormHole](https://github.com/mutualmobile/MMWormhole)) 父應用程式和 watch 應用程式之間傳遞資料或命令。
 
-您可以設定蟲孔使用 iOS 應用程式中的 像這樣的應用程式群組，並監看的延伸模組：
+您可以設定 WormHole 使用 iOS 應用程式中的這類應用程式群組，並觀看延伸模組：
 
 ```csharp
 // AppDelegate (iOS) or InterfaceController (watch extension)
@@ -141,13 +141,13 @@ Wormhole wormHole;
 wormHole = new Wormhole ("group.com.your-company.watchstuff", "messageDir");
 ```
 
-下載的 C# 版本[WormHoleSharp](https://github.com/Clancey/WormHoleSharp)。
+下載C#版本[WormHoleSharp](https://github.com/Clancey/WormHoleSharp)。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [GpsWatch （範例）](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchKitCatalog/)
+- [GpsWatch （範例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
 - [WormHoleSharp （範例）](https://github.com/Clancey/WormHoleSharp)
 - [Apple 的 WKInterfaceController 參考](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
 - [Apple 的應用程式包含共用資料](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)

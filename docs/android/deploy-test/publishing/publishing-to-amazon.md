@@ -3,15 +3,15 @@ title: 發行至 Amazon App Store
 ms.prod: xamarin
 ms.assetid: A3E9EAC7-2968-8891-CDF2-B73FC0013EC9
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 4805b9685328c5848bcdeab6a0fbaa0c5ed67844
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e65030092b1f59b1111bc521a8613cfe8a9160ee
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762522"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118691"
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>發行至 Amazon App Store
 

@@ -4,29 +4,29 @@ description: 本節說明如何在 Xamarin.Android 中實作本機通知。 它�
 ms.prod: xamarin
 ms.assetid: 03E19D14-7C81-4D5C-88FC-C3A3A927DB46
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 221fa9b70eeba2c4ca08433c627e5648470a7fac
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+author: conceptdev
+ms.author: crdun
+ms.date: 08/16/2018
+ms.openlocfilehash: 362041efc5a19dfb70430054f3e4636d4fdfbd7e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514527"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672740"
 ---
+<a name="compatibility"></a>
+
 # <a name="local-notifications"></a>本機通知
 
 _本節說明如何在 Xamarin.Android 中實作本機通知。它說明 Android 的通知的各種 UI 項目，並討論 API 的涉及建立和顯示通知。_
 
 ## <a name="local-notifications-overview"></a>本機通知概觀
 
-本主題說明如何在 Xamarin.Android 應用程式中實作本機通知。 它討論的 Android 通知的各個部分，其中說明應用程式開發人員，可使用不同的通知樣式並導入了一些用來建立及發行通知的 Api。
-
 Android 提供兩個系統控制區域向使用者顯示通知圖示和通知資訊。 當第一次發行通知時，它的圖示會顯示在*通知區域*，如下列螢幕擷取畫面所示：
 
 ![在裝置上的範例通知區域](local-notifications-images/01-notification-shade.png)
 
-若要取得有關該通知的詳細資料，使用者可以開啟通知抽屜 （這會展開以顯示通知內容的每個通知圖示），並執行與通知相關聯的任何動作。 下列螢幕擷取畫面顯示*通知抽屜*，其對應於通知區域上方顯示：
+若要取得有關該通知的詳細資料，使用者可以開啟通知抽屜 （這會展開以顯示通知內容的每個通知圖示），並執行與通知相關聯的任何動作。 下列螢幕擷取畫面示*通知抽屜*，其對應於通知區域上方顯示：
 
 [![顯示三個通知的範例通知抽屜](local-notifications-images/02-notification-drawer-sml.png)](local-notifications-images/02-notification-drawer.png#lightbox)
 
@@ -37,6 +37,9 @@ Android 的通知會使用兩種類型的配置：
 -   ***展開的版面配置***&ndash;可以展開為較大的大小，以顯示詳細資訊的呈現格式。
 
 下列各節將說明每一種版面配置類型 （以及如何建立它們）。
+
+> [!NOTE]
+> 本指南著重[NotificationCompat Api](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.html)從[Android 支援程式庫](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)。 這些 Api 可確保最大值回溯相容性以 Android 4.0 （API 層級為 14）。
 
 
 ### <a name="base-layout"></a>基底的版面配置
@@ -65,7 +68,7 @@ Android 的所有通知都建置在基底的配置格式，其中至少包含下
 
 [![範例鎖定畫面通知](local-notifications-images/05-lockscreen-notification-sml.png)](local-notifications-images/05-lockscreen-notification.png#lightbox)
 
-使用者可以點選兩下解除鎖定裝置，並跳至產生該通知，應用程式的鎖定畫面通知或撥動以關閉通知。 應用程式可以設定來控制的鎖定畫面上顯示的內容通知的可視性層級，使用者可以選擇是否允許要在鎖定畫面通知中顯示的敏感性內容。
+使用者可以點選鎖定螢幕通知，以解除鎖定裝置，並跳至產生該通知，應用程式或撥動以關閉通知。 應用程式可以設定來控制鎖定畫面上顯示的內容通知的可視性層級，使用者可以選擇是否允許要在鎖定螢幕通知中顯示的敏感性內容。
 
 Android 5.0 引進稱為 「 高優先順序通知的呈現格式*抬頭*。 抬頭通知向下滑動從畫面頂端幾秒鐘的時間，然後撤退往 [通知] 區域：
 
@@ -73,7 +76,7 @@ Android 5.0 引進稱為 「 高優先順序通知的呈現格式*抬頭*。 抬
 
 抬頭通知可讓系統 UI 放入在使用者之前的重要資訊，而不會中斷目前執行活動的狀態。
 
-Android 支援通知的中繼資料，讓通知可以排序，並以智慧方式顯示。 通知中繼資料也會控制在鎖定畫面上和抬頭格式通知的呈現方式。 應用程式可以設定下列類型的通知中繼資料：
+Android 支援通知的中繼資料，讓通知可以排序，並以智慧方式顯示。 通知中繼資料也會控制在鎖定畫面上，抬頭格式通知的呈現方式。 應用程式可以設定下列類型的通知中繼資料：
 
 -   **優先權**&ndash;優先順序層級可讓您決定如何及何時會顯示通知。 例如，在 Android 5.0，高優先順序通知會顯示為抬頭通知。
 
@@ -81,7 +84,7 @@ Android 支援通知的中繼資料，讓通知可以排序，並以智慧方式
 
 -   **類別目錄**&ndash;會通知系統如何處理在各種情況下，例如當裝置處於通知 *「 請勿打擾 」* 模式。
 
-**注意：** **可見性**並**分類**在 Android 5.0 和無法使用在舊版的 Android 中推出。 從 Android 8.0[通知通道](#notif-chan)用來控制向使用者通知的呈現方式。
+**注意：****可視性**並**分類**在 Android 5.0 和無法使用在舊版的 Android 中推出。 從 Android 8.0[通知通道](#notif-chan)用來控制向使用者通知的呈現方式。
 
 
 ### <a name="expanded-layouts"></a>展開的版面配置
@@ -104,17 +107,50 @@ Android 支援三種擴充的版面配置樣式，單一事件通知：
 
 [基本通知之外](#beyond-the-basic-notification)（稍後在本文中） 說明如何建立*大型文字*，*收件匣*，和*映像*通知。
 
+<a name="notif-chan"></a>
+<a name="notification-channels"></a>
+## <a name="notification-channels"></a>通知通道
+
+從 Android 8.0 oreo （版），您可以使用*通知通道*功能來建立使用者可自訂的每一種您想要顯示的通知通道。 通知通道使您能夠為您群組的通知，讓所有通知都張貼至通道展示相同的行為。 比方說，您可能會有適用於需要立即注意的通知的通知通道和不同的 「 更安靜 」 通道用來參考用訊息。
+
+**YouTube**會隨 Android Oreo 的應用程式會列出兩個通知的類別：**下載通知**並**一般通知**:
+
+[![在 Android Oreo 的 YouTube 的通知畫面](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
+
+這些類別對應至通知通道。 YouTube 應用程式會實作**下載通知**通道並**一般通知**通道。 使用者可以點選**下載通知**，其中會顯示 [設定] 畫面，如應用程式的下載通知通道：
+
+[![下載 YouTube 應用程式的 [通知] 畫面](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png#lightbox)
+
+在此畫面中，使用者可以修改的行為**下載**通知通道，執行下列動作：
+
+-   設定的重要性層級**Urgent**，**高**，**中型**，或**低**，也就是設定音效及視覺化中斷的層級。
+
+-   開啟或關閉的通知點。
+
+-   開啟或關閉，請開啟閃爍的燈。
+
+-   顯示或隱藏在鎖定畫面上的通知。
+
+-   覆寫 **「 請勿打擾 」** 設定。
+
+**一般通知**通道有類似的設定：
+
+[![YouTube 應用程式的一般通知畫面](local-notifications-images/29-yt-general-sml.png)](local-notifications-images/29-yt-general.png#lightbox)
+
+請注意，您不需要對您的通知通道與使用者互動的方式絕對控制&ndash;使用者可以修改任何裝置上的通知通道的設定，如上方螢幕擷取畫面所示。 不過，您可以設定預設值 （會如下所述）。 如這些範例示範的則 新的通知通道功能可讓您為使用者提供更細微的控制不同種類的通知。
+
 
 ## <a name="notification-creation"></a>建立通知
 
-若要在 Android 中建立的通知，您使用[Notification.Builder](https://developer.xamarin.com/api/type/Android.App.Notification+Builder/)類別。 `Notification.Builder` 簡化通知物件的建立 Android 3.0 中引進。 若要建立與較舊的 Android 版本相容的通知，您可以使用[NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html)而不是類別`Notification.Builder`(請參閱[相容性](#compatibility)如本主題稍後的使用詳細資訊`NotificationCompat.Builder`)。
-`Notification.Builder` 提供方法來設定各種選項在通知中，例如：
+若要在 Android 中建立的通知，您使用[NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder)從類別[Xamarin.Android.Support.v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) NuGet 套件。 這個類別可讓您能夠建立及發行在舊版 Android 上的通知。 如需使用詳細資訊`NotificationCompat.Builder`，請參閱 <<c2> [ 相容性](#compatibility)本主題稍後的。
+
+`NotificationCompat.Builder` 提供方法來設定各種選項在通知中，例如：
 
 -   內容，包括標題、 訊息文字，以及 [通知] 圖示。
 
 -   樣式的通知，例如*大型文字*，*收件匣*，或*映像*樣式。
 
--   通知的優先順序： 最小值、 低，預設值，高，或最大值。
+-   通知的優先順序： 最小值、 低，預設值，高，或最大值。 Android 8.0 和更新版本，透過設定優先權[_通知通道_](#notification-channels)。
 
 -   在鎖定畫面通知的可見性： 公用、 私人或祕密。
 
@@ -122,18 +158,56 @@ Android 支援三種擴充的版面配置樣式，單一事件通知：
 
 -   選擇性的意圖，表示用來在點選通知時啟動的活動。
 
+-   通知通道，將於 (Android 8.0 和更新版本) 發行通知的識別碼。
+
 產生器中設定這些選項之後，您就會產生包含設定的通知物件。 若要發行通知，您此通知將物件傳遞至*通知管理員*。 Android 提供[NotificationManager](https://developer.xamarin.com/api/type/Android.App.NotificationManager/)類別，這是負責發行通知，並向使用者顯示它們。 可以從任何內容，例如活動或服務取得這個類別的參考。
 
 
-### <a name="how-to-generate-a-notification"></a>如何產生通知
+### <a name="creating-a-notification-channel"></a>建立通知通道
+
+Android 8.0 執行的應用程式必須建立其通知的通知通道。 通知通道需要下列三段資訊：
+
+* 唯一識別通道的套件識別碼字串。
+* 通道會向使用者顯示的名稱。  名稱必須是介於 1 到 40 個字元。
+* 通道的重要性。
+
+應用程式需要檢查它們正在執行的 Android 版本。
+執行版本早於 Android 8.0 裝置不應建立通知通道。 下列的方法是如何建立通知通道，在活動中的其中一個範例：
+
+```csharp
+void CreateNotificationChannel()
+{
+    if (Build.VERSION.SdkInt < BuildVersionCodes.O)
+    {
+        // Notification channels are new in API 26 (and not a part of the
+        // support library). There is no need to create a notification
+        // channel on older versions of Android.
+        return;
+    }
+
+    var channelName = Resources.GetString(Resource.String.channel_name);
+    var channelDescription = GetString(Resource.String.channel_description);
+    var channel = new NotificationChannel(CHANNEL_ID, channelName, NotificationImportance.Default)
+                  {
+                      Description = channelDescription
+                  };
+
+    var notificationManager = (NotificationManager) GetSystemService(NotificationService);
+    notificationManager.CreateNotificationChannel(channel);
+}
+```
+
+每次建立活動時，應該建立通知通道。 針對`CreateNotificationChannel`方法，它應該呼叫`OnCreate`活動的方法。
+
+### <a name="creating-and-publishing-a-notification"></a>建立和發行通知
 
 若要在 Android 中產生通知，請遵循下列步驟：
 
-1.  具現化`Notification.Builder`物件。
+1.  具現化`NotificationCompat.Builder`物件。
 
-2.  在呼叫各種方法`Notification.Builder`物件來設定通知選項。
+2.  在呼叫各種方法`NotificationCompat.Builder`物件來設定通知選項。
 
-3.  呼叫[建置](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.Build/)方法`Notification.Builder`物件具現化的通知物件。
+3.  呼叫[建置](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.Build/)方法`NotificationCompat.Builder`物件具現化的通知物件。
 
 4.  呼叫[通知](https://developer.xamarin.com/api/member/Android.App.NotificationManager.Notify/(System.Int32%2cAndroid.App.Notification))通知管理員來發行通知的方法。
 
@@ -145,11 +219,11 @@ Android 支援三種擴充的版面配置樣式，單一事件通知：
 
 -   通知的文字
 
-下列程式碼範例說明如何使用`Notification.Builder`產生基本的通知。 請注意，`Notification.Builder`方法支援[方法鏈結](http://en.wikipedia.org/wiki/Method_chaining); 也就是說，每個方法會傳回產生器物件讓您可以使用最後一個方法呼叫的結果來叫用下一個方法呼叫：
+下列程式碼範例說明如何使用`NotificationCompat.Builder`產生基本的通知。 請注意，`NotificationCompat.Builder`方法支援[方法鏈結](https://en.wikipedia.org/wiki/Method_chaining); 也就是說，每個方法會傳回產生器物件讓您可以使用最後一個方法呼叫的結果來叫用下一個方法呼叫：
 
 ```csharp
 // Instantiate the builder and set notification elements:
-Notification.Builder builder = new Notification.Builder (this)
+NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
     .SetContentTitle ("Sample Notification")
     .SetContentText ("Hello World! This is my first notification!")
     .SetSmallIcon (Resource.Drawable.ic_notification);
@@ -166,7 +240,7 @@ const int notificationId = 0;
 notificationManager.Notify (notificationId, notification);
 ```
 
-在此範例中，新`Notification.Builder`呼叫物件`builder`是具現化，已設定的標題和通知的文字，並通知圖示會從載入**Resources/drawable/ic_notification.png**。 通知產生器 」 的呼叫`Build`方法會建立使用這些設定的通知物件。 下一個步驟是呼叫`Notify`通知管理員的方法。 若要找出通知管理員，請呼叫`GetSystemService`，如上所示。
+在此範例中，新`NotificationCompat.Builder`物件呼叫`builder`會具現化，以及要使用通知通道的識別碼。 設定標題和通知的文字，並通知圖示會從載入**Resources/drawable/ic_notification.png**。 通知產生器 」 的呼叫`Build`方法會建立使用這些設定的通知物件。 下一個步驟是呼叫`Notify`通知管理員的方法。 若要找出通知管理員，請呼叫`GetSystemService`，如上所示。
 
 `Notify`方法接受兩個參數： 通知識別碼和通知的物件。 通知識別碼是唯一的整數，識別您的應用程式通知。 在此範例中，通知識別碼設定為零 (0);不過，在生產環境應用程式中，您會想要讓每個通知的唯一識別碼。 重複使用先前的識別碼值，在呼叫`Notify`都會導致覆寫最後一則通知。
 
@@ -188,7 +262,7 @@ builder.SetWhen (Java.Lang.JavaSystem.CurrentTimeMillis());
 
 ```csharp
 // Instantiate the notification builder and enable sound:
-Notification.Builder builder = new Notification.Builder (this)
+NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
     .SetContentTitle ("Sample Notification")
     .SetContentText ("Hello World! This is my first notification!")
     .SetDefaults (NotificationDefaults.Sound)
@@ -213,7 +287,7 @@ builder.SetSound (RingtoneManager.GetDefaultUri(RingtoneType.Alarm));
 builder.SetSound (RingtoneManager.GetDefaultUri(RingtoneType.Ringtone));
 ```
 
-建立通知物件之後，就能夠通知物件上設定通知屬性 (而不是將其設定為透過事先`Notification.Builder`方法)。 比方說，而不是呼叫`SetDefaults`方法，以啟用震動通知，您可以直接修改通知的位元旗標[預設](https://developer.xamarin.com/api/property/Android.App.Notification.Defaults/)屬性：
+建立通知物件之後，就能夠通知物件上設定通知屬性 (而不是將其設定為透過事先`NotificationCompat.Builder`方法)。 比方說，而不是呼叫`SetDefaults`方法，以啟用震動通知，您可以直接修改通知的位元旗標[預設](https://developer.xamarin.com/api/property/Android.App.Notification.Defaults/)屬性：
 
 ```csharp
 // Build the notification:
@@ -229,7 +303,7 @@ notification.Defaults |= NotificationDefaults.Vibrate;
 
 ### <a name="updating-a-notification"></a>正在更新通知
 
-如果您想要更新的通知內容，已發行之後，您可以重複使用現有`Notification.Builder`物件來建立新的通知物件，並發行這個識別碼上次告知的通知。 例如: 
+如果您想要更新的通知內容，已發行之後，您可以重複使用現有`NotificationCompat.Builder`物件來建立新的通知物件，並發行這個識別碼上次告知的通知。 例如: 
 
 ```csharp
 // Update the existing notification builder content:
@@ -243,7 +317,7 @@ notification = builder.Build();
 notificationManager.Notify (notificationId, notification);
 ```
 
-在此範例中，現有`Notification.Builder`物件用來建立新的通知物件不同的標題和訊息。
+在此範例中，現有`NotificationCompat.Builder`物件用來建立新的通知物件不同的標題和訊息。
 使用的識別項的上一個告知，發行新的通知物件，這會更新先前已發行通知的內容：
 
 ![已更新的通知](local-notifications-images/12-updated-notification.png)
@@ -258,7 +332,7 @@ notificationManager.Notify (notificationId, notification);
 
 -   應用程式會呼叫`NotificationManager.CancelAll`。
 
-如需詳細資訊更新 Android 的通知，請參閱 <<c0> [ 修改通知](http://developer.android.com/training/notify-user/managing.html#Updating)。
+如需詳細資訊更新 Android 的通知，請參閱 <<c0> [ 修改通知](https://developer.android.com/training/notify-user/managing.html#Updating)。
 
 
 ### <a name="starting-an-activity-from-a-notification"></a>從通知的活動
@@ -277,7 +351,7 @@ PendingIntent pendingIntent =
     PendingIntent.GetActivity (this, pendingIntentId, intent, PendingIntentFlags.OneShot);
 
 // Instantiate the builder and set notification elements, including pending intent:
-Notification.Builder builder = new Notification.Builder(this)
+NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
     .SetContentIntent (pendingIntent)
     .SetContentTitle ("Sample Notification")
     .SetContentText ("Hello World! This is my first action notification!")
@@ -301,7 +375,7 @@ notificationManager.Notify (notificationId, notification);
 
 點選此通知，引領使用者回到原始的活動。
 
-在生產應用程式，您的應用程式必須處理*上一頁堆疊*當使用者按下**回**通知活動內的按鈕 （如果您不熟悉 Android 的工作和上一頁堆疊，請參閱[工作和上一頁堆疊](http://developer.android.com/guide/components/tasks-and-back-stack.html))。
+在生產應用程式，您的應用程式必須處理*上一頁堆疊*當使用者按下**回**通知活動內的按鈕 （如果您不熟悉 Android 的工作和上一頁堆疊，請參閱[工作和上一頁堆疊](https://developer.android.com/guide/components/tasks-and-back-stack.html))。
 在大部分情況下，向後巡覽通知活動應該會傳回使用者登出應用程式，並回到主畫面。 若要管理上一頁堆疊，也就是您的應用程式會使用[TaskStackBuilder](https://developer.xamarin.com/api/type/Android.App.TaskStackBuilder/)類別來建立`PendingIntent`上一頁堆疊使用。
 
 真實世界的另一個考量是原始的活動可能需要將資料傳送至通知活動。 例如，通知可能表示文字訊息到達，並通知活動 （訊息檢視畫面），需要向使用者顯示訊息之訊息的識別碼。 建立活動`PendingIntent`可以使用[Intent.PutExtra](https://developer.xamarin.com/api/member/Android.Content.Intent.PutExtra/p/System.String/System.String/)方法，以將資料 （例如，字串） 新增至目的，讓這項資料會傳遞至通知活動。
@@ -332,7 +406,7 @@ PendingIntent pendingIntent =
 
 // Instantiate the builder and set notification elements, including
 // the pending intent:
-Notification.Builder builder = new Notification.Builder (this)
+NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
     .SetContentIntent (pendingIntent)
     .SetContentTitle ("Sample Notification")
     .SetContentText ("Hello World! This is my second action notification!")
@@ -366,113 +440,11 @@ string message = Intent.Extras.GetString ("message", "");
 如需建立擱置中的對應方式的詳細資訊，請參閱[PendingIntent](https://developer.xamarin.com/api/type/Android.App.PendingIntent/)。
 
 
-<a name="notif-chan"></a>
-<a name="notification-channels"></a>
-## <a name="notification-channels"></a>通知通道
-
-從 Android 8.0 oreo （版），您可以使用*通知通道*功能來建立使用者可自訂的每一種您想要顯示的通知通道。 通知通道使您能夠為您群組的通知，讓所有通知都張貼至通道展示相同的行為。 比方說，您可能會有適用於需要立即注意的通知的通知通道和不同的 「 更安靜 」 通道用來參考用訊息。
-
-**YouTube**一起安裝的 Android Oreo 的應用程式會列出兩個通知的類別：**下載通知**並**一般通知**:
-
-[![在 Android Oreo 的 YouTube 的通知畫面](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
-
-這些類別對應至通知通道。 YouTube 應用程式會實作**下載通知**通道並**一般通知**通道。 使用者可以點選**下載通知**，其中會顯示 [設定] 畫面，如應用程式的下載通知通道：
-
-[![下載 YouTube 應用程式的 [通知] 畫面](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png#lightbox)
-
-在此畫面中，使用者可以修改的行為**下載**通知通道，執行下列動作：
-
--   設定的重要性層級**Urgent**，**高**，**中型**，或**低**，也就是設定音效及視覺化中斷的層級。
-
--   開啟或關閉的通知點。
-
--   開啟或關閉，請開啟閃爍的燈。
-
--   顯示或隱藏在鎖定畫面上的通知。
-
--   覆寫 **「 請勿打擾 」** 設定。
-
-**一般通知**通道有類似的設定：
-
-[![YouTube 應用程式的一般通知畫面](local-notifications-images/29-yt-general-sml.png)](local-notifications-images/29-yt-general.png#lightbox)
-
-請注意，您不需要對您的通知通道與使用者互動的方式絕對控制&ndash;使用者可以修改任何裝置上的通知通道的設定，如上方螢幕擷取畫面所示。 不過，您可以設定預設值 （會如下所述）。 如這些範例示範的則 新的通知通道功能可讓您為使用者提供更細微的控制不同種類的通知。
-
-您應該將通知通道支援新增至您的應用程式中嗎？ 如果您的目標 Android 8.0，您的應用程式*必須*實作通知通道。
-嘗試傳送本機通知給使用者，而不使用的通知通道的 oreo 設為目標的應用程式將無法在 Oreo 裝置上顯示通知。 如果您沒有目標 Android 8.0，您的應用程式仍會執行 Android 8.0，但使用相同的通知行為，因為它會在執行 Android 7.1 或更早版本時表現。
-
-
-### <a name="creating-a-notification-channel"></a>建立通知通道
-
-若要建立通知通道，執行下列作業：
-
-1. 建構[NotificationChannel](https://developer.android.com/reference/android/app/NotificationChannel.html)具有下列物件：
-
-    - 您的封裝內是唯一的識別碼字串。 在下列範例中，字串`com.xamarin.myapp.urgent`用。
-
-    - 通道 （少於 40 個字元） 的使用者可見的名稱。 在下列範例中，名稱**Urgent**用。
-
-    - 重要性的通道，可控制如何中斷通知張貼至`NotificationChannel`。 可以是重要性`Default`， `High`， `Low`， `Max`， `Min`， `None`，或`Unspecified`。
-
-    這些將值傳遞至[建構函式](https://developer.android.com/reference/android/app/NotificationChannel.html#NotificationChannel%28java.lang.String,%20java.lang.CharSequence,%20int%29)(在此範例中，`Resource.String.noti_chan_urgent`設定為**Urgent**):
-
-    ```csharp
-    public const string URGENT_CHANNEL = "com.xamarin.myapp.urgent";
-    . . .
-    string chanName = GetString (Resource.String.noti_chan_urgent);
-    var importance = NotificationImportance.High;
-    NotificationChannel chan =
-       new NotificationChannel (URGENT_CHANNEL, chanName, importance);
-    ```
-
-2.  設定`NotificationChannel`物件初始設定。
-    例如，下列程式碼會設定`NotificationChannel`物件，讓通知張貼至這個通道會震動裝置，並依預設會出現在鎖定畫面上：
-
-    ```csharp
-    chan.EnableVibration (true);
-    chan.LockscreenVisibility = NotificationVisibility.Public;
-    ```
-
-3.  提交至通知管理員的通知通道物件：
-
-    ```csharp
-    NotificationManager notificationManager =
-        (NotificationManager) GetSystemService (NotificationService);
-    notificationManager.CreateNotificationChannel (chan);
-    ```
-
-
-### <a name="posting-to-a-notifications-channel"></a>張貼到通知通道
-
-若要張貼的通知通道的通知，執行下列作業：
-
-1.  設定通知 using `Notification.Builder`，並傳入通道識別碼`SetChannelId`方法。 例如: 
-
-    ```csharp
-    Notification.Builder builder = new Notification.Builder (this)
-        .SetContentTitle ("Attention!")
-        .SetContentText ("This is an urgent notification message!")
-        .SetChannelId (URGENT_CHANNEL);
-    ```
-
-2.  建置及發行使用通知管理員的通知[通知](https://developer.xamarin.com/api/member/Android.App.NotificationManager.Notify/p/System.Int32/Android.App.Notification/)方法：
-
-    ```csharp
-    const int notificationId = 0;
-    notificationManager.Notify (notificationId, builder.Build());
-    ```
-
-您可以重複上述步驟建立的告知性訊息的另一個通知通道。 此第二個通道，根據預設，停用震動，設為預設的鎖定螢幕可見度`Private`，並將通知重要性設定為`Default`。
-
-作用中 Android Oreo 通知通道的完整程式碼範例，請參閱[NotificationChannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels)範例; 此範例應用程式管理兩個通道，並設定其他通知選項。
-
-
-
 <a name="beyond-the-basic-notification" />
 
 ## <a name="beyond-the-basic-notification"></a>除了基本的通知
 
-通知預設為樸素的基底配置格式，在 Android 中，但您可以藉由其他加強此基本格式`Notification.Builder`方法呼叫。 在本節中，您將了解如何將大型相片圖示新增至您的通知，您會看到如何建立擴充的版面配置通知的範例。
+通知預設為在 Android 中，以簡單的基本配置格式，但您可以藉由其他加強此基本格式`NotificationCompat.Builder`方法呼叫。 在本節中，您將了解如何將大型相片圖示新增至您的通知，您會看到如何建立擴充的版面配置通知的範例。
 
 <a name="large-icon-format" />
 
@@ -496,8 +468,7 @@ Android 的通知通常會顯示原始的應用程式圖示 （左邊的通知�
 builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable.monkey_icon));
 ```
 
-此程式碼範例會開啟在映像檔**Resources/drawable/monkey_icon.png**、 將它轉換成點陣圖，並傳遞至產生的點陣圖`Notification.Builder`。 一般而言，來源影像解析度大於小圖示&ndash;但更大。 映像太大，可能會導致不必要的調整大小作業，可能會延遲張貼通知。
-如需有關在 Android 中的通知圖示大小的詳細資訊，請參閱[通知圖示](http://developer.android.com/design/style/iconography.html#notification)。
+此程式碼範例會開啟在映像檔**Resources/drawable/monkey_icon.png**、 將它轉換成點陣圖，並傳遞至產生的點陣圖`NotificationCompat.Builder`。 一般而言，來源影像解析度大於小圖示&ndash;但更大。 映像太大，可能會導致不必要的調整大小作業，可能會延遲張貼通知。
 
 
 ### <a name="big-text-style"></a>大型文字樣式
@@ -512,7 +483,7 @@ builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable
 
 此擴充的配置格式也會包含摘要的文字底部的通知。 最大高度*大型文字*通知是 256 dp。
 
-若要建立*大型文字*通知，您具現化`Notification.Builder`物件，如往常一般，然後具現化，並新增[BigTextStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigTextStyle/)物件`Notification.Builder`物件。 例如: 
+若要建立*大型文字*通知，您具現化`NotificationCompat.Builder`物件，如往常一般，然後具現化，並新增[BigTextStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigTextStyle/)物件`NotificationCompat.Builder`物件。 請看以下範例：
 
 ```csharp
 // Instantiate the Big Text style:
@@ -533,7 +504,7 @@ builder.SetStyle (textStyle);
 // Create the notification and publish it ...
 ```
 
-在此範例中，訊息文字和摘要的文字會儲存在`BigTextStyle`物件 (`textStyle`) 則會傳遞至之前 `Notification.Builder.`
+在此範例中，訊息文字和摘要的文字會儲存在`BigTextStyle`物件 (`textStyle`) 則會傳遞至之前 `NotificationCompat.Builder.`
 
 
 ### <a name="image-style"></a>映像樣式
@@ -550,7 +521,7 @@ builder.SetStyle (textStyle);
 
 請注意，當以壓縮格式會顯示通知，它會顯示通知文字 (傳遞至通知產生器 」 的文字`SetContentText`方法，如稍早所示)。 不過，當通知展開以顯示影像時，它就會顯示在影像上方的摘要文字。
 
-若要建立*映像*通知，您具現化`Notification.Builder`物件，然後建立並插入[BigPictureStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigPictureStyle/)物件插入`Notification.Builder`物件。 例如: 
+若要建立*映像*通知，您具現化`NotificationCompat.Builder`物件，然後建立並插入[BigPictureStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigPictureStyle/)物件插入`NotificationCompat.Builder`物件。 例如: 
 
 ```csharp
 // Instantiate the Image (Big Picture) style:
@@ -568,7 +539,7 @@ builder.SetStyle (picStyle);
 // Create the notification and publish it ...
 ```
 
-像是`SetLargeIcon`方法`Notification.Builder`，則[BigPicture](https://developer.xamarin.com/api/member/Android.App.Notification+BigPictureStyle.BigPicture/)方法`BigPictureStyle`需要您想要通知的主體中顯示之影像的點陣圖。 在此範例中， [DecodeResource](https://developer.xamarin.com/api/member/Android.Graphics.BitmapFactory.DecodeResource/(Android.Content.Res.Resources%2cSystem.Int32))方法`BitmapFactory`讀取映像檔位於**Resources/drawable/x_bldg.png**並將它轉換成點陣圖。
+像是`SetLargeIcon`方法`NotificationCompat.Builder`，則[BigPicture](https://developer.xamarin.com/api/member/Android.App.Notification+BigPictureStyle.BigPicture/)方法`BigPictureStyle`需要您想要通知的主體中顯示之影像的點陣圖。 在此範例中， [DecodeResource](https://developer.xamarin.com/api/member/Android.Graphics.BitmapFactory.DecodeResource/(Android.Content.Res.Resources%2cSystem.Int32))方法`BitmapFactory`讀取映像檔位於**Resources/drawable/x_bldg.png**並將它轉換成點陣圖。
 
 您也可以顯示不會封裝的映像做為資源。 比方說，下列範例程式碼載入影像從本機的 sd 記憶卡，而會顯示在*映像*通知：
 
@@ -610,7 +581,7 @@ builder.SetStyle (picStyle);
 
 ![展開範例收件匣通知](local-notifications-images/21-inbox-expanded.png)
 
-若要建立*收件匣*通知，您具現化`Notification.Builder`物件，如往常一般，並新增[InboxStyle](https://developer.xamarin.com/api/type/Android.App.Notification+InboxStyle/)物件`Notification.Builder`。 例如: 
+若要建立*收件匣*通知，您具現化`NotificationCompat.Builder`物件，如往常一般，並新增[InboxStyle](https://developer.xamarin.com/api/type/Android.App.Notification+InboxStyle/)物件`NotificationCompat.Builder`。 請看以下範例：
 
 ```csharp
 // Instantiate the Inbox style:
@@ -632,17 +603,17 @@ builder.SetStyle (inboxStyle);
 
 若要將新的文字行新增至通知本文中，呼叫[Addline](https://developer.xamarin.com/api/member/Android.App.Notification+InboxStyle.AddLine/p/System.String/)方法`InboxStyle`物件 (的最大高度*收件匣*通知是 256 dp)。 請注意，不同於*大型文字*樣式*收件匣*樣式支援通知主體中的個別的文字行。
 
-您也可以使用*收件匣*任何通知，需要在擴充格式中顯示個別的文字行的樣式。 例如，*收件匣*通知樣式可以用來結合多個擱置中的通知，摘要通知&ndash;您可以更新單一*收件匣*樣式以新的通知通知內容的行 (請參閱[更新通知](#updating-a-notification)上方)，而不是比產生連續的資料流的新，大部分是類似的通知。 如需有關這種方法的詳細資訊，請參閱[摘述您的通知](http://developer.android.com/design/patterns/notifications.html#summarize_your_notifications)。
+您也可以使用*收件匣*任何通知，需要在擴充格式中顯示個別的文字行的樣式。 例如，*收件匣*通知樣式可以用來結合多個擱置中的通知，摘要通知&ndash;您可以更新單一*收件匣*樣式以新的通知通知內容的行 (請參閱[更新通知](#updating-a-notification)上方)，而不是比產生連續的資料流的新，大部分是類似的通知。
 
 
 ## <a name="configuring-metadata"></a>設定中繼資料
 
-`Notification.Builder` 包含您可以呼叫以設定您的通知，例如優先順序、 可見性和類別目錄的相關中繼資料的方法。 Android 使用此資訊&mdash;使用者喜好設定以及&mdash;來決定如何及何時要顯示通知。
+`NotificationCompat.Builder` 包含您可以呼叫以設定您的通知，例如優先順序、 可見性和類別目錄的相關中繼資料的方法。 Android 使用此資訊&mdash;使用者喜好設定以及&mdash;來決定如何及何時要顯示通知。
 
 
 ### <a name="priority-settings"></a>優先順序設定
 
-發行通知時，通知的優先順序設定會決定兩種結果：
+執行 Android 7.1 和較低的應用程式必須直接在通知本身上設定的優先順序。 發行通知時，通知的優先順序設定會決定兩種結果：
 
 -   通知出現的位置相對於其他通知。
     比方說，高優先順序通知是以上所顯示較低的優先順序通知，在 [通知] 下拉式清單中，不論每個通知發行時。
@@ -661,7 +632,7 @@ Xamarin.Android 會定義下列列舉來設定通知優先順序：
 
 -   `NotificationPriority.Min` &ndash; 如需更多資訊，使用者通知時，才檢視通知 （例如，位置或天氣資訊）。
 
-若要設定通知的優先順序，請呼叫[SetPriority](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetPriority/)方法`Notification.Builder`物件以傳遞的優先順序層級。 例如: 
+若要設定通知的優先順序，請呼叫[SetPriority](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetPriority/)方法`NotificationCompat.Builder`物件以傳遞的優先順序層級。 例如: 
 
 ```csharp
 builder.SetPriority (NotificationPriority.High);
@@ -681,29 +652,31 @@ builder.SetPriority (NotificationPriority.High);
 
 由於 「 思考每日 」 通知是低優先順序的通知，Android 不會顯示它 Heads-up 格式。
 
+> [!NOTE]
+> Android 8.0 和更新版本中，通知通道和使用者設定的優先順序會決定通知的優先順序。
 
 ### <a name="visibility-settings"></a>可見性設定
 
-從 Android 5.0*可視性*設定是可用來控制多少通知內容出現在安全的鎖定畫面上。
+從 Android 5.0*可視性*設定是可用來控制多少通知內容會出現在安全的鎖定畫面上。
 Xamarin.Android 會定義下列列舉來設定通知可見性：
 
 -   `NotificationVisibility.Public` &ndash; 在安全的鎖定畫面上顯示通知的完整內容。
 
--   `NotificationVisibility.Private` &ndash; 只有必要的資訊會顯示在安全的鎖定畫面 （例如 [通知] 圖示和張貼其應用程式名稱），但通知的詳細資料的其餘部分會隱藏。 所有通知都預設為`NotificationVisibility.Private`。
+-   `NotificationVisibility.Private` &ndash; 只有重要的資訊會顯示在安全的鎖定畫面 （例如 [通知] 圖示和張貼其應用程式名稱），但通知的詳細資料的其餘部分會隱藏。 所有通知都預設為`NotificationVisibility.Private`。
 
--   `NotificationVisibility.Secret` &ndash; 不會顯示在安全的鎖定畫面，甚至不通知圖示。 使用者解除鎖定裝置時，才使用通知內容。
+-   `NotificationVisibility.Secret` &ndash; 不會顯示在安全的鎖定畫面上，甚至不通知圖示。 使用者解除鎖定裝置時，才使用通知內容。
 
-若要設定通知，應用程式呼叫的可視性`SetVisibility`方法的`Notification.Builder`物件以傳遞的可見性設定。 例如，此呼叫`SetVisibility`可讓通知`Private`:
+若要設定通知，應用程式呼叫的可視性`SetVisibility`方法的`NotificationCompat.Builder`物件以傳遞的可見性設定。 例如，此呼叫`SetVisibility`可讓通知`Private`:
 
 ```csharp
 builder.SetVisibility (NotificationVisibility.Private);
 ```
 
-當`Private`通知公佈時，只有名稱和應用程式的圖示會顯示安全的鎖定畫面上。 而非通知訊息，使用者會看到 「 解除鎖定您的裝置若要查看此通知 」:
+當`Private`通知張貼時，只有名稱和應用程式的圖示會顯示在安全的鎖定畫面上。 而非通知訊息，使用者會看到 「 解除鎖定您的裝置若要查看此通知 」:
 
 ![解除鎖定您裝置的通知訊息](local-notifications-images/25-lockscreen-private.png)
 
-在此範例中， **NotificationsLab**是原始的應用程式的名稱。 此修訂的版本的通知會出現鎖定畫面時才安全 （亦即，透過 PIN、 圖樣或密碼保護）&ndash;鎖定畫面並不安全，通知的完整內容是否可在鎖定畫面上取得。
+在此範例中， **NotificationsLab**是原始的應用程式的名稱。 此修訂的版本的通知會出現在鎖定畫面時才安全 （亦即，透過 PIN、 圖樣或密碼保護）&ndash;鎖定畫面並不安全，通知的完整內容是否可在鎖定畫面上。
 
 
 ### <a name="category-settings"></a>類別目錄設定
@@ -738,7 +711,7 @@ builder.SetVisibility (NotificationVisibility.Private);
 
 -   `Notification.CategoryStatus` &ndash; 裝置的相關資訊。
 
-通知排序時，通知的優先順序的優先順序高於其分類設定。 比方說，高優先順序通知將會顯示為抬頭即使它屬於`Promo`類別目錄。 若要設定通知的類別目錄，請呼叫`SetCategory`方法的`Notification.Builder`物件以傳遞的分類設定。 例如: 
+通知排序時，通知的優先順序的優先順序高於其分類設定。 比方說，高優先順序通知將會顯示為抬頭即使它屬於`Promo`類別目錄。 若要設定通知的類別目錄，請呼叫`SetCategory`方法的`NotificationCompat.Builder`物件以傳遞的分類設定。 例如: 
 
 ```csharp
 builder.SetCategory (Notification.CategoryCall);
@@ -749,30 +722,6 @@ builder.SetCategory (Notification.CategoryCall);
 ![請勿打擾 」 畫面參數](local-notifications-images/26-do-not-disturb.png)
 
 當使用者設定 *「 請勿打擾 」* 若要封鎖所有的插斷，除了撥打電話 （如上述螢幕擷取畫面所示），Android 可讓類別目錄設定為通知`Notification.CategoryCall`裝置時顯示處於 *「 請勿打擾 」* 模式。 請注意，`Notification.CategoryAlarm`通知永遠不會在封鎖*請勿打擾*模式。
-
-
-<a name="compatibility" />
-
-## <a name="compatibility"></a>相容性
-
-如果您建立應用程式，也會執行較舊版本的 Android （早在 API 層級 4），您將使用[NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html)類別，而不是`Notification.Builder`。 當您建立具有通知`NotificationCompat.Builder`，Android 可確保基本通知內容，會正確顯示在較舊的裝置。 不過，因為某些進階的通知功能不適用於舊版的 Android，您的程式碼必須明確地處理展開的通知樣式、 分類和以下所述的可見性層級的相容性問題。
-
-若要使用`NotificationCompat.Builder`在您的應用程式中，您必須包含[Android 支援程式庫 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)中專案的 NuGet。
-
-下列程式碼範例說明如何建立基本的通知使用`NotificationCompat.Builder`:
-
-```csharp
-// Instantiate the builder and set notification elements:
-NotificationCompat.Builder builder = new NotificationCompat.Builder (this)
-    .SetContentTitle ("Sample Notification")
-    .SetContentText ("Hello World! This is my first notification!")
-    .SetSmallIcon (Resource.Drawable.ic_notification);
-
-// Build the notification:
-Notification notification = builder.Build();
-```
-
-此範例所示，重要通知選項的方法呼叫都完全相同的`Notification.Builder`。 不過，您的程式碼必須處理更複雜的通知 （下一節中所述） 的向下相容性問題。
 
 [LocalNotifications](https://developer.xamarin.com/samples/monodroid/LocalNotifications)範例示範如何使用`NotificationCompat.Builder`啟動通知的第二個活動。 此範例程式碼會說明[在 Xamarin.Android 中使用本機通知](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md)逐步解說。
 
@@ -798,21 +747,20 @@ builder.SetStyle (textStyle);
 為了支援舊版的 Android、 何處`SetCategory`是無法使用，您的程式碼可以檢查在執行階段，有條件地呼叫的 API 層級`SetCategory`API 層級等於或大於 Android 5.0 (API level 21) 時：
 
 ```csharp
-if ((int) Android.OS.Build.Version.SdkInt >= 21) {
+if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
     builder.SetCategory (Notification.CategoryEmail);
 }
 ```
 
-在此範例中，應用程式的**目標 Framework**設為 Android 5.0 和**最低 Android 版本**設定為**Android 4.1 (API 層級 16)**。 因為`SetCategory`是可在 API 層級 21 及更新版本中，此程式碼範例會呼叫`SetCategory`它時才可用&ndash;它將不會呼叫`SetCategory`API 層級時小於
-21.
+在此範例中，應用程式的**目標 Framework**設為 Android 5.0 和**最低 Android 版本**設定為**Android 4.1 (API 層級 16)**。 因為`SetCategory`是可在 API 層級 21 及更新版本中，此程式碼範例會呼叫`SetCategory`它時才可用&ndash;它將不會呼叫`SetCategory`API 層級時小於 21。
 
 
-### <a name="lockscreen-visibility"></a>鎖定畫面的可見性
+### <a name="lock-screen-visibility"></a>鎖定螢幕的可見性
 
-因為 Android 不支援 Android 5.0 (API level 21) 之前的鎖定畫面通知`NotificationCompat.Builder`不支援`SetVisibility`方法。 如前文所述的`SetCategory`，您的程式碼可以檢查在執行階段和呼叫的 API 層級`SetVisiblity`它時才可用：
+因為 Android 不支援鎖定螢幕通知，Android 5.0 (API level 21)，再`NotificationCompat.Builder`不支援`SetVisibility`方法。 如前文所述的`SetCategory`，您的程式碼可以檢查在執行階段和呼叫的 API 層級`SetVisiblity`它時才可用：
 
 ```csharp
-if ((int) Android.OS.Build.Version.SdkInt >= 21) {
+if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
     builder.SetVisibility (Notification.Public);
 }
 ```
@@ -820,9 +768,9 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 
 ## <a name="summary"></a>總結
 
-這篇文章說明如何在 Android 中建立本機通知。 它說明通知的結構，它說明如何使用`Notification.Builder`若要建立通知，如何在大型圖示，樣式通知*大型文字*，*映像*和*收件匣*格式、 如何設定通知的中繼資料的設定，例如優先順序、 可見性和類別目錄和如何啟動通知的活動。 本文也說明了這些通知設定如何使用新的抬頭，鎖定畫面，並 *「 請勿打擾 」* Android 5.0 中引進的功能。 最後，您已了解如何使用`NotificationCompat.Builder`為了維持與舊版 Android 通知相容性。
+這篇文章說明如何在 Android 中建立本機通知。 它說明通知的結構，它說明如何使用`NotificationCompat.Builder`若要建立通知，如何在大型圖示，樣式通知*大型文字*，*映像*和*收件匣*格式、 如何設定通知的中繼資料的設定，例如優先順序、 可見性和類別目錄和如何啟動通知的活動。 這篇文章也會說明如何使用新的抬頭，鎖定畫面上，這些通知設定並 *「 請勿打擾 」* Android 5.0 中引進的功能。 最後，您已了解如何使用`NotificationCompat.Builder`為了維持與舊版 Android 通知相容性。
 
-如需有關設計適用於 Android 的通知的指導方針，請參閱[通知](http://developer.android.com/preview/notifications.html)。
+如需有關設計適用於 Android 的通知的指導方針，請參閱[通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)。
 
 
 ## <a name="related-links"></a>相關連結
@@ -830,8 +778,7 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 - [NotificationsLab （範例）](https://developer.xamarin.com/samples/monodroid/android5.0/NotificationsLab/)
 - [LocalNotifications （範例）](https://developer.xamarin.com/samples/monodroid/LocalNotifications/)
 - [在 Android 逐步解說中的本機通知](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md)
-- [通知](http://developer.android.com/design/patterns/notifications.html)
-- [通知使用者](http://developer.android.com/training/notify-user/index.html)
+- [通知使用者](https://developer.android.com/training/notify-user/index.html)
 - [通知](https://developer.xamarin.com/api/type/Android.App.Notification/)
 - [NotificationManager](https://developer.xamarin.com/api/type/Android.App.NotificationManager/)
 - [NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html)

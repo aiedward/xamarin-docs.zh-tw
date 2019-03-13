@@ -4,15 +4,15 @@ description: 說明如何在 Xamarin.iOS 應用程式中顯示與 UITableView �
 ms.prod: xamarin
 ms.assetid: 04DF47DD-4E17-75D7-AC7C-8CF4A574CD21
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 01/06/2016
-ms.openlocfilehash: ea5b6ba532d577bd503529065eef803acf3a7aa9
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 275c7553e465da67ca0780ea6aa9e986ca33b1f8
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241694"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121603"
 ---
 # <a name="working-with-tables-and-cells-in-xamarinios"></a>資料表和資料格在 Xamarin.iOS 中的工作
 

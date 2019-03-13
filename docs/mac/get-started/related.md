@@ -4,17 +4,17 @@ description: 本文件為 Xamarin.Mac 開發人員提供相關文件的連結：
 ms.prod: xamarin
 ms.assetid: 0a282c58-1c37-4f73-8440-85de2daf454a
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 12/02/2016
-ms.openlocfilehash: 1bef756d89a92d082bd5ee29e18047bc4bed2498
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 745328aeb884031863d8d85caca1e4a6563fc916
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792524"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526945"
 ---
-# <a name="xamarinmac--related-documentation"></a>Xamarin.Mac – 相關文件
+# <a name="xamarinmac-related-documentation"></a>Xamarin.Mac – 相關文件
 
 除了 [developer.xamarin.com](~/mac/get-started/index.md) 的 Mac 一節外，還有三個很棒的文件來源也可以協助解決 Xamarin.Mac 問題：
 
@@ -26,7 +26,7 @@ ms.locfileid: "34792524"
 
 ## <a name="user-interface"></a>使用者介面
 
-在 Xamarin.Mac 應用程式中使用 C# 和 .NET 時，開發人員可以存取在 *OBJECTIVE-C* 和 *Xcode* 中工作的開發人員可以存取的相同使用者介面控制項。 由於 Xamarin.Mac 直接與 Xcode 整合，開發人員可以使用 Xcode 的 _Interface Builder_ 來建立與維護應用程式的使用者介面 (或選擇直接在 C# 程式碼中建立它們)。
+在 Xamarin.Mac 應用程式中使用 C# 和 .NET 時，開發人員可以存取在 *Objective-C* 和 *Xcode* 中工作的開發人員，所能存取的相同使用者介面控制項。 由於 Xamarin.Mac 直接與 Xcode 整合，開發人員可以使用 Xcode 的 _Interface Builder_ 來建立與維護應用程式的使用者介面 (或選擇直接在 C# 程式碼中建立它們)。
 
 下列指南提供在 Xamarin.Mac 應用程式中使用 macOS 元素的相關詳細資訊：
 

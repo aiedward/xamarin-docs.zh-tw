@@ -4,15 +4,15 @@ description: 本文件說明如何使用在 Xamarin.iOS 中的各種應用程式
 ms.prod: xamarin
 ms.assetid: B7791574-4A0F-4CB6-8C18-36D40B5C91EB
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/22/2017
-ms.openlocfilehash: cd67c564461721ade6f3eb269b461ddea5e2d2c4
-ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
+ms.openlocfilehash: 51ccf3faa2524035a30b26af6652959699663e24
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39275998"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672530"
 ---
 # <a name="application-icons-in-xamarinios"></a>在 Xamarin.iOS 中的應用程式圖示
 
@@ -52,7 +52,7 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 
 - **iPhone: iOS 7 和 8**
 
-    ||1 x|2x|
+    ||1x|2x|
     |---|---|---|
     |應用程式圖示|60x60<sup>1</sup>|120x120|
     |焦點|40x40<sup>2</sup>|80x80|
@@ -60,7 +60,7 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 
 - **iPhone: iOS 5 和 6**
 
-    ||1 x|2x|
+    ||1x|2x|
     |---|---|---|
     |應用程式圖示|57x57|114x114|
     |焦點|29x29|58x58|
@@ -78,7 +78,7 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 
 - **iPad: iOS 7 和 8**
 
-    ||1 x|2x|
+    ||1x|2x|
     |---|---|---|
     |應用程式圖示|76x76|152x152|
     |焦點|40x40|80x80|
@@ -86,11 +86,11 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 
 - **iPad: iOS 5 和 6**
 
-    ||1 x|2x|
+    ||1x|2x|
     |---|---|---|
     |應用程式圖示|72x72|144x144|
     |焦點|50x50|100x100|
-    |設定|29 x 29<sup>3、 5</sup>|58x58<sup>3、 5</sup>|
+    |設定|29x29<sup>3, 5</sup>|58x58<sup>3、 5</sup>|
 
  1. 這兩個適用於 Mac 和 Xcode 的 Visual Studio 不再支援設定適用於 iOS 7 的 1 x 映像。
  2. 不支援設定適用於 iOS 7 的 1x 映像，當使用資產目錄。
@@ -109,7 +109,7 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 
 若要使用資產目錄，執行下列作業：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 按兩下`Info.plist`檔案中**方案總管 中**以開啟它進行編輯。
 2. 向下捲動至**應用程式圖示**一節。
@@ -126,7 +126,7 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 7. 按一下 **開啟**納入專案中的映像，並將它設 xcasset 中的按鈕。
 8. 重複的所需的所有映像。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 按兩下**Info.plist**中的檔案**方案總管 中**:
 
@@ -155,7 +155,7 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 
 請執行下列動作：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 按兩下`Info.plist`檔案中**方案總管 中**以開啟它進行編輯。
 2. 向下捲動至**應用程式圖示**一節。
@@ -166,7 +166,7 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 
      ![](app-icons-images/migrate03.png "Assets.xcassets AppIcons 映像集合")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 按兩下`Info.plist`檔案中**方案總管 中**以開啟它進行編輯。
 2. 在 iPhone 上按一下圖示 > 一節： 
@@ -187,7 +187,7 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 
 若要指定 iTunes 插圖，請執行下列動作：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 按兩下`Info.plist`檔案中**方案總管 中**以開啟它進行編輯。
 2. 若要捲動**iTunes 插圖**編輯器區段： 
@@ -196,7 +196,7 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 3. 針對任何缺少的影像，按一下 在編輯器中縮圖上選取所需的 iTunes 插圖的影像檔案，從 開啟檔案 對話方塊中，按一下 **確定** 按鈕。
 4. 重複此步驟直到所有所需的映像已指定應用程式。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 按兩下`Info.plist`檔案中**方案總管 中**以開啟它進行編輯。
 
@@ -212,4 +212,4 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 
 - [使用映像 （範例）](https://developer.xamarin.com/samples/WorkingWithImages/)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
-- [自訂圖示和影像建立指導方針](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html))
+- [自訂圖示和影像建立指導方針](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html))

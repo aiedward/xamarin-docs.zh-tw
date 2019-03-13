@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: f8cf3287c6d713d91a0217bd30ca2ee927534aea
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: bef48db93ae76346802b6569080bb1e54e3e51b3
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995329"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55291943"
 ---
 # <a name="style-inheritance-in-xamarinforms"></a>在 Xamarin.Forms 中的樣式繼承
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
 
 _若要減少重複，並啟用重複使用其他樣式可以繼承樣式。_
 
@@ -152,11 +154,6 @@ public class StyleInheritancePageCS : ContentPage
 ```
 
 `baseStyle`目標[ `View` ](xref:Xamarin.Forms.View)執行個體，並設定[ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)並[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)屬性。 `baseStyle`未直接在任何控制項上設定。 相反地，`labelStyle`和`buttonStyle`繼承自它，設定額外的可繫結屬性值。 `labelStyle`並`buttonStyle`會接著套用至[ `Label` ](xref:Xamarin.Forms.Label)執行個體並[ `Button` ](xref:Xamarin.Forms.Button)執行個體，藉由設定其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)屬性。
-
-## <a name="summary"></a>總結
-
-若要減少重複，並啟用重複使用其他樣式可以繼承樣式。 樣式繼承藉由設定[ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn)屬性的現有[ `Style` ](xref:Xamarin.Forms.Style)。
-
 
 ## <a name="related-links"></a>相關連結
 

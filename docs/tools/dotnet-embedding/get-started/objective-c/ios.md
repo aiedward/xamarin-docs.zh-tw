@@ -3,15 +3,15 @@ title: 開始使用 iOS
 description: 本文件說明如何開始使用.NET 內嵌 iOS。 它討論需求，並提供範例應用程式示範如何繫結 managed 組件，並在 Xcode 專案使用的輸出。
 ms.prod: xamarin
 ms.assetid: D5453695-69C9-44BC-B226-5B86950956E2
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 11/14/2017
-ms.openlocfilehash: d61eb8f1ad1def764c8552b2f047aa46cd712018
-ms.sourcegitcommit: ef04a4ae1b19c1854a8e4e8315516d4030f4bbd6
+ms.openlocfilehash: 009772ac88ad57bab53fb71c9705b71f0f8acc8b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39654824"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118288"
 ---
 # <a name="getting-started-with-ios"></a>開始使用 iOS
 

@@ -4,17 +4,19 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 第 9 章的摘要
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: e7b2eea22758155db7d79fa26f3376e16cf16a45
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 3aec84ec6598a45bb989d4bbc1705fd797382755
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39157012"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057005"
 ---
 # <a name="summary-of-chapter-9-platform-specific-api-calls"></a>第 9 章的摘要。 平台特定 API 呼叫
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09)
 
 > [!NOTE] 
 > 在此頁面上的附註表示其中 Xamarin.Forms 有分歧活頁簿中所呈現的題材的區域。

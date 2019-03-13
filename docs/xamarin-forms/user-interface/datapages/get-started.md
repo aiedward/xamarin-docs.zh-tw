@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 1fb8a06111271d453c578cd3d2db97ec8689c995
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: ef3ec5f8d1a2ded8fc7cae34663f10ab6eb7c86f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38828207"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052967"
 ---
 # <a name="getting-started-with-datapages"></a>Getting Started with DataPages
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)
 
 ![](~/media/shared/preview.png "此 API 目前為預覽狀態")
 

@@ -1,22 +1,22 @@
 ---
-title: 在 Android 上回呼
+title: 在 Android 上的回撥
 ms.prod: xamarin
 ms.assetid: F3A7A4E6-41FE-4F12-949C-96090815C5D6
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 11/14/2017
-ms.openlocfilehash: 3f18516643c00dc67fe533ecab00e1f415eb5c46
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: c6eaf4dd90b172053b4b87e3427cfe35213c6727
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33922818"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117154"
 ---
-# <a name="callbacks-on-android"></a>在 Android 上回呼
+# <a name="callbacks-on-android"></a>在 Android 上的回撥
 
-從 C# 呼叫 Java 有點*風險商務*。 也就是說沒有*模式*回呼從 C# java; 但是，所以比，我們都希望更為複雜。
+呼叫以從 JavaC#稍微*具風險性的企業*。 也就是說沒有*圖樣*回呼，從C#java; 不過，它是超出我們想要更複雜。
 
-我們會進行回呼，讓 Java 最適合的三個選項：
+我們將討論三個選項來執行適用於 Java 的最適合的回呼：
 
 - 抽象類別
 - 介面
@@ -24,9 +24,9 @@ ms.locfileid: "33922818"
 
 ## <a name="abstract-classes"></a>抽象類別
 
-這是最簡單的路由回呼，因此也建議您使用`abstract`如果只想要使用的最簡單的表單的回呼。
+這是最簡便的途徑，回呼，因此我會建議使用`abstract`如果只想要取得使用中的最簡單形式的回呼。
 
-讓我們開始，我們都希望 Java 實作的 C# 類別：
+讓我們開始C#我們想要實作的 Java 類別：
 
 ```csharp
 [Register("mono.embeddinator.android.AbstractClass")]
@@ -41,15 +41,15 @@ public abstract class AbstractClass : Java.Lang.Object
 }
 ```
 
-以下是詳細資料以進行這項工作：
+以下是要進行這項工作的詳細資料：
 
-- `[Register]` 會產生好的封裝名稱 java-就會自動產生的封裝名稱，則沒有。
-- 子類別化`Java.Lang.Object`訊號，以.NET 內嵌進行預演 Xamarin.Android 的 Java 產生器的類別。
-- 空的建構函式： 您會想要從 Java 程式碼使用。
-- `(IntPtr, JniHandleOwnership)` 建構函式： Xamarin.Android 將使用如 C# 中建立的對等的 Java 物件。
-- `[Export]` 若要將方法公開至 Java Xamarin.Android 會發出信號。 由於 Java 世界喜歡使用大小寫的方法，我們也可以變更在方法名稱。
+- `[Register]` 產生不錯的封裝名稱在 Java 中，您會自動產生的封裝名稱，而不需要它。
+- 子類別化`Java.Lang.Object`.NET 內嵌的訊號，來執行 Xamarin.Android 的 Java 產生器類別。
+- 空的建構函式： 是您會想要使用 Java 程式碼。
+- `(IntPtr, JniHandleOwnership)` 建構函式： Xamarin.Android 會使用建立C#-Java 物件相等。
+- `[Export]` 表示方法公開至 Java 的 Xamarin.Android。 我們也可以變更方法名稱，因為 Java 世界喜歡使用大小寫的方法。
 
-下一步我們把 C# 方法來測試案例：
+下一步 讓C#方法來測試案例：
 
 ```csharp
 [Register("mono.embeddinator.android.JavaCallbacks")]
@@ -62,11 +62,11 @@ public class JavaCallbacks : Java.Lang.Object
     }
 }
 ```
-`JavaCallbacks` 可能是任何類別，以測試這個，只要它是`Java.Lang.Object`。
+`JavaCallbacks` 可能是任何類別，以進行測試，只要它是`Java.Lang.Object`。
 
-現在，執行您的.NET 組件產生 AAR 的.NET 內嵌。 請參閱[入門指南](~/tools/dotnet-embedding/get-started/java/android.md)如需詳細資訊。
+現在，執行.NET 內嵌在您的.NET 組件，以產生 AAR 上。 請參閱[快速入門指南](~/tools/dotnet-embedding/get-started/java/android.md)如需詳細資訊。
 
-匯入之後 AAR 檔案至 Android Studio 中，我們要撰寫單元測試：
+AAR 檔案匯入 Android Studio 中之後, 我們要撰寫的單元測試：
 
 ```java
 @Test
@@ -84,22 +84,22 @@ public void abstractCallback() throws Throwable {
 ```
 因此我們：
 
-- 實作`AbstractClass`在 Java 中使用的匿名型別
+- 實作`AbstractClass`在 Java 中使用匿名型別
 - 確定我們的執行個體傳回`"Java"`從 Java
-- 確定我們的執行個體傳回`"Java"`從 C#
-- 加入`throws Throwable`，因為目前在使用會標示為 C# 建構函式 `throws`
+- 確定我們的執行個體傳回`"Java"`從C#
+- 新增`throws Throwable`，因為C#建構函式目前標記為 `throws`
 
-如果我們以執行此單元測試做為是，它會這類失敗，發生錯誤：
+如果我們執行此單元測試做為是，它會這類失敗，發生錯誤：
 
 ```csharp
 System.NotSupportedException: Unable to find Invoker for type 'Android.AbstractClass'. Was it linked away?
 ```
 
-遺漏了什麼如下`Invoker`型別。 這是子類別的`AbstractClass`，轉送 Java 的 C# 呼叫。 如果 Java 物件輸入 C# 世界，而且相等的 C# 類型是抽象的則會自動尋找 C# 類型的後置詞 Xamarin.Android `Invoker` C# 程式碼中使用。
+遺漏的項目如下`Invoker`型別。 這是子類別的`AbstractClass`，將轉送C#呼叫到 Java。 如果 Java 物件進入C#世界與對等C#型別是抽象的則會自動尋找 Xamarin.AndroidC#後置詞的型別`Invoker`以便使用於C#程式碼。
 
-使用這項 Xamarin.Android `Invoker` Java 繫結專案，以及其他項目模式。
+Xamarin.Android 會使用此`Invoker`Java 繫結專案，以及其他項目模式。
 
-以下是我們實作`AbstractClassInvoker`:
+以下是我們的實作`AbstractClassInvoker`:
 ```csharp
 class AbstractClassInvoker : AbstractClass
 {
@@ -141,25 +141,25 @@ class AbstractClassInvoker : AbstractClass
 }
 ```
 
-沒有很多這裡，我們：
+有一點相當在這裡，我們：
 
-- 加入具有後置詞的類別`Invoker`該子類別 `AbstractClass`
-- 加入`class_ref`來保存 JNI 參考 Java 類別的子類別 C# 類別
-- 加入`id_gettext`來保存 java JNI`getText`方法
+- 加入具有後置詞的類別`Invoker`子類別化 `AbstractClass`
+- 新增`class_ref`來保存子類別化的 Java 類別的 JNI 參考我們C#類別
+- 新增`id_gettext`來保存到 Java JNI`getText`方法
 - 包含`(IntPtr, JniHandleOwnership)`建構函式
-- 實作`ThresholdType`和`ThresholdClass`Xamarin.Android 了解詳細資料的需求 `Invoker`
-- `GetText` 需要查閱 Java`getText`適當的 JNI 簽章的方法，並為它
+- 實作`ThresholdType`和`ThresholdClass`為 Xamarin.Android 來了解詳細資料的需求 `Invoker`
+- `GetText` 需要查閱 Java`getText`具有適當的 JNI 簽章方法，並為它
 - `Dispose` 只需要清除的參考 `class_ref`
 
-加入這個類別，並產生新的 AAR 之後, 我們的單元測試階段。 您可以看到這個回呼的模式並不*理想*，但可行。
+新增此類別並產生新的 AAR 檔案之後, 我們的單元測試通過。 您可以看到此回呼的模式不是*理想*，但可行。
 
-如需 Java interop 的詳細資訊，請參閱令人驚訝[Xamarin.Android 文件](~/android/platform/java-integration/working-with-jni.md)有關這個主題。
+如需 Java interop 的詳細資訊，請參閱優越[Xamarin.Android 文件](~/android/platform/java-integration/working-with-jni.md)有關這個主題。
 
 ## <a name="interfaces"></a>介面
 
-介面是抽象類別，除了一個詳細資料與大致相同： Xamarin.Android 不會將 Java 產生它們。 這是因為.NET 內嵌之前, 有案例不多 Java 就會在其中實作的 C# 介面。
+介面是抽象類別，除了一個詳細資料與大致相同： Xamarin.Android 不會為其產生 Java。 這是因為之前.NET 內嵌，案例並不多，Java 會實作C#介面。
 
-例如，假設我們有下列 C# 介面：
+假設我們有下列C#介面：
 
 ```csharp
 [Register("mono.embeddinator.android.IJavaCallback")]
@@ -170,9 +170,9 @@ public interface IJavaCallback : IJavaObject
 }
 ```
 
-`IJavaObject` 對.NET 內嵌發出訊號，這是 Xamarin.Android 介面，但否則這是完全相同`abstract`類別。
+`IJavaObject` 這是 Xamarin.Android 的介面，但否則這是完全相同，表示.NET 內嵌`abstract`類別。
 
-因為 Xamarin.Android 將目前產生此介面的 Java 程式碼，加入下列 Java 加入 C# 專案：
+因為 Xamarin.Android 將目前產生此介面的 Java 程式碼，加入下列 Java 程式C#專案：
 
 ```java
 package mono.embeddinator.android;
@@ -182,9 +182,9 @@ public interface IJavaCallback {
 }
 ```
 
-您可以將檔案放在任何地方，但請務必將其建置動作設定為`AndroidJavaSource`。 這會將其複製到適當的目錄取得編譯至 AAR 檔案內嵌.NET 發出信號。
+您可以將檔案放在任何位置，但請務必將其建置動作設定為`AndroidJavaSource`。 .NET 內嵌，將它複製到適當的目錄，以取得編譯成 AAR 檔案，這將會發出信號。
 
-下一步`Invoker`實作將會完全相同：
+接下來，`Invoker`實作會完全相同：
 
 ```csharp
 class IJavaCallbackInvoker : Java.Lang.Object, IJavaCallback
@@ -226,7 +226,7 @@ class IJavaCallbackInvoker : Java.Lang.Object, IJavaCallback
 }
 ```
 
-在產生 AAR 檔案之後, 在 Android Studio 我們可以撰寫下列傳遞單元測試：
+產生 AAR 檔案之後，在 Android Studio，我們可以撰寫下列傳遞單元測試：
 
 ```java
 class ConcreteCallback implements IJavaCallback {
@@ -247,9 +247,9 @@ public void interfaceCallback() {
 
 ## <a name="virtual-methods"></a>虛擬方法
 
-覆寫`virtual`在 Java 中是，但不是好的體驗。
+覆寫`virtual`在 Java 中是的但不是很好的經驗。
 
-例如，假設您有下列 C# 類別：
+假設您有下列C#類別：
 
 ```csharp
 [Register("mono.embeddinator.android.VirtualClass")]
@@ -264,29 +264,29 @@ public class VirtualClass : Java.Lang.Object
 }
 ```
 
-如果您遵循`abstract`類別上述範例中，它能除了一個詳細資料： _Xamarin.Android 不查閱`Invoker`_ 。
+如果您遵循`abstract`這個辦法行得通類別上述範例中，除了一個詳細資料： _Xamarin.Android 無法查閱`Invoker`_ 。
 
-若要修正此問題，修改 C# 類別是`abstract`:
+若要修正此問題，修改C#類別`abstract`:
 
 ```csharp
 public abstract class VirtualClass : Java.Lang.Object
 ```
 
-這不是理想的做法，但是它會取得此案例中運作。 Xamarin.Android 拾取`VirtualClassInvoker`Java 並用`@Override`方法上。
+這不是理想的做法，但它會取得這個案例順利運作。 Xamarin.Android 會挑選`VirtualClassInvoker`，而且可以使用 Java`@Override`方法上。
 
 ## <a name="callbacks-in-the-future"></a>在未來的回呼
 
-有幾件事我們無法執行改善這些案例：
+有幾件事我們可以進行改善這些案例：
 
-1. `throws Throwable` 在此建構函式固定在 C# [PR](https://github.com/xamarin/java.interop/pull/170)。
-1. 請支援的介面中 Xamarin.Android Java 產生器。
-    - 這會移除新增的建置動作的 Java 原始程式檔的需求`AndroidJavaSource`。
-1. 請讓 Xamarin.Android 載入`Invoker`虛擬類別。
-    - 這會移除標記中的類別需要我們`virtual`範例`abstract`。
-1. 產生`Invoker`自動內嵌.NET 類別
-    - 這將會很複雜，但可行。 Xamarin.Android 已正在進行類似的 Java 繫結專案。
+1. `throws Throwable` 在C#建構函式會固定這[PR](https://github.com/xamarin/java.interop/pull/170)。
+1. 請 Java 產生器在 Xamarin.Android 中支援的介面。
+    - 這可免除新增 Java 原始程式檔的建置動作`AndroidJavaSource`。
+1. 載入 Xamarin.Android 放置`Invoker`虛擬類別。
+    - 這可免除將類別中的標示我們`virtual`範例`abstract`。
+1. 產生`Invoker`自動類別的.NET 內嵌
+    - 這將會很複雜，但可行。 Xamarin.Android 已經進行的類似 Java 繫結專案。
 
-大量的工作完成，但可能會有這些.NET 內嵌的增強功能。
+有很多，完成的工作，但可能會有.NET 內嵌這些增強功能。
 
 ## <a name="further-reading"></a>進一步閱讀
 
@@ -294,4 +294,4 @@ public abstract class VirtualClass : Java.Lang.Object
 * [Android 的初步研究](~/tools/dotnet-embedding/android/index.md)
 * [.NET 內嵌限制](~/tools/dotnet-embedding/limitations.md)
 * [參與開放原始碼專案](https://github.com/mono/Embeddinator-4000/blob/master/docs/Contributing.md)
-* [錯誤碼與描述](~/tools/dotnet-embedding/errors.md)
+* [錯誤碼和描述](~/tools/dotnet-embedding/errors.md)

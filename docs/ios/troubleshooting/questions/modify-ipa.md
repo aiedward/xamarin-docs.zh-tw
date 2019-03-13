@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 6C3082FB-C3F1-4661-BE45-64570E56DE7C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 04/03/2018
-ms.openlocfilehash: 366308774a7302e54b0d47753256638e89d97b82
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: bf135755f64e4d17db2c187d58572c525dfee559
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350978"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117404"
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>我可以將檔案加入或移除的 IPA 檔案中的檔案之後在 Visual Studio 中建立, 嗎？
 
@@ -46,7 +46,7 @@ ms.locfileid: "39350978"
 
 9.  刪除所需的檔案，從`.ipa`。 您可以將它們移至 資源回收筒使用搜尋工具，或刪除它們在命令列使用`Terminal.app`。 若要檢視的內容`Payload/iPhone`檔案中搜尋工具，Control + 按一下檔案，然後選取**顯示封裝內容**。
 
-10.  使用相同的一般方法，如步驟 3 中，找出下的記錄檔`~/Library/Logs/Xamarin/MonoTouchVS/`具有這兩個專案名稱，`generated session id`的名稱： ![ ](modify-ipa-images/build-log.png "找出在 Finder 中的專案組建記錄檔")
+10.  使用相同的一般方法，如步驟 3 中，找出下的記錄檔`~/Library/Logs/Xamarin/MonoTouchVS/`具有這兩個專案名稱，`generated session id`的名稱： ![](modify-ipa-images/build-log.png "找出在 Finder 中的專案組建記錄檔")
 
 11.  組建記錄檔來自步驟 10，例如按兩下開啟它。
 

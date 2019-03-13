@@ -1,51 +1,51 @@
 ---
-title: 偵錯 Android 模擬器上損耗
-description: 這些文件說明如何偵錯 Xamarin.Android 損耗上的應用程式的模擬器。
+title: 偵錯的模擬器上的 Android Wear
+description: 這些文章說明如何在模擬器上的 Xamarin.Android Wear 應用程式進行偵錯。
 ms.prod: xamarin
 ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/21/2018
-ms.openlocfilehash: baa8df87caf2c05d7b6202d5160c930e51656e10
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 699fb3cc3a5730e8ab2c677feb7cdfbdcf106aeb
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36934975"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120550"
 ---
-# <a name="debug-android-wear-on-an-emulator"></a>偵錯 Android 模擬器上損耗
+# <a name="debug-android-wear-on-an-emulator"></a>偵錯的模擬器上的 Android Wear
 
-_這些文件說明如何偵錯 Xamarin.Android 損耗上的應用程式的模擬器。_
+_這些文章說明如何在模擬器上的 Xamarin.Android Wear 應用程式進行偵錯。_
 
-## <a name="debug-wear-on-emulator-overview"></a>偵錯損耗上模擬器概觀
+## <a name="debug-wear-on-emulator-overview"></a>偵錯 Wear 模擬器概觀
 
-開發 Android 戴上的應用程式需要執行應用程式，請在實體硬體上，或使用模擬器。 使用硬體是最佳方式，但並不一定是最務實的做法。 在許多情況下，它可以是簡單且更符合成本效益模擬/模擬 Android 戴上的硬體如下所述，使用模擬器。 如果您尚不熟悉的程序部署和執行的 Android 戴上的應用程式，請參閱[Hello，穿](~/android/wear/get-started/hello-wear.md)。
+開發 Android Wear 的應用程式需要執行應用程式，在實體硬體上或使用模擬器。 使用硬體是最佳方式，但並不一定是最務實的做法。 在許多情況下，它可以是簡單且更符合成本效益來模擬 Android Wear 的硬體，如下所述，使用模擬器。 如果您尚不熟悉部署和執行的程序的 Android Wear 的應用程式，請參閱[大家好，Wear](~/android/wear/get-started/hello-wear.md)。
 
 ## <a name="configure-the-android-emulator"></a>設定 Android 模擬器
 
-損耗上執行應用程式模擬器，您必須安裝 Android SDK Android 模擬器和 Android 戴上設定它。 整體的 Android SDK 模擬器安裝和組態資訊，請參閱[Android 模擬器設定](~/android/get-started/installation/android-emulator/index.md)。
+若要在模擬器上執行您穿戴式應用程式，您必須安裝 Android SDK Android 模擬器，並設定適用於 Android Wear。 整體的 Android SDK 模擬器安裝和設定資訊，請參閱[Android Emulator 安裝](~/android/get-started/installation/android-emulator/index.md)。
 
-當您建立損耗虛擬裝置時，選取 Android 戴上的裝置設定檔 (例如**Android 損耗方**)。 為了增進效能，使用損耗**x86** CPU/ABI，如本範例所示：
+當您建立在 Wear 虛擬裝置時，選取 Android Wear 裝置設定檔 (例如**Android Wear 正方形**)。 為了提升效能，使用 Wear **x86** CPU/ABI，在此範例中所示：
 
-[![範例損耗虛擬裝置設定](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png#lightbox)
+[![Wear 虛擬裝置組態範例](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png#lightbox)
 
 
-## <a name="launch-the-wear-virtual-device"></a>啟動損耗虛擬裝置 
+## <a name="launch-the-wear-virtual-device"></a>啟動 Wear 虛擬裝置 
 
-建立 Android 戴上的虛擬裝置之後，您可以從裝置下拉功能表，在 IDE 中選擇它之前您開始偵錯。 如果您的虛擬裝置無法使用裝置的下拉式清單中，確認您的專案是 Android*穿*應用程式專案 （非 Android 應用程式專案） 和它的目標應用程式開發介面層級，設定為相同的 API 層級做為虛擬裝置。 例如: 
+建立 Android Wear 的虛擬裝置之後，您可以從裝置下拉式功能表在 IDE 中選擇它，然後再開始偵錯。 如果您的虛擬裝置無法使用裝置下拉式功能表中，確認您的專案是 Android *Wear*應用程式專案 （而非 Android 應用程式專案） 和它的目標 API 層級設為相同的 API 層級的虛擬裝置。 例如: 
 
-[![在 Visual Studio 裝置功能表中選擇穿 AVD](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png#lightbox)
+[![在 Visual Studio [裝置] 功能表中選擇 Wear AVD](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png#lightbox)
 
-Android 模擬器啟動之後，Xamarin.Android 會損耗應用程式部署至模擬器中。 模擬器會以所設定的虛擬裝置映像來執行應用程式。
+在 Android 模擬器啟動之後，Xamarin.Android 會將穿戴式應用程式部署至模擬器。 模擬器會以所設定的虛擬裝置映像來執行應用程式。
 
-不會感到驚訝，如果您看到這個 （或另一個插入式螢幕） 一開始。 監看式模擬器可能需要一段時啟動： 
+請不要感到驚訝，如果您看到此 （或另一個的插入式螢幕） 先。 監看式模擬器可能需要一段時間才能啟動： 
 
-![監看模擬器會顯示一分鐘時間...](debug-on-emulator-images/please-wait.png)
+![觀看模擬器顯示一下...](debug-on-emulator-images/please-wait.png)
 
 您可以讓模擬器保持執行；無須在每次執行應用程式時都將其關閉並重新啟動。
 
  
 ## <a name="summary"></a>總結
  
-本指南說明如何設定損耗開發 Android 模擬器並啟動偵錯損耗虛擬裝置。
+本指南說明如何設定 Android Wear 開發的模擬器並啟動 Wear 虛擬裝置來偵錯。

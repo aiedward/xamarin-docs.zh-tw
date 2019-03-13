@@ -4,17 +4,19 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 摘要的第 4 章
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 49f2d96fb7f95ab880d5cfafa420afbbe933c1ad
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 87846eba71278295ae6f266f6e786c0992aebd34
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156713"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052034"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章的摘要。 捲動堆疊
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
 
 本章主要用來介紹的概念*版面配置*，這是整體一詞的類別和 Xamarin.Forms 使用來組織頁面上的多個檢視的視覺顯示的技術。
 
@@ -115,7 +117,7 @@ ms.locfileid: "39156713"
 
 - [第 4 章全文檢索 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch04-Apr2016.pdf)
 - [第 4 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
-- [第 4 章 F # 範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
+- [第 4 章F#範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
 - [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)
 - [ScrollView](~/xamarin-forms/user-interface/layouts/scroll-view.md)
 - [BoxView](~/xamarin-forms/user-interface/boxview.md)

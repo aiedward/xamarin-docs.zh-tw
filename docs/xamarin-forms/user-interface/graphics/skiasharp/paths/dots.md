@@ -4,17 +4,19 @@ description: 本文將探討如何精通複雜的 SkiaSharp，在繪製虛線和
 ms.prod: xamarin
 ms.assetid: 8E9BCC13-830C-458C-9FC8-ECB4EAE66078
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 7c336e6b5224f61ff84eb39652788b23f52b806e
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: f59aa92f5f4f013a2d14b1667f4d0679a7ba82b3
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615414"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051606"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>點和虛線 SkiaSharp
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _精通複雜的 SkiaSharp 中繪製虛線和破折線的線條_
 
@@ -22,9 +24,9 @@ SkiaSharp 可讓您繪製線條，不是純色，而是句點和連字號所組�
 
 ![](dots-images/dottedlinesample.png "點線")
 
-即可達到這個*路徑效果*，這是執行個體[ `SKPathEffect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathEffect/)類別，您將設定為[ `PathEffect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.PathEffect/)屬性`SKPaint`。 您可以建立路徑的效果 （或合併路徑效果） 使用靜態`Create`所定義的方法`SKPathEffect`。
+即可達到這個*路徑效果*，這是執行個體[ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect)類別，您將設定為[ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect)屬性`SKPaint`。 您可以建立路徑的效果 （或合併路徑效果） 使用靜態建立方法所定義的其中一個`SKPathEffect`。 (`SKPathEffect`是其中一種六個效果支援 SkiaSharp; 有些則是一節中所述[ **SkiaSharp 效果**](../effects/index.md)。)
 
-若要繪製虛線的線條，您使用[ `SKPathEffect.CreateDash` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDash/p/System.Single[]/System.Single/)靜態方法。 有兩個引數： 這首先是陣列`float`值，指出點和虛線的長度，以及它們之間的空間的長度。 此陣列必須有偶數數目的項目，並應該有至少兩個項目。 （可以有零個元素陣列中的，但該導致一條實線。）如果有兩個項目，第一個點或虛線的長度而第二個間距的長度之前的下一個點或虛線。 如果有兩個以上的項目，則它們會依此順序： 虛線長度、 間距長度、 虛線長度、 間距長度等等。
+若要繪製虛線的線條，您使用[ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))靜態方法。 有兩個引數： 這首先是陣列`float`值，指出點和虛線的長度，以及它們之間的空間的長度。 此陣列必須有偶數數目的項目，並應該有至少兩個項目。 （可以有零個元素陣列中的，但該導致一條實線。）如果有兩個項目，第一個點或虛線的長度而第二個間距的長度之前的下一個點或虛線。 如果有兩個以上的項目，則它們會依此順序： 虛線長度、 間距長度、 虛線長度、 間距長度等等。
 
 一般而言，您會想要的虛線和間距長度筆觸寬度的倍數。 如果筆觸粗細是 10 個像素，比方說，然後 {10，10} 的陣列將會繪製一條虛線的點和間距是筆劃粗細長度相同。
 
@@ -35,8 +37,9 @@ SkiaSharp 可讓您繪製線條，不是純色，而是句點和連字號所組�
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
-             x:Class="SkiaSharpFormsDemos.DotsAndDashesPage"
+             xmlns:skia="clr-namespace:SkiaSharp;assembly=SkiaSharp"
+             xmlns:skiaforms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Class="SkiaSharpFormsDemos.Paths.DotsAndDashesPage"
              Title="Dots and Dashes">
     <Grid>
         <Grid.RowDefinitions>
@@ -54,11 +57,13 @@ SkiaSharp 可讓您繪製線條，不是純色，而是句點和連字號所組�
                 Grid.Row="0"
                 Grid.Column="0"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>Butt</x:String>
-                <x:String>Round</x:String>
-                <x:String>Square</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type skia:SKStrokeCap}">
+                    <x:Static Member="skia:SKStrokeCap.Butt" />
+                    <x:Static Member="skia:SKStrokeCap.Round" />
+                    <x:Static Member="skia:SKStrokeCap.Square" />
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 0
             </Picker.SelectedIndex>
@@ -69,31 +74,33 @@ SkiaSharp 可讓您繪製線條，不是純色，而是句點和連字號所組�
                 Grid.Row="0"
                 Grid.Column="1"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>10, 10</x:String>
-                <x:String>30, 10</x:String>
-                <x:String>10, 10, 30, 10</x:String>
-                <x:String>0, 20</x:String>
-                <x:String>20, 20</x:String>
-                <x:String>0, 20, 20, 20</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>10, 10</x:String>
+                    <x:String>30, 10</x:String>
+                    <x:String>10, 10, 30, 10</x:String>
+                    <x:String>0, 20</x:String>
+                    <x:String>20, 20</x:String>
+                    <x:String>0, 20, 20, 20</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 0
             </Picker.SelectedIndex>
         </Picker>
 
-        <skia:SKCanvasView x:Name="canvasView"
-                           PaintSurface="OnCanvasViewPaintSurface"
-                           Grid.Row="1"
-                           Grid.Column="0"
-                           Grid.ColumnSpan="2" />
+        <skiaforms:SKCanvasView x:Name="canvasView"
+                                PaintSurface="OnCanvasViewPaintSurface"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2" />
     </Grid>
 </ContentPage>
 ```
 
-中的前三個項目`dashArrayPicker`假設筆觸粗細是 10 個像素。 {10，10} 陣列是一條虛線，{30，10} 為虛線，和 {10，10，30，10} 是點虛線的線條。 （其他三個將會討論短時間內）。
+ 中的前三個項目`dashArrayPicker`假設筆觸粗細是 10 個像素。 {10，10} 陣列是一條虛線，{30，10} 為虛線，和 {10，10，30，10} 是點虛線的線條。 （其他三個將會討論短時間內）。
 
-[ `DotsAndDashesPage`程式碼後置檔案](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs)包含`PaintSurface`事件處理常式和 helper 常式，用於存取數個`Picker`檢視：
+[ `DotsAndDashesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs)程式碼後置檔案包含`PaintSurface`事件處理常式和 helper 常式，用於存取數個`Picker`檢視：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -109,9 +116,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
         Style = SKPaintStyle.Stroke,
         Color = SKColors.Blue,
         StrokeWidth = 10,
-        StrokeCap = (SKStrokeCap)Enum.Parse(typeof(SKStrokeCap),
-                        strokeCapPicker.Items[strokeCapPicker.SelectedIndex]),
-
+        StrokeCap = (SKStrokeCap)strokeCapPicker.SelectedItem,
         PathEffect = SKPathEffect.CreateDash(GetPickerArray(dashArrayPicker), 20)
     };
 
@@ -121,17 +126,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
     path.LineTo(0.2f * info.Width, 0.8f * info.Height);
     path.LineTo(0.8f * info.Width, 0.2f * info.Height);
 
-    canvas.DrawPath(path, paint);
-}
-
-T GetPickerItem<T>(Picker picker)
-{
-    if (picker.SelectedIndex == -1)
-    {
-        return default(T);
-    }
-
-    return (T)Enum.Parse(typeof(T), picker.Items[picker.SelectedIndex]);
+    canvas.DrawPath(path, paint); 
 }
 
 float[] GetPickerArray(Picker picker)
@@ -141,8 +136,8 @@ float[] GetPickerArray(Picker picker)
         return new float[0];
     }
 
-    string[] strs = picker.Items[picker.SelectedIndex].Split(new char[] { ' ', ',' },
-                                                             StringSplitOptions.RemoveEmptyEntries);
+    string str = (string)picker.SelectedItem;
+    string[] strs = str.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
     float[] array = new float[strs.Length];
 
     for (int i = 0; i < strs.Length; i++)
@@ -169,45 +164,49 @@ UWP 螢幕顯示點和虛線筆劃列上限的`Round`。 `Round`筆觸端點通�
 
 本文至今尚未提到到目前為止進行的第二個參數`SKPathEffect.CreateDash`方法。 此參數之所以名為`phase`它是指在一行的開頭的點和虛線模式內的位移。 比方說，如果 dash 陣列為 {10，10} 和`phase`為 10，則一行的開頭有間距，而不是一個點。
 
-一個有趣的應用程式的`phase`參數處於動畫。 **動畫螺旋**頁面大致**Archimedean 螺旋**頁面上，不同之處在於[ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs)類別建立動畫`phase`參數。 此頁面也會示範另一個動畫的方法。 先前的範例[ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs)使用`Task.Delay`方法，以控制動畫。 此範例會改為使用 Xamarin.Forms`Device.Timer`方法：
+一個有趣的應用程式的`phase`參數處於動畫。 **動畫螺旋**頁面大致**Archimedean 螺旋**頁面上，不同之處在於[ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/AnimatedSpiralPage.cs)類別建立動畫`phase`參數使用Xamarin.Forms`Device.Timer`方法：
 
 
 ```csharp
-const double cycleTime = 250;       // in milliseconds
-
-SKCanvasView canvasView;
-Stopwatch stopwatch = new Stopwatch();
-bool pageIsActive;
-float dashPhase;
-
-public AnimatedSpiralPage()
+public class AnimatedSpiralPage : ContentPage
 {
-    Title = "Animated Spiral";
+    const double cycleTime = 250;       // in milliseconds
 
-    canvasView = new SKCanvasView();
-    canvasView.PaintSurface += OnCanvasViewPaintSurface;
-    Content = canvasView;
-}
+    SKCanvasView canvasView;
+    Stopwatch stopwatch = new Stopwatch();
+    bool pageIsActive;
+    float dashPhase;
 
-protected override void OnAppearing()
-{
-    base.OnAppearing();
-    pageIsActive = true;
-    stopwatch.Start();
-
-    Device.StartTimer(TimeSpan.FromMilliseconds(33), () =>
+    public AnimatedSpiralPage()
     {
-        double t = stopwatch.Elapsed.TotalMilliseconds % cycleTime / cycleTime;
-        dashPhase = (float)(10 * t);
-        canvasView.InvalidateSurface();
+        Title = "Animated Spiral";
 
-        if (!pageIsActive)
+        canvasView = new SKCanvasView();
+        canvasView.PaintSurface += OnCanvasViewPaintSurface;
+        Content = canvasView;
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        pageIsActive = true;
+        stopwatch.Start();
+
+        Device.StartTimer(TimeSpan.FromMilliseconds(33), () =>
         {
-            stopwatch.Stop();
-        }
+            double t = stopwatch.Elapsed.TotalMilliseconds % cycleTime / cycleTime;
+            dashPhase = (float)(10 * t);
+            canvasView.InvalidateSurface();
 
-        return pageIsActive;
-    });
+            if (!pageIsActive)
+            {
+                stopwatch.Stop();
+            }
+
+            return pageIsActive;
+        });
+    }
+    ···  
 }
 ```
 
@@ -215,10 +214,7 @@ protected override void OnAppearing()
 
 [![](dots-images/animatedspiral-small.png "以動畫顯示螺旋頁面的三個螢幕擷取畫面")](dots-images/animatedspiral-large.png#lightbox "動畫螺旋頁面的三個螢幕擷取畫面")
 
-您現在已了解如何繪製線條，以及如何定義使用參數化的方程式的曲線。 以後再發行一節將討論各種類型的曲線，`SKPath`支援。
-
-
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

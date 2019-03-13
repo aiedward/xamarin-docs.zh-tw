@@ -6,12 +6,12 @@ ms.assetid: F0A5A9BB-86CD-44C9-8EE8-74D1E5E74A30
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 1d48bc28aa4477361ca8057fda91ee3258f36a73
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: 6d3f7b316e397705ecb9bd404007dcd9ef5aa183
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270424"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267257"
 ---
 # <a name="nuget-multiplatform-library-projects-nugetizer-3000"></a>NuGet 多平台程式庫專案 (Nugetizer 3000)
 
@@ -64,4 +64,3 @@ NuGet 封裝專案的設計討論 （也稱為 NuGetizer 3000) 位於[NuGet GitH
 - [NuGetizer 3000 使用案例](https://github.com/NuGet/Home/wiki/NuGetizer-Core-Scenarios)
 - [手動建立適用於 Xamarin 的 NuGet 套件](~/cross-platform/app-fundamentals/nuget-manual.md)
 - [NuGet 文件](https://docs.microsoft.com/nuget/)
-- [版本資訊](https://developer.xamarin.com/releases/studio/xamarin.studio_6.2/xamarin.studio_6.2/#NuGetizer_3000)

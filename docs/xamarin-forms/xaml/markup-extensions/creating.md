@@ -1,20 +1,22 @@
 ---
 title: 建立 XAML 標記延伸
-description: 這篇文章說明如何定義您自己自訂的 Xamarin.Forms XAML 標記延伸模組。 XAML 標記延伸是實作 IMarkupExtension IMarkupExtension 介面的類別。
+description: 這篇文章說明如何定義您自己自訂的 Xamarin.Forms XAML 標記延伸模組。 XAML 標記延伸是實作 IMarkupExtension 或 IMarkupExtension 類別<T>介面。
 ms.prod: xamarin
 ms.assetid: 797C1EF9-1C8E-4208-8610-9B79CCF17D46
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: d4b3d5c65ddf8be433d1f8e182774aa839f60357
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: e69d4b9dcf93c095804c5ac46527c03049580d1c
+ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995592"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53746800"
 ---
 # <a name="creating-xaml-markup-extensions"></a>建立 XAML 標記延伸
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
 
 以程式設計方式層級中，XAML 標記延伸是實作的類別[ `IMarkupExtension` ](xref:Xamarin.Forms.Xaml.IMarkupExtension)或是[ `IMarkupExtension<T>` ](xref:Xamarin.Forms.Xaml.IMarkupExtension`1)介面。 您可以瀏覽原始程式碼，如下所述的標準標記延伸[ **Markupextension** directory](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) Xamarin.Forms GitHub 存放庫。
 
@@ -141,8 +143,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
         }
 
         string assemblyName = GetType().GetTypeInfo().Assembly.GetName().Name;
-
-        return ImageSource.FromResource(assemblyName + "." + Source);
+        return ImageSource.FromResource(assemblyName + "." + Source, typeof(ImageResourceExtension).GetTypeInfo().Assembly);
     }
 
     object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider)
@@ -152,7 +153,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension` 當需要存取影像檔儲存為.NET Standard 程式庫專案中的內嵌資源 XAML 檔案時，則會有幫助。 它會使用`Source`屬性，以呼叫靜態`ImageSource.FromResource`方法。 此方法需要完整的資源名稱，其中包含組件名稱、 資料夾名稱，並以句號分隔的檔案名稱。 `ImageResourceExtension`不需要的組件名稱部分因為它會取得使用反映的組件名稱，前面加上它`Source`屬性。 不論如何，`ImageSource.FromResource`必須從包含點陣圖，這表示此 XAML 資源延伸模組無法為外部程式庫的一部分，除非影像是該程式庫中的組件呼叫。 (請參閱[**內嵌影像**](~/xamarin-forms/user-interface/images.md#embedded_images)存取點陣圖儲存為內嵌資源的更多有關的文章。)
+`ImageResourceExtension` 當需要存取影像檔儲存為.NET Standard 程式庫專案中的內嵌資源 XAML 檔案時，則會有幫助。 它會使用`Source`屬性，以呼叫靜態`ImageSource.FromResource`方法。 此方法需要完整的資源名稱，其中包含組件名稱、 資料夾名稱，並以句號分隔的檔案名稱。 第二個引數`ImageSource.FromResource`方法提供組件名稱，並只需要此屬性的 UWP 上的發行組建。 不論如何，`ImageSource.FromResource`必須從包含點陣圖，這表示此 XAML 資源延伸模組無法為外部程式庫的一部分，除非影像是該程式庫中的組件呼叫。 (請參閱[**內嵌影像**](~/xamarin-forms/user-interface/images.md#embedded-images)存取點陣圖儲存為內嵌資源的更多有關的文章。)
 
 雖然`ImageResourceExtension`需要`Source`屬性設定，`Source`屬性做為類別的內容屬性所示的屬性。 這表示`Source=`括孤括住之運算式的一部分，則可以省略。 在 **映像資源示範**頁面上，`Image`項目擷取使用資料夾名稱和檔案名稱以句號分隔的兩個映像：
 
@@ -178,7 +179,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 </ContentPage>
 ```
 
-以下是所有三個平台上執行的程式：
+以下是執行的程式：
 
 [![映像資源示範](creating-images/imageresourcedemo-small.png "映像資源示範")](creating-images/imageresourcedemo-large.png#lightbox "映像資源示範")
 
@@ -199,7 +200,6 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 ## <a name="conclusion"></a>結論
 
 XAML 標記延伸在 XAML 中扮演重要的角色，藉由擴充，能夠從各種來源中設定屬性。 此外，如果現有的 XAML 標記延伸模組未提供真正需要您也可以撰寫您自己。
-
 
 ## <a name="related-links"></a>相關連結
 

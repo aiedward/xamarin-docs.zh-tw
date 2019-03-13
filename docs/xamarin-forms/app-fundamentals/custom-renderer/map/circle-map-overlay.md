@@ -1,45 +1,47 @@
 ---
-title: 反白顯示地圖上的循環區域
-description: 這篇文章說明如何將循環的覆疊加入至地圖中，反白顯示對應的循環區域。 IOS 和 Android 提供的 Api 新增至對應的循環的重疊，而 UWP 上覆疊會轉譯為多邊形。
+title: 醒目提示地圖上的循環區域
+description: 本文說明如何將循環重疊新增至地圖中，以醒目提示地圖的循環區域。 iOS 和 Android 會提供 API 用於將循環重疊新增至地圖，而重疊在 UWP 上會轉譯為多邊形。
 ms.prod: xamarin
 ms.assetid: 6FF8BD15-074E-4E6A-9522-F9E2BE32EF12
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 3064296d4c78a3342fb27afc971c37a029987e5e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.openlocfilehash: ed671063aad55cb6c4730494f024a2ec2a016de1
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998553"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051927"
 ---
-# <a name="highlighting-a-circular-area-on-a-map"></a>反白顯示地圖上的循環區域
+# <a name="highlighting-a-circular-area-on-a-map"></a>醒目提示地圖上的循環區域
 
-_這篇文章說明如何將循環的覆疊加入至地圖中，反白顯示對應的循環區域。_
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/circle/)
+
+_本文說明如何將循環重疊新增至地圖中，以醒目提示地圖的循環區域。_
 
 ## <a name="overview"></a>總覽
 
-覆疊是在地圖上的多層式的圖形。 覆疊支援會隨著它已縮放比例與對應的繪製圖形內容。 下列螢幕擷取畫面顯示新增至對應的循環的重疊的結果：
+重疊是地圖上的多層次圖形。 重疊支援繪製隨地圖縮放比例的圖形內容。 下列螢幕擷取畫面顯示將循環重疊新增至地圖的結果：
 
 ![](circle-map-overlay-images/screenshots.png)
 
-當[ `Map` ](xref:Xamarin.Forms.Maps.Map) Xamarin.Forms 應用程式，在 iOS 中所要呈現控制項`MapRenderer`類別具現化，以依序具現化原生`MKMapView`控制項。 Android 平台上，`MapRenderer`類別會具現化原生`MapView`控制項。 在通用 Windows 平台 (UWP)，`MapRenderer`類別會具現化原生`MapControl`。 轉譯程序可以藉由建立自訂轉譯器的實作特定平台對應自訂項目採取善用`Map`每個平台。 執行此動作的程序如下所示：
+當 Xamarin.Forms 應用程式轉譯 [`Map`](xref:Xamarin.Forms.Maps.Map) 控制項時，在 iOS 中會先具現化 `MapRenderer` 類別，再由該類別具現化原生 `MKMapView` 控制項。 在 Android 平台上，`MapRenderer` 類別會具現化原生 `MapView` 控制項。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 類別會具現化原生的 `MapControl`。 您可在每個平台上建立適用於 `Map` 的自訂轉譯器，利用轉譯程序實作平台特定的地圖自訂。 執行這項作業的流程如下：
 
-1. [建立](#Creating_the_Custom_Map)Xamarin.Forms 自訂地圖。
-1. [取用](#Consuming_the_Custom_Map)Xamarin.Forms 自訂對應。
-1. [自訂](#Customizing_the_Map)藉由建立自訂轉譯器，對應每個平台上的對應。
+1. [建立](#Creating_the_Custom_Map) Xamarin.Forms 自訂地圖。
+1. [使用](#Consuming_the_Custom_Map) Xamarin.Forms 的自訂地圖。
+1. 在每個平台上建立地圖自訂轉譯器以[自訂](#Customizing_the_Map)地圖。
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) 必須初始化，並使用之前設定。 如需詳細資訊，請參閱 [`Maps Control`](~/xamarin-forms/user-interface/map.md)
+> 在使用 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) 前，您必須先加以初始化及設定。 如需詳細資訊，請參閱 [`Maps Control`](~/xamarin-forms/user-interface/map.md)
 
-如需自訂對應，使用自訂轉譯器的資訊，請參閱[自訂地圖釘選](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)。
+如需使用自訂轉譯器自訂地圖的資訊，請參閱[自訂地圖釘選](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)。
 
 <a name="Creating_the_Custom_Map" />
 
-### <a name="creating-the-custom-map"></a>建立自訂的對應
+### <a name="creating-the-custom-map"></a>建立自訂地圖
 
-建立`CustomCircle`類別具有`Position`和`Radius`屬性：
+建立具有 `Position` 和 `Radius` 屬性的 `CustomCircle` 類別：
 
 ```csharp
 public class CustomCircle
@@ -49,7 +51,7 @@ public class CustomCircle
 }
 ```
 
-接著，建立的子類別[ `Map` ](xref:Xamarin.Forms.Maps.Map)類別，新增類型的屬性`CustomCircle`:
+接著，建立 [`Map`](xref:Xamarin.Forms.Maps.Map) 類別的子類別，這會新增類型 `CustomCircle` 的屬性：
 
 ```csharp
 public class CustomMap : Map
@@ -62,7 +64,7 @@ public class CustomMap : Map
 
 ### <a name="consuming-the-custom-map"></a>使用自訂地圖
 
-取用`CustomMap`藉由宣告它的執行個體，在 XAML 頁面執行個體中的控制項：
+您可以在 XAML 頁面執行個體中宣告 `CustomMap` 控制項的執行個體來使用它：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -75,7 +77,7 @@ public class CustomMap : Map
 </ContentPage>
 ```
 
-或者，使用`CustomMap`藉由宣告它的執行個體，在 C# page 執行個體中的控制項：
+或者，在 C# 頁面執行個體中宣告其執行個體，藉以使用 `CustomMap` 控制項：
 
 ```csharp
 public class MapPageCS : ContentPage
@@ -93,7 +95,7 @@ public class MapPageCS : ContentPage
 }
 ```
 
-初始化`CustomMap`視需要控制：
+視需要初始化 `CustomMap` 控制項：
 
 ```csharp
 public partial class MapPage : ContentPage
@@ -120,17 +122,17 @@ public partial class MapPage : ContentPage
 }
 ```
 
-這項初始化加入[ `Pin` ](xref:Xamarin.Forms.Maps.Pin)並`CustomCircle`自訂地圖上，執行個體，並將對應的檢視[ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion*)方法，可變更的位置和縮放藉由建立對應的層級[ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan)從[ `Position` ](xref:Xamarin.Forms.Maps.Position)並[ `Distance` ](xref:Xamarin.Forms.Maps.Distance)。
+此初始化會將 [`Pin`](xref:Xamarin.Forms.Maps.Pin) 和 `CustomCircle` 執行個體新增至自訂地圖，並使用 [`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) 方法定位地圖的檢視，從 [`Position`](xref:Xamarin.Forms.Maps.Position) 和 [`Distance`](xref:Xamarin.Forms.Maps.Distance) 建立 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)，變更地圖的位置和縮放比例。
 
 <a name="Customizing_the_Map" />
 
 ### <a name="customizing-the-map"></a>自訂地圖
 
-自訂轉譯器現在必須新增至每個應用程式專案，以新增至對應的循環的重疊。
+您現在必須將自訂轉譯器新增至每個應用程式專案，才能將循環重疊新增至地圖。
 
 #### <a name="creating-the-custom-renderer-on-ios"></a>在 iOS 上建立自訂轉譯器
 
-建立的子類別`MapRenderer`類別並覆寫其`OnElementChanged`新增循環的覆疊的方法：
+建立 `MapRenderer` 類別的子類別並覆寫其 `OnElementChanged` 方法，以新增循環重疊：
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -170,13 +172,13 @@ namespace MapOverlay.iOS
 
 ```
 
-這個方法會執行下列設定中，前提是自訂轉譯器會附加至新的 Xamarin.Forms 元素：
+若自訂轉譯器已附加於新的 Xamarin.Forms 項目，則此方法會執行下列組態：
 
-- `MKMapView.OverlayRenderer`屬性設定為對應的委派。
-- 藉由設定靜態建立圓形`MKCircle`物件，指定的圓圈，中心和圓形的半徑，以公尺為單位。
-- 圓形，會藉由呼叫加入至地圖`MKMapView.AddOverlay`方法。
+- `MKMapView.OverlayRenderer` 屬性設定為對應的委派。
+- 藉由設定會指定圓形中心的靜態 `MKCircle` 物件和圓半徑 (以公尺為單位) 來建立圓形。
+- 圓形可透過呼叫 `MKMapView.AddOverlay` 方法新增至地圖。
 
-然後，實作`GetOverlayRenderer`方法，以自訂的覆疊轉譯：
+然後，實作 `GetOverlayRenderer` 方法來自訂重疊轉譯：
 
 ```csharp
 public class CustomMapRenderer : MapRenderer
@@ -200,7 +202,7 @@ public class CustomMapRenderer : MapRenderer
 
 #### <a name="creating-the-custom-renderer-on-android"></a>在 Android 上建立自訂轉譯器
 
-建立的子類別`MapRenderer`類別並覆寫其`OnElementChanged`和`OnMapReady`方法以新增循環的覆疊：
+建立 `MapRenderer` 類別的子類別並覆寫其 `OnElementChanged` 和 `OnMapReady` 方法，以新增循環重疊：
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -248,11 +250,11 @@ namespace MapOverlay.Droid
 }
 ```
 
-`OnElementChanged`方法呼叫`MapView.GetMapAsync`方法，以取得基礎`GoogleMap`，會繫結至檢視，前提是自訂轉譯器會附加至新的 Xamarin.Forms 元素。 一次`GoogleMap`執行個體可供使用，`OnMapReady`方法會叫用，圓形由具現化`CircleOptions`物件，指定的圓圈，中心和圓形的半徑，以公尺為單位。 圓形接著藉由呼叫加入至地圖`NativeMap.AddCircle`方法。
+若自訂轉譯器已附加到新的 Xamarin.Forms 項目，`OnElementChanged` 方法便會呼叫 `MapView.GetMapAsync` 方法來取得與檢視繫結的基礎 `GoogleMap`。 一旦 `GoogleMap` 執行個體可用，就會叫用 `OnMapReady` 方法，透過具現化會指定圓形中心和圓半徑 (以公尺為單位) 的 `CircleOptions` 物件來建立圓形。 然後，會呼叫 `NativeMap.AddCircle` 方法將圓形新增至地圖。
 
-#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>通用 Windows 平台上建立自訂轉譯器
+#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>在通用 Windows 平台上建立自訂轉譯器
 
-建立的子類別`MapRenderer`類別並覆寫其`OnElementChanged`新增循環的覆疊的方法：
+建立 `MapRenderer` 類別的子類別並覆寫其 `OnElementChanged` 方法，以新增循環重疊：
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -296,12 +298,12 @@ namespace MapOverlay.UWP
 }
 ```
 
-這個方法會執行下列作業，，前提是自訂轉譯器會附加至新的 Xamarin.Forms 元素：
+若自訂轉譯器已附加於新的 Xamarin.Forms 項目，則此方法會執行下列作業：
 
-- 從擷取的圓形位置和 radius`CustomMap.Circle`屬性，傳遞至`GenerateCircleCoordinates`方法，以產生緯度和經度座標的圓形的圓周。 這個 helper 方法的程式碼如下所示。
-- 圓形周長座標會轉換成`List`的`BasicGeoposition`座標。
-- 圓形由具現化`MapPolygon`物件。 `MapPolygon`類別用來顯示在地圖上的多點圖形，藉由設定其`Path`屬性設`Geopath`物件，其中包含的圖形座標。
-- 多邊形呈現在地圖上將它加入至`MapControl.MapElements`集合。
+- 圓形位置和半徑會從 `CustomMap.Circle` 屬性擷取並傳遞至 `GenerateCircleCoordinates` 方法，該方法會產生圓形周長的緯度和經度座標。 此協助程式方法的程式碼如下所示。
+- 圓形周長座標會轉換成 `BasicGeoposition` 座標的 `List`。
+- 圓形可透過具現化 `MapPolygon` 物件來建立。 將其 `Path` 屬性設為包含圖形座標的 `Geopath` 物件，使用 `MapPolygon` 類別顯示地圖上的多點圖形。
+- 將多邊形新增至 `MapControl.MapElements` 集合以將其轉譯在地圖上。
 
 
 ```
@@ -328,11 +330,11 @@ List<Position> GenerateCircleCoordinates(Position position, double radius)
 
 ## <a name="summary"></a>總結
 
-這篇文章說明如何將循環的覆疊加入至地圖中，反白顯示對應的循環區域。
+本文說明了如何將循環重疊新增至地圖中，以醒目提示地圖的循環區域。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [循環對應 Ovlerlay （範例）](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/circle/)
+- [Circular Map Ovlerlay (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/circle/) (循環地圖重疊 (範例))
 - [自訂地圖釘選](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

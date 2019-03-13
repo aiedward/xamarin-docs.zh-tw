@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: 8952f98045d9830e9b8f25a7d4b93a5e4310cb32
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 56e50f0c3dffd54fe3d95f4cd140883613c9206f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351575"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052711"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>在 Xamarin.Forms 中的相依性解析
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)
 
 _這篇文章說明如何將 Xamarin.Forms 插入的相依性解析方法，使應用程式的相依性插入容器具有控制建立和自訂轉譯器、 效果及 DependencyService 實作的存留期。這篇文章中的程式碼範例取自[使用容器的相依性解析](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)範例。_
 
@@ -149,7 +151,7 @@ public VideoPlayerRenderer(ILogger logger)
 }
 ```
 
-所有的三個平台上所執行的相依性插入容器的型別註冊`RegisterTypes`方法之前載入的應用程式的平台叫用`LoadApplication(new App())`方法。 下列範例所示`RegisterTypes`iOS 平台上的方法：
+在所有平台，以執行與相依性插入容器的型別註冊`RegisterTypes`方法之前載入的應用程式的平台叫用`LoadApplication(new App())`方法。 下列範例所示`RegisterTypes`iOS 平台上的方法：
 
 ```csharp
 void RegisterTypes()
@@ -196,7 +198,7 @@ boxView.Effects.Add(touchEffect);
 
 `TouchEffect`類別是[ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect)的每個平台上實作`TouchEffect`類別，具有`PlatformEffect`。 平台`TouchEffect`類別提供的拖曳功能`BoxView`周圍的頁面。 如需有關這些效果類別的詳細資訊，請參閱[叫用事件效果](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)。
 
-所有的三個平台上`TouchEffect`類別具有下列建構函式，這需要`ILogger`引數：
+在所有平台，`TouchEffect`類別具有下列建構函式，這需要`ILogger`引數：
 
 ```csharp
 public TouchEffect(ILogger logger)
@@ -205,7 +207,7 @@ public TouchEffect(ILogger logger)
 }
 ```
 
-所有的三個平台上所執行的相依性插入容器的型別註冊`RegisterTypes`方法之前載入的應用程式的平台叫用`LoadApplication(new App())`方法。 下列範例所示`RegisterTypes`Android 平台上的方法：
+在所有平台，以執行與相依性插入容器的型別註冊`RegisterTypes`方法之前載入的應用程式的平台叫用`LoadApplication(new App())`方法。 下列範例所示`RegisterTypes`Android 平台上的方法：
 
 ```csharp
 void RegisterTypes()
@@ -240,7 +242,7 @@ public PhotoPicker(ILogger logger)
 }
 ```
 
-所有的三個平台上所執行的相依性插入容器的型別註冊`RegisterTypes`方法之前載入的應用程式的平台叫用`LoadApplication(new App())`方法。 下列範例所示`RegisterTypes`UWP 上的方法：
+在所有平台，以執行與相依性插入容器的型別註冊`RegisterTypes`方法之前載入的應用程式的平台叫用`LoadApplication(new App())`方法。 下列範例所示`RegisterTypes`UWP 上的方法：
 
 ```csharp
 void RegisterTypes()

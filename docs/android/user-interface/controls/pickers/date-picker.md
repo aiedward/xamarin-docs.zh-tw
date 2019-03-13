@@ -4,15 +4,15 @@ description: 選取使用 DatePickerDialog 和 DialogFragment 的行事曆日期
 ms.prod: xamarin
 ms.assetid: F2BCD8D4-8957-EA53-C5A8-6BB603ADB47B
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 01/22/2018
-ms.openlocfilehash: 8f4e6318d904efb2f77c36732fc6519699f72ac9
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 9f82317f6041de3952d11b391afffafe6fbd8761
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241132"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122968"
 ---
 # <a name="date-picker"></a>日期選擇器
 

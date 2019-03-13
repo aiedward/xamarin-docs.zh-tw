@@ -1,28 +1,30 @@
 ---
 title: 顯示快顯視窗
-description: Xamarin.Forms 提供兩個快顯註冊類似使用者介面項目 – 警示和動作的工作表。 這篇文章示範如何使用警示和動作表 Api，詢問使用者簡單的問題，並引導使用者完成工作。
+description: Xamarin.Forms 提供兩個類似使用者介面元素的快顯視窗：警示和動作表。 本文示範如何使用警示和動作表 API，詢問使用者簡易問題，並引導使用者完成工作。
 ms.prod: xamarin
 ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 156c2f9dca47a7755d4f810d7921a05662388ded
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.openlocfilehash: 1334340f18e664d4c652803e7678f45ee942eea8
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996710"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057401"
 ---
 # <a name="displaying-pop-ups"></a>顯示快顯視窗
 
-_Xamarin.Forms 提供兩個快顯註冊類似使用者介面項目 – 警示和動作的工作表。這篇文章示範如何使用警示和動作表 Api，詢問使用者簡單的問題，並引導使用者完成工作。_
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Pop-ups/)
 
-顯示警示，或要求使用者做出的選擇是常見 UI 的工作。 Xamarin.Forms 有兩種方法[ `Page` ](xref:Xamarin.Forms.Page)與快顯視窗，透過使用者互動的類別： [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*)並[ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*)。 它們會與每個平台上的適當原生控制項呈現。
+_Xamarin.Forms 提供兩個類似使用者介面元素的快顯視窗：警示和動作表。本文示範如何使用警示和動作表 API，詢問使用者簡易問題，並引導使用者完成工作。_
+
+顯示警示或要求使用者選擇是常見 UI 的工作。 Xamarin.Forms 在 [`Page`](xref:Xamarin.Forms.Page) 類別上有兩種方法，可用來透過快顯視窗與使用者互動：[`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 和 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)。 兩者會以適當的原生控制項轉譯在每個平台上。
 
 ## <a name="displaying-an-alert"></a>顯示警示
 
-所有的 Xamarin.Forms 支援平台會有以警示使用者，或詢問簡單的問題，其中的強制回應快顯視窗。 若要顯示在 Xamarin.Forms 中的這些警示，請使用[ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*)方法在任何[ `Page` ](xref:Xamarin.Forms.Page)。 下列程式碼會顯示簡單訊息給使用者：
+所有 Xamarin.Forms 支援的平台都有強制回應快顯視窗，可警示使用者或是詢問簡易問題。 若要在 Xamarin.Forms 中顯示警示，請在任何 [`Page`](xref:Xamarin.Forms.Page) 上使用 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 方法。 下列程式碼會顯示簡易訊息給使用者：
 
 ```csharp
 DisplayAlert ("Alert", "You have been alerted", "OK");
@@ -30,9 +32,9 @@ DisplayAlert ("Alert", "You have been alerted", "OK");
 
 ![](pop-ups-images/alert.png "具有一個按鈕的警示對話方塊")
 
-此範例不會從使用者收集資訊。 會以強制回應方式顯示的警示和關閉使用者之後會繼續與應用程式互動。
+此範例不會向使用者收集資訊。 警示會以強制回應的方式顯示，關閉後，使用者就可繼續與應用程式互動。
 
-[ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*)方法也可用來擷取使用者的回應呈現兩個按鈕，並傳回`boolean`。 若要從警示取得回應，提供這兩個按鈕的文字和`await`方法。 在使用者選取其中一個選項之後的回應會傳回您的程式碼。 附註`async`和`await`在下列範例程式碼中的關鍵字：
+[`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 方法也可用來擷取使用者的回應，方法是顯示兩個按鈕，並傳回 `boolean`。 若要從警示取得回應，請為兩個按鈕提供文字並為方法加上 `await`。 當使用者選取其中一個選項後，回答就會傳回程式碼。 請注意下列範例程式碼中的 `async` 和 `await` 關鍵字：
 
 ```csharp
 async void OnAlertYesNoClicked (object sender, EventArgs e)
@@ -42,13 +44,13 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 }
 ```
 
-[![DisplayAlert](pop-ups-images/alert2-sml.png "警示有兩個按鈕的對話方塊")](pop-ups-images/alert2.png#lightbox "警示有兩個按鈕的對話方塊")
+[![DisplayAlert](pop-ups-images/alert2-sml.png "具有兩個按鈕的警示對話方塊")](pop-ups-images/alert2.png#lightbox "具有兩個按鈕的警示對話方塊")
 
 ## <a name="guiding-users-through-tasks"></a>引導使用者完成工作
 
-[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html)是在 iOS 中的常見 UI 項目。 Xamarin.Forms [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*)方法可讓您跨平台的應用程式，呈現在 Android 和 UWP 的原生替代項目加入此控制項。
+[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) 是 iOS 中常見的 UI 元素。 Xamarin.Forms [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)方法可讓您在跨平台應用程式中包含此控制項，以在 Android 和 UWP 中轉譯原生替代項目。
 
-若要顯示的動作工作表中， `await` [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*)任何[ `Page` ](xref:Xamarin.Forms.Page)、 將訊息傳遞和按鈕標籤為字串。 方法會傳回使用者所按按鈕的字串標籤。 簡單的範例如下所示：
+若要顯示動作表，請在任何 [`Page`](xref:Xamarin.Forms.Page) 中的 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 加上 `await`，將以字串的形式傳遞訊息和按鈕標籤。 方法會傳回使用者所按按鈕的字串標籤。 簡易範例如下所示︰
 
 ```csharp
 async void OnActionSheetSimpleClicked (object sender, EventArgs e)
@@ -60,7 +62,7 @@ async void OnActionSheetSimpleClicked (object sender, EventArgs e)
 
 ![](pop-ups-images/action.png "ActionSheet 對話方塊")
 
-`destroy`  按鈕的方式不同於其他轉譯，可以保留`null`或指定為第三個字串參數。 下列範例會使用`destroy`按鈕：
+`destroy` 按鈕的轉譯方式不同於其他按鈕，可以保留 `null`，也可以指定為第三個字串參數。 下列範例使用 `destroy` 按鈕︰
 
 ```csharp
 async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
@@ -70,11 +72,11 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 }
 ```
 
-[![DisplayActionSheet](pop-ups-images/action2-sml.png "Destroy 按鈕動作的工作表對話方塊")](pop-ups-images/action2.png#lightbox "終結按鈕動作的工作表對話方塊")
+[![DisplayActionSheet](pop-ups-images/action2-sml.png "具有終結按鈕的動作表對話方塊")](pop-ups-images/action2.png#lightbox "具有終結按鈕的動作表對話方塊")
 
 ## <a name="summary"></a>總結
 
-這篇文章示範如何使用警示和動作表 Api，詢問使用者簡單的問題，並引導使用者完成工作。 Xamarin.Forms 有兩種方法[ `Page` ](xref:Xamarin.Forms.Page)與快顯視窗，透過使用者互動的類別： [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*)並[ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*)，而且是同時使用每個平台上的適當原生控制項呈現。
+本文示範如何使用警示和動作表 API，詢問使用者簡易問題，並引導使用者完成工作。 Xamarin.Forms 在 [`Page`](xref:Xamarin.Forms.Page) 類別上有兩種方法，可用來透過快顯視窗，與使用者互動：[`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 和 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)，而且兩者會以適當的原生控制項轉譯在每個平台上。
 
 
 

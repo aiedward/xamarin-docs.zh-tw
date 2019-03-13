@@ -4,15 +4,15 @@ description: 本文件描述如何針對源自 Objective-C 執行階段的例外
 ms.prod: xamarin
 ms.assetid: B0C0CE31-2737-4969-8EA5-D39D3333E9C2
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 10/19/2016
-ms.openlocfilehash: 66ef76c4305e572d5cc45c142f38d89d6f17eeb0
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 777e8d2880313b5a793d6257cc0fd9d8299cb94d
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792121"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528477"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>在 Xamarin.Mac 應用程式中偵錯原生損毀
 
@@ -159,7 +159,7 @@ Thread 0 Crashed:: Dispatch queue: com.apple.main-thread
 
 ```
 
-本指南將協助您在此性質的 Bug 發生時進行追蹤、正確地回報它們以便加以修正，直到在您的程式碼中一一解決它們為止。
+此指南可協助您在發生此種現象時，追蹤這類 Bug、正確地進行回報，同時在您的程式碼中避開它們直到錯誤修復為止。
 
 ### <a name="locating"></a>找出問題
 

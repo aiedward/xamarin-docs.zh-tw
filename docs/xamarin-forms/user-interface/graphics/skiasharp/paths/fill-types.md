@@ -4,17 +4,19 @@ description: 本文章檢查不同的效果可能使用 SkiaSharp 路徑填滿�
 ms.prod: xamarin
 ms.assetid: 57103A7A-49A2-46AE-894C-7C2664682644
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 17043054c920a69570f38b227d05980494e29139
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: d99bb4722beb86c3cd2f49077fb778b8d8f61397
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615466"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051804"
 ---
 # <a name="the-path-fill-types"></a>路徑填滿類型
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _探索不同的效果設有 SkiaSharp 路徑填滿類型_
 
@@ -22,24 +24,25 @@ _探索不同的效果設有 SkiaSharp 路徑填滿類型_
 
 ![](fill-types-images/filltypeexample.png "五個指向部分星級 filles")
 
-您可以透過這有點控制。 填滿演算法由[ `SKFillType` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.FillType/)屬性`SKPath`，其中您將設定為隸屬[ `SKPathFillType` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathFillType/)列舉型別：
+您可以透過這有點控制。 填滿演算法由[ `SKFillType` ](xref:SkiaSharp.SKPath.FillType)屬性`SKPath`，其中您將設定為隸屬[ `SKPathFillType` ](xref:SkiaSharp.SKPathFillType)列舉型別：
 
-- [`Winding`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.Winding/)預設值
-- [`EvenOdd`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.EvenOdd/)
-- [`InverseWinding`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.InverseWinding/)
-- [`InverseEvenOdd`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.InverseEvenOdd/)
+- `Winding`預設值
+- `EvenOdd`
+- `InverseWinding`
+- `InverseEvenOdd`
 
 捲繞和奇偶演算法判斷括住的任何區域是填滿或未填入 根據假設一行取自該區域，為無限大。 那一行會跨越一或多個界限組成線條的路徑。 捲曲的模式中，如果繪製單一方向餘額，放大在另一個方向，則區域中繪製的線條數目的界限行數不是填滿。 否則會填滿區域。 如果界限行數是奇數，則奇偶演算法會填滿區域。
 
 許多例行的路徑，捲繞演算法通常會填滿所有括住的區域路徑。 奇偶演算法通常會產生更有趣的結果。
 
-典型的範例是五角星形，如所示**Five-Pointed 星狀**頁面。 [FivePointedStarPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml)檔案具現化兩個`Picker`檢視來選取路徑填滿類型和路徑是將描邊還是填滿或兩者，以及依照什麼順序：
+典型的範例是五角星形，如所示**Five-Pointed 星狀**頁面。 [ **FivePointedStarPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml)檔案具現化兩個`Picker`檢視來選取路徑填滿類型和路徑是將描邊還是填滿或兩者，以及依照什麼順序：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
-             x:Class="SkiaSharpFormsDemos.FivePointedStarPage"
+             xmlns:skia="clr-namespace:SkiaSharp;assembly=SkiaSharp"
+             xmlns:skiaforms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Class="SkiaSharpFormsDemos.Paths.FivePointedStarPage"
              Title="Five-Pointed Star">
     <Grid>
         <Grid.RowDefinitions>
@@ -58,12 +61,14 @@ _探索不同的效果設有 SkiaSharp 路徑填滿類型_
                 Grid.Column="0"
                 Margin="10"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>Winding</x:String>
-                <x:String>EvenOdd</x:String>
-                <x:String>InverseWinding</x:String>
-                <x:String>InverseEvenOdd</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type skia:SKPathFillType}">
+                    <x:Static Member="skia:SKPathFillType.Winding" />
+                    <x:Static Member="skia:SKPathFillType.EvenOdd" />
+                    <x:Static Member="skia:SKPathFillType.InverseWinding" />
+                    <x:Static Member="skia:SKPathFillType.InverseEvenOdd" />
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 0
             </Picker.SelectedIndex>
@@ -75,22 +80,24 @@ _探索不同的效果設有 SkiaSharp 路徑填滿類型_
                 Grid.Column="1"
                 Margin="10"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>Fill only</x:String>
-                <x:String>Stroke only</x:String>
-                <x:String>Stroke then Fill</x:String>
-                <x:String>Fill then Stroke</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Fill only</x:String>
+                    <x:String>Stroke only</x:String>
+                    <x:String>Stroke then Fill</x:String>
+                    <x:String>Fill then Stroke</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 0
             </Picker.SelectedIndex>
         </Picker>
 
-        <skia:SKCanvasView x:Name="canvasView"
-                           Grid.Row="1"
-                           Grid.Column="0"
-                           Grid.ColumnSpan="2"
-                           PaintSurface="OnCanvasViewPaintSurface" />
+        <skiaforms:SKCanvasView x:Name="canvasView"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                PaintSurface="OnCanvasViewPaintSurface" />
     </Grid>
 </ContentPage>
 ```
@@ -111,8 +118,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
     SKPath path = new SKPath
     {
-        FillType = (SKPathFillType)Enum.Parse(typeof(SKPathFillType),
-                        fillTypePicker.Items[fillTypePicker.SelectedIndex])
+        FillType = (SKPathFillType)fillTypePicker.SelectedItem
     };
     path.MoveTo(info.Width / 2, info.Height / 2 - radius);
 
@@ -120,7 +126,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
     {
         // angle from vertical
         double angle = i * 4 * Math.PI / 5;
-        path.LineTo(center + new SKPoint(radius * (float)Math.Sin(angle),
+        path.LineTo(center + new SKPoint(radius * (float)Math.Sin(angle), 
                                         -radius * (float)Math.Cos(angle)));
     }
     path.Close();
@@ -139,22 +145,22 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
         Color = SKColors.Blue
     };
 
-    switch (drawingModePicker.SelectedIndex)
+    switch ((string)drawingModePicker.SelectedItem)
     {
-        case 0:
+        case "Fill only":
             canvas.DrawPath(path, fillPaint);
             break;
 
-        case 1:
+        case "Stroke only":
             canvas.DrawPath(path, strokePaint);
             break;
 
-        case 2:
+        case "Stroke then Fill":
             canvas.DrawPath(path, strokePaint);
             canvas.DrawPath(path, fillPaint);
             break;
 
-        case 3:
+        case "Fill then Stroke":
             canvas.DrawPath(path, fillPaint);
             canvas.DrawPath(path, strokePaint);
             break;
@@ -168,10 +174,10 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Android 和 UWP 螢幕擷取畫面顯示典型的奇偶和捲繞效果，但筆觸和填滿的順序也會影響結果。
 
-捲曲的演算法是取決於繪製線條的方向。 通常當您要建立的路徑，您可以控制該方向與您指定行取自到另一個點。 不過，`SKPath`類別也會定義方法，例如`AddRect`和`AddCircle`，繪製整個分佈。 若要控制如何繪製這些物件，方法包含參數的型別[ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/)，其中包含兩個成員：
+捲曲的演算法是取決於繪製線條的方向。 通常當您要建立的路徑，您可以控制該方向與您指定行取自到另一個點。 不過，`SKPath`類別也會定義方法，例如`AddRect`和`AddCircle`，繪製整個分佈。 若要控制如何繪製這些物件，方法包含參數的型別[ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection)，其中包含兩個成員：
 
-- [`Clockwise`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathDirection.Clockwise/)
-- [`CounterClockwise`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathDirection.CounterClockwise/)
+- `Clockwise`
+- `CounterClockwise`
 
 中的方法`SKPath`，包括`SKPathDirection`參數會指定它，預設值為`Clockwise`。
 
@@ -222,5 +228,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

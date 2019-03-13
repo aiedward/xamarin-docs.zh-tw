@@ -1,0 +1,112 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 8df0acd20f07235608520c09897b6faf3e1eb99e
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57198744"
+documentType: LandingData
+title: Xamarin.Forms 教學課程
+metadata:
+  title: Xamarin.Forms 教學課程
+  description: 關於使用 Visual Studio 和 Visual Studio for Mac 開發 Xamarin.Forms 應用程式的教學課程。
+  ms.topic: landing-page
+  ms.prod: xamarin
+  ms.assetid: 8E3D88AE-923E-4B7C-ABAC-058A25A48BBF
+  ms.technology: xamarin-forms
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 02/14/2018
+abstract:
+  description: 此頁面會連結至一些教學課程，以便了解使用 Xamarin.Forms 建立行動應用程式的基本概念。 如需完整 Xamarin.Forms 文件，請參閱 <a href="/xamarin/xamarin-forms/">Xamarin.Forms 文件</a>。
+sections:
+- title: 版面配置
+  items:
+  - type: list
+    style: cards
+    className: cardsB
+    items:
+    - href: stacklayout/
+      html: 了解如何以水平或垂直方式組織一維堆疊中的檢視。
+      image:
+        src: https://docs.microsoft.com/media/common/i_dashboard.svg
+        href: stacklayout/
+      title: StackLayout
+    - href: grid/
+      html: 了解如何將檢視組織成有相稱或絕對大小的資料列和資料行。
+      image:
+        src: https://docs.microsoft.com/media/common/i_table.svg
+        href: grid/
+      title: Grid
+- title: 檢視
+  items:
+  - type: list
+    style: cards
+    className: cardsB
+    items:
+    - href: label/
+      html: 了解如何顯示單行和多行的文字。
+      image:
+        src: ~/media/icons/i_form-label.svg
+        href: label/
+      title: 標籤
+    - href: button/
+      html: 了解如何回應點選或按一下按鈕，該動作可引導應用程式執行特定工作。
+      image:
+        src: https://docs.microsoft.com/media/common/i_button.svg
+        href: button/
+      title: 按鈕
+    - href: entry/
+      html: 了解如何接受單行文字輸入。
+      image:
+        src: ~/media/icons/i_form-entry.svg
+        href: entry/
+      title: 進入
+    - href: editor/
+      html: 了解如何接受多行文字輸入。
+      image:
+        src: ~/media/icons/i_form-editor.svg
+        href: editor/
+      title: 編輯器
+    - href: image/
+      html: 了解如何在頁面上顯示影像。
+      image:
+        src: https://docs.microsoft.com/media/common/i_account-management.svg
+        href: image/
+      title: Image
+    - href: listview/
+      html: 了解如何呈現資料的清單。
+      image:
+        src: https://docs.microsoft.com/media/common/i_sharepoint-list.svg
+        href: listview/
+      title: ListView
+- title: 應用程式基本概念
+  items:
+  - type: list
+    style: cards
+    className: cardsB
+    items:
+    - href: pop-ups/
+      html: 了解如何使用 Xamarin.Forms 顯示警示和動作表，以便向使用者詢問簡單問題，並引導使用者完成工作。
+      image:
+        src: https://docs.microsoft.com/media/common/i_alert.svg
+        href: pop-ups/
+      title: 快顯視窗
+    - href: app-lifecycle/
+      html: 了解 Xamarin.Forms 應用程式生命週期，以及如何保存生命週期狀態變更資料。
+      image:
+        src: https://docs.microsoft.com/media/common/i_agile.svg
+        href: app-lifecycle/
+      title: 應用程式生命週期
+    - href: local-database/
+      html: 了解如何使用 SQLite.NET NuGet 套件，將本機資料庫作業併入應用程式。
+      image:
+        src: https://docs.microsoft.com/media/common/i_generic-database.svg
+        href: local-database/
+      title: 本機資料庫
+    - href: web-service/
+      html: 了解如何從 Xamarin.Forms 取用 REST 架構 Web 服務。
+      image:
+        src: https://docs.microsoft.com/media/common/i_server.svg
+        href: web-service/
+      title: Web 服務

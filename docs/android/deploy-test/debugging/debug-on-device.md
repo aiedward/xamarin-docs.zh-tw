@@ -4,15 +4,15 @@ description: 這篇文章說明如何在實體 Android 裝置上進行 Xamarin.A
 ms.prod: xamarin
 ms.assetid: 153D3746-A27F-198B-48FE-D219C0133A79
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 1848bb624bf5f4bd627441a17fd077843c94edb9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3c30beadf7c2de618952bdf0cd5c03e7ceee2845
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762722"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109701"
 ---
 # <a name="debug-on-device"></a>在裝置上進行偵錯
 
@@ -27,7 +27,7 @@ _本文說明如何在實體 Android 裝置上進行 Xamarin.Android 應用程�
 
 在裝置連接到您的電腦之後，執行 Xamarin.Android 應用程式偵錯的方式就與任何其他 Xamarin 產品或 .NET 應用程式相同。 請確定在 IDE 中已選取 [偵錯] 組態和外部裝置，這可確保必要的偵錯符號可供使用，且 IDE 可以連線到執行中的應用程式： 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![已選取 [偵錯] 組態](debug-on-device-images/image1-vs.png)
 
@@ -39,7 +39,7 @@ _本文說明如何在實體 Android 裝置上進行 Xamarin.Android 應用程�
 
 ![到達中斷點](debug-on-device-images/image3-vs.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![已選取 [偵錯] 組態](debug-on-device-images/image1-xs.png)
 

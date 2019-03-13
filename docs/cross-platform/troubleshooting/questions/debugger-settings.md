@@ -6,12 +6,12 @@ ms.assetid: 3A024E4E-ACA3-4C7A-ADEF-541665D15779
 author: asb3993
 ms.author: amburns
 ms.date: 05/08/2018
-ms.openlocfilehash: 646ef7f708be2de6a851ace25d69a7c2f0b18a83
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 9a18c97ba227615ae42529424b5c22b5e144f5e5
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350803"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526699"
 ---
 # <a name="what-project-settings-are-required-for-the-debugger"></a>偵錯工具需要哪些專案設定？
 
@@ -24,7 +24,7 @@ ms.locfileid: "39350803"
 2. 移至**建置 > 進階...** 若要設定偵錯資訊**完整**
 3. 每個平台的設定：
    - 移至**Android 選項 > 偵錯選項**。 刻度**讓開發人員檢測設備** 方塊中。
-   - 移至**iOS 組建 > 偵錯選項**。 刻度**啟用偵錯** 方塊中。
+   - 移至**iOS 偵錯 > 偵錯及檢測**。 刻度**啟用偵錯** 方塊中。
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 1. 開啟 專案選項

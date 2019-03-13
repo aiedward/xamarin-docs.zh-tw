@@ -4,15 +4,15 @@ description: 本文件討論的投影片、 交換器和分段的控制項在 Xa
 ms.prod: xamarin
 ms.assetid: 85BF0EC8-E581-49CD-B9E7-98BE4C5A0F6B
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 7df79cb6f225326dda6656fa9dfe9534e35f2457
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 2ed14752cc5906b68d277b4f492875f7e281b053
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241987"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671451"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>滑桿、 交換器及在 Xamarin.iOS 中的分段的控制項
 
@@ -50,7 +50,7 @@ slider1.MaximumTrackTintColor = UIColor.Green;
  [![](slider-switch-segmented-controls-images/image27a.png "自訂滑桿")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 > [!IMPORTANT]
-> 目前沒有[bug](http://stackoverflow.com/a/19496179)造成`ThumbTint`不在執行階段呈現如預期般運作。 您可以新增下列程式碼行**之前**上述程式碼因應措施。 [[來源](http://stackoverflow.com/a/21396794)]:
+> 目前沒有[bug](https://stackoverflow.com/a/19496179)造成`ThumbTint`不在執行階段呈現如預期般運作。 您可以新增下列程式碼行**之前**上述程式碼因應措施。 [Source](https://stackoverflow.com/a/21396794)]:
 >
 > `slider1.SetThumbImage(UIImage.FromBundle("thumb.png"),UIControlState.Normal);`
 > 

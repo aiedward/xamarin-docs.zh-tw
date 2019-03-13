@@ -4,16 +4,11 @@ description: 本文件提供在 Xamarin.iOS 中的分鏡腳本的簡介。 它�
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: bd8fee1b8f1941203bb0e6f00e261cbfbbccc9a7
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242338"
 ---
+
 # <a name="introduction-to-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中的分鏡腳本簡介
 
 在本指南中，我們將說明哪些分鏡腳本並檢查一些 – Segue 等重要元件。 我們將探討分鏡腳本可以如何建立和使用，而且開發人員有哪些優點。
@@ -86,7 +81,7 @@ A *Segue*，或*Segue 物件*，iOS 開發用來代表場景之間的轉換。 �
 |--- |--- |
 |顯示|這是非常類似的 segue 推播，但會將帳戶的畫面內容。|
 |顯示詳細資料|如果應用程式會顯示主要和詳細的檢視 （例如，在 iPad 上分割檢視控制器），內容會取代 [詳細資料] 檢視。 如果只有 master 或詳細資料，則會顯示應用程式，內容會取代檢視控制器堆疊的頂端。|
-|簡報|這類似於的強制回應的 segue，並允許的簡報和轉換樣式選取範圍。|
+|Presentation|這類似於的強制回應的 segue，並允許的簡報和轉換樣式選取範圍。|
 |Popover 簡報|這顯示為 popover 的內容|
 
 ### <a name="transferring-data-with-segues"></a>傳輸資料使用 Segue
@@ -100,11 +95,11 @@ NSObject sender)
 {
     base.PrepareForSegue (segue, sender);
 
-    var callHistoryContoller = segue.DestinationViewController 
+    var callHistoryController = segue.DestinationViewController 
                                   as CallHistoryController;
 
-    if (callHistoryContoller != null) {
-        callHistoryContoller.PhoneNumbers = PhoneNumbers;
+    if (callHistoryController != null) {
+        callHistoryController.PhoneNumbers = PhoneNumbers;
     }
 }
 ```
@@ -112,14 +107,14 @@ NSObject sender)
 在此範例中， `PrepareForSegue` segue 觸發使用者時，就會呼叫方法。 首先我們需要建立 '接收' 的檢視控制器的執行個體，並將此設為 segue 的目的地檢視控制器。 這是由下列程式碼行：
 
 ```csharp
-var callHistoryContoller = segue.DestinationViewController as CallHistoryController;
+var callHistoryController = segue.DestinationViewController as CallHistoryController;
 ```
 
 方法現在已設定屬性的能力`DestinationViewController`。 在此範例中我們已利用這藉由傳遞清單，稱為`PhoneNumbers`至`CallHistoryController`並將它指派至具有相同名稱的物件：
 
 ```csharp
-if (callHistoryContoller != null) {
-        callHistoryContoller.PhoneNumbers = PhoneNumbers;
+if (callHistoryController != null) {
+        callHistoryController.PhoneNumbers = PhoneNumbers;
     }
 ```
 
@@ -129,7 +124,7 @@ if (callHistoryContoller != null) {
 
 在某些情況下，您可能需要將分鏡腳本新增至先前非腳本檔案。 一次這麼做的 Visual Studio for Mac 可以簡化藉由遵循下列步驟：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 建立新的分鏡腳本檔案，瀏覽至**檔案 > 新的檔案 > iOS > 分鏡腳本**，如下所示： 
     
@@ -148,7 +143,7 @@ if (callHistoryContoller != null) {
             set;
             }
             
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 以滑鼠右鍵按一下專案，以建立新的分鏡腳本檔案**新增 > 新的檔案 > iOS > 空白分鏡腳本**，如下所示： 
     
@@ -249,7 +244,7 @@ public MainViewController (IntPtr handle) : base (handle)
 ```
 
 
-建立使用設計工具的分鏡腳本，IDE 會自動加入[[註冊]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/)頂端屬性`designer.cs`類別，並傳入的字串識別項，這等同於中指定的分鏡腳本識別碼上一個步驟。 這會連結的 C# 到分鏡腳本中相關的場景。
+建立使用設計工具的分鏡腳本，IDE 會自動加入[[註冊]](xref:Foundation.RegisterAttribute)頂端屬性`designer.cs`類別，並傳入的字串識別項，這等同於中指定的分鏡腳本識別碼上一個步驟。 這會連結的 C# 到分鏡腳本中相關的場景。
 
 您可能想要加入現有的類別，也就是有些時候**不**在設計工具中建立。 在此情況下，您會註冊這個類別，如往常一樣：
 
@@ -320,13 +315,13 @@ public partial class MainViewController : UIViewController
 1. 現在，讓我們建立我們的 UI，並新增額外的檢視，列出`MainViewController`，看起來類似下面的螢幕擷取畫面中：
 
     - UITextField
-        - 名稱： PasswordTextField
-        - 版面配置區: ' 輸入祕密 '
+        - 名稱：PasswordTextField
+        - 預留位置：「 輸入祕密 」
     - UILabel
-        - 文字: ' 時發生錯誤： 錯誤的密碼。 您不應該傳遞 ！ '
-        - 色彩： 紅色
-        - 對齊方式： 中心
-        - 行： 2
+        - 文字：' 時發生錯誤：錯誤的密碼。 您不應該傳遞 ！ '
+        - 色彩：紅色
+        - 對齊方式：置中
+        - 程式行：2
         - 'Hidden' 核取的核取方塊 
         
     [![](images/passwordvc.png "Center 行")](images/passwordvc.png#lightbox)
@@ -368,7 +363,7 @@ public partial class MainViewController : UIViewController
 
 ## <a name="using-storyboard-references"></a>使用分鏡腳本的參考
 
-分鏡腳本參考可讓您採用大型且複雜的分鏡腳本設計，並將它切為取得參考原始的較小的分鏡腳本，因此移除，則移除複雜度，並使所產生的個別分鏡腳本更輕鬆地設計和維護。
+分鏡腳本參考可讓您取得大型且複雜的分鏡腳本設計，並將它分割成較小的分鏡腳本取得參考從原始，因此移除複雜度，並且讓產生個別的分鏡腳本設計和維護變得更加容易。
 
 此外，分鏡腳本參考可提供_錨點_至相同的分鏡腳本或不同的特定場景中的另一個場景。
 
@@ -492,5 +487,5 @@ public partial class MainViewController : UIViewController
 
 - [手動分鏡腳本 （範例）](https://developer.xamarin.com/samples/ManualStoryboard/)
 - [IOS 設計工具簡介](~/ios/user-interface/designer/introduction.md)
-- [轉換到分鏡腳本](http://developer.apple.com/library/ios/#releasenotes/Miscellaneous/RN-AdoptingStoryboards/)
+- [轉換到分鏡腳本](https://developer.apple.com/library/ios/#releasenotes/Miscellaneous/RN-AdoptingStoryboards/)
 - [UIStoryboard 類別參考](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIStoryboard_Class/Reference/Reference.html)

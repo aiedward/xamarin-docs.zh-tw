@@ -3,15 +3,15 @@ title: 組建最佳化
 description: 本文件說明在 Xamarin.iOS 和 Xamarin.Mac 的應用程式的建置階段套用的各種最佳化功能。
 ms.prod: xamarin
 ms.assetid: 84B67E31-B217-443D-89E5-CFE1923CB14E
-author: bradumbaugh
-ms.author: brumbaug
+author: conceptdev
+ms.author: crdun
 ms.date: 04/16/2018
-ms.openlocfilehash: 432511a35f9f285d2c0060b5521256f834bb35ea
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 7d67b924253dfea66781f16b5f83007811de5909
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351635"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119029"
 ---
 # <a name="build-optimizations"></a>組建最佳化
 

@@ -1,31 +1,33 @@
 ---
 title: 第 1 章的摘要。 Xamarin.Forms 如何適應？
-description: 使用 Xamarin.Forms 建立行動應用程式： 第 1 章的摘要。 Xamarin.Forms 如何適應？
+description: 使用 Xamarin.Forms 建立行動應用程式：第 1 章的摘要。 Xamarin.Forms 如何適應？
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: abf30f2cd828d67ef6fb04f809fce6235e1add9b
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 58d3b3ae067913a85c3ada5f5b35e64511523ff8
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156479"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207904"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 章的摘要。 Xamarin.Forms 如何適應？
 
-> [!NOTE] 
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)
+
+> [!NOTE]
 > 在此頁面上的附註表示其中 Xamarin.Forms 有分歧活頁簿中所呈現的題材的區域。
 
 其中一個程式設計中最不愉快的作業移植程式碼基底到另一個平台，特別是當該平台牽涉到不同的程式設計語言。 當移植重新建構，程式碼時，會有嘗試，但如果必須以平行方式維持兩種平台，然後兩個程式碼基底之間的差異將使未來的維護更加困難。
 
 ## <a name="cross-platform-mobile-development"></a>跨平台行動裝置程式開發
 
-以行動平台為目標時，常會使用此問題。 目前，有兩個主要的行動平台、 Iphone 和 Ipad 執行 iOS 作業系統和各種不同的手機和平板電腦執行 Android 作業系統的 Apple 系列。 另一個重要的平台是 Microsoft 的通用 Windows 平台 (UWP)，可讓單一的程式，以 Windows 10 和 Windows 10 行動裝置為目標。
+以行動平台為目標時，常會使用此問題。 目前，有兩個主要的行動平台、 Iphone 和 Ipad 執行 iOS 作業系統和各種不同的手機和平板電腦執行 Android 作業系統的 Apple 系列。 另一個重要的平台是 Microsoft 的通用 Windows 平台 (UWP)，可讓單一的程式，以這兩個 Windows 10 為目標。
 
-想要以下列三個平台為目標的軟體廠商必須處理不同的使用者介面思維，三個不同的開發環境，三個不同的程式設計介面，並&mdash;或許是最姿&mdash;三種不同的程式設計語言： OBJECTIVE-C iPhone 與 iPad，適用於 Android、 Java 和 C# 的 Windows。
+希望這些平台為目標的軟體廠商必須處理不同的使用者介面思維，三個不同的開發環境，三個不同的程式設計介面，並&mdash;或許是最姿&mdash;三個不同的程式設計語言：OBJECTIVE-C iPhone 與 iPad，適用於 Android、 Java 和C#的 Windows。
 
 ## <a name="the-c-and-net-solution"></a>C# 和.NET 方案
 
@@ -35,32 +37,27 @@ Xamarin 目前會提供原生 Mac、 iOS 和 Android Api 使用 C# 和.NET 為�
 
 開發人員可以使用 C# 中撰寫的應用程式，該目標 Mac、 iOS 或 Android 的 Xamarin 平台。 但當以多個平台為目標，是很合理地共用相同的目標平台之間的程式碼。 這牽涉到分成 （通常包含使用者介面） 的平台相關程式碼，以及平台獨立程式碼中，這通常需要的基底.NET framework 中的程式。 此平台獨立程式碼可以是位於可攜式類別庫 (PCL) 或共用的專案，通常稱為共用資產專案或 SAP。
 
-> [!NOTE] 
+> [!NOTE]
 > .NET Standard 程式庫已取代的可攜式類別庫。 活頁簿中的所有範例程式碼已經都轉換成使用.NET 標準程式庫。
 
 ## <a name="introducing-xamarinforms"></a>Xamarin.Forms 簡介
 
-當多個行動平台為目標，則 Xamarin.Forms 可讓更多的程式碼共用。 適用於 Xamarin.Forms 撰寫的單一程式可以以五個不同的平台為目標：
+當多個行動平台為目標，則 Xamarin.Forms 可讓更多的程式碼共用。 適用於 Xamarin.Forms 撰寫的單一程式可鎖定這些平台：
 
 - iOS 的 iPhone、 iPad 及 iPod touch 上執行的程式
 - 在 Android 手機和平板電腦上執行之程式的 android
-- 通用 Windows 平台目標 Windows 10 和 Windows 10 行動裝置
-- Windows 8.1 的 Windows 執行階段 API
-- Windows Phone 8.1 的 Windows 執行階段 API
+- 目標 Windows 10 通用 Windows 平台
 
-> [!NOTE] 
-> Xamarin.Forms 也不再支援 Windows 8.1、 Windows Phone 8.1 或 Windows 10 行動裝置，但 Xamarin.Forms 應用程式執行 Windows 10 桌面上。 另外還有提供預覽支援[Mac](~/xamarin-forms/platform/mac.md)， [WPF](~/xamarin-forms/platform/wpf.md)， [GTK #](~/xamarin-forms/platform/gtk.md)，以及[Tizen](/xamarin-forms/platform/tizen.md)平台。
+> [!NOTE]
+> Xamarin.Forms 也不再支援 Windows 8.1、 Windows Phone 8.1 或 Windows 10 行動裝置，但 Xamarin.Forms 應用程式執行 Windows 10 桌面上。 另外還有提供預覽支援[Mac](~/xamarin-forms/platform/other/mac.md)， [WPF](~/xamarin-forms/platform/other/wpf.md)， [GTK #](~/xamarin-forms/platform/other/gtk.md)，以及[Tizen](~/xamarin-forms/platform/other/tizen.md)平台。
 
-大部分的 Xamarin.Forms 程式存在於文件庫 」 或 「 SAP。 每個平台所組成的小型應用程式虛設常式會呼叫此共用的程式碼。 
+大部分的 Xamarin.Forms 程式存在於文件庫 」 或 「 SAP。 每個平台所組成的小型應用程式虛設常式會呼叫此共用的程式碼。
 
 Xamarin.Forms Api 對應至每個平台上的原生控制項，讓每個平台會維持其特性的外觀及操作：
 
 [![三重的螢幕擷取畫面的平台共用的視覺效果](images/ch01fg03-small.png "每個平台上的 Xamarin.Forms 控制項")](images/ch01fg03-large.png#lightbox "Xamarin.Forms 控制項在每個平台上")
 
-從左到右顯示在 iPhone、 Android 手機和 Windows 10 行動電話螢幕擷取畫面。 
-
-> [!NOTE] 
-> Xamarin.Forms 不再支援 Windows 10 行動裝置。
+從左到右顯示在 iPhone 和 Android 手機的螢幕擷取畫面：
 
 在每個畫面上，此頁面包含 Xamarin.Forms [ `Label` ](xref:Xamarin.Forms.Label)來顯示文字[ `Button` ](xref:Xamarin.Forms.Button)用來起始動作， [ `Switch` ](xref:Xamarin.Forms.Switch)的選擇開啟/關閉的值，以及[ `Slider` ](xref:Xamarin.Forms.Slider)來指定連續的範圍內的值。 這些檢視的所有四個屬性的子系[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)上[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)。
 

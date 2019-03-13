@@ -4,15 +4,15 @@ description: 本文件說明如何建立自訂控制項，並將它與 Xamarin �
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 0097cdf006944a51d938ea91d3ea0b0c2aee08cf
-ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
+ms.openlocfilehash: 0401c2c05677c719bbe4914cc7e008b650fdd198
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39573577"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526237"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>使用 iOS 設計工具中的自訂控制項
 
@@ -25,7 +25,7 @@ ms.locfileid: "39573577"
 ## <a name="walkthrough"></a>逐步解說
 
 > [!IMPORTANT]
-> 在 Xamarin.Studio 5.5 中從開始，在其中建立自訂控制項的方式是稍有不同於舊版。 若要建立自訂控制項，即`IComponent`介面 （具有相關聯的實作方法中） 或需要的類別可以是以註解`[DesignTimeVisible(true)]`。 第二個方法是在下列範例中，逐步解說使用。
+> 在 Xamarin.Studio 5.5 中從開始，在其中建立自訂控制項的方式是稍有不同於舊版。 若要建立自訂控制項，即`IComponent`介面是必要項目 （相關聯的實作方法中） 或類別，可以使用註解`[DesignTimeVisible(true)]`。 第二個方法是在下列範例中，逐步解說使用。
 
 
 1. 建立新的方案，從**iOS > 應用程式 > 單一檢視應用程式 > C#** 範本，其命名為`ScratchTicket`，然後繼續執行 [新增專案] 精靈：

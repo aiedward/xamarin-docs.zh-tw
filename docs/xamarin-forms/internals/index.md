@@ -6,15 +6,19 @@ ms.assetid: 2273a31c-4022-42ba-befe-0d23ce2ff3b5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: 8ed643619e5a22e9a1febe419eb42d45901dec63
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.date: 03/12/2018
+ms.openlocfilehash: 77b32d823e1fd89f6b45dca73e89322e57ddc199
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350741"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898878"
 ---
 # <a name="advanced-concepts--internals"></a>進階概念與內部項目
+
+## <a name="dependency-resolutiondependency-resolutionmd"></a>[相依性解析](dependency-resolution.md)
+
+這篇文章說明如何將 Xamarin.Forms 插入的相依性解析方法，使應用程式的相依性插入容器具有控制建立和自訂轉譯器，效果的存留期和`DependencyService`實作。
 
 ## <a name="fast-renderersfast-renderersmd"></a>[快速轉譯器](fast-renderers.md)
 
@@ -23,7 +27,3 @@ ms.locfileid: "39350741"
 ## <a name="net-standardnet-standardmd"></a>[.NET Standard](net-standard.md)
 
 這篇文章說明如何使用.NET Standard 2.0 將 Xamarin.Forms 應用程式。
-
-## <a name="dependency-resolutiondependency-resolutionmd"></a>[相依性解析](dependency-resolution.md)
-
-這篇文章說明如何將 Xamarin.Forms 插入的相依性解析方法，使應用程式的相依性插入容器具有控制建立和自訂轉譯器，效果的存留期和`DependencyService`實作。

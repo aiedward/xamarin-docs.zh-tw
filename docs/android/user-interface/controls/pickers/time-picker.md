@@ -4,15 +4,15 @@ description: 選取 使用 TimePickerDialog 和 DialogFragment 時間
 ms.prod: xamarin
 ms.assetid: EB4E8206-E8AD-9F04-AC1C-82AC9364A9DD
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 85d887cba7a596226d44bc13ca7155bc4a0d03ee
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: faf2c35b49b0b02b9f3b16e19494d2e447361d84
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242299"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171647"
 ---
 # <a name="time-picker"></a>時間選擇器
 
@@ -45,7 +45,7 @@ ms.locfileid: "39242299"
 在  `TimePickerDialog`、 選取一次，然後按一下 **[確定]** 按鈕會導致`TimePickerDialog`叫用方法[IOnTimeSetListener.OnTimeSet](https://developer.xamarin.com/api/member/Android.App.TimePickerDialog+IOnTimeSetListener.OnTimeSet/p/Android.Widget.TimePicker/System.Int32/System.Int32/System.Int32/)。
 此介面由裝載實作`DialogFragment`(`TimePickerFragment`，如下所述)。 按一下 **取消**按鈕會導致片段，以關閉對話方塊。
 
-`DialogFragment` 會在選取的時間傳回裝載的 Actvity 三種方式之一︰
+`DialogFragment` 傳回所裝載的活動，其中三種方式，在選取的時間：
 
 1. **叫用方法或設定屬性**&ndash;活動可以提供的屬性或方法專為設定此值。
 
@@ -279,7 +279,7 @@ is24HourFormat = true;
 
 [![在 24 小時制的 TimePicker 對話方塊](time-picker-images/05-24hr-time-dialog-sml.png)](time-picker-images/05-24hr-time-dialog.png#lightbox)
 
-因為處理常式會呼叫[DateTime.ToShortTimeString](https://msdn.microsoft.com/en-us/library/system.datetime.toshortdatestring%28v=vs.110%29.aspx)列印至活動的時間`TextView`，時間仍會列印預設 12 小時制的小時 AM/PM。
+因為處理常式會呼叫[DateTime.ToShortTimeString](xref:System.DateTime.ToShortDateString*)列印至活動的時間`TextView`，時間仍會列印預設 12 小時制的小時 AM/PM。
 
 
 

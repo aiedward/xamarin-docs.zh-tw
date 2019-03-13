@@ -4,21 +4,21 @@ description: 本文討論如何在 Xamarin.iOS 中使用的進度和活動的指
 ms.prod: xamarin
 ms.assetid: 7AA887E4-51F7-4867-82C5-A8D2EA48AE07
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: 24ad47bd37693eccf38033159acef72a9d4942be
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: d39170d0109d7f81d3f02ec36381ebcd46c0143d
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242175"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233519"
 ---
 # <a name="progress-and-activity-indicators-in-xamarinios"></a>進度和活動在 Xamarin.iOS 中的指標
 
 很可能您的應用程式必須執行長時間執行工作，例如載入或處理資料，和此延遲可能會延遲導致更新您的 UI。 在這段期間您應該一律使用進度列指示器來 reassure 系統正在執行工作的使用者。 這可讓使用者控制的應用程式正在處理其要求，它不是正在等候其輸入，而且可以提供一種詳述他們不必等候的時間長度完全。
 
-iOS 提供兩種主要的方式，來提供此應用程式中的進度指示： 活動的指標 (包括特定_網路_活動指示器) 和進度列。
+iOS 提供兩個主要的方式，來提供此應用程式中的進度指示：活動的指標 (包括特定_網路_活動指示器) 和進度列。
 
 ## <a name="activity-indicator"></a>活動指示器
 
@@ -32,7 +32,7 @@ Apple 會有下列建議使用活動的指標：
 
 ### <a name="implementing-an-activity-indicator"></a>實作的活動指標
 
-透過實作活動指示器[ `UIActivityIndictorView` ](https://developer.xamarin.com/api/type/UIKit.UIActivityIndicatorView/)類別，表示`UIActivity`正在進行。
+透過實作活動指示器[ `UIActivityIndictorView` ](xref:UIKit.UIActivityIndicatorView)類別，表示`UIActivity`正在進行。
 
 ### <a name="activity-indicators-and-storyboards"></a>活動的指標和分鏡腳本
 
@@ -68,7 +68,7 @@ Apple 有進度列所使用的下列建議：
 
 ### <a name="implementing-an-progress-bar"></a>實作進度列
 
-進度列由具現化 [`UIProgressView`](https://developer.xamarin.com/api/type/UIKit.UIProgressView/)
+進度列由具現化 [`UIProgressView`](xref:UIKit.UIProgressView)
 
 ### <a name="progress-bars-and-storyboards"></a>進度列和分鏡腳本
 

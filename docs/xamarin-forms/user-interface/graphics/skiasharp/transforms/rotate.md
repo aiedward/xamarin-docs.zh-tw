@@ -4,17 +4,19 @@ description: 本文將探討的效果和動畫設有 SkiaSharp 旋轉轉換，�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 1f34c64ca7c1bc9d0d0202f35602976364ab6075
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 399f19ba4ec1ed8494e8269fc4cd0682b466a31a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615245"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056551"
 ---
 # <a name="the-rotate-transform"></a>旋轉轉換
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _瀏覽的效果和動畫設有 SkiaSharp 旋轉轉換_
 
@@ -22,7 +24,7 @@ _瀏覽的效果和動畫設有 SkiaSharp 旋轉轉換_
 
 ![](rotate-images/rotateexample.png "旋轉中心周圍的文字")
 
-輪替 SkiaSharp 同時支援點 （0，0），周圍的圖形物件[ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/)方法和[ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/)方法：
+輪替 SkiaSharp 同時支援點 （0，0），周圍的圖形物件[ `RotateDegrees` ](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single))方法和[ `RotateRadians` ](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single))方法：
 
 ```csharp
 public void RotateDegrees (Single degrees)
@@ -30,9 +32,9 @@ public void RotateDegrees (Single degrees)
 public Void RotateRadians (Single radians)
 ```
 
-360 度的圓形等同於 2 π 弧度為單位，因此很容易的兩個單位之間轉換。 使用兩者中較方便。 在靜態所有三角函數[ `Math` ](xref:System.Math)類別都使用弧度為單位的單位。
+360 度的圓形等同於 twoπ 弧度為單位，因此很容易的兩個單位之間轉換。 使用兩者中較方便。 在.NET 中的所有三角函數[ `Math` ](xref:System.Math)類別都使用弧度為單位的單位。
 
-輪替是增加角度的順時針旋轉。 （雖然在笛卡兒座標系統是依照慣例以逆時針方向，順時針旋轉，是配合增加移往下的 Y 座標）。負的角度及大於允許 360 度的角度。
+輪替是增加角度的順時針旋轉。 （雖然在笛卡兒座標系統是依照慣例以逆時針方向，順時針旋轉，是配合 SkiaSharp 與向下遞增的 Y 座標）。負的角度及大於允許 360 度的角度。
 
 旋轉轉換公式是更複雜，比翻譯和小數位數。 Α 的角度，轉換公式是：
 
@@ -40,7 +42,7 @@ x' = x•cos(α) – y•sin(α)
 
 y` = x•sin(α) + y•cos(α)
 
-**基本旋轉**頁面會示範`RotateDegrees`方法。 [ `BasicRotate.xaml.cs` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs)檔案會置於頁面與其基準線顯示一些文字，並且將它根據旋轉`Slider`–360 到 360 的範圍。 以下是相關的部分`PaintSurface`處理常式：
+**基本旋轉**頁面會示範`RotateDegrees`方法。 [ **BasicRotate.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs)檔案會置於頁面與其基準線顯示一些文字，並且將它根據旋轉`Slider`–360 到 360 的範圍。 以下是相關的部分`PaintSurface`處理常式：
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -60,7 +62,7 @@ using (SKPaint textPaint = new SKPaint
 
 [![](rotate-images/basicrotate-small.png "基本旋轉頁面的三個螢幕擷取畫面")](rotate-images/basicrotate-large.png#lightbox "基本旋轉頁面的三個螢幕擷取畫面")
 
-通常您會想要旋轉項目集中使用這些版本的指定的樞紐分析點周圍[ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/System.Single/System.Single/)並[ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/System.Single/System.Single/)方法：
+通常您會想要旋轉項目集中使用這些版本的指定的樞紐分析點周圍[ `RotateDegrees` ](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single,System.Single,System.Single))並[ `RotateRadians` ](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single,System.Single,System.Single))方法：
 
 ```csharp
 public void RotateDegrees (Single degrees, Single px, Single py)
@@ -88,13 +90,13 @@ using (SKPaint textPaint = new SKPaint
 
 [![](rotate-images/centeredrotate-small.png "置中對齊旋轉頁面的三個螢幕擷取畫面")](rotate-images/centeredrotate-large.png#lightbox "置中對齊旋轉頁面的三個螢幕擷取畫面")
 
-如同的置中新版`Scale`方法、 置中對齊的`RotateDegrees`呼叫是捷徑：
+如同的置中新版`Scale`方法、 置中對齊的`RotateDegrees`呼叫是捷徑。 以下是方法：
 
 ```csharp
 RotateDegrees (degrees, px, py);
 ```
 
-這個運算式就相當於下列運算式：
+該呼叫就相當於下列各項：
 
 ```csharp
 canvas.Translate(px, py);
@@ -180,7 +182,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-`xCenter`和`yCenter`值，表示畫布的正中央。 `yText`值是有點自的位移。 這表示，因此它是真正垂直置中對齊頁面上定位文字時所需的 Y 座標。 `for`迴圈，然後將置於畫布中央的旋轉。 輪替是以 30 度的遞增量。 使用來繪製文字`yText`值。 在詞彙之前的空格數目"旋轉"`text`值已確定廣為人知之間建立連線這些 12 的文字字串看起來似乎 dodecagon。
+`xCenter`和`yCenter`值，表示畫布的正中央。 `yText`值是有點自的位移。 這個值是必要，因此它是真正垂直置中對齊頁面上放置文字的 Y 座標。 `for`迴圈，然後將根據畫布的正中央的旋轉。 輪替是以 30 度的遞增量。 使用來繪製文字`yText`值。 在詞彙之前的空格數目"旋轉"`text`值已確定廣為人知之間建立連線這些 12 的文字字串看起來似乎 dodecagon。
 
 若要簡化此程式碼之一是將執行迴圈之後, 每次增加 30 度的旋轉角度`DrawText`呼叫。 這就不需要呼叫`Save`和`Restore`。 請注意，`degrees`主體內不再使用變數`for`區塊：
 
@@ -253,7 +255,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`revolveDegrees`和`rotateDegrees`欄位有動畫效果。 此程式會使用以 Xamarin.Forms 為基礎的不同動畫技術`Animation`類別。 (這個類別所述[第 22 章*使用 Xamarin.Forms 建立行動應用程式*](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf))`OnAppearing`覆寫會建立兩個`Animation`物件使用回呼方法，然後再呼叫`Commit`對其動畫持續時間：
+`revolveDegrees`和`rotateDegrees`欄位有動畫效果。 此程式會使用不同的動畫技術以 Xamarin.Forms 為基礎[ `Animation` ](xref:Xamarin.Forms.Animation)類別。 (這個類別所述[第 22 章*使用 Xamarin.Forms 建立行動應用程式*](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf))`OnAppearing`覆寫會建立兩個`Animation`物件使用回呼方法，然後再呼叫`Commit`對其動畫持續時間：
 
 ```csharp
 protected override void OnAppearing()
@@ -271,7 +273,7 @@ protected override void OnAppearing()
 }
 ```
 
-第一個`Animation`物件以動畫顯示`revolveDegrees`從 0 到 360 度超過 10 秒。 第二個動畫`rotateDegrees`從 0 到 360 度每隔 1 秒，也介面失效產生另一個呼叫`PaintSurface`處理常式。 `OnDisappearing`覆寫會取消這些兩個動畫：
+第一個`Animation`物件以動畫顯示`revolveDegrees`從 0 到 360 度超過 10 秒的角度。 第二個動畫`rotateDegrees`從 0 到 360 度的角度每隔 1 秒，也介面失效產生另一個呼叫`PaintSurface`處理常式。 `OnDisappearing`覆寫會取消這些兩個動畫：
 
 ```csharp
 protected override void OnDisappearing()
@@ -311,9 +313,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
         ...
     }
 }
+```
 
-```csharp
-There are 60 marks of two different sizes that must be drawn in a circle around the clock. The `DrawCircle` call draws that circle at the point (0, –90), which relative to the center of the clock corresponds to 12:00. The `RotateDegrees` call increments the rotation angle by 6 degrees after every tick mark. The `angle` variable is used solely to determine if a large circle or a small circle is drawn:
+有一些必須全天候繪製圓形中的兩個不同大小的 60 標記。 `DrawCircle`呼叫繪製該圓點 （0，一來-90），其相對於時鐘的中心對應至 12:00。 `RotateDegrees`呼叫之後每個刻度遞增 6 度的旋轉角度。 `angle`變數僅用來判斷是否繪製大圓形或小圓圈：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -366,8 +368,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](rotate-images/uglyanalogclock-small.png "三倍不美觀的類比時鐘文字頁面的螢幕擷取畫面")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
 
+在更吸引人的時鐘，請參閱文章[ **SVG 路徑資料在 SkiaSharp**](../curves/path-data.md)。
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

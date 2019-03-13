@@ -1,54 +1,56 @@
 ---
-title: 正在載入應用程式資源影片
-description: 本文說明如何載入視訊儲存為影片播放器應用程式，使用 Xamarin.Forms 中的應用程式資源。
+title: 載入應用程式資源影片
+description: 本文說明如何使用 Xamarin.Forms，載入儲存在視訊播放器應用程式中作為應用程式資源的影片。
 ms.prod: xamarin
 ms.assetid: F75BD540-9354-4C17-A119-57F3DEC66D54
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: f28b0dc8e25cb2e498f4101175005f05a5c5a6ef
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: MT
+ms.openlocfilehash: 0fb9ed06ef58c4350f479021f0c18e48c693cf7f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241028"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059878"
 ---
-# <a name="loading-application-resource-videos"></a>正在載入應用程式資源影片
+# <a name="loading-application-resource-videos"></a>載入應用程式資源影片
 
-自訂轉譯器，如`VideoPlayer`檢視都能播放視訊檔已內嵌在個別的平台專案中，為應用程式資源。 不過，目前版本的`VideoPlayer`無法存取的標準.NET 程式庫中內嵌資源。
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
-若要載入這些資源，建立的執行個體`ResourceVideoSource`藉由設定`Path`檔名 （或資料夾和檔案名稱） 之資源的屬性。 或者，您可以呼叫靜態`VideoSource.FromResource`參考這個資源的方法。 然後，設定`ResourceVideoSource`物件`Source`屬性`VideoPlayer`。
+用於 `VideoPlayer` 檢視的自訂轉譯器，可以播放內嵌在個別平台專案中作為應用程式資源的視訊檔案。 不過，目前的 `VideoPlayer` 版本無法存取內嵌在 .NET Standard 程式庫中的資源。
+
+若要載入這些資源，請將 `Path` 屬性設成資源的檔案名稱 (或資料夾與檔案名稱) 來建立 `ResourceVideoSource` 的執行個體。 或者，您也可以呼叫靜態的 `VideoSource.FromResource` 方法來參考這個資源。 然後，將 `ResourceVideoSource` 物件設為 `VideoPlayer` 的 `Source` 屬性。
 
 ## <a name="storing-the-video-files"></a>儲存視訊檔案
 
-不同的三個平台為平台專案中儲存視訊檔案：
+在平台專案中儲存視訊檔案，因平台而異。
 
-### <a name="ios-video-resources"></a>iOS 視訊資源
+### <a name="ios-video-resources"></a>iOS 影片資源
 
-在 iOS 專案中，您可以儲存在視訊**資源**資料夾或子資料夾的**資源**資料夾。 視訊檔案必須具有`Build Action`的`BundleResource`。 設定`Path`屬性`ResourceVideoSource`為檔案名稱，例如**MyFile.mp4**中檔案**資源**資料夾，或**MyFolder/MyFile.mp4**，其中**MyFolder**是子資料夾的**資源**。
+在 iOS 專案中，您可將影片儲存在 **Resources** 資料夾或 **Resources** 資料夾的子資料夾中。 視訊檔案必須具有 `BundleResource` 的 `Build Action`。 將 `ResourceVideoSource` 的 `Path` 屬性設成檔案名稱，例如 **Resources** 資料夾中的檔案為 **MyFile.mp4** 或 **MyFolder/MyFile.mp4**，其中 **MyFolder** 是 **Resources** 的子資料夾。
 
-在**VideoPlayerDemos**方案， **VideoPlayerDemos.iOS**專案包含的子資料夾**資源**名為**視訊**包含名為**iOSApiVideo.mp4**。 這段簡短的影片示範如何使用 Xamarin 網站上找出適用於 iOS 的文件`AVPlayerViewController`類別。
+在 **VideoPlayerDemos** 解決方案中，**VideoPlayerDemos.iOS** 專案有個 **Resources** 的子資料夾名為 **Videos**，其包含名為 **iOSApiVideo.mp4** 的檔案。 這部短片會示範如何使用 Xamarin 網站尋找適用於 iOS `AVPlayerViewController` 類別的文件。
 
-### <a name="android-video-resources"></a>Android 的視訊資源
+### <a name="android-video-resources"></a>Android 影片資源
 
-在 Android 專案中，影片必須儲存在子資料夾**資源**名為**原始**。 **原始**資料夾不能包含子資料夾。 授與視訊檔案`Build Action`的`AndroidResource`。 設定`Path`屬性`ResourceVideoSource`為檔案名稱，例如**MyFile.mp4**。
+在 Android 專案中，影片必須儲存在 **Resources** 的 **raw** 子資料夾中。 **raw** 資料夾不能包含子資料夾。 提供視訊檔案 `AndroidResource` 的 `Build Action`。 將 `ResourceVideoSource` 的 `Path` 屬性設成檔案名稱，例如 **MyFile.mp4**。
 
-**VideoPlayerDemos.Android**專案包含的子資料夾**資源**名為**原始**，其中包含名為**AndroidApiVideo.mp4**.
+**VideoPlayerDemos.Android** 專案包含 **Resources** 的 **raw** 子資料夾，其包含名為 **AndroidApiVideo.mp4** 的檔案。
 
-### <a name="uwp-video-resources"></a>UWP 視訊資源
+### <a name="uwp-video-resources"></a>UWP 影片資源
 
-在通用 Windows 平台專案中，您可以儲存在專案中的任何資料夾中的視訊。 提供檔案`Build Action`的`Content`。 設定`Path`屬性`ResourceVideoSource`資料夾和檔案名稱，例如**MyFolder/MyVideo.mp4**。
+在通用 Windows 平台專案中，您可將影片儲存在專案中的任何資料夾中。 提供將檔案 `Content` 的 `Build Action`。 將 `ResourceVideoSource` 的 `Path` 屬性設成資料夾和檔案名稱，例如 **MyFolder/MyVideo.mp4**。
 
-**VideoPlayerDemos.UWP**專案包含名為的資料夾**視訊**檔案**UWPApiVideo.mp4**。
+**VideoPlayerDemos.UWP** 專案包含名為 **Videos** 的資料夾，其具有 **UWPApiVideo.mp4** 檔案。
 
-## <a name="loading-the-video-files"></a>載入的視訊檔案
+## <a name="loading-the-video-files"></a>載入視訊檔案
 
-每個平台轉譯器類別包含程式碼，在其`SetSource`載入視訊檔案儲存成資源的方法。
+每個平台轉譯器類別在其 `SetSource` 方法中都包含程式碼，以載入儲存為資源的視訊檔案。
 
-### <a name="ios-resource-loading"></a>Io 資源載入
+### <a name="ios-resource-loading"></a>iOS 資源載入
 
-IOS 版本`VideoPlayerRenderer`使用`GetUrlForResource`方法`NSBundle`載入資源。 完整路徑必須分成檔名、 延伸模組和目錄。 程式碼會使用`Path`中.NET 類別`System.IO`分配到這些元件的檔案路徑的命名空間：
+iOS 版 `VideoPlayerRenderer` 會使用 `NSBundle` 的 `GetUrlForResource` 方法載入資源。 完整路徑必須分割成檔案名稱、副檔名和目錄。 程式碼會在 .NET `System.IO` 命名空間中使用 `Path` 類別，將檔案路徑分割成這些元件：
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -64,7 +66,7 @@ namespace FormsVideoLibrary.iOS
             {
                 string path = (Element.Source as ResourceVideoSource).Path;
 
-                if (!String.IsNullOrWhitespace(path))
+                if (!String.IsNullOrWhiteSpace(path))
                 {
                     string directory = Path.GetDirectoryName(path);
                     string filename = Path.GetFileNameWithoutExtension(path);
@@ -80,9 +82,9 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-### <a name="android-resource-loading"></a>Android 的資源載入
+### <a name="android-resource-loading"></a>Android 資源載入
 
-在 Android`VideoPlayerRenderer`用來建構檔案名稱和封裝名稱`Uri`物件。 封裝名稱是應用程式名稱在此情況下**VideoPlayerDemos.Android**，這可以取自靜態`Context.PackageName`屬性。 產生`Uri`物件隨後會傳遞至`SetVideoURI`方法`VideoView`:
+Android 版 `VideoPlayerRenderer` 會使用檔案名稱和套件名稱來建構 `Uri` 物件。 套件名稱是應用程式的名稱，在本案例中為 **VideoPlayerDemos.Android**，其可從靜態的 `Context.PackageName` 屬性中取得。 然後將結果 `Uri` 物件傳遞至 `VideoView` 的 `SetVideoURI` 方法：
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -117,7 +119,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="uwp-resource-loading"></a>UWP 資源載入
 
-UWP`VideoPlayerRenderer`建構`Uri`路徑的物件並將其設`Source`屬性`MediaElement`:
+UWP `VideoPlayerRenderer` 建構了路徑的 `Uri` 物件，並將它設定為 `MediaElement` 的 `Source` 屬性：
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -147,7 +149,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="playing-the-resource-file"></a>播放資源檔
 
-**播放的視訊資源**頁面**VideoPlayerDemos**解決方案會使用`OnPlatform`類別，以指定每個平台的視訊檔案：
+**VideoPlayerDemos** 解決方案中的 [Play Video Resource] \(播放視訊資源\) 頁面會使用 `OnPlatform` 類別指定每個平台的視訊檔案：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -171,15 +173,15 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-如果 iOS 資源儲存在**資源**資料夾中，如果 UWP 資源儲存在專案的根資料夾中，您可以使用相同的檔名三個平台。 如果是這樣，則您可以直接設定該名稱`Source`屬性`VideoPlayer`。
+如果 iOS 資源儲存在 **Resources** 資料夾中，而 UWP 資源儲存在專案的根資料夾中，則每個平台可以使用相同的檔案名稱。 如果是這種情況，您就可以直接將該名稱設成 `VideoPlayer` 的 `Source` 屬性。
 
-以下是三個平台上執行該頁面：
+以下是正在執行的頁面：
 
-[![播放視訊資源](loading-resources-images/playvideoresource-small.png "播放視訊資源")](loading-resources-images/playvideoresource-large.png#lightbox "播放視訊的資源")
+[![播放視訊資源](loading-resources-images/playvideoresource-small.png "播放視訊資源")](loading-resources-images/playvideoresource-large.png#lightbox "播放視訊資源")
 
-您現在已經瞭解如何[從 Web URI 載入視訊](web-videos.md)以及如何播放內嵌的資源。 此外，您可以[載入從裝置的視訊媒體櫃的影片](accessing-library.md)。
+您現在已了解如何[從 Web URI 載入影片](web-videos.md)，以及如何播放內嵌的資源。 此外，您可以[從裝置的影片櫃載入影片](accessing-library.md)。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [視訊播放程式示範 （範例）](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) (視訊播放程式示範 (範例))

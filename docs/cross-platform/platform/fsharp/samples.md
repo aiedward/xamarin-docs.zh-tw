@@ -1,39 +1,39 @@
 ---
-title: '適用於 Xamarin F # 範例'
-description: 'F # 可以用來建置 Xamarin 應用程式。 此文件會連結到各種 iOS、 Mac 和 Xamarin.Forms 的範例撰寫 F # 中的 Xamarin 應用程式專案。'
+title: F#適用於 Xamarin 的範例
+description: F#可用來建置 Xamarin 應用程式。 這份文件連結到各種不同的 iOS、 Mac 和 Xamarin.Forms 範例 Xamarin 應用程式專案中撰寫F#。
 ms.prod: xamarin
 ms.assetid: 8A355636-DE60-45BC-B988-1967755FDD28
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 316ec2d6991adbb187b7158f9bf9e0c1426e3c7d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 7ca7f2d88e2330ffc55f7b2629f1ea6c35733fbd
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781016"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233606"
 ---
-# <a name="f-samples-for-xamarin"></a>適用於 Xamarin F # 範例
+# <a name="f-samples-for-xamarin"></a>F#適用於 Xamarin 的範例
 
-此頁面會連結至使用 Xamarin 某些 F # 範例。
+此頁面會連結到部分F#使用 Xamarin 的範例。
 
 ## <a name="ios"></a>iOS
 
-[FSSceneKit 縣 （市)](https://developer.xamarin.com/samples/monotouch/ios8/FSSceneKit/)範例示範如何建立使用隨機產生的縣 （市） [SceneKit](https://developer.xamarin.com/api/namespace/SceneKit/)和 F #。 另外還有["Oculus Thrift 」 （Google 黏貼） 版本](https://developer.xamarin.com/samples/monotouch/ios8/SceneKitFSharp/)。
+[FSSceneKit 城市](https://developer.xamarin.com/samples/monotouch/ios8/FSSceneKit/)範例示範如何建立使用隨機產生的城市[SceneKit](xref:SceneKit)和F#。 另外還有["Oculus Thrift 」 （Google 黏貼） 版本](https://developer.xamarin.com/samples/monotouch/ios8/SceneKitFSharp/)。
 
-[![](samples-images/fxscenekit-sml.png "Theres 也 Oculus Thrift Google 黏貼版本")](samples-images/fxscenekit.png#lightbox)
+[![](samples-images/fxscenekit-sml.png "實踐也 Oculus Thrift Google 黏貼版本")](samples-images/fxscenekit.png#lightbox)
 
-[淺層](https://github.com/dvdsgl/shallow)示範有趣撥動-使用者介面使用 F # 建置 ios。
+[淺層](https://github.com/dvdsgl/shallow)示範有趣撥動-使用者介面以建置F#適用於 iOS。
 
 ## <a name="mac"></a>Mac
 
-[FSEvent 監看員](https://developer.xamarin.com/samples/mac/FSEvents/)是以 F # 範例 Mac OS X 應用程式。
+[FSEvent 監看員](https://developer.xamarin.com/samples/mac/FSEvents/)範例的 Mac OS X 應用程式寫入F#。
 
-[![](samples-images/fsevents-sml.png "FSEvent 監看員是以 F # 範例 Mac OS X 應用程式")](samples-images/fsevents.png#lightbox)
+[![](samples-images/fsevents-sml.png "FSEvent 監看員是撰寫的 Mac OS X 應用程式範例F#")](samples-images/fsevents.png#lightbox)
 
 ## <a name="xamarinforms"></a>Xamarin.Forms
 
-取樣數[Xamarin.Forms 書籍](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)已移植到 F #。 這些連結會帶領您前往 github 位置，每一章：
+適用於範例的數目[Xamarin.Forms book](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)已移植到F#。 這些連結會帶您前往 github 位置的每個章節：
 
 - [第 2 章。應用程式剖析](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
 - [第 3 章。Deeper into text](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/FS)

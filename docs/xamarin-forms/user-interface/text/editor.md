@@ -6,15 +6,17 @@ ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/13/2018
-ms.openlocfilehash: 6e3cf12431440823b1d32d91927bc634f60fd5e2
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 02/26/2018
+ms.openlocfilehash: 3131963efa3d4ba4de9ff63c741c276a62e9d12d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270452"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670411"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms 編輯器
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
 
 _多行文字輸入_
 
@@ -44,6 +46,34 @@ var MyEditor = new Editor { Text = "I am an Editor" };
 ```csharp
 var text = MyEditor.Text;
 ```
+
+### <a name="setting-placeholder-text"></a>設定預留位置文字
+
+[ `Editor` ](xref:Xamarin.Forms.Editor)可以設定為顯示預留位置文字，它不會儲存使用者輸入時。 這可以藉由設定[ `Placeholder` ](xref:Xamarin.Forms.Editor.Placeholder)屬性設`string`，和通常用來表示的內容適用於類型`Editor`。 此外，控制的預留位置文字的色彩，藉由設定[ `PlaceholderColor` ](xref:Xamarin.Forms.Editor.PlaceholderColor)屬性設[ `Color` ](xref:Xamarin.Forms.Color):
+
+```xaml
+<Editor Placeholder="Enter text here" PlaceholderColor="Olive" />
+```
+
+```csharp
+var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Color.Olive };
+```
+
+### <a name="preventing-text-entry"></a>防止文字項目
+
+可以防止使用者修改中的文字[ `Editor` ](xref:Xamarin.Forms.Editor) splittunneling`IsReadOnly`屬性，其預設值的`false`至`true`:
+
+```xaml
+<Editor Text="This is a read-only Editor"
+        IsReadOnly="true" />
+```
+
+```csharp
+var editor= new Editor { Text = "This is a read-only Editor", IsReadOnly = true });
+```
+
+> [!NOTE]
+> `IsReadonly`屬性不會改變的視覺外觀[ `Editor`](xref:Xamarin.Forms.Editor)不同的是`IsEnabled`也會變更的視覺外觀的屬性`Editor`為灰色。
 
 ### <a name="limiting-input-length"></a>限制的輸入的長度
 
@@ -157,6 +187,23 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 > [!NOTE]
 > 當[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性設定為`false`，並在不使用自訂的鍵盤，將會停用原生的拼字檢查工具。 不過，如果[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)具有已設定，以停用拼字檢查，例如[ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat)，則`IsSpellCheckEnabled`屬性會被忽略。 因此，無法使用屬性來啟用拼字檢查`Keyboard`，明確地停用。
 
+### <a name="enabling-and-disabling-text-prediction"></a>啟用和停用文字預測
+
+`IsTextPredictionEnabled`屬性會控制是否文字預測和自動啟用文字更正。 根據預設，此屬性設為`true`。 當使用者輸入文字，則會看到文字預測。
+
+不過，某些文字項目的情況下，例如輸入使用者名稱、 文字預測和文字自動更正提供負的體驗和藉由設定，應該停用`IsTextPredictionEnabled`屬性設`false`:
+
+```xaml
+<Editor ... IsTextPredictionEnabled="false" />
+```
+
+```csharp
+var editor = new Editor { ... IsTextPredictionEnabled = false };
+```
+
+> [!NOTE]
+> 當`IsTextPredictionEnabled`屬性設定為`false`，，而不是自訂的鍵盤用文字預測和自動文字更正已停用。 不過，如果[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)已設定該停用文字預測`IsTextPredictionEnabled`屬性會被忽略。 因此，無法使用屬性來啟用文字預測`Keyboard`，明確地停用。
+
 ### <a name="colors"></a>色彩
 
 `Editor` 可以設定為使用自訂的背景色彩透過`BackgroundColor`屬性。 特別是為了確保會在每個平台上的可用色彩。 因為每個平台都有不同的預設值的文字色彩，您可能需要設定每個平台自訂的背景色彩。 請參閱[使用平台調整](~/xamarin-forms/platform/device.md)如需有關最佳化每個平台的 UI。
@@ -211,6 +258,9 @@ public partial class EditorPage : ContentPage
 
 - [TextChanged](xref:Xamarin.Forms.Editor.TextChanged) &ndash;在編輯器中的文字變更時引發。 變更之前和之後，請提供的文字。
 - [已完成](xref:Xamarin.Forms.Editor.Completed)&ndash;使用者已結束輸入鍵盤上按 return 鍵時引發。
+
+> [!NOTE]
+> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)類別，從其中[ `Entry` ](xref:Xamarin.Forms.Entry)繼承，也有[ `Focused` ](xref:Xamarin.Forms.VisualElement.Focused)並[ `Unfocused` ](xref:Xamarin.Forms.VisualElement.Unfocused)事件。
 
 ### <a name="completed"></a>已完成
 

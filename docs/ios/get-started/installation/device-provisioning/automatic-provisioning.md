@@ -6,13 +6,14 @@ ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 05/22/2018
-ms.openlocfilehash: a0c3179dc8e349c23d5521230e0957d1be9384ec
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.custom: video
+ms.date: 01/22/2019
+ms.openlocfilehash: 9f198336d3fc9cca3bc79c377749a1211ebbac55
+ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986183"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54479676"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS 的自動佈建
 
@@ -20,12 +21,12 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 
 ## <a name="requirements"></a>需求
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 - Visual Studio for Mac 7.3 或更新版本
 - Xcode 9 或更新版本
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 - Visual Studio 2017 15.7 版 (或更新版本)
 
@@ -40,22 +41,26 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 在您啟動自動簽署程序之前，應該先確定已在 Visual Studio 中新增應用程式識別碼，如 [Apple 帳戶管理](~/cross-platform/macios/apple-account-management.md)指南所述。 新增「應用程式識別碼」之後，您可以使用任何關聯的「小組」。 這可讓您針對小組建立憑證、設定檔及其他識別碼。 小組識別碼也會用來建立將包含在佈建設定檔中之「應用程式識別碼」的前置詞。 有了這項資訊，便可讓 Apple 驗證您與所宣稱的身分識別相符。
 
 > [!IMPORTANT]
-> 開始之前，請務必登入 [iTunes Connect](https://itunesconnect.apple.com/) 或 [appleid.apple.com](https://appleid.apple.com)，以檢查您是否已經接受最新的 Apple 帳戶原則。 如果出現提示，請完成步驟，以接受來自 Apple 的任何新帳戶合約。 如果您不接受自 2018 年 5 月起的隱私權合約，便會在佈建裝置時收到以下警示：
+> 開始之前，請務必登入 [iTunes Connect](https://itunesconnect.apple.com/) 或 [appleid.apple.com](https://appleid.apple.com)，以檢查您是否已經接受最新的 Apple 帳戶原則。 如果出現提示，請完成步驟，以接受來自 Apple 的任何新帳戶合約。 如果您不接受自 2018 年 5 月起的隱私權合約，即會在嘗試佈建裝置時看到下列其中一個警示：
 > ```
 > Unexpected authentication failure. Reason: {
 > "authType" : "sa"
->}
->```
+> }
+> ```
+> 或
+> ```
+> Authentication Service Is Unavailable
+> ```
 
 若要自動簽署應用程式以在 iOS 裝置上部署，請執行下列動作：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在 Visual Studio for Mac 中開啟 iOS 專案。
 
 2. 開啟 **Info.plist** 檔案。
 
-3. 在 [簽署] 區段中，選擇 [自動化佈建]：
+3. 在 [簽署] 區段，選取 [自動佈建]：
 
     ![[小組] 選取器下拉式清單](automatic-provisioning-images/image2.png)
 
@@ -67,7 +72,7 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 
     如果自動簽署失敗，**自動簽署台**將會顯示該錯誤的原因。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 依[與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南所述配對 Visual Studio 2017 和 Mac。
 
@@ -99,6 +104,30 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
     - 系統會將此功能新增至應用程式識別碼，並產生一個含有此更新過之應用程式識別碼的新佈建設定檔。
     - 目前並非所有功能都受到支援。 如需有關所支援功能的詳細資訊，請參閱[使用功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南。
 
+## <a name="wildcard-app-ids"></a>萬用字元應用程式識別碼
+
+從 Visual Studio for Mac 7.6 開始，自動佈建功能預設會嘗試建立並使用萬用字元應用程式識別碼和佈建設定檔，而不是明確的應用程式識別碼 (其根據 **Info.plist** 檔案中指定的**套件組合識別碼**)。 萬用字元應用程式識別碼可減少要在 Apple Developer 入口網站中維護的設定檔和識別碼數目。
+
+在某些情況下，應用程式的權利需要明確的應用程式識別碼。 下列權利不支援萬用字元應用程式識別碼：
+
+- 應用程式群組
+- 相關聯的網域
+- Apple Pay
+- Game Center
+- HealthKit
+- HomeKit
+- 作用區
+- 在應用程式內購買
+- 多重路徑
+- NFC
+- 個人 VPN
+- 推播通知
+- 無線配件組態
+
+如果您的應用程式使用其中一個權利，Visual Studio for Mac 就會嘗試建立明確 (而不是萬用字元) 的應用程式識別碼。
+
+> [!NOTE]
+> 使用萬用字元應用程式識別碼的自動佈建目前僅適用於 Visual Studio for Mac。
 
 ## <a name="related-links"></a>相關連結
 
@@ -106,3 +135,9 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 - [應用程式散發](~/ios/deploy-test/app-distribution/index.md)
 - [疑難排解](~/ios/deploy-test/troubleshooting.md)
 - [Apple - 應用程式散發指南](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html) \(英文\)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-Simplified-iOS-Provisioning-in-Visual-Studio-with-fastlane/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

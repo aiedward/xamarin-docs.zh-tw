@@ -1,26 +1,27 @@
 ---
-title: 浮點運算中 Xamarin.iOS
-description: 本文件描述 Xamarin.iOS 處理 32 位元和 64 位元精確度浮點運算的方式，並討論相關聯的效能影響。
+title: 在 Xamarin.iOS 中浮點數作業
+description: 本文件說明 Xamarin.iOS 的 32 位元和 64 位元精確度浮點數作業的處理方式，並討論相關聯的影響效能。
 ms.prod: xamarin
 ms.assetid: 003F25C1-B430-4339-9C95-7DF527EBC699
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.openlocfilehash: ea5d69b52cbd4c76abb236bd1a272633dde440b7
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.date: 11/25/2015
+ms.openlocfilehash: 28002ddbab80445757be907b5d9f1cc02fdefd9d
+ms.sourcegitcommit: ee626f215de02707b7a94ba1d0fa1d75b22ab84f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786157"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54879351"
 ---
-# <a name="floating-point-operations-in-xamarinios"></a>浮點運算中 Xamarin.iOS
+# <a name="floating-point-operations-in-xamarinios"></a>在 Xamarin.iOS 中浮點數作業
 
-Xamarin.iOS 依預設會執行 32 位元和 64 位元浮點運算 on ARM 使用 64 位元有效位數。  
+Xamarin.iOS 預設會執行 32 位元和 64 位元浮點作業在 ARM 上使用 64 位元精確度。  
 
-從浮點運算在 C# 中，在桌面上，行動裝置上, 預期的開發人員更接近此較高的精確度時可能十分顯著的效能影響。
+開發人員預期從浮點數作業，在更接近這個較高的有效位數時C#在桌面上，行動裝置的效能影響可能更為顯著。
 
-很可能要使用 32 位元浮點運算將 32 位元浮點點程式碼編譯。  若要這樣做，您需要使用至少 Xamarin.iOS 8.10 和設定您的 iOS 上建置選項的面板"mtouch 多餘的引數 」 項目列的下列值：
+就可以編譯您 32 位元浮點點程式碼以使用 32 位元浮點運算。  若要這樣做，您需要至少使用 Xamarin.iOS 8.10 和設定您的 iOS 上建置選項的面板"mtouch 多餘的引數 」 項目行的下列值：
 
      --aot-options=-O=float32
 
-這會通知靜態編譯器 （單聲道的內建靜態編譯器或 LLVM 供電一個） 來執行浮點運算使用 32 位元浮點數。
+這會通知靜態編譯器 （Mono 的靜態編譯器內建或 LLVM 提供一個） 來執行使用 32 位元浮點數的浮點數作業。

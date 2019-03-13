@@ -4,15 +4,15 @@ description: 本文件說明如何在 Xamarin.iOS 中顯示影像。 以程式�
 ms.prod: xamarin
 ms.assetid: 67CA8DB6-769D-42BB-A137-3AF933789FE1
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 07/13/2018
-ms.openlocfilehash: 9777b4abf6e7f370178bcff2cb40666612888a9f
-ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
+ms.openlocfilehash: bb57dbdb87555fb0b3ab8941024e5a84e4723099
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39038374"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112633"
 ---
 # <a name="displaying-images-with-xamarinios"></a>顯示利用 Xamarin.iOS 的影像
 

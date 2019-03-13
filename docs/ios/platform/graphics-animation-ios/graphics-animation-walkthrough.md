@@ -4,15 +4,15 @@ description: 本文逐步解說示範如何建立使用核心圖形和核心動�
 ms.prod: xamarin
 ms.assetid: 4B96D5CD-1BF5-4520-AAA6-2B857C83815C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: cecfd7f3a9678f298af3ed547aa7b50a18238729
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 2690b60abe963cf7b02ca282b32091098a224ccf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242000"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104241"
 ---
 # <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>在 Xamarin.iOS 中使用核心圖形和 Core 動畫
 

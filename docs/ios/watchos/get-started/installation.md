@@ -1,75 +1,75 @@
 ---
-title: 安裝和使用 watchOS Xamarin 中
-description: 本文件說明如何安裝及使用 watchOS 來搭配 Xamarin。 其中也會討論安裝，watchOS 專案結構，如何使用 iOS 設計工具、 Xcode 整合，並提供疑難排解秘訣。
+title: 安裝並在 Xamarin 中使用 watchOS
+description: 本文件說明如何安裝和搭配 Xamarin 使用 watchOS。 它討論安裝、 watchOS 專案結構，如何使用 iOS 設計工具、 Xcode 整合，並提供疑難排解的秘訣。
 ms.prod: xamarin
 ms.assetid: 69F21F15-198D-4B42-A703-21D35CAB0CCA
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 12/05/2017
-ms.openlocfilehash: ea0c7b6a68077cde83fa211e4e6f3432b3e39d5c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 13fd84d8e23c18606696532b1c6e8db301b52f3c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791234"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668539"
 ---
-# <a name="installing-and-using-watchos-in-xamarin"></a>安裝和使用 watchOS Xamarin 中
+# <a name="installing-and-using-watchos-in-xamarin"></a>安裝並在 Xamarin 中使用 watchOS
 
-watchOS 4 需要 macOS 利也 (10.12) 以 Xcode 9。
+watchOS 4 需要 macOS Sierra (10.12) 使用 Xcode 9。
 
-watchOS 1 原本需要 Xcode 7 OS X Yosemite (10.10)。
+watchOS 1 原本需要 Xcode 7 的 OS X Yosemite (10.10)。
 
 > [!WARNING]
-> [2018 年 4 月 1 之後，無法接受 watchOS 1 更新](https://developer.apple.com/news/?id=11162017a)。 未來的更新必須使用 watchOS 2 SDK 或更新版本。使用 watchOS 建置建議 4 SDK。
+> [watchOS 1 更新將不會接受在 2018 年 4 月 1 日之後](https://developer.apple.com/news/?id=11162017a)。 未來的更新必須使用 watchOS 2 SDK 或更新版本;運用 watchOS 建置建議 4 SDK。
 
 ## <a name="project-structure"></a>專案結構
 
-監看式應用程式包含三個專案：
+Watch 應用程式是由三個專案所組成：
 
-- **Xamarin.iOS iPhone 應用程式專案**-這是正常的 iPhone 專案，它可以是任何 Xamarin.iOS 範本。 監看式應用程式和其副檔名會集結內這個主專案中。
+- **IPhone 應用程式的 Xamarin.iOS 專案**-這是正常的 iPhone 專案，它可以是任何 Xamarin.iOS 範本。 Watch 應用程式和其擴充功能將會配套在此主要專案內。
 
-- **監看式擴充功能專案**-這是包含監看式應用程式的程式碼 （例如控制器類別）。
+- **監看式延伸模組專案**-這包含監看式應用程式 （例如，控制器類別） 的程式碼。
 
-- **監看式應用程式專案**-監看式應用程式包含使用者介面分鏡腳本檔案，與 UI 的所有資源。
+- **監看式應用程式專案**-這包含所有 UI 資源的使用者介面的分鏡腳本檔案監看式應用程式。
 
-[監看式套件 Catalog 範例](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)中 Xamarin.Studio 方案看起來像這樣：
+[監看式套件 Catalog 範例](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)在 Xamarin.Studio 中的方案看起來像這樣：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![](installation-images/catalog-solution.png "Visual Studio 中的方案")
+![](installation-images/catalog-solution.png "在 Visual Studio 方案")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](installation-images/catalog-solution-vs.png "Visual Studio 中的方案")
+![](installation-images/catalog-solution-vs.png "在 Visual Studio 方案")
 
 -----
 
-下載並執行[WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchKitCatalog/)若要開始使用範例。
-從範例的螢幕可以找到上[控制項](~/ios/watchos/user-interface/index.md)頁面。
+下載並執行[WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)範例著手。
+來自範例的螢幕可於[控制項](~/ios/watchos/user-interface/index.md)頁面。
 
 
 ## <a name="creating-a-new-project"></a>建立新專案
 
-您無法建立新 「 監看式解決方案 」...而是將監看式應用程式加入至現有的 iOS 應用程式。 請遵循下列步驟來建立監看式應用程式：
+您無法建立新 「 監看式解決方案 」...而是將 Watch 應用程式新增至現有的 iOS 應用程式。 請遵循下列步驟來建立監控應用程式：
 
-1. 如果您沒有現有的專案，首先選擇**檔案 > 新的方案**並建立 iOS 應用程式 (例如，**單一檢視應用程式**):
+1. 如果您沒有現有的專案，先選擇**檔案 > 新的解決方案**並建立 iOS 應用程式 (例如**單一檢視應用程式**):
 
-    [![](installation-images/cycle8-2-sml.png "選擇檔案 > 新的方案，並建立 iOS 應用程式")](installation-images/cycle8-2.png#lightbox)
+    [![](installation-images/cycle8-2-sml.png "選擇 檔案 > 新的方案，並建立 iOS 應用程式")](installation-images/cycle8-2.png#lightbox)
 
-2. 一旦建立 iOS 應用程式 （或您打算使用您現有的 iOS 應用程式），以滑鼠右鍵按一下方案，然後選擇 **新增 > 加入新的專案...**.在**新專案**視窗選取**watchOS > 應用程式 > WatchKit 應用程式**:
+2. 一旦建立 iOS 應用程式 （或您打算使用您現有的 iOS 應用程式），以滑鼠右鍵按一下方案，然後選擇 **新增 > 新增專案...**.在 **新的專案**視窗中選取**watchOS > 應用程式 > WatchKit 應用程式**:
 
     [![](installation-images/cycle8-6-sml.png "選取 watchOS > 應用程式 > WatchKit 應用程式")](installation-images/cycle8-6.png#lightbox)
 
-3. 下一個畫面可讓您選擇哪一個 iOS 應用程式專案應該會包含監看式應用程式：
+3. 下一個畫面可讓您選擇哪一個 iOS 應用程式專案應包含監看式應用程式：
 
-    [![](installation-images/cycle8-7-sml.png "選擇哪一個 iOS 應用程式專案應該會包含監看式應用程式")](installation-images/cycle8-7.png#lightbox)
+    [![](installation-images/cycle8-7-sml.png "選擇哪一個 iOS 應用程式專案應包含監看式應用程式")](installation-images/cycle8-7.png#lightbox)
 
-4. 最後，選擇要儲存專案的位置 （並選擇性地啟用原始檔控制）：
+4. 最後，選擇要儲存專案的位置 （並選擇性地啟用原始檔控制中）：
 
     [![](installation-images/cycle8-8-sml.png "選擇要儲存專案的位置")](installation-images/cycle8-8.png#lightbox)
 
-5. 適用於 Mac 的 visual Studio 會自動設定[專案參考和**Info.plist**設定](~/ios/watchos/get-started/project-references.md)您。
+5. Visual Studio for Mac 會自動設定[專案參考並**Info.plist**設定](~/ios/watchos/get-started/project-references.md)您。
 
 ## <a name="creating-the-watch-user-interface"></a>建立監看式使用者介面
 
@@ -77,118 +77,118 @@ watchOS 1 原本需要 Xcode 7 OS X Yosemite (10.10)。
 
 ### <a name="using-the-xamarin-ios-designer"></a>使用 Xamarin iOS 設計工具
 
-監看式應用程式上按兩下**Interface.storyboard**編輯使用 iOS 設計工具。 您可以將介面控制器和 UI 控制項拖曳至分鏡腳本從**工具箱**，並設定它們使用**屬性**板：
+按兩下位於 watch 應用程式**Interface.storyboard**編輯使用 iOS 設計工具。 您可以將介面控制器和 UI 控制項拖曳至從分鏡腳本**工具箱**，並設定它們使用**屬性**板：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](installation-images/iosdesigner-sml.png "分鏡腳本設計工具中")](installation-images/iosdesigner.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](installation-images/iosdesigner-sml-vs.png "分鏡腳本設計工具中")](installation-images/iosdesigner-vs.png#lightbox)
 
 -----
 
-您應該給予每個新的介面控制站**類別**選取它，然後輸入中的名稱**屬性**板 （這會自動會建立必要的 C# 程式碼後置檔案）：
+您應該給予每個新的介面控制器**類別**選取它，然後再輸入中的名稱**屬性**板 (這會建立所需C#程式碼後置檔案會自動):
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![](installation-images/iosdesigner-classname.png "類別提供每個新的介面控制站")
+![](installation-images/iosdesigner-classname.png "提供每個新的介面控制器類別")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](installation-images/iosdesigner-classname-vs.png "類別提供每個新的介面控制站")
+![](installation-images/iosdesigner-classname-vs.png "提供每個新的介面控制器類別")
 
 -----
 
-建立由 segues **Ctrl + 拖曳**到另一個介面控制站上的按鈕、 表格或介面控制站。
+建立的 segue **Ctrl + 拖曳**從按鈕、 表格或介面的控制器，到另一個介面控制器。
 
 
 ### <a name="using-xcode-on-the-mac"></a>在 Mac 上使用 Xcode
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-您可以繼續使用 Xcode 建置您的使用者介面 Interface.storyboard 檔案上按一下滑鼠右鍵，然後選取**開啟 > Xcode 介面產生器**:
+您可以繼續使用 Xcode 來建置您的使用者介面 Interface.storyboard 檔案上按一下滑鼠右鍵，然後選取**開啟 > Xcode Interface Builder**:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Visual Studio 使用者也可以使用 Xcode 切換至直接使用 Mac 建置主應用程式會建立其使用者介面。
-Visual Studio 中開啟您的方案適用於 Mac 和 Interface.storyboard 檔案上按一下滑鼠右鍵，然後選取**開啟 > Xcode 介面產生器**:
+Visual Studio 的使用者也可以使用 Xcode 來建置其使用者介面，藉由切換至直接使用 「 Mac 組建主機。
+開啟 Mac 在 Visual Studio 中的方案然後 Interface.storyboard 檔案上按一下滑鼠右鍵並選取**開啟 > Xcode Interface Builder**:
 
 -----
 
 ![](installation-images/openwith-xcode.png "Xcode 介面產生器中開啟 Interface.storyboard")
 
-如果使用 Xcode，然後您應該遵循相同的步驟，監看式應用程式與標準[iOS 應用程式的分鏡腳本](~/ios/user-interface/storyboards/index.md)(例如建立插座和動作**Ctrl + 拖曳**到 **.h**標頭檔)。
+如果使用 Xcode，然後您應該遵循相同的步驟，與一般的 watch 應用程式[iOS 應用程式的分鏡腳本](~/ios/user-interface/storyboards/index.md)(例如建立輸出和動作所**Ctrl + 拖曳**到 **.h**標頭檔)。
 
-當您儲存分鏡腳本中會自動加入 Xcode 介面產生器的插座及您建立的動作與 C# **.designer.cs**監看式擴充功能專案中的檔案。
+當您儲存分鏡腳本中將會自動加入的 Xcode Interface Builder 的輸出和您建立的動作C# **。 designer.cs**監看式延伸模組專案中的檔案。
 
 
-### <a name="adding-additional-screens-in-xcode"></a>在 Xcode 中加入額外的螢幕
+### <a name="adding-additional-screens-in-xcode"></a>在 Xcode 中新增其他畫面
 
-當您新增其他畫面 （除了什麼預設包含範本中） 您使用 Xcode 介面產生器的分鏡腳本**您必須手動加入 C# 程式碼檔案**每個新介面控制站。
+當您新增更多的畫面 （除了根據預設，項目都會包含在範本中） 來使用 Xcode 的 Interface Builder 分鏡腳本**您必須手動加入C#程式碼檔案**每個新介面控制站。
 
-請參閱[進階指示如何將新的介面控制站新增至分鏡腳本上](~/ios/watchos/troubleshooting.md#add)。
+請參閱[如何將新的介面控制器加入至分鏡腳本上的進階指示](~/ios/watchos/troubleshooting.md#add)。
 
 *Xamarin iOS 設計工具會自動執行此，不需要任何手動步驟。*
 
 
 ## <a name="building"></a>建置
 
-類似其他 iOS 專案，建置包含監看式應用程式的專案。 建立程序將會導致 iPhone 應用程式 (.app)，其中包含 watch 擴充功能 (.appex)，其中包含程式碼較不監看式應用程式 (.app)。
+包含監看式應用程式的專案組建等其他 iOS 專案。 建置程序會導致包含監看式延伸模組 (.appex)，後者又包含程式碼較不監看式應用程式 (.app) 的 iPhone 應用程式 (.app)。
 
 
 ## <a name="launching"></a>啟動
 
-您可以啟動監看式應用程式在模擬器中使用 Visual Studio for Mac 或 Visual Studio （開始 Mac 建置主機上）。
+您可以啟動監看式應用程式在模擬器中使用 Visual Studio for Mac 或 Visual Studio （在 Mac 組建主機上啟動）。
 
 有兩種模式啟動 WatchKit 應用程式：
 
  - 一般應用程式模式 （預設值），以及
-- [通知](~/ios/watchos/platform/notifications.md)（這需要測試通知裝載以 JSON 格式）。
+- [通知](~/ios/watchos/platform/notifications.md)（需要 JSON 格式的測試通知承載）。
 
 ### <a name="xcode-8-support"></a>Xcode 8 支援
 
-一旦安裝 Xcode 8 （或更新版本） 時，Apple Watch 模擬器是分開 iOS 模擬器 (不同於[Xcode 6](#xcode6)，其中顯示為*外部顯示器*)。
-當您選取的監看式應用程式專案，並設為啟始專案時，將會顯示模擬器清單中*iOS 模擬器*可選 （如下所示）。
+一旦安裝 Xcode 8 （或更新版本） 時，Apple Watch 模擬器是分開 iOS 模擬器 (不同於[Xcode 6](#xcode6)，其中顯示作為*外部顯示器*)。
+當您選取的監看式應用程式專案，並讓啟始專案時，模擬器清單會顯示*iOS 模擬器*可從中選擇 （如下所示）。
 
 [![](installation-images/xs-xcode8-watchos3-sml.png "選取模擬器類型")](installation-images/xs-xcode8-watchos3.png#lightbox)
 
-當您開始偵錯，*兩個*模擬器應該開始的 iOS 模擬器*和*Apple Watch 模擬器。 使用**命令 + Shift + H**瀏覽至 [監看式] 功能表和時鐘朝; 並使用**硬體**功能表來設定**強制觸控壓力**。 捲動滑鼠則 trackpad 上會模擬使用數位皇冠。
+當您啟動偵錯*兩個*模擬器應該開始-iOS 模擬器*和*Apple Watch 模擬器。 使用 **命令 + Shift + H**瀏覽至 監看式功能表和時鐘表面，並使用**硬體**功能表來設定**強制觸控壓力**。 捲動滑鼠軌跡板上，將會模擬使用數位皇冠。
 
 #### <a name="troubleshooting"></a>疑難排解
 
-就會顯示下列錯誤**應用程式輸出**如果您嘗試啟動沒有成對的監看式模擬器：
+下列的錯誤會出現在**應用程式輸出**如果您嘗試啟動模擬器，並沒有配對的監看式：
 
 ```csharp
-error MT0000: Unexpected error - Please file a bug report at http://bugzilla.xamarin.com
+error MT0000: Unexpected error - Please file a bug report at https://github.com/xamarin/xamarin-macios/issues/new
 error HE0020: Could not find a paired Watch device for the iOS device 'iPhone 6'.
 ```
 
-請參閱[Apple 論壇](https://forums.developer.apple.com/thread/7783)如需設定模擬器中，如果預設值不是工作指示。
+請參閱[Apple 論壇](https://forums.developer.apple.com/thread/7783)如需有關設定模擬器，如果預設值無效。
 
 
 <a name="xcode6" />
 
 ### <a name="xcode-6-and-watchos-1"></a>Xcode 6 和 watchOS 1
 
-您必須進行*監看式擴充功能專案***啟始專案**之前執行或偵錯應用程式。 您無法"start"監看式應用程式本身，如果您選擇的 iOS 應用程式然後就會開始正常的 iOS 模擬器中。
+您必須先 *監看式延伸模組專案* **啟始專案** 之前執行或偵錯應用程式。 您無法"start"watch 應用程式本身，和如果您選擇的 iOS 應用程式接著就會開始正常的 iOS 模擬器中。
 
-根據預設監看式應用程式會啟動在正常**應用程式**模式 （不摘要 」 或 「 通知模式），從 Visual Studio for Mac 的**執行**或**偵錯**命令。
+預設 watch 應用程式會在標準模式中啟動**應用程式**從 Visual Studio for Mac 的模式 （不摘要 」 或 「 通知模式）**執行**或是**偵錯**命令。
 
-使用 Xcode 6 時只 iPhone 5、 iPhone 5 秒、 iPhone 6 和 iPhone 6 Plus 可以啟動其中一個外部顯示器**Apple Watch-38 公釐**或**Apple Watch-42 公釐**會監看式應用程式顯示。
+使用 Xcode 6 時僅 iphone 5 以上、 iPhone 5 秒、 iPhone 6 及 iPhone 6 Plus 可以啟用適用於外部顯示器**Apple Watch-38 公釐**或是**Apple Watch-42 公釐**會監看式應用程式顯示此項目。
 
-**注意：** 請記住，監看畫面未自動顯示在 iOS 模擬器中使用 Xcode 6 時。
-使用**硬體 > 外接式顯示器**功能表顯示 [監看式] 畫面。
+**注意：** 請記住，[監看式] 畫面時，沒有自動出現的 iOS 模擬器中使用 Xcode 6。
+使用**硬體 > 外接式顯示器之間**功能表顯示 [監看式] 畫面。
 
 <a name="custommodes" />
 
 ## <a name="launching-notification-mode"></a>啟動通知模式
 
-請參閱[通知頁面](~/ios/watchos/platform/notifications.md)資訊如何處理程式碼中的通知。
+請參閱[通知頁面](~/ios/watchos/platform/notifications.md)資訊如何處理在程式碼中的通知。
 
 
-Visual Studio for Mac 可以開始監看式應用程式，以通知_啟動模式_通知：
+Visual Studio for Mac 可以啟動監看式應用程式，以通知_啟動模式_通知：
 
 
 
@@ -198,22 +198,22 @@ Visual Studio for Mac 可以開始監看式應用程式，以通知_啟動模式
 [![](installation-images/runwith-customparams-sml.png "執行自訂組態")](installation-images/runwith-customparams.png#lightbox)
 
 
-這會開啟**自訂參數**視窗，您可以在其中選取**通知**（並提供 JSON 裝載），然後按下**執行**在模擬器中啟動監看式應用程式：
+這會開啟**自訂參數**視窗中，您可以選取**通知**（並提供 JSON 承載），然後按**執行**在模擬器中啟動監看式應用程式：
 
 
-[![](installation-images/runwith-execargs-sml.png "設定的通知和內容")](installation-images/runwith-execargs.png#lightbox)
+[![](installation-images/runwith-execargs-sml.png "設定通知和裝載")](installation-images/runwith-execargs.png#lightbox)
 
 
 
 ## <a name="debugging"></a>偵錯
 
 在 Visual Studio for Mac 和 Visual Studio 支援偵錯。
-請記得通知模式中偵錯時提供通知的 JSON 檔案。 這個螢幕擷取畫面顯示叫用監看式應用程式中的偵錯中斷點：
+請記得通知模式中偵錯時提供通知的 JSON 檔案。 此螢幕擷取畫面顯示偵錯中斷點的監看式應用程式中叫用：
 
-![](installation-images/debug-sml.png "這個螢幕擷取畫面顯示叫用監看式應用程式中的偵錯中斷點")
+![](installation-images/debug-sml.png "此螢幕擷取畫面顯示在監看式應用程式中叫用偵錯中斷點")
 
-之後啟動指示您會得到上執行應用程式監看式**iOS 模擬器 （監看式）**。
-您可以選取的通知模式**偵錯 > 開啟系統記錄檔**(**CMD + /**)，並使用`Console.WriteLine`程式碼中。
+之後的啟動指示您將得到上執行應用程式監看式**iOS 模擬器 （監看式）**。
+您可以選取通知模式**偵錯 > 開啟系統記錄檔**(**CMD + /**)，並使用`Console.WriteLine`程式碼中。
 
 ### <a name="debugging-lifecycle-event-handlers"></a>偵錯的生命週期事件處理常式
 
@@ -225,12 +225,12 @@ To test the functionality in your  and
     which triggers the `WillActivate` method of the watch app.
 -->
 
-WatchOS 範本檔案 (例如`InterfaceController`， `ExtensionDelegate`， `NotificationController`，和`ComplicationController`) 會隨附其已實作的必要存留週期方法。 新增`Console.WriteLine`呼叫和讀取**應用程式輸出**以深入了解事件生命週期。
+WatchOS 範本檔案 (例如`InterfaceController`， `ExtensionDelegate`， `NotificationController`，和`ComplicationController`) 隨附於已實作其所需的生命週期方法。 新增`Console.WriteLine`呼叫，並閱讀**應用程式輸出**以深入了解事件生命週期。
 
 
 
 ## <a name="related-links"></a>相關連結
 
 - [WatchKitCatalog （範例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
-- [第一個監看式應用程式的視訊](http://blog.xamarin.com/your-first-watch-kit-app/)
+- [Watch 應用程式上的影片](https://blog.xamarin.com/your-first-watch-kit-app/)
 - [Apple 的 WatchKit 秘訣](https://developer.apple.com/watchkit/tips/)

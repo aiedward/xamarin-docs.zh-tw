@@ -4,15 +4,15 @@ description: 這篇文章會示範如何使用協助程式類別，以控制播�
 ms.prod: xamarin
 ms.assetid: E0305572-DC64-48BB-BD97-0A5096E6CA04
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 2ce1d4b8564ef9599581aabd6a72ba3af12ec251
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: bc1e9febea9529c3fadbacd689404562952276fe
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241335"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103632"
 ---
 # <a name="playing-sound-in-tvos-with-avaudioplayer-in-xamarin"></a>使用 avaudioplayer 播放在 Xamarin 中 tvOS 中播放音效
 

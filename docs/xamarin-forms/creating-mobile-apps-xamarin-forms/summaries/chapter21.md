@@ -4,17 +4,19 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 第 21 章摘要�
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 16fcdb345fd9aeb9201a00a0bb98d143e6468f01
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 56c4345dffe71f79e9d89c64478a9c6c38fc1d84
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156765"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53048813"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>第 21 章的摘要。 轉換
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21)
 
 Xamarin.Forms 檢視中的位置和大小取決於其父代，這通常是螢幕上出現`Layout`或`Layout<View>`衍生項目。 *轉換*是可以修改該位置、 大小或甚至方向的 Xamarin.Forms 功能。
 
@@ -24,7 +26,7 @@ Xamarin.Forms 可支援三種基本類型的轉換：
 - *縮放比例*&mdash;變更項目的大小
 - *旋轉*&mdash;開啟點或軸周圍的項目
 
-在 Xamarin.Forms 中，若要調整為 dbi*100;它會影響的寬度和高度一致的方式。 同時在二維度介面的螢幕，並在 3D 空間中支援顯示器旋轉。 沒有任何扭曲 （或單憑） 的轉換，且沒有一般化的矩陣轉換。
+在 Xamarin.Forms 中，若要調整為 dbi100;它會影響的寬度和高度一致的方式。 同時在二維度介面的螢幕，並在 3D 空間中支援顯示器旋轉。 沒有任何扭曲 （或單憑） 的轉換，且沒有一般化的矩陣轉換。
 
 支援具有八個屬性的類型轉換`double`所定義`VisualElement`類別：
 

@@ -1,20 +1,22 @@
 ---
 title: 第 10 章的摘要。 XAML 標記延伸
-description: 使用 Xamarin.Forms 建立行動應用程式： 第 10 章的摘要。 XAML 標記延伸
+description: 使用 Xamarin.Forms 建立行動應用程式：第 10 章的摘要。 XAML 標記延伸
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 74f7e2846a9e8d8390a8322c57db0845718bbba7
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 076e9f5155492e5a69d906c587b24495fe39d3f1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156999"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672634"
 ---
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>第 10 章的摘要。 XAML 標記延伸
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)
 
 一般而言，XAML 剖析器會將轉換做為屬性值設定為基本的.NET 資料類型的標準轉換為基礎的屬性類型的任何字串或[ `TypeConverter` ](xref:Xamarin.Forms.TypeConverter)衍生項目附加至屬性或具有其類型[`TypeConverterAttribute`](xref:Xamarin.Forms.TypeConverterAttribute).
 
@@ -38,7 +40,7 @@ XAML 標記延伸是實作的類別[ `IMarkupExtension` ](xref:Xamarin.Forms.Xam
 
 - `StaticResource` 支援 [`StaticResourceExtension`](xref:Xamarin.Forms.Xaml.StaticResourceExtension)
 - `DynamicResource` 支援 [`DynamicResourceExtension`](xref:Xamarin.Forms.Xaml.DynamicResourceExtension)
-- `Binding` 受到[ `BindingExtension` ](xref:Xamarin.Forms.Xaml.BindingExtension)&mdash;所述[第 16 章。資料繫結](#chapter16)
+- `Binding` 受到[ `BindingExtension` ](xref:Xamarin.Forms.Xaml.BindingExtension)&mdash;所述[第 16 章。資料繫結](chapter16.md)
 - `TemplateBinding` 受到[ `TemplateBindingExtension` ](xref:Xamarin.Forms.Xaml.TemplateBindingExtension)&mdash;未涵蓋在活頁簿
 
 額外的 XAML 標記延伸模組包含在與 Xamarin.Forms [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout):

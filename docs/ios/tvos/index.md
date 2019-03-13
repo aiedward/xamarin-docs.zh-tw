@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 14345503-1742-41F5-B2EF-EE31AB7C3516
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: 5d9cb189c124c8b1bfc2dafc48ec782bb74a852e
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.openlocfilehash: ada563fee78e579906e7f765a0120d8bfff67402
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514384"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267504"
 ---
 # <a name="introduction-to-tvos-in-xamarin"></a>在 Xamarin 中 tvOS 簡介
 
@@ -64,11 +64,11 @@ Apple 已發行的 Apple TV 的硬體、 Apple TV 4k、 5 代執行最新版的 
 
 此外，Apple 提供下列的範例應用程式可以轉碼成 C#，以使用 Xamarin 的 tvOS 應用程式的支援：
 
-- [DemoBots： 建立使用 SpriteKit 和 GameplayKit 跨平台遊戲](https://developer.apple.com/library/prerelease/tvos/samplecode/DemoBots/)
+- [DemoBots:建立使用 SpriteKit 和 GameplayKit 跨平台遊戲](https://developer.apple.com/library/prerelease/tvos/samplecode/DemoBots/)
 
 ## <a name="known-issues-and-troubleshooting"></a>已知的問題與疑難排解
 
-如果您遇到任何建置使用 Xamarin 的 tvOS 的問題，請檢查[版本資訊](http://releases.xamarin.com/)， [Xamarin.iOS 論壇](https://forums.xamarin.com/categories/ios)， [Xamarin Bugzilla Tracker](https://bugzilla.xamarin.com/query.cgi?product=iOS)，和[GitHub](https://github.com/xamarin/xamarin-macios/issues)現有問題。
+如果您遇到任何建置使用 Xamarin 的 tvOS 的問題，請檢查[版本資訊](https://docs.microsoft.com/xamarin/ios/release-notes/)， [Xamarin.iOS 論壇](https://forums.xamarin.com/categories/ios)， [Xamarin Bugzilla Tracker](https://bugzilla.xamarin.com/query.cgi?product=iOS)，和[GitHub](https://github.com/xamarin/xamarin-macios/issues)現有問題。
 
 回報新問題和建議[GitHub 上](https://github.com/xamarin/xamarin-macios/issues)。
 

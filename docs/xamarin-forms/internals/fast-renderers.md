@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: e4b060c703077e140e0f0d2f8c4c2b824c890e8d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 42889e3805391e9e586cda61d26103398ba16269
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997111"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898520"
 ---
 # <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms 快速轉譯器
+
+![預覽](~/media/shared/preview.png)
 
 _這篇文章介紹透過壓平所產生的原生控制項階層減少膨脹和轉譯成本 Xamarin.Forms 控制項在 Android 上的快速轉譯器。_
 
@@ -32,6 +34,7 @@ _這篇文章介紹透過壓平所產生的原生控制項階層減少膨脹和�
 - [`Button`](xref:Xamarin.Forms.Button)
 - [`Image`](xref:Xamarin.Forms.Image)
 - [`Label`](xref:Xamarin.Forms.Label)
+- [`Frame`](xref:Xamarin.Forms.Frame)
 
 在功能上，這些快速轉譯器是沒有不同，原始的轉譯器。 不過，目前在實驗，只用於藉由將下列這一行的程式碼，以您`MainActivity`類別，然後再呼叫`Forms.Init`:
 

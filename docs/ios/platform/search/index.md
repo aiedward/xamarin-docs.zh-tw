@@ -4,15 +4,15 @@ description: 這篇文章將說明如何使用 iOS 9 所提供的新應用程式
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 4e73e1bc34df8628790a3734e5b3b32a687fdf14
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: b2968399279fe3e9d160471bbcae08ae091be93e
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351648"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233298"
 ---
 # <a name="search-apis-in-xamarinios"></a>在 Xamarin.iOS 中的搜尋 Api
 
@@ -82,7 +82,7 @@ iOS 10 會呈現駕駛 engagement 應用程式的新方式讓系統主動很有�
 - Siri 互動
 - QuickType 建議 
 
-應用程式未公開這項功能才能使用的技術集合，例如系統[NSUserActivity](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/)，網頁標記中，核心焦點、 MapKit、 Media Player 和 UIKit。
+應用程式未公開這項功能才能使用的技術集合，例如系統[NSUserActivity](xref:Foundation.NSUserActivity)，網頁標記中，核心焦點、 MapKit、 Media Player 和 UIKit。
 
 若要深入了解，請參閱我們[主動式建議](~/ios/platform/search/proactive-suggestions.md)指南。
 

@@ -4,21 +4,23 @@ description: 了解如何使用 SkiaSharp 設計以互動方式 desribing 裁剪
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 0A79AB27-C69F-4376-8FFE-FF46E4783F30
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 3dd9011d19e77f52d1fe89a37e4d992c23c72ab1
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: cf31f3bd6f84a040d21420e865737417c374d947
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615544"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056567"
 ---
 # <a name="cropping-skiasharp-bitmaps"></a>裁剪 SkiaSharp 點陣圖
 
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+
 [**建立和繪製 SkiaSharp 點陣圖**](drawing.md)一文所述方式`SKBitmap`物件可以傳遞至`SKCanvas`建構函式。 要呈現在點陣圖上該畫布原因圖形上呼叫任何繪製方法。 這些繪製方法包括`DrawBitmap`，這表示，這項技術可讓傳送部分或全部的一個點陣圖到另一個點陣圖，可能與套用的轉換。
 
-您可以使用該技術，藉由呼叫裁剪點陣圖[ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKRect/SkiaSharp.SKPaint/)與來源和目的地矩形的方法：
+您可以使用該技術，藉由呼叫裁剪點陣圖[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint))與來源和目的地矩形的方法：
 
 ```csharp
 canvas.DrawBitmap(bitmap, sourceRect, destRect);
@@ -443,7 +445,7 @@ class PhotoCropperCanvasView : SKCanvasView
 
 ## <a name="hosting-the-photo-cropper-canvas-view"></a>裝載相片 cropper 畫布檢視
 
-與處理裁剪的邏輯，這兩個類別**裁剪相片**頁面**[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式有很少的工作来執行。 XAML 檔案會具現化`Grid`主機`PhotoCropperCanvasView`並**完成**按鈕：
+與處理裁剪的邏輯，這兩個類別**裁剪相片**頁面 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式有很少的工作来執行。 XAML 檔案會具現化`Grid`主機`PhotoCropperCanvasView`並**完成**按鈕：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -534,7 +536,7 @@ photoCropper = new PhotoCropperCanvasView(bitmap, 1.78f);
 
 知名的 Xamarin.Forms 版本 14 或 15 謎題出現在本書第 22 章[_使用 Xamarin.Forms 建立行動應用程式_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)而且可以下載作為[ **XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)。 不過，拼圖會變得更多樂趣 （且通常更具挑戰性） 當它根據您自己的相片媒體櫃中的影像。
 
-這個版本的 14-15 個謎題是一部分**[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式中，組成一連串的頁面標題為**相片拼圖**。
+這個版本的 14-15 個謎題是一部分 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式中，組成一連串的頁面標題為**相片拼圖**。
 
 **PhotoPuzzlePage1.xaml**檔案的組成`Button`:
 
@@ -582,7 +584,7 @@ public partial class PhotoPuzzlePage1 : ContentPage
 
 您可從程式庫中選取的照片不導向，因為它出現在相片媒體櫃中，但會旋轉或上下。 （這是特別的 iOS 裝置的問題）。基於這個理由，`PhotoPuzzlePage2`可讓您將影像旋轉成所需的方向。 XAML 檔案中包含三個按鈕，分別為**90&#x00B0;權限**（依順時針方向表示）， **90&#x00B0;左側**（逆時針算起），以及**完成**。
 
-程式碼後置檔案會實作一文中顯示的點陣圖旋轉邏輯**[建立和上 SkiaSharp 點陣圖繪製](drawing.md#rotating-bitmaps)**。 使用者可以將影像旋轉 90 度順時針或逆時針旋轉任意數目的時間： 
+程式碼後置檔案會實作一文中顯示的點陣圖旋轉邏輯 **[建立和上 SkiaSharp 點陣圖繪製](drawing.md#rotating-bitmaps)** 。 使用者可以將影像旋轉 90 度順時針或逆時針旋轉任意數目的時間： 
 
 ```csharp
 public partial class PhotoPuzzlePage2 : ContentPage
@@ -744,7 +746,7 @@ public partial class PhotoPuzzlePage3 : ContentPage
 ImageSource[] imgSources = new ImageSource[15];
 ```
 
-`ImageSource` 是封裝點陣圖 Xamarin.Forms 基底類型。 幸運的是，可讓 SkiaSharp，從 SkiaSharp 點陣圖轉換成 Xamarin.Forms 點陣圖。 **SkiaSharp.Views.Forms**組件定義[ `SKBitmapImageSource` ](https://developer.xamarin.com/api/type/SkiaSharp.Views.Forms.SKBitmapImageSource/)類別衍生自`ImageSource`但可以建立根據 SkiaSharp`SKBitmap`物件。 `SKBitmapImageSource` 甚至定義之間的轉換`SKBitmapImageSource`和`SKBitmap`，以及這如何`SKBitmap`物件會儲存在陣列作為 Xamarin.Forms 點陣圖：
+`ImageSource` 是封裝點陣圖 Xamarin.Forms 基底類型。 幸運的是，可讓 SkiaSharp，從 SkiaSharp 點陣圖轉換成 Xamarin.Forms 點陣圖。 **SkiaSharp.Views.Forms**組件定義[ `SKBitmapImageSource` ](xref:SkiaSharp.Views.Forms.SKBitmapImageSource)類別衍生自`ImageSource`但可以建立根據 SkiaSharp`SKBitmap`物件。 `SKBitmapImageSource` 甚至定義之間的轉換`SKBitmapImageSource`和`SKBitmap`，以及這如何`SKBitmap`物件會儲存在陣列作為 Xamarin.Forms 點陣圖：
 
 ```csharp
 imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
@@ -762,5 +764,5 @@ imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

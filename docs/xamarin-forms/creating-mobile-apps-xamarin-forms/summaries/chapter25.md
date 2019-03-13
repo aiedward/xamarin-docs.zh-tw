@@ -4,17 +4,19 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 第 25 章的摘�
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 3496504ed6326992aabfceb1d4d3476223c9e4e0
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: db6c329c029f52180fe508f277a1cf4834ab493a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156544"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059161"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>第 25 章的摘要。 頁面變化
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25)
 
 到目前為止您已了解兩個類別衍生自`Page`:`ContentPage`和`NavigationPage`。 本章介紹其他兩個：
 

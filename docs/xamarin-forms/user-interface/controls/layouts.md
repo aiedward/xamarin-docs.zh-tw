@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: 224eb2ee3958e5979382a3dc5e70110fdce51879
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 3c525178b5ed1e62774d032c0d317d43cd3f94c1
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994598"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292203"
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms 版面配置
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/FormsGallery/)
 
 _Xamarin.Forms 版面配置用來撰寫使用者介面控制項至視覺化結構。_
 
@@ -114,7 +116,6 @@ _Xamarin.Forms 版面配置用來撰寫使用者介面控制項至視覺化結�
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.Forms 簡介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Xamarin.Forms FormsGallery 範例](https://developer.xamarin.com/samples/FormsGallery/)
 - [Xamarin.Forms 範例](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms API 文件](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

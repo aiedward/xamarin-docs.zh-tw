@@ -1,28 +1,30 @@
 ---
-title: 存取裝置的視訊媒體櫃
-description: 本文說明如何存取裝置的影片播放器應用程式，使用 Xamarin.Forms 中的視訊媒體櫃。
+title: 存取裝置的影片庫
+description: 本文說明如何使用 Xamarin.Forms 存取裝置影片播放程式應用程式中的影片庫。
 ms.prod: xamarin
 ms.assetid: 364C1D43-EAAE-45B9-BE24-0DA5AE74C4D9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 7e9f7ad93ae8828155847b923cb2779b3146f63e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: MT
+ms.openlocfilehash: dedd2768bfa843e529e2eddcaed3b102c0a2efbd
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240696"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233506"
 ---
-# <a name="accessing-the-devices-video-library"></a>存取裝置的視訊媒體櫃
+# <a name="accessing-the-devices-video-library"></a>存取裝置的影片庫
 
-大多數最新型的行動裝置和桌面的電腦能夠使用裝置攝影機錄製影片。 然後，使用者建立的視訊會儲存為裝置上的檔案。 這些檔案可以從映像庫中擷取和播放`VideoPlayer`類別就像任何其他視訊。
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+
+現今多數行動裝置和桌上型電腦都能使用裝置的相機錄影。 然後使用者建立的影片會以檔案的形式儲存在裝置上。 這些檔案可以從影像庫中擷取，並透過 `VideoPlayer` 類別進行播放，與其他影片無異。
 
 ## <a name="the-photo-picker-dependency-service"></a>相片選擇器相依性服務
 
-每三個平台包含一種可讓使用者從裝置的映像庫中選取的相片或視訊的設備。 播放視訊從裝置的映像庫中的第一個步驟建置到叫用每個平台映像選擇器的相依性服務。 下面描述的相依性服務是非常類似中定義的其中一項[**挑選相片圖片庫從**](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)發行項，不同之處在於視訊選擇器傳回檔案名稱，而不是`Stream`物件。
+每個平台都含有讓使用者能從裝置影像庫中選取相片或影片的設備。 要從裝置的影像庫播放影片，首先要建立叫用各個平台上影像選擇器的相依性服務。 下述相依性服務與[**從圖片庫挑選相片**](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)一文所定義的相依性服務非常類似，不同之處在於影片選擇器會傳回檔案名稱，而非 `Stream` 物件。
 
-標準.NET 程式庫專案會定義名為介面`IVideoPicker`相依性服務：
+.NET Standard 程式庫專案會為相依性服務定義 `IVideoPicker` 介面：
 
 ```csharp
 namespace FormsVideoLibrary
@@ -34,11 +36,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-三個平台的每個包含類別，名為`VideoPicker`它會實作這個介面。
+每個平台均包含實作這個介面的 `VideoPicker` 類別。
 
-### <a name="the-ios-video-picker"></a>IOS 視訊選擇器
+### <a name="the-ios-video-picker"></a>iOS 影片選擇器
 
-IOS`VideoPicker`使用 iOS [ `UIImagePickerController` ](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/)存取映像庫中，指定它應該限制為視訊 （稱為 「 電影 」） iOS 中`MediaType`屬性。 請注意，`VideoPicker`明確實作`IVideoPicker`介面。 另請注意`Dependency`屬性，可識別這個類別做為相依性服務。 這些是允許 Xamarin.Forms 尋找相依性服務平台專案中的兩個需求：
+iOS `VideoPicker` 會使用 iOS [`UIImagePickerController`](xref:UIKit.UIImagePickerController) 存取影像庫，指定應限制為 iOS `MediaType` 屬性中的影片 (稱為「電影」)。 請注意，`VideoPicker` 會明確實作 `IVideoPicker` 介面。 另外也請注意 `Dependency` 屬性會將此類別識別為相依性服務。 以下是可讓 Xamarin.Forms 尋找平台專案中相依性服務的兩個需求：
 
 ```csharp
 using System;
@@ -100,9 +102,9 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-### <a name="the-android-video-picker"></a>Android 的視訊選擇器
+### <a name="the-android-video-picker"></a>Android 影片選擇器
 
-Android 的實作`IVideoPicker`需要屬於應用程式的活動的回呼方法。 基於這個原因，`MainActivity`類別會定義兩個屬性、 欄位和回呼方法：
+`IVideoPicker` 的 Android 實作需要作為應用程式活動一部分的回呼方法。 因此，`MainActivity` 類別會定義兩個屬性、一個欄位和一個回呼方法：
 
 ```csharp
 namespace VideoPlayerDemos.Droid
@@ -144,7 +146,7 @@ namespace VideoPlayerDemos.Droid
 }
 ```
 
-`OnCreate`方法中的`MainActivity`將自己的執行個體儲存在靜態`Current`屬性。 這可讓實作`IVideoPicker`取得`MainActivity`啟動的執行個體**選取視訊**選擇器：
+`MainActivity` 中的 `OnCreate` 方法會將自己的執行個體儲存在靜態 `Current` 屬性中。 這讓 `IVideoPicker` 的實作可取得 `MainActivity` 執行個體，以啟動 **Select Video** 選擇器：
 
 ```csharp
 using System;
@@ -186,11 +188,11 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-若要新增的項目`MainActivity`物件是唯一的程式碼中[ **VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)解決方案，亦即一般應用程式程式碼需要修改，才能支援`FormsVideoLibrary`類別。
+對 `MainActivity` 物件新增的項目是 [**VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) 解決方案中，唯一需要改變一般應用程式程式碼才能支援 `FormsVideoLibrary` 類別的程式碼。
 
-### <a name="the-uwp-video-picker"></a>UWP 視訊選擇器
+### <a name="the-uwp-video-picker"></a>UWP 影片選擇器
 
-UWP 實作`IVideoPicker`介面使用 UWP [ `FileOpenPicker` ](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/)。 它會開始與圖片媒體櫃的檔案搜尋，並將 MP4 和 WMV （Windows Media 視訊） 限制的檔案類型：
+`IVideoPicker` 介面的 UWP 實作使用 UWP [`FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/)。 它會先在圖片庫中搜尋檔案，並限制檔案類型為 MP4 和 WMV (Windows Media 視訊)：
 
 ```csharp
 using System;
@@ -227,7 +229,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="invoking-the-dependency-service"></a>叫用相依性服務
 
-**播放程式庫視訊**頁面[ **VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)程式會示範如何使用視訊選擇器相依性服務。 XAML 檔案包含`VideoPlayer`執行個體和`Button`標示為**顯示視訊媒體櫃**:
+[**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) 程式的 **Play Library Video** 頁面示範如何使用影片選擇器相依性服務。 XAML 檔案包含 `VideoPlayer` 執行個體與標記 **Show Video Library** 的 `Button`：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -247,7 +249,7 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-程式碼後置檔案包含`Clicked`處理常式`Button`。 叫用相依性服務需要呼叫`DependencyService.Get`取得的實作`IVideoPicker`平台專案中的介面。 `GetVideoFileAsync`然後該執行個體上呼叫方法：
+程式碼後置檔案包含 `Button` 的 `Clicked` 處理常式。 叫用該相依性服務需要呼叫 `DependencyService.Get`，以取得平台專案中 `IVideoPicker` 介面的實作。 然後會在該執行個體上呼叫 `GetVideoFileAsync` 方法：
 
 ```csharp
 namespace VideoPlayerDemos
@@ -280,13 +282,13 @@ namespace VideoPlayerDemos
 }
 ```
 
-`Clicked`處理常式然後使用該檔案名稱來建立`FileVideoSource`物件，並將它設定為`Source`屬性`VideoPlayer`。
+接著 `Clicked` 處理常式會使用該檔案名稱來建立 `FileVideoSource` 物件，並將其設定為 `VideoPlayer` 的 `Source` 屬性。
 
-每個`VideoPlayerRenderer`類別包含程式碼，在其`SetSource`方法類型的物件`FileVideoSource`。 這些如下所示：
+每個 `VideoPlayerRenderer` 類別的 `SetSource` 方法中都包含 `FileVideoSource` 類型之物件的程式碼。 如下所示：
 
 ### <a name="handling-ios-files"></a>處理 iOS 檔案
 
-IOS 版本`VideoPlayerRenderer`處理程序`FileVideoSource`物件使用靜態`Asset.FromUrl`以檔案名稱的方法。 這個建立`AVAsset`物件，表示裝置的映像庫中的檔案：
+iOS 版本的 `VideoPlayerRenderer` 會使用含檔案名稱的靜態 `Asset.FromUrl` 方法，處理 `FileVideoSource` 物件。 這會建立代表裝置影像庫中檔案的 `AVAsset` 物件：
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -314,9 +316,9 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-### <a name="handling-android-files"></a>處理 Android 的檔案
+### <a name="handling-android-files"></a>處理 Android 檔案
 
-處理類型的物件時`FileVideoSource`，Android 實作`VideoPlayerRenderer`使用`SetVideoPath`方法`VideoView`至指定裝置的映像庫中的檔案：
+在處理 `FileVideoSource` 類型的物件時，`VideoPlayerRenderer` 的 Android 實作會使用 `VideoView` 的 `SetVideoPath` 方法來指定裝置影像庫中的檔案：
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -348,7 +350,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="handling-uwp-files"></a>處理 UWP 檔案
 
-處理類型的物件時`FileVideoSource`，UWP 實作`SetSource`方法需要建立`StorageFile`物件、 開啟檔案進行讀取，並資料流物件傳遞至`SetSource`方法`MediaElement`:
+在處理 `FileVideoSource` 類型的物件時，`SetSource` 方法的 UWP 實作需要建立 `StorageFile` 物件，開啟該檔案以讀取，再將資料流物件傳遞至 `MediaElement` 的 `SetSource` 方法：
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -382,11 +384,11 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-對於所有的三個平台，視訊會開始播放視訊之後，幾乎立即因為裝置上的檔案，且不需要下載設定來源。
+對於每個平台而言，因為檔案位於裝置上，而且不需下載，所以當設定好影片來源之後，就會幾乎立即開始播放影片。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [視訊播放程式示範 （範例）](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
-- [從 圖片庫挑選相片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)
+- [Video Player Demos (sample)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) (影片播放程式示範 (範例))
+- [從圖片庫挑選相片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

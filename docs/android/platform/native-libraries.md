@@ -3,15 +3,15 @@ title: 使用原生程式庫
 ms.prod: xamarin
 ms.assetid: 7AA6CEC8-C09E-BBDA-FDD6-E40559143548
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 9175996f516a980d915d1501b4b18ea23ec86cef
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
+ms.openlocfilehash: 1195685db9e85e7fba006272ef300e22d47d1fa6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353576"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666344"
 ---
 # <a name="using-native-libraries"></a>使用原生程式庫
 
@@ -40,7 +40,7 @@ Xamarin.Android 支援原生程式庫，透過標準的 PInvoke 機制使用。 
 </ItemGroup>
 ```
 
-如需使用原生程式庫的詳細資訊，請參閱 <<c0> [ 原生程式庫與 Interop](http://www.mono-project.com/docs/advanced/pinvoke/)。
+如需使用原生程式庫的詳細資訊，請參閱 <<c0> [ 原生程式庫與 Interop](https://www.mono-project.com/docs/advanced/pinvoke/)。
 
 ## <a name="debugging-native-code-with-visual-studio-2017"></a>使用 Visual Studio 2017 偵錯原生程式碼
 
@@ -59,5 +59,5 @@ Visual Studio c + + 開發人員可以看到[SanAngeles_NativeDebug](https://dev
 
 ## <a name="related-links"></a>相關連結
 
-- [SanAngeles_NativeDebug （範例）](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)
+- [SanAngeles_NativeDebug (sample)](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)
 - [開發 Xamarin Android 原生應用程式](https://blogs.msdn.microsoft.com/vcblog/2015/02/23/developing-xamarin-android-native-applications/)

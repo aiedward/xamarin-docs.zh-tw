@@ -6,12 +6,12 @@ ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: c6f0233d736c51142d6d83996361558709fd2070
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 0062c5da4db206a9fe4dc0030a104ec034ab97f1
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781916"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197156"
 ---
 # <a name="introduction-to-mobile-development"></a>行動裝置應用程式開發簡介
 
@@ -19,7 +19,7 @@ ms.locfileid: "34781916"
 
 本文件旨在介紹 Xamarin 平台。 若要深入了解從設計到測試之建置行動裝置應用程式的*程序*，請參閱[行動軟體開發生命週期簡介](~/cross-platform/get-started/introduction-to-mobile-sdlc.md)文件。
 
-請參閱我們的[系統需求](~/cross-platform/get-started/requirements.md#mac)以確認您可以安裝 Xamarin。
+請參閱我們的[系統需求](~/cross-platform/get-started/requirements.md#macos-requirements)以確認您可以安裝 Xamarin。
 
 ## <a name="introduction-to-xamarin"></a>Xamarin 簡介
 
@@ -61,17 +61,13 @@ Xamarin 提供兩個商業產品：Xamarin.iOS 和 Xamarin.Android。 它們都�
 
 Xamarin 應用程式是針對名為 Xamarin 行動設定檔的 .NET BCL 子集所建置。 此設定檔是專為行動應用程式所建立，並封裝於 MonoTouch.dll 及 Mono.Android.dll 中 (分別適用於 iOS 及 Android)。 這與 Silverlight (及 Moonlight) 應用程式是針對 Silverlight/Moonlight .NET 設定檔建置的情況相似。 事實上，Xamarin Mobile Profile 等同於新增大量 BCL 類別的 Silverlight 4.0 設定檔。
 
-如需可用組件及類別的完整清單，請參閱 [Xamarin.iOS 組件清單](~/cross-platform/internals/available-assemblies.md)及 [Xamarin.Android 組件清單](~/cross-platform/internals/available-assemblies.md)
+如需可用組件及類別的完整清單，請參閱 [Xamarin.iOS 組件清單](~/cross-platform/internals/available-assemblies.md?context=xamarin/ios)及 [Xamarin.Android 組件清單](~/cross-platform/internals/available-assemblies.md?context=xamarin/android)
 
 除 BCL 之外，這些 .dll 也包含幾乎整個 iOS SDK 和 Android SDK 的包裝函式，允許直接從 C# 叫用基礎 SDK API。
-
-
 
 ### <a name="application-output"></a>應用程式輸出
 
 當 Xamarin 應用程式編譯完成時，其結果便是一個應用程式套件 (iOS 為 .app 檔案，Android 則為 .apk 檔案)。 這些檔案與使用平台之預設 IDE 所建置的應用程式套件之間無法區別，其部署的方式也完全相同。
-
-
 
 ## <a name="getting-started"></a>快速入門
 
@@ -83,22 +79,15 @@ Xamarin 應用程式是針對名為 Xamarin 行動設定檔的 .NET BCL 子集�
 
 ![](introduction-to-mobile-development-images/ios.png "Hello, iOS")
 
-
 * [**Hello, Android**](~/android/get-started/hello-android/index.md)
 
 ![](introduction-to-mobile-development-images/android.png "Hello, Android")
 
-
-* [**Xamarin.Forms 簡介**](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
-
-
-
-
+* [**開始使用 Xamarin.Forms**](~/get-started/index.yml)
 
 ## <a name="summary"></a>總結
 
-本文件僅單純介紹 Xamarin 平台。 真正的樂趣在您執行第一個應用程式時才正式開始。 請參閱 [Hello, iOS](~/ios/get-started/hello-ios/index.md)、[Hello, Android](~/android/get-started/hello-android/index.md)，以及 [Xamarin.Forms 簡介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)指南來開始操作。
-
+本文件僅單純介紹 Xamarin 平台。 真正的樂趣在您執行第一個應用程式時才正式開始。 請參閱 [Hello, iOS](~/ios/get-started/hello-ios/index.md)、[Hello, Android](~/android/get-started/hello-android/index.md) 與[開始使用 Xamarin.Forms](~/get-started/index.yml) 指南來開始。
 
 ## <a name="related-links"></a>相關連結
 

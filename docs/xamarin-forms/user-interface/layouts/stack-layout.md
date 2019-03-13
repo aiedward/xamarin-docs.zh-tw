@@ -1,34 +1,36 @@
 ---
 title: Xamarin.Forms StackLayout
-description: 本文說明如何使用 Xamarin.Forms StackLayout 類別呈現的檢視集合在一個維度。
+description: 這篇文章說明如何使用 Xamarin.Forms StackLayout 類別來呈現的檢視集合在一個維度。
 ms.prod: xamarin
 ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 6e278c466c352ad19575cd3a84d6e38e14ec2587
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: bdc03721569682cd5b4f72908fcab1e4a567b83c
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244593"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53055798"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
-`StackLayout` 水平或垂直組織中的一維的行 （「 堆疊 」） 的檢視。 在中檢視`StackLayout`可以使用版面配置中的空間大小。 位置是由檢視加入至版面配置和檢視的配置選項順序來決定。
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 
-[![](stack-layout-images/layouts-sml.png "Xamarin.Forms 配置")](stack-layout-images/layouts.png#lightbox "Xamarin.Forms 版面配置")
+`StackLayout` 以水平或垂直方式，會將組織中的一維的行 （「 堆疊 」） 的檢視。 檢視`StackLayout`可以根據使用的版面配置選項版面配置中的空間大小。 位置是由檢視加入至版面配置和檢視表的版面配置選項順序來決定。
+
+[![](stack-layout-images/layouts-sml.png "Xamarin.Forms 版面配置")](stack-layout-images/layouts.png#lightbox "Xamarin.Forms 版面配置")
 
 ## <a name="purpose"></a>用途
 
-`StackLayout` 是較不複雜，比其他檢視。 只要加入檢視，可以建立簡單的線性介面`StackLayout`，及建立巢狀成更複雜的介面。
+`StackLayout` 是較不複雜，比其他檢視。 只要加入至檢視，可以建立簡單的線性介面`StackLayout`，和建立的巢狀處理更複雜的介面。
 
-## <a name="usage--behavior"></a>使用狀況 & 行為
+## <a name="usage--behavior"></a>使用量和行為
 
 ### <a name="spacing"></a>間距
 
-根據預設，`StackLayout`會加入檢視之間 6px 邊界。 這可以控制或設定成有沒有邊界設定`Spacing`StackLayout 上的屬性。 下列示範如何設定間距和其他間距選項的效果：
+根據預設，`StackLayout`會加入檢視之間 6px 邊界。 這可控制或設定藉由設定有沒有邊界`Spacing`StackLayout 上的屬性。 以下示範如何設定間距和其他間距選項的效果：
 
 在 XAML 中：
 
@@ -80,31 +82,31 @@ public class StackLayoutCode : ContentPage
 
 間距 = 0:
 
-![](stack-layout-images/spacing-zero.png "以間距 StackLayout = 0")
+![](stack-layout-images/spacing-zero.png "具有間距 = 0")
 
-10 的間距：
+間距十個：
 
-![](stack-layout-images/spacing-ten.png "以間距 StackLayout = 10")
+![](stack-layout-images/spacing-ten.png "具有間距 = 10")
 
 ### <a name="sizing"></a>調整大小
 
-StackLayout 中之檢視的大小取決於高度和寬度的要求和版面配置選項。 `StackLayout` 將會強制執行填補。 下列`LayoutOption`s 會佔用一樣多的空間，因為從配置可用的檢視：
+StackLayout 中之檢視的大小取決於高度和寬度的要求和版面配置選項。 `StackLayout` 將會強制執行與邊框距離。 下列`LayoutOption`s 會導致佔用一樣多的空間，因為使用與配置檢視：
 
-- **CenterAndExpand** &ndash;配置中將檢視，並展開佔用的空間配置會提供它。
-- **EndAndExpand** &ndash;會將檢視的配置 （下方或最右邊的界限） 結尾，並會展開，以佔用的空間配置會提供如。
-- **FillAndExpand** &ndash;不具有任何填補，使其佔用的空間配置會提供它會將檢視。
-- **StartAndExpand** &ndash;會將檢視在版面配置的開頭，並佔用的空間會提供父。
+- **CenterAndExpand** &ndash;中心內的版面配置檢視，並展開至佔用一樣多的空間，如版面配置會提供。
+- **EndAndExpand** &ndash;將檢視放置在版面配置 （下方或最右邊邊界） 的結尾，並展開至佔用一樣多的空間，如版面配置會提供。
+- **FillAndExpand** &ndash; ，使其具有不帶填補，並佔用一樣多的空間，因為配置將為其指定放置檢視。
+- **StartAndExpand** &ndash;會將檢視版面配置的開頭，並佔用一樣多的空間，因為父代會提供。
 
-如需詳細資訊，請參閱[擴充](~/xamarin-forms/user-interface/layouts/layout-options.md#expansion)。
+如需詳細資訊，請參閱 <<c0> [ 展開](~/xamarin-forms/user-interface/layouts/layout-options.md#expansion)。
 
 ### <a name="positioning"></a>定位
 
-StackLayout 中的檢視可以放置並調整大小使用`LayoutOptions`。 每個檢視可以有`VerticalOptions`和`HorizontalOptions`，定義如何檢視將定位本身相對於版面配置。 下列預先定義`LayoutOptions`可用：
+StackLayout 中的檢視可以放置位置和大小使用`LayoutOptions`。 您可以指定每個檢視`VerticalOptions`和`HorizontalOptions`，定義如何檢視將定位本身相對的版面配置。 下列預先定義`LayoutOptions`可用：
 
-- **Center** &ndash;配置中的將檢視置。
-- **結束**&ndash;放置檢視的配置 （下方或最右邊的界限） 結尾。
-- **填滿**&ndash;會放在檢視，使其具有任何填補。
-- **啟動**&ndash;會檢視放在配置的開頭。
+- **Center** &ndash;配置中檢視。
+- **結束**&ndash;將檢視放置在結尾的版面配置 （下方或最右邊邊界）。
+- **填滿**&ndash;放置檢視，使其具有不帶填補。
+- **開始**&ndash;將檢視放在版面配置的開頭。
 
 下列程式碼示範如何設定版面配置選項：
 
@@ -154,11 +156,11 @@ public class StackLayoutCode : ContentPage
 }
 ```
 
-如需詳細資訊，請參閱[對齊](~/xamarin-forms/user-interface/layouts/layout-options.md#alignment)。
+如需詳細資訊，請參閱 <<c0> [ 對齊](~/xamarin-forms/user-interface/layouts/layout-options.md#alignment)。
 
 ## <a name="exploring-a-complex-layout"></a>瀏覽複雜的配置
 
-每個配置有優點和缺點，用於建立特定配置。 在這一系列的版面配置文件中，整個範例應用程式已建立具有相同的頁面配置實作使用三個不同的版面配置。
+每個配置有優點和缺點，用於建立特定的配置。 在此系列的版面配置的文章中，已建立範例應用程式以使用三個不同的版面配置實作相同的頁面配置。
 
 請考慮下列 XAML:
 
@@ -217,7 +219,7 @@ Title="StackLayouts">
 
 ![](stack-layout-images/stack.png "複雜 StackLayout")
 
-請注意， `StackLayouts`s 巢狀的因為在某些情況下建立巢狀配置來得容易呈現相同的配置中的所有項目。 也請注意，因為`StackLayout`不支援重疊的項目頁面不具有某些配置細中找到其他配置頁面。
+請注意， `StackLayouts`s 為巢狀，因為在某些情況下建立巢狀版面配置可能很容易呈現在相同的版面配置內的所有項目。 另外也請注意，因為`StackLayout`不支援重疊的項目頁面不部分配置發揮發現其他配置的頁面中。
 
 
 

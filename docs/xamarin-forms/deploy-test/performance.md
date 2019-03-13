@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: d7719f231a6d70594985a1158340104d68367ffe
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 347d0eebf7340bb8dc7234275d0f58acf7ab16c6
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998603"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061026"
 ---
 # <a name="xamarinforms-performance"></a>Xamarin.Forms 效能
 
@@ -20,7 +20,7 @@ _有許多技巧可增加 Xamarin.Forms 應用程式的效能。這些技巧可�
 
 > [!VIDEO https://youtube.com/embed/RZvdql3Ev0E]
 
-**Evolve 2016：使用 Xamarin.Forms 最佳化應用程式效能** \(英文\)
+**Evolve 2016：使用 Xamarin.Forms 最佳化應用程式效能**
 
 ## <a name="overview"></a>總覽
 
@@ -329,6 +329,5 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 - [ListView 效能](~/xamarin-forms/user-interface/listview/performance.md)
 - [快速轉譯器](~/xamarin-forms/internals/fast-renderers.md)
 - [版面配置壓縮](~/xamarin-forms/user-interface/layouts/layout-compression.md)
-- [Xamarin.Forms 影像調整器範例](https://developer.xamarin.com/samples/xamarin-forms/XamFormsImageResize/)
 - [XamlCompilation](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute)
 - [XamlCompilationOptions](xref:Xamarin.Forms.Xaml.XamlCompilationOptions)

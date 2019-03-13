@@ -1,20 +1,22 @@
 ---
 title: 第 27 章的摘要。 自訂轉譯器
-description: 使用 Xamarin.Forms 建立行動應用程式： 第 27 章摘要。 自訂轉譯器
+description: 使用 Xamarin.Forms 建立行動應用程式：第 27 章的摘要。 自訂轉譯器
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 49961953-9336-4FD4-A42F-6D9B05FF52E7
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: c8b149cfeb814e2a1e0a0d1b38cca24ea096d112
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 96d06626fe0a8a4bb5aca59de454f707d4dfc731
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156521"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233866"
 ---
 # <a name="summary-of-chapter-27-custom-renderers"></a>第 27 章的摘要。 自訂轉譯器
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27)
 
 > [!NOTE] 
 > 在此頁面上的附註表示其中 Xamarin.Forms 有分歧活頁簿中所呈現的題材的區域。
@@ -43,7 +45,7 @@ ms.locfileid: "39156521"
 IOS [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs#L25)有泛型引數：
 
 - `TView` 受限於 [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
-- `TNativeView` 受限於 [`UIKit.UIView`](https://developer.xamarin.com/api/type/UIKit.UIView/)
+- `TNativeView` 受限於 [`UIKit.UIView`](xref:UIKit.UIView)
 
 Android [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/ViewRenderer.cs#L17)有泛型引數：
 

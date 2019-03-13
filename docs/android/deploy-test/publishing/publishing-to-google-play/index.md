@@ -3,16 +3,11 @@ title: 發行至 Google Play
 ms.prod: xamarin
 ms.assetid: FB1CC234-3554-8566-48BD-2B9B3A28CC7F
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 3525541ba0795f4e0b174b155c0ca219e3257bac
-ms.sourcegitcommit: 6433b424410a850f504e0f934bbb5baf8f093e49
-ms.translationtype: HT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 07/16/2018
-ms.locfileid: "39067356"
 ---
+
 # <a name="publishing-to-google-play"></a>發行至 Google Play
 
 雖然有許多應用程式市場可供散發應用程式，但 Google Play 可說是 Android 應用程式世界中最大且瀏覽頻率最高的商店。 Google Play 提供一個可散發、廣告、銷售 Android 應用程式及分析這些應用程式銷售情況的單一平台。
@@ -130,7 +125,7 @@ Google Play 精選區段所使用的圖形。 此圖形可以不搭配應用程�
 
 ### <a name="publishing-to-google-play"></a>發行至 Google Play
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Xamarin Android 7.0 導入整合式工作流程，可從 Visual Studio 將應用程式發行至 Google Play。 如果您使用 7.0 版之前的 Xamarin Android，就必須透過「Google Play 開發人員控制台」手動上傳您的 APK。 此外，您必須至少已上傳一個 APK，才能使用整合式工作流程。 如果您尚未上傳您的第一個 APK，就必須手動上傳它。 如需詳細資訊，請參閱[手動上傳 APK](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md)。
 
@@ -143,7 +138,7 @@ Xamarin Android 7.0 導入整合式工作流程，可從 Visual Studio 將應用
 5. 使用您的憑證來簽署應用程式。
 6. 將已簽署的應用程式發行至 Google Play。
 
-在[封存以供發行](~/android/deploy-test/release-prep/index.md#archive)中，[散發通道] 對話方塊顯示了兩個用於散發的選項：[臨機操作] 和 [Google Play]。 如果改為顯示 [簽署身分識別] 對話方塊，請按一下 [上一步] 以返回 [散發通道] 對話方塊。 選取 [Google Play]，然後按一下 [下一步]：
+在[封存以供發行](~/android/deploy-test/release-prep/index.md#archive)中，[散發通道] 對話方塊顯示了兩個用於散發的選項：**臨機操作**及 **Google Play**。 如果改為顯示 [簽署身分識別] 對話方塊，請按一下 [上一步] 以返回 [散發通道] 對話方塊。 選取 [Google Play]，然後按一下 [下一步]：
 
 [![[散發通道] 對話方塊](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
@@ -161,9 +156,9 @@ Xamarin Android 7.0 導入整合式工作流程，可從 Visual Studio 將應用
 
 下一節說明如何建立新的 Google API 專案並產生所需的「用戶端識別碼」和「用戶端密碼」。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-Visual Studio for Mac 具有可將應用程式發行至 Google Play 的整合式工作流程。 如果您使用 5.9 版之前的 Xamarin Studio，就必須透過「Google Play 開發人員控制台」手動上傳您的 APK，然後使用 [發行至 Google Play] 對話方塊來進行後續的 APK 更新。 此外，您必須至少已上傳一個 APK，才能使用 [發行至 Google Play]。 如果您尚未上傳您的第一個 APK，就必須手動上傳它。 如需有關如何手動上傳 APK 的資訊，請參閱[手動上傳 APK](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md)。
+Visual Studio for Mac 具有可將應用程式發行至 Google Play 的整合式工作流程。
 
 [建立新的憑證](~/android/deploy-test/signing/index.md#newcert)說明如何建立新的憑證來簽署 Android 應用程式。 下列步驟簡述如何將 Xamarin.Android 應用程式發行至 Google Play：
 
@@ -227,7 +222,7 @@ OAuth 用戶端的預設名稱為「Google Play Android 開發人員」。 此�
 
 #### <a name="register-google-api-access"></a>註冊 Google API 存取
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 使用「用戶端識別碼」和「用戶端密碼」來完成 Visual Studio for Mac 中的 [Google Play API 帳戶] 對話方塊。 您可以為此帳戶提供描述 &ndash; 這樣即可註冊多個 Google Play 帳戶並將未來的 APK 上傳到不同 Google Play 帳戶。 將「用戶端識別碼」和「用戶端密碼」貼到此對話方塊中，然後按一下 [註冊]：
 
@@ -283,7 +278,7 @@ OAuth 用戶端的預設名稱為「Google Play Android 開發人員」。 此�
 
 若要解決此錯誤，請使用不同的版本號碼來重建應用程式，然後透過 [散發通道] 對話方塊將應用程式重新提交給 Google Play。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 使用「用戶端識別碼」和「用戶端密碼」來完成 Visual Studio for Mac 中的 [Google Play API 帳戶] 對話方塊。 您可以為此帳戶提供描述 &ndash; 這樣即可註冊多個 Google Play 帳戶並將未來的 APK 上傳到不同 Google Play 帳戶。 將「用戶端識別碼」和「用戶端密碼」貼到此對話方塊中，然後按一下 [註冊]：
 

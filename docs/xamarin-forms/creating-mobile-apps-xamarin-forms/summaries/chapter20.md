@@ -4,17 +4,19 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 第 20 章摘要�
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: d606432174807498fd458470647109de4fa0b6b4
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 7d9630840983b36204214927136e0c9efe07d840
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156726"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058229"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第 20 章的摘要。 非同步與檔案 I/O
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20)
 
 > [!NOTE] 
 > 在此頁面上的附註表示其中 Xamarin.Forms 有分歧活頁簿中所呈現的題材的區域。
@@ -23,12 +25,12 @@ ms.locfileid: "39156726"
 
 使用者會預期有回應的圖形化使用者介面。 這表示程式必須快速處理使用者輸入事件。 如果不可行，然後處理必須是屈就將文件執行的次要執行緒。
 
-這個活頁簿中的數個範例程式已經使用[ `WebRequest` ](xref:System.Net.WebRequest)類別。 此類別中[ `BeginGetReponse` ](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object))方法會啟動背景工作執行緒，完成時呼叫的回呼函式。 不過，該回撥函式以執行背景工作執行緒，因此，程式必須呼叫[ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))存取使用者介面的方法。
+這個活頁簿中的數個範例程式已經使用[ `WebRequest` ](xref:System.Net.WebRequest)類別。 此類別中[ `BeginGetResponse` ](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object))方法會啟動背景工作執行緒，完成時呼叫的回呼函式。 不過，該回撥函式以執行背景工作執行緒，因此，程式必須呼叫[ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))存取使用者介面的方法。
 
 > [!NOTE]
 > Xamarin.Forms 程式應該使用[ `HttpClient` ](xref:System.Net.Http.HttpClient)而非[ `WebRequest` ](xref:System.Net.WebRequest)透過網際網路存取的檔案。 `HttpClient` 支援非同步作業。
 
-使用.NET 和 C# 中以更現代化的方法來非同步處理。 這牽涉到[ `Task` ](xref:System.Threading.Tasks.Task)並[ `Task<TResult>` ](xref:System.Threading.Tasks.Task`1)類別和其他類型中的[ `System.Threading` ](xref:System.Threading)並[ `System.Threading.Tasks` ](xref:System.Threading.Tasks)命名空間，以及 C# 5.0`async`和`await`關鍵字。 這就是這一章的重點。
+使用.NET 和 C# 中以更現代化的方法來非同步處理。 這牽涉到[ `Task` ](xref:System.Threading.Tasks.Task)並[ `Task<TResult>` ](xref:System.Threading.Tasks.Task`1)類別和其他類型中的[ `System.Threading` ](xref:System.Threading)並[ `System.Threading.Tasks` ](xref:System.Threading.Tasks)命名空間，並將C#5.0`async`並`await`關鍵字。 這就是這一章的重點。
 
 ## <a name="from-callbacks-to-await"></a>從 await 的回撥
 

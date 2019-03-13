@@ -4,17 +4,19 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 摘要的第 6 章
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D4F9C429-A6CF-40FA-AC68-3F149307A5F9
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 464fbdb043ac35eba7a4cc2d9ec76b78cc91ac5b
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 12c8cdc19f9e6765ca25ade97bcfdbffb7b60381
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156508"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057590"
 ---
 # <a name="summary-of-chapter-6-button-clicks"></a>第 6 章的摘要。 按下按鈕
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
 
 [ `Button` ](xref:Xamarin.Forms.Button)是可讓使用者起始的命令的檢視。 A`Button`由文字 (以及選擇性的映像所示[第 13 章、 點陣圖](chapter13.md))。 因此，`Button`許多相同的屬性會定義`Label`:
 
@@ -87,5 +89,5 @@ ms.locfileid: "39156508"
 
 - [第 6 章全文檢索 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf)
 - [第 6 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
-- [第 6 章 F # 範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
+- [第 6 章F#範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
 - [Xamarin.Forms 按鈕](~/xamarin-forms/user-interface/button.md)

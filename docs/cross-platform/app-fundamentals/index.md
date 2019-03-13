@@ -6,12 +6,12 @@ ms.assetid: 7D179ACF-09A6-46EE-B49D-E27AB5F09CD4
 author: conceptdev
 ms.author: crdun
 ms.date: 07/18/2018
-ms.openlocfilehash: 3a2c3f98e3ba83db0794a68ff1d62a9845a111c0
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: bfca620848bef174e78d9d34b6fdc497dda8f1de
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270185"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233220"
 ---
 # <a name="sharing-code-on-multiple-platforms"></a>共用多個平台上的程式碼
 
@@ -33,10 +33,14 @@ ms.locfileid: "39270185"
 
 可攜式類別庫專案可讓您建置及散發包含共用程式碼，以在多個平台上執行的組件。 若要建立您第一次選取哪一個平台為目標，然後撰寫程式碼的可攜式類別庫 （或 「 PCL 」），針對.NET Framework 所提供的平台所定義的設定檔中的子集。 Pcl 會被視為在 Visual Studio; 的最新版本中被取代開發人員都要改為使用.NET Standard 2.0。
 
-## <a name="nuget-projects-multiplatform-libraries-for-code-sharingcross-platformapp-fundamentalsnuget-multiplatform-librariesindexmd"></a>[NuGet 專案： 適用於共用程式碼的多平台程式庫](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
+## <a name="nuget-projects-multiplatform-libraries-for-code-sharingcross-platformapp-fundamentalsnuget-multiplatform-librariesindexmd"></a>[NuGet 專案：適用於共用程式碼的多平台程式庫](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
 
 NuGet 套件可以自動產生的 PCL 或.NET standard 專案;和共用專案可以封裝到 「 誘導轉向 」 使用個別的 NuGet 專案類型的 NuGet 套件。 本節說明如何建立 NuGet 套件，針對每個程式碼共用的案例。
 
 ## <a name="manually-creating-nuget-packages-for-xamarincross-platformapp-fundamentalsnuget-manualmd"></a>[以手動方式為 Xamarin 建立 NuGet 套件](~/cross-platform/app-fundamentals/nuget-manual.md)
 
 建立使用 Xamarin 平台的 NuGet 套件的秘訣。
+
+## <a name="use-cc-libraries-in-cross-platform-xamarin-projectscross-platformcppindexmd"></a>[使用跨平台 Xamarin 專案中的 C/c + + 程式庫](~/cross-platform/cpp/index.md)
+
+這項技術可讓您將分離的演進，C/c + + 程式庫，C#中的 NuGet 和您的 Xamarin 應用程式的繫結。 平台的原生 C/c + + 程式庫所提供功能，但所有平台特定程式碼會與最終的 Xamarin 應用程式，可讓任何程式碼重複使用的最高可能效能隔離。 

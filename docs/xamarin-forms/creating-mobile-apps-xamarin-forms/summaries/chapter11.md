@@ -4,17 +4,19 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 第 11 章摘要�
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 34671C48-0ED4-4B76-A33D-D6505390DC5B
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 9f3c077d7bae3557178236b81073afaf4892a272
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: f9e3326c0f55469cfa84a019a674679d82dfc007
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156557"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054232"
 ---
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>第 11 章摘要。 可繫結的基礎結構
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11)
 
 每個 C# 程式設計人員會熟悉 C#*屬性*。 屬性包含*設定*存取子和 （或)*取得*存取子。 它們通常稱為*CLR 屬性*通用語言執行平台。
 

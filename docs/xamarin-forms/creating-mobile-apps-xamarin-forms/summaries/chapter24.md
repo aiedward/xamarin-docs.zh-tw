@@ -4,17 +4,19 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 第 24 章摘要�
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 35130baac4025fe69dbc7aa9b6928f824b35c573
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 764a148ffffc2c69dbab5aeca872e2d10ce9f159
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156700"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052737"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>第 24 章的摘要。 頁面巡覽
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)
 
 許多應用程式是由使用者所巡覽之多個頁面所組成。 應用程式一定有*主要*頁面或*家用* 頁面上，並從該處使用者巡覽至其他頁面，會保存在向後巡覽堆疊中。 其他瀏覽選項所述[**第 25 章。頁面上各種**](chapter25.md)。
 

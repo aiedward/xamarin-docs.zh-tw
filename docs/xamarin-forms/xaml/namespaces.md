@@ -4,15 +4,15 @@ description: XAML 會用於命名空間宣告 xmlns XML 屬性。 本文介紹 X
 ms.prod: xamarin
 ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
-ms.date: 06/18/2018
-ms.openlocfilehash: 30cbb2c3aebdafe2ebf35598c520ae725e01ce65
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/21/2018
+ms.openlocfilehash: d307c128826775e6d4f7129c79e17522e7e05d6a
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995140"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671568"
 ---
 # <a name="xaml-namespaces-in-xamarinforms"></a>在 Xamarin.Forms 中的 XAML 命名空間
 
@@ -42,13 +42,17 @@ XAML 會使用前置詞來宣告非預設的命名空間，以參考在命名空
 |--- |--- |
 |`x:Arguments`|指定非預設建構函式或 factory 方法物件宣告的建構函式引數。|
 |`x:Class`|指定在 XAML 中定義的類別的命名空間和類別名稱。 類別名稱必須符合類別名稱的程式碼後置檔案。 請注意，此建構只會出現在 XAML 檔案的根項目。|
+|`x:DataType`|指定之物件的 XAML 項目和它的子系，將繫結至型別。|
 |`x:FactoryMethod`|指定可用來初始化物件的 factory 方法。|
 |`x:FieldModifier`|指定 產生具名 XAML 項目欄位的存取層級。|
 |`x:Key`|指定的唯一使用者定義索引鍵中每個資源`ResourceDictionary`。 索引鍵的值用來擷取 XAML 資源，和通常做為引數`StaticResource`標記延伸。|
 |`x:Name`|指定的 XAML 項目執行階段物件名稱。 設定`x:Name`類似於宣告中的程式碼的變數。|
 |`x:TypeArguments`|指定泛型型別的建構函式的泛型型別引數。|
 
-如需詳細資訊`x:FieldModifier`屬性，請參閱[欄位修飾詞](~/xamarin-forms/xaml/field-modifiers.md)。 如需詳細資訊`x:Arguments`， `x:FactoryMethod`，並`x:TypeArguments`屬性，請參閱[在 XAML 中傳遞的引數](~/xamarin-forms/xaml/passing-arguments.md)。
+如需詳細資訊`x:DataType`屬性，請參閱[編譯的繫結](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)。 如需詳細資訊`x:FieldModifier`屬性，請參閱[欄位修飾詞](~/xamarin-forms/xaml/field-modifiers.md)。 如需詳細資訊`x:Arguments`， `x:FactoryMethod`，並`x:TypeArguments`屬性，請參閱[在 XAML 中傳遞的引數](~/xamarin-forms/xaml/passing-arguments.md)。
+
+> [!NOTE]
+> 除了上面所列的命名空間屬性，Xamarin.Forms 也包含可以透過取用的標記延伸`x`命名空間前置詞。 如需詳細資訊，請參閱 <<c0> [ 耗用 XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md)。
 
 在 XAML 中，命名空間宣告繼承自父項目子系項目中。 因此，當定義命名空間中的 XAML 檔案的根項目，該檔案中的所有項目會繼承命名空間宣告。
 
@@ -95,10 +99,11 @@ XAML 會使用前置詞來宣告非預設的命名空間，以參考在命名空
 </ListView>
 ```
 
+定義自訂命名空間的結構描述的詳細資訊，請參閱[XAML 自訂命名空間的結構描述](custom-namespace-schemas.md)。
+
 ## <a name="summary"></a>總結
 
 本文章會導入的 XAML 命名空間語法，並示範如何宣告 XAML 命名空間，以存取的型別。 XAML 使用`xmlns`可以在 XAML 中參考的命名空間宣告和類型的 XML 屬性，藉由宣告具有前置詞的 XAML 命名空間。
-
 
 ## <a name="related-links"></a>相關連結
 

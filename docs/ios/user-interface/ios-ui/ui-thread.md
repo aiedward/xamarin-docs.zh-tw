@@ -1,30 +1,30 @@
 ---
-title: 使用 UI 執行緒中 Xamarin.iOS
-description: 本文件說明如何使用 Xamarin.iOS 在 UI 執行緒。 它會討論 UI 執行緒執行、 提供背景執行緒範例中，並檢查非同步/等候。
+title: 使用 Xamarin.iOS 中的 UI 執行緒
+description: 本文件說明如何使用在 Xamarin.iOS 中的 UI 執行緒。 它討論 UI 執行緒執行，提供一個背景執行緒的範例，並檢查 async/await。
 ms.prod: xamarin
 ms.assetid: 98762ACA-AD5A-4E1E-A536-7AF3BE36D77E
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 4328b84625aff4c92d6e97029ced7dde747d4fc4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 6dd55f5c4316ed8f1d4f16d9e282cc2647350518
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790405"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104852"
 ---
-# <a name="working-with-the-ui-thread-in-xamarinios"></a>使用 UI 執行緒中 Xamarin.iOS
+# <a name="working-with-the-ui-thread-in-xamarinios"></a>使用 Xamarin.iOS 中的 UI 執行緒
 
-應用程式使用者介面一律是單一執行緒，即使是在多執行緒的裝置 – 螢幕只有一個表示法，並顯示內容的任何變更需要在透過 「 存取點 」 的單一協調。 這可避免多個執行緒嘗試同時更新相同的像素 （例如）。
+應用程式使用者介面一律是單一執行緒，即使是在多執行緒的裝置 – 只能有一個表示法的螢幕，並顯示的內容的任何變更需要透過單一的 「 存取點 」 的協調。 這可防止多個執行緒嘗試同時更新相同的像素 （例如）。
 
-您的程式碼應該只會提供對使用者介面控制項，從主要 （或 UI） 執行緒。 在不同的執行緒 （例如回呼或背景的執行緒） 進行任何 UI 更新可能就無法取得轉譯至螢幕，或甚至會損毀。
+您的程式碼只應該要對使用者介面控制項，從主要 （或 UI） 執行緒。 （例如回呼或背景執行緒） 的不同執行緒發生的任何 UI 更新可能不取得轉譯至螢幕，或甚至可能會造成當機。
 
 ## <a name="ui-thread-execution"></a>UI 執行緒執行
 
-當您建立的控制項檢視中，或處理使用者啟動的事件，例如觸控時，已經 UI 執行緒的內容中執行程式碼。
+當您在檢視中，建立控制項或處理使用者啟動的事件，例如觸控時，程式碼已經在 UI 執行緒內容中執行。
 
-如果在背景執行緒，工作或回呼中執行程式碼則可能不在主要 UI 執行緒上執行。 您在此情況下設定呼叫的程式碼包裝`InvokeOnMainThread`或`BeginInvokeOnMainThread`如下所示：
+如果在工作或回呼的背景執行緒上執行程式碼則可能不在主要 UI 執行緒上執行。 在此情況下您應該將程式碼包裝在呼叫`InvokeOnMainThread`或`BeginInvokeOnMainThread`如下所示：
 
 ```csharp
 InvokeOnMainThread ( () => {
@@ -32,9 +32,9 @@ InvokeOnMainThread ( () => {
 });
 ```
 
-`InvokeOnMainThread`方法上定義`NSObject`讓它可以從內呼叫方法 （例如，檢視或檢視控制器） 的任何 UIKit 物件上定義。
+`InvokeOnMainThread`方法定義上`NSObject`讓它可以從方法內呼叫 （例如，檢視或檢視控制器） 任何 UIKit 物件上定義。
 
-偵錯時 Xamarin.iOS 應用程式，錯誤會擲回您的程式碼嘗試從錯誤的執行緒存取 UI 控制項。 這可協助您追蹤並修正這些問題 InvokeOnMainThread 方法。 這只偵錯時，就會發生，並在發行組建中沒有擲回錯誤。 將會出現錯誤訊息如下：
+偵錯時的 Xamarin.iOS 應用程式，發生錯誤則會擲回您的程式碼會嘗試從錯誤的執行緒存取 UI 控制項。 這可協助您追蹤並修正這些問題 InvokeOnMainThread 方法。 這只在偵錯時，就會發生，並不會擲回錯誤發行組建中。 錯誤訊息將會如下所示：
 
  ![](ui-thread-images/image10.png "UI 執行緒執行")
 
@@ -43,7 +43,7 @@ InvokeOnMainThread ( () => {
 
 ## <a name="background-thread-example"></a>背景執行緒範例
 
-以下是嘗試存取使用者介面控制項的範例 ( `UILabel`) 從背景執行緒使用簡單的執行緒：
+以下是嘗試存取使用者介面控制項的範例 ( `UILabel`) 從背景執行緒，使用簡單的執行緒：
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -51,7 +51,7 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-程式碼將會擲回`UIKitThreadAccessException`偵錯時。 若要修正此問題 （並確保使用者介面控制項只從主要 UI 執行緒存取），包裝參考 UI 控制項內的任何程式碼`InvokeOnMainThread`運算式如下：
+程式碼將會擲回`UIKitThreadAccessException`偵錯時。 若要修正此問題 （並確保在使用者介面控制項只存取從主要 UI 執行緒），來包裝參考 UI 控制項內的任何程式碼`InvokeOnMainThread`運算式如下：
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -61,16 +61,16 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-您不需要執行這在本文件中，但是它範例的其餘部分是您的應用程式可讓網路要求時要注意的重要概念的使用會使用通知中心或其他方法的要求會在另一台執行完成處理常式執行緒。
+您不需要執行此項目中的範例本文件中，但它的其餘部分，是應用程式所提出網路要求時要注意的重要概念的使用會使用通知中心或其他需要另一個將執行完成處理常式的方法執行緒。
 
  <a name="Async_Await_Example" />
 
 
-## <a name="asyncawait-example"></a>非同步/等候範例
+## <a name="asyncawait-example"></a>Async/Await 範例
 
-使用 C# 5 非同步/等候關鍵字時`InvokeOnMainThread`由於不需要等候的工作完成時呼叫的執行緒上的此方法會繼續。
+當使用C#5 async/await 關鍵字`InvokeOnMainThread`由於不需要等候的工作完成時呼叫的執行緒上的方法會繼續。
 
-這個範例程式碼 （其會等候的延遲方法呼叫，純粹供示範之用） 顯示 （它是 TouchUpInside 處理常式） 的 UI 執行緒呼叫的非同步方法。 UI 執行緒上呼叫包含的方法，因為 UI 之類的作業上設定的文字`UILabel`或顯示`UIAlertView`可以安全地呼叫在背景執行緒上非同步作業完成之後。
+這個範例程式碼 （其會等候的延遲方法呼叫，純粹供示範之用） 將示範非同步方法呼叫 （它是 TouchUpInside 處理常式） 在 UI 執行緒上。 包含的方法在 UI 執行緒上呼叫，因為 UI 之類的作業上設定的文字`UILabel`或顯示`UIAlertView`可以安全地呼叫背景執行緒上非同步作業完成之後。
 
 ```csharp
 async partial void button2_TouchUpInside (UIButton sender)
@@ -91,7 +91,7 @@ async partial void button2_TouchUpInside (UIButton sender)
 }
 ```
 
-如果非同步方法呼叫從背景執行緒 （不主要 UI 執行緒） 然後`InvokeOnMainThread`仍然是必要。
+如果非同步方法呼叫從背景執行緒 （不主要 UI 執行緒） 再`InvokeOnMainThread`仍將是必要。
 
 
 ## <a name="related-links"></a>相關連結

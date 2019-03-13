@@ -4,15 +4,15 @@ description: 本文件說明如何在 Xamarin.iOS 中顯示警示，使用 UIAle
 ms.prod: xamarin
 ms.assetid: 61C671E9-3757-4052-86E4-28640025A34A
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 788e62b30dbf533df059b0c3805e04ecf7b857aa
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 6071381daa7eedf4fa4b076ea60f2748865cf002
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241330"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109636"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>在 Xamarin.iOS 中顯示的警示
 
@@ -93,8 +93,6 @@ actionSheetButton.TouchUpInside += ((sender, e) => {
     actionSheetAlert.AddAction(UIAlertAction.Create("OK",UIAlertActionStyle.Default, (action) => Console.WriteLine ("Item One pressed.")));
 
     actionSheetAlert.AddAction(UIAlertAction.Create("custom button 1",UIAlertActionStyle.Default, (action) => Console.WriteLine ("Item Two pressed.")));
-
-    actionSheetAlert.AddAction(UIAlertAction.Create("Cancel",UIAlertActionStyle.Default, (action) => Console.WriteLine ("Item Three pressed.")));
 
     actionSheetAlert.AddAction(UIAlertAction.Create("Cancel",UIAlertActionStyle.Cancel, (action) => Console.WriteLine ("Cancel button pressed.")));
 

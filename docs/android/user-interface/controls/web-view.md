@@ -3,19 +3,20 @@ title: Web 檢視
 ms.prod: xamarin
 ms.assetid: 807F214A-166D-B342-0BBA-525517577F6B
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 8d7b0e1abc8eb11bf812a111764b9cccfb41e041
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: ae0b67de5856e6baef9a4989a93e65ead2854a62
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241171"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110078"
 ---
 # <a name="web-view"></a>Web 檢視
 
-[`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) 可讓您建立您自己的視窗來檢視網頁 （或甚至開發完整的瀏覽器）。 在本教學課程中，您將建立簡單[ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/)可檢視及瀏覽的網頁。
+[`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) 可讓您建立您自己的視窗來檢視網頁 （或甚至開發完整的瀏覽器）。 在本教學課程中，您將建立簡單 [`Activity`](https://developer.xamarin.com/api/type/Android.App.Activity/)
+可以檢視並瀏覽的網頁。
 
 建立新的專案，名為**HelloWebView**。
 
@@ -74,7 +75,8 @@ public class HelloWebViewClient : WebViewClient
 }
 ```
 
-接下來，使用下列程式碼[ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))方法：
+接下來，使用下列程式碼 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))
+方法：
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -118,7 +120,8 @@ public override bool OnKeyDown (Android.Views.Keycode keyCode, Android.Views.Key
 }
 ```
 
-這[ `OnKeyDown(int, KeyEvent)` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnKeyDown/(Android.Views.Keycode%2cAndroid.Views.KeyEvent))每當活動執行時按下按鍵時，就會呼叫回呼方法。 內使用條件[ `KeyEvent` ](https://developer.xamarin.com/api/type/Android.Views.KeyEvent/)若要檢查的索引鍵是否按下**回** 按鈕及是否[ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)實際上能夠瀏覽回 （如果有歷程記錄）。 如果兩者都為 true，則[ `GoBack()` ](https://developer.xamarin.com/api/member/Android.Webkit.WebView.GoBack/)呼叫方法時，它將會瀏覽回上一步[ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)歷程記錄。 傳回`true`指出事件已處理。 如果不符合此條件，事件會傳送回系統。
+此 [`OnKeyDown(int, KeyEvent)`](https://developer.xamarin.com/api/member/Android.App.Activity.OnKeyDown/(Android.Views.Keycode%2cAndroid.Views.KeyEvent))
+每當活動執行時按下按鍵時，會呼叫回呼方法。 內使用條件[ `KeyEvent` ](https://developer.xamarin.com/api/type/Android.Views.KeyEvent/)若要檢查的索引鍵是否按下**回** 按鈕及是否[ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)實際上能夠瀏覽回 （如果有歷程記錄）。 如果兩者都為 true，則[ `GoBack()` ](https://developer.xamarin.com/api/member/Android.Webkit.WebView.GoBack/)呼叫方法時，它將會瀏覽回上一步[ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)歷程記錄。 傳回`true`指出事件已處理。 如果不符合此條件，事件會傳送回系統。
 
 再次執行應用程式。 您現在應該能夠遵循連結，並向後巡覽頁面記錄：
 

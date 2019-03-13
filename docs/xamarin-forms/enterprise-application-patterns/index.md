@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: ecfe99f66e16eafabc3117036ff065e3a35259c3
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: f972a32f8daf920f2121e5aa56923c0f3a7f808a
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994344"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528438"
 ---
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>使用 Xamarin.Forms 電子書的企業應用程式模式
 
@@ -54,7 +54,7 @@ Xamarin.Forms 包含頁面巡覽，通常會從使用者的互動的 UI，或從
 
 接受使用者輸入的任何應用程式應該確定輸入有效。 不需要驗證，使用者可以提供會導致應用程式失敗的資料。 驗證會強制執行商務規則，並防止攻擊者將惡意的資料。
 
-在內容的模型-ViewModel (MVVM) 模式，檢視模型或模型通常必須執行資料驗證，並發出信號至檢視的任何驗證錯誤，以便讓使用者更正。
+在內容的 Model View ViewModel (MVVM) 模式，檢視模型或模型通常必須執行資料驗證，並發出信號至檢視的任何驗證錯誤，以便讓使用者更正。
 
 ## <a name="configuration-managementconfiguration-managementmd"></a>[設定管理](configuration-management.md)
 

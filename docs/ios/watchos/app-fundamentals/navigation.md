@@ -1,83 +1,83 @@
 ---
-title: 使用 watchOS Xamarin 中巡覽
-description: 本文件說明如何瀏覽 watchOS 應用程式中使用。 它討論強制回應的介面、 階層式巡覽，以及頁面為基礎的介面。
+title: 使用 watchOS 在 Xamarin 中瀏覽
+description: 本文件說明如何使用 watchOS 應用程式中的導覽。 它討論強制回應介面、 階層式導覽，以及頁面為基礎的介面。
 ms.prod: xamarin
 ms.assetid: 71A64C10-75C8-4159-A547-6A704F3B5C2E
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: c9bcfc388164060549ca7010d11671abfa8230ac
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 0f087e4ce8fac2d86d45b6a27dc00c3fe4ad18db
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790636"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058960"
 ---
-# <a name="working-with-watchos-navigation-in-xamarin"></a>使用 watchOS Xamarin 中巡覽
+# <a name="working-with-watchos-navigation-in-xamarin"></a>使用 watchOS 在 Xamarin 中瀏覽
 
-最簡單瀏覽可用的選項上監看式是簡單[強制回應的快顯](#modal)出現在目前的場景之上。
+最簡單瀏覽可用的選項上監看式是一項簡單[強制回應快顯](#modal)，會顯示在目前的場景。
 
-如有多個場景監看式應用程式的兩個可用的瀏覽開發架構：
+有多場景 watch 應用程式的兩個可用的瀏覽範例：
 
 - [階層式導覽](#Hierarchical_Navigation)
 - [頁面為基礎的介面](#Page-Based_Interfaces)
 
 <a name="modal"/>
 
-## <a name="modal-interfaces"></a>強制回應的介面
+## <a name="modal-interfaces"></a>強制回應介面
 
-使用`PresentController`方法來開啟介面控制站，以強制回應方式。 介面控制站必須已定義在**Interface.storyboard**。
+使用`PresentController`以強制回應方式開啟介面控制器的方法。 介面控制器必須已經定義於**Interface.storyboard**。
 
 ```csharp
 PresentController ("pageController","some context info");
 ```
 
-要強制顯示控制站使用全螢幕 （涵蓋先前場景）。 根據預設，標題會設定為**取消**點選它將會關閉控制站。
+要強制顯示控制站會使用全螢幕 （涵蓋先前場景）。 根據預設，標題設定為**取消**和點選它將會關閉控制站。
 
-若要以程式設計方式關閉以強制回應方式顯示控制站，請呼叫`DismissController`。
+若要以程式設計方式關閉要強制顯示控制站，請呼叫`DismissController`。
 
 ```csharp
 DismissController();
 ```
 
-強制回應螢幕可以是單一窗定位在場景或使用頁面為基礎的配置。
+強制回應的畫面可以是單一的場景或使用頁面為基礎的配置。
 
 <a name="Hierarchical_Navigation"/>
 
 ## <a name="hierarchical-navigation"></a>階層式導覽
 
-呈現的場景，像堆疊可巡覽回透過、 類似的方式一樣`UINavigationController`可在 iOS 上運作。 場景可以推入至巡覽堆疊及推出 （以程式設計方式或依使用者選取範圍）。
+顯示場景，例如可透過巡覽，其方式類似於堆疊`UINavigationController`在 iOS 上的運作方式。 場景可以推送至導覽堆疊，並拉 （以程式設計方式或依使用者選取範圍）。
 
 ![](navigation-images/hierarchy-1.png "場景可以放入巡覽堆疊") ![](navigation-images/hierarchy-2.png "運作原理可以從瀏覽堆疊取出")
 
-如同 iOS 左邊緣撥動巡覽回父控制器階層式巡覽堆疊中。
+如同 iOS 左邊緣撥動向後巡覽至的階層式導覽堆疊中的父控制站。
 
-這兩個[WatchKitCatalog](https://developer.xamarin.com/samples/WatchKitCatalog)和[WatchTables](https://developer.xamarin.com/samples/WatchTables)範例包含階層式導覽。
+這兩個[WatchKitCatalog](https://developer.xamarin.com/samples/WatchKitCatalog)並[WatchTables](https://developer.xamarin.com/samples/WatchTables)範例包括階層式導覽。
 
-### <a name="pushing-and-popping-in-code"></a>發送，以及在程式碼中移除
+### <a name="pushing-and-popping-in-code"></a>推進和拉出程式碼中
 
-監看套件不需要過度 arching 的 「 瀏覽控制器 」 類似 iOS-建立直接推送控制器使用`PushController`方法和巡覽堆疊將會自動建立。
+觀看套件不需要過度 arching 的 「 瀏覽控制器 」 會建立類似 iOS-只要推送控制器使用`PushController`方法，並瀏覽堆疊會自動建立。
 
 ```csharp
 PushController("secondPageController","some context info");
 ```
 
-監看的螢幕會包含**回**按鈕在左上方，但是您可以從瀏覽堆疊使用也以程式設計方式移除場景`PopController`。
+監看式的畫面會包含**回復**左上方，但是您的按鈕可以從導覽堆疊使用也以程式設計方式移除場景`PopController`。
 
 ```csharp
 PopController();
 ```
 
-做為使用 iOS，它也可能返回瀏覽堆疊使用的根`PopToRootController`。
+即使用 iOS，也能以返回 瀏覽堆疊使用的根`PopToRootController`。
 
 ```csharp
 PopToRootController();
 ```
 
-### <a name="using-segues"></a>使用 Segues
+### <a name="using-segues"></a>使用 Segue
 
-Segues 可由場景中定義的階層式導覽分鏡腳本之間。 若要取得目標場景，作業系統呼叫內容`GetContextForSegue`來初始化新的介面控制站。
+Segue 可以在分鏡腳本來定義階層式導覽中的場景之間建立。 針對目標場景，作業系統呼叫來取得內容`GetContextForSegue`來初始化新的介面控制站。
 
 ```csharp
 public override NSObject GetContextForSegue (string segueIdentifier)
@@ -92,12 +92,12 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 
 ## <a name="page-based-interfaces"></a>頁面為基礎的介面
 
-頁面為基礎的介面撥動左到右，其方式類似於`UIPageViewController`可在 iOS 上運作。 點指示器會顯示螢幕才能顯示目前顯示哪一頁的底部。
+頁面型介面撥動左到右，其方式類似於`UIPageViewController`在 iOS 上的運作方式。 指標點會顯示以顯示頁面目前顯示畫面的底部。
 
 ![](navigation-images/paged-1.png "範例的第一頁") ![](navigation-images/paged-2.png "範例的第二頁") ![](navigation-images/paged-5.png "範例的第五頁")
 
 
-若要讓頁面為基礎的介面監看式應用程式的主要 UI，使用`ReloadRootControllers`介面控制站及內容的陣列：
+若要讓頁面為基礎的介面監看式應用程式的主要 UI，使用`ReloadRootControllers`介面控制器以及內容的陣列：
 
 ```csharp
 var controllerNames = new [] { "pageController", "pageController", "pageController", "pageController", "pageController" };
@@ -105,7 +105,7 @@ var contexts = new [] { "First", "Second", "Third", "Fourth", "Fifth" };
 ReloadRootControllers (controllerNames, contexts);
 ```
 
-您也可以呈現的頁面為基礎的控制站，不是根目錄使用`PresentController`從其他應用程式中的場景的其中一個。
+您也會顯示一個頁面為基礎的控制站，不是根使用`PresentController`其中一個應用程式中其他的場景。
 
 ```csharp
 var controllerNames = new [] { "pageController", "pageController", "pageController", "pageController", "pageController" };
@@ -117,5 +117,5 @@ PresentController (controllerNames, contexts);
 
 ## <a name="related-links"></a>相關連結
 
-- [WatchKitCatalog （範例）](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchKitCatalog/)
-- [WatchTables （範例）](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchTables/)
+- [WatchKitCatalog （範例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [WatchTables （範例）](https://developer.xamarin.com//samples/monotouch/watchOS/WatchTables/)

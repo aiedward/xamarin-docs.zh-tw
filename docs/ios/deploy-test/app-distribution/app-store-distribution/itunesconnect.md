@@ -4,20 +4,21 @@ description: 本文將介紹在 iTunes Connect 中設定和維護 Xamarin.iOS �
 ms.prod: xamarin
 ms.assetid: 74587317-4b15-4904-9582-dcd914827cbc
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 05492f866bb083326ef1eccb8db3d624d8dc4806
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: 52cd8a15f1b5b232deef62a8e87910b092aad94c
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209306"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831946"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>在 iTunes Connect 中設定應用程式
 
 > [!IMPORTANT]
-> Apple [已宣布](https://developer.apple.com/news/?id=05072018a) \(英文\) 從 2018 年 7 月開始，提交至 App Store 的所有應用程式和更新都必須是使用 iOS 11 SDK 建置，且必須[支援 iPhone X 顯示器](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)。
+> Apple [已宣佈](https://developer.apple.com/ios/submit/)從 2019 年 3 月開始，提交至 App Store 的所有應用程式與更新，都必須使用 iOS 12.1 SDK 或更新版本 (包含在 Xcode 10.1 或更新版本中) 進行建置。
+> 應用程式也應支援 iPhone XS 及 12.9" iPad Pro 的螢幕大小。
 
 iTunes Connect 是一套 Web 架構工具，可在 App Store 上管理 iOS 應用程式或進行其他作業。 您必須先在 iTunes Connect 中正確安裝並設定 Xamarin.iOS 應用程式，才能將其提交給 Apple 進行檢閱，最終達到在 App Store 作為付費或免費應用程式發行的目標。
 
@@ -116,7 +117,7 @@ Apple 要求提供應用程式支援之各種螢幕大小和解析度的螢幕�
 7. 按一下螢幕頂端的 [儲存] 按鈕以儲存變更。
 
 > [!NOTE]
-> 注意：如果螢幕擷取畫面或應用程式預覽影片與應用程式中目前的功能不符合，Apple 將拒絕您的提交。
+> 注意:如果螢幕擷取畫面或應用程式預覽影片不符合應用程式中目前的功能，Apple 就會拒絕您的提交。
 
 <a name="metadata" />
 
@@ -188,7 +189,7 @@ Apple 要求開發人員提供網站連結，當使用者遇到可能的應用�
 6. 按一下螢幕頂端的 [儲存] 按鈕以儲存變更。
 
 > [!IMPORTANT]
-> 注意：若名稱、描述、新增功能、關鍵字或 URL 不符合您應用程式中的目前功能，Apple 將拒絕您的提交。
+> 注意:若名稱、描述、新功能、關鍵字或 URL 不符合您應用程式中目前的功能，Apple 就會拒絕您的提交。
 
 <a name="general" />
 
@@ -208,7 +209,7 @@ Apple 建議在設計應用程式圖示時遵循下列指導方針：
 - 確保圖示適合應用程式。
 - 建立與應用程式設計一致的簡單圖示。
 - 圖示中避免使用文字。
-- 全域思考：單一應用程式圖式將用於市集內的所有區域。
+- 全球思維：所有商店區域都使用單一的應用程式圖示。
 
 在 App Store 中顯示的應用程式圖示必須有 1024 x 1024 影像像素。
 
@@ -233,7 +234,7 @@ Apple 建議在設計應用程式圖示時遵循下列指導方針：
 建立適用於兒童的應用程式時，App Store 有一個針對 11 歲及以下兒童的特殊類別。 即使您的應用程式並非特別針對兒童，這也有助於客戶根據所提供的適當內容分級來做出正確選擇。
 
 > [!IMPORTANT]
-> 注意：如果發現淫穢、色情、攻擊性或誹謗性內容，Apple 將拒絕應用程式提交。
+> 注意:如果發現任何猥褻、色情、冒犯他人或誹謗性內容，Apple 就會拒絕應用程式提交。
 
 ### <a name="copyright-and-company-information"></a>著作權和公司資訊
 
@@ -256,7 +257,7 @@ Apple 允許您提供應用程式的著作權資訊，並要求提供發行應�
 6. 按一下螢幕頂端的 [儲存] 按鈕以儲存變更。
 
 > [!NOTE]
-> 注意：如果分類或分級與應用程式中的目前功能不符合，Apple 將拒絕您的提交。
+> 注意:如果分類或分級不符合應用程式中目前的功能，Apple 就會拒絕您的提交。
 
 <a name="game-center" />
 
@@ -348,7 +349,7 @@ Apple 允許您提供應用程式的著作權資訊，並要求提供發行應�
 
 ## <a name="viewing-application-reviews"></a>檢視應用程式評論
 
-一旦應用程式發行至 App Store 之後，購買或免費下載應用程式的使用者即可撰寫應用程式評論並評定星級。 請使用此區段來查看評論。 例如: 
+一旦應用程式發行至 App Store 之後，購買或免費下載應用程式的使用者即可撰寫應用程式評論並評定星級。 請使用此區段來查看評論。 例如：
 
 [![](itunesconnect-images/reviews01.png "檢視應用程式評論")](itunesconnect-images/reviews01.png#lightbox)
 
@@ -359,7 +360,7 @@ Apple 允許您提供應用程式的著作權資訊，並要求提供發行應�
 ## <a name="related-links"></a>相關連結
 
 - [使用影像](~/ios/app-fundamentals/images-icons/index.md)
-- [iOS 應用程式開發工作流程指南：散發應用程式](http://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/35-Distributing_Applications/distributing_applications.html)
+- [iOS App Development Workflow Guide:Distributing Applications](http://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/35-Distributing_Applications/distributing_applications.html)
 - [App Store 提交提示](https://developer.apple.com/appstore/resources/submission/tips.html)
 - [App Store 審查指導方針](https://developer.apple.com/appstore/resources/approval/guidelines.html)
 - [iTunes Connect 開發人員指南](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/About.html#//apple_ref/doc/uid/TP40011225-CH1-SW1)

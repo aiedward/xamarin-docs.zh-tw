@@ -4,15 +4,15 @@ description: 本文件描述 fastlane 的 match 命令，它用來建立及維�
 ms.prod: xamarin
 ms.assetid: C4A2A67E-0643-4CED-B1A9-79D65054F3CA
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 668538d4c9048175fb95f9d010bb5e95c800fea8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 0363f6fa1611a15c6925717f7bdf3905f467831e
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785446"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107790"
 ---
 # <a name="fastlane-for-ios---match"></a>適用於 iOS 的 fastlane - match
 

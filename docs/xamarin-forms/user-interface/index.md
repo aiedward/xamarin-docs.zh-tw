@@ -6,15 +6,12 @@ ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/07/2017
-ms.openlocfilehash: a89bce4f35a73d0b881fd38b2ae246d2eb86ef7b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996817"
+ms.date: 11/14/2018
 ---
+
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 使用者介面檢視
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/FormsGallery/)
 
 _如何使用 Xamarin.Forms 所提供的檢視_
 
@@ -30,6 +27,10 @@ Xamarin.Forms 包含自己的動畫基礎結構直接建立簡單的動畫，同
 
 `Button`回應點選或按一下，以指示應用程式執行特定工作。
 
+## <a name="collectionviewcollectionviewmd"></a>[CollectionView](collectionview.md)
+
+`CollectionView`是一種有彈性且高效能的檢視，來呈現資料使用不同的版面配置規格的清單。
+
 ## <a name="colorscolorsmd"></a>[色彩](colors.md)
 
 定義和跨平台使用色彩可能很難時每個平台有它自己的標準和預設值。
@@ -44,15 +45,19 @@ DataPages 提供 API，以快速且輕鬆地繫結資料來源至預先建立的
 
 ## <a name="datepickerdatepickermd"></a>[DatePicker](datepicker.md)
 
-`DatePicker`可讓使用者選取日期，以指定的範圍內。 它是使用特定程式執行所在平台支援的日期選擇器所實作的。
+`DatePicker`可讓使用者選取日期，以指定的範圍內。 它是使用特定的平台上執行應用程式所支援的日期選擇器所實作的。
 
-## <a name="graphicsgraphicsindexmd"></a>[圖形](graphics/index.md)
+## <a name="graphics-with-skiasharpgraphicsskiasharpindexmd"></a>[使用 Skiasharp 的圖形](graphics/skiasharp/index.md)
 
-如何將圖形和遊戲引擎視覺效果新增至 Xamarin.Forms 應用程式。
+如何將圖形加入使用 SkiaSharp 的 Xamarin.Forms 應用程式。
 
 ## <a name="imagesimagesmd"></a>[影像](images.md)
 
-映像可以跨平台與 Xamarin.Forms 共用、 可以載入特別針對每個平台，或它們可以下載供顯示。
+圖像可以跨平台與 Xamarin.Forms 共用、 可以載入特別針對每個平台，或它們可以供下載顯示。
+
+## <a name="imagebuttonimagebuttonmd"></a>[ImageButton](imagebutton.md)
+
+`ImageButton`顯示影像，並回應點選或按一下，以指示應用程式執行特定工作。
 
 ## <a name="layoutslayoutsindexmd"></a>[版面配置](layouts/index.md)
 
@@ -74,6 +79,10 @@ Xamarin.Forms 提供清單檢視控制項以顯示捲動的資料列的資料。
 
 `Slider`可讓使用者從連續範圍選取一個數字值。
 
+## <a name="steppersteppermd"></a>[Stepper](stepper.md)
+
+`Stepper`可讓使用者從某個範圍的值中選取一個數字值。 它包含兩個按鈕加上減號和加號。 操作的兩個按鈕會變更選取的值，以累加方式所示。
+
 ## <a name="stylesstylesindexmd"></a>[樣式](styles/index.md)
 
 字型、 色彩和其他屬性，都可以分組為控制項、 版面配置，或使用 Resourcedictionary 的整個應用程式可共用的樣式。
@@ -90,6 +99,14 @@ Xamarin.Forms 會有數種檢視來呈現和接收的文字。 文字檢視可�
 
 Xamarin.Forms 佈景主題定義特定標準控制項的視覺外觀。 當您新增至應用程式的資源字典的佈景主題時，會變更標準控制項的外觀。
 
+## <a name="timepickertimepickermd"></a>[TimePicker](timepicker.md)
+
+`TimePicker`可讓使用者選取的時間。 它是使用特定的平台上執行應用程式所支援的時間選擇器所實作的。
+
+## <a name="visualvisualindexmd"></a>[視覺效果](visual/index.md)
+
+Xamarin.Forms 的視覺效果可讓轉譯器會選擇性地套用到`VisualElement`物件，而不需要子類別 Xamarin.Forms 控制項。
+
 ## <a name="visual-state-managervisual-state-managermd"></a>[Visual State Manager](visual-state-manager.md)
 
 Visual State Manager 提供的結構化的方式觸發從程式碼，包括變更裝置方向 」 或 「 大小調整的版面配置的使用者介面中的變更。
@@ -98,8 +115,6 @@ Visual State Manager 提供的結構化的方式觸發從程式碼，包括變�
 
 Xamarin.Forms 會使用每個平台上的原生 web 瀏覽器控制項，並可以顯示網站、 本機資源，以及產生的 Html 字串。
 
-
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.Forms 簡介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
-- [Xamarin.Forms 組件庫 （範例）](https://developer.xamarin.com/samples/FormsGallery/)
+- [Xamarin.Forms 資源庫 (範例)](https://developer.xamarin.com/samples/FormsGallery/)

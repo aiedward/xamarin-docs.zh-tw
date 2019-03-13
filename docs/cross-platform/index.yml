@@ -1,4 +1,10 @@
 ### YamlMime:YamlDocument
+ms.openlocfilehash: c52714a36b204d8e92baa87f3aa7389c1b08260c
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197520"
 documentType: LandingData
 title: 跨平台指引
 metadata:
@@ -7,12 +13,6 @@ metadata:
   ms.author: crdun
   ms.date: 04/25/2018
   ms.topic: landing-page
-  ms.openlocfilehash: 9a08ccb3b00990a8b8425a2eb95d1f2390dda30e
-  ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
-  ms.translationtype: HT
-  ms.contentlocale: zh-TW
-  ms.lasthandoff: 05/03/2018
-  ms.locfileid: "32436381"
 abstract:
   description: Xamarin 提供適用於行動裝置、平板電腦和傳統型應用程式的跨平台開發解決方案。 本節涵蓋無論您以哪一個平台為目標皆適用的詳細資料。
   menu:
@@ -38,7 +38,7 @@ sections:
     - image:
         src: ~/media/icons/i_desktop-phone.svg
       text: Xamarin.Forms
-      href: ~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md
+      href: ~/get-started/quickstarts/index.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
       text: Android
@@ -58,11 +58,11 @@ sections:
     className: cardsB
     items:
     - href: ~/cross-platform/get-started/index.md
-      html: 帶您動手操作 Xamarin 的教學課程。 請確定一切都已正確安裝，並建立您的第一個應用程式。
+      html: 使用 Xamarin 開發行動應用程式的簡介。
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
         href: ~/cross-platform/get-started/index.md
-      title: 快速入門
+      title: 建置行動應用程式
     - href: ~/cross-platform/platform
       html: Xamarin 支援 C#、F# 和 Razor 樣板化引擎。
       image:
@@ -78,7 +78,7 @@ sections:
     - href: ~/cross-platform/deploy-test/performance.md
       html: 應用程式效能和安全性指導方針。
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_code-performance.svg
+        src: https://docs.microsoft.com/media/common/i_code-performance.svg
         href: ~/cross-platform/deploy-test/performance.md
       title: 效能與安全性
     - href: ~/cross-platform/deploy-test/
@@ -90,24 +90,6 @@ sections:
     - href: ~/cross-platform/desktop/
       html: 適用於有意建置行動應用程式之 .NET 桌面開發人員的指引。
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_xplat-code.svg
+        src: https://docs.microsoft.com/media/common/i_xplat-code.svg
         href: ~/cross-platform/desktop/
       title: 桌面開發人員
-- title: 平台
-  items:
-  - type: list
-    style: cards
-    className: cardsD
-    items:
-    - title: Xamarin.Forms
-      href: ~/xamarin-forms/index.yml
-      html: <p><a href="~/xamarin-forms/get-started/index.md">開始使用</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">應用程式基本概念</a><br /><a href="~/xamarin-forms/user-interface/index.md">使用者介面</a><br /><a href="~/xamarin-forms/platform/index.md">平台功能</a><br /><a href="~/xamarin-forms/deploy-test/index.md">部署與測試</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">資料與雲端服務</a><br /><a href="~/xamarin-forms/internals/index.md">進階概念與內部項目</a></p>
-    - title: Android
-      href: ~/android/index.yml
-      html: <p><a href="~/android/get-started/index.md">開始使用</a><br /><a href="~/android/app-fundamentals/index.md">應用程式基本概念</a><br /><a href="~/android/user-interface/index.md">使用者介面</a><br /><a href="~/android/platform/index.md">平台功能</a><br /><a href="~/android/deploy-test/index.md">部署與測試</a><br /><a href="~/android/data-cloud/index.md">資料與雲端服務</a><br /><a href="~/android/internals/index.md">進階概念與內部項目</a></p>
-    - title: iOS
-      href: ~/ios/index.yml
-      html: <p><a href="~/ios/get-started/index.md">開始使用</a><br /><a href="~/ios/app-fundamentals/index.md">應用程式基本概念</a><br /><a href="~/ios/user-interface/index.md">使用者介面</a><br /><a href="~/ios/platform/index.md">平台功能</a><br /><a href="~/ios/deploy-test/index.md">部署與測試</a><br /><a href="~/ios/data-cloud/index.md">資料與雲端服務</a><br /><a href="~/ios/internals/index.md">進階概念與內部項目</a></p>
-    - title: Mac
-      href: ~/mac/index.yml
-      html: <p><a href="~/mac/get-started/index.md">開始使用</a><br /><a href="~/mac/app-fundamentals/index.md">應用程式基本概念</a><br /><a href="~/mac/user-interface/index.md">使用者介面</a><br /><a href="~/mac/platform/index.md">平台功能</a><br /><a href="~/mac/deploy-test/index.md">部署與測試</a><br /><a href="~/mac/internals/index.md">進階概念與內部項目</a></p>

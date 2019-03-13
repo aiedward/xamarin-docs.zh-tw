@@ -4,15 +4,15 @@ description: 本指南將探索設定 Xamarin.iOS 環境以搭配 Apple Pay 支�
 ms.prod: xamarin
 ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: f2a38a4305aa11c78f3e4e35265a86dc71642777
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: b971029ff3b2b1e8f5e63233d1d754c44b0e3309
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351661"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110091"
 ---
 # <a name="apple-pay-in-xamarinios"></a>在 Xamarin.iOS 中的 Apple Pay
 

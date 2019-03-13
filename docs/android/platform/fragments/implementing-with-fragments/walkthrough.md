@@ -4,54 +4,54 @@ ms.prod: xamarin
 ms.topic: tutorial
 ms.assetid: ED368FA9-A34E-DC39-D535-5C34C32B9761
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 04/26/2018
-ms.openlocfilehash: 4dae59d113671c9ba1ac35dd8e4189d05a7c319a
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+author: conceptdev
+ms.author: crdun
+ms.date: 08/21/2018
+ms.openlocfilehash: 984e72f2b3ee11bcc0902663893509e5687fc099
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33798482"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119341"
 ---
-# <a name="fragments-walkthrough-ndash-phone"></a>片段逐步解說&ndash;電話]
+# <a name="fragments-walkthrough-ndash-phone"></a>片段逐步作業&ndash;電話
 
-這是會建立目標為 Android 裝置直式方向 Xamarin.Android 應用程式的逐步解說的第一個部分。 本逐步解說將討論如何在 Xamarin.Android 中建立的片段，以及如何將它們加入至範例。
+這是將建立 Xamarin.Android 應用程式為目標的 Android 裝置直向的逐步解說的第一個部分。 本逐步解說將討論如何在 Xamarin.Android 中建立片段，以及如何將它們新增至範例。
 
 [![](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
 
 此應用程式，將會建立下列類別：
 
-1. `PlayQuoteFragment` &nbsp; 此片段會顯示威廉莎士比亞婧矔菛引號。 它會由`PlayQuoteActivity`。
-1. `Shakespeare` &nbsp; 這個類別會保留兩個硬式編碼陣列做為屬性。
-1. `TitlesFragment` &nbsp; 此片段會顯示一份撰寫威廉莎士比亞所扮演的標題。 它會由`MainActivity`。
-1. `PlayQuoteActivity` &nbsp; `TitlesFragment` 將啟動`PlayQuoteActivity`以回應使用者選取在婧矔菛`TitlesFragment`。
+1. `PlayQuoteFragment` &nbsp; 這個片段顯示 William 莎士比亞婧矔菛引號。 它會由`PlayQuoteActivity`。
+1. `Shakespeare` &nbsp; 這個類別會保留兩個的硬式編碼陣列為屬性。
+1. `TitlesFragment` &nbsp; 這個片段會顯示一份播放 William Shakespeare 所寫入的標題。 它會由`MainActivity`。
+1. `PlayQuoteActivity` &nbsp; `TitlesFragment` 將會啟動`PlayQuoteActivity`回應使用者選取在婧矔菛`TitlesFragment`。
 
 ## <a name="1-create-the-android-project"></a>1.建立 Android 專案
 
 建立新的 Xamarin.Android 專案，稱為**FragmentSample**。
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![建立新的 Xamarin.Android 專案](./walkthrough-images/01-newproject.w157-sml.png)](./walkthrough-images/01-newproject.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![建立新的 Xamarin.Android 專案](./walkthrough-images/01-newproject.m742-sml.png)](./walkthrough-images/01-newproject.m742.png#lightbox)
 
-建議您選取**新式開發**對於此逐步解說。
+建議您選取**現代化開發**對於此逐步解說。
 
-建立專案之後，重新命名檔案**layout/Main.axml**至**layout/activity_main.axml**。
+建立專案之後，將檔案重新命名**layout/Main.axml**要**layout/activity_main.axml**。
 
 -----
 
 ## <a name="2-add-the-data"></a>2.加入資料
 
-此應用程式的資料會儲存在兩個屬性的類別名稱的硬式編碼的字串陣列`Shakespeare`:
+此應用程式的資料會儲存在兩個的硬式編碼字串陣列之內容的類別名稱`Shakespeare`:
 
-* `Shakespeare.Titles` &nbsp; 這個陣列會保留從威廉莎士比亞所扮演的清單。 這是資料來源`TitlesFragment`。
-* `Shakespeare.Dialogue` &nbsp; 這個陣列會保留一份引號，其中包含在所扮演`Shakespeare.Titles`。 這是資料來源`PlayQuoteFragment`。
+* `Shakespeare.Titles` &nbsp; 這個陣列會保存從 William Shakespeare 的播放清單。 這是資料來源，如`TitlesFragment`。
+* `Shakespeare.Dialogue` &nbsp; 這個陣列會保留一份引號括住，其中包含在所扮演的`Shakespeare.Titles`。 這是資料來源，如`PlayQuoteFragment`。
 
-將新 C# 類別加入**FragmentSample**專案，並命名**Shakespeare.cs**。 在此檔案中，建立新 C# 類別，稱為`Shakespeare`具有下列內容
+新增C#類別，即可**FragmentSample**專案，並命名**Shakespeare.cs**。 在此檔案中建立新的C#類別，稱為`Shakespeare`含有下列內容
 
 ```csharp
 class Shakespeare
@@ -75,26 +75,26 @@ class Shakespeare
                                         "Now is the winter of our discontent Made glorious summer by this sun of York; And all the clouds that lour'd upon our house In the deep bosom of the ocean buried. Now are our brows bound with victorious wreaths; Our bruised arms hung up for monuments; Our stern alarums changed to merry meetings, Our dreadful marches to delightful measures. Grim-visaged war hath smooth'd his wrinkled front; And now, instead of mounting barded steeds To fright the souls of fearful adversaries, He capers nimbly in a lady's chamber To the lascivious pleasing of a lute. But I, that am not shaped for sportive tricks, Nor made to court an amorous looking-glass; I, that am rudely stamp'd, and want love's majesty To strut before a wanton ambling nymph; I, that am curtail'd of this fair proportion, Cheated of feature by dissembling nature, Deformed, unfinish'd, sent before my time Into this breathing world, scarce half made up, And that so lamely and unfashionable That dogs bark at me as I halt by them; Why, I, in this weak piping time of peace, Have no delight to pass away the time, Unless to spy my shadow in the sun And descant on mine own deformity: And therefore, since I cannot prove a lover, To entertain these fair well-spoken days, I am determined to prove a villain And hate the idle pleasures of these days. Plots have I laid, inductions dangerous, By drunken prophecies, libels and dreams, To set my brother Clarence and the king In deadly hate the one against the other: And if King Edward be as true and just As I am subtle, false and treacherous, This day should Clarence closely be mew'd up, About a prophecy, which says that 'G' Of Edward's heirs the murderer shall be. Dive, thoughts, down to my soul: here Clarence comes.",
                                         "To bait fish withal: if it will feed nothing else, it will feed my revenge. He hath disgraced me, and hindered me half a million; laughed at my losses, mocked at my gains, scorned my nation, thwarted my bargains, cooled my friends, heated mine enemies; and what's his reason? I am a Jew. Hath not a Jew eyes? hath not a Jew hands, organs, dimensions, senses, affections, passions? fed with the same food, hurt with the same weapons, subject to the same diseases, healed by the same means, warmed and cooled by the same winter and summer, as a Christian is? If you prick us, do we not bleed? if you tickle us, do we not laugh? if you poison us, do we not die? and if you wrong us, shall we not revenge? If we are like you in the rest, we will resemble you in that. If a Jew wrong a Christian, what is his humility? Revenge. If a Christian wrong a Jew, what should his sufferance be by Christian example? Why, revenge. The villany you teach me, I will execute, and it shall go hard but I will better the instruction.",
                                         "Virtue! a fig! 'tis in ourselves that we are thus or thus. Our bodies are our gardens, to the which our wills are gardeners: so that if we will plant nettles, or sow lettuce, set hyssop and weed up thyme, supply it with one gender of herbs, or distract it with many, either to have it sterile with idleness, or manured with industry, why, the power and corrigible authority of this lies in our wills. If the balance of our lives had not one scale of reason to poise another of sensuality, the blood and baseness of our natures would conduct us to most preposterous conclusions: but we have reason to cool our raging motions, our carnal stings, our unbitted lusts, whereof I take this that you call love to be a sect or scion.",
-                                        "Blow, winds, and crack your cheeks! rage! blow! You cataracts and hurricanoes, spout Till you have drench'd our steeples, drown'd the cocks! You sulphurous and thought-executing fires, Vaunt-couriers to oak-cleaving thunderbolts, Singe my white head! And thou, all-shaking thunder, Smite flat the thick rotundity o' the world! Crack nature's moulds, an germens spill at once, That make ingrateful man!" 
+                                        "Blow, winds, and crack your cheeks! rage! blow! You cataracts and hurricanoes, spout Till you have drench'd our steeples, drown'd the cocks! You sulphurous and thought-executing fires, Vaunt-couriers to oak-cleaving thunderbolts, Singe my white head! And thou, all-shaking thunder, Smite flat the thick rotundity o' the world! Crack nature's moulds, an germens spill at once, That make ingrateful man!"
                                     };
 }
 ```
 
 ## <a name="3-create-the-playquotefragment"></a>3.建立 PlayQuoteFragment
 
-`PlayQuoteFragment` Android 片段會顯示為莎士比亞婧矔菛稍早在應用程式，使用者所選取的引號，此片段不會使用 Android 的版面配置檔案; 相反地，它會以動態方式建立它的使用者介面。 加入新`Fragment`名為類別`PlayQuoteFragment`至專案：
+`PlayQuoteFragment` Android 片段會顯示莎士比亞婧矔菛稍早在應用程式，使用者所選取的報價，此片段不會使用 Android 配置檔案; 相反地，它會以動態方式建立它的使用者介面。 加入新`Fragment`名為類別`PlayQuoteFragment`至專案：
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![加入新的 C# 類別](./walkthrough-images/04-addfragment.w157-sml.png)](./walkthrough-images/02-addclass.w157.png#lightbox)
+[![新增C#類別](./walkthrough-images/04-addfragment.w157-sml.png)](./walkthrough-images/02-addclass.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![加入新的 C# 類別](./walkthrough-images/04-addfragment.m742-sml.png)](./walkthrough-images/02-addclass.m742.png#lightbox)
+[![新增C#類別](./walkthrough-images/04-addfragment.m742-sml.png)](./walkthrough-images/02-addclass.m742.png#lightbox)
 
 -----
 
-然後，將變更的程式碼片段，類似於這個程式碼片段：
+然後，變更要看起來像此程式碼片段的片段的程式碼：
 
 ```csharp
 public class PlayQuoteFragment : Fragment
@@ -129,24 +129,24 @@ public class PlayQuoteFragment : Fragment
 }
 ```
 
-這是在 Android 應用程式中提供的 factory 方法，會具現化片段的一般模式。 這可確保片段，將建立必要的參數，才能正常運作。 在此逐步解說中，應用程式必須使用`PlayQuoteFragment.NewInstance`方法，以選取報價每一次建立新的片段。 `NewInstance`方法會採用單一參數&ndash;引號，若要顯示的索引。
+它會提供 factory 方法，會具現化片段的 Android 應用程式的常見模式。 這可確保正常運作所需的參數，將會建立片段。 在本逐步解說中，應用程式必須使用`PlayQuoteFragment.NewInstance`報價已選取每次建立新的片段的方法。 `NewInstance`方法會採用單一參數&ndash;報價以顯示索引。
 
-`OnCreateView`方法會叫用 Android 時呈現在螢幕上的片段。 它會傳回 Android`View`片段的物件。 此片段不使用配置檔案來建立檢視。 相反地，它會以程式設計方式建立檢視具現化**TextView**來保存引號，就會顯示在該小工具**ScrollView**。
+`OnCreateView`方法會叫用 Android 它會呈現在螢幕上的片段時。 它會傳回 Android`View`片段的物件。 此片段不使用版面配置檔，來建立檢視。 相反地，它會透過程式設計方式建立檢視具現化**TextView**保存引號，而且會顯示在該 widget **ScrollView**。
 
 > [!NOTE]
-> 片段的子類別必須有公用預設建構函式沒有參數。
+> 片段的子類別必須具有公用預設建構函式沒有參數。
 
 ## <a name="4-create-the-playquoteactivity"></a>4.建立 PlayQuoteActivity
 
-片段必須裝載在活動內，所以此應用程式需要一個活動，將裝載`PlayQuoteFragment`。 活動會將動態加入此片段它在執行階段的版面配置。 將新的活動加入至應用程式並將其命名`PlayQuoteActivity`:
+片段必須裝載在活動內，讓此應用程式需要將裝載活動`PlayQuoteFragment`。 活動會以動態方式將片段新增至它在執行階段的版面配置。 將新的活動新增至應用程式並將它命名`PlayQuoteActivity`:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![將 Android 的活動加入至專案](./walkthrough-images/03-addactivity.w157-sml.png)](./walkthrough-images/03-addactivity.w157.png#lightbox)
+[![將 Android 活動加入至專案](./walkthrough-images/03-addactivity.w157-sml.png)](./walkthrough-images/03-addactivity.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![將 Android 的活動加入至專案](./walkthrough-images/03-addactivity.m742-sml.png)](./walkthrough-images/03-addactivity.m742.png#lightbox)
+[![將 Android 活動加入至專案](./walkthrough-images/03-addactivity.m742-sml.png)](./walkthrough-images/03-addactivity.m742.png#lightbox)
 
 -----
 
@@ -170,25 +170,25 @@ public class PlayQuoteActivity : Activity
 }
 ```
 
-當`PlayQuoteActivity`已建立，它會具現化新`PlayQuoteFragment`並載入在根檢視中的內容中的該片段`FragmentTransaction`。 請注意，此活動不會載入其使用者介面的 Android 配置檔案。 相反地，新`PlayQuoteFragment`加入至應用程式的 [根] 檢視。 資源識別元`Android.Resource.Id.Content`用來參考活動的 [根] 檢視而不需要知道其特定的識別項。
+當`PlayQuoteActivity`會建立，它會具現化新`PlayQuoteFragment`並載入其根 檢視中的內容，該片段`FragmentTransaction`。 請注意，此活動不會載入其使用者介面的 Android 配置檔案。 相反地，新`PlayQuoteFragment`新增至應用程式的 [根] 檢視。 資源識別元`Android.Resource.Id.Content`用來參考到活動的 [根] 檢視，而不需要知道其特定的識別項。
 
 ## <a name="5-create-titlesfragment"></a>5.建立 TitlesFragment
 
-`TitlesFragment`將子類別的特製化的片段又稱為`ListFragment`以封裝的邏輯來顯示`ListView`在片段中。 A`ListFragment`公開`ListAdapter`屬性 (由`ListView`以顯示其內容) 和名為事件處理常式`OnListItemClick`可讓要回應會顯示在資料列上的按鍵動作的片段`ListView`。 
+`TitlesFragment`將子類別化特製的片段稱為`ListFragment`其可封裝邏輯，來顯示`ListView`片段中。 A`ListFragment`公開`ListAdapter`屬性 (由`ListView`以顯示其內容) 和名為事件處理常式`OnListItemClick`可讓要回應按下後所顯示的資料列的片段`ListView`。
 
-若要開始，將新的片段加入至專案並將其命名**TitlesFragment**:
+若要開始，將新的片段加入至專案並將它命名**TitlesFragment**:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![新增 Android 專案的片段](./walkthrough-images/04-addfragment.w157-sml.png)](./walkthrough-images/04-addfragment.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![新增 Android 專案的片段](./walkthrough-images/04-addfragment.m742-sml.png)](./walkthrough-images/04-addfragment.m742.png#lightbox)
 
 -----
 
-編輯在片段內的程式碼：
+編輯在片段的程式碼：
 
 ```csharp
 public class TitlesFragment : ListFragment
@@ -231,13 +231,13 @@ public class TitlesFragment : ListFragment
 }
 ```
 
-Android 建立活動時將會叫用`OnActivityCreated`方法的片段，這是 where 清單配接器`ListView`建立。  `ShowQuoteFromPlay`方法將會啟動的執行個體`PlayQuoteActivity`顯示選取的播放引號。
+建立活動時將會叫用 Android`OnActivityCreated`方法的片段，這正是的清單配接器`ListView`建立。  `ShowQuoteFromPlay`方法會啟動的執行個體`PlayQuoteActivity`以顯示所選播放的報價。
 
 ## <a name="display-titlesfragment-in-mainactivity"></a>顯示 MainActivity TitlesFragment
 
-最後一個步驟是顯示`TitlesFragment`內`MainActivity`。 活動不會以動態方式載入的片段。 改為片段將會藉由宣告活動使用的配置檔案中以靜態方式載入`fragment`項目。 要載入的片段由設定`android:name`屬性加入該片段類別 (includeing 型別的命名空間)。 例如，若要使用`TitlesFragment`，然後`android:name`會設定為`FragmentSample.TitlesFragment`。
+最後一個步驟是為了`TitlesFragment`內`MainActivity`。 活動不會以動態方式載入片段。 改為片段將會藉由宣告活動使用的版面配置檔案中以靜態方式載入`fragment`項目。 藉由設定識別要載入的片段`android:name`屬性至片段類別 （包括類型的命名空間）。 例如，若要使用`TitlesFragment`，然後`android:name`會設定為`FragmentSample.TitlesFragment`。
 
-編輯版面配置檔案**activity_mail.axml**，以下列取代現有的 XML:
+編輯版面配置檔**activity_mail.axml**，以下列取代現有的 XML:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -248,7 +248,7 @@ Android 建立活動時將會叫用`OnActivityCreated`方法的片段，這是 w
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <fragment
-        android:name="FragmentSample.TitleFragment"
+        android:name="FragmentSample.TitlesFragment"
         android:id="@+id/titles"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -256,9 +256,9 @@ Android 建立活動時將會叫用`OnActivityCreated`方法的片段，這是 w
 ```
 
 > [!NOTE]
-> `class`屬性是有效的替代`android:name`。 沒有任何正式的指引在慣用的表單，有許多範例將使用的程式碼基底`class`交替使用`android:name`。
+> `class`屬性是有效取代`android:name`。 沒有任何正式的指導方針在哪一個表單是慣用的有許多範例將使用的程式碼基底`class`交替使用`android:name`。
 
-沒有 MainActivity 所需的程式碼變更。 該類別中的程式碼應該非常類似於這個程式碼片段：
+沒有所需的 MainActivity 的程式碼變更。 該類別中的程式碼應該非常類似於此程式碼片段：
 
 ```csharp
 [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
@@ -274,8 +274,8 @@ public class MainActivity : Activity
 
 ## <a name="run-the-app"></a>執行應用程式
 
-現在，程式碼已完成，若要查看作用中裝置上執行應用程式。
+既然已完成程式碼，若要查看作用中裝置上執行應用程式。
 
-[![在電話上執行的應用程式的螢幕擷取畫面。](./walkthrough-images/05-app-screenshots-sml.png)](./walkthrough-images/05-app-screenshots.png#lightbox)
+[![在手機上執行的應用程式的螢幕擷取畫面。](./walkthrough-images/05-app-screenshots-sml.png)](./walkthrough-images/05-app-screenshots.png#lightbox)
 
 [本逐步解說的第 2 部分](./walkthrough-landscape.md)將 optimtize 裝置在橫向模式中執行此應用程式。

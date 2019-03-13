@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: b7ea75c13d84cf9fe74d7a606f6127aaa6bbe3b2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 4f5f32871c273fc7ac3bab8fd9bcbcac03fc47fa
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996330"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233805"
 ---
 # <a name="native-views-in-xaml"></a>在 XAML 中的原生檢視
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeSwitch/)
 
 _從 iOS、 Android 和通用 Windows 平台的原生檢視可以直接參考從 Xamarin.Forms XAML 檔案。原生的檢視，可以設定屬性和事件處理常式，它們可以與 Xamarin.Forms 檢視互動。這篇文章會示範如何使用 Xamarin.Forms XAML 檔案中的原生檢視。_
 
@@ -180,7 +182,7 @@ Android 的小工具的建構函式通常需要 Android`Context`物件引數，�
 </ContentPage>
 ```
 
-[ `UIFont.FromName` ](https://developer.xamarin.com/api/member/UIKit.UIFont.FromName/) Factory 方法用於設定[ `UILabel.Font` ](https://developer.xamarin.com/api/property/UIKit.UILabel.Font/)屬性，以新[ `UIFont` ](https://developer.xamarin.com/api/type/UIKit.UIFont/)在 iOS 上。 `UIFont`子系的方法引數所指定的名稱和大小`x:Arguments`屬性。
+[ `UIFont.FromName` ](xref:UIKit.UIFont.FromName*) Factory 方法用於設定[ `UILabel.Font` ](xref:UIKit.UILabel.Font)屬性，以新[ `UIFont` ](xref:UIKit.UIFont)在 iOS 上。 `UIFont`子系的方法引數所指定的名稱和大小`x:Arguments`屬性。
 
 [ `Typeface.Create` ](https://developer.xamarin.com/api/member/Android.Graphics.Typeface.Create/p/System.String/Android.Graphics.TypefaceStyle/) Factory 方法用於設定[ `TextView.Typeface` ](https://developer.xamarin.com/api/property/Android.Widget.TextView.Typeface/)屬性，以新[ `Typeface` ](https://developer.xamarin.com/api/type/Android.Graphics.Typeface/)在 Android 上。 `Typeface`子系的方法引數所指定系列名稱和樣式`x:Arguments`屬性。
 
@@ -329,7 +331,7 @@ IOS 和 Android 的原生按鈕會共用相同`OnButtonTap`事件處理常式，
 
 ### <a name="ios"></a>iOS
 
-IOS 實作子類別[ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/) 檢視中，並公開屬性，屬性可以從 XAML 輕鬆地取用的事件：
+IOS 實作子類別[ `UIPickerView` ](xref:UIKit.UIPickerView) 檢視中，並公開屬性，屬性可以從 XAML 輕鬆地取用的事件：
 
 ```csharp
 public class MyUIPickerView : UIPickerView
@@ -374,7 +376,7 @@ public class MyUIPickerView : UIPickerView
 }
 ```
 
-`MyUIPickerView`類別會公開`ItemsSource`並`SelectedItem`屬性，並有`SelectedItemChanged`事件。 A [ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/)需要有基礎[ `UIPickerViewModel` ](https://developer.xamarin.com/api/type/UIKit.UIPickerViewModel/)資料模型，即可存取`MyUIPickerView`屬性和事件。 `UIPickerViewModel`所提供的資料模型`PickerModel`類別：
+`MyUIPickerView`類別會公開`ItemsSource`並`SelectedItem`屬性，並有`SelectedItemChanged`事件。 A [ `UIPickerView` ](xref:UIKit.UIPickerView)需要有基礎[ `UIPickerViewModel` ](xref:UIKit.UIPickerViewModel)資料模型，即可存取`MyUIPickerView`屬性和事件。 `UIPickerViewModel`所提供的資料模型`PickerModel`類別：
 
 ```csharp
 class PickerModel : UIPickerViewModel
@@ -417,7 +419,7 @@ class PickerModel : UIPickerViewModel
 }
 ```
 
-`PickerModel`類別提供的基礎儲存體`MyUIPickerView`類別，透過`Items`屬性。 每當在選取的項目`MyUIPickerView`變更[ `Selected` ](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.Selected/)執行方法時，這會更新選取的索引和引發`ItemChanged`事件。 這可確保`SelectedItem`屬性一律會傳回使用者所挑選的最後一個項目。 颾魤 ㄛ`PickerModel`類別會覆寫方法用來安裝`MyUIPickerView`執行個體。
+`PickerModel`類別提供的基礎儲存體`MyUIPickerView`類別，透過`Items`屬性。 每當在選取的項目`MyUIPickerView`變更[ `Selected` ](xref:UIKit.UIPickerViewModel.Selected*)執行方法時，這會更新選取的索引和引發`ItemChanged`事件。 這可確保`SelectedItem`屬性一律會傳回使用者所挑選的最後一個項目。 颾魤 ㄛ`PickerModel`類別會覆寫方法用來安裝`MyUIPickerView`執行個體。
 
 ### <a name="android"></a>Android
 

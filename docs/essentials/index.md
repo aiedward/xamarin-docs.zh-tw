@@ -1,68 +1,65 @@
 ---
 title: Xamarin.Essentials
-description: 本文件所連結到各種描述 Xamarin.Essentials，為開發人員提供的跨平台 Api，其行動裝置應用程式的指南。
+description: 此文件連結到描述 Xamarin.Essentials 的各種指南，提供開發人員適用於其行動應用程式的跨平台 API。
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 07/30/2018
-ms.openlocfilehash: 5c625e32a70e196b5562225bdf985cd4b3a6f5db
-ms.sourcegitcommit: 0e1b64b0aa8fc0e78f0feff3c8b39a4cb8c1da61
-ms.translationtype: MT
+ms.date: 11/04/2018
+ms.openlocfilehash: 0f4271e5c0c9de53a83a840f7fe0a83b594a06fa
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39360998"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898637"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
-![發行前版本的 NuGet](~/media/shared/pre-release.png)
+Xamarin.Essentials 提供開發人員適用於其行動應用程式的跨平台 API。
 
-Xamarin.Essentials 提供開發人員跨平台 Api，其行動裝置應用程式。
-
-Android、 iOS 和 UWP 提供唯一的作業系統與平台開發人員可以存取所有在 C# 中利用 Xamarin 的 Api。 Xamarin.Essentials 提供單一的跨平台 API，可搭配任何 Xamarin.Forms、 Android、 iOS 或 UWP 應用程式可存取共用的程式碼，不論如何建立使用者介面。
+Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人員可以在 C# 中使用 Xamarin 存取全部項目。 Xamarin.Essentials 提供單一跨平台 API，能夠搭配任何 Xamarin.Forms、Android、iOS 或 UWP 應用程式使用，且無論使用者介面建立的方式為何，都能從共用的程式碼進行存取。
 
 ## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>[開始使用 Xamarin.Essentials](get-started.md?context=xamarin/xamarin-forms)
 
-請遵循[快速入門指南](get-started.md)若要安裝**Xamarin.Essentials** NuGet 套件納入您現有的或新的 Xamarin.Forms、 Android、 iOS 或 UWP 專案。
+遵循[快速入門指南](get-started.md)，將 **Xamarin.Essentials** NuGet 套件安裝到您現有或新的 Xamarin.Forms、Android、iOS 或 UWP 專案中。
 
 ## <a name="feature-guides"></a>功能指南
 
-請遵循這些 Xamarin.Essentials 功能整合到應用程式的指南：
+遵循指南以將這些 Xamarin.Essentials 功能整合到您的應用程式：
 
-* [加速計](accelerometer.md?context=xamarin/xamarin-forms)– 擷取加速資料的三個維度空間中的裝置。
-* [應用程式資訊](app-information.md?context=xamarin/xamarin-forms)– 了解應用程式的相關資訊。
-* [電池](battery.md?context=xamarin/xamarin-forms)– 輕鬆偵測電池電量、 來源和狀態
-* [剪貼簿](clipboard.md?context=xamarin/xamarin-forms)– 快速且輕鬆地設定或讀取剪貼簿上的文字。
-* [Compass](compass.md?context=xamarin/xamarin-forms) – 監視羅盤的變更。
-* [連線](connectivity.md?context=xamarin/xamarin-forms)– 檢查連線狀態，並偵測變更。
-* [資料傳輸](data-transfer.md?context=xamarin/xamarin-forms)– 將文字和網站傳送到其他應用程式的 uri。
-* [裝置顯示資訊](device-display.md?context=xamarin/xamarin-forms)– 取得裝置的螢幕計量和方向。
-* [裝置資訊](device-information.md?context=xamarin/xamarin-forms)– 輕鬆地尋找裝置。
-* [電子郵件](email.md?context=xamarin/xamarin-forms)– 輕鬆地傳送電子郵件訊息。
-* [檔案系統協助程式](file-system-helpers.md?context=xamarin/xamarin-forms)– 輕鬆地儲存應用程式資料的檔案。
-* [手電筒](flashlight.md?context=xamarin/xamarin-forms)-簡單的方式來開啟/關閉手電筒。
-* [地理編碼](geocoding.md?context=xamarin/xamarin-forms)– Geocode 和反向地理編碼地址與座標。
-* [地理位置](geolocation.md?context=xamarin/xamarin-forms)– 擷取裝置的 GPS 位置。
-* [陀螺儀](gyroscope.md?context=xamarin/xamarin-forms)– 追蹤裝置的三個主要軸旋轉。
-* [啟動器](launcher.md?context=xamarin/xamarin-forms)– 讓應用程式開啟系統的 URI。
-* [磁力計](magnetometer.md?context=xamarin/xamarin-forms)– 偵測到裝置的方向相對於地球磁場。
-* [MainThread](main-thread.md?content=xamarin/xamarin-forms) – 應用程式的主執行緒上執行的程式碼。
-* [對應](maps.md?content=xamarin/xamarin-forms)– 開啟至特定位置的地圖應用程式。
-* [開啟瀏覽器](open-browser.md?context=xamarin/xamarin-forms)– 快速且輕鬆地瀏覽器開啟至特定網站。
-* [方向感應器](orientation-sensor.md?context=xamarin/xamarin-forms)– 擷取三個維度空間中裝置的方向。
-* [電話撥號員](phone-dialer.md?context=xamarin/xamarin-forms)– 開啟 電話撥號員。
-* [電源](power.md?context=xamarin/xamarin-forms)– 取得裝置的能源省電狀態。
-* [喜好設定](preferences.md?context=xamarin/xamarin-forms)– 快速且輕鬆地新增永續性的喜好設定。
-* [螢幕鎖定](screen-lock.md?context=xamarin/xamarin-forms)– 讓醒著的 [裝置] 畫面。
-* [安全儲存體](secure-storage.md?context=xamarin/xamarin-forms)– 安全地儲存資料。
-* [SMS](sms.md?context=xamarin/xamarin-forms) – 建立傳送 SMS 訊息。
-* [文字轉換語音](text-to-speech.md?context=xamarin/xamarin-forms)– Vocalize 在裝置上的文字。
-* [追蹤版本](version-tracking.md?context=xamarin/xamarin-forms)– 追蹤應用程式版本和組建編號。
-* [震動](vibrate.md?context=xamarin/xamarin-forms)– 震動裝置。
+* [加速計](accelerometer.md?context=xamarin/xamarin-forms)：擷取裝置在三維空間中的加速度資料。
+* [應用程式資訊](app-information.md?context=xamarin/xamarin-forms)：了解應用程式的相關資訊。
+* [氣壓計](barometer.md?context=xamarin/xamarin-forms)：監視氣壓計的壓力變化。
+* [電池](battery.md?context=xamarin/xamarin-forms)：簡單地偵測電池電量、來源和狀態。
+* [剪貼簿](clipboard.md?context=xamarin/xamarin-forms)：輕鬆快速地設定或讀取剪貼簿上的文字。
+* [羅盤](compass.md?context=xamarin/xamarin-forms)：監視羅盤的變更。
+* [連線](connectivity.md?context=xamarin/xamarin-forms)：檢查連線狀態和偵測變更。
+* [裝置顯示器資訊](device-display.md?context=xamarin/xamarin-forms)：取得裝置的螢幕計量與方向。
+* [裝置資訊](device-information.md?context=xamarin/xamarin-forms)：輕鬆地了解裝置。
+* [電子郵件](email.md?context=xamarin/xamarin-forms)：輕鬆地傳送電子郵件訊息。
+* [檔案系統協助程式](file-system-helpers.md?context=xamarin/xamarin-forms)：輕鬆地將檔案儲存到應用程式資料。
+* [手電筒](flashlight.md?context=xamarin/xamarin-forms)：簡單地開啟/關閉手電筒的方式。
+* [地理編碼](geocoding.md?context=xamarin/xamarin-forms)：地理編碼和反向地理編碼地址與座標。
+* [地理位置](geolocation.md?context=xamarin/xamarin-forms)：擷取裝置的 GPS 位置。
+* [陀螺儀](gyroscope.md?context=xamarin/xamarin-forms)：追蹤裝置的三個主座標軸旋轉角度。
+* [啟動器](launcher.md?context=xamarin/xamarin-forms)：讓應用程式可透過系統開啟 URI。
+* [磁力計](magnetometer.md?context=xamarin/xamarin-forms)：偵測裝置相對於地球磁場的方向。
+* [主執行緒](main-thread.md?content=xamarin/xamarin-forms)：在應用程式的主執行緒上執行程式碼。
+* [地圖](maps.md?content=xamarin/xamarin-forms)：開啟地圖應用程式至特定位置。
+* [開啟瀏覽器](open-browser.md?context=xamarin/xamarin-forms)：輕鬆快速地開啟瀏覽器至特定網站。
+* [方向感應器](orientation-sensor.md?context=xamarin/xamarin-forms)：擷取裝置在三維空間中的方向。
+* [電話撥號程式](phone-dialer.md?context=xamarin/xamarin-forms)：開啟電話撥號程式。
+* [偏好設定](preferences.md?context=xamarin/xamarin-forms)：輕鬆快速地新增永續性偏好設定。
+* [安全儲存體](secure-storage.md?context=xamarin/xamarin-forms)：安全地儲存資料。
+* [Share](share.md?context=xamarin/xamarin-forms)：將文字與網站 URI 傳送到其他應用程式。
+* [SMS](sms.md?context=xamarin/xamarin-forms)：建立簡訊以傳送。
+* [文字轉換語音](text-to-speech.md?context=xamarin/xamarin-forms)：將裝置上的文字說出來。
+* [版本追蹤](version-tracking.md?context=xamarin/xamarin-forms)：追蹤應用程式版本與組建編號。
+* [震動](vibrate.md?context=xamarin/xamarin-forms)：讓裝置震動。
 
 ## <a name="troubleshootingtroubleshootingmdcontextxamarinxamarin-forms"></a>[疑難排解](troubleshooting.md?context=xamarin/xamarin-forms)
 
-如果您遇到問題，請尋找說明。
+在您遇到問題時可尋找說明。
 
 ## <a name="api-documentationxrefxamarinessentials"></a>[API 文件](xref:Xamarin.Essentials)
 
-瀏覽每一項功能的 API 文件的 Xamarin.Essentials。
+瀏覽 API 文件以了解 Xamarin.Essentials 的每個功能。

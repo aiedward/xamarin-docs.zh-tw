@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: AE1BBDC6-4D3A-4471-876B-FE28B6E59A24
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 04/03/2018
-ms.openlocfilehash: c243dc84f696a5ac08f11a5e74f41c5c0914d0ea
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: a4d2769bb0cb4e119f1c90353657471b44eb6c7c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351108"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104488"
 ---
 # <a name="why-does-my-app-submission-fail-with-disallowed-paths--itunesmetadataplist--found-at--"></a>為什麼我的應用程式提交無法使用： 不允許的路徑 (iTunesMetadata.plist)，請參閱...？
 

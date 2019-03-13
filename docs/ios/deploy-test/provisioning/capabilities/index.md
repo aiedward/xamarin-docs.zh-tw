@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: c897b1f5fbdf950e6858d7b73ebed60049f60e8e
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f051becad7b6ef329d57417214eb976589386970
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785553"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120940"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>使用 Xamarin.iOS 中的功能
 
@@ -73,7 +73,7 @@ Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) �
 
 ## <a name="using-the-ide"></a>使用 IDE
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 在 Visual Studio for Mac 中，功能會新增至 **Entitlements.plist**。 若要新增功能，請使用下列步驟：
 
@@ -93,7 +93,7 @@ Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) �
 
     ![將功能新增至 entitlements.plist 檔案](images/image18.png)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 功能會新增至 **Entitlements.plist**。 若要在 Visual Studio 2017 中新增功能，請使用下列步驟：
 
@@ -206,12 +206,12 @@ Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) �
 
 以下清單詳細說明在開發已啟用某項應用程式服務的應用程式時，會造成障礙的最常見問題。
 
--   確定已在 Apple Developer Portal (Apple 開發人員入口網站) 的 [Certificates, IDs & Profiles] \(憑證、識別碼及設定檔\) 區段中，適當建立並註冊正確的識別碼。
--   確定已將服務新增至應用程式 (或擴充功能) 的識別碼，並且已將服務設定為使用上述在 Apple Developer Portal (Apple 開發人員入口網站) 的 [Certificates, IDs & Profiles] \(憑證、識別碼及設定檔\) 中建立的 App Group (應用程式群組)/Merchant ID (商家識別碼)/Container (容器)。
--   確定已安裝「佈建設定檔」和「應用程式識別碼」，並且應用程式的 **Info.plist** (位於「Xamarin 專案」中) 使用上述設定的其中一個「應用程式識別碼」。
--   確定應用程式的 **Entitlements.plist** 檔案 (位於「Xamarin 專案」中) 已啟用正確的服務。
+-   確定已在 Apple Developer Portal (Apple 開發人員入口網站) 的 [Certificates, IDs & Profiles] \(憑證、識別碼及設定檔\) **** 區段中，適當建立並註冊正確的識別碼。
+-   確定已將服務新增至應用程式 (或延伸模組) 的識別碼，並且已將服務設定為使用上述在 Apple Developer Portal (Apple 開發人員入口網站) 的 [Certificates, IDs & Profiles] \(憑證、識別碼及設定檔\) ****  中建立的應用程式群組/商家識別碼/容器。
+-   確定已安裝「佈建設定檔」和「應用程式識別碼」，並且應用程式的 **Info.plist**  (位於「Xamarin 專案」中) 使用上述設定的其中一個應用程式識別碼。
+-   確定應用程式的  **Entitlements.plist**  檔案 (位於「Xamarin 專案」中) 已啟用正確的服務。
 -   確定 info.plist 中已設定正確的隱私機碼
--   在應用程式的 [iOS 套件組合簽署] 中，確定 [自訂權利] 已設定為 **Entitlements.plist**。 這「不是」「偵錯」和「iOS 模擬器」組建的預設設定。
+-   在應用程式的 [iOS 套件組合簽署] **** 中，確定 [自訂權利] **** 已設定為 **Entitlements.plist**。 這「不是」 __ 「偵錯」和「iOS 模擬器」組建的預設設定。
 
 <a name="summary" />
 

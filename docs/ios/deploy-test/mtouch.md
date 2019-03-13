@@ -4,15 +4,15 @@ description: 本文件描述 mtouch，此工具會驅動許多步驟，將 Xamar
 ms.prod: xamarin
 ms.assetid: BCA491DA-E4C1-8689-3EC9-E4C72495A798
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 49507b6500755c617deacfb197ef089e3debd598
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 870a9cb20ea962b3c1a342e7222c5e9322537dd1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351352"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109207"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>使用 mtouch 搭售 Xamarin.iOS 應用程式
 

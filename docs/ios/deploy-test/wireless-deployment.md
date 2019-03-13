@@ -4,15 +4,16 @@ description: 本文件描述如何以無線方式，從 Visual Studio fro Mac �
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 02/09/2018
-ms.openlocfilehash: ade7eb7ff26fec8df616401801585e499ddf4206
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.custom: video
+ms.date: 01/22/2019
+ms.openlocfilehash: 6d64acdcc84c16f33a1f543bf1c9506ae7c8e347
+ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785514"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54479689"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>適用於 Xamarin.iOS 和 tvOS 應用程式的無線部署
 
@@ -26,14 +27,14 @@ Visual Studio for Mac 和 Visual Studio 皆提供無線部署功能。
 
 您必須擁有下列項目才能使用無線部署：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 - macOS 10.12.4
 - 最新版本的 Visual Studio for Mac
 - Xcode 9.0 或更新版本
 - 具有 iOS 11.0 或 tvOS 11.0 和更新版本的裝置
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 - 最新版本的 Visual Studio
 - 具有 iOS 11.0 或 tvOS 11.0 和更新版本的裝置
@@ -58,7 +59,7 @@ Mac 組建主機上應該安裝下列元件：
 
 1. 開啟 Xcode，然後移至 [視窗] > [裝置和模擬器]。
 2. 使用 Lightning 纜線將 iOS 裝置插入 Mac。 您可能需要在裝置上選取 [信任這台電腦]。
-3. 選取您的裝置，然後選取 [透過網路連線] 核取方塊來為裝置配對：![顯示 [透過網路連線] 選項的 [裝置和模擬器] 視窗](wireless-deployment-images/image2.png)
+3. 選取您的裝置，然後選取 [Connect via network] \(透過網路連線\) 核取方塊以將您的裝置配對：![顯示 [Connect via network] \(透過網路連線\) 選項的 [Device and Simulator] \(裝置與模擬器\) 視窗](wireless-deployment-images/image2.png)
 
 ### <a name="pairing-an-apple-tv-with-xcode"></a>讓 Apple TV 與 Xcode 配對
 
@@ -105,3 +106,9 @@ Mac 組建主機上應該安裝下列元件：
 ## <a name="related-links"></a>相關連結
 
 - [讓無線裝置與 Xcode 配對](https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devbc48d1bad)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Debug-to-iOS-Devices-Over-Wi-Fi/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

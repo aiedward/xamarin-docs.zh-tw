@@ -4,15 +4,15 @@ description: 本文件說明在 iOS 11 中使用 ARKit 擴增的實境。 它討
 ms.prod: xamarin
 ms.assetid: 70291430-BCC1-445F-9D41-6FBABE87078E
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 08/30/2017
-ms.openlocfilehash: 14bbb35477c098738e9cd7e2cb92154422d394ee
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 348d2f2090105ed693da7be5a44c82ef18bd2a89
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350611"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119733"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>在 Xamarin.iOS 中 ARKit 簡介
 

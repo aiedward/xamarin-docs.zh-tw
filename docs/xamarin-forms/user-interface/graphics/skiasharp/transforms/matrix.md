@@ -4,29 +4,31 @@ description: 本文章探討到靈活的轉換矩陣中，使用 SkiaSharp 轉�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 04/12/2017
-ms.openlocfilehash: 8d5f1a08f7e1bff5ca2f9b696463bc03340476af
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 192f0745874b54989ab9070014dae2a5e9e98110
+ms.sourcegitcommit: 605f7c480c3f7b5dd364fdb1bd4d983de8f7ed25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615427"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56213773"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp 中的矩陣轉換
 
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+
 _更深入了解 SkiaSharp 轉換具有多樣化的轉換矩陣_
 
-若要套用的所有轉換`SKCanvas`物件會合併成單一執行個體[ `SKMatrix` ](https://developer.xamarin.com/api/type/SkiaSharp.SKMatrix/)結構。 這是類似於所有新式的 2D 圖形系統中的標準 3-3 轉換矩陣。
+若要套用的所有轉換`SKCanvas`物件會合併成單一執行個體[ `SKMatrix` ](xref:SkiaSharp.SKMatrix)結構。 這是類似於所有新式的 2D 圖形系統中的標準 3-3 轉換矩陣。
 
 如您所見，您可以使用轉換 SkiaSharp 中而不需要知道有關轉換矩陣，但轉換矩陣，請務必從理論性的觀點來看，並使用轉換來修改路徑時相當重要的或處理複雜的觸控輸入，這兩個這會示範這篇文章和下一步。
 
 ![](matrix-images/matrixtransformexample.png "點陣圖會受限於仿射轉換")
 
-套用至目前的轉換矩陣`SKCanvas`使用，請隨時存取唯讀[ `TotalMatrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.TotalMatrix/)屬性。 您可以設定新的轉換矩陣 using [ `SetMatrix` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.SetMatrix/p/SkiaSharp.SKMatrix/)方法，而且您可以還原該轉換矩陣為預設值呼叫[ `ResetMatrix` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ResetMatrix/)。
+套用至目前的轉換矩陣`SKCanvas`使用，請隨時存取唯讀[ `TotalMatrix` ](xref:SkiaSharp.SKCanvas.TotalMatrix)屬性。 您可以設定新的轉換矩陣 using [ `SetMatrix` ](xref:SkiaSharp.SKCanvas.SetMatrix(SkiaSharp.SKMatrix))方法，而且您可以還原該轉換矩陣為預設值呼叫[ `ResetMatrix` ](xref:SkiaSharp.SKCanvas.ResetMatrix)。
 
-只有其他`SKCanvas`直接搭配畫布的矩陣轉換的成員是[ `Concat` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Concat/p/SkiaSharp.SKMatrix@/)其中乘以它們一起串連兩個矩陣。
+只有其他`SKCanvas`直接搭配畫布的矩陣轉換的成員是[ `Concat` ](xref:SkiaSharp.SKCanvas.Concat(SkiaSharp.SKMatrix@))其中乘以它們一起串連兩個矩陣。
 
 預設轉換矩陣是單位矩陣，而且包含 1 的對角線的儲存格和 0 其他位置中：
 
@@ -36,7 +38,7 @@ _更深入了解 SkiaSharp 轉換具有多樣化的轉換矩陣_
 | 0  0  1 |
 </pre>
 
-您可以建立身分識別矩陣使用靜態[ `SKMatrix.MakeIdentity` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeIdentity()/)方法：
+您可以建立身分識別矩陣使用靜態[ `SKMatrix.MakeIdentity` ](xref:SkiaSharp.SKMatrix.MakeIdentity)方法：
 
 ```csharp
 SKMatrix matrix = SKMatrix.MakeIdentity();
@@ -62,11 +64,11 @@ SKMatrix matrix = SKMatrix.MakeIdentity();
 
 使用標準的矩陣相乘，已轉換的點如下所示：
 
-x' = x
+`x' = x`
 
-y' = y
+`y' = y`
 
-z' = 1
+`z' = 1`
 
 這是預設轉換。
 
@@ -88,9 +90,9 @@ z' = 1
 
 以下是轉換公式：
 
-x' = x + tx
+`x' = x + tx`
 
-y' = y + ty
+`y' = y + ty`
 
 縮放比例會有預設值為 1。 當您呼叫`Scale`上的新方法`SKCanvas`物件，包含結果的轉換矩陣`sx`和`sy`對角線的儲存格內的引數：
 
@@ -102,9 +104,9 @@ y' = y + ty
 
 轉換公式如下所示：
 
-x' = sx ·x
+`x' = sx · x`
 
-y' = sy ·y
+`y' = sy · y`
 
 轉換矩陣之後呼叫`Skew`包含矩陣資料格相鄰的縮放因數中的兩個引數：
 
@@ -116,9 +118,9 @@ y' = sy ·y
 
 轉換公式如下：
 
-x' = x + xSkew ·y
+`x' = x + xSkew · y`
 
-y' = ySkew ·x + y
+`y' = ySkew · x + y`
 
 若要呼叫`RotateDegrees`或`RotateRadians`α 的角度，位於轉換矩陣如下所示：
 
@@ -130,9 +132,9 @@ y' = ySkew ·x + y
 
 以下是轉換公式：
 
-x' = cos(α) ·x 軸 sin(α) ·y
+`x' = cos(α) · x - sin(α) · y`
 
-y' = sin(α) ·x 軸 cos(α) ·y
+`y' = sin(α) · x - cos(α) · y`
 
 0 度 α 時，它會是身分識別矩陣。 180 度 α 時，位於轉換矩陣如下所示：
 
@@ -142,15 +144,15 @@ y' = sin(α) ·x 軸 cos(α) ·y
 |  0   0   1 |
 </pre>
 
-180 度旋轉，相當於水平翻轉物件和垂直，這也可以設定為-1 的縮放比例。
+這也可以設定為-1 的縮放比例，180 度旋轉就相當於水平及垂直翻轉物件。
 
-所有這些類型的轉換可分為*仿射*轉換。 仿射轉換永遠不會牽涉到矩陣中，會保持為 0、 0 和 1 的預設值的第三個資料行。 發行項[非仿射轉換](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)討論非仿射轉換。
+所有這些類型的轉換可分為*仿射*轉換。 仿射轉換永遠不會牽涉到矩陣中，會保持為 0、 0 和 1 的預設值的第三個資料行。 發行項[**非仿射轉換**](non-affine.md)討論非仿射轉換。
 
 ## <a name="matrix-multiplication"></a>矩陣乘法
 
-使用轉換矩陣的一大優點是矩陣相乘，通常稱為 SkiaSharp 文件中可以取得複合轉換*串連*。 轉換相關的方法中的許多`SKCanvas`指的 「 前串連"或"pre-concat。 」 這是指順序很重要，因為無法交替矩陣相乘的乘。
+使用轉換矩陣的重大優點之一是矩陣相乘，通常稱為 SkiaSharp 文件中可以取得複合轉換*串連*。 轉換相關的方法中的許多`SKCanvas`指的 「 前串連"或"pre-concat。 」 這是指順序很重要，因為無法交替矩陣相乘的乘。
 
-比方說，針對文件[ `Translate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Translate/p/System.Single/System.Single/)方法會指出它"Pre-concats 目前與指定的轉譯矩陣 」 文件時為[ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/)方法會指出它"Pre-concats 目前與指定的縮放矩陣。 」
+比方說，針對文件[ `Translate` ](xref:SkiaSharp.SKCanvas.Translate(System.Single,System.Single))方法會指出它"Pre-concats 目前與指定的轉譯矩陣 」 文件時為[ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single))方法會指出它"Pre-concats 目前與指定的縮放矩陣。 」
 
 這表示在方法呼叫所指定的轉換是乘數 （左方運算元），而且目前的轉換矩陣是被乘數 （右方運算元）。
 
@@ -206,7 +208,7 @@ canvas.Translate(–px, –py);
 | –px  –py  1 |   |  0   0   1 |   | px  py  1 |   | px–px·sx  py–py·sy  1 |
 </pre>
 
-### <a name="the-skmatrix-structure"></a>SKMatrix 結構
+## <a name="the-skmatrix-structure"></a>SKMatrix 結構
 
 `SKMatrix`結構會定義九個讀取/寫入屬性的型別`float`對應的轉換矩陣的九個資料格：
 
@@ -216,9 +218,9 @@ canvas.Translate(–px, –py);
 │ TransX  TransY  Persp2 │
 </pre>
 
-`SKMatrix` 也會定義名為的屬性[ `Values` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix.Values/)型別的`float[]`。 這個屬性可用來設定或取得九個值的順序一次`ScaleX`， `SkewX`， `TransX`， `SkewY`， `ScaleY`， `TransY`， `Persp0`， `Persp1`，和`Persp2`。
+`SKMatrix` 也會定義名為的屬性[ `Values` ](xref:SkiaSharp.SKMatrix.Values)型別的`float[]`。 這個屬性可用來設定或取得九個值的順序一次`ScaleX`， `SkewX`， `TransX`， `SkewY`， `ScaleY`， `TransY`， `Persp0`， `Persp1`，和`Persp2`。
 
-`Persp0`， `Persp1`，並`Persp2`一文中討論資料格[非仿射轉換](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)。 如果這些資料格都有預設值 0、 0 和 1，轉換會乘以座標的點，就像這樣：
+`Persp0`， `Persp1`，並`Persp2`一文中討論的資料格[**非仿射轉換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)。 如果這些資料格都有預設值 0、 0 和 1，轉換會乘以座標的點，就像這樣：
 
 <pre>
               │ ScaleX  SkewY   0 │
@@ -226,26 +228,26 @@ canvas.Translate(–px, –py);
               │ TransX  TransY  1 │
 </pre>
 
-x' = ScaleX ·x + SkewX ·y + TransX
+`x' = ScaleX · x + SkewX · y + TransX`
 
-y' = SkewX ·x + ScaleY ·y + TransY
+`y' = SkewX · x + ScaleY · y + TransY`
 
-z' = 1
+`z' = 1`
 
 這是完整的二維仿射轉換。 仿射轉換會保留平行線，這表示，矩形會永遠不會轉換成的平行四邊形以外的任何項目。
 
 `SKMatrix`結構會定義數種靜態方法，來建立`SKMatrix`值。 這些全都是傳回`SKMatrix`值：
 
-- [`MakeTranslation`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeTranslation/p/System.Single/System.Single/)
-- [`MakeScale`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeScale/p/System.Single/System.Single/)
-- [`MakeScale`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeScale/p/System.Single/System.Single/System.Single/System.Single/) 使用樞紐分析點
-- [`MakeRotation`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotation/p/System.Single/) 以弧度為單位的角度
-- [`MakeRotation`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotation/p/System.Single/System.Single/System.Single/) 以弧度為單位，與樞紐分析點的角度
-- [`MakeRotationDegrees`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotationDegrees/p/System.Single/)
-- [`MakeRotationDegrees`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotationDegrees/p/System.Single/System.Single/System.Single/) 使用樞紐分析點
-- [`MakeSkew`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeSkew/p/System.Single/System.Single/)
+- [`MakeTranslation`](xref:SkiaSharp.SKMatrix.MakeTranslation(System.Single,System.Single))
+- [`MakeScale`](xref:SkiaSharp.SKMatrix.MakeScale(System.Single,System.Single))
+- [`MakeScale`](xref:SkiaSharp.SKMatrix.MakeScale(System.Single,System.Single,System.Single,System.Single)) 使用樞紐分析點
+- [`MakeRotation`](xref:SkiaSharp.SKMatrix.MakeRotation(System.Single)) 以弧度為單位的角度
+- [`MakeRotation`](xref:SkiaSharp.SKMatrix.MakeRotation(System.Single,System.Single,System.Single)) 以弧度為單位，與樞紐分析點的角度
+- [`MakeRotationDegrees`](xref:SkiaSharp.SKMatrix.MakeRotationDegrees(System.Single))
+- [`MakeRotationDegrees`](xref:SkiaSharp.SKMatrix.MakeRotationDegrees(System.Single,System.Single,System.Single)) 使用樞紐分析點
+- [`MakeSkew`](xref:SkiaSharp.SKMatrix.MakeSkew(System.Single,System.Single))
 
-`SKMatrix` 也會定義數個靜態方法，串連兩個矩陣，這表示若要將它們相乘。 這些方法的命名`Concat`， `PostConcat`，和`PreConcat`，而且有兩個版本的每個。 這些方法沒有任何傳回的值;相反地，它們會參考現有`SKMatrix`透過值`ref`引數。 在下列範例中， `A`， `B`，並`R`（適用於 「 結果 」） 都`SKMatrix`值。
+`SKMatrix` 也會定義數個靜態方法，串連兩個矩陣，這表示若要將它們相乘。 這些方法的命名[ `Concat` ](xref:SkiaSharp.SKMatrix.Concat*)， [ `PostConcat` ](xref:SkiaSharp.SKMatrix.PostConcat*)，以及[ `PreConcat` ](xref:SkiaSharp.SKMatrix.PreConcat*)，而且有兩個版本的每個。 這些方法沒有任何傳回的值;相反地，它們會參考現有`SKMatrix`透過值`ref`引數。 在下列範例中， `A`， `B`，並`R`（適用於 「 結果 」） 都`SKMatrix`值。
 
 這兩個`Concat`會呼叫方法，就像這樣：
 
@@ -257,7 +259,7 @@ SKMatrix.Concat(ref R, ref A, ref B);
 
 這些物件可執行下列的乘法運算：
 
-R = B × A
+`R = B × A`
 
 其他的方法有只有兩個參數。 第一個參數修改，以及從方法呼叫傳回時，包含兩個矩陣的乘積。 這兩個`PostConcat`會呼叫方法，就像這樣：
 
@@ -269,7 +271,7 @@ SKMatrix.PostConcat(ref A, ref B);
 
 這些呼叫會執行下列作業：
 
-A = B ×
+`A = A × B`
 
 這兩個`PreConcat`方法如下：
 
@@ -281,9 +283,9 @@ SKMatrix.PreConcat(ref A, ref B);
 
 這些呼叫會執行下列作業：
 
-A = B × A
+`A = B × A`
 
-所有這些方法呼叫的版本`ref`引數會稍微更有效地進行呼叫的基礎實作，但它可能會造成混淆給其他人讀取您的程式碼，並假設凡是`ref`引數修改方法。 此外，它通常很方便傳遞的引數是其中的結果`Make`方法，例如：
+所有這些方法的版本`ref`引數會稍微更有效地進行呼叫的基礎實作，但它可能會造成混淆給其他人讀取您的程式碼，並假設凡是`ref`藉由修改引數此方法。 此外，它通常很方便傳遞的引數是其中的結果`Make`方法，例如：
 
 ```csharp
 SKMatrix result;
@@ -299,7 +301,7 @@ SKMatrix.Concat(result, SKMatrix.MakeTranslation(100, 100),
 │ 100  100  1 │
 </pre>
 
-這是擴展轉換乘以平移轉換。 在此案例中，`SKMatrix`結構會提供名為的方法中的快顯[ `SetScaleTranslate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.SetScaleTranslate/p/System.Single/System.Single/System.Single/System.Single/):
+這是擴展轉換乘以平移轉換。 在此案例中，`SKMatrix`結構會提供名為的方法中的快顯[ `SetScaleTranslate` ](xref:SkiaSharp.SKMatrix.SetScaleTranslate(System.Single,System.Single,System.Single,System.Single)):
 
 ```csharp
 SKMatrix R = new SKMatrix();
@@ -322,7 +324,7 @@ SKMatrix.RotateDegrees(ref R, degrees, px, py);
 
 這些方法進行*不*串連至現有的轉換的旋轉轉換。 方法會設定所有儲存格的矩陣。 它們是在功能上等同`MakeRotation`並`MakeRotationDegrees`方法不同之處在於它們不具現化`SKMatrix`值。
 
-假設您有`SKPath`您想要顯示，但您希望它有稍有不同的方向或不同的中心點的物件。 您可以藉由呼叫來修改該路徑的所有座標[ `Transform` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Transform/p/SkiaSharp.SKMatrix/)方法`SKPath`使用`SKMatrix`引數。 **路徑轉換**頁面會示範如何執行這項操作。 [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs)類別的參考`HendecagramPath`但若要將轉換套用到該路徑使用其建構函式的欄位中的物件：
+假設您有`SKPath`您想要顯示，但您希望它有稍有不同的方向或不同的中心點的物件。 您可以藉由呼叫來修改該路徑的所有座標[ `Transform` ](xref:SkiaSharp.SKPath.Transform(SkiaSharp.SKMatrix))方法`SKPath`使用`SKMatrix`引數。 **路徑轉換**頁面會示範如何執行這項操作。 [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs)類別的參考`HendecagramPath`但若要將轉換套用到該路徑使用其建構函式的欄位中的物件：
 
 ```csharp
 public class PathTransformPage : ContentPage
@@ -347,7 +349,7 @@ public class PathTransformPage : ContentPage
 }
 ```
 
-`HendecagramPath`物件具有的中心點在 （0，0） 和星號的十一個點向外擴充從該中心往所有方向的 100 個單位。 這表示路徑具有正數和負數的座標。 **路徑轉換**頁面搭配三次一樣大，星號與所有的正座標會優先。 此外，它不想要星號，點直接往上移一個的點。 它要改為一個點星形直視推點。 （星號有 11 個點，因為它不能兩者。）這需要 22 360 度旋轉星號除以。
+`HendecagramPath`物件具有的中心點在 （0，0） 和星號 11 點會在從該中心往所有方向的 100 個單位向外擴充。 這表示路徑具有正數和負數的座標。 **路徑轉換**頁面搭配三次一樣大，星號與所有的正座標會優先。 此外，它不想要星號，點直接往上移一個的點。 它要改為一個點星形直視推點。 （星號有 11 點，因為它不能兩者。）這需要 22 360 度旋轉星號除以。
 
 建構函式會建置`SKMatrix`從三個不同的轉換使用的物件`PostConcat`方法，以下列模式，A、 B 和 C 是的執行個體`SKMatrix`:
 
@@ -359,7 +361,7 @@ SKMatrix.PostConcat(ref A, C);
 
 這會是一系列的連續的乘法運算，因此結果如下所示：
 
-× B × C
+`A × B × C`
 
 連續的乘法運算有助於了解每個轉換的功能。 縮放轉換的 3 倍增加路徑座標的大小，因此座標範圍從 –300 300。 旋轉轉換旋轉其來源周圍的星號。 平移轉換然後則會將其 300 像素右和向下，讓所有成為正數的座標。
 
@@ -410,7 +412,7 @@ public class PathTransformPage : ContentPage
 transformedPath.Transform(matrix);
 ```
 
-路徑並未*不*保留此矩陣做為屬性。 相反地，它將轉換套用至所有路徑的座標。 如果`Transform`呼叫一次，同樣地，套用轉換，而您可以移回的唯一方法是藉由套用另一個復原轉換的矩陣。 幸好`SKMatrix`結構會定義[ `TryInverse` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.TryInvert/p/SkiaSharp.SKMatrix/)取得矩陣的方法會回復指定的矩陣：
+路徑並未*不*保留此矩陣做為屬性。 相反地，它將轉換套用至所有路徑的座標。 如果`Transform`呼叫一次，同樣地，套用轉換，而您可以移回的唯一方法是藉由套用另一個復原轉換的矩陣。 幸好`SKMatrix`結構會定義[ `TryInvert` ](xref:SkiaSharp.SKMatrix.TryInvert*)取得矩陣的方法會回復指定的矩陣：
 
 ```csharp
 SKMatrix inverse;
@@ -435,7 +437,7 @@ SKRect transformedRect = matrix.MapRect(rect);
 
 如果您使用的最後一個方法，請記住，`SKRect`結構不是可代表旋轉的矩形。 此方法才有意義`SKMatrix`值表示轉譯和調整。
 
-### <a name="interactive-experimentation"></a>互動式的測試
+## <a name="interactive-experimentation"></a>互動式的測試
 
 若要瞭解仿射轉換的方法之一是藉由以互動方式移動在畫面的點陣圖的三個角及檢視哪些轉換結果。 這是背後的構想**顯示仿射矩陣**頁面。 此頁面需要兩個其他示範中也會使用其他類別：
 
@@ -592,9 +594,9 @@ public partial class ShowAffineMatrixPage : ContentPage
 
 雖然它看起來好像觸控點拖曳點陣圖的邊角，這只是假象。 從觸控點計算的矩陣轉換點陣圖，以便與觸控點一致的邊角。
 
-這是更自然的使用者來移動、 調整大小，和旋轉點陣圖不是藉由拖曳邊角中，但使用一或兩根手指直接物件上拖曳，縮小，且旋轉。 這在下一篇文章中涵蓋[觸控的操作](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/touch.md)。
+這是更自然的使用者來移動、 調整大小，和旋轉點陣圖不是藉由拖曳邊角中，但使用一或兩根手指直接物件上拖曳，縮小，且旋轉。 這在下一篇文章中涵蓋[**觸控操作**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/touch.md)。
 
-### <a name="the-reason-for-the-3-by-3-matrix"></a>原因 3-3 矩陣
+## <a name="the-reason-for-the-3-by-3-matrix"></a>原因 3-3 矩陣
 
 可能會預期二維圖形系統會要求僅 2-2 的轉換矩陣：
 
@@ -646,10 +648,10 @@ public partial class ShowAffineMatrixPage : ContentPage
               │ TransX  TransY  Persp2 │
 </pre>
 
-非零值的`Persp0`和`Persp1`導致移動關閉二維平面物件，其中 Z 等於 1 的轉換。 這些物件會移回該平面時，會發生什麼事上一文中涵蓋[非仿射轉換](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)。
+非零值的`Persp0`和`Persp1`導致移動關閉二維平面物件，其中 Z 等於 1 的轉換。 這些物件會移回該平面時，會發生什麼事上一文中涵蓋[**非仿射轉換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

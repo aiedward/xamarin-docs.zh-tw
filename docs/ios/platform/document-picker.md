@@ -4,15 +4,15 @@ description: 本文件描述 iOS 文件選擇器，並討論如何在 Xamarin.iO
 ms.prod: xamarin
 ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: ca0c7a6e655fdc44aa673a59be71bc83044d3085
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
+ms.openlocfilehash: ac77bbc27784d1b836f4a1d26365acd65ac63ae7
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353330"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50111391"
 ---
 # <a name="document-picker-in-xamarinios"></a>在 Xamarin.iOS 中的文件選擇器
 
@@ -685,7 +685,7 @@ namespace DocPicker
                 }
                 else
                 {   
-                    // Yes, inform caller and save location the the Application Container
+                    // Yes, inform caller and save location the Application Container
                     HasiCloud = true;
                     iCloudUrl = uburl;
                     Console.WriteLine("Connected to iCloud");

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: 124fc311d5e2c8c89353ba813df60f0bf1d0b34a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 93bb138b3a78b6052715ab987a4634a18cdce317
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997067"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054498"
 ---
 # <a name="simple-animations-in-xamarinforms"></a>在 Xamarin.Forms 中的簡單動畫
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/basic/)
 
 _ViewExtensions 類別提供可用來建構簡單的動畫的擴充方法。本文示範如何建立和取消使用 ViewExtensions 類別的動畫。_
 
@@ -89,6 +91,9 @@ await image.ScaleTo (2, 2000);
 下列螢幕擷取畫面顯示在每個平台上進行調整：
 
 ![](simple-images/scaleto.png "調整的動畫")
+
+> [!NOTE]
+> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)類別也會定義[ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX)並[ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY)屬性，可以調整`VisualElement`以不同的方式在水平和垂直方向。 這些屬性可以動畫顯示具有[ `Animation` ](xref:Xamarin.Forms.Animation)類別。 如需詳細資訊，請參閱 < [Xamarin.Forms 中的自訂動畫](custom.md)。
 
 ### <a name="relative-scaling"></a>相對縮放比例
 

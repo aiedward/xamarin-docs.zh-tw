@@ -4,15 +4,15 @@ description: Visual Studio 包含 Android SDK 管理員，可用來下載 Androi
 ms.prod: xamarin
 ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 08/03/2018
-ms.openlocfilehash: 92b2eec32aed27e630ac68f3522aa3b40cfc940a
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+author: conceptdev
+ms.author: crdun
+ms.date: 08/09/2018
+ms.openlocfilehash: 6023bb4ebcc9d4adcd3408ca09bf9118d14351d4
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514486"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120810"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>設定 Xamarin.Android 的 Android SDK
 
@@ -28,7 +28,7 @@ _Visual Studio 包含 Android SDK 管理員，可用來下載 Android SDK 工具
 
 Xamarin Android SDK 管理員 (與**使用 .NET 的行動開發**工作負載一併安裝) 可協助您下載開發 Xamarin.Android 應用程式所需的最新 Android 元件。 它會取代 Google 已過時的獨立 SDK 管理員。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ## <a name="requirements"></a>需求
 
@@ -36,7 +36,7 @@ Xamarin Android SDK 管理員 (與**使用 .NET 的行動開發**工作負載一
 
 - Visual Studio 2017 (Community、Professional 或 Enterprise 版本)。 需要 Visual Studio 2017 15.7 版或更新版本。
 
-- Visual Studio Tools for Xamarin 4.10.0 或更新版本。 
+- Visual Studio Tools for Xamarin 4.10.0 版或更新版本 (隨著**用 .NET 進行行動裝置開發**工作負載安裝)。 
 
 Xamarin Android SDK 管理員不相容於 Visual Studio 2015。 Visual Studio 2015 的使用者應該使用由 Google 在 Android SDK 中所提供的 SDK 管理員工具。
 
@@ -46,7 +46,7 @@ Xamarin Android SDK 管理員也需要 Java 開發套件 (會隨 Xamarin.Android
 
 -   如果您是針對 API 層級 23 或更早的層級進行開發，則可繼續使用 [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
 
--   若您正在使用 Visual Stuidio 15.8 Preview 5 或更新版本，可嘗試使用 [OpenJDK 的 Microsoft 散發](openjdk.md)的 Microsoft 散發 (目前處於預覽階段) 來替代 JDK 8。
+-   若您正在使用 Visual Stuidio 15.8 Preview 5 或更新版本，可嘗試使用 [Microsoft 的 Mobile OpenJDK 散發](openjdk.md) (目前處於預覽階段) 來替代 JDK 8。
 
 > [!IMPORTANT]
 > Xamarin.Android 不支援 JDK 9。
@@ -129,7 +129,7 @@ Android SDK 位置可在 [Android SDKs and Tools] \(Android SDK 與工具\) 畫�
 若要切換回支援的平台與工具存放庫，請按一下 Microsoft (Recommended) \(Microsoft (建議)\)。 這會將套件與工具的清單還原至預設選取項目。
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="requirements"></a>需求
 
@@ -143,7 +143,7 @@ Xamarin Android SDK 管理員也需要 Java 開發套件 (會隨 Xamarin.Android
 
 -   如果您是針對 API 層級 23 或更早的層級進行開發，則可繼續使用 [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
 
--   若您正在使用 Visual Studio for Mac 7.7 或更新版本，可嘗試使用 [OpenJDK 的 Microsoft 散發](openjdk.md)的 Microsoft 散發 (目前處於預覽階段) 來替代 JDK 8。
+-   若您正在使用 Visual Studio for Mac 7.7 或更新版本，可嘗試使用 [Microsoft 的 Mobile OpenJDK 散發](openjdk.md) (目前處於預覽階段) 來替代 JDK 8。
 
 > [!IMPORTANT]
 > Xamarin.Android 不支援 JDK 9。

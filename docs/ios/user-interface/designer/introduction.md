@@ -4,15 +4,15 @@ description: 本指南將介紹適用於 iOS 的 Xamarin 設計工具。 它會�
 ms.prod: xamarin
 ms.assetid: E7045E41-0DEF-416B-BCDB-52502350F61C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 01/31/2018
-ms.openlocfilehash: 6905eddbc4488b08f9c9e896efe5f980e0e03345
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 8622c40e41071d6c05b05abbe2d5d8a8a844ebde
+ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242364"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51285582"
 ---
 # <a name="ios-designer-basics"></a>iOS 設計工具基本概念
 
@@ -36,13 +36,13 @@ IOS 設計工具可讓開發人員以視覺化方式設計應用程式的使用�
 
 檢視控制器有兩個部分： 在 iOS 設計工具中的視覺表示法和相關聯的 C# 類別：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![IOS 設計工具中的檢視控制器](introduction-images/1-storyboardwithviewcontroller-vsmac.png "iOS 設計工具中的檢視控制器")](introduction-images/1-storyboardwithviewcontroller-vsmac-large.png#lightbox)
 
 [![檢視控制器的程式碼](introduction-images/2-viewcontrollercode-vsmac.png "檢視控制器的程式碼")](introduction-images/2-viewcontrollercode-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![IOS 設計工具中的檢視控制器](introduction-images/1-storyboardwithviewcontroller-vs.png "iOS 設計工具中的檢視控制器")](introduction-images/1-storyboardwithviewcontroller-vs-large.png#lightbox)
 
@@ -52,11 +52,11 @@ IOS 設計工具可讓開發人員以視覺化方式設計應用程式的使用�
 
 在其預設狀態下，檢視控制器不提供任何功能;它必須填入控制項。 這些控制項放置在檢視控制器的檢視中，包含所有螢幕之內容的矩形區域。 大部分的檢視控制器包含常見的控制項，例如按鈕、 標籤和文字欄位，如下列螢幕擷取畫面，其中顯示檢視控制器包含按鈕所示： 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![包含按鈕的檢視控制器](introduction-images/3-viewcontrollerwithbutton-vsmac.png "包含按鈕的檢視控制器")](introduction-images/3-viewcontrollerwithbutton-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![包含按鈕的檢視控制器](introduction-images/3-viewcontrollerwithbutton-vs.png "包含按鈕的檢視控制器")](introduction-images/3-viewcontrollerwithbutton-vs-large.png#lightbox)
 
@@ -64,13 +64,13 @@ IOS 設計工具可讓開發人員以視覺化方式設計應用程式的使用�
 
 可以加入至檢視控制器並單獨留一些控制項，例如包含靜態文字標籤。 不過，往往，控制項必須自訂程式設計的方式。 例如，上述新增的按鈕應該執行一些動作時點選，因此必須在程式碼中加入事件處理常式。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 若要存取及操作程式碼中的按鈕，您必須唯一識別項。 藉由選取按鈕，開啟提供的唯一識別碼**Properties Pad**，並設定其**名稱**欄位的值，例如"SubmitButton 」:
 
 [![設定按鈕的名稱，在 Properties Pad](introduction-images/4-settingbuttonname-vsmac.png "設定按鈕的名稱，在 [屬性] 面板中")](introduction-images/4-settingbuttonname-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 若要存取及操作程式碼中的按鈕，您必須唯一識別項。 藉由選取按鈕，開啟提供的唯一識別碼**屬性 視窗**，並設定其**名稱**欄位的值，例如"SubmitButton 」:
 
@@ -80,13 +80,13 @@ IOS 設計工具可讓開發人員以視覺化方式設計應用程式的使用�
 
 現在，按鈕的名稱，您可以在程式碼中存取它。 但是其運作方式？
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 在  **Solution Pad**，請巡覽至**ViewController.cs**洩漏指示器按一下即可顯示，並檢視控制器的`ViewController`類別定義跨兩個檔案，其中每一個包含[部分類別](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)定義：
 
 [![這兩個檔案構成 ViewController 類別： ViewController.cs 和 ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "兩個檔案構成 ViewController 類別： ViewController.cs 和 ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 在 [**方案總管] 中**，請巡覽至**ViewController.cs**洩漏指示器按一下即可顯示，並檢視控制器的`ViewController`類別定義跨越兩個檔案，每個其中包含[部分類別](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)定義：
 
@@ -123,11 +123,11 @@ namespace Designer
 
 下列螢幕擷取畫面說明 IntelliSense，現在會表彰`SubmitButton`中參考**ViewController.cs**:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![辨識的提交按鈕參考的 IntelliSense](introduction-images/6-submitbuttonintellisense-vsmac.png "辨識 SubmitButton 參考的 IntelliSense")](introduction-images/6-submitbuttonintellisense-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![辨識的提交按鈕參考的 IntelliSense](introduction-images/6-submitbuttonintellisense-vs.png "辨識 SubmitButton 參考的 IntelliSense")](introduction-images/6-submitbuttonintellisense-vs-large.png#lightbox)
 
@@ -143,13 +143,13 @@ namespace Designer
 
 ### <a name="launching-the-ios-designer"></a>啟動 iOS 設計工具
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 使用 Visual Studio for Mac 中建立的 Xamarin.iOS 專案包含分鏡腳本。 若要檢視分鏡腳本的內容，請按兩下.storyboard 檔案中的**Solution Pad**:
 
 [![IOS 設計工具中開啟的分鏡腳本](introduction-images/7-storyboardopen-vsmac.png "iOS 設計工具中開啟的分鏡腳本")](introduction-images/7-storyboardopen-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 大多數使用 Visual Studio 2015 或 2017年建立的 Xamarin.iOS 專案都包含分鏡腳本。 若要檢視分鏡腳本的內容，請按兩下.storyboard 檔案中的**方案總管 中**:
 
@@ -163,7 +163,7 @@ namespace Designer
 
 IOS 設計工具有六個主要區段：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![IOS 設計工具的章節](introduction-images/8-sixpartsofiosdesigner-vsmac.png "iOS 設計工具的區段")](introduction-images/8-sixpartsofiosdesigner-vsmac-large.png#lightbox)
 
@@ -174,7 +174,7 @@ IOS 設計工具有六個主要區段：
 5. **文件大綱**– 顯示構成正在編輯之介面的版面配置控制項的樹狀結構。 按一下樹狀目錄中的某個項目選取 iOS 設計工具中，並顯示其屬性**Properties Pad**。 這很方便的深度巢狀的使用者介面中選取特定的控制項。
 6. **Bottom 工具列**– 包含用來變更 「 iOS 設計工具會.storyboard 或.xib 檔案，包括裝置、 方向以及縮放的顯示選項。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![IOS 設計工具的章節](introduction-images/8-sixpartsofiosdesigner-vs.png "iOS 設計工具的區段")](introduction-images/8-sixpartsofiosdesigner-vs-large.png#lightbox)
 
@@ -193,11 +193,11 @@ IOS 設計工具有六個主要區段：
 
 若要將控制項新增至介面，將它從拖曳**工具箱**並將它放在設計介面上。 當新增或定位控制項時，垂直和水平的指導方針反白顯示垂直置中、 水平置中，等邊界的常用版面配置位置：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
  
 ![在設計介面，指導方針反白顯示常用的版面配置位置](introduction-images/9-layoutguides-vsmac.png "在設計介面，指導方針反白顯示常用的版面配置位置")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![在設計介面，指導方針反白顯示常用的版面配置位置](introduction-images/9-layoutguides-vs.png "在設計介面，指導方針反白顯示常用的版面配置位置")
 
@@ -205,25 +205,25 @@ IOS 設計工具有六個主要區段：
 
 藍色的虛線，在上述範例中提供水平置中對齊視覺指導方針來協助按鈕位置。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 #### <a name="context-menu-commands"></a>內容功能表命令
 
-內容功能表會在設計介面上和**文件大綱**。 此功能表提供的命令所選的控制項和其父代，也就是很有幫助，使用巢狀階層中的檢視時：
+內容功能表會在設計介面上和**文件大綱**。 此功能表提供用於選取的控制項和其父代，也就是很有幫助，使用巢狀階層中的檢視時的命令：
 
 [![在設計介面上的操作功能表](introduction-images/10-contextmenudesignsurface-vsmac.png "設計介面上的操作功能表")](introduction-images/10-contextmenudesignsurface-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 -----
 
 ### <a name="constraints-toolbar"></a>限制式工具列
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
  
 [![條件約束工具列](introduction-images/11-constraintstoolbar-vsmac.png "限制式工具列")](introduction-images/11-constraintstoolbar-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![條件約束工具列](introduction-images/11-constraintstoolbar-vs.png "限制式工具列")](introduction-images/11-constraintstoolbar-vs-large.png#lightbox)
 
@@ -237,11 +237,11 @@ IOS 設計工具有六個主要區段：
 
 - 框架編輯模式：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![框架編輯模式 按鈕](introduction-images/12a-frameeditingmode-vsmac.png "框架編輯模式按鈕")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![框架編輯模式 按鈕](introduction-images/12a-frameeditingmode-vs.png "框架編輯模式按鈕")
 
@@ -249,11 +249,11 @@ IOS 設計工具有六個主要區段：
 
 - 條件約束的編輯模式：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![編輯模式 按鈕的條件約束](introduction-images/12b-constrainteditingmode-vsmac.png "限制式編輯模式 按鈕")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![編輯模式 按鈕的條件約束](introduction-images/12b-constrainteditingmode-vs.png "限制式編輯模式 按鈕")
 
@@ -270,11 +270,11 @@ IOS 設計工具有六個主要區段：
 
 底部工具列可用來選取裝置、 方向以及縮放用來在 iOS 設計工具中檢視的分鏡腳本或.xib 檔案：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![底部工具列中，使用選取的裝置和設計介面的方向](introduction-images/13-bottomtoolbar-vsmac.png "底部工具列中，使用選取的裝置和設計介面的方向")](introduction-images/13-bottomtoolbar-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![底部工具列中，使用選取的裝置和設計介面的方向](introduction-images/13-bottomtoolbar-vs.png "底部工具列中，使用選取的裝置和設計介面的方向")](introduction-images/13-bottomtoolbar-vs-large.png#lightbox)
 
@@ -284,11 +284,11 @@ IOS 設計工具有六個主要區段：
 
 展開時，底部工具列會顯示所有裝置、 方向和/或調整適用於目前文件。 按一下這些變更設計介面上顯示的檢視。 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![底部工具列中，展開以顯示裝置和方向](introduction-images/14-bottomtoolbarexpanded-vsmac.png "底部工具列中，展開以顯示裝置和方向")](introduction-images/14-bottomtoolbarexpanded-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![底部工具列中，展開以顯示裝置和方向](introduction-images/14-bottomtoolbarexpanded-vs.png "底部工具列中，展開以顯示裝置和方向")](introduction-images/14-bottomtoolbarexpanded-vs-large.png#lightbox)
 
@@ -301,11 +301,11 @@ IOS 設計工具有六個主要區段：
 - 如果**iPhone SE** / **直向**，已選取，popover 會提供用於建立 compact 寬度，也就是一般的高度大小類別介面變化選項。 
 - 如果**iPad Pro 9.7"** / **橫向** / **全螢幕**已選取，popover 會提供用於建立介面變數選項一般的寬度，高度一般大小類別。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![要用來變更介面，由大小類別的底部工具列](introduction-images/15-edittraitsbutton-vsmac.png "大小類別用來改變介面的底部工具列")](introduction-images/15-edittraitsbutton-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![要用來變更介面，由大小類別的底部工具列](introduction-images/15-edittraitsbutton-vs.png "大小類別用來改變介面的底部工具列")](introduction-images/15-edittraitsbutton-vs-large.png#lightbox)
 
@@ -315,11 +315,11 @@ IOS 設計工具有六個主要區段：
 
 透過數個控制項縮放設計介面的支援：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
  
 ![在底部工具列的縮放控制項](introduction-images/16-zoomcontrols-vsmac.png "底部工具列的縮放控制項")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![在底部工具列的縮放控制項](introduction-images/16-zoomcontrols-vs.png "底部工具列的縮放控制項")
 
@@ -334,7 +334,7 @@ IOS 設計工具有六個主要區段：
 
 這些控制項調整設計介面上的顯示比例。 它們不會影響應用程式在執行階段的使用者介面。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ### <a name="properties-pad"></a>Properties Pad
 
@@ -345,7 +345,7 @@ IOS 設計工具有六個主要區段：
 
 **Properties Pad**包含三個區段：
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ### <a name="properties-window"></a>屬性視窗
 
@@ -363,7 +363,7 @@ IOS 設計工具有六個主要區段：
 2.  **版面配置**– 這裡列出的位置和大小的控制項，包含條件約束和框架，追蹤的屬性。
 3.  **事件**– 在此處指定的事件和事件處理常式。 適用於處理例如觸控、 點選、 拖曳等的事件。也可以直接在程式碼中處理事件。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 #### <a name="editing-properties-in-the-properties-pad"></a>在 [屬性] 面板中編輯屬性
 
@@ -373,7 +373,7 @@ IOS 設計工具有六個主要區段：
 
 [![檢視控制器屬性](introduction-images/18b-viewcontrollerpropertiespad-vsmac.png "檢視控制器屬性")](introduction-images/18b-viewcontrollerpropertiespad-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 #### <a name="editing-properties-in-the-properties-window"></a>在 [屬性] 視窗中編輯屬性
 
@@ -390,11 +390,11 @@ IOS 設計工具有六個主要區段：
 
 #### <a name="default-values"></a>預設值
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 中的許多屬性**Properties Pad**顯示任何值或預設值。 不過，應用程式的程式碼仍可能會修改這些值。 **Properties Pad**不會顯示在程式碼中設定的值。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 中的許多屬性**屬性 視窗**顯示任何值或預設值。 不過，應用程式的程式碼仍可能會修改這些值。 **屬性 視窗**不會顯示在程式碼中設定的值。
 
@@ -402,13 +402,13 @@ IOS 設計工具有六個主要區段：
 
 #### <a name="event-handlers"></a>事件處理常式
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 若要指定各種事件的自訂事件處理常式，請使用**事件**索引標籤**Properties Pad**。 例如，在下面的螢幕擷取畫面`HandleClick`方法會處理按鈕的**Touch 向上內**事件：
 
 [![[屬性] 面板的 [設定] 按鈕之事件處理常式](introduction-images/19-buttonpropertiespadevents-vsmac.png "Properties Pad 中，以設定按鈕的事件處理常式")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 若要指定各種事件的自訂事件處理常式，請使用**事件**索引標籤**屬性 視窗**。 例如，在下面的螢幕擷取畫面`HandleClick`方法會處理按鈕的**Touch 向上內**事件：
 
@@ -418,13 +418,13 @@ IOS 設計工具有六個主要區段：
 
 一旦具有指定的事件處理常式，具有相同名稱的方法必須新增至對應的檢視控制器類別。 否則，`unrecognized selector`時點選按鈕時，會發生例外狀況：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![無法辨識的選取器例外狀況](introduction-images/20-unrecognizedselector-vsmac.png "無法辨識的選取器例外狀況")](introduction-images/20-unrecognizedselector-vsmac-large.png#lightbox)
 
 請注意，之後的事件處理常式中已指定**Properties Pad**，iOS 設計工具會立即開啟對應的程式碼檔案，並提供要插入方法宣告。 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![無法辨識的選取器例外狀況](introduction-images/20-unrecognizedselector-vs.png "無法辨識的選取器例外狀況")](introduction-images/20-unrecognizedselector-vs-large.png#lightbox)
 
@@ -436,11 +436,11 @@ IOS 設計工具有六個主要區段：
 
 IOS 設計工具也可以顯示成外框的介面的控制項階層架構。 外框使用，請選取**文件大綱**索引標籤，如下所示：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![文件大綱](introduction-images/21-buttonoutlineview-vsmac.png "文件大綱")](introduction-images/21-buttonoutlineview-vsmac-large.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![文件大綱](introduction-images/21-buttonoutlineview-vs.png "文件大綱")](introduction-images/21-buttonoutlineview-vs-large.png#lightbox)
 
@@ -448,7 +448,7 @@ IOS 設計工具也可以顯示成外框的介面的控制項階層架構。 外
 
 大綱檢視中選取的控制項與保持同步的設計介面上選取的控制項。  這項功能可用於從深層的巢狀介面階層架構中選取項目。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="revert-to-xcode"></a>還原為 Xcode
 
@@ -458,7 +458,15 @@ IOS 設計工具也可以顯示成外框的介面的控制項階層架構。 外
 
 在 Xcode Interface Builder 中進行編輯後, 儲存檔案，並返回 Visual Studio for mac。 所做的變更會同步處理至 Xamarin.iOS 專案。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+
+## <a name="revert-to-xcode"></a>還原為 Xcode
+
+不過，才可用在 mac 上 Xcode Interface Builder 就可以交換，使用 iOS 設計工具和 Xcode 的 Interface Builder 若要開啟 Mac 上 Xcode Interface Builder 分鏡腳本或.xib 檔案，開啟 包含的 Xamarin.iOS 專案中的方案[Visual Studio for Mac](/visualstudio/mac/)，以滑鼠右鍵按一下檔案，然後選取**開啟 > Xcode 介面產生器**，如以下螢幕擷取畫面所示：
+
+[![在 Xcode Interface Builder 中開啟分鏡腳本](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "Xcode Interface Builder 中開啟分鏡腳本")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
+
+在 Xcode Interface Builder 中進行編輯後, 儲存檔案，並返回 Visual Studio for mac。 所做的變更會同步處理至 Xamarin.iOS 專案。
 
 -----
 

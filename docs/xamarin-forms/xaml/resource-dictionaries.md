@@ -4,17 +4,19 @@ description: XAML 資源是可共用及重複使用在 Xamarin.Forms 應用程�
 ms.prod: xamarin
 ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: d305de651f6e770d02ca35f5f8f8ffcf08424e28
-ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
+ms.openlocfilehash: 5b1c9ff709022d6bcae51597a03fe2a71097cd2d
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39573642"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052552"
 ---
 # <a name="resource-dictionaries"></a>資源字典
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/xaml/resourcedictionaries/)
 
 _XAML 資源是可共用及重複使用在 Xamarin.Forms 應用程式的物件定義。_
 

@@ -4,14 +4,15 @@ description: 這篇文章以 MonoTouch 對話方塊文章簡介所述的資訊�
 ms.prod: xamarin
 ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.openlocfilehash: dcd6f1260be3414c515010c2fd615910c7b5c054
-ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
+ms.date: 11/25/2015
+author: lobrien
+ms.author: laobri
+ms.openlocfilehash: 14711f9cc2c34d72765e28db158379bc2a26849b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39038338"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670279"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>建立 Xamarin.iOS 應用程式使用元素 API
 
@@ -153,5 +154,5 @@ public class Task
 - [JSON 元素的逐步解說](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
 - [在 Github 上的 MonoTouch 對話方塊](https://github.com/migueldeicaza/MonoTouch.Dialog)
 - [TweetStation 應用程式](https://github.com/migueldeicaza/TweetStation)
-- [UITableViewController 類別參考](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
-- [UINavigationController 類別參考](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)
+- [UITableViewController 類別參考](https://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
+- [UINavigationController 類別參考](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

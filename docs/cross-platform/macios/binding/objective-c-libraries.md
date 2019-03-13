@@ -1,23 +1,23 @@
 ---
 title: 繫結 Objective C 程式庫
-description: 本文件提供如何建立 C# 的繫結 OBJECTIVE-C 程式碼，描述如何將繫結事件、 方法、 自訂控制項，還有更多的高階概觀。
+description: 本文件提供如何建立的高階概觀C#繫結 OBJECTIVE-C 程式碼，以描述如何將繫結事件、 方法、 自訂控制項，等等。
 ms.prod: xamarin
 ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
-author: bradumbaugh
-ms.author: brumbaug
+author: conceptdev
+ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 4c414e0e863f44045473a248576a3612b1719559
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: e97b211fe6a92ee0df3beed2301cf00c3d42c8f8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854827"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671802"
 ---
 # <a name="binding-objective-c-libraries"></a>繫結 Objective C 程式庫
 
-當使用 Xamarin.iOS 或 Xamarin.Mac，您可能會遇到您要使用第三方 Objective C 程式庫的情況。 在這些情況下，您可以使用 Xamarin 繫結專案建立 C# 繫結至原生的 Objective C 程式庫。 專案會使用相同的工具，我們使用 C#，使 iOS 和 Mac Api。
+當使用 Xamarin.iOS 或 Xamarin.Mac，您可能會遇到您要使用第三方 Objective C 程式庫的情況。 在這些情況下，您可以使用 Xamarin 繫結專案來建立C#繫結至原生的 Objective C 程式庫。 專案會使用相同的工具可讓 iOS 和 Mac 的 Api，以使用C#。
 
-本文件說明如何將繫結 Objective C Api，如果您要繫結只 C Api，您應該這麼做，使用標準的.NET 機制[P/Invoke framework](http://www.mono-project.com/docs/advanced/pinvoke/)。
+本文件說明如何將繫結 Objective C Api，如果您要繫結只 C Api，您應該這麼做，使用標準的.NET 機制[P/Invoke framework](https://www.mono-project.com/docs/advanced/pinvoke/)。
 如何以靜態方式連結的 C 程式庫的詳細資訊位於[連結的原生程式庫](~/ios/platform/native-interop.md)頁面。
 
 請參閱我們的小幫手[繫結的型別參考指南](~/cross-platform/macios/binding/binding-types-reference.md)。
@@ -34,14 +34,14 @@ ms.locfileid: "37854827"
 
 ## <a name="getting-started"></a>使用者入門
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 建立繫結的最簡單方式是建立在 Xamarin.iOS 繫結專案。
 您可以從 Visual Studio for Mac 中選取專案類型中**iOS > 文件庫 > 繫結程式庫**:
 
 [![](objective-c-libraries-images/00-sml.png "可以從 Visual Studio for Mac 中，選取 專案類型，iOS 程式庫的繫結程式庫")](objective-c-libraries-images/00.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 建立繫結的最簡單方式是建立在 Xamarin.iOS 繫結專案。
 您可以從 Windows 上的 Visual Studio 藉由選取專案類型中**Visual C# > iOS > 繫結程式庫 (iOS)**:
@@ -49,13 +49,13 @@ ms.locfileid: "37854827"
 [![](objective-c-libraries-images/00vs-sml.png "iOS 繫結程式庫的 iOS")](objective-c-libraries-images/00vs.png#lightbox)
 
 > [!IMPORTANT]
-> 注意： 繫結專案**Xamarin.Mac**只支援在 Visual Studio for mac。
+> 注意:繫結專案**Xamarin.Mac**只支援在 Visual Studio for mac。
 
 -----
 
 產生的專案包含的小的範本，您可以編輯，因為它含有兩個檔案：`ApiDefinition.cs`和`StructsAndEnums.cs`。
 
-`ApiDefinition.cs`可讓您將在其中定義 API 合約，這是描述基礎的 Objective C API 如何投影到 C# 檔案。 語法與此檔案的內容討論的這份文件的主題，而且它的內容僅限於 C# 介面和 C# 委派宣告。 `StructsAndEnums.cs`檔案是讓您輸入所需的任何定義的介面和委派的檔案。 這包括列舉值和您的程式碼可能會使用的結構。
+`ApiDefinition.cs`可讓您將在其中定義 API 合約，這是說明如何將基礎的 Objective C API 投射到的檔案C#。 語法與此檔案的內容為本文件討論的主題，而且它的內容僅限於C#介面和C#委派宣告。 `StructsAndEnums.cs`檔案是讓您輸入所需的任何定義的介面和委派的檔案。 這包括列舉值和您的程式碼可能會使用的結構。
 
 <a name="Binding_an_API" />
 
@@ -63,7 +63,7 @@ ms.locfileid: "37854827"
 
 若要執行完整的繫結，您會想要了解的 Objective C API 定義，並熟悉的.NET Framework 設計方針。
 
-若要繫結程式庫將通常開始的 API 定義檔。 API 定義檔是只是 C# 原始程式檔，其中包含繫結的 C# 介面已標註少數幾個幫助的屬性。  這個檔案是定義 C# 與 OBJECTIVE-C 之間的合約是什麼。
+若要繫結程式庫將通常開始的 API 定義檔。 API 定義檔案只是C#包含原始程式檔C#介面已標註少數幾個幫助磁碟機繫結的屬性。  此檔案會定義哪些之間的合約C#和 OBJECTIVE-C 就。
 
 比方說，這是程式庫的一般 api 檔：
 
@@ -99,7 +99,7 @@ API 檔案和屬性，您可以使用格式的深入討論涵蓋[API 定義檔](
 
 -  API 定義檔 (`ApiDefinition.cs`範本中)。
 -  選擇性： 任何列舉類型、 所需的 API 定義檔的結構 (`StructsAndEnums.cs`範本中)。
--  選擇性︰ 額外來源可能會展開所產生的繫結，或提供更多 C# 易記的 API （任何 C# 檔案加入專案）。
+-  選擇性： 額外來源可能會展開所產生的繫結，或提供更C#易記的 API (任何C#專案中加入的檔案)。
 -  您要繫結原生程式庫。
 
 此圖表會顯示檔案之間的關聯性：
@@ -116,7 +116,7 @@ public enum CameraMode {
 }
 ```
 
-`APIDefinition.cs`檔案會結合`StructsAndEnum`類別，並會用來產生的程式庫的核心繫結。 您可以使用做為產生的程式庫-，但一般而言，您會想要調整產生的程式庫來新增為了使用者方便一些 C# 功能。 部分範例包括實作`ToString()`方法，提供 C# 索引子、 新增隱含轉換，與一些原生型別，或提供強型別版本的一些方法。 這些增強功能會儲存在額外的 C# 檔案。 只將 C# 檔案新增至您的專案，並會納入此建置程序。
+`APIDefinition.cs`檔案會結合`StructsAndEnum`類別，並會用來產生的程式庫的核心繫結。 您可以使用做為產生的程式庫-，但一般而言，您會想要調整產生的程式庫來新增一些C#為了使用者方便的功能。 部分範例包括實作`ToString()`方法，提供C#索引子，與一些原生型別新增隱含轉換，或提供強型別版本的一些方法。 這些增強功能會儲存在額外的C#檔案。 只加入C#檔案加入您的專案，且會納入此建置程序。
 
 這會顯示如何實作中的程式碼程式`Extra.cs`檔案。 請注意，您將使用部分類別，這些增強的組合，從產生的部分類別`ApiDefinition.cs`而`StructsAndEnums.cs`核心繫結：
 
@@ -132,8 +132,8 @@ public partial class Camera {
 
 建置程式庫，將會產生原生繫結。
 
-若要完成此繫結，您應該在專案中新增原生程式庫。  您可以藉由將您的專案，或將拖放原生程式庫從尋找工具拖曳至方案總管中的專案中的原生程式庫，以滑鼠右鍵按一下專案，然後選擇**新增** > **將檔案新增**選取原生程式庫。
-依照慣例的原生程式庫以文字"lib"開頭，並以副檔名".a"結尾。 當您這樣做時，Visual Studio for Mac 將會新增兩個檔案：.a 檔案和自動填入的 C# 檔案，其中包含有關原生程式庫所包含的資訊：
+若要完成此繫結，您應該在專案中新增原生程式庫。  您可以藉由將您的專案，或將拖放原生程式庫從尋找工具拖曳至方案總管 中的專案中的原生程式庫，以滑鼠右鍵按一下專案，然後選擇**新增** > **將檔案新增**選取原生程式庫。
+依照慣例的原生程式庫以文字"lib"開頭，並以副檔名".a"結尾。 當您這樣做時，Visual Studio for Mac 將會新增兩個檔案：.a 檔案，並且會自動填入C#檔案，其中包含原生程式庫所包含的資訊：
 
  [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "依照慣例的原生程式庫 word 程式庫以開頭和結尾延伸.a")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
 
@@ -146,7 +146,8 @@ using ObjCRuntime;
 [assembly: LinkWith ("libMagicChord.a", SmartLink = true, ForceLoad = true)]
 ```
 
-完整的使用方式的詳細[ `[LinkWith]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)屬性都記載於[繫結的型別參考指南](~/cross-platform/macios/binding/binding-types-reference.md)。
+完整使用方式的相關詳細資料 [`[LinkWith]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute) 
+屬性會記載於[繫結的型別參考指南](~/cross-platform/macios/binding/binding-types-reference.md)。
 
 現在當您建置專案時您會得到`MagicChords.dll`檔案，其中包含繫結和原生程式庫。 您可以將此專案，或使用他們自己的其他開發人員產生的 DLL。
 
@@ -166,7 +167,9 @@ API 定義檔所組成的一些介面。 API 定義中的介面則會轉換為�
 
 ### <a name="binding-methods"></a>繫結方法
 
-您可以執行簡單繫結是繫結方法。 只是宣告 C# 命名慣例的介面中的方法和裝飾的方法[ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)屬性。 [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)屬性是連結 Objective C 中的名稱，Xamarin.iOS 執行階段您 C# 名稱。 參數[ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)屬性是 OBJECTIVE-C 選取器的名稱。 一些範例如下：
+您可以執行簡單繫結是繫結方法。 只是宣告的介面中的方法C#命名慣例和裝飾的方法 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)
+屬性。 [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)屬性是連結您C#OBJECTIVE-C 中具有名稱，Xamarin.iOS 執行階段的名稱。 參數 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
+OBJECTIVE-C 選取器的名稱屬性。 一些範例如下：
 
 ```csharp
 // A method, that takes no arguments
@@ -192,7 +195,8 @@ void Beep ();
 
 這是必要的因為合約是介面的一部分，而且介面並不了解靜態與執行個體的宣告，因此就必須再次求助於屬性。 如果您想要隱藏特定的方法，從繫結，您可以裝飾具有方法[ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)屬性。
 
-`btouch-native`命令將介紹檢查參考參數不可為 null。 如果您想要允許特定參數的 null 值，使用[ `[NullAllowed]` ](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)屬性上的參數，就像這樣：
+`btouch-native`命令將介紹檢查參考參數不可為 null。 如果您想要允許特定參數的 null 值，使用 [`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)
+屬性的參數，就像這樣：
 
 ```csharp
 [Export ("setText:")]
@@ -205,11 +209,15 @@ string SetText ([NullAllowed] string text);
 
 ### <a name="binding-properties"></a>繫結屬性
 
-就像方法，OBJECTIVE-C 屬性都會使用繫結[ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)屬性和直接對應至 C# 屬性。 就像方法，屬性可以使用裝飾[ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)並[ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)屬性。
+就像方法，OBJECTIVE-C 屬性要繫結使用 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)
+屬性，並直接對應至C#屬性。 可以使用裝飾屬性一樣方法 [`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)
+和 [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
+屬性。
 
-當您使用[ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)涵蓋 btouch 原生 之下的屬性上屬性實際上會繫結的兩個方法： getter 和 setter。 您提供匯出的名稱**basename**和 setter 的計算方式前面加上 「 set 」，開啟的第一個字母的單字**basename**成大寫，並讓需要的選取器引數。 這表示`[Export ("label")]`上套用屬性實際上會繫結的 「 標籤 」 和 「 setLabel:"OBJECTIVE-C 方法。
+當您使用[ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)涵蓋 btouch 原生之下的屬性上屬性實際上會繫結的兩個方法： getter 和 setter。 您提供匯出的名稱**basename**且前面加上 「 set 」，開啟的第一個字母的單字計算 setter **basename**成大寫，並讓需要的選取器引數。 這表示`[Export ("label")]`上套用屬性實際上會繫結的 「 標籤 」 和 「 setLabel: 」OBJECTIVE-C 方法。
 
-有時候 OBJECTIVE-C 屬性未遵循前述的模式，且名稱是以手動方式覆寫。 在這些情況下，您可以控制的方式使用所產生的繫結[ `[Bind]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAttribute)屬性 getter 或 setter，例如：
+有時候 OBJECTIVE-C 屬性未遵循前述的模式，且名稱是以手動方式覆寫。 在這些情況下，您可以控制使用產生的繫結的方式 [`[Bind]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAttribute) 
+屬性 getter 或 setter，例如：
 
 ```csharp
 [Export ("menuVisible")]
@@ -239,7 +247,8 @@ interface UIView_MyIn
 NSRunLoop Current { get; }
 ```
 
-就像方法可讓某些參數，會標示[ `[NullAllowed]` ](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)，您可以套用[ `[NullAllowed]` ](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)要屬性來表示該 null 是有效的值屬性，例如：
+就像方法可讓某些參數，會標示[ `[NullAllowed]` ](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)，您可以套用 [`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)
+要屬性來表示該 null 是有效的值屬性，例如：
 
 ```csharp
 [Export ("text"), NullAllowed]
@@ -271,11 +280,13 @@ string Text { get; [NullAllowed] set; }
 
 Objective C 架構使用的慣用語，其中某些類別是不可變，與可變動的子類別。 比方說`NSString`是不可變的版本中，雖然`NSMutableString`是可變動的子類別。
 
-這些類別中很常見，若要查看不可變的基底類別，包含一個 getter，但沒有 setter 的屬性。 與可變動版本導入 setter。 因為這真的不可能使用 C#，我們必須將這個慣用語對應至可使用 C# 慣用語。
+這些類別中很常見，若要查看不可變的基底類別，包含一個 getter，但沒有 setter 的屬性。 與可變動版本導入 setter。 因為這真的不可能使用C#，我們必須將這個慣用語對應至可使用的慣用語C#。
 
-這會對應到 C# 的方式是新增 getter 和 setter 的基底類別，但加上旗標與 setter [ `[NotImplemented]` ](~/cross-platform/macios/binding/binding-types-reference.md#NotImplementedAttribute)屬性。
+這會對應到的方式C#，請新增 getter 和 setter 的基底類別，但加上旗標與 setter [`[NotImplemented]`](~/cross-platform/macios/binding/binding-types-reference.md#NotImplementedAttribute)
+屬性。
 
-您所使用的可變動的子類別，然後[ `[Override]` ](~/cross-platform/macios/binding/binding-types-reference.md#OverrideAttribute)屬性上的屬性，以確認屬性實際上覆寫父項的行為。
+然後，在可變動子類別中，您使用 [`[Override]`](~/cross-platform/macios/binding/binding-types-reference.md#OverrideAttribute) 
+屬性的屬性，以確認屬性實際上覆寫父項的行為。
 
 範例：
 
@@ -314,7 +325,8 @@ IntPtr Constructor (CGRect frame);
 
 ### <a name="binding-protocols"></a>繫結通訊協定
 
-一節中的 API 設計文件中所述[討論模型和通訊協定](~/ios/internals/api-design/index.md#Models)，Xamarin.iOS 將 OBJECTIVE-C 通訊協定對應至具有已標示的類別[ `[Model]` ](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)屬性。 這通常用於實作 OBJECTIVE-C 委派類別。
+一節中的 API 設計文件中所述[討論模型和通訊協定](~/ios/internals/api-design/index.md#Models)，Xamarin.iOS 將 OBJECTIVE-C 通訊協定對應至具有已標示的類別 [`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)
+屬性。 這通常用於實作 OBJECTIVE-C 委派類別。
 
 規則繫結的類別和委派類別最大的差別是委派類別可能會有一或多個選用的方法。
 
@@ -329,7 +341,8 @@ interface UIAccelerometerDelegate {
 }
 ```
 
-由於這是選擇性的方法上定義`UIAccelerometerDelegate`任何執行其他操作。 但是如果通訊協定上所需的方法，您應該增加[ `[Abstract]` ](~/cross-platform/macios/binding/binding-types-reference.md#AbstractAttribute)屬性加入方法。 這會強制使用者實作的實際方法中提供的內文。
+由於這是選擇性的方法上定義`UIAccelerometerDelegate`任何執行其他操作。 但是如果通訊協定上所需的方法，您應該增加 [`[Abstract]`](~/cross-platform/macios/binding/binding-types-reference.md#AbstractAttribute)
+此屬性的方法。 這會強制使用者實作的實際方法中提供的內文。
 
 一般情況下，回應訊息的類別會使用通訊協定。 這通常是在 OBJECTIVE-C 中指派給 「 delegate 」 屬性中的通訊協定的方法回應物件的執行個體。
 
@@ -384,11 +397,12 @@ interface UIAccelerometer {
     }
 ```
 
-**類別實作**提供完整的抽象類別，您可以用來覆寫個別方法，並取得完整的型別安全。  但由於 C# 不支援多重繼承中，有的案例，您可能需要有不同的基底類別，但您仍想要實作的介面，是要在哪裡
+**類別實作**提供完整的抽象類別，您可以用來覆寫個別方法，並取得完整的型別安全。  但因為C#不支援多重繼承，有的案例，您可能需要有不同的基底類別，但您仍想要實作的介面，是要在哪裡
 
 產生**介面定義**傳入。  它是具有所有必要的方法，從 通訊協定的介面。  這可讓開發人員用來實作您的通訊協定，只是實作介面。  執行階段會自動將註冊類型為採用之通訊協定。
 
-請注意，此介面只會列出所需的方法，且並未公開 （expose） 的選擇性方法。  這表示，採用的通訊協定的類別會檢查所需的方法的完整型別，但必須求助於弱式類型 (手動使用[ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)屬性和符合簽章) 為選擇性通訊協定方法。
+請注意，此介面只會列出所需的方法，且並未公開 （expose） 的選擇性方法。  這表示，採用的通訊協定的類別會檢查所需的方法的完整型別，但必須求助於弱式類型 （使用手動 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
+屬性和符合簽章） 為選擇性的通訊協定方法。
 
 為了更方便取用的 API，會使用通訊協定，繫結工具也會產生公開 （expose） 所有選擇性方法的擴充方法類別。  這表示，只要您使用 API，您將能夠處理通訊協定為具有所有方法。
 
@@ -448,7 +462,8 @@ class MyDelegate : NSObject, IUITableViewDelegate {
 
 ### <a name="binding-class-extensions"></a>繫結類別的延伸模組
 
-在 OBJECTIVE-C 中就可以擴充以新方法，在精神與 C# 的擴充方法類似的類別。 當其中一種方法時，您可以使用[ `[BaseType]` ](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)屬性加上旗標為訊息接收者的 Objective C 的方法。
+在 OBJECTIVE-C 中就可以使用新的方法，類似精神來擴充類別C#的擴充方法。 當其中一種方法時，您可以使用 [`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) 
+要加上旗標視為 OBJECTIVE-C 訊息的接收者方法屬性。
 
 例如，在 Xamarin.iOS 中我們繫結所定義的擴充方法`NSString`時`UIKit`中的方法為匯入`NSStringDrawingExtensions`，如下所示：
 
@@ -471,7 +486,7 @@ OBJECTIVE-C 支援 variadic 引數。 例如:
   NS_REQUIRES_NIL_TERMINATION ;
 ```
 
-若要叫用這個方法，從 C# 您會想要建立的簽章，就像這樣：
+若要叫用這個方法從C#您會想要建立的簽章，就像這樣：
 
 ```csharp
 [Export ("appendWorkers"), Internal]
@@ -514,7 +529,8 @@ public void AppendWorkers(params Worker[] workers)
 NSString NSSomeEventNotification { get; }
 ```
 
-如果您想要將未衍生自靜態類別中的各種欄位`NSObject`，您可以使用[ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute_Class)屬性的類別，像這樣：
+如果您想要將未衍生自靜態類別中的各種欄位`NSObject`，您可以使用 [`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute_Class) 
+此類別中的這類屬性：
 
 ```csharp
 [Static]
@@ -538,7 +554,7 @@ interface LonelyClass {
 -  `System.Drawing.SizeF`
 -  `CGSize`
 
-除了原生的欄位名稱，您可以指定程式庫名稱欄位所在的位置，藉由傳遞至程式庫名稱：
+除了原生的欄位名稱，您可以指定程式庫名稱 欄位所在的位置，藉由傳遞至程式庫名稱：
 
 ```csharp
 [Static]
@@ -611,9 +627,10 @@ interface MyType {
 
 ### <a name="binding-nsvalue-nsnumber-and-nsstring-to-a-better-type"></a>繫結`NSValue`， `NSNumber`，和`NSString`更好的型別
 
-[ `[BindAs]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)屬性可讓繫結`NSNumber`，`NSValue`和`NSString`（列舉） 到更精確的 C# 型別。 屬性可用來建立更好、 更精確，在原生 api 的.NET API。
+[ `[BindAs]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)屬性可讓繫結`NSNumber`，`NSValue`並`NSString`（列舉） 更多精確C#類型。 屬性可用來建立更好、 更精確，在原生 api 的.NET API。
 
-您可以將方法 （在傳回的值）、 參數和屬性與裝飾[ `[BindAs]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)。 唯一的限制是，您的成員**不得**內被[ `[Protocol]` ](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute)或[ `[Model]` ](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)介面。
+您可以將方法 （在傳回的值）、 參數和屬性與裝飾[ `[BindAs]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)。 唯一的限制是，您的成員**不得**位於內 [`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) 
+或是[ `[Model]` ](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)介面。
 
 例如: 
 
@@ -657,9 +674,11 @@ CAScroll [] SupportedScrollModes { get; set; }
 
 ### <a name="binding-notifications"></a>繫結通知
 
-通知是訊息張貼至`NSNotificationCenter.DefaultCenter`並做為機制來廣播訊息到另一個應用程式的一個部分。 開發人員通常會使用通知訂閱[NSNotificationCenter](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/)的[AddObserver](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/M/AddObserver/)方法。 當應用程式張貼訊息至通知中心時，通常包含儲存在裝載[NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/)字典。 這個字典弱型別，以及取得問題的資訊是容易發生錯誤，因為使用者通常需要讀取文件索引鍵位於字典和可儲存在字典中值的型別中。 存在的索引鍵有時會使用做為布林值。
+通知是訊息張貼至`NSNotificationCenter.DefaultCenter`並做為機制來廣播訊息到另一個應用程式的一個部分。 開發人員通常會使用通知訂閱[NSNotificationCenter](xref:Foundation.NSNotificationCenter)的[AddObserver](xref:Foundation.NSNotificationCenter.AddObserver(Foundation.NSString,System.Action{Foundation.NSNotification}))方法。 當應用程式張貼訊息至通知中心時，通常包含儲存在裝載[NSNotification.UserInfo](xref:Foundation.NSNotification.UserInfo)字典。 這個字典弱型別，以及取得問題的資訊是容易發生錯誤，因為使用者通常需要讀取文件索引鍵位於字典和可儲存在字典中值的型別中。 存在的索引鍵有時會使用做為布林值。
 
-Xamarin.iOS 繫結產生器提供繫結通知的開發人員的支援。 若要這樣做，您設定[ `[Notification]` ](~/cross-platform/macios/binding/binding-types-reference.md#NotificationAttribute)也是在屬性上的屬性加上[ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) （可以是公用或私用） 的屬性。
+Xamarin.iOS 繫結產生器提供繫結通知的開發人員的支援。 若要這樣做，您設定 [`[Notification]`](~/cross-platform/macios/binding/binding-types-reference.md#NotificationAttribute)
+屬性也是在屬性上的加上 [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)
+（可以是公用或私用） 的屬性。
 
 這個屬性可以用於不含引數執行沒有承載的通知，或者您可以指定`System.Type`參考另一個介面，在 API 定義中，通常與名稱結尾"EventArgs"。 產生器會將介面變成類別子類別化`EventArgs`，且會包含所有列出的屬性。 [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)屬性應該用在的 EventArgs 類別，列出用來查閱 OBJECTIVE-C 字典擷取值的索引鍵的名稱。
 
@@ -684,7 +703,7 @@ public class MyClass {
 }
 ```
 
-您的程式碼的使用者可以接著輕鬆訂閱通知張貼至[NSDefaultCenter](https://developer.xamarin.com/api/property/Foundation.NSNotificationCenter.DefaultCenter/)使用如下的程式碼：
+您的程式碼的使用者可以接著輕鬆訂閱通知張貼至[NSDefaultCenter](xref:Foundation.NSNotificationCenter.DefaultCenter)使用如下的程式碼：
 
 ```csharp
 var token = MyClass.Notifications.ObserverDidStart ((notification) => {
@@ -698,7 +717,7 @@ var token = MyClass.Notifications.ObserverDidStart ((notification) => {
 token.Dispose ();
 ```
 
-您也可以呼叫[NSNotification.DefaultCenter.RemoveObserver](https://developer.xamarin.com/api/member/Foundation.NSNotificationCenter.RemoveObserver/p/Foundation.NSObject/)並傳遞 token。 如果您的通知中包含參數，您應該指定 helper`EventArgs`介面，就像這樣：
+您也可以呼叫[NSNotification.DefaultCenter.RemoveObserver](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject))並傳遞 token。 如果您的通知中包含參數，您應該指定 helper`EventArgs`介面，就像這樣：
 
 ```csharp
 interface MyClass {
@@ -721,7 +740,7 @@ interface MyScreenChangedEventArgs {
 }
 ```
 
-將會產生上述`MyScreenChangedEventArgs`類別`ScreenX`並`ScreenY`屬性，可將擷取的資料[NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/) "ScreenXKey"和"ScreenYKey 」 鍵的字典分別並套用適當的轉換。 `[ProbePresence]`屬性產生器用來探查，如果已設定金鑰`UserInfo`，而不是嘗試擷取值。 這用於的情況下，索引鍵的目前狀態 （通常適用於布林值） 的值。
+將會產生上述`MyScreenChangedEventArgs`類別`ScreenX`並`ScreenY`屬性，可將擷取的資料[NSNotification.UserInfo](xref:Foundation.NSNotification.UserInfo) "ScreenXKey"和"ScreenYKey 」 鍵的字典分別並套用適當的轉換。 `[ProbePresence]`屬性產生器用來探查，如果已設定金鑰`UserInfo`，而不是嘗試擷取值。 這用於的情況下，索引鍵的目前狀態 （通常適用於布林值） 的值。
 
 這可讓您撰寫如下的程式碼：
 
@@ -735,7 +754,7 @@ var token = MyClass.NotificationsObserveScreenChanged ((notification) => {
 
 ### <a name="binding-categories"></a>繫結類別
 
-類別是以 OBJECTIVE-C 機制用來擴充一組方法和類別中可用的屬性。   在實務上，它們用來擴充基底類別的功能 (例如`NSObject`) 以特定架構中的連結時 (例如`UIKit`)，讓它們的方法，可供使用，但只有在 連結新的架構。   在某些其他情況下，它們會依功能用來組織類別中的功能。   也就是在精神與 C# 擴充方法類似。這是一個類別會如下所示在目標 c:
+類別是以 OBJECTIVE-C 機制用來擴充一組方法和類別中可用的屬性。   在實務上，它們用來擴充基底類別的功能 (例如`NSObject`) 以特定架構中的連結時 (例如`UIKit`)，讓它們的方法，可供使用，但只有在 連結新的架構。   在某些其他情況下，它們會依功能用來組織類別中的功能。   他們是類似的精神，若要在C#擴充方法。這是一個類別會如下所示在目標 c:
 
 ```csharp
 @interface UIView (MyUIViewExtension)
@@ -745,9 +764,11 @@ var token = MyClass.NotificationsObserveScreenChanged ((notification) => {
 
 上述範例中如果上找到的程式庫會擴充的執行個體`UIView`方法使用`makeBackgroundRed`。
 
-若要將這些繫結，您可以使用[ `[Category]` ](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute)介面定義上的屬性。  使用時[ `[Category]` ](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute)屬性的意義[ `[BaseType]` ](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)屬性被用來指定基底類別延伸，而是要擴充的型別會變更。
+若要將這些繫結，您可以使用[ `[Category]` ](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute)介面定義上的屬性。  使用時 [`[Category]`](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute)
+屬性的意義 [`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) 
+屬性會變更被用來指定基底類別延伸，而是要擴充的型別。
 
-下列顯示如何`UIView`擴充功能會繫結和轉換成 C# 擴充方法：
+下列示範如何`UIView`擴充功能會繫結和轉換成C#擴充方法：
 
 ```csharp
 [BaseType (typeof (UIView))]
@@ -771,7 +792,8 @@ picture;
 @end
 ```
 
-雖然您可以使用[ `[Category]` ](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute)屬性也為此裝飾樣式的宣告中，您可能也只是將它們全部加入類別定義。  這兩種會達成相同目的：
+雖然您可以使用 [`[Category]`](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute)
+屬性也為此裝飾樣式的宣告中，您可能也只是將它們全部加入類別定義。  這兩種會達成相同目的：
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -810,15 +832,15 @@ interface SocialNetworking {
 
 ### <a name="binding-blocks"></a>繫結區塊
 
-區塊是由 Apple，以將 C# 匿名方法的對等功能帶到 OBJECTIVE-C 導入新的建構 比方說，`NSSet`類別現在會公開這個方法：
+區塊的新建構的對等的功能，將 Apple 所導入C#以 OBJECTIVE-C 的匿名方法 比方說，`NSSet`類別現在會公開這個方法：
 
 ```csharp
 - (void) enumerateObjectsUsingBlock:(void (^)(id obj, BOOL *stop) block
 ```
 
-上述描述中宣告呼叫的方法`enumerateObjectsUsingBlock:`採用一個引數，名為`block`。 在於，它可讓您擷取目前的環境 （"this"指標，存取區域變數和參數），此區塊會類似於 C# 匿名方法。 在上述的方法`NSSet`叫用具有兩個參數的區塊`NSObject`(`id obj`一部分) 以及布林值的指標 ( `BOOL *stop`) 部分。
+上述描述中宣告呼叫的方法`enumerateObjectsUsingBlock:`採用一個引數，名為`block`。 此區塊會類似於C#匿名方法中，來擷取目前的環境 （"this"指標，存取區域變數和參數） 的支援。 在上述的方法`NSSet`叫用具有兩個參數的區塊`NSObject`(`id obj`一部分) 以及布林值的指標 ( `BOOL *stop`) 部分。
 
-要繫結與 btouch 這類的 API，您需要先宣告區塊型別簽章，如 C# 委派，並接著將其參考來自 API 進入點，就像這樣：
+若要繫結與 btouch 這類的 API，您需要先宣告區塊型別簽章，做為C#委派，然後將它參考從 API 進入點，就像這樣：
 
 ```csharp
 // This declares the callback signature for the block:
@@ -829,7 +851,7 @@ delegate void NSSetEnumerator (NSObject obj, ref bool stop)
 void Enumerate (NSSetEnumerator enum)
 ```
 
-此外，現在您的程式碼時，可以從 C# 呼叫您的函式：
+與您的程式碼現在可以呼叫您的函式，從C#:
 
 ```csharp
 var myset = new NSMutableSet ();
@@ -857,7 +879,8 @@ s.Enumerate ((obj, stop) => {
 
 繫結產生器可以將特定類別的方法轉換成非同步友善方法 (方法會傳回工作或任務&lt;T&gt;)。
 
-您可以使用[ `[Async]` ](~/cross-platform/macios/binding/binding-types-reference.md#AsyncAttribute)方法會傳回 void，而且其最後一個引數為回呼的屬性。  當您將此套用至方法時，繫結產生器會產生該方法具有尾碼的版本`Async`。  如果回呼不接受任何參數，將會傳回值`Task`，如果回呼會採用參數，結果會是`Task<T>`。  如果回呼不接受多個參數，您應該設定`ResultType`或`ResultTypeName`來指定所要產生的型別會保留所有屬性的名稱。
+您可以使用 [`[Async]`](~/cross-platform/macios/binding/binding-types-reference.md#AsyncAttribute) 
+方法會傳回 void，而且其最後一個引數為回呼的屬性。  當您將此套用至方法時，繫結產生器會產生該方法具有尾碼的版本`Async`。  如果回呼不接受任何參數，將會傳回值`Task`，如果回呼會採用參數，結果會是`Task<T>`。  如果回呼不接受多個參數，您應該設定`ResultType`或`ResultTypeName`來指定所要產生的型別會保留所有屬性的名稱。
 
 範例：
 
@@ -895,7 +918,7 @@ public class  XyzOptions {
 
 若要這樣做，您需要執行一些作業：
 
-* 建立強型別類別，子類別化[DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/)並提供每個屬性的各種不同的 getter 和 setter。
+* 建立強型別類別，子類別化[DictionaryContainer](xref:Foundation.DictionaryContainer)並提供每個屬性的各種不同的 getter 和 setter。
 * 宣告的方法都會多載`NSDictionary`才會在新的強型別版本。
 
 您可以建立的強型別類別方法是以手動的方式，或使用產生器來為您執行的工作。  我們先探討如何執行這項操作以手動方式讓您了解發生什麼情況，然後按一下 自動的方法。
@@ -933,9 +956,11 @@ interface XyzPanel {
 }
 ```
 
-如果您的 API 不需要覆寫中，您可以使用安全地隱藏 NSDictionary 為基礎的 API [ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)屬性。
+如果您的 API 不需要覆寫中，您可以使用安全地隱藏 NSDictionary 為基礎的 API [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
+屬性。
 
-如您所見，我們會使用[ `[Wrap]` ](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute)呈現新的 API 進入點，此屬性，以及我們呈現它使用我們強型別`XyzOptions`類別。  包裝函式方法也可讓要傳遞的 null。
+如您所見，我們使用 [`[Wrap]`](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute)
+顯示新的 API 進入點，此屬性，以及我們呈現它使用我們強型別`XyzOptions`類別。  包裝函式方法也可讓要傳遞的 null。
 
 現在，我們忘記提到的一件事是 where`XyzOptionsKeys`值的來源。  您通常會群組之類的靜態類別中的 API 介面的索引鍵`XyzOptionsKeys`，如下所示：
 
@@ -985,23 +1010,24 @@ interface XyzPanel {
 }
 ```
 
-萬一您需要在參考您`XyzOption`成員不同的欄位 (也就是不是名稱具有後置詞的屬性`Key`)，您可以裝飾具有屬性[ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)屬性名稱，您想要使用。
+萬一您需要在參考您`XyzOption`成員不同的欄位 (也就是不是名稱具有後置詞的屬性`Key`)，您可以裝飾具有的屬性 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
+您想要使用的名稱屬性。
 
 <a name="Type_mappings" />
 
 ## <a name="type-mappings"></a>型別對應
 
-本章節涵蓋如何將 OBJECTIVE-C 類型對應至 C# 類型。
+本節說明如何將 OBJECTIVE-C 型別對應至C#類型。
 
 <a name="Simple_Types" />
 
-### <a name="simple-types"></a>簡單類型
+### <a name="simple-types"></a>簡單型別
 
 下表顯示您從 OBJECTIVE-C 與產品 CocoaTouch 世界 Xamarin.iOS 世界的類型應該對應方式：
 
 |OBJECTIVE-C 型別名稱|Xamarin.iOS 統一 API 類型|
 |---|---|
-|`BOOL`, `GLboolean`|`bool`|
+|`BOOL`、 `GLboolean`|`bool`|
 |`NSInteger`|`nint`|
 |`NSUInteger`|`nuint`|
 |`CFTimeInterval` / `NSTimeInterval`|`double`|
@@ -1010,7 +1036,7 @@ interface XyzPanel {
 |`CGRect`|`CGRect`|
 |`CGPoint`|`CGPoint`|
 |`CGSize`|`CGSize`|
-|`CGFloat`, `GLfloat`|`nfloat`|
+|`CGFloat`、 `GLfloat`|`nfloat`|
 |CoreFoundation 類型 (`CF*`)|`CoreFoundation.CF*`|
 |`GLint`|`nint`|
 |`GLfloat`|`nfloat`|
@@ -1029,7 +1055,7 @@ interface XyzPanel {
 
 ### <a name="arrays"></a>陣列
 
-Xamarin.iOS 執行階段會自動轉換到 C# 陣列`NSArrays`，並執行的轉換，例如的虛數的 OBJECTIVE-C 方法，傳回`NSArray`的`UIViews`:
+Xamarin.iOS 執行階段會自動轉換的C#到陣列`NSArrays`，並執行的轉換，例如的虛數的 OBJECTIVE-C 方法，傳回`NSArray`的`UIViews`:
 
 ```csharp
 // Get the peer views - untyped
@@ -1049,7 +1075,7 @@ UIView [] GetPeerViews ();
 void SetViews (UIView [] views);
 ```
 
-其概念是要使用強型別 C# 陣列，因為這可讓 IDE 提供適當的程式碼完成功能的實際類型，而不會強制使用者猜到，或查閱文件，以找出實際的型別陣列中所包含的物件。
+其概念是要使用強型別C#陣列，因為這可讓 IDE 提供適當的程式碼完成功能的實際類型，而不會強制使用者猜到，或查閱文件，以找出實際的型別陣列中所包含的物件。
 
 在其中您可以不追蹤實際的最具衍生性型別陣列中所含的情況下，您可以使用`NSObject []`當做傳回值。
 
@@ -1057,7 +1083,7 @@ void SetViews (UIView [] views);
 
 ### <a name="selectors"></a>選取器
 
-選取器出現在特殊類型的 Objective C API `SEL`。 繫結時的選取器，您會將對應的型別`ObjCRuntime.Selector`。  通常是選取器會公開在使用物件、 目標物件和選取器 API，以叫用目標物件中。 基本上提供這兩種都對應至 C# 委派： 叫用的方法以及要叫用方法的物件會封裝的項目。
+選取器出現在特殊類型的 Objective C API `SEL`。 繫結時的選取器，您會將對應的型別`ObjCRuntime.Selector`。  通常是選取器會公開在使用物件、 目標物件和選取器 API，以叫用目標物件中。 基本上提供這兩種都對應至C#委派： 叫用的方法以及要叫用方法的物件會封裝的項目。
 
 這是繫結的樣子：
 
@@ -1085,7 +1111,8 @@ class DialogPrint : UIViewController {
 }
 ```
 
-若要讓 C# 開發人員到目前的繫結，您通常會提供採用的方法`NSAction`參數，可讓 C# 委派和 lambda，而不是使用`Target+Selector`。 若要這樣做您通常會隱藏`SetTarget`方法加上旗標與其[ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)屬性，然後會公開新的協助程式方法，就像這樣：
+若要使繫結至到目前C#開發人員，您通常會提供採用的方法`NSAction`參數，可讓C#而不是要使用的委派和 lambda `Target+Selector`。 若要這樣做您通常會隱藏`SetTarget`方法加上旗標與 [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
+屬性，然後會公開新的協助程式方法，就像這樣：
 
 ```csharp
 // API.cs
@@ -1127,11 +1154,12 @@ class DialogPrint : UIViewController {
 
 ### <a name="strings"></a>字串
 
-當您要繫結採用的方法`NSString`，您可以取代，與 C# 字串類型，同時在傳回的型別和參數。
+當您要繫結採用的方法`NSString`，您可以取代，使用C#字串類型，傳回型別和參數。
 
 您可能想要使用的唯一情況`NSString`直接時，則會使用字串做為權杖。 如需字串的詳細資訊和`NSString`，請閱讀[NSString 上的 API 設計](~/ios/internals/api-design/nsstring.md)文件。
 
-在某些罕見的情況下，API 可能會公開類似 C 的字串 (`char *`) 而非 Objective C 字串 (`NSString *`)。 在這些情況下，您可以標註的參數[ `[PlainString]` ](~/cross-platform/macios/binding/binding-types-reference.md#plainstring)屬性。
+在某些罕見的情況下，API 可能會公開類似 C 的字串 (`char *`) 而非 Objective C 字串 (`NSString *`)。 在這些情況下，您可以標註的參數 [`[PlainString]`](~/cross-platform/macios/binding/binding-types-reference.md#plainstring)
+屬性。
 
 <a name="outref_parameters" />
 
@@ -1181,7 +1209,8 @@ void SomeString (ref NSObject byref);
 
 #### <a name="using-internal"></a>使用 [內部]
 
-您可以使用[ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)屬性以隱藏來自公用 API 的方法。 您可能想要在其中公開的 API 是太低層級，而您想要提供在不同的檔案，這個方法為基礎的高層級實作的情況下執行這項操作。
+您可以使用 [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
+若要隱藏來自公用 API 的方法的屬性。 您可能想要在其中公開的 API 是太低層級，而您想要提供在不同的檔案，這個方法為基礎的高層級實作的情況下執行這項操作。
 
 您也可以使用這當遇到繫結產生器中的限制，例如一些進階的案例可能會公開未繫結的類型和您想要繫結您自己的方式，而您想要自行包裝這些型別，在您自己的方式。
 
@@ -1191,7 +1220,7 @@ void SomeString (ref NSObject byref);
 
 OBJECTIVE-C 類別通常會廣播通知，或要求上委派類別 （Objective C 委派） 傳送訊息的資訊。
 
-此模型中，雖然完全支援和呈現 Xamarin.iOS 有時候很麻煩。 C# 事件模式，可以在這些情況下使用的類別上的系統在方法回呼，就會顯示 Xamarin.iOS。 這可讓程式碼，就像這樣執行：
+此模型中，雖然完全支援和呈現 Xamarin.iOS 有時候很麻煩。 Xamarin.iOS 會公開C#事件模式，可以在這些情況下使用的類別上的系統在方法回呼。 這可讓程式碼，就像這樣執行：
 
 ```csharp
 button.Clicked += delegate {
@@ -1199,9 +1228,9 @@ button.Clicked += delegate {
 };
 ```
 
-繫結產生器可以減少打字，將 OBJECTIVE-C 模式對應至 C# 模式所需的量。
+繫結產生器是能夠減少輸入對應到 OBJECTIVE-C 模式所需的C#模式。
 
-與 Xamarin.iOS 1.4 啟動將能夠也指示產生器以產生特定的 Objective C 委派繫結，且將公開為 C# 事件和屬性上的主機類型的委派。
+從 Xamarin.iOS 1.4 它有可能也指示產生器以產生特定的 Objective C 委派繫結和公開的委派做為C#事件和主控件類型上的屬性。
 
 有兩種類別參與此程序，將主應用程式類別是指目前會發出事件，並將這些應用程式傳送`Delegate`或`WeakDelegate`和實際委派類別。
 
@@ -1227,7 +1256,7 @@ interface MyClassDelegate {
 若要包裝的類別中，您必須：
 
 -  在您的主機類別，將新增至您 [`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)  
-   宣告做為其委派和您所公開的 C# 名稱的型別。 在上述範例中所`typeof (MyClassDelegate)`和`WeakDelegate`分別。
+   宣告做為其委派的型別和C#您所公開的名稱。 在上述範例中所`typeof (MyClassDelegate)`和`WeakDelegate`分別。
 -  委派類別，有兩個以上的參數，每個方法中，您需要指定您想要用於自動產生的 EventArgs 類別的型別。
 
 繫結產生器不是限於文繞圖只有單一事件的目的地，進行，將委派發出多個訊息的某些 OBJECTIVE-C 類別，因此您必須提供陣列，以便支援這項設定。 大部分的配置不需要它，但產生器已準備好支援這種情況。
@@ -1279,11 +1308,13 @@ c.Loaded += delegate (sender, args){
 
 就像事件叫用的回呼，其差異在於，而不是讓多個可能的訂閱者 (例如，多個方法可以將連結到`Clicked`事件或`DownloadFinished`事件) 回呼只能有單一訂閱者。
 
-此程序完全相同，唯一的差別在於，而不是公開的名稱`EventArgs`類別，將會產生 EventArgs 實際上用來產生 C# 委派名稱命名。
+此程序完全相同，唯一的差別在於，而不是公開的名稱`EventArgs`類別，將會產生 EventArgs 實際上用來命名所產生的C#委派名稱。
 
-如果委派類別中的方法的傳回值，繫結產生器會將這對應到在父類別，而不是事件的委派方法。 在這些情況下，您需要提供應傳回方法使用者不會不掛至委派的預設值。 做法是使用[ `[DefaultValue]` ](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueAttribute)或是[ `[DefaultValueFromArgument]` ](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueFromArgumentAttribute)屬性。
+如果委派類別中的方法的傳回值，繫結產生器會將這對應到在父類別，而不是事件的委派方法。 在這些情況下，您需要提供應傳回方法使用者不會不掛至委派的預設值。 做法是使用 [`[DefaultValue]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueAttribute)
+或是[ `[DefaultValueFromArgument]` ](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueFromArgumentAttribute)屬性。
 
-[`[DefaultValue]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueAttribute) 將硬式編碼傳回值，雖然[ `[DefaultValueFromArgument]` ](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueFromArgumentAttribute)用來指定將傳回哪一個輸入引數。
+[`[DefaultValue]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueAttribute) 將硬式編碼傳回值，而 [`[DefaultValueFromArgument]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueFromArgumentAttribute)
+用來指定將傳回哪一個輸入引數。
 
 <a name="Enumerations_and_Base_Types" />
 
@@ -1373,5 +1404,5 @@ class Demo {
 ## <a name="related-links"></a>相關連結
 
 - [繫結範例](https://developer.xamarin.com/samples/BindingSample/)
-- [Xamarin University 課程： 建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程： 建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin University 課程：建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University 課程：建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

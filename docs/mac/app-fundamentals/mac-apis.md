@@ -4,15 +4,15 @@ description: 本文件說明如何讀取 OBJECTIVE-C 選取器以及如何在 Xa
 ms.prod: xamarin
 ms.assetid: 9F7451FA-E07E-4C7B-B5CF-27AFC157ECDA
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/02/2017
-ms.openlocfilehash: 6dfaa3c7bf988228bfbacefe7c8e7268edc8117a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: c387bbead1ac56d7f4c4c05a79c430302e50aec1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994308"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668279"
 ---
 # <a name="macos-apis-for-xamarinmac-developers"></a>macOS Xamarin.Mac 開發人員的 Api
 
@@ -68,7 +68,7 @@ ms.locfileid: "38994308"
 
 3. 您可以使用[Xamarin.Mac API 線上文件](https://docs.microsoft.com/dotnet/api/?view=xamarinmac-3.0)。
 
-4. Miguel 提供 Xamarin.Mac Api"獻給石 」 檢視[此處](http://tirania.org/tmp/rosetta.html)，您可以搜尋指定的 api。 如果您的 API 不是 AppKit 或 macOS 特定的您可能會發現它那里。
+4. Miguel 提供 Xamarin.Mac Api"獻給石 」 檢視[此處](https://tirania.org/tmp/rosetta.html)，您可以搜尋指定的 api。 如果您的 API 不是 AppKit 或 macOS 特定的您可能會發現它那里。
 
 <!--
 Note: In some cases, the assembly browser can hit a bug where it will open but not jump to the right definition. Keep that tab open, switch back to your source code and try again.

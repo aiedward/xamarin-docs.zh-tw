@@ -3,15 +3,15 @@ title: 在 Android 上連結
 ms.prod: xamarin
 ms.assetid: 3528E195-AA74-90AF-B5F3-3B65FB4F0BB8
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: bcc9617553be425ab17050a1a6fb034f6d7f596d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 07f1fbae6c4fbfcfad45fc96970339e34b5de040
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30767579"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102837"
 ---
 # <a name="linking-on-android"></a>在 Android 上連結
 
@@ -19,7 +19,7 @@ Xamarin.Android 應用程式會使用「連結器」來縮小應用程式的大�
 
 例如，[Hello, Android](https://developer.xamarin.com/samples/HelloM4A/) 範例：
 
-|組態|1.2.0 大小|4.0.1 大小|
+|Configuration|1.2.0 大小|4.0.1 大小|
 |---|---|---|
 |沒有連結的版本：|14.0 MB|16.0 MB|
 |有連結的版本：|4.2 MB|2.9 MB|

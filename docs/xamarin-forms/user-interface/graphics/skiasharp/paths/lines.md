@@ -4,39 +4,41 @@ description: 本文說明如何使用 SkiaSharp 繪製線條使用不同的筆�
 ms.prod: xamarin
 ms.assetid: 1F854DDD-5D1B-4DE4-BD2D-584439429FDB
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 000bf24c1b06baab892f0b165c8b9eeebebce49d
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 85d863b19c3bf0302464e371738a2926cc80e8ce
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615258"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059713"
 ---
 # <a name="lines-and-stroke-caps"></a>線條和筆觸端點
 
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+
 _了解如何使用 SkiaSharp 繪製線條使用不同的筆觸端點_
 
-SkiaSharp，在轉譯程式會非常不同於轉譯一系列連接的直線。 即使當繪製單一線條，不過，通常是特定的筆劃寬度和寬的線條，讓各行所需，更重要的會變成一條線，呼叫端的外觀*筆觸端點*:
+SkiaSharp，在轉譯程式會非常不同於轉譯一系列連接的直線。 即使在繪製單一線條，不過，通常很讓行特定的筆劃寬度所需。 隨著這幾行範圍更廣，行尾的外觀也變得很重要。 一行結尾的外觀會呼叫*筆觸端點*:
 
 ![](lines-images/strokecapsexample.png "三個筆劃 cap 選項")
 
-繪製單一線條`SKCanvas`定義簡單[ `DrawLine` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawLine/p/System.Single/System.Single/System.Single/System.Single/SkiaSharp.SKPaint/)方法的起始和結束的那一行的座標，其引數指出`SKPaint`物件：
+繪製單一線條`SKCanvas`定義簡單[ `DrawLine` ](xref:SkiaSharp.SKCanvas.DrawLine(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint))方法的起始和結束的那一行的座標，其引數指出`SKPaint`物件：
 
 ```csharp
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-根據預設，`StrokeWidth`屬性的新具現化`SKPaint`物件為 0，且具有值為 1，呈現一個像素的線條粗細中相同的效果。 因此您可能會想要設定顯示在高解析度裝置，例如手機上非常精簡`StrokeWidth`到較大的值。 但是，一旦您開始繪製可調整大小的粗細的線條，會引發另一個問題： 應該如何啟動和這些粗的行尾呈現？
+根據預設， [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth)屬性的新具現化`SKPaint`物件為 0，且具有值為 1，呈現一個像素的線條粗細中相同的效果。 因此您可能會想要設定顯示在高解析度的裝置，例如手機上非常精簡`StrokeWidth`到較大的值。 但是，一旦您開始繪製可調整大小的粗細的線條，會引發另一個問題： 應該如何啟動和這些粗的行尾呈現？
 
-在呼叫開始和結束的行的外觀*線條端點*或者 Skia，在*筆觸端點*。 在此內容中的 「 cap"是指一種 hat&mdash;位於該行結尾的項目。 您設定[ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/)屬性`SKPaint`物件的下列成員的其中一個[ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/)列舉型別：
+在呼叫開始和結束的行的外觀*線條端點*或者 Skia，在*筆觸端點*。 在此內容中的 「 cap"是指一種 hat&mdash;位於該行結尾的項目。 您設定[ `StrokeCap` ](xref:SkiaSharp.SKPaint.StrokeCap)屬性`SKPaint`物件的下列成員的其中一個[ `SKStrokeCap` ](xref:SkiaSharp.SKStrokeCap)列舉型別：
 
-- [`Butt`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Butt/) （預設值）
-- [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
-- [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
+- `Butt` （預設值）
+- `Square`
+- `Round`
 
-這些最佳說明與範例程式。 首頁上的第二部分[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式開頭的網頁標題**筆觸端點**根據[ `StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs)類別。 此頁面定義`PaintSurface`迴圈的三個成員的事件處理常式`SKStrokeCap`列舉型別，來顯示列舉成員的名稱，並繪製一條線使用該筆觸端點：
+這些最佳說明與範例程式。 **SkiaSharp 線條和路徑**一節[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式開始與頁面標題為**筆觸端點**根據[ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs)類別。 此頁面定義`PaintSurface`迴圈的三個成員的事件處理常式`SKStrokeCap`列舉型別，來顯示列舉成員的名稱，並繪製一條線使用該筆觸端點：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -90,7 +92,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-針對每個成員`SKStrokeCap`列舉型別，這個處理常式繪製兩行，其中一個筆劃粗細是 50 個像素並另一行筆觸粗細是 2 個像素定位在最上層。 此第二行的目的是要說明的幾何的開始和結束的線條的粗細和筆觸端點的獨立的一行：
+針對每個成員`SKStrokeCap`列舉型別，這個處理常式繪製兩行，其中一個筆劃粗細是 50 個像素並另一行筆觸粗細是兩個像素定位在最上層。 此第二行的目的是要說明的幾何的開始和結束的線條的粗細和筆觸端點的獨立的一行：
 
 [![](lines-images/strokecaps-small.png "筆觸端點 頁面的三個螢幕擷取畫面")](lines-images/strokecaps-large.png#lightbox "筆觸端點 頁面的三個螢幕擷取畫面")
 
@@ -102,19 +104,20 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 DrawPoints (SKPointMode mode, points, paint)
 ```
 
-`points`參數是陣列`SKPoint`值並`mode`隸屬[ `SKPointMode` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPointMode/)列舉型別，有三個成員：
+`points`參數是陣列`SKPoint`值並`mode`隸屬[ `SKPointMode` ](xref:SkiaSharp.SKPointMode)列舉型別，有三個成員：
 
-- [`Points`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Points/) 要呈現個別的點
-- [`Lines`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Lines/) 連接點每一對
-- [`Polygon`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Polygon/) 所有連續點的連線
+- `Points` 要呈現個別的點
+- `Lines` 連接點每一對
+- `Polygon` 所有連續點的連線
 
-**多行**頁面會示範這個方法。 [ `MultipleLinesPage` XAML 檔案](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml)具現化兩個`Picker`檢視，可讓您選取的成員`SKPointMode`列舉型別和成員`SKStrokeCap`列舉型別：
+**多行**頁面會示範這個方法。 [ **MultipleLinesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml)檔案具現化兩個`Picker`檢視，可讓您選取的成員`SKPointMode`列舉型別和成員`SKStrokeCap`列舉型別：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
-             x:Class="SkiaSharpFormsDemos.MultipleLinesPage"
+             xmlns:skia="clr-namespace:SkiaSharp;assembly=SkiaSharp"
+             xmlns:skiaforms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Class="SkiaSharpFormsDemos.Paths.MultipleLinesPage"
              Title="Multiple Lines">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -132,11 +135,13 @@ DrawPoints (SKPointMode mode, points, paint)
                 Grid.Row="0"
                 Grid.Column="0"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>Points</x:String>
-                <x:String>Lines</x:String>
-                <x:String>Polygon</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type skia:SKPointMode}">
+                    <x:Static Member="skia:SKPointMode.Points" />
+                    <x:Static Member="skia:SKPointMode.Lines" />
+                    <x:Static Member="skia:SKPointMode.Polygon" />
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 0
             </Picker.SelectedIndex>
@@ -147,26 +152,28 @@ DrawPoints (SKPointMode mode, points, paint)
                 Grid.Row="0"
                 Grid.Column="1"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>Butt</x:String>
-                <x:String>Round</x:String>
-                <x:String>Square</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type skia:SKStrokeCap}">
+                    <x:Static Member="skia:SKStrokeCap.Butt" />
+                    <x:Static Member="skia:SKStrokeCap.Round" />
+                    <x:Static Member="skia:SKStrokeCap.Square" />
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 0
             </Picker.SelectedIndex>
         </Picker>
 
-        <skia:SKCanvasView x:Name="canvasView"
-                           PaintSurface="OnCanvasViewPaintSurface"
-                           Grid.Row="1"
-                           Grid.Column="0"
-                           Grid.ColumnSpan="2" />
+        <skiaforms:SKCanvasView x:Name="canvasView"
+                                PaintSurface="OnCanvasViewPaintSurface"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2" />
     </Grid>
 </ContentPage>
 ```
 
-`SelectedIndexChanged`兩者的處理常式`Picker`檢視只會導致無效`SKCanvasView`物件：
+請注意 SkiaSharp 命名空間宣告會稍有不同，因為`SkiaSharp`命名空間需要參考的成員`SKPointMode`和`SKStrokeCap`列舉型別。 `SelectedIndexChanged`兩者的處理常式`Picker`檢視只會導致無效`SKCanvasView`物件：
 
 ```csharp
 void OnPickerSelectedIndexChanged(object sender, EventArgs args)
@@ -180,7 +187,7 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs args)
 
 這個處理常式需要檢查是否存在`SKCanvasView`物件因為這是第一次的事件處理常式時呼叫`SelectedIndex`屬性`Picker`設定為 0，在 XAML 檔案中，而且會出現之前`SKCanvasView`已具現化。
 
-`PaintSurface`處理常式會存取的泛型方法，以取得兩個選取的項目，從`Picker`檢視，並將它們轉換成列舉值：
+`PaintSurface`處理常式會取得兩個列舉值從`Picker`檢視：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -210,25 +217,16 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
         Style = SKPaintStyle.Stroke,
         Color = SKColors.DarkOrchid,
         StrokeWidth = 50,
-        StrokeCap = GetPickerItem<SKStrokeCap>(strokeCapPicker)
+        StrokeCap = (SKStrokeCap)strokeCapPicker.SelectedItem
     };
 
     // Render the points by calling DrawPoints
-    SKPointMode pointMode = GetPickerItem<SKPointMode>(pointModePicker);
+    SKPointMode pointMode = (SKPointMode)pointModePicker.SelectedItem;
     canvas.DrawPoints(pointMode, points, paint);
-}
-
-T GetPickerItem<T>(Picker picker)
-{
-    if (picker.SelectedIndex == -1)
-    {
-        return default(T);
-    }
-    return (T)Enum.Parse(typeof(T), picker.Items[picker.SelectedIndex]);
 }
 ```
 
-螢幕擷取畫面顯示各種`Picker`三個平台上的選取項目：
+螢幕擷取畫面顯示各種`Picker`選取項目：
 
 [![](lines-images/multiplelines-small.png "多行 頁面的三個螢幕擷取畫面")](lines-images/multiplelines-large.png#lightbox "多行 頁面的三個螢幕擷取畫面")
 
@@ -243,5 +241,5 @@ UWP 螢幕擷取畫面顯示的結果`SKPointMode.Polygon`值。 陣列中的連
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

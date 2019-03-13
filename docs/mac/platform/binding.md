@@ -1,40 +1,40 @@
 ---
-title: 繫結 Xamarin.Mac 的 Mac 文件庫
-description: 描述如何使用 Objective C Xamarin.Mac 應用程式，包括目標 Sharpie 和範例程式碼中的繫結的指南的這個文件連結。
+title: Xamarin.mac 的繫結 Mac 程式庫
+description: 本文件所連結說明如何使用 OBJECTIVE-C 繫結在 Xamarin.Mac 應用程式，包括目標 Sharpie 和範例程式碼的指南。
 ms.prod: xamarin
 ms.assetid: 521707CD-79D3-488A-84CB-A37EBF93AC94
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 01/13/2017
-ms.openlocfilehash: 05602401c1408b016b371fc00b65f2d3db4c667d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: fde21b2056d56cbf1c4768b287e29f559390f500
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792211"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107296"
 ---
-# <a name="binding-mac-libraries-for-xamarinmac"></a>繫結 Xamarin.Mac 的 Mac 文件庫
+# <a name="binding-mac-libraries-for-xamarinmac"></a>Xamarin.mac 的繫結 Mac 程式庫
 
-請遵循下列連結，以了解繫結上 Xamarin.Mac Objective C 程式庫：
+請遵循下列連結以深入了解繫結 Objective C 程式庫上 Xamarin.Mac:
 
 - [**概觀**](~/cross-platform/macios/binding/overview.md) -
   說明繫結的運作方式。
 - [**繫結 Objective C 程式庫**](~/cross-platform/macios/binding/objective-c-libraries.md) -
-  如何繫結於 Xamarin 專案中使用的 Objective C 程式庫的指示。
+  如何繫結 Objective C 程式庫，Xamarin 專案中使用的指示。
 - [**輸入定義參考指南**](~/cross-platform/macios/binding/binding-types-reference.md) -
-  描述所有繫結至磁碟機繫結產生程序的作者可以使用的屬性。
+  說明所有的驅動程式繫結產生處理序的繫結作者可以使用的屬性。
 
 ## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Objective Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 
-目標 Sharpie 是協助啟動繫結的第一次傳遞的命令列工具。
-可藉由剖析對應到公用 API 的原生程式庫的標頭檔來運作[繫結定義](~/cross-platform/macios/binding/binding-types-reference.md)（否則手動完成此程序）。 目標 Sharpie 不會單獨使用時，建立繫結，但它可以幫助您開始使用 ！
+目標 Sharpie 是命令列工具，幫助啟動程序繫結的第一個階段。
+它藉由剖析對應到公用 API 的原生程式庫的標頭檔的運作方式[繫結定義](~/cross-platform/macios/binding/binding-types-reference.md)（否則手動完成這個程序）。 目標 Sharpie 不會建立繫結本身，但它可以幫助您開始使用 ！
 
 ## <a name="examples"></a>範例
 
-請參閱[XMBindingExample Mac 範例](https://github.com/xamarin/mac-samples/tree/master/XMBindingExample)以了解如何建立 Mac 繫結使用的繫結專案。
+請參閱[XMBindingExample Mac 範例](https://github.com/xamarin/mac-samples/tree/master/XMBindingExample)以了解如何建立 Mac 繫結使用繫結專案。
 
 ## <a name="related-links"></a>相關連結
 
 - [繫結 Objective-C](~/cross-platform/macios/binding/index.md)
-- [繫結 iOS 的程式庫](~/ios/platform/binding-objective-c/index.md)
+- [繫結 iOS 程式庫](~/ios/platform/binding-objective-c/index.md)

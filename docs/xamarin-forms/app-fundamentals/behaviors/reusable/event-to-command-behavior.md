@@ -1,46 +1,51 @@
 ---
-title: 可重複使用 EventToCommandBehavior
-description: 行為可用來使命令無法正確命令與互動的控制項產生關聯。 這篇文章示範如何使用 Xamarin.Forms 行為與事件引發時叫用命令。
+title: 可重複使用的 EventToCommandBehavior
+description: 針對設計用意並非與命令互動的控制項，您可以使用行為來建立其與命令的關聯。 本文示範如何建立及使用 Xamarin.Forms 行為，在事件引發時叫用命令。
 ms.prod: xamarin
 ms.assetid: EC7F6556-9776-40B8-9424-A8094482A2F3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/06/2016
-ms.openlocfilehash: 3151179b6ff6d26b74a87ded747310646b304603
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.date: 11/09/2018
+ms.openlocfilehash: 1c2aea9a5dead1962cfd4bb71d1a1211e8b98ee9
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996317"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056703"
 ---
-# <a name="reusable-eventtocommandbehavior"></a>可重複使用 EventToCommandBehavior
+# <a name="reusable-eventtocommandbehavior"></a>可重複使用的 EventToCommandBehavior
 
-_行為可用來使命令無法正確命令與互動的控制項產生關聯。這篇文章示範如何使用 Xamarin.Forms 行為與事件引發時叫用命令。_
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
+
+_針對設計用意並非與命令互動的控制項，您可以使用行為來建立其與命令的關聯。本文示範如何建立及使用 Xamarin.Forms 行為，在事件引發時叫用命令。_
 
 ## <a name="overview"></a>總覽
 
-`EventToCommandBehavior`類別是可重複使用 Xamarin.Forms 的自訂行為執行命令，以回應*任何*事件的引發。 根據預設，事件引數的事件會傳遞至命令，而且可以選擇性地轉換[ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter)實作。
+`EventToCommandBehavior` 類別是可重複使用的 Xamarin.Forms 自訂行為，其可執行命令以回應「任何」事件的引發。 預設會將事件的事件引數傳遞給命令，並可由 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 實作選擇性地轉換。
 
-下列的行為屬性必須設定為使用行為：
+您必須將下列行為屬性設定為使用行為：
 
-- **EventName** – 事件的名稱來接聽的行為。
-- **命令**– **ICommand**執行。 若要尋找的行為必須要有`ICommand`執行個體[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)附加的控制項，可能會從父元素繼承。
+- **EventName** – 行為所接聽的事件名稱。
+- **Command** – 要執行的 `ICommand`。 行為預期會在附加控制項的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 上找到 `ICommand` 執行個體，其可能會從父項目繼承。
 
-也可以設定下列選擇性行為屬性：
+您也可以設定下列選用的行為屬性：
 
-- **CommandParameter** –`object`會傳遞至命令。
-- **轉換器**– [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter)之間傳遞將會變更的事件引數的資料格式的實作*來源*並*目標*繫結引擎。
+- **CommandParameter** – 要傳遞給命令的 `object`。
+- **Converter** – [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 實作；當繫結引擎在 *source* 和 *target* 之間傳遞事件引數資料時，其可變更事件引數資料的格式。
+
+> [!NOTE]
+> `EventToCommandBehavior` 是自訂類別，並不屬於 Xamarin.Forms 的一部分；您可以在 [EventToCommand 行為範例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)中找到。
 
 ## <a name="creating-the-behavior"></a>建立行為
 
-`EventToCommandBehavior`類別衍生自`BehaviorBase<T>`類別，又衍生自[ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1)類別。 目的`BehaviorBase<T>`類別是為需要的任何 Xamarin.Forms 行為提供基底類別[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)設為附加的控制項的行為。 這可確保行為可以繫結至並執行`ICommand`所指定`Command`屬性時的行為會取用。
+`EventToCommandBehavior` 類別衍生自 `BehaviorBase<T>` 類別，而後者又會衍生自 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 類別。 `BehaviorBase<T>` 類別的目的是為任何 Xamarin.Forms 行為提供基底類別，而這些 Xamarin.Forms 行為需要將行為的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 設為附加控制項。 這可確保使用行為時，該行為可以繫結至 `Command` 屬性所指定的 `ICommand` 並加以執行。
 
-`BehaviorBase<T>`類別會提供可覆寫[ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject))方法，以設定[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)行為和可覆寫[ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))方法會清除`BindingContext`。 此外，此類別會儲存在附加的控制項的參考`AssociatedObject`屬性。
+`BehaviorBase<T>` 類別會提供可覆寫的 [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) 方法以設定行為的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)，和可覆寫的 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法以清除 `BindingContext`。 此外，該類別會在 `AssociatedObject` 屬性中儲存對附加控制項的參考。
 
 ### <a name="implementing-bindable-properties"></a>實作可繫結屬性
 
-`EventToCommandBehavior`類別會定義四個[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)情況下，執行使用者定義的命令，當事件引發時。 這些屬性是以下列程式碼範例所示：
+`EventToCommandBehavior` 類別會定義四個 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 執行個體，以在事件引發時執行使用者定義的命令。 下列程式碼範例顯示這些屬性：
 
 ```csharp
 public class EventToCommandBehavior : BehaviorBase<View>
@@ -62,13 +67,13 @@ public class EventToCommandBehavior : BehaviorBase<View>
 }
 ```
 
-當`EventToCommandBehavior`取用類別，`Command`屬性應該是資料繫結至`ICommand`要執行以回應事件的引發中定義`EventName`屬性。 預期的行為能找到`ICommand`上[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)的附加的控制項。
+使用 `EventToCommandBehavior` 類別時，`Command` 屬性應該是繫結至 `ICommand` 的資料，其執行目的為回應 `EventName` 屬性中所定義的引發事件。 行為預期會在附加控制項的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 上找到 `ICommand`。
 
-根據預設，事件的事件引數會傳遞至命令。 這項資料可以選擇性地轉換，因為之間傳遞*來源*並*目標*繫結引擎，藉由指定[ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter)實作`Converter`屬性值。 或者，參數可以傳遞給命令藉由指定`CommandParameter`屬性值。
+預設會將事件的事件引數傳遞給命令。 您可以將 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 實作指定為 `Converter` 屬性值，即可在繫結引擎於 *source* 和 *target* 之間傳遞這項資料時選擇性地轉換。 或者，您可以指定 `CommandParameter` 屬性值，將參數傳遞給命令。
 
 ### <a name="implementing-the-overrides"></a>實作覆寫
 
-`EventToCommandBehavior`類別會覆寫[ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject))並[ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))方法`BehaviorBase<T>`類別，如下列程式碼範例所示：
+`EventToCommandBehavior` 類別可覆寫 `BehaviorBase<T>` 類別的 [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) 和 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法，如下列程式碼範例所示：
 
 ```csharp
 public class EventToCommandBehavior : BehaviorBase<View>
@@ -89,11 +94,11 @@ public class EventToCommandBehavior : BehaviorBase<View>
 }
 ```
 
-[ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject))方法會藉由呼叫來執行安裝程式`RegisterEvent`方法，傳入的值`EventName`屬性做為參數。 [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))方法會藉由呼叫執行清除`DeregisterEvent`方法，傳入的值`EventName`屬性做為參數。
+[`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) 方法會呼叫 `RegisterEvent` 方法，並將 `EventName` 屬性作為參數值傳入，以執行設定作業。 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法會呼叫 `DeregisterEvent` 方法，並將 `EventName` 屬性作為參數值傳入，以執行清除作業。
 
-### <a name="implementing-the-behavior-functionality"></a>實作行為的功能
+### <a name="implementing-the-behavior-functionality"></a>實作行為功能
 
-行為的目的是執行所定義的命令`Command`屬性，以回應事件的引發所定義`EventName`屬性。 核心行為功能是以下列程式碼範例所示：
+行為的目的是執行 `Command` 屬性所定義命令，以回應 `EventName` 屬性所定義的引發事件。 下列程式碼範例顯示核心行為功能：
 
 ```csharp
 public class EventToCommandBehavior : BehaviorBase<View>
@@ -137,28 +142,32 @@ public class EventToCommandBehavior : BehaviorBase<View>
 }
 ```
 
-`RegisterEvent`方法執行以回應`EventToCommandBehavior`附加至控制項，以及它收到的值`EventName`屬性做為參數。 然後，這個方法會嘗試找出事件中所定義`EventName`附加控制項上的屬性。 前提是該事件可以位於，`OnEvent`方法登錄為事件處理常式方法。
+執行 `RegisterEvent` 方法以回應要附加至控制項的 `EventToCommandBehavior`，其會接受 `EventName` 屬性值作為參數。 此方法即會嘗試在附加控制項上找出 `EventName` 屬性中所定義的事件。 只要找得到該事件，就會將 `OnEvent` 方法註冊為事件的處理常式方法。
 
-`OnEvent`方法執行以回應事件的引發中定義`EventName`屬性。 前提`Command`屬性參考的有效`ICommand`，這個方法會嘗試擷取要傳遞給參數`ICommand`，如下所示：
+執行 `OnEvent` 方法以回應 `EventName` 屬性中定義的引發事件。 只要 `Command` 屬性參考有效的 `ICommand`，此方法就會嘗試擷取要傳遞給 `ICommand` 的參數，如下所示：
 
-- 如果`CommandParameter`屬性定義的參數，它會擷取。
-- 否則，如果`Converter`屬性會定義[ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter)實作轉換子執行，以及將轉換的事件引數資料，如之間傳遞*來源*並*目標*繫結引擎。
-- 否則，事件引數會假設為參數。
+- 如果 `CommandParameter` 屬性定義了參數，就會擷取該參數。
+- 否則，如果 `Converter` 屬性定義了 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 實作，即會執行轉換器，並當繫結引擎在 *source* 和 *target* 之間傳遞事件引數資料時加以轉換。
+- 否則，會假設事件引數為參數。
 
-資料繫結`ICommand`接著執行，將參數傳遞給命令，但前提[ `CanExecute` ](xref:Xamarin.Forms.Command.CanExecute(System.Object))方法會傳回`true`。
+接著，只要 [`CanExecute`](xref:Xamarin.Forms.Command.CanExecute(System.Object)) 方法傳回 `true`，即會執行資料與 `ICommand` 的繫結，並將參數傳遞給命令。
 
-雖然未顯示在這裡，`EventToCommandBehavior`也包含`DeregisterEvent`方法，而且執行[ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))方法。 `DeregisterEvent`方法用來找出並取消註冊中所定義的事件`EventName`屬性，以清除任何潛在記憶體流失的問題。
+雖然此處未顯示，但 `EventToCommandBehavior` 也包含由 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法執行的 `DeregisterEvent` 方法。 `DeregisterEvent` 方法可用來找出並取消註冊 `EventName` 屬性中所定義的事件，以清除任何潛在的記憶體流失問題。
 
 ## <a name="consuming-the-behavior"></a>使用行為
 
-`EventToCommandBehavior`類別可以附加至[ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors)集合的控制項，如下列 XAML 程式碼範例所示：
+您可以將 `EventToCommandBehavior` 類別附加至控制項的 [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) 集合，如下列 XAML 程式碼範例所示：
 
 ```xaml
 <ListView ItemsSource="{Binding People}">
-  <ListView.Behaviors>
-    <local:EventToCommandBehavior EventName="ItemSelected" Command="{Binding OutputAgeCommand}"
-                                  Converter="{StaticResource SelectedItemConverter}" />
-  </ListView.Behaviors>
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <TextCell Text="{Binding Name}" />
+        </DataTemplate>
+    </ListView.ItemTemplate>
+    <ListView.Behaviors>
+        <local:EventToCommandBehavior EventName="ItemSelected" Command="{Binding OutputAgeCommand}" Converter="{StaticResource SelectedItemConverter}" />
+    </ListView.Behaviors>
 </ListView>
 <Label Text="{Binding SelectedItemText}" />
 ```
@@ -166,33 +175,39 @@ public class EventToCommandBehavior : BehaviorBase<View>
 對等的 C# 程式碼會顯示在以下程式碼範例中：
 
 ```csharp
-var listView = new ListView ();
-listView.SetBinding (ItemsView<Cell>.ItemsSourceProperty, "People");
-listView.Behaviors.Add (new EventToCommandBehavior {
-  EventName = "ItemSelected",
-  Command = ((HomePageViewModel)BindingContext).OutputAgeCommand,
-  Converter = new SelectedItemEventArgsToSelectedItemConverter ()
+var listView = new ListView();
+listView.SetBinding(ItemsView<Cell>.ItemsSourceProperty, "People");
+listView.ItemTemplate = new DataTemplate(() =>
+{
+    var textCell = new TextCell();
+    textCell.SetBinding(TextCell.TextProperty, "Name");
+    return textCell;
+});
+listView.Behaviors.Add(new EventToCommandBehavior
+{
+    EventName = "ItemSelected",
+    Command = ((HomePageViewModel)BindingContext).OutputAgeCommand,
+    Converter = new SelectedItemEventArgsToSelectedItemConverter()
 });
 
-var selectedItemLabel = new Label ();
-selectedItemLabel.SetBinding (Label.TextProperty, "SelectedItemText");
+var selectedItemLabel = new Label();
+selectedItemLabel.SetBinding(Label.TextProperty, "SelectedItemText");
 ```
 
-`Command`行為的屬性是資料繫結至`OutputAgeCommand`屬性產生關聯的 ViewModel，雖然`Converter`屬性設定為`SelectedItemConverter`執行個體，就會傳回[ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)的[ `ListView` ](xref:Xamarin.Forms.ListView)從[ `SelectedItemChangedEventArgs` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs)。
+行為的 `Command` 屬性是繫結至相關聯 ViewModel 之 `OutputAgeCommand` 屬性的資料，而 `Converter` 屬性設定為 `SelectedItemConverter` 執行個體，其會從 [`SelectedItemChangedEventArgs`](xref:Xamarin.Forms.SelectedItemChangedEventArgs) 傳回 [`ListView`](xref:Xamarin.Forms.ListView) 的 [`SelectedItem`](xref:Xamarin.Forms.ListView.SelectedItem)。
 
-在執行階段行為會回應與控制項互動。 當選取的項目[ `ListView` ](xref:Xamarin.Forms.ListView)，則[ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)會引發事件，會同時執行`OutputAgeCommand`在 ViewModel。 這會接著更新 ViewModel`SelectedItemText`屬性所[ `Label` ](xref:Xamarin.Forms.Label)繫結到，如下列螢幕擷取畫面所示：
+在執行階段，行為會回應與控制項的互動。 在 [`ListView`](xref:Xamarin.Forms.ListView) 中選取項目時，會引發 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 事件，其會在 ViewModel 中執行 `OutputAgeCommand`。 接著，這會更新 [`Label`](xref:Xamarin.Forms.Label) 繫結到的 ViewModel `SelectedItemText` 屬性，如下列螢幕擷取畫面所示：
 
-[![](event-to-command-behavior-images/screenshots-sml.png "範例應用程式與 EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png#lightbox "EventToCommandBehavior 與應用程式範例")
+[![](event-to-command-behavior-images/screenshots-sml.png "使用 EventToCommandBehavior 的範例應用程式")](event-to-command-behavior-images/screenshots.png#lightbox "使用 EventToCommandBehavior 的範例應用程式")
 
-執行命令，當事件引發時，使用這種行為的好處是，命令可以是未設計成與命令互動的控制項相關聯。 此外，這會從程式碼後置檔案移除必不可少事件處理程式碼。
+使用此行為在事件引發時執行命令的優點為，可以將命令與未設計於要與命令互動的控制項建立關聯。 此外，這可從程式碼後置檔案中移除以定案效果方式處理的程式碼。
 
 ## <a name="summary"></a>總結
 
-這篇文章示範如何使用 Xamarin.Forms 行為與事件引發時叫用命令。 行為可用來使命令無法正確命令與互動的控制項產生關聯。
-
+本文示範如何使用 Xamarin.Forms 行為，在事件引發時叫用命令。 針對設計用意並非與命令互動的控制項，您可以使用行為來建立其與命令的關聯。
 
 ## <a name="related-links"></a>相關連結
 
-- [EventToCommand 行為 （範例）](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
-- [行為](xref:Xamarin.Forms.Behavior)
-- [行為<T>](xref:Xamarin.Forms.Behavior`1)
+- [Event to Command Behavior (Samples)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/) (命令行為事件 (範例))
+- [Behavior](xref:Xamarin.Forms.Behavior)
+- [Behavior&lt;T&gt;](xref:Xamarin.Forms.Behavior`1)

@@ -4,15 +4,15 @@ description: 本文件說明如何使用 System.Threading Api 的 Xamarin.iOS �
 ms.prod: xamarin
 ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 8e4ee10fdabdcbb4c6cefe02b15dc93459708364
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 7dbb0044f09d5bc00f2393eb647efba05a061c3f
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350416"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669540"
 ---
 # <a name="threading-in-xamarinios"></a>在 Xamarin.iOS 中執行緒
 
@@ -20,7 +20,7 @@ Xamarin.iOS 執行階段可讓開發人員存取.NET 執行緒同時使用執行
 
 
 
-Xamarin 強呤魽您畷樾[工作平行程式庫](http://msdn.microsoft.com/library/dd460717.aspx)(TPL) 來建置應用程式有幾個原因：
+Xamarin 強呤魽您畷樾[工作平行程式庫](https://msdn.microsoft.com/library/dd460717.aspx)(TPL) 來建置應用程式有幾個原因：
 -  預設 TPL 排程器會將委派工作執行的執行緒集區，接著會動態成長的程序進行，同時避免過多執行緒最後會競爭 CPU 時間的其中一個案例所需的執行緒數目。 
 -  它是您更輕鬆地思考 TPL 工作方面的作業。 輕鬆地可以操作這些、 排程、 序列化其執行或啟動許多與一組豐富的 Api。 
 -  它是使用的新 C# async 語言擴充功能進行程式設計基礎。 
@@ -35,7 +35,7 @@ Xamarin 強呤魽您畷樾[工作平行程式庫](http://msdn.microsoft.com/libr
 
 ## <a name="developing-responsive-applications"></a>開發應用程式的回應
 
-UI 項目的存取權應該限制為相同的執行緒執行您的應用程式的主迴圈。 如果您想要變更的主要 UI 執行緒，您應該使用佇列的程式碼[NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/type/Foundation.NSObject/)，如下所示：
+UI 項目的存取權應該限制為相同的執行緒執行您的應用程式的主迴圈。 如果您想要變更的主要 UI 執行緒，您應該使用佇列的程式碼[NSObject.InvokeOnMainThread](xref:Foundation.NSObject)，如下所示：
 
 ```csharp
 MyThreadedRoutine ()  
@@ -72,7 +72,7 @@ void MyThreadStart (object arg)
 }
 ```
 
-注意： 自 Xamarin.iOS 5.2 您不必提供您自己`NSAutoReleasePool`因為其中一個為您將會自動提供。
+注意:自 Xamarin.iOS 5.2 您不必提供您自己`NSAutoReleasePool`因為其中一個為您將會自動提供。
 
 
 ## <a name="related-links"></a>相關連結

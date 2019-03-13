@@ -1,73 +1,104 @@
 ---
-title: Xamarin.Essentials： 裝置顯示資訊
-description: 本文件說明在 Xamarin.Essentials，提供應用程式執行所在裝置的螢幕計量 DeviceDisplay 類別。
+title: Xamarin.Essentials:裝置顯示資訊
+description: 本文件描述 Xamarin.Essentials 中的 DeviceDisplay 類別，可提供執行應用程式之裝置的畫面計量。
 ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: cb42da4c8c2d0e381a5b00f7e60da6f427d19c66
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.date: 11/04/2018
+ms.openlocfilehash: 61d0a77d7a6a862ec5e06c7b693f8e23e4cdb975
+ms.sourcegitcommit: 6d41b5d48fd626d3f649809ed5480e5356755f14
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353824"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55986233"
 ---
-# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials： 裝置顯示資訊
+# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials:裝置顯示資訊
 
-![發行前版本的 NuGet](~/media/shared/pre-release.png)
+**DeviceDisplay** 類別提供應用程式執行所在的裝置畫面計量資訊，並可要求防止畫面在應用程式正在執行時休眠。
 
-**DeviceDisplay**類別提供應用程式執行相關裝置的螢幕度量資訊。
+## <a name="get-started"></a>開始使用
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## <a name="using-devicedisplay"></a>使用 DeviceDisplay
 
-在您的類別加入 Xamarin.Essentials 的參考：
+在類別中新增對 Xamarin.Essentials 的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-## <a name="screen-metrics"></a>畫面計量
+## <a name="main-display-info"></a>主要顯示資訊
 
-除了基本裝置資訊**DeviceDisplay**類別包含裝置的螢幕和方向的相關資訊。
+除了基本的裝置資訊外，**DeviceDisplay** 類別也包含裝置畫面和方向的相關資訊。
 
 ```csharp
 // Get Metrics
-var metrics = DeviceDisplay.ScreenMetrics;
+var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
 
 // Orientation (Landscape, Portrait, Square, Unknown)
-var orientation = metrics.Orientation;
+var orientation = mainDisplayInfo.Orientation;
 
 // Rotation (0, 90, 180, 270)
-var rotation = metrics.Rotation;
+var rotation = mainDisplayInfo.Rotation;
 
 // Width (in pixels)
-var width = metrics.Width;
+var width = mainDisplayInfo.Width;
 
 // Height (in pixels)
-var height = metrics.Height;
+var height = mainDisplayInfo.Height;
 
 // Screen density
-var density = metrics.Density;
+var density = mainDisplayInfo.Density;
 ```
 
-**DeviceDisplay**類別也會公開任何畫面度量變更時會觸發訂閱的事件：
+**DeviceDisplay** 類別也會公開可以訂閱的事件，只要畫面計量有任何變更，就會觸發該事件：
 
 ```csharp
-public class ScreenMetricsTest
+public class DisplayInfoTest
 {
-    public ScreenMetricsTest()
+    public DisplayInfoTest()
     {
         // Subscribe to changes of screen metrics
-        DeviceDisplay.ScreenMetricsChanged += OnScreenMetricsChanged;
+        DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
     }
 
-    void OnScreenMetricsChanged(ScreenMetricsChangedEventArgs  e)
+    void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs  e)
     {
         // Process changes
-        var metrics = e.Metrics;
+        var displayInfo = e.DisplayInfo;
     }
 }
 ```
+
+**DeviceDisplay** 類別公開稱為 `KeepScreenOn` 的 `bool` 屬性，其可設定為嘗試防止裝置顯示關閉或鎖定。
+
+```csharp
+public class KeepScreenOnTest
+{
+    public void ToggleScreenLock()
+    {
+        DeviceDisplay.KeepScreenOn = !DeviceDisplay.KeepScreenOn;
+    }
+}
+```
+
+## <a name="platform-differences"></a>平台差異
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+沒有差異。
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+* 必須在 UI 執行緒上存取 `DeviceDisplay`，否則將擲回例外狀況。 您可以使用 [`MainThread.BeginInvokeOnMainThread`](~/essentials/main-thread.md) 方法，在 UI 執行緒上執行該程式碼。
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+沒有差異。
+
+--------------
+
 
 ## <a name="api"></a>API
 

@@ -4,17 +4,19 @@ description: 這篇文章說明如何使用 SkiaSharp 以三個不同的方式�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: e862a663b35124c1470ae5239c93409c298b19ba
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: cfa96273b6c23d755925b08c9daec22c94627be7
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615401"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240431"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>繪製弧形的三種方式
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _了解如何使用 SkiaSharp 三種不同的方式定義弧形_
 
@@ -24,11 +26,11 @@ _了解如何使用 SkiaSharp 三種不同的方式定義弧形_
 
 定義的簡單起見，儘管沒有定義符合所有需求，反正繪圖函式方法，因此，在最佳的方式，來繪製弧形的圖形系統之間沒有共識。基於這個理由，`SKPath`類別不會限制本身只是一種方法。
 
-`SKPath` 定義`AddArc`方法中，五個不同`ArcTo`方法和兩個相對`RArcTo`方法。 這些方法分為三個類別，代表指定弧線的三個非常不同的方法。要使用哪個取決於可用來定義弧形，而這個弧形如何配合您在繪製的圖形資訊。
+`SKPath` 定義[ `AddArc` ](xref:SkiaSharp.SKPath.AddArc*)方法中，五個不同[ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo*)方法和兩個相對[ `RArcTo` ](xref:SkiaSharp.SKPath.RArcTo*)方法。 這些方法分為三個類別，代表指定弧線的三個非常不同的方法。要使用哪個取決於可用來定義弧形，而這個弧形如何配合您在繪製的圖形資訊。
 
 ## <a name="the-angle-arc"></a>角度弧形
 
-繪製弧線的角度弧線方法會要求您指定之界限橢圓形的矩形。 這個橢圓的圓周上弧線會以從管理中心進行開頭弧線和其長度的橢圓形的角度。 兩個不同的方法來繪製角度弧線。 這些是[ `AddArc` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddArc/p/SkiaSharp.SKRect/System.Single/System.Single/)方法和[ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKRect/System.Single/System.Single/System.Boolean/)方法：
+繪製弧線的角度弧線方法會要求您指定之界限橢圓形的矩形。 這個橢圓的圓周上弧線會指示從橢圓形的中心指出弧線和其長度的開頭的角度。 兩個不同的方法來繪製角度弧線。 這些是[ `AddArc` ](xref:SkiaSharp.SKPath.AddArc(SkiaSharp.SKRect,System.Single,System.Single))方法和[ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKRect,System.Single,System.Single,System.Boolean))方法：
 
 ```csharp
 public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
@@ -36,7 +38,7 @@ public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
 public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean forceMoveTo)
 ```
 
-這些方法完全相同，android [ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/)並[ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/)方法。 IOS [ `AddArc` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArc/p/System.Boolean/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/)方法類似，但僅限於弧線圓形的圓周上而不是一般化為橢圓形。
+這些方法完全相同，android [ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/)並[ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/)方法。 IOS [ `AddArc` ](xref:CoreGraphics.CGPath.AddArc(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.Boolean))方法類似，但僅限於弧線圓形的圓周上而不是一般化為橢圓形。
 
 這兩種方法的開頭`SKRect`定義位置和大小的橢圓形的值：
 
@@ -44,19 +46,19 @@ public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean fo
 
 弧線屬於這個橢圓的圓周。
 
-`startAngle`引數是順時針旋轉的角度以度數為單位，相對於繪製橢圓形的中心從右邊的水平線。 `sweepAngle`引數是相對於`startAngle`。 以下是`startAngle`和`sweepAngle`60 到 100 度的值分別：
+`startAngle`引數是順時針旋轉的角度以度數為單位，相對於繪製橢圓形的中心從右邊的水平線。 `sweepAngle`引數是相對於`startAngle`。 以下是`startAngle`和`sweepAngle`值分別為 60 度和 100 度：
 
 ![](arcs-images/anglearcangles.png "定義角度弧線角度")
 
-弧形開始的開始角度。 其長度受到掃掠角度：
+弧形開始的開始角度。 其長度受到掃掠角度。 弧線如下所示以紅色：
 
 ![](arcs-images/anglearchighlight.png "反白顯示的角度弧形")
 
-加入具有路徑的曲線`AddArc`或`ArcTo`方法是只要該橢圓形的圓周，如下所示，以紅色的一部分：
+加入具有路徑的曲線`AddArc`或`ArcTo`方法是只要該橢圓形的圓周的一部分：
 
 ![](arcs-images/anglearc.png "單獨角度弧形")
 
-`startAngle`或是`sweepAngle`引數可以是負數： 弧線是正值的順時針`sweepAngle`和負值以逆時針方向。
+`startAngle`或`sweepAngle`引數可以是負數：弧線是正值的順時針`sweepAngle`和負值以逆時針方向。
 
 不過，`AddArc`並未*不*定義封閉的分佈。 如果您呼叫`LineTo`之後`AddArc`，從弧形結尾點的繪製線條`LineTo`方法，以及相同成立的`ArcTo`。
 
@@ -105,9 +107,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 這個方法，來產生弧線是以最簡單，就可以輕鬆地衍生參數化的方程式描述弧形。了解的大小和位置的橢圓形，] 和 [開始] 及 [掃掠角度，開始和結束點弧線的計算使用簡單的三角函數：
 
-x = 橢圓形。MidX + （橢圓形。寬度 / 2) * cos(angle)
+`x = oval.MidX + (oval.Width / 2) * cos(angle)`
 
-y = 橢圓形。MidY + （橢圓形。高度 / 2) * sin(angle)
+`y = oval.MidY + (oval.Height / 2) * sin(angle)`
 
 `angle`值是`startAngle`或`startAngle + sweepAngle`。
 
@@ -216,7 +218,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 所支援的弧線的第二類`SKPath`是*正切函數的弧形*，因此呼叫，因為弧線是以兩個連接的直線的正切函數的圓形的圓周。
 
-正切函數的弧線，會藉由呼叫加入至路徑[ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/)具有兩個方法`SKPoint`參數，或有[ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/)使用不同的多載`Single`參數重點：
+正切函數的弧線，會藉由呼叫加入至路徑[ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single))具有兩個方法`SKPoint`參數，或有[ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,System.Single,System.Single))使用不同的多載`Single`參數重點：
 
 ```csharp
 public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
@@ -224,7 +226,7 @@ public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
 public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 ```
 
-這`ArcTo`PostScript 方法大致[ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) （PDF 文件中的頁面 532） 函式和 iOS [ `AddArcToPoint` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArcToPoint/p/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/)方法。
+這`ArcTo`PostScript 方法大致[ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) （頁面 532） 函式和 iOS [ `AddArcToPoint` ](xref:CoreGraphics.CGPath.AddArcToPoint(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat))方法。
 
 `ArcTo`方法牽涉到三個點：
 
@@ -250,7 +252,7 @@ public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 
 ![](arcs-images/tangentarctangentcircle.png "兩行之間的正切函數的弧形圓形")
 
-新增至分佈曲線並未接觸中指定的點任一`ArcTo`方法。 它包含一條直線從目前點的第一個的正切函數點，並在第二個的正切函數點結束 arc:
+新增至分佈曲線並未接觸中指定的點任一`ArcTo`方法。 它包含一條直線從目前點的第一個的正切函數點，並結束於第二個的正切函數點，如下所示，以紅色弧線：
 
 ![](arcs-images/tangentarchighlight.png "這兩行之間的反白顯示正切函數弧度")
 
@@ -412,7 +414,7 @@ public partial class TangentArcPage : InteractivePage
 }
 ```
 
-以下是**正切函數弧線**所有三個平台上執行的頁面：
+以下是**正切函數弧線**執行頁面：
 
 [![](arcs-images/tangentarc-small.png "反正切函數頁面的三個螢幕擷取畫面")](arcs-images/tangentarc-large.png#lightbox "的弧形正切函數頁面的三個螢幕擷取畫面")
 
@@ -487,13 +489,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-以下是三個平台上執行的程式：
+以下是執行的程式：
 
 [![](arcs-images/roundedheptagon-small.png "捨入 Heptagon 頁面的三個螢幕擷取畫面")](arcs-images/roundedheptagon-large.png#lightbox "捨入 Heptagon 頁面的三個螢幕擷取畫面")
 
 ## <a name="the-elliptical-arc"></a>橢圓形弧線
 
-橢圓形弧線，會藉由呼叫加入至路徑[ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/SkiaSharp.SKPoint/)方法，有兩個`SKPoint`參數，或有[ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/System.Single/System.Single/)多載使用個別的 X 和 Y 座標：
+橢圓形弧線，會藉由呼叫加入至路徑[ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,SkiaSharp.SKPoint))方法，有兩個`SKPoint`參數，或有[ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,System.Single,System.Single))多載使用個別的 X 和 Y 座標：
 
 ```csharp
 public void ArcTo (SKPoint r, Single xAxisRotate, SKPathArcSize largeArc, SKPathDirection sweep, SKPoint xy)
@@ -503,7 +505,7 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 橢圓形弧線是配合[橢圓形弧線](http://www.w3.org/TR/SVG11/paths.html#PathDataEllipticalArcCommands)納入可縮放向量圖形 (SVG) 和通用 Windows 平台[ `ArcSegment` ](/uwp/api/Windows.UI.Xaml.Media.ArcSegment/)類別。
 
-這些`ArcTo`方法是目前的點線段中的兩個點之間繪製弧形和最後一個參數`ArcTo`方法 (`xy`參數或個別`x`和`y`參數):
+這些`ArcTo`方法的目前點的分佈，兩個點之間繪製弧形和最後一個參數`ArcTo`方法 (`xy`參數或個別`x`和`y`參數):
 
 ![](arcs-images/ellipticalarcpoints.png "兩個點定義橢圓形弧線")
 
@@ -519,7 +521,7 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 ![](arcs-images/ellipticalarcellipse1.png "第一組橢圓弧形")
 
-這些兩個弧形可以區別兩種方式： 最上層的弧形大於底部弧線，並從左到右繪製弧形，如上方繪製弧形順時針方向時以逆時針方向繪製底部弧形。
+這些兩個弧形可以區別兩種方式：最上層的弧形大於底部弧線，並從左到右繪製弧形，如上方繪製弧形順時針方向時以逆時針方向繪製底部弧形。
 
 此外，也可以符合另一種方法的兩個點之間的橢圓形：
 
@@ -531,12 +533,12 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 ![](arcs-images/ellipticalarccolors.png "所有的四個橢圓弧形")
 
-四種組合來區別這些四個弧形[ `SKPathArcSize` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathArcSize/)並[ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/)列舉型別引數`ArcTo`方法：
+四種組合來區別這些四個弧形[ `SKPathArcSize` ](xref:SkiaSharp.SKPathArcSize)並[ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection)列舉型別引數`ArcTo`方法：
 
-- 紅色： SKPathArcSize.Large 和 SKPathDirection.Clockwise
-- 綠色： SKPathArcSize.Small 和 SKPathDirection.Clockwise
-- 藍色： SKPathArcSize.Small 和 SKPathDirection.CounterClockwise
-- 洋紅色： SKPathArcSize.Large 和 SKPathDirection.CounterClockwise
+- 紅色：SKPathArcSize.Large 和 SKPathDirection.Clockwise
+- 綠色：SKPathArcSize.Small 和 SKPathDirection.Clockwise
+- 藍色：SKPathArcSize.Small 和 SKPathDirection.CounterClockwise
+- 洋紅色：SKPathArcSize.Large 和 SKPathDirection.CounterClockwise
 
 如果傾斜的橢圓形不是大到足以容納兩個點之間，然後它統一縮放直到夠大。 只有兩個唯一的弧形在此情況下連接的兩個點。 這些可以區別與`SKPathDirection`參數。
 
@@ -582,7 +584,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-這裡執行三個平台上：
+以下執行：
 
 [![](arcs-images/ellipticalarc-small.png "橢圓形弧線頁面的三個螢幕擷取畫面")](arcs-images/ellipticalarc-large.png#lightbox "橢圓形弧線頁面的三個螢幕擷取畫面")
 
@@ -604,9 +606,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 正切函數點的座標則可以使用這項資訊來計算：
 
-x = 112·cos(41.8) = 83
+`x = 112·cos(41.8) = 83`
 
-y = 112·sin(41.8) = 75
+`y = 112·sin(41.8) = 75`
 
 四個的正切函數點都只需要點 （0，0） 上繪製置中對齊的無限大號，具有為 100 的圓形半徑：
 
@@ -662,10 +664,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](arcs-images/arcinfinitytightbounds-small.png "弧線無限大頁面緊密繫結的三個螢幕擷取畫面")](arcs-images/arcinfinitytightbounds-large.png#lightbox "緊密繫結弧線無限大頁面的三個螢幕擷取畫面")
 
-雖然以數學方式 smooth 弧線和直線，線條之間的連線，從弧線變更為直線似乎有點突然。 更好的無限大符號會顯示在下一個頁面。
-
+雖然以數學方式 smooth 弧線和直線，線條之間的連線，從弧線變更為直線似乎有點突然。 更好的無限大登上時，會在下一篇文章[**三種類型的貝茲曲線**](beziers.md)。
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -4,15 +4,15 @@ description: 如果您是 Java 開發人員，您應該已經開始在 Xamarin �
 ms.prod: xamarin
 ms.assetid: A3B6C041-4052-4E7D-999C-C4FA10BE3D67
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 92bcfc888c52f9f74c8484295666da8f5ef7a14c
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: f3fb083457fa1fbf6590eb53eea504257e93ecc6
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209332"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617770"
 ---
 # <a name="xamarin-for-java-developers"></a>適用於 Java 開發人員的 Xamarin
 
@@ -96,7 +96,7 @@ C# 會將許多重要功能帶入 Xamarin.Android，Android 上的 Java 開發�
 
 Java 通常會在 **.jar** 檔案中封裝相關的類別。 不過，在 C# 和 .NET 中，會將先行編譯程式碼的可重複使用位元封裝為「組件」，通常會封裝為 *.dll* 檔案。 組件是 C#/.NET 程式碼的一個部署單位，而每個組件通常會與一個 C# 專案相關聯。 組件包含在執行階段進行 Just-In-Time 編譯的中繼程式碼 (IL)。
 
-如需組件的詳細資訊，請參閱 MSDN [組件和全域組件快取](https://msdn.microsoft.com/en-us/library/ms173099.aspx) \(機器翻譯\) 主題。
+如需組件的詳細資訊，請參閱[組件與全域組件快取](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/assemblies-gac/)主題。
 
 
 ### <a name="packages-vs-namespaces"></a>封裝與命名空間
@@ -146,7 +146,7 @@ using System.Threading.Tasks;
 
 ### <a name="generics"></a>泛型
 
-Java 和 C# 都支援「泛型」，其為可讓您在編譯時期插入不同類型的預留位置。 不過，泛型在 C# 中的運作方式稍有不同。 在 Java 中，[類型清除](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html) \(英文\) 讓類型資訊只能於編譯時期使用，而無法在執行階段使用。 相反地，.NET Common Language Runtime (CLR) 提供泛型類型的明確支援，這表示 C# 可在執行階段存取類型資訊。 在日常的 Xamarin.Android 開發中，此區別的重要性通常並不明顯，但如果您使用[反映](https://msdn.microsoft.com/en-us/library/ms173183.aspx) \(機器翻譯\)，將依賴此功能，在執行階段存取類型資訊。
+Java 和 C# 都支援「泛型」，其為可讓您在編譯時期插入不同類型的預留位置。 不過，泛型在 C# 中的運作方式稍有不同。 在 Java 中，[類型清除](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html) \(英文\) 讓類型資訊只能於編譯時期使用，而無法在執行階段使用。 相反地，.NET Common Language Runtime (CLR) 提供泛型類型的明確支援，這表示 C# 可在執行階段存取類型資訊。 在日常的 Xamarin.Android 開發中，此區別的重要性通常並不明顯，但如果您使用[反映](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/reflection)，將會依賴此功能，在執行階段存取類型資訊。
 
 在 Xamarin.Android 中，您通常會看到用來取得版面配置控制項參考的泛型方法 `FindViewById`。 這個方法可接受泛型類型參數來指定要查閱的控制項類型。 例如: 
 
@@ -156,7 +156,7 @@ TextView label = FindViewById<TextView> (Resource.Id.Label);
 
 在此程式碼範例中，`FindViewById` 會取得 `TextView` 控制項 (定義於版面配置中) 的參考作為**標籤**，然後以 `TextView` 類型傳回它。
 
-如需泛型的詳細資訊，請參閱 MSDN [泛型](https://msdn.microsoft.com/en-us/library/512aeb7t.aspx)主題。
+如需泛型的詳細資訊，請參閱[泛型](https://docs.microsoft.com/dotnet/csharp/programming-guide/generics/index)主題。
 請注意，在對於泛型 C# 類別的 Xamarin.Android 支援中有一些限制；如需詳細資訊，請參閱[限制](~/android/internals/limitations.md)。
 
 
@@ -218,7 +218,7 @@ public class SensorsActivity : Activity, ISensorEventListener
 
 當您想要在 C# 中防止類別進一步成為子類別時，可在類別名稱前面加上 `sealed` &ndash; 在 Java 中，您可以在類別名稱前加上 `final`。
 
-如需 C# 類別定義的詳細資訊，請參閱 MSDN [類別和結構](https://msdn.microsoft.com/en-us/library/x9afc042.aspx)和[繼承](https://msdn.microsoft.com/en-us/library/x9afc042.aspx)主題。
+如需 C# 類別定義的詳細資訊，請參閱[類別](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/classes)與[繼承](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/inheritance)主題。
 
 
 <a name="properties" />
@@ -243,7 +243,7 @@ rulerView.DrawingCacheEnabled = true;
 
 屬性的存取權可以是讀取/寫入、唯讀或唯寫的權限。 此外，您還能使用不同的存取修飾詞進行讀取和寫入。 例如，您可以定義具有公用讀取權限但具有私用寫入權限的屬性。
 
-如需 C# 屬性的詳細資訊，請參閱 MSDN [屬性](https://msdn.microsoft.com/en-us/library/x9fsa0sw.aspx)主題。
+如需 C# 屬性的詳細資訊，請參閱[屬性](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/properties)主題。
 
 
 
@@ -290,7 +290,7 @@ Java 和 C# 均支援 `public`、`private` 和 `protected` 存取修飾詞。 �
 
 -   **`protected internal`** &ndash; 類別成員可在定義組件、定義類別及衍生的類別(位於組件內外的衍生類別具有存取權) 內加以存取。
 
-如需 C# 存取修飾詞的詳細資訊，請參閱 MSDN [存取修飾詞](https://msdn.microsoft.com/en-us/library/ms173121.aspx)主題。
+如需 C# 存取修飾詞的詳細資訊，請參閱[存取修飾詞](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers)主題。
 
 
 
@@ -307,7 +307,7 @@ Java 和 C# 均支援「多型」，這是以相同方式處理相關物件的�
 
 -   C# 衍生類別必須使用 `override` 關鍵字，明確指出要覆寫虛擬基底類別方法。
 
-如需 C# 對於多型的支援詳細資訊，請參閱 MSDN [多型](https://msdn.microsoft.com/en-us/library/ms173152.aspx)主題。
+如需對於多型的 C# 支援詳細資訊，請參閱[多型](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/polymorphism)主題。
 
 
 <a name="lambdas" />
@@ -338,7 +338,7 @@ button.Click += (sender, args) => {
 
 在此範例中，Lambda 運算式程式碼 (大括號內的程式碼) 會遞增點按計數，並更新 `button` 文字來顯示點按計數。 這個 Lambda 運算式會使用 `button` 物件註冊，以作為每次點選按鈕時要呼叫的 Click 事件處理常式 (後續內容中將更詳細地說明事件處理常式)。在這個簡單範例中，Lambda 運算式程式碼不會使用 `sender` 和 `args` 參數，但 Lambda 運算式中必須要有它們，才能符合事件註冊的方法簽章需求。 背後的原理是，C# 編譯器會將 Lambda 運算式轉譯為匿名方法，每次發生按鈕 Click 事件時即會呼叫此方法。
 
-如需 C# 和 Lambda 運算式的詳細資訊，請參閱 MSDN [Lambda 運算式](https://msdn.microsoft.com/en-us/library/bb397687.aspx)主題。
+如需 C# 和 Lambda 運算式的詳細資訊，請參閱 [Lambda 運算式](https://docs.microsoft.com/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions)主題。
 
 
 <a name="events" />
@@ -348,7 +348,7 @@ button.Click += (sender, args) => {
 「事件」是在該物件發生感興趣的事情時，用來通知已註冊訂閱者的方式。 不同於在 Java 中，訂閱者通常會實作包含回呼方法的 `Listener` 介面，C# 會透過「委派」提供事件處理的語言層級支援。 「委派」類似物件導向的類型安全函式指標 &ndash; 它會封裝物件參考和方法語彙基元。 如果用戶端物件想要訂閱事件，它會建立委派，並將委派傳遞至通知物件。
 發生事件時，通知物件會叫用委派物件所表示的方法，通知事件的訂閱用戶端物件。 在 C# 中，事件處理常式基本上就是透過委派叫用的方法。
 
-如需委派的詳細資訊，請參閱 MSDN [委派](https://msdn.microsoft.com/en-us/library/ms173171.aspx)主題。
+如需委派的詳細資訊，請參閱[委派](https://docs.microsoft.com/dotnet/csharp/programming-guide/delegates/index)主題。
 
 在 C# 中，事件是「多點傳送」；也就是，在事件發生時，可以通知多個接聽程式。 當您考慮 Java 和 C# 事件註冊之間的語法差異時，可觀察到此差異。 在 Java 中，您會呼叫 `SetXXXListener` 來註冊事件通知；在 C# 中，您會使用 `+=` 運算子，藉由將委派「加入」至事件接聽程式清單來註冊事件通知。
 在 Java 中，您會呼叫 `SetXXXListener` 來取消註冊，而在 C# 中，您會使用 `-=`，從接聽程式清單中「減去」您的委派。
@@ -423,7 +423,7 @@ async void downloadAsync(object sender, System.EventArgs e)
 請注意，`downloadAsync` 的方法宣告會以 `async` 關鍵字開始，表示它將以非同步方式執行並傳回工作。 也請注意，對 `DownloadDataTaskAsync` 的呼叫會以 `await` 關鍵字開始。 應用程式會將事件處理常式的執行 (從 `await` 出現點開始) 移至背景執行緒，直到 `DownloadDataTaskAsync` 完成並傳回為止。
 同時，應用程式的 UI 執行緒仍然可以回應使用者輸入，並引發其他控制項的事件處理常式。 當 `DownloadDataTaskAsync` 完成 (這可能需要幾秒鐘) 時，執行就會從將 `bytes` 變數設為對 `DownloadDataTaskAsync` 之呼叫的結果處繼續，而事件處理常式程式碼的其餘部分會顯示呼叫端 (UI) 執行緒上下載的影像。
 
-如需 C# 中 `async`/`await` 的簡介，請參閱 MSDN [使用 Async 和 Await 進行非同步程式設計](https://msdn.microsoft.com/en-us/library/hh191443.aspx) \(機器翻譯\) 主題。
+如需 C# 中 `async`/`await` 的簡介，請參閱[使用 Async 和 Await 進行非同步程式設計](https://docs.microsoft.com/dotnet/csharp/async)主題。
 如需非同步程式設計功能的 Xamarin 支援詳細資訊，請參閱[非同步支援概觀](~/cross-platform/platform/async.md)。
 
 
@@ -435,46 +435,46 @@ Java 中使用的許多語言關鍵字也會在 C# 中使用。 另外有些 Jav
 
 |Java|C#|描述|
 |---|---|---|
-|`boolean`|[bool](https://msdn.microsoft.com/en-us/library/c8f5xwh7.aspx)|用來宣告布林值的真偽。|
+|`boolean`|[bool](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/bool)|用來宣告布林值的真偽。|
 |`extends`|`:`|優先要從中繼承的類別和介面。|
 |`implements`|`:`|優先要從中繼承的類別和介面。|
-|`import`|[using](https://msdn.microsoft.com/en-us/library/zhdeatwt.aspx)|從命名空間匯入類型，也可用來建立命名空間別名。|
-|`final`|[sealed](https://msdn.microsoft.com/en-us/library/88c54tsw.aspx)|防止類別衍生；防止方法和屬性在衍生類別中遭到覆寫。|
-|`instanceof`|[is](https://msdn.microsoft.com/en-us/library/scekt9xw.aspx)|評估物件是否可與指定的類型相容。|
-|`native`|[extern](https://msdn.microsoft.com/en-us/library/e59b22c5.aspx)|宣告在外部實作的方法。|
-|`package`|[namespace](https://msdn.microsoft.com/en-us/library/z2kcy19k.aspx)|宣告一組相關物件的範圍。|
-|`T...`|[params T](https://msdn.microsoft.com/en-us/library/w5zay9db.aspx)|指定採用可變數目之引數的方法參數。|
-|`super`|[base](https://msdn.microsoft.com/en-us/library/hfw7t1ce.aspx)|用來存取衍生類別中父類別的成員。|
-|`synchronized`|[lock](https://msdn.microsoft.com/en-us/library/c5kehkcz.aspx)|包裝含有鎖定取得和釋放的重要程式碼區段。|
+|`import`|[using](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/using)|從命名空間匯入類型，也可用來建立命名空間別名。|
+|`final`|[sealed](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/sealed)|防止類別衍生；防止方法和屬性在衍生類別中遭到覆寫。|
+|`instanceof`|[is](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/is)|評估物件是否可與指定的類型相容。|
+|`native`|[extern](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/extern)|宣告在外部實作的方法。|
+|`package`|[namespace](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/namespace)|宣告一組相關物件的範圍。|
+|`T...`|[params T](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/params)|指定採用可變數目之引數的方法參數。|
+|`super`|[base](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/base)|用來存取衍生類別中父類別的成員。|
+|`synchronized`|[lock](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/lock-statement)|包裝含有鎖定取得和釋放的重要程式碼區段。|
 
 
 此外，還有許多 C# 中特有的關鍵字，它們在在 Java 中沒有對應項目。 Xamarin.Android 程式碼通常會使用下列 C# 關鍵字 (當您透過[範例程式碼](https://developer.xamarin.com/samples/android/all/) \(英文\) 讀取時非常適合參考此表格)：
 
 |C#|描述|
 |---|---|
-|[as](https://msdn.microsoft.com/en-us/library/cscsdfbt.aspx)|在可相容的參考類型或可為 Null 的類型之間執行轉換。|
-|[async](https://msdn.microsoft.com/en-us/library/hh156513.aspx)|指定方法或 Lambda 運算式為非同步。|
-|[await](https://msdn.microsoft.com/en-us/library/hh156528.aspx)|暫停執行方法，直到工作完成為止。|
-|[byte](https://msdn.microsoft.com/en-us/library/5bdb6693.aspx)|不帶正負號的 8 位元整數類型。|
-|[delegate](https://msdn.microsoft.com/en-us/library/900fyy8e.aspx)|用來封裝方法或匿名方法。|
-|[enum](https://msdn.microsoft.com/en-us/library/sbbt4032.aspx)|宣告列舉，一組具名常數。|
-|[event](https://msdn.microsoft.com/en-us/library/8627sbea.aspx)|宣告發行者類別中的事件。|
-|[fixed](https://msdn.microsoft.com/en-us/library/f58wzh21.aspx)|防止變數遭到重新配置。|
+|[as](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/as)|在可相容的參考類型或可為 Null 的類型之間執行轉換。|
+|[async](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/async)|指定方法或 Lambda 運算式為非同步。|
+|[await](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/await)|暫停執行方法，直到工作完成為止。|
+|[byte](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/byte)|不帶正負號的 8 位元整數類型。|
+|[delegate](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/delegate)|用來封裝方法或匿名方法。|
+|[enum](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/enum)|宣告列舉，一組具名常數。|
+|[event](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/event)|宣告發行者類別中的事件。|
+|[fixed](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/fixed-statement)|防止變數遭到重新配置。|
 |`get`|定義可擷取屬性值的存取子方法。|
-|[in](https://msdn.microsoft.com/en-us/library/dd469484.aspx)|讓參數能夠接受泛型介面中較少衍生的類型。|
-|[object](https://msdn.microsoft.com/en-us/library/9kkx3h3c.aspx)|.NET Framework 中 Object 型別的別名。|
-|[out](https://msdn.microsoft.com/en-us/library/t3c3bfhx.aspx)|參數修飾詞或泛型類型參數宣告。|
-|[override](https://msdn.microsoft.com/en-us/library/ebca9ah3.aspx)|擴充或修改繼承成員的實作。|
-|[partial](https://msdn.microsoft.com/en-us/library/6b0scde8.aspx)|宣告要分割成多個檔案的定義，或從它的實作分割方法定義。|
-|[readonly](https://msdn.microsoft.com/en-us/library/acdd6hb7.aspx)|宣告類別成員只能在宣告期間或透過類別建構函式加以指派。|
-|[ref](https://msdn.microsoft.com/en-us/library/14akc2c7.aspx)|導致引數會以傳址方式傳遞，而不是依值傳遞。|
-|[set](https://msdn.microsoft.com/en-us/library/ms228368.aspx)|定義可設定屬性值的存取子方法。|
-|[string](https://msdn.microsoft.com/en-us/library/362314fe.aspx)|.NET Framework 中 String 型別的別名。|
-|[struct](https://msdn.microsoft.com/en-us/library/ah19swz4.aspx)|封裝相關變數群組的實值類型。|
-|[typeof](https://msdn.microsoft.com/en-us/library/58918ffs.aspx)|取得物件類型。|
-|[var](https://msdn.microsoft.com/en-us/library/bb383973.aspx)|宣告隱含類型的區域變數。|
-|[value](https://msdn.microsoft.com/en-us/library/a1khb4f8.aspx)|參考用戶端程式碼想要指派給屬性的值。|
-|[virtual](https://msdn.microsoft.com/en-us/library/9fkccyh4.aspx)|允許在衍生類別中覆寫方法。|
+|[in](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/in-generic-modifier)|讓參數能夠接受泛型介面中較少衍生的類型。|
+|[object](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/object)|.NET Framework 中 Object 型別的別名。|
+|[out](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/out)|參數修飾詞或泛型類型參數宣告。|
+|[override](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/override)|擴充或修改繼承成員的實作。|
+|[partial](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/partial-method)|宣告要分割成多個檔案的定義，或從它的實作分割方法定義。|
+|[readonly](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/readonly)|宣告類別成員只能在宣告期間或透過類別建構函式加以指派。|
+|[ref](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/ref)|導致引數會以傳址方式傳遞，而不是依值傳遞。|
+|[set](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/set)|定義可設定屬性值的存取子方法。|
+|[string](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/string)|.NET Framework 中 String 型別的別名。|
+|[struct](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/struct)|封裝相關變數群組的實值類型。|
+|[typeof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/typeof)|取得物件類型。|
+|[var](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/var)|宣告隱含類型的區域變數。|
+|[值](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|參考用戶端程式碼想要指派給屬性的值。|
+|[virtual](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/virtual)|允許在衍生類別中覆寫方法。|
 
 
 <a name="interop" />
@@ -493,9 +493,9 @@ Java 中使用的許多語言關鍵字也會在 C# 中使用。 另外有些 Jav
 
 ## <a name="for-further-reading"></a>進一步閱讀
 
-MSDN [C# 程式設計手冊](https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx)是開始學習 C# 程式設計語言的絕佳方法，而您可以使用 [C# 參考](https://msdn.microsoft.com/en-us/library/618ayhy6.aspx)來查閱特定的 C# 語言功能。
+MSDN [C# 程式設計手冊](https://docs.microsoft.com/dotnet/csharp/programming-guide/)是開始學習 C# 程式設計語言的絕佳方法，而您可以使用 [C# 參考](https://docs.microsoft.com/dotnet/csharp/language-reference/)來查閱特定的 C# 語言功能。
 
-就像所具備的 Java 知識對於 Java 類別庫的熟悉程度，至少要與了解 Java 語言一樣，對於 C# 的實務知識需要對 .NET Framework 有某種程度的熟悉。 Microsoft 的[移至 C# 和 .NET Framework，適用於 Java 開發人員](https://www.microsoft.com/en-us/download/details.aspx?id=6073) \(英文\) 學習封包是從 Java 觀點深入了解 .NET Framework (同時還能更深入了解 C#) 的好方法。
+就像所具備的 Java 知識對於 Java 類別庫的熟悉程度，至少要與了解 Java 語言一樣，對於 C# 的實務知識需要對 .NET Framework 有某種程度的熟悉。 Microsoft 的[移至 C# 和 .NET Framework，適用於 Java 開發人員](https://www.microsoft.com/download/details.aspx?id=6073) \(英文\) 學習封包是從 Java 觀點深入了解 .NET Framework (同時還能更深入了解 C#) 的好方法。
 
 當您準備好要在 C# 中處理第一個 Xamarin.Android 專案時，我們的 [Hello, Android](~/android/get-started/hello-android/index.md) 系列可協助您建置第一個 Xamarin.Android 應用程式，並進一步了解使用 Xamarin 進行 Android 應用程式開發的基本知識。
 
@@ -509,6 +509,6 @@ MSDN [C# 程式設計手冊](https://msdn.microsoft.com/en-us/library/67ef8sbd.a
 ## <a name="related-links"></a>相關連結
 
 - [Java 整合概觀](~/android/platform/java-integration/index.md)
-- [C# 程式設計指南](https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx)
-- [C# 參考](https://msdn.microsoft.com/en-us/library/618ayhy6.aspx)
-- [移至 C# 和 .NET Framework，適用於 Java 開發人員](https://www.microsoft.com/en-us/download/details.aspx?id=6073)
+- [C# 程式設計指南](https://docs.microsoft.com/dotnet/csharp/programming-guide/)
+- [C# 參考](https://docs.microsoft.com/dotnet/csharp/language-reference/index)
+- [移至 C# 和 .NET Framework，適用於 Java 開發人員](https://www.microsoft.com/download/details.aspx?id=6073)

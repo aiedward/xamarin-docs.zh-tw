@@ -4,15 +4,15 @@ description: 本文件說明如何使用 ADO.NET 做為方法，來存取 SQLite
 ms.prod: xamarin
 ms.assetid: 79078A4D-2D24-44F3-9543-B50418A7A000
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 83f6059c405b2156270f4359cbba33177861af02
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 9314e1b69df4a5965dfd045d0b4ca3e44f1b9de6
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241234"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122292"
 ---
 # <a name="using-adonet-with-xamarinios"></a>與 Xamarin.iOS 中使用 ADO.NET
 
@@ -22,11 +22,11 @@ Xamarin 的內建支援可在 iOS，使用熟悉的 ADO.NET 類似的語法所�
 
 若要使用存取透過 ADO.NET，您必須新增 SQLite`System.Data`和`Mono.Data.Sqlite`參考您的 iOS 專案，如下所示 （適用於 Visual Studio for Mac 和 Visual Studio 中的範例）：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  ![](using-adonet-images/image4.png "Visual Studio for Mac 中的組件參考")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
   ![](using-adonet-images/image6.png "Visual Studio 中的組件參考")
 

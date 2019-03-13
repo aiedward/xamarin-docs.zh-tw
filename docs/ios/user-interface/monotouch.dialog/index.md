@@ -4,15 +4,11 @@ description: 本文件說明 MonoTouch.Dialog (MTD)，來利用 Xamarin.iOS 的�
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.openlocfilehash: bee4b460552c7273021b16955b52ba3d95d3e07c
-ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39038400"
+ms.date: 11/25/2015
+author: lobrien
+ms.author: laobri
 ---
+
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>適用於 Xamarin.iOS MonoTouch.Dialog 簡介
 
 MonoTouch.Dialog，稱為 MT簡稱，D 是快速的 UI 開發工具組可讓開發人員建置應用程式畫面和瀏覽使用的詳細資訊，而不是建立檢視控制器、 資料表等的冗長工作。因此，它會提供大幅簡化的 UI 開發和程式碼降低。 例如，請考慮下列的螢幕擷取畫面：
@@ -54,7 +50,7 @@ public class Expense
 MTD 簡化，將全部程式碼封裝成一個一般的 API，以建立資料表。 然後，它會提供繫結語法，可讓您更輕鬆地為宣告式物件可讓該 API 之上的抽象概念。 因此，有兩個 Api 用於 MTD:
 
 -   **低層級的項目 API** –*項目 API*根據建立的項目代表螢幕和其元件的階層式樹狀結構。 項目 API 讓開發人員最大的彈性及控制建立 Ui。 此外，項目 API 具有 JSON，這非常快速地宣告，以及從伺服器動態 UI 的產生是用來透過進階支援宣告式的定義。 
--   **高層級的反映 API** – 也稱為*繫結**API*中的類別已標註 UI 提示，然後 MTD 會自動建立以物件為基礎的畫面，並提供功能之間的繫結是顯示 （和選擇性地編輯） 在畫面上，以及基礎物件支援。   上述範例所示使用反映 API。 此 API 不提供精細的控制中的項目 API，但可減少複雜性更進一步所自動建立根據類別屬性的項目階層。 
+-   **高層級的反映 API** – 也稱為*繫結**API*中的類別已標註 UI 提示，然後 MTD 會自動建立以物件為基礎的畫面，並提供功能之間的繫結是顯示 （和選擇性地編輯） 在畫面上，以及基礎物件支援。 上述範例所示使用反映 API。 此 API 不提供精細的控制中的項目 API，但可減少複雜性更進一步所自動建立根據類別屬性的項目階層。 
 
 
 MTD 是封裝使用的一大組內建的畫面建立的 UI 項目，但它也會辨識需要自訂的項目和進階的畫面版面配置。 因此，擴充性是第一級的功能內建 API。 開發人員可以擴充現有的項目或建立新的和無縫整合。
@@ -262,7 +258,7 @@ A`StyledStringElement`允許必須存在於使用任一個內建的表格儲存�
 此外`KeyboardType`屬性可以設定在建立時，用於資料輸入所需之鍵盤類型樣式。 這可以用來設定使用的值的鍵盤`UIKeyboardType`，如下所示：
 
 -  數值
--  電話
+-  Phone
 -  URL
 -  Email
 
@@ -392,7 +388,7 @@ public class SampleOwnerDrawnElement : OwnerDrawnElement
 `JsonElement`是`RootElement`，可以具現化兩種形式。 其中一個版本建立`RootElement`，將隨選內容的載入。 這些藉由使用`JsonElement`採取額外的引數，在結束時，要載入的內容 url 的建構函式：
 
 ```csharp
-var je = new JsonElement ("Dynamic Data", "http://tirania.org/tmp/demo.json");
+var je = new JsonElement ("Dynamic Data", "https://tirania.org/tmp/demo.json");
 ```
 
 另一個表單建立將資料從本機檔案或現有`System.Json.JsonObject`您已剖析：
@@ -589,9 +585,9 @@ public override Source CreateSizingSource (bool unevenRows)
 - [螢幕錄製影片-Miguel de Icaza 建立 iOS 登入畫面 MonoTouch.Dialog](http://youtu.be/3butqB1EG0c)
 - [螢幕錄製影片-輕鬆地建立 iOS 使用者介面與 MonoTouch.Dialog](http://youtu.be/j7OC5r8ZkYg)
 - [逐步解說：使用元素 API 建立應用程式](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
-- [逐步解說：使用映射 API 建立應用程式](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
-- [逐步解說：使用 JSON 元素建立使用者介面](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
+- [逐步解說：使用反射 API 建立應用程式](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
+- [逐步解說：若要建立使用者介面中使用 JSON 元素](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
 - [MonoTouch.Dialog JSON 標記](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)
 - [在 Github 上的 MonoTouch 對話方塊](https://github.com/migueldeicaza/MonoTouch.Dialog)
-- [UITableViewController 類別參考](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
-- [UINavigationController 類別參考](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)
+- [UITableViewController 類別參考](https://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
+- [UINavigationController 類別參考](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

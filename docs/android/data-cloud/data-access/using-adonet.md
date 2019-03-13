@@ -3,15 +3,15 @@ title: 使用 ADO.NET 與 Android
 ms.prod: xamarin
 ms.assetid: F6ABCEF1-951E-40D8-9EA9-DD79123C2650
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: 9e0c1be2e37355242db2fb70857d90127c3b5259
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 7ecf7244fb2ccbe0e4163c89941f9de5138ba713
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242208"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674947"
 ---
 # <a name="using-adonet-with-android"></a>使用 ADO.NET 與 Android
 
@@ -21,11 +21,11 @@ Xamarin 的內建支援可在 Android 上取得，且可使用熟悉的 ADO.NET 
 
 若要使用存取透過 ADO.NET，您必須新增 SQLite`System.Data`和`Mono.Data.Sqlite`參考您的 Android 專案，如下所示：
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin) 
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows) 
 
 ![Visual Studio 中的 android 參考](using-adonet-images/image7.png "參考 Visual Studio 中的 Android") 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac) 
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos) 
 
 ![在 Visual Studio for Mac 的 android 參考](using-adonet-images/image5.png "Android 參考在 Visual Studio for Mac") 
 
@@ -38,7 +38,7 @@ Xamarin 的內建支援可在 Android 上取得，且可使用熟悉的 ADO.NET 
 
 我們將使用`Mono.Data.Sqlite.SqliteConnection`類別來建立空白的資料庫檔案，然後具現化`SqliteCommand`物件，我們可以使用來執行對資料庫的 SQL 指令。
 
-**建立空白的資料庫**&ndash;呼叫`CreateFile`使用有效的方法 (亦即。 可寫入) 的檔案路徑。 您應該檢查是否檔案已經存在之前呼叫這個方法，否則會建立新的 （空白） 資料庫舊的 replicaset，頂端和舊的檔案中的資料將會遺失。
+**建立空白的資料庫**&ndash;呼叫`CreateFile`具有有效的 （也就是可寫入） 的檔案路徑的方法。 您應該檢查是否檔案已經存在之前呼叫這個方法，否則會建立新的 （空白） 資料庫舊的 replicaset，頂端和舊的檔案中的資料將會遺失。
 `Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);` `dbPath`變數應該根據本文件稍早所述的規則決定。
 
 **建立資料庫連接** &ndash; SQLite 資料庫檔案建立之後，您就可以建立連接物件來存取資料。 連接的連接字串，其使用的格式建構`Data Source=file_path`，如下所示：
@@ -143,7 +143,7 @@ public static string DoSomeDataAccess ()
 
 ## <a name="more-complex-queries"></a>更複雜的查詢
 
-由於 SQLite 允許任意的 SQL 命令，以對資料執行，您可以執行任何`CREATE`， `INSERT`， `UPDATE`， `DELETE`，或`SELECT`您喜歡的陳述式。 您可以閱讀 SQLite 支援 Sqlite 網站上的 SQL 命令。 使用其中一種方法在執行 SQL 陳述式`SqliteCommand`物件：
+由於 SQLite 允許任意的 SQL 命令，以對資料執行，您可以執行任何`CREATE`， `INSERT`， `UPDATE`， `DELETE`，或`SELECT`您喜歡的陳述式。 您可以閱讀 SQLite 支援 SQLite 網站上的 SQL 命令。 使用其中一種方法在執行 SQL 陳述式`SqliteCommand`物件：
 
 -   **ExecuteNonQuery** &ndash;通常用於資料表建立或資料插入。 某些作業的傳回值會受到影響的資料列數目，否則就是-1。
 

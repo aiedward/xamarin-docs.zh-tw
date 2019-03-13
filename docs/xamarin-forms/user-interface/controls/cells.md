@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 3b69aaf0a10468a5950e0ccf5a61ab6ecbbc110f
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 5ef1aba847954ccdeb230acd82ebbc5015ebd6b7
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995916"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292294"
 ---
 # <a name="xamarinforms-cells"></a>Xamarin.Forms 資料格
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 
 _Xamarin.Forms 資料格可以加入至 Listview 和 TableViews。_
 
@@ -46,20 +48,19 @@ Xamarin.Forms 可支援下列資料格類型：
 
 |     |     |
 | --- | --- |
-| [ `SwitchCell` ](xref:Xamarin.Forms.SwitchCell)包含設定的文字[ `Text`'](xref:Xamarin.Forms.SwitchCell.Text)屬性，並開啟/關閉參數初始設定與布林值[ `On` ](xref:Xamarin.Forms.SwitchCell.On)屬性。 處理[ `OnChanged` ](xref:Xamarin.Forms.SwitchCell.OnChanged)事件時收到通知`On`屬性變更。<br /><br />[API 文件](xref:Xamarin.Forms.SwitchCell) / [指南](~/xamarin-forms/user-interface/tableview.md#switchcell) | [![SwitchCell 範例](cells-images/SwitchCell.png "SwitchCell 範例")](cells-images/SwitchCell-Large.png#lightbox "SwitchCell 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchCellDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchCellDemoPage.xaml) |
+| [ `SwitchCell` ](xref:Xamarin.Forms.SwitchCell)包含文字設有[ `Text`'](xref:Xamarin.Forms.SwitchCell.Text)屬性和開啟/關閉參數，一開始設布林值，且[ `On` ](xref:Xamarin.Forms.SwitchCell.On)屬性。 處理[ `OnChanged` ](xref:Xamarin.Forms.SwitchCell.OnChanged)事件時收到通知`On`屬性變更。<br /><br />[API 文件](xref:Xamarin.Forms.SwitchCell) / [指南](~/xamarin-forms/user-interface/tableview.md#switchcell) | [![SwitchCell 範例](cells-images/SwitchCell.png "SwitchCell 範例")](cells-images/SwitchCell-Large.png#lightbox "SwitchCell 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchCellDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchCellDemoPage.xaml) |
 |     |     |
 
 ### <a name="entrycell"></a>EntryCell
 
 |     |     |
 | --- | --- |
-| [ `EntryCell` ](xref:Xamarin.Forms.EntryCell)定義[ `Label` ](xref:Xamarin.Forms.EntryCell.Label)屬性，識別資料格，而單行中可編輯的文字[ `Text` ](xref:Xamarin.Forms.EntryCell.Text)屬性。 處理[ `Completed` ](xref:Xamarin.Forms.EntryCell.Completed)使用者完成文字項目時收到通知的事件。<br /><br />[API 文件](xref:Xamarin.Forms.EntryCell) / [指南](~/xamarin-forms/user-interface/tableview.md#entrycell) | [![EntryCell 範例](cells-images/EntryCell.png "EntryCell 範例")](cells-images/EntryCell-Large.png#lightbox "EntryCell 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EntryCellDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EntryCellDemoPage.xaml) |
+| [ `EntryCell` ](xref:Xamarin.Forms.EntryCell)定義[ `Label` ](xref:Xamarin.Forms.EntryCell.Label)屬性，識別資料格，而單行中可編輯的文字[ `Text` ](xref:Xamarin.Forms.EntryCell.Text)屬性。 處理[ `Completed` ](xref:Xamarin.Forms.EntryCell.Completed)使用者完成文字 項目時收到通知的事件。<br /><br />[API 文件](xref:Xamarin.Forms.EntryCell) / [指南](~/xamarin-forms/user-interface/tableview.md#entrycell) | [![EntryCell 範例](cells-images/EntryCell.png "EntryCell 範例")](cells-images/EntryCell-Large.png#lightbox "EntryCell 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EntryCellDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EntryCellDemoPage.xaml) |
 |     |     |
 
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.Forms 簡介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Xamarin.Forms FormsGallery 範例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 - [Xamarin.Forms 範例](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms API 文件](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

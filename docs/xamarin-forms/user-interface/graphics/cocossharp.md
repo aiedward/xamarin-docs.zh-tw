@@ -4,17 +4,19 @@ description: CocosSharp 可用來加入應用程式的進階視覺效果中的�
 ms.prod: xamarin
 ms.assetid: E0F404D5-5C6B-4288-92EC-78996C674E4E
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/03/2016
-ms.openlocfilehash: c823eb27552f0a42ad428ed6f36790e925079295
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 55e5627a492636efaa6eeb6b8c302d143b08e2cc
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998803"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052880"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>在 Xamarin.Forms 中使用 CocosSharp
+
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/CocosSharpForms/)
 
 _CocosSharp 可用來加入應用程式的進階視覺效果中的精確的圖形、 影像和文字轉譯_
 
@@ -216,9 +218,9 @@ public class GameScene : CCScene
 
 
 ```csharp
-// Keep the GameScene at class scope
-// so the button click events can access it:
-GameScene gameScene;
+// Keep the GameScene at class scope
+// so the button click events can access it:
+GameScene gameScene;
 ```
 
 我們現在可以編譯專案，並執行它以查看 CocosSharp 執行。 我們還沒有新增任何我們`GameScene,`因此我們頁面的上半部是黑色 – CocosSharp 場景的預設色彩：
@@ -288,8 +290,8 @@ CocosSharp 視覺項目 (例如`CCDrawNode`) 會繼承`CCNode`類別。 `CCNode`
 
 
 ```csharp
-circle.PositionX = 20;
-circle.PositionY = 50;
+circle.PositionX = 20;
+circle.PositionY = 50;
 ```
 
 請務必注意 CocosSharp 物件位於所明確的位置值，而不是大部分的 Xamarin.Forms 檢視，會自動放置依據其父系版面配置控制項的行為。
@@ -298,14 +300,14 @@ circle.PositionY = 50;
 
 
 ```csharp
-public void MoveCircleLeft()
+public void MoveCircleLeft()
 {
-    circle.PositionX -= 10;
+    circle.PositionX -= 10;
 }
 
-public void MoveCircleRight()
+public void MoveCircleRight()
 {
-    circle.PositionX += 10;
+    circle.PositionX += 10;
 }
 ```
 
@@ -313,27 +315,27 @@ public void MoveCircleRight()
 
 
 ```csharp
-void CreateBottomHalf(Grid grid)
+void CreateBottomHalf(Grid grid)
 {
-    // We'll use a StackLayout to organize our buttons
-    var stackLayout = new StackLayout();
+    // We'll use a StackLayout to organize our buttons
+    var stackLayout = new StackLayout();
 
-    // The first button will move the circle to the left when it is clicked:
-    var moveLeftButton = new Button {
-        Text = "Move Circle Left"
-    };
-    moveLeftButton.Clicked += (sender, e) => gameScene.MoveCircleLeft ();
-    stackLayout.Children.Add (moveLeftButton);
+    // The first button will move the circle to the left when it is clicked:
+    var moveLeftButton = new Button {
+        Text = "Move Circle Left"
+    };
+    moveLeftButton.Clicked += (sender, e) => gameScene.MoveCircleLeft ();
+    stackLayout.Children.Add (moveLeftButton);
 
-    // The second button will move the circle to the right when clicked:
-    var moveCircleRight = new Button {
-        Text = "Move Circle Right"
-    };
-    moveCircleRight.Clicked += (sender, e) => gameScene.MoveCircleRight ();
-    stackLayout.Children.Add (moveCircleRight);
+    // The second button will move the circle to the right when clicked:
+    var moveCircleRight = new Button {
+        Text = "Move Circle Right"
+    };
+    moveCircleRight.Clicked += (sender, e) => gameScene.MoveCircleRight ();
+    stackLayout.Children.Add (moveCircleRight);
 
-    // The stack layout will be in the bottom half (row 1):
-    grid.Children.Add (stackLayout, 0, 1);
+    // The stack layout will be in the bottom half (row 1):
+    grid.Children.Add (stackLayout, 0, 1);
 }
 ```
 

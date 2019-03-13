@@ -1,39 +1,41 @@
 ---
 title: Xamarin.Forms 繫結路徑
-description: 這篇文章說明如何使用 Xamarin.Forms 資料繫結來存取子的屬性和繫結類別的路徑屬性的集合成員。
+description: 本文說明如何使用 Xamarin.Forms 資料繫結來存取子屬性和 Binding 類別 Path 屬性的集合成員。
 ms.prod: xamarin
 ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 887a20f1791a190c182e6d179cfabb46c6e0eb48
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.openlocfilehash: 0c63e33309802f0945ad94a858af45f6b29b2cc4
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998943"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050775"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms 繫結路徑
 
-在所有先前的資料繫結範例， [ `Path` ](xref:Xamarin.Forms.Binding.Path)屬性`Binding`類別 (或[ `Path` ](xref:Xamarin.Forms.Xaml.BindingExtension.Path)屬性`Binding`標記延伸模組) 已設定指派給單一的屬性。 您可實際設定`Path`要*子屬性*（屬性的屬性），或集合的成員。
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
-例如，假設您的頁面包含`TimePicker`:
+在所有先前的資料繫結範例中，`Binding` 類別的 [`Path`](xref:Xamarin.Forms.Binding.Path) 屬性 (或 `Binding` 標記延伸模組的 [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) 屬性) 已設成單一屬性。 將 `Path` 設成「子屬性」(屬性的屬性) 或集合成員實際上是可行的。
+
+例如，假設您的頁面包含 `TimePicker`：
 
 ```xaml
 <TimePicker x:Name="timePicker">
 ```
 
-`Time`的屬性`TimePicker`別的`TimeSpan`，但也許您想要建立資料繫結參考`TotalSeconds`屬性`TimeSpan`值。 以下是資料繫結：
+`TimePicker` 的 `Time` 屬性類別為 `TimeSpan`，但您可能想要建立資料繫結，參考該 `TimeSpan` 值的 `TotalSeconds` 屬性。 以下是資料繫結：
 
 ```xaml
 {Binding Source={x:Reference timePicker},
          Path=Time.TotalSeconds}
 ```
 
-`Time`屬性的類型是`TimeSpan`，其中包含`TotalSeconds`屬性。 `Time`和`TotalSeconds`屬性都只連線以句號。 中的項目`Path`字串一律會參考屬性，不適用於這些屬性的型別。
+`Time` 屬性的類型為 `TimeSpan`，其具有 `TotalSeconds` 屬性。 `Time` 和 `TotalSeconds` 屬性只簡單使用句號連接。 `Path` 字串中的項目一律表示屬性，且不是這些屬性的類型。
 
-範例和其他許多選項，會顯示在**路徑變化**頁面：
+[Path Variations] \(路徑變化\) 頁面會顯示該範例及其他許多範例：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -84,16 +86,16 @@ ms.locfileid: "38998943"
 
         <Label Text="{Binding Source={x:Reference page},
                               Path=Content.Children[1].Text.Length,
-                              StringFormat='The first Label has {0} characters'}" />
+                              StringFormat='The second Label has {0} characters'}" />
     </StackLayout>
 </ContentPage>
 ```
 
-在第二個`Label`，繫結來源是網頁本身。 `Content`屬性的類型是`StackLayout`，其中包含`Children`屬性的型別`IList<View>`，其中包含`Count`屬性，指示子系數目。
+在第二個 `Label` 中，繫結來源是網頁本身。 `Content` 屬性的類型為 `StackLayout`，其 `Children` 屬性的類型為 `IList<View>`，它又包含指示子系數目的 `Count` 屬性。
 
-## <a name="paths-with-indexers"></a>使用索引子路徑
+## <a name="paths-with-indexers"></a>具有索引子的路徑
 
-第三個中的繫結`Label`中**路徑變化**頁面參考[ `CultureInfo` ](xref:System.Globalization.CultureInfo)類別`System.Globalization`命名空間：
+[Path Variations] \(路徑變化\) 頁面中第三個 `Label` 的繫結會參考 `System.Globalization` 命名空間中的 [`CultureInfo`](xref:System.Globalization.CultureInfo) 類別：
 
 ```xaml
 <Label Text="{Binding Source={x:Static globe:CultureInfo.CurrentCulture},
@@ -101,9 +103,9 @@ ms.locfileid: "38998943"
                       StringFormat='The middle day of the week is {0}'}" />
 ```
 
-來源會設定為靜態`CultureInfo.CurrentCulture`屬性，這是型別的物件`CultureInfo`。 類別會定義名為的屬性`DateTimeFormat`型別的[ `DateTimeFormatInfo` ](xref:System.Globalization.DateTimeFormatInfo) ，其中包含`DayNames`集合。 索引會選取第四個項目。
+來源設為靜態的 `CultureInfo.CurrentCulture` 屬性，其為類型 `CultureInfo` 的物件。 類別定義的屬性名為 `DateTimeFormat`，其類型為包含 `DayNames` 集合的 [`DateTimeFormatInfo`](xref:System.Globalization.DateTimeFormatInfo)。 索引會選取第四個項目。
 
-第四個`Label`作用也類似但文化特性相關聯法國。 `Source`繫結的屬性設定為`CultureInfo`物件的建構函式：
+第四個 `Label` 作用類似，但適用於與法國建立關聯的文化特性。 繫結的 `Source` 屬性設為具有建構函式的 `CultureInfo` 物件：
 
 ```xaml
 <Label>
@@ -122,9 +124,9 @@ ms.locfileid: "38998943"
 </Label>
 ```
 
-請參閱[傳遞建構函式引數](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)如需詳細資訊在 XAML 中指定建構函式引數。
+如需在 XAML 中指定建構函式引數的詳細資料，請參閱[傳遞建構函式引數](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)。
 
-最後，最後一個範例大致第二個，不同之處在於它所參考的子系的其中一個`StackLayout`:
+最後，最後一個範例類似第二個，不同之處在於它參考的是 `StackLayout` 子系的其中之一：
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
@@ -132,22 +134,22 @@ ms.locfileid: "38998943"
                       StringFormat='The first Label has {0} characters'}" />
 ```
 
-是該子`Label`，其中包含`Text`型別的屬性`String`，其中包含`Length`屬性。 第一個`Label`報表`TimeSpan`集中`TimePicker`，因此，當該文字會變更，最終`Label`跟著變更。
+該子系為 `Label`，其 `Text` 屬性的類型為包含 `Length` 屬性的 `String`。 第一個 `Label` 回報 `TimePicker` 中設定的 `TimeSpan`，所以當該文字變更時，最終的 `Label` 也跟著變更。
 
-以下是所有三個平台上執行的程式：
+以下是程式執行情況：
 
 [![路徑變化](binding-path-images/pathvariations-small.png "路徑變化")](binding-path-images/pathvariations-large.png#lightbox "路徑變化")
 
-## <a name="debugging-complex-paths"></a>偵錯複雜的路徑
+## <a name="debugging-complex-paths"></a>偵錯複雜路徑
 
-複雜的路徑定義可能很難建構： 您需要知道每一個子屬性的類型或要正確地加入 [下一步] 的子屬性，集合中的項目類型，但將型別本身不會出現在路徑中。 一個很好的技巧，就是以累加方式建置的路徑，並看看中繼結果。 對於該最後一個範例中，您可以開始沒有`Path`完全定義：
+複雜的路徑定義建構困難：您需要知道每個子屬性的類型或集合項目的類型，才能正確新增下一個子屬性，但類型本身不會出現在路徑中。 一個良好技巧是以累加方式建置的路徑，並查看中繼結果。 至於最後一個範例，您完全可以從沒有 `Path` 定義開始：
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
                       StringFormat='{0}'}" />
 ```
 
-所顯示的繫結來源，類型或`DataBindingDemos.PathVariationsPage`。 您知道`PathVariationsPage`衍生自`ContentPage`，所以它沒有`Content`屬性：
+它會顯示繫結來源屬性類型或 `DataBindingDemos.PathVariationsPage`。 您知道 `PathVariationsPage` 衍生自 `ContentPage`，所以它有 `Content` 屬性：
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
@@ -155,15 +157,15 @@ ms.locfileid: "38998943"
                       StringFormat='{0}'}" />
 ```
 
-型別`Content`屬性現在會顯示為`Xamarin.Forms.StackLayout`。 新增`Children`屬性，以`Path`且類型為`Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`，這是內部 Xamarin.Forms，但顯然是集合型別類別。 將索引加入至該且類型為`Xamarin.Forms.Label`。 在這種方式繼續進行。
+`Content` 屬性的類型現顯示為 `Xamarin.Forms.StackLayout`。 將 `Children` 屬性新增至 `Path` 且類型為 `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`，這是 Xamarin.Forms 的內部類別，但明顯是集合類型。 將索引新增至該範例，且類型為 `Xamarin.Forms.Label`。 繼續以這種方式進行。
 
-Xamarin.Forms 處理繫結路徑，它會安裝`PropertyChanged`實作的路徑中的任何物件上的處理常式`INotifyPropertyChanged`介面。 最後一個繫結，例如回應變更，以在第一個`Label`因為`Text`屬性變更。
+當 Xamarin.Forms 處理繫結路徑時，它會在實作 `INotifyPropertyChanged` 介面之路徑中的任何物件上安裝 `PropertyChanged` 處理常式。 例如，因為 `Text` 屬性變更，所以最後一個繫結回應第一個 `Label` 中的變更。
 
-如果繫結路徑中的屬性不會實作`INotifyPropertyChanged`，將會忽略該屬性的任何變更。 某些變更可能完全會失效繫結路徑，因此您應該在屬性和子屬性的字串永遠不會變成無效時，才使用這項技術。
+如果繫結路徑中的屬性不實作 `INotifyPropertyChanged`，則忽略該屬性的所有變更。 某些變更可能會讓繫結路徑完全失效，所以您只有在屬性和子屬性的字串還未失效前，才使用這項技術。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [資料繫結示範 （範例）](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [資料繫結 Xamarin.Forms 書籍章節](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Data Binding Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) (資料繫結示範 (範例))
+- [來自 Xamarin.Forms 書籍的資料繫結章節](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

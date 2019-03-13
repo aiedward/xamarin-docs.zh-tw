@@ -4,15 +4,15 @@ description: 本指南介紹可用來對 iOS 應用程式進行程式碼簽署�
 ms.prod: xamarin
 ms.assetid: 8202C57D-22FF-4224-A5B1-AAEF12B7C106
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: ffb7e0a088bcd227f45b97229f089ef59d4d6608
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: e89b8585371ab2560ae510fdb49f284e358818c1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785485"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108908"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>適用於 iOS 的 fastline 簡介
 

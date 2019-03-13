@@ -4,17 +4,19 @@ description: 使用 Xamarin.Forms 建立行動應用程式： 摘要的第 15 �
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 534355b607d17e2d5a8c08254300496b49506bc8
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 6b519b15199373762965a8eeee6c9ae73f125cf3
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156636"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53060429"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>第 15 章的摘要。 互動式介面
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
 
 這一章探討八`View`允許使用者互動的衍生項目。
 
@@ -92,7 +94,7 @@ Xamarin.Forms 包含 20 的可具現化類別，衍生自`View`而非`Layout`。
 
 - [`Increment`](xref:Xamarin.Forms.Stepper.Increment) 型別的`double`，初始化為 1
 
-在視覺上，`Stepper`包含兩個按鈕，分別為**&ndash;** 並**+**。 按下**&ndash;** 減少`Value`由`Increment`最低`Minimum`。 按下**+** 增加`Value`由`Increment`最大值`Maximum`。
+在視覺上，`Stepper`包含兩個按鈕，分別為 **&ndash;** 並 **+**。 按下 **&ndash;** 減少`Value`由`Increment`最低`Minimum`。 按下 **+** 增加`Value`由`Increment`最大值`Maximum`。
 
 最好的證明[ **StepperDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/StepperDemo)範例。
 

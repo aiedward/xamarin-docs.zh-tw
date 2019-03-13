@@ -4,15 +4,15 @@ description: 本文件說明 iCloud 與 Xamarin.iOS 應用程式中的使用。 
 ms.prod: xamarin
 ms.assetid: C6F3B87C-C195-4434-EF14-D66E63894F09
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/09/2016
-ms.openlocfilehash: b72ecc40994d9336c4941f3db700796edd80e81f
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
+ms.openlocfilehash: 68375dfc5b7baa4726739d40eb77c1fcb7500fb4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353213"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668877"
 ---
 # <a name="using-icloud-with-xamarinios"></a>與 Xamarin.iOS 使用 iCloud
 
@@ -45,7 +45,7 @@ ms.locfileid: "39353213"
 
 若要正確設定應用程式存取 iCloud:
 
--   **尋找您 TeamID** -登入[developer.apple.com](http://developer.apple.com)並瀏覽**Member Center > 您的帳戶 > 開發人員帳戶摘要**以取得您小組的 ID （或適用於單一開發人員的個別識別碼). 它會是 10 個字元的字串 ( **A93A5CM278**例如)-這會形成 「 容器識別碼 」 的一部分。
+-   **尋找您 TeamID** -登入[developer.apple.com](https://developer.apple.com)並瀏覽**Member Center > 您的帳戶 > 開發人員帳戶摘要**以取得您小組的 ID （或適用於單一開發人員的個別識別碼). 它會是 10 個字元的字串 ( **A93A5CM278**例如)-這會形成 「 容器識別碼 」 的一部分。
 
 -   **建立新的應用程式識別碼**-若要建立應用程式識別碼，請依照下列所述的步驟[佈建存放區技術區段的 裝置佈建的快速入門](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)，並務必**iCloud**為允許的服務：
 
@@ -144,7 +144,7 @@ NSNotificationCenter.DefaultCenter.AddObserver (
 
 您的程式碼可以採取某些動作的清單已變更的索引鍵，例如更新的本機副本，或使用新值更新 UI。
 
-可能變更的原因是： ServerChange (0)、 InitialSyncChange (1) 或 QuotaViolationChange (2)。 您可以存取的原因，並在必要時，執行不同的處理 (例如，您可能需要移除的某些索引鍵*QuotaViolationChange*)。
+可能的變更原因如下：ServerChange (0)、 InitialSyncChange (1) 或 QuotaViolationChange (2)。 您可以存取的原因，並在必要時，執行不同的處理 (例如，您可能需要移除的某些索引鍵*QuotaViolationChange*)。
 
 ## <a name="document-storage"></a>文件儲存體
 
@@ -417,7 +417,7 @@ doc.UpdateChangeCount (UIDocumentChangeKind.Done);
 ## <a name="icloud-backup"></a>iCloud 備份
 
 雖然備份到 iCloud 並不是由開發人員直接存取的功能，您將應用程式設計的方式可能會影響使用者體驗。
-Apple 提供[iOS 資料儲存體的指導方針](http://developer.apple.com/icloud/documentation/data-storage/)的開發人員在其 iOS 應用程式追蹤。
+Apple 提供[iOS 資料儲存體的指導方針](https://developer.apple.com/icloud/documentation/data-storage/)的開發人員在其 iOS 應用程式追蹤。
 
 最重要的考量是內容的您的應用程式是否會儲存大型檔案不是內容的使用者產生的 （例如 magazine 讀者應用程式，其中儲存的每個問題 hundred-plus mb 為單位）。 Apple 會偏好不會儲存這類資料，它會被備份到 icloud 的功能並不必要地填入使用者的 iCloud 配額。
 
@@ -437,6 +437,6 @@ Apple 提供[iOS 資料儲存體的指導方針](http://developer.apple.com/iclo
 
 - [簡介至 iCloud （範例）](https://developer.xamarin.com/samples/monotouch/IntroductionToiCloud)
 - [iCloud 研討會範例程式碼](https://github.com/xamarin/Seminars/tree/master/2012-03-22-iCloud)
-- [iCloud 研討會的投影片](http://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
+- [iCloud 研討會的投影片](https://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
 - [iCloud NSUbiquitousKeyValueStore](https://developer.apple.com/library/prerelease/ios/)
-- [iCloud 儲存體](http://support.apple.com/kb/HT4847)
+- [iCloud 儲存體](https://support.apple.com/kb/HT4847)

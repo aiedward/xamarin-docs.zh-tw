@@ -5,12 +5,12 @@ description: 這份文件相比較，並對照 WPF Xamarin.Forms。 它討論控
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 4d6585715b2fc118bb350c242abccbc68791ec0b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: d3e772c270f6003d01e3e7b487f69f682fec2d61
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998514"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617588"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF 和。Xamarin.Forms： 相似性與差異
 
@@ -35,7 +35,7 @@ XAML 是做為宣告式標記語言用於 WPF 和 Xamarin.Forms。 大部分的�
 
 - 支援 Xamarin.Forms [XAML 2009 規格](/dotnet/framework/xaml-services/xaml-2009-language-features/); 這可讓您更輕鬆地定義資料，例如`string`s， `int`s、 等等，以及定義的泛型型別和引數傳遞給建構函式。
 
-- 目前沒有任何方法可以使用的 WPF 動態載入 XAML `XamlReader`，但您能透過 [NuGet 套件](https://www.nuget.org/packages/Xamarin.Forms.Dynamic/) 取得類似的基本功能。
+- 目前沒有任何方法可以使用 WPF 動態載入 XAML `XamlReader`。 不過，您可以透過 [NuGet 套件](https://www.nuget.org/packages/Xamarin.Forms.Dynamic/)取得類似的基本功能。
 
 ### <a name="markup-extensions"></a>標記延伸
 
@@ -60,7 +60,7 @@ Xamarin.Forms 支援以及-自訂標記延伸模組，但其實作稍有不同�
 
 ## <a name="binding-infrastructure"></a>繫結基礎結構
 
-結轉的核心概念是資料繫結基礎結構連線至.NET 資料屬性的 視覺屬性。 這可讓等 MVVM 架構模式。 基本的設計完全相同-您必須在可繫結的基底類別[BindableObject](xref:Xamarin.Forms.BindableObject)，這是 wpf [DependencyObject](https://msdn.microsoft.com/en-us/library/system.windows.dependencyobject(v=vs.110).aspx)類別。 這個基底類別作為根上階的所有物件，將加入為資料繫結中的目標。 在衍生的類別然後公開[BindableProperty](xref:Xamarin.Forms.BindableProperty)物件做為屬性值的備份儲存體 (這些定義為[DependencyProperty](https://msdn.microsoft.com/library/system.windows.dependencyproperty(v=vs.110).aspx)在 WPF 中的物件)。
+結轉的核心概念是資料繫結基礎結構連線至.NET 資料屬性的 視覺屬性。 這可讓等 MVVM 架構模式。 基本的設計完全相同-您必須在可繫結的基底類別[BindableObject](xref:Xamarin.Forms.BindableObject)，這是 wpf [DependencyObject](xref:System.Windows.DependencyObject)類別。 這個基底類別作為根上階的所有物件，將加入為資料繫結中的目標。 在衍生的類別然後公開[BindableProperty](xref:Xamarin.Forms.BindableProperty)物件做為屬性值的備份儲存體 (這些定義為[DependencyProperty](xref:System.Windows.DependencyProperty)在 WPF 中的物件)。
 
 ### <a name="defining-bindable-properties"></a>定義可繫結屬性
 
@@ -98,7 +98,6 @@ Xamarin.Forms 支援以及-自訂標記延伸模組，但其實作稍有不同�
     - ValidationRules 集合
     - XPath
     - XmlNamespaceManager
-- `Binding.Mode` 不支援`OneTime`，而只要使用`OneWay`。
 
 #### <a name="relativesource"></a>RelativeSource
 
@@ -163,7 +162,7 @@ Xamarin.Forms 繫結中完全支援這兩個介面。 不同於許多以 XAML �
 
 ## <a name="navigation"></a>巡覽
 
-WPF 包含可用來提供「類瀏覽器」瀏覽功能的罕用 `NavigationService`。大部分的應用程式不會為此費心，而會改為使用 `Window` 或不同的視窗區段來顯示資料。
+WPF 包含可用來提供「類瀏覽器」瀏覽功能的罕用 `NavigationService`。 大部分的應用程式不會為此費心，而會改為使用 `Window` 或不同的視窗區段來顯示資料。
 
 在不同的電話裝置上_螢幕_通常解決方案，並因此 Xamarin.Forms 包含數種形式的導覽的支援：
 

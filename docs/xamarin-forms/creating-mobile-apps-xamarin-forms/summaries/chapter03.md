@@ -1,32 +1,34 @@
 ---
 title: 第 3 章的摘要。 更深入成文字
-description: 使用 Xamarin.Forms 建立行動應用程式： 第 3 章摘要。 更深入成文字
+description: 使用 Xamarin.Forms 建立行動應用程式：第 3 章的摘要。 更深入成文字
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: eabd001587034ac0bf1b86962fe63b016fe651e9
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 11b0a9c5b165df2b0d02bb09fb282cc18290e6ca
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156570"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207841"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第 3 章的摘要。 更深入成文字
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)
 
 這一章探討[ `Label` ](xref:Xamarin.Forms.Label)更為深入探討，包括色彩、 字型和格式化的檢視。
 
 ## <a name="wrapping-paragraphs"></a>文繞圖段落
 
-當[ `Text` ](xref:Xamarin.Forms.Label.Text)屬性`Label`包含長的文字`Label`會自動將它包裝多行所示[ **Baskervilles**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/Baskervilles)範例。 您可以內嵌 Unicode 程式碼，例如 '\u2014' em dash 或 C# 字元，例如 '\r' 中斷到新的一行。
+當[ `Text` ](xref:Xamarin.Forms.Label.Text)屬性`Label`包含長的文字`Label`會自動將它包裝多行所示[ **Baskervilles**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/Baskervilles)範例。 您可以內嵌 Unicode 程式碼，例如 '\u2014' em dash，或C#字元，例如 '\r' 中斷到新的一行。
 
 時[ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)並[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)屬性`Label`設為`LayoutOptions.Fill`的整體大小`Label`受到空間，其容器會提供。 `Label`要*限制*。 大小`Label`是其容器的大小。
 
 當`HorizontalOptions`和`VerticalOptions`以外的其他屬性設定為值`LayoutOptions.Fill`，則大小`Label`受到所呈現的文字，但不超過其容器提供的大小所需的空間`Label`。 `Label`要*無限制*，它會決定其本身的大小。
 
-(注意： 條款*限制*並*無限制*可能違反直覺，因為未受限制的檢視是通常小於條件約束的檢視。 此外，這些條款不會使用一致的方式 》 一書中。）
+(注意：條款*受限*並*無限制*可能違反直覺，因為未受限制的檢視是通常小於條件約束的檢視。 此外，這些條款不會使用一致的方式 》 一書中。）
 
 這類檢視`Label`可以限制在一個維度中，並在其他未受限制。 A`Label`會僅將文字換行多行如果水平的條件約束。
 
@@ -97,9 +99,9 @@ ms.locfileid: "39156570"
 
 `Color.Default` 為了強制執行平台的色彩配置，並因此在不同平台上的不同內容中有不同的意義。 根據預設平台色彩配置如下：
 
-- iOS： 深色淺色背景上的文字
-- Android： 淺色 （在活頁簿） 的深色背景上的文字或深色的文字，在淺色背景 (材料設計，透過在 AppCompat**主要**的範例程式碼存放庫的分支)
-- UWP： 深色的文字，在淺色背景
+- iOS:深色的文字，在淺色背景
+- Android:亮色調 （以書籍） 的深色背景上的文字或深色的文字，在淺色背景 (材料設計，透過在 AppCompat**主要**的範例程式碼存放庫的分支)
+- UWP:深色的文字，在淺色背景
 
 `Color.Accent`值在特定平台 （和有時候使用者可選取） 的色彩，其顯示暗色或亮色背景的結果。
 
@@ -107,7 +109,7 @@ ms.locfileid: "39156570"
 
 各種不同的平台有預設的色彩配置，上述清單中所示。
 
-當以 Android 為目標，就可以藉由指定淺色佈景主題，在 Android.Manifest.xml 檔案中，或藉由切換為暗色調上 light 配置[新增 AppCompat 和材質設計](~/xamarin-forms/platform/android/appcompat.md)。
+當以 Android 為目標，就可以藉由指定淺色佈景主題，在 Android.Manifest.xml 檔案中，或藉由切換為暗色調上 light 配置[新增 AppCompat 和材質設計](~/xamarin-forms/platform/android/appcompat-material-design.md)。
 
 適用於 Windows 平台的色彩佈景主題通常由使用者選取，但您可以加入`RequestedTheme`屬性設定為 `Light`或`Dark`平台的 App.xaml 檔案中。 根據預設，包含在 UWP 專案 App.xaml 檔案`RequestedTheme`屬性設為`Light`。
 
@@ -119,7 +121,7 @@ ms.locfileid: "39156570"
 
 您也可以取得數個預設平台相依的字型大小。 靜態[ `Device.GetNamedSize` ](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type))方法並[多載](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,Xamarin.Forms.Element))兩者都傳回`double`字型大小值適用於平台根據的成員[ `NamedSize` ](xref:Xamarin.Forms.NamedSize)列舉型別 ([`Default`](xref:Xamarin.Forms.NamedSize.Default)， [ `Micro` ](xref:Xamarin.Forms.NamedSize.Micro)， [ `Small` ](xref:Xamarin.Forms.NamedSize.Small)， [ `Medium` ](xref:Xamarin.Forms.NamedSize.Medium)， 並[ `Large` ](xref:Xamarin.Forms.NamedSize.Large))。 從傳回的值`Medium`成員不一定相同`Default`。 [ **NamedFontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes)名為 sizes 這些範例會顯示的文字。
 
-設定[ `FontAttributes` ](xref:Xamarin.Forms.Label.FontAttributes)屬性`Label`這些成員[ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes)列舉[ `Bold` ](xref:Xamarin.Forms.FontAttributes.Bold)， [ `Italic`](xref:Xamarin.Forms.FontAttributes.Italic)，或[ `None` ](xref:Xamarin.Forms.FontAttributes.None)。 您可以結合`Bold`和`Italic`使用 C# 位元 OR 運算子的成員。
+設定[ `FontAttributes` ](xref:Xamarin.Forms.Label.FontAttributes)屬性`Label`這些成員[ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes)列舉[ `Bold` ](xref:Xamarin.Forms.FontAttributes.Bold)， [ `Italic`](xref:Xamarin.Forms.FontAttributes.Italic)，或[ `None` ](xref:Xamarin.Forms.FontAttributes.None)。 您可以結合`Bold`並`Italic`成員C#位元 OR 運算子。
 
 ## <a name="formatted-text"></a>格式化文字
 
@@ -139,6 +141,6 @@ ms.locfileid: "39156570"
 
 - [第 3 章全文檢索 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch03-Apr2016.pdf)
 - [第 3 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)
-- [第 3 章 F # 範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/FS)
+- [第 3 章F#範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/FS)
 - [Label](~/xamarin-forms/user-interface/text/label.md)
 - [使用色彩](~/xamarin-forms/user-interface/colors.md)

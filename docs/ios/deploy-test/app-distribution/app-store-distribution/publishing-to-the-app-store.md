@@ -4,15 +4,15 @@ description: 本文件描述如何設定、建置及發佈 Xamarin.iOS 應用程
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/25/2018
-ms.openlocfilehash: 60aa177ccb14c443f1599b4ce42c07faa695baed
-ms.sourcegitcommit: 7d766f8a080ee6999e47c873a9f2ccec8fa5dd5a
+ms.openlocfilehash: babfc85de645b285812421d453d51d5be6dceb1c
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439170"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831933"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>將 Xamarin.iOS 應用程式發佈到 App Store
 
@@ -30,7 +30,8 @@ ms.locfileid: "37439170"
 > - 建置您的應用程式，並將它提交給 Apple
 
 > [!IMPORTANT]
-> Apple [已宣告](https://developer.apple.com/news/?id=05072018a)從 2018 年 7 月開始，提交至 App Store 的所有應用程式和更新都必須是使用 iOS 11 SDK 建置，且[必須支援 iPhone X 顯示器](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)。
+> Apple [已宣佈](https://developer.apple.com/ios/submit/)從 2019 年 3 月開始，提交至 App Store 的所有應用程式與更新，都必須使用 iOS 12.1 SDK 或更新版本 (包含在 Xcode 10.1 或更新版本中) 進行建置。
+> 應用程式也應支援 iPhone XS 及 12.9" iPad Pro 的螢幕大小。
 
 ## <a name="app-store-guidelines"></a>App Store 指導方針
 
@@ -89,7 +90,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 新的 Xamarin.iOS 專案會自動設定 [偵錯] 和 [發行] 組建組態。 若要適當設定 [發行] 組建，請遵循下列步驟：
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 從 [Solution Pad] 中開啟 **Info.plist**。 選取 [手動佈建]。 儲存並關閉檔案。
 2. 以滑鼠右鍵按一下 [Solution Pad] 中的 [專案名稱]，選取 [選項]，然後巡覽至 [iOS 組建] 索引標籤。
@@ -119,19 +120,18 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 15. 按一下 [確定] 儲存您對專案屬性進行的變更。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 從 [方案總管] 中開啟 **Info.plist**。 選取 [手動佈建]。 儲存並關閉檔案。
-2. 確定 Visual Studio 2017 已[與 Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
-3. 以滑鼠右鍵按一下 [方案總管] 中的 [專案名稱]，選取 [屬性]，然後巡覽至 [iOS 組建] 索引標籤。
-4. 將 [組態] 設定為 [發行]，並將 [平台] 設定為 [iPhone]。
-5. 若要使用特定的 iOS SDK 建置，請從 [SDK 版本] 清單中進行選取。 否則，請將此值保留為 [預設]。
-6. 連結可藉由移除未使用的程式碼，減少應用程式的整體大小。 在大部分情況下，[連結器行為] 應該設定為預設值 [僅連結 Framework SDK]。 在某些情況下，例如使用某些協力廠商程式庫時，可能需要將此值設定為 [不要連結]，以確保不會移除所需的程式碼。 如需詳細資訊，請參閱[連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)指南。
-7. 核取 [最佳化 PNG 影像]，進一步減少您的應用程式大小。
-8. 因為偵錯會使組建產生不必要的大小，所以建議不要啟用。
-9. 針對 iOS 11，請選取支援 **ARM64** 的其中一個裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 [32/64 位元平台考量](~/cross-platform/macios/32-and-64/index.md)文件中的**啟用 Xamarin.iOS 應用程式的 64 位元組建**一節。
-10. 您可能想要使用 **LLVM** 編譯器來建置較小且更快速的程式碼。 不過，此選項會增加編譯時間。
-11. 根據您的應用程式需求，也可以考慮調整要使用的 [記憶體回收] 類型與 [國際化] 設定。
+1. 確定 Visual Studio 2017 已[與 Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+2. 以滑鼠右鍵按一下 [方案總管] 中的 [專案名稱]，並選取 [屬性]。
+3. 瀏覽至 [iOS 組建] 索引標籤，並將 [組態] 設定為 [發行]，同時將 [平台] 設定為 [iPhone]。
+4. 若要使用特定的 iOS SDK 建置，請從 [SDK 版本] 清單中進行選取。 否則，請將此值保留為 [預設]。
+5. 連結可藉由移除未使用的程式碼，減少應用程式的整體大小。 在大部分情況下，[連結器行為] 應該設定為預設值 [僅連結 Framework SDK]。 在某些情況下，例如使用某些協力廠商程式庫時，可能需要將此值設定為 [不要連結]，以確保不會移除所需的程式碼。 如需詳細資訊，請參閱[連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)指南。
+6. 核取 [最佳化 PNG 影像]，進一步減少您的應用程式大小。
+7. 因為偵錯會使組建產生不必要的大小，所以建議不要啟用。
+8. 針對 iOS 11，請選取支援 **ARM64** 的其中一個裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 [32/64 位元平台考量](~/cross-platform/macios/32-and-64/index.md)文件中的**啟用 Xamarin.iOS 應用程式的 64 位元組建**一節。
+9. 您可能想要使用 **LLVM** 編譯器來建置較小且更快速的程式碼。 不過，此選項會增加編譯時間。
+10. 根據您的應用程式需求，也可以考慮調整要使用的 [記憶體回收] 類型與 [國際化] 設定。
 
     設定上述選項之後，您的組建設定看起來應該像這樣：
 
@@ -139,27 +139,26 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
     另請查看 [iOS 組建機制](~/ios/deploy-test/ios-build-mechanics.md)指南，該指南會進一步描述組建設定。
 
-12. 巡覽至 [iOS 套件組合簽署] 索引標籤。如果此處的選項不可編輯，請確定已在 **Info.plist** 檔案中選取 [手動佈建]。
-13. 確定 [組態] 設定為 [發行]，且 [平台] 設定為 [iPhone]。
-14. 將 [簽署身分識別] 設定為 [散發 (自動)]。
-15. 針對 [佈建設定檔]，選取[上方建立](#create-and-install-an-app-store-provisioning-profile)的 App Store 佈建設定檔。
+11. 巡覽至 [iOS 套件組合簽署] 索引標籤。確定 [組態] 已設定為 [發行]，且 [平台] 已設定為 [iPhone]，且已選取 [手動佈建]。
+12. 將 [簽署身分識別] 設定為 [散發 (自動)]。
+13. 針對 [佈建設定檔]，選取[上方建立](#create-and-install-an-app-store-provisioning-profile)的 App Store 佈建設定檔。
 
     您的專案套件組合簽署選項現在看起來像這樣：
 
     ![iOS 套件組合簽署設定](publishing-to-the-app-store-images/bundleSigning-w157.png "iOS 套件組合簽署設定")
 
-16. 巡覽至 [iOS IPA 選項] 索引標籤。
-17. 確定 [組態] 設定為 [發行]，且 [平台] 設定為 [iPhone]。
-18. 核取 [建置 iTunes 套件封存檔 (IPA)] 核取方塊。 此設定會導致每個 [發行] 組建 (因為這是選取的組態) 產生 .ipa 檔案。 這個檔案可以提交給 Apple，以便在 App Store 上發行。
+14. 巡覽至 [iOS IPA 選項] 索引標籤。
+15. 確定 [組態] 設定為 [發行]，且 [平台] 設定為 [iPhone]。
+16. 核取 [建置 iTunes 套件封存檔 (IPA)] 核取方塊。 此設定會導致每個 [發行] 組建 (因為這是選取的組態) 產生 .ipa 檔案。 這個檔案可以提交給 Apple，以便在 App Store 上發行。
 
     > [!NOTE]
     > App Store 發行並不需要 **iTunes 中繼資料**和 **iTunesArtwork**。 如需詳細資訊，請查看 [Xamarin.iOS 應用程式中的 iTunesMetadata.plist 檔案](~/ios/deploy-test/app-distribution/itunesmetadata.md)和 [iTunes 插圖](~/ios/app-fundamentals/images-icons/app-icons.md#itunes-artwork)。
 
-19. 若要指定不同於 Xamarin.iOS 專案名稱的 .ipa 檔名，請在 [套件名稱] 欄位中輸入它。
+17. 若要指定不同於 Xamarin.iOS 專案名稱的 .ipa 檔名，請在 [套件名稱] 欄位中輸入它。
 
     ![iOS 套件組合簽署設定](publishing-to-the-app-store-images/ipaOptions-w157.png "iOS 套件組合簽署設定")
 
-20. 儲存組建組態並關閉它。
+18. 儲存組建組態並關閉它。
 
 -----
 
@@ -173,7 +172,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 在正確設定您的組建設定且 iTunes Connect 正在等待您的提交之後，您現在可以建置您的應用程式，並將它提交給 Apple。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在 Visual Studio for Mac 中，選取 [發行] 組建組態及要為其建置的裝置 (不是模擬器)。
 
@@ -232,7 +231,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
     >
     > 如需這項錯誤的因應措施，請查看 [Xamarin 論壇中的這篇文章](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1)。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 > [!NOTE]
 > Visual Studio 2017 目前不支援位於 Visual Studio for Mac 中的 [封存以供發佈] 工作流程。
@@ -249,7 +248,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 4. 若要在 Windows 電腦上尋找 .ipa 檔案，請在 Visual Studio 2017 的 [方案總管] 中，以滑鼠右鍵按一下 Xamarin.iOS 專案名稱，然後選擇 [在檔案總管中開啟資料夾]。 然後，在剛剛開啟的 Windows **檔案總管**中，巡覽至 **bin/iPhone/Release** 子目錄。 除非您已[自訂 .ipa 檔案輸出位置](#customize-the-ipa-location)，否則它應該是位於此目錄中。
 5. 若要改為在 Mac 組建主機上檢視 .ipa 檔案，請在 Visual Studio 2017 的 [方案總管] 中 (在 Windows 上)，以滑鼠右鍵按一下 Xamarin.iOS 專案名稱，然後選取 [顯示組建伺服器上的 IPA 檔案]。 這會在 Mac 組建主機上開啟 [搜尋工具] 視窗並選取 .ipa 檔案。
-6. 在 Mac 組建主機上開啟 [應用程式啟動程式]。 在 Xcode 中，選取 [Xcode] > [開啟開發人員工具] > [應用程式啟動程式]。
+6. 在 Mac 組建主機上開啟 [應用程載入器]。 在 Xcode 中，選取 [Xcode] > [開啟開發人員工具] > [應用程式載入器]。
 
     > [!NOTE]
     > 如需此工具的詳細資訊，請查看[有關應用程式載入器的 Apple 文件](https://help.apple.com/itc/apploader/#/apdS673accdb)。
