@@ -66,7 +66,7 @@ FormsMaterial.Init(this, bundle);
 ```
 
 > [!IMPORTANT]
-> 在 Android 內容僅適用於 TargetFramework 9.0 (API 28)。 此外，平台專案必須使用 v28 支援程式庫，而且它的佈景主題，就必須繼承自資料元件佈景主題，或繼續繼承自 AppCompat 佈景主題。 如需詳細資訊，請參閱 <<c0> [ 開始使用資料元件適用於 Android](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md)。
+> 在 Android 內容僅適用於 TargetFramework 9.0 (API 28)。 此外，平台專案必須使用 v28 支援程式庫，而且它的佈景主題，就必須繼承自資料元件佈景主題，或繼續繼承自 AppCompat 佈景主題。 如需詳細資訊，請參閱 <<c0> [開始使用資料元件適用於 Android](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md)><c0>。
 
 下列螢幕擷取畫面會顯示包含四個檢視，如需哪些 Material 轉譯器(renderers)存在，但使用的預設轉譯器(renderers)轉譯使用者介面：
 
