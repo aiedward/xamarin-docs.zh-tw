@@ -24,7 +24,7 @@ ms.locfileid: "57672608"
 
 請檢查您[參考是否正確](~/ios/watchos/get-started/project-references.md)： 父應用程式具有延伸模組的參考，並延伸具有監看式應用程式的參考。
 
-確認您的套件組合識別碼，請遵循\*.watchkitextension \*.watchkitapp 慣例，而且您的延伸模組 Info.plist 檔案具有它已**WKApp 套件組合識別碼**值設定為套件組合識別碼您的監看式應用程式。
+確認您的套件組合識別碼，請遵循\*.watchkitextension \*.watchkitapp 慣例，而且您的延伸模組 Info.plist 檔案具有它已 **WKApp 套件組合識別碼** 值設定為套件組合識別碼您的監看式應用程式。
 
 您應該能夠立即，執行您的監看式應用程式，但因為監看式應用程式內的分鏡腳本檔案是空白的您便無法向。
 

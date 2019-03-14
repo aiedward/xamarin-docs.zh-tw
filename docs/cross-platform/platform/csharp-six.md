@@ -51,7 +51,7 @@ Visual Studio for Mac 會自動更新您的系統上的 Mono 安裝。
 
 Windows 使用者必須擁有[Visual Studio 2015 或 2017年 ^](https://visualstudio.microsoft.com/)安裝成編譯C#6 程式碼 （即使您選擇用於 Windows 的 Xamarin Studio，為您的 IDE）。
 
-^ 或*[Microsoft Build Tools 2015](https://www.microsoft.com/download/details.aspx?id=48159)* 命令列編譯或組建伺服器，例如。
+^ 或 *[Microsoft Build Tools 2015](https://www.microsoft.com/download/details.aspx?id=48159)* 命令列編譯或組建伺服器，例如。
 
 ## <a name="using-c-6"></a>使用C#6
 
