@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 4f0378f7e2fe29a5d11c2cbc02fc736adf12577c
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 76292dac6281837ee48b3bb76a362255108bd62c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171725"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667499"
 ---
 # <a name="manually-uploading-the-apk"></a>手動上傳 APK
 
@@ -162,29 +162,29 @@ Google Play 不允許將免費應用程式變更為付費應用程式 (不過，
 
 您可以在應用程式的資訊清單中新增元素，來協助控制 Google Play 商店中篩選應用程式的方式。 以下列出可用來篩選應用程式的資訊清單元素和屬性：
 
--   [supports-screen](http://developer.android.com/guide/topics/manifest/supports-screens-element.html) &ndash; Google Play 將會使用這些屬性，根據螢幕大小來判斷應用程式是否可以部署到某個裝置。 
+-   [supports-screen](https://developer.android.com/guide/topics/manifest/supports-screens-element.html) &ndash; Google Play 將會使用這些屬性，根據螢幕大小來判斷應用程式是否可以部署到某個裝置。 
     Google Play 會假設 Android 可以將較小的版面配置放在較大的螢幕中，但無法將較大的版面配置放在較小的螢幕中。 因此，宣稱可以支援一般螢幕的應用程式會出現在大型螢幕的搜尋結果中，但不會出現在小型螢幕的搜尋結果中。 如果 Xamarin.Android 應用程式並未在資訊清單檔中提供 `<supports-screen>` 元素，Google Play 將會假設所有屬性值都為 true，且應用程式支援所有螢幕大小。 此元素必須以手動方式新增至 **AndroidManifest.xml**。 
 
--   [uses-configuration](http://developer.android.com/guide/topics/manifest/uses-configuration-element.html) &ndash; 此資訊清單元素可用來要求特定硬體功能，例如鍵盤類型、導航裝置、觸控式螢幕等。此元素必須以手動方式新增至 **AndroidManifest.xml**。 
+-   [uses-configuration](https://developer.android.com/guide/topics/manifest/uses-configuration-element.html) &ndash; 此資訊清單元素可用來要求特定硬體功能，例如鍵盤類型、導航裝置、觸控式螢幕等。此元素必須以手動方式新增至 **AndroidManifest.xml**。 
 
--   [uses-feature](http://developer.android.com/guide/topics/manifest/uses-feature-element.html) &ndash; 此資訊清單元素會宣告應用程式運作所需的裝置必備硬體或軟體功能。 此屬性只用來提供資訊。 Google Play 不會對不符合此篩選條件的裝置顯示此應用程式。 您仍可透過其他方式 (手動或下載) 安裝此應用程式。 此元素必須以手動方式新增至 **AndroidManifest.xml**。 
+-   [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) &ndash; 此資訊清單元素會宣告應用程式運作所需的裝置必備硬體或軟體功能。 此屬性只用來提供資訊。 Google Play 不會對不符合此篩選條件的裝置顯示此應用程式。 您仍可透過其他方式 (手動或下載) 安裝此應用程式。 此元素必須以手動方式新增至 **AndroidManifest.xml**。 
 
--   [uses-library](http://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; 此元素會指定裝置上必須要有特定的共用程式庫，例如 Google Maps。 指定此元素時，也可以使用 `Android.App.UsesLibraryAttribute` 來指定。 例如:  
+-   [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; 此元素會指定裝置上必須要有特定的共用程式庫，例如 Google Maps。 指定此元素時，也可以使用 `Android.App.UsesLibraryAttribute` 來指定。 例如： 
 
     ```csharp
     [assembly: UsesLibrary("com.google.android.maps", true)]
     ```
 
--   [uses-permission](http://developer.android.com/guide/topics/manifest/uses-permission-element.html) &ndash; 此元素可用來推斷應用程式執行必備但可能尚未以 `<uses-feature>` 元素適當宣告的特定硬體功能。 例如，如果應用程式會要求使用相機的權限，則即使沒有任何宣告相機的 `<uses-feature>` 元素存在，Google Play 也會假設該裝置必須具有相機。 設定此元素時，可以使用 `Android.App.UsesPermissionsAttribute` 來設定。 例如:  
+-   [uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) &ndash; 此元素可用來推斷應用程式執行必備但可能尚未以 `<uses-feature>` 元素適當宣告的特定硬體功能。 例如，如果應用程式會要求使用相機的權限，則即使沒有任何宣告相機的 `<uses-feature>` 元素存在，Google Play 也會假設該裝置必須具有相機。 設定此元素時，可以使用 `Android.App.UsesPermissionsAttribute` 來設定。 例如： 
 
     ```csharp
     [assembly: UsesPermission(Manifest.Permission.Camera)]
     ```
 
--   [uses-sdk](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html) &ndash; 此元素可用來宣告應用程式所需的最低 Android API 層級。 您可以在 Xamarin.Android 專案的 Xamarin.Android 選項中設定此元素。 
+-   [uses-sdk](https://developer.android.com/guide/topics/manifest/uses-sdk-element.html) &ndash; 此元素可用來宣告應用程式所需的最低 Android API 層級。 您可以在 Xamarin.Android 專案的 Xamarin.Android 選項中設定此元素。 
 
--   [compatible-screens](http://developer.android.com/guide/topics/manifest/compatible-screens-element.html) &ndash; 此元素可用來篩選不符合此元素所指定螢幕大小和密度的應用程式。 大多數應用程式都不應該使用此屬性。 針對需要嚴格控制應用程式散發的特定高效能遊戲或應用程式，才需要使用此屬性。 建議使用上述的 `<support-screen>` 屬性。 
+-   [compatible-screens](https://developer.android.com/guide/topics/manifest/compatible-screens-element.html) &ndash; 此元素可用來篩選不符合此元素所指定螢幕大小和密度的應用程式。 大多數應用程式都不應該使用此屬性。 針對需要嚴格控制應用程式散發的特定高效能遊戲或應用程式，才需要使用此屬性。 建議使用上述的 `<support-screen>` 屬性。 
 
--   [supports-gl-texture](http://developer.android.com/guide/topics/manifest/supports-gl-texture-element.html) &ndash; 此元素可用來宣告應用程式所需的 GL 材質壓縮形成方式。 大多數應用程式都不應該使用此屬性。 針對需要嚴格控制應用程式散發的特定高效能遊戲或應用程式，才需要使用此屬性。 
+-   [supports-gl-texture](https://developer.android.com/guide/topics/manifest/supports-gl-texture-element.html) &ndash; 此元素可用來宣告應用程式所需的 GL 材質壓縮形成方式。 大多數應用程式都不應該使用此屬性。 針對需要嚴格控制應用程式散發的特定高效能遊戲或應用程式，才需要使用此屬性。 
 
 如需有關設定應用程式資訊清單的詳細資訊，請參閱 Android [應用程式宣示說明](https://developer.android.com/guide/topics/manifest/manifest-intro.html)主題。

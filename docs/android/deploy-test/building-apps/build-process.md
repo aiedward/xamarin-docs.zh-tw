@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/03/2018
-ms.openlocfilehash: 99b5798e8d3cd5723f99aa2483d5d1c0eff8d57c
-ms.sourcegitcommit: 6655cccf9d3be755773c2f774b5918e0b141bf84
+ms.openlocfilehash: 86e2380a2931517b021162a6cecadc7d6d5b4c43
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57305642"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669386"
 ---
 # <a name="build-process"></a>建置流程
 
@@ -98,7 +98,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
 安裝屬性可控制 `Install` 和 `Uninstall` 目標的行為。
 
--   **AdbTarget** &ndash; 指定可供安裝或移除 Android 套件的 Android 目標裝置。 這個屬性的值和 [`adb` 目標裝置選項](http://developer.android.com/tools/help/adb.html#issuingcommands)相同：
+-   **AdbTarget** &ndash; 指定可供安裝或移除 Android 套件的 Android 目標裝置。 這個屬性的值和 [`adb` 目標裝置選項](https://developer.android.com/tools/help/adb.html#issuingcommands)相同：
 
     ```bash
     # Install package onto emulator via -e
@@ -145,7 +145,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
     這個屬性的預設值是 `False`。
 
--   **AndroidEnableSGenConcurrent** &ndash; 決定是否會使用 Mono [並行 GC 收集器](http://www.mono-project.com/docs/about-mono/releases/4.8.0/#concurrent-sgen)的布林值屬性。
+-   **AndroidEnableSGenConcurrent** &ndash; 決定是否會使用 Mono [並行 GC 收集器](https://www.mono-project.com/docs/about-mono/releases/4.8.0/#concurrent-sgen)的布林值屬性。
 
     在 Xamarin.Android 7.2 中已新增這個屬性的支援。
 
@@ -293,7 +293,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
     除非 `$(AotAssemblies)` MSBuild 屬性為 `True`，否則會忽略這個屬性。
 
--   **EnableProguard** &ndash; 布林值屬性，可決定 [proguard](http://developer.android.com/tools/help/proguard.html) 是否會在封裝程序進行期間執行以便連結 Java 程式碼。
+-   **EnableProguard** &ndash; 布林值屬性，可決定 [proguard](https://developer.android.com/tools/help/proguard.html) 是否會在封裝程序進行期間執行以便連結 Java 程式碼。
 
     在 Xamarin.Android 5.1 中已新增這個屬性的支援。
 

@@ -185,7 +185,7 @@ Visual Studio for Mac 具有可將應用程式發行至 Google Play 的整合式
 #### <a name="create-a-google-api-project"></a>建立 Google API 專案
 
 首先，登入您的 [Google Play 開發人員帳戶](https://play.google.com/apps/publish)。
-如果您尚未擁有 Google Play 開發人員帳戶，請參閱[開始使用發佈](http://developer.android.com/distribute/googleplay/start.html)。
+如果您尚未擁有 Google Play 開發人員帳戶，請參閱[開始使用發佈](https://developer.android.com/distribute/googleplay/start.html)。
 此外，Google Play 開發人員 API [入門](https://developers.google.com/android-publisher/getting_started) \(英文\) 也說明了如何使用 Google Play 開發人員 API。 登入「Google Play 開發人員控制台」之後，按一下 [設定]：
 
 [![[設定] 圖示](images/01-google-play-developer-console-sml.png)](images/01-google-play-developer-console.png#lightbox)

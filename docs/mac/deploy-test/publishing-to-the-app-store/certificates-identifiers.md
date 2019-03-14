@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 2f60c15ba4b57ed61405b7081ed1cc3cee99c372
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5ba09afc477ddaadc07aa415376860eea3c8c28d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115545"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671464"
 ---
 # <a name="certificates-and-identifiers-in-xamarinmac"></a>Xamarin.Mac 中的憑證和識別碼
 
@@ -20,7 +20,7 @@ _本指南將逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要
 
 ## <a name="certificates-and-identifiers"></a>憑證和識別碼
 
-前往 [Apple Developer Member Center](http://developer.apple.com) \(英文\) 以設定 Mac 進行開發。 主功能表如下所示：
+前往 [Apple Developer Member Center](https://developer.apple.com) \(英文\) 以設定 Mac 進行開發。 主功能表如下所示：
 
 [![Apple Developer Member Center (Apple 開發人員成員中心)](certificates-identifiers-images/devcenter01.png "Apple Developer Member Center (Apple 開發人員成員中心)")](certificates-identifiers-images/devcenter01-large.png#lightbox)
 

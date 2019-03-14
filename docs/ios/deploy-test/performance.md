@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: 01c743b4b0eff81bbf4c41e1c2f387e0dc40c067
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 1f7f2af19c6faad32f94d82dbc58f140f45dea5d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233753"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671114"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS 效能
 
-不佳的應用程式效能會以許多方式表現。 它可能會讓應用程式看起來沒有回應、造成捲動緩慢，以及減少電池壽命。 不過，最佳化效能不僅僅只牽涉到實作有效率的程式碼而已。 同時也必須考量使用者對於應用程式效能的體驗。 例如，確保作業能在不封鎖使用者執行其他活動的情況下執行，將可以協助改善使用者體驗。 
+不佳的應用程式效能會以許多方式表現。 它可能會讓應用程式看起來沒有回應、造成捲動緩慢，以及減少電池壽命。 不過，最佳化效能不僅僅只牽涉到實作有效率的程式碼而已。 同時也必須考量使用者對於應用程式效能的體驗。 例如，確保作業能在不封鎖使用者執行其他活動的情況下執行，將可以協助改善使用者體驗。
 
 本文件說明在 Xamarin.iOS 應用程式中用來改善效能和記憶體使用量的技術。
 
@@ -140,7 +140,7 @@ public class MyFooDelegate : FooDelegate {
 以下是另一個在[委派](https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Delegation.html)模式內容中使用 `[Weak]` 的範例：
 
 ```csharp
-public class MyViewController : UIViewController 
+public class MyViewController : UIViewController
 {
     WKWebView webView;
 
@@ -155,7 +155,7 @@ public class MyViewController : UIViewController
     }
 }
 
-public class UIDelegate : WKUIDelegate 
+public class UIDelegate : WKUIDelegate
 {
     [Weak] MyViewController controller;
 
@@ -196,7 +196,7 @@ class MyContainer : UIView
 針對保留其父代強式參考的子物件，請清除 `Dispose` 實作中對父代的參考：
 
 ```csharp
-class MyChild : UIView 
+class MyChild : UIView
 {
     MyContainer container;
     public MyChild (MyContainer container)
@@ -215,13 +215,13 @@ class MyChild : UIView
 
 ### <a name="more-information"></a>詳細資訊
 
-如需詳細資訊，請參閱 Cocoa With Love 上的[避免保留循環的規則](http://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html) \(英文\)、StackOverflow 上的[這是 MonoTouch GC 中的錯誤嗎](http://stackoverflow.com/questions/13058521/is-this-a-bug-in-monotouch-gc) \(英文\)，以及 StackOverflow 上的[為什麼 MonoTouch GC 無法終止 refcount > 1 的受控物件？](http://stackoverflow.com/questions/13064669/why-cant-monotouch-gc-kill-managed-objects-with-refcount-1) \(英文\)。
+如需詳細資訊，請參閱 Cocoa With Love 上的[避免保留循環的規則](http://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html) \(英文\)、StackOverflow 上的[這是 MonoTouch GC 中的錯誤嗎](https://stackoverflow.com/questions/13058521/is-this-a-bug-in-monotouch-gc) \(英文\)，以及 StackOverflow 上的[為什麼 MonoTouch GC 無法終止 refcount > 1 的受控物件？](https://stackoverflow.com/questions/13064669/why-cant-monotouch-gc-kill-managed-objects-with-refcount-1) \(英文\)。
 
 ## <a name="optimize-table-views"></a>最佳化資料表檢視
 
 針對 [`UITableView`](xref:UIKit.UITableView) 執行個體，使用者期望有順暢的捲動和快速載入時間。 不過，當資料格包含深層巢狀檢視階層，或資料格包含複雜配置時，捲動效能可能會受到影響。 不過，有可用來避免 `UITableView` 效能不佳的技巧：
 
-- 重複使用資料格。 如需詳細資訊，請參閱[重複使用資料格](#reusecells)。
+- 重複使用資料格。 如需詳細資訊，請參閱[重複使用資料格](#reuse-cells)。
 - 減少子檢視數目。
 - 快取擷取自 Web 服務的資料格內容。
 - 快取任何資料列的高度 (如果不相同)。
@@ -288,7 +288,7 @@ class MyTableSource : UITableViewSource
 
 必須避免使用 `System.Reflection.Emit` 或 *Dynamic Language Runtime* 以動態方式產生程式碼，因為 iOS 核心會防止動態程式碼執行。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文章會說明與討論用來增加以 Xamarin.iOS 建置之應用程式效能的技巧。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
 

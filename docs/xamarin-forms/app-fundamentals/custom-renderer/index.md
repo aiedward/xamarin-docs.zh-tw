@@ -7,13 +7,8 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: c7ae25688b2f8635a9a89318e0b307e58add7a5a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: HT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998738"
 ---
+
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms 自訂轉譯器
 
 _Xamarin.Forms 使用者介面使用目標平台的原生控制項來轉譯，讓 Xamarin.Forms 應用程式保留每個平台適當的外觀及操作。自訂轉譯器可讓開發人員覆寫此程序，以自訂每個平台上 Xamarin.Forms 控制項的外觀和行為。_
@@ -62,5 +57,4 @@ Xamarin.Forms 自訂使用者介面控制項應該衍生自用來在螢幕上放
 ## <a name="related-links"></a>相關連結
 
 - [Effects](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [自訂轉譯器 (Xamarin University 影片)](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/)
-- [自訂轉譯器 (Xamarin University 影片) 範例](http://bit.ly/xf-customrenderer)
+- [Custom Renderers (Xamarin University Video)](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/) (自訂轉譯器 (Xamarin University 影片))

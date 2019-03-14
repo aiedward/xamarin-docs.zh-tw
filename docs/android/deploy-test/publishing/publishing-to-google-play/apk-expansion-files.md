@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 38568fa9258c7e3de2c3333cdca5dc7d5867319c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 56c5aa7f0f8db746fbc6d7f8b5409f7d6c0f5d0d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117094"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666888"
 ---
 # <a name="apk-expansion-files"></a>APK 擴充檔
 
@@ -73,7 +73,7 @@ Google Play 不允許將擴充檔上傳到現有的 APK，或是更新現有的 
 
 [![APK 擴充檔流程圖](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png#lightbox)
 
-當應用程式啟動時，它應該檢查以了解目前的裝置上是否有適當的擴充檔。 如果沒有，應用程式就必須從 Google Play 的[應用程式授權](http://developer.android.com/google/play/licensing/index.html)提出要求。 進行這項檢查時，是藉由使用「授權驗證程式庫」(LVL)來進行，且不論是免費還是授權的應用程式都必須進行此檢查。 LVL 主要是供付費應用程式用來強制執行授權限制。 不過，Google 已將 LVL 延伸，讓它也可以與擴充程式庫搭配使用。 免費應用程式必須執行 LVL 檢查，但可以忽略授權限制。 LVL 要求會負責提供應用程式所需的下列擴充檔相關資訊： 
+當應用程式啟動時，它應該檢查以了解目前的裝置上是否有適當的擴充檔。 如果沒有，應用程式就必須從 Google Play 的[應用程式授權](https://developer.android.com/google/play/licensing/index.html)提出要求。 進行這項檢查時，是藉由使用「授權驗證程式庫」(LVL)來進行，且不論是免費還是授權的應用程式都必須進行此檢查。 LVL 主要是供付費應用程式用來強制執行授權限制。 不過，Google 已將 LVL 延伸，讓它也可以與擴充程式庫搭配使用。 免費應用程式必須執行 LVL 檢查，但可以忽略授權限制。 LVL 要求會負責提供應用程式所需的下列擴充檔相關資訊： 
 
 -   **檔案大小** &ndash; 擴充檔的檔案大小會作為檢查的一部分，用來判斷是否已經下載正確的擴充檔。
 -   **檔案名稱** &ndash; 這是要用來儲存擴充套件的檔案名稱 (目前裝置上)。

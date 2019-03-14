@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 6f12670dd463471ba1e337802453c775adbe16a7
-ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
+ms.openlocfilehash: 31992c7d9219289847ebc3e9c8af755d54dc18ab
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666944"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672712"
 ---
 # <a name="localization"></a>當地語系化
 
@@ -22,7 +22,7 @@ _您可以使用 .NET 資源檔將 Xamarin.Forms 應用程式當地語系化。_
 
 ## <a name="overview"></a>總覽
 
-用於將 .NET 應用程式當地語系化的內建機制，使用 [RESX 檔案](http://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx)和 `System.Resources`、`System.Globalization` 命名空間中的類別。 包含已翻譯字串的 RESX 檔案內嵌在 Xamarin.Forms 組件中，外加編譯器產生的類別，此類別提供對翻譯的強型別存取。 然後即可在程式碼中擷取已翻譯文字。
+用於將 .NET 應用程式當地語系化的內建機制，使用 [RESX 檔案](https://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx)和 `System.Resources`、`System.Globalization` 命名空間中的類別。 包含已翻譯字串的 RESX 檔案內嵌在 Xamarin.Forms 組件中，外加編譯器產生的類別，此類別提供對翻譯的強型別存取。 然後即可在程式碼中擷取已翻譯文字。
 
 ### <a name="sample-code"></a>程式碼範例
 
@@ -761,7 +761,7 @@ Android 會遵循不同的配置，使用不同的**可繪製資源**和**字串
 
 請注意，Android 不會使用 zh-Hans 和 zh-Hant 代碼來表示簡體中文和繁體中文；相反地，它只支援特定國碼 (地區碼) zh-CN 和 zh-TW。
 
-若要支援高畫質螢幕的不同影像解析度，請建立字尾為 `-*dpi` 的其他語言資料夾，例如 **drawables-es-mdpi** **drawables-es-xdpi**、**drawables-es-xxdpi** 等。如需詳細資訊，請參閱[提供 Android 替代資源](http://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources)。
+若要支援高畫質螢幕的不同影像解析度，請建立字尾為 `-*dpi` 的其他語言資料夾，例如 **drawables-es-mdpi** **drawables-es-xdpi**、**drawables-es-xxdpi** 等。如需詳細資訊，請參閱[提供 Android 替代資源](https://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources)。
 
 #### <a name="app-name"></a>應用程式名稱
 
@@ -811,5 +811,5 @@ Android 會遵循不同的配置，使用不同的**可繪製資源**和**字串
 - [iOS 當地語系化](~/ios/app-fundamentals/localization/index.md)
 - [Android 當地語系化](~/android/app-fundamentals/localization.md)
 - [UWP 當地語系化](/windows/uwp/design/globalizing/globalizing-portal/)
-- [使用 CultureInfo 類別 (MSDN)](http://msdn.microsoft.com/library/87k6sx8t%28v=vs.90%29.aspx)
-- [找出和使用特定文化特性資源 (MSDN)](http://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)
+- [使用 CultureInfo 類別 (MSDN)](https://msdn.microsoft.com/library/87k6sx8t%28v=vs.90%29.aspx)
+- [找出和使用特定文化特性資源 (MSDN)](https://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)
