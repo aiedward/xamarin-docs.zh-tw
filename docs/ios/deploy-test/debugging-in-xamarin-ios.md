@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d1a3090318649e6f04a5b8f44dc4a9b2689a870
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a6cc7ffe52711f4e65f0191f8dc556760e8817ea
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119627"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668773"
 ---
 # <a name="debugging-xamarinios-apps"></a>偵錯 Xamarin.iOS 應用程式
 
@@ -26,7 +26,7 @@ _Xamarin.iOS 應用程式可以使用 Visual Studio for Mac 或 Visual Studio �
 
 Xamarin.iOS 偵錯工具會整合到您的 IDE 中，而且它可讓開發人員在模擬器和裝置上針對使用 Xamarin.iOS 所支援之任何受控語言建置的 Xamarin.iOS 應用程式進行偵錯。
 
-Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](http://www.mono-project.com/docs/advanced/runtime/docs/soft-debugger/) \(英文\)，這表示產生的程式碼和 Mono 執行階段會與 IDE 配合，以提供偵錯體驗。 這不同於像是 LLDB 或 MDB 等硬偵錯工具，這些偵錯工具會在被偵錯之程式不知情或未與被偵錯之程式合作的情況下控制該程式。
+Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-project.com/docs/advanced/runtime/docs/soft-debugger/) \(英文\)，這表示產生的程式碼和 Mono 執行階段會與 IDE 配合，以提供偵錯體驗。 這不同於像是 LLDB 或 MDB 等硬偵錯工具，這些偵錯工具會在被偵錯之程式不知情或未與被偵錯之程式合作的情況下控制該程式。
 
 ## <a name="setting-breakpoints"></a>設定中斷點
 
