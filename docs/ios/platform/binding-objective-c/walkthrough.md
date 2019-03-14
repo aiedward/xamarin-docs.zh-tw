@@ -94,7 +94,7 @@ IOS 上工作時，您可能會遇到您要使用第三方 Objective C 程式庫
 在此逐步解說中，我們將討論下列步驟：
 
 - **[建立靜態程式庫](#Creating_A_Static_Library)** -這個步驟包含建立的靜態程式庫**InfColorPicker** OBJECTIVE-C 程式碼。 靜態程式庫必須`.a`副檔名，且會內嵌至程式庫專案的.NET 組件。
-- **[建立 Xamarin.iOS 繫結專案](#Create_a_Xamarin.iOS_Binding_Project)** -一旦我們擁有的靜態程式庫，我們將使用它來建立 Xamarin.iOS 繫結專案。 繫結專案包含我們剛剛建立的靜態程式庫和中繼資料的形式C#說明如何使用 OBJECTIVE-C API 來的程式碼。 此中繼資料通常稱為 API 定義。 我們將使用**[目標 Sharpie](#Using_Objective_Sharpie)** 來幫助我們使用建立 API 定義。
+- **[建立 Xamarin.iOS 繫結專案](#Create_a_Xamarin.iOS_Binding_Project)** -一旦我們擁有的靜態程式庫，我們將使用它來建立 Xamarin.iOS 繫結專案。 繫結專案包含我們剛剛建立的靜態程式庫和中繼資料的形式C#說明如何使用 OBJECTIVE-C API 來的程式碼。 此中繼資料通常稱為 API 定義。 我們將使用 **[目標 Sharpie](#Using_Objective_Sharpie)** 來幫助我們使用建立 API 定義。
 - **[標準化的 API 定義](#Normalize_the_API_Definitions)** -目標 Sharpie 直接挑明解協助我們，但無法執行的所有項目。 我們將討論一些變更，我們需要進行的 API 定義，才能使用。
 - **[使用繫結程式庫](#Using_the_Binding)** -最後，我們將在其中建立 Xamarin.iOS 應用程式示範如何使用我們新建立的繫結的專案。
 
@@ -160,7 +160,7 @@ IOS 上工作時，您可能會遇到您要使用第三方 Objective C 程式庫
 
     [![](walkthrough-images/image16b.png "展開 [連結二進位與程式庫] 區段")](walkthrough-images/image16b.png#lightbox)
 
-13. 使用**+**  按鈕以開啟對話方塊，讓您將新增所需的畫面格架構上面所列：
+13. 使用 **+**  按鈕以開啟對話方塊，讓您將新增所需的畫面格架構上面所列：
 
     [![](walkthrough-images/image16c.png "加入上面所列的必要的框架架構")](walkthrough-images/image16c.png#lightbox)
 
@@ -532,7 +532,7 @@ Europa:Resources kmullins$
 
     ![](walkthrough-images/use02.png "將參考新增至繫結專案")
 
-1. **建立使用者介面在 iPhone** -按兩下**MainStoryboard.storyboard**中的檔案**InfColorPickerSample** iOS 設計工具中編輯的專案。 新增** 按鈕**檢視，並為它`ChangeColorButton`，如下列所示：
+1. **建立使用者介面在 iPhone** -按兩下 **MainStoryboard.storyboard** 中的檔案 **InfColorPickerSample** iOS 設計工具中編輯的專案。 新增** 按鈕**檢視，並為它`ChangeColorButton`，如下列所示：
 
     ![](walkthrough-images/use03.png "將按鈕新增至檢視")
 
@@ -554,7 +554,7 @@ Europa:Resources kmullins$
 
     ![](walkthrough-images/use02vs.png "將參考加入至繫結專案")
 
-1. **建立使用者介面在 iPhone** -按兩下**MainStoryboard.storyboard**中的檔案**InfColorPickerSample** iOS 設計工具中編輯的專案。 新增** 按鈕**檢視，並為它`ChangeColorButton`，如下列所示：
+1. **建立使用者介面在 iPhone** -按兩下 **MainStoryboard.storyboard** 中的檔案 **InfColorPickerSample** iOS 設計工具中編輯的專案。 新增** 按鈕**檢視，並為它`ChangeColorButton`，如下列所示：
 
     ![](walkthrough-images/use03vs.png "建立 iPhone 使用者介面")
 
