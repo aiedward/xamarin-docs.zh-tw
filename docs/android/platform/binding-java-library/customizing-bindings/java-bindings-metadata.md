@@ -21,7 +21,7 @@ _C#在 Xamarin.Android 中的程式碼會呼叫的 Java 程式庫，透過繫結
 
 ## <a name="overview"></a>總覽
 
-Xamarin.Android **Java 繫結程式庫**嘗試自動執行許多工作所需的繫結現有的 Android 程式庫的工具，有時也稱為協助_繫結產生器_。 Xamarin.Android 繫結時的 Java 程式庫，將會檢查 Java 類別，並產生一份所有封裝、 類型和成員的繫結。 這份 Api 會儲存在 XML 檔案，請參閱**\{專案 directory}\obj\Release\api.xml**如**發行**建置和**\{專案directory}\obj\Debug\api.xml** for**偵錯**建置。
+Xamarin.Android **Java 繫結程式庫**嘗試自動執行許多工作所需的繫結現有的 Android 程式庫的工具，有時也稱為協助_繫結產生器_。 Xamarin.Android 繫結時的 Java 程式庫，將會檢查 Java 類別，並產生一份所有封裝、 類型和成員的繫結。 這份 Api 會儲存在 XML 檔案，請參閱 **\{專案 directory}\obj\Release\api.xml** 如 **發行** 建置和 **\{專案directory}\obj\Debug\api.xml** for **偵錯** 建置。
 
 ![Api.xml 檔案 obj/Debug 資料夾中的位置](java-bindings-metadata-images/java-bindings-metadata-01.png)
 
@@ -246,7 +246,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ### <a name="obfuscated"></a>模糊處理
 
-混淆 Java 程式庫的工具可能會干擾 Xamarin.Android 繫結產生器，而且它能夠產生C#包裝函式類別。 模糊化類別的特性包括: * 類別名稱會包含**$**，亦即 **$.class** * 類別名稱完全洩露的小寫字元，也就是**a.class**
+混淆 Java 程式庫的工具可能會干擾 Xamarin.Android 繫結產生器，而且它能夠產生C#包裝函式類別。 模糊化類別的特性包括: * 類別名稱會包含 **$**，亦即 **$.class** * 類別名稱完全洩露的小寫字元，也就是 **a.class**
 
 此程式碼片段是如何產生的範例為 「 未經過混淆處理 」C#型別：
 
