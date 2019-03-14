@@ -174,7 +174,7 @@ protected override void AddedToScene ()
 
 ![](tiled-images/image10.png "如果看不到寶藏箱子屬性，寶藏箱子上按一下滑鼠右鍵，然後選取圖格屬性")
 
-並排顯示的屬性會實作具有名稱和值。 若要加入的屬性，請按一下**+** 按鈕，輸入名稱**IsTreasure**，按一下  **確定**，然後輸入值**true**: 
+並排顯示的屬性會實作具有名稱和值。 若要加入的屬性，請按一下 **+** 按鈕，輸入名稱 **IsTreasure** ，按一下  **確定** ，然後輸入值 **true** : 
 
 ![](tiled-images/image11.png "若要新增的屬性，按一下按鈕、 輸入名稱 IsTreasure，按一下 [確定]，然後輸入值為 true")
 
