@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: bd08e1f83f7b1752a2830bda1390ffae4f86b360
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 7f03df796c338380a776f9af26563af2e60e59a1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242403"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672647"
 ---
 # <a name="cross-platform-performance"></a>跨平台效能
 
@@ -257,7 +257,7 @@ public class FaceDetection
 
 受控語言 (例如 C#) 會使用記憶體回收來回收任何已配置給不再使用之物件的記憶體。 Xamarin 平台使用的兩種記憶體回收行程為：
 
-- [**SGen**](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/) – 這是新一代的記憶體回收行程，並且是 Xamarin 平台上的預設記憶體回收行程。
+- [**SGen**](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/) – 這是新一代的記憶體回收行程，並且是 Xamarin 平台上的預設記憶體回收行程。
 - [**Boehm**](http://www.hboehm.info/gc/) – 這是較為保守，非新一代的記憶體回收行程。 這是使用 Classic API 的 Xamarin.iOS 應用程式所使用的預設記憶體回收行程。
 
 SGen 會利用三個堆積中的其中一個來為物件配置空間：
@@ -334,7 +334,7 @@ SGen 的其中一個優點便是執行次要記憶體回收所需要的時間與
 - 減少應用程式受控程式碼的大小。 這可透過在每個組件上啟用連結器 (iOS 專案使用「全部連結」，Android 專案使用「連結所有組件」) 來達成。
 
 Android 應用程式也可以將每個 ABI (「架構」) 分割成個別的 APK。
-在此部落格文章中進一步了解：[How To Keep Your Android App Size Down](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down) (如何降低您的 Android 應用程式大小)。
+若要深入了解，請參閱此部落格文章：[How To Keep Your Android App Size Down](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down) (如何縮小您 Android 應用程式的大小)。
 
 <a name="optimizeimages" />
 

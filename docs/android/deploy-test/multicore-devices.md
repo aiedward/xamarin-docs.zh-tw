@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 1a2739d1a3848303b3086c23c0a28a889250ee2e
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: b89f5329430fed0387443bf923c45cd40181b22e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675506"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668383"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>多核心裝置和 Xamarin.Android
 
@@ -53,7 +53,7 @@ Android 所支援的每個 ABI 皆可透過唯一名稱來加以識別。
 
 這是 ARM 式 CPU (至少支援 ARMv5TE 指令集) 的 EABI 名稱。 Android 會遵循由小到大的 ARM GNU/Linux ABI。 此 ABI 不支援硬體輔助浮點運算。 所有 FP 作業皆由軟體協助程式函式負責執行，這些函式來自編譯器的 `libgcc.a` 靜態程式庫。 `armeabi` 不支援 SMP 裝置。
 
-**注意**：Xamarin.Android 的 `armeabi` 程式碼不具備執行緒安全性，所以不應用於具有多 CPU 的 `armeabi-v7a` 裝置 (下面會有說明)。 在單核心的 `armeabi-v7a` 裝置上使用 `aremabi` 程式碼很安全。
+**注意**：Xamarin.Android 的 `armeabi` 程式碼不具備安全執行緒，所以不應用於具有多 CPU 的 `armeabi-v7a` 裝置 (說明如下)。 在單核心的 `armeabi-v7a` 裝置上使用 `aremabi` 程式碼很安全。
 
 #### <a name="armeabi-v7a"></a>armeabi-v7a
 
@@ -74,7 +74,7 @@ Xamarin.Android 5.1 針對此架構提供了實驗性支援 (如需詳細資訊�
 - 補充的 SSE3 擴充 (SSSE3)。
 - SSE4 的任何變化。
 
-**注意：** Google TV 雖然在 x86 上執行，但提供支援的對象並不包括 Android 的 NDK。
+**注意：** Google TV 雖然在 x86 上執行，但並不受 Android 的 NDK 支援。
 
 #### <a name="x8664"></a>x86_64
 
@@ -125,7 +125,7 @@ Android 應用程式套件是保存了 Android 應用程式所需之所有程式
 
 Android 的原生程式庫安裝行為會因為 Android 版本的不同而有很大的變化。
 
-#### <a name="installing-native-libraries-pre-android-40"></a>安裝原生程式庫：Android 4.0 之前
+#### <a name="installing-native-libraries-pre-android-40"></a>安裝原生程式庫：Pre-Android 4.0
 
 4.0 Ice Cream Sandwich 之前的 Android 只會從 `.apk` 內的單一 ABI 解壓縮原生程式庫。 此一時期的 Android 應用程式會先嘗試解壓縮主要 ABI 的所有原生程式庫，如果這樣的程式庫不存在，Android 就會解壓縮次要 ABI 的所有原生程式庫。 完全不會進行「合併」。
 
@@ -177,7 +177,7 @@ $APP/lib/libone.so
 $APP/lib/libtwo.so
 ```
 
-不幸的是，這種行為會和順序相依，如下列文件所述 - [問題 24321：Galaxy Nexus 4.0.2 會在 apk 內含有 armeabi 和 armeabi-v7a 時使用 armeabi 機器碼](http://code.google.com/p/android/issues/detail?id=25321)。
+很不幸地，此行為會依順序而有所不同，如以下文件所示 - [Issue 24321:Galaxy Nexus 4.0.2 uses armeabi native code when both armeabi and armeabi-v7a is included in apk](http://code.google.com/p/android/issues/detail?id=25321) (問題 24321：Galaxy Nexus 4.0.2 會在 apk 內同時含有 armeabi 和 armeabi-v7a 時使用 armeabi 機器碼)。
 
 原生程式庫會「按照順序」(例如，依 unzip 所列) 來處理，而且會解壓縮第一個相符項目。 因為 `.apk` 包含 `libtwo.so` 的 `armeabi` 和 `armeabi-v7a` 版本，而 `armeabi` 最先列出，所以會解壓縮 `armeabi` 版本，而不是 `armeabi-v7a` 版本：
 
@@ -257,6 +257,6 @@ Xamarin.Android 目前未提供 `mips` 的支援。
 
 - [MIPS 架構](http://www.mips.com/products/product-materials/processor/mips-architecture)
 - [ARM 架構的 ABI (PDF)](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0036b/IHI0036B_bsabi.pdf)
-- [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html)
+- [Android NDK](https://developer.android.com/tools/sdk/ndk/index.html)
 - [問題 9089：Nexus One - 如果 armeabi-v7a 上有至少一個文件庫，就不會從 armeabi 載入任何原生程式庫](http://code.google.com/p/android/issues/detail?id=9089)
-- [問題 24321：Galaxy Nexus 4.0.2 會在 apk 內含有 armeabi 和 armeabi-v7a 時使用 armeabi 機器碼](http://code.google.com/p/android/issues/detail?id=25321)
+- [Issue 24321:Galaxy Nexus 4.0.2 uses armeabi native code when both armeabi and armeabi-v7a is included in apk](http://code.google.com/p/android/issues/detail?id=25321) (問題 24321：Galaxy Nexus 4.0.2 會在 apk 內同時含有 armeabi 和 armeabi-v7a 時使用 armeabi 機器碼)

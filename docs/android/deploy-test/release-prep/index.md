@@ -6,13 +6,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: dff57b142745729d5d38db4cce892bb1d55796a6
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
-ms.translationtype: HT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059726"
 ---
+
 # <a name="preparing-an-application-for-release"></a>準備可供發行的應用程式
 
 應用程式完成編碼和測試之後，必須準備可供散發的套件。 準備此套件的第一項工作是建置可供發行的應用程式，主要是設定一些應用程式屬性。
@@ -98,9 +93,9 @@ ms.locfileid: "53059726"
 
 [發行] 模式會關閉共用的執行階段並開啟連結，以讓應用程式只隨附 Xamarin.Android 在執行階段所需的項目。 Xamarin.Android 中的「連結器」使用靜態分析以判斷 Xamarin.Android 應用程式所使用或參考的組件、類型及類型成員。 連結器接著會捨棄所有未使用 (或參考) 的組件、類型及成員。 這樣就能大幅縮小套件的大小。 例如，請考慮 [HelloWorld](~/android/deploy-test/linker.md) 範例，其 APK 最終大小的縮減達到 83%： 
 
--   組態:無 &ndash; Xamarin.Android 4.2.5 大小 = 17.4 MB。
+-   設定：無 &ndash; Xamarin.Android 4.2.5 大小 = 17.4 MB。
 
--   組態:僅限 SDK 組件 &ndash; Xamarin.Android 4.2.5 大小 = 3.0 MB。
+-   設定：僅限 SDK 組件 &ndash; Xamarin.Android 4.2.5 大小 = 3.0 MB。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -222,7 +217,7 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 [AOT 編譯] 選項 ([封裝屬性](#Set_Packaging_Properties) 頁面上) 可啟用組件的預先 (AOT) 編譯。 啟用此選項時，在執行階段之前就會預先編譯組件，進而將 Just In Time (JIT) 啟動負荷降至最低。 產生的機器碼會連同未編譯的組件一起包含在 APK 中。 這樣可讓應用程式啟動時間較短，但代價是 APK 大小稍大。
 
-[AOT 編譯] 選項需要企業授權或更高。 只有將專案設定為 [發行] 模式時才能使用 [AOT 編譯]，且該選項預設為停用。 如需 AOT 編譯的詳細資訊，請參閱 [AOT](http://www.mono-project.com/docs/advanced/aot/) \(英文\)。
+[AOT 編譯] 選項需要企業授權或更高。 只有將專案設定為 [發行] 模式時才能使用 [AOT 編譯]，且該選項預設為停用。 如需 AOT 編譯的詳細資訊，請參閱 [AOT](https://www.mono-project.com/docs/advanced/aot/) \(英文\)。
 
 #### <a name="llvm-optimizing-compiler"></a>LLVM 最佳化編譯器
 
@@ -266,7 +261,7 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 應用程式可能不會使用每個參考程式庫中的每個方法，因此像是 ProGuard (請參閱前述) 等工具能夠從程式碼中移除未使用的方法。 最佳做法是只有在絕對必要時，才將 [啟用 Multi-Dex] 啟用，也就是說即使在使用 ProGuard 之後，應用程式仍參考超過 6.5 萬個 Java 方法。
 
-如需 Multi-Dex 的詳細資訊，請參閱[設定應用程式使用超過 6.4 萬個方法](http://developer.android.com/tools/building/multidex.html) \(英文\)。
+如需 Multi-Dex 的詳細資訊，請參閱[設定應用程式使用超過 6.4 萬個方法](https://developer.android.com/tools/building/multidex.html) \(英文\)。
 
 <a name="Compile" />
 
@@ -374,6 +369,6 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 - [多核心裝置和 Xamarin.Android](~/android/deploy-test/multicore-devices.md)
 - [CPU 架構](~/android/app-fundamentals/cpu-architectures.md)
-- [AOT](http://www.mono-project.com/docs/advanced/aot/)
-- [壓縮程式碼和資源](http://developer.android.com/tools/help/proguard.html)
-- [設定應用程式使用超過 6.4 萬個方法](http://developer.android.com/tools/building/multidex.html)
+- [AOT](https://www.mono-project.com/docs/advanced/aot/)
+- [壓縮程式碼和資源](https://developer.android.com/tools/help/proguard.html)
+- [設定應用程式使用超過 6.4 萬個方法](https://developer.android.com/tools/building/multidex.html)

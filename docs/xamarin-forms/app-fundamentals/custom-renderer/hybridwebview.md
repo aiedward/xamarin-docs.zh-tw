@@ -6,13 +6,13 @@ ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/19/2018
-ms.openlocfilehash: 997b3e8a8f847ae08eea7e022e7b3424d0fddd8d
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.date: 03/07/2019
+ms.openlocfilehash: b88226dda14e2ae5cd21bb066e107fb4bcad78f6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233935"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672517"
 ---
 # <a name="implementing-a-hybridwebview"></a>實作 HybridWebView
 
@@ -240,6 +240,8 @@ function invokeCSCode(data) {
 
 `invokeCSharpAction` JavaScript 函式不是在網頁中定義，而是由每個自訂轉譯器插入至網頁。
 
+在 iOS 上，此 HTML 檔案位於具有 **BundleResource** 建置動作的平台專案 [內容] 資料夾中。 在 Android 上，此 HTML 檔案則位於具有 **AndroidAsset** 建置動作的平台專案 [資產/內容] 資料夾中。
+
 <a name="Invoking_C_from_JavaScript" />
 
 ### <a name="invoking-c-from-javascript"></a>從 JavaScript 叫用 C#
@@ -319,6 +321,16 @@ namespace CustomRenderer.iOS
 
 > [!NOTE]
 > 僅 iOS 8 和更新版本支援 `WKWebView` 類別。
+
+此外，必須更新 **Info.plist** 以包含下列值：
+
+```
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+```
 
 ### <a name="creating-the-custom-renderer-on-android"></a>在 Android 上建立自訂轉譯器
 

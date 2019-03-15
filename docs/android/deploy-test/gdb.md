@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 84e99849e3b3d925747df59ffcde242c145dbe74
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c64714974f6467bcd7e0e4705a1426c83aa691b5
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111378"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667586"
 ---
 # <a name="gdb"></a>GDB
 
@@ -155,7 +155,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 您可藉由遵循[停用 Fast Deployment 的偵錯組建](#Debug_Builds_without_Fast_Deployment)一節來提供可存取的 `gdbserver`。
 
-一個缺點：`_Gdb` MSBuild 目標會終止任何先前執行中的應用程式執行個體。 這在 Android v4.0 之前的目標上無法運作。
+一個缺點：`_Gdb` MSBuild 目標會終止任何先前在執行的應用程式執行個體。 這在 Android v4.0 之前的目標上無法運作。
 
 <a name="Troubleshooting" />
 
@@ -163,7 +163,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 ### <a name="monopmip-doesnt-work"></a>`mono_pmip` 無法運作
 
-`mono_pmip` 功能 (用於[取得受控堆疊框架](http://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)上很有用) 會從 `libmonosgen-2.0.so` 中匯出，是 `_Gdb` 目標目前無法下拉的項目。 (這將會在未來的版本中修正。)
+`mono_pmip` 功能 (用於[取得受控堆疊框架](https://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)上很有用) 會從 `libmonosgen-2.0.so` 中匯出，是 `_Gdb` 目標目前無法下拉的項目。 (這將會在未來的版本中修正。)
 
 若要啟用呼叫位於 `libmonosgen-2.0.so` 中的函式，請從目標裝置將其複製到 `gdb-symbols` 目錄：
 

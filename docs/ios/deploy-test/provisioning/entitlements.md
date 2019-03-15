@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/13/2018
-ms.openlocfilehash: 6e45f87b3c64abb9de22e09150935e3e5065fea4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5ce778d0e6c2d023362ca5c9c691d77548dd7383
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103409"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672595"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>使用 Xamarin.iOS 中的權利
 
@@ -68,7 +68,7 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 
     ![](entitlements-images/servicevs02.png "編輯權利")
 
-    或者，按兩下 [Entitlements.plist] 檔案將會開啟「XML 來源」編輯器，可讓您設定權利屬性和機碼值，如下面的[權利參考](#keyreference)一節所述。
+    或者，按兩下 [Entitlements.plist] 檔案將會開啟 XML 來源編輯器，可讓您設定權利屬性和機碼值，如下方[權利機碼參考](#entitlement-key-reference)一節所述。
 
 5. 選取並設定 Xamarin.iOS 應用程式所需的一切權利，使其與建立「應用程式識別碼」時所定義的設定相符。
 6. 儲存對 **Entitlements.plist** 檔案所做的變更。
@@ -94,7 +94,7 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 
 ### <a name="wallet"></a>電子錢包
 
-*   **描述**：正式名稱為 Passbook，電子錢包是儲存和管理票卡的應用程式。 這些票卡可能是信用卡、商店卡、登機證或票證。
+*   **說明**：正式名稱為 Passbook，錢包是儲存及管理票卡的應用程式。 這些票卡可能是信用卡、商店卡、登機證或票證。
 
     - **票卡類型識別碼**
         * **機碼**：com.apple.developer.pass-type-identifiers
@@ -109,7 +109,7 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 
 ### <a name="icloud"></a>iCloud
 
-*   **描述**：iCloud 提供一個簡便的方式，可供 iOS 使用者儲存其內容及在裝置之間共用該內容。 有四種方法可供開發人員使用 iCloud 來為其使用者提供儲存方式：「機碼/值」儲存體、UIDocument 儲存體、CoreData，以及直接使用 CloudKit 來為個人檔案和目錄提供儲存體。 如需有關這些方法的詳細資訊，請參閱《iCloud 簡介》指南。
+*   **描述**：iCloud 提供一個簡便的方式，可供 iOS 使用者儲存其內容及在裝置之間共用該內容。 開發人員可透過四種方式使用 iCloud 為其使用者提供儲存方式：機碼值儲存、UIDocument 儲存、CoreData 及直接使用 CloudKit 來提供個別檔案及目錄的儲存。 如需有關這些方法的詳細資訊，請參閱《iCloud 簡介》指南。
 
     - **iCloud 文件和 CloudKit**
         - **機碼**：com.apple.developer.ubiquity-container-identifiers
@@ -128,7 +128,7 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 
 ### <a name="app-groups"></a>應用程式群組
 
-- **描述**：「應用程式群組」可讓不同的應用程式 (或應用程式及其擴充功能) 存取共用檔案儲存體位置。
+- **說明**：「應用程式群組」可讓不同的應用程式 (或應用程式及其擴充功能) 存取共用檔案儲存體位置。
 
     - **機碼**：com.apple.security.application-groups
     - **字串**：group.$(CFBundleIdentifier)
@@ -137,7 +137,7 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 
 ### <a name="apple-pay"></a>Apple Pay
 
-- **描述**：Apple Pay 可讓使用者透過其 iOS 裝置支付實體產品的費用。
+- **說明**：Apple Pay 可讓使用者透過其 iOS 裝置支付實體產品的費用。
     - **機碼**：com.apple.developer.in-app-payments
     - **字串**：merchant.your.mechantid
 
@@ -148,7 +148,7 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 
 ### <a name="siri"></a>Siri
 
-- **描述**：SiriKit 可讓 iOS 應用程式使用 App 延伸模組及新的「意圖和意圖 UI」架構，提供 iOS 裝置上 Siri 和「地圖」應用程式可存取的服務。 如需詳細資訊，請參閱《SiriKit 簡介》指南。
+- **說明**：SiriKit 可讓 iOS 應用程式使用 App Extensions (應用程式延伸模組) 及新的 Intents and Intents UI (意圖和意圖 UI) 架構，提供 iOS 裝置上 Siri 和 Maps (地圖) 應用程式可存取的服務。 如需詳細資訊，請參閱《SiriKit 簡介》指南。
     - **機碼**：com.apple.developer.siri
 
 ### <a name="personal-vpn"></a>個人 VPN
@@ -158,49 +158,49 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 
 ### <a name="keychain-sharing"></a>Keychain 共用
 
-- **描述**：Keychain 共用可讓應用程式開發人員將儲存在裝置 Keychain 中的密碼，與相同小組的其他應用程式開發人員共用。 藉由在字串中傳遞 Keychain 存取群組識別碼，即可限制存取權。
+- **說明**：Keychain 共用可讓應用程式開發人員將儲存在裝置 Keychain 中的密碼，與相同小組開發的其他應用程式共用。 藉由在字串中傳遞 Keychain 存取群組識別碼，即可限制存取權。
     - **機碼**：keychain-access-groups
     - **字串**：$(AppIdentifierPrefix) $(CFBundleIdentifier)
 
 ### <a name="inter-app-audio"></a>Inter-App 音訊
 
-- **描述**：「Inter-App 音訊」可讓開發人員在應用程式之間串流音訊。
+- **說明**：Inter-App Audio 可讓開發人員在應用程式之間串流音訊。
     - **機碼**：inter-app-audio
-    - **布林值**：YES
+    - **布林值**：是
 
 ### <a name="associated-domains"></a>相關聯的網域
 
-- **描述**：應視為通用連結的相關聯網域應該以此權利傳遞。 實作通用連結可讓應用程式與網站之間進行深層連結。 您應該提供應用程式所支援之每個網域的入口，且每個入口的開頭都應該是 `applinks:`
+- **說明**：應視為通用連結處理的相關網域應該以此權利傳遞。 實作通用連結可讓應用程式與網站之間進行深層連結。 您應該提供應用程式所支援之每個網域的入口，且每個入口的開頭都應該是 `applinks:`
     - **機碼**：com.apple.developer.associated-domains
     - **字串**：webcredentials:example.com
 
 ### <a name="data-protection"></a>資料保護
 
-- **描述**：啟用資料保護可使用內建的加密硬體，以加密格式儲存您應用程式中使用的敏感性資料。 保護層級預設會設定為完整保護 (只有在裝置已解除鎖定的情況下，才能存取檔案)。
+- **說明**：讓資料保護可使用內建加密硬體，以加密格式儲存您應用程式中使用的敏感性資料。 保護層級預設會設定為完整保護 (只有在裝置已解除鎖定的情況下，才能存取檔案)。
     - **機碼**：com.apple.developer.default-data-protection
     - **字串**：NSFileProtectionComplete
 
 ### <a name="homekit"></a>HomeKit
 
-- **描述**：HomeKit 架構提供一個可從 iOS 裝置設定、配置及管理所支援家用自動化裝置的平台。 如需有關使用 HomeKit 的詳細資訊，請參閱《HomeKit 簡介》指南。
+- **說明**：HomeKit 架構提供可從 iOS 裝置集中設定及管理所支援家用自動化裝置的平台。 如需有關使用 HomeKit 的詳細資訊，請參閱《HomeKit 簡介》指南。
     - **機碼**com.apple.developer.homekit
-    - **布林值**：YES
+    - **布林值**：是
 
 ### <a name="healthkit"></a>HealthKit
 
-- **描述**：HealthKit 是在 iOS 8 中導入的架構，可為健康相關的資訊提供一個集中、協調及安全的資料存放區。 如需有關使用 HealthKit 的詳細資訊，請參閱《HealthKit 簡介》指南。
+- **說明**：HealthKit 是在 iOS 8 中導入的架構，可為健康相關的資訊提供集中、協調及安全的資料存放區。 如需有關使用 HealthKit 的詳細資訊，請參閱《HealthKit 簡介》指南。
     - **機碼**：com.apple.developer.healthkit
-    - **布林值**：YES
+    - **布林值**：是
 
 ### <a name="wireless-accessory-configuration"></a>無線配件組態
 
-- **描述**：使用「無線配件組態」可讓您的應用程式設定 Wi-Fi 配件
+- **說明**：使用 Wireless Accessory Configuration 可讓您的應用程式設定 MFi Wi-Fi 配件
     - **機碼**：com.apple.external-accessory.wireless-configuration
-    - **布林值**：YES
+    - **布林值**：是
 
 ### <a name="classkit"></a>ClassKit
 
-- **描述**：ClassKit 可讓教師在應用程式中檢視學生的指派活動進度。
+- **說明**：ClassKit 可讓教師在應用程式中檢視學生的指派活動進度。
     - **機碼**：com.apple.developer.ClassKit-environment
     - **字串**：`development` 或 `production`
 

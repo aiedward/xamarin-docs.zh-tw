@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: ce102f189321cbd49b37e7718c1f3d478c322f55
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: e009ec60abc5afd06e43122424c325bbb1bf42ac
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526685"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668864"
 ---
 # <a name="set-up-device-for-development"></a>設定裝置以進行開發
 
@@ -77,7 +77,7 @@ OS X 不需要此步驟。只要利用 USB 傳輸線將裝置連接到 Mac 即�
 ### <a name="download-the-usb-drivers"></a>下載 USB 驅動程式
 
 Google Nexus 裝置 (不包括 Galaxy Nexus) 需要 Google USB 驅動程式。 Galaxy Nexus 的驅動程式[由 Samsung 散佈](http://www.samsung.com/us/support/downloads/)。
-所有其他 Android 裝置都應使用[來自其各自製造商的 USB 驅動程式](http://developer.android.com/tools/extras/oem-usb.html#Drivers)。
+所有其他 Android 裝置都應使用[來自其各自製造商的 USB 驅動程式](https://developer.android.com/tools/extras/oem-usb.html#Drivers)。
 
 安裝 **Google USB 驅動程式**套件，方法是啟動 Android SDK 管理員，然後展開 [Extras] 資料夾，如下列螢幕擷取畫面中所見：
 
@@ -144,7 +144,7 @@ USB 驅動程式下載之後，就必須安裝它們。
 
 ### <a name="connecting-over-wifi"></a>透過 WiFi 連接
 
-[Android Debug Bridge](http://developer.android.com/tools/help/adb.html) (*ADB*) 預設已設定為透過 USB 與 Android 裝置進行通訊。 可以將其重新設定為使用 TCP/IP，而不是 USB。 若要這樣做，裝置和電腦都必須在相同的 WiFi 網路上。 若要設定環境以透過 WiFi 進行偵錯，請從命令列發出下列步驟：
+[Android Debug Bridge](https://developer.android.com/tools/help/adb.html) (*ADB*) 預設已設定為透過 USB 與 Android 裝置進行通訊。 可以將其重新設定為使用 TCP/IP，而不是 USB。 若要這樣做，裝置和電腦都必須在相同的 WiFi 網路上。 若要設定環境以透過 WiFi 進行偵錯，請從命令列發出下列步驟：
 
 1.  判斷 Android 裝置的 IP 位址。 找出 IP 位址的其中一種方式，是到 [設定] > [Wi-Fi] 下，然後點選裝置連接到的 WiFi 網路。 這樣將會出現設定畫面，顯示網路連線的資訊，類似於以下螢幕擷取畫面中所見：
 
@@ -184,9 +184,9 @@ USB 驅動程式下載之後，就必須安裝它們。
 
 ## <a name="related-links"></a>相關連結
 
-- [Android Debug Bridge](http://developer.android.com/tools/help/adb.html) \(英文\)
-- [使用硬體裝置](http://developer.android.com/tools/device.html) \(英文\)
+- [Android Debug Bridge](https://developer.android.com/tools/help/adb.html) \(英文\)
+- [使用硬體裝置](https://developer.android.com/tools/device.html) \(英文\)
 - [Samsung 驅動程式下載](http://www.samsung.com/us/support/downloads/) \(英文\)
-- [OEM USB 驅動程式](http://developer.android.com/tools/extras/oem-usb.html#Drivers) \(英文\)
-- [Google USB Driver](http://developer.android.com/sdk/win-usb.html) \(英文\)
-- [XDA 開發人員：Windows 8 - ADB/fastboot 驅動程式問題已解決](http://forum.xda-developers.com/showthread.php?t=1583801) \(英文\)
+- [OEM USB 驅動程式](https://developer.android.com/tools/extras/oem-usb.html#Drivers) \(英文\)
+- [Google USB Driver](https://developer.android.com/sdk/win-usb.html) \(英文\)
+- [XDA Developers :Windows 8 - ADB/fastboot driver problem solved](http://forum.xda-developers.com/showthread.php?t=1583801) (XDA 開發人員：已解決的 Windows 8 - ADB/fastboot 驅動程式問題)

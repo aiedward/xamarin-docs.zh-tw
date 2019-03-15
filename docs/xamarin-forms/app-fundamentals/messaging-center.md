@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: ecd3fe7256eeaa51baf1bc2c367ff7560db51b0c
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 2e87142594da8f028323b5dc81afb0e9f8021028
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055811"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667051"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
@@ -35,7 +35,6 @@ _Xamarin.Forms 包含簡易傳訊服務，可傳送與接收訊息。_
 -  **Subscribe** - 接聽具有特定簽章的訊息，並在收到訊息後執行某些動作。 多位訂閱者可以接聽相同的訊息。
 -  **Send** - 發佈訊息讓接聽者採取動作。 若沒有任何接聽者訂閱訊息，則會忽略該訊息。
 
-
 `MessagingService` 是靜態類別，具有 `Subscribe` 和 `Send` 方法，他們會用於整個解決方案。
 
 訊息有 `message` 參數字串，用來為訊息「定址」。 `Subscribe` 與 `Send` 方法會使用泛型參數進一步控制訊息的傳遞方式，`message` 文字相同但泛型型別引數不同的兩則訊息並不會傳遞給同一位訂閱者。
@@ -56,6 +55,8 @@ _Xamarin.Forms 包含簡易傳訊服務，可傳送與接收訊息。_
 ## <a name="using-the-messagingcenter"></a>使用 MessagingCenter
 
 傳送訊息的原因可能是使用者互動 (例如按一下按鈕)、系統事件 (例如變更狀態的控制項) 或一些其他事件 (例如非同步下載完成)。 訂閱者可能會接聽，以變更使用者介面的外觀、儲存資料或觸發一些其他作業。
+
+如需如何使用 `MessagingCenter` 類別的詳細資訊，請參閱 [Communicating Between Loosely Coupled Components](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md) (在鬆散結合的元件間通訊)。
 
 ### <a name="simple-string-message"></a>簡易字串訊息
 
@@ -114,3 +115,4 @@ MessagingCenter 是降低結合程度 (特別是檢視模型之間) 的簡易方
 
 - [MessagingCenterSample](https://developer.xamarin.com/samples/UsingMessagingCenter)
 - [Xamarin.Forms 範例](https://github.com/xamarin/xamarin-forms-samples)
+- [在相依性低的元件之間通訊](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md)

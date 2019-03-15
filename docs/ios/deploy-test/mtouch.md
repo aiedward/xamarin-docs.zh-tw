@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 870a9cb20ea962b3c1a342e7222c5e9322537dd1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4f545893ca4cde441cd05fc3d8e52ecf0f6aae98
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109207"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669488"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>使用 mtouch 搭售 Xamarin.iOS 應用程式
 
@@ -66,7 +66,7 @@ $ mtouch -sim Hello.app hello.exe
 $ mtouch -dev -c "iPhone Developer: Miguel de Icaza" foo.exe
 ```
 
-在此特殊案例中，我們會使用 "iPhone Developer: Miguel de Icaza" 憑證來簽署應用程式。 這個步驟很重要，否則實體裝置會拒絕載入應用程式。
+在此個案中，我們使用 "iPhone Developer:Miguel de Icaza" 憑證來簽署應用程式。 這個步驟很重要，否則實體裝置會拒絕載入應用程式。
 
  <a name="Running_your_Application" />
 
@@ -84,7 +84,7 @@ $ mtouch --sdkroot /Applications/Xcode.app -launchsim Hello.app
 
 如果未設定 `--sdkroot` 旗標，則其值會預設為 xcode-select 路徑，並導致下列警告：
 
-> 例如：warning MT0061: No Xcode.app specified (using --sdkroot), using the system Xcode as reported by 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 
+> 例如：警告 MT0061:如 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 所回報，未透過系統 Xcode (使用 --sdkroot) 指定任何 Xcode.app 
 
 上述命令列會產生一些輸出，如下所示：
 
@@ -110,7 +110,7 @@ Press enter to terminate the application
 
 ### <a name="deploying-to-a-device"></a>部署至裝置
 
-若要部署至您的裝置，您需要佈建裝置，如 Apple 的[管理裝置](http://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/00-About_the_iOS_Application_Development_Workflow/introduction.html)文件所述。 正確佈建裝置後，您可以使用 mtouch 命令將已編譯的 ".app" 部署至裝置。 您可以使用下列命令來進行此作業：
+若要部署至您的裝置，您需要佈建裝置，如 Apple 的[管理裝置](https://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/00-About_the_iOS_Application_Development_Workflow/introduction.html)文件所述。 正確佈建裝置後，您可以使用 mtouch 命令將已編譯的 ".app" 部署至裝置。 您可以使用下列命令來進行此作業：
 
 ```bash
 $ mtouch —sdkroot /Applications/Xcode.app -installdev=MyApp.app
@@ -118,7 +118,7 @@ $ mtouch —sdkroot /Applications/Xcode.app -installdev=MyApp.app
 
 如果未設定 `--sdkroot` 旗標，則其值會預設為 xcode-select 路徑，並導致下列警告：
 
-> 例如：warning MT0061: No Xcode.app specified (using --sdkroot), using the system Xcode as reported by 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 
+> 例如：警告 MT0061:如 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 所回報，未透過系統 Xcode (使用 --sdkroot) 指定任何 Xcode.app 
 
 這些步驟通常會由 Visual Studio for Mac 執行。
 
