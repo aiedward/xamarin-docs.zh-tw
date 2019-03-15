@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: 71962c5e7d2f4c360e14b2040779498d4be95282
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: 270191890e8747ecad7d250fb0fe18ce253d3823
+ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831791"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57972646"
 ---
 # <a name="customizing-listview-appearance"></a>自訂 ListView 的外觀
 
@@ -206,8 +206,8 @@ ListView HeaderList = new ListView() {
 [`ListView`](xref:Xamarin.Forms.ListView) 已`HorizontalScrollBarVisibility`並`VerticalScrollBarVisibility`屬性，取得或設定[ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility)值，表示水平的或垂直捲軸為可見時。 這兩個屬性可以設定為下列值：
 
 - [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) 表示捲軸列預設平台，且與的預設值`HorizontalScrollBarVisibility`和`VerticalScrollBarVisibility`屬性。
-- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) 表示捲軸將會顯示，即使容納不下內容檢視中。
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) 表示捲軸列將不會顯示，如果內容不符合在檢視中的事件。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) 表示捲軸將會顯示，即使將內容放入檢視。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) 指出，捲軸列將不會顯示，即使內容不放在檢視中。
 
 <a name="Row_Separators" />
 

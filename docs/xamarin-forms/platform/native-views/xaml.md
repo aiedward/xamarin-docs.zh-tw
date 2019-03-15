@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 4f5f32871c273fc7ac3bab8fd9bcbcac03fc47fa
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: cf04c3e89e3effdd317fa98beb46f9075a1defcd
+ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233805"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57972659"
 ---
 # <a name="native-views-in-xaml"></a>在 XAML 中的原生檢視
 
@@ -325,7 +325,7 @@ IOS 和 Android 的原生按鈕會共用相同`OnButtonTap`事件處理常式，
 
 此頁面也包含每個平台的原生的選擇器 檢視。 每個原生的檢視會顯示水果的集合繫結及其`ItemSource`屬性設`SubclassedNativeControlsPageViewModel.Fruits`集合。 這可讓使用者從中挑選的成果，如下列螢幕擷取畫面所示：
 
-![](xaml-images/sub-classed.png "子類別化的原生檢視")
+![](xaml-images/sub-classed.png "子類別化之原生檢視")
 
 在 iOS 和 Android 原生的選擇器會使用方法，來設定控制項。 因此，這些選擇器必須公開屬性，使其適合 XAML 的子類別。 在通用 Windows 平台 (UWP)，`ComboBox`已經是適合 XAML 的因此不需要子類別化。
 

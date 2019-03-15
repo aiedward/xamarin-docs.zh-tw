@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: e57135c5a9a90ec75ae610ad92cecaa2a9b1e482
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: e220abc575270f483c0a822ae01f979966691432
+ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557034"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57972672"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms 標籤
 
@@ -356,7 +356,7 @@ public partial class MainPage : ContentPage
 
 ### <a name="creating-a-reusable-hyperlink-class"></a>建立可重複使用的超連結類別
 
-建立超連結的舊方法需要撰寫重複的程式碼，每當您需要在您的應用程式中的超連結。 不過，這兩個[ `Label` ](xref:Xamarin.Forms.Label)並[ `Span` ](xref:Xamarin.Forms.Span)類別都可以建立子類別化`HyperlinkLabel`和`HyperlinkSpan`類別，使用筆勢辨識器和文字格式在該處加入的程式碼。
+建立超連結的舊方法需要撰寫重複的程式碼，每當您需要在您的應用程式中的超連結。 不過，這兩個[ `Label` ](xref:Xamarin.Forms.Label)並[ `Span` ](xref:Xamarin.Forms.Span)類別可以建立子類別化`HyperlinkLabel`和`HyperlinkSpan`類別，使用筆勢辨識器和程式碼格式化的文字在該處加入。
 
 下列程式碼範例取自[超連結示範](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/HyperlinkDemos)範例，示範`HyperlinkSpan`類別：
 

@@ -105,7 +105,7 @@ Xamarin.Forms 佈景主題定義特定標準控制項的視覺外觀。 當您�
 
 ## <a name="visualvisualindexmd"></a>[視覺效果](visual/index.md)
 
-Xamarin.Forms 的視覺效果可讓轉譯器會選擇性地套用到`VisualElement`物件，而不需要子類別 Xamarin.Forms 控制項。
+Xamarin.Forms 資料視覺效果可用來建立 Xamarin.Forms 應用程式看起來完全相同，或基本相同，iOS 和 Android 上使用。
 
 ## <a name="visual-state-managervisual-state-managermd"></a>[Visual State Manager](visual-state-manager.md)
 
