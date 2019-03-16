@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: cfb684df89bf800a0d32607b119d1bd3fc297c58
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 41a9ec90b4b734dde7a982ac3d4b2e7b2082321c
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123735"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070862"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>使用適用於 iOS 的 Xamarin 設計工具的自動版面配置
 
@@ -22,7 +22,7 @@ ms.locfileid: "50123735"
 
 ## <a name="requirements"></a>需求
 
-在 Visual Studio for Mac 在 Visual Studio 2015 和 2017年在 Windows 上使用 Xamarin iOS 設計工具。
+在 Visual Studio for Mac 在 Visual Studio 2017 和更新版本上的 Windows 中使用 Xamarin iOS 設計工具。
 
 本指南假設您已經從設計工具的元件的知識[iOS 設計工具簡介](~/ios/user-interface/designer/introduction.md)指南。
 
@@ -56,11 +56,11 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 
 限制式工具列已更新，且現在包含兩個主要部分：
 
-- **條件約束模式按鈕切換**： 之前，您再按一下設計介面上選取的檢視，會在進入限制式模式時。 您現在應使用此切換按鈕的條件約束列中：
+- **條件約束模式按鈕切換**:先前，您輸入限制式模式，再按一下設計介面上選取的檢視。 您現在應使用此切換按鈕的條件約束列中：
 
   ![條件約束模式切換](designer-auto-layout-images/constraints.png)
 
-- **「 更新條件約束 」 按鈕：** 務必要注意的變更，視您處於編輯模式的條件約束。
+- **中的 < 更新條件約束 」 按鈕：** 請務必請注意，視變更您在編輯模式的條件約束。
   - 條件約束的編輯模式下此按鈕會調整以符合項目範圍的條件約束。
   - 框架編輯模式中這個按鈕會調整以符合的條件約束所定義的位置的項目框架。
 

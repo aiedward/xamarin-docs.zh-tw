@@ -5,12 +5,12 @@ description: 如何將現有的 Windows Form 或 WPF 應用程式，來建立 ma
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 3d3af9c78b7486e7ebfb063a3cb00fabdbd0f5b7
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 4bf1dea170bd6b63209693963d54cc2e16163eea
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617536"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58071095"
 ---
 # <a name="desktop-app-porting-guidance"></a>傳統型應用程式的移轉指導
 
@@ -26,7 +26,7 @@ ms.locfileid: "51617536"
 
 ## <a name="net-portability-analyzer"></a>.NET portability Analyzer
 
-Visual Studio 2015 和 2017年的支援[.NET Portability Analyzer](https://docs.microsoft.com/dotnet/articles/standard/portability-analyzer) ([下載適用於 Windows](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer)) 這可以查看您現有的應用程式，並告訴您多少程式碼可以移植 「 現狀 」 到其他平台. 您可以深入了解從此[Channel 9 影片](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer)。
+Visual Studio 2017 和更新版本支援[.NET Portability Analyzer](https://docs.microsoft.com/dotnet/articles/standard/portability-analyzer) ([下載適用於 Windows](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer)) 這可以查看您現有的應用程式，並告訴您可移植程式碼數量，「 現狀 」 其他平台。 您可以深入了解從此[Channel 9 影片](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer)。
 
 另外還有命令列工具可以從下載[GitHub 上的可攜性分析器](https://github.com/Microsoft/dotnet-apiport)並用來提供相同的報表。
 

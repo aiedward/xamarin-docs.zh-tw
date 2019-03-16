@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/31/2018
-ms.openlocfilehash: 8622c40e41071d6c05b05abbe2d5d8a8a844ebde
-ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
+ms.openlocfilehash: 2c6409410ecba7df8559c07c3231f5e493c98897
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51285582"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58071070"
 ---
 # <a name="ios-designer-basics"></a>iOS 設計工具基本概念
 
 _本指南將介紹適用於 iOS 的 Xamarin 設計工具。它會示範如何使用 iOS 設計工具以視覺化方式配置控制項、 如何存取這些控制項中的程式碼，以及如何編輯內容。_
 
-適用於 iOS 的 Xamarin 設計工具是視覺介面設計工具類似於 Xcode 的 Interface Builder 和 Android 的設計工具。 它的許多功能包括無縫整合 Visual Studio for Mac 和 Visual Studio 2015 和 2017年、 拖放編輯、 設定事件處理常式、 介面與呈現自訂控制項的能力。
+適用於 iOS 的 Xamarin 設計工具是視覺介面設計工具類似於 Xcode 的 Interface Builder 和 Android 的設計工具。 它的許多功能包括無縫整合 Visual Studio for Windows 和 Mac、 拖放編輯、 設定事件處理常式、 介面與呈現自訂控制項的能力。
 
 ## <a name="requirements"></a>需求
 
-IOS 設計工具是適用於 Visual Studio for Mac 中，以及 Visual Studio 2015 和 2017年在 Windows 上。 在 Visual Studio 2015 或 2017年，iOS 設計工具雖然 Xcode 不需要在執行必須正確設定的 Mac 組建主機的連接。
+IOS 設計工具是適用於 Mac 和 Visual Studio 2017 和更新版本上 Windows 的 Visual Studio 中提供。 在 Visual Studio for Windows，iOS 設計工具雖然 Xcode 不需要在執行必須正確設定的 Mac 組建主機的連接。
 
 本指南假設您熟悉內容涵蓋[快速入門引導](~/ios/get-started/index.md)。
 
@@ -84,13 +84,13 @@ IOS 設計工具可讓開發人員以視覺化方式設計應用程式的使用�
 
 在  **Solution Pad**，請巡覽至**ViewController.cs**洩漏指示器按一下即可顯示，並檢視控制器的`ViewController`類別定義跨兩個檔案，其中每一個包含[部分類別](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)定義：
 
-[![這兩個檔案構成 ViewController 類別： ViewController.cs 和 ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "兩個檔案構成 ViewController 類別： ViewController.cs 和 ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
+[![這兩個檔案構成 ViewController 類別：ViewController.cs 和 ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "兩個檔案構成 ViewController 類別：ViewController.cs 和 ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 在 [**方案總管] 中**，請巡覽至**ViewController.cs**洩漏指示器按一下即可顯示，並檢視控制器的`ViewController`類別定義跨越兩個檔案，每個其中包含[部分類別](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)定義：
 
-[![這兩個檔案構成 ViewController 類別： ViewController.cs 和 ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "兩個檔案構成 ViewController 類別： ViewController.cs 和 ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
+[![這兩個檔案構成 ViewController 類別：ViewController.cs 和 ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "兩個檔案構成 ViewController 類別：ViewController.cs 和 ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
 
 -----
 
@@ -151,7 +151,7 @@ namespace Designer
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-大多數使用 Visual Studio 2015 或 2017年建立的 Xamarin.iOS 專案都包含分鏡腳本。 若要檢視分鏡腳本的內容，請按兩下.storyboard 檔案中的**方案總管 中**:
+大多數使用 Visual Studio 建立的 Xamarin.iOS 專案都包含分鏡腳本。 若要檢視分鏡腳本的內容，請按兩下.storyboard 檔案中的**方案總管 中**:
 
 [![IOS 設計工具中開啟的分鏡腳本](introduction-images/7-storyboardopen-vs.png "iOS 設計工具中開啟的分鏡腳本")](introduction-images/7-storyboardopen-vs-large.png#lightbox)
 

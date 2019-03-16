@@ -20,7 +20,7 @@ ms.date: 03/22/2017
 
 ## <a name="requirements"></a>需求
 
-分鏡腳本可以搭配使用 iOS 設計工具在 Visual Studio for Mac 或 Visual Studio 2015 和 2017年安裝 Xamarin 工作負載。
+分鏡腳本可以搭配使用 iOS 設計工具在 Visual Studio for Mac 或 Visual Studio 2017 安裝 Xamarin 工作負載。
 
 ## <a name="what-is-a-storyboard"></a>什麼是分鏡腳本？
 

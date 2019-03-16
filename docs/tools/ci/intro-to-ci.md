@@ -6,12 +6,12 @@ ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: lobrien
 ms.author: laobri
 ms.date: 07/19/2017
-ms.openlocfilehash: f2db5f4acd57cbf887d9955d9ea61fce4427c1c3
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 35c5811d57ade1d320e56e292c1eeed094963a0d
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672400"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070913"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>使用 Xamarin 的連續整合簡介
 
@@ -65,7 +65,7 @@ Visual Studio、 Azure DevOps 和 Team Foundation Server，請參閱所有的應
 
 能完全是透過網頁瀏覽器或 Git [GUI 用戶端](http://git-scm.com/downloads/guis)Linux、 Mac OSX 和 Windows 上執行。 它是免費的公用存放庫;私用存放庫需要[付費方案](https://github.com/pricing)。
 
-Visual Studio 2015 和 Visual Studio for Mac 提供適用於 Git; 的原生支援對於較舊版本，Microsoft 提供[可下載的延伸模組適用於 Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)。 如先前所述，Visual Studio Team Services 和 TFS 可以使用 Git 進行版本控制，而非 TFVC。
+最新版的 Visual Studio for Windows 和 Mac 提供適用於 Git 的原生支援。 Microsoft 提供[可下載的延伸模組適用於 Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)針對較舊版的 Visual Studio。 如先前所述，Visual Studio Team Services 和 TFS 可以使用 Git 進行版本控制，而非 TFVC。
 
 ### <a name="subversion"></a>Subversion
 

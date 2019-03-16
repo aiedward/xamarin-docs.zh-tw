@@ -1,30 +1,27 @@
 ---
-title: 在安裝後遺漏的 Visual Studio 擴充功能
+title: 在安裝後遺漏 Visual Studio 延伸模組
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 066d36a3-e553-48d6-8769-c972274d7641
 author: asb3993
 ms.author: amburns
 ms.date: 03/20/2017
-ms.openlocfilehash: 7b1f96807d77d9db0a892c5e78124eb3a9890edc
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 3e3d426e7b00725eafeba139de5bc46d416c368a
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251048"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070887"
 ---
-# <a name="missing-visual-studio-extensions-after-installation"></a>在安裝後遺漏的 Visual Studio 擴充功能
+# <a name="missing-visual-studio-extensions-after-installation"></a>在安裝後遺漏 Visual Studio 延伸模組
 
-## <a name="error-message-this-project-is-incompatible-with-the-current-edition-of-visual-studio"></a>錯誤訊息： 此專案是與目前的 Visual Studio 版本不相容
+## <a name="error-message-this-project-is-incompatible-with-the-current-edition-of-visual-studio"></a>錯誤訊息：這個專案與目前的 Visual Studio 版本不相容
 
-請確定在安裝相容版本的 Visual Studio:
-
--   Visual Studio 2017 （Community、 Professional 或 Enterprise）
--   Visual Studio 2015 （Community、 Professional 或 Enterprise）
+請確定 Visual Studio 2017 （Community、 Professional 或 Enterprise） 或更新版本的已安裝。
 
 另請參閱[Windows 需求](~/cross-platform/get-started/requirements.md#windows-requirements)。
 
-## <a name="possible-fix-1-change-the-installation-to-make-sure-the-visual-studio-extensions-are-installed"></a>可能的修正程式 1： 變更來確定已安裝 Visual Studio 擴充功能安裝
+## <a name="possible-fix-1-change-the-installation-to-make-sure-the-visual-studio-extensions-are-installed"></a>可能的修正程式 1:變更要確定已安裝 Visual Studio 擴充功能安裝
 
 在某些情況下，Xamarin 安裝程式可能會自動取消核取的 Visual Studio 擴充功能的安裝選項。 如果是問題的原因，安裝使用的安裝程式遺漏的 Visual Studio 擴充功能**變更**命令。 例如，若要安裝 Visual Studio 2013 的擴充功能：
 
@@ -40,7 +37,7 @@ ms.locfileid: "40251048"
 
 5. 繼續執行安裝程式精靈的其餘部分。
 
-## <a name="possible-fix-2-ask-visual-studio-to-set-up-the-extensions-again"></a>可能的修正程式 2： 要求再次設定擴充功能的 Visual Studio
+## <a name="possible-fix-2-ask-visual-studio-to-set-up-the-extensions-again"></a>可能的修正程式 2:要求再次設定擴充功能的 Visual Studio
 
 1. 檢查是否 Xamarin 延伸模組已複製到 Visual Studio 延伸模組資料夾：
 
@@ -55,7 +52,7 @@ ms.locfileid: "40251048"
 
     `"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe" /setup`
 
-## <a name="possible-fix-3-try-a-fresh-reinstall-of-xamarin"></a>可能的修正程式 3： 嘗試全新重新安裝 Xamarin
+## <a name="possible-fix-3-try-a-fresh-reinstall-of-xamarin"></a>可能的修正程式 3:試用全新重新安裝 Xamarin
 
 1.  從 Windows 控制台的 解除安裝有下列任一項：
 
@@ -99,7 +96,7 @@ ms.locfileid: "40251048"
 
 10.  重新安裝的 Xamarin 從目前的穩定版本[visualstudio.com](https://visualstudio.com/xamarin)。
 
-## <a name="possible-fix-4-repair-visual-studio-installation"></a>可能的修正程式 4： 修復 Visual Studio 安裝
+## <a name="possible-fix-4-repair-visual-studio-installation"></a>可能的修正程式 4:修復 Visual Studio 安裝
 
 1.  開啟 Windows**程式和功能**控制台。
 

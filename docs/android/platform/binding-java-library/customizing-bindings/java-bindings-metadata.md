@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: ce9bf0293b846299cc7cd06773ce936f725715fa
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 06a7a3b00934b7a2f3eeb4fcfa6fc90071901ba0
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669891"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070900"
 ---
 # <a name="java-bindings-metadata"></a>Java 繫結中繼資料
 
@@ -246,7 +246,10 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ### <a name="obfuscated"></a>模糊處理
 
-混淆 Java 程式庫的工具可能會干擾 Xamarin.Android 繫結產生器，而且它能夠產生C#包裝函式類別。 模糊化類別的特性包括: * 類別名稱會包含 **$**，亦即 **$.class** * 類別名稱完全洩露的小寫字元，也就是 **a.class**
+混淆 Java 程式庫的工具可能會干擾 Xamarin.Android 繫結產生器，而且它能夠產生C#包裝函式類別。 模糊化類別的特性包括： 
+
+* 類別名稱會包含 **$** ，也就是 **$.class** 
+* 類別名稱完全洩露的小寫字元，也就是**a.class**
 
 此程式碼片段是如何產生的範例為 「 未經過混淆處理 」C#型別：
 

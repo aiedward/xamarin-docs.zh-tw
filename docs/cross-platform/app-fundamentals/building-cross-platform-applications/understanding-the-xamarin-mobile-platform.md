@@ -6,12 +6,12 @@ ms.assetid: FBCEF258-D3D8-A420-79ED-3AAB4A7308E4
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 2765ab0c697d977eb332e47cfbc413e3e0adafb7
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7ac8df634c4abe3aafa725992c251f9ef879dc00
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668812"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070978"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>第 1 篇 – 了解 Xamarin 行動裝置平台
 
@@ -105,7 +105,7 @@ Xamarin 開發可在 Mac 或 Windows 上的 Visual Studio 中使用。 您選擇
 Android 應用程式開發需要 Java 和 Android Sdk 安裝。 這些提供的編譯器、 模擬器和其他建置、 部署和測試所需的工具。 Java、 Google 的 Android SDK 和 Xamarin 的工具可以所有安裝和執行下列組態：
 
 -  Mac OS X El Capitan 及以上 （10.11 +） 使用 Visual Studio for Mac
--  Windows 7 與上述使用 Visual Studio 2015 或 2017年
+-  Windows 7 與上述 Visual Studio 2017 或更新版本
 
 
 Xamarin 提供統一的安裝程式將您的系統以設定必要的 Java、 Android 和 Xamarin 工具 （包括畫面版面配置的視覺化設計工具）。 請參閱[Xamarin.Android 安裝指南](~/android/get-started/installation/index.md)如需詳細指示。

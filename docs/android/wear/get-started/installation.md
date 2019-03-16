@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: af9be54b4509f7202618d9d68210eb534f63ccbf
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 96fd6d32f37dd90422f05caf33cfda9a65683fd2
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671633"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58071030"
 ---
 # <a name="setup-and-installation"></a>設定與安裝
 
@@ -22,7 +22,7 @@ _這篇文章會逐步引導完成安裝步驟和準備您的電腦和裝置進�
 
 需要下列項目來建立以 Xamarin 為基礎的 Android 穿戴式應用程式：
 
--   **Visual Studio 或 Visual Studio for Mac** &ndash;您如果您使用 Visual Studio 中，Visual Studio 2015 Professional 或更新版本。
+-   **Visual Studio 或 Visual Studio for Mac** &ndash; Visual Studio 2017 Community 或更新版本。
 
 -   **Xamarin.Android** &ndash; Xamarin.Android 4.17 或更新版本必須安裝並設定與 Visual Studio 或 Visual Studio for mac。
 
