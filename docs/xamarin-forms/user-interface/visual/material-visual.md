@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms 資料視覺效果
-description: Xamarin.Forms 資料視覺效果可用來建立 Xamarin.Forms 應用程式看起來完全相同，或基本相同，iOS 和 Android 上使用。
+title: Xamarin.Forms 材質視覺效果
+description: Xamarin.Forms 材質視覺效果可用來建立在 iOS 和 Android 上看起來相同或絕大部分都相同的 Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: B774F68C-EF9E-49E1-B738-CDC64879ADA2
 ms.technology: xamarin-forms
@@ -14,7 +14,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 03/14/2019
 ms.locfileid: "57972620"
 ---
-# <a name="xamarinforms-material-visual"></a>Xamarin.Forms 資料視覺效果
+# <a name="xamarinforms-material-visual"></a>Xamarin.Forms 材質視覺效果
 
 [![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VisualDemos/)
 
@@ -46,7 +46,7 @@ Material 轉譯器目前包含在[Xamarin.Forms.Visual.Material](https://www.nug
 - [`Slider`](xref:Xamarin.Forms.Slider)
 - [`Stepper`](xref:Xamarin.Forms.Stepper)
 
-在功能上，材質的轉譯器為沒有不同的預設轉譯器。
+在功能上，材質轉譯器與預設轉譯器沒有不同。
 
 ## <a name="initialize-material-renderers"></a>初始化 material 轉譯器
 
@@ -97,7 +97,7 @@ contentPage.Visual = VisualMarker.Material;
 
 [![預設的轉譯器，在 iOS 和 Android 上的螢幕擷取畫面](material-visual-images/default-renderers.png "檢視 使用預設的轉譯器")](material-visual-images/default-renderers-large.png#lightbox)
 
-下列螢幕擷取畫面顯示相同的使用者介面使用的材料的轉譯器轉譯：
+下列螢幕擷取畫面顯示與使用材質轉譯器轉譯後之使用者介面相同的使用者介面：
 
 [![材質的轉譯器，在 iOS 和 Android 上的螢幕擷取畫面](material-visual-images/material-renderers.png "檢視使用資料轉譯器")](material-visual-images/material-renderers-large.png#lightbox)
 
