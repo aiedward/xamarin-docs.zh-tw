@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 02/12/2019
 ms.custom: video
-ms.openlocfilehash: 7e61041fa33557c4e1db3613b75b575e9d456231
-ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
+ms.openlocfilehash: ad56a626133e03c1ca75b1db26b0904d5df7fea3
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56240418"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58175326"
 ---
 # <a name="xamarinessentials-share"></a>Xamarin.Essentials:共用
 
@@ -57,7 +57,7 @@ public class ShareTest
 
 提出要求時，會顯示要與外部應用程式共用的使用者介面：
 
-![共用](share-images/share.png)
+![共用](images/share.png)
 
 ## <a name="platform-differences"></a>平台差異
 
