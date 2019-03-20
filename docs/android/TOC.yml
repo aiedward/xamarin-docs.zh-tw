@@ -390,10 +390,14 @@ items:
       href: ~/essentials/battery.md?context=xamarin/android
     - name: 剪貼簿
       href: ~/essentials/clipboard.md?context=xamarin/android
+    - name: 色彩轉換器
+      href: ~/essentials/color-converters.md?context=xamarin/android
     - name: 羅盤
       href: ~/essentials/compass.md?context=xamarin/android
     - name: 連線能力
       href: ~/essentials/connectivity.md?context=xamarin/android
+    - name: 偵測搖動
+      href: ~/essentials/detect-shake.md?context=xamarin/android
     - name: 裝置顯示資訊
       href: ~/essentials/device-display.md?context=xamarin/android
     - name: 裝置資訊
@@ -424,6 +428,8 @@ items:
       href: ~/essentials/orientation-sensor.md?context=xamarin/android
     - name: 電話撥號程式
       href: ~/essentials/phone-dialer.md?context=xamarin/android
+    - name: 平台擴充 (Size, Rect, Point)
+      href: ~/essentials/platform-extensions.md?context=xamarin/android
     - name: 偏好設定
       href: ~/essentials/preferences.md?context=xamarin/android
     - name: 安全存放裝置
@@ -434,6 +440,8 @@ items:
       href: ~/essentials/sms.md?context=xamarin/android
     - name: 文字轉換語音
       href: ~/essentials/text-to-speech.md?context=xamarin/android
+    - name: 單位轉換器
+      href: ~/essentials/unit-converters.md?context=xamarin/android
     - name: 版本追蹤
       href: ~/essentials/version-tracking.md?context=xamarin/android
     - name: 震動
@@ -650,9 +658,9 @@ items:
   - name: 範例
     href: samples/index.yml
   expanded: true
-ms.openlocfilehash: 40bbc9dbf2a05212c1a901492520ff83f06c974c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7621bf3950c58cb4ffd6f33b73e9153409f93c9e
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671594"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58175378"
