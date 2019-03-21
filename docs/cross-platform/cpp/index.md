@@ -4,7 +4,7 @@ title: 透過 Xamarin 使用 C/c + + 程式庫
 description: 'Visual Studio for Mac 可用來建置和整合行動裝置應用程式中的跨平台 C/c + + 程式碼，適用於 Android 和 iOS，使用 Xamarin 和C#。 這篇文章說明如何設定和偵錯 c + + 專案中的 Xamarin 應用程式。'
 author: mikeparker104
 ms.author: miparker
-ms.date: 12/17/20178
+ms.date: 12/17/2018
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>透過 Xamarin 使用 C/c + + 程式庫
 
@@ -641,7 +641,7 @@ NuGet 摘要的最簡單形式是本機目錄：
     > [!NOTE]
     > 在此情況下則不需要指定 **使用者名稱** 並 **密碼**。 
 
-4. 按一下 [確定] 。
+4. 按一下 [確定 **Deploying Office Solutions**]。
 
 ### <a name="referencing-the-package"></a>參考套件
 
