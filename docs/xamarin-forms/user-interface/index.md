@@ -27,7 +27,7 @@ Xamarin.Forms 包含自己的動畫基礎結構直接建立簡單的動畫，同
 
 `Button`回應點選或按一下，以指示應用程式執行特定工作。
 
-## <a name="collectionviewcollectionviewmd"></a>[CollectionView](collectionview.md)
+## <a name="collectionviewcollectionviewindexmd"></a>[CollectionView](collectionview/index.md)
 
 `CollectionView`是一種有彈性且高效能的檢視，來呈現資料使用不同的版面配置規格的清單。
 
@@ -105,7 +105,7 @@ Xamarin.Forms 佈景主題定義特定標準控制項的視覺外觀。 當您�
 
 ## <a name="visualvisualindexmd"></a>[視覺效果](visual/index.md)
 
-Xamarin.Forms 資料視覺效果可用來建立 Xamarin.Forms 應用程式看起來完全相同，或基本相同，iOS 和 Android 上使用。
+Xamarin.Forms 材質視覺效果可用來建立在 iOS 和 Android 上看起來相同或絕大部分都相同的 Xamarin.Forms 應用程式。
 
 ## <a name="visual-state-managervisual-state-managermd"></a>[Visual State Manager](visual-state-manager.md)
 

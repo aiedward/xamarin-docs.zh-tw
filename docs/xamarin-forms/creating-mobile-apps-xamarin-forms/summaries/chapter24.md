@@ -1,18 +1,18 @@
 ---
 title: 第 24 章的摘要。 頁面巡覽
-description: 使用 Xamarin.Forms 建立行動應用程式： 第 24 章摘要。 頁面巡覽
+description: 使用 Xamarin.Forms 建立行動應用程式：第 24 章的摘要。 頁面巡覽
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 764a148ffffc2c69dbab5aeca872e2d10ce9f159
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 7210cffb3cd348a6bdbf6cee80c4b6cd55553c58
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052737"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329373"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>第 24 章的摘要。 頁面巡覽
 
@@ -22,7 +22,7 @@ ms.locfileid: "53052737"
 
 ## <a name="modal-pages-and-modeless-pages"></a>強制回應頁面和非強制回應頁面
 
-`VisualElement` 定義[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation)屬性的型別[ `INavigation` ](xref:Xamarin.Forms.INavigation)，其中包含下列兩種方法，以巡覽至新的頁面：
+`VisualElement` 定義[ `Navigation` ](xref:Xamarin.Forms.NavigableElement.Navigation)屬性的型別[ `INavigation` ](xref:Xamarin.Forms.INavigation)，其中包含下列兩種方法，以巡覽至新的頁面：
 
 - [`PushAsync`](xref:Xamarin.Forms.INavigation.PushAsync(Xamarin.Forms.Page))
 - [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync(Xamarin.Forms.Page))
