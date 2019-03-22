@@ -38,7 +38,7 @@ ms.date: 03/21/2018
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-在 Visual Studio 2015 和更新版本中，透過專案 [屬性] 的 [Android 資訊清單] 區段來指定應用程式圖示，如下列螢幕擷取畫面所示：
+在 Visual Studio 2017 和更新版本中，透過專案 [屬性] 的 [Android 資訊清單] 區段來指定應用程式圖示，如下列螢幕擷取畫面所示：
 
 [![設定應用程式圖示](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png#lightbox)
 
@@ -186,7 +186,8 @@ Android 資訊清單包含 `android:debuggable` 屬性，可控制是否能對�
 即使[已停用偵錯](#Disable_Debugging)，攻擊者還是可以重新封裝應用程式、新增或移除組態選項或權限。 這可讓他們進行還原工程、偵錯，或竄改應用程式。
 [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) 可用來混淆受控碼，並在建置階段將執行階段安全性狀態偵測程式碼插入 Xamarin.Android 應用程式，以偵測應用程式是否正在 Root 破解的裝置上執行並回應。
 
-Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 3 (及更新版本) 才有能使用 Xamarin.Android 的正確版本。 若要使用 Dotfuscator，請按一下 [工具] > [PreEmptive Protection - Dotfuscator]。
+Dotfuscator CE 隨附於 Visual Studio 2017 中。
+若要使用 Dotfuscator，請按一下 [工具] > [PreEmptive Protection - Dotfuscator]。
 
 若要設定 Dotfuscator CE，請參閱[搭配 Xamarin 使用 Dotfuscator Community Edition](https://www.preemptive.com/obfuscating-xamarin-with-dotfuscator)。
 一旦設定之後，Dotfuscator CE 會自動保護建立的每個組建。

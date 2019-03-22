@@ -6,12 +6,12 @@ ms.assetid: 7683F2B8-7FDF-48C4-8E7D-649D4D4E79F0
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: c43b3f3204cba890cb2fa9c4cfc33a23250e0550
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b6b95f730b966ef5edaabbe7b0f333c2cacf5bc5
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112048"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58070835"
 ---
 # <a name="installing-nunit-264-using-nuget"></a>使用 NuGet 安裝 NUnit 2.6.4
 
@@ -25,7 +25,7 @@ _本指南涵蓋如何使用 NuGet 將 NUnit 3.0 降級至 NUnit 2.6.4。_
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-本指南會討論如何在 Visual Studio 2015 中使用 NuGet 來將 NUnit 3.0 降級至 NUnit 2.6.4。
+本指南會討論如何在 Visual Studio 2015 或更新版本中，使用 NuGet 來將 NUnit 3.0 降級至 NUnit 2.6.4。
 
 -----
 
@@ -62,7 +62,7 @@ _本指南涵蓋如何使用 NuGet 將 NUnit 3.0 降級至 NUnit 2.6.4。_
 
 ## <a name="installing-nunit-264-in-visual-studio"></a>在 Visual Studio 中安裝 NUnit 2.6.4
 
-本節著重在 Visual Studio 2015 中使用「NuGet 套件管理員主控台」，將 NUnit 3.0 解除安裝，然後安裝 NUnit 2.6.4。
+本節著重在 Visual Studio 2015 或更新版本中使用「NuGet 套件管理員主控台」，將 NUnit 3.0 解除安裝，然後安裝 NUnit 2.6.4。
 
 
 1. **啟動 NuGet 套件管理員主控台** - 選取 [工具] > [NuGet 套件管理員] > [套件管理員主控台]：
@@ -105,7 +105,7 @@ _本指南涵蓋如何使用 NuGet 將 NUnit 3.0 降級至 NUnit 2.6.4。_
     
 ## <a name="summary"></a>總結
 
-本指南討論如何在 Visual Studio 2015 中使用套件管理員主控台將 NUnit 3.0 降級至 NUnit 2.6.4。
+本指南會討論如何在 Visual Studio 2015 或更新版本中使用套件管理員主控台將 NUnit 3.0 降級至 NUnit 2.6.4。
 
 -----
 

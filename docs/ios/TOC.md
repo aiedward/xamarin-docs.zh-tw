@@ -154,6 +154,7 @@
 ### [iOS 延伸模組](platform/extensions.md)
 ### [內嵌的架構](platform/embedded-frameworks.md)
 ### [例外狀況封送處理](platform/exception-marshaling.md)
+### [檔案壓縮](platform/file-compression.md)
 ### [iOS 中的圖形和動畫](platform/graphics-animation-ios/index.md)
 #### [CoreImage](platform/graphics-animation-ios/introduction-to-coreimage.md)
 #### [Core 圖形](platform/graphics-animation-ios/core-graphics.md)
