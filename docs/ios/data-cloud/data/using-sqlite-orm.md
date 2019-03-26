@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/18/2018
-ms.openlocfilehash: e78c224bae3a0e2c2dfcfded30a4bf2c4794e255
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 370867b52ec09d0c3ad0f801b6a75c356d806734
+ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112009"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58477391"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>與 Xamarin.iOS 使用 SQLite.NET
 
@@ -26,8 +26,8 @@ ORM 代表物件關聯式對應 – 可讓您儲存和擷取資料庫中的 「 
 若要包含 SQLite.NET 程式庫中的 Xamarin 應用程式，將下列 NuGet 套件加入專案：
 
 - **套件名稱：** sqlite net pcl
-- **作者：** Frank A.Krueger
-- **識別碼：** sqlite net pcl
+- **作者：** Frank A. Krueger
+- **識別碼：** sqlite-net-pcl
 - **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![SQLite.NET NuGet 套件](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet 套件")](using-sqlite-orm-images/image1a.png#lightbox)
@@ -196,11 +196,13 @@ var rowcount = db.Delete<Stock>(someStock.Id); // Id is the primary key
 
 ## <a name="using-sqlitenet-with-multiple-threads"></a>使用 SQLite.NET 具有多執行緒
 
-SQLite 支援三種不同的執行緒模式：*單一執行緒*，*多執行緒*，並*序列化*。 如果您想要從沒有任何限制的多個執行緒存取的資料庫，您可以設定要使用 SQLite**序列化**執行緒模式。 請務必及早在您的應用程式中設定此模式 (例如，在開頭`OnCreate`方法)。
+SQLite 支援三種不同的執行緒模式：*單一執行緒*，*多執行緒*，以及*序列化*。 如果您想要從沒有任何限制的多個執行緒存取的資料庫，您可以設定要使用 SQLite**序列化**執行緒模式。 請務必及早在您的應用程式中設定此模式 (例如，在開頭`OnCreate`方法)。
 
-若要變更執行緒的模式，請呼叫`SqliteConnection.SetConfig`。 比方說，這行程式碼會設定適用於 SQLite**序列化**模式︰
+若要變更執行緒的模式，請呼叫`SqliteConnection.SetConfig`處於`Mono.Data.Sqlite`命名空間。 比方說，這行程式碼會設定適用於 SQLite**序列化**模式︰
 
 ```csharp
+using Mono.Data.Sqlite;
+...
 SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 ```
 
