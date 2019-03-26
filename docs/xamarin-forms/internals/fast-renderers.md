@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 42889e3805391e9e586cda61d26103398ba16269
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 9a40644df6abcbbcc327b1b0c2dcb26c2dbc4db5
+ms.sourcegitcommit: 247a6d00a95fd7f4cf918d923e5f357c8db56761
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898520"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58420206"
 ---
 # <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms 快速轉譯器
 
 ![預覽](~/media/shared/preview.png)
 
-_這篇文章介紹透過壓平所產生的原生控制項階層減少膨脹和轉譯成本 Xamarin.Forms 控制項在 Android 上的快速轉譯器。_
+_這篇文章介紹快速轉譯器 （新增 Xamarin.Forms 2.4），可減少膨脹和轉譯成本 Xamarin.Forms 控制項在 Android 上透過壓平所產生的原生控制項階層。_
 
 傳統上，大多在 Android 上的原始控制項轉譯器是由兩個檢視組成：
 
