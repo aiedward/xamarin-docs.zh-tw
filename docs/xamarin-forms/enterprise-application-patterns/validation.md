@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 30c507a1b78600ef1b9a96e37f88904daaf82987
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: 22b5fe703486f0ded3a5b91241e3fe5ce41bbc98
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528568"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507093"
 ---
 # <a name="validation-in-enterprise-apps"></a>在 企業應用程式的驗證
 
@@ -22,7 +22,7 @@ ms.locfileid: "51528568"
 
 [![](validation-images/validation.png "在 eShopOnContainers 的行動裝置應用程式中的驗證類別")](validation-images/validation-large.png#lightbox "eShopOnContainers 的行動裝置應用程式的驗證類別")
 
-**圖 6-1**: eShopOnContainers 的行動裝置應用程式的驗證類別
+**圖 6-1**:在 eShopOnContainers 的行動裝置應用程式中的驗證類別
 
 需要驗證的檢視模型屬性都屬於型別`ValidatableObject<T>`，而且每個`ValidatableObject<T>`執行個體已驗證規則新增至其`Validations`屬性。 叫用驗證從檢視模型藉由呼叫`Validate`方法`ValidatableObject<T>`執行個體，它會擷取驗證規則，並執行防範`ValidatableObject<T>``Value`屬性。 任何驗證錯誤會放入`Errors`的屬性`ValidatableObject<T>`執行個體，而`IsValid`屬性`ValidatableObject<T>`執行個體也會更新，表示驗證是否成功或失敗。
 
@@ -248,7 +248,7 @@ EShopOnContainers 的行動裝置應用程式會通知任何驗證錯誤的使�
 </Style>
 ```
 
-此樣式會設定`ApplyLineColor`並`LineColor`附加的屬性`LineColorBehavior`上附加行為[ `Entry` ](xref:Xamarin.Forms.Entry)控制項。 如需有關樣式的詳細資訊，請參閱 <<c0> [ 樣式](~/xamarin-forms/user-interface/styles/index.md)。
+此樣式會設定`ApplyLineColor`並`LineColor`附加的屬性`LineColorBehavior`上附加行為[ `Entry` ](xref:Xamarin.Forms.Entry)控制項。 如需樣式的詳細資訊，請參閱[樣式](~/xamarin-forms/user-interface/styles/index.md)。
 
 時的值`ApplyLineColor`附加的屬性是集合或變更`LineColorBehavior`附加的行為執行`OnApplyLineColorChanged`方法，以下列程式碼範例所示：
 
@@ -296,7 +296,7 @@ public class EntryLineColorEffect : RoutingEffect
 }
 ```
 
-[ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect)類別代表包裝的內部的效果，是特定平台的平台獨立效果。 這可簡化效果移除程序，因為沒有任何編譯時間資訊的存取權類型平台專屬的效果。 `EntryLineColorEffect`呼叫基底類別建構函式，傳入參數的串連，解析群組名稱，以及每個平台特定效果類別指定的唯一識別碼所組成。
+[ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect)類別代表包裝的內部的效果，是特定平台的平台獨立效果。 這可簡化效果移除程序，因為對於平台特定效果，並不存在對類型資訊的編譯時間資訊存取。 `EntryLineColorEffect`呼叫基底類別建構函式，傳入參數的串連，解析群組名稱，以及每個平台特定效果類別指定的唯一識別碼所組成。
 
 下列程式碼範例示範`eShopOnContainers.EntryLineColorEffect`適用於 iOS 的實作：
 
@@ -380,7 +380,7 @@ namespace eShopOnContainers.iOS.Effects
 
 ![](validation-images/validation-blackline.png "不指出任何驗證錯誤的黑色列")
 
-**圖 6-3**： 黑色線條不表示任何驗證錯誤
+**圖 6-3**:不指出任何驗證錯誤的黑色列
 
 [ `Entry` ](xref:Xamarin.Forms.Entry)控制項也有[ `DataTrigger` ](xref:Xamarin.Forms.DataTrigger)新增至其[ `Triggers` ](xref:Xamarin.Forms.VisualElement.Triggers)集合。 下列程式碼範例示範`DataTrigger`:
 
@@ -403,7 +403,7 @@ namespace eShopOnContainers.iOS.Effects
 
 ![](validation-images/validation-redline.png "表示驗證錯誤的紅線")
 
-**圖 6-4**： 紅線表示驗證錯誤
+**圖 6-4**:表示驗證錯誤的紅線
 
 中的一行[ `Entry` ](xref:Xamarin.Forms.Entry)無效輸入的資料時，控制會保持紅色，否則將會變更成黑色，表示輸入的資料有效。
 
@@ -414,7 +414,7 @@ namespace eShopOnContainers.iOS.Effects
 UI 會在其資料驗證失敗。 每個控制項下方的標籤控制項中顯示驗證錯誤訊息。 下列程式碼範例所示[ `Label` ](xref:Xamarin.Forms.Label) ，會顯示驗證錯誤訊息，如果使用者未輸入有效的使用者名稱：
 
 ```xaml
-<Label Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}"  
+<Label Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"  
        Style="{StaticResource ValidationErrorLabelStyle}" />
 ```
 

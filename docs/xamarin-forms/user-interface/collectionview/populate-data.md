@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/15/2019
-ms.openlocfilehash: 70b241944376782ec4c9446878ee2a19dcee2bbd
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: 57012202d981b96dba42f3017a19f2e32e4982ec
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329835"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507184"
 ---
 # <a name="populate-xamarinforms-collectionview-with-data"></a>填入資料的 Xamarin.Forms CollectionView
 
@@ -76,7 +76,7 @@ collectionView.ItemsSource = new string[]
 
 [![螢幕擷取畫面的 CollectionView，包含文字的項目，在 iOS 和 Android 上](populate-data-images/text.png "CollectionView 中的文字項目")](populate-data-images/text-large.png#lightbox "CollectionView 中的文字項目")
 
-如需如何變更`CollectionView`版面配置，請參閱 <<c2> [ 指定配置](layout.md)。 如需如何定義在每個項目的外觀`CollectionView`，請參閱 <<c2> [ 定義清單項目外觀](#define-list-item-appearance)。
+如需如何變更`CollectionView`版面配置，請參閱 <<c2> [ 指定配置](layout.md)。 如需如何定義在每個項目的外觀`CollectionView`，請參閱 <<c2> [ 定義項目外觀](#define-item-appearance)。
 
 ### <a name="data-binding"></a>資料繫結
 

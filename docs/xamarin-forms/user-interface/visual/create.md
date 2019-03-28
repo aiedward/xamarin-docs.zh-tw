@@ -1,18 +1,18 @@
 ---
 title: 建立 Xamarin.Forms 視覺效果轉譯器
-description: Xamarin.Forms 的視覺效果可讓您選擇性地套用到 VisualElement 物件，而不需要子類別 Xamarin.Forms 檢視的轉譯器。
+description: 建立 Xamarin.Forms 選擇性地套用至 VisualElement 物件，而不需要子類別 Xamarin.Forms 檢視的視覺效果。
 ms.prod: xamarin
 ms.assetid: 80BF9C72-AC28-4AAF-9DDD-B60CBDD1CD59
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
-ms.openlocfilehash: 1bd56d09932c97508dd0a05fbc0eb2bad3af3f0e
-ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
+ms.openlocfilehash: a11c2045fa6119d0689834c35794bc8913c80bd6
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57972581"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58506963"
 ---
 # <a name="create-a-xamarinforms-visual-renderer"></a>建立 Xamarin.Forms 視覺效果轉譯器
 
@@ -25,7 +25,7 @@ Xamarin.Forms 的視覺效果可讓系統建立，並選擇性地套用到的轉
 
 建立及使用 Xamarin.Forms 視覺效果轉譯器的程序是：
 
-1. 建立所需的檢視的平台轉譯器。 如需詳細資訊，請參閱 <<c0> [ 建立轉譯器](#create-platfomr-renderers)。
+1. 建立所需的檢視的平台轉譯器。 如需詳細資訊，請參閱 <<c0> [ 建立轉譯器](#create-platform-renderers)。
 1. 建立衍生自類型`IVisual`。 如需詳細資訊，請參閱 <<c0> [ 建立 IVisual 類型](#create-an-ivisual-type)。
 1. 註冊`IVisual`一部分的型別`ExportRendererAttribute`裝飾的轉譯器。 如需詳細資訊，請參閱 <<c0> [ 註冊 IVisual 類型](#register-the-ivisual-type)。
 1. 取用 Visual 轉譯器設定[ `Visual` ](xref:Xamarin.Forms.VisualElement.Visual)若要在檢視上的屬性`IVisual`名稱。 如需詳細資訊，請參閱 <<c0> [ 取用 Visual 轉譯器](#consume-the-visual-renderer)。
