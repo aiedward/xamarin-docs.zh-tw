@@ -6,12 +6,12 @@ ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: lobrien
 ms.author: laobri
 ms.date: 03/23/2017
-ms.openlocfilehash: 7f66c97ce4b7880d32dfd87aec0691a26a08cfd2
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2e6a75fa3c4c63e8dea402c6761f8ef753908540
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669423"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507197"
 ---
 # <a name="using-jenkins-with-xamarin"></a>搭配 Xamarin 使用 Jenkins
 
@@ -230,7 +230,7 @@ Jenkins 會在第一個工作是從原始程式碼管理系統中擷取的原始
 
 #### <a name="using-git-for-source-code-control"></a>使用 Git 進行原始程式碼控制
 
-如果您使用 TFS 原始程式碼控制，如[略過](#Using-TFS-for-Source-Code-Management)此區段，然後繼續進行下一節中使用 TFS。
+如果您使用 TFS 原始程式碼控制，如[略過](#using-tfs-for-source-code-management)此區段，然後繼續進行下一節中使用 TFS。
 
 Jenkins 支援 Git 現成 – 沒有額外的外掛程式所需。 若要使用 Git，請按一下**Git**選項按鈕，並針對 Git 存放庫中，輸入 URL，如下列螢幕擷取畫面所示：
 

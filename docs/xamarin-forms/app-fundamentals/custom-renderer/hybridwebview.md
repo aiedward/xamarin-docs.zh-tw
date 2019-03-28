@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: b88226dda14e2ae5cd21bb066e107fb4bcad78f6
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 0b91aae1456827625526d7568176a07e7e61f225
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672517"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507119"
 ---
 # <a name="implementing-a-hybridwebview"></a>實作 HybridWebView
 
@@ -30,7 +30,7 @@ _Xamarin.Forms 自訂使用者介面控制項應該衍生自用來在螢幕上�
 
 1. [建立](#Creating_the_HybridWebView) `HybridWebView` 自訂控制項。
 1. [使用](#Consuming_the_HybridWebView) Xamarin.Forms 的 `HybridWebView`。
-1. 在每個平台上[建立](#Creating_the_Custom_Renderer_on_each_Platform) `HybridWebView` 的自訂轉譯器。
+1. 在每個平台上[建立](#creating-the-custom-renderer-on-each-platform) `HybridWebView` 的自訂轉譯器。
 
 現在您可依序討論每個項目，實作可增強平台特定 Web 控制項的 `HybridWebView` 轉譯器，來從 JavaScript 叫用 C# 程式碼。 `HybridWebView` 執行個體會用以顯示 HTML 網頁，要求使用者輸入其名稱。 然後，當使用者按一下 HTML 按鈕時，JavaScript 函式會叫用 C# `Action`，其顯示包含使用者名稱的快顯視窗。
 
@@ -141,8 +141,6 @@ public partial class HybridWebViewPage : ContentPage
 這個動作會呼叫 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) 方法，顯示強制回應快顯，此快顯可呈現 `HybridWebView` 執行個體所顯示之 HTML 頁面中輸入的名稱。
 
 藉由允許從 JavaScript 叫用 C# 程式碼，自訂轉譯器現在可以新增至每個應用程式專案來加強平台特定的 Web 控制項。
-
-<a nane="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>在每個平台上建立自訂轉譯器
 

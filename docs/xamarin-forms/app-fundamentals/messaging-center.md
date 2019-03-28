@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 2e87142594da8f028323b5dc81afb0e9f8021028
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 6af392988b8ffa5f01ef07f81be53ea8f82e8fb5
+ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667051"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58477326"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
@@ -35,7 +35,7 @@ _Xamarin.Forms 包含簡易傳訊服務，可傳送與接收訊息。_
 -  **Subscribe** - 接聽具有特定簽章的訊息，並在收到訊息後執行某些動作。 多位訂閱者可以接聽相同的訊息。
 -  **Send** - 發佈訊息讓接聽者採取動作。 若沒有任何接聽者訂閱訊息，則會忽略該訊息。
 
-`MessagingService` 是靜態類別，具有 `Subscribe` 和 `Send` 方法，他們會用於整個解決方案。
+`MessagingCenter` 是靜態類別，具有 `Subscribe` 和 `Send` 方法，他們會用於整個解決方案。
 
 訊息有 `message` 參數字串，用來為訊息「定址」。 `Subscribe` 與 `Send` 方法會使用泛型參數進一步控制訊息的傳遞方式，`message` 文字相同但泛型型別引數不同的兩則訊息並不會傳遞給同一位訂閱者。
 

@@ -5,12 +5,12 @@ ms.assetid: AB4D198A-4FD7-479E-8627-01F887A6D056
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
-ms.openlocfilehash: 806fcb3fa90a5ec9d39cecb743b72116b8388a03
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: 740f6f4658c3e840f73261f554eb330ee02edb5d
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58176022"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329061"
 ---
 # <a name="xamarinessentials-platform-extensions"></a>Xamarin.Essentials:平台擴充
 
@@ -69,6 +69,6 @@ var system2 = platform.ToSystemSize();
 ## <a name="api"></a>API
 
 - [轉換器原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/PlatformExtensions)
-- [點轉換器 API 文件](xref:Xamarin.Essentials.PointConverters)
-- [矩形轉換器 API 文件](xref:Xamarin.Essentials.RectangleConverters)
-- [大小轉換器 API 文件](xref:Xamarin.Essentials.SizeConverters)
+- [點轉換器 API 文件](xref:Xamarin.Essentials.PointExtensions)
+- [矩形轉換器 API 文件](xref:Xamarin.Essentials.RectangleExtensions)
+- [大小轉換器 API 文件](xref:Xamarin.Essentials.SizeExtensions)

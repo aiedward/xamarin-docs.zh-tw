@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: f69acd60d7a80607528e4a39ee6a8bfbc19711f5
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: c5eeb00d4dc5992666a7ba5f9fef2685d5056447
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207969"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329269"
 ---
 # <a name="hierarchical-navigation"></a>階層式導覽
 
@@ -28,7 +28,7 @@ _NavigationPage 類別提供的階層式導覽體驗讓使用者能夠視需要�
 
 ![](hierarchical-images/popping.png "從導覽堆疊中快顯頁面")
 
-[`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 屬性會在任何 [`Page`](xref:Xamarin.Forms.Page) 衍生類型上公開導覽方法。 這些方法可讓您將頁面推送到導覽堆疊上、從導覽堆疊中快顯頁面，以及執行堆疊操作。
+[`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 屬性會在任何 [`Page`](xref:Xamarin.Forms.Page) 衍生類型上公開導覽方法。 這些方法可讓您將頁面推送到導覽堆疊上、從導覽堆疊中快顯頁面，以及執行堆疊操作。
 
 <a name="Performing_Navigation" />
 
@@ -69,7 +69,7 @@ public App ()
 
 ### <a name="pushing-pages-to-the-navigation-stack"></a>將頁面推送到導覽堆疊
 
-若要巡覽至 `Page2Xaml`，必須在目前頁面的 [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 屬性上叫用 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 方法，如下列程式碼範例所示：
+若要巡覽至 `Page2Xaml`，必須在目前頁面的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 屬性上叫用 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 方法，如下列程式碼範例所示：
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -114,7 +114,7 @@ async void OnPreviousPageButtonClicked (object sender, EventArgs e)
 
 不過，發生這些事件的確切順序則取決於平台。 如需詳細資訊，請參閱 Charles Petzold 所著 Xamarin.Forms 一書的[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)。
 
-除了 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 和 [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) 方法，每頁的 [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 屬性還會提供 [`PopToRootAsync`](xref:Xamarin.Forms.NavigationPage.PopToRootAsync) 方法，如下列程式碼範例所示：
+除了 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 和 [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) 方法，每頁的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 屬性還會提供 [`PopToRootAsync`](xref:Xamarin.Forms.NavigationPage.PopToRootAsync) 方法，如下列程式碼範例所示：
 
 ```csharp
 async void OnRootPageButtonClicked (object sender, EventArgs e)
@@ -127,7 +127,7 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 
 ### <a name="animating-page-transitions"></a>以動畫顯示頁面轉換
 
-每頁的 [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 屬性還會提供覆寫的 push 和 pop 方法，其中包含控制是否在巡覽期間顯示頁面動畫的 `boolean` 參數，如下列程式碼範例所示：
+每頁的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 屬性還會提供覆寫的 push 和 pop 方法，其中包含控制是否在巡覽期間顯示頁面動畫的 `boolean` 參數，如下列程式碼範例所示：
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -276,7 +276,7 @@ public class SecondPageCS : ContentPage
 
 ## <a name="manipulating-the-navigation-stack"></a>操作導覽堆疊
 
-[`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 屬性會公開可以從中取得導覽堆疊中頁面的 [`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack) 屬性。 Xamarin.Forms 會維持導覽堆疊的存取，而 `Navigation` 屬性則提供 [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) 和 [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*) 方法，透過插入或移除頁面來操作堆疊。
+[`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 屬性會公開可以從中取得導覽堆疊中頁面的 [`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack) 屬性。 Xamarin.Forms 會維持導覽堆疊的存取，而 `Navigation` 屬性則提供 [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) 和 [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*) 方法，透過插入或移除頁面來操作堆疊。
 
 [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) 方法會將指定的頁面插入導覽堆疊中現有指定頁面之前，如下圖所示：
 

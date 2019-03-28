@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 4e2d33276c865695d70abb2d8e00b3b80d446839
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: 0f0c2e9f3e0a2309db1ad96ff286d6ac17f78bc5
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207982"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329295"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Xamarin.Forms 索引標籤式頁面
 
@@ -115,7 +115,7 @@ public class MainPageCS : TabbedPage
 
 #### <a name="navigation-inside-a-tab"></a>在索引標籤中巡覽
 
-您可以從第二個索引標籤內，透過在 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體的 [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 屬性上叫用 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 方法來執行導覽，如下列程式碼範例中所示範：
+您可以從第二個索引標籤內，透過在 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 屬性上叫用 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 方法來執行導覽，如下列程式碼範例中所示範：
 
 ```csharp
 async void OnUpcomingAppointmentsButtonClicked (object sender, EventArgs e)

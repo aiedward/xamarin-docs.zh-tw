@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/02/2018
-ms.openlocfilehash: f05de5185f224f8606f38011d8f307ed62d64541
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112867"
 ---
+
 # <a name="signing-the-android-application-package"></a>簽署 Android 應用程式套件
 
 在[準備要發行的應用程式](~/android/deploy-test/release-prep/index.md)中，使用**封存管理員**來建置應用程式，並將它放入封存以進行簽署和發行。 本節說明如何建立 Android 簽署身分識別、建立適用於 Android 應用程式的新簽署憑證，並透過「臨機操作」將封存的應用程式發行至磁碟。 產生的 APK 可以側載到 Android 裝置，而不需透過應用程式市集 。
@@ -42,7 +37,7 @@ ms.locfileid: "50112867"
 
 選取 [臨機操作] 之後，Visual Studio 會開啟對話方塊的 [簽署身分識別] 頁面，如下一個螢幕擷取畫面所示。 若要發行 .APK，必須先使用簽署金鑰 (也稱為憑證) 來簽署它。
 
-您可以按一下 [匯入] 按鈕，然後繼續[簽署 APK](#signapkvs)，以使用現有的憑證。 否則，按一下 [+] 按鈕來建立新的憑證：
+您可以按一下 [匯入] 按鈕，然後繼續[簽署 APK](#sign-the-apk)，以使用現有的憑證。 否則，按一下 [+] 按鈕來建立新的憑證：
 
 [![臨機操作簽署身分識別](images/vs/02-ad-hoc-signing-identity-vs-sml.png)](images/vs/02-ad-hoc-signing-identity-vs.png#lightbox)
 
@@ -69,7 +64,7 @@ ms.locfileid: "50112867"
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-按一下 [臨機操作] 之後，Visual Studio for Mac 即會開啟 [Android 簽署識別] 對話方塊，如下一個螢幕擷取畫面所示。 若要發行 .APK，必須先使用簽署金鑰 (也稱為憑證) 來簽署它。 如果憑證已經存在，按一下 [匯入現有的金鑰] 按鈕來匯入它，然後繼續[簽署 APK](#signapkxs)；否則，按一下 [建立新的金鑰] 按鈕來建立新的憑證： 
+按一下 [臨機操作] 之後，Visual Studio for Mac 即會開啟 [Android 簽署識別] 對話方塊，如下一個螢幕擷取畫面所示。 若要發行 .APK，必須先使用簽署金鑰 (也稱為憑證) 來簽署它。 如果憑證已經存在，按一下 [匯入現有的金鑰] 按鈕來匯入它，然後繼續[簽署 APK](#sign-the-apk)；否則，按一下 [建立新的金鑰] 按鈕來建立新的憑證：
 
 [![[Android 簽署識別] 對話方塊](images/xs/02-android-signing-identity-sml.png)](images/xs/02-android-signing-identity.png#lightbox)
 
@@ -92,8 +87,6 @@ ms.locfileid: "50112867"
 如需金鑰儲存區的詳細資訊，請參閱[尋找金鑰儲存區的 MD5 或 SHA1 簽章](~/android/deploy-test/signing/keystore-signature.md)。
 
 -----
-
-<a name="signapkvs" />
 
 ## <a name="sign-the-apk"></a>簽署 APK
 
@@ -137,7 +130,7 @@ ms.locfileid: "50112867"
 
 ![[輸出 APK 檔案] 對話方塊](images/xs/06-output-apk-file.png)
 
-接著，輸入憑證的密碼 (在 [建立新的憑證] 對話方塊中使用的密碼)，然後按一下 [確定]： 
+接著，輸入憑證的密碼 (在 [建立新的憑證] 對話方塊中使用的密碼)，然後按一下 [確定]：
 
 ![輸入憑證密碼](images/xs/07-signing-certificate.png)
 
