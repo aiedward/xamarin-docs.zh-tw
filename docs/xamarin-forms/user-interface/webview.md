@@ -1,4 +1,4 @@
-﻿---
+---
 title: Xamarin.Forms web 檢視
 description: 這篇文章會說明如何使用 Xamarin.Forms WebView 類別來提供本機或網路 web 內容和文件給使用者。
 ms.prod: xamarin
@@ -6,13 +6,13 @@ ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 6d3355b1ebac5001984677eb8cc527fe619b8349
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 03/29/2019
+ms.openlocfilehash: 658ce23b0aaced8e195461a485f3e846900c2026
+ms.sourcegitcommit: 236a346838c421c7d8951f50abbf4f5365559372
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052247"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58641448"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms web 檢視
 
@@ -331,11 +331,25 @@ public partial class InAppBrowserXaml : ContentPage
 
 WebView 中，會引發下列事件，以協助您回應狀態的變更：
 
-- **瀏覽**– web 檢視可讓您開始載入新的頁面時引發的事件。
-- **瀏覽**– 當頁面載入和瀏覽已停止時引發的事件。
-- **ReloadRequested** – 重新載入目前的內容提出要求時所引發的事件。
+- [`Navigating`](xref:Xamarin.Forms.WebView.Navigating) – web 檢視可讓您開始載入新的頁面時引發的事件。
+- [`Navigated`](xref:Xamarin.Forms.WebView.Navigated) – 當頁面載入和瀏覽已停止時引發的事件。
+- [`ReloadRequested`](xref:Xamarin.Forms.WebView.ReloadRequested) -若要重新載入目前的內容提出要求時所引發的事件。
 
-如果您預計使用需要長的時間載入的網頁，請考慮使用`Navigating`和`Navigated`事件，以實作狀態指標。 比方說的 XAML 看起來像這樣：
+[ `WebNavigatingEventArgs` ](xref:Xamarin.Forms.WebNavigatingEventArgs)隨附的物件[ `Navigating` ](xref:Xamarin.Forms.WebView.Navigating)事件有四個屬性：
+
+- `Cancel` – 指出是否要取消巡覽。
+- `NavigationEvent` – 瀏覽事件引發。
+- `Source` – 執行瀏覽的項目。
+- `Url` – 瀏覽目的地。
+
+[ `WebNavigatedEventArgs` ](xref:Xamarin.Forms.WebNavigatedEventArgs)隨附的物件[ `Navigated` ](xref:Xamarin.Forms.WebView.Navigated)事件有四個屬性：
+
+- `NavigationEvent` – 瀏覽事件引發。
+- `Result` -描述結果的導覽中，使用[ `WebNavigationResult` ](xref:Xamarin.Forms.WebNavigationResult)列舉成員。 有效值為 `Cancel`、`Failure`、`Success` 和 `Timeout`。
+- `Source` – 執行瀏覽的項目。
+- `Url` – 瀏覽目的地。
+
+如果您預計使用需要長的時間載入的網頁，請考慮使用[ `Navigating` ](xref:Xamarin.Forms.WebView.Navigating)並[ `Navigated` ](xref:Xamarin.Forms.WebView.Navigated)事件，以實作狀態指標。 例如: 
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -402,7 +416,7 @@ webView.Reload();
 為了讓`WebView`運作，您必須確定每個平台已設定權限。 請注意，在某些平台，`WebView`在偵錯模式中，但只有在建置要發行時，不會運作。 這是因為某些權限，例如，適用於網際網路存取，在 Android 上，依預設是由 Visual Studio for Mac 中偵錯模式時設定。
 
 - **UWP** &ndash; 顯示網路內容時，需要網際網路 (用戶端和伺服器) 功能。
-- **Android** &ndash;只有需要顯示來自網路的內容時，才需要`INTERNET`。
+- **Androi** &ndash;只有需要顯示來自網路的內容時，才需要`INTERNET`。 本機內容需要任何特殊權限。
 - **iOS** &ndash; 不需要任何特殊權限。
 
 ## <a name="layout"></a>配置

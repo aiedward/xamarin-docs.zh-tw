@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: fda8c08cdbdab01f5d68b7f349d5f28f31316290
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: c18eba873dc1a1dae36c401507d55652ed233b00
+ms.sourcegitcommit: 236a346838c421c7d8951f50abbf4f5365559372
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831998"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58641435"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms TableView
 
@@ -115,7 +115,7 @@ Xamarin.Forms 會隨附內建的儲存格，來收集和顯示資訊。 雖然[ 
 [`EntryCell`](xref:Xamarin.Forms.EntryCell) 您需要顯示使用者可以編輯的文字資料時很有用。 它會定義下列屬性：
 
 - `Keyboard` – 若要在編輯時顯示鍵盤。 有件事，例如數值、 電子郵件、 電話號碼等選項。[請參閱 API 文件](xref:Xamarin.Forms.Keyboard)。
-- `Label` – 要顯示的文字輸入欄位右邊的標籤文字。
+- `Label` – 要顯示的文字輸入欄位左邊的標籤文字。
 - `LabelColor` – 在標籤文字的色彩。
 - `Placeholder` – 它是 null 或空白時顯示的項目欄位中的文字。 文字項目開始時，這段文字就會消失。
 - `Text` – 文字輸入欄位中。
