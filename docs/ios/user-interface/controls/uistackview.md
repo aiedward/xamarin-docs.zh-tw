@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: d04ce6827f6695163c7d9a8d34acc3891d854c8d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6d5be72a9329675a65b0d6873d13894b314b50e7
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122669"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677842"
 ---
 # <a name="stack-views-in-xamarinios"></a>在 Xamarin.iOS 中的堆疊檢視
 
@@ -233,7 +233,7 @@ icon.RemoveFromSuperview();
 - **基準線的相對**– 如果`true`，每一個子檢視的垂直間距會衍生自它的基準。
 - **版面配置邊界相對**– 相對於標準版面配置邊界會將子檢視。
 
-通常您會使用堆疊檢視，來排列一小部分的子檢視。 巢狀內彼此的一或多個堆疊檢視也可以建立更複雜的使用者介面 (如同我們在[UIStackView 快速入門](#UIStackView-Quickstart)上方)。
+通常您會使用堆疊檢視，來排列一小部分的子檢視。 巢狀內彼此的一或多個堆疊檢視也可以建立更複雜的使用者介面 (如同我們在[UIStackView 快速入門](#uistackview-quickstart)上方)。
 
 新增將子檢視 （例如若要控制的高度或寬度） 的其他條件約束，可以進一步微調 Ui 的外觀。 不過，應該小心不必包含衝突的條件約束所引進的堆疊檢視本身。
 

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: e02d7a13a1fd5b554943f9facd6c9f120096a6a5
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: b21bf4da7cf862bd32e71708f9e3657f577682c2
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667811"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677920"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的 iOS 延伸模組
 
@@ -69,7 +69,7 @@ ms.locfileid: "57667811"
 
 如果他們選擇其中一個應用程式的延伸模組，其`UIViewController`會具現化，並開始正常的檢視控制器生命週期。 不過，不同於一般的應用程式，這會暫停，但通常不會終止使用者完成與其進行互動時，延伸模組會載入、 執行和重複，然後終止。
 
-擴充功能可以透過其主應用程式與通訊[NSExtensionContext](xref:Foundation.NSExtensionContext)物件。 有些延伸模組有接收結果的非同步回呼的作業。 這些回呼會在背景執行緒上執行和擴充功能必須將此列入考量。比方說，是藉由使用[NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*)如果他們想要更新的使用者介面。 請參閱[主機應用程式與通訊](#Communicating-with-the-Host-App)節以取得詳細資料。
+擴充功能可以透過其主應用程式與通訊[NSExtensionContext](xref:Foundation.NSExtensionContext)物件。 有些延伸模組有接收結果的非同步回呼的作業。 這些回呼會在背景執行緒上執行和擴充功能必須將此列入考量。比方說，是藉由使用[NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*)如果他們想要更新的使用者介面。 請參閱[主機應用程式與通訊](#communicating-with-the-host-app)節以取得詳細資料。
 
 根據預設，擴充功能和其容器應用程式可以通訊，儘管一起安裝。 在某些情況下，容器應用程式本質上是空"shipping"容器安裝擴充功能之後，會提供其用途。 不過，如果指定的情況下，容器應用程式和延伸模組可能共用資源從常見的區域。 此外，**今天擴充功能**可能會要求它的容器應用程式，以開啟 URL。 此行為所示[發展倒數小工具](https://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo)。
 

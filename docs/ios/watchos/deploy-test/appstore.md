@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 7b2f9ab4cf9bad71153d5bdae9ae44ddf091deed
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bf86759832a1aba0ccc1c144981af6ea4eae8670
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106360"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677790"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>WatchOS 應用程式部署至 App Store
 
 > [!IMPORTANT]
-> 請務必檢閱[Apple Watch 套件提交指南](https://developer.apple.com/app-store/watch/)，並查看[疑難排解](#Troubleshooting)區段，您可能會有任何問題。
+> 請務必檢閱[Apple Watch 套件提交指南](https://developer.apple.com/app-store/watch/)，並查看[疑難排解](#troubleshooting)區段，您可能會有任何問題。
 
 - 請確定您已：
   - [**發佈佈建設定檔**](#provisioning)為您的專案建立的。
@@ -41,7 +41,7 @@ ms.locfileid: "50106360"
   - （選擇性）**驗證...** 封存。
   - **提交...** 封存和後續的步驟，將上傳至 iTunes Connect 進行審查與核准。
 
-請閱讀以下這些項目與相關的特定提示。 請參閱[疑難排解](#Troubleshooting)區段如果您有問題。
+請閱讀以下這些項目與相關的特定提示。 請參閱[疑難排解](#troubleshooting)區段如果您有問題。
 
 <a name="provisioning" />
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 8e114f39a01c2243889c53c855acd7fa8061ed09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f57f2a2bc17690b7a1e0a72c583b0e94519ca4db
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114726"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677985"
 ---
 # <a name="collection-views-in-xamarinios"></a>在 Xamarin.iOS 中的集合檢視
 
@@ -443,7 +443,7 @@ namespace SimpleCollectionView
     - [重新排列的簡單範例](#Simple-Reordering-Example)
     - [使用自訂的筆勢辨識器](#Using-a-Custom-Gesture-Recognizer)
     - [自訂版面配置和重新排列](#Custom-Layouts-and-Reording)
-- [集合檢視變更](#Collection-View-Changes)
+- [集合檢視變更](#collection-view-changes)
 
 <a name="Easy-Reordering-of-Items" />
 
@@ -472,11 +472,11 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 
 選取 （它可能是最簡單的方式執行這項操作，從文件大綱） 的集合檢視。 在 [屬性] 面板的 [配置] 索引標籤中，設定下列的大小，，如以下螢幕擷取畫面所示：
 
-- **儲存格大小**： 寬度 – 60 |高度 – 60
-- **標頭大小**： 寬度 – 0 |高度 – 0
-- **頁尾大小**： 寬度 – 0 |高度 – 0
-- **最小間距**： 資料格 – 8 |線條 – 8
-- **區段內凹**： 上 – 16 |底部-16 |左 – 16 |權限 – 16
+- **儲存格大小**:寬度 – 60 |高度 – 60
+- **標頭大小**:寬度 – 0 |高度 – 0
+- **頁尾大小**:寬度 – 0 |高度 – 0
+- **最小間距**:資料格 – 8 |線條 – 8
+- **區段內凹**:上 – 16 |底部-16 |左 – 16 |權限 – 16
 
 [![](uicollectionview-images/quick04.png "設定集合檢視大小")](uicollectionview-images/quick04.png#lightbox)
 

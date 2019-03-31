@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 6a8e74860efd606ae6dd565ea7e3f67884eefc11
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5086724b565fb95274c4988ca1b6e4bb11064575
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103214"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677933"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>針對在 Xamarin 中 watchos 3 多快速互動技術
 
@@ -299,7 +299,7 @@ Apple Watch 上的通知提供絕佳、 可自訂的方式，快速通知的事�
 
 ## <a name="simple-navigation"></a>簡單的巡覽
 
-watchOS 3 提供數種方式，開發人員可以簡化中自己的 watchOS 應用程式，例如，新的巡覽[垂直分頁](#Vertical-Paging)，[支援筆勢辨識器](#Gesture-Recognizer-Support)和[數位皇冠旋轉](#Digital-Crown-Rotation)以上所顯示的功能。
+watchOS 3 提供數種方式，開發人員可以簡化中自己的 watchOS 應用程式，例如，新的巡覽[垂直分頁](#vertical-paging)，[支援筆勢辨識器](#gesture-recognizer-support)和[數位皇冠旋轉](#digital-crown-rotation)以上所顯示的功能。
 
 數位皇冠是唯一的 Apple Watch，並可以用於許多不同的方式，來簡化瀏覽。 例如，計時器應用程式可以使用數位皇冠快轉到可用的計時器長度。
 

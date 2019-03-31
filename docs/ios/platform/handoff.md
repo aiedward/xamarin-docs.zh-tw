@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 899e40460371933a3e1cb694618c7d33a124e76c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 1a5cc9f06fdca5944a9a3201ac15d63ca7f15453
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672699"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677959"
 ---
 # <a name="handoff-in-xamarinios"></a>在 Xamarin.iOS 中遞交
 
@@ -52,9 +52,9 @@ Apple 已引進遞移式 iOS 8 和 OS X Yosemite (10.10) 提供通用的機制�
 
 接收的應用程式會使用來自`NSUserActivity`的`UserInfo`設定其使用者介面，並還原指定活動的狀態，使轉換看起來不讓終端使用者的字典。
 
-如果接續會要求資訊更多，可以有效率地透過傳送`NSUserActivity`，正在繼續應用程式可以傳送呼叫給原始應用程式，並建立一或多個資料流傳輸所需的資料。 例如，如果活動已編輯與多個映像的大型文字文件，串流需要傳輸接收的裝置上繼續活動所需的資訊。 如需詳細資訊，請參閱 <<c0> [ 支援接續資料流](#Supporting-Continuation-Streams)下一節。
+如果接續會要求資訊更多，可以有效率地透過傳送`NSUserActivity`，正在繼續應用程式可以傳送呼叫給原始應用程式，並建立一或多個資料流傳輸所需的資料。 例如，如果活動已編輯與多個映像的大型文字文件，串流需要傳輸接收的裝置上繼續活動所需的資訊。 如需詳細資訊，請參閱 <<c0> [ 支援接續資料流](#supporting-continuation-streams)下一節。
 
-如上面所述`NSDocument`或`UIDocument`基礎的應用程式會自動擁有支援內建的遞交。 如需詳細資訊，請參閱 <<c0> [ 文件為基礎的應用程式中支援的遞交](#Supporting-Handoff-in-Document-Based-Apps)下一節。
+如上面所述`NSDocument`或`UIDocument`基礎的應用程式會自動擁有支援內建的遞交。 如需詳細資訊，請參閱 <<c0> [ 文件為基礎的應用程式中支援的遞交](#supporting-handoff-in-document-based-apps)下一節。
 
 ### <a name="the-nsuseractivity-class"></a>NSUserActivity 類別
 
@@ -68,7 +68,7 @@ Apple 已引進遞移式 iOS 8 和 OS X Yosemite (10.10) 提供通用的機制�
 
 您必須實作`UserActivityWillSave`方法，並進行任何變更要`NSUserActivity`(例如`UserInfo`，`Title`等) 以確保它仍然會反映目前活動的狀態。 當系統呼叫`UserActivityWillSave`方法，`NeedsSave`旗標將會被清除。 如果您修改任何活動的資料屬性，您必須設定`NeedsSave`至`true`一次。
 
-而不是使用`UserActivityWillSave`上述的方法，您可以選擇性地讓`UIKit`或`AppKit`自動管理的使用者活動。 若要這樣做，請將設定回應物件的`UserActivity`屬性並實作`UpdateUserActivityState`方法。 請參閱[在回應中支援的遞交](#Supporting-Handoff-in-Responders)如需詳細資訊，如下一節。
+而不是使用`UserActivityWillSave`上述的方法，您可以選擇性地讓`UIKit`或`AppKit`自動管理的使用者活動。 若要這樣做，請將設定回應物件的`UserActivity`屬性並實作`UpdateUserActivityState`方法。 請參閱[在回應中支援的遞交](#supporting-handoff-in-responders)如需詳細資訊，如下一節。
 
 ### <a name="app-framework-support"></a>應用程式架構支援
 
@@ -84,7 +84,7 @@ Apple 已引進遞移式 iOS 8 和 OS X Yosemite (10.10) 提供通用的機制�
 
 `AppKit` 會自動還原任何`UserActivity`以此方式，在 OS X 上建立的屬性。會發生這個錯誤`ContinueUserActivity`方法會傳回`false`或者它是未實作。 在此情況下，以開啟文件`OpenDocument`方法`NSDocumentController`，將會接到`RestoreUserActivityState`方法呼叫。
 
-請參閱[文件為基礎的應用程式中支援的遞交](#Supporting-Handoff-in-Document-Based-Apps)如需詳細資訊，如下一節。
+請參閱[文件為基礎的應用程式中支援的遞交](#supporting-handoff-in-document-based-apps)如需詳細資訊，如下一節。
 
 #### <a name="user-activities-and-responders"></a>使用者活動和回應
 
@@ -94,7 +94,7 @@ Apple 已引進遞移式 iOS 8 和 OS X Yosemite (10.10) 提供通用的機制�
 
 若要取消本身關聯的活動，回應者可以設定其`UserActivity`屬性設`null`。 應用程式架構的管理時`NSUserActivity`執行個體有沒有更多相關聯的回應或文件，就會自動失效。
 
-請參閱[在回應中支援的遞交](#Supporting-Handoff-in-Responders)如需詳細資訊，如下一節。
+請參閱[在回應中支援的遞交](#supporting-handoff-in-responders)如需詳細資訊，如下一節。
 
 #### <a name="user-activities-and-the-appdelegate"></a>使用者活動和 AppDelegate
 
@@ -102,7 +102,7 @@ Apple 已引進遞移式 iOS 8 和 OS X Yosemite (10.10) 提供通用的機制�
 
 `NSUserActivity`執行個體時傳遞`AppDelegate`的`ContinueUserActivity`呼叫方法。 此時，您應該設定應用程式的使用者介面，並繼續指定的活動。
 
-請參閱[實作遞移式](#Implementing-Handoff)如需詳細資訊，如下一節。
+請參閱[實作遞移式](#implementing-handoff)如需詳細資訊，如下一節。
 
 ## <a name="enabling-handoff-in-a-xamarin-app"></a>啟用 Xamarin 應用程式遞交
 
@@ -201,7 +201,7 @@ namespace MonkeyBrowse
 }
 ```
 
-`UserActivityReceivedData`接續 Stream 收到資料傳送的裝置時，會呼叫方法。 如需詳細資訊，請參閱 <<c0> [ 支援接續資料流](#Supporting-Continuation-Streams)下一節。
+`UserActivityReceivedData`接續 Stream 收到資料傳送的裝置時，會呼叫方法。 如需詳細資訊，請參閱 <<c0> [ 支援接續資料流](#supporting-continuation-streams)下一節。
 
 `UserActivityWasContinued`另一部裝置已接管將活動從目前的裝置時，會呼叫方法。 根據類型的活動，例如將新的項目加入至 ToDo 清單中，應用程式可能需要中止傳送的裝置上的活動。
 
@@ -246,7 +246,7 @@ userInfo.Add (new NSString ("Url"), new NSString (url));
 UserActivity.AddUserInfoEntries (userInfo);
 ```
 
-Apple 建議保持傳送至匱乏的最低限度，以確保活動會傳送到接收端裝置及時的資訊。 如果較大的資訊是必要的例如編輯映像附加至文件都需要傳送，您應該使用接續的資料流。 請參閱[支援接續資料流](#Supporting-Continuation-Streams)節以取得詳細資料。
+Apple 建議保持傳送至匱乏的最低限度，以確保活動會傳送到接收端裝置及時的資訊。 如果較大的資訊是必要的例如編輯映像附加至文件都需要傳送，您應該使用接續的資料流。 請參閱[支援接續資料流](#supporting-continuation-streams)節以取得詳細資料。
 
 ### <a name="continuing-an-activity"></a>繼續執行活動
 
@@ -421,7 +421,7 @@ public override void RestoreUserActivityState (NSUserActivity activity)
 }
 ```
 
-文件的應用程式，如果您不會實作`ContinueUserActivity`方法，或者它會傳回`false`，`UIKit`或`AppKit`可以自動繼續活動。 請參閱[文件為基礎的應用程式中支援的遞交](#Supporting-Handoff-in-Document-Based-Apps)如需詳細資訊，如下一節。
+文件的應用程式，如果您不會實作`ContinueUserActivity`方法，或者它會傳回`false`，`UIKit`或`AppKit`可以自動繼續活動。 請參閱[文件為基礎的應用程式中支援的遞交](#supporting-handoff-in-document-based-apps)如需詳細資訊，如下一節。
 
 ### <a name="failing-handoff-gracefully"></a>美麗的遞交
 

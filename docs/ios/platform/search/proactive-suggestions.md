@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 7b7564e3b94062c2294919121f32c4f830346bda
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bb6b47f7936745b00e2b7e6095662a7e8273e1bd
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105333"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677894"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>在 Xamarin.iOS 中的主動式建議簡介
 
@@ -397,7 +397,7 @@ namespace MonkeyNotification
 }
 ```
 
-查看這個程式碼的詳細資料，它會建立並於其中填入執行個體`NSUserActivity`(如中所示[建立活動](#Creating-an-Activity)上一節)。 接下來，它會建立的執行個體`INSendMessageIntent`(繼承自`INIntent`)，並填入所傳送之訊息的詳細資料：
+查看這個程式碼的詳細資料，它會建立並於其中填入執行個體`NSUserActivity`(如中所示[建立活動](#creating-an-activity)上一節)。 接下來，它會建立的執行個體`INSendMessageIntent`(繼承自`INIntent`)，並填入所傳送之訊息的詳細資料：
 
 ```csharp
 var intent = new INSendMessageIntent (to, text, "", "MonkeyChat", from);
@@ -480,7 +480,7 @@ Schema.org 可以提供相同類型的位置為基礎的網站的互動。 Apple
 
 Safari 會擷取符合下列結構描述屬性的任何網頁上的任何項目：
 
-- **省略**
+- **PostalAddress**
 - **GeoCoordinates**
 - 此電話屬性中。
 
