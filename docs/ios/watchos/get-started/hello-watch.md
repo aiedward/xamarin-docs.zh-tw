@@ -67,7 +67,7 @@ ms.locfileid: "57672608"
 建立您的 UI:
 
 1. 從**工具箱**平台，
-1. 將拖放** 按鈕**並**標籤**光芒，和
+1. 將拖放 **按鈕** 並 **標籤** 光芒，和
 1. 設定文字和控制項所示的屬性：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
