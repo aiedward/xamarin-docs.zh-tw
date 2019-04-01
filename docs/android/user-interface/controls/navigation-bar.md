@@ -15,7 +15,7 @@ ms.locfileid: "57670008"
 ---
 # <a name="navigation-bar"></a>巡覽列
 
-Android 4 也引入了新系統使用者介面功能，稱為 *瀏覽列* ，以提供不包含硬體按鈕的裝置上的導覽控制項 **首頁** ， **回** ，並 ** 功能表** 。
+Android 4 也引入了新系統使用者介面功能，稱為 *瀏覽列* ，以提供不包含硬體按鈕的裝置上的導覽控制項 **首頁** ， **回** ，並 **功能表** 。
 下列螢幕擷取畫面顯示導覽列，從 Nexus 質數裝置：
 
  [![Android 導覽列中的範例](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png#lightbox)

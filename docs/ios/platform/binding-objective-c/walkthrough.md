@@ -532,7 +532,7 @@ Europa:Resources kmullins$
 
     ![](walkthrough-images/use02.png "將參考新增至繫結專案")
 
-1. **建立使用者介面在 iPhone** -按兩下 **MainStoryboard.storyboard** 中的檔案 **InfColorPickerSample** iOS 設計工具中編輯的專案。 新增** 按鈕**檢視，並為它`ChangeColorButton`，如下列所示：
+1. **建立使用者介面在 iPhone** -按兩下 **MainStoryboard.storyboard** 中的檔案 **InfColorPickerSample** iOS 設計工具中編輯的專案。 新增 **按鈕** 檢視，並為它`ChangeColorButton`，如下列所示：
 
     ![](walkthrough-images/use03.png "將按鈕新增至檢視")
 
@@ -554,7 +554,7 @@ Europa:Resources kmullins$
 
     ![](walkthrough-images/use02vs.png "將參考加入至繫結專案")
 
-1. **建立使用者介面在 iPhone** -按兩下 **MainStoryboard.storyboard** 中的檔案 **InfColorPickerSample** iOS 設計工具中編輯的專案。 新增** 按鈕**檢視，並為它`ChangeColorButton`，如下列所示：
+1. **建立使用者介面在 iPhone** -按兩下 **MainStoryboard.storyboard** 中的檔案 **InfColorPickerSample** iOS 設計工具中編輯的專案。 新增 **按鈕** 檢視，並為它`ChangeColorButton`，如下列所示：
 
     ![](walkthrough-images/use03vs.png "建立 iPhone 使用者介面")
 
