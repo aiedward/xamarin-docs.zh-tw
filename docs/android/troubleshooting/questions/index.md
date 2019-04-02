@@ -49,10 +49,6 @@ Xamarin.Android 需要 JDK 8 或 Microsoft 行動 OpenJDK。 本文列出一些�
 
 本指南涵蓋設定 Android NUnit 測試專案中，步驟_不_Xamarin.UITest 專案。 您可以找到 Xamarin.UITest 輔助線[此處](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)。
 
-### <a name="how-do-i-enable-intellisense-in-android-axml-filesenable-axml-intellisensemd"></a>[如何啟用 Android.axml 檔案中的 Intellisense？](enable-axml-intellisense.md)
-
-本指南說明如何啟用 android.axml 檔案的 Visual Studio's Intellisense。
-
 ### <a name="why-cant-my-android-release-build-connect-to-the-internetandroid-internetmd"></a>[為何我的 Android 發行組建無法連線到網際網路？](android-internet.md)
 
 此問題最常見的原因在於**網際網路**權限會自動包含在偵錯組建，但必須手動設定的發行組建。 本指南說明如何啟用發行組建的權限。

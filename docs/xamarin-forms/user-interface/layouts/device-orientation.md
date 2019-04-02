@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 762d4752eb3882398f212e634c66305f74d5a459
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: a57775776b32f34d2c9b976a22cc92cc22f3c879
+ms.sourcegitcommit: 771e65583e978ff2b9c652b953a21b0bbb10a5d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052659"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58782496"
 ---
 # <a name="device-orientation"></a>裝置方向
 
@@ -456,6 +456,7 @@ protected override void OnSizeAllocated (double width, double height){
             innerGrid.Children.Remove (controlsGrid);
             innerGrid.Children.Add (controlsGrid, 1, 0);
         } else {
+            innerGrid.RowDefinitions.Clear();
             innerGrid.ColumnDefinitions.Clear ();
             innerGrid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (1, GridUnitType.Star) });
             innerGrid.RowDefinitions.Add (new RowDefinition { Height = new GridLength (1, GridUnitType.Auto) });
@@ -477,4 +478,4 @@ protected override void OnSizeAllocated (double width, double height){
 - [版面配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [BusinessTumble 範例 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
 - [回應式配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
-- [顯示基的映像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)
+- [顯示基礎 堶菾 的映像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)
