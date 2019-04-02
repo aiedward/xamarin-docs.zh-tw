@@ -595,8 +595,6 @@ items:
         href: troubleshooting/questions/connect-android-emulator-mac-windows.md
       - name: 如何將 Android NUnit 測試專案自動化？
         href: troubleshooting/questions/automate-android-nunit-test.md
-      - name: 如何在 Android.axml 檔案中啟用 Intellisense？
-        href: troubleshooting/questions/enable-axml-intellisense.md
       - name: 為何我的 Android 發行組建無法連線到網際網路？
         href: troubleshooting/questions/android-internet.md
       - name: 更聰明的 Xamarin Android 支援 v4 / v13 NuGet 套件
@@ -658,9 +656,9 @@ items:
   - name: 範例
     href: samples/index.yml
   expanded: true
-ms.openlocfilehash: 7621bf3950c58cb4ffd6f33b73e9153409f93c9e
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: cf107832a9de0e26af34cda5da52907d6aab4a9c
+ms.sourcegitcommit: e8271d3ea1ecb92aefb44f6f2a1c5ed2b7bcb157
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58175378"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58796530"

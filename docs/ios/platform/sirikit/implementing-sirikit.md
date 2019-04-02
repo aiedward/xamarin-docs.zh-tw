@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: c8d5c1394bee2ca2419904b077522fac9d03d825
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2c3bddc89348b46c9bba277580071cb8ac3d6943
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669438"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58678050"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>在 Xamarin.iOS 中實作 SiriKit
 
@@ -173,7 +173,7 @@ namespace MonkeyChat
     [![](implementing-sirikit-images/setup01.png "新增 com.apple.developer.siri 屬性")](implementing-sirikit-images/setup01.png#lightbox)
 4. 將變更儲存到檔案。
 5. 按兩下**專案檔**中**方案總管中**以開啟它進行編輯。
-6. 選取  **iOS 套件組合簽署**，並確定`Entitlements.plist`中選取檔案**自訂權利**欄位： 
+6. 選取 **iOS 套件組合簽署**，並確定`Entitlements.plist`中選取檔案**自訂權利**欄位： 
 
     [![](implementing-sirikit-images/setup02.png "選取 [自訂權利] 欄位中的 Entitlements.plist 檔案")](implementing-sirikit-images/setup02.png#lightbox)
 7. 按一下 [確定] 按鈕以儲存所做的變更。
@@ -635,7 +635,7 @@ namespace MonkeyChat
     
 -----
 
-重複這些步驟的意圖延伸模組的數目 (根據[架構擴充功能的應用程式](#Architecting-the-App-for-Extensions)上一節) 會要求應用程式。
+重複這些步驟的意圖延伸模組的數目 (根據[架構擴充功能的應用程式](#architecting-the-app-for-extensions)上一節) 會要求應用程式。
 
 ### <a name="configuring-the-infoplist"></a>設定 Info.plist
 
