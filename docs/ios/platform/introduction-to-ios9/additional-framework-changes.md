@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: f7106c9b23fa71b32043ef8190691d798c36370d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 5156259f8178da69595464f75a10cd8f41965519
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672569"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870322"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>其他 iOS 9 架構變更
 
@@ -24,7 +24,7 @@ IOS 的主要變更，除了 Apple 方面所做的修改以及數個現有的架
 
 ## <a name="avfoundation-framework-additions"></a>AVFoundation Framework 新增功能
 
-在 AVFoundation framework 中， [AVSpeechSynthesisVoice](https://developer.xamarin.com/api/type/AVFoundation.AVSpeechSynthesisVoice/)類別現在可讓您除了語言識別項所指定的語音。
+在 AVFoundation framework 中， [AVSpeechSynthesisVoice](xref:AVFoundation.AVSpeechSynthesisVoice)類別現在可讓您除了語言識別項所指定的語音。
 
 比方說，下列程式碼會取得所有可用的語音的清單：
 
@@ -32,15 +32,15 @@ IOS 的主要變更，除了 Apple 方面所做的修改以及數個現有的架
 var voices = AVSpeechSynthesisVoice.GetSpeechVoices ();
 ```
 
-您可以藉由設定它，然後使用其中一個清單中的語音`Voice`執行個體的屬性[AVSpeachUtterance](https://developer.xamarin.com/api/type/AVFoundation.AVSpeechUtterance/)類別。
+您可以藉由設定它，然後使用其中一個清單中的語音`Voice`執行個體的屬性[AVSpeachUtterance](xref:AVFoundation.AVSpeechUtterance)類別。
 
-[AVQueuePlayer](https://developer.xamarin.com/api/type/AVFoundation.AVQueuePlayer/)類別現可支援混合的網際網路串流和以檔案為基礎的媒體在佇列中。 舊版無法佇列媒體型別相同。
+[AVQueuePlayer](xref:AVFoundation.AVQueuePlayer)類別現可支援混合的網際網路串流和以檔案為基礎的媒體在佇列中。 舊版無法佇列媒體型別相同。
 
 如需詳細資訊，請參閱 Apple [AVSpeechSynthesisVoice 參考](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVSpeechSynthesisVoice_Ref/index.html#//apple_ref/occ/cl/AVSpeechSynthesisVoice)。
 
 ## <a name="avkit-framework-additions"></a>AVKit Framework 新增功能
 
-若要使用新的圖片中圖片 (PIP) 」 功能，包括新 AVKit framework`AVPictureInPictureController`並[AVPlayerViewController](https://developer.xamarin.com/api/type/AVKit.AVPlayerViewController/)類別：
+若要使用新的圖片中圖片 (PIP) 」 功能，包括新 AVKit framework`AVPictureInPictureController`並[AVPlayerViewController](xref:AVKit.AVPlayerViewController)類別：
 
 - **AVPictureInPictureController** -這個類別可讓 iOS 9 應用程式以回應使用者啟動中浮動、 可調整大小的 PIP 視窗，在 iPad 上的影片的播放。
 - **AVPlayerViewController** -管理`AVPlayer`控制器用來呈現中浮動、 可調整大小的 PIP 視窗，在 iPad 上的影片。
@@ -117,7 +117,7 @@ if (NSProcessInfo.ProcessInfo.LowPowerModeEnabled) {
 
 ## <a name="healthkit-framework-changes"></a>HealthKit 架構變更
 
-Apple 會包含下列變更[HealthKit](https://developer.xamarin.com/api/namespace/HealthKit/)中 iOS 9 架構：
+Apple 會包含下列變更[HealthKit](xref:HealthKit)中 iOS 9 架構：
 
 - 支援大量刪除和 HealthKit 資料庫中的項目刪除追蹤。 請參閱 Apple [HKDeletedObject](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKDeletedObject_ClassReference/index.html#//apple_ref/occ/cl/HKDeletedObject)， [HKAnchoredObjectQuery](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/cl/HKAnchoredObjectQuery)並[HKHealthStore 類別參考](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/doc/uid/TP40014708)如需詳細資訊。
 - 新的追蹤類別 」 和 「 特性新增至`HKQuantityTypeIdentifier`類別 (例如`UVExposure`) 以及`HKCategoryTypeIdentifier`類別 (例如`OvulationTestResult`)。 請參閱 Apple [HealthKit 常數參考](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HealthKit_Constants/index.html#//apple_ref/doc/uid/TP40014710)如需詳細資訊。
@@ -126,9 +126,9 @@ Apple 會包含下列變更[HealthKit](https://developer.xamarin.com/api/namespa
 
 ## <a name="local-authentication-framework-changes"></a>本機驗證架構變更
 
-Apple 會包含下列變更[本機驗證](https://developer.xamarin.com/api/namespace/LocalAuthentication/)中 iOS 9 架構：
+Apple 會包含下列變更[本機驗證](xref:LocalAuthentication)中 iOS 9 架構：
 
-- 使用`EvaluateAccessControl`並`EvaluatePolicy`種[LAContext](https://developer.xamarin.com/api/type/LocalAuthentication.LAContext/)類別，您現在可以嘗試重複使用 Touch ID 符合從上一個成功解除鎖定。
+- 使用`EvaluateAccessControl`並`EvaluatePolicy`種[LAContext](xref:LocalAuthentication.LAContext)類別，您現在可以嘗試重複使用 Touch ID 符合從上一個成功解除鎖定。
 - 能夠取得一份目前已註冊的手指。
 - 追蹤何時新增或移除從驗證手指的支援。
 - 若要使用的能力_驗證內容_Keychain 呼叫與支援中的評估鑰匙圈存取控制清單。
@@ -138,7 +138,7 @@ Apple 會包含下列變更[本機驗證](https://developer.xamarin.com/api/name
 
 ### <a name="lacontext-changes"></a>LAContext 變更
 
-已進行下列變更來[LAContext](https://developer.xamarin.com/api/type/LocalAuthentication.LAContext/)適用於 iOS 9 的類別：
+已進行下列變更來[LAContext](xref:LocalAuthentication.LAContext)適用於 iOS 9 的類別：
 
 - **TouchIdAuthenticationMaximumAllowableReuseDuration** -傳回的最大可重複使用 touch ID 驗證的時間量。
 - **EvaluatedPolicyDomainState** -取得或設定評估的原則狀態。
@@ -153,17 +153,17 @@ Apple 會包含下列變更[本機驗證](https://developer.xamarin.com/api/name
 
 ## <a name="mapkit-framework-changes"></a>MapKit 架構變更
 
-Apple 會包含下列變更[MapKit](https://developer.xamarin.com/api/namespace/MapKit/)中 iOS 9 架構：
+Apple 會包含下列變更[MapKit](xref:MapKit)中 iOS 9 架構：
 
-- MapKit 現在提供支援，直接在傳輸指示啟動對應應用程式和查詢傳輸抵達 (ETA) 使用的預估時間[MKLaunchOptions](https://developer.xamarin.com/api/type/MapKit.MKLaunchOptions/)並[MKDirections](https://developer.xamarin.com/api/type/MapKit.MKLaunchOptions/)類別。
-- MapKit 所傳回的搜尋結果並[CLGeocoder](https://developer.xamarin.com/api/type/CoreLocation.CLGeocoder/)類別也可以提供結果的時區。
-- 您現在可以完全自訂您 iOS 的應用程式使用所提供的對應註釋`DetailCalloutAccessoryView`的屬性[MKAnnotationView](https://developer.xamarin.com/api/type/MapKit.MKAnnotationView/)類別。
+- MapKit 現在提供支援，直接在傳輸指示啟動對應應用程式和查詢傳輸抵達 (ETA) 使用的預估時間[MKLaunchOptions](xref:MapKit.MKLaunchOptions)並[MKDirections](xref:MapKit.MKLaunchOptions)類別。
+- MapKit 所傳回的搜尋結果並[CLGeocoder](xref:CoreLocation.CLGeocoder)類別也可以提供結果的時區。
+- 您現在可以完全自訂您 iOS 的應用程式使用所提供的對應註釋`DetailCalloutAccessoryView`的屬性[MKAnnotationView](xref:MapKit.MKAnnotationView)類別。
 
 請參閱我們[iOS Maps](~/ios/user-interface/controls/ios-maps/index.md)並[逐步解說-瀏覽註釋及重疊 MapKit 中的](~/ios/user-interface/controls/ios-maps/ios-maps-walkthrough.md)文件，如需有關使用對應和 Xamarin.iOS 與 Apple中的註解[CLGeocoder 參考](https://developer.apple.com/library/prerelease/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/cl/CLGeocoder)如需詳細資訊。
 
 ## <a name="passkit-framework-additions"></a>PassKit 架構新增項目
 
-Apple 會包含下列變更[PassKit](https://developer.xamarin.com/api/namespace/PassKit/)中 iOS 9 架構：
+Apple 會包含下列變更[PassKit](xref:PassKit)中 iOS 9 架構：
 
 - Apple Pay 」 現在支援儲存區金融和信用卡，以及探索卡片。 請參閱**付款網路**一節的 Apple [PKPaymentRequest 類別參考](https://developer.apple.com/library/prerelease/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/doc/uid/TP40014832)如需詳細資訊。
 - 從直接在 Xamarin.iOS 應用程式，您現在可以將付款網路和卡片簽發者加入 Apple Pay。 請參閱 Apple [PKAddPaymentPassViewController 類別參考](https://developer.apple.com/library/prerelease/ios/documentation/PassKit/Reference/PKAddPaymentPassViewController_Class/index.html#//apple_ref/doc/uid/TP40016116)如需詳細資訊。
@@ -172,15 +172,15 @@ Apple 會包含下列變更[PassKit](https://developer.xamarin.com/api/namespace
 
 ## <a name="safari-services-framework-additions"></a>Safari Services Framework 新增功能
 
-Apple 會包含下列變更[Safari 服務](https://developer.xamarin.com/api/namespace/SafariServices/)中 iOS 9 架構：
+Apple 會包含下列變更[Safari 服務](xref:SafariServices)中 iOS 9 架構：
 
-- 您現在可以使用新[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)類別，以顯示 web 內容在 Xamarin.iOS 應用程式中的。 它讓您能夠分享在 Safari 應用程式中的網站資料和 cookie，並包含數個 Safari 的功能 （例如，讀取器和自動填入）。 [SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)功能**完成**在完成檢視 web 內容時，會傳回使用者到您的應用程式的按鈕。
+- 您現在可以使用新[SFSafariViewController](xref:SafariServices.SFSafariViewController)類別，以顯示 web 內容在 Xamarin.iOS 應用程式中的。 它讓您能夠分享在 Safari 應用程式中的網站資料和 cookie，並包含數個 Safari 的功能 （例如，讀取器和自動填入）。 [SFSafariViewController](xref:SafariServices.SFSafariViewController)功能**完成**在完成檢視 web 內容時，會傳回使用者到您的應用程式的按鈕。
 
-因為[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)來顯示 web 內容的單一頁面的類別量身訂做，您應該考慮使用它來取代任何[WKWebKit](xref:WebKit.WKWebView)或[UIWebView](xref:UIKit.UIWebView)對現有的 Xamarin.iOS 應用程式內的控制項。
+因為[SFSafariViewController](xref:SafariServices.SFSafariViewController)來顯示 web 內容的單一頁面的類別量身訂做，您應該考慮使用它來取代任何[WKWebKit](xref:WebKit.WKWebView)或[UIWebView](xref:UIKit.UIWebView)對現有的 Xamarin.iOS 應用程式內的控制項。
 
 ### <a name="displaying-a-website"></a>顯示網站
 
-下列程式碼會呼叫的範例[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)從另一個檢視控制器內：
+下列程式碼會呼叫的範例[SFSafariViewController](xref:SafariServices.SFSafariViewController)從另一個檢視控制器內：
 
 ```csharp
 // Create an instance of the Safari Services View Controller
@@ -267,6 +267,6 @@ Apple 在 iOS 9 中包含 UIKit Dynamics 的下列變更：
 ## <a name="related-links"></a>相關連結
 
 - [iOS 9 範例](https://developer.xamarin.com/samples/ios/iOS9/)
-- [iOS 9 簡介](~/ios/platform/introduction-to-ios9/index.md)
+- [IOS 9 簡介](~/ios/platform/introduction-to-ios9/index.md)
 - [iOS 9 的開發人員](https://developer.apple.com/ios/pre-release/)
 - [新功能 iOS 9.0 以上版本](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

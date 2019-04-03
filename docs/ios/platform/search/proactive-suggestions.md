@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: bb6b47f7936745b00e2b7e6095662a7e8273e1bd
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.openlocfilehash: 2ab0147f918b36dc47ef6eed7d9bf1b6295d9733
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677894"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870400"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>在 Xamarin.iOS 中的主動式建議簡介
 
@@ -51,7 +51,7 @@ iOS 9 新增至能夠在網站中豐富的使用者在焦點以及 Safari 的搜
 
 ## <a name="media-based-suggestions"></a>媒體基礎的建議
 
-如果應用程式會播放媒體使用[MPPlayableContentManager](https://developer.xamarin.com/api/type/MediaPlayer.MPPlayableContentManager/) API，iOS 10 可讓使用者檢視專輯封面，並在鎖定畫面上播放媒體透過應用程式。
+如果應用程式會播放媒體使用[MPPlayableContentManager](xref:MediaPlayer.MPPlayableContentManager) API，iOS 10 可讓使用者檢視專輯封面，並在鎖定畫面上播放媒體透過應用程式。
 
 ## <a name="contextual-siri-reminders"></a>內容 Siri 提醒
 
@@ -63,12 +63,12 @@ iOS 9 新增至能夠在網站中豐富的使用者在焦點以及 Safari 的搜
 
 ## <a name="ride-sharing-based-suggestions"></a>共用的賽車架構建議
 
-如果 rani 應用程式使用[MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) API，iOS 10 會將它顯示在應用程式切換器中選擇有時當使用者可能會想要好好體驗吧。 應用程式必須也註冊為 rani 應用程式藉由指定`MKDirectionsModeRideShare`for [MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html)中的索引鍵及其`Info.plist`檔案。
+如果 rani 應用程式使用[MKDirectionsRequest](xref:MapKit.MKDirectionsRequest) API，iOS 10 會將它顯示在應用程式切換器中選擇有時當使用者可能會想要好好體驗吧。 應用程式必須也註冊為 rani 應用程式藉由指定`MKDirectionsModeRideShare`for [MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html)中的索引鍵及其`Info.plist`檔案。
 
 應用程式只支援共用好好體驗吧，如果系統建議會以開頭 *「...取得要好好體驗吧 」*，如果支援其他類型的路由 （例如 Walking 或自行車） 的方向，系統會使用 *「...取得指示 」*
 
 > [!IMPORTANT]
-> [MKMapItem](https://developer.xamarin.com/api/type/MapKit.MKMapItem/)的應用程式收到的物件可能不會包含經度和緯度的資訊，而且將會需要地理編碼。
+> [MKMapItem](xref:MapKit.MKMapItem)的應用程式收到的物件可能不會包含經度和緯度的資訊，而且將會需要地理編碼。
 
 ## <a name="implementing-proactive-suggestions"></a>實作主動式建議
 
@@ -189,7 +189,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 使用以上所顯示的程式碼的最少，就能夠利用三個新的 iOS 10 功能的應用程式：
 
-- **Handoff**
+- **遞交**
 - **Spotlight 搜尋**
 - **內容 Siri 提醒**
 

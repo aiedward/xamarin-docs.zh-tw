@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
+ms.openlocfilehash: b018fe343a7d46f1323119b03a22cc3831a02d9f
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870244"
 ---
-
 # <a name="introduction-to-ios-10"></a>IOS 10 簡介
 
 _這篇文章會介紹的所有新的及修改 Api 和功能可在 iOS 10 中適用於 Xamarin.iOS 開發人員。_
@@ -221,9 +226,9 @@ Apple 已引進數個增強功能的小工具系統，以確保 widget 好看任
 
 IOS 10 中，已被取代的下列 Api:
 
-- `CKDiscoverAllContactsOperation`， `CKDiscoveredUserInfo`，`CKDiscoverUserInfosOperation`和`CKFetchRecordChangesOperation`類別已被取代 CloudKit 適用於 iOS 10。 使用[CKDiscoverAllUserIdentitiesOperation](https://developer.xamarin.com/api/type/CloudKit.CKDiscoverUserIdentitiesOperation/)， [CKUserIdentity](https://developer.xamarin.com/api/type/CloudKit.CKUserIdentity/)並[CKFetchRecordZoneChangesOperation](https://developer.xamarin.com/api/type/CloudKit.CKFetchRecordZoneChangesOperation/) （其支援記錄共用） 類別改為。
-- 數個[CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) Api （例如區域為基礎和以查詢為基礎訂用帳戶） 已被取代。 使用[CKRecordZoneSubscription](https://developer.xamarin.com/api/type/CloudKit.CKRecordZoneSubscription/)並[CKQuerySubscription](https://developer.xamarin.com/api/type/CloudKit.CKQuerySubscription/) Api 改。
-- [NSPersistentStoreCoordnator](https://developer.xamarin.com/api/type/CoreData.NSPersistentStoreCoordinator/)無所不在的內容相關的符號已被取代。
+- `CKDiscoverAllContactsOperation`， `CKDiscoveredUserInfo`，`CKDiscoverUserInfosOperation`和`CKFetchRecordChangesOperation`類別已被取代 CloudKit 適用於 iOS 10。 使用[CKDiscoverAllUserIdentitiesOperation](xref:CloudKit.CKDiscoverUserIdentitiesOperation)， [CKUserIdentity](xref:CloudKit.CKUserIdentity)並[CKFetchRecordZoneChangesOperation](xref:CloudKit.CKFetchRecordZoneChangesOperation) （其支援記錄共用） 類別改為。
+- 數個[CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) Api （例如區域為基礎和以查詢為基礎訂用帳戶） 已被取代。 使用[CKRecordZoneSubscription](xref:CloudKit.CKRecordZoneSubscription)並[CKQuerySubscription](xref:CloudKit.CKQuerySubscription) Api 改。
+- [NSPersistentStoreCoordnator](xref:CoreData.NSPersistentStoreCoordinator)無所不在的內容相關的符號已被取代。
 - `ADBannerView``ADInterstitialAd`和相關中的符號[UIViewController](xref:UIKit.UIViewController)類別已被取代。
 - [SKUniform](https://developer.apple.com/reference/spritekit/skuniform)與浮點值的符號已被取代。
 - `UILocalNotification`， `UIMutableUserNotificationAction`， `UIMutableUserNotificationCategory`， `UIUserNotificationAction`，`UIUserNotificationCategory`和`UIUserNotificationSettings`UIKit 類別已被取代。 使用[使用者通知](#user-notifications)framework 改。

@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
 ms.date: 11/25/2015
-ms.openlocfilehash: 4f08468d08e12ad77cacbac66b55ad8fc6ead433
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: d29239d986ebfe153381915dbe0f4bfbbe738007
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667960"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870335"
 ---
 # <a name="overview-of-objective-c-bindings"></a>OBJECTIVE-C 繫結的概觀
 
@@ -88,7 +88,7 @@ namespace Example.Binding {
 }
 ```
 
-第三，檢閱 OBJECTIVE-C 文件，並建立[ObjCRuntime.Selector](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/)您想要使用每個選取器的執行個體。 放在類別主體中：
+第三，檢閱 OBJECTIVE-C 文件，並建立[ObjCRuntime.Selector](xref:ObjCRuntime.Selector)您想要使用每個選取器的執行個體。 放在類別主體中：
 
 ```csharp
 static Selector selInit       = new Selector("init");
@@ -116,7 +116,7 @@ public NSEnumerator(IntPtr handle)
 }
 ```
 
-第五，提供每個選取器的方法宣告在步驟 3 中。 它們會使用`objc_msgSend()`叫用的原生物件上的選取器。 請注意，使用[Runtime.GetNSObject()](https://developer.xamarin.com/api/member/ObjCRuntime.Runtime.GetNSObject/(System.IntPtr))轉換`IntPtr`成適當型別`NSObject`（sub） 類型。 如果您想要能夠從 OBJECTIVE-C 程式碼，該成員呼叫的方法*必須*被**虛擬**。
+第五，提供每個選取器的方法宣告在步驟 3 中。 它們會使用`objc_msgSend()`叫用的原生物件上的選取器。 請注意，使用[Runtime.GetNSObject()](xref:ObjCRuntime.Runtime.GetNSObject*)轉換`IntPtr`成適當型別`NSObject`（sub） 類型。 如果您想要能夠從 OBJECTIVE-C 程式碼，該成員呼叫的方法*必須*被**虛擬**。
 
 ```csharp
 [Export("nextObject")]
