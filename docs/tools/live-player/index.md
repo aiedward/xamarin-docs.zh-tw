@@ -6,12 +6,12 @@ ms.assetid: 19B1F126-866E-4672-92D2-BE2B70ACF0F1
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2017
-ms.openlocfilehash: 75216eb5c5b471b8837da3635b1680cdf80a0bfe
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5b969c6118d1fa23558efaabc87cd53a920f3490
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118002"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855038"
 ---
 # <a name="xamarin-live-player-for-xamarinforms"></a>適用於 Xamarin.Forms 的 Xamarin Live Player
 
@@ -21,32 +21,27 @@ Xamarin Live Player 預覽版設計成可開始開發人員取得他們的想法
 
 ![預覽功能](~/media/shared/preview.png)
 
+> [!NOTE]
+> 只有 Visual Studio 2017 中使用播放程式的即時預覽。
+
 ## <a name="get-started-with-xamarin-live-player"></a>開始使用 Xamarin Live Player
 
-[![Xamarin Live Player： 程式碼中，掃描，請測試](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
+[![Xamarin Live Player:程式碼中，掃描，請測試](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
 1. 下載應用程式依照[Xamarin Live Player 安裝](install.md)指示。
 2. 啟用*Xamarin Live Player*中**喜好設定**，然後選取您的裝置，從**裝置**清單。
 3. 管理 Live Player 裝置來掃描 QR 代碼以您的裝置，Visual studio 配對。
 4. 在您的手機或平板電腦上直接執行應用程式。
 
-## <a name="xamarin-live-player-setupinstallmd"></a>[Xamarin Live Player 安裝程式](install.md)
+## [<a name="xamarin-live-player-setup"></a>Xamarin Live Player 安裝程式](install.md)
 
 下載 Xamarin Live Player 及設定您的 IDE，使用於 Xamarin.Forms 應用程式，從 Visual Studio 2017 或 Visual Studio for mac。 
 
-## <a name="xamarin-live-player-appplayermd"></a>[Xamarin Live Player 應用程式](player.md)
+## [<a name="xamarin-live-player-app"></a>Xamarin Live Player 應用程式](player.md)
 
 使用 Xamarin Live Player 應用程式。
 
-## <a name="samples-to-try-with-xamarin-live-playersamplesmd"></a>[嘗試搭配 Xamarin Live Player 的範例](samples.md)
-
-若要搭配 Xamarin Live Player 應用程式範例的連結。
-
-## <a name="limitationslimitationsmd"></a>[限制](limitations.md)
-
-Xamarin Live Player 會有一些限制，它可支援哪些功能。
-
-## <a name="troubleshootingtroubleshootingmd"></a>[疑難排解](troubleshooting.md)
+## [<a name="troubleshooting"></a>疑難排解](troubleshooting.md)
 
 如果發生錯誤，請找到說明。
 

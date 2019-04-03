@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/09/2016
-ms.openlocfilehash: 56456372b13dad5b5040c0c466f2efdf6ecdbc2a
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.openlocfilehash: 009e061726f655999c08192b5839a5c962d35e24
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58071017"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855090"
 ---
 # <a name="using-icloud-with-xamarinios"></a>與 Xamarin.iOS 使用 iCloud
 
@@ -36,8 +36,8 @@ ms.locfileid: "58071017"
 ## <a name="requirements"></a>需求
 
 - 最新穩定版本的 Xamarin.iOS
-- Xcode 8 或更新版本
-- Visual Studio for Mac 或 Visual Studio 2017 及更新版本。
+- Xcode 10
+- Visual Studio for Mac 或 Visual Studio 2019。
 
 ## <a name="preparing-for-icloud-development"></a>準備 iCloud 開發
 

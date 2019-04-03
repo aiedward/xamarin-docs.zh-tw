@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 8edabfc6fa3988af0dd38dbfd9daeb1c4003c33e
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2bd45c5482a8f0367bffa21f301bb631c3429a21
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670762"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870127"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json Markup
 
-此頁面描述接受 MonoTouch.Dialog 的 Json 標記[JsonElement](https://developer.xamarin.com/api/type/MonoTouch.Dialog.JsonElement/)
+此頁面描述接受 MonoTouch.Dialog 的 Json 標記[JsonElement](xref:MonoTouch.Dialog.JsonElement)
 
 讓我們開始的範例。 以下是完整的 Json 檔案，才能傳遞至 JsonElement。
 
@@ -153,7 +153,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 
 -  `header` (選擇性)
 -  `footer` (選擇性)
--  `elements` 陣列
+-  `elements` array
 
 
  <a name="header" />

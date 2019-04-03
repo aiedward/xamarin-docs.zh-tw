@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 6243f7d90b921207f4dd406a1f33f4d7af40ecfb
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7e9bfa841db9f0a76f762bab22050377830d85de
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668359"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854869"
 ---
 # <a name="gtk-platform-setup"></a>GTK # 平台安裝程式
 
@@ -29,11 +29,11 @@ Xamarin.Forms 現在有 GTK # 應用程式的預覽支援。 GTK # 是圖形化�
 
 GTK # 適用於 macOS 和 Linux 安裝的一部分[Mono](https://www.mono-project.com/download/stable/)。 GTK # 適用於.NET 可以與 Windows 上安裝[GTK # Installer](https://www.mono-project.com/download/stable/#download-win)。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 請遵循這些指示來新增將會在 Windows 桌面上執行的 GTK # 應用程式：
 
-1. 在 Visual Studio 2017 中，以滑鼠右鍵按一下方案名稱，在**方案總管**，然後選擇 **新增 > 新增專案...**.
+1. 在 Visual Studio 2019，以滑鼠右鍵按一下方案名稱，在**方案總管**，然後選擇 **新增 > 新增專案...**.
 
 2. 在 **新的專案**視窗中的，從左邊選取**Visual C#** 並**Windows 傳統桌面**。 在專案類型清單中，選擇**類別庫 (.NET Framework)**，並確定**Framework**下拉式清單設為.NET Framework 4.7 的最小值。
 
@@ -110,7 +110,7 @@ GTK # 適用於 macOS 和 Linux 安裝的一部分[Mono](https://www.mono-projec
 
     ![GTK # 遊戲的生命循環](gtk-images/win/gtk-gameoflife.png "GTK # 遊戲生命週期")
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 請遵循下列指示來新增將執行 Mac 桌面上 GTK # 應用程式：
 

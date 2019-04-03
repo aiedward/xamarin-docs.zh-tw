@@ -1,21 +1,21 @@
 ---
 title: Apple 帳戶管理
-description: 本文件說明如何在 Visual Studio 中使用的 Apple 帳戶管理功能，適用於 Mac 和 Visual Studio 2017。
+description: 本文件說明如何在 Visual Studio 中使用的 Apple 帳戶管理功能，適用於 Mac 和 Visual Studio 2019。
 ms.prod: xamarin
 ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 1e353aceaf0e2c0525b82c0ccb7e7bcb73df3075
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8617d6e0c0930f581c45dbb461dfcb5d85a2becc
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106061"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855051"
 ---
 # <a name="apple-account-management"></a>Apple 帳戶管理
 
-Apple 帳戶管理介面提供方法來檢視所有的開發小組相關聯的 Apple ID。 它也可讓您藉由顯示一份檢視每個小組的更多詳細_簽署身分識別_並_佈建設定檔_安裝在電腦上。
+Apple 帳戶管理介面提供方法來檢視所有的開發小組相關聯的 Apple id。 它也可讓您藉由顯示一份檢視每個小組的更多詳細_簽署身分識別_並_佈建設定檔_安裝在電腦上。
 
 使用命令列上執行您的 Apple ID 的驗證[fastlane](https://fastlane.tools/)。 您已成功驗證您的電腦上必須安裝 fastlane。 fastlane 並安裝方式的更多有關詳述 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md) 輔助線。
 
@@ -33,7 +33,7 @@ Apple 帳戶 對話方塊可讓您執行下列作業：
 
 ## <a name="requirements"></a>需求
 
-Apple 帳戶管理位於 Visual Studio for Mac 和 Visual Studio 2017 （15.7 版及更新版本）
+在 Visual Studio for Mac 中，Visual Studio 2019 和 Visual Studio 2017 （15.7 版及更新版本） 上使用 Apple 帳戶管理。
 
 您必須有 「 Apple 開發人員帳戶才能使用此功能。 在 Apple 開發人員帳戶的詳細資訊位於[裝置佈建](~/ios/get-started/installation/device-provisioning/index.md)指南。
 
@@ -44,13 +44,13 @@ Apple 帳戶管理位於 Visual Studio for Mac 和 Visual Studio 2017 （15.7 �
 
 ## <a name="adding-an-apple-developer-account"></a>新增 Apple 開發人員帳戶
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 1. 若要開啟 帳戶管理對話方塊，請移至**Visual Studio > 喜好設定 > Apple 開發人員帳戶**:
 
     ![Apple 開發人員帳戶選項](apple-account-management-images/image1.png)
 
-2. 按下 **+** 按鈕以顯示登入 對話方塊，如下所述：  
+2. 按下**+** 按鈕以顯示登入 對話方塊，如下所述： 
 
     ![fastlane 對話方塊。](apple-account-management-images/image2.png)
 
@@ -68,9 +68,9 @@ Apple 帳戶管理位於 Visual Studio for Mac 和 Visual Studio 2017 （15.7 �
 
     ![簽署身分識別和佈建設定檔，您的電腦上檢視詳細資料畫面顯示](apple-account-management-images/image6.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
-1. 您開始將您的 Apple ID 新增至 Visual Studio 2017 之前，請確定您的開發環境[至 Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+1. 您開始將您的 Apple ID 新增至 Visual Studio 2019 之前，請確定您的開發環境[至 Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 
 1. 若要開啟 [帳戶管理] 視窗，請前往**工具 > 選項 > Xamarin > Apple 帳戶**:
 
@@ -109,11 +109,11 @@ Apple 帳戶管理位於 Visual Studio for Mac 和 Visual Studio 2017 （15.7 �
 
 如果下拉式清單中的選項會呈現灰色，而且未選取，這表示您沒有正確的小組權限來建立這種類型的憑證。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 ![建立憑證選項](apple-account-management-images/image8.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 ![建立憑證選項](apple-account-management-images/prov3.png)
 
@@ -123,11 +123,11 @@ Apple 帳戶管理位於 Visual Studio for Mac 和 Visual Studio 2017 （15.7 �
 
 小組的詳細資料 對話方塊也會顯示一份所有連線到您的開發人員帳戶的佈建設定檔。 您也可以按到本機電腦下載所有佈建設定檔**下載所有設定檔**按鈕
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 ![下載佈建的設定檔區段](apple-account-management-images/image9.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 ![下載佈建的設定檔區段](apple-account-management-images/prov4.png)
 

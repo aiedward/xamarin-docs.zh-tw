@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: becba36655a5247a11decb7dc54334f9397ecdfc
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: d0ad25a1ecff7262b9b4b41a5f9d73a5931bbd1c
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233532"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870192"
 ---
 # <a name="introduction-to-ios-9"></a>IOS 9 簡介
 
@@ -58,7 +58,7 @@ IOS 9 和 iPhone 6s 和 iPhone 6s 新手此外，3D 觸控，請將您的 iOS �
 
 ## <a name="new-contacts-and-contacts-ui-frameworks"></a>新的連絡人和連絡人 UI 架構
 
-使用 iOS 9 的引進，Apple 已發行兩個新的架構[連絡人](https://developer.xamarin.com/api/namespace/Contacts/)並[ContactsUI](https://developer.xamarin.com/api/namespace/ContactsUI/)、 取代現有的通訊錄。 和地址通訊錄 UI 架構供 iOS 8 和較早版本。
+使用 iOS 9 的引進，Apple 已發行兩個新的架構[連絡人](xref:Contacts)並[ContactsUI](xref:ContactsUI)、 取代現有的通訊錄。 和地址通訊錄 UI 架構供 iOS 8 和較早版本。
 
 這些新的物件導向的架構提供下列項目：
 
@@ -103,7 +103,7 @@ IOS 9 和 iPhone 6s 和 iPhone 6s 新手此外，3D 觸控，請將您的 iOS �
 
 ## <a name="homekit-framework-changes"></a>HomeKit 架構變更
 
-[HomeKit](https://developer.xamarin.com/api/namespace/HomeKit/) iOS 8 中引入架構讓您能夠設定和控制各種啟用 HomeKit 附屬應用程式 （例如自動化的號誌、 門鎖和車庫門 openers） 從 Xamarin.iOS 應用程式。 除了輕鬆安裝和設定，可以透過語音 Siri 命令控制 HomeKit 配件。
+[HomeKit](xref:HomeKit) iOS 8 中引入架構讓您能夠設定和控制各種啟用 HomeKit 附屬應用程式 （例如自動化的號誌、 門鎖和車庫門 openers） 從 Xamarin.iOS 應用程式。 除了輕鬆安裝和設定，可以透過語音 Siri 命令控制 HomeKit 配件。
 
 在 iOS 9 中，Apple 已變得非常容易設定、 展開 附屬應用程式支援，並提供更多的配件互動 （例如控制從遠端透過 iCloud 附屬應用程式） 的類型。
 
@@ -212,7 +212,7 @@ Apple 已取代的下列 Api 和 iOS 9 中的函式：
 
 - [iOS 9 範例](https://developer.xamarin.com/samples/ios/iOS9/)
 - [3D 觸控簡介](~/ios/platform/3d-touch.md)
-- [應用程式傳輸安全性](~/ios/app-fundamentals/ats.md)
+- [應用程式的傳輸安全性](~/ios/app-fundamentals/ats.md)
 - [適用於 iPad 的多工](~/ios/platform/multitasking.md)
 - [連絡人和連絡人 UI](~/ios/platform/contacts.md)
 - [新的搜尋 Api](~/ios/platform/search/index.md)

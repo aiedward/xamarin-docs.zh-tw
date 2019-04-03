@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: a6a4ef9fb36fde067fa58fec9a6206b1dbc1fbf0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: b79d3683c8e4979cbbd13550f3df86c39622ad2b
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668344"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870170"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin.iOS 的限制
 
@@ -83,7 +83,7 @@ System.Reflection 缺乏。 **發出**取決於執行階段程式碼產生任何
 若要呼叫原生的函式，透過 C# 委派，委派的宣告必須使用其中一個下列的屬性裝飾：
 
 - [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) （偏好選項，因為它是跨平台和相容於.NET Standard 1.1 +）
-- [MonoNativeFunctionWrapperAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoNativeFunctionWrapperAttribute)
+- [MonoNativeFunctionWrapperAttribute](xref:ObjCRuntime.MonoNativeFunctionWrapperAttribute)
 
 無法提供其中一個屬性，會導致執行階段錯誤，例如：
 
@@ -100,8 +100,8 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 在 Mono 中這些橋接器由在時間只要編譯器。 當使用預先 just-in-time 編譯器所需的 iPhone 有兩個重要的限制的此時：
 
--  您必須加上旗標的回呼方法與所有[MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 
--  方法必須是靜態方法，沒有支援執行個體方法。 
+-  您必須加上旗標的回呼方法與所有[MonoPInvokeCallbackAttribute](xref:ObjCRuntime.MonoPInvokeCallbackAttribute)
+-  方法必須是靜態方法，沒有支援執行個體方法。
  
 <a name="No_Remoting" />
 

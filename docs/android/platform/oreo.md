@@ -8,12 +8,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: c34d81feee48caca94989973a67ba783a0139a90
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.openlocfilehash: 24a9fa0e954ddba1451ba8bf98216550d7d70b51
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58071061"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854778"
 ---
 # <a name="oreo-features"></a>Oreo 功能
 
@@ -52,23 +52,23 @@ _如何開始使用 Xamarin.Android 開發 Android 的最新版本的應用程�
 
 下列各節說明每個步驟：
 
-
-
 ### <a name="update-visual-studio-and-xamarinandroid"></a>更新 Visual Studio 和 Xamarin.Android
 
 若要新增至 Visual Studio 的 Android Oreo 的支援，請執行下列作業：
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
--   如果您使用 Visual Studio 2017: 
+- 針對 Visual Studio 2019，使用[SDK 管理員](~/android/get-started/installation/android-sdk.md)安裝 26.0 或更新版本的 API 層級。
+
+- 如果您使用 Visual Studio 2017:
 
     1. Visual Studio 2017 15.7 版或更新版本的更新 (請參閱[Visual Studio 2017 更新](https://docs.microsoft.com/visualstudio/install/update-visual-studio))。
 
     2. 使用[SDK 管理員](~/android/get-started/installation/android-sdk.md)安裝 26.0 或更新版本的 API 層級。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
--   中所述，更新至最新的穩定版本的 Visual Studio 2017 for Mac[更新 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/update)。
+- 中所述，更新至最新的穩定版本的 Visual Studio for Mac[更新 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/update)。
 
 -----
 
@@ -80,29 +80,29 @@ _如何開始使用 Xamarin.Android 開發 Android 的最新版本的應用程�
 
 若要建立專案時使用 Xamarin.Android 8.0，您必須先使用 Xamarin Android SDK 管理員安裝的 SDK 平台**Android 8.0-Oreo**或更新版本。 您也必須安裝 Android SDK Tools 26.0 或更新版本。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 1. 啟動 SDK 管理員 (在 Visual Studio 中，按一下**工具 > Android > Android SDK 管理員**)。
 
 2. 安裝**Android 8.0-Oreo**封裝。 如果您使用 Android SDK 模擬器，請務必包含**x86**系統映像，您必須：
 
-    [![Android SDK Manager 中的套件選取 Android 8.0](oreo-images/win/01-android-o-packages.png)](oreo-images/win/01-android-o-packages.png#lightbox)
+    [![S選取 Android 8.0 封裝在 Android SDK 管理員](oreo-images/win/01-android-o-packages.png)](oreo-images/win/01-android-o-packages.png#lightbox)
 
 3. 安裝**Android SDK Tools 26.0.2**或更新版本**Android 的 SDK 平台工具 26.0.0**或更新版本，並**Android 的 SDK 建置工具 26.0.0** （或更新版本）：
 
-    [![選取 Android SDK 管理員中的 Android SDK Tools 26](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
+    [![S選取 Android SDK Tools 26 Android SDK 管理員](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 1. 啟動 SDK 管理員 (在 Visual Studio for Mac 中，按一下**工具 > SDK 管理員**)。
 
 2. 安裝**Android 8.0-Oreo** SDK 封裝。 如果您使用 Android SDK 模擬器，請務必包含**x86**系統映像，您必須：
 
-    [![在 SDK Manager 中的套件選取 Android 8.0](oreo-images/mac/01-android-o-packages.png)](oreo-images/mac/01-android-o-packages.png#lightbox)
+    [![S選取 Android 8.0 封裝在 SDK Manager](oreo-images/mac/01-android-o-packages.png)](oreo-images/mac/01-android-o-packages.png#lightbox)
 
 3. 安裝**Android SDK Tools 26.0.2**或更新版本**Android 的 SDK 平台工具 26.0.0**或更新版本，並**Android 的 SDK 建置工具 26.0.0** （或更新版本）：
 
-    [![在 SDK 管理員中選取 Android SDK Tools 26](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png#lightbox)
+    [![S選取 Android SDK Tools 26 SDK 管理員](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png#lightbox)
 
 -----
 
@@ -119,11 +119,11 @@ _如何開始使用 Xamarin.Android 開發 Android 的最新版本的應用程�
 
 如果您嘗試啟動預設 Google GUI 型 AVD Manager 之後安裝 Android SDK Tools 26.0 或更新版本中，您可能會收到下列錯誤對話方塊，指示您使用命令列 AVD 管理員工具**avdmanager**改為:
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 ![Android Emulator 管理員警告對話方塊](oreo-images/win/03-avd-warning.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 ![Android Emulator 管理員警告對話方塊](oreo-images/mac/03-avd-warning.png)
 
@@ -139,7 +139,7 @@ _如何開始使用 Xamarin.Android 開發 Android 的最新版本的應用程�
 
 若要使用**avdmanager**若要建立新的虛擬裝置，請遵循下列步驟：
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 1.  開啟命令提示字元視窗，並設定`JAVA_HOME`至您的電腦上的 Java sdk 的位置。 針對一般的 Xamarin 安裝中，您可以使用下列命令：
 
@@ -164,9 +164,9 @@ _如何開始使用 Xamarin.Android 開發 Android 的最新版本的應用程�
 
 之後您**avdmanager**若要建立您的虛擬裝置，它將會包含在裝置下拉式功能表：
 
-[![新的 AVD 新增至裝置下拉式功能表](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
+[![N新功能，AVD 會新增至裝置下拉式功能表](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 1.  開啟**終端機**視窗，並切換至您的 mac 上的 Android SDK tools 目錄的位置 針對一般的 Xamarin 安裝中，您可以使用下列命令：
 
@@ -184,7 +184,7 @@ _如何開始使用 Xamarin.Android 開發 Android 的最新版本的應用程�
 
 使用之後**avdmanager**若要建立您的虛擬裝置，它將會包含在裝置下拉式功能表：
 
-[![新的 AVD 新增至裝置下拉式功能表](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png#lightbox)
+[![N新功能，AVD 會新增至裝置下拉式功能表](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png#lightbox)
 
 -----
 
@@ -213,7 +213,7 @@ Android oreo 版導入了各種新功能和功能，例如通知通道、 通知
 
 通知徽章會透過應用程式圖示會出現，如以下螢幕擷取畫面所示的小點：
 
-[![在 應用程式圖示上的範例通知徽章](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
+[![E在 [應用程式圖示上的範例通知徽章](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
 
 這些點可讓您指出有新的通知，該應用程式圖示與相關聯的應用程式中的一或多個通知通道&ndash;這些是使用者尚未關閉，或採取的通知。 使用者可以長時間-按下圖示以關閉或長按下功能表通知該 appeaars 採取行動，看看下列通知徽章，相關聯的通知。
 

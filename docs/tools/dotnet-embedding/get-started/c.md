@@ -1,17 +1,17 @@
 ---
 title: C 使用者入門
-description: 本文件說明如何使用.NET 內嵌 C 應用程式中內嵌.NET 程式碼。 它討論如何使用.NET 內嵌在 Visual Studio 2017 和 Visual Studio for mac。
+description: 本文件說明如何使用.NET 內嵌 C 應用程式中內嵌.NET 程式碼。 它討論如何使用.NET 內嵌在 Visual Studio 2019 和 Visual Studio for mac。
 ms.prod: xamarin
 ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
 author: lobrien
 ms.author: laobri
 ms.date: 04/19/2018
-ms.openlocfilehash: 66475b7629f01b4229539e1edc323491a7861dfe
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 342ba2a6b51483983df7bd04034a4cef62fd57ff
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668396"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854908"
 ---
 # <a name="getting-started-with-c"></a>C 使用者入門
 
