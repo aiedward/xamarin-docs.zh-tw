@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: 1f7f2af19c6faad32f94d82dbc58f140f45dea5d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2cacf429efb11c5dd19276d62b997acae767516e
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671114"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870387"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS 效能
 
@@ -101,11 +101,11 @@ container.AddSubview (new MyView (container));
 
 在此，所包含的物件不讓父項保持運作。 但是，父項透過對 `container.AddSubView` 的呼叫保持子項運作。
 
-這也會發生在使用委派或資料來源模式的 iOS API 中，其中對等類別將包含實作；例如，設定 [`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/) 時
-屬性或 [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/) 時
+這也會發生在使用委派或資料來源模式的 iOS API 中，其中對等類別將包含實作；例如，設定 [`Delegate`](xref:UIKit.UITableView.Delegate*) 時
+屬性或 [`DataSource`](xref:UIKit.UITableView.DataSource*) 時
 在 [`UITableView`](xref:UIKit.UITableView) 類別中。
 
-在類別純粹是為了實作通訊協定而建立的情況下 (例如 [`IUITableViewDataSource`](https://developer.xamarin.com/api/type/MonoTouch.UIKit.IUITableViewDataSource/))，您可以僅實作類別中的介面並覆寫方法，然後將 `DataSource` 屬性指派給 `this`，而非建立子類別。
+在類別純粹是為了實作通訊協定而建立的情況下 (例如 [`IUITableViewDataSource`](xref:UIKit.IUITableViewDataSource))，您可以僅實作類別中的介面並覆寫方法，然後將 `DataSource` 屬性指派給 `this`，而非建立子類別。
 
 #### <a name="weak-attribute"></a>弱式屬性
 
@@ -278,7 +278,7 @@ class MyTableSource : UITableViewSource
 
 遊戲通常具有緊密迴圈，以執行遊戲邏輯和更新畫面。 常見的畫面播放速率，範圍從每秒 30 畫面格數到每秒 60 畫面格數。 有些開發人員會覺得他們每秒應該盡可能更新畫面，結合他們的遊戲模擬與畫面更新，且可能會想要超越每秒 60 畫面格數。
 
-不過，顯示伺服器執行畫面更新的上限為每秒 60 次。 因此，嘗試透過比此限制更快的速度更新畫面，可能會造成畫面撕裂和微間斷的情形。 所以最好先將程式碼結構化，這樣一來畫面更新才能與顯示更新同步處理。 這可以透過使用 [`CoreAnimation.CADisplayLink`](https://developer.xamarin.com/api/type/CoreAnimation.CADisplayLink/) 類別來完成，這是適合以每秒 60 畫面格數執行之視覺效果和遊戲的計時器。
+不過，顯示伺服器執行畫面更新的上限為每秒 60 次。 因此，嘗試透過比此限制更快的速度更新畫面，可能會造成畫面撕裂和微間斷的情形。 所以最好先將程式碼結構化，這樣一來畫面更新才能與顯示更新同步處理。 這可以透過使用 [`CoreAnimation.CADisplayLink`](xref:CoreAnimation.CADisplayLink) 類別來完成，這是適合以每秒 60 畫面格數執行之視覺效果和遊戲的計時器。
 
 ## <a name="avoid-core-animation-transparency"></a>避免核心動畫透明度
 

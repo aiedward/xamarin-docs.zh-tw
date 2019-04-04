@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 67f43c0ac6cfac2a7b58afa7046875059529500b
-ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
+ms.openlocfilehash: 24aa6dae3767255155c6b739e50174214a28d3d8
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55668585"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855246"
 ---
 # <a name="xamarinios-installation"></a>Xamarin.iOS 安裝
 
@@ -32,7 +32,6 @@ ms.locfileid: "55668585"
 
 如需有關在 Mac 上安裝 Xamarin.iOS 的指示，請參閱 [Mac 安裝](https://docs.microsoft.com/visualstudio/mac/installation)指南。
 
-
 ## <a name="windows-installation"></a>Windows 安裝
 
 如需有關在 Windows 電腦上安裝 Xamarin.iOS 的指示，請參閱 [ 安裝](~/ios/get-started/installation/windows/index.md)指南。
@@ -41,5 +40,5 @@ ms.locfileid: "55668585"
 
 成功安裝 Xamarin.iOS 之後，請了解如何佈建 iOS 裝置，以便在裝置上開發和測試 Xamarin.iOS 應用程式。
 
-* [設定您的裝置以進行開發](device-provisioning/index.md) \(英文\)
+* [設定裝置以進行開發](device-provisioning/index.md)
 * [免費佈建](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
