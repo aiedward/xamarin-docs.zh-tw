@@ -8,8 +8,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
+ms.openlocfilehash: 2ff4729e68497391d41521da26917571c146b541
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667260"
 ---
-
 # <a name="implementing-fragments---walkthrough"></a>實作片段位逐步解說
 
 _片段是獨立的模組化元件，可協助您解決各種螢幕大小，以裝置為目標的 Android 應用程式的複雜度。本文逐步解說如何建立及開發 Xamarin.Android 應用程式時，使用片段。_

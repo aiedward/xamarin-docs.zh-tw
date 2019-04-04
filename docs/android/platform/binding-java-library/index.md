@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
+ms.openlocfilehash: 0f4ec3cfd7c154e43db9f8e123259317c0d17e21
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670528"
 ---
-
 # <a name="binding-a-java-library"></a>繫結 Java 程式庫
 
 _Android 的社群有許多您可能想要在您的應用程式; 中的 Java 程式庫本指南說明如何藉由建立繫結程式庫併入您的 Xamarin.Android 應用程式的 Java 程式庫。_

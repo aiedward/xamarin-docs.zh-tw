@@ -7,8 +7,13 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
+ms.openlocfilehash: b9b48d83199f83c69a42785d4d0c4008a5c6a5e1
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197390"
 ---
-
 # <a name="building-mobile-apps"></a>建置行動應用程式
 
 在您開始之前，請先參閱[系統需求](requirements.md)及[安裝指示](~/get-started/installation/index.md)，以確認您已將一切準備就緒。

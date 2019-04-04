@@ -7,8 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
+ms.openlocfilehash: dc39fd9c129fb63fa4a3a73b15aea4204a38cdbd
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557265"
 ---
-
 # <a name="xamarinforms-picker"></a>Xamarin.Forms Picker
 
 _選擇器 檢視是從資料的清單中選取的文字項目控制項。_

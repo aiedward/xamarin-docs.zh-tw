@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2018
+ms.openlocfilehash: ca8b554e03c4e8339922ca99619245a45bd08e1d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669085"
 ---
-
 # <a name="android-wear"></a>Android Wear
 
 Android Wear 是 android 的專為到穿戴裝置，例如智慧型手錶版本。 本節包含有關如何安裝及設定 Wear 開發，建立第一個 Wear 裝置，以及一份您可以參考來建立您自己穿戴式應用程式的範例的逐步解說所需的工具。

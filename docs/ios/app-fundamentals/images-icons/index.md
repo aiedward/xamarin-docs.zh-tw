@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
+ms.openlocfilehash: f359da6b8744e03cfcbd77d48f5f77f216e828f8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670935"
 ---
-
 # <a name="images-and-icons-in-xamarinios"></a>映像和在 Xamarin.iOS 中的圖示
 
 _本節包含各種不同的文章，涵蓋使用 Xamarin.iOS 應用程式，例如使用它們以圖示中的映像，啟動畫面，或它們包括在控制項，並提供自訂的文件類型的圖示。_

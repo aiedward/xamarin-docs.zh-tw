@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/01/2018
+ms.openlocfilehash: f14b3fd31fdda200f51f429367465677d389b1ca
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666341"
 ---
-
 # <a name="android-resources"></a>Android 資源
 
 _本文介紹在 Xamarin.Android 中的 Android 資源的概念，並將文件的使用方式。它涵蓋了如何使用 Android 應用程式中的資源，以支援應用程式的當地語系化，並包括各種螢幕大小和密度的多個裝置。_

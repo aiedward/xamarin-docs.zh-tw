@@ -6,8 +6,13 @@ ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
+ms.openlocfilehash: 2fa40925b67e60c5e03e3059c7c369f2a53ce540
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672426"
 ---
-
 # <a name="introduction-to-game-development-with-xamarin"></a>使用 Xamarin 的遊戲開發簡介
 
 開發遊戲可以是極度令人興奮，尤其是考慮如何輕鬆進行發佈您的工作，行動平台上。 這篇文章討論的概念，並可協助您的遊戲開發與相關的技術建立遊戲，不論您的目標是建立高品質 AAA 遊戲，或只是為了好玩的程式。

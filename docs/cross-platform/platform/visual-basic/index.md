@@ -6,8 +6,13 @@ ms.assetid: f264c632-8feb-4015-a5e5-cb9c681c787d
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
+ms.openlocfilehash: e4c8c43b4df1a7bfc5436f14564c6d0164216c46
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669241"
 ---
-
 # <a name="portable-visual-basicnet"></a>可攜式 Visual Basic.NET
 
 Xamarin iOS 和 Android 專案原本不支援 Visual Basic;不過開發人員可以使用可攜式類別庫，將現有的 Visual Basic 程式碼移轉至 iOS 和 Android，或在 Visual Basic 中撰寫的應用程式邏輯的重要部分。 Xamarin.Forms 應用程式可以建立完全在 Visual Basic 中 （不含自訂轉譯器、 相依性服務和 XAML 程式碼後置）。

@@ -5,8 +5,13 @@ ms.assetid: EB2F967A-6D95-4448-994B-6D5C7BFAC2C7
 author: lobrien
 ms.author: laobri
 ms.date: 06/15/2018
+ms.openlocfilehash: 6917267896cff796af4e5cff095720eaeccc7652
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671160"
 ---
-
 # <a name="net-embedding-on-android"></a>內嵌在 Android 上的.NET
 
 在某些情況下，您可能想要將 Xamarin.NET 程式庫新增至現有的原生 Android 專案。 若要這樣做，您可以使用[Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/)工具，以將您的.NET 程式庫轉換成可整合到原生的 Java 型 Android 應用程式的原生程式庫。
