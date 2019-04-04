@@ -1,22 +1,22 @@
 ---
 title: 第 17 章的摘要。 掌控格線
-description: 使用 Xamarin.Forms 建立行動應用程式： 第 17 章摘要。 掌控格線
+description: 使用 Xamarin.Forms 建立行動應用程式：第 17 章的摘要。 掌控格線
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: dc9d57c0edf50f7fe5a7241e64cc727413004252
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 3aaf8e9d1eb8e0d98ad32a6b5a1286f14c7bb906
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050893"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869984"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>第 17 章的摘要。 掌控格線
 
-[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
+[![D下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
 
 [ `Grid` ](xref:Xamarin.Forms.Grid)會排列成資料列和資料行的資料格的子系的功能強大的版面配置機制。 不同於類似的 HTML`table`項目，`Grid`僅適用於版面配置，而不是簡報的目的。
 
@@ -68,11 +68,11 @@ ms.locfileid: "53050893"
 
 ### <a name="the-grid-in-code"></a>程式碼中的方格
 
-[ **GridCodeDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCodeDemo)範例示範如何建立和填入`Grid`在程式碼中。 您可以設定附加的屬性，針對每個子系，直接或間接呼叫其他`Add`這類方法[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/)所定義[Grid.IGridList<T> ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid+IGridList%3CT%3E/)介面。
+[ **GridCodeDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCodeDemo)範例示範如何建立和填入`Grid`在程式碼中。 您可以設定附加的屬性，針對每個子系，直接或間接呼叫其他`Add`這類方法[ `Add` ](xref:Xamarin.Forms.Grid.IGridList`1.Add*)所定義[Grid.IGridList<T> ](xref:Xamarin.Forms.Grid.IGridList`1)介面。
 
 ### <a name="the-grid-bar-chart"></a>[方格] 橫條圖
 
-[ **GridBarChart** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridBarChart)範例示範如何新增多個`BoxView`項目`Grid`使用大量[ `AddHorizontal` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.AddHorizontal/p/System.Collections.Generic.IEnumerable%7BXamarin.Forms.View%7D/)方法。 根據預設，這些`BoxView`元素具有相等的寬度。 每個高度`BoxView`然後您可以控制類似於橫條圖。
+[ **GridBarChart** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridBarChart)範例示範如何新增多個`BoxView`項目`Grid`使用大量[ `AddHorizontal` ](xref:Xamarin.Forms.Grid.IGridList`1.AddHorizontal*)方法。 根據預設，這些`BoxView`元素具有相等的寬度。 每個高度`BoxView`然後您可以控制類似於橫條圖。
 
 `Grid`中**GridBarChart**範例共用`AbsoluteLayout`父一開始隱形`Frame`。 程式也會設定`TapGestureRecognizer`在每個`BoxView`使用`Frame`顯示點選軸的相關資訊。
 
@@ -108,4 +108,4 @@ ms.locfileid: "53050893"
 
 - [第 17 章全文檢索 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch17-Apr2016.pdf)
 - [第 17 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
-- [格線](~/xamarin-forms/user-interface/layouts/grid.md)
+- [Grid](~/xamarin-forms/user-interface/layouts/grid.md)

@@ -1,22 +1,22 @@
 ---
 title: 第 18 章的摘要。 MVVM
-description: 使用 Xamarin.Forms 建立行動應用程式： 摘要的第 18 章。 MVVM
+description: 使用 Xamarin.Forms 建立行動應用程式：第 18 章的摘要。 MVVM
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: db837ac8bfa1b7a946ee606e9481f9feb2a8a31f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 6379bafb8c879237171951756441d1227f65b825
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050112"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870218"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>第 18 章的摘要。 MVVM
 
-[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
+[![D下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
 
 一種架構應用程式的最佳方式是從基礎的程式碼，這有時稱為分隔的使用者介面*商務邏輯*。 有數種技術，但會以 XAML 為基礎的環境量身訂做的一個稱為 Model View ViewModel 或 MVVM。
 
@@ -87,7 +87,7 @@ MVVM 搭配資料繫結和資料繫結處理屬性，因此 MVVM 似乎不足時
 
 ### <a name="a-calculator-almost"></a>計算機，幾乎
 
-[ **AddingMachine** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine)範例會使用這兩`Execute`並`CanExecute`方法`ICommand`。 它會使用[ `AdderViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)類別[ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)程式庫。 ViewModel 包含六個的屬性型別的`ICommand`。 這些初始化自[`Command`建構函式](xref:Xamarin.Forms.Command.%23ctor(System.Action))並[`Command`建構函式](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))的`Command`而[`Command<T>`建構函式](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command%3CT%3E.Command%3CT%3E/p/System.Action%7BT%7D/System.Func%7BT,System.Boolean%7D/)`Command<T>`。 數字鍵加入機器的所有繫結至使用初始化的屬性`Command<T>`，並`string`引數`Execute`和`CanExecute`識別特定的索引鍵。
+[ **AddingMachine** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine)範例會使用這兩`Execute`並`CanExecute`方法`ICommand`。 它會使用[ `AdderViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)類別[ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)程式庫。 ViewModel 包含六個的屬性型別的`ICommand`。 這些初始化自[`Command`建構函式](xref:Xamarin.Forms.Command.%23ctor(System.Action))並[`Command`建構函式](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))的`Command`而[`Command<T>`建構函式](https://docs.microsoft.com/dotnet/api/xamarin.forms.command.-ctor?view=xamarin-forms#Xamarin_Forms_Command__ctor_System_Action_System_Object__System_Func_System_Object_System_Boolean__)`Command<T>`。 數字鍵加入機器的所有繫結至使用初始化的屬性`Command<T>`，並`string`引數`Execute`和`CanExecute`識別特定的索引鍵。
 
 ## <a name="viewmodels-and-the-application-lifecycle"></a>Viewmodel 和應用程式生命週期
 

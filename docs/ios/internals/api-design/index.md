@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
+ms.openlocfilehash: 9425b26b5cc8fcd9b8a80df422d932c96d52889b
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870361"
 ---
-
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API 設計
 
 除了基底類別庫屬於 Mono 的核心[Xamarin.iOS](http://www.xamarin.com/iOS)隨附於適用於各種不同的 iOS Api 可讓開發人員建立與 Mono 的原生 iOS 應用程式的繫結。
@@ -57,7 +62,7 @@ OBJECTIVE-C 程式碼通訊的低層級的執行階段處於[MonoTouch.ObjCRunti
 
 - 原生的 C# 型別：
 
-  - [`NSString` 會變成 `string`](~/ios/internals/api-design/nsstring.md)
+  - [`NSString` 變成 `string`](~/ios/internals/api-design/nsstring.md)
   - 開啟`int`並`uint`應該已列舉成 C# 列舉型別和 C# 列舉型別與參數`[Flags]`屬性
   - 而不是型別中性`NSArray`物件，公開為強型別陣列的陣列。
   - 如需事件和通知，讓使用者選擇：
@@ -80,7 +85,7 @@ Xamarin.iOS 包含組成組件數*Xamarin.iOS 設定檔*。 [組件](~/cross-pla
 
 #### <a name="objcruntime"></a>ObjCRuntime
 
-[ObjCRuntime](https://developer.xamarin.com/api/namespace/ObjCRuntime/)命名空間可讓開發人員世界連接在 C# 與 OBJECTIVE-C 之間
+[ObjCRuntime](xref:ObjCRuntime)命名空間可讓開發人員世界連接在 C# 與 OBJECTIVE-C 之間
 這是新的繫結，專為 iOS，根據與 Cocoa # Gtk # 經驗而設計。
 
 <a name="MonoTouch.Foundation" />
@@ -91,7 +96,7 @@ Xamarin.iOS 包含組成組件數*Xamarin.iOS 設定檔*。 [組件](~/cross-pla
 
 Xamarin.iOS 鏡像在 C# 中的從 OBJECTIVE-C 類別階層 比方說，OBJECTIVE-C 基底類別[NSObject](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)可以從 C# 透過[Foundation.NSObject](xref:Foundation.NSObject)。
 
-雖然此命名空間提供基礎的 Objective C 的基礎類型的繫結，在少數情況下已對應的基礎類型到.NET 類型。 例如: 
+雖然此命名空間提供基礎的 Objective C 的基礎類型的繫結，在少數情況下已對應的基礎類型到.NET 類型。 例如：
 
 - 而不是處理[NSString](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)並[NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)，執行階段會公開這些 C#[字串](xref:System.String)s 和強型別[陣列](xref:System.Array)整個 sAPI。
 
@@ -201,13 +206,13 @@ C# 委派會提供適用於一般作業。 請參閱[委派](#Delegates)節的�
 
 #### <a name="opengles"></a>OpenGLES
 
-OpenGLES，對於我們發佈[修改版本](https://developer.xamarin.com/api/namespace/OpenTK/)的[OpenTK](http://www.opentk.com/)已修改成使用 CoreGraphics 資料類型和結構的 OpenGL 的物件導向繫結，以及只公開的 API在 iOS 上可用的功能。
+OpenGLES，對於我們發佈[修改版本](xref:OpenTK)的[OpenTK](http://www.opentk.com/)已修改成使用 CoreGraphics 資料類型和結構的 OpenGL 的物件導向繫結，以及只公開的 API在 iOS 上可用的功能。
 
-OpenGLES 1.1 功能是透過 ES11.GL 類型，記載[此處](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES11.GL/)型別。
+OpenGLES 1.1 功能是透過 ES11.GL 類型，記載[此處](xref:OpenTK.Graphics.ES11.GL)型別。
 
-OpenGLES 2.0 功能是透過 ES20.GL 類型，記載[此處](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES20.GL/)型別。
+OpenGLES 2.0 功能是透過 ES20.GL 類型，記載[此處](xref:OpenTK.Graphics.ES20.GL)型別。
 
-OpenGLES 3.0 功能是透過 ES30.GL 類型，記載[此處](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES30.GL/)型別。
+OpenGLES 3.0 功能是透過 ES30.GL 類型，記載[此處](xref:OpenTK.Graphics.ES30.GL)型別。
 
 
 ### <a name="binding-design"></a>繫結設計
@@ -619,13 +624,13 @@ UITextField UserName {
 
 Objective C 程式設計的核心概念是選取器。 您通常會遇到需要您將選取器，或需要您的程式碼來回應選取器 Api。
 
-在 C# 中建立新的選取器是很簡單 – 您剛建立的新執行個體`ObjCRuntime.Selector`類別，並在需要它的 API 中的任何位置使用的結果。 例如: 
+在 C# 中建立新的選取器是很簡單 – 您剛建立的新執行個體`ObjCRuntime.Selector`類別，並在需要它的 API 中的任何位置使用的結果。 例如：
 
 ```csharp
 var selector_add = new Selector ("add:plus:");
 ```
 
-針對 C# 方法回應的選取器呼叫，它必須繼承自`NSObject`以選取器名稱使用，則必須裝飾型別和 C# 方法`[Export]`屬性。 例如: 
+針對 C# 方法回應的選取器呼叫，它必須繼承自`NSObject`以選取器名稱使用，則必須裝飾型別和 C# 方法`[Export]`屬性。 例如：
 
 ```csharp
 public class MyMath : NSObject {
