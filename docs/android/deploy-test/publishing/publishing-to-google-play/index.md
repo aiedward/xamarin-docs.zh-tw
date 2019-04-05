@@ -6,8 +6,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
+ms.openlocfilehash: 8ba0d14fff22d38d9e1a1d062fcce3f9ace88dea
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668851"
 ---
-
 # <a name="publishing-to-google-play"></a>發行至 Google Play
 
 雖然有許多應用程式市場可供散發應用程式，但 Google Play 可說是 Android 應用程式世界中最大且瀏覽頻率最高的商店。 Google Play 提供一個可散發、廣告、銷售 Android 應用程式及分析這些應用程式銷售情況的單一平台。

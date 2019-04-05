@@ -7,8 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
+ms.openlocfilehash: 24e2ae456e478585f30aa704917f66bb0bf11da9
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "57981636"
 ---
-
 # <a name="xamarinforms-frequently-asked-questions"></a>Xamarin.Forms 常見問題集
 
 ## <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-packageupdate-forms-templatemd"></a>[我可以將 Xamarin.Forms 預設範本更新為較新的 NuGet 套件嗎？](update-forms-template.md)

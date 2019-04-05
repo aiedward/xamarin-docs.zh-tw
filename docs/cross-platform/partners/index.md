@@ -8,6 +8,12 @@ ms.author: crdun
 ms.date: 09/17/2018
 hide_comments: true
 hideEdit: true
+ms.openlocfilehash: ddf80fb650127b91bef89792fc622267ad1ed0d4
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329399"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>認證來傳遞行動解決方案的諮詢合作夥伴
 

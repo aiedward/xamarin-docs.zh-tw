@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
+ms.openlocfilehash: 1d7f6f3939d79c9ad28701bb89eb75256503a977
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070628"
 ---
-
 # <a name="getting-started-with-tvos-in-xamarin"></a>開始使用 Xamarin 在 tvOS
 
 此系列介紹 Xamarin.tvOS 開發的基本概念。 它會從安裝 tvOS 支援，啟動、 設計、 撰寫程式碼和執行應用程式。 過程中，它會說明的技巧和工具組，將需要在任何 Xamarin.tvOS 應用程式上運作。

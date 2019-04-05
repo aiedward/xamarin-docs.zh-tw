@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/02/2018
+ms.openlocfilehash: 5bdd95409e71955b4f1549eece42b15cee38131a
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58506989"
 ---
-
 # <a name="signing-the-android-application-package"></a>簽署 Android 應用程式套件
 
 在[準備要發行的應用程式](~/android/deploy-test/release-prep/index.md)中，使用**封存管理員**來建置應用程式，並將它放入封存以進行簽署和發行。 本節說明如何建立 Android 簽署身分識別、建立適用於 Android 應用程式的新簽署憑證，並透過「臨機操作」將封存的應用程式發行至磁碟。 產生的 APK 可以側載到 Android 裝置，而不需透過應用程式市集 。

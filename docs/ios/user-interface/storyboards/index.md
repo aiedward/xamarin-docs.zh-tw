@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
+ms.openlocfilehash: f24be635afcba181efcab85d81a984d93dae4bc8
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58071108"
 ---
-
 # <a name="introduction-to-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中的分鏡腳本簡介
 
 在本指南中，我們將說明哪些分鏡腳本並檢查一些 – Segue 等重要元件。 我們將探討分鏡腳本可以如何建立和使用，而且開發人員有哪些優點。

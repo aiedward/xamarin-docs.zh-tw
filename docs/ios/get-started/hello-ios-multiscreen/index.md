@@ -1,5 +1,5 @@
 ---
-title: 'Hello, iOS 多重畫面'
+title: Hello, iOS 多重畫面
 description: 本文件連結的逐步解說會擴展 Phoneword 範例應用程式，以新增第二個畫面。 此逐步解說會探討模型-檢視-控制器設計模式、iOS 巡覽，以及其他核心 iOS 開發概念。
 ms.topic: quickstart
 ms.prod: xamarin
@@ -8,6 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
+ms.openlocfilehash: 8545afc9957f263104afa69359847d2b187e2558
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669358"
 ---
 # <a name="hello-ios-multiscreen"></a>Hello, iOS 多重畫面
 

@@ -6,13 +6,13 @@ ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/28/2019
-ms.openlocfilehash: fa93cb86867cb8539fb7ce4db45ad4751bfe6e04
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.date: 04/03/2019
+ms.openlocfilehash: 1f6bdfb1aed87f8a2dabdc0efcea3a1b8bf2ecf2
+ms.sourcegitcommit: be51b459a0a148ae3adca31d7599f53f7b2c3a68
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58854220"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59019343"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>可延伸應用程式標記語言 (XAML)
 
@@ -24,6 +24,10 @@ _XAML 是一種宣告式標記的語言，可用來定義使用者介面。 使�
 
 > [!NOTE]
 > 試試看[XAML Standard 預覽版](standard/index.md)
+
+## [<a name="xaml-controls"></a>XAML 控制項](xaml-controls.md)
+
+所有在 Xamarin.Forms 中定義的檢視，可從 XAML 檔案參考。
 
 <a name="xaml" />
 

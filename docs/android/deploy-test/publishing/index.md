@@ -6,8 +6,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
+ms.openlocfilehash: 4b50d230be642466de68c54957a3fe9a79c1093b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670936"
 ---
-
 # <a name="publishing-an-application"></a>發行應用程式
 
 建立絕佳的應用程式之後，使用者將會想要使用它。 本節涵蓋透過電子郵件、私人 Web 伺服器、Google Play 或 Amazon App Store for Android 等管道公開散發使用 Xamarin.Android 所建立應用程式的步驟。

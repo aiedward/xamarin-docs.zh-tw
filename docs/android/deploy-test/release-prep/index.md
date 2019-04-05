@@ -6,8 +6,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
+ms.openlocfilehash: 605db1c2e0dc0cf41288f9d6c9252582ce91d525
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58071059"
 ---
-
 # <a name="preparing-an-application-for-release"></a>準備可供發行的應用程式
 
 應用程式完成編碼和測試之後，必須準備可供散發的套件。 準備此套件的第一項工作是建置可供發行的應用程式，主要是設定一些應用程式屬性。
