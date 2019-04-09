@@ -6,12 +6,12 @@ ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: 87f59e9f0c2150291a43cdfee4fe6c5dfc2058f8
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: 6a0fe95d6d471bfb464234f0540b8398acb22e6a
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57199774"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854765"
 ---
 # <a name="uninstalling-xamarin"></a>解除安裝 Xamarin
 
@@ -29,7 +29,7 @@ ms.locfileid: "57199774"
 - [Xamarin.Mac](#uninstallmac)
 - [活頁簿](#uninstallworkbooks)
 - [Xamarin Profiler](#uninstallprofiler)
-- [安裝程式](#uninstallinstaller)
+- [Installer](#uninstallinstaller)
 
 > [!TIP]
 > 我們為您提供了[解除安裝指令碼](https://raw.githubusercontent.com/MicrosoftDocs/visualstudio-docs/master/mac/resources/uninstall-vsmac.sh)，當您要將 Xamarin 從 macOS 電腦移除時可加以利用。 如需有關如何使用指令碼的詳細資訊，請參閱本指南中的[使用解除安裝指令碼](#uninstallscript)一節。
@@ -215,16 +215,16 @@ rm -rf "~/Library/Preferences/Visual Studio/"
 
 以下項目支援 Xamarin：
 
-- [Visual Studio 2017](#uninstallvs2017)
+- [Visual Studio 2019 和 Visual Studio 2017](#uninstallvs2017)
 - [Visual Studio 2015](#uninstallvs2015)
 - [Visual Studio 2013](#uninstallvs2015) [**不支援**]
 - [Xamarin Studio](#uninstallxamarinstudio) [**不支援**]
 
 <a name="uninstallvs2017" />
 
-### <a name="visual-studio-2017"></a>Visual Studio 2017
+### <a name="visual-studio-2019-and-visual-studio-2017"></a>Visual Studio 2019 和 Visual Studio 2017
 
-您可使用安裝程式應用程式從 Visual Studio 2017 將 Xamarin 解除安裝：
+從 Visual Studio 2019 和使用安裝程式應用程式的 Visual Studio 2017 將 Xamarin 解除安裝：
 
 1. 使用 [開始] 功能表來開啟 **Visual Studio 安裝程式**。
 
@@ -234,7 +234,7 @@ rm -rf "~/Library/Preferences/Visual Studio/"
 
 3. 在 [工作負載] 索引標籤中，取消選取 [使用 .NET 進行行動開發] 選項 (位於**行動與遊戲**區塊)。
 
-    [ ![](uninstalling-xamarin-images/vs2017-03-sml.png "取消選取行動裝置應用程式開發工作負載")](uninstalling-xamarin-images/vs2017-03.png#lightbox)
+    [![](uninstalling-xamarin-images/vs2017-03-sml.png "取消核取 行動裝置開發工作負載")](uninstalling-xamarin-images/vs2017-03.png#lightbox)
 
 4. 按一下視窗右下角的 [修改] 按鈕。
 
@@ -273,7 +273,7 @@ rm -rf "~/Library/Preferences/Visual Studio/"
 
 您可以透過**控制台**從 Windows 電腦解除安裝 Xamarin。 巡覽至 [程式和功能] 或 [程式] > [解除安裝程式]，如下圖所示：
 
- [![](uninstalling-xamarin-images/image3.png "瀏覽至 [程式和功能] 或 [程式] > [解除安裝程式]，如此圖所示")](uninstalling-xamarin-images/image3.png#lightbox) 
+ [![](uninstalling-xamarin-images/image3.png "瀏覽至程式和功能 或程式解除安裝程式，如下所示")](uninstalling-xamarin-images/image3.png#lightbox) 
 
 從 [控制台] 將以下存在的所有項目解除安裝：
 
@@ -340,7 +340,7 @@ HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\1*.0\ExtensionManager\PendingD
 
 從 Mac 解除安裝 Xamarin Studio 的第一個步驟是找出 **/Applications** 目錄中的 **Xamarin Studio.app**，並將它拖曳至**垃圾桶**。 或者，以滑鼠右鍵按一下並選取 [移至垃圾筒]，如下所示：
 
- [![](uninstalling-xamarin-images/image1.png "或者，以滑鼠右鍵按一下並選取 [移至垃圾桶]，如此圖所示")](uninstalling-xamarin-images/image1.png#lightbox)
+ [![](uninstalling-xamarin-images/image1.png "或者，以滑鼠右鍵按一下並選取 移至 資源回收筒，如下所示")](uninstalling-xamarin-images/image1.png#lightbox)
 
 雖然刪除此應用程式套件組合便會移除 Xamarin Studio；然而，檔案系統上還是會有其他與 Xamarin 相關的檔案。
 
@@ -361,4 +361,4 @@ rm -rf ~/Library/XamarinStudio-*
 
 ## <a name="related-links"></a>相關連結
 
-- [解除安裝指令碼 (範例)](https://raw.githubusercontent.com/MicrosoftDocs/visualstudio-docs/master/mac/resources/uninstall-vsmac.sh)
+- [解除安裝指令碼 （範例）](https://raw.githubusercontent.com/MicrosoftDocs/visualstudio-docs/master/mac/resources/uninstall-vsmac.sh)

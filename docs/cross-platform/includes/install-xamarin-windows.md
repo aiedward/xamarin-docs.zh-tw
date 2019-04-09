@@ -1,15 +1,15 @@
 ---
 ms.topic: include
-ms.openlocfilehash: cfb387f452939bf72ca3606f9f88f482f6622202
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.openlocfilehash: 5fccbcf56037b4c4538ccfa16515ea63aa53c57c
+ms.sourcegitcommit: be51b459a0a148ae3adca31d7599f53f7b2c3a68
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58855345"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59041604"
 ---
-Xamarin 可以安裝的一部分_新_Visual Studio 2019 安裝中的，執行下列步驟：
+Xamarin 可以隨著新的 Visual Studio 2017 安裝一起安裝，步驟如下：
 
-1. 下載 Visual Studio 2019 Community、 Visual Studio Professional 或從 Visual Studio Enterprise [Visual Studio](https://visualstudio.microsoft.com/vs/)頁面 （底部會提供連結的下載）。
+1. 從 [Visual Studio](https://visualstudio.microsoft.com/vs/) 頁面下載 Visual Studio 2017 Community、Visual Studio Professional 或 Visual Studio Enterprise (下載連結是在底部提供)。
 
 2. 按兩下已下載的套件來啟動安裝。
 
@@ -21,22 +21,22 @@ Xamarin 可以安裝的一部分_新_Visual Studio 2019 安裝中的，執行下
 
     ![[安裝詳細資料] 面板，其中列出要安裝的 Xamarin 選項](~/get-started/installation/windows-images/02-summary.png)
 
-5. 當您準備好開始 Visual Studio 2019 安裝時，請按一下**安裝**中右下角的按鈕：
+5. 當您準備好開始 Visual Studio 2017 安裝時，請按一下右下角的 [安裝] 按鈕：
 
     ![[安裝] 按鈕](~/get-started/installation/windows-images/03-click-install.png)
 
-   根據您安裝 Visual Studio 2019 的版本，安裝程序可能需要很長的時間才能完成。 您可以使用進度列來監視安裝：
+   根據您安裝的 Visual Studio 2017 版本，安裝程序可能需要很長一段時間才能完成。 您可以使用進度列來監視安裝：
 
     ![安裝期間的進度列](~/get-started/installation/windows-images/04-progress-bars.png)
 
-6. 當 Visual Studio 2019 安裝完成後時，按一下**啟動**按鈕來啟動 Visual Studio:
+6. Visual Studio 2017 安裝完成之後，請按一下 [啟動] 按鈕來啟動 Visual Studio：
 
     ![[啟動] 按鈕的位置](~/get-started/installation/windows-images/05-launch.png)
 
 <a name="vs2017" />
 
-### <a name="adding-xamarin-to-visual-studio-2019"></a>將 Xamarin 加入至 Visual Studio 2019
+### <a name="adding-xamarin-to-visual-studio-2017"></a>將 Xamarin 加入至 Visual Studio 2017
 
-如果已安裝 Visual Studio 2019，來新增 Xamarin 重新執行 Visual Studio 2019 安裝程式來修改工作負載 (請參閱[修改 Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)如需詳細資訊)。 接著，請依照上面所列的步驟來安裝 Xamarin。
+如果已安裝 Visual Studio 2017，可以重新執行 Visual Studio 2017 安裝程式修改工作負載 (如需詳細訊，請參閱[修改 Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio))，來新增 Xamarin。 接著，請依照上面所列的步驟來安裝 Xamarin。
 
-如需有關下載和安裝 Visual Studio 2019 的詳細資訊，請參閱[安裝 Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/install-visual-studio)。
+如需下載和安裝 Visual Studio 2017 的詳細資訊，請參閱[安裝 Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio)。
