@@ -6,12 +6,12 @@ ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 1ebc450a285d47fe1eedb0f8d72d6c9dc2b95644
-ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
+ms.openlocfilehash: f9cfc69c2cd711460233e609d63bcbb8eb172ccf
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666879"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854752"
 ---
 # <a name="xamarin-live-player-setup"></a>Xamarin Live Player 設定
 
@@ -19,11 +19,14 @@ Xamarin Live Player 可讓您對您的應用程式進行即時編輯並且讓這
 
 ![預覽功能](~/media/shared/preview.png)
 
+> [!NOTE]
+> 只有 Visual Studio 2017 中使用播放程式的即時預覽。
+
 ## <a name="1-get-the-android-app"></a>1.取得 Android 應用程式
 
 Xamarin Live Player 是可供 Android 使用 intalling 直接從[HockeyApp](https://aka.ms/xlp-hockeyapp)。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 ## <a name="2-get-visual-studio-2017"></a>2.取得 Visual Studio 2017
 
@@ -63,7 +66,7 @@ Xamarin Live Player 需要：
 
     如果裝置無法連絡的配對，可能會出現錯誤。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 ## <a name="2-get-visual-studio-for-mac"></a>2.取得 Visual Studio for Mac
 
@@ -79,7 +82,7 @@ Xamarin Live Player 需要：
 2. 移至**Visual Studio > 喜好設定...** ，然後選取**專案 > Xamarin Live Player （預覽）**  索引標籤。
 3. 刻度**啟用 Xamarin Live Player**:
 
-    [![核取 [啟用 Xamarin Live Player] 方塊中 [選項] 視窗](install-images/vsmac-options-sml.png)](install-images/vsmac-options.png#lightbox)
+    [![C核取 [啟用 Xamarin Live Player] 方塊中 [選項] 視窗](install-images/vsmac-options-sml.png)](install-images/vsmac-options.png#lightbox)
 
 4. 建立或開啟 Xamarin 專案 (或[範例](~/tools/live-player/samples.md))。
 5. 選擇**Live Player**裝置清單中。
@@ -114,6 +117,5 @@ Xamarin Live Player 需要：
 
 ## <a name="related-links"></a>相關連結
 
-- [限制](~/tools/live-player/limitations.md)
+- [範例搭配 Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)
 - [疑難排解](~/tools/live-player/troubleshooting.md)
-- [Xamarin Live Player 範例](~/tools/live-player/samples.md)

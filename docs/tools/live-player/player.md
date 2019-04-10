@@ -6,16 +6,19 @@ ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2017
-ms.openlocfilehash: fdd602da932e0c36cadade50476babba51d67398
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 89795e5df00b426c0f11c04a0844993071df1e25
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113161"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855194"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player 應用程式
 
 ![預覽功能](~/media/shared/preview.png)
+
+> [!NOTE]
+> 只有 Visual Studio 2017 中使用播放程式的即時預覽。
 
 當您在手機上安裝應用程式時，請遵循[安裝指示](~/tools/live-player/install.md)連線到您的電腦。 請嘗試[範例應用程式](~/tools/live-player/samples.md)讓它運作。
 
@@ -35,7 +38,7 @@ ms.locfileid: "50113161"
 
 按下 資訊 按鈕 **(i)** 下方的 應用程式，以顯示**選項**功能表：
 
-[![[選項] 功能表的螢幕擷取畫面](player-images/options-sml.png)](player-images/options.png#lightbox)
+[![S[選項] 功能表的 creenshot](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>記錄檔
 
@@ -47,13 +50,13 @@ ms.locfileid: "50113161"
 - 版本資訊。
 - 傳送意見反應。
 
-[![設定的螢幕擷取畫面](player-images/settings-sml.png)](player-images/settings.png#lightbox)
+[![S設定的 creenshot](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>管理裝置
 
 若要第一次連接裝置，請依照下列中的指示[需求與安裝](~/tools/live-player/install.md)。 您可以配對多個裝置，然後透過 IDE 進行管理。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 在 Visual Studio 中，選擇**工具 > Xamarin Live Player > 管理的裝置...**
 
@@ -67,7 +70,7 @@ ms.locfileid: "50113161"
 
 您也可以存取此視窗從裝置清單。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 在 Visual Studio for Mac 中，選擇**工具 > (Xamarin Live Player) 管理的裝置...**
 
@@ -91,6 +94,5 @@ ms.locfileid: "50113161"
 
 ## <a name="related-links"></a>相關連結
 
-- [限制](~/tools/live-player/limitations.md)
 - [疑難排解](~/tools/live-player/troubleshooting.md)
-- [Xamarin Live Player 範例](samples.md)
+- [範例搭配 Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)
