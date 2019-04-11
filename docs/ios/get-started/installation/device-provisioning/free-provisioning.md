@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/16/2018
-ms.openlocfilehash: 503dae8253b3c0bb82038dd54b5d97ff632b439b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 533ab09a73116402e39da65933f26b8f3065357c
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115031"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855064"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Xamarin.iOS 應用程式的免費佈建
 
@@ -22,10 +22,10 @@ ms.locfileid: "50115031"
 若要使用免費佈建來將應用程式部署至裝置上：
 
 - 使用 Xcode 來建立必要*簽署身分識別* (開發人員憑證和私密金鑰) 和*佈建設定檔* (包含明確的應用程式識別碼和已連接之 iOS 裝置的 UDID)。
-- 在 Visual Studio for Mac 或 Visual Studio 2017 中，使用 Xcode 所建立的簽署身分識別和佈建設定檔，以部署您的 Xamarin.iOS 應用程式。
+- 在 Visual Studio for Mac 或 Visual Studio 2019 中，使用 Xcode 所建立簽署身分識別和佈建設定檔來部署您的 Xamarin.iOS 應用程式。
 
 > [!IMPORTANT]
-> [自動佈建](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)可讓 Visual Studio for Mac 或 Visual Studio 2017 自動設定裝置以進行開發人員測試。 不過，自動佈建與免費佈建不相容。 若要使用自動佈建，您必須擁有付費的 Apple 開發人員計劃帳戶。
+> [自動佈建](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)可讓 Visual Studio for Mac 或 Visual Studio 2019 自動設定裝置以進行開發人員測試。 不過，自動佈建與免費佈建不相容。 若要使用自動佈建，您必須擁有付費的 Apple 開發人員計劃帳戶。
 
 ## <a name="requirements"></a>需求
 
@@ -87,7 +87,7 @@ ms.locfileid: "50115031"
 
 ### <a name="deploy-your-xamarinios-app"></a>部署您的 Xamarin.iOS 應用程式
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 1. 透過 USB 或[無線方式](~/ios/deploy-test/wireless-deployment.md)將 iOS 裝置連接到 Mac 組建主機。
 2. 在 Visual Studio for Mac [Solution Pad] 中，按兩下**Info.plist**。
@@ -106,11 +106,11 @@ ms.locfileid: "50115031"
 9. 按一下 [確定] 以儲存並關閉 [專案選項]。
 10. 選取您的 iOS 裝置，並執行應用程式。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
-1. 確定 Visual Studio 2017 已[與 Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+1. 確定 Visual Studio 2019 或 Visual Studio 2017 已[與 Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. 透過 USB 或[無線方式](~/ios/deploy-test/wireless-deployment.md)將 iOS 裝置連接到 Mac 組建主機。
-3. 在 Visual Studio 2017 的 [方案總管] 中，以滑鼠右鍵按一下 Xamarin.iOS 專案，然後選取 [屬性]。
+3. 在 Visual Studio 2019 或 Visual Studio 2017 的 [方案總管] 中，以滑鼠右鍵按一下 Xamarin.iOS 專案，然後選取 [屬性]。
 4. 巡覽至 [iOS 套件組合簽署]。
 5. 針對 [組態]，選取 [除錯]。
 6. 針對 [平台]，選取 [iPhone]。
@@ -121,7 +121,7 @@ ms.locfileid: "50115031"
     ![設定簽署身分識別和佈建設定檔](free-provisioning-images/setprofile-w157.png "設定簽署身分識別和佈建設定檔")
 
     > [!TIP]
-    > Xcode 會建立此簽署身分識別和佈建設定檔，並將其儲存在 Mac 組建主機上。 Visual Studio 2017 可存取兩者，因為已[配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)到 Mac 組建主機。 如果未列出，則您可能需要重新啟動 Visual Studio 2017。
+    > Xcode 會建立此簽署身分識別和佈建設定檔，並將其儲存在 Mac 組建主機上。 Visual Studio 2019 或 Visual Studio 2017 可存取兩者，因為已[配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)到 Mac 組建主機。 如果未列出，則您可能需要重新啟動 Visual Studio 2019 或 Visual Studio 2017。
 
 10. 儲存並關閉專案屬性。
 11. 選取您的 iOS 裝置，並執行應用程式。

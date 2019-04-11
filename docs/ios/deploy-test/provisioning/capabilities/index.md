@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: f051becad7b6ef329d57417214eb976589386970
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7049cc36f5f661152e027beb53180d793078beff
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120940"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855025"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>使用 Xamarin.iOS 中的功能
 
-_為應用程式新增功能通常需要額外的佈建設定。_ 本指南說明所有功能所需的設定。
+_為應用程式新增功能通常需要額外的佈建設定。 本指南說明所有功能所需的設定。_
 
 Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) 來延伸 iOS 應用程式的功能及擴大其用途範圍。 這些功能可讓開發人員在其應用程式中加入更深的平台功能整合，例如：能夠從應用程式、額外的裝置服務 (例如 Siri) 等起始金錢交易。
 這些功能可以與 Xamarin.iOS 專案搭配使用。 以下提供完整的服務清單說明：
@@ -44,14 +44,13 @@ Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) �
 * 多重路徑
 * NFC 標籤讀取
 
-
-您可以透過 Visual Studio for Mac 和 Visual Studio 2017 啟用功能，也可以在 Apple Developer Portal (Apple 開發人員入口網站) 中以手動方式啟用功能。 有些功能 (例如「電子錢包」、Apple Pay 及 iCloud) 需要額外的「應用程式識別碼」組態。
+您可以透過 Visual Studio for Mac 和 Visual Studio 2019 來啟用功能，也可以在 Apple Developer Portal (Apple 開發人員入口網站) 中以手動方式啟用功能。 有些功能 (例如「電子錢包」、Apple Pay 及 iCloud) 需要額外的「應用程式識別碼」組態。
 
 本指南說明如何在 Visual Studio 中自動以及透過開發人員中心手動，在您應用程式中啟用這每一項「應用程式服務」，包括可能需要的任何額外設定。 
 
 ## <a name="adding-app-services"></a>新增應用程式服務
 
-若要使用功能，應用程式必須具有有效的佈建設定檔，其中包含已啟用正確服務的「應用程式識別碼」。 建立此佈建設定檔時，可以在 Visual Studio for Mac 和 Visual Studio 2017 中自動建立，也可以在 Apple Developer Center (Apple 開發人員中心) 中以手動方式建立。
+若要使用功能，應用程式必須具有有效的佈建設定檔，其中包含已啟用正確服務的「應用程式識別碼」。 建立此佈建設定檔時，可以在 Visual Studio for Mac 和 Visual Studio 2019 中自動建立，也可以在 Apple Developer Center (Apple 開發人員中心) 中以手動方式建立。
 
 本節說明如何使用 Visual Studio 的自動化佈建或開發人員中心來啟用大多數功能。 有些功能 (例如「電子錢包」、iCloud、Apple Pay 及「應用程式群組」) 需要額外的設定。 在相鄰的指南中將會詳細說明這些功能。
 
@@ -73,7 +72,7 @@ Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) �
 
 ## <a name="using-the-ide"></a>使用 IDE
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 在 Visual Studio for Mac 中，功能會新增至 **Entitlements.plist**。 若要新增功能，請使用下列步驟：
 
@@ -93,11 +92,11 @@ Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) �
 
     ![將功能新增至 entitlements.plist 檔案](images/image18.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
-功能會新增至 **Entitlements.plist**。 若要在 Visual Studio 2017 中新增功能，請使用下列步驟：
+功能會新增至 **Entitlements.plist**。 若要在 Visual Studio 2019 中新增功能，請使用下列步驟：
 
-1. 依[與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南所述配對 Visual Studio 2017 和 Mac。
+1. 依照[與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南所述來配對 Visual Studio 2019 和 Mac。
 
 2. 選取 [專案] > [佈建內容] 開啟 [佈建] 選項
 

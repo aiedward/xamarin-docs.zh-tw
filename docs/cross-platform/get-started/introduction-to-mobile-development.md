@@ -6,14 +6,14 @@ ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: 0062c5da4db206a9fe4dc0030a104ec034ab97f1
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: 296284b7f9a8eac26817e76a97bf35b03d591532
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197156"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855324"
 ---
-# <a name="introduction-to-mobile-development"></a>行動裝置應用程式開發簡介
+# <a name="introduction-to-mobile-development"></a>行動裝置開發簡介
 
 建置行動裝置應用程式可以像開啟 IDE、將一些內容放在一起、快速做一些測試、提交 App Store 一樣簡單：一個下午即可全部完成。 或者也可以是涉及下列操作的極端複雜流程：嚴苛的預先設計、可用性測試、在數以千計的裝置上進行 QA 測試、完整的 Beta 生命週期；再透過許多不同的方式進行部署。
 
@@ -38,14 +38,10 @@ Xamarin 的獨特之處便是它結合原生平台的所有威力，並新增許
 1.   **現代化的整合式開發環境 (IDE)** – Xamarin 在 Mac OS X 上使用 Visual Studio for Mac，在 Windows 上則使用 Visual Studio。 兩者皆是現代化的 IDE，包含例如程式碼自動完成、複雜的專案及解決方案管理系統、完整的專案範本程式庫、整合式原始檔控制等功能。
 1.   **行動裝置跨平台支援** – Xamarin 針對三個主要的行動平台 (iOS、Android 及 Windows Phone) 提供複雜的跨平台支援。 撰寫的應用程式可共用高達 90% 的程式碼，而我們的 Xamarin.Mobile 程式庫更提供統一的 API 以存取三個平台中常見的資源。 這可以大幅降低開發成本及以三個熱門行動平台為目標之行動裝置應用程式開發人員進行行銷的時間。
 
-
 因為 Xamarin 強大及完整的功能組，它正好滿足想要使用現代化語言及平台開發跨平台行動應用程式之應用程式開發人員的需求。
 
-
 > [!NOTE]
-> 本＜快速入門＞系列將焦點放在開始建置 iOS 和 Android 應用程式。 Microsoft 提供適用於平板電腦和桌上型電腦的[通用 Windows 平台 (UWP) 開發](https://docs.microsoft.com/windows/uwp/develop/)相關資訊。 若要深入了解使用 Xamarin 的跨平台開發 (包括適用於 Windows 的 UWP 應用程式)，請參閱[建置跨平台應用程式指南](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)。
-
-
+> 本「使用者入門」系列著重於 iOS 和 Android 應用程式的建置入門。 Microsoft 提供適用於平板電腦和桌上型電腦的[通用 Windows 平台 (UWP) 開發](https://docs.microsoft.com/windows/uwp/develop/)相關資訊。 若要深入了解使用 Xamarin 的跨平台開發 (包括適用於 Windows 的 UWP 應用程式)，請參閱[建置跨平台應用程式指南](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)。
 
 ## <a name="how-does-xamarin-work"></a>Xamarin 如何運作？
 
@@ -54,8 +50,6 @@ Xamarin 提供兩個商業產品：Xamarin.iOS 和 Xamarin.Android。 它們都�
 在 iOS 上，Xamarin 的「預先」(*AOT*) 編譯器會將 Xamarin.iOS 應用程式直接編譯成原生 ARM 組譯碼。 在 Android 上，Xamarin 的編譯器會將程式碼編譯為「中繼語言」(*IL*)，並會在應用程式啟動時使用 *Just-in-Time* (*JIT*) 的方式編譯成原生組譯碼。
 
 在這兩種案例下，Xamarin 應用程式會利用可自動處理，例如記憶體配置、記憶體回收、基礎平台 Interlop 等工作的執行階段。
-
-
 
 ### <a name="xamariniosdll-and-monoandroiddll"></a>Xamarin.iOS.dll 和 Mono.Android.dll
 
@@ -69,27 +63,10 @@ Xamarin 應用程式是針對名為 Xamarin 行動設定檔的 .NET BCL 子集�
 
 當 Xamarin 應用程式編譯完成時，其結果便是一個應用程式套件 (iOS 為 .app 檔案，Android 則為 .apk 檔案)。 這些檔案與使用平台之預設 IDE 所建置的應用程式套件之間無法區別，其部署的方式也完全相同。
 
-## <a name="getting-started"></a>快速入門
+## <a name="next-steps"></a>後續步驟
 
-現在您已初步了解 Xamarin 的運作方式，便可以開始深入探索！
+現在您已初步了解 Xamarin 如何運作，下一步就要開始使用下列其中一個指南建置應用程式：
 
-下一個步驟是使用下列指南中的其中一個開始建置應用程式：
-
-* [**Hello, iOS**](~/ios/get-started/hello-ios/index.md)
-
-![](introduction-to-mobile-development-images/ios.png "Hello, iOS")
-
-* [**Hello, Android**](~/android/get-started/hello-android/index.md)
-
-![](introduction-to-mobile-development-images/android.png "Hello, Android")
-
-* [**開始使用 Xamarin.Forms**](~/get-started/index.yml)
-
-## <a name="summary"></a>總結
-
-本文件僅單純介紹 Xamarin 平台。 真正的樂趣在您執行第一個應用程式時才正式開始。 請參閱 [Hello, iOS](~/ios/get-started/hello-ios/index.md)、[Hello, Android](~/android/get-started/hello-android/index.md) 與[開始使用 Xamarin.Forms](~/get-started/index.yml) 指南來開始。
-
-## <a name="related-links"></a>相關連結
-
-- [Hello, iOS](~/ios/get-started/hello-ios/index.md)
-- [Hello, Android](~/android/get-started/hello-android/index.md)
+- [**Xamarin.Forms 使用者入門**](~/get-started/index.yml)
+- [**Xamarin.iOS 使用者入門**](~/ios/get-started/hello-ios/index.md)
+- [**Xamarin.Android 使用者入門**](~/android/get-started/hello-android/index.md)

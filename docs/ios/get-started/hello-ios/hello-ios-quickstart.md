@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 336f1ec4e4406d2ab40c5e8aea247bd3be9ed765
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: ed59f32711bae56672d1d7f114fbb80a906d67ce
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672725"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855285"
 ---
 # <a name="hello-ios--quickstart"></a>Hello, iOS – 快速入門
 
@@ -42,7 +42,7 @@ Xamarin.iOS 可與下列設定搭配運作：
 
 Xamarin.iOS 可與下列設定搭配運作：
 
-- 位於 Windows 10 上的最新版 Visual Studio 2017 Community、Professional 或 Enterprise，並且已與符合上述規格的 Mac 組建主機配對。
+- Windows 10 上的最新版 Visual Studio 2019 或 Visual Studio 2017 Community、Professional 或 Enterprise，並且已與符合上述規格的 Mac 組建主機配對。
 
 [Xamarin.iOS Windows 安裝指南](~/ios/get-started/installation/windows/index.md)會提供逐步安裝指示。
 
@@ -495,6 +495,6 @@ Xamarin.iOS 可與下列設定搭配運作：
 ## <a name="related-links"></a>相關連結
 
 - [Xamarin 應用程式圖示和啟動影像 (範例)](https://github.com/xamarin/ios-samples/blob/master/Hello_iOS/Resources/XamarinAppIconsandLaunchImages.zip?raw=true)
-- [Hello, iOS (範例)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/) \(英文\)
-- [iOS 人性化介面指導方針](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html) \(英文\)
-- [iOS 佈建入口網站](https://developer.apple.com/ios/manage/overview/index.action) \(英文\)
+- [Hello, iOS (範例)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
+- [iOS 人性化介面指導方針](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
+- [iOS 佈建入口網站](https://developer.apple.com/ios/manage/overview/index.action)

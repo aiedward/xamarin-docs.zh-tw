@@ -4,14 +4,14 @@ description: Xamarin.Essentials 中的 Share 類別能讓應用程式將資料 (
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 02/12/2019
+ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: ad56a626133e03c1ca75b1db26b0904d5df7fea3
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: 1a9a7b008773255d9d7743a4fcb21f02feb3e116
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175326"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869373"
 ---
 # <a name="xamarinessentials-share"></a>Xamarin.Essentials:共用
 
@@ -61,21 +61,47 @@ public class ShareTest
 
 ## <a name="platform-differences"></a>平台差異
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# [<a name="android"></a>Android](#tab/android)
 
 * `Subject` 屬性用於所需的訊息主旨。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# [<a name="ios"></a>iOS](#tab/ios)
 
 * `Subject` 未使用。
 * `Title` 未使用。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# [<a name="uwp"></a>UWP](#tab/uwp)
 
-* `Title` 將預設為應用程式名稱，如果未設定。
+* `Title` 將預設為應用程式名稱 (如果未設定)。
 * `Subject` 未使用。
 
 -----
+
+## <a name="files"></a>檔案
+
+![預覽功能](~/media/shared/preview.png)
+
+共用檔案在 Xamarin.Essentials 1.1.0 版為實驗性預覽。 這項功能可讓應用程式與裝置上的其他應用程式共用檔案。 若要啟用這項功能，請在您應用程式的啟動程式碼中設定下列屬性：
+
+```csharp
+ExperimentalFeatures.Enable(ExperimentalFeatures.ShareFileRequest);
+```
+
+啟用功能之後，您可以共用任何檔案。 Xamarin.Essentials 會自動偵測檔案類型 (MIME)，並要求共用。 每個平台可能只支援特定的副檔名。
+
+下列範例示範如何將文字寫入磁碟，並共用到其他應用程式：
+
+```csharp
+var fn =  "Attachment.txt";
+var file = Path.Combine(FileSystem.CacheDirectory, fn);
+File.WriteAllText(file, "Hello World");
+
+await Share.RequestAsync(new ShareFileRequest
+{
+    Title = Title,
+    File = new ShareFile(file)
+});
+```
 
 ## <a name="api"></a>API
 

@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 15cba21eed510ec13bfa3dc3f176fce30fb4ed68
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 54509d0a1133d86727317366b0d229bc218cb263
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059375"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870296"
 ---
 # <a name="customizing-a-map-pin"></a>自訂地圖釘選
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
+[![D下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
 
 _本文示範如何建立 Map 控制項的自訂轉譯器，該控制項會在每個平台上以釘選資料的自訂釘選和自訂檢視來顯示原生地圖。_
 
-每個 Xamarin.Forms 檢視都隨附每個平台的轉譯器，這些平台可建立原生控制項的執行個體。 當 iOS 中的 Xamarin.Forms 應用程式轉譯 [`Map`](xref:Xamarin.Forms.Maps.Map) 時，會先具現化 `MapRenderer` 類別，再由該類別具現化原生 `MKMapView` 控制項。 在 Android 平台上，`MapRenderer` 類別會具現化原生 `MapView` 控制項。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 類別會具現化原生的 `MapControl`。 如需 Xamarin.Forms 控制項對應的轉譯器和原生控制項類別詳細資訊，請參閱[轉譯器基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
+每個 Xamarin.Forms 檢視都具有每個平台的轉譯器，這些轉譯器可建立原生控制項的執行個體。 當 iOS 中的 Xamarin.Forms 應用程式轉譯 [`Map`](xref:Xamarin.Forms.Maps.Map) 時，會先具現化 `MapRenderer` 類別，再由該類別具現化原生 `MKMapView` 控制項。 在 Android 平台上，`MapRenderer` 類別會具現化原生 `MapView` 控制項。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 類別會具現化原生的 `MapControl`。 如需 Xamarin.Forms 控制項對應的轉譯器和原生控制項類別詳細資訊，請參閱[轉譯器基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
 下圖說明 [`Map`](xref:Xamarin.Forms.Maps.Map) 和實作它對應原生控制項間的關聯性：
 
@@ -225,9 +225,9 @@ namespace CustomRenderer.iOS
 }
 ```
 
-若自訂轉譯器已附加於新的 Xamarin.Forms 項目，則 `OnElementChanged` 方法會執行下列 [`MKMapView`](https://developer.xamarin.com/api/type/MapKit.MKMapView/) 組態：
+若自訂轉譯器已附加於新的 Xamarin.Forms 項目，則 `OnElementChanged` 方法會執行下列 [`MKMapView`](xref:MapKit.MKMapView) 組態：
 
-- [`GetViewForAnnotation`](https://developer.xamarin.com/api/property/MapKit.MKMapView.GetViewForAnnotation/) 屬性會設為 `GetViewForAnnotation` 方法。 此方法會在[註釋位置於地圖上可見時](#Displaying_the_Annotation)呼叫，且會用於在顯示前自訂註釋。
+- [`GetViewForAnnotation`](xref:MapKit.MKMapView.GetViewForAnnotation*) 屬性會設為 `GetViewForAnnotation` 方法。 此方法會在[註釋位置於地圖上可見時](#Displaying_the_Annotation)呼叫，且會用於在顯示前自訂註釋。
 - `CalloutAccessoryControlTapped`、`DidSelectAnnotationView` 和 `DidDeselectAnnotationView` 的事件處理常式會進行註冊。 這些事件分別會在使用者[點選圖說文字中的右側裝飾](#Tapping_on_the_Right_Callout_Accessory_View)，以及使用者[選取](#Selecting_the_Annotation)和[取消選取](#Deselecting_the_Annotation)註釋時引發。 只有在轉譯器附加到的項目變更時，才會取消訂閱事件。
 
 <a name="Displaying_the_Annotation" />
@@ -273,7 +273,7 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
 此方法可確保將註釋顯示為自訂影像，而非系統定義的圖釘，且在註釋受到點選時，顯示在註釋標題和地址左側和右側包含額外內容的圖說文字。 執行此作業的流程如下：
 
 1. 呼叫 `GetCustomPin` 方法傳回註釋的自訂釘選資料。
-1. 為了節省記憶體，註釋的檢視會透過呼叫 [`DequeueReusableAnnotation`](https://developer.xamarin.com/api/member/MapKit.MKMapView.DequeueReusableAnnotation/(System.String)/) 集中以重複使用。
+1. 為了節省記憶體，註釋的檢視會透過呼叫 [`DequeueReusableAnnotation`](xref:MapKit.MKMapView.DequeueReusableAnnotation*) 集中以重複使用。
 1. `CustomMKAnnotationView` 類別會使用對應到 `CustomPin` 執行個體中相同屬性的 `Id` 和 `Url` 屬性來擴充 `MKAnnotationView` 類別。 若註釋為 `null`，則建立 `CustomMKAnnotationView` 的新執行個體：
     - `CustomMKAnnotationView.Image` 屬性會設為表示地圖上註釋的影像。
     - `CustomMKAnnotationView.CalloutOffset` 屬性會設為 `CGPoint`，其指定圖說文字置中並位於註釋上方。
@@ -281,7 +281,7 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
     - `CustomMKAnnotationView.RightCalloutAccessoryView` 屬性會設為「資訊」按鈕，顯示在註釋標題和地址的右側。
     - `CustomMKAnnotationView.Id` 屬性會設為 `GetCustomPin` 方法傳回的 `CustomPin.Id` 屬性。 這可以用來識別註釋，使其圖說文字[能供進一步自訂](#Selecting_the_Annotation) (若需要的話)。
     - `CustomMKAnnotationView.Url` 屬性會設為 `GetCustomPin` 方法傳回的 `CustomPin.Url` 屬性。 當使用者[點選顯示在右側圖說文字裝飾檢視中的按鈕](#Tapping_on_the_Right_Callout_Accessory_View)時，便會巡覽至該 URL。
-1. [`MKAnnotationView.CanShowCallout`](https://developer.xamarin.com/api/property/MapKit.MKAnnotationView.CanShowCallout/) 屬性會設為 `true`，使圖說文字在註釋受到點選時顯示。
+1. [`MKAnnotationView.CanShowCallout`](xref:MapKit.MKAnnotationView.CanShowCallout*) 屬性會設為 `true`，使圖說文字在註釋受到點選時顯示。
 1. 註釋接著便會傳回，以供在地圖上顯示。
 
 <a name="Selecting_the_Annotation" />
@@ -403,8 +403,8 @@ namespace CustomRenderer.Droid
 
 `CustomMapRenderer` 類別會實作 `GoogleMap.IInfoWindowAdapter` 介面，來[自訂資訊視窗](#Customizing_the_Info_Window)。 此介面會指定必須實作下列方法：
 
-- `public Android.Views.View GetInfoWindow(Marker marker)` – 此方法會進行呼叫以傳回標記的自訂資訊視窗。 若其傳回 `null`，則會使用預設視窗轉譯。 若其傳回 `View`，便會將該 `View` 放置在資訊視窗框架中。
-- `public Android.Views.View GetInfoContents(Marker marker)` – 此方法會進行呼叫，以傳回包含資訊視窗內容的 `View`，且只會在 `GetInfoWindow` 方法傳回 `null` 時呼叫。 若其傳回 `null`，則會使用資訊視窗內容的預設轉譯。
+- `public Android.Views.View GetInfoWindow(Marker marker)` – 呼叫此方法可傳回標記的自訂資訊視窗。 若其傳回 `null`，則會使用預設視窗轉譯。 若其傳回 `View`，便會將該 `View` 放置在資訊視窗框架中。
+- `public Android.Views.View GetInfoContents(Marker marker)` – 呼叫此方法可傳回包含資訊視窗內容的 `View`，且只會在 `GetInfoWindow` 方法傳回 `null` 時呼叫。 若其傳回 `null`，則會使用資訊視窗內容的預設轉譯。
 
 在應用程式範例中，由於只有資訊視窗內容經過自訂，因此 `GetInfoWindow` 方法會傳回 `null` 來啟用它。
 
@@ -661,6 +661,6 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 ## <a name="related-links"></a>相關連結
 
 - [地圖控制項](~/xamarin-forms/user-interface/map.md)
-- [iOS Maps](~/ios/user-interface/controls/ios-maps/index.md)
-- [Maps API](~/android/platform/maps-and-location/maps/maps-api.md)
-- [Customized Pin (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/) (自訂釘選 (範例))
+- [iOS 地圖](~/ios/user-interface/controls/ios-maps/index.md)
+- [地圖 API](~/android/platform/maps-and-location/maps/maps-api.md)
+- [自訂釘選 (範例)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)

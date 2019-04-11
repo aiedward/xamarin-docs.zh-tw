@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 12fcf6ff1b289c773e0dce03be4ac62105f6acd4
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7f40671cd37ba88834698dea8cdaba267c96600c
+ms.sourcegitcommit: c77d4257f8a35c8d931538b78a2ebc2aa48c0db9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669462"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58751254"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – 深度剖析
 
@@ -310,7 +310,7 @@ public partial class ViewController : UIViewController
 
 檢視控制器的最重要角色就是回應使用者互動，例如按下按鈕、瀏覽等等。 處理使用者互動的最簡單方式是，連接控制項來接聽使用者輸入，並連結事件處理常式來回應輸入。 例如，可連接按鈕來回應觸控事件，如 Phoneword 應用程式中所示範。
 
-現在已對檢視和檢視控制器有更深入了解，讓我們來探索其運作方式。
+讓我們來探索其運作方式。
 在 `Phoneword_iOS` 專案中，已將稱為 `TranslateButton` 的按鈕新增至內容檢視階層：
 
 [![](hello-ios-deepdive-images/image1.png "已將名為 TranslateButton 的按鈕新增至內容檢視階層")](hello-ios-deepdive-images/image1.png#lightbox)

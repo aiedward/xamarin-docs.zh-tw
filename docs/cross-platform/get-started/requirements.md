@@ -6,12 +6,12 @@ ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: conceptdev
 ms.author: crdun
 ms.date: 07/24/2018
-ms.openlocfilehash: 486c5c57961e897eae59df66b216a9078d5df517
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: c03e9782fe80a88c70df6b7780c43778f673d10d
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667986"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854557"
 ---
 # <a name="system-requirements"></a>系統需求
 
@@ -45,20 +45,20 @@ Xamarin 產品依賴 Apple 和 Google 中的平台 SDK 來定位 iOS 或 Android
 [!include[](~/cross-platform/includes/macos-testing.md)]
 
 > [!WARNING]
-> 即將推出的 Xamarin.Mac 4.8 版只會支援 macOS 10.9 或更高版本。
+> Xamarin.Mac 4.8 僅支援 macOS 10.9 () 或更高版本。
 > 舊版 Xamarin.Mac 支援 macOS 10.7 或更高版本，但這些較舊的 macOS 版本缺乏足夠的 TLS 基礎結構，無法支援 TLS 1.2。 若要以 macOS 10.7 或 10.8 為目標，請使用 Xamarin.Mac 4.6 或更舊版本。
 
 ## <a name="windows-requirements"></a>Windows 需求
 
 使用 Windows 電腦進行 Xamarin 開發需要以下軟體和 SDK 版本。
 檢查您的作業系統版本 (請確認您使用的不是 Visual Studio 的 *Express* 版本：如果您使用的是該版本，請考慮更新至 *Community* 版本)。
-Visual Studio 2017 安裝程式包括自動安裝 Xamarin 的選項 ([使用 .NET 進行行動開發])。
+Visual Studio 2019 和 Visual Studio 2017 安裝程式包括自動安裝 Xamarin 的選項 (**使用 .NET 進行行動開發**工作負載)。
 
 [!include[](~/cross-platform/includes/windows-requirements.md)]
 
 > [!NOTE]
-> - Xamarin for Visual Studio 支援任何版本的 Visual Studio 2017 (Community、Professional 和 Enterprise)。
-> - 若要在通用 Windows 平台 (UWP) 開發 Xamarin.Forms 應用程式，需要已安裝 Visual Studio 2017 的 Windows 10。
+> - Xamarin for Visual Studio 支援 Visual Studio 2019 或 Visual Studio 2017 (Community、Professional 和 Enterprise)。
+> - 若要在通用 Windows 平台 (UWP) 開發 Xamarin.Forms 應用程式，需要已安裝 Visual Studio 2017 的 Windows 10。 建議使用 Visual Studio 2019。
 
 ### <a name="testing--debugging-on-windows"></a>Windows 上的測試和偵錯
 
@@ -68,7 +68,7 @@ Visual Studio 2017 安裝程式包括自動安裝 Xamarin 的選項 ([使用 .NE
 
 ## <a name="installation-instructions"></a>安裝指示
 
-您可從 [xamarin.com/download](http://xamarin.com/download) 下載適用於 macOS 的最新版 Xamarin。 對於 Windows，請遵循 [Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio) 安裝指示。
+您可以使用 [Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation) 下載適用於 macOS 的最新版 Xamarin。 針對 Windows，請遵循 [Visual Studio 安裝指示](https://docs.microsoft.com/visualstudio/install/install-visual-studio)。
 
 我們目前產品版本的完整列表，可在[目前的版本頁面](https://developer.xamarin.com/releases/current/)中找到。 此頁面也概述了我們 Beta 和 Alpha 管道的個別產品版本 (和版本資訊的連結)。
 
@@ -83,4 +83,6 @@ Visual Studio 2017 安裝程式包括自動安裝 Xamarin 的選項 ([使用 .NE
 ## <a name="related-links"></a>相關連結
 
 - [下載 Xamarin](https://visualstudio.microsoft.com/xamarin/)
-- [目前版本](https://developer.xamarin.com/releases/current/)
+- [Xamarin.Forms 版本資訊](/xamarin/xamarin-forms/release-notes/)
+- [Xamarin.Android 版本資訊](/xamarin/android/release-notes/)
+- [Xamarin.iOS 版本資訊](/xamarin/ios/release-notes/)

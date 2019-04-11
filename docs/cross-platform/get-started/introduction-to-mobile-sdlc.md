@@ -1,19 +1,19 @@
 ---
-title: 行動軟體開發生命週期簡介
+title: 行動裝置軟體開發生命週期簡介
 description: 本文件描述行動軟體開發生命週期，涉及 UX 設計、UI 設計、開發、穩定、發佈和更多。
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: b8f36ef407c3acc9b3472539735816649e13b7db
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 74a9fc59b395d68db9b116106cc9fa63d3969c3b
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672660"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855233"
 ---
-# <a name="introduction-to-the-mobile-software-development-lifecycle"></a>行動軟體開發生命週期簡介
+# <a name="introduction-to-the-mobile-software-development-lifecycle"></a>行動裝置軟體開發生命週期簡介
 
 建置行動裝置應用程式可以像開啟 IDE、將一些內容放在一起、快速做一些測試、提交 App Store 一樣簡單：一個下午即可全部完成。 或者也可以是涉及下列操作的極端複雜流程：嚴苛的預先設計、可用性測試、在數以千計的裝置上進行 QA 測試、完整的 Beta 生命週期；再透過許多不同的方式進行部署。
 
@@ -64,7 +64,7 @@ ms.locfileid: "57672660"
 
 一旦擷取了適量的使用案例和執行者之後，開始設計應用程式便會容易許多。 開發即可以專注於如何建立應用程式，而不需專注於應用程式的定位和用途。
 
-### <a name="designing-mobile-applications"></a>設計行動應用程式
+### <a name="designing-mobile-applications"></a>設計行動裝置應用程式
 
 一旦確定了應用程式的特性和功能之後，下一步是開始嘗試解決使用者體驗 (UX)。
 
@@ -72,7 +72,7 @@ ms.locfileid: "57672660"
 
 UX 通常會透過使用任何一種[設計工具組](https://docs.microsoft.com/windows/uwp/design/downloads/)的框線或原型來完成。 使用 UX 原型來設計 UX 可以不必擔心實際的 UI 設計：
 
- [![](introduction-to-mobile-sdlc-images/balsamiq.png "UX 的完成通常透過使用 Balsamiq 等工具的框線或圖樣")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/balsamiq.png "UX 通常是使用 Balsamiq 等工具透過框線或圖樣製作而成")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
 建立 UX 原型時，請務必注意應用程式所針對的各種平台介面指導方針。 應用程式應在每種平台上都「有家的感覺」。 每種平台的官方設計指導方針如下：
 
@@ -98,7 +98,7 @@ UX 通常會透過使用任何一種[設計工具組](https://docs.microsoft.com
 
 如同 UX 一樣，請務必了解每種平台都有自己的設計語言，因此即使是設計良好的應用程式，在每種平台上的外觀可能仍有不同：
 
- [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "設計良好的應用程式在每種平台上的外觀可能仍不相同")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "設計妥善的應用程式在各種平台上的外觀仍可能不盡相同")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
 
 ### <a name="development"></a>開發
 
@@ -151,11 +151,11 @@ Android 使用此資訊協助您在 Android OS 內運行的應用程式和元件
 1.  [Handango](http://www.handango.com/)
 1.  [GetJar](http://www.getjar.com/)
 
-#### <a name="uwp"></a>UWP 
+#### <a name="uwp"></a>UWP
 
 UWP 應用程式會透過 Microsoft Store 散發給使用者。 開發人員會提交其應用程式來進行准核，之後應用程式就會出現在市集中。 如需發行 Windows 應用程式的詳細資訊，請參閱 UWP 的[發行](https://docs.microsoft.com/windows/uwp/publish/)文件。
 
-## <a name="mobile-development-considerations"></a>行動應用程式開發考量
+## <a name="mobile-development-considerations"></a>行動裝置開發考量
 
 雖然開發行動應用程式與開發傳統 Web/桌面應用程式在流程或架構方面沒有根本性差異，不過需要注意一些考量事項。
 
@@ -195,7 +195,7 @@ UWP 應用程式會透過 Microsoft Store 散發給使用者。 開發人員會�
 
 多工在 iOS 中受到非常嚴格的控制；當其他應用程式移到前景時，您的應用程式必須符合某些規則和行為，否則 iOS 會終止您的應用程式。
 
-#### <a name="device-specific-resources"></a>裝置特定資源
+#### <a name="device-specific-resources"></a>裝置專用資源
 
 在特定板型規格中，不同型號間的硬體可能會有很大差異。 比方說，某些裝置具有後方相機，某些裝置具有前方相機，而某些裝置則沒有相機。
 
@@ -203,7 +203,7 @@ UWP 應用程式會透過 Microsoft Store 散發給使用者。 開發人員會�
 
 基於這些裝置型號間的差異，請務必在嘗試使用某項功能前檢查它是否存在。
 
-#### <a name="os-specific-constraints"></a>OS 特定條件約束
+#### <a name="os-specific-constraints"></a>OS 專用條件約束
 
 為確保應用程式回應迅速且安全可靠，iOS 強制應用程式必須遵守的某些規則。 除了與多工有關的規則，還有一些事件方法規定您的應用程式必須在特定時間內傳回，否則 iOS 會將它終止。
 
@@ -233,7 +233,7 @@ Google 不會對於可在 Android OS 上執行的做出任何限制。 這種開
 
 #### <a name="multitasking"></a>多工
 
-UWP 中的多工也分為兩個部分：頁面與應用程式的生命週期和背景流程。 應用程式中，每張畫面都是頁面類別的實例，具有與設為使用中或非使用中狀態建立關聯的事件 (具有用於處理非使用中狀態或「刪除標記」的特殊規則)。 
+UWP 中的多工也分為兩個部分：頁面與應用程式的生命週期和背景流程。 應用程式中，每張畫面都是頁面類別的實例，具有與設為使用中或非使用中狀態建立關聯的事件 (具有用於處理非使用中狀態或「刪除標記」的特殊規則)。
 
 第二個部分：即使應用程式不在前景運行時，為處理工作提供背景代理程式。 
 
@@ -249,9 +249,8 @@ UWP 中的多工也分為兩個部分：頁面與應用程式的生命週期和�
 
 本指南提供了 SDLC 簡介，因其與行動開發相關。 其介紹有關建置行動應用程式的一般考量，並檢視平台特定的考量，包括設計、測試和部署。
 
-## <a name="related-links"></a>相關連結
+## <a name="next-steps"></a>後續步驟
 
 - [行動裝置應用程式開發簡介](~/cross-platform/get-started/introduction-to-mobile-development.md)
-- [Hello, iOS](~/ios/get-started/hello-ios/index.md)
-- [Hello, Android](https://developer.xamarin.com/get-started-droid/)
-- [應用程式基本概念](~/cross-platform/app-fundamentals/index.md)
+- [Xamarin 使用者入門](~/get-started/index.yml)
+- [跨平台共用程式碼](~/cross-platform/app-fundamentals/index.md)

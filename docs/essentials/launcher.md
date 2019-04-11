@@ -5,14 +5,14 @@ ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 502ccaf8ef4fbeadb4b46f47668ac11f2747b89d
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 26ab3687e9bcfecbd003ddd0a97f3e46a0cd92b2
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898263"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870049"
 ---
-# <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: Launcher
+# <a name="xamarinessentials-launcher"></a>Xamarin.Essentials:啟動器
 
 **Launcher** 類別可讓應用程式依系統開啟 URI。 當深層連結到其他應用程式的自訂 URI 配置時，通常會使用它。 若您要開啟瀏覽器並瀏覽網站，您應該參考 **[瀏覽器](open-browser.md)** API。
 
@@ -44,19 +44,19 @@ public class LauncherTest
 
 ## <a name="platform-differences"></a>平台差異
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# [<a name="android"></a>Android](#tab/android)
 
 從 `CanOpenAsync` 傳回的工作會立即完成。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# [<a name="ios"></a>iOS](#tab/ios)
 
 若此裝置上的目的地應用程式先前從未由 `OpenAsync` 從您的應用程式開啟，iOS 將會提示一次使用者允許您的應用程式開啟它。
 
 從 `CanOpenAsync` 傳回的工作會立即完成。
 
-您可以在[這裡](https://developer.xamarin.com/api/member/UIKit.UIApplication.CanOpenUrl/p/Foundation.NSUrl/)找到有關 iOS 實作的詳細資訊
+您可以在[這裡](xref:UIKit.UIApplication.CanOpenUrl*)找到有關 iOS 實作的詳細資訊
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# [<a name="uwp"></a>UWP](#tab/uwp)
 
 無平台差異。
 
