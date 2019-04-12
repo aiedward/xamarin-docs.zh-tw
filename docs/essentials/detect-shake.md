@@ -1,16 +1,16 @@
 ---
-title: Xamarin.Essentials:偵測搖動
+title: Xamarin.Essentials：偵測搖動
 description: Xamarin.Essentials 中的 Accelerometer 類別可讓您偵測裝置的搖動。
 ms.assetid: 07513D32-120F-4F12-8757-A47802A8027B
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: f1482de3fd1c3e550ac9739d0f815092f7fe753d
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: 2a14d739806fef353472a5186a9dbedd8e218662
+ms.sourcegitcommit: be51b459a0a148ae3adca31d7599f53f7b2c3a68
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58176025"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59019304"
 ---
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials:偵測搖動
 
@@ -28,14 +28,14 @@ ms.locfileid: "58176025"
 using Xamarin.Essentials;
 ```
 
-若要偵測裝置的搖動，您必須透過呼叫 `Start` 及 `Stop` 方法來使用 Accelerometer 功能，以接聽加速計的變更，及偵測搖動。 每當偵測到搖動時就會引發 `ShakeDetected ` 事件。 以下是範例使用方式：
+若要偵測裝置的搖動，您必須透過呼叫 `Start` 及 `Stop` 方法來使用 Accelerometer 功能，以接聽加速計的變更，及偵測搖動。 每當偵測到搖動時就會引發 `ShakeDetected ` 事件。 建議針對 `SensorSpeed` 使用 `Game` 或更快的項目。 以下是範例使用方式：
 
 ```csharp
 
 public class DetectShakeTest
 {
     // Set speed delay for monitoring changes.
-    SensorSpeed speed = SensorSpeed.UI;
+    SensorSpeed speed = SensorSpeed.Game;
 
     public DetectShakeTest()
     {

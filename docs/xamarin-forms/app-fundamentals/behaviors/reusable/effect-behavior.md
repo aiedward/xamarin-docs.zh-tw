@@ -1,24 +1,24 @@
 ---
 title: 可重複使用的 EffectBehavior
-description: 對於將效果新增至控制項，行為是很實用的方法，可從程式碼後置檔案中移除以定案效果方式處理的程式碼。 本文示範如何建立及使用 Xamarin.Forms 行為來將效果新增至控制項。
+description: 對於將效果新增至控制項，行為是很實用的方法，可從程式碼後置檔案中移除以定案效果方式處理的程式碼。 此文章示範如何建立及使用 Xamarin.Forms 行為來將效果新增至控制項。
 ms.prod: xamarin
 ms.assetid: A909B24D-960A-4023-AFF6-4B9256C55ADD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 5e47799e704dfbe2c4088016d7055fc616215ea2
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 8c831dfa45c5028e4f1422467bf3be9210452335
+ms.sourcegitcommit: be51b459a0a148ae3adca31d7599f53f7b2c3a68
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056460"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59019369"
 ---
 # <a name="reusable-effectbehavior"></a>可重複使用的 EffectBehavior
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
+[![D下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
 
-對於將效果新增至控制項，行為是很實用的方法，可從程式碼後置檔案中移除以定案效果方式處理的程式碼。本文示範如何建立及使用 Xamarin.Forms 行為來將效果新增至控制項。
+_對於將效果新增至控制項，行為是很實用的方法，可從程式碼後置檔案中移除以定案效果方式處理的程式碼。 此文章文示範如何建立及使用 Xamarin.Forms 行為來將效果新增至控制項。_
 
 ## <a name="overview"></a>總覽
 
@@ -161,14 +161,14 @@ label.Behaviors.Add (new EffectBehavior {
 
 使用此行為在控制項中新增和移除效果的優點是：可以從程式碼後置檔案中移除以定案效果方式處理的程式碼。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-本文示範如何使用行將效果新增至控制項。 `EffectBehavior` 類別是可重複使用的 Xamarin.Forms 自訂行為，其可在行為附加至控制項時，將 [`Effect`](xref:Xamarin.Forms.Effect) 執行個體新增至控制項，並在行為與控制項中斷連結時，移除 `Effect` 執行個體。
+此文章示範如何使用行將效果新增至控制項。 `EffectBehavior` 類別是可重複使用的 Xamarin.Forms 自訂行為，其可在行為附加至控制項時，將 [`Effect`](xref:Xamarin.Forms.Effect) 執行個體新增至控制項，並在行為與控制項中斷連結時，移除 `Effect` 執行個體。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [Effects](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [Effect Behavior (Samples)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/) (效果行為 (範例))
-- [Behavior](xref:Xamarin.Forms.Behavior)
-- [Behavior<T>](xref:Xamarin.Forms.Behavior`1)
+- [效果](~/xamarin-forms/app-fundamentals/effects/index.md)
+- [效果行為 (範例)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
+- [行為](xref:Xamarin.Forms.Behavior)
+- [行為&lt;T&gt;](xref:Xamarin.Forms.Behavior`1)
