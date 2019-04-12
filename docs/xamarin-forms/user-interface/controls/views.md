@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/21/2019
-ms.openlocfilehash: e165e6c713028517d69fee92916c94bbf0e46f33
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: 5b2e58901d4a850863f68b26ce41e1aa4e8daee4
+ms.sourcegitcommit: 9e9340999d569a3db01b4b59a0fcf24b8caa869c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329231"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59509898"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms 檢視
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/FormsGallery/)
+[![D下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/FormsGallery/)
 
 _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面。_
 
@@ -183,10 +183,10 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 |     |     |
 | --- | --- |
-| [`ListView`](xref:Xamarin.Forms.ListView) 衍生自[ `ItemsView[Cell]` ](xref:Xamarin.Forms.ItemsView`1) ，並顯示可捲動的可選取的資料項目清單。 設定[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)屬性集合的物件和集合[ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)屬性設[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)物件，描述項目為何若要格式化。 [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)事件的選取項目發出訊號，可[ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)屬性。<br /><br />[API 文件](xref:Xamarin.Forms.ListView) / [指南](~/xamarin-forms/user-interface/listview/index.md) / [範例](https://developer.xamarin.com/samples/WorkingWithListview) | [![ListView 範例](views-images/ListView.png "ListView 範例")](views-images/ListView-Large.png#lightbox "ListView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ListViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ListViewDemoPage.xaml) |
+| [`ListView`](xref:Xamarin.Forms.ListView) 衍生自[ `ItemsView` ](xref:Xamarin.Forms.ItemsView`1) ，並顯示可捲動的可選取的資料項目清單。 設定[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)屬性集合的物件和集合[ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)屬性設[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)物件，描述項目為何若要格式化。 [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)事件的選取項目發出訊號，可[ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)屬性。<br /><br />[API 文件](xref:Xamarin.Forms.ListView) / [指南](~/xamarin-forms/user-interface/listview/index.md) / [範例](https://developer.xamarin.com/samples/WorkingWithListview) | [![ListView 範例](views-images/ListView.png "ListView 範例")](views-images/ListView-Large.png#lightbox "ListView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ListViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ListViewDemoPage.xaml) |
 |     |     |
 
-### <a name="picker"></a>選擇器
+### <a name="picker"></a>Picker
 
 |     |     |
 | --- | --- |
