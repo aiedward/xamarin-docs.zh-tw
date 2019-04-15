@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: 476f1c50a2f1a4199dfaf1996fc9c16615b40598
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2978f0b2bcbdd463876784a9addd7dec055b8af9
+ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116793"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59574815"
 ---
 # <a name="file-storage-and-access-with-xamarinandroid"></a>檔案儲存體和搭配 Xamarin.Android 的存取
 
@@ -66,15 +66,14 @@ Android 配置到作業系統的 Apk，以及個別的應用程式的靜態記�
 
 | System.Environment.SpecialFolder | 路徑  |
 |----------------------|---|
-| `ApplicationData` | **_內部\_儲存體_/.config** |
-| `Desktop` | **_內部\_儲存體_  /桌面** |
-| `LocalApplicationData` | **_內部\_儲存體_/.local/share** |
-| `MyComputer` | **_內部\_儲存體_/.local/share** |
-| `MyDocuments` | **_內部\_儲存體_** |
-| `MyMusic` | **_內部\_儲存體_/Music** |
-| `MyPictures` | **_內部\_儲存體_/Music** |
-| `MyVideos` | **_內部\_儲存體_/Videos** |
-| `Personal` | **_內部\_儲存體_** |
+| `ApplicationData` | **_INTERNAL\_STORAGE_/.config** |
+| `Desktop` | **_INTERNAL\_STORAGE_/Desktop** |
+| `LocalApplicationData` | **_INTERNAL\_STORAGE_/.local/share** |
+| `MyDocuments` | **_INTERNAL\_STORAGE_** |
+| `MyMusic` | **_INTERNAL\_STORAGE_/Music** |
+| `MyPictures` | **_INTERNAL\_STORAGE_/Pictures** |
+| `MyVideos` | **_INTERNAL\_STORAGE_/Videos** |
+| `Personal` | **_INTERNAL\_STORAGE_** |
 
 
 ### <a name="reading-or-writing-to-files-on-internal-storage"></a>讀取或寫入在內部儲存體上的檔案
