@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: aa051a0f94853b39077738a7b22383192aa32e87
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.openlocfilehash: b9838ddb9771cb6ce757a4080520a5edd720531a
+ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58870283"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59574737"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials:安全存放裝置
 
@@ -23,7 +23,7 @@ ms.locfileid: "58870283"
 
 若要存取 **SecureStorage** 功能，需要下列平台特定設定：
 
-# [<a name="android"></a>Android](#tab/android)
+# <a name="androidtabandroid"></a>[Android](#tab/android)
 
 > [!TIP]
 > [應用程式自動備份 (Auto Backup for Apps)](https://developer.android.com/guide/topics/data/autobackup) 是 Android 6.0 (API 層級 23) 與更新版本中的功能，可備份使用者的應用程式資料 (共用喜好設定、應用程式內部存放區中的檔案，以及其他特定檔案)。 當重新安裝應用程式或在新裝置上安裝應用程式時，會還原資料。 這會對 `SecureStorage` 造成影響，它利用備份的共用喜好設定，而且在進行還原時無法解密。 Xamarin.Essentials 會自動處理此案例，方式是移除機碼以便可以重設，但您可以透過停用自動備份以採取額外的步驟。
@@ -61,7 +61,7 @@ ms.locfileid: "58870283"
     </full-backup-content>
     ```
 
-# [<a name="ios"></a>iOS](#tab/ios)
+# <a name="iostabios"></a>[iOS](#tab/ios)
 
 當您在 **iOS 模擬器** 上開發時，請啟用 **Keychain** 權利並為應用程式的套件組合識別碼新增金鑰鏈存取群組。 
 
@@ -72,7 +72,7 @@ ms.locfileid: "58870283"
 > [!TIP]
 > 當部署到 iOS 裝置時，不需要此權利且應該移除。
 
-# [<a name="uwp"></a>UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 不需要進行額外設定。
 
@@ -130,7 +130,7 @@ SecureStorage.RemoveAll();
 
 ## <a name="platform-implementation-specifics"></a>平台實作特性
 
-# [<a name="android"></a>Android](#tab/android)
+# <a name="androidtabandroid"></a>[Android](#tab/android)
 
 [Android KeyStore](https://developer.android.com/training/articles/keystore.html) 是用來存放在將值以檔案名稱 **[YOUR-APP-PACKAGE-ID].xamarinessentials** 儲存到[共用喜好設定](https://developer.android.com/training/data-storage/shared-preferences.html)之前用於加密值的密碼編譯金鑰。  在共用喜好設定檔案中使用的金鑰是傳遞到 `SecureStorage` API 之金鑰的 _MD5 雜湊_。
 
@@ -144,15 +144,15 @@ SecureStorage.RemoveAll();
 
 **SecureStorage** 使用 [Preferences](preferences.md) API 並遵循 [Preferences](preferences.md#persistence) 文件中概述的相同資料持續性原則。 若裝置從 API 層級 22 或較低的層級升級到 API 層級 23 與更高版本，將會繼續使用此類型的加密，除非將應用程式解除安裝或呼叫 **RemoveAll**。
 
-# [<a name="ios"></a>iOS](#tab/ios)
+# <a name="iostabios"></a>[iOS](#tab/ios)
 
 [KeyChain](xref:Security.SecKeyChain) 是用來安全地在 iOS 裝置上存放值。  `SecRecord` 是用來存放 `Service` 值設定為 **[YOUR-APP-BUNDLE-ID].xamarinessentials** 的值。
 
 在某些案例中，KeyChain 資料會與 iCloud 同步，而且解除安裝應用程式可能不會將安全值從 iCloud 與使用者的其他裝置移除。
 
-# [<a name="uwp"></a>UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) 是用來安全地在 UWP 裝置上加密值。
+[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) 可用來安全地在 UWP 裝置上為值加密。
 
 加密值會存放在 `ApplicationData.Current.LocalSettings` 中名為 **[YOUR-APP-ID].xamarinessentials** 的容器內。
 

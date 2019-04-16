@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 6af392988b8ffa5f01ef07f81be53ea8f82e8fb5
-ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
+ms.openlocfilehash: 6b1df62aec12c1c34d49bd6dfa16368a6b0092f9
+ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58477326"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59574724"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
@@ -24,7 +24,7 @@ _Xamarin.Forms 包含簡易傳訊服務，可傳送與接收訊息。_
 
 ## <a name="overview"></a>總覽
 
-除了簡易訊息合約，Xamarin.Forms `MessagingCenter` 也可讓檢視模型和其他元件在不知道彼此的情況下互相通訊。
+除了簡易訊息合約，Xamarin.Forms `MessagingCenter` 也可讓檢視模型和其他元件在完全不知道彼此的情況下通訊。
 
 <a name="How_the_MessagingCenter_Works" />
 
