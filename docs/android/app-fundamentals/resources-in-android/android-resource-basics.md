@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/01/2018
-ms.openlocfilehash: 2673021fae2f0a0b45761bf4ed619c92fb826b13
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b0f747c37362997563a35d9b94f8e677d4104ee1
+ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110130"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59587760"
 ---
 # <a name="android-resource-basics"></a>Android 資源基本概念
 
@@ -96,8 +96,8 @@ public partial class Resource
 
 當參考資源，以程式設計方式 （在程式碼），它們可透過存取的資源類別階層架構，它會使用下列語法：
 
-```xml
-@[<PackageName>.]Resource.<ResourceType>.<ResourceName>
+```csharp
+[<PackageName>.]Resource.<ResourceType>.<ResourceName>
 ```
 
 -  **PackageName** &ndash;的封裝提供的資源，而且只有在需要時從其他封裝資源的使用。
@@ -112,7 +112,7 @@ public partial class Resource
 XML 檔案中的資源依照存取特殊的語法：
 
 ```xml
-@[<PackageName>:]<ResourceType>/<ResourceName>.
+@[<PackageName>:]<ResourceType>/<ResourceName>
 ```
 
 -  **PackageName** &ndash;的封裝提供的資源，而且只有在需要時從其他封裝資源的使用。
@@ -136,8 +136,7 @@ XML 檔案中的資源依照存取特殊的語法：
 </LinearLayout>
 ```
 
-此範例有[ `ImageView` ](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/imageview)需要名為的可繪製資源**旗標**。 `ImageView`有其`src`屬性設為**@drawable/flag**。 當活動開始時，Android 會尋找目錄內**資源/Drawable**名為的檔案**flag.png** (副檔名可以是另一種影像格式，例如**flag.jpg**)和載入該檔案，並顯示在`ImageView`。
+此範例有[ `ImageView` ](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/imageview)需要名為的可繪製資源**旗標**。 `ImageView`有其`src`屬性設為`@drawable/flag`。 當活動開始時，Android 會尋找目錄內**資源/Drawable**名為的檔案**flag.png** (副檔名可以是另一種影像格式，例如**flag.jpg**)和載入該檔案，並顯示在`ImageView`。
 執行此應用程式時，它會看起來如下圖所示：
 
 ![當地語系化的 ImageView](android-resource-basics-images/03-localized-screenshot.png)
-
