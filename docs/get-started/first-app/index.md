@@ -9,16 +9,16 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2019
-ms.openlocfilehash: 0031cb7fb46cf5ad35872963fd3c3def0a2ae9a6
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.openlocfilehash: 5dc37212facbc5b58b807d3fbcba8650a5b065f8
+ms.sourcegitcommit: 34819671c7910d29f018bdb394ddd4a4b0cd3a31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58855298"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59675812"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>建置您的第一個 Xamarin.Forms 應用程式
 
-_觀看這段影片中，並使用 Xamarin.Forms 建立第一個行動應用程式跟著做。_
+觀看這段影片，並遵循指示建立第一個使用 Xamarin.Forms 的行動應用程式。
 
 ::: zone pivot="windows"
 
@@ -26,25 +26,25 @@ _觀看這段影片中，並使用 Xamarin.Forms 建立第一個行動應用程�
 
 ## <a name="step-by-step-instructions-for-windows"></a>適用於 Windows 的逐步指示
 
-[![D下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
 
 請遵循下列步驟及上面的影片進行：
 
 1. 選擇**檔案 > 新增 > 專案...** 或按**建立新專案...** 按鈕：
 
-    [![Create 新專案](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
+    [![建立新的專案](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
 
 2. 搜尋 「 Xamarin 」，或選擇**行動**從**專案類型**功能表。 選取 **行動應用程式 (Xamarin.Forms)** 專案類型：
 
-    [![FXamarin 專案 ilter](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
+    [![Xamarin 專案的篩選器](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
 
 3. 選擇 專案名稱&ndash;此範例會使用"AwesomeApp 」:
 
-    [![C選擇專案名稱](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
+    [![選擇 專案名稱](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
 
-4. 按一下 **黑色**專案類型，並確保**Android**並**iOS**選取：
+4. 按一下 **空白**專案類型，並確保**Android**並**iOS**選取：
 
-    [![Android 和 iOS，使用.NET Standard](images/win-2019/04-sml.png)](images/win-2019/04.png#lightbox)
+    [![[Android] 和 [iOS] 搭配 [.NET Standard]](images/win-2019/04-sml.png)](images/win-2019/04.png#lightbox)
 
 5. 等候 NuGet 套件還原完成 (狀態列中將會顯示 [還原完成] 訊息)。
 
@@ -81,17 +81,17 @@ _觀看這段影片中，並使用 Xamarin.Forms 建立第一個行動應用程�
 
 ## <a name="step-by-step-instructions-for-windows"></a>適用於 Windows 的逐步指示
 
-[![D下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
 
 請遵循下列步驟及上面的影片進行：
 
 1. 選擇 [檔案] > [新增] > [專案...] 或按下 [建立新專案...] 按鈕，然後選取 [Visual C#] > [跨平台] > [行動應用程式 (Xamarin.Forms)]：
 
-    [![M行動應用程式 (Xamarin.Forms)](images/win/01-sml.png)](images/win/01.png#lightbox)
+    [![行動應用程式 (Xamarin.Forms)](images/win/01-sml.png)](images/win/01.png#lightbox)
 
 2. 確定已選取 [Android] 和 [iOS]，並搭配 [.NET Standard] 程式碼共用：
 
-    [![Android 和 iOS，使用.NET Standard](images/win/02-sml.png)](images/win/02.png#lightbox)
+    [![[Android] 和 [iOS] 搭配 [.NET Standard]](images/win/02-sml.png)](images/win/02.png#lightbox)
 
 3. 等候 NuGet 套件還原完成 (狀態列中將會顯示 [還原完成] 訊息)。
 
@@ -128,17 +128,17 @@ _觀看這段影片中，並使用 Xamarin.Forms 建立第一個行動應用程�
 
 ## <a name="step-by-step-instructions-for-mac"></a>適用於 Mac 的逐步指示
 
-[![D下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
 
 請遵循下列步驟及上面的影片進行：
 
 1. 選擇 [檔案] > [新增方案...] 或按下 [新增專案...] 按鈕，然後選取 [多平台] > [應用程式] > [空白的 Forms App]：
 
-    [![Blank 的 Forms App](images/01-sml.png)](images/01.png#lightbox)
+    [![空白的 Forms App](images/01-sml.png)](images/01.png#lightbox)
 
 2. 確定已選取 [Android] 和 [iOS]，並搭配 [.NET Standard] 程式碼共用：
 
-    [![Android 和 iOS，使用.NET Standard](images/02-sml.png)](images/02.png#lightbox)
+    [![[Android] 和 [iOS] 搭配 [.NET Standard]](images/02-sml.png)](images/02.png#lightbox)
 
 3. 以滑鼠右鍵按一下方案來還原 NuGet 套件：
 
@@ -169,7 +169,7 @@ _觀看這段影片中，並使用 Xamarin.Forms 建立第一個行動應用程�
 
 8. 按一下滑鼠右鍵將 iOS 設定為 [啟始專案]：
 
-    [![Set ios 啟始專案](images/08-sml.png)](images/08.png#lightbox)
+    [![將啟始專案設定為 iOS](images/08-sml.png)](images/08.png#lightbox)
 
 9. 偵錯 iOS 上的應用程式：
 
