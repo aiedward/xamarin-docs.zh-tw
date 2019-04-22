@@ -324,7 +324,7 @@ Mtouch 無法辨識的錯誤訊息中所述的命令列引數。
 
 ### <a name="mt0054-unable-to-canonicalize-the-path--"></a>MT0054:無法規範化路徑 ' *': *
 
-這是內部錯誤。 如果您看到此錯誤，請將 bug 歸檔[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這是內部錯誤。 如果您看到此錯誤，請將 bug 歸檔[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT0055" />
 
@@ -374,7 +374,7 @@ Mtouch 無法辨識的錯誤訊息中所述的命令列引數。
 
 每個 Info.plist 必須有可執行檔 （使用 CFBundleExecutable 項目），不過應該會自動產生的項目，在建置期間。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
 
 <a name="MT0064" />
 
@@ -394,13 +394,13 @@ Xamarin.iOS 會在部署目標是至少 8.0 （因為舊版 iOS 不支援內嵌�
 
 ### <a name="mt0066-invalid-build-registrar-assembly-"></a>MT0066:無效的組建註冊機構的組件: *
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
 
 <a name="MT0067" />
 
 ### <a name="mt0067-invalid-registrar-"></a>MT0067:無效的註冊機構: *
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
 
 <a name="MT0068" />
 
@@ -420,15 +420,15 @@ Xamarin.iOS 會在部署目標是至少 8.0 （因為舊版 iOS 不支援內嵌�
 
 <a name="MT0071" />
 
-### <a name="mt0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinios-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT0071:未知的平台: *。 這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 http://bugzilla.xamarin.com與測試案例。
+### <a name="mt0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinios-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT0071:未知的平台: *。 這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 http://bugzilla.xamarin.com 與測試案例。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
 
 <a name="MT0072" />
 
 ### <a name="mt0072-extensions-are-not-supported-for-the-platform-"></a>MT0072:平台不支援的副檔名 ' *'。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
 
 <a name="MT0073" />
 
@@ -456,13 +456,13 @@ Xamarin.iOS 不支援將最小的部署目標設定為版本高於此特定版�
 
 ### <a name="mt0075-no-architecture-specified-using-the---abi-argument-an-architecture-is-required-for--projects"></a>MT0075:（使用-abi 引數） 指定任何架構。 架構是為了 * 專案。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
 
 <a name="MT0077" />
 
 ### <a name="mt0076-watchos-projects-must-be-extensions"></a>MT0076:WatchOS 專案必須是延伸模組。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
 
 <a name="MT0078" />
 
@@ -512,7 +512,7 @@ Xamarin.iOS 不支援將最小的部署目標設定為版本高於此特定版�
 
 ### <a name="mt0086-a-target-framework---target-framework-must-be-specified-when-building-for-tvos-or-watchos"></a>MT0086:目標 framework (-目標架構) 建置 TVOS 或 WatchOS 時必須指定。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
 
 <a name="MT0087" />
 
@@ -557,19 +557,19 @@ Xamarin.iOS 需要的標頭檔，從指定的錯誤訊息，來建置您的應�
 
 <a name="MT0099" />
 
-### <a name="mt0099-internal-error--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0099:內部錯誤 *。 請提出問題報告與測試案例 (http://bugzilla.xamarin.com)。
+### <a name="mt0099-internal-error--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0099:內部錯誤 *。 請提出問題報告與測試案例 ( http://bugzilla.xamarin.com) 。
 
 在 Xamarin.iOS 中的內部一致性檢查失敗時，會報告此錯誤訊息。
 
-這表示在 Xamarin.iOS; 中的 bug請提出錯誤報告在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這表示在 Xamarin.iOS; 中的 bug請提出錯誤報告在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
 
 <a name="MT0100" />
 
-### <a name="mt0100-invalid-assembly-build-target--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0100:無效的組件建置目標: ' *'。 請提出問題報告與測試案例 (http://bugzilla.xamarin.com)。
+### <a name="mt0100-invalid-assembly-build-target--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0100:無效的組件建置目標: ' *'。 請提出問題報告與測試案例 ( http://bugzilla.xamarin.com) 。
 
 在 Xamarin.iOS 中的內部一致性檢查失敗時，會報告此錯誤訊息。
 
-這一律是 Xamarin.iOS; 中的 bug請提出錯誤報告在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這一律是 Xamarin.iOS; 中的 bug請提出錯誤報告在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
 
 <a name="MT0101" />
 
@@ -901,7 +901,7 @@ $ launchctl list|grep UIKitApplication|awk '{print $3}'|xargs launchctl remove
 sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/*/*.mdb
 ```
 
-不過，因為在最新的 Xamarin.iOS 版本中已解決此問題，請將新 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)完整版本資訊與組建記錄檔輸出。
+不過，因為在最新的 Xamarin.iOS 版本中已解決此問題，請將新 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)完整版本資訊與組建記錄檔輸出。
 
 <a name="MT1010" />
 
@@ -919,7 +919,7 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 ### <a name="mt1013-dependency-tracking-error-no-files-to-compare-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT1013:相依性追蹤錯誤： 沒有要比較的檔案。 請提出錯誤報告在 http://bugzilla.xamarin.com與測試案例。
 
-這表示在 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試 caes。
+這表示在 Xamarin.iOS 中的 bug。 請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試 caes。
 
 <a name="MT1014" />
 
@@ -2100,13 +2100,13 @@ Objectice C 類別的名稱不能包含空白字元，這表示`Register`相對�
 
 ### <a name="mt4166-cannot-register-the-method--because-the-signature-contains-a-type--that-isnt-a-reference-type"></a>MT4166:無法註冊方法 '\*' 因為簽章包含的類型 (\*) 不是參考型別。
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT4167" />
 
 ### <a name="mt4167-cannot-register-the-method--because-the-signature-contains-a-generic-type--with-a-generic-argument-type-that-isnt-an-nsobject-subclass-"></a>MT4167:無法註冊方法 '\*' 因為簽章包含泛型型別 (\*) 不是 NSObject 子類別 （*） 的泛型引數類型。
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT4168" />
 
@@ -2141,7 +2141,7 @@ Xamarin.iOS 無法產生 P/Invoke 包裝函式的函式所述。
 
 在註冊機構不支援上述類型之間轉換。
 
-如果有問題的 API 由 Xamarin.iOS; 提供，這會是 Xamarin.iOS 中的 bug請將 bug 歸檔在[ http://bugzilla.xamarin.com ] [ 1]。
+如果有問題的 API 由 Xamarin.iOS; 提供，這會是 Xamarin.iOS 中的 bug請將 bug 歸檔在[http://bugzilla.xamarin.com][1]。
 
 如果您遇到這個開發原生程式庫的繫結專案時，我們開啟新增支援新類型的組合。 如果發生這種情況，請提出要求的增強功能 ([http://bugzilla.xamarin.com][2]) 與測試案例，我們將會評估它。
 
@@ -2179,7 +2179,7 @@ Xamarin.iOS 無法產生 P/Invoke 包裝函式的函式所述。
 
 ### <a name="mt5106-could-not-compile-the-files--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5106:可能不會編譯檔案 ' *'。 請提出錯誤報告在 http://bugzilla.xamarin.com
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 ### <a name="mt52xx-linking"></a>MT52xx:連結
 
@@ -2935,7 +2935,7 @@ Xamarin.iOS 專案會經常參考原生的符號，以動態方式表示原生�
 
 Xamarin.iOS 找不到所需的方法在執行階段 （若要將委派轉換至區塊） 項目。
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT8012" />
 
@@ -2943,7 +2943,7 @@ Xamarin.iOS 找不到所需的方法在執行階段 （若要將委派轉換至�
 
 討論中方法的 DelegateProxy 屬性無效。
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT8013" />
 
@@ -2951,7 +2951,7 @@ Xamarin.iOS 找不到所需的方法在執行階段 （若要將委派轉換至�
 
 討論中方法的 DelegateProxy 屬性無效。
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT8014" />
 
@@ -2959,7 +2959,7 @@ Xamarin.iOS 找不到所需的方法在執行階段 （若要將委派轉換至�
 
 討論中方法的 DelegateProxy 屬性無效。
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT8015" />
 
@@ -2967,7 +2967,7 @@ Xamarin.iOS 找不到所需的方法在執行階段 （若要將委派轉換至�
 
 討論中方法的 DelegateProxy 屬性無效。
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT8016" />
 
@@ -2975,7 +2975,7 @@ Xamarin.iOS 找不到所需的方法在執行階段 （若要將委派轉換至�
 
 討論中方法的 DelegateProxy 屬性無效。
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <!-- 8017 is used by mmp -->
 

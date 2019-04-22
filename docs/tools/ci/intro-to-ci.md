@@ -7,15 +7,15 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/19/2017
 ms.openlocfilehash: 44e45d38ecd98be6f75c619125f9c14ce707b251
-ms.sourcegitcommit: 9e9340999d569a3db01b4b59a0fcf24b8caa869c
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59509884"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>使用 Xamarin 的連續整合簡介
 
-_持續整合是軟體工程實務，自動化的組建會編譯並選擇性地新增或變更專案的版本控制儲存機制中的開發人員程式碼時，測試應用程式。 本文將討論持續整合的一般概念，以及一些可用的選項進行持續整合與 Xamarin 專案。_
+_持續整合是軟體工程實務，自動化的組建會編譯並選擇性地新增或變更專案的版本控制儲存機制中的開發人員程式碼時，測試應用程式。本文將討論持續整合的一般概念，以及一些可用的選項進行持續整合與 Xamarin 專案。_
 
 通常會以平行方式運作的開發人員的軟體專案上。 在某些時候，就必須將所有這些整合成一個工作的平行資料流將構成最終產品程式碼基底。 在軟體開發的初期，這項整合已執行的專案，是既困難又有風險的程序的結尾。
 

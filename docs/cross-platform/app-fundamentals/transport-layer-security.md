@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
 ms.openlocfilehash: 26870ae0e84a84a7b78f7766a8e134ecfc7b223e
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854999"
 ---
 # <a name="transport-layer-security-tls-12"></a>傳輸層安全性 (TLS) 1.2
@@ -31,17 +31,17 @@ ms.locfileid: "58854999"
 > [!NOTE]
 > 需要 Android 5.0 或更新版本。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 這些設定可在**專案屬性 > Android 選項**，然後按一下**進階**按鈕：
 
-[![C設定 HttpClient 和 Visual Studio 中的 TLS](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
+[![在 Visual Studio 中設定 HttpClient 和 TLS](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 這些設定可在**專案選項 > 建置 > Android 建置** 索引標籤：
 
-[![C設定 HttpClient 和 Visual Studio for Mac 中的 TLS](transport-layer-security-images/android-mac-sml.png)](transport-layer-security-images/android-mac.png#lightbox)
+[![設定 HttpClient 和 TLS 在 Visual Studio for Mac](transport-layer-security-images/android-mac-sml.png)](transport-layer-security-images/android-mac.png#lightbox)
 
 -----
 
@@ -49,17 +49,17 @@ ms.locfileid: "58854999"
 
 更新**HttpClient 實作**啟用 TSL 1.2 安全性選項。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 此設定可在**專案屬性 > iOS 組建**:
 
-[![C設定 HttpClient 和 Visual Studio 中的 TLS](transport-layer-security-images/ios-win-sml.png)](transport-layer-security-images/ios-win.png#lightbox)
+[![在 Visual Studio 中設定 HttpClient 和 TLS](transport-layer-security-images/ios-win-sml.png)](transport-layer-security-images/ios-win.png#lightbox)
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 此設定可在**專案選項 > 建置 > iOS 組建** 索引標籤：
 
-[![C設定 Visual Studio for Mac 中的 HttpClient](transport-layer-security-images/ios-mac-sml.png)](transport-layer-security-images/ios-mac.png#lightbox)
+[![Visual Studio 中設定 HttpClient for Mac](transport-layer-security-images/ios-mac-sml.png)](transport-layer-security-images/ios-mac.png#lightbox)
 
 -----
 
@@ -67,7 +67,7 @@ ms.locfileid: "58854999"
 
 在 Visual Studio for Mac，若要啟用 TLS 1.2 的 Xamarin.Mac 應用程式中，更新**HttpClient 實作**選項**專案選項 > 建置 > Mac 組建**:
 
-[![C設定 Visual Studio for Mac 中的 HttpClient](transport-layer-security-images/macos-mac-sml.png)](transport-layer-security-images/macos-mac.png#lightbox)
+[![Visual Studio 中設定 HttpClient for Mac](transport-layer-security-images/macos-mac-sml.png)](transport-layer-security-images/macos-mac.png#lightbox)
 
 > [!WARNING]
 > 即將推出的 Xamarin.Mac 4.8 版只會支援 macOS 10.9 或更高版本。
@@ -119,7 +119,7 @@ Android 專案選項也可讓您選擇哪一個是支援 SSL/TLS 實作：
 
 ## <a name="related-links"></a>相關連結
 
-- [應用程式的傳輸安全性](~/ios/app-fundamentals/ats.md)
+- [應用程式傳輸安全性](~/ios/app-fundamentals/ats.md)
 - [Xamarin.Android 環境](~/android/deploy-test/environment.md)
 - [Xamarin Cycle 9 (年 2 月 2017)](https://releases.xamarin.com/stable-release-cycle-9/)
 - [TLS (Wikipedia)](https://en.wikipedia.org/wiki/Transport_Layer_Security)

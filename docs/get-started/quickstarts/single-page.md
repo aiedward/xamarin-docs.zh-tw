@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 7b13ab5a4cc0d8e66e260329b5a53397778cb179
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855116"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>建立單一頁面 Xamarin.Forms 應用程式
 
-[![D下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
 
 在本快速入門中，您將了解如何：
 
@@ -160,7 +160,7 @@ ms.locfileid: "58855116"
 
     ![](single-page-images/vs/android-start.png "Visual Studio Android 工具列")
 
-    [![](single-page-images/vs/notes-android.png "Android Emulator 中的 Notes")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
+    [![](single-page-images/vs/notes-android.png "在 Android 模擬器中的資訊")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     輸入附註，然後按 [儲存] 按鈕。
 
@@ -310,7 +310,7 @@ ms.locfileid: "58855116"
 
     ![](single-page-images/vs/android-start.png "Visual Studio Android 工具列")
 
-    [![](single-page-images/vs/notes-android.png "Android Emulator 中的 Notes")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
+    [![](single-page-images/vs/notes-android.png "在 Android 模擬器中的資訊")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     輸入附註，然後按 [儲存] 按鈕。
 
@@ -480,7 +480,7 @@ ms.locfileid: "58855116"
 
 5. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選擇 Android Emulator 內的應用程式：
 
-      [![](single-page-images/vsmac/notes-android.png "Android Emulator 中的 Notes")](single-page-images/vsmac/notes-android-large.png#lightbox "Notes in the Android Simulator")
+      [![](single-page-images/vsmac/notes-android.png "在 Android 模擬器中的資訊")](single-page-images/vsmac/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     輸入附註，然後按 [儲存] 按鈕。
 
@@ -503,5 +503,5 @@ ms.locfileid: "58855116"
 
 ## <a name="related-links"></a>相關連結
 
-- [附註 （範例）](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
+- [Notes (範例)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
 - [Xamarin.Forms 快速入門深入探討](deepdive.md)

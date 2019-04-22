@@ -1,5 +1,5 @@
 ---
-title: IOS 9 簡介
+title: iOS 9 簡介
 description: 這篇文章會介紹的所有新的及修改 Api 和功能可在 iOS 9 中適用於 Xamarin.iOS 開發人員。
 ms.prod: xamarin
 ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: d0ad25a1ecff7262b9b4b41a5f9d73a5931bbd1c
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870192"
 ---
-# <a name="introduction-to-ios-9"></a>IOS 9 簡介
+# <a name="introduction-to-ios-9"></a>iOS 9 簡介
 
 _這篇文章會介紹的所有新的及修改 Api 和功能可在 iOS 9 中適用於 Xamarin.iOS 開發人員。_
 
@@ -34,7 +34,7 @@ IOS 9 和 iPhone 6s 和 iPhone 6s 新手此外，3D 觸控，請將您的 iOS �
 
 若要深入了解，請參閱我們[3D 觸控簡介](~/ios/platform/3d-touch.md)指南。
 
-## <a name="app-transport-security"></a>應用程式的傳輸安全性
+## <a name="app-transport-security"></a>應用程式傳輸安全性
 
 新增 iOS 9，App Transport Security (ATS) 會強制執行 （例如應用程式的後端伺服器） 的網際網路資源與您的應用程式之間的安全連線。 ATS 可確保所有的網際網路通訊符合保護連線安全的最佳作法，藉此防止意外洩露機密的資訊，直接透過您的應用程式或它正在使用的程式庫。
 
@@ -212,7 +212,7 @@ Apple 已取代的下列 Api 和 iOS 9 中的函式：
 
 - [iOS 9 範例](https://developer.xamarin.com/samples/ios/iOS9/)
 - [3D 觸控簡介](~/ios/platform/3d-touch.md)
-- [應用程式的傳輸安全性](~/ios/app-fundamentals/ats.md)
+- [應用程式傳輸安全性](~/ios/app-fundamentals/ats.md)
 - [適用於 iPad 的多工](~/ios/platform/multitasking.md)
 - [連絡人和連絡人 UI](~/ios/platform/contacts.md)
 - [新的搜尋 Api](~/ios/platform/search/index.md)

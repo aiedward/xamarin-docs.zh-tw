@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: 5156259f8178da69595464f75a10cd8f41965519
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870322"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>其他 iOS 9 架構變更
@@ -104,7 +104,7 @@ NSProcessInfo.ProcessInfo.EndActivity(activity);
 
 ### <a name="reacting-to-low-power-mode"></a>低度電源模式回應
 
-使用`LowPowerModeEnabled`的屬性[NSProcessInfo](xref:Foundation.NSProcessInfo)類別，以判斷是否已在 iOS 裝置上執行的應用程式上啟用低度電源模式。 例如: 
+使用`LowPowerModeEnabled`的屬性[NSProcessInfo](xref:Foundation.NSProcessInfo)類別，以判斷是否已在 iOS 裝置上執行的應用程式上啟用低度電源模式。 例如：
 
 ```csharp
 // Is the device in low power mode?
@@ -267,6 +267,6 @@ Apple 在 iOS 9 中包含 UIKit Dynamics 的下列變更：
 ## <a name="related-links"></a>相關連結
 
 - [iOS 9 範例](https://developer.xamarin.com/samples/ios/iOS9/)
-- [IOS 9 簡介](~/ios/platform/introduction-to-ios9/index.md)
+- [iOS 9 簡介](~/ios/platform/introduction-to-ios9/index.md)
 - [iOS 9 的開發人員](https://developer.apple.com/ios/pre-release/)
 - [新功能 iOS 9.0 以上版本](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

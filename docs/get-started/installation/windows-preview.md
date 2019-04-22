@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/20/2018
 ms.openlocfilehash: 9ce56891eeab73f661a9c22cc047c4d0bcb10337
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854791"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>安裝 Xamarin 預覽版 (Windows)
@@ -38,7 +38,7 @@ Visual Studio 的預覽版本可能包含對應的 Xamarin 預覽版本功能，
 
 在安裝過程中，**安裝暱稱**可以套用至並存安裝 (以便可在 [開始] 功能表中辨別)，如下所示：
 
-[![e安裝前的編輯暱稱](windows-images/vs2017-nickname-sml.png "安裝前的編輯暱稱")](windows-images/vs2017-nickname.png#lightbox)
+[![在安裝前編輯暱稱](windows-images/vs2017-nickname-sml.png "在安裝前編輯暱稱")](windows-images/vs2017-nickname.png#lightbox)
 
 ### <a name="uninstalling-visual-studio-2019-preview"></a>解除安裝 Visual Studio 2019 Preview
 

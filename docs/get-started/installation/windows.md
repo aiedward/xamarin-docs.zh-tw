@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
 ms.openlocfilehash: 5d9f91300194eb45c5f5f3c52403660cf4898a19
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58853972"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>在 Visual Studio 2019 中安裝 Xamarin
@@ -52,6 +52,6 @@ ms.locfileid: "58853972"
 如需詳細資訊，請參閱[在 Windows 上安裝 Xamarin.Android](~/android/get-started/installation/windows.md) 指南。
 
 1. [Xamarin.Android 組態](~/android/get-started/installation/windows.md#configuration)
-2. [使用 Xamarin Android SDK 管理員](~/android/get-started/installation/android-sdk.md?ide=vs)
-3. [Android SDK Emulator](~/android/get-started/installation/android-emulator/index.md)
-4. [設定裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md)
+2. [使用 Xamarin Android SDK 管理員](~/android/get-started/installation/android-sdk.md?ide=vs) \(英文\)
+3. [Android SDK 模擬器](~/android/get-started/installation/android-emulator/index.md) \(英文\)
+4. [設定您的裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md) \(英文\)

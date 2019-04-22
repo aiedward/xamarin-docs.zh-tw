@@ -9,15 +9,15 @@ ms.author: crdun
 ms.custom: video
 ms.date: 04/02/2019
 ms.openlocfilehash: 642f66e068f021e76402c9dcc6f167bb74283aaa
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854843"
 ---
 # <a name="installing-xamarin"></a>安裝 Xamarin
 
-_如何設定 Visual Studio 和 Xamarin 開始建置使用.NET 的行動應用程式。_
+如何設定 Visual Studio 和 Xamarin 以使用 .NET 開始建置行動應用程式。
 
 ::: zone pivot="windows"
 

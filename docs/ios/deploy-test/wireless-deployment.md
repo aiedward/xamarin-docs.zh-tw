@@ -9,10 +9,10 @@ ms.author: laobri
 ms.custom: video
 ms.date: 01/22/2019
 ms.openlocfilehash: 82bdd2c160572b0d813fb87d81b09c00996cef18
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854830"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>適用於 Xamarin.iOS 和 tvOS 應用程式的無線部署
@@ -27,14 +27,14 @@ Visual Studio for Mac 和 Visual Studio 皆提供無線部署功能。
 
 您必須擁有下列項目才能使用無線部署：
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 - macOS 10.12.4
 - 最新版本的 Visual Studio for Mac
 - Xcode 9.0 或更新版本
 - 具有 iOS 11.0 或 tvOS 11.0 和更新版本的裝置
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 - 最新版本的 Visual Studio
 - 具有 iOS 11.0 或 tvOS 11.0 和更新版本的裝置

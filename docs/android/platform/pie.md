@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
 ms.openlocfilehash: e08324d5a905639e7ecd59bc4c7a5c0f02d0adfe
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854713"
 ---
 # <a name="android-pie-features"></a>Android 的圓形圖功能
@@ -43,7 +43,7 @@ Xamarin.Android 9.0 提供支援 Android 的圓形圖。 如需 Android 圓形�
 
 若要開始開發使用 Xamarin.Android 的 Android 圓形圖應用程式，您必須下載並安裝最新工具和 SDK 封裝，才能建立第一個圓形圖 Android 專案：
 
-1. 建議您使用 visual Studio 2019。 如果您使用 Visual Studio 2017，更新[Visual Studio 2017 版本 15.8](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)或更新版本。 如果您使用 Visual Studio for Mac，更新[Visual Studio 2017 for Mac 版本 7.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)或更新版本。
+1. 建議使用 Visual Studio 2019。 如果您使用 Visual Studio 2017，更新[Visual Studio 2017 版本 15.8](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)或更新版本。 如果您使用 Visual Studio for Mac，更新[Visual Studio 2017 for Mac 版本 7.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)或更新版本。
 
 2. 安裝**Android 圓形圖 (API 28)** 套件和工具透過 SDK 管理員。
 
@@ -67,11 +67,11 @@ Xamarin.Android 9.0 建立專案時，您必須先使用 Android SDK 管理員�
 
 2. 在右下角，按一下齒輪圖示並選取**存放庫 > Google （不支援）**:
 
-    [![Setting 至 Google 的存放庫](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
+    [![將存放庫設定為 Google](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
 
 3. 安裝**Android 圓形圖**SDK 封裝，它會列為**Android SDK 平台 28**中**平台** 索引標籤 （如需使用 SDK 管理員的詳細資訊，請參閱[Android SDK 安裝程式](~/android/get-started/installation/android-sdk.md)):
 
-    [![Installing Android 圓形圖套件](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
+    [![封裝安裝 Android 的圓形圖](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
 
 4. 如果您正使用模擬器，建立虛擬裝置支援**API 層級 28**。 如需建立虛擬裝置的詳細資訊，請參閱[管理的虛擬裝置的 Android 裝置管理員](~/android/get-started/installation/android-emulator/device-manager.md)。
 
@@ -111,7 +111,7 @@ Android 的圓形圖導入了各種新功能。 部分新功能被要利用新�
 有許多較新的 Android 裝置與邊緣到邊緣畫面*顯示空心*（或 「 波陷 」） 頂端的網路攝影機和喇叭的顯示。
 下列螢幕擷取畫面提供空心模擬器的範例：
 
-[![A模擬剪裁 ndroid 模擬器](pie-images/02-example-cutout-sml.png)](pie-images/02-example-cutout.png#lightbox)
+[![模擬空心的 android 模擬器](pie-images/02-example-cutout-sml.png)](pie-images/02-example-cutout.png#lightbox)
 
 若要管理您的應用程式視窗顯示裁剪的裝置上顯示其內容的方式，Android 圓形圖已新增新[LayoutInDisplayCutoutMode](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#layoutInDisplayCutoutMode)視窗版面配置屬性。 此屬性可以設為下列值之一：
 
@@ -130,7 +130,7 @@ Window.Attributes.LayoutInDisplayCutoutMode =
 
 下列範例會提供這些裁剪模式的範例。 在左側的第一個螢幕擷取畫面是非全螢幕模式中的應用程式。 在 center 螢幕擷取畫面中，應用程式會進入全螢幕與`LayoutInDisplayCutoutMode`設定為`LayoutInDisplayCutoutModeShortEdges`。 請注意，應用程式的白色背景延伸至顯示裁剪區域：
 
-[![E範例會顯示在模擬器中裁剪模式](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
+[![範例顯示在模擬器中的空心模式](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
 
 在最終的螢幕擷取畫面 (上方右側)，`LayoutInDisplayCutoutMode`設為`LayoutInDisplayCutoutModeShortNever`再進入全螢幕。
 請注意，不允許應用程式的白色背景延伸至顯示裁剪區域。
@@ -155,7 +155,7 @@ Android 的圓形圖導入了下列增強功能來改善訊息經驗：
 
 下列範例說明如何使用新的 Api 來產生包含映像的通知。 在下列螢幕擷取畫面中，文字通知張貼，且後面跟著內嵌影像的通知。 當通知會展開 （如同在右邊）、 在顯示的第一個通知文字和影像內嵌在會放大第二個通知：
 
-[![E使用映像的範例通知](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
+[![使用映像的範例通知](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
 
 下列範例說明如何在 Android 圓形圖通知中，包含影像，而且它會示範新的使用方式`Person`類別：
 
@@ -197,7 +197,7 @@ Android 的圓形圖導入了下列增強功能來改善訊息經驗：
         .SetChannelId(MY_CHANNEL);
     ```
 
-5. 將發行通知。 例如: 
+5. 將發行通知。 例如：
 
     ```csharp
     const int notificationId = 1000;
@@ -211,7 +211,7 @@ Android 的圓形圖導入了下列增強功能來改善訊息經驗：
 
 Android 的圓形圖提供支援 IEEE 802.11mc (也稱為_WiFi Round 來回時間_或是_WiFi RTT_)，這可讓應用程式偵測到其中的距離或更多的 Wi-fi 存取點。 使用這項資訊，就可以針對您的應用程式，以善用*室內定位*，精確度為一到兩個計量。 IEEE 801.11mc 硬體支援的 Android 裝置，您的應用程式可以提供導覽功能，例如智慧型設備或透過市集開啟藉由開啟指示的位置為基礎的控制項：
 
-[![E使用 WiFi RTT 的室內巡覽的 xample](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
+[![使用 WiFi RTT 的室內巡覽的範例](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
 
 新[WifiRttManager](https://developer.android.com/reference/android/net/wifi/rtt/WifiRttManager)類別和數個協助程式類別提供方法來測量到 Wi-fi 裝置之間的距離。 如需 Android P 中導入室內定位 Api 的詳細資訊，請參閱[Android.Net.Wifi.Rtt](https://developer.android.com/reference/android/net/wifi/rtt/package-summary)。
 

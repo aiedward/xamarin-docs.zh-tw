@@ -7,10 +7,10 @@ ms.author: jamont
 ms.custom: video
 ms.date: 11/04/2018
 ms.openlocfilehash: d8562cd74b661b5f72f373151b9aa0acc36f8477
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58869750"
 ---
 # <a name="get-started-with-xamarinessentials"></a>開始使用 Xamarin.Essentials
@@ -37,11 +37,11 @@ Xamarin.Essentials 是以 NuGet 套件形式提供，可讓您使用 Visual Stud
 
 3. 將 **Xamarin.Essentials** NuGet 套件新增到每個專案：
 
-    # [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+    # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
     在 [方案總管] 窗格中，以滑鼠右鍵按一下方案名稱並選取 [管理 NuGet 套件]。 搜尋 **Xamarin.Essentials** 並將套件安裝到 [全部] 專案，包括 Android、iOS、UWP 與 .NET Standard 程式庫。
 
-    # [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+    # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
     在 [方案總管] 窗格中，以滑鼠右鍵按一下方案名稱並選取 [管理 NuGet 套件]。搜尋 **Xamarin.Essentials** 並將套件安裝到 [全部] 專案，包括 Android、iOS 與 .NET Standard 程式庫。
 
@@ -55,7 +55,7 @@ Xamarin.Essentials 是以 NuGet 套件形式提供，可讓您使用 Visual Stud
 
 5. Xamarin.Essentials 需要平台特定設定：
 
-    # [<a name="android"></a>Android](#tab/android)
+    # <a name="androidtabandroid"></a>[Android](#tab/android)
 
     Xamarin.Essentials 支援最低 Android 4.4 版，這對應到 API 層級 19，但目標 Android 版本必須是 9.0 才能進行編譯，這對應到 API 層級 28。 (在 Visual Studio 中，這兩個版本是在 [Android 資訊清單] 索引標籤中 Android 專案的 [專案屬性] 中設定的。在 Visual Studio for Mac 中，它們是在 [Android 應用程式] 索引標籤中 [專案選項] 對話方塊中設定的。)
 
@@ -82,11 +82,11 @@ Xamarin.Essentials 是以 NuGet 套件形式提供，可讓您使用 Visual Stud
     }
     ```
 
-    # [<a name="ios"></a>iOS](#tab/ios)
+    # <a name="iostabios"></a>[iOS](#tab/ios)
 
     不需要進行額外設定。
 
-    # [<a name="uwp"></a>UWP](#tab/uwp)
+    # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
     不需要進行額外設定。
 

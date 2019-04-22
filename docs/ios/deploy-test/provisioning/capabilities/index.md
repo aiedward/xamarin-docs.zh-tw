@@ -8,15 +8,15 @@ author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
 ms.openlocfilehash: 7049cc36f5f661152e027beb53180d793078beff
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855025"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>使用 Xamarin.iOS 中的功能
 
-_為應用程式新增功能通常需要額外的佈建設定。 本指南說明所有功能所需的設定。_
+_為應用程式新增功能通常需要額外的佈建設定。_ 本指南說明所有功能所需的設定。
 
 Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) 來延伸 iOS 應用程式的功能及擴大其用途範圍。 這些功能可讓開發人員在其應用程式中加入更深的平台功能整合，例如：能夠從應用程式、額外的裝置服務 (例如 Siri) 等起始金錢交易。
 這些功能可以與 Xamarin.iOS 專案搭配使用。 以下提供完整的服務清單說明：
@@ -72,7 +72,7 @@ Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) �
 
 ## <a name="using-the-ide"></a>使用 IDE
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 在 Visual Studio for Mac 中，功能會新增至 **Entitlements.plist**。 若要新增功能，請使用下列步驟：
 
@@ -92,7 +92,7 @@ Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) �
 
     ![將功能新增至 entitlements.plist 檔案](images/image18.png)
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 功能會新增至 **Entitlements.plist**。 若要在 Visual Studio 2019 中新增功能，請使用下列步驟：
 

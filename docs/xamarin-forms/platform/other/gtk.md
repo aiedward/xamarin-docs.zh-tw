@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
 ms.openlocfilehash: 7e9bfa841db9f0a76f762bab22050377830d85de
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854869"
 ---
 # <a name="gtk-platform-setup"></a>GTK # 平台安裝程式
@@ -29,7 +29,7 @@ Xamarin.Forms 現在有 GTK # 應用程式的預覽支援。 GTK # 是圖形化�
 
 GTK # 適用於 macOS 和 Linux 安裝的一部分[Mono](https://www.mono-project.com/download/stable/)。 GTK # 適用於.NET 可以與 Windows 上安裝[GTK # Installer](https://www.mono-project.com/download/stable/#download-win)。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 請遵循這些指示來新增將會在 Windows 桌面上執行的 GTK # 應用程式：
 
@@ -110,7 +110,7 @@ GTK # 適用於 macOS 和 Linux 安裝的一部分[Mono](https://www.mono-projec
 
     ![GTK # 遊戲的生命循環](gtk-images/win/gtk-gameoflife.png "GTK # 遊戲生命週期")
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 請遵循下列指示來新增將執行 Mac 桌面上 GTK # 應用程式：
 
@@ -209,7 +209,7 @@ GtkThemes.Init ();
 GtkThemes.LoadCustomTheme ("Themes/gtkrc");
 ```
 
-### <a name="native-forms"></a>原生格式
+### <a name="native-forms"></a>原生表單
 
 原生格式可讓 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生原生專案，包括 GTK # 專案所使用的頁面。 這可藉由建立的執行個體[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面，並將它轉換成原生 GTK # 型別使用`CreateContainer`擴充方法：
 

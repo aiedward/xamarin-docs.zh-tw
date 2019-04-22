@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
 ms.openlocfilehash: 2f67983addd03a065383a2940d6e6dfc7076f2be
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854309"
 ---
 # <a name="getting-started-with-f35"></a>開始使用 f #&#35;
@@ -50,8 +50,8 @@ F#教學課程也可以建立從**新的方案**對話方塊，在 Visual Studio
 
 十分繁多的線上資訊可讓您掌握F#語言，涵蓋所有的熟練度。 以下列出幾個我們的建議：
 
--  [F#Software Foundation](http://fsharp.org)
--  [Visual F# 開發入口網站](http://go.microsoft.com/fwlink/?LinkID=234174)
+-  [F# Software Foundation](http://fsharp.org) (F# 軟體基金會)
+-  [視覺化F#開發入口網站](http://go.microsoft.com/fwlink/?LinkID=234174)
 -  [視覺化F#程式碼庫](http://go.microsoft.com/fwlink/?LinkID=124614)
 -  [視覺化F#程式設計的數學/統計資料](http://go.microsoft.com/fwlink/?LinkId=235173)
 -  [視覺化F#圖表](http://go.microsoft.com/fwlink/?LinkId=235176)

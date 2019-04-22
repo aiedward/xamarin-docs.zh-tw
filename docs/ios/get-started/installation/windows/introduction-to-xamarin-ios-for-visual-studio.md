@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2018
 ms.openlocfilehash: e6f95713fdf3dbe8983c9f51554df7165637fc9a
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855129"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio 簡介
@@ -149,9 +149,9 @@ Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來�
 
 Visual Studio 的新 [裝置記錄檔] 工具視窗可允許顯示 Android 和 iOS 裝置的記錄檔。 透過執行下列任何一個命令，即可顯示此記錄檔：
 
-- **[檢視] > [其他視窗] > [裝置記錄檔]**
-- **[工具] > [iOS] > [裝置記錄檔]**
-- **iOS 工具列 > [裝置記錄檔]**
+- [檢視] -> [其他視窗] -> [裝置記錄檔]
+- [工具] > [iOS] > [裝置記錄檔]
+- iOS 工具列 > [裝置記錄檔]
 
 顯示工具視窗之後，使用者便可從裝置下拉式清單中選取實體裝置。 選取某個裝置時，記錄會自動新增到表格中。 在裝置之間切換會將裝置記錄停止後再啟動。
 
@@ -184,4 +184,4 @@ Visual Studio 的新 [裝置記錄檔] 工具視窗可允許顯示 Android 和 i
 - [Xamarin.iOS 安裝](~/ios/get-started/installation/windows/index.md)
 - [裝置佈建](~/ios/get-started/installation/device-provisioning/index.md)
 - [以程式碼建立 iOS UI](~/ios/app-fundamentals/ios-code-only.md)
-- [使用 XMA 將 Mac 連線到 Visual Studio 環境 (影片)](https://university.xamarin.com/lightninglectures/xamarin-mac-agent)
+- [使用 XMA 將 Mac 連線到您的 Visual Studio 環境 (影片)](https://university.xamarin.com/lightninglectures/xamarin-mac-agent) \(英文\)

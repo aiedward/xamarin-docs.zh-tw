@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/23/2018
 ms.openlocfilehash: 66785fcd4b38f29ca0358e1e8885e6b7da59f5a7
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854738"
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms 需求
@@ -52,19 +52,19 @@ _Xamarin.Forms 的平台和開發系統需求。_
 
 此外，Android 專案的目標/編譯版本**必須**設定為*使用最新安裝的平台*。 不過，最低版本可以設定為 API 19，讓您可以繼續支援使用 Android 4.4 及更新版本的裝置。 這些值是在 [專案選項] 中設定的：
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-**專案選項 > 應用程式 > 應用程式屬性**
+[專案選項] > [應用程式] > [應用程式屬性]
 
 ![Visual Studio 中的 android 建置選項](requirements-images/options-android-vs-sml.png)
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-**建置 > 一般**
+[建置] > [一般]
 
 ![選取最新的目標 framework](requirements-images/options-general-sml.png)
 
-**建置 > Android 應用程式**
+[建置] > [Android 應用程式]
 
 ![選取 最小值和目標應用程式的 Android 版本](requirements-images/options-android-sml.png)
 

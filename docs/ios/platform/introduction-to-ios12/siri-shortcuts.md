@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
 ms.openlocfilehash: e37fd88f0d5fcf02ece0ae2f5e3164a507067e29
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58869820"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>在 Xamarin.iOS 中 Siri 快速鍵
@@ -227,8 +227,7 @@ void HandleUserActivity()
 若要檢視產生的程式碼：
 
 - 開啟**AppDelegate.m**。
-- 將匯入新增至自訂的意圖標頭檔中：
-`#import "OrderSoupIntent.h"`
+- 將匯入新增至自訂的意圖標頭檔中： `#import "OrderSoupIntent.h"`
 - 在類別中的任何方法，將參考加入至`OrderSoupIntent`。
 - 以滑鼠右鍵按一下`OrderSoupIntent`，然後選擇 **移至定義**。
 - 在新開啟檔案中，以滑鼠右鍵按一下**OrderSoupIntent.h**，然後選取**顯示於 Finder**。

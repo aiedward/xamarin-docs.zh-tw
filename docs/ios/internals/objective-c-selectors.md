@@ -8,17 +8,17 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/12/2017
 ms.openlocfilehash: 15db59945f482728f760006095e294bc5628c8bd
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870168"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>在 Xamarin.iOS 中的 OBJECTIVE-C 選取器
 
 Objective C 語言為基礎*選取器*。 選取器是可以傳送至物件的訊息，或*類別*。 [Xamarin.iOS](~/ios/internals/api-design/index.md)對應執行個體選取器來執行個體方法和類別靜態方法的選取器。
 
-不同於一般的 C 函式 （和 c + + 成員函式類似），您無法直接叫用選取器，使用[P/Invoke](https://www.mono-project.com/docs/advanced/pinvoke/)相反地，傳送到 OBJECTIVE-C 類別選取器，或執行個體 [`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
+不同於一般的 C 函式 (和C++成員函式)，您無法直接叫用選取器，使用[P/Invoke](https://www.mono-project.com/docs/advanced/pinvoke/)相反地，傳送到 OBJECTIVE-C 類別選取器，或執行個體 [`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
 函式。
 
 如需有關在 OBJECTIVE-C 中的訊息的詳細資訊，請查看 Apple[使用物件](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)指南。

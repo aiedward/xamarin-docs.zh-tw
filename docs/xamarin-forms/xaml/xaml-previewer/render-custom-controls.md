@@ -8,15 +8,15 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
 ms.openlocfilehash: 977c29312e0be8b92f216c224414f9bd03f8562d
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58858968"
 ---
 # <a name="render-custom-controls-in-the-xaml-previewer"></a>呈現 XAML 預覽程式中的自訂控制項
 
-_自訂控制項有時不正常運作中 XAML 預覽程式。 這篇文章中使用的指南，以了解預覽您的自訂控制項的限制。_
+_自訂控制項有時不正常運作中 XAML 預覽程式。這篇文章中使用的指南，以了解預覽您的自訂控制項的限制。_
 
 ## <a name="basic-preview-mode"></a>基本的 [預覽] 模式
 

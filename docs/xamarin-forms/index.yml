@@ -115,4 +115,4 @@ sections:
           - title: 範例
             html: '<p><a href="https://developer.xamarin.com/samples/xamarin-forms/all/">Xamarin.Forms 範例</a></p>'
           - title: 書籍
-            html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms">"Creating Mobile Apps" 電子書</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns">"Enterprise Application Patterns"電子書</a></p><p><a href="~/xamarin-forms/user-interface/graphics/skiasharp/">"SkiaSharp Graphics in Xamarin.Forms" 電子書</a></p>
+            html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms">建立行動裝置應用程式的電子書</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns">企業應用程式模式電子書</a></p><p><a href="~/xamarin-forms/user-interface/graphics/skiasharp/">Xamarin.Forms 電子書中的 SkiaSharp Graphics</a></p>

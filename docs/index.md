@@ -9,10 +9,10 @@ ms.date: 02/12/2019
 featureFlags:
 - clicktale
 ms.openlocfilehash: ee92a3430fcce5bcd389d2bfa78762b71d1d5be9
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58853998"
 ---
 <div id="main" class="v2">
@@ -96,9 +96,9 @@ ms.locfileid: "58853998"
                                                 <h4>在 Windows 和 macOS 上的 Visual Studio 中，使用 C# 和 .NET 建置跨平台 Android 和 iOS 應用程式 (搭配 Xamarin.Forms)。</h4>
                                                 <ul class="noBullet">
                                                     <li><a class="barLink" href="~/cross-platform/get-started/introduction-to-mobile-development.md"><img  src="https://docs.microsoft.com/media/logos/logo_xamarin.svg" alt="" />Xamarin 應用程式是原生的</a></li>
-                                                    <li><a class="barLink" href="~/cross-platform/desktop/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_NET.svg" alt="" />適合 .NET 桌面開發人員的 Xamarin</a></li>
-                                                    <li><a class="barLink" href="~/android/get-started/java-developers.md"><img  src="https://docs.microsoft.com/media/logos/logo_java.svg" alt="" />適合 Java 開發人員的 Xamarin</a></li>
-                                                    <li><a class="barLink" href="~/ios/get-started/objective-c-developers/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_xcode.svg" alt=" icon" />適合 Objective-C 開發人員的 Xamarin</a></li>
+                                                    <li><a class="barLink" href="~/cross-platform/desktop/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_NET.svg" alt="" />適用於 .NET 桌面開發人員的 Xamarin</a></li>
+                                                    <li><a class="barLink" href="~/android/get-started/java-developers.md"><img  src="https://docs.microsoft.com/media/logos/logo_java.svg" alt="" />適用於 Java 開發人員的 Xamarin</a></li>
+                                                    <li><a class="barLink" href="~/ios/get-started/objective-c-developers/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_xcode.svg" alt=" icon" />適用於 Objective-C 開發人員的 Xamarin</a></li>
                                                     <li><a class="barLink" href="~/xamarin-forms/data-cloud/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_azure.svg" alt="" />Azure 與 Xamarin</a></li>
                                                 </ul>
                                             </div>
@@ -120,7 +120,7 @@ ms.locfileid: "58853998"
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/quickstarts/single-page.md">
                                                                         <img src="~/media/icons/i_xaml-forms.svg" alt="">
-[檔案] > [新增行動應用程式] </a>
+檔案 > 新增行動應用程式 </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/quickstarts/multi-page.md">
@@ -135,7 +135,7 @@ ms.locfileid: "58853998"
                                                                  <li>
                                                                     <a class="barLink" href="~/get-started/quickstarts/styling.md">
                                                                         <img src="https://docs.microsoft.com/xamarin/media/icons/i_user-interface.svg" alt="">
-設計應用程式樣式 </a>
+設計應用程式 </a>
                                                                 </li>
                                                             </ul>
                                                         </td>
@@ -146,7 +146,7 @@ ms.locfileid: "58853998"
                                                                 <li>
                                                                     <a class="barLink" href="~/cross-platform/index.yml">
                                                                     <img src="https://docs.microsoft.com/media/common/i_guidelines.svg" alt="">
-Xamarin 開發指南</a>
+Xamarin 開發指引</a>
                                                                 </li>
                                                             </ul>
                                                         </td>
@@ -743,24 +743,19 @@ Mac</a>
         <h2>和我們保持連絡</h2>
         <ul class="links">
            <li>
-                <a href="https://blog.xamarin.com/">
-部落格 </a>
+                <a href="https://blog.xamarin.com/"> 部落格 </a>
             </li>
             <li>
-                <a href="https://forums.xamarin.com/">
-論壇 </a>
+                <a href="https://forums.xamarin.com/"> 論壇 </a>
             </li>
             <li>
-                <a href="https://twitter.com/xamarinhq">
-Twitter </a>
+                <a href="https://twitter.com/xamarinhq"> Twitter </a>
             </li>
             <li>
-                <a href="https://stackoverflow.com/questions/tagged/xamarin">
-堆疊溢位 </a>
+                <a href="https://stackoverflow.com/questions/tagged/xamarin"> Stack Overflow </a>
             </li>
             <li>
-                <a href="https://dotnet.microsoft.com/platform/community">
-開發人員社群 </a>
+                <a href="https://dotnet.microsoft.com/platform/community"> 開發人員社群 </a>
             </li>
         </ul>
     </div>

@@ -8,15 +8,15 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
 ms.openlocfilehash: 0ff9f8b5ee6f9468650b6535745706bee8f96536
-ms.sourcegitcommit: 1c2565c372207bfa257cadac2a2d23d4f90b0cea
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58866354"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>使用 XAML 預覽程式的設計階段資料
 
-_某些版面配置是難想像沒有資料。 若要充分利用預覽您的大量資料的頁面中 XAML 預覽程式中使用這些秘訣。_
+_某些版面配置是難想像沒有資料。若要充分利用預覽您的大量資料的頁面中 XAML 預覽程式中使用這些秘訣。_
 
 ## <a name="design-time-data-basics"></a>設計階段資料的基本概念
 
@@ -36,7 +36,7 @@ mc:Ignorable="d"
 <Label Text={Binding Name} d:Text="Name" />
 ```
 
-[![D直到時間資料中的標籤文字](xaml-previewer-images/designtimedata-label-sm.png "設計時間的文字資料標籤")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
+[![設計時間資料標籤中的文字](xaml-previewer-images/designtimedata-label-sm.png "設計時間的文字資料標籤")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
  在此範例中，而不需要`d:Text`，XAML 預覽程式會顯示任何標籤。 相反地，它會顯示 「 名稱 」 其中的標籤時，會在執行階段具有實際資料。
 
@@ -46,7 +46,7 @@ mc:Ignorable="d"
 <d:Button Text="Design Time Button" />
 ```
 
-[![D直到時間與按鈕控制項的資料](xaml-previewer-images/designtimedata-controls-sm.png "設計階段資料與按鈕控制項")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
+[![設計階段資料與按鈕控制項](xaml-previewer-images/designtimedata-controls-sm.png "設計階段資料與按鈕控制項")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
 
 在此範例中，按鈕才會出現在設計階段。 使用這個方法可放在預留位置[XAML 預覽程式不支援的自訂控制項](render-custom-controls.md)。
 
@@ -57,7 +57,7 @@ mc:Ignorable="d"
 ```csharp
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
 ```
-[![D直到時間資料與映像](xaml-previewer-images/designtimedata-image-sm.png "設計 iamges 時間資料")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
+[![設計階段資料與映像](xaml-previewer-images/designtimedata-image-sm.png "設計 iamges 時間資料")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
 
 ## <a name="design-time-data-for-listviews"></a>Listview 的設計階段資料
 
@@ -83,7 +83,7 @@ Listview 是一種常見的方式顯示資料的行動應用程式。 不過，�
 </StackLayout>
 ```
 
-[![D直到時間資料的 ListView](xaml-previewer-images/designtimedata-itemssource-sm.png "設計時間資料的 ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
+[![設計時間資料的 ListView](xaml-previewer-images/designtimedata-itemssource-sm.png "設計時間資料的 ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
 
 此範例中會顯示三個 TextCells 的 ListView 中 XAML 預覽程式。 您可以變更`x:String`到專案中現有的資料模型。
 

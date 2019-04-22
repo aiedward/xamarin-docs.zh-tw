@@ -71,7 +71,7 @@ public sealed class Person : ISerializableObject
 
 轉譯器會在 JavaScript 中實作，而可存取的物件，表示透過 JavaScript 版本`ISerializableObject`。 也會有 JavaScript 複製`$type`字串表示的.NET 型別名稱的屬性。
 
-我們建議針對用戶端整合程式碼，當然會編譯成標準 JavaScript 般地使用 TypeScript。 無論如何，SDK 會提供[typings] [ typings]可以直接由 TypeScript 參考或直接參考手動如果撰寫香草，最好使用 JavaScript。
+我們建議針對用戶端整合程式碼，當然會編譯成標準 JavaScript 般地使用 TypeScript。 無論如何，SDK 會提供[typings][typings]可以直接由 TypeScript 參考或直接參考手動如果撰寫香草，最好使用 JavaScript。
 
 轉譯的主要的整合點是`xamarin.interactive.RendererRegistry`:
 
@@ -85,7 +85,7 @@ xamarin.interactive.RendererRegistry.registerRenderer(
 );
 ```
 
-在這裡，`PersonRenderer`實作`Renderer`介面。 請參閱[typings] [ typings]如需詳細資訊。
+在這裡，`PersonRenderer`實作`Renderer`介面。 請參閱[typings][typings]如需詳細資訊。
 
 [typings]: https://github.com/xamarin/Workbooks/blob/master/SDK/typings/xamarin-interactive.d.ts
 [xir-color]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.Color/

@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 2ab0147f918b36dc47ef6eed7d9bf1b6295d9733
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870400"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>在 Xamarin.iOS 中的主動式建議簡介
@@ -166,7 +166,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>還原活動
 
-若要回應使用者點選的搜尋結果 (`NSUserActivity`) 應用程式中，編輯**AppDelegate.cs**檔案，並覆寫`ContinueUserActivity`方法。 例如: 
+若要回應使用者點選的搜尋結果 (`NSUserActivity`) 應用程式中，編輯**AppDelegate.cs**檔案，並覆寫`ContinueUserActivity`方法。 例如：
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -189,7 +189,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 使用以上所顯示的程式碼的最少，就能夠利用三個新的 iOS 10 功能的應用程式：
 
-- **遞交**
+- **Handoff**
 - **Spotlight 搜尋**
 - **內容 Siri 提醒**
 

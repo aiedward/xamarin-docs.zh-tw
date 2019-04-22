@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/14/2018
 ms.openlocfilehash: 946cba08e1e504962c093f67e336d72b654a3a41
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58869997"
 ---
 # <a name="picker-control-in-xamarinios"></a>在 Xamarin.iOS 中的選擇器控制項
@@ -259,7 +259,7 @@ dateLabel.Text = "Alarm set for:" + coundownTimeformat.ToString(finishCountdown)
 
 若要格式化`NSDate`，使用[ `NSDateFormatter` ](xref:Foundation.NSDateFormatter)。
 
-若要使用`NSDateFormatter`，呼叫其[ `ToString` ](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate))方法。 例如: 
+若要使用`NSDateFormatter`，呼叫其[ `ToString` ](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate))方法。 例如：
 
 ```csharp
 var date = NSDate.Now;
@@ -290,10 +290,10 @@ timeFormat.TimeStyle = NSDateFormatterStyle.Short;
 
 各種`NSDateFormatterStyle`值會顯示時間，如下所示：
 
-- `NSDateFormatterStyle.Full`:46： 下午 7:00 美加東部日光節約時間
-- `NSDateFormatterStyle.Long`:7:47:00 PM EDT
-- `NSDateFormatterStyle.Medium`:47： 下午 7:00
-- `NSDateFormatterSytle.Short`:下午 7:47
+- `NSDateFormatterStyle.Full`：46： 下午 7:00 美加東部日光節約時間
+- `NSDateFormatterStyle.Long`：7:47:00 PM EDT
+- `NSDateFormatterStyle.Medium`：47： 下午 7:00
+- `NSDateFormatterSytle.Short`：下午 7:47
 
 ##### <a name="datestyle"></a>DateStyle
 
@@ -306,10 +306,10 @@ dateTimeformat.DateStyle = NSDateFormatterStyle.Long;
 
 各種`NSDateFormatterStyle`值會顯示日期，如下所示：
 
-- `NSDateFormatterStyle.Full`:星期三年 8 月 2日，2017 日下午 7:48
-- `NSDateFormatterStyle.Long`:2017 年 8 月 2日日下午 7:49
-- `NSDateFormatterStyle.Medium`:2017 年 8 月 2日日下午 7:49
-- `NSDateFormatterStyle.Short`:8/2/17，下午 7 點 50
+- `NSDateFormatterStyle.Full`：星期三年 8 月 2日，2017 日下午 7:48
+- `NSDateFormatterStyle.Long`：2017 年 8 月 2日日下午 7:49
+- `NSDateFormatterStyle.Medium`：2017 年 8 月 2日日下午 7:49
+- `NSDateFormatterStyle.Short`：8/2/17，下午 7 點 50
 
 > [!NOTE]
 > `DateFormat` 並`DateStyle` / `TimeStyle`提供不同的方式指定日期和時間格式。 最新設定屬性會決定日期格式器的輸出。

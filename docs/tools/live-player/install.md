@@ -7,10 +7,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
 ms.openlocfilehash: f9cfc69c2cd711460233e609d63bcbb8eb172ccf
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854752"
 ---
 # <a name="xamarin-live-player-setup"></a>Xamarin Live Player 設定
@@ -26,7 +26,7 @@ Xamarin Live Player 可讓您對您的應用程式進行即時編輯並且讓這
 
 Xamarin Live Player 是可供 Android 使用 intalling 直接從[HockeyApp](https://aka.ms/xlp-hockeyapp)。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ## <a name="2-get-visual-studio-2017"></a>2.取得 Visual Studio 2017
 
@@ -66,7 +66,7 @@ Xamarin Live Player 需要：
 
     如果裝置無法連絡的配對，可能會出現錯誤。
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="2-get-visual-studio-for-mac"></a>2.取得 Visual Studio for Mac
 
@@ -82,7 +82,7 @@ Xamarin Live Player 需要：
 2. 移至**Visual Studio > 喜好設定...** ，然後選取**專案 > Xamarin Live Player （預覽）**  索引標籤。
 3. 刻度**啟用 Xamarin Live Player**:
 
-    [![C核取 [啟用 Xamarin Live Player] 方塊中 [選項] 視窗](install-images/vsmac-options-sml.png)](install-images/vsmac-options.png#lightbox)
+    [![核取 [啟用 Xamarin Live Player] 方塊中 [選項] 視窗](install-images/vsmac-options-sml.png)](install-images/vsmac-options.png#lightbox)
 
 4. 建立或開啟 Xamarin 專案 (或[範例](~/tools/live-player/samples.md))。
 5. 選擇**Live Player**裝置清單中。

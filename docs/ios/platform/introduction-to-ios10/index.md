@@ -1,5 +1,5 @@
 ---
-title: IOS 10 簡介
+title: iOS 10 簡介
 description: 這篇文章會介紹的所有新的及修改 Api 和功能可在 iOS 10 中適用於 Xamarin.iOS 開發人員。
 ms.prod: xamarin
 ms.assetid: FB91DFFE-CF5E-4253-92CB-78A6371259D9
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
 ms.openlocfilehash: b018fe343a7d46f1323119b03a22cc3831a02d9f
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870244"
 ---
-# <a name="introduction-to-ios-10"></a>IOS 10 簡介
+# <a name="introduction-to-ios-10"></a>iOS 10 簡介
 
 _這篇文章會介紹的所有新的及修改 Api 和功能可在 iOS 10 中適用於 Xamarin.iOS 開發人員。_
 

@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: 7371f134944d7492e51aa2d02247c0ab48345a47
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870231"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>第 14 章的摘要。 絕對版面配置
 
-[![D下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
 
 像是`StackLayout`， [ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout)衍生自`Layout<View>`並繼承`Children`屬性。 `AbsoluteLayout` 會實作需要程式設計師指定的位置及其子系和 （選擇性） 其大小的版面配置系統。 指定相對於左上角的子系的左上角位置`AbsoluteLayout`以與裝置無關單位。 `AbsoluteLayout` 也會實作的調和間距定位和調整大小功能。
 

@@ -9,10 +9,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/02/2018
 ms.openlocfilehash: 9175c60c436f2e808f3658bae717a747e0401c28
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855311"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac -  逐步解說
@@ -57,7 +57,7 @@ Xamarin.Mac 應用程式開發需要：
 
 1. 啟動 Visual Studio for Mac：
 
-    [![](hello-mac-images/setup01-sml.png "主要的 Visual Studio for Mac 介面")](hello-mac-images/setup01.png#lightbox)
+    [![](hello-mac-images/setup01-sml.png "主要 Visual Studio for Mac 介面")](hello-mac-images/setup01.png#lightbox)
 
 2. 按一下 [新增專案] 按鈕以開啟 [新增專案] 對話方塊，並選取 [Mac] > [應用程式] > [Cocoa 應用程式]，然後按一下 [下一步] 按鈕：
 
@@ -69,7 +69,7 @@ Xamarin.Mac 應用程式開發需要：
 
 4. 確認新專案在您電腦上的位置：
 
-    [![](hello-mac-images/setup04-sml.png "確認新解決方案的詳細資料")](hello-mac-images/setup04.png#lightbox)
+    [![](hello-mac-images/setup04-sml.png "驗證新的解決方案詳細資料")](hello-mac-images/setup04.png#lightbox)
 
 5. 按一下 [建立] 按鈕。
 
@@ -228,7 +228,7 @@ namespace Hello_Mac
 
 `Info.plist` 檔案包含 Xamarin.Mac 應用程式的相關資訊，例如其**名稱**和**套件組合識別碼**：
 
-[![](hello-mac-images/infoplist01.png "Visual Studio for Mac plist 編輯器")](hello-mac-images/infoplist01.png#lightbox)
+[![](hello-mac-images/infoplist01.png "Visual Studio for Mac Plist 編輯器")](hello-mac-images/infoplist01.png#lightbox)
 
 它也會定義_分鏡腳本_，以用來顯示 [主要介面] 下拉式清單底下的 Xamarin.Mac 應用程式使用者介面。 在上面的範例中，下拉式清單中的 `Main` 與 [方案總管]  中專案的來源樹狀目錄中的 `Main.storyboard` 相關。 它也會定義應用程式的圖示，方法是指定包含它們的「資產目錄」(在此案例中是 **AppIcon**)。
 
@@ -236,7 +236,7 @@ namespace Hello_Mac
 
 應用程式的 `Entitlements.plist` 檔案控制 Xamarin.Mac 應用程式擁有的權利，例如**沙箱功能**和 **iCloud**：
 
-[![](hello-mac-images/entitlements01.png "Visual Studio for Mac entitlements 編輯器")](hello-mac-images/entitlements01.png#lightbox)
+[![](hello-mac-images/entitlements01.png "Visual Studio for Mac 權利編輯器")](hello-mac-images/entitlements01.png#lightbox)
 
 針對 Hello World 範例，將不需要任何權利。 下一節說明如何使用 Xcode 的 Interface Builder 來編輯 **Main.storyboard** 檔案，並定義 Xamarin.Mac 應用程式的 UI。
 
@@ -246,11 +246,11 @@ Interface Builder 是 Apple 建立的一種工具，屬於 Xcode 的一部分，
 
 若要開始使用，請按兩下 [方案總管] 中的 [`Main.storyboard`] 檔案開啟它，以在 Xcode 和 Interface Builder 中編輯：
 
-[![](hello-mac-images/xcode01.png "[方案總管] 中的 Main.storyboard 檔案")](hello-mac-images/xcode01.png#lightbox)
+[![](hello-mac-images/xcode01.png "方案總管中的 Main.storyboard 檔案")](hello-mac-images/xcode01.png#lightbox)
 
 這應該會啟動 Xcode，而且看起來像此螢幕擷取畫面一樣：
 
-[![](hello-mac-images/xcode02.png "預設 Xcode Interface Builder 檢視")](hello-mac-images/xcode02.png#lightbox)
+[![](hello-mac-images/xcode02.png "預設的 Xcode Interface Builder 檢視")](hello-mac-images/xcode02.png#lightbox)
 
 開始設計介面之前，請先快速瀏覽 Xcode，以熟悉將使用的主要功能。
 
@@ -328,7 +328,7 @@ Interface Builder 是 Apple 建立的一種工具，屬於 Xcode 的一部分，
 
 4. 從 [程式庫] 區段拖曳 [標籤]：
 
-    [![](hello-mac-images/xcode10.png "從 [程式庫偵測器] 中選取 [Label]")](hello-mac-images/xcode10.png#lightbox)
+    [![](hello-mac-images/xcode10.png "從 [程式庫偵測器] 中選取 [標籤]")](hello-mac-images/xcode10.png#lightbox)
 
 5. 將標籤拖曳到 [介面編輯器] 中 [視窗] 上的按鈕旁：
 
@@ -362,7 +362,7 @@ Interface Builder 是 Apple 建立的一種工具，屬於 Xcode 的一部分，
 
 在 [介面階層架構] 區段中，查看構成使用者介面之元素的版面配置和階層架構如何顯示：
 
-[![](hello-mac-images/xcode15.png "在 [介面階層] 中選取元素")](hello-mac-images/xcode15.png#lightbox)
+[![](hello-mac-images/xcode15.png "在 [介面階層架構] 中選取元素")](hello-mac-images/xcode15.png#lightbox)
 
 如有需要，開發人員可從此處選取要編輯的項目，或拖曳項目以重新排列 UI 元素。 比方說，如果某個 UI 元素被另一個元素覆蓋，他們可以將它拖曳到清單底部，使其成為視窗最頂端的項目。
 
@@ -592,4 +592,4 @@ SourceWriter 程式碼有完整註解，在適當的情況下會提供從關鍵�
 ## <a name="related-links"></a>相關連結
 
 - [Hello, Mac (範例)](https://developer.xamarin.com/samples/mac/Hello_Mac/)
-- [macOS Human Interface Guidelines (人性化介面指導方針)](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)
+- [macOS 人性化介面指導方針](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/) \(英文\)

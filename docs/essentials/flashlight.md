@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: b94ba73b334ac68b256ca840956f987a4ef670ce
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870101"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials:手電筒
@@ -22,7 +22,7 @@ ms.locfileid: "58870101"
 
 若要存取**手電筒**功能，需要下列平台特定設定。
 
-# [<a name="android"></a>Android](#tab/android)
+# <a name="androidtabandroid"></a>[Android](#tab/android)
 
 需要手電筒和相機的權限，並且必須在 Android 專案中設定。 能以下列方式新增：
 
@@ -51,11 +51,11 @@ ms.locfileid: "58870101"
 [assembly: UsesFeature("android.hardware.camera.autofocus", Required = false)]
 ```
 
-# [<a name="ios"></a>iOS](#tab/ios)
+# <a name="iostabios"></a>[iOS](#tab/ios)
 
 不需要進行額外設定。
 
-# [<a name="uwp"></a>UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 不需要進行額外設定。
 
@@ -96,7 +96,7 @@ catch (Exception ex)
 
 ## <a name="platform-implementation-specifics"></a>平台實作特性
 
-### [<a name="android"></a>Android](#tab/android)
+### <a name="androidtabandroid"></a>[Android](#tab/android)
 
 手電筒類別已根據裝置的作業系統進行最佳化。
 
@@ -108,11 +108,11 @@ catch (Exception ex)
 
 會建立相機表面紋理，以開啟或關閉相機單位的 `FlashMode`。 
 
-### [<a name="ios"></a>iOS](#tab/ios)
+### <a name="iostabios"></a>[iOS](#tab/ios)
 
 [AVCaptureDevice](xref:AVFoundation.AVCaptureDevice) 用於開啟或關閉裝置的手電筒或閃光燈模式。
 
-### [<a name="uwp"></a>UWP](#tab/uwp)
+### <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 [Lamp](https://docs.microsoft.com/uwp/api/windows.devices.lights.lamp) 用於偵測裝置背面的第一個燈是否開啟或關閉。
 
@@ -120,5 +120,5 @@ catch (Exception ex)
 
 ## <a name="api"></a>API
 
-- [Flashlight 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Flashlight)
-- [Flashlight API 文件](xref:Xamarin.Essentials.Flashlight)
+- [手電筒原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Flashlight)
+- [手電筒 API 文件](xref:Xamarin.Essentials.Flashlight)

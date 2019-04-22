@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 855962560897789dadba535f69c4a7da42bb4742
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854973"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>執行瀏覽多頁 Xamarin.Forms 應用程式中
 
-[![D下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
 
 在本快速入門中，您將了解如何：
 
@@ -617,5 +617,5 @@ ms.locfileid: "58854973"
 
 ## <a name="related-links"></a>相關連結
 
-- [附註 （範例）](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
+- [Notes (範例)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
 - [Xamarin.Forms 快速入門深入探討](deepdive.md)

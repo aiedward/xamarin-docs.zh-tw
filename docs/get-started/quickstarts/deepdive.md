@@ -10,10 +10,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
 ms.openlocfilehash: 67b189254cc08fac0323b7df5fcbab5abd994c05
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855012"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms 快速入門深入探討
@@ -421,7 +421,7 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
 在 `OnNoteAddedClicked`方法，它會執行新的附註新增至應用程式時， [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)的`NoteEntryPage`設定為新`Note`執行個體。 在`OnListViewItemSelected`方法，執行中選取現有的便箋時[ `ListView` ](xref:Xamarin.Forms.ListView)，則`BindingContext`的`NoteEntryPage`設定為所選`Note`執行個體，這透過存取[ `e.SelectedItem` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem)屬性。
 
 > [!IMPORTANT]
-> 每個*目標*物件的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 屬性都可以個別設定，但這並非必要。 `BindingContext` 為繼承其所有子系的特殊屬性。 因此，當`BindingContext`上[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)設定為`Note`執行個體，所有的子系`ContentPage`具有相同`BindingContext`，並可以繫結至公用屬性`Note`物件。
+> 每個*目標*物件的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 屬性都可以個別設定，但這並非必要。 `BindingContext` 為其所有子系繼承的特殊屬性。 因此，當`BindingContext`上[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)設定為`Note`執行個體，所有的子系`ContentPage`具有相同`BindingContext`，並可以繫結至公用屬性`Note`物件。
 
 [ `Editor` ](xref:Xamarin.Forms.Editor)中`NoteEntryPage`繫結至`Text`屬性`Note`物件：
 
@@ -539,4 +539,4 @@ Visual Studio for Mac 和 Visual Studio 都會提供許多選項來測試和部�
 - [Xamarin.Forms 範例](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [使用者入門範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/)
 - [Xamarin.Forms API 參考](xref:Xamarin.Forms)
-- [免費引導式學習 （影片）](https://university.xamarin.com/self-guided/)
+- [免費的自我引導式學習 (影片)](https://university.xamarin.com/self-guided/) \(英文\)

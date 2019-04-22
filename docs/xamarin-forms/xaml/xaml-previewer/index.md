@@ -9,10 +9,10 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 02/04/2019
 ms.openlocfilehash: db243a9c8dcb25f51bc7926a7aa239531e9c24f6
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58859008"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>適用於 Xamarin.Forms XAML 預覽程式
@@ -31,7 +31,7 @@ XAML 預覽程式會顯示您的 Xamarin.Forms XAML 頁面在 iOS 和 Android �
 
 您可以開啟 XAML 預覽程式，依序按一下 [分割檢視] 窗格上的箭號。 如果您想要變更預設的分割檢視行為，請使用**工具 > 選項 > Xamarin > Forms 預覽程式**對話方塊。 在此對話方塊中，您可以選取預設文件檢視和分割方向。
 
-[![Xamarin。在 Visual Studio form 預覽程式選項](xaml-previewer-images/xamlp-options-vs-sm.png "選項在 Visual Studio 中的 Xamarin.Forms 預覽程式")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
+[![在 Visual Studio 中的 Xamarin.Forms 預覽程式選項](xaml-previewer-images/xamlp-options-vs-sm.png "選項在 Visual Studio 中的 Xamarin.Forms 預覽程式")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
 
 當您開啟 XAML 檔案時，編輯器會開啟完整大小或以預覽程式，根據設定中選取 下一步**工具 > 選項 > Xamarin > Forms 預覽程式**對話方塊。 不過，分割可針對每個檔案在編輯器視窗中變更。
 
@@ -39,11 +39,11 @@ XAML 預覽程式會顯示您的 Xamarin.Forms XAML 頁面在 iOS 和 Android �
 
 選擇您想要查看您的程式碼，XAML 預覽程式，或同時選取這些按鈕在分割檢視 窗格。 中間的按鈕會交換哪些一邊預覽程式和您的程式碼位於：
 
-[![Xamarin。Form 預覽程式的控制項，以設計、 來源和 Visual Studio 中的 [分割] 檢視之間切換](xaml-previewer-images/xamlp-controls-splitview-vs-sm.png "Xamarin.Forms 預覽程式控制項加入設計、 來源和 Visual Studio 中的 [分割] 檢視之間切換")](xaml-previewer-images/xamlp-controls-splitview-vs-lg.png#lightbox)
+[![Xamarin.Forms 可於預覽程式控制設計、 來源和 Visual Studio 中的 [分割] 檢視間切換](xaml-previewer-images/xamlp-controls-splitview-vs-sm.png "Xamarin.Forms 預覽程式控制項加入設計、 來源和 Visual Studio 中的 [分割] 檢視之間切換")](xaml-previewer-images/xamlp-controls-splitview-vs-lg.png#lightbox)
 
 您可以變更是否垂直或水平分割畫面，或完全摺疊一個窗格：
 
-[![Xamarin。在 Visual Studio form 預覽程式窗格方向控制項](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "Visual Studio 中的 Xamarin.Forms 預覽程式窗格方向控制項")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
+[![Visual Studio 中的 Xamarin.Forms 預覽程式窗格方向控制項](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "Visual Studio 中的 Xamarin.Forms 預覽程式窗格方向控制項")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -52,7 +52,7 @@ XAML 預覽程式會顯示您的 Xamarin.Forms XAML 頁面在 iOS 和 Android �
 
 **預覽**開啟 XAML 頁面時，將會顯示在編輯器中的按鈕。 顯示或隱藏預覽程式藉由按下**預覽**任何 XAML 文件視窗的右上角的按鈕：
 
-[![Xamarin。在 Visual Studio 中的預覽程式 form for Mac 中](xaml-previewer-images/xamlp-list-sml.png "Visual Studio for Mac 中的 Xamarin.Forms 預覽程式")](xaml-previewer-images/xamlp-list.png#lightbox)
+[![Xamarin.Forms Previewer in Visual Studio for Mac](xaml-previewer-images/xamlp-list-sml.png "Xamarin.Forms Previewer in Visual Studio for Mac")](xaml-previewer-images/xamlp-list.png#lightbox)
 
 ::: zone-end
 

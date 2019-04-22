@@ -7,10 +7,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/08/2017
 ms.openlocfilehash: 89795e5df00b426c0f11c04a0844993071df1e25
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855194"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player 應用程式
@@ -38,7 +38,7 @@ ms.locfileid: "58855194"
 
 按下 資訊 按鈕 **(i)** 下方的 應用程式，以顯示**選項**功能表：
 
-[![S[選項] 功能表的 creenshot](player-images/options-sml.png)](player-images/options.png#lightbox)
+[![[選項] 功能表的螢幕擷取畫面](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>記錄檔
 
@@ -50,13 +50,13 @@ ms.locfileid: "58855194"
 - 版本資訊。
 - 傳送意見反應。
 
-[![S設定的 creenshot](player-images/settings-sml.png)](player-images/settings.png#lightbox)
+[![設定的螢幕擷取畫面](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>管理裝置
 
 若要第一次連接裝置，請依照下列中的指示[需求與安裝](~/tools/live-player/install.md)。 您可以配對多個裝置，然後透過 IDE 進行管理。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 在 Visual Studio 中，選擇**工具 > Xamarin Live Player > 管理的裝置...**
 
@@ -70,7 +70,7 @@ ms.locfileid: "58855194"
 
 您也可以存取此視窗從裝置清單。
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 在 Visual Studio for Mac 中，選擇**工具 > (Xamarin Live Player) 管理的裝置...**
 

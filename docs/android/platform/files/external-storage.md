@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
 ms.openlocfilehash: 78051fce44239eea86948988a4d19ac37c5ea0d5
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854895"
 ---
 # <a name="external-storage"></a>外部儲存體
@@ -61,7 +61,7 @@ ms.locfileid: "58854895"
 | DirectoryMusic | **_PRIVATE\_EXTERNAL\_STORAGE_/Music** |
 | DirectoryNotifications | **_私用\_外部\_儲存體_/Notifications** |
 | DirectoryPodcasts | **_PRIVATE\_EXTERNAL\_STORAGE_/Podcasts** |
-| DirectoryRingtones | **_PRIVATE\_EXTERNAL\_STORAGE_/Ringtones** |
+| DirectoryRingtones | **_私用\_外部\_儲存體_/Ringtones** |
 | DirectoryPictures | **_私用\_外部\_儲存體_  /圖片** |
 
 對於具有多個外部儲存體磁碟分割的裝置，每個分割區必須是私用檔案的目錄。 此方法`Android.Content.Context.GetExternalFilesDirs(string type)`會傳回的陣列`Java.IO.Files`。 每個物件將代表私用的應用程式特定目錄上應用程式可以在其中放置檔案的所有外部共用存放裝置其所擁有。
@@ -140,17 +140,17 @@ Android 會考慮存取外部儲存體以進行_危險的使用權限_，通常�
 > [!NOTE]
 > 如果使用者授與`WRITE_EXTERNAL_STORAGE`，然後`READ_EXTERNAL_STORAGE`還有以隱含方式授與。 您不需要要求中的兩個權限**AndroidManifest.xml**。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 權限可能也會加入使用**Android 資訊清單**索引標籤**方案屬性**:
 
 ![方案總管-適用於 Visual Studio 的必要權限](./images/required-permissions.w157.png)
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 權限可能也會加入使用**Android 資訊清單**索引標籤**方案屬性板**:
 
-[![S方案板-Visual Studio for Mac 所需權限](./images/required-permissions.m752-sml.png)](./images/required-permissions.m752.png#lightbox)
+[![Solution Pad-必要的權限，Visual Studio for Mac](./images/required-permissions.m752-sml.png)](./images/required-permissions.m752.png#lightbox)
 
 -----
 
@@ -181,4 +181,4 @@ System.IO.File.Delete("/storage/emulated/0/Android/data/com.companyname.app/file
 ## <a name="related-links"></a>相關連結
 
 * [Xamarin.Android 的本機檔案範例上**monodroid 範例**](https://github.com/xamarin/monodroid-samples/tree/master/LocalFiles)
-* [Permissions In Xamarin.Android](~/android/app-fundamentals/permissions.md)
+* [在 Xamarin.Android 中的權限](~/android/app-fundamentals/permissions.md)

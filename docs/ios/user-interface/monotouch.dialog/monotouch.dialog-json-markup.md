@@ -1,5 +1,5 @@
 ---
-title: MonoTouch.Dialog Json Markup
+title: MonoTouch.Dialog Json 標記
 description: 本文件說明可用來建置使用 MonoTouch.Dialog Xamarin.iOS 使用者介面的 JSON 語法。
 ms.prod: xamarin
 ms.assetid: 59F3E18C-3A73-69B8-DA5E-21B19B9DFB98
@@ -8,13 +8,13 @@ ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
 ms.openlocfilehash: 2bd45c5482a8f0367bffa21f301bb631c3429a21
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870127"
 ---
-# <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json Markup
+# <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json 標記
 
 此頁面描述接受 MonoTouch.Dialog 的 Json 標記[JsonElement](xref:MonoTouch.Dialog.JsonElement)
 
@@ -153,7 +153,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 
 -  `header` (選擇性)
 -  `footer` (選擇性)
--  `elements` array
+-  `elements` 陣列
 
 
  <a name="header" />
@@ -362,7 +362,7 @@ class Foo {
 
 ## <a name="boolean-elements"></a>布林值項目
 
-布林值項目應將 type 設為`"bool"`，可以包含`"caption"`來顯示和`"value"`設為 true 或 false。 如果`"on"`和`"off"`設定屬性，它們會假設為映像。 映像，在解決相對於目前工作目錄的應用程式中。 如果您想要參考相對套件組合的檔案，您可以使用`"~"`來代表應用程式套件組合目錄的捷徑。 例如`"~/favorite.png"`會包含在組合檔案 favorite.png。 例如: 
+布林值項目應將 type 設為`"bool"`，可以包含`"caption"`來顯示和`"value"`設為 true 或 false。 如果`"on"`和`"off"`設定屬性，它們會假設為映像。 映像，在解決相對於目前工作目錄的應用程式中。 如果您想要參考相對套件組合的檔案，您可以使用`"~"`來代表應用程式套件組合目錄的捷徑。 例如`"~/favorite.png"`會包含在組合檔案 favorite.png。 例如：
 
 ```csharp
 { 

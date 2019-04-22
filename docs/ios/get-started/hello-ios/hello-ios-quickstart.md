@@ -10,10 +10,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
 ms.openlocfilehash: ed59f32711bae56672d1d7f114fbb80a906d67ce
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855285"
 ---
 # <a name="hello-ios--quickstart"></a>Hello, iOS – 快速入門
@@ -495,6 +495,6 @@ Xamarin.iOS 可與下列設定搭配運作：
 ## <a name="related-links"></a>相關連結
 
 - [Xamarin 應用程式圖示和啟動影像 (範例)](https://github.com/xamarin/ios-samples/blob/master/Hello_iOS/Resources/XamarinAppIconsandLaunchImages.zip?raw=true)
-- [Hello, iOS (範例)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
-- [iOS 人性化介面指導方針](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
-- [iOS 佈建入口網站](https://developer.apple.com/ios/manage/overview/index.action)
+- [Hello, iOS (範例)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/) \(英文\)
+- [iOS 人性化介面指導方針](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html) \(英文\)
+- [iOS 佈建入口網站](https://developer.apple.com/ios/manage/overview/index.action) \(英文\)

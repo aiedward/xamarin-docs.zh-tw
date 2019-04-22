@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
 ms.openlocfilehash: 1b0771a0ccc2597ebd800468b82044e4020d9d94
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854609"
 ---
 # <a name="using-native-libraries"></a>使用原生程式庫
@@ -45,19 +45,19 @@ Xamarin.Android 支援原生程式庫，透過標準的 PInvoke 機制使用。 
 ## <a name="debugging-native-code-with-visual-studio"></a>使用 Visual Studio 偵錯原生程式碼
 
 如果您使用*Visual Studio 2019*或是*Visual Studio 2017*，您不需要修改您的專案檔，如上面所述。
-您可以建置並進行偵錯 c + + 內您的 Xamarin.Android 解決方案專案將參考加入至 c + +**動態共用程式庫 (Android)** 專案。
+您可以建置和偵錯C++在您的 Xamarin.Android 解決方案，藉由新增的專案參考C++**動態共用程式庫 (Android)** 專案。
 
-若要偵錯您的專案中的原生 c + + 程式碼，請遵循下列步驟：
+若要偵錯原生C++您的專案中的程式碼，請遵循下列步驟：
 
 1. 按兩下 [專案]**屬性**，然後選取**Android 選項**頁面。
 2. 向下捲動至**偵錯選項**。
-3. 在 **偵錯工具**下拉式功能表中，選取**c + +** (而非預設 **.Net (Xamarin)**)。
+3. 在 **偵錯工具**下拉式功能表中，選取**C++** (而非預設 **/.net (Xamarin)**)。
 
-Visual Studio c + + 開發人員可以看到[SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)嘗試偵錯 c + + 從 Visual Studio 2019 或 Visual Studio 2017 with Xamarin; 範例和是指我們[部落格文章](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)如需詳細資訊。
+Visual StudioC++開發人員可以看到[SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)嘗試偵錯範例C++從 Visual Studio 2019 或 Visual Studio 2017 with Xamarin，並參考我們[部落格文章](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)如需詳細資訊資訊。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [SanAngeles_NativeDebug （範例）](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)
+- [SanAngeles_NativeDebug (sample)](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)
 - [開發 Xamarin Android 原生應用程式](https://blogs.msdn.microsoft.com/vcblog/2015/02/23/developing-xamarin-android-native-applications/)

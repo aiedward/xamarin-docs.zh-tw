@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
 ms.openlocfilehash: 8617d6e0c0930f581c45dbb461dfcb5d85a2becc
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855051"
 ---
 # <a name="apple-account-management"></a>Apple 帳戶管理
@@ -44,7 +44,7 @@ Apple 帳戶 對話方塊可讓您執行下列作業：
 
 ## <a name="adding-an-apple-developer-account"></a>新增 Apple 開發人員帳戶
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 若要開啟 帳戶管理對話方塊，請移至**Visual Studio > 喜好設定 > Apple 開發人員帳戶**:
 
@@ -68,7 +68,7 @@ Apple 帳戶 對話方塊可讓您執行下列作業：
 
     ![簽署身分識別和佈建設定檔，您的電腦上檢視詳細資料畫面顯示](apple-account-management-images/image6.png)
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 您開始將您的 Apple ID 新增至 Visual Studio 2019 之前，請確定您的開發環境[至 Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 
@@ -109,11 +109,11 @@ Apple 帳戶 對話方塊可讓您執行下列作業：
 
 如果下拉式清單中的選項會呈現灰色，而且未選取，這表示您沒有正確的小組權限來建立這種類型的憑證。
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![建立憑證選項](apple-account-management-images/image8.png)
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![建立憑證選項](apple-account-management-images/prov3.png)
 
@@ -123,11 +123,11 @@ Apple 帳戶 對話方塊可讓您執行下列作業：
 
 小組的詳細資料 對話方塊也會顯示一份所有連線到您的開發人員帳戶的佈建設定檔。 您也可以按到本機電腦下載所有佈建設定檔**下載所有設定檔**按鈕
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![下載佈建的設定檔區段](apple-account-management-images/image9.png)
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![下載佈建的設定檔區段](apple-account-management-images/prov4.png)
 

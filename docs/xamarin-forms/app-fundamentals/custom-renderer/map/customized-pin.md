@@ -8,19 +8,19 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: 54509d0a1133d86727317366b0d229bc218cb263
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870296"
 ---
 # <a name="customizing-a-map-pin"></a>自訂地圖釘選
 
-[![D下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
 
 _本文示範如何建立 Map 控制項的自訂轉譯器，該控制項會在每個平台上以釘選資料的自訂釘選和自訂檢視來顯示原生地圖。_
 
-每個 Xamarin.Forms 檢視都具有每個平台的轉譯器，這些轉譯器可建立原生控制項的執行個體。 當 iOS 中的 Xamarin.Forms 應用程式轉譯 [`Map`](xref:Xamarin.Forms.Maps.Map) 時，會先具現化 `MapRenderer` 類別，再由該類別具現化原生 `MKMapView` 控制項。 在 Android 平台上，`MapRenderer` 類別會具現化原生 `MapView` 控制項。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 類別會具現化原生的 `MapControl`。 如需 Xamarin.Forms 控制項對應的轉譯器和原生控制項類別詳細資訊，請參閱[轉譯器基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
+每個 Xamarin.Forms 檢視都隨附每個平台的轉譯器，這些平台可建立原生控制項的執行個體。 當 iOS 中的 Xamarin.Forms 應用程式轉譯 [`Map`](xref:Xamarin.Forms.Maps.Map) 時，會先具現化 `MapRenderer` 類別，再由該類別具現化原生 `MKMapView` 控制項。 在 Android 平台上，`MapRenderer` 類別會具現化原生 `MapView` 控制項。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 類別會具現化原生的 `MapControl`。 如需 Xamarin.Forms 控制項對應的轉譯器和原生控制項類別詳細資訊，請參閱[轉譯器基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
 下圖說明 [`Map`](xref:Xamarin.Forms.Maps.Map) 和實作它對應原生控制項間的關聯性：
 
@@ -403,8 +403,8 @@ namespace CustomRenderer.Droid
 
 `CustomMapRenderer` 類別會實作 `GoogleMap.IInfoWindowAdapter` 介面，來[自訂資訊視窗](#Customizing_the_Info_Window)。 此介面會指定必須實作下列方法：
 
-- `public Android.Views.View GetInfoWindow(Marker marker)` – 呼叫此方法可傳回標記的自訂資訊視窗。 若其傳回 `null`，則會使用預設視窗轉譯。 若其傳回 `View`，便會將該 `View` 放置在資訊視窗框架中。
-- `public Android.Views.View GetInfoContents(Marker marker)` – 呼叫此方法可傳回包含資訊視窗內容的 `View`，且只會在 `GetInfoWindow` 方法傳回 `null` 時呼叫。 若其傳回 `null`，則會使用資訊視窗內容的預設轉譯。
+- `public Android.Views.View GetInfoWindow(Marker marker)` – 此方法會進行呼叫以傳回標記的自訂資訊視窗。 若其傳回 `null`，則會使用預設視窗轉譯。 若其傳回 `View`，便會將該 `View` 放置在資訊視窗框架中。
+- `public Android.Views.View GetInfoContents(Marker marker)` – 此方法會進行呼叫，以傳回包含資訊視窗內容的 `View`，且只會在 `GetInfoWindow` 方法傳回 `null` 時呼叫。 若其傳回 `null`，則會使用資訊視窗內容的預設轉譯。
 
 在應用程式範例中，由於只有資訊視窗內容經過自訂，因此 `GetInfoWindow` 方法會傳回 `null` 來啟用它。
 
@@ -661,6 +661,6 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 ## <a name="related-links"></a>相關連結
 
 - [地圖控制項](~/xamarin-forms/user-interface/map.md)
-- [iOS 地圖](~/ios/user-interface/controls/ios-maps/index.md)
-- [地圖 API](~/android/platform/maps-and-location/maps/maps-api.md)
-- [自訂釘選 (範例)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
+- [iOS Maps](~/ios/user-interface/controls/ios-maps/index.md)
+- [Maps API](~/android/platform/maps-and-location/maps/maps-api.md)
+- [Customized Pin (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/) (自訂釘選 (範例))

@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
 ms.openlocfilehash: f5008d4986baa0575030e077b66b69ec0a4fad00
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854414"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>第 1 篇 – 了解 Xamarin 行動裝置平台
@@ -172,6 +172,6 @@ public static extern Result Open (string filename, out IntPtr db);
 這會在 iOS 和 Android 原生的 C 語言 SQLite 實作繫結。
 熟悉現有 C API 的開發人員可以建構一組C#類別來對應至原生 API，並利用現有的平台程式碼。 文件[連結原生程式庫](~/ios/platform/native-interop.md)Xamarin.iOS，以類似的原則亦適用於 Xamarin.Android。
 
-### <a name="c-via-cppsharp"></a>C + + 透過 CppSharp
+### <a name="c-via-cppsharp"></a>C++透過 CppSharp
 
-Miguel 說明 CXXI (現在稱為[CppSharp](https://github.com/mono/CppSharp)) 上他[部落格](https://tirania.org/blog/archive/2011/Dec-19.html)。 繫結至 c + + 程式庫直接替代方法是建立 C 包裝函式，並經由 P/Invoke 的繫結至的。
+Miguel 說明 CXXI (現在稱為[CppSharp](https://github.com/mono/CppSharp)) 上他[部落格](https://tirania.org/blog/archive/2011/Dec-19.html)。 繫結至的替代項目C++程式庫直接是建立 C 包裝函式，並經由 P/Invoke 的繫結至的。

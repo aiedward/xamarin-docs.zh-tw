@@ -7,10 +7,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
 ms.openlocfilehash: 5eb0dcead230e0bb2e7d99241e5d8e5a4115f838
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855259"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>疑難排解 Xamarin Live Player
@@ -162,5 +162,5 @@ Xamarin.Forms Android 專案必須使用 「 Toolbar.axml"和"Tabbar.axml 」 �
 
 ## <a name="related-links"></a>相關連結
 
-- [安裝程式](~/tools/live-player/install.md)
+- [安裝](~/tools/live-player/install.md)
 - [範例搭配 Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)

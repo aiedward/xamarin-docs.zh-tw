@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: 9425b26b5cc8fcd9b8a80df422d932c96d52889b
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870361"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API 設計
@@ -62,7 +62,7 @@ OBJECTIVE-C 程式碼通訊的低層級的執行階段處於[MonoTouch.ObjCRunti
 
 - 原生的 C# 型別：
 
-  - [`NSString` 變成 `string`](~/ios/internals/api-design/nsstring.md)
+  - [`NSString` 會變成 `string`](~/ios/internals/api-design/nsstring.md)
   - 開啟`int`並`uint`應該已列舉成 C# 列舉型別和 C# 列舉型別與參數`[Flags]`屬性
   - 而不是型別中性`NSArray`物件，公開為強型別陣列的陣列。
   - 如需事件和通知，讓使用者選擇：
@@ -96,7 +96,7 @@ Xamarin.iOS 包含組成組件數*Xamarin.iOS 設定檔*。 [組件](~/cross-pla
 
 Xamarin.iOS 鏡像在 C# 中的從 OBJECTIVE-C 類別階層 比方說，OBJECTIVE-C 基底類別[NSObject](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)可以從 C# 透過[Foundation.NSObject](xref:Foundation.NSObject)。
 
-雖然此命名空間提供基礎的 Objective C 的基礎類型的繫結，在少數情況下已對應的基礎類型到.NET 類型。 例如：
+雖然此命名空間提供基礎的 Objective C 的基礎類型的繫結，在少數情況下已對應的基礎類型到.NET 類型。 例如: 
 
 - 而不是處理[NSString](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)並[NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)，執行階段會公開這些 C#[字串](xref:System.String)s 和強型別[陣列](xref:System.Array)整個 sAPI。
 
@@ -630,7 +630,7 @@ Objective C 程式設計的核心概念是選取器。 您通常會遇到需要�
 var selector_add = new Selector ("add:plus:");
 ```
 
-針對 C# 方法回應的選取器呼叫，它必須繼承自`NSObject`以選取器名稱使用，則必須裝飾型別和 C# 方法`[Export]`屬性。 例如：
+針對 C# 方法回應的選取器呼叫，它必須繼承自`NSObject`以選取器名稱使用，則必須裝飾型別和 C# 方法`[Export]`屬性。 例如: 
 
 ```csharp
 public class MyMath : NSObject {

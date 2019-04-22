@@ -7,10 +7,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/08/2017
 ms.openlocfilehash: 5b969c6118d1fa23558efaabc87cd53a920f3490
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855038"
 ---
 # <a name="xamarin-live-player-for-xamarinforms"></a>適用於 Xamarin.Forms 的 Xamarin Live Player
@@ -26,22 +26,22 @@ Xamarin Live Player 預覽版設計成可開始開發人員取得他們的想法
 
 ## <a name="get-started-with-xamarin-live-player"></a>開始使用 Xamarin Live Player
 
-[![Xamarin Live Player:程式碼中，掃描，請測試](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
+[![Xamarin Live Player:程式碼掃描，測試](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
 1. 下載應用程式依照[Xamarin Live Player 安裝](install.md)指示。
 2. 啟用*Xamarin Live Player*中**喜好設定**，然後選取您的裝置，從**裝置**清單。
 3. 管理 Live Player 裝置來掃描 QR 代碼以您的裝置，Visual studio 配對。
 4. 在您的手機或平板電腦上直接執行應用程式。
 
-## [<a name="xamarin-live-player-setup"></a>Xamarin Live Player 安裝程式](install.md)
+## <a name="xamarin-live-player-setupinstallmd"></a>[Xamarin Live Player 安裝程式](install.md)
 
 下載 Xamarin Live Player 及設定您的 IDE，使用於 Xamarin.Forms 應用程式，從 Visual Studio 2017 或 Visual Studio for mac。 
 
-## [<a name="xamarin-live-player-app"></a>Xamarin Live Player 應用程式](player.md)
+## <a name="xamarin-live-player-appplayermd"></a>[Xamarin Live Player 應用程式](player.md)
 
 使用 Xamarin Live Player 應用程式。
 
-## [<a name="troubleshooting"></a>疑難排解](troubleshooting.md)
+## <a name="troubleshootingtroubleshootingmd"></a>[疑難排解](troubleshooting.md)
 
 如果發生錯誤，請找到說明。
 

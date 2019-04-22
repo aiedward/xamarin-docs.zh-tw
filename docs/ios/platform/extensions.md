@@ -9,10 +9,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
 ms.openlocfilehash: 25b27765a35310c5cdbaf5ae19902b1d19eff6ea
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870270"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的 iOS 延伸模組
@@ -150,7 +150,7 @@ ms.locfileid: "58870270"
     [![](extensions-images/today08.png "按兩下以開啟它進行編輯的延伸模組專案 Main.storyboard 檔案")](extensions-images/today08.png#lightbox)
 2. 選取已自動加入至 UI 之範本的標籤，並為它提供**名稱**`TodayMessage`中**Widget**索引標籤**屬性總管**: 
 
-    [![](extensions-images/today09.png "選取已自動加入至 UI 之範本的標籤，並指定其名稱 TodayMessage 屬性總管 [Widget] 索引標籤中")](extensions-images/today09.png#lightbox)
+    [![](extensions-images/today09.png "選取已自動加入至 UI 之範本的標籤，並給予其名稱 TodayMessage Widget 索引標籤的 [屬性總管] 中")](extensions-images/today09.png#lightbox)
 3. 將變更儲存到分鏡腳本。
 
 #### <a name="using-code"></a>使用程式碼
