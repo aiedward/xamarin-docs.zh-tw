@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/28/2016
 ms.openlocfilehash: 7ed8fc18624f46abd4a9fc293d8c33a1722da7dd
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 6f728aa0c1775224e16c0f3e583cf843d34270f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58870257"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59893110"
 ---
 # <a name="referencing-native-libraries-in-xamarinios"></a>參考在 Xamarin.iOS 中的原生程式庫
 
@@ -98,7 +98,7 @@ lipo -info /full/path/to/libraryname.a
 -gcc_flags "-L${ProjectDir} -lMylibrary -lSystemLibrary -framework CFNetwork -force_load ${ProjectDir}/libMyLibrary.a"
 ```
 
-如果您的原生程式庫包含 c + + 程式碼，您也必須傳遞-cxx 旗標在您 「 額外引數 」，讓 Xamarin.iOS 知道若要使用正確的編譯器。 C + + 的先前的選項如下：
+如果您的原生程式庫包含C++您也必須傳遞-cxx 旗標在您 「 額外引數 」，讓 Xamarin.iOS 知道若要使用正確的編譯器的程式碼。 針對C++先前的選項如下：
 
 ```bash
 -cxx -gcc_flags "-L${ProjectDir} -lMylibrary -lSystemLibrary -framework CFNetwork -force_load ${ProjectDir}/libMyLibrary.a"
