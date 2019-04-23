@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
 ms.openlocfilehash: 74a9fc59b395d68db9b116106cc9fa63d3969c3b
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855233"
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>行動裝置軟體開發生命週期簡介
@@ -72,7 +72,7 @@ ms.locfileid: "58855233"
 
 UX 通常會透過使用任何一種[設計工具組](https://docs.microsoft.com/windows/uwp/design/downloads/)的框線或原型來完成。 使用 UX 原型來設計 UX 可以不必擔心實際的 UI 設計：
 
- [![](introduction-to-mobile-sdlc-images/balsamiq.png "UX 通常是使用 Balsamiq 等工具透過框線或圖樣製作而成")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/balsamiq.png "UX 的完成通常透過使用 Balsamiq 等工具的框線或圖樣")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
 建立 UX 原型時，請務必注意應用程式所針對的各種平台介面指導方針。 應用程式應在每種平台上都「有家的感覺」。 每種平台的官方設計指導方針如下：
 
@@ -98,7 +98,7 @@ UX 通常會透過使用任何一種[設計工具組](https://docs.microsoft.com
 
 如同 UX 一樣，請務必了解每種平台都有自己的設計語言，因此即使是設計良好的應用程式，在每種平台上的外觀可能仍有不同：
 
- [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "設計妥善的應用程式在各種平台上的外觀仍可能不盡相同")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "設計良好的應用程式在每種平台上的外觀可能仍不相同")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
 
 ### <a name="development"></a>開發
 

@@ -8,15 +8,15 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/29/2018
 ms.openlocfilehash: 9456686157f10d81e36b908cb0a2441e64d47663
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855142"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>為 Xamarin.iOS 開發與 Mac 配對
 
-_本指南說明如何使用 [與 Mac 配對] 將 Visual Studio 2019 連線至 Mac 組建主機。 這些指示同樣適用於 Visual Studio 2017。_
+本指南描述如何使用 [與 Mac 配對] 將 Visual Studio 2019 連線至 Mac 組建主機。這些指示同樣適用於 Visual Studio 2017。
 
 ## <a name="overview"></a>總覽
 
@@ -130,7 +130,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
     - 在 Mac 上，開啟 [系統偏好設定] > [共享] > [遠端登入]：
 
-        [![T[系統喜好設定] > [共用] 中 Mac 的 IP 位址](images/sharing-ipaddress.png "[系統喜好設定] > [共用] 中 Mac 的 IP 位址")](images/sharing.png#lightbox)
+        [![[系統偏好設定] > [共享] 中 Mac 的 IP 位址](images/sharing-ipaddress.png "[系統偏好設定] > [共享] 中 Mac 的 IP 位址")](images/sharing.png#lightbox)
 
     - 或者，使用命令列。 在 [終端機] 中，發出此命令： 
 
@@ -143,7 +143,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
 2. 在 Visual Studio 2019 的 [與 Mac 配對] 對話方塊中，選取 [新增 Mac...]：
 
-    [![T[與 Mac 配對] 對話方塊中的 [新增 Mac] 按鈕](images/addtomac.png "[與 Mac 配對] 對話方塊中的 [新增 Mac] 按鈕")](images/addtomac-large.png#lightbox)
+    [![[與 Mac 配對] 對話方塊中的 [新增 Mac] 按鈕](images/addtomac.png "[與 Mac 配對] 對話方塊中的 [新增 Mac] 按鈕")](images/addtomac-large.png#lightbox)
 
 3. 輸入 Mac 的 IP 位址，然後按一下 [新增]：
 
@@ -177,7 +177,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
 ||安裝檢查|下載|安裝
 |---|---|---|---|
-|Mono|[![M缺少 Mono 安裝](images/mono-missing.png "缺少 Mono 安裝")](images/mono-missing-large.png#lightbox)|[![D下載 Mono](images/mono-downloading.png "下載 Mono")](images/mono-downloading-large.png#lightbox)|[![I安裝 Mono](images/mono-installing.png "安裝 Mono")](images/mono-installing-large.png#lightbox)|
+|Mono|[![遺漏 Mono 安裝](images/mono-missing.png "遺漏 Mono 安裝")](images/mono-missing-large.png#lightbox)|[![下載 Mono](images/mono-downloading.png "下載 Mono")](images/mono-downloading-large.png#lightbox)|[![安裝 Mono](images/mono-installing.png "安裝 Mono")](images/mono-installing-large.png#lightbox)|
 
 ### <a name="xamarinios"></a>Xamarin.iOS
 
@@ -192,7 +192,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
 ||安裝檢查|下載|安裝
 |---|---|---|---|
-|Xamarin.iOS|[![M缺少 Xamarin.iOS 安裝](images/xamios-missing.png "缺少 Xamarin.iOS 安裝")](images/xamios-missing-large.png#lightbox)|[![D下載 Xamarin.iOS](images/xamios-downloading.png "下載 Xamarin.iOS")](images/xamios-downloading-large.png#lightbox)|[![I安裝 Xamarin.iOS](images/xamios-installing.png "安裝 Xamarin.iOS")](images/xamios-installing-large.png#lightbox)|
+|Xamarin.iOS|[![遺漏 Xamarin.iOS 安裝](images/xamios-missing.png "遺漏 Xamarin.iOS 安裝")](images/xamios-missing-large.png#lightbox)|[![下載 Xamarin.iOS](images/xamios-downloading.png "下載 Xamarin.iOS")](images/xamios-downloading-large.png#lightbox)|[![安裝 Xamarin.iOS](images/xamios-installing.png "安裝 Xamarin.iOS")](images/xamios-installing-large.png#lightbox)|
 
 ### <a name="xcode-tools-and-license"></a>Xcode 工具和授權
 
@@ -200,7 +200,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
 ||安裝檢查|接受授權|
 |---|---|---|
-|Xcode|[![M缺少 Xcode 安裝](images/xcode-missing.png "缺少 Xcode 安裝")](images/xcode-missing-large.png#lightbox)|[![XXcode 授權](images/xcode-license.png "Xcode 授權")](images/xcode-license-large.png#lightbox)|
+|Xcode|[![遺漏 Xcode 安裝](images/xcode-missing.png "遺漏 Xcode 安裝")](images/xcode-missing-large.png#lightbox)|[![Xcode 授權](images/xcode-license.png "Xcode 授權")](images/xcode-license-large.png#lightbox)|
 
 此外，[與 Mac 配對] 將會安裝或更新利用 Xcode 所散發的各種套件。 例如：
 
@@ -228,10 +228,10 @@ C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamU
 
 上述範例中傳遞給 `msbuild` 的參數如下：
 
-- `ServerAddress` – Mac 組建主機的 IP 位址。
-- `ServerUser` – 要在登入 Mac 組建主機時使用的使用者名稱。
+- `ServerAddress` - Mac 組建主機的 IP 位址。
+- `ServerUser` - 要在登入 Mac 組建主機時使用的使用者名稱。
   請使用您的系統使用者名稱，而非完整名稱。
-- `ServerPassword` – 要在登入 Mac 組建主機時使用的密碼。
+- `ServerPassword` - 要在登入 Mac 組建主機時使用的密碼。
 
 > [!NOTE]
 > Visual Studio 2019 會將 `msbuild` 儲存在以下目錄中：**C:\Program Files (x86)\Microsoft Visual Studio\2017\\&lt;Version&gt;\MSBuild\15.0\Bin**
@@ -247,7 +247,7 @@ C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamU
 ## <a name="next-steps"></a>後續步驟
 
 - [連線疑難排解](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md)
-- [Xamarin Mac Build Agent - Xamarin University Lightning Lecture (Xamarin Mac 組建代理程式 - Xamarin University Lightning Lecture)](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
+- [Xamarin Mac 組建代理程式 - Xamarin University Lightning Lecture](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
 - [Xamarin.iOS for Visual Studio 簡介](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
 - [適用於 Windows 的遠端 iOS 模擬器](~/tools/ios-simulator/index.md)
 - [無線部署](~/ios/deploy-test/wireless-deployment.md)
