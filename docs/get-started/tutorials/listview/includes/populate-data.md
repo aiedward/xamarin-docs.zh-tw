@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: a13426f4213d7c306c0de6922d336d4bb7723d72
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037418"
+---
 [`ListView`](xref:Xamarin.Forms.ListView) 會使用類型為 `IEnumerable` 的 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性來填入資料。 上一個步驟已使用字串陣列填入 XAML 中的 `ListView`。 不過，一般而言，`ListView` 會從程式碼後置中所定義且實作 `IEnumerable` 的集合填入資料。
 
 在此練習中，您將修改 **ListViewTutorial** 專案，將資料從 `List` 中儲存的物件集合填入 [`ListView`](xref:Xamarin.Forms.ListView)。

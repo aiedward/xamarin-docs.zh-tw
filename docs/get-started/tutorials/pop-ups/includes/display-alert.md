@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: cff466025306ee5d23b5245e625eba23c5448c15
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384690"
+---
 Xamarin.Forms 具有強制回應快顯 (稱為警示)，可警示使用者或是詢問簡易問題。 在本練習中，您會使用 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 方法 (來自 [`Page`](xref:Xamarin.Forms.Page) 類別) 向使用者顯示警示，以及詢問簡易問題。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)

@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: d87289e481b69592b68627d053e937856d3d6067
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61375384"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 在 **MainPage.xaml** 中，修改 [`Grid`](xref:Xamarin.Forms.Grid) 宣告以定義資料行和資料列，並在資料行和資料列中放置內容：

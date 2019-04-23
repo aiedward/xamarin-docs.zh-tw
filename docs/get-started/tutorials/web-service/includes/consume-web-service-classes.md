@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: fe38e13ff4b6c89905769d5ef0e5163a538e1e86
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61388815"
+---
 在此練習中，您會建立使用者介面來取用 `RestService` 類別，接著從 [OpenWeatherMap](https://openweathermap.org/) Web API 擷取資料。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
