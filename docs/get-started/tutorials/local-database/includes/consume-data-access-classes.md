@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 7fbd2a81c30726bc6c38586186e9334ddd4ea282
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61193027"
+---
 在此練習中，您將建立使用者介面來使用先前建立的資料存取類別。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)

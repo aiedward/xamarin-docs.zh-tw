@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: d1f7d209eaaca62a55b768646f51024609057a63
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61372911"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 在 **MainPage.xaml** 中修改 [`Button`](xref:Xamarin.Forms.Button) 宣告，以便其設定 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件的處理常式：

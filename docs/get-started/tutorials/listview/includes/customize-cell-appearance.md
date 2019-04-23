@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 3c88b71cea834f5e6ef20d43332904c052c6e3a6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037505"
+---
 先前，已使用資料繫結在 [`ListView`](xref:Xamarin.Forms.ListView) 中填入資料。 不過，儘管將資料繫結至集合，而集合中的每個物件已定義多個資料項目，但每個物件只會顯示單一資料項目 (`Monkey` 物件的 `Name` 屬性)。
 
 在此練習中，您將修改 **ListViewTutorial** 專案，讓 [`ListView`](xref:Xamarin.Forms.ListView) 在每個資料列中顯示多個資料項目。

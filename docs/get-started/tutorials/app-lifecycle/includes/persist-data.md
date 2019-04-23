@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 2c6c71f5ed46cc1cae66c5d1f412898825805cc6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61187486"
+---
 [`Application`](xref:Xamarin.Forms.Application) 子類別具有靜態 [`Properties`](xref:Xamarin.Forms.Application.Properties) 字典，可用來在生命週期狀態變更期間儲存資料。 此字典使用 `string` 索引鍵並儲存 `object` 值。 字典會自動儲存至裝置，並在應用程式重新啟動時重新填入。
 
 > [!IMPORTANT]
