@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: d3b7a14938e204898f7e32d3c75be60787bfb324
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61303266"
+---
 ||測試附註|
 |---|---|
 |**Xamarin.iOS**|<ul><li>最簡單的開始方式就是使用 Xcode 隨附的 iPhone、iPad、Apple Watch 及 Apple TV 模擬器。</li><li>若要使用裝置來進行測試，請依照<a href="~/ios/get-started/installation/device-provisioning/index.md">這些指示</a>執行。</li></ul>|
