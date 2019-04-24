@@ -7,17 +7,17 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/02/2019
 ms.openlocfilehash: b962390d5a5a365ada93d1778e3efb65839f41c5
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
-ms.translationtype: MT
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854947"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>適用於 Windows 的遠端 iOS 模擬器
 
 遠端 iOS 模擬器的 Windows 可讓您測試您的應用程式，在 iOS 模擬器與 Visual Studio 2019 和 Visual Studio 2017 的 Windows 中顯示。
 
-[![i在 Windows 上執行的 OS 模擬器](images/hero-sml.png "在 Windows 上執行的 iOS 模擬器")](images/hero.png#lightbox)
+[![在 Windows 上執行的 iOS 模擬器](images/hero-sml.png "在 Windows 上執行的 iOS 模擬器")](images/hero.png#lightbox)
 
 ## <a name="getting-started"></a>使用者入門
 
@@ -52,7 +52,7 @@ ms.locfileid: "58854947"
 
 工具列的省略符號按鈕會顯示其他選項，例如旋轉、 搖晃手勢和 重新啟動。 這些相同的選項可視為清單，用滑鼠右鍵按一下模擬器 視窗中的任何位置：
 
-[![iOS 模擬器的其他設定](images/more-sml.png "iOS 模擬器中的其他設定")](images/more.png#lightbox)
+[![iOS 模擬器中的其他設定](images/more-sml.png "iOS 模擬器中的其他設定")](images/more.png#lightbox)
 
 ## <a name="touchscreen-support"></a>觸控式螢幕支援
 
@@ -64,6 +64,6 @@ ms.locfileid: "58854947"
 
 若要停用遠端 iOS 模擬器的 Windows，請瀏覽至**工具 > 選項 > Xamarin > iOS 設定**並取消核取**遠端 Simulator 到 Windows**。
 
-[![c若要使用模擬器 heckbox](images/options-sml.png "核取方塊以使用模擬器")](images/options.png#lightbox)
+[![核取方塊以使用模擬器](images/options-sml.png "核取方塊以使用模擬器")](images/options.png#lightbox)
 
 停用這個選項，偵錯會開啟已連線的 Mac 上的 iOS 模擬器組建主機。
