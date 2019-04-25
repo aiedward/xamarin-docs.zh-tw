@@ -5,7 +5,7 @@ metadata:
   description: Xamarin.Forms 會公開適用於 .NET 開發人員的完整跨平台 UI 工具組，以建置行動裝置、平板電腦以及桌面應用程式。
   author: conceptdev
   ms.author: crdun
-  ms.date: 07/27/2018
+  ms.date: 04/22/2019
   ms.topic: landing-page
   ms.technology: xamarin-forms
 abstract:
@@ -22,7 +22,7 @@ sections:
   - title: 開始使用
     items:
       - type: paragraph
-        text: '了解如何使用 Xamarin 與 C#，以 Android、iOS 與通用 Windows 平台為目標，建置您的第一個 Xamarin.Forms 應用程式。'
+        text: '了解如何使用 Xamarin 和 C#，以 Android 與 iOS 為目標，建置您的第一個 Xamarin.Forms 應用程式。'
       - type: list
         style: icon48
         items:
@@ -111,7 +111,7 @@ sections:
         className: cardsD
         items:
           - title: API
-            html: '<p><a href="https://docs.microsoft.com/en-us/dotnet/api/?view=xamarin-forms">Xamarin.Forms API 文件</a></p>'
+            html: '<p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarin-forms">Xamarin.Forms API 文件</a></p>'
           - title: 範例
             html: '<p><a href="https://developer.xamarin.com/samples/xamarin-forms/all/">Xamarin.Forms 範例</a></p>'
           - title: 書籍
