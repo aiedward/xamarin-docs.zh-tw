@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: 9425b26b5cc8fcd9b8a80df422d932c96d52889b
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037435"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API 設計
 
@@ -379,7 +379,7 @@ web.Delegate = new Notifier ();
 除了強型別屬性，還有弱式的具型別的的委派，讓開發人員所需時以不同的方式繫結項目。
 強型別 everywhere`Delegate`屬性會公開在 Xamarin.iOS 的繫結，對應`WeakDelegate`也會公開屬性。
 
-使用時`WeakDelegate`，您必須負責適當地裝飾類別使用[匯出](xref:Foundation.ExportAttribute)屬性來指定選取器。 例如: 
+使用時`WeakDelegate`，您必須負責適當地裝飾類別使用[匯出](xref:Foundation.ExportAttribute)屬性來指定選取器。 例如：
 
 ```csharp
 class Notifier : NSObject  {

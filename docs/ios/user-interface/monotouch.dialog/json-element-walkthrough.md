@@ -8,11 +8,11 @@ ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
 ms.openlocfilehash: 07bcbfe046fd689e08eed4e64495b56d083ceeb8
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61304445"
 ---
 # <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>若要建立的使用者介面在 Xamarin.iOS 中使用 JSON
 

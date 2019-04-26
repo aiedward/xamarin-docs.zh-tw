@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
 ms.openlocfilehash: 97d2a126be70e210d2e8f4ebf4d7a25ff8777a02
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60945433"
 ---
 # <a name="ratingbar"></a>RatingBar
 

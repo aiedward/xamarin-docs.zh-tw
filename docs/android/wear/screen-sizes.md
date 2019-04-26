@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
 ms.openlocfilehash: 9fc22a3c08b60a8474b006f1c9225155b9705507
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61285766"
 ---
 # <a name="working-with-screen-sizes"></a>使用 螢幕大小
 

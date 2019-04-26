@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 0897afeacffc89e30b28474e4530a83d05d33cd2
-ms.sourcegitcommit: c77d4257f8a35c8d931538b78a2ebc2aa48c0db9
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58751253"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61187279"
 ---
 # <a name="creating-a-custom-xamarinforms-theme"></a>建立自訂的 Xamarin.Forms 佈景主題
 

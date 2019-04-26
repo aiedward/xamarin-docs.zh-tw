@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/18/2018
 ms.openlocfilehash: 370867b52ec09d0c3ad0f801b6a75c356d806734
-ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58477391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61277837"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>與 Xamarin.iOS 使用 SQLite.NET
 

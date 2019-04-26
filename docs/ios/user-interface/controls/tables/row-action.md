@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/25/2017
 ms.openlocfilehash: 6d41f37d4a63db710bb04e35e6e1a4be0dd4f7a4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105905"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61408221"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>使用在 Xamarin.iOS 中的資料列動作
 
@@ -163,7 +163,7 @@ namespace BasicTable
 }
 ```
 
-靜態`UITableViewRowAction.Create`方法用來建立新`UITableViewRowAction`將顯示**Hi**按鈕使用者 swipes 保留水平資料表中的資料列時。 更新版本的新執行個體`TableDelegate`建立並附加至`UITableView`。 例如: 
+靜態`UITableViewRowAction.Create`方法用來建立新`UITableViewRowAction`將顯示**Hi**按鈕使用者 swipes 保留水平資料表中的資料列時。 更新版本的新執行個體`TableDelegate`建立並附加至`UITableView`。 例如：
 
 ```csharp
 TableDelegate tableDelegate;

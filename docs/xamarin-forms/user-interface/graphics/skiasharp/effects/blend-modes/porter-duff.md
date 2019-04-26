@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: f988c16e933214b3ce737febb89d05a451eb2f14
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61205440"
 ---
 # <a name="porter-duff-blend-modes"></a>Porter Duff 混合模式
 
@@ -279,7 +279,7 @@ canvas.Clear(SKColors.White);
 
 ## <a name="using-mattes-with-porter-duff"></a>使用 Porter Duff mattes
 
-**磚牆複合 （compositing)** 頁面會顯示傳統的複合 （compositing） 工作的範例： 要組合幾個部分，包括需要排除背景的點陣圖從需要的圖片。 以下是**SeatedMonkey.jpg**有問題的背景點陣圖：
+**磚牆複合 （compositing)** 頁面會顯示傳統的複合 （compositing） 工作的範例：一張圖片，就必須要組合幾個部分，包括需要排除背景的點陣圖。 以下是**SeatedMonkey.jpg**有問題的背景點陣圖：
 
 ![插入擴充槽 Monkey](porter-duff-images/SeatedMonkey.jpg "插入擴充槽 Monkey")
 

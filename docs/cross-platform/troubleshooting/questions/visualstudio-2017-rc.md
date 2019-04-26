@@ -8,10 +8,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
 ms.openlocfilehash: 3f83bd394ff631ebe3991a0c3e72240c979454ca
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58070783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61341274"
 ---
 請注意到編輯器：本內容已被刻意刪除並重新導向。 此重新導向應為集中式與其他重新導向，以及應該移除此檔案。

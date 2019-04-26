@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
 ms.openlocfilehash: 33138b7858b8bc04a5be30f9fad1709e916f5575
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61364081"
 ---
 # <a name="net-embedding-best-practices-for-objective-c"></a>.NET 內嵌適用於 OBJECTIVE-C 的最佳作法
 
@@ -64,7 +64,7 @@ Person *p = [[Person alloc] initWithFirstName:@"Sebastien" lastName:@"Pouliot"];
 
 命名是兩個最困難的問題之一在電腦科學中，其他的快取無效判定 」 和 「 關閉 x 1 的錯誤。 希望.NET 內嵌可以免除您以外的所有命名。
 
-### <a name="types"></a>類型
+### <a name="types"></a>型別
 
 Objective C 不支援命名空間。 一般情況下，其型別前面會加上 2 （適用於 Apple) 或 3 （適用於第 3 個合作對象） 字元的前置詞，例如`UIView`UIKit 的檢視，其代表此架構。
 

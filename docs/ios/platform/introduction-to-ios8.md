@@ -1,5 +1,5 @@
 ---
-title: IOS 8 簡介
+title: iOS 8 簡介
 description: Ios 8，Apple 提供眾多新的架構和 Api，可激發創意和開發人員會非常喜歡這樣。 本指南中我們將介紹這些新的 Api，並了解 iOS 8 助益開發人員和使用者。
 ms.prod: xamarin
 ms.assetid: 33AD66C0-3743-49FE-9DCE-88ED3A16BA63
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
 ms.openlocfilehash: 9299322eb20561444262c2b2ba87191d2bddcde4
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61317613"
 ---
-# <a name="introduction-to-ios-8"></a>IOS 8 簡介
+# <a name="introduction-to-ios-8"></a>iOS 8 簡介
 
 _Ios 8，Apple 提供眾多新的架構和 Api，可激發創意和開發人員會非常喜歡這樣。本指南中我們將介紹這些新的 Api，並了解 iOS 8 助益開發人員和使用者。_
 
@@ -101,7 +101,7 @@ Touch ID 做為驗證使用者時，引進在 iOS 7 — 密碼類似。 不過�
 
 若要深入了解更多的深入了解，文件選擇器，並了解如何整合至 Xamarin.iOS 應用程式，請參閱[文件選擇器簡介](~/ios/platform/document-picker.md)指南。
 
-### <a name="handoff"></a>遞交
+### <a name="handoff"></a>Handoff
 
 遞移式，也就是較大的持續性功能的一部分，會達到整合 OS X 與 iOS 的進一步的步驟。 這包括跨平台 AirDrop，取得的呼叫 iPhone、 iPad 和 Mac 和改進網際網路共用功能從您的 iPhone 上的 SMS 的能力。
 
@@ -109,7 +109,7 @@ Touch ID 做為驗證使用者時，引進在 iOS 7 — 密碼類似。 不過�
 
 如需詳細資訊，請參閱我們[遞移式](~/ios/platform/handoff.md)指南。
 
-## <a name="unified-storyboards"></a>統一的分鏡腳本
+## <a name="unified-storyboards"></a>整合的 Storyboard
 iOS 8 包含新建立的使用者介面使用機制的工作變得更容易，統一的分鏡腳本。 與單一分鏡腳本可以涵蓋各種不同的硬體螢幕大小，可以建立快速且回應迅速的檢視，則為 true 的 「 設計一次，使用許多 」 樣式。
 
 在之前 iOS8，開發人員使用`UIInterfaceOrientation`區別直向和橫向模式和`UIInterfaceIdiom`區別 iOS 裝置。 IOS8 中不再需要建立個別的分鏡腳本，適用於 iPhone 和 iPad 裝置 — 方向和裝置由使用決定*大小類別*。

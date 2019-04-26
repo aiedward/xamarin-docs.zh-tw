@@ -1,5 +1,5 @@
 ---
-title: Hello 損耗
+title: Hello, Wear
 description: 建立第一個 Android Wear 應用程式，並在 Wear 模擬器或裝置上執行。 本逐步解說提供建立小型的 Android Wear 專案處理按下按鈕後，按一下計數器會顯示在 Wear 裝置的逐步指示。 它會說明如何使用 Wear 模擬器或在 Wear 裝置透過藍牙連線到在 Android 手機的應用程式進行偵錯。 它也會提供適用於 Android Wear 的一組偵錯的祕訣。
 ms.prod: xamarin
 ms.assetid: 86BCD0E7-E9DC-40F1-9B44-887BC51BB48D
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/10/2018
 ms.openlocfilehash: a8e27063040ff91f72a1cbf932b1b277a5dee63d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104917"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61277317"
 ---
-# <a name="hello-wear"></a>Hello 損耗
+# <a name="hello-wear"></a>Hello, Wear
 
 _建立第一個 Android Wear 應用程式，並在 Wear 模擬器或裝置上執行。本逐步解說提供建立小型的 Android Wear 專案處理按下按鈕後，按一下計數器會顯示在 Wear 裝置的逐步指示。它會說明如何使用 Wear 模擬器或在 Wear 裝置透過藍牙連線到在 Android 手機的應用程式進行偵錯。它也會提供適用於 Android Wear 的一組偵錯的祕訣。_
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: b309cbdf37acaa71740a4d5d03e4824efd40f359
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107491"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61200893"
 ---
 # <a name="text-input-in-xamarinios"></a>在 Xamarin.iOS 中的文字輸入
 

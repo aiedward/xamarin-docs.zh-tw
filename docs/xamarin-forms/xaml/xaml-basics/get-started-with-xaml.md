@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
 ms.openlocfilehash: 086ed765781d9297f07574519d2cbc9cf93ac4dd
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61344736"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 開始使用 XAML
 
@@ -203,9 +203,9 @@ namespace XamlSamples
 
 也請注意，`Title`屬性已設定根標記上。
 
-在此階段中，類別、 屬性和 XML 之間的關聯性應顯而易見： Xamarin.Forms 類別 (例如`ContentPage`或`Label`) 會出現在 XAML 檔案的 XML 項目。 該類別的屬性，包括`Title`上`ContentPage`和七個屬性`Label`— 通常會顯示為 XML 屬性。
+在此階段中，類別、 屬性和 XML 之間的關聯性應顯而易見：Xamarin.Forms 類別 (例如`ContentPage`或`Label`) 會出現在 XAML 檔案的 XML 項目。 該類別的屬性，包括`Title`上`ContentPage`和七個屬性`Label`— 通常會顯示為 XML 屬性。
 
-若要設定這些屬性的值存在許多捷徑。 有些屬性是基本資料類型:，例如`Title`和`Text`屬性都屬於類型`String`，`Rotation`屬於型別`Double`，和`IsVisible`(也就是`true`預設和僅適用於此處設定圖） 的類型是`Boolean`。
+若要設定這些屬性的值存在許多捷徑。 有些屬性是基本資料類型：比方說，`Title`和`Text`屬性都屬於型別`String`，`Rotation`屬於型別`Double`，和`IsVisible`(也就是`true`預設且僅供說明以下設定) 為類型`Boolean`.
 
 `HorizontalTextAlignment`屬性的類型是`TextAlignment`，這是列舉型別。 對於任何列舉類型的屬性，您只需要提供是成員名稱。
 

@@ -1,5 +1,5 @@
 ---
-title: TvOS 10 簡介
+title: tvOS 10 簡介
 description: 這篇文章會介紹的所有新的及修改 Api 和 tvOS 10 中可用的功能適用於 Xamarin.tvOS 開發人員。
 ms.prod: xamarin
 ms.assetid: CB9C1EC8-6008-43AD-977E-976AE7C73DD8
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 260d01d6aa8344dd3cf107f1ffc34167c457a491
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120979"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61269306"
 ---
-# <a name="introduction-to-tvos-10"></a>TvOS 10 簡介
+# <a name="introduction-to-tvos-10"></a>tvOS 10 簡介
 
 _這篇文章會介紹的所有新的及修改 Api 和 tvOS 10 中可用的功能適用於 Xamarin.tvOS 開發人員。_
 

@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/19/2017
 ms.openlocfilehash: 44e45d38ecd98be6f75c619125f9c14ce707b251
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59509884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61207374"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>使用 Xamarin 的連續整合簡介
 

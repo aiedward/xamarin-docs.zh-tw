@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: f693b480fff141c177ed135ced60afd65abd77de
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61082161"
 ---
 # <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>搜尋和主畫面 Widget 增強功能在 iOS 10
 
@@ -50,7 +50,7 @@ Apple 已引進數個增強功能的小工具系統，以確保 widget 好看任
 
 ## <a name="working-with-vibrancy"></a>使用 Vibrancy
 
-Vibrancy 可確保該 Widget 的文字會維持在小工具的光線，套用模糊效果的背景 （由系統提供） 列於時易於閱讀。 開發人員會使用在 iOS 10 之前, [NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect)的小工具的 vibrancy。 例如: 
+Vibrancy 可確保該 Widget 的文字會維持在小工具的光線，套用模糊效果的背景 （由系統提供） 列於時易於閱讀。 開發人員會使用在 iOS 10 之前, [NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect)的小工具的 vibrancy。 例如：
 
 ```csharp
 // DEPRECATED: Get Widget Vibrancy Effect

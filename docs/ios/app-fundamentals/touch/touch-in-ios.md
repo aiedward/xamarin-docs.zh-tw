@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: f7160c48e1b1ac85f4aa0173c0eb9f42b8fefca2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61218614"
 ---
 # <a name="touch-events-and-gestures-in-xamarinios"></a>觸控事件和在 Xamarin.iOS 中的筆勢
 

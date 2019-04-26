@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 7210cffb3cd348a6bdbf6cee80c4b6cd55553c58
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61333537"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>第 24 章的摘要。 頁面巡覽
 

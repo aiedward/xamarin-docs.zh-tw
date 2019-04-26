@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: 08ccd5b5ac78e82bf745764d70e59d2db9ec6776
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61185019"
 ---
 # <a name="social-framework-in-xamarinios"></a>在 Xamarin.iOS 中的社交架構
 
@@ -301,7 +301,7 @@ request.PerformRequest ((data, response, error) => {
 
 社交架構為統一的 API 來存取多個社交網路設計，程式碼保持幾乎完全相同，不論所使用的社交網路。
 
-比方說，`SLComposeViewController`可以用完全相同 Twitter 先前範例所示，唯一差別切換到 Facebook 特有的設定和選項。 例如: 
+比方說，`SLComposeViewController`可以用完全相同 Twitter 先前範例所示，唯一差別切換到 Facebook 特有的設定和選項。 例如：
 
 ```csharp
 using System;

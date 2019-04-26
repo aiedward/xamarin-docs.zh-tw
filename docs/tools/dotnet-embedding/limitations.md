@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
 ms.openlocfilehash: 7a162d632c98b4e412fa1b7b0c0c40ac945ff09f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60945776"
 ---
 # <a name="net-embedding-limitations"></a>.NET 內嵌限制
 
@@ -23,7 +23,7 @@ ms.locfileid: "50114349"
 
 您不可以有兩個共置在相同的應用程式內現有的 Mono 執行階段。 這表示您無法使用兩個不同.NET 內嵌所產生的程式庫在相同的應用程式。
 
-**因應措施：** 您可用來建立單一的程式庫，其中包含數個組件 （從不同的專案） 產生器。
+**因應措施：** 您可以使用產生器來建立單一的程式庫，其中包含數個組件 （從不同的專案）。
 
 ### <a name="subclassing"></a>子類別化
 

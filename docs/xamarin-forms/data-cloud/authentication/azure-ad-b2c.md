@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 7c12136a0dad0165c46f1559e7a2d61abaf7af1e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
-ms.translationtype: MT
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059700"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61331483"
 ---
 # <a name="authenticating-users-with-azure-active-directory-b2c"></a>使用 Azure Active Directory B2C 驗證使用者
 
@@ -35,8 +35,8 @@ Azure Active Directory B2C 是可讓取用者登入您的應用程式的身分�
 將 Azure Active Directory B2C 身分識別管理服務整合到行動應用程式的程序如下所示：
 
 1. 建立 Azure Active Directory B2C 租用戶。 如需詳細資訊，請參閱 <<c0> [ 在 Azure 入口網站中建立 Azure Active Directory B2C 租用戶](/azure/active-directory-b2c/active-directory-b2c-get-started/)。
-1. 註冊行動裝置應用程式與 Azure Active Directory B2C 租用戶。 註冊程序會指派**應用程式識別碼**可唯一識別您的應用程式，以及**重新導向 URL** ，可用來將回應導回到您的應用程式。 如需詳細資訊，請參閱 < [Azure Active Directory B2C： 註冊您的應用程式](/azure/active-directory-b2c/active-directory-b2c-app-registration/)。
-1. 建立註冊和登入原則。 這項原則會定義取用者註冊和登入期間將經歷的體驗，並也會指定的應用程式將收到的權杖內容上成功註冊或登入。 如需詳細資訊，請參閱 < [Azure Active Directory B2C： 內建原則](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)。
+1. 註冊行動裝置應用程式與 Azure Active Directory B2C 租用戶。 註冊程序會指派**應用程式識別碼**可唯一識別您的應用程式，以及**重新導向 URL** ，可用來將回應導回到您的應用程式。 如需詳細資訊，請參閱[Azure Active Directory B2C:註冊您的應用程式](/azure/active-directory-b2c/active-directory-b2c-app-registration/)。
+1. 建立註冊和登入原則。 這項原則會定義取用者註冊和登入期間將經歷的體驗，並也會指定的應用程式將收到的權杖內容上成功註冊或登入。 如需詳細資訊，請參閱[Azure Active Directory B2C:內建原則](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)。
 1. 使用[Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client) (MSAL) 行動裝置應用程式與 Azure Active Directory B2C 租用戶起始的驗證工作流程中。
 
 > [!NOTE]
@@ -55,7 +55,7 @@ MSAL 會使用裝置的網頁瀏覽器來執行驗證。 這可改善應用程�
 - 註冊頁面內容。
 - 行動應用程式收到此原則已執行時的權杖宣告。
 
-Azure Active Directory 租用戶可以包含不同的類型，然後用於您的應用程式所需的多個原則。 此外，原則可以跨應用程式，可讓您定義及修改取用者身分識別體驗，而不需要變更您的程式碼重複使用。 如需有關原則的詳細資訊，請參閱 < [Azure Active Directory B2C： 內建原則](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)。
+Azure Active Directory 租用戶可以包含不同的類型，然後用於您的應用程式所需的多個原則。 此外，原則可以跨應用程式，可讓您定義及修改取用者身分識別體驗，而不需要變更您的程式碼重複使用。 如需有關原則的詳細資訊，請參閱[Azure Active Directory B2C:內建原則](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)。
 
 ## <a name="setup"></a>安裝程式
 

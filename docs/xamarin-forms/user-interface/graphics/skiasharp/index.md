@@ -7,11 +7,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
 ms.openlocfilehash: 9cd5a25c598a25500aee595439aeecd648d50526
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61291142"
 ---
 # <a name="skiasharp-graphics-in-xamarinforms"></a>Xamarin.Forms 中的 SkiaSharp 圖形
 
@@ -25,7 +25,7 @@ SkiaSharp 是.NET 和 C# 由 Google 產品中廣泛使用的開放原始碼 Skia
 
 > [!VIDEO https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms/player]
 
-**適用於 Xamarin.Forms 的網路研討會： SkiaSharp**
+**網路研討會：適用於 Xamarin.Forms SkiaSharp**
 
 ## <a name="skiasharp-preliminaries"></a>SkiaSharp 準備工作
 

@@ -1,5 +1,5 @@
 ---
-title: 使用 iOS 設計工具中的自訂控制項
+title: 搭配 iOS 設計工具使用自訂控制項
 description: 本文件說明如何建立自訂控制項，並將它與 Xamarin 設計工具，適用於 iOS。 它會顯示如何將控制項設為 iOS 設計工具的工具箱中可用、 實作控制項，讓它正確轉譯，以及設計時間，以及更多。
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
 ms.openlocfilehash: 98504c9d5f210d55a2be4c85c52d4bc1418fc223
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58070822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61154363"
 ---
-# <a name="using-custom-controls-with-the-ios-designer"></a>使用 iOS 設計工具中的自訂控制項
+# <a name="using-custom-controls-with-the-ios-designer"></a>搭配 iOS 設計工具使用自訂控制項
 
 ## <a name="requirements"></a>需求
 

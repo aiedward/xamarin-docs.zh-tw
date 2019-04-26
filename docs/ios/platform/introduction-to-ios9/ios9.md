@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: 6ade1c05c8e1cc64a4d24df1284d86175083ab80
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119843"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61293640"
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 相容性
 
@@ -72,15 +72,15 @@ public YourCellClassName (CGRect frame) : base (frame)
 }
 ```
 
-相關範例： [MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)， [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
+相關的範例：[MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)， [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
 
 
 
 ### <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>UIView 無法與 coder init Xib/Nib 從載入檢視時
 
-**原因：** `initWithCoder:`建構函式是從介面產生器 Xib 檔案載入檢視時呼叫。 如果這個建構函式不會匯出未受管理的程式碼無法呼叫我們 managed 的版本。 之前 （例如。 在 iOS 8)`IntPtr`建構函式已叫用來初始化檢視。
+**原因：**`initWithCoder:`建構函式是從介面產生器 Xib 檔案載入檢視時呼叫。 如果這個建構函式不會匯出未受管理的程式碼無法呼叫我們 managed 的版本。 之前 （例如。 在 iOS 8)`IntPtr`建構函式已叫用來初始化檢視。
 
-**修正：** 建立及匯出`initWithCoder:`建構函式如下：
+**修正：** 建立和匯出`initWithCoder:`建構函式如下：
 
 ```csharp
 [Export ("initWithCoder:")]
@@ -90,7 +90,7 @@ public YourClassName (NSCoder coder) : base (coder)
 }
 ```
 
-相關的範例：[對談](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
+相關的範例：[Chat](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
 
 
 ### <a name="dyld-message-no-cache-image-with-name"></a>Dyld 訊息： 沒有快取映像名稱...
@@ -102,7 +102,7 @@ Dyld Error Message:
 Dyld Message: no cache image with name (/System/Library/PrivateFrameworks/JavaScriptCore.framework/JavaScriptCore)
 ```
 
-**原因：** 這是 Apple 的原生連結器，當他們完成的私用的架構公用發生這種情況中的 bug （JavaScriptCore 已公開在 iOS 7，之前它是私用的架構），而應用程式的部署目標為 iOS 版本時framework 是私人的。 在此情況下 Apple 的連結器會使用私用的版本，而不是公用版本的 framework 的連結。
+**原因：** 這是 Apple 的原生連結器，當他們完成的私用的架構公用發生這種情況中的 bug （JavaScriptCore 已公開在 iOS 7，之前它是私用的架構），和私用架構時，應用程式的部署目標是 iOS 版本。 在此情況下 Apple 的連結器會使用私用的版本，而不是公用版本的 framework 的連結。
 
 **修正：** 將會解決此問題適用於 iOS 9，但同時套用自行輕鬆因應措施： 只為目標的更新版本的 iOS 版本專案中 （您在此情況下可以嘗試 iOS 7）。 其他架構可能會表現出類似的問題，例如 WebKit 架構已在 iOS 8 中公開 （和以 iOS 7 為目標時，會導致此錯誤，因此您應該為目標 iOS 8 應用程式中使用 WebKit）。
 

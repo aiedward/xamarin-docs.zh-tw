@@ -6,11 +6,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/15/2018
 ms.openlocfilehash: 6917267896cff796af4e5cff095720eaeccc7652
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61215530"
 ---
 # <a name="net-embedding-on-android"></a>內嵌在 Android 上的.NET
 
@@ -75,7 +75,7 @@ ms.locfileid: "57671160"
 
 2.  安裝[Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/)。
 
-3.  找出**Embeddinator 4000.exe**並加入**mono**至您的路徑。 例如: 
+3.  找出**Embeddinator 4000.exe**並加入**mono**至您的路徑。 例如：
 
     ```bash
     export TOOLS=~/.nuget/packages/embeddinator-4000/0.4.0/tools

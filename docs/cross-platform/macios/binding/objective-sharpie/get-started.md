@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
 ms.openlocfilehash: c1831467ca0cbb4329a1e77fb355698f2d16cd6a
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670112"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61199776"
 ---
 # <a name="getting-started-with-objective-sharpie"></a>Getting Started With 目標 Sharpie
 
@@ -47,7 +47,7 @@ ms.locfileid: "57670112"
 > [!IMPORTANT]
 > 目標 Sharpie 隨附於**主要**適當使用方式的規則： 您必須完全將它傳遞正確的 clang 編譯器命令列引數以確保正確剖析。 這是因為剖析階段目標 Sharpie 的簡單工具[對 clang libtooling API 實作](http://clang.llvm.org/docs/LibTooling.html)。
 
-這表示目標 Sharpie Clang （實際上會編譯的原生程式庫，您將繫結的 C/目標-C/c + + 編譯器） 和所有其內部知識的繫結的標頭檔的完整功能。
+也就是說，目標 Sharpie Clang 的完整功能 (C/Objective C /C++您將繫結的編譯器，實際上會編譯原生程式庫) 和所有其內部知識的繫結的標頭檔。
 而不是轉譯之已剖析[AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree)物件的程式碼，目標 Sharpie 轉譯至 ASTC#繫結 」 建立 「 適用於輸入至`bmac`並`btouch`Xamarin 繫結工具。
 
 如果目標 Sharpie 錯誤出在剖析期間，就表示發生錯誤時該 clang 其剖析階段嘗試建構 AST，而且您需要找出原因。

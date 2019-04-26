@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: 26aeaa3d230a5c104014edd899b8d9231ced31e9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108518"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61430047"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中統一的分鏡腳本
 
@@ -118,7 +118,7 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 |--- |--- |
 |`HorizontalSizeClass`|壓縮|
 |`VerticalSizeClass`|Regular|
-|`UserInterfaceIdom`|電話|
+|`UserInterfaceIdom`|Phone|
 |`DisplayScale`|2.0|
 
 上述的設定會代表完整限定特性集合，因為它具有所有其特性屬性的值。
@@ -264,7 +264,7 @@ Apple 對 iOS 8 的另一項變更是，開發人員會顯示檢視控制器的�
 
  [![](unified-storyboards-images/gettargetforaction.png "新的 GetTargetForAction 方法")](unified-storyboards-images/gettargetforaction.png#lightbox)
 
-這個方法會逐步引導的階層鏈結，直到找到正確的容器檢視控制器。 例如: 
+這個方法會逐步引導的階層鏈結，直到找到正確的容器檢視控制器。 例如：
 
 1.  如果`ShowViewController`呼叫方法時，第一個檢視控制器會實作這個方法鏈結中，瀏覽控制器，它正做為新檢視的父系。
 1.  如果`ShowDetailViewController`改為呼叫方法，分割檢視控制器是第一個檢視控制器以進行實作，所以它會使用與父代。
@@ -300,7 +300,7 @@ Apple 對 iOS 8 的另一項變更是，開發人員會顯示檢視控制器的�
 
  [![](unified-storyboards-images/rotation.png "分割檢視控制器會顯示這兩個主要和詳細資料檢視，如下所示")](unified-storyboards-images/rotation.png#lightbox)
 
-這可以藉由覆寫`UpdateConstraintsForTraitCollection`的檢視控制器，並調整條件約束的方法為基礎的值`VerticalSizeClass`。 例如: 
+這可以藉由覆寫`UpdateConstraintsForTraitCollection`的檢視控制器，並調整條件約束的方法為基礎的值`VerticalSizeClass`。 例如：
 
 ```csharp
 public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
@@ -552,7 +552,7 @@ public override void ViewDidLoad ()
 
 仔細看看調適性的相片應用程式，若要查看的各種方式的大小類別，可用來輕鬆建立在 Xamarin.iOS 中的 整合的應用程式特性集合和調適性的檢視控制器。
 
-## <a name="unified-storyboards"></a>統一的分鏡腳本
+## <a name="unified-storyboards"></a>整合的 Storyboard
 
 新增至 iOS 8、 統一的分鏡腳本可讓開發人員建立一個，統一的分鏡腳本檔案可以顯示在 iPhone 和 iPad 裝置上，將目標設為多個大小類別。 藉由使用統一的分鏡腳本，開發人員撰寫較少 UI 特定的程式碼，並具有建立和維護的只有一個介面設計。
 
@@ -625,7 +625,7 @@ IOS 設計工具將會確認開發人員想要轉換的使用大小類別將分�
 
 ### <a name="adaptive-segue-types"></a>自適性 Segue 類型
 
-如果開發人員已使用分鏡腳本，則將其與現有的 segue 類型的熟悉**推播**，**強制回應**並**Popover**。 統一的分鏡腳本檔案上啟用大小類別時, 都會提供下列自適性 Segue 類型 （對應至新的檢視控制器 API 上面所討論）：**顯示**並**顯示詳細資料**.
+如果開發人員已使用分鏡腳本，則將其與現有的 segue 類型的熟悉**推播**，**強制回應**並**Popover**。 當統一的分鏡腳本檔案上啟用大小類別時，都可使用下列自適性 Segue 類型 （對應至新的檢視控制器 API 上面所討論）：**顯示**並**顯示詳細資料**。
 
 > [!IMPORTANT]
 > 啟用大小類別時，任何現有的 segue 會轉換成新的類型。

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
 ms.openlocfilehash: 786f1503fcc0cc07f76a7cdc55731d341607429f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61331093"
 ---
 # <a name="authenticating-users-with-an-identity-provider"></a>使用身分識別提供者驗證使用者
 

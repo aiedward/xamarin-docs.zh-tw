@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
 ms.openlocfilehash: d460bf867ce09e614be76d0a4a7ffef01420cf82
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669475"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61266501"
 ---
 # <a name="binding-types-reference-guide"></a>繫結型別參考指南
 
@@ -327,7 +327,7 @@ interface FooObject {
 
 當這個屬性會套用至類別時就會產生靜態類別，其中不是衍生自`NSObject`，因此[ `[BaseType]` ](#BaseTypeAttribute)屬性會被忽略。 靜態類別用來裝載您想要公開 （expose） 的 C 公用變數。
 
-例如: 
+例如：
 
 ```csharp
 [Static]
@@ -906,7 +906,7 @@ CAScroll? [] GetScrollModes (CGRect [] rects) { ... }
 
 當用於方法或屬性，則程式`[Bind]`屬性是要產生方法叫用指定的選取器。 但結果產生的方法不使用裝飾[ `[Export]` ](#ExportAttribute)屬性，這表示，它不能參與方法覆寫。 這通常用於搭配`[Target]`實作 Objective C 的擴充方法的屬性。
 
-例如: 
+例如：
 
 ```csharp
 public interface UIView {
@@ -1017,7 +1017,7 @@ Task<string> UploadAsync (string file);
 
 由於`Dispose`方法會自動產生`bmac-native`並`btouch-native`工具，您需要使用`[Dispose]`插入所產生的一些程式碼的屬性`Dispose`方法實作。
 
-例如: 
+例如：
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -1456,7 +1456,7 @@ var strongDemo = new Demo ();
 demo.Delegate = new MyDelegate ();
 ```
 
-另一個使用`[Wrap]`屬性是為了支援強型別版本的方法。  例如: 
+另一個使用`[Wrap]`屬性是為了支援強型別版本的方法。  例如：
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -1821,7 +1821,7 @@ public class LinkWithAttribute : Attribute {
 
 #### <a name="linkwithattributeiscxx"></a>LinkWithAttribute.IsCxx
 
-設定此屬性設定為 true，如果產生的可執行檔必須使用 c + + 編譯器，而不預設值，也就是 C 編譯器進行編譯。 如果您要繫結的程式庫以 c + + 撰寫，請使用此選項。
+設定此屬性設定為 true，如果產生的可執行檔需要重新編譯使用C++而不是預設值，也就是 C 編譯器的編譯器。 如果您要繫結的程式庫以撰寫使用此C++。
 
 #### <a name="linkwithattributelibraryname"></a>LinkWithAttribute.LibraryName
 
@@ -1954,7 +1954,7 @@ interface MyBinding {
 
 這個屬性會採用一個參數，包含用來存取在字典上的項目之索引鍵的類別名稱。   預設屬性的介面中每一個屬性會查詢中指定的型別名稱後置詞 「 金鑰 」 的成員。
 
-例如: 
+例如：
 
 ```csharp
 [StrongDictionary ("MyOptionKeys")]

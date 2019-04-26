@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 015c1e315b6070777542a8f8c5871c00cf336b5c
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527062"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61236113"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>建立 xamarin.mac 的自訂控制項
 
@@ -183,7 +183,7 @@ private void Initialize() {
 }
 ```
 
-從每個控制項的建構函式，以確保已正確設定控制項，會呼叫這個方法。 例如: 
+從每個控制項的建構函式，以確保已正確設定控制項，會呼叫這個方法。 例如：
 
 ```csharp
 public NSFlipSwitch (IntPtr handle) : base (handle)
@@ -212,7 +212,7 @@ public override void DrawRect (CGRect dirtyRect)
 
 ### <a name="responding-to-user-input"></a>回應使用者輸入
 
-有兩種基本方式，我們可以加入自訂控制項的使用者輸入：**處理常式以覆寫滑鼠**或是**筆勢辨識器**。 我們使用，哪一種方法會根據我們的控制項所需的功能。
+有兩種基本方式，我們可以加入自訂控制項的使用者輸入：**覆寫處理常式的滑鼠**或是**筆勢辨識器**。 我們使用，哪一種方法會根據我們的控制項所需的功能。
 
 > [!IMPORTANT]
 > 對於您所建立的任何自訂控制項，您應該使用**覆寫方法**_或是_**筆勢辨識器**，但不可兩者同時它們可以彼此衝突的時間。

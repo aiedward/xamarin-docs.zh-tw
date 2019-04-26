@@ -1,5 +1,5 @@
 ---
-title: 可以更新 Xamarin.Forms 預設範本至較新的 NuGet 套件嗎？
+title: 我可以將 Xamarin.Forms 預設範本更新為較新的 NuGet 套件嗎？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 160FBE13-26EB-4B4F-9248-A5CBE58FDD7F
@@ -8,13 +8,13 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
 ms.openlocfilehash: e439d39dd8591cad14485e64aabab2d6016a8e27
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61345905"
 ---
-# <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-package"></a>可以更新 Xamarin.Forms 預設範本至較新的 NuGet 套件嗎？
+# <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-package"></a>我可以將 Xamarin.Forms 預設範本更新為較新的 NuGet 套件嗎？
 
 本指南使用 Xamarin.Forms.NET Standard 程式庫範本做為範例，但相同的一般方法也適用於 Xamarin.Forms 共用專案範本。 本指南以 Xamarin.Forms 1.5.1.6471 至 2.1.0.6529，從更新的範例，但相同的步驟都可以將其他版本設定為預設值。
 
@@ -31,7 +31,7 @@ ms.locfileid: "57668221"
 
     範例： `<package id="Xamarin.Forms" version="1.5.1.6471" />` -> `<package id="Xamarin.Forms" version="2.1.0.6529" />`
 
-4.  變更主要的 「 名稱 」 項目[多專案範本檔案](https://msdn.microsoft.com/library/ms185308.aspx)(`Xamarin.Forms.PCL.vstemplate`) 使其成為唯一。 例如: 
+4.  變更主要的 「 名稱 」 項目[多專案範本檔案](https://msdn.microsoft.com/library/ms185308.aspx)(`Xamarin.Forms.PCL.vstemplate`) 使其成為唯一。 例如：
     > <Name>空白應用程式 （Xamarin.Forms 可攜式）-2.1.0.6529</Name>
 
 5.  重新壓縮整個範本資料夾。 請務必符合的原始的檔案結構`.zip`檔案。 `Xamarin.Forms.PCL.vstemplate`檔案應該在頂端`.zip`不在任何資料夾內的檔案。

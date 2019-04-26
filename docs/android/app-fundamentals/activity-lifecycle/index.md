@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
 ms.openlocfilehash: 3592a3027469cb9997d973db53d636ddea9e679d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110880"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61024239"
 ---
 # <a name="activity-lifecycle"></a>活動開發週期
 
@@ -187,7 +187,7 @@ public void OnPause()
 
 `OnStop` 可能不一定會呼叫在記憶體不足的情況下，當 Android 會耗盡資源及無法正確背景活動等。 基於這個理由，最好是不依賴`OnStop`取得解構準備活動時呼叫。 下一步 的生命週期方法可能被呼叫之後這`OnDestroy`如果活動即將消失，或`OnRestart`如果活動會回到與使用者互動。
 
-#### <a name="ondestroy"></a>onDestroy
+#### <a name="ondestroy"></a>OnDestroy
 
 [Editorwindow](https://developer.xamarin.com/api/member/Android.App.Activity.OnDestroy/)是它已損毀，並從記憶體中完全移除之前，會將活動執行個體呼叫的最後一個方法。 在極端情況下，Android 可能會終止裝載活動，這會導致應用程式處理序`OnDestroy`不叫用。 大部分的活動不會實作這個方法，因為大部分清除，而且已完成關機`OnPause`和`OnStop`方法。 `OnDestroy`通常會覆寫方法以清除 長時間在執行資源可能會流失資源。 這個範例可能是已在中啟動的背景執行緒`OnCreate`。
 

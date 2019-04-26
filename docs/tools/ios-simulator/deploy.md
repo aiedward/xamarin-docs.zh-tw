@@ -8,11 +8,11 @@ ms.author: crdun
 ms.custom: video
 ms.date: 08/08/2018
 ms.openlocfilehash: febfb017e963ce795aa7e6ab8cf9fdb44cc2afb4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61386413"
 ---
 # <a name="deploy-to-the-remoted-ios-simulator"></a>部署至遠端 iOS 模擬器
 

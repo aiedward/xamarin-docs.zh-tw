@@ -10,11 +10,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 5c3daf04c08e2109c46b24c198fef8e71fac2f3d
-ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "58854986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61262841"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>將資料儲存在本機的 SQLite.NET 資料庫
 

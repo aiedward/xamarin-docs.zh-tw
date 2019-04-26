@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: b853bd3bc55a2d4cb613a9f0079aebae9f57027b
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61357014"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>在 Xamarin.iOS 中 NSUserActivity 搜尋
 
@@ -96,7 +96,7 @@ activity.BecomeCurrent();
 
 ## <a name="responding-to-an-activity"></a>回應活動
 
-若要回應使用者點選的搜尋結果 (`NSUserActivity`)，在我們的應用程式中，編輯**AppDelegate.cs**檔案，並覆寫`ContinueUserActivity`方法。 例如: 
+若要回應使用者點選的搜尋結果 (`NSUserActivity`)，在我們的應用程式中，編輯**AppDelegate.cs**檔案，並覆寫`ContinueUserActivity`方法。 例如：
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)

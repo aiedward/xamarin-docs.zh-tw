@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/07/2017
 ms.openlocfilehash: 7e895dc2865880ec2789a40f8cdf047a20f8693b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111034"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61400276"
 ---
 # <a name="sirikit-updates-in-ios-11"></a>IOS 11 中 SiriKit 更新
 
@@ -118,7 +118,7 @@ SiriKit iOS 11 中的新增這些新的和更新的意圖網域：
 
 1. 以滑鼠右鍵按一下您的方案，然後選擇 **新增 > 新增專案...**.
 2. 選擇**iOS > 擴充功能 > Intents 延伸模組**範本。
-3. 將新增兩個新的專案： 意圖和 IntentUI。 自訂 UI 是選擇性的所以此範例只包含程式碼中的**意圖**專案。
+3. 將新增兩個新的專案：意圖和 IntentUI。 自訂 UI 是選擇性的所以此範例只包含程式碼中的**意圖**專案。
 
 擴充功能專案是所有 SiriKit 要求將會都處理。 做為個別的擴充功能，它會自動沒有與主要的應用程式 – 這通常會解決藉由實作使用應用程式群組共用的檔案儲存體通訊的任何方法。
 
@@ -217,7 +217,7 @@ public void HandleCreateTaskList(INCreateTaskListIntent intent, Action<INCreateT
 
 ### <a name="nsinternalinconsistencyexception"></a>NSInternalInconsistencyException
 
-_OBJECTIVE-C 擲回例外狀況。名稱： NSInternalInconsistencyException 原因： 這個類別的用法 < INPreferences: 0x60400082ff00 > 從應用程式需要權利 com.apple.developer.siri。您並未啟用 Siri 功能在您的 Xcode 專案嗎？_
+_OBJECTIVE-C 擲回例外狀況。名稱：NSInternalInconsistencyException 原因：這個類別的用法 < INPreferences:0x60400082ff00 > 從應用程式需要權利 com.apple.developer.siri。您並未啟用 Siri 功能在您的 Xcode 專案嗎？_
 
 - SiriKit 已在核**Entitlements.plist**。
 - **Entitlements.plist**中設定**專案選項 > 建置 > iOS 套件組合簽署**。

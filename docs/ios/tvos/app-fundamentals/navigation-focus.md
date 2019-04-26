@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 3cb8d1c1d92146e70056c6cf562f2fa1cb028e7c
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61416407"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>使用 tvOS 導覽和焦點在 Xamarin 中
 
@@ -92,7 +92,7 @@ public class myView : UIView
 }
 ```
 
-您可以隨時使用`Focused`屬性`UIKit`控制項，以查看它是否目前的項目。 如果`true`UI 項目目前擁有焦點，否則它並不會。 例如: 
+您可以隨時使用`Focused`屬性`UIKit`控制項，以查看它是否目前的項目。 如果`true`UI 項目目前擁有焦點，否則它並不會。 例如：
 
 ```csharp
 // Is my view in focus?
@@ -208,7 +208,7 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 
 首先，此程式碼取得的`NextFocusedView`從`UIFocusUpdateContext`中，已傳遞 (`context`)。 如果此檢視是`null`，然後不需要任何處理，並結束方法。
 
-接下來，`nextFocusableItem`評估。 如果符合其中一個**更多資訊**或是**購買**按鈕，焦點會傳送至使用焦點指南中的 [相對] 按鈕`PreferredFocusedView`屬性。 例如: 
+接下來，`nextFocusableItem`評估。 如果符合其中一個**更多資訊**或是**購買**按鈕，焦點會傳送至使用焦點指南中的 [相對] 按鈕`PreferredFocusedView`屬性。 例如：
 
 ```csharp
 // Move from the More Info to Buy button
@@ -226,7 +226,7 @@ FocusGuide.PreferredFocusedView = null;
 
 ### <a name="working-with-focus-in-collections"></a>使用集合中的焦點
 
-決定是否為個別項目可以可設定焦點中時`UICollectionView`或是`UITableView`，您將會覆寫的方法`UICollectionViewDelegate`或`UITableViewDelegate`分別。 例如: 
+決定是否為個別項目可以可設定焦點中時`UICollectionView`或是`UITableView`，您將會覆寫的方法`UICollectionViewDelegate`或`UITableViewDelegate`分別。 例如：
 
 ```csharp
 public class CardHandDelegate : UICollectionViewDelegateFlowLayout

@@ -6,11 +6,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
 ms.openlocfilehash: 5f157f2bbf36076e542a5f96b912cb1788a99052
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61269316"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF 和。Xamarin.Forms App 生命週期
 

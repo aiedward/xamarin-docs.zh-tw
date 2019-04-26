@@ -6,11 +6,11 @@ author: mikeparker104
 ms.author: miparker
 ms.date: 12/17/2018
 ms.openlocfilehash: a235a24d544e938d4bf29e6569564aface2f6972
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58866380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61275564"
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>使用 C /C++程式庫與 Xamarin
 
@@ -479,7 +479,7 @@ Android 與 iOS 之間，將原生程式庫新增至包裝函式解決方案的�
 1.  **CONTROL + 按一下**方案**MathFuncs**，然後選擇**新增方案資料夾**從**新增**功能表將它命名為**SolutionItems**.
 2.  **CONTROL + 按一下**上**SolutionItems**資料夾，然後選擇 **新檔...** 從**新增**功能表。
 3.  選擇**空白的 XML 檔案**從**新的檔案**視窗中，其命名為**MathFuncs.nuspec**然後按一下**新增**。
-4.  更新**MathFuncs.nuspec**要顯示的基本封裝中繼資料**NuGet**取用者。 例如：
+4.  更新**MathFuncs.nuspec**要顯示的基本封裝中繼資料**NuGet**取用者。 例如: 
 
 
     ```xml
@@ -588,7 +588,7 @@ NuGet 摘要的最簡單形式是本機目錄：
 
 1.  設定**組建組態**要**發行**，並執行組建，使用**COMMAND + B**。
 2.  開啟**終端機**並將目錄變更為包含的資料夾**nuspec**檔案。
-3.  在 **終端機**，執行**nuget 套件**命令，並指定**nuspec**檔案，**版本**(例如，1.0.0)，和**OutputDirectory**使用中建立的資料夾[上一個步驟](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed)，也就是**本機 nuget 摘要**。 例如：
+3.  在 **終端機**，執行**nuget 套件**命令，並指定**nuspec**檔案，**版本**(例如，1.0.0)，和**OutputDirectory**使用中建立的資料夾[上一個步驟](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed)，也就是**本機 nuget 摘要**。 例如: 
 
     ```bash
     nuget pack MathFuncs.nuspec -Version 1.0.0 -OutputDirectory ~/local-nuget-feed

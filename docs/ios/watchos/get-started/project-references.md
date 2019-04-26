@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
 ms.openlocfilehash: c900ab714fed2bb1e02367ba39ad3c5a0a76121e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61408309"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>watchOS 在 Xamarin 中的專案參考
 

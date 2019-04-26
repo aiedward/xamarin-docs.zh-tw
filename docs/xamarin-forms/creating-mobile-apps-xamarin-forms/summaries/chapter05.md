@@ -1,6 +1,6 @@
 ---
 title: 第 5 章的摘要。 因應大小
-description: 使用 Xamarin.Forms 建立行動應用程式： 第 5 章的摘要。 因應大小
+description: 使用 Xamarin.Forms 建立行動應用程式：第 5 章的摘要。 因應大小
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: fd6694de756938ff564bed0923427fe62153116a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334309"
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>第 5 章的摘要。 因應大小
 
@@ -80,7 +80,7 @@ Windows 手機和行動裝置也建立了表示幾近 160 英吋的裝置獨立�
 
 ## <a name="accessibility-issues"></a>協助工具問題
 
-**EstimatedFontSize**計劃和**FitToSizeClock**程式，這兩個包含不易察覺的問題： 如果使用者變更手機上的協助工具設定，在 Android 或 Windows 10 行動裝置，不會再執行程式可以估計大小呈現文字的字型大小為基礎。 [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest)範例會示範此問題。
+**EstimatedFontSize**計劃並**FitToSizeClock**程式，這兩個包含不易察覺的問題：如果使用者變更手機上的協助工具設定，在 Android 或 Windows 10 行動裝置上，程式不再可以估計大小呈現文字字型大小為基礎。 [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest)範例會示範此問題。
 
 ## <a name="empirically-fitting-text"></a>廣為人知調整文字
 

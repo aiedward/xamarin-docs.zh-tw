@@ -1,6 +1,6 @@
 ---
 title: 驗證 Web 服務的存取權
-description: 本指南說明如何整合到 Xamarin.Forms 應用程式，讓使用者共用在只具有自己的資料存取時的後端驗證服務。
+description: 本指南說明如何將驗證服務整合至 Xamarin.Forms 應用程式，讓使用者可以共用的後端，只有同時存取他們自己的資料。
 ms.prod: xamarin
 ms.assetid: E6FCFAE1-4F83-4F93-9190-EC5290360C54
 ms.technology: xamarin-forms
@@ -8,35 +8,35 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
 ms.openlocfilehash: d598a9b3de31ea6823530f911c3544bf3cebb37f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61331178"
 ---
 # <a name="authenticating-access-to-web-services"></a>驗證 Web 服務的存取權
 
-_本指南說明如何整合到 Xamarin.Forms 應用程式，讓使用者共用在只具有自己的資料存取時的後端驗證服務。涵蓋的主題包括使用基本驗證搭配 REST 服務，使用 Xamarin.Auth 元件驗證 OAuth 身分識別提供者，以及使用內建的驗證機制所提供不同的提供者。_
+_本指南說明如何將驗證服務整合至 Xamarin.Forms 應用程式，讓使用者可以共用的後端，只有同時存取他們自己的資料。涵蓋的主題包括使用基本驗證搭配 REST 服務，使用 Xamarin.Auth 元件驗證 OAuth 識別提供者，並使用內建的驗證機制不同的提供者所提供。_
 
-## <a name="authenticating-a-restful-web-servicerestmd"></a>[驗證 RESTful Web 服務](rest.md)
+## <a name="authenticating-a-restful-web-servicerestmd"></a>[驗證的 RESTful Web 服務](rest.md)
 
-HTTP 支援使用數種驗證機制，來控制資源的存取權。 基本驗證有正確的認證這些用戶端提供資源的存取權。 這篇文章會示範如何使用基本驗證來保護 RESTful web 服務資源的存取權。
+HTTP 支援使用數種驗證機制，來控制資源存取權。 基本驗證會提供資源的存取權的用戶端具有正確的認證。 這篇文章會示範如何使用基本驗證保護 RESTful web 服務資源的存取權。
 
-## <a name="authenticating-users-with-an-identity-provideroauthmd"></a>[驗證使用者身分識別提供者](oauth.md)
+## <a name="authenticating-users-with-an-identity-provideroauthmd"></a>[使用身分識別提供者驗證使用者](oauth.md)
 
-Xamarin.Auth 是跨平台 SDK，以驗證使用者，並儲存他們的帳戶。 它包含可支援使用身分識別提供者，例如 Google、 Microsoft、 Facebook 和 Twitter OAuth 驗證器。 本文說明如何使用 Xamarin.Auth 管理驗證程序，在 Xamarin.Forms 應用程式。
+Xamarin.Auth 是跨平台 SDK，以驗證使用者，並儲存他們的帳戶。 它包含可支援使用身分識別提供者，例如 Google、 Microsoft、 Facebook 和 Twitter OAuth 驗證器。 這篇文章說明如何使用 Xamarin.Auth 管理驗證程序，在 Xamarin.Forms 應用程式。
 
-## <a name="authenticating-users-with-azure-mobile-appsazuremd"></a>[驗證使用者與 Azure 行動應用程式](azure.md)
+## <a name="authenticating-users-with-azure-mobile-appsazuremd"></a>[使用 Azure 行動應用程式驗證使用者](azure.md)
 
-Azure 行動應用程式會使用各種不同的外部識別提供者來支援應用程式使用者驗證和授權。 然後可以限制存取已驗證的使用者資料表上設定權限。 本文說明如何使用 Azure 行動應用程式來管理驗證程序，在 Xamarin.Forms 應用程式。
+Azure Mobile Apps 會使用各種外部識別提供者來支援驗證與授權應用程式使用者。 然後可以限制只有經過驗證的使用者存取資料表上設定權限。 這篇文章說明如何使用 Azure Mobile Apps 管理驗證程序，在 Xamarin.Forms 應用程式。
 
-## <a name="authenticating-users-with-azure-active-directory-b2cazure-ad-b2cmd"></a>[驗證使用者與 Azure Active Directory B2C](azure-ad-b2c.md)
+## <a name="authenticating-users-with-azure-active-directory-b2cazure-ad-b2cmd"></a>[使用 Azure Active Directory B2C 驗證使用者](azure-ad-b2c.md)
 
-Azure Active Directory B2C 是消費者導向 web 與行動應用程式的雲端識別身分管理解決方案。 本文示範如何使用 Microsoft 驗證程式庫 (MSAL) 和 Azure Active Directory B2C 取用者身分識別管理整合 Xamarin.Forms 應用程式。
+Azure Active Directory B2C 是取用者導向 web 與行動應用程式的雲端身分識別管理解決方案。 這篇文章會示範如何使用 Microsoft Authentication Library (MSAL) 和 Azure Active Directory B2C 來取用者身分識別管理整合至 Xamarin.Forms 應用程式。
 
 ## <a name="integrating-azure-active-directory-b2c-with-azure-mobile-appsazure-ad-b2c-mobile-appmd"></a>[整合 Azure Active Directory B2C 與 Azure Mobile Apps](azure-ad-b2c-mobile-app.md)
 
-Azure Active Directory B2C 可以用來管理 Azure 行動應用程式的驗證工作流程。 使用此方法時，身分識別管理體驗完全在雲端中，定義，並可以修改而不需要變更您的行動應用程式程式碼。 本文示範如何使用 Azure Active Directory B2C xamarin.forms 提供驗證和授權 Azure 行動應用程式執行個體。
+Azure Active Directory B2C 可用來管理適用於 Azure Mobile Apps 的驗證工作流程。 使用此方法時，身分識別管理體驗在雲端中完整定義，並可以進行修改，而不需要變更您的行動應用程式程式碼。 這篇文章會示範如何使用 Azure Active Directory B2C 來提供驗證和授權的 Azure Mobile Apps 執行個體使用 Xamarin.Forms。
 
 ## <a name="related-links"></a>相關連結
 

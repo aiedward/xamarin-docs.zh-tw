@@ -9,11 +9,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
 ms.openlocfilehash: 92c068ceb3d382ed4612318dc987d950ec7e7ef2
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61327451"
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>從 Azure Mobile Apps 傳送推播通知
 

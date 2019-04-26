@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
 ms.openlocfilehash: b2a9e757e8a3407bbb19ae0580e5788eabe84cf0
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61188890"
 ---
 # <a name="understanding-sirikit-concepts"></a>了解 SiriKit 概念
 
@@ -65,33 +65,33 @@ MonkeyChat 會保留它自己連絡活頁簿的使用者的好友，每個畫面
 
 比方說，如果使用者想要將訊息傳送至其 friend Bobo，他們可能必須使用 Siri 下列交談：
 
-_使用者： 嗨 Siri，傳送 MonkeyChat 訊息。_<br />
-_Siri： 對象？_<br />
-_使用者： Bobo。_<br />
-_Siri： 項目是否要說出可以 Bobo？_<br />
-_使用者： 請傳送更多的 Bananas。_<br />
+_使用者：您好 Siri MonkeyChat 訊息傳送。_<br />
+_Siri:對象？_<br />
+_使用者：Bobo._<br />
+_Siri:說到 Bobo 什麼？_<br />
+_使用者：請傳送更多的 Bananas。_<br />
 
 另一個人可能會進行不同的交談使用相同的要求：
 
-_使用者： 會傳送訊息至 Bobo MonkeyChat 上。_<br />
-_Siri： 項目是否要說出可以 Bobo？_<br />
-_使用者： 請傳送更多的 bananas。_<br />
+_使用者：您可以傳送訊息至 Bobo MonkeyChat 上。_<br />
+_Siri:說到 Bobo 什麼？_<br />
+_使用者：請傳送更多的 bananas。_<br />
 
 然後另一位使用者可能會進行更短的要求：
 
-_使用者： MonkeyChat Bobo 請傳送更多的 bananas。_<br />
-_Siri： 好的傳送訊息請將更多的 bananas Bobo Monkeychat 上。_<br />
+_使用者：MonkeyChat Bobo 請傳送更多的 bananas。_<br />
+_Siri:好，傳送訊息請將更多的 bananas Bobo Monkeychat 上。_<br />
 
 或甚至在不同的語言中進行相同的要求：
 
-_使用者： MonkeyChat Bobo s'il vous plaît envoyer 加上 de bananes。_<br />
-_Siri: Oui、 envoi 訊息 s'il vous plaît envoyer 以及 de bananes 相對 Bobo sur Monkeychat。_<br />
+_使用者：MonkeyChat Bobo s'il vous plaît envoyer 加上 de bananes。_<br />
+_Siri:Oui、 envoi 訊息 s'il vous plaît envoyer 以及 de bananes 相對 Bobo sur Monkeychat。_<br />
 
 尚未另一位使用者可能很冗長，其交談中：
 
-_使用者： 嗨 Siri，可以您請我偏好和啟動 MonkeyChat 應用程式傳送訊息的文字，請傳送詳細 bananas。_<br />
-_Siri： 對象？_<br />
-_使用者： 我最佳 pal Bobo。_<br />
+_使用者：您好 Siri 可以您請我偏好和啟動 MonkeyChat 應用程式以傳送訊息的文字請傳送更多的 bananas。_<br />
+_Siri:對象？_<br />
+_使用者：我最好 pal Bobo。_<br />
 
 此外，還有許多 Siri 可能回應的要求，根據提出要求的部分的方式：
 
@@ -123,9 +123,9 @@ Siri 也會調整為符合使用者的協助工具需求，以及將互動和回
 
 指定上述資訊，請檢查下列交談如何互動 MonkeyChat 應用程式：
 
-_使用者： 嗨 Siri，傳送訊息至 Bobo MonkeyChat 上。_<br />
-_Siri： 項目是否要說出可以 Bobo？_<br />
-_使用者： 請傳送更多的 bananas。_<br />
+_使用者：您好 Siri 傳送訊息至 Bobo MonkeyChat 上。_<br />
+_Siri:說到 Bobo 什麼？_<br />
+_使用者：請傳送更多的 bananas。_<br />
 
 應用程式會在交談中的第一個角色是要協助了解使用者的語音的 Siri:
 
@@ -133,7 +133,7 @@ _使用者： 請傳送更多的 bananas。_<br />
 
 Siri 不具有名稱"Bobo 」 在其資料庫中，但應用程式，並已透過其詞彙 Siri 與共用這項資訊。 應用程式也可協助辨識 Bobo 的收件者，因為它指定它們為 Siri Siri*連絡人*。
 
-Siri 知道更多，就需要傳送比只是收件者的訊息，因此它會快速檢查以查看訊息是否需要內容的應用程式擴充功能。 詢問使用者因為 MonkeyChat 的話，會回應 Siri: *"什麼下達 Bobo？ 」*
+Siri 知道更多，就需要傳送比只是收件者的訊息，因此它會快速檢查以查看訊息是否需要內容的應用程式擴充功能。 因為 MonkeyChat 當然 Siri 會回應問題的使用者：*「 什麼下達 Bobo？ 」*
 
 在上述範例中，已回應的使用者， *「 請傳送更多的 bananas"*，其中 Siri 會結合到結構化**意圖**:
 
@@ -290,7 +290,7 @@ Intents UI 延伸模組將一律顯示以及其他 Siri 內容，例如應用程
 
 有數個部分詞彙`AppIntentVocabulary.plist`檔案：
 
-- **範例應用程式會使用**-這些使用者可以進行應用程式的要求提供一組的常見使用案例。 例如： *"啟動了與 MonkeyFit。 」*
+- **範例應用程式會使用**-這些使用者可以進行應用程式的要求提供一組的常見使用案例。 例如：*「 啟動了與 MonkeyFit。 」*
 - **參數**-這些提供一組特定的應用程式的非標準的參數型別。 比方說，健身名稱 MonkeyFit 應用程式。 這些包含：
     - **片語**-可讓應用程式定義的應用程式的唯一字詞。 比方說: 「 Bananarific"健身類型 MonkeyFit 應用程式。 
     - **發音**-讓 Siri 為簡單的語音拼法的特定片語發音提示。 例如，"ba nana ri fic"。
@@ -403,7 +403,7 @@ Intents framework 不僅止於只使用 Siri 整合，並提供其他功能，�
 
 看到應用程式時有問題的單一值，處理此作業的慣用的方法是有 Siri 要求使用者確認。 比方說， *」 嗎 Bobo 太好了嗎？ 」*，其中它們可以使用簡單的是或否回應回覆。
 
-當有數個可能的選項可能是正確的單一值的情況下，去除混淆是慣用的處理方法。 在此情況下使用 Siri 可以提示具有最多十個可能的選項，可從中選擇的使用者。 例如: 
+當有數個可能的選項可能是正確的單一值的情況下，去除混淆是慣用的處理方法。 在此情況下使用 Siri 可以提示具有最多十個可能的選項，可從中選擇的使用者。 例如：
 
 ```csharp
 Who do you want to send the message to?

@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
 ms.openlocfilehash: 115d715214d7af3174c41d9d82e894ce429dab42
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60953340"
 ---
 # <a name="limitations"></a>限制
 
@@ -158,6 +158,6 @@ Java 繫結的泛型支援僅限於。 特別是，一般的執行個體類別�
 
 - [Android 可呼叫包裝函式](~/android/platform/java-integration/android-callable-wrappers.md)
 - [使用 JNI](~/android/platform/java-integration/working-with-jni.md)
-- [Exportattribute 標記](https://developer.xamarin.com/api/type/Java.Interop.ExportAttribute/)
-- [超](https://developer.xamarin.com/api/property/Java.Interop.ExportAttribute.SuperArgumentsString/)
+- [ExportAttribute](https://developer.xamarin.com/api/type/Java.Interop.ExportAttribute/)
+- [SuperString](https://developer.xamarin.com/api/property/Java.Interop.ExportAttribute.SuperArgumentsString/)
 - [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/21/2017
 ms.openlocfilehash: 245c0a61abd0f52e2dc611c0d5d39cb0bad49012
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61316956"
 ---
 # <a name="building-user-interfaces-with-xamarinios"></a>建置利用 Xamarin.iOS 的使用者介面
 

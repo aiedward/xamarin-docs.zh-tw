@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: a8b7fa53d3384821d028e4a88ba22071a17e5bd9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61311541"
 ---
 # <a name="viewpager-with-views"></a>使用檢視的 ViewPager
 
@@ -29,7 +29,7 @@ _ViewPager 是可讓您實作手勢導覽的佈局管理員。手勢導覽允許
 
 ## <a name="start-an-app-project"></a>啟動應用程式專案
 
-建立新的 Android 專案，稱為**TreePager** (請參閱[Hello，Android](~/android/get-started/hello-android/hello-android-quickstart.md)如需有關建立新的 Android 專案)。 接下來，啟動 [NuGet 套件管理員]。 (如需有關如何安裝 NuGet 套件的詳細資訊，請參閱 <<c0> [ 逐步解說： 在您的專案中包含 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough))。 尋找並安裝**Android 支援程式庫 v4**: 
+建立新的 Android 專案，稱為**TreePager** (請參閱[Hello，Android](~/android/get-started/hello-android/hello-android-quickstart.md)如需有關建立新的 Android 專案)。 接下來，啟動 [NuGet 套件管理員]。 (如需有關如何安裝 NuGet 套件的詳細資訊，請參閱[逐步解說：在專案中包含 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough))。 尋找並安裝**Android 支援程式庫 v4**: 
 
 [![在 NuGet 套件管理員中選取的螢幕擷取畫面的支援 v4 Nuget](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
 
@@ -341,7 +341,7 @@ public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
 
 
 
-### <a name="pagertitlestrip-variation"></a>PagerTitleStrip 變化
+### <a name="pagertitlestrip-variation"></a>PagerTitleStrip Variation
 
 `PagerTitleStrip` 非常類似`PagerTabStrip`不同之處在於`PagerTabStrip`加入目前選取的索引標籤的底線。您可以取代`PagerTabStrip`具有`PagerTitleStrip`以上述的版面配置和執行應用程式，一次，以查看其外觀與`PagerTitleStrip`: 
 

@@ -8,17 +8,17 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: 6a2b8c99156963ae167aecd29a618d0feeffbdc7
-ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56321125"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61228985"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>watchOS 在 Xamarin 中的影像控制項
 
 提供 watchOS [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage)控制項來顯示影像和簡單的動畫。 有些控制項也可以有背景影像 （例如按鈕、 群組和介面控制器）。
 
-![](image-images/image-walkway.png "Apple Watch 顯示圖片") ![](image-images/image-animation.png "Apple Watch 使用簡單的動畫")
+![](image-images/image-walkway.png "Apple Watch 顯示圖片") ![](image-images/image-animation.png "Apple Watch 的簡單動畫")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 若要將影像加入至監看式套件應用程式中使用資產目錄映像。

@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
 ms.openlocfilehash: 930614b2479d0edcdba74ed3f98a169491252c63
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54208913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61293820"
 ---
 # <a name="entry-input-method-editor-options-on-android"></a>在 Android 上的項目輸入法編輯器選項
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 此 Android 平台特定設定的輸入的法編輯器 (IME) 選項的螢幕小鍵盤[ `Entry` ](xref:Xamarin.Forms.Entry)。 這包括設定使用者的 [動作] 按鈕，在螢幕小鍵盤和與互動的角`Entry`。 它由在 XAML 中設定[ `Entry.ImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.ImeOptionsProperty)附加屬性的值[ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)列舉型別：
 

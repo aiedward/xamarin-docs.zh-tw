@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 6cb17ae0f60390564a8aa6bdb64ea612aae51b55
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61294926"
 ---
 # <a name="toolbars-in-xamarinmac"></a>Xamarin.Mac 中的工具列
 

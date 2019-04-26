@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: 5086724b565fb95274c4988ca1b6e4bb11064575
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61082236"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>針對在 Xamarin 中 watchos 3 多快速互動技術
 
@@ -179,7 +179,7 @@ Apple 已離開其由開發人員決定如何旋轉計數對應到正在更新�
 
 例如，任何下列控制項可能竊取數位皇冠的重點：
 
-- 選擇器
+- Picker
 - 滑桿
 - 捲動控制器
 

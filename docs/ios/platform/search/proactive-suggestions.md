@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 2ab0147f918b36dc47ef6eed7d9bf1b6295d9733
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870400"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61408156"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>在 Xamarin.iOS 中的主動式建議簡介
 
@@ -166,7 +166,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>還原活動
 
-若要回應使用者點選的搜尋結果 (`NSUserActivity`) 應用程式中，編輯**AppDelegate.cs**檔案，並覆寫`ContinueUserActivity`方法。 例如：
+若要回應使用者點選的搜尋結果 (`NSUserActivity`) 應用程式中，編輯**AppDelegate.cs**檔案，並覆寫`ContinueUserActivity`方法。 例如: 
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -503,7 +503,7 @@ Safari 會擷取符合下列結構描述屬性的任何網頁上的任何項目�
 - 應用程式可以取得主動式建議應用程式中。
 - 應用程式可以受益於增強的自動校正。
 
-新`TextContentType`在 iOS 10 中的文字欄位控制項的屬性可讓開發人員定義的語意的目的，使用者要在指定的欄位中輸入的值。 例如: 
+新`TextContentType`在 iOS 10 中的文字欄位控制項的屬性可讓開發人員定義的語意的目的，使用者要在指定的欄位中輸入的值。 例如：
 
 ```csharp
 var textField = new UITextField();

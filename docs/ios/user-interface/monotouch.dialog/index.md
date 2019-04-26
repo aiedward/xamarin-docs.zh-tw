@@ -8,11 +8,11 @@ ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
 ms.openlocfilehash: d5dda3cc22d91248cc31cc526e898a5eabbbefd0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61415385"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>適用於 Xamarin.iOS MonoTouch.Dialog 簡介
 
@@ -98,7 +98,7 @@ A *RootElement*是進入 DVC 之項目的最上層的容器。 它包含區段�
 
  [![](images/image2.png "如同一般資料表 區段中，它可以選擇性地可以頁首和頁尾，可以是文字或甚至是自訂檢視，如以下螢幕擷取畫面所示")](images/image2.png#lightbox)
 
-### <a name="element"></a>元素
+### <a name="element"></a>項目
 
 項目代表實際的資料格在資料表中。 MTD 會封裝與各種不同的項目代表不同的資料類型或不同的輸入。 例如，下列螢幕擷取畫面說明幾個可用的項目：
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 8ad742607e506df436a5526d31621ac7636ac29b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61086986"
 ---
 # <a name="push-notifications-in-ios"></a>在 iOS 中的推播通知
 
@@ -22,7 +22,7 @@ ms.locfileid: "50110013"
 推播通知應該保持簡短，並且只會包含足夠的資料來通知它應該與伺服器應用程式取得更新的行動應用程式。 比方說，當新的電子郵件送達時，伺服器應用程式只會通知到達新的電子郵件的行動應用程式。 通知不會包含新的電子郵件本身。 行動應用程式會接著新的電子郵件從伺服器擷取適當時
 
 推播的中心是在 iOS 中的通知*Apple 推播通知閘道服務 (APNS)*。 這是負責從應用程式伺服器的路由通知到 iOS 裝置的 Apple 提供的服務。
-下圖顯示適用於 iOS 的推播通知拓樸： ![](remote-notifications-in-ios-images/image4.png "此映像說明適用於 iOS 的推播通知拓樸")
+下圖說明適用於 iOS 的推播通知拓撲：![](remote-notifications-in-ios-images/image4.png "此圖說明適用於 iOS 的推播通知拓樸")
 
 遠端通知本身是 JSON 格式化字串符合格式和通訊協定中指定[通知承載](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1)一節[本機和推播通知程式設計指南](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)中[iOS 開發人員文件](https://developer.apple.com/devcenter/ios/index.action)。
 
@@ -180,5 +180,5 @@ public override void FailedToRegisterForRemoteNotifications (UIApplication appli
 
 - [通知-示範本機及遠端通知 （範例）](https://developer.xamarin.com/samples/monotouch/Notifications/)
 - [本機和推播通知適用於開發人員](https://developer.apple.com/notifications/)
-- [Uiapplication #](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIApplication)
+- [UIApplication](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIApplication)
 - [UIRemoteNotificationType](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIRemoteNotificationType)

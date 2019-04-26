@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
 ms.openlocfilehash: 842fb1df2c9cc1aaf1a106687179a3730c2503bd
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "32436709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61041876"
 ---
 # <a name="android-controls-widgets"></a>Android 的控制項 (Widget)
 

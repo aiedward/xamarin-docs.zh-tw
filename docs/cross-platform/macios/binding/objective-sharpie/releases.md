@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
 ms.openlocfilehash: 03e4a5ac8906d2593cbdf3c15f6b2d1f4a2c6d19
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667253"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61199645"
 ---
 # <a name="objective-sharpie-release-history"></a>目標 Sharpie 版本歷程記錄
 
@@ -68,13 +68,13 @@ ms.locfileid: "57667253"
 
 [下載 v2.1.0](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-2.1.0.pkg)
 
-* [bxc#27849](https://bugzilla.xamarin.com/show_bug.cgi?id=27849):請確定`using ObjCRuntime;`時產生`ArgumentSemantic`用。
-* [bxc#27850](https://bugzilla.xamarin.com/show_bug.cgi?id=27850):請確定`using System.Runtime.InteropServices;`時產生`DllImport`用。
-* [bxc#27852](https://bugzilla.xamarin.com/show_bug.cgi?id=27852):預設值`DllImport`載入符號從`__Internal`。
-* [bxc#27848](https://bugzilla.xamarin.com/show_bug.cgi?id=27848):略過向前宣告 OBJECTIVE-C 容器宣告。
-* [bxc#27846](https://bugzilla.xamarin.com/show_bug.cgi?id=27846):繫結具有單一的限定性條件，做為具象介面的通訊協定類型 (`id<Foo>`作為`Foo`而不是`Foundation.NSObject<Foo>`)。
-* [bxc#28037](https://bugzilla.xamarin.com/show_bug.cgi?id=28037):繫結`UInt32`， `UInt64`，並`Int64`做為常值`Int32`若要卸除`u`及/或`uL`尾碼時的值可以安全地放入`Int32`。
-* [bxc#28038](https://bugzilla.xamarin.com/show_bug.cgi?id=28038):修正列舉名稱對應，當原始的原生名稱開頭為`k`前置詞。
+* [bxC#27849](https://bugzilla.xamarin.com/show_bug.cgi?id=27849):請確定`using ObjCRuntime;`時產生`ArgumentSemantic`用。
+* [bxC#27850](https://bugzilla.xamarin.com/show_bug.cgi?id=27850):請確定`using System.Runtime.InteropServices;`時產生`DllImport`用。
+* [bxC#27852](https://bugzilla.xamarin.com/show_bug.cgi?id=27852):預設值`DllImport`載入符號從`__Internal`。
+* [bxC#27848](https://bugzilla.xamarin.com/show_bug.cgi?id=27848):略過向前宣告 OBJECTIVE-C 容器宣告。
+* [bxC#27846](https://bugzilla.xamarin.com/show_bug.cgi?id=27846):繫結具有單一的限定性條件，做為具象介面的通訊協定類型 (`id<Foo>`作為`Foo`而不是`Foundation.NSObject<Foo>`)。
+* [bxC#28037](https://bugzilla.xamarin.com/show_bug.cgi?id=28037):繫結`UInt32`， `UInt64`，並`Int64`做為常值`Int32`若要卸除`u`及/或`uL`尾碼時的值可以安全地放入`Int32`。
+* [bxC#28038](https://bugzilla.xamarin.com/show_bug.cgi?id=28038):修正列舉名稱對應，當原始的原生名稱開頭為`k`前置詞。
 * `sizeof` C 運算式，其引數類型未對應到C#基本類型會於 Clang 中評估並繫結為整數常值，以避免產生不正確C#。
 * 修正 OBJECTIVE-C 語法，其類型是區塊的屬性 （OBJECTIVE-C 程式碼會出現在繫結宣告上方的註解）。
 * 以其原始型別繫結毒死類型 (`int[]`至 decays`int*`語意在分析期間於 Clang 中，但將它繫結做為寫入原始`int[]`改為)。

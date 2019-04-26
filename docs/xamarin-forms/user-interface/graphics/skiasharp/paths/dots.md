@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
 ms.openlocfilehash: f59aa92f5f4f013a2d14b1667f4d0679a7ba82b3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051606"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384792"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>點和虛線 SkiaSharp
 
@@ -26,7 +26,7 @@ SkiaSharp 可讓您繪製線條，不是純色，而是句點和連字號所組�
 
 即可達到這個*路徑效果*，這是執行個體[ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect)類別，您將設定為[ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect)屬性`SKPaint`。 您可以建立路徑的效果 （或合併路徑效果） 使用靜態建立方法所定義的其中一個`SKPathEffect`。 (`SKPathEffect`是其中一種六個效果支援 SkiaSharp; 有些則是一節中所述[ **SkiaSharp 效果**](../effects/index.md)。)
 
-若要繪製虛線的線條，您使用[ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))靜態方法。 有兩個引數： 這首先是陣列`float`值，指出點和虛線的長度，以及它們之間的空間的長度。 此陣列必須有偶數數目的項目，並應該有至少兩個項目。 （可以有零個元素陣列中的，但該導致一條實線。）如果有兩個項目，第一個點或虛線的長度而第二個間距的長度之前的下一個點或虛線。 如果有兩個以上的項目，則它們會依此順序： 虛線長度、 間距長度、 虛線長度、 間距長度等等。
+若要繪製虛線的線條，您使用[ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))靜態方法。 有兩個引數：這首先是陣列`float`值，指出點和虛線的長度，以及它們之間的空間的長度。 此陣列必須有偶數數目的項目，並應該有至少兩個項目。 （可以有零個元素陣列中的，但該導致一條實線。）如果有兩個項目，第一個點或虛線的長度而第二個間距的長度之前的下一個點或虛線。 如果有兩個以上的項目，則它們會依此順序： 虛線長度、 間距長度、 虛線長度、 間距長度等等。
 
 一般而言，您會想要的虛線和間距長度筆觸寬度的倍數。 如果筆觸粗細是 10 個像素，比方說，然後 {10，10} 的陣列將會繪製一條虛線的點和間距是筆劃粗細長度相同。
 

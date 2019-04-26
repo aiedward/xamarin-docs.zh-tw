@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
 ms.openlocfilehash: e97b211fe6a92ee0df3beed2301cf00c3d42c8f8
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61200761"
 ---
 # <a name="binding-objective-c-libraries"></a>繫結 Objective C 程式庫
 
@@ -479,7 +479,7 @@ interface NSStringDrawingExtensions {
 
 ### <a name="binding-objective-c-argument-lists"></a>繫結 Objective C 的引數清單
 
-OBJECTIVE-C 支援 variadic 引數。 例如: 
+OBJECTIVE-C 支援 variadic 引數。 例如：
 
 ```objc
 - (void) appendWorkers:(XWorker *) firstWorker, ...
@@ -682,7 +682,7 @@ Xamarin.iOS 繫結產生器提供繫結通知的開發人員的支援。 若要�
 
 這個屬性可以用於不含引數執行沒有承載的通知，或者您可以指定`System.Type`參考另一個介面，在 API 定義中，通常與名稱結尾"EventArgs"。 產生器會將介面變成類別子類別化`EventArgs`，且會包含所有列出的屬性。 [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)屬性應該用在的 EventArgs 類別，列出用來查閱 OBJECTIVE-C 字典擷取值的索引鍵的名稱。
 
-例如: 
+例如：
 
 ```csharp
 interface MyClass {

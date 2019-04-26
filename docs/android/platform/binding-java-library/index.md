@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
 ms.openlocfilehash: 0f4ec3cfd7c154e43db9f8e123259317c0d17e21
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60957433"
 ---
 # <a name="binding-a-java-library"></a>繫結 Java 程式庫
 

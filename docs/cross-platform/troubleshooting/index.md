@@ -8,11 +8,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 05/10/2018
 ms.openlocfilehash: fe2cfacaa8658357a1c6629b1c1e8676efebd452
-ms.sourcegitcommit: 90be517ed7a1dbd221da5be5d1a7228d36f164d0
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/04/2018
-ms.locfileid: "37792549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61359061"
 ---
 # <a name="xamarin-troubleshooting"></a>Xamarin 疑難排解
 

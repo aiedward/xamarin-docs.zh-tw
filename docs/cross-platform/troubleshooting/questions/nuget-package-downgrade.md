@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 05/08/2018
 ms.openlocfilehash: 206336cbcdc85e5e2f3f010e947981cb96e7cd1a
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674698"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61344558"
 ---
 # <a name="how-do-i-downgrade-a-nuget-package"></a>如何降級 NuGet 套件？
 
@@ -43,4 +43,4 @@ Visual Studio for Mac 及 Visual Studio 已選取較舊版本的套件並將它�
 
     `Xamarin.Forms version:1.4`
 
-*注意： 如果您新增之間有空白`version:`和版本號碼，搜尋會如同未指定任何版本。*
+*注意：如果您新增之間有空白`version:`和版本號碼，搜尋會如同未指定任何版本。*

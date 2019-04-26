@@ -8,11 +8,11 @@ ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
 ms.openlocfilehash: 14711f9cc2c34d72765e28db158379bc2a26849b
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670279"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61201061"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>建立 Xamarin.iOS 應用程式使用元素 API
 

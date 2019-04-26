@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/13/2018
 ms.openlocfilehash: d1c640bef41e875b3bb427d657c9c239e4c3e16d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121395"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61192154"
 ---
 # <a name="passkit-in-xamarinios"></a>在 Xamarin.iOS 中 PassKit
 
@@ -45,7 +45,7 @@ PassKit 提供針對每個案例的替代方法：
 
 基本上，PassKit 會提供簡單且方便的方式，來儲存和顯示您的 iOS 裝置上的條碼。 使用額外的時間和位置鎖定畫面整合，推播通知和附屬應用程式將它整合 foundation 非常複雜的銷售，還有提供票證和計費服務。
 
-## <a name="passkit-ecosystem"></a>PassKit 生態系統
+## <a name="passkit-ecosystem"></a>PassKit Ecosystem
 
 PassKit 不是只在產品 CocoaTouch API，而是應用程式、 資料和促進安全共用的服務和管理的條碼及其他資料的大型生態系統的一部分。 此高階圖表會顯示涉及的不同實體中建立和使用傳遞：
 
@@ -65,7 +65,7 @@ PassKit 不是只在產品 CocoaTouch API，而是應用程式、 資料和促�
 
 屬於 「 通過 」 是表示票證、 優待券或卡之資料的集合。 它可能供個人使用一次 （且因此包含詳細資料，例如航班數目和授權配置），或可能可由任意數目的使用者 （例如折扣券） 共用的多個使用語彙基元。 詳細的描述是用於 Apple[關於傳遞檔案](https://developer.apple.com/library/prerelease/ios/#documentation/UserExperience/Reference/PassKit_Bundle/Chapters/Introduction.html)文件。
 
-### <a name="types"></a>類型
+### <a name="types"></a>型別
 
 目前五個支援的類型，可區別 「 電子錢包 」 應用程式中傳遞的版面配置和頂端邊緣：
 
@@ -169,7 +169,7 @@ JSON 是的格式，因為傳遞通常在伺服器上建立 – 這表示產生�
 
 ### <a name="barcodes"></a>條碼
 
-支援只 2D 格式： PDF417、 阿茲特克、 QR。 Apple 宣告 1d 條碼是不適背光手機畫面上的掃描。
+只支援 2D 格式：PDF417 阿茲特克、 QR。 Apple 宣告 1d 條碼是不適背光手機畫面上的掃描。
 
 條碼下方顯示的替代文字是選擇性的 – 某些商家想要能夠以手動方式讀取/類型。
 
@@ -225,9 +225,9 @@ ISO-8859-1 編碼是最常見的是，會使用的編碼方式會讀取您的 pa
 
 第一個步驟是設定票卡類型識別碼，針對每一個不同_型別_階段都必須支援。 傳遞的識別碼 （或傳遞的型別識別項） 建立階段的唯一識別碼。 我們將使用此識別碼來連結階段開發人員帳戶使用的憑證。
 
-1. 在[的 iOS 佈建入口網站的憑證、 識別碼和設定檔區段](https://developer.apple.com/account/overview.action)，瀏覽至**識別項**，然後選取**傳遞的類型識別碼**。 然後選取**+** 按鈕以建立新的傳遞類型： [ ![](passkit-images/passid.png "建立新的階段類型")](passkit-images/passid.png#lightbox)
+1. 在[的 iOS 佈建入口網站的憑證、 識別碼和設定檔區段](https://developer.apple.com/account/overview.action)，瀏覽至**識別項**，然後選取**傳遞的類型識別碼**。 然後選取**+** 按鈕，以建立新的傳遞類型：[![](passkit-images/passid.png "建立新的階段類型")](passkit-images/passid.png#lightbox)
 
-2.   提供**描述**（名稱） 及**識別項**（唯一的字串） 階段。 請注意，所有的傳遞類型識別碼必須以字串開頭`pass.`在此範例中，我們使用`pass.com.xamarin.coupon.banana`: [ ![](passkit-images/register.png "提供描述和識別碼")](passkit-images/register.png#lightbox)
+2.   提供**描述**（名稱） 及**識別項**（唯一的字串） 階段。 請注意，所有的傳遞類型識別碼必須以字串開頭`pass.`在此範例中，我們使用`pass.com.xamarin.coupon.banana`:[![](passkit-images/register.png "提供描述和識別碼")](passkit-images/register.png#lightbox)
 
 
 3.   確認傳遞的識別碼，藉由按下**註冊** 按鈕。
@@ -236,7 +236,7 @@ ISO-8859-1 編碼是最常見的是，會使用的編碼方式會讀取您的 pa
 
 若要建立此票卡類型識別碼的新憑證，請執行下列各項：
 
-1.  從清單中，選取新建立的傳遞識別碼，然後按一下**編輯**: [ ![](passkit-images/pass-done.png "從清單中選取新的傳遞識別碼")](passkit-images/pass-done.png#lightbox)
+1.  從清單中，選取新建立的傳遞識別碼，然後按一下**編輯**:[![](passkit-images/pass-done.png "從清單中選取新的傳遞識別碼")](passkit-images/pass-done.png#lightbox)
 
     然後，選取  **Create Certificate...** :
 
@@ -566,7 +566,7 @@ noteCenter = NSNotificationCenter.DefaultCenter.AddObserver (PKPassLibrary.DidCh
 ## <a name="related-links"></a>相關連結
 
 - [「 電子錢包 」 適用於開發人員](https://developer.apple.com/wallet/)
-- [PassKit 範例](https://developer.xamarin.com/samples/monotouch/PassKit/)
+- [PassKit Sample](https://developer.xamarin.com/samples/monotouch/PassKit/)
 - [「 電子錢包 」 開發人員指南](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/index.html#//apple_ref/doc/uid/TP40012195-CH1-SW1)
 - [架構 – Apple Pay 及 「 電子錢包 」 （WWDC 影片）](https://developer.apple.com/videos/frameworks/apple-pay-and-wallet)
 - [PassKit 架構參考](https://developer.apple.com/library/prerelease/ios/#documentation/UserExperience/Reference/PassKit_Framework/_index.html)

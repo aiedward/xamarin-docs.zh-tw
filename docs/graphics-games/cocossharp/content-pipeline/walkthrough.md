@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
 ms.openlocfilehash: 84f825c19aa1ac08fbcf3e732077304218768bcc
-ms.sourcegitcommit: f541a92b4f896474f6a5467ccff2028dafa6fee7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "50983597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61371167"
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>使用 MonoGame 管線工具
 

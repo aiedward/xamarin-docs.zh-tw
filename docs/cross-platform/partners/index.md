@@ -9,11 +9,11 @@ ms.date: 09/17/2018
 hide_comments: true
 hideEdit: true
 ms.openlocfilehash: ddf80fb650127b91bef89792fc622267ad1ed0d4
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329399"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61211596"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>認證來傳遞行動解決方案的諮詢合作夥伴
 
@@ -490,7 +490,7 @@ _許多協力廠商列出主要位置，對外提供服務。_
 |[AGILUX](https://agilux.lu)|Pommerloch，盧森堡|Agilux 是電腦的顧問公司專精於商業管理的 IT 解決方案整合，和說明 Sme，開發網站、 電子商務和行動應用程式|
 
 
-## <a name="macedonia"></a>馬其頓
+## <a name="macedonia"></a>北馬其頓
 
 | Partner | 位置 | 描述 |
 | --- | --- | --- |

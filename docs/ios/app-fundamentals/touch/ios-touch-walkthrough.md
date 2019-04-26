@@ -1,5 +1,5 @@
 ---
-title: 逐步解說： 在 Xamarin.iOS 中使用觸控
+title: 逐步解說：在 Xamarin.iOS 中使用觸控
 description: 本文件說明如何處理在 Xamarin.iOS 應用程式，討論範例觸控互動、 筆勢辨識器，以及自訂的筆勢辨識器的觸控。
 ms.prod: xamarin
 ms.assetid: 13F8289B-7A80-4959-AF3F-57874D866DCA
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: bff4d46ac9d5fe893cbb0a2dfa032e1b9f6daa0e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61407762"
 ---
-# <a name="walkthrough-using-touch-in-xamarinios"></a>逐步解說： 在 Xamarin.iOS 中使用觸控
+# <a name="walkthrough-using-touch-in-xamarinios"></a>逐步解說：在 Xamarin.iOS 中使用觸控
 
 本逐步解說示範如何撰寫回應觸控事件的不同種類的程式碼。 每個範例被包含在個別的畫面：
 

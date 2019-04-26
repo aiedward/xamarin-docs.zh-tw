@@ -1,5 +1,5 @@
 ---
-title: 使用 Xamarin 的 DevOps
+title: 使用 Xamarin 應用程式進行 DevOps
 ms.assetid: ff978cc2-5a25-46d6-921b-e51adaa65992
 author: conceptdev
 ms.author: crdun
@@ -8,13 +8,13 @@ ms.workload:
 - xamarin
 ms.date: 10/23/2018
 ms.openlocfilehash: de7cb0d3cce97f251fe6d9625fb1373e6aac7a67
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131232"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61293683"
 ---
-# <a name="devops-with-xamarin"></a>使用 Xamarin 的 DevOps
+# <a name="devops-with-xamarin"></a>使用 Xamarin 應用程式進行 DevOps
 
 Xamarin 可讓您使用 C#、.NET 及 Visual Studio，來建置目標為 Android、iOS 及 Windows 的跨平台行動裝置應用程式。 Xamarin 讓大部分的程式碼可在平台之間共用，只有極低比例的程式碼需要在特定平台上運作。
 
@@ -26,7 +26,7 @@ Visual Studio 與 Azure DevOps Services 和 Team Foundation Server 共同提供�
 
 ## <a name="agile-tools"></a>Agile 工具
 
-參考連結：**[有關敏捷式工具和敏捷式專案管理](/azure/devops/boards/backlogs/overview?view=vsts)**
+參考連結：**[關於敏捷式工具及敏捷式專案管理](/azure/devops/boards/backlogs/overview?view=vsts)**
 
 一般註解：所有的計劃和追蹤功能都與專案類型和程式碼撰寫語言無關。
 
@@ -90,7 +90,7 @@ Visual Studio 與 Azure DevOps Services 和 Team Foundation Server 共同提供�
 
 ## <a name="improve-code-quality"></a>改善程式碼品質
 
-參考連結︰**[改善程式碼品質](/visualstudio/test/improve-code-quality)**
+參考連結：**[改善程式碼品質](/visualstudio/test/improve-code-quality)**
 
 |功能|支援 Xamarin|其他註解|
 |-------------|----------------------------|-------------------------|
@@ -102,7 +102,7 @@ Visual Studio 與 Azure DevOps Services 和 Team Foundation Server 共同提供�
 
 ## <a name="release-management"></a>版本管理
 
-參考連結︰**[在 Azure Pipelines 和 TFS 中建置和發行](/azure/devops/pipelines/overview?view=vsts)**
+參考連結：**[建置及發行 Azure 管線和 TFS 中](/azure/devops/pipelines/overview?view=vsts)**
 
 |功能|支援 Xamarin|其他註解|
 |-------------|----------------------------|-------------------------|
@@ -112,7 +112,7 @@ Visual Studio 與 Azure DevOps Services 和 Team Foundation Server 共同提供�
 
 ## <a name="monitor-with-hockeyapp"></a>使用 HockeyApp 監視
 
-參考連結︰ **[使用 HockeyApp 監視 (英文)](https://www.hockeyapp.net/features/)**
+參考連結：**[使用 HockeyApp 監視](https://www.hockeyapp.net/features/)**
 
 |功能|支援 Xamarin|其他註解|
 |-------------|----------------------------|-------------------------|

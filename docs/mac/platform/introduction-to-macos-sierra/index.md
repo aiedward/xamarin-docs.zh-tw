@@ -1,5 +1,5 @@
 ---
-title: MacOS Sierra 的簡介
+title: macOS Sierra 簡介
 description: 這篇文章會介紹的所有新的及修改 Api 和 macOS Sierra 中可用的功能適用於 Xamarin.Mac 開發人員。
 ms.prod: xamarin
 ms.assetid: 71A8A737-F310-4320-BD23-743AA1E9033C
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 5a944fd8f7dcfdcbb3f025c92b4afac35673416f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111008"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61031497"
 ---
-# <a name="introduction-to-macos-sierra"></a>MacOS Sierra 的簡介
+# <a name="introduction-to-macos-sierra"></a>macOS Sierra 簡介
 
 使用新的 macOS Sierra，開發人員可以利用新的 Api，可讓使用者自己的應用程式與網站互動以過去無法使用的方式。 例如，Apple 現在可讓網站，讓客戶選擇支付安全地透過 Apple Pay 和增強功能，裸機 framework 提升應用程式的圖形和執行計算的可能。 
 

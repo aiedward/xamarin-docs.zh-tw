@@ -1,6 +1,6 @@
 ---
 title: 第 19 章的摘要。 集合檢視
-description: 使用 Xamarin.Forms 建立行動應用程式： 第 19 章摘要。 集合檢視
+description: 使用 Xamarin.Forms 建立行動應用程式：第 19 章的摘要。 集合檢視
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: 795478805b582b956ee491bdfecd84485c1bc30e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334487"
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>第 19 章的摘要。 集合檢視
 
@@ -113,7 +113,7 @@ Xamarin.Forms 可定義三個檢視維護集合，並顯示其項目：
 
 ### <a name="grouping-the-listview-items"></a>將 ListView 項目分組
 
-`ListView` 支援的項目群組，以及這些群組之間巡覽。 `ItemsSource`屬性必須設為集合的集合： 物件的`ItemsSource`設定為必須實作`IEnumerable`，並在集合中的每個項目必須同時實作`IEnumerable`。 每個群組應該包含兩個屬性： 群組和三個字母縮寫的文字描述。
+`ListView` 支援的項目群組，以及這些群組之間巡覽。 `ItemsSource`屬性必須設為集合的集合：物件，`ItemsSource`設定為必須實作`IEnumerable`，並在集合中的每個項目必須同時實作`IEnumerable`。 每個群組應該包含兩個屬性： 群組和三個字母縮寫的文字描述。
 
 [ `NamedColorGroup` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColorGroup.cs)類別[ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)程式庫會建立七個群組的`NamedColor`物件。 [ **ColorGroupList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ColorGroupList)範例示範如何使用這些群組以[ `IsGroupingEnabled` ](xref:Xamarin.Forms.ListView.IsGroupingEnabled)屬性`ListView`設`true`，及[ `GroupDisplayBinding` ](xref:Xamarin.Forms.ListView.GroupDisplayBinding)並[ `GroupShortNameBinding` ](xref:Xamarin.Forms.ListView.GroupShortNameBinding)屬性繫結至每個群組中的屬性。
 

@@ -9,11 +9,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
 ms.openlocfilehash: 24a9fa0e954ddba1451ba8bf98216550d7d70b51
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854778"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61196785"
 ---
 # <a name="oreo-features"></a>Oreo 功能
 

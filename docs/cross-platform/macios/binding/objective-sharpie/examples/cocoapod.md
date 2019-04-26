@@ -1,17 +1,17 @@
 ---
 title: 使用 CocoaPods 的真實世界範例
-description: 本文件將示範如何使用目標 Sharpie CocoaPod 從的 自動產生的 C# 繫結定義。
+description: 本文件將示範如何使用目標 Sharpie 自動產生C#繫結從 CocoaPod 的定義。
 ms.prod: xamarin
 ms.assetid: 233B781D-5841-4250-9F63-0585231D2112
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2018
 ms.openlocfilehash: bac34f662e24c6b08a67cd8da1f41b37b43b3faf
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855204"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61200311"
 ---
 # <a name="real-world-example-using-cocoapods"></a>使用 CocoaPods 的真實世界範例
 
@@ -93,6 +93,6 @@ Done.
 
 - [繫結 Objective C 的概觀](~/cross-platform/macios/binding/overview.md)
 - [繫結 Objective C 程式庫](~/cross-platform/macios/binding/objective-c-libraries.md)
-- [逐步解說： 繫結 iOS OBJECTIVE-C 程式庫](~/ios/platform/binding-objective-c/walkthrough.md)
-- [Xamarin University 課程： 建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程： 建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [逐步解說：繫結 iOS OBJECTIVE-C 程式庫](~/ios/platform/binding-objective-c/walkthrough.md)
+- [Xamarin University 課程：建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University 課程：建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

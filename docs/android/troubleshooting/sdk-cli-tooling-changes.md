@@ -9,11 +9,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/21/2018
 ms.openlocfilehash: dbd3287e7c646be7fd969699eab685906a1c6c1a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61093930"
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>對於 Android SDK 工具所做的變更
 
@@ -48,13 +48,13 @@ Visual Studio 和 Visual Studio for Mac 現在提供 Xamarin Google GUI 為基�
 
 #### <a name="sdkmanager"></a>sdkmanager
 
-**已新增至：** Android SDK Tools 25.2.3 (2016 年 11 月) 和更新版本。
+**中加入：** Android SDK Tools 25.2.3 (2016 年 11 月) 和更新版本。
 
 沒有新的程式，稱為**sdkmanager**中**工具/bin**您的 Android SDK 資料夾。 此工具用來維護 Android SDK，在命令列。 如需使用此工具的詳細資訊，請參閱[sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)。
 
 #### <a name="avdmanager"></a>avdmanager
 
-**已新增至：** Android SDK Tools 25.3.0 (年 3 月，2017) 和更新版本。
+**中加入：** Android SDK Tools 25.3.0 (年 3 月，2017) 和更新版本。
 
 沒有新的程式，稱為**avdmanager**中**工具/bin**您的 Android SDK 資料夾。 此工具用來維護 Android 模擬器的 Avd。 如需使用此工具的詳細資訊，請參閱[avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)。
 

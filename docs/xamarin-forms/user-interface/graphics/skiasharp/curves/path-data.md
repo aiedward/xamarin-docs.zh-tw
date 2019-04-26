@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2017
 ms.openlocfilehash: 690d3c15d7ad2aad06be5b499bae1a94107414f4
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61019542"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SkiaSharp SVG 路徑資料
 
@@ -361,7 +361,7 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-[**點和虛線**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)篇文章討論如何使用[ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash*)方法用來建立一條虛線。 第一個引數是`float`通常有兩個元素的陣列： 第一個項目是連字號，長度，而第二個元素是連字號的間距。 當`StrokeCap`屬性設定為`SKStrokeCap.Round`，接著虛線的兩端筆劃寬度，由條虛線的圓角的端點有效延長的虛線長度。 因此，將第一個陣列元素設定為 0，會建立一條虛線。
+[**點和虛線**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)篇文章討論如何使用[ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash*)方法用來建立一條虛線。 第一個引數是`float`通常有兩個元素的陣列：第一個項目是連字號，長度，而第二個元素是連字號的間距。 當`StrokeCap`屬性設定為`SKStrokeCap.Round`，接著虛線的兩端筆劃寬度，由條虛線的圓角的端點有效延長的虛線長度。 因此，將第一個陣列元素設定為 0，會建立一條虛線。
 
 這些點之間的距離係由第二個陣列項目。 如您所見，這些兩個`SKPaint`物件用來繪製圓形半徑為 90 的單位。 此圓形的圓周是因此 180π，這表示 60 分鐘標記必須出現每 3 π 單位，這是中的第二個值`float`陣列中`minuteMarkPaint`。 12 小時標記必須顯示每個 15π 單位，它在第二個是值`float`陣列。
 
