@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
 ms.openlocfilehash: a1027b1fd738c80cf5917effc66957f77a337ecf
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
-ms.translationtype: MT
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61304676"
 ---
 # <a name="creating-a-custom-layout"></a>建立自訂的版面配置
 

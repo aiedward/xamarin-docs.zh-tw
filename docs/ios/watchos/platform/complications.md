@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/03/2017
 ms.openlocfilehash: 85b0c9b0688e9fb310a8f427018a02fe629404bb
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61225520"
 ---
 # <a name="watchos-complications-in-xamarin"></a>watchOS 在 Xamarin 中的複雜功能
 
@@ -24,7 +24,7 @@ _watchOS 可讓開發人員可以撰寫自訂複雜監看式臉部_
 
 請先閱讀[Apple 文件](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html)來判斷您的應用程式是否適用於複雜功能。 有 5`CLKComplicationFamily`顯示可從中選擇的類型：
 
-[![](complications-images/all-complications-sml.png "可用的 5 個 CLKComplicationFamily 類型： 循環小型、 模組化小型、 大型模組化、 頂小型、 頂大型")](complications-images/all-complications.png#lightbox)
+[![](complications-images/all-complications-sml.png "5 CLKComplicationFamily 可用的類型：循環的小型、 模組化的小型、 模組化的大型、 頂小型、 頂大型")](complications-images/all-complications.png#lightbox)
 
 應用程式可以實作一個樣式，或所有五個，根據所顯示的資料。
 您也可以支援時間移動，為使用者開啟數位皇冠提供過去及/或未來的時間值。

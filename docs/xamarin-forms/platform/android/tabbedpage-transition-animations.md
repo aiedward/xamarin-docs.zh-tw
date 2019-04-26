@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
 ms.openlocfilehash: 1e9c46fe9535c313581d6d0053559a28aa327887
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61359891"
 ---
 # <a name="tabbedpage-page-transition-animations-on-android"></a>在 Android 上的 TabbedPage 頁面轉換動畫
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 此 Android 平台專屬用來瀏覽頁面，或是以程式設計方式或使用索引標籤列中時，停用轉換動畫[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)。 它由在 XAML 中設定`TabbedPage.IsSmoothScrollEnabled`可繫結的屬性，以`false`:
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
 ms.openlocfilehash: bf135755f64e4d17db2c187d58572c525dfee559
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61420868"
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>我可以將檔案加入或移除的 IPA 檔案中的檔案之後在 Visual Studio 中建立, 嗎？
 
@@ -40,13 +40,13 @@ ms.locfileid: "50117404"
 
 7.  將解壓縮`.ipa`暫存檔案`old/`資料夾使用下列命令。 調整`Ad-Hoc`和`iPhoneApp1`視需要針對特定專案的名稱。
 
-    > 塗鴉-xk bin/iPhone/Ad-Hoc/iPhoneApp1-1.0.ipa 舊 /
+    > ditto -xk bin/iPhone/Ad-Hoc/iPhoneApp1-1.0.ipa old/
 
 8.  保留`Terminal.app`視窗中開啟。
 
 9.  刪除所需的檔案，從`.ipa`。 您可以將它們移至 資源回收筒使用搜尋工具，或刪除它們在命令列使用`Terminal.app`。 若要檢視的內容`Payload/iPhone`檔案中搜尋工具，Control + 按一下檔案，然後選取**顯示封裝內容**。
 
-10.  使用相同的一般方法，如步驟 3 中，找出下的記錄檔`~/Library/Logs/Xamarin/MonoTouchVS/`具有這兩個專案名稱，`generated session id`的名稱： ![](modify-ipa-images/build-log.png "找出在 Finder 中的專案組建記錄檔")
+10.  使用相同的一般方法，如步驟 3 中，找到記錄檔底下`~/Library/Logs/Xamarin/MonoTouchVS/`具有這兩個專案名稱和`generated session id`名稱中：![](modify-ipa-images/build-log.png "在 Finder 中找出專案組建記錄檔")
 
 11.  組建記錄檔來自步驟 10，例如按兩下開啟它。
 
@@ -88,4 +88,4 @@ file missing: /Users/macuser/Library/Caches/Xamarin/mtbs/builds/iPhoneApp1/cc530
 
 和 App Store 驗證程序會報告類似的錯誤訊息：
 
-> 錯誤 ITMS-90035: 「 無效簽章。 密封的資源是遺漏或無效。 二進位檔位於路徑 [iPhoneApp1.app/iPhoneApp1] 包含無效的簽章。 請確定您已簽署您的應用程式，以發佈憑證，而不臨機操作的憑證或開發憑證。 請確認在目標層級 （會覆寫專案層級的任何值），在 Xcode 中的程式碼簽署設定正確。 此外，請確定您要上傳套件組合是使用在 Xcode 中，不是模擬器目標的發行目標。 如果您確定您的程式碼簽署的設定正確無誤，在 Xcode 中選擇 [全新全部]，刪除 [建置] 目錄中搜尋工具中後重建發行目標。 如需詳細資訊，請參閱[ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"
+> 錯誤 ITMS-90035:「 無效的簽章。 密封的資源是遺漏或無效。 二進位檔位於路徑 [iPhoneApp1.app/iPhoneApp1] 包含無效的簽章。 請確定您已簽署您的應用程式，以發佈憑證，而不臨機操作的憑證或開發憑證。 請確認在目標層級 （會覆寫專案層級的任何值），在 Xcode 中的程式碼簽署設定正確。 此外，請確定您要上傳套件組合是使用在 Xcode 中，不是模擬器目標的發行目標。 如果您確定您的程式碼簽署的設定正確無誤，在 Xcode 中選擇 [全新全部]，刪除 [建置] 目錄中搜尋工具中後重建發行目標。 如需詳細資訊，請參閱[ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"

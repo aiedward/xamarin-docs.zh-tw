@@ -1,5 +1,5 @@
 ---
-title: WatchOS 4 簡介
+title: watchOS 4 簡介
 description: 本文件提供 watchOS 4，描述現在都可在 Xamarin 開發人員的新功能的高階簡介。
 ms.prod: xamarin
 ms.assetid: 753A9993-A951-40A2-9270-37F000A01BC9
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/07/2017
 ms.openlocfilehash: ca922840b47899b62615bded852e66fe81b3371c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61223965"
 ---
-# <a name="introduction-to-watchos-4"></a>WatchOS 4 簡介
+# <a name="introduction-to-watchos-4"></a>watchOS 4 簡介
 
 WatchOS 4 應用程式中存取新功能：
 

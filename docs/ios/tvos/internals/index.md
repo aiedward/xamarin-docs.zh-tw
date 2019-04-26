@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
 ms.openlocfilehash: 3eca425e38a01053f084ddbc5ad2edb93f6f6427
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122955"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61395114"
 ---
 # <a name="tvos-in-xamarin-internals"></a>tvOS 中 Xamarin – 內部 
 

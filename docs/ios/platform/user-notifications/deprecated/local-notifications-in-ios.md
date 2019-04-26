@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/13/2018
 ms.openlocfilehash: f31490a683adfb46c609f14adf08b68de0abc375
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61082970"
 ---
 # <a name="notifications-in-xamarinios"></a>在 Xamarin.iOS 中的通知
 
@@ -138,5 +138,5 @@ if(remoteNotification != null)
 - [本機通知 （範例）](https://developer.xamarin.com/samples/monotouch/LocalNotifications)
 - [本機和推播通知適用於開發人員](https://developer.apple.com/notifications/)
 - [本機和推播通知程式設計指南](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
-- [Uiapplication #](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIApplication)
+- [UIApplication](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIApplication)
 - [UILocalNotification](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UILocalNotification)

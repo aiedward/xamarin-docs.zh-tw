@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/25/2018
 ms.openlocfilehash: fff6620732ffcaccd13dde7ae31ab03a5106da16
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "37066425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61364395"
 ---
 # <a name="ios-platform-features"></a>iOS 平台功能
 
@@ -102,7 +102,7 @@ Apple 已改進數個技術在 iOS 9 遊戲 Api 可讓您更輕鬆地在 Xamarin
 
 ## <a name="multitasking-for-ipadiosplatformmultitaskingmd"></a>[適用於 iPad 的多工](~/ios/platform/multitasking.md)
 
-iOS 9 新增多工作業支援同時執行兩個應用程式，在特定的 iPad 的硬體上。 適用於 iPad 的多工支援透過下列功能： 透過 投影片，分割檢視 & Picture in Picture。
+iOS 9 新增多工作業支援同時執行兩個應用程式，在特定的 iPad 的硬體上。 適用於 iPad 的多工支援透過下列功能：透過投影片、 分割檢視及 Picture in Picture。
 
 ## <a name="passkitiosplatformpasskitmd"></a>[PassKit](~/ios/platform/passkit.md)
 

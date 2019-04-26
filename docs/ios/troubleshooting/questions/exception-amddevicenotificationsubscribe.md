@@ -1,5 +1,5 @@
 ---
-title: 已傳回 System.Exception AMDeviceNotificationSubscribe...
+title: 傳回了 System.Exception AMDeviceNotificationSubscribe ...
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7E4ACC7E-F4FB-46C1-8837-C7FBAAFB2DC7
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: 4fb0712366422e8810a2db60d40c3b85d9f4cd82
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61421940"
 ---
-# <a name="systemexception-amdevicenotificationsubscribe-returned-"></a>已傳回 System.Exception AMDeviceNotificationSubscribe...
+# <a name="systemexception-amdevicenotificationsubscribe-returned-"></a>傳回了 System.Exception AMDeviceNotificationSubscribe ...
 
 > [!IMPORTANT]
 > 這個問題已經解決最新版 Xamarin。 不過，如果最新版本的軟體，就會發生問題，請指導，申請[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md)您完整的版本控制資訊和完整建置記錄檔輸出。
@@ -63,4 +63,4 @@ AMDeviceNotificationSubscribe returned: 3892314211
 
 ## <a name="references"></a>參考
 
-*   [Bug 11789-MonoTouch.MobileDevice.MobileDeviceException: AMDeviceNotificationSubscribe 傳回： 0xe8000063 [解決 NORESPONSE]](https://bugzilla.xamarin.com/show_bug.cgi?id=11789)
+*   [Bug 11789-MonoTouch.MobileDevice.MobileDeviceException:AMDeviceNotificationSubscribe 傳回：0XE8000063 [解析 NORESPONSE]](https://bugzilla.xamarin.com/show_bug.cgi?id=11789)

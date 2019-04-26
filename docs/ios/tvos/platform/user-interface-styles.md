@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 2536ca5d3bff3f5b7962bc4fcf58b31a130fd03c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61270829"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>tvOS 在 Xamarin 中的使用者介面樣式
 
@@ -149,7 +149,7 @@ public override void TraitCollectionDidChange (UITraitCollection previousTraitCo
 
 根據 tvOS 應用程式的設計，有可能的有時候開發人員需要覆寫指定的使用者介面項目的特性集合，並讓它一律使用特定的 UI 佈景主題。
 
-這可以使用`SetOverrideTraitCollection`方法`UIViewController`類別。 例如: 
+這可以使用`SetOverrideTraitCollection`方法`UIViewController`類別。 例如：
 
 ```csharp
 // Create new trait and configure it

@@ -1,17 +1,17 @@
 ---
 title: 共用程式碼概觀
-description: 這份文件比較跨平台專案間共用程式碼的不同方法： 共用的專案 」、 「 可攜式類別庫，和 「.NET Standard，包括優點和缺點。
+description: 這份文件比較跨平台專案間共用程式碼的不同方法：共用的專案、 可攜式類別庫和.NET Standard，包括優點和缺點。
 ms.prod: xamarin
 ms.assetid: B73675D2-09A3-14C1-E41E-20352B819B53
 author: conceptdev
 ms.author: crdun
 ms.date: 08/06/2018
 ms.openlocfilehash: 98b5786ae4f071b4d8e8f854561db97aee037fdc
-ms.sourcegitcommit: aa7b0182d117e2af66ffaa4fa29b8c214ceecae1
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39520281"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61227976"
 ---
 # <a name="sharing-code-overview"></a>共用程式碼概觀
 

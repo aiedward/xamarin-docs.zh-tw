@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/01/2018
 ms.openlocfilehash: b0f747c37362997563a35d9b94f8e677d4104ee1
-ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59587760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61013373"
 ---
 # <a name="android-resource-basics"></a>Android 資源基本概念
 

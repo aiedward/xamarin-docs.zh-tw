@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
 ms.openlocfilehash: 85067d1dc95ee63cf905e81fba7afc973f7ec37e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123181"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61395264"
 ---
 # <a name="supported-and-unsupported-frameworks-in-tvos"></a>在 tvOS 的支援和不支援的架構
 
@@ -29,7 +29,7 @@ ms.locfileid: "50123181"
 * AVKit
 * CFNetwork
 * CloudKit
-* Corebluetooth 進行通訊
+* CoreBluetooth
 * CoreData
 * CoreFoundation
 * CoreGraphics
@@ -43,7 +43,7 @@ ms.locfileid: "50123181"
 * Foundation
 * GameController
 * GameKit
-* 遊戲
+* GamePlay
 * GLKit
 * ImageIO
 * MachO

@@ -1,5 +1,5 @@
 ---
-title: 繫結。取得 AAR
+title: 繫結 .AAR
 description: 本逐步解說提供建立 Xamarin.Android Java 繫結程式庫從 Android 的逐步指示。AAR 檔案。
 ms.prod: xamarin
 ms.assetid: 380413B8-6A99-4BB8-B64C-3EAF9F359C22
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/11/2018
 ms.openlocfilehash: 7f71ccf4ff61c176e73be6d3855136697a5c2130
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60958044"
 ---
-# <a name="binding-an-aar"></a>繫結。取得 AAR
+# <a name="binding-an-aar"></a>繫結 .AAR
 
 _本逐步解說提供建立 Xamarin.Android Java 繫結程式庫從 Android 的逐步指示。AAR 檔案。_
 
@@ -109,7 +109,7 @@ public class TextCounter
 
     [![目標層級設定為 API 23](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
 
-7.  建立繫結程式庫。 繫結程式庫專案應建置成功，而且產生的輸出。在下列位置的 DLL: **AarBinding/bin/Debug/AarBinding.dll**
+7.  建立繫結程式庫。 繫結程式庫專案應建置成功，而且產生的輸出。在下列位置的 DLL:**AarBinding/bin/Debug/AarBinding.dll**
 
 
 
@@ -276,7 +276,7 @@ Xamarin 工具合併**R**的資料。您的應用程式的 AAR**資源**類別�
 <ImageView android:src="@drawable/image" ... />
 ```
 
-您也可以存取位於的資源配置。AAR。 若要這樣做，您使用**Resource.Layout**封裝內的版面配置的名稱。AAR。 例如: 
+您也可以存取位於的資源配置。AAR。 若要這樣做，您使用**Resource.Layout**封裝內的版面配置的名稱。AAR。 例如：
 
 ```csharp
 var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);

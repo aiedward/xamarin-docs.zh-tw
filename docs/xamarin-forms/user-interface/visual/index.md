@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/05/2019
 ms.openlocfilehash: d440c6e95788fc876d6b0aa094f5bc2fce84bfb0
-ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57972555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61023442"
 ---
 # <a name="xamarinforms-visual"></a>Xamarin.Forms 的視覺效果
 
 ## <a name="xamarinforms-material-visualmaterial-visualmd"></a>[Xamarin.Forms 資料視覺效果](material-visual.md)
 
-Xamarin.Forms 資料視覺效果可用來建立 Xamarin.Forms 應用程式看起來完全相同，或基本相同，iOS 和 Android 上使用。
+Xamarin.Forms 材質視覺效果可用來建立在 iOS 和 Android 上看起來相同或絕大部分都相同的 Xamarin.Forms 應用程式。
 
 ## <a name="create-a-xamarinforms-visual-renderercreatemd"></a>[建立 Xamarin.Forms 視覺效果轉譯器](create.md)
 

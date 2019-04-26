@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/27/2017
 ms.openlocfilehash: f9b4da5b6dfe3f0254340d9175b08198bd52a45a
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61160531"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin Profiler 疑難排解
 
@@ -56,7 +56,7 @@ Xamarin 小組可協助追蹤問題，如果您提供的詳細資訊，包括：
 下列清單顯示常見的問題、 因應措施和祕訣和訣竅使用 Profiler。
 
 > [!NOTE]
-> **附註**： 您必須是 Visual Studio**企業**訂閱者若要解除這項功能在 Windows 上的其中一個 Visual Studio Enterprise 或 Visual Studio for mac。
+> **注意**：您必須是 Visual Studio**企業**訂閱者若要解除這項功能在 Windows 上的其中一個 Visual Studio Enterprise 或 Visual Studio for mac。
 
 #### <a name="i-cant-see-the-ios-profiler-option-or-it-is-greyed-out-visual-studio-and-visual-studio-for-mac"></a>我看不到 [iOS 程式碼剖析工具] 選項，或會呈現灰色 [Visual Studio 和 Visual Studio for Mac]
 

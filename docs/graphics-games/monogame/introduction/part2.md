@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
 ms.openlocfilehash: 941b88f9109cf2f3a3485311c52b1250bd08e53f
-ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54479767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61162092"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>第 2 部分-實作 WalkingGame
 

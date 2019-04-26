@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/19/2016
 ms.openlocfilehash: c8ef76f24b017f5e3e6bec9d39534f3626e79147
-ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56321099"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60892931"
 ---
 # <a name="watchos-user-interface-controls-in-xamarin"></a>watchOS 在 Xamarin 中的使用者介面控制項
 

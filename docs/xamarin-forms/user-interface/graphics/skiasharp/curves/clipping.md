@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
 ms.openlocfilehash: 4f8b6b7ea0db8d46886c3391f1aef3ba20a5be44
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61085914"
 ---
 # <a name="clipping-with-paths-and-regions"></a>使用路徑和區域裁剪
 
@@ -24,7 +24,7 @@ _使用路徑來剪輯圖形，以特定的區域，並建立區域_
 
 ![](clipping-images/clippingsample.png "透過 keyhole monkey")
 
-*裁剪區域*是在其中呈現圖形在螢幕的區域。 顯示裁剪區域之外的任何項目不會呈現。 的裁剪區域通常會定義由矩形或[ `SKPath` ](xref:SkiaSharp.SKPath)物件，但您可以另外定義裁剪區域，使用[ `SKRegion` ](xref:SkiaSharp.SKRegion)物件。 這兩種類型的物件在第一次會看似相關，因為您可以建立區域路徑中。 不過，您無法建立路徑從區域，而且它們都是內部非常不同： 路徑包含一系列的線條和曲線，區域由一系列的水平的掃描行定義。
+*裁剪區域*是在其中呈現圖形在螢幕的區域。 顯示裁剪區域之外的任何項目不會呈現。 的裁剪區域通常會定義由矩形或[ `SKPath` ](xref:SkiaSharp.SKPath)物件，但您可以另外定義裁剪區域，使用[ `SKRegion` ](xref:SkiaSharp.SKRegion)物件。 這兩種類型的物件在第一次會看似相關，因為您可以建立區域路徑中。 不過，您無法建立路徑從區域，並在內部是非常不同：路徑包含一系列的線條和曲線，區域由一系列的水平的掃描行定義。
 
 藉由建立上圖**Monkey 透過 Keyhole**頁面。 [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs)類別會定義使用 SVG 資料的路徑，並使用建構函式，從程式資源載入點陣圖：
 
@@ -366,7 +366,7 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKRegionOperation regionOp)
 
 如果每個路徑會縮減為一系列的水平的掃描線，例如舊式真空 tube Tv 中，已大幅簡化此作業。 每一條掃描線是只要一條水平線起始點與結束點。 比方說，圓形半徑為 10 個像素能分解成 20 的水平的掃描行，其中每一個位於圓形的左側部分在開始和結束的右側部分。 結合兩個圓形區域中的任何作業變成非常簡單，因為它是簡單的檢查對應的掃描線的每個組的開始和結束座標。
 
-這是功能區域： 定義區域的水平的掃描線條的一系列。
+這是功能區域：定義區域的水平的掃描線條的一系列。
 
 不過，當區域會縮減為一系列的掃描程式行，這些線條根據特定的像素尺寸的掃描。 嚴格來說，區域不是向量圖形物件。 很接近在本質上比路徑壓縮單色點陣圖。 因此，區域無法縮放或旋轉而不會遺失精確度，並因此不會轉換時用來裁剪區域。
 

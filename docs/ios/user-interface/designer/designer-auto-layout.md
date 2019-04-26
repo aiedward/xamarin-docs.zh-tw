@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: 41a9ec90b4b734dde7a982ac3d4b2e7b2082321c
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58070862"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61412971"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>使用適用於 iOS 的 Xamarin 設計工具的自動版面配置
 
@@ -201,7 +201,7 @@ IOS 設計工具中指定的條件約束的下列設定：
 
 ### <a name="animating-constraint-changes"></a>建立條件約束變更的動畫
 
-除了修改條件約束的屬性，您可以使用核心動畫來以動畫顯示變更檢視的條件約束。 例如: 
+除了修改條件約束的屬性，您可以使用核心動畫來以動畫顯示變更檢視的條件約束。 例如：
 
 ```csharp
 UIView.BeginAnimations("OpenInfo");

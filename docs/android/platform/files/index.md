@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
 ms.openlocfilehash: 2978f0b2bcbdd463876784a9addd7dec055b8af9
-ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59574815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60949413"
 ---
 # <a name="file-storage-and-access-with-xamarinandroid"></a>檔案儲存體和搭配 Xamarin.Android 的存取
 

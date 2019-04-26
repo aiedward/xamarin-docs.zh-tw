@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 4a391160f2102fd1f069a45eb7c16aec91dfd7e0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61427933"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>資料繫結和鍵值編碼 xamarin.mac
 
@@ -159,7 +159,7 @@ Person.SetValueForKey(new NSString("Jane Doe"), new NSString("Name"));
 
 ### <a name="observing-value-changes"></a>觀察值的變更
 
-使用索引鍵-值觀察 (KVO)，您可以將觀察者附加至特定索引鍵的 KVC 規範的類別，並通知 （使用 KVC 技術或直接存取 C# 程式碼中指定的屬性），該索引鍵的值修改任何時間。 例如: 
+使用索引鍵-值觀察 (KVO)，您可以將觀察者附加至特定索引鍵的 KVC 規範的類別，並通知 （使用 KVC 技術或直接存取 C# 程式碼中指定的屬性），該索引鍵的值修改任何時間。 例如：
 
 ```csharp
 // Watch for the name value changing

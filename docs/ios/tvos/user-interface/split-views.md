@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 9f1bd48378faa9ae6a4853083c93377268c38f01
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61374474"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>使用 tvOS 在 Xamarin 中的分割檢視控制器
 
@@ -100,7 +100,7 @@ Xamarin.tvOS 應用程式中使用分割檢視控制器的最簡單方式是將�
 
 ### <a name="accessing-master-and-detail"></a>存取主版和詳細資料
 
-如果您需要以程式設計方式存取的主要和詳細資料檢視控制器，使用`ViewControllers `分割檢視控制器的屬性。 例如: 
+如果您需要以程式設計方式存取的主要和詳細資料檢視控制器，使用`ViewControllers `分割檢視控制器的屬性。 例如：
 
 ```csharp
 // Gain access to master and detail view controllers
@@ -122,7 +122,7 @@ var detailController = ViewControllers [1] as DetailViewController;
 public DetailViewController DetailController { get; set;}
 ```
 
-在分割檢視控制器中，覆寫`ViewDidLoad`方法，並繫結的兩個檢視在一起。 例如: 
+在分割檢視控制器中，覆寫`ViewDidLoad`方法，並繫結的兩個檢視在一起。 例如：
 
 ```csharp
 public override void ViewDidLoad ()
@@ -146,7 +146,7 @@ public override void ViewDidLoad ()
 
 ### <a name="showing-and-hiding-master"></a>顯示和隱藏主要
 
-（選擇性） 您可以在其中顯示和隱藏主版檢視控制器使用`PreferredDisplayMode`分割檢視控制器的屬性。 例如: 
+（選擇性） 您可以在其中顯示和隱藏主版檢視控制器使用`PreferredDisplayMode`分割檢視控制器的屬性。 例如：
 
 ```csharp
 // Show hide split view

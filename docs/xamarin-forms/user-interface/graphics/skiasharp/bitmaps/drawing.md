@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
 ms.openlocfilehash: 9e76558597928bafa25f6a217c6f0055657e4c22
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053074"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61401541"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>建立和上 SkiaSharp 點陣圖繪製
 
@@ -121,7 +121,7 @@ public partial class HelloBitmapPage : ContentPage
 
 顯示**Hello 點陣圖**頁面示範點陣圖建立的程式會是透明的黑色文字除外。 這就是為什麼透過青色顯示表面的色彩顯示。
 
-文件`Clear`方法的`SKCanvas`描述這些陳述式:"會取代在畫布的目前短片中的所有像素。 」 使用文字 「 取代 」 會顯示這些方法的重要特性： 所有的繪圖方法`SKCanvas`將項目加入至現有的顯示介面。 `Clear`方法_取代_項目已經存在。
+文件`Clear`方法的`SKCanvas`描述這些陳述式："會取代在畫布的目前短片中的所有像素。 」 使用文字 「 取代 」 會顯示這些方法的重要特性：所有繪圖方法`SKCanvas`將項目加入至現有的顯示介面。 `Clear`方法_取代_項目已經存在。
 
 `Clear` 有兩種不同的版本： 
 
@@ -131,7 +131,7 @@ public partial class HelloBitmapPage : ContentPage
 
 呼叫`Clear`上新的點陣圖不含引數初始化整個點陣圖是完全透明。 後續繪製點陣圖上的任何項目通常會是不透明或部分的不透明。
 
-以下是要嘗試的項目： 在**Hello 點陣圖**頁面上，取代`Clear`方法套用至`bitmapCanvas`以此：
+以下是要嘗試的項目：在  **Hello 點陣圖**頁面上，取代`Clear`方法套用至`bitmapCanvas`以此：
 
 ```csharp
 bitmapCanvas.Clear(new SKColor(255, 0, 0, 128));

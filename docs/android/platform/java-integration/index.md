@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 01/18/2017
 ms.openlocfilehash: 3ab31fb7cac97fbae3315f51daf3dd4b1edbcc1d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61085286"
 ---
 # <a name="java-integration-overview"></a>Java 整合概觀
 
@@ -27,7 +27,7 @@ _Java 生態系統包括元件的各種及廣大的集合。許多這些元件�
 
 -   **建立 Java 繫結程式庫**&ndash;使用此技術，Xamarin.Android 專案用來建立C#包裝函式圍繞 Java 類型。 Xamarin.Android 應用程式就可以參考C#包裝函式建立此專案，然後再使用`.jar`檔案。 
 
--   **Java Native Interface** &ndash; *Java 原生**介面*(JNI) 是一種架構，可讓非 Java 程式碼 (例如 c + + 或C#) 呼叫，或由執行的 Java 程式碼呼叫在 JVM 內。 
+-   **Java Native Interface** &ndash; *Java 原生**介面*(JNI) 是一種架構，可讓非 Java 程式碼 (例如C++或C#) 呼叫，或由 Java 程式碼呼叫JVM 內執行。 
 
 -   **程式碼移植**&ndash;此方法牽涉到取得 Java 原始碼，然後將它轉換成C#。 這可以手動方式或使用自動化的工具，例如銳利化來完成。 
 

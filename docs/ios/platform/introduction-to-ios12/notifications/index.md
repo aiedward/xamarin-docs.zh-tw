@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/04/2018
 ms.openlocfilehash: 8ee42c04c5d79bfd39c34550b5f77427af8f835d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61035113"
 ---
 # <a name="notifications-in-ios-12"></a>在 iOS 12 中的通知
 

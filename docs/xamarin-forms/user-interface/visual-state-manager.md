@@ -9,11 +9,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
 ms.openlocfilehash: 10d62ea050296eb6d36c9861b757ca44d3a2e452
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058187"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61026104"
 ---
 # <a name="the-xamarinforms-visual-state-manager"></a>Xamarin.Forms 視覺狀態管理員
 
@@ -253,17 +253,17 @@ Visual State Manager 可讓您包含在您可以變更檢視的視覺外觀，�
 
 請注意，第二個`Entry`還有`DataTrigger`一部分其`Trigger`集合。 這會導致`Entry`停用，直到第三個輸入項目`Entry`。 以下是在啟動 iOS、 Android 和通用 Windows 平台 (UWP) 上執行的頁面：
 
-[![在檢視上的 VSM： 停用](vsm-images/VsmOnViewDisabled.png "VSM-已停用檢視上")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
+[![在檢視上的 VSM:停用](vsm-images/VsmOnViewDisabled.png "VSM-已停用檢視上")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
 
 目前的視覺狀態的動作"Disabled"因此第二個背景`Entry`是在 iOS 和 Android 的畫面上粉紅色。 UWP 實作`Entry`不允許設定背景色彩的時機`Entry`已停用。 
 
 當您輸入一些文字到第三個`Entry`，第二個`Entry`現已切換成 「 正常 」 狀態，以及背景淡黃綠色：
 
-[![在檢視上的 VSM： 正常](vsm-images/VsmOnViewNormal.png "VSM 上檢視-一般")](vsm-images/VsmOnViewNormal-Large.png#lightbox)
+[![在檢視上的 VSM:Normal](vsm-images/VsmOnViewNormal.png "VSM 上檢視-一般")](vsm-images/VsmOnViewNormal-Large.png#lightbox)
 
 當您在同一個第二個`Entry`，它會取得輸入的焦點。 它會切換成 「 Focused 」 狀態，並展開以高度的兩倍：
 
-[![在檢視上的 VSM： 著重](vsm-images/VsmOnViewFocused.png "VSM 上檢視-已取得焦點")](vsm-images/VsmOnViewFocused-Large.png#lightbox)
+[![在檢視上的 VSM:已取得焦點](vsm-images/VsmOnViewFocused.png "VSM 上檢視-已取得焦點")](vsm-images/VsmOnViewFocused-Large.png#lightbox)
 
 請注意，`Entry`收到輸入的焦點時，不會保留淡黃綠色背景。 視覺狀態間切換時 Visual State Manager，先前的狀態所設定的屬性是未設定。 請注意，視覺狀態互斥。 「 正常 」 狀態並不表示僅`Entry`已啟用。 這表示`Entry`已啟用，而且沒有輸入的焦點。 
 
@@ -426,7 +426,7 @@ VisualStateManager.GoToState(this, "Focused");
 
 這是唯一的 Visual State Manager 程式碼，您會發現在`VisualElement`類別。 因為`GoToState`會針對每一個衍生自的類別為基礎的每個物件呼叫`VisualElement`，您可以使用 Visual State Manager 與任何`VisualElement`來回應這些變更的物件。
 
-有趣的是，視覺狀態群組"CommonStates 」 的名稱中未明確參考`VisualElement`。 群組名稱不屬於 Visual State Manager 的 API。 其中一個內兩個目前顯示的範例程式，您可以變更任何其他動作，以從 「 CommonStates 」 群組的名稱，以及程式仍然可以運作。 群組名稱是只是該群組中的狀態的一般描述。 隱含地了解任何群組中的視覺狀態會是互斥的： 一個的狀態和只能有一個狀態是目前在任何時間。
+有趣的是，視覺狀態群組"CommonStates 」 的名稱中未明確參考`VisualElement`。 群組名稱不屬於 Visual State Manager 的 API。 其中一個內兩個目前顯示的範例程式，您可以變更任何其他動作，以從 「 CommonStates 」 群組的名稱，以及程式仍然可以運作。 群組名稱是只是該群組中的狀態的一般描述。 隱含地了解任何群組中的視覺狀態會是互斥的：一種狀態，只能有一個狀態是目前在任何時間。
 
 如果您想要實作您自己的視覺狀態，您必須呼叫`VisualStateManager.GoToState`從程式碼。 通常您要進行此呼叫，從您的網頁類別的程式碼後置檔案。
 
@@ -492,11 +492,11 @@ VSM 標記會附加至第二個`Label`(名為`helpLabel`) 和`Button`(名為`sub
 
 如果`Entry`不包含有效的電話號碼，則目前的狀態為 「 無效 」，因此第二個`Label`會顯示與`Button`已停用：
 
-[![VSM 驗證： 無效的狀態](vsm-images/VsmValidationInvalid.png "VSM 驗證為無效")](vsm-images/VsmValidationInvalid-Large.png#lightbox)
+[![VSM 驗證：無效的狀態](vsm-images/VsmValidationInvalid.png "VSM 驗證為無效")](vsm-images/VsmValidationInvalid-Large.png#lightbox)
 
 當您輸入有效的電話號碼時，就目前的狀態會變成 「 有效 」。 第二個`Entry`消失，`Button`現在已啟用：
 
-[![VSM 驗證： 無效的狀態](vsm-images/VsmValidationValid.png "VSM 驗證-有效")](vsm-images/VsmValidationValid-Large.png#lightbox)
+[![VSM 驗證：有效狀態](vsm-images/VsmValidationValid.png "VSM 驗證-有效")](vsm-images/VsmValidationValid-Large.png#lightbox)
 
 程式碼後置檔案會負責處理`TextChanged`從事件`Entry`。 處理常式會使用規則運算式，以判斷輸入的字串是否為有效。 名為程式碼後置檔案中的方法`GoToState`呼叫靜態`VisualStateManager.GoToState`方法，同時`helpLabel`和`submitButton`:
 
@@ -529,7 +529,7 @@ public partial class VsmValidationPage : ContentPage
 
 請注意程式碼後置檔案必須採取之每個物件的帳戶會受到影響的頁面上，這些視覺狀態，以及如何呼叫`VisualStateManager.GoToState`的每個物件。 在此範例中，就只有兩個物件 (`Label`而`Button`)，但它可以是數個更多。
 
-您可能會想知道： 如果程式碼後置檔案必須參考會受到這些視覺狀態的頁面上的每個物件，為什麼不能程式碼後置檔案只是物件直接存取？ 當然可以。 不過，使用 VSM 的優點是，您可以控制如何視覺項目回應不同的狀態，完全以 XAML，會將所有 UI 設計放在一個位置。 這會藉由直接從程式碼後置存取視覺項目避免設定視覺外觀。
+您可能會好奇：如果程式碼後置檔案必須參考會受到這些視覺狀態的頁面上的每個物件，為什麼無法的程式碼後置檔案直接存取物件直接？ 當然可以。 不過，使用 VSM 的優點是，您可以控制如何視覺項目回應不同的狀態，完全以 XAML，會將所有 UI 設計放在一個位置。 這會藉由直接從程式碼後置存取視覺項目避免設定視覺外觀。
 
 它可能會想要衍生的類別，請考慮`Entry`和或許定義此屬性，您可以將它設定為外部驗證函式。 衍生自類別`Entry`就可以呼叫`VisualStateManager.GoToState`方法。 此配置會正常運作，但只有當`Entry`是不同的視覺狀態所影響的唯一物件。 在此範例中，`Label`和`Button`也會受到影響。 沒有任何方法的 VSM 標記附加到`Entry`來控制頁面上，而且沒有任何方法上的其他物件附加至這些其他物件，若要從另一個物件參考視覺狀態變更的 VSM 標記。
 
@@ -543,11 +543,11 @@ Xamarin.Forms，通常可以在直向或橫向的外觀比例，並在桌面上�
 
 顯示會影響應用程式的內容的按鈕的小型集合的應用程式是一個簡單的例子。 在直向模式中，這些按鈕可能會顯示在頁面頂端的水平資料列：
 
-[![VSM 調適性的版面配置： 縱向](vsm-images/VsmAdaptiveLayoutPortrait.png "VSM 調適性的版面配置-直向")](vsm-images/VsmAdaptiveLayoutPortrait-Large.png#lightbox)
+[![VSM 調適性的版面配置：直向](vsm-images/VsmAdaptiveLayoutPortrait.png "VSM 調適性的版面配置-直向")](vsm-images/VsmAdaptiveLayoutPortrait-Large.png#lightbox)
 
 在橫向模式中，可能會移至一端，並顯示在資料行的按鈕陣列：
 
-[![VSM 調適性的版面配置： 橫向](vsm-images/VsmAdaptiveLayoutLandscape.png "VSM 調適性配置-橫向")](vsm-images/VsmAdaptiveLayoutLandscape-Large.png#lightbox)
+[![VSM 調適性的版面配置：橫向](vsm-images/VsmAdaptiveLayoutLandscape.png "VSM 調適性配置-橫向")](vsm-images/VsmAdaptiveLayoutLandscape-Large.png#lightbox)
 
 從頂端到底部，在通用 Windows 平台、 Android 和 iOS 上執行程式。
 

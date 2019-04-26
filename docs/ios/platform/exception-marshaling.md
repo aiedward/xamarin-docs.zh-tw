@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/05/2017
 ms.openlocfilehash: 167d6ac421bdd2652e7f8474e1ea21bd9040723f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114297"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61075086"
 ---
 # <a name="exception-marshaling-in-xamarinios"></a>在 Xamarin.iOS 中封送處理的例外狀況
 
@@ -261,18 +261,18 @@ Managed 原生界限攔截例外狀況不是免費的因此它不一定預設會
 
 以下為可用模式：
 
-- `Default`： 預設值是根據平台而異。 很`ThrowObjectiveCException`如果 GC 是合作式模式 (watchOS)，和`UnwindNativeCode`否則 (iOS / watchOS / macOS)。 預設值可能會在未來變更。
-- `UnwindNativeCode`： 這是上一個 （未定義） 的行為。 未提供此使用合作式模式 GC 時 （這是唯一的選項，在 watchOS; 因此，這不是有效的選項，在 watchOS），但它是所有其他平台的預設選項。
-- `ThrowObjectiveCException`： 將 managed 例外狀況轉換成 Objective C 例外狀況並擲回的 Objective C 例外狀況。 這是 watchOS 上的預設值。
-- `Abort`： 中止程序。
-- `Disable`： 停用例外狀況攔截，因此沒有任何事件處理常式中設定此值的意義，但引發事件之後就無法再將它停用。 在任何情況下，如果設定，它會做`UnwindNativeCode`。
+- `Default`：預設值是根據平台而異。 很`ThrowObjectiveCException`如果 GC 是合作式模式 (watchOS)，和`UnwindNativeCode`否則 (iOS / watchOS / macOS)。 預設值可能會在未來變更。
+- `UnwindNativeCode`：這是上一個 （未定義） 的行為。 未提供此使用合作式模式 GC 時 （這是唯一的選項，在 watchOS; 因此，這不是有效的選項，在 watchOS），但它是所有其他平台的預設選項。
+- `ThrowObjectiveCException`：將 managed 例外狀況轉換成 Objective C 例外狀況並擲回的 Objective C 例外狀況。 這是 watchOS 上的預設值。
+- `Abort`：中止程序。
+- `Disable`：停用例外狀況攔截，因此沒有任何事件處理常式中設定此值的意義，但引發事件之後就無法再將它停用。 在任何情況下，如果設定，它會做`UnwindNativeCode`。
 
 封送處理至 managed 程式碼的 Objective C 例外狀況，以下為可用模式：
 
-- `Default`： 預設值是根據平台而異。 很`ThrowManagedException`如果 GC 是合作式模式 (watchOS)，和`UnwindManagedCode`否則 (iOS / tvOS / macOS)。 預設值可能會在未來變更。
-- `UnwindManagedCode`： 這是上一個 （未定義） 的行為。 未提供此使用合作式模式 GC 時 （這是唯一有效的 GC 模式在 watchOS; 因此這不是有效的選項，在 watchOS），但它是所有其他平台的預設值。
-- `ThrowManagedException`： 將 OBJECTIVE-C 例外狀況轉換成 managed 例外狀況並擲回 managed 例外狀況。 這是 watchOS 上的預設值。
-- `Abort`： 中止程序。
+- `Default`：預設值是根據平台而異。 很`ThrowManagedException`如果 GC 是合作式模式 (watchOS)，和`UnwindManagedCode`否則 (iOS / tvOS / macOS)。 預設值可能會在未來變更。
+- `UnwindManagedCode`：這是上一個 （未定義） 的行為。 未提供此使用合作式模式 GC 時 （這是唯一有效的 GC 模式在 watchOS; 因此這不是有效的選項，在 watchOS），但它是所有其他平台的預設值。
+- `ThrowManagedException`：將 OBJECTIVE-C 例外狀況轉換成 managed 例外狀況並擲回 managed 例外狀況。 這是 watchOS 上的預設值。
+- `Abort`：中止程序。
 - `Disable`： 停用例外狀況攔截，因此沒有任何意義，若要設定此值在事件處理常式，但一次事件，就會引發時，就無法再將它停用。 在任何情況下如果設定，就會中止程序。
 
 因此，若要查看每次例外狀況會封送處理，您可以這樣做：

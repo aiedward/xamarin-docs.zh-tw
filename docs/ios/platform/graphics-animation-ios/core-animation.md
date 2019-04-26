@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: a40d0911b7dabc900a4c6e50c692e4f091f22be9
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61206210"
 ---
 # <a name="core-animation-in-xamarinios"></a>在 Xamarin.iOS 中的核心動畫
 
@@ -25,7 +25,7 @@ Core 動畫及 Core Graphics 架構如何共同運作，以建立漂亮的 2D �
 
 <a name="Using_Core_Animation" />
 
-## <a name="core-animation"></a>Core 動畫
+## <a name="core-animation"></a>Core Animation
 
 iOS 會使用的 Core 動畫架構，來建立動畫效果，例如檢視之間轉換、 滑動功能表和捲動效果等等。 有兩種方式可處理動畫：
 

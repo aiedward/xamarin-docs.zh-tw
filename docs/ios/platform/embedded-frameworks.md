@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/05/2018
 ms.openlocfilehash: b59fd7c1a9e5f528878b90e1a76fabe5a79bab81
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108234"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60946806"
 ---
 # <a name="embedded-frameworks-in-xamarinios"></a>在 Xamarin.iOS 中內嵌的架構
 
@@ -70,8 +70,8 @@ Xamarin.iOS 9.0 在 Xamarin.iOS 應用程式新增支援使用這些內嵌的架
 
 此行為可覆寫應用程式開發人員，將下列內容新增為專案的 iOS 組建 選項的其他 mtouch 引數：
 
-- `--mono:static`： 以靜態方式連結 Mono 執行階段使用。
-- `--mono:framework`： 連結與 Mono 執行階段的架構。
+- `--mono:static`：與 Mono 執行階段以靜態方式連結。
+- `--mono:framework`：Mono 執行階段做為架構的連結。
 
 Mono 執行階段即使沒有擴充功能的應用程式的架構為連結的其中一個案例是要減少可執行檔的大小，以克服任何 Apple 會強制執行可執行檔的大小限制。 如需參考，Mono 執行階段會增加大約 1.7 MB 每個架構，（由於的 Xamarin.iOS 8.12，不過他互異之間發行版本之間，甚至在應用程式）。 而 Mono 架構增加大約 2.3 MB 每個架構，這表示單一架構應用程式，而不需要任何擴充功能，讓應用程式連結與 Mono 執行階段架構將會壓縮由 ~1.7MB，可執行檔，但新增 ~2.3MB 架構，產生在 ~0.6MB 更大的應用程式一起指定。
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
 ms.openlocfilehash: c7bf7ca28200004e2383631c68cdaa4299348ecb
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054029"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61174548"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分。 從資料繫結至 MVVM
 
@@ -35,7 +35,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 <StackLayout BindingContext="{x:Static sys:DateTime.Now}" …>
 ```
 
-`BindingContext` 是非常特殊的屬性： 當您將設定`BindingContext`項目，它會繼承該元素的所有子系。 這表示所有子系`StackLayout`具有此相同`BindingContext`，而且可以包含簡單的繫結，該物件的屬性。
+`BindingContext` 是非常特殊的屬性：當您將設定`BindingContext`項目，它會繼承該元素的所有子系。 這表示所有子系`StackLayout`具有此相同`BindingContext`，而且可以包含簡單的繫結，該物件的屬性。
 
 在  **One-Shot DateTime**程式中，子系的兩個包含該屬性的繫結`DateTime`值，但兩個其他子系包含繫結似乎遺漏繫結路徑。 這表示`DateTime`本身的值會用於`StringFormat`:
 
@@ -298,7 +298,7 @@ namespace XamlSamples
 
 ## <a name="commanding-with-viewmodels"></a>Viewmodel 的命令執行
 
-在許多情況下，MVVM 模式僅限於資料的項目操作： 在檢視中的使用者介面物件的平行資料物件中的 ViewModel。
+在許多情況下，MVVM 模式是限制為操作資料的項目：檢視中的使用者介面物件的平行資料物件中的 ViewModel。
 
 不過，有時候必須檢視包含觸發程序中的 ViewModel 的各種動作的按鈕。 但不是能包含 ViewModel`Clicked`按鈕處理常式因為，會將繫結至特定的使用者介面典範 ViewModel。
 
@@ -702,7 +702,7 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 > [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
 
-**使用 Xamarin.Forms 和角柱 Xamarin Evolve 2016: MVVM**
+**Xamarin Evolve 2016:使用 Xamarin.Forms 和角柱 MVVM**
 
 ## <a name="summary"></a>總結
 

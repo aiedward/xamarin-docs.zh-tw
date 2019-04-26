@@ -1,5 +1,5 @@
 ---
-title: 使用 iOS 設計工具中的資料表
+title: 在 iOS 設計工具中使用表格
 description: 前幾節中，我們探討使用資料表進行開發。 在此，第五個和最後一個區段中，我們將彙總我們已經學到目前為止，並建立使用分鏡腳本的基本項煩瑣清單應用程式。
 ms.prod: xamarin
 ms.assetid: D8416E10-481A-0B6E-4081-B146E6358004
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
 ms.openlocfilehash: 303c96ae6cdbc9f5b327c971f962d6eac75a6fa1
-ms.sourcegitcommit: f541a92b4f896474f6a5467ccff2028dafa6fee7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "50983610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61227361"
 ---
-# <a name="working-with-tables-in-the-ios-designer"></a>使用 iOS 設計工具中的資料表
+# <a name="working-with-tables-in-the-ios-designer"></a>在 iOS 設計工具中使用表格
 
 分鏡腳本是 WYSIWYG 的方式，建立 iOS 應用程式，並支援在 Mac 和 Windows 上的 Visual Studio 內。 如需有關分鏡腳本的詳細資訊，請參閱[到分鏡腳本的簡介](~/ios/user-interface/storyboards/index.md)文件。 分鏡腳本也可讓您編輯儲存格的版面配置*在*資料表中，簡化了開發資料表和資料格
 
@@ -79,11 +79,11 @@ StoryboardTable 範例包含使用這兩種 UITableView 在分鏡腳本的簡單
 
 5. 接下來，設定兩個資料表檢視中選取它們，並使用 [屬性] 面板。 請務必選取 檢視並不是檢視控制器 – 您可以使用文件大綱，以協助使用選取項目。
 
-6.  變更為根檢視控制器**內容： 動態原型**(將會標示為設計介面上的檢視**原型內容**):
+6.  變更為根檢視控制器**內容：動態原型**(將會標示為設計介面上的檢視**原型內容**):
 
     [![將內容屬性設定為動態的原型](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
 
-7.  變更新**UITableViewController**要**內容︰ 靜態的資料格**。 
+7.  變更新**UITableViewController**要**內容：靜態的資料格**。 
 
 
 8. 新 UITableViewController 必須具有其類別名稱和設定的識別碼。 選取檢視控制器，然後輸入_TaskDetailViewController_ for**類別**中**Properties Pad** – 這會建立新`TaskDetailViewController.cs`方案中的檔案填補。 請輸入**StoryboardID**作為_詳細_，如下列範例所示。 這將會稍後可用於載入此檢視的C#程式碼：  
@@ -115,7 +115,7 @@ StoryboardTable 範例包含使用這兩種 UITableView 在分鏡腳本的簡單
 請執行下列動作： 
 
 -  拖曳**列按鈕項目**從工具箱拖曳至_右邊的瀏覽列_。
--  在**Properties Pad**下方**列按鈕項目**選取**識別碼： 新增**(以便 *+* 加號按鈕)。 
+-  在  **Properties Pad**下方**列按鈕項目**選取**識別碼：新增**(以便*+* 加號按鈕)。 
 -  指定它的名稱，如此就可以在程式碼中識別在稍後的階段。 請注意，您將需要提供根檢視控制器類別名稱 (例如**ItemViewController**) 可讓您設定之列按鈕項目的名稱。
 
 
@@ -129,9 +129,9 @@ StoryboardTable 範例包含使用這兩種 UITableView 在分鏡腳本的簡單
 
 選取 [資料表] 檢視，然後開啟**屬性輸入板**。 更新下列屬性：
 
--  **章節**: _2_ 
+-  **區段**:_2_ 
 -  **樣式**:_分組_
--  **分隔符號**: _None_
+-  **分隔符號**:_無_
 -  **選取項目**:_沒有選取項目_
 
 選取上方的區段和下方**屬性 > 資料表檢視 區段**變更**資料列**來_3_，如下所示：
@@ -142,7 +142,7 @@ StoryboardTable 範例包含使用這兩種 UITableView 在分鏡腳本的簡單
 每個資料格開放**Properties Pad**和設定：
 
 -  **樣式**:_自訂_
--  **識別項**： 選擇 （例如在每個資料格的唯一識別碼。 「_標題_"，"_備忘稿_"，"_完成_")。
+-  **識別項**:選擇 （例如在每個資料格的唯一識別碼。 「_標題_"，"_備忘稿_"，"_完成_")。
 -  拖曳所需的控制項，以產生螢幕擷取畫面所示的版面配置 (放置**UILabel**， **UITextField**並**UISwitch**正確的資料格，並設定標籤適當地 ie。標題、 記事及完成)。
 
 
@@ -160,11 +160,11 @@ StoryboardTable 範例包含使用這兩種 UITableView 在分鏡腳本的簡單
 
 有少數的最後一個步驟中建立我們的分鏡腳本。 首先我們必須提供每個控制項的名稱**身分識別 > 名稱**讓它們可以用於程式碼之後。 命名這些，如下所示：
 
--  **標題 UITextField** : _TitleText_
--  **資訊 UITextField** : _NotesText_
--  **UISwitch** : _DoneSwitch_
--  **刪除標記的 UIButton** : _DeleteButton_
--  **儲存標記的 UIButton** : _SaveButton_
+-  **標題 UITextField** :_TitleText_
+-  **資訊 UITextField** :_NotesText_
+-  **UISwitch** :_DoneSwitch_
+-  **刪除標記的 UIButton** :_DeleteButton_
+-  **儲存標記的 UIButton** :_SaveButton_
 
 
 <a name="Adding_Code" />

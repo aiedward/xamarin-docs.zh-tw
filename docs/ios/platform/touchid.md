@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: 2d67bc71361e335515cfba8b5a20e157ed6b6b05
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61087793"
 ---
 # <a name="touch-id-in-xamarinios"></a>在 Xamarin.iOS 中的 touch ID
 
@@ -52,8 +52,8 @@ IOS 8，截至目前沒有新的使用者是否存在原則`SecAccessControl`，
 
 |裝置設定|原則評估|備份機制|
 |--- |--- |--- |
-|沒有密碼的裝置|沒有存取權|無|
-|使用密碼的裝置|需要密碼|無|
+|沒有密碼的裝置|沒有存取權|None|
+|使用密碼的裝置|需要密碼|None|
 |使用 Touch ID 的裝置|偏好 Touch ID|可讓密碼|
 
 安全飛地內的所有作業可以彼此都信任。 這表示我們可以使用 Touch ID 的驗證結果來授權金鑰鏈項目解密。 安全飛地也會保留失敗 Touch ID 的相符項目中案例的使用者擁有要還原成使用密碼的計數器。
@@ -63,7 +63,7 @@ IOS 8，截至目前沒有新的使用者是否存在原則`SecAccessControl`，
 
 如同我們在上一節中所建立，應用程式可以使用本機驗證來驗證使用者在裝置上已設定的安全性原則的遵循。
 
-目前，API 會提供只有兩個功能： 首先，它可協助透過使用新的金鑰鏈存取控制清單 (Acl) 的現有金鑰鏈服務。 可成功進行驗證的使用者指紋解除鎖定 Keychain 的資料。
+目前，API 會提供只有兩個功能：首先，它可協助透過使用新的金鑰鏈存取控制清單 (Acl) 的現有金鑰鏈服務。 可成功進行驗證的使用者指紋解除鎖定 Keychain 的資料。
 
 其次，LocalAuthentication 提供兩種方法來驗證您的應用程式在本機。 開發人員應該使用`CanEvaluatePolicy`來判斷裝置是否能夠接受 Touch ID，然後`EvaluatePolicy`開始驗證作業。
 

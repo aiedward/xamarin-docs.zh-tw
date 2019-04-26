@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
 ms.openlocfilehash: 719efc87b8843d0d2fcd2643aab23aa6849d940a
-ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54841376"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61078698"
 ---
 # <a name="images-in-xamarinmac"></a>Xamarin.Mac 中的映像
 
@@ -345,7 +345,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 ## <a name="using-images-with-outline-views"></a>使用 「 大綱檢視中使用映像
 
-若要包含影像中的資料格的一部分`NSOutlineView`，您必須變更 [大綱] 檢視所傳回資料的方式`NSTableViewDelegate's``GetView`方法，以使用`NSTableCellView`而不是一般`NSTextField`。 例如: 
+若要包含影像中的資料格的一部分`NSOutlineView`，您必須變更 [大綱] 檢視所傳回資料的方式`NSTableViewDelegate's``GetView`方法，以使用`NSTableCellView`而不是一般`NSTextField`。 例如：
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {

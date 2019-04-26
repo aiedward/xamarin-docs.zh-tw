@@ -1,5 +1,5 @@
 ---
-title: 圖形和動畫在 iOS 中
+title: iOS 中的圖形和動畫
 description: 討論如何在 Xamarin.iOS 中使用的 Core 映像、 Core 圖形和核心動畫架構的各種指南的這個文件連結。
 ms.prod: xamarin
 ms.assetid: 3FEF45F2-C0F0-4D66-8796-9674FFE6740F
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: c553bd6d81e43913b6322b2ff85972a81b87f6cf
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57666407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60945675"
 ---
-# <a name="graphics-and-animation-in-ios"></a>圖形和動畫在 iOS 中
+# <a name="graphics-and-animation-in-ios"></a>iOS 中的圖形和動畫
 
 ![Images/00_final_app.png](images/00-final-app.png "執行範例應用程式")
 

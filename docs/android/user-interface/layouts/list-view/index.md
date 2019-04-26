@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
 ms.openlocfilehash: a30256722647bbea482970d0c4a751954810d99e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61170787"
 ---
 # <a name="listview"></a>ListView
 
@@ -228,13 +228,13 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 ## <a name="related-links"></a>相關連結
 
 - [AccessoryViews （範例）](https://developer.xamarin.com/samples/AccessoryViews/)
-- [BasicTableAndroid （範例）](https://developer.xamarin.com/samples/BasicTableAndroid/)
+- [BasicTableAndroid (sample)](https://developer.xamarin.com/samples/BasicTableAndroid/)
 - [BasicTableAdapter （範例）](https://developer.xamarin.com/samples/BasicTableAdapter/)
 - [BuiltInViews （範例）](https://developer.xamarin.com/samples/BuiltInViews/)
 - [CustomRowView （範例）](https://developer.xamarin.com/samples/CustomRowView/)
 - [FastScroll （範例）](https://developer.xamarin.com/samples/FastScroll/)
 - [SectionIndex （範例）](https://developer.xamarin.com/samples/SectionIndex/)
-- [SimpleCursorTableAdapter （範例）](https://developer.xamarin.com/samples/SimpleCursorTableAdapter/)
+- [SimpleCursorTableAdapter (sample)](https://developer.xamarin.com/samples/SimpleCursorTableAdapter/)
 - [CursorTableAdapter （範例）](https://developer.xamarin.com/samples/CursorTableAdapter/)
 - [活動生命週期教學課程](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [使用資料表和資料格中 （Xamarin.iOS)](~/ios/user-interface/controls/tables/index.md)

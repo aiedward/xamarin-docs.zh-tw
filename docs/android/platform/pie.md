@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
 ms.openlocfilehash: e08324d5a905639e7ecd59bc4c7a5c0f02d0adfe
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854713"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61217936"
 ---
 # <a name="android-pie-features"></a>Android 的圓形圖功能
 
@@ -170,7 +170,7 @@ Android 的圓形圖導入了下列增強功能來改善訊息經驗：
     ```
 
 2. 建立`Notification.MessagingStyle.Message`其中包含要傳送的映像傳遞至新的映像[Notification.MessagingStyle.Message.SetData](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri)方法。
-   例如: 
+   例如：
 
     ```csharp
     Uri imageUri = Uri.Parse("android.resource://com.xamarin.pminidemo/drawable/example_image");
@@ -197,7 +197,7 @@ Android 的圓形圖導入了下列增強功能來改善訊息經驗：
         .SetChannelId(MY_CHANNEL);
     ```
 
-5. 將發行通知。 例如：
+5. 將發行通知。 例如: 
 
     ```csharp
     const int notificationId = 1000;

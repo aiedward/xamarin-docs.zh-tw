@@ -1,40 +1,40 @@
 ---
-title: '使用 F # 進行 UrhoSharp 程式設計'
-description: '本文件說明如何建立簡單的 hello world UrhoSharp 應用程式使用 F # 在 Visual Studio for mac。'
+title: 與進行 UrhoSharp 程式設計F#
+description: 本文件說明如何建立簡單的 hello world UrhoSharp 應用程式使用F#在 Visual Studio for mac。
 ms.prod: xamarin
 ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: 99e8f8bf04465d0d61086139ba9889eae141207e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61160582"
 ---
-# <a name="programming-urhosharp-with-f"></a>使用 F # 進行 UrhoSharp 程式設計
+# <a name="programming-urhosharp-with-f"></a>與進行 UrhoSharp 程式設計F#
 
-UrhoSharp 可以編寫使用 F # 使用相同的程式庫和 C# 程式設計人員所使用的概念。 [使用 UrhoSharp](~/graphics-games/urhosharp/using.md)文章概述 UrhoSharp 引擎，並應該在這篇文章之前閱讀。
+可以用編寫 UrhoSharpF#使用相同的程式庫和所使用的概念C#程式設計人員。 [使用 UrhoSharp](~/graphics-games/urhosharp/using.md)文章概述 UrhoSharp 引擎，並應該在這篇文章之前閱讀。
 
-在 c + + 世界裡產生的許多程式庫，例如許多 UrhoSharp 函式會傳回布林值或整數，指出成功或失敗。 您應該使用`|> ignore`要略過這些值。
+例如，在產生的許多程式庫C++的世界中，許多 UrhoSharp 函式會傳回布林值或整數，指出成功或失敗。 您應該使用`|> ignore`要略過這些值。
 
-[範例程式](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)UrhoSharp 從 F # 中為"Hello World"。
+[範例程式](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)UrhoSharp 從做為 「 Hello World 」 F#。
 
 ## <a name="creating-an-empty-project"></a>建立空專案
 
-UrhoSharp 沒有 F # 範本，但您可以使用開始可用的因此，若要建立您自己的 UrhoSharp 專案[範例](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)或遵循下列步驟：
+有任何F#範本 UrhoSharp 尚未可用，因此，若要建立您可以開始使用您自己 UrhoSharp 專案[範例](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)或遵循下列步驟：
 
-1. 從 Visual Studio for Mac 中，建立新**解決方案**。 選擇**iOS > 應用程式 > 單一檢視應用程式**，然後選取**F #** 做為實作語言。 
+1. 從 Visual Studio for Mac 中，建立新**解決方案**。 選擇**iOS > 應用程式 > 單一檢視應用程式**，然後選取**F#** 做為實作語言。 
 1. 刪除**Main.storyboard**檔案。 開啟**Info.plist**檔案並在**iPhone / iPod 部署資訊**窗格中，刪除`Main`字串**主要介面**下拉式清單。
 1. 刪除**ViewController.fs**檔案。
 
 ## <a name="building-hello-world-in-urho"></a>Urho 建置 Hello World
 
-您現在已準備好開始定義您的遊戲類別。 至少，您必須定義的子類別`Urho.Application`，並覆寫其`Start`方法。 若要建立此檔案，以滑鼠右鍵按一下您的 F # 專案中，選擇**新增新的檔案...** 並將空的 F # 類別新增至您的專案。 新的檔案會新增至您的專案中的檔案清單的結尾，但您必須將它拖曳，使其出現*之前*它使用於**AppDelegate.fs**。
+您現在已準備好開始定義您的遊戲類別。 至少，您必須定義的子類別`Urho.Application`，並覆寫其`Start`方法。 若要建立此檔案，以滑鼠右鍵按一下您F#專案中，選擇**加入新的檔案...** 並新增空白F#類別，以您的專案。 新的檔案會新增至您的專案中的檔案清單的結尾，但您必須將它拖曳，使其出現*之前*它使用於**AppDelegate.fs**。
 
 1. 加入 Urho NuGet 套件的參考。
-1. 從現有 Urho 專案中，複製 （大） 的目錄**CoreData /** 並**資料 /** 至您的專案**資源 /** 目錄。 在 F # 專案中，以滑鼠右鍵按一下**資源**資料夾，然後使用**Add / 新增現有資料夾**將所有這些檔案新增至您的專案。
+1. 從現有 Urho 專案中，複製 （大） 的目錄**CoreData /** 並**資料 /** 至您的專案**資源 /** 目錄。 在您F#專案中，以滑鼠右鍵按一下**資源**資料夾，然後使用**Add / 新增現有資料夾**將所有這些檔案新增至您的專案。
 
 您的專案結構現在看起來應該類似：
 

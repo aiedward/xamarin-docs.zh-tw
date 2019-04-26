@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/04/2018
 ms.openlocfilehash: 264b1935aefe6f5ddf4bfcd17c491f6858bd4ffb
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60876101"
 ---
 # <a name="critical-alerts-in-xamarinios"></a>在 Xamarin.iOS 中的重大警示
 

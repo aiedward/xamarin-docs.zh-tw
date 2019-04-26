@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
 ms.openlocfilehash: e60ed6cc49921fc7b6e8e2616a6b0bf6f8abb401
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670086"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61026803"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>逐步解說-在 Xamarin.Android 中使用本機通知
 

@@ -1,5 +1,5 @@
 ---
-title: 如何將 Android NUnit 測試專案的自動化？
+title: 如何將 Android NUnit 測試專案自動化？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: EA3CFCC4-2D2E-49D6-A26C-8C0706ACA045
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
 ms.openlocfilehash: b785ef171d2cb00d4f8f5a17f37d49de17fd3da9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153284"
 ---
-# <a name="how-do-i-automate-an-android-nunit-test-project"></a>如何將 Android NUnit 測試專案的自動化？
+# <a name="how-do-i-automate-an-android-nunit-test-project"></a>如何將 Android NUnit 測試專案自動化？
 
 > [!NOTE]
 > 本指南說明如何將 Android NUnit 測試專案中，不是 Xamarin.UITest 專案自動化。 您可以找到 Xamarin.UITest 輔助線[此處](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)。
@@ -58,7 +58,7 @@ adb shell am instrument
 
 2.  實作[TestInstrumentation](https://developer.xamarin.com/api/constructor/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.TestSuiteInstrumentation/p/System.IntPtr/Android.Runtime.JniHandleOwnership/)建構函式並[AddTests](https://developer.xamarin.com/api/member/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.AddTests%28%29)方法。 `AddTests`方法控制項實際上執行哪些測試。
 
-3.  修改`.csproj`檔案來新增**TestInstrumentation.cs**。 例如: 
+3.  修改`.csproj`檔案來新增**TestInstrumentation.cs**。 例如：
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>

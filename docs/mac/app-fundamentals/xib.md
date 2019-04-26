@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 45eeee745b133646aef0f775bc879fa6a5d867c7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61062641"
 ---
 # <a name="xib-files-in-xamarinmac"></a>xamarin.mac.xib 檔案
 
@@ -575,7 +575,7 @@ private void DisplaySubview(NSViewController controller, SubviewType type) {
 DisplaySubview(new SubviewTableController(), SubviewType.TableView);
 ```
 
-這會建立新檢視的 [檢視控制器]，顯示的新執行個體、 設定它的型別 （如加入至專案的列舉所指定），並使用`DisplaySubview`方法新增至視窗的類別，以實際顯示的檢視。 例如: 
+這會建立新檢視的 [檢視控制器]，顯示的新執行個體、 設定它的型別 （如加入至專案的列舉所指定），並使用`DisplaySubview`方法新增至視窗的類別，以實際顯示的檢視。 例如：
 
 [![執行範例應用程式](xib-images/view04.png "執行範例應用程式")](xib-images/view04-large.png#lightbox)
 

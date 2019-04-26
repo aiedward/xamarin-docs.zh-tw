@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
 ms.openlocfilehash: e803f138c0be85517bbafbfa6e9d39f39abc7e1d
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209153"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61366914"
 ---
 # <a name="navigationpage-bar-height-on-android"></a>在 Android 上的 NavigationPage 列高度
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 此 Android 平台特定設定的導覽列的高度[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)。 它由在 XAML 中設定[ `NavigationPage.BarHeight` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty)可繫結至整數值的屬性：
 

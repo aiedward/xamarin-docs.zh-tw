@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/11/2016
 ms.openlocfilehash: b251fa13c4b436a837f71b5362ae85dffd245092
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058713"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61408802"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>在 Xamarin.Forms 中使用 UrhoSharp
 
@@ -43,7 +43,7 @@ UrhoSharp.Forms NuGet 封裝會新增至專案：
 
 （例如 iOS 和 Android） 平台專屬專案重複上述步驟。
 
-## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>逐步解說： 將 UrhoSharp 新增至 Xamarin.Forms 應用程式
+## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>逐步解說：將 UrhoSharp 新增至 Xamarin.Forms 應用程式
 
 下列步驟說明 Xamarin.Forms UrhoSharp 範例中的程式碼：
 

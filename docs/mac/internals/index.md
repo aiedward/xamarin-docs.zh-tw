@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/10/2017
 ms.openlocfilehash: 872f26febf3abbe4d659773d2bf2d27348c64513
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118769"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61033239"
 ---
 # <a name="under-the-hood-in-xamarinmac"></a>背後原理 xamarin.mac
 
@@ -24,6 +24,6 @@ ms.locfileid: "50118769"
 
 OBJECTIVE-C、 包括例如編譯、 選取器，註冊機構、 應用程式啟動和產生器的概念 Xamarin.Mac 的關聯性。
 
-## <a name="xamarinmac-registrarregistrarmd"></a>[Xamarin.Mac 的註冊機構](registrar.md)
+## <a name="xamarinmac-registrarregistrarmd"></a>[Xamarin.Mac registrar](registrar.md)
 
 Xamarin.Mac 之間搭建橋樑 managed 的領域和 Cocoa 的執行階段，允許呼叫 unmanaged 的 OBJECTIVE-C 類別，並發生事件時呼叫的 managed 的類別。 若要執行此 「 神奇 」 所需的工作由在註冊機構，但了解什麼 「 幕後 」 上還是有時會很有幫助。

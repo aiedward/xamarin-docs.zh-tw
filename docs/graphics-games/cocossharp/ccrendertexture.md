@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
 ms.openlocfilehash: 95227689303a8367785202956a6aaef921c1c593
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61085172"
 ---
 # <a name="performance-and-visual-effects-with-ccrendertexture"></a>效能和使用 CCRenderTexture 的視覺效果
 
@@ -67,7 +67,7 @@ protected override void AddedToScene ()
 
 ### <a name="card-draw-calls"></a>卡片的繪製呼叫
 
-我們的程式碼是什麼可能會找到完整的簡化*可收集的撲克牌遊戲*(CCG) 例如"Magic:: 收集 」 或 「 Hearthstone"。 這時候遊戲只一次顯示三張卡片，並有一小部分的可能單位 （藍色、 綠色和橙色）。 相較之下，完整的遊戲可能螢幕上有超過 20 種卡片，在指定的時間，而且播放程式可能有數百個卡，以建立其投影片時從中選擇。 即使我們遊戲不目前會發生效能問題，可能會有類似的實作的完整的遊戲。
+我們的程式碼是什麼可能會找到完整的簡化*可收集的撲克牌遊戲*(CCG) 這類 「 Magic:正在蒐集 」 或 「 Hearthstone"。 這時候遊戲只一次顯示三張卡片，並有一小部分的可能單位 （藍色、 綠色和橙色）。 相較之下，完整的遊戲可能螢幕上有超過 20 種卡片，在指定的時間，而且播放程式可能有數百個卡，以建立其投影片時從中選擇。 即使我們遊戲不目前會發生效能問題，可能會有類似的實作的完整的遊戲。
 
 CocosSharp 提供一些深入了解藉由公開繪製呼叫呈現效能執行每個畫面。 我們`GameLayer.AddedToScene`方法會設定`GameView.Stats.Enabled`到`true`，產生的顯示畫面的左下方的效能資訊：
 

@@ -1,5 +1,5 @@
 ---
-title: 為什麼我的 iOS 組建無法使用： keychain 中找到的任何有效的 iPhone 程式碼簽署金鑰？
+title: 為什麼我的 iOS 組建因為「Keychain 中找不到任何有效的 iPhone 程式碼簽署金鑰」而失敗？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9DF24C46-D521-4112-9B21-52EA4E8D90D0
@@ -8,20 +8,20 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
 ms.openlocfilehash: fe267db1f83695b3d0e8f3d828f91e01b56ba8ee
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61419661"
 ---
-# <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychain"></a>為什麼我的 iOS 組建無法使用： keychain 中找到的任何有效的 iPhone 程式碼簽署金鑰？
+# <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychain"></a>為什麼我的 iOS 組建因為「Keychain 中找不到任何有效的 iPhone 程式碼簽署金鑰」而失敗？
 
 ## <a name="cause-of-the-error"></a>錯誤的原因
 此錯誤訊息時發生問題專案需要有效的程式碼簽署憑證，但找不到它們。 程式碼簽署，才能測試和實體 iOS 裝置上的部署以及臨機操作及應用程式儲存組建。 
 
 
 ### <a name="provisioning-devices"></a>裝置佈建
-如果您尚未佈建 iOS 裝置之前，下列指南將逐步帶領您完整的逐步程序：[裝置佈建指南](~/ios/get-started/installation/device-provisioning/index.md)
+如果您尚未佈建 iOS 裝置之前，下列指南將引導您完成完整的逐步程序：[裝置佈建指南](~/ios/get-started/installation/device-provisioning/index.md)
 
 
 ## <a name="bug-when-using-ios-simulator"></a>使用 iOS 模擬器時的 bug
@@ -35,7 +35,7 @@ ms.locfileid: "50115428"
 ### <a name="how-to-fix"></a>如何修正問題
 您可以解決此問題，藉由移除`<CodesignEntitlements>`.csproj 檔案中的旗標，從 偵錯組建。 您可以依照下列方式來執行這項操作：
 
-*警告：.csproj 檔案中的錯誤可能會中斷您的專案，因此最好備份您的檔案，然後再嘗試這個。*
+*警告：.Csproj 檔案中的錯誤可能會中斷您的專案，讓最好備份您的檔案，然後再嘗試這個。*
 
 1. 以滑鼠右鍵按一下 [解決方案] 窗格中的 iOS 專案，然後選取**卸載專案**
 2. 以滑鼠右鍵按一下專案，然後選取**編輯 [ProjectName].csproj**

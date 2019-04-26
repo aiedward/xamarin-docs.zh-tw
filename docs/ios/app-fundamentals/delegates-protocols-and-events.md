@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 09/17/2017
 ms.openlocfilehash: 5ccefdb5e527e67338714896905734c74278d00a
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61392417"
 ---
 # <a name="events-protocols-and-delegates-in-xamarinios"></a>事件、 通訊協定與委派在 Xamarin.iOS 中
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2018
 ms.openlocfilehash: 0ec1defa29a4fe85c4ae3e809d8733e68cc268ac
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61087409"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Xamarin.iOS 應用程式啟動畫面
 
@@ -231,4 +231,4 @@ IOS 8 之前建立的 iOS 應用程式啟動畫面需要開發人員的各種裝
 - [iOS 設計工具基本概念](~/ios/user-interface/designer/index.md)
 - [新增至資產目錄映像的映像設定](~/ios/app-fundamentals/images-icons/displaying-an-image.md#adding-images-to-an-asset-catalog-image-set)
 - [使用適用於 iOS 的 Xamarin 設計工具的自動版面配置](~/ios/user-interface/designer/designer-auto-layout.md)
-- [人性化介面指導方針： 啟動畫面](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)
+- [人性化介面指導方針：啟動畫面](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/25/2017
 ms.openlocfilehash: 0635e110cb2aa7bc00234d3d06df57e0fd6f966e
-ms.sourcegitcommit: 6f728aa0c1775224e16c0f3e583cf843d34270f9
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59893227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61033832"
 ---
 # <a name="how-xamarinmac-works"></a>Xamarin.Mac 的運作方式
 
@@ -104,7 +104,7 @@ Xamarin.Mac 是新 AOT 的能力的 IL 程式碼在應用程式組建循環，�
 
 ### <a name="enabling-aot-compilation"></a>啟用 AOT 編譯
 
-按兩下 Xamarin.Mac 中啟用 AOT**專案名稱**中**方案總管**，請巡覽至**Mac 組建**並新增`--aot:[options]`到**其他 mmp 引數：** 欄位 (其中`[options]`是一或多個選項來控制 AOT 型別，如下所示)。 例如: 
+按兩下 Xamarin.Mac 中啟用 AOT**專案名稱**中**方案總管**，請巡覽至**Mac 組建**並新增`--aot:[options]`到**其他 mmp 引數：** 欄位 (其中`[options]`是一或多個選項來控制 AOT 型別，如下所示)。 例如：
 
 ![加入其他 mmp 引數的 AOT](how-it-works-images/aot01.png "新增至 其他 mmp 引數的 AOT")
 
@@ -146,7 +146,7 @@ Xamarin.Mac 是新 AOT 的能力的 IL 程式碼在應用程式組建循環，�
 
 ### <a name="enabling-the-partial-static-registrar"></a>啟用部分的靜態註冊機構
 
-部分的靜態註冊機構會啟用 Xamarin.Mac 中按兩下**專案名稱**中**方案總管**，請巡覽至**Mac 組建**並加入`--registrar:static`要**其他 mmp 引數：** 欄位。 例如：
+部分的靜態註冊機構會啟用 Xamarin.Mac 中按兩下**專案名稱**中**方案總管**，請巡覽至**Mac 組建**並加入`--registrar:static`要**其他 mmp 引數：** 欄位。 例如: 
 
 ![將部分的靜態註冊機構新增至 其他 mmp 引數](how-it-works-images/psr01.png "將部分的靜態註冊機構新增至 其他 mmp 引數")
 

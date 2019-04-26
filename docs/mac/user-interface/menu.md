@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 0a14e3e3eb58b264d1909b6576bbbc4f7e8f4068
-ms.sourcegitcommit: 650fd5813e243d67eea13c4bc76683c0f8134123
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737202"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61166340"
 ---
 # <a name="menus-in-xamarinmac"></a>Xamarin.mac 的功能表
 
@@ -226,7 +226,7 @@ NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 
 即使不使用您的應用程式`NSDocuments`，您仍然可以使用`NSDocumentController`維護**開啟最近**功能表傳送`NSUrl`檔案的位置`NoteNewRecentDocumentURL`方法`SharedDocumentController`。
 
-接下來，您需要覆寫`OpenFile`方法來開啟任何使用者從選取的檔案的應用程式委派**最近開啟**功能表。 例如: 
+接下來，您需要覆寫`OpenFile`方法來開啟任何使用者從選取的檔案的應用程式委派**最近開啟**功能表。 例如：
 
 ```csharp
 public override bool OpenFile (NSApplication sender, string filename)
@@ -1011,7 +1011,7 @@ public override void DidFinishLaunching (NSNotification notification)
 1. 在 Visual Studio for Mac，以滑鼠右鍵按一下應用程式的專案，然後選取**新增** > **新檔...** 從新的 [檔案] 對話方塊中，選取**Xamarin.Mac** > **空白介面定義**，使用"DockMenu 」**名稱**按一下**新增**按鈕，以建立新**DockMenu.xib**檔案：
 
     ![新增空白介面定義](menu-images/dock02.png "新增空白介面定義")
-2. 在  **Solution Pad**，按兩下**DockMenu.xib**檔案將它開啟以在 Xcode 中編輯。 建立新** 功能表**具有下列項目：**地址**，**日期**，**問候語**，和**簽章** 
+2. 在  **Solution Pad**，按兩下**DockMenu.xib**檔案將它開啟以在 Xcode 中編輯。 建立新** 功能表**與下列項目：**地址**，**日期**，**問候語**，和**簽章** 
 
     [![UI 的版面配置](menu-images/dock03.png "UI 的版面配置")](menu-images/dock03-large.png#lightbox)
 3. 接下來，讓我們先連接到我們現有的動作，我們建立我們自訂的功能表中的 我們新的功能表項目[新增、 編輯和刪除功能表](#Adding,_Editing_and_Deleting_Menus)上一節。 切換至**連接 Inspector** ，然後選取**第一個回應**中**介面階層架構**。 向下捲動並尋找`phraseAddress:`動作。 在該動作將圓形線條**地址**功能表項目：

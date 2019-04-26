@@ -9,11 +9,11 @@ ms.author: piboggan
 robots: noindex
 ms.date: 10/26/2018
 ms.openlocfilehash: 21ff09f2af93ee46578b959111bf744ba05a74d7
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617653"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384909"
 ---
 # <a name="xamarin-live-reload-preview"></a>Xamarin 即時重新載入 （預覽）
 
@@ -119,25 +119,25 @@ public partial class App : Application
 * 重新載入整個應用程式的資源 (亦即**App.xaml**或共用資源字典)，就會重設應用程式瀏覽。 
 * 重新載入 ContentView 目前需要重新載入包含的頁面。
 * 包含 AutomationId 的項目可能會造成重新載入失敗。
-* 編輯 XAML，而偵錯 UWP 可能會導致執行階段當機。 因應措施： 使用**但不偵錯 （Ctrl + F5） 開始**而不是**開始偵錯 (F5)**。
+* 編輯 XAML，而偵錯 UWP 可能會導致執行階段當機。 因應措施：使用**但不偵錯 （Ctrl + F5） 開始**而不是**開始偵錯 (F5)**。
 
 ## <a name="troubleshooting"></a>疑難排解
 
 ### <a name="error-codes"></a>錯誤碼
 
-* **XLR001**:*目前的專案參考 'Xamarin.LiveReload' NuGet 套件版本 [版本]，但 Xamarin 即時重新載入延伸模組需要版本 [版本]。*
+* **XLR001**:*目前的專案參考 'Xamarin.LiveReload' NuGet 套件版本 [版本]，但是 Xamarin 即時重新載入延伸模組需要版本 [版本]。*
 
   若要允許快速反覆項目 」 和 「 即時重新載入功能的演進，必須完全符合 nuget 和 Visual Studio 擴充功能。 您已安裝的延伸模組相同的版本更新您的 nuget 套件。
 
-* **XLR002**:*即時重新載入至少需要 'MqttHostname' 屬性時從命令列建置。或者，設定 'EnableLiveReload' 為 'false' 會停用此功能。*
+* **XLR002**:*從命令列建置時即時重新載入至少需要 'MqttHostname' 屬性。或者，設定 'EnableLiveReload' 為 'false' 會停用此功能。*
 
   即時重新載入所需的屬性時，就無法使用建置從命令列 （或在持續整合），並因此必須明確提供。 
 
-* **XLR003**:*即時重新載入 nuget 套件需要安裝 Xamarin Live 重新載入 Visual Studio 延伸模組。*
+* **XLR003**:*即時重新載入 nuget 套件需要安裝 Xamarin Live 重新載入 Visual Studio 擴充功能。*
 
   嘗試建置專案，參考即時重新載入 nuget 套件，但未安裝 Visual 的擴充功能。  
 
-* *載入組件時發生例外狀況： System.IO.FileNotFoundException： 無法載入組件 ' Xamarin.Live.Reload，版本 = 0.3.27.0，Culture = neutral，PublicKeyToken ='。*
+* *載入組件時發生的例外狀況：System.IO.FileNotFoundException:無法載入組件 ' Xamarin.Live.Reload，版本 = 0.3.27.0，Culture = neutral，PublicKeyToken ='。*
 
   應該使用主專案`PackageReference`而不是 `packages.config`
 

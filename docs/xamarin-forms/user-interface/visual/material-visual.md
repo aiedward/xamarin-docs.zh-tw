@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
 ms.openlocfilehash: cf6ab8266b0798ccbf29078313bbc7454125a1af
-ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57972620"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61026765"
 ---
 # <a name="xamarinforms-material-visual"></a>Xamarin.Forms 材質視覺效果
 
@@ -95,11 +95,11 @@ contentPage.Visual = VisualMarker.Material;
 
 下列螢幕擷取畫面顯示使用的預設轉譯器轉譯使用者介面：
 
-[![預設的轉譯器，在 iOS 和 Android 上的螢幕擷取畫面](material-visual-images/default-renderers.png "檢視 使用預設的轉譯器")](material-visual-images/default-renderers-large.png#lightbox)
+[![iOS 和 Android 上預設轉譯器的螢幕擷取畫面](material-visual-images/default-renderers.png "使用預設轉譯器的檢視")](material-visual-images/default-renderers-large.png#lightbox)
 
 下列螢幕擷取畫面顯示與使用材質轉譯器轉譯後之使用者介面相同的使用者介面：
 
-[![材質的轉譯器，在 iOS 和 Android 上的螢幕擷取畫面](material-visual-images/material-renderers.png "檢視使用資料轉譯器")](material-visual-images/material-renderers-large.png#lightbox)
+[![iOS 和 Android 上材質轉譯器的螢幕擷取畫面](material-visual-images/material-renderers.png "使用材質轉譯器的檢視")](material-visual-images/material-renderers-large.png#lightbox)
 
 Material 轉譯器，在這裡顯示，與預設轉譯器之間的主要可見的差異是 material 轉譯器改為大寫[ `Button` ](xref:Xamarin.Forms.Button)文字和圓角[ `Frame` ](xref:Xamarin.Forms.Frame)框線。 不過，material 轉譯器會使用原生控制項，並因此可能仍然會有平台，例如字型、 shadows、 色彩和提高權限的區域之間的使用者介面不同。
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: 979b103db478e3888d3a3c20df6afbd91d0c37d8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61386515"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>watchOS 在 Xamarin 中的主動式建議
 
@@ -297,7 +297,7 @@ attributes.SupportsNavigation = true;
 - 若要處理啟動應用程式與 MapKit`MKDirectionsRequest`物件。
 - 讓 watchOS 能夠了解如何根據使用者參與應用程式的建議。
 
-應用程式啟動時是 MapKit`MKDirectionsRequest`物件，它應該會自動開始讓使用者指示要求的位置，或呈現 UI，可讓您更輕鬆地開始取得指示使用者。 例如: 
+應用程式啟動時是 MapKit`MKDirectionsRequest`物件，它應該會自動開始讓使用者指示要求的位置，或呈現 UI，可讓您更輕鬆地開始取得指示使用者。 例如：
 
 
 ```csharp

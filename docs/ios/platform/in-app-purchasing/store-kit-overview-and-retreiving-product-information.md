@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 0dcda2e4fd1ca7773668a0a6fdf46e01f2f0841d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61366909"
 ---
 # <a name="storekit-overview-and-retrieving-product-info-in-xamarinios"></a>StoreKit 概觀與在 Xamarin.iOS 中的擷取產品資訊
 
@@ -52,11 +52,11 @@ ms.locfileid: "50118522"
 
 StoreKit 的大部分作業需要實際的裝置進行測試。 正在擷取產品資訊 （即 價格&amp;描述) 可在模擬器而購買和還原作業會傳回錯誤 (例如 FailedTransaction 程式碼 = 5002 發生未知的錯誤)。
 
-注意： 在 iOS 模擬器中，StoreKit 無法運作。 在 iOS 模擬器中執行您的應用程式，當 StoreKit 會記錄警告，如果您的應用程式嘗試擷取付款佇列。 必須在實際裝置上完成測試存放區。   
+注意:StoreKit iOS 模擬器中無法運作。 在 iOS 模擬器中執行您的應用程式，當 StoreKit 會記錄警告，如果您的應用程式嘗試擷取付款佇列。 必須在實際裝置上完成測試存放區。   
    
    
    
- 重要事項： 不要不使用登入您的測試帳戶，在 [設定] 應用程式。 您可以使用設定應用程式簽署，無法使用任何現有的 Apple ID 帳戶，然後在提示時，您必須等到*在您的應用程式內購買序列*使用測試 Apple ID 登入   
+ 重要事項：不使用登入您的測試帳戶，在 [設定] 應用程式。 您可以使用設定應用程式簽署，無法使用任何現有的 Apple ID 帳戶，然後在提示時，您必須等到*在您的應用程式內購買序列*使用測試 Apple ID 登入   
    
    
    

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 98a770d05014e0498b805ed9ffa0c84314efc765
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61374996"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>使用 tvOS 在 Xamarin 中的分段控制項
 
@@ -42,7 +42,7 @@ Apple 建議使用簡單、 可辨識的映像區段的圖示，例如搜尋的�
 
 Apple 會進行處理的文字區段的下列建議：
 
-- **使用簡短，有意義的名詞**-區段標題應該清楚的選取指定的區段時，使用者應預期的內容類型。 例如： 音樂或視訊。
+- **使用簡短，有意義的名詞**-區段標題應該清楚的選取指定的區段時，使用者應預期的內容類型。 例如: 音樂或視訊。
 - **使用字首大寫的大小寫**-區段標題的每個單字應該為大寫文章、 nor 和介係詞的字元少於四 （4） 除外。
 - **使用短，已取得焦點的標題**-保持簡短，並著重於在選取的區段時所預期的內容類型項目。
 
@@ -65,7 +65,7 @@ Xamarin.tvOS 應用程式中使用區段控制項的最簡單方式是將它們�
     [![](segmented-controls-images/segment03.png "小工具 索引標籤")](segmented-controls-images/segment03.png#lightbox)
 1. 使用**區段**欄位來控制控制器中的區段數目。
 1. 選取指定的區段，從**區段下拉式清單**來調整其個別的屬性，例如**標題**或**映像**並且控制，如果指定的區段**已啟用**或是**選取**時顯示的控制項。
-1. 最後，將指派**名稱**控制項，讓您可以回應其C#程式碼。 例如:  
+1. 最後，將指派**名稱**控制項，讓您可以回應其C#程式碼。 例如： 
 
     [![](segmented-controls-images/segment04.png "指派的名稱")](segmented-controls-images/segment04.png#lightbox)
 1. 儲存您的變更。
@@ -81,7 +81,7 @@ Xamarin.tvOS 應用程式中使用區段控制項的最簡單方式是將它們�
     [![](segmented-controls-images/segment03-vs.png "小工具 索引標籤")](segmented-controls-images/segment03-vs.png#lightbox)
 1. 使用**區段**欄位來控制控制器中的區段數目。
 1. 選取指定的區段，從**區段下拉式清單**來調整其個別的屬性，例如**標題**或**映像**並且控制，如果指定的區段**已啟用**或是**選取**時顯示的控制項。
-1. 最後，將指派**名稱**控制項，讓您可以回應其C#程式碼。 例如:  
+1. 最後，將指派**名稱**控制項，讓您可以回應其C#程式碼。 例如： 
 
     [![](segmented-controls-images/segment04-vs.png "指派的名稱")](segmented-controls-images/segment04-vs.png#lightbox)
 1. 儲存您的變更。

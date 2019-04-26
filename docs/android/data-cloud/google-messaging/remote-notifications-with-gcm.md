@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/12/2018
 ms.openlocfilehash: e5a5e44a61d352b5de05564ebb7192d21ed83dfa
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668890"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61012721"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>使用 Google 雲端通訊的遠端通知
 
@@ -405,7 +405,7 @@ namespace ClientApp
 
 #### <a name="test-registration-with-gcm"></a>測試向 GCM 註冊
 
-讓我們完全重建，並執行應用程式。 如果您已成功收到 GCM 註冊權杖，註冊權杖，應該會顯示在 [輸出] 視窗中。 例如:  
+讓我們完全重建，並執行應用程式。 如果您已成功收到 GCM 註冊權杖，註冊權杖，應該會顯示在 [輸出] 視窗中。 例如： 
 
 ```shell
 D/Mono    ( 1934): Assembly Ref addref ClientApp[0xb4ac2400] -> Xamarin.GooglePlayServices.Gcm[0xb4ac2640]: 2

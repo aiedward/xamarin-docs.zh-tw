@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
 ms.openlocfilehash: d9aafbe13e06875b6577a4d2308e419932fd1589
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103708"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61382109"
 ---
 # <a name="representations-in-xamarin-workbooks"></a>Xamarin 活頁簿中的表示法
 

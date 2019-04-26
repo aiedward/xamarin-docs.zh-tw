@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/11/2016
 ms.openlocfilehash: e3127f85841c13422d9674bcf12373af9222afba
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153718"
 ---
 # <a name="using-data-in-an-ios-app"></a>在 iOS 應用程式中使用資料
 
@@ -107,7 +107,7 @@ public int DeleteStock(Stock stock)
 
 使用您的應用程式中建立發佈的資料庫檔案，請留意以確保它們符合您的程式碼的預期，尤其是如果您使用 SQLite.NET 會預期以符合您的 C# 類別和屬性名稱的資料表和資料行命名 （或相關聯的自訂屬性）。
 
-適用於 iOS、 sqlite 檔案納入您的應用程式，並確保它以標示**建置動作： 內容**。 中的程式碼放`FinishedLaunching`將檔案複製到可寫入的目錄*之前*您呼叫任何資料的方法。 下列程式碼會複製現有的資料庫稱為**data.sqlite**，只有當不存在。
+適用於 iOS、 sqlite 檔案納入您的應用程式，並確保它以標示**建置動作：內容**。 中的程式碼放`FinishedLaunching`將檔案複製到可寫入的目錄*之前*您呼叫任何資料的方法。 下列程式碼會複製現有的資料庫稱為**data.sqlite**，只有當不存在。
 
 ```csharp
 // Copy the database across (if it doesn't exist)

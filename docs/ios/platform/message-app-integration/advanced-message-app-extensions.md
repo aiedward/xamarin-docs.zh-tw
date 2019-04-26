@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: baceb59116dd907918b34eca4f44293051190954
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120517"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61155507"
 ---
 # <a name="advanced-message-app-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的進階的訊息應用程式擴充功能
 
@@ -38,7 +38,7 @@ _本文說明使用訊息應用程式擴充功能，與在 Messages 應用程式
 
 也新增在 iOS 10 中，Apple 已新增可讓使用者輕鬆地找出應用程式內嵌應用程式屬性。 比方說，如果一位使用者將內容傳送至另一個從第 2 個使用者不需要的應用程式安裝 （例如貼紙的範例），傳送應用程式名稱被列在底下的訊息記錄中的內容。 如果在使用者點選應用程式的名稱，我們開啟訊息應用程式存放區並選取存放區中的應用程式。
 
-訊息應用程式延伸模組是類似於現有的 iOS 應用程式開發人員是很熟悉建立，而且會有存取所有標準的架構和標準的 iOS 應用程式的功能。 例如: 
+訊息應用程式延伸模組是類似於現有的 iOS 應用程式開發人員是很熟悉建立，而且會有存取所有標準的架構和標準的 iOS 應用程式的功能。 例如：
 
 - 他們可以存取應用程式內購買。
 - 他們可以到 Apple Pay 的存取。
@@ -171,7 +171,7 @@ public void SendMessage (MSMessage message)
 
 此外，延伸模組可以將不同類型的資料傳送給這類的對話：
 
-- **文字** - `ActiveConversation.InsertText ("Message", (error) => {...});`
+- **Text** - `ActiveConversation.InsertText ("Message", (error) => {...});`
 - **附件** - `ActiveConversation.InsertAttachment (new NSUrl ("path"), "filename", (error) => {...});`
 - **貼紙** -  `ActiveConversation.InsertSticker (sticker, (obj) => {...});`何處`sticker`是`MSSticker`。
 
@@ -181,7 +181,7 @@ public void SendMessage (MSMessage message)
 
 訊息應用程式擴充功能可以顯示在兩個不同的檢視模式的其中一個：
 
-[![](advanced-message-app-extensions-images/interactive08.png "在兩個不同的檢視模式中顯示的訊息應用程式擴充功能： 壓縮和展開")](advanced-message-app-extensions-images/interactive08.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive08.png "在兩個不同的檢視模式中顯示訊息應用程式擴充功能：壓縮和展開")](advanced-message-app-extensions-images/interactive08.png#lightbox)
 
 - **Compact** -這是訊息的應用程式擴充功能會佔用最下方的 25%的 [訊息] 檢視的預設模式。 在精簡的模式下，應用程式並沒有鍵盤、 水平捲動或撥動筆勢辨識器的存取權。 應用程式能夠存取 [輸入] 欄位，並呼叫`InsertMessage`立即會那里對使用者顯示。
 - **展開**-訊息應用程式擴充功能會填滿整個 [訊息] 檢視。 它並沒有存取權來輸入 欄位中，但並沒有鍵盤、 水平捲動和撥動筆勢辨識器的存取。

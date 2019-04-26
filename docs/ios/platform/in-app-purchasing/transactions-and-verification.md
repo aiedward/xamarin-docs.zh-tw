@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 83f5fd233c004271169a4d00d0a65e70aa925b95
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61369085"
 ---
 # <a name="transactions-and-verification-in-xamarinios"></a>交易和在 Xamarin.iOS 中的驗證
 
@@ -111,7 +111,7 @@ public override void RestoreCompletedTransactionsFailedWithError (SKPaymentQueue
 
 使用`NSUserDefaults`會讓範例程式碼保持簡單，但不提供非常安全的解決方案，因為它可能會就技術上而言意識的使用者，可以更新 （略過的付款機制） 的設定。   
    
-注意： 實際的應用程式應該採用安全的機制，以便儲存購買並不受限於使用者竄改的內容。 這可能是加密和/或其他技術，包括遠端伺服器驗證。   
+注意:真實世界應用程式應該採用安全的機制，以便儲存購買並不受限於使用者竄改的內容。 這可能是加密和/或其他技術，包括遠端伺服器驗證。   
    
  機制也應該設計為充分利用內建的備份和復原功能的 iOS、 iTunes 和 iCloud。 這可確保使用者還原備份之後其先前的購買項目將會立即提供。   
    

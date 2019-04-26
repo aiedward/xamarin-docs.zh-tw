@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/14/2018
 ms.openlocfilehash: d525725b58a961afb9c4c5d80962d05f8d08b83e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60876834"
 ---
 # <a name="touch-manipulations"></a>觸控操作
 
@@ -273,7 +273,7 @@ public partial class BitmapScalingPage : ContentPage
 
 此程式中第一個主要的差別在於的點擊測試的邏輯。 使用上一個程式`Contains`方法的`SKRect`判斷觸控點是否在轉換對應至點陣圖的矩形。 使用者管理的點陣圖，可能是點陣圖，但旋轉，和`SKRect`無法正確表示旋轉的矩形。 您可能會擔心的點擊測試的邏輯必須在此情況下實作相當複雜的分析幾何圖形。
 
-不過，捷徑，可以： 判斷點所在的已轉換的矩形界限內是否等同於判斷是否會反向已轉換的點位於未轉換的矩形界限內。 更簡單的計算，且邏輯可以繼續使用方便`Contains`方法：
+不過，捷徑，可以：判斷點所在的已轉換的矩形界限內是否等同於判斷是否會反向已轉換的點位於未轉換的矩形界限內。 更簡單的計算，且邏輯可以繼續使用方便`Contains`方法：
 
 ```csharp
 public partial class BitmapRotationPage : ContentPage
@@ -703,7 +703,7 @@ class TouchManipulationBitmap
 
 在 `Moved`並`Released`事件，方法會呼叫`Manipulate`。 在這些時間，`touchDictionary`包含一或多個`TouchManipulationInfo`物件。 如果`touchDictionary`包含一個項目，很可能會`PreviousPoint`和`NewPoint`值不相等，且代表的手指移動。 如果多個根手指接觸點陣圖，字典會包含一個以上的項目，但只有其中一個項目有不同`PreviousPoint`和`NewPoint`值。 所有其餘部分具有相等`PreviousPoint`和`NewPoint`值。
 
-這點很重要：`Manipulate`方法可以假設它正在處理的只有一隻手指移動。 在這個呼叫時沒有任何其他指的是移動和這些移動未來呼叫中，如果他們真的要移動的 （如有可能），將會處理`Manipulate`。
+這是很重要：`Manipulate`方法可以假設它正在處理的只有一隻手指移動。 在這個呼叫時沒有任何其他指的是移動和這些移動未來呼叫中，如果他們真的要移動的 （如有可能），將會處理`Manipulate`。
 
 `Manipulate`方法第一次將字典複製到陣列，為了方便起見。 它會忽略前兩個項目以外的任何項目。 如果兩個以上的手指來操作點陣圖，有些則會忽略它。 `Manipulate` 是最後一個成員的`TouchManipulationBitmap`:
 

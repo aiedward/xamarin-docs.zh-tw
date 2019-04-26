@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/26/2018
 ms.openlocfilehash: 85edbf657382b7c85ab2c5af543431fb51fb0d4e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053863"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61019545"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
 
@@ -52,7 +52,7 @@ Xamarin.Forms 沒有內建的向量圖形系統，因為`BoxView`補償的協助
 
 `WidthRequest`並`HeightRequest`屬性會被忽略，如果`BoxView`是*限制*在配置中，在其中案例版面配置容器本身的大小會安排`BoxView`。
 
-A`BoxView`可以限制在一個維度中，並在其他未受限制。 比方說，如果`BoxView`子系的垂直`StackLayout`，以垂直維度的`BoxView`是未受限制，而且其水平維度一般條件約束。 但有該水平維度的例外狀況： 如果`BoxView`有其`HorizontalOptions`屬性設定為項目以外的其他`LayoutOptions.Fill`，則水平維度也會不受限制。 此外，也可以針對`StackLayout`本身在此情況下有不受限制的水平維度，`BoxView`也會以水平方式不受限制。
+A`BoxView`可以限制在一個維度中，並在其他未受限制。 比方說，如果`BoxView`子系的垂直`StackLayout`，以垂直維度的`BoxView`是未受限制，而且其水平維度一般條件約束。 但有該水平維度的例外狀況：如果`BoxView`有其`HorizontalOptions`屬性設定為項目以外的其他`LayoutOptions.Fill`，則水平維度也會不受限制。 此外，也可以針對`StackLayout`本身在此情況下有不受限制的水平維度，`BoxView`也會以水平方式不受限制。
 
 [ **BasicBoxView** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)範例會顯示未受限制一英吋-正方形`BoxView`在其頁面的中心：
 
@@ -776,7 +776,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-秒針視為有點不同： easing 函式的動畫套用至進行移動，看起來很機械化，而不是 smooth。 每個刻度，秒針會提取回有點，然後超過其目的地。 這一小段的程式碼將許多移動的真實性。
+第二個手動處理有點不同：Easing 函式的動畫套用至進行移動，看起來很機械化，而不是 smooth。 每個刻度，秒針會提取回有點，然後超過其目的地。 這一小段的程式碼將許多移動的真實性。
 
 ## <a name="conclusion"></a>結論
 

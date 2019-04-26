@@ -1,5 +1,5 @@
 ---
-title: IBTool 錯誤：無法完成作業。
+title: IBTool 錯誤：作業無法完成。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: A804EBC4-2BBF-4A98-A4E8-A455DB2E8A17
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
 ms.openlocfilehash: c2f727b55b21dc3bd976f0b41c71b794841cfca4
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61421992"
 ---
-# <a name="ibtool-error-the-operation-couldnt-be-completed"></a>IBTool 錯誤：無法完成作業。
+# <a name="ibtool-error-the-operation-couldnt-be-completed"></a>IBTool 錯誤：作業無法完成。
 
 ## <a name="fixed-in-xcode-611"></a>已修正在 Xcode 6.1.1 中
 
@@ -30,7 +30,7 @@ Apple[修正](https://developer.apple.com/library/content/documentation/Xcode/Co
 
 ### <a name="error-message"></a>錯誤訊息
 
-> 無法開啟文件 」 MainStoryboard.storyboard"。 無法完成作業。 （com.apple.InterfaceBuilder 錯誤為-1。）
+> 無法開啟文件 」 MainStoryboard.storyboard"。 作業無法完成。 （com.apple.InterfaceBuilder 錯誤為-1。）
 
 ## <a name="workarounds-for-xcode-60"></a>因應措施 （Xcode 6.0)
 

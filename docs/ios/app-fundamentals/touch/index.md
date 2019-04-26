@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 01/23/2017
 ms.openlocfilehash: 5aabc3a3c2ffbcffc0e12379989f7eb43b03a902
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61399287"
 ---
 # <a name="handling-touch-in-xamarinios-apps"></a>處理在 Xamarin.iOS 應用程式的觸控
 

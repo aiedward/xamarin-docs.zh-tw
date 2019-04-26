@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: 1a5cc9f06fdca5944a9a3201ac15d63ca7f15453
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677959"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61385508"
 ---
 # <a name="handoff-in-xamarinios"></a>在 Xamarin.iOS 中遞交
 
@@ -409,7 +409,7 @@ public void PerformHandoff(NSUserActivity activity) {
 completionHandler (new NSObject[]{Tab4});
 ```
 
-每個物件傳遞，其`RestoreUserActivityState`會呼叫方法。 每個物件可以接著使用中的資料`UserInfo`字典來還原它自己的狀態。 例如: 
+每個物件傳遞，其`RestoreUserActivityState`會呼叫方法。 每個物件可以接著使用中的資料`UserInfo`字典來還原它自己的狀態。 例如：
 
 ```csharp
 public override void RestoreUserActivityState (NSUserActivity activity)
@@ -477,7 +477,7 @@ cat json.txt | openssl smime -sign -inkey company.com.key
 -outform DER > apple-app-site-association
 ```
 
-`openssl`命令會輸出您放在自己的網站的已簽署的 JSON 檔案**apple 應用程式-站台關聯**URL。 例如: 
+`openssl`命令會輸出您放在自己的網站的已簽署的 JSON 檔案**apple 應用程式-站台關聯**URL。 例如：
 
 ```csharp
 https://example.com/apple-app-site-association.
@@ -523,7 +523,7 @@ https://example.com/apple-app-site-association.
 
 某些狀況下，繼續活動所需的資訊數量無法進行有效率地傳送初始遞移式承載可能。 在這些情況下，接收應用程式可以建立一或多個本身與原始的應用程式傳輸資料之間的資料流。
 
-原始的應用程式將會設定`SupportsContinuationStreams`的屬性`NSUserActivity`執行個體`true`。 例如: 
+原始的應用程式將會設定`SupportsContinuationStreams`的屬性`NSUserActivity`執行個體`true`。 例如：
 
 ```csharp
 // Create a new user Activity to support this tab

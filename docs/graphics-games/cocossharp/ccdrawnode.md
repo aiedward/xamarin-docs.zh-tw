@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
 ms.openlocfilehash: b910e136366c429de8bd2ba1ac959882b4d7201d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123178"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61377510"
 ---
 # <a name="drawing-geometry-with-ccdrawnode"></a>繪製使用 ccdrawnode 建立幾何圖形
 
@@ -437,5 +437,5 @@ drawNode.DrawTriangleList (verts);
 
 ## <a name="related-links"></a>相關連結
 
-- [Ccdrawnode 建立 API](https://developer.xamarin.com/api/type/CocosSharp.CCDrawNode/)
+- [CCDrawNode API](https://developer.xamarin.com/api/type/CocosSharp.CCDrawNode/)
 - [完整的範例](https://developer.xamarin.com/samples/mobile/CCDrawNode/)

@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2018
 ms.openlocfilehash: 04a07d5b7f37222515136e5592f31a4583b02fe3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107519"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61157360"
 ---
 # <a name="which-android-sdk-packages-should-i-install"></a>應該安裝哪一個 Android SDK 套件？
 
@@ -50,5 +50,5 @@ ms.locfileid: "50107519"
 Android SDK 額外項目通常是不必要的資訊;但您最好要知道它們的存在，因為它們可能需要視您的使用案例而定。
 
 ## <a name="further-reading"></a>進一步閱讀
-下列指南說明這些選項，然後進入不同的套件的詳細 SDK 管理員具有可用： [Android SDK Manager 安裝指南](http://www.themethodology.net/2015/02/android-sdk-manager-setup-for.html?m=1)
+下列指南說明這些選項，然後進入不同的套件的詳細 SDK 管理員具有可用：[Android SDK Manager 安裝指南](http://www.themethodology.net/2015/02/android-sdk-manager-setup-for.html?m=1)
 

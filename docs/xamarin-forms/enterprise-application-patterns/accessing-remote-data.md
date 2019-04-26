@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 3a46b939fa87cd6535c9f86c46981c098542e7c9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105476"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61277948"
 ---
 # <a name="accessing-remote-data"></a>存取遠端資料
 
@@ -55,7 +55,7 @@ EShopOnContainers 的行動裝置應用程式會使用`HttpClient`over HTTP，�
 
 [![](accessing-remote-data-images/catalogdata.png "擷取目錄微服務中的資料")](accessing-remote-data-images/catalogdata-large.png#lightbox "擷取目錄微服務中的資料")
 
-**圖 10-1**： 擷取目錄微服務中的資料
+**圖 10-1**:擷取目錄微服務中的資料
 
 當`CatalogView`，巡覽`OnInitialize`方法中的`CatalogViewModel`類別稱為。 這個方法會從目錄微服務中，擷取目錄資料，如下列程式碼範例所示：
 
@@ -68,7 +68,7 @@ public override async Task InitializeAsync(object navigationData)
 }
 ```
 
-這個方法會呼叫`GetCatalogAsync`方法`CatalogService`已插入的執行個體`CatalogViewModel`由 Autofac。 下列程式碼範例示範`GetCatalogAsync`方法：
+這個方法會呼叫`GetCatalogAsync`方法`CatalogService`已插入的執行個體`CatalogViewModel`由 Autofac。 下列程式碼範例示範 `GetCatalogAsync` 方法：
 
 ```csharp
 public async Task<ObservableCollection<CatalogItem>> GetCatalogAsync()  
@@ -160,7 +160,7 @@ public async Task<IActionResult> Items(
 
 [![](accessing-remote-data-images/basketdata.png "將資料傳送至購物籃微服務")](accessing-remote-data-images/basketdata-large.png#lightbox "將資料傳送至購物籃微服務")
 
-**圖 10-2**： 將資料傳送至購物籃微服務
+**圖 10-2**:將資料傳送至購物籃微服務
 
 項目新增至購物籃時,`ReCalculateTotalAsync`方法中的`BasketViewModel`類別稱為。 這個方法會更新購物籃中的項目總計的值，並將購物籃資料傳送至購物籃微服務，如下列程式碼範例所示：
 
@@ -233,7 +233,7 @@ public async Task<IActionResult> Post([FromBody]CustomerBasket value)
 
 ![](accessing-remote-data-images/checkoutdata.png "正在刪除資料，從購物籃微服務")
 
-**圖 10-3**： 刪除購物籃微服務中的資料
+**圖 10-3**:從 購物籃微服務中刪除資料
 
 叫用簽出程序時，`CheckoutAsync`方法中的`CheckoutViewModel`類別稱為。 這個方法會建立新的訂單之前清除購物籃，如下列程式碼範例所示,：
 
@@ -298,7 +298,7 @@ public void Delete(string id)
 -   共用快取，可以由多個處理序或電腦存取。
 -   私用快取，其中資料會保留在執行應用程式的裝置的本機。
 
-EShopOnContainers 的行動裝置應用程式會使用私人快取，其中資料會保留在裝置執行的應用程式執行個體的本機。 如需使用 eShopOnContainers 參考應用程式的快取資訊，請參閱[.NET 微服務： 容器化.NET 應用程式架構](https://aka.ms/microservicesebook)。
+EShopOnContainers 的行動裝置應用程式會使用私人快取，其中資料會保留在裝置執行的應用程式執行個體的本機。 如需使用 eShopOnContainers 參考應用程式的快取資訊，請參閱[.NET 微服務：容器化 .NET 應用程式的架構](https://aka.ms/microservicesebook)。
 
 > [!TIP]
 > 快取視為可能會隨時消失的暫時性資料存放區。 請確定資料會保留在原始資料存放區，以及快取。 快取變成無法使用時，遺失資料的機會會接著會降到最低。
@@ -380,7 +380,7 @@ FFImageLoading`CachedImage`控制項是用來取代 Xamarin.Forms [ `Image` ](xr
 
 EShopOnContainers 的行動裝置應用程式目前不會實作重試模式進行 RESTful web 要求。 不過，`CachedImage`所提供的控制項[FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/)程式庫支援暫時性錯誤處理重試映像載入。 如果載入的映像失敗，將不進行進一步的嘗試。 所指定的次數`RetryCount`屬性，然後重試會在指定的延遲之後`RetryDelay`屬性。 如果這些屬性值未明確設定，其預設值便會套用 – 3`RetryCount`屬性，並為 250 毫秒`RetryDelay`屬性。 如需詳細資訊`CachedImage`控制項，請參閱[快取映像](#caching_images)。
 
-EShopOnContainers 參考應用程式會實作重試模式。 如需詳細資訊，包括如何結合使用重試模式的討論`HttpClient`類別，請參閱[.NET 微服務： 容器化.NET 應用程式架構](https://aka.ms/microservicesebook)。
+EShopOnContainers 參考應用程式會實作重試模式。 如需詳細資訊，包括如何結合使用重試模式的討論`HttpClient`類別，請參閱[.NET 微服務：容器化 .NET 應用程式的架構](https://aka.ms/microservicesebook)。
 
 如需有關重試模式的詳細資訊，請參閱 <<c0> [ 重試](/azure/architecture/patterns/retry/)模式。
 
@@ -397,7 +397,7 @@ EShopOnContainers 參考應用程式會實作重試模式。 如需詳細資訊�
 
 斷路器做為 proxy 的作業，可能會失敗。 Proxy 應監視最近發生的失敗數目，並使用此資訊來決定是否要讓此作業，若要繼續，或立即傳回例外狀況。
 
-EShopOnContainers 的行動裝置應用程式目前不會實作斷路器模式。 不過，eShopOnContainers 會。 如需詳細資訊，請參閱 < [.NET 微服務： 容器化.NET 應用程式架構](https://aka.ms/microservicesebook)。
+EShopOnContainers 的行動裝置應用程式目前不會實作斷路器模式。 不過，eShopOnContainers 會。 如需詳細資訊，請參閱[.NET 微服務：容器化 .NET 應用程式的架構](https://aka.ms/microservicesebook)。
 
 > [!TIP]
 > 結合的重試和斷路器模式。 應用程式可以使用重試模式叫用透過斷路器的作業來結合的重試和斷路器模式。 不過，重試邏輯應該很容易受斷路器所傳回的任何例外狀況，而且如果斷路器指出錯誤並非暫時性，放棄重試。

@@ -9,11 +9,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: e599d4f99877e24e06de2c26ed2cafe48526f6f5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61346925"
 ---
 # <a name="binding-ios-libraries"></a>繫結 iOS 程式庫
 
@@ -42,11 +42,11 @@ ms.locfileid: "50122994"
 
 > [!VIDEO https://youtube.com/embed/ZUoPLcmnf1o]
 
-**iOS 繫結的 C/c + +，由[Xamarin University](https://university.xamarin.com/)**
+**iOS 在 C 中的繫結 /C++，依[Xamarin University](https://university.xamarin.com/)**
 
 ## <a name="related-links"></a>相關連結
 
 - [繫結 Objective-C](~/cross-platform/macios/binding/index.md)
 - [Mac 繫結](~/mac/platform/binding.md)
-- [Xamarin University 課程： 建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程： 建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin University 課程：建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University 課程：建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: 74e2f2219dcb0908edce7f109844932639038b25
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61421119"
 ---
 # <a name="how-can-i-copy-ipa-output-files-to-the-tfs-drop-folder"></a>如何將 IPA 輸出檔案複製到 TFS 放置資料夾？
 
@@ -47,8 +47,8 @@ ms.locfileid: "50113036"
 ## <a name="additional-references"></a>其他參考資料
 
 - [安裝適用於搭配 Xamarin 使用 TFS 的相關文件](https://docs.microsoft.com/azure/devops/repos/tfvc/overview)
-- [Azure DevOps 建置工作： Xamarin.Android](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-android)
-- [Azure DevOps 建置工作： Xamarin.iOS](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-ios)
+- [Azure DevOps 組建工作：Xamarin.Android](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-android)
+- [Azure DevOps 組建工作：Xamarin.iOS](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-ios)
 
 ### <a name="next-steps"></a>後續步驟
 

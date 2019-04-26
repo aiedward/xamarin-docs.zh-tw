@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: d08f7e3a35cd82f4262ef1f145d4b4648f7baef8
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036098"
 ---
 # <a name="ios-app-architecture"></a>iOS 應用程式架構
 
@@ -22,7 +22,7 @@ Mono 執行環境中，執行 Xamarin.iOS 應用程式，並使用完整的預�
 
 [ ![](architecture-images/ios-arch-small.png "下圖顯示預先 (AOT) 編譯架構的基本概觀")](architecture-images/ios-arch.png#lightbox)
 
-## <a name="native-and-managed-code-an-explanation"></a>原生和 Managed 程式碼： 說明
+## <a name="native-and-managed-code-an-explanation"></a>原生和 Managed 程式碼：說明
 
 適用於 Xamarin 開發時條款*原生和 managed*經常使用的程式碼。 [Managed 程式碼](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)是已由其執行的程式碼[.NET Framework Common Language Runtime](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)，或在 Xamarin 的案例中： Mono 執行階段。 這是我們所謂的中繼語言。
 

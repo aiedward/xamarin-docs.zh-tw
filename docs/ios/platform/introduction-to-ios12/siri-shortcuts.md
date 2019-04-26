@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
 ms.openlocfilehash: e37fd88f0d5fcf02ece0ae2f5e3164a507067e29
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58869820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61034775"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>在 Xamarin.iOS 中 Siri 快速鍵
 
@@ -645,7 +645,7 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 
 - 建立應用程式群組，以詳細 Chef 應用程式和其擴充功能之間共用資料。 例如： **group.com.yourcompanyname.SoupChef**
 
-- 建立三個應用程式識別碼： 一個用於應用程式本身，另一個用於 Intents 延伸模組，一個用於 Intents UI 延伸模組。 例如: 
+- 建立三個應用程式識別碼： 一個用於應用程式本身，另一個用於 Intents 延伸模組，一個用於 Intents UI 延伸模組。 例如：
 
     - 應用程式： **com.yourcompanyname.SoupChef**
         - 此應用程式識別碼，將指派 SiriKit 並**應用程式群組**功能。

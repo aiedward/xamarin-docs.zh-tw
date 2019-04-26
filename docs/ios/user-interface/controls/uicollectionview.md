@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: f57f2a2bc17690b7a1e0a72c583b0e94519ca4db
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677985"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61079201"
 ---
 # <a name="collection-views-in-xamarinios"></a>在 Xamarin.iOS 中的集合檢視
 
@@ -701,7 +701,7 @@ namespace CollectionView
 
 ### <a name="using-a-custom-gesture-recognizer"></a>使用自訂的筆勢辨識器
 
-在無法使用的情況下`UICollectionViewController`，而且必須使用一般`UIViewController`，或者如果您想要進一步控制拖放手勢，您可以建立您自己自訂的筆勢辨識器，並將它新增至集合檢視，檢視載入時。 例如: 
+在無法使用的情況下`UICollectionViewController`，而且必須使用一般`UIViewController`，或者如果您想要進一步控制拖放手勢，您可以建立您自己自訂的筆勢辨識器，並將它新增至集合檢視，檢視載入時。 例如：
 
 ```csharp
 public override void ViewDidLoad ()

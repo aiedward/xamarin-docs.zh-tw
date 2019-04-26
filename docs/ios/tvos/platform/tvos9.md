@@ -1,5 +1,5 @@
 ---
-title: TvOS 9 簡介
+title: tvOS 9 簡介
 description: 這篇文章會介紹的所有新的及修改 Api 和 tvOS 9 中可用的功能適用於 Xamarin.tvOS 開發人員。
 ms.prod: xamarin
 ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
 ms.openlocfilehash: dda197f71b2a2ab3e0d61a838ab85d79b7a078c7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104306"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61270319"
 ---
-# <a name="introduction-to-tvos-9"></a>TvOS 9 簡介
+# <a name="introduction-to-tvos-9"></a>tvOS 9 簡介
 
 _這篇文章會介紹的所有新的及修改 Api 和 tvOS 9 中可用的功能適用於 Xamarin.tvOS 開發人員。_
 
@@ -66,7 +66,7 @@ Apple TV 上執行的 tvOS 應用程式有支援下列功能和特性：
  - 64 位元 A8 處理器
  - 32 GB 或 64 GB 的儲存體
  - 2 GB 的 RAM
- - 10/100Mbps 乙太網路
+ - 10/100Mbps Ethernet
  - WiFi 802.11a/b/g/n/ac
  - 1080p 解析度
  - HDMI
@@ -75,7 +75,7 @@ Apple TV 上執行的 tvOS 應用程式有支援下列功能和特性：
 
 ### <a name="siri-remote"></a>Siri 遠端
 
-區域為基礎，提供 Apple TV 遠端會在可能是一個組態： Siri 遠端或 Apple TV 遠端。
+區域為基礎，提供 Apple TV 遠端將有可能是一個組態：Siri 遠端或 Apple TV 遠端。
 
 Siri 遠端會在下列國家/地區目前上市：
 

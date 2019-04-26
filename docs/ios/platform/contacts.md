@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: e3f1533605d08df58d8d257714dd8135690c0e5d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61388917"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>連絡人和 ContactsUI 在 Xamarin.iOS 中
 
@@ -111,7 +111,7 @@ else
 }
 ```
 
-如果 iOS 9 裝置上執行此程式碼時，新的連絡人會新增至使用者的集合中。 例如: 
+如果 iOS 9 裝置上執行此程式碼時，新的連絡人會新增至使用者的集合中。 例如：
 
 [![](contacts-images/add01.png "新的連絡人新增至使用者的集合")](contacts-images/add01.png#lightbox)
 
@@ -124,7 +124,7 @@ Console.WriteLine(CNContactFormatter.GetStringFrom(contact, CNContactFormatterSt
 Console.WriteLine(CNPostalAddressFormatter.GetStringFrom(workAddress, CNPostalAddressFormatterStyle.MailingAddress));
 ```
 
-您會在您的應用程式 UI 中顯示的屬性標籤，連絡架構會有當地語系化這些字串也的方法。 同樣地，這根據目前的地區設定的 iOS 裝置執行應用程式。 例如: 
+您會在您的應用程式 UI 中顯示的屬性標籤，連絡架構會有當地語系化這些字串也的方法。 同樣地，這根據目前的地區設定的 iOS 裝置執行應用程式。 例如：
 
 ```csharp
 // Localized properties
@@ -281,7 +281,7 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 
 在呼叫之前`CNContactPickerViewController`類別，定義哪些使用者可以選取，並定義述詞來控制顯示和選取的 連絡人屬性的屬性。
 
-使用繼承自類別的執行個體`CNContactPickerDelegate`回應選擇器的使用者的互動。 例如: 
+使用繼承自類別的執行個體`CNContactPickerDelegate`回應選擇器的使用者的互動。 例如：
 
 ```csharp
 using System;

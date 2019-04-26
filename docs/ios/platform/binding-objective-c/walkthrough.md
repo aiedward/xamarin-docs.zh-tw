@@ -1,5 +1,5 @@
 ---
-title: 逐步解說：繫結 iOS OBJECTIVE-C 程式庫
+title: 逐步解說：繫結 iOS Objective-C 程式庫
 description: 本文章提供實際操作的逐步解說中，建立現有的 OBJECTIVE-C 程式庫，InfColorPicker 的 Xamarin.iOS 繫結。 它涵蓋的主題，例如編譯靜態的 Objective C 程式庫、 繫結，以及在 Xamarin.iOS 應用程式中使用的繫結。
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
 ms.openlocfilehash: fcf4e6d9b281eaac4be888c499e537f7397528a0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61391792"
 ---
-# <a name="walkthrough-binding-an-ios-objective-c-library"></a>逐步解說：繫結 iOS OBJECTIVE-C 程式庫
+# <a name="walkthrough-binding-an-ios-objective-c-library"></a>逐步解說：繫結 iOS Objective-C 程式庫
 
 _本文章提供實際操作的逐步解說中，建立現有的 OBJECTIVE-C 程式庫，InfColorPicker 的 Xamarin.iOS 繫結。它涵蓋的主題，例如編譯靜態的 Objective C 程式庫、 繫結，以及在 Xamarin.iOS 應用程式中使用的繫結。_
 

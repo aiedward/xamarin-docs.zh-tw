@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
 ms.openlocfilehash: b3dd300d28e0cf27cc1b5ebea59a68d57145fd61
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54208923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61359907"
 ---
 # <a name="visualelement-elevation-on-android"></a>在 Android 上 VisualElement 提高權限
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 此 Android 平台專屬是用來控制提高權限或疊置順序，在應用程式上的視覺元素的目標 API 21 或更新版本。 提高權限的圖形化元素會決定繪製的順序，與視覺項目有較大的 Z 值 occluding 視覺項目具有較低的 Z 值。 它由在 XAML 中設定`VisualElement.Elevation`附加屬性`boolean`值：
 

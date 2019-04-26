@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
 ms.openlocfilehash: ef1e9a98b76166f4ee5638d1ab9762896d1e3bc8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61293857"
 ---
 # <a name="spritekit-in-xamarinios"></a>在 Xamarin.iOS 中的 SpriteKit
 

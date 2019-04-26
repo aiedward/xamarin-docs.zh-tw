@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 6f32d8f328232bdfc644da57bdb3201c60010063
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995355"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61381893"
 ---
 # <a name="configuration-management"></a>設定管理
 
@@ -34,16 +34,16 @@ Xamarin.Forms 包含持續性的字典，其可用來儲存設定資料。 可�
 使用 Xam.Plugins.Settings 庫時，單一靜態類別，您應該建立將包含應用程式所需的應用程式和使用者設定。 下列程式碼範例會顯示在 eShopOnContainers 的行動裝置應用程式設定類別：
 
 ```csharp
-public static class Settings  
+public static class Settings  
 {  
-    private static ISettings AppSettings  
-    {  
-        get  
-        {  
-            return CrossSettings.Current;  
-        }  
-    }  
-    ...  
+    private static ISettings AppSettings  
+    {  
+        get  
+        {  
+            return CrossSettings.Current;  
+        }  
+    }  
+    ...  
 }
 ```
 
@@ -57,24 +57,24 @@ public static class Settings
 每個設定是由索引鍵、 預設值和屬性所組成。 下列程式碼範例顯示的使用者設定值，表示在 eShopOnContainers 的行動應用程式連接到線上服務的基底 URL 的所有三個項目：
 
 ```csharp
-public static class Settings  
+public static class Settings  
 {  
-    ...  
-    private const string IdUrlBase = "url_base";  
-    private static readonly string UrlBaseDefault = GlobalSetting.Instance.BaseEndpoint;  
-    ...  
+    ...  
+    private const string IdUrlBase = "url_base";  
+    private static readonly string UrlBaseDefault = GlobalSetting.Instance.BaseEndpoint;  
+    ...  
 
-    public static string UrlBase  
-    {  
-        get  
-        {  
-            return AppSettings.GetValueOrDefault<string>(IdUrlBase, UrlBaseDefault);  
-        }  
-        set  
-        {  
-            AppSettings.AddOrUpdateValue<string>(IdUrlBase, value);  
-        }  
-    }  
+    public static string UrlBase  
+    {  
+        get  
+        {  
+            return AppSettings.GetValueOrDefault<string>(IdUrlBase, UrlBaseDefault);  
+        }  
+        set  
+        {  
+            AppSettings.AddOrUpdateValue<string>(IdUrlBase, value);  
+        }  
+    }  
 }
 ```
 
@@ -85,33 +85,33 @@ public static class Settings
 相反地，其定義內的預設值`Settings`類別，`UrlBaseDefault`字串取得其值，從`GlobalSetting`類別。 下列程式碼範例所示`BaseEndpoint`屬性和`UpdateEndpoint`這個類別中的方法：
 
 ```csharp
-public class GlobalSetting  
+public class GlobalSetting  
 {  
-    ...  
-    public string BaseEndpoint  
-    {  
-        get { return _baseEndpoint; }  
-        set  
-        {  
-            _baseEndpoint = value;  
-            UpdateEndpoint(_baseEndpoint);  
-        }  
-    }  
-    ...  
+    ...  
+    public string BaseEndpoint  
+    {  
+        get { return _baseEndpoint; }  
+        set  
+        {  
+            _baseEndpoint = value;  
+            UpdateEndpoint(_baseEndpoint);  
+        }  
+    }  
+    ...  
 
-    private void UpdateEndpoint(string baseEndpoint)  
-    {  
-        RegisterWebsite = string.Format("{0}:5105/Account/Register", baseEndpoint);  
-        CatalogEndpoint = string.Format("{0}:5101", baseEndpoint);  
-        OrdersEndpoint = string.Format("{0}:5102", baseEndpoint);  
-        BasketEndpoint = string.Format("{0}:5103", baseEndpoint);  
-        IdentityEndpoint = string.Format("{0}:5105/connect/authorize", baseEndpoint);  
-        UserInfoEndpoint = string.Format("{0}:5105/connect/userinfo", baseEndpoint);  
-        TokenEndpoint = string.Format("{0}:5105/connect/token", baseEndpoint);  
-        LogoutEndpoint = string.Format("{0}:5105/connect/endsession", baseEndpoint);  
-        IdentityCallback = string.Format("{0}:5105/xamarincallback", baseEndpoint);  
-        LogoutCallback = string.Format("{0}:5105/Account/Redirecting", baseEndpoint);  
-    }  
+    private void UpdateEndpoint(string baseEndpoint)  
+    {  
+        RegisterWebsite = string.Format("{0}:5105/Account/Register", baseEndpoint);  
+        CatalogEndpoint = string.Format("{0}:5101", baseEndpoint);  
+        OrdersEndpoint = string.Format("{0}:5102", baseEndpoint);  
+        BasketEndpoint = string.Format("{0}:5103", baseEndpoint);  
+        IdentityEndpoint = string.Format("{0}:5105/connect/authorize", baseEndpoint);  
+        UserInfoEndpoint = string.Format("{0}:5105/connect/userinfo", baseEndpoint);  
+        TokenEndpoint = string.Format("{0}:5105/connect/token", baseEndpoint);  
+        LogoutEndpoint = string.Format("{0}:5105/connect/endsession", baseEndpoint);  
+        IdentityCallback = string.Format("{0}:5105/xamarincallback", baseEndpoint);  
+        LogoutCallback = string.Format("{0}:5105/Account/Redirecting", baseEndpoint);  
+    }  
 }
 ```
 
@@ -123,42 +123,42 @@ public class GlobalSetting
 
 ![](configuration-management-images/settings-endpoint.png "EShopOnContainers 的行動裝置應用程式所公開的使用者設定")
 
-**圖 7-1**: eShopOnContainers 的行動裝置應用程式所公開的使用者設定
+**圖 7-1**:EShopOnContainers 的行動裝置應用程式所公開的使用者設定
 
 資料繫結可用來擷取和設定由`Settings`類別。 這檢視模型屬性，依序存取中的內容將檢視繫結上的控制項來達成`Settings`類別，以及引發屬性變更通知的設定值已變更。 如 eShopOnContainers 的行動裝置應用程式如何建構檢視的相關資訊的模型，並將它們關聯至檢視，請參閱 <<c0> [ 自動建立檢視模型的檢視模型定位器](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)。
 
 下列程式碼範例所示[ `Entry` ](xref:Xamarin.Forms.Entry)控制項從`SettingsView`，可讓使用者輸入的容器化微服務的基底的端點 URL:
 
 ```xaml
-<Entry Text="{Binding Endpoint, Mode=TwoWay}" />
+<Entry Text="{Binding Endpoint, Mode=TwoWay}" />
 ```
 
 這[ `Entry` ](xref:Xamarin.Forms.Entry)控制項繫結至`Endpoint`屬性`SettingsViewModel`類別，使用雙向繫結。 下列程式碼範例會顯示端點屬性：
 
 ```csharp
-public string Endpoint  
+public string Endpoint  
 {  
-    get { return _endpoint; }  
-    set  
-    {  
-        _endpoint = value;  
+    get { return _endpoint; }  
+    set  
+    {  
+        _endpoint = value;  
 
-        if(!string.IsNullOrEmpty(_endpoint))  
-        {  
-            UpdateEndpoint(_endpoint);  
-        }  
+        if(!string.IsNullOrEmpty(_endpoint))  
+        {  
+            UpdateEndpoint(_endpoint);  
+        }  
 
-        RaisePropertyChanged(() => Endpoint);  
-    }  
+        RaisePropertyChanged(() => Endpoint);  
+    }  
 }
 ```
 
-當`Endpoint`屬性設定`UpdateEndpoint`呼叫方法，前提是所提供的值是否有效，而且屬性變更引發通知。 下列程式碼範例示範`UpdateEndpoint`方法：
+當`Endpoint`屬性設定`UpdateEndpoint`呼叫方法，前提是所提供的值是否有效，而且屬性變更引發通知。 下列程式碼範例示範 `UpdateEndpoint` 方法：
 
 ```csharp
-private void UpdateEndpoint(string endpoint)  
+private void UpdateEndpoint(string endpoint)  
 {  
-    Settings.UrlBase = endpoint;  
+    Settings.UrlBase = endpoint;  
 }
 ```
 
@@ -167,11 +167,11 @@ private void UpdateEndpoint(string endpoint)
 當`SettingsView`，巡覽`InitializeAsync`方法中的`SettingsViewModel`類別會執行。 下列程式碼範例示範此方法：
 
 ```csharp
-public override Task InitializeAsync(object navigationData)  
+public override Task InitializeAsync(object navigationData)  
 {  
-    ...  
-    Endpoint = Settings.UrlBase;  
-    ...  
+    ...  
+    Endpoint = Settings.UrlBase;  
+    ...  
 }
 ```
 

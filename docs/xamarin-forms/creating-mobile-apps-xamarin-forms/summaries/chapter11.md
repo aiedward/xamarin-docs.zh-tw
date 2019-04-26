@@ -1,6 +1,6 @@
 ---
 title: 第 11 章摘要。 可繫結的基礎結構
-description: 使用 Xamarin.Forms 建立行動應用程式： 第 11 章摘要。 可繫結的基礎結構
+description: 使用 Xamarin.Forms 建立行動應用程式：第 11 章摘要。 可繫結的基礎結構
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 34671C48-0ED4-4B76-A33D-D6505390DC5B
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: f9e3326c0f55469cfa84a019a674679d82dfc007
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054232"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334296"
 ---
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>第 11 章摘要。 可繫結的基礎結構
 
@@ -20,7 +20,7 @@ ms.locfileid: "53054232"
 
 每個 C# 程式設計人員會熟悉 C#*屬性*。 屬性包含*設定*存取子和 （或)*取得*存取子。 它們通常稱為*CLR 屬性*通用語言執行平台。
 
-Xamarin.Forms 可定義增強的屬性定義中稱為*可繫結的屬性*由封裝[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)類別，並支援[ `BindableObject` ](xref:Xamarin.Forms.BindableObject)類別。 這些類別是相關但非常不同：`BindableProperty`用來定義屬性本身;`BindableObject`就像是`object`在於它是類別，定義可繫結屬性的基底類別。
+Xamarin.Forms 可定義增強的屬性定義中稱為*可繫結的屬性*由封裝[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)類別，並支援[ `BindableObject` ](xref:Xamarin.Forms.BindableObject)類別。 這些類別會為相關但非常不同：`BindableProperty`用來定義屬性本身;`BindableObject`就像是`object`在於它是類別，定義可繫結屬性的基底類別。
 
 ## <a name="the-xamarinforms-class-hierarchy"></a>Xamarin.Forms 類別階層
 

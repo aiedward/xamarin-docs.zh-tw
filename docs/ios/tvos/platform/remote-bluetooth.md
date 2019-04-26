@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 79022f7a454ea423fa3112a4c4ade2bcd471fbb8
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60932997"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Siri 遠端和藍牙控制器在 Xamarin 中 tvOS 的
 
@@ -51,7 +51,7 @@ Siri 遠端提供下列功能和 tvOS 應用程式內的預期使用方式：
 
 Siri 遠端的觸控介面是能夠偵測各種不同的單指筆勢，您可以回應 Xamarin.tvOS 應用程式中：
 
-|揮擊|按一下|點選|
+|撥動|按一下|點選|
 |---|---|---|
 |![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
 |在畫面上的 UI 項目之間移動選取項目 （焦點） （上、 下左、 右）。 撥動可捲動的內容使用快速慣性的大型清單。|啟動選取的項目 （焦點），或像是遊戲中的 [主要] 按鈕。 按一下並按住，可以啟用關聯式功能表或次要的函式。|輕度點選 觸控介面的邊緣上就像是方向鍵，將焦點移增加、 下、 左或右依據點選的區域上的方向按鈕。 根據應用程式，可以用來顯示隱藏的控制項。|

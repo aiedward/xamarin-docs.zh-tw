@@ -1,5 +1,5 @@
 ---
-title: 您的應用程式更新至 iOS 11
+title: 將您的應用程式更新至 iOS 11
 description: 本文件所連結到各種描述可用的 iOS 11 版本的 Xamarin.iOS 開發人員的新功能的指南。 比方說，視覺化設計，應用程式存放區的變更而更新，並更新應用程式圖示。
 ms.prod: xamarin
 ms.assetid: EC809504-9CF6-4949-B6EE-36384297E744
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
 ms.openlocfilehash: 3193f27c30080a4335abfe969acb3c8b33516469
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61386337"
 ---
-# <a name="updating-your-app-to-ios-11"></a>您的應用程式更新至 iOS 11
+# <a name="updating-your-app-to-ios-11"></a>將您的應用程式更新至 iOS 11
 
 在 iOS 11 中，Apple 已引進架構更新、 新的視覺變更和更新的 iTunes Connect 程序。 本指南探索這些變更，協助您取得您的 Xamarin.iOS 應用程式更新適用於 iOS 11。
 

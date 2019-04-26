@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
 ms.openlocfilehash: d39170d0109d7f81d3f02ec36381ebcd46c0143d
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233519"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61029578"
 ---
 # <a name="progress-and-activity-indicators-in-xamarinios"></a>進度和活動在 Xamarin.iOS 中的指標
 

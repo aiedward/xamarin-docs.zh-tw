@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
 ms.openlocfilehash: a51a441aeacf265093b82ddb65237887b0a30719
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61382411"
 ---
 # <a name="the-translate-transform"></a>平移轉換
 
@@ -136,7 +136,7 @@ using (SKPaint textPaint = new SKPaint())
 
 第二個範例會呼叫[ `ResetMatrix` ](xref:SkiaSharp.SKCanvas.ResetMatrix)。 這會導致所有轉換回到其預設狀態。
 
-第三個範例會將儲存的狀態`SKCanvas`藉由呼叫物件[ `Save` ](xref:SkiaSharp.SKCanvas.Save) ，然後再還原的狀態，藉由呼叫[ `Restore` ](xref:SkiaSharp.SKCanvas.Restore)。 這是最具彈性的方式來操作的繪圖作業的一系列轉換。 這些`Save`並`Restore`呼叫函式，像堆疊一樣： 您可以呼叫`Save`多個時間，然後呼叫`Restore`在反向序列，以返回先前的狀態。 `Save`方法會傳回一個整數，而您可以傳遞至該整數[ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*)有效地呼叫`Restore`多次。 [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount)屬性會傳回目前儲存在堆疊上的狀態數目。
+第三個範例會將儲存的狀態`SKCanvas`藉由呼叫物件[ `Save` ](xref:SkiaSharp.SKCanvas.Save) ，然後再還原的狀態，藉由呼叫[ `Restore` ](xref:SkiaSharp.SKCanvas.Restore)。 這是最具彈性的方式來操作的繪圖作業的一系列轉換。 這些`Save`和`Restore`呼叫函式，像堆疊一樣：您可以呼叫`Save`多個時間，然後呼叫`Restore`在反向序列，以返回先前的狀態。 `Save`方法會傳回一個整數，而您可以傳遞至該整數[ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*)有效地呼叫`Restore`多次。 [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount)屬性會傳回目前儲存在堆疊上的狀態數目。
 
 您也可以使用[ `SKAutoCanvasRestore` ](xref:SkiaSharp.SKAutoCanvasRestore)還原畫布狀態的類別。 這個類別的建構函式要呼叫`using`陳述式; 畫布狀態就會自動還原結尾`using`區塊。 
 

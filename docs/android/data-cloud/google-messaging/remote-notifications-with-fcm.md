@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
 ms.openlocfilehash: 0c84f530f759285c2cfc71f60d7b6f80fba6a03d
-ms.sourcegitcommit: f890b5ec9b7c2702875070859e1a8cbf6e870e46
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53814033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61018815"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>遠端通知使用 Firebase 雲端傳訊
 
@@ -771,7 +771,7 @@ unSubscribeButton.Click += delegate {
 };
 ```
 
-若要取消註冊該裝置從 FCM 完全，請呼叫來刪除執行個體識別碼[DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)方法[FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)類別。 例如: 
+若要取消註冊該裝置從 FCM 完全，請呼叫來刪除執行個體識別碼[DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)方法[FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)類別。 例如：
 
 ```csharp
 FirebaseInstanceId.Instance.DeleteInstanceId();

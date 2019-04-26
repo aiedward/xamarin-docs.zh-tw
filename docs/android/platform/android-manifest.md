@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
 ms.openlocfilehash: 5e354f8271257ab21a855bdf5d576ce3062fadc7
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668240"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60957385"
 ---
 # <a name="working-with-the-android-manifest"></a>使用 Android 資訊清單
 
@@ -85,7 +85,7 @@ public class MyActivity : Activity
 ### <a name="activity-title-bar"></a>活動標題列
 
 根據預設，Android 可讓您的應用程式標題列會在執行時。 使用這個值是[ `/manifest/application/activity/@android:label` ](https://developer.android.com/guide/topics/manifest/activity-element.html#label)。 在大部分情況下，這個值會與您的類別名稱不同。 若要指定您的應用程式標籤標題列上，使用[ `Label` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Label/)屬性。
-例如:  
+例如： 
 
 ```csharp
 [Activity (Label="Awesome Demo App")]
@@ -129,7 +129,7 @@ public class MyActivity : Activity
 
 ### <a name="activity-icon"></a>活動圖示
 
-根據預設，您的活動將會提供系統所提供的預設啟動程式圖示。 若要使用自訂圖示，請先將您 **.png**要**資源/drawable**，將其建置動作設定為**AndroidResource**，然後使用[ `Icon` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Icon/)屬性來指定要使用的圖示。 例如:  
+根據預設，您的活動將會提供系統所提供的預設啟動程式圖示。 若要使用自訂圖示，請先將您 **.png**要**資源/drawable**，將其建置動作設定為**AndroidResource**，然後使用[ `Icon` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Icon/)屬性來指定要使用的圖示。 例如： 
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 
