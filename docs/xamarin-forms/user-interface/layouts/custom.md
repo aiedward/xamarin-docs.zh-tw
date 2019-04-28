@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: a1027b1fd738c80cf5917effc66957f77a337ecf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: HT
+ms.openlocfilehash: 56f7a5308d15425bdedd7d9098882a072d90d1f7
+ms.sourcegitcommit: 864f47c4f79fa588b65ff7f721367311ff2e8f8e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61304676"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "64347061"
 ---
 # <a name="creating-a-custom-layout"></a>建立自訂的版面配置
 
@@ -380,27 +380,36 @@ public class ImageWrapLayoutPageCS : ContentPage
 ```csharp
 protected override async void OnAppearing()
 {
-  base.OnAppearing();
+    base.OnAppearing();
 
-  var images = await GetImageListAsync();
-  foreach (var photo in images.Photos)
-  {
-    var image = new Image
+    var images = await GetImageListAsync();
+    if (images != null)
     {
-      Source = ImageSource.FromUri(new Uri(photo + string.Format("?width={0}&height={0}&mode=max", Device.RuntimePlatform == Device.UWP ? 120 : 240)))
-    };
-    wrapLayout.Children.Add(image);
-  }
+        foreach (var photo in images.Photos)
+        {
+            var image = new Image
+            {
+                Source = ImageSource.FromUri(new Uri(photo))
+            };
+            wrapLayout.Children.Add(image);
+        }
+    }
 }
 
 async Task<ImageList> GetImageListAsync()
 {
-  var requestUri = "https://docs.xamarin.com/demo/stock.json";
-  using (var client = new HttpClient())
-  {
-    var result = await client.GetStringAsync(requestUri);
-    return JsonConvert.DeserializeObject<ImageList>(result);
-  }
+    try
+    {
+        string requestUri = "https://raw.githubusercontent.com/xamarin/docs-archive/master/Images/stock/small/stock.json";
+        string result = await _client.GetStringAsync(requestUri);
+        return JsonConvert.DeserializeObject<ImageList>(result);
+    }
+    catch (Exception ex)
+    {
+        Debug.WriteLine($"\tERROR: {ex.Message}");
+    }
+
+    return null;
 }
 ```
 
@@ -415,11 +424,6 @@ async Task<ImageList> GetImageListAsync()
 ![](custom-images/landscape-uwp.png "範例 UWP 應用程式橫向螢幕擷取畫面")
 
 每個資料列中的資料行的數目取決於相片大小、 螢幕的寬度和每個裝置獨立單位的像素數目。 [ `Image` ](xref:Xamarin.Forms.Image)項目以非同步方式載入的相片，因此`WrapLayout`類別將會收到經常呼叫其[ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))方法的每個`Image`項目收到新的大小，以載入的相片。
-
-## <a name="summary"></a>總結
-
-這篇文章說明如何撰寫自訂的版面配置的類別，並示範方向區分`WrapLayout`類別在頁面上，水平排列其子系，然後將包裝的後續的子系，額外的資料列顯示。
-
 
 ## <a name="related-links"></a>相關連結
 

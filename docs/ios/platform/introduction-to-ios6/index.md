@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 25926d82e060b91b007da9c2295b328cb049e8df
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61302234"
 ---
+
 # <a name="introduction-to-ios-6"></a>iOS 6 簡介
 
 _iOS 6 包含新的技術，用於開發應用程式，Xamarin.iOS 6 帶入各種C#開發人員。_

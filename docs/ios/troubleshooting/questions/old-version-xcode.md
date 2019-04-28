@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: chamons
 ms.author: chhamo
 ms.date: 04/16/2019
-ms.openlocfilehash: 2a208d39454a33adc849bcccc66802361693e82e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: HT
+ms.openlocfilehash: 7cbc14e0a912fe9c55ff672796e839a8dcdfd9b5
+ms.sourcegitcommit: 864f47c4f79fa588b65ff7f721367311ff2e8f8e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61419311"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "64347109"
 ---
 # <a name="can-i-use-an-older-version-of-xcode-or-xamarinios"></a>我可以使用較舊版本的 Xcode 或 Xamarin.iOS 嗎？
 
@@ -53,7 +53,7 @@ Microsoft 強烈建議使用最新的 Xcode 和最新的 Xamarin.iOS 版本開�
 Xamarin.iOS 一般支援較舊的 Xcode 版本盡可能合理。 幾個潛在的挑戰包括：
 
 - 較新的 Xamarin.iOS 可能支援某些功能，並在選取的 Xcode 中的 Api 不存在。 
-- **靜態註冊機構**需要 Xcode 標頭檔，來建置應用程式，導致[ `MT0091` ](~/ios/troubleshooting/mtouch-errors.md#MT0091)或是[ `MT4109` ](~/ios/troubleshooting/mtouch-errors.md#MT4109)' 如果遺漏了 Api 的錯誤。
+- **靜態註冊機構**需要 Xcode 標頭檔，來建置應用程式，導致[ `MT0091` ](~/ios/troubleshooting/mtouch-errors.md#MT0091)或是[ `MT4109` ](~/ios/troubleshooting/mtouch-errors.md#MT4109)如果遺漏了 Api 的錯誤。
   - 在大部分情況下啟用受管理的連結器將會協助 （藉由移除受管理的繫結，適用於新的 API） 如果未使用。
 - 除非使用 Xcode 9.0 + 工具鏈，Bitcode 組建 （針對 tvOS 和 watchOS） 可能會失敗提交至 App Store。
 

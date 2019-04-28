@@ -6,13 +6,8 @@ ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: lobrien
 ms.author: laobri
 ms.date: 04/02/2019
-ms.openlocfilehash: b962390d5a5a365ada93d1778e3efb65839f41c5
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
-ms.translationtype: HT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854947"
 ---
+
 # <a name="remoted-ios-simulator-for-windows"></a>適用於 Windows 的遠端 iOS 模擬器
 
 遠端 iOS 模擬器的 Windows 可讓您測試您的應用程式，在 iOS 模擬器與 Visual Studio 2019 和 Visual Studio 2017 的 Windows 中顯示。
@@ -36,7 +31,7 @@ ms.locfileid: "58854947"
 - **鎖定**– 鎖定模擬器 （撥動以解除鎖定）。
 - **螢幕擷取畫面**– 儲存模擬器的螢幕擷取畫面 (儲存在**Pictures\Xamarin\iOS 模擬器\\**)。
 - [**設定**](#settings) – 顯示鍵盤、 位置和其他設定。
-- [**其他選項**](#other-options) -會顯示各種模擬器選項，例如旋轉]、 搖晃手勢和 [Touch id]。
+- [**其他選項**](#other-options) -會顯示各種模擬器選項，例如旋轉、 搖晃手勢和 [Touch id]。
 
     [![iOS 模擬器對應範例](images/maps-app-sml.png "iOS 模擬器對應範例")](images/maps-app.png#lightbox)
 
