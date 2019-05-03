@@ -105,7 +105,7 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     -   [android\_m2repository\_r16.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A83087881EE6
 
-    如果**m2repository**封存不會顯示此資料表中，您可以建立下載 URL 前面加上**https://dl-ssl.google.com/android/repository/** 名稱**m2repository**下載。 例如，使用**https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip**下載**android\_m2repository\_r10.zip**。
+    如果**m2repository**封存不會顯示此資料表中，您可以建立下載 URL 前面加上**https://dl-ssl.google.com/android/repository/** 名稱**m2repository**下載。 例如，使用 **https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip** 下載 **android\_m2repository\_r10.zip**。
 
 2.  重新命名檔案，與上表所示的下載 URL 的相對應的 MD5 雜湊。 例如，如果您下載**android\_m2repository\_r25.zip**，重新命名為**0B3F1796C97C707339FB13AE8507AF50.zip**。 如果未顯示下載的 URL 下載的檔案的 MD5 雜湊資料表中，您可以使用[線上 MD5 generator](http://www.webconfs.com/online-md5-generator.php)將 URL 轉換為 MD5 雜湊字串。 
 
