@@ -185,7 +185,7 @@ TvOS 10，在應用程式的分鏡腳本可以設定為回應特性集合，以�
 
 * 開發人員可以指定使用者介面項目中的 UI 佈景主題為基礎的不同變化**屬性偵測器**:
     
-    * 現在有數個屬性**+** 旁邊的可以按一下以新增 UI 佈景主題特定版本： 
+    * 現在有數個屬性 **+** 旁邊的可以按一下以新增 UI 佈景主題特定版本： 
 
         [![](user-interface-styles-images/theme08.png "新增 UI 佈景主題特定版本")](user-interface-styles-images/theme08.png#lightbox) 
     

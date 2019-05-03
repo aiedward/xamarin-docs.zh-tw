@@ -206,7 +206,7 @@ namespace MacXib
 1. 在 Xcode 中，從 [程式庫] 區段拖曳 [按鈕]：
 
     [![從程式庫選取按鈕](xib-images/xcode07.png "選取按鈕，從程式庫")](xib-images/xcode07-large.png#lightbox)
-2. 該按鈕拖曳至** 視窗**中**介面編輯器**:
+2. 該按鈕拖曳至 **視窗** 中 **介面編輯器**:
 
     [![將按鈕加入至視窗](xib-images/xcode08.png "將按鈕加入至視窗")](xib-images/xcode08-large.png#lightbox)
 3. 按一下 [屬性偵測器] 中的 [標題] 屬性，將按鈕的標題變更為 `Click Me`：

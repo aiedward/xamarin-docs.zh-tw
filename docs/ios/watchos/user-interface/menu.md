@@ -32,7 +32,7 @@ ms.locfileid: "60880673"
 
 ## <a name="adding-a-menu"></a>新增功能表
 
-A`Menu`必須新增至`InterfaceController`在設計階段將分鏡腳本。 功能表控制項拖曳至介面控制器時不在分鏡腳本預覽視覺指示，但** 功能表**會出現在**文件大綱**板：
+A`Menu`必須新增至`InterfaceController`在設計階段將分鏡腳本。 功能表控制項拖曳至介面控制器時不在分鏡腳本預覽視覺指示，但 **功能表** 會出現在 **文件大綱** 板：
 
 ![](menu-images/menu-action.png "在設計階段編輯功能表")
 

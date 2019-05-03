@@ -833,7 +833,7 @@ CloudKit 提供個別的開發和生產環境應用程式的記錄類型和資�
     [![](intro-to-cloudkit-images/shipping03.png "會建立並顯示封存")](intro-to-cloudkit-images/shipping03.png#lightbox)
 
 4. 啟動 **Xcode**。
-5. 從** 視窗**功能表上，選取**召集人**: 
+5. 從 **視窗** 功能表上，選取 **召集人**: 
 
     [![](intro-to-cloudkit-images/shipping04.png "選取 組合管理")](intro-to-cloudkit-images/shipping04.png#lightbox)
 

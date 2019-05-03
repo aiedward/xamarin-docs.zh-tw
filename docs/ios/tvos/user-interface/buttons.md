@@ -65,7 +65,7 @@ Xamarin.tvOS 應用程式中的按鈕所使用的最簡單方式是將它們新�
 
 
 1. 在 **方案總管**，連按兩下`Main.storyboard`檔案，並開啟它進行編輯。
-1. 拖曳** 按鈕**從**程式庫**並將它放在檢視上： 
+1. 拖曳 **按鈕** 從 **程式庫** 並將它放在檢視上： 
 
     [![](buttons-images/storyboard01.png "按鈕")](buttons-images/storyboard01.png#lightbox)
 1. 在 **屬性總管**，您可以調整按鈕的數個屬性，例如其**標題**並**文字色彩**: 
@@ -86,7 +86,7 @@ Xamarin.tvOS 應用程式中的按鈕所使用的最簡單方式是將它們新�
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 在 **方案總管**，連按兩下`Main.storyboard`檔案，並開啟它進行編輯。
-1. 拖曳** 按鈕**從**程式庫**並將它放在檢視上： 
+1. 拖曳 **按鈕** 從 **程式庫** 並將它放在檢視上： 
 
     [![](buttons-images/storyboard01vs.png "按鈕")](buttons-images/storyboard01vs.png#lightbox)
 1. 在 **屬性總管**，您可以調整按鈕的數個屬性，例如其**標題**並**文字色彩**: 

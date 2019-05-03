@@ -67,7 +67,7 @@ Xamarin iOS 8 應用程式可以使用 HealthKit API 之前，它必須適當地
 
 您目前**應用程式識別碼**中所列[憑證、 識別碼與設定檔](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action)開發人員中心的一節。 通常，這份清單會顯示**識別碼**的值`*`，這表示，**應用程式識別碼** - **名稱**可以搭配任何數目的尾碼。 這類*萬用字元應用程式識別碼*不能使用健全狀況的套件。
  
-若要建立明確**應用程式識別碼**，按一下**+** 帶您到右上方中的按鈕**註冊 iOS 應用程式識別碼**頁面：
+若要建立明確 **應用程式識別碼**，按一下 **+** 帶您到右上方中的按鈕 **註冊 iOS 應用程式識別碼** 頁面：
 
 
 [![](healthkit-images/image02.png "註冊 Apple 開發人員入口網站上的應用程式")](healthkit-images/image02.png#lightbox)

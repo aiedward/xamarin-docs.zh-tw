@@ -194,7 +194,7 @@ ActionBar.Title = "My Toolbar";
 
 ### <a name="define-a-menu-resource"></a>定義功能表資源
 
-建立新** 功能表**下方的子目錄**資源**。 在 [ **] 功能表**子目錄中，建立新的功能表資源檔，稱為**top_menus.xml**並以下列 XML 取代其內容： 
+建立新 **功能表** 下方的子目錄 **資源**。 在 [ **] 功能表**子目錄中，建立新的功能表資源檔，稱為**top_menus.xml**並以下列 XML 取代其內容： 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>

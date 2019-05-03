@@ -133,7 +133,7 @@ Apple 建議測試針對各種不同的彩色的背景 （例如白色、 黑色
 
 1. 啟動 Visual Studio。
 2. 開啟方案，以新增訊息的應用程式擴充功能。
-3. 選取 * * iOS 延伸模組 > iMessage 延伸模組 (iOS) * *，按一下 [**下一步]** 按鈕：
+3. 選取 ** iOS 延伸模組 > iMessage 延伸模組 (iOS)**， 按一下 **下一步** 按鈕：
 
     [![選取 iMessage 延伸模組 (iOS)](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
 

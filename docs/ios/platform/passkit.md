@@ -225,7 +225,7 @@ ISO-8859-1 編碼是最常見的是，會使用的編碼方式會讀取您的 pa
 
 第一個步驟是設定票卡類型識別碼，針對每一個不同_型別_階段都必須支援。 傳遞的識別碼 （或傳遞的型別識別項） 建立階段的唯一識別碼。 我們將使用此識別碼來連結階段開發人員帳戶使用的憑證。
 
-1. 在[的 iOS 佈建入口網站的憑證、 識別碼和設定檔區段](https://developer.apple.com/account/overview.action)，瀏覽至**識別項**，然後選取**傳遞的類型識別碼**。 然後選取**+** 按鈕，以建立新的傳遞類型：[![](passkit-images/passid.png "建立新的階段類型")](passkit-images/passid.png#lightbox)
+1. 在[的 iOS 佈建入口網站的憑證、 識別碼和設定檔區段](https://developer.apple.com/account/overview.action)，瀏覽至**識別項**，然後選取**傳遞的類型識別碼**。 然後選取 **+** 按鈕，以建立新的傳遞類型：[![](passkit-images/passid.png "建立新的階段類型")](passkit-images/passid.png#lightbox)
 
 2.   提供**描述**（名稱） 及**識別項**（唯一的字串） 階段。 請注意，所有的傳遞類型識別碼必須以字串開頭`pass.`在此範例中，我們使用`pass.com.xamarin.coupon.banana`:[![](passkit-images/register.png "提供描述和識別碼")](passkit-images/register.png#lightbox)
 

@@ -298,7 +298,7 @@ namespace HellotvOS
 9. 完成時，您的條件約束看起來應該類似於 [屬性] 面板的 [配置] 索引標籤中：
 
     [![](hello-tvos-images/designer11.png "條件約束範例")](hello-tvos-images/designer11.png#lightbox)
-8. 拖曳** 按鈕**從**工具箱**並將它放在標籤底下。
+8. 拖曳 **按鈕** 從 **工具箱** 並將它放在標籤底下。
 9. 按一下 **標題**中的屬性**屬性輸入板**和按鈕的標題變更為  `Click Me`:
 
     [![](hello-tvos-images/designer12.png "變更按一下 我的按鈕標題")](hello-tvos-images/designer12.png#lightbox)
