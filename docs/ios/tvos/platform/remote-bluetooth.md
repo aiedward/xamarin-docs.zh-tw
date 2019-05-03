@@ -89,7 +89,7 @@ Apple 提供下列建議使用觸控介面筆勢：
 3. 請檢查**選取 [** 中 **] 按鈕**一節**屬性偵測器**: 
 
     [![](remote-bluetooth-images/storyboard02.png "檢查選取")](remote-bluetooth-images/storyboard02.png#lightbox)
-4. **選取**表示會回應使用者按一下 筆勢**觸控介面**Siri 遠端。 您也可以選擇回應** 功能表**，**矔菛/縸**，**向上**，**向下**，**左**和**右**按鈕。
+4. **選取**表示會回應使用者按一下 筆勢**觸控介面**Siri 遠端。 您也可以選擇回應 **功能表**， **矔菛/縸** ， **向上** ， **向下** ， **左** 和 **右** 按鈕。
 5. 接下來，接通**動作**從**點選 筆勢辨識器**，並為它`TouchSurfaceClicked`: 
 
     [![](remote-bluetooth-images/storyboard03.png "點選 筆勢辨識器動作")](remote-bluetooth-images/storyboard03.png#lightbox)

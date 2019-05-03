@@ -50,7 +50,7 @@ Apple 帳戶 對話方塊可讓您執行下列作業：
 
     ![Apple 開發人員帳戶選項](apple-account-management-images/image1.png)
 
-2. 按下**+** 按鈕以顯示登入 對話方塊，如下所述： 
+2. 按下 **+** 按鈕以顯示登入 對話方塊，如下所述： 
 
     ![fastlane 對話方塊。](apple-account-management-images/image2.png)
 

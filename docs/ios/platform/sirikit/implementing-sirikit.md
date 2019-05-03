@@ -175,7 +175,7 @@ namespace MonkeyChat
 5. 按兩下**專案檔**中**方案總管中**以開啟它進行編輯。
 6. 選取 **iOS 套件組合簽署**，並確定`Entitlements.plist`中選取檔案**自訂權利**欄位： 
 
-    [![](implementing-sirikit-images/setup02.png "選取 [自訂權利] 欄位中的 [Entitlements.plist 檔案")](implementing-sirikit-images/setup02.png#lightbox)
+    [![](implementing-sirikit-images/setup02.png "選取 [自訂權利] 欄位中的 Entitlements.plist 檔案")](implementing-sirikit-images/setup02.png#lightbox)
 7. 按一下 [確定] 按鈕以儲存所做的變更。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -211,14 +211,14 @@ namespace MonkeyChat
 
 1. 在網頁瀏覽器，瀏覽至[ https://developer.apple.com ](https://developer.apple.com)和登入您的帳戶。
 2. 按一下 **憑證**，**識別項**並**設定檔**。
-3. 選取 [**佈建設定檔**，然後選取**應用程式識別碼**，然後按一下**+** ] 按鈕。
+3. 選取 **佈建設定檔**，然後選取 **應用程式識別碼**，然後按一下 **+** 按鈕。
 4. 請輸入**名稱**新設定檔。
 5. 請輸入**套件組合識別碼**遵循 Apple 的命名建議。
 6. 向下捲動至**應用程式服務**區段中，選取**SiriKit**然後按一下**繼續**按鈕： 
 
     [![](implementing-sirikit-images/setup03.png "選取 SiriKit")](implementing-sirikit-images/setup03.png#lightbox)
 7. 確認所有設定，然後**送出**應用程式識別碼。
-8. 選取 **佈建設定檔** > **開發**，按一下  **+** 按鈕，選取**Apple ID**，然後按一下**繼續**。
+8. 選取 **佈建設定檔** > **開發**，按一下 **+** 按鈕，選取 **Apple ID**，然後按一下 **繼續**。
 9. 按一下 選取**所有**，然後按一下**繼續**。
 10. 按一下 **全選**再次強調，然後按一下**繼續**。
 11. 請輸入**設定檔名稱**使用 Apple 的命名建議，然後按一下**繼續**。

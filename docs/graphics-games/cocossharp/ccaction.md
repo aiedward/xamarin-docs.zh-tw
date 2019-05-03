@@ -98,7 +98,7 @@ nodeToAddTo.AddAction (coreAction);
 
 非線性插補會是比較不突兀，並加入波蘭文的項目，因此 CocosSharp 提供各式各樣的加/減速可用來修改變數變更動作的動作。
 
-在  **ActionProject**範例中，我們可以這些類型的加/減速的動作，按一下第二個標籤之間切換 (預設為**<None>**):
+在 **ActionProject** 範例中，我們可以這些類型的加/減速的動作，按一下第二個標籤之間切換 (預設為**<None>**):
 
 ![](ccaction-images/image4.gif "使用者可以在這些類型的加/減速的動作，按一下第二個標籤之間切換")
 
