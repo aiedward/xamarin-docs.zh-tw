@@ -503,10 +503,10 @@ Control + 按一下，然後從功能表項目拖曳**第一個回應**下方**�
 2. 重新命名 「 片語 」 的項目： 
 
     [![設定功能表名稱](menu-images/maint09.png "設定功能表名稱")](menu-images/maint09-large.png#lightbox)
-3. 接著您可以拖曳** 功能表**從**程式庫偵測器**: 
+3. 接著您可以拖曳 **功能表** 從 **程式庫偵測器**: 
 
     ![從程式庫選取功能表](menu-images/maint11.png "從程式庫選取功能表")
-4. 卸除再** 功能表**上的新**功能表項目**我們剛剛建立，並將其名稱變更為 「 片語 」: 
+4. 卸除再 **功能表** 上的新 **功能表項目** 我們剛剛建立，並將其名稱變更為 「 片語 」: 
 
     [![編輯功能表名稱](menu-images/maint12.png "編輯功能表名稱")](menu-images/maint12-large.png#lightbox)
 5. 現在讓我們將三個預設的重新命名**功能表項目**「 位址 」、 「 日 」 和"Greeting": 
@@ -902,13 +902,13 @@ public void UnpopulateFormattingMenu(NSMenu menu) {
 1. 拖曳**標籤**從**程式庫偵測器**拖曳至**面板**視窗，並設定它的文字為"Property": 
 
     [![編輯標籤的值](menu-images/context03.png "編輯標籤的值")](menu-images/context03-large.png#lightbox)
-2. 接著您可以拖曳 **] 功能表**從**程式庫偵測器**拖曳至 [檢視階層] 和 [重新命名其中三個預設功能表項目中的檢視控制器**文件**，**文字**並**字型**:
+2. 接著您可以拖曳 **功能表** 從 **程式庫偵測器** 拖曳至 檢視階層 和 重新命名其中三個預設功能表項目中的檢視控制器 **文件**，**文字** 並 **字型**:
 
     [![必要的功能表項目](menu-images/context02.png "必要的功能表項目")](menu-images/context02-large.png#lightbox)
 3. 現在拖曳控制項從**屬性標籤**拖曳至**功能表**:
 
     [![若要建立的 segue 拖曳](menu-images/context04.png "建立 segue 拖曳")](menu-images/context04-large.png#lightbox)
-4. 從快顯對話方塊中，選取** 功能表**: 
+4. 從快顯對話方塊中，選取 **功能表** : 
 
     ![設定 segue 類型](menu-images/context05.png "設定 segue 類型")
 5. 從**身分識別偵測器**，設定 「 PanelViewController 「 檢視控制器的類別： 
@@ -1011,7 +1011,7 @@ public override void DidFinishLaunching (NSNotification notification)
 1. 在 Visual Studio for Mac，以滑鼠右鍵按一下應用程式的專案，然後選取**新增** > **新檔...** 從新的 [檔案] 對話方塊中，選取**Xamarin.Mac** > **空白介面定義**，使用"DockMenu 」**名稱**按一下**新增**按鈕，以建立新**DockMenu.xib**檔案：
 
     ![新增空白介面定義](menu-images/dock02.png "新增空白介面定義")
-2. 在  **Solution Pad**，按兩下**DockMenu.xib**檔案將它開啟以在 Xcode 中編輯。 建立新** 功能表**與下列項目：**地址**，**日期**，**問候語**，和**簽章** 
+2. 在  **Solution Pad**，按兩下**DockMenu.xib**檔案將它開啟以在 Xcode 中編輯。 建立新 **功能表** 與下列項目：**地址**，**日期**，**問候語**，和**簽章** 
 
     [![UI 的版面配置](menu-images/dock03.png "UI 的版面配置")](menu-images/dock03-large.png#lightbox)
 3. 接下來，讓我們先連接到我們現有的動作，我們建立我們自訂的功能表中的 我們新的功能表項目[新增、 編輯和刪除功能表](#Adding,_Editing_and_Deleting_Menus)上一節。 切換至**連接 Inspector** ，然後選取**第一個回應**中**介面階層架構**。 向下捲動並尋找`phraseAddress:`動作。 在該動作將圓形線條**地址**功能表項目：

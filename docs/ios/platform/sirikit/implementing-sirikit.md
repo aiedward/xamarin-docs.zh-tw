@@ -466,7 +466,7 @@ namespace MonkeyChat
 4. 依序展開`ParameterVocabularies`，按一下  **+** 按鈕，然後將**型別**至`Dictionary`:
 
     [![](implementing-sirikit-images/plist03.png "將類型設定為字典")](implementing-sirikit-images/plist03.png#lightbox)
-5. 按一下**+** 若要加入新的金鑰，請設定**名稱**來`ParameterNames`而**類型**到`Array`:
+5. 按一下 **+** 若要加入新的金鑰，請設定 **名稱** 來 `ParameterNames` 而 **類型** 到 `Array`:
 
     [![](implementing-sirikit-images/plist04.png "將名稱設為 ParameterNames 和陣列的型別")](implementing-sirikit-images/plist04.png#lightbox)
 6. 按一下  **+** 以新增新的金鑰，與**類型**的`String`和做為其中一個可用的參數名稱的值。 比方說， `INStartWorkoutIntent.workoutName`:
@@ -531,7 +531,7 @@ namespace MonkeyChat
 4. 依序展開`ParameterVocabularies`，按一下  **+** 按鈕，然後將**型別**至`Dictionary`:
 
     [![](implementing-sirikit-images/plist03w.png "將類型設定為字典")](implementing-sirikit-images/plist03w.png#lightbox)
-5. 按一下**+** 若要加入新的金鑰，請設定**名稱**來`ParameterNames`而**類型**到`Array`:
+5. 按一下 **+** 若要加入新的金鑰，請設定 **名稱** 來 `ParameterNames` 而 **類型** 到 `Array`:
 
     [![](implementing-sirikit-images/plist04w.png "將名稱設為 ParameterNames 和陣列的型別")](implementing-sirikit-images/plist04w.png#lightbox)
 6. 按一下  **+** 以新增新的金鑰，與**類型**的`String`和做為其中一個可用的參數名稱的值。 比方說， `INStartWorkoutIntent.workoutName`:
