@@ -7,7 +7,7 @@
 ###### [連線疑難排解](get-started/installation/windows/connecting-to-mac/troubleshooting.md)
 ##### [Xamarin.iOS for Visual Studio 簡介](get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
 ##### [設定 Visual Studio](get-started/installation/windows/config-options.md)
-#### [設定您的裝置以進行開發](get-started/installation/device-provisioning/index.md) \(英文\)
+#### [設定您的裝置以進行開發](get-started/installation/device-provisioning/index.md)
 ##### [自動化佈建](get-started/installation/device-provisioning/automatic-provisioning.md)
 ##### [手動佈建](get-started/installation/device-provisioning/manual-provisioning.md)
 ##### [免費佈建](get-started/installation/device-provisioning/free-provisioning.md)
