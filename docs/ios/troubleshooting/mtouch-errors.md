@@ -374,7 +374,7 @@ Mtouch 無法辨識的錯誤訊息中所述的命令列引數。
 
 每個 Info.plist 必須有可執行檔 （使用 CFBundleExecutable 項目），不過應該會自動產生的項目，在建置期間。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
 
 <a name="MT0064" />
 
@@ -394,13 +394,13 @@ Xamarin.iOS 會在部署目標是至少 8.0 （因為舊版 iOS 不支援內嵌�
 
 ### <a name="mt0066-invalid-build-registrar-assembly-"></a>MT0066:無效的組建註冊機構的組件: *
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
 
 <a name="MT0067" />
 
 ### <a name="mt0067-invalid-registrar-"></a>MT0067:無效的註冊機構: *
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
 
 <a name="MT0068" />
 
@@ -422,13 +422,13 @@ Xamarin.iOS 會在部署目標是至少 8.0 （因為舊版 iOS 不支援內嵌�
 
 ### <a name="mt0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinios-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT0071:未知的平台: *。 這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 http://bugzilla.xamarin.com 與測試案例。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
 
 <a name="MT0072" />
 
 ### <a name="mt0072-extensions-are-not-supported-for-the-platform-"></a>MT0072:平台不支援的副檔名 ' *'。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
 
 <a name="MT0073" />
 
@@ -456,13 +456,13 @@ Xamarin.iOS 不支援將最小的部署目標設定為版本高於此特定版�
 
 ### <a name="mt0075-no-architecture-specified-using-the---abi-argument-an-architecture-is-required-for--projects"></a>MT0075:（使用-abi 引數） 指定任何架構。 架構是為了 * 專案。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
 
 <a name="MT0077" />
 
 ### <a name="mt0076-watchos-projects-must-be-extensions"></a>MT0076:WatchOS 專案必須是延伸模組。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
 
 <a name="MT0078" />
 
@@ -512,7 +512,7 @@ Xamarin.iOS 不支援將最小的部署目標設定為版本高於此特定版�
 
 ### <a name="mt0086-a-target-framework---target-framework-must-be-specified-when-building-for-tvos-or-watchos"></a>MT0086:目標 framework (-目標架構) 建置 TVOS 或 WatchOS 時必須指定。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
 
 <a name="MT0087" />
 
@@ -561,7 +561,7 @@ Xamarin.iOS 需要的標頭檔，從指定的錯誤訊息，來建置您的應�
 
 在 Xamarin.iOS 中的內部一致性檢查失敗時，會報告此錯誤訊息。
 
-這表示在 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這表示在 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
 
 <a name="MT0100" />
 
@@ -569,7 +569,7 @@ Xamarin.iOS 需要的標頭檔，從指定的錯誤訊息，來建置您的應�
 
 在 Xamarin.iOS 中的內部一致性檢查失敗時，會報告此錯誤訊息。
 
-這一律是 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試案例。
+這一律是 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
 
 <a name="MT0101" />
 
@@ -917,7 +917,7 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 <a name="MT1013" />
 
-### <a name="mt1013-dependency-tracking-error-no-files-to-compare-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT1013:相依性追蹤錯誤： 沒有要比較的檔案。 請提出錯誤報告在 http://bugzilla.xamarin.com與測試案例。
+### <a name="mt1013-dependency-tracking-error-no-files-to-compare-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT1013:相依性追蹤錯誤： 沒有要比較的檔案。 請提出錯誤報告在 http://bugzilla.xamarin.com 與測試案例。
 
 這表示在 Xamarin.iOS 中的 bug。 請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)與測試 caes。
 
@@ -1812,7 +1812,7 @@ Bitcode 支援需要使用 LLVM AOT 後端 (-llvm)。
 
 無法編譯產生的程式碼的註冊機構。 組建記錄檔會包含原生編譯器，解釋為何不進行編譯的程式碼的輸出。
 
-這一律是 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](http://bugzilla.xamarin.com)與您的專案或測試案例。
+這一律是 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](http://bugzilla.xamarin.com) 與您的專案或測試案例。
 
 <a name="MT4110" />
 
