@@ -2919,7 +2919,7 @@ Xamarin.iOS 專案會經常參考原生的符號，以動態方式表示原生�
 
 <a name="MT8009" />
 
-### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009:找不到要委派之方法的轉換方法的區塊 *。*'s 參數 # *。 請將 bug 歸檔在 http://bugzilla.xamarin.com。
+### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009:找不到要委派之方法的轉換方法的區塊 *。*'s 參數 # *。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
 
 這表示未正確繫結 API。 如果這是 Xamarin 所公開的 API，請提報 bug 中我們 bugzilla ([http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS))，則為第三方繫結，請連絡廠商。
 
@@ -2931,7 +2931,7 @@ Xamarin.iOS 專案會經常參考原生的符號，以動態方式表示原生�
 
 <a name="MT8011" />
 
-### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011:找不到方法的傳回值的區塊轉換屬性 ([DelegateProxy]) 的委派 *。*。 請將 bug 歸檔在 http://bugzilla.xamarin.com。
+### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011:找不到方法的傳回值的區塊轉換屬性 ([DelegateProxy]) 的委派 *。*。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
 
 Xamarin.iOS 找不到所需的方法在執行階段 （若要將委派轉換至區塊） 項目。
 
@@ -2955,7 +2955,7 @@ Xamarin.iOS 找不到所需的方法在執行階段 （若要將委派轉換至�
 
 <a name="MT8014" />
 
-### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014:方法的傳回值的無效 DelegateProxyAttribute *。*:委派 ({2}) 'Handler' 欄位為 null。 請將 bug 歸檔在 http://bugzilla.xamarin.com。
+### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014:方法的傳回值的無效 DelegateProxyAttribute *。*:委派 ({2}) 'Handler' 欄位為 null。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
 
 討論中方法的 DelegateProxy 屬性無效。
 
