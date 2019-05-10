@@ -6,12 +6,12 @@ ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
 author: asb3993
 ms.author: amburns
 ms.date: 10/19/2016
-ms.openlocfilehash: fcdd712313becd1335479013f44886086dde7bff
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 686ce3b46f268b650c63cace2a29b9d501a4063c
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61261236"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977602"
 ---
 # <a name="binding-troubleshooting"></a>繫結進行疑難排解
 
@@ -55,9 +55,4 @@ GitHub 問題全都是公開的。 無法隱藏意見或附件。
 
 - 一個可重現問題的簡單範例。 這是**非常寶貴的**，請盡您所能提供。 
 - 損毀狀況的完整堆疊追蹤。
-- 損毀狀況周圍的 C# 程式碼。 
-
-## <a name="related-links"></a>相關連結
-
-- [Xamarin University 課程：建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程：建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- 損毀狀況周圍的 C# 程式碼。

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: ada563fee78e579906e7f765a0120d8bfff67402
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: acbf000d0700e29fcd6155a35c26fee08f12b7e5
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61395413"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978020"
 ---
 # <a name="introduction-to-tvos-in-xamarin"></a>在 Xamarin 中 tvOS 簡介
 
@@ -27,7 +27,7 @@ Apple 已發行的 Apple TV 的硬體、 Apple TV 4k、 5 代執行最新版的 
 
 > [!VIDEO https://youtube.com/embed/Q04oIYymfGM]
 
-**使用 Xamarin，tvOS 的[Xamarin University](https://university.xamarin.com/)**
+**與 Xamarin video 搭配運作的 tvOS**
 
 ## <a name="documentation"></a>文件
 

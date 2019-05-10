@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: c0f638afbf044a2e3e6f309839cb22137cf95912
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d69a96ee55b09ef9fcf1485ec34d986dd40e7662
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60956279"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977976"
 ---
 # <a name="android-job-scheduler"></a>Android 工作排程器
 
@@ -227,4 +227,4 @@ jobScheduler.Cancel(1)
 - [JobScheduler API 參考](https://developer.android.com/reference/android/app/job/JobScheduler.html)
 - [排程作業像 JobScheduler 與專業](https://medium.com/google-developers/scheduling-jobs-like-a-pro-with-jobscheduler-286ef8510129)
 - [Android 使用電池及記憶體最佳化-Google I/O 2016 （影片）](https://www.youtube.com/watch?v=VC2Hlb22mZM&feature=youtu.be)
-- [Android JobScheduler-René Ruppert-Xamarin University](https://www.youtube.com/watch?v=aSjBBPYjelE)
+- [Android JobScheduler-René Ruppert](https://www.youtube.com/watch?v=aSjBBPYjelE)

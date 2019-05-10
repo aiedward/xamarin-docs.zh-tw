@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/05/2018
-ms.openlocfilehash: 2bef13e7f465dd213649f88deb572eb661895250
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a7dbe7ae5bb1162bcbcb58ea1b39df197b8ed916
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61245393"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977717"
 ---
 # <a name="wpf-platform-setup"></a>WPF 平台安裝程式
 
@@ -27,7 +27,7 @@ Xamarin.Forms 現在提供預覽支援 Windows Presentation Foundation (WPF)。 
 
 > [!VIDEO https://youtube.com/embed/Fy9N6OSxK64]
 
-**Xamarin.Forms 3.0 WPF 支援，藉由[Xamarin University](https://university.xamarin.com/)**
+**Xamarin.Forms 3.0 的 WPF 支援影片**
 
 ## <a name="adding-a-wpf-app"></a>新增 WPF 應用程式
 

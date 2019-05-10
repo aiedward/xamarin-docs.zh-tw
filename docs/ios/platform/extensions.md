@@ -8,18 +8,18 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 25b27765a35310c5cdbaf5ae19902b1d19eff6ea
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 971effc34716596ec6be3708ac9da4e68d7bdfee
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61321908"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978581"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的 iOS 延伸模組
 
 > [!VIDEO https://youtube.com/embed/Sd0-ch9Udmk]
 
-**藉由建立延伸模組在 iOS 中， [Xamarin University](https://university.xamarin.com/)**
+**建立 iOS 的擴充功能影片**
 
 專門擴充功能，為 iOS 8 中引進`UIViewControllers`，會依標準的內容內的 iOS 滿足下列條件為內**通知中心**，如使用者所要求執行自訂的鍵盤類型特製化輸入或其他內容，例如編輯的相片的延伸模組可以在其中提供的特殊效果的篩選器。
 
@@ -29,11 +29,11 @@ ms.locfileid: "61321908"
 
 |類型|描述|擴充點|主機應用程式|
 |--- |--- |--- |--- |
-|動作|特製化的編輯器或特定媒體類型的檢視器|`com.apple.ui-services`|任何|
+|動作|特製化的編輯器或特定媒體類型的檢視器|`com.apple.ui-services`|Any|
 |文件提供者|可讓應用程式以使用遠端的文件存放區|`com.apple.fileprovider-ui`|使用應用程式[UIDocumentPickerViewController](xref:UIKit.UIDocumentPickerViewController)|
-|鍵盤|替代鍵盤|`com.apple.keyboard-service`|任何|
+|鍵盤|替代鍵盤|`com.apple.keyboard-service`|Any|
 |相片編輯|相片操作和編輯|`com.apple.photo-editing`|Photos.app 編輯器|
-|共用|共用資料與傳訊服務等社交網路。|`com.apple.share-services`|任何|
+|共用|共用資料與傳訊服務等社交網路。|`com.apple.share-services`|Any|
 |今天|通知中心的 [Today] 畫面上顯示 「 widget 」|`com.apple.widget-extensions`|今天和通知中心|
 
 [其他擴充點](~/ios/platform/introduction-to-ios10/index.md#app-extensions)已新增 ios 10。

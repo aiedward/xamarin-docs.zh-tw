@@ -6,27 +6,26 @@ ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 04/12/2018
-ms.openlocfilehash: e5a5e44a61d352b5de05564ebb7192d21ed83dfa
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/02/2019
+ms.openlocfilehash: 7f7afacaf8154cd425fcd1c1638a512d5bc32ffd
+ms.sourcegitcommit: 53480ed32a126f88eec82e8c8ee5ed8d30616c44
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61012721"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65017691"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>使用 Google 雲端通訊的遠端通知
 
-_本逐步解說提供如何使用 Google Cloud Messaging 實作遠端通知 （也稱為 「 推播通知 」） 的逐步說明，Xamarin.Android 應用程式中。它描述各種通訊與 Google 雲端通訊 (GCM)，您必須實作的類別，它說明如何設定權限以存取 GCM，Android 資訊清單，它會示範端對端傳訊範例測試程式。_
+> [!WARNING]
+> Google 已被取代自 2018 年 4 月 10 日起的 GCM。 下列的文件和範例專案可能不會再進行維護。 Google 的 GCM 伺服器和用戶端 Api 將會盡速以 2019 5 月 29 日移除。 Google 建議將 GCM 應用程式移轉至 Firebase 雲端通訊 (FCM)。 如需有關 GCM 與移轉的詳細資訊，請參閱[Google Cloud Messaging-已被取代](https://developers.google.com/cloud-messaging/)。
+>
+> 若要開始使用遠端使用 Firebase 雲端通訊搭配 Xamarin 的通知，請參閱[遠端使用 FCM 的通知](remote-notifications-with-fcm.md)。
 
-> [!NOTE]
-> GCM 已被取代[Firebase 雲端通訊](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)(FCM)。
-> GCM 伺服器和用戶端 Api[已被取代](https://firebase.googleblog.com/2018/04/time-to-upgrade-from-gcm-to-fcm.html)和將無法再使用立即於 2019 年 4 月 11 日。
+_本逐步解說提供如何使用 Google Cloud Messaging 實作遠端通知 （也稱為 「 推播通知 」） 的逐步說明，Xamarin.Android 應用程式中。它描述各種通訊與 Google 雲端通訊 (GCM)，您必須實作的類別，它說明如何設定權限以存取 GCM，Android 資訊清單，它會示範端對端傳訊範例測試程式。_
 
 ## <a name="gcm-notifications-overview"></a>GCM 通知概觀
 
 在本逐步解說中，我們將建立來實作遠端通知使用 Google 雲端通訊 (GCM) 的 Xamarin.Android 應用程式 (也稱為*推播通知*)。 我們將實作使用 GCM，適用於遠端訊息的各種意圖和接聽程式服務，我們將測試我們的實作會模擬應用程式伺服器的命令列程式。 
-
-請注意，Firebase 雲端通訊 (FCM) 是新版 GCM &ndash; Google 強烈建議使用 FCM，而不是 GCM。 如果您目前使用 GCM，升級至 FCM 建議。 如需 FCM 的詳細資訊，請參閱[Firebase 雲端通訊](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)。 
 
 您可以繼續進行本逐步解說之前，您必須取得所需的認證，以使用 Google 的 GCM 伺服器;會說明此程序[Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md)。 特別是，您必須*API 金鑰*並*寄件者識別碼*以插入本逐步解說的範例程式碼。 
 
@@ -405,7 +404,7 @@ namespace ClientApp
 
 #### <a name="test-registration-with-gcm"></a>測試向 GCM 註冊
 
-讓我們完全重建，並執行應用程式。 如果您已成功收到 GCM 註冊權杖，註冊權杖，應該會顯示在 [輸出] 視窗中。 例如： 
+讓我們完全重建，並執行應用程式。 如果您已成功收到 GCM 註冊權杖，註冊權杖，應該會顯示在 [輸出] 視窗中。 例如:  
 
 ```shell
 D/Mono    ( 1934): Assembly Ref addref ClientApp[0xb4ac2400] -> Xamarin.GooglePlayServices.Gcm[0xb4ac2640]: 2

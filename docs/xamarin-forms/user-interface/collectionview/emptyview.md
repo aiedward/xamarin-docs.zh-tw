@@ -1,27 +1,24 @@
 ---
-title: 當資料無法使用時顯示 EmptyView
+title: Xamarin.Forms CollectionView EmptyView
 description: 在 CollectionView，空的檢視可以指定，將提供意見反應給使用者，當沒有資料可供顯示。 字串、 一個檢視或多個檢視，可以是空的檢視。
 ms.prod: xamarin
 ms.assetid: 6CEBCFE6-5577-4F68-9709-431062609153
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/19/2019
-ms.openlocfilehash: a430387bba83887045e5687c99d9295d4be373e4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/06/2019
+ms.openlocfilehash: 78e9ddcb1d9dd91dadea94016b206867ac9508e6
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019438"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048185"
 ---
-# <a name="display-an-emptyview-when-data-is-unavailable"></a>當資料無法使用時顯示 EmptyView
+# <a name="xamarinforms-collectionview-emptyview"></a>Xamarin.Forms CollectionView EmptyView
 
-![預覽](~/media/shared/preview.png)
+![](~/media/shared/preview.png "此 API 是目前發行前版本")
 
 [![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
-
-> [!IMPORTANT]
-> `CollectionView`目前為預覽狀態，且缺少其中一些規劃功能。 此外，實作完成時，可能會變更的 API。
 
 `CollectionView` 定義可用來提供使用者意見反應，要顯示的資料時的下列屬性：
 
@@ -260,8 +257,80 @@ void ToggleEmptyView(bool isToggled)
 
 如需有關資源字典的詳細資訊，請參閱[Xamarin.Forms 資源字典](~/xamarin-forms/xaml/resource-dictionaries.md)。
 
+## <a name="choose-an-emptyviewtemplate-at-runtime"></a>選擇在執行階段 EmptyViewTemplate
+
+外觀`EmptyView`可以選擇在執行階段，根據它的值，藉由設定`CollectionView.EmptyViewTemplate`屬性設[ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector)物件：
+
+```xaml
+<ContentPage ...
+             xmlns:controls="clr-namespace:CollectionViewDemos.Controls">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="AdvancedTemplate">
+            ...
+        </DataTemplate>
+
+        <DataTemplate x:Key="BasicTemplate">
+            ...
+        </DataTemplate>
+
+        <controls:SearchTermDataTemplateSelector x:Key="SearchSelector"
+                                                 DefaultTemplate="{StaticResource AdvancedTemplate}"
+                                                 OtherTemplate="{StaticResource BasicTemplate}" />
+    </ContentPage.Resources>
+
+    <StackLayout Margin="20">
+        <SearchBar x:Name="searchBar"
+                   SearchCommand="{Binding FilterCommand}"
+                   SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"
+                   Placeholder="Filter" />
+        <CollectionView ItemsSource="{Binding Monkeys}"
+                        EmptyView="{Binding Source={x:Reference searchBar}, Path=Text}"
+                        EmptyViewTemplate="{StaticResource SearchSelector}" />
+    </StackLayout>
+</ContentPage>
+```
+
+對等的 C# 程式碼是：
+
+```csharp
+SearchBar searchBar = new SearchBar { ... };
+CollectionView collectionView = new CollectionView
+{
+    EmptyView = searchBar.Text,
+    EmptyViewTemplate = new SearchTermDataTemplateSelector { ... }
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
+
+`EmptyView`屬性設定為[ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text)屬性，而`EmptyViewTemplate`屬性設定為`SearchTermDataTemplateSelector`物件。
+
+當[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行`FilterCommand`，所顯示的集合`CollectionView`中儲存的搜尋字詞會篩選[ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text)屬性。 如果篩選的作業會不產生任何資料， [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)所選`SearchTermDataTemplateSelector`物件設定為`EmptyViewTemplate`屬性而顯示。
+
+下列範例所示`SearchTermDataTemplateSelector`類別：
+
+```csharp
+public class SearchTermDataTemplateSelector : DataTemplateSelector
+{
+    public DataTemplate DefaultTemplate { get; set; }
+    public DataTemplate OtherTemplate { get; set; }
+
+    protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
+    {
+        string query = (string)item;
+        return query.ToLower().Equals("xamarin") ? OtherTemplate : DefaultTemplate;
+    }
+}
+```
+
+`SearchTermTemplateSelector`類別會定義`DefaultTemplate`並`OtherTemplate` [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)屬性設定為不同的資料範本。 `OnSelectTemplate`覆寫會傳回`DefaultTemplate`，這會顯示訊息給使用者，搜尋查詢不等於 「 xamarin 」。 搜尋查詢的 「 xamarin 」，等於時`OnSelectTemplate`覆寫會傳回`OtherTemplate`，其向使用者顯示基本的訊息：
+
+[![CollectionView runtime 空的檢視範本選擇，在 iOS 和 Android 上的螢幕擷取畫面](emptyview-images/datatemplateselector.png "CollectionView 中的執行階段空的檢視範本選擇")](emptyview-images/datatemplateselector-large.png#lightbox "執行階段空的檢視範本CollectionView 中的選取範圍")
+
+如需有關資料範本選取器的詳細資訊，請參閱[建立 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
+
 ## <a name="related-links"></a>相關連結
 
 - [CollectionView （範例）](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
 - [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [Xamarin.Forms 的資源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [建立 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

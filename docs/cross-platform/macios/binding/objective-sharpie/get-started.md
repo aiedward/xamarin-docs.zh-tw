@@ -6,12 +6,12 @@ ms.assetid: 577512BF-1A90-41E5-89DE-9E056C478678
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: c1831467ca0cbb4329a1e77fb355698f2d16cd6a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4fb5e503a82a2b666bf6f8d7d7166475e94546e7
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61199776"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978408"
 ---
 # <a name="getting-started-with-objective-sharpie"></a>Getting Started With 目標 Sharpie
 
@@ -58,8 +58,3 @@ ms.locfileid: "61199776"
 
 **新功能 ！** 版本 3.0 也引進了一項工具輕鬆地繫結[CocoaPods](https://cocoapods.org)透過`sharpie pod`命令。
 如果您感興趣的程式庫是以 CocoaPod，我們建議您先嘗試將具有目標 Sharpie CocoaPod 繫結 （相對於嘗試直接對來源繫結）。
-
-## <a name="related-links"></a>相關連結
-
-- [Xamarin University 課程：建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程：建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

@@ -6,12 +6,12 @@ ms.assetid: AC2087C0-BA54-46D8-B70C-6972941C8F73
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: df8d4508db14116a5b36e893f161ac891d58dc46
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3b991f6105c6053f473b049d195aaef63cbcdd57
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61266354"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977670"
 ---
 # <a name="apidefinitions--structsandenums-files"></a>ApiDefinitions 與 StructsAndEnums 檔案
 
@@ -34,7 +34,3 @@ ms.locfileid: "61266354"
 
 請參閱[繫結型別參考](~/cross-platform/macios/binding/binding-types-reference.md)如需這些檔案的內容。
 
-## <a name="related-links"></a>相關連結
-
-- [Xamarin University 課程：建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程：建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

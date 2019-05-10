@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: bc50f3567135d5b1dc805fa691cdd95acadf34f1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6b1453164533e2905e78407f33d79a178c7f1ae8
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61327919"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978276"
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>使用 Azure Cosmos DB 文件資料庫
 
@@ -23,7 +23,7 @@ _Azure Cosmos DB 文件資料庫是提供低延遲存取 JSON 文件，提供快
 
 > [!VIDEO https://youtube.com/embed/BoVH12igmbg]
 
-**Microsoft Azure Cosmos DB、 藉由[Xamarin University](https://university.xamarin.com/)**
+**Microsoft Azure Cosmos DB 影片**
 
 Azure Cosmos DB 文件資料庫帳戶可以使用 Azure 訂用帳戶佈建。 每個資料庫帳戶可以有零個或多個資料庫。 Azure Cosmos DB 中的文件資料庫是文件集合和使用者的邏輯容器。
 

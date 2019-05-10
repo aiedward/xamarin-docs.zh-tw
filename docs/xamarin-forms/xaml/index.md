@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/03/2019
-ms.openlocfilehash: 1f6bdfb1aed87f8a2dabdc0efcea3a1b8bf2ecf2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 073bfc27b45a802fd5d6062d4750cc3e20a065e6
+ms.sourcegitcommit: 0d2f708f6d581e94302f26d4670458837dfaa31c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61075264"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64992346"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>可延伸應用程式標記語言 (XAML)
 
@@ -21,9 +21,6 @@ _XAML 是一種宣告式標記的語言，可用來定義使用者介面。使�
 > [!VIDEO https://youtube.com/embed/H6UOrSyhTEE]
 
 **Evolve 2016：成為 XAML Master**
-
-> [!NOTE]
-> 試試看[XAML Standard 預覽版](standard/index.md)
 
 ## <a name="xaml-controlsxaml-controlsmd"></a>[XAML 控制項](xaml-controls.md)
 

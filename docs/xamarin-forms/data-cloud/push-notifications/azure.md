@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: 92c068ceb3d382ed4612318dc987d950ec7e7ef2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2cfb15222c33309101366273d5bc9c42db68b436
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61327451"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978113"
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>從 Azure Mobile Apps 傳送推播通知
 
@@ -23,7 +23,7 @@ _Azure 通知中樞提供可調整的推播基礎結構從任何後端傳送推�
 
 > [!VIDEO https://youtube.com/embed/le2lDY22xwM]
 
-**Azure 藉由將通知中樞和 Xamarin.Forms 的推送[Xamarin University](https://university.xamarin.com/)**
+**Azure 推播通知中樞和 Xamarin.Forms 的影片**
 
 推播通知用來傳遞資訊，例如一則訊息，從行動裝置上的應用程式，以增加應用程式的參與和使用率的後端系統。 通知可以隨時隨地傳送在即使使用者未主動使用目標應用程式。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 3a59cbb8385fe201d7eef086092c9b393a21cc71
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: cc188abaece54a4df139918582e57d4116f894d0
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57666339"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978130"
 ---
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms 自訂轉譯器
 
@@ -58,8 +58,6 @@ Xamarin.Forms 自訂使用者介面控制項應該衍生自用來在螢幕上放
 
 本文說明如何編寫轉譯器以實作 `VideoPlayer` 控制項，此控制項可從 Web、內嵌為應用程式資源的影片、儲存於使用者裝置上影片庫中的影片，來播放影片。 已示範數種技術，其中包括實作方法和唯讀的可繫結屬性。
 
-
 ## <a name="related-links"></a>相關連結
 
 - [Effects](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [Custom Renderers (Xamarin University Video)](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/) (自訂轉譯器 (Xamarin University 影片))

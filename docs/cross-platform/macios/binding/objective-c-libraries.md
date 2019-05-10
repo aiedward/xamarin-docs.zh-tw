@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: e97b211fe6a92ee0df3beed2301cf00c3d42c8f8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3b81ba51a0fbdf4c684ca602cb083f8da08c7d6a
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61200761"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977990"
 ---
 # <a name="binding-objective-c-libraries"></a>繫結 Objective C 程式庫
 
@@ -479,7 +479,7 @@ interface NSStringDrawingExtensions {
 
 ### <a name="binding-objective-c-argument-lists"></a>繫結 Objective C 的引數清單
 
-OBJECTIVE-C 支援 variadic 引數。 例如：
+OBJECTIVE-C 支援 variadic 引數。 例如: 
 
 ```objc
 - (void) appendWorkers:(XWorker *) firstWorker, ...
@@ -522,7 +522,7 @@ public void AppendWorkers(params Worker[] workers)
 
 通常這些欄位會包含必須參考的字串或整數值。 它們通常用為字串，代表特定的通知，並做為字典中的索引鍵。
 
-若要將欄位繫結，將屬性加入至您的介面定義檔和裝飾的屬性[ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)屬性。 這個屬性會採用一個參數： 要查閱的符號 C 名稱。 例如: 
+若要將欄位繫結，將屬性加入至您的介面定義檔和裝飾的屬性[ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)屬性。 這個屬性會採用一個參數： 要查閱的符號 C 名稱。 例如：
 
 ```csharp
 [Field ("NSSomeEventNotification")]
@@ -682,7 +682,7 @@ Xamarin.iOS 繫結產生器提供繫結通知的開發人員的支援。 若要�
 
 這個屬性可以用於不含引數執行沒有承載的通知，或者您可以指定`System.Type`參考另一個介面，在 API 定義中，通常與名稱結尾"EventArgs"。 產生器會將介面變成類別子類別化`EventArgs`，且會包含所有列出的屬性。 [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)屬性應該用在的 EventArgs 類別，列出用來查閱 OBJECTIVE-C 字典擷取值的索引鍵的名稱。
 
-例如：
+例如: 
 
 ```csharp
 interface MyClass {
@@ -1404,5 +1404,3 @@ class Demo {
 ## <a name="related-links"></a>相關連結
 
 - [繫結範例](https://developer.xamarin.com/samples/BindingSample/)
-- [Xamarin University 課程：建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程：建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

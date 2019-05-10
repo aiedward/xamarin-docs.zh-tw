@@ -1,27 +1,24 @@
 ---
-title: 指定 Xamarin.Forms CollectionView 版面配置
+title: Xamarin.Forms CollectionView 版面配置
 description: 根據預設，CollectionView 會以垂直清單顯示其項目。 不過，可以指定垂直和水平清單與格線。
 ms.prod: xamarin
 ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/15/2019
-ms.openlocfilehash: 8ed365ed41ac31c66d41f1a32a7a16929cdc6770
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/06/2019
+ms.openlocfilehash: 5543bcc93f3c38b56a4a6caa0ea23b8ccf434e1c
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61367535"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048249"
 ---
-# <a name="specify-xamarinforms-collectionview-layout"></a>指定 Xamarin.Forms CollectionView 版面配置
+# <a name="xamarinforms-collectionview-layout"></a>Xamarin.Forms CollectionView 版面配置
 
-![預覽](~/media/shared/preview.png)
+![](~/media/shared/preview.png "此 API 是目前發行前版本")
 
 [![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
-
-> [!IMPORTANT]
-> `CollectionView`目前為預覽狀態，且缺少其中一些規劃功能。 此外，實作完成時，可能會變更的 API。
 
 `CollectionView` 會定義下列屬性，控制配置：
 
@@ -43,7 +40,7 @@ ms.locfileid: "61367535"
 - `SnapPointsAlignment`型別的`SnapPointsAlignment`，指定與項目貼齊點的對齊方式。
 - `SnapPointsType`型別的`SnapPointsType`，指定捲動時貼齊點的行為。
 
-這些屬性都會受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)物件，這表示，屬性可以是資料繫結的目標。 如需貼齊點的詳細資訊，請參閱[貼齊點](scrolling.md#snap-points)中[捲動至檢視的項目](scrolling.md)指南。
+這些屬性都會受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)物件，這表示，屬性可以是資料繫結的目標。 如需貼齊點的詳細資訊，請參閱[貼齊點](scrolling.md#snap-points)中[Xamarin.Forms CollectionView 捲動](scrolling.md)指南。
 
 `ItemsLayoutOrientation`列舉會定義下列成員：
 
@@ -344,7 +341,7 @@ CollectionView collectionView = new CollectionView
 - `MeasureFirstItem` – 只有第一個項目使用進行測量，所有後續的項目提供第一個項目相同的大小。
 
 > [!IMPORTANT]
-> `MeasureFirstItem`調整大小策略應在其中的項目大小是跨所有的項目，是統一，因此會導致增加效能的情況下。
+> `MeasureFirstItem`調整大小策略時，會導致更高的效能時，項目大小的目的是跨所有項目是統一的情況下使用。
 
 下列程式碼範例顯示設定`ItemSizingStrategy`屬性：
 
@@ -365,8 +362,11 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
+> [!NOTE]
+> 只有實作上的 iOS 的目前項目調整大小策略。
+
 ## <a name="related-links"></a>相關連結
 
 - [CollectionView （範例）](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
 - [從右至左的當地語系化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
-- [捲動至檢視的項目](scrolling.md)
+- [Xamarin.Forms CollectionView 捲動](scrolling.md)

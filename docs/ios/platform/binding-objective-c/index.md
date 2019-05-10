@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: e599d4f99877e24e06de2c26ed2cafe48526f6f5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8c4dcbe0baf74479e94f8663280e7654b4d58a9d
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61346925"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978159"
 ---
 # <a name="binding-ios-libraries"></a>繫結 iOS 程式庫
 
@@ -38,15 +38,13 @@ ms.locfileid: "61346925"
 此頁面提供建立 iOS 繫結專案使用開放原始碼的逐步解說[ **InfColorPicker** ](https://github.com/InfinitApps/InfColorPicker) Objective C 專案，做為範例。 **InfColorPicker**程式庫提供可重複使用檢視控制器可讓使用者選取根據其 HSB 表示法，讓使用者更容易使用的色彩選取範圍的色彩。
 目標 Sharpie 將用來協助進行繫結程序中。
 
-## <a name="xamarin-university-lightning-lecture"></a>Xamarin University Lightning Lecture
+## <a name="video"></a>視訊
 
 > [!VIDEO https://youtube.com/embed/ZUoPLcmnf1o]
 
-**iOS 在 C 中的繫結 /C++，依[Xamarin University](https://university.xamarin.com/)**
+**iOS 在 C 中的繫結 /C++影片**
 
 ## <a name="related-links"></a>相關連結
 
 - [繫結 Objective-C](~/cross-platform/macios/binding/index.md)
 - [Mac 繫結](~/mac/platform/binding.md)
-- [Xamarin University 課程：建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程：建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

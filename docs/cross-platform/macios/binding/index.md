@@ -6,12 +6,12 @@ ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: 3f1e1ce324e849c0c939d936eb6ee1470cf24a3b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bdf284d66539da3eca35e79d761712012674de0d
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61266604"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978462"
 ---
 # <a name="binding-objective-c"></a>繫結 Objective C
 
@@ -45,17 +45,13 @@ ms.locfileid: "61266604"
 
 ### <a name="binding-sampleshttpsgithubcommonomonotouch-bindings"></a>[繫結範例](https://github.com/mono/monotouch-bindings)
 
-建立新的繫結的專案時，可以是第三方繫結的集合會使用參考。
+可用來當做參考時建立新的繫結專案的第三方繫結的集合。
 
 ## <a name="mac"></a>Mac
 
 在過去[Mac 繫結](~/mac/platform/binding.md)已經非常手動程序。 目前沒有[可下載預覽](https://forums.xamarin.com/discussion/59760/xamarin-mac-binding-project-preview)的 Mac 繫結專案支援未來的版本推出的 Visual Studio for mac。
 
-
-
 ## <a name="related-links"></a>相關連結
 
 - [iOS 繫結](~/ios/platform/binding-objective-c/index.md)
 - [Mac 繫結](~/mac/platform/binding.md)
-- [Xamarin University 課程：建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程：建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

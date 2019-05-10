@@ -1,27 +1,24 @@
 ---
-title: 填入資料的 Xamarin.Forms CollectionView
+title: Xamarin.Forms CollectionView 資料
 description: CollectionView 填入資料，藉由設定它的 ItemsSource 屬性至任何實作 IEnumerable 的集合。
 ms.prod: xamarin
 ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/15/2019
-ms.openlocfilehash: 57012202d981b96dba42f3017a19f2e32e4982ec
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/06/2019
+ms.openlocfilehash: 1350d5a5a0845029b7ef6a06647ad4c56f0f8135
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61366862"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048261"
 ---
-# <a name="populate-xamarinforms-collectionview-with-data"></a>填入資料的 Xamarin.Forms CollectionView
+# <a name="xamarinforms-collectionview-data"></a>Xamarin.Forms CollectionView 資料
 
-![預覽](~/media/shared/preview.png)
+![](~/media/shared/preview.png "此 API 是目前發行前版本")
 
 [![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
-
-> [!IMPORTANT]
-> `CollectionView`目前為預覽狀態，且缺少其中一些規劃功能。 此外，實作完成時，可能會變更的 API。
 
 `CollectionView` 會定義下列屬性，定義要顯示的資料和它的外觀：
 
@@ -188,8 +185,66 @@ public class Monkey
 
 如需資料範本的詳細資訊，請參閱 [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
+## <a name="choose-item-appearance-at-runtime"></a>選擇在執行階段的項目外觀
+
+在每個項目的外觀`CollectionView`可以選擇在執行階段，根據項目值，藉由設定`CollectionView.ItemTemplate`屬性設[ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector)物件：
+
+```xaml
+<ContentPage ...
+             xmlns:controls="clr-namespace:CollectionViewDemos.Controls">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="AmericanMonkeyTemplate">
+            ...
+        </DataTemplate>
+
+        <DataTemplate x:Key="OtherMonkeyTemplate">
+            ...
+        </DataTemplate>
+
+        <controls:MonkeyDataTemplateSelector x:Key="MonkeySelector"
+                                             AmericanMonkey="{StaticResource AmericanMonkeyTemplate}"
+                                             OtherMonkey="{StaticResource OtherMonkeyTemplate}" />
+    </ContentPage.Resources>
+
+    <CollectionView ItemsSource="{Binding Monkeys}"
+                    ItemTemplate="{StaticResource MonkeySelector}" />
+</ContentPage>
+```
+
+對等的 C# 程式碼是：
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    ItemTemplate = new MonkeyDataTemplateSelector { ... }
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
+
+`ItemTemplate`屬性設定為`MonkeyDataTemplateSelector`物件。 下列範例所示`MonkeyDataTemplateSelector`類別：
+
+```csharp
+public class MonkeyDataTemplateSelector : DataTemplateSelector
+{
+    public DataTemplate AmericanMonkey { get; set; }
+    public DataTemplate OtherMonkey { get; set; }
+
+    protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
+    {
+        return ((Monkey)item).Location.Contains("America") ? AmericanMonkey : OtherMonkey;
+    }
+}
+```
+
+`MonkeyDataTemplateSelector`類別會定義`AmericanMonkey`並`OtherMonkey` [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)屬性設定為不同的資料範本。 `OnSelectTemplate`覆寫會傳回`AmericanMonkey`範本 monkey 名稱和位置顯示青綠色中,，當 monkey 名稱包含"America 」。 Monkey 名稱未包含 「 美國 」，當`OnSelectTemplate`覆寫會傳回`OtherMonkey`範本，其中顯示 silver monkey 名稱和位置：
+
+[![螢幕擷取畫面的 CollectionView 執行階段項目範本選項中，在 iOS 和 Android 上](populate-data-images/datatemplateselector.png "CollectionView 中的執行階段項目範本選擇")](populate-data-images/datatemplateselector-large.png#lightbox "執行階段項目範本中的選取項目CollectionView")
+
+如需有關資料範本選取器的詳細資訊，請參閱[建立 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
+
 ## <a name="related-links"></a>相關連結
 
 - [CollectionView （範例）](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
 - [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [建立 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

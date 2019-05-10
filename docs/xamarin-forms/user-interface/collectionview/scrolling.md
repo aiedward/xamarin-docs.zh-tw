@@ -1,27 +1,24 @@
 ---
-title: 捲動至檢視的項目
+title: Xamarin.Forms CollectionView 捲動
 description: 當起始捲使用者 swipes 時，就可以控制捲軸的結束位置，完整顯示的項目。 颾魤 ㄛ CollectionView 定義兩個 ScrollTo 方法，以程式設計方式捲動至檢視的 項目。
 ms.prod: xamarin
 ms.assetid: 2ED719AF-33D2-434D-949A-B70B479C9BA5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/19/2019
-ms.openlocfilehash: da7f379076b8e193deddc99e9004f051ba006cbb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/06/2019
+ms.openlocfilehash: 888b4f369f67a7d8566640927ba2ae3a395d68d8
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61367564"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048172"
 ---
-# <a name="scroll-an-item-into-view"></a>捲動至檢視的項目
+# <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.Forms CollectionView 捲動
 
-![預覽](~/media/shared/preview.png)
+![](~/media/shared/preview.png "此 API 是目前發行前版本")
 
 [![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
-
-> [!IMPORTANT]
-> `CollectionView`目前為預覽狀態，且缺少其中一些規劃功能。 此外，實作完成時，可能會變更的 API。
 
 `CollectionView` 定義兩個`ScrollTo`方法，捲動至檢視的項目。 另將指定的項目捲動至檢視時，其中一個多載捲動到檢視中，指定索引處的項目。 這兩個多載包含有額外的引數可指定捲軸已在完成之後，表示項目的確切的位置，以及是否要以動畫顯示捲軸。
 

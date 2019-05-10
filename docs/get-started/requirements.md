@@ -6,13 +6,13 @@ ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2018
-ms.openlocfilehash: 66785fcd4b38f29ca0358e1e8885e6b7da59f5a7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/01/2019
+ms.openlocfilehash: 89afb106320ce77e86a66f2c78bd6e32de8c38f3
+ms.sourcegitcommit: be9658de032f3893741261f16162a664952ce178
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61189696"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64986958"
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms 需求
 
@@ -25,10 +25,10 @@ _Xamarin.Forms 的平台和開發系統需求。_
 您可以針對下列作業系統撰寫 Xamarin.Forms 應用程式：
 
 - iOS 8 或更高版本
-- Android 4.4 (API 19) 或更高版本 ([更多詳細資料](#android))
+- Android 5.0 (API 21) 或更高版本 ([更多詳細資料](#android))
 - Windows 10 通用 Windows 平台 ([更多詳細資料](#windows10))
 
-開發人員應熟悉 [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md) 和[共用專案](~/cross-platform/app-fundamentals/shared-projects.md)。
+它會假設開發人員已熟悉[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)。
 
 ### <a name="additional-platform-support"></a>其他平台支援
 
@@ -38,13 +38,6 @@ _Xamarin.Forms 的平台和開發系統需求。_
 - macOS
 - GTK#
 - WPF
-
-### <a name="platforms-from-earlier-versions"></a>舊版的平台
-
-使用 Xamarin.Forms 3.0 時不支援這些平台：
-
-- *Windows 8.1 / Windows Phone 8.1 WinRT*
-- *Windows Phone 8 Silverlight*
 
 ### <a name="android"></a>Android
 
@@ -98,3 +91,10 @@ _Xamarin.Forms 的平台和開發系統需求。_
 - [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
 
 您隨時可以將[通用 Windows 平台 (UWP) 應用程式新增到](~/xamarin-forms/platform/windows/installation/index.md)現有的 Xamarin.Forms 方案。
+
+## <a name="deprecated-platforms"></a>已被取代的平台
+
+使用 Xamarin.Forms 3.0 或更新版本時，不支援這些平台：
+
+- *Windows 8.1 / Windows Phone 8.1 WinRT*
+- *Windows Phone 8 Silverlight*
