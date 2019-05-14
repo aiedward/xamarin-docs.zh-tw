@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: 0ff9f8b5ee6f9468650b6535745706bee8f96536
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: HT
+ms.openlocfilehash: 60074c3c1b69a57d313ad0243246ba6db93dde3d
+ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60876328"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557427"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>使用 XAML 預覽程式的設計階段資料
 
@@ -22,7 +22,7 @@ _某些版面配置是難想像沒有資料。若要充分利用預覽您的大�
 
 設計階段資料是假的資料，您將設定為在 XAML 預覽程式中更輕鬆地以視覺化方式檢視您的控制項。 若要開始，請將下列程式碼行加入 XAML 頁面的標頭：
 
-```csharp
+```xaml
 xmlns:d="http://xamarin.com/schemas/2014/forms/design"
 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 mc:Ignorable="d"
@@ -32,17 +32,17 @@ mc:Ignorable="d"
 
 例如，您可以將文字加入通常具有資料繫結到它的標籤。
 
-```csharp
-<Label Text={Binding Name} d:Text="Name" />
+```xaml
+<Label Text="{Binding Name}" d:Text="Name!" />
 ```
 
 [![設計時間資料標籤中的文字](xaml-previewer-images/designtimedata-label-sm.png "設計時間的文字資料標籤")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
- 在此範例中，而不需要`d:Text`，XAML 預覽程式會顯示任何標籤。 相反地，它會顯示 「 名稱 」 其中的標籤時，會在執行階段具有實際資料。
+在此範例中，而不需要`d:Text`，XAML 預覽程式會顯示任何標籤。 相反地，它會顯示 「 名稱 」 ！ 其中的標籤會有在執行階段的實際資料。
 
 您可以使用`d:`Xamarin.Forms 控制項，例如色彩、 字型大小、 和間距的任何屬性。 您甚至可以將它加入控制項本身：
 
-```csharp
+```xaml
 <d:Button Text="Design Time Button" />
 ```
 
@@ -54,7 +54,7 @@ mc:Ignorable="d"
 
 您可以設定設計時間來源所繫結至頁面，或以動態方式載入的映像。 在您的 Android 專案中，新增您想要在 XAML 預覽程式中顯示的映像**資源 > Drawable**資料夾。 在您的 iOS 專案中新增影像**資源**資料夾。 您接著可以在 XAML 預覽程式中顯示該映像，在設計階段：
 
-```csharp
+```xaml
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
 ```
 [![設計階段資料與映像](xaml-previewer-images/designtimedata-image-sm.png "設計 iamges 時間資料")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
@@ -63,7 +63,7 @@ mc:Ignorable="d"
 
 Listview 是一種常見的方式顯示資料的行動應用程式。 不過，它們很難不包含實際的資料視覺化。 若要使用這些設計階段資料，您必須建立設計階段陣列作為 ItemsSource。 XAML 預覽程式會顯示功能的設計階段您 ListView 中的陣列。
 
-```csharp
+```xaml
 <StackLayout>
     <ListView ItemsSource="{Binding Items}">
         <d:ListView.ItemsSource>
@@ -87,8 +87,7 @@ Listview 是一種常見的方式顯示資料的行動應用程式。 不過，�
 
 此範例中會顯示三個 TextCells 的 ListView 中 XAML 預覽程式。 您可以變更`x:String`到專案中現有的資料模型。
 
-請參閱[James Montemagno Hanselman.Forms 應用程式](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L36-L57)更複雜的範例。
-
+請參閱[James Montemagno Hanselman.Forms 應用程式](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L26-L47)更複雜的範例。
 
 ## <a name="alternative-hardcode-a-static-viewmodel"></a>替代程序：硬式編碼的靜態 ViewModel
 

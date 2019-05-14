@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: e220abc575270f483c0a822ae01f979966691432
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 31303114ddd829b596569981b5812b91c4e95b30
+ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61186433"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557447"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms 標籤
 
@@ -157,7 +157,7 @@ var label =
 - [`FontSize`](xref:Xamarin.Forms.Span.FontSize) – 範圍中文字的字型的大小。
 - [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor) – 範圍中文字的色彩。 這個屬性已經過時，已被取代`TextColor`屬性。
 - [`LineHeight`](xref:Xamarin.Forms.Span.LineHeight) -要套用至範圍的預設線條高度的乘數。 如需詳細資訊，請參閱 <<c0> [ 行高](#line-height)。
-- [`Text`](xref:Xamarin.Forms.Span.Text)  – 要套用至範圍的樣式。
+- [`Style`](xref:Xamarin.Forms.Span.Style)  – 要套用至範圍的樣式。
 - [`Text`](xref:Xamarin.Forms.Span.Text) – 範圍的文字。
 - [`TextColor`](xref:Xamarin.Forms.Span.TextColor) – 範圍中文字的色彩。
 - `TextDecorations` -要套用至範圍中文字的裝飾。 如需詳細資訊，請參閱 <<c0> [ 文字裝飾](#text-decorations)。

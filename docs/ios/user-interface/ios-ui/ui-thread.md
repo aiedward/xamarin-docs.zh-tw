@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 6dd55f5c4316ed8f1d4f16d9e282cc2647350518
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9bde539286b69569b4928bc28b20faecee0f5209
+ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61245324"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557392"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>使用 Xamarin.iOS 中的 UI 執行緒
 
@@ -61,7 +61,7 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-您不需要執行此項目中的範例本文件中，但它的其餘部分，是應用程式所提出網路要求時要注意的重要概念的使用會使用通知中心或其他需要另一個將執行完成處理常式的方法執行緒。
+您不需要將此選項用於本文件中，範例的其餘部分，但它是一個重要的概念，請記住您的應用程式發出網路要求時使用通知中心或其他需要另一個將執行完成處理常式的方法執行緒。
 
  <a name="Async_Await_Example" />
 
