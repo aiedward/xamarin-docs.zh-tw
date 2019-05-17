@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: a4cf63b84d0686bc28b02b18a6266908251bdf6f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c24b2c2f0742ee2c6814d9821f3c0603c6e48a96
+ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153973"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65804921"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>在 Xamarin.iOS 中建立使用者介面物件
 
@@ -80,7 +80,7 @@ using UIKit;
 
  [![](creating-ui-objects-images/image6a.png "助理編輯器 按鈕")](creating-ui-objects-images/image6a.png#lightbox)
 
-按一下使用者介面物件;然後**控制項拖曳**.h 檔案。 以 * * 控制項拖曳 * *，按住 control 鍵然後按一下並按住透過使用者介面物件，您建立的輸出 （或動作）。 繼續按住 Control 鍵，您將項目拖曳到標頭檔。 完成拖曳下方`@interface`定義。 藍線應該會出現標題插入輸出或輸出集合，如以下螢幕擷取畫面所示。
+按一下使用者介面物件;然後**控制項拖曳**.h 檔案。 若要**控制項拖曳**、 按住 control 鍵，然後按一下並按住您建立的輸出 （或動作） 的使用者介面物件。 繼續按住 Control 鍵，您將項目拖曳到標頭檔。 完成拖曳下方`@interface`定義。 藍線應該會出現標題插入輸出或輸出集合，如以下螢幕擷取畫面所示。
 
 當您釋放將提示您提供的輸出，將用來建立名稱按一下C#可以在程式碼中參考的屬性：
 
