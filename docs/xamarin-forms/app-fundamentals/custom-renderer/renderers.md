@@ -1,22 +1,22 @@
 ---
 title: 轉譯器基底類別與原生控制項
-description: 每個 Xamarin.Forms 控制項都具有每個平台的轉譯器，這些轉譯器可建立原生控制項的執行個體。 此文章列出可實作每個 Xamarin.Forms 頁面、配置、檢視和資料格的轉譯器和原生控制項類別。
+description: 每個 Xamarin.Forms 控制項都具有每個平台的轉譯器，這些轉譯器可建立原生控制項的執行個體。 本文列出可實作每個 Xamarin.Forms 頁面、配置、檢視和資料格的轉譯器和原生控制項類別。
 ms.prod: xamarin
 ms.assetid: A8909AE3-ED0E-4D24-BF96-B49E732E3B93
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: cdca5294ea12bf8907ea5f6242efea00f384e77e
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: 7eeb1aebd0a95ae9ecbcc39e70a3931ee76fb0ce
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329334"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048279"
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>轉譯器基底類別與原生控制項
 
-_每個 Xamarin.Forms 控制項都具有每個平台的轉譯器，這些轉譯器可建立原生控制項的執行個體。此文章列出可實作每個 Xamarin.Forms 頁面、配置、檢視和資料格的轉譯器和原生控制項類別。_
+_每個 Xamarin.Forms 控制項都具有每個平台的轉譯器，這些轉譯器可建立原生控制項的執行個體。本文列出可實作每個 Xamarin.Forms 頁面、配置、檢視和資料格的轉譯器和原生控制項類別。_
 
 除了 `MapRenderer` 類別之外，平台特定轉譯器皆可在下列命名空間中找到：
 
@@ -30,6 +30,9 @@ _每個 Xamarin.Forms 控制項都具有每個平台的轉譯器，這些轉譯�
 - **iOS** – Xamarin.Forms.Maps.iOS
 - **Android** – Xamarin.Forms.Maps.Android
 - **通用 Windows 平台 (UWP)** – Xamarin.Forms.Maps.UWP
+
+> [!NOTE]
+> 如需針對 Shell 應用程式建立自訂轉譯器的相關資訊，請參閱 [Xamarin.Forms Shell 自訂轉譯器](~/xamarin-forms/app-fundamentals/shell/customrenderers.md)。
 
 ## <a name="pages"></a>頁面
 
@@ -103,8 +106,4 @@ _每個 Xamarin.Forms 控制項都具有每個平台的轉譯器，這些轉譯�
 
 ## <a name="summary"></a>總結
 
-此文章列出可實作每個 Xamarin.Forms 頁面、配置、檢視和資料格的轉譯器和原生控制項類別。 每個 Xamarin.Forms 控制項都具有每個平台的轉譯器，這些轉譯器可建立原生控制項的執行個體。
-
-## <a name="related-links"></a>相關連結
-
-- [Custom Renderers (Xamarin University Video)](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/) (自訂轉譯器 (Xamarin University 影片))
+本文列出可實作每個 Xamarin.Forms 頁面、配置、檢視和資料格的轉譯器和原生控制項類別。 每個 Xamarin.Forms 控制項都具有每個平台的轉譯器，這些轉譯器可建立原生控制項的執行個體。

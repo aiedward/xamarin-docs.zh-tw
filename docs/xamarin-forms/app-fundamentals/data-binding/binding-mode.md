@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 1a8611e5dd0be77eeef065d546f6a0642f384b00
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: 4583b703d6c6b15105d60a98e7a1064e6a2e9263
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557278"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977779"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms 繫結模式
 
@@ -109,7 +109,7 @@ ms.locfileid: "57557278"
 
 [Simple Color Selector] \(簡易色彩選取器\) 頁面會示範如何使用簡易的 ViewModel。 資料繫結可讓使用者透過色調、飽和度和亮度三個 `Slider` 項目來選取色彩。
 
-ViewModel 是資料繫結來源。 ViewModel「不會」定義可繫結的屬性，但它會實作通知機制，以在屬性值變更時通知繫結基礎結構。 此通知機制是 [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) 介面，其會定義名為 [`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) 的單一屬性。 實作這個介面的類別通常會在其中一個公用屬性變更值時引發事件。 如果屬性從不變更，就不需要引發事件  (`BindableObject` 也會實作 `INotifyPropertyChanged` 介面，並在可繫結的屬性值變更時引發 `PropertyChanged` 事件)。
+ViewModel 是資料繫結來源。 ViewModel「不會」定義可繫結的屬性，但它會實作通知機制，以在屬性值變更時通知繫結基礎結構。 此通知機制是 [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) 介面，其會定義名為 [`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) 的單一事件。 實作這個介面的類別通常會在其中一個公用屬性變更值時引發事件。 如果屬性從不變更，就不需要引發事件  (`BindableObject` 也會實作 `INotifyPropertyChanged` 介面，並在可繫結的屬性值變更時引發 `PropertyChanged` 事件)。
 
 `HslColorViewModel` 類別定義五個屬性：`Hue`、`Saturation`、`Luminosity` 和 `Color` 屬性相互關聯。 當這三個色彩元件其中之一變更值時，即會重新計算 `Color` 屬性，並引發所有四個屬性的 `PropertyChanged` 事件：
 
@@ -677,7 +677,7 @@ public partial class SampleSettingsPage : ContentPage
 
 [![範例設定](binding-mode-images/samplesettings-small.png "範例設定")](binding-mode-images/samplesettings-large.png#lightbox "範例設定")
 
-其他兩個螢幕擷取畫面顯示已變更的設定。 當試驗此頁面時，請記得讓程式進入睡眠狀態，或終止裝置或模擬器正在執行的程式。 終止 Visual Studio 偵錯工具中的程式，並不會導致呼叫 `App` 類別中的 `OnSleep` 覆寫。
+另一個螢幕擷取畫面顯示已更改的設定。 當試驗此頁面時，請記得讓程式進入睡眠狀態，或終止裝置或模擬器正在執行的程式。 終止 Visual Studio 偵錯工具中的程式，並不會導致呼叫 `App` 類別中的 `OnSleep` 覆寫。
 
 在下一篇文章中，您將了解如何指定資料繫結的[**字串格式化**](string-formatting.md)，而該資料繫結是在 `Label` 的 `Text` 屬性上設定。
 

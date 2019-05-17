@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: c5eeb00d4dc5992666a7ba5f9fef2685d5056447
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: 01bb3d19b5e79a6ce9942447b5ddd4afb04574cc
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329269"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978611"
 ---
 # <a name="hierarchical-navigation"></a>階層式導覽
 
@@ -366,6 +366,5 @@ public class TitleViewPage : ContentPage
 - [Passing Data (Samples)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/) (傳遞資料 (範例))
 - [LoginFlow (Samples)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)
 - [Title View (Samples)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/) (標題檢視 (範例))
-- [How to Create a Sign In Screen Flow in Xamarin.Forms (Xamarin University Video) Sample](http://xamarinuniversity.blob.core.windows.net/lightninglectures/CreateASignIn.zip) (如何在 Xamarin.Forms 中建立登入畫面流程 (Xamarin University 影片) 範例)
-- [How to Create a Sign In Screen Flow in Xamarin.Forms (Xamarin University Video)](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms) (如何在 Xamarin.Forms 中建立登入畫面流程 (Xamarin University 影片))
+- [如何在 Xamarin.Forms 中建立登入畫面流程影片](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms) \(英文\)
 - [NavigationPage](xref:Xamarin.Forms.NavigationPage)

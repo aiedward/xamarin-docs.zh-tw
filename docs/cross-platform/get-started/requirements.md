@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: conceptdev
 ms.author: crdun
-ms.date: 07/24/2018
-ms.openlocfilehash: c03e9782fe80a88c70df6b7780c43778f673d10d
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.date: 04/26/2018
+ms.openlocfilehash: 3f51b61cd7dcc3c7b17881b3576aa2c22a45e470
+ms.sourcegitcommit: be9658de032f3893741261f16162a664952ce178
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854557"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64987027"
 ---
 # <a name="system-requirements"></a>系統需求
 
@@ -45,7 +45,7 @@ Xamarin 產品依賴 Apple 和 Google 中的平台 SDK 來定位 iOS 或 Android
 [!include[](~/cross-platform/includes/macos-testing.md)]
 
 > [!WARNING]
-> Xamarin.Mac 4.8 僅支援 macOS 10.9 () 或更高版本。
+> Xamarin.Mac 4.8 僅支援 macOS 10.9 (Mavericks) 或更高版本。
 > 舊版 Xamarin.Mac 支援 macOS 10.7 或更高版本，但這些較舊的 macOS 版本缺乏足夠的 TLS 基礎結構，無法支援 TLS 1.2。 若要以 macOS 10.7 或 10.8 為目標，請使用 Xamarin.Mac 4.6 或更舊版本。
 
 ## <a name="windows-requirements"></a>Windows 需求

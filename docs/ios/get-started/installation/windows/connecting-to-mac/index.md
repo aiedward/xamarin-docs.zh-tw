@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/29/2018
-ms.openlocfilehash: 9456686157f10d81e36b908cb0a2441e64d47663
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: e77a5d7863428d743c536b5aa7b2bb88d12cffc0
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855142"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978332"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>為 Xamarin.iOS 開發與 Mac 配對
 
@@ -247,7 +247,7 @@ C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamU
 ## <a name="next-steps"></a>後續步驟
 
 - [連線疑難排解](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md)
-- [Xamarin Mac 組建代理程式 - Xamarin University Lightning Lecture](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
+- [Xamarin Mac 組建代理程式影片](https://www.youtube.com/watch?v=MBAPBtxkjFQ) \(英文\)
 - [Xamarin.iOS for Visual Studio 簡介](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
 - [適用於 Windows 的遠端 iOS 模擬器](~/tools/ios-simulator/index.md)
 - [無線部署](~/ios/deploy-test/wireless-deployment.md)
