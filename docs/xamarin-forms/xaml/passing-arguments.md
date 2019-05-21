@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2016
-ms.openlocfilehash: 1baad2e2edfb661fff9f3ef0ccf52c9922e9f351
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b00452d348072060ab0e31a64fdb8cd4eb177471
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61178143"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926975"
 ---
 # <a name="passing-arguments-in-xaml"></a>在 XAML 中傳遞引數
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/xaml/passingconstructorarguments/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/XAML/PassingConstructorArguments/)
 
 _這篇文章示範如何使用可用來將引數傳遞至非預設建構函式，呼叫 factory 方法，並指定的泛型引數類型的 XAML 屬性。_
 
@@ -173,5 +173,5 @@ _這篇文章示範如何使用可用來將引數傳遞至非預設建構函式�
 ## <a name="related-links"></a>相關連結
 
 - [XAML 命名空間](~/xamarin-forms/xaml/namespaces.md)
-- [傳遞建構函式引數 （範例）](https://developer.xamarin.com/samples/xamarin-forms/xaml/passingconstructorarguments/)
+- [傳遞建構函式引數 （範例）](https://developer.xamarin.com/samples/xamarin-forms/XAML/PassingConstructorArguments/)
 - [呼叫 Factory 方法 （範例）](https://developer.xamarin.com/samples/xamarin-forms/xaml/callingfactorymethods/)

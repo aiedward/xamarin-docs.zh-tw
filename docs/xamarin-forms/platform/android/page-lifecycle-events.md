@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: ab9c404fc9051014fd3a243848290087f43a46d2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 295b060ee795244184b3ea88b101c720436d1fe5
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61363078"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926532"
 ---
 # <a name="page-lifecycle-events-on-android"></a>在 Android 上的網頁生命週期事件
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 此 Android 平台專屬用來停用[ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing)並[ `Appearing` ](xref:Xamarin.Forms.Page.Appearing)網頁事件，應用程式上的暫停和繼續分別使用 AppCompat 的應用程式。 此外，它能夠控制是否繼續執行後，會顯示螢幕小鍵盤，如果它顯示在暫停時，已提供螢幕小鍵盤的作業模式設定為[ `WindowSoftInputModeAdjust.Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize)。
 
@@ -59,7 +59,7 @@ Xamarin.Forms.Application.Current.On<Android>()
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

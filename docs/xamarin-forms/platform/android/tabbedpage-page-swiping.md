@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 7de2c903da40c186560085d61b94fd38ffe9d219
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 36fd3d047f9f847cfdaadc3787ba81a583f25e57
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61360960"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926460"
 ---
 # <a name="tabbedpage-page-swiping-on-android"></a>在 Android 上撥動 TabbedPage 頁面
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 此 Android 平台專屬用來啟用與中的頁面之間的水平的手指筆勢撥動[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)。 它由在 XAML 中設定[ `TabbedPage.IsSwipePagingEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.IsSwipePagingEnabledProperty) ; 附加屬性`boolean`值：
 
@@ -48,7 +48,7 @@ On<Android>().SetOffscreenPageLimit(2)
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

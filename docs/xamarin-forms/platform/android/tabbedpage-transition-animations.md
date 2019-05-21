@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 1e9c46fe9535c313581d6d0053559a28aa327887
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b57718038c43f7bc2a9e27e780a0624eb50a54fe
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61359891"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926419"
 ---
 # <a name="tabbedpage-page-transition-animations-on-android"></a>在 Android 上的 TabbedPage 頁面轉換動畫
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 此 Android 平台專屬用來瀏覽頁面，或是以程式設計方式或使用索引標籤列中時，停用轉換動畫[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)。 它由在 XAML 中設定`TabbedPage.IsSmoothScrollEnabled`可繫結的屬性，以`false`:
 
@@ -46,7 +46,7 @@ On<Android>().SetIsSmoothScrollEnabled(false);
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

@@ -7,12 +7,12 @@ ms.assetid: 3EAE6BDC-8EFB-464B-A87B-1C35B8387BB3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: bb2cd1c97cc588923e0da1a8793f16445c111f0e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 408f171a3c7c690b700f7be21a3dcaff503467d9
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334288"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926905"
 ---
 # <a name="summary-of-chapter-12-styles"></a>第 12 章的摘要。 樣式
 
@@ -20,7 +20,7 @@ ms.locfileid: "61334288"
 
 在 Xamarin.Forms 中，樣式可讓多個檢視，以共用屬性設定的集合。 這可減少標記，並可讓您維護一致的視覺化佈景主題。
 
-幾乎一律定義和使用標記樣式。 型別的物件[ `Style` ](xref:Xamarin.Forms.Style)並具現化資源字典中則設為[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)視覺項目使用的屬性`StaticResource`或`DynamicResource`標記延伸模組。
+幾乎一律定義和使用標記樣式。 型別的物件[ `Style` ](xref:Xamarin.Forms.Style)並具現化資源字典中則設為[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)視覺項目使用的屬性`StaticResource`或`DynamicResource`標記延伸模組。
 
 ## <a name="the-basic-style"></a>基本的樣式
 

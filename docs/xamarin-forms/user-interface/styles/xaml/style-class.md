@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: dd749a4a78adbab5317f1ae5ca6334caa009b9b3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3ef0f96bcc955dcac4231f9eb9cf1ab16ee61aa
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61277780"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925283"
 ---
 # <a name="xamarinforms-style-classes"></a>Xamarin.Forms 樣式類別
 
@@ -180,7 +180,7 @@ Resources = new ResourceDictionary
 
 ## <a name="consume-style-classes"></a>使用樣式類別
 
-樣式類別，可供設定[ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass)控制項，也就是型別的屬性`IList<string>`，樣式類別名稱的清單。 也將會套用的樣式類別，前提是該控制項的型別符合[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)的樣式類別。
+樣式類別，可供設定[ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass)控制項，也就是型別的屬性`IList<string>`，樣式類別名稱的清單。 也將會套用的樣式類別，前提是該控制項的型別符合[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)的樣式類別。
 
 下列範例示範三個[ `BoxView` ](xref:Xamarin.Forms.BoxView)分別設為不同的樣式類別的執行個體：
 
@@ -206,7 +206,7 @@ Resources = new ResourceDictionary
 ![](style-class-images/boxviews.png "BoxViews 樣式的樣式類別")
 
 > [!IMPORTANT]
-> 多個樣式類別可以套用至控制項，因為[ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass)屬性的類型是`IList<string>`。 當發生這種情況時，以遞增的清單順序套用樣式類別。 因此，當多個樣式類別設定相同屬性時，最高的清單位置中的樣式類別中的屬性會優先。
+> 多個樣式類別可以套用至控制項，因為[ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass)屬性的類型是`IList<string>`。 當發生這種情況時，以遞增的清單順序套用樣式類別。 因此，當多個樣式類別設定相同屬性時，最高的清單位置中的樣式類別中的屬性會優先。
 
 對等的 C# 程式碼是：
 

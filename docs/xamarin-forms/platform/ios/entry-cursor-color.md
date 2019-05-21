@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 4e77ddd1988e65f4b4548c2369de520302d3d732
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 41390a36eb303b7e06bcb31f89c23120cede0271
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61195625"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926753"
 ---
 # <a name="entry-cursor-color-on-ios"></a>在 iOS 上的項目資料指標色彩
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 此平台特定設定的資料指標色彩[ `Entry` ](xref:Xamarin.Forms.Entry)為指定的色彩。 它由在 XAML 中設定[ `Entry.CursorColor` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.CursorColorProperty)可繫結的屬性，以[ `Color` ](xref:Xamarin.Forms.Color):
 
@@ -48,6 +48,6 @@ entry.On<iOS>().SetCursorColor(Color.LimeGreen);
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

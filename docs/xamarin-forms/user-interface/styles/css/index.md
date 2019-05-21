@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2019
-ms.openlocfilehash: 7dc9a0c0d7330588dc4a6d3f3dedd4b72211f019
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: bb13113a947fe6ff25f5e96e299828d1d93e20ac
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65048024"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65927046"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用階層式樣式表 (CSS) 樣式設定 Xamarin.Forms 應用程式
 
@@ -246,7 +246,7 @@ stacklayout {
 }
 ```
 
-CSS 類別可以藉由設定指派給 XAML 項目[ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass)的 CSS 類別名稱的項目屬性。 因此，在下列 XAML 範例中，樣式來定義`.detailPageTitle`類別會指派給第一個[ `Label` ](xref:Xamarin.Forms.Label)，而所定義的樣式`.detailPageSubtitle`類別會指派給第二個`Label`。
+CSS 類別可以藉由設定指派給 XAML 項目[ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass)的 CSS 類別名稱的項目屬性。 因此，在下列 XAML 範例中，樣式來定義`.detailPageTitle`類別會指派給第一個[ `Label` ](xref:Xamarin.Forms.Label)，而所定義的樣式`.detailPageSubtitle`類別會指派給第二個`Label`。
 
 ```xaml
 <ContentPage ...>

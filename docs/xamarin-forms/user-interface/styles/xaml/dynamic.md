@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 260c215df52eb31139998438cc0eda10a887be65
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 574f4cb5541a12525fb0d160599d4d2f13653cf0
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61395181"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926943"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的動態樣式
 
@@ -53,7 +53,7 @@ _樣式，請勿回應屬性的變更和應用程式的持續期間保持不變�
 </ContentPage>
 ```
 
-[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行個體會使用`DynamicResource`標記延伸參考[ `Style` ](xref:Xamarin.Forms.Style)名為`searchBarStyle`，它不會在 XAML 中定義。 不過，因為[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)的屬性`SearchBar`執行個體已設定使用`DynamicResource`，遺漏的字典索引鍵不會導致擲回例外狀況。
+[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行個體會使用`DynamicResource`標記延伸參考[ `Style` ](xref:Xamarin.Forms.Style)名為`searchBarStyle`，它不會在 XAML 中定義。 不過，因為[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)的屬性`SearchBar`執行個體已設定使用`DynamicResource`，遺漏的字典索引鍵不會導致擲回例外狀況。
 
 相反地，在程式碼後置檔案中，建構函式建立[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)具有索引鍵的項目`searchBarStyle`，如下列程式碼範例所示：
 
@@ -205,7 +205,7 @@ public class DynamicStylesInheritancePageCS : ContentPage
 }
 ```
 
-`tealSearchBarStyle`直接指派給[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)屬性[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行個體。 這`Style`會設定一些其他的屬性，並使用[ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)屬性來參考`searchBarStyle`。 [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*)方法並不需要這裡因為`tealSearchBarStyle`不會變更，除了`Style`它衍生自。 因此，`tealSearchBarStyle`會維護連結`searchBarStyle`和更改基底的樣式變更時。
+`tealSearchBarStyle`直接指派給[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行個體。 這`Style`會設定一些其他的屬性，並使用[ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)屬性來參考`searchBarStyle`。 [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*)方法並不需要這裡因為`tealSearchBarStyle`不會變更，除了`Style`它衍生自。 因此，`tealSearchBarStyle`會維護連結`searchBarStyle`和更改基底的樣式變更時。
 
 ## <a name="related-links"></a>相關連結
 

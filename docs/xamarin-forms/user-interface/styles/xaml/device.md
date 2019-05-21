@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: fd5181040c1805d3fdabdae4803bbe32c6bb6652
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 252f3271c7247f7070df66712035938be651e7f4
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61345502"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65924786"
 ---
 # <a name="device-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的裝置樣式
 
@@ -29,7 +29,7 @@ _Xamarin.Forms 包含六個動態的樣式，稱為裝置樣式，Device.Styles 
 - [`SubtitleStyle`](xref:Xamarin.Forms.Device.Styles.SubtitleStyle)
 - [`TitleStyle`](xref:Xamarin.Forms.Device.Styles.TitleStyle)
 
-所有六個樣式只套用至[ `Label` ](xref:Xamarin.Forms.Label)執行個體。 例如， `Label` ，顯示一個段落的本文可能會設定其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)屬性設[ `BodyStyle` ](xref:Xamarin.Forms.Device.Styles.BodyStyle)。
+所有六個樣式只套用至[ `Label` ](xref:Xamarin.Forms.Label)執行個體。 例如， `Label` ，顯示一個段落的本文可能會設定其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性設[ `BodyStyle` ](xref:Xamarin.Forms.Device.Styles.BodyStyle)。
 
 下列程式碼範例示範如何使用*裝置*XAML 頁面中的樣式：
 
@@ -109,7 +109,7 @@ public class DeviceStylesPageCS : ContentPage
 }
 ```
 
-[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)屬性的每個[ `Label` ](xref:Xamarin.Forms.Label)執行個體設定為適當的屬性，從[ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)類別。
+[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性的每個[ `Label` ](xref:Xamarin.Forms.Label)執行個體設定為適當的屬性，從[ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)類別。
 
 ## <a name="accessibility"></a>協助工具選項
 

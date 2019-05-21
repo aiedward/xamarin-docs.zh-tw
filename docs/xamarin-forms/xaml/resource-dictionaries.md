@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: 5b1c9ff709022d6bcae51597a03fe2a71097cd2d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8b5a610cbd87ca9e80272b6be8e726e4fd323dd0
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61076658"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925605"
 ---
 # <a name="resource-dictionaries"></a>資源字典
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/xaml/resourcedictionaries/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/XAML/ResourceDictionaries/)
 
 _XAML 資源是可共用及重複使用在 Xamarin.Forms 應用程式的物件定義。_
 
@@ -305,6 +305,6 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 
 ## <a name="related-links"></a>相關連結
 
-- [資源字典 （範例）](https://developer.xamarin.com/samples/xamarin-forms/xaml/resourcedictionaries/)
+- [資源字典 （範例）](https://developer.xamarin.com/samples/xamarin-forms/XAML/ResourceDictionaries/)
 - [樣式](~/xamarin-forms/user-interface/styles/index.md)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)

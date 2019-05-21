@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: 0251d06ff68185990ed8b7acb46389c59c71a99a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d3e1c8a2b17ba41e3c9d212948f42023c15205ac
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61075217"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926240"
 ---
 # <a name="bindable-properties"></a>可繫結屬性
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
 
 _在 Xamarin.Forms 中，通用語言執行平台 (CLR) 屬性的功能會擴充可繫結的屬性。可繫結的屬性是屬性的特殊類型，其中 Xamarin.Forms 屬性系統會追蹤屬性的值。這篇文章介紹可繫結的屬性，並示範如何建立和使用它們。_
 
@@ -226,7 +226,7 @@ public static readonly BindableProperty SizeProperty =
 ## <a name="related-links"></a>相關連結
 
 - [XAML 命名空間](~/xamarin-forms/xaml/namespaces.md)
-- [事件要命令行為 （範例）](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
+- [事件要命令行為 （範例）](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
 - [驗證回撥 （範例）](https://developer.xamarin.com/samples/xamarin-forms/xaml/validationcallback/)
 - [強制轉型值回撥 （範例）](https://developer.xamarin.com/samples/xamarin-forms/xaml/coercevaluecallback/)
 - [BindableProperty](xref:Xamarin.Forms.BindableProperty)
