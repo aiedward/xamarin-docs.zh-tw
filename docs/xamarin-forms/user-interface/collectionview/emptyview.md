@@ -7,36 +7,34 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 78e9ddcb1d9dd91dadea94016b206867ac9508e6
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: b5d368a091248ec4cbec3930b878580cf6d18fa8
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65048185"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971125"
 ---
 # <a name="xamarinforms-collectionview-emptyview"></a>Xamarin.Forms CollectionView EmptyView
 
-![](~/media/shared/preview.png "此 API 是目前發行前版本")
-
 [![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
 
-`CollectionView` 定義可用來提供使用者意見反應，要顯示的資料時的下列屬性：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定義可用來提供使用者意見反應，要顯示的資料時的下列屬性：
 
-- `EmptyView`型別的`object`，字串、 繫結或檢視將會顯示何時`ItemsSource`屬性是`null`，或集合指定時`ItemsSource`屬性是`null`或空白。 預設值為 `null`。
-- `EmptyViewTemplate`型別的[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)，用來格式化指定的範本`EmptyView`。 預設值為 `null`。
+- [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)型別的`object`，字串、 繫結或檢視將會顯示何時[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)屬性是`null`，或集合指定時`ItemsSource`屬性是`null`或空白。 預設值為 `null`。
+- [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)型別的[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)，用來格式化指定的範本`EmptyView`。 預設值為 `null`。
 
 這些屬性都會受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)物件，這表示，屬性可以是資料繫結的目標。
 
-設定的主要使用案例`EmptyView`屬性會顯示在篩選作業時的使用者意見反應`CollectionView`從 web 服務擷取資料時，產生任何資料，以及顯示的使用者意見反應。
+設定的主要使用案例[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)屬性會顯示在篩選作業時的使用者意見反應[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)會產生任何資料，以及顯示使用者的意見反應，同時正在從 web 服務擷取資料。
 
 > [!NOTE]
-> `EmptyView`屬性可以設定為包含互動式內容，如有必要的檢視。
+> [ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)屬性可以設定為包含互動式內容，如有必要的檢視。
 
 如需資料範本的詳細資訊，請參閱 [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
 ## <a name="display-a-string-when-data-is-unavailable"></a>資料無法使用時，顯示字串
 
-`EmptyView`屬性可以設定為字串，將會顯示何時`ItemsSource`屬性是`null`，或集合指定時`ItemsSource`屬性是`null`或空白。 下列 XAML 顯示此案例的範例：
+[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)屬性可以設定為字串，將會顯示當[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)屬性是`null`，或當所指定集合`ItemsSource`屬性是`null`或空白。 下列 XAML 顯示此案例的範例：
 
 ```xaml
 <CollectionView ItemsSource="{Binding EmptyMonkeys}"
@@ -53,13 +51,13 @@ CollectionView collectionView = new CollectionView
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
 ```
 
-結果是，由於資料繫結集合`null`，此字串設為`EmptyView`屬性值會顯示：
+結果是，由於資料繫結集合`null`，將字串設定為[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)屬性值會顯示：
 
 [![文字的空白檢視，在 iOS 和 Android 上的 CollectionView 垂直清單的螢幕擷取畫面](emptyview-images/null-itemssource.png "CollectionView 垂直文字空的檢視清單")](emptyview-images/null-itemssource-large.png#lightbox "CollectionView 空白文字的垂直清單檢視")
 
 ## <a name="display-views-when-data-is-unavailable"></a>無法使用資料時所顯示檢視
 
-`EmptyView`屬性可以設定為檢視中，將會顯示何時`ItemsSource`屬性是`null`，或當所指定集合`ItemsSource`屬性是`null`或空白。 這可以是單一檢視或包含多個子檢視的檢視。 下列 XAML 範例所示`EmptyView`屬性設定為包含多個子檢視的檢視：
+[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)屬性可以設定為檢視中，將會顯示當[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)屬性`null`，或當所指定集合`ItemsSource`屬性是`null`或空白。 這可以是單一檢視或包含多個子檢視的檢視。 下列 XAML 範例所示`EmptyView`屬性設定為包含多個子檢視的檢視：
 
 ```xaml
 <StackLayout Margin="20">
@@ -110,13 +108,13 @@ CollectionView collectionView = new CollectionView
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-當[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行`FilterCommand`，所顯示的集合`CollectionView`中儲存的搜尋字詞會篩選[ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text)屬性。 如果篩選的作業會不產生任何資料， [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)設定為`EmptyView`屬性值會顯示：
+當[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行`FilterCommand`，所顯示的集合[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)中儲存的搜尋字詞會篩選[ `SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)屬性。 如果篩選的作業會不產生任何資料， [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)設定為[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)屬性值會顯示：
 
 [![使用自訂的空白檢視，在 iOS 和 Android 上的 CollectionView 垂直清單的螢幕擷取畫面](emptyview-images/filter-multiple-views.png "CollectionView 垂直清單與自訂的空白檢視")](emptyview-images/filter-multiple-views-large.png#lightbox "CollectionView 垂直清單使用的自訂空的檢視")
 
 ## <a name="display-a-templated-custom-type-when-data-is-unavailable"></a>資料無法使用時，顯示樣板化的自訂型別
 
-`EmptyView`屬性可以設定為自訂類型，其範本時`ItemsSource`屬性是`null`，或當所指定集合`ItemsSource`屬性是`null`或空白。 `EmptyViewTemplate`屬性可以設定為[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)所定義的外觀`EmptyView`。 下列 XAML 顯示此案例的範例：
+[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)屬性可以設定為自訂類型，其範本會顯示當[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)屬性是`null`，或集合指定時`ItemsSource`屬性是`null`或空白。 [ `EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)屬性可以設定為[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)定義的外觀`EmptyView`。 下列 XAML 顯示此案例的範例：
 
 ```xaml
 <StackLayout Margin="20">
@@ -176,16 +174,16 @@ public class FilterData : BindableObject
 }
 ```
 
-`EmptyView`屬性設定為`FilterData`物件，而`Filter`屬性的資料繫結至[ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text)屬性。 當[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行`FilterCommand`，所顯示的集合`CollectionView`已篩選的搜尋字詞會儲存在`Filter`屬性。 如果篩選的作業會不產生任何資料， [ `Label` ](xref:Xamarin.Forms.Label)中定義[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)，，已設定為`EmptyViewTemplate`屬性值，會顯示：
+[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)屬性設定為`FilterData`物件，而`Filter`屬性的資料繫結至[ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text)屬性。 當[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行`FilterCommand`，所顯示的集合[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)中儲存的搜尋字詞會篩選`Filter`屬性。 如果篩選的作業會不產生任何資料， [ `Label` ](xref:Xamarin.Forms.Label)中定義[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)，，已設定為[ `EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)屬性值，顯示：
 
 [![使用空的檢視範本，在 iOS 和 Android 上的 CollectionView 垂直清單的螢幕擷取畫面](emptyview-images/emptyviewtemplate.png "CollectionView 使用空的檢視範本的垂直清單")](emptyview-images/emptyviewtemplate-large.png#lightbox "CollectionView 垂直清單空的檢視範本")
 
 > [!NOTE]
-> 無法使用，資料時，顯示樣板化的自訂型別時`EmptyViewTemplate`屬性可以設定為包含多個子檢視的檢視。
+> 無法使用，資料時，顯示樣板化的自訂型別時[ `EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)屬性可以設定為包含多個子檢視的檢視。
 
 ## <a name="choose-an-emptyview-at-runtime"></a>選擇在執行階段 EmptyView
 
-檢視會顯示成`EmptyView`無法使用資料時，可以定義為[ `ContentView` ](xref:Xamarin.Forms.ContentView)中的物件[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)。 `EmptyView`屬性可以設定在特定`ContentView`，這取決於一些商務邏輯，在執行階段。 下列範例中，XAML 會顯示此案例的範例：
+檢視會顯示成[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)無法使用資料時，可以定義為[ `ContentView` ](xref:Xamarin.Forms.ContentView)中的物件[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)。 `EmptyView`屬性可以設定在特定`ContentView`，這取決於一些商務邏輯，在執行階段。 下列範例中，XAML 會顯示此案例的範例：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -242,7 +240,7 @@ public class FilterData : BindableObject
 </ContentPage>
 ```
 
-此 XAML 會定義兩個[ `ContentView` ](xref:Xamarin.Forms.ContentView)中的頁面層級物件[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，使用[ `Switch` ](xref:Xamarin.Forms.Switch)物件控制的`ContentView`物件會被設定為`EmptyView`屬性值。 當[ `Switch` ](xref:Xamarin.Forms.Switch)已切換`OnEmptyViewSwitchToggled`事件處理常式執行`ToggleEmptyView`方法：
+此 XAML 會定義兩個[ `ContentView` ](xref:Xamarin.Forms.ContentView)中的頁面層級物件[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，使用[ `Switch` ](xref:Xamarin.Forms.Switch)物件控制的`ContentView`物件會被設定為[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)屬性值。 當[ `Switch` ](xref:Xamarin.Forms.Switch)已切換`OnEmptyViewSwitchToggled`事件處理常式執行`ToggleEmptyView`方法：
 
 ```csharp
 void ToggleEmptyView(bool isToggled)
@@ -251,7 +249,7 @@ void ToggleEmptyView(bool isToggled)
 }
 ```
 
-`ToggleEmptyView`方法會設定`EmptyView`屬性`collectionView`這兩個的其中一個物件[ `ContentView` ](xref:Xamarin.Forms.ContentView)物件儲存在[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，根據的值[ `Switch.IsToggled` ](xref:Xamarin.Forms.Switch.IsToggled)屬性。 當[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行`FilterCommand`，所顯示的集合`CollectionView`中儲存的搜尋字詞會篩選[ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text)屬性。 如果篩選的作業會不產生任何資料，`ContentView`物件設定為`EmptyView`屬性會顯示：
+`ToggleEmptyView`方法會設定[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)屬性`collectionView`這兩個的其中一個物件[ `ContentView` ](xref:Xamarin.Forms.ContentView)物件儲存在[ `ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)為基礎的值[ `Switch.IsToggled` ](xref:Xamarin.Forms.Switch.IsToggled)屬性。 當[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行`FilterCommand`，所顯示的集合[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)中儲存的搜尋字詞會篩選[ `SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)屬性。 如果篩選的作業會不產生任何資料，`ContentView`物件設定為`EmptyView`屬性會顯示：
 
 [![已交換的空白檢視，在 iOS 和 Android 上的 CollectionView 垂直清單的螢幕擷取畫面](emptyview-images/swap.png "CollectionView 垂直清單與交換的空白檢視")](emptyview-images/swap-large.png#lightbox "CollectionView 垂直清單交換空白檢視")
 
@@ -259,7 +257,7 @@ void ToggleEmptyView(bool isToggled)
 
 ## <a name="choose-an-emptyviewtemplate-at-runtime"></a>選擇在執行階段 EmptyViewTemplate
 
-外觀`EmptyView`可以選擇在執行階段，根據它的值，藉由設定`CollectionView.EmptyViewTemplate`屬性設[ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector)物件：
+外觀[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)可以選擇在執行階段，設定其值，根據[ `CollectionView.EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)屬性設[ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector)物件：
 
 ```xaml
 <ContentPage ...
@@ -302,9 +300,9 @@ CollectionView collectionView = new CollectionView
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-`EmptyView`屬性設定為[ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text)屬性，而`EmptyViewTemplate`屬性設定為`SearchTermDataTemplateSelector`物件。
+[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)屬性設定為[ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text)屬性，而[ `EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)屬性設定為`SearchTermDataTemplateSelector`物件。
 
-當[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行`FilterCommand`，所顯示的集合`CollectionView`中儲存的搜尋字詞會篩選[ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text)屬性。 如果篩選的作業會不產生任何資料， [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)所選`SearchTermDataTemplateSelector`物件設定為`EmptyViewTemplate`屬性而顯示。
+當[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行`FilterCommand`，所顯示的集合[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)中儲存的搜尋字詞會篩選[ `SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)屬性。 如果篩選的作業會不產生任何資料， [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)所選`SearchTermDataTemplateSelector`物件設定為[ `EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)屬性而顯示。
 
 下列範例所示`SearchTermDataTemplateSelector`類別：
 

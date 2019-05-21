@@ -7,16 +7,19 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 329c139d1f38946527e565980492060e4dc9683e
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: ad96fa84a9d60aeeaef1cf568a4971f5ffe7a13f
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926424"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970611"
 ---
 # <a name="tabbedpage-toolbar-placement-and-color-on-android"></a>TabbedPage 工具列位置和 Android 上的色彩
 
 [![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+
+> [!IMPORTANT]
+> 設定的色彩，工具列的平台特性[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)現在已經過時，而且已被取代[ `SelectedTabColor` ](xref:Xamarin.Forms.TabbedPage.SelectedTabColor)並[ `UnselectedTabColor` ](xref:Xamarin.Forms.TabbedPage.UnselectedTabColor)屬性。 如需詳細資訊，請參閱 <<c0> [ 建立 TabbedPage](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md#creating-a-tabbedpage)。
 
 若要設定的位置和色彩的工具列上使用這些平台特性[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)。 它們都是在 XAML 中藉由設定[ `TabbedPage.ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.ToolbarPlacementProperty)附加屬性的值[ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement)列舉型別，而[ `TabbedPage.BarItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.BarItemColorProperty)和[ `TabbedPage.BarSelectedItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.BarSelectedItemColorProperty)附加至屬性[ `Color` ](xref:Xamarin.Forms.Color):
 

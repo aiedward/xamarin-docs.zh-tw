@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: fa339d9fd404cf74aa603d853abde5f9128e57b5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6e65124df4b20a50091ad93e18621f8e6707ebbe
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250694"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970556"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms 滑桿
 
@@ -49,10 +49,10 @@ Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider)是可由使用者選取操
 - [`MinimumTrackColor`](xref:Xamarin.Forms.Slider.MinimumTrackColorProperty) 是一個長條色彩捲動方塊的左邊。
 - [`MaximumTrackColor`](xref:Xamarin.Forms.Slider.MaximumTrackColorProperty) 是一個長條色彩捲動方塊的右邊。
 - [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) 是捲動方塊的色彩。
-- [`ThumbImage`](xref:Xamarin.Forms.Slider.ThumbImageProperty) 是要用於基本原則是，類型的映像[ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource)。
+- [`ThumbImageSource`](xref:Xamarin.Forms.Slider.ThumbImageSourceProperty) 是要用於基本原則是，類型的映像[ `ImageSource` ](xref:Xamarin.Forms.ImageSource)。
 
 > [!NOTE]
-> `ThumbColor`和`ThumbImage`屬性互斥。 如果設定這兩個屬性，`ThumbImage`屬性將會優先。
+> `ThumbColor`和`ThumbImageSource`屬性互斥。 如果設定這兩個屬性，`ThumbImageSource`屬性將會優先。
 
 ## <a name="basic-slider-code-and-markup"></a>滑桿的基本程式碼和標記
 

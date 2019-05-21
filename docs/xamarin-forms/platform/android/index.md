@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2018
-ms.openlocfilehash: 3bd606ae87c524202fd5ea7c141223042e90ec1a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dc02fdc8754db4ae97c29ba2a496804b2263abdc
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61363008"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970735"
 ---
 # <a name="android-platform-features"></a>Android 平台功能
 
@@ -34,6 +34,7 @@ ms.locfileid: "61363008"
 - 在啟用下拉式陰影`ImageButton`。 如需詳細資訊，請參閱 < [ImageButton 在 Android 上卸除 Shadows](imagebutton-drop-shadow.md)。
 - 啟用快速捲動[ `ListView` ](xref:Xamarin.Forms.ListView)如需詳細資訊，請參閱[ListView 快速捲動在 Android 上](listview-fast-scrolling.md)。
 - 控制是否[ `WebView` ](xref:Xamarin.Forms.WebView)可以顯示混合的內容。 如需詳細資訊，請參閱 < [WebView 混合內容在 Android 上](webview-mixed-content.md)。
+- 啟用縮放[ `WebView` ](xref:Xamarin.Forms.WebView)。 如需詳細資訊，請參閱 <<c0> [ 在 Android 上的 WebView 縮放](webview-zoom-controls.md)。
 
 下列平台特有的功能被供在 Android 上的 Xamarin.Forms 頁面：
 

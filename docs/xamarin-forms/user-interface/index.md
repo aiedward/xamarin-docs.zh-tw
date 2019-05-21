@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/14/2018
-ms.openlocfilehash: f2b569b3e38284db15eac0f4e182dfb38796cce9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b54dce66e234807a3f03251461f8f8c868ce95e9
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61039650"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970950"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 使用者介面檢視
 
@@ -34,7 +34,7 @@ Xamarin.Forms 包含自己的動畫基礎結構直接建立簡單的動畫，同
 
 ## <a name="collectionviewcollectionviewindexmd"></a>[CollectionView](collectionview/index.md)
 
-`CollectionView`是一種有彈性且高效能的檢視，來呈現資料使用不同的版面配置規格的清單。
+[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)是一種有彈性且高效能的檢視，來呈現資料使用不同的版面配置規格的清單。
 
 ## <a name="colorscolorsmd"></a>[色彩](colors.md)
 

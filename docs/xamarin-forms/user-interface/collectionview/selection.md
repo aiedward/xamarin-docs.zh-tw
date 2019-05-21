@@ -7,45 +7,43 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 1ffed60253889491636fa105dd444ced9c2bedf5
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: febd48f2ffad86ab8b00bafca8c296377f74a07b
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65048236"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970699"
 ---
 # <a name="xamarinforms-collectionview-selection"></a>Xamarin.Forms CollectionView 選取項目
 
-![](~/media/shared/preview.png "此 API 是目前發行前版本")
-
 [![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
 
-`CollectionView` 定義可控制的項目選取下列屬性：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定義可控制的項目選取下列屬性：
 
-- `SelectionMode`型別的`SelectionMode`，選取模式。
-- `SelectedItem`型別的`object`，在清單中選取的項目。 此屬性具有`null`值選取任何項目時。
-- `SelectedItems`型別的`IList<object>`，則選取清單中的項目。 這個屬性唯讀屬性，而且具有`null`會不選取任何項目時的值。
-- `SelectionChangedCommand`型別的`ICommand`，來執行選取的項目變更時。
-- `SelectionChangedCommandParameter`型別的`object`，這是傳遞至參數`SelectionChangedCommand`。
+- [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)型別的[ `SelectionMode` ](xref:Xamarin.Forms.SelectionMode)，選取模式。
+- [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)型別的`object`，在清單中選取的項目。 此屬性具有`null`值選取任何項目時。
+- [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)型別的`IList<object>`，則選取清單中的項目。 這個屬性唯讀屬性，而且具有`null`會不選取任何項目時的值。
+- [`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand)型別的`ICommand`，來執行選取的項目變更時。
+- [`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)型別的`object`，這是傳遞至參數`SelectionChangedCommand`。
 
-所有這些屬性會受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)物件，這表示，屬性可以是資料繫結的目標。
+所有這些屬性都以 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 物件為後盾，也就是說，這些屬性可以是資料繫結的目標。
 
-根據預設，`CollectionView`選取項目已停用。 不過，變更此行為，藉由設定`SelectionMode`屬性值的其中一個`SelectionMode`列舉成員：
+根據預設， [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)選取項目已停用。 不過，變更此行為，藉由設定[ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)屬性值，其中[ `SelectionMode` ](xref:Xamarin.Forms.SelectionMode)列舉成員：
 
 - `None` – 表示不選取項目。 這是預設值。
 - `Single` – 表示的單一項目可選取，以選取要反白顯示的項目。
 - `Multiple` – 表示，多個項目可選取，在反白顯示選取的項目。
 
-`CollectionView` 定義`SelectionChanged`事件引發時`SelectedItem`屬性變更，可能是因為使用者選取項目，從清單中，或應用程式設定的屬性。 颾魤 ㄛ 時會引發此事件也當`SelectedItems`屬性變更。 `SelectionChangedEventArgs`隨附的物件`SelectionChanged`事件有兩個屬性，這兩個型別`IReadOnlyList<object>`:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定義[ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)時引發的事件[ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)屬性變更，可能是因為使用者選取項目，從清單中，或應用程式設定的屬性。 颾魤 ㄛ 時會引發此事件也何時[ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)屬性變更。 [ `SelectionChangedEventArgs` ](xref:Xamarin.Forms.SelectionChangedEventArgs)隨附的物件`SelectionChanged`事件有兩個屬性，這兩個型別`IReadOnlyList<object>`:
 
 - `PreviousSelection` -已選取，將選取範圍變更之前的項目清單。
 - `CurrentSelection` -已選取，在選取範圍變更後的項目清單。
 
 ## <a name="single-selection"></a>選取單一項目
 
-當`SelectionMode`屬性設定為`Single`中的單一項目`CollectionView`可選取。 選取的項目時，`SelectedItem`屬性會設定為所選的項目值。 當這個屬性變更時，`SelectionChangedCommand`執行 (其值為`SelectionChangedCommandParameter`傳遞至`ICommand`)，而`SelectionChanged`引發事件。
+當[ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)屬性設定為`Single`中的單一項目[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可選取。 選取的項目時， [ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)屬性會設定為所選的項目值。 當這個屬性變更時， [ `SelectionChangedCommand` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand)執行 (其值為[ `SelectionChangedCommandParameter` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)傳遞至`ICommand`)，而[ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)引發事件。
 
-下列 XAML 範例所示`CollectionView`可以回應單一項目選取項目：
+下列 XAML 範例所示[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以回應單一項目選取項目：
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -66,7 +64,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 collectionView.SelectionChanged += OnCollectionViewSelectionChanged;
 ```
 
-在此範例中，`OnCollectionViewSelectionChanged`事件處理常式執行時`SelectionChanged`事件引發時，與事件處理常式擷取先前選取的項目，以及目前選取的項目：
+在此範例中，`OnCollectionViewSelectionChanged`事件處理常式執行時[ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)事件引發時，與事件處理常式擷取先前選取的項目，以及目前選取的項目：
 
 ```csharp
 void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -78,17 +76,17 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 ```
 
 > [!IMPORTANT]
-> `SelectionChanged`因為變更而發生的變更可以引發事件`SelectionMode`屬性。
+> [ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)因為變更而發生的變更可以引發事件[ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)屬性。
 
-下列螢幕擷取畫面顯示單一項目中的選取項目`CollectionView`:
+下列螢幕擷取畫面顯示單一項目中的選取項目[ `CollectionView` ](xref:Xamarin.Forms.CollectionView):
 
 [![使用 iOS 和 Android 上的單一選取項目，以 CollectionView 垂直清單的螢幕擷取畫面](selection-images/single-selection.png "CollectionView 垂直清單選取單一項目")](selection-images/single-selection-large.png#lightbox "CollectionView 單一的垂直清單選取項目")
 
 ## <a name="multiple-selection"></a>多個選取項目
 
-當`SelectionMode`屬性設定為`Multiple`中的多個項目`CollectionView`可選取。 選取項目時，`SelectedItems`屬性會設定為選取的項目。 當這個屬性變更時，`SelectionChangedCommand`執行 (其值為`SelectionChangedCommandParameter`傳遞至`ICommand`)，而`SelectionChanged`引發事件。
+當[ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)屬性設定為`Multiple`中的多個項目[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可選取。 選取項目時， [ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)屬性會設定為選取的項目。 當這個屬性變更時， [ `SelectionChangedCommand` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand)執行 (其值為[ `SelectionChangedCommandParameter` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)傳遞至`ICommand`)，而[ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)引發事件。
 
-下列 XAML 範例所示`CollectionView`可以回應多個項目選取項目：
+下列 XAML 範例所示[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以回應多個項目選取項目：
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -109,7 +107,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 collectionView.SelectionChanged += OnCollectionViewSelectionChanged;
 ```
 
-在此範例中，`OnCollectionViewSelectionChanged`事件處理常式執行時`SelectionChanged`事件引發時，與事件處理常式擷取先前選取的項目，以及目前選取的項目：
+在此範例中，`OnCollectionViewSelectionChanged`事件處理常式執行時[ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)事件引發時，與事件處理常式擷取先前選取的項目，以及目前選取的項目：
 
 ```csharp
 void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -121,15 +119,15 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 ```
 
 > [!IMPORTANT]
-> `SelectionChanged`因為變更而發生的變更可以引發事件`SelectionMode`屬性。
+> [ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)因為變更而發生的變更可以引發事件[ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)屬性。
 
-下列螢幕擷取畫面顯示中的多個項目選取項目`CollectionView`:
+下列螢幕擷取畫面顯示中的多個項目選取項目[ `CollectionView` ](xref:Xamarin.Forms.CollectionView):
 
 [![使用 iOS 和 Android 上的多個選取項目，以 CollectionView 垂直清單的螢幕擷取畫面](selection-images/multiple-selection.png "CollectionView 了多個選取的垂直清單")](selection-images/multiple-selection-large.png#lightbox "CollectionView 垂直清單多個選取項目")
 
 ## <a name="single-pre-selection"></a>單一的預先選取項目
 
-當`SelectionMode`屬性設定為`Single`中的單一項目`CollectionView`可以藉由設定預先選取`SelectedItem`項目的屬性。 下列 XAML 範例所示`CollectionView`預先選取單一項目：
+當[ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)屬性設定為`Single`中的單一項目[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以藉由設定預先選取[ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)項目的屬性。 下列 XAML 範例所示`CollectionView`預先選取單一項目：
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -150,7 +148,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 collectionView.SetBinding(SelectableItemsView.SelectedItemProperty, "SelectedMonkey", BindingMode.TwoWay);
 ```
 
-`SelectedItem`屬性的資料繫結至`SelectedMonkey`連線的檢視模型，也就是型別的屬性`Monkey`。 A`TwoWay`所以，如果使用者變更選取的項目值，會使用繫結`SelectedMonkey`屬性會設定於所選`Monkey`物件。 `SelectedMonkey`屬性定義於`MonkeysViewModel`類別，並設定的第四個項目為`Monkeys`集合：
+[ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)屬性的資料繫結至`SelectedMonkey`連線的檢視模型，也就是型別的屬性`Monkey`。 A`TwoWay`所以，如果使用者變更選取的項目值，會使用繫結`SelectedMonkey`屬性會設定於所選`Monkey`物件。 `SelectedMonkey`屬性定義於`MonkeysViewModel`類別，並設定的第四個項目為`Monkeys`集合：
 
 ```csharp
 public class MonkeysViewModel : INotifyPropertyChanged
@@ -183,13 +181,13 @@ public class MonkeysViewModel : INotifyPropertyChanged
 }
 ```
 
-因此，當`CollectionView`出現時，系統會預先選取清單中的第四個項目：
+因此，當[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)出現時，系統會預先選取清單中的第四個項目：
 
 [![使用單一預先選取的詳細資訊，請在 iOS 和 Android 的 CollectionView 垂直清單的螢幕擷取畫面](selection-images/single-pre-selection.png "CollectionView 與單一的預先選取的垂直清單")](selection-images/single-pre-selection-large.png#lightbox "CollectionView 垂直清單使用單一的預先選取項目")
 
 ## <a name="multiple-pre-selection"></a>多個前置的選取項目
 
-當`SelectionMode`屬性設定為`Multiple`中的多個項目`CollectionView`可以預先選取。 下列 XAML 範例所示`CollectionView`可讓預先選取的多個項目：
+當[ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)屬性設定為`Multiple`中的多個項目[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以預先選取。 下列 XAML 範例所示`CollectionView`可讓預先選取的多個項目：
 
 ```xaml
 <CollectionView x:Name="collectionView"
@@ -209,7 +207,7 @@ CollectionView collectionView = new CollectionView
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-中的多個項目`CollectionView`可以藉由將他們新增到預先選取`SelectedItems`屬性：
+中的多個項目[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以藉由將他們新增到預先選取[ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)屬性：
 
 ```csharp
 collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(1).FirstOrDefault());
@@ -218,15 +216,15 @@ collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(4).FirstOrDefault());
 ```
 
 > [!NOTE]
-> `SelectedItems`屬性唯讀，並因此不可能使用雙向資料繫結至預先選取的項目。
+> [ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)屬性唯讀，並因此不可能使用雙向資料繫結至預先選取的項目。
 
-因此，當`CollectionView`出現時，第二、 第四，並在清單中的第五個項目都已預先選取：
+因此，當[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)出現時，第二、 第四，並在清單中的第五個項目都已預先選取：
 
 [![具有多個預先選取的詳細資訊，請在 iOS 和 Android 的 CollectionView 垂直清單的螢幕擷取畫面](selection-images/multiple-pre-selection.png "CollectionView 了多個預先選取的垂直清單")](selection-images/multiple-pre-selection-large.png#lightbox "CollectionView 垂直使用多個前置的選取項目清單")
 
 ## <a name="change-selected-item-color"></a>變更選取的項目色彩
 
-`CollectionView` 已`Selected` [ `VisualState` ](xref:Xamarin.Forms.VisualState)可用來起始 visual 中的選取項目變更`CollectionView`。 一個常見使用案例，此`VisualState`變更選取的項目，下列 XAML 範例所示的背景色彩：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 已`Selected` [ `VisualState` ](xref:Xamarin.Forms.VisualState)可用來起始 visual 中的選取項目變更`CollectionView`。 一個常見使用案例，此`VisualState`變更選取的項目，下列 XAML 範例所示的背景色彩：
 
 ```xaml
 <ContentPage ...>
@@ -265,7 +263,7 @@ collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(4).FirstOrDefault());
 > [!IMPORTANT]
 > [ `Style` ](xref:Xamarin.Forms.Style) ，其中包含`Selected``VisualState`必須[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)是根項目類型的屬性值[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)，此值會設定為`ItemTemplate`屬性值。
 
-在此範例中， [ `Style.TargetType` ](xref:Xamarin.Forms.Style.TargetType)屬性值設定為`Grid`因為的根項目`ItemTemplate`是[ `Grid` ](xref:Xamarin.Forms.Grid)。 `Selected` [ `VisualState` ](xref:Xamarin.Forms.VisualState)中的項目，表示`CollectionView`選取，則[ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)的項目將會設定為`LightSkyBlue`:
+在此範例中， [ `Style.TargetType` ](xref:Xamarin.Forms.Style.TargetType)屬性值設定為`Grid`因為的根項目[ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView.ItemTemplate)是[ `Grid` ](xref:Xamarin.Forms.Grid)。 `Selected` [ `VisualState` ](xref:Xamarin.Forms.VisualState)中的項目，表示[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)選取，則[ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)的項目將會設定為`LightSkyBlue`:
 
 [![使用自訂的單一選取色彩，在 iOS 和 Android 上的 CollectionView 垂直清單的螢幕擷取畫面](selection-images/single-selection-color.png "CollectionView 垂直清單，以自訂的單一選取色彩")] (selection-images/single-selection-color-large.png#lightbox "CollectionView 垂直清單，以自訂的單一選取的色彩")
 
@@ -273,7 +271,7 @@ collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(4).FirstOrDefault());
 
 ## <a name="disable-selection"></a>停用選取範圍
 
-`CollectionView` 預設會停用選取範圍。 不過，如果`CollectionView`已選取項目啟用，可以藉由設定停用`SelectionMode`屬性設`None`:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 預設會停用選取範圍。 不過，如果`CollectionView`已選取項目啟用，可以藉由設定停用[ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)屬性設`None`:
 
 ```xaml
 <CollectionView ...
@@ -290,10 +288,10 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-當`SelectionMode`屬性設定為`None`中的項目`CollectionView`無法選取`SelectedItem`屬性會保留`null`，和`SelectionChanged`將不會引發事件。
+當[ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)屬性設定為`None`中的項目[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)無法選取[ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)屬性保持`null`，而[ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)將不會引發事件。
 
 > [!NOTE]
-> 當已選取項目和`SelectionMode`屬性已從`Single`要`None`，則`SelectedItem`屬性會設定為`null`和`SelectionChanged`會引發事件，使用空`CurrentSelection`屬性。
+> 當已選取項目和[ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)屬性已從`Single`來`None`，則[ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)屬性會設定為`null`和[ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)將會引發事件，使用空`CurrentSelection`屬性。
 
 ## <a name="related-links"></a>相關連結
 
