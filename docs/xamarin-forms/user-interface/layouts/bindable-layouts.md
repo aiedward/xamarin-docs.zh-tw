@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: b0e2d5e3c7923e5c3cf2adcc1dd104a97b78e727
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: HT
+ms.openlocfilehash: 28846e6e9590d2adf56114fce8bc6056c0112ac1
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61321556"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970973"
 ---
 # <a name="bindable-layouts-in-xamarinforms"></a>在 Xamarin.Forms 中的可繫結配置
 
@@ -31,8 +31,10 @@ ms.locfileid: "61321556"
 
 `Layout<T>`類別會公開[ `Children` ](xref:Xamarin.Forms.Layout`1.Children)版面配置的子元素所加入的集合。 當`BinableLayout.ItemsSource`屬性設定為項目的集合，並且附加至[ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)-衍生的類別，在集合中的每個項目加入至`Layout<T>.Children` 顯示的版面配置的集合。 `Layout<T>`-基礎集合變更時，衍生的類別會接著更新子檢視。 如需有關 Xamarin.Forms 版面配置週期的詳細資訊，請參閱[建立自訂版面配置](~/xamarin-forms/user-interface/layouts/custom.md)。
 
+可繫結的配置應該只用於時要顯示的項目集合很小，且不需要的捲動和選取項目。 雖然可以提供藉由包裝在可繫結的版面配置的捲動[ `ScrollView` ](xref:Xamarin.Forms.ScrollView)，建議您不要為可繫結的配置缺少 UI 虛擬化。 捲動時需要，可捲動的檢視，包括 UI 虛擬化，例如[ `ListView` ](xref:Xamarin.Forms.ListView)或是[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)，應該使用。 若要觀察這項建議的失敗可能會導致效能問題。
+
 > [!IMPORTANT]
-> 可繫結的配置應該只用於時要顯示的項目集合很小，且不需要的捲動和選取項目。 雖然可以提供藉由包裝在可繫結的版面配置的捲動[ `ScrollView` ](xref:Xamarin.Forms.ScrollView)，建議您不要為可繫結的配置缺少 UI 虛擬化。 捲動時需要，可捲動的檢視，包括 UI 虛擬化，例如[ `ListView` ](xref:Xamarin.Forms.ListView)或`CollectionView`，應該使用。 若要觀察這項建議的失敗可能會導致效能問題。
+>雖然技術上可以將衍生自的任何配置類別可繫結的版面配置[ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)類別，它不一定總是可行若要這樣做，特別是針對[ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout)[ `Grid` ](xref:Xamarin.Forms.Grid)，以及[ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)類別。 例如，假設的想要顯示集合中的資料[ `Grid` ](xref:Xamarin.Forms.Grid)使用可繫結的配置，其中集合中的每個項目一個物件包含多個屬性。 每個資料列`Grid`應該會顯示集合中每個資料行中具有從物件`Grid`顯示其中一個物件的屬性。 因為[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)可繫結的配置可以只包含單一物件，就必須為該物件可包含多個檢視，每一個物件的屬性中顯示特定配置類別`Grid`資料行。 雖然這種情況下可以膚淺與可繫結的配置，則會導致父代`Grid`包含子系`Grid`繫結集合中每個項目，這是高效率不佳，且有問題使用`Grid`版面配置。
 
 ## <a name="populating-a-bindable-layout-with-data"></a>填入資料的可繫結配置
 
