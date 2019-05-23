@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/21/2019
-ms.openlocfilehash: 779b39441893324e38843e036614484443e37574
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: b70a842a2f677bf0343ea7db1e9627fa2087bf71
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971294"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005341"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms 檢視
 
@@ -174,7 +174,7 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 |     |     |
 | --- | --- |
-| [`CollectionView`](xref:Xamarin.Forms.CollectionView) 顯示可捲動清單項目可選取的資料，使用不同的版面配置規格。 它旨在提供更多的彈性，以及高效能替代方式，來[ `ListView` ](xref:Xamarin.Forms.ListView)。 設定`ItemsSource`集合的物件和集合的屬性`ItemTemplate`屬性設[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)描述項目為何要格式化的物件。 `SelectionChanged`事件通知，已可進行選取`SelectedItem`屬性。<br /><br />[快速入門](~/xamarin-forms/user-interface/collectionview/index.md) / [範例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/) | [![範例 CollectionView](views-images/CollectionView.png "CollectionView 範例")](views-images/CollectionView-Large.png#lightbox "CollectionView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/forms40/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/forms40/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) |
+| [`CollectionView`](xref:Xamarin.Forms.CollectionView) 顯示可捲動清單項目可選取的資料，使用不同的版面配置規格。 它旨在提供更多的彈性，以及高效能替代方式，來[ `ListView` ](xref:Xamarin.Forms.ListView)。 設定`ItemsSource`集合的物件和集合的屬性`ItemTemplate`屬性設[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)描述項目為何要格式化的物件。 `SelectionChanged`事件通知，已可進行選取`SelectedItem`屬性。<br /><br />[快速入門](~/xamarin-forms/user-interface/collectionview/index.md) / [範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/) | [![範例 CollectionView](views-images/CollectionView.png "CollectionView 範例")](views-images/CollectionView-Large.png#lightbox "CollectionView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) |
 |     |     |
 
 <a name="listView" />

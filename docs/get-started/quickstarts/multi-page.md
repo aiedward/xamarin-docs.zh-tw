@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 855962560897789dadba535f69c4a7da42bb4742
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 886527f6d4338ffbe7026bec536716bf844e3701
+ms.sourcegitcommit: 4b7a0ac33fc64516dd3d70bb68d9aa50e46b2dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61088989"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "65997124"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>執行瀏覽多頁 Xamarin.Forms 應用程式中
 
@@ -298,7 +298,7 @@ ms.locfileid: "61088989"
                 FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
                 MainPage = new NavigationPage(new NotesPage());
             }
-            ...
+            // ...
         }
     }
     ```
@@ -581,7 +581,7 @@ ms.locfileid: "61088989"
                 FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
                 MainPage = new NavigationPage(new NotesPage());
             }
-            ...
+            // ...
         }
     }
     ```

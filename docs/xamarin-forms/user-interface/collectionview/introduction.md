@@ -7,20 +7,28 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 2ee7b2c203251e519af088a550e7e26f30aa62c8
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 889c78ea6849cdd094d34ed0cf74ceebd33ce51d
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971091"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005146"
 ---
 # <a name="xamarinforms-collectionview-introduction"></a>Xamarin.Forms CollectionView 簡介
 
-[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+![](~/media/shared/preview.png "此 API 目前是發行前版本")
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 呈現資料的清單檢視使用不同的版面配置規格。 它旨在提供更多的彈性，以及高效能替代方式，來[ `ListView` ](xref:Xamarin.Forms.ListView)。 例如，下列螢幕擷取畫面顯示`CollectionView`，使用兩個資料行的垂直格線，並可讓多個選取項目：
 
 [![CollectionView 垂直格線版面配置，在 iOS 和 Android 上的螢幕擷取畫面](introduction-images/verticalgrid-multipleselection.png "CollectionView 垂直格線版面配置與多個選取項目")](introduction-images/verticalgrid-multipleselection-large.png#lightbox "CollectionView 垂直格線版面配置與多個選取項目")
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 使用 Xamarin.Forms 4.0。 不過，目前為實驗性，而且僅適用於藉由將下列這一行的程式碼，以您`AppDelegate`類別在 iOS 上，或您`MainActivity`類別在 Android 上，然後再呼叫`Forms.Init`:
+
+```csharp
+Forms.SetFlags("CollectionView_Experimental");
+```
 
 > [!IMPORTANT]
 > [`CollectionView`](xref:Xamarin.Forms.CollectionView) 只有在 iOS 和 Android 上使用。
@@ -57,4 +65,4 @@ ms.locfileid: "65971091"
 
 ## <a name="related-links"></a>相關連結
 
-- [CollectionView （範例）](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+- [CollectionView （範例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)

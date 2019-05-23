@@ -7,16 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: b5d368a091248ec4cbec3930b878580cf6d18fa8
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 6bf24cb81bbd40c7e3f5b0f65ed2a2af7cbbe98b
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971125"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005330"
 ---
 # <a name="xamarinforms-collectionview-emptyview"></a>Xamarin.Forms CollectionView EmptyView
 
-[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+![](~/media/shared/preview.png "此 API 目前是發行前版本")
+
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 定義可用來提供使用者意見反應，要顯示的資料時的下列屬性：
 
@@ -328,7 +330,7 @@ public class SearchTermDataTemplateSelector : DataTemplateSelector
 
 ## <a name="related-links"></a>相關連結
 
-- [CollectionView （範例）](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+- [CollectionView （範例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
 - [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [Xamarin.Forms 的資源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [建立 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
