@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: bc1ca01f4bf5cb8f7ef51c705319fb2cc1a0bd99
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: a8da1e96bbdf51899b1780265933402da791a03e
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054308"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005150"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms Shell 索引標籤
 
-![](~/media/shared/preview.png "此 API 目前是預先發行版本")
-
-[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
 飛出視窗之後，Shell 應用程式中的下一個導覽層級是底部的索引標籤列。 或者，當飛出視窗關閉時，會將底部的索引標籤列視為導覽的最上層。
 
@@ -112,8 +110,8 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
        x:Class="Xaminals.AppShell"
        FlyoutBehavior="Disabled">
     <FlyoutItem>
-        <views:CatsPage Icon="cat.png" />
-        <views:DogsPage Icon="dog.png" />
+        <views:CatsPage IconImageSource="cat.png" />
+        <views:DogsPage IconImageSource="dog.png" />
     </FlyoutItem>
 </Shell>
 ```
@@ -228,7 +226,7 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
             <views:CatsPage />
             <views:DogsPage />
         </Tab>
-        <views:MonkeysPage Icon="monkey.png" />
+        <views:MonkeysPage IconImageSource="monkey.png" />
     </FlyoutItem>
 </Shell>
 ```
@@ -268,11 +266,11 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 `Shell` 類別會定義可控制索引標籤外觀的下列屬性：
 
-- `ShellTabBarBackgroundColor`，屬於 `Color` 類型，這是定義索引標籤列背景色彩的一種附加屬性。 如果未設定屬性，則會使用 `ShellBackgroundColor` 屬性值。
-- `ShellTabBarDisabledColor`，屬於 `Color` 類型，這是定義索引標籤列停用色彩的一種附加屬性。 如果未設定屬性，則會使用 `ShellDisabledColor` 屬性值。
-- `ShellTabBarForegroundColor`，屬於 `Color` 類型，這是定義索引標籤列前景色彩的一種附加屬性。 如果未設定屬性，則會使用 `ShellForegroundColor` 屬性值。
-- `ShellTabBarTitleColor`，屬於 `Color` 類型，這是定義索引標籤列標題色彩的一種附加屬性。 如果未設定屬性，將會使用 `ShellTitleColor` 屬性值。
-- `ShellTabBarUnselectedColor`，屬於 `Color` 類型，這是定義索引標籤列未選取色彩的一種附加屬性。 如果未設定屬性，則會使用 `ShellUnselectedColor` 屬性值。
+- `TabBarBackgroundColor`，屬於 `Color` 類型，這是定義索引標籤列背景色彩的一種附加屬性。 如果未設定屬性，則會使用 `BackgroundColor` 屬性值。
+- `TabBarDisabledColor`，屬於 `Color` 類型，這是定義索引標籤列停用色彩的一種附加屬性。 如果未設定屬性，則會使用 `DisabledColor` 屬性值。
+- `TabBarForegroundColor`，屬於 `Color` 類型，這是定義索引標籤列前景色彩的一種附加屬性。 如果未設定屬性，則會使用 `ForegroundColor` 屬性值。
+- `TabBarTitleColor`，屬於 `Color` 類型，這是定義索引標籤列標題色彩的一種附加屬性。 如果未設定屬性，將會使用 `TitleColor` 屬性值。
+- `TabBarUnselectedColor`，屬於 `Color` 類型，這是定義索引標籤列未選取色彩的一種附加屬性。 如果未設定屬性，則會使用 `UnselectedColor` 屬性值。
 
 所有這些屬性都以 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 物件為後盾，也就是說，這些屬性可以是資料繫結的目標。
 
@@ -281,11 +279,11 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 ```xaml
 <Style x:Key="BaseStyle"
        TargetType="Element">
-    <Setter Property="Shell.ShellTabBarBackgroundColor"
+    <Setter Property="Shell.TabBarBackgroundColor"
             Value="#3498DB" />
-    <Setter Property="Shell.ShellTabBarTitleColor"
+    <Setter Property="Shell.TabBarTitleColor"
             Value="White" />
-    <Setter Property="Shell.ShellTabBarUnselectedColor"
+    <Setter Property="Shell.TabBarUnselectedColor"
             Value="#B4FFFFFF" />
 </Style>
 ```
@@ -294,6 +292,6 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 ## <a name="related-links"></a>相關連結
 
-- [Xaminals (範例)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+- [Xaminals (範例)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 - [Xamarin.Forms Shell 導覽](navigation.md)
 - [Xamarin.Forms Shell 特定屬性](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)

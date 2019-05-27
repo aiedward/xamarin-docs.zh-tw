@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: b9838ddb9771cb6ce757a4080520a5edd720531a
-ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
+ms.openlocfilehash: e0bc4b988905f03edbc66a252cc47a05c441f2c9
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59574737"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925826"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials:安全存放裝置
 
@@ -51,7 +51,7 @@ ms.locfileid: "59574737"
     </application>
     ```
 
-2. 在 [Resources/xml] 目錄中建立名為 **auto_backup_rules.xml** 的新 XML 檔案。 接著設定下列內容以包括所有共用喜好設定，但 `SecureStorage` 除外：
+2. 在 **Resources/xml** 目錄中搭配 **AndroidResource** 的建置動作，建立名為 **auto_backup_rules.xml** 的新 XML 檔案。 接著設定下列內容以包括所有共用喜好設定，但 `SecureStorage` 除外：
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -132,7 +132,7 @@ SecureStorage.RemoveAll();
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-[Android KeyStore](https://developer.android.com/training/articles/keystore.html) 是用來存放在將值以檔案名稱 **[YOUR-APP-PACKAGE-ID].xamarinessentials** 儲存到[共用喜好設定](https://developer.android.com/training/data-storage/shared-preferences.html)之前用於加密值的密碼編譯金鑰。  在共用喜好設定檔案中使用的金鑰是傳遞到 `SecureStorage` API 之金鑰的 _MD5 雜湊_。
+[Android KeyStore](https://developer.android.com/training/articles/keystore.html) 是用來存放在將值以檔案名稱 **[YOUR-APP-PACKAGE-ID].xamarinessentials** 儲存到[共用喜好設定](https://developer.android.com/training/data-storage/shared-preferences.html)之前用於加密值的密碼編譯金鑰。  在共用喜好設定檔案中使用的金鑰 (不是密碼編譯金鑰，適用於「值」的「金鑰」) 是傳遞到 `SecureStorage` API 之金鑰的「MD5 雜湊」。
 
 ## <a name="api-level-23-and-higher"></a>API 層級 23 與更高版本
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: c6aa4aed134667f25b3822c7604b85e27a404a3a
-ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
+ms.openlocfilehash: 3e5db00a73047aaadb1162fa1cc8a21f6e77b3a0
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "58870153"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926202"
 ---
 # <a name="custom-video-transport-controls"></a>自訂影片傳輸控制項
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
 
 影片播放程式的傳輸控制項包括執行 [播放]、[暫停] 和 [停止] 功能的按鈕。 這些按鈕通常會以熟悉的圖示而非文字呈現，且 [播放] 及 [暫停] 功能常會合併為一個按鈕。
 
@@ -660,4 +660,4 @@ namespace VideoPlayerDemos
 
 ## <a name="related-links"></a>相關連結
 
-- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) (視訊播放程式示範 (範例))
+- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) (視訊播放程式示範 (範例))

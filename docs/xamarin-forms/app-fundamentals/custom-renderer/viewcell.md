@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 1e7a96b2f33d7dc89c4373ab612ac3d26692f64e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 90215be6356722729b441513bf749150c77755ca
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060455"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65924647"
 ---
 # <a name="customizing-a-viewcell"></a>自訂 ViewCell
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/viewcell/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ViewCell/)
 
 _Xamarin.Forms ViewCell 是可以新增至 ListView 或 TableView 的資料格，其包含開發人員定義檢視。本文示範如何建立裝載在 Xamarin.Forms ListView 控制項內的自訂 ViewCell 轉譯器。這會停止在 ListView 捲動期間重複呼叫 Xamarin.Forms 配置計算。_
 
@@ -577,4 +577,4 @@ namespace CustomRenderer.UWP
 ## <a name="related-links"></a>相關連結
 
 - [ListView 效能](~/xamarin-forms/user-interface/listview/performance.md)
-- [CustomRendererViewCell (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/viewcell/)
+- [CustomRendererViewCell (Samples)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ViewCell/)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: dedd2768bfa843e529e2eddcaed3b102c0a2efbd
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 6845a08a531305468b861a3205e978b379f242bf
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233506"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926160"
 ---
 # <a name="accessing-the-devices-video-library"></a>存取裝置的影片庫
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
 
 現今多數行動裝置和桌上型電腦都能使用裝置的相機錄影。 然後使用者建立的影片會以檔案的形式儲存在裝置上。 這些檔案可以從影像庫中擷取，並透過 `VideoPlayer` 類別進行播放，與其他影片無異。
 
@@ -188,7 +188,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-對 `MainActivity` 物件新增的項目是 [**VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) 解決方案中，唯一需要改變一般應用程式程式碼才能支援 `FormsVideoLibrary` 類別的程式碼。
+對 `MainActivity` 物件新增的項目是 [**VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) 解決方案中，唯一需要改變一般應用程式程式碼才能支援 `FormsVideoLibrary` 類別的程式碼。
 
 ### <a name="the-uwp-video-picker"></a>UWP 影片選擇器
 
@@ -229,7 +229,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="invoking-the-dependency-service"></a>叫用相依性服務
 
-[**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) 程式的 **Play Library Video** 頁面示範如何使用影片選擇器相依性服務。 XAML 檔案包含 `VideoPlayer` 執行個體與標記 **Show Video Library** 的 `Button`：
+[**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) 程式的 **Play Library Video** 頁面示範如何使用影片選擇器相依性服務。 XAML 檔案包含 `VideoPlayer` 執行個體與標記 **Show Video Library** 的 `Button`：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -390,5 +390,5 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>相關連結
 
-- [Video Player Demos (sample)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) (影片播放程式示範 (範例))
+- [Video Player Demos (sample)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) (影片播放程式示範 (範例))
 - [從圖片庫挑選相片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

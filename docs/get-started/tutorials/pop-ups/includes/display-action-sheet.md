@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: effebf02a7fb84ef955f4dcfda75d5273ef96b29
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 87eb021e6cc571a9a5522697cde2aa11ee991308
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61384662"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66193794"
 ---
 
 Xamarin.Forms 具有強制回應快顯視窗 (也稱為動作表)，可用來引導使用者執行工作。 在本練習中，您會使用 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 方法 (來自 [`Page`](xref:Xamarin.Forms.Page) 類別) 顯示可引導使用者執行工作的動作表。
@@ -41,7 +41,7 @@ Xamarin.Forms 具有強制回應快顯視窗 (也稱為動作表)，可用來引
 
     請觀察一下，在選取動作表對話方塊中的替代項目之後，選取項目便會輸出到 Visual Studio 的 [輸出] 視窗。
 
-    如需如何顯示動作表的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md)指南中的[引導使用者執行工作](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md#guiding-users-through-tasks)。
+    如需如何顯示動作表的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/user-interface/pop-ups.md)指南中的[引導使用者執行工作](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks)。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -75,4 +75,4 @@ Xamarin.Forms 具有強制回應快顯視窗 (也稱為動作表)，可用來引
 
     請觀察一下，在選取動作表對話方塊中的替代項目之後，選取項目便會輸出到 Visual Studio for Mac 的 [輸出] 視窗。
 
-    如需如何顯示動作表的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md)指南中的[引導使用者執行工作](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md#guiding-users-through-tasks)。
+    如需如何顯示動作表的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/user-interface/pop-ups.md)指南中的[引導使用者執行工作](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks)。

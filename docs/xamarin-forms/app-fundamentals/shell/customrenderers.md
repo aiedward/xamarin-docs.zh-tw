@@ -7,16 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: c1418e581e2896a77d0b83a46ecc8d3a0ce8c510
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: 59dba2fed0422db72b0617d9a831e3a9364320bd
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054208"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970779"
 ---
 # <a name="xamarinforms-shell-custom-renderers"></a>Xamarin.Forms Shell 自訂轉譯器
-
-![](~/media/shared/preview.png "此 API 目前是發行前版本")
 
 Xamarin.Forms Shell 應用程式的優點之一是，它們的外觀與行為可透過各種不同 Shell 類別公開的屬性與方法進行高度自訂。 不過，它也能夠在需要更複雜的平台專屬自訂項目時，建立 Shell 自訂轉譯器。 如同其他自訂轉譯器，可以將 Shell 自訂轉譯器只加入至一個平台專案來自訂外觀和行為，同時在另一個平台上允許預設行為；或者，可將不同的 Shell 自訂轉譯器加入至每個平台專案，以自訂 iOS 和 Android 上的外觀與行為。
 

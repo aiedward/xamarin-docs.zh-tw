@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: 0b91aae1456827625526d7568176a07e7e61f225
-ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
+ms.openlocfilehash: 625a860469c82da6e6986b03b8c3e55503433e67
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58507119"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926671"
 ---
 # <a name="implementing-a-hybridwebview"></a>實作 HybridWebView
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/hybridwebview/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/HybridWebView/)
 
 _Xamarin.Forms 自訂使用者介面控制項應該衍生自用來在螢幕上放置配置和控制項的 View 類別。本文示範如何建立 HybridWebView 自訂控制項的自訂轉譯器，該自訂控制項會示範如何強化平台特定的 Web 控制項，允許從 JavaScript 叫用 C# 程式碼。_
 
@@ -509,5 +509,5 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>相關連結
 
-- [CustomRendererHybridWebView (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/hybridwebview/)
+- [CustomRendererHybridWebView (Samples)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/HybridWebView/)
 - [從 JavaScript 呼叫 C#](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)

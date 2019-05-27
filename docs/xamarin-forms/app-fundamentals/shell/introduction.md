@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 20d9fb79d03990824dd884b62138a3e29b3ee04f
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: f6662f20485c6671edcb5a1654569cdd8498607e
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054478"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005213"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms Shell
 
-![](~/media/shared/preview.png "此 API 目前是預先發行版本")
-
-[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
 Xamarin.Forms Shell 會提供大部分行動應用程式需要的基本功能，藉此降低行動應用程式開發的複雜度，這些基本功能包括：
 
@@ -30,48 +28,7 @@ Xamarin.Forms Shell 會提供大部分行動應用程式需要的基本功能，
 此外，Shell 應用程式的優點是轉譯速度更快，且記憶體使用量更少。
 
 > [!IMPORTANT]
-> 現有的 iOS 和 Android 應用程式可採用 Shell，立即受益於導覽、效能和擴充性等改進功能。
-
-Shell 目前為實驗性，只能在叫用 `Forms.Init` 方法之前，新增 `Forms.SetFlags("Shell_Experimental");` 至您的平台專案來使用。
-
-# <a name="androidtabandroid"></a>[Android](#tab/android)
-
-```csharp
-public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
-{
-    protected override void OnCreate(Bundle savedInstanceState)
-    {
-        global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental");
-
-        TabLayoutResource = Resource.Layout.Tabbar;
-        ToolbarResource = Resource.Layout.Toolbar;
-
-        base.OnCreate(savedInstanceState);
-
-        global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-        LoadApplication(new App());
-    }
-}
-```
-
-# <a name="iostabios"></a>[iOS](#tab/ios)
-
-```csharp
-public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
-{
-    public override bool FinishedLaunching(UIApplication app, NSDictionary options)
-    {
-        global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental");
-
-        global::Xamarin.Forms.Forms.Init();
-        LoadApplication(new App());
-
-        return base.FinishedLaunching(app, options);
-    }
-}
-```
-
-----
+> Xamarin.Forms Shell 僅於 iOS 和 Android 上提供。 現有的 iOS 和 Android 應用程式可採用 Shell，立即受益於導覽、效能和擴充性等改進功能。
 
 ## <a name="shell-navigation-experience"></a>Shell 導覽體驗
 
@@ -181,11 +138,11 @@ namespace Xaminals
 
 `Shell` 類別會定義可控制 Shell 應用程式外觀的下列屬性：
 
-- `ShellBackgroundColor`，屬於 `Color` 類型，這是定義 Shell Chrome 背景色彩的一種附加屬性。 色彩將不會填入 Shell 內容的背景。
-- `ShellDisabledColor`，屬於 `Color` 類型，這是定義遭停用之陰影文字和圖示色彩的一種附加屬性。
-- `ShellForegroundColor`，屬於 `Color` 類型，這是定義陰影文字和圖示之色彩的一種附加屬性。
-- `ShellTitleColor`，屬於 `Color` 類型，這是定義用於目前頁面標題之色彩的一種附加屬性。
-- `ShellUnselectedColor`，屬於 `Color` 類型，這是定義用於 Shell Chrome 中未選取文字和圖示之色彩的一種附加屬性。
+- `BackgroundColor`，屬於 `Color` 類型，這是定義 Shell Chrome 背景色彩的一種附加屬性。 色彩將不會填入 Shell 內容的背景。
+- `DisabledColor`，屬於 `Color` 類型，這是定義遭停用之陰影文字和圖示色彩的一種附加屬性。
+- `ForegroundColor`，屬於 `Color` 類型，這是定義陰影文字和圖示之色彩的一種附加屬性。
+- `TitleColor`，屬於 `Color` 類型，這是定義用於目前頁面標題之色彩的一種附加屬性。
+- `UnselectedColor`，屬於 `Color` 類型，這是定義用於 Shell Chrome 中未選取文字和圖示之色彩的一種附加屬性。
 
 所有這些屬性都以 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 物件為後盾，也就是說，這些屬性可以是資料繫結的目標。
 
@@ -196,7 +153,6 @@ namespace Xaminals
 `Shell` 類別會定義影響 Shell 應用程式內容版面配置的下列屬性：
 
 - `NavBarIsVisible`，屬於 `boolean` 類型，這是定義呈現頁面時是否應該顯示導覽列的一種附加屬性。 此屬性應該在頁面上設定，且其預設值為 `true`。
-- `SetPaddingInsets`，屬於 `bool` 類型，這是控制頁面內容是否在任何 Shell Chrome 底下流動的一種附加屬性。 此屬性應該在頁面上設定，且其預設值為 `false`。
 - `TabBarIsVisible`，屬於 `bool` 類型，這是定義呈現頁面時是否應該顯示索引標籤列的一種附加屬性。 此屬性應該在頁面上設定，且其預設值為 `true`。
 - `TitleView`，屬於 `View` 類型，這是定義頁面之 `TitleView` 的一種附加屬性。 此屬性應該在頁面上設定。
 
@@ -204,5 +160,5 @@ namespace Xaminals
 
 ## <a name="related-links"></a>相關連結
 
-- [Xaminals (範例)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+- [Xaminals (範例)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 - [Xamarin.Forms Shell 特定屬性](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)

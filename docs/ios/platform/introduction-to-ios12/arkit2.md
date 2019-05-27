@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/22/2018
-ms.openlocfilehash: 559ef9cc9a3e5ace7a4023e81363825c6861f6d4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 81d9ab12a4b8e8184e0a61dc9b6d53d72004d25c
+ms.sourcegitcommit: b986460787677cf8c2fc7cc8c03f4bc60c592120
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61399176"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66213321"
 ---
 # <a name="arkit-2-in-xamarinios"></a>在 Xamarin.iOS 中 ARKit 2
 
@@ -300,7 +300,7 @@ ARKit 2 支援 「 環境材質 」 用來估計光源和甚至是適用於 shin
 若要使用環境的點陣圖：
 
 * 您[ `SCNMaterial` ](xref:SceneKit.SCNMaterial)物件必須使用[ `SCNLightingModel.PhysicallyBased` ](xref:SceneKit.SCNLightingModel.PhysicallyBased)並指派為 0 到 1 的範圍內的值[ `Metalness.Contents` ](xref:SceneKit.SCNMaterial.Metalness)和[ `Roughness.Contents`](xref:SceneKit.SCNMaterialProperty.Contents)和
-* 追蹤組態必須設定[ `EnvironmentTexturing` ](xref:ARKit.ARWorldTrackingConfiguration.EnvironmentTexturing)  =  [AREnvironmentTexturing.Automatic'](xref:ARKit.AREnvironmentTexturing.Automatic) :
+* 追蹤組態必須設定[ `EnvironmentTexturing` ](xref:ARKit.ARWorldTrackingConfiguration.EnvironmentTexturing)  =  [ `AREnvironmentTexturing.Automatic` ](xref:ARKit.AREnvironmentTexturing.Automatic) :
 
 ```csharp
 var sphere = SCNSphere.Create(0.33F);
@@ -323,7 +323,7 @@ var configuration = new ARWorldTrackingConfiguration
 
 ### <a name="shared-and-persistent-ar-experiences"></a>共用和持續性的 AR 體驗
 
-是另一個主要 ARKit 2 新增[ `ARWorldMap` ](xref:ARKit.ARWorldMap)類別，可讓您共用或儲存全球追蹤資料。 取得與目前的世界地圖[ `ARSession.GetCurrentWorldMapAsync` ](xref:ARKit.ARSession.GetCurrentWorldMapAsync)或是[ `GetCurrentWorldMap(Action<ARWorldMap,NSError>` ](xref:ARKit.ARSession.GetCurrentWorldMap(System.Action{ARKit.ARWorldMap,Foundation.NSError})) :
+是另一個主要 ARKit 2 新增[ `ARWorldMap` ](xref:ARKit.ARWorldMap)類別，可讓您共用或儲存全球追蹤資料。 取得與目前的世界地圖[ `ARSession.GetCurrentWorldMapAsync` ](xref:ARKit.ARSession.GetCurrentWorldMapAsync)或是[ `GetCurrentWorldMap(Action<ARWorldMap,NSError>)` ](xref:ARKit.ARSession.GetCurrentWorldMap(System.Action{ARKit.ARWorldMap,Foundation.NSError})) :
 
 ```csharp
 // Local storage

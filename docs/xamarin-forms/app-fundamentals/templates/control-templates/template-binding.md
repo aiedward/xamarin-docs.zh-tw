@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 49f66164c707f91f298b2e5cb09b35f1767186cf
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: e4e67ba63d2040bff264498bc9c00124dfd22164
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051577"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926344"
 ---
 # <a name="binding-from-a-xamarinforms-controltemplate"></a>從 Xamarin.Forms ControlTemplate 繫結
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebinding/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleThemeWithTemplateBinding/)
 
 _範本繫結可讓控制項範本中的控制項將資料繫結至公用屬性，輕鬆變更控制項範本中的控制項屬性值。本文示範如何使用範本繫結，從控制項範本執行資料繫結。_
 
@@ -181,7 +181,7 @@ public class HomePageCS : ContentPage
 
 - [資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
 - [從資料繫結至 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
-- [Simple Theme with Template Binding (Samples)](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebinding/) (範本繫結的簡易佈景主題 (範例))
+- [Simple Theme with Template Binding (Samples)](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleThemeWithTemplateBinding/) (範本繫結的簡易佈景主題 (範例))
 - [Simple Theme with Template Binding (Samples)](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebindingandviewmodel/) (範本繫結的簡易佈景主題 (範例))
 - [TemplateBinding](xref:Xamarin.Forms.TemplateBinding)
 - [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)

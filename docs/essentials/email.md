@@ -5,12 +5,12 @@ ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
-ms.openlocfilehash: 06b4f4b612d0cb44e467a9da6dbee3194338027d
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 5ddbb6f3d1c1ebf16ca5534b7effd1993c3d8b26
+ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58869958"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65804917"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials:Email
 
@@ -19,6 +19,9 @@ ms.locfileid: "58869958"
 ## <a name="get-started"></a>開始使用
 
 [!include[](~/essentials/includes/get-started.md)]
+
+> [!TIP]
+> 若要在 iOS 上使用電子郵件 API，您必須在實體裝置上執行它，否則系統將會擲回例外狀況。
 
 ## <a name="using-email"></a>使用電子郵件
 

@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: acaa847b61443eff480e2b39e388f5df9de06e42
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: e97dbb993cb108245636ae459a572e18b13d6817
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054418"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005189"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms Shell
 
-![](~/media/shared/preview.png "此 API 目前是發行前版本")
-
-[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
 Xamarin.Forms Shell 包含 `SearchHandler` 類別所提供的整合式搜尋功能。 將 `Shell.SearchHandler` 附加屬性設定為子類別化的 `SearchHandler` 物件，就可以將搜尋功能新增至網頁。 這會使搜尋方塊新增至頁面頂端：
 
@@ -240,5 +238,5 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 
 ## <a name="related-links"></a>相關連結
 
-- [Xaminals (範例)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+- [Xaminals (範例)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 - [Xamarin.Forms Shell 導覽](navigation.md)

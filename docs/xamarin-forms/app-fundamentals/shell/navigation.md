@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: b1709330678a201521fd226d473cd334bcd86f94
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: 747fabd68187dbe48b5e68b40916cef45269c4ae
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054268"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005171"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms Shell 導覽
 
-![](~/media/shared/preview.png "此 API 目前是預先發行版本")
-
-[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
 Xamarin.Forms Shell 包含 URI 式導覽體驗，可使用路由導覽至應用程式中的任何頁面，而不需要遵循設定的導覽階層。 此外，它還提供向後巡覽的能力，而不需瀏覽導覽堆疊上的所有頁面。
 
@@ -274,7 +272,7 @@ async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEvent
 }
 ```
 
-此程式碼範例會在 `CollectionView` 中擷取目前選取的大象，並將 `elephantName` 當作查詢參數傳遞，以導覽至 `elephantdetails` 路由。 請注意，查詢參數將會是針對導覽編碼的 URL，因此 "Indian Elephant" 將會變成 "Indian%20Elephant"。
+此程式碼範例會在 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 中擷取目前選取的大象，並導覽至 `elephantdetails` 路由，將 `elephantName` 作為查詢參數傳遞。 請注意，查詢參數將會是針對導覽編碼的 URL，因此 "Indian Elephant" 將會變成 "Indian%20Elephant"。
 
 若要接收資料，表示導覽至頁面的類別或頁面 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 的類別必須針對每個查詢參數，使用 `QueryPropertyAttribute` 裝飾：
 
@@ -341,4 +339,4 @@ Shell.SetBackButtonBehavior(this, new BackButtonBehavior
 
 ## <a name="related-links"></a>相關連結
 
-- [Xaminals (範例)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+- [Xaminals (範例)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)

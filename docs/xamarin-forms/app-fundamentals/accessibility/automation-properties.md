@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 142c22cd239d6b66e5139346b45994ef2f20bdc8
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 634ba351d419b1d18dcc5d5bdbf5e248f510329d
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672556"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971251"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>在 Xamarin.Forms 中的自動化屬性
 
@@ -149,7 +149,7 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 
 ### <a name="masterdetailpage"></a>MasterDetailPage
 
-若要在 iOS 和通用 Windows 平台上，設定螢幕助讀程式為 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 上 [切換] 按鈕朗讀的文字，請在 `MasterDetailPage` 或是 `Master` 頁面的 `Icon` 屬性上，設定 `AutomationProperties.Name` 或 `AutomationProperties.HelpText` 屬性。
+若要在 iOS 和通用 Windows 平台上，設定螢幕助讀程式為 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 上 [切換] 按鈕朗讀的文字，請在 `MasterDetailPage` 或是 `Master` 頁面的 `IconImageSource` 屬性上，設定 `AutomationProperties.Name` 或 `AutomationProperties.HelpText` 屬性。
 
 若要在 Android 上，設定螢幕助讀程式為 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 上 [切換] 按鈕朗讀的文字，請將字串資源新增至 Android 專案：
 
@@ -161,11 +161,11 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 </resources>
 ```
 
-然後將 `Master` 頁面 `Icon` 屬性的 `AutomationId` 屬性，設為適當的字串：
+然後將 `Master` 頁面 `IconImageSource` 屬性的 `AutomationId` 屬性，設為適當的字串：
 
 ```csharp
 var master = new ContentPage { ... };
-master.Icon.AutomationId = "btnMDPAutomationID";
+master.IconImageSource.AutomationId = "btnMDPAutomationID";
 ```
 
 ### <a name="toolbaritem"></a>ToolbarItem

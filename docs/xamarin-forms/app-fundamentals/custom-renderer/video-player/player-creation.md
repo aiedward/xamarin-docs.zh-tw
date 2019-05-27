@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 4bfbd065c9b17ce402c5a15289c7ff608eb58b23
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 21a707ebd189e9cbfa6735b233a6c0af65138e0c
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870010"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926635"
 ---
 # <a name="creating-the-platform-video-players"></a>建立平台視訊播放程式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
 
-[**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) 解決方案包含所有實作 Xamarin.Forms 視訊播放程式的程式碼。 它也包含一系列頁面，示範如何在應用程式中使用視訊播放程式。 所有 `VideoPlayer` 及其平台轉譯器都位於名為 `FormsVideoLibrary` 的專案資料夾內，且使用 `FormsVideoLibrary` 命名空間。 這應該可讓您輕鬆地將檔案複製到您的應用程式並參考類別。
+[**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) 解決方案包含所有實作 Xamarin.Forms 視訊播放程式的程式碼。 它也包含一系列頁面，示範如何在應用程式中使用視訊播放程式。 所有 `VideoPlayer` 及其平台轉譯器都位於名為 `FormsVideoLibrary` 的專案資料夾內，且使用 `FormsVideoLibrary` 命名空間。 這應該可讓您輕鬆地將檔案複製到您的應用程式並參考類別。
 
 ## <a name="the-video-player"></a>視訊播放程式
 
@@ -467,4 +467,4 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>相關連結
 
-- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) (視訊播放程式示範 (範例))
+- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) (視訊播放程式示範 (範例))

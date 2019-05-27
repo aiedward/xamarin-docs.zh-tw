@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: be7263ad0c9112aa640a4558d7fdbaf2a16ce079
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: 650c341ab4b599a4eaf0cab81ba6f9129699e15d
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57981675"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926021"
 ---
 # <a name="create-xamarinforms-behaviors"></a>建立 Xamarin.Forms 行為
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehavior/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/NumericValidationBehavior/)
 
 _Xamarin.Forms 行為由衍生自 Behavior 或 Behavior&lt;T&gt; 的類別建立。本文示範如何建立與使用 Xamarin.Forms 行為。_
 
@@ -174,7 +174,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 </Style>
 ```
 
-使用 `StaticResource` 標記延伸將其 [`Style`](xref:Xamarin.Forms.VisualElement.Style) 屬性設為 `Style` 執行個體，[`Style`](xref:Xamarin.Forms.Style) 即可套用至 [`Entry`](xref:Xamarin.Forms.Entry) 控制項，如下列程式碼範例所示：
+使用 `StaticResource` 標記延伸將其 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 屬性設為 `Style` 執行個體，[`Style`](xref:Xamarin.Forms.Style) 即可套用至 [`Entry`](xref:Xamarin.Forms.Entry) 控制項，如下列程式碼範例所示：
 
 ```xaml
 <Entry Placeholder="Enter a System.Double" Style="{StaticResource NumericValidationStyle}">
@@ -211,7 +211,7 @@ entry.Behaviors.Clear();
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.Forms 行為 (範例)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehavior/)
-- [使用樣式套用的 Xamarin.Forms 行為 (範例)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehaviorstyle/)
+- [Xamarin.Forms 行為 (範例)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/NumericValidationBehavior/)
+- [使用樣式套用的 Xamarin.Forms 行為 (範例)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/NumericValidationBehaviorStyle/)
 - [Behavior](xref:Xamarin.Forms.Behavior)
 - [Behavior<T>](xref:Xamarin.Forms.Behavior`1)

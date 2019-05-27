@@ -1,26 +1,26 @@
 ---
-title: 鍵盤導覽
-description: 與其使用預設的定位順序，有時候您必須使用 TabIndex 和 IsTapStop 屬性的組合來指定定位順序以微調 UI。
+title: 鍵盤協助工具
+description: 與其使用預設的定位順序，有時候您必須使用 TabIndex 和 IsTapStop 屬性的組合來指定定位順序以微調 UI 的協助工具。
 ms.prod: xamarin
 ms.assetid: 8be8f498-558a-4894-a01f-91a0d3ef927e
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/15/2018
-ms.openlocfilehash: 3e3331489c3b437366f4bdcc6990fe282d213a6a
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.date: 05/09/2019
+ms.openlocfilehash: 66cd9f9de712583ea4e8fb9304a9f1642e7e3ee1
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207878"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971268"
 ---
-# <a name="keyboard-navigation-in-xamarinforms"></a>Xamarin.Forms 的鍵盤導覽
+# <a name="keyboard-accessibility-in-xamarinforms"></a>Xamarin.Forms 中的鍵盤協助工具
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
 
-如果應用程式未提供適當的鍵盤存取，可能會讓部分使用者在使用時遇到困難。 指定控制項的定位順序時，可啟用鍵盤導覽，並讓應用程式頁面做好以特定順序接收輸入的準備。
+如果應用程式未提供適當的鍵盤存取，可能會讓需使用螢幕閱讀程式或行動不便的使用者遇到使用上的困難。 Xamarin.Forms 應用程式可以指定預期的定位順序，以改善其可用性和協助工具。 指定控制項的定位順序時，可啟用鍵盤導覽、讓應用程式頁面做好以特定順序接收輸入的準備，以及允許螢幕閱讀程式向使用者朗讀可設定焦點的元素。
 
-根據預設，控制項的定位順序與其列在 XAML 中的順序或以程式設計方式新增至子集合的順序相同。 此順序為透過鍵盤巡覽控制項的順序；這個預設順序通常也是最佳的順序。 不過，預設順序不一定等於預期的順序，如下列 XAML 程式碼範例所示：
+根據預設，控制項的定位順序與其列在 XAML 中的順序或以程式設計方式新增至子集合的順序相同。 此順序為將透過鍵盤巡覽並由螢幕閱讀程式朗讀之控制項的順序；這個預設順序通常也是最佳的順序。 不過，預設順序不一定等於預期的順序，如下列 XAML 程式碼範例所示：
 
 ```xaml
 <Grid>
@@ -113,6 +113,9 @@ ms.locfileid: "54207878"
 ![](keyboard-images/correct-tab-order.png "資料行式定位順序")
 
 此處的定位順序是以資料行為基礎。 因此，按下 Tab 鍵時會巡覽名字與姓氏 [`Entry`](xref:Xamarin.Forms.Entry) 組合。
+
+> [!IMPORTANT]
+> iOS 和 Android 上的螢幕閱讀程式在朗讀畫面上的無障礙元素時，將會接受 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 的 `TabIndex`。
 
 ## <a name="excluding-controls-from-the-tab-order"></a>從定位順序中排除控制項
 

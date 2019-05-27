@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 0f0c2e9f3e0a2309db1ad96ff286d6ac17f78bc5
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: 8926813e8efae72efa9af2221318d6f1ff1e344f
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329295"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970930"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Xamarin.Forms 索引標籤式頁面
 
@@ -44,9 +44,18 @@ _Xamarin.Forms TabbedPage 由索引標籤清單和較大的詳細資料區域所
 
 - 在 Windows 平板電腦板型規格上，索引標籤並非一律可見，且使用者必須向下撥動 (或在連接滑鼠的情況下以滑鼠右鍵按一下) 來檢視 `TabbedPage` 中的索引標籤 (如下所示)。
 
-![](tabbed-page-images/windows-tabs.png "Windows 上的 TabbedPage 索引標籤")
+    ![](tabbed-page-images/windows-tabs.png "Windows 上的 TabbedPage 索引標籤")
 
 ## <a name="creating-a-tabbedpage"></a>建立 TabbedPage
+
+[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 會定義下列屬性：
+
+- [`Color`](xref:Xamarin.Forms.Color) 類型的 [`BarBackgroundColor`](xref:Xamarin.Forms.TabbedPage.BarBackgroundColor)，索引標籤列的背景色彩。
+- [`Color`](xref:Xamarin.Forms.Color) 類型的 [`BarTextColor`](xref:Xamarin.Forms.TabbedPage.BarTextColor)，索引標籤列上的文字色彩。
+- [`Color`](xref:Xamarin.Forms.Color) 類型的 [`SelectedTabColor`](xref:Xamarin.Forms.TabbedPage.SelectedTabColor)，索引標籤被選取時的色彩。
+- [`Color`](xref:Xamarin.Forms.Color) 類型的 [`UnselectedTabColor`](xref:Xamarin.Forms.TabbedPage.UnselectedTabColor)，索引標籤被取消選取時的色彩。
+
+所有這些屬性都是由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 物件提供，也就是說其樣式可以自訂，且這些屬性可以是資料繫結的目標。
 
 有兩種方法可用來建立 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)：
 
@@ -56,7 +65,7 @@ _Xamarin.Forms TabbedPage 由索引標籤清單和較大的詳細資料區域所
 使用這兩種方法，[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 即會在使用者選取每個索引標籤時顯示每個頁面。
 
 > [!NOTE]
-> 建議僅以 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 和 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體填入 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)。 這有助於跨所有平台確保一致的使用者體驗。
+> 建議僅以 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 和 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體來填入 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)。 這有助於跨所有平台確保一致的使用者體驗。
 
 <a name="Populating_a_TabbedPage_with_a_Page_Collection" />
 
@@ -70,7 +79,7 @@ _Xamarin.Forms TabbedPage 由索引標籤清單和較大的詳細資料區域所
             xmlns:local="clr-namespace:TabbedPageWithNavigationPage;assembly=TabbedPageWithNavigationPage"
             x:Class="TabbedPageWithNavigationPage.MainPage">
     <local:TodayPage />
-    <NavigationPage Title="Schedule" Icon="schedule.png">
+    <NavigationPage Title="Schedule" IconImageSource="schedule.png">
         <x:Arguments>
             <local:SchedulePage />
         </x:Arguments>
@@ -86,7 +95,7 @@ public class MainPageCS : TabbedPage
   public MainPageCS ()
   {
     var navigationPage = new NavigationPage (new SchedulePageCS ());
-    navigationPage.Icon = "schedule.png";
+    navigationPage.IconImageSource = "schedule.png";
     navigationPage.Title = "Schedule";
 
     Children.Add (new TodayPageCS ());
@@ -148,7 +157,7 @@ async void OnUpcomingAppointmentsButtonClicked (object sender, EventArgs e)
   </TabbedPage.Resources>
   <TabbedPage.ItemTemplate>
     <DataTemplate>
-      <ContentPage Title="{Binding Name}" Icon="monkeyicon.png">
+      <ContentPage Title="{Binding Name}" IconImageSource="monkeyicon.png">
         <StackLayout Padding="5, 25">
           <Label Text="{Binding Name}" Font="Bold,Large" HorizontalOptions="Center" />
           <Image Source="{Binding PhotoUrl}" WidthRequest="200" HeightRequest="200" />
@@ -204,7 +213,7 @@ public class TabbedPageDemoPageCS : TabbedPage
       ...
 
       var contentPage = new ContentPage {
-        Icon = "monkeyicon.png",
+        IconImageSource = "monkeyicon.png",
         Content = new StackLayout {
           Padding = new Thickness (5, 25),
           Children = {

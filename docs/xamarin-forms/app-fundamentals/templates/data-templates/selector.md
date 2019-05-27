@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 75ea30dd510021d7755814e19728bfe60f765645
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: bb65f5702579f83f56b30e556859a122d0e7fcbb
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057281"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926923"
 ---
 # <a name="creating-a-xamarinforms-datatemplateselector"></a>建立 Xamarin.Forms DataTemplateSelector
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplateselector/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplateSelector/)
 
 _您可以在執行階段使用 DataTemplateSelector 根據資料繫結屬性值來選擇 DataTemplate。這可將多個 DataTemplate 套用至相同類型的物件，以自訂特定物件的外觀。本文示範如何建立和使用 DataTemplateSelector。_
 
@@ -137,5 +137,5 @@ public class HomePageCS : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [Data Template Selector (Samples)](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplateselector/) (日期範本選取器 (範例))
+- [Data Template Selector (Samples)](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplateSelector/) (日期範本選取器 (範例))
 - [DataTemplateSelector](xref:Xamarin.Forms.DataTemplateSelector)

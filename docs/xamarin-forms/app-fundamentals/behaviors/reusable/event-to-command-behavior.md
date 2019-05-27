@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/09/2018
-ms.openlocfilehash: 1c2aea9a5dead1962cfd4bb71d1a1211e8b98ee9
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 1bb3f319eb104a7425c3be820f5c91efe300737f
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056703"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925173"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>可重複使用的 EventToCommandBehavior
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
 
 _針對設計用意並非與命令互動的控制項，您可以使用行為來建立其與命令的關聯。本文示範如何建立及使用 Xamarin.Forms 行為，在事件引發時叫用命令。_
 
@@ -35,7 +35,7 @@ _針對設計用意並非與命令互動的控制項，您可以使用行為來�
 - **Converter** – [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 實作；當繫結引擎在 *source* 和 *target* 之間傳遞事件引數資料時，其可變更事件引數資料的格式。
 
 > [!NOTE]
-> `EventToCommandBehavior` 是自訂類別，並不屬於 Xamarin.Forms 的一部分；您可以在 [EventToCommand 行為範例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)中找到。
+> `EventToCommandBehavior` 是自訂類別，並不屬於 Xamarin.Forms 的一部分；您可以在 [EventToCommand 行為範例](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)中找到。
 
 ## <a name="creating-the-behavior"></a>建立行為
 
@@ -208,6 +208,6 @@ selectedItemLabel.SetBinding(Label.TextProperty, "SelectedItemText");
 
 ## <a name="related-links"></a>相關連結
 
-- [Event to Command Behavior (Samples)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/) (命令行為事件 (範例))
+- [Event to Command Behavior (Samples)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/) (命令行為事件 (範例))
 - [Behavior](xref:Xamarin.Forms.Behavior)
 - [Behavior&lt;T&gt;](xref:Xamarin.Forms.Behavior`1)

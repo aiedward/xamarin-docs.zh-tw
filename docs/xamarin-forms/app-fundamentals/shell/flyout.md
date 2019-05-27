@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 05ce2536c04306c2881ccc5dfa5e2016c9025b11
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: a64e96e1ee3804cd7aefd9834486613ba8d09d5f
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054488"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005218"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms Shell 飛出視窗
 
-![](~/media/shared/preview.png "此 API 目前是發行前版本")
-
-[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
 飛出視窗為 Shell 應用程式的根功能表，且可透過圖示或從螢幕側邊撥動來存取。 飛出視窗會由選用標頭、飛出視窗項目及選用功能表項目所組成：
 
@@ -172,7 +170,7 @@ Shell.Current.FlyoutIsPresented = false;
 > [!NOTE]
 > 如果沒有飛出視窗標題，飛出視窗項目就會出現在飛出視窗頂端。 否則，它們會出現在飛出視窗標題下方。
 
-Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需要將其他檢視引進視覺化樹狀結構。 這是可能的，因為子類別化的 `Shell` 物件只能包含 `FlyoutItem` 物件，其只能包含 `Tab` 物件，其只能包含 `ShellContent` 物件。 這些隱含的轉換運算子可以用來移除上一個範例中的 `FlyoutItem`、`Tab` 和 `ShellContent` 物件：
+Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需要將其他檢視引進視覺化樹狀結構。 這是可能的，因為子類別化的 `Shell` 物件可以只包含 `FlyoutItem` 物件，其中可以只包含 `Tab` 物件，且其中可以只包含 `ShellContent` 物件。 這些隱含的轉換運算子可以用來移除上一個範例中的 `FlyoutItem`、`Tab` 和 `ShellContent` 物件：
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -183,15 +181,15 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
     <Shell.FlyoutHeader>
         <controls:FlyoutHeader />
     </Shell.FlyoutHeader>
-    <views:CatsPage Icon="cat.png" />
-    <views:DogsPage Icon="dog.png" />
+    <views:CatsPage IconImageSource="cat.png" />
+    <views:DogsPage IconImageSource="dog.png" />
 </Shell>
 ```
 
 這個隱含的轉換會自動將每個 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件包裝於 `ShellContent` 物件中，其會包裝於 `Tab` 物件中，其會包裝於 `FlyoutItem` 物件中。
 
 > [!IMPORTANT]
-> 在 Shell 應用程式中，屬於 `ShellContent` 物件子系的每個 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 都會在應用程式啟動期間建立。 使用此方法新增其他 `ShellContent` 物件，將造成在應用程式啟動期間建立其他頁面，進而導致啟動體驗不佳。 不過，Shell 也能夠依需求建立頁面，以回應導覽。 如需詳細資訊，請參閱 [Xamarin.Forms Shell 索引標籤](tabs.md)指南中的[有效率的頁面載入](tabs.md#efficient-page-loading)。
+> 在 Shell 應用程式中，屬於 `ShellContent` 物件子系的每個 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 都會在應用程式啟動期間建立。 使用此方法新增其他 `ShellContent` 物件將會導致在應用程式啟動期間建立其他頁面，進而可能導致啟動經驗不佳。 不過，Shell 也能夠依需求建立頁面，以回應導覽。 如需詳細資訊，請參閱 [Xamarin.Forms Shell 索引標籤](tabs.md)指南中的[有效率的頁面載入](tabs.md#efficient-page-loading)。
 
 ### <a name="flyoutitem-class"></a>FlyoutItem 類別
 
@@ -360,23 +358,18 @@ Shell.Current.CurrentItem = aboutItem;
 > [!NOTE]
 > `MenuItem` 類別具有 [`Clicked`](xref:Xamarin.Forms.MenuItem.Clicked) 事件及 [`Command`](xref:Xamarin.Forms.MenuItem.Command) 屬性。 因此，`MenuItem` 物件會啟用執行動作以回應點選 `MenuItem` 的案例。 這些案例包括執行導覽，以及在特定 Web 網頁上開啟網頁瀏覽器。
 
-`Shell.MenuItems` 集合會定義將出現在飛出視窗上的 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 物件清單。 此集合可以使用 `MenuItem` 物件來填入，如下列範例所示：
+[`MenuItem`](xref:Xamarin.Forms.MenuItem) 物件可以被加入飛出視窗，如下列範例所示：
 
 ```xaml
-<Shell ...
-       x:Name="self">
+<Shell ...>
     ...            
-    <Shell.MenuItems>
-        <MenuItem Text="Random"
-                  Icon="random.png"
-                  BindingContext="{x:Reference self}"
-                  Command="{Binding RandomPageCommand}" />
-        <MenuItem Text="Help"
-                  Icon="help.png"
-                  BindingContext="{x:Reference self}"
-                  Command="{Binding HelpCommand}"
-                  CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />
-    </Shell.MenuItems>    
+    <MenuItem Text="Random"
+              IconImageSource="random.png"
+              Command="{Binding RandomPageCommand}" />
+    <MenuItem Text="Help"
+              IconImageSource="help.png"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />    
 </Shell>
 ```
 
@@ -384,7 +377,10 @@ Shell.Current.CurrentItem = aboutItem;
 
 [![包含 MenuItem 物件的飛出視窗在 iOS 和 Android 上的螢幕擷取畫面](flyout-images/flyout.png "包含 MenuItem 物件的 Shell 飛出視窗")](flyout-images/flyout-large.png#lightbox "包含 MenuItem 物件的 Shell 飛出視窗")
 
-第一個 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 物件會執行名為 `RandomPageCommand` 的 `ICommand`，這會巡覽至應用程式中的隨機頁面。 第二個 `MenuItem` 物件會執行名為 `HelpCommand` 的 `ICommand`，這會在網頁瀏覽器中開啟 `CommandParameter` 屬性所指定的 URL。 每個 `MenuItem` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 都會設定為子類別化的 `Shell` 物件。
+第一個 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 物件會執行名為 `RandomPageCommand` 的 `ICommand`，這會巡覽至應用程式中的隨機頁面。 第二個 `MenuItem` 物件會執行名為 `HelpCommand` 的 `ICommand`，這會在網頁瀏覽器中開啟 `CommandParameter` 屬性所指定的 URL。
+
+> [!NOTE]
+> 每個 `MenuItem` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 皆繼承自子類別化的 `Shell` 物件。
 
 ## <a name="define-menuitem-appearance"></a>定義 MenuItem 的外觀
 
@@ -415,8 +411,8 @@ Shell.Current.CurrentItem = aboutItem;
 [![樣板化 MenuItem 物件在 iOS 和 Android 上的螢幕擷取畫面](flyout-images/menuitem-templated.png "Shell 的樣板化 MenuItem 物件")](flyout-images/menuitem-templated-large.png#lightbox "Shell 的樣板化 MenuItem 物件")
 
 > [!NOTE]
-> Shell 會將 [`Text`](xref:Xamarin.Forms.MenuItem.Text) 和 [`Icon`](xref:Xamarin.Forms.MenuItem.Icon) 屬性提供給 `MenuItemTemplate` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)。
+> Shell 會將 [`Text`](xref:Xamarin.Forms.MenuItem.Text) 和 [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) 屬性提供給 `MenuItemTemplate` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)。
 
 ## <a name="related-links"></a>相關連結
 
-- [Xaminals (範例)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+- [Xaminals (範例)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
