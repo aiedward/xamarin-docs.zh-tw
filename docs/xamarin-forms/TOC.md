@@ -112,6 +112,7 @@
 #### [強制回應頁面](app-fundamentals/navigation/modal.md)
 ### [Shell](app-fundamentals/shell/index.md)
 #### [簡介](app-fundamentals/shell/introduction.md)
+#### [建立 Shell 應用程式](app-fundamentals/shell/create.md)
 #### [飛出視窗](app-fundamentals/shell/flyout.md)
 #### [索引標籤](app-fundamentals/shell/tabs.md)
 #### [巡覽](app-fundamentals/shell/navigation.md)
