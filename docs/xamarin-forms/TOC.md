@@ -115,6 +115,7 @@
 #### [建立 Shell 應用程式](app-fundamentals/shell/create.md)
 #### [飛出視窗](app-fundamentals/shell/flyout.md)
 #### [索引標籤](app-fundamentals/shell/tabs.md)
+#### [頁面組態](app-fundamentals/shell/configuration.md)
 #### [巡覽](app-fundamentals/shell/navigation.md)
 #### [搜尋](app-fundamentals/shell/search.md)
 #### [自訂轉譯器](app-fundamentals/shell/customrenderers.md)

@@ -8,21 +8,21 @@ ms.technology: xamarin-forms
 ms.custom: video
 author: conceptdev
 ms.author: crdun
-ms.date: 04/02/2019
-ms.openlocfilehash: 5dc37212facbc5b58b807d3fbcba8650a5b065f8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/23/2019
+ms.openlocfilehash: 3b25be2c929e0f072af2ff563d49ceaf07cae058
+ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61351891"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252348"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>建置您的第一個 Xamarin.Forms 應用程式
 
-觀看這段影片，並遵循指示建立第一個使用 Xamarin.Forms 的行動應用程式。
+觀看這段影片，並遵循指示建立第一個使用 Xamarin.Forms 的行動應用程式。 
 
 ::: zone pivot="windows"
 
-> [!Video https://channel9.msdn.com/Shows/XamarinShow/Building-Your-First-Android--iOS-App-in-Visual-Studio-2017/player]
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Build-Your-First-Android-App-with-Visual-Studio-2019-and-Xamarin/player]
 
 ## <a name="step-by-step-instructions-for-windows"></a>適用於 Windows 的逐步指示
 
@@ -48,7 +48,7 @@ ms.locfileid: "61351891"
 
 5. 等候 NuGet 套件還原完成 (狀態列中將會顯示 [還原完成] 訊息)。
 
-6. 按下偵錯按鈕 (或 [偵錯] > [開始偵錯] 功能表項目) 來啟動 Android Emulator。
+6. 按下偵錯按鈕 (或 [偵錯] > [開始偵錯]  功能表項目) 來啟動 Android Emulator。
 
 7. 編輯 **MainPage.xaml**，並在 `</StackLayout>` 結尾前面新增此 XAML：
 
@@ -74,6 +74,12 @@ ms.locfileid: "61351891"
     > [!TIP]
     > 您可以使用網路相連的 Mac 電腦，從 Visual Studio 建置及偵錯 iOS 應用程式。 如需詳細資訊，請參閱[安裝指示](~/ios/get-started/installation/windows/index.md)。
 
+## <a name="build-an-ios-app-in-visual-studio-2019"></a>建置 iOS 應用程式在 Visual Studio 2019
+
+這段影片涵蓋建置和測試 iOS 應用程式在 Windows 上使用 Visual Studio 2019 的程序：
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Build-Your-First-iOS-App-with-Visual-Studio-2019-and-Xamarin/player]
+
 ::: zone-end
 ::: zone pivot="win-vs2017"
 
@@ -85,17 +91,17 @@ ms.locfileid: "61351891"
 
 請遵循下列步驟及上面的影片進行：
 
-1. 選擇 [檔案] > [新增] > [專案...] 或按下 [建立新專案...] 按鈕，然後選取 [Visual C#] > [跨平台] > [行動應用程式 (Xamarin.Forms)]：
+1. 選擇 [檔案] > [新增] > [專案...]  或按下 [建立新專案...]  按鈕，然後選取 [Visual C#] > [跨平台] > [行動應用程式 (Xamarin.Forms)]  ：
 
     [![行動應用程式 (Xamarin.Forms)](images/win/01-sml.png)](images/win/01.png#lightbox)
 
-2. 確定已選取 [Android] 和 [iOS]，並搭配 [.NET Standard] 程式碼共用：
+2. 確定已選取 [Android]  和 [iOS]  ，並搭配 [.NET Standard]  程式碼共用：
 
     [![[Android] 和 [iOS] 搭配 [.NET Standard]](images/win/02-sml.png)](images/win/02.png#lightbox)
 
 3. 等候 NuGet 套件還原完成 (狀態列中將會顯示 [還原完成] 訊息)。
 
-4. 按下偵錯按鈕 (或 [偵錯] > [開始偵錯] 功能表項目) 來啟動 Android Emulator。
+4. 按下偵錯按鈕 (或 [偵錯] > [開始偵錯]  功能表項目) 來啟動 Android Emulator。
 
 5. 編輯 **MainPage.xaml**，並在 `</StackLayout>` 結尾前面新增此 XAML：
 
@@ -132,11 +138,11 @@ ms.locfileid: "61351891"
 
 請遵循下列步驟及上面的影片進行：
 
-1. 選擇 [檔案] > [新增方案...] 或按下 [新增專案...] 按鈕，然後選取 [多平台] > [應用程式] > [空白的 Forms App]：
+1. 選擇 [檔案] > [新增方案...]  或按下 [新增專案...]  按鈕，然後選取 [多平台] > [應用程式] > [空白的 Forms App]  ：
 
     [![空白的 Forms App](images/01-sml.png)](images/01.png#lightbox)
 
-2. 確定已選取 [Android] 和 [iOS]，並搭配 [.NET Standard] 程式碼共用：
+2. 確定已選取 [Android]  和 [iOS]  ，並搭配 [.NET Standard]  程式碼共用：
 
     [![[Android] 和 [iOS] 搭配 [.NET Standard]](images/02-sml.png)](images/02.png#lightbox)
 
@@ -144,7 +150,7 @@ ms.locfileid: "61351891"
 
     ![Android 應用程式](images/03-sml.png)
 
-4. 按下偵錯按鈕 (或 [執行] > [開始偵錯]) 來啟動 Android Emulator。
+4. 按下偵錯按鈕 (或 [執行] > [開始偵錯]  ) 來啟動 Android Emulator。
 
 5. 編輯 **MainPage.xaml**，並在 `</StackLayout>` 結尾前面新增此 XAML：
 
@@ -167,7 +173,7 @@ ms.locfileid: "61351891"
 
     ![Android 應用程式](images/07-sml.png)
 
-8. 按一下滑鼠右鍵將 iOS 設定為 [啟始專案]：
+8. 按一下滑鼠右鍵將 iOS 設定為 [啟始專案]  ：
 
     [![將啟始專案設定為 iOS](images/08-sml.png)](images/08.png#lightbox)
 

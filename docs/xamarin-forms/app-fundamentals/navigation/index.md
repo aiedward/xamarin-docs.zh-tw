@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 202f044ebd7dd5b110b94d2aa60eeb7151150607
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: f67ab15466da118d12c280d597972d2d11f8e600
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994724"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66178109"
 ---
 # <a name="xamarinforms-navigation"></a>Xamarin.Forms 導覽
 
@@ -39,7 +39,3 @@ Xamarin.Forms [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 是可�
 ## <a name="modal-pagesmodalmd"></a>[強制回應頁面](modal.md)
 
 Xamarin.Forms 也支援強制回應頁面。 強制回應頁面鼓勵使用者完成各自獨立且無法離開的工作，直到完成或取消工作為止。
-
-## <a name="displaying-pop-upspop-upsmd"></a>[顯示快顯視窗](pop-ups.md)
-
-Xamarin.Forms 提供兩個類似快顯視窗的使用者介面元素：警示和動作工作表。 這些介面元素可用於詢問使用者簡單的問題，並引導使用者完成工作。

@@ -6,13 +6,14 @@ ms.assetid: 99B8A8E8-6F5E-46BC-9639-1C4A6D301049
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/15/2018
-ms.openlocfilehash: 20ea72e588e2e3b1d575bd593446bf6724d73d8c
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.date: 05/28/2019
+ms.custom: video
+ms.openlocfilehash: 2aaa61400d3775c4d622b805d24ff0b338017de5
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971055"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354048"
 ---
 # <a name="xamarinforms-accessibility"></a>Xamarin.Forms 協助工具
 
@@ -22,7 +23,7 @@ _建置無障礙應用程式，可確保應用程式便於對使用者介面具�
 
 [Android 的協助工具](~/android/app-fundamentals/accessibility.md)和 [iOS 協助工具](~/ios/app-fundamentals/accessibility.md)指南包含 Xamarin 所公開之原生 API 的詳細資料，並且 [MSDN 上的 UWP 協助工具指南](https://msdn.microsoft.com/windows/uwp/accessibility/basic-accessibility-information)會說明該平台的原生方法。 這些 API 會用於在每個平台上完整實作無障礙應用程式。
 
-Xamarin.Forms 目前不具備對每個基礎平台上所有可用協助工具 API 的「內建」支援。 不過，Xamarin.Forms 支援在使用者介面元素上設定自動化屬性，以支援螢幕閱讀程式與瀏覽協助工具，也就是建置無障礙應用程式最重要的一部分。 如需詳細資訊，請參閱[自動化屬性](~/xamarin-forms/app-fundamentals/accessibility/automation-properties.md)。
+Xamarin.Forms 目前不具備對每個基礎平台上所有可用協助工具 API 的「內建」  支援。 不過，Xamarin.Forms 支援在使用者介面元素上設定自動化屬性，以支援螢幕閱讀程式與瀏覽協助工具，也就是建置無障礙應用程式最重要的一部分。 如需詳細資訊，請參閱[自動化屬性](~/xamarin-forms/app-fundamentals/accessibility/automation-properties.md)。
 
 Xamarin.Forms 應用程式也可以指定控制項的定位順序，以改善可用性和協助工具。 如需詳細資訊，請參閱[鍵盤協助工具](~/xamarin-forms/app-fundamentals/accessibility/keyboard.md)。
 
@@ -41,3 +42,9 @@ Xamarin.Forms 應用程式通常以多個平台為目標，意即會根據平台
 - [跨平台協助工具](~/cross-platform/app-fundamentals/accessibility.md)
 - [自動化屬性](~/xamarin-forms/app-fundamentals/accessibility/automation-properties.md)
 - [鍵盤協助工具](~/xamarin-forms/app-fundamentals/accessibility/keyboard.md)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Making-Mobile-Apps-Accessible/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

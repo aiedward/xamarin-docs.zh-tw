@@ -4,13 +4,14 @@ description: Xamarin.Essentials 中的地理編碼類別會提供 API，既可�
 ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: bc08554f0060ca5de8d7ffc90ea5c65463b93f3b
-ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
+ms.date: 05/28/2019
+ms.custom: video
+ms.openlocfilehash: 157eb3116f09268790036f8983543114e7a58276
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57972594"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354101"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials:地理編碼
 
@@ -32,7 +33,7 @@ ms.locfileid: "57972594"
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-需要 Bing 地圖服務 API 金鑰，才能使用地理編碼功能。 註冊免費的 [Bing 地圖服務](https://www.bingmapsportal.com/)帳戶。 在 [我的帳戶 > 我的金鑰] 下方建立一個新金鑰，並根據您的應用程式類型填寫資訊 (針對 UWP 應用程式，應該是**公開 Windows 應用程式 (UWP、8.x 及更早版本)**)。
+需要 Bing 地圖服務 API 金鑰，才能使用地理編碼功能。 註冊免費的 [Bing 地圖服務](https://www.bingmapsportal.com/)帳戶。 在 [我的帳戶 > 我的金鑰]  下方建立一個新金鑰，並根據您的應用程式類型填寫資訊 (針對 UWP 應用程式，應該是**公開 Windows 應用程式 (UWP、8.x 及更早版本)** )。
 
 在呼叫任何 **Geocoding** 方法前，請在應用程式生命週期的早期設定 API 金鑰 (僅適用於 UWP)：
 
@@ -124,3 +125,9 @@ catch (Exception ex)
 
 - [地理編碼原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geocoding)
 - [地理編碼 API 文件](xref:Xamarin.Essentials.Geocoding)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Geocoding-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

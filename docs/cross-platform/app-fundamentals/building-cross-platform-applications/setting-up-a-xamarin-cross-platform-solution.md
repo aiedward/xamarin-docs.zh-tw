@@ -1,25 +1,25 @@
 ---
-title: 第 3 部分 - 設定 Xamarin 跨平台解決方案
-description: 本文件說明如何設定 Xamarin 的跨平台解決方案。 它 discuses 各種的程式碼共用策略，例如共用專案和.NET Standard。
+title: 第 3 部分-設定 Xamarin 跨平台解決方案
+description: 本文件說明如何設定 Xamarin 的跨平台解決方案。 其中討論各種的程式碼共用策略，例如共用的專案和.NET Standard。
 ms.prod: xamarin
 ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
 author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
-ms.openlocfilehash: f802e31d851915d33cb6dbf5866f8cba3ab90303
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d20275bab4e4ce90f902a5e72321701d94b1d416
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61276545"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354063"
 ---
-# <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>第 3 部分 - 設定 Xamarin 跨平台解決方案
+# <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>第 3 部分-設定 Xamarin 跨平台解決方案
 
 不論使用何種平台，Xamarin 專案都會使用相同的方案檔案格式 (Visual Studio **.sln**檔案格式)。 即使在個別的專案無法載入 （例如 Visual Studio for Mac 中的 Windows 專案），可以在開發環境，共用解決方案。
 
 
 
-在建立新的跨平台應用程式時，第一個步驟是建立空白方案。 此區段會發生什麼情況下一步： 設定建置跨平台行動應用程式的專案。
+在建立新的跨平台應用程式時，第一個步驟是建立空白方案。 本章節將說明接下來的情況： 設定建置跨平台行動應用程式的專案。
 
  <a name="Sharing_Code" />
 
@@ -33,7 +33,7 @@ ms.locfileid: "61276545"
 
 ### <a name="shared-projects"></a>共用的專案
 
-共用程式碼檔案最簡單的方式是使用[共用專案](~/cross-platform/app-fundamentals/shared-projects.md)。
+共用程式碼檔案最簡單的方式使用[共用專案](~/cross-platform/app-fundamentals/shared-projects.md)。
 
 這個方法可讓您跨不同的平台專案中，共用相同的程式碼，並使用編譯器指示詞來包含不同的平台特定程式碼的路徑。
 
@@ -106,7 +106,7 @@ ms.locfileid: "61276545"
 
  [ ![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "此圖說明應用程式架構")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
 
-此螢幕擷取畫面顯示使用共用的核心的專案、 iOS 和 Android 應用程式專案的方案設定。 共用專案中包含每個架構層 （商務、 服務、 資料和資料存取程式碼） 相關的程式碼：
+此螢幕擷取畫面會顯示與共用的核心的專案、 iOS 和 Android 應用程式專案的方案設定。 共用專案中包含每個架構層 （商務、 服務、 資料和資料存取程式碼） 相關的程式碼：
 
  ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "共用專案中包含每個架構層 （商務、 服務、 資料和資料存取程式碼） 相關的程式碼")
 
