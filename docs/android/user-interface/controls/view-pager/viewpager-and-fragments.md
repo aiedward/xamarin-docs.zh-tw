@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 1b6e1c8ce91eaad46e779527c5ba12e2187cad24
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 748443352c106fbad88f8eda895cde097ce14a45
+ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61038376"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394703"
 ---
 # <a name="viewpager-with-fragments"></a>ViewPager 與 Fragment
 
@@ -86,7 +86,7 @@ using Android.Support.V4.View;
 using Android.Support.V4.App;
 ```
 
-變更`MainActivity`類別宣告，使它衍生自`AppCompatActivity`:
+變更`MainActivity`類別宣告，使它衍生自`FragmentActivity`:
 
 ```csharp
 public class MainActivity : FragmentActivity
