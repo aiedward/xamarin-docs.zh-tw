@@ -6,13 +6,13 @@ ms.assetid: 85B322AA-808F-41B6-953A-5877264AE643
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: 40f955d39799598093060f3230629a099885e4a2
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.date: 05/28/2019
+ms.openlocfilehash: a988a99e20af76d071f55c4cd2c97b135ad077f8
+ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970769"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252281"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms Shell
 
@@ -20,13 +20,21 @@ ms.locfileid: "65970769"
 
 Xamarin.Forms Shell 會提供大部分行動應用程式需要的基本功能，藉此降低行動應用程式開發的複雜度。 這包括一般導覽使用者體驗、URI 型導覽配置，以及整合式搜尋處理常式。
 
+## <a name="create-a-xamarinforms-shell-applicationcreatemd"></a>[建立 Xamarin.Forms Shell 應用程式](create.md)
+
+建立 Xamarin.Forms Shell 應用程式的程序是建立將 `Shell` 類別子類別化的 XAML 檔案、將應用程式 `App` 類別的 `MainPage` 屬性設定為子類別化 `Shell` 物件，然後在子類別化 `Shell` 類別中描述應用程式視覺階層。
+
 ## <a name="flyoutflyoutmd"></a>[飛出視窗](flyout.md)
 
 飛出視窗為 Shell 應用程式的根功能表，且可透過圖示或從螢幕側邊撥動來存取。 飛出視窗會由選用標題、飛出視窗項目及選用功能表項目所組成。
 
 ## <a name="tabstabsmd"></a>[索引標籤](tabs.md)
 
-飛出視窗之後，Shell 應用程式中的下一個導覽層級是底部的索引標籤列。 當一個索引標籤包含多個頁面時，將可透過頂端索引標籤導覽頁面。
+飛出視窗之後，Shell 應用程式中的下一個導覽層級是底部的索引標籤列。 或者，應用程式的導覽模式可以從底部索引標籤開始，而不使用飛出視窗。 在這兩種情況下，當底部索引標籤包含多個頁面時，頁面將可透過頂端索引標籤來導覽。
+
+## <a name="page-configurationconfigurationmd"></a>[頁面組態](configuration.md)
+
+`Shell` 類別會定義可用來設定 Xamarin.Forms Shell 應用程式中頁面外觀的附加屬性。 這包括設定頁面色彩、停用導覽列、停用索引標籤列，以及在導覽列中顯示檢視。
 
 ## <a name="navigationnavigationmd"></a>[巡覽](navigation.md)
 

@@ -6,13 +6,13 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: a64e96e1ee3804cd7aefd9834486613ba8d09d5f
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.date: 05/23/2019
+ms.openlocfilehash: 51d8764854db2fb62a412fab6e1e48c8beabbf1f
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005218"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66178067"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms Shell 飛出視窗
 
@@ -133,7 +133,9 @@ Shell.Current.FlyoutIsPresented = false;
 
 ## <a name="flyout-items"></a>飛出視窗項目
 
-每個子類別化的 `Shell` 物件都必須包含一或多個 `FlyoutItem` 物件，以及每個代表飛出視窗上一個項目的 `FlyoutItem` 物件。 下列範例會建立飛出視窗，其中包含一個飛出視窗標題和兩個飛出視窗項目：
+當應用程式的導覽模式包含飛出視窗時，每個子類別化的 `Shell` 物件都必須包含一或多個 `FlyoutItem` 物件，以及每個代表飛出視窗上一個項目的 `FlyoutItem` 物件。 每個 `FlyoutItem` 物件應該都是 `Shell` 物件的子系。
+
+下列範例會建立飛出視窗，其中包含一個飛出視窗標題和兩個飛出視窗項目：
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -170,7 +172,7 @@ Shell.Current.FlyoutIsPresented = false;
 > [!NOTE]
 > 如果沒有飛出視窗標題，飛出視窗項目就會出現在飛出視窗頂端。 否則，它們會出現在飛出視窗標題下方。
 
-Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需要將其他檢視引進視覺化樹狀結構。 這是可能的，因為子類別化的 `Shell` 物件可以只包含 `FlyoutItem` 物件，其中可以只包含 `Tab` 物件，且其中可以只包含 `ShellContent` 物件。 這些隱含的轉換運算子可以用來移除上一個範例中的 `FlyoutItem`、`Tab` 和 `ShellContent` 物件：
+Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需要將其他檢視引進視覺化樹狀結構。 這是可能的，因為子類別化的 `Shell` 物件只能包含 `FlyoutItem` 物件或 `TabBar` 物件，其中只能包含 `Tab` 物件，且其中只能包含 `ShellContent` 物件。 這些隱含的轉換運算子可以用來移除上一個範例中的 `FlyoutItem`、`Tab` 和 `ShellContent` 物件：
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -193,11 +195,11 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 ### <a name="flyoutitem-class"></a>FlyoutItem 類別
 
-`FlyoutItem` 類別包含下列屬性來控制其外觀和行為：
+`FlyoutItem` 類別包含下列屬性來控制飛出視窗項目的外觀和行為：
 
 - 型別為 `FlyoutDisplayOptions` 的 `FlyoutDisplayOptions` 可定義項目及其子系如何顯示於飛出視窗中。 預設值為 `AsSingleItem`。
 - 型別為 `Tab` 的 `CurrentItem`，這是選取的項目。
-- 型別為 `ShellSectionCollection` 的 `Items` 會在 `FlyoutItem` 內定義所有索引標籤。
+- 型別為 `IList<Tab>` 的 `Items` 會在 `FlyoutItem` 內定義所有索引標籤。
 - 型別為 `ImageSource` 的 `FlyoutIcon`，這是要針對項目使用的圖示。 如果未設定這個屬性，它將轉而使用 `Icon` 屬性值。
 - 型別為 `ImageSource` 的 `Icon` 可定義要在不是飛出視窗的 Chrome 組件中顯示的圖示。
 - 型別為 `boolean` 的`IsChecked` 可定義目前是否已在飛出視窗中強調顯示該項目。
@@ -268,7 +270,7 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 </Shell>
 ```
 
-在此範例中，會針對 `Tab` 物件 (其為 `FlyoutItem` 物件的子系) 和 `Shellontent` 物件 (其為 `FlyoutItem` 物件的子系) 建立飛出視窗項目。 這是因為每個 `ShellContent` 物件 (其為 `FlyoutItem` 物件的子系) 都會自動包裝於 `Tab` 物件中。 此外，會針對最後一個 `ShellContent` 物件建立飛出視窗項目，其包裝於 `Tab` 物件中，然後包裝於 `FlyoutItem` 物件中。
+在此範例中，會針對 `Tab` 物件 (其為 `FlyoutItem` 物件的子系) 和 `ShellContent` 物件 (其為 `FlyoutItem` 物件的子系) 建立飛出視窗項目。 這是因為每個 `ShellContent` 物件 (其為 `FlyoutItem` 物件的子系) 都會自動包裝於 `Tab` 物件中。 此外，會針對最後一個 `ShellContent` 物件建立飛出視窗項目，其包裝於 `Tab` 物件中，然後包裝於 `FlyoutItem` 物件中。
 
 這會產生下列飛出視窗項目：
 
@@ -276,7 +278,7 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 ## <a name="define-flyoutitem-appearance"></a>定義 FlyoutItem 外觀
 
-透過將 `Shell.ItemTemplate` 屬性設定為 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)，即可自訂每個 `FlyoutItem` 的外觀：
+透過將 `Shell.ItemTemplate` 附加屬性設定為 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)，可自訂每個 `FlyoutItem` 的外觀：
 
 ```xaml
 <Shell ...>
@@ -288,7 +290,7 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
                     <ColumnDefinition Width="0.2*" />
                     <ColumnDefinition Width="0.8*" />
                 </Grid.ColumnDefinitions>
-                <Image Source="{Binding Icon}"
+                <Image Source="{Binding FlyoutIcon}"
                        Margin="5"
                        HeightRequest="45" />
                 <Label Grid.Column="1"
@@ -306,7 +308,7 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 [![樣板化 FlyoutItem 物件在 iOS 和 Android 上的螢幕擷取畫面](flyout-images/flyoutitem-templated.png "Shell 的樣板化 FlyoutItem 物件")](flyout-images/flyoutitem-templated-large.png#lightbox "Shell 的樣板化 FlyoutItem 物件")
 
 > [!NOTE]
-> Shell 會將 `Title` 和 `Icon` 屬性提供給 `ItemTemplate` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)。
+> Shell 會將 `Title` 和 `FlyoutIcon` 屬性提供給 `ItemTemplate` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)。
 
 ## <a name="flyoutitem-tab-order"></a>FlyoutItem 定位順序
 
@@ -353,7 +355,7 @@ Shell.Current.CurrentItem = aboutItem;
 
 ## <a name="menu-items"></a>功能表項目
 
-功能表項目會選擇性地出現在飛出視窗上飛出視窗項目的下方。 每個功能表項目都由一個 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 物件來表示。
+可以選擇性地將功能表項目加入至飛出視窗，每個功能表項目都由一個 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 物件來表示。 飛出視窗上 `MenuItem` 物件的位置，取決於其在 Shell 視覺階層中的宣告順序。 因此，在 `FlyoutItem` 物件之前宣告的任何 `MenuItem` 物件將出現在飛出視窗的頂端，而在 `FlyoutItem` 物件之後宣告的任何 `MenuItem` 物件將出現在飛出視窗的底部。
 
 > [!NOTE]
 > `MenuItem` 類別具有 [`Clicked`](xref:Xamarin.Forms.MenuItem.Clicked) 事件及 [`Command`](xref:Xamarin.Forms.MenuItem.Command) 屬性。 因此，`MenuItem` 物件會啟用執行動作以回應點選 `MenuItem` 的案例。 這些案例包括執行導覽，以及在特定 Web 網頁上開啟網頁瀏覽器。
@@ -373,7 +375,7 @@ Shell.Current.CurrentItem = aboutItem;
 </Shell>
 ```
 
-此程式碼會在飛出視窗中加入兩個 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 物件：
+此程式碼在飛出視窗中加入兩個 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 物件 (在所有飛出視窗項目底下)：
 
 [![包含 MenuItem 物件的飛出視窗在 iOS 和 Android 上的螢幕擷取畫面](flyout-images/flyout.png "包含 MenuItem 物件的 Shell 飛出視窗")](flyout-images/flyout-large.png#lightbox "包含 MenuItem 物件的 Shell 飛出視窗")
 
@@ -384,34 +386,84 @@ Shell.Current.CurrentItem = aboutItem;
 
 ## <a name="define-menuitem-appearance"></a>定義 MenuItem 的外觀
 
-透過將 `Shell.MenuItemTemplate` 屬性設定為 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)，即可自訂每個 `MenuItem` 的外觀：
+透過將 `Shell.MenuItemTemplate` 附加屬性設定為 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)，可自訂每個 `MenuItem` 的外觀：
 
 ```xaml
-<Shell.MenuItemTemplate>
-    <DataTemplate>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.2*" />
-                <ColumnDefinition Width="0.8*" />
-            </Grid.ColumnDefinitions>
-            <Image Source="{Binding Icon}"
-                   Margin="5"
-                   HeightRequest="45" />
-            <Label Grid.Column="1"
-                   Text="{Binding Text}"
-                   FontAttributes="Italic"
-                   VerticalTextAlignment="Center" />
-        </Grid>
-    </DataTemplate>
-</Shell.MenuItemTemplate>
+<Shell ...>
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Icon}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       Text="{Binding Text}"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    ...
+    <MenuItem Text="Random"
+              IconImageSource="random.png"
+              Command="{Binding RandomPageCommand}" />
+    <MenuItem Text="Help"
+              IconImageSource="help.png"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />  
+</Shell>
 ```
 
-此範例會以斜體顯示每個 `MenuItem` 物件的標題：
+此範例會將 Shell 層級的 `MenuItemTemplate` 附加到每個 `MenuItem` 物件，以斜體顯示每個 `MenuItem` 物件的標題：
 
 [![樣板化 MenuItem 物件在 iOS 和 Android 上的螢幕擷取畫面](flyout-images/menuitem-templated.png "Shell 的樣板化 MenuItem 物件")](flyout-images/menuitem-templated-large.png#lightbox "Shell 的樣板化 MenuItem 物件")
 
 > [!NOTE]
 > Shell 會將 [`Text`](xref:Xamarin.Forms.MenuItem.Text) 和 [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) 屬性提供給 `MenuItemTemplate` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)。
+
+因為 `Shell.MenuItemTemplate` 是附加屬性，所以可以將不同的範本附加至特定 `MenuItem` 物件：
+
+```xaml
+<Shell ...>
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Icon}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       Text="{Binding Text}"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    ...
+    <MenuItem Text="Random"
+              IconImageSource="random.png"
+              Command="{Binding RandomPageCommand}" />
+    <MenuItem Text="Help"
+              Icon="help.png"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell">
+        <Shell.MenuItemTemplate>
+            <DataTemplate>
+                ...
+            </DataTemplate>
+        </Shell.MenuItemTemplate>
+    </MenuItem>
+</Shell>
+```
+
+此範例會將 Shell 層級的 `MenuItemTemplate` 附加到第一個 `MenuItem` 物件，並將內嵌 `MenuItemTemplate` 附加到第二個 `MenuItem`。
 
 ## <a name="related-links"></a>相關連結
 
