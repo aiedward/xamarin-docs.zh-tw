@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 4cccf0660e306cb0dc466f5376d74411fa6c4ba1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b861993f0d9661a5c9f5c5983020fa0d275ff78c
+ms.sourcegitcommit: 4f8dc5298a95d591a59e97cdd347fd82858a1019
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61029538"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469491"
 ---
 # <a name="controls-reference"></a>控制項參考
 
@@ -31,9 +31,9 @@ Xamarin.Forms 應用程式的視覺化介面是由建構物件會對應至每個
 
 Xamarin.Forms 頁面通常佔滿整個螢幕。 頁面通常會包含版面配置，其中包含檢視，以及可能是其他版面配置。 資料格都是特殊化的元件，與使用[ `TableView` ](views.md#tableView)並[ `ListView` ](views.md#listView)。
 
-四個文件上[**頁**](pages.md)， [**配置**](layouts.md)， [**檢視**](views.md)，並[**資料格**](cells.md)，每種控制項類型描述其 API 文件、 說明其用途 （如果有的話），發行項及一或多個範例程式的連結 （如果有的話）。 每種控制項類型也會伴隨顯示頁面的螢幕擷取畫面[ **FormsGallery** ](https://developer.xamarin.com/samples/FormsGallery/)裝置 iOS、 Android 及 UWP 上執行的範例。 以下每個螢幕擷取畫面是 C# 頁面上，對等的 XAML 頁面中，原始程式碼的連結，以及 （當適當） XAML 頁面的 C# 程式碼後置檔案。
+四個文件上[**頁**](pages.md)， [**配置**](layouts.md)， [**檢視**](views.md)，並[**資料格**](cells.md)，每種控制項類型描述其 API 文件、 說明其用途 （如果有的話），發行項及一或多個範例程式的連結 （如果有的話）。 每種控制項類型也會伴隨顯示頁面的螢幕擷取畫面[ **FormsGallery** ](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)裝置 iOS、 Android 及 UWP 上執行的範例。 以下每個螢幕擷取畫面是 C# 頁面上，對等的 XAML 頁面中，原始程式碼的連結，以及 （當適當） XAML 頁面的 C# 程式碼後置檔案。
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.Forms FormsGallery 範例](https://developer.xamarin.com/samples/FormsGallery/)
+- [Xamarin.Forms FormsGallery 範例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 - [API 文件](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)
