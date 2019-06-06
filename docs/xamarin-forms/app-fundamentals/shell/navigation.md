@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 747fabd68187dbe48b5e68b40916cef45269c4ae
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.openlocfilehash: 9f48659a8af7bb74cc33ec0929f41b2a881e1978
+ms.sourcegitcommit: 4f8dc5298a95d591a59e97cdd347fd82858a1019
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005171"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469517"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms Shell 導覽
 
@@ -213,11 +213,11 @@ bears
 
 | 屬性 | 類型 | 說明 |
 |---|---|---|
-| 目前 | `ShellNavigationState` | 目前頁面的 URI。 |
-| 原始程式檔 | `ShellNavigationSource` | 發生導覽的類型。 |
-| Target | `ShellNavigationState`  | 代表導覽目的地的 URI。 |
-| CanCancel  | `bool` | 指出它是否可以取消導覽的值。 |
-| 已取消  | `bool` | 指出是否已取消導覽的值。 |
+| `Current` | `ShellNavigationState` | 目前頁面的 URI。 |
+| `Source` | `ShellNavigationSource` | 發生導覽的類型。 |
+| `Target` | `ShellNavigationState`  | 代表導覽目的地的 URI。 |
+| `CanCancel`  | `bool` | 指出它是否可以取消導覽的值。 |
+| `Cancelled`  | `bool` | 指出是否已取消導覽的值。 |
 
 此外，`ShellNavigatingEventArgs` 類別會提供可用來取消導覽的 `Cancel` 方法。
 
@@ -228,9 +228,9 @@ bears
 
 | 屬性 | 類型 | 說明 |
 |---|---|---|
-| 目前 | `ShellNavigationState` | 目前頁面的 URI。 |
-| 上一步| `ShellNavigationState` | 上一頁的 URI。 |
-| 原始程式檔  | `ShellNavigationSource` | 發生導覽的類型。 |
+| `Current` | `ShellNavigationState` | 目前頁面的 URI。 |
+| `Previous`| `ShellNavigationState` | 上一頁的 URI。 |
+| `Source`  | `ShellNavigationSource` | 發生導覽的類型。 |
 
 > [!NOTE]
 > `Shell` 類別中可覆寫的 `OnNavigated` 方法會引發 `Navigating` 事件。

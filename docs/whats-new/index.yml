@@ -1,0 +1,111 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Xamarin 文件最新動向
+metadata:
+  title: Xamarin 文件最新動向
+  description: Xamarin 文件中的最新動向。
+  ms.topic: landing-page
+  ms.prod: xamarin
+  ms.assetid: 7D34BF92-6326-40F5-B34B-18B03F293B34
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 05/31/2019
+abstract:
+  description: 歡迎使用 Xamarin 文件中的最新動向。
+sections:
+  - title: 新功能
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: 2019-06.md
+            html: 2019 年 6 月 Xamarin 文件中的最新動向：已發行的 Xamarin.Forms 4.0、資料與雲端服務更新、API 文件等，現皆位於 docs.microsoft.com 中。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_article.svg'
+              href: 2019-06.md
+            title: 2019 年 6 月
+          - href: 2019-03.md
+            html: 2019 年 3 月 Xamarin 文件中的最新動態：新的快速入門範例與 12 個新的教學課程、Xamarin.Forms 3.6 和 Xamarin.Forms 3.5。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_article.svg'
+              href: 2019-03.md
+            title: 2019 年 3 月
+  - title: 開放原始碼投稿文章
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: 'https://github.com/MicrosoftDocs/xamarin-docs/blob/live/CONTRIBUTING.md'
+            html: 如果您有興趣投稿 Xamarin 的內容，請從此參與者指南開始。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_library.svg'
+              href: 'https://github.com/MicrosoftDocs/xamarin-docs/blob/live/CONTRIBUTING.md'
+            title: 參與者指南
+          - href: 'https://github.com/MicrosoftDocs/xamarin-docs'
+            html: 如果您有任何內容建議或想法，請在文件 GitHub 存放庫中開立新的譯題。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_feedback.svg'
+              href: 'https://github.com/MicrosoftDocs/xamarin-docs'
+            title: Xamarin 文件 GitHub 存放庫
+          - href: 'https://github.com/xamarin/Xamarin.Forms-api-docs'
+            html: 如果您想投稿 Xamarin.Forms API 文件，可以在 Xamarin.Forms API 文件存放庫中進行。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_api-reference.svg'
+              href: 'https://github.com/xamarin/Xamarin.Forms-api-docs'
+            title: Xamarin.Forms API 文件 GitHub 存放庫
+          - href: 'https://github.com/xamarin/apple-api-docs'
+            html: 如果您想投稿 Xamarin.iOS 或 Xamarin.Mac API 文件，可以在 Xamarin.iOS 與 Xamarin.Mac API 文件存放庫中進行。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_api-reference.svg'
+              href: 'https://github.com/xamarin/apple-api-docs'
+            title: Xamarin.iOS 與 Mac API 文件 GitHub 存放庫
+          - href: 'https://github.com/xamarin/android-api-docs'
+            html: 如果您想投稿 Xamarin.Android API 文件，可以在 Xamarin.Android API 文件存放庫中進行。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_api-reference.svg'
+              href: 'https://github.com/xamarin/android-api-docs'
+            title: Xamarin.Android API 文件 GitHub 存放庫
+          - href: 'https://github.com/mono/skiasharp-api-docs'
+            html: 如果您想投稿 SkiaSharp API 文件，可以在 SkiaSharp API 文件存放庫中進行。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_api-reference.svg'
+              href: 'https://github.com/mono/skiasharp-api-docs'
+            title: SkiaSharp API 文件 GitHub 存放庫
+  - title: 產品版本資訊
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: 'https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/'
+            html: 檢視 Xamarin.Forms 的版本資訊。
+            image:
+              src: 'https://docs.microsoft.com/media/logos/logo_xamarin.svg'
+              href: 'https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/'
+            title: Xamarin.Forms
+          - href: 'https://docs.microsoft.com/xamarin/ios/release-notes/'
+            html: 檢視 Xamarin.iOS 的版本資訊。
+            image:
+              src: 'https://docs.microsoft.com/media/logos/logo_ios.svg'
+              href: 'https://docs.microsoft.com/xamarin/ios/release-notes/'
+            title: Xamarin.iOS
+          - href: 'https://docs.microsoft.com/xamarin/android/release-notes/'
+            html: 檢視 Xamarin.Android 的版本資訊。
+            image:
+              src: 'https://docs.microsoft.com/media/logos/logo_android.svg'
+              href: 'https://docs.microsoft.com/xamarin/android/release-notes/'
+            title: Xamarin.Android
+          - href: 'https://docs.microsoft.com/xamarin/mac/release-notes/'
+            html: 檢視 Xamarin.Mac 的版本資訊。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_xplat-code.svg'
+              href: 'https://docs.microsoft.com/xamarin/mac/release-notes/'
+            title: Xamarin.Mac
+          - href: 'https://docs.microsoft.com/xamarin/tools/'
+            html: '檢視 Xamarin 工具的版本資訊，包括 <a href="https://docs.microsoft.com/xamarin/tools/dotnet-embedding/release-notes/">.NET Embedding</a>、<a href="https://docs.microsoft.com/xamarin/tools/inspector/release-notes/">Inspector 及 Workbooks</a>、<a href="https://docs.microsoft.com/xamarin/tools/ios-simulator/release-notes/">Windows 的遠端 iOS 模擬器</a>與 <a href="https://docs.microsoft.com/xamarin/tools/profiler/release-notes/">Profiler</a>。'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_tools.svg'
+              href: 'https://docs.microsoft.com/xamarin/tools/'
+            title: 工具
