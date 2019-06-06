@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 415a888a61b4c4ca9164166aadb1983df2d828dd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 949958387ab710cb671cd9874bb9062227f3e3b8
+ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107335"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394664"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>適用於 Objective-C 開發人員的 Xamarin
 
