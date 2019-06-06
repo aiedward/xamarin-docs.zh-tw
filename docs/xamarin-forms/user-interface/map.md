@@ -7,23 +7,23 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2018
-ms.openlocfilehash: ddc9d18b57eac099331f0814b5963fb207840380
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 166927f2168015cb4786502d841e01b2faeb0c51
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61169564"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66741008"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms 對應
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/WorkingWithMaps/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)
 
 _Xamarin.Forms 會在每個平台上使用原生的對應 Api。_
 
 Xamarin.Forms.Maps 會使用原生的對應 Api，每個平台。 這對於使用者而言，提供快速、 熟悉對應體驗，但表示一些設定步驟所需遵守每個平台 API 的需求。
 設定後，`Map`控制運作方式就像一般的程式碼中的任何其他 Xamarin.Forms 元素。
 
-地圖控制項用於[MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/)範例，如下所示。
+地圖控制項用於[MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)範例，如下所示。
 
  [![MobileCRM 範例中的地圖](map-images/maps-zoom-sml.png "地圖控制項範例")](map-images/maps-zoom.png#lightbox "地圖控制項範例")
 
@@ -298,6 +298,6 @@ MyMap.MoveToRegion(
 
 ## <a name="related-links"></a>相關連結
 
-- [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/)
+- [MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)
 - [對應自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
 - [Xamarin.Forms 範例](https://developer.xamarin.com/samples/xamarin-forms/all/)

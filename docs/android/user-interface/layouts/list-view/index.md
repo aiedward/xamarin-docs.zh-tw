@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: a30256722647bbea482970d0c4a751954810d99e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2560a451f3a6e7dd09b687f9db8c0c070598def6
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61170787"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740652"
 ---
 # <a name="listview"></a>ListView
 
@@ -164,7 +164,7 @@ static readonly string[] countries = new String[] {
 [![範例螢幕擷取畫面的 ListView 國家/地區名稱](images/01-listview-example-sml.png)](images/01-listview-example.png#lightbox)
 
 請注意，使用硬式編碼的字串陣列，不是最佳設計做法。 其中一個用來示範在為了簡單起見，本教學課程 [`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
-小工具。 比較好的作法是參考所定義的外部資源，例如字串陣列`string-array`專案中的資源**Resources/Values/Strings.xml**檔案。 例如: 
+小工具。 比較好的作法是參考所定義的外部資源，例如字串陣列`string-array`專案中的資源**Resources/Values/Strings.xml**檔案。 例如:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -227,15 +227,15 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 
 ## <a name="related-links"></a>相關連結
 
-- [AccessoryViews （範例）](https://developer.xamarin.com/samples/AccessoryViews/)
-- [BasicTableAndroid (sample)](https://developer.xamarin.com/samples/BasicTableAndroid/)
-- [BasicTableAdapter （範例）](https://developer.xamarin.com/samples/BasicTableAdapter/)
-- [BuiltInViews （範例）](https://developer.xamarin.com/samples/BuiltInViews/)
-- [CustomRowView （範例）](https://developer.xamarin.com/samples/CustomRowView/)
-- [FastScroll （範例）](https://developer.xamarin.com/samples/FastScroll/)
-- [SectionIndex （範例）](https://developer.xamarin.com/samples/SectionIndex/)
-- [SimpleCursorTableAdapter (sample)](https://developer.xamarin.com/samples/SimpleCursorTableAdapter/)
-- [CursorTableAdapter （範例）](https://developer.xamarin.com/samples/CursorTableAdapter/)
+- [AccessoryViews （範例）](https://developer.xamarin.com/samples/monodroid/AccessoryViews/)
+- [BasicTableAndroid (sample)](https://developer.xamarin.com/samples/monodroid/BasicTableAndroid/)
+- [BasicTableAdapter （範例）](https://developer.xamarin.com/samples/monodroid/BasicTableAdapter/)
+- [BuiltInViews （範例）](https://developer.xamarin.com/samples/monodroid/BuiltInViews/)
+- [CustomRowView （範例）](https://developer.xamarin.com/samples/monodroid/CustomRowView/)
+- [FastScroll （範例）](https://developer.xamarin.com/samples/monodroid/FastScroll/)
+- [SectionIndex （範例）](https://developer.xamarin.com/samples/monodroid/SectionIndex/)
+- [SimpleCursorTableAdapter (sample)](https://developer.xamarin.com/samples/monodroid/SimpleCursorTableAdapter/)
+- [CursorTableAdapter （範例）](https://developer.xamarin.com/samples/monodroid/CursorTableAdapter/)
 - [活動生命週期教學課程](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [使用資料表和資料格中 （Xamarin.iOS)](~/ios/user-interface/controls/tables/index.md)
 - [ListView 類別參考](https://developer.xamarin.com/api/type/Android.Widget.ListView/)

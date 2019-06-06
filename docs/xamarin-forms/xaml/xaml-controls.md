@@ -8,16 +8,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/03/2019
-ms.openlocfilehash: a8a61ac505eab8c458c49bde9184d6e96583d37f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8217c6436cc8cfe8f4b9c6cc3445157319e8c0bf
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61222417"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66741108"
 ---
 # <a name="xaml-controls"></a>XAML 控制項
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/FormsGallery/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 
 檢視是使用者介面物件，例如標籤、 按鈕和滑桿，一般稱為*控制項*或是*widget*其他圖形化的程式設計環境中。 支援的所有衍生自的 Xamarin.Forms 檢視[ `View` ](xref:Xamarin.Forms.View)類別。
 
@@ -82,6 +82,6 @@ ms.locfileid: "61222417"
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.Forms FormsGallery 範例](https://developer.xamarin.com/samples/FormsGallery/)
+- [Xamarin.Forms FormsGallery 範例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 - [Xamarin.Forms 範例](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms API 文件](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

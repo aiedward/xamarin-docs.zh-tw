@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: ec988508aaff1b433008add0bfbf0f2ad5f2dcf3
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: f9a3f6301005210d221f3223607e82adc0971a32
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970943"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66741023"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/WorkingWithListview)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListview)
 
 [`ListView`](xref:Xamarin.Forms.ListView) 是呈現資料，需要捲動，特別是較長的清單的清單檢視。
 
@@ -62,7 +62,7 @@ ListView 可支援多種互動樣式，包括：
 
 ## <a name="related-links"></a>相關連結
 
-- [使用與 ListView （範例）](https://developer.xamarin.com/samples/WorkingWithListview)
+- [使用與 ListView （範例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListview)
 - [雙向繫結 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
 - [建置在儲存格 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BuiltInCells)
 - [自訂資料格 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)

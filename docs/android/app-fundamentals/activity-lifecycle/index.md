@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 3592a3027469cb9997d973db53d636ddea9e679d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 48ff30397b2592dd2c4dbd445987392d78ced6f3
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61024239"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740771"
 ---
 # <a name="activity-lifecycle"></a>活動開發週期
 
@@ -62,12 +62,12 @@ Android OS 將會進行仲裁活動，根據其狀態。 這有助於識別已�
 
 若要更多複雜，Android 會擲回一個詳細的扳手中的組合，稱為組態變更。 組態變更會快速活動解構/重新 creation 循環時活動的組態變更，例如裝置時，會發生[旋轉](~/android/app-fundamentals/handling-rotation.md)（和活動必須重新取得內建的橫向或縱向模式），會顯示鍵盤 （與活動會提供功能的機會來自行調整大小），或當裝置處於停駐，其他項目。
 
-組態變更仍會導致相同的活動狀態變更期間停止並重新啟動的活動會發生。 不過，為了確保應用程式有回應，並執行也進行組態變更時，務必它們會盡快處理。 因為這個緣故，Android 會提供可用來將狀態保存在組態變更期間的特定 API。
+組態變更仍會導致相同的活動狀態變更期間停止並重新啟動的活動會發生。 不過，為了確保應用程式有回應，並執行也進行組態變更時，請務必盡快處理。 因為這個緣故，Android 會提供可用來將狀態保存在組態變更期間的特定 API。
 我們將討論這稍後[管理狀態在整個生命週期](~/android/app-fundamentals/activity-lifecycle/index.md#Managing_State_Throughout_the_Lifecycle)一節。
 
 ### <a name="activity-lifecycle-methods"></a>活動開發週期方法
 
-Android SDK 和延伸模組，Xamarin.Android framework 會提供功能強大的模型來管理應用程式內的活動狀態。 活動的狀態會變更，活動會由 OS，它會在該活動上呼叫特定方法收到通知。 下圖說明活動開發週期的關聯性中的這些方法：
+Android SDK 和延伸模組，Xamarin.Android framework 會提供功能強大的模型來管理應用程式內的活動狀態。 活動的狀態會變更，活動會由 OS，它會在該活動上呼叫特定方法收到通知。 下圖說明這些方法與活動開發週期：
 
 [![活動生命週期的流程圖](images/image2-sml.png)](images/image2.png#lightbox)
 
@@ -117,7 +117,7 @@ protected override void OnCreate(Bundle bundle)
 系統呼叫[OnResume](https://developer.xamarin.com/api/member/Android.App.Activity.OnResume/)活動時準備好開始與使用者互動。
 活動應該覆寫這個方法，以執行下列工作：
 
--  緩慢增加的畫面播放速率 （遊戲的建置中常見的工作）
+-  緩慢增加的畫面播放速率 （遊戲開發的一般工作）
 -  啟動動畫
 -  接聽 GPS 更新
 -  顯示相關警示或對話方塊
