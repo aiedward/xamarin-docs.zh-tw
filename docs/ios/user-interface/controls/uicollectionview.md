@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: f57f2a2bc17690b7a1e0a72c583b0e94519ca4db
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a93de9d60a515b6089b35a64eb8832c456c96557
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61079201"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827340"
 ---
 # <a name="collection-views-in-xamarinios"></a>在 Xamarin.iOS 中的集合檢視
 
@@ -453,7 +453,7 @@ namespace SimpleCollectionView
 
 在 iOS 9 中，新增 重新排列到集合檢視的最快方式是使用`UICollectionViewController`。
 集合檢視控制器現在已`InstallsStandardGestureForInteractiveMovement`屬性，加入標準*筆勢辨識器*支援拖曳來重新排列集合中的項目。
-因為預設值是`true`，您只需要實作`MoveItem`方法`UICollectionViewDataSource`類別，以支援拖曳來重新排列。 例如: 
+因為預設值是`true`，您只需要實作`MoveItem`方法`UICollectionViewDataSource`類別，以支援拖曳來重新排列。 例如:
 
 ```csharp
 public override void MoveItem (UICollectionView collectionView, NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath)
@@ -693,7 +693,7 @@ namespace CollectionView
 
 儲存您的 ui 所做的變更，並執行應用程式。
 如果使用者從清單中選取項目，並將它拖曳至新位置，其他項目會以動畫顯示自動的方式移動的項目。
-當使用者在新位置放開項時，它會留在那裡至該位置。 例如: 
+當使用者在新位置放開項時，它會留在那裡至該位置。 例如:
 
 [![](uicollectionview-images/intro01.png "舉例來說，將項目拖曳至新位置")](uicollectionview-images/intro01.png#lightbox)
 
@@ -701,7 +701,7 @@ namespace CollectionView
 
 ### <a name="using-a-custom-gesture-recognizer"></a>使用自訂的筆勢辨識器
 
-在無法使用的情況下`UICollectionViewController`，而且必須使用一般`UIViewController`，或者如果您想要進一步控制拖放手勢，您可以建立您自己自訂的筆勢辨識器，並將它新增至集合檢視，檢視載入時。 例如：
+在無法使用的情況下`UICollectionViewController`，而且必須使用一般`UIViewController`，或者如果您想要進一步控制拖放手勢，您可以建立您自己自訂的筆勢辨識器，並將它新增至集合檢視，檢視載入時。 例如:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -1299,6 +1299,6 @@ public override void AwakeFromNib ()
 
 - [iOS 9 範例](https://developer.xamarin.com/samples/ios/iOS9/)
 - [集合檢視範例](https://developer.xamarin.com/samples/monotouch/ios9/CollectionView/)
-- [SimpleCollectionView （範例）](https://developer.xamarin.com/samples/SimpleCollectionView/)
+- [SimpleCollectionView （範例）](https://developer.xamarin.com/samples/monotouch/SimpleCollectionView/)
 - [事件、通訊協定與委派](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 - [使用資料表和資料格](~/ios/user-interface/controls/tables/index.md)

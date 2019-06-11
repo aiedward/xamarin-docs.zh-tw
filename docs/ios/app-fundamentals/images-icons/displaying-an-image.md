@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: 69952b0bac884fe8b14edcbb87aa8fad47594880
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6d584c45288d7e7341a4423c32a6966c6c7f21f3
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61251925"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827908"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>在 Xamarin.iOS 中顯示影像
 
@@ -207,7 +207,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage");
 TabBarItem.Image = UIImage.FromBundle ("MyImage");
 ```
 
-任何其他映像格式的名稱包含副檔名。 例如: 
+任何其他映像格式的名稱包含副檔名。 例如:
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
@@ -289,6 +289,6 @@ View.AddSubview (imageView);
 
 ## <a name="related-links"></a>相關連結
 
-- [使用映像 （範例）](https://developer.xamarin.com/samples/WorkingWithImages/)
+- [使用映像 （範例）](https://developer.xamarin.com/samples/monotouch/WorkingWithImages/)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
 - [映像大小和解析度 (Apple)](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/)

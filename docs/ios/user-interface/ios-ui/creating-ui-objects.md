@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: c24b2c2f0742ee2c6814d9821f3c0603c6e48a96
-ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
+ms.openlocfilehash: 65ebbddfa1a315a478ceb43162b3c80eba2d8cc1
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65804921"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827797"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>在 Xamarin.iOS 中建立使用者介面物件
 
@@ -32,7 +32,7 @@ using UIKit;
 -  **Xcode 的 Interface Builder** – 將控制項拖曳到您的畫面版面配置的 Interface Builder。 在 Xcode 中開啟的分鏡腳本或 XIB 檔案中的檔案上按一下滑鼠右鍵**Solution Pad** ，然後選擇**開啟 > Xcode Interface Builder**。
 -  **使用C#**  – 控制項可以也以程式設計方式建構程式碼並加入至檢視階層。
 
-您可以加入 iOS 專案上按一下滑鼠右鍵，然後選擇新的分鏡腳本和 XIB 檔案**新增 > 新增檔案...**.
+您可以加入 iOS 專案上按一下滑鼠右鍵，然後選擇新的分鏡腳本和 XIB 檔案**新增 > 新增檔案...** .
 
 無論您使用，哪種方法的控制項屬性和事件仍然可操作與C#應用程式邏輯中。
 
@@ -173,4 +173,4 @@ public override void ViewDidLoad () {
 
 ## <a name="related-links"></a>相關連結
 
-- [控制項 （範例）](https://developer.xamarin.com/samples/Controls/)
+- [控制項 （範例）](https://developer.xamarin.com/samples/monotouch/Controls/)

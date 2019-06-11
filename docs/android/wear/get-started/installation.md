@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 96fd6d32f37dd90422f05caf33cfda9a65683fd2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0bae98a204ba3478834894d6c093259a8b2139b2
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61308007"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827725"
 ---
 # <a name="setup-and-installation"></a>設定與安裝
 
@@ -123,4 +123,4 @@ Android wear 應用程式一律會使用隨附的 Android 手機應用程式散�
 
 ## <a name="related-links"></a>相關連結
 
-- [SkeletonWear （範例）](https://developer.xamarin.com/samples/SkeletonWear/)
+- [SkeletonWear （範例）](https://developer.xamarin.com/samples/monodroid/wear/SkeletonWear/)

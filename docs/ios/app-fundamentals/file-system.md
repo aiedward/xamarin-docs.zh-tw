@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/12/2018
-ms.openlocfilehash: 09e05fcfe10a994e14aa605b203ea67efae80d62
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 10f4f53e71a47521076538bf9eb12b86c1e478a6
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61393560"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827512"
 ---
 # <a name="file-system-access-in-xamarinios"></a>在 Xamarin.iOS 中的檔案系統存取
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/FileSystemSampleCode/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/monotouch/FileSystemSampleCode/)
 
 您可以使用 Xamarin.iOS 和`System.IO`中的類別 *.NET 基底類別庫 (BCL)* 存取 iOS 檔案系統。 `File` 類別可讓您建立、刪除和讀取檔案，而 `Directory` 類別可讓您建立、刪除或列舉目錄內容。 您也可以使用`Stream`子類別，其可提供更高的控制檔案作業 （例如壓縮或位置搜尋檔案中）。
 
@@ -356,6 +356,6 @@ Console.WriteLine ("Group Path: " + appGroupContainerPath);
 
 ## <a name="related-links"></a>相關連結
 
-- [檔案系統的範例程式碼](https://developer.xamarin.com/samples/FileSystemSampleCode/)
+- [檔案系統的範例程式碼](https://developer.xamarin.com/samples/monotouch/FileSystemSampleCode/)
 - [檔案系統程式設計指南](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/Introduction/Introduction.html)
 - [註冊檔案類型的應用程式支援](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html#/apple_ref/doc/uid/TP40010411-SW1)

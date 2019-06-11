@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 08ccd5b5ac78e82bf745764d70e59d2db9ec6776
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4548f74495ff7ed8ef07d31cdb3f1370c5275dd4
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61185019"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827890"
 ---
 # <a name="social-framework-in-xamarinios"></a>在 Xamarin.iOS 中的社交架構
 
@@ -301,7 +301,7 @@ request.PerformRequest ((data, response, error) => {
 
 社交架構為統一的 API 來存取多個社交網路設計，程式碼保持幾乎完全相同，不論所使用的社交網路。
 
-比方說，`SLComposeViewController`可以用完全相同 Twitter 先前範例所示，唯一差別切換到 Facebook 特有的設定和選項。 例如：
+比方說，`SLComposeViewController`可以用完全相同 Twitter 先前範例所示，唯一差別切換到 Facebook 特有的設定和選項。 例如:
 
 ```csharp
 using System;
@@ -476,5 +476,5 @@ accountStore.RequestAccess (accountType, options, (granted, error) => {
 
 ## <a name="related-links"></a>相關連結
 
-- [SocialFrameworkDemo （範例）](https://developer.xamarin.com/samples/SocialFrameworkDemo/)
+- [SocialFrameworkDemo （範例）](https://developer.xamarin.com/samples/monotouch/SocialFrameworkDemo/)
 - [Web 服務簡介](~/cross-platform/data-cloud/web-services/index.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: d5dda3cc22d91248cc31cc526e898a5eabbbefd0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 982f19eef7b98a05535298430bdfdbe6e54bac10
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61415385"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827454"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>適用於 Xamarin.iOS MonoTouch.Dialog 簡介
 
@@ -116,7 +116,7 @@ A *RootElement*是進入 DVC 之項目的最上層的容器。 它包含區段�
 
  [![](images/image4.png "此螢幕擷取畫面顯示在左側的資料表，以包含在右側，甜點，以及所選的沙漠值的詳細資料畫面的標題儲存格")](images/image4.png#lightbox) [![](images/image5.png "這以下螢幕擷取畫面顯示在左邊的資料表，以包含在右側，甜點，以及所選的沙漠值的詳細資料畫面的標題儲存格")](images/image5.png#lightbox)
 
-根項目也可用在區段內以觸發 載入新的巢狀的組態頁面上，如上所示。 在此模式中使用時提供的標題會用來轉譯區段內而，也會用於為標題子頁。 例如: 
+根項目也可用在區段內以觸發 載入新的巢狀的組態頁面上，如上所示。 在此模式中使用時提供的標題會用來轉譯區段內而，也會用於為標題子頁。 例如:
 
 ```csharp
 var root = new RootElement ("Meals") {
@@ -587,8 +587,6 @@ public override Source CreateSizingSource (bool unevenRows)
 
 ## <a name="related-links"></a>相關連結
 
-- [螢幕錄製影片-Miguel de Icaza 建立 iOS 登入畫面 MonoTouch.Dialog](http://youtu.be/3butqB1EG0c)
-- [螢幕錄製影片-輕鬆地建立 iOS 使用者介面與 MonoTouch.Dialog](http://youtu.be/j7OC5r8ZkYg)
 - [逐步解說：使用元素 API 建立應用程式](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [逐步解說：使用反射 API 建立應用程式](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [逐步解說：若要建立使用者介面中使用 JSON 元素](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
