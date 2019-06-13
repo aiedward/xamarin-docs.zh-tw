@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 512280e9c298cfbcea6f693b0691236fd1cf5a5f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: becdd842f46cc7100bd7d9a6fd7347b541685c35
+ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036469"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67039628"
 ---
 # <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>在 Xamarin.iOS 中 NSObject 的泛型子
 
@@ -107,7 +107,7 @@ class Generic<T, U> : NSObject where T: NSObject
 
 此類別定義中，公開 （expose） 的建構函式，請考慮`IntPtr`(建構的 Xamarin.iOS 方法C#物件的原生 OBJECTIVE-C 執行個體):
     
-```
+```csharp
 class Generic<T> : NSObject where T : NSObject
 {
     public Generic () {}
@@ -119,9 +119,9 @@ class Generic<T> : NSObject where T : NSObject
 
 這是因為 Objective C 並沒有泛型型別的概念，而且不能指定確切的泛型型別來建立。
 
-這個問題可以解決藉由建立泛型類型的特定子類別。   例如: 
+這個問題可以解決藉由建立泛型類型的特定子類別。   例如:
     
-```
+```csharp
 class Generic<T> : NSObject where T : NSObject
 {
     public Generic () {}

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 2ac828c8efca3a1a5c54d4dcdaf175ebfc63fdc2
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: fac19cd7273b5b396946fc1867049db19348c853
+ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827300"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67039675"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>建立 Xamarin.iOS 應用程式使用反映 API
 
@@ -42,19 +42,19 @@ MTD Xamarin.iOS 一起散發。 若要使用它，以滑鼠右鍵按一下**參�
 ```csharp
 public class Expense
 {
-        [Section("Expense Entry")]
+    [Section("Expense Entry")]
 
-        [Entry("Enter expense name")]
-        public string Name;
+    [Entry("Enter expense name")]
+    public string Name;
         
-        [Section("Expense Details")]
+    [Section("Expense Details")]
   
-        [Caption("Description")]
-        [Entry]
-        public string Details;
+    [Caption("Description")]
+    [Entry]
+    public string Details;
         
-        [Checkbox]
-        public bool IsApproved = true;
+    [Checkbox]
+    public bool IsApproved = true;
 }
 ```
 
@@ -79,20 +79,18 @@ var bctx = new BindingContext (null, expense, "Create a task");
 ```csharp
 UIWindow window;
 
-public override bool FinishedLaunching (UIApplication app, 
-        NSDictionary options)
-{
-   
-        window = new UIWindow (UIScreen.MainScreen.Bounds);
+public override bool FinishedLaunching (UIApplication app, NSDictionary options)
+{   
+    window = new UIWindow (UIScreen.MainScreen.Bounds);
             
-        var expense = new Expense ();
-        var bctx = new BindingContext (null, expense, "Create a task");
-        var dvc = new DialogViewController (bctx.Root);
+    var expense = new Expense ();
+    var bctx = new BindingContext (null, expense, "Create a task");
+    var dvc = new DialogViewController (bctx.Root);
             
-        window.RootViewController = dvc;
-        window.MakeKeyAndVisible ();
+    window.RootViewController = dvc;
+    window.MakeKeyAndVisible ();
             
-        return true;
+    return true;
 }
 ```
 
@@ -116,17 +114,17 @@ window.RootViewController = nav;
 ```csharp
 public enum Category
 {
-        Travel,
-        Lodging,
-        Books
+    Travel,
+    Lodging,
+    Books
 }
         
 public class Expense
 {
-        …
+    …
 
-        [Caption("Category")]
-        public Category ExpenseCategory;
+    [Caption("Category")]
+    public Category ExpenseCategory;
 }
 ```
 
