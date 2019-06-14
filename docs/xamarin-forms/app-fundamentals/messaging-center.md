@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 6b1df62aec12c1c34d49bd6dfa16368a6b0092f9
-ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
+ms.openlocfilehash: b6e68f6b99803edd8d50a172d598a3410aa1bbf4
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59574724"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740755"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/UsingMessagingCenter)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/UsingMessagingCenter)
 
 _Xamarin.Forms 包含簡易傳訊服務，可傳送與接收訊息。_
 
@@ -37,7 +37,7 @@ _Xamarin.Forms 包含簡易傳訊服務，可傳送與接收訊息。_
 
 `MessagingCenter` 是靜態類別，具有 `Subscribe` 和 `Send` 方法，他們會用於整個解決方案。
 
-訊息有 `message` 參數字串，用來為訊息「定址」。 `Subscribe` 與 `Send` 方法會使用泛型參數進一步控制訊息的傳遞方式，`message` 文字相同但泛型型別引數不同的兩則訊息並不會傳遞給同一位訂閱者。
+訊息有 `message` 參數字串，用來為訊息「定址」  。 `Subscribe` 與 `Send` 方法會使用泛型參數進一步控制訊息的傳遞方式，`message` 文字相同但泛型型別引數不同的兩則訊息並不會傳遞給同一位訂閱者。
 
 `MessagingCenter` 的 API 很簡單：
 
@@ -60,7 +60,7 @@ _Xamarin.Forms 包含簡易傳訊服務，可傳送與接收訊息。_
 
 ### <a name="simple-string-message"></a>簡易字串訊息
 
-最簡易的訊息就是只在 `message` 參數中包含字串。 「接聽」簡易字串訊息的 `Subscribe` 方法如下所示，請注意指定傳送者的泛型型別需為 `MainPage` 類別。 解決方案中的所有類別都可使用此語法訂閱訊息：
+最簡易的訊息就是只在 `message` 參數中包含字串。 「接聽」  簡易字串訊息的 `Subscribe` 方法如下所示，請注意指定傳送者的泛型型別需為 `MainPage` 類別。 解決方案中的所有類別都可使用此語法訂閱訊息：
 
 ```csharp
 MessagingCenter.Subscribe<MainPage> (this, "Hi", (sender) => {
@@ -68,13 +68,13 @@ MessagingCenter.Subscribe<MainPage> (this, "Hi", (sender) => {
 });
 ```
 
-在 `MainPage` 類別中，下列程式碼會「傳送」訊息。 `this` 參數是 `MainPage` 的執行個體。
+在 `MainPage` 類別中，下列程式碼會「傳送」  訊息。 `this` 參數是 `MainPage` 的執行個體。
 
 ```csharp
 MessagingCenter.Send<MainPage> (this, "Hi");
 ```
 
-字串不會變更，其表示「訊息類別」，並用來決定要通知的訂閱者。 這類訊息用來指出發生了某些事件，例如「已完成上傳」，而不需深入資訊。
+字串不會變更，其表示「訊息類別」  ，並用來決定要通知的訂閱者。 這類訊息用來指出發生了某些事件，例如「已完成上傳」，而不需深入資訊。
 
 ### <a name="passing-an-argument"></a>傳遞引數
 
@@ -113,6 +113,6 @@ MessagingCenter 是降低結合程度 (特別是檢視模型之間) 的簡易方
 
 ## <a name="related-links"></a>相關連結
 
-- [MessagingCenterSample](https://developer.xamarin.com/samples/UsingMessagingCenter)
+- [MessagingCenterSample](https://developer.xamarin.com/samples/xamarin-forms/UsingMessagingCenter)
 - [Xamarin.Forms 範例](https://github.com/xamarin/xamarin-forms-samples)
 - [在相依性低的元件之間通訊](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md)

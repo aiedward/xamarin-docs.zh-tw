@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 7a273d43ce43ca2946e1ff3177fc4575cd92a534
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 901bf683f59574d71c035b9635abaa3441152252
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050604"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66741053"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 觸發程序
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/WorkingWithTriggers)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithTriggers)
 
 觸發程序可讓您用 XAML 以宣告方式表達動作，根據事件或屬性變更改變控制項的外觀。
 
@@ -266,8 +266,8 @@ XAML 如下所示。 請注意第一個多重觸發程序範例的下列差異�
 </Button>
 ```
 
-這些螢幕擷取畫面顯示上述兩個多重觸發程序範例之間的差異。 在畫面頂端的文字輸入，只需要有一個 `Entry` 即可啟用 [儲存] 按鈕。
-在畫面底部，[登入] 按鈕保持非使用中，直到兩個欄位都包含資料為止。
+這些螢幕擷取畫面顯示上述兩個多重觸發程序範例之間的差異。 在畫面頂端的文字輸入，只需要有一個 `Entry` 即可啟用 [儲存]  按鈕。
+在畫面底部，[登入]  按鈕保持非使用中，直到兩個欄位都包含資料為止。
 
 ![](triggers-images/multi-requireall.png "MultiTrigger 範例")
 
@@ -277,7 +277,7 @@ XAML 如下所示。 請注意第一個多重觸發程序範例的下列差異�
 
 另一種在觸發程序發生時實作變更的方法，是藉由新增 `EnterActions` 和 `ExitActions` 集合，並指定 `TriggerAction<T>` 實作。
 
-您可以「同時」在觸發程序中提供 `EnterActions` 和 `ExitActions`，以及 `Setter`；但請注意，`Setter` 會立即呼叫 (其不會等待 `EnterAction` 或 `ExitAction` 完成)。 或者，您可以在程式碼中執行一切，完全不使用 `Setter`。
+您可以「同時」在觸發程序中  提供 `EnterActions` 和 `ExitActions`，以及 `Setter`；但請注意，`Setter` 會立即呼叫 (其不會等待 `EnterAction` 或 `ExitAction` 完成)。 或者，您可以在程式碼中執行一切，完全不使用 `Setter`。
 
 ```xaml
 <Entry Placeholder="enter job title">
@@ -333,5 +333,5 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 
 ## <a name="related-links"></a>相關連結
 
-- [觸發程序範例](https://developer.xamarin.com/samples/WorkingWithTriggers)
+- [觸發程序範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithTriggers)
 - [Xamarin.Forms API 文件](xref:Xamarin.Forms.TriggerAction`1)

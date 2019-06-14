@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: 07f1fbae6c4fbfcfad45fc96970339e34b5de040
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3f22556948fc87dc604870f5a8625b80a4a0b29d
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102837"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827195"
 ---
 # <a name="linking-on-android"></a>在 Android 上連結
 
-Xamarin.Android 應用程式會使用「連結器」來縮小應用程式的大小。 連結器會採用您應用程式的靜態分析來判斷實際使用到的組件、類型及成員。 連結器然後會像「記憶體回收行程」一樣，持續尋找參考的組件、類型及成員，直到整個參考組件、類型及成員終止為止。 然後，所有在此終止之外的項目便會遭到「捨棄」。
+Xamarin.Android 應用程式會使用「連結器」  來縮小應用程式的大小。 連結器會採用您應用程式的靜態分析來判斷實際使用到的組件、類型及成員。 連結器然後會像「記憶體回收行程」  一樣，持續尋找參考的組件、類型及成員，直到整個參考組件、類型及成員終止為止。 然後，所有在此終止之外的項目便會遭到「捨棄」  。
 
-例如，[Hello, Android](https://developer.xamarin.com/samples/HelloM4A/) 範例：
+例如，[Hello, Android](https://developer.xamarin.com/samples/monodroid/HelloM4A/) 範例：
 
 |Configuration|1.2.0 大小|4.0.1 大小|
 |---|---|---|
@@ -30,7 +30,7 @@ Xamarin.Android 應用程式會使用「連結器」來縮小應用程式的大�
 
 ## <a name="control"></a>控制項
 
-連結乃根據「靜態分析」(。 因此，無法偵測相依於執行階段環境的任何項目：
+連結乃根據「靜態分析」(  。 因此，無法偵測相依於執行階段環境的任何項目：
 
 ```csharp
 // To play along at home, Example must be in a different assembly from MyActivity.
@@ -53,21 +53,21 @@ public class MyActivity {
 
 ### <a name="linker-behavior"></a>連結器行為
 
-控制連結器的主要機制位於 [專案選項] 對話方塊中的 [連結器行為] (Visual Studio 中的 [連結]) 下拉式功能表。 有三種選項：
+控制連結器的主要機制位於 [專案選項]  對話方塊中的 [連結器行為]  (Visual Studio 中的 [連結]  ) 下拉式功能表。 有三種選項：
 
-1.  **不要連結** (Visual Studio 中的 [無])
-1.  **連結 SDK 組件** (僅 SDK 組件)
-1.  []**連結所有組件** (SDK 及使用者組件)
+1.  **不要連結** (Visual Studio 中的 [無]  )
+1.  **連結 SDK 組件** (僅 SDK 組件) 
+1.  []**連結所有組件** (SDK 及使用者組件) 
 
 
-[不要連結] 選項會關閉連結器，上述「沒有連結的版本」應用程式大小範例便使用了這項行為。 這在針對執行階段進行疑難排解失敗時非常有用，可查看問題是否出於連結器。 這項設定通常不建議用於正式版本。
+[不要連結]  選項會關閉連結器，上述「沒有連結的版本」應用程式大小範例便使用了這項行為。 這在針對執行階段進行疑難排解失敗時非常有用，可查看問題是否出於連結器。 這項設定通常不建議用於正式版本。
 
-[連結 SDK 組件] 選項只會連結 [Xamarin.Android 隨附的組件](~/cross-platform/internals/available-assemblies.md)。
+[連結 SDK 組件]  選項只會連結 [Xamarin.Android 隨附的組件](~/cross-platform/internals/available-assemblies.md)。
 所有其他的組件 (例如您的程式碼) 皆不會連結。
 
-[連結所有組件] 選項會連結所有組件，表示若您的程式碼沒有靜態參考，也可能會遭到移除。
+[連結所有組件]  選項會連結所有組件，表示若您的程式碼沒有靜態參考，也可能會遭到移除。
 
-上述範例若選取 [不要連結] 與 [連結 SDK 組件] 選項皆可以正常運作，但若選取 [連結所有組件] 便會失敗，並產生下列錯誤：
+上述範例若選取 [不要連結]  與 [連結 SDK 組件]  選項皆可以正常運作，但若選取 [連結所有組件]  便會失敗，並產生下列錯誤：
 
 ```shell
 E/mono    (17755): [0xafd4d440:] EXCEPTION handling: System.MissingMethodException: Default constructor not found for type ExampleLibrary.Example.
@@ -90,7 +90,7 @@ E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-
 
 ### <a name="preserving-code"></a>保留程式碼
 
-連結器有時候會移除您想要保留的程式碼。 例如: 
+連結器有時候會移除您想要保留的程式碼。 例如：
 
 -   您也有可能會透過 `System.Reflection.MemberInfo.Invoke` 動態呼叫程式碼。
 
@@ -177,7 +177,7 @@ class MyActivity {
 
 ### <a name="linkskip"></a>linkskip
 
-您也可以指定一組使用者提供的組件完全不進行連結，同時透過利用 [AndroidLinkSkip MSBuild 屬性](~/android/deploy-test/building-apps/build-process.md)允許其他使用者組件使用「連結 SDK 組件」行為來跳過：
+您也可以指定一組使用者提供的組件完全不進行連結，同時透過利用 [AndroidLinkSkip MSBuild 屬性](~/android/deploy-test/building-apps/build-process.md)允許其他使用者組件使用「連結 SDK 組件」  行為來跳過：
 
 ```xml
 <PropertyGroup>

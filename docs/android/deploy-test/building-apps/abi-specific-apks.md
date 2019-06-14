@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: d5d4274adad64e8555659645533a8e58b845bfa7
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: b34ac82cf240b892e60707d76c82da64ff232a20
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667902"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827421"
 ---
 # <a name="building-abi-specific-apks"></a>建置特定 ABI 的 APK
 
@@ -33,7 +33,7 @@ _本文將討論如何使用 Xamarin.Android 建置瞄準單一 ABI 的 APK。_
 
 本指南會說明如何編寫指令碼為 Xamarin.Android 應用程式建置多重 APK，並使每個 APK 都瞄準特定的 ABI。 它涵蓋了下列主題：
 
-1.  為 APK 建立唯一的「版本代碼」。
+1.  為 APK 建立唯一的「版本代碼」  。
 1.  建立會用於此 APK 的 **AndroidManifest.XML** 暫存版本。
 1.  使用先前步驟中的 **AndroidManifest.XML** 來建置應用程式。
 1.  透過簽署及 Zipalign 來準備 APK。
@@ -185,6 +185,6 @@ Rake 工作完成之後，便會有三個 `bin` 資料夾，以及一個 `xamari
 
 ## <a name="related-links"></a>相關連結
 
-- [OneABIPerAPK (範例)](https://developer.xamarin.com/samples/OneABIPerAPK/)
+- [OneABIPerAPK (範例)](https://developer.xamarin.com/samples/monodroid/OneABIPerAPK/)
 - [發行應用程式](~/android/deploy-test/publishing/index.md)
 - [Google Play 的多重 APK 支援](https://developer.android.com/google/play/publishing/multiple-apks.html) ()
