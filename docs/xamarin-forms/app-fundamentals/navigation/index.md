@@ -7,18 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: f67ab15466da118d12c280d597972d2d11f8e600
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.openlocfilehash: 682e3bd0ac4cdd651203496dd28586db2cef3165
+ms.sourcegitcommit: c2bba24233624c2ec0e9ee9827310ca022212a2c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66178109"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66835269"
 ---
 # <a name="xamarinforms-navigation"></a>Xamarin.Forms 導覽
 
 _Xamarin.Forms 會根據使用的頁面類型，提供多種不同的網頁導覽體驗。_
 
 ![](images/page-types.png "Xamarin.Forms 頁面類型")
+
+或者，Xamarin.Forms Shell 應用程式使用以 URI 為基礎的瀏覽體驗，該體驗不會強制執行一組瀏覽階層集合。 如需詳細資訊，請參閱 [Xamarin.Forms Shell 導覽](~/xamarin-forms/app-fundamentals/shell/navigation.md)。
 
 ## <a name="hierarchical-navigationhierarchicalmd"></a>[階層式導覽](hierarchical.md)
 
