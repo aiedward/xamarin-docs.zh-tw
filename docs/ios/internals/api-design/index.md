@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
+ms.openlocfilehash: 9425b26b5cc8fcd9b8a80df422d932c96d52889b
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037435"
 ---
-
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API 設計
 
 除了基底類別庫屬於 Mono 的核心[Xamarin.iOS](http://www.xamarin.com/iOS)隨附於適用於各種不同的 iOS Api 可讓開發人員建立與 Mono 的原生 iOS 應用程式的繫結。
@@ -80,7 +85,7 @@ Xamarin.iOS 包含組成組件數*Xamarin.iOS 設定檔*。 [組件](~/cross-pla
 
 #### <a name="objcruntime"></a>ObjCRuntime
 
-[ObjCRuntime](https://developer.xamarin.com/api/namespace/ObjCRuntime/)命名空間可讓開發人員世界連接在 C# 與 OBJECTIVE-C 之間
+[ObjCRuntime](xref:ObjCRuntime)命名空間可讓開發人員世界連接在 C# 與 OBJECTIVE-C 之間
 這是新的繫結，專為 iOS，根據與 Cocoa # Gtk # 經驗而設計。
 
 <a name="MonoTouch.Foundation" />
@@ -201,13 +206,13 @@ C# 委派會提供適用於一般作業。 請參閱[委派](#Delegates)節的�
 
 #### <a name="opengles"></a>OpenGLES
 
-OpenGLES，對於我們發佈[修改版本](https://developer.xamarin.com/api/namespace/OpenTK/)的[OpenTK](http://www.opentk.com/)已修改成使用 CoreGraphics 資料類型和結構的 OpenGL 的物件導向繫結，以及只公開的 API在 iOS 上可用的功能。
+OpenGLES，對於我們發佈[修改版本](xref:OpenTK)的[OpenTK](http://www.opentk.com/)已修改成使用 CoreGraphics 資料類型和結構的 OpenGL 的物件導向繫結，以及只公開的 API在 iOS 上可用的功能。
 
-OpenGLES 1.1 功能是透過 ES11.GL 類型，記載[此處](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES11.GL/)型別。
+OpenGLES 1.1 功能是透過 ES11.GL 類型，記載[此處](xref:OpenTK.Graphics.ES11.GL)型別。
 
-OpenGLES 2.0 功能是透過 ES20.GL 類型，記載[此處](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES20.GL/)型別。
+OpenGLES 2.0 功能是透過 ES20.GL 類型，記載[此處](xref:OpenTK.Graphics.ES20.GL)型別。
 
-OpenGLES 3.0 功能是透過 ES30.GL 類型，記載[此處](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES30.GL/)型別。
+OpenGLES 3.0 功能是透過 ES30.GL 類型，記載[此處](xref:OpenTK.Graphics.ES30.GL)型別。
 
 
 ### <a name="binding-design"></a>繫結設計
@@ -374,7 +379,7 @@ web.Delegate = new Notifier ();
 除了強型別屬性，還有弱式的具型別的的委派，讓開發人員所需時以不同的方式繫結項目。
 強型別 everywhere`Delegate`屬性會公開在 Xamarin.iOS 的繫結，對應`WeakDelegate`也會公開屬性。
 
-使用時`WeakDelegate`，您必須負責適當地裝飾類別使用[匯出](xref:Foundation.ExportAttribute)屬性來指定選取器。 例如: 
+使用時`WeakDelegate`，您必須負責適當地裝飾類別使用[匯出](xref:Foundation.ExportAttribute)屬性來指定選取器。 例如：
 
 ```csharp
 class Notifier : NSObject  {
@@ -619,7 +624,7 @@ UITextField UserName {
 
 Objective C 程式設計的核心概念是選取器。 您通常會遇到需要您將選取器，或需要您的程式碼來回應選取器 Api。
 
-在 C# 中建立新的選取器是很簡單 – 您剛建立的新執行個體`ObjCRuntime.Selector`類別，並在需要它的 API 中的任何位置使用的結果。 例如: 
+在 C# 中建立新的選取器是很簡單 – 您剛建立的新執行個體`ObjCRuntime.Selector`類別，並在需要它的 API 中的任何位置使用的結果。 例如：
 
 ```csharp
 var selector_add = new Selector ("add:plus:");

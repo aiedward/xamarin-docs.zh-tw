@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: c409fcc018379401c1ab40573495da12a8220c5a
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 267c465fbc10468e70e39831e4f47a4a87f36d00
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233662"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66353992"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>IOS 的 Xamarin 設計工具中的自訂控制項
 
@@ -159,7 +159,7 @@ public class DesignerAwareLabel : UILabel, IComponent {
 
     public override void AwakeFromNib ()
     {
-        if (Site != null &amp;&amp; Site.DesignMode)
+        if (Site != null && Site.DesignMode)
             Text = "Design Mode";
         else
             Text = "Runtime";

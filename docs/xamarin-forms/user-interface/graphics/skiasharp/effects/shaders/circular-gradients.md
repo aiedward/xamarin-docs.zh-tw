@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: a17ddf438856600870c9bb3da60a5f4667128d57
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61218112"
 ---
 # <a name="the-skiasharp-circular-gradients"></a>SkiaSharp 循環的漸層
 
@@ -140,7 +140,7 @@ public partial class RadialGradientPage : ContentPage
 
 [![放射狀漸層](circular-gradients-images/RadialGradient.png "放射狀漸層")](circular-gradients-images/RadialGradient-Large.png#lightbox)
 
-在所有三個情況下，漸層填滿畫布。 在左側的 [iOS] 畫面上超過 radius 漸層會繼續進行最後的色彩為白色。 所產生的`SKShaderTileMode.Clamp`。 Android 的畫面會顯示的效果`SKShaderTileMode.Repeat`： 從中心在 100 像素，漸層重新開始的第一個色彩，也就是黑色。 漸層會重複半徑的每個 100 像素。 
+在所有三個情況下，漸層填滿畫布。 在左側的 [iOS] 畫面上超過 radius 漸層會繼續進行最後的色彩為白色。 所產生的`SKShaderTileMode.Clamp`。 Android 的畫面會顯示的效果`SKShaderTileMode.Repeat`:從中心的 100 個像素，漸層開始一次的第一個色彩，也就是黑色。 漸層會重複半徑的每個 100 像素。 
 
 在右側顯示的 [通用 Windows 平台] 畫面如何`SKShaderTileMode.Mirror`造成的漸層來替代指示。 第一個漸層是從中央黑色到白色，在 100 像素為單位的半徑。 下一步是從 100 像素 radius 為黑色 200 像素半徑，在白色與下一個漸層會反轉一次。
 

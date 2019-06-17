@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: 8e466c80468551f8262cfe49556d9527a147de4c
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: 67b189254cc08fac0323b7df5fcbab5abd994c05
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61078202"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms 快速入門深入探討
 
@@ -80,6 +80,7 @@ Visual Studio 會將程式碼組織成「方案」和「專案」。 方案是�
 - **Models\Note.cs** – 這個類別會定義`Note`其執行個體會將每個提示的相關資料儲存在應用程式的模型。
 - **App.xaml** - `App` 類別的 XAML 標記，可定義應用程式的資源字典。
 - **App.xaml.cs** - `App` 類別的程式碼後置，負責將應用程式在每個平台上顯示的第一個頁面初始化，以及處理應用程式生命週期事件。
+- **AssemblyInfo.cs** – 這個檔案包含有關專案中，組件層級套用的應用程式屬性。
 - **NotesPage.xaml** – XAML 標記`NotesPage`類別，定義應用程式啟動時所顯示之頁面的 UI。
 - **NotesPage.xaml.cs** – 程式碼後置`NotesPage`類別，其中包含使用者與頁面互動時所執行的商務邏輯。
 - **NoteEntryPage.xaml** – XAML 標記`NoteEntryPage`類別，定義當使用者輸入的附註所顯示之頁面的 UI。
@@ -106,9 +107,7 @@ Xamarin.Forms 應用程式的架構方式與傳統的跨平台應用程式相同
 
 ```csharp
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Notes
 {
     public partial class App : Application
@@ -123,7 +122,17 @@ namespace Notes
 }
 ```
 
-此程式碼會設定`MainPage`的屬性`App`類別，即可[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)執行個體，其內容是`NotesPage`執行個體。 此外，[`XamlCompilation`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) 屬性還會開啟 XAML 編譯器，以便將 XAML 直接編譯成中繼語言。 如需詳細資訊，請參閱 [XAML 編譯](~/xamarin-forms/xaml/xamlc.md)。
+此程式碼會設定`MainPage`的屬性`App`類別，即可[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)執行個體，其內容是`NotesPage`執行個體。
+
+颾魤 ㄛ **AssemblyInfo.cs**檔案包含組件層級套用單一應用程式屬性：
+
+```csharp
+using Xamarin.Forms.Xaml;
+
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+```
+
+[ `XamlCompilation` ](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute)屬性還會開啟 XAML 編譯器，使 XAML 直接編譯成中繼語言。 如需詳細資訊，請參閱 [XAML 編譯](~/xamarin-forms/xaml/xamlc.md)。
 
 ## <a name="launching-the-application-on-each-platform"></a>啟動每個平台上的應用程式
 
@@ -353,7 +362,7 @@ public App ()
 }
 ```
 
-所有 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體都有一個可公開方法的 [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 屬性，以修改頁面堆疊。 只有在應用程式包含 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 時，才會叫用這些方法。 若要導覽至 `NoteEntryPage`，必須叫用 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)) 方法，如下列程式碼範例所示：
+所有 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體都有一個可公開方法的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 屬性，以修改頁面堆疊。 只有在應用程式包含 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 時，才會叫用這些方法。 若要導覽至 `NoteEntryPage`，必須叫用 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)) 方法，如下列程式碼範例所示：
 
 ```csharp
 await Navigation.PushAsync(new NoteEntryPage());
@@ -424,7 +433,7 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
 
 在*來源*物件的 [`Editor.Text`](xref:Xamarin.Forms.Editor.Text) 屬性和 `Text` 屬性之間會建立繫結。 在中所做的變更`Editor`將自動傳播至`Note`物件。 同樣地，如果變更`Note.Text`屬性，則 Xamarin.Forms 繫結引擎也會更新的內容`Editor`。 這稱為*雙向繫結*。
 
-如需有關資料繫結的詳細資訊，請參閱 < [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
+如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
 ## <a name="styling"></a>樣式
 
@@ -509,14 +518,14 @@ Visual Studio for Mac 和 Visual Studio 都會提供許多選項來測試和部�
 
 此深入了解已檢查過使用 Xamarin.Forms 開發應用程式的基本概念。 建議的後續步驟包括了解下列功能：
 
-- 有四個主要的控制項群組可用來建立 Xamarin.Forms 應用程式的使用者介面。 如需詳細資訊，請參閱 <<c0> [ 控制項參考](~/xamarin-forms/user-interface/controls/index.md)。
-- 資料繫結是一種技術連結兩個物件的屬性，使其中一個屬性的變更會自動反映在另一個屬性。 如需詳細資訊，請參閱 <<c0> [ 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
-- Xamarin.Forms 提供許多不同的網頁瀏覽體驗，所使用的頁面類型而定。 如需詳細資訊，請參閱[導覽](~/xamarin-forms/app-fundamentals/navigation/index.md)。
-- 樣式有助於減少重複的標記，並允許應用程式外觀，以更輕鬆地變更。 如需詳細資訊，請參閱 <<c0> [ 樣式設定 Xamarin.Forms 應用程式](~/xamarin-forms/user-interface/styles/index.md)。
-- XAML 標記延伸模組擴充的威力與彈性的 XAML，藉由設定從來源常值文字字串以外的項目屬性。 如需詳細資訊，請參閱 < [XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)。
-- 資料範本提供支援的檢視上定義資料的呈現方式的能力。 如需詳細資訊，請參閱[資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
-- 每個頁面、 版面配置，並檢視不同的方式呈現每個平台使用`Renderer`類別，接著再建立的原生控制項，排列在畫面上，並將共用的程式碼中指定的行為。 開發人員可以實作自己的自訂 `Renderer` 類別，以自訂控制項的外觀及/或行為。 如需詳細資訊，請參閱[自訂呈現方式](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)。
-- 效果也可以允許在每個平台上自訂原生控制項。 效果在平台專屬專案中建立子類別化[ `PlatformEffect` ](xref:Xamarin.Forms.PlatformEffect`2)類別，並將它們連結至適當的 Xamarin.Forms 控制項使用。 如需詳細資訊，請參閱[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
+- 有四個主要的控制項群組可用來建立 Xamarin.Forms 應用程式的使用者介面。 如需詳細資訊，請參閱[控制項參考](~/xamarin-forms/user-interface/controls/index.md)。
+- 資料繫結是連結兩個物件屬性的技術，以便在其中一個屬性變更時，自動反映在另一個屬性上。 如需詳細資訊，請參閱[資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
+- Xamarin.Forms 會根據使用的頁面類型，提供多種不同的網頁導覽體驗。 如需詳細資訊，請參閱[導覽](~/xamarin-forms/app-fundamentals/navigation/index.md)。
+- 樣式功能有助於減少重複的標記，並可更輕鬆地變更應用程式外觀。 如需詳細資訊，請參閱[設定 Xamarin.Forms 應用程式的樣式](~/xamarin-forms/user-interface/styles/index.md)。
+- XAML 標記延伸可讓您從常值文字字串以外的來源設定項目屬性，以增強 XAML 的功能和彈性。 如需詳細資訊，請參閱 [XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)。
+- 資料範本可以針對支援的檢視，定義資料的呈現方式。 如需詳細資訊，請參閱[資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
+- 系統會在每個平台上使用 `Renderer` 類別，以不同的方式呈現每個頁面、版面配置和檢視，進而建立原生控制項、將其排列在畫面上，然後加入在共用程式碼中指定的行為。 開發人員可以實作自己的自訂 `Renderer` 類別，以自訂控制項的外觀及/或行為。 如需詳細資訊，請參閱[自訂呈現方式](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)。
+- 效果也可以允許在每個平台上自訂原生控制項。 系統會在平台專屬的專案中，透過將 [`PlatformEffect`](xref:Xamarin.Forms.PlatformEffect`2) 類別子類別化來建立效果，然後透過將其附加至適當的 Xamarin.Forms 控制項來取用。 如需詳細資訊，請參閱[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 - 共用程式碼可以透過 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 類別存取原生功能。 如需有關詳細資訊，請參閱[透過 DependencyService 存取原生功能](~/xamarin-forms/app-fundamentals/dependency-service/index.md)。
 
 或者，Charles Petzold 的書籍[_使用 Xamarin.Forms 建立行動應用程式_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)是深入了解 Xamarin.Forms 的絕佳選擇。 此書籍以 PDF 形式或多種電子書格式提供。

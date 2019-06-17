@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
 ms.openlocfilehash: e7327deead917f55d1e7ac8af5302b6dccf6fead
-ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56240353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61290800"
 ---
 # <a name="polylines-and-parametric-equations"></a>聚合線條和參數化的方程式
 

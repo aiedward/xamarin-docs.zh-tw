@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: 12ff6f615b30e53704fee6368c9d7f171f881df0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 1889154a12a701fb4ce57ef8644699dd978f768e
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671061"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61186235"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>應用程式中使用 Google Maps API
 
@@ -41,7 +41,7 @@ Xamarin.Android 應用程式必須符合某些必要的先決條件，才可以�
 ### <a name="a-nameobtain-maps-key-obtain-a-google-maps-api-key"></a><a name="obtain-maps-key" />取得 Google Maps API 金鑰
 
 第一個步驟是取得 Google Maps API 金鑰 （請注意，您無法重複使用舊版 Google Maps v1 API 所提供的 API 金鑰）。 如需有關如何取得和搭配 Xamarin.Android 使用 API 金鑰的資訊，請參閱 <<c0> [ 取得 Google Maps API 金鑰](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)。
- 
+
 
 ### <a name="a-nameinstall-gps-sdk--install-the-google-play-services-sdk"></a><a name="install-gps-sdk" /> 安裝 Google Play 服務 SDK
 
@@ -89,8 +89,8 @@ Xamarin.Android 應用程式可以使用地圖服務 API 之前，必須使用�
 -  **OpenGL ES v2** &ndash;應用程式必須宣告 OpenGL ES v2 的需求。
 
 -  **Google Maps API 金鑰** &ndash; API 金鑰用來確認應用程式註冊，並獲授權使用 Google Play 服務。 請參閱[取得 Google Maps API 金鑰](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)如需此金鑰的詳細資訊。
-   
-- **要求舊版的 Apache HTTP 用戶端** &ndash; Android 9.0 （API 層級 28） 為目標的應用程式，或必須以上所述指定舊版的 Apache HTTP 用戶端是選用的程式庫來使用。 
+
+- **要求舊版的 Apache HTTP 用戶端** &ndash; Android 9.0 （API 層級 28） 為目標的應用程式，或必須以上所述指定舊版的 Apache HTTP 用戶端是選用的程式庫來使用。
 
 -  **Google Web 服務的存取權**&ndash;應用程式需要存取 Google 的 web 服務支援 Android 的地圖服務 API 的權限。
 
@@ -99,6 +99,14 @@ Xamarin.Android 應用程式可以使用地圖服務 API 之前，必須使用�
 -  **存取位置提供者**&ndash;這些是選擇性的權限。
    它們可讓`GoogleMap`類別，以在地圖上顯示裝置的位置。
 
+此外，Android 9 bootclasspath，已移除 Apache HTTP 用戶端程式庫，因此它無法提供給應用程式為目標的 API 28 或更高版本。 下面這一行必須新增至`application`節點的您**AndroidManifest.xml**繼續使用 Apache HTTP 用戶端 API 28 或更高版本為目標的應用程式中的檔案：
+
+```xml
+<application ...>
+   ...
+   <uses-library android:name="org.apache.http.legacy" android:required="false" />    
+</application>
+```
 
 > [!NOTE]
 > 非常舊版本的 Google Play SDK 所需的應用程式要求`WRITE_EXTERNAL_STORAGE`權限。 這項需求不再需要使用新的 Xamarin 繫結，Google Play 服務。
@@ -112,7 +120,7 @@ Xamarin.Android 應用程式可以使用地圖服務 API 之前，必須使用�
 
     <!-- Google Maps for Android v2 requires OpenGL ES v2 -->
     <uses-feature android:glEsVersion="0x00020000" android:required="true" />
-    
+
     <!-- Necessary for apps that target Android 9.0 or higher -->
     <uses-library android:name="org.apache.http.legacy" android:required="false" />
 
@@ -131,6 +139,8 @@ Xamarin.Android 應用程式可以使用地圖服務 API 之前，必須使用�
         <!-- Put your Google Maps V2 API Key here. -->
         <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="YOUR_API_KEY" />
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+        <!-- Necessary for apps that target Android 9.0 or higher -->
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
     </application>
 </manifest>
 ```
@@ -184,7 +194,7 @@ Xamarin.Android 應用程式可以使用地圖服務 API 之前，必須使用�
     ```
 
 -   **以程式設計方式**-`MapFragment`可以以程式設計方式使用具現化[ `MapFragment.NewInstance` ](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment.html#newInstance())方法然後新增至活動。 此程式碼片段顯示的最簡單的方式來具現化`MapFragment`物件，並加入活動：
-    
+
     ```csharp
         var mapFrag = MapFragment.NewInstance();
         activity.FragmentManager.BeginTransaction()
@@ -195,7 +205,7 @@ Xamarin.Android 應用程式可以使用地圖服務 API 之前，必須使用�
 
     您可設定`MapFragment`物件，並傳遞[ `GoogleMapOptions` ](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMapOptions)物件`NewInstance`。 這一節所述[GoogleMap 屬性](#googlemap_object)，稍後會出現在本指南中。
 
-`MapFragment.GetMapAsync`方法用來初始化[ `GoogleMap` ](#googlemap_object)片段所裝載，並取得所裝載的 map 物件的參考`MapFragment`。 這個方法會採用該物件會實作`IOnMapReadyCallback`介面。 
+`MapFragment.GetMapAsync`方法用來初始化[ `GoogleMap` ](#googlemap_object)片段所裝載，並取得所裝載的 map 物件的參考`MapFragment`。 這個方法會採用該物件會實作`IOnMapReadyCallback`介面。
 
 這個介面具有單一方法`IMapReadyCallback.OnMapReady(MapFragment map)`，將會叫用時，它會讓應用程式互動`GoogleMap`物件。 下列程式碼片段示範如何初始化 Android 活動可以`MapFragment`並實作`IOnMapReadyCallback`介面：
 ```csharp
@@ -205,13 +215,13 @@ public class MapWithMarkersActivity : AppCompatActivity, IOnMapReadyCallback
     {
         base.OnCreate(bundle);
         SetContentView(Resource.Layout.MapLayout);
-    
+
         var mapFragment = (MapFragment) FragmentManager.FindFragmentById(Resource.Id.map);
         mapFragment.GetMapAsync(this);
-    
+
         // remainder of code omitted
     }
-    
+
     public void OnMapReady(GoogleMap map)
     {
         // Do something with the map, i.e. add markers, move to a specific location, etc.
@@ -304,15 +314,15 @@ public void OnMapReady(GoogleMap map)
 public void OnMapReady(GoogleMap map)
 {
     LatLng location = new LatLng(50.897778, 3.013333);
-    
+
     CameraPosition.Builder builder = CameraPosition.InvokeBuilder();
     builder.Target(location);
     builder.Zoom(18);
     builder.Bearing(155);
     builder.Tilt(65);
-    
+
     CameraPosition cameraPosition = builder.Build();
-    
+
     CameraUpdate cameraUpdate = CameraUpdateFactory.NewCameraPosition(cameraPosition);
 
     map.MoveCamera(cameraUpdate);
@@ -350,7 +360,7 @@ public void OnMapReady(GoogleMap map)
     MarkerOptions markerOpt1 = new MarkerOptions();
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
-    
+
     map.AddMarker(markerOpt1);
 }
 ```
@@ -383,10 +393,10 @@ public void OnMapReady(GoogleMap map)
     MarkerOptions markerOpt1 = new MarkerOptions();
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
-    
+
     var bmDescriptor = BitmapDescriptorFactory.DefaultMarker (BitmapDescriptorFactory.HueCyan);
     markerOpt1.InvokeIcon(bmDescriptor);
-    
+
     map.AddMarker(markerOpt1);
 }
 ```
@@ -520,7 +530,7 @@ void MapOnMarkerClick(object sender, GoogleMap.MarkerClickEventArgs markerClickE
     if (marker.Id.Equals(gotMauiMarkerId))
     {
         LatLng InMaui = new LatLng(20.72110, -156.44776);
-    
+
         // Move the camera to look at Maui.
         PositionPolarBearGroundOverlay(InMaui);
         googleMap.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(InMaui, 13));

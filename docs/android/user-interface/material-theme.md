@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: ff94211086956e36da377445d90359789b62fc60
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 512775864f5ad55ddfedd53b83dd02d7b0e1d1f8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61309067"
 ---
 # <a name="material-theme"></a>材質佈景主題
 
@@ -52,7 +52,7 @@ Android 提供三種材料佈景主題類型：
 
 ## <a name="using-the-built-in-themes"></a>使用內建的佈景主題
 
-使用材料佈景主題的最簡單方式是設定您要使用內建的佈景主題，而不需要自訂的應用程式。 如果您不要明確設定佈景主題，您的應用程式會預設為`Theme.Material`（暗色調佈景主題）。 如果您的應用程式有只有一個活動，您可以設定應用程式層級的佈景主題。 如果您的應用程式有多個活動，您可以設定佈景主題，應用程式層級，讓它使用相同的佈景主題之間所有的活動，或您可以將不同的佈景主題指派給不同的活動即可。 下列各節說明如何設定佈景主題，應用程式層級和活動層級。
+使用材料佈景主題的最簡單方式是設定您要使用內建的佈景主題，而不需要自訂的應用程式。 如果您不要明確設定佈景主題，您的應用程式會預設為`Theme.Material`（暗色調佈景主題）。 如果您的應用程式有只有一個活動，您可以設定佈景主題的活動層級。 如果您的應用程式有多個活動，您可以設定佈景主題，應用程式層級，讓它使用相同的佈景主題之間所有的活動，或您可以將不同的佈景主題指派給不同的活動即可。 下列各節說明如何設定佈景主題，應用程式層級和活動層級。
 
 
 ### <a name="theming-an-application"></a>佈景主題的應用程式
@@ -235,7 +235,7 @@ Android 5.0 也可讓您設定的個別檢視的樣式。 在建立後**colors.x
 </resources>
 ```
 
--   定義自訂的佈景主題中**Resources/values/styles.xml** ，衍生自較舊的佈景主題，但使用與上述相同佈景主題名稱。 例如: 
+-   定義自訂的佈景主題中**Resources/values/styles.xml** ，衍生自較舊的佈景主題，但使用與上述相同佈景主題名稱。 例如：
 
 ```xml
 <resources>
@@ -246,7 +246,7 @@ Android 5.0 也可讓您設定的個別檢視的樣式。 在建立後**colors.x
 ```
 
 -   在  **AndroidManifest.xml**，設定應用程式的自訂佈景主題名稱。 
-    例如: 
+    例如：
 
 ```xml
 <application android:label="MyApp" 

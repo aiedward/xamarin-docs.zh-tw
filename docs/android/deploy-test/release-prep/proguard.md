@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 998232119159c5dc3a284dd51d55dc381271a4e0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f6f3377c4fdeedefa3277d05012ec868f6626c41
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117391"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669995"
 ---
 # <a name="proguard"></a>ProGuard
 
@@ -192,7 +192,7 @@ Xamarin.Android 會乎略下列選項：
 
 如果您嘗試使用 ProGuard Android 7.0 或更新版本，您必須下載較新版的 ProGuard，因為 Android SDK 並未隨附與 JDK 1.8 相容的新版本。
 
-您可以使用此 [NuGet 套件](https://www.nuget.org/packages/name.atsushieno.proguard.facebook/5.3.0)來安裝較新版的 `proguard.jar`。 如需更新預設 Android SDK `proguard.jar` 的詳細資訊，請參閱此 [Stack Overflow](http://stackoverflow.com/questions/39514518/xamarin-android-proguard-unsupported-class-version-number-52-0/39514706#39514706) 討論。
+您可以使用此 [NuGet 套件](https://www.nuget.org/packages/name.atsushieno.proguard.facebook/5.3.0)來安裝較新版的 `proguard.jar`。 如需更新預設 Android SDK `proguard.jar` 的詳細資訊，請參閱此 [Stack Overflow](https://stackoverflow.com/questions/39514518/xamarin-android-proguard-unsupported-class-version-number-52-0/39514706#39514706) 討論。
 
 您可以在 [SourceForge 頁面](https://sourceforge.net/projects/proguard/files/)找到所有 ProGuard 版本。 
 
@@ -341,7 +341,7 @@ ProGuard [疑難排解](https://stuff.mit.edu/afs/sipb/project/android/sdk/andro
 
 ## <a name="summary"></a>總結
 
-本指南說明 ProGuard 如何在 Xamarin.Android 中運作、如何在應用程式專案中予以啟用，以及如何加以設定。 文中提供範例 ProGuard 組態，並描述常見問題的解決方式。 如需 ProGuard 工具與 Android 的詳細資訊，請參閱[壓縮程式碼和資源](http://developer.android.com/tools/help/proguard.html) \(英文\)。 
+本指南說明 ProGuard 如何在 Xamarin.Android 中運作、如何在應用程式專案中予以啟用，以及如何加以設定。 文中提供範例 ProGuard 組態，並描述常見問題的解決方式。 如需 ProGuard 工具與 Android 的詳細資訊，請參閱[壓縮程式碼和資源](https://developer.android.com/tools/help/proguard.html) \(英文\)。 
 
 
 ## <a name="related-links"></a>相關連結

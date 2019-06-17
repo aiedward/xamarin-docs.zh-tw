@@ -1,5 +1,5 @@
 ---
-title: 為什麼我的 iOS 9 應用程式無法使用： System.Exception： 無法封送處理 OBJECTIVE-C 物件？
+title: 有什麼我的 iOS 9 應用程式失敗，而且出現：System.Exception:無法封送 Objective-C 物件？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 8805ABEC-48D4-4CCB-A226-3A5B2ECE4BF0
@@ -8,17 +8,17 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
 ms.openlocfilehash: dfe1918d271946eb96d1f57d32c533a075f6d0bd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103357"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61421953"
 ---
-# <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-object"></a>為什麼我的 iOS 9 應用程式無法使用： System.Exception： 無法封送處理 OBJECTIVE-C 物件？
+# <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-object"></a>有什麼我的 iOS 9 應用程式失敗，而且出現：System.Exception:無法封送 Objective-C 物件？
 
 您可能會看到這種形式的錯誤：
 
-> System.Exception： 無法封送處理 OBJECTIVE-C 物件...找不到這個物件的現有受管理的執行個體...
+> System.Exception:無法封送處理 OBJECTIVE-C 物件...找不到這個物件的現有受管理的執行個體...
 
 在 iOS 9 的 API 變更需要回呼的建構函式，呼叫 unmanaged 程式碼，為基礎的 API 現在預期它時使用。 您可以使用下面這一行來回呼的建構函式加入類別： 
 

@@ -1,5 +1,5 @@
 ---
-title: 執行瀏覽多頁 Xamarin.Forms 應用程式中
+title: 在多頁 Xamarin.Forms 應用程式中執行巡覽
 description: 這篇文章說明如何將單一頁面應用程式，能夠將單一的附註，儲存至多頁應用程式，可以儲存多個備忘稿。
 zone_pivot_groups: platform
 ms.topic: quickstart
@@ -8,13 +8,13 @@ ms.assetid: 9DC3B3D6-6CBC-4705-BE80-3D86A9E65F92
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/02/2019
-ms.openlocfilehash: f3c5ec1c6d37c74fd9b4fb4980c68a59c9864c05
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.date: 04/01/2019
+ms.openlocfilehash: 886527f6d4338ffbe7026bec536716bf844e3701
+ms.sourcegitcommit: 4b7a0ac33fc64516dd3d70bb68d9aa50e46b2dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197364"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "65997124"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>執行瀏覽多頁 Xamarin.Forms 應用程式中
 
@@ -39,7 +39,7 @@ ms.locfileid: "57197364"
 
 ## <a name="update-the-app-with-visual-studio"></a>使用 Visual Studio 更新應用程式
 
-1. 啟動 Visual Studio。 在 [開始] 頁面上按一下**開啟專案 / 方案**，然後在**開啟專案**對話方塊中，選取備忘稿專案的方案檔：
+1. 啟動 Visual Studio。 在 開始 視窗中，按一下 **備忘稿**中的最新的專案/方案清單中或按一下 解決方案**開啟專案或方案**，然後在**開啟專案/方案**對話方塊選取備忘稿專案的方案檔：
 
     ![](multi-page-images/vs/open-solution.png "開啟專案")
 
@@ -285,9 +285,7 @@ ms.locfileid: "57197364"
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace Notes
     {
         public partial class App : Application
@@ -300,7 +298,7 @@ ms.locfileid: "57197364"
                 FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
                 MainPage = new NavigationPage(new NotesPage());
             }
-            ...
+            // ...
         }
     }
     ```
@@ -324,7 +322,7 @@ ms.locfileid: "57197364"
 
 ## <a name="update-the-app-with-visual-studio-for-mac"></a>使用 Visual Studio for Mac 更新應用程式
 
-1. 啟動 Visual Studio for Mac。 在 開始 頁面上按一下 **開啟...**，並在對話方塊中選取 備忘稿專案的方案檔：
+1. 啟動 Visual Studio for Mac。 在 開始 視窗中按一下**開啟**，並在對話方塊中選取 備忘稿專案的方案檔：
 
     ![](multi-page-images/vsmac/open-solution.png "開啟方案")
 
@@ -570,9 +568,7 @@ ms.locfileid: "57197364"
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace Notes
     {
         public partial class App : Application
@@ -585,7 +581,7 @@ ms.locfileid: "57197364"
                 FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
                 MainPage = new NavigationPage(new NotesPage());
             }
-            ...
+            // ...
         }
     }
     ```

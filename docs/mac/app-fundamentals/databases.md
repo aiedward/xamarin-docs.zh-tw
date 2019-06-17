@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 465b4a34d54dbee92461669b16c3b8a13188bbde
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61378303"
 ---
 # <a name="databases-in-xamarinmac"></a>Xamarin.Mac 中的資料庫
 
@@ -1402,7 +1402,7 @@ namespace MacDatabase
 
 - `Conn` -取得或設定連線到 SQLite 資料庫。
 - `TableName` -取得或設定資料表名稱。
-- `IDField` -取得或設定指定的資料表中提供的唯一識別碼的欄位。 預設值是 `ID`。
+- `IDField` -取得或設定指定的資料表中提供的唯一識別碼的欄位。 預設值為 `ID`。
 - `DisplayField` -取得或設定顯示在下拉式清單中的欄位。
 - `RecordCount` -取得對指定資料表中的記錄數目。
 

@@ -6,12 +6,12 @@ ms.assetid: 455fda67-3879-4299-8036-b12840e6a498
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 55c08c1bd0d82f8458e0c07b4202b6275600ff38
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
-ms.translationtype: MT
+ms.openlocfilehash: f62d3cb076019ba49303f2c82f009975d9fbdc50
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61163225"
 ---
 # <a name="visual-basicnet-in-xamarin-ios-and-android"></a>在 Xamarin iOS 和 Android 的 visual Basic.NET
 
@@ -284,18 +284,6 @@ Visual Studio for Mac 的支援可攜式類別庫的表示它可以參考 PCL �
 2. 新增_post-build_將從這個專案的輸出 DLL 複製到專案根目錄的指令碼 (這是外部 **/bin/**)。 根據您的版本控制的設定，DLL 現在應該能夠加入至原始檔控制。
 
   [![](native-apps-images/image6-vs-sml.png "建置後組建指令碼複製 VB DLL 的事件")](native-apps-images/image6-vs.png#lightbox)
-
-#### <a name="visual-studio-2015"></a>Visual Studio 2015
-
-1.  以滑鼠右鍵按一下專案，然後選擇 **屬性 > 編譯**，然後確認 所有設定已都選取在左上方 comb 進行中。 按一下 **建置事件...** 右下角的按鈕。
-
-    [![](native-apps-images/image6.png "專案屬性 [編譯] 區段")](native-apps-images/image6.png#lightbox)
-
-1.  新增建置後指令碼，將從這個專案的輸出 DLL 複製到專案根目錄 (這是外部 **/bin/** )。 根據您的版本控制的設定，DLL 現在應該能夠加入至原始檔控制。
-
-    [![](native-apps-images/image7.png "建置事件 視窗")](native-apps-images/image7.png#lightbox)
-
-#### <a name="all-versions"></a>所有版本
 
 下一次建置專案，可攜式類別庫組件會複製的專案根目錄，以及當您核取-在/認可/推送變更 DLL 將會儲存 （以便它可以下載到 Mac 以使用 Visual Studio for Mac）。
 

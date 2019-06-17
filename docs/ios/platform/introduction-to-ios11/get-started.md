@@ -1,18 +1,18 @@
 ---
 title: 開始使用 iOS 11
-description: 本文件說明必須完成才能開始開發 iOS 11 應用程式的步驟。 它討論如何下載 Xcode 和 Visual Studio 2017 更新。
+description: 本文件說明必須完成才能開始開發 iOS 11 應用程式的步驟。 它討論如何下載 Xcode 和更新 Visual Studio 2019。
 ms.prod: xamarin
 ms.assetid: 794EA2C4-884B-42AC-B8C4-8C8E5474B660
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2017
-ms.openlocfilehash: 697ae79ea7dd9aaeedb1400a405a4ca5c4dc3d1e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ec69cd7d176ca4047ffa37fcc2ed8554bd9f9353
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123631"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61169526"
 ---
 # <a name="getting-started-with-ios-11"></a>開始使用 iOS 11
 
@@ -27,7 +27,7 @@ _下載並安裝 Xcode 9_
 
 請遵循下列步驟以確保您準備好使用最新的 iOS、 tvOS 和 watchOS 功能：
 
-1. **安裝最新的 Xcode** –[下載](https://developer.apple.com/download/)並安裝最新版_Xcode 9_。
+1. **安裝最新的 Xcode** –[下載](https://developer.apple.com/download/)並安裝最新版_Xcode 10_。
 
 2. **執行 Xcode 第一個**– 執行 Xcode 一次，更新和執行 Visual Studio for Mac，則會安裝一些工具，Xamarin 之前需要程式碼執行時的第一次。
 

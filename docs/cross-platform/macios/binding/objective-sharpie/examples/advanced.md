@@ -6,12 +6,12 @@ ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: c4f7f1e9702fb2ee0f5525343a52e3aacd85d68c
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: e820a0c208907a95dda4a50427bb4dac27b88964
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855256"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977896"
 ---
 # <a name="advanced-manual-real-world-example"></a>進階 （手動） 的真實世界範例
 
@@ -137,8 +137,3 @@ Done.
 更新完成後，這兩個檔案現在可以新增至繫結專案在 Visual Studio for Mac，或直接傳遞`btouch`或`bmac`工具來產生最終的繫結。
 
 如需繫結程序的完整描述，請參閱我們[完整逐步解說指示](~/ios/platform/binding-objective-c/walkthrough.md)。
-
-## <a name="related-links"></a>相關連結
-
-- [Xamarin University 課程： 建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程： 建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

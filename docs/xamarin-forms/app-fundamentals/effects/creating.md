@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 8bf88c1a6cecc3d1f8ccc00d15f500607dadaea9
-ms.sourcegitcommit: 6655cccf9d3be755773c2f774b5918e0b141bf84
+ms.openlocfilehash: d0b109e03938fde3225c893bc8309448e543944b
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57305655"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925544"
 ---
 # <a name="creating-an-effect"></a>建立效果
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/effects/focuseffect/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Effects/FocusEffect/)
 
 _效果會簡化控制項的自訂。本文示範如何在控制項取得焦點時，建立變更 Entry 控制項背景色彩的效果。_
 
@@ -55,7 +55,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
 [assembly:ResolutionGroupName ("MyCompany")]
-[assembly:ExportEffect (typeof(FocusEffect), nameof(FocusEffect)]
+[assembly:ExportEffect (typeof(FocusEffect), nameof(FocusEffect))]
 namespace EffectsDemo.iOS
 {
     public class FocusEffect : PlatformEffect
@@ -108,7 +108,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 [assembly:ResolutionGroupName ("MyCompany")]
-[assembly:ExportEffect (typeof(FocusEffect), nameof(FocusEffect)]
+[assembly:ExportEffect(typeof(FocusEffect), nameof(FocusEffect))]
 namespace EffectsDemo.Droid
 {
     public class FocusEffect : PlatformEffect
@@ -162,7 +162,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.UWP;
 
 [assembly: ResolutionGroupName("MyCompany")]
-[assembly: ExportEffect(typeof(FocusEffect), nameof(FocusEffect)]
+[assembly: ExportEffect(typeof(FocusEffect), nameof(FocusEffect))]
 namespace EffectsDemo.UWP
 {
     public class FocusEffect : PlatformEffect
@@ -262,4 +262,4 @@ public HomePageCS ()
 - [Effect](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [Background Color Effect (Samples)](https://developer.xamarin.com/samples/xamarin-forms/effects/backgroundcoloreffect/) (背景色彩效果 (範例))
-- [Focus Effect (Samples)](https://developer.xamarin.com/samples/xamarin-forms/effects/focuseffect/) (焦點效果 (範例))
+- [Focus Effect (Samples)](https://developer.xamarin.com/samples/xamarin-forms/Effects/FocusEffect/) (焦點效果 (範例))

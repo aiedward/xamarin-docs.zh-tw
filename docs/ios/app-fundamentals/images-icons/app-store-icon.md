@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/26/2017
 ms.openlocfilehash: 53e25ae9f4650254f2aaaa03dc8727fae674c9f0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61258087"
 ---
 # <a name="app-store-icons-in-xamarinios"></a>在 Xamarin.iOS 中的應用程式市集圖示
 
@@ -25,7 +25,7 @@ Apple 建議在設計應用程式圖示時遵循下列指導方針：
 - 確保圖示適合應用程式。
 - 建立與應用程式設計一致的簡單圖示。
 - 圖示中避免使用文字。
-- 全域思考：單一應用程式圖式將用於市集內的所有區域。
+- 全球思維：所有商店區域都使用單一的應用程式圖示。
 
 在 App Store 中顯示的應用程式圖示必須有 1024 x 1024 影像像素。  Apple 表明資產目錄中的應用程式市集圖示不得透明或含有 Alpha 色板。
 

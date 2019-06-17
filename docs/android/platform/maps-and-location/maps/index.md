@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
+ms.openlocfilehash: 78908e1b1ad6d3f572ce45c8189d8f4ee48ad6ee
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61176559"
 ---
-
 # <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>如何搭配 Xamarin.Android 使用 Google 地圖與位置
 
 _這篇文章討論如何使用 Xamarin.Android 的地圖與位置。它涵蓋了從運用內建的地圖應用程式直接使用 Google 對應 Android API V2 的所有項目。_

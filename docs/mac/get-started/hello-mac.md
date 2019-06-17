@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 09/02/2018
-ms.openlocfilehash: 02e0484a417b5d42129fa4e7a6ab9576c1817d74
-ms.sourcegitcommit: 8e8f83da636b63d14d1305c43a99736a00b9f590
+ms.openlocfilehash: 9175c60c436f2e808f3658bae717a747e0401c28
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55969589"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58855311"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac -  逐步解說
 
@@ -77,7 +77,7 @@ Visual Studio for Mac 會建立新的 Xamarin.Mac 應用程式，並顯示加入
 
 [![](hello-mac-images/project01-sml.png "新解決方案的預設檢視")](hello-mac-images/project01.png#lightbox)
 
-Visual Studio for Mac 使用與 Visual Studio 2017 相同的**方案**與**專案**結構。 方案是一個容器，可保存一或多個專案；專案則可包含應用程式，並支援程式庫、測試應用程式等。[檔案] > [新增專案] 範本會自動建立方案與應用程式專案。
+Visual Studio for Mac 使用與 Visual Studio 2019 相同的**解決方案**與**專案**結構。 方案是一個容器，可保存一或多個專案；專案則可包含應用程式，並支援程式庫、測試應用程式等。[檔案] > [新增專案] 範本會自動建立方案與應用程式專案。
 
 ## <a name="anatomy-of-a-xamarinmac-application"></a>Xamarin.Mac 應用程式的結構
 

@@ -6,14 +6,14 @@ ms.assetid: 99484E96-DC69-4697-8BBB-1B44C5CBB5ED
 author: lobrien
 ms.author: laobri
 ms.date: 10/23/2018
-ms.openlocfilehash: 9171eeb461f2e4d363de6e01ea92fa448f04d41a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 073fc5abace2e0cb923394a359437528f703f338
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61371075"
 ---
-# <a name="introduction-to-continuous-integration-with-xamarin"></a>使用 Xamarin 的連續整合簡介
+# <a name="continuous-integration-with-xamarin"></a>使用 Xamarin 的連續整合
 
 > [!Video https://youtube.com/embed/wXgnh2Q7Uv8]
 

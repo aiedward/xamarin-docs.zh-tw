@@ -1,6 +1,6 @@
 ---
 title: 第 13 章摘要。 點陣圖
-description: 使用 Xamarin.Forms 建立行動應用程式： 摘要的第 13 章。 點陣圖
+description: 使用 Xamarin.Forms 建立行動應用程式：第 13 章摘要。 點陣圖
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: 737e242e14778f38405845541b2ca30d27c3cf5a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334458"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>第 13 章摘要。 點陣圖
 
@@ -173,9 +173,9 @@ UWP 專案支援點陣圖的命名配置，其中包含的像素為單位，每�
 
 當平台專案中，加入點陣圖**建置動作**應該是：
 
-- iOS: **BundleResource**
-- Android: **AndroidResource**
-- UWP:**內容**
+- iOS:**BundleResource**
+- Android:**AndroidResource**
+- UWP:**Content**
 
 [ **ImageTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageTap)範例會建立兩個按鈕類似的物件，其中包含`Image`項目`TapGestureRecognizer`安裝。 它可能是物件是一英吋正方形。 `Source`的屬性`Image`會使用設定`OnPlatform`和`On`參考可能位在不同的平台上的檔案名稱的物件。 點陣圖影像包含的數字表示其像素大小，以便您可以看到哪些大小點陣圖會擷取並呈現。
 

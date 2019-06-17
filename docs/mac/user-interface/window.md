@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: ec907e71074a97bd5d1714e79dd504013f5c8a4b
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526971"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61240508"
 ---
 # <a name="windows-in-xamarinmac"></a>Xamarin.Mac 中的 Windows
 
@@ -278,7 +278,7 @@ public override void ViewWillAppear ()
 
 如果應用程式實作`NSWindow`的`WillClose`事件，會在關閉視窗之前引發。 如果此事件傳回`false`，便不會關閉視窗。 如果視窗並沒有**關閉**按鈕，或無法關閉，因為任何原因，OS 就會發出警示音效。
 
-例如: 
+例如：
 
 ```csharp
 MyWindow.PerformClose(this);
@@ -337,7 +337,7 @@ Window.DocumentEdited = false;
 
 ### <a name="saving-changes-before-closing-a-window"></a>儲存變更之前關閉視窗
 
-若要觀看使用者關閉視窗，並且允許使用者以事先儲存修改過的內容，您必須建立的子類別`NSWindowDelegate`，並覆寫其`WindowShouldClose`方法。 例如: 
+若要觀看使用者關閉視窗，並且允許使用者以事先儲存修改過的內容，您必須建立的子類別`NSWindowDelegate`，並覆寫其`WindowShouldClose`方法。 例如：
 
 ```csharp
 using System;
@@ -511,7 +511,7 @@ var window = NSApplication.SharedApplication.KeyWindow;
 
 有時候可能會是在您要存取所有 Xamarin.Mac 應用程式目前已開啟的視窗。 比方說，若要查看如果使用者想要開啟的檔案是已在現有的視窗中開啟。
 
-`NSApplication.SharedApplication`維護`Windows`屬性，其中包含所有開啟的視窗，在您的應用程式中的陣列。 您可以逐一查看陣列存取所有的應用程式的目前視窗。 例如: 
+`NSApplication.SharedApplication`維護`Windows`屬性，其中包含所有開啟的視窗，在您的應用程式中的陣列。 您可以逐一查看陣列存取所有的應用程式的目前視窗。 例如：
 
 ```csharp
 // Is the file already open?
@@ -744,7 +744,7 @@ void OpenDialog (NSObject sender)
 
 [![](window-images/panel03.png "屬性偵測器")](window-images/panel03.png#lightbox)
 
-- **樣式**-可讓您調整從面板的樣式： 一般面板 （看起來像標準的視窗）、 公用程式的面板 （具有較小的標題列），抬頭顯示器面板 (是半透明的標題列，且 背景的一部分)。
+- **樣式**-可讓您調整從面板的樣式：規則面板 （看起來像標準的視窗）、 公用程式的面板 （具有較小的標題列），抬頭顯示器面板 (是半透明的標題列，且 背景的一部分)。
 - **非啟用**-決定要在 [面板] 中成為主要的視窗。
 - **文件的強制回應**-如果文件強制回應，面板會只一直浮在應用程式的 windows，否則它會浮動勝於一切。
 

@@ -1,10 +1,4 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: c52714a36b204d8e92baa87f3aa7389c1b08260c
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
-ms.translationtype: HT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197520"
 documentType: LandingData
 title: 跨平台指引
 metadata:
@@ -17,79 +11,79 @@ abstract:
   description: Xamarin 提供適用於行動裝置、平板電腦和傳統型應用程式的跨平台開發解決方案。 本節涵蓋無論您以哪一個平台為目標皆適用的詳細資料。
   menu:
     items:
-    - href: ~/cross-platform/samples/index.yml
-      text: Xamarin 範例
-    - href: /visualstudio/
-      text: Visual Studio
-    - href: /visualstudio/mac/
-      text: Visual Studio for Mac
+      - href: ~/cross-platform/samples/index.yml
+        text: Xamarin 範例
+      - href: /visualstudio/
+        text: Visual Studio
+      - href: /visualstudio/mac/
+        text: Visual Studio for Mac
 sections:
-- title: 開始使用
-  items:
-  - type: paragraph
-    text: 了解如何使用 Xamarin 和 C# 建置您的第一個適用於 Android、iOS、macOS、UWP 及更多平台的應用程式。
-  - type: list
-    style: icon48
+  - title: 開始使用
     items:
-    - image:
-        src: https://docs.microsoft.com/media/common/i_setup.svg
-      text: 需求
-      href: ~/cross-platform/get-started/requirements.md
-    - image:
-        src: ~/media/icons/i_desktop-phone.svg
-      text: Xamarin.Forms
-      href: ~/get-started/quickstarts/index.md
-    - image:
-        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: Android
-      href: ~/android/get-started/hello-android/hello-android-quickstart
-    - image:
-        src: https://docs.microsoft.com/media/common/i_mobile-app-developement.svg
-      text: iOS
-      href: ~/ios/get-started/hello-ios/hello-ios-quickstart.md
-    - image:
-        src: https://docs.microsoft.com/media/common/i_xplat-code.svg
-      text: Mac
-      href: ~/mac/get-started/hello-mac.md
-- title: 輔助線
-  items:
-  - type: list
-    style: cards
-    className: cardsB
+      - type: paragraph
+        text: '了解如何使用 Xamarin 和 C# 建置您的第一個適用於 Android、iOS、macOS、UWP 及更多平台的應用程式。'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
+            text: 需求
+            href: ~/cross-platform/get-started/requirements.md
+          - image:
+              src: ~/media/icons/i_desktop-phone.svg
+            text: Xamarin.Forms
+            href: ~/get-started/quickstarts/index.md
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
+            text: Android
+            href: ~/android/get-started/hello-android/hello-android-quickstart
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
+            text: iOS
+            href: ~/ios/get-started/hello-ios/hello-ios-quickstart.md
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_xplat-code.svg'
+            text: Mac
+            href: ~/mac/get-started/hello-mac.md
+  - title: 輔助線
     items:
-    - href: ~/cross-platform/get-started/index.md
-      html: 使用 Xamarin 開發行動應用程式的簡介。
-      image:
-        src: https://docs.microsoft.com/media/common/i_get-started.svg
-        href: ~/cross-platform/get-started/index.md
-      title: 建置行動應用程式
-    - href: ~/cross-platform/platform
-      html: Xamarin 支援 C#、F# 和 Razor 樣板化引擎。
-      image:
-        src: ~/media/icons/i_app-build.svg
-        href: ~/cross-platform/platform
-      title: 語言支援
-    - href: ~/cross-platform/app-fundamentals/
-      html: 建置應用程式所需知道的一切。
-      image:
-        src: ~/media/icons/i_platform.svg
-        href: ~/cross-platform/app-fundamentals/
-      title: 共用程式碼
-    - href: ~/cross-platform/deploy-test/performance.md
-      html: 應用程式效能和安全性指導方針。
-      image:
-        src: https://docs.microsoft.com/media/common/i_code-performance.svg
-        href: ~/cross-platform/deploy-test/performance.md
-      title: 效能與安全性
-    - href: ~/cross-platform/deploy-test/
-      html: 偵錯和部署的秘訣。
-      image:
-        src: ~/media/icons/i_deploy-test.svg
-        href: ~/cross-platform/deploy-test/
-      title: 部署和偵錯
-    - href: ~/cross-platform/desktop/
-      html: 適用於有意建置行動應用程式之 .NET 桌面開發人員的指引。
-      image:
-        src: https://docs.microsoft.com/media/common/i_xplat-code.svg
-        href: ~/cross-platform/desktop/
-      title: 桌面開發人員
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: ~/cross-platform/get-started/index.md
+            html: 使用 Xamarin 開發行動應用程式的簡介。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
+              href: ~/cross-platform/get-started/index.md
+            title: 建置行動應用程式
+          - href: ~/cross-platform/platform
+            html: 'Xamarin 支援 C#、F# 和 Razor 樣板化引擎。'
+            image:
+              src: ~/media/icons/i_app-build.svg
+              href: ~/cross-platform/platform
+            title: 語言支援
+          - href: ~/cross-platform/app-fundamentals/
+            html: 建置應用程式所需知道的一切。
+            image:
+              src: ~/media/icons/i_platform.svg
+              href: ~/cross-platform/app-fundamentals/
+            title: 共用程式碼
+          - href: ~/cross-platform/deploy-test/performance.md
+            html: 應用程式效能和安全性指導方針。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_code-performance.svg'
+              href: ~/cross-platform/deploy-test/performance.md
+            title: 效能與安全性
+          - href: ~/cross-platform/deploy-test/
+            html: 偵錯和部署的秘訣。
+            image:
+              src: ~/media/icons/i_deploy-test.svg
+              href: ~/cross-platform/deploy-test/
+            title: 部署和偵錯
+          - href: ~/cross-platform/desktop/
+            html: 適用於有意建置行動應用程式之 .NET 桌面開發人員的指引。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_xplat-code.svg'
+              href: ~/cross-platform/desktop/
+            title: 桌面開發人員

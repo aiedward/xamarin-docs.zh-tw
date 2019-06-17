@@ -1,25 +1,25 @@
 ---
-title: 行動軟體開發生命週期簡介
+title: 行動裝置軟體開發生命週期簡介
 description: 本文件描述行動軟體開發生命週期，涉及 UX 設計、UI 設計、開發、穩定、發佈和更多。
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: 8a95f89ad41ab793d8c26631f1a967180b4c1779
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 74a9fc59b395d68db9b116106cc9fa63d3969c3b
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782329"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58855233"
 ---
-# <a name="introduction-to-the-mobile-software-development-lifecycle"></a>行動軟體開發生命週期簡介
+# <a name="introduction-to-the-mobile-software-development-lifecycle"></a>行動裝置軟體開發生命週期簡介
 
 建置行動裝置應用程式可以像開啟 IDE、將一些內容放在一起、快速做一些測試、提交 App Store 一樣簡單：一個下午即可全部完成。 或者也可以是涉及下列操作的極端複雜流程：嚴苛的預先設計、可用性測試、在數以千計的裝置上進行 QA 測試、完整的 Beta 生命週期；再透過許多不同的方式進行部署。
 
 在本文件中，我們將詳盡介紹如何建置行動應用程式，包括：
 
-1.   **流程** - 軟體開發的流程稱為軟體開發生命週期 (SDLC)。 我們將介紹與行動應用程式開發相關的所有 SDLC 階段，包括：靈感、設計、開發、穩定、部署及維護。
+1.   **流程** - 軟體開發的流程稱為軟體開發生命週期 (SDLC)。 我們會就行動裝置應用程式開發，檢查 SDLC 的全部階段，包含：靈感、設計、開發、穩定、部署和維護。
 1.   **考量** - 建置行動應用程式時需要考慮許多因素，特別是與傳統的 Web 應用程式或桌面應用程式相比。 我們將介紹這些考量事項以及它們會如何影響行動應用程式開發。
 
 本文件旨在為初學者和有經驗的應用程式開發人員，回答有關行動應用程式開發的基本問題。 採用了相當全面的方法來介紹在整個軟體開發生命週期 (SDLC) 過程中將會遇到的大多數概念。 然而，並不是每一位都適合使用本文件，如果您渴望立刻開始建置應用程式，則我們建議往前跳至[行動裝置應用程式開發簡介](~/cross-platform/get-started/introduction-to-mobile-development.md)指南，並稍後再回來使用本文件。
@@ -58,13 +58,13 @@ ms.locfileid: "34782329"
 -   **價值** - 此應用程式會為使用者帶來什麼價值？ 他們會如何使用它？
 -   **形式/行動性** - 此應用程式將會如何以行動板形規格進行工作？ 如何用定位知悉、相機等行動技術來為應用程式增加價值？
 
-為了協助設計應用程式功能，定義執行者和[使用案例](http://en.wikipedia.org/wiki/Use_case)可能會十分有用。 執行者是應用程式中的角色，通常是使用者。 使用案例通常是動作或意向。
+為了協助設計應用程式功能，定義執行者和[使用案例](https://en.wikipedia.org/wiki/Use_case)可能會十分有用。 執行者是應用程式中的角色，通常是使用者。 使用案例通常是動作或意向。
 
-比方說，追踪應用程式的一項工作可能會有兩位執行者：「使用者」和「好友」。 使用者可以「建立工作」、與好友「共用工作」。 在此情況下，建立工作和共用工作是兩個完全不同的案例，這兩個案例與執行者串聯，將會告知哪些畫面需要建置、哪些商務實體和邏輯需要開發。
+比方說，工作追蹤應用程式可能會有兩個動作項目：「使用者」和「朋友」。 使用者可以「建立工作」、與好友「共用工作」。 在此情況下，建立工作和共用工作是兩個完全不同的案例，這兩個案例與執行者串聯，將會告知哪些畫面需要建置、哪些商務實體和邏輯需要開發。
 
 一旦擷取了適量的使用案例和執行者之後，開始設計應用程式便會容易許多。 開發即可以專注於如何建立應用程式，而不需專注於應用程式的定位和用途。
 
-### <a name="designing-mobile-applications"></a>設計行動應用程式
+### <a name="designing-mobile-applications"></a>設計行動裝置應用程式
 
 一旦確定了應用程式的特性和功能之後，下一步是開始嘗試解決使用者體驗 (UX)。
 
@@ -77,7 +77,7 @@ UX 通常會透過使用任何一種[設計工具組](https://docs.microsoft.com
 建立 UX 原型時，請務必注意應用程式所針對的各種平台介面指導方針。 應用程式應在每種平台上都「有家的感覺」。 每種平台的官方設計指導方針如下：
 
 1.   **Apple** -  [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/) (人性化介面指導方針)
-1.   **Android** -  [Design Guidelines](http://developer.android.com/design/index.html) (設計指導方針)
+1.   **Android** -  [Design Guidelines](https://developer.android.com/design/index.html) (設計指導方針)
 1.   **UWP** –  [UWP 設計基本概念](https://docs.microsoft.com/windows/uwp/design/basics/)
 
 例如，每個應用程式都有一個用來在應用程式各區段間進行切換的隱喻。 iOS 使用畫面底部的索引標籤，Android 使用畫面頂部的索引標籤，而 UWP 則使用[樞紐或索引標籤](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tabs-pivot)檢視。
@@ -108,7 +108,7 @@ UX 通常會透過使用任何一種[設計工具組](https://docs.microsoft.com
 
 ### <a name="stabilization"></a>穩定
 
-穩定是解決應用程式中 Bug 的過程。 不僅僅是從功能 (例如：「它在我按一下這個按鈕時當機了」) 的角度來看，也涉及了可用性和效能。 最好在非常早期的開發過程中就開始進行穩定，以便在成本提高之前進行修正。 一般來說，應用程式會進入「原型」、*Alpha*、*Beta* 及「候選版」等階段。 不同的人會以不同方式定義這些階段，但通常會遵循下列模式：
+穩定是解決應用程式中 Bug 的過程。 不僅僅是以功能的角度來考量，例如：「它在我按一下這個按鈕時當機了」，同時也涉及了可用性和效能。 最好在非常早期的開發過程中就開始進行穩定，以便在成本提高之前進行修正。 一般來說，應用程式會進入「原型」、*Alpha*、*Beta* 及「候選版」等階段。 不同的人會以不同方式定義這些階段，但通常會遵循下列模式：
 
 1.   **原型** – 應用程式仍處於概念證明階段，僅有核心功能或應用程式的特定部分能運作。 存在主要 Bug。
 1.   **Alpha** – 核心功能通常已完成程式碼 (已建置但尚未完整測試)。 仍有主要 Bug，外圍功能可能尚不存在。
@@ -151,11 +151,11 @@ Android 使用此資訊協助您在 Android OS 內運行的應用程式和元件
 1.  [Handango](http://www.handango.com/)
 1.  [GetJar](http://www.getjar.com/)
 
-#### <a name="uwp"></a>UWP 
+#### <a name="uwp"></a>UWP
 
 UWP 應用程式會透過 Microsoft Store 散發給使用者。 開發人員會提交其應用程式來進行准核，之後應用程式就會出現在市集中。 如需發行 Windows 應用程式的詳細資訊，請參閱 UWP 的[發行](https://docs.microsoft.com/windows/uwp/publish/)文件。
 
-## <a name="mobile-development-considerations"></a>行動應用程式開發考量
+## <a name="mobile-development-considerations"></a>行動裝置開發考量
 
 雖然開發行動應用程式與開發傳統 Web/桌面應用程式在流程或架構方面沒有根本性差異，不過需要注意一些考量事項。
 
@@ -195,7 +195,7 @@ UWP 應用程式會透過 Microsoft Store 散發給使用者。 開發人員會�
 
 多工在 iOS 中受到非常嚴格的控制；當其他應用程式移到前景時，您的應用程式必須符合某些規則和行為，否則 iOS 會終止您的應用程式。
 
-#### <a name="device-specific-resources"></a>裝置特定資源
+#### <a name="device-specific-resources"></a>裝置專用資源
 
 在特定板型規格中，不同型號間的硬體可能會有很大差異。 比方說，某些裝置具有後方相機，某些裝置具有前方相機，而某些裝置則沒有相機。
 
@@ -203,7 +203,7 @@ UWP 應用程式會透過 Microsoft Store 散發給使用者。 開發人員會�
 
 基於這些裝置型號間的差異，請務必在嘗試使用某項功能前檢查它是否存在。
 
-#### <a name="os-specific-constraints"></a>OS 特定條件約束
+#### <a name="os-specific-constraints"></a>OS 專用條件約束
 
 為確保應用程式回應迅速且安全可靠，iOS 強制應用程式必須遵守的某些規則。 除了與多工有關的規則，還有一些事件方法規定您的應用程式必須在特定時間內傳回，否則 iOS 會將它終止。
 
@@ -227,13 +227,13 @@ Google 不會對於可在 Android OS 上執行的做出任何限制。 這種開
 #### <a name="security-considerations"></a>安全性考量
 
 所有 Android OS 中的應用程式都在有限權限的不同獨立身分識別中運行。 根據預設，應用程式可以做的事非常少。 比方說，如果沒有特殊權限，應用程式不能發送簡訊、確定手機狀態、甚至是存取網際網路！ 若要存取這些功能，應用程式必須在其資訊清單檔中指定所需的權限；在安裝時，OS 會讀取這些權限，並通知使用者該應用程式正在請求這些權限，然後允許使用者繼續或取消安裝。
-由於 Android 採用開放式的應用程式市集模型 (例如：應用程式的管理方式與 iOS 不同)，因此這在 Android 散發模型中是必要的步驟。 如需應用程式權限的清單，請參閱 [Manifest Permissions](http://developer.android.com/reference/android/Manifest.permission.html) (資訊清單權限) 中的＜Android 文件＞參考文章。
+由於 Android 採用開放式的應用程式市集模型 (例如：應用程式的管理方式與 iOS 不同)，因此這在 Android 散發模型中是必要的步驟。 如需應用程式權限的清單，請參閱 [Manifest Permissions](https://developer.android.com/reference/android/Manifest.permission.html) (資訊清單權限) 中的＜Android 文件＞參考文章。
 
 ### <a name="windows-considerations"></a>Windows 考量
 
 #### <a name="multitasking"></a>多工
 
-UWP 中的多工也分為兩個部分：頁面與應用程式的生命週期和背景流程。 應用程式中，每張畫面都是頁面類別的實例，具有與設為使用中或非使用中狀態建立關聯的事件 (具有用於處理非使用中狀態或「刪除標記」的特殊規則)。 
+UWP 中的多工也分為兩個部分：頁面與應用程式的生命週期和背景流程。 應用程式中，每張畫面都是頁面類別的實例，具有與設為使用中或非使用中狀態建立關聯的事件 (具有用於處理非使用中狀態或「刪除標記」的特殊規則)。
 
 第二個部分：即使應用程式不在前景運行時，為處理工作提供背景代理程式。 
 
@@ -249,9 +249,8 @@ UWP 中的多工也分為兩個部分：頁面與應用程式的生命週期和�
 
 本指南提供了 SDLC 簡介，因其與行動開發相關。 其介紹有關建置行動應用程式的一般考量，並檢視平台特定的考量，包括設計、測試和部署。
 
-## <a name="related-links"></a>相關連結
+## <a name="next-steps"></a>後續步驟
 
 - [行動裝置應用程式開發簡介](~/cross-platform/get-started/introduction-to-mobile-development.md)
-- [Hello, iOS](~/ios/get-started/hello-ios/index.md)
-- [Hello, Android](http://developer.xamarin.com/get-started-droid/)
-- [應用程式基本概念](~/cross-platform/app-fundamentals/index.md)
+- [Xamarin 使用者入門](~/get-started/index.yml)
+- [跨平台共用程式碼](~/cross-platform/app-fundamentals/index.md)

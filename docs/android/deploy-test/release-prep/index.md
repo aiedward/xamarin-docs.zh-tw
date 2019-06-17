@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: dff57b142745729d5d38db4cce892bb1d55796a6
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 605db1c2e0dc0cf41288f9d6c9252582ce91d525
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059726"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58071059"
 ---
 # <a name="preparing-an-application-for-release"></a>準備可供發行的應用程式
 
@@ -43,7 +43,7 @@ ms.locfileid: "53059726"
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-在 Visual Studio 2015 和更新版本中，透過專案 [屬性] 的 [Android 資訊清單] 區段來指定應用程式圖示，如下列螢幕擷取畫面所示：
+在 Visual Studio 2017 和更新版本中，透過專案 [屬性] 的 [Android 資訊清單] 區段來指定應用程式圖示，如下列螢幕擷取畫面所示：
 
 [![設定應用程式圖示](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png#lightbox)
 
@@ -98,9 +98,9 @@ ms.locfileid: "53059726"
 
 [發行] 模式會關閉共用的執行階段並開啟連結，以讓應用程式只隨附 Xamarin.Android 在執行階段所需的項目。 Xamarin.Android 中的「連結器」使用靜態分析以判斷 Xamarin.Android 應用程式所使用或參考的組件、類型及類型成員。 連結器接著會捨棄所有未使用 (或參考) 的組件、類型及成員。 這樣就能大幅縮小套件的大小。 例如，請考慮 [HelloWorld](~/android/deploy-test/linker.md) 範例，其 APK 最終大小的縮減達到 83%： 
 
--   組態:無 &ndash; Xamarin.Android 4.2.5 大小 = 17.4 MB。
+-   設定：無 &ndash; Xamarin.Android 4.2.5 大小 = 17.4 MB。
 
--   組態:僅限 SDK 組件 &ndash; Xamarin.Android 4.2.5 大小 = 3.0 MB。
+-   設定：僅限 SDK 組件 &ndash; Xamarin.Android 4.2.5 大小 = 3.0 MB。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -191,7 +191,8 @@ Android 資訊清單包含 `android:debuggable` 屬性，可控制是否能對�
 即使[已停用偵錯](#Disable_Debugging)，攻擊者還是可以重新封裝應用程式、新增或移除組態選項或權限。 這可讓他們進行還原工程、偵錯，或竄改應用程式。
 [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) 可用來混淆受控碼，並在建置階段將執行階段安全性狀態偵測程式碼插入 Xamarin.Android 應用程式，以偵測應用程式是否正在 Root 破解的裝置上執行並回應。
 
-Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 3 (及更新版本) 才有能使用 Xamarin.Android 的正確版本。 若要使用 Dotfuscator，請按一下 [工具] > [PreEmptive Protection - Dotfuscator]。
+Dotfuscator CE 隨附於 Visual Studio 2017 中。
+若要使用 Dotfuscator，請按一下 [工具] > [PreEmptive Protection - Dotfuscator]。
 
 若要設定 Dotfuscator CE，請參閱[搭配 Xamarin 使用 Dotfuscator Community Edition](https://www.preemptive.com/obfuscating-xamarin-with-dotfuscator)。
 一旦設定之後，Dotfuscator CE 會自動保護建立的每個組建。
@@ -222,7 +223,7 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 [AOT 編譯] 選項 ([封裝屬性](#Set_Packaging_Properties) 頁面上) 可啟用組件的預先 (AOT) 編譯。 啟用此選項時，在執行階段之前就會預先編譯組件，進而將 Just In Time (JIT) 啟動負荷降至最低。 產生的機器碼會連同未編譯的組件一起包含在 APK 中。 這樣可讓應用程式啟動時間較短，但代價是 APK 大小稍大。
 
-[AOT 編譯] 選項需要企業授權或更高。 只有將專案設定為 [發行] 模式時才能使用 [AOT 編譯]，且該選項預設為停用。 如需 AOT 編譯的詳細資訊，請參閱 [AOT](http://www.mono-project.com/docs/advanced/aot/) \(英文\)。
+[AOT 編譯] 選項需要企業授權或更高。 只有將專案設定為 [發行] 模式時才能使用 [AOT 編譯]，且該選項預設為停用。 如需 AOT 編譯的詳細資訊，請參閱 [AOT](https://www.mono-project.com/docs/advanced/aot/) \(英文\)。
 
 #### <a name="llvm-optimizing-compiler"></a>LLVM 最佳化編譯器
 
@@ -266,7 +267,7 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 應用程式可能不會使用每個參考程式庫中的每個方法，因此像是 ProGuard (請參閱前述) 等工具能夠從程式碼中移除未使用的方法。 最佳做法是只有在絕對必要時，才將 [啟用 Multi-Dex] 啟用，也就是說即使在使用 ProGuard 之後，應用程式仍參考超過 6.5 萬個 Java 方法。
 
-如需 Multi-Dex 的詳細資訊，請參閱[設定應用程式使用超過 6.4 萬個方法](http://developer.android.com/tools/building/multidex.html) \(英文\)。
+如需 Multi-Dex 的詳細資訊，請參閱[設定應用程式使用超過 6.4 萬個方法](https://developer.android.com/tools/building/multidex.html) \(英文\)。
 
 <a name="Compile" />
 
@@ -374,6 +375,6 @@ Dotfuscator CE 隨附於 Visual Studio，然而只有 Visual Studio 2015 Update 
 
 - [多核心裝置和 Xamarin.Android](~/android/deploy-test/multicore-devices.md)
 - [CPU 架構](~/android/app-fundamentals/cpu-architectures.md)
-- [AOT](http://www.mono-project.com/docs/advanced/aot/)
-- [壓縮程式碼和資源](http://developer.android.com/tools/help/proguard.html)
-- [設定應用程式使用超過 6.4 萬個方法](http://developer.android.com/tools/building/multidex.html)
+- [AOT](https://www.mono-project.com/docs/advanced/aot/)
+- [壓縮程式碼和資源](https://developer.android.com/tools/help/proguard.html)
+- [設定應用程式使用超過 6.4 萬個方法](https://developer.android.com/tools/building/multidex.html)

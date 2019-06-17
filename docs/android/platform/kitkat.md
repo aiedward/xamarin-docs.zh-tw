@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: b3981572e4d2629fd88d1e255fc7459bfe8912f1
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: f957bd5b361d7287353542186916c7f934ee0490
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669007"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827791"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
@@ -564,7 +564,7 @@ class HceService : HostApduService
 }
 ```
 
-上述服務可讓 NFC 讀者互動應用程式，但 NFC 讀取器仍有沒有辦法知道如果此服務會模擬需要掃描 NFC 卡片。 為了協助識別服務的 NFC 讀取器，我們可以將服務指派的唯一*應用程式識別碼 (AID)*。 我們指定協助，HCE 服務時，相關的其他中繼資料 xml 資源檔中註冊`MetaData`屬性 （請參閱上述的程式碼範例）。 這個資源檔會指定一或多個輔助篩選-對應至一或多個 NFC 讀取器裝置的輔助工具的唯一識別項字串以十六進位格式：
+上述服務可讓 NFC 讀者互動應用程式，但 NFC 讀取器仍有沒有辦法知道如果此服務會模擬需要掃描 NFC 卡片。 為了協助識別服務的 NFC 讀取器，我們可以將服務指派的唯一*應用程式識別碼 (AID)* 。 我們指定協助，HCE 服務時，相關的其他中繼資料 xml 資源檔中註冊`MetaData`屬性 （請參閱上述的程式碼範例）。 這個資源檔會指定一或多個輔助篩選-對應至一或多個 NFC 讀取器裝置的輔助工具的唯一識別項字串以十六進位格式：
 
 ```xml
 <host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
@@ -713,6 +713,6 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 
 ## <a name="related-links"></a>相關連結
 
-- [KitKat 範例](https://developer.xamarin.com/samples/KitKat/)
+- [KitKat 範例](https://developer.xamarin.com/samples/monodroid/KitKat/)
 - [Android 4.4 的 Api](https://developer.android.com/about/versions/android-4.4.html)
 - [Android KitKat](https://developer.android.com/about/versions/kitkat.html)

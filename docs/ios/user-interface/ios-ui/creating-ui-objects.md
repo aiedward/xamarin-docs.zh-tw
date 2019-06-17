@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: a4cf63b84d0686bc28b02b18a6266908251bdf6f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 65ebbddfa1a315a478ceb43162b3c80eba2d8cc1
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121915"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827797"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>在 Xamarin.iOS 中建立使用者介面物件
 
@@ -32,7 +32,7 @@ using UIKit;
 -  **Xcode 的 Interface Builder** – 將控制項拖曳到您的畫面版面配置的 Interface Builder。 在 Xcode 中開啟的分鏡腳本或 XIB 檔案中的檔案上按一下滑鼠右鍵**Solution Pad** ，然後選擇**開啟 > Xcode Interface Builder**。
 -  **使用C#**  – 控制項可以也以程式設計方式建構程式碼並加入至檢視階層。
 
-您可以加入 iOS 專案上按一下滑鼠右鍵，然後選擇新的分鏡腳本和 XIB 檔案**新增 > 新增檔案...**.
+您可以加入 iOS 專案上按一下滑鼠右鍵，然後選擇新的分鏡腳本和 XIB 檔案**新增 > 新增檔案...** .
 
 無論您使用，哪種方法的控制項屬性和事件仍然可操作與C#應用程式邏輯中。
 
@@ -80,7 +80,7 @@ using UIKit;
 
  [![](creating-ui-objects-images/image6a.png "助理編輯器 按鈕")](creating-ui-objects-images/image6a.png#lightbox)
 
-按一下使用者介面物件;然後**控制項拖曳**.h 檔案。 以 * * 控制項拖曳 * *，按住 control 鍵然後按一下並按住透過使用者介面物件，您建立的輸出 （或動作）。 繼續按住 Control 鍵，您將項目拖曳到標頭檔。 完成拖曳下方`@interface`定義。 藍線應該會出現標題插入輸出或輸出集合，如以下螢幕擷取畫面所示。
+按一下使用者介面物件;然後**控制項拖曳**.h 檔案。 若要**控制項拖曳**、 按住 control 鍵，然後按一下並按住您建立的輸出 （或動作） 的使用者介面物件。 繼續按住 Control 鍵，您將項目拖曳到標頭檔。 完成拖曳下方`@interface`定義。 藍線應該會出現標題插入輸出或輸出集合，如以下螢幕擷取畫面所示。
 
 當您釋放將提示您提供的輸出，將用來建立名稱按一下C#可以在程式碼中參考的屬性：
 
@@ -173,4 +173,4 @@ public override void ViewDidLoad () {
 
 ## <a name="related-links"></a>相關連結
 
-- [控制項 （範例）](https://developer.xamarin.com/samples/Controls/)
+- [控制項 （範例）](https://developer.xamarin.com/samples/monotouch/Controls/)

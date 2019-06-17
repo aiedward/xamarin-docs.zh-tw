@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 6dd55f5c4316ed8f1d4f16d9e282cc2647350518
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: e4485c485b708bdec06f7f1dc22f0bf33e07e982
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104852"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827753"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>使用 Xamarin.iOS 中的 UI 執行緒
 
@@ -61,7 +61,7 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-您不需要執行此項目中的範例本文件中，但它的其餘部分，是應用程式所提出網路要求時要注意的重要概念的使用會使用通知中心或其他需要另一個將執行完成處理常式的方法執行緒。
+您不需要將此選項用於本文件中，範例的其餘部分，但它是一個重要的概念，請記住您的應用程式發出網路要求時使用通知中心或其他需要另一個將執行完成處理常式的方法執行緒。
 
  <a name="Async_Await_Example" />
 
@@ -96,5 +96,5 @@ async partial void button2_TouchUpInside (UIButton sender)
 
 ## <a name="related-links"></a>相關連結
 
-- [控制項 （範例）](https://developer.xamarin.com/samples/Controls/)
+- [控制項 （範例）](https://developer.xamarin.com/samples/monotouch/Controls/)
 - [執行緒處理](~/ios/app-fundamentals/threading.md)

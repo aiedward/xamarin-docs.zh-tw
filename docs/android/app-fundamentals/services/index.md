@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: dfc0e1cb7239381ef2f495b0f9774d390b0dc82e
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 4ae86ca5fa47169bb5d78eb9d1116e419c23ed6d
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61012469"
 ---
 # <a name="creating-android-services"></a>建立 Android 服務
 
@@ -22,7 +22,7 @@ _本指南會討論 Xamarin.Android 服務，這是允許沒有作用中的使�
 
 行動裝置應用程式不像桌面應用程式中。 桌上型電腦佈滿大量資源，例如螢幕面積、 記憶體、 儲存空間和已連接的電源供應器，行動裝置不這麼做。 這些條件約束強制執行行動裝置應用程式，以不同的方式。 例如，在行動裝置上的小型螢幕通常表示該只有一個應用程式 （也就是活動） 會顯示一次。 其他活動會移到背景工作，然後推送進入暫停狀態，它們無法在其中執行任何工作。 不過，因為 Android 應用程式位於背景不表示就無法正常運作的應用程式。 
 
-Android 應用程式都至少一個下列四個主要元件所組成：_活動_，_廣播接收器_，_內容提供者_，以及_Services_。 活動是許多很棒的 Android 應用程式的基石，因為它們提供可讓使用者與應用程式互動的 UI。 不過，就執行並行或背景工作，活動並不一定最佳的選擇。
+Android 應用程式都至少一個下列四個主要元件組成：_活動_，_廣播接收器_，_內容提供者_，和_Services_。 活動是許多很棒的 Android 應用程式的基石，因為它們提供可讓使用者與應用程式互動的 UI。 不過，就執行並行或背景工作，活動並不一定最佳的選擇。
  
 在 Android 中的背景工作的主要機制是_服務_。 Android 服務是設計用來執行一些工作，而不需要使用者介面的元件。 服務可能會下載檔案、 播放音樂，或將篩選套用至映像。 服務也可以用於處理序間通訊 (_IPC_) 之間 Android 應用程式。 例如一個 Android 應用程式可能會使用來自另一個應用程式 music player 服務或應用程式可能會公開至其他應用程式透過服務的資料 （例如個人的連絡資訊）。 
 
@@ -68,7 +68,7 @@ Android 應用程式都至少一個下列四個主要元件所組成：_活動_�
 有一些情況下，即使應用程式是在背景中，Android 會喚醒應用程式而放寬這些限制在幾分鐘內，允許應用程式執行一些工作：
 * 高優先順序應用程式收到 Firebase 雲端訊息。
 * 應用程式會收到廣播。 
-* 應用程式收到執行`PendingIntent`通知回應。
+* 接收應用程式，並執行`PendingIntent`通知回應。
 
 現有的 Xamarin.Android 應用程式可能需要變更執行背景工作，以避免可能發生在 Android 8.0 上的任何問題。 以下是一些實用的替代方案，Android 服務：
 

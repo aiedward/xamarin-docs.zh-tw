@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 329984d44318b2204f2f5ee253402eb158c85b9f
-ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579852"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61283155"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin.mac 的對話方塊
 
@@ -754,7 +754,7 @@ namespace SourceWriter
 }
 ```
 
-請注意，此類別有完成以下兩件事： 第一，沒有 helper`App`內容，以便能夠存取**AppDelegate**更容易。 第二個，`Preferences`屬性會公開全域**AppPreferences**類別與任何 UI 控制項繫結資料放在這個檢視表。
+請注意，此類別有完成以下兩件事：第一，沒有 helper`App`內容，以便能夠存取**AppDelegate**更容易。 第二個，`Preferences`屬性會公開全域**AppPreferences**類別與任何 UI 控制項繫結資料放在這個檢視表。
 
 接下來，按兩下 分鏡腳本檔案，以重新開啟介面產生器中 （請參閱上述的變更只）。 拖曳到檢視中建置的喜好設定介面所需的任何 UI 控制項。 針對每個控制項中，切換至**繫結偵測器**並繫結至的個別屬性**AppPreference**類別：
 

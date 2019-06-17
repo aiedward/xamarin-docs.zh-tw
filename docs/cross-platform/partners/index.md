@@ -8,6 +8,12 @@ ms.author: crdun
 ms.date: 09/17/2018
 hide_comments: true
 hideEdit: true
+ms.openlocfilehash: ddf80fb650127b91bef89792fc622267ad1ed0d4
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61211596"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>認證來傳遞行動解決方案的諮詢合作夥伴
 
@@ -223,6 +229,7 @@ _許多協力廠商列出主要位置，對外提供服務。_
 |[CommerceLab](http://www.commercelab.com.au)|雪梨，澳洲|我們的雪梨為基礎的應用程式開發帶來的小型企業，線上和離線時，能夠參加最新的 marketplace|
 |[Datacom](http://www.datacom.co.nz/)|威靈頓，New Zealand;奧克蘭，紐西蘭;雪梨，澳洲|Datacom 設計、 建置並執行 IT 系統與商務程序。|
 |[進階技術的 envoy](http://www.envoyat.com/)|Chatswood，澳洲|Envoy specialises 建置 web、 行動、 企業應用程式。|
+|[XAM 諮詢](http://www.xam-consulting.com/)|澳洲寬|XAM 建置企業級應用程式。 超過 20 個以上專家在 Xamarin 中並無伺服器的小組。|
 |[Kloud 解決方案](http://www.kloud.com.au)|墨爾本，澳大利亞|我們已協助許多澳洲的最大品牌轉換其業務、 降低成本、 簡化程序，並介紹革命性的新服務與雲端運算|
 |[標記 Metro](http://www.markermetro.com/)|奧克蘭，紐西蘭;雪梨，澳洲|金鑰的用戶端經驗包括 Disney 行動，Sony，NZTE，Carters Holt Harvey，聯邦共和國銀行和空氣紐西蘭。 標記 Metro 很榮幸成為 Xamarin 協力電腦。|
 |[Millipede](http://millipede.com.au)|墨爾本，澳大利亞|Millipede 屬於 WPP，一家全球性公司使用超過 8000 的人員。 我們很高 creative 群組的軟體工程師、 設計師和 UX 專家專注於開發更好、 更有效率地行動解決方案從安全銀行的消費者和企業公用程式應用程式到行動的遊戲。|
@@ -483,7 +490,7 @@ _許多協力廠商列出主要位置，對外提供服務。_
 |[AGILUX](https://agilux.lu)|Pommerloch，盧森堡|Agilux 是電腦的顧問公司專精於商業管理的 IT 解決方案整合，和說明 Sme，開發網站、 電子商務和行動應用程式|
 
 
-## <a name="macedonia"></a>馬其頓
+## <a name="macedonia"></a>北馬其頓
 
 | Partner | 位置 | 描述 |
 | --- | --- | --- |

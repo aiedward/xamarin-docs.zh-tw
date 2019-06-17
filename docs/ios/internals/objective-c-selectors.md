@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/12/2017
-ms.openlocfilehash: cf39d548dc83fae67e8703d42e9387b8f19504e6
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 15db59945f482728f760006095e294bc5628c8bd
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036346"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>在 Xamarin.iOS 中的 OBJECTIVE-C 選取器
 
 Objective C 語言為基礎*選取器*。 選取器是可以傳送至物件的訊息，或*類別*。 [Xamarin.iOS](~/ios/internals/api-design/index.md)對應執行個體選取器來執行個體方法和類別靜態方法的選取器。
 
-不同於一般的 C 函式 （和 c + + 成員函式類似），您無法直接叫用選取器，使用[P/Invoke](https://www.mono-project.com/docs/advanced/pinvoke/)相反地，傳送到 OBJECTIVE-C 類別選取器，或執行個體 [`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
+不同於一般的 C 函式 (和C++成員函式)，您無法直接叫用選取器，使用[P/Invoke](https://www.mono-project.com/docs/advanced/pinvoke/)相反地，傳送到 OBJECTIVE-C 類別選取器，或執行個體 [`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
 函式。
 
 如需有關在 OBJECTIVE-C 中的訊息的詳細資訊，請查看 Apple[使用物件](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)指南。
@@ -137,15 +137,15 @@ else
 
 ### <a name="selector-targets"></a>選取器目標
 
-物件執行個體或 OBJECTIVE-C 類別選取器的目標。 如果目標是執行個體，而且來自繫結的 Xamarin.iOS 型別，使用[ `ObjCRuntime.INativeObject.Handle` ](https://developer.xamarin.com/api/property/ObjCRuntime.INativeObject.Handle/)屬性。
+物件執行個體或 OBJECTIVE-C 類別選取器的目標。 如果目標是執行個體，而且來自繫結的 Xamarin.iOS 型別，使用[ `ObjCRuntime.INativeObject.Handle` ](xref:ObjCRuntime.INativeObject.Handle)屬性。
 
-如果目標類別，請使用[ `ObjCRuntime.Class` ](https://developer.xamarin.com/api/type/ObjCRuntime.Class/)若要取得類別執行個體的參考，然後使用[ `Class.Handle` ](https://developer.xamarin.com/api/property/ObjCRuntime.Class.Handle/)屬性。
+如果目標類別，請使用[ `ObjCRuntime.Class` ](xref:ObjCRuntime.Class)若要取得類別執行個體的參考，然後使用[ `Class.Handle` ](xref:ObjCRuntime.Class.Handle)屬性。
 
 ### <a name="selector-names"></a>選取器名稱
 
 選取器名稱會列在 Apple 的文件。 例如， [ `NSString` ](https://developer.apple.com/documentation/foundation/nsstring?language=objc)包括[ `sizeWithFont:` ](https://developer.apple.com/documentation/foundation/nsstring/1619917-sizewithfont?language=objc)並[ `sizeWithFont:forWidth:lineBreakMode:` ](https://developer.apple.com/documentation/foundation/nsstring/1619914-sizewithfont?language=objc)選取器。 內嵌和尾端冒號選取器名稱的一部分，而且不能省略。
 
-選取器名稱之後，您可以建立[ `ObjCRuntime.Selector` ](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/)為它的執行個體。
+選取器名稱之後，您可以建立[ `ObjCRuntime.Selector` ](xref:ObjCRuntime.Selector)為它的執行個體。
 
 ### <a name="calling-objcmsgsend"></a>Calling objc_msgSend
 

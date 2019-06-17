@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/13/2018
-ms.openlocfilehash: f31490a683adfb46c609f14adf08b68de0abc375
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6710abd28a2b0f992296008d12950b95ec29783d
+ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106646"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394697"
 ---
 # <a name="notifications-in-xamarinios"></a>在 Xamarin.iOS 中的通知
 
@@ -47,7 +47,7 @@ application.RegisterUserNotificationSettings(notificationSettings);
 
 ```csharp
 UILocalNotification notification = new UILocalNotification();
-NSDate.FromTimeIntervalSinceNow(15);
+notification.FireDate = NSDate.FromTimeIntervalSinceNow(15);
 //notification.AlertTitle = "Alert Title"; // required for Apple Watch notifications
 notification.AlertAction = "View Alert";
 notification.AlertBody = "Your 15 second alert has fired!";
@@ -138,5 +138,5 @@ if(remoteNotification != null)
 - [本機通知 （範例）](https://developer.xamarin.com/samples/monotouch/LocalNotifications)
 - [本機和推播通知適用於開發人員](https://developer.apple.com/notifications/)
 - [本機和推播通知程式設計指南](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
-- [Uiapplication #](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIApplication)
+- [UIApplication](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIApplication)
 - [UILocalNotification](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UILocalNotification)

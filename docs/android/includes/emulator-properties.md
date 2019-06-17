@@ -1,4 +1,12 @@
-|屬性|描述|選項|
+---
+ms.openlocfilehash: b39fb6157c247416c85846d4d8e63e6e1b7c6028
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60956834"
+---
+|屬性|說明|選項|
 |--- |--- |--- |
 |`abi.type`|**ABI 類型** &ndash; 指定模擬裝置的 ABI (應用程式二進位介面) 類型。 **x86** 選項是用於指令集，通常稱為 "x86" 或 "IA-32"。 **x86_64** 選項是用於 64 位元 x86 指令集。 **armeabi-v7a** 選項是用於具有 v7-a ARM 擴充功能的 ARM 指令集。 **arm64-v8a** 選項是用於支援 AArch64 的 ARM 指令集。|x86、x86_64、armeabi-v7a、arm64-v8a|
 |`disk.cachePartition`|**快取磁碟分割** &ndash; 決定模擬裝置是否將使用裝置上的 **/cache** 磁碟分割。 **/cache** 磁碟分割 (一開始是空的) 是 Android 儲存經常存取之資料與應用程式元件的位置。 如果設定為 **no**，模擬器將不會使用 **/cache** 磁碟分割，而且會忽略其他 `disk.cache` 設定。|yes、no|

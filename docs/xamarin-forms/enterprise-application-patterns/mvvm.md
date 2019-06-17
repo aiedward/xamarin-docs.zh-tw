@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: c947ec0c2fffbd9038ee58211c77bd947c445b6e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 87448c556c66ea086db70699848227e1f671792b
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61299599"
 ---
 # <a name="the-model-view-viewmodel-pattern"></a>Model View ViewModel 模式
 
@@ -26,7 +26,7 @@ MVVM 模式有三個核心元件： 模型、 檢視和檢視模型。 每個有
 
 ![](mvvm-images/mvvm.png "MVVM 模式")
 
-**圖 2-1**: MVVM 模式
+**圖 2-1**:MVVM 模式
 
 除了了解每個元件的責任，也很重要，若要了解它們如何彼此互動。 概括而言，檢視 「 知道 」 檢視模型中，檢視模型 「 知道 」 模型，但模型不會知道檢視模型，並檢視模型未察覺的檢視。 因此，檢視模型將隔離模型，從檢視，而且可讓模型發展與檢視分開。
 
@@ -92,11 +92,11 @@ MVVM 模式有三個核心元件： 模型、 檢視和檢視模型。 每個有
 簡單的方法是以宣告方式具現化在 XAML 中其對應的檢視模型的檢視。 當建構檢視時，也會建構對應的檢視模型物件。 這種方法是以下列程式碼範例所示：
 
 ```xaml
-<ContentPage ... xmlns:local="clr-namespace:eShop">  
-    <ContentPage.BindingContext>  
-        <local:LoginViewModel />  
-    </ContentPage.BindingContext>  
-    ...  
+<ContentPage ... xmlns:local="clr-namespace:eShop">  
+    <ContentPage.BindingContext>  
+        <local:LoginViewModel />  
+    </ContentPage.BindingContext>  
+    ...  
 </ContentPage>
 ```
 
@@ -109,10 +109,10 @@ MVVM 模式有三個核心元件： 模型、 檢視和檢視模型。 每個有
 檢視可以在指派給的檢視模型中產生的程式碼後置檔案的程式碼及其[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)屬性。 通常這是在檢視表的建構函式，如下列程式碼範例所示：
 
 ```csharp
-public LoginView()  
+public LoginView()  
 {  
-    InitializeComponent();  
-    BindingContext = new LoginViewModel(navigationService);  
+    InitializeComponent();  
+    BindingContext = new LoginViewModel(navigationService);  
 }
 ```
 
@@ -135,27 +135,27 @@ viewModelBase:ViewModelLocator.AutoWireViewModel="true"
 `AutoWireViewModel`屬性是可繫結的屬性，會初始化為 false，和其值變更時`OnAutoWireViewModelChanged`會呼叫事件處理常式。 這個方法會解析檢視的檢視模型。 下列程式碼範例顯示如何即可達成此目的：
 
 ```csharp
-private static void OnAutoWireViewModelChanged(BindableObject bindable, object oldValue, object newValue)  
+private static void OnAutoWireViewModelChanged(BindableObject bindable, object oldValue, object newValue)  
 {  
-    var view = bindable as Element;  
-    if (view == null)  
-    {  
-        return;  
-    }  
+    var view = bindable as Element;  
+    if (view == null)  
+    {  
+        return;  
+    }  
 
-    var viewType = view.GetType();  
-    var viewName = viewType.FullName.Replace(".Views.", ".ViewModels.");  
-    var viewAssemblyName = viewType.GetTypeInfo().Assembly.FullName;  
-    var viewModelName = string.Format(  
-        CultureInfo.InvariantCulture, "{0}Model, {1}", viewName, viewAssemblyName);  
+    var viewType = view.GetType();  
+    var viewName = viewType.FullName.Replace(".Views.", ".ViewModels.");  
+    var viewAssemblyName = viewType.GetTypeInfo().Assembly.FullName;  
+    var viewModelName = string.Format(  
+        CultureInfo.InvariantCulture, "{0}Model, {1}", viewName, viewAssemblyName);  
 
-    var viewModelType = Type.GetType(viewModelName);  
-    if (viewModelType == null)  
-    {  
-        return;  
-    }  
-    var viewModel = _container.Resolve(viewModelType);  
-    view.BindingContext = viewModel;  
+    var viewModelType = Type.GetType(viewModelName);  
+    if (viewModelType == null)  
+    {  
+        return;  
+    }  
+    var viewModel = _container.Resolve(viewModelType);  
+    view.BindingContext = viewModel;  
 }
 ```
 
@@ -189,18 +189,18 @@ private static void OnAutoWireViewModelChanged(BindableObject bindable, object o
 EShopOnContainers 的行動裝置應用程式會使用`ExtendedBindableObject`類別，以提供變更通知，這下列程式碼範例所示：
 
 ```csharp
-public abstract class ExtendedBindableObject : BindableObject  
+public abstract class ExtendedBindableObject : BindableObject  
 {  
-    public void RaisePropertyChanged<T>(Expression<Func<T>> property)  
-    {  
-        var name = GetMemberInfo(property).Name;  
-        OnPropertyChanged(name);  
-    }  
+    public void RaisePropertyChanged<T>(Expression<Func<T>> property)  
+    {  
+        var name = GetMemberInfo(property).Name;  
+        OnPropertyChanged(name);  
+    }  
 
-    private MemberInfo GetMemberInfo(Expression expression)  
-    {  
-        ...  
-    }  
+    private MemberInfo GetMemberInfo(Expression expression)  
+    {  
+        ...  
+    }  
 }
 ```
 
@@ -209,17 +209,17 @@ Xamarin.Form [ `BindableObject` ](xref:Xamarin.Forms.BindableObject)類別會實
 在 eShopOnContainers 的行動裝置應用程式中每個檢視模型類別衍生自`ViewModelBase`類別，又衍生自`ExtendedBindableObject`類別。 因此，每個檢視模型類別會使用`RaisePropertyChanged`方法中的`ExtendedBindableObject`類別，以提供屬性變更通知。 下列程式碼範例示範如何在 eShopOnContainers 的行動應用程式叫用屬性變更通知使用 lambda 運算式：
 
 ```csharp
-public bool IsLogin  
+public bool IsLogin  
 {  
-    get  
-    {  
-        return _isLogin;  
-    }  
-    set  
-    {  
-        _isLogin = value;  
-        RaisePropertyChanged(() => IsLogin);  
-    }  
+    get  
+    {  
+        return _isLogin;  
+    }  
+    set  
+    {  
+        _isLogin = value;  
+        RaisePropertyChanged(() => IsLogin);  
+    }  
 }
 ```
 
@@ -242,7 +242,7 @@ public bool IsLogin
 下列程式碼示範如何[ `Command` ](xref:Xamarin.Forms.Command)執行個體，代表註冊命令，這藉由指定的委派建構`Register`檢視模型的方法：
 
 ```csharp
-public ICommand RegisterCommand => new Command(Register);
+public ICommand RegisterCommand => new Command(Register);
 ```
 
 此命令會公開至檢視的屬性來傳回的參考`ICommand`。 當`Execute`上呼叫方法[ `Command` ](xref:Xamarin.Forms.Command)物件，它只會轉送至透過委派中所指定的檢視模型中的方法呼叫`Command`建構函式。
@@ -250,13 +250,13 @@ public ICommand RegisterCommand => new Command(Register);
 非同步方法可以使用叫用命令`async`並`await`關鍵字指定的命令時`Execute`委派。 這表示回呼是`Task`且應該等候。 例如，下列程式碼示範如何[ `Command` ](xref:Xamarin.Forms.Command)執行個體，代表登入命令，這藉由指定的委派建構`SignInAsync`檢視模型的方法：
 
 ```csharp
-public ICommand SignInCommand => new Command(async () => await SignInAsync());
+public ICommand SignInCommand => new Command(async () => await SignInAsync());
 ```
 
 可以將參數傳遞給`Execute`並`CanExecute`使用的動作[ `Command<T>` ](xref:Xamarin.Forms.Command)來具現化命令的類別。 例如，下列程式碼示範如何`Command<T>`執行個體用來指出`NavigateAsync`方法將會需要類型的引數`string`:
 
 ```csharp
-public ICommand NavigateCommand => new Command<string>(NavigateAsync);
+public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 ```
 
 在這兩[ `Command` ](xref:Xamarin.Forms.Command)並[ `Command<T>` ](xref:Xamarin.Forms.Command)類別，來委派`CanExecute`每個建構函式中的方法是選擇性的。 如果未指定委派`Command`會傳回`true`如`CanExecute`。 不過，檢視模型可以指出在命令中的變更`CanExecute`狀態，藉由呼叫`ChangeCanExecute`方法`Command`物件。 這會導致`CanExecuteChanged`會引發事件。 任何在 UI 中的控制項繫結至命令會更新以反映可用性的資料繫結命令及其已啟用的狀態。
@@ -266,11 +266,11 @@ public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 下列程式碼範例示範如何[ `Grid` ](xref:Xamarin.Forms.Grid)中`LoginView`繫結至`RegisterCommand`中`LoginViewModel`藉由類別[ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)執行個體：
 
 ```xaml
-<Grid Grid.Column="1" HorizontalOptions="Center">  
-    <Label Text="REGISTER" TextColor="Gray"/>  
-    <Grid.GestureRecognizers>  
-        <TapGestureRecognizer Command="{Binding RegisterCommand}" NumberOfTapsRequired="1" />  
-    </Grid.GestureRecognizers>  
+<Grid Grid.Column="1" HorizontalOptions="Center">  
+    <Label Text="REGISTER" TextColor="Gray"/>  
+    <Grid.GestureRecognizers>  
+        <TapGestureRecognizer Command="{Binding RegisterCommand}" NumberOfTapsRequired="1" />  
+    </Grid.GestureRecognizers>  
 </Grid>
 ```
 
@@ -280,7 +280,7 @@ public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 
 ### <a name="implementing-behaviors"></a>實作行為
 
-行為允許功能新增至 UI 控制項，而不具有子類別。 相反地，功能是行為類別中實作，並附加至控制項，如同它是控制項本身的一部分。 行為可讓您實作程式碼，您通常必須撰寫程式碼後置，因為它直接互動的方式，您可以精確附加至控制項，並跨多個檢視或應用程式封裝以供重複使用控制項的 API。 在內容中的 MVVM，行為會是個實用的方法，如控制項連接到命令。
+行為允許功能新增至 UI 控制項，而不具有子類別。 相反地，功能會在行為類別中實作並附加至控制項，如同控制項本身的一部分。 行為可讓您實作程式碼，您通常必須撰寫程式碼後置，因為它直接互動的方式，您可以精確附加至控制項，並跨多個檢視或應用程式封裝以供重複使用控制項的 API。 在內容中的 MVVM，行為會是個實用的方法，如控制項連接到命令。
 
 附加至控制項，以透過附加屬性的行為就所謂*附加行為*。 行為接著可以使用公開的 API，它所附加到將功能新增至該控制項或其他控制項，檢視的視覺化樹狀結構中的項目。 EShopOnContainers 的行動應用程式包含`LineColorBehavior`類別，這是附加的行為。 如需有關此行為的詳細資訊，請參閱 <<c0> [ 顯示驗證錯誤](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors)。
 
@@ -288,49 +288,49 @@ Xamarin.Forms 行為是類別，衍生自[ `Behavior` ](xref:Xamarin.Forms.Behav
 
 在 eShopOnContainers 的行動應用程式中`BindableBehavior<T>`類別衍生自[ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1)類別。 目的`BindableBehavior<T>`類別是為需要的 Xamarin.Forms 行為提供基底類別[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)設為附加的控制項的行為。
 
-`BindableBehavior<T>`類別會提供可覆寫`OnAttachedTo`方法，以設定[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)的行為，以及可覆寫`OnDetachingFrom`方法會清除`BindingContext`。 此外，此類別會儲存在附加的控制項的參考`AssociatedObject`屬性。
+`BindableBehavior<T>`類別會提供可覆寫`OnAttachedTo`方法，以設定[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)的行為，以及可覆寫`OnDetachingFrom`方法會清除`BindingContext`。 此外，該類別會在 `AssociatedObject` 屬性中儲存對附加控制項的參考。
 
 EShopOnContainers 的行動裝置應用程式包含`EventToCommandBehavior`類別，以回應事件在發生執行命令。 這個類別衍生自`BindableBehavior<T>`類別，使行為可以繫結至並執行`ICommand`所指定`Command`屬性時的行為會取用。 下列程式碼範例顯示 `EventToCommandBehavior` 類別：
 
 ```csharp
-public class EventToCommandBehavior : BindableBehavior<View>  
+public class EventToCommandBehavior : BindableBehavior<View>  
 {  
-    ...  
-    protected override void OnAttachedTo(View visualElement)  
-    {  
-        base.OnAttachedTo(visualElement);  
+    ...  
+    protected override void OnAttachedTo(View visualElement)  
+    {  
+        base.OnAttachedTo(visualElement);  
 
-        var events = AssociatedObject.GetType().GetRuntimeEvents().ToArray();  
-        if (events.Any())  
-        {  
-            _eventInfo = events.FirstOrDefault(e => e.Name == EventName);  
-            if (_eventInfo == null)  
-                throw new ArgumentException(string.Format(  
-                        "EventToCommand: Can't find any event named '{0}' on attached type",   
-                        EventName));  
+        var events = AssociatedObject.GetType().GetRuntimeEvents().ToArray();  
+        if (events.Any())  
+        {  
+            _eventInfo = events.FirstOrDefault(e => e.Name == EventName);  
+            if (_eventInfo == null)  
+                throw new ArgumentException(string.Format(  
+                        "EventToCommand: Can't find any event named '{0}' on attached type",   
+                        EventName));  
 
-            AddEventHandler(_eventInfo, AssociatedObject, OnFired);  
-        }  
-    }  
+            AddEventHandler(_eventInfo, AssociatedObject, OnFired);  
+        }  
+    }  
 
-    protected override void OnDetachingFrom(View view)  
-    {  
-        if (_handler != null)  
-            _eventInfo.RemoveEventHandler(AssociatedObject, _handler);  
+    protected override void OnDetachingFrom(View view)  
+    {  
+        if (_handler != null)  
+            _eventInfo.RemoveEventHandler(AssociatedObject, _handler);  
 
-        base.OnDetachingFrom(view);  
-    }  
+        base.OnDetachingFrom(view);  
+    }  
 
-    private void AddEventHandler(  
-            EventInfo eventInfo, object item, Action<object, EventArgs> action)  
-    {  
-        ...  
-    }  
+    private void AddEventHandler(  
+            EventInfo eventInfo, object item, Action<object, EventArgs> action)  
+    {  
+        ...  
+    }  
 
-    private void OnFired(object sender, EventArgs eventArgs)  
-    {  
-        ...  
-    }  
+    private void OnFired(object sender, EventArgs eventArgs)  
+    {  
+        ...  
+    }  
 }
 ```
 
@@ -344,13 +344,13 @@ public class EventToCommandBehavior : BindableBehavior<View>
 
 ```xaml
 <ListView>  
-    <ListView.Behaviors>  
-        <behaviors:EventToCommandBehavior             
-            EventName="ItemTapped"  
-            Command="{Binding OrderDetailCommand}"  
-            EventArgsConverter="{StaticResource ItemTappedEventArgsConverter}" />  
-    </ListView.Behaviors>  
-    ...  
+    <ListView.Behaviors>  
+        <behaviors:EventToCommandBehavior             
+            EventName="ItemTapped"  
+            Command="{Binding OrderDetailCommand}"  
+            EventArgsConverter="{StaticResource ItemTappedEventArgsConverter}" />  
+    </ListView.Behaviors>  
+    ...  
 </ListView>
 ```
 

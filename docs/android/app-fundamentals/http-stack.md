@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: 680fe2f8980d66b6dc80ec9a98898f9925df25f4
-ms.sourcegitcommit: f3f28722198e172d81c16bdeab0cb0a581a08dd0
+ms.openlocfilehash: a3704552c8fc147588919ecdde2813e831237d89
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51598882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61019316"
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>HttpClient 堆疊和適用於 Android 的 SSL/TLS 實作選擇器
 
@@ -58,7 +58,7 @@ AndroidClientHandler 是新的處理常式委派給原生 Java/OS 的程式碼�
 
 #### <a name="cons"></a>缺點
 
-- 需要 Android 5.0 或更新版本。
+- 需要 Android 4.1 或更新版本。
 - 無法使用某些 HttpClient 功能] / [選項。
 
 ### <a name="managed-httpclienthandler"></a>受控 (HttpClientHandler)
@@ -82,11 +82,11 @@ AndroidClientHandler 是新的處理常式委派給原生 Java/OS 的程式碼�
 之間的抉擇`AndroidClientHandler`和`HttpClientHandler`取決於您的應用程式的需求。 `AndroidClientHandler` 建議的最新的安全性支援，例如。
 
 -   您需要的 TLS 1.2 + 支援。
--   您的應用程式的目標 Android 5.0 (API 21) 或更新版本。
+-   您的應用程式的目標 Android 4.1 (API 16) 或更新版本。
 -   您需要 TLS 1.2 + 支援`HttpClient`。
 -   您不需要支援 TLS 1.2 + `WebClient`。
 
-`HttpClientHandler` 是不錯的選擇，如果您需要 TLS 1.2 + 支援，但必須支援 Android 5.0 之前的 Android 版本。 它是也不錯的選擇，如果您需要 TLS 1.2 + 支援`WebClient`。
+`HttpClientHandler` 是不錯的選擇，如果您需要 TLS 1.2 + 支援，但必須支援的 Android 版本早於 Android 4.1。 它是也不錯的選擇，如果您需要 TLS 1.2 + 支援`WebClient`。
 
 從 Xamarin.Android 8.3 `HttpClientHandler` Boring SSL 的預設值 (`btls`) 為基礎的 TLS 提供者。 無聊 SSL TLS 提供者會提供下列優點：
 
@@ -107,12 +107,12 @@ AndroidClientHandler 是新的處理常式委派給原生 Java/OS 的程式碼�
 此程式碼片段是如何明確的單一執行個體的範例`HttpClient`類別：
 
 ```csharp
-// Android 5.0 or higher, Xamarin.Android 6.1 or higher
+// Android 4.1 or higher, Xamarin.Android 6.1 or higher
 HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler ());
 ```
 
 > [!NOTE]
-> 基礎 Android 裝置必須支援 TLS 1.2 （即Android 5.0 及更新版本)
+> 基礎 Android 裝置必須支援 TLS 1.2 （即Android 4.1 和更新版本)
 
 
 ## <a name="ssltls-implementation-build-option"></a>SSL/TLS 實作建置選項

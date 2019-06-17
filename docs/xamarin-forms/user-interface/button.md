@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: 3b23a1a07741cd048ea034b2b39b5f9cde902dc6
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: d32ef0176f0eff5981720d9e83568a7a40d0a396
+ms.sourcegitcommit: b4a12607ca944de10fd166139765241a4501831c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672764"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66687148"
 ---
 # <a name="xamarinforms-button"></a>Xamarin.Forms 按鈕
 
@@ -429,7 +429,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 > [!NOTE]
 > `Button`類別也有[ `Margin` ](xref:Xamarin.Forms.View.Margin)並[ `Padding` ](xref:Xamarin.Forms.Button.Padding)控制版面配置行為的屬性`Button`。 如需詳細資訊，請參閱 <<c0> [ 邊界和邊框距離](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
 
-六個這些屬性的效果 (不包括`FontFamily`並`FontAttributes`) 中會示範**按鈕外觀**頁面。 另一個屬性[ `Image` ](xref:Xamarin.Forms.Button.Image)，一節所述[**點陣圖使用按鈕**](#image-button)。
+六個這些屬性的效果 (不包括`FontFamily`並`FontAttributes`) 中會示範**按鈕外觀**頁面。 另一個屬性[ `Image` ](xref:Xamarin.Forms.Button.ImageSource)，一節所述[**點陣圖使用按鈕**](#image-button)。
 
 中的檢視和資料繫結的所有 **按鈕外觀** XAML 檔案中所定義的頁面：
 
@@ -748,9 +748,9 @@ public partial class ToggleButtonDemoPage : ContentPage
 
 ## <a name="using-bitmaps-with-buttons"></a>使用的點陣圖按鈕
 
-`Button`類別會定義[ `Image` ](xref:Xamarin.Forms.Button.Image)屬性，可讓您在上顯示點陣圖影像`Button`，單獨或搭配文字。 您也可以指定的文字和影像的排列方式。
+`Button`類別會定義[ `ImageSource` ](xref:Xamarin.Forms.Button.Image)屬性，可讓您在上顯示點陣圖影像`Button`，單獨或搭配文字。 您也可以指定的文字和影像的排列方式。
 
-`Image`屬性的類型是[ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource)，這表示點陣圖都必須儲存在個別的平台專案中，而不是在.NET Standard 程式庫專案的資源。
+`ImageSource`屬性的類型是[ `ImageSource` ](xref:Xamarin.Forms.ImageSource)，這表示，可從檔案、 內嵌的資源、 URI 或資料流載入點陣圖。
 
 Xamarin.Forms 所支援的每個平台可讓儲存在不同的像素解析度的各種裝置上可能執行的應用程式的多個大小的影像。 這些是名為多個點陣圖，或將其儲存在一種作業系統可以挑選最符合項目，該裝置的視訊顯示器解析度。
 
@@ -781,7 +781,7 @@ Xamarin.Forms 所支援的每個平台可讓儲存在不同的像素解析度的
 
 所有已給予他們**建置動作**的**內容**。
 
-您可以指定如何`Text`並`Image`屬性上排列`Button`使用[ `ContentLayout` ](xref:Xamarin.Forms.Button.ContentLayout)屬性`Button`。 此屬性的類型是[ `ButtonContentLayout` ](xref:Xamarin.Forms.Button.ButtonContentLayout)，這是中的內嵌的類別`Button`。 [建構函式](xref:Xamarin.Forms.Button.ButtonContentLayout.%23ctor(Xamarin.Forms.Button.ButtonContentLayout.ImagePosition,System.Double))有兩個引數：
+您可以指定如何`Text`並`ImageSource`屬性上排列`Button`使用[ `ContentLayout` ](xref:Xamarin.Forms.Button.ContentLayout)屬性`Button`。 此屬性的類型是[ `ButtonContentLayout` ](xref:Xamarin.Forms.Button.ButtonContentLayout)，這是中的內嵌的類別`Button`。 [建構函式](xref:Xamarin.Forms.Button.ButtonContentLayout.%23ctor(Xamarin.Forms.Button.ButtonContentLayout.ImagePosition,System.Double))有兩個引數：
 
 - 成員[ `ImagePosition` ](xref:Xamarin.Forms.Button.ButtonContentLayout.ImagePosition)列舉型別： `Left`， `Top`， `Right`，或`Bottom`指出點陣圖相對於文字的顯示方式。
 - A`double`點陣圖與文字之間的間距值。
@@ -794,7 +794,7 @@ Xamarin.Forms 所支援的每個平台可讓儲存在不同的像素解析度的
 Button button = new Button
 {
     Text = "button text",
-    Image = new FileImageSource
+    ImageSource = new FileImageSource
     {
         File = "image filename"
     },
@@ -806,7 +806,7 @@ Button button = new Button
 
 ```xaml
 <Button Text="button text"
-        Image="image filename"
+        ImageSource="image filename"
         ContentLayout="Right, 20" />
 ```
 
@@ -816,22 +816,22 @@ Button button = new Button
 
 ```xaml
 <Button>
-    <Button.Image>
-        <OnPlatform x:TypeArguments="FileImageSource">
+    <Button.ImageSource>
+        <OnPlatform x:TypeArguments="ImageSource">
             <On Platform="iOS, Android" Value="MonkeyFace.png" />
             <On Platform="UWP" Value="Assets/MonkeyFace.png" />
         </OnPlatform>
-    </Button.Image>
+    </Button.ImageSource>
 </Button>
 ```
 
 如果 UWP 點陣圖會儲存在專案的根目錄，可大幅簡化此標記：
 
 ```xaml
-<Button Image="MonkeyFace.png" />
+<Button ImageSource="MonkeyFace.png" />
 ```
 
-若要避免重複的標記，在大量**ImageButtonDemo.xaml**檔案，隱含`Style`也會定義設定`Image`屬性。 這`Style`會自動套用至五個其他`Button`項目。 以下是完整的 XAML 檔案：
+若要避免重複的標記，在大量**ImageButtonDemo.xaml**檔案，隱含`Style`也會定義設定`ImageSource`屬性。 這`Style`會自動套用至五個其他`Button`項目。 以下是完整的 XAML 檔案：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -844,8 +844,8 @@ Button button = new Button
 
         <FlexLayout.Resources>
             <Style TargetType="Button">
-                <Setter Property="Image">
-                    <OnPlatform x:TypeArguments="FileImageSource">
+                <Setter Property="ImageSource">
+                    <OnPlatform x:TypeArguments="ImageSource">
                         <On Platform="iOS, Android" Value="MonkeyFace.png" />
                         <On Platform="UWP" Value="Assets/MonkeyFace.png" />
                     </OnPlatform>
@@ -854,12 +854,12 @@ Button button = new Button
         </FlexLayout.Resources>
 
         <Button>
-            <Button.Image>
-                <OnPlatform x:TypeArguments="FileImageSource">
+            <Button.ImageSource>
+                <OnPlatform x:TypeArguments="ImageSource">
                     <On Platform="iOS, Android" Value="MonkeyFace.png" />
                     <On Platform="UWP" Value="Assets/MonkeyFace.png" />
                 </OnPlatform>
-            </Button.Image>
+            </Button.ImageSource>
         </Button>
 
         <Button Text="Default" />

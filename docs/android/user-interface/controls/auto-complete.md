@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2018
 ms.openlocfilehash: cf2221380e5ddbd8278cc2d387c6eb185d990c1a
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036531"
 ---
 # <a name="auto-complete"></a>自動完成
 
@@ -171,7 +171,7 @@ static string[] COUNTRIES = new string[] {
 ## <a name="more-information"></a>更多資訊
 
 請注意，使用硬式編碼的字串陣列，不是建議的設計作法，因為您的應用程式程式碼應該專注於行為，不是內容。 應用程式內容，例如字串應該以輕鬆修改的內容，並促進當地語系化內容的程式碼，才能外部化。 硬式編碼的字串會在本教學課程只用於更為簡單，並專注於 [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-小工具。 相反地，您的應用程式應該宣告這類 XML 檔案中的字串陣列。 這可以透過完成`<string-array>`專案中的資源`res/values/strings.xml`檔案。 例如: 
+小工具。 相反地，您的應用程式應該宣告這類 XML 檔案中的字串陣列。 這可以透過完成`<string-array>`專案中的資源`res/values/strings.xml`檔案。 例如：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

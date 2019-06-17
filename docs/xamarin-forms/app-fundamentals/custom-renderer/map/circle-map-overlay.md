@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ed671063aad55cb6c4730494f024a2ec2a016de1
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: f5a7dd9cca006157589f6fc43b41764129d90c86
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051927"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926645"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>醒目提示地圖上的循環區域
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/circle/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Circle/)
 
 _本文說明如何將循環重疊新增至地圖中，以醒目提示地圖的循環區域。_
 
@@ -335,6 +335,6 @@ List<Position> GenerateCircleCoordinates(Position position, double radius)
 
 ## <a name="related-links"></a>相關連結
 
-- [Circular Map Ovlerlay (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/circle/) (循環地圖重疊 (範例))
+- [Circular Map Ovlerlay (Samples)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Circle/) (循環地圖重疊 (範例))
 - [自訂地圖釘選](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

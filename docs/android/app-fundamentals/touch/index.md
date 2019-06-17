@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: 7f957c9ff5a0e7c3a0821978703860ed2f723a92
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123312"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61013117"
 ---
 # <a name="touch-and-gestures-in-xamarinandroid"></a>觸控和筆勢在 Xamarin.Android 中
 
@@ -33,7 +33,7 @@ Android 使用`MotionEvent`物件封裝觸控資料，以及接聽修飾的檢�
 ## <a name="sections"></a>章節
 
 -  [Android 中的觸控](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
--  [逐步解說： 在 Android 中使用觸控](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
+-  [逐步解說：在 Android 中使用觸控](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
 -  [多點觸控追蹤](touch-tracking.md)
 
 ## <a name="summary"></a>總結

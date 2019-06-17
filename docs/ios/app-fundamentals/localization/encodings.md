@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/28/2017
 ms.openlocfilehash: db24c8677b0a3099193132575e92bc43a4c31dea
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61251017"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>在 Xamarin.iOS 中的國際化編碼
 
@@ -29,17 +29,17 @@ ms.locfileid: "50675558"
 您可以選取其中一個：
 
 -  中日韓： 的中文、 日文和韓文
--  mideast： 阿拉伯文、 希伯來文、 土耳其文和 Latin5。
--  其他： 斯拉夫文、 波羅的海文、 越南文、 烏克蘭文和泰文
--  罕見： EBCDIC 編碼方式和其他少數的字碼頁
--  西部： 拉丁語言時，伊斯特和西歐
--  全部
+-  mideast:阿拉伯文、 希伯來文、 土耳其文和 Latin5。
+-  其他：斯拉夫文、 波羅的海文、 越南文、 烏克蘭文和泰文
+-  少：EBCDIC 編碼方式和其他少數的字碼頁
+-  西部：拉丁語言時，伊斯特和西歐
+-  all
 
 
  <a name="cjk" />
 
 
-## <a name="cjk"></a>中日韓
+## <a name="cjk"></a>cjk
 
 -  CP51932
 -  CP932

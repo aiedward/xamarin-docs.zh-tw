@@ -7,8 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/14/2018
+ms.openlocfilehash: 7c3a26854c65de260aa9b3c8ed00966749eb4d9c
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66178081"
 ---
-
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 使用者介面檢視
 
 [![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/FormsGallery/)
@@ -27,9 +32,9 @@ Xamarin.Forms 包含自己的動畫基礎結構直接建立簡單的動畫，同
 
 `Button`回應點選或按一下，以指示應用程式執行特定工作。
 
-## <a name="collectionviewcollectionviewmd"></a>[CollectionView](collectionview.md)
+## <a name="collectionviewcollectionviewindexmd"></a>[CollectionView](collectionview/index.md)
 
-`CollectionView`是一種有彈性且高效能的檢視，來呈現資料使用不同的版面配置規格的清單。
+[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)是一種有彈性且高效能的檢視，來呈現資料使用不同的版面配置規格的清單。
 
 ## <a name="colorscolorsmd"></a>[色彩](colors.md)
 
@@ -46,6 +51,10 @@ DataPages 提供 API，以快速且輕鬆地繫結資料來源至預先建立的
 ## <a name="datepickerdatepickermd"></a>[DatePicker](datepicker.md)
 
 `DatePicker`可讓使用者選取日期，以指定的範圍內。 它是使用特定的平台上執行應用程式所支援的日期選擇器所實作的。
+
+## <a name="display-pop-upspop-upsmd"></a>[顯示快顯](pop-ups.md)
+
+Xamarin.Forms 提供兩個類似快顯視窗的使用者介面元素：警示和動作工作表。 這些介面項目可用來顯示對話方塊，詢問使用者簡單的問題和工作的逐步指引使用者。
 
 ## <a name="graphics-with-skiasharpgraphicsskiasharpindexmd"></a>[使用 Skiasharp 的圖形](graphics/skiasharp/index.md)
 
@@ -105,7 +114,7 @@ Xamarin.Forms 佈景主題定義特定標準控制項的視覺外觀。 當您�
 
 ## <a name="visualvisualindexmd"></a>[視覺效果](visual/index.md)
 
-Xamarin.Forms 的視覺效果可讓轉譯器會選擇性地套用到`VisualElement`物件，而不需要子類別 Xamarin.Forms 控制項。
+Xamarin.Forms 材質視覺效果可用來建立在 iOS 和 Android 上看起來相同或絕大部分都相同的 Xamarin.Forms 應用程式。
 
 ## <a name="visual-state-managervisual-state-managermd"></a>[Visual State Manager](visual-state-manager.md)
 

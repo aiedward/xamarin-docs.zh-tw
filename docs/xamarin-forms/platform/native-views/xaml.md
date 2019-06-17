@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 4f5f32871c273fc7ac3bab8fd9bcbcac03fc47fa
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 7a5c09bfe46b9e775383889e07fd93094ba9bf68
+ms.sourcegitcommit: a9c60f50b40203dd784e3e790b0d83e2bfc86129
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233805"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65731527"
 ---
 # <a name="native-views-in-xaml"></a>在 XAML 中的原生檢視
 
@@ -37,8 +37,8 @@ _從 iOS、 Android 和通用 Windows 平台的原生檢視可以直接參考從
 1. 新增`xmlns`包含原生檢視的命名空間的 XAML 檔案中的命名空間宣告。
 1. 在 XAML 檔案中建立原生檢視的執行個體。
 
-> [!NOTE]
-> XAMLC 必須關閉使用原生檢視任何 XAML 頁面。
+> [!IMPORTANT]
+> 使用原生檢視的任何 XAML 頁面必須停用已編譯的 XAML。 這可藉由裝飾您的 XAML 頁面的程式碼後置類別`[XamlCompilation(XamlCompilationOptions.Skip)]`屬性。 如需 XAML 編譯的詳細資訊，請參閱[Xamarin.Forms 中 XAML 編譯](~/xamarin-forms/xaml/xamlc.md)。
 
 若要從程式碼後置檔案參考原生的檢視，您必須使用共用資產專案 (SAP)，並將條件式編譯指示詞與平台特定程式碼包裝。 如需詳細資訊，請參閱[從程式碼參考原生檢視](#native_view_code)。
 
@@ -325,7 +325,7 @@ IOS 和 Android 的原生按鈕會共用相同`OnButtonTap`事件處理常式，
 
 此頁面也包含每個平台的原生的選擇器 檢視。 每個原生的檢視會顯示水果的集合繫結及其`ItemSource`屬性設`SubclassedNativeControlsPageViewModel.Fruits`集合。 這可讓使用者從中挑選的成果，如下列螢幕擷取畫面所示：
 
-![](xaml-images/sub-classed.png "子類別化的原生檢視")
+![](xaml-images/sub-classed.png "子類別化之原生檢視")
 
 在 iOS 和 Android 原生的選擇器會使用方法，來設定控制項。 因此，這些選擇器必須公開屬性，使其適合 XAML 的子類別。 在通用 Windows 平台 (UWP)，`ComboBox`已經是適合 XAML 的因此不需要子類別化。
 

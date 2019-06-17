@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/04/2018
-ms.openlocfilehash: edaf9d90e019729f69f721c0a92826c0148db8df
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 5611d673ecc7af896fd3a9e566e184e408b6b367
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60876054"
 ---
 # <a name="dynamic-notification-action-buttons-in-xamarinios"></a>在 Xamarin.iOS 中的動態通知動作按鈕
 
@@ -131,15 +131,15 @@ Notification content 延伸模組包含定義通知的自訂介面檢視控制�
 範例應用程式中 notification content 延伸模組的檢視控制器上現有的動作按鈕點選回應時，才修改動作按鈕。
 
 > [!NOTE]
-> 通知內容延伸模組可以回應在其檢視控制器的動作按鈕點選[ `DidReceiveNotificationResponse` ](https://developer.xamarin.com/api/member/UserNotificationsUI.UNNotificationContentExtension_Extensions.DidReceiveNotificationResponse/)方法，宣告為部分[IUNNotificationContentExtension](https://developer.xamarin.com/api/type/UserNotificationsUI.IUNNotificationContentExtension/)。
+> 通知內容延伸模組可以回應在其檢視控制器的動作按鈕點選[ `DidReceiveNotificationResponse` ](xref:UserNotificationsUI.UNNotificationContentExtension_Extensions.DidReceiveNotificationResponse*)方法，宣告為部分[IUNNotificationContentExtension](xref:UserNotificationsUI.IUNNotificationContentExtension)。
 >
 > 雖然它共用名稱與`DidReceiveNotificationResponse`方法[上述](#in-app-handling-of-notification-action-buttons)，這是不同的方法。
 >
-> Notification content 延伸模組可讓您完成處理只要點選按鈕之後，它可以選擇要告知主應用程式來處理該相同點選的按鈕。 若要這樣做，它必須通過了適當的值[UNNotificationContentExtensionResponseOption](https://developer.xamarin.com/api/type/UserNotificationsUI.UNNotificationContentExtensionResponseOption/)至其完成處理常式：
+> Notification content 延伸模組可讓您完成處理只要點選按鈕之後，它可以選擇要告知主應用程式來處理該相同點選的按鈕。 若要這樣做，它必須通過了適當的值[UNNotificationContentExtensionResponseOption](xref:UserNotificationsUI.UNNotificationContentExtensionResponseOption)至其完成處理常式：
 >
-> - [`Dismiss`](https://developer.xamarin.com/api/field/UserNotificationsUI.UNNotificationContentExtensionResponseOption.Dismiss/) 表示應關閉通知介面項目，而且主要應用程式不需要處理點選按鈕。
-> - [`DismissAndForwardAction`](https://developer.xamarin.com/api/field/UserNotificationsUI.UNNotificationContentExtensionResponseOption.DismissAndForwardAction/) 表示應關閉通知介面項目，而且主要應用程式也應該處理點選按鈕。
-> - [`DoNotDismiss`](https://developer.xamarin.com/api/field/UserNotificationsUI.UNNotificationContentExtensionResponseOption.DoNotDismiss/) 指出，應該不會關閉通知介面，以及主要應用程式不需要處理點選按鈕。
+> - `Dismiss` 表示應關閉通知介面項目，而且主要應用程式不需要處理點選按鈕。
+> - `DismissAndForwardAction` 表示應關閉通知介面項目，而且主要應用程式也應該處理點選按鈕。
+> - `DoNotDismiss` 指出，應該不會關閉通知介面，以及主要應用程式不需要處理點選按鈕。
 
 內容的延伸模組`DidReceiveNotificationResponse`方法會決定哪一個動作點選按鈕，在通知的介面，以及顯示或隱藏影像旋轉**重設**動作按鈕：
 

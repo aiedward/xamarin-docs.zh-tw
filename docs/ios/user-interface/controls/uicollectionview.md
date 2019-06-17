@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 8e114f39a01c2243889c53c855acd7fa8061ed09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a93de9d60a515b6089b35a64eb8832c456c96557
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114726"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827340"
 ---
 # <a name="collection-views-in-xamarinios"></a>在 Xamarin.iOS 中的集合檢視
 
@@ -443,7 +443,7 @@ namespace SimpleCollectionView
     - [重新排列的簡單範例](#Simple-Reordering-Example)
     - [使用自訂的筆勢辨識器](#Using-a-Custom-Gesture-Recognizer)
     - [自訂版面配置和重新排列](#Custom-Layouts-and-Reording)
-- [集合檢視變更](#Collection-View-Changes)
+- [集合檢視變更](#collection-view-changes)
 
 <a name="Easy-Reordering-of-Items" />
 
@@ -453,7 +453,7 @@ namespace SimpleCollectionView
 
 在 iOS 9 中，新增 重新排列到集合檢視的最快方式是使用`UICollectionViewController`。
 集合檢視控制器現在已`InstallsStandardGestureForInteractiveMovement`屬性，加入標準*筆勢辨識器*支援拖曳來重新排列集合中的項目。
-因為預設值是`true`，您只需要實作`MoveItem`方法`UICollectionViewDataSource`類別，以支援拖曳來重新排列。 例如: 
+因為預設值是`true`，您只需要實作`MoveItem`方法`UICollectionViewDataSource`類別，以支援拖曳來重新排列。 例如:
 
 ```csharp
 public override void MoveItem (UICollectionView collectionView, NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath)
@@ -472,11 +472,11 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 
 選取 （它可能是最簡單的方式執行這項操作，從文件大綱） 的集合檢視。 在 [屬性] 面板的 [配置] 索引標籤中，設定下列的大小，，如以下螢幕擷取畫面所示：
 
-- **儲存格大小**： 寬度 – 60 |高度 – 60
-- **標頭大小**： 寬度 – 0 |高度 – 0
-- **頁尾大小**： 寬度 – 0 |高度 – 0
-- **最小間距**： 資料格 – 8 |線條 – 8
-- **區段內凹**： 上 – 16 |底部-16 |左 – 16 |權限 – 16
+- **儲存格大小**:寬度 – 60 |高度 – 60
+- **標頭大小**:寬度 – 0 |高度 – 0
+- **頁尾大小**:寬度 – 0 |高度 – 0
+- **最小間距**:資料格 – 8 |線條 – 8
+- **區段內凹**:上 – 16 |底部-16 |左 – 16 |權限 – 16
 
 [![](uicollectionview-images/quick04.png "設定集合檢視大小")](uicollectionview-images/quick04.png#lightbox)
 
@@ -693,7 +693,7 @@ namespace CollectionView
 
 儲存您的 ui 所做的變更，並執行應用程式。
 如果使用者從清單中選取項目，並將它拖曳至新位置，其他項目會以動畫顯示自動的方式移動的項目。
-當使用者在新位置放開項時，它會留在那裡至該位置。 例如: 
+當使用者在新位置放開項時，它會留在那裡至該位置。 例如:
 
 [![](uicollectionview-images/intro01.png "舉例來說，將項目拖曳至新位置")](uicollectionview-images/intro01.png#lightbox)
 
@@ -701,7 +701,7 @@ namespace CollectionView
 
 ### <a name="using-a-custom-gesture-recognizer"></a>使用自訂的筆勢辨識器
 
-在無法使用的情況下`UICollectionViewController`，而且必須使用一般`UIViewController`，或者如果您想要進一步控制拖放手勢，您可以建立您自己自訂的筆勢辨識器，並將它新增至集合檢視，檢視載入時。 例如: 
+在無法使用的情況下`UICollectionViewController`，而且必須使用一般`UIViewController`，或者如果您想要進一步控制拖放手勢，您可以建立您自己自訂的筆勢辨識器，並將它新增至集合檢視，檢視載入時。 例如:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -1299,6 +1299,6 @@ public override void AwakeFromNib ()
 
 - [iOS 9 範例](https://developer.xamarin.com/samples/ios/iOS9/)
 - [集合檢視範例](https://developer.xamarin.com/samples/monotouch/ios9/CollectionView/)
-- [SimpleCollectionView （範例）](https://developer.xamarin.com/samples/SimpleCollectionView/)
+- [SimpleCollectionView （範例）](https://developer.xamarin.com/samples/monotouch/SimpleCollectionView/)
 - [事件、通訊協定與委派](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 - [使用資料表和資料格](~/ios/user-interface/controls/tables/index.md)

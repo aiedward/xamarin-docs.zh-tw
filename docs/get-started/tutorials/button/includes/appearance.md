@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 1d2bed830af97ce1ff329a5396a415247a43189d
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61372910"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 在 **MainPage.xaml** 中修改 [`Button`](xref:Xamarin.Forms.Button) 宣告，以變更其視覺外觀：

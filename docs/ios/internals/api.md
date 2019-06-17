@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/25/2015
-ms.openlocfilehash: d43ee2ef3f6d66042f489079a0f969509adfb946
-ms.sourcegitcommit: ee626f215de02707b7a94ba1d0fa1d75b22ab84f
+ms.openlocfilehash: a4637099907dd75a3ab58222dbb4ef42b42e19c3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54879338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036494"
 ---
 # <a name="xamarinios-api-overview"></a>Xamarin.iOS API 概觀
 
 Xamarin.iOS 會公開 C# / CIL 繫結至 CocoaTouch API，以及也提供 ECMA CIL Api 和各種其他的.NET Api 的存取。
 
- **API 參考**:API 參考位於[ https://developer.xamarin.com/api/ ](https://docs.microsoft.com/dotnet/api/)，開始[Xamarin.iOS 架構節點](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)API 繫結原生 iPhone Api 或移至 [基底類別庫節點](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)如需.NET API 文件。
+ **API 參考**:API 參考位於[docs.microsoft.com/dotnet/api/](https://docs.microsoft.com/dotnet/api/)，開始[Xamarin.iOS 參考](https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12)API 繫結原生 iPhone Api 或移至 [基底類別庫節點](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)如需.NET API 文件。
 
  **API 設計**:涵蓋的 CIL/OBJECTIVE-C 繫結的 API 設計[Xamarin.iOS API 設計](~/ios/internals/api-design/index.md)文件，並說明如何從產品 CocoaTouch 繫結 OBJECTIVE-C 與 C Api 並公開到C#/CIL 世界。
 

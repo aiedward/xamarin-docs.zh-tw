@@ -1,18 +1,19 @@
 ---
-title: 'Xamarin.Essentials: Secure Storage'
+title: Xamarin.Essentials:安全存放裝置
 description: 此文件說明 Xamarin.Essentials 中的 SecureStorage 類別，它有助於安全地存放簡單的機碼/值組。 此文件討論如何使用該類別、平台實作特性與限制。
 ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 7ba7fc6cabc2e3684476c216ca65d3824a35e8aa
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 04/02/2019
+ms.custom: video
+ms.openlocfilehash: e0bc4b988905f03edbc66a252cc47a05c441f2c9
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898910"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925826"
 ---
-# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Secure Storage
+# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials:安全存放裝置
 
 **SecureStorage** 類別有助於安全地存放簡單的機碼/值組。
 
@@ -50,7 +51,7 @@ ms.locfileid: "52898910"
     </application>
     ```
 
-2. 在 [Resources/xml] 目錄中建立名為 **auto_backup_rules.xml** 的新 XML 檔案。 接著設定下列內容以包括所有共用喜好設定，但 `SecureStorage` 除外：
+2. 在 **Resources/xml** 目錄中搭配 **AndroidResource** 的建置動作，建立名為 **auto_backup_rules.xml** 的新 XML 檔案。 接著設定下列內容以包括所有共用喜好設定，但 `SecureStorage` 除外：
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -131,7 +132,7 @@ SecureStorage.RemoveAll();
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-[Android KeyStore](https://developer.android.com/training/articles/keystore.html) 是用來存放在將值以檔案名稱 **[YOUR-APP-PACKAGE-ID].xamarinessentials** 儲存到[共用喜好設定](https://developer.android.com/training/data-storage/shared-preferences.html)之前用於加密值的密碼編譯金鑰。  在共用喜好設定檔案中使用的金鑰是傳遞到 `SecureStorage` API 之金鑰的 _MD5 雜湊_。
+[Android KeyStore](https://developer.android.com/training/articles/keystore.html) 是用來存放在將值以檔案名稱 **[YOUR-APP-PACKAGE-ID].xamarinessentials** 儲存到[共用喜好設定](https://developer.android.com/training/data-storage/shared-preferences.html)之前用於加密值的密碼編譯金鑰。  在共用喜好設定檔案中使用的金鑰 (不是密碼編譯金鑰，適用於「值」的「金鑰」) 是傳遞到 `SecureStorage` API 之金鑰的「MD5 雜湊」。
 
 ## <a name="api-level-23-and-higher"></a>API 層級 23 與更高版本
 
@@ -145,13 +146,13 @@ SecureStorage.RemoveAll();
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-[KeyChain](https://developer.xamarin.com/api/type/Security.SecKeyChain/) 是用來安全地在 iOS 裝置上存放值。  `SecRecord` 是用來存放 `Service` 值設定為 **[YOUR-APP-BUNDLE-ID].xamarinessentials** 的值。
+[KeyChain](xref:Security.SecKeyChain) 是用來安全地在 iOS 裝置上存放值。  `SecRecord` 是用來存放 `Service` 值設定為 **[YOUR-APP-BUNDLE-ID].xamarinessentials** 的值。
 
 在某些案例中，KeyChain 資料會與 iCloud 同步，而且解除安裝應用程式可能不會將安全值從 iCloud 與使用者的其他裝置移除。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) 是用來安全地在 UWP 裝置上加密值。
+[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) 可用來安全地在 UWP 裝置上為值加密。
 
 加密值會存放在 `ApplicationData.Current.LocalSettings` 中名為 **[YOUR-APP-ID].xamarinessentials** 的容器內。
 
@@ -167,3 +168,9 @@ SecureStorage.RemoveAll();
 
 - [SecureStorage 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/SecureStorage)
 - [SecureStorage API 文件](xref:Xamarin.Essentials.SecureStorage)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Secure-Storage-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

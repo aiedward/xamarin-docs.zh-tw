@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
 ms.openlocfilehash: 1d159d280bd3b8855c32e3e437dfdefcbe0463cb
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235021"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61261125"
 ---
 # <a name="unified-api-overview"></a>統一的 API 概觀
 
@@ -40,8 +40,8 @@ Xamarin 的統一 API 可讓您能夠 Mac 和 iOS 以及支援 32 位元及 64 �
 
 從這裡開始，我們的 Api 會呈現兩種方式：
 
--  **傳統的 API:** 限制為 32 位元 （僅限） 並在公開`monotouch.dll`和`XamMac.dll`組件。
--  **統一的 API:** 支援使用單一 API 中可用的 32 和 64 位元開發`Xamarin.iOS.dll`和`Xamarin.Mac.dll`組件。
+-  **傳統的 API:** 限制為 32 位元 （僅限），並公開`monotouch.dll`和`XamMac.dll`組件。
+-  **統一的 API:** 支援 32 和 64 位元開發，以單一 API 中可用`Xamarin.iOS.dll`和`Xamarin.Mac.dll`組件。
 
 這表示，為企業開發人員 （不為目標的應用程式存放區），您可以繼續使用現有的傳統 Api，因為會保留將我們維護它們，或者您可以升級至新的 Api。
 
@@ -55,7 +55,7 @@ Xamarin 的統一 API 可讓您能夠 Mac 和 iOS 以及支援 32 位元及 64 �
 
 這可讓您更容易而不需使用條件式編譯的 Mac 和 iOS 平台之間共用程式碼，並會減少雜訊，在您的原始程式碼檔的頂端。
 
--  **傳統的 API:** 命名空間使用`MonoTouch.`或`MonoMac.`前置詞。
+-  **傳統的 API:** 使用命名空間`MonoTouch.`或`MonoMac.`前置詞。
 -  **統一的 API:** 沒有命名空間前置詞
 
 ## <a name="runtime-defaults"></a>執行階段預設值
@@ -179,7 +179,7 @@ public static NSDate DateTimeToNSDate(this DateTime date)
 
 在 Xamarin.iOS 傳統 API (monotouch.dll)`[Obsolete]`屬性使用方式有兩種：
 
--  **IOS API 已被取代：** 時提示您停止使用 API，因為它已被取代被較新的 Apple。 傳統的 API 是仍舊沒關係，通常需要 （如果您支援較舊 iOS 版本）。
+-  **已被取代的 iOS API:** 這是當您停止使用 API，因為它已被取代被較新的 Apple 提示。 傳統的 API 是仍舊沒關係，通常需要 （如果您支援較舊 iOS 版本）。
  這類 API (和`[Obsolete]`屬性) 會納入新的 Xamarin.iOS 組件。
 -  **不正確的 API**某些 API 的名稱有錯字。
 
@@ -287,7 +287,7 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 在統一的 API 上我們已修正此問題。  只會有新的組件`.ctor(NSCoder)`如果該類型符合`NSCoding`。 這類類型現在還有`Encode(NSCoder)`方法符合`INSCoding`介面。
 
-影響很低： 在大部分情況下這項變更不會影響應用程式因為無法使用舊的、 已移除，建構函式。
+低衝擊：在大部分情況下這項變更不會影響應用程式，因為無法使用舊的、 已移除，建構函式。
 
 ## <a name="further-tips"></a>進一步的提示
 

@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 0ec24e49e03237829474515a9abe9b014d10014f
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 0b063619387d9984e24f6987234605b626289e2d
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527114"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978305"
 ---
 # <a name="hello-ios--quickstart"></a>Hello, iOS – 快速入門
 
@@ -26,7 +26,7 @@ ms.locfileid: "51527114"
 
 使用 Xamarin 進行 iOS 開發需要：
 
-- 執行 macOS HIgh Sierra (10.13) 或更新版本的 Mac。
+- 執行 macOS High Sierra (10.13) 或更新版本的 Mac。
 - 從 [App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) 安裝的最新版 Xcode 和 iOS SDK。
 
 ::: zone pivot="macos"
@@ -42,7 +42,7 @@ Xamarin.iOS 可與下列設定搭配運作：
 
 Xamarin.iOS 可與下列設定搭配運作：
 
-- 位於 Windows 10 上的最新版 Visual Studio 2017 Community、Professional 或 Enterprise，並且已與符合上述規格的 Mac 組建主機配對。
+- Windows 10 上的最新版 Visual Studio 2019 或 Visual Studio 2017 Community、Professional 或 Enterprise，並且已與符合上述規格的 Mac 組建主機配對。
 
 [Xamarin.iOS Windows 安裝指南](~/ios/get-started/installation/windows/index.md)會提供逐步安裝指示。
 
@@ -274,7 +274,7 @@ Xamarin.iOS 可與下列設定搭配運作：
 
 本逐步解說將說明如何建立名為 Phoneword 且可將英數字元電話號碼轉譯成數字電話號碼的應用程式。
 
-**附註**：這個逐步解說使用 Windows 10 虛擬機器上的 Visual Studio Enterprise 2017。 您的設定可以與之不同，只要符合上述需求即可，但請注意，某些螢幕擷取畫面看起來可能與您的設定不同。
+**注意**：這個逐步解說會使用 Windows 10 虛擬機器上的 Visual Studio Enterprise 2017。 您的設定可以與之不同，只要符合上述需求即可，但請注意，某些螢幕擷取畫面看起來可能與您的設定不同。
 
 > [!NOTE]
 > 繼續進行本逐步解說之前，您必須已經從 Visual Studio 連線到您的 Mac。 這是因為 Xamarin.iOS 依賴 Apple 的工具來建置並啟動 iOS 設計工具和應用程式。 若要進行設定，請遵循[與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南中的步驟。
@@ -496,5 +496,5 @@ Xamarin.iOS 可與下列設定搭配運作：
 
 - [Xamarin 應用程式圖示和啟動影像 (範例)](https://github.com/xamarin/ios-samples/blob/master/Hello_iOS/Resources/XamarinAppIconsandLaunchImages.zip?raw=true)
 - [Hello, iOS (範例)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/) \(英文\)
-- [iOS 人性化介面指導方針](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html) \(英文\)
+- [iOS 人性化介面指導方針](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html) \(英文\)
 - [iOS 佈建入口網站](https://developer.apple.com/ios/manage/overview/index.action) \(英文\)

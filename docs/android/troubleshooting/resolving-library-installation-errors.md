@@ -9,11 +9,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2018
 ms.openlocfilehash: 2ef81cfda92a6497e69f27b0584a97996094b1a4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107107"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61093274"
 ---
 # <a name="resolving-library-installation-errors"></a>解析程式庫安裝錯誤
 
@@ -105,7 +105,7 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     -   [android\_m2repository\_r16.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A83087881EE6
 
-    如果**m2repository**封存不會顯示此資料表中，您可以建立下載 URL 前面加上**https://dl-ssl.google.com/android/repository/** 名稱**m2repository**下載。 例如，使用**https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip**下載**android\_m2repository\_r10.zip**。
+    如果**m2repository**封存不會顯示此資料表中，您可以建立下載 URL 前面加上**https://dl-ssl.google.com/android/repository/** 名稱**m2repository**下載。 例如，使用 **https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip** 下載 **android\_m2repository\_r10.zip**。
 
 2.  重新命名檔案，與上表所示的下載 URL 的相對應的 MD5 雜湊。 例如，如果您下載**android\_m2repository\_r25.zip**，重新命名為**0B3F1796C97C707339FB13AE8507AF50.zip**。 如果未顯示下載的 URL 下載的檔案的 MD5 雜湊資料表中，您可以使用[線上 MD5 generator](http://www.webconfs.com/online-md5-generator.php)將 URL 轉換為 MD5 雜湊字串。 
 

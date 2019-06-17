@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
 ms.openlocfilehash: fcf6f443c86fd1ef0390669621d5c7b7fa748500
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61269257"
 ---
 # <a name="troubleshooting-xamarin-workbooks"></a>疑難排解 Xamarin 活頁簿
 

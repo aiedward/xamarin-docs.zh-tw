@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 22392603e337205dcdd4909dc61b6c22ca2f00b9
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 88be56cae52e881792ec7a187ef7e158790e8a1b
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057966"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926605"
 ---
 # <a name="implementing-a-view"></a>實作檢視
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/view/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/View/)
 
 _Xamarin.Forms 自訂使用者介面控制項應該衍生自用來在螢幕上放置配置和控制項的 View 類別。本文示範如何建立 Xamarin.Forms 自訂控制項的自訂轉譯器，以用來從裝置相機顯示預覽視訊資料流。_
 
@@ -56,13 +56,13 @@ public class CameraPreview : View
 }
 ```
 
-`CameraPreview` 自訂控制項是在可攜式類別庫 (PCL) 專案中建立，並會定義控制項的 API。 此自訂控制項會公開 `Camera` 屬性，用來控制應該從裝置的前方或後方相機顯示視訊資料流。 如果在建立控制項時未指定 `Camera` 屬性的值，則預設會指定為後方相機。
+`CameraPreview` 自訂控制項是在 .NET Standard 程式庫專案中建立，並能定義控制項的 API。 此自訂控制項會公開 `Camera` 屬性，用來控制應該從裝置的前方或後方相機顯示視訊資料流。 如果在建立控制項時未指定 `Camera` 屬性的值，則預設會指定為後方相機。
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>使用自訂控制項
 
-您可以在 PCL 專案的 XAML 中參考 `CameraPreview` 自訂控制項，方法是宣告其位置的命名空間，並使用自訂控制項項目上的命名空間前置詞。 下列程式碼範例示範 XAML 頁面如何使用 `CameraPreview` 自訂控制項：
+您可以宣告自訂控制項的位置命名空間，並使用自訂控制項元素上的命名空間前置詞，來在 .NET Standard 程式庫專案的 XAML 中參考 `CameraPreview` 自訂控制項。 下列程式碼範例示範 XAML 頁面如何使用 `CameraPreview` 自訂控制項：
 
 ```xaml
 <ContentPage ...
@@ -334,4 +334,4 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>相關連結
 
-- [View Custom Renderer (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/view/) (檢視自訂轉譯器 (範例))
+- [View Custom Renderer (Samples)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/View/) (檢視自訂轉譯器 (範例))

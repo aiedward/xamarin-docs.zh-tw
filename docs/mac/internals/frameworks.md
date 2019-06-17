@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/19/2016
 ms.openlocfilehash: 605ffb23a70792a3dbaf98cd1d5b040a9dea92f5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61034080"
 ---
 # <a name="xamarinmac-frameworks"></a>Xamarin.Mac 架構
 
@@ -28,7 +28,7 @@ Xamarin.Mac 支援下列的 macOS 架構：
 -  AudioUnit 
 -  AudioUnitWrapper 
 -  CoreAnimation 
--  Corebluetooth 進行通訊 
+-  CoreBluetooth 
 -  CoreData 
 -  CoreFoundation 
 -  CoreGraphics 

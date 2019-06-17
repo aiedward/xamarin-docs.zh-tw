@@ -6,8 +6,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
+ms.openlocfilehash: 8ba0d14fff22d38d9e1a1d062fcce3f9ace88dea
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668851"
 ---
-
 # <a name="publishing-to-google-play"></a>發行至 Google Play
 
 雖然有許多應用程式市場可供散發應用程式，但 Google Play 可說是 Android 應用程式世界中最大且瀏覽頻率最高的商店。 Google Play 提供一個可散發、廣告、銷售 Android 應用程式及分析這些應用程式銷售情況的單一平台。
@@ -185,7 +190,7 @@ Visual Studio for Mac 具有可將應用程式發行至 Google Play 的整合式
 #### <a name="create-a-google-api-project"></a>建立 Google API 專案
 
 首先，登入您的 [Google Play 開發人員帳戶](https://play.google.com/apps/publish)。
-如果您尚未擁有 Google Play 開發人員帳戶，請參閱[開始使用發佈](http://developer.android.com/distribute/googleplay/start.html)。
+如果您尚未擁有 Google Play 開發人員帳戶，請參閱[開始使用發佈](https://developer.android.com/distribute/googleplay/start.html)。
 此外，Google Play 開發人員 API [入門](https://developers.google.com/android-publisher/getting_started) \(英文\) 也說明了如何使用 Google Play 開發人員 API。 登入「Google Play 開發人員控制台」之後，按一下 [設定]：
 
 [![[設定] 圖示](images/01-google-play-developer-console-sml.png)](images/01-google-play-developer-console.png#lightbox)

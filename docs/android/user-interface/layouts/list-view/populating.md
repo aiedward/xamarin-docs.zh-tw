@@ -1,19 +1,19 @@
 ---
-title: 填入資料的 ListView
+title: 將資料填入 ListView
 ms.prod: xamarin
 ms.assetid: AC4F95C8-EC3F-D960-7D44-8D55D0E4F1B6
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: 57c69223a01074ed15714026b7e9ec4e995808e0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f3162c4da092048cd409f7b32438bc85dcedff19
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103175"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740793"
 ---
-# <a name="populating-a-listview-with-data"></a>填入資料的 ListView
+# <a name="populating-a-listview-with-data"></a>將資料填入 ListView
 
 
 ## <a name="overview"></a>總覽
@@ -222,6 +222,6 @@ public int GetSectionForPosition(int position)
 
 ## <a name="related-links"></a>相關連結
 
-- [BasicTableAndroid （範例）](https://developer.xamarin.com/samples/BasicTableAndroid/)
-- [BasicTableAdapter （範例）](https://developer.xamarin.com/samples/BasicTableAdapter/)
-- [FastScroll （範例）](https://developer.xamarin.com/samples/FastScroll/)
+- [BasicTableAndroid (sample)](https://developer.xamarin.com/samples/monodroid/BasicTableAndroid/)
+- [BasicTableAdapter （範例）](https://developer.xamarin.com/samples/monodroid/BasicTableAdapter/)
+- [FastScroll （範例）](https://developer.xamarin.com/samples/monodroid/FastScroll/)

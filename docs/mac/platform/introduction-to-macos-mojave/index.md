@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
 ms.openlocfilehash: a9975eeec445ac59dc71a44a1156804835795982
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267400"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61032099"
 ---
 # <a name="introduction-to-macos-mojave"></a>macOS Mojave 簡介
 
@@ -47,5 +47,5 @@ ms.locfileid: "53267400"
 ## <a name="related-links"></a>相關連結
 
 - [Xamarin.Mac 範例](https://developer.xamarin.com/samples/mac/)
-- [macOS-Apple 開發人員](https://developer.apple.com/macos/)
+- [macOS – Apple Developer](https://developer.apple.com/macos/)
 - [Xamarin.Mac 5.0 版本資訊](https://docs.microsoft.com/xamarin/mac/release-notes/5/5.0/)

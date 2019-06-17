@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 5d1bb5ab636cd7527a560332a9890e9907fac454
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 35bac91e54181753bd1f3fd8b4cf0b851bfa1882
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118314"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827503"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>在 iOS 6 StoreKit 的變更
 
@@ -522,7 +522,7 @@ Apple 的 iCloud 備份指導方針建議非使用者輕鬆地還原從伺服器
 
 ## <a name="related-links"></a>相關連結
 
-- [StoreKit （範例）](https://developer.xamarin.com/samples/StoreKit/)
+- [StoreKit （範例）](https://developer.xamarin.com/samples/monotouch/StoreKit/)
 - [App 內購買](~/ios/platform/in-app-purchasing/index.md)
 - [StoreKit Framework 參考](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/StoreKit_Collection/_index.html)
 - [SKStoreProductViewController 類別參考](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/SKStoreProductViewController.html)
@@ -530,4 +530,4 @@ Apple 的 iCloud 備份指導方針建議非使用者輕鬆地還原從伺服器
 - [SKDownload](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/SKDownload_Ref/Introduction/Introduction.html)
 - [SKPaymentQueue](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/Reference/Reference.html#/apple_ref/occ/instm/SKPaymentQueue/cancelDownloads:)
 - [SKProduct](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKProduct_Reference/Reference/Reference.html#/apple_ref/occ/instp/SKProduct/downloadable)
-- [WWDC 影片： 銷售市集套件的產品](https://developer.apple.com/videos/wwdc/2012/?include=302#302)
+- [WWDC 影片：銷售的產品，使用存放區的套件](https://developer.apple.com/videos/wwdc/2012/?include=302#302)

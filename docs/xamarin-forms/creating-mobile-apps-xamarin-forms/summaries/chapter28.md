@@ -1,18 +1,18 @@
 ---
 title: 第 28 章摘要。 位置與地圖
-description: 使用 Xamarin.Forms 建立行動應用程式： 摘要的第 28 章。 位置與地圖
+description: 使用 Xamarin.Forms 建立行動應用程式：第 28 章摘要。 位置與地圖
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: bcca7bc7ac56b745945b6d7daef3c4ddd634b486
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 0abd7e6cb5b8b9650a3dc324338587ff59a80a19
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61331429"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章摘要。 位置與地圖
 
@@ -62,7 +62,7 @@ Xamarin.Forms`Map`類別不包含的程式，以取得使用者的地理位置�
 
 #### <a name="the-ios-location-manager"></a>IOS 位置管理員
 
-IOS 實作`ILocationTracker`已[ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/LocationTracker.cs)類別，可使用的 ios [ `CLLocationManager` ](https://developer.xamarin.com/api/type/CoreLocation.CLLocationManager/)。
+IOS 實作`ILocationTracker`已[ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/LocationTracker.cs)類別，可使用的 ios [ `CLLocationManager` ](xref:CoreLocation.CLLocationManager)。
 
 #### <a name="the-android-location-manager"></a>Android 位置管理員
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 5e47799e704dfbe2c4088016d7055fc616215ea2
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 840fa1b40858ccf3bff15f7027735ce98081d23c
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056460"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925136"
 ---
 # <a name="reusable-effectbehavior"></a>可重複使用的 EffectBehavior
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EffectBehavior/)
 
 對於將效果新增至控制項，行為是很實用的方法，可從程式碼後置檔案中移除以定案效果方式處理的程式碼。本文示範如何建立及使用 Xamarin.Forms 行為來將效果新增至控制項。
 
@@ -32,7 +32,7 @@ ms.locfileid: "53056460"
 如需效果的詳細資訊，請參閱[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 
 > [!NOTE]
-> `EffectBehavior` 是自訂類別，並不屬於 Xamarin.Forms 的一部分；您可以在[效果行為範例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)中找到。
+> `EffectBehavior` 是自訂類別，並不屬於 Xamarin.Forms 的一部分；您可以在[效果行為範例](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EffectBehavior/)中找到。
 
 ## <a name="creating-the-behavior"></a>建立行為
 
@@ -169,6 +169,6 @@ label.Behaviors.Add (new EffectBehavior {
 ## <a name="related-links"></a>相關連結
 
 - [Effects](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [Effect Behavior (Samples)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/) (效果行為 (範例))
+- [Effect Behavior (Samples)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EffectBehavior/) (效果行為 (範例))
 - [Behavior](xref:Xamarin.Forms.Behavior)
-- [Behavior<T>](xref:Xamarin.Forms.Behavior`1)
+- [Behavior&lt;T&gt;](xref:Xamarin.Forms.Behavior`1)

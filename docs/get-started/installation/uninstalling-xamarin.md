@@ -6,12 +6,12 @@ ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: 87f59e9f0c2150291a43cdfee4fe6c5dfc2058f8
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: 6a0fe95d6d471bfb464234f0540b8398acb22e6a
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57199774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61262882"
 ---
 # <a name="uninstalling-xamarin"></a>解除安裝 Xamarin
 
@@ -215,16 +215,16 @@ rm -rf "~/Library/Preferences/Visual Studio/"
 
 以下項目支援 Xamarin：
 
-- [Visual Studio 2017](#uninstallvs2017)
+- [Visual Studio 2019 和 Visual Studio 2017](#uninstallvs2017)
 - [Visual Studio 2015](#uninstallvs2015)
 - [Visual Studio 2013](#uninstallvs2015) [**不支援**]
 - [Xamarin Studio](#uninstallxamarinstudio) [**不支援**]
 
 <a name="uninstallvs2017" />
 
-### <a name="visual-studio-2017"></a>Visual Studio 2017
+### <a name="visual-studio-2019-and-visual-studio-2017"></a>Visual Studio 2019 和 Visual Studio 2017
 
-您可使用安裝程式應用程式從 Visual Studio 2017 將 Xamarin 解除安裝：
+從 Visual Studio 2019 和使用安裝程式應用程式的 Visual Studio 2017 將 Xamarin 解除安裝：
 
 1. 使用 [開始] 功能表來開啟 **Visual Studio 安裝程式**。
 

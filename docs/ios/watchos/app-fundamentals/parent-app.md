@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 74b9243b1b985cba6d815a673d1abed054eda234
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 6b3a6f45d78c0febb2aacf4f7693bc6e328c3ec0
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059943"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740952"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>運用 watchOS 父系應用程式，在 Xamarin 中使用
 
@@ -35,7 +35,7 @@ ms.locfileid: "53059943"
 
 ## <a name="run-code"></a>執行程式碼
 
-監控擴充功能和父 iPhone 應用程式之間通訊所示[GpsWatch 範例](https://developer.xamarin.com/samples/GpsWatch)。
+監控擴充功能和父 iPhone 應用程式之間通訊所示[GpsWatch 範例](https://developer.xamarin.com/samples/monotouch/WatchKit/GpsWatch/)。
 您的監看式延伸模組可以要求父 iOS 應用程式進行一些處理，其代表使用`OpenParentApplication`方法。
 
 針對長時間執行工作 （包括網路要求）-只有父代的 iOS 應用程式可以利用背景處理完成這些工作，並將擷取的資料儲存在監看式延伸模組可存取的位置，這會特別有用。

@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 378861dfecb2109269677fe13ed4df629a09da67
-ms.sourcegitcommit: 6d41b5d48fd626d3f649809ed5480e5356755f14
+ms.openlocfilehash: 71343aa69cc7fa34fb716ea39454e6437a64169f
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55986259"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58855077"
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android：快速入門
 
@@ -34,7 +34,7 @@ ms.locfileid: "55986259"
 
 - Windows 10。
 
-- Visual Studio 2017 Community、Professional 或 Enterprise (15.8 版或更新版本)。
+- Visual Studio 2019 或 Visual Studio 2017 (15.8 版或更新版本)：Community、Professional 或 Enterprise。
 
 ::: zone-end
 ::: zone pivot="macos"

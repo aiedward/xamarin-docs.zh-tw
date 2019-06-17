@@ -6,13 +6,13 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 13/11/2018
-ms.openlocfilehash: f5e3c5dbadeeb3cc1c019707ce7aa106e4946e36
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.date: 03/21/2019
+ms.openlocfilehash: 258468b836a4c1243b9123022ebbf1d55430321e
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292008"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740963"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms 檢視
 
@@ -170,11 +170,11 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 ## <a name="views-that-display-collections"></a>顯示集合的檢視
 
-### <a name="picker"></a>選擇器
+### <a name="collectionview"></a>CollectionView
 
 |     |     |
 | --- | --- |
-| [`Picker`](xref:Xamarin.Forms.Picker) 顯示選取的項目從清單中的文字字串，並允許時點選檢視時，選取該項目。 設定[ `Items` ](xref:Xamarin.Forms.Picker.Items)屬性的字串清單，或有[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)物件的集合的屬性。 [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged)選取項目時，會引發事件。<br /><br />`Picker`只有在已選取時，才會顯示項目清單。 使用[ `ListView` ](#listView)或是[ `TableView` ](#tableView)保留在頁面上的可捲動清單。<br /><br />[API 文件](xref:Xamarin.Forms.Picker) / [指南](~/xamarin-forms/user-interface/picker/index.md) / [範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/) | [![選擇器範例](views-images/Picker.png "選取器範例")](views-images/Picker-Large.png#lightbox "選擇器範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/PickerDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PickerDemoPage.xaml)使用[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PickerDemoPage.xaml.cs) |
+| [`CollectionView`](xref:Xamarin.Forms.CollectionView) 顯示可捲動清單項目可選取的資料，使用不同的版面配置規格。 它旨在提供更多的彈性，以及高效能替代方式，來[ `ListView` ](xref:Xamarin.Forms.ListView)。 設定`ItemsSource`集合的物件和集合的屬性`ItemTemplate`屬性設[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)描述項目為何要格式化的物件。 `SelectionChanged`事件通知，已可進行選取`SelectedItem`屬性。<br /><br />[快速入門](~/xamarin-forms/user-interface/collectionview/index.md) / [範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/) | [![範例 CollectionView](views-images/CollectionView.png "CollectionView 範例")](views-images/CollectionView-Large.png#lightbox "CollectionView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) |
 |     |     |
 
 <a name="listView" />
@@ -183,7 +183,14 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 |     |     |
 | --- | --- |
-| [`ListView`](xref:Xamarin.Forms.ListView) 衍生自[ `ItemsView[Cell]` ](xref:Xamarin.Forms.ItemsView`1) ，並顯示可捲動的可選取的資料項目清單。 設定[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)屬性集合的物件和集合[ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)屬性設[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)物件，描述項目為何若要格式化。 [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)事件的選取項目發出訊號，可[ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)屬性。<br /><br />[API 文件](xref:Xamarin.Forms.ListView) / [指南](~/xamarin-forms/user-interface/listview/index.md) / [範例](https://developer.xamarin.com/samples/WorkingWithListview) | [![ListView 範例](views-images/ListView.png "ListView 範例")](views-images/ListView-Large.png#lightbox "ListView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ListViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ListViewDemoPage.xaml) |
+| [`ListView`](xref:Xamarin.Forms.ListView) 衍生自[ `ItemsView` ](xref:Xamarin.Forms.ItemsView`1) ，並顯示可捲動的可選取的資料項目清單。 設定[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)屬性集合的物件和集合[ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)屬性設[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)物件，描述項目為何若要格式化。 [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)事件的選取項目發出訊號，可[ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)屬性。<br /><br />[API 文件](xref:Xamarin.Forms.ListView) / [指南](~/xamarin-forms/user-interface/listview/index.md) / [範例](https://developer.xamarin.com/samples/WorkingWithListview) | [![ListView 範例](views-images/ListView.png "ListView 範例")](views-images/ListView-Large.png#lightbox "ListView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ListViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ListViewDemoPage.xaml) |
+|     |     |
+
+### <a name="picker"></a>Picker
+
+|     |     |
+| --- | --- |
+| [`Picker`](xref:Xamarin.Forms.Picker) 顯示選取的項目從清單中的文字字串，並允許時點選檢視時，選取該項目。 設定[ `Items` ](xref:Xamarin.Forms.Picker.Items)屬性的字串清單，或有[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)物件的集合的屬性。 [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged)選取項目時，會引發事件。<br /><br />`Picker`只有在已選取時，才會顯示項目清單。 使用[ `ListView` ](#listView)或是[ `TableView` ](#tableView)保留在頁面上的可捲動清單。<br /><br />[API 文件](xref:Xamarin.Forms.Picker) / [指南](~/xamarin-forms/user-interface/picker/index.md) / [範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/) | [![選擇器範例](views-images/Picker.png "選取器範例")](views-images/Picker-Large.png#lightbox "選擇器範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/PickerDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PickerDemoPage.xaml)使用[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PickerDemoPage.xaml.cs) |
 |     |     |
 
 <a name="tableView" />
@@ -197,6 +204,6 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.Forms FormsGallery 範例](https://developer.xamarin.com/samples/FormsGallery/)
+- [Xamarin.Forms FormsGallery 範例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 - [Xamarin.Forms 範例](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms API 文件](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

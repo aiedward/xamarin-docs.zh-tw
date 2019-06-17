@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
 ms.openlocfilehash: d68153cdaad67b407def3ed5bfaddf928ef98bb4
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61289087"
 ---
 # <a name="skiasharp-mask-filters"></a>SkiaSharp 遮罩篩選器
 
@@ -180,9 +180,9 @@ paint.MaskFilter = SKMaskFilter.CreateBlur(blurStyle, sigma);
 
 [![遮罩模糊實驗](mask-filters-images/MaskBlurExperiment.png "遮罩模糊實驗")](mask-filters-images/MaskBlurExperiment-Large.png#lightbox)
 
-IOS 螢幕擷取畫面顯示`Solid`樣式： 文字字元是否為實心黑色筆劃，仍會出現與柔邊會新增至這些文字字元的外部。 
+IOS 螢幕擷取畫面顯示`Solid`樣式：文字字元為實心黑色筆劃，仍存在，這些文字字元外加入柔邊。 
 
-在中間顯示 Android 螢幕擷取畫面`Outer`樣式: （如點陣圖），會刪除本身的字元筆劃並柔邊周圍的空白空間，一次出現的文字字元。 
+在中間顯示 Android 螢幕擷取畫面`Outer`樣式：（如點陣圖），會刪除本身的字元筆劃及柔邊括住一次出現的文字字元的空白空間。 
 
 UWP 螢幕擷取畫面中的正確顯示`Inner`樣式。 只有文字字元通常佔用的區域柔邊。
 

@@ -1,5 +1,5 @@
 ---
-title: iOS 平台功能
+title: 在 Xamarin.Forms 中的 iOS 平台功能
 description: 將 iOS 特有的功能新增至 Xamarin.Forms 應用程式中。
 ms.prod: xamarin
 ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
@@ -7,9 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/22/2019
+ms.openlocfilehash: f77b2346808f78e182edc59f9ea92d0a8a99344f
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971025"
 ---
-
-# <a name="ios-platform-features"></a>iOS 平台功能
+# <a name="ios-platform-features-in-xamarinforms"></a>在 Xamarin.Forms 中的 iOS 平台功能
 
 開發適用於 iOS 的 Xamarin.Forms 應用程式需要 Visual Studio。 [需求頁面](~/get-started/requirements.md)包含必要條件的詳細資訊。
 
@@ -40,6 +45,7 @@ ms.date: 02/22/2019
 - 控制是否半透明的導覽列。 如需詳細資訊，請參閱 <<c0> [ 在 iOS 上的導覽列半透明](navigation-bar-translucent.md)。
 - 控制是否狀態列文字的色彩上[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)調整成符合要求的導覽列的明暗度。 如需詳細資訊，請參閱 < [NavigationPage 列文字的色彩模式在 iOS 上](status-bar-text-color.md)。
 - 控制是否要將頁面標題顯示為頁面巡覽列中的大型標題。 如需詳細資訊，請參閱 <<c0> [ 在 iOS 上的大型頁面標題](page-large-title.md)。
+- 設定可見性的主要指示器[ `Page` ](xref:Xamarin.Forms.Page)。 如需詳細資訊，請參閱 <<c0> [ 首頁在 iOS 上的指標可見性](page-home-indicator.md)。
 - 設定狀態軸可見度[ `Page` ](xref:Xamarin.Forms.Page)。 如需詳細資訊，請參閱 <<c0> [ 在 iOS 上的頁面狀態列可見性](page-status-bar-visibility.md)。
 - 確保內容該頁面位於而言是安全的所有 iOS 裝置的螢幕區域。 如需詳細資訊，請參閱 <<c0> [ 在 iOS 上的安全區域版面配置輔助線](page-safe-area-layout.md)。
 - 在 iPad 上設定強制回應頁面的呈現樣式。 如需詳細資訊，請參閱 < [iPad 強制回應頁面呈現樣式](ipad-page-presentation-style.md)。

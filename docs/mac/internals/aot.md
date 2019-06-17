@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/10/2017
 ms.openlocfilehash: e155a394afd68d9970ee32785f6d0aeda6e2d129
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61034200"
 ---
 # <a name="xamarinmac-ahead-of-time-compilation"></a>預先編譯的 Xamarin.Mac
 

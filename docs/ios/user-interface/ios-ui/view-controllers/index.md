@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/21/2017
 ms.openlocfilehash: ff440721cfb3217371f91b97425751f325dcaa50
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113744"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61246263"
 ---
 # <a name="view-controllers-in-xamarinios"></a>在 Xamarin.iOS 中的檢視控制器
 

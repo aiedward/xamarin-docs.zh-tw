@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 52cd8a15f1b5b232deef62a8e87910b092aad94c
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: ff4c72eaaf856083ab8e2e240ac8ce3eff37470c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831946"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669627"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>在 iTunes Connect 中設定應用程式
 
@@ -136,7 +136,7 @@ Apple 建議在選擇應用程式名稱時遵循下列指導方針：
 - 使其符合應用程式的功能。
 - 在適當情況下，為外國市場提供當地語系化名稱。
 
-### <a name="description"></a>描述
+### <a name="description"></a>說明
 
 應用程式及其功能的描述應簡潔明瞭且資訊豐富。 前幾行最重要，因為關係到使用者的第一印象以及是否能吸引使用者。 描述應用程式的特點和相較於類似應用程式的優勢。
 
@@ -360,7 +360,7 @@ Apple 允許您提供應用程式的著作權資訊，並要求提供發行應�
 ## <a name="related-links"></a>相關連結
 
 - [使用影像](~/ios/app-fundamentals/images-icons/index.md)
-- [iOS App Development Workflow Guide:Distributing Applications](http://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/35-Distributing_Applications/distributing_applications.html)
+- [iOS App Development Workflow Guide:Distributing Applications](https://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/35-Distributing_Applications/distributing_applications.html)
 - [App Store 提交提示](https://developer.apple.com/appstore/resources/submission/tips.html)
 - [App Store 審查指導方針](https://developer.apple.com/appstore/resources/approval/guidelines.html)
 - [iTunes Connect 開發人員指南](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/About.html#//apple_ref/doc/uid/TP40011225-CH1-SW1)

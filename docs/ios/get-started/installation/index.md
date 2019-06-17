@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 67f43c0ac6cfac2a7b58afa7046875059529500b
-ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
+ms.openlocfilehash: 24aa6dae3767255155c6b739e50174214a28d3d8
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55668585"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58855246"
 ---
 # <a name="xamarinios-installation"></a>Xamarin.iOS 安裝
 
@@ -31,7 +31,6 @@ ms.locfileid: "55668585"
 ## <a name="mac-installation"></a>Mac 安裝
 
 如需有關在 Mac 上安裝 Xamarin.iOS 的指示，請參閱 [Mac 安裝](https://docs.microsoft.com/visualstudio/mac/installation)指南。
-
 
 ## <a name="windows-installation"></a>Windows 安裝
 

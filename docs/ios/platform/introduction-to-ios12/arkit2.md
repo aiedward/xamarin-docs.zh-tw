@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/22/2018
-ms.openlocfilehash: 7f3c196eafd71e8571ea49a17784e5290e7ef44e
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 81d9ab12a4b8e8184e0a61dc9b6d53d72004d25c
+ms.sourcegitcommit: b986460787677cf8c2fc7cc8c03f4bc60c592120
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233597"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66213321"
 ---
 # <a name="arkit-2-in-xamarinios"></a>在 Xamarin.iOS 中 ARKit 2
 
@@ -300,7 +300,7 @@ ARKit 2 支援 「 環境材質 」 用來估計光源和甚至是適用於 shin
 若要使用環境的點陣圖：
 
 * 您[ `SCNMaterial` ](xref:SceneKit.SCNMaterial)物件必須使用[ `SCNLightingModel.PhysicallyBased` ](xref:SceneKit.SCNLightingModel.PhysicallyBased)並指派為 0 到 1 的範圍內的值[ `Metalness.Contents` ](xref:SceneKit.SCNMaterial.Metalness)和[ `Roughness.Contents`](xref:SceneKit.SCNMaterialProperty.Contents)和
-* 追蹤組態必須設定[ `EnvironmentTexturing` ](xref:ARKit.ARWorldTrackingConfiguration.EnvironmentTexturing)  =  [AREnvironmentTexturing.Automatic'](xref:ARKit.AREnvironmentTexturing.Automatic) :
+* 追蹤組態必須設定[ `EnvironmentTexturing` ](xref:ARKit.ARWorldTrackingConfiguration.EnvironmentTexturing)  =  [ `AREnvironmentTexturing.Automatic` ](xref:ARKit.AREnvironmentTexturing.Automatic) :
 
 ```csharp
 var sphere = SCNSphere.Create(0.33F);
@@ -323,7 +323,7 @@ var configuration = new ARWorldTrackingConfiguration
 
 ### <a name="shared-and-persistent-ar-experiences"></a>共用和持續性的 AR 體驗
 
-是另一個主要 ARKit 2 新增[ `ARWorldMap` ](xref:ARKit.ARWorldMap)類別，可讓您共用或儲存全球追蹤資料。 取得與目前的世界地圖[ `ARSession.GetCurrentWorldMapAsync` ](xref:ARKit.ARSession.GetCurrentWorldMapAsync)或是[ `GetCurrentWorldMap(Action<ARWorldMap,NSError>` ](xref:ARKit.ARSession.GetCurrentWorldMap(System.Action{ARKit.ARWorldMap,Foundation.NSError})) :
+是另一個主要 ARKit 2 新增[ `ARWorldMap` ](xref:ARKit.ARWorldMap)類別，可讓您共用或儲存全球追蹤資料。 取得與目前的世界地圖[ `ARSession.GetCurrentWorldMapAsync` ](xref:ARKit.ARSession.GetCurrentWorldMapAsync)或是[ `GetCurrentWorldMap(Action<ARWorldMap,NSError>)` ](xref:ARKit.ARSession.GetCurrentWorldMap(System.Action{ARKit.ARWorldMap,Foundation.NSError})) :
 
 ```csharp
 // Local storage
@@ -394,7 +394,7 @@ Console.WriteLine(xform);
 
 ![以列為主要與資料行做為主要](images/arkit_row_vs_column.png)
 
-取得矩陣解譯選擇一致的結果是適當的行為很重要。 由於 3D 轉換矩陣是 4 x 4，一致性錯誤並不會產生任何種類的編譯時期或甚至是執行階段例外狀況，它只是作業將會非預期地運作。 如果您的 SceneKit / ARKit 物件似乎會停滯，飛，或抖動，不正確的轉換矩陣是很好的可能性。 解決方法很簡單： [ `NMatrix4.Transpose` ](https://developer.xamarin.com/api/member/OpenTK.NMatrix4.Transpose)會執行就地調換，項目。
+取得矩陣解譯選擇一致的結果是適當的行為很重要。 由於 3D 轉換矩陣是 4 x 4，一致性錯誤並不會產生任何種類的編譯時期或甚至是執行階段例外狀況，它只是作業將會非預期地運作。 如果您的 SceneKit / ARKit 物件似乎會停滯，飛，或抖動，不正確的轉換矩陣是很好的可能性。 解決方法很簡單： [ `NMatrix4.Transpose` ](xref:OpenTK.NMatrix4.Transpose*)會執行就地調換，項目。
 
 ## <a name="related-links"></a>相關連結
 

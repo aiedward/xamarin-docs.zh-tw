@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials: Text-to-Speech'
+title: Xamarin.Essentials:文字轉換語音
 description: Xamarin.Essentials 中的 TextToSpeech 類別可讓應用程式利用內建的文字轉換語音引擎將裝置的文字說出來，也可以查詢引擎可支援的可用語言。
 ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: a7f40fc652c6f02d68a9f01dcdd0f4132893a6ca
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 6d89f70a8b7f6229297f86deb3cb83cf940fa7df
+ms.sourcegitcommit: 4f8dc5298a95d591a59e97cdd347fd82858a1019
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898533"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469470"
 ---
-# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: Text-to-Speech
+# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials:文字轉換語音
 
 **TextToSpeech** 類別可讓應用程式利用內建的文字轉換語音引擎將裝置的文字說出來，也可以查詢引擎可支援的可用語言。
 
@@ -60,9 +60,10 @@ public async Task SpeakNowDefaultSettings()
     // This method will block until utterance finishes.
 }
 
+// Cancel speech if a cancellation token exists & hasn't been already requested.
 public void CancelSpeech()
 {
-    if (cts?.IsCancellationRequested ?? false)
+    if (cts?.IsCancellationRequested ?? true)
         return;
 
     cts.Cancel();
@@ -102,8 +103,8 @@ public async Task SpeakNow()
 {
     var settings = new SpeechOptions()
         {
-            Volume = .75,
-            Pitch = 1.0
+            Volume = .75f,
+            Pitch = 1.0f
         };
 
     await TextToSpeech.SpeakAsync("Hello World", settings);
@@ -131,8 +132,8 @@ public async Task SpeakNow()
 
     var settings = new SpeechOptions()
         {
-            Volume = .75,
-            Pitch = 1.0,
+            Volume = .75f,
+            Pitch = 1.0f,
             Locale = locale
         };
 

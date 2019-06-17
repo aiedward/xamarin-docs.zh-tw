@@ -1,17 +1,17 @@
 ---
 title: 開始使用F#
-description: 本文件說明如何了解F#並使用它來建置 Xamarin 應用程式使用 Visual Studio 2017 和 Visual Studio for mac。
+description: 本文件說明如何了解F#並使用它來建置 Xamarin 應用程式使用 Visual Studio 2019 和 Visual Studio for mac。
 ms.prod: xamarin
 ms.assetid: 1A0E627D-A4C1-4F95-BAED-76A0E40B9054
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 044767d52588e48e563a40cb70ef0bfe910f9a3e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2f67983addd03a065383a2940d6e6dfc7076f2be
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036423"
 ---
 # <a name="getting-started-with-f35"></a>開始使用 f #&#35;
 

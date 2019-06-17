@@ -1,5 +1,5 @@
 ---
-title: iOS 背景技術
+title: iOS 背景處理技術
 description: 這份文件連結至說明各種 backgrounding 的技巧，在 iOS 中的輔助線： 背景工作、 背景傳送服務、 背景擷取和遠端通知。
 ms.prod: xamarin
 ms.assetid: 011A8D48-1CDC-486A-A2B0-C4946118E7A9
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 00cca0c75cc79858f6edda5d6fb954611d81161b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61169602"
 ---
-# <a name="ios-backgrounding-techniques"></a>iOS 背景技術
+# <a name="ios-backgrounding-techniques"></a>iOS 背景處理技術
 
 在下列章節中，我們將探討下列的 iOS 功能，以及現有 backgrounding 選項：
 

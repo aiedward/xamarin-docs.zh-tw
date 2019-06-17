@@ -5,12 +5,12 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 0f4271e5c0c9de53a83a840f7fe0a83b594a06fa
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 08f97263ccb5b4c91a541d06534e82aaaebbae1e
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898637"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58175391"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -20,7 +20,7 @@ Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人
 
 ## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>[開始使用 Xamarin.Essentials](get-started.md?context=xamarin/xamarin-forms)
 
-遵循[快速入門指南](get-started.md)，將 **Xamarin.Essentials** NuGet 套件安裝到您現有或新的 Xamarin.Forms、Android、iOS 或 UWP 專案中。
+遵循[快速入門指南](get-started.md)，將 **Xamarin.Essentials** NuGet 套件安裝到您現有或新的 Xamarin.Forms、Android、iOS 或 UWP 專案。
 
 ## <a name="feature-guides"></a>功能指南
 
@@ -31,8 +31,10 @@ Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人
 * [氣壓計](barometer.md?context=xamarin/xamarin-forms)：監視氣壓計的壓力變化。
 * [電池](battery.md?context=xamarin/xamarin-forms)：簡單地偵測電池電量、來源和狀態。
 * [剪貼簿](clipboard.md?context=xamarin/xamarin-forms)：輕鬆快速地設定或讀取剪貼簿上的文字。
+* [色彩轉換器](color-converters.md?context=xamarin/xamarin-forms) - System.Drawing.Color 的 Helper 方法。
 * [羅盤](compass.md?context=xamarin/xamarin-forms)：監視羅盤的變更。
 * [連線](connectivity.md?context=xamarin/xamarin-forms)：檢查連線狀態和偵測變更。
+* [偵測搖動](detect-shake.md?context=xamarin/xamarin-forms) - 可偵測裝置的搖動。
 * [裝置顯示器資訊](device-display.md?context=xamarin/xamarin-forms)：取得裝置的螢幕計量與方向。
 * [裝置資訊](device-information.md?context=xamarin/xamarin-forms)：輕鬆地了解裝置。
 * [電子郵件](email.md?context=xamarin/xamarin-forms)：輕鬆地傳送電子郵件訊息。
@@ -48,11 +50,13 @@ Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人
 * [開啟瀏覽器](open-browser.md?context=xamarin/xamarin-forms)：輕鬆快速地開啟瀏覽器至特定網站。
 * [方向感應器](orientation-sensor.md?context=xamarin/xamarin-forms)：擷取裝置在三維空間中的方向。
 * [電話撥號程式](phone-dialer.md?context=xamarin/xamarin-forms)：開啟電話撥號程式。
+* [平台擴充](platform-extensions.md?context=xamarin/xamarin-forms) - 可轉換矩形、大小及點的 Helper 方法。
 * [偏好設定](preferences.md?context=xamarin/xamarin-forms)：輕鬆快速地新增永續性偏好設定。
-* [安全儲存體](secure-storage.md?context=xamarin/xamarin-forms)：安全地儲存資料。
+* [保護儲存體](secure-storage.md?context=xamarin/xamarin-forms)：安全地儲存資料。
 * [Share](share.md?context=xamarin/xamarin-forms)：將文字與網站 URI 傳送到其他應用程式。
 * [SMS](sms.md?context=xamarin/xamarin-forms)：建立簡訊以傳送。
 * [文字轉換語音](text-to-speech.md?context=xamarin/xamarin-forms)：將裝置上的文字說出來。
+* [單位轉換器](unit-converters.md?context=xamarin/xamarin-forms) - 可轉換單位的 Helper 方法。
 * [版本追蹤](version-tracking.md?context=xamarin/xamarin-forms)：追蹤應用程式版本與組建編號。
 * [震動](vibrate.md?context=xamarin/xamarin-forms)：讓裝置震動。
 

@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: dd4ba236df8e5993c7f7ed86393eb66ce01db595
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60956145"
 ---
 # <a name="app-linking-in-android"></a>在 Android 應用程式連結
 
@@ -56,7 +56,7 @@ Android 6.0 改善這種使用自動連結處理。 適用於 Android uri 自動
 必須設定對應至 Android 應用程式中活動的 從網站的 URI （或可能的 Uri 集合） 的意圖篩選器。 在 Xamarin.Android 中，所裝飾的活動建立這種關係[IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)。 意圖篩選必須宣告下列資訊：
 
 * **`Intent.ActionView`** &ndash; 這會註冊意圖篩選，以回應要求，若要檢視資訊
-* **`Categories`** &ndash;  意圖篩選應該註冊兩個**[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)** 並**[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)** 能夠正確處理網頁的 URI。
+* **`Categories`** &ndash;  意圖篩選應該註冊兩個 **[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)** 並 **[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)** 能夠正確處理網頁的 URI。
 * **`DataScheme`** &ndash; 意圖篩選必須宣告`http`及/或`https`。 這些是只有兩個有效的配置。
 * **`DataHost`** &ndash; 這是 Uri 會從產生的網域。
 * **`DataPathPrefix`** &ndash; 這是要在網站上的資源的選擇性路徑。

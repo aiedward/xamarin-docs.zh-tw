@@ -1,5 +1,5 @@
 ---
-title: Hello, Android：深度剖析
+title: Hello, Android：深入了解
 description: 在這份含有兩部分的指南中，您將會建置您的第一個 Xamarin.Android 應用程式，以及了解使用 Xamarin 進行 Android 應用程式開發的基本知識。 在過程中，將會為您介紹建置和部署 Xamarin.Android 應用程式所需的工具、概念和步驟。
 zone_pivot_groups: platform
 ms.topic: quickstart
@@ -9,14 +9,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: cdd0a792a76fa411fdc010c3d662a3d1acc2f373
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3d34ce3d5cb6e8e4931eafcc7cd82d141f5db8d7
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108806"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670177"
 ---
-# <a name="hello-android-deep-dive"></a>Hello, Android：深度剖析
+# <a name="hello-android-deep-dive"></a>Hello, Android：深入了解
 
 _在這份含有兩部分的指南中，您將會建置您的第一個 Xamarin.Android 應用程式，以及了解使用 Xamarin 進行 Android 應用程式開發的基本知識。在此過程中，將會為您介紹建置和部署 Xamarin.Android 應用程式所需的工具、概念和步驟。_
 
@@ -113,7 +113,7 @@ Visual Studio for Mac 遵循 Visual Studio 的做法，將程式碼組織成「�
 
 下表摘要說明這些項目：
 
-- **drawable** &ndash; drawable 目錄包含 [Drawable Resources](http://developer.android.com/guide/topics/resources/drawable-resource.html) (可繪製資源)，例如影像和點陣圖。
+- **drawable** &ndash; drawable 目錄包含 [Drawable Resources](https://developer.android.com/guide/topics/resources/drawable-resource.html) (可繪製資源)，例如影像和點陣圖。
 
 - **mipmap** &ndash; mipmap 目錄包含不同啟動程式圖示密度的可繪製檔案。 在預設範本中，drawable 目錄包含應用程式圖示檔 **Icon.png**。
 
@@ -269,7 +269,7 @@ SetContentView (Resource.Layout.activity_main);
 ::: zone-end
 ::: zone pivot="macos"
 
-在 **Phoneword** 應用程式中，`OnCreate` 的第一項工作是載入在 Android Designer 中建立的使用者介面。 若要載入 UI，請呼叫 `SetContentView` 並傳遞配置檔案的「資源配置名稱」：**Main.axml**。 此配置位於 `Resource.Layout.Main` 中：
+在 **Phoneword** 應用程式中，`OnCreate` 的第一項工作是載入在 Android Designer 中建立的使用者介面。 若要載入 UI，請呼叫 `SetContentView` 並傳遞配置檔案的「資源配置名稱」給它：**Main.axml**。 此配置位於 `Resource.Layout.Main` 中：
 
 ```csharp
 SetContentView (Resource.Layout.Main);

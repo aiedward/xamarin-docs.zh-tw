@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: bd6013a0fc1d4f3dfc2d863860052310fed55e4d
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: e85eb64099ba60a2b3663730a6fb058efdac6c60
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61211256"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML 基本知識
 
@@ -89,7 +89,7 @@ XAML 會具有對等程式碼的幾項優點：
 -  XAML 通常無法具現化未定義的無參數建構函式的類別。 （不過，沒有有時什麼方法可以解決這項限制。）
 -  XAML 通常無法呼叫方法。 （同樣地，這項限制有時是可以克服的。）
 
-尚未有視覺化設計工具來產生 XAML 在 Xamarin.Forms 應用程式。 所有 XAML 都必須手動撰寫，但沒有[XAML 預覽程式](~/xamarin-forms/xaml/xaml-previewer.md)。 新增程式設計人員以 XAML 可能會想要經常建置和執行應用程式，特別是在任何可能不是很明顯地正確的項目之後。 透過眾多經驗，在 XAML 中的開發人員知道測試會獎勵。
+尚未有視覺化設計工具來產生 XAML 在 Xamarin.Forms 應用程式。 所有 XAML 都必須手動撰寫，但沒有[XAML 預覽程式](~/xamarin-forms/xaml/xaml-previewer/index.md)。 新增程式設計人員以 XAML 可能會想要經常建置和執行應用程式，特別是在任何可能不是很明顯地正確的項目之後。 透過眾多經驗，在 XAML 中的開發人員知道測試會獎勵。
 
 基本上，XAML 就是 XML，但 XAML 有一些獨特的語法功能。 最重要的是：
 

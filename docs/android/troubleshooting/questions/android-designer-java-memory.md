@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
 ms.openlocfilehash: 9c564789f704180e9acc9f96dcba5e7d6eb20634
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617237"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60946734"
 ---
 # <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>調整適用於 Android Designer 的 JAVA 記憶體參數
 
@@ -73,7 +73,7 @@ ms.locfileid: "51617237"
 
 4.  編輯`.userprefs`在文字編輯器中的檔案。
 
-5.  找到現有的 XML 項目，其格式如下。 這個項目名稱的最後一個部分會比對您的專案名稱:"AndroidApplication1 」，在此範例中：
+5.  找到現有的 XML 項目，其格式如下。 這個項目名稱的最後一個部分會比對您的專案名稱：「 AndroidApplication1 「 在此範例中：
 
     ```xml
     <MonoDevelop.Ide.ItemProperties.AndroidApplication1 ... >

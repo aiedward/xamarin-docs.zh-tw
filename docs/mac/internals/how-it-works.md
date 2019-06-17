@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 05/25/2017
-ms.openlocfilehash: cd5371cde1dfcbe3cb1aea5dbdf8439816d66d95
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0635e110cb2aa7bc00234d3d06df57e0fd6f966e
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61033832"
 ---
 # <a name="how-xamarinmac-works"></a>Xamarin.Mac 的運作方式
 
 大部分的情況，開發人員將永遠不必擔心內部"magic"的 Xamarin.Mac，不過，有項目在幕後的運作方式如何協助與這兩種解譯現有文件中的粗略了解C#功能濾鏡和偵錯在發生時的問題。
 
-在 Xamarin.Mac 應用程式橋接兩個世界： 沒有包含原生類別的執行個體的 Objective C 執行階段 (`NSString`，`NSApplication`等等)，而且沒有C#包含的執行個體的執行階段 managed 類別 (`System.String``HttpClient`等等)。 這兩個世界，之間 Xamarin.Mac 建立的雙向橋接器讓應用程式可以呼叫方法 （選取器） 在 OBJECTIVE-C 中 (例如`NSApplication.Init`) 和 OBJECTIVE-C 可以呼叫應用程式的C#方法後 （例如上的應用程式委派的方法）。 一般情況下，OBJECTIVE-C 呼叫都會透明處理透過**P/Invokes**和 Xamarin 提供一些執行階段程式碼。
+在 Xamarin.Mac 應用程式橋接兩個世界：沒有包含原生類別的執行個體的 Objective C 執行階段 (`NSString`，`NSApplication`等等)，而且沒有C#包含的執行個體的執行階段 managed 類別 (`System.String`，`HttpClient`等等)。 這兩個世界，之間 Xamarin.Mac 建立的雙向橋接器讓應用程式可以呼叫方法 （選取器） 在 OBJECTIVE-C 中 (例如`NSApplication.Init`) 和 OBJECTIVE-C 可以呼叫應用程式的C#方法後 （例如上的應用程式委派的方法）。 一般情況下，OBJECTIVE-C 呼叫都會透明處理透過**P/Invokes**和 Xamarin 提供一些執行階段程式碼。
 
 <a name="exposing-classes" />
 
@@ -104,7 +104,7 @@ Xamarin.Mac 是新 AOT 的能力的 IL 程式碼在應用程式組建循環，�
 
 ### <a name="enabling-aot-compilation"></a>啟用 AOT 編譯
 
-按兩下 Xamarin.Mac 中啟用 AOT**專案名稱**中**方案總管**，請巡覽至**Mac 組建**並新增`--aot:[options]`到**其他 mmp 引數：** 欄位 (其中`[options]`是一或多個選項來控制 AOT 型別，如下所示)。 例如: 
+按兩下 Xamarin.Mac 中啟用 AOT**專案名稱**中**方案總管**，請巡覽至**Mac 組建**並新增`--aot:[options]`到**其他 mmp 引數：** 欄位 (其中`[options]`是一或多個選項來控制 AOT 型別，如下所示)。 例如：
 
 ![加入其他 mmp 引數的 AOT](how-it-works-images/aot01.png "新增至 其他 mmp 引數的 AOT")
 
@@ -120,7 +120,7 @@ Xamarin.Mac 是新 AOT 的能力的 IL 程式碼在應用程式組建循環，�
 - `core` -AOT 編譯`Xamarin.Mac`，`System`和`mscorlib`組件。
 - `sdk` -AOT 編譯`Xamarin.Mac`和基底類別程式庫 (BCL) 組件。
 - `|hybrid` -新增這其中一個以上的選項可讓混合式 AOT 可允許 IL 移除，但會導致再編譯時間。
-- `+` -包含在單一 AOT 編譯。
+- `+` -包含單一檔案，以 AOT 編譯。
 - `-` -將單一檔案移除 AOT 編譯。
 
 比方說，`--aot:all,-MyAssembly.dll`會啟用所有 MonoBundle 中的組件的 AOT 編譯_除了_`MyAssembly.dll`並`--aot:core|hybrid,+MyOtherAssembly.dll,-mscorlib.dll`會啟用混合式、 程式碼 AOT 包含`MyOtherAssembly.dll`和排除`mscorlib.dll`.

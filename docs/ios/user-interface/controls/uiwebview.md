@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
 ms.openlocfilehash: 9adf514e4fc510617e3f4d801569935ee4a03f25
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61093766"
 ---
 # <a name="web-views-in-xamarinios"></a>在 Xamarin.iOS 中的 web 檢視
 
@@ -119,7 +119,7 @@ UIApplication.SharedApplication.OpenUrl(url);
 
 iOS 9 的增強功能可讓使用者輕鬆地返回您的應用程式，透過所提供的 [Safari] 頁面的左上角的返回按鈕。
 
-## <a name="app-transport-security"></a>應用程式的傳輸安全性
+## <a name="app-transport-security"></a>應用程式傳輸安全性
 
 應用程式的傳輸安全性，或是*ATS*中引進了 apple iOS 9，以確保所有的網際網路通訊符合最佳做法的安全連線。
 

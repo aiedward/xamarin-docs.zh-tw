@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: d8a531e495a19be7437d4a600e758028594248ab
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60953311"
 ---
 # <a name="ios-gaming-apis-in-xamarinios"></a>iOS 遊戲 Api 在 Xamarin.iOS 中
 
@@ -373,9 +373,9 @@ public override void ViewWillLayoutSubviews ()
 
 除了上述的範例，Apple 提供下列的範例應用程式可以以轉碼C#和 Xamarin.iOS:
 
-- [FourInARow： 使用對手 AI GameplayKit Minmax 策略家](https://developer.apple.com/library/prerelease/ios/samplecode/FourInARow/Introduction/Intro.html#//apple_ref/doc/uid/TP40016142)
-- [AgentsCatalog： 中 GameplayKit 使用代理程式系統](https://developer.apple.com/library/prerelease/ios/samplecode/AgentsCatalog/Introduction/Intro.html#//apple_ref/doc/uid/TP40016141)
-- [DemoBots： 建立使用 SpriteKit 和 GameplayKit 跨平台遊戲](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)
+- [FourInARow:使用對手 AI GameplayKit Minmax 策略家](https://developer.apple.com/library/prerelease/ios/samplecode/FourInARow/Introduction/Intro.html#//apple_ref/doc/uid/TP40016142)
+- [AgentsCatalog:GameplayKit 中使用的代理程式系統](https://developer.apple.com/library/prerelease/ios/samplecode/AgentsCatalog/Introduction/Intro.html#//apple_ref/doc/uid/TP40016141)
+- [DemoBots:建立使用 SpriteKit 和 GameplayKit 跨平台遊戲](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)
 
 ## <a name="metal"></a>Metal
 
@@ -429,7 +429,7 @@ Apple 的模型 I/O 架構提供深入了解 3D 資產 （例如模型和其相�
 
 Apple 的新 ReplayKit 架構可讓您輕鬆地將玩遊戲的方式記錄新增至您的 iOS 遊戲，並讓使用者快速且輕鬆地編輯和共用應用程式內的這段影片中。
 
-如需詳細資訊，請參閱 Apple[會使用加入社交網路 ReplayKit 和 Game Center 的視訊](https://developer.apple.com/videos/wwdc/2015/?id=605)及其[DemoBots： 建置跨平台遊戲 SpriteKit 與 GameplayKit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)範例應用程式。
+如需詳細資訊，請參閱 Apple[會使用加入社交網路 ReplayKit 和 Game Center 視訊](https://developer.apple.com/videos/wwdc/2015/?id=605)及其[DemoBots:建置跨平台遊戲 SpriteKit 與 GameplayKit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)範例應用程式。
 
 ## <a name="scenekit"></a>SceneKit
 
@@ -445,7 +445,7 @@ Apple 已加入下列新功能 SceneKit 的 iOS 9:
 - `SCNView`和`SCNSceneRenderer`類別可以用來啟用 （在支援的 iOS 裝置） 的裸機呈現。
 - `SCNAudioPlayer`和`SCNNode`類別可用來新增自動追蹤在 iOS 應用程式的 播放程式位置的空間音訊效果。
 
-如需詳細資訊，請參閱我們[SceneKit 文件](~/ios/platform/introduction-to-ios8.md#scenekit)與 Apple [SceneKit Framework 參考](https://developer.apple.com/library/prerelease/ios/documentation/SceneKit/Reference/SceneKit_Framework/index.html#//apple_ref/doc/uid/TP40012283)和[Fox： 建置 SceneKit 遊戲使用 Xcode 場景編輯器](https://developer.apple.com/library/prerelease/ios/samplecode/Fox/Introduction/Intro.html#//apple_ref/doc/uid/TP40016154)範例專案。
+如需詳細資訊，請參閱我們[SceneKit 文件](~/ios/platform/introduction-to-ios8.md#scenekit)與 Apple [SceneKit Framework 參考](https://developer.apple.com/library/prerelease/ios/documentation/SceneKit/Reference/SceneKit_Framework/index.html#//apple_ref/doc/uid/TP40012283)和[Fox:建立 SceneKit 遊戲使用 Xcode 場景編輯器](https://developer.apple.com/library/prerelease/ios/samplecode/Fox/Introduction/Intro.html#//apple_ref/doc/uid/TP40016154)範例專案。
 
 ## <a name="spritekit"></a>SpriteKit
 
@@ -462,7 +462,7 @@ Apple 已加入下列新功能 SpriteKit 的 iOS 9:
 - 很容易捲動遊戲支援，以新的相機節點 (`SKCameraNode`) 物件。
 - 在支援 Metal 的 iOS 裝置，SpriteKit 會自動使用它進行轉譯，即使您已在使用自訂的 OpenGL ES 著色器。
 
-如需詳細資訊，請參閱我們[SpriteKit 文件](~/ios/platform/introduction-to-ios8.md#spritekit)Apple [SpriteKit Framework 參考](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041)及其[DemoBots： 建立使用 SpriteKit 跨平台遊戲和GameplayKit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)範例應用程式。
+如需詳細資訊，請參閱我們[SpriteKit 文件](~/ios/platform/introduction-to-ios8.md#spritekit)Apple [SpriteKit Framework 參考](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041)及其[DemoBots:建置跨平台遊戲 SpriteKit 與 GameplayKit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)範例應用程式。
 
 ## <a name="summary"></a>總結
 

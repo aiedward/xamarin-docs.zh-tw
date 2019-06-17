@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 1b6e1c8ce91eaad46e779527c5ba12e2187cad24
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: 748443352c106fbad88f8eda895cde097ce14a45
+ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528425"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394703"
 ---
 # <a name="viewpager-with-fragments"></a>ViewPager 與 Fragment
 
@@ -29,7 +29,7 @@ _ViewPager 是可讓您實作手勢導覽的佈局管理員。手勢導覽允許
 
 ## <a name="start-an-app-project"></a>啟動應用程式專案
 
-建立新的 Android 專案，稱為**FlashCardPager**。 接下來，啟動 NuGet 套件管理員 (如需有關如何安裝 NuGet 套件的詳細資訊，請參閱 <<c0> [ 逐步解說： 在您的專案中包含 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough))。 尋找並安裝**Xamarin.Android.Support.v4**封裝中所述[Viewpager 和檢視表](~/android/user-interface/controls/view-pager/viewpager-and-views.md)。 
+建立新的 Android 專案，稱為**FlashCardPager**。 接下來，啟動 NuGet 套件管理員 (如需有關如何安裝 NuGet 套件的詳細資訊，請參閱[逐步解說：在專案中包含 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough))。 尋找並安裝**Xamarin.Android.Support.v4**封裝中所述[Viewpager 和檢視表](~/android/user-interface/controls/view-pager/viewpager-and-views.md)。 
 
 
 
@@ -86,7 +86,7 @@ using Android.Support.V4.View;
 using Android.Support.V4.App;
 ```
 
-變更`MainActivity`類別宣告，使它衍生自`AppCompatActivity`:
+變更`MainActivity`類別宣告，使它衍生自`FragmentActivity`:
 
 ```csharp
 public class MainActivity : FragmentActivity
@@ -445,4 +445,4 @@ questionBox.Click += delegate
 
 ## <a name="related-links"></a>相關連結
 
-- [FlashCardPager （範例）](https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager)
+- [FlashCardPager (sample)](https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager)

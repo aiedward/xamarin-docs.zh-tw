@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: 31eb0bfae58ecdca40548e46d1d9d95828be67b4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61347807"
 ---
 # <a name="3264-bit-platform-considerations"></a>32/64 位元平台考量
 
@@ -46,7 +46,7 @@ Xamarin.iOS 行動應用程式的已轉換至統一的 API，開發人員必須�
 
    [![將支援的架構設定為其中一個 ARM64 組合](Images/Image02.png "設定支援的架構，以其中一個 ARM64 組合")](Images/Image02-large.png#lightbox)
 
-5. 按一下 [確定 **Deploying Office Solutions**]。
+5. 按一下 [確定] 。
 6. 執行乾淨的組建。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -79,7 +79,7 @@ ARM64，才可支援 iOS 8 的 iPhone 6 或其他 64 位元的裝置，都必須
 以 32 位元和 64 位元架構為目標，可大幅提升應用程式的大小。 不過，這麼做，可讓較新的裝置，同時仍可支援較舊的裝置執行最佳化程式碼。
 
 > [!IMPORTANT]
-> 如果您在提交 iTunes App Store、 iOS 應用程式時，收到下列訊息 _」 警告 ITMS 9000： 遺漏 64 位元支援。從 2015 年 2 月 1 日起，新的 iOS 上傳至 App Store 的應用程式必須包含 64 位元支援，並以建置 iOS 8 的 SDK，包含在 Xcode 6 或更新版本。若要啟用 64 位元在專案中，我們建議使用的預設 Xcode 組建的 「 標準架構 」 的設定來建置單一的二進位檔，以 32 位元和 64 位元的程式碼。 」_ 您需要切換至其中一個可用的支援的架構**ARM64** （如上所示） 的組合，重新編譯和重新提交。
+> 如果您在提交 iTunes App Store、 iOS 應用程式時，收到下列訊息 _」 警告 ITMS 9000:遺漏的 64 位元支援。從 2015 年 2 月 1 日起，新的 iOS 上傳至 App Store 的應用程式必須包含 64 位元支援，並以建置 iOS 8 的 SDK，包含在 Xcode 6 或更新版本。若要啟用 64 位元在專案中，我們建議使用的預設 Xcode 組建的 「 標準架構 」 的設定來建置單一的二進位檔，以 32 位元和 64 位元的程式碼。 」_ 您需要切換至其中一個可用的支援的架構**ARM64** （如上所示） 的組合，重新編譯和重新提交。
 
 ## <a name="mac"></a>Mac
 
@@ -90,7 +90,7 @@ ARM64，才可支援 iOS 8 的 iPhone 6 或其他 64 位元的裝置，都必須
 
 不同於 iOS，許多最新版本的 macOS 中導入新的架構只支援在 64 位元模式下 （CloudKit、 EventKit、 GameController、 LocalAuthentication、 MediaLibrary、 MultipeerConnectivity、 NotificationCenter、 GLKit、 SpriteKit、 社交性和 MapKit，其他項目）。
 
-統一的 API 讓開發人員可以選擇要產生何種應用程式： 32 位元或 64 位元。
+統一的 API 讓開發人員可以選擇要產生何種應用程式：32 位元或 64 位元。
 
 **32 位元應用程式**將 32 位元和 64 位元的 Mac 電腦上執行，具有位址空間限制為 32 位元，且需要所有的程式庫是 32 位元。
 

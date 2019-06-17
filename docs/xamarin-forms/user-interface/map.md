@@ -7,23 +7,23 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2018
-ms.openlocfilehash: 20b09ab44eaaaa21535d50b947449e253652cc62
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 166927f2168015cb4786502d841e01b2faeb0c51
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672478"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66741008"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms 對應
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/WorkingWithMaps/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)
 
 _Xamarin.Forms 會在每個平台上使用原生的對應 Api。_
 
 Xamarin.Forms.Maps 會使用原生的對應 Api，每個平台。 這對於使用者而言，提供快速、 熟悉對應體驗，但表示一些設定步驟所需遵守每個平台 API 的需求。
 設定後，`Map`控制運作方式就像一般的程式碼中的任何其他 Xamarin.Forms 元素。
 
-地圖控制項用於[MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/)範例，如下所示。
+地圖控制項用於[MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)範例，如下所示。
 
  [![MobileCRM 範例中的地圖](map-images/maps-zoom-sml.png "地圖控制項範例")](map-images/maps-zoom.png#lightbox "地圖控制項範例")
 
@@ -128,6 +128,15 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 ![適用於 Android 的必要權限](map-images/android-map-permissions.png "適用於 Android 的必要權限")
 
 這兩個所需的因為應用程式需要下載地圖資料的網路連線。 了解 Android[權限](https://developer.android.com/reference/android/Manifest.permission.html)若要深入了。
+
+此外，Android 9 bootclasspath，已移除 Apache HTTP 用戶端程式庫，因此它無法提供給應用程式為目標的 API 28 或更高版本。 下面這一行必須新增至`application`節點的您**AndroidManifest.xml**繼續使用 Apache HTTP 用戶端 API 28 或更高版本為目標的應用程式中的檔案：
+
+```xml
+<application ...>
+    ...
+    <uses-library android:name="org.apache.http.legacy" android:required="false" />    
+</application>
+```
 
 ### <a name="universal-windows-platform"></a>通用 Windows 平台
 
@@ -289,6 +298,6 @@ MyMap.MoveToRegion(
 
 ## <a name="related-links"></a>相關連結
 
-- [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/)
+- [MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)
 - [對應自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
 - [Xamarin.Forms 範例](https://developer.xamarin.com/samples/xamarin-forms/all/)

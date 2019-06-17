@@ -1,5 +1,5 @@
 ---
-title: 繫結。JAR
+title: 繫結 .JAR
 description: 本逐步解說提供建立 Xamarin.Android Java 繫結程式庫從 Android 的逐步指示。JAR 檔案。
 ms.prod: xamarin
 ms.assetid: 93F1D5C5-E2AF-46EA-8460-485A0860C176
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/11/2018
 ms.openlocfilehash: 3c84b29807fd4a181ed867095645005bf9ba4df0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60957268"
 ---
-# <a name="binding-a-jar"></a>繫結。JAR
+# <a name="binding-a-jar"></a>繫結 .JAR
 
 _本逐步解說提供建立 Xamarin.Android Java 繫結程式庫從 Android 的逐步指示。JAR 檔案。_
 
@@ -63,7 +63,7 @@ public class Picasso
 }
 ```
 
-我們產生的繫結程式庫之後**畢加索 2.x.x.jar**，我們可以呼叫這些方法，從C#。 例如: 
+我們產生的繫結程式庫之後**畢加索 2.x.x.jar**，我們可以呼叫這些方法，從C#。 例如：
 
 ```csharp
 using Com.Squareup.Picasso;
@@ -114,7 +114,7 @@ Picasso.With (this)
 [![目標 API 層級設定為 API 19](binding-a-jar-images/06-set-target-framework-sml.png)](binding-a-jar-images/06-set-target-framework.png#lightbox)
 
 
-最後，建立繫結程式庫。 雖然某些警告訊息可能會顯示，繫結程式庫專案應建置成功，而且產生的輸出。在下列位置的 DLL: **JarBinding/bin/Debug/JarBinding.dll**
+最後，建立繫結程式庫。 雖然某些警告訊息可能會顯示，繫結程式庫專案應建置成功，而且產生的輸出。在下列位置的 DLL:**JarBinding/bin/Debug/JarBinding.dll**
     
 
 

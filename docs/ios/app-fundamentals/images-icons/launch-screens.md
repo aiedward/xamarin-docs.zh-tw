@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2018
 ms.openlocfilehash: 0ec1defa29a4fe85c4ae3e809d8733e68cc268ac
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61087409"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Xamarin.iOS 應用程式啟動畫面
 
@@ -32,12 +32,12 @@ IOS 8 之前建立的 iOS 應用程式啟動畫面需要開發人員的各種裝
 
 1. 在 Visual Studio for Mac，請選取建立新的專案**檔案 > 新的解決方案**，然後選擇**單一檢視應用程式**: 
 
-    ![新增專案] 視窗的 [使用選取的單一檢視應用程式](launch-screens-images/launch01.png)
+    ![新增專案 視窗的 使用選取的單一檢視應用程式](launch-screens-images/launch01.png)
 
     - 根據預設，新的專案包含**LaunchScreen.storyboard**定義啟動畫面介面檔案。 
     - 若要改為新增至現有的專案的啟動 Screen 分鏡腳本，以滑鼠右鍵按一下中的專案名稱**Solution Pad** ，然後選擇 **新增 > 新的檔案...** ，然後選取**啟動畫面**:
 
-    ![新的檔案] 視窗的 [ios 啟動畫面選取](launch-screens-images/launch01b.png)
+    ![新的檔案 視窗的 ios 啟動畫面選取](launch-screens-images/launch01b.png)
 
     - 將檔案命名**LaunchScreen**或您選擇的另一個名稱。
 
@@ -50,7 +50,7 @@ IOS 8 之前建立的 iOS 應用程式啟動畫面需要開發人員的各種裝
 
     - 根據預設，新的專案設定為使用**LaunchScreen.storyboard**做為其啟動螢幕。
 
-3. 新增映像**appicon**資產目錄，如此就可供使用，在 [啟動] 畫面。 如需詳細資訊，請參閱 <<c0> [ 新增至資產目錄映像設定的映像](~/ios/app-fundamentals/images-icons/displaying-an-image.md)一節[顯示影像](~/ios/app-fundamentals/images-icons/displaying-an-image.md)指南。
+3. 新增映像**appicon**資產目錄，如此就可供使用，在 啟動 畫面。 如需詳細資訊，請參閱 <<c0> [ 新增至資產目錄映像設定的映像](~/ios/app-fundamentals/images-icons/displaying-an-image.md)一節[顯示影像](~/ios/app-fundamentals/images-icons/displaying-an-image.md)指南。
 
 4. 開啟**LaunchScreen.storyboard**編輯按兩下**Solution Pad**。
 
@@ -231,4 +231,4 @@ IOS 8 之前建立的 iOS 應用程式啟動畫面需要開發人員的各種裝
 - [iOS 設計工具基本概念](~/ios/user-interface/designer/index.md)
 - [新增至資產目錄映像的映像設定](~/ios/app-fundamentals/images-icons/displaying-an-image.md#adding-images-to-an-asset-catalog-image-set)
 - [使用適用於 iOS 的 Xamarin 設計工具的自動版面配置](~/ios/user-interface/designer/designer-auto-layout.md)
-- [人性化介面指導方針： 啟動畫面](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)
+- [人性化介面指導方針：啟動畫面](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)

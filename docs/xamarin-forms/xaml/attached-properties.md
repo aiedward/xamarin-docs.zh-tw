@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: 130f4e3efdd7b3792f6458ad28fc85654e6e38c8
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: c1fb596abb580cf42edda21ab71f2c70de59a547
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056184"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65924557"
 ---
 # <a name="attached-properties"></a>附加屬性
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffect/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
 
 _附加的屬性是特殊類型的可繫結的屬性，定義一個類別中，但連接至其他物件，並可辨識在 XAML 做為屬性中包含的類別，以句號分隔屬性名稱。本文章提供附加屬性的簡介，並示範如何建立和使用它們。_
 
@@ -126,7 +126,7 @@ ShadowEffect.SetHasShadow (label, true);
 </Style>
 ```
 
-[ `Style` ](xref:Xamarin.Forms.Style)可以套用至[ `Label` ](xref:Xamarin.Forms.Label)藉由設定其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)屬性`Style`執行個體使用`StaticResource`標記延伸，如下列程式碼範例所示：
+[ `Style` ](xref:Xamarin.Forms.Style)可以套用至[ `Label` ](xref:Xamarin.Forms.Label)藉由設定其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性`Style`執行個體使用`StaticResource`標記延伸，如下列程式碼範例所示：
 
 ```xaml
 <Label Text="Label Shadow Effect" Style="{StaticResource ShadowEffectStyle}" />
@@ -147,6 +147,6 @@ ShadowEffect.SetHasShadow (label, true);
 
 - [可繫結的屬性](~/xamarin-forms/xaml/bindable-properties.md)
 - [XAML 命名空間](~/xamarin-forms/xaml/namespaces.md)
-- [延伸陰影效果 （範例）](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffect/)
+- [延伸陰影效果 （範例）](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
 - [BindableProperty](xref:Xamarin.Forms.BindableProperty)
 - [BindableObject](xref:Xamarin.Forms.BindableObject)

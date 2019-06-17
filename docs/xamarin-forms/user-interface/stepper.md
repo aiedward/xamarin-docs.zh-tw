@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/17/2018
 ms.openlocfilehash: a224d82ed7bb993f51be6cca6ccf09b5331cfac0
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052202"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61250456"
 ---
 # <a name="xamarinforms-stepper"></a>Xamarin.Forms 步進
 
@@ -182,7 +182,7 @@ double value = stepper.Value;
 </ContentPage>
 ```
 
-[ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)的第一個屬性[ `Label` ](xref:Xamarin.Forms.Label)繫結至[ `Value` ](xref:Xamarin.Forms.Stepper.Value)屬性[ `Stepper` ](xref:Xamarin.Forms.Stepper)，因為正[ `Text` ](xref:Xamarin.Forms.Label.Text)第二個屬性`Label`與`StringFormat`規格。 **基本步進繫結**頁面上函式稍有不同的兩個先前的頁面： 第一次出現的頁面中，第二個`Label`顯示文字字串，其值。 這是使用資料繫結的優點。 若要顯示沒有資料繫結的文字，您必須特別初始化`Text`的屬性`Label`，或模擬的引發[ `ValueChanged` ](xref:Xamarin.Forms.Stepper.ValueChanged)藉由從類別建構函式呼叫的事件處理常式的事件.
+[ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)的第一個屬性[ `Label` ](xref:Xamarin.Forms.Label)繫結至[ `Value` ](xref:Xamarin.Forms.Stepper.Value)屬性[ `Stepper` ](xref:Xamarin.Forms.Stepper)，因為正[ `Text` ](xref:Xamarin.Forms.Label.Text)第二個屬性`Label`與`StringFormat`規格。 **基本步進繫結**頁面函式稍有不同兩個先前的頁面：第一次出現的頁面中，第二個`Label`顯示文字字串，其值。 這是使用資料繫結的優點。 若要顯示沒有資料繫結的文字，您必須特別初始化`Text`的屬性`Label`，或模擬的引發[ `ValueChanged` ](xref:Xamarin.Forms.Stepper.ValueChanged)藉由從類別建構函式呼叫的事件處理常式的事件.
 
 ## <a name="precautions"></a>預防措施
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: f139bcceda12752e43a3a8330fa0a0e038e539f9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61423523"
 ---
 # <a name="wide-color-in-xamarinios"></a>在 Xamarin.iOS 中的寬色域
 
@@ -130,12 +130,12 @@ Display P3 可代表色彩的 sRGB 色彩空間之外的座標，因為它需要
 
 - UIKit （適用於僅限 iOS)
 - SceneKit
-- Core 圖形
+- Core Graphics
 - ImageIO
 - Core 映像
 - WebKit
 - SpriteKit
-- Core 動畫
+- Core Animation
 - AppKit （適用於 macOS 只)
 
 此外，顯示 Retina 顯示器延伸範圍 sRGB 色彩空間已增強的支援以及 Display P3。

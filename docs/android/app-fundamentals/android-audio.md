@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: a1a9dd06fb3cd6899dd3a564072bb63e413edf22
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: f34a76879c2a38ec8253d8f3dd3230f03d9af32e
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667538"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827316"
 ---
 # <a name="android-audio"></a>Android Audio
 
@@ -426,7 +426,7 @@ Android 作業系統提供強大的架構，來播放、 燒錄和管理音訊�
 
 ## <a name="related-links"></a>相關連結
 
-- [使用與音訊 （範例）](https://developer.xamarin.com/samples/Example_WorkingWithAudio/)
+- [使用與音訊 （範例）](https://developer.xamarin.com/samples/monodroid/Example_WorkingWithAudio/)
 - [Media Player](https://developer.xamarin.com/api/type/Android.Media.MediaPlayer/)
 - [媒體錄製器](https://developer.xamarin.com/api/type/Android.Media.MediaRecorder/)
 - [Audio Manager](https://developer.xamarin.com/api/type/Android.Media.AudioManager/)

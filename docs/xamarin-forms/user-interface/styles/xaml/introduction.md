@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 4048ec78d48b810b39d46fbcb7708860c478cce3
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 9e5fb0196b67e23a034856ee0dd7b9c7d4846b31
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667200"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971105"
 ---
 # <a name="introduction-to-xamarinforms-styles"></a>Introduction to Xamarin.Forms 樣式
 
@@ -25,7 +25,7 @@ Xamarin.Forms 應用程式通常會包含多個具有相同的外觀的控制項
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Styles.NoStylesPage"
     Title="No Styles"
-    Icon="xaml.png">
+    IconImageSource="xaml.png">
     <ContentPage.Content>
         <StackLayout Padding="0,20,0,0">
             <Label Text="These labels"
@@ -53,7 +53,7 @@ public class NoStylesPageCS : ContentPage
     public NoStylesPageCS ()
     {
         Title = "No Styles";
-        Icon = "csharp.png";
+        IconImageSource = "csharp.png";
         Padding = new Thickness (0, 20, 0, 0);
 
         Content = new StackLayout {
@@ -107,7 +107,7 @@ public class NoStylesPageCS : ContentPage
 
 每個[ `Style` ](xref:Xamarin.Forms.Style)執行個體可以是*明確*，或*隱含*:
 
-- *明確* [ `Style` ](xref:Xamarin.Forms.Style)藉由指定定義執行個體[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)和`x:Key`值，並設定目標項[`Style` ](xref:Xamarin.Forms.VisualElement.Style)屬性設`x:Key`參考。 如需詳細資訊*明確*樣式，請參閱[明確樣式](~/xamarin-forms/user-interface/styles/explicit.md)。
+- *明確* [ `Style` ](xref:Xamarin.Forms.Style)藉由指定定義執行個體[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)和`x:Key`值，並設定目標項[`Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性設`x:Key`參考。 如需詳細資訊*明確*樣式，請參閱[明確樣式](~/xamarin-forms/user-interface/styles/explicit.md)。
 - *隱含* [ `Style` ](xref:Xamarin.Forms.Style)藉由只指定定義執行個體[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)。 `Style`執行個體將會再自動套用至該類型的所有項目。 附註的子類別化`TargetType`自動沒有`Style`套用。 如需詳細資訊*隱含*樣式，請參閱[隱含樣式](~/xamarin-forms/user-interface/styles/implicit.md)。
 
 建立時[ `Style` ](xref:Xamarin.Forms.Style)，則[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)屬性一律為必要。 下列程式碼範例所示*明確*樣式 (請注意`x:Key`) 在 XAML 中建立：

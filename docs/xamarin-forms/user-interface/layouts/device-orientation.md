@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 762d4752eb3882398f212e634c66305f74d5a459
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: a38249236e758728452ff25fd0c486c3d03ce8fc
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052659"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970993"
 ---
 # <a name="device-orientation"></a>裝置方向
 
@@ -243,7 +243,7 @@ protected override void OnSizeAllocated (double width, double height){
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 x:Class="ResponsiveLayout.AbsoluteLayoutPageXaml"
-Title="AbsoluteLayout - XAML" BackgroundImage="deer.jpg">
+Title="AbsoluteLayout - XAML" BackgroundImageSource="deer.jpg">
     <ContentPage.Content>
         <AbsoluteLayout>
             <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1"
@@ -297,7 +297,7 @@ Title="AbsoluteLayout - XAML" BackgroundImage="deer.jpg">
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 x:Class="ResponsiveLayout.RelativeLayoutPageXaml"
 Title="RelativeLayout - XAML"
-BackgroundImage="deer.jpg">
+BackgroundImageSource="deer.jpg">
     <ContentPage.Content>
         <RelativeLayout x:Name="outerLayout">
             <BoxView BackgroundColor="#AA1A7019"
@@ -456,6 +456,7 @@ protected override void OnSizeAllocated (double width, double height){
             innerGrid.Children.Remove (controlsGrid);
             innerGrid.Children.Add (controlsGrid, 1, 0);
         } else {
+            innerGrid.RowDefinitions.Clear();
             innerGrid.ColumnDefinitions.Clear ();
             innerGrid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (1, GridUnitType.Star) });
             innerGrid.RowDefinitions.Add (new RowDefinition { Height = new GridLength (1, GridUnitType.Auto) });
@@ -477,4 +478,4 @@ protected override void OnSizeAllocated (double width, double height){
 - [版面配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [BusinessTumble 範例 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
 - [回應式配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
-- [顯示基的映像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)
+- [顯示基礎 堶菾 的映像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)

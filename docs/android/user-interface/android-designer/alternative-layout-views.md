@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
 ms.openlocfilehash: 03b80d3fb1ed7c8db108f86b3b3923c20e1d908f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61089691"
 ---
 # <a name="alternative-layout-views"></a>替代的版面配置檢視
 
@@ -79,7 +79,7 @@ _本主題說明您如何使用的資源限定詞可以版本配置。例如，�
 
 ## <a name="handling-conflicts"></a>處理衝突 
 
-如果您決定要變更的文字色彩**預設**綠色的版面配置，您會看到警告圖示會出現在連結的版面配置。 按一下該版面配置，便會開啟版面配置，以顯示衝突。 造成衝突的小工具會反白顯示以紅色的框架，並顯示下列訊息：*最近的變更已經造成衝突，此替代版面配置中*。 
+如果您決定要變更的文字色彩**預設**綠色的版面配置，您會看到警告圖示會出現在連結的版面配置。 按一下該版面配置，便會開啟版面配置，以顯示衝突。 造成衝突的小工具會反白顯示以紅色的框架，並會顯示下列訊息：*在此替代版面配置中最近的變更導致衝突*。 
 
 [![衝突變更](alternative-layout-views-images/vs/11-conflicting-change-sml.png "衝突變更")](alternative-layout-views-images/vs/11-conflicting-change.png#lightbox)
  
@@ -101,7 +101,7 @@ A*衝突方塊*會顯示在右邊的小工具來說明衝突：
 
 [![核取方塊衝突](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "核取方塊衝突")](alternative-layout-views-images/vs/13-checkbox-conflict.png#lightbox)
  
-按一下 **大型 land**版面配置會顯示衝突。 會顯示下列訊息：*最近的變更已經造成衝突，此替代版面配置中*: 
+按一下 **大型 land**版面配置會顯示衝突。 畫面顯示下列訊息：*在此替代版面配置中最近的變更導致衝突*: 
 
 [![替代的版面配置衝突](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "Alt 配置衝突")](alternative-layout-views-images/vs/14-alt-layout-conflict.png#lightbox)
 
@@ -179,7 +179,7 @@ A*衝突方塊*會顯示在右邊的小工具來說明衝突：
 
 ## <a name="handling-conflicts"></a>處理衝突 
 
-如果您決定要變更的文字色彩**預設**綠色的版面配置，您會看到警告圖示會出現在連結的版面配置。 按一下該版面配置，便會開啟版面配置，以顯示衝突。 造成衝突的小工具會反白顯示以紅色的框架，並顯示下列訊息：*最近的變更已經造成衝突，此替代版面配置中*。 
+如果您決定要變更的文字色彩**預設**綠色的版面配置，您會看到警告圖示會出現在連結的版面配置。 按一下該版面配置，便會開啟版面配置，以顯示衝突。 造成衝突的小工具會反白顯示以紅色的框架，並會顯示下列訊息：*在此替代版面配置中最近的變更導致衝突*。 
 
 [![衝突的變更](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png#lightbox)
 
@@ -201,7 +201,7 @@ A*衝突方塊*會顯示在右邊的小工具來說明衝突：
 
 [![核取方塊衝突](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png#lightbox)
  
-按一下 **大型 land**版面配置會顯示衝突。 會顯示下列訊息：*最近的變更已經造成衝突，此替代版面配置中*。 
+按一下 **大型 land**版面配置會顯示衝突。 畫面顯示下列訊息：*在此替代版面配置中最近的變更導致衝突*。 
 
 [![替代的版面配置衝突](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png#lightbox)
  

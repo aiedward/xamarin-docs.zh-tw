@@ -2,12 +2,18 @@
 layout: HubPage
 hide_bc: true
 title: Xamarin 文件
-description: 'Xamarin 可讓您使用 .NET 程式碼和平台專屬的使用者介面，來建置 Android、iOS 和 macOS 原生應用程式。 Xamarin.Forms 可讓您透過以 C# 或 XAML 撰寫的共用 UI 程式碼，來建置原生應用程式。'
+description: Xamarin 可讓您使用 .NET 程式碼和平台專屬的使用者介面，來建置 Android、iOS 和 macOS 原生應用程式。 Xamarin.Forms 可讓您透過以 C# 或 XAML 撰寫的共用 UI 程式碼，來建置原生應用程式。
 author: conceptdev
 ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
-  - clicktale
+- clicktale
+ms.openlocfilehash: 333e35a4d015586ed33045c3f91e21fdced496b0
+ms.sourcegitcommit: b4a12607ca944de10fd166139765241a4501831c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66687045"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -51,18 +57,18 @@ featureFlags:
                 </a>
             </li>
              <li>
-                <a href="https://university.xamarin.com">
+                <a href="~/whats-new/index.yml">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
                                 <div class="cardImageOuter">
-                                    <div class="cardImage" style='background-position: 0px 0px; background-image: url("https://docs.microsoft.com/media/common/i_virtual-training.svg"); background-size: cover;'>
-                                        <img style="display: none;" alt="Xamarin University" src="https://docs.microsoft.com/media/common/i_virtual-training.svg" data-linktype="external" data-hoverimage="https://docs.microsoft.com/media/common/i_virtual-training.svg">
+                                    <div class="cardImage" style='background-position: 0px 0px; background-image: url("https://docs.microsoft.com/media/common/i_whats-new.svg"); background-size: cover;'>
+                                        <img style="display: none;" alt="What's New?" src="https://docs.microsoft.com/media/media/common/i_whats-new.svg" data-linktype="external" data-hoverimage="https://docs.microsoft.com/media/common/i_whats-new.svg">
                                     </div>
                                 </div>
                                 <div class="cardText">
-                                    <h3 class="x-hidden-focus">Xamarin University</h3>
-                                    <p>了解免費的線上自我引導式學習。</p>
+                                    <h3 class="x-hidden-focus">新功能</h3>
+                                    <p>請參閱 Xamarin 文件中的最新動向。</p>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +99,7 @@ featureFlags:
                                                     <li><a class="barLink" href="~/cross-platform/desktop/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_NET.svg" alt="" />適用於 .NET 桌面開發人員的 Xamarin</a></li>
                                                     <li><a class="barLink" href="~/android/get-started/java-developers.md"><img  src="https://docs.microsoft.com/media/logos/logo_java.svg" alt="" />適用於 Java 開發人員的 Xamarin</a></li>
                                                     <li><a class="barLink" href="~/ios/get-started/objective-c-developers/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_xcode.svg" alt=" icon" />適用於 Objective-C 開發人員的 Xamarin</a></li>
-                                                    <li><a class="barLink" href="~/xamarin-forms/data-cloud/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_azure.svg" alt="" />Xamarin 和 Azure</a></li>
+                                                    <li><a class="barLink" href="~/xamarin-forms/data-cloud/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_azure.svg" alt="" />Azure 與 Xamarin</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -544,12 +550,12 @@ Mac</a>
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img src="~/media/index/xamarin-tools-live-player.svg?branch=master" alt="iOS Simulator for Windows" />
+                                                        <img src="~/media/index/xamarin-tools-live-player.svg?branch=master" alt="" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Visual Studio 2017</h3>
-                                                    <p>深入了解如何使用 Visual Studio 2017 進行開發。</p>
+                                                    <h3>Visual Studio 2019</h3>
+                                                    <p>深入了解如何使用 Visual Studio 2019 進行開發。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -563,7 +569,7 @@ Mac</a>
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img src="~/media/index/xamarin-tools-live-player.svg?branch=master" alt="iOS Simulator for Windows" />
+                                                        <img src="~/media/index/xamarin-tools-live-player.svg?branch=master" alt="" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">

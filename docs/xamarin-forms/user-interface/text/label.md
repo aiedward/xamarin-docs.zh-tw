@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: e57135c5a9a90ec75ae610ad92cecaa2a9b1e482
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: 31303114ddd829b596569981b5812b91c4e95b30
+ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557034"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557447"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms 標籤
 
@@ -157,7 +157,7 @@ var label =
 - [`FontSize`](xref:Xamarin.Forms.Span.FontSize) – 範圍中文字的字型的大小。
 - [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor) – 範圍中文字的色彩。 這個屬性已經過時，已被取代`TextColor`屬性。
 - [`LineHeight`](xref:Xamarin.Forms.Span.LineHeight) -要套用至範圍的預設線條高度的乘數。 如需詳細資訊，請參閱 <<c0> [ 行高](#line-height)。
-- [`Text`](xref:Xamarin.Forms.Span.Text)  – 要套用至範圍的樣式。
+- [`Style`](xref:Xamarin.Forms.Span.Style)  – 要套用至範圍的樣式。
 - [`Text`](xref:Xamarin.Forms.Span.Text) – 範圍的文字。
 - [`TextColor`](xref:Xamarin.Forms.Span.TextColor) – 範圍中文字的色彩。
 - `TextDecorations` -要套用至範圍中文字的裝飾。 如需詳細資訊，請參閱 <<c0> [ 文字裝飾](#text-decorations)。
@@ -356,7 +356,7 @@ public partial class MainPage : ContentPage
 
 ### <a name="creating-a-reusable-hyperlink-class"></a>建立可重複使用的超連結類別
 
-建立超連結的舊方法需要撰寫重複的程式碼，每當您需要在您的應用程式中的超連結。 不過，這兩個[ `Label` ](xref:Xamarin.Forms.Label)並[ `Span` ](xref:Xamarin.Forms.Span)類別都可以建立子類別化`HyperlinkLabel`和`HyperlinkSpan`類別，使用筆勢辨識器和文字格式在該處加入的程式碼。
+建立超連結的舊方法需要撰寫重複的程式碼，每當您需要在您的應用程式中的超連結。 不過，這兩個[ `Label` ](xref:Xamarin.Forms.Label)並[ `Span` ](xref:Xamarin.Forms.Span)類別可以建立子類別化`HyperlinkLabel`和`HyperlinkSpan`類別，使用筆勢辨識器和程式碼格式化的文字在該處加入。
 
 下列程式碼範例取自[超連結示範](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/HyperlinkDemos)範例，示範`HyperlinkSpan`類別：
 

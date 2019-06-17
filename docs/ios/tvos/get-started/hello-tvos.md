@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
 ms.openlocfilehash: 8c8bf3f86091f49633913b37ef5108ddbae6d276
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60951461"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello，tvOS 快速入門指南
 
@@ -298,7 +298,7 @@ namespace HellotvOS
 9. 完成時，您的條件約束看起來應該類似於 [屬性] 面板的 [配置] 索引標籤中：
 
     [![](hello-tvos-images/designer11.png "條件約束範例")](hello-tvos-images/designer11.png#lightbox)
-8. 拖曳** 按鈕**從**工具箱**並將它放在標籤底下。
+8. 拖曳 **按鈕** 從 **工具箱** 並將它放在標籤底下。
 9. 按一下 **標題**中的屬性**屬性輸入板**和按鈕的標題變更為  `Click Me`:
 
     [![](hello-tvos-images/designer12.png "變更按一下 我的按鈕標題")](hello-tvos-images/designer12.png#lightbox)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: bfb20e8eddb4969f3418d0a0dddfcd19f2eeba02
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: df477dc0e4708a1d309810b5b8d4f755f3c49afb
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117547"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669813"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>適用於 Objective-C 開發人員的 C# Primer
 
@@ -143,7 +143,7 @@ Objective-C 使用「區塊」來建立終止 (Closure)，您可以在其中建�
 };
 ```
 
-如需有關 Lambda 運算式的詳細資訊，請參閱 Microsoft 的 [C# 程式設計手冊](http://msdn.microsoft.com/library/vstudio/bb397687.aspx).
+如需有關 Lambda 運算式的詳細資訊，請參閱 Microsoft 的 [C# 程式設計手冊](https://msdn.microsoft.com/library/vstudio/bb397687.aspx).
 
 ## <a name="summary"></a>總結
 

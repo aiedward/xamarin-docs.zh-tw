@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: f51ed3d6dbbfc8a7e430c2949485838a7471e545
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61161300"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>使用 Xamarin 在 tvOS 堆疊檢視
 
@@ -150,7 +150,7 @@ ms.locfileid: "50110761"
 
 如需有關使用分鏡腳本的詳細資訊，請參閱我們[Hello，tvOS 快速入門指南](~/ios/tvos/get-started/hello-tvos.md)。
 
-在我們的範例中，我們已公開的輸出和 區段控制項動作和每個 「 player 卡片 」 的輸出。 程式碼中，我們可以隱藏和顯示目前的區段為基礎的播放程式。 例如: 
+在我們的範例中，我們已公開的輸出和 區段控制項動作和每個 「 player 卡片 」 的輸出。 程式碼中，我們可以隱藏和顯示目前的區段為基礎的播放程式。 例如：
 
 ```csharp
 partial void PlayerCountChanged (Foundation.NSObject sender) {

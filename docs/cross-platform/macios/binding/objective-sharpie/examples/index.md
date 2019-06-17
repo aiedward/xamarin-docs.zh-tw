@@ -1,17 +1,17 @@
 ---
 title: 目標 Sharpie 範例
-description: 描述如何使用目標 Sharpie 工具，可用來建立 C# 到 OBJECTIVE-C 程式碼的繫結的程序自動化的各種指南的這個文件連結。
+description: 這份文件連結到各種指南描述如何使用目標 Sharpie 工具，可用來自動化程序建立的C#繫結 OBJECTIVE-C 程式碼。
 ms.prod: xamarin
 ms.assetid: 1ACB0935-6D5F-4A5F-BE28-08DA1B675F0E
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 4cb2dde4dc23bb9376343b49a091277b667d834e
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: c3232282b788edbc401f889f5277d0227a1572b8
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855191"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977746"
 ---
 # <a name="objective-sharpie-examples"></a>目標 Sharpie 範例
 
@@ -26,8 +26,3 @@ ms.locfileid: "37855191"
 ## <a name="completed-ios-bindings"></a>已完成的 iOS 繫結
 
 檢視或從下載已完成繫結數目[monotouch 繫結 Github 存放庫](https://github.com/mono/monotouch-bindings/)。
-
-## <a name="related-links"></a>相關連結
-
-- [Xamarin University 課程： 建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程： 建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

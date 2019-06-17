@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 0374d37027546c41305c8cd5f27de593c226fcaa
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: dee45f9788360326ddb393305e9a52627264a671
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233766"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926285"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>建立 Xamarin.Forms DataTemplate
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)
 
 _您可以在 ResourceDictionary 中，或是從自訂類型或適當的 Xamarin.Forms 資料格類型，以內嵌方式建立資料範本。本文將探索各種方法。_
 
@@ -285,7 +285,7 @@ public class WithDataTemplatePageCS : ContentPage
 
 使用 [`Add`](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) 方法將 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 新增至 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)，這會指定擷取 `DataTemplate` 時用來參考它的 `Key` 字串。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文說明了如何從自訂類型或在 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 中，以內嵌方式建立資料範本。 如果不需要在他處重複使用資料範本，則應該使用內嵌範本。 或者，您可以將資料範本定義為自訂類型，或是定義為控制項層級、頁面層級或應用程式層級資源，來重複使用它。
 
@@ -293,5 +293,5 @@ public class WithDataTemplatePageCS : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [儲存格外觀](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
-- [Data Templates (Samples)](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/) (資料範本 (範例))
+- [Data Templates (Samples)](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/) (資料範本 (範例))
 - [DataTemplate](xref:Xamarin.Forms.DataTemplate)

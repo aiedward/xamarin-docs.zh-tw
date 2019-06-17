@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
+ms.openlocfilehash: 6e64f9c7d0fcebbbc92171f92a5e0ac2f18ce451
+ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67039713"
 ---
-
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>適用於 Xamarin.iOS MonoTouch.Dialog 簡介
 
 MonoTouch.Dialog，稱為 MT簡稱，D 是快速的 UI 開發工具組可讓開發人員建置應用程式畫面和瀏覽使用的詳細資訊，而不是建立檢視控制器、 資料表等的冗長工作。因此，它會提供大幅簡化的 UI 開發和程式碼降低。 例如，請考慮下列的螢幕擷取畫面：
@@ -50,7 +55,7 @@ public class Expense
 MTD 簡化，將全部程式碼封裝成一個一般的 API，以建立資料表。 然後，它會提供繫結語法，可讓您更輕鬆地為宣告式物件可讓該 API 之上的抽象概念。 因此，有兩個 Api 用於 MTD:
 
 -   **低層級的項目 API** –*項目 API*根據建立的項目代表螢幕和其元件的階層式樹狀結構。 項目 API 讓開發人員最大的彈性及控制建立 Ui。 此外，項目 API 具有 JSON，這非常快速地宣告，以及從伺服器動態 UI 的產生是用來透過進階支援宣告式的定義。 
--   **高層級的反映 API** – 也稱為*繫結**API*中的類別已標註 UI 提示，然後 MTD 會自動建立以物件為基礎的畫面，並提供功能之間的繫結是顯示 （和選擇性地編輯） 在畫面上，以及基礎物件支援。 上述範例所示使用反映 API。 此 API 不提供精細的控制中的項目 API，但可減少複雜性更進一步所自動建立根據類別屬性的項目階層。 
+-   **高層級的反映 API** – 也稱為 *繫結* *API* 中的類別已標註 UI 提示，然後 MTD 會自動建立以物件為基礎的畫面，並提供功能之間的繫結是顯示 （和選擇性地編輯） 在畫面上，以及基礎物件支援。 上述範例所示使用反映 API。 此 API 不提供精細的控制中的項目 API，但可減少複雜性更進一步所自動建立根據類別屬性的項目階層。 
 
 
 MTD 是封裝使用的一大組內建的畫面建立的 UI 項目，但它也會辨識需要自訂的項目和進階的畫面版面配置。 因此，擴充性是第一級的功能內建 API。 開發人員可以擴充現有的項目或建立新的和無縫整合。
@@ -93,7 +98,7 @@ A *RootElement*是進入 DVC 之項目的最上層的容器。 它包含區段�
 
  [![](images/image2.png "如同一般資料表 區段中，它可以選擇性地可以頁首和頁尾，可以是文字或甚至是自訂檢視，如以下螢幕擷取畫面所示")](images/image2.png#lightbox)
 
-### <a name="element"></a>元素
+### <a name="element"></a>項目
 
 項目代表實際的資料格在資料表中。 MTD 會封裝與各種不同的項目代表不同的資料類型或不同的輸入。 例如，下列螢幕擷取畫面說明幾個可用的項目：
 
@@ -111,20 +116,20 @@ A *RootElement*是進入 DVC 之項目的最上層的容器。 它包含區段�
 
  [![](images/image4.png "此螢幕擷取畫面顯示在左側的資料表，以包含在右側，甜點，以及所選的沙漠值的詳細資料畫面的標題儲存格")](images/image4.png#lightbox) [![](images/image5.png "這以下螢幕擷取畫面顯示在左邊的資料表，以包含在右側，甜點，以及所選的沙漠值的詳細資料畫面的標題儲存格")](images/image5.png#lightbox)
 
-根項目也可用在區段內以觸發 載入新的巢狀的組態頁面上，如上所示。 在此模式中使用時提供的標題會用來轉譯區段內而，也會用於為標題子頁。 例如: 
+根項目也可用在區段內以觸發 載入新的巢狀的組態頁面上，如上所示。 在此模式中使用時提供的標題會用來轉譯區段內而，也會用於為標題子頁。 例如:
 
 ```csharp
 var root = new RootElement ("Meals") {
-    new Section ("Dinner"){
-            new RootElement ("Dessert", new RadioGroup ("dessert", 2)) {
-                new Section () {
-                    new RadioElement ("Ice Cream", "dessert"),
-                    new RadioElement ("Milkshake", "dessert"),
-                    new RadioElement ("Chocolate Cake", "dessert")
-                }
+    new Section ("Dinner") {
+        new RootElement ("Dessert", new RadioGroup ("dessert", 2)) {
+            new Section () {
+                new RadioElement ("Ice Cream", "dessert"),
+                new RadioElement ("Milkshake", "dessert"),
+                new RadioElement ("Chocolate Cake", "dessert")
             }
         }
     }
+};
 ```
 
 在上述範例中，當使用者點選 「 甜"，MonoTouch.Dialog 會建立新的頁面，並瀏覽至該 「 甜"，有三個值的選項群組的根。
@@ -146,14 +151,14 @@ RootElements 嵌入區段用來瀏覽至新的更深層級。
 通常您只會使用字串，但若要建立自訂 Ui 可作為任何 UIView 頁首或頁尾。 您可以使用字串來建立它們就像這樣：
 
 ```csharp
-var section = new Section ("Header", "Footer")
+var section = new Section ("Header", "Footer");
 ```
 
 若要使用檢視，只傳遞給建構函式的檢視：
 
 ```csharp
 var header = new UIImageView (Image.FromFile ("sample.png"));
-var section = new Section (header)
+var section = new Section (header);
 ```
 
 ### <a name="getting-notified"></a>取得通知
@@ -165,8 +170,7 @@ MTD 表面`NSAction`為處理回呼委派。
 
 ```csharp
 new Section () {
-        new StringElement ("Demo Callback", 
-                delegate { Console.WriteLine ("Handled"); })
+    new StringElement ("Demo Callback", delegate { Console.WriteLine ("Handled"); })
 }
 ```
 
@@ -175,18 +179,14 @@ new Section () {
 結合`Element.Value`屬性，回呼可以擷取其他項目中設定的值。 例如，請參考下列程式碼：
 
 ```csharp
-var element = new EntryElement (task.Name, "Enter task description",
-        task.Description);
+var element = new EntryElement (task.Name, "Enter task description", task.Description);
                 
-var taskElement = new RootElement (task.Name){
-        new Section () { element },
-        new Section () { 
-                new DateElement ("Due Date", task.DueDate)
-        },
-        new Section ("Demo Retrieving Element Value") {
-                new StringElement ("Output Task Description", 
-                        delegate { Console.WriteLine (element.Value); })
-        }
+var taskElement = new RootElement (task.Name) {
+    new Section () { element },
+    new Section () { new DateElement ("Due Date", task.DueDate) },
+    new Section ("Demo Retrieving Element Value") {
+        new StringElement ("Output Task Description", delegate { Console.WriteLine (element.Value); })
+    }
 };
 ```
 
@@ -218,10 +218,9 @@ A`StringElement`表格儲存格和資料格右邊的字串值的左邊顯示的�
 若要使用`StringElement`為按鈕，提供委派。
 
 ```csharp
-new StringElement (
-        "Click me",
-        () => { new UIAlertView("Tapped", "String Element Tapped"
-, null, "ok", null).Show(); })
+new StringElement ("Click me", () => { 
+    new UIAlertView("Tapped", "String Element Tapped", null, "ok", null).Show();
+});
 ```
 
  [![](images/image8.png "若要使用 StringElement 為按鈕，提供委派")](images/image8.png#lightbox)
@@ -276,7 +275,7 @@ A`StyledStringElement`允許必須存在於使用任一個內建的表格儲存�
 A`RadioElement`需要`RadioGroup`中指定`RootElement`。
 
 ```csharp
-mtRoot = new RootElement ("Demos", new RadioGroup("MyGroup", 0))
+mtRoot = new RootElement ("Demos", new RadioGroup("MyGroup", 0));
 ```
 
  [![](images/image14.png "RadioElement 需要以指定 RootElement RadioGroup")](images/image14.png#lightbox)
@@ -284,7 +283,7 @@ mtRoot = new RootElement ("Demos", new RadioGroup("MyGroup", 0))
  `RootElements` 也可協調選項項目。 `RadioElement`成員可以跨越多個區段 （例如若要實作類似的信號音選取器和不同的自訂鈴聲從系統鈴聲）。 [摘要] 檢視會顯示目前選取的選項項目。 若要使用此功能，建立`RootElement`使用群組建構函式中，像這樣：
 
 ```csharp
-var root = new RootElement ("Meals", new RadioGroup ("myGroup", 0))
+var root = new RootElement ("Meals", new RadioGroup ("myGroup", 0));
 ```
 
 在 群組名稱`RadioGroup`用來顯示選取的值中包含的頁面 （如果有的話） 和值，在此情況下為零，這是索引的第一個選取的項目。
@@ -354,16 +353,13 @@ var root = new RootElement ("Meals", new RadioGroup ("myGroup", 0))
 
 ```csharp
 public class SampleOwnerDrawnElement : OwnerDrawnElement
- {
+{
     public SampleOwnerDrawnElement (string text) : base(UITableViewCellStyle.Default, "sampleOwnerDrawnElement")
     {
         this.Text = text;
     }
 
-    public string Text
-    {
-        get;set;    
-    }
+    public string Text { get; set; }
 
     public override void Draw (RectangleF bounds, CGContext context, UIView view)
     {
@@ -378,7 +374,7 @@ public class SampleOwnerDrawnElement : OwnerDrawnElement
     {
         return 44.0f;
     }
- }
+}
 ```
 
 ### <a name="json-element"></a>JSON 元素
@@ -448,9 +444,9 @@ MonoTouch.Dialog 併入[TweetStation](https://github.com/migueldeicaza/TweetStat
 string uriString = "http://some-server.com/some image url";
 
 var rootElement = new RootElement("Image Loader") {
-        new Section(){
-                new BadgeElement( ImageLoader.DefaultRequestImage( new Uri(uriString), this), "Xamarin")
-        }
+    new Section() {
+        new BadgeElement( ImageLoader.DefaultRequestImage( new Uri(uriString), this), "Xamarin")
+    }
 };
 ```
 
@@ -462,12 +458,11 @@ LINQ 和 C# 的初始化語法的聰明的使用方式，透過 LINQ 可用來�
 
 ```csharp
 var rootElement = new RootElement ("LINQ root element") {
-from x in new string [] { "one", "two", "three" }
-select new Section (x) {
-from y in "Hello:World".Split (':')
-select (Element) new StringElement (y,
-delegate { Debug.WriteLine("cell tapped"); })
-}
+    from x in new string [] { "one", "two", "three" }
+    select new Section (x) {
+        from y in "Hello:World".Split (':')
+        select (Element) new StringElement (y, delegate { Debug.WriteLine("cell tapped"); })
+    }
 };
 ```
 
@@ -483,38 +478,40 @@ delegate { Debug.WriteLine("cell tapped"); })
 
 ```csharp
 // To release any heavy resources that you might have
-    void Dispose (bool disposing);
+void Dispose (bool disposing);
 
-    // To retrieve the UITableViewCell for your element
-    // you would need to prepare the cell to be reused, in the
-    // same way that UITableView expects reusable cells to work
-    UITableViewCell GetCell (UITableView tv)
+// To retrieve the UITableViewCell for your element
+// you would need to prepare the cell to be reused, in the
+// same way that UITableView expects reusable cells to work
+UITableViewCell GetCell (UITableView tv);
 
-    // To retrieve a "summary" that can be used with
-    // a root element to render a summary one level up.  
-    string Summary ()
-    // To detect when the user has tapped on the cell
-    void Selected (DialogViewController dvc, UITableView tableView, NSIndexPath path)
-    // If you support search, to probe if the cell matches the user input
-    bool Matches (string text)
+// To retrieve a "summary" that can be used with
+// a root element to render a summary one level up.  
+string Summary ();
+
+// To detect when the user has tapped on the cell
+void Selected (DialogViewController dvc, UITableView tableView, NSIndexPath path);
+
+// If you support search, to probe if the cell matches the user input
+bool Matches (string text);
 ```
 
 如果您的項目可以有變數的大小，您需要實作`IElementSizing`介面，其中包含一種方法：
 
 ```csharp
 // Returns the height for the cell at indexPath.Section, indexPath.Row
-    float GetHeight (UITableView tableView, NSIndexPath indexPath);
+float GetHeight (UITableView tableView, NSIndexPath indexPath);
 ```
 
 如果您打算實作您`GetCell`藉由呼叫的方法`base.GetCell(tv)`自訂傳回的儲存格，您需要也會覆寫`CellKey`屬性以傳回會是您的項目，唯一的索引鍵如下所示：
 
 ```csharp
 static NSString MyKey = new NSString ("MyKey");
-    protected override NSString CellKey {
-        get {
-            return MyKey;
-        }
+protected override NSString CellKey {
+    get {
+        return MyKey;
     }
+}
 ```
 
 這適用於大部分的項目，但不適用於`StringElement`和`StyledStringElement`為各種轉譯案例使用自己的金鑰集。 您必須將複寫這些類別中的程式碼。
@@ -528,9 +525,9 @@ static NSString MyKey = new NSString ("MyKey");
 例如，如果您想要變更是清單樣式`Grouped`或`Plain`，您可以將此值變更的屬性，當您建立的控制站，就像這樣：
 
 ```csharp
-var myController = new DialogViewController (root, true){
-        Style = UITableViewStyle.Grouped;
-    }
+var myController = new DialogViewController (root, true) {
+    Style = UITableViewStyle.Grouped;
+}
 ```
 
 如需其他進階自訂`DialogViewController`，例如設定它的背景，就像子類別並覆寫適當的方法，如下列範例所示：
@@ -582,8 +579,6 @@ public override Source CreateSizingSource (bool unevenRows)
 
 ## <a name="related-links"></a>相關連結
 
-- [螢幕錄製影片-Miguel de Icaza 建立 iOS 登入畫面 MonoTouch.Dialog](http://youtu.be/3butqB1EG0c)
-- [螢幕錄製影片-輕鬆地建立 iOS 使用者介面與 MonoTouch.Dialog](http://youtu.be/j7OC5r8ZkYg)
 - [逐步解說：使用元素 API 建立應用程式](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [逐步解說：使用反射 API 建立應用程式](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [逐步解說：若要建立使用者介面中使用 JSON 元素](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)

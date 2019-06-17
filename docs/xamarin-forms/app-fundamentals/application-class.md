@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: dbee8d3f55edee9c862b4c883b63b55f98972b48
-ms.sourcegitcommit: 0c2745c1593eee3ecb40ab882e854a13ca72bc86
+ms.openlocfilehash: 85e420933cfeffd00f686b0eea537cd0ad2f4ca5
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56078416"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971208"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms App 類別
 
@@ -32,7 +32,9 @@ ms.locfileid: "56078416"
 若要使用 XAML 建立 **App** 類別，預設的 **App** 類別必須取代為 XAML **App** 類別和相關聯的程式碼後置，如下列程式碼範例所示：
 
 ```xaml
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Photos.App">
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Photos.App">
 
 </Application>
 ```
@@ -111,8 +113,6 @@ Xamarin.Forms 1.4 引進了 `Application` 類別的其他方法 - `SavePropertie
 
 您可以在**使用 Xamarin.Forms 建立行動應用程式**書籍的第 [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf)、[15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf) 及 [20](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) 章，以及相關聯的[範例](https://github.com/xamarin/xamarin-forms-book-preview-2)，找到使用 `Properties` 的參考。
 
-
-
 ## <a name="the-application-class"></a>Application 類別
 
 完整的 `Application` 類別實作顯示如下供您參考：
@@ -143,7 +143,6 @@ public class App : Xamarin.Forms.Application
         Debug.WriteLine ("OnResume");
     }
 }
-
 ```
 
 這個類別接著便會在每個平台特定專案中具現化，並傳遞至 `LoadApplication` 方法，在這裡會載入 `MainPage` 並顯示給使用者。

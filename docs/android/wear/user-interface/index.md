@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
 ms.openlocfilehash: ff78b04ced9f0d62531dbfb022b73b928ce373ff
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61283450"
 ---
 # <a name="user-interface"></a>使用者介面
 

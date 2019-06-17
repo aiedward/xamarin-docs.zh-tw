@@ -1,5 +1,5 @@
 ---
-title: 之間通訊的鬆散結合的元件
+title: 在偶合程度低的元件之間通訊
 description: '本章說明在 eShopOnContainers 的行動應用程式如何實作發行-訂閱模式，讓不方便連結物件和型別參考的元件之間的訊息式通訊 '
 ms.prod: xamarin
 ms.assetid: 1194af33-8a91-48d2-88b5-b84d77f2ce69
@@ -8,13 +8,13 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: ddc33d28aad4e00c9259893c0f8e7a1ab40ee429
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998540"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61381867"
 ---
-# <a name="communicating-between-loosely-coupled-components"></a>之間通訊的鬆散結合的元件
+# <a name="communicating-between-loosely-coupled-components"></a>在偶合程度低的元件之間通訊
 
 發佈-訂閱模式是傳訊模式，在其中發行者會傳送訊息而不需要任何接收者，稱為 「 訂閱者 」 的知識。 同樣地，訂閱者接聽的特定訊息，而不需要任何發行者的知識。
 
@@ -55,16 +55,16 @@ EShopOnContainers 的行動裝置應用程式會使用[ `MessagingCenter` ](xref
 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 訊息是用來識別訊息的字串。 下列程式碼範例會顯示在 eShopOnContainers 的行動裝置應用程式內定義的訊息：
 
 ```csharp
-public class MessengerKeys  
+public class MessengerKeys  
 {  
-    // Add product to basket  
-    public const string AddProduct = "AddProduct";  
+    // Add product to basket  
+    public const string AddProduct = "AddProduct";  
 
-    // Filter  
-    public const string Filter = "Filter";  
+    // Filter  
+    public const string Filter = "Filter";  
 
-    // Change selected Tab programmatically  
-    public const string ChangeTab = "ChangeTab";  
+    // Change selected Tab programmatically  
+    public const string ChangeTab = "ChangeTab";  
 }
 ```
 
@@ -75,7 +75,7 @@ public class MessengerKeys
 發行者通知 「 訂閱者 」 的訊息，其中[ `MessagingCenter.Send` ](xref:Xamarin.Forms.MessagingCenter.Send*)多載。 下列程式碼範例示範如何發行`AddProduct`訊息：
 
 ```csharp
-MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
+MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
 ```
 
 在此範例中， [ `Send` ](xref:Xamarin.Forms.MessagingCenter.Send*)方法會指定三個引數：
@@ -94,12 +94,12 @@ MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
 訂閱者可以註冊要接收訊息，使用其中一種[ `MessagingCenter.Subscribe` ](xref:Xamarin.Forms.MessagingCenter.Subscribe*)多載。 下列程式碼範例示範如何訂閱，eShopOnContainers 的行動裝置應用程式，並處理，`AddProduct`訊息：
 
 ```csharp
-MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
-    this, MessageKeys.AddProduct, async (sender, arg) =>  
+MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
+    this, MessageKeys.AddProduct, async (sender, arg) =>  
 {  
-    BadgeCount++;  
+    BadgeCount++;  
 
-    await AddCatalogItemAsync(arg);  
+    await AddCatalogItemAsync(arg);  
 });
 ```
 
@@ -115,7 +115,7 @@ MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(
 訂閱者可以從他們不再想要接收的訊息取消訂閱。 這使用其中一個來達成[ `MessagingCenter.Unsubscribe` ](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*)多載，如下列程式碼範例所示：
 
 ```csharp
-MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys.AddProduct);
+MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys.AddProduct);
 ```
 
 在此範例中， [ `Unsubscribe` ](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*)方法的語法會反映接收訂閱時所指定的型別引數`AddProduct`訊息。

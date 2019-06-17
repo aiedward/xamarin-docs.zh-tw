@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: b0d202ff7743361207795d342b29243130f4f056
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 3e5db00a73047aaadb1162fa1cc8a21f6e77b3a0
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058726"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926202"
 ---
 # <a name="custom-video-transport-controls"></a>自訂影片傳輸控制項
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
 
 影片播放程式的傳輸控制項包括執行 [播放]、[暫停] 和 [停止] 功能的按鈕。 這些按鈕通常會以熟悉的圖示而非文字呈現，且 [播放] 及 [暫停] 功能常會合併為一個按鈕。
 
@@ -360,7 +360,7 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-必須存取 `AVPlayer` 的兩個屬性：類型為 `AVPlayerStatus` 的 [`Status`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/) 屬性和類型為 `AVPlayerTimeControlStatus` 的 [`TimeControlStatus`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/) 屬性。 請注意，必須將 `Element` 屬性 (即為 `VideoPlayer`) 轉換為 `IVideoPlayerController` 以設定 `Status` 屬性。
+必須存取 `AVPlayer` 的兩個屬性：類型為 `AVPlayerStatus` 的 [`Status`](xref:AVFoundation.AVPlayer.Status*) 屬性和類型為 `AVPlayerTimeControlStatus` 的 [`TimeControlStatus`](xref:AVFoundation.AVPlayer.TimeControlStatus*) 屬性。 請注意，必須將 `Element` 屬性 (即為 `VideoPlayer`) 轉換為 `IVideoPlayerController` 以設定 `Status` 屬性。
 
 ### <a name="the-android-status-setting"></a>Android 狀態設定
 
@@ -451,7 +451,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="the-uwp-status-setting"></a>UWP 狀態設定
 
-UWP `VideoPlayerRenderer` 會使用 `UpdateStatus` 事件，但不需要該事件來設定 `Status` 屬性。 `MediaElement` 會定義 [`CurrentStateChanged`](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentStateChanged) 事件，且該事件會於變更 [`CurrentState`](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentState) 屬性時，讓轉譯器可收到通知。 屬性會在 `Dispose` 覆寫內中斷連結：
+UWP `VideoPlayerRenderer` 會使用 `UpdateStatus` 事件，但不需要該事件來設定 `Status` 屬性。 `MediaElement` 會定義 [`CurrentStateChanged`](xref:Windows.UI.Xaml.Controls.MediaElement.CurrentStateChanged) 事件，且該事件會於變更 [`CurrentState`](xref:Windows.UI.Xaml.Controls.MediaElement.CurrentState*) 屬性時，讓轉譯器可收到通知。 屬性會在 `Dispose` 覆寫內中斷連結：
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -660,4 +660,4 @@ namespace VideoPlayerDemos
 
 ## <a name="related-links"></a>相關連結
 
-- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) (視訊播放程式示範 (範例))
+- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) (視訊播放程式示範 (範例))

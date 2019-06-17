@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: af9be54b4509f7202618d9d68210eb534f63ccbf
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 0bae98a204ba3478834894d6c093259a8b2139b2
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671633"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827725"
 ---
 # <a name="setup-and-installation"></a>設定與安裝
 
@@ -22,7 +22,7 @@ _這篇文章會逐步引導完成安裝步驟和準備您的電腦和裝置進�
 
 需要下列項目來建立以 Xamarin 為基礎的 Android 穿戴式應用程式：
 
--   **Visual Studio 或 Visual Studio for Mac** &ndash;您如果您使用 Visual Studio 中，Visual Studio 2015 Professional 或更新版本。
+-   **Visual Studio 或 Visual Studio for Mac** &ndash; Visual Studio 2017 Community 或更新版本。
 
 -   **Xamarin.Android** &ndash; Xamarin.Android 4.17 或更新版本必須安裝並設定與 Visual Studio 或 Visual Studio for mac。
 
@@ -123,4 +123,4 @@ Android wear 應用程式一律會使用隨附的 Android 手機應用程式散�
 
 ## <a name="related-links"></a>相關連結
 
-- [SkeletonWear （範例）](https://developer.xamarin.com/samples/SkeletonWear/)
+- [SkeletonWear （範例）](https://developer.xamarin.com/samples/monodroid/wear/SkeletonWear/)

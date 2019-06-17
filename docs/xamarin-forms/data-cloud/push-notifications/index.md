@@ -1,23 +1,27 @@
 ---
 title: 傳送推播通知
-description: 推播通知用來傳遞資訊，例如訊息時，從行動裝置上的應用程式，以提高應用程式部署和使用方式的後端系統。 可以傳送通知在任何時間，即使使用者未主動使用目標應用程式。
+description: 推播通知用來傳遞資訊，例如一則訊息，從行動裝置上的應用程式，以增加應用程式的參與和使用率的後端系統。 通知可以隨時隨地傳送在即使使用者未主動使用目標應用程式。
 ms.prod: xamarin
 ms.assetid: F58D2D81-FFAF-43DD-8A9B-3684DFEAA99D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/02/2017
-ms.openlocfilehash: 595c7db89bf8804c34657a6119d7c3427fc1d2b3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/29/2019
+ms.openlocfilehash: 8d26a582e68fb557d20d7bfa690bbf4acfe307c1
+ms.sourcegitcommit: c2bba24233624c2ec0e9ee9827310ca022212a2c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30787541"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66835297"
 ---
 # <a name="sending-push-notifications"></a>傳送推播通知
 
-_推播通知用來傳遞資訊，例如訊息時，從行動裝置上的應用程式，以提高應用程式部署和使用方式的後端系統。可以傳送通知在任何時間，即使使用者未主動使用目標應用程式。_
+_推播通知用來傳遞資訊，例如一則訊息，從行動裝置上的應用程式，以增加應用程式的參與和使用率的後端系統。通知可以隨時隨地傳送在即使使用者未主動使用目標應用程式。_
 
-## <a name="sending-push-notifications-from-azure-mobile-appsazuremd"></a>[從 Azure 行動應用程式中傳送推播通知](azure.md)
+## <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinformsazure-notification-hubmd"></a>[傳送及接收推播通知和 Azure 通知中樞和 Xamarin.Forms](azure-notification-hub.md)
 
-Azure 通知中心提供可擴充的推播基礎結構，將行動推播通知從任何後端傳送至任何行動裝置的平台，同時不需與各平台通知系統進行通訊的後端的複雜性。
+Azure 通知中樞可讓您集中通知處理跨平台，讓您的後端應用程式可以與單一中樞通訊。 Azure 通知中樞會負責散發到多個平台提供者的推播通知。 這篇文章說明如何將 Azure 通知中樞整合至 Xamarin.Forms 應用程式。
+
+## <a name="send-push-notifications-from-azure-mobile-appsazuremd"></a>[從 Azure Mobile Apps 傳送推播通知](azure.md)
+
+Azure Mobile Apps 整合與 Azure 通知中樞，以提供可擴充的後端能夠傳送推播通知。 Azure 通知中樞會消除與個別推播通知服務，例如 Google 和 Apple 通訊的複雜度。

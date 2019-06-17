@@ -6,13 +6,13 @@ ms.assetid: 2F311A60-A6FC-4051-B938-AEF32086642F
 author: conceptdev
 ms.author: crdun
 ms.custom: video
-ms.date: 08/08/2018
-ms.openlocfilehash: be67de97360a00fb4551f8a3bdd00e7f1d5d3c90
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 04/02/2019
+ms.openlocfilehash: a54d82a3e7ad95267b4083827faf0e52972417bd
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61319572"
 ---
 # <a name="get-started-with-azure-functions"></a>開始使用 Azure Functions
 
@@ -20,13 +20,21 @@ ms.locfileid: "53058109"
 
 _開始建置您第一個 Azure 函式互動使用 Xamarin.Forms。_
 
-## <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+## <a name="visual-studio-2019tabwindows"></a>[Visual Studio 2019](#tab/windows)
 
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Creating-Cloud-Connected-Mobile-Apps-with-Azure-Functions-and-Visual-Studio-2017/player]
 
 ## <a name="step-by-step-instructions"></a>逐步指示
 
-除了影片中，您可以遵循這些指示[建置您使用 Visual Studio 2017 的第一個函式](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio)。
+除了影片中，您可以遵循這些指示[建置您使用 Visual Studio 的第一個函式](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio)。
+
+## <a name="visual-studio-2017tabwin-vs2017"></a>[Visual Studio 2017](#tab/win-vs2017)
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Creating-Cloud-Connected-Mobile-Apps-with-Azure-Functions-and-Visual-Studio-2017/player]
+
+## <a name="step-by-step-instructions"></a>逐步指示
+
+除了影片中，您可以遵循這些指示[建置您使用 Visual Studio 的第一個函式](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio)。
 
 ## <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

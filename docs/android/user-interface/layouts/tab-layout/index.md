@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2017
+ms.openlocfilehash: 32d1ce4e440a962e02fda052375171bea7676053
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61303245"
 ---
-
 # <a name="tabbed-layouts"></a>索引標籤式版面配置
 
 

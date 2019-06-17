@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 53bfc9f147b6cf369b8f5ce8d1257dbaf6b0f807
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113517"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61032754"
 ---
 # <a name="building-modern-macos-apps"></a>建置現代化的 macOS 應用程式
 
@@ -836,7 +836,7 @@ public override void ViewDidLoad ()
 
 其中`Alignment`並`ImagePosition`設定根據`UserInterfaceLayoutDirection`的控制項。
 
-macOS Sierra 新增數個新的便利建構函式 (透過靜態`CreateButton`方法) 採用數個參數 （例如標題、 影像和動作） 並將自動左右反轉正確。 例如: 
+macOS Sierra 新增數個新的便利建構函式 (透過靜態`CreateButton`方法) 採用數個參數 （例如標題、 影像和動作） 並將自動左右反轉正確。 例如：
 
 ```csharp
 var button2 = NSButton.CreateButton (myTitle, myImage, () => {
@@ -853,7 +853,7 @@ var button2 = NSButton.CreateButton (myTitle, myImage, () => {
 
 [![](modern-cocoa-apps-images/content11.png "深色的 Mac 視窗 UI 的範例")](modern-cocoa-apps-images/content11.png#lightbox)
 
-這可以藉由新增一行程式碼，在呈現視窗之前完成。 例如: 
+這可以藉由新增一行程式碼，在呈現視窗之前完成。 例如：
 
 ```csharp
 using System;

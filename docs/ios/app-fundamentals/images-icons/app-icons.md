@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2017
-ms.openlocfilehash: 51ccf3faa2524035a30b26af6652959699663e24
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 1eb3ec77dd478744906625dcfcd9fb843e74577c
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672530"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827468"
 ---
 # <a name="application-icons-in-xamarinios"></a>在 Xamarin.iOS 中的應用程式圖示
 
@@ -210,6 +210,6 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 
 ## <a name="related-links"></a>相關連結
 
-- [使用映像 （範例）](https://developer.xamarin.com/samples/WorkingWithImages/)
+- [使用映像 （範例）](https://developer.xamarin.com/samples/monotouch/WorkingWithImages/)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
 - [自訂圖示和影像建立指導方針](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html))

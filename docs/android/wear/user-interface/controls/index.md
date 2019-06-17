@@ -6,8 +6,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
+ms.openlocfilehash: 9620362b48e9cf1db4c25e4470851fb518a8e0f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61285538"
 ---
-
 # <a name="android-wear-controls"></a>Android Wear 控制項
 
 Android Wear 應用程式可以使用許多相同的控制項已經在使用一般的 Android 應用程式，包括`Button`， `TextView`，和映像可繪製資源來。 包括的版面配置控制項`ScrollView`， `LinearLayout`，和`RelativateLayout`也可以使用。

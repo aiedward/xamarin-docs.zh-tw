@@ -6,16 +6,19 @@ ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2017
-ms.openlocfilehash: fdd602da932e0c36cadade50476babba51d67398
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 89795e5df00b426c0f11c04a0844993071df1e25
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61279316"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player 應用程式
 
 ![預覽功能](~/media/shared/preview.png)
+
+> [!NOTE]
+> 只有 Visual Studio 2017 中使用播放程式的即時預覽。
 
 當您在手機上安裝應用程式時，請遵循[安裝指示](~/tools/live-player/install.md)連線到您的電腦。 請嘗試[範例應用程式](~/tools/live-player/samples.md)讓它運作。
 
@@ -91,6 +94,5 @@ ms.locfileid: "50113161"
 
 ## <a name="related-links"></a>相關連結
 
-- [限制](~/tools/live-player/limitations.md)
 - [疑難排解](~/tools/live-player/troubleshooting.md)
-- [Xamarin Live Player 範例](samples.md)
+- [範例搭配 Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)

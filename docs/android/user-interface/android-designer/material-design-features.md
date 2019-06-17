@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 5e6d7b4bdfdf7ea48d26537cb41c763656b050e0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 59c61cc637a435f8107256ddcd6bfacfb0466867
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61210923"
 ---
 # <a name="xamarinandroid-designer-material-design-features"></a>Xamarin.Android 設計工具的材料設計功能
 
@@ -145,9 +145,9 @@ Xamarin.Android 設計工具包含功能，可讓您更輕鬆地建立材料設�
 
 **背景**設計工具中的色彩已變更為新的色彩選取範圍，但這項變更尚未儲存。 此時，您可以執行下列其中一項：
 
--   按一下 **捨棄變更**捨棄新的色彩選擇 （或選擇），並還原為其原始狀態的佈景主題。 
+-   按一下 **捨棄變更**捨棄新的色彩選擇 （或選擇），並還原為其原始狀態的佈景主題。
 
--   按下<kbd>CTRL + S</kbd>您將變更儲存到目前的佈景主題。 
+-   按下<kbd>CTRL + S</kbd>您將變更儲存到目前的佈景主題。
 
 在下列範例中， <kbd>CTRL + S</kbd>使所做的變更已儲存至按下**AppTheme**:
 
@@ -300,7 +300,7 @@ Xamarin.Android 設計工具包含功能，可讓您更輕鬆地建立材料設�
 
 ### <a name="material-palette"></a>材質調色盤
 
-**材質調色盤**索引標籤隨即開啟**材料設計調色盤**所述[舊版](#material_palette)。 選擇從這個調色盤的色彩值會限制您的色彩選擇，使其與材料設計指導方針一致。
+**材質調色盤**索引標籤隨即開啟**材料設計調色盤**所述[舊版](#material-design-color-palette)。 選擇從這個調色盤的色彩值會限制您的色彩選擇，使其與材料設計指導方針一致。
 
 [![材質調色盤](material-design-features-images/xs/16-material-palette-sml.png)](material-design-features-images/xs/16-material-palette.png#lightbox)
 
@@ -316,9 +316,9 @@ Xamarin.Android 設計工具包含功能，可讓您更輕鬆地建立材料設�
 
 已在設計工具中的色彩變化，但這項變更尚未儲存。 此時，您可以執行下列其中一項：
 
--   按一下 **捨棄變更**捨棄新的色彩選擇 （或選擇），並還原為其原始狀態的佈景主題。 
+-   按一下 **捨棄變更**捨棄新的色彩選擇 （或選擇），並還原為其原始狀態的佈景主題。
 
--   按下 **&#8984; + S**若要將變更儲存至新的佈景主題稱為**自訂**。 
+-   按下 **&#8984; + S**若要將變更儲存至新的佈景主題稱為**自訂**。
 
 
 ## <a name="summary"></a>總結

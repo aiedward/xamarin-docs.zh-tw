@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
 ms.openlocfilehash: 86d9c6af93e7f59eb0e819730e46324688df7566
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61293714"
 ---
 # <a name="debugging-integrations"></a>偵錯的整合
 

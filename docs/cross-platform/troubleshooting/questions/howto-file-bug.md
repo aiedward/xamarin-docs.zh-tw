@@ -1,5 +1,5 @@
 ---
-title: 何時及如何應該提出錯誤報告？
+title: 提出 Bug 報告的時機與方式為何？
 description: 本文件說明何時、 何處，以及如何提出錯誤報告。 它也會提供最佳的作法，讓工程師最佳診斷問題的錯誤報告。
 ms.topic: troubleshooting
 ms.prod: xamarin
@@ -7,19 +7,19 @@ ms.assetid: 8AD9CFBF-282A-4C1F-95E9-25F21141B052
 author: conceptdev
 ms.author: crdun
 ms.date: 08/01/2018
-ms.openlocfilehash: f20740ff1e16187be3d3703b3da07329f6f52daf
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.openlocfilehash: 1224d38a2230fa2f5c7ca08f6e33c5468886c206
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61356983"
 ---
-# <a name="when-and-how-should-i-file-a-bug-report"></a>何時及如何應該提出錯誤報告？
+# <a name="when-and-how-should-i-file-a-bug-report"></a>提出 Bug 報告的時機與方式為何？
 
 > [!TIP]
 > 使用**回報的問題**Visual Studio 中的功能表項目&ndash;這會傳送錯誤報表可協助您解決問題以及診斷資訊。
 >
-> 有詳細的指示[Visual Studio 2017](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017)並[Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/report-a-problem)。
+> 有詳細的指示[Visual Studio 2019 或 Visual Studio 2017](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio)並[Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/report-a-problem)。
 >
 > 您可以在搜尋現有的報表[Visual Studio 開發人員社群](https://developercommunity.visualstudio.com/)網站。
 
@@ -47,7 +47,7 @@ OR
 
 ## <a name="additional-details"></a>其他詳細資料
 
-1. <a name="note-1" />[*^*](#ref-1) 在理想情況下的 < 顯示徵狀 > 描述應包含足夠的詳細資料，如此其他客戶可以確認他們是否看到相同的問題 (相同的錯誤訊息、 相同的效能降低、 當機，從相同的堆疊追蹤_等等。_). 如 「 精確情況下，「 一個好的範例是如果您可以說: 「 我通常按問題 75%的時間，但如果我將這一件事然後我可以避免發生問題完全 」。 另一個類似"精確情況 」 範例是如果降級至舊版 Xamarin 會停止的問題。
+1. <a name="note-1" />[*^*](#ref-1) 在理想情況下的 < 顯示徵狀 > 描述應包含足夠的詳細資料，如此其他客戶可以確認他們是否看到相同的問題 (相同的錯誤訊息、 相同的效能降低、 當機，從相同的堆疊追蹤_等等。_). 「 精確的情況下 」，一個很好的範例會是如果您可以說：「 我通常按問題 75%的時間，但如果我將這一件事然後我可以避免發生問題完全 」。 另一個類似"精確情況 」 範例是如果降級至舊版 Xamarin 會停止的問題。
 
 1. <a name="note-2" />[*^*](#ref-2) 如您所預期，錯誤文字 （或任何其他的唯一描述性文字） 的程式碼片段是通常是最佳的搜尋詞彙。 如果現有的 bug 報告不完整，您可以自由地新增詳細資料或新檔案中，進一步錯誤報告。
 

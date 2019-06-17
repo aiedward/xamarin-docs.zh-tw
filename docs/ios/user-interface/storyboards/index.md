@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
+ms.openlocfilehash: f24be635afcba181efcab85d81a984d93dae4bc8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61428903"
 ---
-
 # <a name="introduction-to-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中的分鏡腳本簡介
 
 在本指南中，我們將說明哪些分鏡腳本並檢查一些 – Segue 等重要元件。 我們將探討分鏡腳本可以如何建立和使用，而且開發人員有哪些優點。
@@ -20,7 +25,7 @@ ms.date: 03/22/2017
 
 ## <a name="requirements"></a>需求
 
-分鏡腳本可以搭配使用 iOS 設計工具在 Visual Studio for Mac 或 Visual Studio 2015 和 2017年安裝 Xamarin 工作負載。
+分鏡腳本可以搭配使用 iOS 設計工具在 Visual Studio for Mac 或 Visual Studio 2017 安裝 Xamarin 工作負載。
 
 ## <a name="what-is-a-storyboard"></a>什麼是分鏡腳本？
 

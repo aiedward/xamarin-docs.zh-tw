@@ -1,17 +1,17 @@
 ---
 title: 傳輸層安全性 (TLS) 1.2
-description: 本文件說明如何啟用 TLS 1.2 Xamarin.iOS、 Xamarin.Android 和 Xamarin.Mac 專案。 它會示範如何在 Visual Studio 2017 和 Visual Studio for mac。
+description: 本文件說明如何啟用 TLS 1.2 Xamarin.iOS、 Xamarin.Android 和 Xamarin.Mac 專案。 它會示範如何在 Visual Studio 2019 和 Visual Studio for mac。
 ms.prod: xamarin
 ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: 889eaf2b2f87b22010315f5e92dcfd1cd4c7c446
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 26870ae0e84a84a7b78f7766a8e134ecfc7b223e
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61304724"
 ---
 # <a name="transport-layer-security-tls-12"></a>傳輸層安全性 (TLS) 1.2
 

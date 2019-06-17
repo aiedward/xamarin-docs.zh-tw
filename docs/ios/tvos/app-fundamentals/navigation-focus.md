@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 1cfa51b8e5434480d7d15fbf23d78f8b8735f16a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3cb8d1c1d92146e70056c6cf562f2fa1cb028e7c
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112582"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61416407"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>使用 tvOS 導覽和焦點在 Xamarin 中
 
@@ -25,7 +25,7 @@ _本文章涵蓋的概念，焦點，以及如何用來呈現，並在 Xamarin.t
 
 接下來，我們將探討如何焦點可以搭配[視差](#Focus-and-Parallax)並*分層式映像*提供目前的瀏覽狀態的視覺提示給使用者。
 
-最後，我們將探討使用[焦點](#Working-with-Focus)，[焦點更新](#Working-with-Focus-Updates)，[焦點指南](#Working-with-Focus-Guides)，[集合中的焦點](#Working-with-Focus-in-Collections)和[啟用視差](#Enabling-Parallax)Xamarin.tvOS 應用程式中的映像檢視。
+最後，我們將探討使用[焦點](#Working-with-Focus)，[焦點更新](#Working-with-Focus-Updates)，[焦點指南](#Working-with-Focus-Guides)，[集合中的焦點](#Working-with-Focus-in-Collections)和[啟用視差](#enabling-parallax)Xamarin.tvOS 應用程式中的映像檢視。
 
 <a name="Navigation" />
 
@@ -39,15 +39,15 @@ Xamarin.tvOS 應用程式的使用者不會互動的介面直接做為 ios，他
 
 雖然通常使用 Apple TV、 使用者巡覽堆疊的畫面中，一組每個呈現一組指定的內容。 接著，每個新的畫面可能會導致一或多個子內容使用標準的 UI 控制項，例如畫面[按鈕](~/ios/tvos/user-interface/buttons.md)，[索引標籤列](~/ios/tvos/user-interface/tab-bars.md)，資料表[集合檢視](~/ios/tvos/user-interface/collection-views.md)或[分割檢視](~/ios/tvos/user-interface/split-views.md)。
 
-使用資料的每個新畫面，使用者瀏覽更深層對此堆疊的畫面。 藉由使用** 功能表**按鈕上 Siri 遠端，他們可以透過瀏覽回溯堆疊，若要返回上一個畫面或主功能表。
+使用資料的每個新畫面，使用者瀏覽更深層對此堆疊的畫面。 藉由使用 **功能表** 按鈕上 Siri 遠端，他們可以透過瀏覽回溯堆疊，若要返回上一個畫面或主功能表。
 
 Apple 建議下列並記住，設計您的 tvOS 應用程式的導覽時：
 
 - **版面配置您的瀏覽，請尋找內容快速和簡單**-存取內容，點選，數目最少的應用程式內的使用者要按一下和 swipes 越好。 簡化您的瀏覽和組織的最小的數字的畫面內容。
 - **建立流暢介面使用觸控**-確保使用者可以之間移動_可焦點化項目_與最小的摩擦，使用最少的可能筆勢。
 - **設計具有焦點，記住**-由於房間對面，使用者正在與內容互動的因此必須將焦點移至使用者介面項目，然後再使用 Siri 遠端與其互動。 如果需要太多的筆勢，才能達成其目標，則使用者會收到挫折與您的應用程式。
-- **提供向後巡覽透過功能表按鈕**-使，方便又熟悉的體驗，讓使用者巡覽向後使用 Siri 遠端** 功能表** 按鈕。 按下** 功能表**按鈕應該一律傳回上一個螢幕或傳回給應用程式的主功能表。 在應用程式的最上層，按下** 功能表**按鈕應會返回 Apple TV 主畫面。
-- **通常顯示 上一頁 按鈕的避免**-因為按下** 功能表**Siri 遙控器上的按鈕向後巡覽透過螢幕堆疊，請避免顯示額外的控制項，重複此行為。 此規則的例外是購買螢幕或螢幕的破壞性動作 （例如刪除內容），其中**取消**按鈕應該顯示出來。
+- **提供向後巡覽透過功能表按鈕**-使，方便又熟悉的體驗，讓使用者巡覽向後使用 Siri 遠端 **功能表** 按鈕。 按下 **功能表** 按鈕應該一律傳回上一個螢幕或傳回給應用程式的主功能表。 在應用程式的最上層，按下 **功能表** 鈕應會返回 Apple TV 主畫面。
+- **通常顯示 [上一頁] 按鈕的避免**-因為按下 **功能表** Siri 遙控器上的按鈕向後巡覽透過螢幕堆疊，請避免顯示額外的控制項，重複此行為。 此規則的例外是購買螢幕或螢幕的破壞性動作 （例如刪除內容），其中**取消**按鈕應該顯示出來。
 - **顯示大型集合在單一畫面上，而不是許多**-Siri 遠端用意是要進行內容快速的大型集合中移動，並輕鬆使用筆勢。 如果您的應用程式會使用大量的可設定焦點的項目集合，請考慮將它們放在單一的畫面，而不分成許多畫面需要更多使用者的組件上的導覽。
 - **使用標準控制項進行瀏覽**-同樣地，若要建立的方便又熟悉的使用者經驗，可能的情況下，使用內建`UIKit`頁面控制項、 索引標籤列、 分段控制項、 資料表檢視中，集合檢視和分割等控制項您的應用程式導覽的檢視。 使用者已熟悉這些項目，因為它們直接易懂的方式可以瀏覽您的應用程式。
 - **偏好水平內容巡覽**-Apple TV 的本質，因為撥動左到右 Siri 遠端是比向上和向下更自然。 設計您的應用程式的內容版面配置時，請考慮此選項。
@@ -92,7 +92,7 @@ public class myView : UIView
 }
 ```
 
-您可以隨時使用`Focused`屬性`UIKit`控制項，以查看它是否目前的項目。 如果`true`UI 項目目前擁有焦點，否則它並不會。 例如: 
+您可以隨時使用`Focused`屬性`UIKit`控制項，以查看它是否目前的項目。 如果`true`UI 項目目前擁有焦點，否則它並不會。 例如：
 
 ```csharp
 // Is my view in focus?
@@ -208,7 +208,7 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 
 首先，此程式碼取得的`NextFocusedView`從`UIFocusUpdateContext`中，已傳遞 (`context`)。 如果此檢視是`null`，然後不需要任何處理，並結束方法。
 
-接下來，`nextFocusableItem`評估。 如果符合其中一個**更多資訊**或是**購買**按鈕，焦點會傳送至使用焦點指南中的 [相對] 按鈕`PreferredFocusedView`屬性。 例如: 
+接下來，`nextFocusableItem`評估。 如果符合其中一個**更多資訊**或是**購買**按鈕，焦點會傳送至使用焦點指南中的 [相對] 按鈕`PreferredFocusedView`屬性。 例如：
 
 ```csharp
 // Move from the More Info to Buy button
@@ -226,7 +226,7 @@ FocusGuide.PreferredFocusedView = null;
 
 ### <a name="working-with-focus-in-collections"></a>使用集合中的焦點
 
-決定是否為個別項目可以可設定焦點中時`UICollectionView`或是`UITableView`，您將會覆寫的方法`UICollectionViewDelegate`或`UITableViewDelegate`分別。 例如: 
+決定是否為個別項目可以可設定焦點中時`UICollectionView`或是`UITableView`，您將會覆寫的方法`UICollectionViewDelegate`或`UITableViewDelegate`分別。 例如：
 
 ```csharp
 public class CardHandDelegate : UICollectionViewDelegateFlowLayout

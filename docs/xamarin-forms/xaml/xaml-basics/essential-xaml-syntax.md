@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
 ms.openlocfilehash: 75d3c628a513b81af9dea7308ca49c2b490c4aff
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059739"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61407630"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分。 基本 XAML 語法
 
@@ -351,7 +351,7 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 </ContentPage>
 ```
 
-真正的問題是： 為什麼是這些屬性的項目*不*XAML 檔案中所需？
+真正的問題是：原因是這些屬性的項目*不*XAML 檔案中所需？
 
 用於 XAML 中定義在 Xamarin.Forms 中的項目可以有一個屬性中加上旗標`ContentProperty`類別上的屬性。 如果您查閱`ContentPage`類別在線上的 Xamarin.Forms 文件，您會看到這個屬性：
 

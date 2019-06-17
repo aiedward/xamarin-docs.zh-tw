@@ -5,12 +5,12 @@ ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: c2caf1583e3099903cb0b05628ed6b2984a954d9
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: b94ba73b334ac68b256ca840956f987a4ef670ce
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671412"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58870101"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials:手電筒
 
@@ -110,7 +110,7 @@ catch (Exception ex)
 
 ### <a name="iostabios"></a>[iOS](#tab/ios)
 
-[AVCaptureDevice](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureDevice/) 用於開啟或關閉裝置的手電筒或閃光燈模式。
+[AVCaptureDevice](xref:AVFoundation.AVCaptureDevice) 用於開啟或關閉裝置的手電筒或閃光燈模式。
 
 ### <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 

@@ -1,18 +1,19 @@
 ---
-title: Xamarin.Essentials：Accelerometer
+title: Xamarin.Essentials:加速計
 description: Xamarin.Essentials 中的 Accelerometer 類別可讓您監視裝置的加速度感應器，該感應器指出裝置在三維空間中的加速度。
 ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: f443cc094c7d7be6ec782df27332bafe5d51dda3
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 04/02/2019
+ms.custom: video
+ms.openlocfilehash: f22563aeaeb7bec2f87ca7892005f2cfb1c4e84b
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898793"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870374"
 ---
-# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials：Accelerometer
+# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials:加速計
 
 **Accelerometer** 類別可讓您監視裝置的加速計感應器，此感應器指出裝置在三維空間中的加速度。
 
@@ -91,3 +92,10 @@ X 軸是指向右方的水平軸，Y 軸是指向上方的垂直軸，Z 軸則�
 
 - [Accelerometer 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
 - [Accelerometer API 文件](xref:Xamarin.Essentials.Accelerometer)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Accelerometer-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
+

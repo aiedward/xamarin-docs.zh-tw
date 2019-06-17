@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
 ms.openlocfilehash: 6803dc2668b89ee2d037da8b34e202191dd5465d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61307689"
 ---
 # <a name="handling-multiple-resolutions-in-cocossharp"></a>處理 CocosSharp 中的多個解決方法
 
@@ -25,8 +25,8 @@ CocosSharp 的預設解析行為是至遊戲中座標為符合實體像素為單
 | **裝置** | **顯示器解析度** | **範例螢幕擷取畫面** |
 |--- | --- |--- |
 |所要的顯示|368 x 240 （具有黑色長條的外觀比例）| ![368 x 240 （具有黑色長條的外觀比例）](resolutions-images/image1.png) |
-|iPhone 4 秒|960x640| ![iPhone 4 秒 960x640](resolutions-images/image2.png) |
-|iPhone 6 Plus|1920x1080| ![iPhone 6 Plus 1920 x 1080](resolutions-images/image3.png) |
+|iPhone 4s|960x640| ![iPhone 4s 960x640](resolutions-images/image2.png) |
+|iPhone 6 Plus|1920x1080| ![iPhone 6 Plus 1920x1080](resolutions-images/image3.png) |
 
 本文件涵蓋如何使用 CocosSharp 來修正此問題，如上表所示。 也就是說，我們將討論如何進行轉譯的第一個資料列 – 不論螢幕解析度所示的任何裝置。
 

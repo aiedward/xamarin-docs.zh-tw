@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2018
 ms.openlocfilehash: 9e9fa1e2651661670f89baac7fcd438b3d14bfb3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61200799"
 ---
 # <a name="replacing-the-action-bar"></a>取代動作列
 
@@ -194,7 +194,7 @@ ActionBar.Title = "My Toolbar";
 
 ### <a name="define-a-menu-resource"></a>定義功能表資源
 
-建立新** 功能表**下方的子目錄**資源**。 在 [ **] 功能表**子目錄中，建立新的功能表資源檔，稱為**top_menus.xml**並以下列 XML 取代其內容： 
+建立新 **功能表** 下方的子目錄 **資源**。 在 [ **] 功能表**子目錄中，建立新的功能表資源檔，稱為**top_menus.xml**並以下列 XML 取代其內容： 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -283,7 +283,7 @@ public override bool OnOptionsItemSelected(IMenuItem item)
 
 ![不使用自訂的佈景主題時可能發生的錯誤](replacing-the-action-bar-images/03-theme-not-defined.png)
 
-例如，下列可能產生的錯誤訊息的颾魤 ㄛ： _Java.Lang.IllegalStateException： 此活動已經有視窗 decor 所提供的動作列。_ 
+此外，可能會產生錯誤訊息如下所示：_Java.Lang.IllegalStateException:此活動已經有視窗 decor 所提供的動作列。_ 
 
 若要更正這個錯誤，請確認`android:theme`屬性 (attribute) 的自訂佈景主題新增至`<application>`(在**properties/Androidmanifest.xml**) 中稍早所述[套用自訂佈景主題](#apply-the-custom-theme). 此外，此錯誤可能造成如果`Toolbar`版面配置] 或 [自訂的佈景主題未正確設定。
 

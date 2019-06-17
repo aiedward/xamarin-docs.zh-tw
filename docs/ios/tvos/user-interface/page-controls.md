@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 173bc7713b5b8c330d4d4c5863bef24be8bdcb52
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61179551"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>使用 tvOS 在 Xamarin 中的頁面控制項
 
@@ -61,7 +61,7 @@ Xamarin.tvOS 應用程式中使用頁面控制項的最簡單方式是將它們�
 
     [![](page-controls-images/page03-vs.png "小工具 索引標籤")](page-controls-images/page03-vs.png#lightbox)
 1. 接下來，將控制項或軌跡新增至要移向後和向前逐步執行的頁面集合的檢視。
-1. 最後，將指派**名稱**控制項，讓您可以回應其C#程式碼。 例如:  
+1. 最後，將指派**名稱**控制項，讓您可以回應其C#程式碼。 例如： 
 
     [![](page-controls-images/page04-vs.png "將控制項")](page-controls-images/page04-vs.png#lightbox)
 1. 儲存您的變更。
@@ -72,7 +72,7 @@ Xamarin.tvOS 應用程式中使用頁面控制項的最簡單方式是將它們�
 > [!IMPORTANT]
 > 雖然您可以指派事件，例如`TouchUpInside`UI 中的項目 （例如標記的 UIButton) iOS 設計工具，則會永遠不會呼叫因為 Apple TV 沒有觸控式螢幕或支援觸控事件。 您應該一律使用`Primary Action`事件建立事件處理常式 tvOS 的使用者介面項目時。
 
-編輯您的檢視控制器 (範例`ViewController.cs`) 檔案，並新增程式碼來處理變更的頁面。 例如: 
+編輯您的檢視控制器 (範例`ViewController.cs`) 檔案，並新增程式碼來處理變更的頁面。 例如：
 
 ```csharp
 using System;

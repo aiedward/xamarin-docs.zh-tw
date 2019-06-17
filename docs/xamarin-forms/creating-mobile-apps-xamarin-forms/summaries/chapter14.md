@@ -1,18 +1,18 @@
 ---
 title: 第 14 章的摘要。 絕對版面配置
-description: 使用 Xamarin.Forms 建立行動應用程式： 第 14 章摘要。 絕對版面配置
+description: 使用 Xamarin.Forms 建立行動應用程式：第 14 章的摘要。 絕對版面配置
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: a67a2e12a12039755970a78739ea2ca3d2ffae08
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 7371f134944d7492e51aa2d02247c0ab48345a47
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334271"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>第 14 章的摘要。 絕對版面配置
 
@@ -26,7 +26,7 @@ ms.locfileid: "53053486"
 
 ## <a name="absolutelayout-in-code"></a>在程式碼中的 AbsoluteLayout
 
-您可以加入子系`Children`的集合`AbsoluteLayout`使用標準[ `Add` ](xref:System.Collections.Generic.ICollection`1.Add*)方法，但`AbsoluteLayout`也會提供擴充[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Rectangle/Xamarin.Forms.AbsoluteLayoutFlags/)可讓您指定的方法[ `Rectangle` ](xref:Xamarin.Forms.Rectangle)。 另一個[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Point/)方法僅需要[ `Point` ](xref:Xamarin.Forms.Point)，子系的不受限制在此情況下，並調整大小本身。
+您可以加入子系`Children`的集合`AbsoluteLayout`使用標準[ `Add` ](xref:System.Collections.Generic.ICollection`1.Add*)方法，但`AbsoluteLayout`也會提供擴充[ `Add` ](xref:Xamarin.Forms.AbsoluteLayout.IAbsoluteList`1.Add*)可讓您指定的方法[ `Rectangle` ](xref:Xamarin.Forms.Rectangle)。 另一個[ `Add` ](xref:Xamarin.Forms.AbsoluteLayout.IAbsoluteList`1.Add*)方法僅需要[ `Point` ](xref:Xamarin.Forms.Point)，子系的不受限制在此情況下，並調整大小本身。
 
 您可以建立`Rectangle`具有值[建構函式](xref:Xamarin.Forms.Rectangle.%23ctor(System.Double,System.Double,System.Double,System.Double))需要四個值&mdash;前兩個指出相對於父代的子系的左上角的位置和表示兩個子系的大小。 或者您可以使用[建構函式](xref:Xamarin.Forms.Rectangle.%23ctor(Xamarin.Forms.Point,Xamarin.Forms.Size))需要`Point`並[ `Size` ](xref:Xamarin.Forms.Size)值。
 

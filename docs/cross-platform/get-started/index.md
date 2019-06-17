@@ -1,14 +1,19 @@
 ---
 title: Xamarin 使用者入門
-description: 本文件連結各種指南，描述如何開始使用 Xamarin 開發。 連結的內容會討論如何建置第一個應用程式、提供行動應用程式開發的一般簡介，並會查看 Xamarin University 的訓練。
+description: 本文件連結各種指南，描述如何開始使用 Xamarin 開發。 連結的內容會討論如何建置第一個應用程式，並提供行動裝置開發的一般簡介。
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
+ms.openlocfilehash: da2c927bc7d6943066b6b2541d9af98a560c40b5
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978424"
 ---
-
 # <a name="building-mobile-apps"></a>建置行動應用程式
 
 在您開始之前，請先參閱[系統需求](requirements.md)及[安裝指示](~/get-started/installation/index.md)，以確認您已將一切準備就緒。
@@ -43,11 +48,11 @@ ms.date: 04/10/2017
 
 深入了解 Visual Studio for Mac 這個 macOS 整合式開發環境 (IDE)。
 
-## <a name="get-started-with-xamarin-university"></a>開始使用 Xamarin University
+## <a name="get-started-video"></a>開始使用的影片
 
 > [!VIDEO https://youtube.com/embed/NGvn-pGZFPA]
 
-**使用 Xamarin for Visual Studio 建置第一個 Xamarin.Forms 應用程式，[Xamarin University 提供](https://university.xamarin.com)**
+**使用 Xamarin for Visual Studio 建置第一個 Xamarin.Forms 應用程式**
 
 ## <a name="related-links"></a>相關連結
 

@@ -1,18 +1,18 @@
 ---
 title: 偵錯 Xamarin.iOS 應用程式
-description: 本文件描述如何在 Visual Studio for Mac 或 Visual Studio 2017 中使用偵錯工具來偵錯 Xamarin.iOS 應用程式，包括設定中斷點、無線偵錯等等。
+description: 本文件描述如何在 Visual Studio for Mac 或 Visual Studio 2019 中使用偵錯工具來偵錯 Xamarin.iOS 應用程式，包括設定中斷點、無線偵錯等。
 ms.prod: xamarin
 ms.assetid: 05460010-99E1-DC38-F855-2D691EF54484
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d1a3090318649e6f04a5b8f44dc4a9b2689a870
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 59df461c52cd01187ca3a9fc25fe741342910061
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119627"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58854531"
 ---
 # <a name="debugging-xamarinios-apps"></a>偵錯 Xamarin.iOS 應用程式
 
@@ -26,7 +26,7 @@ _Xamarin.iOS 應用程式可以使用 Visual Studio for Mac 或 Visual Studio �
 
 Xamarin.iOS 偵錯工具會整合到您的 IDE 中，而且它可讓開發人員在模擬器和裝置上針對使用 Xamarin.iOS 所支援之任何受控語言建置的 Xamarin.iOS 應用程式進行偵錯。
 
-Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](http://www.mono-project.com/docs/advanced/runtime/docs/soft-debugger/) \(英文\)，這表示產生的程式碼和 Mono 執行階段會與 IDE 配合，以提供偵錯體驗。 這不同於像是 LLDB 或 MDB 等硬偵錯工具，這些偵錯工具會在被偵錯之程式不知情或未與被偵錯之程式合作的情況下控制該程式。
+Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-project.com/docs/advanced/runtime/docs/soft-debugger/) \(英文\)，這表示產生的程式碼和 Mono 執行階段會與 IDE 配合，以提供偵錯體驗。 這不同於像是 LLDB 或 MDB 等硬偵錯工具，這些偵錯工具會在被偵錯之程式不知情或未與被偵錯之程式合作的情況下控制該程式。
 
 ## <a name="setting-breakpoints"></a>設定中斷點
 
@@ -121,7 +121,7 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](http://www.mono-project
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-若要在 Visual Studio 2015 中設定條件式中斷點，請先[設定一般中斷點](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)。 以滑鼠右鍵按一下中斷點，以顯示其快顯功能表：
+若要在 Visual Studio 中設定條件式中斷點，請先[設定一般中斷點](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)。 以滑鼠右鍵按一下中斷點，以顯示其快顯功能表：
 
  [![](debugging-in-xamarin-ios-images/image4vs.png "[中斷點] 操作功能表")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
 

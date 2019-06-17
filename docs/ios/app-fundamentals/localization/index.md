@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/28/2017
+ms.openlocfilehash: 11926d3cf0c3954c97cdd1e92283626067c9623f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61248749"
 ---
-
 # <a name="localization-in-xamarinios"></a>在 Xamarin.iOS 中的當地語系化
 
 _本文件涵蓋 iOS SDK 的當地語系化功能，以及如何使用 Xamarin 來存取它們。_
@@ -17,7 +22,7 @@ _本文件涵蓋 iOS SDK 的當地語系化功能，以及如何使用 Xamarin �
 
 ## <a name="ios-platform-features"></a>iOS 平台功能
 
-本章節描述一些在 iOS 中的當地語系化功能。 請跳至[下一節](#Localization-basics-in-iOS)若要查看特定的程式碼和範例。
+本章節描述一些在 iOS 中的當地語系化功能。 請跳至[下一節](#localization-basics-in-ios)若要查看特定的程式碼和範例。
 
 ### <a name="language"></a>語言
 

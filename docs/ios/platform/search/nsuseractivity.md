@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: acfff90b4b983f92718bb9af1f587a73ec0f8da7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b853bd3bc55a2d4cb613a9f0079aebae9f57027b
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61357014"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>在 Xamarin.iOS 中 NSUserActivity 搜尋
 
@@ -29,7 +29,7 @@ IOS 9 的新手`NSUserActivity`可以編製索引 （公開和私密） 並搜�
 
  - `EligibleForHandoff` – 如果`true`，此活動可以用於遞移式作業。
  - `EligibleForSearch` – 如果`true`，此活動會新增至裝置上的索引，並顯示在搜尋結果中。
- - `EligibleForPublicIndexing` – 如果`true`，此活動會新增至 Apple 的雲端式索引，並向您尚未安裝您的應用程式在其 iOS 裝置的使用者 （透過搜尋）。 請參閱[公開搜尋索引編製](#Public-Search-Indexing)節以取得詳細資料。
+ - `EligibleForPublicIndexing` – 如果`true`，此活動會新增至 Apple 的雲端式索引，並向您尚未安裝您的應用程式在其 iOS 裝置的使用者 （透過搜尋）。 請參閱[公開搜尋索引編製](#public-search-indexing)節以取得詳細資料。
  - `Title` – 提供您活動的標題，並顯示在搜尋結果中。 使用者也可以搜尋標題本身的文字。
  - `Keywords` – 是用來描述您的活動，會編製索引，並由使用者可搜尋的字串陣列。
  - `ContentAttributeSet` – 是`CSSearchableItemAttributeSet`用來進一步說明您的活動詳細資料，並提供豐富的內容，在搜尋結果中。
@@ -96,7 +96,7 @@ activity.BecomeCurrent();
 
 ## <a name="responding-to-an-activity"></a>回應活動
 
-若要回應使用者點選的搜尋結果 (`NSUserActivity`)，在我們的應用程式中，編輯**AppDelegate.cs**檔案，並覆寫`ContinueUserActivity`方法。 例如: 
+若要回應使用者點選的搜尋結果 (`NSUserActivity`)，在我們的應用程式中，編輯**AppDelegate.cs**檔案，並覆寫`ContinueUserActivity`方法。 例如：
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)

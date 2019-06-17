@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
 ms.openlocfilehash: f397cf595a9ae151c5f105341733b2c57023fe99
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61282259"
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>使用 Visual Basic.NET 的 Xamarin.Forms
 
@@ -120,5 +120,5 @@ Xamarin 不直接支援 Visual Basic-依此頁面，即可建立 C# Xamarin.Form
 
 ## <a name="related-links"></a>相關連結
 
-- [XamarinFormsVB （範例）](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB)
+- [XamarinFormsVB (sample)](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB)
 - [使用.NET Framework 的跨平台開發](https://docs.microsoft.com/dotnet/standard/cross-platform/)

@@ -6,8 +6,13 @@ ms.assetid: B9A25E9B-3EC2-489A-8AD3-F78287609747
 author: lobrien
 ms.author: laobri
 ms.date: 03/28/2018
+ms.openlocfilehash: 79a483743946c4f7509833867f2afe4b1e055183
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61198938"
 ---
-
 # <a name="getting-started-with-java"></a>開始使用 Java
 
 這是適用於 Java，其中涵蓋了所有支援平台的基本概念開始使用 頁面。
@@ -25,7 +30,7 @@ For Mac:
 
 針對 Windows:
 
-* C + + 支援 visual Studio 2017
+* Visual Studio 2017C++支援
 * Windows 10 SDK
 
 針對 Android:

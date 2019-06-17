@@ -7,7 +7,13 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/13/2018
+ms.date: 04/11/2019
+ms.openlocfilehash: bb13113a947fe6ff25f5e96e299828d1d93e20ac
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65927046"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用階層式樣式表 (CSS) 樣式設定 Xamarin.Forms 應用程式
 
@@ -240,7 +246,7 @@ stacklayout {
 }
 ```
 
-CSS 類別可以藉由設定指派給 XAML 項目[ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass)的 CSS 類別名稱的項目屬性。 因此，在下列 XAML 範例中，樣式來定義`.detailPageTitle`類別會指派給第一個[ `Label` ](xref:Xamarin.Forms.Label)，而所定義的樣式`.detailPageSubtitle`類別會指派給第二個`Label`。
+CSS 類別可以藉由設定指派給 XAML 項目[ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass)的 CSS 類別名稱的項目屬性。 因此，在下列 XAML 範例中，樣式來定義`.detailPageTitle`類別會指派給第一個[ `Label` ](xref:Xamarin.Forms.Label)，而所定義的樣式`.detailPageSubtitle`類別會指派給第二個`Label`。
 
 ```xaml
 <ContentPage ...>
@@ -411,6 +417,19 @@ Xamarin.Forms 所支援下列的 CSS 屬性 (在**值**資料行中，類型為_
 |`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial `|`visibility: hidden;`|
 |`width`|`VisualElement`|_雙精度浮點數_ \| `initial`|`min-width: 320;`|
 
+> [!NOTE]
+> `initial` 是有效的值給所有屬性。 它會清除 （重設為預設值） 所設定的值是從另一種樣式。
+
+目前不支援下列屬性︰
+
+- `all: initial`.
+- （ 方塊中或 方格），就會配置屬性。
+- 速記屬性，例如`font`，和`border`。
+
+此外，還有任何`inherit`值，因此繼承不受支援。 因此您不能例如，設定`font-size`版面配置上的屬性，並預期所有[ `Label` ](xref:Xamarin.Forms.Label)版面配置，以繼承值中的執行個體。 唯一例外的是`direction`屬性，其預設值的`inherit`。
+
+### <a name="xamarinforms-specific-properties"></a>Xamarin.Forms 的特定屬性
+
 也支援下列 Xamarin.Forms 特定 CSS 屬性 (在**值**資料行中，類型為_斜體_，而字串常值則`gray`):
 
 |屬性|適用於|值|範例|
@@ -428,16 +447,23 @@ Xamarin.Forms 所支援下列的 CSS 屬性 (在**值**資料行中，類型為_
 |`-xf-thumb-color`|`Slider`|_色彩_ \| `initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-spacing`|`StackLayout`|_雙精度浮點數_ \| `initial` |`-xf-spacing: 8;`|
 
-> [!NOTE]
-> `initial` 是有效的值給所有屬性。 它會清除 （重設為預設值） 所設定的值是從另一種樣式。
+### <a name="xamarinforms-shell-specific-properties"></a>Xamarin.Forms 殼層特定屬性
 
-目前不支援下列屬性︰
+也支援下列 Xamarin.Forms 殼層特定 CSS 屬性 (在**值**資料行中，類型為_斜體_，而字串常值則`gray`):
 
-- `all: initial`.
-- （ 方塊中或 方格），就會配置屬性。
-- 速記屬性，例如`font`，和`border`。
-
-此外，還有任何`inherit`值，因此繼承不受支援。 因此您不能例如，設定`font-size`版面配置上的屬性，並預期所有[ `Label` ](xref:Xamarin.Forms.Label)版面配置，以繼承值中的執行個體。 唯一例外的是`direction`屬性，其預設值的`inherit`。
+|屬性|適用於|值|範例|
+|---|---|---|---|
+|`-xf-flyout-background`|`Shell`|_色彩_ \| `initial` |`-xf-flyout-background: red;`|
+|`-xf-shell-background`|`Element`|_色彩_ \| `initial` |`-xf-shell-background: green;`|
+|`-xf-shell-disabled`|`Element`|_色彩_ \| `initial` |`-xf-shell-disabled: blue;`|
+|`-xf-shell-foreground`|`Element`|_色彩_ \| `initial` |`-xf-shell-foreground: yellow;`|
+|`-xf-shell-tabbar-background`|`Element`|_色彩_ \| `initial` |`-xf-shell-tabbar-background: white;`|
+|`-xf-shell-tabbar-disabled`|`Element`|_色彩_ \| `initial` |`-xf-shell-tabbar-disabled: black;`|
+|`-xf-shell-tabbar-foreground`|`Element`|_色彩_ \| `initial` |`-xf-shell-tabbar-foreground: gray;`|
+|`-xf-shell-tabbar-title`|`Element`|_色彩_ \| `initial` |`-xf-shell-tabbar-title: lightgray;`|
+|`-xf-shell-tabbar-unselected`|`Element`|_色彩_ \| `initial` |`-xf-shell-tabbar-unselected: cyan;`|
+|`-xf-shell-title`|`Element`|_色彩_ \| `initial` |`-xf-shell-title: teal;`|
+|`-xf-shell-unselected`|`Element`|_色彩_ \| `initial` |`-xf-shell-unselected: limegreen;`|
 
 ### <a name="color"></a>色彩
 
@@ -478,7 +504,7 @@ Xamarin.Forms 所支援下列的 CSS 屬性 (在**值**資料行中，類型為_
 
 > [!VIDEO https://youtube.com/embed/va-Vb7vtan8]
 
-**Xamarin.Forms 3.0 CSS、 藉由[Xamarin University](https://university.xamarin.com/)**
+**Xamarin.Forms 3.0 CSS 影片**
 
 ## <a name="related-links"></a>相關連結
 

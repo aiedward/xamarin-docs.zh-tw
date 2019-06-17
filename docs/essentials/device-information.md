@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials：裝置資訊
-description: 本文件描述 Xamarin.Essentials 中的 DeviceInfo 類別，可提供執行應用程式的裝置相關資訊。
+title: Xamarin.Essentials:裝置資訊
+description: 此文件描述 Xamarin.Essentials 中的 DeviceInfo 類別，可提供執行應用程式的裝置相關資訊。
 ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: b78c04d30871552f9b1e18a42c871e24464c4802
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: a7868277cd5e924d55ad688df1e8e07c81c5f074
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898949"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329321"
 ---
-# <a name="xamarinessentials-device-information"></a>Xamarin.Essentials：裝置資訊
+# <a name="xamarinessentials-device-information"></a>Xamarin.Essentials:裝置資訊
 
 **DeviceInfo** 類別可提供執行應用程式的裝置相關資訊。
 
@@ -53,18 +53,18 @@ var idiom = DeviceInfo.Idiom;
 var deviceType = DeviceInfo.DeviceType;
 ```
 
-## <a name="platformsxrefxamarinessentialsdeviceinfoplatforms"></a>[平台](xref:Xamarin.Essentials.DeviceInfo.Platforms)
+## <a name="platforms"></a>平台
 
-`DeviceInfo.Platform` 與對應至作業系統的常數字串相互關聯。 可以使用 `DevicePlatform` 結構來檢查值：
+[`DeviceInfo.Platform`](xref:Xamarin.Essentials.DeviceInfo.Platform) 與對應至作業系統的常數字串相互關聯。 可以使用 `DevicePlatform` 結構來檢查值：
 
 - **DevicePlatform.iOS**：iOS
 - **DevicePlatform.Android**：Android
 - **DevicePlatform.UWP**：UWP
 - **DevicePlatform.Unknown**：未知
 
-## <a name="idiomsxrefxamarinessentialsdeviceinfoidioms"></a>[慣用語](xref:Xamarin.Essentials.DeviceInfo.Idioms)
+## <a name="idioms"></a>慣用語
 
-`DeviceInfo.Idiom` 與對應至執行應用程式之裝置類型的常數字串相互關聯。 可以使用 `DeviceIdiom` 結構來檢查值：
+[`DeviceInfo.Idiom`](xref:Xamarin.Essentials.DeviceInfo.Idiom) 與對應至執行應用程式之裝置類型的常數字串相互關聯。 可以使用 `DeviceIdiom` 結構來檢查值：
 
 - **DeviceIdiom.Phone**：手機
 - **DeviceIdiom.Tablet**：平板電腦

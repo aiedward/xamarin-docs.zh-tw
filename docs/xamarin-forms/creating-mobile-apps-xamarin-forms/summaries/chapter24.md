@@ -1,18 +1,18 @@
 ---
 title: 第 24 章的摘要。 頁面巡覽
-description: 使用 Xamarin.Forms 建立行動應用程式： 第 24 章摘要。 頁面巡覽
+description: 使用 Xamarin.Forms 建立行動應用程式：第 24 章的摘要。 頁面巡覽
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 764a148ffffc2c69dbab5aeca872e2d10ce9f159
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: ce56c30cd631e87d39c9c5bda101b67252a0762a
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052737"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926903"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>第 24 章的摘要。 頁面巡覽
 
@@ -22,7 +22,7 @@ ms.locfileid: "53052737"
 
 ## <a name="modal-pages-and-modeless-pages"></a>強制回應頁面和非強制回應頁面
 
-`VisualElement` 定義[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation)屬性的型別[ `INavigation` ](xref:Xamarin.Forms.INavigation)，其中包含下列兩種方法，以巡覽至新的頁面：
+`VisualElement` 定義[ `Navigation` ](xref:Xamarin.Forms.NavigableElement.Navigation)屬性的型別[ `INavigation` ](xref:Xamarin.Forms.INavigation)，其中包含下列兩種方法，以巡覽至新的頁面：
 
 - [`PushAsync`](xref:Xamarin.Forms.INavigation.PushAsync(Xamarin.Forms.Page))
 - [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync(Xamarin.Forms.Page))
@@ -67,7 +67,7 @@ ms.locfileid: "53052737"
 - [`SetHasBackButton`](xref:Xamarin.Forms.NavigationPage.SetHasBackButton(Xamarin.Forms.Page,System.Boolean)) 和 [`GetHasBackButton`](xref:Xamarin.Forms.NavigationPage.GetHasBackButton(Xamarin.Forms.Page))
 - [`SetHasNavigationBar`](xref:Xamarin.Forms.NavigationPage.SetHasNavigationBar(Xamarin.Forms.BindableObject,System.Boolean)) 和 [`GetHasNavigationBar`](xref:Xamarin.Forms.NavigationPage.GetHasNavigationBar(Xamarin.Forms.BindableObject))
 - [`SetBackButtonTitle`](xref:Xamarin.Forms.NavigationPage.SetBackButtonTitle(Xamarin.Forms.BindableObject,System.String)) 並[ `GetBackButtonTitle` ](xref:Xamarin.Forms.NavigationPage.GetBackButtonTitle(Xamarin.Forms.BindableObject))僅在 iOS 上的工作
-- [`SetTitleIcon`](xref:Xamarin.Forms.NavigationPage.SetTitleIcon(Xamarin.Forms.BindableObject,Xamarin.Forms.FileImageSource)) 並[ `GetTitleIcon` ](xref:Xamarin.Forms.NavigationPage.GetTitleIcon(Xamarin.Forms.BindableObject)) iOS 和 Android 只上工作
+- [`SetTitleIcon`](xref:Xamarin.Forms.NavigationPage.SetTitleIcon(Xamarin.Forms.BindableObject,Xamarin.Forms.ImageSource)) 並[ `GetTitleIcon` ](xref:Xamarin.Forms.NavigationPage.GetTitleIcon(Xamarin.Forms.BindableObject)) iOS 和 Android 只上工作
 
 ### <a name="exploring-the-mechanics"></a>探索機制
 

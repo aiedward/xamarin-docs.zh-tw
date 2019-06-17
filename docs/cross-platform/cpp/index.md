@@ -1,49 +1,53 @@
 ---
 ms.assetid: EA2D979E-9151-4CE9-9289-13B6A979838B
-title: 透過 Xamarin 使用 C/c + + 程式庫
-description: 'Visual Studio for Mac 可用來建置和整合行動裝置應用程式中的跨平台 C/c + + 程式碼，適用於 Android 和 iOS，使用 Xamarin 和C#。 這篇文章說明如何設定和偵錯 c + + 專案中的 Xamarin 應用程式。'
+title: 使用 C /C++程式庫與 Xamarin
+description: Visual Studio for Mac 可以用來建置，並整合跨平台 C /C++適用於 Android 和 iOS，使用 Xamarin 的行動裝置應用程式程式碼和C#。 這篇文章說明如何設定和偵錯C++中的 Xamarin 應用程式專案。
 author: mikeparker104
 ms.author: miparker
-ms.date: 12/17/20178
+ms.date: 12/17/2018
+ms.openlocfilehash: 695714331f1056ab51b36d106a30deacd3a629a8
+ms.sourcegitcommit: be9658de032f3893741261f16162a664952ce178
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64986996"
 ---
-# <a name="use-cc-libraries-with-xamarin"></a>透過 Xamarin 使用 C/c + + 程式庫
+# <a name="use-cc-libraries-with-xamarin"></a>使用 C /C++程式庫與 Xamarin
 
 ## <a name="overview"></a>總覽
 
 Xamarin 可讓開發人員使用 Visual Studio 中建立跨平台的原生行動應用程式。 一般而言，C#繫結會用來將現有的平台元件，開發人員公開。 不過，有些時才能使用現有的 Xamarin 應用程式需要程式碼基底的時候。 有時候小組沒有程式碼基底時間、 預算或大型、 通過完善測試，以及高度最佳化的連接埠的資源C#。
 
-[Visual c + + 跨平台行動開發](https://docs.microsoft.com/visualstudio/cross-platform/visual-cpp-for-cross-platform-mobile-development) 可讓 C/c + + 和C#程式碼，以建立成相同的方案中，提供許多優點，包括統一的偵錯體驗的一部分。 Microsoft 已在這種方式，例如傳遞應用程式中使用 C/c + + 和 Xamarin [Hyperlapse Mobile](https://www.microsoft.com/p/hyperlapse-mobile/9wzdncrd1prw) 並 [Pix 相機](https://www.microsoft.com/microsoftpix)。
+[視覺化C++適用於跨平台行動開發](https://docs.microsoft.com/visualstudio/cross-platform/visual-cpp-for-cross-platform-mobile-development)可讓 C /C++和C#程式碼，以建立成相同的方案中，提供許多優點，包括統一的偵錯體驗的一部分。 Microsoft 一直使用 C /C++ ，如此一來，例如傳遞應用程式的 Xamarin [Hyperlapse Mobile](https://www.microsoft.com/p/hyperlapse-mobile/9wzdncrd1prw)並[Pix 相機](https://www.microsoft.com/microsoftpix)。
 
-不過，在某些情況下沒有想 （或需求） 保留現有的 C/c + + 工具和程序中的位置，並保留分離的應用程式中，然後再將媒體櫃，如同它是類似於第三方元件程式庫程式碼。 在這些情況下，所面臨的挑戰不只會公開相關的成員，至C#，但管理程式庫做為相依性。 和當然，盡可能此程序自動化。  
+不過，在某些情況下有不想 （或需求） 來保留現有的 C /C++工具和程序中的位置，並保留分離的應用程式中，然後再將媒體櫃，如同它是類似於第三方元件程式庫程式碼。 在這些情況下，所面臨的挑戰不只會公開相關的成員，至C#，但管理程式庫做為相依性。 和當然，盡可能此程序自動化。  
 
 這篇文章概述此案例的高階方法，並逐步解說一個簡單的範例。
 
 ## <a name="background"></a>背景
 
-C/c + + 會視為跨平台的語言，但絕佳必須小心以確保來源的程式碼確實跨平台，使用只有 C/c + + 支援的所有目標的編譯器，並包含幾乎沒有任何的有條件地包含平台或編譯器特有的程式碼。
+C /C++會被視為為跨平台的語言，但絕佳必須小心以確保來源的程式碼確實跨平台，使用只有 C /C++支援的所有目標的編譯器，並包含幾乎沒有任何的有條件地包含平台或編譯器特有的程式碼。
 
 最後的程式碼必須編譯並順利執行，因此這全然共通性目標平台 （與編譯器） 上的所有目標平台上。 從編譯器稍有差異可能仍會發生問題，並徹底測試 （最好是自動） 上的每個目標平台變得越來越重要。  
 
 ## <a name="high-level-approach"></a>高階方法
 
-下圖代表用來將 C/c + + 原始程式碼轉換為跨平台 Xamarin 程式庫共用透過 NuGet，然後在 Xamarin.Forms 應用程式中使用的四個階段方法。
+下圖代表四個階段所使用的方法來轉換 C /C++透過 NuGet 已共用，且隨後會取用的 Xamarin.Forms 應用程式中的跨平台 Xamarin 程式庫的原始程式碼。
  
-
-![搭配 Xamarin 使用 C/c + + 的高階方法](images/cpp-steps.jpg)
+![使用 C 的高階方法 /C++使用 Xamarin](images/cpp-steps.jpg)
 
 4 個階段是：
 
-1.  C/c + + 原始程式碼編譯成特定平台原生程式庫。
-2.  包裝原生程式庫，與 Visual Studio 方案。
-3.  封裝並推送 NuGet 套件，.NET 包裝函式。
-4.  取用 NuGet 套件從 Xamarin 應用程式。
+1. 編譯 C + + /C++至特定平台原生程式庫的原始程式碼。
+2. 包裝原生程式庫，與 Visual Studio 方案。
+3. 封裝並推送 NuGet 套件，.NET 包裝函式。
+4. 取用 NuGet 套件從 Xamarin 應用程式。
 
-### <a name="stage-1-compiling-the-cc-source-code-into-platform-specific-native-libraries"></a>第 1 階段：C/c + + 原始程式碼編譯成特定平台原生程式庫
+### <a name="stage-1-compiling-the-cc-source-code-into-platform-specific-native-libraries"></a>第 1 階段：編譯 C + + /C++至特定平台原生程式庫的原始程式碼
 
-此階段的目標是要建立可呼叫的原生程式庫C#包裝函式。 這可能會或可能不是根據您的情況相關。 許多工具和程序，可以前往應謹記在這個常見的案例是超出本文的範圍。 重要考量是的維持 C/c + + 程式碼基底的任何原生包裝函式程式碼，足夠的單元測試、 與同步及建置自動化。 
+此階段的目標是要建立可呼叫的原生程式庫C#包裝函式。 這可能會或可能不是根據您的情況相關。 許多工具和程序，可以前往應謹記在這個常見的案例是超出本文的範圍。 重要考量，為何選擇 C /C++程式碼基底的任何原生包裝函式程式碼，足夠的單元測試、 與同步及建置自動化。 
 
-逐步解說中的程式庫所隨附的殼層指令碼中使用 Visual Studio Code 來建立。 此逐步解說中的擴充的版本可在 [Mobile CAT GitHub 存放庫](https://github.com/xamarin/mobcat/blob/dev/samples/cppwithxamarin/README.md)的討論中深入探討範例的這個部分。 原生程式庫會被視為第三方相依性在此情況下不過這個階段說明內容。
-
+逐步解說中的程式庫所隨附的殼層指令碼中使用 Visual Studio Code 來建立。 此逐步解說中的擴充的版本可在[Mobile CAT GitHub 存放庫](https://github.com/xamarin/mobcat/blob/dev/samples/cpp_with_xamarin/)的討論中深入探討範例的這個部分。 原生程式庫會被視為第三方相依性在此情況下不過這個階段說明內容。
 
 為了簡單起見，本逐步解說的目標架構的子集。 適用於 iOS，它會使用 lipo 公用程式從個別的架構特定二進位檔，建立單一的 fat 二進位。 Android 會使用動態的二進位檔副檔名為.so 而 iOS 會使用靜態的 fat 二進位.a 副檔名為。 
 
@@ -71,28 +75,28 @@ C/c + + 會視為跨平台的語言，但絕佳必須小心以確保來源的程
 
 ## <a name="walk-through"></a>逐步解說
 
-提供的步驟僅適用於 **Visual Studio for Mac**，但結構的運作方式 **Visual Studio 2017** 以及。
+提供的步驟僅適用於**Visual Studio for Mac**，但結構的運作方式**Visual Studio 2017**以及。
 
 ### <a name="prerequisites"></a>必要條件
 
 若要跟著做，請將需要開發人員：
 
--   [NuGet 命令列 (CLI)](https://docs.microsoft.com/nuget/tools/nuget-exe-cli-reference#macoslinux)
+- [NuGet 命令列 (CLI)](https://docs.microsoft.com/nuget/tools/nuget-exe-cli-reference#macoslinux)
 
--   [*Visual Studio* *for Mac*](https://visualstudio.microsoft.com/downloads)
+- [*Visual Studio* *for Mac*](https://visualstudio.microsoft.com/downloads)
 
 > [!NOTE]
-> 作用 [**Apple 開發人員帳戶**](https://developer.apple.com/) ，才能將應用程式部署至 iPhone。
+> 作用[ **Apple 開發人員帳戶**](https://developer.apple.com/) ，才能將應用程式部署至 iPhone。
 
 ## <a name="creating-the-native-libraries-stage-1"></a>建立原生程式庫 (第 1 階段)
 
-原生程式庫功能為基礎的範例 [逐步解說：建立和使用靜態程式庫 （c + +）](https://docs.microsoft.com/cpp/windows/walkthrough-creating-and-using-a-static-library-cpp?view=vs-2017)。
+原生程式庫功能為基礎的範例[逐步解說：建立和使用靜態程式庫 (C++)](https://docs.microsoft.com/cpp/windows/walkthrough-creating-and-using-a-static-library-cpp?view=vs-2017)。
 
-本逐步解說會略過第一個階段，建置原生程式庫，因為程式庫依現狀在此案例中的第三方相依性。 先行編譯的原生程式庫會隨附 [程式碼範例](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin)可以是[下載](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts) 直接。
+本逐步解說會略過第一個階段，建置原生程式庫，因為程式庫依現狀在此案例中的第三方相依性。 先行編譯的原生程式庫會隨附[程式碼範例](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin)可以是[下載](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)直接。
 
 ### <a name="working-with-the-native-library"></a>使用原生程式庫
 
-原始 *MathFuncsLib* 範例包含具有下列定義中稱為 MyMathFuncs 的單一類別： 
+原始*MathFuncsLib*範例包含單一類別，稱為`MyMathFuncs`具有下列定義：
 
 ```cpp
 namespace MathFuncs
@@ -108,7 +112,7 @@ namespace MathFuncs
 }
 ```
 
-其他的類別會定義包裝函式可讓.NET 取用者建立、 處置，並與其互動的基礎原生 MyMathFuncs 類別。
+其他的類別會定義可讓.NET 取用者建立、 處置，並與其互動的基礎原生包裝函式`MyMathFuncs`類別。
 
 ```cpp
 #include "MyMathFuncs.h"
@@ -124,11 +128,11 @@ extern "C" {
 }
 ```
 
-它會使用這些包裝函式 [Xamarin](https://visualstudio.microsoft.com/xamarin/) 側邊。
+它會使用這些包裝函式[Xamarin](https://visualstudio.microsoft.com/xamarin/) 側邊。
 
 ## <a name="wrapping-the-native-library-stage-2"></a>包裝原生程式庫 (第 2 階段)
 
-這個階段需要[先行編譯程式庫](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)中所述 [前一節](https://docs.microsoft.com/xamarin/cross-platform/cpp/index)。
+這個階段需要[先行編譯程式庫](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)中所述[前一節](##creating-the-native-libraries-stage-1)。
 
 ### <a name="creating-the-visual-studio-solution"></a>建立 Visual Studio 方案
 
@@ -153,8 +157,8 @@ extern "C" {
 
 11. 從**方案總管**，按兩下**MathFuncs.Standard**專案。
 12. 瀏覽至**主要設定**，然後更新**預設命名空間**來**MathFuncs**。
-13. 瀏覽至**輸出**設定，然後更新**組件名稱**來**MathFuncs**然後按一下**確定**。
-14. 瀏覽至**編譯器**設定，變更**組態**來**版本**，設定**偵錯資訊**到**符號只**。
+13. 瀏覽至**輸出**設定，然後更新**組件名稱**來**MathFuncs**。
+14. 瀏覽至**編譯器**設定，變更**組態**來**版本**，設定**偵錯資訊**到**只有符號**然後按一下 **[確定]**。
 15. 刪除**Class1.cs/Getting 啟動**從專案 （如果其中一個已成為範本的一部份）。
 16. **CONTROL + 按一下**專案**相依性/References**資料夾，然後選擇**編輯參考**。
 17. 選取  **MathFuncs.Shared**從**專案**索引標籤，然後按一下**確定**。
@@ -185,7 +189,7 @@ Android 與 iOS 之間，將原生程式庫新增至包裝函式解決方案的�
 
 1. **CONTROL + 按一下**上**MathFuncs.Android**專案，然後選擇**新資料夾**從**新增**功能表將它命名為**libs**.
 
-2. 每個 **ABI** （應用程式二進位介面）， **CONTROL + 按一下** 上 **libs** 資料夾，然後選擇  **新的資料夾** 從 **新增** 功能表上，將它命名為之後個別 **ABI**。 在此情況下：
+2. 每個**ABI** （應用程式二進位介面）， **CONTROL + 按一下**上**libs**資料夾，然後選擇**新資料夾**從**新增**功能表上，將它命名為之後個別**ABI**。 在此情況下：
 
     - arm64-v8a
     - armeabi-v7a
@@ -193,11 +197,11 @@ Android 與 iOS 之間，將原生程式庫新增至包裝函式解決方案的�
     - x86_64  
 
     > [!NOTE]
-    > 如需更詳細的概觀，請參閱 [架構和 Cpu](https://developer.android.com/ndk/guides/arch) 相關的主題 [NDK 開發人員指南](https://developer.android.com/ndk/guides/)，特別是處理區段 [應用程式套件中的原生程式碼](https://developer.android.com/ndk/guides/abis#native-code-in-app-packages).
+    > 如需更詳細的概觀，請參閱[架構和 Cpu](https://developer.android.com/ndk/guides/arch)相關的主題[NDK 開發人員指南](https://developer.android.com/ndk/guides/)，特別是處理區段[應用程式套件中的原生程式碼](https://developer.android.com/ndk/guides/abis#native-code-in-app-packages).
 
 3. 確認資料夾結構：  
 
-    ```
+    ```folders
     - lib
         - arm64-v8a
         - armeabi-v7a
@@ -220,17 +224,17 @@ Android 與 iOS 之間，將原生程式庫新增至包裝函式解決方案的�
 
 5. 針對每個 **.so**檔案**CONTROL + 按一下**然後選擇**EmbeddedNativeLibrary**選項**建置動作**功能表。
 
-現在 **libs** 資料夾應該會出現，如下所示：
+現在**libs**資料夾應該會出現，如下所示：
 
-```bash
+```folders
 - lib
     - arm64-v8a
         - libMathFuncs.so
     - armeabi-v7a
         - libMathFuncs.so
-    - x86 
+    - x86
         - libMathFuncs.so
-    - x86_64 
+    - x86_64
         - libMathFuncs.so
 ```
 
@@ -240,15 +244,15 @@ Android 與 iOS 之間，將原生程式庫新增至包裝函式解決方案的�
 2. 選擇**libMathFuncs.a**程式庫 (從程式庫/ios 底下**PrecompiledLibs**目錄) 然後按一下 **開啟** 
 3. **CONTROL + 按一下**上**libMathFuncs**檔案 (內**原生參考**資料夾，然後選擇**屬性**功能表選項  
 4. 設定**原生參考**屬性，如此就會檢查 （顯示勾號圖示） 中**屬性**板：
-        
+
     - 強制載入
-    - 是 c + +
-    - 智慧連結 
+    - 是C++
+    - 智慧連結
 
     > [!NOTE]
-    > 使用繫結程式庫專案類型，連同[原生參考](https://docs.microsoft.com/xamarin/cross-platform/macios/native-references)內嵌靜態程式庫，並讓它能夠自動使用 Xamarin.iOS 應用程式參考它 （即使它是透過 NuGet 套件包含在內） 的連結。 
+    > 使用繫結程式庫專案類型，連同[原生參考](https://docs.microsoft.com/xamarin/cross-platform/macios/native-references)內嵌靜態程式庫，並讓它能夠自動使用 Xamarin.iOS 應用程式參考它 （即使它是透過 NuGet 套件包含在內） 的連結。
 
-5. 開啟**ApiDefinition.cs**，刪除樣板化標記為註解的程式碼 (並且只留下**MathFuncs**命名空間)，然後執行相同的步驟，如**Structs.cs** 
+5. 開啟**ApiDefinition.cs**，刪除樣板化標記為註解的程式碼 (並且只留下`MathFuncs`命名空間)，然後執行相同的步驟，如**Structs.cs** 
 
     > [!NOTE]
     > 繫結程式庫專案需要這些檔案 (使用*ObjCBindingApiDefinition*並*ObjCBindingCoreSource*建置動作) 才能建置。 不過，我們會撰寫程式碼，呼叫我們的原生程式庫，這些檔案，您可以使用標準的 P/Invoke 的 Android 和 iOS 的程式庫目標之間共用的方式之外。
@@ -388,11 +392,14 @@ Android 與 iOS 之間，將原生程式庫新增至包裝函式解決方案的�
     ```
 
 #### <a name="completing-the-mymathfuncssafehandle-class"></a>完成 MyMathFuncsSafeHandle 類別
+
 1. 開啟**MyMathFuncsSafeHandle**類別中，瀏覽至預留位置**TODO**註解內**ReleaseHandle**方法：
+
     ```csharp
     // TODO: Release the handle here
     ```
-2. 取代**TODO**列：
+
+1. 取代**TODO**列：
 
     ```csharp
     MyMathFuncsWrapper.DisposeMyMathFuncs(this);
@@ -400,7 +407,7 @@ Android 與 iOS 之間，將原生程式庫新增至包裝函式解決方案的�
 
 #### <a name="writing-the-mymathfuncs-class"></a>撰寫 MyMathFuncs 類別
 
-現在，包裝函式已完成，建立 MyMathFuncs 類別會管理 unmanaged c + + MyMathFuncs 物件的參考。  
+現在，包裝函式已完成，建立會管理 unmanaged 參考 MyMathFuncs 類別C++MyMathFuncs 物件。  
 
 1. **CONTROL + 按一下**上**MathFuncs.Shared**專案，然後選擇**新增檔案...** 從**新增**功能表。 
 2. 選擇**空類別**從**新的檔案**視窗中，其命名為**MyMathFuncs** ，然後按一下 **新增**
@@ -468,13 +475,12 @@ Android 與 iOS 之間，將原生程式庫新增至包裝函式解決方案的�
 
 #### <a name="creating-the-nuspec"></a>建立 nuspec
 
-解決方案需要有封裝，並透過 NuGet 散發程式庫，才能 **nuspec**檔案。 這會識別其中一個產生的組件會包含每個支援平台。
+解決方案需要有封裝，並透過 NuGet 散發程式庫，才能**nuspec**檔案。 這會識別其中一個產生的組件會包含每個支援平台。
 
-1.  **CONTROL + 按一下** 方案 **MathFuncs**，然後選擇 **新增方案資料夾**從 **新增** 功能表將它命名為 **SolutionItems**。
-2.  **CONTROL + 按一下** 上 **SolutionItems** 資料夾，然後選擇  **新檔...** 從 **新增** 功能表。
-3.  選擇 **空白的 XML 檔案** 從 **新檔案** 視窗中，其命名為 **MathFuncs.nuspec** ，然後按一下 **新**。
-4.  更新 **MathFuncs.nuspec** 使用基本封裝的中繼資料顯示給**NuGet**取用者。 例如: 
-
+1. **CONTROL + 按一下**方案**MathFuncs**，然後選擇**新增方案資料夾**從**新增**功能表將它命名為**SolutionItems**.
+2. **CONTROL + 按一下**上**SolutionItems**資料夾，然後選擇 **新檔...** 從**新增**功能表。
+3. 選擇**空白的 XML 檔案**從**新的檔案**視窗中，其命名為**MathFuncs.nuspec**然後按一下**新增**。
+4. 更新**MathFuncs.nuspec**要顯示的基本封裝中繼資料**NuGet**取用者。 例如: 
 
     ```xml
     <?xml version="1.0"?>
@@ -491,7 +497,7 @@ Android 與 iOS 之間，將原生程式庫新增至包裝函式解決方案的�
     ```
 
     > [!NOTE]
-    >  請參閱[nuspec 參考](https://docs.microsoft.com/nuget/reference/nuspec)文件，如需使用此資訊清單結構描述的詳細資料。
+    > 請參閱[nuspec 參考](https://docs.microsoft.com/nuget/reference/nuspec)文件，如需使用此資訊清單結構描述的詳細資料。
 
 5. 新增`<files>`項目做為子系`<package>`項目 (正下方`<metadata>`)，識別每個檔案有不同`<file>`項目：
 
@@ -500,7 +506,7 @@ Android 與 iOS 之間，將原生程式庫新增至包裝函式解決方案的�
 
         <!-- Android -->
 
-        <!-- iOS -->        
+        <!-- iOS -->
 
         <!-- netstandard2.0 -->
 
@@ -545,7 +551,7 @@ Android 與 iOS 之間，將原生程式庫新增至包裝函式解決方案的�
         <copyright>Copyright 2018</copyright>
     </metadata>
     <files>
-    
+
         <!-- Android -->
         <file src="MathFuncs.Android/bin/Release/MathFuncs.dll" target="lib/MonoAndroid81/MathFuncs.dll" />
         <file src="MathFuncs.Android/bin/Release/MathFuncs.pdb" target="lib/MonoAndroid81/MathFuncs.pdb" />
@@ -563,9 +569,9 @@ Android 與 iOS 之間，將原生程式庫新增至包裝函式解決方案的�
     ```
 
     > [!NOTE]
-    > 此檔案會指定組件的輸出路徑，從 **Release** 建置，因此請務必建立使用該設定的解決方案。
+    > 此檔案會指定組件的輸出路徑，從**發行**建置，因此請務必建立使用該設定的解決方案。
 
-此時，解決方案包含 3 個.NET 組件和支援 **nuspec** 資訊清單。
+此時，解決方案包含 3 個.NET 組件和支援**nuspec**資訊清單。
 
 ## <a name="distributing-the-net-wrapper-with-nuget"></a>散發與 NuGet 的.NET 包裝函式
 
@@ -575,33 +581,34 @@ Android 與 iOS 之間，將原生程式庫新增至包裝函式解決方案的�
 
 NuGet 摘要的最簡單形式是本機目錄：
 
-1.  在  **Finder**，瀏覽至方便存取的目錄。 例如， **/使用者**。
-2.  選擇 **新的資料夾** 從 **檔案** 功能表上，提供有意義的名稱，例如 **本機 nuget 摘要**。
+1. 在  **Finder**，瀏覽至方便存取的目錄。 例如， **/使用者**。
+2. 選擇**新的資料夾**從**檔案**功能表上，提供有意義的名稱，例如**本機 nuget 摘要**。
 
 ### <a name="creating-the-package"></a>建立封裝
 
-1.  設定 **組建組態** 要 **發行**，並執行組建，使用 **COMMAND + B**。
-2.  開啟 **終端機**並將目錄變更為包含的資料夾 **nuspec** 檔案。
-3.  在  **終端機**，執行 **nuget 套件** 命令，並指定 **nuspec** 檔案， **版本**  (例如，1.0.0)，而 **OutputDirectory** 使用中建立的資料夾 [上一個步驟](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed)，也就是 **本機 nuget 摘要**。 例如: 
+1. 設定**組建組態**要**發行**，並執行組建，使用**COMMAND + B**。
+2. 開啟**終端機**並將目錄變更為包含的資料夾**nuspec**檔案。
+3. 在 **終端機**，執行**nuget 套件**命令，並指定**nuspec**檔案，**版本**(例如，1.0.0)，和**OutputDirectory**使用中建立的資料夾[上一個步驟](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed)，也就是**本機 nuget 摘要**。 例如: 
 
     ```bash
     nuget pack MathFuncs.nuspec -Version 1.0.0 -OutputDirectory ~/local-nuget-feed
     ```
 
-4. **確認**所 **MathFuncs.1.0.0.nupkg** 內未曾建立 **本機 nuget 摘要**目錄。
+4. **確認**所**MathFuncs.1.0.0.nupkg**內未曾建立**本機 nuget 摘要**目錄。
 
 ### <a name="optional-using-a-private-nuget-feed-with-azure-devops"></a>[選用]使用私用 NuGet 摘要，含有 Azure DevOps
 
-更穩固的技術所述 [開始使用 Azure DevOps 中的 NuGet 套件](https://docs.microsoft.com/azure/devops/artifacts/get-started-nuget?view=vsts&tabs=new-nav#publish-a-package)，但會示範如何建立私用摘要和推送套件 （在上一個步驟中產生） 到該摘要。
+更穩固的技術所述[開始使用 Azure DevOps 中的 NuGet 套件](https://docs.microsoft.com/azure/devops/artifacts/get-started-nuget?view=vsts&tabs=new-nav#publish-a-package)，但會示範如何建立私用摘要和推送套件 （在上一個步驟中產生） 到該摘要。
 
-它非常適合用來完全自動化，並不會使用此工作流程很 [Azure 管線](https://docs.microsoft.com/azure/devops/pipelines/index?view=vsts)。 如需詳細資訊，請參閱 <<c0> [ 開始使用 Azure 管線](https://docs.microsoft.com/azure/devops/pipelines/get-started/index?view=vsts)。
+它非常適合用來完全自動化，並不會使用此工作流程很[Azure 管線](https://docs.microsoft.com/azure/devops/pipelines/index?view=vsts)。 如需詳細資訊，請參閱 <<c0> [ 開始使用 Azure 管線](https://docs.microsoft.com/azure/devops/pipelines/get-started/index?view=vsts)。
 
 ## <a name="consuming-the-net-wrapper-from-a-xamarinforms-app"></a>使用 Xamarin.Forms 應用程式從.NET 包裝函式
-若要完成本逐步解說，建立 **Xamarin.Forms** 只取用該封裝的應用程式發行至本機 **NuGet** 摘要。
+
+若要完成本逐步解說，建立**Xamarin.Forms**只取用該封裝的應用程式發行至本機**NuGet**摘要。
 
 ### <a name="creating-the-xamarinforms-project"></a>建立**Xamarin.Forms**專案
 
-1. 開啟的新執行個體 **Visual Studio for Mac**。 這可以從 **終端機**:
+1. 開啟的新執行個體**Visual Studio for Mac**。 這可以從**終端機**:
 
     ```bash
     open -n -a "Visual Studio"
@@ -639,9 +646,9 @@ NuGet 摘要的最簡單形式是本機目錄：
     - **位置：** 指定**本機 nuget 摘要**資料夾中建立[前一步驟](#preparing-a-local-packages-directory)。
 
     > [!NOTE]
-    > 在此情況下則不需要指定 **使用者名稱** 並 **密碼**。 
+    > 在此情況下則不需要指定**使用者名稱**並**密碼**。 
 
-4. 按一下 [確定 **Deploying Office Solutions**]。
+4. 按一下 [確定] 。
 
 ### <a name="referencing-the-package"></a>參考套件
 
@@ -649,15 +656,15 @@ NuGet 摘要的最簡單形式是本機目錄：
 
 1. **CONTROL + 按一下**專案，然後選擇 **新增 NuGet 套件...** 從**新增**功能表。
 2. 搜尋**MathFuncs**。 
-3. 確認**版本**的封裝**1.0.0**和其他詳細資料會出現如預期般這類**標題**並**描述**，也就是*MathFuncs*並*範例 c + + 包裝函式程式庫*。 
+3. 確認**版本**的封裝**1.0.0**和其他詳細資料會出現如預期般這類**標題**並**描述**，也就是*MathFuncs*並*範例C++包裝函式程式庫*。 
 4. 選取  **MathFuncs**套件，然後按一下 **加入封裝**。
 
 ### <a name="using-the-library-functions"></a>使用程式庫函式
 
-現在，使用的參考 **MathFuncs** 封裝中的每個專案，而函式可用於C#程式碼。
+現在，使用的參考**MathFuncs**封裝中的每個專案，而函式可用於C#程式碼。
 
-1.  開啟 **MainPage.xaml.cs** 內在 **MathFuncsApp** 常見 **Xamarin.Forms**專案 (參考這兩個 **MathFuncsApp.Android** 並 **MathFuncsApp.iOS**)。
-2.  新增 **使用** 陳述式 **System.Diagnostics** 並 **MathFuncs** 在檔案頂端：
+1. 開啟**MainPage.xaml.cs**內在**MathFuncsApp**常見**Xamarin.Forms**專案 (兩者都參考**MathFuncsApp.Android**並**MathFuncsApp.iOS**)。
+2. 新增**使用**陳述式**System.Diagnostics**並**MathFuncs**在檔案頂端：
 
     ```csharp
     using System.Diagnostics;
@@ -752,7 +759,7 @@ NuGet 摘要的最簡單形式是本機目錄：
 
 ## <a name="summary"></a>總結
 
-這篇文章說明如何建立 Xamarin.Forms 應用程式會透過一般.NET 包裝函式透過 NuGet 套件散發的原生程式庫。 在本逐步解說所提供的範例是刻意要更輕鬆地示範的方法非常簡單。 實際的應用程式必須處理的例外狀況處理等的複雜性、 回呼、 封送處理的更複雜的型別，和其他相依程式庫連結。 一項重要考量是用 c + + 程式碼的發展是協調，並與包裝函式和用戶端應用程式進行同步處理的程序。 此程序根據一個或多個這些疑慮是單一小組的責任而有所不同。 無論如何，自動化是實質的好處。 以下是一些資源，提供進一步閱讀有關的重要概念，以及相關的下載項目。 
+這篇文章說明如何建立 Xamarin.Forms 應用程式會透過一般.NET 包裝函式透過 NuGet 套件散發的原生程式庫。 在本逐步解說所提供的範例是刻意要更輕鬆地示範的方法非常簡單。 實際的應用程式必須處理的例外狀況處理等的複雜性、 回呼、 封送處理的更複雜的型別，和其他相依程式庫連結。 一項重要考量是由此程序的演進C++程式碼的協調，且與包裝函式和用戶端應用程式進行同步處理。 此程序根據一個或多個這些疑慮是單一小組的責任而有所不同。 無論如何，自動化是實質的好處。 以下是一些資源，提供進一步閱讀有關的重要概念，以及相關的下載項目。 
 
 ### <a name="downloads"></a>下載
 
@@ -761,8 +768,8 @@ NuGet 摘要的最簡單形式是本機目錄：
 
 ### <a name="examples"></a>範例
 
-- [Hyperlapse 使用 c + + 跨平台行動開發](https://blogs.msdn.microsoft.com/vcblog/2015/06/26/hyperlapse-cross-platform-mobile-development-with-visual-c-and-xamarin/)
-- [Microsoft Pix （c + + 和 Xamarin）](https://blog.xamarin.com/microsoft-research-ships-intelligent-apps-with-the-power-of-c-and-ai/)
+- [使用 Hyperlapse 跨平台行動開發C++](https://blogs.msdn.microsoft.com/vcblog/2015/06/26/hyperlapse-cross-platform-mobile-development-with-visual-c-and-xamarin/)
+- [Microsoft Pix (C++和 Xamarin)](https://blog.xamarin.com/microsoft-research-ships-intelligent-apps-with-the-power-of-c-and-ai/)
 - [Mono San Angeles 範例的連接埠](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)
 
 ### <a name="further-reading"></a>進一步閱讀

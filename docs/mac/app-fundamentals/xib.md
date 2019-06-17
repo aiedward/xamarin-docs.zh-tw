@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 45eeee745b133646aef0f775bc879fa6a5d867c7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61062641"
 ---
 # <a name="xib-files-in-xamarinmac"></a>xamarin.mac.xib 檔案
 
@@ -206,7 +206,7 @@ namespace MacXib
 1. 在 Xcode 中，從 [程式庫] 區段拖曳 [按鈕]：
 
     [![從程式庫選取按鈕](xib-images/xcode07.png "選取按鈕，從程式庫")](xib-images/xcode07-large.png#lightbox)
-2. 該按鈕拖曳至** 視窗**中**介面編輯器**:
+2. 該按鈕拖曳至 **視窗** 中 **介面編輯器**:
 
     [![將按鈕加入至視窗](xib-images/xcode08.png "將按鈕加入至視窗")](xib-images/xcode08-large.png#lightbox)
 3. 按一下 [屬性偵測器] 中的 [標題] 屬性，將按鈕的標題變更為 `Click Me`：
@@ -575,7 +575,7 @@ private void DisplaySubview(NSViewController controller, SubviewType type) {
 DisplaySubview(new SubviewTableController(), SubviewType.TableView);
 ```
 
-這會建立新檢視的 [檢視控制器]，顯示的新執行個體、 設定它的型別 （如加入至專案的列舉所指定），並使用`DisplaySubview`方法新增至視窗的類別，以實際顯示的檢視。 例如: 
+這會建立新檢視的 [檢視控制器]，顯示的新執行個體、 設定它的型別 （如加入至專案的列舉所指定），並使用`DisplaySubview`方法新增至視窗的類別，以實際顯示的檢視。 例如：
 
 [![執行範例應用程式](xib-images/view04.png "執行範例應用程式")](xib-images/view04-large.png#lightbox)
 

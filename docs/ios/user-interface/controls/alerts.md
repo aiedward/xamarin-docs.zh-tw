@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 6071381daa7eedf4fa4b076ea60f2748865cf002
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 16d3dfaa0169e3a02fcdee0318dc150994c7e59b
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109636"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827883"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>在 Xamarin.iOS 中顯示的警示
 
@@ -111,5 +111,5 @@ actionSheetButton.TouchUpInside += ((sender, e) => {
 
 ## <a name="related-links"></a>相關連結
 
-- [控制項 （範例）](https://developer.xamarin.com/samples/Controls/)
+- [控制項 （範例）](https://developer.xamarin.com/samples/monotouch/Controls/)
 - [警示控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

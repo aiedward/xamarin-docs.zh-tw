@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
 ms.openlocfilehash: 8cf3193a4fcfd716c05e45900dd1fabf3e1556b7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036279"
 ---
 # <a name="ios-advanced-concepts-and-internals"></a>iOS 進階概念與內部項目
 

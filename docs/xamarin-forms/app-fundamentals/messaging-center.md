@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: ecd3fe7256eeaa51baf1bc2c367ff7560db51b0c
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: b6e68f6b99803edd8d50a172d598a3410aa1bbf4
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055811"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740755"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/UsingMessagingCenter)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/UsingMessagingCenter)
 
 _Xamarin.Forms 包含簡易傳訊服務，可傳送與接收訊息。_
 
@@ -24,7 +24,7 @@ _Xamarin.Forms 包含簡易傳訊服務，可傳送與接收訊息。_
 
 ## <a name="overview"></a>總覽
 
-除了簡易訊息合約，Xamarin.Forms `MessagingCenter` 也可讓檢視模型和其他元件在不知道彼此的情況下互相通訊。
+除了簡易訊息合約，Xamarin.Forms `MessagingCenter` 也可讓檢視模型和其他元件在完全不知道彼此的情況下通訊。
 
 <a name="How_the_MessagingCenter_Works" />
 
@@ -35,10 +35,9 @@ _Xamarin.Forms 包含簡易傳訊服務，可傳送與接收訊息。_
 -  **Subscribe** - 接聽具有特定簽章的訊息，並在收到訊息後執行某些動作。 多位訂閱者可以接聽相同的訊息。
 -  **Send** - 發佈訊息讓接聽者採取動作。 若沒有任何接聽者訂閱訊息，則會忽略該訊息。
 
+`MessagingCenter` 是靜態類別，具有 `Subscribe` 和 `Send` 方法，他們會用於整個解決方案。
 
-`MessagingService` 是靜態類別，具有 `Subscribe` 和 `Send` 方法，他們會用於整個解決方案。
-
-訊息有 `message` 參數字串，用來為訊息「定址」。 `Subscribe` 與 `Send` 方法會使用泛型參數進一步控制訊息的傳遞方式，`message` 文字相同但泛型型別引數不同的兩則訊息並不會傳遞給同一位訂閱者。
+訊息有 `message` 參數字串，用來為訊息「定址」  。 `Subscribe` 與 `Send` 方法會使用泛型參數進一步控制訊息的傳遞方式，`message` 文字相同但泛型型別引數不同的兩則訊息並不會傳遞給同一位訂閱者。
 
 `MessagingCenter` 的 API 很簡單：
 
@@ -57,9 +56,11 @@ _Xamarin.Forms 包含簡易傳訊服務，可傳送與接收訊息。_
 
 傳送訊息的原因可能是使用者互動 (例如按一下按鈕)、系統事件 (例如變更狀態的控制項) 或一些其他事件 (例如非同步下載完成)。 訂閱者可能會接聽，以變更使用者介面的外觀、儲存資料或觸發一些其他作業。
 
+如需如何使用 `MessagingCenter` 類別的詳細資訊，請參閱 [Communicating Between Loosely Coupled Components](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md) (在鬆散結合的元件間通訊)。
+
 ### <a name="simple-string-message"></a>簡易字串訊息
 
-最簡易的訊息就是只在 `message` 參數中包含字串。 「接聽」簡易字串訊息的 `Subscribe` 方法如下所示，請注意指定傳送者的泛型型別需為 `MainPage` 類別。 解決方案中的所有類別都可使用此語法訂閱訊息：
+最簡易的訊息就是只在 `message` 參數中包含字串。 「接聽」  簡易字串訊息的 `Subscribe` 方法如下所示，請注意指定傳送者的泛型型別需為 `MainPage` 類別。 解決方案中的所有類別都可使用此語法訂閱訊息：
 
 ```csharp
 MessagingCenter.Subscribe<MainPage> (this, "Hi", (sender) => {
@@ -67,13 +68,13 @@ MessagingCenter.Subscribe<MainPage> (this, "Hi", (sender) => {
 });
 ```
 
-在 `MainPage` 類別中，下列程式碼會「傳送」訊息。 `this` 參數是 `MainPage` 的執行個體。
+在 `MainPage` 類別中，下列程式碼會「傳送」  訊息。 `this` 參數是 `MainPage` 的執行個體。
 
 ```csharp
 MessagingCenter.Send<MainPage> (this, "Hi");
 ```
 
-字串不會變更，其表示「訊息類別」，並用來決定要通知的訂閱者。 這類訊息用來指出發生了某些事件，例如「已完成上傳」，而不需深入資訊。
+字串不會變更，其表示「訊息類別」  ，並用來決定要通知的訂閱者。 這類訊息用來指出發生了某些事件，例如「已完成上傳」，而不需深入資訊。
 
 ### <a name="passing-an-argument"></a>傳遞引數
 
@@ -112,5 +113,6 @@ MessagingCenter 是降低結合程度 (特別是檢視模型之間) 的簡易方
 
 ## <a name="related-links"></a>相關連結
 
-- [MessagingCenterSample](https://developer.xamarin.com/samples/UsingMessagingCenter)
+- [MessagingCenterSample](https://developer.xamarin.com/samples/xamarin-forms/UsingMessagingCenter)
 - [Xamarin.Forms 範例](https://github.com/xamarin/xamarin-forms-samples)
+- [在相依性低的元件之間通訊](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md)

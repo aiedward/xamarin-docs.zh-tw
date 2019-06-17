@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 497ce4f0ecbd5e4d49d2ff88855ff68dd9a63e43
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6d2aaf12bd6c45f6268cf87a77d2ee03a9d7a888
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61224028"
 ---
 # <a name="watchos-3-troubleshooting"></a>watchOS 3 疑難排解
 
@@ -84,7 +84,7 @@ WatchOS 3，截至`HTTPBodyStream`的屬性`NSMutableURLRequest`類別必須設�
 - **[3:-9824]-1200** -http 載入失敗。
 - **-1200**  -  `NSURLConnection`完成時發生錯誤。
 
-WatchOS 3，截至 SSL/TLS 連線安全性已嚴格強制執行由 Apple。 受影響的服務和應用程式應該已更新 web 伺服器，以使用最新的 TLS 通訊協定版本。 請參閱[NSURLConnection](#NSURLConnection)上方如需詳細資訊。
+WatchOS 3，截至 SSL/TLS 連線安全性已嚴格強制執行由 Apple。 受影響的服務和應用程式應該已更新 web 伺服器，以使用最新的 TLS 通訊協定版本。 請參閱[NSURLConnection](#nsurlconnection)上方如需詳細資訊。
 
 ## <a name="snapshots"></a>快照
 

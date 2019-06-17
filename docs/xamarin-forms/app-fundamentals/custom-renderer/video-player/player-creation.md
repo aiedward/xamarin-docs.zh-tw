@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 69e5d74bf9beea02ca8accf6e1f8eb1ccaa5c9fa
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 21a707ebd189e9cbfa6735b233a6c0af65138e0c
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061955"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926635"
 ---
 # <a name="creating-the-platform-video-players"></a>建立平台視訊播放程式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
 
-[**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) 解決方案包含所有實作 Xamarin.Forms 視訊播放程式的程式碼。 它也包含一系列頁面，示範如何在應用程式中使用視訊播放程式。 所有 `VideoPlayer` 及其平台轉譯器都位於名為 `FormsVideoLibrary` 的專案資料夾內，且使用 `FormsVideoLibrary` 命名空間。 這應該可讓您輕鬆地將檔案複製到您的應用程式並參考類別。
+[**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) 解決方案包含所有實作 Xamarin.Forms 視訊播放程式的程式碼。 它也包含一系列頁面，示範如何在應用程式中使用視訊播放程式。 所有 `VideoPlayer` 及其平台轉譯器都位於名為 `FormsVideoLibrary` 的專案資料夾內，且使用 `FormsVideoLibrary` 命名空間。 這應該可讓您輕鬆地將檔案複製到您的應用程式並參考類別。
 
 ## <a name="the-video-player"></a>視訊播放程式
 
@@ -43,7 +43,7 @@ namespace FormsVideoLibrary
 
 ### <a name="the-ios-player-view-controller"></a>iOS 播放程式檢視控制器
 
-在 iOS 中實作視訊播放程式會涉及數個類別。 應用程式會先建立 [`AVPlayerViewController`](https://developer.xamarin.com/api/type/AVKit.AVPlayerViewController/)，然後將 [`Player`](https://developer.xamarin.com/api/property/AVKit.AVPlayerViewController.Player/) 屬性設為類型 [`AVPlayer`](https://developer.xamarin.com/api/type/AVFoundation.AVPlayer/) 的物件。 將視訊來源指派給播放程式時，還需要其他類別。
+在 iOS 中實作視訊播放程式會涉及數個類別。 應用程式會先建立 [`AVPlayerViewController`](xref:AVKit.AVPlayerViewController)，然後將 [`Player`](xref:AVKit.AVPlayerViewController.Player*) 屬性設為類型 [`AVPlayer`](xref:AVFoundation.AVPlayer) 的物件。 將視訊來源指派給播放程式時，還需要其他類別。
 
 與所有轉譯器相似，iOS [`VideoPlayerRenderer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/VideoPlayerRenderer.cs) 包含 `ExportRenderer` 屬性，可識別 `VideoPlayer` 檢視及轉譯器：
 
@@ -220,7 +220,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="the-uwp-media-element"></a>UWP 媒體項目
 
-在通用 Windows 平台 (UWP) 中，最常見的視訊播放程式是 [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/)。 `MediaElement` 的文件會指出若只需要支援 Windows 10 組建 1607 之後的版本，則應改為使用 [`MediaPlayerElement`](/uwp/api/windows.ui.xaml.controls.mediaplayerelement/)。
+在通用 Windows 平台 (UWP) 中，最常見的視訊播放程式是 [`MediaElement`](xref:Windows.UI.Xaml.Controls.MediaElement)。 `MediaElement` 的文件會指出若只需要支援 Windows 10 組建 1607 之後的版本，則應改為使用 [`MediaPlayerElement`](xref:Windows.UI.Xaml.Controls.MediaPlayerElement)。
 
 `OnElementChanged` 覆寫需要建立 `MediaElement`、設定幾個事件處理常式，並將 `MediaElement` 物件傳遞給 `SetNativeControl`：
 
@@ -318,7 +318,7 @@ namespace FormsVideoLibrary
 
 ### <a name="ios-playback-controls"></a>iOS 播放控制項
 
-控管傳輸控制項顯示的 iOS `AVPlayerViewController` 屬性為 [`ShowsPlaybackControls`](https://developer.xamarin.com/api/property/AVKit.AVPlayerViewController.ShowsPlaybackControls/)。 以下是該屬性在 iOS `VideoViewRenderer` 中的設定方式：
+控管傳輸控制項顯示的 iOS `AVPlayerViewController` 屬性為 [`ShowsPlaybackControls`](xref:AVKit.AVPlayerViewController.ShowsPlaybackControls*)。 以下是該屬性在 iOS `VideoViewRenderer` 中的設定方式：
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -424,7 +424,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="the-uwp-transport-controls-property"></a>UWP 傳輸控制項屬性
 
-UWP `MediaElement` 會定義名為 [`AreTransportControlsEnabled`](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_AreTransportControlsEnabled) 的屬性，使該屬性從相同名稱的 `VideoPlayer` 屬性進行設定：
+UWP `MediaElement` 會定義名為 [`AreTransportControlsEnabled`](xref:Windows.UI.Xaml.Controls.MediaElement.AreTransportControlsEnabled*) 的屬性，使該屬性從相同名稱的 `VideoPlayer` 屬性進行設定：
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -467,4 +467,4 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>相關連結
 
-- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) (視訊播放程式示範 (範例))
+- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) (視訊播放程式示範 (範例))

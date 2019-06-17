@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
 ms.openlocfilehash: 362041efc5a19dfb70430054f3e4636d4fdfbd7e
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672740"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61021690"
 ---
 <a name="compatibility"></a>
 
@@ -84,7 +84,7 @@ Android 支援通知的中繼資料，讓通知可以排序，並以智慧方式
 
 -   **類別目錄**&ndash;會通知系統如何處理在各種情況下，例如當裝置處於通知 *「 請勿打擾 」* 模式。
 
-**注意：****可視性**並**分類**在 Android 5.0 和無法使用在舊版的 Android 中推出。 從 Android 8.0[通知通道](#notif-chan)用來控制向使用者通知的呈現方式。
+**注意：** **可視性** 並 **分類** 在 Android 5.0 和無法使用在舊版的 Android 中推出。 從 Android 8.0[通知通道](#notif-chan)用來控制向使用者通知的呈現方式。
 
 
 ### <a name="expanded-layouts"></a>展開的版面配置
@@ -462,7 +462,7 @@ Android 的通知通常會顯示原始的應用程式圖示 （左邊的通知�
 
 請注意，通知會以大型圖示格式呈現，小型的應用程式圖示會顯示為右上角的大圖示徽章。
 
-為大型圖示通知中使用的映像，您可以呼叫通知產生器[SetLargeIcon](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetLargeIcon/)方法並傳入之影像的點陣圖。 不同於`SetSmallIcon`，`SetLargeIcon`只接受一個點陣圖。 若要將影像檔轉換成點陣圖，您使用[BitmapFactory](https://developer.xamarin.com/api/type/Android.Graphics.BitmapFactory/)類別。 例如: 
+為大型圖示通知中使用的映像，您可以呼叫通知產生器[SetLargeIcon](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetLargeIcon/)方法並傳入之影像的點陣圖。 不同於`SetSmallIcon`，`SetLargeIcon`只接受一個點陣圖。 若要將影像檔轉換成點陣圖，您使用[BitmapFactory](https://developer.xamarin.com/api/type/Android.Graphics.BitmapFactory/)類別。 例如：
 
 ```csharp
 builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable.monkey_icon));
@@ -521,7 +521,7 @@ builder.SetStyle (textStyle);
 
 請注意，當以壓縮格式會顯示通知，它會顯示通知文字 (傳遞至通知產生器 」 的文字`SetContentText`方法，如稍早所示)。 不過，當通知展開以顯示影像時，它就會顯示在影像上方的摘要文字。
 
-若要建立*映像*通知，您具現化`NotificationCompat.Builder`物件，然後建立並插入[BigPictureStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigPictureStyle/)物件插入`NotificationCompat.Builder`物件。 例如: 
+若要建立*映像*通知，您具現化`NotificationCompat.Builder`物件，然後建立並插入[BigPictureStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigPictureStyle/)物件插入`NotificationCompat.Builder`物件。 例如：
 
 ```csharp
 // Instantiate the Image (Big Picture) style:

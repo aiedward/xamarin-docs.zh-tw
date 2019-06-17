@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/21/2018
 ms.openlocfilehash: 699fb3cc3a5730e8ab2c677feb7cdfbdcf106aeb
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61308251"
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>偵錯的模擬器上的 Android Wear
 

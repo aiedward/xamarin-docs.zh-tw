@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2017
 ms.openlocfilehash: 9bc320273df192f9daf2520f451601335731e7b0
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61189107"
 ---
 # <a name="the-scale-transform"></a>縮放轉換
 
@@ -102,7 +102,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-您可能會想知道： 縮放比例如何影響從傳回的值`MeasureText`方法的`SKPaint`？ 答案是： 不完全。 `Scale` 是一種方法的`SKCanvas`。 它不會影響您做的任何項目`SKPaint`物件，直到您使用該物件來轉譯在畫布上的項目。
+您可能會好奇：縮放比例如何影響從傳回的值`MeasureText`方法的`SKPaint`？ 答案是：完全不用。 `Scale` 是一種方法的`SKCanvas`。 它不會影響您做的任何項目`SKPaint`物件，直到您使用該物件來轉譯在畫布上的項目。
 
 如您所見，所有項目後繪製`Scale`按比例呼叫增加：
 
@@ -251,7 +251,7 @@ using (SKPaint strokePaint = new SKPaint
 
 [![](scale-images/anisotropicscaling-small.png "非等向性調整頁面的三個螢幕擷取畫面")](scale-images/anisotropicscaling-large.png#lightbox "非等向性調整頁面的三個螢幕擷取畫面")
 
-另一種方式可以思考`Scale`並`Translate`呼叫是要判斷在反向序列的效果：`Translate`呼叫移位的路徑，讓它成為完整可見但導向畫布左上角。 `Scale`方法接著會該星號左上角相對較大。
+另一種方式可以思考`Scale`和`Translate`呼叫是要判斷在反向序列的效果：`Translate`呼叫移位的路徑，讓它成為完整可見但導向畫布左上角。 `Scale`方法接著會該星號左上角相對較大。
 
 事實上，它會出現星號是稍微大於畫布。 問題在於筆觸粗細。 `Bounds`屬性`SKPath`表示維度的座標編碼在路徑中，而這就是程式會使用調整其規模。 轉譯路徑時使用特定的筆劃的寬度，呈現的路徑。 大於畫布。
 

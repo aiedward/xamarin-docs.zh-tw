@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: c8d5c1394bee2ca2419904b077522fac9d03d825
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2c3bddc89348b46c9bba277580071cb8ac3d6943
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61434421"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>在 Xamarin.iOS 中實作 SiriKit
 
@@ -173,7 +173,7 @@ namespace MonkeyChat
     [![](implementing-sirikit-images/setup01.png "新增 com.apple.developer.siri 屬性")](implementing-sirikit-images/setup01.png#lightbox)
 4. 將變更儲存到檔案。
 5. 按兩下**專案檔**中**方案總管中**以開啟它進行編輯。
-6. 選取  **iOS 套件組合簽署**，並確定`Entitlements.plist`中選取檔案**自訂權利**欄位： 
+6. 選取 **iOS 套件組合簽署**，並確定`Entitlements.plist`中選取檔案**自訂權利**欄位： 
 
     [![](implementing-sirikit-images/setup02.png "選取 [自訂權利] 欄位中的 Entitlements.plist 檔案")](implementing-sirikit-images/setup02.png#lightbox)
 7. 按一下 [確定] 按鈕以儲存所做的變更。
@@ -211,14 +211,14 @@ namespace MonkeyChat
 
 1. 在網頁瀏覽器，瀏覽至[ https://developer.apple.com ](https://developer.apple.com)和登入您的帳戶。
 2. 按一下 **憑證**，**識別項**並**設定檔**。
-3. 選取 [**佈建設定檔**，然後選取**應用程式識別碼**，然後按一下**+** ] 按鈕。
+3. 選取 **佈建設定檔**，然後選取 **應用程式識別碼**，然後按一下 **+** 按鈕。
 4. 請輸入**名稱**新設定檔。
 5. 請輸入**套件組合識別碼**遵循 Apple 的命名建議。
 6. 向下捲動至**應用程式服務**區段中，選取**SiriKit**然後按一下**繼續**按鈕： 
 
     [![](implementing-sirikit-images/setup03.png "選取 SiriKit")](implementing-sirikit-images/setup03.png#lightbox)
 7. 確認所有設定，然後**送出**應用程式識別碼。
-8. 選取 **佈建設定檔** > **開發**，按一下  **+** 按鈕，選取**Apple ID**，然後按一下**繼續**。
+8. 選取 **佈建設定檔** > **開發**，按一下 **+** 按鈕，選取 **Apple ID**，然後按一下 **繼續**。
 9. 按一下 選取**所有**，然後按一下**繼續**。
 10. 按一下 **全選**再次強調，然後按一下**繼續**。
 11. 請輸入**設定檔名稱**使用 Apple 的命名建議，然後按一下**繼續**。
@@ -300,7 +300,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 
 ### <a name="localization-and-siri"></a>當地語系化和 Siri
 
-在 iOS 裝置，使用者可選取不同的 Siri 則系統預設值的語言。 當使用當地語系化的資料，應用程式必須使用`SiriLanguageCode`方法的`INPreferences`Siri 從取得語言的程式碼的類別。 例如: 
+在 iOS 裝置，使用者可選取不同的 Siri 則系統預設值的語言。 當使用當地語系化的資料，應用程式必須使用`SiriLanguageCode`方法的`INPreferences`Siri 從取得語言的程式碼的類別。 例如：
 
 ```csharp
 var language = INPreferences.SiriLanguageCode();
@@ -466,7 +466,7 @@ namespace MonkeyChat
 4. 依序展開`ParameterVocabularies`，按一下  **+** 按鈕，然後將**型別**至`Dictionary`:
 
     [![](implementing-sirikit-images/plist03.png "將類型設定為字典")](implementing-sirikit-images/plist03.png#lightbox)
-5. 按一下**+** 若要加入新的金鑰，請設定**名稱**來`ParameterNames`而**類型**到`Array`:
+5. 按一下 **+** 若要加入新的金鑰，請設定 **名稱** 來 `ParameterNames` 而 **類型** 到 `Array`:
 
     [![](implementing-sirikit-images/plist04.png "將名稱設為 ParameterNames 和陣列的型別")](implementing-sirikit-images/plist04.png#lightbox)
 6. 按一下  **+** 以新增新的金鑰，與**類型**的`String`和做為其中一個可用的參數名稱的值。 比方說， `INStartWorkoutIntent.workoutName`:
@@ -531,7 +531,7 @@ namespace MonkeyChat
 4. 依序展開`ParameterVocabularies`，按一下  **+** 按鈕，然後將**型別**至`Dictionary`:
 
     [![](implementing-sirikit-images/plist03w.png "將類型設定為字典")](implementing-sirikit-images/plist03w.png#lightbox)
-5. 按一下**+** 若要加入新的金鑰，請設定**名稱**來`ParameterNames`而**類型**到`Array`:
+5. 按一下 **+** 若要加入新的金鑰，請設定 **名稱** 來 `ParameterNames` 而 **類型** 到 `Array`:
 
     [![](implementing-sirikit-images/plist04w.png "將名稱設為 ParameterNames 和陣列的型別")](implementing-sirikit-images/plist04w.png#lightbox)
 6. 按一下  **+** 以新增新的金鑰，與**類型**的`String`和做為其中一個可用的參數名稱的值。 比方說， `INStartWorkoutIntent.workoutName`:
@@ -635,7 +635,7 @@ namespace MonkeyChat
     
 -----
 
-重複這些步驟的意圖延伸模組的數目 (根據[架構擴充功能的應用程式](#Architecting-the-App-for-Extensions)上一節) 會要求應用程式。
+重複這些步驟的意圖延伸模組的數目 (根據[架構擴充功能的應用程式](#architecting-the-app-for-extensions)上一節) 會要求應用程式。
 
 ### <a name="configuring-the-infoplist"></a>設定 Info.plist
 

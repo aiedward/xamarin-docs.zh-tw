@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: f1085044f2147bec0910a87f8a6174c4648ef9b8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61162162"
 ---
 # <a name="working-with-tvos-text-and-search-fields-in-xamarin"></a>使用 tvOS 文字和搜尋欄位，在 Xamarin 中
 
@@ -61,7 +61,7 @@ Apple 已使用的文字欄位的下列建議：
 
 如果目前的檢視中，有多個文字欄位**下一步**按鈕將會自動顯示若要將使用者帶到下一個文字欄位。 A**完成**按鈕會顯示最後一個文字欄位，將結束的文字項目，並返回前一個畫面中的使用者。 
 
-在任何時間，使用者也可以按** 功能表**Siri 遠端結束文字項目，並再次回到前一個畫面上的按鈕。
+在任何時間，使用者也可以按 **功能表** Siri 遠端結束文字項目，並再次回到前一個畫面上的按鈕。
 
 Apple 有螢幕小鍵盤來處理下列建議：
 

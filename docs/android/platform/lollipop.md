@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: d6173e1886eaf807decd960b07acc022bb17c04d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61177450"
 ---
 # <a name="lollipop-features"></a>棒棒糖符號功能
 
@@ -95,7 +95,7 @@ Android 5.0 會使用預設執行階段，而不是 Dalvik 新 Android 執行階
 
 -   **預先-(AOT) 編譯** &ndash; AOT 可以改善應用程式效能，藉由編譯應用程式程式碼之前先啟動應用程式。 安裝應用程式時，圖案會產生已編譯的應用程式可執行檔的目標裝置。
 
--   **改善記憶體回收 (GC)** &ndash;圖案中的 GC 增強功能也可以改善應用程式效能。 記憶體回收集合現在會使用一個 GC 暫停而非兩個，以及並行 GC 作業完成更 neodpověděl včas.。
+-   **改善記憶體回收 (GC)** &ndash;圖案中的 GC 增強功能也可以改善應用程式效能。 記憶體回收集合現在會使用一個 GC 暫停而非兩個，以及並行 GC 作業完成更 neodpověděl včas。
 
 -   **改善應用程式偵錯**&ndash;圖案提供更多診斷的詳細資訊，以協助分析例外狀況和當機報告。
 

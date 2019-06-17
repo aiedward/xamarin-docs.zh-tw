@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: 9551a3b8e093dbb49a55a3761543602c40e81023
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053571"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61158397"
 ---
 # <a name="the-skiasharp-linear-gradient"></a>SkiaSharp 線性漸層
 
@@ -27,7 +27,7 @@ ms.locfileid: "53053571"
 這些方法會傳回類型的物件[ `SKShader` ](xref:SkiaSharp.SKShader)設為[ `Shader` ](xref:SkiaSharp.SKPaint.Shader)屬性`SKPaint`。 如果`Shader`屬性為非 null，它會覆寫`Color`屬性。 任何描邊的一行或任何使用此填滿的區域`SKPaint`物件為基礎的漸層，而不是色彩的純色。
 
 > [!NOTE]
-> `Shader`屬性會被忽略，當您將包含`SKPaint`物件中`DrawBitmap`呼叫。 您可以使用`Color`屬性`SKPaint`若要設定顯示點陣圖的透明度層級 (文件中所述[顯示 SkiaSharp 點陣圖](../../bitmaps/displaying.md#displaying-in-pixel-dimensions))，但是您無法使用`Shader`顯示的屬性漸層的透明度與點陣圖。 其他技術可供顯示使用漸層停駐的投影片的點陣圖： 這些文章所述[SkiaSharp 循環的漸層](circular-gradients.md#radial-gradients-for-masking)並[SkiaSharp 複合 （compositing） 和 blend 模式](../blend-modes/porter-duff.md#gradient-transparency-and-transitions)。
+> `Shader`屬性會被忽略，當您將包含`SKPaint`物件中`DrawBitmap`呼叫。 您可以使用`Color`屬性`SKPaint`若要設定顯示點陣圖的透明度層級 (文件中所述[顯示 SkiaSharp 點陣圖](../../bitmaps/displaying.md#displaying-in-pixel-dimensions))，但是您無法使用`Shader`顯示的屬性漸層的透明度與點陣圖。 其他技術可供顯示使用漸層停駐的投影片的點陣圖：這些文章中所述[SkiaSharp 循環的漸層](circular-gradients.md#radial-gradients-for-masking)並[SkiaSharp 複合 （compositing） 和 blend 模式](../blend-modes/porter-duff.md#gradient-transparency-and-transitions)。
 
 ## <a name="corner-to-corner-gradients"></a>角-漸層
 
@@ -477,7 +477,7 @@ public class GradientAnimationPage : ContentPage
 
 `OnTimerTick`方法會計算`angle`以動畫顯示從 0 到 2 π 每隔 3 秒的值。 
 
-以下是一個來計算兩個漸層停駐點的方式。 `SKPoint`值並命名為`vector`計算圓形的半徑點延伸從畫布的正中央。 這個向量的方向根據角度的正弦和餘弦值。 然後會計算兩個相反的漸層停駐點： 一個點的計算方式是減去的向量從中心點，並加入到中心點的向量來計算其他點：
+以下是一個來計算兩個漸層停駐點的方式。 `SKPoint`值並命名為`vector`計算圓形的半徑點延伸從畫布的正中央。 這個向量的方向根據角度的正弦和餘弦值。 然後會計算兩個相反的漸層停駐點：一個點的計算方式是減去的向量從中心點，並加入到中心點的向量來計算其他點：
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -617,7 +617,7 @@ public class RainbowGradientPage : ContentPage
 }
 ```
 
-中的兩個漸層停駐點`CreateLinearGradient`方法會根據兩個定義這個路徑的點： 是接近左上角的兩個點。 第一個是在畫布的邊緣和第二個是在畫布左邊緣。 結果如下：
+中的兩個漸層停駐點`CreateLinearGradient`方法會根據兩個定義這個路徑的點：這兩個點都接近左上角。 第一個是在畫布的邊緣和第二個是在畫布左邊緣。 結果如下：
 
 [![Rainbow 漸層故障](linear-gradient-images/RainbowGradientFaulty.png "故障的 Rainbow 漸層")](linear-gradient-images/RainbowGradientFaulty-Large.png#lightbox)
 

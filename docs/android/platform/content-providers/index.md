@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
+ms.openlocfilehash: 60f9420fc630bcfc44a6b19356b2315ac8bcd523
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60951782"
 ---
-
 # <a name="intro-to-contentproviders"></a>ContentProviders 簡介
 
 _Android 作業系統使用內容提供者，以便存取共用的資料，例如媒體檔案，連絡人和行事曆資訊。本文介紹 ContentProvider 類別，並提供如何使用它的兩個範例。_

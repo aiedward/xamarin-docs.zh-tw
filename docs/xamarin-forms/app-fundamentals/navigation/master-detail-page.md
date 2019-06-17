@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 854b3fdbd34444cfb052d36287cf5cd47a36a2e0
-ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
+ms.openlocfilehash: c60eecd5ebd0f518514cd77d8dd963568d1a1d43
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666905"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970921"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms Master-Detail Page
 
@@ -111,7 +111,7 @@ public class MainPageCS : MasterDetailPage
              xmlns:local="using:MasterDetailPageNavigation"
              x:Class="MasterDetailPageNavigation.MasterPage"
              Padding="0,40,0,0"
-             Icon="hamburger.png"
+             IconImageSource="hamburger.png"
              Title="Personal Organiser">
     <StackLayout>
         <ListView x:Name="listView" x:FieldModifier="public">
@@ -145,7 +145,7 @@ public class MainPageCS : MasterDetailPage
 
 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 會指派給 [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) 屬性，以顯示每個 `MasterPageItem`。 `DataTemplate` 包含 [`ViewCell`](xref:Xamarin.Forms.ViewCell)，其包含 [`Image`](xref:Xamarin.Forms.Image) 和 [`Label`](xref:Xamarin.Forms.Label)。 針對每個 `MasterPageItem`，[`Image`](xref:Xamarin.Forms.Image) 會顯示 `IconSource` 屬性值，而 [`Label`](xref:Xamarin.Forms.Label) 顯示 `Title` 屬性值。
 
-頁面設定了 [`Title`](xref:Xamarin.Forms.Page.Title) 和 [`Icon`](xref:Xamarin.Forms.Page.Icon) 屬性。 圖示會出現在詳細資料頁面上，前提是詳細資料頁面有標題列。 這必須藉由將詳細資料頁面執行個體包裝在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 執行個體中來於 iOS 上啟用。
+頁面設定了 [`Title`](xref:Xamarin.Forms.Page.Title) 和 [`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource) 屬性。 圖示會出現在詳細資料頁面上，前提是詳細資料頁面有標題列。 這必須藉由將詳細資料頁面執行個體包裝在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 執行個體中來於 iOS 上啟用。
 
 > [!NOTE]
 > [`MasterDetailPage.Master`](xref:Xamarin.Forms.MasterDetailPage.Master) 頁面必須設定其 [`Title`](xref:Xamarin.Forms.Page.Title) 屬性，否則會發生例外狀況。
@@ -198,7 +198,7 @@ public class MasterPageCS : ContentPage
       SeparatorVisibility = SeparatorVisibility.None
     };
 
-    Icon = "hamburger.png";
+    IconImageSource = "hamburger.png";
     Title = "Personal Organiser";
     Content = new StackLayout
     {
@@ -239,7 +239,7 @@ public partial class MainPage : MasterDetailPage
 
 `OnItemSelected` 方法會執行下列動作：
 
-- 它會從 [`ListView`](xref:Xamarin.Forms.ListView) 執行個體擷取 [`SelectedItem`](xref:Xamarin.Forms.ListView.SelectedItem)，且在它不是 `null` 的前提下，將詳細資料頁面設定為 `MasterPageItem` 的 `TargetType` 屬性中，所儲存頁面類型的新執行個體。 頁面類型包裝在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 執行個體中，以確保透過 `MasterPage` 上 [`Icon`](xref:Xamarin.Forms.Page.Icon) 屬性參考的圖示，會顯示在 iOS 中的詳細資料頁面上。
+- 它會從 [`ListView`](xref:Xamarin.Forms.ListView) 執行個體擷取 [`SelectedItem`](xref:Xamarin.Forms.ListView.SelectedItem)，且在它不是 `null` 的前提下，將詳細資料頁面設定為 `MasterPageItem` 的 `TargetType` 屬性中，所儲存頁面類型的新執行個體。 頁面類型包裝在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 執行個體中，以確保透過 `MasterPage` 上 [`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource) 屬性參考的圖示，會顯示在 iOS 中的詳細資料頁面上。
 - [`ListView`](xref:Xamarin.Forms.ListView) 中的選取項目，設定為 `null` 以確保下次呈現 `MasterPage` 時不會選取任何 `ListView` 項目。
 - 詳細資料頁面會呈現給使用者，方法是將 [`MasterDetailPage.IsPresented`](xref:Xamarin.Forms.MasterDetailPage.IsPresented) 屬性設定為 `false`。 此屬性控制要顯示主版頁面還是詳細資料頁面。 如果要顯示主版頁面，它應該設定為 `true`，若要顯示詳細資料頁面，則設定為 `false`。
 

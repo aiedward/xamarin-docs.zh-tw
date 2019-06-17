@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: a63d0d4c90bff36e55d98b731217133fe5958c1f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: d8763c6fe8e330181c836bc8d10923ea676a07c1
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051467"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740939"
 ---
 # <a name="checking-device-orientation"></a>檢查裝置方向
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/UsingDependencyService)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
 
 本文會引導您使用 [`DependencyService`](xref:Xamarin.Forms.DependencyService)，使用每個平台上的原生 API，從共用程式碼檢查裝置方向。 本逐步解說是根據 Ali Özgür 的現有 `DeviceOrientation` 外掛程式。 請參閱 [GitHub 存放庫](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)以取得詳細資訊。
 
@@ -224,6 +224,6 @@ public MainPage ()
 
 ## <a name="related-links"></a>相關連結
 
-- [使用 DependencyService (範例)](https://developer.xamarin.com/samples/UsingDependencyService)
-- [Dependency Service (Samples)](https://developer.xamarin.com/samples/DependencyService/DependencyServiceSample/) (相依性服務 (範例))
+- [使用 DependencyService (範例)](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
+- [Dependency Service (Samples)](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/) (相依性服務 (範例))
 - [Xamarin.Forms 範例](https://github.com/xamarin/xamarin-forms-samples)

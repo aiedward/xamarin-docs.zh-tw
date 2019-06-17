@@ -6,13 +6,13 @@ ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/01/2018
-ms.openlocfilehash: 965f56f7996cc7cf8a06e4201cc4bcf2ea35fb71
-ms.sourcegitcommit: 93c45e456218746df4f4a03bbe93493da0a90153
+ms.date: 04/10/2019
+ms.openlocfilehash: fd67072953f0fc4e448fee7edeec84760ebbda9a
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55760715"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048329"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 標記延伸
 
@@ -27,6 +27,7 @@ XAML 標記延伸模組可協助增強的威力與彈性的 XAML，藉由將從�
 - [`x:Null`](#null) -將屬性設定為`null`值。
 - [`OnPlatform`](#onplatform) – 自訂每個平台為基礎的 UI 外觀。
 - [`OnIdiom`](#onidiom) – 自訂的裝置執行應用程式的慣用句為基礎的 UI 外觀。
+- [`DataTemplate`](#datatemplate-markup-extension) -將轉換成的型別[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)。
 
 其他的 XAML 標記延伸在過去已經支援其他 XAML 實作中，和 Xamarin.Forms 也支援。 這些是其他文章中更完整說明：
 
@@ -537,6 +538,25 @@ public partial class TypeDemoPage : ContentPage
 
 [![OnIdiom 示範](consuming-images/onidiomdemo-small.png "OnIdiom 示範")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom 示範")
 
+## <a name="datatemplate-markup-extension"></a>DataTemplate 標記延伸
+
+`DataTemplate`標記延伸可讓您轉換成類型[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)。 它受到`DataTemplateExtension`類別，定義`TypeName`型別的屬性`string`，也就是設定為型別名稱，以轉換成`DataTemplate`。 `TypeName`屬性是內容屬性`DataTemplateExtension`。 因此，對於 XAML 標記運算式以大括號表示，您可以排除`TypeName=`運算式的一部分。
+
+> [!NOTE]
+> XAML 剖析器允許`DataTemplateExtension`類別，以縮寫成`DataTemplate`。
+
+這個標記延伸的一般用法是在 Shell 應用程式中，如下列範例所示：
+
+```xaml
+<ShellContent Title="Monkeys"
+              Icon="monkey.png"
+              ContentTemplate="{DataTemplate views:MonkeysPage}" />
+```
+
+在此範例中，`MonkeysPage`會從轉換[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)來[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)，此值設定的值為`ShellContent.ContentTemplate`屬性。 這可確保`MonkeysPage`是只建立巡覽至頁面時，而不是在應用程式啟動。
+
+如需有關 Shell 應用程式的詳細資訊，請參閱[Xamarin.Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md)。
+
 ## <a name="define-your-own-markup-extensions"></a>定義您自己的標記延伸
 
 如果您遇到無法使用 Xamarin.Forms 中的 XAML 標記延伸模組的需求，您可以[建立您自己](creating.md)。
@@ -548,3 +568,4 @@ public partial class TypeDemoPage : ContentPage
 - [資源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [動態樣式](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+- [Xamarin.Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md)。

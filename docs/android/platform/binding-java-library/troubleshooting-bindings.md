@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: b0bb7cbb6160865af5b1e40d40c7b999a8bd5ebc
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60956517"
 ---
 # <a name="troubleshooting-bindings"></a>對繫結進行疑難排解
 
@@ -51,7 +51,7 @@ _本文摘要說明幾種常見的錯誤時產生繫結，以及可能的原因�
 
 - **類別具有模糊化的特性**&ndash;模糊化類別的特性包括：
 
-    - 類別名稱會包含**$**，也就是 **$.class**
+    - 類別名稱會包含 **$** ，也就是 **$.class** 
     - 類別名稱完全洩露的小寫字元，也就是**a.class**      
 
 - **`import` 陳述式未參考的程式庫**&ndash;未參考的文件庫識別，並將這些相依性新增至 Xamarin.Android 繫結專案**建置動作**的**ReferenceJar**或是**EmbedddedReferenceJar**。
@@ -114,7 +114,7 @@ _本文摘要說明幾種常見的錯誤時產生繫結，以及可能的原因�
 
 -   Java 可讓衍生自非公用類別的公用類別，但這不支援在.NET 中。 因為繫結產生器不會產生非公用類別的繫結，例如無法正確地產生這些衍生的類別。 若要修正此問題，請移除這些衍生的類別，使用中的移除節點的中繼資料項目**Metadata.xml**，或修正正在非公用類別公開的中繼資料。 雖然第二種解決方案將會建立繫結，讓C#來源會建置，不應該使用非公用類別。
 
-    例如: 
+    例如：
 
     ```xml
     <attr path="/api/package[@name='com.some.package']/class[@name='SomeClass']"

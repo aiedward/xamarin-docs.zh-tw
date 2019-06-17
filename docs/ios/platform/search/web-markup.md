@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: 4ee07e4b47ed9e1bdca0efc814ad44e513f68e80
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61076557"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Web 標記在 Xamarin.iOS 中使用的搜尋
 
@@ -75,7 +75,7 @@ Apple 會呈現在 Spotlight 搜尋和 Safari 搜尋結果中的這些結果。
 
 ## <a name="using-facebook-app-links"></a>使用 Facebook 應用程式連結
 
-您可以提供使用 Facebook 應用程式連結您的應用程式內容的深層連結。 例如: 
+您可以提供使用 Facebook 應用程式連結您的應用程式內容的深層連結。 例如：
 
 ```xml
 <meta property="al:ios:app_name" content="AppName">
@@ -87,7 +87,7 @@ Apple 會呈現在 Spotlight 搜尋和 Safari 搜尋結果中的這些結果。
 
 ## <a name="opening-deep-links"></a>開啟深層連結
 
-您要新增支援開啟和顯示您的 Xamarin.iOS 應用程式深層連結。 編輯**AppDelegate.cs**檔案，並覆寫`OpenURL`方法以處理自訂的 URL 格式。 例如: 
+您要新增支援開啟和顯示您的 Xamarin.iOS 應用程式深層連結。 編輯**AppDelegate.cs**檔案，並覆寫`OpenURL`方法以處理自訂的 URL 格式。 例如：
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -121,7 +121,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 豐富的結果會更豐富，而且可以協助改善您在雲端中的排名基礎搜尋服務索引，方法是它提供更多使用者與它們互動。
 
-提供結構化資料標記的其中一個選項是使用 Open Graph。 例如: 
+提供結構化資料標記的其中一個選項是使用 Open Graph。 例如：
 
 ```xml
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
@@ -131,7 +131,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 如需詳細資訊，請參閱[Open Graph](http://ogp.me)網站。
 
-結構化資料標記的另一種常見格式是 schema.org 的微資料格式。 例如: 
+結構化資料標記的另一種常見格式是 schema.org 的微資料格式。 例如：
 
 ```xml
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">

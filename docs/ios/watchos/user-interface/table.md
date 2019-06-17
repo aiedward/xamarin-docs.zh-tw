@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: cd5e7299874bbfb1b652315a549b9d067d58e9a0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60881256"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>watchOS 在 Xamarin 中的資料表控制項
 
@@ -160,7 +160,7 @@ watchOS 3 導入資料表的新功能： 能夠捲動以查看詳細資料頁面
 
 <a name="add_row_controller" />
 
-## <a name="appendix-row-controller-code-example"></a>附錄： 資料列控制器程式碼範例
+## <a name="appendix-row-controller-code-example"></a>附錄：資料列控制器程式碼範例
 
 在設計工具中建立的資料列控制站時，IDE 會自動建立兩個程式碼檔案。 這些產生的檔案中的程式碼如下所示的參考。
 

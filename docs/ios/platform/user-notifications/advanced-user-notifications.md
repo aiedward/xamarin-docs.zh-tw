@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: b0571f826101576b402368923c2147e35aa9299e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4472654064812142e3281374754ace0042b542bf
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61089184"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>在 Xamarin.iOS 中的進階的使用者通知
 
@@ -375,7 +375,7 @@ namespace MonkeyChatNotifyExtension
 
 ### <a name="using-media-attachments-in-custom-ui"></a>使用自訂的 UI 中的媒體附件
 
-因為媒體附件 (如中所示[新增媒體附件](#Adding-Media-Attachments)上一節) 會通知承載的一部分，可以存取並顯示在 Notification Content 延伸模組，就像您在 預設值時，其方式是UI 的通知。
+因為媒體附件 (如中所示[新增媒體附件](#adding-media-attachments)上一節) 會通知承載的一部分，可以存取並顯示在 Notification Content 延伸模組，就像您在 預設值時，其方式是UI 的通知。
 
 例如，如果上述的自訂 UI 包含`UIImageView`的已公開至C#程式碼，下列程式碼可用來從填入媒體附件：
 

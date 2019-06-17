@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 1c5b2635dca6aa74fd0dfb92d7e62e6da3140538
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051104"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60902806"
 ---
 # <a name="xamarinforms-themes"></a>Xamarin.Forms 佈景主題
 
@@ -26,7 +26,7 @@ Xamarin.Forms 佈景主題發表於發展 2016年，並可讓客戶試用並提�
 
 請參閱[淺色佈景主題](light.md)並[暗色調佈景主題](dark.md)如需有關如何將它們新增至應用程式，或查看頁面[範例自訂佈景主題](custom.md)。
 
-**重要事項︰** 您也應該遵循的步驟[佈景主題 （如下所示） 的組件載入](#loadtheme)一些未定案程式碼加入至 iOS`AppDelegate`和 Android `MainActivity`。 這會改善未來的預覽版。
+**重要：** 您也應該遵循的步驟[佈景主題 （如下所示） 的組件載入](#loadtheme)某些未定案程式碼加入至 iOS`AppDelegate`和 Android `MainActivity`。 這會改善未來的預覽版。
 
 
 ## <a name="control-appearance"></a>控制項外觀

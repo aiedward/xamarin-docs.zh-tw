@@ -6,18 +6,18 @@ ms.assetid: 76ba8f7a-9b6e-40f5-9a29-ff1274ece4f2
 author: conceptdev
 ms.author: crdun
 ms.date: 07/18/2018
-ms.openlocfilehash: a1e7152ca0f24d1ac660742e97907ea9300df9a7
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 221ee49e282b3b038d03f659d238336710283a66
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57666875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61229921"
 ---
 # <a name="portable-class-libraries-pcl"></a>可攜式類別庫 (PCL)
 
-> [!WARNING]
+> [!TIP]
 > 可攜式類別庫 (Pcl) 會被視為最新版本的 Visual Studio 中已被取代。
-> 雖然您仍然可以開啟、 編輯和編譯的 Pcl，針對新專案建議使用[.NET Standard 程式庫](~/cross-platform/app-fundamentals/net-standard.md)。
+> 雖然您仍然可以開啟、 編輯和編譯的 Pcl，針對新專案建議使用[.NET Standard 程式庫](~/cross-platform/app-fundamentals/net-standard.md)存取較大的 API 介面區。
 
 建置跨平台應用程式的重要元件能夠在各種平台專屬專案之間共用程式碼。 不過，這被複雜的事實，不同的平台通常會使用不同的子組的.NET 基底類別庫 (BCL)，並因此實際建置至不同的.NET Core 程式庫設定檔。 這表示每個平台，只能使用類別庫，使它們會顯示為每個平台需要個別的類別庫專案，以相同的設定檔為目標。
 

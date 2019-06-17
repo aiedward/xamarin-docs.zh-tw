@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 467855da6a691d1661f04e12f481db83b1848717
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66193828"
+---
 恭喜您完成此教學課程，您已學會如何：
 
 > [!div class="checklist"]
@@ -14,5 +22,5 @@
 ## <a name="related-links"></a>相關連結
 
 - [PopupsTutorial (範例)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Tutorials/PopupsTutorial)
-- [顯示快顯視窗 (指南)](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md)
+- [顯示快顯視窗 (指南)](~/xamarin-forms/user-interface/pop-ups.md)
 - [Page API](xref:Xamarin.Forms.Page)

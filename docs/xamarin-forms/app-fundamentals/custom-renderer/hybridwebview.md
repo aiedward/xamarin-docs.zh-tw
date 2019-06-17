@@ -6,17 +6,17 @@ ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/19/2018
-ms.openlocfilehash: 997b3e8a8f847ae08eea7e022e7b3424d0fddd8d
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.date: 03/07/2019
+ms.openlocfilehash: 625a860469c82da6e6986b03b8c3e55503433e67
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233935"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926671"
 ---
 # <a name="implementing-a-hybridwebview"></a>實作 HybridWebView
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/hybridwebview/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/HybridWebView/)
 
 _Xamarin.Forms 自訂使用者介面控制項應該衍生自用來在螢幕上放置配置和控制項的 View 類別。本文示範如何建立 HybridWebView 自訂控制項的自訂轉譯器，該自訂控制項會示範如何強化平台特定的 Web 控制項，允許從 JavaScript 叫用 C# 程式碼。_
 
@@ -30,7 +30,7 @@ _Xamarin.Forms 自訂使用者介面控制項應該衍生自用來在螢幕上�
 
 1. [建立](#Creating_the_HybridWebView) `HybridWebView` 自訂控制項。
 1. [使用](#Consuming_the_HybridWebView) Xamarin.Forms 的 `HybridWebView`。
-1. 在每個平台上[建立](#Creating_the_Custom_Renderer_on_each_Platform) `HybridWebView` 的自訂轉譯器。
+1. 在每個平台上[建立](#creating-the-custom-renderer-on-each-platform) `HybridWebView` 的自訂轉譯器。
 
 現在您可依序討論每個項目，實作可增強平台特定 Web 控制項的 `HybridWebView` 轉譯器，來從 JavaScript 叫用 C# 程式碼。 `HybridWebView` 執行個體會用以顯示 HTML 網頁，要求使用者輸入其名稱。 然後，當使用者按一下 HTML 按鈕時，JavaScript 函式會叫用 C# `Action`，其顯示包含使用者名稱的快顯視窗。
 
@@ -142,8 +142,6 @@ public partial class HybridWebViewPage : ContentPage
 
 藉由允許從 JavaScript 叫用 C# 程式碼，自訂轉譯器現在可以新增至每個應用程式專案來加強平台特定的 Web 控制項。
 
-<a nane="Creating_the_Custom_Renderer_on_each_Platform" />
-
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>在每個平台上建立自訂轉譯器
 
 建立自訂轉譯器類別的程序如下：
@@ -240,6 +238,8 @@ function invokeCSCode(data) {
 
 `invokeCSharpAction` JavaScript 函式不是在網頁中定義，而是由每個自訂轉譯器插入至網頁。
 
+在 iOS 上，此 HTML 檔案位於具有 **BundleResource** 建置動作的平台專案 [內容] 資料夾中。 在 Android 上，此 HTML 檔案則位於具有 **AndroidAsset** 建置動作的平台專案 [資產/內容] 資料夾中。
+
 <a name="Invoking_C_from_JavaScript" />
 
 ### <a name="invoking-c-from-javascript"></a>從 JavaScript 叫用 C#
@@ -319,6 +319,16 @@ namespace CustomRenderer.iOS
 
 > [!NOTE]
 > 僅 iOS 8 和更新版本支援 `WKWebView` 類別。
+
+此外，必須更新 **Info.plist** 以包含下列值：
+
+```
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+```
 
 ### <a name="creating-the-custom-renderer-on-android"></a>在 Android 上建立自訂轉譯器
 
@@ -499,5 +509,5 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>相關連結
 
-- [CustomRendererHybridWebView (Samples)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/hybridwebview/)
+- [CustomRendererHybridWebView (Samples)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/HybridWebView/)
 - [從 JavaScript 呼叫 C#](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)

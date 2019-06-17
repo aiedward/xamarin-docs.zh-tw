@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 93ee0681adcc63fe05b4be88ff67f0aeee3e03ca
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384409"
+---
 影像檔案可以新增至平台專案，也可以從 Xamarin.Forms 的共用程式碼來參考。 當影像是平台專用的 (例如，在不同平台上使用不同的解析度) 或屬於略微不同的設計時，就需要這種影像散發方法。
 
 在本練習中，您會修改 **ImageTutorial** 解決方案，使其顯示本機影像而非下載自 URI 的影像。 這個本機影像是 Xamarin 的標誌，請藉由按一下下方按鈕來下載。

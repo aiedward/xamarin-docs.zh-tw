@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: 84ee33fe174c01656144e55bc3cbba7c773950fd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153423"
 ---
 # <a name="how-can-i-manually-install-the-android-support-libraries-required-by-the-xamarinandroidsupport-packages"></a>如何手動安裝 Xamarin.Android.Support 套件所需的 Android 支援程式庫？
 
@@ -53,7 +53,7 @@ $url = "https://dl-ssl.google.com/android/repository/android_m2repository_r32.zi
 F16A3455987DBAE5783F058F19F7FCDF
 ```
 
-複製**android\_m2repository.zip**成 **%LOCALAPPDATA%\\Xamarin\\zips\\** 資料夾。 若要使用從上一個計算步驟的 MD5 雜湊的 MD5 雜湊檔案重新命名。 例如: 
+複製**android\_m2repository.zip**成 **%LOCALAPPDATA%\\Xamarin\\zips\\** 資料夾。 若要使用從上一個計算步驟的 MD5 雜湊的 MD5 雜湊檔案重新命名。 例如：
 
 **%LOCALAPPDATA%\\Xamarin\\zips\\F16A3455987DBAE5783F058F19F7FCDF.zip**
 

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: 3a488b3a9f729da5d4bee8c1262190b15c2e9240
-ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
+ms.openlocfilehash: 7ed2cb66524ab3380f65d6d0be74a66c7d01226b
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666892"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978022"
 ---
 # <a name="mac-platform-setup"></a>Mac 平台設定
 
@@ -23,7 +23,7 @@ ms.locfileid: "56666892"
 
 > [!VIDEO https://youtube.com/embed/mvQ7jzaNseM]
 
-**藉由將 macOS 專案新增至 Xamarin.Forms， [Xamarin University](https://university.xamarin.com/)**
+**將 macOS 專案新增至 Xamarin.Forms 影片**
 
 ## <a name="adding-a-mac-app"></a>新增 Mac 應用程式
 

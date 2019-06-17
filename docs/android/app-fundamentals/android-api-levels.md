@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 8690be7551046a26339f58029da5f3f58e18cd15
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 1f88525fefb83c92d5e5dda2176d3622bb67c78d
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672582"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65924967"
 ---
 # <a name="understanding-android-api-levels"></a>了解 Android API 層級
 
@@ -228,7 +228,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop)
 
 在此範例中，我們的應用程式目標架構設定為**Android 5.0 (API Level 21)** 且其最低 Android 版本設為**Android 4.1 (API 層級 16)**。 因為`SetCategory`位在 API 層級`Android.OS.BuildVersionCodes.Lollipop`及更新版本中，此程式碼範例會呼叫`SetCategory`只時實際可用&ndash;會*不*嘗試呼叫`SetCategory`時 API層級會是 16、 17、 18、 19、 或 20。 功能會減少這些稍早的 Android 版本，只有的通知時，不會排序正確 （因為它們不會依類型分類），但仍發佈通知來提醒使用者。 我們的應用程式仍可運作，但其功能稍微就會受到影響。
 
-一般情況下，組建版本檢查可協助您決定在執行階段之間的新方式，與舊有的方式執行的程式碼。 例如: 
+一般情況下，組建版本檢查可協助您決定在執行階段之間的新方式，與舊有的方式執行的程式碼。 例如：
 
 ```csharp
 if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop)

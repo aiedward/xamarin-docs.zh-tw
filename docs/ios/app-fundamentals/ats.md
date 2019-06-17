@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2017
-ms.openlocfilehash: f9308d3a746a5a0a43cf47cc5ea809c0f82bbe7b
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: a901e16b3d5befc25864af39cb255d1833400e7f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60955809"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>在 Xamarin.iOS 中的應用程式的傳輸安全性
 
@@ -73,13 +73,13 @@ ATS 會強制所有網際網路連線的下列需求：
 
 新的 Xamarin.iOS 應用程式中，您應該使用`HTTPS`與網際網路資源進行通訊時，以獨佔方式。 同樣地，可能會有一些情況 （例如使用第 3 個廠商的 web 服務） 不可行，您將需要 ATS 退出。
 
-此外，強制執行加密與正向加密使用 TLS 1.2 版的高階 API 通訊。 請參閱[ATS 連線需求](#ATS-Connection-Requirements)並[ATS 相容編碼器](#ATS-Compatible-Ciphers)上方區段，如需詳細資訊。
+此外，強制執行加密與正向加密使用 TLS 1.2 版的高階 API 通訊。 請參閱[ATS 連線需求](#ats-connection-requirements)並[ATS 相容編碼器](#ats-compatible-ciphers)上方區段，如需詳細資訊。
 
 雖然您可能不熟悉 TLS ([傳輸層安全性](https://en.wikipedia.org/wiki/Transport_Layer_Security)) 是 SSL 的後繼者 ([安全通訊端層](https://en.wikipedia.org/wiki/Transport_Layer_Security))，並提供密碼編譯通訊協定，透過強制執行安全性的集合網路連線。
 
 TLS 層級由您使用 web 服務所控制，因此應用程式的控制之外。 同時`HttpClient`而`ModernHttpClient`應該會自動使用最高層級的伺服器所支援的 TLS 加密。
 
-根據伺服器，您在跟通訊 （尤其是如果它是第 3 方服務），您可能需要停用轉寄密碼，或選取較低的 TLS 層級。 請參閱[設定 ATS 選項](#Configuring-ATS-Options)節以取得詳細資料。
+根據伺服器，您在跟通訊 （尤其是如果它是第 3 方服務），您可能需要停用轉寄密碼，或選取較低的 TLS 層級。 請參閱[設定 ATS 選項](#configuring-ats-options)節以取得詳細資料。
 
 > [!IMPORTANT]
 > 應用程式的傳輸安全性不會套用至使用 Xamarin 應用程式**受管理的 HTTPClient 實作**。 它會套用至連線使用 CFNetwork **HTTPClient 實作**或是**NSURLSession HTTPClient 實作**只。

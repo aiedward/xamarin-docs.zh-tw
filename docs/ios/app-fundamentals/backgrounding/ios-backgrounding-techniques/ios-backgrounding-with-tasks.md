@@ -1,5 +1,5 @@
 ---
-title: iOS 背景與工作
+title: iOS 背景處理與工作
 description: 本文件說明如何使用背景工作之後的應用程式會放在背景中執行長時間執行的工作。
 ms.prod: xamarin
 ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: c8d1abebf6dec2b7b5fe76d57ff851fad457f2a8
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669826"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61170660"
 ---
-# <a name="ios-backgrounding-with-tasks"></a>iOS 背景與工作
+# <a name="ios-backgrounding-with-tasks"></a>iOS 背景處理與工作
 
 執行背景在 iOS 上的最簡單方式是 backgrounding 需求分成工作，並在背景中執行的工作。 工作下嚴格的時間限制，且通常取得 iOS 7 + 上的 約 600 秒 （10 分鐘） 的處理時間之後應用程式時，已移至背景上，在 iOS 6, 和 10 分鐘內。
 

@@ -1,5 +1,5 @@
 ---
-title: IOS 9 簡介
+title: iOS 9 簡介
 description: 這篇文章會介紹的所有新的及修改 Api 和功能可在 iOS 9 中適用於 Xamarin.iOS 開發人員。
 ms.prod: xamarin
 ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: becba36655a5247a11decb7dc54334f9397ecdfc
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: d0ad25a1ecff7262b9b4b41a5f9d73a5931bbd1c
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233532"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60946222"
 ---
-# <a name="introduction-to-ios-9"></a>IOS 9 簡介
+# <a name="introduction-to-ios-9"></a>iOS 9 簡介
 
 _這篇文章會介紹的所有新的及修改 Api 和功能可在 iOS 9 中適用於 Xamarin.iOS 開發人員。_
 
@@ -34,7 +34,7 @@ IOS 9 和 iPhone 6s 和 iPhone 6s 新手此外，3D 觸控，請將您的 iOS �
 
 若要深入了解，請參閱我們[3D 觸控簡介](~/ios/platform/3d-touch.md)指南。
 
-## <a name="app-transport-security"></a>應用程式的傳輸安全性
+## <a name="app-transport-security"></a>應用程式傳輸安全性
 
 新增 iOS 9，App Transport Security (ATS) 會強制執行 （例如應用程式的後端伺服器） 的網際網路資源與您的應用程式之間的安全連線。 ATS 可確保所有的網際網路通訊符合保護連線安全的最佳作法，藉此防止意外洩露機密的資訊，直接透過您的應用程式或它正在使用的程式庫。
 
@@ -58,7 +58,7 @@ IOS 9 和 iPhone 6s 和 iPhone 6s 新手此外，3D 觸控，請將您的 iOS �
 
 ## <a name="new-contacts-and-contacts-ui-frameworks"></a>新的連絡人和連絡人 UI 架構
 
-使用 iOS 9 的引進，Apple 已發行兩個新的架構[連絡人](https://developer.xamarin.com/api/namespace/Contacts/)並[ContactsUI](https://developer.xamarin.com/api/namespace/ContactsUI/)、 取代現有的通訊錄。 和地址通訊錄 UI 架構供 iOS 8 和較早版本。
+使用 iOS 9 的引進，Apple 已發行兩個新的架構[連絡人](xref:Contacts)並[ContactsUI](xref:ContactsUI)、 取代現有的通訊錄。 和地址通訊錄 UI 架構供 iOS 8 和較早版本。
 
 這些新的物件導向的架構提供下列項目：
 
@@ -103,7 +103,7 @@ IOS 9 和 iPhone 6s 和 iPhone 6s 新手此外，3D 觸控，請將您的 iOS �
 
 ## <a name="homekit-framework-changes"></a>HomeKit 架構變更
 
-[HomeKit](https://developer.xamarin.com/api/namespace/HomeKit/) iOS 8 中引入架構讓您能夠設定和控制各種啟用 HomeKit 附屬應用程式 （例如自動化的號誌、 門鎖和車庫門 openers） 從 Xamarin.iOS 應用程式。 除了輕鬆安裝和設定，可以透過語音 Siri 命令控制 HomeKit 配件。
+[HomeKit](xref:HomeKit) iOS 8 中引入架構讓您能夠設定和控制各種啟用 HomeKit 附屬應用程式 （例如自動化的號誌、 門鎖和車庫門 openers） 從 Xamarin.iOS 應用程式。 除了輕鬆安裝和設定，可以透過語音 Siri 命令控制 HomeKit 配件。
 
 在 iOS 9 中，Apple 已變得非常容易設定、 展開 附屬應用程式支援，並提供更多的配件互動 （例如控制從遠端透過 iCloud 附屬應用程式） 的類型。
 

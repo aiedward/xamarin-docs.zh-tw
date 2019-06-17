@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/13/2017
 ms.openlocfilehash: 45886d787ecc40c9e11ce0c713ffa22819e29db2
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61227301"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>watchOS 在 Xamarin 中的背景工作
 
@@ -54,7 +54,7 @@ ms.locfileid: "51528815"
 
 Apple 建議充分利用這項工作 （因為它是這種有限的資源，應用程式） 透過保留到它，直到應用程式已完成更新本身的程序。
 
-系統會傳遞這些工作所呼叫的新`HandleBackgroundTasks`方法的`WKExtensionDelegate`委派。 例如: 
+系統會傳遞這些工作所呼叫的新`HandleBackgroundTasks`方法的`WKExtensionDelegate`委派。 例如：
 
 ```csharp
 using System;
@@ -543,7 +543,7 @@ WatchOS 3 應用程式在前景時，它一律會排定為執行，而且可以�
 
 - 只會給予幾秒鐘的時間才能完成任何指定的工作。 系統會納入考量，不只傳遞的時間量，但也多少 CPU 能力的應用程式取用來衍生此限制。
 - 具有下列的錯誤代碼，便會刪除任何超過其限制的應用程式：
-    - **CPU** -0xc51bad01
+    - **CPU** - 0xc51bad01
     - **時間**-0xc51bad02
 - 系統將會造成不同的背景工作已要求執行的應用程式類型為基礎的限制。 例如，`WKApplicationRefreshBackgroundTask`和`WKURLSessionRefreshBackgroundTask`工作會提供稍微較長的執行階段透過其他類型的背景工作。
 
@@ -615,7 +615,7 @@ private void UpdateComplication ()
 
 在 watchOS 3，Apple 已新增的停駐讓使用者可以釘選自己最愛的應用程式及快速存取。 當使用者按下 Apple Watch 側邊的按鈕時，將會顯示已釘選的應用程式的快照集的資源庫。 使用者可以撥動左邊或右邊，以尋找所需的應用程式，然後點選 應用程式，以啟動快照集取代為執行中應用程式的介面。
 
-[![](background-tasks-images/dock01.png "停駐")](background-tasks-images/dock01.png#lightbox)
+[![](background-tasks-images/dock01.png "The Dock")](background-tasks-images/dock01.png#lightbox)
 
 系統會定期擷取快照的應用程式的 UI，並會使用這些快照集來填入文件。watchOS 會讓應用程式有機會先更新其內容和 UI，才能建立此快照集。
 

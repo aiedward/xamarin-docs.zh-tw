@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: e97b211fe6a92ee0df3beed2301cf00c3d42c8f8
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 306cce581eb1506e770222ea10e160c4fdbe1b29
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671802"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827492"
 ---
 # <a name="binding-objective-c-libraries"></a>繫結 Objective C 程式庫
 
@@ -44,7 +44,7 @@ ms.locfileid: "57671802"
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 建立繫結的最簡單方式是建立在 Xamarin.iOS 繫結專案。
-您可以從 Windows 上的 Visual Studio 藉由選取專案類型中**Visual C# > iOS > 繫結程式庫 (iOS)**:
+您可以從 Windows 上的 Visual Studio 藉由選取專案類型中**Visual C# > iOS > 繫結程式庫 (iOS)** :
 
 [![](objective-c-libraries-images/00vs-sml.png "iOS 繫結程式庫的 iOS")](objective-c-libraries-images/00vs.png#lightbox)
 
@@ -479,7 +479,7 @@ interface NSStringDrawingExtensions {
 
 ### <a name="binding-objective-c-argument-lists"></a>繫結 Objective C 的引數清單
 
-OBJECTIVE-C 支援 variadic 引數。 例如: 
+OBJECTIVE-C 支援 variadic 引數。 例如:
 
 ```objc
 - (void) appendWorkers:(XWorker *) firstWorker, ...
@@ -522,7 +522,7 @@ public void AppendWorkers(params Worker[] workers)
 
 通常這些欄位會包含必須參考的字串或整數值。 它們通常用為字串，代表特定的通知，並做為字典中的索引鍵。
 
-若要將欄位繫結，將屬性加入至您的介面定義檔和裝飾的屬性[ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)屬性。 這個屬性會採用一個參數： 要查閱的符號 C 名稱。 例如: 
+若要將欄位繫結，將屬性加入至您的介面定義檔和裝飾的屬性[ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)屬性。 這個屬性會採用一個參數： 要查閱的符號 C 名稱。 例如:
 
 ```csharp
 [Field ("NSSomeEventNotification")]
@@ -632,7 +632,7 @@ interface MyType {
 您可以將方法 （在傳回的值）、 參數和屬性與裝飾[ `[BindAs]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)。 唯一的限制是，您的成員**不得**位於內 [`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) 
 或是[ `[Model]` ](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)介面。
 
-例如: 
+例如:
 
 ```csharp
 [return: BindAs (typeof (bool?))]
@@ -651,7 +651,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 
 [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) 也支援陣列`NSNumber``NSValue`和`NSString`（列舉）。
 
-例如: 
+例如:
 
 ```csharp
 [BindAs (typeof (CAScroll []))]
@@ -682,7 +682,7 @@ Xamarin.iOS 繫結產生器提供繫結通知的開發人員的支援。 若要�
 
 這個屬性可以用於不含引數執行沒有承載的通知，或者您可以指定`System.Type`參考另一個介面，在 API 定義中，通常與名稱結尾"EventArgs"。 產生器會將介面變成類別子類別化`EventArgs`，且會包含所有列出的屬性。 [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)屬性應該用在的 EventArgs 類別，列出用來查閱 OBJECTIVE-C 字典擷取值的索引鍵的名稱。
 
-例如: 
+例如:
 
 ```csharp
 interface MyClass {
@@ -1337,7 +1337,7 @@ c.Loaded += delegate (sender, args){
 上述範例會將連結`libMyLibrary.a`，`libSystemLibrary.dylib`而`CFNetwork`framework 程式庫，到最後一個可執行檔。
 
 或利用組件層級[ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)，，您可以內嵌在您的合約檔案 (例如`AssemblyInfo.cs`)。
-當您使用[ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)，您必須擁有您原生程式庫可在您做您繫結，這會將原生程式庫內嵌您的應用程式的時間。 例如: 
+當您使用[ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)，您必須擁有您原生程式庫可在您做您繫結，這會將原生程式庫內嵌您的應用程式的時間。 例如:
 
 ```csharp
 // Specify only the library name as a constructor argument and specify everything else with properties:
@@ -1403,6 +1403,4 @@ class Demo {
 
 ## <a name="related-links"></a>相關連結
 
-- [繫結範例](https://developer.xamarin.com/samples/BindingSample/)
-- [Xamarin University 課程：建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程：建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [繫結範例](https://developer.xamarin.com/samples/monotouch/BindingSample/)

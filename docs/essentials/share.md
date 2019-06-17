@@ -4,14 +4,14 @@ description: Xamarin.Essentials 中的 Share 類別能讓應用程式將資料 (
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 02/12/2019
+ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: 7e61041fa33557c4e1db3613b75b575e9d456231
-ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
+ms.openlocfilehash: 1a9a7b008773255d9d7743a4fcb21f02feb3e116
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56240418"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58869373"
 ---
 # <a name="xamarinessentials-share"></a>Xamarin.Essentials:共用
 
@@ -57,7 +57,7 @@ public class ShareTest
 
 提出要求時，會顯示要與外部應用程式共用的使用者介面：
 
-![共用](share-images/share.png)
+![共用](images/share.png)
 
 ## <a name="platform-differences"></a>平台差異
 
@@ -76,6 +76,32 @@ public class ShareTest
 * `Subject` 未使用。
 
 -----
+
+## <a name="files"></a>檔案
+
+![預覽功能](~/media/shared/preview.png)
+
+共用檔案在 Xamarin.Essentials 1.1.0 版為實驗性預覽。 這項功能可讓應用程式與裝置上的其他應用程式共用檔案。 若要啟用這項功能，請在您應用程式的啟動程式碼中設定下列屬性：
+
+```csharp
+ExperimentalFeatures.Enable(ExperimentalFeatures.ShareFileRequest);
+```
+
+啟用功能之後，您可以共用任何檔案。 Xamarin.Essentials 會自動偵測檔案類型 (MIME)，並要求共用。 每個平台可能只支援特定的副檔名。
+
+下列範例示範如何將文字寫入磁碟，並共用到其他應用程式：
+
+```csharp
+var fn =  "Attachment.txt";
+var file = Path.Combine(FileSystem.CacheDirectory, fn);
+File.WriteAllText(file, "Hello World");
+
+await Share.RequestAsync(new ShareFileRequest
+{
+    Title = Title,
+    File = new ShareFile(file)
+});
+```
 
 ## <a name="api"></a>API
 

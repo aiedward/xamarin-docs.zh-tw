@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 3592a3027469cb9997d973db53d636ddea9e679d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 48ff30397b2592dd2c4dbd445987392d78ced6f3
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110880"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740771"
 ---
 # <a name="activity-lifecycle"></a>活動開發週期
 
@@ -62,12 +62,12 @@ Android OS 將會進行仲裁活動，根據其狀態。 這有助於識別已�
 
 若要更多複雜，Android 會擲回一個詳細的扳手中的組合，稱為組態變更。 組態變更會快速活動解構/重新 creation 循環時活動的組態變更，例如裝置時，會發生[旋轉](~/android/app-fundamentals/handling-rotation.md)（和活動必須重新取得內建的橫向或縱向模式），會顯示鍵盤 （與活動會提供功能的機會來自行調整大小），或當裝置處於停駐，其他項目。
 
-組態變更仍會導致相同的活動狀態變更期間停止並重新啟動的活動會發生。 不過，為了確保應用程式有回應，並執行也進行組態變更時，務必它們會盡快處理。 因為這個緣故，Android 會提供可用來將狀態保存在組態變更期間的特定 API。
+組態變更仍會導致相同的活動狀態變更期間停止並重新啟動的活動會發生。 不過，為了確保應用程式有回應，並執行也進行組態變更時，請務必盡快處理。 因為這個緣故，Android 會提供可用來將狀態保存在組態變更期間的特定 API。
 我們將討論這稍後[管理狀態在整個生命週期](~/android/app-fundamentals/activity-lifecycle/index.md#Managing_State_Throughout_the_Lifecycle)一節。
 
 ### <a name="activity-lifecycle-methods"></a>活動開發週期方法
 
-Android SDK 和延伸模組，Xamarin.Android framework 會提供功能強大的模型來管理應用程式內的活動狀態。 活動的狀態會變更，活動會由 OS，它會在該活動上呼叫特定方法收到通知。 下圖說明活動開發週期的關聯性中的這些方法：
+Android SDK 和延伸模組，Xamarin.Android framework 會提供功能強大的模型來管理應用程式內的活動狀態。 活動的狀態會變更，活動會由 OS，它會在該活動上呼叫特定方法收到通知。 下圖說明這些方法與活動開發週期：
 
 [![活動生命週期的流程圖](images/image2-sml.png)](images/image2.png#lightbox)
 
@@ -117,7 +117,7 @@ protected override void OnCreate(Bundle bundle)
 系統呼叫[OnResume](https://developer.xamarin.com/api/member/Android.App.Activity.OnResume/)活動時準備好開始與使用者互動。
 活動應該覆寫這個方法，以執行下列工作：
 
--  緩慢增加的畫面播放速率 （遊戲的建置中常見的工作）
+-  緩慢增加的畫面播放速率 （遊戲開發的一般工作）
 -  啟動動畫
 -  接聽 GPS 更新
 -  顯示相關警示或對話方塊
@@ -187,7 +187,7 @@ public void OnPause()
 
 `OnStop` 可能不一定會呼叫在記憶體不足的情況下，當 Android 會耗盡資源及無法正確背景活動等。 基於這個理由，最好是不依賴`OnStop`取得解構準備活動時呼叫。 下一步 的生命週期方法可能被呼叫之後這`OnDestroy`如果活動即將消失，或`OnRestart`如果活動會回到與使用者互動。
 
-#### <a name="ondestroy"></a>onDestroy
+#### <a name="ondestroy"></a>OnDestroy
 
 [Editorwindow](https://developer.xamarin.com/api/member/Android.App.Activity.OnDestroy/)是它已損毀，並從記憶體中完全移除之前，會將活動執行個體呼叫的最後一個方法。 在極端情況下，Android 可能會終止裝載活動，這會導致應用程式處理序`OnDestroy`不叫用。 大部分的活動不會實作這個方法，因為大部分清除，而且已完成關機`OnPause`和`OnStop`方法。 `OnDestroy`通常會覆寫方法以清除 長時間在執行資源可能會流失資源。 這個範例可能是已在中啟動的背景執行緒`OnCreate`。
 

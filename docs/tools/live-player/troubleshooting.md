@@ -6,18 +6,59 @@ ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: eb9d758d72febe0fc0b705d66246c99ade1fc80f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5eb0dcead230e0bb2e7d99241e5d8e5a4115f838
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109688"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61175392"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>疑難排解 Xamarin Live Player
 
 ![預覽功能](~/media/shared/preview.png)
 
-這篇文章會說明一些常見的問題，並提供更正它們的步驟。
+> [!NOTE]
+> 只有 Visual Studio 2017 中使用播放程式的即時預覽。
+
+這篇文章說明 Live Player 和一些常見的問題，步驟更正方式的限制。
+
+## <a name="limitations-of-xamarin-live-player"></a>Xamarin Live Player 的限制
+
+### <a name="ide-requirements"></a>IDE 需求
+
+只有 Visual Studio 2017 中使用 Live Player 預覽。
+
+### <a name="device-requirements"></a>裝置需求
+
+Xamarin Live Player 應用程式支援下列 Android 裝置：
+
+- Android 4.2 或更新版本。
+- ARM-v7a，ARM-v8a、 ARM64-v8a arm、x86 或 x86_64 處理器。
+
+### <a name="ios-limitations"></a>iOS 的限制
+
+Live Player 不適用於 iOS。
+
+### <a name="xamarinforms-limitations"></a>Xamarin.Forms 的限制
+
+- 不支援自訂轉譯器。
+- 不支援效果。
+- 不支援使用自訂繫結屬性的自訂控制項。
+- 不支援內嵌的資源 (亦即。 PCL 中內嵌影像或其他資源)。
+- （即不支援協力廠商 MVVM 架構Prism、 Mvvm 跨、 Mvvm Light 等）。
+
+### <a name="other-project-type-limitations"></a>其他專案類型限制
+
+- Live Player 不是原生的 Android 專案 （供 Android XML 的使用者介面）。
+
+### <a name="miscellaneous-limitations"></a>其他限制
+
+- 反映的支援有限 （目前會影響某些受歡迎的 Nuget，SQLite 和 Json.NET 等）。 可能會繼續支援其他的 Nuget。
+- 無法覆寫某些系統類別 （例如，您不能實作子類別）。
+- 一些需要佈建的平台功能無法運作 （不過它已設定一般的作業，例如相片圖庫存取） Xamarin Live Player 應用程式中。
+- 自訂目標與建置步驟會被忽略。 例如，無法納入 Fody、 Refit、 AutoFac 和 AutoMapper 等工具。
+- F#不支援專案
+- 可能不支援使用自訂的泛型類別和介面的進階的案例。
 
 ## <a name="mobile-device-does-not-connect-after-scanning-barcode-or-entering-code"></a>行動裝置不會連線之後掃描的條碼 （或輸入的程式碼）
 
@@ -30,7 +71,7 @@ ms.locfileid: "50109688"
 
 ## <a name="error-while-trying-to-deploy-message-in-ide"></a>在 IDE 中的 「 嘗試部署時發生錯誤 」 訊息
 
-**「 IOException： 無法從傳輸連線讀取資料： 在非封鎖通訊端上的作業會被封鎖 」**
+**「 IOException： 無法從傳輸連線讀取資料：在非封鎖通訊端上的作業會被封鎖 」**
 
 行動裝置執行 Xamarin Live Player 未在執行 Visual Studio; 的電腦相同的網路時，通常被發生此錯誤這通常會連接到先前成功配對的裝置。
 
@@ -43,7 +84,7 @@ ms.locfileid: "50109688"
 
 如果您無法透過 Wi-fi 連線到您的裝置可以嘗試手動設定您的裝置設定檔中，透過下列步驟：
 
-**步驟 1： 開啟組態檔**
+**步驟 1：開啟組態檔**
 
 前往您的應用程式儲存資料夾：
 
@@ -52,21 +93,21 @@ ms.locfileid: "50109688"
 
 在此資料夾中，您會發現**PlayerDeviceList.xml**不存在，如果您必須建立一個。
 
-**步驟 2： 取得 IP 位址**
+**步驟 2：取得 IP 位址**
 
 在 Xamarin Live Player 應用程式中，移至**關於 > 連線測試 > 測試啟動的連線**。
 
 記下的 IP 位址，則需要列出當您設定您的裝置的 IP 位址。
 
-**步驟 3： 取得配對的程式碼**
+**步驟 3：取得配對的程式碼**
 
 在 Xamarin Live Player 點選**配對**或**再次配對**，然後按**手動輸入**。 數字的程式碼將會顯示，您必須更新組態檔。
 
-**步驟 4： 產生的 GUID**
+**步驟 4：產生的 GUID**
 
 移至： https://www.guidgenerator.com/online-guid-generator.aspx 並產生新的 guid，並確定在大寫。
 
-**步驟 5： 設定裝置**
+**步驟 5：設定裝置**
 
 開啟**PlayerDeviceList.xml**例如 Visual Studio 或 Visual Studio 程式碼編輯器中。 您需要手動設定您的裝置，此檔案中。 根據預設，此檔案應包含下列空白`Devices`XML 項目：
 
@@ -110,7 +151,7 @@ ms.locfileid: "50109688"
 public class SomeCustomButton : Xamarin.Forms.Button { ... }
 ```
 
-## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>「 MainActivity.cs: 'Resource.Layout' 不包含 'Main' 的定義 」
+## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>「 MainActivity.cs:'Resource.Layout' 未包含 'Main' 的定義 」
 
 使用 AXML 檔案中定義的使用者介面，Android 專案會發生此錯誤。
 AXML 檔案目前不支援在 Xamarin Live Player。
@@ -119,9 +160,7 @@ AXML 檔案目前不支援在 Xamarin Live Player。
 
 Xamarin.Forms Android 專案必須使用 「 Toolbar.axml"和"Tabbar.axml 」 相關的版面配置檔案的名稱。 預設範本會使用這些名稱;重新命名會造成轉譯問題。
 
-請上回報的任何其他問題[bugzilla](https://aka.ms/live-player-report-issue)。
-
 ## <a name="related-links"></a>相關連結
 
-- [限制](~/tools/live-player/limitations.md)
 - [安裝](~/tools/live-player/install.md)
+- [範例搭配 Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)

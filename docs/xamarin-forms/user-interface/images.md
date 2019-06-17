@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 5c1d73acfef7a4384db7220daf7319251eb61f85
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 996e6469347a50523964a5b855804b0041ff8d21
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670983"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970974"
 ---
 # <a name="images-in-xamarinforms"></a>在 Xamarin.Forms 中的影像
 
@@ -102,13 +102,13 @@ UWP 影像檔案名稱[可以附加 `.scale-xxx` 在副檔名前面](https://doc
 
 有些控制項具有屬性的顯示圖像，例如：
 
-- [`Page`](xref:Xamarin.Forms.Page) -任何頁面上，衍生自類型`Page`已經[ `Icon` ](xref:Xamarin.Forms.Page.Icon)並[ `BackgroundImage` ](xref:Xamarin.Forms.Page.BackgroundImage)可指派的本機檔案參考的屬性。 在某些情況下，例如當[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)顯示[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)，如果平台支援，則會顯示圖示。
+- [`Page`](xref:Xamarin.Forms.Page) -任何頁面上的型別衍生自`Page`已經[ `IconImageSource` ](xref:Xamarin.Forms.Page.IconImageSource)並[ `BackgroundImageSource` ](xref:Xamarin.Forms.Page.BackgroundImageSource)檔案、 內嵌的資源、 URI 或資料流可指派的屬性。 在某些情況下，例如當[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)顯示[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)，如果平台支援，則會顯示圖示。
 
   > [!IMPORTANT]
-  > 在 iOS 上，無法從資產類別目錄影像集中的影像填入 [`Page.Icon`](xref:Xamarin.Forms.Page.Icon) 屬性。 相反地，從 iOS 專案中的**資源**資料夾載入 `Page.Icon` 屬性的圖示影像。
+  > 在 iOS 上，無法從資產類別目錄影像集中的影像填入 [`Page.IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource) 屬性。 相反地，載入圖示的映像`Page.IconImageSource`從檔案、 內嵌的資源、 URI 或資料流的屬性。
 
-- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) -具有[ `Icon` ](xref:Xamarin.Forms.MenuItem.Icon)可以設定為本機檔案參考的屬性。
-- [`ImageCell`](xref:Xamarin.Forms.ImageCell) - 具有可設定為從本機檔案、內嵌資源或 URI 擷取之影像的屬性 [`ImageSource`](xref:Xamarin.Forms.ImageCell.ImageSource) 屬性。
+- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) -具有[ `IconImageSource` ](xref:Xamarin.Forms.MenuItem.IconImageSource)可以設定為會從檔案、 內嵌的資源、 URI 或資料流載入映像的屬性。
+- [`ImageCell`](xref:Xamarin.Forms.ImageCell) -具有[ `ImageSource` ](xref:Xamarin.Forms.ImageCell.ImageSource)從檔案、 內嵌的資源、 URI 或資料流擷取的映像可以設定的屬性。
 
 ## <a name="embedded-images"></a>內嵌圖像
 

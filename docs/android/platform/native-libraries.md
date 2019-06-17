@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 1195685db9e85e7fba006272ef300e22d47d1fa6
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 1b0771a0ccc2597ebd800468b82044e4020d9d94
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57666344"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153306"
 ---
 # <a name="using-native-libraries"></a>使用原生程式庫
 
@@ -42,18 +42,18 @@ Xamarin.Android 支援原生程式庫，透過標準的 PInvoke 機制使用。 
 
 如需使用原生程式庫的詳細資訊，請參閱 <<c0> [ 原生程式庫與 Interop](https://www.mono-project.com/docs/advanced/pinvoke/)。
 
-## <a name="debugging-native-code-with-visual-studio-2017"></a>使用 Visual Studio 2017 偵錯原生程式碼
+## <a name="debugging-native-code-with-visual-studio"></a>使用 Visual Studio 偵錯原生程式碼
 
-如果您使用*Visual Studio 2017*或更新版本，您不需要修改您的專案檔，如上面所述。
-您可以建置並進行偵錯 c + + 內您的 Xamarin.Android 解決方案專案將參考加入至 c + +**動態共用程式庫 (Android)** 專案。 
+如果您使用*Visual Studio 2019*或是*Visual Studio 2017*，您不需要修改您的專案檔，如上面所述。
+您可以建置和偵錯C++在您的 Xamarin.Android 解決方案，藉由新增的專案參考C++**動態共用程式庫 (Android)** 專案。
 
-若要偵錯您的專案中的原生 c + + 程式碼，請遵循下列步驟：
+若要偵錯原生C++您的專案中的程式碼，請遵循下列步驟：
 
 1. 按兩下 [專案]**屬性**，然後選取**Android 選項**頁面。
 2. 向下捲動至**偵錯選項**。
-3. 在 **偵錯工具**下拉式功能表中，選取**c + +** (而非預設 **.Net (Xamarin)**)。
+3. 在 **偵錯工具**下拉式功能表中，選取**C++** (而非預設 **/.net (Xamarin)**)。
 
-Visual Studio c + + 開發人員可以看到[SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)嘗試偵錯 c + + 的 Visual Studio 2017 with Xamarin; 範例和是指我們[部落格文章](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)如需詳細資訊。
+Visual StudioC++開發人員可以看到[SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)嘗試偵錯範例C++從 Visual Studio 2019 或 Visual Studio 2017 with Xamarin，並參考我們[部落格文章](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)如需詳細資訊資訊。
 
 
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: f9e05b6d16210021257fe3958966739e526aed18
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61378561"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>複製並貼入 Xamarin.Mac
 
@@ -541,7 +541,7 @@ void PasteImage (NSObject sender)
 var window = NSApplication.SharedApplication.KeyWindow as ImageWindow;
 ```
 
-在我們呼叫從該處`ImageDocument`類別執行個體的該視窗來處理複製並貼上動作。 例如:  
+在我們呼叫從該處`ImageDocument`類別執行個體的該視窗來處理複製並貼上動作。 例如： 
 
 ```csharp
 window.Document.CopyImage (sender);
@@ -703,7 +703,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 您第一次存取剪貼板、 清除任何現有的內容和寫入的資料，如才能剪貼板的多個表示法，來執行複製作業。
 
-例如: 
+例如：
 
 ```csharp
 // Get the standard pasteboard

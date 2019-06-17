@@ -9,12 +9,12 @@ author: conceptdev
 ms.author: crdun
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 5618f15d60a26d2ad3d84ff0e3674936c0c01ca3
-ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
+ms.openlocfilehash: 3dad36dc93f5c23e5d9ef1e05a1b9419b7a724b6
+ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54479780"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "58855103"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>使用 Android Device Manager 管理虛擬裝置
 
@@ -37,7 +37,9 @@ _本文說明如何使用 Android Device Manager 建立和設定可模擬實體 
 
 若要使用 Android Device Manager，您需要下列項目：
 
-- 需要 Visual Studio 2017 15.8 版或更新版本。 支援 Visual Studio Community、Professional 和 Enterprise 版本。
+- Visual Studio 2019 Community、Professional 或 Enterprise。
+
+- 或者需要 Visual Studio 2017 15.8 版或更新版本。 支援 Visual Studio Community、Professional 和 Enterprise 版本。
 
 - Visual Studio Tools for Xamarin 4.9 版或更新版本。
 

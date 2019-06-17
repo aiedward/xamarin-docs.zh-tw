@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: c0f638afbf044a2e3e6f309839cb22137cf95912
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: f1a83eab0783baf8e96057fbdc4f70dc2864db47
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527010"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65924886"
 ---
 # <a name="android-job-scheduler"></a>Android 工作排程器
 
@@ -197,11 +197,13 @@ var scheduleResult = jobScheduler.Schedule(jobInfo);
 
 if (JobScheduler.ResultSuccess == scheduleResult)
 {
-    Snackbar.Make(FindViewById(Android.Resource.Id.Content), Resource.String.jobscheduled_success, Snackbar.LengthShort);
+    var snackBar = Snackbar.Make(FindViewById(Android.Resource.Id.Content), Resource.String.jobscheduled_success, Snackbar.LengthShort);
+    snackBar.Show();
 }
 else
 {
-    Snackbar.Make(FindViewById(Android.Resource.Id.Content), Resource.String.jobscheduled_failure, Snackbar.LengthShort);
+    var snackBar = Snackbar.Make(FindViewById(Android.Resource.Id.Content), Resource.String.jobscheduled_failure, Snackbar.LengthShort);
+    snackBar.Show();
 }
 ```
  
@@ -227,4 +229,4 @@ jobScheduler.Cancel(1)
 - [JobScheduler API 參考](https://developer.android.com/reference/android/app/job/JobScheduler.html)
 - [排程作業像 JobScheduler 與專業](https://medium.com/google-developers/scheduling-jobs-like-a-pro-with-jobscheduler-286ef8510129)
 - [Android 使用電池及記憶體最佳化-Google I/O 2016 （影片）](https://www.youtube.com/watch?v=VC2Hlb22mZM&feature=youtu.be)
-- [Android JobScheduler-René Ruppert-Xamarin University](https://www.youtube.com/watch?v=aSjBBPYjelE)
+- [Android JobScheduler-René Ruppert](https://www.youtube.com/watch?v=aSjBBPYjelE)

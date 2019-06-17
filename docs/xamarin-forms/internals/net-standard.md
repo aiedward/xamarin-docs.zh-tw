@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
 ms.openlocfilehash: c3e46592bb8760ff85eaeb5dce119897a97dfe89
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61293281"
 ---
 # <a name="net-standard-20-support-in-xamarinforms"></a>.NET standard 2.0 的支援在 Xamarin.Forms 中
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: f14014b257ee5061b6dd074719c3ca27577c6013
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: c480f398c37ce43b634e0ec1c955b965466757f1
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209333"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926848"
 ---
 # <a name="visualelement-access-keys-on-windows"></a>在 Windows 上的 VisualElement 存取金鑰
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 存取金鑰會藉由提供應用程式的顯示 UI，透過觸控式鍵盤而不是透過使用者快速瀏覽並與其互動以直覺的方式改善可用性和協助工具應用程式在通用 Windows 平台 (UWP) 中的鍵盤快速鍵或滑鼠。 也就是一或多個英數字元的索引鍵，通常依序按下 Alt 鍵的組合。 鍵盤快速鍵自動支援使用單一的英數字元的存取金鑰。
 
@@ -104,6 +104,6 @@ button4.On<Windows>()
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

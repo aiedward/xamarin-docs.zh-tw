@@ -1,5 +1,5 @@
 ---
-title: 檢查 Live 應用程式
+title: 檢查即時應用程式
 description: 本文件說明如何使用 Xamarin Inspector 檢查應用程式。 它也會討論 Xamarin Inspector 工具的限制。
 ms.prod: xamarin
 ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
@@ -7,13 +7,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
 ms.openlocfilehash: 2bd68def0a29d4bb94f8cc66c8cbfa00add1700d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60948142"
 ---
-# <a name="inspecting-live-applications"></a>檢查 Live 應用程式
+# <a name="inspecting-live-applications"></a>檢查即時應用程式
 
 使用適用於企業客戶的即時應用程式檢查。
 

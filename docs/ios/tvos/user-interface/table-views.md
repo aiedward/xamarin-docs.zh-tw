@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: a8b31d9f2e9c8921420b1fd50c4092273962f54b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3e7fc3d627b5d7a1dc73caa395a9181efb0b5f08
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61355814"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>使用 tvOS 在 Xamarin 中的資料表檢視
 
@@ -101,7 +101,7 @@ Xamarin.tvOS 應用程式中使用 「 資料表檢視工作的最簡單方式�
 1. 每個**原型的儲存格**，加以選取，然後指派一個唯一**識別項**中**Widget**索引標籤**屬性總管**。 這是步驟_非常重要_因為您稍後需要此識別碼時您填入的資料表。 例如`AttrCell`: 
 
     [![](table-views-images/table12.png "小工具 索引標籤")](table-views-images/table12.png#lightbox)
-1. 您也可以選取來做為其中一個儲存格的呈現[預設資料表檢視儲存格類型](#Table-View-Cell-Types)透過**樣式**下拉式清單或將它設定為**自訂**，並使用設計介面，以儲存格的版面配置從其他 UI widgets 中拖曳**工具箱**: 
+1. 您也可以選取來做為其中一個儲存格的呈現[預設資料表檢視儲存格類型](#table-view-cell-types)透過**樣式**下拉式清單或將它設定為**自訂**，並使用設計介面，以儲存格的版面配置從其他 UI widgets 中拖曳**工具箱**: 
 
     [![](table-views-images/table13.png "資料格的版面配置")](table-views-images/table13.png#lightbox)
 1. 指派一個唯一**名稱**中的原型的儲存格設計每個 UI 項目的**小工具**索引標籤**屬性總管**讓您可以存取這些稍後在C#的程式碼： 
@@ -142,7 +142,7 @@ Xamarin.tvOS 應用程式中使用 「 資料表檢視工作的最簡單方式�
 1. 每個**原型的儲存格**，加以選取，然後指派一個唯一**識別項**中**Widget**索引標籤**屬性總管**。 這是步驟_非常重要_因為您稍後需要此識別碼時您填入的資料表。 例如`AttrCell`: 
 
     [![](table-views-images/table12-vs.png "指派的識別項")](table-views-images/table12-vs.png#lightbox)
-1. 您也可以選取來做為其中一個儲存格的呈現[預設資料表檢視儲存格類型](#Table-View-Cell-Types)透過**樣式**下拉式清單或將它設定為**自訂**，並使用設計介面，以儲存格的版面配置從其他 UI widgets 中拖曳**工具箱**: 
+1. 您也可以選取來做為其中一個儲存格的呈現[預設資料表檢視儲存格類型](#table-view-cell-types)透過**樣式**下拉式清單或將它設定為**自訂**，並使用設計介面，以儲存格的版面配置從其他 UI widgets 中拖曳**工具箱**: 
 
     [![](table-views-images/table13-vs.png "[樣式] 下拉式清單")](table-views-images/table13-vs.png#lightbox)
 1. 指派一個唯一**名稱**中的原型的儲存格設計每個 UI 項目的**小工具**索引標籤**屬性總管**讓您可以存取這些稍後在C#的程式碼： 

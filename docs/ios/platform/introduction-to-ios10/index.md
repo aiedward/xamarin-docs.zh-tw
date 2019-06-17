@@ -1,5 +1,5 @@
 ---
-title: IOS 10 簡介
+title: iOS 10 簡介
 description: 這篇文章會介紹的所有新的及修改 Api 和功能可在 iOS 10 中適用於 Xamarin.iOS 開發人員。
 ms.prod: xamarin
 ms.assetid: FB91DFFE-CF5E-4253-92CB-78A6371259D9
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: f2a612eea39a3447cae03e2d7b675a46c47aad52
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: b018fe343a7d46f1323119b03a22cc3831a02d9f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233740"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61402399"
 ---
-# <a name="introduction-to-ios-10"></a>IOS 10 簡介
+# <a name="introduction-to-ios-10"></a>iOS 10 簡介
 
 _這篇文章會介紹的所有新的及修改 Api 和功能可在 iOS 10 中適用於 Xamarin.iOS 開發人員。_
 
@@ -226,12 +226,12 @@ Apple 已引進數個增強功能的小工具系統，以確保 widget 好看任
 
 IOS 10 中，已被取代的下列 Api:
 
-- `CKDiscoverAllContactsOperation`， `CKDiscoveredUserInfo`，`CKDiscoverUserInfosOperation`和`CKFetchRecordChangesOperation`類別已被取代 CloudKit 適用於 iOS 10。 使用[CKDiscoverAllUserIdentitiesOperation](https://developer.xamarin.com/api/type/CloudKit.CKDiscoverUserIdentitiesOperation/)， [CKUserIdentity](https://developer.xamarin.com/api/type/CloudKit.CKUserIdentity/)並[CKFetchRecordZoneChangesOperation](https://developer.xamarin.com/api/type/CloudKit.CKFetchRecordZoneChangesOperation/) （其支援記錄共用） 類別改為。
-- 數個[CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) Api （例如區域為基礎和以查詢為基礎訂用帳戶） 已被取代。 使用[CKRecordZoneSubscription](https://developer.xamarin.com/api/type/CloudKit.CKRecordZoneSubscription/)並[CKQuerySubscription](https://developer.xamarin.com/api/type/CloudKit.CKQuerySubscription/) Api 改。
-- [NSPersistentStoreCoordnator](https://developer.xamarin.com/api/type/CoreData.NSPersistentStoreCoordinator/)無所不在的內容相關的符號已被取代。
+- `CKDiscoverAllContactsOperation`， `CKDiscoveredUserInfo`，`CKDiscoverUserInfosOperation`和`CKFetchRecordChangesOperation`類別已被取代 CloudKit 適用於 iOS 10。 使用[CKDiscoverAllUserIdentitiesOperation](xref:CloudKit.CKDiscoverUserIdentitiesOperation)， [CKUserIdentity](xref:CloudKit.CKUserIdentity)並[CKFetchRecordZoneChangesOperation](xref:CloudKit.CKFetchRecordZoneChangesOperation) （其支援記錄共用） 類別改為。
+- 數個[CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) Api （例如區域為基礎和以查詢為基礎訂用帳戶） 已被取代。 使用[CKRecordZoneSubscription](xref:CloudKit.CKRecordZoneSubscription)並[CKQuerySubscription](xref:CloudKit.CKQuerySubscription) Api 改。
+- [NSPersistentStoreCoordnator](xref:CoreData.NSPersistentStoreCoordinator)無所不在的內容相關的符號已被取代。
 - `ADBannerView``ADInterstitialAd`和相關中的符號[UIViewController](xref:UIKit.UIViewController)類別已被取代。
 - [SKUniform](https://developer.apple.com/reference/spritekit/skuniform)與浮點值的符號已被取代。
-- `UILocalNotification`， `UIMutableUserNotificationAction`， `UIMutableUserNotificationCategory`， `UIUserNotificationAction`，`UIUserNotificationCategory`和`UIUserNotificationSettings`UIKit 類別已被取代。 使用[使用者通知](#User-Notifications)framework 改。
+- `UILocalNotification`， `UIMutableUserNotificationAction`， `UIMutableUserNotificationCategory`， `UIUserNotificationAction`，`UIUserNotificationCategory`和`UIUserNotificationSettings`UIKit 類別已被取代。 使用[使用者通知](#user-notifications)framework 改。
 - `HandleActionForLocalNotification`， `HandleActionForRemoteNotification`，`DidReceiveLocalNotification`和`DidReceiveRemoteNotification`WatchKit 方法已被取代。 使用`HandleActionForNotification`和`DidReceiveNotification`方法改為。
 - `DidReceiveLocalNotification`並`DidReceiveRemoteNotification`種[WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate)已被取代。 建立的執行個體[UNUserNotificationCenterDelegate](https://developer.apple.com/reference/usernotifications/unusernotificationcenterdelegate) ，實作適當的方法，並將它指派給`Delegate`屬性[UNUserNotificationCenter](https://developer.apple.com/reference/usernotifications/unusernotificationcenter)物件。
 - **Game Center 應用程式**已被取代，並從 iOS 中移除。 如果應用程式使用 GameKit，它_必須_呈現它自己的介面，以顯示 GameKit 功能，例如排行榜等等。

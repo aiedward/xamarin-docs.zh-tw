@@ -6,12 +6,12 @@ ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 author: asb3993
 ms.author: amburns
 ms.date: 04/07/2016
-ms.openlocfilehash: 489d2a76e6eff661360b24d1872ed1343c74b85e
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 847566feec2069dea924bcd2a18abf2b3ddb250b
+ms.sourcegitcommit: b986460787677cf8c2fc7cc8c03f4bc60c592120
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667213"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66213282"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>在跨平台應用程式中使用原生類型
 
@@ -28,7 +28,7 @@ Xamarin.iOS 和 Xamarin.Mac 統一 Api 仍然包含`int`，`uint`並`float`資�
 
 根據共用的程式碼性質，有時可能是跨平台程式碼可能需要應付`nint`，`nuint`和`nfloat`資料型別。 例如： 處理先前使用的矩形資料的轉換程式庫`System.Drawing.RectangleF`若要共用的應用程式，Xamarin.iOS 和 Xamarin.Android 版本之間的功能需要更新，以處理在 iOS 上的原生型別。
 
-處理這些變更的方式而定的大小和複雜度的應用程式，且共用的程式碼的表單已用，我們會看到後續幾節。
+處理這些變更的方式而定的大小和複雜度的應用程式，且共用的程式碼的表單已用，我們會看到以下幾節。
 
 ## <a name="code-sharing-considerations"></a>程式碼共用的考量
 
@@ -38,7 +38,7 @@ Xamarin.iOS 和 Xamarin.Mac 統一 Api 仍然包含`int`，`uint`並`float`資�
 
 可攜式類別庫 (PCL) 可讓您以您想要支援，並使用介面來提供特定平台功能的平台為目標。
 
-因為 PCL 專案型別會編譯至`.DLL`它有沒有任何意義的統一的 API，您必須自行以繼續使用現有的資料型別 (`int`， `uint`， `float`) 在 PCL 中的原始程式碼和型別轉型 Pcl 的呼叫類別和方法的前端應用程式中。 例如：
+因為 PCL 專案型別會編譯至`.DLL`它有沒有任何意義的統一的 API，您必須自行以繼續使用現有的資料型別 (`int`， `uint`， `float`) 在 PCL 中的原始程式碼和型別轉型 PCL 的呼叫類別和方法的前端應用程式中。 例如：
 
 ```csharp
 using NativePCL;
@@ -52,7 +52,7 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 
 共用資產專案類型可讓您將您在個別的專案，然後取得包含編譯的原始程式碼組織成個別的平台特定前端應用程式，並使用`#if`編譯器指示詞為必要項目管理平台特定的需求。
 
-大小和複雜度，前面的結尾會取用共用程式碼，以及大小和共用的程式碼的複雜度，必須選擇的方法支援原生資料類型與跨平台時，會納入考量的行動裝置應用程式共用的資產專案型別。
+大小和複雜度的後端行動應用程式會取用共用程式碼，以及大小和共用的程式碼的複雜度，必須選擇在跨平台的原生資料類型支援的方法時，會納入考量共用的資產專案。
 
 根據這些因素，下列幾種解決方案可能會使用實作`if __UNIFIED__ ... #endif`編譯器指示詞，可處理的統一 API 的特定變更的程式碼。
 
@@ -127,8 +127,8 @@ namespace NativeShared
         #if __UNIFIED__
             public static nfloat CalculateArea(CGRect rect) {
 
-            // Call original routine to calculate area
-            return (nfloat)CalculateArea((RectangleF)rect);
+                // Call original routine to calculate area
+                return (nfloat)CalculateArea((RectangleF)rect);
 
             }
         #endif
@@ -173,12 +173,12 @@ using System;
 using System.Drawing;
 
 #if __UNIFIED__
-    // Mappings Unified CoreGraphic classes to MonoTouch classes
+    // Map Unified CoreGraphic classes to MonoTouch classes
     using RectangleF = global::CoreGraphics.CGRect;
     using SizeF = global::CoreGraphics.CGSize;
     using PointF = global::CoreGraphics.CGPoint;
 #else
-    // Mappings Unified types to MonoTouch types
+    // Map Unified types to MonoTouch types
     using nfloat = global::System.Single;
     using nint = global::System.Int32;
     using nuint = global::System.UInt32;
@@ -207,7 +207,7 @@ namespace NativeShared
 }
 ```
 
-請注意，這裡我們已變更`CalculateArea`方法會傳回`nfloat`而不是標準`float`。 這項作業完成，因此我們不會產生編譯錯誤，嘗試_隱含地_轉換`nfloat`我們的計算結果 (因為這兩個要相乘的值是`nfloat`) 到`float`傳回值。
+請注意，這裡我們已變更`CalculateArea`方法來傳回`nfloat`而不是標準`float`。 這項作業完成，因此我們不會產生編譯錯誤，嘗試_隱含地_轉換`nfloat`我們的計算結果 (因為這兩個要相乘的值屬於類型`nfloat`) 到`float`傳回值。
 
 如果程式碼進行編譯和執行非統一的 API 在裝置上，`using nfloat = global::System.Single;`對應`nfloat`要`Single`它會隱含地轉換成`float`允許取用的前端應用程式以呼叫`CalculateArea`方法，而不修改。
 
@@ -236,13 +236,13 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 - 整個解決方案必須使用 1.3.1 版 （或以上） 的 Xamarin.Forms NuGet 套件。
 - 相同類型的解決方案以上所顯示的任何 Xamarin.iOS 的自訂轉譯器，根據如何 UI 程式碼已共用 （共用專案或 PCL） 的使用。
 
-如同標準的跨平台應用程式中，現有的 32 位元資料類型應該用於任何共用的跨平台程式碼中大部分的所有情況。 其中的架構可感知的型別所支援的 Mac 或 iOS 的 API 呼叫時，應該只使用新的原生資料類型。
+如同標準的跨平台應用程式中，現有的 32 位元資料類型應該用於任何共用的跨平台程式碼中大部分的情況。 新的原生資料類型應該只用於需要其中的架構可感知的型別支援 Mac 或 iOS 的 API 呼叫時。
 
 如需詳細資訊，請參閱我們[更新現有的 Xamarin.Forms 應用程式](https://developer.xamarin.com/guides/cross-platform/macios/updating-xamarin-forms-apps/)文件。
 
 ## <a name="summary"></a>總結
 
-在本文中我們有，請參閱，當我們應該使用原生資料類型的統一 API 應用程式和其影響跨平台。 我們有提供數個可以用於跨平台程式庫中必須使用新的原生資料類型的情況下的解決方案。 此外，我們已了解 Xamarin.Forms 跨平台應用程式中支援 Unified Api 的快速指南。
+在本文中，我們看到使用統一的 API 應用程式和其影響跨平台原生資料類型的時機。 我們有提供數個可以用於跨平台程式庫中必須使用新的原生資料類型的情況下的解決方案。 此外，我們已了解 Xamarin.Forms 跨平台應用程式中支援 Unified Api 的快速指南。
 
 
 

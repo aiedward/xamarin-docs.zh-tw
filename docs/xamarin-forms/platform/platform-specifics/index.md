@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/01/2018
-ms.openlocfilehash: 44d0cf3a257c00b448a6c70064af2f8e3ba63f69
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: 04cbdaac50b0ea77659d7c495dcd1a9e6d43335c
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207787"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926995"
 ---
 # <a name="platform-specifics"></a>平台特性
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 _平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。_
 
@@ -43,10 +43,10 @@ _平台特性可讓您使用的功能只可在特定的平台，而不需要實�
 建立特定平台的程序如下所示：
 
 1. 實作特定功能的效應。 如需詳細資訊，請參閱 <<c0> [ 建立效果](~/xamarin-forms/app-fundamentals/effects/creating.md)。
-1. 建立平台特定類別會公開 （expose） 的效果。 如需詳細資訊，請參閱 <<c0> [ 建立平台特定類別](#creating)。
-1. 在平台特定類別中實作以允許特定平台-使用透過 XAML 附加的屬性。 如需詳細資訊，請參閱 <<c0> [ 將附加屬性加入](#attached_property)。
-1. 在平台特定類別中實作以允許透過 fluent 的程式碼 API 使用平台專屬的擴充方法。 如需詳細資訊，請參閱 <<c0> [ 加入擴充方法](#extension_methods)。
-1. 修改影響實作，讓效果僅適用於特定平台叫用為效果相同的平台上。 如需詳細資訊，請參閱 <<c0> [ 建立效果](#creating_the_effect)。
+1. 建立平台特定類別會公開 （expose） 的效果。 如需詳細資訊，請參閱 <<c0> [ 建立平台特定類別](#creating-a-platform-specific-class)。
+1. 在平台特定類別中實作以允許特定平台-使用透過 XAML 附加的屬性。 如需詳細資訊，請參閱 <<c0> [ 將附加屬性加入](#adding-an-attached-property)。
+1. 在平台特定類別中實作以允許透過 fluent 的程式碼 API 使用平台專屬的擴充方法。 如需詳細資訊，請參閱 <<c0> [ 加入擴充方法](#adding-extension-methods)。
+1. 修改影響實作，讓效果僅適用於特定平台叫用為效果相同的平台上。 如需詳細資訊，請參閱 <<c0> [ 建立效果](#creating-the-effect)。
 
 公開為平台特定效果的結果是，效果可以更輕鬆地使用透過 XAML，以及透過 fluent 的程式碼 API。
 
@@ -277,7 +277,7 @@ shadowLabel.On<iOS>().SetIsShadowed(true);
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [ShadowPlatformSpecific （範例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/shadowplatformspecific/)
 - [iOS 平台特性](~/xamarin-forms/platform/ios/index.md)
 - [Android 平台特性](~/xamarin-forms/platform/android/index.md)

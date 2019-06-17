@@ -6,13 +6,13 @@ ms.assetid: EABF5072-B89B-4356-B7B3-1C6B40358926
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 28/04/2018
-ms.openlocfilehash: a050024e991e15c537b4548c1d2600ab99f99070
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 04/28/2018
+ms.openlocfilehash: 75de62017c01c14ef4d2bab6d458336484d5cd69
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997409"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61170098"
 ---
 # <a name="styling-xamarinforms-apps"></a>樣式設定 Xamarin.Forms 應用程式
 

@@ -1,5 +1,5 @@
 ---
-title: 常見問題集
+title: Xamarin.Android 常見問題集
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 0F0FDD2B-FFB1-476F-B674-81DB3A5E1CF3
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
-ms.openlocfilehash: ad3fc32245880f6603c63d33aac49309fd61b753
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 9c0e6d014f27651710bf3b8e713b2bf80322d628
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "36935460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153395"
 ---
-# <a name="frequently-asked-questions"></a>常見問題集
+# <a name="android-frequently-asked-questions"></a>Android 的常見問題集
 
 ## <a name="installation--setup"></a>安裝和設定
 
@@ -53,10 +53,6 @@ Xamarin.Android 需要 JDK 8 或 Microsoft 行動 OpenJDK。 本文列出一些�
 ### <a name="how-do-i-automate-an-android-nunit-test-projectautomate-android-nunit-testmd"></a>[如何將 Android NUnit 測試專案自動化？](automate-android-nunit-test.md)
 
 本指南涵蓋設定 Android NUnit 測試專案中，步驟_不_Xamarin.UITest 專案。 您可以找到 Xamarin.UITest 輔助線[此處](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)。
-
-### <a name="how-do-i-enable-intellisense-in-android-axml-filesenable-axml-intellisensemd"></a>[如何啟用 Android.axml 檔案中的 Intellisense？](enable-axml-intellisense.md)
-
-本指南說明如何啟用 android.axml 檔案的 Visual Studio's Intellisense。
 
 ### <a name="why-cant-my-android-release-build-connect-to-the-internetandroid-internetmd"></a>[為何我的 Android 發行組建無法連線到網際網路？](android-internet.md)
 

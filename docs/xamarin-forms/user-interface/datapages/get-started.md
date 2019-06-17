@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: ef3ec5f8d1a2ded8fc7cae34663f10ab6eb7c86f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: e3256787c0bc0852275f663772b8a91a6825a0dd
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052967"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61250675"
 ---
 # <a name="getting-started-with-datapages"></a>Getting Started with DataPages
 
@@ -34,7 +34,7 @@ ms.locfileid: "53052967"
 
 * Xamarin.Forms.Pages
 * Xamarin.Forms.Theme.Base
-* 佈景主題的實作 （例如 Nuget Xamarin.Forms.Themes.Light)
+* 佈景主題的實作 （例如 Nuget Xamarin.Forms.Theme.Light)
 
 ## <a name="2-add-theme-reference"></a>2.新增佈景主題參考
 
@@ -51,7 +51,7 @@ ms.locfileid: "53052967"
 </Application>
 ```
 
-**重要事項︰** 您也應該遵循的步驟[佈景主題 （如下所示） 的組件載入](#loadtheme)一些未定案程式碼加入至 iOS`AppDelegate`和 Android `MainActivity`。 這會改善未來的預覽版。
+**重要：** 您也應該遵循的步驟[佈景主題 （如下所示） 的組件載入](#loadtheme)某些未定案程式碼加入至 iOS`AppDelegate`和 Android `MainActivity`。 這會改善未來的預覽版。
 
 
 ## <a name="3-add-a-xaml-page"></a>3.新增 XAML 頁面

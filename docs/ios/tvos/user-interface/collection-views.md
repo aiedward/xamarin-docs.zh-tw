@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: f815afa6b1abb15348019b0c53333b4acb054008
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60933720"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>使用 tvOS 在 Xamarin 中的集合檢視
 
@@ -59,7 +59,7 @@ ms.locfileid: "50108024"
 - `DequeueReusableCell` -建立或傳回指定的類型 （如應用程式的分鏡腳本中指定） 的資料格。
 - `DequeueReusableSupplementaryView` -建立或傳回指定的型別 （如應用程式的分鏡腳本中指定） 的增補檢視。
 
-然後再呼叫其中一種方法，您必須註冊類別中，分鏡腳本或`.xib`檔案用來建立集合檢視儲存格的檢視。 例如: 
+然後再呼叫其中一種方法，您必須註冊類別中，分鏡腳本或`.xib`檔案用來建立集合檢視儲存格的檢視。 例如：
 
 ```csharp
 public CityCollectionView (IntPtr handle) : base (handle)
@@ -142,7 +142,7 @@ public CityCollectionView (IntPtr handle) : base (handle)
 1. 將映像檢視、 標籤和按鈕新增至現有的檢視，並將其設定為如下所示： 
 
     [![](collection-views-images/collection02vs.png "設定版面配置")](collection-views-images/collection02vs.png#lightbox)
-1. 指派**名稱**映像檢視與中的標籤**小工具 索引標籤**的**屬性總管**。 例如:  
+1. 指派**名稱**映像檢視與中的標籤**小工具 索引標籤**的**屬性總管**。 例如： 
 
     [![](collection-views-images/collection03vs.png "屬性總管")](collection-views-images/collection03vs.png#lightbox)
 1. 接下來，拖曳到 分鏡腳本的集合檢視控制器： 

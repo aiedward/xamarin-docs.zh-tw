@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 1e7b4b2ce4b7592c2350af20cf516436e244d95f
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66193819"
+---
 Xamarin.Forms 具有強制回應快顯 (稱為警示)，可警示使用者或是詢問簡易問題。 在本練習中，您會使用 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 方法 (來自 [`Page`](xref:Xamarin.Forms.Page) 類別) 向使用者顯示警示，以及詢問簡易問題。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -59,7 +67,7 @@ Xamarin.Forms 具有強制回應快顯 (稱為警示)，可警示使用者或是
 
     請觀察一下，在選取問題的回應之後，回應便會輸出到 Visual Studio 的 [輸出] 視窗。
 
-    如需如何顯示警示的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md)指南中的[顯示警示](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md#displaying-an-alert)。
+    如需如何顯示警示的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/user-interface/pop-ups.md)指南中的[顯示警示](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -120,4 +128,4 @@ Xamarin.Forms 具有強制回應快顯 (稱為警示)，可警示使用者或是
 
     請觀察一下，在選取問題的回應之後，回應便會輸出到 Visual Studio for Mac 的 [應用程式輸出] 視窗。
 
-    如需如何顯示警示的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md)指南中的[顯示警示](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md#displaying-an-alert)。
+    如需如何顯示警示的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/user-interface/pop-ups.md)指南中的[顯示警示](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)。

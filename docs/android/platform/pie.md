@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: fa41affc57714254a12623f79da3dc1396ecd009
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: e08324d5a905639e7ecd59bc4c7a5c0f02d0adfe
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61217936"
 ---
 # <a name="android-pie-features"></a>Android 的圓形圖功能
 
@@ -30,19 +30,20 @@ Xamarin.Android 9.0 提供支援 Android 的圓形圖。 如需 Android 圓形�
 
 下列清單，才能在以 Xamarin 為基礎的應用程式中使用 Android 的圓形圖功能：
 
--   **Visual Studio** &ndash;如果您使用的 Windows，更新至 Visual Studio 2017 15.8 或更新版本。 如果您使用 Mac，更新為 Visual Studio 2017 for Mac 7.6 或更新版本。
+- **Visual Studio** &ndash;建議使用 Visual Studio 2019。
+    如果您使用 Visual Studio 2017，在 Visual Studio 2017 15.8 或更新版本的 Windows 更新。 在 macOS 上，更新 Visual Studio 2017 for Mac 7.6 或更新版本。
 
--   **Xamarin.Android** &ndash; Xamarin.Android 9.0.0.17 或更新版本必須安裝 Visual studio (Xamarin.Android 自動安裝的一部分**使用.NET 進行行動開發**工作負載)。
+- **Xamarin.Android** &ndash; Xamarin.Android 9.0.0.17 或更新版本必須安裝 Visual studio (Xamarin.Android 自動安裝的一部分**使用.NET 進行行動開發**工作負載)。
 
--   **Java Developer Kit** &ndash; Xamarin Android 9.0 開發需要[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (或者，您可以嘗試的 microsoft 的預覽[OpenJDK](~/android/get-started/installation/openjdk.md))。 JDK8 會自動安裝的一部分**使用.NET 進行行動開發**工作負載。
+- **Java Developer Kit** &ndash; Xamarin Android 9.0 開發需要[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (或者，您可以嘗試的 microsoft 的預覽[OpenJDK](~/android/get-started/installation/openjdk.md))。 JDK8 會自動安裝的一部分**使用.NET 進行行動開發**工作負載。
 
--   **Android SDK** &ndash;透過 Android SDK 管理員必須安裝 Android SDK API 28 或更新版本。
+- **Android SDK** &ndash;透過 Android SDK 管理員必須安裝 Android SDK API 28 或更新版本。
 
 ## <a name="getting-started"></a>使用者入門
 
 若要開始開發使用 Xamarin.Android 的 Android 圓形圖應用程式，您必須下載並安裝最新工具和 SDK 封裝，才能建立第一個圓形圖 Android 專案：
 
-1. 若要更新[Visual Studio 2017 版本 15.8](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)或更新版本。 如果您使用 Visual Studio for Mac，更新[Visual Studio 2017 for Mac 版本 7.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)或更新版本。
+1. 建議使用 Visual Studio 2019。 如果您使用 Visual Studio 2017，更新[Visual Studio 2017 版本 15.8](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)或更新版本。 如果您使用 Visual Studio for Mac，更新[Visual Studio 2017 for Mac 版本 7.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)或更新版本。
 
 2. 安裝**Android 圓形圖 (API 28)** 套件和工具透過 SDK 管理員。
 
@@ -52,13 +53,11 @@ Xamarin.Android 9.0 提供支援 Android 的圓形圖。 如需 Android 圓形�
 
 下列各節說明每個步驟：
 
-
 ### <a name="update-visual-studio"></a>更新 Visual Studio 2017
 
-若要新增至 Visual Studio 的 Android 圓形圖支援，請更新為 Visual Studio 2017 15.8 或更新版本 (如需相關指示，請參閱 <<c0> [ 最新版本的更新 Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/update-visual-studio))。
+Visual Studio 2019 建議用於建置使用 Xamarin Android 圓形圖應用程式。
 
-若要加入 Visual Studio 的 Android 圓形圖支援 for Mac，請更新為 Visual Studio 2017 for Mac 7.6 或更新版本 (如需相關指示，請參閱 <<c0> [ 安裝程式並安裝 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation))。
-
+如果您使用 Visual Studio 2017，更新至 Visual Studio 2017 15.8 或更新版本 (如需相關指示，請參閱 <<c0> [ 最新版本的更新 Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/update-visual-studio))。 在 macOS 上，更新至 Visual Studio 2017 for Mac 7.6 或更新版本 (如需相關指示，請參閱 <<c0> [ 安裝程式並安裝 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation))。
 
 ### <a name="install-the-android-sdk"></a>Android SDK 安裝
 
@@ -75,8 +74,6 @@ Xamarin.Android 9.0 建立專案時，您必須先使用 Android SDK 管理員�
     [![封裝安裝 Android 的圓形圖](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
 
 4. 如果您正使用模擬器，建立虛擬裝置支援**API 層級 28**。 如需建立虛擬裝置的詳細資訊，請參閱[管理的虛擬裝置的 Android 裝置管理員](~/android/get-started/installation/android-emulator/device-manager.md)。
-
-
 
 ### <a name="start-a-xamarinandroid-project"></a>啟動 Xamarin.Android 專案
 
@@ -173,7 +170,7 @@ Android 的圓形圖導入了下列增強功能來改善訊息經驗：
     ```
 
 2. 建立`Notification.MessagingStyle.Message`其中包含要傳送的映像傳遞至新的映像[Notification.MessagingStyle.Message.SetData](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri)方法。
-   例如: 
+   例如：
 
     ```csharp
     Uri imageUri = Uri.Parse("android.resource://com.xamarin.pminidemo/drawable/example_image");

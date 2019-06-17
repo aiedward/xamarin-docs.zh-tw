@@ -6,18 +6,21 @@ ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 1ebc450a285d47fe1eedb0f8d72d6c9dc2b95644
-ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
+ms.openlocfilehash: f9cfc69c2cd711460233e609d63bcbb8eb172ccf
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61405103"
 ---
 # <a name="xamarin-live-player-setup"></a>Xamarin Live Player 設定
 
 Xamarin Live Player 可讓您對您的應用程式進行即時編輯並且讓這些變更反映即時裝置上。 Xamarin Live Player 應用程式 – 不需要設定模擬器，或使用纜線來部署內執行的程式碼 ！ 本文說明如何設定 Xamarin Live Player。
 
 ![預覽功能](~/media/shared/preview.png)
+
+> [!NOTE]
+> 只有 Visual Studio 2017 中使用播放程式的即時預覽。
 
 ## <a name="1-get-the-android-app"></a>1.取得 Android 應用程式
 
@@ -114,6 +117,5 @@ Xamarin Live Player 需要：
 
 ## <a name="related-links"></a>相關連結
 
-- [限制](~/tools/live-player/limitations.md)
+- [範例搭配 Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)
 - [疑難排解](~/tools/live-player/troubleshooting.md)
-- [Xamarin Live Player 範例](~/tools/live-player/samples.md)

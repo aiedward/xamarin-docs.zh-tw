@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/28/2016
-ms.openlocfilehash: 42cf10e592a37f9a979d05d7784553059923646c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7ed8fc18624f46abd4a9fc293d8c33a1722da7dd
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61424617"
 ---
 # <a name="referencing-native-libraries-in-xamarinios"></a>參考在 Xamarin.iOS 中的原生程式庫
 
@@ -98,7 +98,7 @@ lipo -info /full/path/to/libraryname.a
 -gcc_flags "-L${ProjectDir} -lMylibrary -lSystemLibrary -framework CFNetwork -force_load ${ProjectDir}/libMyLibrary.a"
 ```
 
-如果您的原生程式庫包含 c + + 程式碼，您也必須傳遞-cxx 旗標在您 「 額外引數 」，讓 Xamarin.iOS 知道若要使用正確的編譯器。 C + + 的先前的選項如下：
+如果您的原生程式庫包含C++您也必須傳遞-cxx 旗標在您 「 額外引數 」，讓 Xamarin.iOS 知道若要使用正確的編譯器的程式碼。 針對C++先前的選項如下：
 
 ```bash
 -cxx -gcc_flags "-L${ProjectDir} -lMylibrary -lSystemLibrary -framework CFNetwork -force_load ${ProjectDir}/libMyLibrary.a"
@@ -122,8 +122,7 @@ lipo -info /full/path/to/libraryname.a
 -  判斷以其所在的程式庫
 -  撰寫適當的 P/Invoke 宣告
 
-
-當您使用 P/Invoke 時您需要指定您要連結的程式庫的路徑。 使用 iOS 共用程式庫、 可以硬式編碼路徑，或您可以使用我們在定義了方便常數時我們[常數類別](https://developer.xamarin.com/api/type/Constants/)，這些常數應涵蓋的共用的 iOS 程式庫。
+當您使用 P/Invoke 時您需要指定您要連結的程式庫的路徑。 使用 iOS 共用程式庫、 可以硬式編碼路徑，或您可以使用我們在定義了方便常數時我們`Constants`，這些常數應涵蓋的共用的 iOS 程式庫。
 
 例如，如果您想要叫用 Apple UIKit 程式庫，這在 c： 具有此簽章 UIRectFrameUsingBlendMode 方法
 

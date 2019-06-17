@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
 ms.openlocfilehash: 8e7ef890af264bb08827d86c635d555184f1ec00
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672504"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61235865"
 ---
 # <a name="using-tiled-with-cocossharp"></a>搭配 cocossharp 使用 Tiled
 
@@ -174,7 +174,7 @@ protected override void AddedToScene ()
 
 ![](tiled-images/image10.png "如果看不到寶藏箱子屬性，寶藏箱子上按一下滑鼠右鍵，然後選取圖格屬性")
 
-並排顯示的屬性會實作具有名稱和值。 若要加入的屬性，請按一下**+** 按鈕，輸入名稱**IsTreasure**，按一下  **確定**，然後輸入值**true**: 
+並排顯示的屬性會實作具有名稱和值。 若要加入的屬性，請按一下 **+** 按鈕，輸入名稱 **IsTreasure** ，按一下  **確定** ，然後輸入值 **true** : 
 
 ![](tiled-images/image11.png "若要新增的屬性，按一下按鈕、 輸入名稱 IsTreasure，按一下 [確定]，然後輸入值為 true")
 

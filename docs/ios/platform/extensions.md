@@ -8,18 +8,18 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: e02d7a13a1fd5b554943f9facd6c9f120096a6a5
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: fb5cea018180966e914a5bce5e85cb83fbdf901d
+ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667811"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557252"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的 iOS 延伸模組
 
 > [!VIDEO https://youtube.com/embed/Sd0-ch9Udmk]
 
-**藉由建立延伸模組在 iOS 中， [Xamarin University](https://university.xamarin.com/)**
+**建立 iOS 的擴充功能影片**
 
 專門擴充功能，為 iOS 8 中引進`UIViewControllers`，會依標準的內容內的 iOS 滿足下列條件為內**通知中心**，如使用者所要求執行自訂的鍵盤類型特製化輸入或其他內容，例如編輯的相片的延伸模組可以在其中提供的特殊效果的篩選器。
 
@@ -29,11 +29,11 @@ ms.locfileid: "57667811"
 
 |類型|描述|擴充點|主機應用程式|
 |--- |--- |--- |--- |
-|動作|特製化的編輯器或特定媒體類型的檢視器|`com.apple.ui-services`|任何|
+|動作|特製化的編輯器或特定媒體類型的檢視器|`com.apple.ui-services`|Any|
 |文件提供者|可讓應用程式以使用遠端的文件存放區|`com.apple.fileprovider-ui`|使用應用程式[UIDocumentPickerViewController](xref:UIKit.UIDocumentPickerViewController)|
-|鍵盤|替代鍵盤|`com.apple.keyboard-service`|任何|
+|鍵盤|替代鍵盤|`com.apple.keyboard-service`|Any|
 |相片編輯|相片操作和編輯|`com.apple.photo-editing`|Photos.app 編輯器|
-|共用|共用資料與傳訊服務等社交網路。|`com.apple.share-services`|任何|
+|共用|共用資料與傳訊服務等社交網路。|`com.apple.share-services`|Any|
 |今天|通知中心的 [Today] 畫面上顯示 「 widget 」|`com.apple.widget-extensions`|今天和通知中心|
 
 [其他擴充點](~/ios/platform/introduction-to-ios10/index.md#app-extensions)已新增 ios 10。
@@ -69,9 +69,9 @@ ms.locfileid: "57667811"
 
 如果他們選擇其中一個應用程式的延伸模組，其`UIViewController`會具現化，並開始正常的檢視控制器生命週期。 不過，不同於一般的應用程式，這會暫停，但通常不會終止使用者完成與其進行互動時，延伸模組會載入、 執行和重複，然後終止。
 
-擴充功能可以透過其主應用程式與通訊[NSExtensionContext](xref:Foundation.NSExtensionContext)物件。 有些延伸模組有接收結果的非同步回呼的作業。 這些回呼會在背景執行緒上執行和擴充功能必須將此列入考量。比方說，是藉由使用[NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*)如果他們想要更新的使用者介面。 請參閱[主機應用程式與通訊](#Communicating-with-the-Host-App)節以取得詳細資料。
+擴充功能可以透過其主應用程式與通訊[NSExtensionContext](xref:Foundation.NSExtensionContext)物件。 有些延伸模組有接收結果的非同步回呼的作業。 這些回呼會在背景執行緒上執行和擴充功能必須將此列入考量。比方說，是藉由使用[NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*)如果他們想要更新的使用者介面。 請參閱[主機應用程式與通訊](#communicating-with-the-host-app)節以取得詳細資料。
 
-根據預設，擴充功能和其容器應用程式可以通訊，儘管一起安裝。 在某些情況下，容器應用程式本質上是空"shipping"容器安裝擴充功能之後，會提供其用途。 不過，如果指定的情況下，容器應用程式和延伸模組可能共用資源從常見的區域。 此外，**今天擴充功能**可能會要求它的容器應用程式，以開啟 URL。 此行為所示[發展倒數小工具](https://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo)。
+根據預設，擴充功能和其容器應用程式可以通訊，儘管一起安裝。 在某些情況下，容器應用程式本質上是空"shipping"容器安裝擴充功能之後，會提供其用途。 不過，如果指定的情況下，容器應用程式和延伸模組可能共用資源從常見的區域。 此外，**今天擴充功能**可能會要求它的容器應用程式，以開啟 URL。 此行為所示[事件的倒數小工具](https://github.com/xamarin/ios-samples/tree/master/intro-to-extensions)。
 
 ## <a name="creating-an-extension"></a>建立擴充功能
 
@@ -99,7 +99,7 @@ ms.locfileid: "57667811"
 
     ![](extensions-images/registerandprincipalclass.png)
 
-特定類型的延伸模組可能有其他需求。 比方說，**今天**或是**通知中心**延伸模組的主要類別必須實作[INCWidgetProviding](https://developer.xamarin.com/api/type/NotificationCenter.INCWidgetProviding/)。
+特定類型的延伸模組可能有其他需求。 比方說，**今天**或是**通知中心**延伸模組的主要類別必須實作[INCWidgetProviding](xref:NotificationCenter.INCWidgetProviding)。
 
 > [!IMPORTANT]
 > 如果您開始使用其中一個 Visual Studio for Mac 所提供的延伸模組範本的專案時，會提供大部分 （若非全部） 這些需求，並自動符合您的範本。

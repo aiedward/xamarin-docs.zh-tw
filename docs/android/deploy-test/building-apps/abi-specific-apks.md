@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: bb9be2140c69578de85128cf7c3a013ad12aa511
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: b34ac82cf240b892e60707d76c82da64ff232a20
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617562"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827421"
 ---
 # <a name="building-abi-specific-apks"></a>建置特定 ABI 的 APK
 
@@ -29,11 +29,11 @@ _本文將討論如何使用 Xamarin.Android 建置瞄準單一 ABI 的 APK。_
 -  **支援不同的 CPU 架構** - 若您的應用程式具有適用於特定 CPU 的共用程式庫，您可以為該 CPU 僅散發共用程式庫。
 
 
-多重 APK 可能會使散發變得更複雜 - 由 Google Play 提及的一項問題。 Google Play 會根據應用程式的版本代碼和其他與 **AndroidManifest.XML** 包含一起的中繼資料，來確保傳遞到裝置的是正確的 APK。 如需 Google Play 針對應用程式支援多重 APK 之方式的特定詳細資料，請查閱 [Google Play 的多重 APK 支援相關文件](http://developer.android.com/google/play/publishing/multiple-apks.html)。
+多重 APK 可能會使散發變得更複雜 - 由 Google Play 提及的一項問題。 Google Play 會根據應用程式的版本代碼和其他與 **AndroidManifest.XML** 包含一起的中繼資料，來確保傳遞到裝置的是正確的 APK。 如需 Google Play 針對應用程式支援多重 APK 之方式的特定詳細資料，請查閱 [Google Play 的多重 APK 支援相關文件](https://developer.android.com/google/play/publishing/multiple-apks.html)。
 
 本指南會說明如何編寫指令碼為 Xamarin.Android 應用程式建置多重 APK，並使每個 APK 都瞄準特定的 ABI。 它涵蓋了下列主題：
 
-1.  為 APK 建立唯一的「版本代碼」。
+1.  為 APK 建立唯一的「版本代碼」  。
 1.  建立會用於此 APK 的 **AndroidManifest.XML** 暫存版本。
 1.  使用先前步驟中的 **AndroidManifest.XML** 來建置應用程式。
 1.  透過簽署及 Zipalign 來準備 APK。
@@ -45,7 +45,7 @@ _本文將討論如何使用 Xamarin.Android 建置瞄準單一 ABI 的 APK。_
 
 ### <a name="creating-the-version-code-for-the-apk"></a>為 APK 建立版本代碼
 
-Google 建議針對使用七位數版本代碼的版本代碼使用特定的演算法 (請參閱 [Multiple APK Support](http://developer.android.com/google/play/publishing/multiple-apks.html) (多重 APK 支援) 文件中的＜Using a version code scheme＞ *U* (使用版本代碼配置) 一節。
+Google 建議針對使用七位數版本代碼的版本代碼使用特定的演算法 (請參閱 [Multiple APK Support](https://developer.android.com/google/play/publishing/multiple-apks.html) (多重 APK 支援) 文件中的＜Using a version code scheme＞ *U* (使用版本代碼配置) 一節。
 藉由將此版本代碼配置展開至八位數，您可以在版本代碼中包含一些 ABI 資訊，以確保 Google Play 將正確的 APK 散發到裝置。 下列清單說明這個八位數版本代碼的格式 (已由左至右編製索引)：
 
 -   **索引 0** (下列圖表中的紅色) &ndash; ABI 的整數：
@@ -185,6 +185,6 @@ Rake 工作完成之後，便會有三個 `bin` 資料夾，以及一個 `xamari
 
 ## <a name="related-links"></a>相關連結
 
-- [OneABIPerAPK (範例)](https://developer.xamarin.com/samples/OneABIPerAPK/)
+- [OneABIPerAPK (範例)](https://developer.xamarin.com/samples/monodroid/OneABIPerAPK/)
 - [發行應用程式](~/android/deploy-test/publishing/index.md)
-- [Google Play 的多重 APK 支援](http://developer.android.com/google/play/publishing/multiple-apks.html) ()
+- [Google Play 的多重 APK 支援](https://developer.android.com/google/play/publishing/multiple-apks.html) ()

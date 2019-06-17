@@ -1,18 +1,18 @@
 ---
 title: 第 15 章的摘要。 互動式介面
-description: 使用 Xamarin.Forms 建立行動應用程式： 摘要的第 15 章。 互動式介面
+description: 使用 Xamarin.Forms 建立行動應用程式：第 15 章的摘要。 互動式介面
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 6b519b15199373762965a8eeee6c9ae73f125cf3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 974ef2a141ec7175c2306d4af63f534a5c77ecb2
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61335285"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>第 15 章的摘要。 互動式介面
 
@@ -24,12 +24,12 @@ ms.locfileid: "53060429"
 
 Xamarin.Forms 包含 20 的可具現化類別，衍生自`View`而非`Layout`。 六個這些討論過在先前的章節：
 
-- `Label`: [**第 2 章。應用程式剖析**](chapter02.md)
-- `BoxView`: [**第 3 章。捲動堆疊**](chapter03.md)
-- `Button`: [**第 6 章。按下按鈕**](chapter06.md)
-- `Image`: [**第 13 章。點陣圖**](chapter13.md)
-- `ActivityIndicator`: [**第 13 章。點陣圖**](chapter13.md)
-- `ProgressBar`: [**第 14 章。AbsoluteLayout**](chapter14.md)
+- `Label`：[**第 2 章。應用程式剖析**](chapter02.md)
+- `BoxView`：[**第 3 章。捲動堆疊**](chapter03.md)
+- `Button`：[**第 6 章。按下按鈕**](chapter06.md)
+- `Image`：[**第 13 章。點陣圖**](chapter13.md)
+- `ActivityIndicator`：[**第 13 章。點陣圖**](chapter13.md)
+- `ProgressBar`：[**第 14 章。AbsoluteLayout**](chapter14.md)
 
 在這一章中的八個檢視有效地允許使用者互動具有基本的.NET 資料類型：
 
@@ -44,12 +44,12 @@ Xamarin.Forms 包含 20 的可具現化類別，衍生自`View`而非`Layout`。
 
 在以下章節涵蓋剩餘的六種檢視方式：
 
-- `WebView`: [**第 16 章。資料繫結**](chapter16.md)
-- `Picker`: [**第 19 章。集合檢視**](chapter19.md)
-- `ListView`: [**第 19 章。集合檢視**](chapter19.md)
-- `TableView`: [**第 19 章。集合檢視**](chapter19.md)
-- `Map`: [**第 28 章。位置與地圖**](chapter28.md)
-- `OpenGLView`： 未涵蓋在此活頁簿 （和 Windows 平台不支援）
+- `WebView`：[**第 16 章。資料繫結**](chapter16.md)
+- `Picker`：[**第 19 章。集合檢視**](chapter19.md)
+- `ListView`：[**第 19 章。集合檢視**](chapter19.md)
+- `TableView`：[**第 19 章。集合檢視**](chapter19.md)
+- `Map`：[**第 28 章。位置與地圖**](chapter28.md)
+- `OpenGLView`：未涵蓋在此活頁簿 （和 Windows 平台不支援）
 
 ## <a name="slider-and-stepper"></a>滑桿和步進
 
@@ -65,8 +65,8 @@ Xamarin.Forms 包含 20 的可具現化類別，衍生自`View`而非`Layout`。
 
 支援這些屬性可繫結屬性中，請確定一致：
 
-- 所有的三個屬性，如[ `coerceValue` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty+CoerceValueDelegate/)指定為可繫結的屬性可確保方法`Value`之間`Minimum`和`Maximum`。
-- [ `validateValue` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty+ValidateValueDelegate/)方法`MinimumProperty`會傳回`false`如果`Minimum`所設值大於或等於`Maximum`，類似`MaximumProperty`。 傳回`false`從`validateValue`方法會使`ArgumentException`引發。
+- 所有的三個屬性，如[ `coerceValue` ](xref:Xamarin.Forms.BindableProperty.CoerceValueDelegate)指定為可繫結的屬性可確保方法`Value`之間`Minimum`和`Maximum`。
+- [ `validateValue` ](xref:Xamarin.Forms.BindableProperty.ValidateValueDelegate)方法`MinimumProperty`會傳回`false`如果`Minimum`所設值大於或等於`Maximum`，類似`MaximumProperty`。 傳回`false`從`validateValue`方法會使`ArgumentException`引發。
 
 `Slider` 會引發[ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged)事件[ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs)引數時`Value`屬性變更，以程式設計方式或當使用者操控`Slider`。
 

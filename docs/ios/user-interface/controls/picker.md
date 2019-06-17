@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/14/2018
-ms.openlocfilehash: 525ddf3c8cfc457738099c3afbb162fd3fb9239b
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 946cba08e1e504962c093f67e336d72b654a3a41
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233571"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61229108"
 ---
 # <a name="picker-control-in-xamarinios"></a>在 Xamarin.iOS 中的選擇器控制項
 
@@ -131,7 +131,7 @@ public class PeopleModel : UIPickerViewModel
 
 ### <a name="customizing-a-pickers-appearance"></a>自訂選擇器的外觀
 
-若要自訂的選擇器外觀，請使用 [`UIPickerView.UIPickerViewAppearance`](https://developer.xamarin.com/api/type/UIKit.UIPickerView+UIPickerViewAppearance/)
+若要自訂的選擇器外觀，請使用 [`UIPickerView.UIPickerViewAppearance`](xref:UIKit.UIPickerView.UIPickerViewAppearance)
 類別或覆寫[ `GetView` ](xref:UIKit.UIPickerViewModel.GetView(UIKit.UIPickerView,System.nint,System.nint,UIKit.UIView))並[ `GetRowHeight` ](xref:UIKit.UIPickerViewModel.GetRowHeight(UIKit.UIPickerView,System.nint))中的方法`UIPickerViewModel`。
 
 ## <a name="uidatepicker"></a>UIDatePicker
@@ -259,7 +259,7 @@ dateLabel.Text = "Alarm set for:" + coundownTimeformat.ToString(finishCountdown)
 
 若要格式化`NSDate`，使用[ `NSDateFormatter` ](xref:Foundation.NSDateFormatter)。
 
-若要使用`NSDateFormatter`，呼叫其[ `ToString` ](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate))方法。 例如: 
+若要使用`NSDateFormatter`，呼叫其[ `ToString` ](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate))方法。 例如：
 
 ```csharp
 var date = NSDate.Now;

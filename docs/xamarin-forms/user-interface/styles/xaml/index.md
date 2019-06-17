@@ -1,5 +1,5 @@
 ---
-title: 使用 XAML 樣式的樣式設定 Xamarin.Forms 應用程式
+title: 使用 XAML 樣式設定 Xamarin.Forms 應用程式的樣式
 description: 本指南說明如何藉由使用 XAML 樣式自訂 Xamarin.Forms 應用程式的外觀。
 ms.prod: xamarin
 ms.assetid: 344A34AA-B19A-4765-BC8A-875D9A6B5EA8
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: ec41955ac15ab23579a5e63b9e17eed61a74e86f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: adafcb85f4e3d3bd93f7b2afe69c0ca0bb37f3d0
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55291982"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926615"
 ---
-# <a name="styling-xamarinforms-apps-using-xaml-styles"></a>使用 XAML 樣式的樣式設定 Xamarin.Forms 應用程式
+# <a name="styling-xamarinforms-apps-using-xaml-styles"></a>使用 XAML 樣式設定 Xamarin.Forms 應用程式的樣式
 
 ## <a name="introductionintroductionmd"></a>[簡介](introduction.md)
 
@@ -22,7 +22,7 @@ Xamarin.Forms 應用程式通常會包含多個具有相同的外觀的控制項
 
 ## <a name="explicit-stylesexplicitmd"></a>[明確樣式](explicit.md)
 
-*明確*樣式是藉由設定選擇性地套用到控制項及其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)屬性。
+*明確*樣式是藉由設定選擇性地套用到控制項及其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性。
 
 ## <a name="implicit-stylesimplicitmd"></a>[隱含樣式](implicit.md)
 

@@ -1,6 +1,6 @@
 ---
 title: 適用於 Xamarin.iOS 和 tvOS 應用程式的無線部署
-description: 本文件描述如何以無線方式，從 Visual Studio fro Mac 或 Visual Studio 2017 將 Xamarin.iOS 應用程式部署到 iOS 裝置。
+description: 本文件描述如何以無線方式，從 Visual Studio for Mac 或 Visual Studio 2019 將 Xamarin.iOS 應用程式部署到 iOS 裝置。
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
 ms.technology: xamarin-ios
@@ -8,12 +8,12 @@ author: lobrien
 ms.author: laobri
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 6d64acdcc84c16f33a1f543bf1c9506ae7c8e347
-ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
+ms.openlocfilehash: 82bdd2c160572b0d813fb87d81b09c00996cef18
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54479689"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58854830"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>適用於 Xamarin.iOS 和 tvOS 應用程式的無線部署
 

@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Android 資料存取
+title: Xamarin.Android Data Access
 description: 大部分的應用程式有一些需求，將資料儲存在本機裝置上。 除非資料總量很微小，這通常需要的資料庫和資料層應用程式來管理資料庫存取權。  Android 提供 '內建' SQLite 資料庫引擎，並簡化 Xamarin 平台來儲存和擷取資料的存取。 本文件說明如何存取方式跨平台的 SQLite 資料庫。
 ms.prod: xamarin
 ms.assetid: 6B47E864-C6E7-4AA2-8DEF-2C8BF551D17C
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: 08720734de73af12d8a7383fa7d523dc350c4462
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61011351"
 ---
-# <a name="xamarinandroid-data-access"></a>Xamarin.Android 資料存取
+# <a name="xamarinandroid-data-access"></a>Xamarin.Android Data Access
 
 _大部分的應用程式有一些需求，將資料儲存在本機裝置上。除非資料總量很微小，這通常需要的資料庫和資料層應用程式來管理資料庫存取權。Android 提供 '內建' SQLite 資料庫引擎，並簡化 Xamarin 平台來儲存和擷取資料的存取。本文件說明如何存取方式跨平台的 SQLite 資料庫。_
 

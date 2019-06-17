@@ -1,5 +1,5 @@
 ---
-title: 在 iOS 中背景簡介
+title: iOS 中的背景處理簡介
 description: 本文件說明 ios 中的背景： 應用程式狀態、 應用程式生命週期方法，以及背景應用程式的重新整理。
 ms.prod: xamarin
 ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/24/2018
 ms.openlocfilehash: c533dd54e3b6b11465cfd7daf5b9a93265dbe7b7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61169715"
 ---
-# <a name="introduction-to-backgrounding-in-ios"></a>在 iOS 中背景簡介
+# <a name="introduction-to-backgrounding-in-ios"></a>iOS 中的背景處理簡介
 
 iOS 背景處理非常緊密，及提供三種實作它的方法：
 

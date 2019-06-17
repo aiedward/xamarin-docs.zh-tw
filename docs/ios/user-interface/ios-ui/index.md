@@ -1,5 +1,5 @@
 ---
-title: 在 iOS 中的使用者介面
+title: iOS 中的使用者介面
 description: 本文件所連結說明如何建置 Xamarin.iOS 應用程式中的使用者介面的指南。 連結的指南涵蓋的外觀 API，建立使用者介面物件、 版面配置選項等等。
 ms.prod: xamarin
 ms.assetid: 1BB46561-F503-491E-A27C-7878E7EBE00B
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
 ms.openlocfilehash: efb88ada8a4b4c36dd49de137eb64acd63552968
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115674"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61382332"
 ---
-# <a name="user-interfaces-in-ios"></a>在 iOS 中的使用者介面
+# <a name="user-interfaces-in-ios"></a>iOS 中的使用者介面
 
 ## <a name="appearance-apiintroduction-to-the-appearance-apimd"></a>[外觀 API](introduction-to-the-appearance-api.md)
 
@@ -26,7 +26,7 @@ Apple 群組關聯的部分功能重構成 「 架構 」，這等同於 Xamarin
 
 ## <a name="layout-optionsiosuser-interfaceios-uilayout-optionsmd"></a>[版面配置選項](~/ios/user-interface/ios-ui/layout-options.md)
 
-有兩種不同的機制，來檢視已調整大小或旋轉時，控制配置： 自動調整大小和自動版面配置。
+有兩種不同的機制，來檢視已調整大小或旋轉時，控制配置：自動調整大小，並自動版面配置。
 
 ## <a name="providing-haptic-feedbackiosuser-interfaceios-uihaptic-feedbackmd"></a>[提供 Haptic 意見反應](~/ios/user-interface/ios-ui/haptic-feedback.md)
 

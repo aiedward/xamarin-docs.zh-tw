@@ -1,5 +1,5 @@
 ---
-title: 常見問題集
+title: Xamarin.iOS 常見問題集
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 65E04188-185D-493D-BA3C-A89711CB6CAF
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: d2d0af5a69920f392eba1cd655f1d8ab74971be6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8b90b76cad5277fe76fc476a0bcd6f600e91b256
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107504"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61421821"
 ---
-# <a name="frequently-asked-questions"></a>常見問題集
+# <a name="ios-frequently-asked-questions"></a>iOS 常見問題集
 
 ## <a name="general-questions"></a>一般問題
 
@@ -42,7 +42,7 @@ IOS bug 可能會導致更新 iOS 版本之後消失的開發人員選項，這�
 
 ## <a name="publishing-questions"></a>發佈問題
 
-### <a name="error-when-submitting-to-app-store-invalid-bundle---options-not-allowed-to-be-embedded-in-bitcode-are-detected-in-the-submissioninvalid-bundle-bitcodemd"></a>[提交至 App Store 時的錯誤: 「 在送出作業中，會偵測到無效的套件組合-不允許內嵌在 bitcode 中的選項 」](invalid-bundle-bitcode.md)
+### <a name="error-when-submitting-to-app-store-invalid-bundle---options-not-allowed-to-be-embedded-in-bitcode-are-detected-in-the-submissioninvalid-bundle-bitcodemd"></a>[提交至 App Store 時的錯誤：「 在送出作業中，會偵測到無效的套件組合-不允許內嵌在 bitcode 中的選項 」](invalid-bundle-bitcode.md)
 
 提交應用程式，_需要_bitcode，例如 watchOS 和 tvOS 應用程式，必須透過 Xcode 9。
 
@@ -58,7 +58,7 @@ IOS bug 可能會導致更新 iOS 版本之後消失的開發人員選項，這�
 ### <a name="is-it-possible-to-create-a-xcarchive-archive-from-visual-studiocreate-xcarchivemd"></a>[是否可以從 Visual Studio 建立.xcarchive 封存？](create-xcarchive.md)
 截至 Xamarin 4 是，現在可以建立`.xcarchive`從 Windows 藉由設定`ArchiveOnBuild`屬性設`true`。
 
-### <a name="why-does-my-app-submission-fail-with-disallowed-paths--itunesmetadataplist--found-at--itunesmetadata-disallowed-pathsmd"></a>[為什麼我的應用程式提交因為「找到不允許的路徑 ( "iTunesMetadata.plist" ) ...」而失敗？](itunesmetadata-disallowed-paths.md)
+### <a name="why-does-my-app-submission-fail-with-disallowed-paths--itunesmetadataplist--found-at--itunesmetadata-disallowed-pathsmd"></a>[為什麼我的應用程式提交失敗，而且出現：[有不允許的路徑 ( "iTunesMetadata.plist" ) 出現在...]？](itunesmetadata-disallowed-paths.md)
 此錯誤是 Apple 的 App Store 驗證程序中的變更結果。 這個特定的錯誤_未_相關的 Xamarin，您已安裝特定版本，因此降級會_不_幫助。 本指南連結至有關如何修正此問題的詳細資訊的說明。
 
 
@@ -70,10 +70,10 @@ IOS bug 可能會導致更新 iOS 版本之後消失的開發人員選項，這�
 ### <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychainno-codesigning-keysmd"></a>[為什麼我的 iOS 組建因為「Keychain 中找不到任何有效的 iPhone 程式碼簽署金鑰」而失敗？](no-codesigning-keys.md)
 此錯誤訊息時發生問題專案需要有效的程式碼簽署憑證，但找不到它們。 程式碼簽署，才能測試和實體 iOS 裝置上的部署以及臨機操作及應用程式儲存組建。
 
-### <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-objectexception-marshal-obj-cmd"></a>[為什麼我的 iOS 9 應用程式因為「System.Exception: 無法封送處理 Objective-C 物件」而失敗？](exception-marshal-obj-c.md)
+### <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-objectexception-marshal-obj-cmd"></a>[有什麼我的 iOS 9 應用程式失敗，而且出現：System.Exception:無法封送 Objective-C 物件？](exception-marshal-obj-c.md)
 在 iOS 9 的 API 變更需要回呼的建構函式，呼叫 unmanaged 程式碼，為基礎的 API 現在預期它時使用。
 
-### <a name="runtime-error-the-assembly-mscorlibdll-was-not-found-or-could-not-be-loadederror-mscorlib-not-foundmd"></a>[執行階段錯誤：找不到組件 mscorlib.dll 或無法載入](error-mscorlib-not-found.md)
+### <a name="runtime-error-the-assembly-mscorlibdll-was-not-found-or-could-not-be-loadederror-mscorlib-not-foundmd"></a>[執行階段錯誤：找不到或無法載入組件 mscorlib.dll](error-mscorlib-not-found.md)
 就會發生此問題時*隱藏*`.monotouch-32`並`.monotouch-64`資料夾中遺漏的`.xcarchive`來簽署 / IPA 建立、 執行階段錯誤。
 
 ## <a name="deprecated"></a>已被取代
@@ -86,7 +86,7 @@ IOS bug 可能會導致更新 iOS 版本之後消失的開發人員選項，這�
 ### <a name="ipa-file-is-0-bytesipa-zero-bytesmd"></a>[IPA 檔案為 0 個位元組](ipa-zero-bytes.md)
 在舊版的 Xamarin，可能會導致要 0 個位元組的 Windows 上的 IPA 檔案發生一些已知的問題。
 
-### <a name="ibtool-error-the-operation-couldnt-be-completederror-ibtoolmd"></a>[IBTool 錯誤：無法完成作業。](error-ibtool.md)
+### <a name="ibtool-error-the-operation-couldnt-be-completederror-ibtoolmd"></a>[IBTool 錯誤：作業無法完成。](error-ibtool.md)
 Apple[修正](https://developer.apple.com/library/ios/releasenotes/DeveloperTools/RN-Xcode/Chapters/xc6_release_notes.html)這`ibtool`Xcode 6.1.1，因此升級到 Xcode 6.1.1 或更高版本中的 bug 是最簡單的修正程式。
 
 ### <a name="error-mt1009-could-not-copy-the-assemblyerror-mt1009md"></a>[錯誤 MT1009：無法複製組件](error-mt1009.md)

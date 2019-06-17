@@ -1,5 +1,5 @@
 ---
-title: IOS 11 中的 web 變更
+title: iOS 11 中的 Web 變更
 description: 本文件討論 WebKit 和 iOS 11 中的 Safari 服務架構所做的變更。 它說明如何使用 SFSafariViewController 中的更新和新功能 WKWebView 設定樣式。
 ms.prod: xamarin
 ms.assetid: C74B2E94-177C-43D4-8D6C-9B528773C120
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/12/2017
 ms.openlocfilehash: ba691a6605dcf7e86a76ed13d4c8ef5f0984ff6e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61399658"
 ---
-# <a name="web-changes-in-ios-11"></a>IOS 11 中的 web 變更
+# <a name="web-changes-in-ios-11"></a>iOS 11 中的 Web 變更
 
 iOS 11 推出新版本的 Safari 網頁瀏覽器 – Safari 11.0 – 包括 WebKit 和 SafariServices 的變更。 本指南將探索這些變更。
 

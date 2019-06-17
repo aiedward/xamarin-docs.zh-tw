@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: bb9795eb1e77a48b01556c553ae19613d6ab6de6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115935"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61267573"
 ---
 # <a name="viewpager"></a>ViewPager
 
@@ -39,7 +39,7 @@ _ViewPager 是可讓您實作手勢導覽的佈局管理員。手勢導覽允許
 
 ## <a name="requirements"></a>需求
 
-若要使用`ViewPager`在您的應用程式專案，您必須安裝[Android 支援程式庫 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)封裝。 如需有關如何安裝 NuGet 套件的詳細資訊，請參閱 <<c0> [ 逐步解說： 在您的專案中包含 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。 
+若要使用`ViewPager`在您的應用程式專案，您必須安裝[Android 支援程式庫 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)封裝。 如需有關如何安裝 NuGet 套件的詳細資訊，請參閱[逐步解說：在專案中包含 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。 
 
  
 ## <a name="architecture"></a>架構
@@ -86,4 +86,4 @@ _ViewPager 是可讓您實作手勢導覽的佈局管理員。手勢導覽允許
 ## <a name="related-links"></a>相關連結
 
 - [TreePager （範例）](https://developer.xamarin.com/samples/monodroid/UserInterface/TreePager)
-- [FlashCardPager （範例）](https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager)
+- [FlashCardPager (sample)](https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager)

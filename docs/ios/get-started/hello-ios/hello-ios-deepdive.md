@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 15c3f83601c4eeb8365422b6d8d9bad73ed37666
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7f40671cd37ba88834698dea8cdaba267c96600c
+ms.sourcegitcommit: c77d4257f8a35c8d931538b78a2ebc2aa48c0db9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118444"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58751254"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – 深度剖析
 
@@ -310,7 +310,7 @@ public partial class ViewController : UIViewController
 
 檢視控制器的最重要角色就是回應使用者互動，例如按下按鈕、瀏覽等等。 處理使用者互動的最簡單方式是，連接控制項來接聽使用者輸入，並連結事件處理常式來回應輸入。 例如，可連接按鈕來回應觸控事件，如 Phoneword 應用程式中所示範。
 
-現在已對檢視和檢視控制器有更深入了解，讓我們來探索其運作方式。
+讓我們來探索其運作方式。
 在 `Phoneword_iOS` 專案中，已將稱為 `TranslateButton` 的按鈕新增至內容檢視階層：
 
 [![](hello-ios-deepdive-images/image1.png "已將名為 TranslateButton 的按鈕新增至內容檢視階層")](hello-ios-deepdive-images/image1.png#lightbox)
@@ -464,4 +464,4 @@ iOS 模擬器是一個快速測試應用程式的方式。 此模擬器有數個
 
 - [Hello, iOS (範例)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/) \(英文\)
 - [iOS 人性化介面指導方針](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/) \(英文\)
-- [iOS 佈建入口網站](http://developer.apple.com/account/#/overview) \(英文\)
+- [iOS 佈建入口網站](https://developer.apple.com/account/#/overview) \(英文\)

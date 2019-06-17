@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
 ms.openlocfilehash: 9db9902dfbf602ba21b353f3a17920dc37b03ee5
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55234000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61382269"
 ---
 # <a name="authentication-and-authorization"></a>驗證與授權
 
@@ -387,7 +387,7 @@ private async Task NavigateAsync(string url)
 
 <a name="authorization" />
 
-## <a name="authorization"></a>授權
+## <a name="authorization"></a>Authorization
 
 驗證後，ASP.NET Core web 應用程式開發介面通常需要授權的存取，可讓服務，讓應用程式開發介面，可以使用已驗證的使用者，但為全部。
 

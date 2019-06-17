@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 25c5077b3637c54370fa1a42a9b652ef211c0ed9
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
-ms.translationtype: MT
+ms.openlocfilehash: 0d5df986caa01bba69b03d6502682889e78ecbc7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61300794"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms 方格
 
@@ -54,7 +54,7 @@ ms.locfileid: "53059336"
 - **絕對**&ndash;大小資料行和資料列以特定的固定高度和寬度的值。 指定為值和`GridUnitType.Absolute`C# 中，以及`#`XAML，在使用`#`所需的值。
 
 > [!NOTE]
-> 資料行的寬度值會設定為 '*' 藉由在 Xamarin.Forms 中的預設值，這可確保資料行，將會填滿可用空間。
+> 資料行的寬度值會設定為`*`藉由在 Xamarin.Forms 中的預設值，這可確保資料行，將會填滿可用空間。 資料列的高度值也會設為`*`預設。
 
 請考慮需要三個資料列和兩個資料行的應用程式。 下方的資料列必須是完全 200px 高，第一列必須是兩次中間的資料列一樣高。 左邊的資料行必須是寬度不足以容納內容，並正確的資料行必須以填滿剩餘的空間。
 
@@ -164,8 +164,8 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2);
 ```xaml
 <Grid ColumnSpacing="5">
   <Grid.ColumnDefinitions>
-    <ColumnDefinitions Width="*" />
-    <ColumnDefinitions Width="*" />
+    <ColumnDefinition Width="*" />
+    <ColumnDefinition Width="*" />
   </Grid.ColumnDefinitions>
 </Grid>
 ```

@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
 ms.openlocfilehash: fd48c7148aadd8d156544113e2d719295294bf40
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251035"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61261269"
 ---
 # <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>適用於 iOS/macOS 的 HttpClient 和 SSL/TLS 實作選擇器
 
@@ -30,7 +30,7 @@ ms.locfileid: "40251035"
 
 1. 按兩下**專案名稱**中**方案總管] 中**以開啟 [專案選項。
 2. 切換至**建置**專案設定 (例如**iOS 組建**Xamarin.iOS 應用程式)。
-3. 從**HttpClient 實作**下拉式清單中，選取`HttpClient`輸入為下列其中之一： **NSUrlSession** （建議）， **CFNetwork**，或**管理**。
+3. 從**HttpClient 實作**下拉式清單中，選取`HttpClient`輸入做為下列其中之一：**NSUrlSession** （建議）， **CFNetwork**，或**受控**。
 
 [![從受管理、 CFNetwork 或 NSUrlSession 選擇 HttpClient 實作](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png#lightbox)
 
@@ -104,10 +104,10 @@ HttpClient client = new HttpClient(new NSUrlSessionHandler());
 SSL （安全通訊端層） 和及其後繼者 TLS （傳輸層安全性），提供支援 HTTP 及其他網路連線，透過`System.Net.Security.SslStream`。 Xamarin.iOS、 Xamarin.tvOS 或 Xamarin.Mac 的`System.Net.Security.SslStream`實作會呼叫 Apple 原生 SSL/TLS 實作，而不要使用 Mono 所提供的 managed 的實作。 Apple 的原生實作支援 TLS 1.2。
 
 > [!WARNING]
-> 即將推出的 Xamarin.Mac 4.8 版本只支援 macOS 10.9 或更新版本。
-> 舊版的 Xamarin.Mac 支援 macOS 10.7 或更新版本，但這些較舊的 macOS 版本缺乏足夠的 TLS 基礎結構支援 TLS 1.2。 MacOS 10.7 或 macOS 10.8 為目標，請使用 Xamarin.Mac 4.6 或更早版本。
+> 即將推出的 Xamarin.Mac 4.8 版只會支援 macOS 10.9 或更高版本。
+> 舊版 Xamarin.Mac 支援 macOS 10.7 或更高版本，但這些較舊的 macOS 版本缺乏足夠的 TLS 基礎結構，無法支援 TLS 1.2。 若要以 macOS 10.7 或 10.8 為目標，請使用 Xamarin.Mac 4.6 或更舊版本。
 
-## <a name="app-transport-security"></a>應用程式的傳輸安全性
+## <a name="app-transport-security"></a>應用程式傳輸安全性
 
 Apple_應用程式的傳輸安全性_(ATS) 會強制執行 （例如應用程式的後端伺服器） 的網際網路資源與您的應用程式之間的安全連線。 ATS 可確保所有的網際網路通訊符合保護連線安全的最佳作法，藉此防止意外洩露機密的資訊，直接透過您的應用程式或它正在使用的程式庫。
 

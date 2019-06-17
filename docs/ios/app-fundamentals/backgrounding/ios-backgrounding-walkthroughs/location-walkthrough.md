@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: b857ee97951f0abfdf8e082ca9a826d5580d24ab
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: fa8a48e165764a449af4bc5414d2e66aecea8269
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61392244"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>逐步解說-在 Xamarin.iOS 中的背景位置
 
@@ -72,7 +72,7 @@ ms.locfileid: "57669189"
     }
     ```
 
-    上述程式碼上設定一些屬性和權限[CLLocationManager](https://developer.xamarin.com/api/type/CoreLocation.CLLocationManager/)類別：
+    上述程式碼上設定一些屬性和權限[CLLocationManager](xref:CoreLocation.CLLocationManager)類別：
 
     - `PausesLocationUpdatesAutomatically` – 這是布林值，可以根據系統是否可以暫停位置更新設定。 在某些裝置上則會預設為`true`，這可能會導致裝置停止收到背景位置更新，大約 15 分鐘之後。
     - `RequestAlwaysAuthorization` -您應傳入這個方法，以提供應用程式使用者選項，以允許在背景中存取的位置。 `RequestWhenInUseAuthorization` 也可以傳遞如果您想要授與使用者選項，以允許要在應用程式位於前景時，才可存取的位置。

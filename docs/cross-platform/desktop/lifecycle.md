@@ -1,18 +1,18 @@
 ---
 ms.assetid: 7C132A7C-4973-4B2D-98DC-3661C08EA33F
-title: WPF 和。Xamarin.Forms 應用程式生命週期
+title: WPF 和。Xamarin.Forms App 生命週期
 description: 這份文件比較 Xamarin.Forms 和 WPF 應用程式的應用程式生命週期之間的差異與相似之處。 它也會探討視覺化樹狀結構、 圖形、 資源和樣式。
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 653e2f849a74948d3636f594eae91cdeabfae138
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 5f157f2bbf36076e542a5f96b912cb1788a99052
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526789"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61269316"
 ---
-# <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF 和。Xamarin.Forms 應用程式生命週期
+# <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF 和。Xamarin.Forms App 生命週期
 
 Xamarin.Forms 會耗用大量的 XAML 為基礎的架構，它，特別是 WPF 之前出現的設計指引。 不過，以其他方式它偏差大幅可以是嘗試移轉的人的自黏便箋點。 這份文件會嘗試找出這些問題，並提供給 Xamarin.Forms 指引，盡可能橋接器 WPF 知識。
 
@@ -111,8 +111,8 @@ WPF 和 Xamarin.Forms 都支援`Margin`來控制元素，周圍的間距和`Padd
 
 | WPF | Xamarin.Forms | 用途 |
 |--- |--- |--- |
-|水平對齊|HorizontalOptions|左/Center/右/Stretch 選項|
-|垂直對齊|VerticalOptions|頂端/Center/底端/Stretch 選項|
+|HorizontalAlignment|HorizontalOptions|左/Center/右/Stretch 選項|
+|VerticalAlignment|VerticalOptions|頂端/Center/底端/Stretch 選項|
 
 > [!NOTE]
 > 這些屬性的實際的解譯取決於父容器。
@@ -137,7 +137,7 @@ WPF 和 Xamarin.Forms 使用版面配置控制項来放置子項目。 在大部
 
 ### <a name="rendering"></a>正在轉譯
 
-適用於 WPF 和 Xamarin.Forms 的轉譯機制是完全不同。 在 WPF 中，您建立的控制項直接將內容呈現至螢幕上的像素為單位。 WPF 會維護兩個物件圖形 (_樹狀結構_) 來代表這位_邏輯樹狀結構_表示的控制項，定義程式碼或 XAML，和_視覺化樹狀結構_代表這是在螢幕，就會發生的實際轉譯所執行的是直接透過視覺元素 （透過虛擬 draw 方法），或透過 XAML 定義`ControlTemplate`可以取代或自訂。 一般而言，視覺化樹狀結構是更複雜，因為它包含這例如控制項、 隱含的內容等的標籤周圍的框線。WPF 包含一組 Api (`LogicalTreeHelper`和`VisualTreeHelper`) 若要檢查這些項目中，兩個物件圖形。
+適用於 WPF 和 Xamarin.Forms 的轉譯機制是完全不同。 在 WPF 中，您建立的控制項直接將內容呈現至螢幕上的像素為單位。 WPF 會維護兩個物件圖形 (_樹狀結構_) 來代表這位_邏輯樹狀結構_表示的控制項，定義程式碼或 XAML，和_視覺化樹狀結構_代表這是在螢幕，就會發生的實際轉譯所執行的是直接透過視覺元素 （透過虛擬 draw 方法），或透過 XAML 定義`ControlTemplate`可以取代或自訂。 一般而言，視覺化樹狀結構是更複雜，因為它包含像是控制項、 隱含的內容等的標籤周圍的框線。WPF 包含一組 Api (`LogicalTreeHelper`和`VisualTreeHelper`) 若要檢查這些項目中，兩個物件圖形。
 
 在 Xamarin.Forms 中，控制您定義在`Page`是其實只是簡單的資料物件。 它們類似於邏輯樹狀結構表示法，但永遠不會呈現在他們自己的內容。 相反地，它們是_資料模型_這會影響轉譯項目。 實際轉譯由[分隔組_視覺化轉譯器_這會對應至每個控制項類型](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)。 這些轉譯器都由平台特有的 Xamarin.Forms 組件登錄中的每個平台特定專案。 您可以看到清單[此處](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。 除了取代或擴充的轉譯器，Xamarin.Forms 也有支援[效果](~/xamarin-forms/app-fundamentals/effects/index.md)可用以影響每個平台原生的轉譯。
 
@@ -151,7 +151,7 @@ Xamarin.Forms 不包含超過一個簡單的矩形的基本類型的圖形系統
 
 ## <a name="resources"></a>資源
 
-WPF 和 Xamarin.Forms 兩者都有資源與資源字典的概念。 您可以將任何物件型別`ResourceDictionary`具有索引鍵然後查詢它與`{StaticResource}`進行的操作不會變更，或`{DynamicResource}`可以變更在執行階段字典中的項目。 機制與使用方式完全相同，但其中一項差異： Xamarin.Forms 會要求您定義`ResourceDictionary`若要指派給`Resources`屬性而 WPF 預先會建立一個，並將它指派您。
+WPF 和 Xamarin.Forms 兩者都有資源與資源字典的概念。 您可以將任何物件型別`ResourceDictionary`具有索引鍵然後查詢它與`{StaticResource}`進行的操作不會變更，或`{DynamicResource}`可以變更在執行階段字典中的項目。 使用量和機制都相同，但是有一項差異：Xamarin.Forms 會要求您定義`ResourceDictionary`若要指派給`Resources`屬性而 WPF 預先會建立一個，並將它指派您。
 
 例如，請參閱下列定義：
 

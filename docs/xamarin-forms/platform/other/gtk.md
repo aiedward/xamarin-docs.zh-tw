@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 6243f7d90b921207f4dd406a1f33f4d7af40ecfb
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7e9bfa841db9f0a76f762bab22050377830d85de
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668359"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61171372"
 ---
 # <a name="gtk-platform-setup"></a>GTK # 平台安裝程式
 
@@ -33,7 +33,7 @@ GTK # 適用於 macOS 和 Linux 安裝的一部分[Mono](https://www.mono-projec
 
 請遵循這些指示來新增將會在 Windows 桌面上執行的 GTK # 應用程式：
 
-1. 在 Visual Studio 2017 中，以滑鼠右鍵按一下方案名稱，在**方案總管**，然後選擇 **新增 > 新增專案...**.
+1. 在 Visual Studio 2019，以滑鼠右鍵按一下方案名稱，在**方案總管**，然後選擇 **新增 > 新增專案...**.
 
 2. 在 **新的專案**視窗中的，從左邊選取**Visual C#** 並**Windows 傳統桌面**。 在專案類型清單中，選擇**類別庫 (.NET Framework)**，並確定**Framework**下拉式清單設為.NET Framework 4.7 的最小值。
 
@@ -209,7 +209,7 @@ GtkThemes.Init ();
 GtkThemes.LoadCustomTheme ("Themes/gtkrc");
 ```
 
-### <a name="native-forms"></a>原生格式
+### <a name="native-forms"></a>原生表單
 
 原生格式可讓 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生原生專案，包括 GTK # 專案所使用的頁面。 這可藉由建立的執行個體[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面，並將它轉換成原生 GTK # 型別使用`CreateContainer`擴充方法：
 

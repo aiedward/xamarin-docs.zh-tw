@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 846ff203a26f38fdaabe5a5dd6eff1c6a6b39b08
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61343414"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 在 **MainPage.xaml** 中修改 [`Entry`](xref:Xamarin.Forms.Entry) 宣告，以便其設定 [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) 和 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件的處理常式：

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2018
-ms.openlocfilehash: e88f6e24cbf4c8b2f0c0486c6408e234e87066cc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3d4c29a7d206b826046fd1f79e0513e85ea57898
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104345"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740675"
 ---
 # <a name="android-speech"></a>Android 的語音
 
@@ -39,7 +39,7 @@ Google 提供一組豐富的 Api Android.Speech 命名空間中使用開發人�
 
 了解簡單定義是，您都能判斷的口吻和內容的真正意涵陳述的內容。 若要將只是表示取得文字，並在另一種形式對它們進行輸出。
 
-請考慮下列簡單的範例是用於日常對話： 
+請考慮下列簡單的範例是用於日常對話：
 
 <kbd>大家好，你好？</kbd>
 
@@ -161,7 +161,8 @@ foreach (var locale in localesAvailable)
 langAvailable = langAvailable.OrderBy(t => t).Distinct().ToList();
 ```
 
-此程式碼會呼叫[TextToSpeech.IsLanguageAvailable](https://developer.xamarin.com/api/member/Android.Speech.Tts.TextToSpeech.IsLanguageAvailable/p/Java.Util.Locale/)若要測試是否為特定地區設定的語言套件已存在於裝置上。 這個方法會傳回[LanguageAvailableResult](https://developer.xamarin.com/api/type/Android.Speech.Tts.LanguageAvailableResult/)，表示是否可以使用傳入的地區設定的語言。 如果`LanguageAvailableResult`表示的語言是`NotSupported`，則沒有聲音的封裝 （即使是針對下載），您可以使用該語言。 如果`LanguageAvailableResult`設為`MissingData`，則可能如下所述步驟 4 中下載新的語言套件。
+此程式碼會呼叫[TextToSpeech.IsLanguageAvailable](https://developer.xamarin.com/api/member/Android.Speech.Tts.TextToSpeech.IsLanguageAvailable/p/Java.Util.Locale/)若要測試是否為特定地區設定的語言套件已存在於裝置上。
+這個方法會傳回[LanguageAvailableResult](https://developer.xamarin.com/api/type/Android.Speech.Tts.LanguageAvailableResult/)，表示是否可以使用傳入的地區設定的語言。 如果`LanguageAvailableResult`表示的語言是`NotSupported`，則沒有聲音的封裝 （即使是針對下載），您可以使用該語言。 如果`LanguageAvailableResult`設為`MissingData`，則可能如下所述步驟 4 中下載新的語言套件。
 
 ### <a name="step-3---setting-the-speed-and-pitch"></a>步驟 3-設定速度及字距等性質
 
@@ -233,7 +234,7 @@ void TextToSpeech.IOnInitListener.OnInit(OperationResult status)
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.Forms DependencyService](https://developer.xamarin.com/samples/UsingDependencyService/)
+- [Xamarin.Forms DependencyService](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
 - [文字轉換語音 （範例）](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/TextToSpeech)
 - [語音轉換文字 （範例）](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SpeechToText)
 - [Android.Speech 命名空間](https://developer.xamarin.com/api/namespace/Android.Speech/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 2ed14752cc5906b68d277b4f492875f7e281b053
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7b66005ff64763d68dc6101985e514fa56cf896d
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671451"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827371"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>滑桿、 交換器及在 Xamarin.iOS 中的分段的控制項
 
@@ -50,7 +50,7 @@ slider1.MaximumTrackTintColor = UIColor.Green;
  [![](slider-switch-segmented-controls-images/image27a.png "自訂滑桿")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 > [!IMPORTANT]
-> 目前沒有[bug](https://stackoverflow.com/a/19496179)造成`ThumbTint`不在執行階段呈現如預期般運作。 您可以新增下列程式碼行**之前**上述程式碼因應措施。 [Source](https://stackoverflow.com/a/21396794)]:
+> 目前沒有[bug](https://stackoverflow.com/a/19496179)造成`ThumbTint`不在執行階段呈現如預期般運作。 您可以新增下列程式碼行**之前**上述程式碼因應措施。 [[Source](https://stackoverflow.com/a/21396794)]:
 >
 > `slider1.SetThumbImage(UIImage.FromBundle("thumb.png"),UIControlState.Normal);`
 > 
@@ -77,7 +77,7 @@ switch1.On = true;
  <a name="Segmented_Controls" />
 
 
-## <a name="segmented-controls"></a>分段的控制項
+## <a name="segmented-controls"></a>區段控制項
 
 分段控制項是組織的方式，以允許使用者與少數選項的互動。 它以水平方式配置和每個區段函式做為個別的按鈕。 當使用設計工具，可以找到分段控制項下**工具箱 > 控制項**，且看起來應該如下圖所示：
 
@@ -95,5 +95,5 @@ switch1.On = true;
 
 ## <a name="related-links"></a>相關連結
 
-- [控制項 （範例）](https://developer.xamarin.com/samples/Controls/)
+- [控制項 （範例）](https://developer.xamarin.com/samples/monotouch/Controls/)
 - [警示控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

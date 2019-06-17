@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 12/14/2016
 ms.openlocfilehash: de04a2d7f42ec36c464c75ced73bf8f8029ec1da
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672608"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61291007"
 ---
 # <a name="hello-watchos--walkthrough"></a>Hello watchOS – 逐步解說
 
@@ -24,7 +24,7 @@ ms.locfileid: "57672608"
 
 請檢查您[參考是否正確](~/ios/watchos/get-started/project-references.md)： 父應用程式具有延伸模組的參考，並延伸具有監看式應用程式的參考。
 
-確認您的套件組合識別碼，請遵循\*.watchkitextension \*.watchkitapp 慣例，而且您的延伸模組 Info.plist 檔案具有它已**WKApp 套件組合識別碼**值設定為套件組合識別碼您的監看式應用程式。
+確認您的套件組合識別碼，請遵循\*.watchkitextension \*.watchkitapp 慣例，而且您的延伸模組 Info.plist 檔案具有它已 **WKApp 套件組合識別碼** 值設定為套件組合識別碼您的監看式應用程式。
 
 您應該能夠立即，執行您的監看式應用程式，但因為監看式應用程式內的分鏡腳本檔案是空白的您便無法向。
 
@@ -67,7 +67,7 @@ ms.locfileid: "57672608"
 建立您的 UI:
 
 1. 從**工具箱**平台，
-1. 將拖放** 按鈕**並**標籤**光芒，和
+1. 將拖放 **按鈕** 並 **標籤** 光芒，和
 1. 設定文字和控制項所示的屬性：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: cfc4ecc5bf7ebc5e4c4dae8094fe3eb4ece34068
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f56f2c58195e51e9294948dad85a475e181f99b2
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112493"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978528"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS 組建主機的連線疑難排解
 
@@ -130,7 +130,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 已知的原因：
 
-- **SSH 安全性限制** – 此訊息最常意謂著 Mac 上 **$HOME/.ssh/authorized\_keys** 完整路徑中的其中一個檔案或目錄已針對 _other_ 或 _group_ 成員啟用寫入權限。 **一般修正**：在 Mac 上的 [終端機] 命令提示字元中執行 `chmod og-w "$HOME"`。 如需有關是哪個特定檔案或目錄造成問題的詳細資料，請在 [終端機] 中執行 `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"`，然後從您的桌面開啟 **sshd.log** 檔案並尋找 "Authentication refused: bad ownership or modes" (驗證被拒：無效的擁有權或模式)。
+- **SSH 安全性限制** – 此訊息最常意謂著 Mac 上 **$HOME/.ssh/authorized\_keys** 完整路徑中的其中一個檔案或目錄已針對 _other_ 或 _group_ 成員啟用寫入權限。 **一般修正**：在 Mac 上的終端機命令提示字元中執行 `chmod og-w "$HOME"`。 如需有關是哪個特定檔案或目錄造成問題的詳細資料，請在 [終端機] 中執行 `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"`，然後從您的桌面開啟 **sshd.log** 檔案並尋找 "Authentication refused: bad ownership or modes" (驗證被拒：無效的擁有權或模式)。
 
 #### <a name="trying-to-connect-never-completes"></a>「正在嘗試連線...」永遠無法完成
 
@@ -144,9 +144,9 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 - **Bug** – 一些使用者在嘗試使用 Active Directory 或其他目錄服務網域使用者帳戶來登入組建主機時，在記錄檔中看到此訊息且伴隨更詳細的錯誤「為使用者設定 SSH 時發生未預期的錯誤...工作階段作業逾時」。 **因應措施：** 改用本機使用者帳戶來登入組建主機。
 
-- **Bug** – 一些使用者在嘗試於連線對話方塊中按兩下 Mac 名稱來連線到組建主機時看到此錯誤。 **可能的因應措施**使用 IP 位址來[手動新增 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac)。
+- **Bug** – 一些使用者在嘗試於連線對話方塊中按兩下 Mac 名稱來連線到組建主機時看到此錯誤。 **可能的因應措施**：使用 IP 位址來[手動新增 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac)。
 
-- **Bug [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971)** – 一些使用者在於 Mac 組建主機與 Windows 之間使用無線網路連線遇到此錯誤。 **可能的因應措施**將兩部電腦都移至有線網路連線。
+- **Bug [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971)** – 一些使用者在於 Mac 組建主機與 Windows 之間使用無線網路連線遇到此錯誤。 **可能的因應措施**：將這兩部電腦移至有線網路連線。
 
 - **Bug [#36642](https://bugzilla.xamarin.com/show_bug.cgi?id=36642)** – 在 Xamarin 4.0 上，只要 Mac 上的 **$HOME/.bashrc** 檔案中包含錯誤，就會出現此訊息。 (從 Xamarin 4.1 開始，**.bashrc** 檔案中的錯誤將不再影響連線程序)。**因應措施**：將 **.bashrc** 檔案移至備份位置 (或如果您知道已不需要此檔案，則可將其刪除)。
 
@@ -154,7 +154,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 - **限制** – 如果 Mac 組建主機連線到無法存取網際網路的路由器 (或如果 Mac 使用的 DNS 伺服器在要求 Windows 電腦的反向 DNS 查閱時逾時)，就可能出現此錯誤。 Visual Studio 會花費大約 30 秒的時間來擷取 SSH 指紋，但最終無法連線。
 
-    **可能的因應措施**將 "UseDNS no" 新增至 **sshd\_config** 檔案。 請務必先了解此 SSH 設定，然後再進行變更。 如需範例，請參閱 [unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option](http://unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option)(英文\)。
+    **可能的因應措施**：將 "UseDNS no" 新增至 **sshd\_config** 檔案。 請務必先了解此 SSH 設定，然後再進行變更。 如需範例，請參閱 [unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option](http://unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option)(英文\)。
 
     下列步驟說明一個變更此設定的方式。 您將需要登入 Mac 上的系統管理員帳戶，才能完成這些步驟。
 
@@ -210,7 +210,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 只要您已確認 Mac 和 Windows 都已更新成相同的散發通道，便可忽略此警告。
 
-#### <a name="failed-to-execute-ls-usrbinmono-exitstatus1"></a>「無法執行 'ls /usr/bin/mono': ExitStatus=1」
+#### <a name="failed-to-execute-ls-usrbinmono-exitstatus1"></a>「無法執行 'ls /usr/bin/mono':ExitStatus=1」
 
 只要 Mac 執行的是 OS X 10.11 (El Capitan) 或更新版本，便可忽略此訊息。 此訊息在 OS X 10.11 上並不成問題，因為 Xamarin 也會檢查 **/usr/local/bin/mono**，這是 OS X 10.11 上 `mono` 的正確預期位置。
 
@@ -303,9 +303,9 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 已知的原因：
 
-- **Xamarin 4.1 安全性功能** – 如果您在使用 Xamarin 4.1 或更新版本之後降級成 Xamarin 4.0，就「會」發生此錯誤。 在此情況下，錯誤會伴隨有額外的警告「私密金鑰已加密，但複雜密碼是空的」。 這是一個因 Xamarin 4.1 中的新安全性功能而進行的「刻意」變更。 **建議的修正**從 **%LOCALAPPDATA%\Xamarin\MonoTouch** 中刪除 **id\_rsa** 和 **id\_rsa.pub**，然後重新連線到 Mac 組建主機。
+- **Xamarin 4.1 安全性功能** – 如果您在使用 Xamarin 4.1 或更新版本之後降級成 Xamarin 4.0，就「會」發生此錯誤。 在此情況下，錯誤會伴隨有額外的警告「私密金鑰已加密，但複雜密碼是空的」。 這是一個因 Xamarin 4.1 中的新安全性功能而進行的「刻意」變更。 **建議的修正**：從 **%LOCALAPPDATA%\Xamarin\MonoTouch** 中刪除 **id\_rsa** 和 **id\_rsa.pub**，然後重新連線到 Mac 組建主機。
 
-- **SSH 安全性限制** - 當此訊息伴隨有額外警告「無法使用現有的 SSH 金鑰驗證使用者」時，最常意謂著 Mac 上 **$HOME/.ssh/authorized\_keys** 完整路徑中的其中一個檔案或目錄已針對 _other_ 或 _group_ 成員啟用寫入權限。 **一般修正**：在 Mac 上的 [終端機] 命令提示字元中執行 `chmod og-w "$HOME"`。 如需有關是哪個特定檔案或目錄造成問題的詳細資料，請在 [終端機] 中執行 `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"`，然後從您的桌面開啟 **sshd.log** 檔案並尋找 "Authentication refused: bad ownership or modes" (驗證被拒：無效的擁有權或模式)。
+- **SSH 安全性限制** - 當此訊息伴隨有額外警告「無法使用現有的 SSH 金鑰驗證使用者」時，最常意謂著 Mac 上 **$HOME/.ssh/authorized\_keys** 完整路徑中的其中一個檔案或目錄已針對 _other_ 或 _group_ 成員啟用寫入權限。 **一般修正**：在 Mac 上的終端機命令提示字元中執行 `chmod og-w "$HOME"`。 如需有關是哪個特定檔案或目錄造成問題的詳細資料，請在 [終端機] 中執行 `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"`，然後從您的桌面開啟 **sshd.log** 檔案並尋找 "Authentication refused: bad ownership or modes" (驗證被拒：無效的擁有權或模式)。
 
 ### <a name="solutions-cannot-be-loaded-from-a-network-share"></a>無法從網路共用載入解決方案
 
@@ -377,4 +377,4 @@ killall mono
 ## <a name="related-links"></a>相關連結
 
 - [與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
-- [Xamarin Mac 組建代理程式 - Xamarin University Lightning Lecture](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
+- [Xamarin Mac 組建代理程式影片](https://www.youtube.com/watch?v=MBAPBtxkjFQ) \(英文\)

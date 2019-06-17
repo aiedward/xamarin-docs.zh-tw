@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
 ms.openlocfilehash: 8ad2dde701814c0977e25e6e58272c0aa01ca4ca
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61085614"
 ---
 # <a name="working-with-jni"></a>使用 JNI
 
@@ -1045,7 +1045,7 @@ Android v2.2 (Froyo) 和更新版本，才可以使用通用的弱式參考。 �
 
 ### <a name="dealing-with-jni-local-references"></a>處理 JNI 區域參考
 
-[JNIEnv.GetObjectField](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetObjectField/)， [JNIEnv.GetStaticObjectField](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticObjectField/)， [JNIEnv.CallObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallObjectMethod/)， [JNIEnv.CallNonvirtualObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallNonvirtualObjectMethod/)並[JNIEnv.CallStaticObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallStaticObjectMethod/)方法會傳回`IntPtr`包含 JNI 區域參考到 Java 物件，或`IntPtr.Zero`如果 Java 傳回`null`。 因為一旦 （512 個項目），最好能確定參考可在未處理的本機參考的有限數目會刪除 neodpověděl včas.。 有可以處理本機參考的三種： 明確地刪除它們，建立`Java.Lang.Object`執行個體，保留方式，以及使用`Java.Lang.Object.GetObject<T>()`建立其周圍的 managed 可呼叫包裝函式。
+[JNIEnv.GetObjectField](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetObjectField/)， [JNIEnv.GetStaticObjectField](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticObjectField/)， [JNIEnv.CallObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallObjectMethod/)， [JNIEnv.CallNonvirtualObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallNonvirtualObjectMethod/)並[JNIEnv.CallStaticObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallStaticObjectMethod/)方法會傳回`IntPtr`包含 JNI 區域參考到 Java 物件，或`IntPtr.Zero`如果 Java 傳回`null`。 因為一旦 （512 個項目），最好能確定參考可在未處理的本機參考的有限數目會刪除 neodpověděl včas。 有可以處理本機參考的三種： 明確地刪除它們，建立`Java.Lang.Object`執行個體，保留方式，以及使用`Java.Lang.Object.GetObject<T>()`建立其周圍的 managed 可呼叫包裝函式。
 
 
 

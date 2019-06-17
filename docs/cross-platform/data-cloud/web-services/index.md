@@ -1,14 +1,19 @@
 ---
-title: Web 服務的簡介
+title: Web 服務簡介
 description: 本指南示範如何使用不同的 web 服務技術。 涵蓋的主題包括與 REST 服務、 SOAP 服務和 Windows Communication Foundation 服務進行通訊。
 ms.prod: xamarin
 ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
+ms.openlocfilehash: afebe7f491855844e18bf054d665cf8d54e8f353
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61183869"
 ---
-
-# <a name="introduction-to-web-services"></a>Web 服務的簡介
+# <a name="introduction-to-web-services"></a>Web 服務簡介
 
 _本指南示範如何使用不同的 web 服務技術。涵蓋的主題包括與 REST 服務、 SOAP 服務和 Windows Communication Foundation 服務進行通訊。_
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 32d0775baa75b70ebc118457945efc0f6c0acec2
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: c84995e210d61e735d12a089f40bf9afa720acb5
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057057"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329282"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms 強制回應頁面
 
@@ -39,9 +39,9 @@ _Xamarin.Forms 可支援強制回應頁面。強制回應頁面鼓勵使用者�
 
 ## <a name="performing-navigation"></a>執行導覽
 
-[`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 屬性會在任何 [`Page`](xref:Xamarin.Forms.Page) 衍生類型上公開強制回應導覽方法。 這些方法可讓您[推送強制回應頁面](#Pushing_Pages_to_the_Modal_Stack)到強制回應堆疊上，以及從強制回應堆疊中[快顯強制回應頁面](#Popping_Pages_from_the_Modal_Stack)。
+[`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 屬性會在任何 [`Page`](xref:Xamarin.Forms.Page) 衍生類型上公開強制回應導覽方法。 這些方法可讓您[推送強制回應頁面](#Pushing_Pages_to_the_Modal_Stack)到強制回應堆疊上，以及從強制回應堆疊中[快顯強制回應頁面](#Popping_Pages_from_the_Modal_Stack)。
 
-[`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 屬性也會公開可以從中取得強制回應堆疊之強制回應頁面的 [`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack) 屬性。 不過，沒有執行強制回應堆疊操作，或快顯至強制回應導覽中根目錄的概念。 這是因為基礎平台上普遍不支援這些作業。
+[`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 屬性也會公開可以從中取得強制回應堆疊之強制回應頁面的 [`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack) 屬性。 不過，沒有執行強制回應堆疊操作，或快顯至強制回應導覽中根目錄的概念。 這是因為基礎平台上普遍不支援這些作業。
 
 > [!NOTE]
 > 執行強制回應頁面瀏覽不需要 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 執行個體。
@@ -50,7 +50,7 @@ _Xamarin.Forms 可支援強制回應頁面。強制回應頁面鼓勵使用者�
 
 ### <a name="pushing-pages-to-the-modal-stack"></a>將頁面推送到強制回應堆疊
 
-若要巡覽至 `ModalPage`，必須在目前頁面的 [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 屬性上叫用 [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*) 方法，如下列程式碼範例所示：
+若要巡覽至 `ModalPage`，必須在目前頁面的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 屬性上叫用 [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*) 方法，如下列程式碼範例所示：
 
 ```csharp
 async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
@@ -107,7 +107,7 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 
 ### <a name="animating-page-transitions"></a>以動畫顯示頁面轉換
 
-每頁的 [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 屬性還會提供覆寫的 push 和 pop 方法，其中包含控制是否在巡覽期間顯示頁面動畫的 `boolean` 參數，如下列程式碼範例所示：
+每頁的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 屬性還會提供覆寫的 push 和 pop 方法，其中包含控制是否在巡覽期間顯示頁面動畫的 `boolean` 參數，如下列程式碼範例所示：
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)

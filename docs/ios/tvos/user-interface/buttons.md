@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/07/2017
 ms.openlocfilehash: 6d8fc1daaced24dccead78c4f9d0e5d0959b3755
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61198978"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>使用 tvOS 按鈕，在 Xamarin 中
 
@@ -65,7 +65,7 @@ Xamarin.tvOS 應用程式中的按鈕所使用的最簡單方式是將它們新�
 
 
 1. 在 **方案總管**，連按兩下`Main.storyboard`檔案，並開啟它進行編輯。
-1. 拖曳** 按鈕**從**程式庫**並將它放在檢視上： 
+1. 拖曳 **按鈕** 從 **程式庫** 並將它放在檢視上： 
 
     [![](buttons-images/storyboard01.png "按鈕")](buttons-images/storyboard01.png#lightbox)
 1. 在 **屬性總管**，您可以調整按鈕的數個屬性，例如其**標題**並**文字色彩**: 
@@ -86,7 +86,7 @@ Xamarin.tvOS 應用程式中的按鈕所使用的最簡單方式是將它們新�
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 在 **方案總管**，連按兩下`Main.storyboard`檔案，並開啟它進行編輯。
-1. 拖曳** 按鈕**從**程式庫**並將它放在檢視上： 
+1. 拖曳 **按鈕** 從 **程式庫** 並將它放在檢視上： 
 
     [![](buttons-images/storyboard01vs.png "按鈕")](buttons-images/storyboard01vs.png#lightbox)
 1. 在 **屬性總管**，您可以調整按鈕的數個屬性，例如其**標題**並**文字色彩**: 

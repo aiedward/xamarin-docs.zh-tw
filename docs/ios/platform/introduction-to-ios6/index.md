@@ -1,5 +1,5 @@
 ---
-title: IOS 6 簡介
+title: iOS 6 簡介
 description: 本文件所連結說明 iOS 6 中引進的功能的指南。 集合檢視，PassKit 社交架構中，所有討論 StoreKit 的變更。
 ms.prod: xamarin
 ms.assetid: 242DA7E3-8FD8-5F20-285D-603259CA622D
@@ -7,14 +7,9 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 25926d82e060b91b007da9c2295b328cb049e8df
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103864"
 ---
-# <a name="introduction-to-ios-6"></a>IOS 6 簡介
+
+# <a name="introduction-to-ios-6"></a>iOS 6 簡介
 
 _iOS 6 包含新的技術，用於開發應用程式，Xamarin.iOS 6 帶入各種C#開發人員。_
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: 7d626b8a968835813d87c93e3cead57a00c14000
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61293342"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>部署和測試 xamarin 的 watchOS 應用程式
 

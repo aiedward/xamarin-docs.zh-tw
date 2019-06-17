@@ -6,12 +6,12 @@ ms.assetid: 7D179ACF-09A6-46EE-B49D-E27AB5F09CD4
 author: conceptdev
 ms.author: crdun
 ms.date: 07/18/2018
-ms.openlocfilehash: bfca620848bef174e78d9d34b6fdc497dda8f1de
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 35c210cc75033f2ad2c83ed6f5196f71d26d000f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233220"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61227018"
 ---
 # <a name="sharing-code-on-multiple-platforms"></a>共用多個平台上的程式碼
 
@@ -23,7 +23,7 @@ ms.locfileid: "55233220"
 
 ## <a name="net-standardcross-platformapp-fundamentalsnet-standardmd"></a>[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)
 
-.NET standard 是跨平台共用程式碼的慣用的選項。 程式碼建置針對特定版本 （2.0 會提供最佳的 API 相容性與現有的.NET Framework 程式碼），您可以使用其他支援的層級的專案或更高版本。 .NET standard 專案支援在 Visual Studio 2017 和 Visual Studio for mac。
+.NET standard 是跨平台共用程式碼的慣用的選項。 程式碼建置針對特定版本 （2.0 會提供最佳的 API 相容性與現有的.NET Framework 程式碼），您可以使用其他支援的層級的專案或更高版本。 在 Visual Studio 2019 和 Visual Studio 2019 支援.NET standard 專案 for mac。
 
 ## <a name="shared-projectscross-platformapp-fundamentalsshared-projectsmd"></a>[共用的專案](~/cross-platform/app-fundamentals/shared-projects.md)
 
@@ -41,6 +41,6 @@ NuGet 套件可以自動產生的 PCL 或.NET standard 專案;和共用專案可
 
 建立使用 Xamarin 平台的 NuGet 套件的秘訣。
 
-## <a name="use-cc-libraries-in-cross-platform-xamarin-projectscross-platformcppindexmd"></a>[使用跨平台 Xamarin 專案中的 C/c + + 程式庫](~/cross-platform/cpp/index.md)
+## <a name="use-cc-libraries-in-cross-platform-xamarin-projectscross-platformcppindexmd"></a>[使用 C /C++跨平台 Xamarin 專案中的程式庫](~/cross-platform/cpp/index.md)
 
-這項技術可讓您將分離的演進，C/c + + 程式庫，C#中的 NuGet 和您的 Xamarin 應用程式的繫結。 平台的原生 C/c + + 程式庫所提供功能，但所有平台特定程式碼會與最終的 Xamarin 應用程式，可讓任何程式碼重複使用的最高可能效能隔離。 
+這項技術可讓您將分離的發展您的 C /C++程式庫C#中的 NuGet 和您的 Xamarin 應用程式的繫結。 功能會由平台的原生 C /C++程式庫，但所有平台特定程式碼會與最終的 Xamarin 應用程式，可讓任何程式碼重複使用的最高可能效能隔離。 

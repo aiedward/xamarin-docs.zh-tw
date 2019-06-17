@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: 132265c27e1d1ba3b8f3fc8db10d7b3cfa746197
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61038942"
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 使用者介面概觀
 
@@ -28,7 +28,7 @@ iOS 7 中引進了數個其他變更： 色彩用來區別使用者介面項目�
 
 UIKit 中檢視的所有符合的 iOS 7 新的外觀與風格。 本章節強調一些變更，這些檢視，以及相關的 Api 來支援新的 UI 已變更。
 
-### <a name="uibutton"></a>標記的 UIButton
+### <a name="uibutton"></a>UIButton
 
 建立從按鈕`UIButton`類別已無框線，以根據預設，任何背景，如下所示：
 
@@ -70,7 +70,7 @@ UIBarButtonItem button = new UIBarButtonItem ("Bar Button", UIBarButtonItemStyle
 
  ![](ios7-ui-images/alert.png "範例 UIAlertView")
  
- 注意： UIAlertView iOS 8 中已被取代。 檢視[警示控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)上使用警示檢視，在 iOS 8 及更新版本的配方。
+ 注意:UIAlertView 已被取代，在 iOS 8 中。 檢視[警示控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)上使用警示檢視，在 iOS 8 及更新版本的配方。
 
 ### <a name="uisegmentedcontrol"></a>UISegmentedControl
 

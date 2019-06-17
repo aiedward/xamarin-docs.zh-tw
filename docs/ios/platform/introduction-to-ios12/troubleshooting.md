@@ -6,13 +6,13 @@ ms.assetid: 24397498-2688-4575-A572-F1B19B1B4EA5
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 09/5/2018
-ms.openlocfilehash: 2f46638afe1aca74b572050e00bfc4a85d1d963d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.date: 09/05/2018
+ms.openlocfilehash: bc798d4df19082c67461aede1f40cfbddd85f5b3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669150"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61034876"
 ---
 # <a name="troubleshooting-ios-12-development-with-xamarin"></a>使用 Xamarin 進行 iOS 12 開發的疑難排解
 

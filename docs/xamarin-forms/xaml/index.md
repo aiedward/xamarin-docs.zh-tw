@@ -6,9 +6,14 @@ ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/28/2019
+ms.date: 04/03/2019
+ms.openlocfilehash: b032785bd18e785831122edf17bede6648e985d2
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827870"
 ---
-
 # <a name="extensible-application-markup-language-xaml"></a>可延伸應用程式標記語言 (XAML)
 
 _XAML 是一種宣告式標記的語言，可用來定義使用者介面。使用 XAML 語法，雖然執行階段行為，被定義在個別的程式碼後置檔案中 XML 檔案中定義的使用者介面。_
@@ -17,8 +22,9 @@ _XAML 是一種宣告式標記的語言，可用來定義使用者介面。使�
 
 **Evolve 2016：成為 XAML Master**
 
-> [!NOTE]
-> 試試看[XAML Standard 預覽版](standard/index.md)
+## <a name="xaml-controlsxaml-controlsmd"></a>[XAML 控制項](xaml-controls.md)
+
+所有在 Xamarin.Forms 中定義的檢視，可從 XAML 檔案參考。
 
 <a name="xaml" />
 
@@ -28,11 +34,11 @@ XAML 可讓開發人員在 Xamarin.Forms 應用程式中使用標記，而不是
 
 ## <a name="xaml-compilationxamlcmd"></a>[XAML 編譯](xamlc.md)
 
-XAML 可選擇性地使用 XAML 編譯器 (XAMLC) 直接編譯成中繼語言 (IL)。 此文章說明如何使用 XAMLC 和它的優點。
+XAML 可選擇性地使用 XAML 編譯器 (XAMLC) 直接編譯成中繼語言 (IL)。 本文說明如何使用 XAMLC 和它的優點。
 
-## <a name="xaml-previewerxaml-previewermd"></a>[XAML 預覽程式](xaml-previewer.md)
+## <a name="xaml-previewerxaml-previewerindexmd"></a>[XAML 預覽程式](xaml-previewer/index.md)
 
-[XAML 預覽程式](~/xamarin-forms/xaml/xaml-previewer.md)呈現頁面的並行以 XAML 標記，可讓您查看您呈現您所輸入的使用者介面的即時預覽。
+[XAML 預覽程式](~/xamarin-forms/xaml/xaml-previewer/index.md)呈現頁面的並行以 XAML 標記，可讓您查看您呈現您所輸入的使用者介面的即時預覽。
 
 ## <a name="xaml-namespacesnamespacesmd"></a>[XAML 命名空間](namespaces.md)
 
@@ -42,7 +48,7 @@ XAML 使用`xmlns`命名空間宣告的 XML 屬性。 本文介紹 XAML 命名�
 
 可以使用定義 XAML 自訂命名空間的結構描述`XmlnsDefinitionAttribute`類別，指定自訂 URL 與一或多個 CLR 命名空間之間的對應。 自訂命名空間的結構描述可用的 XAML 命名空間宣告。
 
-## <a name="xaml-namespace-recommended-prefixescustom-prefixmd"></a>[建議的前置詞的 XAML 命名空間](custom-prefix.md)
+## <a name="xaml-namespace-recommended-prefixescustom-prefixmd"></a>[XAML 命名空間建議的前置詞](custom-prefix.md)
 
 `XmlnsPrefixAttribute`控制項作者會使用類別來指定要與 XAML 用法的 XAML 命名空間，產生關聯的建議前置詞。
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: 9b94db14a197ca31be42e8712c2170fd66b86579
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61162298"
 ---
 # <a name="the-non-separable-blend-modes"></a>非可加以分隔的混合模式
 
@@ -28,7 +28,7 @@ ms.locfileid: "53055007"
 
 一文中討論的 HSL 色彩模型[**整合 Xamarin.Forms** ](../../basics/integration.md) ，並在該文章中的範例程式允許實驗 HSL 色彩。 您可以建立`SKColor`值使用色調、 飽和度和亮度值搭配靜態[ `SKColor.FromHsl` ](xref:SkiaSharp.SKColor.FromHsl*)方法。
 
-色調表示主控項的 wavelength 的色彩。 色調值的範圍從 0 到 360 和循環瀏覽的加總，而且涉及刪減的主要複本： Red 是 0 時，黃色的值為 60，綠色為 120，青色是 180，藍色是 240、 洋紅是 300，而循環回到在 360 的紅色。
+色調表示主控項的 wavelength 的色彩。 色調值的範圍從 0 到 360 和循環瀏覽的加總，而且涉及刪減的主要複本：紅色則是 0 時，黃色的值為 60，綠色為 120，青色是 180，藍色是 240、 洋紅是 300，而循環回到在 360 的紅色。
 
 如果沒有任何主要色彩&mdash;例如，色彩是白色或黑色或灰色陰影&mdash;色調會未定義，且通常設定為 0。 
 
@@ -198,7 +198,7 @@ public partial class NonSeparableBlendModesPage : ContentPage
 
 您很快會看到此混合模式應用程式。
 
-最後， `SKBlendModes.Luminosity` blend 模式是相對於`SKBlendModes.Color`。 它會保留色調及彩的目的地，但使用的來源的明暗度。 `Luminosity`混合模式是最神祕的批次： 色調及彩滑桿會影響映像，但即使是在中度的亮度，映像不是不同：
+最後， `SKBlendModes.Luminosity` blend 模式是相對於`SKBlendModes.Color`。 它會保留色調及彩的目的地，但使用的來源的明暗度。 `Luminosity`混合模式是最神祕的批次：色調及彩滑桿會影響映像，但即使是在中度的亮度，映像不是不同：
 
 [![非可加以分隔的混合模式-亮度](non-separable-images/NonSeparableBlendModes-Luminosity.png "非可加以分隔的混合模式-亮度")](non-separable-images/NonSeparableBlendModes-Luminosity-Large.png#lightbox)
 

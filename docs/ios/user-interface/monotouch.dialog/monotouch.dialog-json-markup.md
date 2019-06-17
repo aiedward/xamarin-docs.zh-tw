@@ -1,5 +1,5 @@
 ---
-title: MonoTouch.Dialog Json Markup
+title: MonoTouch.Dialog Json 標記
 description: 本文件說明可用來建置使用 MonoTouch.Dialog Xamarin.iOS 使用者介面的 JSON 語法。
 ms.prod: xamarin
 ms.assetid: 59F3E18C-3A73-69B8-DA5E-21B19B9DFB98
@@ -7,71 +7,71 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 8edabfc6fa3988af0dd38dbfd9daeb1c4003c33e
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: bc6842871a2f59c9851e90adbc6609707a7ecd1f
+ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670762"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67039653"
 ---
-# <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json Markup
+# <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json 標記
 
-此頁面描述接受 MonoTouch.Dialog 的 Json 標記[JsonElement](https://developer.xamarin.com/api/type/MonoTouch.Dialog.JsonElement/)
+此頁面描述接受 MonoTouch.Dialog 的 Json 標記[JsonElement](xref:MonoTouch.Dialog.JsonElement)
 
 讓我們開始的範例。 以下是完整的 Json 檔案，才能傳遞至 JsonElement。
 
-```csharp
+```json
 {     
-  "title": "Json Sample",
-  "sections": [ 
-      {
-          "header": "Booleans",
-          "footer": "Slider or image-based",
-          "id": "first-section",
-          "elements": [
-              { 
-                  "type" : "boolean",
-                  "caption" : "Demo of a Boolean",
-                  "value"   : true
-              }, {
-                  "type": "boolean",
-                  "caption" : "Boolean using images",
-                  "value"   : false,
-                  "on"      : "favorite.png",
-                  "off"     : "~/favorited.png"
-              }, {
-                      "type": "root",
-                      "title": "Tap for nested controller",
-                      "sections": [ {
-                         "header": "Nested view!",
-                         "elements": [
-                           {
-                             "type": "boolean",
-                             "caption": "Just a boolean",
-                             "id": "the-boolean",
-                             "value": false
-                           },
-                           {
-                             "type": "string",
-                             "caption": "Welcome to the nested controller"
-                           }
-                         ]
-                       }
-                     ]
-                   }
-          ]
-      }, {
-          "header": "Entries",
-          "elements" : [
-              {
-                  "type": "entry",
-                  "caption": "Username",
-                  "value": "",
-                  "placeholder": "Your account username"
-              }
-          ]
-      }
-  ]
+    "title": "Json Sample",
+    "sections": [ 
+        {
+            "header": "Booleans",
+            "footer": "Slider or image-based",
+            "id": "first-section",
+            "elements": [
+                { 
+                    "type": "boolean",
+                    "caption": "Demo of a Boolean",
+                    "value": true
+                }, {
+                    "type": "boolean",
+                    "caption": "Boolean using images",
+                    "value": false,
+                    "on": "favorite.png",
+                    "off": "~/favorited.png"
+                }, {
+                    "type": "root",
+                    "title": "Tap for nested controller",
+                    "sections": [
+                        {
+                            "header": "Nested view!",
+                            "elements": [
+                                {
+                                    "type": "boolean",
+                                    "caption": "Just a boolean",
+                                    "id": "the-boolean",
+                                    "value": false
+                                }, {
+                                    "type": "string",
+                                    "caption": "Welcome to the nested controller"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, {
+            "header": "Entries",
+            "elements" : [
+                {
+                    "type": "entry",
+                    "caption": "Username",
+                    "value": "",
+                    "placeholder": "Your account username"
+                }
+            ]
+        }
+    ]
 }
 ```
 
@@ -86,7 +86,7 @@ var jsonElement = JsonElement.FromFile ("demo.json");
 
 var firstSection = jsonElement ["first-section"] as Section;
 
-var theBoolean = jsonElement ["the-boolean"] as BooleanElement
+var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 ```
 
  <a name="Root_Element_Syntax" />
@@ -192,38 +192,38 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 
 轉譯項目根據C#StringElement 和 StyledStringElement 可以轉譯以各種方式的資訊，並就能夠以各種方式呈現它們。 您可以建立最簡單的項目，像這樣：
 
-```csharp
+```json
 {
-        "type": "string",
-        "caption": "Json Serializer",
+    "type": "string",
+    "caption": "Json Serializer"
 }
 ```
 
 這會顯示一個簡單的字串，包含所有預設值： 字型、 背景、 文字色彩和裝飾。 您可對這些項目的動作連結，並將其設定的行為與按鈕一樣`"ontap"`屬性或`"onaccessorytap"`屬性：
 
-```csharp
+```json
 {
-    "type":    "string",
-        "caption": "View Photos",
-        "ontap:    "Acme.PhotoLibrary.ShowPhotos"
+    "type": "string",
+    "caption": "View Photos",
+    "ontap": "Acme.PhotoLibrary.ShowPhotos"
 }
 ```
 
 上述會叫用 「 ShowPhotos 」 類別中的方法"Acme.PhotoLibrary 」。 `"onaccessorytap"`很類似，但它將才會叫用使用者點選來代替點選的資料格附屬應用程式。 若要這麼做，您也必須設定 附屬應用程式：
 
-```csharp
+```json
 {
-    "type":     "string",
-        "caption":  "View Photos",
-        "ontap:     "Acme.PhotoLibrary.ShowPhotos",
-        "accessory: "detail-disclosure",
-        "onaccessorytap": "Acme.PhotoLibrary.ShowStats"
+    "type": "string",
+    "caption": "View Photos",
+    "ontap": "Acme.PhotoLibrary.ShowPhotos",
+    "accessory": "detail-disclosure",
+    "onaccessorytap": "Acme.PhotoLibrary.ShowStats"
 }
 ```
 
 轉譯項目可以顯示兩個字串一次，其中一個是標題，另一個是值。 如何這些字串會轉譯樣式而定，您可以將此使用`"style"`屬性。 預設值會顯示標題左側和右側的值。 如需詳細資訊的樣式，請參閱節。 色彩是使用 '#' 符號，後面接著十六進位的數字，代表紅色、 綠色、 藍色和 alpha 可能值的值來編碼。 以簡短形式 （3 或 4 個十六進位數字） 代表 RGB 或 RGBA 值，可以編碼內容。 或代表 RGBA 或 RGB 值的長表單 （6 或 8 位數）。 簡短版本是兩次撰寫相同的十六進位數字的縮寫。 "#1bc"常數所以 intepreted 為紅色 = 0x11，綠色 = 0xbb 而藍色 = 0xcc。 如果不存在的 alpha 值，色彩就是不透明。 一些範例如下：
 
-```csharp
+```json
 "background": "#f00"
 "background": "#fa08f880"
 ```
@@ -297,7 +297,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 
 ### <a name="ontap-and-onaccessorytap"></a>ontap 和 onaccessorytap
 
-這些屬性必須指向接受物件做為參數的應用程式中的靜態方法名稱。 當您建立階層使用 JsonDialog.FromFile 或 JsonDialog.FromJson 方法時，您可以傳遞選擇性的物件值。 此物件的值然後傳遞至您的方法。 您可以使用此傳遞一些內容到您的靜態方法。 例如: 
+這些屬性必須指向接受物件做為參數的應用程式中的靜態方法名稱。 當您建立階層使用 JsonDialog.FromFile 或 JsonDialog.FromJson 方法時，您可以傳遞選擇性的物件值。 此物件的值然後傳遞至您的方法。 您可以使用此傳遞一些內容到您的靜態方法。 例如:
 
 ```csharp
 class Foo {
@@ -362,21 +362,21 @@ class Foo {
 
 ## <a name="boolean-elements"></a>布林值項目
 
-布林值項目應將 type 設為`"bool"`，可以包含`"caption"`來顯示和`"value"`設為 true 或 false。 如果`"on"`和`"off"`設定屬性，它們會假設為映像。 映像，在解決相對於目前工作目錄的應用程式中。 如果您想要參考相對套件組合的檔案，您可以使用`"~"`來代表應用程式套件組合目錄的捷徑。 例如`"~/favorite.png"`會包含在組合檔案 favorite.png。 例如: 
+布林值項目應將 type 設為`"bool"`，可以包含`"caption"`來顯示和`"value"`設為 true 或 false。 如果`"on"`和`"off"`設定屬性，它們會假設為映像。 映像，在解決相對於目前工作目錄的應用程式中。 如果您想要參考相對套件組合的檔案，您可以使用`"~"`來代表應用程式套件組合目錄的捷徑。 例如`"~/favorite.png"`會包含在組合檔案 favorite.png。 例如:
 
-```csharp
+```json
 { 
-    "type" : "boolean",
-    "caption" : "Demo of a Boolean",
-    "value"   : true
+    "type": "boolean",
+    "caption": "Demo of a Boolean",
+    "value": true
 },
 
 {
     "type": "boolean",
-    "caption" : "Boolean using images",
-    "value"   : false,
-    "on"      : "favorite.png",
-    "off"     : "~/favorited.png"
+    "caption": "Boolean using images",
+    "value": false,
+    "on": "favorite.png",
+    "off": "~/favorited.png"
 }
 ```
 
@@ -394,30 +394,30 @@ class Foo {
 
 您可以使用項目的項目，讓使用者輸入的資料。 項目元素的類型是`"entry"`或`"password"`。 `"caption"`屬性設定為文字以顯示在右側，而`"value"`為初始值設定為設定的項目。 `"placeholder"`用來顯示提示使用者輸入 （它會顯示灰色） 的空白項目。 以下是一些範例：
 
-```csharp
+```json
 {
-        "type": "entry",
-        "caption": "Username",
-        "value": "",
-        "placeholder": "Your account username"
+    "type": "entry",
+    "caption": "Username",
+    "value": "",
+    "placeholder": "Your account username"
 }, {
-        "type": "password",
-        "caption": "Password",
-        "value": "",
-        "placeholder": "You password"
+    "type": "password",
+    "caption": "Password",
+    "value": "",
+    "placeholder": "You password"
 }, {
-        "type": "entry",
-        "caption": "Zip Code",
-        "value": "01010",
-        "placeholder": "your zip code",
-        "keyboard": "numbers"
+    "type": "entry",
+    "caption": "Zip Code",
+    "value": "01010",
+    "placeholder": "your zip code",
+    "keyboard": "numbers"
 }, {
-        "type": "entry",
-        "return-key": "route",
-        "caption": "Entry with 'route'",
-        "placeholder": "captialization all + no corrections",
-        "capitalization": "all",
-        "autocorrect": "no"
+    "type": "entry",
+    "return-key": "route",
+    "caption": "Entry with 'route'",
+    "placeholder": "captialization all + no corrections",
+    "capitalization": "all",
+    "autocorrect": "no"
 }
 ```
 
@@ -515,22 +515,22 @@ class Foo {
 
 項目型別`"datetime"`，`"date"`和`"time"`用來呈現日期與時間、 日期或時間。 標題和值，這些項目會採用做為參數。 值可以撰寫.NET DateTime.Parse 函數所支援的任何格式。 範例：
 
-```csharp
+```json
 "header": "Dates and Times",
 "elements": [
-        {
-                "type": "datetime",
-                "caption": "Date and Time",
-                "value": "Sat, 01 Nov 2008 19:35:00 GMT"
-        }, {
-                "type": "date",
-                "caption": "Date",
-                "value": "10/10"
-        }, {
-                "type": "time",
-                "caption": "Time",
-                "value": "11:23"
-                }                       
+    {
+        "type": "datetime",
+        "caption": "Date and Time",
+        "value": "Sat, 01 Nov 2008 19:35:00 GMT"
+    }, {
+        "type": "date",
+        "caption": "Date",
+        "value": "10/10"
+    }, {
+        "type": "time",
+        "caption": "Time",
+        "value": "11:23"
+    }                       
 ]
 ```
 
@@ -541,10 +541,10 @@ class Foo {
 
 您可以建立一個儲存格，當點選會將內嵌轉譯指定的 URL，內容 UIWebView 本機或遠端使用`"html"`型別。 只有兩個屬性，這個項目的`"caption"`和`"url"`:
 
-```csharp
+```json
 {
-        "type": "html",
-        "caption": "Miguel's blog",
-        "url": "https://tirania.org/blog" 
+    "type": "html",
+    "caption": "Miguel's blog",
+    "url": "https://tirania.org/blog" 
 }
 ```

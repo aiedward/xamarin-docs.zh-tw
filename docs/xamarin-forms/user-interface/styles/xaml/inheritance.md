@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: bef48db93ae76346802b6569080bb1e54e3e51b3
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: c5fa46a67496123eb105ae12404d5607032f5ac1
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55291943"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971154"
 ---
 # <a name="style-inheritance-in-xamarinforms"></a>在 Xamarin.Forms 中的樣式繼承
 
@@ -29,7 +29,7 @@ _若要減少重複，並啟用重複使用其他樣式可以繼承樣式。_
 下列程式碼示範*明確*XAML 頁面中的樣式繼承：
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.StyleInheritancePage" Title="Inheritance" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.StyleInheritancePage" Title="Inheritance" IconImageSource="xaml.png">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="baseStyle" TargetType="View">
@@ -62,7 +62,7 @@ _若要減少重複，並啟用重複使用其他樣式可以繼承樣式。_
 </ContentPage>
 ```
 
-`baseStyle`目標[ `View` ](xref:Xamarin.Forms.View)執行個體，並設定[ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)並[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)屬性。 `baseStyle`未直接在任何控制項上設定。 相反地，`labelStyle`和`buttonStyle`繼承自它，設定額外的可繫結屬性值。 `labelStyle`並`buttonStyle`會接著套用至[ `Label` ](xref:Xamarin.Forms.Label)執行個體並[ `Button` ](xref:Xamarin.Forms.Button)執行個體，藉由設定其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)屬性。 這會導致下列的螢幕擷取畫面所示的外觀：
+`baseStyle`目標[ `View` ](xref:Xamarin.Forms.View)執行個體，並設定[ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)並[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)屬性。 `baseStyle`未直接在任何控制項上設定。 相反地，`labelStyle`和`buttonStyle`繼承自它，設定額外的可繫結屬性值。 `labelStyle`並`buttonStyle`會接著套用至[ `Label` ](xref:Xamarin.Forms.Label)執行個體並[ `Button` ](xref:Xamarin.Forms.Button)執行個體，藉由設定其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性。 這會導致下列的螢幕擷取畫面所示的外觀：
 
 [![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
@@ -80,7 +80,7 @@ _若要減少重複，並啟用重複使用其他樣式可以繼承樣式。_
 此繼承鏈結以下列程式碼範例所示：
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.StyleInheritancePage" Title="Inheritance" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.StyleInheritancePage" Title="Inheritance" IconImageSource="xaml.png">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="baseStyle" TargetType="View">
@@ -110,7 +110,7 @@ _若要減少重複，並啟用重複使用其他樣式可以繼承樣式。_
 
 ## <a name="style-inheritance-in-c35"></a>在 C 中的樣式繼承&#35;
 
-對等的 C# 頁面，其中[ `Style` ](xref:Xamarin.Forms.Style)執行個體直接指派給[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)所需的控制項的屬性會顯示在下列程式碼範例：
+對等的 C# 頁面，其中[ `Style` ](xref:Xamarin.Forms.Style)執行個體直接指派給[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)所需的控制項的屬性會顯示在下列程式碼範例：
 
 ```csharp
 public class StyleInheritancePageCS : ContentPage
@@ -153,7 +153,7 @@ public class StyleInheritancePageCS : ContentPage
 }
 ```
 
-`baseStyle`目標[ `View` ](xref:Xamarin.Forms.View)執行個體，並設定[ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)並[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)屬性。 `baseStyle`未直接在任何控制項上設定。 相反地，`labelStyle`和`buttonStyle`繼承自它，設定額外的可繫結屬性值。 `labelStyle`並`buttonStyle`會接著套用至[ `Label` ](xref:Xamarin.Forms.Label)執行個體並[ `Button` ](xref:Xamarin.Forms.Button)執行個體，藉由設定其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)屬性。
+`baseStyle`目標[ `View` ](xref:Xamarin.Forms.View)執行個體，並設定[ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)並[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)屬性。 `baseStyle`未直接在任何控制項上設定。 相反地，`labelStyle`和`buttonStyle`繼承自它，設定額外的可繫結屬性值。 `labelStyle`並`buttonStyle`會接著套用至[ `Label` ](xref:Xamarin.Forms.Label)執行個體並[ `Button` ](xref:Xamarin.Forms.Button)執行個體，藉由設定其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性。
 
 ## <a name="related-links"></a>相關連結
 

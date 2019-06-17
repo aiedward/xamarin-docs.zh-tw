@@ -6,13 +6,13 @@ ms.assetid: D812883C-A14A-E74B-0F72-E50071E96328
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 02/05/2018
-ms.openlocfilehash: 1a2739d1a3848303b3086c23c0a28a889250ee2e
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 05/30/2019
+ms.openlocfilehash: bb1b615bc922b19c50435218dfee51f9e19d1259
+ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675506"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394719"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>多核心裝置和 Xamarin.Android
 
@@ -20,9 +20,9 @@ _Android 可以在數種不同的電腦架構上執行。本文件會討論可�
 
 ## <a name="overview"></a>總覽
 
-Android 能夠建立「fat 二進位檔」，這是單一的 `.apk` 檔案，其中包含會支援多個不同 CPU 架構的機器碼。 為了實現這個功能，它會讓機器碼的每一段與應用程式二進位介面建立關聯。 ABI 可用來控制哪些機器碼會在指定的硬體裝置上執行。 例如，為了讓 Android 應用程式在 x86 裝置上執行，就必須在編譯應用程式時納入 x86 ABI 支援。
+Android 能夠建立「fat 二進位檔」，這是單一的 `.apk` 檔案，其中包含會支援多個不同 CPU 架構的機器碼。 為了實現這個功能，它會讓機器碼的每一段與應用程式二進位介面  建立關聯。 ABI 可用來控制哪些機器碼會在指定的硬體裝置上執行。 例如，為了讓 Android 應用程式在 x86 裝置上執行，就必須在編譯應用程式時納入 x86 ABI 支援。
 
-具體來說，每個 Android 應用程式都會支援至少一個內嵌應用程式二進位介面 (EABI)。 EABI 是內嵌軟體程式專屬的慣例。 典型的 EABI 會描述下列資訊：
+具體來說，每個 Android 應用程式都會支援至少一個內嵌應用程式二進位介面  (EABI)。 EABI 是內嵌軟體程式專屬的慣例。 典型的 EABI 會描述下列資訊：
 
 - CPU 指令集。
 
@@ -53,38 +53,32 @@ Android 所支援的每個 ABI 皆可透過唯一名稱來加以識別。
 
 這是 ARM 式 CPU (至少支援 ARMv5TE 指令集) 的 EABI 名稱。 Android 會遵循由小到大的 ARM GNU/Linux ABI。 此 ABI 不支援硬體輔助浮點運算。 所有 FP 作業皆由軟體協助程式函式負責執行，這些函式來自編譯器的 `libgcc.a` 靜態程式庫。 `armeabi` 不支援 SMP 裝置。
 
-**注意**：Xamarin.Android 的 `armeabi` 程式碼不具備執行緒安全性，所以不應用於具有多 CPU 的 `armeabi-v7a` 裝置 (下面會有說明)。 在單核心的 `armeabi-v7a` 裝置上使用 `aremabi` 程式碼很安全。
+**注意**：Xamarin.Android 的 `armeabi` 程式碼不具備安全執行緒，所以不應用於具有多 CPU 的 `armeabi-v7a` 裝置 (說明如下)。 在單核心的 `armeabi-v7a` 裝置上使用 `armeabi` 程式碼很安全。
 
 #### <a name="armeabi-v7a"></a>armeabi-v7a
 
 這是另一種 ARM 式 CPU 指令集，其可延伸上述的 `armeabi` EABI。 `armeabi-v7a` EABI 可支援硬體浮點運算和多個 CPU (SMP) 的裝置。 相較於使用 `armeabi` 的應用程式，使用 `armeabi-v7a` EABI 的應用程式效能應該會大幅提升。
 
-**注意：**`armeabi-v7a` 機器碼不會在 ARMv5 裝置上執行。
+**注意：** `armeabi-v7a` 機器碼不會在 ARMv5 裝置上執行。
 
 #### <a name="arm64-v8a"></a>arm64-v8a
 
-這是以 ARMv8 CPU 架構為基礎的 64 位元指令集。 Nexus 9 使用了此架構。
-Xamarin.Android 5.1 針對此架構提供了實驗性支援 (如需詳細資訊，請參閱[實驗性功能](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Experimental_Features))。
+這是以 ARMv8 CPU 架構為基礎的 64 位元指令集。 Nexus 9  使用了此架構。
+Xamarin.Android 5.1 引進對此架構的支援 (如需詳細資訊，請簪參閱 [64 位元執行階段支援](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#64-bit-runtime-support))。
 
 #### <a name="x86"></a>x86
 
-對於支援一般稱為 x86 或 IA-32 之指令集的 CPU，這是其 ABI 的名稱。 此 ABI 會對應至 Pentium Pro 指令集 (包括 MMX、SSE、SSE2 和 SSE3 指令集) 的指令。 它不會包含任何其他選擇性的 IA-32 指令集擴充，例如：
+對於支援一般稱為 x86  或 IA-32  之指令集的 CPU，這是其 ABI 的名稱。 此 ABI 會對應至 Pentium Pro 指令集 (包括 MMX、SSE、SSE2 和 SSE3 指令集) 的指令。 它不會包含任何其他選擇性的 IA-32 指令集擴充，例如：
 
 - MOVBE 指令。
 - 補充的 SSE3 擴充 (SSSE3)。
 - SSE4 的任何變化。
 
-**注意：** Google TV 雖然在 x86 上執行，但提供支援的對象並不包括 Android 的 NDK。
+**注意：** Google TV 雖然在 x86 上執行，但並不受 Android 的 NDK 支援。
 
 #### <a name="x8664"></a>x86_64
 
-對於支援 64 位元 x86 指令集 (也稱為 x64 或 AMD64) 的 CPU，這是其 ABI 的名稱。 Xamarin.Android 5.1 針對此架構提供了實驗性支援 (如需詳細資訊，請參閱[實驗性功能](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Experimental_Features))。
-
-#### <a name="mips"></a>mips
-
-針對至少支援 `MIPS32r1` 指令集的 MIPS 架構 CPU，這是其 ABI 的名稱。 Android 支援既不支援 MIPS 16，也不支援 `micromips`。
-
-**注意：** MIPS 裝置目前不受 Xamarin.Android 支援，但會在未來的版本中支援。
+對於支援 64 位元 x86 指令集 (也稱為 x64  或 AMD64  ) 的 CPU，這是其 ABI 的名稱。 Xamarin.Android 5.1 引進對此架構的支援 (如需詳細資訊，請簪參閱 [64 位元執行階段支援](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#64-bit-runtime-support))。
 
 #### <a name="apk-file-format"></a>APK 檔案格式
 
@@ -125,9 +119,9 @@ Android 應用程式套件是保存了 Android 應用程式所需之所有程式
 
 Android 的原生程式庫安裝行為會因為 Android 版本的不同而有很大的變化。
 
-#### <a name="installing-native-libraries-pre-android-40"></a>安裝原生程式庫：Android 4.0 之前
+#### <a name="installing-native-libraries-pre-android-40"></a>安裝原生程式庫：Pre-Android 4.0
 
-4.0 Ice Cream Sandwich 之前的 Android 只會從 `.apk` 內的單一 ABI 解壓縮原生程式庫。 此一時期的 Android 應用程式會先嘗試解壓縮主要 ABI 的所有原生程式庫，如果這樣的程式庫不存在，Android 就會解壓縮次要 ABI 的所有原生程式庫。 完全不會進行「合併」。
+4.0 Ice Cream Sandwich 之前的 Android 只會從 `.apk` 內的單一 ABI  解壓縮原生程式庫。 此一時期的 Android 應用程式會先嘗試解壓縮主要 ABI 的所有原生程式庫，如果這樣的程式庫不存在，Android 就會解壓縮次要 ABI 的所有原生程式庫。 完全不會進行「合併」。
 
 例如，請設想應用程式是安裝在 `armeabi-v7a` 裝置上的情況。 同時支援 `armeabi` 和 `armeabi-v7a` 的 `.apk,` 之中具有下列 ABI `lib` 目錄和檔案：
 
@@ -145,7 +139,7 @@ $APP/lib/libtwo.so # from the armeabi-v7a directory in the apk
 
 換句話說，未安裝任何 `libone.so`。 這會造成問題，因為 `libone.so` 不存在，因此應用程式無法在執行階段載入。 這並非預期的行為，所以已記錄為錯誤，並重新分類為「[如預期般運作](http://code.google.com/p/android/issues/detail?id=9089)」。
 
-因此，以 4.0 之前的 Android 版本作為目標時，就必須為應用程式會支援的每個 ABI 提供所有原生程式庫，也就是 `.apk` 應包含：
+因此，以 4.0 之前的 Android 版本作為目標時，就必須為應用程式會支援的每個  ABI 提供所有  原生程式庫，也就是 `.apk` 應包含：
 
 ```shell
 lib/armeabi/libone.so
@@ -177,16 +171,16 @@ $APP/lib/libone.so
 $APP/lib/libtwo.so
 ```
 
-不幸的是，這種行為會和順序相依，如下列文件所述 - [問題 24321：Galaxy Nexus 4.0.2 會在 apk 內含有 armeabi 和 armeabi-v7a 時使用 armeabi 機器碼](http://code.google.com/p/android/issues/detail?id=25321)。
+很不幸地，此行為會依順序而有所不同，如以下文件所示 - [Issue 24321:Galaxy Nexus 4.0.2 uses armeabi native code when both armeabi and armeabi-v7a is included in apk](http://code.google.com/p/android/issues/detail?id=25321) (問題 24321：Galaxy Nexus 4.0.2 會在 apk 內同時含有 armeabi 和 armeabi-v7a 時使用 armeabi 機器碼)。
 
-原生程式庫會「按照順序」(例如，依 unzip 所列) 來處理，而且會解壓縮第一個相符項目。 因為 `.apk` 包含 `libtwo.so` 的 `armeabi` 和 `armeabi-v7a` 版本，而 `armeabi` 最先列出，所以會解壓縮 `armeabi` 版本，而不是 `armeabi-v7a` 版本：
+原生程式庫會「按照順序」(例如，依 unzip 所列) 來處理，而且會解壓縮第一個相符項目  。 因為 `.apk` 包含 `libtwo.so` 的 `armeabi` 和 `armeabi-v7a` 版本，而 `armeabi` 最先列出，所以會解壓縮 `armeabi` 版本，而不是  `armeabi-v7a` 版本：
 
 ```shell
 $APP/lib/libone.so # armeabi
 $APP/lib/libtwo.so # armeabi, NOT armeabi-v7a!
 ```
 
-此外，即使同時指定了 `armeabi` 和 `armeabi-v7a` ABI (如下面的＜宣告支援的 ABI＞一節所述)，Xamarin.Android 還是會於 中建立下列項目。
+此外，即使同時指定了 `armeabi` 和 `armeabi-v7a` ABI (如下面的＜宣告支援的 ABI＞  一節所述)，Xamarin.Android 還是會於 中建立下列項目。
 `csproj`：
 
 ```xml
@@ -215,13 +209,7 @@ $APP/lib/libtwo.so # from armeabi-v7a
 
 ### <a name="xamarinandroid-and-abis"></a>Xamarin.Android 和 ABI
 
-Xamarin.Android 支援下列架構：
-
-- `armeabi`
-- `armeabi-v7a`
-- `x86`
-
-Xamarin.Android 針對下列架構提供了實驗性支援：
+Xamarin.Android 支援下列 64 位元  架構：
 
 - `arm64-v8a`
 - `x86_64`
@@ -229,16 +217,24 @@ Xamarin.Android 針對下列架構提供了實驗性支援：
 > [!NOTE]
 > 從 2018 年 8 月開始，新應用程式都必須以 API 層級 26 為目標，而且從 2019 年 8 月開始，除了 32 位元版本之外，應用程式也都[必須提供 64 位元版本](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html)。
 
+Xamarin.Android 支援下列 32 位元架構：
+
+- `armeabi` ^
+- `armeabi-v7a`
+- `x86`
+
+> [!NOTE]
+> **^** 從 [Xamarin.Android 9.2](https://docs.microsoft.com/xamarin/android/release-notes/9/9.2#removal-of-support-for-armeabi-cpu-architecture) 開始，已不再支援 `armeabi`。
+
 Xamarin.Android 目前未提供 `mips` 的支援。
 
 ### <a name="declaring-supported-abis"></a>宣告支援的 ABI
 
-根據預設，Xamarin.Android 會預設為 `armeabi-v7a` (若為**發行**組建)，以及預設為 `armeabi-v7a` 和 `x86` (若為**偵錯**組建)。 透過 Xamarin.Android 專案的專案選項即可設定不同 ABI 的支援。 在 Visual Studio 中，可於專案 [屬性] 之 [Android 選項] 頁面中的 [進階] 索引標籤底下設定此項目，如下列螢幕擷取畫面所示：
+根據預設，Xamarin.Android 會預設為 `armeabi-v7a` (若為**發行**組建)，以及預設為 `armeabi-v7a` 和 `x86` (若為**偵錯**組建)。 透過 Xamarin.Android 專案的專案選項即可設定不同 ABI 的支援。 在 Visual Studio 中，可於專案 [屬性]  之 [Android 選項]  頁面中的 [進階]  索引標籤底下設定此項目，如下列螢幕擷取畫面所示：
 
 ![[Android 選項] 的 [進階屬性]](multicore-devices-images/vs-abi-selections.png)
 
-
-在 Visual Studio for Mac 中，可於 [專案選項] 之 [Android 組建] 頁面的 [進階] 索引標籤底下選取所支援的架構，如下列螢幕擷取畫面所示：
+在 Visual Studio for Mac 中，可於 [專案選項]  之 [Android 組建]  頁面的 [進階]  索引標籤底下選取所支援的架構，如下列螢幕擷取畫面所示：
 
 [![Android 組建所支援的 ABI](multicore-devices-images/xs-abi-selections-sml.png)](multicore-devices-images/xs-abi-selections.png#lightbox)
 
@@ -248,15 +244,14 @@ Xamarin.Android 目前未提供 `mips` 的支援。
 
 - 將應用程式部署至 `armeabi-v7a` 裝置，以確保執行緒安全性。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文件討論了可作為 Android 應用程式執行所在的不同 CPU 架構。 文中介紹了應用程式二進位介面，以及 Android 如何使用此介面來支援不同的 CPU 架構。
 接著討論如何在 Xamarin.Android 應用程式中指定 ABI 支援，並點出在僅供 `armeabi` 使用的 `armeabi-v7a` 裝置上使用 Xamarin.Android 應用程式時會引發的問題。
 
 ## <a name="related-links"></a>相關連結
 
-- [MIPS 架構](http://www.mips.com/products/product-materials/processor/mips-architecture)
 - [ARM 架構的 ABI (PDF)](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0036b/IHI0036B_bsabi.pdf)
-- [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html)
+- [Android NDK](https://developer.android.com/tools/sdk/ndk/index.html)
 - [問題 9089：Nexus One - 如果 armeabi-v7a 上有至少一個文件庫，就不會從 armeabi 載入任何原生程式庫](http://code.google.com/p/android/issues/detail?id=9089)
-- [問題 24321：Galaxy Nexus 4.0.2 會在 apk 內含有 armeabi 和 armeabi-v7a 時使用 armeabi 機器碼](http://code.google.com/p/android/issues/detail?id=25321)
+- [Issue 24321:Galaxy Nexus 4.0.2 uses armeabi native code when both armeabi and armeabi-v7a is included in apk](http://code.google.com/p/android/issues/detail?id=25321) (問題 24321：Galaxy Nexus 4.0.2 會在 apk 內同時含有 armeabi 和 armeabi-v7a 時使用 armeabi 機器碼)

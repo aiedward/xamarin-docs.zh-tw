@@ -7,8 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
+ms.openlocfilehash: 9367e22ede733ee2d93feccc001836fb4dc02564
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60858081"
 ---
-
 # <a name="windows-platform-features"></a>Windows 平台功能
 
 開發適用於 Windows 平台 Xamarin.Forms 應用程式需要 Visual Studio。 [需求頁面](~/get-started/requirements.md)包含必要條件的詳細資訊。
@@ -21,21 +26,21 @@ ms.date: 01/08/2018
 
 下列平台特有的功能被供 Xamarin.Forms 檢視、 頁面和配置在通用 Windows 平台 (UWP):
 
-- 設定存取金鑰[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 如需詳細資訊，請參閱 < [VisualElement 存取金鑰，在 Windows 上](#visualelement-accesskeys)。
-- 停用上支援的舊版的色彩模式[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 如需詳細資訊，請參閱 < [VisualElement 舊版色彩模式在 Windows 上](#legacy-color-mode)。
+- 設定存取金鑰[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 如需詳細資訊，請參閱 < [VisualElement 存取金鑰，在 Windows 上](visualelement-access-keys.md)。
+- 停用上支援的舊版的色彩模式[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 如需詳細資訊，請參閱 < [VisualElement 舊版色彩模式在 Windows 上](legacy-color-mode.md)。
 
 為 UWP 的 Xamarin.Forms 檢視提供了下列平台特有的功能：
 
-- 正在偵測讀取順序，從文字中的內容[ `Entry` ](xref:Xamarin.Forms.Entry)， [ `Editor` ](xref:Xamarin.Forms.Editor)，以及[ `Label` ](xref:Xamarin.Forms.Label)執行個體。 如需詳細資訊，請參閱 < [InputView 在 Windows 上的讀取順序](#inputview-readingorder)。
-- 啟用在點選 筆勢支援[ `ListView` ](xref:Xamarin.Forms.ListView)。 如需詳細資訊，請參閱 <<c0> [ 在 Windows 上的 ListView SelectionMode](#listview-selectionmode)。
-- 啟用[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)與拼字檢查引擎互動。 如需詳細資訊，請參閱 < [SearchBar 拼字檢查 Windows 上](#searchbar-spellcheck)。
-- 啟用[ `WebView` ](xref:Xamarin.Forms.WebView) UWP 訊息對話方塊中顯示 JavaScript 的警示。 如需詳細資訊，請參閱 <<c0> [ 在 Windows 上的 WebView JavaScript 警示](#webview-javascript-alert)。
+- 正在偵測讀取順序，從文字中的內容[ `Entry` ](xref:Xamarin.Forms.Entry)， [ `Editor` ](xref:Xamarin.Forms.Editor)，以及[ `Label` ](xref:Xamarin.Forms.Label)執行個體。 如需詳細資訊，請參閱 < [InputView 在 Windows 上的讀取順序](inputview-reading-order.md)。
+- 啟用在點選 筆勢支援[ `ListView` ](xref:Xamarin.Forms.ListView)。 如需詳細資訊，請參閱 <<c0> [ 在 Windows 上的 ListView SelectionMode](listview-selectionmode.md)。
+- 啟用[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)與拼字檢查引擎互動。 如需詳細資訊，請參閱 < [SearchBar 拼字檢查 Windows 上](searchbar-spell-check.md)。
+- 啟用[ `WebView` ](xref:Xamarin.Forms.WebView) UWP 訊息對話方塊中顯示 JavaScript 的警示。 如需詳細資訊，請參閱 <<c0> [ 在 Windows 上的 WebView JavaScript 警示](webview-javascript-alert.md)。
 
 在 UWP 的 Xamarin.Forms 頁面提供下列平台特有的功能：
 
-- 摺疊[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)導覽列中。 如需詳細資訊，請參閱 < [MasterDetailPage 導覽列在 Windows 上](#collapsable_navigation_bar)。
-- 設定工具列的放置選項。 如需詳細資訊，請參閱 <<c0> [ 在 Windows 上的頁面工具列位置](#toolbar_placement)。
-- 啟用顯示在頁面圖示[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)工具列。 如需詳細資訊，請參閱 < [TabbedPage 圖示，在 Windows 上](#tabbedpage-icons)。
+- 摺疊[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)導覽列中。 如需詳細資訊，請參閱 < [MasterDetailPage 導覽列在 Windows 上](masterdetailpage-navigation-bar.md)。
+- 設定工具列的放置選項。 如需詳細資訊，請參閱 <<c0> [ 在 Windows 上的頁面工具列位置](page-toolbar-placement.md)。
+- 啟用顯示在頁面圖示[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)工具列。 如需詳細資訊，請參閱 < [TabbedPage 圖示，在 Windows 上](tabbedpage-icons.md)。
 
 ## <a name="platform-support"></a>平台支援
 

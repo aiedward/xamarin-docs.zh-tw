@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: fd5181040c1805d3fdabdae4803bbe32c6bb6652
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 05e8fb9ef26f2a2a0b812b25853e4f61e658fa46
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292229"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970558"
 ---
 # <a name="device-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的裝置樣式
 
@@ -29,12 +29,12 @@ _Xamarin.Forms 包含六個動態的樣式，稱為裝置樣式，Device.Styles 
 - [`SubtitleStyle`](xref:Xamarin.Forms.Device.Styles.SubtitleStyle)
 - [`TitleStyle`](xref:Xamarin.Forms.Device.Styles.TitleStyle)
 
-所有六個樣式只套用至[ `Label` ](xref:Xamarin.Forms.Label)執行個體。 例如， `Label` ，顯示一個段落的本文可能會設定其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)屬性設[ `BodyStyle` ](xref:Xamarin.Forms.Device.Styles.BodyStyle)。
+所有六個樣式只套用至[ `Label` ](xref:Xamarin.Forms.Label)執行個體。 例如， `Label` ，顯示一個段落的本文可能會設定其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性設[ `BodyStyle` ](xref:Xamarin.Forms.Device.Styles.BodyStyle)。
 
 下列程式碼範例示範如何使用*裝置*XAML 頁面中的樣式：
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DeviceStylesPage" Title="Device" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DeviceStylesPage" Title="Device" IconImageSource="xaml.png">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="myBodyStyle" TargetType="Label"
@@ -89,7 +89,7 @@ public class DeviceStylesPageCS : ContentPage
         };
 
         Title = "Device";
-        Icon = "csharp.png";
+        IconImageSource = "csharp.png";
         Padding = new Thickness (0, 20, 0, 0);
 
         Content = new StackLayout {
@@ -109,7 +109,7 @@ public class DeviceStylesPageCS : ContentPage
 }
 ```
 
-[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)屬性的每個[ `Label` ](xref:Xamarin.Forms.Label)執行個體設定為適當的屬性，從[ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)類別。
+[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性的每個[ `Label` ](xref:Xamarin.Forms.Label)執行個體設定為適當的屬性，從[ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)類別。
 
 ## <a name="accessibility"></a>協助工具選項
 

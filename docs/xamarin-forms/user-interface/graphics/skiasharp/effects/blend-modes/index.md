@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: 3ea05563ecbca95d26d692d5424c30e961229ac5
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051039"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61021190"
 ---
 # <a name="skiasharp-blend-modes"></a>SkiaSharp 混合模式
 
@@ -46,13 +46,13 @@ SkiaSharp blend 模式緊密對應至 W3C 中所述[**複合 （compositing） �
 
 在討論中旁聽遵循更有意義上需要這三個類別的名稱。 這裡列出的成員的順序會定義相同`SKBlendMode`列舉型別。 13 列舉成員的第一個資料行中有 0 到 12 的整數值。 第二個資料行對應至整數 13 到 24，列舉成員，而第三個資料行中的成員擁有 25 至 28 的值。
 
-模式會討論這些 blend_大約_W3C 的相同順序**複合 （compositing） 和混合層級 1**文件，但有一些差異：`Src`模式稱為_副本_W3C 文件中並`Plus`稱為_較淺_。 W3C 文件會定義_Normal_不包含在混合模式`SKBlendModes`因為它會與相同`SrcOver`。 `Modulate` （在第一個資料行頂端） 的混合模式不包含在 W3C 文件，並討論`Multiply`模式之前`Screen`。
+模式會討論這些 blend_大約_W3C 的相同順序**複合 （compositing） 和混合層級 1**文件，但有一些差異：`Src`模式稱為_複製_W3C 文件中並`Plus`稱為_輕_。 W3C 文件會定義_Normal_不包含在混合模式`SKBlendModes`因為它會與相同`SrcOver`。 `Modulate` （在第一個資料行頂端） 的混合模式不包含在 W3C 文件，並討論`Multiply`模式之前`Screen`。
 
 因為`Modulate`專屬於 Skia 混合模式，將會討論為額外的 Porter Duff 模式，以及可分隔模式。
 
 ## <a name="the-importance-of-transparency"></a>重要性的透明度
 
-在過去，複合 （compositing） 所開發的概念搭配_alpha 色頻_。 在顯示介面 例如`SKCanvas`物件和全彩點陣圖，每個像素包含 4 個位元組： 1 位元組每個紅色、 綠色和藍色元件，以及額外的位元組，透明度。 完整的透明度為 0 而完全不透明，具有不同的層級的那些值之間的透明的 0xFF 此 alpha 元件。
+在過去，複合 （compositing） 所開發的概念搭配_alpha 色頻_。 在顯示介面 例如`SKCanvas`物件和全彩點陣圖，每個像素包含 4 個位元組：1 個位元組每個紅色、 綠色和藍色元件及額外的位元組，透明度。 完整的透明度為 0 而完全不透明，具有不同的層級的那些值之間的透明的 0xFF 此 alpha 元件。
 
 混合模式的許多依賴透明度。 通常，當`SKCanvas`中第一次取得`PaintSurface`處理常式，或當`SKCanvas`建立若要繪製的點陣圖，第一個步驟是此呼叫：
 

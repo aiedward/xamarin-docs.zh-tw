@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: e3eb4e3454aeab08d1333c5dbc3d4808fa4d676c
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528399"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61224509"
 ---
 # <a name="additional-watchos-3-frameworks-changes"></a>其他 watchOS 3 架構變更
 
@@ -76,7 +76,7 @@ IOS 的主要變更，除了 Apple 方面所做的修改以及數個現有的架
 下列增強功能所做的監看式作業系統 3 PassKit 架構：
 
 - 擴充架構，以支援在實體產品和服務的 Apple Watch 上的安全、 應用程式內的付款。
-- 現已提供下列類別： [PKPayment](https://developer.apple.com/reference/passkit/pkpayment)， [PKPaymentMethod](https://developer.apple.com/reference/passkit/pkpaymentmethod)， [PKPaymentRequest](https://developer.apple.com/reference/passkit/pkpaymentrequest)並[PKPaymentToken](https://developer.apple.com/reference/passkit/pkpaymenttoken)
+- 現在可以使用下列類別︰[PKPayment](https://developer.apple.com/reference/passkit/pkpayment)， [PKPaymentMethod](https://developer.apple.com/reference/passkit/pkpaymentmethod)， [PKPaymentRequest](https://developer.apple.com/reference/passkit/pkpaymentrequest)和[PKPaymentToken](https://developer.apple.com/reference/passkit/pkpaymenttoken)
 
 
 ## <a name="uikit"></a>UIKit

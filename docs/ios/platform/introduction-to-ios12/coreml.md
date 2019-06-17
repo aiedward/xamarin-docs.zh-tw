@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/15/2018
-ms.openlocfilehash: 2d62e42e755a0d3088283adb863dfd684ddeae28
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 50d59f0b6ff2133c5870d84a1d740547768116e0
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61398841"
 ---
 # <a name="core-ml-2-in-xamarinios"></a>核心機器學習服務 2 在 Xamarin.iOS 中
 
@@ -20,7 +20,7 @@ ms.locfileid: "51617575"
 
 在 iOS 12 中，核心 ML 會包含 API 的批次處理。 此 API 讓核心 ML 更有效率，而且可在其中使用模型來進行預測的一連串的情況下提升效能。
 
-## <a name="sample-app-marshabitatcoremltimer"></a>範例應用程式： MarsHabitatCoreMLTimer
+## <a name="sample-app-marshabitatcoremltimer"></a>範例應用程式：MarsHabitatCoreMLTimer
 
 為了示範如何使用核心 ML 批次預測，看看[MarsHabitatCoreMLTimer](https://developer.xamarin.com/samples/monotouch/iOS12/MarsHabitatCoreMLTimer)範例應用程式。 核心 ML 模型定型以預測成本上的建置 habitat Mars，此範例會使用根據各種不同的輸入： 數目 solar 面板、 greenhouses，數目以及英畝數目。
 
@@ -74,7 +74,7 @@ async void RunTest(int num)
 
 ## <a name="for-loop"></a>for 迴圈
 
-`for`迴圈版本的測試這個逐一查看指定的輸入數目，呼叫[ `GetPrediction` ](https://developer.xamarin.com/api/member/CoreML.MLModel.GetPrediction/)每個及捨棄結果。 方法逾做出預測需要多久：
+`for`迴圈版本的測試這個逐一查看指定的輸入數目，呼叫[ `GetPrediction` ](xref:CoreML.MLModel.GetPrediction*)每個及捨棄結果。 方法逾做出預測需要多久：
 
 ```csharp
 async Task FetchNonBatchResults(int num)
@@ -94,7 +94,7 @@ async Task FetchNonBatchResults(int num)
 
 ## <a name="getpredictions-new-batch-api"></a>GetPredictions （新批次 API）
 
-建立測試批次版`MLArrayBatchProvider`輸入陣列中的物件 (因為這是必要的輸入的參數，如`GetPredictions`方法)，建立 [`MLPredictionOptions`](https://developer.xamarin.com/api/type/CoreML.MLPredictionOptions/)
+建立測試批次版`MLArrayBatchProvider`輸入陣列中的物件 (因為這是必要的輸入的參數，如`GetPredictions`方法)，建立 [`MLPredictionOptions`](xref:CoreML.MLPredictionOptions)
 物件，可防止預測的 cpu，限制的計算，並使用`GetPredictions`API 以擷取一次並捨棄結果的預測：
 
 ```csharp

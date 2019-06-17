@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
 ms.openlocfilehash: 585c276b327a9092bdd13fa633307477017558c5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61276786"
 ---
 # <a name="packaging-wear-apps"></a>封裝 Wear 應用程式
 
@@ -48,7 +48,7 @@ Android Wear 應用程式隨附在 Google Play 上發佈的完整 Android 應用
 -----
 
 
-請注意，您會收到**XA5211**如果穿戴式應用程式的封裝名稱與掌上型應用程式封裝名稱不符的錯誤。 例如: 
+請注意，您會收到**XA5211**如果穿戴式應用程式的封裝名稱與掌上型應用程式封裝名稱不符的錯誤。 例如：
 
 ```shell
 Error XA5211: Embedded wear app package name differs from handheld 

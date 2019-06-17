@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 7bd4a87843852e940da96f688371ddbecbf7e0b4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: cdeaae6cb83062f0d84a3605582b9779c9f36145
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105775"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66178043"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>在 Xamarin.iOS 中的訊息應用程式擴充功能基本概念
 
@@ -37,7 +37,7 @@ _這篇文章示範如何包含訊息的應用程式擴充功能與在 Messages 
 
 也新增在 iOS 10 中，Apple 已新增可讓使用者輕鬆地找出應用程式內嵌應用程式屬性。 比方說，如果一位使用者將內容傳送至另一個從第 2 個使用者不需要的應用程式安裝 （例如貼紙的範例），傳送應用程式名稱被列在底下的訊息記錄中的內容。 如果在使用者點選應用程式的名稱，我們開啟訊息應用程式存放區並選取存放區中的應用程式。
 
-訊息應用程式延伸模組是類似於現有的 iOS 應用程式開發人員熟悉如何建立，並將能存取所有標準的架構和標準的 iOS 應用程式的功能。 例如: 
+訊息應用程式延伸模組是類似於現有的 iOS 應用程式開發人員熟悉如何建立，並將能存取所有標準的架構和標準的 iOS 應用程式的功能。 例如：
 
 - 他們可以存取應用程式內購買。
 - 他們可以到 Apple Pay 的存取。
@@ -133,7 +133,7 @@ Apple 建議測試針對各種不同的彩色的背景 （例如白色、 黑色
 
 1. 啟動 Visual Studio。
 2. 開啟方案，以新增訊息的應用程式擴充功能。
-3. 選取 * * iOS 延伸模組 > iMessage 延伸模組 (iOS) * *，按一下 [**下一步]** 按鈕：
+3. 選取 [ **iOS 延伸模組 > iMessage 延伸模組 (iOS)** 然後按一下**下一步]** 按鈕：
 
     [![選取 iMessage 延伸模組 (iOS)](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 7589784563906d60fc8026feac9ea16362463bfa
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61085107"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinios"></a>逐步解說-在 Xamarin.iOS 中使用本機通知
 
@@ -27,7 +27,7 @@ _這一節我們將逐步解說如何在 Xamarin.iOS 應用程式中使用本機
 
 
 1. 在 Visual Studio for Mac，請在建立新的單一檢視 iOS 方案，並為它`Notifications`。
-1. 開啟`Main.storyboard`檔案，並將按鈕拖曳至檢視。 將按鈕** 按鈕**，並為它提供標題**新增通知**。 您也可以設定一些[條件約束](~/ios/user-interface/designer/designer-auto-layout.md)此時的按鈕： 
+1. 開啟`Main.storyboard`檔案，並將按鈕拖曳至檢視。 將按鈕 **按鈕** ，並為它提供標題 **新增通知**。 您也可以設定一些[條件約束](~/ios/user-interface/designer/designer-auto-layout.md)此時的按鈕： 
 
     ![](local-notifications-in-ios-walkthrough-images/image3.png "設定在按鈕上的某些條件約束")
 1. 編輯`ViewController`類別，並將下列事件處理常式新增至 ViewDidLoad 方法：

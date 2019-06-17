@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: fef81fb5e5d2de79508b43a5612bf56af68d0772
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c8a6e7a9abf9e8430253b9402d69f43744bf93c0
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108167"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827664"
 ---
 # <a name="customizing-a-listviews-appearance"></a>自訂 ListView 的外觀
 
@@ -387,6 +387,6 @@ Android 會嘗試提升的效能`ListView`捲動藉由快取配置資訊。 如�
 
 ## <a name="related-links"></a>相關連結
 
-- [BuiltInViews （範例）](https://developer.xamarin.com/samples/BuiltInViews/)
-- [AccessoryViews （範例）](https://developer.xamarin.com/samples/AccessoryViews/)
-- [CustomRowView （範例）](https://developer.xamarin.com/samples/CustomRowView/)
+- [BuiltInViews （範例）](https://developer.xamarin.com/samples/monodroid/BuiltInViews/)
+- [AccessoryViews （範例）](https://developer.xamarin.com/samples/monodroid/AccessoryViews/)
+- [CustomRowView （範例）](https://developer.xamarin.com/samples/monodroid/CustomRowView/)

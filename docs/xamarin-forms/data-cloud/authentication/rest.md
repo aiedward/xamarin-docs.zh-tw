@@ -6,21 +6,17 @@ ms.assetid: 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/22/2017
-ms.openlocfilehash: e2ab6c053901ad6c1668c5ae5be9ab04d9d05e8a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 01/22/2018
+ms.openlocfilehash: d3f07a72ee26d6be4fafa72137dc9b6c3a724e00
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61330641"
 ---
 # <a name="authenticating-a-restful-web-service"></a>驗證的 RESTful Web 服務
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST/)
-
 _HTTP 支援使用數種驗證機制，來控制資源存取權。基本驗證會提供資源的存取權的用戶端具有正確的認證。這篇文章會示範如何使用基本驗證保護 RESTful web 服務資源的存取權。_
-
-隨附的 Xamarin.Forms 範例應用程式會取用提供唯讀存取 web 服務的 Xamarin 裝載 REST 服務。 因此，建立、 更新和刪除資料的作業並不會更改應用程式中使用的資料。 不過，可裝載 REST 服務的版本都可在*TodoRESTService*可以在那裡找到資料夾中的範例應用程式和服務所設定的指示。 此可裝載 REST 服務的版本會提供完整建立、 更新、 讀取和刪除資料的存取。
 
 > [!NOTE]
 > 在 iOS 9 和更新版本中，App Transport Security (ATS) 會強制執行安全的連線 （例如應用程式的後端伺服器） 的網際網路資源與應用程式，藉此防止意外洩漏機密資訊。 針對 iOS 9 所建置的應用程式中的預設會啟用 ATS，因為所有連線將會都受限於 ATS 安全性需求。 如果連線不符合這些需求，它們將會失敗並發生例外狀況。
@@ -59,7 +55,7 @@ Authorization: Basic WGFtYXJpblVzZXI6WGFtYXJpblBhc3N3b3Jk
 ```csharp
 public class RestService : IRestService
 {
-  HttpClient client;
+  HttpClient _client;
   ...
 
   public RestService ()
@@ -67,9 +63,8 @@ public class RestService : IRestService
     var authData = string.Format ("{0}:{1}", Constants.Username, Constants.Password);
     var authHeaderValue = Convert.ToBase64String (Encoding.UTF8.GetBytes (authData));
 
-    client = new HttpClient ();
-    ...
-    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue ("Basic", authHeaderValue);
+    _client = new HttpClient ();
+    _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue ("Basic", authHeaderValue);
   }
   ...
 }
@@ -78,25 +73,18 @@ public class RestService : IRestService
 然後要求至 web 服務作業提出要求時使用簽署`Authorization`標頭，指出使用者是否已叫用作業的權限。
 
 > [!NOTE]
-> 範例 REST 服務會將認證儲存為常數，而它們應該不會儲存在已發行的應用程式中不安全的格式。 [Xamarith.Auth](https://www.nuget.org/packages/Xamarin.Auth/) NuGet 提供安全地儲存認證的功能。 如需詳細資訊，請參閱[中儲存及擷取在裝置上的帳戶資訊](~/xamarin-forms/data-cloud/authentication/oauth.md)。
-
+> 雖然這段程式碼會將認證儲存為常數，它們不應該儲存在已發行的應用程式中不安全的格式。 [Xamarith.Auth](https://www.nuget.org/packages/Xamarin.Auth/) NuGet 提供安全地儲存認證的功能。 如需詳細資訊，請參閱[中儲存及擷取在裝置上的帳戶資訊](~/xamarin-forms/data-cloud/authentication/oauth.md)。
 
 ## <a name="processing-the-authorization-header-server-side"></a>處理授權標頭伺服器端
 
-隨附的範例 REST 服務裝飾具有每個動作`[BasicAuthentication]`屬性。 這個屬性由實作`BasicAuthenticationAttribute`類別在解決方案中，並且用來剖析`Authorization`標頭，並判斷的 base64 編碼認證是否有效，藉由比較這些值儲存在針對*Web.config*.雖然此方法很適合使用的範例服務，它需要向外公開 web 服務延伸。
+REST 服務應該裝飾具有每個動作`[BasicAuthentication]`屬性。 這個屬性用來剖析`Authorization`標頭，並判斷的 base64 編碼認證是否有效，針對中儲存的值做比較*Web.config*。雖然此方法很適合使用的範例服務，它需要向外公開 web 服務延伸。
 
 在 IIS 所使用的基本驗證模組，會向他們的 Windows 認證來驗證使用者。 因此，使用者必須擁有伺服器的網域上的帳戶。 不過，可以設定基本驗證模型，以允許自訂驗證，會對外部來源，例如資料庫進行驗證的使用者帳戶。 如需詳細資訊，請參閱[ASP.NET Web API 中的基本驗證](http://www.asp.net/web-api/overview/security/basic-authentication)ASP.NET 網站上。
 
 > [!NOTE]
 > 基本驗證不被設計成管理登出。因此，進行登出時的標準基本驗證方法是結束工作階段。
 
-## <a name="summary"></a>總結
-
-本文示範如何將基本驗證新增至 Xamarin.Forms 應用程式使用的 web 要求`HttpClient`類別。 基本驗證會提供資源的存取權的用戶端具有正確的認證。 如需有關如何使用資訊[Xamarin.Auth](https://www.nuget.org/packages/Xamarin.Auth/)若要管理驗證程序，在 Xamarin.Forms 應用程式，讓使用者可以共用的後端，同時只需要存取其資料，請參閱[驗證使用者使用身分識別提供者](~/xamarin-forms/data-cloud/authentication/oauth.md)。
-
-
 ## <a name="related-links"></a>相關連結
 
-- [TodoREST （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST/)
 - [使用 RESTful web 服務](~/xamarin-forms/data-cloud/consuming/rest.md)
 - [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)

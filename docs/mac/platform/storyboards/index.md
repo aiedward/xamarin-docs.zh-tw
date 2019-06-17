@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 166a50021c22aa09be3eecdb8b745a70e75c3d51
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61031457"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin.mac 的分鏡腳本簡介
 
@@ -94,7 +94,7 @@ _本文提供在 Xamarin.Mac 應用程式中使用的分鏡腳本的簡介。它
 
 <a name="Working-with-Storyboards" />
 
-## <a name="working-with-storyboards"></a>使用分鏡腳本
+## <a name="working-with-storyboards"></a>使用 Storyboards
 
 本節涵蓋的深入詳細資料[使用分鏡腳本](~/mac/platform/storyboards/indepth.md)Xamarin.Mac 應用程式中。 我們會深入探討場景，以及檢視控制器和檢視所組成。 然後，我們將探討如何場景會繫結以及 Segue。 最後，我們將看看如何使用 Segue 的自訂型別。 
 

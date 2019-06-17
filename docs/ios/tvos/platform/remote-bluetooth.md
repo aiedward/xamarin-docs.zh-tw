@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 14c62051afd7489389f154c21b3a76b9aad3f32e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 79022f7a454ea423fa3112a4c4ade2bcd471fbb8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115532"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60932997"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Siri 遠端和藍牙控制器在 Xamarin 中 tvOS 的
 
@@ -38,7 +38,7 @@ Siri 遠端提供下列功能和 tvOS 應用程式內的預期使用方式：
 
 |功能|一般應用程式使用量|遊戲應用程式使用量|
 |---|---|---|
-|**觸控式表面**<br />若要瀏覽，來選取並按住的關聯式功能表按下撥動。|**點選/撥動**<br />UI 可焦點化項目之間的導覽。<br /><br />**按一下**<br />啟動選取的 （焦點） 項目。|**點選/撥動**<br />遊戲設計而定，可以當成 D-pad 點選邊緣。<br /><br />**按一下**<br />執行主要按鈕的功能。|
+|**觸控式表面**<br />若要瀏覽，來選取並按住的關聯式功能表按下撥動。|**Tap/Swipe**<br />UI 可焦點化項目之間的導覽。<br /><br />**Click**<br />啟動選取的 （焦點） 項目。|**Tap/Swipe**<br />遊戲設計而定，可以當成 D-pad 點選邊緣。<br /><br />**Click**<br />執行主要按鈕的功能。|
 |**Menu**<br />按下返回上一個畫面或功能表。|返回上一個畫面，並從主要的應用程式 畫面會跳到 Apple 電視主畫面。|暫停和繼續遊戲，傳回到前一個畫面，結束到 Apple 電視主畫面從主應用程式畫面。|
 |**Siri/搜尋**<br />使用 Siri 的國家/地區，請按住語音控制項，所有其他國家/地區，顯示搜尋畫面。|N/A|N/A|
 |**矔菛/縸**<br />播放和暫停媒體或提供應用程式中的第二個函式。|啟動媒體的播放和暫停/繼續播放。|執行次要按鈕的功能，或略過簡介影片 (如果存在)。|
@@ -51,7 +51,7 @@ Siri 遠端提供下列功能和 tvOS 應用程式內的預期使用方式：
 
 Siri 遠端的觸控介面是能夠偵測各種不同的單指筆勢，您可以回應 Xamarin.tvOS 應用程式中：
 
-|揮擊|按一下|點選|
+|撥動|按一下|點選|
 |---|---|---|
 |![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
 |在畫面上的 UI 項目之間移動選取項目 （焦點） （上、 下左、 右）。 撥動可捲動的內容使用快速慣性的大型清單。|啟動選取的項目 （焦點），或像是遊戲中的 [主要] 按鈕。 按一下並按住，可以啟用關聯式功能表或次要的函式。|輕度點選 觸控介面的邊緣上就像是方向鍵，將焦點移增加、 下、 左或右依據點選的區域上的方向按鈕。 根據應用程式，可以用來顯示隱藏的控制項。|
@@ -89,7 +89,7 @@ Apple 提供下列建議使用觸控介面筆勢：
 3. 請檢查**選取 [** 中 **] 按鈕**一節**屬性偵測器**: 
 
     [![](remote-bluetooth-images/storyboard02.png "檢查選取")](remote-bluetooth-images/storyboard02.png#lightbox)
-4. **選取**表示會回應使用者按一下 筆勢**觸控介面**Siri 遠端。 您也可以選擇回應** 功能表**，**矔菛/縸**，**向上**，**向下**，**左**和**右**按鈕。
+4. **選取**表示會回應使用者按一下 筆勢**觸控介面**Siri 遠端。 您也可以選擇回應 **功能表**， **矔菛/縸** ， **向上** ， **向下** ， **左** 和 **右** 按鈕。
 5. 接下來，接通**動作**從**點選 筆勢辨識器**，並為它`TouchSurfaceClicked`: 
 
     [![](remote-bluetooth-images/storyboard03.png "點選 筆勢辨識器動作")](remote-bluetooth-images/storyboard03.png#lightbox)
@@ -310,7 +310,7 @@ Apple 提供下列建議使用 遊戲控制器：
 如果您的應用程式需要低層級的控制站的輸入，您可以使用 Apple[遊戲控制器架構](https://developer.apple.com/library/prerelease/tvos/documentation/ServicesDiscovery/Conceptual/GameControllerPG/Introduction/Introduction.html#//apple_ref/doc/uid/TP40013276)具有 tvOS 的下列修改：
 
 - Micro 遊戲控制器設定檔 (`GCMicroGamepad`) 已新增至目標 Siri 遠端。
-- 新`GCEventViewController`類別可用來將遊戲控制器透過您的應用程式的事件路由。 請參閱[判斷遊戲控制器輸入](#Determining-Game-Controller-Input)節以取得詳細資料。
+- 新`GCEventViewController`類別可用來將遊戲控制器透過您的應用程式的事件路由。 請參閱[判斷遊戲控制器輸入](#determining-game-controller-input)節以取得詳細資料。
 
 <a name="Game-Controller-Support-Requirements" />
 

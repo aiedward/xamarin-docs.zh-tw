@@ -6,11 +6,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
 ms.openlocfilehash: c6eaf4dd90b172053b4b87e3427cfe35213c6727
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117154"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61215874"
 ---
 # <a name="callbacks-on-android"></a>在 Android 上的回撥
 
@@ -157,7 +157,7 @@ class AbstractClassInvoker : AbstractClass
 
 ## <a name="interfaces"></a>介面
 
-介面是抽象類別，除了一個詳細資料與大致相同： Xamarin.Android 不會為其產生 Java。 這是因為之前.NET 內嵌，案例並不多，Java 會實作C#介面。
+介面是抽象類別，除了一個詳細資料與大致相同：Xamarin.Android 不會為其產生 Java。 這是因為之前.NET 內嵌，案例並不多，Java 會實作C#介面。
 
 假設我們有下列C#介面：
 
@@ -264,7 +264,7 @@ public class VirtualClass : Java.Lang.Object
 }
 ```
 
-如果您遵循`abstract`這個辦法行得通類別上述範例中，除了一個詳細資料： _Xamarin.Android 無法查閱`Invoker`_ 。
+如果您遵循`abstract`類別上述範例中，它能除了一個詳細資料：_無法查閱 Xamarin.Android `Invoker`_ 。
 
 若要修正此問題，修改C#類別`abstract`:
 

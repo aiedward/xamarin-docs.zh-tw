@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
 ms.openlocfilehash: 0f77f9014cf7bfad510927f0f12a3e70b387036f
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61424261"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>在 Xamarin.iOS 中增強的使用者通知
 
@@ -458,7 +458,7 @@ content.CategoryIdentifier = "message";
 
 ### <a name="handling-dismiss-actions"></a>處理關閉動作
 
-如上所述，關閉的動作可以傳送至應用程式，當使用者關閉通知。 由於這不是標準的動作，將需要類別建立時設定的選項。 例如: 
+如上所述，關閉的動作可以傳送至應用程式，當使用者關閉通知。 由於這不是標準的動作，將需要類別建立時設定的選項。 例如：
 
 ```csharp
 var categoryID = "message";
@@ -561,7 +561,7 @@ namespace MonkeyNotification
 > [!IMPORTANT]
 > 服務延伸模組的套件組合識別碼應符合套件組合識別碼與主應用程式的`.appnameserviceextension`附加至結尾。 例如，如果主要的應用程式的套件組合識別碼`com.xamarin.monkeynotify`，服務延伸模組都應該有的套件組合識別碼`com.xamarin.monkeynotify.monkeynotifyserviceextension`。 這應該會自動設定時的擴充功能加入至方案。 
 
-中會有一個主要的類別必須修改，以提供必要的功能通知服務延伸模組。 例如: 
+中會有一個主要的類別必須修改，以提供必要的功能通知服務延伸模組。 例如：
 
 ```csharp
 using System;

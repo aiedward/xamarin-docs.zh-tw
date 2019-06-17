@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
 ms.openlocfilehash: 8ce50ab9a1bcd029a0db97e6dd66518d646d82ef
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61085011"
 ---
 # <a name="platform-features"></a>平台功能
 
@@ -41,12 +41,12 @@ Android 3.0 導入片段，示範如何在手機和平板電腦上找到的許�
 
 
 
-## <a name="app-linkingandroidplatformapp-linkingmd"></a>[應用程式連結](~/android/platform/app-linking.md)
+## <a name="app-linkingandroidplatformapp-linkingmd"></a>[App-Linking](~/android/platform/app-linking.md)
 
 本指南會討論如何支援 Android 6.0_應用程式連結_，回應 Url 在網站上的行動裝置應用程式的技術。 它將討論如何實作應用程式連結在 Android 6.0 應用程式以及如何設定網站要授與行動應用程式的權限，以處理網域的應用程式連結。
 
 
-##  <a name="android-9-pieandroidplatformpiemd"></a>[Android 9 的圓形圖](~/android/platform/pie.md)
+##  <a name="android-9-pieandroidplatformpiemd"></a>[Android 9 Pie](~/android/platform/pie.md)
 
 這篇文章概述 Android 圓形圖中的新功能，說明如何準備 Xamarin.Android 開發 Android 的圓形圖，並提供說明如何使用 Android 的圓形圖顯示空心和通知中新功能的範例應用程式Xamarin.Android 應用程式。
 

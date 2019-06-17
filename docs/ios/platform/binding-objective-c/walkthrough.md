@@ -1,5 +1,5 @@
 ---
-title: 逐步解說：繫結 iOS OBJECTIVE-C 程式庫
+title: 逐步解說：繫結 iOS Objective-C 程式庫
 description: 本文章提供實際操作的逐步解說中，建立現有的 OBJECTIVE-C 程式庫，InfColorPicker 的 Xamarin.iOS 繫結。 它涵蓋的主題，例如編譯靜態的 Objective C 程式庫、 繫結，以及在 Xamarin.iOS 應用程式中使用的繫結。
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: fcf4e6d9b281eaac4be888c499e537f7397528a0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2897129779b698eae60338d44f9af19b6a2761bc
+ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669267"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252362"
 ---
-# <a name="walkthrough-binding-an-ios-objective-c-library"></a>逐步解說：繫結 iOS OBJECTIVE-C 程式庫
+# <a name="walkthrough-binding-an-ios-objective-c-library"></a>逐步解說：繫結 iOS Objective-C 程式庫
 
 _本文章提供實際操作的逐步解說中，建立現有的 OBJECTIVE-C 程式庫，InfColorPicker 的 Xamarin.iOS 繫結。它涵蓋的主題，例如編譯靜態的 Objective C 程式庫、 繫結，以及在 Xamarin.iOS 應用程式中使用的繫結。_
 
@@ -94,7 +94,7 @@ IOS 上工作時，您可能會遇到您要使用第三方 Objective C 程式庫
 在此逐步解說中，我們將討論下列步驟：
 
 - **[建立靜態程式庫](#Creating_A_Static_Library)** -這個步驟包含建立的靜態程式庫**InfColorPicker** OBJECTIVE-C 程式碼。 靜態程式庫必須`.a`副檔名，且會內嵌至程式庫專案的.NET 組件。
-- **[建立 Xamarin.iOS 繫結專案](#Create_a_Xamarin.iOS_Binding_Project)** -一旦我們擁有的靜態程式庫，我們將使用它來建立 Xamarin.iOS 繫結專案。 繫結專案包含我們剛剛建立的靜態程式庫和中繼資料的形式C#說明如何使用 OBJECTIVE-C API 來的程式碼。 此中繼資料通常稱為 API 定義。 我們將使用**[目標 Sharpie](#Using_Objective_Sharpie)** 來幫助我們使用建立 API 定義。
+- **[建立 Xamarin.iOS 繫結專案](#Create_a_Xamarin.iOS_Binding_Project)** -一旦我們擁有的靜態程式庫，我們將使用它來建立 Xamarin.iOS 繫結專案。 繫結專案包含我們剛剛建立的靜態程式庫和中繼資料的形式C#說明如何使用 OBJECTIVE-C API 來的程式碼。 此中繼資料通常稱為 API 定義。 我們將使用 **[目標 Sharpie](#Using_Objective_Sharpie)** 來幫助我們使用建立 API 定義。
 - **[標準化的 API 定義](#Normalize_the_API_Definitions)** -目標 Sharpie 直接挑明解協助我們，但無法執行的所有項目。 我們將討論一些變更，我們需要進行的 API 定義，才能使用。
 - **[使用繫結程式庫](#Using_the_Binding)** -最後，我們將在其中建立 Xamarin.iOS 應用程式示範如何使用我們新建立的繫結的專案。
 
@@ -123,7 +123,7 @@ IOS 上工作時，您可能會遇到您要使用第三方 Objective C 程式庫
 第一個步驟是讓我們將 InfoColorPicker 來源程式碼新增至靜態程式庫。 若要這麼做讓我們執行下列動作：
 
 1. 啟動 Xcode。
-2. 從**檔案**功能表中，選取**新增** > **專案...**:
+2. 從**檔案**功能表中，選取**新增** > **專案...** :
 
     [![](walkthrough-images/image04.png "開始新的專案")](walkthrough-images/image04.png#lightbox)
 3. 選取 [**架構與程式庫**，則**Cocoa Touch 靜態程式庫**範本，然後按一下**下一步]** 按鈕：
@@ -138,7 +138,7 @@ IOS 上工作時，您可能會遇到您要使用第三方 Objective C 程式庫
 
     [![](walkthrough-images/image12.png "將所有 InfColorPicker 檔案複製")](walkthrough-images/image12.png#lightbox)
 
-7. 返回 Xcode，以滑鼠右鍵按一下**InfColorPicker**資料夾，然後選取**將檔案新增至 「 InfColorPicker...」**:
+7. 返回 Xcode，以滑鼠右鍵按一下**InfColorPicker**資料夾，然後選取**將檔案新增至 「 InfColorPicker...」** :
 
     [![](walkthrough-images/image08.png "新增檔案")](walkthrough-images/image08.png#lightbox)
 
@@ -160,7 +160,7 @@ IOS 上工作時，您可能會遇到您要使用第三方 Objective C 程式庫
 
     [![](walkthrough-images/image16b.png "展開 [連結二進位與程式庫] 區段")](walkthrough-images/image16b.png#lightbox)
 
-13. 使用**+**  按鈕以開啟對話方塊，讓您將新增所需的畫面格架構上面所列：
+13. 使用 **+**  按鈕以開啟對話方塊，讓您將新增所需的畫面格架構上面所列：
 
     [![](walkthrough-images/image16c.png "加入上面所列的必要的框架架構")](walkthrough-images/image16c.png#lightbox)
 
@@ -172,7 +172,7 @@ IOS 上工作時，您可能會遇到您要使用第三方 Objective C 程式庫
 
 ### <a name="creating-a-fat-binary"></a>建立 Fat 二進位檔
 
-所有 iOS 裝置都必須由 ARM 架構的處理器都所開發的一段時間。 每個新的架構會新增新的指示和其他改進功能，同時仍維持回溯相容性。 在 iOS 裝置上我們 armv6、 armv7、 armv7s、 arm64 指令集 – 雖然[我們不會再使用 armv6](~/ios/deploy-test/compiling-for-different-devices.md)。 IOS 模擬器不由 ARM 和 x86 及 x86_64 提供模擬器是 istead。 我們對我們的意義是，我們必須提供程式庫在每個指令上設定。
+所有 iOS 裝置都必須由 ARM 架構的處理器都所開發的一段時間。 每個新的架構會新增新的指示和其他改進功能，同時仍維持回溯相容性。 iOS 裝置具有 armv6、 armv7、 armv7s、 arm64 指令集 – 雖然[不使用任何其他的 armv6](~/ios/deploy-test/compiling-for-different-devices.md)。 IOS 模擬器不由 ARM 和 x86 和供電 x86_64 模擬器會。 這表示程式庫，必須提供給每個指令集。
 
 Fat 程式庫是`.a`檔案，其中包含所有支援的架構。
 
@@ -182,9 +182,9 @@ Fat 程式庫是`.a`檔案，其中包含所有支援的架構。
 - 編譯靜態程式庫的 x86 和 x84_64 版本。
 - 使用`lipo`命令列工具，可將兩個靜態程式庫結合成一個。
 
-雖然這三個步驟是非常直接了當，並且可能需要重複執行它們未來當 OBJECTIVE-C 程式庫接收更新，或如果我們所需的 bug 修正。 如果您決定將這些步驟自動化，它會簡化未來的維護和支援的 iOS 繫結專案。
+雖然這三個步驟都非常直接了當，可能需要重複它們在未來，當 Objective C 程式庫接收更新，或如果我們所需的 bug 修正。 如果您決定將這些步驟自動化，它會簡化未來的維護和支援的 iOS 繫結專案。
 
-有許多工具可用來自動化這類工作-殼層指令碼[rake](http://rake.rubyforge.org/)， [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)，並[讓](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)。 當我們安裝 Xcode 命令列工具時，我們也會安裝進行，因此也就是建置系統，將會用於本逐步解說。 以下是**Makefile**可供您建立能夠在 iOS 裝置和任何文件庫的模擬器的多架構共用程式庫：
+有許多工具可用來自動化這類工作-殼層指令碼[rake](http://rake.rubyforge.org/)， [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)，並[讓](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)。 安裝 Xcode 命令列工具，則當`make`也會安裝，這是建置系統，將會用於本逐步解說。 以下是**Makefile**可供您建立能夠在 iOS 裝置和任何文件庫的模擬器的多架構共用程式庫：
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
@@ -213,7 +213,7 @@ clean:
     -rm -f *.a *.dll
 ```
 
-輸入**Makefile**在純文字編輯器中，您所選擇的命令，並更新具有區段**您的專案名稱**與您專案的名稱。 也很重要，確保我們貼上上述指示中的索引標籤都已被保留的指示。
+輸入**Makefile**在純文字編輯器中，您所選擇的命令，並更新具有區段**您的專案名稱**與您專案的名稱。 也很重要，可確保 貼上的前述指示，使用保留的指示中的索引標籤。
 
 儲存檔案同名**Makefile**至 InfColorPicker Xcode 靜態程式庫前面所建立的相同位置：
 
@@ -252,7 +252,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 啟動 Visual Studio for mac。
-1. 從**檔案**功能表上，選取**新增** > **方案...**:
+1. 從**檔案**功能表上，選取**新增** > **方案...** :
 
     ![](walkthrough-images/bind01.png "啟動新的解決方案")
 
@@ -276,11 +276,11 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 1. 啟動 Visual Studio。
 
-1. 從**檔案**功能表上，選取**新增** > **專案...**:
+1. 從**檔案**功能表上，選取**新增** > **專案...** :
 
     ![開始新的專案](walkthrough-images/bind01vs.png "開始新的專案")
 
-1. 從 新增專案 對話方塊中，選取  **Visual C# > iPhone 與 iPad > iOS 繫結程式庫 (Xamarin)**:
+1. 從 新增專案 對話方塊中，選取  **Visual C# > iPhone 與 iPad > iOS 繫結程式庫 (Xamarin)** :
 
     [![選取 iOS 繫結程式庫](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
 
@@ -320,7 +320,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 1. 複製`libInfColorPickerSDK.a`從您**Mac 組建主機**並將它貼到您的繫結專案。
 
-1. 以滑鼠右鍵按一下專案，然後選擇 **新增 > 現有項目...**:
+1. 以滑鼠右鍵按一下專案，然後選擇 **新增 > 現有項目...** :
 
     ![](walkthrough-images/bind04vs.png "加入現有的檔案")
 
@@ -532,7 +532,7 @@ Europa:Resources kmullins$
 
     ![](walkthrough-images/use02.png "將參考新增至繫結專案")
 
-1. **建立使用者介面在 iPhone** -按兩下**MainStoryboard.storyboard**中的檔案**InfColorPickerSample** iOS 設計工具中編輯的專案。 新增** 按鈕**檢視，並為它`ChangeColorButton`，如下列所示：
+1. **建立使用者介面在 iPhone** -按兩下 **MainStoryboard.storyboard** 中的檔案 **InfColorPickerSample** iOS 設計工具中編輯的專案。 新增 **按鈕** 檢視，並為它`ChangeColorButton`，如下列所示：
 
     ![](walkthrough-images/use03.png "將按鈕新增至檢視")
 
@@ -554,11 +554,11 @@ Europa:Resources kmullins$
 
     ![](walkthrough-images/use02vs.png "將參考加入至繫結專案")
 
-1. **建立使用者介面在 iPhone** -按兩下**MainStoryboard.storyboard**中的檔案**InfColorPickerSample** iOS 設計工具中編輯的專案。 新增** 按鈕**檢視，並為它`ChangeColorButton`，如下列所示：
+1. **建立使用者介面在 iPhone** -按兩下 **MainStoryboard.storyboard** 中的檔案 **InfColorPickerSample** iOS 設計工具中編輯的專案。 新增 **按鈕** 檢視，並為它`ChangeColorButton`，如下列所示：
 
     ![](walkthrough-images/use03vs.png "建立 iPhone 使用者介面")
 
-1. **新增 InfColorPickerView.xib** -InfColorPicker Objective C 程式庫包含 **.xib**檔案。 Xamarin.iOS 將不會包含這 **.xib**在繫結專案中，這會在我們的範例應用程式的執行階段錯誤。 因應措施是將 **.xib**檔案，以從我們的 Xamarin.iOS 專案我們**Mac 組建主機**。 選取的 Xamarin.iOS 專案，以滑鼠右鍵按一下並選取**新增** > **現有項目...**，並新增 **.xib**檔案。
+1. **新增 InfColorPickerView.xib** -InfColorPicker Objective C 程式庫包含 **.xib**檔案。 Xamarin.iOS 將不會包含這 **.xib**在繫結專案中，這會在我們的範例應用程式的執行階段錯誤。 因應措施是將 **.xib**檔案，以從我們的 Xamarin.iOS 專案我們**Mac 組建主機**。 選取的 Xamarin.iOS 專案，以滑鼠右鍵按一下並選取**新增** > **現有項目...** ，並新增 **.xib**檔案。
 
 -----
 
@@ -734,5 +734,3 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 - [繫結型別參考指南](~/cross-platform/macios/binding/binding-types-reference.md)
 - [適用於 Objective-C 開發人員的 Xamarin](~/ios/get-started/objective-c-developers/index.md)
 - [Framework 設計方針](https://msdn.microsoft.com/library/ms229042.aspx)
-- [Xamarin University 課程：建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程：建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/12/2017
 ms.openlocfilehash: 48ef40ce8560fd9fbb842dde70622d968591ab98
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57666901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61022224"
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>提供回溯相容性與 Android 支援封裝
 

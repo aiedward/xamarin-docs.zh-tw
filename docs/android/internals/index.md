@@ -1,5 +1,5 @@
 ---
-title: 進階的概念與內部項目
+title: 進階概念與內部項目
 description: Xamarin.Android 和它的 API 設計背後的基礎架構。
 ms.prod: xamarin
 ms.assetid: CC6A0D52-E9FA-4270-B3FA-84660621D6D5
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/21/2018
 ms.openlocfilehash: f5844dd4340afa0596219a33ed1e479a0dbcfa76
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114167"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60953379"
 ---
-# <a name="advanced-concepts-and-internals"></a>進階的概念與內部項目
+# <a name="advanced-concepts-and-internals"></a>進階概念與內部項目
 
 _本節中的主題，說明架構、 API 設計，以及 Xamarin.Android 的限制。此外，它包含記憶體回收集合實作，可在 Xamarin.Android 中的組件的說明主題。因為 Xamarin.Android[開放原始碼](https://github.com/xamarin/xamarin-android)，您也可了解 Xamarin.Android 的內部運作方式，藉由檢查其原始程式碼。_
 

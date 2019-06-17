@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 7fa309000ecfa30593d8b71b7c2836fb6cebfec1
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: a2a0aa5c7d204a4dc135451a771c81b9739456fb
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209023"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971051"
 ---
 # <a name="tabbedpage-icons-on-windows"></a>在 Windows 上的 TabbedPage 圖示
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 此通用 Windows 平台特定平台-可讓頁面上要顯示的圖示[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)工具列上，並提供的功能，可選擇性地指定圖示大小。 它由在 XAML 中設定[ `TabbedPage.HeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsEnabledProperty) ; 附加屬性`true`，以及選擇性地設定[ `TabbedPage.HeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsSizeProperty) ; 附加屬性[ `Size`](xref:Xamarin.Forms.Size)值：
 
@@ -32,13 +32,13 @@ ms.locfileid: "54209023"
             </x:Arguments>
         </Size>
     </windows:TabbedPage.HeaderIconsSize>
-    <ContentPage Title="Todo" Icon="todo.png">
+    <ContentPage Title="Todo" IconImageSource="todo.png">
         ...
     </ContentPage>
-    <ContentPage Title="Reminders" Icon="reminders.png">
+    <ContentPage Title="Reminders" IconImageSource="reminders.png">
         ...
     </ContentPage>
-    <ContentPage Title="Contacts" Icon="contacts.png">
+    <ContentPage Title="Contacts" IconImageSource="contacts.png">
         ...
     </ContentPage>
 </TabbedPage>
@@ -58,9 +58,9 @@ public class WindowsTabbedPageIconsCS : Xamarin.Forms.TabbedPage
     On<Windows>().SetHeaderIconsEnabled(true);
     On<Windows>().SetHeaderIconsSize(new Size(24, 24));
 
-    Children.Add(new ContentPage { Title = "Todo", Icon = "todo.png" });
-    Children.Add(new ContentPage { Title = "Reminders", Icon = "reminders.png" });
-    Children.Add(new ContentPage { Title = "Contacts", Icon = "contacts.png" });
+    Children.Add(new ContentPage { Title = "Todo", IconImageSource = "todo.png" });
+    Children.Add(new ContentPage { Title = "Reminders", IconImageSource = "reminders.png" });
+    Children.Add(new ContentPage { Title = "Contacts", IconImageSource = "contacts.png" });
   }
 }
 ```
@@ -75,6 +75,6 @@ public class WindowsTabbedPageIconsCS : Xamarin.Forms.TabbedPage
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

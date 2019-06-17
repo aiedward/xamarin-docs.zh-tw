@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
+ms.openlocfilehash: 016ac7269f334f6df7fba9635897b9608f459284
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970210"
 ---
-
 # <a name="binding-a-java-library"></a>繫結 Java 程式庫
 
 _Android 的社群有許多您可能想要在您的應用程式; 中的 Java 程式庫本指南說明如何藉由建立繫結程式庫併入您的 Xamarin.Android 應用程式的 Java 程式庫。_
@@ -65,7 +70,7 @@ using Com.Company.Package;
 
 * **是否有任何文件庫中的外部相依性？** &ndash; Android 程式庫所需的任何 Java 相依性必須納入為 Xamarin.Android 專案**ReferenceJar**或是**EmbeddedReferenceJar**。 任何原生組件必須加入至與繫結專案**EmbeddedNativeLibrary**。  
 
-* **Android API 的什麼版本並 Android 程式庫目標嗎？** &ndash; 就無法 「 降級 」 的 Android API 層級;請確定 Xamarin.Android 繫結專案的目標相同的 API 層級 （或更新版本） 為 Android 程式庫。
+* **哪個版本的 Android API 沒有 Android 程式庫目標？** &ndash; 就無法 「 降級 」 的 Android API 層級;請確定 Xamarin.Android 繫結專案的目標相同的 API 層級 （或更新版本） 為 Android 程式庫。
 
 * **用來編譯程式庫的 JDK 哪些版本？** &ndash; 如果 Android 程式庫所建置使用不同版本的 JDK，比使用 Xamarin.Android，可能會繫結錯誤。 可能的話，請重新編譯使用相同版本的 JDK，以供您的 Xamarin.Android 安裝的 Android 程式庫。
 

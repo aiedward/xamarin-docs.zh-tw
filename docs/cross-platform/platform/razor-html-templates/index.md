@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 07/24/2018
 ms.openlocfilehash: 7e569aaddef912d9534e98f2f987ad5dfca8a5a6
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61167946"
 ---
 # <a name="building-html-views-using-razor-templates"></a>使用 Razor 範本建置 HTML 檢視
 
@@ -86,7 +86,7 @@ webView.LoadHtmlString (page, NSBundle.MainBundle.BundleUrl);
 
 所有的靜態內容檔案的建置動作應該**BundleResource**:
 
- ![iOS 專案的建置動作： BundleResource](images/image2_250x131.png)
+ ![iOS 專案的建置動作：BundleResource](images/image2_250x131.png)
 
 #### <a name="android"></a>Android
 
@@ -102,7 +102,7 @@ webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8"
 
 所有的靜態內容檔案的建置動作應該**AndroidAsset**。
 
- ![Android 專案的建置動作： AndroidAsset](images/image4_250x71.png)
+ ![Android 專案的建置動作：AndroidAsset](images/image4_250x71.png)
 
 ### <a name="calling-c-from-html-and-javascript"></a>從 HTML 和 Javascript 呼叫 C#
 
@@ -487,7 +487,7 @@ HTML 可以是適合用來建立原型，而且顯示的各種網路是最適合
 
 在範本中的 web 檢視可以輕易地與平台專屬控制項 – 只要編輯增強**MainStoryboard.storyboard** iOS 設計工具中的**Resources/layout/Main.axml**在 Android 上。
 
-### <a name="razortodo-sample"></a>RazorTodo 範例
+### <a name="razortodo-sample"></a>RazorTodo Sample
 
 [RazorTodo](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)存放庫包含兩個不同的解決方案，以顯示完整的 HTML 驅動的應用程式與 HTML 結合原生控制項的應用程式之間的差異：
 
@@ -523,6 +523,6 @@ HTML 可以是適合用來建立原型，而且顯示的各種網路是最適合
 
 ### <a name="related-links"></a>相關連結
 
-- [RazorTodo 範例](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
+- [RazorTodo Sample](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
 - [MVC 3-Razor 檢視引擎 (Microsoft)](http://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
 - [使用 Razor 語法 (Microsoft) 的 ASP.NET Web 程式設計簡介](http://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)

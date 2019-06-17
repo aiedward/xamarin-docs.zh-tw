@@ -1,5 +1,5 @@
 ---
-title: 樣式的跨平台 Xamarin.Forms 應用程式
+title: 設計跨平台 Xamarin.Forms 應用程式
 description: 這篇文章說明如何使用 XAML 樣式設定樣式的跨平台 Xamarin.Forms 應用程式。
 zone_pivot_groups: platform
 ms.topic: quickstart
@@ -10,11 +10,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
 ms.openlocfilehash: 56f8632c9cc7d170b4c6594fd51e6aa3e92ad02b
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61191224"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>跨平台 Xamarin.Forms 應用程式
 

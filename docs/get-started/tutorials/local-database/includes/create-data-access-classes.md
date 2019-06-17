@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 83e28796a2c387927dddd708da3ee6623f800a35
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61193006"
+---
 在此練習中，您會將資料存取類別新增至 **LocalDatabaseTutorial** 專案，該專案用於將人員相關資料保存到資料庫。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)

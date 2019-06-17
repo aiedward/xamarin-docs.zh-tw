@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 9fc22a3c08b60a8474b006f1c9225155b9705507
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a9b71fb069a428d9bec03481c986f4deb4c904ea
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113114"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827730"
 ---
 # <a name="working-with-screen-sizes"></a>使用 螢幕大小
 
@@ -27,7 +27,7 @@ Wear 支援程式庫提供一些控制項，可協助您偵測並適應不同畫
 
 ### <a name="watchviewstub"></a>WatchViewStub
 
-請參閱[WatchViewStub](https://developer.xamarin.com/samples/WatchViewStub/)範例以了解如何偵測畫面中，輸入，並顯示每種類型的不同版面配置。
+請參閱[WatchViewStub](https://developer.xamarin.com/samples/monodroid/wear/WatchViewStub/)範例以了解如何偵測畫面中，輸入，並顯示每種類型的不同版面配置。
 
 主要的版面配置檔案包含`android.support.wearable.view.WatchViewStub`會參考不同的版面配置，針對使用的矩形和圓形螢幕`app:rectLayout`和`app:roundLayout`屬性：
 

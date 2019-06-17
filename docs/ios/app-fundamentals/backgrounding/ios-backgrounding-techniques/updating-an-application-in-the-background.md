@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 835dccaea79467582f56fd4b8b6b3b8f42acd632
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61392328"
 ---
 # <a name="updating-a-xamarinios-app-in-the-background"></a>更新背景中的 Xamarin.iOS 應用程式
 
@@ -162,4 +162,4 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 
 在本節中，我們所討論的各種選項重新整理內容，在背景中的執行為背景必要類別目錄的工作，不符合。 現在，我們來看看一些作用中的這些 Api。
 
- [下一步： 第 4 部-iOS 背景逐步解說](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)
+ [下一步：第 4 部-iOS 背景逐步解說](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)

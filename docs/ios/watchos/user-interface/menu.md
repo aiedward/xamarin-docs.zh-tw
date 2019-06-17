@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: 7696c820ab6fdf19bdef46db31061fb5914e6cf4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60880673"
 ---
 # <a name="watchos-menu-control-force-touch-in-xamarin"></a>watchOS 功能表控制項 （強制碰觸） 在 Xamarin 中
 
@@ -32,7 +32,7 @@ ms.locfileid: "50109753"
 
 ## <a name="adding-a-menu"></a>新增功能表
 
-A`Menu`必須新增至`InterfaceController`在設計階段將分鏡腳本。 功能表控制項拖曳至介面控制器時不在分鏡腳本預覽視覺指示，但** 功能表**會出現在**文件大綱**板：
+A`Menu`必須新增至`InterfaceController`在設計階段將分鏡腳本。 功能表控制項拖曳至介面控制器時不在分鏡腳本預覽視覺指示，但 **功能表** 會出現在 **文件大綱** 板：
 
 ![](menu-images/menu-action.png "在設計階段編輯功能表")
 
@@ -40,7 +40,7 @@ A`Menu`必須新增至`InterfaceController`在設計階段將分鏡腳本。 功
 
 - 標題和
 - 自訂映像，或
-- 系統映像： 接受，新增、 區塊、 拒絕、 資訊，也許，靜音、 暫停、 播放、 重複、 繼續、 共用、 隨機播放、 喇叭、 資源回收筒。
+- 系統映像：接受、 新增區塊、 拒絕、 資訊，也許，靜音、 暫停、 播放、 重複、 繼續、 共用、 隨機播放、 喇叭、 資源回收筒。
 
 建立`Action`藉由選取**事件**一節**屬性**板，然後輸入動作方法的名稱。 部分方法將會建立在程式碼，可以實作在介面控制器類別中，像這樣：
 

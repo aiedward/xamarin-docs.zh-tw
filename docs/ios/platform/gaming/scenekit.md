@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
 ms.openlocfilehash: 0944978b34c8e164acd6e829db177bf4fd72dea9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61376251"
 ---
 # <a name="scenekit-in-xamarinios"></a>在 Xamarin.iOS 中的 SceneKit
 

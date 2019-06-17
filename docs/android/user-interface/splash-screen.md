@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 09/06/2018
 ms.openlocfilehash: 1a9856a5b6257c82b2072e9eb44be481373abfcf
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61308208"
 ---
 # <a name="splash-screen"></a>啟動顯示畫面
 

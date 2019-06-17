@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 63ddc7d34d0bcca4e86cb03b08a6040d20f8f037
-ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
+ms.openlocfilehash: f0e2c93c4a6be0e83c9c4f1607b125b8d240ccc1
+ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54479794"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557211"
 ---
 # <a name="contributing"></a>貢獻
 
@@ -24,7 +24,7 @@ ms.locfileid: "54479794"
 
 2. 建立變更的 `branch`。
 
-3. 撰寫內容。 請參閱[範本](../contributing-guidelines/template.md)和[樣式指南](../contributing-guidelines/voice-tone.md)。
+3. 撰寫內容。 請參閱[範本](contributing-guidelines/template.md)和[樣式指南](contributing-guidelines/voice-tone.md)。
 
 4. 將提取要求 (PR) 從您的分支提交至 `MicrosoftDocs/xamarin-docs/live`。
 

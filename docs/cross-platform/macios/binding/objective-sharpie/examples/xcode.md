@@ -1,17 +1,17 @@
 ---
 title: 使用 Xcode 專案的真實世界範例
-description: 本文件說明如何使用 Xcode 專案做為目標 Sharpie，簡化建立 C# 到 OBJECTIVE-C 程式碼的繫結的程序直接輸入。
+description: 本文件說明如何使用 Xcode 專案做為目標 Sharpie，簡化的建立程序直接輸入C#繫結 OBJECTIVE-C 程式碼。
 ms.prod: xamarin
 ms.assetid: 168AA64C-E181-4937-A1F2-AD095B9A36F2
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: 05c55dc7cd20de2d216d1f267ea5a73631748a0a
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: ccfc2f1760d8971e2d824cf65344fa2a5e158c12
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855243"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978360"
 ---
 # <a name="real-world-example-using-an-xcode-project"></a>使用 Xcode 專案的真實世界範例
 
@@ -28,7 +28,3 @@ Cloning into 'pop'...
 $ <b>cd pop</b>
 $ <b>sharpie bind pop.xcodeproj -sdk iphoneos9.0</b></pre>
 
-## <a name="related-links"></a>相關連結
-
-- [Xamarin University 課程： 建置 OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University 課程： 建置目標 Sharpie OBJECTIVE-C 繫結程式庫](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

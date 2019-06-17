@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: 846a8fd45b8e39fb11270374af47a5b6cb83fa01
-ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
+ms.openlocfilehash: 78051fce44239eea86948988a4d19ac37c5ea0d5
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60953208"
 ---
 # <a name="external-storage"></a>外部儲存體
 
@@ -144,7 +144,7 @@ Android 會考慮存取外部儲存體以進行_危險的使用權限_，通常�
 
 權限可能也會加入使用**Android 資訊清單**索引標籤**方案屬性**:
 
-![方案總管-適用於 Visual Studio 2017 的必要權限](./images/required-permissions.w157.png)
+![方案總管-適用於 Visual Studio 的必要權限](./images/required-permissions.w157.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

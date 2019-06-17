@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 4609593337cc0d003c5b35ef4570f11e27b14f7b
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 4b37435c9cec7549c04c35a81ec31d3a2236e7c1
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050396"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925468"
 ---
 # <a name="layout-compression"></a>版面配置壓縮
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/layoutcompression/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/LayoutCompression/)
 
 _版面配置壓縮從視覺化樹狀結構移除指定的版面配置，以試圖改善頁面轉譯效能。這篇文章說明如何啟用版面配置壓縮和也可能帶來的好處。_
 
@@ -123,4 +123,4 @@ CompressedLayout.SetIsHeadless(stackLayout, true);
 
 - [建立自訂版面配置](~/xamarin-forms/user-interface/layouts/custom.md)
 - [快速轉譯器](~/xamarin-forms/internals/fast-renderers.md)
-- [LayoutCompression （範例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/layoutcompression/)
+- [LayoutCompression （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/LayoutCompression/)

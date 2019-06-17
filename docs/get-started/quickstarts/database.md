@@ -1,5 +1,5 @@
 ---
-title: 將資料儲存在本機的 SQLite.NET 資料庫
+title: 將資料儲存在本機 SQLite.NET 資料庫中
 description: 這篇文章說明如何將資料儲存在本機的 SQLite.NET 資料庫。
 zone_pivot_groups: platform
 ms.topic: quickstart
@@ -8,13 +8,13 @@ ms.assetid: 5BF901BD-FDE8-4B74-B4AB-418E81745A3B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/02/2019
-ms.openlocfilehash: 3cea41aa3c021dbb03f851a4deb443ee86fcad25
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.date: 04/01/2019
+ms.openlocfilehash: 5c3daf04c08e2109c46b24c198fef8e71fac2f3d
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61262841"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>將資料儲存在本機的 SQLite.NET 資料庫
 
@@ -44,19 +44,19 @@ ms.locfileid: "55292822"
 
     ![](database-images/vs/add-nuget-packages.png "新增 NuGet 套件")    
 
-3. 在  **NuGet 套件管理員**，選取**瀏覽**索引標籤上，搜尋**sqlite net pcl** NuGet 套件，加以選取，然後按一下 **安裝**按鈕將其加入至專案：
+3. 在 [NuGet 套件管理員] 中選取 [瀏覽] 索引標籤，搜尋 **sqlite-net-pcl** NuGet 套件並加以選取，然後按一下 [安裝] 按鈕，將其新增至專案：
 
     ![](database-images/vs/add-package.png "新增套件")
 
     > [!NOTE]
-    > 有許多類似名稱的 NuGet 套件。 正確的套件都有下列屬性：
+    > 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
     > - **作者：** Frank A. Krueger
     > - **識別碼：** sqlite-net-pcl
     > - **NuGet 連結：**[sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
-    > 儘管封裝名稱，此 NuGet 套件可用於.NET Standard 專案。
+    > 不論套件名稱為何，此 NuGet 套件可用於 .NET Standard 專案。
 
-    此套件，將用於併入應用程式中的資料庫作業。
+    此套件會用來將資料庫作業併入應用程式。
 
 4. 在 [**方案總管] 中**，請在**備忘稿**專案中，開啟**Note.cs**中**模型**資料夾，並將現有程式碼下列程式碼：
 
@@ -139,7 +139,7 @@ ms.locfileid: "55292822"
     }
     ```
 
-    這個類別包含程式碼，以建立資料庫、 資料讀取、 寫入資料，和刪除資料。 程式碼會使用將資料庫作業移到背景執行緒的非同步 SQLite.NET Api。 颾魤 ㄛ`NoteDatabase`建構函式會採用資料庫檔案做為引數的路徑。 此路徑會由`App`下一個步驟中的類別。
+    這個類別包含程式碼，以建立資料庫、 資料讀取、 寫入資料，和刪除資料。 此程式碼會使用非同步 SQLite.Net API，以將資料庫作業移至背景執行緒。 此外，`NoteDatabase` 建構函式會採用資料庫檔案的路徑作為引數。 此路徑會由`App`下一個步驟中的類別。
 
     變更儲存到**NoteDatabase.cs**藉由按下**CTRL + S**，並關閉檔案。
 
@@ -152,10 +152,8 @@ ms.locfileid: "55292822"
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
     using Notes.Data;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace Notes
     {
         public partial class App : Application
@@ -249,19 +247,19 @@ ms.locfileid: "55292822"
 
     ![](database-images/vsmac/add-nuget-packages.png "新增 NuGet 套件")    
 
-3. 在 **新增套件**視窗中，搜尋**sqlite net pcl** NuGet 套件，加以選取，然後按一下**加入封裝**按鈕以新增至專案：
+3. 在 [新增套件] 視窗中，搜尋 **sqlite-net-pcl** NuGet 套件並加以選取，然後按一下 [新增套件] 按鈕，將其新增至專案：
 
     ![](database-images/vsmac/add-package.png "新增套件")
 
     > [!NOTE]
-    > 有許多類似名稱的 NuGet 套件。 正確的套件都有下列屬性：
+    > 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
     > - **作者：** Frank A. Krueger
     > - **識別碼：** sqlite-net-pcl
     > - **NuGet 連結：**[sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
-    > 儘管封裝名稱，此 NuGet 套件可用於.NET Standard 專案。
+    > 不論套件名稱為何，此 NuGet 套件可用於 .NET Standard 專案。
 
-    此套件，將用於併入應用程式中的資料庫作業。
+    此套件會用來將資料庫作業併入應用程式。
 
 4. 在  **Solution Pad**，請在**備忘稿**專案中，開啟**Note.cs**中**模型**資料夾，並將現有的程式碼，以下列程式碼：
 
@@ -344,7 +342,7 @@ ms.locfileid: "55292822"
     }
     ```
 
-    這個類別包含程式碼，以建立資料庫、 資料讀取、 寫入資料，和刪除資料。 程式碼會使用將資料庫作業移到背景執行緒的非同步 SQLite.NET Api。 颾魤 ㄛ`NoteDatabase`建構函式會採用資料庫檔案做為引數的路徑。 此路徑會由`App`下一個步驟中的類別。
+    這個類別包含程式碼，以建立資料庫、 資料讀取、 寫入資料，和刪除資料。 此程式碼會使用非同步 SQLite.Net API，以將資料庫作業移至背景執行緒。 此外，`NoteDatabase` 建構函式會採用資料庫檔案的路徑作為引數。 此路徑會由`App`下一個步驟中的類別。
 
     變更儲存到**NoteDatabase.cs**選擇**檔案 > 儲存**(或按下 **&#8984; + S**)，然後關閉檔案。
 
@@ -357,10 +355,8 @@ ms.locfileid: "55292822"
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
     using Notes.Data;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace Notes
     {
         public partial class App : Application

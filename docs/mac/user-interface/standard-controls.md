@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 4e236f2517482665406008d0b86af487e2d799dd
-ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61212165"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Xamarin.mac 的標準控制項
 
@@ -491,7 +491,7 @@ partial void SegmentButtonPressed (Foundation.NSObject sender) {
 }
 ```
 
-或藉由附加**委派**到`Activated`事件。 例如: 
+或藉由附加**委派**到`Activated`事件。 例如：
 
 ```csharp
 TickedSlider.Activated += (sender, e) => {
@@ -565,7 +565,7 @@ AppKit 提供數種類型的文字控制項，可用於您的使用者介面設�
 - **EditingBegan** -使用者選取編輯的欄位時引發。
 - **EditingEnded** -當使用者按下 Enter 鍵在欄位中的，或離開該欄位。
 
-使用`StringValue`屬性來讀取或設定欄位的值。 例如: 
+使用`StringValue`屬性來讀取或設定欄位的值。 例如：
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("User ID: {0}",UserField.StringValue);

@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 05/08/2018
 ms.openlocfilehash: 7cb802dd60d4e4879a260ff56d4f94ea5acb2965
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674843"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61356886"
 ---
 # <a name="missing-packages-error-after-updating-nuget-packages"></a>更新 Nuget 套件之後的遺失套件錯誤
 

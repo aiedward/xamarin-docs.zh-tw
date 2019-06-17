@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: b37070ca627e535f9470916e9f84cdf55bb2aed3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 512aa2b54ec22acf8308b3452bfeee2318097b57
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056132"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978138"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
@@ -143,17 +143,12 @@ public partial class PhotoWrappingPage : ContentPage
 
     async void LoadBitmapCollection()
     {
-        int imageDimension = Device.RuntimePlatform == Device.iOS ||
-                             Device.RuntimePlatform == Device.Android ? 240 : 120;
-
-        string urlSuffix = String.Format("?width={0}&height={0}&mode=max", imageDimension);
-
         using (WebClient webClient = new WebClient())
         {
             try
             {
                 // Download the list of stock photos
-                Uri uri = new Uri("http://docs.xamarin.com/demo/stock.json");
+                Uri uri = new Uri("https://raw.githubusercontent.com/xamarin/docs-archive/master/Images/stock/small/stock.json");
                 byte[] data = await webClient.DownloadDataTaskAsync(uri);
 
                 // Convert to a Stream object
@@ -168,7 +163,7 @@ public partial class PhotoWrappingPage : ContentPage
                     {
                         Image image = new Image
                         {
-                            Source = ImageSource.FromUri(new Uri(filepath + urlSuffix))
+                            Source = ImageSource.FromUri(new Uri(filepath))
                         };
                         flexLayout.Children.Add(image);
                     }
@@ -393,7 +388,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 當程式啟動時，五`Picker`檢視會顯示這些五的預設值`FlexLayout`屬性。 `FlexLayout`螢幕底部包含三個子系：
 
-[![[實驗] 頁面中： 預設](flex-layout-images/ExperimentDefault.png "實驗 頁面上的預設值")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
+[![[實驗] 頁面中：預設值](flex-layout-images/ExperimentDefault.png "實驗 頁面上的預設值")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
 
 每個`Label`檢視有所配置的空間會顯示灰色背景`Label`內`FlexLayout`。 背景的`FlexLayout`本身是艾莉斯藍。 在左邊和右邊的小邊界除外，它就會佔用整個下方頁面的區域。
 
@@ -412,7 +407,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 以下是**實驗**（從左到右） 顯示頁面`Row`方向`Column`方向和`ColumnReverse`方向：
 
-[![[實驗] 頁面中： 方向](flex-layout-images/ExperimentDirection.png "實驗 頁面上的方向")](flex-layout-images/ExperimentDirection-Large.png#lightbox)
+[![[實驗] 頁面中：方向](flex-layout-images/ExperimentDirection.png "實驗 頁面上的方向")](flex-layout-images/ExperimentDirection-Large.png#lightbox)
 
 請注意，`Reverse`選項，啟動在右方或下方的項目。
 
@@ -428,7 +423,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 從左到右，顯示這些畫面`NoWrap`，`Wrap`和`Reverse`12 的子系的選項：
 
-[![[實驗] 頁面中： 包裝](flex-layout-images/ExperimentWrap.png "[實驗] 頁面中-換行")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
+[![[實驗] 頁面中：包裝](flex-layout-images/ExperimentWrap.png "[實驗] 頁面中-換行")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
 
 當`Wrap`屬性設定為`NoWrap`主座標軸會受到限制 （如同這個程式中），以及主座標軸不是寬度或高度不足以容納所有的子系，`FlexLayout`嘗試縮小項目，為 iOS 螢幕擷取畫面示範。 您可以控制將項目的 shrinkness [ `Shrink` ](#shrink)附加可繫結的屬性。
 
@@ -447,7 +442,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 這個屬性會指定如何將項目間距主軸，也就是在此範例中的水平軸上：
 
-[![[實驗] 頁面中： 左右對齊內容](flex-layout-images/ExperimentJustifyContent.png "實驗 頁面上的合理解釋的內容")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
+[![[實驗] 頁面中：左右對齊內容](flex-layout-images/ExperimentJustifyContent.png "實驗 頁面上的合理解釋的內容")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
 
 在所有三個螢幕擷取畫面`Wrap`屬性設定為`Wrap`。 `Start`預設會顯示在 Android 上的螢幕擷取畫面。 IOS 螢幕擷取畫面這裡顯示`Center`選項： 所有項目會移至中央。 三個其他選項以文字為開頭`Space`配置額外的項目所未佔用的空間。 `SpaceBetween` 配置的空間項目; 之間的平均`SpaceAround` puts 等於每個項目，周圍的空間時`SpaceEvenly`puts 等於之間每個項目，第一個項目之前和最後一個資料列上的項目之後的空間。
 
@@ -464,7 +459,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 這是兩個屬性其中之一 (其他正在[ `AlignContent` ](#align-content))，表示子系上的交叉軸對齊的方式。 在每一列中，子系是 （如先前的螢幕擷取畫面所示），便會自動縮放，或對齊開始、 中心或結尾的每個項目，如下列的三個螢幕擷取畫面所示：
 
-[![[實驗] 頁面中： 將項目對齊](flex-layout-images/ExperimentAlignItems.png "[實驗] 頁面中-對齊項目")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
+[![[實驗] 頁面中：將項目對齊](flex-layout-images/ExperimentAlignItems.png "[實驗] 頁面中-對齊項目")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
 
 在 iOS 螢幕擷取畫面中，所有子系的頂端對齊。 在 Android 螢幕擷取畫面中，項目是垂直置中對齊的最高的子系為基礎。 在 UWP 螢幕擷取畫面中，會對齊所有項目的下的對齊。
 
@@ -486,11 +481,11 @@ public partial class PhotoWrappingPage : ContentPage
 
 像是`AlignItems`，則`AlignContent`屬性也會對齊交叉軸上的子系，但會影響整個資料列或資料行：
 
-[![[實驗] 頁面中： 內容對齊](flex-layout-images/ExperimentAlignContent.png "實驗 頁面上的內容對齊。")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
+[![[實驗] 頁面中：內容對齊](flex-layout-images/ExperimentAlignContent.png "實驗 頁面上的內容對齊。")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
 
 IOS 螢幕擷取畫面，這兩個資料列會在頂端;它們在 center，在 Android 的螢幕擷取畫面也在 UWP 螢幕擷取畫面底部。 資料列也以各種方式設定間距：
 
-[![[實驗] 頁面中： 對齊內容 2](flex-layout-images/ExperimentAlignContent2.png "[實驗] 頁面中-對齊內容 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
+[![[實驗] 頁面中：對齊內容 2](flex-layout-images/ExperimentAlignContent2.png "[實驗] 頁面中-對齊內容 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
 
 `AlignContent`只有一個資料列或資料行時，沒有任何作用。
 
@@ -517,13 +512,13 @@ IOS 螢幕擷取畫面，這兩個資料列會在頂端;它們在 center，在 A
 針對`Label`名為的項目`label`（或範例），您可以設定`AlignSelf`如下的程式碼中的屬性：
 
 ```csharp
-FlexAlign.SetAlignSelf(label, FlexAlignSelf.Center);
+FlexLayout.SetAlignSelf(label, FlexAlignSelf.Center);
 ```
 
 請注意，有沒有參考`FlexLayout`的父代`Label`。 在 XAML，您可以設定的屬性，像這樣：
 
 ```xaml
-<Label ... FlexAlign.AlignSelf="Center" ... />
+<Label ... FlexLayout.AlignSelf="Center" ... />
 ```
 
 ### <a name="the-order-property"></a>Order 屬性
@@ -580,7 +575,7 @@ XAML，在中，您可以使用數字以裝置獨立單位大小：
 
 [![基礎實驗頁面](flex-layout-images/BasisExperiment.png "基礎實驗頁面")](flex-layout-images/BasisExperiment-Large.png#lightbox)
 
-在左側的 iOS 螢幕擷取畫面顯示兩個`Label`以裝置獨立單位提供高度的項目。 Android 的畫面會顯示它們提供高度的一小部分的總高度`FlexLayout`。 如果`Basis`設為 100%，則子系是高度`FlexLayout`，和會將換行至下一個資料行，並佔用該資料行，整個高度，如 UWP 螢幕擷取畫面所示： 它會出現，如果五個的子系會排列在資料列但其實際排列在五個資料行中。
+在左側的 iOS 螢幕擷取畫面顯示兩個`Label`以裝置獨立單位提供高度的項目。 Android 的畫面會顯示它們提供高度的一小部分的總高度`FlexLayout`。 如果`Basis`設為 100%，則子系是高度`FlexLayout`，和會將換行至下一個資料行，並佔用該資料行，整個高度，如 UWP 螢幕擷取畫面所示：它會顯示一樣的五個的子系會排列在資料列中，但其實際排列在五個資料行中。
 
 ### <a name="the-grow-property"></a>成長屬性
 
@@ -743,7 +738,7 @@ button {
 
 > [!VIDEO https://youtube.com/embed/Ng3sel_5D_0]
 
-**Xamarin.Forms 3.0 Flex 版面配置，藉由[Xamarin University](https://university.xamarin.com/)**
+**Xamarin.Forms 3.0 Flex Layout 影片**
 
 ## <a name="related-links"></a>相關連結
 

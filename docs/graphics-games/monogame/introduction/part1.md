@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
 ms.openlocfilehash: 82b1408cafedf98a8619e8e039ba00b332f74516
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "33921985"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61381801"
 ---
 # <a name="part-1--creating-a-cross-platform-monogame"></a>第 1 部分-建立跨平台 MonoGame
 
@@ -30,7 +30,7 @@ MonoGame 可新增為增益集在 Visual studio for mac。 在 Mac 上，選取*
 ![Visual Studio for Mac 延伸模組資源庫選取 MonoGame](part1-images/image2.png)
 
 > [!IMPORTANT]
-> **附註**： 如果**遊戲開發**區段不會出現在增益集管理員中，您可以手動下載並從這裡安裝最新版本： http://www.monogame.net/downloads/。 您可能需要重新啟動 Visual Studio for Mac 範本才會出現。
+> **注意**：如果**遊戲開發**區段不會出現在增益集管理員中，您可以手動下載並從這裡安裝最新版本： http://www.monogame.net/downloads/。 您可能需要重新啟動 Visual Studio for Mac 範本才會出現。
 
 安裝之後，MonoGame 範本會出現在 Visual Studio for Mac 中，我們會看到下一節。
 

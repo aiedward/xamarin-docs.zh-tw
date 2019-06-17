@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
 ms.openlocfilehash: e1e21fe121fba30755efbabe302ed0f22149e7e0
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61157383"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp 點陣圖基本概念
 
@@ -104,7 +104,7 @@ protected override async void OnAppearing()
 
 程式碼，以載入點陣圖的最簡單方法直接在您的應用程式中包括點陣圖資源。 **SkiaSharpFormsDemos**計畫包含名為的資料夾**媒體**包含數個點陣圖檔案，包括一個名為**monkey.png**。 點陣圖儲存為程式資源，您必須使用**屬性**對話方塊，請將檔案**建置動作**的**內嵌資源**！
 
-每個內嵌的資源都*資源識別碼*構成的專案名稱、 資料夾與檔案名稱，所有已連線的週期： **SkiaSharpFormsDemos.Media.monkey.png**。 您可以指定該資源，以取得存取此資源識別碼做為引數[ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))方法[ `Assembly` ](xref:System.Reflection.Assembly)類別：
+每個內嵌的資源都*資源識別碼*構成的專案名稱、 資料夾與檔案名稱，以句點，所有已連線：**SkiaSharpFormsDemos.Media.monkey.png**. 您可以指定該資源，以取得存取此資源識別碼做為引數[ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))方法[ `Assembly` ](xref:System.Reflection.Assembly)類別：
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";

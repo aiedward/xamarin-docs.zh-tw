@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
+ms.openlocfilehash: 4347ee40b0b72cc2d182ba1ef8f111212dd0ee47
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61026039"
 ---
-
 # <a name="fragments"></a>片段
 
 _Android 3.0 導入片段，示範如何在手機和平板電腦上找到的許多不同的螢幕大小支援更有彈性的設計。本文將介紹如何使用片段來開發 Xamarin.Android 應用程式，以及如何預先 Android 3.0 (API 層級 11) 裝置上支援片段。_

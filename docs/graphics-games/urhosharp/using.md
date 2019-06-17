@@ -6,12 +6,12 @@ ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 7d07733ebf62e6e12ccee05f9b72eaf1a74afad2
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 5e5c4f1545d39befde6574338ec4c1ca4037ad8b
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "34784035"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61352094"
 ---
 # <a name="using-urhosharp-to-build-a-3d-game"></a>若要建置 3D 遊戲使用 UrhoSharp
 
@@ -23,7 +23,7 @@ ms.locfileid: "34784035"
 
 場景模型可以描述為元件為基礎的場景圖形中。 場景是由從根節點，這也代表整個場景的場景節點階層所組成。 每個[ `Node` ](https://developer.xamarin.com/api/type/Urho.Node/)有 3D 轉換 （位置、 旋轉和縮放比例）、 名稱、 識別碼、 加上任意數目的元件。  元件會將節點注入生命，他們可以製作新增的視覺表示法 ([`StaticModel`](https://developer.xamarin.com/api/type/Urho.StaticModel))，它們可發出聲音 ([`SoundSource`](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource))，它們可以提供衝突界限，依此類推。
 
-您可以建立您的場景和使用的安裝程式節點[Urho 編輯器](#UrhoEditor)，或您可以從 C# 程式碼來執行動作。  在本文中我們將探討設定項目，您可以使用程式碼中，為這些逐步解說說明顯示在螢幕上所得到的必要項目
+您可以建立您的場景和使用的安裝程式節點[Urho 編輯器](#urhoeditor)，或您可以從 C# 程式碼來執行動作。  在本文中我們將探討設定項目，您可以使用程式碼中，為這些逐步解說說明顯示在螢幕上所得到的必要項目
 
 除了設定您的場景，您必須安裝[ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/)，這是決定向使用者取得顯示的內容。
 

@@ -1,3 +1,12 @@
+---
+ms.topic: include
+ms.openlocfilehash: 7d23455f09383381221a4b81f842ab11140184f2
+ms.sourcegitcommit: be9658de032f3893741261f16162a664952ce178
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64987059"
+---
 ||測試附註|
 |---|---|
 |**Xamarin.iOS**|<ul><li>最簡單的開始方式就是使用 Xcode 隨附的 iPhone、iPad、Apple Watch 及 Apple TV 模擬器。 您可以在使用 Visual Studio 進行偵錯時，在已連線的 Mac 上存取這些模擬器。</li> <li>若要使用裝置來進行測試，請依照<a href="~/ios/get-started/installation/device-provisioning/index.md">這些指示</a> 執行 (在已連線的 Mac 電腦上執行大部分步驟)。</li></ul>|

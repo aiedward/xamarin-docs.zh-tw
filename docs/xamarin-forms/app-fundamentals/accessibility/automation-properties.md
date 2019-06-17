@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 284e10af41429d320ce08b8d45ccd5bbcec851d1
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: 634ba351d419b1d18dcc5d5bdbf5e248f510329d
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831985"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971251"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>在 Xamarin.Forms 中的自動化屬性
 
@@ -36,7 +36,7 @@ Xamarin.Forms 可透過下列附加屬性在使用者介面項目上設定自動
 
 - iOS 有 VoiceOver。 如需詳細資訊，請參閱 developer.apple.com 上的 [Test Accessibility on Your Device with VoiceOver](https://developer.apple.com/library/content/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html) (使用 VoiceOver，在裝置上測試協助工具)。
 - Android 有 TalkBack。 如需詳細資訊，請參閱 developer.android.com 上的 [Testing Your App's Accessibility](https://developer.android.com/training/accessibility/testing.html#talkback) (測試應用程式協助工具)。
-- Windows 有「朗讀程式」。 如需詳細資訊，請參閱[使用朗讀程式來確認主應用程式案例](/windows/uwp/accessibility/accessibility-testing#verify-main-app-scenarios-by-using-narrator/)。
+- Windows 有「朗讀程式」。 如需詳細資訊，請參閱[使用朗讀程式來確認主應用程式案例](/windows/uwp/accessibility/accessibility-testing#verify-main-app-scenarios-by-using-narrator)。
 
 不過，螢幕助讀程式的確切行為取決於軟體和其使用者組態。 例如，大部分的螢幕助讀程式獲得焦點時，會讀出與控制項建立關聯的文字，讓使用者能在頁面上控制項之間移動時定位自己。 某些螢幕助讀程式也會在頁面出現時讀出整個應用程式使用者介面，這可讓使用者能在嘗試巡覽頁面之前，就收到頁面的所有可用資訊內容。
 
@@ -149,7 +149,7 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 
 ### <a name="masterdetailpage"></a>MasterDetailPage
 
-若要在 iOS 和通用 Windows 平台上，設定螢幕助讀程式為 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 上 [切換] 按鈕朗讀的文字，請在 `MasterDetailPage` 或是 `Master` 頁面的 `Icon` 屬性上，設定 `AutomationProperties.Name` 或 `AutomationProperties.HelpText` 屬性。
+若要在 iOS 和通用 Windows 平台上，設定螢幕助讀程式為 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 上 [切換] 按鈕朗讀的文字，請在 `MasterDetailPage` 或是 `Master` 頁面的 `IconImageSource` 屬性上，設定 `AutomationProperties.Name` 或 `AutomationProperties.HelpText` 屬性。
 
 若要在 Android 上，設定螢幕助讀程式為 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 上 [切換] 按鈕朗讀的文字，請將字串資源新增至 Android 專案：
 
@@ -161,11 +161,11 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 </resources>
 ```
 
-然後將 `Master` 頁面 `Icon` 屬性的 `AutomationId` 屬性，設為適當的字串：
+然後將 `Master` 頁面 `IconImageSource` 屬性的 `AutomationId` 屬性，設為適當的字串：
 
 ```csharp
 var master = new ContentPage { ... };
-master.Icon.AutomationId = "btnMDPAutomationID";
+master.IconImageSource.AutomationId = "btnMDPAutomationID";
 ```
 
 ### <a name="toolbaritem"></a>ToolbarItem

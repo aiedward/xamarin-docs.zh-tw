@@ -6,17 +6,18 @@ ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/21/2018
-ms.openlocfilehash: 5b1c9ff709022d6bcae51597a03fe2a71097cd2d
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 05/28/2019
+ms.custom: video
+ms.openlocfilehash: ba0a76b44f5942db5528e9f5d11a1d2c3f027c40
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052552"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354033"
 ---
 # <a name="resource-dictionaries"></a>資源字典
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/xaml/resourcedictionaries/)
+[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/XAML/ResourceDictionaries/)
 
 _XAML 資源是可共用及重複使用在 Xamarin.Forms 應用程式的物件定義。_
 
@@ -149,7 +150,7 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 
 但請注意，背景列[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)仍然是黃色，因為[ `BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor)屬性設定的值為`PageBackgroundColor`應用程式中定義的資源層級`ResourceDictionary`。
 
-以下是另一種方式思考`ResourceDictionary`優先順序： 當 XAML 剖析器遇到`StaticResource`走過註冊視覺化樹狀結構透過搜尋相符的索引鍵，使用第一個相符項目找到。 如果此搜尋網頁上就會結束，且金鑰仍尚未發現，XAML 剖析器會搜尋`ResourceDictionary`附加至`App`物件。 如果仍然找不到索引鍵，則會引發例外狀況。
+以下是另一種方式思考`ResourceDictionary`優先順序：當 XAML 剖析器遇到`StaticResource`走過註冊視覺化樹狀結構透過搜尋相符的索引鍵，使用第一個相符項目找到。 如果此搜尋網頁上就會結束，且金鑰仍尚未發現，XAML 剖析器會搜尋`ResourceDictionary`附加至`App`物件。 如果仍然找不到索引鍵，則會引發例外狀況。
 
 ## <a name="stand-alone-resource-dictionaries"></a>獨立的資源字典
 
@@ -195,7 +196,7 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 
 執行個體`MyResourceDictionary`設定為`Resources`屬性`ContentPage`物件。
 
-不過，此方法有一些限制：`Resources`的屬性`ContentPage`參考僅此一個`ResourceDictionary`。 在大部分情況下，您想要包括其他選項`ResourceDictionary`執行個體，可能是其他資源，以及。
+不過，這種方法有一些限制：`Resources`的屬性`ContentPage`參考僅此一個`ResourceDictionary`。 在大部分情況下，您想要包括其他選項`ResourceDictionary`執行個體，可能是其他資源，以及。
 
 這項工作需要合併的資源字典。
 
@@ -305,6 +306,13 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 
 ## <a name="related-links"></a>相關連結
 
-- [資源字典 （範例）](https://developer.xamarin.com/samples/xamarin-forms/xaml/resourcedictionaries/)
+- [資源字典 （範例）](https://developer.xamarin.com/samples/xamarin-forms/XAML/ResourceDictionaries/)
 - [樣式](~/xamarin-forms/user-interface/styles/index.md)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/XamarinForms-101-Application-Resources/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
+

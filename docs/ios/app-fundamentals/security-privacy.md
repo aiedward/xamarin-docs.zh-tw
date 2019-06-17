@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 119fd478727a002622861c94462b93b75720a992
-ms.sourcegitcommit: fabd3b51dca6d904009d0670137c5fb5ee6c32ef
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54249199"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61400555"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS 的安全性和隱私權功能
 

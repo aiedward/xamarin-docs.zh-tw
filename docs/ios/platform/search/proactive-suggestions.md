@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 7b7564e3b94062c2294919121f32c4f830346bda
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2ab0147f918b36dc47ef6eed7d9bf1b6295d9733
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61408156"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>在 Xamarin.iOS 中的主動式建議簡介
 
@@ -51,7 +51,7 @@ iOS 9 新增至能夠在網站中豐富的使用者在焦點以及 Safari 的搜
 
 ## <a name="media-based-suggestions"></a>媒體基礎的建議
 
-如果應用程式會播放媒體使用[MPPlayableContentManager](https://developer.xamarin.com/api/type/MediaPlayer.MPPlayableContentManager/) API，iOS 10 可讓使用者檢視專輯封面，並在鎖定畫面上播放媒體透過應用程式。
+如果應用程式會播放媒體使用[MPPlayableContentManager](xref:MediaPlayer.MPPlayableContentManager) API，iOS 10 可讓使用者檢視專輯封面，並在鎖定畫面上播放媒體透過應用程式。
 
 ## <a name="contextual-siri-reminders"></a>內容 Siri 提醒
 
@@ -63,12 +63,12 @@ iOS 9 新增至能夠在網站中豐富的使用者在焦點以及 Safari 的搜
 
 ## <a name="ride-sharing-based-suggestions"></a>共用的賽車架構建議
 
-如果 rani 應用程式使用[MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) API，iOS 10 會將它顯示在應用程式切換器中選擇有時當使用者可能會想要好好體驗吧。 應用程式必須也註冊為 rani 應用程式藉由指定`MKDirectionsModeRideShare`for [MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html)中的索引鍵及其`Info.plist`檔案。
+如果 rani 應用程式使用[MKDirectionsRequest](xref:MapKit.MKDirectionsRequest) API，iOS 10 會將它顯示在應用程式切換器中選擇有時當使用者可能會想要好好體驗吧。 應用程式必須也註冊為 rani 應用程式藉由指定`MKDirectionsModeRideShare`for [MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html)中的索引鍵及其`Info.plist`檔案。
 
 應用程式只支援共用好好體驗吧，如果系統建議會以開頭 *「...取得要好好體驗吧 」*，如果支援其他類型的路由 （例如 Walking 或自行車） 的方向，系統會使用 *「...取得指示 」*
 
 > [!IMPORTANT]
-> [MKMapItem](https://developer.xamarin.com/api/type/MapKit.MKMapItem/)的應用程式收到的物件可能不會包含經度和緯度的資訊，而且將會需要地理編碼。
+> [MKMapItem](xref:MapKit.MKMapItem)的應用程式收到的物件可能不會包含經度和緯度的資訊，而且將會需要地理編碼。
 
 ## <a name="implementing-proactive-suggestions"></a>實作主動式建議
 
@@ -397,7 +397,7 @@ namespace MonkeyNotification
 }
 ```
 
-查看這個程式碼的詳細資料，它會建立並於其中填入執行個體`NSUserActivity`(如中所示[建立活動](#Creating-an-Activity)上一節)。 接下來，它會建立的執行個體`INSendMessageIntent`(繼承自`INIntent`)，並填入所傳送之訊息的詳細資料：
+查看這個程式碼的詳細資料，它會建立並於其中填入執行個體`NSUserActivity`(如中所示[建立活動](#creating-an-activity)上一節)。 接下來，它會建立的執行個體`INSendMessageIntent`(繼承自`INIntent`)，並填入所傳送之訊息的詳細資料：
 
 ```csharp
 var intent = new INSendMessageIntent (to, text, "", "MonkeyChat", from);
@@ -480,7 +480,7 @@ Schema.org 可以提供相同類型的位置為基礎的網站的互動。 Apple
 
 Safari 會擷取符合下列結構描述屬性的任何網頁上的任何項目：
 
-- **省略**
+- **PostalAddress**
 - **GeoCoordinates**
 - 此電話屬性中。
 
@@ -503,7 +503,7 @@ Safari 會擷取符合下列結構描述屬性的任何網頁上的任何項目�
 - 應用程式可以取得主動式建議應用程式中。
 - 應用程式可以受益於增強的自動校正。
 
-新`TextContentType`在 iOS 10 中的文字欄位控制項的屬性可讓開發人員定義的語意的目的，使用者要在指定的欄位中輸入的值。 例如: 
+新`TextContentType`在 iOS 10 中的文字欄位控制項的屬性可讓開發人員定義的語意的目的，使用者要在指定的欄位中輸入的值。 例如：
 
 ```csharp
 var textField = new UITextField();
