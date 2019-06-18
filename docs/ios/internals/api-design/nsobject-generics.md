@@ -7,20 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: becdd842f46cc7100bd7d9a6fd7347b541685c35
-ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
+ms.openlocfilehash: 4d2ab7a546925e92bb59f626279dcbf9c3c4ab4f
+ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67039628"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67157708"
 ---
 # <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>在 Xamarin.iOS 中 NSObject 的泛型子
 
 ## <a name="using-generics-with-nsobjects"></a>使用泛型搭配 NSObjects
 
-從開始，Xamarin.iOS 7.2.1 您可以使用泛型中的子`NSObject`(例如[UIView](xref:UIKit.UIView)。
-
-您現在可以建立泛型類別會與下列類似：
+您可使用的子類別中的泛型`NSObject`，例如[UIView](xref:UIKit.UIView):
 
 ```csharp
 class Foo<T> : UIView {
@@ -36,7 +34,7 @@ class Foo<T> : UIView {
     
 ## <a name="considerations-for-generic-subclasses-of-nsobject"></a>NSObject 的泛型子類別的考量
 
-本文件詳細說明中的泛型子類別的有限支援限制`NSObjects`搭配 Xamarin.iOS 7.2.1 導入。
+本文件詳細說明中的泛型子類別的有限支援限制`NSObjects`。
     
 ### <a name="generic-type-arguments-in-member-signatures"></a>成員簽章中的泛型類型引數
 
@@ -103,7 +101,7 @@ class Generic<T, U> : NSObject where T: NSObject
     
 ### <a name="instantiations-of-generic-types-from-objective-c"></a>從 OBJECTIVE-C 的泛型類型的具現化
 
-不允許從 OBJECTIVE-C 的泛型類型具現化。 Managed 型別用於 xib 時，就會發生這種發生。
+不允許從 OBJECTIVE-C 的泛型類型具現化。 Xib 或腳本中使用 managed 的類型時，就會發生這種發生。
 
 此類別定義中，公開 （expose） 的建構函式，請考慮`IntPtr`(建構的 Xamarin.iOS 方法C#物件的原生 OBJECTIVE-C 執行個體):
     
@@ -119,7 +117,7 @@ class Generic<T> : NSObject where T : NSObject
 
 這是因為 Objective C 並沒有泛型型別的概念，而且不能指定確切的泛型型別來建立。
 
-這個問題可以解決藉由建立泛型類型的特定子類別。   例如:
+這個問題可以解決藉由建立泛型類型的特定子類別。 例如:
     
 ```csharp
 class Generic<T> : NSObject where T : NSObject
@@ -133,7 +131,7 @@ class GenericUIView : Generic<UIView>
 }
 ```
 
-現在有任何模稜兩可，類別`GenericUIView`可以用於 xib。
+現在有任何模稜兩可，類別`GenericUIView`可以用於 xib 或分鏡腳本。
 
 ## <a name="no-support-for-generic-methods"></a>不支援泛型方法
 
@@ -188,11 +186,11 @@ class Generic<T> : NSObject where T : NSObject
 }
 ```
 
-**原因：** 就像一般方法一樣，Xamarin.iOS 執行階段必須能知道類型用於泛型類型引數 t。
+**原因：** 就像一般方法一樣，Xamarin.iOS 執行階段必須能知道要使用的泛型型別引數類型`T`。
 
-比方說使用本身的執行個體的成員 (因為絕對不會執行個體的泛型<T>，它一律是泛型<SomeSpecificClass>)，但是對靜態成員這項資訊不存在。
+比方說使用本身的執行個體的成員 (因為絕對不會執行個體`Generic<T>`，它一律是`Generic<SomeSpecificClass>`)，但是對靜態成員這項資訊不存在。
 
-請注意，這適用於即使有問題的成員不會以任何方式使用 T 型別引數。
+請注意，這適用於即使有問題的成員不會使用型別引數`T`以任何方式。
 
 在此情況下，替代方法是建立的特定子類別：
 
@@ -206,7 +204,7 @@ class GenericUIView : Generic<UIView>
     }
 
     [Export ("myProperty")]
-    public static UIView MyUIVIewProperty {
+    public static UIView MyUIViewProperty {
         get { return MyProperty; }
         set { MyProperty = value; }
     }
@@ -219,12 +217,6 @@ class Generic<T> : NSObject where T : NSObject
 }
 ```
 
-### <a name="requires-new-static-registrar"></a>需要新的靜態註冊機構
-
-需要新的泛型支援[註冊系統](~/ios/internals/registrar.md)。
-
-如果您嘗試使用舊遇到 （此外若要產生正確的程式碼，導致未定義的行為） 的泛型型別時，舊版的註冊系統會顯示警告。
-    
 ## <a name="performance"></a>效能
 
 靜態註冊機構無法解析在泛型型別匯出的成員在建置階段通常會，它必須在執行階段查閱。 這表示叫用這種方法從 OBJECTIVE-C 會稍微慢一點比叫用非泛型類別的成員。

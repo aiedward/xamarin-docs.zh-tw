@@ -5,20 +5,23 @@ ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
 author: lobrien
 ms.author: laobri
-ms.date: 08/08/2018
-ms.openlocfilehash: 5eb0dcead230e0bb2e7d99241e5d8e5a4115f838
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/13/2019
+ms.openlocfilehash: bf0186b55b14d9797397b98390f4d825d669d0f4
+ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61175392"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67157691"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>疑難排解 Xamarin Live Player
 
 ![預覽功能](~/media/shared/preview.png)
 
-> [!NOTE]
-> 只有 Visual Studio 2017 中使用播放程式的即時預覽。
+> [!WARNING]
+> Xamarin Live Player 預覽版已結束。 應用程式已無法使用。 下列指示可供客戶繼續使用 Visual Studio 2017 中使用預覽...
+
+> [!TIP]
+> 您可以使用[XAML 預覽程式](~/xamarin-forms/xaml/xaml-previewer/index.md)在 Visual Studio 2019 或 Visual Studio for Mac，就可以檢視您螢幕的設計，當您編輯它們。
 
 這篇文章說明 Live Player 和一些常見的問題，步驟更正方式的限制。
 
@@ -163,4 +166,3 @@ Xamarin.Forms Android 專案必須使用 「 Toolbar.axml"和"Tabbar.axml 」 �
 ## <a name="related-links"></a>相關連結
 
 - [安裝](~/tools/live-player/install.md)
-- [範例搭配 Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)
