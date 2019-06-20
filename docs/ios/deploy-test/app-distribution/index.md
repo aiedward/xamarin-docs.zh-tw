@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 6141b84af56d7680e2b294317ba97fb6943e17c5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1bd61474daedd8bd330c0370948d6dee6f8ea50e
+ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106048"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194947"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Xamarin.iOS 應用程式散發概觀
 
@@ -37,7 +37,8 @@ Apple 提供以下方式散發 iOS 應用程式，這些方式都受到 Xamarin.
 ## <a name="app-store-distribution"></a>App Store 散發
 
 > [!IMPORTANT]
-> Apple [已宣告](https://developer.apple.com/news/?id=05072018a)從 2018 年 7 月開始，提交至 App Store 的所有應用程式和更新都必須是使用 iOS 11 SDK 建置，且必須[支援 iPhone X 顯示器](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)。
+> Apple [已宣佈](https://developer.apple.com/ios/submit/)從 2019 年 3 月開始，提交至 App Store 的所有應用程式與更新，都必須使用 iOS 12.1 SDK 或更新版本 (包含在 Xcode 10.1 或更新版本中) 進行建置。
+> 應用程式也應支援 iPhone XS 及 12.9" iPad Pro 的螢幕大小。
 
 這是將 iOS 應用程式散發給 iOS 裝置使用者的主要方式。 提交到 App Store 的所有應用程式都需經過 Apple 核准。
 
