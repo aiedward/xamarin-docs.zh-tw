@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: c8d1abebf6dec2b7b5fe76d57ff851fad457f2a8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ec5439e11b0edd2b6ad5391254e40e01271879a7
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61170660"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268824"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS 背景處理與工作
 
-執行背景在 iOS 上的最簡單方式是 backgrounding 需求分成工作，並在背景中執行的工作。 工作下嚴格的時間限制，且通常取得 iOS 7 + 上的 約 600 秒 （10 分鐘） 的處理時間之後應用程式時，已移至背景上，在 iOS 6, 和 10 分鐘內。
+執行背景在 iOS 上的最簡單方式是 backgrounding 需求分成工作，並在背景中執行的工作。 工作下嚴格的時間限制，且通常取得 iOS 7 + 上的 [約 600 秒 （10 分鐘） 的處理時間之後應用程式時，已移至背景上，在 iOS 6, 和 10 分鐘內。
 
 背景工作可分成三個類別：
 
@@ -98,7 +98,7 @@ Task.Factory.StartNew( () => {
     });
     while(myFlag == true)
     {
-        Console.WriteLine(UIApplication.SharedApplication.TimeRemaining);
+        Console.WriteLine(UIApplication.SharedApplication.BackgroundTimeRemaining);
         myFlag = SomeCalculationNeedsMoreTime();
     }
     //Only called if loop terminated due to myFlag and not expiration of time
@@ -162,7 +162,7 @@ else {
 
 ### <a name="background-transfer-service"></a>背景傳送服務
 
-在 iOS 7、 之前上傳或下載檔案，在背景中的是不可靠的。 背景工作在有限的時間，若要執行，但是傳輸檔案所花費的時間會隨著網路和檔案的大小。 在 iOS 7 中，我們可以使用`NSURLSession`已成功上傳和下載大型檔案。 特定`NSURLSession`會處理在背景中的大型檔案的網路傳輸的工作階段型別稱為*背景傳送服務*。
+在 [iOS 7、 之前上傳或下載檔案，在背景中的是不可靠的。 背景工作在有限的時間，若要執行，但是傳輸檔案所花費的時間會隨著網路和檔案的大小。 在 iOS 7 中，我們可以使用`NSURLSession`已成功上傳和下載大型檔案。 特定`NSURLSession`會處理在背景中的大型檔案的網路傳輸的工作階段型別稱為*背景傳送服務*。
 
 使用背景傳送服務起始的傳輸由作業系統，並提供 Api 來處理驗證和錯誤。 因為傳輸不會受任意的時間限制，它們可用來上傳或下載大型檔案，自動更新的內容中的背景和更多功能。 請參閱[背景傳送的逐步解說](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/background-transfer-walkthrough.md)如需有關如何實作服務。
 

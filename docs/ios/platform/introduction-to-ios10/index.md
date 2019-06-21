@@ -7,18 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: b018fe343a7d46f1323119b03a22cc3831a02d9f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e84f5acdd1660633521d1a99325155b614b87e1b
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61402399"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268902"
 ---
 # <a name="introduction-to-ios-10"></a>iOS 10 簡介
-
-_這篇文章會介紹的所有新的及修改 Api 和功能可在 iOS 10 中適用於 Xamarin.iOS 開發人員。_
-
-## <a name="introducing-ios-10"></a>介紹 iOS 10
 
 使用新的 iOS 10 SDK，Apple 已包含新的 Api 和服務，可讓開發人員建立新的類別目錄的應用程式和功能。 IOS 應用程式現在可以擴充訊息、 Siri、 電話和對應的應用程式提供豐富且吸引人的功能已無法使用先前的使用者。
 
@@ -27,7 +23,6 @@ _這篇文章會介紹的所有新的及修改 Api 和功能可在 iOS 10 中適
 ## <a name="whats-new-in-ios-10"></a>新功能 iOS 10
 
 Apple 已加入數個新的 Api 和服務，在 iOS 10 及現有功能，包括許多增強功能：
-
 
 ## <a name="adapting-to-the-true-tone-display"></a>適應，則為 True 的色調顯示
 
@@ -40,8 +35,6 @@ Apple 的則為 True 的色調顯示技術使用在 iOS 裝置的環境的光感
 - `UIWhitePointAdaptivityStyleGame` -用於遊戲為主的應用程式。
 - `UIWhitePointAdaptivityStyleVideo` -用於視訊為主的應用程式。
 - `UIWhitePointAdaptivityStylePhoto` -攝影為主的應用程式的情況下使用色彩逼真度比環境的白色點調整更重要。
-
-<a name="app-extensions" />
 
 ## <a name="app-extensions"></a>應用程式擴充功能
 
@@ -87,13 +80,12 @@ Apple 有了許多改進功能到 Apple Pay 在 iOS 10 可讓使用者做出安�
 
 Apple iOS 10.3 可讓應用程式來管理它的圖示已新增數個增強功能：
 
- - `ApplicationIconBadgeNumber` -取得或設定跳板系列中的應用程式圖示的徽章。
- - `SupportsAlternateIcons` -如果`true`應用程式有另一組的圖示。
- - `AlternateIconName` -傳回目前選取的替代圖示的名稱或`null`如果使用的主要圖示。
- - `SetAlternameIconName` -使用這個方法來指定替代的圖示切換應用程式的圖示。
+- `ApplicationIconBadgeNumber` -取得或設定跳板系列中的應用程式圖示的徽章。
+- `SupportsAlternateIcons` -如果`true`應用程式有另一組的圖示。
+- `AlternateIconName` -傳回目前選取的替代圖示的名稱或`null`如果使用的主要圖示。
+- `SetAlternameIconName` -使用這個方法來指定替代的圖示切換應用程式的圖示。
 
 若要深入了解，請參閱我們[替代的應用程式圖示](~/ios/app-fundamentals/images-icons/alternate-app-icons.md)指南。
-
 
 ## <a name="introduction-to-callkit"></a>CallKit 簡介
 
@@ -133,7 +125,7 @@ iOS 10 會呈現駕駛 engagement 應用程式的新方式讓系統主動很有�
 - CarPlay
 - 地圖
 - Siri 互動
-- QuickType 建議 
+- QuickType 建議
 
 應用程式未公開這項功能才能使用的技術集合，例如系統[NSUserActivity](xref:Foundation.NSUserActivity)，網頁標記中，核心焦點、 MapKit、 Media Player 和 UIKit。
 
@@ -228,7 +220,7 @@ IOS 10 中，已被取代的下列 Api:
 
 - `CKDiscoverAllContactsOperation`， `CKDiscoveredUserInfo`，`CKDiscoverUserInfosOperation`和`CKFetchRecordChangesOperation`類別已被取代 CloudKit 適用於 iOS 10。 使用[CKDiscoverAllUserIdentitiesOperation](xref:CloudKit.CKDiscoverUserIdentitiesOperation)， [CKUserIdentity](xref:CloudKit.CKUserIdentity)並[CKFetchRecordZoneChangesOperation](xref:CloudKit.CKFetchRecordZoneChangesOperation) （其支援記錄共用） 類別改為。
 - 數個[CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) Api （例如區域為基礎和以查詢為基礎訂用帳戶） 已被取代。 使用[CKRecordZoneSubscription](xref:CloudKit.CKRecordZoneSubscription)並[CKQuerySubscription](xref:CloudKit.CKQuerySubscription) Api 改。
-- [NSPersistentStoreCoordnator](xref:CoreData.NSPersistentStoreCoordinator)無所不在的內容相關的符號已被取代。
+- [NSPersistentStoreCoordinator](xref:CoreData.NSPersistentStoreCoordinator)無所不在的內容相關的符號已被取代。
 - `ADBannerView``ADInterstitialAd`和相關中的符號[UIViewController](xref:UIKit.UIViewController)類別已被取代。
 - [SKUniform](https://developer.apple.com/reference/spritekit/skuniform)與浮點值的符號已被取代。
 - `UILocalNotification`， `UIMutableUserNotificationAction`， `UIMutableUserNotificationCategory`， `UIUserNotificationAction`，`UIUserNotificationCategory`和`UIUserNotificationSettings`UIKit 類別已被取代。 使用[使用者通知](#user-notifications)framework 改。
@@ -238,9 +230,6 @@ IOS 10 中，已被取代的下列 Api:
 
 請參閱 Apple [iOS 10.0 API 差異的 iOS 9.3](https://developer.apple.com/library/prerelease/content/releasenotes/General/iOS10APIDiffs/index.html)棄用功能的文件的完整清單。
 
-
-
 ## <a name="related-links"></a>相關連結
 
 - [iOS 10 範例](https://developer.xamarin.com/samples/ios/iOS10/)
-- [在 iOS 10 最新消息](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewIniOS/Articles/iOS10.html#//apple_ref/doc/uid/TP40017084-SW1)

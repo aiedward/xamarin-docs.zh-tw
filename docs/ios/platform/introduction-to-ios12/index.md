@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/08/2018
-ms.openlocfilehash: 99f2b98614c2b8d558dd8744b31a62b787fc955c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5ac19571bc1f1163539a48ea2689c743445d8047
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035954"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268869"
 ---
 # <a name="introduction-to-ios-12"></a>iOS 12 簡介
 
@@ -42,7 +42,7 @@ Siri 快速鍵可讓開發人員更深入整合 Siri 他們的應用程式。 �
 
 自然語言架構可讓應用程式，以執行各種類型的語言分析。 比方說，它可以識別部分，並判斷由文字區塊的語言。
 
-## <a name="vision-framework"></a>視覺架構
+## <a name="vision-frameworkiosplatformintroduction-to-ios11visionmd"></a>[視覺架構](~/ios/platform/introduction-to-ios11/vision.md)
 
 視覺架構包含可以在不同的方向，偵測臉改良的臉部偵測器。 此外，要求修訂可以選取特定的目標 framework 演算法修訂。
 
@@ -65,7 +65,7 @@ iOS 12 簡化了使用者和開發人員使用的密碼：
 
 ## <a name="imessage-app-presentation-contexts"></a>iMessage 應用程式的簡報內容
 
-在 iOS 12、 iMessage 應用程式支援簡報內容，允許做為一般 iMessage 應用程式或相片或視訊效果的內容中執行的應用程式。
+在 [iOS 12、 iMessage 應用程式支援簡報內容，允許做為一般 iMessage 應用程式或相片或視訊效果的內容中執行的應用程式。
 
 ## <a name="network-framework"></a>網路架構
 
@@ -81,7 +81,3 @@ iOS 12 簡化了使用者和開發人員使用的密碼：
 
 - OpenGL ES[鼓勵開發人員](https://developer.apple.com/ios/whats-new/)採用裸機。
 - [`UIWebView`](xref:UIKit.UIWebView)[的益處`WKWebView` ](https://developer.apple.com/documentation/webkit/wkwebview?language=objc)。
-
-## <a name="related-links"></a>相關連結
-
-- [準備開始使用適用於 iOS (Apple) 12](https://developer.apple.com/ios/)
