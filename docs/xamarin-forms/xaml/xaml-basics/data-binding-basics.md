@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 4a24c8dbb9ab4e23afa03de4ae2dbc55ddfb5fa4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6d8ed5e2ec4707af2b61e299ee8274402f3a88a4
+ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61171785"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67309523"
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部分。 資料繫結的基本概念
 
@@ -253,6 +253,9 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
     </ListView.ItemTemplate>
 </ListView>
 ```
+
+> [!NOTE]
+> 儲存格和資料格的子系的繫結來源是`ListView.ItemsSource`集合。
 
 `Label`元素設定為`View`屬性`ViewCell`。 (`ViewCell.View`因為不需要標記`View`屬性是內容屬性`ViewCell`。)此標記會顯示`FriendlyName`每個屬性`NamedColor`物件：
 

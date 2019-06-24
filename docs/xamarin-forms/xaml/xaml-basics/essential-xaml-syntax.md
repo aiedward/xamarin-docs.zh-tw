@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 75d3c628a513b81af9dea7308ca49c2b490c4aff
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 60add066d581afffeaa200769efcdff9e0644535
+ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61407630"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67309491"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分。 基本 XAML 語法
 
@@ -384,7 +384,7 @@ if (Device.RuntimePlatform == Device.iOS)
 }
 ```
 
-您也可以執行類似在 XAML 中使用`OnPlatform`和`On`類別。 第一個包含屬性項目`Padding`屬性頁面的頂端附近：
+您也可以執行類似在 XAML 中使用[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)並[ `On` ](xref:Xamarin.Forms.On)類別。 第一個包含屬性項目`Padding`屬性頁面的頂端附近：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -523,11 +523,12 @@ if (Device.RuntimePlatform == Device.iOS)
 </ContentPage>
 ```
 
+> [!NOTE]
+> `OnPlatform`標記延伸也可在 XAML 中自訂每個平台為基礎的 UI 外觀。 它提供與相同的功能`OnPlatform`和`On`類別，但更簡潔的表示法。 如需詳細資訊，請參閱 < [OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
+
 ## <a name="summary"></a>總結
 
 Property 項目和附加的屬性，大部分的基本 XAML 語法建立的。 不過，有時候您需要從資源字典中以間接方式，例如，設定屬性物件。 在下一步 部分中，部分涵蓋此方法的[3。XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)。
-
-
 
 ## <a name="related-links"></a>相關連結
 

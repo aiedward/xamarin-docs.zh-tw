@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 56f8632c9cc7d170b4c6594fd51e6aa3e92ad02b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 53d2a0aae3398ea31676fbc3dab95d500dfe2104
+ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61191224"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67309507"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>跨平台 Xamarin.Forms 應用程式
 
@@ -120,7 +120,7 @@ ms.locfileid: "61191224"
 
     變更儲存到**NotesPage.xaml**藉由按下**CTRL + S**，並關閉檔案。
 
-5. 在  **Solution Pad**，請在**備忘稿**專案中，按兩下**NoteEntryPage.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
+5. 在 [**方案總管] 中**，請在**備忘稿**專案中，按兩下**NoteEntryPage.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -222,7 +222,7 @@ ms.locfileid: "61191224"
 
     變更儲存到**App.xaml**選擇**檔案 > 儲存**(或按下 **&#8984; + S**)，然後關閉檔案。
 
-3. 在 [**方案總管] 中**，請在**備忘稿**專案中，按兩下**NotesPage.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
+3. 在  **Solution Pad**，請在**備忘稿**專案中，按兩下**NotesPage.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -261,7 +261,7 @@ ms.locfileid: "61191224"
 
     變更儲存到**NotesPage.xaml**選擇**檔案 > 儲存**(或按下 **&#8984; + S**)，然後關閉檔案。
 
-5. 在 [**方案總管] 中**，請在**備忘稿**專案中，按兩下**NoteEntryPage.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
+5. 在  **Solution Pad**，請在**備忘稿**專案中，按兩下**NoteEntryPage.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
