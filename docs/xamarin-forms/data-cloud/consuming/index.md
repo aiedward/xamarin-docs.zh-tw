@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: a4c842ea7fd37ade9be0a9cb3e3ff7e50a6d1491
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 163b82590e95a1587836502883cd5f9f2afbe19c
+ms.sourcegitcommit: 6e04246207aa743820029e8c217a43cfdd24f991
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61328186"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67352116"
 ---
 # <a name="consuming-web-services"></a>使用 Web 服務
 
-（_t） 指南示範如何與不同的 web 服務，以提供建立、 讀取、 更新和刪除 (CRUD) 至 Xamarin.Forms 應用程式的功能。 涵蓋的主題包括與 ASMX 服務、 WCF 服務、 REST 服務和 Azure 行動應用程式進行通訊。
+_本指南示範如何與不同的 web 服務，以提供建立、 讀取、 更新和刪除 (CRUD) 至 Xamarin.Forms 應用程式的功能。涵蓋的主題包括與 ASMX 服務、 WCF 服務、 REST 服務和 Azure 行動應用程式進行通訊。_
 
 ## <a name="consuming-an-aspnet-web-service-asmxxamarin-formsdata-cloudconsumingasmxmd"></a>[使用 ASP.NET Web 服務 (ASMX)](~/xamarin-forms/data-cloud/consuming/asmx.md)
 
