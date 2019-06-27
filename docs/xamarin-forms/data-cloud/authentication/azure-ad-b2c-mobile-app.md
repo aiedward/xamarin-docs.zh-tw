@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/22/2019
-ms.openlocfilehash: 4c3cc489f7c65636ad9f2b5541e552665b10980e
-ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.openlocfilehash: 2f9cfceee4765dea946dfdac974ac2d56595ef94
+ms.sourcegitcommit: 9aaae4f0af096cd136b3dcfbb9af591ba307dc25
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557335"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398687"
 ---
 # <a name="integrating-azure-active-directory-b2c-with-azure-mobile-apps"></a>使用 Azure Mobile Apps 的整合 Azure Active Directory B2C
 
@@ -115,9 +115,9 @@ public async Task<bool> LoginAsync(bool useSilent = false)
     ...
 
     var payload = new JObject();
-    if (authenticationResult != null && !string.IsNullOrWhiteSpace(authenticationResult.IdToken))
+    if (authenticationResult != null && !string.IsNullOrWhiteSpace(authenticationResult.AccessToken))
     {
-        payload["access_token"] = authenticationResult.IdToken;
+        payload["access_token"] = authenticationResult.AccessToken;
     }
 
     User = await TodoItemManager.DefaultManager.CurrentClient.LoginAsync(
@@ -131,9 +131,9 @@ public async Task<bool> LoginAsync(bool useSilent = false)
 
 Microsoft Authentication Library (MSAL) 用來與 Azure Active Directory B2C 租用戶啟動驗證工作流程。 `AcquireTokenAsync`方法會啟動裝置的網頁瀏覽器，並顯示透過參考的原則由 Azure Active Directory B2C 原則中定義的驗證選項`Constants.AuthoritySignin`常數。 此原則會定義使用者的登入和註冊體驗，以及應用程式驗證成功後收到的宣告。
 
-結果`AcquireTokenAsync`方法呼叫是`AuthenticationResult`執行個體。 如果驗證成功，`AuthenticationResult`執行個體將包含識別權杖，這會在本機快取。 如果驗證不成功，`AuthenticationResult`執行個體將會包含資料，指出驗證失敗的原因。 如需如何使用 MSAL 來與 Azure Active Directory B2C 租用戶進行通訊的資訊，請參閱[驗證的使用者，使用 Azure Active Directory B2C](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md)。
+結果`AcquireTokenAsync`方法呼叫是`AuthenticationResult`執行個體。 如果驗證成功，`AuthenticationResult`執行個體將會包含存取權杖，這會在本機快取。 如果驗證不成功，`AuthenticationResult`執行個體將會包含資料，指出驗證失敗的原因。 如需如何使用 MSAL 來與 Azure Active Directory B2C 租用戶進行通訊的資訊，請參閱[驗證的使用者，使用 Azure Active Directory B2C](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md)。
 
-當`CurrentClient.LoginAsync`叫用方法時，Azure Mobile Apps 執行個體收到包裝在身分識別權杖`JObject`。 有效的語彙基元表示 Azure Mobile Apps 執行個體不需要啟動它自己的 OAuth 2.0 驗證流程的目前狀態。 相反地，`CurrentClient.LoginAsync`方法會傳回`MobileServiceUser`執行個體，將會儲存在`MobileServiceClient.CurrentUser`屬性。 這個屬性會提供`UserId`和`MobileServiceAuthenticationToken`屬性。 這些代表的已驗證的使用者和權杖，可以使用，直到它到期為止。 驗證權杖會納入 Azure Mobile Apps 的執行個體，讓 Xamarin.Forms 應用程式，以執行需要已驗證的使用者權限的動作所做的所有要求。
+當`CurrentClient.LoginAsync`叫用方法時，Azure Mobile Apps 執行個體接收存取權杖，其包裝在`JObject`。 有效的語彙基元表示 Azure Mobile Apps 執行個體不需要啟動它自己的 OAuth 2.0 驗證流程的目前狀態。 相反地，`CurrentClient.LoginAsync`方法會傳回`MobileServiceUser`執行個體，將會儲存在`MobileServiceClient.CurrentUser`屬性。 這個屬性會提供`UserId`和`MobileServiceAuthenticationToken`屬性。 這些代表的已驗證的使用者和權杖，可以使用，直到它到期為止。 驗證權杖會納入 Azure Mobile Apps 的執行個體，讓 Xamarin.Forms 應用程式，以執行需要已驗證的使用者權限的動作所做的所有要求。
 
 ### <a name="signing-out"></a>登出
 
