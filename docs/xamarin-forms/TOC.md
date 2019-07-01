@@ -336,6 +336,7 @@
 #### [Azure 搜尋服務](data-cloud/search/azure-search.md)
 ### [無伺服器應用程式](data-cloud/serverless/index.md)
 #### [Azure Functions](data-cloud/serverless/azure-functions.md)
+#### [Azure SignalR Service 搭配 Xamarin.Forms](data-cloud/serverless/azure-signalr.md)
 ### [將資料儲存在文件資料庫](data-cloud/cosmosdb/index.md)
 #### [使用 Azure Cosmos DB 文件資料庫](data-cloud/cosmosdb/consuming.md)
 #### [驗證 Azure Cosmos DB 文件資料庫的使用者](data-cloud/cosmosdb/authentication.md)

@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 02/12/2019
 ms.custom: video
-ms.openlocfilehash: 3511850391b2be809daf2b70e81fa5b591db8dfa
-ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
+ms.openlocfilehash: c186f5c61bd2fa3df305be92a03135e57e302d02
+ms.sourcegitcommit: 6e04246207aa743820029e8c217a43cfdd24f991
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56240340"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67352122"
 ---
 # <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials:剪貼簿
 
@@ -29,23 +29,26 @@ ms.locfileid: "56240340"
 using Xamarin.Essentials;
 ```
 
-檢查 [剪貼簿] 是否已具有要貼上的文字：
+檢查 [剪貼簿]  是否已具有要貼上的文字：
 
 ```csharp
 var hasText = Clipboard.HasText;
 ```
 
-將文字設定至 [剪貼簿]：
+將文字設定至 [剪貼簿]  ：
 
 ```csharp
 await Clipboard.SetTextAsync("Hello World");
 ```
 
-從 [剪貼簿] 讀取文字：
+從 [剪貼簿]  讀取文字：
 
 ```csharp
 var text = await Clipboard.GetTextAsync();
 ```
+
+> [!TIP]
+> 對剪貼簿的存取必須在主要使用者介面執行緒上完成。 請參閱 [MainThread](~/essentials/main-thread.md) API 以了解如何叫用主要使用者介面執行緒上的方法。
 
 ## <a name="api"></a>API
 
