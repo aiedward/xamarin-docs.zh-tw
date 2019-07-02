@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: 3131963efa3d4ba4de9ff63c741c276a62e9d12d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bf7a1461a26a860c77a913edabb94d76b4ca2a6a
+ms.sourcegitcommit: 00deecefc17a98210bed12b4ef99ecca710275f1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61229730"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67493350"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms 編輯器
 
@@ -69,7 +69,7 @@ var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Co
 ```
 
 ```csharp
-var editor= new Editor { Text = "This is a read-only Editor", IsReadOnly = true });
+var editor = new Editor { Text = "This is a read-only Editor", IsReadOnly = true });
 ```
 
 > [!NOTE]
@@ -116,13 +116,13 @@ var editor = new Editor { Text = "Enter text here", AutoSize = EditorAutoSizeOpt
 當使用者互動時，會顯示鍵盤[ `Editor` ](xref:Xamarin.Forms.Editor)可以透過程式設計方式設定[ `Keyboard` ](xref:Xamarin.Forms.InputView.Keyboard)屬性，其中一個的下列屬性[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)類別：
 
 - [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) – 用於 傳簡訊到和 emoji 所在有用的地方。
-- [`Default`](xref:Xamarin.Forms.Keyboard.Default) – 預設鍵盤。
-- [`Email`](xref:Xamarin.Forms.Keyboard.Email) – 用於輸入電子郵件地址時。
-- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) – 輸入數字時使用。
-- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) – 使用輸入文字，不含任何時[ `KeyboardFlags` ](xref:Xamarin.Forms.KeyboardFlags)指定。
-- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) – 使用輸入電話號碼時。
-- [`Text`](xref:Xamarin.Forms.Keyboard.Text) – 輸入文字時使用。
-- [`Url`](xref:Xamarin.Forms.Keyboard.Url) – 用於輸入檔案路徑 & 網址。
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default) - 預設鍵盤。
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email) - 輸入電子郵件地址時使用。
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) - 輸入數字時使用。
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) - 輸入文字時使用，不指定任何 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags)。
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) - 輸入電話號碼時使用。
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text) - 輸入文字時使用。
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url) - 用於輸入檔案路徑與網址。
 
 這可在 XAML，如下所示：
 
@@ -138,18 +138,18 @@ var editor = new Editor { Keyboard = Keyboard.Chat };
 
 每個鍵盤的範例可在我們[配方](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry)存放庫。
 
-[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)類別也有[ `Create` ](xref:Xamarin.Forms.Keyboard.Create*)可用來指定大小寫、 拼字檢查和建議的行為，以自訂鍵盤的 factory 方法。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 列舉值會指定為引數的方法，以自訂`Keyboard`傳回。 `KeyboardFlags`列舉型別包含下列值：
+[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)類別也有[ `Create` ](xref:Xamarin.Forms.Keyboard.Create*)可用來指定大小寫、 拼字檢查和建議的行為，以自訂鍵盤的 factory 方法。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 列舉值會被指定為方法的引數，並傳回自訂的 `Keyboard`。 `KeyboardFlags` 列舉包含下列值：
 
-- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) – 沒有功能新增至鍵盤。
-- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) – 指出將會自動大寫的每個輸入句子的第一個單字的第一個字母。
-- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) – 表示該拼字檢查將會執行上輸入的文字。
-- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) – 表示該文字自動完成，就會收到上輸入的文字。
-- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) – 指出將會自動大寫的每個單字的第一個字母。
-- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) – 指出將會自動大寫的每個字元。
-- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) – 指出將會發生任何自動的大小寫。
-- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) – 表示拼字檢查、 字組自動完成和句子大小寫，會發生在輸入的文字。
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) - 未新增任何功能至鍵盤。
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) - 表示每個輸入句子中第一個字的首字母會自動變成大寫。
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) - 表示將在輸入的文字上執行拼字檢查。
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) - 表示將在輸入的文字上提供文字自動完成。
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) - 表示每個字的第一個字母會自動變成大寫。
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) - 表示每個字元會自動變成大寫。
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) - 表示不會執行自動大小寫。
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) - 表示將在輸入的文字上將執行拼字檢查、文字自動完成和句子大小寫。
 
-下列 XAML 程式碼範例示範如何自訂預設值[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)提供字組自動完成，並充分利用每個輸入的字元：
+下列 XAML 程式碼範例示範如何自訂預設 [`Keyboard`](xref:Xamarin.Forms.Keyboard)，以提供文字自動完成，並將每個輸入的字元變成大寫：
 
 ```xaml
 <Editor>
