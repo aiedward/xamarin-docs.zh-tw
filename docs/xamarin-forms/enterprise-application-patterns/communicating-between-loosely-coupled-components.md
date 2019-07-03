@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: ddc33d28aad4e00c9259893c0f8e7a1ab40ee429
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9848d2b832990032bc7eb7f2e3a93c896457134c
+ms.sourcegitcommit: e95296f9e516975f5f32d822c323a71fd84007b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61381867"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67538689"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>在偶合程度低的元件之間通訊
 
@@ -43,7 +43,7 @@ EShopOnContainers 的行動裝置應用程式會使用[ `MessagingCenter` ](xref
 > [!NOTE]
 > 雖然[ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)類別允許鬆散偶合的類別之間的通訊，它不提供此問題只架構解決方案。 比方說，檢視模型和檢視之間的通訊也可藉由繫結引擎，以及透過屬性變更通知。 此外，兩個檢視模型之間的通訊也可藉由在巡覽期間傳遞資料。
 
-在 eShopOnContainers 的行動應用程式中[`MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)用來更新至另一個類別中發生動作的回應中的 UI 中。 因此，訊息會在 UI 執行緒上發行的訂閱者接收的相同執行緒上的訊息。
+在 eShopOnContainers 的行動應用程式中[ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)用來更新至另一個類別中發生動作的回應中的 UI 中。 因此，訊息會在 UI 執行緒上發行的訂閱者接收的相同執行緒上的訊息。
 
 > [!TIP]
 > 執行 UI 更新時，封送至 UI 執行緒。 如果需要更新 UI 從背景執行緒傳送訊息，則在叫用處理 「 訂閱者 」 中的 UI 執行緒上的訊息[ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))方法。

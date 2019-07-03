@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/25/2018
-ms.openlocfilehash: 9628821be5a979777614eb4f7ad8605087093ed3
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 6703e922a628504e0afdcf56533d74741131581a
+ms.sourcegitcommit: a6ba6ed086bcde4f52fb05f83c59c68e8aa5e436
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268849"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67540150"
 ---
 # <a name="ios-platform-features-overview"></a>iOS 平台功能概觀
 
@@ -22,8 +22,9 @@ ms.locfileid: "67268849"
 
 |  |  |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [iOS 12 簡介](~/ios/platform/introduction-to-ios12/index.md) | 本文件說明 iOS 12 功能可供使用時 buildingXamarin.iOS 應用程式。|
-| [iOS 11 簡介](~/ios/platform/introduction-to-ios11/index.md) | 本文件說明 iOS 11 和 Xcode 9，例如 ARKit、 核心 ML、 Core NFC、 拖曳和卸除、 MapKit、 PDFKit、 SiriKit 和願景的全新和更新功能。 它會連結至說明如何使用這些 featureswith Xamarin.iOS 的輔助線。 |
+| [IOS 13 簡介預覽](~/ios/platform/ios13/index.md) | 本文件說明 Xamarin.iOS 13 預覽。|
+| [iOS 12 簡介](~/ios/platform/introduction-to-ios12/index.md) | 建置 Xamarin.iOS 應用程式時，本文件將說明 iOS 12 功能可供使用。|
+| [iOS 11 簡介](~/ios/platform/introduction-to-ios11/index.md) | 本文件說明 iOS 11 和 Xcode 9，例如 ARKit、 核心 ML、 Core NFC、 拖曳和卸除、 MapKit、 PDFKit、 SiriKit 和願景的全新和更新功能。 它會連結到指南描述如何使用 Xamarin.iOS 中使用這些功能。 |
 | [iOS 10 簡介](~/ios/platform/introduction-to-ios10/index.md) | iOS 10 包含數個新的 Api 和服務，可讓您開發以新特性和功能的應用程式。 使用 iOS 10，應用程式會有新的功能，例如擴充對應、 訊息、 電話和 Siri。 本節說明各項，在 Xamarin.iOS 應用程式中善用這些功能的方法。 |
 | [iOS 9 簡介](~/ios/platform/introduction-to-ios9/index.md)   | 此區段會定義從 iOS 8，以及如何在 Xamarin.iOS 應用程式中使用這些功能升級時，在 iOS 9 中所做的變更。 |
 | [iOS 8 簡介](~/ios/platform/introduction-to-ios8.md)         | iOS 8 作業系統進行大量變更，從 iOS 7。 在這裡，我們示範它們是什麼，以及如何使用它們。 |
