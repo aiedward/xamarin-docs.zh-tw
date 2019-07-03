@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 11/04/2018
-ms.openlocfilehash: d8562cd74b661b5f72f373151b9aa0acc36f8477
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 7aa918a1aa70910cd05b17916e060e65ca5404bd
+ms.sourcegitcommit: 17376f0e54467d826b8928a11965fd0c879704f2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58869750"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131985"
 ---
 # <a name="get-started-with-xamarinessentials"></a>開始使用 Xamarin.Essentials
 
@@ -33,17 +33,17 @@ Xamarin.Essentials 是以 NuGet 套件形式提供，可讓您使用 Visual Stud
 
 1. 下載並安裝具有[適用於 Xamarin 的 Visual Studio 工具](~/get-started/installation/index.md)的 [Visual Studio](http://visualstudio.com)。
 
-2. 開啟現有專案，或建立使用 [Visual Studio C#] (Android、iPhone 與 iPad 或跨平台) 下的空白應用程式範本建立新專案。 **重要**：若新增到 UWP 專案，請確保在專案屬性中設定組建 16299 或更高版本。
+2. 開啟現有專案，或建立使用 [Visual Studio C#]  (Android、iPhone 與 iPad 或跨平台) 下的空白應用程式範本建立新專案。 **重要**：若新增到 UWP 專案，請確保在專案屬性中設定組建 16299 或更高版本。
 
-3. 將 **Xamarin.Essentials** NuGet 套件新增到每個專案：
+3. 將 [**Xamarin.Essentials**](https://www.nuget.org/packages/Xamarin.Essentials/) \(英文\) NuGet 套件新增到每個專案：
 
     # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-    在 [方案總管] 窗格中，以滑鼠右鍵按一下方案名稱並選取 [管理 NuGet 套件]。 搜尋 **Xamarin.Essentials** 並將套件安裝到 [全部] 專案，包括 Android、iOS、UWP 與 .NET Standard 程式庫。
+    在 [方案總管] 窗格中，以滑鼠右鍵按一下方案名稱並選取 [管理 NuGet 套件]  。 搜尋 **Xamarin.Essentials** 並將套件安裝到 [全部]  專案，包括 Android、iOS、UWP 與 .NET Standard 程式庫。
 
     # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-    在 [方案總管] 窗格中，以滑鼠右鍵按一下方案名稱並選取 [管理 NuGet 套件]。搜尋 **Xamarin.Essentials** 並將套件安裝到 [全部] 專案，包括 Android、iOS 與 .NET Standard 程式庫。
+    在 [方案總管] 窗格中，以滑鼠右鍵按一下方案名稱並選取 [管理 NuGet 套件]  。搜尋 **Xamarin.Essentials** 並將套件安裝到 [全部]  專案，包括 Android、iOS 與 .NET Standard 程式庫。
 
     -----
 

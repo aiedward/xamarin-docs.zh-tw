@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: 625a860469c82da6e6986b03b8c3e55503433e67
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: d09188373d11b33f3b3d78b92faa46bf754797f6
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926671"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268981"
 ---
 # <a name="implementing-a-hybridwebview"></a>實作 HybridWebView
 
@@ -161,7 +161,7 @@ public partial class HybridWebViewPage : ContentPage
 
 ![](hybridwebview-images/screenshots.png "每個平台上的 HybridWebView")
 
-`ViewRenderer` 類別會公開 `OnElementChanged` 方法，在建立 Xamarin.Forms 自訂控制項以轉譯對應的原生 Web 控制項時，便會呼叫此方法。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性分別代表轉譯器「過去」所附加的 Xamarin.Forms 項目，以及「現在」所附加的 Xamarin.Forms 項目。 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `HybridWebView` 執行個體的參考。
+`ViewRenderer` 類別會公開 `OnElementChanged` 方法，在建立 Xamarin.Forms 自訂控制項以轉譯對應的原生 Web 控制項時，便會呼叫此方法。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性分別代表轉譯器「過去」  所附加的 Xamarin.Forms 項目，以及「現在」  所附加的 Xamarin.Forms 項目。 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `HybridWebView` 執行個體的參考。
 
 在每個平台特定的轉譯器類別中，`OnElementChanged` 方法的覆寫版本是執行原生 Web 控制項具現化和自訂的位置。 您應該使用 `SetNativeControl` 方法來具現化原生 Web 控制項，而且此方法也會將控制項參考指派給 `Control` 屬性。 此外，您可透過 `Element` 屬性取得要轉譯的 Xamarin.Forms 控制項參考。
 
@@ -172,22 +172,24 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 {
   base.OnElementChanged (e);
 
-  if (Control == null) {
-    // Instantiate the native control and assign it to the Control property with
-    // the SetNativeControl method
-  }
-
   if (e.OldElement != null) {
     // Unsubscribe from event handlers and cleanup any resources
   }
 
   if (e.NewElement != null) {
+    if (Control == null) {
+      // Instantiate the native control and assign it to the Control property with
+      // the SetNativeControl method
+    }
     // Configure the control and subscribe to event handlers
   }
 }
 ```
 
-當 `Control` 屬性是 `null` 時，新的原生控制項只應具現化一次。 應該只在自訂控制項附加於新的 Xamarin.Forms 元素時，才設定控制項並訂閱事件處理常式。 同樣地，應該只在轉譯器附加到的元素變更時，才取消訂閱任何已訂閱的事件處理常式。 採用這個方法將有助於建立高效能的自訂轉譯器，避免發生記憶體流失。
+當 `Control` 屬性是 `null` 時，新的原生控制項只應具現化一次。  此外，應該只在自訂控制項附加於新的 Xamarin.Forms 元素時，才建立、設定控制項並訂閱事件處理常式。 同樣地，應該只在轉譯器附加到的元素變更時，才取消訂閱任何已訂閱的事件處理常式。 採用這個方法將有助於建立高效能的自訂轉譯器，避免發生記憶體流失。
+
+> [!IMPORTANT]
+> 只有當 `e.NewElement` 不是 `null` 時，才應呼叫 `SetNativeControl`方法。
 
 每個自訂轉譯器類別都裝飾了向 Xamarin.Forms 註冊轉譯器的 `ExportRenderer` 屬性。 此屬性接受兩個參數：正在轉譯的 Xamarin.Forms 自訂控制項類型名稱，以及自訂轉譯器的類型名稱。 屬性的 `assembly` 前置詞會指定套用至整個組件的屬性。
 
@@ -271,16 +273,6 @@ namespace CustomRenderer.iOS
         {
             base.OnElementChanged (e);
 
-            if (Control == null) {
-                userController = new WKUserContentController ();
-                var script = new WKUserScript (new NSString (JavaScriptFunction), WKUserScriptInjectionTime.AtDocumentEnd, false);
-                userController.AddUserScript (script);
-                userController.AddScriptMessageHandler (this, "invokeAction");
-
-                var config = new WKWebViewConfiguration { UserContentController = userController };
-                var webView = new WKWebView (Frame, config);
-                SetNativeControl (webView);
-            }
             if (e.OldElement != null) {
                 userController.RemoveAllUserScripts ();
                 userController.RemoveScriptMessageHandler ("invokeAction");
@@ -288,6 +280,16 @@ namespace CustomRenderer.iOS
                 hybridWebView.Cleanup ();
             }
             if (e.NewElement != null) {
+                if (Control == null) {
+                    userController = new WKUserContentController ();
+                    var script = new WKUserScript (new NSString (JavaScriptFunction), WKUserScriptInjectionTime.AtDocumentEnd, false);
+                    userController.AddUserScript (script);
+                    userController.AddScriptMessageHandler (this, "invokeAction");
+
+                    var config = new WKWebViewConfiguration { UserContentController = userController };
+                    var webView = new WKWebView (Frame, config);
+                    SetNativeControl (webView);
+                }
                 string fileName = Path.Combine (NSBundle.MainBundle.BundlePath, string.Format ("Content/{0}", Element.Uri));
                 Control.LoadRequest (new NSUrlRequest (new NSUrl (fileName, false)));
             }
@@ -305,14 +307,14 @@ namespace CustomRenderer.iOS
 
 執行此功能的程序如下：
 
-- 假設 `Control` 屬性是 `null`，則執行下列作業：
-  - 建立 [`WKUserContentController`](xref:WebKit.WKUserContentController) 執行個體，允許在網頁中張貼訊息及插入使用者指令碼。
-  - 建立 [`WKUserScript`](xref:WebKit.WKUserScript) 執行個體，在載入網頁後將 `invokeCSharpAction` JavaScript 函式插入至網頁。
-  - [`WKUserContentController.AddUserScript`](xref:WebKit.WKUserContentController.AddUserScript(WebKit.WKUserScript)) 方法將 [`WKUserScript`](xref:WebKit.WKUserScript) 執行個體新增至內容控制站。
-  - [`WKUserContentController.AddScriptMessageHandler`](xref:WebKit.WKUserContentController.AddScriptMessageHandler(WebKit.IWKScriptMessageHandler,System.String)) 方法會將名為 `invokeAction` 的指令碼訊息處理常式新增至 [`WKUserContentController`](xref:WebKit.WKUserContentController) 執行個體，而這會定義所有使用 `WKUserContentController` 執行個體之 Web 檢視中所有框架的 JavaScript 函式 `window.webkit.messageHandlers.invokeAction.postMessage(data)`。
-  - 建立 [`WKWebViewConfiguration`](xref:WebKit.WKWebViewConfiguration) 執行個體，並將 [`WKUserContentController`](xref:WebKit.WKUserContentController) 執行個體設為內容控制站。
-  - 具現化 [`WKWebView`](xref:WebKit.WKWebView) 控制項，並呼叫 `SetNativeControl` 方法將 `WKWebView` 控制項的參考指派給 `Control` 屬性。
 - 假設自訂轉譯器附加於新的 Xamarin.Forms 項目：
+  - 假設 `Control` 屬性是 `null`，則執行下列作業：
+    - 建立 [`WKUserContentController`](xref:WebKit.WKUserContentController) 執行個體，允許在網頁中張貼訊息及插入使用者指令碼。
+    - 建立 [`WKUserScript`](xref:WebKit.WKUserScript) 執行個體，在載入網頁後將 `invokeCSharpAction` JavaScript 函式插入至網頁。
+    - [`WKUserContentController.AddUserScript`](xref:WebKit.WKUserContentController.AddUserScript(WebKit.WKUserScript)) 方法將 [`WKUserScript`](xref:WebKit.WKUserScript) 執行個體新增至內容控制站。
+    - [`WKUserContentController.AddScriptMessageHandler`](xref:WebKit.WKUserContentController.AddScriptMessageHandler(WebKit.IWKScriptMessageHandler,System.String)) 方法會將名為 `invokeAction` 的指令碼訊息處理常式新增至 [`WKUserContentController`](xref:WebKit.WKUserContentController) 執行個體，而這會定義所有使用 `WKUserContentController` 執行個體之 Web 檢視中所有框架的 JavaScript 函式 `window.webkit.messageHandlers.invokeAction.postMessage(data)`。
+    - 建立 [`WKWebViewConfiguration`](xref:WebKit.WKWebViewConfiguration) 執行個體，並將 [`WKUserContentController`](xref:WebKit.WKUserContentController) 執行個體設為內容控制站。
+    - 具現化 [`WKWebView`](xref:WebKit.WKWebView) 控制項，並呼叫 `SetNativeControl` 方法將 `WKWebView` 控制項的參考指派給 `Control` 屬性。
   - [`WKWebView.LoadRequest`](xref:WebKit.WKWebView.LoadRequest(Foundation.NSUrlRequest)) 方法會載入 `HybridWebView.Uri` 屬性所指定的 HTML 檔案。 程式碼指定該檔案會儲存在專案的 `Content` 資料夾中。 一旦顯示網頁，即將 `invokeCSharpAction` JavaScript 函式插入至網頁。
 - 當轉譯器附加至的項目變更時：
   - 釋放資源。
@@ -352,13 +354,6 @@ namespace CustomRenderer.Droid
         {
             base.OnElementChanged(e);
 
-            if (Control == null)
-            {
-                var webView = new Android.Webkit.WebView(_context);
-                webView.Settings.JavaScriptEnabled = true;
-                webView.SetWebViewClient(new JavascriptWebViewClient($"javascript: {JavascriptFunction}"));
-                SetNativeControl(webView);
-            }
             if (e.OldElement != null)
             {
                 Control.RemoveJavascriptInterface("jsBridge");
@@ -367,6 +362,13 @@ namespace CustomRenderer.Droid
             }
             if (e.NewElement != null)
             {
+                if (Control == null)
+                {
+                    var webView = new Android.Webkit.WebView(_context);
+                    webView.Settings.JavaScriptEnabled = true;
+                    webView.SetWebViewClient(new JavascriptWebViewClient($"javascript: {JavascriptFunction}"));
+                    SetNativeControl(webView);
+                }
                 Control.AddJavascriptInterface(new JSBridge(this), "jsBridge");
                 Control.LoadUrl($"file:///android_asset/Content/{Element.Uri}");
             }
@@ -397,10 +399,10 @@ public class JavascriptWebViewClient : WebViewClient
 
 一旦使用者輸入其名稱並按一下 HTML `button` 項目，即會執行 `invokeCSharpAction` JavaScript 函式。 執行此功能的程序如下：
 
-- 假設 `Control` 屬性是 `null`，則執行下列作業：
-  - 建立原生 [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) 執行個體 (控制項中已啟用 JavaScript)，並將 `JavascriptWebViewClient` 執行個體設為 `WebViewClient` 的實作。
-  - 然後會呼叫 `SetNativeControl` 方法，將原生 [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) 控制項的參考指派給 `Control` 屬性。
 - 假設自訂轉譯器附加於新的 Xamarin.Forms 項目：
+  - 假設 `Control` 屬性是 `null`，則執行下列作業：
+    - 建立原生 [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) 執行個體 (控制項中已啟用 JavaScript)，並將 `JavascriptWebViewClient` 執行個體設為 `WebViewClient` 的實作。
+    - 然後會呼叫 `SetNativeControl` 方法，將原生 [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) 控制項的參考指派給 `Control` 屬性。
   - [`WebView.AddJavascriptInterface`](https://developer.xamarin.com/api/member/Android.Webkit.WebView.AddJavascriptInterface/p/Java.Lang.Object/System.String/) 方法會將新的 `JSBridge` 執行個體插入至 WebView JavaScript 內容的主框架，將它命名為 `jsBridge`。 以便從 JavaScript 存取 `JSBridge` 類別中的方法。
   - [`WebView.LoadUrl`](https://developer.xamarin.com/api/member/Android.Webkit.WebView.LoadUrl/p/System.String/) 方法會載入 `HybridWebView.Uri` 屬性所指定的 HTML 檔案。 程式碼指定該檔案會儲存在專案的 `Content` 資料夾中。
   - 在 `JavascriptWebViewClient` 類別中，`invokeCSharpAction` JavaScript 函式會在頁面載入完成後插入至網頁。
@@ -456,10 +458,6 @@ namespace CustomRenderer.UWP
         {
             base.OnElementChanged(e);
 
-            if (Control == null)
-            {
-                SetNativeControl(new Windows.UI.Xaml.Controls.WebView());
-            }
             if (e.OldElement != null)
             {
                 Control.NavigationCompleted -= OnWebViewNavigationCompleted;
@@ -467,6 +465,10 @@ namespace CustomRenderer.UWP
             }
             if (e.NewElement != null)
             {
+                if (Control == null)
+                {
+                    SetNativeControl(new Windows.UI.Xaml.Controls.WebView());
+                }
                 Control.NavigationCompleted += OnWebViewNavigationCompleted;
                 Control.ScriptNotify += OnWebViewScriptNotify;
                 Control.Source = new Uri(string.Format("ms-appx-web:///Content//{0}", Element.Uri));
@@ -494,9 +496,9 @@ namespace CustomRenderer.UWP
 
 執行此功能的程序如下：
 
-- 假設 `Control` 屬性是 `null`，則執行下列作業：
-  - 呼叫 `SetNativeControl` 方法來具現化新的原生 `WebView` 控制項，並將其參考指派給 `Control` 屬性。
 - 假設自訂轉譯器附加於新的 Xamarin.Forms 項目：
+  - 假設 `Control` 屬性是 `null`，則執行下列作業：
+    - 呼叫 `SetNativeControl` 方法來具現化新的原生 `WebView` 控制項，並將其參考指派給 `Control` 屬性。
   - 則會註冊 `NavigationCompleted` 和 `ScriptNotify` 事件的事件處理常式。 當原生 `WebView` 控制項已完成載入目前的內容或導覽失敗時，會引發 `NavigationCompleted` 事件。 當原生 `WebView` 控制項使用 JavaScript 將字串傳遞至應用程式時，會引發 `ScriptNotify` 事件。 網頁在傳遞 `string` 參數時呼叫 `window.external.notify`，藉以引發 `ScriptNotify` 事件。
   - `WebView.Source` 屬性設為 `HybridWebView.Uri` 屬性所指定之 HTML 檔案的 URI。 程式碼假設該檔案會儲存在專案的 `Content` 資料夾中。 一旦顯示網頁，就會引發 `NavigationCompleted` 事件並叫用 `OnWebViewNavigationCompleted` 方法。 然後使用 `WebView.InvokeScriptAsync` 方法將 `invokeCSharpAction` JavaScript 函式插入至網頁，假設導覽已順利完成。
 - 當轉譯器附加至的項目變更時：
