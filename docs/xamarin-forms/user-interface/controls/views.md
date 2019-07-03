@@ -6,13 +6,13 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/21/2019
-ms.openlocfilehash: 258468b836a4c1243b9123022ebbf1d55430321e
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.date: 06/11/2019
+ms.openlocfilehash: 6fbe1104d238929d0c6c6978a9145cd51d52cb6c
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740963"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67513081"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms 檢視
 
@@ -90,6 +90,13 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 |     |     |
 
 ## <a name="views-for-setting-values"></a>設定值的檢視
+
+### <a name="checkbox"></a>核取方塊
+
+|     |     |
+| --- | --- |
+| `CheckBox` 可讓使用者選取使用的是可以檢查或空的按鈕類型的布林值。 `IsChecked`屬性是狀態`CheckBox`，和`CheckedChanged`狀態變更時引發事件。<br /><br />API 文件 /[快速入門](~/xamarin-forms/user-interface/checkbox.md) / [範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/CheckBoxDemos) | [![核取方塊範例](views-images/CheckBox.png "核取方塊範例")](views-images/CheckBox-Large.png#lightbox "核取方塊範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxDemoPage.xaml) |
+|     |     |
 
 ### <a name="slider"></a>滑桿
 

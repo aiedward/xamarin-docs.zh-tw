@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/22/2019
-ms.openlocfilehash: f77b2346808f78e182edc59f9ea92d0a8a99344f
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 7aa9d298c2219dff60ca8ca1f917c72194ad21ca
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971025"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512682"
 ---
 # <a name="ios-platform-features-in-xamarinforms"></a>在 Xamarin.Forms 中的 iOS 平台功能
 
@@ -56,6 +56,7 @@ ms.locfileid: "65971025"
 
 下列平台特有的功能提供適用於 Xamarin.Forms [ `Application` ](xref:Xamarin.Forms.Application)在 iOS 上的類別：
 
+- 停用協助工具調整已命名的字型大小。 如需詳細資訊，請參閱 <<c0> [ 協助工具調整在 iOS 上名為字型大小](named-font-size-scaling.md)。
 - 啟用控制項的版面配置，並呈現在主執行緒上執行的更新。 如需詳細資訊，請參閱 <<c0> [ 主要在 iOS 上，執行緒控制更新](main-thread-updates-ui.md)。
 - 啟用[ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)捲動檢視來擷取，並分享捲動檢視中的移動瀏覽軌跡中。 如需詳細資訊，請參閱 <<c0> [ 在 iOS 上的同時移動瀏覽軌跡辨識](application-pan-gesture.md)。
 

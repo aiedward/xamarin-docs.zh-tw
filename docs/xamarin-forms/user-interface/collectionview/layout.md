@@ -6,13 +6,13 @@ ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: a64a54d763edc4f02383af686fc8e9386daad572
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.date: 07/01/2019
+ms.openlocfilehash: 786cea04718022847bba2ecffed8f377dd49bd8b
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005228"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512794"
 ---
 # <a name="xamarinforms-collectionview-layout"></a>Xamarin.Forms CollectionView 版面配置
 
@@ -47,9 +47,15 @@ ms.locfileid: "66005228"
 - `Vertical` 指出[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)加入項目時將會以垂直方式展開。
 - `Horizontal` 指出[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)加入項目時將會水平展開。
 
-[ `ListItemsLayout` ](xref:Xamarin.Forms.ListItemsLayout)類別繼承自[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout)類別，並定義靜態`VerticalList`和`HorizontalList`成員。 可用來建立垂直或水平清單中，分別設定了這些成員。 或者，`ListItemsLayout`可以建立物件，指定[ `ItemsLayoutOrientation` ](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員，做為引數。
+[ `ListItemsLayout` ](xref:Xamarin.Forms.ListItemsLayout)類別繼承自[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout)類別，並定義`ItemSpacing`類型的屬性， `double`，表示每個項目周圍的空白空間。 這個屬性的預設值為 0，而且其值必須一律是大於或等於 0。 `ListItemsLayout`類別也會定義靜態`Vertical`和`Horizontal`成員。 可用來建立垂直或水平清單中，分別設定了這些成員。 或者，`ListItemsLayout`可以建立物件，指定[ `ItemsLayoutOrientation` ](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員，做為引數。
 
-[ `GridItemsLayout` ](xref:Xamarin.Forms.GridItemsLayout)類別繼承自[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout)類別，並定義`Span`類型的屬性， `int`，表示要顯示的資料列或資料行數在方格中。 預設值`Span`屬性為 1，而且其值必須一律是大於或等於 1。
+[ `GridItemsLayout` ](xref:Xamarin.Forms.GridItemsLayout)類別繼承自[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout)類別，並定義下列屬性：
+
+- `VerticalItemSpacing`型別的`double`，表示每個項目周圍的垂直空白空間。 這個屬性的預設值為 0，而且其值必須一律是大於或等於 0。
+- `HorizontalItemSpacing`型別的`double`，表示每個項目周圍的水平空白空間。 這個屬性的預設值為 0，而且其值必須一律是大於或等於 0。
+- `Span`型別的`int`，表示資料行或在方格中顯示的資料列數目。 這個屬性的預設值為 1，而且其值必須一律是大於或等於 1。
+
+這些屬性都會受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)物件，這表示，屬性可以是資料繫結的目標。
 
 > [!NOTE]
 > [`CollectionView`](xref:Xamarin.Forms.CollectionView) 您可以使用原生的版面配置引擎來執行版面配置。
@@ -90,11 +96,11 @@ ms.locfileid: "66005228"
 </CollectionView>
 ```
 
-不過，基於完整性， [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以設定以垂直清單顯示其項目，藉由設定其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)靜態屬性`ListItemsLayout.VerticalList`成員：
+不過，基於完整性， [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以設定以垂直清單顯示其項目，藉由設定其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設`VerticalList`:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
-                ItemsLayout="{x:Static ListItemsLayout.VerticalList}">
+                ItemsLayout="VerticalList">
     ...
 </CollectionView>
 ```
@@ -120,7 +126,7 @@ ms.locfileid: "66005228"
 CollectionView collectionView = new CollectionView
 {
     ...
-    ItemsLayout = ListItemsLayout.VerticalList
+    ItemsLayout = ListItemsLayout.Vertical
 };
 ```
 
@@ -130,11 +136,11 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="horizontal-list"></a>水平清單
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 其項目水平清單顯示設定其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)靜態屬性`ListItemsLayout.HorizontalList`成員：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 其項目水平清單顯示設定其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設`HorizontalList`:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
-                ItemsLayout="{x:Static ListItemsLayout.HorizontalList}">
+                ItemsLayout="HorizontalList">
     <CollectionView.ItemTemplate>
         <DataTemplate>
             <Grid Padding="10">
@@ -188,7 +194,7 @@ CollectionView collectionView = new CollectionView
 CollectionView collectionView = new CollectionView
 {
     ...
-    ItemsLayout = ListItemsLayout.HorizontalList
+    ItemsLayout = ListItemsLayout.Horizontal
 };
 ```
 
@@ -308,6 +314,80 @@ CollectionView collectionView = new CollectionView
 
 [![CollectionView 水平格線版面配置，在 iOS 和 Android 上的螢幕擷取畫面](layout-images/horizontal-grid.png "CollectionView 水平格線版面配置")](layout-images/horizontal-grid-large.png#lightbox "CollectionView 水平格線版面配置")
 
+## <a name="item-spacing"></a>項目間距
+
+根據預設，每個項目[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)沒有其周圍的任何空白區域。 來變更此行為，請設定屬性上使用的項目配置`CollectionView`。
+
+當[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)設定其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設[ `ListItemsLayout` ](xref:Xamarin.Forms.ListItemsLayout)物件`ListItemsLayout.ItemSpacing`屬性可以設定為`double`值，表示每個項目周圍的空白空間：
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}">
+    <CollectionView.ItemsLayout>
+        <ListItemsLayout ItemSpacing="20">
+            <x:Arguments>
+                <ItemsLayoutOrientation>Vertical</ItemsLayoutOrientation>    
+            </x:Arguments>
+        </ListItemsLayout>
+    </CollectionView.ItemsLayout>
+    ...
+</CollectionView>
+```
+
+> [!NOTE]
+> `ListItemsLayout.ItemSpacing`屬性設有驗證回呼，以確保屬性的值一律是大於或等於 0。
+
+對等的 C# 程式碼是：
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    ...
+    ItemsLayout = new ListItemsLayout(ItemsLayoutOrientation.Vertical)
+    {
+        ItemSpacing = 20
+    }
+};
+```
+
+此程式碼會產生在垂直的單一資料行清單中，具有每個項目周圍的 20 個間距：
+
+[![螢幕擷取畫面，以在 iOS 和 Android 上的項目間距 collectionview během](layout-images/vertical-list-spacing.png "CollectionView 項目間距")](layout-images/vertical-list-spacing-large.png#lightbox "CollectionView 項目間距")
+
+當[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)設定其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設[ `GridItemsLayout` ](xref:Xamarin.Forms.GridItemsLayout)物件`GridItemsLayout.VerticalItemSpacing`和`GridItemsLayout.HorizontalItemSpacing`屬性可以是若要設定`double`代表每個項目周圍的空白空間垂直和水平的值：
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}">
+    <CollectionView.ItemsLayout>
+       <GridItemsLayout Orientation="Vertical"
+                        Span="2"
+                        VerticalItemSpacing="20"
+                        HorizontalItemSpacing="30" />
+    </CollectionView.ItemsLayout>
+    ...
+</CollectionView>
+```
+
+> [!NOTE]
+> `GridItemsLayout.VerticalItemSpacing`和`GridItemsLayout.HorizontalItemSpacing`屬性有設定，它們可確保屬性的值都大於或等於 0 的驗證回撥。
+
+對等的 C# 程式碼是：
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    ...
+    ItemsLayout = new GridItemsLayout(2, ItemsLayoutOrientation.Vertical)
+    {
+        VerticalItemSpacing = 20,
+        HorizontalItemSpacing = 30
+    }
+};
+```
+
+此程式碼會產生垂直的雙資料行格線，具有垂直間距設為每個項目，周圍的 20 和 30，每個項目周圍的水平間距：
+
+[![螢幕擷取畫面，以在 iOS 和 Android 上的項目間距 collectionview během](layout-images/vertical-grid-spacing.png "CollectionView 項目間距")](layout-images/vertical-grid-spacing-large.png#lightbox "CollectionView 項目間距")
+
 ## <a name="item-sizing"></a>項目調整大小
 
 根據預設，每個項目[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)個別測量和調整大小，前提是中的 UI 元素[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)未指定固定的大小。 此行為，可以變更，由[ `CollectionView.ItemSizingStrategy` ](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy)屬性值。 這個屬性值可以設定為其中一個[ `ItemSizingStrategy` ](xref:Xamarin.Forms.ItemSizingStrategy)列舉成員：
@@ -336,9 +416,6 @@ CollectionView collectionView = new CollectionView
     ItemSizingStrategy = ItemSizingStrategy.MeasureFirstItem
 };
 ```
-
-> [!NOTE]
-> 只有實作上的 iOS 的目前項目調整大小策略。
 
 ## <a name="dynamic-resizing-of-items"></a>動態調整大小的項目
 

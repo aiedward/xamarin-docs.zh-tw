@@ -6,13 +6,13 @@ ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/01/2018
-ms.openlocfilehash: 4ba4bd7528b635d099868f093268d2d83e44dae0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/12/2019
+ms.openlocfilehash: 671abb0f61a5582a99165aa16c6b99db2ee8b1ee
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61359878"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512872"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms 裝置類別
 
@@ -20,9 +20,7 @@ ms.locfileid: "61359878"
 
 [ `Device` ](xref:Xamarin.Forms.Device)類別包含多種屬性和方法，以協助開發人員自訂版面配置和每個平台為基礎的功能。
 
-除了方法與屬性，以在特定硬體類型和大小，目標程式碼`Device`類別包含[BeginInvokeOnMainThread](#Device_BeginInvokeOnMainThread)與 UI 互動的控制項從時應該使用的方法背景執行緒。
-
-<a name="providing-platform-values" />
+除了方法與屬性，以在特定硬體類型和大小，目標程式碼`Device`類別包含可用來從背景執行緒的 UI 控制項進行互動的方法。 如需詳細資訊，請參閱 <<c0> [ 從背景執行緒 UI 互動](#interact-with-the-ui-from-background-threads)。
 
 ## <a name="providing-platform-specific-values"></a>提供平台專屬值
 
@@ -68,8 +66,6 @@ layout.Margin = new Thickness(5, top, 5, 0);
 > 提供不正確`Platform`屬性中的值`On`類別不會導致錯誤。 相反地，程式碼會執行不含套用的平台特定值。
 
 或者，`OnPlatform`標記延伸可用於在 XAML 中自訂每個平台為基礎的 UI 外觀。 如需詳細資訊，請參閱 < [OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
-
-<a name="Device_Idiom" />
 
 ## <a name="deviceidiom"></a>Device.Idiom
 
@@ -135,8 +131,6 @@ this.FlowDirection = Device.FlowDirection;
 
 如需有關資料流程方向的詳細資訊，請參閱[由右至左當地語系化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)。
 
-<a name="Device_Styles" />
-
 ## <a name="devicestyles"></a>Device.Styles
 
 [ `Styles`屬性](~/xamarin-forms/user-interface/styles/index.md)包含內建樣式定義，可以套用至某些控制項 (例如`Label`)`Style`屬性。 可用的樣式如下：
@@ -147,8 +141,6 @@ this.FlowDirection = Device.FlowDirection;
 * ListItemTextStyle
 * SubtitleStyle
 * TitleStyle
-
-<a name="Device_GetNamedSize" />
 
 ## <a name="devicegetnamedsize"></a>Device.GetNamedSize
 
@@ -163,8 +155,6 @@ someLabel.FontSize = Device.OnPlatform (
 );
 ```
 
-<a name="Device_OpenUri" />
-
 ## <a name="deviceopenuri"></a>Device.OpenUri
 
 `OpenUri`方法可以用來觸發基礎平台，例如原生的網頁瀏覽器中開啟 URL 上的作業 (**Safari**在 iOS 上或**網際網路**在 Android 上)。
@@ -176,8 +166,6 @@ Device.OpenUri(new Uri("https://evolve.xamarin.com/"));
 [WebView 範例](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithWebview/WorkingWithWebview/WebAppPage.cs)包含使用範例`OpenUri`開啟 Url，並也會觸發撥打電話。
 
 [地圖範例](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/MapAppPage.cs)也會使用`Device.OpenUri`以顯示地圖與道路指引使用原生**對應**iOS 和 Android 上的應用程式。
-
-<a name="Device_StartTimer" />
 
 ## <a name="devicestarttimer"></a>Device.StartTimer
 
@@ -192,26 +180,31 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () => {
 
 如果內部計時器的程式碼互動的使用者介面 (例如設定的文字`Label`或顯示警示) 應該在`BeginInvokeOnMainThread`運算式 （請參閱下文）。
 
-<a name="Device_BeginInvokeOnMainThread" />
+## <a name="interact-with-the-ui-from-background-threads"></a>與從背景執行緒 UI 互動
 
-## <a name="devicebegininvokeonmainthread"></a>Device.BeginInvokeOnMainThread
+大部分的作業系統，包括 iOS、 Android 和通用 Windows 平台，會使用單一執行緒模型牽涉到的使用者介面的程式碼。 通常都會呼叫此執行緒*主執行緒*或*UI 執行緒*。 此模型的結果是所有的程式碼存取使用者介面項目必須在應用程式的主執行緒上執行。
 
-由背景執行緒，例如在計時器或非同步作業，例如 web 要求的完成處理常式中執行的程式碼時，應該永遠不會存取使用者介面項目。 需要更新使用者介面的任何背景程式碼應該包裝在內[ `BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))。 這相當於`InvokeOnMainThread`在 iOS 上，`RunOnUiThread`在 Android 上，和`Dispatcher.RunAsync`通用 Windows 平台上。
+有時，應用程式會使用背景執行緒來執行可能長時間執行的作業，例如從 web 服務擷取資料。 如果在背景執行緒上執行的程式碼需要存取使用者介面項目，必須在主執行緒上執行該程式碼。
 
-Xamarin.Forms 程式碼是：
+`Device`類別包含下列`static`方法可用來與使用者互動的介面從背景執行緒的項目：
+
+| 方法 | 引數 | Returns | 用途 |
+|---|---|---|---|
+| `BeginInvokeOnMainThread` | `Action` | `void` | 叫用`Action`主執行緒，而不會等到它完成。 |
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | 叫用`Func<T>`主執行緒，然後等候它完成。 |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | 叫用`Action`主執行緒，然後等候它完成。 |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | 叫用`Func<Task<T>>`主執行緒，然後等候它完成。 |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | 叫用`Func<Task>`主執行緒，然後等候它完成。 |
+| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | 傳回`SynchronizationContext`主執行緒。 |
+
+下列程式碼顯示使用範例`BeginInvokeOnMainThread`方法：
 
 ```csharp
-Device.BeginInvokeOnMainThread ( () => {
-  // interact with UI elements
+Device.BeginInvokeOnMainThread (() =>
+{
+    // interact with UI elements
 });
 ```
-
-請注意使用的方法`async/await`不需要使用`BeginInvokeOnMainThread`如果它們從主要 UI 執行緒執行。
-
-## <a name="summary"></a>總結
-
-Xamarin.Forms`Device`類別可讓功能和版面配置精細控制每個平台-即使在一般程式碼 （.NET Standard 程式庫專案或共用專案）。
-
 
 ## <a name="related-links"></a>相關連結
 

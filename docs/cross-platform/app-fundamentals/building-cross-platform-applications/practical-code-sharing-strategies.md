@@ -6,12 +6,12 @@ ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 9fbbe7d33428c1274d78ed882ced3985b8459072
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f374da4a541b81bb1bcf84f2b9342785551c15a4
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61275548"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512970"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>第 5 部分 - 實用的程式碼共用策略
 
@@ -422,7 +422,7 @@ public class DispatchAdapter : IDispatchOnUIThread {
 }
 ```
 
-使用 Xamarin.Forms 開發人員應該[ `Device.BeginInvokeOnMainThread` ](~/xamarin-forms/platform/device.md#Device_BeginInvokeOnMainThread)中常見的程式碼 （共用專案或 PCL）。
+使用 Xamarin.Forms 開發人員應該[ `Device.BeginInvokeOnMainThread` ](~/xamarin-forms/platform/device.md#interact-with-the-ui-from-background-threads)中常見的程式碼 （共用專案或 PCL）。
 
  <a name="Platform_and_Device_Capabilities_and_Degradation" />
 

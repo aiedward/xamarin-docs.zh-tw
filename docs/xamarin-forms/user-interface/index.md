@@ -6,13 +6,13 @@ ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/14/2018
-ms.openlocfilehash: 7c3a26854c65de260aa9b3c8ed00966749eb4d9c
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.date: 06/11/2019
+ms.openlocfilehash: c98e1cd9f4095e8310150ceeebd994af2c9b7f87
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66178081"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512924"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 使用者介面檢視
 
@@ -31,6 +31,10 @@ Xamarin.Forms 包含自己的動畫基礎結構直接建立簡單的動畫，同
 ## <a name="buttonbuttonmd"></a>[Button](button.md)
 
 `Button`回應點選或按一下，以指示應用程式執行特定工作。
+
+## <a name="checkboxcheckboxmd"></a>[CheckBox](checkbox.md)
+
+`CheckBox`一種按鈕，可以為已核取或空白。 若勾選核取方塊，其認為上。 當核取方塊是空的時它已被視為關閉。
 
 ## <a name="collectionviewcollectionviewindexmd"></a>[CollectionView](collectionview/index.md)
 
@@ -52,7 +56,7 @@ DataPages 提供 API，以快速且輕鬆地繫結資料來源至預先建立的
 
 `DatePicker`可讓使用者選取日期，以指定的範圍內。 它是使用特定的平台上執行應用程式所支援的日期選擇器所實作的。
 
-## <a name="display-pop-upspop-upsmd"></a>[顯示快顯](pop-ups.md)
+## <a name="display-pop-upspop-upsmd"></a>[顯示快顯視窗](pop-ups.md)
 
 Xamarin.Forms 提供兩個類似快顯視窗的使用者介面元素：警示和動作工作表。 這些介面項目可用來顯示對話方塊，詢問使用者簡單的問題和工作的逐步指引使用者。
 

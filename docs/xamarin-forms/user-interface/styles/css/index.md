@@ -7,13 +7,13 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/11/2019
-ms.openlocfilehash: bb13113a947fe6ff25f5e96e299828d1d93e20ac
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.date: 06/11/2019
+ms.openlocfilehash: 25410dc24d3cd0f9e31a72844052f8450177e9b4
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65927046"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512957"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用階層式樣式表 (CSS) 樣式設定 Xamarin.Forms 應用程式
 
@@ -378,7 +378,7 @@ Xamarin.Forms 所支援下列的 CSS 屬性 (在**值**資料行中，類型為_
 |`border-color`|`Button`, `Frame`, `ImageButton`|_色彩_ \| `initial`|`border-color: #9acd32;`|
 |`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_雙精度浮點數_ \| `initial` |`border-radius: 10;`|
 |`border-width`|`Button`、 `ImageButton`|_雙精度浮點數_ \| `initial` |`border-width: .5;`|
-|`color`|`ActivityIndicator`, `BoxView`, `Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_色彩_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
+|`color`|`ActivityIndicator`、`BoxView`、`Button`、`CheckBox`、`DatePicker`、`Editor`、`Entry`、`Label`、`Picker`、`ProgressBar`、`SearchBar`、`Switch`、`TimePicker`|_色彩_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
 |`column-gap`|`Grid`|_雙精度浮點數_ \| `initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`flex-direction`|`FlexLayout`| `column` \| `columnreverse` \| `row` \| `rowreverse` \| `row-reverse` \| `column-reverse` \| `initial`|`flex-direction: column-reverse;`|

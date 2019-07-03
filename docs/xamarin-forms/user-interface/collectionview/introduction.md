@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 889c78ea6849cdd094d34ed0cf74ceebd33ce51d
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.openlocfilehash: 456c83808ff685a8c2199cf80c96d63b9334675e
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005146"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512731"
 ---
 # <a name="xamarinforms-collectionview-introduction"></a>Xamarin.Forms CollectionView 簡介
 
@@ -31,7 +31,7 @@ Forms.SetFlags("CollectionView_Experimental");
 ```
 
 > [!IMPORTANT]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView) 只有在 iOS 和 Android 上使用。
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView) 適用於 iOS 和 Android，不過只是部分可用的通用 Windows 平台上。
 
 ## <a name="collectionview-and-listview-differences"></a>CollectionView 和 ListView 的差異
 

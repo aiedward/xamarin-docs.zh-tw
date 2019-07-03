@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/29/2018
-ms.openlocfilehash: 4cb3e13ebbe3d9e8aed153528a35ab16c92e2145
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 443c3cc742ceb919e64a781e18c5a97c342abb44
+ms.sourcegitcommit: 450106d5f05b4473bf7f5b9100b2eaf18c9110de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153314"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67522931"
 ---
 # <a name="how-do-i-resolve-a-pathtoolongexception-error"></a>如何解決 PathTooLongException 錯誤？
 
@@ -28,12 +28,12 @@ Xamarin.Android 專案中產生的路徑名稱可能相當長。
 
 ## <a name="fix"></a>修正
 
-開始使用 Xamarin.Android 8.0 `UseShortFileNames` MSBuild 屬性可以設定為規避這項錯誤。 當這個屬性設定為`True`(預設值是`False`)，建置程序會使用較短的路徑名稱來降低的產生可能性**PathTooLongException**。
+`UseShortFileNames` MSBuild 屬性設定為`True`預設規避這項錯誤。 當這個屬性設定為`True`，建置程序會使用較短的路徑名稱來降低的產生可能性**PathTooLongException**。
 例如，當`UseShortFileNames`設為`True`，上述的路徑已縮短為類似下列的路徑：
 
 **C:\\某些\\目錄\\解決方案\\專案\\obj\\偵錯\\lp\\1\\jl\\資產**
 
-若要設定這個屬性，將下列 MSBuild 屬性加入至專案 **.csproj**檔案：
+若要以手動方式設定這個屬性，將下列 MSBuild 屬性加入至專案 **.csproj**檔案：
 
 ```xml
 <PropertyGroup>
@@ -41,7 +41,7 @@ Xamarin.Android 專案中產生的路徑名稱可能相當長。
 </PropertyGroup>
 ```
 
-如果設定這個旗標不會修正**PathTooLongException**錯誤，另一種方法是指定[常見的中繼輸出根目錄](https://blogs.msdn.microsoft.com/kirillosenkov/2015/04/04/using-a-common-intermediate-and-output-directory-for-your-solution/)藉由設定方案中的專案`IntermediateOutputPath`中專案 **.csproj**檔案。 嘗試使用相對較短的路徑。 例如: 
+如果設定這個旗標不會修正**PathTooLongException**錯誤，另一種方法是指定[常見的中繼輸出根目錄](https://blogs.msdn.microsoft.com/kirillosenkov/2015/04/04/using-a-common-intermediate-and-output-directory-for-your-solution/)藉由設定方案中的專案`IntermediateOutputPath`中專案 **.csproj**檔案。 嘗試使用相對較短的路徑。 例如:
 
 ```xml
 <PropertyGroup>
