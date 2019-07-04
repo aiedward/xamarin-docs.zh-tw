@@ -1,18 +1,18 @@
 ---
 title: 開始使用 iOS 13、 iPadOS 13、 13、 tvOS 和 watchOS 6
-description: 本文件說明如何取得設定建置 iOS 13、 iPadOS 13、 13，tvOS 和 watchOS 6 應用程式與 Xamarin。 它討論如何下載 Xcode 11 和更新 Visual Studio for Mac 和 Visual Studio 2019。
+description: 本文件說明如何取得設定建置 iOS 13、 iPadOS 13、 13，tvOS 和 watchOS 6 應用程式與 Xamarin。 它討論如何下載 Xcode 11 和更新 Visual Studio for mac。
 ms.prod: xamarin
 ms.assetid: 97414545-85D2-433C-9246-63B6763F488A
 ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/01/2019
-ms.openlocfilehash: d2bb69394d8e9bfeb949a734291179a3e6f5a495
-ms.sourcegitcommit: a6ba6ed086bcde4f52fb05f83c59c68e8aa5e436
+ms.openlocfilehash: 554cddf5717401f912cab38c78a6af17659a0cf7
+ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 07/03/2019
-ms.locfileid: "67540434"
+ms.locfileid: "67558681"
 ---
 # <a name="get-started-with-ios-13"></a>開始使用 iOS 13
 
@@ -44,3 +44,4 @@ ms.locfileid: "67540434"
 ## <a name="related-links"></a>相關連結
 
 - [下載 Xcode](https://developer.apple.com/download/)
+- [Xamarin.iOS preview 版本資訊](/xamarin/ios/release-notes/12/12.99)
