@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: a667f952eead5bed8305f4c9f4201fd6235b883a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: ee8d6966b9eac2dad6a36c215bf7aa5bdf79a867
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35239967"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512989"
 ---
 # <a name="xamarinforms-control-templates"></a>Xamarin.Forms 控制項範本
 
@@ -22,7 +22,7 @@ _控制項範本可清楚區隔頁面及其內容的外觀，可讓建立的頁�
 
 Xamarin.Forms 控制項範本可以在執行階段輕鬆地設定和重新設定應用程式頁面的佈景主題。 本文提供控制項範本的簡介。
 
-## <a name="creating-a-controltemplatecreatingmd"></a>[建立 ControlTemplate](creating.md)
+## <a name="create-a-controltemplatecreatingmd"></a>[建立 ControlTemplate](creating.md)
 
 控制項範本可在應用程式層級或頁面層級定義。 本文示範如何建立和使用控制項範本。
 

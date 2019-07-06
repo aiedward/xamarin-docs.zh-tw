@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 8957a75ac693874bfbea738d17fbdd7e013c3199
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 4ea10a3cc4eca0708d1de1aee68bed74c960cbc2
+ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277158"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67559983"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -13,7 +13,7 @@ ms.locfileid: "67277158"
 1. 啟動 Visual Studio，然後建立名為 **StackLayoutTutorial** 的新空白 Xamarin.Forms 應用程式。 確定該應用程式使用 .NET Standard 作為共用程式碼機制。
 
     > [!IMPORTANT]
-    > 此教學課程中的 C# 和 XAML 程式碼片段會要求將解決方案命名為 **StackLayoutTutorial**。 當您從此教學課程將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
+    > 本教學課程中的 C# 和 XAML 程式碼片段會要求將解決方案命名為 **StackLayoutTutorial**。 當您從本教學課程將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
 
     如需有關所建立 .NET Standard 程式庫的詳細資訊，請參閱 [Xamarin.Forms 快速入門深度剖析](~/get-started/first-app/index.md)中的 [Xamarin.Forms 應用程式的結構](~/get-started/first-app/index.md)。
 
@@ -45,12 +45,12 @@ ms.locfileid: "67277158"
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-若要完成此教學課程，您應該具備 Visual Studio for Mac (最新版本)，並已安裝 iOS 和 Android 平台支援。 此外，您還需要 Xcode (最新版本)。 如需安裝 Xamarin 平台的詳細資訊，請參閱[安裝 Xamarin](~/get-started/installation/index.md)。
+若要完成本教學課程，您應該具備 Visual Studio for Mac (最新版本)，並已安裝 iOS 和 Android 平台支援。 此外，您還需要 Xcode (最新版本)。 如需安裝 Xamarin 平台的詳細資訊，請參閱[安裝 Xamarin](~/get-started/installation/index.md)。
 
 1. 啟動 Visual Studio for Mac，然後建立名為 **StackLayoutTutorial** 的新空白 Xamarin.Forms 應用程式。 確定該應用程式使用 .NET Standard 作為共用程式碼機制。
 
     > [!IMPORTANT]
-    > 此教學課程中的 C# 和 XAML 程式碼片段會要求將解決方案命名為 **StackLayoutTutorial**。 當您從此教學課程將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
+    > 本教學課程中的 C# 和 XAML 程式碼片段會要求將解決方案命名為 **StackLayoutTutorial**。 當您從本教學課程將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
 
     如需有關所建立 .NET Standard 程式庫的詳細資訊，請參閱 [Xamarin.Forms 快速入門深度剖析](~/get-started/first-app/index.md)中的 [Xamarin.Forms 應用程式的結構](~/get-started/first-app/index.md)。
 
@@ -79,3 +79,8 @@ ms.locfileid: "67277158"
     [![iOS 和 Android 上 StackLayout 中的子檢視螢幕擷取畫面](../images/create-stacklayout.png "包含標籤執行個體的 StackLayout")](../images/create-stacklayout-large.png#lightbox "包含標籤執行個體的 StackLayout")
 
     如需有關 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的詳細資訊，請參閱 [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)。
+
+-----
+
+> [!div class="nextstepaction"]
+> [我遇到問題](https://github.com/MicrosoftDocs/xamarin-docs/issues/new?title=StackLayout+Tutorial+Step+1+Feedback&template=tutorial_template.md)

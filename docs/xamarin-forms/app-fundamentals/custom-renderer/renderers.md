@@ -6,13 +6,13 @@ ms.assetid: A8909AE3-ED0E-4D24-BF96-B49E732E3B93
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/19/2018
-ms.openlocfilehash: 3db4b5f37eb58f71d3b522693ab2c75a7b5f8919
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.date: 06/11/2019
+ms.openlocfilehash: 014ee5ae312e2dc4e8cf662a790d5fbe4b880f0f
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970892"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67513032"
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>轉譯器基底類別與原生控制項
 
@@ -73,6 +73,7 @@ _每個 Xamarin.Forms 控制項都具有每個平台的轉譯器，這些轉譯�
 |[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)|ActivityIndicatorRenderer|UIActivityIndicator|進度列||進度列|
 |[`BoxView`](xref:Xamarin.Forms.BoxView)|BoxRenderer (iOS 和 Android)、BoxViewRenderer (UWP)|UIView|ViewGroup||矩形|
 |[`Button`](xref:Xamarin.Forms.Button)|ButtonRenderer|UIButton|按鈕|AppCompatButton|按鈕|
+|`CheckBox`|CheckBoxRenderer|UIButton||AppCompatCheckBox|核取方塊|
 |[`CollectionView`](xref:Xamarin.Forms.CollectionView)|CollectionViewRenderer|UICollectionView||RecyclerView||
 |[`DatePicker`](xref:Xamarin.Forms.DatePicker)|DatePickerRenderer|UITextField|EditText||DatePicker|
 |[`Editor`](xref:Xamarin.Forms.Editor)|EditorRenderer|UITextView|EditText||TextBox|

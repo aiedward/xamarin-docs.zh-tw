@@ -231,6 +231,7 @@
 #### [WebView 縮放](platform/android/webview-zoom-controls.md)
 ### [裝置類別](platform/device.md)
 ### [iOS](platform/ios/index.md)
+#### [具名字型大小的協助工具縮放](platform/ios/named-font-size-scaling.md)
 #### [儲存格背景色彩](platform/ios/cell-background-color.md)
 #### [Entry 游標色彩](platform/ios/entry-cursor-color.md)
 #### [Entry 字型大小](platform/ios/entry-font-size.md)
