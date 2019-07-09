@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: afebe7f491855844e18bf054d665cf8d54e8f353
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b8edc0141807ead60170ec78b3f6348723ab8e18
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61183869"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650131"
 ---
 # <a name="introduction-to-web-services"></a>Web 服務簡介
 
@@ -19,7 +19,7 @@ _本指南示範如何使用不同的 web 服務技術。涵蓋的主題包括�
 
 才能正確運作，許多行動應用程式會相依於雲端，並因此整合至行動應用程式的 web 服務是常見的案例。 Xamarin 平台支援使用不同的 web 服務技術，並包含內建和協力廠商的支援，來使用 Rest、 ASMX 和 Windows Communication Foundation (WCF) 服務。
 
-使用 Xamarin.Forms 的客戶，有完整的範例使用每個這些技術[Xamarin.Forms Web 服務](~/xamarin-forms/data-cloud/index.md)文件。
+使用 Xamarin.Forms 的客戶，有完整的範例使用每個這些技術[Xamarin.Forms Web 服務](~/xamarin-forms/data-cloud/index.yml)文件。
 
 > [!IMPORTANT]
 > 在 iOS 9 中，App Transport Security (ATS) 會強制執行安全的連線 （例如應用程式的後端伺服器） 的網際網路資源與應用程式，藉此防止意外洩漏機密資訊。
@@ -47,7 +47,7 @@ Representational State Transfer (REST) 是建置 web 服務的架構樣式。 RE
 
 ## <a name="consuming-rest-services"></a>使用 REST 服務
 
-有許多程式庫和類別，可以用來取用 REST 服務，以及下列小節將討論它們。 如需有關如何使用 REST 服務的詳細資訊，請參閱 <<c0> [ 使用 RESTful Web 服務](~/xamarin-forms/data-cloud/consuming/rest.md)。
+有許多程式庫和類別，可以用來取用 REST 服務，以及下列小節將討論它們。 如需有關如何使用 REST 服務的詳細資訊，請參閱 <<c0> [ 使用 RESTful Web 服務](~/xamarin-forms/data-cloud/web-services/rest.md)。
 
 ### <a name="httpclient"></a>HttpClient
 
@@ -55,7 +55,7 @@ Representational State Transfer (REST) 是建置 web 服務的架構樣式。 RE
 
 `HttpResponseMessage`類別代表進行 HTTP 要求後，從 web 服務收到的 HTTP 回應訊息。 它包含回應，包括狀態碼、 標頭和主體的相關資訊。 `HttpContent`類別可表示的 HTTP 內容和內容標頭，例如`Content-Type`和`Content-Encoding`。 可以讀取內容，使用任一`ReadAs`方法，例如`ReadAsStringAsync`和`ReadAsByteArrayAsync`，視資料的格式。
 
-如需詳細資訊`HttpClient`類別，請參閱[HTTPClient 物件的建立](~/xamarin-forms/data-cloud/consuming/rest.md)。
+如需詳細資訊`HttpClient`類別，請參閱[HTTPClient 物件的建立](~/xamarin-forms/data-cloud/web-services/rest.md)。
 
 <a name="Using_HTTPWebRequest" />
 
@@ -329,7 +329,7 @@ Task Parallel Library (TPL) 可以簡化使用 APM begin/end 方法組，藉由�
 
 如需 APM 的詳細資訊，請參閱[非同步程式設計模型](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)並[TPL 和傳統.NET Framework 非同步程式設計](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)MSDN 上。
 
-如需有關使用 ASMX 服務的詳細資訊，請參閱[取用 ASP.NET Web 服務 (ASMX)](~/xamarin-forms/data-cloud/consuming/asmx.md)。
+如需有關使用 ASMX 服務的詳細資訊，請參閱[取用 ASP.NET Web 服務 (ASMX)](~/xamarin-forms/data-cloud/web-services/asmx.md)。
 
 <a name="wcf" />
 
@@ -407,7 +407,7 @@ Task Parallel Library (TPL) 可以簡化使用 APM begin/end 方法組，藉由�
 
 如需 APM 的詳細資訊，請參閱[非同步程式設計模型](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)並[TPL 和傳統.NET Framework 非同步程式設計](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)MSDN 上。
 
-如需有關如何使用 WCF 服務的詳細資訊，請參閱 <<c0> [ 使用 Windows Communication Foundation (WCF) Web 服務](~/xamarin-forms/data-cloud/consuming/wcf.md)。
+如需有關如何使用 WCF 服務的詳細資訊，請參閱 <<c0> [ 使用 Windows Communication Foundation (WCF) Web 服務](~/xamarin-forms/data-cloud/web-services/wcf.md)。
 
 <a name="Calling_a_WCF_Service_with_Transport_Security" />
 
@@ -445,6 +445,6 @@ client.ClientCredentials.UserName.Password = @"mrsnuggles";
 
 ## <a name="related-links"></a>相關連結
 
-- [在 Xamarin.Forms 中的 web 服務](~/xamarin-forms/data-cloud/index.md)
+- [在 Xamarin.Forms 中的 web 服務](~/xamarin-forms/data-cloud/index.yml)
 - [ServiceModel Metadata Utility Tool (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
 - [BasicHttpBinding](https://msdn.microsoft.com/library/system.servicemodel.basichttpbinding.aspx)

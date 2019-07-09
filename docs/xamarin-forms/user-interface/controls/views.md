@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: 6fbe1104d238929d0c6c6978a9145cd51d52cb6c
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: 4d0fc5c4ee3947de74a62e8c42fedb8aeedbfdd9
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67513081"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650620"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms 檢視
 
@@ -116,7 +116,7 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 |     |     |
 | --- | --- |
-| [`Switch`](xref:Xamarin.Forms.Switch) 使用 on/off 開關，以允許使用者選取的布林值的格式。 [ `IsToggled` ](xref:Xamarin.Forms.Switch.IsToggled)屬性是交換器的狀態，而[ `Toggled` ](xref:Xamarin.Forms.Switch.Toggled)狀態變更時引發事件。<br /><br />[API 文件](xref:Xamarin.Forms.Switch) | [![切換範例](views-images/Switch.png "切換範例")](views-images/Switch-Large.png#lightbox "切換範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) |
+| [`Switch`](xref:Xamarin.Forms.Switch) 使用 on/off 開關，以允許使用者選取的布林值的格式。 [ `IsToggled` ](xref:Xamarin.Forms.Switch.IsToggled)屬性是交換器的狀態，而[ `Toggled` ](xref:Xamarin.Forms.Switch.Toggled)狀態變更時引發事件。<br /><br />[API 文件](xref:Xamarin.Forms.Switch) / [指南](~/xamarin-forms/user-interface/switch.md) / [範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/SwitchDemos) | [![切換範例](views-images/Switch.png "切換範例")](views-images/Switch-Large.png#lightbox "切換範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) |
 |     |     |
 
 ### <a name="datepicker"></a>DatePicker

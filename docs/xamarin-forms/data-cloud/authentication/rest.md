@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2018
-ms.openlocfilehash: d3f07a72ee26d6be4fafa72137dc9b6c3a724e00
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bf334c7fde8433b7bbe45c8caaf962705c39320d
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61330641"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650392"
 ---
-# <a name="authenticating-a-restful-web-service"></a>驗證的 RESTful Web 服務
+# <a name="authenticate-a-restful-web-service"></a>驗證的 RESTful Web 服務
 
 _HTTP 支援使用數種驗證機制，來控制資源存取權。基本驗證會提供資源的存取權的用戶端具有正確的認證。這篇文章會示範如何使用基本驗證保護 RESTful web 服務資源的存取權。_
 
@@ -86,5 +86,5 @@ REST 服務應該裝飾具有每個動作`[BasicAuthentication]`屬性。 這個
 
 ## <a name="related-links"></a>相關連結
 
-- [使用 RESTful web 服務](~/xamarin-forms/data-cloud/consuming/rest.md)
+- [使用 RESTful web 服務](~/xamarin-forms/data-cloud/web-services/rest.md)
 - [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)

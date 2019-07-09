@@ -6,12 +6,12 @@ ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: lobrien
 ms.author: laobri
 ms.date: 07/19/2017
-ms.openlocfilehash: 44e45d38ecd98be6f75c619125f9c14ce707b251
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 48dd2e1f2f5dd9ffdad0b726c5066a9a968d2396
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61207374"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650542"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>使用 Xamarin 的連續整合簡介
 
@@ -19,7 +19,7 @@ _持續整合是軟體工程實務，自動化的組建會編譯並選擇性地�
 
 通常會以平行方式運作的開發人員的軟體專案上。 在某些時候，就必須將所有這些整合成一個工作的平行資料流將構成最終產品程式碼基底。 在軟體開發的初期，這項整合已執行的專案，是既困難又有風險的程序的結尾。
 
-持續整合 (CI)，以避免這種複雜性每位開發人員的變更合併到持續為基礎的通用程式碼基底，通常在任何開發人員簽入只要變更專案的共用程式碼存放庫。 每次簽入時觸發自動化的組建並執行自動化的測試，以確認新引入的程式碼沒有破壞任何現有的程式碼。  如此一來，CI 會立即呈現錯誤和問題，並確保，所有小組成員會都持續處於最新狀態，與其他每個工作。 這會導致凝聚力與穩定程式碼基底。
+持續整合 (CI)，以避免這種複雜性每位開發人員的變更合併到持續為基礎的通用程式碼基底，通常在任何開發人員簽入只要變更專案的共用程式碼存放庫。 每次簽入時觸發自動化的組建並執行自動化的測試，以確認新引入的程式碼沒有破壞任何現有的程式碼。  如此一來，CI 會立即呈現錯誤和問題，並確保所有小組成員都保持在最新的其他人的工作。 這會導致凝聚力與穩定程式碼基底。
 
 持續整合系統有兩個主要部分：
 
@@ -36,7 +36,7 @@ _持續整合是軟體工程實務，自動化的組建會編譯並選擇性地�
 
 行動裝置應用程式導入獨特的挑戰，如持續整合。 應用程式可能需要如 GPS 或相機才可用在實體裝置上的感應器。 此外，模擬器只可約略估算的硬體和可能隱藏或遮蔽的問題。 總而言之，就必須測試實際的硬體，確信它是真正可供客戶使用行動應用程式。
 
-[App Center 測試](https://docs.microsoft.com/appcenter/test-cloud)測試直接在數百個實體裝置上的應用程式，以解決此特定問題。 開發人員撰寫自動化的接受測試，以允許進行功能強大的 UI 測試。 這些測試上傳到 App Center 之後, 在 CI 伺服器可以執行它們自動 CI 程序的一部分如下圖所示：
+[App Center 測試](https://docs.microsoft.com/appcenter/test-cloud)測試直接在數百個實體裝置上的應用程式，以解決此特定問題。 開發人員撰寫自動化接受度測試，以允許進行功能強大的 UI 測試。 這些測試上傳到 App Center 之後, 在 CI 伺服器可以執行它們自動 CI 程序的一部分如下圖所示：
 
 [![](intro-to-ci-images/intro02-small.png "這些測試上傳到 App Center 之後, 在 CI 伺服器可以自動執行 CI 程序的一部分，在此圖中所示")](intro-to-ci-images/intro02.png#lightbox)
 
@@ -50,7 +50,7 @@ _持續整合是軟體工程實務，自動化的組建會編譯並選擇性地�
 
 [Azure DevOps](https://azure.microsoft.com/services/devops/)並[Team Foundation Server](https://visualstudio.microsoft.com/tfs/) (TFS) 是 Microsoft 的共同作業工具進行持續整合組建服務、 追蹤工作、 agile 規劃和報告工具和版本控制。 使用版本控制，Azure DevOps 和 TFS 能與它自己的系統 （Team Foundation 版本控制或 TFVC） 或裝載於 GitHub 上的專案。
 
-- Visual Studio Team Services 提供透過雲端服務。 它的主要優點是它不需要專用的硬體或基礎結構，並可從任何地方透過網頁瀏覽器和熱門的開發工具如 Visual Studio 中，因此很適合在地理上的小組散發。 它是免費的五個開發人員的小組或更少之後可以購買哪些額外的授權，以容納團隊規模增大。
+- Azure DevOps 提供透過雲端服務。 其主要優點是它不需要專用的硬體或基礎結構，並可從任何地方透過網頁瀏覽器和熱門的開發工具如 Visual Studio 中，因此很適合在地理區域分散的小組. 它是免費的五個開發人員的小組或更少之後可以購買哪些額外的授權，以容納團隊規模增大。
 - TFS 是專為在內部部署 Windows 伺服器，並透過區域網路或 VPN 連線到該網路存取。 您完整控制組建伺服器的組態和可以安裝任何其他軟體或服務所需其主要優點。 TFS 有免費的入門級 Express 版為小型團隊。
 
 TFS 和 Azure DevOps 與 Visual Studio 緊密整合，並讓開發人員執行許多版本控制和 CI 工作內的單一 IDE。 也可以使用 Team Explorer Everywhere 適用於 Eclipse 外掛程式 （如下所示）。 Visual studio for Mac[可以使用 TFVC 的預覽](/visualstudio/mac/tf-version-control/)。
@@ -61,15 +61,15 @@ Visual Studio、 Azure DevOps 和 Team Foundation Server，請參閱所有的應
 
 #### <a name="team-explorer-everywhere"></a>Team Explorer Everywhere
 
-[Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/) Team Foundation Server 和 Visual Studio Team Services 的威力帶入 Visual Studio 之外進行開發的小組。 它可讓開發人員從 Eclipse 或跨平台命令列用戶端連線到內部部署或雲端中的 team 專案適用於 OS X 和 Linux。 提供完整的 Team Explorer Everywhere 版本控制 （包括 Git），以存取工作項目，，和建置適用於非 Windows 平台的功能。
+[Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/)帶入 Visual Studio 之外進行開發的小組的 Team Foundation Server 和 Azure DevOps 的能力。 它可讓開發人員從 Eclipse 或跨平台命令列用戶端連線到內部部署或雲端中的 team 專案適用於 OS X 和 Linux。 提供完整的 Team Explorer Everywhere 版本控制 （包括 Git），以存取工作項目，，和建置適用於非 Windows 平台的功能。
 
 #### <a name="git"></a>Git
 
 [Git](http://git-scm.com)是熱門的開放原始碼版本控制的解決方案，來管理 Linux 核心的原始程式碼的原始開發。 它是非常快速且彈性的系統常用的各種規模的軟體專案。 它輕鬆地調整不佳的網際網路存取的單一開發人員從大型橫跨全球各地的小組。 Git 也非常可以輕易建立分支，其中又可以鼓勵開發風險降到最低的平行資料流。
 
-能完全是透過網頁瀏覽器或 Git [GUI 用戶端](http://git-scm.com/downloads/guis)Linux、 Mac OSX 和 Windows 上執行。 它是免費的公用存放庫;私用存放庫需要[付費方案](https://github.com/pricing)。
+Git 能完全是透過網頁瀏覽器，或[GUI 用戶端](http://git-scm.com/downloads/guis)Linux、 Mac OSX 和 Windows 上執行。 它是免費的公用存放庫;私用存放庫需要[付費方案](https://github.com/pricing)。
 
-最新版的 Visual Studio for Windows 和 Mac 提供適用於 Git 的原生支援。 Microsoft 提供[可下載的延伸模組適用於 Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)針對較舊版的 Visual Studio。 如先前所述，Visual Studio Team Services 和 TFS 可以使用 Git 進行版本控制，而非 TFVC。
+最新版的 Visual Studio for Windows 和 Mac 提供適用於 Git 的原生支援。 Microsoft 提供[可下載的延伸模組適用於 Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)針對較舊版的 Visual Studio。 如先前所述，Azure DevOps 和 TFS 可以使用 Git 進行版本控制，而非 TFVC。
 
 #### <a name="subversion"></a>Subversion
 
@@ -80,15 +80,15 @@ Visual Studio、 Azure DevOps 和 Team Foundation Server，請參閱所有的應
 設定連續整合環境表示結合組建服務的版本控制系統。  對於後者，兩個最常見的是：
 
 - [Azure 的管線](https://docs.microsoft.com/azure/devops/pipelines/)是 Azure DevOps 和 TFS 的建置系統。 緊密整合以 Visual Studio 中，觸發程序的開發人員方便一邊建置，它能自動執行測試，並查看結果。
-- Jenkins 是開放原始碼 CI 伺服器的外掛程式，以支援各種軟體開發的豐富生態系統。 它會針對 Windows，Mac OS X Jenkins 未與任何特定的 IDE 整合。 相反地，它是設定，並透過 web 介面管理。 Jenkins CI 也很容易安裝及設定讓小型團隊，極具吸引力的。
+- Jenkins 是外掛程式的豐富的生態系統，以支援各種軟體開發的開放原始碼 CI 伺服器。 它會針對 Windows，Mac OS X Jenkins 未與任何特定的 IDE 整合。 相反地，它是設定，並透過 web 介面管理。 Jenkins CI 也很容易安裝及設定讓小型團隊，極具吸引力的。
 
 您可以使用 TFS/Azure DevOps 本身，或您可以使用 Jenkins 搭配 TFS/Azure DevOps 或 Git，如下列各節中所述。
 
-#### <a name="visual-studio-team-services-and-team-foundation-server"></a>Visual Studio Team Services 和 Team Foundation Server
+#### <a name="azure-devops-and-team-foundation-server"></a>Azure DevOps 和 Team Foundation Server
 
-如所述，Visual Studio Team Services 和 Team Foundation Server 提供兩個版本控制和建置服務。 組建服務一律會需要為每個目標平台的 Xamarin 商務或企業授權。
+如所述，Azure DevOps 和 Team Foundation Server 提供兩個版本控制和建置服務。 組建服務一律會需要為每個目標平台的 Xamarin 商務或企業授權。
 
-使用 Visual Studio Team Services，您會建立每個目標平台的個別組建定義，並輸入那里適當的授權。 一旦設定，Azure DevOps 會執行建置，並在雲端中測試。 請參閱[Azure 管線](https://docs.microsoft.com/azure/devops/pipelines/)如需詳細資訊。
+Azure devops，您會建立每個目標平台的個別組建定義，並輸入那里適當的授權。 一旦設定，Azure DevOps 會執行建置，並在雲端中測試。 請參閱[Azure 管線](https://docs.microsoft.com/azure/devops/pipelines/)如需詳細資訊。
 
 與 Team Foundation Server，您可以設定組建電腦，如下所示為特定的目標平台：
 
@@ -99,19 +99,19 @@ Visual Studio、 Azure DevOps 和 Team Foundation Server，請參閱所有的應
 
 [![](intro-to-ci-images/intro03-small.png "此圖說明此拓撲")](intro-to-ci-images/intro03.png#lightbox)
 
-它也可將本機的 TFS 伺服器連結至專案，讓 Azure DevOps 建置會委派給本機伺服器的 Visual Studio Team Services。 如需詳細資訊，請參閱 <<c0> [ 建置和發行代理程式](https://docs.microsoft.com/azure/devops/pipelines/agents/agents/)。
+它也可在本機的 TFS 伺服器連結至 Azure DevOps 專案，以便 Azure DevOps 的組建會委派到本機伺服器。 如需詳細資訊，請參閱 <<c0> [ 建置和發行代理程式](https://docs.microsoft.com/azure/devops/pipelines/agents/agents/)。
 
-#### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services 與 Jenkins
+#### <a name="azure-devops-and-jenkins"></a>Azure DevOps 與 Jenkins
 
-如果您使用 Jenkins 來建置您的應用程式時，您可以將您的程式碼儲存在 Visual Studio Team Services 或 Team Foundation Server，並繼續使用 Jenkins CI 組建的。 當您將程式碼推送至 team 專案的 Git 存放庫，或是當您程式碼簽入 TFVC，您可以觸發 Jenkins 組建。 如需詳細資訊，請參閱 < [Jenkins 與 Azure DevOps](https://docs.microsoft.com/azure/devops/service-hooks/services/jenkins)。
+如果您使用 Jenkins 來建置您的應用程式時，您可以將您的程式碼儲存在 Azure DevOps 或 Team Foundation Server，並繼續使用 Jenkins CI 組建的。 當您將程式碼推送至 team 專案的 Git 存放庫，或是當您程式碼簽入 TFVC，您可以觸發 Jenkins 組建。 如需詳細資訊，請參閱 < [Jenkins 與 Azure DevOps](https://docs.microsoft.com/azure/devops/service-hooks/services/jenkins)。
 
-[![](intro-to-ci-images/intro04-small.png "如果您使用 Jenkins 來建置您的應用程式時，您可以在 Visual Studio Team Services 或 Team Foundation Server 中儲存您的程式碼，並繼續使用 Jenkins CI 組建")](intro-to-ci-images/intro04.png#lightbox)
+[![](intro-to-ci-images/intro04-small.png "如果您使用 Jenkins 來建置您的應用程式時，您可以將您的程式碼儲存在 Azure DevOps 或 Team Foundation Server，並繼續使用 Jenkins CI 組建")](intro-to-ci-images/intro04.png#lightbox)
 
 #### <a name="git-and-jenkins"></a>Git 和 Jenkins
 
-另一個常見的 CI 環境可以完全是 OS X 的基礎。 此案例牽涉到使用 Git 的原始程式碼控制和 Jenkins 組建伺服器。 這兩種電腦上執行單一 Mac OS X 使用 Visual Studio for Mac 安裝。 這是非常類似於 Visual Studio Team Services + Jenkins 環境上一節所述：
+另一個常見的 CI 環境可以完全是 OS X 的基礎。 此案例牽涉到使用 Git 的原始程式碼控制和 Jenkins 組建伺服器。 這兩種電腦上執行單一 Mac OS X 使用 Visual Studio for Mac 安裝。 這是非常類似於 Azure DevOps + Jenkins 環境上一節所述：
 
-[![](intro-to-ci-images/intro05-small.png "這是非常類似於 Visual Studio Team Services + 上一節中所討論的 Jenkins 環境")](intro-to-ci-images/intro05.png#lightbox)
+[![](intro-to-ci-images/intro05-small.png "這是非常類似於 Azure DevOps + 上一節中所討論的 Jenkins 環境")](intro-to-ci-images/intro05.png#lightbox)
 
 > [!IMPORTANT]
 > **Jenkins 已[Microsoft 不支援](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md)。**

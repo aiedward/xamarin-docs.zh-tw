@@ -1,5 +1,5 @@
 ---
-title: 使用身分識別提供者驗證使用者
+title: AuthenticateUsers 身分識別提供者
 description: 這篇文章說明如何使用 Xamarin.Auth 管理驗證程序，在 Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: D44745D5-77BB-4596-9B8C-EC75C259157C
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
-ms.openlocfilehash: 786f1503fcc0cc07f76a7cdc55731d341607429f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 006e403b50a452265a40a0e95d17769fa0446a1a
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61331093"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650407"
 ---
-# <a name="authenticating-users-with-an-identity-provider"></a>使用身分識別提供者驗證使用者
+# <a name="authenticate-users-with-an-identity-provider"></a>驗證與身分識別提供者的使用者
 
 [![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/OAuthNativeFlow/)
 

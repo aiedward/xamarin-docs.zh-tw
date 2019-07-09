@@ -1,27 +1,27 @@
 ---
 title: 使用 Razor 範本建置 HTML 檢視
-description: " 使用全螢幕網頁來呈現 HTML，可以是簡單且有效的方式來呈現複雜的格式，跨平台的方式，尤其是如果您已經有 HTML、 Javascript 和 CSS 從網站專案。"
+description: " 使用全螢幕網頁來呈現 HTML，可以是簡單且有效的方式來呈現複雜的格式，跨平台的方式，尤其是如果您已經有 HTML、 JavaScript 和 CSS 從網站專案。"
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: asb3993
 ms.author: amburns
 ms.date: 07/24/2018
-ms.openlocfilehash: 7e569aaddef912d9534e98f2f987ad5dfca8a5a6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 539f59b9835cab6281327bcd1a37482ef82b62cc
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61167946"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650182"
 ---
 # <a name="building-html-views-using-razor-templates"></a>使用 Razor 範本建置 HTML 檢視
 
 在行動裝置開發世界中詞彙 「 混合式應用程式 」 通常是指託管的 web 檢視器控制項內的 HTML 網頁呈現部分 （或所有） 其畫面的應用程式。
 
-有某些開發環境，可讓您建置行動應用程式完全以 HTML 和 Javascript，但這些應用程式可能會受到影響的效能問題時嘗試完成複雜的處理或 UI 效果，而且是也限制在平台他們可以存取的功能。
+有某些開發環境，可讓您建置行動應用程式完全以 HTML 和 JavaScript，但這些應用程式可能會受到影響的效能問題時嘗試完成複雜的處理或 UI 效果，而且是也限制在平台他們可以存取的功能。
 
-Xamarin 會提供最佳的兩者的優點，尤其是當使用 Razor HTML 範本化引擎。 使用 Xamarin，您會有彈性地建置跨平台樣板化 HTML 檢視，使用 Javascript 和 CSS，但也有完整存取基礎平台 Api 和使用 C# 的快速處理。
+Xamarin 會提供最佳的兩者的優點，尤其是當使用 Razor HTML 範本化引擎。 您可以在使用 Xamarin 建置跨平台樣板化 HTML 檢視，使用 JavaScript 和 CSS，但是也有完整存取基礎平台 Api，而且快速處理使用彈性C#。
 
-本文件說明如何使用的 Razor 範本化引擎建置可用於使用 Xamarin 的行動平台的 HTML + Javascript + CSS 檢視。
+本文件說明如何使用 Razor 範本化引擎來建置可用於使用 Xamarin 的行動平台的 HTML + JavaScript + CSS 檢視。
 
 ## <a name="using-web-views-programmatically"></a>以程式設計方式使用 Web 檢視
 
@@ -51,7 +51,7 @@ webView.LoadHtmlString(html, NSBundle.MainBundle.BundleUrl);
 // webView is declared in an AXML layout file
 var webView = FindViewById<WebView> (Resource.Id.webView);
 
-// enable Javascript execution in your html view so you can provide "alerts" and other js
+// enable JavaScript execution in your html view so you can provide "alerts" and other js
 webView.SetWebChromeClient(new WebChromeClient());
 
 var html = "<html><h1>Hello</h1><p>World</p></html>";
@@ -104,7 +104,7 @@ webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8"
 
  ![Android 專案的建置動作：AndroidAsset](images/image4_250x71.png)
 
-### <a name="calling-c-from-html-and-javascript"></a>從 HTML 和 Javascript 呼叫 C#
+### <a name="calling-c-from-html-and-javascript"></a>呼叫C#從 HTML 和 JavaScript
 
 Html 網頁載入網頁檢視時，它會將連結和表單如果從伺服器載入網頁的一樣。 這表示，如果使用者按一下連結或送出表單 web 檢視會嘗試瀏覽至指定的目標。
 
@@ -127,7 +127,7 @@ Html 網頁載入網頁檢視時，它會將連結和表單如果從伺服器載
 <form method="get" action="somepage.html"></form>
 ```
 
-您不打算裝載 web 伺服器上的用戶端。不過，您可以使用相同的伺服器通訊技術運用在現今的回應式設計模式透過 HTTP GET 時，呼叫服務，並發出 Javascript 以非同步方式處理回應 （或呼叫的 Javascript 已裝載在 web 檢視中）。 這可讓您輕鬆地將資料從 HTML 傳遞回處理之後顯示結果傳回 HTML 網頁的 C# 程式碼。
+您不打算裝載 web 伺服器上的用戶端。不過，您可以使用相同的伺服器通訊技術運用在現今的回應式設計模式透過 HTTP GET 時，呼叫服務，並發出 JavaScript 以非同步方式處理回應 （或呼叫的 JavaScript 已裝載在 web 檢視中）。 這可讓您輕鬆地將資料從 HTML 傳遞回處理之後顯示結果傳回 HTML 網頁的 C# 程式碼。
 
 IOS 和 Android 提供機制來攔截這些巡覽事件，讓應用程式的程式碼可以回應 （如有必要） 的應用程式程式碼。 這項功能，請務必要建置混合式應用程式，因為它可讓 web 檢視進行互動的原生程式碼。
 
@@ -167,13 +167,13 @@ class HybridWebViewClient : WebViewClient {
 webView.SetWebViewClient (new HybridWebViewClient ());
 ```
 
-### <a name="calling-javascript-from-c"></a>從 C# 中呼叫 Javascript
+### <a name="calling-javascript-from-c"></a>從呼叫 JavaScriptC#
 
-除了告訴 web 檢視，以載入新的 HTML 網頁，C# 程式碼可以也在目前顯示的頁面中執行 Javascript。 可以使用 C# 字串建立整個 Javascript 程式碼區塊，並執行，或您可以製作已經透過頁面上提供的 Javascript 的方法呼叫`script`標記。
+除了告訴 web 檢視，以載入新的 HTML 網頁中，C#程式碼也可以在目前顯示的頁面內執行 JavaScript。 整個 JavaScript 程式碼區塊可以使用建立C#字串，並執行，或您可以製作方法呼叫透過頁面上已提供 JavaScript`script`標記。
 
 #### <a name="android"></a>Android
 
-建立 Javascript 程式碼來執行，然後將它與前置詞"javascript: 」，並指示網頁檢視載入該字串：
+建立 JavaScript 程式碼來執行，然後將它與前置詞"javascript: 」，並指示網頁檢視載入該字串：
 
 ```csharp
 var js = "alert('test');";
@@ -182,7 +182,7 @@ webView.LoadUrl ("javascript:" + js);
 
 #### <a name="ios"></a>iOS
 
-iOS web 檢視會提供特別要呼叫 Javascript 的方法：
+iOS web 檢視會提供特別要呼叫 JavaScript 的方法：
 
 ```csharp
 var js = "alert('test');";
@@ -194,9 +194,9 @@ webView.EvaluateJavascript (js);
 這一節介紹 web 檢視控制項，讓我們建置使用 Xamarin，混合式應用程式的 iOS 和 Android 上的功能包括：
 
 -  從程式碼中，產生的字串載入 HTML 的能力
--  參考本機檔案 （CSS、 Javascript、 影像或其他 HTML 檔案） 的能力
+-  參考本機檔案 （CSS、 JavaScript、 影像或其他 HTML 檔案） 的能力
 -  能夠攔截 C# 程式碼、 巡覽要求
--  若要從 C# 程式碼呼叫 Javascript 功能。
+-  能夠呼叫 JavaScript 從C#程式碼。
 
 
 下一節介紹 Razor，方便在混合式應用程式中建立要使用的 HTML。
@@ -205,7 +205,7 @@ webView.EvaluateJavascript (js);
 
 Razor 是引進了使用 ASP.NET MVC，原本要在伺服器上執行，並產生 HTML，以提供給 web 瀏覽器的樣板化引擎。
 
-Razor 範本化引擎延伸使用 C# 的標準 HTML 語法，讓您可以表示的配置，並輕鬆地將 CSS 樣式表和 Javascript。 範本可以參考的模型類別，它可以是任何自訂類型和其屬性可直接從範本。 其主要優點之一是能夠輕鬆地混用 HTML 與 C# 語法。
+Razor 範本化引擎會擴充標準的 HTML 語法，與C#，讓您可以表示的配置，並輕鬆地將 CSS 樣式表和 JavaScript。 範本可以參考的模型類別，它可以是任何自訂類型和其屬性可直接從範本。 其主要優點之一是能夠輕鬆地混用 HTML 與 C# 語法。
 
 Razor 範本並不限於伺服器端使用，也可以包含 Xamarin 應用程式中。 使用 Razor 範本，以及能夠以程式設計方式處理 web 檢視可讓使用 Xamarin 來建置複雜的跨平台混合式應用程式。
 
@@ -369,7 +369,7 @@ var page = template.GenerateString ();
 
  ![Rupert X Monkey](images/image9_520x277.png)
 
-本節涵蓋使用 Razor 範本來呈現簡單的唯讀檢視之基本概念。 下節將說明如何建置更完整的應用程式使用 Razor 可以接受使用者輸入，並在 HTML 檢視和 C# 中的 Javascript 之間相互操作。
+本節涵蓋使用 Razor 範本來呈現簡單的唯讀檢視之基本概念。 下節將說明如何建置更完整的應用程式使用 Razor 可接受使用者輸入，並在 [HTML] 檢視中的 JavaScript 之間交互操作和C#。
 
 ## <a name="using-razor-templates-with-xamarin"></a>搭配 Xamarin 使用 Razor 範本
 
@@ -391,7 +391,7 @@ IPhone 和 Android 專案的預設範本方案內容如下所示：
 
  ![iPhone 和 Android 的範本](images/image10_428x310.png)
 
-範本可讓您準備就緒應用程式基礎結構，以載入資料模型物件的 Razor 範本、 處理使用者輸入和傳回給使用者，透過 Javascript 通訊。
+範本可讓您準備就緒應用程式基礎結構，以載入資料模型物件的 Razor 範本、 處理使用者輸入和傳回給使用者，透過 JavaScript 通訊。
 
 此解決方案的重要部分是：
 
@@ -405,7 +405,7 @@ IPhone 和 Android 專案的預設範本方案內容如下所示：
 
 ### <a name="static-content"></a>靜態內容
 
-靜態內容包括 CSS 樣式表、 影像、 Javascript 檔案或其他內容，可以從連結或網頁檢視中顯示 HTML 檔案參考。
+靜態內容包括 CSS 樣式表、 影像、 JavaScript 檔案或其他內容，可以從連結或網頁檢視中顯示 HTML 檔案參考。
 
 範本專案包含示範如何在混合式應用程式中包含靜態內容的最小的樣式表。 CSS 樣式表這類範本中參考：
 
@@ -413,11 +413,11 @@ IPhone 和 Android 專案的預設範本方案內容如下所示：
 <link rel="stylesheet" href="style.css" />
 ```
 
-您可以新增任何樣式表和 Javascript 檔案，您也需要包括 JQuery 等架構。
+您可以新增任何樣式表和 JavaScript 檔案，您也需要包括 JQuery 等架構。
 
 ### <a name="razor-cshtml-templates"></a>Razor cshtml 範本
 
-此範本包括 Razor **.cshtml**有預先撰寫的程式碼來協助傳達 HTML/Javascript 和 C# 之間的資料的檔案。 這可讓您建置複雜的混合式應用程式，不只是顯示唯讀資料模型，但也接受 HTML 中的使用者輸入並將它傳遞回處理或儲存體的 C# 程式碼。
+此範本包括 Razor **.cshtml**有預先撰寫的程式碼來協助傳達 HTML/JavaScript 之間資料的檔案和C#。 這可讓您建置複雜的混合式應用程式，不只是顯示唯讀資料模型，但也接受 HTML 中的使用者輸入並將它傳遞回處理或儲存體的 C# 程式碼。
 
 #### <a name="rendering-the-template"></a>轉譯範本
 
@@ -435,7 +435,7 @@ IPhone 和 Android 專案的預設範本方案內容如下所示：
 <input type="button" name="UpdateLabel" value="Click" onclick="InvokeCSharpWithFormValues(this)" />
 ```
 
-`InvokeCSharpWithFormValues` Javascript 函式會讀取所有的值來自 HTML 表單和集合`location.href`web 檢視：
+`InvokeCSharpWithFormValues` JavaScript 函式會讀取所有的值來自 HTML 表單和集合`location.href`web 檢視：
 
 ```javascript
 location.href = "hybrid:" + elm.name + "?" + qs;
@@ -467,13 +467,13 @@ var parameters = System.Web.HttpUtility.ParseQueryString(resources[1]);
 
 #### <a name="manipulating-the-template-from-c"></a>管理從 C# 範本
 
-從 C# 呈現的 HTML 網頁檢視的通訊是由 web 檢視中呼叫 Javascript。 在 iOS 上，這是藉由呼叫`EvaluateJavascript`UIWebView 上：
+要轉譯的 HTML 網頁檢視從通訊C#是藉由呼叫 JavaScript 網頁檢視中。 在 iOS 上，這是藉由呼叫`EvaluateJavascript`UIWebView 上：
 
 ```csharp
 webView.EvaluateJavascript (js);
 ```
 
-在 Android 上，Javascript 可以叫用網頁檢視中載入 URL，使用 Javascript `"javascript:"` URL 配置：
+在 Android 上，JavaScript 可以叫用網頁檢視中載入 URL，使用 JavaScript `"javascript:"` URL 配置：
 
 ```csharp
 webView.LoadUrl ("javascript:" + js);
@@ -483,7 +483,7 @@ webView.LoadUrl ("javascript:" + js);
 
 這些範本就不會讓使用的每個平台上的原生控制項 – 單一 web 檢視填滿整個螢幕。
 
-HTML 可以是適合用來建立原型，而且顯示的各種網路是最適合例如 rtf 文字和回應式配置。 例如，HTML 和 Javascript – 捲動的資料，較長的清單適合不過並非所有的工作執行最好在 Android 上使用原生 UI 控制項，例如 (UITableView 在 iOS 上的) 或 ListView。
+HTML 可以是適合用來建立原型，而且顯示的各種網路是最適合例如 rtf 文字和回應式配置。 例如，HTML 和 JavaScript – 捲動的資料，較長的清單適合不過並非所有的工作執行最好在 Android 上使用原生 UI 控制項，例如 (UITableView 在 iOS 上的) 或 ListView。
 
 在範本中的 web 檢視可以輕易地與平台專屬控制項 – 只要編輯增強**MainStoryboard.storyboard** iOS 設計工具中的**Resources/layout/Main.axml**在 Android 上。
 

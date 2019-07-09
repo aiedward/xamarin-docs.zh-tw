@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2019
-ms.openlocfilehash: 658ce23b0aaced8e195461a485f3e846900c2026
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6410be4019772ad11cd97d27c5de3c0300d58519
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61389078"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649639"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms web 檢視
 
@@ -109,9 +109,12 @@ browser.Source = htmlSource;
 
 在上述程式碼中，`@`用來將 HTML 標記做為字串常值，這表示所有一般的逸出字元會被忽略。
 
+> [!NOTE]
+> 可能需要設定`WidthRequest`並`HeightRequest`的屬性[ `WebView` ](xref:Xamarin.Forms.WebView)若要查看的 HTML 內容，視版面配置`WebView`子系。 比方說，這需要[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)。
+
 ### <a name="local-html-content"></a>本機的 HTML 內容
 
-Web 檢視可顯示內容從 HTML、 CSS 和 Javascript 內嵌在應用程式。 例如: 
+Web 檢視可顯示內容從 HTML、 CSS 和 Javascript 內嵌在應用程式。 例如:
 
 ```html
 <html>
@@ -140,7 +143,7 @@ body,p,h1 {
 
 請注意，上述的 CSS 中指定的字型必須是可自訂的每個平台，因為並非所有平台都有相同的字型。
 
-若要顯示本機內容使用`WebView`，您必須開啟 HTML 檔案，如同任何其他的然後將內容載入到字串形式`Html`屬性`HtmlWebViewSource`。 如需有關開啟檔案的詳細資訊，請參閱[使用檔案](~/xamarin-forms/app-fundamentals/files.md)。
+若要顯示本機內容使用`WebView`，您必須開啟 HTML 檔案，如同任何其他的然後將內容載入到字串形式`Html`屬性`HtmlWebViewSource`。 如需有關開啟檔案的詳細資訊，請參閱[使用檔案](~/xamarin-forms/data-cloud/data/files.md)。
 
 下列螢幕擷取畫面顯示每個平台上顯示本機內容的結果：
 
@@ -349,7 +352,7 @@ WebView 中，會引發下列事件，以協助您回應狀態的變更：
 - `Source` – 執行瀏覽的項目。
 - `Url` – 瀏覽目的地。
 
-如果您預計使用需要長的時間載入的網頁，請考慮使用[ `Navigating` ](xref:Xamarin.Forms.WebView.Navigating)並[ `Navigated` ](xref:Xamarin.Forms.WebView.Navigated)事件，以實作狀態指標。 例如: 
+如果您預計使用需要長的時間載入的網頁，請考慮使用[ `Navigating` ](xref:Xamarin.Forms.WebView.Navigating)並[ `Navigated` ](xref:Xamarin.Forms.WebView.Navigated)事件，以實作狀態指標。 例如:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

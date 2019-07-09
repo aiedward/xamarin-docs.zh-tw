@@ -7,12 +7,12 @@ ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 7d9630840983b36204214927136e0c9efe07d840
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cf870cebfdd29e679b767728d1bea723f9310b17
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61333704"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650457"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第 20 章的摘要。 非同步與檔案 I/O
 
@@ -83,7 +83,7 @@ Xamarin.iOS 和 Xamarin.Android 程式庫包含 Xamarin 已明確為量身訂作
 這表示您必須使用[ `DependencyService` ](xref:Xamarin.Forms.DependencyService) (先討論[**第 9 章。平台特定 API 呼叫**](chapter09.md)實作檔案 I/O。
 
 > [!NOTE]
-> 可攜式類別庫已取代為.NET Standard 2.0 程式庫，並支援.NET Standard 2.0 [ `System.IO` ](xref:System.IO)適用於所有的 Xamarin.Forms 平台的型別。 已不再需要使用`DependencyService`大部分的檔案 I/O 工作。 請參閱[Xamarin.Forms 中的檔案處理](~/xamarin-forms/app-fundamentals/files.md)檔案 I/O 以更現代化的方法。
+> 可攜式類別庫已取代為.NET Standard 2.0 程式庫，並支援.NET Standard 2.0 [ `System.IO` ](xref:System.IO)適用於所有的 Xamarin.Forms 平台的型別。 已不再需要使用`DependencyService`大部分的檔案 I/O 工作。 請參閱[Xamarin.Forms 中的檔案處理](~/xamarin-forms/data-cloud/data/files.md)檔案 I/O 以更現代化的方法。
 
 ### <a name="a-first-shot-at-cross-platform-file-io"></a>在跨平台檔案 I/O 的第一個擷取畫面
 
@@ -173,4 +173,4 @@ Windows 執行階段下執行的程式使用中的類別[ `Windows.Storage` ](/u
 
 - [第 20 章全文檢索 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf)
 - [第 20 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20)
-- [使用檔案](~/xamarin-forms/app-fundamentals/files.md)
+- [使用檔案](~/xamarin-forms/data-cloud/data/files.md)

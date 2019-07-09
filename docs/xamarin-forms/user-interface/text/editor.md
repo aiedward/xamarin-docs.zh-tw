@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: bf7a1461a26a860c77a913edabb94d76b4ca2a6a
-ms.sourcegitcommit: 00deecefc17a98210bed12b4ef99ecca710275f1
+ms.openlocfilehash: 97bb5ec954f36e48d8ae115baf8738862e5a8358
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67493350"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649538"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms 編輯器
 
@@ -264,7 +264,7 @@ public partial class EditorPage : ContentPage
 
 ### <a name="completed"></a>已完成
 
-`Completed`事件用來做出回應的互動完成`Editor`。 `Completed` 當使用者在鍵盤上輸入 return 鍵結束與欄位的輸入，就會引發。 事件處理常式是泛用事件處理常式，採取寄件者和`EventArgs`:
+`Completed`事件用來做出回應的互動完成`Editor`。 `Completed` 當使用者結束與欄位的輸入，在鍵盤上輸入 return 鍵 （或按下 Tab 鍵在 UWP 上），就會引發。 事件處理常式是泛用事件處理常式，採取寄件者和`EventArgs`:
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)
