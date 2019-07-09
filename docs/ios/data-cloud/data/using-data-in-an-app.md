@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/11/2016
-ms.openlocfilehash: e3127f85841c13422d9674bcf12373af9222afba
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a47ab26777c594658810b014025477486bbe5cc2
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153718"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650156"
 ---
 # <a name="using-data-in-an-ios-app"></a>在 iOS 應用程式中使用資料
 
@@ -127,4 +127,4 @@ if (!File.Exists (Database.DatabaseFilePath))
 - [DataAccess Basic （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess 進階 （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [iOS 資料配方](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
-- [Xamarin.Forms 資料存取](~/xamarin-forms/app-fundamentals/databases.md)
+- [Xamarin.Forms 資料存取](~/xamarin-forms/data-cloud/data/databases.md)
