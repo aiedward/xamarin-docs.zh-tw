@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 23deddae61452d532a87c51cc1ec3bc53eb91c9f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 15b4154ad6e95aabb5e88784660a93bb53c0b252
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61278978"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650200"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>跨平台應用程式案例研究：Tasky
 
@@ -123,7 +123,7 @@ Tasky 依賴 Sqlite.net nuget 套件 （由 Frank Kreuger 發行） 將提供的
 
 #### <a name="sqlite-on-windows-phone"></a>在 Windows Phone 上的 SQLite
 
-IOS 和 Android 都提供使用 SQLite 作為作業系統的一部分，而 Windows Phone 不包含相容的資料庫引擎。 跨所有的三個平台共用程式碼的 SQLite 的 Windows phone 原生版本是必要的。 請參閱[使用本機資料庫](~/xamarin-forms/app-fundamentals/databases.md)如需有關設定 Windows Phone 專案，sqlite。
+IOS 和 Android 都提供使用 SQLite 作為作業系統的一部分，而 Windows Phone 不包含相容的資料庫引擎。 跨所有的三個平台共用程式碼的 SQLite 的 Windows phone 原生版本是必要的。 請參閱[使用本機資料庫](~/xamarin-forms/data-cloud/data/databases.md)如需有關設定 Windows Phone 專案，sqlite。
 
  <a name="Using_an_Interface_to_Generalize_Data_Access" />
 
