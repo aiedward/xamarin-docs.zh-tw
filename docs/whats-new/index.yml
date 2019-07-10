@@ -19,6 +19,12 @@ sections:
         style: cards
         className: cardsB
         items:
+          - href: 2019-07.md
+            html: 2019 年 7 月的 Xamarin 文件最新內容：已發行的 Xamarin.Forms 4.1、資料與雲端服務更新，以及其他更新。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_article.svg'
+              href: 2019-06.md
+            title: 2019 年 7 月
           - href: 2019-06.md
             html: 2019 年 6 月 Xamarin 文件中的最新動向：已發行的 Xamarin.Forms 4.0、資料與雲端服務更新、API 文件等，現皆位於 docs.microsoft.com 中。
             image:

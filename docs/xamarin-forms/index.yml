@@ -87,11 +87,11 @@ sections:
               href: ~/essentials/index.md?context=xamarin/xamarin-forms
             title: Xamarin.Essentials
           - href: ~/xamarin-forms/data-cloud/
-            html: 本機和遠端資料儲存體及擷取，以及其他雲端式服務。
+            html: 本機和遠端資料儲存體及擷取，以及其他 Azure 雲端式服務。
             image:
               src: ~/media/icons/i_data-cloud.svg
               href: ~/xamarin-forms/data-cloud/
-            title: 資料與雲端服務
+            title: 資料與 Azure 雲端服務
           - href: ~/xamarin-forms/deploy-test/
             html: 建置及部署應用程式的指示，以及事先測試它們的祕訣！
             image:
