@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: d42cec1ee0939bead9ede83a042f5b6cbb5298cd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 518c13aea431a8e973579768cc70b8281a31acac
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153559"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674722"
 ---
 # <a name="edit-text"></a>編輯文字
 

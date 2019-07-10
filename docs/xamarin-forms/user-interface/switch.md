@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/03/2019
-ms.openlocfilehash: ed2d41ea2d9add658d9f07469568a298cdf8de59
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 22a17f9a916d94a3a0f44a451512de43c943e95a
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649691"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675034"
 ---
 # <a name="xamarinforms-switch"></a>Xamarin.Forms Switch
 
@@ -41,7 +41,7 @@ A`Switch`可以在 XAML 中具現化。 其`IsToggled`屬性可以設定為切�
 <Switch IsToggled="true"/>
 ```
 
-A ' 參數也可以建立程式碼中：
+A`Switch`也可以建立程式碼中：
 
 ```csharp
 Switch switch = new Switch { IsToggled = true };

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: a35cb82f4f6d20e91f45a782c73d3ef811947c3a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 57a521df5fdede2bd92a6b1432f698c822a2b06f
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61284197"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674565"
 ---
 # <a name="introduction-to-android-wear"></a>Android Wear 簡介
 
@@ -198,7 +198,7 @@ Android Wear 2.0 應用程式能夠與掌上型應用程式無關。 這表示�
 
 * [關於 Android Wear](http://www.android.com/wear/)
 * [Android Wear 應用程式設計](https://developer.android.com/design/wear/index.html)
-* [android.support.wearable 程式庫 ](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
+* [android.support.wearable 程式庫](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
 * [Android Wear 2.0](https://developer.android.com/wear/preview/index.html)
 
 

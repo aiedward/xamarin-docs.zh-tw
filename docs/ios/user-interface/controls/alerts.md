@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 16d3dfaa0169e3a02fcdee0318dc150994c7e59b
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 576de9a46fc89fe01c564c05568d4331a32dbd96
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827883"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674403"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>在 Xamarin.iOS 中顯示的警示
 
@@ -60,7 +60,7 @@ okayButton.TouchUpInside += (sender, e) => {
 
 顯示的警示有多個選項，以類似的方式完成，但新增兩個動作。 例如，下列螢幕擷取畫面顯示具有兩個按鈕的警示：
 
- ![ 兩個按鈕的警示](alerts-images/alert2.png)
+ ![兩個按鈕的警示](alerts-images/alert2.png)
 
 ```csharp
 okayCancelButton.TouchUpInside += ((sender, e) => {

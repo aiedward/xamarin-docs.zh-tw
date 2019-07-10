@@ -6,16 +6,16 @@ ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
 author: asb3993
 ms.author: amburns
 ms.date: 10/09/2017
-ms.openlocfilehash: 25eec247a0cb664897541a0e6e818a77018fda43
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dd211fecad0bff58cb9ff6c6a99ae6a15c60eb7b
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61187765"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674981"
 ---
 # <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure 及 Xamarin
 
-[ ![](images/evolve-mikej-azure-sml.png "Azure App Service 功能可輕鬆地加入至 Xamarin 應用程式，包括雲端資料儲存體和跨平台推播通知")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
+[![](images/evolve-mikej-azure-sml.png "Azure App Service 功能可輕鬆地加入至 Xamarin 應用程式，包括雲端資料儲存體和跨平台推播通知")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
 [Evolve 2016：開發使用 Azure 及 Xamarin 的連線應用程式](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
@@ -28,7 +28,7 @@ ms.locfileid: "61187765"
 集合[Azure Mobile Apps 文件](~/cross-platform/data-cloud/mobile-apps.md)，會引導您完成實作的程序[Azure 行動用戶端](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)。
 Xamarin 也提供 Azure 傳訊 NuGet 封裝[iOS](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.iOS/)並[Android](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.Android/)來協助實作跨平台的推播通知。
 
-在 設定您的應用程式[Azure App Service 入口網站](https://portal.azure.com/)來存取行動應用程式、 Web Api、 儲存體及更多。 深入了解[應用程式服務有何不同](http://azure.microsoft.com/updates/whats-new-with-azure-app-service/)，並在觀察[這些影片來自 Microsoft](http://azure.microsoft.com/campaigns/azure-march-announcement/)。
+在 設定您的應用程式[Azure App Service 入口網站](https://portal.azure.com/)來存取行動應用程式、 Web Api、 儲存體及更多。 深入了解[應用程式服務有何不同](https://azure.microsoft.com/updates/whats-new-with-azure-app-service/)，並在觀察[這些影片來自 Microsoft](https://azure.microsoft.com/campaigns/azure-march-announcement/)。
 
 ## <a name="active-directory-authentication"></a>Active Directory 驗證
 
@@ -61,5 +61,5 @@ Microsoft 的 Web API 會公開可以輕鬆地取用的 Xamarin 應用程式的 
 ## <a name="related-links"></a>相關連結
 
 - [Azure 的 PCL 範例 (由@paulbatum) （範例）](https://github.com/paulbatum/mobile-services-xamarin-pcl)
-- [Azure 入口網站](http://azure.microsoft.com/)
+- [Azure 入口網站](https://azure.microsoft.com/)
 - [適用於 Xamarin (NuGet) 的行動用戶端](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)

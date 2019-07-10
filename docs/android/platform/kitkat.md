@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: f957bd5b361d7287353542186916c7f934ee0490
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 9572a08a2403bf13d74fc5fda7c62ec1fb2d1537
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827791"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674698"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
@@ -689,7 +689,7 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 -  *暫停動畫*-暫停和繼續與所建立的動畫 [`Animator`](https://developer.xamarin.com/api/type/Android.Animation.Animator/)
    類別的新執行個體。
 
--  *讀取動態變更文字*-表示 UI 的與新的 「 即時地區 」 的新文字以動態方式更新的組件 [ `accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
+-  *讀取動態變更文字*-表示 UI 的與新的 「 即時地區 」 的新文字以動態方式更新的組件 [`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
    因此會自動讀取新的文字，以協助工具模式的屬性。
 
 -  *增強音訊體驗*-請大聲點會追蹤與 [`LoudnessEnhancer`](https://developer.xamarin.com/api/type/Android.Media.Audiofx.LoudnessEnhancer/)

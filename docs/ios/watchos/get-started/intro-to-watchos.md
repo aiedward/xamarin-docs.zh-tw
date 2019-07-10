@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: faa52c80fdb776f2c6c7320874b0d08720b4e4ec
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8da40e5500e5669027f658ec95930e3b3a37530e
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218716"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675251"
 ---
 # <a name="introduction-to-watchos"></a>WatchOS 簡介
 
@@ -29,7 +29,7 @@ WatchOS 應用程式方案具有 3 個專案：
 
 在 watchOS 1 應用程式，在 iPhone 上執行的擴充功能中的程式碼 – Apple Watch 實際上是外部顯示器。 watchOS 2 和 3 的應用程式會執行完全在 Apple Watch 上。 下圖顯示這項差異：
 
-[ ![](intro-to-watchos-images/arch-sml.png "此圖顯示 watchOS 1 和 watchOS 2 （和更新版本） 之間的差異")](intro-to-watchos-images/arch.png#lightbox)
+[![](intro-to-watchos-images/arch-sml.png "此圖顯示 watchOS 1 和 watchOS 2 （和更新版本） 之間的差異")](intro-to-watchos-images/arch.png#lightbox)
 
 不論 watchOS 版本為目標時，Visual Studio for Mac 的 Solution Pad 中完整的解決方案會看起來像這樣：
 

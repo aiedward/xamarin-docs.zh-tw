@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/11/2016
-ms.openlocfilehash: b251fa13c4b436a837f71b5362ae85dffd245092
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fc316a9e6ab4261eaa956a987b47aeaf546344a2
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61408802"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675277"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>在 Xamarin.Forms 中使用 UrhoSharp
 
@@ -33,7 +33,7 @@ UrhoSharp 可用來轉譯在 Xamarin.Forms 應用程式中的圖形。
 之前使用 UrhoSharp，開發人員必須將 UrhoSharp Nuget 套件新增至其解決方案。 本指南假設 iOS、 Android 和.NET Standard 的 Xamarin.Forms 專案程式庫專案。 所有的程式碼會以.NET Standard 程式庫專案中;但 UrhoSharp Nuget 必須新增至 iOS 和 Android 專案太。
 
 UrhoSharp.Forms Nuget 套件包含所有建立 UrhoSharp 物件所需的物件。 UrhoSharp.Forms nuget 套件包含`UrhoSurface`類別，用來主控 UrhoSharp 在 Xamarin.Forms 中。
-若要開始，以滑鼠右鍵按一下**封裝**資料夾中，.NET Standard 程式庫專案，然後選取**新增套件...**.輸入搜尋字詞**UrhoSharp.Forms**，選取**適用於 Xamarin.Forms UrhoSharp**，然後按一下**加入封裝**。
+若要開始，以滑鼠右鍵按一下**封裝**資料夾中，.NET Standard 程式庫專案，然後選取**新增套件...** .輸入搜尋字詞**UrhoSharp.Forms**，選取**適用於 Xamarin.Forms UrhoSharp**，然後按一下**加入封裝**。
 
 [![](urhosharp-images/add-package-sml.png "新增套件 對話方塊")](urhosharp-images/add-package.png#lightbox "新增套件 對話方塊")
 
@@ -218,7 +218,7 @@ selectedBarSlider = new Slider(0, 5, 2.5);
 selectedBarSlider.ValueChanged += OnValuesSliderValueChanged;
 ```
 
-在動畫[頁面頂端](#)顯示執行的範例。
+在動畫[頁面頂端](#what-is-urhosharp)顯示執行的範例。
 
 ## <a name="summary"></a>總結
 

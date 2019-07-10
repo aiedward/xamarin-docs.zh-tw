@@ -6,12 +6,12 @@ ms.assetid: B79E5DE9-5389-4691-9AA3-FF4336CE294E
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 71f46535ffd0a99ad78acb8f0e3bbc5870abf33e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a900d427ad6ac2a0e211ef4f00d2f014b13e5d1c
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61197931"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674410"
 ---
 # <a name="interactive-workbooks"></a>互動式活頁簿
 
@@ -27,7 +27,7 @@ ms.locfileid: "61197931"
 
 編輯視窗的程式碼提供程式碼完成、 語法著色、 內嵌即時診斷和多行陳述式支援。
 
-[ ![](workbook-images/inspector-0.6.0-repl-small.png "編輯視窗的程式碼提供程式碼完成、 語法著色、 內嵌即時診斷和多行陳述式支援")](workbook-images/inspector-0.6.0-repl.png#lightbox)
+[![](workbook-images/inspector-0.6.0-repl-small.png "編輯視窗的程式碼提供程式碼完成、 語法著色、 內嵌即時診斷和多行陳述式支援")](workbook-images/inspector-0.6.0-repl.png#lightbox)
 
 Xamarin 活頁簿就會存入`.workbook`CommonMark 檔案具有頂端的一些中繼資料的檔案 (請參閱 <<c2> [ 活頁簿檔案類型](#workbooks-files-types)如需詳細資訊可以儲存活頁簿的方式)。
 
@@ -120,7 +120,7 @@ Xamarin 活頁簿中的直接支援許多熱門的 NuGet 套件。 您可以瀏�
 
 根據預設，活頁簿儲存為純文字`.workbook`包含 CommonMark 格式化的文字檔案。
 
-### <a name="packages"></a>封裝
+### <a name="packages"></a>package
 
 活頁簿套件是一個目錄與名為`.workbook`延伸模組。
 在 Mac 的搜尋工具以及在最新的 [檔案] 功能表與 Xamarin 活頁簿開啟對話方塊，如同它是一個檔案，也會辨識此目錄。

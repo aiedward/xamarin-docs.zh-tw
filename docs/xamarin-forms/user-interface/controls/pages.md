@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 42cbc6f50da34cbbc594dfef1dec49619202c191
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: 7b99e876c666160bdfd4392915901ea6535e68e1
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741074"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674831"
 ---
 # <a name="xamarinforms-pages"></a>Xamarin.Forms 頁面
 
@@ -22,7 +22,7 @@ _Xamarin.Forms 頁面代表跨平台行動應用程式畫面。_
 
 如下所述的所有頁面類型都衍生自 Xamarin.Forms [ `Page` ](xref:Xamarin.Forms.Page)類別。 這些視覺項目所佔用的所有或大部分的螢幕。 A`Page`物件代表`ViewController`在 iOS 和`Page`在通用 Windows 平台。 在 Android 上，每一頁會佔用所示的畫面`Activity`，但 Xamarin.Forms 頁面*不*`Activity`物件。
 
-[ ![](pages-images/pages-sml.png "Xamarin.Forms 頁面型別")](pages-images/pages.png#lightbox "Xamarin.Forms 頁面類型")
+[![](pages-images/pages-sml.png "Xamarin.Forms 頁面型別")](pages-images/pages.png#lightbox "Xamarin.Forms 頁面類型")
 
 ## <a name="pages"></a>頁面
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: 9c564789f704180e9acc9f96dcba5e7d6eb20634
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c42be49aff56453bb1bc3b3c732cad151ccd62e0
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60946734"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674451"
 ---
 # <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>調整適用於 Android Designer 的 JAVA 記憶體參數
 
@@ -35,7 +35,7 @@ ms.locfileid: "60946734"
 
 1.  在 Visual Studio 中開啟您的方案。
 
-2.  在 [方案總管] 中選取一個接著一個的每個 Android 專案，然後按一下[顯示所有檔案](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/4afxey9h(v=vs.90))兩次上每個專案。 您可以略過不包含任何專案`.axml`版面配置檔。 此步驟可確保每個專案目錄包含`.csproj.user`檔案。
+2.  在 [方案總管] 中選取一個接著一個的每個 Android 專案，然後按一下[顯示所有檔案](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/4afxey9h(v=vs.90))兩次上每個專案。 您可以略過不包含任何專案`.axml`版面配置檔。 此步驟可確保每個專案目錄包含`.csproj.user`檔案。
 
 3.  結束 Visual Studio。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 05/23/2019
-ms.openlocfilehash: 474398922bf00e3a430166d8b2e073d200e6ed6e
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: fb2f108ba115690ca181738486fd8310f26bb909
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659325"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674521"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>傳送及接收推播通知，使用 Azure 通知中樞和 Xamarin.Forms
 
@@ -538,7 +538,7 @@ public static class DispatcherConstants
 }
 ```
 
-您必須設定**DispatcherConstants.cs**來比對符合您的 Azure 通知中樞設定。 值`SubscriptionTags`屬性應該符合用戶端應用程式中使用的值。 `NotificationHubName`屬性是您的 Azure 通知中樞執行個體的名稱。 `FullAccessConnectionString`屬性是位於您的通知中樞的存取金鑰**存取原則**。 下列螢幕擷取畫面顯示的位置`NotificationHubName`和`FullAccessConnectionString`在 Azure 入口網站中的屬性：
+您必須設定**DispatcherConstants.cs**以符合您的 Azure 通知中樞組態。 值`SubscriptionTags`屬性應該符合用戶端應用程式中使用的值。 `NotificationHubName`屬性是您的 Azure 通知中樞執行個體的名稱。 `FullAccessConnectionString`屬性是位於您的通知中樞的存取金鑰**存取原則**。 下列螢幕擷取畫面顯示的位置`NotificationHubName`和`FullAccessConnectionString`在 Azure 入口網站中的屬性：
 
 ![螢幕擷取畫面的 Azure 通知中樞名稱和 FullAccessConnectionString](azure-notification-hub-images/notification-hub-full-access-policy.png "Azure 通知中樞名稱和 FullAccessConnectionString")
 

@@ -6,12 +6,12 @@ ms.assetid: FBCEF258-D3D8-A420-79ED-3AAB4A7308E4
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: f5008d4986baa0575030e077b66b69ec0a4fad00
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c7c0f582ac4a7dc8571fbc607dba9b0ad97d49e1
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61275596"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674837"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>第 1 篇 – 了解 Xamarin 行動裝置平台
 
@@ -116,7 +116,7 @@ Xamarin 提供統一的安裝程式將您的系統以設定必要的 Java、 And
 
 這些螢幕擷取畫面會顯示可用的 visual 螢幕設計工具，每個平台：
 
- [ ![](understanding-the-xamarin-mobile-platform-images/designer-all1.png "這些螢幕擷取畫面顯示每個平台上的可用 visual 螢幕設計工具")](understanding-the-xamarin-mobile-platform-images/designer-all1.png#lightbox)
+ [![](understanding-the-xamarin-mobile-platform-images/designer-all1.png "這些螢幕擷取畫面顯示每個平台上的可用 visual 螢幕設計工具")](understanding-the-xamarin-mobile-platform-images/designer-all1.png#lightbox)
 
 在所有情況下，可在您的程式碼中參考您以視覺化方式建立的項目。
 

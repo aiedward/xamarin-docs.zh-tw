@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 9425b26b5cc8fcd9b8a80df422d932c96d52889b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5417050daa84197dd7dc2a270ae054a3a73fd3bc
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037435"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675071"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API 設計
 
@@ -96,7 +96,7 @@ Xamarin.iOS 包含組成組件數*Xamarin.iOS 設定檔*。 [組件](~/cross-pla
 
 Xamarin.iOS 鏡像在 C# 中的從 OBJECTIVE-C 類別階層 比方說，OBJECTIVE-C 基底類別[NSObject](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)可以從 C# 透過[Foundation.NSObject](xref:Foundation.NSObject)。
 
-雖然此命名空間提供基礎的 Objective C 的基礎類型的繫結，在少數情況下已對應的基礎類型到.NET 類型。 例如: 
+雖然此命名空間提供基礎的 Objective C 的基礎類型的繫結，在少數情況下已對應的基礎類型到.NET 類型。 例如:
 
 - 而不是處理[NSString](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)並[NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)，執行階段會公開這些 C#[字串](xref:System.String)s 和強型別[陣列](xref:System.Array)整個 sAPI。
 
@@ -113,7 +113,7 @@ Xamarin.iOS 鏡像在 C# 中的從 OBJECTIVE-C 類別階層 比方說，OBJECTIV
 
 而 Mono 會提供所有的物件，記憶體回收`Foundation.NSObject`會實作[System.IDisposable](xref:System.IDisposable)介面。 這表示，您可以不必等到記憶體回收行程在安排中，明確釋放任何給定的 NSObject 的資源。 當您使用大量 NSObjects，比方說，可能會保存到大型資料區塊的指標的 UIImages，這很重要。
 
-如果您的型別，就需要執行具決定性最終處理，覆寫[NSObject.Dispose(bool) 方法](xref:Foundation.NSObject.Dispose(System.Boolean))Dispose 的參數"bool disposing"，而如果設定為 true，它表示，會因為正在呼叫 Dispose 方法的使用者在物件上的明確呼叫的 Dispose （)。 如果值為 false，這表示，程式的 Dispose (bool disposing) 方法是從完成項執行緒上呼叫完成項。 []()
+如果您的型別，就需要執行具決定性最終處理，覆寫[NSObject.Dispose(bool) 方法](xref:Foundation.NSObject.Dispose(System.Boolean))Dispose 的參數"bool disposing"，而如果設定為 true，它表示，會因為正在呼叫 Dispose 方法的使用者在物件上的明確呼叫的 Dispose （)。 如果值為 false，這表示，程式的 Dispose (bool disposing) 方法是從完成項執行緒上呼叫完成項。
 
 
 ##### <a name="categories"></a>分類
@@ -379,7 +379,7 @@ web.Delegate = new Notifier ();
 除了強型別屬性，還有弱式的具型別的的委派，讓開發人員所需時以不同的方式繫結項目。
 強型別 everywhere`Delegate`屬性會公開在 Xamarin.iOS 的繫結，對應`WeakDelegate`也會公開屬性。
 
-使用時`WeakDelegate`，您必須負責適當地裝飾類別使用[匯出](xref:Foundation.ExportAttribute)屬性來指定選取器。 例如：
+使用時`WeakDelegate`，您必須負責適當地裝飾類別使用[匯出](xref:Foundation.ExportAttribute)屬性來指定選取器。 例如:
 
 ```csharp
 class Notifier : NSObject  {
@@ -624,13 +624,13 @@ UITextField UserName {
 
 Objective C 程式設計的核心概念是選取器。 您通常會遇到需要您將選取器，或需要您的程式碼來回應選取器 Api。
 
-在 C# 中建立新的選取器是很簡單 – 您剛建立的新執行個體`ObjCRuntime.Selector`類別，並在需要它的 API 中的任何位置使用的結果。 例如：
+在 C# 中建立新的選取器是很簡單 – 您剛建立的新執行個體`ObjCRuntime.Selector`類別，並在需要它的 API 中的任何位置使用的結果。 例如:
 
 ```csharp
 var selector_add = new Selector ("add:plus:");
 ```
 
-針對 C# 方法回應的選取器呼叫，它必須繼承自`NSObject`以選取器名稱使用，則必須裝飾型別和 C# 方法`[Export]`屬性。 例如: 
+針對 C# 方法回應的選取器呼叫，它必須繼承自`NSObject`以選取器名稱使用，則必須裝飾型別和 C# 方法`[Export]`屬性。 例如:
 
 ```csharp
 public class MyMath : NSObject {
