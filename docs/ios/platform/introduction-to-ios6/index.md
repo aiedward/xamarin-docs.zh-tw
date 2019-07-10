@@ -7,13 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
+ms.openlocfilehash: be017103c5a3a2c890f49e4a510d20fcd0c03094
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675107"
 ---
-
 # <a name="introduction-to-ios-6"></a>iOS 6 簡介
 
 _iOS 6 包含新的技術，用於開發應用程式，Xamarin.iOS 6 帶入各種C#開發人員。_
 
-[ ![](images/ios6-large.jpg "IOS 6 標誌")](images/ios6-large.jpg#lightbox)
+[![](images/ios6-large.jpg "IOS 6 標誌")](images/ios6-large.jpg#lightbox)
 
 IOS 6 和 Xamarin.iOS 6，開發人員現在會自行建立 iOS 應用程式，包括該目標 iphone 5 以上有豐富的功能。
 本文件列出一些更令人興奮的新功能，可和每個主題的文章連結。 此外它會牽涉到幾個變更將會重要，因為開發人員將移至 iOS 6 和 iPhone 5 的新的解析度。
