@@ -6,12 +6,12 @@ ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 4f4ca327479a7f4eb4a7dc7feafdd71291c1b7fe
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2f66d8a3960741643013a1010162f52d283026d6
+ms.sourcegitcommit: afe9d93373d66eb45d82cabefca83b5733969634
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61186139"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67855715"
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>以手動方式為 Xamarin 建立 NuGet 套件
 
@@ -79,6 +79,5 @@ PCL 設定檔會有限制哪些.NET framework、 使用者可存取的 Api，而
 
 ## <a name="related-links"></a>相關連結
 
-- [Nugetizer 3000 自動化 Nuget 建立](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
-- [更新 Nuget，適用於 iOS 的 64 位元](https://blog.xamarin.com/how-to-update-nuget-packages-for-64-bit/)
+- [Nugetizer 3000 自動化 Nuget 建立](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)       
 - [在專案中包含 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)
