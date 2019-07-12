@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 9deb685c92092ceb0e1c775a1e53ac1bce5a4a57
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4fbb4047b95fd70f829cd79e4ea26b2958273297
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61299976"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831167"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>企業應用程式開發簡介
 
@@ -72,7 +72,7 @@ ms.locfileid: "61299976"
 -   單一頁面應用程式 (SPA) 開發 Typescript 與 Angular 2。 Web 應用程式使用此方式可避免執行每個作業的伺服器往返。
 -   使用 Xamarin.Forms 時，可支援 iOS、 Android 和通用 Windows 平台 (UWP) 開發的行動裝置應用程式。
 
-Web 應用程式的相關資訊，請參閱[架構和開發新式 Web 應用程式使用 ASP.NET Core 和 Microsoft Azure](http://aka.ms/WebAppEbook)。
+Web 應用程式的相關資訊，請參閱[架構和開發新式 Web 應用程式使用 ASP.NET Core 和 Microsoft Azure](https://aka.ms/WebAppEbook)。
 
 範例應用程式包含下列的後端服務：
 

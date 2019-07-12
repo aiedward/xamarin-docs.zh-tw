@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: cc5052c8988a27605cf7680a3853f80e7afd38b7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fc4ef6eb16893cc1df0d980d27af8589a280e933
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61170905"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832420"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>在 Xamarin.iOS 中的其他應用程式圖示
 
@@ -20,10 +20,10 @@ _這篇文章將說明如何在 Xamarin.iOS 中使用替代的應用程式圖示
 
 Apple iOS 10.3 可讓應用程式來管理它的圖示已新增數個增強功能：
 
- - `ApplicationIconBadgeNumber` -取得或設定跳板系列中的應用程式圖示的徽章。
- - `SupportsAlternateIcons` -如果`true`應用程式有另一組的圖示。
- - `AlternateIconName` -傳回目前選取的替代圖示的名稱或`null`如果使用的主要圖示。
- - `SetAlternameIconName` -使用這個方法來指定替代的圖示切換應用程式的圖示。
+- `ApplicationIconBadgeNumber` -取得或設定跳板系列中的應用程式圖示的徽章。
+- `SupportsAlternateIcons` -如果`true`應用程式有另一組的圖示。
+- `AlternateIconName` -傳回目前選取的替代圖示的名稱或`null`如果使用的主要圖示。
+- `SetAlternameIconName` -使用這個方法來指定替代的圖示切換應用程式的圖示。
 
 ![](alternate-app-icons-images/icons04.png "警示範例應用程式變更它的圖示時")
 
@@ -55,7 +55,7 @@ Apple iOS 10.3 可讓應用程式來管理它的圖示已新增數個增強功�
 
 請執行下列動作：
 
-1. 在 [方案總管]中，按兩下 [Info.plist] 檔案以開啟它進行編輯。
+1. 在 [方案總管]  中，按兩下 [Info.plist]  檔案以開啟它進行編輯。
 2. 若要切換**來源**檢視。
 3. 新增**套件組合圖示**鍵，然後離開**型別**設定為**字典**。
 4. 新增`CFBundleAlternateIcons`鍵，並設定**型別**要**字典**。
@@ -111,7 +111,7 @@ Apple iOS 10.3 可讓應用程式來管理它的圖示已新增數個增強功�
 
 與 Xamarin.iOS 專案中包含的圖示映像並**Info.plist**正確設定的檔案，開發人員可以使用其中一項新增至 iOS 10.3 的許多新功能來控制應用程式的圖示。
 
-`SupportsAlternateIcons`屬性`UIApplication`類別可讓開發人員應用程式是否支援替代的圖示。 例如: 
+`SupportsAlternateIcons`屬性`UIApplication`類別可讓開發人員應用程式是否支援替代的圖示。 例如：
 
 ```csharp
 // Can the app select a different icon?
@@ -126,7 +126,7 @@ AlternateIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateI
 UIApplication.SharedApplication.ApplicationIconBadgeNumber = 1;
 ```
 
-`AlternateIconName`的屬性`UIApplication`類別可讓開發人員目前所選取替代的應用程式圖示的名稱，或傳回`null`如果應用程式使用的主要圖示。 例如: 
+`AlternateIconName`的屬性`UIApplication`類別可讓開發人員目前所選取替代的應用程式圖示的名稱，或傳回`null`如果應用程式使用的主要圖示。 例如：
 
 ```csharp
 // Get the name of the currently selected alternate
@@ -138,7 +138,7 @@ if (name != null ) {
 }
 ```
 
-`SetAlternameIconName`屬性`UIApplication`類別可讓開發人員變更應用程式圖示。 傳遞圖示，以選取的名稱或`null`返回主要圖示。 例如: 
+`SetAlternameIconName`屬性`UIApplication`類別可讓開發人員變更應用程式圖示。 傳遞圖示，以選取的名稱或`null`返回主要圖示。 例如：
 
 ```csharp
 partial void UsePrimaryIcon (Foundation.NSObject sender)

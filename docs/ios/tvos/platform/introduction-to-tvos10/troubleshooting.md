@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 3815790cfb73f93f399c14d3da44aa3210725388
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 97cfe7220f8b351ec30a9f2c7a7347d318378fbc
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60932434"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830493"
 ---
 # <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>疑難排解 tvOS 10 使用 Xamarin 建置的應用程式
 
@@ -32,8 +32,8 @@ ms.locfileid: "60932434"
 
 已知問題：
 
- - 在測試應用程式內購買的沙箱環境中時，[驗證] 對話方塊可能會出現兩次。
- - 當裝載的內容，在沙箱環境中測試應用程式內購買項目，每次應用程式移到前景內容下載完成之前，會出現 [密碼] 對話方塊。
+- 在測試應用程式內購買的沙箱環境中時，[驗證] 對話方塊可能會出現兩次。
+- 當裝載的內容，在沙箱環境中測試應用程式內購買項目，每次應用程式移到前景內容下載完成之前，會出現 [密碼] 對話方塊。
 
 <a name="Binary-Compatibility" />
 
@@ -41,11 +41,11 @@ ms.locfileid: "60932434"
 
 已知問題：
 
- - 呼叫`NSObject.ValueForKey`將`null`金鑰將會導致例外狀況。
- - 呼叫時，依名稱參考字型`UIFont.WithName`會造成當機。
- - 兩者`NSURLSession`和 NSURLConnection` no longer RC4 cipher suites during the TLS handshake for `http://' Url。
- - 應用程式可以停止回應，當修改中的超級檢視表的幾何`ViewWillLayoutSubviews`或`LayoutSubviews`方法。
- - 對於所有 SSL/TLS 連線，RC4 對稱編碼器現在預設會停用。 此外，安全傳輸 API 不再支援 SSLv3 與建議的應用程式停止儘速使用 sha-1 和 3DES 加密。
+- 呼叫`NSObject.ValueForKey`將`null`金鑰將會導致例外狀況。
+- 呼叫時，依名稱參考字型`UIFont.WithName`會造成當機。
+- 兩者`NSURLSession`並`NSURLConnection`不再 RC4 加密套件的 TLS 信號交換期間`http://`Url。
+- 應用程式可以停止回應，當修改中的超級檢視表的幾何`ViewWillLayoutSubviews`或`LayoutSubviews`方法。
+- 對於所有 SSL/TLS 連線，RC4 對稱編碼器現在預設會停用。 此外，安全傳輸 API 不再支援 SSLv3 與建議的應用程式停止儘速使用 sha-1 和 3DES 加密。
 
 <a name="CFNetwork-HTTP-Protocol" />
 
@@ -77,12 +77,12 @@ ms.locfileid: "60932434"
 
 已知問題：
 
- - 變更為背景的外觀`UINavigationBar`，`UITabBar`或`UIToolBar`可能會導致配置傳遞解決新的外觀。 嘗試修改內的這些外觀`LayoutSubviews`， `UpdateConstraints`，`WillLayoutSubviews`或`DidUpdateSubviews`事件可能會導致無限的版面配置迴圈。
- - TvOS 10，呼叫在`RemoveGestureRecognizer`方法的`UIView`物件明確取消任何進行中的筆勢辨識器。
- - 呈現的檢視控制器現在可能會影響 [狀態] 列的外觀。
- - tvOS 10 會要求開發人員呼叫`base.AwakeFromNib`子類別化時`UIViewController`並覆寫`AwakeFromNib`方法。
- - 使用自訂的應用程式`UIView`覆寫的子類別`LayoutSubviews`應急的版面配置，然後再呼叫`base.LayoutSubviews`可能會觸發無限的版面配置中迴圈 tvOS 10。
- - 不開關，當指派的方向特定或 flippable 映像資產`UIButton`物件。
+- 變更為背景的外觀`UINavigationBar`，`UITabBar`或`UIToolBar`可能會導致配置傳遞解決新的外觀。 嘗試修改內的這些外觀`LayoutSubviews`， `UpdateConstraints`，`WillLayoutSubviews`或`DidUpdateSubviews`事件可能會導致無限的版面配置迴圈。
+- TvOS 10，呼叫在`RemoveGestureRecognizer`方法的`UIView`物件明確取消任何進行中的筆勢辨識器。
+- 呈現的檢視控制器現在可能會影響 [狀態] 列的外觀。
+- tvOS 10 會要求開發人員呼叫`base.AwakeFromNib`子類別化時`UIViewController`並覆寫`AwakeFromNib`方法。
+- 使用自訂的應用程式`UIView`覆寫的子類別`LayoutSubviews`應急的版面配置，然後再呼叫`base.LayoutSubviews`可能會觸發無限的版面配置中迴圈 tvOS 10。
+- 不開關，當指派的方向特定或 flippable 映像資產`UIButton`物件。
 
 ## <a name="related-links"></a>相關連結
 

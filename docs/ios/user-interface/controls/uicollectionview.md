@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: a93de9d60a515b6089b35a64eb8832c456c96557
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 890c11908b11b18d6ca626820f1a835d817870da
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827340"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829867"
 ---
 # <a name="collection-views-in-xamarinios"></a>在 Xamarin.iOS 中的集合檢視
 
@@ -453,7 +453,7 @@ namespace SimpleCollectionView
 
 在 iOS 9 中，新增 重新排列到集合檢視的最快方式是使用`UICollectionViewController`。
 集合檢視控制器現在已`InstallsStandardGestureForInteractiveMovement`屬性，加入標準*筆勢辨識器*支援拖曳來重新排列集合中的項目。
-因為預設值是`true`，您只需要實作`MoveItem`方法`UICollectionViewDataSource`類別，以支援拖曳來重新排列。 例如:
+因為預設值是`true`，您只需要實作`MoveItem`方法`UICollectionViewDataSource`類別，以支援拖曳來重新排列。 例如：
 
 ```csharp
 public override void MoveItem (UICollectionView collectionView, NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath)
@@ -693,7 +693,7 @@ namespace CollectionView
 
 儲存您的 ui 所做的變更，並執行應用程式。
 如果使用者從清單中選取項目，並將它拖曳至新位置，其他項目會以動畫顯示自動的方式移動的項目。
-當使用者在新位置放開項時，它會留在那裡至該位置。 例如:
+當使用者在新位置放開項時，它會留在那裡至該位置。 例如：
 
 [![](uicollectionview-images/intro01.png "舉例來說，將項目拖曳至新位置")](uicollectionview-images/intro01.png#lightbox)
 
@@ -701,7 +701,7 @@ namespace CollectionView
 
 ### <a name="using-a-custom-gesture-recognizer"></a>使用自訂的筆勢辨識器
 
-在無法使用的情況下`UICollectionViewController`，而且必須使用一般`UIViewController`，或者如果您想要進一步控制拖放手勢，您可以建立您自己自訂的筆勢辨識器，並將它新增至集合檢視，檢視載入時。 例如:
+在無法使用的情況下`UICollectionViewController`，而且必須使用一般`UIViewController`，或者如果您想要進一步控制拖放手勢，您可以建立您自己自訂的筆勢辨識器，並將它新增至集合檢視，檢視載入時。 例如：
 
 ```csharp
 public override void ViewDidLoad ()
@@ -739,10 +739,10 @@ public override void ViewDidLoad ()
 
 這裡我們使用新增至集合檢視中的數個新方法來實作，並控制在拖曳作業：
 
- - `BeginInteractiveMovementForItem` -將標記在移動操作開始。
- - `UpdateInteractiveMovementTargetPosition` -這是傳送更新項目的位置時。
- - `EndInteractiveMovement` -標示項目移動的結尾。
- - `CancelInteractiveMovement` -標記為使用者取消移動作業。
+- `BeginInteractiveMovementForItem` -將標記在移動操作開始。
+- `UpdateInteractiveMovementTargetPosition` -這是傳送更新項目的位置時。
+- `EndInteractiveMovement` -標示項目移動的結尾。
+- `CancelInteractiveMovement` -標記為使用者取消移動作業。
 
 執行應用程式時，在拖曳作業運作方式，完全如同預設拖曳筆勢辨識器所隨附的集合檢視。
 
@@ -1217,78 +1217,78 @@ public override void AwakeFromNib ()
 
 下列變更或新增項目已對`UICollectionView`適用於 iOS 9 的類別：
 
- - `BeginInteractiveMovementForItem` – 標記拖曳作業的開始。
- - `CancelInteractiveMovement` – 告知集合檢視的使用者已取消拖曳作業。
- - `EndInteractiveMovement` – 告知集合檢視的使用者已完成拖曳作業。
- - `GetIndexPathsForVisibleSupplementaryElements` -傳回`indexPath`的頁首或頁尾中的集合檢視區段。
- - `GetSupplementaryView` -傳回指定的頁首或頁尾。
- - `GetVisibleSupplementaryViews` -傳回一份所有可見的頁首和頁尾。
- - `UpdateInteractiveMovementTargetPosition` – 告知集合檢視的使用者已移動，或會移動，在拖曳作業期間的項目。
+- `BeginInteractiveMovementForItem` – 標記拖曳作業的開始。
+- `CancelInteractiveMovement` – 告知集合檢視的使用者已取消拖曳作業。
+- `EndInteractiveMovement` – 告知集合檢視的使用者已完成拖曳作業。
+- `GetIndexPathsForVisibleSupplementaryElements` -傳回`indexPath`的頁首或頁尾中的集合檢視區段。
+- `GetSupplementaryView` -傳回指定的頁首或頁尾。
+- `GetVisibleSupplementaryViews` -傳回一份所有可見的頁首和頁尾。
+- `UpdateInteractiveMovementTargetPosition` – 告知集合檢視的使用者已移動，或會移動，在拖曳作業期間的項目。
 
 ### <a name="uicollectionviewcontroller"></a>UICollectionViewController
 
 下列變更或新增項目已對`UICollectionViewController`iOS 9 中的類別：
 
- - `InstallsStandardGestureForInteractiveMovement` – 如果`true`將使用新的筆勢辨識器，會自動支援拖曳來重新排列。
- - `CanMoveItem` – 如果指定的項目可以重新排列的拖曳，會通知此集合檢視。
- - `GetTargetContentOffset` – 用來取得指定的集合檢視項目的位移。
- - `GetTargetIndexPathForMove` -取得`indexPath`的拖曳作業的指定項目。
- - `MoveItem` – 在清單中移動指定的項目順序。
+- `InstallsStandardGestureForInteractiveMovement` – 如果`true`將使用新的筆勢辨識器，會自動支援拖曳來重新排列。
+- `CanMoveItem` – 如果指定的項目可以重新排列的拖曳，會通知此集合檢視。
+- `GetTargetContentOffset` – 用來取得指定的集合檢視項目的位移。
+- `GetTargetIndexPathForMove` -取得`indexPath`的拖曳作業的指定項目。
+- `MoveItem` – 在清單中移動指定的項目順序。
 
 
 ### <a name="uicollectionviewdatasource"></a>UICollectionViewDataSource
 
 下列變更或新增項目已對`UICollectionViewDataSource`iOS 9 中的類別：
 
- - `CanMoveItem` – 如果指定的項目可以重新排列的拖曳，會通知此集合檢視。
- - `MoveItem` – 在清單中移動指定的項目順序。
+- `CanMoveItem` – 如果指定的項目可以重新排列的拖曳，會通知此集合檢視。
+- `MoveItem` – 在清單中移動指定的項目順序。
 
 ### <a name="uicollectionviewdelegate"></a>UICollectionViewDelegate
 
 下列變更或新增項目已對`UICollectionViewDelegate`iOS 9 中的類別：
 
- - `GetTargetContentOffset` – 用來取得指定的集合檢視項目的位移。
- - `GetTargetIndexPathForMove` -取得`indexPath`的拖曳作業的指定項目。
+- `GetTargetContentOffset` – 用來取得指定的集合檢視項目的位移。
+- `GetTargetIndexPathForMove` -取得`indexPath`的拖曳作業的指定項目。
 
 ### <a name="uicollectionviewflowlayout"></a>UICollectionViewFlowLayout
 
 下列變更或新增項目已對`UICollectionViewFlowLayout`iOS 9 中的類別：
 
- - `SectionFootersPinToVisibleBounds` – 會遵循顯示的集合檢視邊界區段頁尾。
- - `SectionHeadersPinToVisibleBounds` – 會遵循顯示的集合檢視界限的區段標頭。
+- `SectionFootersPinToVisibleBounds` – 會遵循顯示的集合檢視邊界區段頁尾。
+- `SectionHeadersPinToVisibleBounds` – 會遵循顯示的集合檢視界限的區段標頭。
 
 ### <a name="uicollectionviewlayout"></a>UICollectionViewLayout
 
 下列變更或新增項目已對`UICollectionViewLayout`iOS 9 中的類別：
 
- - `GetInvalidationContextForEndingInteractiveMovementOfItems` – 在使用者完成拖曳，或取消時，傳回失效內容結尾的拖曳作業。
- - `GetInvalidationContextForInteractivelyMovingItems` -傳回在拖曳作業開始的失效內容。
- - `GetLayoutAttributesForInteractivelyMovingItem` -取得版面配置屬性指定的項目時拖曳項目。
- - `GetTargetIndexPathForInteractivelyMovingItem` -傳回`indexPath`拖曳項目時，會在指定的時間點的項目。
+- `GetInvalidationContextForEndingInteractiveMovementOfItems` – 在使用者完成拖曳，或取消時，傳回失效內容結尾的拖曳作業。
+- `GetInvalidationContextForInteractivelyMovingItems` -傳回在拖曳作業開始的失效內容。
+- `GetLayoutAttributesForInteractivelyMovingItem` -取得版面配置屬性指定的項目時拖曳項目。
+- `GetTargetIndexPathForInteractivelyMovingItem` -傳回`indexPath`拖曳項目時，會在指定的時間點的項目。
 
 ### <a name="uicollectionviewlayoutattributes"></a>UICollectionViewLayoutAttributes
 
 下列變更或新增項目已對`UICollectionViewLayoutAttributes`iOS 9 中的類別：
 
- - `CollisionBoundingPath` – 在拖曳作業期間會傳回兩個項目衝突路徑。
- - `CollisionBoundsType` -傳回的衝突類型 (為`UIDynamicItemCollisionBoundsType`)，在拖曳作業期間發生。
+- `CollisionBoundingPath` – 在拖曳作業期間會傳回兩個項目衝突路徑。
+- `CollisionBoundsType` -傳回的衝突類型 (為`UIDynamicItemCollisionBoundsType`)，在拖曳作業期間發生。
 
 ### <a name="uicollectionviewlayoutinvalidationcontext"></a>UICollectionViewLayoutInvalidationContext
 
 下列變更或新增項目已對`UICollectionViewLayoutInvalidationContext`iOS 9 中的類別：
 
- - `InteractiveMovementTarget` -傳回在拖曳作業的目標項目。
- - `PreviousIndexPathsForInteractivelyMovingItems` -傳回`indexPaths`中拖曳來重新排列作業牽涉到的其他項目。
- - `TargetIndexPathsForInteractivelyMovingItems` -傳回`indexPaths`拖曳來重新排列作業的結果就會重新排列的項目。
+- `InteractiveMovementTarget` -傳回在拖曳作業的目標項目。
+- `PreviousIndexPathsForInteractivelyMovingItems` -傳回`indexPaths`中拖曳來重新排列作業牽涉到的其他項目。
+- `TargetIndexPathsForInteractivelyMovingItems` -傳回`indexPaths`拖曳來重新排列作業的結果就會重新排列的項目。
 
 ### <a name="uicollectionviewsource"></a>UICollectionViewSource
 
 下列變更或新增項目已對`UICollectionViewSource`iOS 9 中的類別：
 
- - `CanMoveItem` – 如果指定的項目可以重新排列的拖曳，會通知此集合檢視。
- - `GetTargetContentOffset` -傳回的項目會變成透過拖曳來重新排列作業的位移。
- - `GetTargetIndexPathForMove` -傳回`indexPath`將拖曳來重新排序作業期間移動的項目。
- - `MoveItem` – 在清單中移動指定的項目順序。
+- `CanMoveItem` – 如果指定的項目可以重新排列的拖曳，會通知此集合檢視。
+- `GetTargetContentOffset` -傳回的項目會變成透過拖曳來重新排列作業的位移。
+- `GetTargetIndexPathForMove` -傳回`indexPath`將拖曳來重新排序作業期間移動的項目。
+- `MoveItem` – 在清單中移動指定的項目順序。
 
 ## <a name="summary"></a>總結
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 166a50021c22aa09be3eecdb8b745a70e75c3d51
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8a5a2f87c16a5dd040cefb2fbc615b01431ebcf5
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61031457"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832297"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin.mac 的分鏡腳本簡介
 
@@ -56,9 +56,9 @@ _本文提供在 Xamarin.Mac 應用程式中使用的分鏡腳本的簡介。它
 
 內給定的場景，您可以執行所有會通常已處理個別的項目`.xib`檔案： 
 
- - 位置 subviews，和控制項 （例如按鈕和文字方塊）。
- - 定義項目位置及自動版面配置條件約束。
- - 連接動作與出口公開到程式碼的 UI 項目。
+- 位置 subviews，和控制項 （例如按鈕和文字方塊）。
+- 定義項目位置及自動版面配置條件約束。
+- 連接動作與出口公開到程式碼的 UI 項目。
 
 <a name="Working-with-Segues" />
 

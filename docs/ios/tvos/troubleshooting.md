@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 60b54ffdce5f6bda2324c08bd3159eefeb5bc7f8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6830df267aa0b9c4f12fbd53520206ea94fc8a38
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61270234"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831888"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>疑難排解使用 Xamarin 建置的 tvOS 應用程式
 
@@ -40,7 +40,7 @@ Xamarin 的 tvOS 支援目前版本具有下列已知的問題：
 
 ### <a name="invalid-executable---the-executable-does-not-contain-bitcode"></a>無效的可執行檔的可執行檔不包含 bitcode
 
-嘗試將提交至 Apple TV App Store 的 Xamarin.tvOS 應用程式時，您可能會收到一則錯誤訊息格式 _「 無效的可執行檔的可執行檔不包含 bitcode"_。
+嘗試將提交至 Apple TV App Store 的 Xamarin.tvOS 應用程式時，您可能會收到一則錯誤訊息格式 _「 無效的可執行檔的可執行檔不包含 bitcode"_ 。
 
 若要解決此問題，請執行下列作業：
 
@@ -80,7 +80,7 @@ Section
 
 您必須確定任何靜態的第三方 (`.a`) 您使用的程式庫所建置 tvOS 程式庫 （不是 iOS 程式庫），它們也包含 bitcode 的資訊。
 
-應用程式或程式庫包含有效的 bitcode`size`會大於 1。 有一些情況中的程式庫可以有 bitcode 標記，但是卻不包含有效的 bitcode。 例如: 
+應用程式或程式庫包含有效的 bitcode`size`會大於 1。 有一些情況中的程式庫可以有 bitcode 標記，但是卻不包含有效的 bitcode。 例如：
 
 **無效的 Bitcode**
 
@@ -184,7 +184,7 @@ _無效的套件組合 – GameController framework 使用的 Apple TV 應用程
 
 _不相容的目標 framework:。NetPortable，版本 = v4.5 中，設定檔 = Profile78_
 
-若要解決此問題，新增 XML 檔案，稱為` Xamarin.TVOS.xml`使用下列內容：
+若要解決此問題，新增 XML 檔案，稱為`Xamarin.TVOS.xml`使用下列內容：
 
 ```xml
 <Framework Identifier="Xamarin.TVOS" MinimumVersion="1.0" Profile="*" DisplayName="Xamarin.TVOS"/>

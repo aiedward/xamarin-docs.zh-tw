@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/04/2018
-ms.openlocfilehash: c0adee0dae1135bdfd076082e85a471db1cd1ecf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 490331663d94a1e3130fc794a11a52acdacca014
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013216"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829749"
 ---
 # <a name="bound-services-in-xamarinandroid"></a>在 Xamarin.Android 中繫結的服務
 
@@ -230,7 +230,7 @@ namespace BoundServiceDemo
 
 ## <a name="starting-and-binding-to-a-service-with-an-explicit-intent"></a>啟動並繫結至明確 Intent 服務
 
-若要使用繫結的服務，為用戶端 （例如活動） 必須具現化物件可實作`Android.Content.IServiceConnection`，並叫用`BindService`方法。` BindService` 會傳回`true`服務所繫結，如果`false`如果不是。 `BindService` 方法採用三個參數：
+若要使用繫結的服務，為用戶端 （例如活動） 必須具現化物件可實作`Android.Content.IServiceConnection`，並叫用`BindService`方法。 `BindService` 會傳回`true`服務所繫結，如果`false`如果不是。 `BindService` 方法採用三個參數：
 
 * **`Intent`**  &ndash;意圖應該明確地識別連線到哪個服務。
 * **`IServiceConnection`物件**&ndash;這個物件會提供繫結的服務啟動及停止時，通知用戶端的回呼方法的媒介。

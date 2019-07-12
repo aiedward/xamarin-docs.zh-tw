@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
-ms.openlocfilehash: bf135755f64e4d17db2c187d58572c525dfee559
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bc9396a8cb667b8170c4b3511b9fe8423741e6b1
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61420868"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829932"
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>我可以將檔案加入或移除的 IPA 檔案中的檔案之後在 Visual Studio 中建立, 嗎？
 
@@ -32,7 +32,7 @@ ms.locfileid: "61420868"
 
 4.  開啟新`Terminal.app`視窗。
 
-5.  型別`cd `Terminal.app 視窗中，然後拖曳 & 拖放到`generated session id`資料夾`Terminal.app`視窗：
+5.  型別`cd`Terminal.app 視窗中，然後拖曳 & 拖放到`generated session id`資料夾`Terminal.app`視窗：
 
     ![](modify-ipa-images/session-id-folder.png "在 Finder 中尋找產生的工作階段識別碼資料夾")
 
@@ -52,7 +52,7 @@ ms.locfileid: "61420868"
 
 12.  尋找包含`tool /usr/bin/codesign execution started with arguments: -v --force --sign`。
 
-13.  型別`/usr/bin/codesign `到步驟 8 中的 [Terminal.app] 視窗。
+13.  型別`/usr/bin/codesign`到步驟 8 中的 [Terminal.app] 視窗。
 
 14.  複製所有引數開頭`-v`從列在步驟 12，並貼到 [Terminal.app] 視窗。
 

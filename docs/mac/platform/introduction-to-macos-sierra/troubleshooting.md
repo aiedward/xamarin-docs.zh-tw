@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 09/22/2016
-ms.openlocfilehash: 1b379bef98e498df4c58ba7209aa46b0b2542fe1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 322acff3279d0513266c7d9883726cac726334f7
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61031417"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830547"
 ---
 # <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin.Mac-macOS Sierra 疑難排解
 
@@ -52,7 +52,7 @@ _這篇文章會提供數個疑難排解秘訣，用於具有 macOS Sierra Xamar
 已知問題：
 
 - 呼叫`NSObject.ValueForKey`將`null`金鑰將會導致例外狀況。
-- 兩者`NSURLSession`和 NSURLConnection` no longer RC4 cipher suites during the TLS handshake for `http://' Url。
+- 兩者`NSURLSession`並`NSURLConnection`不再 RC4 加密套件的 TLS 信號交換期間`http://`Url。
 - 應用程式可以停止回應，當修改中的超級檢視表的幾何`ViewWillLayoutSubviews`或`LayoutSubviews`方法。
 - 對於所有 SSL/TLS 連線，RC4 對稱編碼器現在預設會停用。 此外，安全傳輸 API 不再支援 SSLv3 與建議的應用程式停止儘速使用 sha-1 和 3DES 加密。
 

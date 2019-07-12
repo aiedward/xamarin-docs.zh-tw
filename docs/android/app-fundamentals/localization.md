@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 1f3e6dcc81c75d12a1dbba8fefc62a85178c8c24
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f6a7f8859340dcc8e48b6a4e6f56847168f4b71e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019204"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829754"
 ---
 # <a name="android-localization"></a>Android 的當地語系化
 
@@ -252,7 +252,9 @@ adb shell setprop persist.sys.locale fr-CA;stop;sleep 5;start
 ### <a name="device-testing"></a>裝置測試
 
 若要測試的裝置上，變更的語言**設定**應用程式。
-**提示：** 請記下的圖示和功能表項目的位置，以便您可以還原成原來的設定語言。
+
+> [!TIP]
+> 請記下的圖示和功能表項目的位置，以便您可以還原成原來的設定語言。
 
 
 ## <a name="summary"></a>總結

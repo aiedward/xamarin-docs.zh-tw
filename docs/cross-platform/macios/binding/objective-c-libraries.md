@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 306cce581eb1506e770222ea10e160c4fdbe1b29
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 206379b162c7778663ee2baf64dfeb1d33666ab4
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827492"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831457"
 ---
 # <a name="binding-objective-c-libraries"></a>繫結 Objective C 程式庫
 
@@ -214,7 +214,7 @@ string SetText ([NullAllowed] string text);
 和 [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
 屬性。
 
-當您使用[ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)涵蓋 btouch 原生之下的屬性上屬性實際上會繫結的兩個方法： getter 和 setter。 您提供匯出的名稱**basename**且前面加上 「 set 」，開啟的第一個字母的單字計算 setter **basename**成大寫，並讓需要的選取器引數。 這表示`[Export ("label")]`上套用屬性實際上會繫結的 「 標籤 」 和 「 setLabel: 」OBJECTIVE-C 方法。
+當您使用[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)涵蓋 btouch 原生之下的屬性上屬性實際上會繫結的兩個方法： getter 和 setter。 您提供匯出的名稱**basename**且前面加上 「 set 」，開啟的第一個字母的單字計算 setter **basename**成大寫，並讓需要的選取器引數。 這表示`[Export ("label")]`上套用屬性實際上會繫結的 「 標籤 」 和 「 setLabel: 」OBJECTIVE-C 方法。
 
 有時候 OBJECTIVE-C 屬性未遵循前述的模式，且名稱是以手動方式覆寫。 在這些情況下，您可以控制使用產生的繫結的方式 [`[Bind]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAttribute) 
 屬性 getter 或 setter，例如：
@@ -267,7 +267,7 @@ string Text { get; [NullAllowed] set; }
 設定自訂控制項的繫結時，應該考慮下列事項：
 
 1. **繫結屬性必須是靜態**-當定義的屬性，繫結[ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)都必須使用屬性。
- 2. **屬性名稱必須完全符合**-用來將屬性繫結的名稱必須完全相符的自訂控制項中的屬性名稱。
+2. **屬性名稱必須完全符合**-用來將屬性繫結的名稱必須完全相符的自訂控制項中的屬性名稱。
 3. **屬性類型必須完全符合**-用來將屬性繫結的變數類型必須完全相符的自訂控制項中的屬性類型。
 4. **中斷點和 getter/setter** -中斷點放在 getter 或 setter 方法的屬性會永遠不會被叫用。
 5. **觀察回呼**-您必須使用的自訂控制項的屬性值中的變更通知的觀察回呼。
@@ -479,7 +479,7 @@ interface NSStringDrawingExtensions {
 
 ### <a name="binding-objective-c-argument-lists"></a>繫結 Objective C 的引數清單
 
-OBJECTIVE-C 支援 variadic 引數。 例如:
+OBJECTIVE-C 支援 variadic 引數。 例如：
 
 ```objc
 - (void) appendWorkers:(XWorker *) firstWorker, ...
@@ -522,7 +522,7 @@ public void AppendWorkers(params Worker[] workers)
 
 通常這些欄位會包含必須參考的字串或整數值。 它們通常用為字串，代表特定的通知，並做為字典中的索引鍵。
 
-若要將欄位繫結，將屬性加入至您的介面定義檔和裝飾的屬性[ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)屬性。 這個屬性會採用一個參數： 要查閱的符號 C 名稱。 例如:
+若要將欄位繫結，將屬性加入至您的介面定義檔和裝飾的屬性[ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)屬性。 這個屬性會採用一個參數： 要查閱的符號 C 名稱。 例如：
 
 ```csharp
 [Field ("NSSomeEventNotification")]
@@ -632,7 +632,7 @@ interface MyType {
 您可以將方法 （在傳回的值）、 參數和屬性與裝飾[ `[BindAs]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)。 唯一的限制是，您的成員**不得**位於內 [`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) 
 或是[ `[Model]` ](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)介面。
 
-例如:
+例如：
 
 ```csharp
 [return: BindAs (typeof (bool?))]
@@ -651,7 +651,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 
 [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) 也支援陣列`NSNumber``NSValue`和`NSString`（列舉）。
 
-例如:
+例如：
 
 ```csharp
 [BindAs (typeof (CAScroll []))]
@@ -682,7 +682,7 @@ Xamarin.iOS 繫結產生器提供繫結通知的開發人員的支援。 若要�
 
 這個屬性可以用於不含引數執行沒有承載的通知，或者您可以指定`System.Type`參考另一個介面，在 API 定義中，通常與名稱結尾"EventArgs"。 產生器會將介面變成類別子類別化`EventArgs`，且會包含所有列出的屬性。 [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)屬性應該用在的 EventArgs 類別，列出用來查閱 OBJECTIVE-C 字典擷取值的索引鍵的名稱。
 
-例如:
+例如：
 
 ```csharp
 interface MyClass {
@@ -1337,7 +1337,7 @@ c.Loaded += delegate (sender, args){
 上述範例會將連結`libMyLibrary.a`，`libSystemLibrary.dylib`而`CFNetwork`framework 程式庫，到最後一個可執行檔。
 
 或利用組件層級[ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)，，您可以內嵌在您的合約檔案 (例如`AssemblyInfo.cs`)。
-當您使用[ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)，您必須擁有您原生程式庫可在您做您繫結，這會將原生程式庫內嵌您的應用程式的時間。 例如:
+當您使用[ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)，您必須擁有您原生程式庫可在您做您繫結，這會將原生程式庫內嵌您的應用程式的時間。 例如：
 
 ```csharp
 // Specify only the library name as a constructor argument and specify everything else with properties:

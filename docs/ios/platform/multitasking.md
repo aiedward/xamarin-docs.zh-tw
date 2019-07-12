@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 6a9c66720aeb97c5b894cbea42c6cc0c5285c67d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 888e00fbdbf30b5b2842bc30822a55f57372eb34
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978619"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831816"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>適用於 iPad 的 Xamarin.iOS 的多工
 
@@ -48,10 +48,10 @@ iOS 9 新增多工作業支援同時執行兩個應用程式，在特定的 iPad
 
 若要支援**投影片透過**或**分割檢視**您的應用程式必須執行下列動作：
 
- - 在建置 iOS 9 （或更新版本）。
- - 用於其啟動畫面上的分鏡腳本 （和不影像資產）。
- - 使用自動版面配置和大小類別將分鏡腳本用於其 UI。
- - 支援所有 4 個 iOS 裝置方向 （直向、 上下顛倒的直向、 橫向左和橫向右邊）。
+- 在建置 iOS 9 （或更新版本）。
+- 用於其啟動畫面上的分鏡腳本 （和不影像資產）。
+- 使用自動版面配置和大小類別將分鏡腳本用於其 UI。
+- 支援所有 4 個 iOS 裝置方向 （直向、 上下顛倒的直向、 橫向左和橫向右邊）。
 
 <a name="Multitasking" />
 
@@ -242,9 +242,9 @@ Xamarin.iOS 應用程式，無法選擇不使用執行任一滑出面板中，�
 
 若要退出 PIP 播放視訊時，執行您的應用程式中的下列動作：
 
- - 如果您使用`AVPlayerViewController`若要顯示的影片，請設定`AllowsPictureInPicturePlayback`屬性設`false`。
- - 如果您使用`AVPlayerLayer`若要顯示視訊，不具現化`AVPictureInPictureController`。
- - 如果您使用`WKWebView`若要顯示的影片，請設定`AllowsPictureInPictureMediaPlayback`屬性設`false`。
+- 如果您使用`AVPlayerViewController`若要顯示的影片，請設定`AllowsPictureInPicturePlayback`屬性設`false`。
+- 如果您使用`AVPlayerLayer`若要顯示視訊，不具現化`AVPictureInPictureController`。
+- 如果您使用`WKWebView`若要顯示的影片，請設定`AllowsPictureInPictureMediaPlayback`屬性設`false`。
 
 <a name="Summary" />
 

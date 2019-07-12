@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: b853bd3bc55a2d4cb613a9f0079aebae9f57027b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3a8872ae54d7b1efb55ee71286ca5ea479616e0
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61357014"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830158"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>在 Xamarin.iOS 中 NSUserActivity 搜尋
 
@@ -27,14 +27,14 @@ IOS 9 的新手`NSUserActivity`可以編製索引 （公開和私密） 並搜�
 
 下列屬性的`NSUserActivity`用來支援應用程式內搜尋：
 
- - `EligibleForHandoff` – 如果`true`，此活動可以用於遞移式作業。
- - `EligibleForSearch` – 如果`true`，此活動會新增至裝置上的索引，並顯示在搜尋結果中。
- - `EligibleForPublicIndexing` – 如果`true`，此活動會新增至 Apple 的雲端式索引，並向您尚未安裝您的應用程式在其 iOS 裝置的使用者 （透過搜尋）。 請參閱[公開搜尋索引編製](#public-search-indexing)節以取得詳細資料。
- - `Title` – 提供您活動的標題，並顯示在搜尋結果中。 使用者也可以搜尋標題本身的文字。
- - `Keywords` – 是用來描述您的活動，會編製索引，並由使用者可搜尋的字串陣列。
- - `ContentAttributeSet` – 是`CSSearchableItemAttributeSet`用來進一步說明您的活動詳細資料，並提供豐富的內容，在搜尋結果中。
- - `ExpirationDate` – 如果您要用來只會顯示指定日期的活動時，您可以提供該的日期。
- - `WebpageURL` – 如果活動可以在網頁上檢視，或如果您的應用程式支援 Safari 的深層連結，您可以設定瀏覽以下的連結。
+- `EligibleForHandoff` – 如果`true`，此活動可以用於遞移式作業。
+- `EligibleForSearch` – 如果`true`，此活動會新增至裝置上的索引，並顯示在搜尋結果中。
+- `EligibleForPublicIndexing` – 如果`true`，此活動會新增至 Apple 的雲端式索引，並向您尚未安裝您的應用程式在其 iOS 裝置的使用者 （透過搜尋）。 請參閱[公開搜尋索引編製](#public-search-indexing)節以取得詳細資料。
+- `Title` – 提供您活動的標題，並顯示在搜尋結果中。 使用者也可以搜尋標題本身的文字。
+- `Keywords` – 是用來描述您的活動，會編製索引，並由使用者可搜尋的字串陣列。
+- `ContentAttributeSet` – 是`CSSearchableItemAttributeSet`用來進一步說明您的活動詳細資料，並提供豐富的內容，在搜尋結果中。
+- `ExpirationDate` – 如果您要用來只會顯示指定日期的活動時，您可以提供該的日期。
+- `WebpageURL` – 如果活動可以在網頁上檢視，或如果您的應用程式支援 Safari 的深層連結，您可以設定瀏覽以下的連結。
 
 ## <a name="nsuseractivity-quickstart"></a>NSUserActivity 快速入門
 

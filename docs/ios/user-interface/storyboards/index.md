@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: f24be635afcba181efcab85d81a984d93dae4bc8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5c3c9714cb4d6cd077f898778f4388d63018fa00
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61428903"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831692"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中的分鏡腳本簡介
 
@@ -68,7 +68,7 @@ A *Segue*，或*Segue 物件*，iOS 開發用來代表場景之間的轉換。 �
 
 -  **顯示 / 推送**– 推送 segue 將檢視控制器加入至導覽堆疊上。 它會假設原始推播檢視控制器會為已加入至堆疊的檢視控制器相同的瀏覽控制器的一部分。 這會與相同的工作`pushViewController`，並在螢幕上的資料之間的某種關聯性時，通常使用。 使用推入 segue 可讓您的需要上一頁按鈕及標題新增至在堆疊上，允許向下鑽研導覽的檢視階層的每個檢視中瀏覽列。
 -  **強制回應**– 強制回應的 segue 會建立專案，並可顯示動畫轉換中任何兩個檢視控制器之間的關聯性。 子檢視控制器會難理解帶入檢視時，才會進行父檢視控制器。 不同於推播的 segue，為我們; 加入上一頁按鈕當使用強制回應 segue`DismissViewController`必須使用，以返回上一個檢視控制器。
--  **自訂**– 任何自訂的子類別可以在建立 segue ` UIStoryboardSegue`。
+-  **自訂**– 任何自訂的子類別可以在建立 segue `UIStoryboardSegue`。
 -  **回溯**-回溯的 segue 可用來向後巡覽的推播 」 或 「 強制回應 segue – 比方說，藉由關閉強制回應所呈現的檢視控制器。 此外，您可以回溯到不只一個，但一系列的推播和強制回應 segue，並返回瀏覽具有單一階層中的多個步驟回溯動作。 若要了解如何使用回溯程式在 iOS 中，讀取的 segue[建立回溯 Segue](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue)配方。
 -  **無來源**– 無來源的 segue 會指出包含的初始檢視控制器場景，因此之檢視的使用者會看到第一次。 它表示如下所示的 segue:  
 

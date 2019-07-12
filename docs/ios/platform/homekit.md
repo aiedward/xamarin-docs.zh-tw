@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 6793190fa3278455a00d7ea08ab52a643c369a35
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a5402bb3b10387644282301075f63644149fcdc6
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61371431"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831536"
 ---
 # <a name="homekit-in-xamarinios"></a>在 Xamarin.iOS 中 HomeKit
 
@@ -104,7 +104,7 @@ Apple 提供 HomeKit 配件模擬器作為個別下載從 Xcode，因此您必�
 1. 從應用程式 資料夾中，啟動 HomeKit 配件模擬器： 
 
     [![](homekit-images/simulator02.png "HomeKit 配件模擬器")](homekit-images/simulator02.png#lightbox)
-2. 按一下  **+** 按鈕，然後選取**新附屬應用程式...**: 
+2. 按一下  **+** 按鈕，然後選取**新附屬應用程式...** : 
 
     [![](homekit-images/simulator03.png "加入新的附屬應用程式")](homekit-images/simulator03.png#lightbox)
 3. 填寫 新的附屬應用程式的相關資訊，然後按一下**完成**按鈕： 
@@ -285,7 +285,7 @@ ThisApp.HomeManager.AddHome(HomeName.Text,(home,error) =>{
 
 [![](homekit-images/accessory01.png "尋找新的附屬應用程式")](homekit-images/accessory01.png#lightbox)
 
-呼叫`AddAccessory`方法，以將選取的附屬應用程式新增至家中的集合。 例如: 
+呼叫`AddAccessory`方法，以將選取的附屬應用程式新增至家中的集合。 例如：
 
 ```csharp
 // Add the requested accessory to the home
@@ -318,7 +318,7 @@ HomeKit 配件模擬器中可以找到這個數字之下**安裝程式碼**欄�
 
 基於此範例中，我們將會保持簡化頗簡單和家中的 附屬應用程式直接處理而不是將它們組織到聊天室或區域。
 
-`HMHome`物件包含一份指派附屬應用程式，可以呈現給使用者，以其`Accessories`屬性。 例如: 
+`HMHome`物件包含一份指派附屬應用程式，可以呈現給使用者，以其`Accessories`屬性。 例如：
 
 [![](homekit-images/accessory04.png "範例附屬應用程式")](homekit-images/accessory04.png#lightbox)
 
@@ -384,77 +384,77 @@ HomeKit 配件模擬器中可以找到這個數字之下**安裝程式碼**欄�
 
 `HMCharacteristicType`列舉提供一組特性的中繼資料值可定義或修改，如下所示：
 
- - AdminOnlyAccess
- - AirParticulateDensity
- - AirParticulateSize
- - AirQuality
- - AudioFeedback
- - BatteryLevel
- - 亮度
- - CarbonDioxideDetected
- - CarbonDioxideLevel
- - CarbonDioxidePeakLevel
- - CarbonMonoxideDetected
- - CarbonMonoxideLevel
- - CarbonMonoxidePeakLevel
- - ChargingState
- - ContactState
- - CoolingThreshold
- - CurrentDoorState
- - CurrentHeatingCooling
- - CurrentHorizontalTilt
- - CurrentLightLevel
- - CurrentLockMechanismState
- - CurrentPosition
- - CurrentRelativeHumidity
- - CurrentSecuritySystemState
- - CurrentTemperature
- - CurrentVerticalTilt
- - FirmwareVersion
- - HardwareVersion
- - HeatingCoolingStatus
- - HeatingThreshold
- - HoldPosition
- - 色調
- - 識別
- - InputEvent
- - LeakDetected
- - LockManagementAutoSecureTimeout
- - LockManagementControlPoint
- - LockMechanismLastKnownAction
- - 記錄檔
- - 製造商
- - 型號
- - MotionDetected
- - 名稱
- - ObstructionDetected
- - OccupancyDetected
- - OutletInUse
- - OutputState
- - PositionState
- - PowerState
- - RotationDirection
- - RotationSpeed
- - 飽和度
- - SerialNumber
- - SmokeDetected
- - SoftwareVersion
- - StatusActive
- - StatusFault
- - StatusJammed
- - StatusLowBattery
- - StatusTampered
- - TargetDoorState
- - TargetHeatingCooling
- - TargetHorizontalTilt
- - TargetLockMechanismState
- - TargetPosition
- - TargetRelativeHumidity
- - TargetSecuritySystemState
- - TargetTemperature
- - TargetVerticalTilt
- - TemperatureUnits
- - 版本
+- AdminOnlyAccess
+- AirParticulateDensity
+- AirParticulateSize
+- AirQuality
+- AudioFeedback
+- BatteryLevel
+- 亮度
+- CarbonDioxideDetected
+- CarbonDioxideLevel
+- CarbonDioxidePeakLevel
+- CarbonMonoxideDetected
+- CarbonMonoxideLevel
+- CarbonMonoxidePeakLevel
+- ChargingState
+- ContactState
+- CoolingThreshold
+- CurrentDoorState
+- CurrentHeatingCooling
+- CurrentHorizontalTilt
+- CurrentLightLevel
+- CurrentLockMechanismState
+- CurrentPosition
+- CurrentRelativeHumidity
+- CurrentSecuritySystemState
+- CurrentTemperature
+- CurrentVerticalTilt
+- FirmwareVersion
+- HardwareVersion
+- HeatingCoolingStatus
+- HeatingThreshold
+- HoldPosition
+- 色調
+- 識別
+- InputEvent
+- LeakDetected
+- LockManagementAutoSecureTimeout
+- LockManagementControlPoint
+- LockMechanismLastKnownAction
+- 記錄檔
+- 製造商
+- 型號
+- MotionDetected
+- 名稱
+- ObstructionDetected
+- OccupancyDetected
+- OutletInUse
+- OutputState
+- PositionState
+- PowerState
+- RotationDirection
+- RotationSpeed
+- 飽和度
+- SerialNumber
+- SmokeDetected
+- SoftwareVersion
+- StatusActive
+- StatusFault
+- StatusJammed
+- StatusLowBattery
+- StatusTampered
+- TargetDoorState
+- TargetHeatingCooling
+- TargetHorizontalTilt
+- TargetLockMechanismState
+- TargetPosition
+- TargetRelativeHumidity
+- TargetSecuritySystemState
+- TargetTemperature
+- TargetVerticalTilt
+- TemperatureUnits
+- 版本
 
 ### <a name="working-with-a-characteristics-value"></a>使用的特性值
 
@@ -667,7 +667,7 @@ Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
 這篇文章已涵蓋與 HomeKit 配件的 Xamarin.iOS 應用程式中使用所需的基本功能。 不過，有幾項進階的功能的 HomeKit 未涵蓋在本簡介：
 
 - **聊天室**-啟用 HomeKit 配件可以選擇性地分成終端使用者的聊天室。 這可讓 HomeKit 存在的附屬應用程式，讓使用者了解及使用簡單的方式。 如需有關建立和維護聊天室的詳細資訊，請參閱 Apple [HMRoom](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/cl/HMRoom)文件。
-- **區域**-聊天室可以選擇性地組織成區域為終端使用者。 區域是指使用者可能會視為單一單位的房間內的集合。 例如: 樓上，Downstairs 或地下室。 同樣地，這可讓 HomeKit 呈現，並使用 附屬應用程式對使用者有意義的方式。 如需有關建立和維護區域的詳細資訊，請參閱 Apple [HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone)文件。
+- **區域**-聊天室可以選擇性地組織成區域為終端使用者。 區域是指使用者可能會視為單一單位的房間內的集合。 例如：樓上，Downstairs 或地下室。 同樣地，這可讓 HomeKit 呈現，並使用 附屬應用程式對使用者有意義的方式。 如需有關建立和維護區域的詳細資訊，請參閱 Apple [HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone)文件。
 - **動作和動作設定**-動作修改配件服務特性，並可分組為設定。 動作集做為控制一群附屬應用程式，並協調其動作的指令碼。 比方說，「 監看電視 」 指令碼可能會關閉隱蔽、 變暗，並開啟電視和其音效的系統。 如需有關建立和維護動作和動作設定的詳細資訊，請參閱 Apple [HMAction](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMAction_Class/index.html#//apple_ref/occ/cl/HMAction)並[HMActionSet](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/cl/HMActionSet)文件。
 - **觸發程序**-觸發程序可以啟動其中一個或多個動作時，設定一組指定的條件已符合。 比方說，開啟 portch 光線，並收到深色之外時，鎖定所有外部的門。 如需有關建立和維護觸發程序的詳細資訊，請參閱 Apple [HMTrigger](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/cl/HMTrigger)文件。
 
@@ -677,9 +677,9 @@ Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
 
 提交 HomeKit 之前啟用的 Xamarin.iOS 應用程式，itunes Connect 在 iTunes App Store 中的版本請確定您遵循 HomeKit 啟用應用程式的 Apple 的指導方針：
 
- - 應用程式的主要用途_必須_居家自動化，才使用 HomeKit 架構。
- - 應用程式的行銷文字必須通知使用者正在使用 HomeKit，而且必須提供隱私權原則。
- - 嚴格禁止收集使用者資訊，或使用 HomeKit 的廣告。
+- 應用程式的主要用途_必須_居家自動化，才使用 HomeKit 架構。
+- 應用程式的行銷文字必須通知使用者正在使用 HomeKit，而且必須提供隱私權原則。
+- 嚴格禁止收集使用者資訊，或使用 HomeKit 的廣告。
 
 針對完整檢閱指導方針，請參閱 Apple [App Store 檢閱方針](https://developer.apple.com/app-store/review/guidelines/)。
 

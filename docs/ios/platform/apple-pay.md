@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: b971029ff3b2b1e8f5e63233d1d754c44b0e3309
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7f1851b6a7dec10580c9feea590cf25be30b4aa1
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61346968"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832081"
 ---
 # <a name="apple-pay-in-xamarinios"></a>在 Xamarin.iOS 中的 Apple Pay
 
@@ -26,10 +26,10 @@ Apple Pay 才可用在 iOS 8 和更新版本，並因此需要 Xcode 6 的最小
 
 下列項目也是需要將整合到您的應用程式的 Apple Pay 的：
 
- - 付款處理器平台
- - 商家識別碼
- - Apple Pay 的憑證
- - Apple Pay 權利
+- 付款處理器平台
+- 商家識別碼
+- Apple Pay 的憑證
+- Apple Pay 權利
 
 本文將探討更多詳細資料中的項目。
 

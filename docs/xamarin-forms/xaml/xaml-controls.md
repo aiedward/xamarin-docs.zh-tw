@@ -7,17 +7,17 @@ ms.assetid: 639BD392-1496-41BB-BB09-7652273AC9D8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/03/2019
-ms.openlocfilehash: 8217c6436cc8cfe8f4b9c6cc3445157319e8c0bf
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.date: 07/10/2019
+ms.openlocfilehash: dc903cf4ff8eaced18df3271e5e4dbdde6845b6a
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741108"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832621"
 ---
 # <a name="xaml-controls"></a>XAML 控制項
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 
 檢視是使用者介面物件，例如標籤、 按鈕和滑桿，一般稱為*控制項*或是*widget*其他圖形化的程式設計環境中。 支援的所有衍生自的 Xamarin.Forms 檢視[ `View` ](xref:Xamarin.Forms.View)類別。
 
@@ -47,9 +47,10 @@ ms.locfileid: "66741108"
 
 |     |     |
 | --- | --- |
+| <h3>核取方塊</h3>允許選取`boolean`值。<p align="center">![核取方塊的螢幕擷取畫面](xaml-controls-images/CheckBox.png "核取方塊")</p> [快速入門](~/xamarin-forms/user-interface/checkbox.md) | <p valign="center"><pre>&lt;CheckBox IsChecked="true"<br />          HorizontalOptions="Center"<br />          VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>滑桿</h3>允許選取`double`從連續範圍的值。<p align="center">![螢幕擷取畫面的滑桿](xaml-controls-images/Slider.png "滑桿")</p>[API](xref:Xamarin.Forms.Slider) / [指南](~/xamarin-forms/user-interface/slider.md) | <p valign="center"><pre>&lt;Slider Minimum="0"<br />        Maximum="100"<br />        VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>Stepper</h3>允許選取`double`累加式的範圍內的值。<p align="center">![螢幕擷取畫面的步進](xaml-controls-images/Stepper.png "步進")</p>[API](xref:Xamarin.Forms.Stepper) / [指南](~/xamarin-forms/user-interface/stepper.md) | <p valign="center"><pre>&lt;Stepper Minimum="0"<br />         Maximum="10"<br />         Increment="0.1"<br />         HorizontalOptions="Center"<br />         VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
-| <h3>參數</h3>允許選取`boolean`值。<p align="center">![參數的螢幕擷取畫面](xaml-controls-images/Switch.png "交換器")</p>[API](xref:Xamarin.Forms.Switch) | <p valign="center"><pre>&lt;Switch IsToggled="false"<br />        HorizontalOptions="Center"<br />        VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
+| <h3>參數</h3>允許選取`boolean`值。<p align="center">![參數的螢幕擷取畫面](xaml-controls-images/Switch.png "交換器")</p>[API](xref:Xamarin.Forms.Switch) / [指南](~/xamarin-forms/user-interface/switch.md)| <p valign="center"><pre>&lt;Switch IsToggled="false"<br />        HorizontalOptions="Center"<br />        VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>DatePicker</h3>允許選取的日期。<p align="center">![螢幕擷取畫面的 DatePicker](xaml-controls-images/DatePicker.png "DatePicker")</p>[API](xref:Xamarin.Forms.DatePicker) / [指南](~/xamarin-forms/user-interface/datepicker.md) | <p valign="center"><pre>&lt;DatePicker Format="D"<br/>            VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>TimePicker</h3>允許選取的時間。<p align="center">![螢幕擷取畫面的 TimePicker](xaml-controls-images/TimePicker.png "TimePicker")</p>[API](xref:Xamarin.Forms.TimePicker) / [指南](~/xamarin-forms/user-interface/timepicker.md) | <p valign="center"><pre>&lt;TimePicker Format="T"<br />            VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 |     |     |

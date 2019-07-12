@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
-ms.openlocfilehash: dfe1918d271946eb96d1f57d32c533a075f6d0bd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3dbb4d9132d5d94e4533704730e95002b5aec0be
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61421953"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832263"
 ---
 # <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-object"></a>有什麼我的 iOS 9 應用程式失敗，而且出現：System.Exception:無法封送 Objective-C 物件？
 
@@ -22,7 +22,7 @@ ms.locfileid: "61421953"
 
 在 iOS 9 的 API 變更需要回呼的建構函式，呼叫 unmanaged 程式碼，為基礎的 API 現在預期它時使用。 您可以使用下面這一行來回呼的建構函式加入類別： 
 
-`public foo (IntPtr handle) : base (handle) ` 
+`public foo (IntPtr handle) : base (handle)` 
 
 ### <a name="next-steps"></a>後續步驟
 

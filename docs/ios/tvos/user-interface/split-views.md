@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 9f1bd48378faa9ae6a4853083c93377268c38f01
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 775fe01122440378f68973549d46e3010400614e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61374474"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830855"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>使用 tvOS 在 Xamarin 中的分割檢視控制器
 
@@ -100,7 +100,7 @@ Xamarin.tvOS 應用程式中使用分割檢視控制器的最簡單方式是將�
 
 ### <a name="accessing-master-and-detail"></a>存取主版和詳細資料
 
-如果您需要以程式設計方式存取的主要和詳細資料檢視控制器，使用`ViewControllers `分割檢視控制器的屬性。 例如：
+如果您需要以程式設計方式存取的主要和詳細資料檢視控制器，使用`ViewControllers`分割檢視控制器的屬性。 例如：
 
 ```csharp
 // Gain access to master and detail view controllers

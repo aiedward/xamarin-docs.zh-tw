@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: e37fd88f0d5fcf02ece0ae2f5e3164a507067e29
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 62b577393a498587ee2e2e899d20bfeec7988c4e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61034775"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832378"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>在 Xamarin.iOS 中 Siri 快速鍵
 
@@ -218,7 +218,7 @@ void HandleUserActivity()
 - 回應**屬性**可用來自訂訊息傳達給使用者。 **OrderSoup**意圖回應具有**soup**並**waittime 偏**屬性。
 - **回應範本**指定可用的意圖工作完成後，指出狀態的各種成功和失敗訊息。
 - **成功**應該選取核取方塊，表示作業成功的回應。
- - **OrderSoupIntent**成功回應會使用**soup**並**waittime 偏**屬性，以提供易記且實用的訊息，描述當 soup 順序就可以開始。
+- **OrderSoupIntent**成功回應會使用**soup**並**waittime 偏**屬性，以提供易記且實用的訊息，描述當 soup 順序就可以開始。
 
 ### <a name="generating-code-for-the-custom-intent"></a>產生自訂的意圖的程式碼
 

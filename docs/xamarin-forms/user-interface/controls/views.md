@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: 4d0fc5c4ee3947de74a62e8c42fedb8aeedbfdd9
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: cc673077502e15894ce4c4519df051174feb7e8e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650620"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830920"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms 檢視
 
@@ -56,7 +56,7 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 |     |     |
 | --- | --- |
-| [`OpenGLView`](xref:Xamarin.Forms.OpenGLView) OpenGL 圖形顯示 iOS 和 Android 專案中。 沒有適用於通用 Windows 平台支援。 IOS 和 Android 專案需要的參考**OpenTK 1.0**組件或有**OpenTK** 1.0.0.0 版的組件。 `OpenGLView` 共用專案; 中使用的工作變得更容易如果使用.NET Standard 程式庫，然後相依性服務也會需要 （如程式碼範例所示）。<br /><br />這是唯一的圖形設施內建於 Xamarin.Forms，但 Xamarin.Forms 應用程式也可以轉譯圖形使用[ `CocosSharp` ](~/xamarin-forms/user-interface/graphics/cocossharp.md)， [ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)，或[ `UrhoSharp`](~/xamarin-forms/user-interface/graphics/urhosharp.md).<br /><br />[API 文件](xref:Xamarin.Forms.OpenGLView)<br /><br /> | [![OpenGLView 範例](views-images/OpenGLView.png "OpenGLView 範例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml)使用[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
+| [`OpenGLView`](xref:Xamarin.Forms.OpenGLView) OpenGL 圖形顯示 iOS 和 Android 專案中。 沒有適用於通用 Windows 平台支援。 IOS 和 Android 專案需要的參考**OpenTK 1.0**組件或有**OpenTK** 1.0.0.0 版的組件。 `OpenGLView` 共用專案; 中使用的工作變得更容易如果使用.NET Standard 程式庫，然後相依性服務也會需要 （如程式碼範例所示）。<br /><br />這是唯一的圖形設施內建於 Xamarin.Forms，但 Xamarin.Forms 應用程式也可以轉譯圖形使用[ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)，或[ `UrhoSharp` ](~/xamarin-forms/user-interface/graphics/urhosharp.md)。<br /><br />[API 文件](xref:Xamarin.Forms.OpenGLView)<br /><br /> | [![OpenGLView 範例](views-images/OpenGLView.png "OpenGLView 範例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml)使用[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="map"></a>地圖
@@ -163,7 +163,7 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 |     |     |
 | --- | --- |
-| [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) 使用動畫顯示應用程式參與冗長的活動中，而不需要提供任何指示進行。 [ `IsRunning` ](xref:Xamarin.Forms.ActivityIndicator.IsRunning)屬性會控制動畫。<br /><br />如果已知活動的進度，請使用[ `ProgressBar` ](#progressbar)改。<br /><br />[API 文件](xref:Xamarin.Forms.ActivityIndicator) | [![ActivityIndicator 範例](views-images/ActivityIndicator.png "ActivityIndicator 範例")](views-images/ActivityIndicator-Large.png#lightbox "ActivityIndicator 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ActivityIndicatorDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ActivityIndicatorDemoPage.xaml) |
+| [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) 使用動畫顯示應用程式參與冗長的活動中，而不需要提供任何指示進行。 [ `IsRunning` ](xref:Xamarin.Forms.ActivityIndicator.IsRunning)屬性會控制動畫。<br /><br />如果已知活動的進度，請使用[ `ProgressBar` ](#progressbar)改。<br /><br />[API 文件](xref:Xamarin.Forms.ActivityIndicator) / [指南](~/xamarin-forms/user-interface/activityindicator.md) / [範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ActivityIndicatorDemos) | [![ActivityIndicator 範例](views-images/ActivityIndicator.png "ActivityIndicator 範例")](views-images/ActivityIndicator-Large.png#lightbox "ActivityIndicator 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ActivityIndicatorDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ActivityIndicatorDemoPage.xaml) |
 |     |     |
 
 <a name="progressbar" />
@@ -172,7 +172,7 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 |     |     |
 | --- | --- |
-| [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) 您可以使用動畫來顯示應用程式正在進行長時間的活動。 設定[ `Progress` ](xref:Xamarin.Forms.ProgressBar.Progress)屬性值介於 0 和 1，表示進度。<br /><br />如果不知道活動的進度，請使用[ `ActivityIndicator` ](#activityindicator)改。<br /><br />[API 文件](xref:Xamarin.Forms.ProgressBar) | [![ProgressBar 範例](views-images/ProgressBar.png "ProgressBar 範例")](views-images/ProgressBar-Large.png#lightbox "ProgressBar 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ProgressBarDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml)使用[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml.cs) |
+| [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) 您可以使用動畫來顯示應用程式正在進行長時間的活動。 設定[ `Progress` ](xref:Xamarin.Forms.ProgressBar.Progress)屬性值介於 0 和 1，表示進度。<br /><br />如果不知道活動的進度，請使用[ `ActivityIndicator` ](#activityindicator)改。<br /><br />[API 文件](xref:Xamarin.Forms.ProgressBar) / [指南](~/xamarin-forms/user-interface/progressbar.md) / [範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ProgressBarDemos) | [![ProgressBar 範例](views-images/ProgressBar.png "ProgressBar 範例")](views-images/ProgressBar-Large.png#lightbox "ProgressBar 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ProgressBarDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml)使用[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml.cs) |
 |     |     |
 
 ## <a name="views-that-display-collections"></a>顯示集合的檢視

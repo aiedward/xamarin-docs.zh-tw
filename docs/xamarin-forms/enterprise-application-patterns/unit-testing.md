@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 02aeedd5498c47950e2fbc0d218de05bc0bb3204
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d83cdce7076eac5a022863b583ecb01346ae440a
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61298970"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831088"
 ---
 # <a name="unit-testing-enterprise-apps"></a>單元測試企業應用程式
 
@@ -170,7 +170,8 @@ public void InvalidEventNameShouldThrowArgumentExceptionText()
 
 此單元測試會擲回的例外狀況，因為[ `ListView` ](xref:Xamarin.Forms.ListView)控制項並沒有名為事件`OnItemTapped`。 `Assert.Throws<T>`方法是泛型方法其中`T`是預期的例外狀況的型別。 將引數傳遞`Assert.Throws<T>`方法是將會擲回例外狀況的 lambda 運算式。 因此，單元測試將會通過前提是 lambda 運算式則會擲回`ArgumentException`。
 
->💡 **提示**:避免撰寫單元測試，檢查例外狀況訊息字串。 例外狀況訊息字串可能會隨著時間變更，並因此依賴它們的存在的單元測試會視為不完善。
+> [!TIP]
+> 避免撰寫單元測試，檢查例外狀況訊息字串。 例外狀況訊息字串可能會隨著時間變更，並因此依賴它們的存在的單元測試會視為不完善。
 
 ### <a name="testing-validation"></a>測試驗證
 

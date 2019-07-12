@@ -6,12 +6,12 @@ ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.date: 03/29/2017
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: a5083e1d31377caece1b8fb4faf33b6e3ff88202
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 62ef02d276e9c98e07f5e0d1b9ddec1b0874a99a
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61211816"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829619"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>將程式碼更新至 Unified API 的祕訣
 
@@ -74,23 +74,24 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
     public nfloat HeightForRow(UITableView tableView, NSIndexPath indexPath)
     ```
 
- * 統一的 API 不提供 NSDate 和.NET DateTime 之間的隱含轉換，因為它不是不失真的轉換。 若要避免錯誤的相關`DateTimeKind.Unspecified`轉換.NET`DateTime`為本機或之前轉換成 UTC `NSDate`。
+* 統一的 API 不提供 NSDate 和.NET DateTime 之間的隱含轉換，因為它不是不失真的轉換。 若要避免錯誤的相關`DateTimeKind.Unspecified`轉換.NET`DateTime`為本機或之前轉換成 UTC `NSDate`。
 
- * Objective C 分類方法現在會產生做為統一的 API 中的擴充方法。 例如，程式碼，先前使用`UIView.DrawString`現在會參考`NSString.DrawString`Unified API 中。
+* Objective C 分類方法現在會產生做為統一的 API 中的擴充方法。 例如，程式碼，先前使用`UIView.DrawString`現在會參考`NSString.DrawString`Unified API 中。
 
- * 使用具有 AVFoundation 類別程式碼`VideoSettings`應該會變更為使用`WeakVideoSettings`屬性。 這需要`Dictionary`，這是可設定類別上的屬性，例如：
+* 使用具有 AVFoundation 類別程式碼`VideoSettings`應該會變更為使用`WeakVideoSettings`屬性。 這需要`Dictionary`，這是可設定類別上的屬性，例如：
 
     ```csharp
     vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
     ```
 
- * NSObject`.ctor(IntPtr)`建構函式已從變更公開給受保護 ([以避免不當使用](~/cross-platform/macios/unified/overview.md#NSObject_ctor))。
+* NSObject`.ctor(IntPtr)`建構函式已從變更公開給受保護 ([以避免不當使用](~/cross-platform/macios/unified/overview.md#NSObject_ctor))。
 
- * `NSAction` 已被[取代](~/cross-platform/macios/unified/overview.md#NSAction)starndard.NET 與`Action`。 一些簡單 （單一參數） 的委派也已取代為`Action<T>`。
+* `NSAction` 已被[取代](~/cross-platform/macios/unified/overview.md#NSAction)使用標準.NET `Action`。 一些簡單 （單一參數） 的委派也已取代為`Action<T>`。
 
 最後，請參閱[傳統 v 統一的 API 差異](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)查閱 api 在程式碼中的變更。 搜尋[本頁](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)會協助您找出的傳統 Api 和功能他們已更新為。
 
-**注意︰** `MonoTouch.Dialog`命名空間則會在移轉後保持相同。 如果您的程式碼會使用**MonoTouch.Dialog**您應該繼續使用該命名空間-請勿*不*變更`MonoTouch.Dialog`至`Dialog`！
+> [!NOTE]
+> `MonoTouch.Dialog`命名空間則會在移轉後保持相同。 如果您的程式碼會使用**MonoTouch.Dialog**您應該繼續使用該命名空間-請勿*不*變更`MonoTouch.Dialog`至`Dialog`！
 
 ## <a name="common-compiler-errors"></a>常見編譯器錯誤
 
@@ -136,7 +137,7 @@ grphc.SetLineDash (0, new nfloat[] { 0, 3 * (nfloat)Math.PI });
 public override nint RowsInSection (UITableView tableview, nint section) {
 ```
 
-**錯誤 CS0508:`WordsTableSource.NumberOfSections(UIKit.UITableView)': return type must be 'System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)'**
+**錯誤 CS0508: `WordsTableSource.NumberOfSections(UIKit.UITableView)`： 傳回類型必須是 'System.nint' 才符合覆寫的成員 `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)`**
 
 修正：若要變更傳回型別時`nint`，將傳回值轉換成`nint`。
 

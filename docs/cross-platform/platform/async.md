@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 0a72dead1b6c001f1514f1a089df9b407eb90644
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cca147f0c5dd1a217f464ffbed2a1ad2618c9b80
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037257"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830186"
 ---
 # <a name="async-support-overview"></a>非同步支援概觀
 
@@ -23,7 +23,7 @@ Xamarin 的非同步支援 Mono 3.0 基礎上建置，並防止行動設備友�
 
 這份文件導入了新的 async 和 await 關鍵字，然後透過一些簡單的範例實作非同步方法在 Xamarin.iOS 和 Xamarin.Android 會逐步引導。
 
-如需新非同步功能的更完整討論C#5 （包括許多範例和不同的使用案例），請參閱 MSDN 文件[使用 Async 和 Await 進行非同步程式設計](https://msdn.microsoft.com/library/vstudio/hh191443.aspx)。
+如需新非同步功能的更完整討論C#5 （包括許多範例和不同的使用案例），請參閱文章[非同步程式設計](https://docs.microsoft.com/dotnet/csharp/async)。
 
 範例應用程式進行簡單的非同步 web 要求 （而不會封鎖主執行緒），然後使用已下載的 html 和字元計數來更新 UI。
 
@@ -69,7 +69,7 @@ Await 運算子可以套用至標示為非同步方法內的工作。 它會導�
 
 工作完成時，此方法會繼續執行程式碼中的相同位置。 這包括回到 catch 的 try-finally 區塊的 try 範圍 （如果有的話）。 await 不能在 catch 或 finally 區塊。
 
-深入了解[MSDN 上 await](https://msdn.microsoft.com/library/vstudio/hh156528.aspx)。
+深入了解[await](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/await) Microsoft 文件上。
 
 ## <a name="exception-handling"></a>例外狀況處理
 
@@ -85,7 +85,7 @@ Await 運算子可以套用至標示為非同步方法內的工作。 它會導�
 
 然後，工作會自行取消，並確認取消。
 
-如需有關取消的詳細資訊，請參閱 <<c0> [ 如何取消非同步工作](https://msdn.microsoft.com/library/vstudio/jj155761.aspx)MSDN 上。
+如需取消的詳細資訊，請參閱[微調非同步應用程式 (C#)](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/fine-tuning-your-async-application)。
 
 ## <a name="example"></a>範例
 
@@ -201,10 +201,9 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 - [資料 (iOS) （範例）](https://developer.xamarin.com/samples/monotouch/Data/)
 - [HttpClient (iOS) （範例）](https://developer.xamarin.com/samples/monotouch/HttpClient/)
 - [MapKitSearch (iOS) （範例）](https://github.com/xamarin/monotouch-samples/tree/master/MapKitSearch)
-- [網路研討會：C#IOS 和 Android （影片） 上的非同步處理](http://xamarin.wistia.com/medias/k27mc627xz)
-- [非同步程式設計使用 Async 和 Await (MSDN)](https://msdn.microsoft.com/library/vstudio/hh191443.aspx)
-- [微調非同步應用程式 (MSDN)](https://msdn.microsoft.com/library/vstudio/jj155761.aspx)
-- [等候時，UI，以及死結 （deadlock） ！對了我 ！(MSDN)](http://blogs.msdn.com/b/pfxteam/archive/2011/01/13/10115163.aspx)
-- [處理工作完成 (MSDN)](http://blogs.msdn.com/b/pfxteam/archive/2012/08/02/processing-tasks-as-they-complete.aspx)
+- [非同步程式設計](https://docs.microsoft.com/dotnet/csharp/async)
+- [微調非同步應用程式 (C#)](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/fine-tuning-your-async-application)
+- [等候時，UI，以及死結 （deadlock） ！對了我 ！](https://devblogs.microsoft.com/pfxteam/await-and-ui-and-deadlocks-oh-my/)
+- [它們完成時，處理工作）](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete/)
 - [工作式非同步模式 (TAP)](https://msdn.microsoft.com/library/hh873175.aspx)
 - [在非同步C#5 （Eric Lippert 的部落格） – 相關關鍵字的簡介](http://blogs.msdn.com/b/ericlippert/archive/2010/11/11/whither-async.aspx)

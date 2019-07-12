@@ -6,12 +6,12 @@ ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: d9c73dfcee6321ecb314ca229db407c6d0438977
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4a72effc85657b4722b17eae486e81db5992a1da
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61342538"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832250"
 ---
 # <a name="using-the-model-class"></a>使用模型類別
 
@@ -44,7 +44,7 @@ MonoGame API 包含`Model`類別可用來儲存資料載入的內容檔案，以
 
 .Xnb 檔案格式是標準的擴充內建的內容 (已建立的內容[MonoGame 管線工具](http://www.monogame.net/documentation/?page=Pipeline))。 所有的內建的內容具有原始程式檔 （也就是在我們的模型的情況下.fbx 檔案） 和目的地檔案 （.xnb 檔案）。 .Fbx 格式是一種常見的 3D 模型格式可以建立應用程式這類[Maya](http://www.autodesk.com/products/maya/overview)並[Blender](http://www.blender.org/)。 
 
-`Model` .xnb 從磁碟載入檔案，其中包含 3D 幾何資料也可以建構類別。   .Xnb 會建立這個檔案的內容的專案。 Monogame 範本會自動包含我們內容的資料夾 （具有延伸模組.mgcp 中) 的內容專案。 如需 MonoGame 管線工具的詳細討論，請參閱 < [Content Pipeline 指南](~/graphics-games/cocossharp/content-pipeline/index.md)。
+`Model` .xnb 從磁碟載入檔案，其中包含 3D 幾何資料也可以建構類別。   .Xnb 會建立這個檔案的內容的專案。 Monogame 範本會自動包含我們內容的資料夾 （具有延伸模組.mgcp 中) 的內容專案。 如需 MonoGame 管線工具的詳細討論，請參閱 < [Content Pipeline 指南](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)。
 
 本指南中我們將會略過使用 MonoGame 管線工具，並會使用。此處包含的 XNB 檔案。 請注意，。XNB 檔案每個平台不同，因此請務必針對您正在使用任何平台使用一組正確的 XNB 檔案。
 

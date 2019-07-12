@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: e3256787c0bc0852275f663772b8a91a6825a0dd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a77ebd8a6c64d2ee44011e8d51977adf88b52be9
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250675"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832432"
 ---
 # <a name="getting-started-with-datapages"></a>Getting Started with DataPages
 
@@ -51,7 +51,8 @@ ms.locfileid: "61250675"
 </Application>
 ```
 
-**重要：** 您也應該遵循的步驟[佈景主題 （如下所示） 的組件載入](#loadtheme)某些未定案程式碼加入至 iOS`AppDelegate`和 Android `MainActivity`。 這會改善未來的預覽版。
+> [!IMPORTANT]
+> 您也應該遵循的步驟[佈景主題 （如下所示） 的組件載入](#loadtheme)某些未定案程式碼加入至 iOS`AppDelegate`和 Android `MainActivity`。 這會改善未來的預覽版。
 
 
 ## <a name="3-add-a-xaml-page"></a>3.新增 XAML 頁面
@@ -98,7 +99,8 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 刪除`Content`項目並將它取代為`p:ListDataPage.DataSource`來填入資料的頁面。 在下面的遠端的 Json 範例資料檔案從 URL 載入。
 
-**注意︰** 預覽版*需要*`StyleClass`提供呈現提示資料來源的屬性。 `StyleClass="Events"`預先定義在預覽中，並包含樣式的配置是指*硬式編碼*以符合所使用的 JSON 資料來源。
+> [!NOTE]
+> 預覽*需要*`StyleClass`提供呈現提示資料來源的屬性。 `StyleClass="Events"`預先定義在預覽中，並包含樣式的配置是指*硬式編碼*以符合所使用的 JSON 資料來源。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>

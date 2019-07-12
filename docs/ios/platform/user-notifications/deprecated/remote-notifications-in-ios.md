@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 8ad742607e506df436a5526d31621ac7636ac29b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 22ac6a3776e5fa5de2fc238efe90c435190e8005
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61086986"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832076"
 ---
 # <a name="push-notifications-in-ios"></a>在 iOS 中的推播通知
 
@@ -21,7 +21,7 @@ ms.locfileid: "61086986"
 
 推播通知應該保持簡短，並且只會包含足夠的資料來通知它應該與伺服器應用程式取得更新的行動應用程式。 比方說，當新的電子郵件送達時，伺服器應用程式只會通知到達新的電子郵件的行動應用程式。 通知不會包含新的電子郵件本身。 行動應用程式會接著新的電子郵件從伺服器擷取適當時
 
-推播的中心是在 iOS 中的通知*Apple 推播通知閘道服務 (APNS)*。 這是負責從應用程式伺服器的路由通知到 iOS 裝置的 Apple 提供的服務。
+推播的中心是在 iOS 中的通知*Apple 推播通知閘道服務 (APNS)* 。 這是負責從應用程式伺服器的路由通知到 iOS 裝置的 Apple 提供的服務。
 下圖說明適用於 iOS 的推播通知拓撲：![](remote-notifications-in-ios-images/image4.png "此圖說明適用於 iOS 的推播通知拓樸")
 
 遠端通知本身是 JSON 格式化字串符合格式和通訊協定中指定[通知承載](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1)一節[本機和推播通知程式設計指南](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)中[iOS 開發人員文件](https://developer.apple.com/devcenter/ios/index.action)。
@@ -67,7 +67,7 @@ Apple 會維護兩個環境的 APNS:*沙箱*並*生產*環境。 沙箱環境為
 
     [![](remote-notifications-in-ios-images/image10new.png "建立應用程式識別碼的憑證")](remote-notifications-in-ios-images/image8.png#lightbox)
 
-4.  選取您想要使用的開發或生產環境憑證：
+4. 選取您想要使用的開發或生產環境憑證：
 
     [![](remote-notifications-in-ios-images/image11new.png "選取開發或生產環境的憑證")](remote-notifications-in-ios-images/image11new.png#lightbox)
 

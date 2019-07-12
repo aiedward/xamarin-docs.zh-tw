@@ -6,12 +6,12 @@ ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 941b88f9109cf2f3a3485311c52b1250bd08e53f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c9e0cf2f29d304f042bc56ee91029adadcaba570
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61162092"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832508"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>第 2 部分-實作 WalkingGame
 
@@ -53,7 +53,7 @@ _本逐步解說示範如何新增遊戲邏輯和內容，以空白 MonoGame 專
 
 ### <a name="creating-a-texture2d"></a>建立 Texture2D
 
-我們需要建立`Texture2D`轉譯我們 sprite 時使用的執行個體。 最終包含在名為資料夾中所有的遊戲內容**內容，** 平台專屬專案中。 共用的 MonoGame 專案不能包含的內容，因為內容必須使用平台特定的建置動作。 CocosSharp 開發人員會發現 [Content] 資料夾的熟悉的概念，它們位於相同的位置，CocosSharp 和 MonoGame 專案中。 在 iOS 專案中，並在 Android 專案中的 [Assets] 資料夾內，就可以找到 [Content] 資料夾。
+我們需要建立`Texture2D`轉譯我們 sprite 時使用的執行個體。 最終包含在名為資料夾中所有的遊戲內容**內容，** 平台專屬專案中。 共用的 MonoGame 專案不能包含的內容，因為內容必須使用平台特定的建置動作。 在 iOS 專案中，並在 Android 專案中的 [Assets] 資料夾內，就可以找到 [Content] 資料夾。
 
 若要加入我們的遊戲內容，以滑鼠右鍵按一下**內容**資料夾，然後選取**新增 > 新增檔案...** 瀏覽至解壓縮 content.zip 檔案的位置，然後選取**charactersheet.png**檔案。 如果系統詢問有關如何將檔案加入資料夾，最好還是選擇**複製**選項：
 
@@ -143,7 +143,7 @@ protected override void Draw(GameTime gameTime)
 - `X` 與 Y 屬性，以控制字元的位置。
 - 特別是更新本身，以讀取值觸控螢幕，並適當地調整位置的能力。
 
-若要新增`CharacterEntity`我們的遊戲、 以滑鼠右鍵按一下或 Control + 按一下**WalkingGame**專案，然後選取**新增 > 新的檔案...**.選取 **空類別**選項，然後將新檔案命名**CharacterEntity**，然後按一下**新增**。
+若要新增`CharacterEntity`我們的遊戲、 以滑鼠右鍵按一下或 Control + 按一下**WalkingGame**專案，然後選取**新增 > 新的檔案...** .選取 **空類別**選項，然後將新檔案命名**CharacterEntity**，然後按一下**新增**。
 
 首先，我們將新增的能力`CharacterEntity`載入`Texture2D`以及繪製本身。 我們將修改新增`CharacterEntity.cs`檔案，如下所示：
 
@@ -315,7 +315,7 @@ namespace WalkingGame
 
 `Animation`類別將包含`List<AnimationFrame>`以及切換哪一個畫面格目前是否顯示根據經過多少時間的邏輯。
 
-若要新增`Animation`類別，以滑鼠右鍵按一下或 Control + 按一下**WalkingGame**共用專案，然後選取**新增 > 新增檔案...**.輸入名稱**動畫**然後按一下**新增** 按鈕。 我們要修改`Animation.cs`檔案使其包含下列程式碼：
+若要新增`Animation`類別，以滑鼠右鍵按一下或 Control + 按一下**WalkingGame**共用專案，然後選取**新增 > 新增檔案...** .輸入名稱**動畫**然後按一下**新增** 按鈕。 我們要修改`Animation.cs`檔案使其包含下列程式碼：
 
 
 ```csharp
@@ -376,7 +376,7 @@ namespace WalkingGame
 
 `frames`成員可讓您為儲存我們的動畫資料的功能。 具現化動畫的程式碼會新增`AnimationFrame`執行個體`frames`列出透過`AddFrame`方法。 更完整的實作可能會提供`public`方法或屬性來修改`frames`，但我們會限制功能，以加入此逐步解說中的畫面格。
 
-### <a name="duration"></a>持續期間
+### <a name="duration"></a>Duration
 
 持續時間傳回的總持續時間`Animation,`從其中取得加上包含所有的持續時間`AnimationFrame`執行個體。 如果此值可能會快取`AnimationFrame`不可變的物件，但由於我們 AnimationFrame 實作為之後加入至動畫可以變更的類別時，我們需要計算這個值，每當在屬性經過存取時。
 
@@ -548,7 +548,7 @@ Vector2 GetDesiredVelocityFromInput()
         desiredVelocity.Y = touchCollection [0].Position.Y - this.Y;
 ```
 
-以下是一些數學運算，這會讓移動的字元繼續相同的速度。 為了協助說明為什麼這是很重要，讓我們假設使用者會觸碰螢幕 500 像素遠離字元所在位置。 第一行的位置`desiredVelocity.X`是集合會將指派的值為 500。 不過，如果使用者觸控螢幕的字元，從 100 單位的距離，`desiredVelocity.X `會設定為 100。 結果會是該字元的移動速度會回應如何遠處觸控點是從字元。 由於我們想要一律以相同的速度移動的字元時，我們必須修改 desiredVelocity。
+以下是一些數學運算，這會讓移動的字元繼續相同的速度。 為了協助說明為什麼這是很重要，讓我們假設使用者會觸碰螢幕 500 像素遠離字元所在位置。 第一行的位置`desiredVelocity.X`是集合會將指派的值為 500。 不過，如果使用者觸控螢幕的字元，從 100 單位的距離，`desiredVelocity.X`會設定為 100。 結果會是該字元的移動速度會回應如何遠處觸控點是從字元。 由於我們想要一律以相同的速度移動的字元時，我們必須修改 desiredVelocity。
 
 `if (desiredVelocity.X != 0 || desiredVelocity.Y != 0)`陳述式會檢查速度為非零 – 也就是說，是否它會檢查確定使用者未碰觸的字元目前位置為相同的位置。 如果不是，然後我們需要設定字元的速度很遠的地方是一定的不管如何觸控。 我們完成正規化速度向量而造成它的長度為 1。 1 表示該字元會移動在 1 個像素，每秒的速度向量。 我們將會加速處理的值乘以 200 的所需的速度。
 

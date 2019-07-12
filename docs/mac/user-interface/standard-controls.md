@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 4e236f2517482665406008d0b86af487e2d799dd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 26ab7880b3c4b6176c806783fec7a499d68511c3
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61212165"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831900"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Xamarin.mac 的標準控制項
 
@@ -93,7 +93,7 @@ macOS （之前稱為 Mac OS X） 提供一組標準的 AppKit Framework 透過�
 
 [![](standard-controls-images/edit04.png "設定條件約束")](standard-controls-images/edit04.png#lightbox)
 
-使用**紅色 I 字形狀**外圍**Autoresizing**方塊_隨身碟_控制項至 (x，y) 指定的位置。 例如:  
+使用**紅色 I 字形狀**外圍**Autoresizing**方塊_隨身碟_控制項至 (x，y) 指定的位置。 例如： 
 
 [![](standard-controls-images/edit05.png "編輯條件約束")](standard-controls-images/edit05.png#lightbox)
 
@@ -257,7 +257,7 @@ AppKit.NSSplitView SplitView { get; set; }
 @property (nonatomic, retain) IBOutlet NSSplitView *SplitView;
 ```
 
-如您所見，Visual Studio for Mac 會接聽的變更`.h`檔案，並自動同步處理這些變更，在個別`.designer.cs`檔案，以將它們公開到您的應用程式。 您可能也注意`SplitViewController.designer.cs`是部分類別中，以便 Visual Studio for Mac 不需修改`SplitViewController.cs `這樣會覆寫我們對該類別的任何變更。
+如您所見，Visual Studio for Mac 會接聽的變更`.h`檔案，並自動同步處理這些變更，在個別`.designer.cs`檔案，以將它們公開到您的應用程式。 您可能也注意`SplitViewController.designer.cs`是部分類別中，以便 Visual Studio for Mac 不需修改`SplitViewController.cs`這樣會覆寫我們對該類別的任何變更。
 
 您通常會永遠不需要開啟`SplitViewController.designer.cs`，它此處所提供教育之用。
 
@@ -280,7 +280,7 @@ ButtonOutlet.Activated += (sender, e) => {
 };
 ```
 
-透過系統已經公開的按鈕**動作**、`public partial`方法會自動建立您與您在 Xcode 中選擇的名稱。 回應**動作**，完成部分類別中的方法的**動作**上定義。 例如: 
+透過系統已經公開的按鈕**動作**、`public partial`方法會自動建立您與您在 Xcode 中選擇的名稱。 回應**動作**，完成部分類別中的方法的**動作**上定義。 例如：
 
 ```csharp
 partial void ButtonAction (Foundation.NSObject sender) {
@@ -289,7 +289,7 @@ partial void ButtonAction (Foundation.NSObject sender) {
 }
 ```
 
-有狀態的按鈕 (類似**上**並**關閉**)，可以檢查或設定與狀態`State`屬性`NSCellStateValue`列舉。 例如: 
+有狀態的按鈕 (類似**上**並**關閉**)，可以檢查或設定與狀態`State`屬性`NSCellStateValue`列舉。 例如：
 
 ```csharp
 DisclosureButton.Activated += (sender, e) => {
@@ -326,7 +326,7 @@ AppKit 提供數種類型的核取方塊和選項按鈕群組，可用於您的�
 [![](standard-controls-images/buttons02.png "舉例來說，可用的核取方塊類型")](standard-controls-images/buttons02.png#lightbox)
 
 
-核取方塊和選項按鈕 (透過公開**輸出**) 的狀態 (例如**上**和**關閉**)，可檢查或設定與狀態`State`屬性`NSCellStateValue`列舉。 例如: 
+核取方塊和選項按鈕 (透過公開**輸出**) 的狀態 (例如**上**和**關閉**)，可檢查或設定與狀態`State`屬性`NSCellStateValue`列舉。 例如：
 
 ```csharp
 AdjustTime.Activated += (sender, e) => {
@@ -483,7 +483,7 @@ AppKit 提供數種類型的選取控制項，可用於您的使用者介面設�
 
 [![](standard-controls-images/select01.png "範例選取控制項")](standard-controls-images/select01.png#lightbox)
 
-有兩種方式來追蹤何時選取控制項有使用者互動，藉由公開為**動作**。 例如: 
+有兩種方式來追蹤何時選取控制項有使用者互動，藉由公開為**動作**。 例如：
 
 ```csharp
 partial void SegmentButtonPressed (Foundation.NSObject sender) {
@@ -499,7 +499,7 @@ TickedSlider.Activated += (sender, e) => {
 };
 ```
 
-若要設定或讀取選取項目控制項的值，請使用`IntValue`屬性。 例如: 
+若要設定或讀取選取項目控制項的值，請使用`IntValue`屬性。 例如：
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Stepper Value: {0:###}",TickedSlider.IntValue);
@@ -528,7 +528,7 @@ AppKit 提供數種類型的指標可以用於您的使用者介面設計的控�
 
 [![](standard-controls-images/level01.png "範例指標控制項")](standard-controls-images/level01.png#lightbox)
 
-有兩種方式來追蹤使用者互動，藉由公開為指標控制何時**動作**或**插座**並附加**委派**至`Activated`事件。 例如: 
+有兩種方式來追蹤使用者互動，藉由公開為指標控制何時**動作**或**插座**並附加**委派**至`Activated`事件。 例如：
 
 ```csharp
 LevelIndicator.Activated += (sender, e) => {
@@ -536,13 +536,13 @@ LevelIndicator.Activated += (sender, e) => {
 };
 ```
 
-若要讀取或設定控制項值的指標，使用`DoubleValue`屬性。 例如: 
+若要讀取或設定控制項值的指標，使用`DoubleValue`屬性。 例如：
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Rating: {0:###}",Rating.DoubleValue);
 ```
 
-顯示時，應該顯示動畫的未定和非同步的進度指示器。 使用`StartAnimation`顯示時啟動動畫的方法。 例如: 
+顯示時，應該顯示動畫的未定和非同步的進度指示器。 使用`StartAnimation`顯示時啟動動畫的方法。 例如：
 
 ```csharp
 Indeterminate.StartAnimation (this);
@@ -571,7 +571,7 @@ AppKit 提供數種類型的文字控制項，可用於您的使用者介面設�
 FeedbackLabel.StringValue = string.Format("User ID: {0}",UserField.StringValue);
 ```
 
-顯示或編輯數值的欄位，您可以使用`IntValue`屬性。 例如: 
+顯示或編輯數值的欄位，您可以使用`IntValue`屬性。 例如：
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Number: {0}",NumberField.IntValue);
@@ -618,7 +618,7 @@ Popover 是暫時性的 UI 項目，可提供直接相關的控制項特定或�
 
 ### <a name="tab-views"></a>索引標籤檢視
 
-索引標籤檢視是由索引標籤清單 （看起來類似分段控制項） 結合一組稱為的檢視所組成_ 窗格_。 當使用者選取新的索引標籤時，將會顯示已附加的窗格。 每個窗格包含它自己組控制項。
+索引標籤檢視是由索引標籤清單 （看起來類似分段控制項） 結合一組稱為的檢視所組成 _窗格_。 當使用者選取新的索引標籤時，將會顯示已附加的窗格。 每個窗格包含它自己組控制項。
 
 當使用 Xcode 的 Interface Builder 中索引標籤檢視，使用**屬性偵測器**來設定索引標籤數目：
 

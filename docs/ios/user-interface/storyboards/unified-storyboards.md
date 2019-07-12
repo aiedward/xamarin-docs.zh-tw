@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 26aeaa3d230a5c104014edd899b8d9231ced31e9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c9d98d9d3052f52dc7860ba513756e3a33d1dc58
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61430047"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831914"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中統一的分鏡腳本
 
@@ -356,7 +356,7 @@ public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
 
 ### <a name="adding-transition-animations"></a>新增轉換動畫
 
-分割檢視控制器的自適性應用程式會從的相簿摺疊時為擴充，動畫會新增至預設動畫覆寫`WillTransitionToTraitCollection`檢視控制器方法。 例如: 
+分割檢視控制器的自適性應用程式會從的相簿摺疊時為擴充，動畫會新增至預設動畫覆寫`WillTransitionToTraitCollection`檢視控制器方法。 例如：
 
 ```csharp
 public override void WillTransitionToTraitCollection (UITraitCollection traitCollection, IUIViewControllerTransitionCoordinator coordinator)
@@ -678,7 +678,7 @@ IOS 設計工具將會確認開發人員想要轉換的使用大小類別將分�
 
  [![](unified-storyboards-images/exclude05.png "當遺失的項目在 iPhone 模擬器中執行的應用程式")](unified-storyboards-images/exclude05.png#lightbox)
 
-若要移除的項目排除情況下，只需選取中的項目**設計介面**，捲動到底部**屬性總管**然後按一下**-** 大小寫，以移除旁邊的按鈕。
+若要移除的項目排除情況下，只需選取中的項目**設計介面**，捲動到底部**屬性總管**然後按一下 **-** 大小寫，以移除旁邊的按鈕。
 
 若要查看實作統一的分鏡腳本，看看`UnifiedStoryboard`範例 Xamarin iOS 8 應用程式連接到這份文件。
 
@@ -693,12 +693,12 @@ IOS 設計工具將會確認開發人員想要轉換的使用大小類別將分�
 
 動態啟動畫面有下列限制與考量：
 
- - 僅使用`UIKit`類別。
- - 使用的單一根檢視`UIView`或`UIViewController`物件。
- - 不要讓任何連線到應用程式的程式碼 (不要加上**動作**或是**輸出**)。
- - 不要新增`UIWebView`物件。
- - 請勿使用任何自訂的類別。
- - 請勿使用執行階段屬性。
+- 僅使用`UIKit`類別。
+- 使用的單一根檢視`UIView`或`UIViewController`物件。
+- 不要讓任何連線到應用程式的程式碼 (不要加上**動作**或是**輸出**)。
+- 不要新增`UIWebView`物件。
+- 請勿使用任何自訂的類別。
+- 請勿使用執行階段屬性。
 
 記住上述指導方針，讓我們看看新增至現有的 Xamarin iOS 8 專案的動態的啟動螢幕。
 
@@ -708,7 +708,7 @@ IOS 設計工具將會確認開發人員想要轉換的使用大小類別將分�
 2. 在 [**方案總管] 中**，以滑鼠右鍵按一下`MainStoryboard.storyboard`檔案，然後選取**開啟** > **Xcode Interface Builder**:
 
     [![](unified-storyboards-images/dls01.png "Xcode 介面產生器開啟")](unified-storyboards-images/dls01.png#lightbox)
-3. 在 Xcode 中，選取**檔案** > **新增** > **檔案...**:
+3. 在 Xcode 中，選取**檔案** > **新增** > **檔案...** :
 
     [![](unified-storyboards-images/dls02.png "選取檔案 / 新增")](unified-storyboards-images/dls02.png#lightbox)
 4. 選取 [ **iOS** > **使用者介面** > **啟動畫面**然後按一下**下一步]** 按鈕：
@@ -732,7 +732,7 @@ IOS 設計工具將會確認開發人員想要轉換的使用大小類別將分�
     [![](unified-storyboards-images/dls08.png "選擇 LaunchScreen.xib")](unified-storyboards-images/dls08.png#lightbox)
 11. 將變更儲存至檔案，並返回 Visual Studio for mac。
 12. 等候 Visual Studio for Mac 將會完成同步處理與 Xcode 的變更。
-13. 在 [**方案總管] 中**，以滑鼠右鍵按一下**資源**資料夾，然後選取**新增** > **新增檔案...**:
+13. 在 [**方案總管] 中**，以滑鼠右鍵按一下**資源**資料夾，然後選取**新增** > **新增檔案...** :
 
     [![](unified-storyboards-images/dls09.png "選取新增/新增檔案...")](unified-storyboards-images/dls09.png#lightbox)
 14. 選取 `LaunchScreen.xib`上面所建立的檔案，然後按一下**開啟**按鈕：

@@ -6,12 +6,12 @@ ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: 2bd68def0a29d4bb94f8cc66c8cbfa00add1700d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2def0a01bdd28af5eefb76afc19a0e49fd1df355
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60948142"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831557"
 ---
 # <a name="inspecting-live-applications"></a>檢查即時應用程式
 
@@ -46,8 +46,8 @@ ms.locfileid: "60948142"
 
 ## <a name="known-limitations"></a>已知的限制
 
- - 檢視的選取範圍只有主顯示器上。
- - 屬性方格中編輯不適用於 Mac 和 Windows 上僅限於少數的資料類型。 使用複寫功能更強大的編輯。
- - 只要偵測器增益集/延伸模組已安裝，並啟用您的 IDE 中，我們會將程式碼插入您的應用程式每次啟動偵錯模式中也可以。 如果您在應用程式中發現任何奇怪的行為，請嘗試停用或解除安裝 Inspector 增益集/延伸模組、 重新啟動該 IDE，然後重新檢查。 並請[提報 bug](~/tools/inspector/install.md#reporting-bugs) ，讓我們知道 ！
- - 如果檢查 UI 項目造成還是變更中，請[讓我們知道](~/tools/inspector/install.md#reporting-bugs)，因為這可能是 bug。
+- 檢視的選取範圍只有主顯示器上。
+- 屬性方格中編輯不適用於 Mac 和 Windows 上僅限於少數的資料類型。 使用複寫功能更強大的編輯。
+- 只要偵測器增益集/延伸模組已安裝，並啟用您的 IDE 中，我們會將程式碼插入您的應用程式每次啟動偵錯模式中也可以。 如果您在應用程式中發現任何奇怪的行為，請嘗試停用或解除安裝 Inspector 增益集/延伸模組、 重新啟動該 IDE，然後重新檢查。 並請[提報 bug](~/tools/inspector/install.md#reporting-bugs) ，讓我們知道 ！
+- 如果檢查 UI 項目造成還是變更中，請[讓我們知道](~/tools/inspector/install.md#reporting-bugs)，因為這可能是 bug。
 

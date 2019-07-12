@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: d59cac9403a244ce553d84e0590b8a9c3d4d2f30
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 78646a0a420820218a8c61ea34ecc5db4438a91d
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61365845"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832743"
 ---
 # <a name="photokit-in-xamarinios"></a>在 Xamarin.iOS 中 PhotoKit
 
@@ -71,9 +71,9 @@ PhotoKit 輕鬆地查詢模型資料透過不同的提取方法。 例如，若�
     
 若要實際變更寫回從您的應用程式，您會建立變更要求。 每個模型類別都有相關聯的變更要求類別。 例如，若要變更 PHAsset，您會建立 PHAssetChangeRequest。 執行變更寫回至相片媒體櫃並傳送給觀察者，如同上面的步驟如下：
 
--   執行編輯作業。
--   篩選映像將資料儲存至 PHContentEditingOutput 執行個體。
--   請變更要求，以發佈變更表單的編輯輸出。
+- 執行編輯作業。
+- 篩選映像將資料儲存至 PHContentEditingOutput 執行個體。
+- 請變更要求，以發佈變更表單的編輯輸出。
 
 以下是將寫回變更 Core 映像作品篩選套用的映像的範例：
 

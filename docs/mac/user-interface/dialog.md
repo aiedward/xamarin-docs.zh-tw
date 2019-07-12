@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 329984d44318b2204f2f5ee253402eb158c85b9f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3bb6674baed293f95eb50fbca5792b288aa9239
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61283155"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832510"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin.mac 的對話方塊
 
@@ -413,7 +413,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 
 ## <a name="creating-a-preferences-dialog"></a>建立喜好設定 對話方塊
 
-我們來配置介面產生器中的 [喜好設定] 檢視之前，我們需要新增自訂的 segue 類型來處理切換移出喜好設定。 將新類別新增至您的專案，並呼叫它`ReplaceViewSeque `。 編輯類別，並讓它看起來如下：
+我們來配置介面產生器中的 [喜好設定] 檢視之前，我們需要新增自訂的 segue 類型來處理切換移出喜好設定。 將新類別新增至您的專案，並呼叫它`ReplaceViewSeque`。 編輯類別，並讓它看起來如下：
 
 ```csharp
 using System;
@@ -503,7 +503,7 @@ namespace MacWindows
 9. 選取新的 Segue，並設定**類別**到`ReplaceViewSegue`:
 
     [![](dialog-images/pref08.png "設定 segue 類別")](dialog-images/pref08.png#lightbox)
-10. 在  **Menubar 設計師**設計介面上，從應用程式功能表中選取**喜好設定...**，control + 按一下並拖曳至 喜好設定 視窗，來建立**顯示**segue:
+10. 在  **Menubar 設計師**設計介面上，從應用程式功能表中選取**喜好設定...** ，control + 按一下並拖曳至 喜好設定 視窗，來建立**顯示**segue:
 
     [![](dialog-images/pref09.png "設定 segue 類型")](dialog-images/pref09.png#lightbox)
 11. 儲存變更並返回 Visual Studio for Mac 中進行同步處理。

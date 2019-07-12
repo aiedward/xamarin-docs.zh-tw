@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 6bf2f63e944e178d80f76fe363ef24410ff052ce
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c51960a24e1277b3faec0905da3b9a5986359681
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61236710"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830664"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>沙箱 Xamarin.Mac 應用程式
 
@@ -226,7 +226,7 @@ public override void AwakeFromNib ()
 
 ### <a name="debugging-a-sandboxed-app"></a>沙箱化應用程式偵錯
 
-偵錯工具連接到 Xamarin.Mac 應用程式，透過 TCP，這表示，依預設啟用的沙箱功能時，無法連線到應用程式，因此如果您嘗試執行應用程式沒有啟用適當的權限，您會收到錯誤 *「 無法連接到偵錯工具 」*。 
+偵錯工具連接到 Xamarin.Mac 應用程式，透過 TCP，這表示，依預設啟用的沙箱功能時，無法連線到應用程式，因此如果您嘗試執行應用程式沒有啟用適當的權限，您會收到錯誤 *「 無法連接到偵錯工具 」* 。 
 
 [![設定所需的選項](sandboxing-images/debug01.png "設定所需的選項")](sandboxing-images/debug01-large.png#lightbox)
 
@@ -460,7 +460,7 @@ Exception Type:  EXC_BAD_INSTRUCTION (SIGILL)
 
 1. 開啟 Terminal 應用程式 (在`/Applications/Utilities`)。
 2. 開啟搜尋工具視窗的 Xamarin.Mac 應用程式的 Apple 簽署版本。
-3. 型別`asctl container acl add -file `終端機視窗中。
+3. 型別`asctl container acl add -file`終端機視窗中。
 4. 將 Xamarin.Mac 應用程式的圖示從 [搜尋] 視窗拖放在終端機視窗中。
 5. 檔案的完整路徑會新增至終端機中的命令。
 6. 按下**Enter**執行命令。

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: 8c8bf3f86091f49633913b37ef5108ddbae6d276
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6b404d7c27fba38c53ff07207003849445d51118
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60951461"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832472"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello，tvOS 快速入門指南
 
@@ -415,7 +415,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-我們需要使用`ViewDidLoad `，而不是另一個方法，例如`Initialize`，因為`ViewDidLoad `稱為*之後*OS 已經載入並具現化使用者介面與`.storyboard`檔案。 如果我們嘗試存取標籤控制項之前`.storyboard`檔案完全載入並具現化，我們會收到`NullReferenceException`錯誤因為標籤控制項不會尚未建立。
+我們需要使用`ViewDidLoad`，而不是另一個方法，例如`Initialize`，因為`ViewDidLoad`稱為*之後*OS 已經載入並具現化使用者介面與`.storyboard`檔案。 如果我們嘗試存取標籤控制項之前`.storyboard`檔案完全載入並具現化，我們會收到`NullReferenceException`錯誤因為標籤控制項不會尚未建立。
 
 接下來，我們需要加入程式碼以回應使用者按下按鈕。 將下列加入至部分類別，我們建立：
 
@@ -453,8 +453,8 @@ partial void Clicked (UIButton sender)
 若要執行應用程式，我們有三個選項：
 
 -  按下 **⌘+Enter**。
--  從 [執行] 功能表中選擇 [偵錯]。
--  按一下 Visual Studio for Mac 工具列中的 [播放] 按鈕 (在 [方案總管] 上方)。
+-  從 [執行]  功能表中選擇 [偵錯]  。
+-  按一下 Visual Studio for Mac 工具列中的 [播放]  按鈕 (在 [方案總管]  上方)。
 
 （如果它尚未建置的話），將建置的應用程式，將會啟動偵錯模式，tvOS 模擬器中的啟動和應用程式會啟動，並顯示它的主要介面視窗：
 

@@ -7,18 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: fa53d7253862e696d23289fe3c57f215b29da6c5
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 0fff9b7ce4b78e29409d1cc7a55e7f447baf722c
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649572"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831104"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 使用者介面檢視
 
 [![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/FormsGallery/)
 
 _如何使用 Xamarin.Forms 所提供的檢視_
+
+## <a name="activityindicatoractivityindicatormd"></a>[ActivityIndicator](activityindicator.md)
+
+`ActivityIndicator`是動畫，這表示使用者的應用程式參與的冗長的活動，而不需要提供任何資訊指出進度的控制項。
 
 ## <a name="animationanimationindexmd"></a>[動畫](animation/index.md)
 
@@ -87,6 +91,10 @@ Xamarin.Forms 提供清單檢視控制項以顯示捲動的資料列的資料。
 ## <a name="pickerpickerindexmd"></a>[選擇器](picker/index.md)
 
 [ `Picker` ](xref:Xamarin.Forms.Picker)檢視是從資料的清單中選取的文字項目控制項。
+
+## <a name="progressbarprogressbarmd"></a>[ProgressBar](progressbar.md)
+
+[ `ProgressBar` ](xref:Xamarin.Forms.ProgressBar)是控制項，以視覺方式表示的水平列填滿浮點數屬性為基礎的進度。
 
 ## <a name="sliderslidermd"></a>[Slider](slider.md)
 

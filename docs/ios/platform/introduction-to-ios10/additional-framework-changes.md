@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: a7b029aad69e65192d48d969dba2b9bb9a0d7a50
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ac255baf44951518b29112d2903950039a80ee53
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61364282"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831214"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>其他 iOS 10 架構變更
 
@@ -132,10 +132,10 @@ iOS 10 可讓 Core 映像架構的下列增強功能：
 
 在 iOS 10 ModelIO framework，下列的增強功能所做的：
 
- - 現在支援美元檔案格式。
- - 帶正負號距離欄位已加入支援[MDLVoxelArray](https://developer.apple.com/reference/modelio/mdlvoxelarray)類別。
- - 使用新`MDLLightProbeIrradianceDataSource`類別，以協助 Light 探查的放置。
- - 使用新`MDLMaterialPropertyGraph`類別，以輕鬆地支援執行階段變更模型。
+- 現在支援美元檔案格式。
+- 帶正負號距離欄位已加入支援[MDLVoxelArray](https://developer.apple.com/reference/modelio/mdlvoxelarray)類別。
+- 使用新`MDLLightProbeIrradianceDataSource`類別，以協助 Light 探查的放置。
+- 使用新`MDLMaterialPropertyGraph`類別，以輕鬆地支援執行階段變更模型。
 
 ## <a name="photos-enhancements"></a>相片的增強功能
 
