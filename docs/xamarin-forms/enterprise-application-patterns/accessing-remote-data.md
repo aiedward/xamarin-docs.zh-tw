@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 3a46b939fa87cd6535c9f86c46981c098542e7c9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a4c58139b0ddbaaedf5769eeac6585bac4c013e4
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61277948"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832115"
 ---
 # <a name="accessing-remote-data"></a>存取遠端資料
 
@@ -154,7 +154,7 @@ public async Task<IActionResult> Items(
 
 #### <a name="making-a-post-request"></a>發出 POST 要求
 
-`BasketService`類別用來管理資料擷取，並使用購物籃微服務中更新程序。 在`RegisterDependencies`方法中的`ViewModelLocator`類別`BasketService`類別登錄為依據的型別對應`IBasketService`Autofac 相依性插入容器的型別。 然後，執行個體時`BasketViewModel`建立類別時，其建構函式接受`IBasketService`輸入，其中 Autofac 解析時，傳回的執行個體`BasketService `類別。 如需相依性插入的詳細資訊，請參閱[相依性插入簡介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)。
+`BasketService`類別用來管理資料擷取，並使用購物籃微服務中更新程序。 在`RegisterDependencies`方法中的`ViewModelLocator`類別`BasketService`類別登錄為依據的型別對應`IBasketService`Autofac 相依性插入容器的型別。 然後，執行個體時`BasketViewModel`建立類別時，其建構函式接受`IBasketService`輸入，其中 Autofac 解析時，傳回的執行個體`BasketService`類別。 如需相依性插入的詳細資訊，請參閱[相依性插入簡介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)。
 
 圖 10-2 顯示互動的類別，可將所顯示的購物籃資料傳送`BasketView`，購物籃微服務。
 

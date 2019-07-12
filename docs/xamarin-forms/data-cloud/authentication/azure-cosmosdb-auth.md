@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 52f4e33e051c99b7002120c055c79036828d60dd
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 6e55b3b9b0f204992de684ba09f3d9ff2552ce00
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658865"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832354"
 ---
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>使用 Azure Cosmos DB 文件資料庫和 Xamarin.Forms 進行使用者驗證
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
 
 _Azure Cosmos DB 文件資料庫支援資料分割的集合，可跨越多部伺服器和資料分割，同時支援無限制的儲存體和輸送量。這篇文章說明如何結合資料分割的集合，存取控制，讓使用者只能存取自己的文件中的 Xamarin.Forms 應用程式。_
 
@@ -96,9 +96,9 @@ _Azure Cosmos DB 文件資料庫支援資料分割的集合，可跨越多部伺
 1. 建立 Facebook 應用程式。 如需詳細資訊，請參閱 <<c0> [ 註冊，並將應用程式設定](https://developers.facebook.com/docs/apps/register)Facebook 開發人員中心。
 1. 應用程式中新增 Facebook 登入產品。 如需詳細資訊，請參閱 <<c0> [ 新增至您的應用程式或網站的 Facebook 登入](https://developers.facebook.com/docs/facebook-login)Facebook 開發人員中心。
 1. Facebook 登入的設定，如下所示：
-  - 啟用用戶端 OAuth 登入。
-  - 啟用 Web OAuth 登入。
-  - 使用設定的有效的 OAuth 重新導向 URI 的 App Service web 應用程式中，URI`/.auth/login/facebook/callback`附加。
+   - 啟用用戶端 OAuth 登入。
+   - 啟用 Web OAuth 登入。
+   - 使用設定的有效的 OAuth 重新導向 URI 的 App Service web 應用程式中，URI`/.auth/login/facebook/callback`附加。
 
   下列螢幕擷取畫面示範這項設定：
 
@@ -114,12 +114,12 @@ _Azure Cosmos DB 文件資料庫支援資料分割的集合，可跨越多部伺
 
 1. 在 Azure 入口網站中，瀏覽至 App Service web 應用程式。
 1. 在 Azure 入口網站中，開啟 驗證 / 授權刀鋒視窗並執行下列設定：
-  - 應該開啟 app Service 驗證。
-  - 當要求未經驗證時要採取的動作應該設定為**使用 Facebook 登入**。
+    - 應該開啟 app Service 驗證。
+    - 當要求未經驗證時要採取的動作應該設定為**使用 Facebook 登入**。
 
-  下列螢幕擷取畫面示範這項設定：
+    下列螢幕擷取畫面示範這項設定：
 
-  [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "App Service Web 應用程式驗證設定")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "App Service Web 應用程式驗證設定")
+    [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "App Service Web 應用程式驗證設定")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "App Service Web 應用程式驗證設定")
 
 App Service web 應用程式也應該設定為與 Facebook 應用程式，若要啟用的驗證流程通訊。 這可藉由選取 Facebook 身分識別提供者，並輸入**應用程式識別碼**並**應用程式祕密**從 Facebook 開發人員中心的 Facebook 應用程式設定的值。 如需詳細資訊，請參閱 <<c0> [ 您的應用程式將 Facebook 資訊](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application)。
 
@@ -131,10 +131,10 @@ App Service web 應用程式也應該設定為與 Facebook 應用程式，若要
 
 1. 開啟 Xamarin.Forms 方案。
 1. 開啟`Constants.cs`並更新下列常數的值：
-  - `EndpointUri` – 此值應該是從 Cosmos DB 帳戶的 [金鑰] 刀鋒視窗的 Cosmos DB 帳戶 URL。
-  - `DatabaseName` – 此值應該是文件資料庫的名稱。
-  - `CollectionName` – 此值應該是文件資料庫集合的名稱 (在此情況下， `UserItems`)。
-  - `ResourceTokenBrokerUrl` – 此值必須從應用程式服務帳戶的 [概觀] 刀鋒視窗的資源權杖訊息代理程式 web 應用程式的 URL。
+    - `EndpointUri` – 此值應該是從 Cosmos DB 帳戶的 [金鑰] 刀鋒視窗的 Cosmos DB 帳戶 URL。
+    - `DatabaseName` – 此值應該是文件資料庫的名稱。
+    - `CollectionName` – 此值應該是文件資料庫集合的名稱 (在此情況下， `UserItems`)。
+    - `ResourceTokenBrokerUrl` – 此值必須從應用程式服務帳戶的 [概觀] 刀鋒視窗的資源權杖訊息代理程式 web 應用程式的 URL。
 
 ## <a name="initiating-login"></a>起始的登入
 

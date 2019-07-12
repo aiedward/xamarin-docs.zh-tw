@@ -1,15 +1,15 @@
 ---
-ms.openlocfilehash: 05f1017f8c4b306996d3e8e165511ff9062a1026
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ef16224b9ef060ff8643211b8e1f0c767c518bdf
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61047483"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67841400"
 ---
 
 下列命令列指定解決方案的發行組建**SOLUTION_FILE.sln**適用於 iPhone。 可以透過指定設定的 IPA 位置`IpaPackageDir`命令列上的屬性：
 
- - 在 Mac 上，使用**xbuild**:
+- 在 Mac 上，使用**xbuild**:
 
         xbuild /p:Configuration="Release" \ 
            /p:Platform="iPhone" \ 
@@ -18,7 +18,7 @@ ms.locfileid: "61047483"
 
 **Xbuild**命令通常位於目錄 **/Library/Frameworks/Mono.framework/Commands**。
 
- - 在 Windows 中，使用**msbuild**:
+- 在 Windows 中，使用**msbuild**:
 
         msbuild /p:Configuration="Release" 
             /p:Platform="iPhone" 
