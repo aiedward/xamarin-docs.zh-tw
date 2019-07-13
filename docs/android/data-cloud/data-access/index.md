@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 08720734de73af12d8a7383fa7d523dc350c4462
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6858e290d93007d6054ba0ef63dce86e6e2e53e3
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61011351"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649627"
 ---
 # <a name="xamarinandroid-data-access"></a>Xamarin.Android Data Access
 
@@ -35,7 +35,7 @@ Xamarin.Android 支援資料庫存取 Api，例如：
 
 這兩個範例方案包含 iOS 和 Android 範例應用程式專案。
 
-針對 Xamarin.Forms 應用程式，請閱讀[使用資料庫](~/xamarin-forms/app-fundamentals/databases.md)其中說明如何使用 SQLite 與 Xamarin.Forms PCL 程式庫。
+針對 Xamarin.Forms 應用程式，請閱讀[使用資料庫](~/xamarin-forms/data-cloud/data/databases.md)其中說明如何使用 SQLite 與 Xamarin.Forms PCL 程式庫。
 
 在本節中的主題將討論在 Xamarin.Android 使用 SQLite 的資料庫引擎中的資料存取。 「 直接 」 可以使用 ADO.NET 語法，可以存取資料庫，或您可以包含 SQLite.NET ORM，並在 C# 中執行資料作業。
 
@@ -49,4 +49,4 @@ Xamarin.Android 支援資料庫存取 Api，例如：
 - [DataAccess Basic （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess 進階 （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [Android 資料配方](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Xamarin.Forms 資料存取](~/xamarin-forms/app-fundamentals/databases.md)
+- [Xamarin.Forms 資料存取](~/xamarin-forms/data-cloud/data/databases.md)

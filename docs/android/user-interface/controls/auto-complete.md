@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2018
-ms.openlocfilehash: cf2221380e5ddbd8278cc2d387c6eb185d990c1a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bcbab6deddf5e1a4782cd382623f22281a0823e6
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036531"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674858"
 ---
 # <a name="auto-complete"></a>自動完成
 
@@ -171,7 +171,7 @@ static string[] COUNTRIES = new string[] {
 ## <a name="more-information"></a>更多資訊
 
 請注意，使用硬式編碼的字串陣列，不是建議的設計作法，因為您的應用程式程式碼應該專注於行為，不是內容。 應用程式內容，例如字串應該以輕鬆修改的內容，並促進當地語系化內容的程式碼，才能外部化。 硬式編碼的字串會在本教學課程只用於更為簡單，並專注於 [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-小工具。 相反地，您的應用程式應該宣告這類 XML 檔案中的字串陣列。 這可以透過完成`<string-array>`專案中的資源`res/values/strings.xml`檔案。 例如：
+小工具。 相反地，您的應用程式應該宣告這類 XML 檔案中的字串陣列。 這可以透過完成`<string-array>`專案中的資源`res/values/strings.xml`檔案。 例如:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -204,6 +204,6 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 -   [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
 
 *此頁面上的部分是根據工作建立及 Android 的開放原始碼專案所共用，並依據所述的條款來使用修改*
- [ *Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/) *.本教學課程根據*
- [ *Android 自動完成的教學課程*](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
+[*Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/) *.本教學課程根據*
+[*Android 自動完成的教學課程*](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
  *。*

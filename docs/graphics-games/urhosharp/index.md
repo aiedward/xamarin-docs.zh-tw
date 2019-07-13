@@ -6,22 +6,22 @@ ms.assetid: E6C5B86C-3756-49DF-843B-0B3D981E1C01
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: c008711a12729779312ae41388495e2058b4f27b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 06f1372d712f23078d120be824a01627d657d0a1
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61288478"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832570"
 ---
 # <a name="urhosharp---3d2d-engine"></a>UrhoSharp-3D/2D 引擎
 
-_UrhoSharp 是跨平台高階 3D 和 2D 引擎，可用來建立動畫的 3D 和 2D 場景供應用程式使用幾何、 材質、 光線和觀景窗。_
+_UrhoSharp 是跨平台高階 3D 和 2D 引擎，可用來建立動畫的 3D 和 2D 場景幾何、 材料、 號誌燈和數位相機所使用的應用程式。_
 
 ![範例 UrhoSharp 遊戲](images/video.gif)
 
 可以安裝在 Visual Studio 或 Visual Studio for Mac，而且可用來以任何下列平台為目標的 NuGet 套件形式散發 UrhoSharp:Android、 MacOS、 iOS、 tvOS 和 Windows。
 
-## <a name="an-introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[簡介 UrhoSharp](~/graphics-games/urhosharp/introduction.md)
+## <a name="introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[UrhoSharp 簡介](~/graphics-games/urhosharp/introduction.md)
 
 本文章提供 UrhoSharp 和 3D 視覺效果和簡單的 3D 遊戲中使用其功能的高階概觀。
 
@@ -33,13 +33,9 @@ _UrhoSharp 是跨平台高階 3D 和 2D 引擎，可用來建立動畫的 3D 和
 
 這些指南會描述每個目標平台上的 Urho 的安裝指示，並說明 Urho 整合您現有的 Android 和 iOS 應用程式的方式。
 
-## <a name="programming-urhosharp-with-fgraphics-gamesurhosharpfsharpmd"></a>[與進行 UrhoSharp 程式設計F#](~/graphics-games/urhosharp/fsharp.md)
+## <a name="programming-urhosharp-with-fgraphics-gamesurhosharpfsharpmd"></a>[使用 F# 進行 UrhoSharp 程式設計](~/graphics-games/urhosharp/fsharp.md)
 
 本指南會逐步建立簡單"Hello，World ！" UrhoSharp 解決方案使用F#和 Visual Studio for mac。
-
-## <a name="api-documentationhttpsdeveloperxamarincomapirooturho"></a>[API 文件](https://developer.xamarin.com/api/root/Urho/)
-
-您可以瀏覽[UrhoSharp 的 API 文件](https://developer.xamarin.com/api/root/Urho/)我們網站上。
 
 ## <a name="samples"></a>範例
 
@@ -60,4 +56,3 @@ _UrhoSharp 是跨平台高階 3D 和 2D 引擎，可用來建立動畫的 3D 和
 ## <a name="license"></a>使用權
 
 UrhoSharp 授權將會位於 [http://download.xamarin.com/content/licenses/URHO.LICENSE](http://download.xamarin.com/content/licenses/URHO.LICENSE)
-

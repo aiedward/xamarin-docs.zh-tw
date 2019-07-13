@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: db3f9b1c8eaed89046dd10621d5c942b21fae159
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 07dbd86e420c6e643ff80dfbbbc0d5b3f0154fe1
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61276331"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864868"
 ---
 # <a name="deployment-and-testing"></a>部署及測試
 
@@ -27,7 +27,7 @@ ms.locfileid: "61276331"
 
 如何設定 Android 裝置，讓 Xamarin.Android Wear 應用程式可以部署到其直接從 Visual Studio 或 Visual Studio for mac。
 
-##  <a name="packaging-wear-appsandroidweardeploy-testpackagingmd"></a>[封裝 Wear 應用程式](~/android/wear/deploy-test/packaging.md)
+## <a name="packaging-wear-appsandroidweardeploy-testpackagingmd"></a>[封裝 Wear 應用程式](~/android/wear/deploy-test/packaging.md)
 
 如何在 Google Play 上發佈的封裝 Xamarin.Android Wear 應用程式。
 

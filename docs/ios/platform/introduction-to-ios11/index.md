@@ -7,19 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2017
-ms.openlocfilehash: 5e75a7872081d82c289db0312bbc7d84bce77b4e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1542ae5d7dbdf008dd5b300dfb5820c3f04ae682
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61170987"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268889"
 ---
 # <a name="introduction-to-ios-11"></a>iOS 11 簡介
-
-_請嘗試新的 iOS 11 使用 Xamarin 的 Api。_
-
-> [!NOTE]
-> 您開始之前，請先檢閱[開始使用](get-started.md)頁面，如需有關如何安裝 Xcode 9。
 
 ![ARKit 範例](images/arkit.png) ![AR 放置物件](images/arkit2.png) ![CoreML 範例](images/coreml.png) ![MapKit 範例](images/mapkit.png) ![願景矩形範例](images/vision1.png) ![願景臉部範例](images/vision2.png) ![將拖放範例](images/drag-drop.png) ![將拖放範例](images/drag-drop2.png) ![SiriKit 範例](images/sirikit.png)
 
@@ -86,12 +81,6 @@ Siri 現在支援更多的互動，包括清單和備忘稿和其他增強功能
 * [PDKFit 小工具範例](https://developer.xamarin.com/samples/monotouch/ios11/PDFAnnotationWidgetsAdvanced)
 * [PDFKit 水位線範例](https://developer.xamarin.com/samples/monotouch/ios11/PDFDocumentWatermark)
 
-## <a name="more-information"></a>更多資訊
-
-如需有關 iOS 11 的詳細資訊，請瀏覽 Apple[的新功能 iOS 11](https://developer.apple.com/ios/)文件。
-
-
 ## <a name="related-links"></a>相關連結
 
-- [新功能 iOS 11 (Apple)](https://developer.apple.com/ios/)
 - [Xamarin iOS 11 範例](https://developer.xamarin.com/samples/ios/iOS11/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: fb225349b9ffb1c950486a817897b3c26c6ffbe4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 97b95ccb3e756f02c945adc63b9e173a9f9e0226
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61300249"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832691"
 ---
 # <a name="dependency-injection"></a>相依性插入
 
@@ -139,7 +139,8 @@ _container = builder.Build();
 
 叫用`Build`方法`ContainerBuilder`執行個體會建立新的相依性插入容器，其中包含已註冊。
 
->💡 **提示**:請考慮`IContainer`視為不變。 雖然 Autofac 提供`Update`方法來更新現有的容器，呼叫這個方法中的註冊應該盡可能避免。 會修改容器之後它所建置，, 特別是如果容器已使用的風險。 如需詳細資訊，請參閱 <<c0> [ 不可變的容器，請考慮](http://docs.autofac.org/en/latest/best-practices/#consider-a-container-as-immutable)readthedocs.io 上。
+> [!TIP]
+> 請考慮`IContainer`視為不變。 雖然 Autofac 提供`Update`方法來更新現有的容器，呼叫這個方法中的註冊應該盡可能避免。 會修改容器之後它所建置，, 特別是如果容器已使用的風險。 如需詳細資訊，請參閱 <<c0> [ 不可變的容器，請考慮](http://docs.autofac.org/en/latest/best-practices/#consider-a-container-as-immutable)readthedocs.io 上。
 
 <a name="resolution" />
 

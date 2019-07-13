@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: cdb75207bff3f15a54d0cdd90fa0833da9c145e6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d145a8a3cd8bc321f0fce76a8831fca681ad29a0
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61077736"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830581"
 ---
 # <a name="cardview"></a>CardView
 
@@ -49,7 +49,7 @@ _Cardview 小工具會提供類似於卡片的檢視中的文字和影像內容�
 
 若要新增`Xamarin.Android.Support.v7.CardView`Visual Studio 中的封裝：
 
-1. 開啟您的專案，以滑鼠右鍵按一下**參考**節點 (在**方案總管**窗格)，然後選取**管理 NuGet 套件...**.
+1. 開啟您的專案，以滑鼠右鍵按一下**參考**節點 (在**方案總管**窗格)，然後選取**管理 NuGet 套件...** .
 
 2. 當**管理 NuGet 套件**就會顯示對話方塊中，輸入**CardView**在搜尋方塊中。
 
@@ -174,8 +174,8 @@ _Cardview 小工具會提供類似於卡片的檢視中的文字和影像內容�
 
 
 #### <a name="padding"></a>與邊框距離
-`
-CardView` 提供五個填補屬性，將卡片內的內容。 您可以在您的版面配置 XML 中設定它們，或者您可以在程式碼中呼叫的類似方法：
+
+`CardView` 提供五個填補屬性，將卡片內的內容。 您可以在您的版面配置 XML 中設定它們，或者您可以在程式碼中呼叫的類似方法：
 
 [![CardView 填補屬性的圖表](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png#lightbox)
 

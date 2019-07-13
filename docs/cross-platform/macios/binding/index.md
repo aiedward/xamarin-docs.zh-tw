@@ -6,27 +6,27 @@ ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: bdf284d66539da3eca35e79d761712012674de0d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 923ec41443feff67d851a0c2f3cba1b948aed580
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978462"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864405"
 ---
 # <a name="binding-objective-c"></a>繫結 Objective C
 
 本節包含各種不同的文件，其中涵蓋建立繫結 Objective C 程式庫，因此可以從呼叫C#建立 Xamarin.iOS 或 Xamarin.Mac 應用程式。
 
-##  <a name="overviewcross-platformmaciosbindingoverviewmd"></a>[概觀](~/cross-platform/macios/binding/overview.md)
+## <a name="overviewcross-platformmaciosbindingoverviewmd"></a>[概觀](~/cross-platform/macios/binding/overview.md)
 
 本文件包含一些內部如何繫結會發生。 它是進階的文件的某些技術的資訊。
 
-##  <a name="binding-objective-c-librariescross-platformmaciosbindingobjective-c-librariesmd"></a>[繫結 Objective-C 程式庫](~/cross-platform/macios/binding/objective-c-libraries.md)
+## <a name="binding-objective-c-librariescross-platformmaciosbindingobjective-c-librariesmd"></a>[繫結 Objective-C 程式庫](~/cross-platform/macios/binding/objective-c-libraries.md)
 
 本文件說明用來建立的程序C#繫結 Objective C Api 以及如何在 OBJECTIVE-C 慣用語會對應至在.NET 中使用的慣用語。
 如果您要繫結只 C Api，您應該使用標準的.NET 機制，為此，P/Invoke framework。
 
-##  <a name="binding-definition-reference-guidecross-platformmaciosbindingbinding-types-referencemd"></a>[繫結定義參考指南](~/cross-platform/macios/binding/binding-types-reference.md)
+## <a name="binding-definition-reference-guidecross-platformmaciosbindingbinding-types-referencemd"></a>[繫結定義參考指南](~/cross-platform/macios/binding/binding-types-reference.md)
 
 這是描述所有繫結至磁碟機繫結產生程序的作者可以使用的屬性參考指南。
 

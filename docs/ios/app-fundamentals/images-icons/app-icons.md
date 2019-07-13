@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2017
-ms.openlocfilehash: 1eb3ec77dd478744906625dcfcd9fb843e74577c
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: cf2da9f7fe8d90c52517118cc3b4aa0e046d1f69
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827468"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864556"
 ---
 # <a name="application-icons-in-xamarinios"></a>在 Xamarin.iOS 中的應用程式圖示
 
@@ -134,16 +134,16 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 2. 按一下**視覺效果資產**索引標籤，然後按一下**使用資產目錄**按鈕下方**應用程式圖示**: 
 
     ![](app-icons-images/icon02w.png "選取 [視覺資產] 索引標籤")
-4. 從**方案總管**，展開**資產目錄**資料夾： 
+3. 從**方案總管**，展開**資產目錄**資料夾： 
 
     ![](app-icons-images/image009.png "展開 [資產目錄] 資料夾")
-5. 按兩下**媒體**檔案以在編輯器中開啟它： 
+4. 按兩下**媒體**檔案以在編輯器中開啟它： 
 
     ![](app-icons-images/image010.png "在編輯器中開啟媒體檔案")
-6. 底下**屬性總管**開發人員可以選取不同的類型和所需的圖示大小。
-7. 按一下指定的圖示類型，然後選取所需的型別/大小的影像檔。
-8. 按一下 **開啟**納入專案中的映像，並將它設 xcasset 中的按鈕。
-9. 重複的所需的所有映像。
+5. 底下**屬性總管**開發人員可以選取不同的類型和所需的圖示大小。
+6. 按一下指定的圖示類型，然後選取所需的型別/大小的影像檔。
+7. 按一下 **開啟**納入專案中的映像，並將它設 xcasset 中的按鈕。
+8. 重複的所需的所有映像。
 
 -----
 
@@ -203,8 +203,8 @@ UI 控制項，以及文件圖示的 Xamarin.iOS 應用程式可以使用影像�
 2. 按一下 **視覺效果資產**索引標籤，展開**iTunes 插圖**: 
 
     ![](app-icons-images/itunes01w.png "編輯 iTunes 插圖，在 Visual Studio 中")
-4. 針對任何缺少的影像，按一下 在編輯器中縮圖上選取所需的 iTunes 插圖的影像檔案，從 開啟檔案 對話方塊中，按一下 **開啟** 按鈕。
-5. 重複此步驟直到所有所需的映像已指定應用程式。
+3. 針對任何缺少的影像，按一下 在編輯器中縮圖上選取所需的 iTunes 插圖的影像檔案，從 開啟檔案 對話方塊中，按一下 **開啟** 按鈕。
+4. 重複此步驟直到所有所需的映像已指定應用程式。
 
 -----
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 1a98cf854ffdd1d4904981f85fd8e33ad486743c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 38c0ece3e8f0361f3c891713e53b033351512f94
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61417370"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829912"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>疑難排解秘訣適用於 Xamarin.iOS 
 
@@ -109,7 +109,7 @@ public partial class MyImageView : UIView {
 ```csharp
 public Bar (IntPtr handle) : base (handle) { }
 ```
-## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>類型 {Foo} 不包含的定義`GetNativeField' and no extension method `GetNativeField' 的型別找不到 {Foo}
+## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>類型 {Foo} 不包含的定義`GetNativeField`和 不到擴充方法`GetNativeField`的型別找不到 {Foo}
 
 如果您收到這個錯誤在設計工具產生的檔案 (*。 xib.designer.cs)，它表示下列其中一種：
 
@@ -311,7 +311,7 @@ Visual Studio for Mac 2.2 有問題，而不是用來偵測包含逗號的散發
 
 （由 Ed Anuff 發表）
 
-請依照下列步驟：
+請遵循下列步驟：
 
 -  在 iPhone 組建 3.2 或 iTunes 中的 SDK 版本連接的變更將會拒絕它上傳因為它所查看 iPad 相容應用程式使用小於 3.2 的 SDK 版本建置的內容
 -  建立自訂的 Info.plist 專案，並明確設定為 3.0 中的 MinimumOSVersion。   這會覆寫設定 Xamarin.iOS 的 MinimumOSVersion 3.2 值。   如果不這麼做，應用程式將無法在 iPhone 上執行。
@@ -389,7 +389,8 @@ SDK 版本不應使用 「 最小 OS 版本 」 設定相混淆。
 ```
 ....then 模擬器應用程式目錄中可能有一個 （或以上） 過時的組件。 這類組件可能會存在，由於 Apple iOS 模擬器新增和更新的檔案，但永遠不會刪除它們。 如果發生這種情況則最簡單的解決方案是從 [模擬器] 功能表中選取 [重設和內容和設定]。   
 
-**警告：** 這將會移除所有的檔案、 應用程式和資料從模擬器。   下次您執行您的應用程式，Visual Studio for Mac 會將它部署到模擬器，而且會有任何舊的、 過時組件上，可導致損毀。
+> [!WARNING]
+> 這會移除所有的檔案、 應用程式和資料從模擬器。   下次您執行您的應用程式，Visual Studio for Mac 會將它部署到模擬器，而且會有任何舊的、 過時組件上，可導致損毀。
 
 ## <a name="simulator-hangs-during-application-installation"></a>模擬器停止回應之應用程式安裝期間
 

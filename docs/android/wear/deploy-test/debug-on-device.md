@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 232fcd1d369eba1daad170986f2e2c4c913a3649
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 816ec5c861b5889e1735eab6293ed10318c53644
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61307859"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831884"
 ---
 # <a name="debug-on-a-wear-device"></a>在 Wear 裝置上偵錯
 
@@ -77,7 +77,8 @@ _這篇文章說明如何在 Wear 裝置上的 Xamarin.Android Wear 應用程式
 
     如果找不到連接埠 4444，您可以使用任何其他可用的通訊埠具有存取權。 
 
-    **注意**：如果您重新啟動 Visual Studio 或 Visual Studio for Mac，您必須執行下列命令一次來設定在 Wear 裝置的連線。
+    > [!NOTE]
+    > 如果您重新啟動 Visual Studio 或 Visual Studio for Mac，您必須執行下列命令一次來設定在 Wear 裝置的連線。
 
 5.  當在 Wear 裝置會提示您時，請確認您允許**ADB 偵錯**。 在 Android Wear 應用程式時，您應該會看到狀態變更為：
 

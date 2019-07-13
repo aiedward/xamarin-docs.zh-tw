@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 9db9902dfbf602ba21b353f3a17920dc37b03ee5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: efaea24e559aa2f3bdfd87c1c083ce1d777dbb3f
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382269"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832171"
 ---
 # <a name="authentication-and-authorization"></a>驗證與授權
 
@@ -97,7 +97,8 @@ public void ConfigureServices(IServiceCollection services)
 -   將連線要求權杖的用戶端。
 -   ASP.NET Core 身分識別。
 
->💡 **提示**:IdentityServer 4 組態以動態方式載入。 IdentityServer 4 Api 可讓設定 IdentityServer 從記憶體中清單的組態物件。 在 eShopOnContainers 參考應用程式，這些記憶體中集合會是硬式編碼到應用程式。 不過，在實際執行案例中可以載入以動態方式從組態檔或資料庫。
+> [!TIP]
+> IdentityServer 4 組態以動態方式載入。 IdentityServer 4 Api 可讓設定 IdentityServer 從記憶體中清單的組態物件。 在 eShopOnContainers 參考應用程式，這些記憶體中集合會是硬式編碼到應用程式。 不過，在實際執行案例中可以載入以動態方式從組態檔或資料庫。
 
 如需設定為使用 ASP.NET Core 識別 IdentityServer 資訊，請參閱[使用 ASP.NET Identity Core](https://identityserver4.readthedocs.io/en/latest/quickstarts/8_aspnet_identity.html) IdentityServer 文件中。
 
@@ -317,7 +318,8 @@ private async Task NavigateAsync(string url)
 
 這個方法會剖析包含在傳回的 URI，此驗證回應，前提是有效的授權程式碼，則對 IdentityServer 的提出要求[權杖端點](https://identityserver4.readthedocs.io/en/latest/endpoints/token.html)，傳遞授權程式碼PKCE 密碼驗證器，以及其他必要的參數。 權杖的端點位於`/connect/token`連接埠上公開為使用者設定的基底端點 5105。 如需有關使用者設定的詳細資訊，請參閱[Configuration Management](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
 
->💡 **提示**:驗證傳回的 Uri。 雖然 eShopOnContainers 的行動裝置應用程式不會驗證傳回的 URI，最佳做法就是驗證，已知的位置，以防止開啟重新導向攻擊是指傳回的 URI。
+> [!TIP]
+> 驗證傳回的 Uri。 雖然 eShopOnContainers 的行動裝置應用程式不會驗證傳回的 URI，最佳做法就是驗證，已知的位置，以防止開啟重新導向攻擊是指傳回的 URI。
 
 如果權杖端點收到有效的授權碼和 PKCE 密碼驗證器，它會使用存取權杖、 識別權杖和重新整理權杖來回應。 存取權杖 （可讓 API 資源的存取權） 和識別 token 然後儲存為應用程式設定，並執行頁面導覽。 因此，在 eShopOnContainers 的行動裝置應用程式的整體影響如下： 提供的使用者能夠成功進行驗證與 IdentityServer，它們會瀏覽至`MainView`頁面上，也就是[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)顯示`CatalogView`為其選取的索引標籤。
 

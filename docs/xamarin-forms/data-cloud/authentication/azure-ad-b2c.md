@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/17/2019
-ms.openlocfilehash: db44e09e9caa5c35a5e107cfed80d1d30fd7eb7d
-ms.sourcegitcommit: 864f47c4f79fa588b65ff7f721367311ff2e8f8e
+ms.openlocfilehash: 06f5716c8decb21de39fd46abe734b5fdcd6bd43
+ms.sourcegitcommit: 0f78ec17210b915b43ddab75937de8063e472c70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64347149"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67417940"
 ---
 # <a name="authenticate-users-with-azure-active-directory-b2c"></a>使用 Azure Active Directory B2C 進行使用者驗證
 
@@ -103,19 +103,26 @@ public static class Constants
 
 ## <a name="use-the-microsoft-authentication-library-msal-for-authentication"></a>使用 Microsoft Authentication Library (MSAL) 以進行驗證
 
-Microsoft Authentication Library (MSAL) NuGet 套件必須新增至共用、.NET Standard 專案和 Xamarin.Forms 方案中的平台專案中。 MSAL 提供`PublicClientApplication`來簡化使用 Azure Active Directory B2C 進行驗證的程序。 在範例專案中，程式碼後置**App.xaml**定義靜態屬性`AuthenticationClient`並`UiParent`並具現化`AuthenticationClient`建構函式。 第二個參數提供給`PublicClientApplication`是預設值**授權單位**，或將用來驗證使用者的原則。 下列範例示範如何具現化`PublicClientApplication`:
+Microsoft Authentication Library (MSAL) NuGet 套件必須新增至共用、.NET Standard 專案和 Xamarin.Forms 方案中的平台專案中。 包含 MSAL`PublicClientApplicationBuilder`類別，建構一個物件遵守`IPublicClientApplication`介面。 MSAL 會利用`With`子句，以提供其他參數的建構函式和驗證方法。
+
+在範例專案中，程式碼後置**App.xaml**定義靜態屬性，名為`AuthenticationClient`並`UIParent`，並具現化`AuthenticationClient`建構函式中的物件。 `WithIosKeychainSecurityGroup`子句提供 iOS 應用程式的安全性群組名稱。 `WithB2CAuthority`子句提供的預設值**授權單位**，或將用來驗證使用者的原則。 下列範例示範如何具現化`PublicClientApplication`:
 
 ```csharp
 public partial class App : Application
 {
-    public static PublicClientApplication AuthenticationClient { get; private set; }
+    public static IPublicClientApplication AuthenticationClient { get; private set; }
 
-    public static UIParent UiParent { get; set; } = null;
+    public static object UIParent { get; set; } = null;
 
     public App()
     {
         InitializeComponent();
-        AuthenticationClient = new PublicClientApplication(Constants.ClientId, Constants.AuthoritySignin);
+
+        AuthenticationClient = PublicClientApplicationBuilder.Create(Constants.ClientId)
+            .WithIosKeychainSecurityGroup(Constants.IosKeychainSecurityGroups)
+            .WithB2CAuthority(Constants.AuthoritySignin)
+            .Build();
+
         MainPage = new NavigationPage(new LoginPage());
     }
 
@@ -133,11 +140,13 @@ public partial class LoginPage : ContentPage
     {
         try
         {
+            // Look for existing account
             IEnumerable<IAccount> accounts = await App.AuthenticationClient.GetAccountsAsync();
 
-            AuthenticationResult result = await App.AuthenticationClient.AcquireTokenSilentAsync(
-                Constants.Scopes,
-                accounts.FirstOrDefault());
+            AuthenticationResult result = await App.AuthenticationClient
+                .AcquireTokenSilent(Constants.Scopes, accounts.FirstOrDefault())
+                .ExecuteAsync();
+
             await Navigation.PushAsync(new LogoutPage(result));
         }
         catch
@@ -163,12 +172,12 @@ public partial class LoginPage : ContentPage
         AuthenticationResult result;
         try
         {
-            result = await App.AuthenticationClient.AcquireTokenAsync(
-                Constants.Scopes,
-                string.Empty,
-                UIBehavior.SelectAccount,
-                string.Empty,
-                App.UiParent);
+            result = await App.AuthenticationClient
+                .AcquireTokenInteractive(Constants.Scopes)
+                .WithPrompt(Prompt.SelectAccount)
+                .WithParentActivityOrWindow(App.UIParent)
+                .ExecuteAsync();
+    
             await Navigation.PushAsync(new LogoutPage(result));
         }
         catch (MsalException ex)
@@ -199,15 +208,12 @@ public partial class LoginPage : ContentPage
     {
         try
         {
-            return await App.AuthenticationClient.AcquireTokenAsync(
-                Constants.Scopes,
-                string.Empty,
-                UIBehavior.SelectAccount,
-                string.Empty,
-                null,
-                Constants.AuthorityPasswordReset,
-                App.UiParent
-                );
+            return await App.AuthenticationClient
+                .AcquireTokenInteractive(Constants.Scopes)
+                .WithPrompt(Prompt.SelectAccount)
+                .WithParentActivityOrWindow(App.UIParent)
+                .WithB2CAuthority(Constants.AuthorityPasswordReset)
+                .ExecuteAsync();
         }
         catch (MsalException)
         {
@@ -290,7 +296,7 @@ namespace TodoAzure.iOS
 </manifest>
 ```
 
-`MainActivity`必須修改類別，以提供`UiParent`應用程式期間`OnCreate`呼叫。 Azure Active Directory B2C 完成授權要求，它將重新導向至已註冊的 URL 配置，從**AndroidManifest.xml**。 Android 的呼叫會產生的已註冊的 URI 配置`OnActivityResult`做為啟動參數，其中由處理 url `SetAuthenticationContinuationEventArgs`。
+`MainActivity`必須修改類別，以提供`UIParent`物件，以應用程式在`OnCreate`呼叫。 Azure Active Directory B2C 完成授權要求，它將重新導向至已註冊的 URL 配置，從**AndroidManifest.xml**。 Android 的呼叫會產生的已註冊的 URI 配置`OnActivityResult`方法的 url 做為啟動參數，其中由處理`SetAuthenticationContinuationEventArgs`方法。
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity
@@ -304,7 +310,7 @@ public class MainActivity : FormsAppCompatActivity
 
         Forms.Init(this, bundle);
         LoadApplication(new App());
-        App.UiParent = new UIParent(this);
+        App.UIParent = this;
     }
 
     protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)

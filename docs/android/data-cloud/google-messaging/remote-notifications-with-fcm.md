@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: 0c84f530f759285c2cfc71f60d7b6f80fba6a03d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a50a2014e28becacb2c9f4965b7f3377be57ab16
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61018815"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830325"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>遠端通知使用 Firebase 雲端傳訊
 
@@ -88,7 +88,7 @@ Firebase 雲端通訊取決於 Google Play 服務，因為[Xamarin Google Play �
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  在 Visual Studio 中，以滑鼠右鍵按一下**參考 > 管理 NuGet 套件...**.
+1.  在 Visual Studio 中，以滑鼠右鍵按一下**參考 > 管理 NuGet 套件...** .
 
 2.  按一下 **瀏覽**索引標籤，然後搜尋**Xamarin.GooglePlayServices.Base**。
 
@@ -98,7 +98,7 @@ Firebase 雲端通訊取決於 Google Play 服務，因為[Xamarin Google Play �
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  在 Visual Studio for Mac，請以滑鼠右鍵按一下**封裝 > 新增套件...**.
+1.  在 Visual Studio for Mac，請以滑鼠右鍵按一下**封裝 > 新增套件...** .
 
 2.  搜尋**Xamarin.GooglePlayServices.Base**。
 
@@ -125,7 +125,7 @@ using Android.Gms.Common;
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  在 Visual Studio 中，以滑鼠右鍵按一下**參考 > 管理 NuGet 套件...**.
+1.  在 Visual Studio 中，以滑鼠右鍵按一下**參考 > 管理 NuGet 套件...** .
 
 2. 搜尋**Xamarin.Firebase.Messaging**。
 
@@ -135,7 +135,7 @@ using Android.Gms.Common;
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  在 Visual Studio for Mac，請以滑鼠右鍵按一下**封裝 > 新增套件...**.
+1.  在 Visual Studio for Mac，請以滑鼠右鍵按一下**封裝 > 新增套件...** .
 
 2.  搜尋**Xamarin.Firebase.Messaging**。
 
@@ -682,6 +682,7 @@ using System.Collections.Generic;
 將下列方法加入`MyFirebaseMessagingService`:
 
 <a name="sendnotification-method"></a>
+
 ```csharp
 void SendNotification(string messageBody, IDictionary<string, string> data)
 {
@@ -711,7 +712,7 @@ void SendNotification(string messageBody, IDictionary<string, string> data)
 
 為了區別來自背景通知此通知，此程式碼將標記通知以不同於應用程式圖示的圖示。 將檔案加入[ic\_stat\_ic\_notification.png](remote-notifications-with-fcm-images/ic-stat-ic-notification.png)來**資源/drawable**並將它併入**FCMClient**專案.
 
-`SendNotification`方法會使用` NotificationCompat.Builder`若要建立通知，和`NotificationManagerCompat`用來啟動的通知。 通知會保留`PendingIntent`，可讓使用者開啟應用程式，並檢視傳入的字串內容`messageBody`。 如需詳細資訊`NotificationCompat.Builder`，請參閱 <<c2> [ 本機通知](~/android/app-fundamentals/notifications/local-notifications.md)。
+`SendNotification`方法會使用`NotificationCompat.Builder`若要建立通知，和`NotificationManagerCompat`用來啟動的通知。 通知會保留`PendingIntent`，可讓使用者開啟應用程式，並檢視傳入的字串內容`messageBody`。 如需詳細資訊`NotificationCompat.Builder`，請參閱 <<c2> [ 本機通知](~/android/app-fundamentals/notifications/local-notifications.md)。
 
 呼叫`SendNotification`方法的結尾處`OnMessageReceived`方法：
 

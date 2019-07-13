@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 2d67bc71361e335515cfba8b5a20e157ed6b6b05
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 25ace6d7febe495164378b3633f06371806e2f82
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61087793"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832311"
 ---
 # <a name="touch-id-in-xamarinios"></a>在 Xamarin.iOS 中的 touch ID
 
@@ -52,8 +52,8 @@ IOS 8，截至目前沒有新的使用者是否存在原則`SecAccessControl`，
 
 |裝置設定|原則評估|備份機制|
 |--- |--- |--- |
-|沒有密碼的裝置|沒有存取權|None|
-|使用密碼的裝置|需要密碼|None|
+|沒有密碼的裝置|沒有存取權|無|
+|使用密碼的裝置|需要密碼|無|
 |使用 Touch ID 的裝置|偏好 Touch ID|可讓密碼|
 
 安全飛地內的所有作業可以彼此都信任。 這表示我們可以使用 Touch ID 的驗證結果來授權金鑰鏈項目解密。 安全飛地也會保留失敗 Touch ID 的相符項目中案例的使用者擁有要還原成使用密碼的計數器。
@@ -81,10 +81,10 @@ IOS 8，截至目前沒有新的使用者是否存在原則`SecAccessControl`，
 
 有許多項目時使用的金鑰鏈中的 ACL，我們應該謹記在心，以下列出其中一些：
 
--   只能使用前景應用程式 – 如果您呼叫任何 keychain 作業在背景執行緒呼叫將會失敗。
--   新增和更新的金鑰鏈的項目可能需要驗證。
--   如果要求傳回金鑰鏈中的多個相符項目，則可能需要驗證。
--   ACL 受保護的項目是裝置限用，並因此不同步處理或備份。
+- 只能使用前景應用程式 – 如果您呼叫任何 keychain 作業在背景執行緒呼叫將會失敗。
+- 新增和更新的金鑰鏈的項目可能需要驗證。
+- 如果要求傳回金鑰鏈中的多個相符項目，則可能需要驗證。
+- ACL 受保護的項目是裝置限用，並因此不同步處理或備份。
 
 ### <a name="using-local-authentication-without-keychain-services"></a>使用不含鑰匙圈 Services 的本機驗證
 

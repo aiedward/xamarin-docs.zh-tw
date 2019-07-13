@@ -7,12 +7,12 @@ ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 56c4345dffe71f79e9d89c64478a9c6c38fc1d84
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 313348952b87d94db63d1682f8e1b9413d56714d
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61335262"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67513011"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>第 21 章的摘要。 轉換
 
@@ -39,7 +39,7 @@ Xamarin.Forms 可支援三種基本類型的轉換：
 - [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX)
 - [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY)
 
-所有這些屬性是由可繫結屬性支援。 它們可以是資料繫結的目標和樣式。 [**第 22 章。動畫**](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter22.md)示範如何可以動畫顯示這些屬性，但在這一章中的一些範例會顯示動畫使用 Xamarin.Forms[計時器](~/xamarin-forms/platform/device.md#Device_StartTimer)。
+所有這些屬性是由可繫結屬性支援。 它們可以是資料繫結的目標和樣式。 [**第 22 章。動畫**](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter22.md)示範如何可以動畫顯示這些屬性，但在這一章中的一些範例會顯示動畫使用 Xamarin.Forms[計時器](~/xamarin-forms/platform/device.md#devicestarttimer)。
 
 轉換屬性會影響如何轉譯時，項目，且請勿*不*影響項目在版面配置中的發現如何。
 

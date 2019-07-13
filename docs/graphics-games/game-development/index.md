@@ -6,12 +6,12 @@ ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 314bedcb6bb2d7ebf9d8f98428b6a7cad059f73b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0fa4dbbf256e005fe17841f06acf1338197784b0
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382019"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832278"
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>使用 Xamarin 的遊戲開發簡介
 
@@ -55,9 +55,9 @@ ms.locfileid: "61382019"
 
 根據哪一種技術您使用在開發過程中可能需要以手動方式載入和卸載 （或處置） 的內容。 以手動方式載入和卸載的資產可能是基於多種原因所造成：
 
- - 資產可能需要很長的時間載入相對於單一框架的長度。 某些資產甚至可能需要秒鐘的時間載入，以避免在如果載入 mid 遊戲嚴重中斷的體驗。 如果載入時間是特別長的時間 （例如多個第二個或兩個） 可能會想要顯示動畫載入畫面或進度列。
- - 資產可能會耗用大量的 RAM，需要使用中管理以符合該遊戲的目標平台所提供的內容中載入了什麼。
- - 遊戲可能需要顯示多個資產超過可容納的 RAM。 「 開啟 World 」 遊戲通常會包含大型環境中的播放程式可以順暢地瀏覽 – 這是沒有載入畫面。 在此情況下，您可能需要建立自訂的系統中的資料流內容和管理的記憶體使用量。
+- 資產可能需要很長的時間載入相對於單一框架的長度。 某些資產甚至可能需要秒鐘的時間載入，以避免在如果載入 mid 遊戲嚴重中斷的體驗。 如果載入時間是特別長的時間 （例如多個第二個或兩個） 可能會想要顯示動畫載入畫面或進度列。
+- 資產可能會耗用大量的 RAM，需要使用中管理以符合該遊戲的目標平台所提供的內容中載入了什麼。
+- 遊戲可能需要顯示多個資產超過可容納的 RAM。 「 開啟 World 」 遊戲通常會包含大型環境中的播放程式可以順暢地瀏覽 – 這是沒有載入畫面。 在此情況下，您可能需要建立自訂的系統中的資料流內容和管理的記憶體使用量。
 
 自訂檔案格式可能需要在載入期間，處理需要自訂載入程式碼。
 
@@ -109,25 +109,11 @@ ms.locfileid: "61382019"
 
 使用 Xamarin.Android 和 Xamarin.iOS 的開發人員有各種不同的技術提供給他們協助遊戲開發。 本節將討論一些最受歡迎的跨平台解決方案。
 
-### <a name="cocossharp"></a>CocosSharp
-
-CocosSharp 是 Cocos 2D 遊戲引擎的開放原始碼、 跨平台版本。 引擎會提供對 Android、 iOS、 Mac OS X、 Windows 桌面、 Windows RT 和 Windows Phone 的存取。
-
-CocosSharp 著重於 2D 的遊戲程式開發的簡單程式設計 API。 在行動裝置上的遊戲的成長已協助 reignite 進行 CocosSharp 嗜好和類似的商業專案的基本的可行技術的 2D 遊戲開發的熱門程度。 它可作為來源的程式碼或.dll 檔案 （這可以透過 NuGet 取得），但它不提供的視覺化編輯器;因此，任何互動 CocosSharp 引擎需要程式設計的知識。
-
-若要開始搭配 cocossharp 使用 Tiled，請參閱我們[CocosSharp 指南](~/graphics-games/cocossharp/index.md)。
-
-遊戲搭配 cocossharp 使用 Tiled，，建立生氣忍，而且如果您要尋找多個平台已在執行遊戲，它可以是不錯的起點：
-
-![](images/image3.png "遊戲生氣忍建立搭配 cocossharp 使用 Tiled")
-
-您可以下載它，並獲得詳細資訊[AngryNinjas Github 頁面](https://github.com/xamarin/AngryNinjas)。
-
 ### <a name="monogame"></a>MonoGame
 
 MonoGame 是開放原始碼、 跨平台版本的 Microsoft 的 XNA API。 MonoGame 可用來讓適用於 iOS、 Android、 Mac OS X、 Linux、 Windows、 Windows RT、 PS4、 PSVita、 Xbox One 和交換器的遊戲。
 
-CocosSharp，像 MonoGame 會會就技術上而言不遊戲引擎，但而遊戲開發 API。 這表示使用 MonoGame 需要直接管理遊戲物件、 手動繪圖物件，以及實作常見的物件，例如數位相機和*場景圖形*（父子式階層之間遊戲物件）。 為了協助了解此差異，請考慮 CocosSharp 為建置基礎 MonoGame。 MonoGame 一般化一些特定平台技術，例如圖形、 轉譯和音訊，而 CocosSharp 提供組織及實作遊戲邏輯的程式碼。
+MonoGame 是技術上來說不的遊戲引擎，而是遊戲開發 API。 這表示使用 MonoGame 需要直接管理遊戲物件、 手動繪圖物件，以及實作常見的物件，例如數位相機和*場景圖形*（父子式階層之間遊戲物件）。
 
 MonoGame 不提供標準的視覺化開發環境，以便使用 MonoGame 需要程式設計的知識。
 
@@ -161,6 +147,5 @@ UrhoSharp 是跨平台高階 3D 和 2D 引擎，可用來建立動畫的 3D 和 
 
 ## <a name="related-links"></a>相關連結
 
-- [CocosSharp 輔助線](~/graphics-games/cocossharp/index.md)
 - [MonoGame 輔助線](~/graphics-games/monogame/index.md)
 - [UrhoSharp 輔助線](~/graphics-games/urhosharp/index.md)

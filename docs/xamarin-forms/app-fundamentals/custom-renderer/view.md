@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 88be56cae52e881792ec7a187ef7e158790e8a1b
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 8f5c440784205fa0e7e2001c981e37eab8646f24
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926605"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268940"
 ---
 # <a name="implementing-a-view"></a>實作檢視
 
@@ -127,7 +127,7 @@ public class MainPageCS : ContentPage
 
 ![](view-images/screenshots.png "每個平台上的 CameraPreview")
 
-`ViewRenderer` 類別會公開 `OnElementChanged` 方法，在建立 Xamarin.Forms 自訂控制項以轉譯對應的原生控制項時，便會呼叫此方法。 這個方法採用 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性分別代表轉譯器「過去」所附加的 Xamarin.Forms 項目，以及「現在」所附加的 Xamarin.Forms 項目。 在範例應用程式中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CameraPreview` 執行個體的參考。
+`ViewRenderer` 類別會公開 `OnElementChanged` 方法，在建立 Xamarin.Forms 自訂控制項以轉譯對應的原生控制項時，便會呼叫此方法。 這個方法採用 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性分別代表轉譯器「過去」  所附加的 Xamarin.Forms 項目，以及「現在」  所附加的 Xamarin.Forms 項目。 在範例應用程式中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CameraPreview` 執行個體的參考。
 
 在每個平台特定的轉譯器類別中，`OnElementChanged` 方法之覆寫版本是執行原生控制項具現化和自訂的位置。 您應該使用 `SetNativeControl` 方法來具現化原生控制項，而且此方法也會將控制項參考指派給 `Control` 屬性。 此外，所要轉譯 Xamarin.Forms 控制項的參考可透過 `Element` 屬性取得。
 
@@ -138,22 +138,24 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 {
   base.OnElementChanged (e);
 
-  if (Control == null) {
-    // Instantiate the native control and assign it to the Control property with
-    // the SetNativeControl method
-  }
-
   if (e.OldElement != null) {
     // Unsubscribe from event handlers and cleanup any resources
   }
 
   if (e.NewElement != null) {
+    if (Control == null) {
+      // Instantiate the native control and assign it to the Control property with
+      // the SetNativeControl method
+    }
     // Configure the control and subscribe to event handlers
   }
 }
 ```
 
-當 `Control` 屬性是 `null` 時，新的原生控制項只應具現化一次。 應該只在自訂控制項附加於新的 Xamarin.Forms 元素時，才設定控制項並訂閱事件處理常式。 同樣地，應該只在轉譯器附加到的項目變更時，才取消訂閱任何已訂閱的事件處理常式。 採用這個方法將有助於建立高效能的自訂轉譯器，避免發生記憶體流失。
+當 `Control` 屬性是 `null` 時，新的原生控制項只應具現化一次。 此外，應該只在自訂控制項附加於新的 Xamarin.Forms 元素時，才建立、設定控制項並訂閱事件處理常式。 同樣地，應該只在轉譯器附加到的項目變更時，才取消訂閱任何已訂閱的事件處理常式。 採用這個方法將有助於建立高效能的自訂轉譯器，避免發生記憶體流失。
+
+> [!IMPORTANT]
+> 只有當 `e.NewElement` 不是 `null` 時，才應呼叫 `SetNativeControl`方法。
 
 每個自訂轉譯器類別都裝飾了向 Xamarin.Forms 註冊轉譯器的 `ExportRenderer` 屬性。 此屬性接受兩個參數：正在轉譯的 Xamarin.Forms 自訂控制項類型名稱，以及自訂轉譯器的類型名稱。 屬性的 `assembly` 前置詞會指定套用至整個組件的屬性。
 
@@ -175,15 +177,15 @@ namespace CustomRenderer.iOS
         {
             base.OnElementChanged (e);
 
-            if (Control == null) {
-                uiCameraPreview = new UICameraPreview (e.NewElement.Camera);
-                SetNativeControl (uiCameraPreview);
-            }
             if (e.OldElement != null) {
                 // Unsubscribe
                 uiCameraPreview.Tapped -= OnCameraPreviewTapped;
             }
             if (e.NewElement != null) {
+                if (Control == null) {
+                  uiCameraPreview = new UICameraPreview (e.NewElement.Camera);
+                  SetNativeControl (uiCameraPreview);
+                }
                 // Subscribe
                 uiCameraPreview.Tapped += OnCameraPreviewTapped;
             }
@@ -226,12 +228,6 @@ namespace CustomRenderer.Droid
         {
             base.OnElementChanged(e);
 
-            if (Control == null)
-            {
-                cameraPreview = new CameraPreview(Context);
-                SetNativeControl(cameraPreview);
-            }
-
             if (e.OldElement != null)
             {
                 // Unsubscribe
@@ -239,6 +235,11 @@ namespace CustomRenderer.Droid
             }
             if (e.NewElement != null)
             {
+                if (Control == null)
+                {
+                  cameraPreview = new CameraPreview(Context);
+                  SetNativeControl(cameraPreview);
+                }
                 Control.Preview = Camera.Open((int)e.NewElement.Camera);
 
                 // Subscribe
@@ -284,15 +285,6 @@ namespace CustomRenderer.UWP
         {
             base.OnElementChanged(e);
 
-            if (Control == null)
-            {
-                ...
-                _captureElement = new CaptureElement();
-                _captureElement.Stretch = Stretch.UniformToFill;
-
-                SetupCamera();
-                SetNativeControl(_captureElement);
-            }
             if (e.OldElement != null)
             {
                 // Unsubscribe
@@ -301,6 +293,15 @@ namespace CustomRenderer.UWP
             }
             if (e.NewElement != null)
             {
+                if (Control == null)
+                {
+                  ...
+                  _captureElement = new CaptureElement();
+                  _captureElement.Stretch = Stretch.UniformToFill;
+
+                  SetupCamera();
+                  SetNativeControl(_captureElement);
+                }
                 // Subscribe
                 Tapped += OnCameraPreviewTapped;
             }

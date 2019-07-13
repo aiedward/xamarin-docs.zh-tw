@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 4ee07e4b47ed9e1bdca0efc814ad44e513f68e80
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a9cf3dab9c112bf7ff99cbc0dd9541c3c1e35142
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61076557"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830132"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Web 標記在 Xamarin.iOS 中使用的搜尋
 
@@ -63,7 +63,7 @@ Apple 會呈現在 Spotlight 搜尋和 Safari 搜尋結果中的這些結果。
 
 ## <a name="using-twitter-cards"></a>使用 Twitter 卡
 
-您可以提供您的應用程式使用 Twitter 卡的內容的深層連結。 例如: 
+您可以提供您的應用程式使用 Twitter 卡的內容的深層連結。 例如：
 
 ```xml
 <meta name="twitter:app:name:iphone" content="AppName">
@@ -158,14 +158,14 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 Apple 目前支援下列的結構描述型別，從 schema.org:
 
- - AggregateRating
- - ImageObject
- - InteractionCount
- - 供應項目
- - 組織
- - PriceRange
- - 配方
- - SearchAction
+- AggregateRating
+- ImageObject
+- InteractionCount
+- 供應項目
+- 組織
+- PriceRange
+- 配方
+- SearchAction
 
 如需有關這些配置類型的詳細資訊，請參閱[schema.org](http://schema.org)。
 
@@ -173,9 +173,9 @@ Apple 目前支援下列的結構描述型別，從 schema.org:
 
 特定類型的結構化資料可讓搜尋結果可由使用者執行動作。 目前支援下列動作：
 
- - 撥號的電話號碼。
- - 取得對應至指定的地址的方向。
- - 播放音訊或視訊檔案。
+- 撥號的電話號碼。
+- 取得對應至指定的地址的方向。
+- 播放音訊或視訊檔案。
 
 例如，定義要撥打的電話號碼的動作看起來可能如下所示：
 

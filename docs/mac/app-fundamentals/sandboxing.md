@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 6bf2f63e944e178d80f76fe363ef24410ff052ce
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e38ca07aeef1cbd8e121421ebcbad2207a1bb823
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61236710"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865977"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>沙箱 Xamarin.Mac 應用程式
 
@@ -87,13 +87,13 @@ _本文章涵蓋沙箱 Xamarin.Mac 應用程式在 App Store 上發行。它涵�
 8. 新增下列 using 陳述式： `using WebKit;`
 9. 請`ViewDidLoad`方法外觀如下所示： 
 
-```csharp
-public override void AwakeFromNib ()
-{
-    base.AwakeFromNib ();
-    webView.MainFrame.LoadRequest(new NSUrlRequest(new NSUrl("http://www.apple.com")));
-}
-```
+    ```csharp
+    public override void AwakeFromNib ()
+    {
+        base.AwakeFromNib ();
+        webView.MainFrame.LoadRequest(new NSUrlRequest(new NSUrl("http://www.apple.com")));
+    }
+    ```
 
 10. 儲存您的變更。
 
@@ -164,14 +164,14 @@ public override void AwakeFromNib ()
 3. 接下來，按兩下**Entitlements.plist**檔案，並確定我們**iCloud 索引鍵-值存放區**並**iCloud 容器**所有符合我們前面所建立的應用程式識別碼 (範例：`com.appracatappra.MacSandbox`): 
 
     [![編輯 Entitlements.plist 檔案](sandboxing-images/sign17.png "編輯 Entitlements.plist 檔案")](sandboxing-images/sign17-large.png#lightbox)
-3. 儲存您的變更。
-4. 在  **Solution Pad**，按兩下專案檔，以開啟它進行編輯的選項：  
+4. 儲存您的變更。
+5. 在  **Solution Pad**，按兩下專案檔，以開啟它進行編輯的選項：  
 
     ![Editign 解決方案的選項](sandboxing-images/sign14.png "Editign 解決方案的選項")
-5. 選取  **Mac 簽署**，然後核取**簽署應用程式套件組合**並**簽署安裝程式套件**。 底下**佈建設定檔**，選取我們上面所建立： 
+6. 選取  **Mac 簽署**，然後核取**簽署應用程式套件組合**並**簽署安裝程式套件**。 底下**佈建設定檔**，選取我們上面所建立： 
 
     ![設定佈建設定檔](sandboxing-images/sign15.png "設定佈建設定檔")
-6. 按一下 [**完成**] 按鈕。
+7. 按一下 [**完成**] 按鈕。
 
 > [!IMPORTANT]
 > 您可能必須結束並重新啟動 Visual Studio for Mac，以取得它，來辨識新的應用程式識別碼和佈建設定檔所安裝的 Xcode。
@@ -226,7 +226,7 @@ public override void AwakeFromNib ()
 
 ### <a name="debugging-a-sandboxed-app"></a>沙箱化應用程式偵錯
 
-偵錯工具連接到 Xamarin.Mac 應用程式，透過 TCP，這表示，依預設啟用的沙箱功能時，無法連線到應用程式，因此如果您嘗試執行應用程式沒有啟用適當的權限，您會收到錯誤 *「 無法連接到偵錯工具 」*。 
+偵錯工具連接到 Xamarin.Mac 應用程式，透過 TCP，這表示，依預設啟用的沙箱功能時，無法連線到應用程式，因此如果您嘗試執行應用程式沒有啟用適當的權限，您會收到錯誤 *「 無法連接到偵錯工具 」* 。 
 
 [![設定所需的選項](sandboxing-images/debug01.png "設定所需的選項")](sandboxing-images/debug01-large.png#lightbox)
 
@@ -460,7 +460,7 @@ Exception Type:  EXC_BAD_INSTRUCTION (SIGILL)
 
 1. 開啟 Terminal 應用程式 (在`/Applications/Utilities`)。
 2. 開啟搜尋工具視窗的 Xamarin.Mac 應用程式的 Apple 簽署版本。
-3. 型別`asctl container acl add -file `終端機視窗中。
+3. 型別`asctl container acl add -file`終端機視窗中。
 4. 將 Xamarin.Mac 應用程式的圖示從 [搜尋] 視窗拖放在終端機視窗中。
 5. 檔案的完整路徑會新增至終端機中的命令。
 6. 按下**Enter**執行命令。

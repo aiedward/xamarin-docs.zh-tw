@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 0a14e3e3eb58b264d1909b6576bbbc4f7e8f4068
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1f2b0c9ee46634ad7395fadfb770dd2da796ada2
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61166340"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675149"
 ---
 # <a name="menus-in-xamarinmac"></a>Xamarin.mac 的功能表
 
@@ -226,7 +226,7 @@ NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 
 即使不使用您的應用程式`NSDocuments`，您仍然可以使用`NSDocumentController`維護**開啟最近**功能表傳送`NSUrl`檔案的位置`NoteNewRecentDocumentURL`方法`SharedDocumentController`。
 
-接下來，您需要覆寫`OpenFile`方法來開啟任何使用者從選取的檔案的應用程式委派**最近開啟**功能表。 例如：
+接下來，您需要覆寫`OpenFile`方法來開啟任何使用者從選取的檔案的應用程式委派**最近開啟**功能表。 例如:
 
 ```csharp
 public override bool OpenFile (NSApplication sender, string filename)
@@ -425,7 +425,7 @@ NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 
 就像內建**第一個回應**標準功能表項目來到預先有線的動作，您可以建立新的自訂動作並將它們接軌到介面產生器中的功能表項目。
 
-首先，在其中一個您的應用程式視窗的控制站上定義的自訂動作。 例如: 
+首先，在其中一個您的應用程式視窗的控制站上定義的自訂動作。 例如:
 
 ```csharp
 [Action("defineKeyword:")]
@@ -862,7 +862,7 @@ FormattingCommands.Add (Headings);
 FormattingCommands.Add(new LanguageFormatCommand ());
 FormattingCommands.Add(new LanguageFormatCommand("Link","[","]()"));
 FormattingCommands.Add(new LanguageFormatCommand("Image","![](",")"));
-FormattingCommands.Add(new LanguageFormatCommand("Image Link","[ ![](",")](LinkImageHere)"));
+FormattingCommands.Add(new LanguageFormatCommand("Image Link","[![](",")](LinkImageHere)"));
 ```
 
 與集合傳遞給`AssembleMenu`函式 (使用**格式**功能表設定做為基底)，會建立下列的動態功能表和功能表項目：

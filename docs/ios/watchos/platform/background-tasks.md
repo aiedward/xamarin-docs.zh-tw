@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/13/2017
-ms.openlocfilehash: 45886d787ecc40c9e11ce0c713ffa22819e29db2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e28ba19fdc972b962f0dcd2757f1ba9087ac5c27
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61227301"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831769"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>watchOS 在 Xamarin 中的背景工作
 
@@ -141,7 +141,7 @@ watchOS 3 引進了數個應用程式可用來更新使用者必須先開啟應�
 當應用程式會將標示`WKSnapshotRefreshBackgroundTask`完成時，系統會自動建立快照集的應用程式的 UI。
 
 > [!IMPORTANT]
-> 請務必一律排程` WKSnapshotRefreshBackgroundTask`收到新的資料並更新其使用者介面應用程式或使用者將不會看到已修改的資訊之後。
+> 請務必一律排程`WKSnapshotRefreshBackgroundTask`收到新的資料並更新其使用者介面應用程式或使用者將不會看到已修改的資訊之後。
 
 
 

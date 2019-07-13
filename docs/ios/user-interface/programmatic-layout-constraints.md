@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 3d8e69af7f790415343abf464ea2bb22e879e025
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 089ada051b6780a15acfcdd7f9e32ddda1384d05
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61170753"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832054"
 ---
 # <a name="programmatic-layout-constraints-in-xamarinios"></a>在 Xamarin.iOS 中的程式設計版面配置條件約束
 
@@ -51,7 +51,7 @@ _本指南提供有關使用 iOS 中的自動版面配置條件約束C#而不是
 - **ConstraintGreaterThanOrEqualTo** -定義關聯性其中`first attribute >= second attribute + [constant]`以選擇性地提供`constant`位移值。
 - **ConstraintLessThanOrEqualTo** -定義關聯性其中`first attribute <= second attribute + [constant]`以選擇性地提供`constant`位移值。
 
-例如: 
+例如：
 
 ```csharp
 // Get the parent view's layout
@@ -95,7 +95,7 @@ PurpleView.LeadingAnchor.ConstraintEqualTo (OrangeView.TrailingAnchor, 10).Activ
 
 ### <a name="layout-constraints"></a>版面配置條件約束
 
-您可以藉由直接建構，手動新增自動版面配置條件約束`NSLayoutConstraint`在C#程式碼。 不同於使用版面配置的錨點中,，您必須指定每個參數值，即使它不會影響上所定義的條件約束。 如此一來，您最後會產生相當多的難以閱讀，未定案程式碼。 例如: 
+您可以藉由直接建構，手動新增自動版面配置條件約束`NSLayoutConstraint`在C#程式碼。 不同於使用版面配置的錨點中,，您必須指定每個參數值，即使它不會影響上所定義的條件約束。 如此一來，您最後會產生相當多的難以閱讀，未定案程式碼。 例如：
 
 ```csharp
 //// Pin the leading edge of the view to the margin
@@ -119,10 +119,10 @@ NSLayoutConstraint.Create (OrangeView, NSLayoutAttribute.Height, NSLayoutRelatio
 視覺化的格式語言，可讓您定義使用類似字串，提供條件約束所建立的視覺表示法的 ASCII 作品的條件約束。 這有下列優點和缺點：
 
 - 視覺化的格式語言會強制執行建立只有有效的條件約束。
- - 自動版面配置會輸出到主控台使用視覺化格式語言，因此偵錯的訊息看起來將類似的程式碼，用來建立條件約束的條件約束。
- - 視覺化的格式語言，可讓您建立多個條件約束在相同的時間，以非常精簡的運算式。
- - 因為沒有任何編譯端驗證的視覺化格式語言字串，在執行階段只可以發現問題。
- - 由於視覺化格式語言強調視覺效果，透過某些條件約束類型不能與它建立 （例如比例） 的完整性。
+- 自動版面配置會輸出到主控台使用視覺化格式語言，因此偵錯的訊息看起來將類似的程式碼，用來建立條件約束的條件約束。
+- 視覺化的格式語言，可讓您建立多個條件約束在相同的時間，以非常精簡的運算式。
+- 因為沒有任何編譯端驗證的視覺化格式語言字串，在執行階段只可以發現問題。
+- 由於視覺化格式語言強調視覺效果，透過某些條件約束類型不能與它建立 （例如比例） 的完整性。
 
 使用視覺化格式語言，建立條件約束時，您可以採取下列步驟：
 

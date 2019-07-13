@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
-ms.openlocfilehash: bf135755f64e4d17db2c187d58572c525dfee559
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 047ee06522d4b2c07937e0e1bd9985248a164f01
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61420868"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865024"
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>我可以將檔案加入或移除的 IPA 檔案中的檔案之後在 Visual Studio 中建立, 嗎？
 
@@ -24,55 +24,55 @@ ms.locfileid: "61420868"
 
 此範例假設的 Xamarin.iOS 專案名稱`iPhoneApp1`而`generated session id`是 `cc530d20d6b19da63f6f1c6f67a0a254`
 
-1.  建置`.ipa`檔案正常從 Visual Studio。
+1. 建置`.ipa`檔案正常從 Visual Studio。
 
-2.  切換到 Mac 組建主機。
+2. 切換到 Mac 組建主機。
 
-3.  尋找組建`~/Library/Caches/Xamarin/mtbs/builds`資料夾。 您可以貼上到此路徑**Finder > 移 > 移至資料夾**瀏覽在 Finder 中的資料夾。 尋找符合專案名稱的資料夾。 在該資料夾中，尋找符合的資料夾`generated session id`的組建。 這很可能會有最新的修改時間的子資料夾。
+3. 尋找組建`~/Library/Caches/Xamarin/mtbs/builds`資料夾。 您可以貼上到此路徑**Finder > 移 > 移至資料夾**瀏覽在 Finder 中的資料夾。 尋找符合專案名稱的資料夾。 在該資料夾中，尋找符合的資料夾`generated session id`的組建。 這很可能會有最新的修改時間的子資料夾。
 
-4.  開啟新`Terminal.app`視窗。
+4. 開啟新`Terminal.app`視窗。
 
-5.  型別`cd `Terminal.app 視窗中，然後拖曳 & 拖放到`generated session id`資料夾`Terminal.app`視窗：
+5. 型別`cd`Terminal.app 視窗中，然後拖曳 & 拖放到`generated session id`資料夾`Terminal.app`視窗：
 
     ![](modify-ipa-images/session-id-folder.png "在 Finder 中尋找產生的工作階段識別碼資料夾")
 
-6.  輸入傳回的索引鍵，將目錄變更至`generated session id`資料夾。
+6. 輸入傳回的索引鍵，將目錄變更至`generated session id`資料夾。
 
-7.  將解壓縮`.ipa`暫存檔案`old/`資料夾使用下列命令。 調整`Ad-Hoc`和`iPhoneApp1`視需要針對特定專案的名稱。
+7. 將解壓縮`.ipa`暫存檔案`old/`資料夾使用下列命令。 調整`Ad-Hoc`和`iPhoneApp1`視需要針對特定專案的名稱。
 
     > ditto -xk bin/iPhone/Ad-Hoc/iPhoneApp1-1.0.ipa old/
 
-8.  保留`Terminal.app`視窗中開啟。
+8. 保留`Terminal.app`視窗中開啟。
 
-9.  刪除所需的檔案，從`.ipa`。 您可以將它們移至 資源回收筒使用搜尋工具，或刪除它們在命令列使用`Terminal.app`。 若要檢視的內容`Payload/iPhone`檔案中搜尋工具，Control + 按一下檔案，然後選取**顯示封裝內容**。
+9. 刪除所需的檔案，從`.ipa`。 您可以將它們移至 資源回收筒使用搜尋工具，或刪除它們在命令列使用`Terminal.app`。 若要檢視的內容`Payload/iPhone`檔案中搜尋工具，Control + 按一下檔案，然後選取**顯示封裝內容**。
 
-10.  使用相同的一般方法，如步驟 3 中，找到記錄檔底下`~/Library/Logs/Xamarin/MonoTouchVS/`具有這兩個專案名稱和`generated session id`名稱中：![](modify-ipa-images/build-log.png "在 Finder 中找出專案組建記錄檔")
+10. 使用相同的一般方法，如步驟 3 中，找到記錄檔底下`~/Library/Logs/Xamarin/MonoTouchVS/`具有這兩個專案名稱和`generated session id`名稱中：![](modify-ipa-images/build-log.png "在 Finder 中找出專案組建記錄檔")
 
-11.  組建記錄檔來自步驟 10，例如按兩下開啟它。
+11. 組建記錄檔來自步驟 10，例如按兩下開啟它。
 
-12.  尋找包含`tool /usr/bin/codesign execution started with arguments: -v --force --sign`。
+12. 尋找包含`tool /usr/bin/codesign execution started with arguments: -v --force --sign`。
 
-13.  型別`/usr/bin/codesign `到步驟 8 中的 [Terminal.app] 視窗。
+13. 型別`/usr/bin/codesign`到步驟 8 中的 [Terminal.app] 視窗。
 
-14.  複製所有引數開頭`-v`從列在步驟 12，並貼到 [Terminal.app] 視窗。
+14. 複製所有引數開頭`-v`從列在步驟 12，並貼到 [Terminal.app] 視窗。
 
-15.  變更為最後一個引數`.app`配套位於`old/Payload/`資料夾，然後再執行命令。
+15. 變更為最後一個引數`.app`配套位於`old/Payload/`資料夾，然後再執行命令。
 
-```bash
-/usr/bin/codesign -v --force --sign SOME_LONG_STRING in/iPhone/Ad-Hoc/iPhoneApp1.app/ResourceRules.plist --entitlements obj/iPhone/Ad-Hoc/Entitlements.xcent old/Payload/iPhoneApp1.app
-```
+    ```bash
+    /usr/bin/codesign -v --force --sign SOME_LONG_STRING in/iPhone/Ad-Hoc/iPhoneApp1.app/ResourceRules.plist --entitlements obj/iPhone/Ad-Hoc/Entitlements.xcent old/Payload/iPhoneApp1.app
+    ```
 
-16.  將變更`old/`目錄中終端機：
+16. 將變更`old/`目錄中終端機：
 
-```bash
-cd old
-```
+    ```bash
+    cd old
+    ```
 
-17.  壓縮至新目錄的內容`.ipa`檔案中，使用`zip`命令。 您可以變更`"$HOME/Desktop/iPhoneApp1-1.0.ipa"`輸出的引數`.ipa`每當您想要的檔案：
+17. 壓縮至新目錄的內容`.ipa`檔案中，使用`zip`命令。 您可以變更`"$HOME/Desktop/iPhoneApp1-1.0.ipa"`輸出的引數`.ipa`每當您想要的檔案：
 
-```bash
-zip -yr "$HOME/Desktop/iPhoneApp1-1.0.ipa" *
-```
+    ```bash
+    zip -yr "$HOME/Desktop/iPhoneApp1-1.0.ipa" *
+    ```
 
 ## <a name="common-error-messages"></a>常見的錯誤訊息
 

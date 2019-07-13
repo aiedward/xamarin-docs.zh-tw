@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: ec907e71074a97bd5d1714e79dd504013f5c8a4b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f23a506acda385b53942661244bcd7a8510c8c7f
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61240508"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865991"
 ---
 # <a name="windows-in-xamarinmac"></a>Xamarin.Mac 中的 Windows
 
@@ -221,13 +221,13 @@ Apple 建議下列指導方針：
 您建立並使用您的 Xamarin.Mac 應用程式中的任何視窗，請在程序基本上是我們剛才已經上述相同：
 
 1. 適用於新的 windows 不會自動加入到專案的預設值，將新的視窗定義加入專案。 這將在以下將詳細討論。
-2. 按兩下`Main.storyboard`来開啟的視窗設計在 Xcode 的 Interface Builder 中編輯檔案。
-3. 將新的視窗拖曳至使用者介面的設計，並將視窗連線到使用主視窗_Segue_ (如需詳細資訊，請參閱[Segue](~/mac/platform/storyboards/indepth.md#Segues)一節我們[使用分鏡腳本](~/mac/platform/storyboards/indepth.md)文件)。
-3. 設定任何所需的視窗屬性**屬性偵測器**並**大小偵測器**。
-4. 在建置您的介面和設定它們所需的控制項中拖曳**屬性偵測器**。
-5. 使用**大小偵測器**來處理您的 UI 項目調整大小。
-6. 公開到 C# 程式碼透過視窗的 UI 項目**插座**並**動作**。
-7. 儲存變更並切換回 Visual Studio for Mac 與 Xcode 同步處理。
+1. 按兩下`Main.storyboard`来開啟的視窗設計在 Xcode 的 Interface Builder 中編輯檔案。
+1. 將新的視窗拖曳至使用者介面的設計，並將視窗連線到使用主視窗_Segue_ (如需詳細資訊，請參閱[Segue](~/mac/platform/storyboards/indepth.md#Segues)一節我們[使用分鏡腳本](~/mac/platform/storyboards/indepth.md)文件)。
+1. 設定任何所需的視窗屬性**屬性偵測器**並**大小偵測器**。
+1. 在建置您的介面和設定它們所需的控制項中拖曳**屬性偵測器**。
+1. 使用**大小偵測器**來處理您的 UI 項目調整大小。
+1. 公開到 C# 程式碼透過視窗的 UI 項目**插座**並**動作**。
+1. 儲存變更並切換回 Visual Studio for Mac 與 Xcode 同步處理。
 
 既然我們已經建立的基本視窗時，我們將探討常見的處理序 Xamarin.Mac 應用程式會使用 windows 時。 
 
@@ -259,7 +259,7 @@ public override void ViewWillAppear ()
     // Set Window Title
     this.View.Window.Title = "untitled";
 }
-``` 
+```    
 
 > [!NOTE]
 > 我們要設定視窗的值`Title`中的屬性`ViewWillAppear`方法，而非`ViewDidLoad`方法因為雖然檢視可能會載入記憶體，它不尚未完全具現化。 如果我們嘗試存取`Title`中的屬性`ViewDidLoad`方法會得到`null`因為視窗尚未被建構與有線向上屬性尚未的例外狀況。
@@ -299,7 +299,7 @@ MyWindow.PerformClose(this);
 1. 它不會嘗試引發`WillClose`事件。
 2. 它不會模擬使用者按一下 **關閉**立刻顯示反白按鈕的按鈕。
 
-例如: 
+例如：
 
 ```csharp
 MyWindow.Close();
@@ -561,7 +561,7 @@ SetFrame (frame, true);
 
 [![](window-images/resize01.png "身分識別偵測器")](window-images/resize01.png#lightbox)
 
-接著，編輯 [自訂] 視窗的控制器類別和監視`DidResize`即時的大小變更的通知控制器的視窗上的事件。 例如: 
+接著，編輯 [自訂] 視窗的控制器類別和監視`DidResize`即時的大小變更的通知控制器的視窗上的事件。 例如：
 
 ```csharp
 public override void WindowDidLoad ()
@@ -711,14 +711,14 @@ void OpenDialog (NSObject sender)
 3. 在 **身分識別偵測器**，輸入`PreferencesWindow`如**分鏡腳本識別碼**: 
 
     [![](window-images/new02.png "設定分鏡腳本識別碼")](window-images/new02.png#lightbox)
-5. 設計介面： 
+4. 設計介面： 
 
     [![](window-images/new03.png "設計 UI")](window-images/new03.png#lightbox)
-6. 開啟應用程式功能表 (`MacWindows`)，請選取**喜好設定...**，control + 按一下和拖曳至新的視窗： 
+5. 開啟應用程式功能表 (`MacWindows`)，請選取**喜好設定...** ，control + 按一下和拖曳至新的視窗： 
 
     [![](window-images/new05.png "建立的 segue")](window-images/new05.png#lightbox)
-7. 選取 **顯示**快顯功能表。
-6. 儲存變更並返回 Visual Studio for Mac 與 Xcode 同步處理。
+6. 選取 **顯示**快顯功能表。
+7. 儲存變更並返回 Visual Studio for Mac 與 Xcode 同步處理。
 
 如果我們執行程式碼，並選取**喜好設定...** 從**應用程式功能表**，視窗隨即出現：
 
@@ -734,7 +734,7 @@ void OpenDialog (NSObject sender)
 
 1. 將新的視窗定義加入至專案。
 2. 按兩下`.xib`来開啟的視窗設計在 Xcode 的 Interface Builder 中編輯檔案。
-2. 設定任何所需的視窗屬性**屬性偵測器**並**大小偵測器**。
+3. 設定任何所需的視窗屬性**屬性偵測器**並**大小偵測器**。
 4. 在建置您的介面和設定它們所需的控制項中拖曳**屬性偵測器**。
 5. 使用**大小偵測器**來處理您的 UI 項目調整大小。
 6. 公開到 C# 程式碼透過視窗的 UI 項目**插座**並**動作**。
@@ -751,11 +751,11 @@ void OpenDialog (NSObject sender)
 
 若要新增新的面板，請執行下列作業：
 
-1. 在 **方案總管**，以滑鼠右鍵按一下專案，然後選取**新增** > **新檔案...**.
+1. 在 **方案總管**，以滑鼠右鍵按一下專案，然後選取**新增** > **新檔案...** .
 2. 在 [新增檔案] 對話方塊中，選取**Xamarin.Mac** > **與控制器的 Cocoa 視窗**:
 
     [![](window-images/panels00.png "加入新的視窗控制器")](window-images/panels00.png#lightbox)
-3. 輸入 `DocumentPanel` 作為 [名稱]，然後按一下 [新增] 按鈕。
+3. 輸入 `DocumentPanel` 作為 [名稱]  ，然後按一下 [新增]  按鈕。
 4. 按兩下`DocumentPanel.xib`以開啟它進行編輯介面產生器中的檔案： 
 
     [![](window-images/new02.png "編輯面板")](window-images/new02.png#lightbox)
@@ -768,11 +768,11 @@ void OpenDialog (NSObject sender)
 7. 切換至**身分識別偵測器**而設定的面板類別為`DocumentPanel`: 
 
     [![](window-images/panels03.png "設定的面板類別")](window-images/panels03.png#lightbox)
-6. 儲存變更並返回 Visual Studio for Mac 與 Xcode 同步處理。
-7. 編輯`DocumentPanel.cs`檔案，並變更類別定義如下： 
+8. 儲存變更並返回 Visual Studio for Mac 與 Xcode 同步處理。
+9. 編輯`DocumentPanel.cs`檔案，並變更類別定義如下： 
 
     `public partial class DocumentPanel : NSPanel`
-8. 將變更儲存到檔案。
+10. 將變更儲存到檔案。
 
 編輯`AppDelegate.cs`檔案，並讓`DidFinishLaunching`方法外觀如下所示：
 

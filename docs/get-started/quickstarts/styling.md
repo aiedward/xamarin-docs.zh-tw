@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 56f8632c9cc7d170b4c6594fd51e6aa3e92ad02b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1b68afc1f3d3c57a5c336e9d30c97ce2375acb9f
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61191224"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864351"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>跨平台 Xamarin.Forms 應用程式
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Styled/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Styled/)
 
 在本快速入門中，您將了解如何：
 
@@ -120,7 +120,7 @@ ms.locfileid: "61191224"
 
     變更儲存到**NotesPage.xaml**藉由按下**CTRL + S**，並關閉檔案。
 
-5. 在  **Solution Pad**，請在**備忘稿**專案中，按兩下**NoteEntryPage.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
+4. 在 [**方案總管] 中**，請在**備忘稿**專案中，按兩下**NoteEntryPage.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -169,7 +169,7 @@ ms.locfileid: "61191224"
 
     變更儲存到**NoteEntryPage.xaml**藉由按下**CTRL + S**，並關閉檔案。
 
-6. 建置並執行專案，每個平台。 如需詳細資訊，請參閱 <<c0> [ 建置快速入門](single-page.md#building-the-quickstart)。
+5. 建置並執行專案，每個平台。 如需詳細資訊，請參閱 <<c0> [ 建置快速入門](single-page.md#building-the-quickstart)。
 
     在上**NotesPage**按下 **+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 在每個頁面上，觀察如何樣式已從先前的快速入門。
 
@@ -222,7 +222,7 @@ ms.locfileid: "61191224"
 
     變更儲存到**App.xaml**選擇**檔案 > 儲存**(或按下 **&#8984; + S**)，然後關閉檔案。
 
-3. 在 [**方案總管] 中**，請在**備忘稿**專案中，按兩下**NotesPage.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
+3. 在  **Solution Pad**，請在**備忘稿**專案中，按兩下**NotesPage.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -261,7 +261,7 @@ ms.locfileid: "61191224"
 
     變更儲存到**NotesPage.xaml**選擇**檔案 > 儲存**(或按下 **&#8984; + S**)，然後關閉檔案。
 
-5. 在 [**方案總管] 中**，請在**備忘稿**專案中，按兩下**NoteEntryPage.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
+4. 在  **Solution Pad**，請在**備忘稿**專案中，按兩下**NoteEntryPage.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -310,7 +310,7 @@ ms.locfileid: "61191224"
 
     變更儲存到**NoteEntryPage.xaml**選擇**檔案 > 儲存**(或按下 **&#8984; + S**)，然後關閉檔案。
 
-6. 建置並執行專案，每個平台。 如需詳細資訊，請參閱 <<c0> [ 建置快速入門](single-page.md#building-the-quickstart)。
+5. 建置並執行專案，每個平台。 如需詳細資訊，請參閱 <<c0> [ 建置快速入門](single-page.md#building-the-quickstart)。
 
     在上**NotesPage**按下 **+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 在每個頁面上，觀察如何樣式已從先前的快速入門。
 
@@ -326,7 +326,7 @@ ms.locfileid: "61191224"
 若要深入了解使用 Xamarin.Forms 開發應用程式的基本概念，繼續進行快速入門深入探討。
 
 > [!div class="nextstepaction"]
-> [下一步](deepdive.md)
+> [下一個](deepdive.md)
 
 ## <a name="related-links"></a>相關連結
 

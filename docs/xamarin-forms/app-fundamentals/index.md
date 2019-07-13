@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
-ms.openlocfilehash: 1e40b0a71317d8c9cb3de391a0b941a5bb081956
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: 61d9c5b1c7b81bfc8a20932ce1d188cd0cb0f980
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65048156"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650436"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Xamarin.Forms 應用程式基本概念
 
@@ -52,10 +52,6 @@ ms.locfileid: "65048156"
 
 效果可讓您自訂每個平台上的原生控制項，通常用於小型的樣式變更。
 
-## <a name="filesfilesmd"></a>[檔案](files.md)
-
-透過 .NET Standard 程式庫的程式碼或使用內嵌資源，可以使用 Xamarin.Forms 處理檔案。
-
 ## <a name="gesturesgesturesindexmd"></a>[Gestures](gestures/index.md)
 
 Xamarin.Forms [`GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer) 類別支援使用者介面控制項上的點選、捏合以及平移手勢。
@@ -63,10 +59,6 @@ Xamarin.Forms [`GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer) 類別
 ## <a name="localizationlocalizationindexmd"></a>[當地語系化](localization/index.md)
 
 內建的 .NET 當地語系化架構，可用於透過 Xamarin.Forms 建置跨平台多語系應用程式。
-
-## <a name="local-databasesdatabasesmd"></a>[本機資料庫](databases.md)
-
-Xamarin.Forms 使用 SQLite 資料庫引擎來支援資料庫驅動型應用程式，讓您可以將物件載入和儲存至共用程式碼。
 
 ## <a name="messaging-centermessaging-centermd"></a>[訊息中心](messaging-center.md)
 

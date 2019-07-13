@@ -7,16 +7,16 @@ ms.assetid: 1D90E0B3-A3A8-4286-BC54-9D67188A1C6C
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/03/2018
-ms.openlocfilehash: 5d6cf6b36d4f454d3124a33ab9cb289e40e0e1ed
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ed80a423506f96972ddf80075379ed6e6dccd0a1
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61160604"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675134"
 ---
 # <a name="skiasharp-platform-specific-notes"></a>SkiaSharp 平台專屬附註
 
-下列範例手動配置的映像的緩衝區，這為了說明常見的平台模式也就是平台所提供的現有 RBGA 緩衝區上繪製。
+下列範例手動配置的映像的緩衝區，這為了說明常見的平台模式也就是平台所提供的現有 RGBA 緩衝區上繪製。
 
 您不需要使用這個慣用語，如果您不想要。  沒有多載會建立及管理您的映像的支援儲存體。
 

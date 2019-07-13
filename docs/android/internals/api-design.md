@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: e762a286069d5ef1db90f3c45808eee0a7a04a7f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c10935f4623fd4455ec5cf8a80c6473c0f69d9b9
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60954281"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674680"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Xamarin.Android API 設計原則
 
@@ -240,7 +240,7 @@ Java 介面會轉譯成兩種類型：
 
 例如，請考慮[android.os.Parcelable](https://developer.xamarin.com/api/type/Android.OS.Parcelable/)介面。
 *Parcelable*介面包含方法、 巢狀的類型和常數。 *Parcelable*介面方法會放入[Android.OS.IParcelable](https://developer.xamarin.com/api/type/Android.OS.IParcelable/)介面。
-*Parcelable*介面的常數會放入[Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/)型別。 巢狀[android.os.Parcelable.ClassLoaderCreator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html)並[android.os.Parcelable.Creator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.Creator.html)類型目前不是由於我們泛型的支援; 的限制繫結如果它們都支援，它們會呈現為*Android.OS.IParcelableClassLoaderCreator*並*Android.OS.IParcelableCreator*介面。 例如，巢狀[android.os.IBinder.DeathRecpient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html)介面做為繫結[Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/)介面。
+*Parcelable*介面的常數會放入[Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/)型別。 巢狀[android.os.Parcelable.ClassLoaderCreator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html)並[android.os.Parcelable.Creator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.Creator.html)類型目前不是由於我們泛型的支援; 的限制繫結如果它們都支援，它們會呈現為*Android.OS.IParcelableClassLoaderCreator*並*Android.OS.IParcelableCreator*介面。 例如，巢狀[android.os.IBinder.DeathRecipient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html)介面做為繫結[Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/)介面。
 
 
 > [!NOTE]
@@ -260,7 +260,7 @@ Java 介面會轉譯成兩種類型：
 針對*android.os.Parcelable*介面，這表示會立即會有[ *Android.OS.Parcelable* ](https://developer.xamarin.com/api/type/Android.OS.Parcelable/)包含常數的類型。 例如， [Parcelable.CONTENTS_FILE_DESCRIPTOR](https://developer.android.com/reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR)常數會當做繫結[ *Parcelable.ContentsFileDescriptor* ](https://developer.xamarin.com/api/field/Android.OS.Parcelable.ContentsFileDescriptor/)常數的而不是做為*ParcelableConsts.ContentsFileDescriptor*常數。
 
 包含實作包含其他介面的常數，但這些常數的介面，現在會產生聯集的所有常數。 例如， [android.provider.MediaStore.Video.VideoColumns](https://developer.android.com/reference/android/provider/MediaStore.Video.VideoColumns.html)介面會實作[android.provider.MediaStore.MediaColumns](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumns/)介面。 不過，在 1.9 之前, [Android.Provider.MediaStore.Video.VideoColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+Video+VideoColumnsConsts/)型別具有無法存取上宣告的常數[Android.Provider.MediaStore.MediaColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumnsConsts/)。
-如此一來，Java 運算式*MediaStore.Video.VideoColumns.TITLE*繫結至 C# 運算式必須*MediaStore.Video.MediaColumnsConsts.Title*即難以探索而不閱讀許多 Java 文件。 1.9，對等的 C# 運算式都[ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/)。
+如此一來，Java 運算式*MediaStore.Video.VideoColumns.TITLE*繫結至 C# 運算式必須*MediaStore.Video.MediaColumnsConsts.Title*即難以探索而不閱讀許多 Java 文件。 在 1.9 版，對等項目中C#運算式將會是[ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/)。
 
 此外，請考慮[android.os.Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/)實作的 Java 型別*Parcelable*介面。 由於它會實作介面，該介面上的所有常數都會存取 「 透過 「 套件組合類型，例如*Bundle.CONTENTS_FILE_DESCRIPTOR*是完全有效的 Java 運算式。
 先前，這個運算式的連接埠C#想要查看以查看從哪一個型別所實作的所有介面*CONTENTS_FILE_DESCRIPTOR*來自。 開始在 Xamarin.Android 1.9 版中，實作包含常數的 Java 介面的類別會有巢狀*InterfaceConsts*型別，其中會包含所有繼承的介面常數。 這可讓翻譯*Bundle.CONTENTS_FILE_DESCRIPTOR*要[ *Bundle.InterfaceConsts.ContentsFileDescriptor*](https://developer.xamarin.com/api/field/Android.OS.Bundle+InterfaceConsts.ContentsFileDescriptor/)。

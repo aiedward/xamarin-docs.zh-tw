@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 8ad2dde701814c0977e25e6e58272c0aa01ca4ca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: aa2e2ac96b37bc781f2e4a3778ea0aaf970649ec
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085614"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674610"
 ---
 # <a name="working-with-jni"></a>使用 JNI
 
@@ -72,7 +72,7 @@ Android 可呼叫包裝函式會產生**monodroid.exe**程式期間[建置程序
 有些的時候您可能需要實作一個 Android 的介面 (例如[Android.Content.IComponentCallbacks](https://developer.xamarin.com/api/type/Android.Content.IComponentCallbacks/))。
 
 所有 Android 類別和介面的擴充[Android.Runtime.IJavaObject](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/)介面; 因此，所有的 Android 類型必須實作`IJavaObject`。
-Xamarin.Android 會充分利用這項事實&ndash;它會使用`IJavaObject`為 Android 提供指定的 managed 類型的 Java proxy （Android 可呼叫包裝函式）。 因為**monodroid.exe**只會尋找`Java.Lang.Object`子類別 (必須實作`IJavaObject`)、 subclassing`Java.Lang.Object`提供 managed 程式碼中實作介面的方法。 例如: 
+Xamarin.Android 會充分利用這項事實&ndash;它會使用`IJavaObject`為 Android 提供指定的 managed 類型的 Java proxy （Android 可呼叫包裝函式）。 因為**monodroid.exe**只會尋找`Java.Lang.Object`子類別 (必須實作`IJavaObject`)、 subclassing`Java.Lang.Object`提供 managed 程式碼中實作介面的方法。 例如:
 
 ```csharp
 class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbacks {
@@ -1443,7 +1443,7 @@ JNI 型別參考會不同於 Java 型別參考。 您無法使用完整的 Java 
 使用陣列型別參考，並使用 JNI 簽章，會使用型別參考。
 
 取得型別參考的另一種方式是藉由讀取的輸出`'javap -s -classpath android.jar fully.qualified.Java.Name'`。
-視類型而定，您可以使用建構函式宣告或方法傳回類型，以判斷 JNI 名稱。 例如: 
+視類型而定，您可以使用建構函式宣告或方法傳回類型，以判斷 JNI 名稱。 例如:
 
 ```shell
 $ javap -classpath android.jar -s java.lang.Thread.State

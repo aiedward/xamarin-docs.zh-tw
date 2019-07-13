@@ -6,12 +6,12 @@ ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 8617d6e0c0930f581c45dbb461dfcb5d85a2becc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 28a7d299e78a7fa6837ba9285795d380760f13b7
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61206117"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864650"
 ---
 # <a name="apple-account-management"></a>Apple 帳戶管理
 
@@ -54,17 +54,17 @@ Apple 帳戶 對話方塊可讓您執行下列作業：
 
     ![fastlane 對話方塊。](apple-account-management-images/image2.png)
 
-4. 輸入您的 Apple ID 和密碼，然後按一下**登入** 按鈕。 這會儲存在安全的金鑰鏈的認證，這部電腦上。 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md)來安全地處理您的認證，並將其傳遞至 Apple 開發人員入口網站。
+3. 輸入您的 Apple ID 和密碼，然後按一下**登入** 按鈕。 這會儲存在安全的金鑰鏈的認證，這部電腦上。 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md)來安全地處理您的認證，並將其傳遞至 Apple 開發人員入口網站。
  
-5. 選取 **永遠允許**上警示的對話方塊，讓 Visual Studio 來使用您的認證：
+4. 選取 **永遠允許**上警示的對話方塊，讓 Visual Studio 來使用您的認證：
 
     ![一律允許 [警示] 對話方塊](apple-account-management-images/image4.png)
 
-6. 已成功新增您的帳戶，您會看到您的 Apple ID 和您的 Apple ID 是一部分的任何小組。
+5. 已成功新增您的帳戶，您會看到您的 Apple ID 和您的 Apple ID 是一部分的任何小組。
 
     ![使用 [新增帳戶的 Apple 開發人員帳戶] 對話方塊](apple-account-management-images/image5.png)
 
-7. 選取任何小組，然後按**檢視詳細資料...** 按鈕。 這會顯示一份所有「簽署身分識別和安裝在您的電腦的佈建設定檔」：
+6. 選取任何小組，然後按**檢視詳細資料...** 按鈕。 這會顯示一份所有「簽署身分識別和安裝在您的電腦的佈建設定檔」：
 
     ![簽署身分識別和佈建設定檔，您的電腦上檢視詳細資料畫面顯示](apple-account-management-images/image6.png)
 

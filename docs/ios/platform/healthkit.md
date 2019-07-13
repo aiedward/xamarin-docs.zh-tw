@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: df0b0e8dd57129917f2d8dab07115551ca675acf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8dcb478b303c4c73f7e73dc018ad56b1301389c8
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61163195"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830052"
 ---
 # <a name="healthkit-in-xamarinios"></a>在 Xamarin.iOS 中 HealthKit
 
@@ -101,7 +101,7 @@ Xamarin iOS 8 應用程式可以使用 HealthKit API 之前，它必須適當地
 
 [![](healthkit-images/image07.png "選取 佈建設定檔")](healthkit-images/image07.png#lightbox)
 
-如果**佈建設定檔**沒有，請仔細檢查**套件組合識別碼**中**iOS 應用程式**面板中指定與**iOS開發人員中心**且**佈建設定檔**已安裝 (**Xcode > 喜好設定 > 帳戶 > 檢視詳細資料...**).
+如果**佈建設定檔**沒有，請仔細檢查**套件組合識別碼**中**iOS 應用程式**面板中指定與**iOS開發人員中心**且**佈建設定檔**已安裝 (**Xcode > 喜好設定 > 帳戶 > 檢視詳細資料...** ).
 
 當健全狀況套件啟用**佈建設定檔**是選取狀態，按一下 **[確定]** 以關閉 [專案選項] 對話方塊。
 
@@ -142,7 +142,7 @@ Xamarin iOS 8 應用程式可以使用 HealthKit API 之前，它必須適當地
 
 健全狀況套件資料存放區是在應用程式之間共用的私用、 使用者特定資料存放區。 健全狀況資訊十分敏感，因為使用者必須採取正數的步驟，以允許資料存取。 這種存取可以是 partial (寫入但無法讀取、 存取某些類型的資料，而不是其他，等等)，隨時都可能會遭撤銷。 健全狀況套件應用程式應該以謹慎的方式，撰寫，了解許多使用者會遲疑儲存其健康狀態相關資訊。
 
-健全狀況套件資料僅限於 Apple 指定型別。 這些類型嚴格定義： 部分，例如捐血類型受限於特定列舉之值的 Apple 提供，而其他人將量級結合 （例如字母組、 卡路里和公升） 的度量單位。 甚至是資料共用相容的量值單位的區別在於他們`HKObjectType`; 比方說，型別系統將會攔截錯誤的嘗試儲存`HKQuantityTypeIdentifier.NumberOfTimesFallen`值欄位應`HKQuantityTypeIdentifier.FlightsClimbed`即使兩者都使用` HKUnit.Count`測量單位。
+健全狀況套件資料僅限於 Apple 指定型別。 這些類型嚴格定義： 部分，例如捐血類型受限於特定列舉之值的 Apple 提供，而其他人將量級結合 （例如字母組、 卡路里和公升） 的度量單位。 甚至是資料共用相容的量值單位的區別在於他們`HKObjectType`; 比方說，型別系統將會攔截錯誤的嘗試儲存`HKQuantityTypeIdentifier.NumberOfTimesFallen`值欄位應`HKQuantityTypeIdentifier.FlightsClimbed`即使兩者都使用`HKUnit.Count`測量單位。
 
 類型，可存放健全狀況套件資料存放區中的所有子類別的`HKObjectType`。 `HKCharacteristicType` 物件會儲存生物性別、 捐血型別，以及的出生日期。 不過，是較常見`HKSampleType`物件，代表在特定時間或經過一段時間進行取樣的資料。 
 

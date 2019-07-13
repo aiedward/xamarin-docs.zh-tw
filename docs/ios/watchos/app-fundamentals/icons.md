@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/26/2018
-ms.openlocfilehash: 435af10484827826d53b767c2738e3945e0bae42
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 75b5d1f941921a84d96579a4b0d0666ae0c2522d
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61345175"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864978"
 ---
 # <a name="working-with-watchos-icons-in-xamarin"></a>使用 watchOS 在 Xamarin 中的圖示
 
@@ -53,30 +53,30 @@ Apple Watch 解決方案需要兩個集合的圖示：
 
 一旦您[父應用程式](~/ios/watchos/app-fundamentals/parent-app.md)已設定其圖示，您需要監看式應用程式中新增的應用程式圖示資產目錄。
 
-1. 監看式應用程式專案上按一下滑鼠右鍵，然後選取**檔案 > 新增 > 新增檔案 > iOS > 資產目錄**將資產目錄加入至專案。
+1. 監看式應用程式專案上按一下滑鼠右鍵，然後選取**檔案 > 新增 > 新增檔案...> iOS > 資產目錄**將資產目錄加入至專案。
 
- ![](icons-images/newasset.png "加入專案中的資產目錄")
+    ![](icons-images/newasset.png "加入專案中的資產目錄")
 
 2. 按兩下**AppIcon.appiconset/Contents.json**檔案
 
-  ![](icons-images/xcassets-iconset-sml.png "Assets.xcassets 內容")
+    ![](icons-images/xcassets-iconset-sml.png "Assets.xcassets 內容")
 
 3. 新增 watchOS 映像時，，在此螢幕擷取畫面所示：
 
-  [![](icons-images/appicons-sml.png "此螢幕擷取畫面所示，新增所有 watchOS 映像，")](icons-images/appicons.png#lightbox)
+    [![](icons-images/appicons-sml.png "此螢幕擷取畫面所示，新增所有 watchOS 映像，")](icons-images/appicons.png#lightbox)
 
-  請參閱[Apple 圖示的指導方針](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/menu-icons/)（維度也會顯示在螢幕上） 的必要大小。 請記住，這些圖示會自動裁剪在圓形中轉譯。
+    請參閱[Apple 圖示的指導方針](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/menu-icons/)（維度也會顯示在螢幕上） 的必要大小。 請記住，這些圖示會自動裁剪在圓形中轉譯。
 
-  圖示清單看起來應該像這樣：
+    圖示清單看起來應該像這樣：
 
-  ![](icons-images/xcassets-complete-sml.png "在 [方案總管] 中的圖示清單")
+    ![](icons-images/xcassets-complete-sml.png "在 [方案總管] 中的圖示清單")
 
 4. 若要確保資產目錄包含應用程式中，新增下列索引鍵和值加入**監看式應用程式的 Info.plist**:
 
-```xml
-<key>XSAppIconAssets</key>
-<string>Images.xcassets/AppIcon.appiconset</string>
-```
+    ```xml
+    <key>XSAppIconAssets</key>
+    <string>Images.xcassets/AppIcon.appiconset</string>
+    ```
 
 您可以確認圖示會藉由檢查設定正確[Apple Watch 設定 應用程式](~/ios/watchos/app-fundamentals/settings.md)在 iPhone 模擬器中，或產生[通知](~/ios/watchos/platform/notifications.md)和確認圖示會出現在通知畫面。
 

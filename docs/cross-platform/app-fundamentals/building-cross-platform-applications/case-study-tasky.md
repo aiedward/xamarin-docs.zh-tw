@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 23deddae61452d532a87c51cc1ec3bc53eb91c9f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7bea80c22f6931858d0629382f6882203dfd374f
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61278978"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829942"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>跨平台應用程式案例研究：Tasky
 
@@ -29,9 +29,9 @@ ms.locfileid: "61278978"
 
 設計應用程式的第一個步驟是找出所需的功能。 這些可以是高階目標或是詳細的使用案例。 Tasky 具有簡單的功能性需求：
 
- -  檢視工作清單
- -  加入、 編輯和刪除工作
- -  將工作的狀態設為 [完成]
+-  檢視工作清單
+-  加入、 編輯和刪除工作
+-  將工作的狀態設為 [完成]
 
 您應該考慮使用平台專屬功能。  可以 Tasky 利用 iOS 地理圍欄或 Windows Phone 動態磚？ 即使您未使用平台專屬功能的第一個版本中，您應該先確定您的商務和資料層級可以配合這些事先規劃。
 
@@ -52,9 +52,9 @@ ms.locfileid: "61278978"
 
 Tasky 需要針對每個 'TaskItem' 儲存三個屬性：
 
- -  **名稱**– 字串
- -  **附註**– 字串
- -  **完成**– 布林值
+- **名稱**– 字串
+- **附註**– 字串
+- **完成**– 布林值
 
  <a name="Core_Functionality" />
 
@@ -62,11 +62,11 @@ Tasky 需要針對每個 'TaskItem' 儲存三個屬性：
 
 請考慮使用者介面必須取用以符合需求的 API。 待辦事項清單需要下列功能：
 
- -   **列出所有工作**– 顯示所有可用工作的主畫面都清單
- -  **取得一個工作**– 當工作的資料列都會被接觸到
- -  **儲存一項工作**– 編輯工作時
- -  **刪除一個工作**– 當工作被刪除時
- -  **建立空白的工作**– 建立新的工作時
+- **列出所有工作**– 顯示所有可用工作的主畫面都清單
+- **取得一個工作**– 當工作的資料列都會被接觸到
+- **儲存一項工作**– 編輯工作時
+- **刪除一個工作**– 當工作被刪除時
+- **建立空白的工作**– 建立新的工作時
 
 若要達到重複使用程式碼，此 API 應該一次在實作*可攜式類別庫*。
 
@@ -76,10 +76,10 @@ Tasky 需要針對每個 'TaskItem' 儲存三個屬性：
 
 一旦應用程式的設計都同意，請考慮可能會將它實作為一個跨平台應用程式的方式。 這會成為應用程式的架構。 中的指導方針[建置跨平台應用程式](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)文件中，應用程式程式碼應該會中斷清單分成下列部分：
 
- -   **常見的程式碼**– 常見的專案，包含要儲存的工作資料的重複使用程式碼; 公開模型類別和 API，以管理儲存及載入資料。
- -   **平台特定程式碼**– 實作原生 UI 每個作業系統，請使用通用的程式碼，做為後端' 的平台特定專案。
+- **常見的程式碼**– 常見的專案，包含要儲存的工作資料的重複使用程式碼; 公開模型類別和 API，以管理儲存及載入資料。
+- **平台特定程式碼**– 實作原生 UI 每個作業系統，請使用通用的程式碼，做為後端' 的平台特定專案。
 
- [![](case-study-tasky-images/taskypro-architecture.png "平台專屬專案實作原生 UI 每個作業系統，請使用通用的程式碼，做為後端")](case-study-tasky-images/taskypro-architecture.png#lightbox)
+[![](case-study-tasky-images/taskypro-architecture.png "平台專屬專案實作原生 UI 每個作業系統，請使用通用的程式碼，做為後端")](case-study-tasky-images/taskypro-architecture.png#lightbox)
 
 這兩個部分是由下列各節所述。
 
@@ -123,7 +123,7 @@ Tasky 依賴 Sqlite.net nuget 套件 （由 Frank Kreuger 發行） 將提供的
 
 #### <a name="sqlite-on-windows-phone"></a>在 Windows Phone 上的 SQLite
 
-IOS 和 Android 都提供使用 SQLite 作為作業系統的一部分，而 Windows Phone 不包含相容的資料庫引擎。 跨所有的三個平台共用程式碼的 SQLite 的 Windows phone 原生版本是必要的。 請參閱[使用本機資料庫](~/xamarin-forms/app-fundamentals/databases.md)如需有關設定 Windows Phone 專案，sqlite。
+IOS 和 Android 都提供使用 SQLite 作為作業系統的一部分，而 Windows Phone 不包含相容的資料庫引擎。 跨所有的三個平台共用程式碼的 SQLite 的 Windows phone 原生版本是必要的。 請參閱[使用本機資料庫](~/xamarin-forms/data-cloud/data/databases.md)如需有關設定 Windows Phone 專案，sqlite。
 
  <a name="Using_an_Interface_to_Generalize_Data_Access" />
 
@@ -280,8 +280,8 @@ IOS 應用程式會參考特定平台 SDK 程式庫 – 例如。 Xamarin.iOS �
 
 應用程式層包含 '' 將物件繫結公開至 UI PCL 的所需的平台特定類別。 IOS 專屬的應用程式具有可顯示工作的兩個類別：
 
- -   **EditingSource** – 這個類別用來繫結的使用者介面工作的清單。 因為`MonoTouch.Dialog`曾針對工作清單中，我們必須實作才能啟用撥動--刪除功能，在此協助程式`UITableView`。 撥動--刪除是在 iOS，但不是 Android 或 Windows Phone 上常見的因此 iOS 特定專案是唯一實作它。
- -   **TaskDialog** – 這個類別用來繫結至 UI 的單一工作。 它會使用`MonoTouch.Dialog`反映 API，以 '包裝'`TaskItem`包含正確的屬性，來允許輸入的螢幕格式正確的類別的物件。
+- **EditingSource** – 這個類別用來繫結的使用者介面工作的清單。 因為`MonoTouch.Dialog`曾針對工作清單中，我們必須實作才能啟用撥動--刪除功能，在此協助程式`UITableView`。 撥動--刪除是在 iOS，但不是 Android 或 Windows Phone 上常見的因此 iOS 特定專案是唯一實作它。
+- **TaskDialog** – 這個類別用來繫結至 UI 的單一工作。 它會使用`MonoTouch.Dialog`反映 API，以 '包裝'`TaskItem`包含正確的屬性，來允許輸入的螢幕格式正確的類別的物件。
 
 `TaskDialog`類別會使用`MonoTouch.Dialog`類別的屬性為基礎的屬性，以建立螢幕。 此類別看起來像這樣：
 
@@ -389,9 +389,9 @@ Android 應用程式專案必須參考從 Android SDK 平台專屬 Xamarin.Andro
 
 Android 應用程式的使用者介面層是結合程式碼和 XML 標記。
 
- -   **資源/配置**– 畫面版面配置和資料列儲存格實作為 AXML 檔案的設計。 AXML 可以是以手動的方式，撰寫或配置不足以視覺化方式使用適用於 Android 的 Xamarin UI 設計工具。
- -   **資源/Drawable** – 影像 （圖示） 和自訂的按鈕。
- -   **畫面**– 定義每個畫面和它的行為的活動子類別。 繫結在一起的 UI 應用程式層的類別和通用的 API (`TaskItemManager`)。
+- **資源/配置**– 畫面版面配置和資料列儲存格實作為 AXML 檔案的設計。 AXML 可以是以手動的方式，撰寫或配置不足以視覺化方式使用適用於 Android 的 Xamarin UI 設計工具。
+- **資源/Drawable** – 影像 （圖示） 和自訂的按鈕。
+- **畫面**– 定義每個畫面和它的行為的活動子類別。 繫結在一起的 UI 應用程式層的類別和通用的 API (`TaskItemManager`)。
 
  <a name="Home_Screen" />
 

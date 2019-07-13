@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: c1f488213f9b3be945fd98e09f630c243d0b0d62
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8af7474036eb0fd6e2236cf52e96b8d12c8bc44e
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382798"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865711"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>在 Xamarin.iOS 中的語音辨識
 
@@ -105,21 +105,21 @@ Apple 已包含可用性 API，以判斷給定的語言是否可用來在目前�
 2. 若要切換**來源**檢視： 
 
     [![](speech-images/speech02.png "原始碼檢視")](speech-images/speech02.png#lightbox)
-3. 按一下**加入新項目**，輸入`NSSpeechRecognitionUsageDescription`如**屬性**，`String`如**類型**和**使用方式描述**作為**值**。 例如:  
+3. 按一下**加入新項目**，輸入`NSSpeechRecognitionUsageDescription`如**屬性**，`String`如**類型**和**使用方式描述**作為**值**。 例如： 
 
     [![](speech-images/speech03.png "新增 NSSpeechRecognitionUsageDescription")](speech-images/speech03.png#lightbox)
-4. 如果應用程式將會處理即時音訊轉譯，還需要麥克風使用方式描述。 按一下**加入新項目**，輸入`NSMicrophoneUsageDescription`如**屬性**，`String`如**類型**和**使用方式描述**作為**值**。 例如:  
+4. 如果應用程式將會處理即時音訊轉譯，還需要麥克風使用方式描述。 按一下**加入新項目**，輸入`NSMicrophoneUsageDescription`如**屬性**，`String`如**類型**和**使用方式描述**作為**值**。 例如： 
 
     [![](speech-images/speech04.png "新增 NSMicrophoneUsageDescription")](speech-images/speech04.png#lightbox)
-4. 將變更儲存到檔案。
+5. 將變更儲存到檔案。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 按兩下`Info.plist`檔案，以開啟它進行編輯。
-3. 按一下**加入新項目**，輸入`NSSpeechRecognitionUsageDescription`如**屬性**，`String`如**類型**和**使用方式描述**作為**值**。 例如:  
+2. 按一下**加入新項目**，輸入`NSSpeechRecognitionUsageDescription`如**屬性**，`String`如**類型**和**使用方式描述**作為**值**。 例如： 
 
     [![](speech-images/speech03w.png "新增 NSSpeechRecognitionUsageDescription")](speech-images/speech03w.png#lightbox)
-4. 如果應用程式將會處理即時音訊轉譯，還需要麥克風使用方式描述。 按一下**加入新項目**，輸入`NSMicrophoneUsageDescription`如**屬性**，`String`如**類型**和**使用方式描述**作為**值**。 例如:  
+3. 如果應用程式將會處理即時音訊轉譯，還需要麥克風使用方式描述。 按一下**加入新項目**，輸入`NSMicrophoneUsageDescription`如**屬性**，`String`如**類型**和**使用方式描述**作為**值**。 例如： 
 
     [![](speech-images/speech04w.png "新增 NSMicrophoneUsageDescription")](speech-images/speech04w.png#lightbox)
 4. 將變更儲存到檔案。
@@ -243,7 +243,7 @@ A`SFSpeechUrlRecognitionRequest`從建立`NSUrl`交給語音辨識器，利用�
 
 ### <a name="recognizing-live-speech"></a>辨識即時語音
 
-如果應用程式想要辨識即時語音，此程序是非常類似，以及預先錄製的語音辨識。 例如: 
+如果應用程式想要辨識即時語音，此程序是非常類似，以及預先錄製的語音辨識。 例如：
 
 ```csharp
 using System;

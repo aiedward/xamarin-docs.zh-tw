@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: b785ef171d2cb00d4f8f5a17f37d49de17fd3da9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0837deccdb535c178e8b00b052efeb7c9bd49679
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153284"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864123"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>如何將 Android NUnit 測試專案自動化？
 
@@ -74,13 +74,13 @@ adb shell am instrument
     </Project>
     ```
 
-3.  您可以使用下列命令來執行單元測試。 取代`PACKAGE_NAME`應用程式的套件名稱 (封裝名稱可在應用程式的`/manifest/@package`屬性位於**AndroidManifest.xml**):
+4.  您可以使用下列命令來執行單元測試。 取代`PACKAGE_NAME`應用程式的套件名稱 (封裝名稱可在應用程式的`/manifest/@package`屬性位於**AndroidManifest.xml**):
 
     ```shell
     adb shell am instrument -w PACKAGE_NAME/app.tests.TestInstrumentation
     ```
 
-4.  或者，您可以在其中修改`.csproj`檔案以加入`RunTests`MSBuild 目標。 這讓您能夠叫用使用單元測試的命令，如下所示：
+5.  或者，您可以在其中修改`.csproj`檔案以加入`RunTests`MSBuild 目標。 這讓您能夠叫用使用單元測試的命令，如下所示：
 
     ```shell
     msbuild /t:RunTests Project.csproj

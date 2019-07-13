@@ -52,62 +52,50 @@
       "searchScope": ["Xamarin"],
       "feedback_system": "GitHub",
       "feedback_github_repo": "MicrosoftDocs/xamarin-docs.zh-tw",
-      "feedback_product_url": "https://developercommunity.visualstudio.com/"
+      "feedback_product_url": "https://developercommunity.visualstudio.com/",
+      "disable_contribution_on_translation_quality": ["MT"]
     },
     "fileMetadata": {
       "ms.technology": {
         "essentials/**/**.md":"xamarin-essentials",
+        "android/**/**.md":"xamarin-android",
+        "android/**/**.yml":"xamarin-android",
+        "ios/**/**.md":"xamarin-ios",
+        "ios/**/**.yml":"xamarin-ios",
+        "mac/**/**.md":"xamarin-mac",
+        "mac/**/**.yml":"xamarin-mac",
+        "xamarin-forms/**/**.md":"xamarin-forms",
+        "xamarin-forms/**/**.yml":"xamarin-forms",
+        "xamarin-essentials/**/**.md":"xamarin-forms",
+        "xamarin-essentials/**/**.yml":"xamarin-forms",
+        "get-started/quickstarts/**/**.md":"xamarin-forms",
+        "get-started/tutorials/**/**.md":"xamarin-forms",
         "xamarin-forms/user-interface/graphics/skiasharp/**/**.md": "xamarin-skiasharp"
       },
       "feedback_product_url": {
         "essentials/**/**.md":"https://github.com/xamarin/Essentials/blob/master/PRODUCT-FEEDBACK.md"
       },
       "breadcrumb_path": {
+        "get-started/tutorials/**/*.yml": "/xamarin/breadcrumb/tutorials/toc.json",
+        "get-started/tutorials/index.yml": "/xamarin/breadcrumb/subtoc_breadcrumb/toc.json",
         "xamarin-forms/creating-mobile-apps-xamarin-forms/**/*.md": "/xamarin/breadcrumb/subtoc_breadcrumb/toc.json",
         "xamarin-forms/enterprise-application-patterns/**/*.md": "/xamarin/breadcrumb/subtoc_breadcrumb/toc.json",
         "xamarin-forms/user-interface/graphics/skiasharp/**/*.md": "/xamarin/breadcrumb/subtoc_breadcrumb/toc.json"
       },
-      "open_to_public_contributors": {
-        "android/app-fundamentals/**.md": false,
-        "android/data-cloud/**.md": false,
-        "android/internals/**.md": false,
-        "android/platform/**.md": false,
-        "android/troubleshooting/**.md": false,
-        "android/user-interface/**.md": false,
-        "android/wear/**.md": false,
-        "cross-platform/app-fundamentals/**.md": false,
-        "cross-platform/data-cloud/**.md": false,
-        "cross-platform/desktop/**.md": false,
-        "cross-platform/internals/**.md": false,
-        "cross-platform/macios/**.md": false,
-        "cross-platform/partners/**.md": false,
-        "cross-platform/platform/**.md": false,
-        "cross-platform/troubleshooting/**.md": false,
-        "graphics-games/**.md": false,
-        "ios/app-fundamentals/**.md": false,
-        "ios/data-cloud/**.md": false,
-        "ios/internals/**.md": false,
-        "ios/platform/**.md": false,
-        "ios/troubleshooting/**.md": false,
-        "ios/tvos/**.md": false,
-        "ios/user-interface/**.md": false,
-        "ios/watchos/**.md": false,
-        "mac/app-fundamentals/**.md": false,
-        "mac/internals/**.md": false,
-        "mac/platform/**.md": false,
-        "mac/troubleshooting/**.md": false,
-        "mac/user-interface/**.md": false,
-        "tools/**.md": false,
-        "xamarin-forms/creating-mobile-apps-xamarin-forms/**.md": false,
-        "xamarin-forms/data-cloud/**.md": false,
-        "xamarin-forms/enterprise-application-patterns/**.md": false,
-        "xamarin-forms/platform/**.md": false,
-        "xamarin-forms/troubleshooting/**.md": false,
-        "xamarin-forms/user-interface/**.md": false,
-        "xamarin-forms/xaml/**.md": false
+      "searchScope": { 
+        "android/**/**.md": ["Xamarin","Xamarin.Android"],
+        "android/**/**.yml": ["Xamarin","Xamarin.Android"],
+        "ios/**/**.md": ["Xamarin","Xamarin.iOS"],
+        "ios/**/**.yml": ["Xamarin","Xamarin.iOS"],
+        "mac/**/**.md": ["Xamarin","Xamarin.Mac"],
+        "mac/**/**.yml": ["Xamarin","Xamarin.Mac"],
+        "xamarin-forms/**/**.md": ["Xamarin","Xamarin.Forms"],
+        "xamarin-forms/**/**.yml": ["Xamarin","Xamarin.Forms"],
+        "xamarin-forms/user-interface/graphics/skiasharp/**/**.md": ["Xamarin","SkiaSharp"]
       }
     },
     "template": [],
-    "dest": "xamarin-docs"
+    "dest": "xamarin-docs",
+    "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ]
   }
 }

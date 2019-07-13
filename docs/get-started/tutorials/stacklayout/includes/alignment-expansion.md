@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d6dbc82e56959399c2befb6a12f0a2cf3793ee5b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f87367ce7bc7e364147d087cdd126efaa6bf910c
+ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382519"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67559985"
 ---
 子檢視在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的大小和位置取決於子檢視的 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 和 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 屬性值，以及 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性的值。
 
@@ -51,7 +51,7 @@ ms.locfileid: "61382519"
     > [!NOTE]
     > 檢視的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性預設值為 [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)。
 
-1. 在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![iOS 和 Android 中已設定對齊和延展選項的 StackLayout 子檢視螢幕擷取畫面](../images/alignment-expansion.png "包含標籤執行個體並已設定對齊和延展的 StackLayout")](../images/alignment-expansion-large.png#lightbox "包含標籤執行個體並已設定對齊和延展的 StackLayout")
 
@@ -107,7 +107,7 @@ ms.locfileid: "61382519"
     > [!NOTE]
     > 檢視的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性預設值為 [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)。
 
-1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![iOS 和 Android 中已設定對齊和延展選項的 StackLayout 子檢視螢幕擷取畫面](../images/alignment-expansion.png "包含標籤執行個體並已設定對齊和延展的 StackLayout")](../images/alignment-expansion-large.png#lightbox "包含標籤執行個體並已設定對齊和延展的 StackLayout")
 
@@ -124,3 +124,8 @@ ms.locfileid: "61382519"
     > 如果 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的所有空間都已使用，則延展喜好設定不會有作用。
 
     如需對齊和延展的詳細資訊，請參閱 [Xamarin.Forms 中的版面配置選項](~/xamarin-forms/user-interface/layouts/layout-options.md)。
+
+-----
+
+> [!div class="nextstepaction"]
+> [我遇到問題](https://github.com/MicrosoftDocs/xamarin-docs/issues/new?title=StackLayout+Tutorial+Step+3+Feedback&template=tutorial_template.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: bff4d46ac9d5fe893cbb0a2dfa032e1b9f6daa0e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: abcd89a6c4547680df0b96d235531312d3b21c52
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61407762"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864338"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>逐步解說：在 Xamarin.iOS 中使用觸控
 
@@ -176,7 +176,7 @@ ms.locfileid: "61407762"
 
 <a name="Gesture_Recognizer_Samples" />
 
-##  <a name="gesture-recognizer-samples"></a>筆勢辨識器範例
+## <a name="gesture-recognizer-samples"></a>筆勢辨識器範例
 
 [上一節](#Touch_Samples)示範如何將物件拖曳至在螢幕上使用觸控事件。
 這一節我們將會去除觸控事件，並示範如何使用下列的筆勢辨識器：

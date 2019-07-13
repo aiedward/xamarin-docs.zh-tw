@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 329984d44318b2204f2f5ee253402eb158c85b9f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f53c1afd7c3f835bff2aae507b9937067bde4bec
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61283155"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865738"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin.mac 的對話方塊
 
@@ -127,10 +127,10 @@ macOS 提供標準列印與頁面設定對話方塊，讓使用者可以擁有�
 6. 建立**強制回應的 Segue**從您的應用程式至新的檢視控制器，藉由拖曳控制項從 UI 項目，將會開啟對話方塊的視窗對話方塊的 [主要] 視窗。 指派**識別碼** `ModalSegue`: 
 
     [![](dialog-images/new06.png "強制回應的 segue")](dialog-images/new06.png#lightbox)
-6. 網路上任何**動作**並**輸出**: 
+7. 網路上任何**動作**並**輸出**: 
 
     [![](dialog-images/new04.png "設定動作")](dialog-images/new04.png#lightbox)
-6. 儲存變更並返回 Visual Studio for Mac 與 Xcode 同步處理。
+8. 儲存變更並返回 Visual Studio for Mac 與 Xcode 同步處理。
 
 請`CustomDialogController.cs`檔案外觀如下所示：
 
@@ -265,19 +265,19 @@ A_表_是強制回應對話方塊附加至指定的文件視窗中，防止使�
 2. 拖曳新**檢視控制器**到設計介面：
 
     [![](dialog-images/new01.png "從程式庫中選取檢視控制器")](dialog-images/new01.png#lightbox)
-2. 設計您的使用者介面：
+3. 設計您的使用者介面：
 
     [![](dialog-images/sheet01.png "UI 設計")](dialog-images/sheet01.png#lightbox)
-3. 建立**工作表的 Segue**從您的主視窗至新的檢視控制器： 
+4. 建立**工作表的 Segue**從您的主視窗至新的檢視控制器： 
 
     [![](dialog-images/sheet02.png "選取工作表 segue 類型")](dialog-images/sheet02.png#lightbox)
-4. 在 **身分識別偵測器**，檢視控制器**類別** `SheetViewController`: 
+5. 在 **身分識別偵測器**，檢視控制器**類別** `SheetViewController`: 
 
     [![](dialog-images/sheet03.png "設定的類別名稱")](dialog-images/sheet03.png#lightbox)
-5. 定義所需的任何**插座**並**動作**: 
+6. 定義所需的任何**插座**並**動作**: 
 
     [![](dialog-images/sheet04.png "定義必要的輸出和動作")](dialog-images/sheet04.png#lightbox)
-6. 儲存變更並返回 Visual Studio for Mac 中進行同步處理。
+7. 儲存變更並返回 Visual Studio for Mac 中進行同步處理。
 
 接著，編輯`SheetViewController.cs`檔案，並使它看起來如下：
 
@@ -413,7 +413,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 
 ## <a name="creating-a-preferences-dialog"></a>建立喜好設定 對話方塊
 
-我們來配置介面產生器中的 [喜好設定] 檢視之前，我們需要新增自訂的 segue 類型來處理切換移出喜好設定。 將新類別新增至您的專案，並呼叫它`ReplaceViewSeque `。 編輯類別，並讓它看起來如下：
+我們來配置介面產生器中的 [喜好設定] 檢視之前，我們需要新增自訂的 segue 類型來處理切換移出喜好設定。 將新類別新增至您的專案，並呼叫它`ReplaceViewSeque`。 編輯類別，並讓它看起來如下：
 
 ```csharp
 using System;
@@ -503,7 +503,7 @@ namespace MacWindows
 9. 選取新的 Segue，並設定**類別**到`ReplaceViewSegue`:
 
     [![](dialog-images/pref08.png "設定 segue 類別")](dialog-images/pref08.png#lightbox)
-10. 在  **Menubar 設計師**設計介面上，從應用程式功能表中選取**喜好設定...**，control + 按一下並拖曳至 喜好設定 視窗，來建立**顯示**segue:
+10. 在  **Menubar 設計師**設計介面上，從應用程式功能表中選取**喜好設定...** ，control + 按一下並拖曳至 喜好設定 視窗，來建立**顯示**segue:
 
     [![](dialog-images/pref09.png "設定 segue 類型")](dialog-images/pref09.png#lightbox)
 11. 儲存變更並返回 Visual Studio for Mac 中進行同步處理。

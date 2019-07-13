@@ -6,12 +6,12 @@ ms.assetid: C6B99E44-00C1-4139-A1B7-FCFBE8749AB1
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 9f39580d282defed354f3b9e5cbe4eb1cdec4796
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7db73759cb4a1b1a8d7fe40426b03a163c3ebdc4
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61161105"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831066"
 ---
 # <a name="creating-a-monogame-uwp-project"></a>建立 MonoGame UWP 專案
 
@@ -90,9 +90,9 @@ Xbox One MonoGame 範本會將視為安全的區域，並轉譯成白色框線�
 
 ## <a name="referencing-content-in-uwp-projects"></a>在 UWP 專案中的參考內容
 
-可以參照 MonoGame 專案中的內容，直接從檔案或透過[MonoGame Content Pipeline](~/graphics-games/cocossharp/content-pipeline/index.md)。 小型遊戲專案可能會受益於從檔案載入的簡單性。 較大型的專案將受益於使用內容管線以最佳化以減少大小並載入時間的內容。 不同於在 Xbox 360 的 XNA`System.IO.File`類別可用於 Xbox One UWP 應用程式。
+可以參照 MonoGame 專案中的內容，直接從檔案或透過[MonoGame Content Pipeline](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)。 小型遊戲專案可能會受益於從檔案載入的簡單性。 較大型的專案將受益於使用內容管線以最佳化以減少大小並載入時間的內容。 不同於在 Xbox 360 的 XNA`System.IO.File`類別可用於 Xbox One UWP 應用程式。
 
-如需有關載入使用內容管線內容的詳細資訊，請參閱[內容管線指南](~/graphics-games/cocossharp/content-pipeline/index.md)。
+如需有關載入使用內容管線內容的詳細資訊，請參閱[內容管線指南](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)。
 
 ### <a name="loading-content-from-file"></a>從檔案載入內容
 

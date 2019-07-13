@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: a1001163d89a9a9cda16a7ee5e644307fcc9875c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cb79323c416c107c35c465bc2a8815ab267cc451
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218577"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865946"
 ---
 # <a name="workbooks-installation-and-requirements"></a>活頁簿安裝與需求
 
@@ -35,14 +35,14 @@ ms.locfileid: "61218577"
 
 ## <a name="requirements"></a>需求
 
-#### <a name="supported-operating-systems"></a>Supported Operating Systems
+#### <a name="supported-operating-systems"></a>支援的作業系統
 
 - **Mac** -OS X 10.11 或更新版本
 - **Windows** -Windows 7 或更新版本 (使用 Internet Explorer 11 或更新版本和.NET 4.6.1 或更新版本)
 
 #### <a name="supported-app-platforms"></a>支援的應用程式平台
 
-|應用程式平台|OS 支援|注意|
+|應用程式平台|OS 支援|附註|
 |--- |--- |--- |
 |Mac|在 Mac 上才支援|
 |iOS|在 Mac 和 Windows 上支援|必須在 mac 上安裝 Xamarin.iOS 11.0 和 Xcode 9.0 或更新版本 Windows 上執行 iOS 活頁簿需要 Mac 組建主機，執行所有上述項目，而[遠端 iOS 模擬器](~/tools/ios-simulator/index.md)安裝在 Windows 上。|
@@ -113,7 +113,7 @@ Visual Studio
 
 ## <a name="uninstall"></a>解除安裝
 
-### <a name="windows"></a>Windows
+### <a name="windows"></a>視窗
 
 根據您取得活頁簿，您可能必須執行兩個的解除安裝程序。 請檢查這兩個完全解除安裝軟體。
 
@@ -149,8 +149,8 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 1. 刪除 `"/Applications/Xamarin Workbooks.app"` 上的 Workbooks 應用程式
 2. 刪除 `"Applications/Xamarin Inspector.app"` 上的 Inspector 應用程式
-2. 刪除增益集：`"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` 和 `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
-3. 刪除這裡的 Inspector 和支援檔：`/Library/Frameworks/Xamarin.Interactive.framework` 和 `/Library/Frameworks/Xamarin.Inspector.framework`
+3. 刪除增益集：`"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` 和 `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
+4. 刪除這裡的 Inspector 和支援檔：`/Library/Frameworks/Xamarin.Interactive.framework` 和 `/Library/Frameworks/Xamarin.Inspector.framework`
 
 ## <a name="downgrading"></a>降級
 

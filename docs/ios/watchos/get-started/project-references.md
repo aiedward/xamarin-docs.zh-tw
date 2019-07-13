@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: c900ab714fed2bb1e02367ba39ad3c5a0a76121e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 60eaad98e2d5469e9c43e6b4ad889080e1aa63ba
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61408309"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832055"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>watchOS 在 Xamarin 中的專案參考
 
@@ -26,16 +26,16 @@ WatchOS 方案中的三個專案都*自動設定*彼此參考 watchOS 3 應用�
 
 - **iPhone 應用程式**參考**Watch 應用程式**
 
-![](project-references-images/catalog-reference1.png "iPhone 應用程式參考 Watch 應用程式")
+  ![](project-references-images/catalog-reference1.png "iPhone 應用程式參考 Watch 應用程式")
 
 - **監看應用程式**參考**監看式應用程式擴充功能**
 
-![](project-references-images/catalog-reference2.png "iPhone 應用程式參考 Watch 應用程式")
+  ![](project-references-images/catalog-reference2.png "iPhone 應用程式參考 Watch 應用程式")
 
 
- - **監看式應用程式擴充功能**不參考任何其他專案
+- **監看式應用程式擴充功能**不參考任何其他專案
 
-![](project-references-images/catalog-reference3.png "監看式應用程式擴充功能不會參考其他專案")
+  ![](project-references-images/catalog-reference3.png "監看式應用程式擴充功能不會參考其他專案")
 
 
 
@@ -44,17 +44,17 @@ WatchOS 方案中的三個專案都*自動設定*彼此參考 watchOS 3 應用�
 您也必須先確定您**套件組合識別碼**正確無誤。
 這三個專案應該有*相同*識別碼的前置詞，與具有預先定義的延伸模組的兩個監看式專案`watchkitextension`和`watchkitapp`，如下 (如**WatchKitCatalog**範例）：
 
- - Xamarin.iOS 統一專案- `com.xamarin.WatchKitCatalog`
+- Xamarin.iOS 統一專案- `com.xamarin.WatchKitCatalog`
 
- - WatchKit 擴充功能專案- `com.xamarin.WatchKitCatalog.watchkitextension`
+- WatchKit 擴充功能專案- `com.xamarin.WatchKitCatalog.watchkitextension`
 
- - 監看式應用程式專案- `com.xamarin.WatchKitCatalog.watchkitapp`
+- 監看式應用程式專案- `com.xamarin.WatchKitCatalog.watchkitapp`
 
 此外，請確定這些**Info.plist**設定是否正確：
 
- - Watch 應用程式專案的`WKCompanionAppBundleIdentifier`與父代/容器應用程式的套件組合識別碼 」 相符 (ie。 在 iPhone 執行的);
+- Watch 應用程式專案的`WKCompanionAppBundleIdentifier`與父代/容器應用程式的套件組合識別碼 」 相符 (ie。 在 iPhone 執行的);
 
- - 監看式套件延伸模組專案的**WKApp 套件組合識別碼**符合 Watch 應用程式專案的套件組合識別碼。
+- 監看式套件延伸模組專案的**WKApp 套件組合識別碼**符合 Watch 應用程式專案的套件組合識別碼。
 
 您可以編輯的識別項，方法是按兩下**Info.plist**每個專案中的檔案。
 

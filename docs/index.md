@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
 - clicktale
-ms.openlocfilehash: 333e35a4d015586ed33045c3f91e21fdced496b0
-ms.sourcegitcommit: b4a12607ca944de10fd166139765241a4501831c
+ms.openlocfilehash: 4613eec9db017f27f6ab890522867ab4d68b4684
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66687045"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830839"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -95,11 +95,12 @@ ms.locfileid: "66687045"
                                                 <h3>了解 Xamarin</h3>
                                                 <h4>在 Windows 和 macOS 上的 Visual Studio 中，使用 C# 和 .NET 建置跨平台 Android 和 iOS 應用程式 (搭配 Xamarin.Forms)。</h4>
                                                 <ul class="noBullet">
-                                                    <li><a class="barLink" href="~/cross-platform/get-started/introduction-to-mobile-development.md"><img  src="https://docs.microsoft.com/media/logos/logo_xamarin.svg" alt="" />Xamarin 應用程式是原生的</a></li>
-                                                    <li><a class="barLink" href="~/cross-platform/desktop/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_NET.svg" alt="" />適用於 .NET 桌面開發人員的 Xamarin</a></li>
-                                                    <li><a class="barLink" href="~/android/get-started/java-developers.md"><img  src="https://docs.microsoft.com/media/logos/logo_java.svg" alt="" />適用於 Java 開發人員的 Xamarin</a></li>
-                                                    <li><a class="barLink" href="~/ios/get-started/objective-c-developers/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_xcode.svg" alt=" icon" />適用於 Objective-C 開發人員的 Xamarin</a></li>
-                                                    <li><a class="barLink" href="~/xamarin-forms/data-cloud/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_azure.svg" alt="" />Azure 與 Xamarin</a></li>
+                                                    <li><a class="barLink" href="~/cross-platform/get-started/introduction-to-mobile-development.md"><img  src="https://docs.microsoft.com/media/logos/logo_xamarin.svg" alt="" />什麼是 Xamarin？</a></li>
+                                                    <li><a class="barLink" href="~/xamarin-forms/index.yml"><img  src="https://docs.microsoft.com/media/logos/logo_xamarin.svg" alt="" />Xamarin.Forms</a></li>
+                                                    <li><a class="barLink" href="~/android/index.yml"><img  src="https://docs.microsoft.com/media/logos/logo_android.svg" alt="" />Xamarin.Android</a></li>
+                                                    <li><a class="barLink" href="~/ios/index.yml"><img  src="https://docs.microsoft.com/media/common/i_web-apps.svg" alt=" icon" />Xamarin.iOS</a></li>
+                                                    <li><a class="barLink" href="~/mac/index.yml"><img  src="https://docs.microsoft.com/media/common/i_xplat-code.svg" alt=" icon" />Xamarin.Mac</a></li>
+                                                    <li><a class="barLink" href="~/xamarin-forms/data-cloud/index.yml"><img  src="https://docs.microsoft.com/media/logos/logo_azure.svg" alt="" />Azure 與 Xamarin</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -216,7 +217,7 @@ Xamarin 開發指引</a>
                                                                     <a class="barLink" href="~/get-started/tutorials/pop-ups/index.yml">
                                                                         <img src="https://docs.microsoft.com/media/common/i_alert.svg" alt="">
 快顯視窗 </a>
-                                                                </li>                                                                
+                                                                </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/app-lifecycle/index.yml">
                                                                         <img src="https://docs.microsoft.com/media/common/i_agile.svg" alt="">
@@ -249,26 +250,26 @@ Web 服務 </a>
                                     <div class="cardPadding">
                                         <div class="card">
                                             <div class="cardText">
-                                                <h3>建置單一平台 Xamarin 應用程式</h3>
-                                                <h4>所有 Xamarin 應用程式可以彼此共用程式碼，與其他 .NET 平台共用程式碼，以及納入 Xamarin.Forms 功能。</h4>
+                                                <h3>應用您現有的知識</h3>
+                                                <h4>Xamarin 專案可讓您應用現有技能來建置 Android 及 iOS 應用程式。 請選擇您慣用的平台，查看其詳細資訊：</h4>
                                                  <table cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top-color:transparent!important;padding-left:0;">
                                                 <ul class="noBullet">
                                                     <li>
-                                                        <a class="barLink" href="~/android/index.yml">
-                                                            <img src="https://docs.microsoft.com/media/logos/logo_android.svg" alt="Android logo">
-Android</a>
+                                                        <a class="barLink" href="~/cross-platform/desktop/index.md">
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_NET.svg" alt="">
+.NET 桌面 (UWP、WPF、WinForms)</a>
                                                     </li>
                                                     </ul></td><td style="border-top-color:transparent!important;padding-left:0;"><ul class="noBullet">
                                                     <li>
-                                                        <a class="barLink" href="~/ios/index.yml">
-                                                            <img src="https://docs.microsoft.com/media/common/i_web-apps.svg" alt="iOS logo">
-iOS</a>
+                                                        <a class="barLink" href="~/android/get-started/java-developers.md">
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_java.svg" alt="">
+Android 與 Java</a>
                                                     </li>
                                                     </ul></td><td style="border-top-color:transparent!important;padding-left:0;"><ul class="noBullet">
                                                     <li>
-                                                        <a class="barLink" href="~/mac/index.yml">
-                                                            <img src="https://docs.microsoft.com/media/common/i_xplat-code.svg" alt="Mac">
-Mac</a>
+                                                        <a class="barLink" href="~/ios/get-started/objective-c-developers/index.md">
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_xcode.svg" alt="">
+iOS 與 Objective-C</a>
                                                     </li>
                                                 </ul></td></tr></table>
                                             </div>
@@ -286,7 +287,14 @@ Mac</a>
                     <li>
                         <a href="#XamarinForms"> </a>
                         <ul id="XamarinForms" class="cardsC">
-                            <!--li>
+                            <li>
+                                <div class="container intro">
+                                    <p>
+Xamarin.Forms 是可以在 Android、iOS、Mac 及 Windows 上使用 C# 及 .NET 時使用的跨平台工具組。 此外所有平台也可共用使用者介面程式碼及應用程式邏輯程式碼。
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
                                 <a href="~/xamarin-forms/get-started/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
@@ -297,14 +305,14 @@ Mac</a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Getting Started</h3>
-                                                    <p>Tutorials to get you up and running with Xamarin.Forms. Make sure everything is installed correctly, and build your first app.</p>
+                                                    <h3>什麼是 Xamarin.Forms？</h3>
+                                                    <p>解釋什麼是 Xamarin.Forms，以及 Xamarin.Forms 如何協助您建置及部署 Android 與 iOS 應用程式。</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
-                            </li-->
+                            </li>
                             <li>
                                 <a href="~/xamarin-forms/app-fundamentals/index.md">
                                     <div class="cardSize">
@@ -401,7 +409,7 @@ Mac</a>
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/data-cloud/index.md">
+                                <a href="~/xamarin-forms/data-cloud/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -411,8 +419,8 @@ Mac</a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>資料與雲端服務</h3>
-                                                    <p>資料儲存和存取雲端服務。</p>
+                                                    <h3>資料與 Azure 雲端服務</h3>
+                                                    <p>資料儲存體和存取 Azure 雲端服務。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -464,7 +472,7 @@ Mac</a>
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
+                                                        <img alt="Samples" src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -664,7 +672,7 @@ Mac</a>
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img src="https://docs.microsoft.com/en-us/media/illustrations/teams-fast-track.svg" alt="Continuous Integration" />
+                                                        <img src="https://docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt="Continuous Integration" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -689,25 +697,6 @@ Mac</a>
                                                 <div class="cardText">
                                                     <h3>UrhoSharp</h3>
                                                     <p>跨平台 3D 圖形和遊戲。</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="~/graphics-games/cocossharp/index.md">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img src="~/media/index/xamarin-graphics-cocos.svg?branch=master" alt="CocosSharp" />
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>CocosSharp</h3>
-                                                    <p>建置適用於行動裝置的跨平台 2D 遊戲。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -743,7 +732,7 @@ Mac</a>
         <h2>和我們保持連絡</h2>
         <ul class="links">
            <li>
-                <a href="https://blog.xamarin.com/"> 部落格 </a>
+                <a href="https://devblogs.microsoft.com/xamarin/"> 部落格 </a>
             </li>
             <li>
                 <a href="https://forums.xamarin.com/"> 論壇 </a>

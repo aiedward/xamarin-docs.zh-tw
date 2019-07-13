@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/11/2016
-ms.openlocfilehash: 06fd77293302a3d6d5d44def9d0a83e3f1a57ede
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5df001926512b182c19ccfcf896057e88f5a597a
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61217733"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650236"
 ---
 # <a name="introduction-to-data-storage-in-xamarinios-apps"></a>在 Xamarin.iOS 應用程式中的資料儲存體簡介
 
@@ -73,4 +73,4 @@ SQLite 也可用在 Windows 平台，雖然這份文件未涵蓋這些平台。
 - [DataAccess Basic （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess 進階 （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [iOS 資料配方](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
-- [Xamarin.Forms 資料存取](~/xamarin-forms/app-fundamentals/databases.md)
+- [Xamarin.Forms 資料存取](~/xamarin-forms/data-cloud/data/databases.md)

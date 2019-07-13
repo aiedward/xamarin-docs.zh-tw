@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 846ff203a26f38fdaabe5a5dd6eff1c6a6b39b08
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3130c20d39e0140695eed92ffa4941d6bafe796e
+ms.sourcegitcommit: b4c9c574b771ae0265171ca5e938aed1c5e35028
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61343414"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394541"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -18,7 +18,7 @@ ms.locfileid: "61343414"
 
     此程式碼會將 [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) 事件設定成名為 `OnEntryTextChanged` 的事件處理常式，並將 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件設定成名為 `OnEntryCompleted` 的事件處理常式。 下一個步驟將會建立這兩個事件處理常式。
 
-1. 在 [方案總管] 的 **LabelTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnEntryTextChanged` 和 `OnEntryCompleted` 事件處理常式新增至類別：
+1. 在 [方案總管]  的 **EntryTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 加以開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnEntryTextChanged` 和 `OnEntryCompleted` 事件處理常式新增至類別：
 
     ```csharp
     void OnEntryTextChanged(object sender, TextChangedEventArgs e)
@@ -40,7 +40,7 @@ ms.locfileid: "61343414"
     > [!IMPORTANT]
     > 輸入到 [`Entry`](xref:Xamarin.Forms.Entry) 的任何文字都會儲存到 [`Text`](xref:Xamarin.Forms.Entry.Text) 屬性。
 
-1. 在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![螢幕擷取畫面：iOS 和 Android 上包含文字的項目](../images/text-changes.png "包含文字的項目")](../images/text-changes-large.png#lightbox "包含文字的項目")
 
@@ -60,7 +60,7 @@ ms.locfileid: "61343414"
 
     此程式碼會將 [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) 事件設定成名為 `OnEntryTextChanged` 的事件處理常式，並將 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件設定成名為 `OnEntryCompleted` 的事件處理常式。 下一個步驟將會建立這兩個事件處理常式。
 
-1. 在 [Solution Pad] 的 **LabelTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnEntryTextChanged` 和 `OnEntryCompleted` 事件處理常式新增至類別：
+1. 在 [Solution Pad]  的 **EntryTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 加以開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnEntryTextChanged` 和 `OnEntryCompleted` 事件處理常式新增至類別：
 
     ```csharp
     void OnEntryTextChanged(object sender, TextChangedEventArgs e)
@@ -82,7 +82,7 @@ ms.locfileid: "61343414"
     > [!IMPORTANT]
     > 輸入到 [`Entry`](xref:Xamarin.Forms.Entry) 的任何文字都會儲存到 [`Text`](xref:Xamarin.Forms.Entry.Text) 屬性。
 
-1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![螢幕擷取畫面：iOS 和 Android 上包含文字的項目](../images/text-changes.png "包含文字的項目")](../images/text-changes-large.png#lightbox "包含文字的項目")
 

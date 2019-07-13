@@ -6,12 +6,12 @@ ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: 5d9f91300194eb45c5f5f3c52403660cf4898a19
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 92ddbfb48131bdaf8ba12cef86e09e4c575200e9
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61271571"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865621"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>在 Visual Studio 2019 中安裝 Xamarin
 
@@ -23,11 +23,11 @@ ms.locfileid: "61271571"
 
 [!include[](~/cross-platform/includes/install-xamarin-windows.md)]
 
-在 Visual Studio 2019，確認 已安裝 Xamarin，依序按一下**協助**功能表。 如果已安裝 Xamarin，您應會看見 [Xamarin] 功能表項目，如此螢幕擷取畫面所示：
+在 Visual Studio 2019，確認 已安裝 Xamarin，依序按一下**協助**功能表。 如果已安裝 Xamarin，您應會看見 [Xamarin]  功能表項目，如此螢幕擷取畫面所示：
 
 ![[說明] 功能表上的 [Xamarin] 功能表項目](windows-images/12-xamarin-menu-item.png "[說明] 功能表上的 [Xamarin] 功能表項目")
 
-您也可以按一下 [說明] > [關於 Microsoft Visual Studio]，然後捲動已安裝產品清單，查看是否已安裝 Xamarin：
+您也可以按一下 [說明] > [關於 Microsoft Visual Studio]  ，然後捲動已安裝產品清單，查看是否已安裝 Xamarin：
 
 ![Visual Studio 2019 已安裝產品畫面](windows-images/13-xamarin-is-installed.png "Visual Studio 2019 安裝產品的畫面")
 
@@ -44,8 +44,8 @@ ms.locfileid: "61271571"
 1. [安裝 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation)
 2. [將 Visual Studio 連線至 Mac 組建主機](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
 3. [iOS 開發人員設定](~/ios/get-started/installation/device-provisioning/index.md)：在裝置上執行應用程式的必要項目
-5. [遠端 iOS 模擬器](~/tools/ios-simulator/index.md)
-6. [Xamarin.iOS for Visual Studio 簡介](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
+4. [遠端 iOS 模擬器](~/tools/ios-simulator/index.md)
+5. [Xamarin.iOS for Visual Studio 簡介](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
 
 ### <a name="android"></a>Android
 
@@ -54,4 +54,4 @@ ms.locfileid: "61271571"
 1. [Xamarin.Android 組態](~/android/get-started/installation/windows.md#configuration)
 2. [使用 Xamarin Android SDK 管理員](~/android/get-started/installation/android-sdk.md?ide=vs) \(英文\)
 3. [Android SDK 模擬器](~/android/get-started/installation/android-emulator/index.md) \(英文\)
-4. [設定您的裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md) \(英文\)
+4. [設定您的裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md)

@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: 15739ff191953e4730d44c6ad9f63dccb9a0017e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d80363cd339d5d3177ae063df2a20d7938f59169
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61376941"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832394"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -67,7 +67,7 @@ Xamarin Profiler 分析應用程式，從一種方式提供開發人員在 Visua
 
 支援 Xamarin Profiler 是適用於下列平台：
 
- - Visual Studio for Mac (企業授權 macOS)
+- Visual Studio for Mac (企業授權 macOS)
     - Android
         - 裝置和模擬器
     - iOS
@@ -76,7 +76,7 @@ Xamarin Profiler 分析應用程式，從一種方式提供開發人員在 Visua
         - 裝置和模擬器
     - Mac
 
- - Visual Studio (僅**企業**版本)
+- Visual Studio (僅**企業**版本)
     - Android
         - 裝置和模擬器
     - iOS [實驗性]
@@ -94,7 +94,7 @@ Xamarin Profiler 分析應用程式，從一種方式提供開發人員在 Visua
 
 您可以成功剖析您的應用程式之前，您必須允許應用程式的專案選項中的程式碼剖析。
 
- - iOS:
+- iOS:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -110,7 +110,7 @@ Xamarin Profiler 分析應用程式，從一種方式提供開發人員在 Visua
 
 -----
 
- - Android:
+- Android:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -216,7 +216,7 @@ Xamarin Profiler 是如下所示的五個區段所組成：
 
 有配置檢測中的不同資料檢視可讓開發人員能夠分析其應用程式是如何使用及釋放記憶體。 這些檢視如下所示：
 
- -   **配置**– 這會顯示所有配置的清單，並分組類別名稱。 這提供絕佳概觀，說明類別所使用的方法、 使用頻率和使用的類別的整體大小。 在類別上按兩下，將會顯示配置的記憶體： 
+- **配置**– 這會顯示所有配置的清單，並分組類別名稱。 這提供絕佳概觀，說明類別所使用的方法、 使用頻率和使用的類別的整體大小。 在類別上按兩下，將會顯示配置的記憶體： 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -230,7 +230,7 @@ Xamarin Profiler 是如下所示的五個區段所組成：
 
 配置的偵測器檢視提供選項來篩選和群組物件、 提供統計資料的記憶體配置，以及熱門的配置，以及檢視堆疊追蹤和路徑根。
 
- -   **呼叫樹狀圖**– 這會顯示應用程式中的所有執行緒的整個呼叫樹狀結構，並包含每個節點上配置的記憶體的相關資訊。 在清單中選取項目時，所有同層級節點會出現灰色。 您可以展開樹狀目錄，或按兩下要向下切入到其中的項目。顯示這個資料檢視，顯示設定偵測器檢視可用來變更會在呈現的方式。 目前有兩個選項：
+- **呼叫樹狀圖**– 這會顯示應用程式中的所有執行緒的整個呼叫樹狀結構，並包含每個節點上配置的記憶體的相關資訊。 在清單中選取項目時，所有同層級節點會出現灰色。 您可以展開樹狀目錄，或按兩下要向下切入到其中的項目。顯示這個資料檢視，顯示設定偵測器檢視可用來變更會在呈現的方式。 目前有兩個選項：
     1.  **反轉呼叫樹狀結構**– 這會考慮從上到下堆疊追蹤。 這是一個方便存取的檢視選項指出最深的方法 CPU 具有已花費的時間。
     2.  **個別執行緒**– 此選項會將呼叫樹狀結構組織的執行緒。
 
@@ -244,7 +244,7 @@ Xamarin Profiler 是如下所示的五個區段所組成：
 
 -----
 
- -   **快照集**– 此窗格會顯示記憶體快照集的相關資訊。 若要產生這些分析即時的應用程式時，請按一下_相機_每個點，您想要保留和發行哪些記憶體，請參閱 < 請在工具列中的按鈕。 您也可以按一下每個快照集，以探索在幕後的事情。 請注意即時分析應用程式時，才可以採取快照集。 
+- **快照集**– 此窗格會顯示記憶體快照集的相關資訊。 若要產生這些分析即時的應用程式時，請按一下_相機_每個點，您想要保留和發行哪些記憶體，請參閱 < 請在工具列中的按鈕。 您也可以按一下每個快照集，以探索在幕後的事情。 請注意即時分析應用程式時，才可以採取快照集。 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

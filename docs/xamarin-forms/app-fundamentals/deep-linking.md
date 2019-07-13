@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/28/2018
-ms.openlocfilehash: ca9c71d5bdac1900c4f0e5d07898e65b06cdcf90
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: e7b8ae57f127b4c9397ab4e5f7e097fa330e827a
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925566"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650651"
 ---
 # <a name="application-indexing-and-deep-linking"></a>應用程式索引和深層連結
 
@@ -34,7 +34,7 @@ Xamarin.Forms 應用程式索引和深層連結提供 API，用來在使用者�
 
 使用者建立的每個 `TodoItem` 執行個體都編製了索引。 平台專用的搜尋可用來從應用程式中找出已編製索引的資料。 當使用者點選應用程式的搜尋結果時，應用程式隨即啟動，然後瀏覽到 `TodoItemPage`，並顯示參考自深層連結的 `TodoItem`。
 
-如需如何使用 SQLite 的詳細資訊，請參閱 [Xamarin.Forms 本機資料庫](~/xamarin-forms/app-fundamentals/databases.md)。
+如需如何使用 SQLite 的詳細資訊，請參閱 [Xamarin.Forms 本機資料庫](~/xamarin-forms/data-cloud/data/databases.md)。
 
 > [!NOTE]
 > Xamarin.Forms 應用程式索引和深層連結功能僅可在 iOS 和 Android 平台使用，且最低版本分別為 iOS 9 與 API 23。
@@ -71,7 +71,7 @@ Xamarin.Forms 應用程式索引和深層連結提供 API，用來在使用者�
 1. 在網頁瀏覽器中，透過 [Firebase 控制台](https://console.firebase.google.com/)建立新專案。
 1. 在 Firebase 控制台中，將 Firebase 新增到您的 Android 應用程式，然後輸入必填資料。
 1. 下載產生的 **google-services.json** 檔案。
-1. 將 **google-services.json** 檔案新增到 Android 專案的根目錄，並將其 [建置動作] 設為 **GoogleServicesJson**。
+1. 將 **google-services.json** 檔案新增到 Android 專案的根目錄，並將其 [建置動作]  設為 **GoogleServicesJson**。
 1. 在 `MainActivity.OnCreate` 覆寫中，在 `Forms.Init(this, bundle)` 下方新增下列程式碼：
 
 ```csharp

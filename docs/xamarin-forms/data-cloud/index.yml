@@ -1,0 +1,171 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: 資料與 Azure 雲端服務
+metadata:
+  title: 資料與 Azure 雲端服務
+  description: 了解如何使用 Azure 雲端服務儲存資料，並建置連線的 Xamarin.Forms 應用程式。
+  ms.topic: landing-page
+  ms.prod: xamarin
+  ms.assetid: 0601D9D0-C8D2-4C3B-A749-A340BDBF64A4ß
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 06/28/2019
+abstract:
+  description: 了解如何使用 Azure 雲端服務儲存資料，並建置連線的 Xamarin.Forms 應用程式。
+sections:
+  - title: 本機資料儲存體
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: data/files.md
+            html: 了解如何在 Xamarin.Forms 應用程式中從共用程式碼執行檔案處理。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
+              href: data/files.md
+            title: 檔案處理
+          - href: data/databases.md
+            html: 了解 Xamarin.Forms 應用程式如何使用 SQLite.Net 讀取資料和將其寫入本機 SQLite 資料庫。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_common-data-service.svg'
+              href: data/databases.md
+            title: 本機資料庫
+  - title: Azure 服務
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: azure-services/azure-cosmosdb.md
+            html: 了解如何將資料儲存在 Azure Cosmos DB 文件資料庫中，並從 Xamarin.Forms 應用程式存取該資料。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_generic-database.svg'
+              href: azure-services/azure-cosmosdb.md
+            title: Azure Cosmos DB 文件資料庫
+          - href: azure-services/azure-notification-hub.md
+            html: 了解如何使用 Azure 通知中樞來管理發佈推播通知給 Xamarin.Forms 應用程式的作業。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_push-notification.svg'
+              href: azure-services/azure-notification-hub.md
+            title: Azure 通知中心
+          - href: azure-services/azure-storage.md
+            html: 了解如何儲存文字和二進位資料到 Azure 儲存體中，以及如何從 Xamarin.Forms 應用程式存取該資料。
+            image:
+              src: ~/media/icons/i_data-cloud.svg
+              href: azure-services/azure-storage.md
+            title: Azure 儲存體
+          - href: azure-services/azure-search.md
+            html: 了解如何將 Azure 搜尋服務整合到 Xamarin.Forms 應用程式。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_search.svg'
+              href: azure-services/azure-search.md
+            title: Azure 搜尋服務
+          - href: azure-services/azure-functions.md
+            html: 了解如何建置與 Xamarin.Forms 應用程式互動的 Azure Function。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_method.svg'
+              href: azure-services/azure-functions.md
+            title: Azure Functions
+          - href: azure-services/azure-signalr.md
+            html: 了解如何將 Azure SignalR Service 及 Azure Functions 與 Xamarin.Forms 結合，來傳遞即時訊息給連線的用戶端。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_multi-connect.svg'
+              href: azure-services/azure-signalr.md
+            title: Azure SignalR Service
+  - title: Azure 認知服務
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: azure-cognitive-services/introduction.md
+            html: 了解示範如何叫用 Azure 認知服務 API 的範例 Xamarin.Forms 應用程式。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_web-apps.svg'
+              href: azure-cognitive-services/index.md
+            title: 簡介
+          - href: azure-cognitive-services/speech-recognition.md
+            html: 了解如何在 Xamarin.Forms 應用程式中使用 Microsoft 語音辨識 REST API 將音訊轉換為文字。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_blog.svg'
+              href: azure-cognitive-services/speech-recognition.md
+            title: 語音辨識
+          - href: azure-cognitive-services/spell-check.md
+            html: 了解如何在 Xamarin.Forms 應用程式中使用 Bing 拼字檢查 REST API 來更正拼字錯誤。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_article.svg'
+              href: azure-cognitive-services/spell-check.md
+            title: 拼字檢查
+          - href: azure-cognitive-services/text-translation.md
+            html: 了解如何在 Xamarin.Forms 應用程式中使用 Microsoft 翻譯工具文字 API 將文字從某種語言翻譯成另一種。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_reference.svg'
+              href: azure-cognitive-services/text-translation.md
+            title: 文字翻譯
+          - href: azure-cognitive-services/emotion-recognition.md
+            html: 了解如何在 Xamarin.Forms 應用程式中使用臉部 API 辨識表情。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_account-management.svg'
+              href: azure-cognitive-services/emotion-recognition.md
+            title: 表情辨識
+  - title: Web 服務
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: web-services/introduction.md
+            html: 了解示範如何與不同 Web 服務通訊的範例 Xamarin.Forms 應用程式。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_web-apps.svg'
+              href: web-services/introduction.md
+            title: 簡介
+          - href: web-services/asmx.md
+            html: 了解如何從 Xamarin.Forms 應用程式取用 ASMX SOAP 服務。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_web-color.svg'
+              href: web-services/asmx.md
+            title: ASMX
+          - href: web-services/wcf.md
+            html: 了解如何從 Xamarin.Forms 應用程式取用 WCF SOAP 服務。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_web-color.svg'
+              href: web-services/wcf.md
+            title: WCF
+          - href: web-services/rest.md
+            html: 了解如何從 Xamarin.Forms 應用程式取用 REST 服務。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_web-color.svg'
+              href: web-services/rest.md
+            title: REST
+  - title: 驗證
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: authentication/rest.md
+            html: 了解如何使用基本驗證來保護對 REST 式資源的存取。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_network-protection.svg'
+              href: authentication/rest.md
+            title: REST
+          - href: authentication/oauth.md
+            html: 了解如何從 Xamarin.Forms 應用程式使用 Xamarin.Auth 向識別提供者驗證。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_identity-protection.svg'
+              href: authentication/oauth.md
+            title: 識別提供者
+          - href: authentication/azure-ad-b2c.md
+            html: 了解如何使用 Azure Active Directory B2C 將身分識別管理整合到 Xamarin.Forms 應用程式。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_security-management.svg'
+              href: authentication/azure-ad-b2c.md
+            title: Azure Active Directory B2C
+          - href: authentication/azure-cosmosdb-auth.md
+            html: 了解如何從 Xamarin.Forms 應用程式限制使用者只能存取特定的 Cosmos DB 文件資料。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_information-protection.svg'
+              href: authentication/azure-cosmosdb-auth.md
+            title: Azure Cosmos DB 文件資料庫驗證

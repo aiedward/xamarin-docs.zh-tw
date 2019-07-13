@@ -1,22 +1,25 @@
 ---
 title: C#6 的新功能概觀
-description: 最新版的C#語言 – 第 6 版 – 持續發展的語言有較少的未定案、 改善的清晰度和較佳的一致性。 更簡潔的初始化語法，能夠使用 catch/finally 區塊，以及 null 條件中的 await 嗎？ 運算子會特別有用。
+description: 第 6 版的C#語言持續發展的語言有較少的未定案程式碼、 改善的清晰度和較佳的一致性。 更簡潔的初始化語法，能夠使用 catch/finally 區塊，以及 null 條件中的 await 嗎？ 運算子會特別有用。
 ms.prod: xamarin
 ms.assetid: 4B4E41A8-68BA-4E2B-9539-881AC19971B
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 1a261c009f105994ac0b9c84f3d0ac037c4a3517
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 0fd7f4e9972f7bf762a44c9edf30fa13f9d989bc
+ms.sourcegitcommit: 0845ed2daa65468b6fe12ac4e9386f3315d72f4d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978492"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67850954"
 ---
 # <a name="c-6-new-features-overview"></a>C#6 的新功能概觀
 
-_最新版的C#語言 – 第 6 版 – 持續發展的語言有較少的未定案、 改善的清晰度和較佳的一致性。更簡潔的初始化語法，能夠使用 catch/finally 區塊，以及 null 條件中的 await 嗎？運算子會特別有用。_
+_第 6 版的C#語言持續發展的語言有較少的未定案程式碼、 改善的清晰度和較佳的一致性。更簡潔的初始化語法，能夠使用 catch/finally 區塊，以及 null 條件中的 await 嗎？運算子會特別有用。_
+
+> [!NOTE]
+> 如需最新版的C#語言 – 第 7 版 – 請參閱文章[的新功能C#7.0](/dotnet/csharp/whats-new/csharp-7)
 
 本文件介紹的新功能C#6。 Mono 編譯器完全支援和開發人員就可以開始使用所有 Xamarin 目標平台的新功能。
 

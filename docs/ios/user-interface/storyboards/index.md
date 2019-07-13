@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: f24be635afcba181efcab85d81a984d93dae4bc8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 79c1d7852cdde9b557965931706fcd24e43954f7
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61428903"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865222"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中的分鏡腳本簡介
 
@@ -68,7 +68,7 @@ A *Segue*，或*Segue 物件*，iOS 開發用來代表場景之間的轉換。 �
 
 -  **顯示 / 推送**– 推送 segue 將檢視控制器加入至導覽堆疊上。 它會假設原始推播檢視控制器會為已加入至堆疊的檢視控制器相同的瀏覽控制器的一部分。 這會與相同的工作`pushViewController`，並在螢幕上的資料之間的某種關聯性時，通常使用。 使用推入 segue 可讓您的需要上一頁按鈕及標題新增至在堆疊上，允許向下鑽研導覽的檢視階層的每個檢視中瀏覽列。
 -  **強制回應**– 強制回應的 segue 會建立專案，並可顯示動畫轉換中任何兩個檢視控制器之間的關聯性。 子檢視控制器會難理解帶入檢視時，才會進行父檢視控制器。 不同於推播的 segue，為我們; 加入上一頁按鈕當使用強制回應 segue`DismissViewController`必須使用，以返回上一個檢視控制器。
--  **自訂**– 任何自訂的子類別可以在建立 segue ` UIStoryboardSegue`。
+-  **自訂**– 任何自訂的子類別可以在建立 segue `UIStoryboardSegue`。
 -  **回溯**-回溯的 segue 可用來向後巡覽的推播 」 或 「 強制回應 segue – 比方說，藉由關閉強制回應所呈現的檢視控制器。 此外，您可以回溯到不只一個，但一系列的推播和強制回應 segue，並返回瀏覽具有單一階層中的多個步驟回溯動作。 若要了解如何使用回溯程式在 iOS 中，讀取的 segue[建立回溯 Segue](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue)配方。
 -  **無來源**– 無來源的 segue 會指出包含的初始檢視控制器場景，因此之檢視的使用者會看到第一次。 它表示如下所示的 segue:  
 
@@ -327,7 +327,7 @@ public partial class MainViewController : UIViewController
         - 色彩：紅色
         - 對齊方式：置中
         - 程式行：2
-        - 'Hidden' 核取的核取方塊 
+        - 'Hidden' 核取的核取方塊    
         
     [![](images/passwordvc.png "Center 行")](images/passwordvc.png#lightbox)
     
@@ -424,25 +424,25 @@ public partial class MainViewController : UIViewController
 
     [![](images/ref08.png "輸入新的場景檢視控制器分鏡腳本識別碼")](images/ref08.png#lightbox)
     
-3. 開啟分鏡腳本，您要在 iOS 設計工具中新增的參考。
+4. 開啟分鏡腳本，您要在 iOS 設計工具中新增的參考。
 
-4. 拖曳**參考分鏡腳本**從**工具箱**拖曳至設計介面： 
+5. 拖曳**參考分鏡腳本**從**工具箱**拖曳至設計介面： 
 
     [![](images/ref03.png "分鏡腳本參考")](images/ref03.png#lightbox)
     
-5. 在**Widget**索引標籤**屬性總管**，選取的名稱**分鏡腳本**而**參考識別碼**（分鏡腳本識別碼） 的您先前建立的場景： 
+6. 在**Widget**索引標籤**屬性總管**，選取的名稱**分鏡腳本**而**參考識別碼**（分鏡腳本識別碼） 的您先前建立的場景： 
 
     [![](images/ref09.png "小工具 索引標籤 ")](images/ref09.png#lightbox)
     
-6. UI 上的小工具 （例如按鈕） 現有的場景 control + 按一下，並建立以新的 Segue**分鏡腳本參考**您剛建立： 
+7. UI 上的小工具 （例如按鈕） 現有的場景 control + 按一下，並建立以新的 Segue**分鏡腳本參考**您剛建立： 
 
     [![](images/ref10.png "建立的 segue")](images/ref10.png#lightbox) 
     
-7. 從快顯功能表中選取**顯示**完成 Segue: 
+8. 從快顯功能表中選取**顯示**完成 Segue: 
 
     [![](images/ref06.png "選取顯示完成的 Segue")](images/ref06.png#lightbox) 
     
-8. 將您的變更儲存到分鏡腳本。
+9. 將您的變更儲存到分鏡腳本。
 
 當應用程式執行且使用者按下的 UI 項目，您所建立的 Segue 場景中填入從給定**分鏡腳本識別碼**將顯示從外部指定分鏡腳本參考中的分鏡腳本。
 
@@ -462,9 +462,9 @@ public partial class MainViewController : UIViewController
 
     [![](images/ref12.png "小工具 索引標籤")](images/ref12.png#lightbox)
     
-3. 拖曳**參考分鏡腳本**從**工具箱**拖曳至設計介面： 
+4. 拖曳**參考分鏡腳本**從**工具箱**拖曳至設計介面： 
 
-    [![](images/ref03.png "分鏡腳本參考")](images/ref03.png#lightbox)
+   [![](images/ref03.png "分鏡腳本參考")](images/ref03.png#lightbox)
     
 5. 在**Widget**索引標籤**屬性總管**，選取**參考識別碼**（分鏡腳本識別碼） 您先前建立的場景： 
 

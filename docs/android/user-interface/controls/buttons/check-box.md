@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: e03595e8d88a2f12341b9e339d0581c631224848
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9f2fd10e5cfe28206d323b2769517c2584919232
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61268314"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829716"
 ---
 # <a name="checkbox"></a>核取方塊
 
@@ -49,9 +49,10 @@ checkbox.Click += (o, e) => {
 
 執行它。
 
-**提示：** 如果您需要自行變更狀態 (例如當載入已儲存[ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference)，使用 [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked)
-屬性 setter 或 [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle)
-方法。
+> [!TIP]
+> 如果您需要自行變更狀態 (例如當載入已儲存[ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference)，使用 [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked)
+> 屬性 setter 或 [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle)
+> 方法。
 
 *此頁面上的部分是根據工作建立及 Android 的開放原始碼專案所共用，並依據所述的條款來使用修改*
 [*Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/).

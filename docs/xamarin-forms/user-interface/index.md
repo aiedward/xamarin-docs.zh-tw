@@ -6,19 +6,23 @@ ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/14/2018
-ms.openlocfilehash: 7c3a26854c65de260aa9b3c8ed00966749eb4d9c
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.date: 06/11/2019
+ms.openlocfilehash: 0fff9b7ce4b78e29409d1cc7a55e7f447baf722c
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66178081"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831104"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 使用者介面檢視
 
 [![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/FormsGallery/)
 
 _如何使用 Xamarin.Forms 所提供的檢視_
+
+## <a name="activityindicatoractivityindicatormd"></a>[ActivityIndicator](activityindicator.md)
+
+`ActivityIndicator`是動畫，這表示使用者的應用程式參與的冗長的活動，而不需要提供任何資訊指出進度的控制項。
 
 ## <a name="animationanimationindexmd"></a>[動畫](animation/index.md)
 
@@ -31,6 +35,10 @@ Xamarin.Forms 包含自己的動畫基礎結構直接建立簡單的動畫，同
 ## <a name="buttonbuttonmd"></a>[Button](button.md)
 
 `Button`回應點選或按一下，以指示應用程式執行特定工作。
+
+## <a name="checkboxcheckboxmd"></a>[CheckBox](checkbox.md)
+
+`CheckBox`一種按鈕，可以為已核取或空白。 若勾選核取方塊，其認為上。 當核取方塊是空的時它已被視為關閉。
 
 ## <a name="collectionviewcollectionviewindexmd"></a>[CollectionView](collectionview/index.md)
 
@@ -52,7 +60,7 @@ DataPages 提供 API，以快速且輕鬆地繫結資料來源至預先建立的
 
 `DatePicker`可讓使用者選取日期，以指定的範圍內。 它是使用特定的平台上執行應用程式所支援的日期選擇器所實作的。
 
-## <a name="display-pop-upspop-upsmd"></a>[顯示快顯](pop-ups.md)
+## <a name="display-pop-upspop-upsmd"></a>[顯示快顯視窗](pop-ups.md)
 
 Xamarin.Forms 提供兩個類似快顯視窗的使用者介面元素：警示和動作工作表。 這些介面項目可用來顯示對話方塊，詢問使用者簡單的問題和工作的逐步指引使用者。
 
@@ -84,6 +92,10 @@ Xamarin.Forms 提供清單檢視控制項以顯示捲動的資料列的資料。
 
 [ `Picker` ](xref:Xamarin.Forms.Picker)檢視是從資料的清單中選取的文字項目控制項。
 
+## <a name="progressbarprogressbarmd"></a>[ProgressBar](progressbar.md)
+
+[ `ProgressBar` ](xref:Xamarin.Forms.ProgressBar)是控制項，以視覺方式表示的水平列填滿浮點數屬性為基礎的進度。
+
 ## <a name="sliderslidermd"></a>[Slider](slider.md)
 
 `Slider`可讓使用者從連續範圍選取一個數字值。
@@ -95,6 +107,10 @@ Xamarin.Forms 提供清單檢視控制項以顯示捲動的資料列的資料。
 ## <a name="stylesstylesindexmd"></a>[樣式](styles/index.md)
 
 字型、 色彩和其他屬性，都可以分組為控制項、 版面配置，或使用 Resourcedictionary 的整個應用程式可共用的樣式。
+
+## <a name="switchswitchmd"></a>[開關](switch.md)
+
+`Switch`是一種可以在開啟和關閉狀態之間切換 按鈕。
 
 ## <a name="tableviewtableviewmd"></a>[TableView](tableview.md)
 

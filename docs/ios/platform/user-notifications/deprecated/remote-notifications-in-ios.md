@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 8ad742607e506df436a5526d31621ac7636ac29b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f6d059e5a30e7e3dac92a2c4e0e6079222e66b22
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61086986"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865198"
 ---
 # <a name="push-notifications-in-ios"></a>在 iOS 中的推播通知
 
@@ -21,7 +21,7 @@ ms.locfileid: "61086986"
 
 推播通知應該保持簡短，並且只會包含足夠的資料來通知它應該與伺服器應用程式取得更新的行動應用程式。 比方說，當新的電子郵件送達時，伺服器應用程式只會通知到達新的電子郵件的行動應用程式。 通知不會包含新的電子郵件本身。 行動應用程式會接著新的電子郵件從伺服器擷取適當時
 
-推播的中心是在 iOS 中的通知*Apple 推播通知閘道服務 (APNS)*。 這是負責從應用程式伺服器的路由通知到 iOS 裝置的 Apple 提供的服務。
+推播的中心是在 iOS 中的通知*Apple 推播通知閘道服務 (APNS)* 。 這是負責從應用程式伺服器的路由通知到 iOS 裝置的 Apple 提供的服務。
 下圖說明適用於 iOS 的推播通知拓撲：![](remote-notifications-in-ios-images/image4.png "此圖說明適用於 iOS 的推播通知拓樸")
 
 遠端通知本身是 JSON 格式化字串符合格式和通訊協定中指定[通知承載](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1)一節[本機和推播通知程式設計指南](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)中[iOS 開發人員文件](https://developer.apple.com/devcenter/ios/index.action)。
@@ -55,36 +55,36 @@ Apple 會維護兩個環境的 APNS:*沙箱*並*生產*環境。 沙箱環境為
 
 4. 請務必選取**明確的應用程式識別碼**和 套件組合識別碼結尾不是， `*` 。 這會建立適用於多個應用程式的識別項和推播通知憑證必須是單一應用程式。
 
-1. 在 [應用程式服務] 下選取**推播通知**:
+5. 在 [應用程式服務] 下選取**推播通知**:
 
     [![](remote-notifications-in-ios-images/image8new.png "選取 推播通知")](remote-notifications-in-ios-images/image8new.png#lightbox)
 
-2. 按下**送出**以確認新的應用程式識別碼的註冊：
+6. 按下**送出**以確認新的應用程式識別碼的註冊：
 
     [![](remote-notifications-in-ios-images/image9new.png "確認註冊新的應用程式識別碼")](remote-notifications-in-ios-images/image9new.png#lightbox)
 
-3.  接下來，您必須建立憑證，做為應用程式識別碼。 在左側導覽中，瀏覽至**憑證 > 所有**，然後選取`+`按鈕，如下列螢幕擷取畫面所示：
+7.  接下來，您必須建立憑證，做為應用程式識別碼。 在左側導覽中，瀏覽至**憑證 > 所有**，然後選取`+`按鈕，如下列螢幕擷取畫面所示：
 
     [![](remote-notifications-in-ios-images/image10new.png "建立應用程式識別碼的憑證")](remote-notifications-in-ios-images/image8.png#lightbox)
 
-4.  選取您想要使用的開發或生產環境憑證：
+8. 選取您想要使用的開發或生產環境憑證：
 
     [![](remote-notifications-in-ios-images/image11new.png "選取開發或生產環境的憑證")](remote-notifications-in-ios-images/image11new.png#lightbox)
 
-5. 然後選取 我們剛剛建立的新應用程式識別碼：
+9. 然後選取 我們剛剛建立的新應用程式識別碼：
 
     [![](remote-notifications-in-ios-images/image12new.png "選取剛才建立的新應用程式識別碼")](remote-notifications-in-ios-images/image12new.png#lightbox)
 
-6.  這會顯示將帶領您建立的程序的指示*憑證簽署要求*使用**鑰匙圈存取**您 mac 上的應用程式
+10.  這會顯示將帶領您建立的程序的指示*憑證簽署要求*使用**鑰匙圈存取**您 mac 上的應用程式
 
-7.  既然已建立的憑證，它必須做的建置程序的一部分，簽署應用程式，以便它可以向 APNs 註冊。 這需要建立及安裝會使用憑證佈建設定檔。
+11.  既然已建立的憑證，它必須做的建置程序的一部分，簽署應用程式，以便它可以向 APNs 註冊。 這需要建立及安裝會使用憑證佈建設定檔。
 
-8.  若要建立佈建設定檔的開發，瀏覽至**佈建設定檔**區段，然後遵循步驟來建立，使用我們剛才建立的應用程式識別碼。
+12.  若要建立佈建設定檔的開發，瀏覽至**佈建設定檔**區段，然後遵循步驟來建立，使用我們剛才建立的應用程式識別碼。
 
-9.  一旦您已建立佈建設定檔，開啟**Xcode Organizer**並加以重新整理。 如果您建立的佈建設定檔未出現您可能必須從 iOS 佈建入口網站下載的設定檔，然後手動將它匯入。 下列螢幕擷取畫面顯示召集人的範例，以佈建的設定檔加入：  
+13.  一旦您已建立佈建設定檔，開啟**Xcode Organizer**並加以重新整理。 如果您建立的佈建設定檔未出現您可能必須從 iOS 佈建入口網站下載的設定檔，然後手動將它匯入。 下列螢幕擷取畫面顯示召集人的範例，以佈建的設定檔加入：  
     [![](remote-notifications-in-ios-images/image13new.png "此螢幕擷取畫面顯示召集人的範例，以佈建的設定檔新增")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
-10.  此時，我們需要設定 Xamarin.iOS 專案以使用這個新建立的佈建設定檔。 這是從**專案選項** 對話方塊底下**iOS 套件組合簽署** 索引標籤，如下列螢幕擷取畫面：  
+14.  此時，我們需要設定 Xamarin.iOS 專案以使用這個新建立的佈建設定檔。 這是從**專案選項** 對話方塊底下**iOS 套件組合簽署** 索引標籤，如下列螢幕擷取畫面：  
     [![](remote-notifications-in-ios-images/image11.png "Xamarin.iOS 專案設定為使用這個新建立的佈建設定檔")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 此時應用程式設定為使用推播通知。 不過，仍有幾個步驟，所需的憑證。 此憑證是 DER PushSharp，需要個人資訊交換 (PKCS12) 憑證與不相容的格式。 若要將憑證轉換，如此就可供 PushSharp，執行最後一個步驟執行：

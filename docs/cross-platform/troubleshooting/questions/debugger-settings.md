@@ -6,12 +6,12 @@ ms.assetid: 3A024E4E-ACA3-4C7A-ADEF-541665D15779
 author: asb3993
 ms.author: amburns
 ms.date: 05/08/2018
-ms.openlocfilehash: 9a18c97ba227615ae42529424b5c22b5e144f5e5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e7a383f899fab0400104493fa89b125788d610aa
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61357858"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831329"
 ---
 # <a name="what-project-settings-are-required-for-the-debugger"></a>偵錯工具需要哪些專案設定？
 
@@ -30,6 +30,6 @@ ms.locfileid: "61357858"
 1. 開啟 專案選項
 2. 移至**建置 > 編譯器 > 一般選項**。 若要設定偵錯資訊**完整**
 3. 每個平台的設定：
-  - 移至**建置 > Android 建置 > 偵錯選項**。 刻度**讓開發人員檢測設備** 方塊中。
-  - 移至**建置 > iOS 偵錯**。 刻度**啟用偵錯** 方塊中。
+    - 移至**建置 > Android 建置 > 偵錯選項**。 刻度**讓開發人員檢測設備** 方塊中。
+    - 移至**建置 > iOS 偵錯**。 刻度**啟用偵錯** 方塊中。
 

@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: fe38e13ff4b6c89905769d5ef0e5163a538e1e86
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c92a97b336e89214bbd95021ad8fb9a56f64cc8c
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61388815"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67659766"
 ---
 在此練習中，您會建立使用者介面來取用 `RestService` 類別，接著從 [OpenWeatherMap](https://openweathermap.org/) Web API 擷取資料。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. 在 [方案總管] 的 **WebServiceTutorial** 專案中，按兩下 **MainPage.xaml** 將其開啟。 然後在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
+1. 在 [方案總管]  的 **WebServiceTutorial** 專案中，按兩下 **MainPage.xaml** 將其開啟。 然後在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -71,7 +71,7 @@ ms.locfileid: "61388815"
 
     此外，[`Entry`](xref:Xamarin.Forms.Entry) 具有以 `x:Name` 屬性指定的名稱。 這可讓程式碼後置檔案使用指派的名稱來存取物件。
 
-1. 在 [方案總管] 的 **WebServiceTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後在 **MainPage.xaml.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
+1. 在 [方案總管]  的 **WebServiceTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後在 **MainPage.xaml.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
 
     ```csharp
     using System;
@@ -121,7 +121,7 @@ ms.locfileid: "61388815"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 屬性會透過視覺化樹狀結構繼承。 因此，因為它已設定於 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件、`ContentPage` 的子物件會繼承其值，包括 [`Label`](xref:Xamarin.Forms.Label) 執行個體。
 
-1. 在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式。 點選 [`Button`](xref:Xamarin.Forms.Button) 以擷取西雅圖目前的天氣資料：
+1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式。 點選 [`Button`](xref:Xamarin.Forms.Button) 以擷取西雅圖目前的天氣資料：
 
     [![西雅圖天氣資料的螢幕擷取畫面 (在 iOS 和 Android 上)](../images/consume-web-service.png "西雅圖天氣資料")](../images/consume-web-service-large.png#lightbox "西雅圖天氣資料")
 
@@ -130,7 +130,7 @@ ms.locfileid: "61388815"
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 在 [Solution Pad] 的 **WebServiceTutorial** 專案中，按兩下 **MainPage.xaml** 將其開啟。 然後在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
+1. 在 [Solution Pad]  的 **WebServiceTutorial** 專案中，按兩下 **MainPage.xaml** 將其開啟。 然後在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -191,9 +191,9 @@ ms.locfileid: "61388815"
 
     此外，[`Entry`](xref:Xamarin.Forms.Entry) 具有以 `x:Name` 屬性指定的名稱。 這可讓程式碼後置檔案使用指派的名稱來存取物件。
 
-    如需有關如何取用 Xamarin.Forms 中 REST 架構 Web 服務的詳細資訊，請參閱[取用 RESTful Web 服務 (指南)](~/xamarin-forms/data-cloud/consuming/rest.md)。
+    如需有關如何取用 Xamarin.Forms 中 REST 架構 Web 服務的詳細資訊，請參閱[取用 RESTful Web 服務 (指南)](~/xamarin-forms/data-cloud/web-services/rest.md)。
 
-1. 在 [Solution Pad] 的 **WebServiceTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後在 **MainPage.xaml.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
+1. 在 [Solution Pad]  的 **WebServiceTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後在 **MainPage.xaml.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
 
     ```csharp
     using System;
@@ -243,11 +243,11 @@ ms.locfileid: "61388815"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 屬性會透過視覺化樹狀結構繼承。 因此，因為它已設定於 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件、`ContentPage` 的子物件會繼承其值，包括 [`Label`](xref:Xamarin.Forms.Label) 執行個體。
 
-1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式。 點選 [`Button`](xref:Xamarin.Forms.Button) 以擷取西雅圖目前的天氣資料：
+1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式。 點選 [`Button`](xref:Xamarin.Forms.Button) 以擷取西雅圖目前的天氣資料：
 
     [![西雅圖天氣資料的螢幕擷取畫面 (在 iOS 和 Android 上)](../images/consume-web-service.png "西雅圖天氣資料")](../images/consume-web-service-large.png#lightbox "西雅圖天氣資料")
 
     > [!IMPORTANT]
     > 您個人的 OpenWeatherMap API 金鑰必須設定為 `Constants` 類別中 `OpenWeatherMapAPIKey` 常數的值。
 
-    如需有關如何取用 Xamarin.Forms 中 REST 架構 Web 服務的詳細資訊，請參閱[取用 RESTful Web 服務 (指南)](~/xamarin-forms/data-cloud/consuming/rest.md)。
+    如需有關如何取用 Xamarin.Forms 中 REST 架構 Web 服務的詳細資訊，請參閱[取用 RESTful Web 服務 (指南)](~/xamarin-forms/data-cloud/web-services/rest.md)。

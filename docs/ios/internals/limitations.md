@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: b79d3683c8e4979cbbd13550f3df86c39622ad2b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 86f41bf227b97ef24651f482ff133a065226ee14
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035876"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830394"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin.iOS 的限制
 
@@ -74,7 +74,8 @@ System.Reflection 缺乏。 **發出**取決於執行階段程式碼產生任何
 -  遠端處理之 TransparentProxy 或任何其他項目，會導致執行階段動態產生程式碼。 
 
 
- **重要：** 請勿混淆**Reflection.Emit**具有**反映**。 Reflection.Emit 即將以動態方式產生程式碼，並具有該程式碼加以 Jit 和編譯為原生程式碼。 在 iOS （沒有 JIT 編譯） 上的限制不是支援此。
+  > [!IMPORTANT]
+  > 請勿混淆**Reflection.Emit**具有**反映**。 Reflection.Emit 即將以動態方式產生程式碼，並具有該程式碼加以 Jit 和編譯為原生程式碼。 在 iOS （沒有 JIT 編譯） 上的限制不是支援此。
 
 但是，整個的反映 API，包括 Type.GetType (「 someClass") 方法，列出屬性，擷取屬性和值可正常運作。
 

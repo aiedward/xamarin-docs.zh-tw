@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 086ed765781d9297f07574519d2cbc9cf93ac4dd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 855bbc61fb5e4e653dbd39ddf05fac3e2fb42d8c
+ms.sourcegitcommit: 00deecefc17a98210bed12b4ef99ecca710275f1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61344736"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67493363"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 開始使用 XAML
 
@@ -102,7 +102,7 @@ _在 Xamarin.Forms 應用程式中，XAML 大多用來定義頁面的視覺內�
 </ContentPage>
 ```
 
-兩個 XML 命名空間 ( `xmlns`) 宣告的 Uri，看似在 Xamarin 的網站上的第一個和第二個在 Microsoft 的參考。 不需要檢查哪些這些 Uri 指向。 裡面沒有東西。 他們只是由 Xamarin 與 Microsoft 所擁有的 Uri，它們基本上函式做為版本識別碼。
+兩個 XML 命名空間 (`xmlns`) 宣告的 Uri，看似在 Xamarin 的網站上的第一個和第二個在 Microsoft 的參考。 不需要檢查哪些這些 Uri 指向。 裡面沒有東西。 他們只是由 Xamarin 與 Microsoft 所擁有的 Uri，它們基本上函式做為版本識別碼。
 
 第一個 XML 命名空間宣告表示，沒有前置詞在 XAML 檔中定義的標記是指類別在 Xamarin.Forms 中，例如`ContentPage`。 第二個命名空間宣告中定義的前置詞`x`。 這用數個項目和屬性的 XAML 內建函式本身的支援和 XAML 的其他實作。 不過，這些項目和屬性會內嵌在 URI 中的年份而略有不同。 Xamarin.Forms 可支援在 2009 XAML 規格中，但不是它全部。
 
@@ -149,7 +149,7 @@ namespace XamlSamples
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-若要新增其他 XAML 為基礎`ContentPage`類別，以您的專案中，選取**XamlSamples** .NET Standard 程式庫專案，然後叫用**專案 > 加入新項目**功能表項目。 在左邊**加入新項目**對話方塊中，選取**視覺化C#** 並**Xamarin.Forms**。 從清單中選取**內容頁面**(不**內容頁面 (C#)**，這會建立僅限程式碼的頁面上，或**內容檢視**，這不是頁面)。 指定頁面名稱，例如**HelloXamlPage.xaml**:
+若要新增其他 XAML 為基礎`ContentPage`類別，以您的專案中，選取**XamlSamples** .NET Standard 程式庫專案，然後叫用**專案 > 加入新項目**功能表項目。 在左邊**加入新項目**對話方塊中，選取**視覺化C#** 並**Xamarin.Forms**。 從清單中選取**內容頁面**(不**內容頁面 (C#)** ，這會建立僅限程式碼的頁面上，或**內容檢視**，這不是頁面)。 指定頁面名稱，例如**HelloXamlPage.xaml**:
 
 ![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "加入新項目 對話方塊")
 

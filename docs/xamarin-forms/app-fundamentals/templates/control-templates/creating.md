@@ -6,21 +6,21 @@ ms.assetid: A9AEB052-FBF5-4589-9BD4-6D6F62BED7F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 86e10f068af14e65b55885488252af756a90652e
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.date: 06/14/2019
+ms.openlocfilehash: 0642f304589d30284bc8d3577c0383099e349033
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926957"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67513040"
 ---
-# <a name="creating-a-controltemplate"></a>建立 ControlTemplate
+# <a name="create-a-controltemplate"></a>建立 ControlTemplate
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleTheme/)
 
 _控制項範本可在應用程式層級或頁面層級定義。本文示範如何建立和使用控制項範本。_
 
-## <a name="creating-a-controltemplate-in-xaml"></a>在 XAML 中建立 ControlTemplate
+## <a name="create-a-controltemplate-in-xaml"></a>在 XAML 中建立 ControlTemplate
 
 若要在應用程式層級定義 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)，則 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 必須新增至 `App` 類別。 根據預設，所有從範本建立的 Xamarin.Forms 應用程式會使用**應用程式**類別來實作 [`Application`](xref:Xamarin.Forms.Application) 子類別。 若要在應用程式層級宣告 `ControlTemplate`，請在應用程式的 `ResourceDictionary` 中使用 XAML，預設的 **App** 類別必須取代為 XAML **App** 類別和相關聯的程式碼後置，如下列程式碼範例所示：
 
@@ -87,7 +87,7 @@ public partial class App : Application
 
 ### <a name="re-theming-an-application-at-runtime"></a>在執行階段對應用程式進行重新佈景主題
 
-按一下 [變更佈景主題] 按鈕會執行 `OnButtonClicked` 方法，如下列程式碼範例所示：
+按一下 [變更佈景主題]  按鈕會執行 `OnButtonClicked` 方法，如下列程式碼範例所示：
 
 ```csharp
 void OnButtonClicked (object sender, EventArgs e)
@@ -104,9 +104,9 @@ void OnButtonClicked (object sender, EventArgs e)
 > [!NOTE]
 > 在 `ContentPage` 上可以指派 `Content` 屬性，且也可以設定 `ControlTemplate` 屬性。 發生此狀況時，如果 `ControlTemplate` 包含 `ContentPresenter` 執行個體，則指派給 `Content` 屬性的內容會由 `ControlTemplate` 內的 `ContentPresenter` 呈現。
 
-### <a name="setting-a-controltemplate-with-a-style"></a>使用樣式來設定 ControlTemplate
+### <a name="set-a-controltemplate-with-a-style"></a>使用樣式來設定 ControlTemplate
 
-[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 也可透過 [`Style`](xref:Xamarin.Forms.Style) 套用，以進一步擴展佈景主題能力。 這可藉由為 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 中的目標檢視建立「隱含」或「明確」樣式，以及設定 [`Style`](xref:Xamarin.Forms.Style) 執行個體中目標檢視的 `ControlTemplate` 屬性來達成。 下列程式碼範例示範已新增至應用程式層級 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 的「隱含」樣式：
+[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 也可透過 [`Style`](xref:Xamarin.Forms.Style) 套用，以進一步擴展佈景主題能力。 這可藉由為 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 中的目標檢視建立「隱含」  或「明確」  樣式，以及設定 [`Style`](xref:Xamarin.Forms.Style) 執行個體中目標檢視的 `ControlTemplate` 屬性來達成。 下列程式碼範例示範已新增至應用程式層級 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 的「隱含」  樣式：
 
 ```xaml
 <Style TargetType="ContentView">
@@ -114,7 +114,7 @@ void OnButtonClicked (object sender, EventArgs e)
 </Style>
 ```
 
-因為 [`Style`](xref:Xamarin.Forms.Style) 執行個體為「隱含」，所以會套用至應用程式中的所有 `ContentView` 執行個體。 因此，該執行個體不再需要設定 [`ContentView.ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) 屬性，如下列程式碼範例所示：
+因為 [`Style`](xref:Xamarin.Forms.Style) 執行個體為「隱含」  ，所以會套用至應用程式中的所有 `ContentView` 執行個體。 因此，該執行個體不再需要設定 [`ContentView.ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) 屬性，如下列程式碼範例所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.HomePage">
@@ -126,7 +126,7 @@ void OnButtonClicked (object sender, EventArgs e)
 
 如需樣式的詳細資訊，請參閱[樣式](~/xamarin-forms/user-interface/styles/index.md)。
 
-### <a name="creating-a-controltemplate-at-page-level"></a>在頁面層級建立 ControlTemplate
+### <a name="create-a-controltemplate-at-page-level"></a>在頁面層級建立 ControlTemplate
 
 除了將 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 執行個體建立於應用程式層級，也可以建立於頁面層級，如下列程式碼範例所示：
 
@@ -150,7 +150,7 @@ void OnButtonClicked (object sender, EventArgs e)
 
 在頁面層級新增 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 時，[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 會新增至 [`ContentPage`](xref:Xamarin.Forms.ContentPage)，然後 `ControlTemplate` 執行個體會包含在 `ResourceDictionary` 中。
 
-## <a name="creating-a-controltemplate-in-c35"></a>在 C&#35; 中建立 ControlTemplate
+## <a name="create-a-controltemplate-in-c35"></a>在 C&#35; 中建立 ControlTemplate
 
 若要在應用程式層級定義 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)，則必須建立表示 `ControlTemplate` 的 `class`。 類別應該衍生自用於範本的[配置](~/xamarin-forms/user-interface/layouts/index.md)中，如下列程式碼範例所示：
 
@@ -208,10 +208,43 @@ public class HomePageCS : ContentPage
 
 [`ContentView.Content`](xref:Xamarin.Forms.ContentView.Content) 屬性會設定為 [`StackLayout`](xref:Xamarin.Forms.StackLayout)，此屬性會定義要在 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 上顯示的內容。 此內容將由包含在 `TealTemplate` 中的 [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter) 顯示。 前述的相同機制會用於在執行階段將佈景主題變更為 `AquaTheme`。
 
-## <a name="summary"></a>總結
+## <a name="get-a-named-element-from-a-template"></a>從範本取得具名元素
 
-本文示範了如何建立和使用控制項範本。 控制項範本可在應用程式層級或頁面層級定義。
+在範本具現化之後，即可擷取控制項範本內的具名元素。 這可透過 `GetTemplateChild` 方法來完成，此方法會傳回已具現化之 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 視覺化樹狀結構中的具名元素。
 
+在控制項範本具現化之後，會呼叫範本的 `OnApplyTemplate` 方法。 因此應該會從 [`TemplatedPage`](xref:Xamarin.Forms.TemplatedPage) 衍生頁面 (例如 [`ContentPage`](xref:Xamarin.Forms.ContentPage)) 或 [`TemplatedView`](xref:Xamarin.Forms.TemplatedView) 衍生檢視 (例如 [`ContentView`](xref:Xamarin.Forms.ContentView)) 中的 `OnApplyTemplate` 覆寫呼叫 `GetTemplateChild` 方法。
+
+> [!IMPORTANT]
+> 只有在呼叫 `OnApplyTemplate` 方法之後，才應該呼叫 `GetTemplateChild` 方法。
+
+下列範例顯示自訂控制項的控制項範本：
+
+```xaml
+<controls:MyCustomControl ...>
+    <controls:MyCustomControl.ControlTemplate>
+         <ControlTemplate>
+              <Label x:Name="myLabel" />
+         </ControlTemplate>
+    <controls:MyCustomControl.ControlTemplate>
+</controls:MyCustomControl>
+```
+
+[`Label`](xref:Xamarin.Forms.Label) 元素已具名，因此可以針對自訂控制項在程式碼後置中擷取。 這是透過從自訂控制項的 `OnApplyTemplate` 覆寫呼叫 `GetTemplateChild` 方法來達成的：
+
+```csharp
+class MyCustomControl : ContentView
+{
+    Label myLabel;
+
+    protected override OnApplyTemplate()
+    {  
+        myLabel = GetTemplateChild("myLabel");
+    }
+    //...
+}
+```
+
+在此範例中，會擷取名為 `myLabel` 的 [`Label`](xref:Xamarin.Forms.Label) 物件。 `myLabel` 接著可由 `MyCustomControl` 類別存取並操作。
 
 ## <a name="related-links"></a>相關連結
 

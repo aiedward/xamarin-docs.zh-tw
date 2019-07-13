@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 1a5cc9f06fdca5944a9a3201ac15d63ca7f15453
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 084b9924af467459a017413a958ec2e46ff219fc
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61385508"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865301"
 ---
 # <a name="handoff-in-xamarinios"></a>在 Xamarin.iOS 中遞交
 
@@ -117,20 +117,20 @@ Apple 已引進遞移式 iOS 8 和 OS X Yosemite (10.10) 提供通用的機制�
 
     [![](handoff-images/provision01.png "啟用指定之識別碼的 iCloud 服務")](handoff-images/provision01.png#lightbox)
 5. 儲存您的變更。
-4. 按一下 **佈建設定檔** > **開發**和應用程式建立新的開發，為您佈建設定檔：
+6. 按一下 **佈建設定檔** > **開發**和應用程式建立新的開發，為您佈建設定檔：
 
     [![](handoff-images/provision02.png "建立新的開發，佈建應用程式設定檔")](handoff-images/provision02.png#lightbox)
-5. 下載並安裝新的佈建設定檔，或使用 Xcode 來下載並安裝設定檔。
-6. 編輯您的 Xamarin.iOS 專案選項，並確定您使用您剛才建立的佈建設定檔：
+7. 下載並安裝新的佈建設定檔，或使用 Xcode 來下載並安裝設定檔。
+8. 編輯您的 Xamarin.iOS 專案選項，並確定您使用您剛才建立的佈建設定檔：
 
     [![](handoff-images/provision03.png "選取剛才建立的佈建設定檔")](handoff-images/provision03.png#lightbox)
-7. 接著，編輯您**Info.plist**檔案，並確定您使用的用來建立佈建設定檔的應用程式識別碼：
+9. 接著，編輯您**Info.plist**檔案，並確定您使用的用來建立佈建設定檔的應用程式識別碼：
 
     [![](handoff-images/provision04.png "設定應用程式識別碼")](handoff-images/provision04.png#lightbox)
-8. 若要捲動**背景模式**區段，並檢查下列項目：
+10. 若要捲動**背景模式**區段，並檢查下列項目：
 
     [![](handoff-images/provision05.png "啟用所需的背景模式")](handoff-images/provision05.png#lightbox)
-9. 儲存所有檔案的變更。
+11. 儲存所有檔案的變更。
 
 使用這些設定之後，應用程式現在已準備好存取遞移式 Framework Api。 如需佈建的詳細資訊，請參閱我們[裝置佈建](~/ios/get-started/installation/device-provisioning/index.md)並[佈建您的應用程式](~/ios/get-started/installation/device-provisioning/index.md)輔助線。
 
@@ -403,7 +403,7 @@ public void PerformHandoff(NSUserActivity activity) {
 }
 ```
 
-`ContinueUserActivity`方法包含`UIApplicationRestorationHandler`活動繼續執行，您可以呼叫文件或回應的基礎。 您需要傳遞`NSArray`或還原處理常式呼叫時可還原的物件。 例如: 
+`ContinueUserActivity`方法包含`UIApplicationRestorationHandler`活動繼續執行，您可以呼叫文件或回應的基礎。 您需要傳遞`NSArray`或還原處理常式呼叫時可還原的物件。 例如：
 
 ```csharp
 completionHandler (new NSObject[]{Tab4});
@@ -427,7 +427,7 @@ public override void RestoreUserActivityState (NSUserActivity activity)
 
 由於遞移式依賴之間鬆散連接的集合 iOS 和 OS X 裝置的資訊的傳輸，傳輸程序有時可能會失敗。 您應該設計您的應用程式正常處理這些失敗，並通知使用者發生任何情況下。
 
-發生問題時，`DidFailToContinueUserActivitiy`方法的`AppDelegate`將呼叫。 例如: 
+發生問題時，`DidFailToContinueUserActivitiy`方法的`AppDelegate`將呼叫。 例如：
 
 ```csharp
 public override void DidFailToContinueUserActivitiy (UIApplication application, string userActivityType, NSError error)
@@ -453,7 +453,7 @@ public override void DidFailToContinueUserActivitiy (UIApplication application, 
 
 如果指定的網域符合`WebpageURL`屬性的值，遞移式會從該網域上的網站下載核准的應用程式識別碼的清單。 網站必須提供一份名為帶正負號的 JSON 檔案中的核准識別碼**apple 應用程式-站台關聯**(比方說， `https://company.com/apple-app-site-association`)。
 
-此 JSON 檔案包含指定表單中的應用程式識別碼的清單字典`<team identifier>.<bundle identifier>`。 例如: 
+此 JSON 檔案包含指定表單中的應用程式識別碼的清單字典`<team identifier>.<bundle identifier>`。 例如：
 
 ```csharp
 {
@@ -464,7 +464,7 @@ public override void DidFailToContinueUserActivitiy (UIApplication application, 
 }
 ```
 
-要簽署的 JSON 檔案 (使其具有正確`Content-Type`的`application/pkcs7-mime`)，使用**終端機**應用程式和`openssl`憑證與金鑰 iOS 所信任之憑證授權單位所發出的命令 (請參閱[https://support.apple.com/kb/ht5012 ](https://support.apple.com/kb/ht5012)清單)。 例如: 
+要簽署的 JSON 檔案 (使其具有正確`Content-Type`的`application/pkcs7-mime`)，使用**終端機**應用程式和`openssl`憑證與金鑰 iOS 所信任之憑證授權單位所發出的命令 (請參閱[https://support.apple.com/kb/ht5012 ](https://support.apple.com/kb/ht5012)清單)。 例如：
 
 ```csharp
 echo '{"activitycontinuation":{"apps":["YWBN8XTPBJ.com.company.FirstApp",
@@ -487,7 +487,7 @@ https://example.com/apple-app-site-association.
 
 ## <a name="supporting-handoff-in-document-based-apps"></a>在文件為基礎的應用程式中支援遞交
 
-如上所述，在 iOS 和 OS X 上的文件為基礎的應用程式將會自動支援遞交 iCloud 為基礎的文件如果應用程式的**Info.plist**檔案包含`CFBundleDocumentTypes`索引鍵`NSUbiquitousDocumentUserActivityType`。 例如: 
+如上所述，在 iOS 和 OS X 上的文件為基礎的應用程式將會自動支援遞交 iCloud 為基礎的文件如果應用程式的**Info.plist**檔案包含`CFBundleDocumentTypes`索引鍵`NSUbiquitousDocumentUserActivityType`。 例如：
 
 ```xml
 <key>CFBundleDocumentTypes</key>
@@ -542,7 +542,7 @@ UserActivity.AddUserInfoEntries (userInfo);
 UserActivity.BecomeCurrent ();
 ```
 
-接收的應用程式接著可以呼叫`GetContinuationStreams`方法`NSUserActivity`在其`AppDelegate`來建立資料流。 例如: 
+接收的應用程式接著可以呼叫`GetContinuationStreams`方法`NSUserActivity`在其`AppDelegate`來建立資料流。 例如：
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)

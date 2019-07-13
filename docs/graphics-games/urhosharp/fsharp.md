@@ -6,12 +6,12 @@ ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 99e8f8bf04465d0d61086139ba9889eae141207e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6269a7f2fa097136f492657d0ba7c6a1f056c38c
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61160582"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832323"
 ---
 # <a name="programming-urhosharp-with-f"></a>與進行 UrhoSharp 程式設計F#
 
@@ -97,20 +97,13 @@ type AppDelegate () =
         true
 ```
 
-`ApplicationOptions.Default`提供橫向模式應用程式的預設選項。 傳遞這些`ApplicationOptions`的預設建構函式您`Application`子類別 (請注意，當您定義`HelloWorld`類別，行`inherit Application(o)`呼叫基底類別建構函式)。 
+`ApplicationOptions.Default`提供橫向模式應用程式的預設選項。 傳遞這些`ApplicationOptions`的預設建構函式您`Application`子類別 (請注意，當您定義`HelloWorld`類別，行`inherit Application(o)`呼叫基底類別建構函式)。
 
-`Run`方法的程式`Application`啟動程式。 它定義為傳回`int`，這可以輸送到`ignore`。 
+`Run`方法的程式`Application`啟動程式。 它定義為傳回`int`，這可以輸送到`ignore`。
 
-產生的程式看起來應該像：
+產生的程式看起來應該類似此螢幕擷取畫面：
 
-![](fsharp-images/helloworldfsharp.png "產生的程式應該看起來像")
-
-
-
-
-
-
-
+![產生的程式的螢幕擷取畫面](fsharp-images/helloworldfsharp.png)
 
 ## <a name="related-links"></a>相關連結
 

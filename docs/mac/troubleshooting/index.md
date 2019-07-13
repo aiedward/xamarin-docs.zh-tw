@@ -8,22 +8,22 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/27/2018
-ms.openlocfilehash: 15f6d97a9411536df41e0653dbb3a3861cd0257e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e2868828b7c4fce29413d136db6e9b02b74c10ee
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61031345"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865808"
 ---
 # <a name="xamarinmac-troubleshooting"></a>Xamarin.Mac 疑難排解 
 
 _在本節中的文件涵蓋使用 Xamarin.Mac 疑難排解的特定功能。_
 
-##  <a name="troubleshooting-tipsmactroubleshootingtroubleshootingmd"></a>[疑難排解秘訣](~/mac/troubleshooting/troubleshooting.md)
+## <a name="troubleshooting-tipsmactroubleshootingtroubleshootingmd"></a>[疑難排解秘訣](~/mac/troubleshooting/troubleshooting.md)
 
 疑難排解祕訣和訣竅。
 
-##  <a name="errors-messages-mmpmactroubleshootingmmp-errorsmd"></a>[錯誤訊息 (mmp)](~/mac/troubleshooting/mmp-errors.md)
+## <a name="errors-messages-mmpmactroubleshootingmmp-errorsmd"></a>[錯誤訊息 (mmp)](~/mac/troubleshooting/mmp-errors.md)
 
 錯誤參考指南中，顯示建置 Xamarin.Mac 應用程式時，您可能會遇到最常見的錯誤。
 

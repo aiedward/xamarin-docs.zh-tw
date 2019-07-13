@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: fd085d2fb12e82233f6d3be2e2773a84539f837b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 82f1455ff5e5ac06b50664e1d4d533d4964b7a0e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61298859"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831120"
 ---
 # <a name="preface-to-enterprise-app-development"></a>企業應用程式開發的前置詞
 
@@ -26,7 +26,7 @@ ms.locfileid: "61298859"
 
 本指南被針對讀者已熟悉使用 Xamarin.Forms。 Xamarin.Forms 的詳細簡介，請參閱 < [Xamarin.Forms 文件](~/xamarin-forms/index.yml)，並[使用 Xamarin.Forms 建立行動應用程式](https://aka.ms/xamebook)。
 
-本指南是為了補充[.NET 微服務：容器化.NET 應用程式架構](https://aka.ms/microservicesebook)，其中著重於開發及部署容器化微服務。 其他值得一讀的指南還包括[架構和開發新式 Web 應用程式使用 ASP.NET Core 和 Microsoft Azure](http://aka.ms/WebAppEbook)，[容器化 Docker 應用程式生命週期 Microsoft 平台和工具](http://aka.ms/dockerlifecycleebook)，並[Microsoft 平台和行動裝置應用程式開發工具](http://aka.ms/MobAppDev/StndPDF)。
+本指南是為了補充[.NET 微服務：容器化.NET 應用程式架構](https://aka.ms/microservicesebook)，其中著重於開發及部署容器化微服務。 其他值得一讀的指南還包括[架構和開發新式 Web 應用程式使用 ASP.NET Core 和 Microsoft Azure](https://aka.ms/WebAppEbook)，[容器化 Docker 應用程式生命週期 Microsoft 平台和工具](https://aka.ms/dockerlifecycleebook)，並[Microsoft 平台和行動裝置應用程式開發工具](https://aka.ms/MobAppDev/StndPDF)。
 
 ## <a name="who-should-use-this-guide"></a>誰應該使用本指南
 

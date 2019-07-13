@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/21/2017
-ms.openlocfilehash: a40227454b597578ff1c1c247b326e523c23493b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 120bbfe0d5fa91e632fc56ee05431f5555653360
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61248513"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268602"
 ---
 # <a name="xamarinios-application-fundamentals"></a>Xamarin.iOS 應用程式基本概念
 
@@ -33,6 +33,10 @@ ms.locfileid: "61248513"
 ## <a name="creating-ios-applications-in-codeiosapp-fundamentalsios-code-onlymd"></a>[在程式碼中建立 iOS 應用程式](~/ios/app-fundamentals/ios-code-only.md)
 
 本文將探討如何建立 iOS 應用程式，完全以 Visual Studio 和 Visual Studio for mac 中使用的程式碼 它示範如何從 UIKit 中建立的檢視階層架構建置應用程式畫面在控制器中的空白專案範本開始。 然後，它還會討論如何建立可載入的自訂檢視控制器中。
+
+## <a name="exception-marshalingiosplatformexception-marshalingmd"></a>[例外狀況封送處理](~/ios/platform/exception-marshaling.md)
+
+描述如何 OBJECTIVE-C 與 managed 例外狀況會封送處理原生和 managed 框架之間。
 
 ## <a name="events-protocols-and-delegatesiosapp-fundamentalsdelegates-protocols-and-eventsmd"></a>[事件、 通訊協定與委派](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 

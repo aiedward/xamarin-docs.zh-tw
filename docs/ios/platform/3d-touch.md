@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 6a12d157b3de7c3841f5d69d209c01fbc612f79b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: abd9fe85be412539fd51d0e6164c79ce346377a7
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61279103"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832097"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>在 Xamarin.iOS 中的 3D 觸控簡介
 
@@ -105,7 +105,7 @@ public override void TraitCollectionDidChange(UITraitCollection previousTraitCol
 
 ### <a name="handling-peek-and-pop"></a>處理查看和 Pop
 
-在 iOS 裝置可以處理 3D 觸控，我們可以使用的執行個體`UIViewControllerPreviewingDelegate`類別來處理的顯示器**查看**並**快顯**項目詳細資料。 例如，如果我們有一個資料表檢視控制器呼叫`MasterViewController `我們可以使用下列程式碼來支援**查看**並**快顯**:
+在 iOS 裝置可以處理 3D 觸控，我們可以使用的執行個體`UIViewControllerPreviewingDelegate`類別來處理的顯示器**查看**並**快顯**項目詳細資料。 例如，如果我們有一個資料表檢視控制器呼叫`MasterViewController`我們可以使用下列程式碼來支援**查看**並**快顯**:
 
 ```csharp
 using System;

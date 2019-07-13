@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 5c3daf04c08e2109c46b24c198fef8e71fac2f3d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e9aed82ef0db9de35bd4cffe7daebcaa9389e42e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61262841"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832122"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>將資料儲存在本機的 SQLite.NET 資料庫
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
 
 在本快速入門中，您將了解如何：
 
@@ -40,11 +40,11 @@ ms.locfileid: "61262841"
 
 1. 啟動 Visual Studio，並開啟備忘稿方案。
 
-2. 在 [**方案總管] 中**，選取**備忘稿**專案，以滑鼠右鍵按一下並選取**管理 NuGet 套件...**:
+2. 在 [**方案總管] 中**，選取**備忘稿**專案，以滑鼠右鍵按一下並選取**管理 NuGet 套件...** :
 
     ![](database-images/vs/add-nuget-packages.png "新增 NuGet 套件")    
 
-3. 在 [NuGet 套件管理員] 中選取 [瀏覽] 索引標籤，搜尋 **sqlite-net-pcl** NuGet 套件並加以選取，然後按一下 [安裝] 按鈕，將其新增至專案：
+3. 在 [NuGet 套件管理員]  中選取 [瀏覽]  索引標籤，搜尋 **sqlite-net-pcl** NuGet 套件並加以選取，然後按一下 [安裝]  按鈕，將其新增至專案：
 
     ![](database-images/vs/add-package.png "新增套件")
 
@@ -52,7 +52,7 @@ ms.locfileid: "61262841"
     > 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
     > - **作者：** Frank A. Krueger
     > - **識別碼：** sqlite-net-pcl
-    > - **NuGet 連結：**[sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
+    > - **NuGet 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
     > 不論套件名稱為何，此 NuGet 套件可用於 .NET Standard 專案。
 
@@ -177,7 +177,21 @@ ms.locfileid: "61262841"
                 InitializeComponent();
                 MainPage = new NavigationPage(new NotesPage());
             }
-            ...
+
+            protected override void OnStart()
+            {
+                // Handle when your app starts
+            }
+
+            protected override void OnSleep()
+            {
+                // Handle when your app sleeps
+            }
+
+            protected override void OnResume()
+            {
+                // Handle when your app resumes
+            }
         }
     }
     ```
@@ -243,11 +257,11 @@ ms.locfileid: "61262841"
 
 1. 啟動 Visual Studio for Mac，並開啟備忘稿專案。
 
-2. 在  **Solution Pad**，選取**備忘稿**專案，以滑鼠右鍵按一下並選取**新增 > 新增 NuGet 套件...**:
+2. 在  **Solution Pad**，選取**備忘稿**專案，以滑鼠右鍵按一下並選取**新增 > 新增 NuGet 套件...** :
 
     ![](database-images/vsmac/add-nuget-packages.png "新增 NuGet 套件")    
 
-3. 在 [新增套件] 視窗中，搜尋 **sqlite-net-pcl** NuGet 套件並加以選取，然後按一下 [新增套件] 按鈕，將其新增至專案：
+3. 在 [新增套件]  視窗中，搜尋 **sqlite-net-pcl** NuGet 套件並加以選取，然後按一下 [新增套件]  按鈕，將其新增至專案：
 
     ![](database-images/vsmac/add-package.png "新增套件")
 
@@ -255,7 +269,7 @@ ms.locfileid: "61262841"
     > 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
     > - **作者：** Frank A. Krueger
     > - **識別碼：** sqlite-net-pcl
-    > - **NuGet 連結：**[sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
+    > - **NuGet 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
     > 不論套件名稱為何，此 NuGet 套件可用於 .NET Standard 專案。
 
@@ -380,14 +394,28 @@ ms.locfileid: "61262841"
                 InitializeComponent();
                 MainPage = new NavigationPage(new NotesPage());
             }
-            ...
+
+            protected override void OnStart()
+            {
+                // Handle when your app starts
+            }
+
+            protected override void OnSleep()
+            {
+                // Handle when your app sleeps
+            }
+
+            protected override void OnResume()
+            {
+                // Handle when your app resumes
+            }
         }
     }
     ```
 
     此程式碼定義`Database`建立新的屬性`NoteDatabase`為單一性，做為引數傳入的資料庫檔名的執行個體`NoteDatabase`建構函式。 將資料庫公開為唯一資料庫的優點為，所建立的單一資料庫連線會在應用程式執行時保持開啟，因此可避免每次執行資料庫作業時開啟和關閉資料庫檔案的費用。
 
-    選擇 [檔案] > [儲存] (或按下 **&#8984; + S**) 以將變更儲存到 **App.xaml.cs**，然後關閉檔案。
+    選擇 [檔案] > [儲存]  (或按下 **&#8984; + S**) 以將變更儲存到 **App.xaml.cs**，然後關閉檔案。
 
     > [!WARNING]
     > 嘗試建置應用程式現在將會產生將在後續步驟中修正的錯誤。
@@ -451,7 +479,7 @@ ms.locfileid: "61262841"
 若要設定應用程式使用 XAML 樣式的樣式，繼續下一個快速入門。
 
 > [!div class="nextstepaction"]
-> [下一步](styling.md)
+> [下一個](styling.md)
 
 ## <a name="related-links"></a>相關連結
 

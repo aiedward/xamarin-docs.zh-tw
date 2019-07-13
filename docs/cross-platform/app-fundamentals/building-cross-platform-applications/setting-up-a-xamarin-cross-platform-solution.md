@@ -6,12 +6,12 @@ ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
 author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
-ms.openlocfilehash: d20275bab4e4ce90f902a5e72321701d94b1d416
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
+ms.openlocfilehash: 2117eb91f25f2fb890b419fa7c4235b8f646729d
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66354063"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675030"
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>第 3 部分-設定 Xamarin 跨平台解決方案
 
@@ -104,7 +104,7 @@ ms.locfileid: "66354063"
 
 應用程式架構是由本圖所示：
 
- [ ![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "此圖說明應用程式架構")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
+ [![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "此圖說明應用程式架構")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
 
 此螢幕擷取畫面會顯示與共用的核心的專案、 iOS 和 Android 應用程式專案的方案設定。 共用專案中包含每個架構層 （商務、 服務、 資料和資料存取程式碼） 相關的程式碼：
 

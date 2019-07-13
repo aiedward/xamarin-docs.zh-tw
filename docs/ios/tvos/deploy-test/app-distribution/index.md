@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 0a40d50d02008439e81d5db19bcda0647203e2da
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d2f4031eeddbaa206f38b7b1c2bb49d21482c175
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61414402"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864938"
 ---
 # <a name="tvos-app-distribution-overview"></a>tvOS 應用程式散發概觀
 
@@ -28,8 +28,8 @@ _本文件提供散發技術的概觀，可供 Xamarin.tvOS 應用程式，並�
 Apple 提供下列方式來散發 tvOS 應用程式，支援的 Xamarin.tvOS:
 
 1. [**App Store**](#Apple-TV-App-Store-Distribution)
-2. [**內部 (Enterprise)**](#In-House-Distribution) 
-2. [**臨機操作**](#Ad_Hoc_Distribution) 
+2. [**內部 (Enterprise)** ](#In-House-Distribution) 
+3. [**臨機操作**](#Ad_Hoc_Distribution) 
 
 上述每樣方式都要求使用適當的*佈建設定檔*來佈建應用程式。 佈建設定檔是一種檔案，其包含程式碼簽署資訊、應用程式身分識別及預期的散發機制。 對於非 App Store 的散發，佈建設定檔也包含可用來部署應用程式之裝置的相關資訊。
 
@@ -66,7 +66,7 @@ Apple 提供下列方式來散發 tvOS 應用程式，支援的 Xamarin.tvOS:
 
 ## <a name="in-house-distribution"></a>內部作業散發
 
-內部散發 (有時稱為「企業散發」) 允許 **Apple Developer Enterprise Program** 成員在組織內部散發應用程式給同組織的其他成員。 內部散發的優勢在於不需要應用程式市集審查，且不限制可安裝應用程式的裝置數量。 但是請注意，**Apple Developer Enterprise Program** 成員**沒有權限**存取 iTunes Connect，因此被授權者需負責散發應用程式。
+內部散發 (有時稱為「企業散發」  ) 允許 **Apple Developer Enterprise Program** 成員在組織內部散發應用程式給同組織的其他成員。 內部散發的優勢在於不需要應用程式市集審查，且不限制可安裝應用程式的裝置數量。 但是請注意，**Apple Developer Enterprise Program** 成員**沒有權限**存取 iTunes Connect，因此被授權者需負責散發應用程式。
 
 如需有關如何著手設定與如何使用內部方式來散發您的應用程式的詳細資訊，請參閱[內部散發指南](~/ios/deploy-test/app-distribution/in-house-distribution.md)。 這份文件為 iOS 專屬，但是相同的技術用於 tvOS 應用程式。
 

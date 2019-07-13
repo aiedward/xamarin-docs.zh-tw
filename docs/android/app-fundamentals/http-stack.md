@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: a3704552c8fc147588919ecdde2813e831237d89
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e6d8ccea7331f53d2e7262630689075a8b9a1ff1
+ms.sourcegitcommit: 450106d5f05b4473bf7f5b9100b2eaf18c9110de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019316"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67522962"
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>HttpClient 堆疊和適用於 Android 的 SSL/TLS 實作選擇器
 
@@ -112,7 +112,7 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 ```
 
 > [!NOTE]
-> 基礎 Android 裝置必須支援 TLS 1.2 （即Android 4.1 和更新版本)
+> 基礎 Android 裝置必須支援 TLS 1.2 （即Android 4.1 和更新版本)。 請注意，TLS 1.2 的官方支援 Android 5.0 + 中。 不過有些裝置會在 Android 4.1 + 支援 TLS 1.2。
 
 
 ## <a name="ssltls-implementation-build-option"></a>SSL/TLS 實作建置選項
@@ -129,13 +129,13 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 
 -----
 
-例如: 
+例如:
 
 ```csharp
 var client = new HttpClient();
 ```
 
-如果 HttpClient 實作設為**受控**且 TLS 實作已設定為**原生 TLS 1.2 +**，然後在`client`物件會自動使用 managed`HttpClientHandler`和TLS 1.2 （BoringSSL 程式庫所提供） 針對其 HTTP 要求。
+如果 HttpClient 實作設為**受控**且 TLS 實作已設定為**原生 TLS 1.2 +** ，然後在`client`物件會自動使用 managed`HttpClientHandler`和TLS 1.2 （BoringSSL 程式庫所提供） 針對其 HTTP 要求。
 
 不過，如果**HttpClient 實作**設為`AndroidHttpClient`，然後所有`HttpClient`物件會使用基礎 Java 類別`java.net.URLConnection`並不會受到影響的**TLS/SSL 實作**值。 `WebRequest` 物件會使用 BoringSSL 程式庫。
 
@@ -155,7 +155,7 @@ var client = new HttpClient();
 
 有兩個使用 TLS 在 Xamarin.Android 中相關的環境變數：
 
-- `XA_HTTP_CLIENT_HANDLER_TYPE` &ndash; 這個環境變數宣告的預設`HttpMessageHandler`應用程式會使用。 例如: 
+- `XA_HTTP_CLIENT_HANDLER_TYPE` &ndash; 這個環境變數宣告的預設`HttpMessageHandler`應用程式會使用。 例如:
 
     ```csharp
     XA_HTTP_CLIENT_HANDLER_TYPE=Xamarin.Android.Net.AndroidClientHandler

@@ -6,12 +6,12 @@ ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: a93288829ff99027a4b33e7720a7f849df37e9b1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 08fa7f57f3fe44721bc00f0d59ed5df93300cf1e
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61423789"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864038"
 ---
 # <a name="troubleshooting-xamarin-workbooks-on-android"></a>疑難排解 Xamarin 在 Android 上的活頁簿
 
@@ -24,10 +24,10 @@ ms.locfileid: "61423789"
 
 您必須擁有執行 Android 5.0 或更新版本的模擬器。 不支援 ARM 模擬器。 使用`x86`或`x86_64`僅限裝置。
 
-請閱讀[我們的文件上設定 Android 模擬器][ android-emu]如果您不熟悉的程序。
+請閱讀[我們的文件上設定 Android 模擬器][android-emu]如果您不熟悉的程序。
 
 > [!NOTE]
-> 1.1 版及更早版本的活頁簿會嘗試 （及失敗 ！） 來使用 ARM 模擬器可用的話。 若要解決您的選擇，然後再開啟或建立 Android 的活頁簿，啟動 x86 模擬器。 活頁簿會永遠都優先選擇連接到執行中的模擬器，只要它是相容。
+> 1\.1 版及更早版本的活頁簿會嘗試 （及失敗 ！） 來使用 ARM 模擬器可用的話。 若要解決您的選擇，然後再開啟或建立 Android 的活頁簿，啟動 x86 模擬器。 活頁簿會永遠都優先選擇連接到執行中的模擬器，只要它是相容。
 
 ## <a name="workbooks-wont-load"></a>無法載入活頁簿
 
@@ -39,14 +39,14 @@ ms.locfileid: "61423789"
 
 如果您的模擬器並沒有網路存取，您可能需要遵循下列步驟來修正您的 HYPER-V 網路交換器。 如果您經常 Wi-fi 網路之間切換，您可能需要定期重複此步驟：
 
-0. **請確定任何重要的網路作業已完成，因為這可能會暫時中斷 Windows 連線從網際網路。**
+1. **請確定任何重要的網路作業已完成，因為這可能會暫時中斷 Windows 連線從網際網路。**
 1. 關閉模擬器。
-2. 開啟 `Hyper-V Manager`。
-3. 底下`Actions`，開啟`Virtual Switch Manager...`。
-4. 刪除所有虛擬交換器。
-5. 按一下 `OK`。
-6. 啟動 VS Android 模擬器。 您可能會提示重新建立虛擬網路交換器。
-7. 測試與 Android 模擬器的瀏覽器能夠存取網際網路。
+1. 開啟 `Hyper-V Manager`。
+1. 底下`Actions`，開啟`Virtual Switch Manager...`。
+1. 刪除所有虛擬交換器。
+1. 按一下 `OK`。
+1. 啟動 VS Android 模擬器。 您可能會提示重新建立虛擬網路交換器。
+1. 測試與 Android 模擬器的瀏覽器能夠存取網際網路。
 
 [android-emu]: https://developer.xamarin.com/guides/android/deployment,_testing,_and_metrics/debug-on-emulator/
 

@@ -1,19 +1,19 @@
 ---
-title: 簡介 UrhoSharp
+title: UrhoSharp 簡介
 description: 本文件說明 UrhoSharp 應用程式和各種的指南和範例應用程式，示範如何使用 UrhoSharp 連結的基本結構。
 ms.prod: xamarin
 ms.assetid: 18041443-5093-4AF7-8B20-03E00478EF35
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: a3e14ebca961e828fc578035adaca5ba2a809438
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 441a3cc19b4246fb2bdea54508142a894af5c051
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61288507"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832536"
 ---
-# <a name="an-introduction-to-urhosharp"></a>簡介 UrhoSharp
+# <a name="introduction-to-urhosharp"></a>UrhoSharp 簡介
 
 ![UrhoSharp 標誌](introduction-images/urhosharp-icon.png)
 
@@ -24,19 +24,19 @@ UrhoSharp 是 Xamarin 和.NET 開發人員的強大 3D 遊戲引擎。  它是�
 UrhoSharp 是功能的具有許多現成的遊戲引擎：
 
 - 功能強大的 3D 圖形呈現
-- [物理模擬](https://developer.xamarin.com/api/namespace/Urho.Physics/)（使用的項目符號的程式庫）
-- [場景處理](https://developer.xamarin.com/api/type/Urho.Scene/)
+- 物理模擬 （使用的項目符號的程式庫）
+- 場景處理
 - Await/非同步支援
-- [好記的動作的 API](https://developer.xamarin.com/api/namespace/Urho.Actions/)
-- [2D 到 3D 場景的整合](https://developer.xamarin.com/api/namespace/Urho.Urho2D/)
-- [使用 FreeType 字型呈現](https://developer.xamarin.com/api/type/Urho.Gui.FontFaceFreeType/)
-- [用戶端和網路功能的伺服器](https://developer.xamarin.com/api/namespace/Urho.Network/)
-- [匯入各種不同的資產](https://developer.xamarin.com/api/namespace/Urho.Resources/)（具有開啟資產的程式庫）
-- [瀏覽網格和 pathfinding](https://developer.xamarin.com/api/namespace/Urho.Navigation/) （使用繞道重新轉型）
-- [碰撞偵測的凸殼產生](https://developer.xamarin.com/api/type/Urho.Physics.CollisionShape/)（使用 StanHull）
-- [音訊播放](https://developer.xamarin.com/api/namespace/Urho.Audio/)(使用**libvorbis**)
+- 好記的動作的 API
+- 2D 到 3D 場景的整合
+- 使用 FreeType 字型呈現
+- 用戶端和網路功能的伺服器
+- 匯入各種不同的資產 （開啟資產的程式庫）
+- 瀏覽網格和 pathfinding （使用繞道重新轉型）
+- （使用 StanHull） 的衝突偵測的凸殼產生
+- 音訊播放 (使用**libvorbis**)
 
-## <a name="getting-started"></a>快速入門
+## <a name="get-started"></a>開始使用
 
 形式方便地散發 UrhoSharp [NuGet 套件](https://www.nuget.org/)，將它新增至您C#或F#Windows、 Mac、 Android 或 iOS 為目標的專案。  NuGet 隨附於執行您的程式所需的程式庫以及由引擎所使用的基本資產 (CoreData)。
 
@@ -68,8 +68,7 @@ UrhoSharp 是功能的具有許多現成的遊戲引擎：
 
 ## <a name="basic-structure"></a>基本結構
 
-您的遊戲應該子類別 [`Application`](https://developer.xamarin.com/api/type/Urho.Application/)
-類別，這是您將在其中設定您的遊戲 (在[ `Setup` ](https://developer.xamarin.com/api/member/Urho.Application.Setup/)方法) 並啟動您的遊戲 (在[ `Start` ](https://developer.xamarin.com/api/member/Urho.Application.Start)方法)。  然後，您會建構您的主要使用者介面。  我們將逐步解說一個小的範例，顯示設定 3D 場景，部分 UI 項目和簡單行為附加至該 Api。
+您的遊戲應該子類別`Application`類別，這是您將在其中設定您的遊戲 (在`Setup`方法) 並啟動您的遊戲 (在`Start`方法)。  然後，您會建構您的主要使用者介面。  我們將逐步解說一個小的範例，顯示設定 3D 場景，部分 UI 項目和簡單行為附加至該 Api。
 
 ```csharp
 class MySample : Application {
@@ -157,11 +156,11 @@ helloText.SetFont(
 UI.Root.AddChild(helloText);
 ```
 
-UI 架構有提供非常簡單的遊戲中使用者介面，以及其運作方式是加入至新的節點[ `UI.Root` ](https://developer.xamarin.com/api/property/Urho.Gui.UI.Root/)節點。
+UI 架構有提供非常簡單的遊戲中使用者介面，以及其運作方式是加入至新的節點`UI.Root`節點。
 
 我們的範例設定的第二個部分，主要的場景。  這牽涉到幾個步驟，建立 3D 場景，請在畫面中，建立 3D 方塊加入光線、 觀景窗和檢視區。  這些探索一節中詳細[場景、 節點、 元件和相機](~/graphics-games/urhosharp/using.md#scenenodescomponentsandcameras)。
 
-我們的範例中的第三個部分會觸發幾個動作。  動作是藉由呼叫隨選的節點可以執行配方，說明特定的效果，並一次建立他們[ `RunActionAsync` ](https://developer.xamarin.com/api/member/Urho.Node.RunActionsAsync)方法`Node`。
+我們的範例中的第三個部分會觸發幾個動作。  動作是藉由呼叫隨選的節點可以執行配方，說明特定的效果，並一次建立他們`RunActionAsync`方法`Node`。
 
 第一個動作縮放方塊彈跳效果和第二個旋轉方塊不限次數：
 
@@ -170,7 +169,7 @@ await boxNode.RunActionsAsync(
     new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1)));
 ```
 
-上述說明我們所建立的第一個動作有何[ `ScaleTo` ](https://developer.xamarin.com/api/type/Urho.Actions.ScaleTo/)動作，這是只是配方，指出您想要調整規模，以便針對其中一個值的第二個節點的小數位數屬性。  此動作接著要包裝的加/減速的動作[ `EaseBounceOut` ](https://developer.xamarin.com/api/type/Urho.Actions.EaseBounceInOut/)動作。  加/減速動作會扭曲線性執行動作，然後套用效果，在此情況下提供外彈跳效果。
+上述顯示我們所建立的第一個動作的方式是`ScaleTo`動作，這是只是配方，指出您想要調整規模，以便針對其中一個值的第二個節點的小數位數屬性。  此動作接著要包裝的加/減速的動作，`EaseBounceOut`動作。  加/減速動作會扭曲線性執行動作，然後套用效果，在此情況下提供外彈跳效果。
 讓我們配方可以寫成：
 
 ```csharp
@@ -190,4 +189,3 @@ Await 表示會想要的動作完成時繼續此行之後執行。  動作完成
 ## <a name="copyrights"></a>著作權
 
 這份文件會包含從 Xamarin Inc.的原始內容，但廣泛繪製 Urho3D 專案的開放原始碼文件，並包含 Cocos2D 專案的螢幕擷取畫面。
-

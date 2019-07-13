@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 362041efc5a19dfb70430054f3e4636d4fdfbd7e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c36b31e28011bea287903ee0681a316209abd22d
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61021690"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830000"
 ---
 <a name="compatibility"></a>
 
@@ -84,7 +84,8 @@ Android 支援通知的中繼資料，讓通知可以排序，並以智慧方式
 
 -   **類別目錄**&ndash;會通知系統如何處理在各種情況下，例如當裝置處於通知 *「 請勿打擾 」* 模式。
 
-**注意：** **可視性** 並 **分類** 在 Android 5.0 和無法使用在舊版的 Android 中推出。 從 Android 8.0[通知通道](#notif-chan)用來控制向使用者通知的呈現方式。
+> [!NOTE]
+> **可視性** 並 **分類** 在 Android 5.0 和無法使用在舊版的 Android 中推出。 從 Android 8.0[通知通道](#notif-chan)用來控制向使用者通知的呈現方式。
 
 
 ### <a name="expanded-layouts"></a>展開的版面配置
@@ -303,7 +304,7 @@ notification.Defaults |= NotificationDefaults.Vibrate;
 
 ### <a name="updating-a-notification"></a>正在更新通知
 
-如果您想要更新的通知內容，已發行之後，您可以重複使用現有`NotificationCompat.Builder`物件來建立新的通知物件，並發行這個識別碼上次告知的通知。 例如: 
+如果您想要更新的通知內容，已發行之後，您可以重複使用現有`NotificationCompat.Builder`物件來建立新的通知物件，並發行這個識別碼上次告知的通知。 例如：
 
 ```csharp
 // Update the existing notification builder content:
@@ -632,7 +633,7 @@ Xamarin.Android 會定義下列列舉來設定通知優先順序：
 
 -   `NotificationPriority.Min` &ndash; 如需更多資訊，使用者通知時，才檢視通知 （例如，位置或天氣資訊）。
 
-若要設定通知的優先順序，請呼叫[SetPriority](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetPriority/)方法`NotificationCompat.Builder`物件以傳遞的優先順序層級。 例如: 
+若要設定通知的優先順序，請呼叫[SetPriority](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetPriority/)方法`NotificationCompat.Builder`物件以傳遞的優先順序層級。 例如：
 
 ```csharp
 builder.SetPriority (NotificationPriority.High);
@@ -711,7 +712,7 @@ builder.SetVisibility (NotificationVisibility.Private);
 
 -   `Notification.CategoryStatus` &ndash; 裝置的相關資訊。
 
-通知排序時，通知的優先順序的優先順序高於其分類設定。 比方說，高優先順序通知將會顯示為抬頭即使它屬於`Promo`類別目錄。 若要設定通知的類別目錄，請呼叫`SetCategory`方法的`NotificationCompat.Builder`物件以傳遞的分類設定。 例如: 
+通知排序時，通知的優先順序的優先順序高於其分類設定。 比方說，高優先順序通知將會顯示為抬頭即使它屬於`Promo`類別目錄。 若要設定通知的類別目錄，請呼叫`SetCategory`方法的`NotificationCompat.Builder`物件以傳遞的分類設定。 例如：
 
 ```csharp
 builder.SetCategory (Notification.CategoryCall);
@@ -752,7 +753,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
 }
 ```
 
-在此範例中，應用程式的**目標 Framework**設為 Android 5.0 和**最低 Android 版本**設定為**Android 4.1 (API 層級 16)**。 因為`SetCategory`是可在 API 層級 21 及更新版本中，此程式碼範例會呼叫`SetCategory`它時才可用&ndash;它將不會呼叫`SetCategory`API 層級時小於 21。
+在此範例中，應用程式的**目標 Framework**設為 Android 5.0 和**最低 Android 版本**設定為**Android 4.1 (API 層級 16)** 。 因為`SetCategory`是可在 API 層級 21 及更新版本中，此程式碼範例會呼叫`SetCategory`它時才可用&ndash;它將不會呼叫`SetCategory`API 層級時小於 21。
 
 
 ### <a name="lock-screen-visibility"></a>鎖定螢幕的可見性

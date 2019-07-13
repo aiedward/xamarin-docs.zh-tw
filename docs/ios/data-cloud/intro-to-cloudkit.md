@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/11/2016
-ms.openlocfilehash: daea27472ac7c0578c1cfd79ebd96428212fafb3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8ef12c8b0822f3d0486f584878f572a266b0d44e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61165297"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831868"
 ---
 # <a name="cloudkit-in-xamarinios"></a>在 Xamarin.iOS 中 CloudKit
 
@@ -501,7 +501,7 @@ CloudKit 支援下列類型的`NSPredicates`處理查詢時：
     NSPredicate.FromFormat(string.Format("ALL tokenize({0}, 'Cdl') IN allTokens", "after session"))
     ```
     
- 6. CloudKit 支援複合使用聯結的述詞`AND`運算子。
+6. CloudKit 支援複合使用聯結的述詞`AND`運算子。
     
     ```
     NSPredicate.FromFormat(string.Format("start > {0} AND name = '{1}'", (NSDate)date, recordName))

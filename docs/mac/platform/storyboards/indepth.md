@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 61d598f90747cf47b613012328f77b4bd8953a41
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e24b448bedc60a537bfcd4a5bfbdbe9562163818
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61032987"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865926"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>使用 xamarin.mac 的分鏡腳本
 
@@ -273,17 +273,17 @@ namespace OnCardMac
 
     [![](indepth-images/ref01.png "加入新的分鏡腳本")](indepth-images/ref01.png#lightbox)
 2. 在 [**方案總管] 中**，連按兩下以開啟它以在 Xcode 的 Interface Builder 中編輯新的分鏡腳本名稱。
-2. 設計新分鏡腳本場景的版面配置，以及您通常會儲存您的變更： 
+3. 設計新分鏡腳本場景的版面配置，以及您通常會儲存您的變更： 
 
     [![](indepth-images/ref02.png "設計介面")](indepth-images/ref02.png#lightbox)
-3. 切換到 分鏡腳本，您要在介面產生器中新增的參考。
-4. 拖曳**參考分鏡腳本**從**物件程式庫**拖曳至設計介面： 
+4. 切換到 分鏡腳本，您要在介面產生器中新增的參考。
+5. 拖曳**參考分鏡腳本**從**物件程式庫**拖曳至設計介面： 
 
     [![](indepth-images/ref03.png "選取程式庫中的分鏡腳本的參考")](indepth-images/ref03.png#lightbox)
-5. 在 **屬性偵測器**，選取的名稱**分鏡腳本**您上面所建立： 
+6. 在 **屬性偵測器**，選取的名稱**分鏡腳本**您上面所建立： 
 
     [![](indepth-images/ref04.png "設定參考")](indepth-images/ref04.png#lightbox)
-6. UI 上的小工具 （例如按鈕） 現有的場景 control + 按一下，並建立以新的 Segue**分鏡腳本參考**您剛建立。  從快顯功能表中選取**顯示**完成 Segue: 
+7. UI 上的小工具 （例如按鈕） 現有的場景 control + 按一下，並建立以新的 Segue**分鏡腳本參考**您剛建立。  從快顯功能表中選取**顯示**完成 Segue: 
 
     [![](indepth-images/ref06.png "設定 Segue 類型")](indepth-images/ref06.png#lightbox) 
 8. 將您的變更儲存到分鏡腳本。
@@ -304,14 +304,14 @@ namespace OnCardMac
 3. 在 **身分識別偵測器**，輸入**分鏡腳本識別碼**新場景的視窗控制站： 
 
     [![](indepth-images/ref08.png "設定分鏡腳本識別碼")](indepth-images/ref08.png#lightbox)
-3. 開啟分鏡腳本，您要在介面產生器中新增的參考。
-4. 拖曳**參考分鏡腳本**從**物件程式庫**拖曳至設計介面： 
+4. 開啟分鏡腳本，您要在介面產生器中新增的參考。
+5. 拖曳**參考分鏡腳本**從**物件程式庫**拖曳至設計介面： 
 
     [![](indepth-images/ref03.png "從程式庫中選取 分鏡腳本參考")](indepth-images/ref03.png#lightbox)
-5. 在 **身分識別偵測器**，選取的名稱**分鏡腳本**和**參考識別碼**（分鏡腳本識別碼） 您先前建立的場景： 
+6. 在 **身分識別偵測器**，選取的名稱**分鏡腳本**和**參考識別碼**（分鏡腳本識別碼） 您先前建立的場景： 
 
     [![](indepth-images/ref09.png "設定參考識別碼")](indepth-images/ref09.png#lightbox)
-6. UI 上的小工具 （例如按鈕） 現有的場景 control + 按一下，並建立以新的 Segue**分鏡腳本參考**您剛建立。 從快顯功能表中選取**顯示**完成 Segue: 
+7. UI 上的小工具 （例如按鈕） 現有的場景 control + 按一下，並建立以新的 Segue**分鏡腳本參考**您剛建立。 從快顯功能表中選取**顯示**完成 Segue: 
 
     [![](indepth-images/ref06.png "設定 Segue 類型")](indepth-images/ref06.png#lightbox) 
 8. 將您的變更儲存到分鏡腳本。
@@ -332,7 +332,7 @@ namespace OnCardMac
 3. 在 **身分識別偵測器**，輸入**分鏡腳本識別碼**新場景的視窗控制站： 
 
     [![](indepth-images/ref12.png "設定分鏡腳本識別碼")](indepth-images/ref12.png#lightbox)
-3. 拖曳**參考分鏡腳本**從**工具箱**拖曳至設計介面： 
+4. 拖曳**參考分鏡腳本**從**工具箱**拖曳至設計介面： 
 
     [![](indepth-images/ref03.png "從程式庫中選取 分鏡腳本參考")](indepth-images/ref03.png#lightbox)
 5. 在 **屬性偵測器**，選取**參考識別碼**（分鏡腳本識別碼） 您先前建立的場景： 
@@ -341,8 +341,8 @@ namespace OnCardMac
 6. UI 上的小工具 （例如按鈕） 現有的場景 control + 按一下，並建立以新的 Segue**分鏡腳本參考**您剛建立。 從快顯功能表中選取**顯示**完成 Segue: 
 
     [![](indepth-images/ref06.png "選取 Segue 類型")](indepth-images/ref06.png#lightbox) 
-8. 將您的變更儲存到分鏡腳本。
-9. 返回 Visual Studio for Mac 將會同步處理您的變更。
+7. 將您的變更儲存到分鏡腳本。
+8. 返回 Visual Studio for Mac 將會同步處理您的變更。
 
 當應用程式執行且使用者按下的 UI 項目，您所建立的 Segue 場景中填入從給定**分鏡腳本識別碼**將顯示同一個分鏡腳本參考中所指定的分鏡腳本中。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: a837d680a21b9cdbc39e42f5fa3520622e0b49aa
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 60b450cba73166462747de41176575da27190e0a
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827194"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832392"
 ---
 # <a name="images-and-icons-in-xamarinios"></a>映像和在 Xamarin.iOS 中的圖示
 
@@ -46,10 +46,10 @@ _本節包含各種不同的文章，涵蓋使用 Xamarin.iOS 應用程式，例
 
 Apple iOS 10.3 可讓應用程式來管理它的圖示已新增數個增強功能：
 
- - `ApplicationIconBadgeNumber` -取得或設定跳板系列中的應用程式圖示的徽章。
- - `SupportsAlternateIcons` -如果`true`應用程式有另一組的圖示。
- - `AlternateIconName` -傳回目前選取的替代圖示的名稱或`null`如果使用的主要圖示。
- - `SetAlternameIconName` -使用這個方法來指定替代的圖示切換應用程式的圖示。
+- `ApplicationIconBadgeNumber` -取得或設定跳板系列中的應用程式圖示的徽章。
+- `SupportsAlternateIcons` -如果`true`應用程式有另一組的圖示。
+- `AlternateIconName` -傳回目前選取的替代圖示的名稱或`null`如果使用的主要圖示。
+- `SetAlternameIconName` -使用這個方法來指定替代的圖示切換應用程式的圖示。
 
 
 ## <a name="launch-screensiosapp-fundamentalsimages-iconslaunch-screensmd"></a>[啟動畫面](~/ios/app-fundamentals/images-icons/launch-screens.md)

@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: 7fbd2a81c30726bc6c38586186e9334ddd4ea282
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 27a3393e6eda9f26ea15003edc5022246ff4deff
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61193027"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67659764"
 ---
 在此練習中，您將建立使用者介面來使用先前建立的資料存取類別。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. 在 [方案總管] 的 **LocalDatabaseTutorial** 專案中，按兩下 **MainPage.xaml** 將其開啟。 然後在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
+1. 在 [方案總管]  的 **LocalDatabaseTutorial** 專案中，按兩下 **MainPage.xaml** 將其開啟。 然後在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -40,7 +40,7 @@ ms.locfileid: "61193027"
 
     此外，[`Entry`](xref:Xamarin.Forms.Entry) 執行個體和 [`ListView`](xref:Xamarin.Forms.ListView) 會有以 `x:Name` 屬性指定的名稱。 這可讓程式碼後置檔案使用指派的名稱來存取這些物件。
 
-1. 在 [方案總管] 的 **LocalDatabaseTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnAppearing` 覆寫和 `OnButtonClicked` 事件處理常式新增至類別：
+1. 在 [方案總管]  的 **LocalDatabaseTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnAppearing` 覆寫和 `OnButtonClicked` 事件處理常式新增至類別：
 
     ```csharp
     protected override async void OnAppearing()
@@ -70,17 +70,17 @@ ms.locfileid: "61193027"
     > [!NOTE]
     > `OnAppearing` 方法覆寫會在 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 配置完成後 (但在變成可見狀態之前) 執行。 因此，這是設定 Xamarin.Forms 檢視內容的好地方。
 
-1. 在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式。
+1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式。
 
     輸入數個資料項目，點選每個資料項目的 [`Button`](xref:Xamarin.Forms.Button)。 這會將資料儲存至資料庫，並以所有資料庫資料重新填入 [`ListView`](xref:Xamarin.Forms.ListView)：
 
     [![iOS 和 Android 上的本機 SQLite.NET 資料庫資料保留螢幕擷取畫面](../images/consume-data-access-classes.png "本機資料庫的資料保留")](../images/consume-data-access-classes-large.png#lightbox "本機資料庫的資料保留")
 
-    如需 Xamarin.Forms 中有關本機資料庫的詳細資訊，請參閱 [Xamarin.Forms 本機資料庫 (指南)](~/xamarin-forms/app-fundamentals/databases.md)
+    如需 Xamarin.Forms 中有關本機資料庫的詳細資訊，請參閱 [Xamarin.Forms 本機資料庫 (指南)](~/xamarin-forms/data-cloud/data/databases.md)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 在 [Solution Pad] 的 **LocalDatabaseTutorial** 專案中，按兩下 **MainPage.xaml** 將其開啟。 然後在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
+1. 在 [Solution Pad]  的 **LocalDatabaseTutorial** 專案中，按兩下 **MainPage.xaml** 將其開啟。 然後在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -110,7 +110,7 @@ ms.locfileid: "61193027"
 
     此外，[`Entry`](xref:Xamarin.Forms.Entry) 執行個體和 [`ListView`](xref:Xamarin.Forms.ListView) 會有以 `x:Name` 屬性指定的名稱。 這可讓程式碼後置檔案使用指派的名稱來存取這些物件。
 
-1. 在 [Solution Pad] 的 **LocalDatabaseTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnAppearing` 覆寫和 `OnButtonClicked` 事件處理常式新增至類別：
+1. 在 [Solution Pad]  的 **LocalDatabaseTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnAppearing` 覆寫和 `OnButtonClicked` 事件處理常式新增至類別：
 
     ```csharp
     protected override async void OnAppearing()
@@ -140,10 +140,10 @@ ms.locfileid: "61193027"
     > [!NOTE]
     > `OnAppearing` 方法覆寫會在 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 配置完成後 (但在變成可見狀態之前) 執行。 因此，這是設定 Xamarin.Forms 檢視內容的好地方。
 
-1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式。
+1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式。
 
     輸入數個資料項目，點選每個資料項目的 [`Button`](xref:Xamarin.Forms.Button)。 這會將資料儲存至資料庫，並以所有資料庫資料重新填入 [`ListView`](xref:Xamarin.Forms.ListView)：
 
     [![iOS 和 Android 上的本機 SQLite.NET 資料庫資料保留螢幕擷取畫面](../images/consume-data-access-classes.png "本機資料庫的資料保留")](../images/consume-data-access-classes-large.png#lightbox "本機資料庫的資料保留")
 
-    如需 Xamarin.Forms 中有關本機資料庫的詳細資訊，請參閱 [Xamarin.Forms 本機資料庫 (指南)](~/xamarin-forms/app-fundamentals/databases.md)
+    如需 Xamarin.Forms 中有關本機資料庫的詳細資訊，請參閱 [Xamarin.Forms 本機資料庫 (指南)](~/xamarin-forms/data-cloud/data/databases.md)

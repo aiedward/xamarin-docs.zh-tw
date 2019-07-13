@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 36164e1e9f92b5a5520d10f769f3953cfa2ceb85
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a8fe2c2765676db52c23fd7c475f218f14697caf
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61412845"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675235"
 ---
 # <a name="working-with-watchos-settings-in-xamarin"></a>使用 watchOS 在 Xamarin 中的設定
 
@@ -36,7 +36,7 @@ Apple Watch 應用程式可以使用相同的設定功能，為 iOS 應用程式
 
 3. 加入新的金鑰`ApplicationGroupContainerIdentifier`要**Root.plist**值設為您設定之後，（例如應用程式群組。 `group.com.xamarin.WatchSettings` 在範例中）：
 
-   [ ![](settings-images/settings-appgroup-sml.png "新增 Root.plist ApplicationGroupContainerIdentifier 機")](settings-images/settings-appgroup.png#lightbox)
+   [![](settings-images/settings-appgroup-sml.png "新增 Root.plist ApplicationGroupContainerIdentifier 機")](settings-images/settings-appgroup.png#lightbox)
 
 4. 編輯**Settings-Watch.bundle/Root.plist**範本檔案來包含您想要使用的選項包含一個群組。
   文字欄位、 切換開關和滑桿的預設值 （您可以刪除並取代為您自己的設定）：

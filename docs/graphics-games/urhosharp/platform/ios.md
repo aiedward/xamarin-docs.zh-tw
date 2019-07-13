@@ -6,14 +6,14 @@ ms.assetid: 7B06567E-E789-4EA1-A2A9-F3B2212EDD23
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: f15ae458c6bd613b59700908ad7c121315e377ab
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3efdbfcfdd670525dbf3198deb17c4631a889c56
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61302631"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832466"
 ---
-# <a name="urhosharp-ios-and-tvos-support"></a>UrhoSharp iOS 和 tvOS 支援
+# <a name="urhosharp-ios-and-tvos-support"></a>UrhoSharp iOS 和 tvOS 的支援
 
 雖然 Urho 是可攜式類別庫，並可讓相同的 API，來使用於各種平台的遊戲邏輯，您仍然需要初始化 Urho，在您的平台特定的驅動程式，以及在某些情況下，您會想要充分利用平台特定功能.
 
@@ -74,4 +74,3 @@ window.AddSubview (view);
 ```csharp
 new MyGame().Run ();
 ```
-

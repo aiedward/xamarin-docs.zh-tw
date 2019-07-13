@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f0e2c93c4a6be0e83c9c4f1607b125b8d240ccc1
-ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.openlocfilehash: db5fd78a7907826bcb60ce1c2635491e01f0c02b
+ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557211"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194943"
 ---
 # <a name="contributing"></a>貢獻
 
@@ -70,13 +70,13 @@ Xamarin 小組會檢閱您的 PR，並會讓您知道變更是否適合 (透過 
 以下是一份您投稿 .NET 文件時，應謹記在心的指導規則清單。
 
 - 請**不要**提交大量提取要求，讓我們措手不及。 而是請您先提出問題並開始討論，我們會在您投入大量的時間之前，先行確認方向。
-- **請務必**閱讀[樣式指南](../contributing-guidelines/template.md)與[語態和語氣](../contributing-guidelines/voice-tone.md)指導方針。
-- **請務必**使用[範本](../contributing-guidelines/template.md)檔案作為您開始工作的起點。
+- **請務必**閱讀[樣式指南](contributing-guidelines/template.md)與[語態和語氣](contributing-guidelines/voice-tone.md)指導方針。
+- **請務必**使用[範本](contributing-guidelines/template.md)檔案作為您開始工作的起點。
 - **請務必**在對文章進行作業之前，先在分叉上建立您自己的分支。
 - **請務必**遵循 [GitHub 流程的工作流程](https://guides.github.com/introduction/flow/)。
 - **請務必**利用部落格及推特 (或任何其他形式)，頻繁地發表您的文章！
 
 > [!NOTE]
-> 您可能注意到有部份的主題未完全遵循此處所指定的指導方針，以及[樣式指南](./contributing-guidelines/template.md)。 我們目前正在努力達到整個網站的一致性。 
+> 您可能注意到有部份的主題未完全遵循此處所指定的指導方針，以及[樣式指南](contributing-guidelines/template.md)。 我們目前正在努力達到整個網站的一致性。 
 
 

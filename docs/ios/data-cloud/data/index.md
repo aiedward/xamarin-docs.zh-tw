@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/11/2016
-ms.openlocfilehash: 8d2513ba1c2ae2769e81659c98f3897f33d83fbf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 420f52a055dc1c03a017723ab34c2fc3b5363656
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218034"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650234"
 ---
 # <a name="xamarinios-data-access"></a>Xamarin.iOS 資料存取
 
@@ -30,7 +30,7 @@ Xamarin.iOS 支援資料庫存取 Api，例如：
 
 這兩個範例方案包含 iOS 和 Android 範例應用程式專案。
 
-針對 Xamarin.Forms 應用程式，請閱讀[使用資料庫](~/xamarin-forms/app-fundamentals/databases.md)其中說明如何使用 SQLite 與 Xamarin.Forms PCL 程式庫。
+針對 Xamarin.Forms 應用程式，請閱讀[使用資料庫](~/xamarin-forms/data-cloud/data/databases.md)其中說明如何使用 SQLite 與 Xamarin.Forms PCL 程式庫。
 
 ## <a name="sections"></a>章節
 
@@ -53,4 +53,4 @@ Xamarin.iOS 支援資料庫存取 Api，例如：
 - [DataAccess Basic （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess 進階 （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [iOS 資料配方](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
-- [Xamarin.Forms 資料存取](~/xamarin-forms/app-fundamentals/databases.md)
+- [Xamarin.Forms 資料存取](~/xamarin-forms/data-cloud/data/databases.md)

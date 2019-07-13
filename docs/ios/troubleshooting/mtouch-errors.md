@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: e6e3a989db922dc2941cca4c888c862ffe159241
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6d7684df771f24ecf9126f472e7d799eea4a5431
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61422048"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832692"
 ---
 # <a name="xamarinios-errors"></a>Xamarin.iOS 錯誤
 
@@ -595,7 +595,7 @@ Xamarin.iOS 需要的標頭檔，從指定的錯誤訊息，來建置您的應�
 
 錯誤訊息中所述的組件全部會編譯成單一的靜態物件。 這不允許，每個組件必須先編譯成不同的靜態物件。
 
-例如: 
+例如：
 
     --assembly-build-target:Assembly1.dll=staticobject=MyBinary --assembly-build-target:Assembly2.dll=staticobject=MyBinary
 
@@ -838,7 +838,7 @@ class Program {
 
 碰觸的檔案 （這為了要確保正確地完成部分組建） 時，就會發生失敗。
 
-最有可能可以忽略這個警告;發生任何問題時提報 bug (https://bugzilla.xamarin.com] (https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) ，將會加以調查。
+最有可能可以忽略這個警告;發生任何問題時提報 bug (https://bugzilla.xamarin.com ] (https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) ，將會加以調查。
 
 ## <a name="mt1xxx-project-related-error-messages"></a>MT1xxx:專案相關的錯誤訊息
 
@@ -1840,7 +1840,7 @@ Bitcode 支援需要使用 LLVM AOT 後端 (-llvm)。
 
 <a name="MT4117" />
 
-### <a name="mt4117-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4117:註冊機構位於方法簽章不符合 '*。*'-選取器指出此方法會採用 * 參數，而受管理的方法有 * 參數。
+### <a name="mt4117-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4117:註冊機構位於方法簽章不符合 ' *。* '-選取器指出此方法會採用 * 參數，而受管理的方法有 * 參數。
 
 <a name="MT4118" />
 
@@ -1934,7 +1934,7 @@ Bitcode 支援需要使用 LLVM AOT 後端 (-llvm)。
 
 <a name="MT4140" />
 
-### <a name="mt4140-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-variadic-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4140:註冊機構位於方法簽章不符合 '*。*'-選取器可讓您表示 variadic 方法會採用 * 參數，而受管理的方法有 * 參數。
+### <a name="mt4140-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-variadic-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4140:註冊機構位於方法簽章不符合 ' *。* '-選取器可讓您表示 variadic 方法會採用 * 參數，而受管理的方法有 * 參數。
 
 <a name="MT4141" />
 
@@ -2141,7 +2141,7 @@ Xamarin.iOS 無法產生 P/Invoke 包裝函式的函式所述。
 
 在註冊機構不支援上述類型之間轉換。
 
-如果有問題的 API 由 Xamarin.iOS; 提供，這會是 Xamarin.iOS 中的 bug請將 bug 歸檔在 [http://bugzilla.xamarin.com][1] 。
+如果有問題的 API 由 Xamarin.iOS; 提供，這會是 Xamarin.iOS 中的 bug請將 bug 歸檔在[ http://bugzilla.xamarin.com ][1]。
 
 如果您遇到這個開發原生程式庫的繫結專案時，我們開啟新增支援新類型的組合。 如果發生這種情況，請提出要求的增強功能 ([http://bugzilla.xamarin.com][2]) 與測試案例，我們將會評估它。
 
@@ -2310,7 +2310,7 @@ Xamarin.iOS 無法產生 P/Invoke 包裝函式的函式所述。
 
 ### <a name="mt5214-native-linking-failed-undefined-symbol--this-symbol-was-referenced-the-managed-member--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-linked"></a>MT5214:原生連結失敗，未定義的符號: *。 參考這個符號的受管理的成員 *。 請確認所有必要的架構已連結的參考和原生程式庫。
 
-當 managed 程式碼包含不存在的原生方法 P/Invoke 時，會報告此錯誤。 例如: 
+當 managed 程式碼包含不存在的原生方法 P/Invoke 時，會報告此錯誤。 例如：
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -2322,9 +2322,9 @@ class MyImports {
 
 有幾個可能的解決方案：
 
-  -  從原始程式檔中移除有問題 P/Invoke。
-  -  啟用受管理的連結器 （這是在專案的 iOS 組建 選項中，藉由將 「 連結器行為 」 設定為 「 所有組件 」） 的所有組件。 這會有效地移除所有 P/Invokes 不使用應用程式 （自動，而不是以手動方式像前一個點）。 缺點是，這會讓您的模擬器組建略慢，而且如果它使用反映-可以找到連結器的詳細資訊，它可能會中斷您的應用程式[此處](~/ios/deploy-test/linker.md))
-  -  建立第二個的原生程式庫包含遺失的原生符號。 請注意，這只是因應措施 （如果您嘗試呼叫這些函式，您的應用程式會當機）。
+- 從原始程式檔中移除有問題 P/Invoke。
+- 啟用受管理的連結器 （這是在專案的 iOS 組建 選項中，藉由將 「 連結器行為 」 設定為 「 所有組件 」） 的所有組件。 這會有效地移除所有 P/Invokes 不使用應用程式 （自動，而不是以手動方式像前一個點）。 缺點是，這會讓您的模擬器組建略慢，而且如果它使用反映-可以找到連結器的詳細資訊，它可能會中斷您的應用程式[此處](~/ios/deploy-test/linker.md))
+- 建立第二個的原生程式庫包含遺失的原生符號。 請注意，這只是因應措施 （如果您嘗試呼叫這些函式，您的應用程式會當機）。
 
 <a name="MT5215" />
 
@@ -2741,7 +2741,7 @@ Xamarin.iOS 專案會經常參考原生的符號，以動態方式表示原生�
 - bool
 - 實數
 - 整數
-- date
+- 日期
 - 資料
 
 <a name="MT7046" />
@@ -2919,7 +2919,7 @@ Xamarin.iOS 專案會經常參考原生的符號，以動態方式表示原生�
 
 <a name="MT8009" />
 
-### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009:找不到要委派之方法的轉換方法的區塊 *。*'s 參數 # *。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
+### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009:找不到要委派之方法的轉換方法的區塊 *。* 's 參數 # *。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
 
 這表示未正確繫結 API。 如果這是 Xamarin 所公開的 API，請提報 bug 中我們 bugzilla ([http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS))，則為第三方繫結，請連絡廠商。
 
@@ -2931,7 +2931,7 @@ Xamarin.iOS 專案會經常參考原生的符號，以動態方式表示原生�
 
 <a name="MT8011" />
 
-### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011:找不到方法的傳回值的區塊轉換屬性 ([DelegateProxy]) 的委派 *。*。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
+### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011:找不到方法的傳回值的區塊轉換屬性 ([DelegateProxy]) 的委派 *。* 。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
 
 Xamarin.iOS 找不到所需的方法在執行階段 （若要將委派轉換至區塊） 項目。
 
@@ -2939,7 +2939,7 @@ Xamarin.iOS 找不到所需的方法在執行階段 （若要將委派轉換至�
 
 <a name="MT8012" />
 
-### <a name="mt8012-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8012:方法的傳回值的無效 DelegateProxyAttribute *。*:委派是 null。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
+### <a name="mt8012-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8012:方法的傳回值的無效 DelegateProxyAttribute *。* :委派是 null。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
 
 討論中方法的 DelegateProxy 屬性無效。
 
@@ -2947,7 +2947,7 @@ Xamarin.iOS 找不到所需的方法在執行階段 （若要將委派轉換至�
 
 <a name="MT8013" />
 
-### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013:方法的傳回值的無效 DelegateProxyAttribute *。*:委派 ({2}) 指定沒有 'Handler' 欄位的類型。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
+### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013:方法的傳回值的無效 DelegateProxyAttribute *。* :委派 ({2}) 指定沒有 'Handler' 欄位的類型。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
 
 討論中方法的 DelegateProxy 屬性無效。
 
@@ -2955,7 +2955,7 @@ Xamarin.iOS 找不到所需的方法在執行階段 （若要將委派轉換至�
 
 <a name="MT8014" />
 
-### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014:方法的傳回值的無效 DelegateProxyAttribute *。*:委派 ({2}) 'Handler' 欄位為 null。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
+### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014:方法的傳回值的無效 DelegateProxyAttribute *。* :委派 ({2}) 'Handler' 欄位為 null。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
 
 討論中方法的 DelegateProxy 屬性無效。
 
@@ -2963,7 +2963,7 @@ Xamarin.iOS 找不到所需的方法在執行階段 （若要將委派轉換至�
 
 <a name="MT8015" />
 
-### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015:方法的傳回值的無效 DelegateProxyAttribute *。*:委派 ({2}) 'Handler' 欄位不是委派，它是 *。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
+### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015:方法的傳回值的無效 DelegateProxyAttribute *。* :委派 ({2}) 'Handler' 欄位不是委派，它是 *。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
 
 討論中方法的 DelegateProxy 屬性無效。
 
@@ -2971,7 +2971,7 @@ Xamarin.iOS 找不到所需的方法在執行階段 （若要將委派轉換至�
 
 <a name="MT8016" />
 
-### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016:無法轉換為封鎖方法的傳回值的委派 *。*，輸入不是委派，因為它是 *。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
+### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016:無法轉換為封鎖方法的傳回值的委派 *。* ，輸入不是委派，因為它是 *。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
 
 討論中方法的 DelegateProxy 屬性無效。
 

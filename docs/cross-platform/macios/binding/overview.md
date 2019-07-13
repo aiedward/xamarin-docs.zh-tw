@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
 ms.date: 11/25/2015
-ms.openlocfilehash: ec173c0ed7881439ecbe2b5cf83c8f5484c7e5aa
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 93f90d2dad140f021c7e575afed44da1c5351eda
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977619"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830509"
 ---
 # <a name="overview-of-objective-c-bindings"></a>OBJECTIVE-C 繫結的概觀
 
@@ -24,9 +24,10 @@ _繫結程序的運作方式的詳細資料_
 2. 一旦您已撰寫的 [API 定義] C#，您編譯它來產生 「 繫結 」 組件。 這可以在[**命令列**](#commandline) ，或使用[**繫結專案**](#bindingproject) Visual Studio for Mac 或 Visual Studio 中。
 
 3. 「 繫結 」 該組然後會新增至您的 Xamarin 應用程式專案，因此您可以使用您所定義的 API 的原生功能。
-  繫結的專案是從您的應用程式的專案完全不同。
+   繫結的專案是從您的應用程式的專案完全不同。
 
-**注意：** 步驟 1 可以自動化的協助[**目標 Sharpie**](#objectivesharpie)。 它會檢查 Objective C API，並產生建議C#[API 定義]。 您可以自訂目標 Sharpie 所建立的檔案，並在繫結專案 （或在命令列上），請使用它們來建立您的繫結組件。 目標 Sharpie 不會建立單獨的繫結，它只是大型程序的選擇性部分。
+   > [!NOTE]
+   > 步驟 1 可以自動化的協助[**目標 Sharpie**](#objectivesharpie)。 它會檢查 Objective C API，並產生建議C#[API 定義]。 您可以自訂目標 Sharpie 所建立的檔案，並在繫結專案 （或在命令列上），請使用它們來建立您的繫結組件。 目標 Sharpie 不會建立單獨的繫結，它只是大型程序的選擇性部分。
 
 您也可以閱讀更多技術細節[運作方式](#howitworks)，這可協助您撰寫您的繫結。
 
