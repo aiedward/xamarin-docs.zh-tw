@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: a5402bb3b10387644282301075f63644149fcdc6
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 9daedbe9bba5a2923a247104c4e69ae2e1b635aa
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831536"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865777"
 ---
 # <a name="homekit-in-xamarinios"></a>在 Xamarin.iOS 中 HomeKit
 
@@ -59,20 +59,20 @@ HomeKit 所加諸的安全性需求，因為使用 HomeKit 架構的 Xamarin.iOS
 
     [![](homekit-images/provision01.png "啟用指定之識別碼的 「 HomeKit 」 服務")](homekit-images/provision01.png#lightbox)
 5. 儲存您的變更。
-4. 按一下 **佈建設定檔** > **開發**並建立新的開發，佈建您的應用程式設定檔： 
+6. 按一下 **佈建設定檔** > **開發**並建立新的開發，佈建您的應用程式設定檔： 
 
     [![](homekit-images/provision02.png "建立新的開發，佈建應用程式設定檔")](homekit-images/provision02.png#lightbox)
-5. 下載並安裝新的佈建設定檔，或使用 Xcode 來下載並安裝設定檔。
-6. 編輯您的 Xamarin.iOS 專案選項，並確定您使用您剛才建立的佈建設定檔： 
+7. 下載並安裝新的佈建設定檔，或使用 Xcode 來下載並安裝設定檔。
+8. 編輯您的 Xamarin.iOS 專案選項，並確定您使用您剛才建立的佈建設定檔： 
 
     [![](homekit-images/provision03.png "選取剛才建立的佈建設定檔")](homekit-images/provision03.png#lightbox)
-7. 接著，編輯您**Info.plist**檔案，並確定您使用的用來建立佈建設定檔的應用程式識別碼： 
+9. 接著，編輯您**Info.plist**檔案，並確定您使用的用來建立佈建設定檔的應用程式識別碼： 
 
     [![](homekit-images/provision04.png "設定應用程式識別碼 ")](homekit-images/provision04.png#lightbox)
-8. 最後，編輯您**Entitlements.plist**檔案，並確保**HomeKit**已選取權利： 
+10. 最後，編輯您**Entitlements.plist**檔案，並確保**HomeKit**已選取權利： 
 
     [![](homekit-images/provision05.png "啟用 HomeKit 權利")](homekit-images/provision05.png#lightbox)
-9. 儲存所有檔案的變更。
+11. 儲存所有檔案的變更。
 
 使用這些設定之後，應用程式現在已準備好存取 HomeKit 架構 Api。 如需佈建的詳細資訊，請參閱我們[裝置佈建](~/ios/get-started/installation/device-provisioning/index.md)並[佈建您的應用程式](~/ios/get-started/installation/device-provisioning/index.md)輔助線。
 

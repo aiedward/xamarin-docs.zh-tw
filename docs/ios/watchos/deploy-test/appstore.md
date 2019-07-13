@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: bf86759832a1aba0ccc1c144981af6ea4eae8670
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 58e3593dc09c76439a3e128e51f354c169d7e72e
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61343652"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865971"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>WatchOS 應用程式部署至 App Store
 
@@ -89,15 +89,15 @@ ms.locfileid: "61343652"
 
 1. 請確定啟動專案為 iOS 應用程式。 如果沒有，以滑鼠右鍵按一下 設定它：
 
-  ![](appstore-images/xs-startup.png "設定啟始專案")
+   ![](appstore-images/xs-startup.png "設定啟始專案")
 
 2. 選擇**AppStore**建置組態：
 
-  ![](appstore-images/xs-appstore.png "AppStore 組建組態")
+   ![](appstore-images/xs-appstore.png "AppStore 組建組態")
 
 3. 選擇**建置 > 封存**功能表項目，以啟動 封存處理序：
 
-  ![](appstore-images/xs-archive.png "[建置] 功能表")
+   ![](appstore-images/xs-archive.png "[建置] 功能表")
 
 您也可以選擇**檢視 > 封存...** 功能表項目，請參閱先前建立的封存。
 
@@ -111,21 +111,21 @@ Xcode 會自動顯示在 Visual Studio for mac 中建立的封存
 
 1. 啟動 Xcode，然後選擇**視窗中 > 組合管理**:
 
-  ![](appstore-images/xc-organizer.png "[視窗] 功能表")
+   ![](appstore-images/xc-organizer.png "[視窗] 功能表")
 
 2. 若要切換**封存**索引標籤，然後選取 使用 Visual Studio for Mac 中建立的封存：
 
-  ![](appstore-images/xc-archives.png "[封存] 索引標籤")
+   ![](appstore-images/xc-archives.png "[封存] 索引標籤")
 
 3. 選擇性地**驗證...** 封存，然後選擇 **提交...** 來上傳至 iTunes Connect 的應用程式。
 
 4. （如果您隸屬於多個），請選擇開發小組，然後確認 送出作業：
 
-  ![](appstore-images/xc-submit1.png "開發小組區段")
+   ![](appstore-images/xc-submit1.png "開發小組區段")
 
 5. 請瀏覽 iTunes Connect，以查看已上傳二進位檔。 移至您的應用程式設定 頁面，然後選擇**發行前版本**從上方的功能表，以查看**建置**清單：
 
-  [![](appstore-images/itc-prerelease-sml.png "在 iTunes Connect 中的 [應用程式組態] 頁面")](appstore-images/itc-prerelease.png#lightbox)
+   [![](appstore-images/itc-prerelease-sml.png "在 iTunes Connect 中的 [應用程式組態] 頁面")](appstore-images/itc-prerelease.png#lightbox)
 
 然後，您可以將核准的應用程式提交上**版本**頁面。 請參閱[iOS 應用程式散發概觀](~/ios/deploy-test/app-distribution/index.md)如需詳細資訊。
 
@@ -177,7 +177,7 @@ is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 請確定您有最新版本的 Visual Studio for Mac，且您**AppIcon.appiconset**包含一組完整的映像。 如果您仍然看到此錯誤，檢視的來源**Contents.json**以確認它包含所有必要的映像的項目。 或者，確定您使用最新版的 Xamarin，一旦刪除並重新建立**AppIcon.appiconset**。
 
 > [!IMPORTANT]
-> 沒有已知的 bug 在 Visual Studio for Mac 的監看式 圖示支援： 預期應為 88 x 88 像素映像**29x29@3x**映像 （這應該是 87 x 87 像素為單位）。
+> 沒有已知的 bug 在 Visual Studio for Mac 的監看式 圖示支援： 預期應為 88 x 88 像素映像 **29x29@3x** 映像 （這應該是 87 x 87 像素為單位）。
 
 
 您無法修正此問題在 Visual Studio for Mac-影像資產在 Xcode 中編輯，或以手動方式編輯**Contents.json**檔案 (比對[本例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。

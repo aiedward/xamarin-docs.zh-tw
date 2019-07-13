@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 26ab7880b3c4b6176c806783fec7a499d68511c3
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 696432fb51060a236780eedee0b60661e3a86712
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831900"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865185"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Xamarin.mac 的標準控制項
 
@@ -603,16 +603,16 @@ Popover 是暫時性的 UI 項目，可提供直接相關的控制項特定或�
 2. 拖曳**檢視控制器**從**程式庫偵測器**拖曳至**介面編輯器**: 
 
     [![](standard-controls-images/content02.png "從程式庫中選取檢視控制器")](standard-controls-images/content02.png#lightbox)
-4. 定義的大小和版面配置**的自訂檢視**: 
+3. 定義的大小和版面配置**的自訂檢視**: 
 
     [![](standard-controls-images/content04.png "編輯配置")](standard-controls-images/content04.png#lightbox)
-5. Control + 按一下，然後從快顯視窗拖曳至來源拖曳**檢視控制器**: 
+4. Control + 按一下，然後從快顯視窗拖曳至來源拖曳**檢視控制器**: 
 
     [![](standard-controls-images/content05.png "若要建立的 segue 拖曳")](standard-controls-images/content05.png#lightbox)
-6. 選取  **Popover**快顯功能表： 
+5. 選取  **Popover**快顯功能表： 
 
     [![](standard-controls-images/content06.png "設定 segue 類型")](standard-controls-images/content06.png#lightbox)
-7. 儲存變更並返回 Visual Studio for Mac 與 Xcode 同步處理。
+6. 儲存變更並返回 Visual Studio for Mac 與 Xcode 同步處理。
 
 <a name="Tab_Views" />
 

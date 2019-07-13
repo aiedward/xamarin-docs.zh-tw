@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 5c3c9714cb4d6cd077f898778f4388d63018fa00
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 79c1d7852cdde9b557965931706fcd24e43954f7
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831692"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865222"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中的分鏡腳本簡介
 
@@ -327,7 +327,7 @@ public partial class MainViewController : UIViewController
         - 色彩：紅色
         - 對齊方式：置中
         - 程式行：2
-        - 'Hidden' 核取的核取方塊 
+        - 'Hidden' 核取的核取方塊    
         
     [![](images/passwordvc.png "Center 行")](images/passwordvc.png#lightbox)
     
@@ -424,25 +424,25 @@ public partial class MainViewController : UIViewController
 
     [![](images/ref08.png "輸入新的場景檢視控制器分鏡腳本識別碼")](images/ref08.png#lightbox)
     
-3. 開啟分鏡腳本，您要在 iOS 設計工具中新增的參考。
+4. 開啟分鏡腳本，您要在 iOS 設計工具中新增的參考。
 
-4. 拖曳**參考分鏡腳本**從**工具箱**拖曳至設計介面： 
+5. 拖曳**參考分鏡腳本**從**工具箱**拖曳至設計介面： 
 
     [![](images/ref03.png "分鏡腳本參考")](images/ref03.png#lightbox)
     
-5. 在**Widget**索引標籤**屬性總管**，選取的名稱**分鏡腳本**而**參考識別碼**（分鏡腳本識別碼） 的您先前建立的場景： 
+6. 在**Widget**索引標籤**屬性總管**，選取的名稱**分鏡腳本**而**參考識別碼**（分鏡腳本識別碼） 的您先前建立的場景： 
 
     [![](images/ref09.png "小工具 索引標籤 ")](images/ref09.png#lightbox)
     
-6. UI 上的小工具 （例如按鈕） 現有的場景 control + 按一下，並建立以新的 Segue**分鏡腳本參考**您剛建立： 
+7. UI 上的小工具 （例如按鈕） 現有的場景 control + 按一下，並建立以新的 Segue**分鏡腳本參考**您剛建立： 
 
     [![](images/ref10.png "建立的 segue")](images/ref10.png#lightbox) 
     
-7. 從快顯功能表中選取**顯示**完成 Segue: 
+8. 從快顯功能表中選取**顯示**完成 Segue: 
 
     [![](images/ref06.png "選取顯示完成的 Segue")](images/ref06.png#lightbox) 
     
-8. 將您的變更儲存到分鏡腳本。
+9. 將您的變更儲存到分鏡腳本。
 
 當應用程式執行且使用者按下的 UI 項目，您所建立的 Segue 場景中填入從給定**分鏡腳本識別碼**將顯示從外部指定分鏡腳本參考中的分鏡腳本。
 
@@ -462,9 +462,9 @@ public partial class MainViewController : UIViewController
 
     [![](images/ref12.png "小工具 索引標籤")](images/ref12.png#lightbox)
     
-3. 拖曳**參考分鏡腳本**從**工具箱**拖曳至設計介面： 
+4. 拖曳**參考分鏡腳本**從**工具箱**拖曳至設計介面： 
 
-    [![](images/ref03.png "分鏡腳本參考")](images/ref03.png#lightbox)
+   [![](images/ref03.png "分鏡腳本參考")](images/ref03.png#lightbox)
     
 5. 在**Widget**索引標籤**屬性總管**，選取**參考識別碼**（分鏡腳本識別碼） 您先前建立的場景： 
 

@@ -6,12 +6,12 @@ ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: b40758fa562e57415cd3c0818763ef0a7ce5dcca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c30d70d8a36c0e5a9b9ff6ddc74710dec4fb86a4
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61199763"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864391"
 ---
 # <a name="apple-platform-ios-and-mac"></a>Apple 平台 （iOS 和 Mac）
 
@@ -21,7 +21,7 @@ ms.locfileid: "61199763"
 
 必須執行一些工作，使用者介面的程式碼和您想要共用的您應該使用[共用專案](~/cross-platform/app-fundamentals/shared-projects.md)可讓您放入單一專案中的共用，並讓它使用 Mac 和 iOS 參考時所編譯的程式碼。
 
-##  <a name="unified-apiunifiedindexmd"></a>[Unified API](unified/index.md)
+## <a name="unified-apiunifiedindexmd"></a>[Unified API](unified/index.md)
 
 統一 API 適用於 iOS 和 Mac 專案架構使用相同的命名空間，使相同的程式碼檔案可以用於跨這兩個平台，以無縫式的程式碼共用。 它也可讓 32 和 64 位元的組建。 統一的 API 2015 年初，因為已範本預設值，而且建議所有新專案-*只*Unified API 專案可以提交至 App Store。
 
@@ -47,11 +47,11 @@ Xamarin 可讓您帶入您的應用程式中的原生程式庫，以繫結。 �
 
 ## <a name="native-referencesnative-referencesmd"></a>[原生參考](native-references.md)
 
-##  <a name="macios-native-typesnativetypesmd"></a>[Mac/iOS 原生類型](nativetypes.md)
+## <a name="macios-native-typesnativetypesmd"></a>[Mac/iOS 原生類型](nativetypes.md)
 
 若要支援 32 和 64 位元程式碼，以透明的方式從C#和F#，我們引進了新的資料類型。   這裡了解這些。
 
-##  <a name="building-32-and-64-bit-apps32-and-64indexmd"></a>[建置 32 位元及 64 位元應用程式](32-and-64/index.md)
+## <a name="building-32-and-64-bit-apps32-and-64indexmd"></a>[建置 32 位元及 64 位元應用程式](32-and-64/index.md)
 
 您需要知道支援 32 和 64 位元應用程式。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: b941bcc8588e7fb0377430cca2829ad72ecbc8c6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 73ee7fc3c28fc7a8476010e8bf7567b3e5ef590d
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61416596"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865081"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>發行至 Apple TV App Store
 
@@ -20,8 +20,8 @@ ms.locfileid: "61416596"
 
 提交至 Apple TV App Store 應用程式的程序牽涉到：
 
-1. 建立「應用程式識別碼」和選取「權利」。
-2. 建立散發佈建設定檔。
+1. 建立「應用程式識別碼」  和選取「權利」  。
+2. 建立散發佈建設定檔。 
 3. 若要建置您的應用程式中使用此設定檔。
 4. 提交您的應用程式，透過*iTunes Connect*。
 
@@ -53,7 +53,7 @@ Apple 也會維護一份 Apple TV App Store 提交提示。 您可於此處閱�
 
 1. 驗證 iTunes Connect 的**合約、稅金與銀行**區段有正確且最新的合約，以發行免費或付費的 iOS 應用程式。
 2. 建立新**iTunes Connect Record**應用程式，並指定其**顯示名稱**（如同在 Apple TV App Store 中所見）。
-3. 選取 [售價] 或指明該應用程式將免費發行。
+3. 選取 [售價]  或指明該應用程式將免費發行。
 4. 提供**App Store 圖示**（大型圖示） 和您在動作中，它支援在 Apple TV 裝置上的應用程式的螢幕擷取畫面。 請參閱我們[使用圖示和影像](~/ios/tvos/app-fundamentals/icons-images.md)指南以取得詳細資料。
 5. 提供明確、 簡潔**描述**應用程式中，包括其功能與終端使用者的權益。
 6. 提供**分類**，**子類別目錄**，並**關鍵字**來協助使用者在 Apple TV App Store 中尋找您的應用程式。
@@ -78,18 +78,18 @@ Apple 提供的特殊應用程式服務，又稱權利，可為您的 tvOS 應�
 建立應用程式識別碼並選擇性選取權利包含下列步驟，內容涵蓋使用 Apple 的 Web 架構 iOS 佈建入口網站：
 
 1. 選取 **佈建** > **開發**。
-2. 按一下 [+] 按鈕，並為新應用程式提供**名稱**與**套件組合識別碼**。
+2. 按一下 [+]  按鈕，並為新應用程式提供**名稱**與**套件組合識別碼**。
 3. 捲動到畫面底部，然後選取任何**應用程式服務**Xamarin.tvOS 應用程式所需。
-4. 按一下 [繼續] 按鈕，並遵循畫面指示來建立新的 應用程式識別碼。
+4. 按一下 [繼續]  按鈕，並遵循畫面指示來建立新的 應用程式識別碼。
 
 除了選取並設定所需的應用程式服務，定義您的應用程式識別碼時，您也需要 Xamarin.tvOS 專案中設定應用程式識別碼與權利，藉由編輯兩者`Info.plist`和`Entitlements.plist`檔案。
 
 依下列方式在 Visual Studio for Mac:
 
-1. 在方案總管中按兩下 `Info.plist` 檔案將其開啟以進行編輯。
+1. 在方案總管  中按兩下 `Info.plist` 檔案將其開啟以進行編輯。
 2. 在  **tvOS 應用程式目標**一節，填寫您的應用程式的名稱，然後輸入**套件組合識別碼**時建立定義應用程式識別碼。
 3. 將變更儲存至 `Info.plist` 檔案。
-4. 在方案總管中按兩下 `Entitlements.plist` 檔案將其開啟以進行編輯。
+4. 在方案總管  中按兩下 `Entitlements.plist` 檔案將其開啟以進行編輯。
 5. 選取並設定需要您 Xamarin.tvOS 應用程式，使其符合您定義應用程式識別碼。 當執行上述安裝程式的權利
 6. 將變更儲存至 `Entitlements.plist` 檔案。
 
@@ -107,13 +107,13 @@ Apple 提供的特殊應用程式服務，又稱權利，可為您的 tvOS 應�
 
 ### <a name="creating-and-installing-a-distribution-profile"></a>建立與安裝散發設定檔
 
-使用 tvOS*佈建設定檔*控制部署的特定應用程式組建的方式。 這些檔案包含用於簽署應用程式之憑證、應用程式識別碼，以及應用程式可安裝位置的相關資訊。 若為開發與臨機操作散發，佈建設定檔也會包含您可部署應用程式的允許裝置清單。 不過，Apple TV App Store 散發，唯一的憑證和應用程式識別碼資訊都包含在內，因為公開散發機制是透過 Apple TV App Store。
+使用 tvOS*佈建設定檔*控制部署的特定應用程式組建的方式。 這些檔案包含用於簽署應用程式之憑證、應用程式識別碼  ，以及應用程式可安裝位置的相關資訊。 若為開發與臨機操作散發，佈建設定檔也會包含您可部署應用程式的允許裝置清單。 不過，Apple TV App Store 散發，唯一的憑證和應用程式識別碼資訊都包含在內，因為公開散發機制是透過 Apple TV App Store。
 
 佈建包含下列步驟，過程會使用 Apple 的 Web 架構 iOS 佈建入口網站：
 
-1.  選取 [佈建] > [散發] 。
+1.  選取 [佈建]   > [散發]  。
 2.  按一下  **+** 按鈕，然後選取您想要建立為的散發設定檔的型別**Apple TV App Store**。
-3.  從您要建立散發設定檔的下拉式清單中選取 [應用程式識別碼]。
+3.  從您要建立散發設定檔的下拉式清單中選取 [應用程式識別碼]  。
 4.  選取簽署應用程式所需的憑證。
 5.  輸入新**散發設定檔**的**名稱**並產生設定檔。
 6.  重新整理在 Xcode 中可用的設定檔清單。
@@ -147,25 +147,25 @@ Xamarin.tvOS 應用程式設定正確，您就準備好最終散發建置，您�
 
 #### <a name="build-your-archive"></a>建置封存
 
-1. 在 Visual Studio for Mac 中選取 [發行] | [裝置] 組態：
+1. 在 Visual Studio for Mac 中選取 [發行] | [裝置]  組態：
 
     ![](app-store-publishing-images/buildxs01new.png "選取發行組態")
-2. 從 [建置] 功能表選取 [Archive for Publishing] (封存以供發行)：
+2. 從 [建置]  功能表選取 [Archive for Publishing] (封存以供發行)  ：
 
     [![](app-store-publishing-images/buildxs02new.png "選取 [Archive for Publishing] \(封存以供發行\)")](app-store-publishing-images/buildxs02new.png#lightbox)
-3. 建立封存後，[封存] 檢視會隨即顯示：
+3. 建立封存後，[封存]  檢視會隨即顯示：
 
     [![](app-store-publishing-images/buildxs03new.png "[封存] 檢視")](app-store-publishing-images/buildxs03new.png#lightbox)
 
 ### <a name="sign-and-distribute-your-app"></a>簽署並散發應用程式
 
-每次建置應用程式進行封存，都會自動開啟 [封存] 檢視，顯示依解決方案分組的所有已封存專案。 根據預設，此檢視只會顯示目前開啟的解決方案。 若要查看所有具有封存的解決方案，請按一下 [Show all archives] (顯示所有封存) 選項。
+每次建置應用程式進行封存，都會自動開啟 [封存] 檢視  ，顯示依解決方案分組的所有已封存專案。 根據預設，此檢視只會顯示目前開啟的解決方案。 若要查看所有具有封存的解決方案，請按一下 [Show all archives] (顯示所有封存)  選項。
 
 建議您保留部署至客戶的封存 (App Store 或 Enterprise 部署)，以便日後代表所產生的任何偵錯資訊。
 
 若要簽署應用程式並準備散發：
 
-1. 選取**簽署並散發...**，如下所示：
+1. 選取**簽署並散發...** ，如下所示：
 
     [![](app-store-publishing-images/buildxs04new.png "選取 theSign 並散發...")](app-store-publishing-images/buildxs04new.png#lightbox)
 2. 如此將開啟發行精靈。 選取 **App Store** 散發管道以建立套件，然後開啟應用程式載入器：
@@ -192,19 +192,19 @@ Xamarin.tvOS 應用程式設定正確，您就準備好最終散發建置，您�
 
 Visual Studio for Mac 中的封存工作流程會自動開啟應用程式載入器，在您儲存`.ipa`:
 
-2. 選取 [Deliver Your App] (傳遞您的應用程式)，並按一下 [選擇] 按鈕：
+1. 選取 [Deliver Your App] (傳遞您的應用程式)  ，並按一下 [選擇]  按鈕：
 
     [![](app-store-publishing-images/publishvs01.png "選取 [Deliver Your App] \(傳遞您的應用程式\)")](app-store-publishing-images/publishvs01.png#lightbox)
 
-3. 在上方選取您建立的 ZIP 或 IPA 檔案，並按一下 [確定] 按鈕。
-4. 應用程式載入器將會驗證檔案：
+2. 在上方選取您建立的 ZIP 或 IPA 檔案，並按一下 [確定]  按鈕。
+3. 應用程式載入器將會驗證檔案：
 
     [![](app-store-publishing-images/publishvs02.png "應用程式載入器驗證畫面")](app-store-publishing-images/publishvs02.png#lightbox)
-5. 按一下 [下一步] 按鈕後，就會對 App Store 驗證應用程式：
+4. 按一下 [下一步]  按鈕後，就會對 App Store 驗證應用程式：
 
     [![](app-store-publishing-images/publishvs03.png "正在驗證對 App Store 應用程式")](app-store-publishing-images/publishvs03.png#lightbox)
-6. 按一下 [傳送] 按鈕將應用程式傳送至 Apple 進行審查。
-7. 當檔案已成功上傳時，應用程式載入器會通知您。
+5. 按一下 [傳送]  按鈕將應用程式傳送至 Apple 進行審查。
+6. 當檔案已成功上傳時，應用程式載入器會通知您。
 
 <a name="iTunes_Connect_Status" />
 

@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: ff78b04ced9f0d62531dbfb022b73b928ce373ff
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 59d62fe7df3538063e28f5a8ff9e45f327d0c6d3
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61283450"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864689"
 ---
 # <a name="user-interface"></a>使用者介面
 
 下列各節說明的各種工具和用來撰寫在 Android Wear 的應用程式中的使用者介面的建置組塊。
  
-##  <a name="controlsandroidwearuser-interfacecontrolsindexmd"></a>[控制項](~/android/wear/user-interface/controls/index.md)
+## <a name="controlsandroidwearuser-interfacecontrolsindexmd"></a>[控制項](~/android/wear/user-interface/controls/index.md)
 
 說明 Android Wear 特定控制項，並提供範例，示範如何使用這些控制項的連結。

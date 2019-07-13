@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/19/2017
-ms.openlocfilehash: ba3c2b07e7f35bf9fd84d10b74d034a02ca6a73d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 65f7c6d8a573501ffec4aa1b8eaf28ff1e6479e8
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153280"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864227"
 ---
 # <a name="my-android-resourcedesignercs-file-will-not-update"></a>我的 Android Resource.designer.cs 檔案不會更新
 
@@ -24,13 +24,13 @@ ms.locfileid: "61153280"
 
 ## <a name="two-possible-approaches-to-fixing-up-the-project-file"></a>兩個可能的解決方法修正專案檔案
 
-### <a name="either"></a>以下其中之一：
+**其中一個：**
 
-1) 建立新的 Xamarin.Android 應用程式專案，設定符合舊的專案，並新增所有您的資源、 原始程式檔等回專案的所有專案屬性。
+1. 建立新的 Xamarin.Android 應用程式專案，設定符合舊的專案，並新增所有您的資源、 原始程式檔等回專案的所有專案屬性。
 
-### <a name="or"></a>OR
+   **或**
 
-2) 請您原始專案的.csproj 檔案的備份副本，然後在文字編輯器中開啟它，並再次新增遺漏的元素從完全產生的.csproj 檔案。
+2. 請您原始專案的.csproj 檔案的備份副本，然後在文字編輯器中開啟它，並再次新增遺漏的元素從完全產生的.csproj 檔案。
 
 ### <a name="if-this-does-not-solve-the-problem"></a>如果這樣做無法解決問題
 

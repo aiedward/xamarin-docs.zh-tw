@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 4472654064812142e3281374754ace0042b542bf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 255603eefb4d7cfd3b906e1744aa19da6a77259a
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61089184"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865300"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>在 Xamarin.iOS 中的進階的使用者通知
 
@@ -65,7 +65,7 @@ Xamarin.iOS 應用程式有兩種類型的使用者就能夠向傳送的通知�
 
 不過，因為傳送相關的大小甚至小型影像，將它附加到遠端的通知裝載會變得不切實際。 若要處理這種情況下，開發人員可以使用新的服務延伸模組在 iOS 10 中從其他來源 （例如 CloudKit 資料存放區） 中下載映像，並將它附加至通知的內容，顯示給使用者之前。
 
-服務延伸模組所要修改遠端通知，其裝載必須標示為可變動。 例如: 
+服務延伸模組所要修改遠端通知，其裝載必須標示為可變動。 例如：
 
 ```csharp
 {
@@ -180,7 +180,7 @@ namespace MonkeyNotification
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 應用程式的方案在 Visual Studio for mac 中開啟
-2. 中的方案名稱上按一下滑鼠右鍵**方案總管**，然後選取**新增 > 新增專案...**.
+2. 中的方案名稱上按一下滑鼠右鍵**方案總管**，然後選取**新增 > 新增專案...** .
 3. 選取  **Visual C# > iOS 延伸模組 > Notification Content 延伸模組**:
 
     [![](advanced-user-notifications-images/notify01.w157-sml.png "選取通知內容延伸模組")](advanced-user-notifications-images/notify01.w157.png#lightbox)
@@ -258,15 +258,15 @@ namespace MonkeyChatNotifyExtension
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 按兩下副檔名`Info.plist`檔案中**方案總管 中**以開啟它進行編輯。
-3. 展開`NSExtension`索引鍵。
-4. 新增`UNNotificationExtensionCategory`金鑰做為類型**字串**與擴充功能屬於類別目錄的值 (在此範例中 ' 事件邀請): 
+2. 展開`NSExtension`索引鍵。
+3. 新增`UNNotificationExtensionCategory`金鑰做為類型**字串**與擴充功能屬於類別目錄的值 (在此範例中 ' 事件邀請): 
 
     [![](advanced-user-notifications-images/customui02w.png "新增 UNNotificationExtensionCategory 機碼")](advanced-user-notifications-images/customui02w.png#lightbox)
-5. 儲存您的變更。
+4. 儲存您的變更。
 
 -----
 
-通知內容延伸模組類別 (`UNNotificationExtensionCategory`) 使用相同的類別目錄值用來註冊通知動作。 在其中的應用程式時，會針對多個類別使用相同的 UI 的情況下，切換`UNNotificationExtensionCategory`型別**陣列**，並提供所有必要的類別。 例如: 
+通知內容延伸模組類別 (`UNNotificationExtensionCategory`) 使用相同的類別目錄值用來註冊通知動作。 在其中的應用程式時，會針對多個類別使用相同的 UI 的情況下，切換`UNNotificationExtensionCategory`型別**陣列**，並提供所有必要的類別。 例如：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -299,7 +299,7 @@ namespace MonkeyChatNotifyExtension
 > [!NOTE]
 > 從 iOS 12，開始 Notification Content 延伸模組可以包含互動的控制項，例如按鈕和文字欄位。 如需詳細資訊，請參閱 <<c0> [ 互動式的通知，在 iOS 12](~/ios/platform/introduction-to-ios12/notifications/interactive.md)文件。
 
-當 UI 配置，而且必要的控制項公開至C#程式碼中，開啟`NotificationViewController.cs`編輯和修改`DidReceiveNotification`來填入 UI，當使用者展開通知的方法。 例如: 
+當 UI 配置，而且必要的控制項公開至C#程式碼中，開啟`NotificationViewController.cs`編輯和修改`DidReceiveNotification`來填入 UI，當使用者展開通知的方法。 例如：
 
 ```csharp
 using System;
@@ -361,7 +361,7 @@ namespace MonkeyChatNotifyExtension
 
 因為系統已在執行之前叫用內容的延伸模組時的通知內容區域的通知將會開始完整大小，和動畫顯示到時向使用者顯示要求的大小。
 
-若要消除這種效果，請編輯`Info.plist`延伸模組並將設定檔`UNNotificationExtensionInitialContentSizeRatio`的索引鍵`NSExtensionAttributes`類型的索引鍵**數目**與值，表示所需的比率。 例如: 
+若要消除這種效果，請編輯`Info.plist`延伸模組並將設定檔`UNNotificationExtensionInitialContentSizeRatio`的索引鍵`NSExtensionAttributes`類型的索引鍵**數目**與值，表示所需的比率。 例如：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -453,7 +453,7 @@ namespace MonkeyChatNotifyExtension
 
 通知內容延伸模組也可以在使用者叫用其中一個自訂動作時，更新其 UI，例如顯示為已接受時的日期在使用者點選**接受**自訂動作按鈕。 此外，通知內容延伸模組可以告訴系統以延遲的通知 ui dismissal，所以通知關閉之前，使用者可以看到其動作的效果。
 
-這是藉由實作第二個版本`DidReceiveNotification`包含完成處理常式的方法。 例如: 
+這是藉由實作第二個版本`DidReceiveNotification`包含完成處理常式的方法。 例如：
 
 ```csharp
 using System;
@@ -527,7 +527,7 @@ namespace myApp {
 }
 ```
 
-藉由新增`Server.PostEventResponse`處理常式，以便`DidReceiveNotification`Notification Content 延伸模組，擴充功能方法*必須*處理所有的自訂動作。 擴充功能也可以藉由變更轉送至包含應用程式的自訂動作`UNNotificationContentExtensionResponseOption`。 例如: 
+藉由新增`Server.PostEventResponse`處理常式，以便`DidReceiveNotification`Notification Content 延伸模組，擴充功能方法*必須*處理所有的自訂動作。 擴充功能也可以藉由變更轉送至包含應用程式的自訂動作`UNNotificationContentExtensionResponseOption`。 例如：
 
 ```csharp
 // Close Notification
@@ -538,7 +538,7 @@ completionHandler (UNNotificationContentExtensionResponseOption.DismissAndForwar
 
 根據應用程式和通知的設計，可能需要使用者輸入文字 （例如，回覆訊息） 通知的時間。 Notification Content 延伸模組有內建的文字輸入動作的存取權，就像沒有標準的通知。
 
-例如: 
+例如：
 
 ```csharp
 using System;

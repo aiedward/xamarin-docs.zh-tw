@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: 6b404d7c27fba38c53ff07207003849445d51118
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 859bbd22640ba3d09324fcd3853cda26e563a1cd
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832472"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865283"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello，tvOS 快速入門指南
 
@@ -298,20 +298,20 @@ namespace HellotvOS
 9. 完成時，您的條件約束看起來應該類似於 [屬性] 面板的 [配置] 索引標籤中：
 
     [![](hello-tvos-images/designer11.png "條件約束範例")](hello-tvos-images/designer11.png#lightbox)
-8. 拖曳 **按鈕** 從 **工具箱** 並將它放在標籤底下。
-9. 按一下 **標題**中的屬性**屬性輸入板**和按鈕的標題變更為  `Click Me`:
+10. 拖曳 **按鈕** 從 **工具箱** 並將它放在標籤底下。
+11. 按一下 **標題**中的屬性**屬性輸入板**和按鈕的標題變更為  `Click Me`:
 
     [![](hello-tvos-images/designer12.png "變更按一下 我的按鈕標題")](hello-tvos-images/designer12.png#lightbox)
-10. 重複步驟 5 到 8 上述限制 tvOS 視窗中的按鈕。 不過，而不是將 T 控點拖曳到視窗頂端的 （如步驟 7） 中，將它拖曳到標籤的底部：
+12. 重複步驟 5 到 8 上述限制 tvOS 視窗中的按鈕。 不過，而不是將 T 控點拖曳到視窗頂端的 （如步驟 7） 中，將它拖曳到標籤的底部：
 
     [![](hello-tvos-images/designer14.png "限制 [] 按鈕")](hello-tvos-images/designer14.png#lightbox)
-11. 拖曳按鈕下方的另一個標籤，其會作為第一個標籤，並將相同的寬度大小及其**對齊**要**中心**:
+13. 拖曳按鈕下方的另一個標籤，其會作為第一個標籤，並將相同的寬度大小及其**對齊**要**中心**:
 
     [![](hello-tvos-images/designer15.png "拖曳按鈕下方的另一個標籤，其會與第一個標籤等寬，並將其對齊設定為中心的大小")](hello-tvos-images/designer15.png#lightbox)
-12. 如同第一個標籤和按鈕，設定此標籤置中與將它釘選到位置和大小：
+14. 如同第一個標籤和按鈕，設定此標籤置中與將它釘選到位置和大小：
 
     [![](hello-tvos-images/designer16.png "將標籤釘選到位置和大小")](hello-tvos-images/designer16.png#lightbox)
-13. 將變更儲存至使用者介面。
+15. 將變更儲存至使用者介面。
 
 當您已調整大小並移動控制項，您應該已經注意到，設計工具可讓您很有幫助的貼齊提示為基礎[Apple TV 人性化介面指導方針](https://developer.apple.com/tvos/human-interface-guidelines/)。 這些指導方針可協助您建立高品質應用程式具有 Apple TV 使用者熟悉外觀和感覺。
 

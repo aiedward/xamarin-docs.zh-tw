@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 11/10/2017
-ms.openlocfilehash: 15c93126f80917df45a5b80fb84397dc6ef0d5fd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e9e20b4966e9e6cb8a4ce3ad6724cf0ba2565c33
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61075615"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865868"
 ---
 # <a name="target-framework-for-xamarinmac"></a>Xamarin.mac 的目標 Framework
 
@@ -41,12 +41,12 @@ _本文章涵蓋的目標 framework （基底類別程式庫） 可用於 Xamari
 若要變更 Xamarin.Mac 專案的目標 Framework 類型，執行下列作業：
 
 1. 在 Visual Studio for Mac 中開啟 Xamarin.Mac 專案。
-2. 在 [方案總管] 中，按兩下專案檔以開啟 [專案選項] 對話方塊。
+2. 在 [方案總管]  中，按兩下專案檔以開啟 [專案選項]  對話方塊。
 3. 從**一般**索引標籤上，選取的型別**目標 Framework** ，符合您的應用程式需求：
 
-  [![使用 [專案選項] 視窗來選擇目標 framework](target-framework-images/select-target-full.png "選擇目標 framework 中使用 [專案選項] 視窗")](target-framework-images/select-target-full-large.png#lightbox)
+    [![使用 [專案選項] 視窗來選擇目標 framework](target-framework-images/select-target-full.png "選擇目標 framework 中使用 [專案選項] 視窗")](target-framework-images/select-target-full-large.png#lightbox)
 
-4. 按一下 [確定] 按鈕以儲存您的變更。
+4. 按一下 [確定]  按鈕以儲存您的變更。
 
 您應該**Clean** ，然後**重建**切換的目標 Framework 型別之後 Xamarin.Mac 專案。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 0f77f9014cf7bfad510927f0f12a3e70b387036f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: afa20a264e2509a5658cd0d8f90da3148315e803
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61424261"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865718"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>在 Xamarin.iOS 中增強的使用者通知
 
@@ -150,7 +150,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 // Get current notification settings
 UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
     var alertsAllowed = (settings.AlertSetting == UNNotificationSetting.Enabled);
-}); 
+});    
 ``` 
 
 ### <a name="configuring-the-remote-notifications-environment"></a>設定遠端通知環境
@@ -176,11 +176,11 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 按兩下`Entitlements.plist`檔案中**方案總管 中**以開啟它進行編輯。
-3. 按一下  **+** 按鈕以新增新的金鑰。
-4. 輸入`aps-environment`for**屬性**，保留**類型**做為`String`，然後輸入其中一個`development`或`production`的**值**: 
+2. 按一下  **+** 按鈕以新增新的金鑰。
+3. 輸入`aps-environment`for**屬性**，保留**類型**做為`String`，然後輸入其中一個`development`或`production`的**值**: 
 
     [![](enhanced-user-notifications-images/setup02w.png "Aps 環境屬性")](enhanced-user-notifications-images/setup02.png#lightbox)
-5. 將變更儲存到檔案。
+4. 將變更儲存到檔案。
 
 -----
 
@@ -242,7 +242,7 @@ content.Badge = 1;
 建立通知的內容，應用程式需要通知會呈現給使用者的設定，排定*觸發程序*。 iOS 10 提供四種不同的觸發程序類型：
 
 - **推播通知**-專門搭配遠端通知，並在裝置上執行的應用程式封裝 APNs 傳送通知時，會觸發。
-- **時間間隔**-可讓本機通知排程的時間間隔開始，現在再結束某些未來的點。 例如： `var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);` 
+- **時間間隔**-可讓本機通知排程的時間間隔開始，現在再結束某些未來的點。 例如： `var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);`
 - **行事曆日期**-可讓特定的日期和時間排程的本機通知。
 - **位置型**-可讓排程時進入或離開特定地理位置或任何藍芽指標指定靠近 iOS 裝置的本機通知。
 
@@ -274,7 +274,7 @@ UNUserNotificationCenter.Current.AddNotificationRequest (request, (err) => {
 
 ## <a name="handling-foreground-app-notifications"></a>處理前景應用程式通知
 
-新增至 iOS 10，應用程式可以通知以不同方式處理時它是在幕前及觸發通知。 藉由提供`UNUserNotificationCenterDelegate`並實作`WillPresentNotification`方法，應用程式可以接管負責顯示通知。 例如: 
+新增至 iOS 10，應用程式可以通知以不同方式處理時它是在幕前及觸發通知。 藉由提供`UNUserNotificationCenterDelegate`並實作`WillPresentNotification`方法，應用程式可以接管負責顯示通知。 例如：
 
 ```csharp
 using System;
@@ -431,7 +431,7 @@ UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotifica
 
 一旦已建立並向系統註冊一組自訂動作和類別目錄，他們可以看到從本機或遠端通知。
 
-遠端通知，請設定`category`遠端通知承載符合其中一個先前建立的類別目錄中。 例如: 
+遠端通知，請設定`category`遠端通知承載符合其中一個先前建立的類別目錄中。 例如：
 
 ```csharp
 {
@@ -442,7 +442,7 @@ UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotifica
 }
 ```
 
-本機通知，設定`CategoryIdentifier`屬性`UNMutableNotificationContent`物件。 例如: 
+本機通知，設定`CategoryIdentifier`屬性`UNMutableNotificationContent`物件。 例如：
 
 ```csharp
 var content = new UNMutableNotificationContent ();
@@ -471,7 +471,7 @@ var category = UNNotificationCategory.FromIdentifier (categoryID, actions, inten
 
 ### <a name="handling-action-responses"></a>處理動作的回應
 
-當使用者互動的自訂動作與上述建立的類別時，應用程式必須滿足要求的工作。 這是藉由提供`UNUserNotificationCenterDelegate`並實作`UserNotificationCenter`方法。 例如: 
+當使用者互動的自訂動作與上述建立的類別時，應用程式必須滿足要求的工作。 這是藉由提供`UNUserNotificationCenterDelegate`並實作`UserNotificationCenter`方法。 例如：
 
 ```csharp
 using System;
@@ -550,7 +550,7 @@ namespace MonkeyNotification
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio 中開啟應用程式的方案。
-2. 中的方案名稱上按一下滑鼠右鍵**方案總管**，然後選取**新增 > 新增專案...**.
+2. 中的方案名稱上按一下滑鼠右鍵**方案總管**，然後選取**新增 > 新增專案...** .
 3. 選取  **Visual C# > iOS 延伸模組 > Notification Service 延伸模組**:
 
     [![](enhanced-user-notifications-images/extension01.w157-sml.png "選取 通知服務延伸模組")](enhanced-user-notifications-images/extension01.w157.png#lightbox)
@@ -616,7 +616,7 @@ namespace MonkeyChatServiceExtension
 
 ### <a name="triggering-a-service-extension"></a>觸發服務延伸模組
 
-副檔名為服務建立及提供應用程式，它可藉由修改遠端通知裝載傳送至裝置。 例如: 
+副檔名為服務建立及提供應用程式，它可藉由修改遠端通知裝載傳送至裝置。 例如：
 
 ```csharp
 {

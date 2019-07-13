@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 96af7fab366c3fd3493cf5adbf183d80b7c1ee26
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dab1b0f7bf7aabb4dfcfbfdcb5e202baa48e664d
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61418111"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865158"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>使用 tvOS 圖示和影像在 Xamarin 中
 
@@ -38,7 +38,7 @@ ms.locfileid: "61418111"
 
 啟動影像不是廣告或藝術運算式的好機會，它們的存在只可以讓您認為您的應用程式快速地啟動，而且準備好使用。
 
-|啟動映像大小|注意|
+|啟動映像大小|附註|
 |---|---|
 |1920x1080px<br>|僅適用於非分層.png 檔案|
 
@@ -181,7 +181,7 @@ Apple 提供下列建議來建立您的應用程式圖示：
 5. 按一下  **1x Apple TV 項目**和選取的影像檔。
 6. 重複上述步驟`Front`和`Middle`資產。
 7. 然後重複相同步驟，以定義`App Icon - Large`資產。
-4. 儲存您的變更。
+8. 儲存您的變更。
 
 <a name="Top-Shelf-Image" />
 
@@ -193,7 +193,7 @@ Apple 提供下列建議來建立您的應用程式圖示：
 
 最上層影像可以提供為單一的靜態`.png`或`.lsr`檔案 (請參閱[建立分層式映像](#Creating-Layered-Images)) 或它可以動態建立在執行階段為單一資料列的可設定焦點的項目 (請參閱[動態高層貨架內容](#Dynamic-Top-Shelf-Content)下方)。
 
-|Top Shelf 影像大小|注意|
+|Top Shelf 影像大小|附註|
 |---|---|
 |1920x720px|靜態的.png 或分層的.lsr 檔案|
 
@@ -218,8 +218,8 @@ Apple 提供下列建議來建立您的 Top Shelf 映像：
 3. 按一下`Top Shelf Image`資產： 
 
     [![](icons-images-images/asset07.png "最上層影像資產")](icons-images-images/asset07.png#lightbox)
-5. 按一下  **1x Apple TV 項目**和選取的影像檔。
-6. 儲存您的變更。
+4. 按一下  **1x Apple TV 項目**和選取的影像檔。
+5. 儲存您的變更。
 
 <a name="Dynamic-Top-Shelf-Content" />
 

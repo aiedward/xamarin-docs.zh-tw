@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
-ms.openlocfilehash: 70ca9a73c83bed5233b77a6f7be80a13f04f2bcb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fbef8f60a31511be926ee2adf5e239ad8955b208
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61360744"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864529"
 ---
 # <a name="updating-component-references-to-nuget"></a>元件參考更新為 NuGet
 
@@ -177,10 +177,10 @@ _它可能包含 NuGet 相依性，但可予以忽略。_
 
 #### <a name="add-the-nuget-package"></a>新增 NuGet 套件
 
-1. 以滑鼠右鍵按一下**封裝**節點，然後選擇 **新增套件...**.
+1. 以滑鼠右鍵按一下**封裝**節點，然後選擇 **新增套件...** .
 2. 搜尋依名稱或作者 NuGet 取代：
 
-  ![](component-nuget-images/nuget-search-sml.png)
+    ![](component-nuget-images/nuget-search-sml.png)
 
 3. 按下**將套件新增**。
 

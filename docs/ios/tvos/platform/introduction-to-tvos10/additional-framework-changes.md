@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 3eccba01f235382b7969a2f4a122c09ce9b4127b
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: ab6236198d0a5826fc613d1f3839bafdb980d235
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832353"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865651"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>其他 tvOS 10 架構變更
 
@@ -25,7 +25,7 @@ TvOS 的主要變更，除了 Apple 方面所做的修改以及數個現有的�
 AVFoundation 架構包含下列增強功能：
 
 - TvOS 10，在應用程式不再實作不同[AVPlayerItem](https://developer.apple.com/reference/avfoundation/avplayeritem)行為取決於內容類型。 只要設定`Rate`屬性和 AVFoundation 會決定當足夠的內容是適用於播放不含懸置。
- - 新`AVPlayerLooper`類別可讓您更輕鬆地循環播放在播放期間，指定的媒體項目。
+- 新`AVPlayerLooper`類別可讓您更輕鬆地循環播放在播放期間，指定的媒體項目。
 
 <a name="AVKit-Framework-Enhancements" />
 

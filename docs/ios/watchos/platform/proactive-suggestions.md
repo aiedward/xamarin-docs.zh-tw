@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 979b103db478e3888d3a3c20df6afbd91d0c37d8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0c0bf6058b2ec7a8e3ef606bef9f725a476abffe
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61386515"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865924"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>watchOS 在 Xamarin 中的主動式建議
 
@@ -132,7 +132,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>還原活動
 
-若要回應使用者點選的搜尋結果 (`NSUserActivity`) 應用程式中，編輯**AppDelegate.cs**檔案，並覆寫`ContinueUserActivity`方法。 例如: 
+若要回應使用者點選的搜尋結果 (`NSUserActivity`) 應用程式中，編輯**AppDelegate.cs**檔案，並覆寫`ContinueUserActivity`方法。 例如：
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -169,9 +169,9 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 採取上述餐廳搜尋應用程式的範例。 如果它已實作`NSUserActivity`並正確地填入所有的中繼資料和屬性，使用者就能夠執行下列動作：
 
 1. 他們想要符合在朋友的應用程式中找到一家餐廳。
-4. 如果使用者切換成地圖應用程式，餐廳的位址會自動建議做為目的地。
-5. 這甚至適用於第 3 方應用程式 (支援`NSUserActivity`)，因此使用者可以切換至 rani 應用程式和餐廳的位址會自動建議做為目的地那里以及。
-6. 它也會提供內容 Siri，讓使用者可以叫用 Siri，餐廳的應用程式內，並詢問 *[取得說明...]* Siri 會提供指示給餐廳使用者檢視。
+2. 如果使用者切換成地圖應用程式，餐廳的位址會自動建議做為目的地。
+3. 這甚至適用於第 3 方應用程式 (支援`NSUserActivity`)，因此使用者可以切換至 rani 應用程式和餐廳的位址會自動建議做為目的地那里以及。
+4. 它也會提供內容 Siri，讓使用者可以叫用 Siri，餐廳的應用程式內，並詢問 *[取得說明...]* Siri 會提供指示給餐廳使用者檢視。
 
 在一般的所有上述功能有一件事，但所有那樣的建議原本來自何處。 在上述範例中，它是虛構的餐廳檢閱應用程式。
 
