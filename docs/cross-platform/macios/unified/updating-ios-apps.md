@@ -6,12 +6,12 @@ ms.assetid: 303C36A8-CBF4-48C0-9412-387E95024CAB
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 4d506232903d4a94ac20a1fb9f93a39884d9099c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4e471aaca2a7a5f247b21dd1c1863a01b062a716
+ms.sourcegitcommit: afe9d93373d66eb45d82cabefca83b5733969634
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61213646"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67855746"
 ---
 # <a name="updating-existing-ios-apps"></a>更新現有的 iOS 應用程式
 
@@ -115,4 +115,3 @@ Xamarin.iOS 行動應用程式已轉換至統一的 API，開發人員仍然需�
 - [將程式碼更新至 Unified API 的祕訣](~/cross-platform/macios/unified/updating-tips.md)
 - [在跨平台應用程式中使用原生型別](~/cross-platform/macios/native-types-cross-platform.md)
 - [傳統的 vs 統一的 API 差異](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
-- [移轉至 Unified API （影片）](http://university.xamarin.com/lightninglectures/migrating-to-the-unified-api)

@@ -1,18 +1,18 @@
 ---
 title: Xamarin.Forms App 生命週期
-description: 本文說明如何回應應用程式生命週期，包括週期方法、頁面通知事件，以及強制回應導覽事件。
+description: 此文章說明如何回應應用程式生命週期，包括週期方法、頁面通知事件，以及強制回應導覽事件。
 ms.prod: xamarin
 ms.assetid: 69B416CF-B243-4790-AB29-F030B32465BE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: b298ee24633e4098a6db8cf47d8e5355d72d7c34
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 41e8d073982bf7963b3a77a939bf28e52e86feaa
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970898"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675182"
 ---
 # <a name="xamarinforms-app-lifecycle"></a>Xamarin.Forms App 生命週期
 
@@ -33,7 +33,7 @@ ms.locfileid: "65970898"
 - `OnResume` - 會在應用程式被傳送到背景後又再次繼續時呼叫。
 
 > [!NOTE]
-> 「沒有」任何終止應用程式的方法。 正常情況下 (亦即非當機時) 會從 *OnSleep* 狀態終止應用程式，而不會提供程式碼任何其他通知。
+> 「沒有」  任何終止應用程式的方法。 正常情況下 (亦即非當機時) 會從 *OnSleep* 狀態終止應用程式，而不會提供程式碼任何其他通知。
 
 若要觀察這些方法的呼叫時機，請在每個方法中實作 `WriteLine` 呼叫 (如下所示)，並在每個平台上進行測試。
 
@@ -53,7 +53,7 @@ protected override void OnResume()
 ```
 
 > [!IMPORTANT]
-> 在 Android 上，`OnStart` 方法將會被輪流呼叫，同時也會在應用程式首次啟動時被呼叫，前提是主要 Activity 在 `[Activity()]` 屬性中缺少 `ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation`。
+> 在 Android 上，`OnStart` 方法將會被輪流呼叫，同時也會在應用程式首次啟動時被呼叫，前提是主要活動在 `[Activity()]` 屬性中缺少 `ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation`。
 
 <a name="page" />
 
@@ -81,4 +81,4 @@ protected override void OnResume()
 - `ModalPopped` - 會在頁面被強制快顯後引發。
 
 > [!NOTE]
-> `ModalPopping` 事件的 `ModalPoppingEventArgs` 類型事件引數會包含 `Cancel` 屬性。 當 `Cancel` 設為 `true` 時，強制回應快顯已取消。
+> `ModalPopping` 事件引數 (`ModalPoppingEventArgs` 型別) 包含 `Cancel` 屬性。 當 `Cancel` 設為 `true` 時，強制回應快顯已取消。

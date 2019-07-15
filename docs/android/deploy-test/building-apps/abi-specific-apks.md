@@ -1,22 +1,22 @@
 ---
 title: 建置特定 ABI 的 APK
-description: 本文將討論如何使用 Xamarin.Android 建置瞄準單一 ABI 的 APK。
+description: 此文章將討論如何使用 Xamarin.Android 建置瞄準單一 ABI 的 APK。
 ms.prod: xamarin
 ms.assetid: D21B195B-4530-4EB2-8704-5C4349A2CDD8
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: b34ac82cf240b892e60707d76c82da64ff232a20
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 8c79075c9e01ef5da73255b152b4cbbd676b4f4e
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827421"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674737"
 ---
 # <a name="building-abi-specific-apks"></a>建置特定 ABI 的 APK
 
-_本文將討論如何使用 Xamarin.Android 建置瞄準單一 ABI 的 APK。_
+_此文章將討論如何使用 Xamarin.Android 建置瞄準單一 ABI 的 APK。_
 
 
 
@@ -31,7 +31,7 @@ _本文將討論如何使用 Xamarin.Android 建置瞄準單一 ABI 的 APK。_
 
 多重 APK 可能會使散發變得更複雜 - 由 Google Play 提及的一項問題。 Google Play 會根據應用程式的版本代碼和其他與 **AndroidManifest.XML** 包含一起的中繼資料，來確保傳遞到裝置的是正確的 APK。 如需 Google Play 針對應用程式支援多重 APK 之方式的特定詳細資料，請查閱 [Google Play 的多重 APK 支援相關文件](https://developer.android.com/google/play/publishing/multiple-apks.html)。
 
-本指南會說明如何編寫指令碼為 Xamarin.Android 應用程式建置多重 APK，並使每個 APK 都瞄準特定的 ABI。 它涵蓋了下列主題：
+此指南會說明如何編寫指令碼為 Xamarin.Android 應用程式建置多重 APK，並使每個 APK 都瞄準特定的 ABI。 它涵蓋了下列主題：
 
 1.  為 APK 建立唯一的「版本代碼」  。
 1.  建立會用於此 APK 的 **AndroidManifest.XML** 暫存版本。
@@ -39,7 +39,7 @@ _本文將討論如何使用 Xamarin.Android 建置瞄準單一 ABI 的 APK。_
 1.  透過簽署及 Zipalign 來準備 APK。
 
 
-本指南的最後會提供展示如何使用 [Rake](http://martinfowler.com/articles/rake.html) 來為這些步驟撰寫指令碼的逐步解說。
+此指南的最後會提供展示如何使用 [Rake](http://martinfowler.com/articles/rake.html) 來為這些步驟撰寫指令碼的逐步解說。
 
 
 
@@ -85,7 +85,7 @@ Google Play 會根據 `versionCode` 及 APK 組態來確保傳遞到裝置的是
 
 
 手動維持這些版本代碼對開發人員來說將會是沉重的負擔。 計算正確 `android:versionCode` 及建置 APK 的程序應該自動化。
-本文的最後的逐步解說會說明如何進行此動作。
+此文章的最後的逐步解說會說明如何進行此動作。
 
 
 ### <a name="create-a-temporary-androidmanifestxml"></a>建立暫存 AndroidManifest.XML
@@ -139,7 +139,7 @@ zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 
 ## <a name="automating-apk-creation-with-rake"></a>使用 Rake 自動建立 APK
 
-範例專案 [OneABIPerAPK](https://github.com/xamarin/monodroid-samples/tree/master/OneABIPerAPK) 是一個簡單的 Android 專案，其將展示如何計算特定 ABI 的版本號碼，並為下列每個 ABI 建置共三個 APK：
+範例專案 [OneABIPerAPK](https://github.com/xamarin/monodroid-samples/tree/master/OneABIPerAPK) \(英文\) 是一個簡單的 Android 專案，它示範如何計算特定 ABI 的版本號碼，並為下列每個 ABI 建置三個獨立的 APK：
 
 -  armeabi
 -  armeabi-v7a
@@ -154,7 +154,7 @@ zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 
 1. [編譯 Xamarin.Android 專案的發行組建](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L63)，瞄準單一目標 ABI，並使用先前步驟中建立的 **AndroidManifest.XML**。
 
-1. 使用生產環境金鑰儲存區[簽署 APK](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L66)。
+1. 使用生產環境金鑰儲存區[簽署 APK](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L66) \(英文\)。
 
 1. 針對 APK 進行 [Zipalign](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L67)。
 
@@ -174,12 +174,12 @@ Rake 工作完成之後，便會有三個 `bin` 資料夾，以及一個 `xamari
 
 
 > [!NOTE]
-> 本指南中描述的建置過程可在許多不同建置系統的其中一個內實作。 雖然我們並未預先撰寫範例，但它也可以使用 [Powershell](http://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) 或 [Fake](http://fsharp.github.io/FAKE/) 來進行。
+> 此指南中描述的建置過程可在許多不同建置系統的其中一個內實作。 雖然我們並未預先撰寫範例，但它也可以使用 [Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) 或 [Fake](http://fsharp.github.io/FAKE/) 來進行。
 
 
 ## <a name="summary"></a>總結
 
-本指南提供如何建立瞄準特定 ABI 之 Android APK 的一些建議。 它也討論建立 `android:versionCodes` 的一個可能配置，其可識別 APK 適用的 CPU 架構。 逐步解說則包含使用 Rake 為建置撰寫指令碼的範例專案。
+此指南提供如何建立瞄準特定 ABI 之 Android APK 的一些建議。 它也討論建立 `android:versionCodes` 的一個可能配置，其可識別 APK 適用的 CPU 架構。 逐步解說則包含使用 Rake 為建置撰寫指令碼的範例專案。
 
 
 

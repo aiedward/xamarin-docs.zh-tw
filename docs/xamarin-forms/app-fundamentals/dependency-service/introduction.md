@@ -1,156 +1,160 @@
 ---
-title: DependencyService 簡介
-description: 本文說明 Xamarin.Forms DependencyService 類別如何存取原生平台的功能。
+title: Xamarin.Forms DependencyService 簡介
+description: 此文章說明如何使用 Xamarin.Forms DependencyService 類別叫用原生平台的功能。
 ms.prod: xamarin
 ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/15/2018
-ms.openlocfilehash: 8f32255b6451b5b672293c8db42bb8b1ab38a7fd
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 06/12/2019
+ms.openlocfilehash: 4fc3f0d98d1ead29b450763b7c260af7c40af7b5
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061834"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650488"
 ---
-# <a name="introduction-to-dependencyservice"></a>DependencyService 簡介
+# <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.Forms DependencyService 簡介
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/DependencyServiceDemos)
 
-## <a name="overview"></a>總覽
+[`DependencyService`](xref:Xamarin.Forms.DependencyService) 類別是服務定位器，讓 Xamarin.Forms 應用程式能夠從共用程式碼叫用原生平台功能。
 
-[`DependencyService`](xref:Xamarin.Forms.DependencyService) 允許應用程式透過共用程式碼呼叫平台特定功能。 這項功能可讓 Xamarin.Forms 應用程式執行原生應用程式可執行的任何動作。
+使用 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 叫用元生平台功能的程序為：
 
-`DependencyService` 是一種服務定位器。 在實務上，只要有定義介面，`DependencyService` 就會從各種平台專案找到該介面的正確實作。
+1. 在共用程式碼中建立原生平台功能的介面。 如需詳細資訊，請參閱[建立介面](#create-an-interface)。
+1. 在必要的平台專案中實作介面。 如需詳細資訊，請參閱[在每個平台上實作介面](#implement-the-interface-on-each-platform)。
+1. 向 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 登錄平台實作。 這讓 Xamarin.Forms 在執行階段能夠定位平台實作。 如需詳細資訊，請參閱[登錄平台實作](#register-the-platform-implementations)。
+1. 從共用程式碼解析平台實作並叫用它們。 如需詳細資訊，請參閱[解析平台實作](#resolve-the-platform-implementations)。
 
-> [!NOTE]
-> 根據預設，[`DependencyService`](xref:Xamarin.Forms.DependencyService) 僅會解析具有無參數建構函式的平台實作。 不過，您可以將相依性解析方法插入 Xamarin.Forms，其會使用相依性插入容器或 Factory 方法來解析平台實作。 這種方法可用來解析具有參數建構函式的平台實作。 如需詳細資訊，請參閱 [Xamarin.Forms 中的相依性解析](~/xamarin-forms/internals/dependency-resolution.md)。
+下列圖表顯示在 Xamarin.Forms 中叫用平台功能的方式：
 
-## <a name="how-dependencyservice-works"></a>DependencyService 的運作方式
+![使用 Xamarin.Forms DependencyService 類別之服務位置的概觀](introduction-images/dependency-service.png "DependencyService 服務位置")
 
-Xamarin.Forms 應用程式需要下列四個元件以使用 `DependencyService`：
+## <a name="create-an-interface"></a>建立介面
 
-- **介面** &ndash; 必要功能由共用程式碼中的介面來定義。
-- **每個平台的實作** &ndash; 實作介面的類別必須新增至每個平台專案。
-- **註冊** &ndash; 每個實作類別必須透過中繼資料屬性向 `DependencyService` 註冊。 註冊可讓 `DependencyService` 尋找實作類別，並提供此類別以在執行階段取代介面。
-- **呼叫 DependencyService** &ndash; 共用程式碼必須明確地呼叫 `DependencyService` 以要求介面的實作。
+若要從共用程式碼叫用原生平台功能，第一步是建立介面，定義與原生平台功能互動的 API。 此介面應該放在共用程式碼專案中。
 
-請注意，您必須為方案中每個平台專案提供實作。 如果平台專案不含實作，則會在執行階段失敗。
-
-下圖說明應用程式的結構：
-
-![](introduction-images/overview-diagram.png "DependencyService 應用程式結構")
-
-### <a name="interface"></a>介面
-
-您與平台特定功能的互動方式是由您設計的介面來定義。 如果您開發的元件會以元件或 NuGet 套件形式共用，則必須小心。 API 設計是套件的成敗關鍵。 下列範例是用來指定朗讀文字的簡單介面，其保障指定朗讀文字的作業靈活性，但仍保留每個平台的實作自訂性：
+下列範例示範可擷取裝置方向之 API 的介面：
 
 ```csharp
-public interface ITextToSpeech {
-    void Speak ( string text ); //note that interface members are public by default
+public interface IDeviceOrientationService
+{
+        DeviceOrientation GetOrientation();
 }
 ```
 
-### <a name="implementation-per-platform"></a>每個平台的實作
+## <a name="implement-the-interface-on-each-platform"></a>在每個平台上實作介面
 
-一旦已設計適當的介面，則必須在您設為目標的每個平台專案中實作該介面。 例如，下列類別會在 iOS 上實作 `ITextToSpeech` 介面：
+建立定義與原生平台功能互動之 API 的介面之後，該介面必須在每個平台專案中實作。
+
+### <a name="ios"></a>iOS
+
+下列程式碼範例顯示 iOS 上 `IDeviceOrientationService` 介面的實作：
 
 ```csharp
-namespace UsingDependencyService.iOS
+namespace DependencyServiceDemos.iOS
 {
-    public class TextToSpeech_iOS : ITextToSpeech
+    public class DeviceOrientationService : IDeviceOrientationService
     {
-        public void Speak (string text)
+        public DeviceOrientation GetOrientation()
         {
-            var speechSynthesizer = new AVSpeechSynthesizer ();
+            UIInterfaceOrientation orientation = UIApplication.SharedApplication.StatusBarOrientation;
 
-            var speechUtterance = new AVSpeechUtterance (text) {
-                Rate = AVSpeechUtterance.MaximumSpeechRate/4,
-                Voice = AVSpeechSynthesisVoice.FromLanguage ("en-US"),
-                Volume = 0.5f,
-                PitchMultiplier = 1.0f
-            };
-
-            speechSynthesizer.SpeakUtterance (speechUtterance);
+            bool isPortrait = orientation == UIInterfaceOrientation.Portrait ||
+                orientation == UIInterfaceOrientation.PortraitUpsideDown;
+            return isPortrait ? DeviceOrientation.Portrait : DeviceOrientation.Landscape;
         }
     }
 }
 ```
 
-### <a name="registration"></a>註冊
+### <a name="android"></a>Android
 
-介面的每一個實作必須使用中繼資料屬性向 `DependencyService` 註冊。 下列程式碼會註冊 iOS 實作：
-
-```csharp
-[assembly: Dependency (typeof (TextToSpeech_iOS))]
-namespace UsingDependencyService.iOS
-{
-  ...
-}
-```
-
-綜合來看，平台特定實作看起來像這樣：
+下列程式碼範例顯示 Android 上 `IDeviceOrientationService` 介面的實作：
 
 ```csharp
-[assembly: Dependency (typeof (TextToSpeech_iOS))]
-namespace UsingDependencyService.iOS
+namespace DependencyServiceDemos.Droid
 {
-    public class TextToSpeech_iOS : ITextToSpeech
+    public class DeviceOrientationService : IDeviceOrientationService
     {
-        public void Speak (string text)
+        public DeviceOrientation GetOrientation()
         {
-            var speechSynthesizer = new AVSpeechSynthesizer ();
+            IWindowManager windowManager = Android.App.Application.Context.GetSystemService(Context.WindowService).JavaCast<IWindowManager>();
 
-            var speechUtterance = new AVSpeechUtterance (text) {
-                Rate = AVSpeechUtterance.MaximumSpeechRate/4,
-                Voice = AVSpeechSynthesisVoice.FromLanguage ("en-US"),
-                Volume = 0.5f,
-                PitchMultiplier = 1.0f
-            };
-
-            speechSynthesizer.SpeakUtterance (speechUtterance);
+            SurfaceOrientation orientation = windowManager.DefaultDisplay.Rotation;
+            bool isLandscape = orientation == SurfaceOrientation.Rotation90 ||
+                orientation == SurfaceOrientation.Rotation270;
+            return isLandscape ? DeviceOrientation.Landscape : DeviceOrientation.Portrait;
         }
     }
 }
 ```
 
-注意：註冊是在命名空間層級執行，而不是在類別層級執行。
+### <a name="universal-windows-platform"></a>通用 Windows 平台
 
-#### <a name="universal-windows-platform-net-native-compilation"></a>通用 Windows 平台的 .NET Native 編譯
-
-若是使用 .NET Native 編譯選項的 UWP 專案，在初始化 Xamarin.Forms 時應該採用[略有不同的組態](~/xamarin-forms/platform/windows/installation/index.md#target-invocation-exception)。 .NET Native 編譯也會需要針對相依性服務使用稍微不同的註冊方式。
-
-在 **App.XAML.cs** 檔案中，使用 `Register<T>` 方法手動註冊 UWP 專案中定義的每個相依性服務，如下所示：
+下列程式碼範例顯示通用 Windows 平台 (UWP) 上 `IDeviceOrientationService` 介面的實作：
 
 ```csharp
-Xamarin.Forms.Forms.Init(e, assembliesToInclude);
-// register the dependencies in the same
-Xamarin.Forms.DependencyService.Register<TextToSpeechImplementation>();
+namespace DependencyServiceDemos.UWP
+{
+    public class DeviceOrientationService : IDeviceOrientationService
+    {
+        public DeviceOrientation GetOrientation()
+        {
+            ApplicationViewOrientation orientation = ApplicationView.GetForCurrentView().Orientation;
+            return orientation == ApplicationViewOrientation.Landscape ? DeviceOrientation.Landscape : DeviceOrientation.Portrait;
+        }
+    }
+}
 ```
 
-注意：使用 `Register<T>` 手動註冊只有在使用 .NET Native 編譯的組建版本中才有效。 如果您省略這一行，偵錯組建仍然可以運作，但發行組建將無法載入相依性服務。
+## <a name="register-the-platform-implementations"></a>登錄平台實作
 
-### <a name="call-to-dependencyservice"></a>呼叫 DependencyService
+在每個平台專案中實作該介面之後，平台實作必須向 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 登錄，讓 Xamarin.Forms 可以在執行階段找到它們。 這通常是透過 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) 來執行的，這表示所指定型別會提供介面的實作。
 
-一旦專案已設定好通用介面與每個平台的實作，即可使用 `DependencyService` 在執行階段取得適當的實作：
+下列範例示範使用 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) 登錄 `IDeviceOrientationService` 介面的 iOS 實作：
 
 ```csharp
-DependencyService.Get<ITextToSpeech>().Speak("Hello from Xamarin Forms");
+using Xamarin.Forms;
+
+[assembly: Dependency(typeof(DeviceOrientationService))]
+namespace DependencyServiceDemos.iOS
+{
+    public class DeviceOrientationService : IDeviceOrientationService
+    {
+        public DeviceOrientation GetOrientation()
+        {
+            ...
+        }
+    }
+}
 ```
 
-`DependencyService.Get<T>` 將會找到介面 `T` 的正確實作。
+在此範例中，[`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) 向 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 登錄 `DeviceOrientationService`。 同樣地，其他平台上的 `IDeviceOrientationService` 介面實作應該向 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) 登錄。
 
-### <a name="solution-structure"></a>方案結構
+如需向 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 登錄平台實作的詳細資訊，請參閱 [Xamarin.Forms DependencyService 登錄與解析](registration-and-resolution.md)。
 
-下方顯示適用於 iOS 和 Android 的[範例 UsingDependencyService 方案](https://developer.xamarin.com/samples/UsingDependencyService/)，並醒目提示上述的程式碼變更。
+## <a name="resolve-the-platform-implementations"></a>解析平台實作
 
- [![iOS 和 Android 方案](introduction-images/solution-sml.png "DependencyService 範例方案結構")](introduction-images/solution.png#lightbox "DependencyService 範例方案結構")
+向 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 登錄平台實作之後，必須先解析實作，才能叫用它們。 這通常在共用程式碼中使用 [`DependencyService.Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 方法來執行。
 
-> [!NOTE]
-> 您**必須**在每個平台專案中提供實作。 如果未註冊任何介面實作，則 `DependencyService` 將無法在執行階段解析 `Get<T>()` 方法。
+下列程式碼範例顯示呼叫 [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 方法來解析 `IDeviceOrientationService` 介面，然後叫用其 `GetOrientation` 方法：
+
+```csharp
+IDeviceOrientationService service = DependencyService.Get<IDeviceOrientationService>();
+DeviceOrientation orientation = service.GetOrientation();
+```
+
+或者，此程式碼也可以壓縮成單一行：
+
+```csharp
+DeviceOrientation orientation = DependencyService.Get<IDeviceOrientationService>().GetOrientation();
+```
+
+如需向 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 解析平台實作的詳細資訊，請參閱 [Xamarin.Forms DependencyService 登錄與解析](registration-and-resolution.md)。
 
 ## <a name="related-links"></a>相關連結
 
-- [DependencyServiceSample](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
-- [Xamarin.Forms 範例](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [DependencyService 示範 (範例)](https://developer.xamarin.com/samples/xamarin-forms/DependencyServiceDemos)
+- [Xamarin.Forms DependencyService 登錄與解析](registration-and-resolution.md)
