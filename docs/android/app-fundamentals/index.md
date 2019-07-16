@@ -37,7 +37,7 @@ ms.locfileid: "67864080"
 
 ## <a name="activity-lifecycleandroidapp-fundamentalsactivity-lifecycleindexmd"></a>[活動生命週期](~/android/app-fundamentals/activity-lifecycle/index.md)
 
-活動的 Android 應用程式的基本建置組塊，而它們可以存在於不同的狀態數目。 活動開發週期具現化的開頭和結尾解構，因此之間包含許多狀態。 當活動變更狀態時，會呼叫適當的生命週期事件的方法，通知即將發生的狀態變更的活動，並讓它執行程式碼來調整到該變更。 本文會檢查活動的生命週期，並說明負責該活動就會具有每個階段的行為良好、 可靠的應用程式一部分的這些狀態變更。
+活動是 Android 應用程式的基本建置組塊，而且它們能以數種不同的狀態存在。活動生命週期始於具現化、終止於毀損，而且在期間包括許多狀態。當活動變更狀態時，會呼叫適當的生命週期事件方法，通知活動有即將發生的狀態變更並允許它執行程式碼以適應該變更。此文章會檢查活動的生命週期，並說明為了成為行為良好的可靠應用程式，活動在這些狀態變更中每個狀態變更的責任。
 
 ## <a name="localizationandroidapp-fundamentalslocalizationmd"></a>[當地語系化](~/android/app-fundamentals/localization.md)
 
@@ -77,7 +77,7 @@ Xamarin.Android 支援數種 CPU 架構，包括 32 位元和 64 位元的裝置
 
 
 
-## <a name="android-audioandroidapp-fundamentalsandroid-audiomd"></a>[Android Audio](~/android/app-fundamentals/android-audio.md)
+## <a name="android-audioandroidapp-fundamentalsandroid-audiomd"></a>[Android 音訊](~/android/app-fundamentals/android-audio.md)
 
 Android OS 可廣泛支援的多媒體，包含音訊和視訊。 本指南著重在 Android 中的音訊，並涵蓋播放及錄製音訊，使用內建的音訊播放器和記錄器類別，以及低階音訊 API。 其中也涵蓋處理音訊廣播由其他應用程式的事件，讓開發人員可以建置行為良好的應用程式。
 
@@ -103,4 +103,4 @@ Android OS 可廣泛支援的多媒體，包含音訊和視訊。 本指南著�
 
 ## <a name="writing-responsive-applicationswriting-responsive-appsmd"></a>[撰寫回應式應用程式](writing-responsive-apps.md)
 
-這篇文章討論如何使用以保留 Xamarin.Android 應用程式的回應性，藉由將移到背景執行緒的長時間執行工作的執行緒。
+此文章討論如何使用執行緒處理功能將長時間執行的工作移至背景執行緒，來維持 Xamarin.Android 應用程式的回應性。
