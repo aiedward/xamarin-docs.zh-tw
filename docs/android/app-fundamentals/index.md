@@ -35,9 +35,9 @@ ms.locfileid: "67864080"
 
 
 
-## <a name="activity-lifecycleandroidapp-fundamentalsactivity-lifecycleindexmd"></a>[Activity 的生命週期](~/android/app-fundamentals/activity-lifecycle/index.md)
+## <a name="activity-lifecycleandroidapp-fundamentalsactivity-lifecycleindexmd"></a>[活動生命週期](~/android/app-fundamentals/activity-lifecycle/index.md)
 
-Android 的 App 開發過程中， Activity 是 Android 的 App 在開發上很常使用的一個基本類別，並且能夠搭配產生執行畫面與使用者互動。而 Activity 可以在 Android 的 App 應用中存在於不同的狀態數目。 Activity 的從開始物件化執行到結束的過程中，會含許多狀態的異動。 當 Activtiy 的狀態異動時，會呼叫適當的生命週期的事件方法，通知即將發生的狀態變更的 Activity，並且執行對應該生命週期的事件方法程式碼後，再調整該 Activity 的狀態異動。 本文會說明與驗證 Activity 的生命週期過程中，這些狀態變更該負責 Activity 的每個階段的事件方法，以期建構出達成行為良好、可靠的 App 應用。
+活動是 Android 應用程式的基本建置組塊，而且它們能以數種不同的狀態存在。活動生命週期始於具現化、終止於毀損，而且在期間包括許多狀態。當活動變更狀態時，會呼叫適當的生命週期事件方法，通知活動有即將發生的狀態變更並允許它執行程式碼以適應該變更。此文章會檢查活動的生命週期，並說明為了成為行為良好的可靠應用程式，活動在這些狀態變更中每個狀態變更的責任。
 
 ## <a name="localizationandroidapp-fundamentalslocalizationmd"></a>[當地語系化](~/android/app-fundamentals/localization.md)
 
@@ -53,7 +53,7 @@ Android 的 App 開發過程中， Activity 是 Android 的 App 在開發上很�
 
 
 
-## <a name="permissionsandroidapp-fundamentalspermissionsmd"></a>[Android 權限](~/android/app-fundamentals/permissions.md)
+## <a name="permissionsandroidapp-fundamentalspermissionsmd"></a>[Permissions](~/android/app-fundamentals/permissions.md)
 
 您可以使用內建於 Visual Studio for Mac 或 Visual Studio 的工具支援建立，並將權限新增至 Android 資訊清單。 本文件說明如何在 Visual Studio 和 Xamarin Studio 中新增權限。
 
@@ -101,6 +101,6 @@ Android OS 可廣泛支援的多媒體，包含音訊和視訊。 本指南著�
 本章節會說明適用於 Android 的 HttpClient 堆疊與 SSL/TLS 實作的選取器。 這些設定會決定將由您的 Xamarin.Android 應用程式的 HttpClient 和 SSL/TLS 實作。
 
 
-## <a name="writing-responsive-applicationswriting-responsive-appsmd"></a>[撰寫維持 UI 回應的 App 應用](writing-responsive-apps.md)
+## <a name="writing-responsive-applicationswriting-responsive-appsmd"></a>[撰寫回應式應用程式](writing-responsive-apps.md)
 
-本篇文章討論當 App 的程式移到背景執行緒運作長時間執行工作時，如何在 Xamarin.Android 開發上維持 App 應用的 UI 回應性。
+此文章討論如何使用執行緒處理功能將長時間執行的工作移至背景執行緒，來維持 Xamarin.Android 應用程式的回應性。
