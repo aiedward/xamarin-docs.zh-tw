@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/03/2019
-ms.openlocfilehash: f0ad4e3271ac8c1f8d30a0440b38d8a46c57783e
-ms.sourcegitcommit: b4a12607ca944de10fd166139765241a4501831c
+ms.openlocfilehash: 9c427dc48f6fe19098c312bad16d9630bb480264
+ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66687079"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68290152"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>在 Xamarin 原生專案中的 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/Native2Forms/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Native2Forms/)
 
 Xamarin.Forms 應用程式通常包含一或多個頁面衍生自[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)，，而這些頁面時，可共用所有平台上，.NET Standard 程式庫專案或共用專案中。 不過，原生格式可讓`ContentPage`-衍生直接加入原生的 Xamarin.iOS、 Xamarin.Android 和 UWP 應用程式的頁面。 相較於具有原生專案取用`ContentPage`-衍生的頁面，從.NET Standard 程式庫專案或共用專案中，直接將頁面加入原生專案中的優點是頁面可以使用原生檢視來延伸。 可以再使用 XAML 中名為原生檢視`x:Name`和參考從程式碼後置。 如需有關原生檢視的詳細資訊，請參閱[原生檢視](~/xamarin-forms/platform/native-views/index.md)。
 
@@ -119,6 +119,9 @@ public void NavigateToNoteEntryPage(Note note)
 [![使用 UI 的 Xamarin.iOS 應用程式的螢幕擷取畫面中 XAML 所定義](native-forms-images/ios-noteentrypage.png "Xamarin.iOS 應用程式使用 XAML UI")](native-forms-images/ios-noteentrypage-large.png#lightbox "XAML ui 的 Xamarin.iOS 應用程式")
 
 時`NoteEntryPage`出現時，點選 [上一步] 箭號將會快顯`UIViewController`如`NoteEntryPage`類別`UINavigationController`，傳回使用者`UIViewController`的`NotesPage`類別。
+
+> [!WARNING]
+> Popping`UIViewController`從 iOS 原生瀏覽堆疊不會自動處置`UIViewController`s。 它是以確保任何開發人員的責任`UIViewController`不再需要有其`Dispose()`方法呼叫，否則`UIViewController`和附加`Page`會被遺棄和不會收集由記憶體回收行程，導致記憶體流失。
 
 ## <a name="android"></a>Android
 
