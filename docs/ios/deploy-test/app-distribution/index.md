@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 1bd61474daedd8bd330c0370948d6dee6f8ea50e
-ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
+ms.openlocfilehash: d533996a9c4e86efa360bf2ed71165571c7ca260
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194947"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865824"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Xamarin.iOS 應用程式散發概觀
 
-本文件提供散發技術的概觀，其適用於 Xamarin iOS 應用程式，並作為本主題中更詳細文件的指標。
+本文件提供散發技術的概觀，其適用於 Xamarin iOS 應用程式，並作為本主題中更詳細文件的指標。 
 
 完成 Xamarin.iOS 應用程式開發之後，軟體開發生命週期的下一步就是將應用程式散發給使用者，如下圖中醒目標示的部分所示：
 
@@ -27,8 +27,8 @@ ms.locfileid: "67194947"
 Apple 提供以下方式散發 iOS 應用程式，這些方式都受到 Xamarin.iOS 支援：
 
 1. [**App Store**](#App_Store_Distribution)
-2. [**內部 (Enterprise)**](#In-House_Distribution)
-2. [**臨機操作**](#Ad_Hoc_Distribution)
+2. [**內部 (Enterprise)** ](#In-House_Distribution)
+3. [**臨機操作**](#Ad_Hoc_Distribution)
 
 上述每樣方式都要求使用適當的*佈建設定檔*來佈建應用程式。 佈建設定檔是一種檔案，其包含程式碼簽署資訊、應用程式身分識別及預期的散發機制。 對於非 App Store 的散發，佈建設定檔也包含可用來部署應用程式之裝置的相關資訊。
 
@@ -52,7 +52,7 @@ Apple 提供以下方式散發 iOS 應用程式，這些方式都受到 Xamarin.
 
 ## <a name="in-house-distribution"></a>內部散發
 
-內部散發 (有時稱為「企業散發」) 允許 **Apple Developer Enterprise Program** 成員在組織內部散發應用程式給同組織的其他成員。 內部散發的優勢在於不需要應用程式市集審查，且不限制可安裝應用程式的裝置數量。 但是請注意，**Apple Developer Enterprise Program** 成員**沒有權限**存取 iTunes Connect，因此被授權者需負責散發應用程式。
+內部散發 (有時稱為「企業散發」  ) 允許 **Apple Developer Enterprise Program** 成員在組織內部散發應用程式給同組織的其他成員。 內部散發的優勢在於不需要應用程式市集審查，且不限制可安裝應用程式的裝置數量。 但是請注意，**Apple Developer Enterprise Program** 成員**沒有權限**存取 iTunes Connect，因此被授權者需負責散發應用程式。
 
 對於著手設定與如何使用內部方式來散發應用程式的詳細資訊，請參閱[內部散發指南](~/ios/deploy-test/app-distribution/in-house-distribution.md)。
 
