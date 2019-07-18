@@ -8,12 +8,12 @@ author: asb3993
 ms.author: amburns
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 4d4c9980dd4c7be4ed18f1b6ce015d73b3caf836
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: d4bb117273e669cc3c520c42451296e16b6023eb
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855168"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865326"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS 的自動佈建
 
@@ -39,7 +39,7 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 
 ## <a name="enabling-automatic-signing"></a>啟用自動簽署
 
-在您啟動自動簽署程序之前，應該先確定已在 Visual Studio 中新增應用程式識別碼，如 [Apple 帳戶管理](~/cross-platform/macios/apple-account-management.md)指南所述。 新增「應用程式識別碼」之後，您可以使用任何關聯的「小組」。 這可讓您針對小組建立憑證、設定檔及其他識別碼。 小組識別碼也會用來建立將包含在佈建設定檔中之「應用程式識別碼」的前置詞。 有了這項資訊，便可讓 Apple 驗證您與所宣稱的身分識別相符。
+在您啟動自動簽署程序之前，應該先確定已在 Visual Studio 中新增應用程式識別碼，如 [Apple 帳戶管理](~/cross-platform/macios/apple-account-management.md)指南所述。 新增「應用程式識別碼」之後，您可以使用任何關聯的「小組」  。 這可讓您針對小組建立憑證、設定檔及其他識別碼。 小組識別碼也會用來建立將包含在佈建設定檔中之「應用程式識別碼」的前置詞。 有了這項資訊，便可讓 Apple 驗證您與所宣稱的身分識別相符。
 
 > [!IMPORTANT]
 > 開始之前，請務必登入 [iTunes Connect](https://itunesconnect.apple.com/) 或 [appleid.apple.com](https://appleid.apple.com)，以檢查您是否已經接受最新的 Apple 帳戶原則。 如果出現提示，請完成步驟，以接受來自 Apple 的任何新帳戶合約。 如果您不接受自 2018 年 5 月起的隱私權合約，即會在嘗試佈建裝置時看到下列其中一個警示：
@@ -61,13 +61,13 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 
 2. 開啟 **Info.plist** 檔案。
 
-3. 在 [簽署] 區段，選取 [自動佈建]：
+3. 在 [簽署]  區段，選取 [自動佈建]  ：
 
     ![[小組] 選取器下拉式清單](automatic-provisioning-images/image2.png)
 
-4. 從 [小組] 下拉式清單中選取您的小組。
+4. 從 [小組]  下拉式清單中選取您的小組。
 
-6. 幾秒鐘之後，就會建立「簽署憑證」和「佈建設定檔」：
+5. 幾秒鐘之後，就會建立「簽署憑證」和「佈建設定檔」：
 
     ![成功建立憑證和設定檔](automatic-provisioning-images/image5.png)
 
@@ -77,17 +77,17 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 
 1. 依[與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南所述配對 Visual Studio 2019 和 Mac。
 
-2. 在**方案總管**中，以滑鼠右鍵按一下專案名稱，然後選取 [屬性]。 接著瀏覽到 [iOS 套件組合簽署] 索引標籤。
+2. 在**方案總管**中，以滑鼠右鍵按一下專案名稱，然後選取 [屬性]  。 接著瀏覽到 [iOS 套件組合簽署]  索引標籤。
 
-3. 選取 [自動佈建] 配置：
+3. 選取 [自動佈建]  配置：
 
     ![選取自動配置](automatic-provisioning-images/prov4.png)
 
-4. 從 [小組] 下拉式方塊選取您的小組，啟動自動簽署程序。
+4. 從 [小組]  下拉式方塊選取您的小組，啟動自動簽署程序。
 
     ![選取小組](automatic-provisioning-images/prov3.png)
 
-4. 這樣會啟動自動簽署程序。 然後，Visual Studio 會嘗試產生應用程式識別碼、佈建設定檔，以及簽署身分識別，使用這些成品以供簽署。 您可以在組建輸出中查看產生程序：
+5. 這樣會啟動自動簽署程序。 然後，Visual Studio 會嘗試產生應用程式識別碼、佈建設定檔，以及簽署身分識別，使用這些成品以供簽署。 您可以在組建輸出中查看產生程序：
 
     ![組建輸出顯示成品的產生過程](automatic-provisioning-images/prov5.png)
 

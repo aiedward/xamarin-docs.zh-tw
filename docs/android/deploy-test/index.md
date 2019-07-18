@@ -7,27 +7,27 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 4c9ab8c14db131427329cef51e7b74e982a1c7b8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 86447c2338b8dd43e37170fa547883e47cbf6b4c
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103682"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864218"
 ---
 # <a name="deployment-and-testing"></a>部署及測試
 
 本節所包含的指南說明如何測試應用程式、最佳化其效能、準備發行、使用憑證進行簽署，以及將它發佈至應用程式市集。
 
 
-##  <a name="application-package-sizesapp-package-sizemd"></a>[應用程式的套件大小](app-package-size.md)
+## <a name="application-package-sizesapp-package-sizemd"></a>[應用程式的套件大小](app-package-size.md)
 
 這篇文章將探討 Xamarin.Android 應用程式套件的組成組件，以及在開發過程的偵錯和發行階段所能進行有效率套件部署的相關策略。
 
-##  <a name="building-appsbuilding-appsindexmd"></a>[建置應用程式](building-apps/index.md)
+## <a name="building-appsbuilding-appsindexmd"></a>[建置應用程式](building-apps/index.md)
 
 此小節描述建置流程的運作方式，並說明如何建置 ABI 特定 APK。
 
-##  <a name="command-line-emulatorcommand-line-emulatormd"></a>[命令列模擬器](command-line-emulator.md)
+## <a name="command-line-emulatorcommand-line-emulatormd"></a>[命令列模擬器](command-line-emulator.md)
 
 這篇文章簡要地說明如何透過命令列啟動模擬器。
 
@@ -35,23 +35,23 @@ ms.locfileid: "50103682"
 
 本節中的指南可協助您使用 Android Emulator、實際 Android 裝置和偵錯記錄檔，來為應用程式進行偵錯。
 
-##  <a name="setting-the-debuggable-attributeandroiddeploy-testdebuggable-attributemd"></a>[設定可偵錯的屬性](~/android/deploy-test/debuggable-attribute.md)
+## <a name="setting-the-debuggable-attributeandroiddeploy-testdebuggable-attributemd"></a>[設定可偵錯的屬性](~/android/deploy-test/debuggable-attribute.md)
 
 這篇文章說明如何設定可偵錯的屬性，以便讓 `adb` 之類的工具能夠與 JVM 通訊。
 
-##  <a name="environmentenvironmentmd"></a>[環境](environment.md)
+## <a name="environmentenvironmentmd"></a>[環境](environment.md)
 
 本文描述 Xamarin.Android 的執行環境和會影響程式執行的 Android 系統屬性。
 
-##  <a name="gdbgdbmd"></a>[GDB](gdb.md)
+## <a name="gdbgdbmd"></a>[GDB](gdb.md)
 
 這篇文章說明如何使用 `gdb` 針對 Xamarin.Android 應用程式進行偵錯。
 
-##  <a name="installing-a-system-appinstall-system-appmd"></a>[安裝系統應用程式](install-system-app.md)
+## <a name="installing-a-system-appinstall-system-appmd"></a>[安裝系統應用程式](install-system-app.md)
 
 此指南說明如何在 Android 裝置上將 Xamarin.Android 應用程式安裝作為系統應用程式，或作為自訂 ROM 的一部分。
 
-##  <a name="linking-on-androidlinkermd"></a>[在 Android 上連結](linker.md)
+## <a name="linking-on-androidlinkermd"></a>[在 Android 上連結](linker.md)
 
 這篇文章探討 Xamarin.Android 所使用的連結程序，以減少應用程式的最終大小。 文中描述可執行的各種連結層級，並提供一些指引和疑難排解建議，以減少使用連結器時可能會產生的錯誤。
 
@@ -70,7 +70,7 @@ ms.locfileid: "50103682"
 
 ## <a name="signing-the-android-application-packageandroiddeploy-testsigningindexmd"></a>[簽署 Android 應用程式套件](~/android/deploy-test/signing/index.md)
 
-了解如何建立 Android 簽署身分識別、建立適用於 Android 應用程式的新簽署憑證，並使用此簽署憑證來簽署應用程式。 此外，本主題還說明如何將應用程式匯出至磁碟，以進行「臨機操作」散發。 產生的 APK 可以側載到 Android 裝置，而不需透過應用程式市集 。
+了解如何建立 Android 簽署身分識別、建立適用於 Android 應用程式的新簽署憑證，並使用此簽署憑證來簽署應用程式。 此外，本主題還說明如何將應用程式匯出至磁碟，以進行「臨機操作」  散發。 產生的 APK 可以側載到 Android 裝置，而不需透過應用程式市集 。
 
 ## <a name="publishing-an-applicationandroiddeploy-testpublishingindexmd"></a>[發行應用程式](~/android/deploy-test/publishing/index.md)
 
