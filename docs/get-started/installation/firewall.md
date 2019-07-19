@@ -1,25 +1,25 @@
 ---
 title: Xamarin 防火牆組態指示
-description: 本文件提供的主機清單，必須列在防火牆的允許清單中，讓 Xamarin 在公司環境中運作。
+description: 本檔提供的主機清單必須允許在您的防火牆中允許 Xamarin 在公司環境中工作。
 ms.prod: xamarin
 ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
 author: asb3993
 ms.author: amburns
-ms.date: 10/05/2018
-ms.openlocfilehash: 68689ce7d92a038d0724e1441f68fddcb1d0bba8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 07/17/2019
+ms.openlocfilehash: b2509bb99a5caf5b508d34aafc0f0c4862a7e563
+ms.sourcegitcommit: 9a2a21974d35353c3765eb683ef2fd7161c1d94a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61346816"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68329950"
 ---
-# <a name="xamarin-firewall-configuration-instructions"></a>Xamarin 防火牆組態指示
+# <a name="xamarin-firewall-configuration-instructions"></a>Xamarin 防火牆設定指示
 
-_您需要在防火牆中加入允許清單許清的主機清單，以便讓 Xamarin 平台能為您的公司工作。_
+_您需要在防火牆中允許的主機清單, 以便讓 Xamarin 平臺能為您的公司工作。_
 
-為讓 Xamarin 產品能順利安裝及運作，Xamarin 必須要能夠存取特定端點來下載必要的工具及軟體更新。 若您或您的公司有嚴格的防火牆設定，您可能會遭遇安裝、授權、元件等問題。 本文件概要說明一些必須在您的防火牆中加入允許清單的已知端點，以讓 Xamarin 能正常運作。 這份清單不包含在下載內容中任何協力廠商工具所需要的端點。 若您在使用這份清單之後仍然遭遇問題，請參閱 Apple 或 Android 安裝疑難排解指南。
+為讓 Xamarin 產品能順利安裝及運作，Xamarin 必須要能夠存取特定端點來下載必要的工具及軟體更新。 若您或您的公司有嚴格的防火牆設定，您可能會遭遇安裝、授權、元件等問題。 本檔概述一些需要在防火牆中允許的已知端點, 以讓 Xamarin 能夠正常操作。 這份清單不包含在下載內容中任何協力廠商工具所需要的端點。 若您在使用這份清單之後仍然遭遇問題，請參閱 Apple 或 Android 安裝疑難排解指南。
 
-## <a name="endpoints-to-whitelist"></a>應加入允許清單的端點
+## <a name="endpoints-to-allow"></a>要允許的端點
 
 ### <a name="xamarin-installer"></a>Xamarin 安裝程式
 
@@ -39,8 +39,8 @@ _您需要在防火牆中加入允許清單許清的主機清單，以便讓 Xam
 
 您必須新增下列位址，才能存取 NuGet (Xamarin.Forms 已封裝為 NuGet)：
 
-- www\.nuget.org (以存取 NuGet)
-- az320820.vo.msecnd.net (NuGet 下載)
+- www.nuget.org (以存取 NuGet)
+- globalcdn.nuget.org (NuGet 下載)
 - dl-ssl.google.com (適用於 Android 和 Xamarin.Forms 的 Google 元件)
 
 ### <a name="software-updates"></a>軟體更新
@@ -54,7 +54,3 @@ _您需要在防火牆中加入允許清單許清的主機清單，以便讓 Xam
 ## <a name="xamarin-mac-agent"></a>Xamarin Mac Agent
 
 若要使用 Xamarin Mac Agent 將 Visual Studio 連線到 Mac 組建主機，您需要開啟 SSH 連接埠。 根據預設，**此連接埠是 22**。
-
-## <a name="summary"></a>總結
-
-本指南涵蓋應加入允許清的端點，以允許 Xamarin 產品在您的電腦上正常安裝及更新。
