@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 602a530e1c185ffeda2c6ac80a96f7795cec4cae
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dbf8f85192f9052041fc65367eb2f6c57603b440
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104839"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831429"
 ---
 # <a name="ios-build-mechanics"></a>iOS 組建機制
 
@@ -31,9 +31,9 @@ Xamarin 建置速度也會受到各種容量和電腦功能所影響，進而影
 
 若要在 Visual Studio for Mac 內啟用診斷 MSBuild 輸出：
 
-1. 按一下 [Visual Studio for Mac] > [喜好設定...]
-2. 在左側樹狀檢視中，選取 [專案] > [建置]
-3. 在右側面板中，將記錄詳細資訊下拉式清單設定為 [診斷]：[![](ios-build-mechanics-images/image2.png "設定記錄詳細資訊")](ios-build-mechanics-images/image2.png#lightbox)
+1. 按一下 [Visual Studio for Mac] > [喜好設定...] 
+2. 在左側樹狀檢視中，選取 [專案] > [建置] 
+3. 在右側面板中，將記錄詳細資訊下拉式清單設定為 [診斷]  ：[![](ios-build-mechanics-images/image2.png "設定記錄詳細資訊")](ios-build-mechanics-images/image2.png#lightbox)
 4. 按一下 [確定] 
 5. 重新啟動 Visual Studio for Mac
 6. 清除並重建您的套件
@@ -44,9 +44,9 @@ Xamarin 建置速度也會受到各種容量和電腦功能所影響，進而影
 
 若要在 Visual Studio 內啟用診斷 MSBuild 輸出：
 
-1. 按一下 [工具] > [選項...]
-2. 在左側樹狀檢視中，選取 [專案和方案] > [建置並執行]
-3. 在右側面板中，將 [MSBuild 建置輸出詳細資訊] 下拉式清單設定為 [診斷]：[ ![](ios-build-mechanics-images/image2-vs.png "設定 MSBuild 建置輸出詳細資訊")](ios-build-mechanics-images/image2-vs.png#lightbox)
+1. 按一下 [工具] > [選項...] 
+2. 在左側樹狀檢視中，選取 [專案和方案] > [建置並執行] 
+3. 在右面板中，將 [MSBuild 建置輸出詳細資訊]  下拉式清單設定為 [診斷]  ：[![](ios-build-mechanics-images/image2-vs.png "設定 MSBuild 建置輸出詳細資訊")](ios-build-mechanics-images/image2-vs.png#lightbox)
 4. 按一下 [確定] 
 5. 清除並重建您的套件。
 6. 診斷輸出會顯示在 [輸出] 面板中。
@@ -88,8 +88,8 @@ Apple 提供模擬器來進行 iOS 開，藉由建立一個較不受限制的程
 ### <a name="tips"></a>秘訣
 
 - 針對組建： 
-  - 在 [專案選項] 中取消選取 [最佳化 PNG 影像] 選項。 模擬器上的組建並不需要此最佳化。
-  - 將連結器設定為 [不要連結]。 停用連結器會提升速度，原因是其需要大量執行時間。
+  - 在 [專案選項] 中取消選取 [最佳化 PNG 影像]  選項。 模擬器上的組建並不需要此最佳化。
+  - 將連結器設定為 [不要連結]  。 停用連結器會提升速度，原因是其需要大量執行時間。
   - 使用 `--nofastsim` 旗標停用共用應用程式啟動器會使模擬器組建變得很慢。 不再需要此旗標時，請將其移除。
   - 使用原生程式庫會讓速度變慢，原因是共用的 simlauncher 主要可執行檔無法在此情況下重複使用，因此必須對每個組建編譯應用程式專屬的可執行檔。
 - 針對部署
@@ -111,9 +111,9 @@ Apple 提供模擬器來進行 iOS 開，藉由建立一個較不受限制的程
 
 我們提供了許多在部署 iOS 應用程式時的組建組態。 請務必確實了解每個組態，以便知道應該最佳化的時機和原因。
 
- - 偵錯
+- 偵錯
   - 這是應用程式在開發階段時所應使用的主要組態，因此，其速度應盡可能地快速。
- - 發行
+- 版本
   - 發行組建則會提供給使用者，而且必須著重於效能。 在使用發行組態時，建議您使用 LLVM 最佳化編譯器並將 PNG 檔案最佳化。
 
  
@@ -127,7 +127,7 @@ Apple 提供模擬器來進行 iOS 開，藉由建立一個較不受限制的程
 
 ### <a name="tips"></a>秘訣
 
-- 組建編號: 
+- 組建： 
   - 建置單一架構 (例如 ARM64) 的速度快過 FAT 二進位檔 (例如 ARMv7 + ARM64)
   - 避免在偵錯時對 PNG 檔案最佳化
   - 考慮連結所有組件。 將每個組件最佳化 
@@ -163,13 +163,13 @@ Apple 提供模擬器來進行 iOS 開，藉由建立一個較不受限制的程
 
 在使用連結器時，請考慮下列事項：
 
-- 為裝置組建選取 [不要連結] 會花更久的時間，而且也會產生較大的應用程式。 
+- 為裝置組建選取 [不要連結]  會花更久的時間，而且也會產生較大的應用程式。 
   - Apple 會拒絕大小超過限制的應用程式。 取決於 `MinimumOSVersion`，此限制可能小到只有 60 MB。 
   - 會包含原生可執行檔。 
   - 對於模擬器組建來說，使用 [不要連結] 的速度會較快，因為它會使用 JIT 編譯 (而非在裝置上使用 AOT)。
 - 連結 SDK 是預設選項。
 - 使用 [全部連結] 可能並不安全，特別是當您使用的並非自有程式碼時，例如 NuGet 或元件。 如果您選擇不要連結組件，來自這些服務的所有程式碼就會隨附於應用程式中，而可能建立更大的應用程式。 
-  - 不過，如果您選擇 [全部連結]，應用程式可能會損毀，特別是使用了外部元件時。 這是因為某些元件會在特定類型上使用反映。
+  - 不過，如果您選擇 [全部連結]  ，應用程式可能會損毀，特別是使用了外部元件時。 這是因為某些元件會在特定類型上使用反映。
   - 靜態分析和反映無法一起運作。 
 
 您可以使用 [`[Preserve]` 屬性](~/ios/deploy-test/linker.md)指示工具在應用程式內保留這些項目。 
