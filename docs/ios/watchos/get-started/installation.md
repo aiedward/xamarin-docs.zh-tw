@@ -172,7 +172,7 @@ error HE0020: Could not find a paired Watch device for the iOS device 'iPhone 6'
 
 ### <a name="xcode-6-and-watchos-1"></a>Xcode 6 和 watchOS 1
 
-您必須先 *監看式延伸模組專案***啟始專案** 之前執行或偵錯應用程式。 您無法"start"watch 應用程式本身，和如果您選擇的 iOS 應用程式接著就會開始正常的 iOS 模擬器中。
+您必須先 *監看式延伸模組專案* **啟始專案** 之前執行或偵錯應用程式。 您無法"start"watch 應用程式本身，和如果您選擇的 iOS 應用程式接著就會開始正常的 iOS 模擬器中。
 
 預設 watch 應用程式會在標準模式中啟動**應用程式**從 Visual Studio for Mac 的模式 （不摘要 」 或 「 通知模式）**執行**或是**偵錯**命令。
 

@@ -44,7 +44,7 @@ Merchant ID (商家識別碼) 可用來讓 Apple Pay 知道您可以接受付款
    
     ![新的 Merchant ID (商家識別碼) 詳細資料](apple-pay-capabilities-images/image58.png)
 
-4. 確認詳細資料，然後 [Register] \(註冊\) ****   您的識別碼： 
+4. 確認詳細資料，然後 [ **Register**]  \(註冊\) 您的識別碼： 
     
     ![Merchant ID (商家識別碼) 確認](apple-pay-capabilities-images/image59.png)
 
@@ -154,6 +154,6 @@ Apple 需要使用憑證來加密與交易關聯的敏感性資料。 每個建�
 
 * 在您的應用程式中使用架構命名空間。
 * 為您的應用程式新增必要的權利。 如需有關所需權利及如何新增這些權利的詳細資訊，請參閱[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
-* 在應用程式的 [iOS 套件組合簽署] **** 中，確定 [自訂權利] **** 已設定為 **Entitlements.plist**。 這「不是」 __  「偵錯」和「iOS 模擬器」組建的預設設定。
+* 在應用程式的 [ **iOS 套件組合簽署**] 中，確定 [ **自訂權利**] 已設定為 **Entitlements.plist**。 這「不是」 __  「偵錯」和「iOS 模擬器」組建的預設設定。
 
 如果您在應用程式服務方面遇到問題，請參閱主要指南的[疑難排解](~/ios/deploy-test/provisioning/capabilities/index.md)一節。
