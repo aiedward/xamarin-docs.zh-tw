@@ -46,7 +46,7 @@ sections:
         items:
           - title: Xamarin.Forms
             href: ~/xamarin-forms/index.md
-            html: <p><a href="~/get-started/quickstarts/index.md">開始使用</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">應用程式基本概念</a><br /><a href="~/xamarin-forms/user-interface/index.md">使用者介面</a><br /><a href="~/xamarin-forms/platform/index.md">平台功能</a><br /><a href="~/xamarin-forms/deploy-test/index.md">部署與測試</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">資料與 Azure 雲端服務</a><br /><a href="~/xamarin-forms/internals/index.md">進階概念與內部項目</a></p>
+            html: <p><a href="~/get-started/quickstarts/index.md">開始使用</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">應用程式基本概念</a><br /><a href="~/xamarin-forms/user-interface/index.md">使用者介面</a><br /><a href="~/xamarin-forms/platform/index.md">平台功能</a><br /><a href="~/xamarin-forms/deploy-test/index.md">部署與測試</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">資料與 Azure 雲端服務</a><br /><a href="~/xamarin-forms/internals/index.yml">進階概念與內部項目</a></p>
           - title: Android
             href: ~/android/index.md
             html: <p><a href="~/android/get-started/index.md">開始使用</a><br /><a href="~/android/app-fundamentals/index.md">應用程式基本概念</a><br /><a href="~/android/user-interface/index.md">使用者介面</a><br /><a href="~/android/platform/index.md">平台功能</a><br /><a href="~/android/deploy-test/index.md">部署與測試</a><br /><a href="~/android/data-cloud/index.md">資料與雲端服務</a><br /><a href="~/android/internals/index.md">進階概念與內部項目</a></p>
