@@ -1,182 +1,187 @@
 ---
-title: 使用 Xamarin.Android 設計工具
-description: 這篇文章是 Xamarin.Android 設計工具的逐步解說。 它會示範如何建立使用者介面，讓小型彩色的瀏覽器應用程式;此使用者介面會完全在設計工具中建立。
+title: 使用 Xamarin. Android Designer
+description: 本文是 Xamarin. Android Designer 的逐步解說。 它會示範如何為小型的彩色瀏覽器應用程式建立使用者介面;這個使用者介面是完全在設計工具中建立的。
 ms.prod: xamarin
 ms.assetid: 70FF2F9A-71BD-317E-C881-A44D82DF1BD8
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 1174fe5cb417d4977fd6519086e6c4942e74c10b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9387b44419af87785d45a25ab254d3361a5615a3
+ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61207738"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485928"
 ---
-# <a name="using-the-xamarinandroid-designer"></a>使用 Xamarin.Android 設計工具
+# <a name="using-the-xamarinandroid-designer"></a>使用 Xamarin. Android Designer
 
-_這篇文章是 Xamarin.Android 設計工具的逐步解說。它會示範如何建立使用者介面，讓小型彩色的瀏覽器應用程式;此使用者介面會完全在設計工具中建立。_
+_本文是 Xamarin. Android Designer 的逐步解說。它會示範如何為小型的彩色瀏覽器應用程式建立使用者介面;這個使用者介面是完全在設計工具中建立的。_
 
 
 ## <a name="overview"></a>總覽
 
-您可以以宣告方式建立 android 使用者介面，藉由使用 XML 檔案，或以程式設計方式撰寫的程式碼。 Xamarin.Android 設計工具可讓開發人員建立，並以視覺化的方式，而不需要手動編輯 XML 檔案的修改宣告式配置。 設計工具也提供可讓開發人員評估 UI 變更而不必重新部署至裝置或模擬器的應用程式的即時意見反應。 這些設計工具功能可以加速 Android UI 開發極大的差異。
-這篇文章會示範如何使用 Xamarin.Android 設計工具以視覺化方式建立使用者介面。
+Android 使用者介面可以使用 XML 檔案以宣告方式建立, 或藉由撰寫程式碼以程式設計方式建立。 Android Designer 可以讓開發人員以視覺化方式建立和修改宣告式配置, 而不需要手動編輯 XML 檔案。 此設計工具也會提供即時的意見反應, 讓開發人員不需要將應用程式重新部署至裝置或模擬器, 即可評估 UI 變更。 這些設計工具功能可以大幅加快 Android UI 開發的速度。
+本文示範如何使用 Xamarin. Android Designer 以視覺化方式建立使用者介面。
+
+> [!TIP]
+> 較新版本的 Visual Studio 支援在 Android Designer 中開啟 .xml 檔案。
+>
+> Android Designer 中都支援 axml 和 .xml 檔案。
 
 ## <a name="walkthrough"></a>逐步解說
 
-本逐步解說的目的是要使用 Android Designer 來建立範例色彩瀏覽器應用程式的使用者介面。 色彩瀏覽器應用程式顯示色彩，其名稱和其 RGB 值的清單。 您將了解如何加入 widget**設計介面**以及如何以視覺化方式來配置這些小工具。 在那之後，您將了解如何修改以互動方式在 widget**設計介面**或使用設計工具的**屬性**窗格。 最後，您會看到裝置或模擬器上執行的應用程式時，設計的外觀。
+本逐步解說的目的是要使用 Android Designer 來建立範例色彩瀏覽器應用程式的使用者介面。 [色彩瀏覽器] 應用程式會顯示色彩、其名稱和 RGB 值的清單。 您將瞭解如何將 widget 新增至**Design Surface** , 以及如何以視覺化方式配置這些小工具。 之後, 您將瞭解如何在**Design Surface**上以互動方式修改 widget, 或使用設計工具的 [**屬性**] 窗格。 最後, 您會看到在裝置或模擬器上執行應用程式時, 設計的外觀。
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ### <a name="creating-a-new-project"></a>建立新的專案
 
-第一個步驟是建立新的 Xamarin.Android 專案。 啟動 Visual Studio 中，按一下 **新專案...**，然後選擇  **Visual C\# > Android > Android 應用程式 (Xamarin)** 範本。
-將新的應用程式命名**DesignerWalkthrough**然後按一下**確定**。
+第一個步驟是建立新的 Xamarin Android 專案。 啟動 Visual Studio, 按一下 **新增專案 ...** , 然後選擇**Visual\# C > android > android 應用程式 (Xamarin)**  範本。
+將新的應用程式命名為**DesignerWalkthrough** , 然後按一下 **[確定]** 。
 
-[![空白的 android 應用程式](designer-walkthrough-images/vs/01-android-app-w158-sml.png)](designer-walkthrough-images/vs/01-android-app-w158.png#lightbox)
+[![Android 空白應用程式](designer-walkthrough-images/vs/01-android-app-w158-sml.png)](designer-walkthrough-images/vs/01-android-app-w158.png#lightbox)
 
-在 **新的 Android 應用程式** 對話方塊中，選擇**空白應用程式**，按一下  **確定**:
+在 [**新增 Android app** ] 對話方塊中, 選擇 [**空白應用程式**], 然後按一下 **[確定]** :
 
-[![選取空白的 Android 應用程式範本](designer-walkthrough-images/vs/02-blank-app-w158-sml.png)](designer-walkthrough-images/vs/02-blank-app-w158.png#lightbox)
+[![選取 Android [空白應用程式] 範本](designer-walkthrough-images/vs/02-blank-app-w158-sml.png)](designer-walkthrough-images/vs/02-blank-app-w158.png#lightbox)
 
 
 ### <a name="adding-a-layout"></a>新增版面配置
 
-下一個步驟是建立**LinearLayout**將保留使用者介面項目。 以滑鼠右鍵按一下**資源/配置**中**方案總管**，然後選取**新增 > 新增項目...**.在 **加入新項目**對話方塊中，選取**Android 配置**。 將檔案命名**list_item**然後按一下**新增**:
+下一個步驟是建立會保存使用者介面元素的**LinearLayout** 。 以滑鼠右鍵按一下**方案總管**中的 [**資源/** 配置], 然後選取 [**加入 > 新增專案**...]。在 [**加入新專案**] 對話方塊中, 選取 [ **Android 版面**配置]。 將檔案命名為**list_item** , 然後按一下 [**新增**]:
 
-[![新的版面配置](designer-walkthrough-images/vs/03-new-layout-w158-sml.png)](designer-walkthrough-images/vs/03-new-layout-w158.png#lightbox)
+[![新版面配置](designer-walkthrough-images/vs/03-new-layout-w158-sml.png)](designer-walkthrough-images/vs/03-new-layout-w158.png#lightbox)
 
-新**list_item**配置會顯示在設計工具。 請注意兩個窗格會顯示&ndash;*設計介面*如**list_item**是顯示在左窗格中，而其 XML 來源會顯示在右窗格中。 您可以交換的位置**設計介面**並**來源**窗格，依序按一下**交換窗格**圖示位於之間的兩個窗格：
+新的**list_item**版面配置會顯示在設計工具中。 請注意, 在左窗格&ndash;中顯示**list_item**的*Design Surface* , 而在右窗格中顯示其 XML 來源時, 會看到兩個窗格。 您可以按一下位於兩個窗格之間的 [**交換窗格**] 圖示, 交換 [ **Design Surface** ] 和 [**來源**] 窗格的位置:
 
-[![設計工具檢視](designer-walkthrough-images/vs/04-designer-view-w158-sml.png)](designer-walkthrough-images/vs/04-designer-view-w158.png#lightbox)
+[![設計工具視圖](designer-walkthrough-images/vs/04-designer-view-w158-sml.png)](designer-walkthrough-images/vs/04-designer-view-w158.png#lightbox)
 
-從**檢視**功能表上，按一下**其他 Windows > 文件大綱**以開啟**文件大綱**。 **文件大綱**顯示 版面配置目前包含單一**LinearLayout** widget:
+從 [ **View** ] 功能表中, 按一下 [**其他視窗 > 檔大綱**] 以開啟 [**檔大綱**]。 [**檔大綱**] 顯示版面配置目前包含單一**LinearLayout**小工具:
 
-[![文件大綱](designer-walkthrough-images/vs/06-document-outline-w158-sml.png)](designer-walkthrough-images/vs/06-document-outline-w158.png#lightbox)
+[![檔大綱](designer-walkthrough-images/vs/06-document-outline-w158-sml.png)](designer-walkthrough-images/vs/06-document-outline-w158.png#lightbox)
 
-下一個步驟是建立在這個色彩瀏覽器應用程式的使用者介面`LinearLayout`。
+下一個步驟是在這個`LinearLayout`中建立色彩瀏覽器應用程式的使用者介面。
 
-### <a name="creating-the-list-item-user-interface"></a>建立清單項目使用者介面
+### <a name="creating-the-list-item-user-interface"></a>建立清單專案使用者介面
 
-如果**工具箱**未顯示 窗格中，按一下**工具箱**左側的索引標籤。 在 **工具箱**，向下捲動至**映像與媒體**區段，並進一步向下捲動直到您找出`ImageView`:
+如果沒有顯示 [**工具箱**] 窗格, 請按一下左側的 [**工具箱**] 索引標籤。 在 [**工具箱**] 中, 向下 **& [媒體**] 區段中上下移動, 直到`ImageView`您找到下列各項:
 
 [![找出 ImageView](designer-walkthrough-images/vs/07-locate-imageview-w158-sml.png)](designer-walkthrough-images/vs/07-locate-imageview-w158.png#lightbox)
 
-或者，您可以輸入*ImageView*找出在搜尋列`ImageView`:
+或者, 您可以在搜尋列中輸入*ImageView* , 以找`ImageView`出:
 
 [![ImageView 搜尋](designer-walkthrough-images/vs/08-imageview-search-w158-sml.png)](designer-walkthrough-images/vs/08-imageview-search-w158.png#lightbox)
 
-將此`ImageView`拖曳至設計介面 (這`ImageView`用以顯示色樣色彩瀏覽器應用程式中):
+將此`ImageView`拖曳至 Design Surface ( `ImageView`這將用來在 色彩瀏覽器 應用程式中顯示色樣):
 
-[![在畫布上的 ImageView](designer-walkthrough-images/vs/09-imageview-on-canvas-w158-sml.png)](designer-walkthrough-images/vs/09-imageview-on-canvas-w158.png#lightbox)
+[![畫布上的 ImageView](designer-walkthrough-images/vs/09-imageview-on-canvas-w158-sml.png)](designer-walkthrough-images/vs/09-imageview-on-canvas-w158.png#lightbox)
 
-下一步，拖曳`LinearLayout (Vertical)`小工具，從**工具箱**進入設計工具。 請注意，藍色外框會指出所加入的界限`LinearLayout`。 **文件大綱**顯示它是子系`LinearLayout`下`imageView1 (ImageView)`:
+接下來, 將`LinearLayout (Vertical)` widget 從 [**工具箱**] 拖曳至設計工具。 請注意, 藍色外框表示已加入`LinearLayout`的界限。 [**檔大綱**] 顯示它是的子`LinearLayout`系, 位於`imageView1 (ImageView)`下列位置:
 
 [![藍色外框](designer-walkthrough-images/vs/10-blue-outline-w158-sml.png)](designer-walkthrough-images/vs/10-blue-outline-w158.png#lightbox)
 
-當您選取`ImageView`括住，在設計工具中，移動藍色外框`ImageView`。 此外，將選取範圍移至`imageView1 (ImageView)`中**文件大綱**:
+當您`ImageView`在設計工具中選取時, 藍色外框會移動以`ImageView`環繞。 此外, 選取範圍會移至`imageView1 (ImageView)` **檔大綱**中的:
 
 [![選取 ImageView](designer-walkthrough-images/vs/11-select-imageview-w158-sml.png)](designer-walkthrough-images/vs/11-select-imageview-w158.png#lightbox)
 
-下一步，拖曳`Text (Large)`小工具，從**工具箱**到新加入`LinearLayout`。 請注意，設計工具會使用綠色反白顯示，表示要插入新的小工具的位置：
+接下來, 將`Text (Large)` widget 從 [**工具箱**] 拖曳至新加入`LinearLayout`的。 請注意, 設計工具會使用綠色的反白顯示來指出將插入新 widget 的位置:
 
 [![綠色反白顯示](designer-walkthrough-images/vs/12-green-highlight-w158-sml.png)](designer-walkthrough-images/vs/12-green-highlight-w158.png#lightbox)
 
-接下來，新增`Text (Small)`小工具下`Text (Large)`widget:
+接下來, 在`Text (Small)` `Text (Large)`小工具下方新增 widget:
 
-[![新增小文字小工具](designer-walkthrough-images/vs/13-add-small-text-w158-sml.png)](designer-walkthrough-images/vs/13-add-small-text-w158.png#lightbox)
+[![新增小型文字小工具](designer-walkthrough-images/vs/13-add-small-text-w158-sml.png)](designer-walkthrough-images/vs/13-add-small-text-w158.png#lightbox)
 
-到目前為止，設計工具介面看起來應該像下列螢幕擷取畫面：
+此時, 設計工具介面應該類似下列螢幕擷取畫面:
 
-[![設計工具的版面配置](designer-walkthrough-images/vs/14-raw-layout-w158-sml.png)](designer-walkthrough-images/vs/14-raw-layout-w158.png#lightbox)
+[![設計工具版面配置](designer-walkthrough-images/vs/14-raw-layout-w158-sml.png)](designer-walkthrough-images/vs/14-raw-layout-w158.png#lightbox)
 
-如果兩個`textView`小工具不會深入探討`linearLayout1`，您可以將它們拖曳到`linearLayout1`中**文件大綱**，然後放置在使它們顯示在上一個螢幕擷取畫面所示 (縮排在`linearLayout1`)。
+如果兩個`textView`小工具不在`linearLayout1`內, 您可以將它們`linearLayout1`拖曳至**檔大綱**中, 並放置它們, 讓它們如先前的螢幕擷取畫面所示`linearLayout1`顯示 (縮排在底下)。
 
 
-### <a name="arranging-the-user-interface"></a>排列的使用者介面
+### <a name="arranging-the-user-interface"></a>排列使用者介面
 
-下一步是修改 UI 能夠顯示`ImageView`左邊的兩個`TextView`小工具會將右邊的堆疊`ImageView`。
+下一個步驟是修改 UI, 以`ImageView`在左側顯示, 並將兩個`TextView`小工具堆疊`ImageView`到的右邊。
 
 1.  選取 `ImageView`。
 
-2.  在**屬性 視窗**，輸入*寬度*在搜尋 方塊，然後找出**版面配置寬度**。
+2.  在 **屬性視窗**的 搜尋 方塊中, 輸入*width* , 並找出 **版面配置寬度**。
 
-3.  變更**版面配置寬度**設為  `wrap_content`:
+3.  將 [**版面配置寬度**] `wrap_content`設定變更為:
 
 ![設定自動換行內容](designer-walkthrough-images/vs/15-wrap-content-w158.png)
 
-若要變更的另一種方式`Width`設定為 按一下可切換至其寬度設定小工具的右邊的三角形`wrap_content`:
+另一種變更`Width`設定的方式是按一下 widget 右手邊的三角形, 將其寬度設定切換為: `wrap_content`
 
-![若要設定寬度的拖放](designer-walkthrough-images/vs/15b-width-arrow-w158.png)
+![拖曳以設定寬度](designer-walkthrough-images/vs/15b-width-arrow-w158.png)
 
-再次按一下該三角形會傳回`Width`設為  `match_parent`。 接下來，移至**文件大綱**窗格，然後選取根目錄`LinearLayout`:
+再次`Width`按一下三角形, 會將設定傳回`match_parent`給。 接下來, 移至 [**檔大綱**] 窗格, 然後`LinearLayout`選取 [根]:
 
 [![選取根 LinearLayout](designer-walkthrough-images/vs/16-root-linearlayout-w158-sml.png)](designer-walkthrough-images/vs/16-root-linearlayout-w158.png#lightbox)
 
-具有根`LinearLayout`選取，返回**屬性**窗格中，輸入*方向*在搜尋方塊，然後找出**方向**設定。 變更**方向**到`horizontal`:
+選取`LinearLayout`根之後, 返回 [**屬性**] 窗格, 在 [搜尋] 方塊中輸入*方向*, 並找出 [**方向**] 設定。 將**方向**變更`horizontal`為:
 
-![選取 水平方向](designer-walkthrough-images/vs/17-horizontal-orientation-w158.png)
+![選取水準方向](designer-walkthrough-images/vs/17-horizontal-orientation-w158.png)
 
-到目前為止，設計工具介面看起來應該像下列螢幕擷取畫面。
-請注意，`TextView`小工具都已移至右側`ImageView`:
+此時, 設計工具介面應該類似下列螢幕擷取畫面。
+請注意, `TextView` widget 已移至右側: `ImageView`
 
-[![設計工具的版面配置](designer-walkthrough-images/vs/18-designer-layout-w158-sml.png)](designer-walkthrough-images/vs/18-designer-layout-w158.png#lightbox)
+[![設計工具版面配置](designer-walkthrough-images/vs/18-designer-layout-w158-sml.png)](designer-walkthrough-images/vs/18-designer-layout-w158.png#lightbox)
 
 ### <a name="modifying-the-spacing"></a>修改間距
 
-下一個步驟是修改在 UI 中提供更多的空間，小工具之間的邊框距離及邊界設定。 選取`ImageView`設計介面上。 在 **屬性**窗格中，輸入`min`在搜尋方塊中。 輸入`70dp`for**最小高度**並`50dp`for**最小寬度**:
+下一步是修改 UI 中的填補和邊界設定, 以在 widget 之間提供更多空間。 選取設計`ImageView`介面上的。 在 [**屬性**] 窗格的`min` [搜尋] 方塊中, 輸入。 輸入`70dp` [**最小高度**] 和`50dp` [**最小寬度**]:
 
 [![設定高度和寬度](designer-walkthrough-images/vs/18b-set-height-width-sml.png)](designer-walkthrough-images/vs/18b-set-height-width.png#lightbox)
 
-在**屬性**窗格中，輸入`padding`在搜尋 方塊，然後輸入`10dp`如**填補**。 這些`minHeight`，`minWidth`並`padding`設定加上邊框間距周圍每一邊都`ImageView`和垂直延伸它。 請注意 XML 版面配置變更為您輸入這些值：
+在 [**屬性**] 窗格中`padding` , 于搜尋方塊中輸入`10dp` , 並輸入**填補**。 這些`minHeight`和`minWidth` `ImageView`設定會在的所有側邊加上填補, 並以垂直方式 elongate。 `padding` 請注意, 當您輸入這些值時, 版面配置 XML 會變更:
 
-[![設定邊框間距](designer-walkthrough-images/vs/19-padding-widths-w158-sml.png)](designer-walkthrough-images/vs/19-padding-widths-w158.png#lightbox)
+[![設定填補](designer-walkthrough-images/vs/19-padding-widths-w158-sml.png)](designer-walkthrough-images/vs/19-padding-widths-w158.png#lightbox)
 
-下、 左、 以滑鼠右鍵，並可以獨立設定填補設定的頂端，輸入值**填補下方**，**填補左方**，**邊框間距右邊**，和**填補上方**欄位，分別。
-比方說，設定**填補左方**欄位設為`5dp`和**填補下方**，**邊框間距右邊**，並**填補上方**欄位若要`10dp`:
+下、左、右和上填補設定可以個別設定, 其方式是將值輸入到**下填補**、**左邊填補**、**右填補**和**填補頂端**欄位。
+例如, 將 [填補]**左邊**欄位設定`5dp`為, 並將 [**右**填補]、[填補] 和`10dp`[**填補] 頂端**欄位設為:
 
-[![自訂的填補設定](designer-walkthrough-images/vs/20-custom-padding-w158-sml.png)](designer-walkthrough-images/vs/20-custom-padding-w158.png#lightbox)
+[![自訂填補設定](designer-walkthrough-images/vs/20-custom-padding-w158-sml.png)](designer-walkthrough-images/vs/20-custom-padding-w158.png#lightbox)
 
-接下來，調整 位置`LinearLayout`小工具，其中包含兩個`TextView`widget。 在 **文件大綱**，選取`linearLayout1`。 在 [**屬性**] 視窗中，輸入`margin`在搜尋方塊中。 設定**版面配置邊界底部**，**版面配置邊界左邊**，並**版面配置邊界上方**至`5dp`。 設定**版面配置邊界右邊**到`0dp`:
+接下來, 調整包含兩個`LinearLayout` `TextView`小工具的 widget 位置。 在 [**檔大綱**] 中`linearLayout1`, 選取。 在 [**屬性**] 視窗的`margin` [搜尋] 方塊中, 輸入。 將 [**版面配置邊界**]、[**版面**配置邊界] 和 [版面配置**邊界**] 設定為`5dp`。 將配置**邊界**設定為`0dp`[右]:
 
 [![設定邊界](designer-walkthrough-images/vs/21-margins-w158-sml.png)](designer-walkthrough-images/vs/21-margins-w158.png#lightbox)
 
-### <a name="removing-the-default-image"></a>移除預設的映像
+### <a name="removing-the-default-image"></a>移除預設映射
 
-因為`ImageView`用來顯示的色彩 （而非映像） 下, 一步是移除範本所加入的預設影像來源。
+`ImageView`由於是用來顯示色彩 (而非影像), 因此下一個步驟是移除範本所新增的預設影像來源。
 
-1.  選取 `ImageView`上**設計工具介面**。
+1.  在設計`ImageView`工具**介面**上, 選取。
 
-2.  在 **屬性**，輸入*src*在搜尋方塊中。
+2.  在 [**屬性**] 的 [搜尋] 方塊中, 輸入*src* 。
 
-3.  按一下右邊的小方形**Src**屬性設定，然後選取**重設**:
+3.  按一下**Src**屬性設定右邊的小方形, 然後選取 [**重設**]:
 
 [![清除 ImageView src 設定](designer-walkthrough-images/vs/22-clear-img-src-w158-sml.png)](designer-walkthrough-images/vs/22-clear-img-src-w158.png#lightbox)
 
-這會移除`android:src="@android:drawable/ic_menu_gallery"`從來源 XML 的`ImageView`。
+這會`android:src="@android:drawable/ic_menu_gallery"`從的來源 XML 移除該`ImageView`。
 
-### <a name="adding-a-listview-container"></a>加入 ListView 容器
+### <a name="adding-a-listview-container"></a>新增 ListView 容器
 
-既然**list_item**版面配置定義、 下一個步驟是新增`ListView`主要版面配置。 這`ListView`將包含一份**list_item**。 
+現在已定義**list_item**配置, 下一個步驟是將加入`ListView`至主要版面配置。 這`ListView`會包含**list_item**的清單。 
 
-在 **方案總管**，開啟**Resources/layout/activity_main.axml**。 在 **工具箱**，找出`ListView`小工具並拖曳至**設計介面**。 `ListView`設計工具中將會空白，但是當選取時，說明其框線的藍線。 您可以檢視**文件大綱**以確認**ListView**是否已正確新增：
+在**方案總管**中, 開啟**Resources/layout/activity_main. axml**。 在 [**工具箱**] 中找`ListView`出小工具, 並將它拖曳至 [ **Design Surface**]。 設計`ListView`工具中的會是空白, 但在選取時, 會將框線外框的藍色線條除外。 您可以查看**檔大綱**, 確認已正確新增**ListView** :
 
-[![新的 ListView](designer-walkthrough-images/vs/23-new-listview-w158-sml.png)](designer-walkthrough-images/vs/23-new-listview-w158.png#lightbox)
+[![新增 ListView](designer-walkthrough-images/vs/23-new-listview-w158-sml.png)](designer-walkthrough-images/vs/23-new-listview-w158.png#lightbox)
 
-根據預設，`ListView`有`Id`的值`@+id/listView1`。
-雖然`listView1`仍為已選取在**文件大綱**，開啟**屬性** 窗格中，按一下**排列依據**，並選取**類別**.
-開啟**Main**，找出**識別碼**屬性，其將值變更為`@+id/myListView`:
+根據預設, `ListView`會`Id`提供的值`@+id/listView1`給。
+當`listView1`您仍在 [**檔大綱**] 中選取時, 開啟 [**屬性**] 窗格, 按一下 [**排列依據**], 然後選取 [**類別**]。
+開啟 [ **Main**], 找到**Id**屬性, 並將其值`@+id/myListView`變更為:
 
-[![重新命名為 myListView 的識別碼](designer-walkthrough-images/vs/24-change-id-w158-sml.png)](designer-walkthrough-images/vs/24-change-id-w158.png#lightbox)
+[![將識別碼重新命名為 myListView](designer-walkthrough-images/vs/24-change-id-w158-sml.png)](designer-walkthrough-images/vs/24-change-id-w158.png#lightbox)
 
-此時，使用者介面是可供使用。
+此時, 使用者介面已準備好可供使用。
 
 ### <a name="running-the-application"></a>執行應用程式
 
-開啟**MainActivity.cs**和其程式碼取代為下列：
+開啟**MainActivity.cs** , 並將其程式碼取代為下列內容:
 
 ```csharp
 using Android.App;
@@ -272,11 +277,11 @@ namespace DesignerWalkthrough
 
 ```
 
-此程式碼使用自訂`ListView`配接器將載入的色彩資訊，以及剛建立的 UI 中顯示這項資料。 為了讓此範例的簡潔，色彩資訊會是硬式編碼在清單中，但無法修改配接器，從資料來源擷取色彩資訊，或即時計算出來。 如需詳細資訊`ListView`配接器，請參閱[ListView](~/android/user-interface/layouts/list-view/index.md)。
+這段程式碼會`ListView`使用自訂介面卡來載入色彩資訊, 並在剛建立的 UI 中顯示此資料。 為了讓此範例保持簡短, 色彩資訊會以硬式編碼方式放入清單中, 但是可以修改介面卡以從資料來源解壓縮色彩資訊, 或即時計算。 如需`ListView`介面卡的詳細資訊, 請參閱[ListView](~/android/user-interface/layouts/list-view/index.md)。
 
-建置並執行應用程式。 下列螢幕擷取畫面是在裝置上執行時，應用程式的顯示方式範例：
+建置並執行應用程式。 下列螢幕擷取畫面是應用程式在裝置上執行時的顯示方式範例:
 
-[![最終的螢幕擷取畫面](designer-walkthrough-images/vs/25-final-screenshot-sml.png)](designer-walkthrough-images/vs/25-final-screenshot.png#lightbox)
+[![最後的螢幕擷取畫面](designer-walkthrough-images/vs/25-final-screenshot-sml.png)](designer-walkthrough-images/vs/25-final-screenshot.png#lightbox)
 
 
 
@@ -284,145 +289,145 @@ namespace DesignerWalkthrough
 
 ### <a name="creating-a-new-project"></a>建立新的專案
 
-第一個步驟是建立新的 Xamarin.Android 專案。
+第一個步驟是建立新的 Xamarin Android 專案。
 
-啟動 Visual Studio for Mac，然後按一下 [**新專案...**.選擇**Android 應用程式**範本，然後按一下**下一步]**:
+啟動 Visual Studio for Mac, 然後按一下 [**新增專案**...]。選擇 [ **Android 應用程式**] 範本, 然後按 **[下一步]** :
 
-[![空白的 android 應用程式](designer-walkthrough-images/xs/01-android-app-m75-sml.png)](designer-walkthrough-images/xs/01-android-app-m75.png#lightbox)
+[![Android 空白應用程式](designer-walkthrough-images/xs/01-android-app-m75-sml.png)](designer-walkthrough-images/xs/01-android-app-m75.png#lightbox)
 
-將新的應用程式命名**DesignerWalkthrough**。 底下**目標平台**，選取**最新及最棒**然後按一下**下一步**:
+將新的應用程式命名為**DesignerWalkthrough**。 在 [**目標平臺**] 底下, 選取 [**最新] 和 [最大** **]** , 然後按
 
 [![名稱應用程式](designer-walkthrough-images/xs/02-designer-walkthrough-m75-sml.png)](designer-walkthrough-images/xs/02-designer-walkthrough-m75.png#lightbox)
 
-在下一步 對話方塊畫面中，按一下**建立**。
+在下一個對話方塊畫面中, 按一下 [**建立**]。
 
 ### <a name="adding-a-layout"></a>新增版面配置
 
-下一個步驟是建立**LinearLayout**將保留使用者介面項目。
+下一個步驟是建立會保存使用者介面元素的**LinearLayout** 。
 
-在 Visual Studio for Mac，請以滑鼠右鍵按一下**資源/配置**中**解決方案**填補，並選取**新增 > 新增檔案...**.在 **新的檔案**對話方塊中，選取**Android > 配置**。 將檔案命名**list_item**然後按一下**新增**:
+在 Visual Studio for Mac 中, 以滑鼠右鍵按一下**Solution** pad 中的 [**資源/版面**配置], 然後選取 [**新增 > 新**檔案 ...]。在 [**新增**檔案] 對話方塊中, 選取 [ **Android > 版面**配置]。 將檔案命名為**list_item** , 然後按一下 [**新增**]:
 
-[![新的版面配置](designer-walkthrough-images/xs/03-new-layout-m75-sml.png)](designer-walkthrough-images/xs/03-new-layout-m75.png#lightbox)
+[![新版面配置](designer-walkthrough-images/xs/03-new-layout-m75-sml.png)](designer-walkthrough-images/xs/03-new-layout-m75.png#lightbox)
 
-加入此檔案之後，新**list_item**版面配置會顯示在**設計介面**(如果您看到訊息，*此專案包含未成功，編譯的資源可能會影響轉譯*，按一下**建置 > 全部建置**來建置專案):
+新增此檔案之後, 會在**Design Surface**上顯示新的**list_item**配置 (如果您看到訊息,*表示此專案包含未成功編譯的資源, 轉譯可能會受到影響*, 請按一下 [**建立] >組建全部**以建立專案):
 
-[![設計工具檢視](designer-walkthrough-images/xs/04-designer-view-m75-sml.png)](designer-walkthrough-images/xs/04-designer-view-m75.png#lightbox)
+[![設計工具視圖](designer-walkthrough-images/xs/04-designer-view-m75-sml.png)](designer-walkthrough-images/xs/04-designer-view-m75.png#lightbox)
 
-按一下 **來源**底部的 設計工具來檢視 XML 來源，這個版面配置 索引標籤。 當您按一下 **文件大綱**索引標籤右邊，它會顯示配置目前包含單一**LinearLayout** widget:
+按一下設計工具底部的 [**來源**] 索引標籤, 以查看此版面配置的 XML 來源。 當您按一下右側的 [**檔大綱**] 索引標籤時, 它會顯示版面配置目前包含單一**LinearLayout**小工具:
 
 [![設計工具 XML](designer-walkthrough-images/xs/05-designer-xml-m75-sml.png)](designer-walkthrough-images/xs/05-designer-xml-m75.png#lightbox)
 
-下一個步驟是建立色彩的瀏覽器應用程式的使用者介面。
+下一個步驟是建立色彩瀏覽器應用程式的使用者介面。
 
-### <a name="creating-the-list-item-user-interface"></a>建立清單項目使用者介面
+### <a name="creating-the-list-item-user-interface"></a>建立清單專案使用者介面
 
-按一下 [**設計工具**下方的 [返回] 畫面] 索引標籤**設計工具介面**。 在 **工具箱**窗格在右側，向下捲動至**映像與媒體**區段，然後找出`ImageView`:
+按一下畫面底部的 [**設計**工具] 索引標籤, 返回**設計工具介面**。 在右側的 [**工具箱**] 窗格中, 向下 & [媒體] 區段中向`ImageView`下流覽至 [**影像**], 並尋找:
 
 [![找出 ImageView](designer-walkthrough-images/xs/06-locate-imageview-m75-sml.png)](designer-walkthrough-images/xs/06-locate-imageview-m75.png#lightbox)
 
-或者，您可以輸入*ImageView*找出在搜尋列`ImageView`:
+或者, 您可以在搜尋列中輸入*ImageView* , 以找`ImageView`出:
 
 [![ImageView 搜尋](designer-walkthrough-images/xs/07-imageview-search-m75-sml.png)](designer-walkthrough-images/xs/07-imageview-search-m75.png#lightbox)
 
-將此`ImageView`拖曳至**設計介面**(這`ImageView`用以顯示色樣色彩瀏覽器應用程式中):
+將此`ImageView`拖曳至  **Design Surface** ( `ImageView`這將用來在 色彩瀏覽器 應用程式中顯示色樣):
 
-[![在畫布上的 ImageView](designer-walkthrough-images/xs/08-imageview-on-canvas-m75-sml.png)](designer-walkthrough-images/xs/08-imageview-on-canvas-m75.png#lightbox)
+[![畫布上的 ImageView](designer-walkthrough-images/xs/08-imageview-on-canvas-m75-sml.png)](designer-walkthrough-images/xs/08-imageview-on-canvas-m75.png#lightbox)
 
-下一步，拖曳`LinearLayout (Vertical)`小工具，從**工具箱**成**設計介面**。 請注意，藍色外框會指出所加入的界限`LinearLayout`。 **文件大綱**顯示它是子系`LinearLayout`位於以下`imageView1 (ImageView)`:
+接下來, 將`LinearLayout (Vertical)` widget 從 [**工具箱**] 拖曳至 [ **Design Surface**]。 請注意, 藍色外框表示已加入`LinearLayout`的界限。 [**檔大綱**] 顯示它是的子`LinearLayout`系, 位於下列`imageView1 (ImageView)`位置:
 
 [![藍色外框](designer-walkthrough-images/xs/10-blue-outline-m75-sml.png)](designer-walkthrough-images/xs/10-blue-outline-m75.png#lightbox)
 
-當您選取`ImageView`括住，在設計工具中，移動藍色外框`ImageView`。 此外，將選取範圍移至`imageView1 (ImageView)`中**文件大綱**:
+當您`ImageView`在設計工具中選取時, 藍色外框會移動以`ImageView`環繞。 此外, 選取範圍會移至`imageView1 (ImageView)` **檔大綱**中的:
 
 [![選取 ImageView](designer-walkthrough-images/xs/11-select-imageview-m75-sml.png)](designer-walkthrough-images/xs/11-select-imageview-m75.png#lightbox)
 
-下一步，拖曳`Text (Large)`小工具，從**工具箱**到新加入`LinearLayout`。 請注意，當您拖曳到滑鼠**設計介面**，它會反白顯示新的 widget 插入的位置。
-`Text (Large)`小工具應位於`linearLayout1`如下所示：
+接下來, 將`Text (Large)` widget 從 [**工具箱**] 拖曳至新加入`LinearLayout`的。 請注意, 當您將滑鼠拖曳至  **Design Surface**時, 它會反白顯示新 widget 的插入位置。
+Widget 應該位於中`linearLayout1` , 如下所示: `Text (Large)`
 
 [![新增大型文字小工具](designer-walkthrough-images/xs/12-green-highlight-m75-sml.png)](designer-walkthrough-images/xs/12-green-highlight-m75.png#lightbox)
 
-接下來，新增`Text (Small)`小工具下`Text (Large)`小工具。 在此時**設計介面**應該類似下列螢幕擷取畫面：
+接下來, 在`Text (Small)` `Text (Large)`小工具下方新增 widget。 此時, **Design Surface**應該類似下列螢幕擷取畫面:
 
-[![新增小文字小工具](designer-walkthrough-images/xs/13-add-small-text-m75-sml.png)](designer-walkthrough-images/xs/13-add-small-text-m75.png#lightbox)
+[![新增小型文字小工具](designer-walkthrough-images/xs/13-add-small-text-m75-sml.png)](designer-walkthrough-images/xs/13-add-small-text-m75.png#lightbox)
 
-如果兩個`textView`小工具不會深入探討`linearLayout1`，您可以將它們拖曳到`linearLayout1`中**文件大綱**並將其置放，使其顯示在上一個螢幕擷取畫面所示 (縮排下`linearLayout1`).
+如果兩個`textView`小工具不在`linearLayout1`內, 您可以將它們`linearLayout1`拖曳至**檔大綱**中, 並放置它們, 使其如先前的螢幕擷取畫面所示`linearLayout1`顯示 (縮排在底下)。
 
 
-### <a name="arranging-the-user-interface"></a>排列的使用者介面
+### <a name="arranging-the-user-interface"></a>排列使用者介面
 
-下一步是修改 UI 能夠顯示`ImageView`左邊的兩個`TextView`小工具會將右邊的堆疊`ImageView`。
+下一個步驟是修改 UI, 以`ImageView`在左側顯示, 並將兩個`TextView`小工具堆疊`ImageView`到的右邊。
 
-1.  具有`ImageView`選取，按一下**屬性** 索引標籤。
+1.  使用選取`ImageView`的, 按一下 [**屬性**] 索引標籤。
 
-2.  正下方**屬性**索引標籤上，按一下**版面配置**。
+2.  在 [**屬性**] 索引標籤正下方, 按一下 [配置]。
 
-3.  向下捲動至**ViewGroup**並變更`Width`設為  `wrap_content`:
+3.  向下**ViewGroup** , 並將`Width`設定變更為: `wrap_content`
 
 [![設定自動換行內容](designer-walkthrough-images/xs/15-wrap-content-m75-sml.png)](designer-walkthrough-images/xs/15-wrap-content-m75.png#lightbox)
 
-若要變更的另一種方式`Width`設定為 按一下可切換至其寬度設定小工具的右邊的三角形`wrap_content`:
+另一種變更`Width`設定的方式是按一下 widget 右手邊的三角形, 將其寬度設定切換為: `wrap_content`
 
-[![若要設定寬度的拖放](designer-walkthrough-images/xs/16-width-arrow-m75-sml.png)](designer-walkthrough-images/xs/16-width-arrow-m75.png#lightbox)
+[![拖曳以設定寬度](designer-walkthrough-images/xs/16-width-arrow-m75-sml.png)](designer-walkthrough-images/xs/16-width-arrow-m75.png#lightbox)
 
-再次按一下該三角形會傳回`Width`設為  `match_parent`。 接下來，移至**文件大綱**窗格，然後選取根目錄`LinearLayout`:
+再次`Width`按一下三角形, 會將設定傳回`match_parent`給。 接下來, 移至 [**檔大綱**] 窗格, 然後`LinearLayout`選取 [根]:
 
 [![選取根 LinearLayout](designer-walkthrough-images/xs/17-root-linearlayout-m75-sml.png)](designer-walkthrough-images/xs/17-root-linearlayout-m75.png#lightbox)
 
-具有根`LinearLayout`選取，返回**屬性**索引標籤，然後按一下**Widget**。 變更`Orientation`設為  `horizontal` ，如下所示。 在此時**設計介面**應該類似下列螢幕擷取畫面。 請注意，`TextView`小工具都已移至右側`ImageView`:
+選取根`LinearLayout`之後, 返回 [**屬性**] 索引標籤, 然後按一下 [ **Widget**]。 將設定變更為`horizontal` , 如下所示。 `Orientation` 此時, **Design Surface**應該類似下列螢幕擷取畫面。 請注意, `TextView` widget 已移至右側: `ImageView`
 
-[![選取 水平方向](designer-walkthrough-images/xs/18-horizontal-orientation-m75-sml.png)](designer-walkthrough-images/xs/18-horizontal-orientation-m75.png#lightbox)
+[![選取水準方向](designer-walkthrough-images/xs/18-horizontal-orientation-m75-sml.png)](designer-walkthrough-images/xs/18-horizontal-orientation-m75.png#lightbox)
 
 
 ### <a name="modifying-the-spacing"></a>修改間距
 
-下一個步驟是修改的邊框距離及邊界設定，以提供更多的空間之間的小工具 UI 中。 選取  `ImageView` ，按一下 **版面配置**索引標籤下**屬性**。 變更`Min Width`來`50dp`，則`Min Height`來`70dp`，而`Padding`來`10dp`。
-這適用於周圍每一邊都填補`ImageView`和垂直 elongates 它：
+下一步是修改 UI 中的填補和邊界設定, 以在 widget 之間提供更多空間。 選取, 然後按一下 [**屬性**] 底下的 [配置] 索引標籤。  `ImageView` `50dp` `10dp`將變更`Min Width`為、 `Min Height`設為`70dp`,並`Padding`將變更為。
+這會在的`ImageView`所有側邊套用填補, 並以垂直方式 elongates:
 
-[![設定邊框間距](designer-walkthrough-images/xs/20-padding-widths-m75-sml.png)](designer-walkthrough-images/xs/20-padding-widths-m75.png#lightbox)
+[![設定填補](designer-walkthrough-images/xs/20-padding-widths-m75-sml.png)](designer-walkthrough-images/xs/20-padding-widths-m75.png#lightbox)
 
-可以藉由輸入值分別設定 頂端、 右側、 底部、 與左側填補設定`Top`， `Right`， `Bottom`，和`Left`填補欄位，分別。 例如，設定`Left`填補值，以`5dp`並`Top`， `Right`，和`Bottom`填補值，以`10dp`。 請注意，`Padding`設定會變更為這些值的逗號分隔清單：
+您可以分別`Top`在、 `Right`、 `Bottom`和`Left`填補欄位中輸入值, 以獨立設定頂端、右側、底部和左側填補設定。 `Left`例如, 將填補值設為`5dp` , 並`Top`將、 `Right`和`Bottom`填補值設定為`10dp`。 請注意, `Padding`設定會變更為這些值的逗號分隔清單:
 
-[![自訂的填補設定](designer-walkthrough-images/xs/21-custom-padding-m75-sml.png)](designer-walkthrough-images/xs/21-custom-padding-m75.png#lightbox)
+[![自訂填補設定](designer-walkthrough-images/xs/21-custom-padding-m75-sml.png)](designer-walkthrough-images/xs/21-custom-padding-m75.png#lightbox)
 
-接下來，調整 位置`LinearLayout`小工具，其中包含兩個`TextView`widget。 在 **文件大綱**，選取`linearLayout1`。 在 [**屬性**窗格中，選取**版面配置**] 索引標籤。向下捲動至**ViewGroup**區段，並設定`Left`， `Top`， `Right`，和`Bottom`邊界來`5dp`， `5dp`， `0dp`，以及`5dp`分別：
+接下來, 調整包含兩個`LinearLayout` `TextView`小工具的 widget 位置。 在 [**檔大綱**] 中`linearLayout1`, 選取。 在 [**屬性**] 窗格中, 選取 [**版面**配置] 索引標籤。向下流覽至 **[ViewGroup** ] 區段, `Left`並`Top`將`Right` `Bottom` 、、和邊界`5dp`分別設定`0dp`為、 `5dp` `5dp`、和:
 
 [![設定邊界](designer-walkthrough-images/xs/22-margins-m75-sml.png)](designer-walkthrough-images/xs/22-margins-m75.png#lightbox)
 
-### <a name="removing-the-default-image"></a>移除預設的映像
+### <a name="removing-the-default-image"></a>移除預設映射
 
-因為`ImageView`用來顯示的色彩 （而非映像） 下, 一步是移除範本所加入的預設影像來源。
+`ImageView`由於是用來顯示色彩 (而非影像), 因此下一個步驟是移除範本所新增的預設影像來源。
 
 1.  選取 `ImageView`。
 
-2.  按一下  **Widget**索引標籤下**屬性**。
+2.  按一下 [**屬性**] 底下的 [ **Widget** ] 索引標籤。
 
-3.  清除`Src`設定使其空白：
+3.  `Src`清除設定, 使其空白:
 
 [![清除 ImageView src 設定](designer-walkthrough-images/xs/23-clear-src-m75-sml.png)](designer-walkthrough-images/xs/23-clear-src-m75.png#lightbox)
 
-這會移除`android:src="@android:drawable/ic_menu_gallery"`從來源 XML 的`ImageView`。
+這會`android:src="@android:drawable/ic_menu_gallery"`從的來源 XML 移除該`ImageView`。
 
-### <a name="adding-a-listview-container"></a>加入 ListView 容器
+### <a name="adding-a-listview-container"></a>新增 ListView 容器
 
-既然**list_item**版面配置定義、 下一個步驟是新增`ListView`主要版面配置。 這`ListView`將包含一份**list_item**。 
+現在已定義**list_item**配置, 下一個步驟是將加入`ListView`至主要版面配置。 這`ListView`會包含**list_item**的清單。 
 
-在 **方案總管**，開啟**Resources/layout/Main.axml**。
-按一下 `Button`小工具 （如果有的話） 並將它刪除。 在 **工具箱**，找出`ListView`小工具並拖曳至**設計介面**。
-`ListView`設計工具中將會空白，但是當選取時，說明其框線的藍線。 您可以檢視**文件大綱**以確認**ListView**是否已正確新增：
+在**方案總管**中, 開啟**Resources/layout/Main. axml**。
+`Button`按一下 widget (如果有的話), 並將它刪除。 在 [**工具箱**] 中找`ListView`出小工具, 並將它拖曳至 [ **Design Surface**]。
+設計`ListView`工具中的會是空白, 但在選取時, 會將框線外框的藍色線條除外。 您可以查看**檔大綱**, 確認已正確新增**ListView** :
 
-[![新的 ListView](designer-walkthrough-images/xs/24-new-listview-m75-sml.png)](designer-walkthrough-images/xs/24-new-listview-m75.png#lightbox)
+[![新增 ListView](designer-walkthrough-images/xs/24-new-listview-m75-sml.png)](designer-walkthrough-images/xs/24-new-listview-m75.png#lightbox)
 
-根據預設，`ListView`有`Id`的值`@+id/listView1`。
-雖然`listView1`仍為已選取在**文件大綱**，開啟**屬性** 窗格中，按一下**排列依據**，並選取**類別**.
-開啟**Main**，找出**識別碼**屬性，其將值變更為`@+id/myListView`:
+根據預設, `ListView`會`Id`提供的值`@+id/listView1`給。
+當`listView1`您仍在 [**檔大綱**] 中選取時, 開啟 [**屬性**] 窗格, 按一下 [**排列依據**], 然後選取 [**類別**]。
+開啟 [ **Main**], 找到**Id**屬性, 並將其值`@+id/myListView`變更為:
 
-[![重新命名為 myListView 的識別碼](designer-walkthrough-images/xs/25-change-id-m75-sml.png)](designer-walkthrough-images/xs/25-change-id-m75.png#lightbox)
+[![將識別碼重新命名為 myListView](designer-walkthrough-images/xs/25-change-id-m75-sml.png)](designer-walkthrough-images/xs/25-change-id-m75.png#lightbox)
 
-此時，使用者介面是可供使用。
+此時, 使用者介面已準備好可供使用。
 
 ### <a name="running-the-application"></a>執行應用程式
 
-開啟**MainActivity.cs**和其程式碼取代為下列：
+開啟**MainActivity.cs** , 並將其程式碼取代為下列內容:
 
 ```csharp
 using Android.App;
@@ -516,17 +521,17 @@ namespace DesignerWalkthrough
 }
 ```
 
-此程式碼使用自訂`ListView`配接器將載入的色彩資訊，以及剛建立的 UI 中顯示這項資料。 為了讓此範例的簡潔，色彩資訊會是硬式編碼在清單中，但無法修改配接器，從資料來源擷取色彩資訊，或即時計算出來。 如需詳細資訊`ListView`配接器，請參閱[ListView](~/android/user-interface/layouts/list-view/index.md)。
+這段程式碼會`ListView`使用自訂介面卡來載入色彩資訊, 並在剛建立的 UI 中顯示此資料。 為了讓此範例保持簡短, 色彩資訊會以硬式編碼方式放入清單中, 但是可以修改介面卡以從資料來源解壓縮色彩資訊, 或即時計算。 如需`ListView`介面卡的詳細資訊, 請參閱[ListView](~/android/user-interface/layouts/list-view/index.md)。
 
-建置並執行應用程式。 下列螢幕擷取畫面是在裝置上執行時，應用程式的顯示方式範例：
+建置並執行應用程式。 下列螢幕擷取畫面是應用程式在裝置上執行時的顯示方式範例:
 
-[![最終的螢幕擷取畫面](designer-walkthrough-images/xs/26-final-screenshot-sml.png)](designer-walkthrough-images/xs/26-final-screenshot.png#lightbox)
+[![最後的螢幕擷取畫面](designer-walkthrough-images/xs/26-final-screenshot-sml.png)](designer-walkthrough-images/xs/26-final-screenshot.png#lightbox)
 
 -----
 
 
 ## <a name="summary"></a>總結
 
-本文章會逐步完成使用 Xamarin.Android 的設計工具在 Visual Studio 中建立基本的應用程式的使用者介面的程序。
-課程中示範了如何在清單中，建立單一項目介面，它說明如何新增 widget 和它們以視覺化方式來配置。
-它也會說明如何將資源指派，然後在這些小工具設定各種屬性。
+本文逐步解說在 Visual Studio 中使用 Xamarin. Android Designer 的程式, 以建立基本應用程式的使用者介面。
+其中示範了如何為清單中的單一專案建立介面, 並說明如何加入 widget, 並以視覺化方式將其版面配置。
+它也會說明如何指派資源, 然後在那些 widget 上設定各種屬性。
