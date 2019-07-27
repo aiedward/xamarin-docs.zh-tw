@@ -1,31 +1,31 @@
 ---
-title: 在 Xamarin.Android 中使用 RelativeLayout
-description: 如何在 Xamarin.Android 應用程式中使用 RelativeLayout
+title: 在 Xamarin 中使用 RelativeLayout
+description: 如何在 Xamarin Android 應用程式中使用 RelativeLayout
 ms.prod: xamarin
 ms.assetid: AFD9C849-02C3-E728-BC78-77A563612BC5
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/29/2018
-ms.openlocfilehash: af2972ecc92435836a75013e6203ba47c2c04627
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a53baed9d5f291628d7d1a8da05739e43412d473
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61303615"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509721"
 ---
-# <a name="relativelayout"></a>RelativeLayout
+# <a name="xamarinandroid-relativelayout"></a>Xamarin. Android RelativeLayout
 
-[`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) 已[ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)顯示子系 [`View`](https://developer.xamarin.com/api/type/Android.Views.View/)
-相對位置中的項目。 位置[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)可以指定相對於同層級項目 （例如對於左邊的或指定的項目底下），或在將放置相對於 [`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)
-（例如對齊到底部，左側的中心） 的區域。
+[`RelativeLayout`](xref:Android.Widget.RelativeLayout)是顯示子系的。 [`ViewGroup`](xref:Android.Views.ViewGroup)[`View`](xref:Android.Views.View)
+相對位置中的元素。 的位置[`View`](xref:Android.Views.View)可以指定為相對於兄弟元素 (例如, 到指定專案的左邊或下方), 或相對於的位置。[`RelativeLayout`](xref:Android.Widget.RelativeLayout)
+區域 (例如對齊底端、中央的左邊)。
 
-A [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)是一個非常強大的公用程式，設計使用者介面，因為它可免除巢狀[ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)s。 如果您發現自己使用數個巢狀結構 [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)
-群組，您可以將其取代為單一[ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)。
+是一個非常強大的公用程式, 可用於設計使用者介面, 因為它[`ViewGroup`](xref:Android.Views.ViewGroup)可以排除嵌套的。 [`RelativeLayout`](xref:Android.Widget.RelativeLayout) 如果您發現自己使用數個嵌套的[`LinearLayout`](xref:Android.Widget.LinearLayout)
+群組, 您可以使用單一[`RelativeLayout`](xref:Android.Widget.RelativeLayout)來取代它們。
 
-開始新的專案，名為**HelloRelativeLayout**。
+啟動名為**HelloRelativeLayout**的新專案。
 
-開啟**Resources/Layout/Main.axml**檔案，並插入下列：
+開啟**Resources/Layout/axml**檔案, 並插入下列內容:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -60,13 +60,13 @@ A [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.Rel
 </RelativeLayout>
 ```
 
-請注意每個`android:layout_*`屬性，例如`layout_below`， `layout_alignParentRight`，和`layout_toLeftOf`。
-使用時[ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)，您可以使用這些屬性來描述要如何放置每個[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)。 這些屬性的每個定義不同類型的相對位置。 某些屬性會使用同層級的資源識別碼[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)來定義自己的相對位置。 比方說，過去[ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/)欺騙左邊的和對齊與--top 定義[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)識別碼所識別`ok`(也就是先前[`Button`](https://developer.xamarin.com/api/type/Android.Widget.Button/)).
+請注意每個`android:layout_*`屬性, `layout_below`例如、 `layout_alignParentRight`和`layout_toLeftOf`。
+使用[`RelativeLayout`](xref:Android.Widget.RelativeLayout)時, 您可以使用這些屬性來描述您要如何定位每個[`View`](xref:Android.Views.View)。 這些屬性中的每一個都定義了不同種類的相對位置。 某些屬性會使用兄弟[`View`](xref:Android.Views.View)的資源識別碼來定義自己的相對位置。 例如, [`Button`](xref:Android.Widget.Button)最後一個是定義為, 它是由識別碼`ok`所識別的[`View`](xref:Android.Views.View) (其為上一個[`Button`](xref:Android.Widget.Button)) 所識別的左邊和靠上對齊。
 
-中的所有可用的版面配置屬性定義[ `RelativeLayout.LayoutParams` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout+LayoutParams/)。
+所有可用的版面配置屬性都定義于[`RelativeLayout.LayoutParams`](xref:Android.Widget.RelativeLayout.LayoutParams)中。
 
-確定您將在此版面配置 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)
-方法：
+請確定您已在中載入此版面配置[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+方法
 
 ```csharp
 protected override void OnCreate (Bundle savedInstanceState)
@@ -76,21 +76,19 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-[ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.SetContentView/p/System.Int32/)方法會載入的配置檔案[ `Activity`](https://developer.xamarin.com/api/type/Android.App.Activity/)資源識別碼所指定&mdash;`Resource.Layout.Main`是指**資源/配置 /Main.axml**版面配置檔。
+[`Activity`](xref:Android.App.Activity) &mdash; `Resource.Layout.Main` 方法會載入設定檔案, 而資源識別碼所指定的則是指 Resources/layout/axml 設定檔案。 [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)
 
-執行應用程式。 您應該會看到下列配置：
+執行應用程式。 您應該會看到下列版面配置:
 
-[![相對的版面配置 TextView、 EditText，與兩個按鈕的螢幕擷取畫面](relative-layout-images/helloviews2.png)](relative-layout-images/helloviews2.png#lightbox)
-
+[![具有 TextView、EditText 和兩個按鈕的相對版面配置螢幕擷取畫面](relative-layout-images/helloviews2.png)](relative-layout-images/helloviews2.png#lightbox)
 
 ## <a name="resources"></a>資源
 
--   [`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)
--   [`RelativeLayout.LayoutParams`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout+LayoutParams/)
--   [`TextView`](https://developer.xamarin.com/api/type/Android.Widget.TextView/)
--   [`EditText`](https://developer.xamarin.com/api/type/Android.Widget.EditText/)
--   [`Button`](https://developer.xamarin.com/api/type/Android.Widget.Button/)
+- [`RelativeLayout`](xref:Android.Widget.RelativeLayout)
+- [`RelativeLayout.LayoutParams`](xref:Android.Widget.RelativeLayout.LayoutParams)
+- [`TextView`](xref:Android.Widget.TextView)
+- [`EditText`](xref:Android.Widget.EditText)
+- [`Button`](xref:Android.Widget.Button)
 
-
-*此頁面上的部分是根據工作建立及 Android 的開放原始碼專案所共用，並依據所述的條款來使用修改*
-[*Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/).
+*此頁面的部分是根據 Android 開放原始碼專案所建立和共用的工作進行修改, 並根據*
+[*創意 Commons 2.5 屬性授權*](http://creativecommons.org/licenses/by/2.5/)中所述的條款來使用。

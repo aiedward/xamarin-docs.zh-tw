@@ -6,25 +6,25 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 45e625b28bbdf0009b5cfcf661b00ce17638771d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ef965bed5b50402e1659e45c55a02f9382001521
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61311202"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511486"
 ---
-# <a name="gridlayout"></a>GridLayout
+# <a name="xamarinandroid-gridlayout"></a>Xamarin. Android GridLayout
 
-`GridLayout`是一種新`ViewGroup`支援 2D 方格，類似於 HTML 表格中的檢視版面配置，如下所示的子類別：
+`GridLayout`是新`ViewGroup`的子類別, 支援在2d 方格中配置視圖, 類似于 HTML 表格, 如下所示:
 
- [![裁剪 GridLayout 顯示四個資料格](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png#lightbox)
+ [![顯示四個數據格的裁剪 GridLayout](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png#lightbox)
 
- `GridLayout` 適用於一般檢視階層，其中子檢視設定方格中所指定的資料列和資料行，它們應該在其位置。 如此一來， *GridLayout*能夠放在方格中的檢視，而不需要任何中繼檢視提供資料表的結構，例如 TableLayout 中所使用的資料表資料列所示。 藉由維護的平面階層*GridLayout*能夠更迅速地配置它的子檢視。 讓我們看看範例來說明此概念實際的意義在程式碼中。
+ `GridLayout`適用于一般視圖階層, 其中子視圖會藉由指定應該位於其中的資料列和資料行, 在方格中設定其位置。 如此一來, *GridLayout*就能夠在方格中定位視圖, 而不需要任何中繼視圖都提供資料表結構, 例如在 TableLayout 中使用的資料表資料列中顯示。 藉由維護平面階層, *GridLayout*可以更快速地配置其子視圖。 讓我們來看一個範例, 以說明這個概念在程式碼中實際代表的意義。
 
 
-## <a name="creating-a-grid-layout"></a>建立格線版面配置
+## <a name="creating-a-grid-layout"></a>建立方格版面配置
 
-下列 XML 程式碼加入了許多`TextView`控制項，成為*GridLayout*。
+下列 XML 會將數`TextView`個控制項加入至*GridLayout*。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -48,19 +48,19 @@ ms.locfileid: "61311202"
 </GridLayout>
 ```
 
-版面配置會調整的資料列和資料行大小，讓資料格可以配合其內容，如下列圖所示：
+版面配置會調整資料列和資料行的大小, 讓資料格可以符合其內容, 如下圖所示:
 
- [![在左側小於右邊顯示兩個資料格的版面配置的圖表](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png#lightbox)
+ [![顯示左邊的兩個儲存格小於右邊的版面配置圖表](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png#lightbox)
 
-這會導致下列的使用者介面中的應用程式執行時：
+這會在應用程式中執行時產生下列使用者介面:
 
- [![顯示四個資料格的螢幕擷取畫面的 GridLayoutDemo 應用程式](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png#lightbox)
+ [![顯示四個數據格的 GridLayoutDemo 應用程式螢幕擷取畫面](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png#lightbox)
 
 
 
-## <a name="specifying-orientation"></a>指定的方向
+## <a name="specifying-orientation"></a>指定方向
 
-請注意，在上述 XML 每個`TextView`未指定的資料列或資料行。 當未指定這些項目，則`GridLayout`指派每個順序，根據方向的子檢視。 比方說，讓我們變更的 GridLayout 方向從預設值，也就是水平、 為垂直像這樣：
+請注意, 在上述 XML 中`TextView` , 每個都不會指定資料列或資料行。 若未指定, 則`GridLayout`會根據方向, 依序指派每個子視圖。 例如, 讓我們將 GridLayout 的方向從預設的 (水準) 變更為垂直, 如下所示:
 
 ```xml
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -72,19 +72,19 @@ ms.locfileid: "61311202"
 </GridLayout>
 ```
 
-現在，`GridLayout`將定位下，請在每個資料行，而不是從左到右，從上方的資料格，如下所示：
+現在, `GridLayout`會將每個資料行中的資料格 (而不是由左至右) 放在上方, 如下所示:
 
- [![說明如何將資料格放置在垂直方向的圖表](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png#lightbox)
+ [![說明資料格如何以垂直方向放置的圖表](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png#lightbox)
 
-這會導致下列的使用者介面，在執行階段：
+這會在執行時間產生下列使用者介面:
 
- [![螢幕擷取畫面的 GridLayoutDemo 放置在垂直方向的資料格](grid-layout-images/02-gridlayout.png)](grid-layout-images/02-gridlayout.png#lightbox)
+ [![GridLayoutDemo 的螢幕擷取畫面, 其中的儲存格位於垂直方向](grid-layout-images/02-gridlayout.png)](grid-layout-images/02-gridlayout.png#lightbox)
 
 
 
-### <a name="specifying-explicit-position"></a>指定明確的位置
+### <a name="specifying-explicit-position"></a>指定明確位置
 
-如果我們想要明確控制中的子檢視的位置`GridLayout`，我們可以設定其`layout_row`和`layout_column`屬性。 例如，下列 XML 會導致第一個螢幕擷取畫面示 （如上所示），不論方向為何的版面配置。
+如果我們想要在中`GridLayout`明確控制子視圖的位置, 我們可以設定其`layout_row`和`layout_column`屬性。 例如, 下列 XML 會導致第一個螢幕擷取畫面 (如上所示) 中顯示的版面配置, 不論方向為何。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -120,7 +120,7 @@ ms.locfileid: "61311202"
 
 ### <a name="specifying-spacing"></a>指定間距
 
-我們有幾個選項，將提供的檢視之子系之間的間距`GridLayout`。 我們可以使用`layout_margin`設定邊界上的每一個子系檢視直接，如下所示的屬性
+我們有幾個選項可提供的子視圖`GridLayout`之間的間距。 我們可以使用`layout_margin`屬性來直接設定每個子視圖的邊界, 如下所示
 
 ```xml
 <TextView
@@ -131,8 +131,8 @@ ms.locfileid: "61311202"
             android:layout_margin="10dp" />
 ```
 
-此外，在 Android 4 中，新的一般用途的間距檢視呼叫`Space`現已推出。 若要使用它，只要將它新增為子檢視。
-例如，以下的 XML 將以額外的資料列`GridLayout`藉由設定其`rowcount`為 3，並將`Space`檢視，能夠之間的間距`TextViews`。
+此外, 在 Android 4 中, 現在可以使用名`Space`為的新一般用途間距視圖。 若要使用它, 請直接將它新增為子視圖。
+例如, `GridLayout`下列 XML 會藉由將其`rowcount`設定為 3, 將另一個資料列加入至, `Space`並加入一個可在之間`TextViews`提供間距的視圖。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -170,17 +170,17 @@ ms.locfileid: "61311202"
 </GridLayout>
 ```
 
-這段 XML 會建立在間距`GridLayout`，如下所示：
+此 XML 會在中`GridLayout`建立間距, 如下所示:
 
- [![螢幕擷取畫面的 GridLayoutDemo，說明具有間距較大的資料格](grid-layout-images/03-gridlayout.png)](grid-layout-images/03-gridlayout.png#lightbox)
+ [![GridLayoutDemo 的螢幕擷取畫面, 以間距說明較大的資料格](grid-layout-images/03-gridlayout.png)](grid-layout-images/03-gridlayout.png#lightbox)
 
-使用新的好處`Space`檢視是它允許間距，而且不需要我們在每個子檢視上設定屬性。
+使用新`Space`視圖的好處在於, 它允許間距, 而且不需要我們在每個子視圖上設定屬性。
 
 
 
 ### <a name="spanning-columns-and-rows"></a>跨越資料行和資料列
 
-`GridLayout`也支援跨多個資料行和資料列的資料格。 例如，假設我們新增另一個資料列包含一個按鈕`GridLayout`，如下所示：
+`GridLayout`也支援跨越多個資料行和資料列的資料格。 例如, 假設我們將包含按鈕的另一個資料列新增`GridLayout`至, 如下所示:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -223,11 +223,11 @@ ms.locfileid: "61311202"
 </GridLayout>
 ```
 
-這會導致第一個資料行`GridLayout`過度使用適應大小的按鈕，如我們在此處所見：
+這會導致的`GridLayout`第一個資料行伸展, 以容納按鈕的大小, 如以下所示:
 
-[![螢幕擷取畫面的 GridLayoutDemo 跨越第一個資料行的按鈕](grid-layout-images/04-gridlayout.png)](grid-layout-images/04-gridlayout.png#lightbox)
+[![GridLayoutDemo with 按鈕只跨越第一個資料行的螢幕擷取畫面](grid-layout-images/04-gridlayout.png)](grid-layout-images/04-gridlayout.png#lightbox)
 
-為了避免自動縮放的第一個資料行，我們可以設定按鈕，以跨越兩個資料行，藉由設定其 columnspan 像這樣：
+若要保留第一個資料行的延展, 我們可以設定其 columnspan, 使其橫跨兩個數據行, 如下所示:
 
 ```xml
 <Button
@@ -238,13 +238,13 @@ ms.locfileid: "61311202"
     android:layout_columnSpan="2" />
 ```
 
-這樣會導致的版面配置`TextViews`類似我們稍早，已加入到底部的按鈕具備的版面配置`GridLayout`，如下所示：
+這麼做會產生`TextViews`類似先前所配置的配置, 並將按鈕新增至的底部`GridLayout` , 如下所示:
 
- [![螢幕擷取畫面的 GridLayoutDemo 跨越兩個資料行的按鈕](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
+ [![具有橫跨兩個數據行之按鈕的 GridLayoutDemo 螢幕擷取畫面](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
 
 
 ## <a name="related-links"></a>相關連結
 
-- [GridLayoutDemo （範例）](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/ICS_Samples/GridLayoutDemo/)
-- [簡介 Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平台](https://developer.android.com/sdk/android-4.0.html)
+- [GridLayoutDemo (範例)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/ICS_Samples/GridLayoutDemo/)
+- [霜淇淋三明治簡介](http://www.android.com/about/ice-cream-sandwich/)
+- [Android 4.0 平臺](https://developer.android.com/sdk/android-4.0.html)

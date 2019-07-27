@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 6e65124df4b20a50091ad93e18621f8e6707ebbe
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 1fa46af1ac1cf6ea49a53e3f8d3c3dca6ba83e13
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970556"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511894"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms 滑桿
 
@@ -39,7 +39,7 @@ Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider)是可由使用者選取操
 
 [ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs)隨附的物件`ValueChanged`事件有兩個屬性，這兩個型別`double`: [ `OldValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue)並[ `NewValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue). 在引發事件時，windows 7`NewValue`等同`Value`屬性`Slider`物件。
 
-`Slider` 也會定義`DragStarted`和`DragCompleted`開頭和結尾的拖曳動作所引發的事件。 不同於[ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged)事件`DragStarted`並`DragCompleted`透過使用者操作只會引發事件`Slider`。 當`DragStarted`事件引發時， `DragStartedCommand`，型別的`ICommand`，會執行。 同樣地，當`DragCompleted`事件引發時， `DragCompletedCommand`，型別的`ICommand`，會執行。
+`Slider`也會`DragStarted`定義`DragCompleted`和事件, 它們會在拖曳動作的開頭和結尾引發。 與事件不同的`DragStarted` 是,`DragCompleted`和事件只會透過使用者操作來引發。 `Slider` [`ValueChanged`](xref:Xamarin.Forms.Slider.ValueChanged) 當事件引發`DragStartedCommand`時, 會執行型`ICommand`別為的。 `DragStarted` 同樣地, 當`DragCompleted`事件引發`DragCompletedCommand`時, 會執行型`ICommand`別為的。
 
 > [!WARNING]
 > 請勿使用未受限制的水平版面配置選項`Center`， `Start`，或`End`使用`Slider`。 在 Android 和 UWP，`Slider`列長度為零，並在 iOS 上，列摺疊是很短。 保留預設值`HorizontalOptions`設定`Fill`，而未使用的寬度`Auto`當放置`Slider`在`Grid`版面配置。
@@ -205,7 +205,7 @@ double value = slider.Value;
 </ContentPage>
 ```
 
-`Rotation`屬性的第一個`Label`繫結至`Value`屬性`Slider`，因為`Text`第二個屬性`Label`具有`StringFormat`規格。 **基本的滑桿繫結**頁面函式稍有不同兩個先前的頁面：第一次出現的頁面中，第二個`Label`顯示文字字串，其值。 這是使用資料繫結的優點。 若要顯示沒有資料繫結的文字，您必須特別初始化`Text`的屬性`Label`，或模擬的引發`ValueChanged`藉由從類別建構函式呼叫的事件處理常式的事件。
+`Rotation`屬性的第一個`Label`繫結至`Value`屬性`Slider`，因為`Text`第二個屬性`Label`具有`StringFormat`規格。 **基本滑杆**系結頁面的運作方式與前兩個頁面的功能稍有不同:當頁面第一次出現時, `Label`第二個會顯示含有值的文字字串。 這是使用資料繫結的優點。 若要顯示沒有資料繫結的文字，您必須特別初始化`Text`的屬性`Label`，或模擬的引發`ValueChanged`藉由從類別建構函式呼叫的事件處理常式的事件。
 
 <a name="precautions" />
 
@@ -289,11 +289,11 @@ Slider slider = new Slider
 
 ### <a name="the-android-implementation"></a>Android 的實作
 
-Android 的實作`Slider`為基礎的 Android [ `SeekBar` ](https://developer.xamarin.com/api/type/Android.Widget.SeekBar/) ，並一律設定[ `Max` ](https://developer.xamarin.com/api/property/Android.Widget.ProgressBar.Max/)屬性設為 1000年。 這表示`Slider`在 Android 上有只 1,001 離散的值。 如果您設定`Slider`能夠`Minimum`為 0，`Maximum`為 5000，則為`Slider`操作，`Value`屬性具有值 0、 5、 10、 15 及其他等等。
+Android 的實作`Slider`為基礎的 Android [ `SeekBar` ](xref:Android.Widget.SeekBar) ，並一律設定[ `Max` ](xref:Android.Widget.ProgressBar.Max)屬性設為 1000年。 這表示`Slider`在 Android 上有只 1,001 離散的值。 如果您設定`Slider`能夠`Minimum`為 0，`Maximum`為 5000，則為`Slider`操作，`Value`屬性具有值 0、 5、 10、 15 及其他等等。
 
 ### <a name="the-uwp-implementation"></a>UWP 實作
 
-UWP 實作`Slider`為基礎的 UWP [ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider)控制項。 `StepFrequency`屬性的 UWP`Slider`設定的差異`Maximum`和`Minimum`屬性除以 10，但不是能大於 1。
+UWP 實作`Slider`為基礎的 UWP [ `Slider` ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)控制項。 `StepFrequency`屬性的 UWP`Slider`設定的差異`Maximum`和`Minimum`屬性除以 10，但不是能大於 1。
 
 例如，針對預設範圍 0 到 1`StepFrequency`屬性設定為 0.1。 作為`Slider`操作，`Value`屬性會限制為 0、 0.1、 0.2、 0.3、 0.4、 0.5，0.6，0.7，0.8、 0.9 及 1.0。 (這是最後一頁中明顯[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)範例。)時之間的差異`Maximum`並`Minimum`屬性可為 10 或更新版本，然後`StepFrequency`設定為 1，而`Value`屬性具有整數值。
 

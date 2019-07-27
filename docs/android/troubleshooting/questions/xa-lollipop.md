@@ -7,71 +7,71 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: db0cb221ee18998fbb98449ae03c442c84bcfcd7
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: fb357f0342aef68cd2e20d8f8d83474686593743
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829707"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510944"
 ---
 # <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>哪些版本的 Xamarin.Android 新增了 Lollipop 支援？
 
 > [!NOTE]
-> 本指南原先是針對 Android L 預覽編寫。
+> 本指南原本是針對 Android L preview 所撰寫。
 
--   [Xamarin.Android 4.17](https://developer.xamarin.com/releases/android/xamarin.android_4/xamarin.android_4.17/)新增 Android L 預覽支援。
--   [Xamarin.Android 4.20](https://developer.xamarin.com/releases/android/xamarin.android_4/xamarin.android_4.20/)新增了 Android Lollipop 支援。
+-   [Xamarin. android 4.17](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_4/xamarin.android_4.17/index.md)已新增 Android L Preview 支援。
+-   [Xamarin. android 4.20](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_4/xamarin.android_4.20/index.md)已新增 Android 棒糖支援。
 
-Xamarin 僅主動支援目前的穩定版本的 Xamarin 工具。 提供下列資訊 」 做為-是 「 適用於舊版工具。 如需有關 Xamarin 版本的最新資訊，請參閱[此處](http://releases.xamarin.com/)。
+Xamarin 只會主動支援 Xamarin 工具目前穩定的版本。 較舊版本的工具會以「原樣」提供下列資訊。 如需 Xamarin 版本的最新資訊, 請參閱[這裡](http://releases.xamarin.com/)。
 
-## <a name="missing-androidjar-for-api-level-21-in-android-l-preview"></a>中的 「 遺漏 android.jar API 層級 21 「 Android L 預覽
+## <a name="missing-androidjar-for-api-level-21-in-android-l-preview"></a>Android L Preview 中的「缺少 API 層級21的 android .jar」
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-下列錯誤訊息 （或類似） 可能會顯示：
+可能會顯示下列錯誤訊息 (或類似):
 
 ```cmd
 Error 1 Could not find android.jar for API Level 21.
 ```
 
-此訊息表示未安裝 API Level 21 的 Android SDK 平台。 在 Android SDK Manager 中安裝它 (**工具 > 開啟 Android SDK 管理員...** )，或變更您的 Xamarin.Android 專案目標的已安裝的 API 版本。
+此訊息表示未安裝適用于 API 層級21的 Android SDK 平臺。 將它安裝在 Android SDK 管理員 ([**工具 > 開啟 Android SDK 管理員**]), 或變更您的 Xamarin. Android 專案, 將目標設定為已安裝的 API 版本。
 
-有此問題的幾個因應措施：
+有一些因應措施可解決此問題:
 
-1. 變更您的專案，讓它的目標 API 19 或較低。
+1. 變更您的專案, 使其以 API 19 或更低版本為目標。
 
-2. 重新命名您的 android 21 資料夾從 android 21 至 android l。 （最佳情況下，這應該只能作為暫時的修正程式，而且它可能完全無法運作非常好）。
+2. 將 android-21 資料夾從 android-21 重新命名為 android-L。 (最棒的是, 這只能用來做為暫時的修正程式, 而且可能完全無法運作)。
 
    **%LOCALAPPDATA%\\Android\\android-sdk\\platforms\\android-21**
 
-3. 暫時降級回 Android API Level 21"L"預覽 [1]:
+3. 暫時降級回到 Android API 層級 21 "L" preview [1]:
 
-    1.  刪除 **%LOCALAPPDATA%\\Android\\android sdk\\平台\\android 21** 
-    2.  展開 [1] 到**c:\\使用者\\&lt;使用者名稱&gt;\\AppData\\本機\\Android\\android sdk\\平台**來建立**android-L**資料夾。
+    1.  刪除 **% LOCALAPPDATA\\% android\\android-sdk\\平臺\\android-21** 
+    2.  將 [1] 解壓縮至**C\\:\\Users 使用者\\ \\ \\名稱\\ &lt; &gt;AppData本機\\android android-sdk 平臺**以建立**android-L**資料夾。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-下列錯誤訊息 （或類似） 可能會顯示：
+可能會顯示下列錯誤訊息 (或類似):
 
 ```bash
 /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/Xamarin.Android.Common.targets: 
 Error: Could not find android.jar for API Level 21.**
 ```
 
-這表示未安裝 [API Level 21 的 Android SDK 平台。在 Android SDK Manager 中安裝它 (工具 > SDK 管理員])，或變更您的 Xamarin.Android 專案目標的已安裝的 API 版本。
+這表示未安裝適用于 API 層級21的 Android SDK 平臺。將它安裝在 Android SDK 管理員 ([工具 > SDK 管理員 ...]) 中, 或將您的 Xamarin. Android 專案變更為以已安裝的 API 版本為目標。
 
-有此問題的幾個因應措施：
+有一些因應措施可解決此問題:
 
-1. 變更您的專案，讓它的目標 API 19 或較低。
+1. 變更您的專案, 使其以 API 19 或更低版本為目標。
 
-2. 重新命名您的 android 21 資料夾從 android 21 至 android l。 （最佳情況下，這應該只能作為暫時的修正程式，而且它可能完全無法運作非常好）。
+2. 將 android-21 資料夾從 android-21 重新命名為 android-L。 (最棒的是, 這只能用來做為暫時的修正程式, 而且可能完全無法運作)。
 
    **~/Library/Developer/Xamarin/android-sdk-macosx/android-21**
 
-3. 暫時降級回 Android API Level 21"L"預覽 [1]:
+3. 暫時降級回到 Android API 層級 21 "L" preview [1]:
 
     1.  刪除 **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/android-21**
-    2.  展開 [1] 到 **/Users/username/Library/Developer/Xamarin/android-sdk-macosx**來建立**android-L**資料夾。
+    2.  將 [1] 解壓縮至 **/Users/username/Library/Developer/Xamarin/android-sdk-macosx** , 以建立**android-L**資料夾。
 
 -----
 

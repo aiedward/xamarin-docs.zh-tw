@@ -1,44 +1,44 @@
 ---
 title: 在跨平台應用程式中使用原生類型
-description: 這篇文章說明如何使用新的 iOS Unified API 原生型別 （nint、 nuint nfloat） 跨平台應用程式中使用非 iOS 裝置，例如 Android 或 Windows Phone 作業系統，其中共用程式碼。
+description: 本文說明如何在跨平臺應用程式中使用新的 iOS Unified API 原生類型 (nint、nuint、nfloat), 其中程式碼與非 iOS 裝置 (例如 Android 或 Windows Phone Os) 共用。
 ms.prod: xamarin
 ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 author: asb3993
 ms.author: amburns
 ms.date: 04/07/2016
-ms.openlocfilehash: 847566feec2069dea924bcd2a18abf2b3ddb250b
-ms.sourcegitcommit: b986460787677cf8c2fc7cc8c03f4bc60c592120
+ms.openlocfilehash: deb4caa4d23d23b2997361cca161b218c1ff7b61
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66213282"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511295"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>在跨平台應用程式中使用原生類型
 
-_這篇文章說明如何使用新的 iOS Unified API 原生型別 （nint、 nuint nfloat） 跨平台應用程式中使用非 iOS 裝置，例如 Android 或 Windows Phone 作業系統，其中共用程式碼。_
+_本文說明如何在跨平臺應用程式中使用新的 iOS Unified API 原生類型 (nint、nuint、nfloat), 其中程式碼與非 iOS 裝置 (例如 Android 或 Windows Phone Os) 共用。_
 
 
-64-型別原生型別是由 iOS 和 Mac Api 所使用。 如果您要撰寫共用程式碼，以及在 Android 或 Windows 上執行，您必須管理的整合型別轉換成一般的.NET 類型，您可以共用。
+64類型的原生類型適用于 iOS 和 Mac Api。 如果您要撰寫在 Android 或 Windows 上執行的共用程式碼, 您必須管理將整合類型轉換成可共用的一般 .NET 類型。
 
-本文件討論不同的方式，與統一的 API，從您的共用/一般程式碼交互操作。
+本檔討論從您的共用/通用程式碼與 Unified API 交互操作的不同方式。
 
 ## <a name="when-to-use-the-native-types"></a>使用原生類型的時機
 
-Xamarin.iOS 和 Xamarin.Mac 統一 Api 仍然包含`int`，`uint`並`float`資料類型，以及`RectangleF`，`SizeF`和`PointF`型別。 這些現有的資料型別應該繼續用於任何共用的跨平台程式碼。 其中的架構可感知的型別所支援的 Mac 或 iOS 的 API 呼叫時，應該只使用新的原生資料類型。
+Xamarin 和 xamarin 整合 api 仍然包含`int`、 `uint`和`float`資料類型, `RectangleF`以及、 `SizeF`和`PointF`類型。 這些現有的資料類型應該繼續用於任何共用的跨平臺程式碼。 只有在呼叫 Mac 或 iOS API 時, 才需要使用新的原生資料類型, 其中必須支援架構感知類型。
 
-根據共用的程式碼性質，有時可能是跨平台程式碼可能需要應付`nint`，`nuint`和`nfloat`資料型別。 例如： 處理先前使用的矩形資料的轉換程式庫`System.Drawing.RectangleF`若要共用的應用程式，Xamarin.iOS 和 Xamarin.Android 版本之間的功能需要更新，以處理在 iOS 上的原生型別。
+視所共用程式碼的本質而定, 可能有些時候跨平臺程式碼可能需要處理`nint`、 `nuint`和`nfloat`資料類型。 例如: 一個程式庫, 它會處理先前用`System.Drawing.RectangleF`來在 Xamarin 和 xamarin 應用程式版本之間共用功能之矩形資料的轉換, 需要更新以處理 iOS 上的原生類型。
 
-處理這些變更的方式而定的大小和複雜度的應用程式，且共用的程式碼的表單已用，我們會看到以下幾節。
+這些變更的處理方式取決於應用程式的大小和複雜度, 以及已使用的程式碼共用形式, 如下列各節所示。
 
-## <a name="code-sharing-considerations"></a>程式碼共用的考量
+## <a name="code-sharing-considerations"></a>程式碼共用考慮
 
-中所述[共用程式碼選項](~/cross-platform/app-fundamentals/code-sharing.md)文件時，有兩種主要的方式，跨平台專案間共用程式碼：專案或可攜式類別程式庫共用。 這兩種類型的已使用，將會限制處理跨平台程式碼中的原生資料類型時，我們會有的選項。
+如[共用程式碼選項](~/cross-platform/app-fundamentals/code-sharing.md)檔中所述, 在跨平臺專案之間共用程式碼有兩種主要方式:共用的專案和可移植的類別庫。 已使用這兩種類型的哪一個, 將會限制在跨平臺程式碼中處理原生資料類型時所擁有的選項。
 
-### <a name="portable-class-library-projects"></a>可攜式類別庫專案
+### <a name="portable-class-library-projects"></a>可移植的類別庫專案
 
-可攜式類別庫 (PCL) 可讓您以您想要支援，並使用介面來提供特定平台功能的平台為目標。
+可移植的類別庫 (PCL) 可讓您以想要支援的平臺為目標, 並使用介面提供平臺特定的功能。
 
-因為 PCL 專案型別會編譯至`.DLL`它有沒有任何意義的統一的 API，您必須自行以繼續使用現有的資料型別 (`int`， `uint`， `float`) 在 PCL 中的原始程式碼和型別轉型 PCL 的呼叫類別和方法的前端應用程式中。 例如：
+因為 PCL 專案`.DLL`類型會編譯成, 而且沒有 Unified API 的意義, 所以您必須在 pcl 原始程式碼中繼續使用現有的資料類型 (`int`、 `uint`、 `float`), 並將呼叫轉型為 pcl 的前端應用程式中的類別和方法。 例如：
 
 ```csharp
 using NativePCL;
@@ -50,15 +50,15 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 
 ### <a name="shared-projects"></a>共用的專案
 
-共用資產專案類型可讓您將您在個別的專案，然後取得包含編譯的原始程式碼組織成個別的平台特定前端應用程式，並使用`#if`編譯器指示詞為必要項目管理平台特定的需求。
+共用的資產專案類型可讓您在個別的專案中組織您的原始程式碼, 然後將其包含並編譯成個別的平臺特定前端應用程式, 並`#if`視需要使用編譯器指示詞來管理平臺特定需求。
 
-大小和複雜度的後端行動應用程式會取用共用程式碼，以及大小和共用的程式碼的複雜度，必須選擇在跨平台的原生資料類型支援的方法時，會納入考量共用的資產專案。
+在跨平臺中選擇原生資料類型的支援方法時, 使用共用程式碼的前端行動應用程式大小和複雜度, 以及所共用程式碼的大小和複雜度, 都必須納入考慮共用的資產專案。
 
-根據這些因素，下列幾種解決方案可能會使用實作`if __UNIFIED__ ... #endif`編譯器指示詞，可處理的統一 API 的特定變更的程式碼。
+根據這些因素, 可能會使用`if __UNIFIED__ ... #endif`編譯器指示詞來執行下列類型的解決方案, 以處理 Unified API 程式碼的特定變更。
 
 #### <a name="using-duplicate-methods"></a>使用重複的方法
 
-看執行上述的矩形資料的轉換程式庫的範例。 如果程式庫僅包含一個或兩個非常簡單的方法，您可以選擇為 Xamarin.iOS 和 Xamarin.Android 建立重複的版本，這些方法。 例如: 
+取得程式庫的範例, 其會對上述的矩形資料進行轉換。 如果程式庫只包含一或兩個非常簡單的方法, 您可以選擇為 Xamarin 和 Xamarin 建立這些方法的重複版本。 例如：
 
 ```csharp
 using System;
@@ -99,11 +99,11 @@ namespace NativeShared
 }
 ```
 
-在上述程式碼中，由於`CalculateArea`常式非常簡單，我們使用條件式編譯，並建立個別、 統一的 API 版本的方法。 相反地，如果程式庫包含許多常式或數個複雜的常式，此解決方案不會可行，因為它會顯示保留的所有方法修改或 bug 修正的同步處理的問題。
+在上述程式碼中, 由於`CalculateArea`常式非常簡單, 因此我們使用了條件式編譯, 並建立了不同的 Unified API 版本的方法。 另一方面, 如果程式庫包含許多常式或數個複雜的常式, 則此解決方案不可行, 因為它會出現問題, 讓所有方法保持同步, 以進行修改或錯誤修正。
 
 #### <a name="using-method-overloads"></a>使用方法多載
 
-在此情況下，解決方案可能會建立使用 32 位元資料類型，如此一來，他們現在所採取的方法多載版本`CGRect`做為參數及/或傳回值，這個值轉換成`RectangleF`(了解從該轉換`nfloat`至`float`失真的轉換)，並呼叫常式，以執行實際工作的原始版本。 例如: 
+在此情況下, 解決方案可能會使用32位資料類型來建立方法的多載版本, 因此現在會採用`CGRect`做為參數和/或傳回值, 將該值轉換`RectangleF`為 (瞭解會從`nfloat`轉換成`float`是損失真轉換), 並呼叫原始版本的常式來執行實際工作。 例如：
 
 ```csharp
 using System;
@@ -146,11 +146,11 @@ namespace NativeShared
 
 ```
 
-同樣地，這是很好的解決方案，只要遺失有效位數並不會影響您的應用程式的特定需求的結果。
+同樣地, 這是很好的解決方案, 只要遺失有效位數並不會影響應用程式特定需求的結果即可。
 
-#### <a name="using-alias-directives"></a>Using 別名指示詞
+#### <a name="using-alias-directives"></a>使用 Alias 指示詞
 
-遺失有效位數與問題所在的區域，另一個可能的解決方案是使用`using`指示詞來建立原生和 CoreGraphics 資料類型的別名包括下列的程式碼，來共用原始碼程式碼檔案的頂端和任何轉換所需`int`，`uint`或是`float`值來`nint`，`nuint`或`nfloat`:
+對於遺失有效位數問題的區域, 另一個可能的解決方案是使用`using`指示詞來建立原生和 CoreGraphics 資料類型的別名, 方法是將下列程式碼包含在共用原始程式碼檔案的頂端, 並將其轉換為`int`需要`float`或值為`nuint`或: `nint` `uint` `nfloat`
 
 ```csharp
 #if __UNIFIED__
@@ -166,7 +166,7 @@ namespace NativeShared
 #endif
 ```
 
-因此，我們的範例程式碼就會變成：
+然後, 我們的範例程式碼就會變成:
 
 ```csharp
 using System;
@@ -207,14 +207,14 @@ namespace NativeShared
 }
 ```
 
-請注意，這裡我們已變更`CalculateArea`方法來傳回`nfloat`而不是標準`float`。 這項作業完成，因此我們不會產生編譯錯誤，嘗試_隱含地_轉換`nfloat`我們的計算結果 (因為這兩個要相乘的值屬於類型`nfloat`) 到`float`傳回值。
+請注意, 我們已將`CalculateArea`方法變更為`nfloat`傳回, 而不是標準`float`。 這麼做的原因是, 我們不會在嘗試將計算的 `nfloat`結果隱含轉換 (因為這兩個值都是`float`類型`nfloat`) 為傳回值時, 就不會收到編譯錯誤。
 
-如果程式碼進行編譯和執行非統一的 API 在裝置上，`using nfloat = global::System.Single;`對應`nfloat`要`Single`它會隱含地轉換成`float`允許取用的前端應用程式以呼叫`CalculateArea`方法，而不修改。
+如果程式碼是在非 Unified API 裝置上編譯並執行, 則`using nfloat = global::System.Single;`會將`nfloat`對應至`Single` , 以隱含`CalculateArea`方式轉換為`float` , 讓取用的前端應用程式可以呼叫方法, 而不需要他人.
 
 
 #### <a name="using-type-conversions-in-the-front-end-app"></a>在前端應用程式中使用類型轉換
 
-您的前端應用程式只讓少數幾個對您的共用程式碼程式庫呼叫，另一個解決方案是為了保留不變的程式庫，並呼叫現有的常式時，執行類型轉型 Xamarin.iOS 或 Xamarin.Mac 應用程式中。 例如：
+如果您的前端應用程式只會對共用程式碼程式庫進行少數呼叫, 另一個方案可能是讓程式庫保持不變, 並在呼叫現有的常式時, 于 Xamarin 或 Xamarin 應用程式中進行類型轉換。 例如：
 
 ```csharp
 using NativeShared;
@@ -224,25 +224,25 @@ CGRect rect = new CGRect (0, 0, 200, 200);
 Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((RectangleF)rect));
 ```
 
-若使用應用程式會執行數百個呼叫共用程式碼程式庫，這同樣地，可能不是很好的解決方案。
+如果取用應用程式對共用程式碼程式庫進行數百次呼叫, 這可能不是很好的解決方案。
 
-根據我們的應用程式架構，我們最後可能會使用一或多個上述的解決方案，以支援原生資料類型 （如有需要），在我們的跨平台程式碼。
+根據我們的應用程式架構, 我們最後可能會使用一或多個上述解決方案來支援跨平臺程式碼中的原生資料類型 (如有需要)。
 
 
-## <a name="xamarinforms-applications"></a>Xamarin.Forms 應用程式
+## <a name="xamarinforms-applications"></a>Xamarin. Forms 應用程式
 
-需要下列項目也會與統一的 API 應用程式共用的跨平台 Ui 中用於 Xamarin.Forms:
+以下是針對跨平臺 Ui (也會與 Unified API 應用程式共用) 使用 Xamarin 的必要項:
 
-- 整個解決方案必須使用 1.3.1 版 （或以上） 的 Xamarin.Forms NuGet 套件。
-- 相同類型的解決方案以上所顯示的任何 Xamarin.iOS 的自訂轉譯器，根據如何 UI 程式碼已共用 （共用專案或 PCL） 的使用。
+- 整個解決方案必須使用 1.3.1 (或更高版本) 的 Xamarin NuGet 套件。
+- 針對任何 Xamarin 自訂轉譯, 請根據 UI 程式碼的共用方式 (共用的專案或 PCL), 使用上面所述的相同方案類型。
 
-如同標準的跨平台應用程式中，現有的 32 位元資料類型應該用於任何共用的跨平台程式碼中大部分的情況。 新的原生資料類型應該只用於需要其中的架構可感知的型別支援 Mac 或 iOS 的 API 呼叫時。
+如同在標準的跨平臺應用程式中, 在大多數情況下, 都應該在任何共用的跨平臺程式碼中使用現有的32位資料類型。 只有在呼叫 Mac 或 iOS API 時, 才需要使用新的原生資料類型, 其中必須支援架構感知類型。
 
-如需詳細資訊，請參閱我們[更新現有的 Xamarin.Forms 應用程式](https://developer.xamarin.com/guides/cross-platform/macios/updating-xamarin-forms-apps/)文件。
+如需詳細資訊, 請參閱[更新現有的 Xamarin 應用程式](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)檔。
 
 ## <a name="summary"></a>總結
 
-在本文中，我們看到使用統一的 API 應用程式和其影響跨平台原生資料類型的時機。 我們有提供數個可以用於跨平台程式庫中必須使用新的原生資料類型的情況下的解決方案。 此外，我們已了解 Xamarin.Forms 跨平台應用程式中支援 Unified Api 的快速指南。
+在本文中, 我們已瞭解如何在 Unified API 應用程式中使用原生資料類型, 以及其跨平臺的影響。 我們已提供數個解決方案, 可用於必須在跨平臺程式庫中使用新原生資料類型的情況。 此外, 我們也看到了在 Xamarin 中支援統一 Api 的快速指南。表單跨平臺應用程式。
 
 
 

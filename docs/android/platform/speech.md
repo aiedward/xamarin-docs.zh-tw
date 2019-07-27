@@ -1,57 +1,57 @@
 ---
-title: Android 的語音
-description: 本文章涵蓋使用功能非常強大的 Android.Speech 命名空間的基本概念。 自開始，Android 已辨識語音及輸出為文字。 它是相當簡單的程序。 針對文字轉換語音，不過，程序會更為複雜，因為不僅語音引擎必須列入考量，但也語言可用及已安裝從文字轉換語音 (text-to-speech，TTS) 系統。
+title: Android 語音
+description: 本文涵蓋使用功能非常強大的 Android. Speech 命名空間的基本概念。 自開始, Android 已能夠辨識語音並將其輸出為文字。 這是一個相當簡單的程式。 不過, 針對文字轉換語音, 此程式更牽涉到, 因為語音引擎不僅必須列入考慮, 也可能是從文字轉換語音 (TTS) 系統中提供及安裝的語言。
 ms.prod: xamarin
 ms.assetid: FA3B8EC4-34D2-47E3-ACEA-BD34B28115B9
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2018
-ms.openlocfilehash: 3d4c29a7d206b826046fd1f79e0513e85ea57898
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: 693bca77fc22ac68c4a0480315363b241c3cf98b
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740675"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511218"
 ---
-# <a name="android-speech"></a>Android 的語音
+# <a name="android-speech"></a>Android 語音
 
-_本文章涵蓋使用功能非常強大的 Android.Speech 命名空間的基本概念。自開始，Android 已辨識語音及輸出為文字。它是相當簡單的程序。針對文字轉換語音，不過，程序會更為複雜，因為不僅語音引擎必須列入考量，但也語言可用及已安裝從文字轉換語音 (text-to-speech，TTS) 系統。_
+_本文涵蓋使用功能非常強大的 Android. Speech 命名空間的基本概念。自開始, Android 已能夠辨識語音並將其輸出為文字。這是一個相當簡單的程式。不過, 針對文字轉換語音, 此程式更牽涉到, 因為語音引擎不僅必須列入考慮, 也可能是從文字轉換語音 (TTS) 系統中提供及安裝的語言。_
 
-## <a name="speech-overview"></a>語音概觀
+## <a name="speech-overview"></a>語音總覽
 
-具有 「 了解 「 人類的語音和 enunciates 輸入的內容的系統 — 語音轉換文字和文字轉換語音，是不斷成長的區域內的行動裝置開發，因為自然的通訊，與我們的裝置在需求上升。 有許多情況下，有一項功能，將文字轉換語音，或反之亦然，是非常有用的工具，可併入 android 應用程式。
+在行動裝置開發中使用「瞭解」「人類語音」和 enunciates 所輸入內容的系統 (語音轉換文字和文字轉換語音), 是行動開發的一大成長區域, 因為與我們的裝置的自然通訊需求上升。 在許多情況下, 有一項功能可以將文字轉換成語音, 反之亦然, 是一個非常有用的工具, 可併入您的 android 應用程式中。
 
-比方說，在行動電話使用，在駕駛時關閉 clamp，使用者想使用指針免費使用這種運作他們的裝置。 不同 Android 外型規格的過多，例如 Android Wear — 和不斷擴展其中包含能夠使用 Android 裝置 （例如平板電腦和注意板），建立較大的焦點 TTS 的絕佳應用程式。
+例如, 當行動電話上的夾具在駕駛時使用, 使用者想要以無人參與的方式操作其裝置。 不同的 Android 外型規格 (例如 Android 磨損) 眾多, 以及能夠使用 Android 裝置 (例如平板電腦和便箋板) 的已擴大包含, 都已在絕佳的 TTS 應用程式上建立更大的焦點。
 
-Google 提供一組豐富的 Api Android.Speech 命名空間中使用開發人員，以涵蓋大部分的執行個體的 「 語音感知 」 （例如 for the blind 而設計的軟體） 的裝置。  命名空間包含允許文字轉譯成透過語音的機能`Android.Speech.Tts`，控制用來執行轉譯，以及許多的引擎`RecognizerIntent`s，而它允許語音轉換成文字。
+Google 為開發人員提供了一組豐富的 Android. Speech 命名空間 Api, 以涵蓋讓裝置「語音感知」 (例如專為盲人設計的軟體) 的大多數實例。  命名空間包含允許文字轉譯成語音`Android.Speech.Tts`的功能、控制用來執行轉譯的引擎, 以及可讓語音轉換成文字的數個。 `RecognizerIntent`
 
-雖然功能有語音能了解，會根據所使用的硬體的限制。 不可能的裝置已成功將解譯傳達給它，在每個可用的語言中的所有項目。
+雖然有工具可讓您瞭解語音, 但根據使用的硬體有一些限制。 裝置不太可能會以每種語言都能成功解讀所有的內容。
 
 ## <a name="requirements"></a>需求
 
-沒有任何特殊的需求，如本指南中，您的裝置的麥克風和喇叭以外。
+除了您的裝置具有麥克風和喇叭以外, 本指南沒有特殊需求。
 
-解譯語音的 Android 裝置的核心是使用`Intent`有對應`OnActivityResult`。
-很重要，不過，辨識語音不了解，但解譯為文字。 差異是很重要的。
+Android 裝置解讀語音的核心是使用`Intent`搭配對應`OnActivityResult`的。
+不過, 請務必辨識不了解語音, 而是將其轉譯為文字。 差異很重要。
 
-### <a name="the-difference-between-understanding-and-interpreting"></a>了解和解譯的差異
+### <a name="the-difference-between-understanding-and-interpreting"></a>瞭解與解讀之間的差異
 
-了解簡單定義是，您都能判斷的口吻和內容的真正意涵陳述的內容。 若要將只是表示取得文字，並在另一種形式對它們進行輸出。
+有一個簡單的瞭解定義, 就是您能夠以音調和內容來判斷所說的實際意義。 若只要解讀, 就能採用單字, 並以另一種形式輸出。
 
-請考慮下列簡單的範例是用於日常對話：
+請考慮下列在日常對話中使用的簡單範例:
 
-<kbd>大家好，你好？</kbd>
+<kbd>喂，你好嗎？</kbd>
 
-沒有變化 （重點放在特定的單字或單字的部分），就可以很簡單的問題。 不過，如果緩慢的速度會套用至線條，接聽的人員將會偵測或發問不太高興，而且可能需要 喝采發問是開心。 如果將重點放在 「 是 」，要求的人員是通常比較有興趣的回應。
+如果沒有變化 (強調放在特定單字或單字的部分), 這就是一個簡單的問題。 不過, 如果行的速度較慢, 接聽者將會偵測到該使用者不太滿意, 而且可能需要歡呼, 或是有人 unwell。 如果重點放在「是」, 則詢問的人員通常會對回應感興趣。
 
-而不需要處理，相當強大的音訊的變化，以及某種程度的人工智慧 (AI)，用以了解的內容、 軟體無法開始了解什麼說的最簡單的電話可以是雙向轉換語音與文字。
+若沒有相當強大的音訊處理來使用變化, 以及某種程度的人工智慧 (AI) 來瞭解內容, 則軟體甚至無法開始瞭解說出什麼, 這就是簡單的手機可以將語音轉換成文字。
 
 ## <a name="setting-up"></a>設定
 
-之前使用語音系統，最好一律檢查並確定裝置有麥克風。 會有少許嘗試 Kindle 或 Google 的附註鍵台上執行應用程式，而不需要安裝麥克風的點。
+使用語音系統之前, 一定要先檢查以確保裝置具有麥克風。 在 Kindle 或 Google 記事 pad 上執行您的應用程式時, 沒有安裝麥克風的情況很少。
 
-下列程式碼範例示範查詢如果麥克風可用，而且如果不是，若要建立警示。 如果沒有麥克風可用在此時您會結束活動或停用來錄製語音功能。
+下列程式碼範例示範如何查詢麥克風是否可用, 如果沒有, 則會建立警示。 如果此時沒有可用的麥克風, 您可以結束活動, 或停用錄製語音的功能。
 
 ```csharp
 string rec = Android.Content.PM.PackageManager.FeatureMicrophone;
@@ -67,9 +67,9 @@ if (rec != "android.hardware.microphone")
 }
 ```
 
-### <a name="creating-the-intent"></a>建立目的
+### <a name="creating-the-intent"></a>建立意圖
 
-語音系統的對應方式使用特定類型的對應方式呼叫`RecognizerIntent`。 此意圖控制參數，包括時間等待無回應之前的記錄會被視為對任何其他的語言，辨識及輸出，以及要包含在任何文字一大堆`Intent`的強制回應對話方塊，做為方法的指示。 在此片段中，`VOICE`已`readonly int`中的識別所使用的`OnActivityResult`。
+語音系統的目的是使用稱為的`RecognizerIntent`特定意圖類型。 這個意圖會控制大量的參數, 包括等候無回應的時間長度, 直到記錄被視為超過、辨識和輸出的任何其他語言, 以及要包含在`Intent`的強制回應對話方塊上做為指令的任何文字。 在此程式碼片段`VOICE`中, `readonly int`是用來辨識`OnActivityResult`中的。
 
 ```csharp
 var voiceIntent = new Intent(RecognizerIntent.ActionRecognizeSpeech);
@@ -83,13 +83,13 @@ voiceIntent.PutExtra(RecognizerIntent.ExtraLanguage, Java.Util.Locale.Default);
 StartActivityForResult(voiceIntent, VOICE);
 ```
 
-### <a name="conversion-of-the-speech"></a>語音的轉換
+### <a name="conversion-of-the-speech"></a>語音轉換
 
-解譯從語音的文字將會傳遞內`Intent`，這會傳回當活動已完成，而且透過存取`GetStringArrayListExtra(RecognizerIntent.ExtraResults)`。 這會傳回`IList<string>`，而是其索引可以是使用根據和顯示來電者意圖中要求的語言數目 (並以指定`RecognizerIntent.ExtraMaxResults`)。 為與任何清單，值得檢查，確保沒有要顯示的資料。
+從語音轉譯的文字將會在中`Intent`傳遞, 這會在活動完成並透過`GetStringArrayListExtra(RecognizerIntent.ExtraResults)`存取時傳回。 這會`IList<string>`傳回, 其中索引可以使用並顯示, 視呼叫者意圖中要求的語言數目而定 (並`RecognizerIntent.ExtraMaxResults`在中指定)。 就像任何清單一樣, 值得檢查以確保有要顯示的資料。
 
-當接聽的傳回值`StartActivityForResult`，則`OnActivityResult`方法有提供。
+接聽的傳回值`StartActivityForResult`時`OnActivityResult` , 必須提供方法。
 
-在下列範例中，`textBox`是`TextBox`用於輸出項目有指定。 它同樣可用來將傳遞至解譯器，並從該處某種形式的文字、 應用程式可以比較的文字和應用程式的另一部分的分支。
+在下列範例中, `textBox` `TextBox`是用來輸出已聽寫的內容。 它也可以用來將文字傳遞至某種形式的解譯器, 而從該處, 應用程式可以將文字和分支與應用程式的另一個部分進行比較。
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultVal, Intent data)
@@ -125,19 +125,19 @@ protected override void OnActivityResult(int requestCode, Result resultVal, Inte
 
 ## <a name="text-to-speech"></a>文字轉換語音
 
-文字轉換語音相當的反向語音文字並不依賴兩個主要的元件;文字轉換語音引擎安裝在裝置上，安裝的語言。
+文字轉換語音並不是語音轉換文字的反轉, 而是依賴兩個主要元件;要安裝在裝置上的文字轉換語音引擎, 以及要安裝的語言。
 
-主要，Android 裝置隨附的預設安裝的 Google TTS 服務 」 和 「 至少一種語言。 這建立裝置第一次設定，並會根據裝置的當時的位置時 （比方說，在德國設定手機將會安裝到安裝德文的語言，而其中一個地區會有美式英文）。
+在大部分的情況下, Android 裝置都會安裝預設的 Google TTS 服務, 而且至少會有一種語言。 這是在第一次設定裝置時所建立, 而且會根據裝置的所在位置 (例如, 在德國設定的電話會安裝德文語言, 而北美洲的手機則會有美式英文)。
 
 ### <a name="step-1---instantiating-texttospeech"></a>步驟 1-具現化 TextToSpeech
 
-`TextToSpeech` 可能需要最多 3 個參數前, 兩個是第三個必要項目為選擇性 (`AppContext`， `IOnInitListener`， `engine`)。 接聽程式用來與引擎正在使用 Android 的文字轉換語音引擎任何數目的繫結至的服務和失敗的測試。 在最少，裝置將會有 Google 自己的引擎。
+`TextToSpeech`最多可能需要3個參數, 第二個是選擇性的 (`AppContext`、 `IOnInitListener`、 `engine`)。 接聽程式可用來系結至服務, 並測試引擎是否有任意數目的可用 Android 文字轉換語音引擎。 裝置至少會有 Google 自己的引擎。
 
 ### <a name="step-2---finding-the-languages-available"></a>步驟 2-尋找可用的語言
 
-`Java.Util.Locale`類別包含有用的方法呼叫`GetAvailableLocales()`。 這份語音引擎支援的語言可以先通過已安裝的語言。
+類別包含一個有用的方法, `GetAvailableLocales()`稱為。 `Java.Util.Locale` 這份語音引擎支援的語言清單, 可以針對已安裝的語言進行測試。
 
-它是毫無用處來產生 「 了解 「 語言的清單。 永遠都會有預設的語言 （使用者設定第一次設定時其裝置的語言），因此在此範例中`List<string>`具有 「 預設 」 的第一個參數，清單的其餘部分將會根據結果的區域分布`textToSpeech.IsLanguageAvailable(locale)`。
+產生「瞭解」語言的清單是很簡單的事。 一律會有預設語言 (使用者第一次設定裝置時所設定的語言), 因此在此範例`List<string>`中, 會將 "default" 做為第一個參數, 並根據的結果`textToSpeech.IsLanguageAvailable(locale)`填入清單的其餘部分。
 
 ```csharp
 var langAvailable = new List<string>{ "Default" };
@@ -161,22 +161,22 @@ foreach (var locale in localesAvailable)
 langAvailable = langAvailable.OrderBy(t => t).Distinct().ToList();
 ```
 
-此程式碼會呼叫[TextToSpeech.IsLanguageAvailable](https://developer.xamarin.com/api/member/Android.Speech.Tts.TextToSpeech.IsLanguageAvailable/p/Java.Util.Locale/)若要測試是否為特定地區設定的語言套件已存在於裝置上。
-這個方法會傳回[LanguageAvailableResult](https://developer.xamarin.com/api/type/Android.Speech.Tts.LanguageAvailableResult/)，表示是否可以使用傳入的地區設定的語言。 如果`LanguageAvailableResult`表示的語言是`NotSupported`，則沒有聲音的封裝 （即使是針對下載），您可以使用該語言。 如果`LanguageAvailableResult`設為`MissingData`，則可能如下所述步驟 4 中下載新的語言套件。
+此程式碼會呼叫[TextToSpeech](xref:Android.Speech.Tts.TextToSpeech.IsLanguageAvailable*) , 以測試特定地區設定的語言套件是否已存在於裝置上。
+這個方法會傳回[LanguageAvailableResult](xref:Android.Speech.Tts.LanguageAvailableResult), 指出通過之地區設定的語言是否可用。 如果`LanguageAvailableResult`表示語言為`NotSupported`, 表示該語言沒有可用的語音套件 (即使是下載)。 如果`LanguageAvailableResult`設定為`MissingData`, 則可以下載新的語言套件, 如下面的步驟4所述。
 
-### <a name="step-3---setting-the-speed-and-pitch"></a>步驟 3-設定速度及字距等性質
+### <a name="step-3---setting-the-speed-and-pitch"></a>步驟 3-設定速度和音調
 
-Android 可讓使用者藉由改變 alter 語音的聲音`SpeechRate`和`Pitch`（速度及音調的語音速率）。 這是從 0 到 1，以 「 標準 」 是兩個 1 的語音。
+Android 可讓使用者藉由改變`SpeechRate`和`Pitch` (語音的速度和音調) 來改變語音的音效。 這會從0到 1, 而兩者的「正常」語音則是1。
 
-### <a name="step-4---testing-and-loading-new-languages"></a>步驟 4： 測試和載入新的語言
+### <a name="step-4---testing-and-loading-new-languages"></a>步驟 4-測試和載入新語言
 
-下載新的語言透過執行`Intent`。 此意圖的結果會導致[OnActivityResult](https://developer.xamarin.com/api/member/Android.App.Activity.OnActivityResult/)要叫用方法。 不同於語音轉換文字範例 (使用哪個[RecognizerIntent](https://developer.xamarin.com/api/type/Android.Speech.RecognizerIntent/)做為`PutExtra`參數來`Intent`)，測試和載入`Intent`是`Action`-基礎：
+下載新語言時, 會使用`Intent`來執行。 此意圖的結果會導致叫用[OnActivityResult](xref:Android.App.Activity.OnActivityResult*)方法。 不同于語音轉換文字範例 (使用[RecognizerIntent](xref:Android.Speech.RecognizerIntent) `PutExtra`做為的參數`Intent`), 測試和載入`Intent`是`Action`以為基礎:
 
--   [TextToSpeech.Engine.ActionCheckTtsData](https://developer.xamarin.com/api/field/Android.Speech.Tts.TextToSpeech+Engine.ActionCheckTtsData/) &ndash;啟動的活動從平台`TextToSpeech`引擎，以確認適當的安裝和裝置上的語言資源的可用性。
+- [TextToSpeech: ActionCheckTtsData](xref:Android.Speech.Tts.TextToSpeech.Engine.ActionCheckTtsData) &ndash;會從平臺`TextToSpeech`引擎啟動活動, 以確認裝置上的語言資源有適當的安裝和可用性。
 
--   [TextToSpeech.Engine.ActionInstallTtsData](https://developer.xamarin.com/api/field/Android.Speech.Tts.TextToSpeech+Engine.ActionInstallTtsData/) &ndash;啟動會提示使用者下載所需語言的活動。
+- [TextToSpeech 會啟動一個](xref:Android.Speech.Tts.TextToSpeech.Engine.ActionInstallTtsData)活動, 提示使用者下載必要的語言。 &ndash;
 
-下列程式碼範例說明如何使用這些動作進行測試的語言資源，並下載新的語言：
+下列程式碼範例說明如何使用這些動作來測試語言資源, 並下載新的語言:
 
 ```csharp
 var checkTTSIntent = new Intent();
@@ -194,25 +194,25 @@ protected override void OnActivityResult(int req, Result res, Intent data)
 }
 ```
 
-`TextToSpeech.Engine.ActionCheckTtsData` 語言資源的可用性測試。 `OnActivityResult` 這項測試完成時，會叫用。 如果要下載的語言資源需要`OnActivityResult`引發`TextToSpeech.Engine.ActionInstallTtsData`動作以啟動活動，可讓使用者下載所需的語言。 請注意這個`OnActivityResult`實作並不會檢查`Result`程式碼，因為在這個簡化的範例中，決定已建立，必須先下載的語言套件。
+`TextToSpeech.Engine.ActionCheckTtsData`測試語言資源的可用性。 `OnActivityResult`當此測試完成時, 就會叫用。 如果需要下載語言資源, `OnActivityResult`則`TextToSpeech.Engine.ActionInstallTtsData`會引發動作來啟動活動, 讓使用者下載必要的語言。 請注意, `OnActivityResult`這項執行並不`Result`會檢查程式碼, 因為在這個簡化的範例中, 已經建立了需要下載語言套件的判斷。
 
-`TextToSpeech.Engine.ActionInstallTtsData`動作的原因**Google TTS 語音資料**活動，以呈現給使用者，選擇要下載的語言：
+動作會使**Google TTS 語音資料**活動呈現給使用者, 以選擇要下載的語言: `TextToSpeech.Engine.ActionInstallTtsData`
 
 ![Google TTS 語音資料活動](speech-images/01-google-tts-voice-data.png)
 
-為例，使用者可能會挑選法文，並按一下 [下載] 圖示來下載法文的語音資料：
+例如, 使用者可能會挑選法文, 然後按一下下載圖示來下載法文語音資料:
 
 ![下載法文語言的範例](speech-images/02-selecting-french.png)
 
-下載完成之後，會自動進行安裝，此資料。
+此資料的安裝會在下載完成後自動執行。
 
 
 ### <a name="step-5---the-ioninitlistener"></a>步驟 5-IOnInitListener
 
-若要能夠將文字轉換語音，介面方法的轉換活動`OnInit`具有實作 (這是指定的具現化的第二個參數`TextToSpeech`類別)。 這會初始化接聽程式，並測試結果。
+若要讓活動能夠將文字轉換成語音, 必須實作為介面方法`OnInit` (這是針對`TextToSpeech`類別的具現化所指定的第二個參數)。 這會初始化接聽程式並測試結果。
 
-接聽程式應該測試兩者`OperationResult.Success`和`OperationResult.Failure`最小值。
-下列範例會示範這項：
+接聽程式`OperationResult.Success`應該至少測試和`OperationResult.Failure` 。
+下列範例只顯示這種情況:
 
 ```csharp
 void TextToSpeech.IOnInitListener.OnInit(OperationResult status)
@@ -228,14 +228,14 @@ void TextToSpeech.IOnInitListener.OnInit(OperationResult status)
 
 ## <a name="summary"></a>總結
 
-本指南中，我們已討論過文字轉語音及語音轉換文字和可能的方法，如何將它們包含在自己的應用程式的基本概念。 雖然它們並未涵蓋每個特定的案例，您現在應該有基本了解如何解譯語音、 如何安裝新的語言，以及如何增加您的應用程式的 inclusivity。
+在本指南中, 我們探討了將文字轉換為語音和語音轉換文字的基本概念, 以及如何在您自己的應用程式中包含它們的方法。 雖然它們不涵蓋每個特定案例, 但您現在應該已對如何解讀語音、如何安裝新語言, 以及如何增加應用程式 inclusivity 的基本瞭解。
 
 
 
 ## <a name="related-links"></a>相關連結
 
 - [Xamarin.Forms DependencyService](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
-- [文字轉換語音 （範例）](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/TextToSpeech)
-- [語音轉換文字 （範例）](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SpeechToText)
-- [Android.Speech 命名空間](https://developer.xamarin.com/api/namespace/Android.Speech/)
-- [Android.Speech.Tts 命名空間](https://developer.xamarin.com/api/namespace/Android.Speech.Tts/)
+- [文字轉換語音 (範例)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/TextToSpeech)
+- [語音轉換文字 (範例)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SpeechToText)
+- [Android. Speech 命名空間](xref:Android.Speech)
+- [Android. 語音命名空間](xref:Android.Speech.Tts)

@@ -1,31 +1,31 @@
 ---
-title: Xamarin.Mac-macOS Sierra 疑難排解
-description: 本文件提供用於具有 macOS Sierra Xamarin.Mac 應用程式中的數個疑難排解的秘訣。 秘訣與 Mac App Store、 Apple Pay，二進位碼相容性、 CFNetwork、 CloudKit，和更多功能。
+title: Xamarin. Mac-macOS Sierra 疑難排解
+description: 本檔提供數個在 Xamarin. Mac 應用程式中使用 macOS Sierra 的疑難排解秘訣。 與 Mac App Store、Apple Pay、二進位相容性、CFNetwork、CloudKit 等相關的秘訣。
 ms.prod: xamarin
 ms.assetid: 323DD5EE-87CE-48E4-B234-1CF61B45A019
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 09/22/2016
-ms.openlocfilehash: 322acff3279d0513266c7d9883726cac726334f7
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 3bb2acd5ef560afa787c2746133c05066a15cf9e
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830547"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511806"
 ---
-# <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin.Mac-macOS Sierra 疑難排解
+# <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin. Mac-macOS Sierra 疑難排解
 
-_這篇文章會提供數個疑難排解秘訣，用於具有 macOS Sierra Xamarin.Mac 應用程式中。_
+_本文提供數個在 Xamarin. Mac 應用程式中使用 macOS Sierra 的疑難排解秘訣。_
 
-下列各節列出一些使用 macOS Sierra Xamarin.mac 和這些問題的解決方案時可能發生的已知的問題：
+下列各節列出使用 macOS Sierra 搭配 Xamarin 和解決這些問題的解決方案時, 可能會發生的一些已知問題:
 
 - [App Store](#App-Store)
 - [Apple Pay](#Apple-Pay)
-- [二進位碼相容性](#Binary-Compatibility)
+- [二進位相容性](#Binary-Compatibility)
 - [CFNetwork HTTP 通訊協定](#CFNetwork-HTTP-Protocol)
 - [CloudKit](#CloudKit)
-- [Core 映像](#CoreImage)
+- [核心映射](#CoreImage)
 - [通知](#Notifications)
 - [NSUserActivity](#NSUserActivity)
 - [Safari](#Safari)
@@ -36,69 +36,63 @@ _這篇文章會提供數個疑難排解秘訣，用於具有 macOS Sierra Xamar
 
 已知問題：
 
-- 在測試應用程式內購買的沙箱環境中時，[驗證] 對話方塊可能會出現兩次。
-- 當裝載的內容，在沙箱環境中測試應用程式內購買項目，每次應用程式移到前景內容下載完成之前，會出現 [密碼] 對話方塊。
+- 在沙箱環境中測試應用程式內購買時, [驗證] 對話方塊可能會出現兩次。
+- 在沙箱環境中測試具有託管內容的應用程式內購買時, 每次應用程式進入前景後都會出現 [密碼] 對話方塊, 直到完成內容下載。
 
 <a name="Apple-Pay" />
 
 ## <a name="apple-pay"></a>Apple Pay
 
-如果將新的付款卡片新增至 Apple Pay 時輸入不正確的到期日期或安全碼 (CW)，則佈建程序卡片將會終止。
+將新的付款卡新增至 Apple Pay 時, 如果輸入了不正確的到期日或安全性代碼 (CW), 卡片布建程式將會終止。
 
 <a name="Binary-Compatibility" />
 
-## <a name="binary-compatibility"></a>二進位碼相容性
+## <a name="binary-compatibility"></a>二進位相容性
 
 已知問題：
 
-- 呼叫`NSObject.ValueForKey`將`null`金鑰將會導致例外狀況。
-- 兩者`NSURLSession`並`NSURLConnection`不再 RC4 加密套件的 TLS 信號交換期間`http://`Url。
-- 應用程式可以停止回應，當修改中的超級檢視表的幾何`ViewWillLayoutSubviews`或`LayoutSubviews`方法。
-- 對於所有 SSL/TLS 連線，RC4 對稱編碼器現在預設會停用。 此外，安全傳輸 API 不再支援 SSLv3 與建議的應用程式停止儘速使用 sha-1 和 3DES 加密。
+- `NSObject.ValueForKey` 呼叫`null`將會導致例外狀況。
+- 在`NSURLSession` url `NSURLConnection`的 TLS 信號交換期間, 和都不會`http://`再有 RC4 加密套件。
+- 如果應用程式在`ViewWillLayoutSubviews`或`LayoutSubviews`方法中修改 superview 頂端的幾何, 則會停止回應。
+- 針對所有 SSL/TLS 連線, 現在預設會停用 RC4 對稱式加密。 此外, 安全傳輸 API 已不再支援 SSLv3, 建議應用程式儘快停止使用 SHA-1 和3DES 密碼編譯。
 
 <a name="CFNetwork-HTTP-Protocol" />
 
 ## <a name="cfnetwork-http-protocol"></a>CFNetwork HTTP 通訊協定
 
-`HTTPBodyStream`的屬性`NSMutableURLRequest`類別必須設定為自未開啟資料流`NSURLConnection`和`NSURLSession`現在會嚴格強制執行這項需求。
+`NSMutableURLRequest` `NSURLConnection`類別的`NSURLSession`屬性必須設定為未開啟的資料流程, 因為和現在會嚴格地強制執行這項需求。 `HTTPBodyStream`
 
 <a name="CloudKit" />
 
 ## <a name="cloudkit"></a>CloudKit
 
-長時間執行的作業會傳回 _「 您沒有儲存檔案的權限 」。_ 發生錯誤。
+長時間執行的作業會傳回「_您沒有儲存檔案的許可權」。_ 糾錯.
 
 <a name="CoreImage" />
 
-## <a name="core-image"></a>Core 映像
+## <a name="core-image"></a>核心映射
 
-`CIImageProcessor` API 現可支援任意的輸入的影像計數。 `CIImageProcessor` 在 macOS Sierra beta 1 中所包含的 API 將會移除。
+`CIImageProcessor` API 現在支援任意輸入影像計數。 `CIImageProcessor`MacOS Sierra Beta 1 中所包含的 API 將會移除。
 
 <a name="Notifications" />
 
 ## <a name="notifications"></a>通知
 
-使用時通知內容延伸模組，檢視控制器不會正確地發行，並到達延伸模組的記憶體限制時，可能會導致當機。
+使用通知內容延伸模組時, 不會正確地釋放 View controller, 而且當達到延伸模組記憶體限制時, 可能會導致損毀。
 
 <a name="NSUserActivity" />
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-遞移式作業之後，`UserInfo`屬性`NSUserActivity`可能是空的物件。 明確呼叫`BecomeCurrent``NSUserActivity`物件做為目前的因應措施。
+在遞交作業之後, `UserInfo` `NSUserActivity`物件的屬性可能是空的。 以目前`BecomeCurrent`的因應措施明確呼叫`NSUserActivity`物件。
 
 <a name="Safari" />
 
 ## <a name="safari"></a>Safari
 
-WebGeolocation 需要安全 (`https://`) 才能在 iOS 10 和 macOS Sierra 來防止惡意使用位置資料的 URL。
-
-
-
-
-
-
+WebGeolocation 需要安全 (`https://`) URL, 才能在 iOS 10 和 macOS Sierra 上工作, 以避免惡意使用位置資料。
 
 ## <a name="related-links"></a>相關連結
 
 - [Mac 範例](https://developer.xamarin.com/samples/mac/)
-- [在 OS X 10.12 最新消息](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)
+- [MacOS 10.12 的新功能](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)

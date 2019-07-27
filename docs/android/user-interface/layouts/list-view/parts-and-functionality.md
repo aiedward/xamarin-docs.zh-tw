@@ -6,72 +6,69 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: 248baa5daceff6db01098a155600ea204547e845
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3ab7a923dabd6b98c509870abaa51b12fb63c8d2
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61319724"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510128"
 ---
-# <a name="listview-parts-and-functionality"></a>ListView 組件和功能
+# <a name="xamarinandroid-listview-parts-and-functionality"></a>Xamarin. Android ListView 元件和功能
 
+`ListView`包含下列元件:
 
-## <a name="overview"></a>總覽
+- 資料**列**&ndash;清單中資料的可見標記法。
 
-A`ListView`下列部分所組成：
+- **介面卡**&ndash;將資料來源系結至清單視圖的非視覺類別。
 
-- **資料列**&ndash;可見的表示法的清單中的資料。
+- **快速滾動**&ndash;可讓使用者滾動清單長度的控制碼。
 
-- **配接器**&ndash;繫結至清單檢視的資料來源的隱藏式類別。
+- **區段索引**&ndash;使用者介面專案, 這個專案會浮動在滾動列上方, 以指出目前資料列在清單中的所在位置。
 
-- **快速捲動**&ndash;的控制代碼，讓使用者可以捲動清單的長度。
+這些螢幕擷取畫面會使用`ListView`基本控制項來顯示如何呈現快速滾動和區段索引:
 
-- **區段索引**&ndash;漂浮捲動的使用者介面項目以指出清單中的目前資料列的所在位置的資料列。
+[![使用一般舊資料列、快速滾動和區段索引的應用程式螢幕擷取畫面](parts-and-functionality-images/listviewparts.png)](parts-and-functionality-images/listviewparts.png#lightbox)
 
-這些螢幕擷取畫面使用基本`ListView`控制項顯示快速捲動和區段索引的呈現方式：
-
-[![使用純舊的資料列，應用程式的螢幕擷取畫面快速捲動和區段索引](parts-and-functionality-images/listviewparts.png)](parts-and-functionality-images/listviewparts.png#lightbox)
-
-項目構成`ListView`詳細說明如下所述：
+組成的元素`ListView`會在下面更詳細地說明:
 
 
 ## <a name="rows"></a>列
 
-每個資料列都有它自己`View`。 檢視可以是內建的檢視中定義的其中一個`Android.Resources`，或自訂的檢視。 每個資料列可以使用相同的檢視版面配置或它們都可以不同。 使用內建的版面配置和其他人說明如何定義自訂版面配置的這份文件中有範例。
+每個資料列都`View`有自己的。 此視圖可以是中`Android.Resources`所定義的其中一個內建視圖, 或是自訂視圖。 每個資料列都可以使用相同的 view 版面配置, 或兩者都可以不同。 本檔中的範例使用內建版面配置, 以及說明如何定義自訂版面配置的其他內容。
 
 
 ## <a name="adapter"></a>配接器
 
-`ListView`控制項需要`Adapter`提供的格式化`View`每個資料列。 Android 提供內建配接器和檢視，可以使用，或您可以建立自訂類別。
+控制項需要提供每個資料列的`View`格式化。 `ListView` `Adapter` Android 具有可以使用的內建介面卡和視圖, 或可建立自訂類別。
 
 
-## <a name="fast-scrolling"></a>快速捲動
+## <a name="fast-scrolling"></a>快速滾動
 
-當`ListView`包含多個資料列的資料快速捲動可幫助使用者瀏覽至清單的任何部分。 快速捲動 '捲軸' 可以選擇性地啟用 （和自訂 API 層級 11 及更新版本）。
+`ListView`當包含許多資料列時, 可以啟用快速滾動功能, 以協助使用者流覽至清單的任何部分。 快速滾動的「捲軸」可以選擇性地啟用 (並在 API 層級11和更新版本中自訂)。
 
 
 ## <a name="section-index"></a>區段索引
 
-捲動時透過長的清單，選擇性的區段索引提供意見反應的使用者清單的哪個部分目前檢視。 它只適合在較長的清單，通常是在搭配快速捲動。
+當滾動長清單時, 選擇性的區段索引會提供使用者對目前正在觀看之清單中哪些部分的意見反應。 這只適用于長清單, 通常與快速滾動搭配使用。
 
 
-## <a name="classes-overview"></a>類別概觀
+## <a name="classes-overview"></a>類別總覽
 
-用來顯示的主要類別`ListViews`如下所示：
+用來顯示`ListViews`的主要類別如下所示:
 
-[![說明 ListView 和相關的類別之間的關聯性的 UML 圖表](parts-and-functionality-images/image2.png)](parts-and-functionality-images/image2.png#lightbox)
+[![說明 ListView 與相關類別之間關聯性的 UML 圖表](parts-and-functionality-images/image2.png)](parts-and-functionality-images/image2.png#lightbox)
 
-每個類別的用途如下所述。
+每個類別的用途如下所述:
 
-- **ListView** &ndash;顯示可捲動的資料列集合的使用者介面項目。 在手機它通常會用完全螢幕 (在此情況下，`ListActivity`類別可用於) 或它可能屬於較大的配置，在手機或平板電腦裝置。
+- **ListView**&ndash;顯示可滾動資料列集合的使用者介面元素。 在手機上, 它通常會使用整個畫面 (在此情況下`ListActivity` , 可以使用類別), 也可能是手機或平板電腦裝置上較大版面配置的一部分。
 
-- **檢視**&ndash;在 Android 中的檢視可以是任何使用者介面項目，但在內容中`ListView`它需要`View`来提供給每個資料列。
+- **View**Android 中的視圖可以是任何使用者介面專案, 但在的內容`ListView`中, 需要`View`為每個資料列提供。 &ndash;
 
-- **BaseAdapter** &ndash;繫結的配接器實作的基底類別`ListView`到資料來源。
+- **BaseAdapter**&ndash; 用`ListView`來將系結至資料來源之介面卡執行的基類。
 
-- **ArrayAdapter** &ndash;內建配接器類別，會將繫結至字串陣列`ListView`顯示。 泛型`ArrayAdapter<T>`會執行相同的其他類型。
+- **ArrayAdapter**內建介面卡類別, 會將字串陣列系結`ListView`至以供顯示。 &ndash; 一般`ArrayAdapter<T>`會針對其他類型執行相同的工作。
 
-- **CursorAdapter** &ndash;使用`CursorAdapter`或`SimpleCursorAdapter`顯示 SQLite 查詢為基礎的資料。
+- **CursorAdapter**&ndash;使用或來`SimpleCursorAdapter`顯示以 SQLite 查詢為基礎的資料。 `CursorAdapter`
 
-本文件包含簡單的範例，使用`ArrayAdapter`以及更複雜的範例需要的自訂實作`BaseAdapter`或`CursorAdapter`。
+本檔包含的簡單範例, 會`ArrayAdapter`使用和需要自訂`BaseAdapter`或`CursorAdapter`的更複雜範例。
 

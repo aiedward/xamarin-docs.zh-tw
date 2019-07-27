@@ -6,53 +6,53 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: 63cbe556783ffe22512ff5312817d522120bd15e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 49e0de909e2255d850211e51596efdaa43f293ae
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013540"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509375"
 ---
-# <a name="creating-resources-for-varying-screens"></a>建立針對不同螢幕的資源
+# <a name="creating-resources-for-varying-screens"></a>建立不同畫面的資源
 
-Android 本身上執行許多不同的裝置，有各種不同的解析度、 螢幕大小和螢幕密度。 Android 將會執行縮放和調整大小以進行您在這些裝置上運作的應用程式，但這可能會導致次佳的使用者體驗。 例如，映像可能會顯示為模糊的或它們可能會如預期般在檢視上放置。
+Android 本身會在許多不同的裝置上執行, 各有各種解析度、螢幕大小和螢幕密度。 Android 會執行調整和調整大小, 讓您的應用程式在這些裝置上工作, 但這可能會產生一次最佳的使用者體驗。 例如, 影像可能看起來模糊, 或可能在視圖上以預期的方式放置。
 
 
 ## <a name="concepts"></a>概念
 
-少數的詞彙和概念是一定要了解以支援多個畫面。
+有幾個詞彙和概念必須瞭解以支援多個畫面。
 
-- **螢幕大小**&ndash;顯示您的應用程式的實體空間量
+- **螢幕大小**&ndash;用來顯示應用程式的實體空間量
 
-- **螢幕密度**&ndash;在螢幕上任何指定的區域中的像素數目。 典型的測量單位為每英吋點數 (dpi)。
+- **螢幕密度**&ndash;螢幕上任何指定區域中的圖元數目。 典型的測量單位是以每英寸 (DPI) 為點。
 
-- **解析度**&ndash;在螢幕上的像素為單位的總數。 當開發應用程式，解析不與螢幕大小和密度一樣重要。
+- **解決**方式&ndash;螢幕上的圖元總數目。 開發應用程式時, 解決方式不如螢幕大小和密度那麼重要。
 
-- **密度獨立像素 (dp)** &ndash;虛擬度量單位，以允許版面配置，以設計為獨立的密度。 此公式用來將 dp 轉換成螢幕像素：
+- **密度獨立圖元 (dp)** &ndash;一種虛擬測量單位, 可讓配置的設計與密度無關。 此公式是用來將 dp 轉換成螢幕圖元:
 
-    像素&equals;dp &times; dpi &divide; 160
+    px &equals; dp &times; DPI 160&divide;
 
-- **方向** &ndash; 當屏幕的寬度高於高度時，屏幕的方向被認為是橫向的。 相反地，直式方向時，螢幕的高度大於寬度。 在使用者旋轉裝置方向可以變更應用程式的存留期間。
+- **方向** &ndash; 當屏幕的寬度高於高度時，屏幕的方向被認為是橫向的。 相反地, 當螢幕的高度高於寬度時, 縱向方向就會是。 當使用者旋轉裝置時, 該方向可能會在應用程式的存留期間變更。
 
-請注意，這些概念的前三個彼此相關之&ndash;沒有增加密度會提高系統的螢幕大小增加的解析度。 不過如果增加密度和解析度，然後螢幕大小可維持不變。 螢幕大小、 密度和解析度之間的關係會快速地使螢幕支援。
+請注意, 這些概念的前三個會&ndash;增加解析度, 而不會增加密度, 將會增加螢幕大小。 不過, 如果密度和解析度都增加, 則螢幕大小會保持不變。 螢幕大小、密度和解析度之間的這種關聯性, 很快就會變得更複雜。
 
-為了處理這種複雜性，Android 架構使用的慣用*密度無關的像素 (dp)* 螢幕配置。 藉由使用密度無關的像素，使用者在使用不同密度的螢幕上具有相同的實體大小會出現 UI 項目。
+為了協助處理這種複雜性, Android framework 偏好使用與*密度無關的圖元 (dp)* 來進行螢幕佈局。 藉由使用與密度無關的圖元, 使用者就會看到 UI 元素在具有不同密度的螢幕上具有相同的實體大小。
 
 
 ## <a name="supporting-various-screen-sizes-and-densities"></a>支援各種螢幕大小和密度
 
-Android 會處理大部分的工作來呈現正確的每個畫面設定配置。 不過，有一些可以幫助系統採取的動作。
+Android 會處理大部分的工作, 以便針對每個畫面設定適當地呈現版面配置。 不過, 您可以採取一些動作來協助系統。
 
-在大部分情況下，以確保密度獨立性的密度獨立像素，而不是實際的像素版面配置中使用不足。
-Android 會調整的可繪製資源來為適當大小的執行階段。
-不過，就可以調整會導致看起來是模糊的點陣圖。 若要解決此問題，請提供不同密度的其他資源。 當多個解析度和螢幕密度的設計裝置，能更容易開始使用較高的解析度或密度映像，再相應減少而變更。
+在大部分情況下, 使用與密度無關的圖元, 而不是實際的圖元來確保密度獨立性。
+Android 會在執行時間將可繪製資源調整為適當的大小。
+不過, 調整可能會導致點陣圖看起來模糊。 若要解決此問題, 請提供不同密度的替代資源。 當您針對多個解析度和螢幕密度設計裝置時, 可以更輕鬆地從較高的解析度或密度影像開始, 然後再相應減少。
 
 
 ### <a name="declare-the-supported-screen-size"></a>宣告支援的螢幕大小
 
-宣告的螢幕大小，可確保只有受支援的裝置可以下載應用程式。 這可以藉由設定[支援畫面](https://developer.android.com/guide/topics/manifest/supports-screens-element.html)中的項目**AndroidManifest.xml**檔案。 這個項目用來指定應用程式支援哪些螢幕大小。 如果應用程式可以正確地放置其版面配置，以填滿螢幕可支援屬於指定的螢幕。 藉由使用此資訊清單的項目，應用程式將不會顯示在[ *Google Play* ](https://play.google.com/)螢幕規格不符合的裝置。 不過，應用程式仍會使用不支援畫面中，在裝置上執行，但配置可能會出現模糊並不美觀。
+宣告螢幕大小可確保只有支援的裝置可以下載應用程式。 這是藉由在**androidmanifest.xml**中設定[支援-螢幕](https://developer.android.com/guide/topics/manifest/supports-screens-element.html)元素來完成。 這個元素是用來指定應用程式支援的螢幕大小。 如果應用程式可以正確地將其版面配置放在 [填滿] 畫面, 則會將指定的畫面視為受支援。 藉由使用此資訊清單元素, 應用程式不會顯示在不符合螢幕規格之裝置的[*Google Play*](https://play.google.com/)中。 不過, 應用程式仍會在具有不支援螢幕的裝置上執行, 但配置可能會呈現模糊和像素化。
 
-宣告支援的畫面 sixes **Properites/AndroidManifest.xml**解決方案檔：
+支援的螢幕 sixes 會在解決方案的**屬性/androidmanifest.xml**檔案中宣告:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -64,7 +64,7 @@ Android 會調整的可繪製資源來為適當大小的執行階段。
 
 -----
 
-編輯**AndroidManifest.xml**包含[支援畫面](https://developer.android.com/guide/topics/manifest/supports-screens-element.html):
+編輯**androidmanifest.xml**以包含[支援-畫面](https://developer.android.com/guide/topics/manifest/supports-screens-element.html):
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -85,118 +85,118 @@ Android 會調整的可繪製資源來為適當大小的執行階段。
 </manifest>
 ```
 
-### <a name="provide-alternate-layouts-for-different-screen-sizes"></a>提供了替代的版面配置的不同螢幕大小
+### <a name="provide-alternate-layouts-for-different-screen-sizes"></a>提供不同螢幕大小的替代版面配置
 
 
-替代的版面配置可使您能夠自訂特定螢幕大小、 變更的位置或元件的 UI 項目大小的檢視。
+替代版面配置可讓您自訂特定螢幕大小的視圖, 變更元件 UI 元素的位置或大小。
 
-從 API 層級 13 (Android 3.2)，螢幕大小已取代為使用 sw*N*dp 限定詞。 這個新限定詞宣告必須指定配置的空間數量。 建議要在 Android 3.2 或更新版本執行的應用程式應該使用這些較新的限定詞。
+從 API 層級 13 (Android 3.2) 開始, 螢幕大小會被取代為使用 sw*N*dp 辨識符號。 這個新的限定詞會宣告指定配置所需的空間量。 建議要在 Android 3.2 或更高版本上執行的應用程式應該使用這些較新的限定詞。
 
-例如，如果配置所需的最小 700 dp 螢幕寬度時，替代的版面配置會放置在資料夾**版面配置 sw700dp**:
+例如, 如果版面配置所需的螢幕寬度最低為 700, 則替代配置會在資料夾配置中**sw700dp**:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![700 dp 螢幕寬度的版面配置資料夾](resources-for-varying-screens-images/03-layout-sw700dp-vs.png)
+![700 dp 畫面寬度的版面配置資料夾](resources-for-varying-screens-images/03-layout-sw700dp-vs.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![700 dp 螢幕寬度的版面配置資料夾](resources-for-varying-screens-images/03-layout-sw700dp-xs.png)
+![700 dp 畫面寬度的版面配置資料夾](resources-for-varying-screens-images/03-layout-sw700dp-xs.png)
 
 -----
 
 
-一般來說，以下是一些針對各種裝置的數字：
+指導方針是適用于各種裝置的一些數位:
 
-- **典型的電話** &ndash; 320 dp： 典型的電話
+- **一般電話**&ndash; 320 dp: 一般電話
 
-- **5 個 「 tablet /"tweener 」 裝置** &ndash; 480 dp： 例如 Samsung 附註
+- **5 "平板電腦/" tweener "裝置**&ndash; 480 dp: 例如 Samsung Note
 
-- **7 」 tablet** &ndash; 600 dp： 例如 Barnes &amp; Noble Nook
+- **7 "平板**電腦600 dp: 例如 barnes and &amp; Noble Nook &ndash;
 
-- **10 個 「 tablet** &ndash; 720 dp： 例如 Motorola Xoom
+- **10 個「平板**電腦」&ndash; 720 dp: 例如 Motorola Xoom
 
-應用程式的目標 API 層級最多 12 (Android 3.1)，配置都應在目錄使用限定詞**小型**/**正常**/**大型** / **xlarge （超大型)** 為技中大部分的裝置所提供的各種畫面大小。 例如，在下圖中，有四個不同的螢幕大小的其他資源：
-
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
-![四個螢幕大小的其他資源](resources-for-varying-screens-images/04-layout-large-vs.png)
-
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-
-![四個螢幕大小的其他資源](resources-for-varying-screens-images/04-layout-large-xs.png)
-
------
-
-以下是較舊的 pre-API 層級 13 螢幕大小限定詞為密度獨立像素的比較方式的比較：
-
-- 426 x 320 dp 的 dp**小**
-
-- 470 x 320 dp 的 dp**正常**
-
-- 640 x 480 dp 的 dp**大型**
-
-- 960 x 720 dp 的 dp **xlarge （超大型)**
-
-較新的畫面大小在 API 層級 13 中的限定詞，並設定的優先順序高於 API 層級 12 和較低的較舊的畫面限定詞。
-對於橫跨舊和新的 API 層級的應用程式，可能必須建立替代的資源使用這兩組限定詞，如下列螢幕擷取畫面所示：
+對於目標為 API 層級最多 12 (Android 3.1) 的應用程式, 配置應該放在使用限定詞**小型**/**一般**/**大型**/ **m3.xlarge**的目錄中, 做為的歸納大部分裝置中可用的各種螢幕大小。 例如, 在下圖中, 有四種不同的螢幕大小的替代資源:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![以這兩個限定詞的替代資源](resources-for-varying-screens-images/05-both-qualifiers-vs.png)
+![四個螢幕大小的替代資源](resources-for-varying-screens-images/04-layout-large-vs.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![以這兩個限定詞的替代資源](resources-for-varying-screens-images/05-both-qualifiers-xs.png)
+![四個螢幕大小的替代資源](resources-for-varying-screens-images/04-layout-large-xs.png)
+
+-----
+
+以下是較舊的前置 API 層級13螢幕大小限定詞與密度無關圖元的比較:
+
+- 426 dp x 320 dp 很**小**
+
+- 470 dp x 320 dp 是**正常**的
+
+- 640 dp x 480 dp 很**大**
+
+- 960 dp x 720 dp 已**m3.xlarge**
+
+API 層級13中較新的螢幕大小辨識符號, 其優先順序高於 API 層級12和較低的舊版螢幕限定詞。
+對於將跨越舊版和新 API 層級的應用程式, 可能需要使用這兩組限定詞來建立替代資源, 如下列螢幕擷取畫面所示:
+
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+
+![具有這兩個限定詞的替代資源](resources-for-varying-screens-images/05-both-qualifiers-vs.png)
+
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+
+![具有這兩個限定詞的替代資源](resources-for-varying-screens-images/05-both-qualifiers-xs.png)
 
 -----
 
 
 
-### <a name="provide-different-bitmaps-for-different-screen-densities"></a>提供針對不同螢幕密度的不同點陣圖
+### <a name="provide-different-bitmaps-for-different-screen-densities"></a>為不同的螢幕密度提供不同的點陣圖
 
-雖然 Android 會縮放點陣圖，視您的裝置，但本身的點陣圖可能不誇張地相應增加或減少： 他們可能會變成模糊或模糊。 提供適用於螢幕密度的點陣圖，將會減輕這個問題。
+雖然 Android 會視需要調整裝置的點陣圖, 但點陣圖本身可能不會適當地相應增加或減少: 它們可能會變得模糊或模糊。 提供適用于螢幕密度的點陣圖, 將可減輕這個問題。
 
-比方說下, 圖是範例中的配置和外觀可能會發生的問題時密度-指定資源不會提供。
+例如, 下面的影像是當未提供密度指定的資源時, 可能會發生的版面配置和外觀問題的範例。
 
-![不含密度資源的螢幕擷取畫面](resources-for-varying-screens-images/06-density-not-provided.png)
+![沒有密度資源的螢幕擷取畫面](resources-for-varying-screens-images/06-density-not-provided.png)
 
-比較此密度專屬的資源設計為版面配置：
+將此相較于以密度特定資源設計的版面配置:
 
-![螢幕擷取畫面與密度特有資源](resources-for-varying-screens-images/07-density-specific-resources.png)
+![包含密度特定資源的螢幕擷取畫面](resources-for-varying-screens-images/07-density-specific-resources.png)
 
 
-### <a name="create-varying-density-resources-with-android-asset-studio"></a>Android Asset Studio 是建立各種不同密度資源
+### <a name="create-varying-density-resources-with-android-asset-studio"></a>使用 Android 資產 Studio 建立不同的密度資源
 
-建立這些點陣圖的不同密度可以是有點繁瑣。 Google 已在此情況下，建立線上的公用程式，可以減少部分涉及呼叫這些點陣圖建立了冗長[ **Android Asset Studio**](https://romannurik.github.io/AndroidAssetStudio/)。
+建立各種密度的點陣圖可能有點繁瑣。 因此, Google 建立了一個線上公用程式, 可減少建立這些點陣圖 (稱為[**Android 資產 Studio**](https://romannurik.github.io/AndroidAssetStudio/)) 時所牽涉到的部分冗長。
 
 [![Android Asset Studio](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png#lightbox)
 
-此網站可協助建立目標提供一個映像的四個常見的螢幕密度的點陣圖。 Android Asset Studio 將會再建立的自訂設定的點陣圖，並可讓使用者下載為 zip 檔案。
+這個網站會提供一個影像, 協助建立以四個常見螢幕密度為目標的點陣圖。 然後, Android 資產 Studio 會建立具有一些自訂的點陣圖, 然後讓它們以 zip 檔案的形式下載。
 
 
 ## <a name="tips-for-multiple-screens"></a>多個畫面的秘訣
 
-Android 上執行會令人困擾的裝置數目，而螢幕大小和螢幕密度的組合可以令人望而生畏。 下列秘訣可協助您支援各種裝置所需的投入時間降至最低：
+Android 會在令人困擾數目的裝置上執行, 而且螢幕大小和螢幕密度的組合可能會很龐大。 下列秘訣可協助將支援各種裝置所需的工作降到最低:
 
-- **只設計和開發適用於您的需要**&ndash;有許多不同的裝置，但某些罕見的板型規格，可能需要更多心力來設計和開發的存在。 [**螢幕大小和密度**](https://developer.android.com/resources/dashboard/screens.html)儀表板是由提供資料的螢幕大小/螢幕密度矩陣分解的 Google 提供的頁面。 這次的中斷會提供有關如何開發工作上支援畫面的深入解析。
+- **僅針對您所需的設計和開發**&ndash;其中有許多不同的裝置, 但有些則有極少的外型規格, 可能需要大量的設計和開發。 [[**螢幕大小] 和 [密度**](https://developer.android.com/resources/dashboard/screens.html)] 儀表板是 Google 提供的頁面, 可提供螢幕大小/螢幕密度矩陣的詳細資料。 此細目提供如何在支援螢幕上進行開發的深入解析。
 
-- **使用 DPs，而不是像素**-像素變得棘手螢幕密度的變更。 請勿像素值。 避免改用 dp （密度獨立像素為單位） 的像素為單位。
+- **使用 DPs 而非圖元**-圖元會在螢幕密度變更時變得很麻煩。 不要將圖元值硬式編碼。 避免以圖元為單位 (與密度無關的圖元)。
 
-- **避免** [AbsoluteLayout](https://developer.xamarin.com/api/type/Android.Widget.AbsoluteLayout/)
-  **隨時隨地可能**&ndash;它已被取代的 API 層級 3 (Android 1.5)，並會導致很容易損毀的版面配置。 應該不會使用它。 因此，請使用類似如下的更有彈性的配置 widget [ **LinearLayout**](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)， [ **RelativeLayout**](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)，或新[**GridLayout**](https://developer.xamarin.com/api/type/Android.Widget.GridLayout/)。
+- **避免**[AbsoluteLayout](xref:Android.Widget.AbsoluteLayout)可能的話, 它會在 API 層級 3 (Android 1.5) 中被取代, 而且將會產生脆弱配置。  
+   &ndash; 不應使用它。 相反地, 請嘗試使用更有彈性的版面配置 widget, 例如[**LinearLayout**](xref:Android.Widget.LinearLayout)、 [**RelativeLayout**](xref:Android.Widget.RelativeLayout)或新的[**GridLayout**](xref:Android.Widget.GridLayout)。
 
-- **挑選其中一個版面配置方向，為您的預設值**&ndash;比方說，而不是提供替代資源**版面配置 land**並**配置連接埠**，放置的資源在橫向**版面配置**，並針對至直向資源**版面配置連接埠**。
+- **選取一個版面配置方向做為預設值**   例如, 不是提供替代資源配置-土地和配置埠, 而是將配置中的資源放在版面配置中, 並將資源用於垂直配置埠。 &ndash;
 
-- **用於高度及寬度的 LayoutParams** -XML 版面配置檔案中定義的 UI 項目時的 Android 應用程式使用**wrap_content**並**fill_parent**值將會擁有更多成功案例跨不同的裝置，比使用像素或密度獨立單位，請確定適當的外觀。 這些維度值會導致 Android 可以適當地調整點陣圖資源。 基於這個相同的理由，密度無關的單位是最適合保留的時指定的邊界和填補的 UI 項目。
+- **使用 LayoutParams 的高度和寬度**-在 XML 配置檔案中定義 UI 元素時, 使用**wrap_content**和**fill_parent**值的 Android 應用程式將會更成功地確保在不同裝置之間進行適當的查看, 而不是使用圖元或密度獨立單位。 這些維度值會使 Android 適當地縮放點陣圖資源。 基於此相同原因, 當指定 UI 元素的邊界和填補時, 高密度獨立單位是最適合的保留。
 
 
 ## <a name="testing-multiple-screens"></a>測試多個畫面
 
-Android 應用程式必須針對將支援的所有組態進行測試。 在理想情況下應該在實際裝置本身上測試裝置，但在許多情況下這並不可行或切合實際。
+Android 應用程式必須針對將支援的所有設定進行測試。 理想的裝置應該在實際的裝置上進行測試, 但在許多情況下, 這是不可能的, 也不可行。
 在此情況下，使用 [模擬器] 和 Android 虛擬裝置的安裝程式針對每個裝置組態很有用。
 
-Android SDK 提供某些模擬器面板可能會用來建立 Avd 將複寫的大小、 密度和解決許多裝置。
-同樣地，許多硬體廠商會提供面板為他們的裝置。
+Android SDK 提供一些模擬器的外觀, 可以用來建立 Avd, 將會複寫許多裝置的大小、密度和解析度。
+許多硬體廠商同樣都會提供裝置的外觀。
 
 另一個選項是使用協力廠商測試服務的服務。
 這些服務將採取 APK，在許多不同的裝置上執行它，然後提供應用程式的運作方式的意見反應。

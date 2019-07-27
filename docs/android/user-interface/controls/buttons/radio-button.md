@@ -6,21 +6,21 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: ea8af3c84bb53434489d230d159a27b6b9d500d8
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 2279282b08c9d97b239de424cf38aa6f1463dc4d
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830248"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510359"
 ---
 # <a name="radiobutton"></a>RadioButton
 
-在本節中，您將建立 （啟用一個停用其他） 的兩個互斥的選項按鈕，使用 [`RadioGroup`](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/)
-和 [`RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)
-小工具。 按下其中一個選項按鈕時，就會顯示快顯通知訊息。
+在本節中, 您將建立兩個互斥的選項按鈕 (啟用其中一個), 其方式是使用[`RadioGroup`](xref:Android.Widget.RadioGroup)
+和[`RadioButton`](xref:Android.Widget.RadioButton)
+部件. 按任一選項按鈕時, 將會顯示快顯訊息。
 
 
-開啟**Resources/layout/Main.axml**檔案，並新增兩個[ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)s，巢狀方式置於[ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/) (內[ `LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)):
+開啟**Resources/layout/axml**檔案, 並新增兩個[`RadioButton`](xref:Android.Widget.RadioButton) [`RadioGroup`](xref:Android.Widget.RadioGroup) , 並在中 (位於[`LinearLayout`](xref:Android.Widget.LinearLayout)) 內:
 
 ```xml
 <RadioGroup
@@ -38,10 +38,10 @@ ms.locfileid: "67830248"
 </RadioGroup>
 ```
 
-很重要， [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)s 會群組在一起[ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/)項目，因此可以一次選取不超過一個。 Android 的系統會自動處理此邏輯。 當一 [`RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)
-在選取的群組，所有其他項目的會自動取消選取。
+請務必[`RadioButton`](xref:Android.Widget.RadioButton) [`RadioGroup`](xref:Android.Widget.RadioGroup)依元素群組在一起, 以便一次只能選取一個專案。 這項邏輯會由 Android 系統自動處理。 當其中一個[`RadioButton`](xref:Android.Widget.RadioButton)
+在選取的群組中, 會自動取消選取所有其他專案。
 
-若要執行一些作業時每個[ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)已選取，我們必須撰寫事件處理常式：
+若要在選取每[`RadioButton`](xref:Android.Widget.RadioButton)個時執行某些動作, 我們需要撰寫事件處理常式:
 
 ```csharp
 private void RadioButtonClick (object sender, EventArgs e)
@@ -51,12 +51,12 @@ private void RadioButtonClick (object sender, EventArgs e)
 }
 ```
 
-首先，會傳入之寄件者會轉換成 RadioButton。
-然後 [`Toast`](https://developer.xamarin.com/api/type/Android.Widget.Toast/)
-訊息會顯示已選取的選項按鈕的文字。
+首先, 傳入的寄件者會轉換成選項按鈕。
+然後是[`Toast`](xref:Android.Widget.Toast)
+訊息會顯示選取的選項按鈕的文字。
 
-現在，在底部 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle)
-方法中，新增下列：
+現在, 在[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+方法中, 新增下列內容:
 
 ```csharp
 RadioButton radio_red = FindViewById<RadioButton>(Resource.Id.radio_red);
@@ -66,14 +66,14 @@ radio_red.Click += RadioButtonClick;
 radio_blue.Click += RadioButtonClick;
 ```
 
-這會擷取每個[ `RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)從版面配置，並將新建立的事件 handlerto 每個。
+這會從配置中[`RadioButton`](xref:Android.Widget.RadioButton)捕捉每個, 並每個新增新建立的事件 handlerto。
 
 執行應用程式。
 
 > [!TIP]
-> 如果您需要自行變更狀態 (例如當載入已儲存[ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/))，使用 [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)
-> 屬性 setter 或 [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/)
+> 如果您需要自行變更狀態 (例如載入儲存[`CheckBoxPreference`](xref:Android.Preferences.CheckBoxPreference)的時), 請使用[`Checked`](xref:Android.Widget.CompoundButton.Checked)
+> 屬性 setter 或[`Toggle()`](xref:Android.Widget.CompoundButton.Toggle)
 > 方法。
 
-*此頁面上的部分是根據工作建立及 Android 的開放原始碼專案所共用，並依據所述的條款來使用修改*
-[*Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/). 
+*此頁面的部分是根據 Android 開放原始碼專案所建立和共用的工作進行修改, 並根據*
+[*創意 Commons 2.5 屬性授權*](http://creativecommons.org/licenses/by/2.5/)中所述的條款來使用。 

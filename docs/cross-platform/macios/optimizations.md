@@ -1,27 +1,27 @@
 ---
-title: 組建最佳化
-description: 本文件說明在 Xamarin.iOS 和 Xamarin.Mac 的應用程式的建置階段套用的各種最佳化功能。
+title: 組建優化
+description: 本檔說明在 build time 為 Xamarin. iOS 和 Xamarin. Mac 應用程式所套用的各種優化。
 ms.prod: xamarin
 ms.assetid: 84B67E31-B217-443D-89E5-CFE1923CB14E
 author: conceptdev
 ms.author: crdun
 ms.date: 04/16/2018
-ms.openlocfilehash: f1aa805b9b7a16ad1e8af573cf4170f885eb0197
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a14845646fb400285adac8579af4b15db61e047b
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61261196"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511158"
 ---
-# <a name="build-optimizations"></a>組建最佳化
+# <a name="build-optimizations"></a>組建優化
 
-本文件說明在 Xamarin.iOS 和 Xamarin.Mac 的應用程式的建置階段套用的各種最佳化功能。
+本檔說明在 build time 為 Xamarin. iOS 和 Xamarin. Mac 應用程式所套用的各種優化。
 
-## <a name="remove-uiapplicationensureuithread--nsapplicationensureuithread"></a>移除 UIApplication.EnsureUIThread / NSApplication.EnsureUIThread
+## <a name="remove-uiapplicationensureuithread--nsapplicationensureuithread"></a>移除 UIApplication. EnsureUIThread/NSApplication. EnsureUIThread
 
-移除對[UIApplication.EnsureUIThread] [ 1] （適用於 Xamarin.iOS) 或`NSApplication.EnsureUIThread`（適用於 Xamarin.Mac)。
+移除對[UIApplication. EnsureUIThread][1] (適用于 xamarin) 或`NSApplication.EnsureUIThread` (適用于 xamarin) 的呼叫。
 
-此最佳化會變更下列類型的程式碼：
+這項優化會變更下列類型的程式碼:
 
 ```csharp
 public virtual void AddChildViewController (UIViewController childController)
@@ -31,7 +31,7 @@ public virtual void AddChildViewController (UIViewController childController)
 }
 ```
 
-方式如下：
+如下所示:
 
 ```csharp
 public virtual void AddChildViewController (UIViewController childController)
@@ -40,19 +40,19 @@ public virtual void AddChildViewController (UIViewController childController)
 }
 ```
 
-此最佳化需要啟用，連結器僅會套用到具有方法和`[BindingImpl (BindingImplOptions.Optimizable)]`屬性。
+此優化需要啟用連結器, 而且只會套用至具有屬性的`[BindingImpl (BindingImplOptions.Optimizable)]`方法。
 
-依預設啟用的發行組建。
+根據預設, 它會針對發行組建啟用。
 
-可以覆寫預設行為，藉由傳遞`--optimize=[+|-]remove-uithread-checks`mtouch/mmp 到。
+藉由傳遞`--optimize=[+|-]remove-uithread-checks`至 mtouch/mmp, 可以覆寫預設行為。
 
 [1]: https://docs.microsoft.com/dotnet/api/UIKit.UIApplication.EnsureUIThread
 
-## <a name="inline-intptrsize"></a>Inline IntPtr.Size
+## <a name="inline-intptrsize"></a>內嵌 IntPtr. 大小
 
-內嵌的常數值的`IntPtr.Size`根據目標平台。
+`IntPtr.Size`根據目標平臺內嵌的常數值。
 
-此最佳化會變更下列類型的程式碼：
+這項優化會變更下列類型的程式碼:
 
 ```csharp
 if (IntPtr.Size == 8) {
@@ -62,7 +62,7 @@ if (IntPtr.Size == 8) {
 }
 ```
 
-為下列 （當建置適用於 64 位元平台）：
+在下列 (為64位平臺建立時):
 
 ```csharp
 if (8 == 8) {
@@ -72,21 +72,21 @@ if (8 == 8) {
 }
 ```
 
-此最佳化需要啟用，連結器僅會套用到具有方法和`[BindingImpl (BindingImplOptions.Optimizable)]`屬性。
+此優化需要啟用連結器, 而且只會套用至具有屬性的`[BindingImpl (BindingImplOptions.Optimizable)]`方法。
 
-根據預設，如果目標設為單一的架構，它會啟用，或平台組件 (**Xamarin.iOS.dll**， **Xamarin.TVOS.dll**， **Xamarin.WatchOS.dll**或**Xamarin.Mac.dll**)。
+根據預設, 如果是以單一架構為目標, 或是針對平臺元件 ( **TVOS**、 **WatchOS** .dll 或**xamarin**), 則會啟用此功能。
 
-如果以多個架構為目標，此最佳化就會建立不同的組件，32 位元和 64 位元版本的應用程式，而且這兩個版本必須包含在應用程式中，有效地將最終的應用程式大小增加而不減少它。
+如果以多個架構為目標, 此優化會針對32位版本和64位版本的應用程式建立不同的元件, 而且這兩個版本都必須包含在應用程式中, 以有效地增加最終應用程式大小, 而不是減少這樣.
 
-可以覆寫預設行為，藉由傳遞`--optimize=[+|-]inline-intptr-size`mtouch/mmp 到。
+藉由傳遞`--optimize=[+|-]inline-intptr-size`至 mtouch/mmp, 可以覆寫預設行為。
 
-## <a name="inline-nsobjectisdirectbinding"></a>內嵌 NSObject.IsDirectBinding
+## <a name="inline-nsobjectisdirectbinding"></a>內嵌 NSObject。 IsDirectBinding
 
-`NSObject.IsDirectBinding` 是決定特定的執行個體是否將包裝函式型別的執行個體屬性 (包裝函式型別是對應至原生類型的 managed 的類型; 的執行個體 managed`UIKit.UIView`類型會對應至原生`UIView`類型-相反是使用者類型在此情況下`class MyUIView : UIKit.UIView`會是使用者型別)。
+`NSObject.IsDirectBinding`這是一個實例屬性, 可判斷特定實例是否為包裝函式類型 (包裝函式類型是對應至原生類型的 managed 類型; 例如, managed `UIKit.UIView`類型會對應至原生`UIView`類型, 相反的是使用者類型在此情況下`class MyUIView : UIKit.UIView` , 這會是使用者類型)。
 
-就必須知道的值`IsDirectBinding`時呼叫 Objective C，因為值會決定哪一個版本的`objc_msgSend`使用。
+`IsDirectBinding`當呼叫目標-C 時, 必須知道的值, 因為值會決定要使用哪個版本的`objc_msgSend` 。
 
-假設下列程式碼：
+僅提供下列程式碼:
 
 ```csharp
 class UIView : NSObject {
@@ -117,7 +117,7 @@ class MyUIView : UIView {
 }
 ```
 
-我們可以判斷，在`UIView.SomeProperty`的值`IsDirectBinding`不是常數，不能是內嵌：
+我們可以判斷在的`UIView.SomeProperty` `IsDirectBinding`值中, 不是常數, 而且無法內嵌:
 
 ```csharp
 void uiView = new UIView ();
@@ -126,7 +126,7 @@ void myView = new MyUIView ();
 Console.WriteLine (myView.SomeProperty); // prints 'false'
 ```
 
-不過，就可以查看所有類型的應用程式中，並判斷是否繼承自任何型別`NSUrl`，因此是安全地內嵌`IsDirectBinding`常數的值`true`:
+不過, 您可以查看應用程式中的所有類型, 並判斷沒有繼承自`NSUrl`的類型, 因此可以安全地將`IsDirectBinding`值內嵌至常數`true`:
 
 ```csharp
 void myURL = new NSUrl ();
@@ -134,7 +134,7 @@ Console.WriteLine (myURL.SomeOtherProperty); // prints 'true'
 // There's no way to make SomeOtherProperty print anything but 'true', since there are no NSUrl subclasses.
 ```
 
-特別是，此最佳化會變更下列類型的程式碼 (這是繫結程式碼`NSUrl.AbsoluteUrl`):
+特別是, 這項優化會變更下列類型的程式碼 (這是的系結`NSUrl.AbsoluteUrl`程式碼):
 
 ```csharp
 if (IsDirectBinding) {
@@ -144,7 +144,7 @@ if (IsDirectBinding) {
 }
 ```
 
-為下列 (當它可以判斷，有的任何子類別`NSUrl`應用程式中):
+到下列 (當它可以判斷應用程式`NSUrl`中沒有任何子類別時):
 
 ```csharp
 if (true) {
@@ -154,15 +154,15 @@ if (true) {
 }
 ```
 
-此最佳化需要啟用，連結器僅會套用到具有方法和`[BindingImpl (BindingImplOptions.Optimizable)]`屬性。
+此優化需要啟用連結器, 而且只會套用至具有屬性的`[BindingImpl (BindingImplOptions.Optimizable)]`方法。
 
-它是預設永遠啟用適用於 Xamarin.iOS，並一律停用預設 xamarin.mac （因為它可能會有以動態方式載入 Xamarin.Mac 中的組件，不可能以判斷特定類別永遠不會形成子類別）。
+根據預設, 在 xamarin 中一律會啟用此功能, 而且在 Xamarin 中一律預設為停用 (因為可以在 Xamarin 中以動態方式載入元件, 因此無法判斷特定類別永遠不會被子系)。
 
-可以覆寫預設行為，藉由傳遞`--optimize=[+|-]inline-isdirectbinding`mtouch/mmp 到。
+藉由傳遞`--optimize=[+|-]inline-isdirectbinding`至 mtouch/mmp, 可以覆寫預設行為。
 
-## <a name="inline-runtimearch"></a>內嵌 Runtime.Arch
+## <a name="inline-runtimearch"></a>內嵌執行時間。
 
-此最佳化會變更下列類型的程式碼：
+這項優化會變更下列類型的程式碼:
 
 ```csharp
 if (Runtime.Arch == Arch.DEVICE) {
@@ -172,7 +172,7 @@ if (Runtime.Arch == Arch.DEVICE) {
 }
 ```
 
-為下列 （當建置裝置適用）：
+到下列 (為裝置建立時):
 
 ```csharp
 if (Arch.DEVICE == Arch.DEVICE) {
@@ -182,15 +182,15 @@ if (Arch.DEVICE == Arch.DEVICE) {
 }
 ```
 
-此最佳化需要啟用，連結器僅會套用到具有方法和`[BindingImpl (BindingImplOptions.Optimizable)]`屬性。
+此優化需要啟用連結器, 而且只會套用至具有屬性的`[BindingImpl (BindingImplOptions.Optimizable)]`方法。
 
-它是預設永遠啟用適用於 Xamarin.iOS （它不適用於 Xamarin.Mac）。
+根據預設, 在 Xamarin 中一律會啟用此功能 (Xamarin. Mac 無法使用它)。
 
-可以覆寫預設行為，藉由傳遞`--optimize=[+|-]inline-runtime-arch`mtouch 到。
+傳遞`--optimize=[+|-]inline-runtime-arch`至 mtouch 可以覆寫預設行為。
 
-## <a name="dead-code-elimination"></a>無作用程式碼刪除
+## <a name="dead-code-elimination"></a>停止程式碼排除
 
-此最佳化會變更下列類型的程式碼：
+這項優化會變更下列類型的程式碼:
 
 ```csharp
 if (true) {
@@ -200,13 +200,13 @@ if (true) {
 }
 ```
 
-到：
+登錄
 
 ```csharp
 Console.WriteLine ("Doing this");
 ```
 
-此外，它也會評估常數的比較，就像這樣：
+它也會評估常數比較, 如下所示:
 
 ```csharp
 if (8 == 8) {
@@ -216,13 +216,13 @@ if (8 == 8) {
 }
 ```
 
-並判斷運算式`8 == 8`是一律 true，並降低它：
+並判斷運算式`8 == 8`一律為 true, 並將其減少為:
 
 ```csharp
 Console.WriteLine ("Doing this");
 ```
 
-這是功能強大的最佳化與內嵌的最佳化，一起使用時，因為它可以轉換下列類型的程式碼 (這是繫結程式碼`NFCIso15693ReadMultipleBlocksConfiguration.Range`):
+這是與內嵌優化搭配使用時的強大優化, 因為它可以轉換下列類型的程式碼 (這是的系結程式`NFCIso15693ReadMultipleBlocksConfiguration.Range`代碼):
 
 ```csharp
 NSRange ret;
@@ -254,7 +254,7 @@ if (IsDirectBinding) {
 return ret;
 ```
 
-到這個 (64 位元裝置，建置和時也能夠確定沒有任何`NFCIso15693ReadMultipleBlocksConfiguration`應用程式中的子類別):
+至此 (為64位裝置建立時, 以及同時能夠確保`NFCIso15693ReadMultipleBlocksConfiguration`應用程式中沒有子類別):
 
 ```csharp
 NSRange ret;
@@ -262,25 +262,25 @@ ret = global::ObjCRuntime.Messaging.NSRange_objc_msgSend (this.Handle, Selector.
 return ret;
 ```
 
-AOT 編譯器已可以執行排除無作用程式碼，就像這樣，但這種最佳化是在連結器，這表示可以看到有多個方法，不會使用，而且也因此會移除 （除非使用了其他地方） 連結器:
+AOT 編譯器已經可以排除這類不好的程式碼, 但這項優化是在連結器內完成, 這表示連結器可以查看有多個未使用的方法, 因此可能會移除 (除非在其他地方使用):
 
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSend_stret`
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSendSuper`
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSendSuper_stret`
 
-此最佳化需要啟用，連結器僅會套用到具有方法和`[BindingImpl (BindingImplOptions.Optimizable)]`屬性。
+此優化需要啟用連結器, 而且只會套用至具有屬性的`[BindingImpl (BindingImplOptions.Optimizable)]`方法。
 
-它是預設永遠啟用 （如果已啟用連結器）。
+預設會一律啟用 (當連結器啟用時)。
 
-可以覆寫預設行為，藉由傳遞`--optimize=[+|-]dead-code-elimination`mtouch/mmp 到。
+藉由傳遞`--optimize=[+|-]dead-code-elimination`至 mtouch/mmp, 可以覆寫預設行為。
 
-## <a name="optimize-calls-to-blockliteralsetupblock"></a>最佳化 BlockLiteral.SetupBlock 呼叫
+## <a name="optimize-calls-to-blockliteralsetupblock"></a>優化對 BlockLiteral 的呼叫。 SetupBlock
 
-Xamarin.iOS/Mac 執行階段必須知道區塊簽章時建立的 OBJECTIVE-C 區塊，managed 委派。 這可能是相當耗費資源的作業。 此最佳化會計算區塊簽章在建置階段，並修改呼叫 IL`SetupBlock`改為接受做為引數的簽章的方法。 如此一來可避免計算在執行階段的簽章。
+在建立 managed 委派的目標 C 區塊時, 您必須知道此 Xamarin iOS/Mac 執行時間的區塊簽章。 這可能是相當耗費資源的作業。 此優化會在組建階段計算區塊簽章, 並修改 IL 以呼叫`SetupBlock`接受簽章做為引數的方法。 這麼做可避免在執行時間計算簽章的需求。
 
-基準測試顯示，加快 10 至 15 倍呼叫區塊。
+效能評定會顯示, 這會加快以10到15的因素來呼叫區塊的速度。
 
-它會將轉換下列[程式碼](https://github.com/xamarin/xamarin-macios/blob/018f7153441d9d7e0f58e2046f39eeb46f1ff480/src/UIKit/UIAccessibility.cs#L198-L211):
+它會轉換下列程式[代碼](https://github.com/xamarin/xamarin-macios/blob/018f7153441d9d7e0f58e2046f39eeb46f1ff480/src/UIKit/UIAccessibility.cs#L198-L211):
 
 ```csharp
 public static void RequestGuidedAccessSession (bool enable, Action<bool> completionHandler)
@@ -291,7 +291,7 @@ public static void RequestGuidedAccessSession (bool enable, Action<bool> complet
 }
 ```
 
-到：
+登錄
 
 ```csharp
 public static void RequestGuidedAccessSession (bool enable, Action<bool> completionHandler)
@@ -302,51 +302,51 @@ public static void RequestGuidedAccessSession (bool enable, Action<bool> complet
 }
 ```
 
-此最佳化需要啟用，連結器僅會套用到具有方法和`[BindingImpl (BindingImplOptions.Optimizable)]`屬性。
+此優化需要啟用連結器, 而且只會套用至具有屬性的`[BindingImpl (BindingImplOptions.Optimizable)]`方法。
 
-使用靜態的註冊機構 （以靜態的註冊機構針對裝置組建，預設會啟用，並在 Xamarin.Mac 版本預設會啟用靜態註冊機構中建置的 Xamarin.iOS) 時，它會啟用預設。
+使用靜態註冊機構時, 預設會啟用此功能 (在 Xamarin. iOS 中, 裝置組建的靜態註冊機構預設為啟用, 而在 Xamarin 中, 預設會針對發行組建啟用靜態報名者)。
 
-可以覆寫預設行為，藉由傳遞`--optimize=[+|-]blockliteral-setupblock`mtouch/mmp 到。
+藉由傳遞`--optimize=[+|-]blockliteral-setupblock`至 mtouch/mmp, 可以覆寫預設行為。
 
-## <a name="optimize-support-for-protocols"></a>最佳化通訊協定的支援
+## <a name="optimize-support-for-protocols"></a>將通訊協定的支援優化
 
-Xamarin.iOS/Mac 執行階段需要解受管理的類型會實作 OBJECTIVE-C 通訊協定的相關資訊。 這項資訊會儲存在介面 （並對這些介面的屬性），這不是非常有效率的格式，也不是連結器友善。
+如需管理類型如何執行目標 C 通訊協定的相關資訊, 則需要執行 Xamarin/Mac 執行時間。 這項資訊會儲存在介面中 (以及這些介面上的屬性), 這不是非常有效率的格式, 也不是連結器易記的。
 
-其中一個範例是，這些介面會儲存資訊中的所有通訊協定成員`[ProtocolMember]`屬性，以及其他項目包含這些成員的參數類型的參考。 這表示只要實作這類介面可讓連結器保留在該介面中使用的所有類型，甚至針對選擇性成員應用程式永遠不會呼叫或實作。
+其中一個範例是, 這些介面會儲存`[ProtocolMember]`屬性中所有通訊協定成員的相關資訊, 而其他專案則包含這些成員之參數類型的參考。 這表示只要執行此類介面, 連結器就會保留該介面中使用的所有類型, 即使應用程式永遠不會呼叫或實行選擇性成員也一樣。
 
-此最佳化會讓靜態的註冊機構會使用簡單且快速地在執行階段尋找一些記憶體有效率的格式儲存任何必要的資訊。
+這項優化會使靜態註冊機構以有效率的格式儲存任何必要的資訊, 以使用可在執行時間輕鬆且快速尋找的小型記憶體。
 
-它也會告訴連結器，它不一定需要保留這些介面，或任何相關的屬性。
+它也會告訴連結器, 它不一定需要保留這些介面, 也不會有任何相關的屬性。
 
-此最佳化需要連結器和靜態的註冊機構會啟用。
+這項優化需要同時啟用連結器和靜態註冊機構。
 
-在 Xamarin.iOS 上此最佳化會啟用根據預設，啟用連結器和靜態的註冊機構時。
+在 Xamarin. iOS 上, 當連結器和靜態註冊機構都已啟用時, 預設會啟用這項優化。
 
-在 Xamarin.Mac 此最佳化是永遠不會啟用預設的情況下，由於 Xamarin.Mac 支援，以動態方式載入組件和組件可能會不有已在建置階段已知 （並因此不會最佳化）。
+在 Xamarin 上, 預設一律不會啟用這項優化, 因為 Xamarin 支援以動態方式載入元件, 而且這些元件可能不會在組建階段得知 (因此不會優化)。
 
-可以覆寫預設行為，藉由傳遞`--optimize=-register-protocols`mtouch/mmp 到。
+藉由傳遞`--optimize=-register-protocols`至 mtouch/mmp, 可以覆寫預設行為。
 
 ## <a name="remove-the-dynamic-registrar"></a>移除動態註冊機構
 
-Xamarin.iOS 和 Xamarin.Mac 執行階段包含對[註冊 managed 型別](https://developer.xamarin.com/guides/ios/advanced_topics/registrar/)OBJECTIVE-C 執行階段使用。 也可以是在建置階段或在執行階段 （或部分在建置階段和在執行階段的其餘部分），但如果它完全是在建置階段，則表示可以移除支援的程式碼，在執行階段進行模擬。 這會導致大幅降低應用程式的大小，特別是較小的應用程式，例如延伸模組或 watchOS 應用程式。
+Xamarin 和 Xamarin 都包含以目標-C 執行時間[註冊 managed 類型](~/ios/internals/registrar.md)的支援。 您可以在組建階段或執行時間 (或部分于執行時間) 完成此作業, 但如果它是在組建階段完成, 則可以移除在執行時間執行的支援程式碼。 這會大幅減少應用程式大小, 特別是針對較小的應用程式 (例如擴充功能或 watchOS 應用程式)。
 
-此最佳化需要靜態的註冊機構和連結器啟用。
+這項優化需要同時啟用靜態註冊機構和連結器。
 
-連結器會嘗試判斷它是否安全地移除動態註冊機構，若是，會嘗試將它移除。
+連結器會嘗試判斷是否可以安全地移除動態註冊機構, 如果是的話, 則會嘗試將它移除。
 
-由於 Xamarin.Mac 支援以動態方式載入組件，在執行階段 （這不知道在建置階段），就無法在建置階段判斷是否這是安全的最佳化。 這表示預設為 Xamarin.Mac 應用程式永遠不會啟用此最佳化。
+因為 Xamarin 支援在執行時間以動態方式載入元件 (在組建階段未知), 所以無法在組建時間判斷這是否為安全的優化。 這表示在 Xamarin. Mac 應用程式中, 預設一律不會啟用這項優化。
 
-可以覆寫預設行為，藉由傳遞`--optimize=[+|-]remove-dynamic-registrar`mtouch/mmp 到。
+藉由傳遞`--optimize=[+|-]remove-dynamic-registrar`至 mtouch/mmp, 可以覆寫預設行為。
 
-如果它偵測到，如果預設值會覆寫，以移除動態註冊機構，連結器就會發出警告並不安全 （但仍會移除動態註冊機構）。
+如果覆寫預設值以移除動態註冊機構, 則連結器會在偵測到不安全時發出警告 (但仍會移除動態註冊機構)。
 
-## <a name="inline-runtimedynamicregistrationsupported"></a>內嵌 Runtime.DynamicRegistrationSupported
+## <a name="inline-runtimedynamicregistrationsupported"></a>內嵌執行時間。 DynamicRegistrationSupported
 
-內嵌值的`Runtime.DynamicRegistrationSupported`決定在建置階段。
+內嵌在組建時間`Runtime.DynamicRegistrationSupported`決定的值。
 
-如果已移除動態註冊機構 (請參閱[移除動態註冊機構](#remove-the-dynamic-registrar)最佳化)，這是常數`false`值，否則就是一個常數`true`值。
+如果已移除動態註冊機構 (請參閱[移除動態註冊機構](#remove-the-dynamic-registrar)優化), 這是常`false`數值, 否則為常`true`數值。
 
-此最佳化會變更下列類型的程式碼：
+這項優化會變更下列類型的程式碼:
 
 ```csharp
 if (Runtime.DynamicRegistrationSupported) {
@@ -356,31 +356,31 @@ if (Runtime.DynamicRegistrationSupported) {
 }
 ```
 
-為下列時動態的註冊機構會移除：
+移除動態註冊機構時的下列內容:
 
 ```csharp
 throw new Exception ("dynamic registration is not supported");
 ```
 
-為下列時不會移除動態註冊機構：
+當動態註冊機構未移除時, 如下所示:
 
 ```csharp
 Console.WriteLine ("do something");
 ```
 
-此最佳化需要啟用，連結器僅會套用到具有方法和`[BindingImpl (BindingImplOptions.Optimizable)]`屬性。
+此優化需要啟用連結器, 而且只會套用至具有屬性的`[BindingImpl (BindingImplOptions.Optimizable)]`方法。
 
-它是預設永遠啟用 （如果已啟用連結器）。
+預設會一律啟用 (當連結器啟用時)。
 
-可以覆寫預設行為，藉由傳遞`--optimize=[+|-]inline-dynamic-registration-supported`mtouch/mmp 到。
+藉由傳遞`--optimize=[+|-]inline-dynamic-registration-supported`至 mtouch/mmp, 可以覆寫預設行為。
 
-## <a name="precompute-methods-to-create-managed-delegates-for-objective-c-blocks"></a>預先計算的方法，來建立受管理的委派，OBJECTIVE-C 區塊
+## <a name="precompute-methods-to-create-managed-delegates-for-objective-c-blocks"></a>為目標-C 區塊建立受控委派的預先計算方法
 
-當 OBJECTIVE-C 呼叫的選取器，不會採用區塊，以做為參數，而且然後 managed 程式碼覆寫該方法時，Xamarin.iOS / Xamarin.Mac 執行階段必須建立該區塊的委派。
+當目標-C 呼叫接受區塊做為參數的選取器, 然後 managed 程式碼已覆寫該方法時, 則 Xamarin. iOS/Xamarin 執行時間必須建立該區塊的委派。
 
-繫結產生器所產生的繫結程式碼會包含`[BlockProxy]`屬性會指定具有類型`Create`可以執行這項操作的方法。
+系結產生器所產生的系結程式碼`[BlockProxy]`將會包含一個屬性, 它會`Create`使用可執行此動作的方法來指定類型。
 
-指定下列的 OBJECTIVE-C 程式碼：
+假設有下列目標-C 程式碼:
 
 ```objc
 @interface ObjCBlockTester : NSObject {
@@ -404,7 +404,7 @@ Console.WriteLine ("do something");
 @end
 ```
 
-以及下列繫結程式碼：
+和下列系結程式碼:
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -415,7 +415,7 @@ interface ObjCBlockTester
 }
 ```
 
-產生器會產生：
+產生器將會產生:
 
 ```csharp
 [Register("ObjCBlockTester", true)]
@@ -503,15 +503,15 @@ static class Trampolines
 }
 ```
 
-當呼叫 Objective C `[ObjCBlockTester callClassCallback]`，Xamarin.iOS / Xamarin.Mac 執行階段將探討`[BlockProxy (typeof (Trampolines.NIDActionArity1V0))]`參數上的屬性。 它接著會查閱`Create`方法，在該型別，並呼叫該方法來建立委派。
+當目標-C 呼叫`[ObjCBlockTester callClassCallback]`時, 就會查看參數上的`[BlockProxy (typeof (Trampolines.NIDActionArity1V0))]`屬性。 然後, 它會在該`Create`類型上查詢方法, 並呼叫該方法來建立委派。
 
-此最佳化會發現`Create`在建置階段，以及靜態的註冊機構的方法會產生查詢的方法，在執行階段使用中繼資料語彙基元，改為使用的屬性和反映 （這是快多了，而且也可讓連結器程式碼若要移除對應的執行階段程式碼，讓較小的應用程式）。
+這種優化會在`Create`組建階段尋找方法, 而靜態註冊機構會產生程式碼, 以使用元資料標記在執行時間查閱方法, 而不是使用屬性和反映 (這會更快, 而且也允許連結器若要移除對應的執行時間程式碼, 請讓應用程式變得更小。
 
-如果找不到 mmp/mtouch`Create`方法，然後 MT4174/MM4174 警告將會顯示，並查閱將執行在執行階段。
-最可能的原因手動撰寫且沒有必要的繫結程式碼`[BlockProxy]`屬性。
+如果 mmp/mtouch 找不到`Create`方法, 則會顯示 MT4174/MM4174 警告, 而查閱會改為在執行時間執行。
+最可能的原因是手動撰寫系結程式碼, `[BlockProxy]`但沒有必要的屬性。
 
-此最佳化需要啟用靜態的註冊機構。
+此優化需要啟用靜態註冊機構。
 
-它是預設永遠啟用 （只要已啟用靜態註冊機構）。
+根據預設, 一律會啟用此功能 (只要已啟用靜態註冊機構)。
 
-可以覆寫預設行為，藉由傳遞`--optimize=[+|-]static-delegate-to-block-lookup`mtouch/mmp 到。
+藉由傳遞`--optimize=[+|-]static-delegate-to-block-lookup`至 mtouch/mmp, 可以覆寫預設行為。

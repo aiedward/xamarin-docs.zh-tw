@@ -1,37 +1,37 @@
 ---
 title: 將程式碼更新至 Unified API 的祕訣
-description: 更新應用程式使用 Xamarin 的統一 API 時，這份文件會討論常見的錯誤以及各種實用的秘訣。
+description: 本檔討論在將應用程式更新為使用 Xamarin 的 Unified API 時, 常見的錯誤和各種秘訣很有用。
 ms.prod: xamarin
 ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.date: 03/29/2017
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 62ef02d276e9c98e07f5e0d1b9ddec1b0874a99a
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: c0e4152574cf400f5b77b504955b248dd8477a7c
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829619"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509517"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>將程式碼更新至 Unified API 的祕訣
 
-在更新舊的 Xamarin 方案至統一 API 時，可能會發生下列錯誤。
+將舊版 Xamarin 方案更新為 Unified API 時, 可能會遇到下列錯誤。
 
-## <a name="nsinvalidargumentexception-could-not-find-storyboard-error"></a>找不到 NSInvalidArgumentException 腳本時發生錯誤
+## <a name="nsinvalidargumentexception-could-not-find-storyboard-error"></a>NSInvalidArgumentException 找不到分鏡腳本錯誤
 
-沒有[bug](https://bugzilla.xamarin.com/show_bug.cgi?id=25569)在目前版本的 Visual Studio for Mac 將專案轉換至 Unified Api 使用自動化的移轉工具之後可能發生的。 更新之後，如果您在表單中收到錯誤訊息：
+使用自動遷移工具將您的專案轉換成統一的 Api 之後, 目前的 Visual Studio for Mac 版本可能發生[錯誤](https://bugzilla.xamarin.com/show_bug.cgi?id=25569)。 更新之後, 如果您收到下列格式的錯誤訊息:
 
 ```console
 Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not find a storyboard named 'xxx' in bundle NSBundle...
 ```
 
-您可以執行下列動作以解決此問題，請找出下列的建置目標檔案：
+若要解決這個問題, 您可以執行下列動作, 找出下列組建目標檔案:
 
 ```console
 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/2.1/Xamarin.iOS.Common.targets
 ```
 
-此檔案中，您需要尋找下列目標宣告：
+在此檔案中, 您需要尋找下列目標宣告:
 
 ```xml
 <Target Name="_CopyContentToBundle"
@@ -39,7 +39,7 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
         Outputs = "@(_BundleResourceWithLogicalName -> '$(_AppBundlePath)%(LogicalName)')" >
 ```
 
-並新增`DependsOnTargets="_CollectBundleResources"`屬性。 與下列類似：
+並在`DependsOnTargets="_CollectBundleResources"`其中加入屬性。 與下列類似：
 
 ```xml
 <Target Name="_CopyContentToBundle"
@@ -48,98 +48,98 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
         Outputs = "@(_BundleResourceWithLogicalName -> '$(_AppBundlePath)%(LogicalName)')" >
 ```
 
-將檔案儲存、 重新 Visual Studio for Mac 中啟動和執行清除及重建您的專案。 應該 xamarin 稍後發行修正此問題。
+儲存檔案、重新開機 Visual Studio for Mac, 並對專案進行乾淨的 & 重建。 此問題的修正應該很快就會由 Xamarin 發行。
 
-## <a name="useful-tips"></a>實用的秘訣
+## <a name="useful-tips"></a>有用的秘訣
 
-使用移轉工具之後, 您可能仍然會取得一些需要手動介入的編譯器錯誤。
-可能需要手動修正的事項包括：
+使用遷移工具之後, 您可能仍然會遇到一些需要手動介入的編譯器錯誤。
+某些可能需要手動修正的事項包括:
 
-* 比較`enum`可能會需要`(int)`轉型。
+* 比較`enum`可能`(int)`需要轉換。
 
-* `NSDictionary.IntValue` 現在會傳回`nint`，沒有`Int32Value`可以改為使用。
+* `NSDictionary.IntValue`現在會傳回`Int32Value`,而可以改用。 `nint`
 
-* `nfloat` 並`nint`類型不能標示`const`;  `static readonly nint`是合理的替代方案。
+* `nfloat`無法`nint` 標記`const`和類型;  `static readonly nint`是合理的替代方法。
 
-* 要直接在使用的項目`MonoTouch.`命名空間就一般來說，在`ObjCRuntime.`命名空間 (例如：`MonoTouch.Constants.Version`現在`ObjCRuntime.Constants.Version`)。
+* 直接在`MonoTouch.`命名空間中使用的專案, 現在通常是`ObjCRuntime.`在命名空間中 (例如: `MonoTouch.Constants.Version`現在`ObjCRuntime.Constants.Version`是)。
 
-* 當您嘗試序列化時，將物件序列化的程式碼可能會中斷`nint`和`nfloat`型別。 請務必檢查如預期般在移轉之後，適用於您的序列化程式碼。
+* 序列化物件的程式碼可能會在嘗試序列化`nint`和`nfloat`類型時中斷。 在遷移之後, 請務必檢查您的序列化程式碼是否如預期般運作。
 
-* 這個自動化的工具有時遺漏程式碼內`#if #else`條件式編譯器指示詞。 在此情況下，您將需要手動進行修正 （請參閱以下的常見錯誤）。
+* 有時候, 自動化工具會在條件`#if #else`式編譯器指示詞內遺漏程式碼。 在此情況下, 您必須手動進行修正 (請參閱下面的常見錯誤)。
 
-* 使用手動匯出的方法`[Export]`可能不會自動修正移轉工具，例如在您必須手動更新傳回的型別，以這個程式碼 snippert `nfloat`:
+* 使用`[Export]`手動匯出的方法可能不會由遷移工具自動修正, 例如, 在此程式碼 snippert 中, 您必須手動將傳回`nfloat`類型更新為:
 
     ```csharp
     [Export("tableView:heightForRowAtIndexPath:")]
     public nfloat HeightForRow(UITableView tableView, NSIndexPath indexPath)
     ```
 
-* 統一的 API 不提供 NSDate 和.NET DateTime 之間的隱含轉換，因為它不是不失真的轉換。 若要避免錯誤的相關`DateTimeKind.Unspecified`轉換.NET`DateTime`為本機或之前轉換成 UTC `NSDate`。
+* Unified API 不會提供 NSDate 與 .NET DateTime 之間的隱含轉換, 因為它不是不失真的轉換。 若要避免在轉換`DateTimeKind.Unspecified`成`NSDate`之前, `DateTime`將 .net 轉換成本機或 UTC 的相關錯誤。
 
-* Objective C 分類方法現在會產生做為統一的 API 中的擴充方法。 例如，程式碼，先前使用`UIView.DrawString`現在會參考`NSString.DrawString`Unified API 中。
+* 目標-C 類別方法現在會產生為 Unified API 中的擴充方法。 例如, 先前使用`UIView.DrawString`的程式碼現在會在 Unified API 中參考。 `NSString.DrawString`
 
-* 使用具有 AVFoundation 類別程式碼`VideoSettings`應該會變更為使用`WeakVideoSettings`屬性。 這需要`Dictionary`，這是可設定類別上的屬性，例如：
+* 使用 AVFoundation 類別`VideoSettings`搭配的程式碼應該會變更`WeakVideoSettings`為使用屬性。 這需要`Dictionary`, 其可做為設定類別上的屬性, 例如:
 
     ```csharp
     vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
     ```
 
-* NSObject`.ctor(IntPtr)`建構函式已從變更公開給受保護 ([以避免不當使用](~/cross-platform/macios/unified/overview.md#NSObject_ctor))。
+* NSObject `.ctor(IntPtr)`的函式已從公用變更為受保護 ([以防止不當使用](~/cross-platform/macios/unified/overview.md#NSObject_ctor))。
 
-* `NSAction` 已被[取代](~/cross-platform/macios/unified/overview.md#NSAction)使用標準.NET `Action`。 一些簡單 （單一參數） 的委派也已取代為`Action<T>`。
+* `NSAction`已[取代](~/cross-platform/macios/unified/overview.md#NSAction)為標準 .net `Action`。 某些簡單的`Action<T>`(單一參數) 委派也已由取代。
 
-最後，請參閱[傳統 v 統一的 API 差異](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)查閱 api 在程式碼中的變更。 搜尋[本頁](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)會協助您找出的傳統 Api 和功能他們已更新為。
+最後, 請參閱[傳統的 Unified API 差異](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md), 以在程式碼中查詢 api 的變更。 搜尋[此頁面](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)將有助於尋找傳統 api, 以及它們已更新到的內容。
 
 > [!NOTE]
-> `MonoTouch.Dialog`命名空間則會在移轉後保持相同。 如果您的程式碼會使用**MonoTouch.Dialog**您應該繼續使用該命名空間-請勿*不*變更`MonoTouch.Dialog`至`Dialog`！
+> 在`MonoTouch.Dialog`遷移之後, 命名空間會維持不變。 如果您的程式碼使用**MonoTouch** , 您應該繼續使用該命名空間,*不*會`MonoTouch.Dialog`變更`Dialog`為!
 
 ## <a name="common-compiler-errors"></a>常見編譯器錯誤
 
-常見錯誤的其他範例，以下列出隨解決方案：
+以下列出常見錯誤的其他範例, 以及解決方案:
 
-**錯誤 CS0012:未參考的組件中定義的型別 'MonoTouch.UIKit.UIView'。**
+**錯誤 CS0012:類型 ' MonoTouch. UIKit. UIView ' 定義于未參考的元件中。**
 
-修正：這通常表示此專案參考的元件或尚未建置使用 Unified API 的 NuGet 套件。 您應該刪除並重新加入所有的元件和 NuGet 套件。 如果這樣無法修正錯誤，外部程式庫可能尚未支援統一的 API。
+補丁這通常表示專案會參考尚未使用 Unified API 建立的元件或 NuGet 套件。 您應該刪除並重新新增所有元件和 NuGet 套件。 如果這樣做無法修正錯誤, 外部程式庫可能還不支援 Unified API。
 
-**錯誤 MT0034:不能包含 'monotouch.dll' 和 'Xamarin.iOS.dll' 中相同的 Xamarin.iOS 專案-'monotouch.dll' 所參考時明確地參考 'Xamarin.iOS.dll' ' Xamarin.Mobile，版本 = 0.6.3.0，文化特性 = 中性，PublicKeyToken = null'。**
+**錯誤 MT0034:不能在相同的 Xamarin. iOS 專案中同時包含 ' monotouch ' 和 ' Xamarin ', 而 ' monotouch ' 則是由 ' Xamarin, Version = 0.6.3.0, Culture = 中性, PublicKeyToken = null ' 所參考的 '。**
 
-修正：刪除引發此錯誤的元件，然後重新加入至專案。
+補丁刪除造成此錯誤的元件, 然後重新加入至專案。
 
-**錯誤 CS0234:'Foundation' 不存在於的命名空間 'MonoTouch' 類型或命名空間名稱。您是否遺漏了組件參考？**
+**錯誤 CS0234:命名空間 ' MonoTouch ' 中不存在類型或命名空間名稱 ' Foundation '。您是否遺漏了元件參考？**
 
-修正：在 Visual Studio for Mac 的自動化的移轉工具*應該*更新所有`MonoTouch.Foundation`參考`Foundation`，但在某些情況下將必須以手動方式更新。 針對先前包含在其他命名空間，可能會出現類似的錯誤`MonoTouch`，例如`UIKit`。
+補丁Visual Studio for Mac 中的自動化遷移工具*應該*更新所有`MonoTouch.Foundation`的參考`Foundation`, 不過在某些情況下, 這些都需要手動更新。 先前包含`MonoTouch`的其他命名空間`UIKit`(例如) 可能會出現類似的錯誤。
 
-**錯誤 CS0266:無法將類型 'double' 到 'System.float' 隱含轉換**
+**錯誤 CS0266:無法將類型 ' double ' 隱含轉換為 ' System.object '**
 
-修正： 將類型變更，並轉換成`nfloat`。 這項錯誤也可能會發生其他型別具有 64 位元對等項目 (例如`nint`，)
+修正: 變更類型, 並將`nfloat`轉換為。 其他具有64位對等的類型 (例如`nint`), 也可能會發生此錯誤。
 
 ```csharp
 nfloat scale = (nfloat)Math.Min(rect.Width, rect.Height);
 ```
 
-**錯誤 CS0266:無法隱含地轉換類型 'CoreGraphics.CGRect' 到 'System.Drawing.RectangleF'。存在明確的轉換 （您是否遺漏轉型？）**
+**錯誤 CS0266:無法將類型 ' CoreGraphics. Rectanglef ' 隱含轉換為 ' RectangleF '。明確轉換存在 (您是否遺漏了轉換？)**
 
-修正：變更執行個體`RectangleF`要`CGRect`，`SizeF`要`CGSize`，和`PointF`來`CGPoint`。 命名空間`using System.Drawing;`應該取代成`using CoreGraphics;`（如果尚未存在）。
+補丁將`RectangleF`實例變更為`CGRect`to `SizeF` 、 `CGSize`to 和`PointF` to 。`CGPoint` 命名空間`using System.Drawing;`應取代為`using CoreGraphics;` (如果尚未存在的話)。
 
-**錯誤 CS1502:最佳多載符合的方法 ' CoreGraphics.CGContext.SetLineDash (System.nfloat、 System.nfloat[])' 有一些無效的引數**
+**錯誤 CS1502:' CoreGraphics. CGCoNtext. SetLineDash (nfloat, nfloat []) ' 的最佳多載方法相符, 有一些不正確引數**
 
-修正：陣列型別變更`nfloat[]`明確轉型和`Math.PI`。
+補丁將陣列類型變更`nfloat[]`為, 並`Math.PI`明確轉換。
 
 ```csharp
 grphc.SetLineDash (0, new nfloat[] { 0, 3 * (nfloat)Math.PI });
 ```
 
-**錯誤 CS0115: 'WordsTableSource.RowsInSection （UIKit.UITableView，int）' 會標示為 覆寫，但找到來覆寫任何合適的方法**
+**錯誤 CS0115: ' WordsTableSource. RowsInSection (UIKit. UITableView, int) ' 已標示為覆寫, 但找不到適合的方法來覆寫**
 
-修正：變更傳回的值和參數類型，以`nint`。 這通常會發生在方法覆寫，例如`UITableViewSource`，包括`RowsInSection`， `NumberOfSections`， `GetHeightForRow`， `TitleForHeader`，`GetViewForHeader`等等。
+補丁將傳回值和參數類型變更為`nint`。 這通常發生在方法覆寫中, 例如`UITableViewSource`上的`RowsInSection`, `NumberOfSections`包括`GetHeightForRow`、 `TitleForHeader`、 `GetViewForHeader`、、等。
 
 ```csharp
 public override nint RowsInSection (UITableView tableview, nint section) {
 ```
 
-**錯誤 CS0508: `WordsTableSource.NumberOfSections(UIKit.UITableView)`： 傳回類型必須是 'System.nint' 才符合覆寫的成員 `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)`**
+**錯誤 CS0508: `WordsTableSource.NumberOfSections(UIKit.UITableView)`: 傳回類型必須是 ' nint ' 才能符合覆寫的成員`UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)`**
 
-修正：若要變更傳回型別時`nint`，將傳回值轉換成`nint`。
+補丁當傳回類型變更為`nint`時, 將傳回值轉換為。 `nint`
 
 ```csharp
 public override nint NumberOfSections (UITableView tableView)
@@ -148,28 +148,28 @@ public override nint NumberOfSections (UITableView tableView)
 }
 ```
 
-**錯誤 CS1061:類型 'CoreGraphics.CGPath' 未包含 'AddElipseInRect' 定義**
+**錯誤 CS1061:類型 ' CoreGraphics. CGPath ' 不包含 ' AddElipseInRect ' 的定義**
 
-修正：更正拼字檢查 以`AddEllipseInRect`。 其他的名稱變更包括：
+補丁更正為`AddEllipseInRect`的拼寫。 其他名稱變更包括:
 
-* 將 'Color.Black' 變更為`NSColor.Black`。
-* 若要變更 MapKit 'AddAnnotation' `AddAnnotations`。
-* 若要變更 AVFoundation 'DataUsingEncoding' `Encode`。
-* 若要變更 AVFoundation 'AVMetadataObject.TypeQRCode' `AVMetadataObjectType.QRCode`。
-* 若要變更 AVFoundation 'VideoSettings' `WeakVideoSettings`。
-* 變更至 PopViewControllerAnimated `PopViewController`。
-* 若要變更 CoreGraphics 'CGBitmapContext.SetRGBFillColor' `SetFillColor`。
+* 將 ' Color. 黑色 ' 變更`NSColor.Black`為。
+* 將 MapKit ' AddAnnotation ' 變更`AddAnnotations`為。
+* 將 AVFoundation ' DataUsingEncoding ' 變更`Encode`為。
+* 將 AVFoundation ' AVMetadataObject. TypeQRCode ' 變更`AVMetadataObjectType.QRCode`為。
+* 將 AVFoundation ' VideoSettings ' 變更`WeakVideoSettings`為。
+* 將 PopViewControllerAnimated 變更`PopViewController`為。
+* 將 CoreGraphics ' CGBitmapCoNtext. SetRGBFillColor ' 變更`SetFillColor`為。
 
-**錯誤 CS0546： 無法覆寫，因為 'MapKit.MKAnnotation.Coordinate' 並沒有可覆寫的 set 存取子 (CS0546)**
+**錯誤 CS0546: 無法覆寫, 因為 ' MapKit. MKAnnotation. 座標 ' 沒有可覆寫的 set 存取子 (CS0546)**
 
-當您建立自訂註釋 MKAnnotation 子類別化時座標欄位不具有 setter，只是 getter。
+透過子類別化 MKAnnotation 建立自訂注釋時, 座標欄位不會有 setter, 只有 getter。
 
 [修正](https://forums.xamarin.com/discussion/comment/109505/#Comment_109505):
 
-* 加入欄位以追蹤的座標
-* 傳回此欄位中的座標屬性 getter
-* 覆寫 SetCoordinate 方法，以及設定您的欄位
-* 在您使用傳入的座標參數的建構函式的呼叫 SetCoordinate
+* 加入欄位以追蹤座標
+* 在座標屬性的 getter 中傳回此欄位
+* 覆寫 SetCoordinate 方法並設定您的欄位
+* 使用傳入的座標參數, 在您的 ctor 中呼叫 SetCoordinate
 
 看起來應類似如下：
 
@@ -203,7 +203,7 @@ class BasicPinAnnotation : MKAnnotation
 - [更新應用程式](~/cross-platform/macios/unified/updating-apps.md)
 - [更新 iOS 應用程式](~/cross-platform/macios/unified/updating-ios-apps.md)
 - [更新 Mac 應用程式](~/cross-platform/macios/unified/updating-mac-apps.md)
-- [更新 Xamarin.Forms 應用程式](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
-- [更新繫結](~/cross-platform/macios/unified/update-binding.md)
+- [更新 Xamarin. Forms 應用程式](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
+- [更新系結](~/cross-platform/macios/unified/update-binding.md)
 - [在跨平台應用程式中使用原生型別](~/cross-platform/macios/native-types-cross-platform.md)
-- [傳統的 vs 統一的 API 差異](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [傳統與 Unified API 差異](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)
