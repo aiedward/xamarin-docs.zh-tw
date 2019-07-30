@@ -5,18 +5,18 @@ ms.assetid: 63FA28A5-6F52-4CB7-AF39-8DF7B436B5A4
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 07/10/2019
-ms.openlocfilehash: 7db848c01879510969f690cb49c5ead32cb3f0eb
-ms.sourcegitcommit: 0845ed2daa65468b6fe12ac4e9386f3315d72f4d
+ms.openlocfilehash: 8bdd5c0d40cfdac0dadbc6bab1c538ab1b27946e
+ms.sourcegitcommit: 4b6e832d1db5616b657dc8540da67c509b28dc1d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67850988"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68386176"
 ---
 # <a name="platform-support"></a>平台支援
 
 Xamarin.Essentials 支援下列平台與作業系統：
 
-| 平台 | 版本 |
+| Platform | 版本 |
 | --- | --- |
 | Android | 4.4 (API 19) 或更高版本 |
 | iOS |10.0 或更高版本 |
@@ -29,6 +29,7 @@ Xamarin.Essentials 支援下列平台與作業系統：
 
 * Tizen 由 Samsung 開發小組提供官方支援。
 * tvOS 與 watchOS 具有有限的 API 支援，請參閱功能指南以取得詳細資訊。
+* Tizen、tvOS 與 watchOS 目前為預覽狀態，而且您可以在 Xamarin.Essentials 1.3-pre 中找到它們
 
 ## <a name="feature-support"></a>功能支援
 
@@ -38,7 +39,7 @@ Xamarin.Essentials 一律會嘗試將功能帶到每個平台，不過，有時�
 
 * ✔ - 完全支援
 * ⚠ - 有限支援
-* ❌ - 不支援
+* - 不支援
 
 | 功能 | Android | iOS | UWP | watchOS | tvOS | Tizen |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
