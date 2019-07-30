@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: 0fff9b7ce4b78e29409d1cc7a55e7f447baf722c
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: f9c7ada224cefc9bb80e0bcba370d0dee4a664c9
+ms.sourcegitcommit: 25be5acf979f6b18b6d0e64392c9ab307259c032
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831104"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68603835"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 使用者介面檢視
 
@@ -22,7 +22,7 @@ _如何使用 Xamarin.Forms 所提供的檢視_
 
 ## <a name="activityindicatoractivityindicatormd"></a>[ActivityIndicator](activityindicator.md)
 
-`ActivityIndicator`是動畫，這表示使用者的應用程式參與的冗長的活動，而不需要提供任何資訊指出進度的控制項。
+`ActivityIndicator`是一個動畫控制項, 它會向使用者指出應用程式正在進行長時間的活動, 而不會提供進度的指示。
 
 ## <a name="animationanimationindexmd"></a>[動畫](animation/index.md)
 
@@ -38,11 +38,11 @@ Xamarin.Forms 包含自己的動畫基礎結構直接建立簡單的動畫，同
 
 ## <a name="checkboxcheckboxmd"></a>[CheckBox](checkbox.md)
 
-`CheckBox`一種按鈕，可以為已核取或空白。 若勾選核取方塊，其認為上。 當核取方塊是空的時它已被視為關閉。
+`CheckBox`是可以檢查或空白的按鈕類型。 勾選核取方塊時, 會將其視為開啟。 當 checkbox 空白時, 會被視為關閉。
 
 ## <a name="collectionviewcollectionviewindexmd"></a>[CollectionView](collectionview/index.md)
 
-[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)是一種有彈性且高效能的檢視，來呈現資料使用不同的版面配置規格的清單。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)是彈性且高效能的觀點, 可讓您使用不同的版面配置規格來呈現資料清單。
 
 ## <a name="colorscolorsmd"></a>[色彩](colors.md)
 
@@ -62,7 +62,7 @@ DataPages 提供 API，以快速且輕鬆地繫結資料來源至預先建立的
 
 ## <a name="display-pop-upspop-upsmd"></a>[顯示快顯視窗](pop-ups.md)
 
-Xamarin.Forms 提供兩個類似快顯視窗的使用者介面元素：警示和動作工作表。 這些介面項目可用來顯示對話方塊，詢問使用者簡單的問題和工作的逐步指引使用者。
+Xamarin.Forms 提供兩個類似快顯視窗的使用者介面元素：警示和動作工作表。 這些介面元素可以用來顯示對話方塊, 以詢問使用者簡單的問題, 並引導使用者完成工作。
 
 ## <a name="graphics-with-skiasharpgraphicsskiasharpindexmd"></a>[使用 Skiasharp 的圖形](graphics/skiasharp/index.md)
 
@@ -94,7 +94,11 @@ Xamarin.Forms 提供清單檢視控制項以顯示捲動的資料列的資料。
 
 ## <a name="progressbarprogressbarmd"></a>[ProgressBar](progressbar.md)
 
-[ `ProgressBar` ](xref:Xamarin.Forms.ProgressBar)是控制項，以視覺方式表示的水平列填滿浮點數屬性為基礎的進度。
+[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)是控制項, 可透過視覺方式將進度表示為根據 float 屬性填滿的水準橫條。
+
+## <a name="searchbarsearchbarmd"></a>[SearchBar](searchbar.md)
+
+[`SearchBar`](xref:Xamarin.Forms.SearchBar)是用來起始搜尋的使用者輸入控制項。 搜尋列控制項支援預留位置文字、查詢輸入、搜尋執行和取消。
 
 ## <a name="sliderslidermd"></a>[Slider](slider.md)
 
@@ -110,7 +114,7 @@ Xamarin.Forms 提供清單檢視控制項以顯示捲動的資料列的資料。
 
 ## <a name="switchswitchmd"></a>[開關](switch.md)
 
-`Switch`是一種可以在開啟和關閉狀態之間切換 按鈕。
+`Switch`是一種按鈕類型, 可以在 [開啟] 和 [關閉] 狀態之間切換。
 
 ## <a name="tableviewtableviewmd"></a>[TableView](tableview.md)
 

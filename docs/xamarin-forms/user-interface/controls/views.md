@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: cc673077502e15894ce4c4519df051174feb7e8e
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 71b8b144838de579cda61726692481a5cc6a72fa
+ms.sourcegitcommit: 25be5acf979f6b18b6d0e64392c9ab307259c032
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830920"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68603833"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms 檢視
 
@@ -56,7 +56,7 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 |     |     |
 | --- | --- |
-| [`OpenGLView`](xref:Xamarin.Forms.OpenGLView) OpenGL 圖形顯示 iOS 和 Android 專案中。 沒有適用於通用 Windows 平台支援。 IOS 和 Android 專案需要的參考**OpenTK 1.0**組件或有**OpenTK** 1.0.0.0 版的組件。 `OpenGLView` 共用專案; 中使用的工作變得更容易如果使用.NET Standard 程式庫，然後相依性服務也會需要 （如程式碼範例所示）。<br /><br />這是唯一的圖形設施內建於 Xamarin.Forms，但 Xamarin.Forms 應用程式也可以轉譯圖形使用[ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)，或[ `UrhoSharp` ](~/xamarin-forms/user-interface/graphics/urhosharp.md)。<br /><br />[API 文件](xref:Xamarin.Forms.OpenGLView)<br /><br /> | [![OpenGLView 範例](views-images/OpenGLView.png "OpenGLView 範例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml)使用[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
+| [`OpenGLView`](xref:Xamarin.Forms.OpenGLView) OpenGL 圖形顯示 iOS 和 Android 專案中。 沒有適用於通用 Windows 平台支援。 IOS 和 Android 專案需要的參考**OpenTK 1.0**組件或有**OpenTK** 1.0.0.0 版的組件。 `OpenGLView` 共用專案; 中使用的工作變得更容易如果使用.NET Standard 程式庫，然後相依性服務也會需要 （如程式碼範例所示）。<br /><br />這是內建在 xamarin 中的唯一圖形設備, 但是 xamarin。 forms 應用程式也可以使用[`SkiaSharp`](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)、或[`UrhoSharp`](~/xamarin-forms/user-interface/graphics/urhosharp.md)來轉譯圖形。<br /><br />[API 文件](xref:Xamarin.Forms.OpenGLView)<br /><br /> | [![OpenGLView 範例](views-images/OpenGLView.png "OpenGLView 範例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml)使用[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="map"></a>地圖
@@ -86,7 +86,7 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 |     |     |
 | --- | --- |
-| [`SearchBar`](xref:Xamarin.Forms.SearchBar) 顯示讓使用者輸入文字字串，並按鈕 （或使用鍵盤按鍵），表示要執行搜尋的應用程式的區域。 [ `Text` ](xref:Xamarin.Forms.SearchBar.Text)屬性可存取該文字，而[ `SearchButtonPressed` ](xref:Xamarin.Forms.SearchBar.SearchButtonPressed)事件表示已按下按鈕。<br /><br />[API 文件](xref:Xamarin.Forms.SearchBar) | [![SearchBar 範例](views-images/SearchBar.png "SearchBar 範例")](views-images/SearchBar-Large.png#lightbox "SearchBar 範例")<br /> [此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SearchBarDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml)使用[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml.cs) |
+| [`SearchBar`](xref:Xamarin.Forms.SearchBar) 顯示讓使用者輸入文字字串，並按鈕 （或使用鍵盤按鍵），表示要執行搜尋的應用程式的區域。 [ `Text` ](xref:Xamarin.Forms.SearchBar.Text)屬性可存取該文字，而[ `SearchButtonPressed` ](xref:Xamarin.Forms.SearchBar.SearchButtonPressed)事件表示已按下按鈕。<br /><br />[API 文件](xref:Xamarin.Forms.SearchBar) / [指南](~/xamarin-forms/user-interface/searchbar.md) / [範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/SearchBar) | [![SearchBar 範例](views-images/SearchBar.png "SearchBar 範例")](views-images/SearchBar-Large.png#lightbox "SearchBar 範例")<br /> [此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SearchBarDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml)使用[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml.cs) |
 |     |     |
 
 ## <a name="views-for-setting-values"></a>設定值的檢視
@@ -95,7 +95,7 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 |     |     |
 | --- | --- |
-| `CheckBox` 可讓使用者選取使用的是可以檢查或空的按鈕類型的布林值。 `IsChecked`屬性是狀態`CheckBox`，和`CheckedChanged`狀態變更時引發事件。<br /><br />API 文件 /[快速入門](~/xamarin-forms/user-interface/checkbox.md) / [範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/CheckBoxDemos) | [![核取方塊範例](views-images/CheckBox.png "核取方塊範例")](views-images/CheckBox-Large.png#lightbox "核取方塊範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxDemoPage.xaml) |
+| `CheckBox`允許使用者使用可以檢查或空白的按鈕類型來選取布林值。 屬性是的狀態`CheckBox`, 而且`CheckedChanged`當狀態變更時, 就會引發事件。 `IsChecked`<br /><br />API 檔/[指南](~/xamarin-forms/user-interface/checkbox.md) / [範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/CheckBoxDemos) | [![核取方塊範例](views-images/CheckBox.png "核取方塊範例")](views-images/CheckBox-Large.png#lightbox "CheckBox 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxDemoPage.xaml) |
 |     |     |
 
 ### <a name="slider"></a>滑桿
@@ -181,7 +181,7 @@ _Xamarin.Forms 檢視是建置組塊的跨平台行動裝置的使用者介面�
 
 |     |     |
 | --- | --- |
-| [`CollectionView`](xref:Xamarin.Forms.CollectionView) 顯示可捲動清單項目可選取的資料，使用不同的版面配置規格。 它旨在提供更多的彈性，以及高效能替代方式，來[ `ListView` ](xref:Xamarin.Forms.ListView)。 設定`ItemsSource`集合的物件和集合的屬性`ItemTemplate`屬性設[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)描述項目為何要格式化的物件。 `SelectionChanged`事件通知，已可進行選取`SelectedItem`屬性。<br /><br />[快速入門](~/xamarin-forms/user-interface/collectionview/index.md) / [範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/) | [![範例 CollectionView](views-images/CollectionView.png "CollectionView 範例")](views-images/CollectionView-Large.png#lightbox "CollectionView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) |
+| [`CollectionView`](xref:Xamarin.Forms.CollectionView)使用不同的版面配置規格, 顯示可選取資料項目的可滾動清單。 它的目的是要提供更具彈性且更高效[`ListView`](xref:Xamarin.Forms.ListView)能的替代方案。 將屬性設定為物件的集合, 並`ItemTemplate`將屬性設定為[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)描述如何格式化專案的物件。 `ItemsSource` 事件會指示已進行選取, 這會以屬性的`SelectedItem`形式提供。 `SelectionChanged`<br /><br />[快速入門](~/xamarin-forms/user-interface/collectionview/index.md) / [範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/) | [ ![CollectionView 範例](views-images/CollectionView.png "CollectionView 範例")](views-images/CollectionView-Large.png#lightbox "CollectionView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) |
 |     |     |
 
 <a name="listView" />
