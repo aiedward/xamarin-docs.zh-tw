@@ -11,7 +11,7 @@ abstract:
   description: 'Xamarin iOS 範例應用程式及程式碼示範可協助您開始使用 C# 與 Xamarin 建置行動應用程式。'
   menu:
     items:
-      - href: 'https://developer.xamarin.com/samples/mac/all/'
+      - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac'
         text: 所有 Xamarin.Mac 範例
 sections:
   - title: null
@@ -20,33 +20,33 @@ sections:
         style: cards
         className: cardsW
         items:
-          - href: 'https://developer.xamarin.com/samples/mac/Hello_Mac/'
+          - href: 'https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac/'
             html: Hello World 應用程式協助您開始 Mac 開發。
             image:
               src: images/hellomac.png
-              href: 'https://developer.xamarin.com/samples/mac/Hello_Mac/'
+              href: 'https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac/'
             title: 'Hello, Mac'
-          - href: 'https://developer.xamarin.com/samples/mac/MacControls/'
+          - href: 'https://docs.microsoft.com/samples/xamarin/mac-samples/maccontrols/'
             html: Mac 應用程式的 UI 控制項範例。
             image:
               src: images/controls.png
-              href: 'https://developer.xamarin.com/samples/mac/MacControls/'
+              href: 'https://docs.microsoft.com/samples/xamarin/mac-samples/maccontrols/'
             title: MacControls
-          - href: 'https://developer.xamarin.com/samples/mac/MacImages/'
+          - href: 'https://docs.microsoft.com/samples/xamarin/mac-samples/macimages/'
             html: Mac 應用程式的 UI 控制項範例。
             image:
               src: images/images.png
-              href: 'https://developer.xamarin.com/samples/mac/MacImages/'
+              href: 'https://docs.microsoft.com/samples/xamarin/mac-samples/macimages/'
             title: MacImages
-          - href: 'https://developer.xamarin.com/samples/mac/SourceWriter/'
+          - href: 'https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter/'
             html: 簡單易用的編輯器可協助您完成程式碼及反白語法。
             image:
               src: images/sourcewriter.png
-              href: 'https://developer.xamarin.com/samples/mac/SourceWriter/'
+              href: 'https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter/'
             title: SourceWriter
-          - href: 'https://developer.xamarin.com/samples/mac/all/'
+          - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac'
             html: 一組完整的 Xamarin.Mac 範例應用程式與程式碼示範。
             image:
               src: ~/media/shared/sample-download.svg
-              href: 'https://developer.xamarin.com/samples/mac/all/'
+              href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac'
             title: 所有 Xamarin.Mac 範例

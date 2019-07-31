@@ -11,7 +11,7 @@ abstract:
   description: 'Xamarin 跨平台範例應用程式和程式碼示範，可協助您使用 C# 和 Xamarin 開始建置行動裝置應用程式。'
   menu:
     items:
-      - href: 'https://developer.xamarin.com/samples/'
+      - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin'
         text: 所有 Xamarin 範例
 sections:
   - title: 開始使用
@@ -20,11 +20,11 @@ sections:
         style: cards
         className: cardsW
         items:
-          - href: 'https://developer.xamarin.com/samples/xamarin-forms/Todo/'
+          - href: 'https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/'
             html: 此範例示範待辦事項清單應用程式，資料將儲存在以 Xamarin.Forms 建置的本機 SQLite 資料庫中，並從中存取。
             image:
               src: images/todo.png
-              href: 'https://developer.xamarin.com/samples/xamarin-forms/Todo/'
+              href: 'https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/'
             title: 代辦事項
           - href: 'https://github.com/xamarinhq/app-myshoppe'
             html: 示範應用程式可讓銷售人員追蹤其銷售績效、管理潛在客戶、檢視合約、管理訂單以及瀏覽產品類別目錄。
@@ -74,9 +74,9 @@ sections:
         style: cards
         className: cardsW
         items:
-          - href: 'https://developer.xamarin.com/samples/'
+          - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin'
             html: 一組完整的 Xamarin 跨平台範例應用程式和程式碼示範。
             image:
               src: ~/media/shared/sample-download.svg
-              href: 'https://developer.xamarin.com/samples/'
+              href: 'https://docs.microsoft.com/samples/browse/?products=xamarin'
             title: 所有 Xamarin 範例

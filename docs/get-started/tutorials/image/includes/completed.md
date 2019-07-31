@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 5f98bd713e5dc33fd84050c07a62143259af2d41
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3097ac63df36fffdbaf9d254aa0ef3bdf6c0577a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61384401"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68669566"
 ---
 恭喜您完成此教學課程，您已學會如何：
 
@@ -22,6 +22,6 @@ ms.locfileid: "61384401"
 
 ## <a name="related-links"></a>相關連結
 
-- [ImageTutorial (範例)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Tutorials/ImageTutorial)
+- [ImageTutorial (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-imagetutorial/)
 - [Xamarin.Forms Images (指南)](~/xamarin-forms/user-interface/images.md)
 - [影像 API](xref:Xamarin.Forms.Image)
