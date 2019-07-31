@@ -1,22 +1,22 @@
 ---
-title: Xamarin.Forms Web Services 簡介
-description: 本指南提供逐步解說示範如何與不同的 web 服務通訊的 Xamarin.Forms 範例應用程式。 雖然每個 web 服務使用個別的範例應用程式，其功能上很類似，並共用通用類別。
+title: Xamarin. Forms Web 服務簡介
+description: 本指南提供示範如何與不同 web 服務通訊的 Xamarin 範例應用程式的逐步解說。 雖然每個 web 服務使用個別的範例應用程式，其功能上很類似，並共用通用類別。
 ms.prod: xamarin
 ms.assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: b34381ad587d623e66af1b581200094448851bf6
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: bbeab6a6ab0d4a9d0e3a962240317fc0d54f9e25
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658985"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656647"
 ---
-# <a name="xamarinforms-web-services-introduction"></a>Xamarin.Forms Web Services 簡介
+# <a name="xamarinforms-web-services-introduction"></a>Xamarin. Forms Web 服務簡介
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _本主題提供逐步解說示範如何與不同的 web 服務通訊的 Xamarin.Forms 範例應用程式。雖然每個 web 服務使用個別的範例應用程式，其功能上很類似，並共用通用類別。_
 
@@ -36,9 +36,9 @@ _本主題提供逐步解說示範如何與不同的 web 服務通訊的 Xamarin
 
 本指南中的每個主題提供的下載連結*不同*示範特定類型的 web 服務後端的應用程式版本。 下載每個 web 服務樣式的相關網頁的相關的範例程式碼。
 
-## <a name="understand-the-application-anatomy"></a>了解應用程式結構
+## <a name="understand-the-application-anatomy"></a>瞭解應用程式的剖析
 
-每個範例應用程式的共用程式碼專案是由三個主要的資料夾所組成：
+每個範例應用程式的共用程式碼專案都包含三個主要資料夾:
 
 |資料夾|用途|
 |--- |--- |
@@ -46,7 +46,7 @@ _本主題提供逐步解說示範如何與不同的 web 服務通訊的 Xamarin
 |模型|包含資料模型類別，應用程式。 這包括最少`TodoItem`類別，建立模型資料的應用程式所使用的單一項目。 資料夾也可以包含任何其他的類別，用於模型的使用者資料。|
 |檢視|包含應用程式的網頁。 這通常是組成`TodoListPage`和`TodoItemPage`類別，以及任何其他類別，用來進行驗證。|
 
-每個應用程式的共用程式碼專案也包含數個重要的檔案：
+每個應用程式的共用程式碼專案也包含一些重要的檔案:
 
 |檔案|用途|
 |--- |--- |
@@ -54,7 +54,7 @@ _本主題提供逐步解說示範如何與不同的 web 服務通訊的 Xamarin
 |ITextToSpeech.cs|`ITextToSpeech`介面，它會指定`Speak`必須由任何實作類別提供方法。|
 |Todo.cs|`App`負責具現化兩個的第一頁會顯示每個平台上的應用程式的類別和`TodoItemManager`用來叫用 web 服務作業的類別。|
 
-### <a name="view-pages"></a>檢視頁面
+### <a name="view-pages"></a>View 頁面
 
 大部分的範例應用程式中包含至少兩個頁面：
 
@@ -63,7 +63,7 @@ _本主題提供逐步解說示範如何與不同的 web 服務通訊的 Xamarin
 
 此外，一些範例應用程式包含用來管理使用者的驗證程序的其他頁面。
 
-### <a name="model-the-data"></a>資料模型
+### <a name="model-the-data"></a>建立資料模型
 
 每個範例應用程式使用`TodoItem`類別來建立模型的資料，會顯示，並且傳送至儲存體的 web 服務。 下列程式碼範例顯示 `TodoItem` 類別：
 
@@ -93,6 +93,6 @@ public class TodoItem
 
 ## <a name="related-links"></a>相關連結
 
-- [ASMX （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoASMX)
-- [WCF （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF)
-- [REST （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST)
+- [.ASMX (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+- [WCF (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
+- [REST (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)

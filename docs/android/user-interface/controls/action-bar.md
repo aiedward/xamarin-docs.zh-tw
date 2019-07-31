@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 7717e247ca3b3ecf82e1814ab43e8351b4f75ba6
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 4a0d0e46147a37da4787224e797d403ab7b1097e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510445"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643037"
 ---
 # <a name="actionbar-for-xamarinandroid"></a>適用于 Xamarin 的 ActionBar
 
@@ -87,7 +87,7 @@ this.ActionBar.AddTab (tab);
 
 ### <a name="image-sharing-example"></a>影像共用範例
 
-例如, 下面是一個動作列的螢幕擷取畫面, 其中包含可共用影像的功能表項目 (取自[ShareActionProvider](https://developer.xamarin.com/samples/monodroid/ShareActionProviderDemo/)範例)。 當使用者在動作列上按下功能表項目時, ShareActionProvider 會載入應用程式來處理與`ShareActionProvider`相關聯的意圖。 在此範例中, 先前已使用訊息應用程式, 因此會顯示在動作列上。
+例如, 下面是一個動作列的螢幕擷取畫面, 其中包含可共用影像的功能表項目 (取自[ShareActionProvider](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo)範例)。 當使用者在動作列上按下功能表項目時, ShareActionProvider 會載入應用程式來處理與`ShareActionProvider`相關聯的意圖。 在此範例中, 先前已使用訊息應用程式, 因此會顯示在動作列上。
 
 [![動作列中訊息應用程式圖示的螢幕擷取畫面](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
 
@@ -150,7 +150,7 @@ Intent CreateIntent ()
 
 ## <a name="related-links"></a>相關連結
 
-- [Hello 索引標籤 ICS (範例)](https://developer.xamarin.com/samples/monodroid/HelloTabsICS/)
-- [ShareActionProvider 示範 (範例)](https://developer.xamarin.com/samples/monodroid/ShareActionProviderDemo/)
+- [Hello 索引標籤 ICS (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellotabsics)
+- [ShareActionProvider 示範 (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo)
 - [霜淇淋三明治簡介](http://www.android.com/about/ice-cream-sandwich/)
 - [Android 4.0 平臺](https://developer.android.com/sdk/android-4.0.html)

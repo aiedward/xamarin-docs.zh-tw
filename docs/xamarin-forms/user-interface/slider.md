@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 1fa46af1ac1cf6ea49a53e3f8d3c3dca6ba83e13
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: e54b36989f5b4694da5d46a89391d56920b8d6a9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511894"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656245"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms 滑桿
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 
 _使用滑桿選取從連續值的範圍。_
 
@@ -56,11 +56,11 @@ Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider)是可由使用者選取操
 
 ## <a name="basic-slider-code-and-markup"></a>滑桿的基本程式碼和標記
 
-[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)範例開頭的三個頁面的功能相同，但會以不同的方式實作。 第一頁會使用僅為 C# 程式碼、 第二個程式碼中，事件處理常式中使用 XAML 和第三個可使用 XAML 檔案中的資料繫結，以避免事件處理常式。
+[ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)範例開頭的三個頁面的功能相同，但會以不同的方式實作。 第一頁會使用僅為 C# 程式碼、 第二個程式碼中，事件處理常式中使用 XAML 和第三個可使用 XAML 檔案中的資料繫結，以避免事件處理常式。
 
 ### <a name="creating-a-slider-in-code"></a>建立程式碼中的滑桿
 
-**滑桿的基本程式碼**頁面[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)範例示範如何建立`Slider`並將兩個`Label`程式碼中的物件：
+**滑桿的基本程式碼**頁面[ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)範例示範如何建立`Slider`並將兩個`Label`程式碼中的物件：
 
 ```csharp
 public class BasicSliderCodePage : ContentPage
@@ -295,7 +295,7 @@ Android 的實作`Slider`為基礎的 Android [ `SeekBar` ](xref:Android.Widget.
 
 UWP 實作`Slider`為基礎的 UWP [ `Slider` ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)控制項。 `StepFrequency`屬性的 UWP`Slider`設定的差異`Maximum`和`Minimum`屬性除以 10，但不是能大於 1。
 
-例如，針對預設範圍 0 到 1`StepFrequency`屬性設定為 0.1。 作為`Slider`操作，`Value`屬性會限制為 0、 0.1、 0.2、 0.3、 0.4、 0.5，0.6，0.7，0.8、 0.9 及 1.0。 (這是最後一頁中明顯[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)範例。)時之間的差異`Maximum`並`Minimum`屬性可為 10 或更新版本，然後`StepFrequency`設定為 1，而`Value`屬性具有整數值。
+例如，針對預設範圍 0 到 1`StepFrequency`屬性設定為 0.1。 作為`Slider`操作，`Value`屬性會限制為 0、 0.1、 0.2、 0.3、 0.4、 0.5，0.6，0.7，0.8、 0.9 及 1.0。 (這是最後一頁中明顯[ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)範例。)時之間的差異`Maximum`並`Minimum`屬性可為 10 或更新版本，然後`StepFrequency`設定為 1，而`Value`屬性具有整數值。
 
 ### <a name="the-stepslider-solution"></a>StepSlider 解決方案
 
@@ -303,7 +303,7 @@ UWP 實作`Slider`為基礎的 UWP [ `Slider` ](https://docs.microsoft.com/uwp/a
 
 ## <a name="sliders-for-color-selection"></a>色彩選取範圍的滑桿
 
-最後兩個中的分頁[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)範例都使用三個`Slider`中色彩選取範圍的執行個體。 第一頁會處理在程式碼後置檔案中，所有的互動，而第二個頁面會顯示如何以資料繫結使用 ViewModel。
+最後兩個中的分頁[ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)範例都使用三個`Slider`中色彩選取範圍的執行個體。 第一頁會處理在程式碼後置檔案中，所有的互動，而第二個頁面會顯示如何以資料繫結使用 ViewModel。
 
 ### <a name="handling-sliders-in-the-code-behind-file"></a>處理程式碼後置檔案中的滑桿
 
@@ -509,5 +509,5 @@ Viewmodel 並`INotifyPropertyChanged`一文中討論介面[資料繫結](~/xamar
 
 ## <a name="related-links"></a>相關連結
 
-- [滑桿示範範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)
+- [滑桿示範範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 - [滑桿 API](xref:Xamarin.Forms.Slider)

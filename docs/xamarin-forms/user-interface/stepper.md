@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/17/2018
-ms.openlocfilehash: a224d82ed7bb993f51be6cca6ccf09b5331cfac0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6c89f04b1d1d87fed8d86d50cb68527391a7f317
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250456"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656196"
 ---
 # <a name="xamarinforms-stepper"></a>Xamarin.Forms 步進
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
 
 _使用步進從某個範圍的值中選取一個數字值。_
 
@@ -42,11 +42,11 @@ Xamarin.Forms [ `Stepper` ](xref:Xamarin.Forms.Stepper)組成兩個按鈕加上�
 
 ## <a name="basic-stepper-code-and-markup"></a>基本的步進程式碼和標記
 
-[ **StepperDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos)範例包含三個頁面的功能相同，但會以不同的方式實作。 第一頁只會使用C#程式碼中，第二個會使用 XAML 與程式碼和第三個事件處理常式是能夠使用 XAML 檔案中的資料繫結，以避免事件處理常式。
+[ **StepperDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)範例包含三個頁面的功能相同，但會以不同的方式實作。 第一頁只會使用C#程式碼中，第二個會使用 XAML 與程式碼和第三個事件處理常式是能夠使用 XAML 檔案中的資料繫結，以避免事件處理常式。
 
 ### <a name="creating-a-stepper-in-code"></a>建立程式碼中的步進
 
-**步進的基本程式碼**頁面[ **StepperDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos)範例示範如何建立[ `Stepper` ](xref:Xamarin.Forms.Stepper)並將兩個[`Label` ](xref:Xamarin.Forms.Label)程式碼中的物件：
+**步進的基本程式碼**頁面[ **StepperDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)範例示範如何建立[ `Stepper` ](xref:Xamarin.Forms.Stepper)並將兩個[`Label` ](xref:Xamarin.Forms.Label)程式碼中的物件：
 
 ```csharp
 public class BasicStepperCodePage : ContentPage
@@ -182,7 +182,7 @@ double value = stepper.Value;
 </ContentPage>
 ```
 
-[ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)的第一個屬性[ `Label` ](xref:Xamarin.Forms.Label)繫結至[ `Value` ](xref:Xamarin.Forms.Stepper.Value)屬性[ `Stepper` ](xref:Xamarin.Forms.Stepper)，因為正[ `Text` ](xref:Xamarin.Forms.Label.Text)第二個屬性`Label`與`StringFormat`規格。 **基本步進繫結**頁面函式稍有不同兩個先前的頁面：第一次出現的頁面中，第二個`Label`顯示文字字串，其值。 這是使用資料繫結的優點。 若要顯示沒有資料繫結的文字，您必須特別初始化`Text`的屬性`Label`，或模擬的引發[ `ValueChanged` ](xref:Xamarin.Forms.Stepper.ValueChanged)藉由從類別建構函式呼叫的事件處理常式的事件.
+[ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)的第一個屬性[ `Label` ](xref:Xamarin.Forms.Label)繫結至[ `Value` ](xref:Xamarin.Forms.Stepper.Value)屬性[ `Stepper` ](xref:Xamarin.Forms.Stepper)，因為正[ `Text` ](xref:Xamarin.Forms.Label.Text)第二個屬性`Label`與`StringFormat`規格。 基本的 [**分檔**器系結] 頁面與前兩個頁面的功能稍有不同:當頁面第一次出現時, `Label`第二個會顯示含有值的文字字串。 這是使用資料繫結的優點。 若要顯示沒有資料繫結的文字，您必須特別初始化`Text`的屬性`Label`，或模擬的引發[ `ValueChanged` ](xref:Xamarin.Forms.Stepper.ValueChanged)藉由從類別建構函式呼叫的事件處理常式的事件.
 
 ## <a name="precautions"></a>預防措施
 
@@ -258,5 +258,5 @@ Stepper stepper = new Stepper
 
 ## <a name="related-links"></a>相關連結
 
-- [步進示範範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos)
+- [步進示範範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
 - [步進 API](xref:Xamarin.Forms.Stepper)

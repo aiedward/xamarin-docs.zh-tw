@@ -1,94 +1,94 @@
 ---
-title: 與 Xamarin.iOS 使用 iCloud
-description: 本文件說明 iCloud 與 Xamarin.iOS 應用程式中的使用。 它討論索引鍵-值存放區、 文件儲存體和 iCloud 備份。
+title: 使用 iCloud 搭配 Xamarin. iOS
+description: 本檔說明 iCloud 和其在 Xamarin iOS 應用程式中的使用方式。 它討論索引鍵/值儲存體、檔儲存體和 iCloud 備份。
 ms.prod: xamarin
 ms.assetid: C6F3B87C-C195-4434-EF14-D66E63894F09
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/09/2016
-ms.openlocfilehash: c30b5d0b3a02223a8808e57f5d0cdc5e7000e156
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: e4728d14e4fdb914fbfc950ffe38abee031b4c49
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674875"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649649"
 ---
-# <a name="using-icloud-with-xamarinios"></a>與 Xamarin.iOS 使用 iCloud
+# <a name="using-icloud-with-xamarinios"></a>使用 iCloud 搭配 Xamarin. iOS
 
-在 iOS 5 中的 iCloud 儲存體 API 可讓應用程式，將使用者文件和應用程式專屬資料儲存到中央位置，然後從所有使用者的裝置存取這些項目。
+IOS 5 中的 iCloud 儲存體 API 可讓應用程式將使用者檔和應用程式特定的資料儲存到中央位置, 並從所有使用者的裝置存取這些專案。
 
-有可用的四種類型的儲存體：
+有四種可用的儲存體類型:
 
-- **索引鍵-值存放區**-共用上的少量資料，您的應用程式使用者的其他裝置。
+- 索引**鍵/值儲存體**-在使用者的其他裝置上與您的應用程式共用少量資料。
 
-- **UIDocument 儲存體**-若要將文件和其他資料儲存在使用者的 iCloud 帳戶使用的 UIDocument 子類別。
+- **UIDocument 儲存體**-使用 UIDocument 的子類別, 將檔和其他資料儲存在使用者的 iCloud 帳戶中。
 
 - **CoreData** -SQLite 資料庫儲存體。
 
-- **個別的檔案和目錄**-直接在檔案系統中管理許多不同的檔案。
+- **個別檔案和目錄**-用於直接在檔案系統中管理許多不同的檔案。
 
-本文件討論的前兩個類型-索引鍵 / 值組以及 UIDocument 子類別-以及如何在 Xamarin.iOS 中使用這些功能。
+本檔討論前兩種類型-索引鍵/值組和 UIDocument 子類別, 以及如何在 Xamarin 中使用這些功能。
 
 > [!IMPORTANT]
 > Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)協助開發人員適當地處理歐盟一般資料保護規定 (GDPR)。
 
 ## <a name="requirements"></a>需求
 
-- 最新穩定版本的 Xamarin.iOS
+- 最新穩定版本的 Xamarin. iOS
 - Xcode 10
 - Visual Studio for Mac 或 Visual Studio 2019。
 
 ## <a name="preparing-for-icloud-development"></a>準備 iCloud 開發
 
-應用程式必須設定為使用在 iCloud [Apple Provisioning Portal](https://developer.apple.com/account/ios/overview.action)和專案本身。 之前開發的 iCloud （或試用範例），遵循下列步驟。
+應用程式必須設定為在 Apple 布建[入口網站](https://developer.apple.com/account/ios/overview.action)和專案本身中使用 iCloud。 針對 iCloud 進行開發 (或嘗試執行範例) 之前, 請遵循下列步驟。
 
-若要正確設定應用程式存取 iCloud:
+若要正確地設定應用程式來存取 iCloud:
 
--   **尋找您 TeamID** -登入[developer.apple.com](https://developer.apple.com)並瀏覽**Member Center > 您的帳戶 > 開發人員帳戶摘要**以取得您小組的 ID （或適用於單一開發人員的個別識別碼). 它會是 10 個字元的字串 ( **A93A5CM278**例如)-這會形成 「 容器識別碼 」 的一部分。
+-   **尋找您的 TeamID**登入[developer.apple.com](https://developer.apple.com) , 並流覽**成員中心 > 您的帳戶 > 開發人員帳戶摘要**, 以取得您的小組識別碼 (或單一開發人員的個別識別碼)。 它會是10個字元的字串 (例如**A93A5CM278** )-這會形成「容器識別碼」的一部分。
 
--   **建立新的應用程式識別碼**-若要建立應用程式識別碼，請依照下列所述的步驟[佈建存放區技術區段的 裝置佈建的快速入門](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)，並務必**iCloud**為允許的服務：
+-   **建立新的應用程式識別碼**-若要建立應用程式識別碼, 請依照裝置布建指南中的布建[儲存技術一節](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)中所述的步驟進行, 並務必檢查**iCloud**是否為允許的服務:
 
- [![](introduction-to-icloud-images/icloud-sml.png "為允許服務的核取 iCloud")](introduction-to-icloud-images/icloud.png#lightbox)
+ [![](introduction-to-icloud-images/icloud-sml.png "檢查 iCloud 是否為允許的服務")](introduction-to-icloud-images/icloud.png#lightbox)
 
-- **建立新的佈建設定檔**-若要建立佈建設定檔，請依照下列所述的步驟[裝置佈建指南](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device)。
+- **建立新的布建設定檔**-若要建立布建設定檔, 請依照[裝置](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device)布建指南中所述的步驟進行。
 
-- **將容器識別碼新增至 Entitlements.plist** -是容器識別碼格式`TeamID.BundleID`。 如需詳細資訊請參閱[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
+- **將容器識別碼新增至 plist** -容器識別碼格式為`TeamID.BundleID`。 如需詳細資訊, 請參閱[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
 
-- **設定專案屬性**-在 Info.plist 檔案確保**套件組合識別碼**符合**套件組合識別碼**時，設定[建立應用程式識別碼](~/ios/deploy-test/provisioning/capabilities/index.md);使用 iOS 套件組合簽署**佈建設定檔**包含 iCloud App Service 應用程式識別碼並**自訂權利**選取檔案。 這全都可以完成在 Visual Studio [專案屬性] 窗格底下。
+- 設定**專案屬性**-在 plist 檔案中, 確保配套**識別碼**符合建立[應用程式 ID](~/ios/deploy-test/provisioning/capabilities/index.md)時所設定的套件組合**ID** ;IOS 套件組合簽署會使用包含具有 iCloud App Service 之應用程式識別碼的布建**設定檔**, 以及選取的**自訂權利**檔案。 這一切都可以在 [專案屬性] 窗格下的 Visual Studio 中完成。
 
-- **啟用您的裝置上的 iCloud** -前往**設定 > iCloud** ，並確定裝置已登入。
-選取並開啟**文件和資料**選項。
+- **在您的裝置上啟用 iCloud** -移至 [**設定] > iCloud** , 並確定裝置已登入。
+選取並開啟 [**檔 & 資料**] 選項。
 
-- **您必須使用裝置來測試 iCloud** -不適用於模擬器。
-事實上，您真的需要兩個或多個裝置所有登入相同的 Apple ID，才能查看 iCloud 作用中。
+- **您必須使用裝置來測試 iCloud** , 而不會在模擬器上作用。
+事實上, 您真的需要使用相同的 Apple ID 登入兩個或多個裝置, 才能看到 iCloud 的作用。
 
 
-## <a name="key-value-storage"></a>索引鍵-值存放區
+## <a name="key-value-storage"></a>索引鍵/值儲存
 
-索引鍵-值存放區適用於少量的使用者可能想保存跨裝置-例如他們檢視書本或雜誌中的最後一頁的資料。 索引鍵-值存放區不應用於備份資料。
+索引鍵/值儲存體適用于少量的資料, 使用者可能會喜歡在不同裝置之間保存, 例如他們在書籍或雜誌中觀看的最後一頁。 索引鍵/值儲存體不應用於備份資料。
 
-有一些限制需要注意時使用索引鍵 / 值儲存體：
+使用索引鍵/值儲存體時, 有一些限制需要注意:
 
-- **最大金鑰大小**-索引鍵名稱不能超過 64 個位元組。
+- **金鑰大小上限**-索引鍵名稱長度不能超過64個位元組。
 
-- **最大值大小**-您無法在單一值中儲存超過 64 kb。
+- **最大值大小**-您不能在單一值中儲存超過 64 kb。
 
-- **應用程式的最大索引鍵-值存放區大小**-應用程式可以只儲存總計最多 64 kb 的索引鍵-值資料。 嘗試設定超過該限制的索引鍵將會失敗，並將保存先前的值。
+- 應用程式的索引**鍵/值存放區大小上限-最**多隻能儲存 64 kb 的索引鍵/值資料。 嘗試設定超出該限制的金鑰將會失敗, 而先前的值將會保存。
 
-- **資料型別**-只有基本類型像是字串、 數字，而且可以儲存布林值。
+- **資料類型**-只能儲存基本類型, 例如字串、數位和布林值。
 
-**ICloudKeyValue**範例將示範其運作方式。 範例程式碼會建立名為每個裝置的金鑰： 您可以在一部裝置上設定此機碼，並觀看傳播到其他的值。 它也會建立金鑰，稱為 「 共用 」，可在任何裝置上編輯，如果您一次編輯許多裝置上，iCloud 會決定哪一個值"wins"（使用時間戳記的變更），並取得傳播。
+**ICloudKeyValue**範例會示範其運作方式。 範例程式碼會為每個裝置建立名為的金鑰: 您可以在一個裝置上設定此金鑰, 並監看此值是否會傳播給其他裝置。 它也會建立名為 "Shared" 的金鑰, 可在任何裝置上編輯-如果您同時在多個裝置上進行編輯, iCloud 會決定哪個值為「wins」 (使用變更上的時間戳記) 並傳播。
 
-此螢幕擷取畫面顯示使用中的範例。 從 iCloud 收到變更通知時它們會印在捲動文字檢視螢幕的底部，輸入欄位中更新。
+此螢幕擷取畫面顯示使用中的範例。 從 iCloud 收到變更通知時, 會將其列印在畫面底部的滾動文字視圖中, 並在輸入欄位中更新。
 
 
 
  [![](introduction-to-icloud-images/icloud-kv-arrows.png "裝置之間的訊息流程")](introduction-to-icloud-images/icloud-kv-arrows.png#lightbox)
 
-### <a name="setting-and-retrieving-data"></a>設定和擷取資料
+### <a name="setting-and-retrieving-data"></a>設定和抓取資料
 
-此程式碼示範如何設定字串值。
+這段程式碼會示範如何設定字串值。
 
 ```csharp
 var store = NSUbiquitousKeyValueStore.DefaultStore;
@@ -96,20 +96,20 @@ store.SetString("testkey", "VALUE IN THE CLOUD");  // key and value
 store.Synchronize();
 ```
 
-呼叫同步處理，可確保值會保存到本機磁碟儲存體。 同步處理到 icloud 的功能會在背景執行，並無法 「 強制 」 應用程式程式碼。 使用良好的網路連線同步處理通常會在 5 秒內，不過，如果網路不佳 （或已中斷連線） 更新可能需要更長的時間。
+呼叫同步可確保此值只會保存到本機磁片儲存體。 ICloud 的同步處理會在背景中執行, 且不能由應用程式代碼「強制」。 有了良好的網路連線, 同步處理通常會在5秒內發生, 但是如果網路不佳 (或連線中斷), 更新可能需要更長的時間。
 
-您可以擷取此程式碼的值：
+您可以使用下列程式碼來抓取值:
 
 ```csharp
 var store = NSUbiquitousKeyValueStore.DefaultStore;
 display.Text = store.GetString("testkey");
 ```
 
-本機資料存放區擷取的值-此方法不會嘗試連絡 iCloud 伺服器，以取得 「 最新 」 的值。 iCloud 會更新本機資料存放區，根據自己的排程。
+此值會從本機資料存放區抓取-此方法不會嘗試連線 iCloud 伺服器以取得「最新」值。 iCloud 會根據自己的排程來更新本機資料存放區。
 
 ### <a name="deleting-data"></a>刪除資料
 
-若要完全移除的索引鍵 / 值組，請使用 Remove 方法，就像這樣：
+若要完全移除索引鍵/值組, 請使用 Remove 方法, 如下所示:
 
 ```csharp
 var store = NSUbiquitousKeyValueStore.DefaultStore;
@@ -119,8 +119,8 @@ store.Synchronize();
 
 ### <a name="observing-changes"></a>觀察變更
 
-應用程式也可以在變更新增至觀察者的 iCloud 值時也收到通知`NSNotificationCenter.DefaultCenter`。
-下列程式碼會從**KeyValueViewController.cs** `ViewWillAppear`方法顯示如何將接聽這些通知，並建立索引鍵已變更的清單：
+當 iCloud 變更值時, 應用程式也可以接收通知, 方法是將觀察者`NSNotificationCenter.DefaultCenter`加入至。
+下列來自**KeyValueViewController.cs** `ViewWillAppear`方法的程式碼示範如何接聽這些通知, 並建立已變更金鑰的清單:
 
 ```csharp
 keyValueNotification =
@@ -142,49 +142,49 @@ NSNotificationCenter.DefaultCenter.AddObserver (
 });
 ```
 
-您的程式碼可以採取某些動作的清單已變更的索引鍵，例如更新的本機副本，或使用新值更新 UI。
+然後, 您的程式碼可以對已變更的索引鍵清單採取一些動作, 例如更新其本機複本或以新的值更新 UI。
 
-可能的變更原因如下：ServerChange (0)、 InitialSyncChange (1) 或 QuotaViolationChange (2)。 您可以存取的原因，並在必要時，執行不同的處理 (例如，您可能需要移除的某些索引鍵*QuotaViolationChange*)。
+可能的變更原因包括:ServerChange (0)、InitialSyncChange (1) 或 QuotaViolationChange (2)。 您可以視需要存取原因並執行不同的處理 (例如, 您可能需要移除一些金鑰, 因為*QuotaViolationChange*)。
 
-## <a name="document-storage"></a>文件儲存體
+## <a name="document-storage"></a>檔儲存體
 
-iCloud 文件儲存體被設計來管理您的應用程式 （和使用者） 的重要資料。 它可用來管理檔案和其他應用程式執行，而是在同時提供 iCloud 為基礎的備份，並在 所有使用者的裝置之間共用功能所需的資料。
+iCloud 檔儲存體是設計來管理對您的應用程式 (和使用者) 很重要的資料。 它可以用來管理您的應用程式需要執行的檔案和其他資料, 同時在所有使用者的裝置上提供 iCloud 型備份與共享功能。
 
-下圖顯示這一切如何相互配合。 每個裝置都儲存在本機儲存體 (UbiquityContainer) 和作業系統的 iCloud 服務精靈會負責傳送和接收資料，在雲端中的資料。 所有的檔案存取權 UbiquityContainer 必須透過 FilePresenter/FileCoordinator 以防止並行存取。 `UIDocument`類別會實作的您，此範例示範如何使用 UIDocument。
+此圖顯示如何配合。 每個裝置都有儲存在本機儲存體 (UbiquityContainer) 上的資料, 而作業系統的 iCloud Daemon 會負責在雲端中傳送和接收資料。 所有對 UbiquityContainer 的檔案存取都必須透過 FilePresenter/FileCoordinator 完成, 以防止平行存取。 類別`UIDocument`會為您執行這些工作, 此範例示範如何使用 UIDocument。
 
- [![](introduction-to-icloud-images/icloud-overview.png "文件儲存體概觀")](introduction-to-icloud-images/icloud-overview.png#lightbox)
+ [![](introduction-to-icloud-images/icloud-overview.png "檔儲存體總覽")](introduction-to-icloud-images/icloud-overview.png#lightbox)
 
-ICloudUIDoc 範例實作簡單`UIDocument`包含單一的文字欄位的子類別。 在中呈現的文字`UITextView`及編輯會傳播到其他裝置的 iCloud 以紅色顯示的通知訊息。 範例程式碼不會處理更進階的 iCloud 功能，例如衝突解決。
+ICloudUIDoc 範例會執行包含單一`UIDocument`文字欄位的簡單子類別。 文字會在中`UITextView`轉譯, 而編輯會由 iCloud 傳播到其他裝置, 並以紅色顯示通知訊息。 範例程式碼不會處理更先進的 iCloud 功能, 例如衝突解決。
 
-此螢幕擷取畫面顯示範例應用程式-將文字變更，並按下後的**UpdateChangeCount**透過 iCloud 與其他裝置同步處理文件。
+此螢幕擷取畫面顯示範例應用程式-變更文字並按下**UpdateChangeCount**後, 檔會透過 iCloud 同步至其他裝置。
 
- [![](introduction-to-icloud-images/iclouduidoc.png "此螢幕擷取畫面顯示範例應用程式，將文字變更，並按下 UpdateChangeCount 之後")](introduction-to-icloud-images/iclouduidoc.png#lightbox)
+ [![](introduction-to-icloud-images/iclouduidoc.png "此螢幕擷取畫面顯示變更文字後的範例應用程式, 並按下 UpdateChangeCount")](introduction-to-icloud-images/iclouduidoc.png#lightbox)
 
-有五個部分 iCloudUIDoc 範例：
+ICloudUIDoc 範例共有五個部分:
 
-1. **存取 UbiquityContainer** -決定是否啟用 iCloud 時，如果是您的應用程式 iCloud 儲存區的路徑。
+1. **存取 UbiquityContainer** -判斷是否已啟用 iCloud, 如果是, 則為應用程式 icloud 存放區域的路徑。
 
-1. **建立 UIDocument 子類別**-建立 iCloud 儲存體和模型物件之間居中協調的類別。
+1. **建立 UIDocument 子類別**-建立一個類別, 以在 iCloud 儲存體與您的模型物件之間進行中繼。
 
-1. **尋找及開啟 iCloud 文件**-使用`NSFileManager`和`NSPredicate`尋找 iCloud 文件，並開啟它們。
+1. **尋找和開啟 icloud 檔**-使用`NSFileManager`和`NSPredicate`來尋找 icloud 檔並加以開啟。
 
-1. **顯示 iCloud 文件**-從屬性公開 （expose) 您`UIDocument`，讓您可以互動的 UI 控制項。
+1. **顯示 iCloud 檔**-從您`UIDocument`的公開屬性, 讓您可以與 UI 控制項互動。
 
-1. **儲存 iCloud 文件**-請確定在 UI 中所做的變更會保存到磁碟和 iCloud。
+1. **儲存 iCloud 檔**-確保在 UI 中進行的變更會保存至磁片和 iCloud。
 
-ICloud 的所有作業執行 （或應該執行） 以非同步方式，讓它們不會封鎖等候發生某件事。 您會看到三個不同的方式的範例中完成這項作業：
+所有 iCloud 作業會以非同步方式執行 (或應執行), 使其在等候發生問題時不會封鎖。 在範例中, 您會看到三種不同的方式來完成這項操作:
 
- **執行緒**-在`AppDelegate.FinishedLaunching`初始呼叫`GetUrlForUbiquityContainer`在另一個執行緒，以避免封鎖主執行緒上完成。
+ **執行緒**-在`AppDelegate.FinishedLaunching` `GetUrlForUbiquityContainer`的初始呼叫中, 會在另一個執行緒上完成, 以避免封鎖主執行緒。
 
- **NotificationCenter** -註冊通知，當非同步作業，例如`NSMetadataQuery.StartQuery`完成。
+ **NotificationCenter** -在非同步作業 (例如`NSMetadataQuery.StartQuery`完成) 時註冊通知。
 
- **完成處理常式**-傳入方法來完成非同步作業，例如執行`UIDocument.Open`。
+ **完成處理常式**-傳入方法, 以在完成非同步作業 (例如`UIDocument.Open`) 時執行。
 
 ### <a name="accessing-the-ubiquitycontainer"></a>存取 UbiquityContainer
 
-使用 iCloud 文件儲存體的第一個步驟是判斷是否已啟用 iCloud，而且，如果 「 無所不在容器 」 的位置 （在裝置儲存 iCloud 功能檔案的目錄）。
+使用 iCloud 檔儲存體的第一個步驟是判斷是否已啟用 iCloud, 如果是, 則為 "無所不在 container" 的位置 (已啟用 iCloud 的檔案儲存在裝置上的目錄)。
 
-此程式碼位於`AppDelegate.FinishedLaunching`方法的範例。
+此程式碼位於範例`AppDelegate.FinishedLaunching`的方法中。
 
 ```csharp
 // GetUrlForUbiquityContainer is blocking, Apple recommends background thread or your UI will freeze
@@ -213,20 +213,20 @@ ThreadPool.QueueUserWorkItem (_ => {
 });
 ```
 
-雖然此範例不會這麼做，Apple 建議呼叫 GetUrlForUbiquityContainer，每當應用程式則來到前景。
+雖然此範例不會這麼做, 但當應用程式進入前景時, Apple 建議呼叫 GetUrlForUbiquityContainer。
 
 ### <a name="creating-a-uidocument-subclass"></a>建立 UIDocument 子類別
 
-所有 iCloud 檔案和目錄 (ie。 儲存在 UbiquityContainer 目錄中的任何項目) 必須使用 NSFileManager 方法，實作 NSFilePresenter 通訊協定和 NSFileCoordinator 透過撰寫管理。
-執行所有動作，最簡單方式是不是用來寫入它，不過子類別 UIDocument 這會為您所有。
+所有 iCloud 檔案和目錄 (也就是儲存在 UbiquityContainer 目錄中的任何專案) 都必須使用 NSFileManager 方法來管理, 並透過 NSFileCoordinator 執行 NSFilePresenter 通訊協定和寫入。
+這麼做的最簡單方式就是不要自己撰寫, 但是子類別 UIDocument 會為您完成這一切。
 
-有您必須在使用 iCloud UIDocument 子類別中實作的只有兩個方法：
+有兩種方法, 您必須在 UIDocument 子類別中執行, 才能使用 iCloud:
 
-- **LoadFromContents** -傳入的檔案的內容，以解壓縮到您模型的類別/es 以外。
+- **LoadFromContents** -傳入檔案內容的以外 nsdata, 以供您在模型類別中解壓縮。
 
-- **ContentsForType** -要求您提供您模型的類別/es 以外表示法，將儲存到磁碟 （和雲端）。
+- **ContentsForType** -要求您提供模型類別的以外 nsdata 標記法, 以儲存至磁片 (和雲端)。
 
-此範例程式碼**iCloudUIDoc\MonkeyDocument.cs**示範如何實作 UIDocument。
+來自**iCloudUIDoc\MonkeyDocument.cs**的這個範例程式碼會顯示如何執行 UIDocument。
 
 ```csharp
 public class MonkeyDocument : UIDocument
@@ -274,11 +274,11 @@ public class MonkeyDocument : UIDocument
 }
 ```
 
-在此情況下的資料模型是很簡單-單一的文字欄位。 您的資料模型可以很複雜，例如 必要項目，例如 Xml 文件或二進位資料。 UIDocument 實作的主要角色是您的模型類別和可以是磁碟上儲存/載入以外表示法之間進行轉譯。
+在此情況下, 資料模型非常簡單-單一文字欄位。 您的資料模型可以視需要複雜, 例如 Xml 檔或二進位資料。 UIDocument 執行的主要角色是在您的模型類別和可以在磁片上儲存/載入的以外 nsdata 標記法之間進行轉譯。
 
-### <a name="finding-and-opening-icloud-documents"></a>尋找及開啟 iCloud 文件
+### <a name="finding-and-opening-icloud-documents"></a>尋找和開啟 iCloud 檔
 
-範例應用程式只處理單一檔案-test.txt-所以中的程式碼**AppDelegate.cs**會建立`NSPredicate`和`NSMetadataQuery`特別尋找該檔案名稱。 `NSMetadataQuery`以非同步方式執行，並會在完成時傳送通知。 `DidFinishGathering` 通知觀察器呼叫，會停止查詢並呼叫 LoadDocument，它會使用`UIDocument.Open`方法具有完成處理常式嘗試載入檔案，並顯示在`MonkeyDocumentViewController`。
+範例應用程式只會處理單一檔案-test .txt-因此, **AppDelegate.cs**中的程式碼會建立`NSPredicate`並`NSMetadataQuery`特別尋找該檔案名。 會以非同步方式執行,並在完成時傳送通知。`NSMetadataQuery` `DidFinishGathering`會由通知觀察者呼叫, 停止查詢並呼叫 LoadDocument, 這會使用`UIDocument.Open`方法搭配完成處理常式來嘗試載入檔案, 並將它顯示`MonkeyDocumentViewController`在中。
 
 ```csharp
 string monkeyDocFilename = "test.txt";
@@ -340,12 +340,12 @@ void LoadDocument (NSMetadataQuery metadataQuery)
 }
 ```
 
-### <a name="displaying-icloud-documents"></a>顯示 iCloud 文件
+### <a name="displaying-icloud-documents"></a>顯示 iCloud 檔
 
-顯示 UIDocument 不得為任何差異，以便在任何其他的模型類別
-- 屬性會顯示在 UI 控制項，可能是由使用者編輯和覆寫回至模型。
+顯示 UIDocument 不應該與任何其他模型類別不同
+- 屬性會顯示在 UI 控制項中, 使用者可能會進行編輯, 然後再寫回模型。
 
-在範例中**iCloudUIDoc\MonkeyDocumentViewController.cs**顯示 MonkeyDocument 文字`UITextView`。 `ViewDidLoad` 傳送的通知會接聽`MonkeyDocument.LoadFromContents`方法。 `LoadFromContents` 會將 iCloud 檔案的新資料時呼叫，以便通知指出文件已更新。
+在範例**iCloudUIDoc\MonkeyDocumentViewController.cs**中, 會在中顯示 MonkeyDocument `UITextView`文字。 `ViewDidLoad`接聽`MonkeyDocument.LoadFromContents`方法中所傳送的通知。 `LoadFromContents`當 iCloud 有檔案的新資料時呼叫, 因此通知會指出檔已更新。
 
 ```csharp
 NSNotificationCenter.DefaultCenter.AddObserver (this,
@@ -355,7 +355,7 @@ NSNotificationCenter.DefaultCenter.AddObserver (this,
 );
 ```
 
-範例程式碼通知處理常式呼叫方法，以在此情況下沒有任何衝突的偵測或解決更新 UI。
+範例程式碼通知處理常式會呼叫方法來更新 UI, 在此情況下不會偵測到任何衝突或解決問題。
 
 ```csharp
 [Export ("dataReloaded:")]
@@ -367,9 +367,9 @@ void DataReloaded (NSNotification notification)
 }
 ```
 
-### <a name="saving-icloud-documents"></a>正在儲存 iCloud 文件
+### <a name="saving-icloud-documents"></a>正在儲存 iCloud 檔
 
-若要加入到 icloud 的功能，您可以呼叫 UIDocument`UIDocument.Save`直接 （適用於新的文件） 或移動現有的檔案使用`NSFileManager.DefaultManager.SetUbiquitious`。 範例程式碼直接無所不在容器中以下列程式碼建立新文件 (有兩個完成處理常式，一個用於`Save`作業，而另一個開啟):
+若要將 UIDocument 新增至 iCloud, 您`UIDocument.Save`可以直接呼叫 (僅適用于新檔), 或使用`NSFileManager.DefaultManager.SetUbiquitious`來移動現有的檔案。 範例程式碼會在無所不在容器中, 使用此程式碼直接建立新的檔 (這裡有兩個完成處理常式`Save` , 一個用於作業, 另一個用於開啟):
 
 ```csharp
 var docsFolder = Path.Combine (iCloudUrl.Path, "Documents"); // NOTE: Documents folder is user-accessible in Settings
@@ -394,49 +394,49 @@ if (saveSuccess) {
 }
 ```
 
-文件的後續變更不會 「 儲存 」 直接，相反地，我們告訴`UIDocument`它已變更與`UpdateChangeCount`，以及它將會自動排程儲存至磁碟作業：
+檔的後續變更不會直接「儲存」, 而是會告訴`UIDocument`它已使用`UpdateChangeCount`變更, 而且它會自動排程「儲存至磁片」作業:
 
 ```csharp
 doc.UpdateChangeCount (UIDocumentChangeKind.Done);
 ```
 
-### <a name="managing-icloud-documents"></a>管理 iCloud 文件
+### <a name="managing-icloud-documents"></a>管理 iCloud 檔
 
-使用者可以管理在 iCloud 文件**文件**目錄"無所不在容器 」 您的應用程式，透過設定; 之外的他們可以檢視檔案清單和撥動以刪除。 應用程式程式碼應該能夠處理這種情況由使用者刪除文件的位置。 不會儲存在內部應用程式資料**文件**目錄。
+使用者可以透過 [設定], 在應用程式外部的 [無所不在容器] 的 [**檔**] 目錄中管理 iCloud 檔;他們可以查看檔案清單, 並將它滑動以刪除。 應用程式程式碼應該能夠處理使用者刪除檔的情況。 不要將內部應用程式資料儲存在**Documents**目錄中。
 
- [![](introduction-to-icloud-images/icloudstorage.png "管理 iCloud 文件工作流程")](introduction-to-icloud-images/icloudstorage.png#lightbox)
+ [![](introduction-to-icloud-images/icloudstorage.png "管理 iCloud 檔工作流程")](introduction-to-icloud-images/icloudstorage.png#lightbox)
 
 
 
-嘗試移除已啟用 iCloud 的應用程式從他們的裝置，以便告知他們 iCloud 文件與該應用程式相關的狀態時，使用者也會收到不同的警告。
+當使用者嘗試從其裝置移除已啟用 iCloud 的應用程式時, 也會收到不同的警告, 以通知他們與該應用程式相關的 iCloud 檔狀態。
 
- [![](introduction-to-icloud-images/icloud-delete1.png "當使用者嘗試從他們的裝置移除啟用 iCloud 的應用程式的範例對話方塊")](introduction-to-icloud-images/icloud-delete1.png#lightbox)
+ [![](introduction-to-icloud-images/icloud-delete1.png "當使用者嘗試從其裝置移除已啟用 iCloud 的應用程式時的範例對話方塊")](introduction-to-icloud-images/icloud-delete1.png#lightbox)
 
- [![](introduction-to-icloud-images/icloud-delete2.png "當使用者嘗試從他們的裝置移除啟用 iCloud 的應用程式的範例對話方塊")](introduction-to-icloud-images/icloud-delete2.png#lightbox)
+ [![](introduction-to-icloud-images/icloud-delete2.png "當使用者嘗試從其裝置移除已啟用 iCloud 的應用程式時的範例對話方塊")](introduction-to-icloud-images/icloud-delete2.png#lightbox)
 
 ## <a name="icloud-backup"></a>iCloud 備份
 
-雖然備份到 iCloud 並不是由開發人員直接存取的功能，您將應用程式設計的方式可能會影響使用者體驗。
-Apple 提供[iOS 資料儲存體的指導方針](https://developer.apple.com/icloud/documentation/data-storage/)的開發人員在其 iOS 應用程式追蹤。
+雖然備份至 iCloud 並不是由開發人員直接存取的功能, 但您設計應用程式的方式可能會影響使用者體驗。
+Apple 提供[Ios 資料儲存指導方針](https://developer.apple.com/icloud/documentation/data-storage/), 供開發人員在其 iOS 應用程式中遵循。
 
-最重要的考量是內容的您的應用程式是否會儲存大型檔案不是內容的使用者產生的 （例如 magazine 讀者應用程式，其中儲存的每個問題 hundred-plus mb 為單位）。 Apple 會偏好不會儲存這類資料，它會被備份到 icloud 的功能並不必要地填入使用者的 iCloud 配額。
+最重要的考慮是您的應用程式是否儲存不是由使用者產生的大型檔案 (例如, 在每個問題中儲存一百美元的內容的雜誌讀取器應用程式)。 Apple 偏好您不要儲存這類資料, 其中將會備份至 iCloud, 並不必要地填滿使用者的 iCloud 配額。
 
-儲存大量資料的應用程式應該是將它儲存在其中一個備份 （例如不是使用者目錄。 快取或 tmp） 或使用`NSFileManager.SetSkipBackupAttribute`將套用至這些檔案的旗標，以便 iCloud 會略過它們在備份作業期間。
+儲存大量資料 (如這類) 的應用程式, 應該將它儲存在未備份的其中一個使用者目錄中 (例如, 快取或 tmp), `NSFileManager.SetSkipBackupAttribute`或用來將旗標套用至這些檔案, 讓 iCloud 在備份作業期間忽略這些檔案。
 
 ## <a name="summary"></a>總結
 
-本文會介紹 iOS 5 中所包含的新 iCloud 功能。 它會檢查的步驟，才能將專案設定為使用 iCloud 和則提供有關如何實作 iCloud 功能的範例。
+本文引進了 iOS 5 隨附的新 iCloud 功能。 它會檢查將您的專案設定為使用 iCloud 所需的步驟, 然後提供如何執行 iCloud 功能的範例。
 
-索引鍵-值存放區範例示範如何 iCloud 可以用來儲存少量資料 NSUserPreferences 儲存的方式類似。 UIDocument 範例示範了如何更多複雜的資料可儲存及同步處理跨多個裝置透過 iCloud。
+索引鍵/值儲存範例示範如何使用 iCloud 來儲存少量資料, 類似儲存 NSUserPreferences 的方式。 UIDocument 範例示範如何透過 iCloud 來儲存及同步處理多個裝置上的複雜資料。
 
-最後加入的 iCloud 備份應該如何影響您的應用程式設計的簡短討論包含它。
+最後, 它包含了有關新增 iCloud 備份如何影響應用程式設計的簡短討論。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [簡介至 iCloud （範例）](https://developer.xamarin.com/samples/monotouch/IntroductionToiCloud)
+- [ICloud 簡介 (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/introductiontoicloud)
 - [iCloud 研討會範例程式碼](https://github.com/xamarin/Seminars/tree/master/2012-03-22-iCloud)
-- [iCloud 研討會的投影片](https://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
+- [iCloud 研討會](https://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
 - [iCloud NSUbiquitousKeyValueStore](https://developer.apple.com/library/prerelease/ios/)
 - [iCloud 儲存體](https://support.apple.com/kb/HT4847)

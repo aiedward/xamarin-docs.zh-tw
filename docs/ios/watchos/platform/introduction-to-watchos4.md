@@ -1,36 +1,36 @@
 ---
 title: watchOS 4 簡介
-description: 本文件提供 watchOS 4，描述現在都可在 Xamarin 開發人員的新功能的高階簡介。
+description: 本檔提供 watchOS 4 的高階簡介, 說明 Xamarin 開發人員現在可以使用的新功能。
 ms.prod: xamarin
 ms.assetid: 753A9993-A951-40A2-9270-37F000A01BC9
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/07/2017
-ms.openlocfilehash: ca922840b47899b62615bded852e66fe81b3371c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e3766815e071c190046cc5bc7d436621bcee3d29
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61223965"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651541"
 ---
 # <a name="introduction-to-watchos-4"></a>watchOS 4 簡介
 
-WatchOS 4 應用程式中存取新功能：
+在您的應用程式中存取 watchOS 4 的新功能:
 
-* 讀取 barometric altimeter 中新的 Apple Watch 系列 3 的資料。
-* 直接連線到某些 Apple Watch 系列 3 模型上可用的行動數據使用的網路資源。
-* Core 藍芽可以直接連接到 附屬應用程式。
-* 健身和音訊的應用程式的新背景模式。
-* 針對新 SiriKit 意圖[清單和附註](~/ios/platform/introduction-to-ios11/sirikit.md)。
+* 閱讀新 Apple Watch 系列3中的氣壓 altimeter 資料。
+* 直接連接到網路資源, 並在某些 Apple Watch 系列3模型上提供行動資料。
+* 核心藍牙可以直接連線到配件。
+* 適用于健身和音訊應用程式的新背景模式。
+* 適用于[清單和便箋](~/ios/platform/introduction-to-ios11/sirikit.md)的新 SiriKit 意圖。
 
-WatchOS 3 之後的變更：
+自 watchOS 3 之後的變更:
 
-* 應用程式程式碼，在單一處理序中執行的 UI。
-* 位置的權限可以授與監看式 （若要要求使用者接受在電話上不需要）。
+* 應用程式程式碼和 UI 會在單一進程中執行。
+* [位置] 許可權可以在 [監看式] 上授與 (不需要要求使用者在其電話上接受)。
 
 ## <a name="related-links"></a>相關連結
 
-* [watchOS 範例](https://developer.xamarin.com/samples/watchos/all/)
+* [watchOS 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
 * [WatchKit (Apple)](https://developer.apple.com/documentation/watchkit)
-* [WatchOS 4 (Apple) （影片） 中最新消息](https://developer.apple.com/videos/play/wwdc2017/205/)
+* [WatchOS 4 (Apple) 中的新功能 (影片)](https://developer.apple.com/videos/play/wwdc2017/205/)
