@@ -7,16 +7,16 @@ ms.assetid: 57F172F8-BA03-43EC-A215-ED6B78696BB5
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: f988c16e933214b3ce737febb89d05a451eb2f14
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 60de4b8abc200ac7892838765210167f8a79dcfe
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61205440"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645836"
 ---
 # <a name="porter-duff-blend-modes"></a>Porter Duff 混合模式
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Porter Duff 混合模式會命名為 Thomas Porter 和 Tom Duff，負責開發的複合 （compositing） 時運作 Lucasfilm 代數之後。 其紙張[_複合 （compositing） 的數位映像_](https://graphics.pixar.com/library/Compositing/paper.pdf) 1984 年 7 月號的已發行_電腦圖形中_，頁面為 253 超過 259。 這些混合模式是不可或缺的複合 （compositing），這複合的場景組合各種映像：
 
@@ -279,11 +279,11 @@ canvas.Clear(SKColors.White);
 
 ## <a name="using-mattes-with-porter-duff"></a>使用 Porter Duff mattes
 
-**磚牆複合 （compositing)** 頁面會顯示傳統的複合 （compositing） 工作的範例：一張圖片，就必須要組合幾個部分，包括需要排除背景的點陣圖。 以下是**SeatedMonkey.jpg**有問題的背景點陣圖：
+[基礎構件 **-牆合成**] 頁面會顯示傳統撰寫工作的範例:圖片必須從數個部分組成, 包括具有需要排除之背景的點陣圖。 以下是**SeatedMonkey.jpg**有問題的背景點陣圖：
 
 ![插入擴充槽 Monkey](porter-duff-images/SeatedMonkey.jpg "插入擴充槽 Monkey")
 
-在複合 （compositing），相對應的準備_草蓆_已建立，這是另一個因黑色，您想要顯示的影像和透明的點陣圖。 此檔案名為**SeatedMonkeyMatte.png**中的資源之間，且**媒體**中的資料夾[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)範例:
+在複合 （compositing），相對應的準備_草蓆_已建立，這是另一個因黑色，您想要顯示的影像和透明的點陣圖。 此檔案名為**SeatedMonkeyMatte.png**中的資源之間，且**媒體**中的資料夾[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例:
 
 ![插入擴充槽 Monkey 草蓆](porter-duff-images/SeatedMonkeyMatte.png "插入擴充槽 Monkey 草蓆")
 
@@ -505,9 +505,9 @@ Porter Duff 範例 blend 稍早所示在這篇文章中有所有相關的不透�
 - **Sa**是來源 alpha 色板
 - **Sc**是 RGB 色彩的來源
 
-RGB 色彩會先乘以 alpha 值。 例如，如果**Sc**代表純紅色但**Sa** 0x80，則是 RGB 色彩 **(0x80，0，0)**。 如果**Sa**為 0，則所有的 RGB 元件也是零。
+RGB 色彩會先乘以 alpha 值。 例如，如果**Sc**代表純紅色但**Sa** 0x80，則是 RGB 色彩 **(0x80，0，0)** 。 如果**Sa**為 0，則所有的 RGB 元件也是零。
 
-結果顯示在以逗號分隔的 RGB 色彩與 alpha 色頻的括號中： **[alpha 色彩]**。 使用色彩，計算被分開的紅色、 綠色和藍色元件：
+結果顯示在以逗號分隔的 RGB 色彩與 alpha 色頻的括號中： **[alpha 色彩]** 。 使用色彩，計算被分開的紅色、 綠色和藍色元件：
 
 | 模式       | 運算 |
 | ---------- | --------- |
@@ -526,11 +526,11 @@ RGB 色彩會先乘以 alpha 值。 例如，如果**Sc**代表純紅色但**Sa*
 | `Plus`     | [Sa + Da、 Sc + Dc] |
 | `Modulate` | [Sa·Da Sc·Dc] | 
 
-這些運算全都是分析時的工作變得更容易**Da**並**Sa**是 0 或 1。 例如，若為預設值`SrcOver`模式中，如果**Sa**為 0，則**Sc**是 0，結果也是 **[Da，Dc]**，目的地 alpha 和色。 如果**Sa**為 1，就會產生 **[Sa，Sc]**，來源 alpha 和色，或 **[1，Sc]**。
+這些運算全都是分析時的工作變得更容易**Da**並**Sa**是 0 或 1。 例如，若為預設值`SrcOver`模式中，如果**Sa**為 0，則**Sc**是 0，結果也是 **[Da，Dc]** ，目的地 alpha 和色。 如果**Sa**為 1，就會產生 **[Sa，Sc]** ，來源 alpha 和色，或 **[1，Sc]** 。
 
-`Plus`和`Modulate`模式會與其他稍有不同，因為新的色彩可能是因為來源和目的地的組合。 `Plus`模式可以解譯為位元組的元件或浮點數的元件。 在**Porter Duff 方格**目的色彩稍早顯示的頁面 **(0xC0、 0x80，0x00)** 來源色彩，而且 **(0x00，0x80，0xC0)**。 加入元件的每一對，但在 0xFF 限制的總和。 結果為色彩 **(0xC0，0xFF，0xC0)**。 這是交集 所示的色彩。
+`Plus`和`Modulate`模式會與其他稍有不同，因為新的色彩可能是因為來源和目的地的組合。 `Plus`模式可以解譯為位元組的元件或浮點數的元件。 在**Porter Duff 方格**目的色彩稍早顯示的頁面 **(0xC0、 0x80，0x00)** 來源色彩，而且 **(0x00，0x80，0xC0)** 。 加入元件的每一對，但在 0xFF 限制的總和。 結果為色彩 **(0xC0，0xFF，0xC0)** 。 這是交集 所示的色彩。
 
-針對`Modulate`模式中，必須轉換為浮點數的 RGB 值。 目的地色彩就 **（0.75，0.5，0）** 來源，而且 **（0，0.5，0.75）**。 RGB 元件是每個相乘，而且結果 **（0，0.25，0）**。 這是在交集 所示的色彩**Porter Duff 方格**這個模式中的頁面。
+針對`Modulate`模式中，必須轉換為浮點數的 RGB 值。 目的地色彩就 **（0.75，0.5，0）** 來源，而且 **（0，0.5，0.75）** 。 RGB 元件是每個相乘，而且結果 **（0，0.25，0）** 。 這是在交集 所示的色彩**Porter Duff 方格**這個模式中的頁面。
 
 **Porter Duff 透明度**頁面可讓您檢查 Porter Duff blend 模式部分透明的圖形物件上的運作方式。 XAML 檔案包含`Picker`Porter Duff 模式使用：
 
@@ -903,4 +903,4 @@ public partial class GradientTransitionsPage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

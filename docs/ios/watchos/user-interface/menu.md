@@ -1,48 +1,48 @@
 ---
-title: watchOS 功能表控制項 （強制碰觸） 在 Xamarin 中
-description: 本文件說明如何在 Xamarin 中使用 watchOS 強制觸控手勢。 它討論如何回應用力長按如何加入功能表，並變更功能表項目。
+title: Xamarin 中的 watchOS 功能表控制項 (Force Touch)
+description: 本檔說明如何在 Xamarin 中使用 watchOS 強制觸控手勢。 它討論如何回應強制觸控、如何新增功能表, 以及變更功能表項目。
 ms.prod: xamarin
 ms.assetid: 5A7F83FB-9BC4-4812-92C5-CEC8DAE8211E
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 7696c820ab6fdf19bdef46db31061fb5914e6cf4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6ad021d07d1263b20919cf4f640a8b65bf3b12b2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60880673"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655738"
 ---
-# <a name="watchos-menu-control-force-touch-in-xamarin"></a>watchOS 功能表控制項 （強制碰觸） 在 Xamarin 中
+# <a name="watchos-menu-control-force-touch-in-xamarin"></a>Xamarin 中的 watchOS 功能表控制項 (Force Touch)
 
-監看式套件提供強制觸控筆勢，以觸發監看式應用程式畫面上實作時的功能表。
+Watch 套件提供在監看式應用程式畫面上執行時, 觸發功能表的 Force Touch 手勢。
 
-![](menu-images/menu.png "在顯示功能表的 Apple Watch")
+![](menu-images/menu.png "顯示功能表的 Apple Watch")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
-## <a name="responding-to-force-touch"></a>回應用力長按
+## <a name="responding-to-force-touch"></a>回應 Force Touch
 
-如果`Menu`已實作介面控制器，當使用者執行將會顯示功能表強制觸控。 如果已實作沒有功能表，畫面簡短地以動畫顯示的任何其他動作，就會發生。
+`Menu`如果已針對介面控制器執行, 則當使用者執行時, 將會顯示功能表 Force Touch。 如果未執行任何功能表, 畫面會短暫地產生動畫, 而不會發生其他動作。
 
-強制修飾未與任何畫面; 上的特定項目相關聯只將一個菜可以附加至介面控制器，它會顯示不論強制觸控按下螢幕上發生的位置。
+強制觸控不會與螢幕上的任何特定元素相關聯;只有一個功能表可以連接到介面控制器, 而不論畫面上 Force Touch 按的位置為何, 都會出現。
 
-介於一到四個功能表可以呈現選項。
+可以在其中顯示一個和四個功能表選項。
 
 
 ## <a name="adding-a-menu"></a>新增功能表
 
-A`Menu`必須新增至`InterfaceController`在設計階段將分鏡腳本。 功能表控制項拖曳至介面控制器時不在分鏡腳本預覽視覺指示，但 **功能表** 會出現在 **文件大綱** 板：
+在`Menu`設計階段, 必須將`InterfaceController`加入至分鏡腳本。 功能表控制項拖曳至介面控制器時不在分鏡腳本預覽視覺指示，但 **功能表** 會出現在 **文件大綱** 板：
 
 ![](menu-images/menu-action.png "在設計階段編輯功能表")
 
-最多四個功能表項目可以加入功能表控制項。 在設定這些**屬性**板。 您可以設定下列屬性：
+最多可以將四個功能表項目加入至功能表控制項。 可以在**Properties** pad 中設定。 可以設定下列屬性:
 
-- 標題和
-- 自訂映像，或
-- 系統映像：接受、 新增區塊、 拒絕、 資訊，也許，靜音、 暫停、 播放、 重複、 繼續、 共用、 隨機播放、 喇叭、 資源回收筒。
+- 標題, 以及
+- 自訂映射, 或
+- 系統映射:[接受]、[新增]、[封鎖]、[資訊]、[可能]、[更多]、[靜音]、[播放]、[重複]、[繼續]、[共用]、
 
-建立`Action`藉由選取**事件**一節**屬性**板，然後輸入動作方法的名稱。 部分方法將會建立在程式碼，可以實作在介面控制器類別中，像這樣：
+選取 Properties pad 的 [**事件**] 區段, 然後輸入動作方法的名稱, 以建立。 `Action` 系統會在程式碼中建立部分方法, 這可以在介面控制器類別中執行, 如下所示:
 
 ```csharp
 partial void MenuItemTapped ()
@@ -51,11 +51,11 @@ partial void MenuItemTapped ()
 }
 ```
 
-### <a name="custom-images"></a>自訂映像
+### <a name="custom-images"></a>自訂映射
 
-類似於在 iOS 中的映像 索引標籤，功能表項目影像需要使用不透明的模式，使用 alpha 色頻，可讓透過顯示背景。
+類似于 iOS 中的索引標籤影像, 功能表項目影像需要具有 Alpha 色板的不透明模式, 以允許背景顯示。
 
-您應該加入監看式應用程式專案 （不監看式應用程式擴充功能專案） 為了達到最佳效能的功能表所用的影像。
+您應該將用於功能表的影像新增至 watch 應用程式專案 (而非 watch 應用程式擴充功能專案), 以獲得最佳效能。
 
 
 ## <a name="changing-the-menu-items"></a>變更功能表項目
@@ -66,16 +66,16 @@ partial void MenuItemTapped ()
 Menu items added the storyboard can be shown and hidden programmatically.
 -->
 
-### <a name="adding-at-runtime"></a>在執行階段加入
+### <a name="adding-at-runtime"></a>在執行時間加入
 
-您不會導致`Menu`若要新增至介面控制器在執行階段，不過的集合`MenuItem`s*可以*利用程式設計的方式。
-使用`AddMenuItem`方法所示：
+您無法`Menu`在執行時間將加入至介面控制器, 但*可*透過程式設計方式變更的`MenuItem`集合。
+`AddMenuItem`使用方法, 如下所示:
 
 ```csharp
 AddMenuItem (WKMenuItemIcon.Accept, "Yes", new ObjCRuntime.Selector ("tapped"));
 ```
 
-Xamarin.iOS 監看式套件 API 目前需要`selector`針對`AdMenuItem`方法，應該宣告如下：
+在`AdMenuItem`方法中, 目前的 Xamarin Watch 套件 API `selector`需要, 其應宣告如下:
 
 ```csharp
 [Export("tapped")]
@@ -85,15 +85,15 @@ void MenuItemTapped ()
 }
 ```
 
-### <a name="removing-at-runtime"></a>移除在執行階段
+### <a name="removing-at-runtime"></a>在執行時間移除
 
-`ClearAllMenuItems`方法可以呼叫以移除所有*以程式設計方式加入*功能表項目。
+您可以呼叫  方法,以移除所有以程式設計方式加入的功能表`ClearAllMenuItems`項。
 
-無法清除設定分鏡腳本中的功能表項目。
+無法清除在分鏡腳本中設定的功能表項目。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [WatchKitCatalog （範例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
-- [Apple 功能表文件](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Menus.html)
+- [WatchKitCatalog （範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [Apple 的功能表檔](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Menus.html)

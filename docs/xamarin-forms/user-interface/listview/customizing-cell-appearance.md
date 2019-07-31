@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 1e57764dacf7ae0599df46f13bd4f5505c4cc4a2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ecb9e84473778f5185276a854bfbf2fdfcbb6528
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61370714"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654853"
 ---
 # <a name="customizing-listview-cell-appearance"></a>自訂 ListView 儲存格的外觀
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
 
-[`ListView`](xref:Xamarin.Forms.ListView) 顯示可捲動清單，您可以使用自訂`ViewCell`s。 `ViewCells` 可以用於顯示文字和影像，表示 true/false 狀態且接收使用者輸入。
+[`ListView`](xref:Xamarin.Forms.ListView)提供可滾動清單, 可以透過使用`ViewCell`進行自訂。 `ViewCells` 可以用於顯示文字和影像，表示 true/false 狀態且接收使用者輸入。
 
 <a name="Built_in_Cells" />
 
@@ -115,7 +115,7 @@ x:Class="demoListView.ImageCellPage">
 - 自訂儲存格在巢狀`DataTemplate`，這是內部`ListView.ItemTemplate`。 這是相同的程序，與使用任何其他資料格。
 - `ViewCell` 是自訂的資料格類型。 子系`DataTemplate`項目必須是或衍生自類型`ViewCell`。
 - 請注意內`ViewCell`，版面配置由`StackLayout`。 此配置可讓我們自訂的背景色彩。 請注意，任何屬性`StackLayout`也就是可繫結可以雖然，未在此處顯示的自訂儲存格，內部繫結。
-- 內`ViewCell`，配置可以由任何 Xamarin.Forms 版面配置。 
+- 在中`ViewCell`, 版面配置可以由任何 Xamarin 版面配置來管理。 
 
 ### <a name="cnum"></a>C&num;
 
@@ -258,6 +258,6 @@ IOS 和 Android 上，如果[ `ListView` ](xref:Xamarin.Forms.ListView)正在回
 
 ## <a name="related-links"></a>相關連結
 
-- [內建的儲存格 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BuiltInCells)
-- [自訂資料格 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
-- [繫結內容變更 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BindingContextChanged)
+- [內建的儲存格 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-builtincells)
+- [自訂資料格 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
+- [繫結內容變更 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-bindingcontextchanged)

@@ -1,48 +1,48 @@
 ---
-title: 在 Xamarin.iOS 中顯示的警示
-description: 本文件說明如何在 Xamarin.iOS 中顯示警示，使用 UIAlertController iOS 8 中導入的 Api。
+title: 在 Xamarin 中顯示警示
+description: 本檔說明如何使用 iOS 8 中引進的 UIAlertController Api, 在 Xamarin 中顯示警示。
 ms.prod: xamarin
 ms.assetid: 61C671E9-3757-4052-86E4-28640025A34A
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 576de9a46fc89fe01c564c05568d4331a32dbd96
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 4c47e12468d9107cbe03d4bc45ffa77e4ad918e9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674403"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652054"
 ---
-# <a name="displaying-alerts-in-xamarinios"></a>在 Xamarin.iOS 中顯示的警示
+# <a name="displaying-alerts-in-xamarinios"></a>在 Xamarin 中顯示警示
 
-從 iOS 8 開始，已完成的已取代的 UIActionSheet UIAlertController 和其中 UIAlertView 現在已被取代。
+從 iOS 8 開始, UIAlertController 已完成取代的 UIActionSheet 和 UIAlertView, 兩者現在已被取代。
 
-不同於它所取代，也就是 UIView 的子類別，類別 UIAlertController 是 UIViewController 的子類別。
+不同于它所取代的類別 (也就是 UIView 的子類別), UIAlertController 是 UIViewController 的子類別。
 
-使用`UIAlertControllerStyle`來表示要顯示警示的類型。 這些警示類型包括：
+用`UIAlertControllerStyle`來表示要顯示的警示類型。 這些警示類型包括:
 
 - **UIAlertControllerStyleActionSheet**
-    * 前 iOS 8 這會是 UIActionSheet
+    * 預先 iOS 8 這會是 UIActionSheet
 - **UIAlertControllerStyleAlert**
-    * 前 iOS 8 這會是 UIAlertView 
+    * IOS 前8的 UIAlertView 
 
-有三個必要的步驟，需要時建立警示控制器：
+建立警示控制器時, 需要採取下列三個步驟:
 
-- 建立和設定警示以 a:
+- 使用下列方式建立和設定警示:
     * 標題
     * 訊息
     * preferredStyle
     
-- （選擇性）新增文字欄位
+- 選擇性加入文字欄位
 - 新增必要的動作
-- 呈現的檢視控制器
+- 呈現視圖控制器
 
-最簡單的警示會包含一個按鈕，如以下螢幕擷取畫面所示：
+最簡單的警示包含單一按鈕, 如下列螢幕擷取畫面所示:
 
- ![一個按鈕的警示](alerts-images/alert1.png)
+ ![具有一個按鈕的警示](alerts-images/alert1.png)
 
-顯示一個簡單的警示的程式碼如下所示：
+顯示簡單警示的程式碼如下所示:
 
 ```csharp
 okayButton.TouchUpInside += (sender, e) => {
@@ -58,9 +58,9 @@ okayButton.TouchUpInside += (sender, e) => {
 };
 ```
 
-顯示的警示有多個選項，以類似的方式完成，但新增兩個動作。 例如，下列螢幕擷取畫面顯示具有兩個按鈕的警示：
+顯示包含多個選項的警示, 會以類似的方式完成, 但會新增兩個動作。 例如, 下列螢幕擷取畫面顯示具有兩個按鈕的警示:
 
- ![兩個按鈕的警示](alerts-images/alert2.png)
+ ![有兩個按鈕的警示](alerts-images/alert2.png)
 
 ```csharp
 okayCancelButton.TouchUpInside += ((sender, e) => {
@@ -77,11 +77,11 @@ okayCancelButton.TouchUpInside += ((sender, e) => {
 });
 ```
 
-警示也可以顯示動作的工作表，類似於以下螢幕擷取畫面：
+警示也可以顯示動作表, 類似以下的螢幕擷取畫面:
 
- ![動作的工作表的警示](alerts-images/alert3.png)
+ ![動作表警示](alerts-images/alert3.png)
 
-按鈕會新增至具有警示`AddAction`方法：
+使用`AddAction`方法將按鈕新增至警示:
 
 ```csharp
 actionSheetButton.TouchUpInside += ((sender, e) => {
@@ -111,5 +111,5 @@ actionSheetButton.TouchUpInside += ((sender, e) => {
 
 ## <a name="related-links"></a>相關連結
 
-- [控制項 （範例）](https://developer.xamarin.com/samples/monotouch/Controls/)
+- [控制項 (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
 - [警示控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

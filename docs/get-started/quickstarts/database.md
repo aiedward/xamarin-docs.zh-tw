@@ -1,6 +1,6 @@
 ---
 title: 將資料儲存在本機 SQLite.NET 資料庫中
-description: 這篇文章說明如何將資料儲存在本機的 SQLite.NET 資料庫。
+description: 本文說明如何將資料儲存在本機 SQLite.NET 資料庫中。
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
@@ -9,44 +9,44 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: e9aed82ef0db9de35bd4cffe7daebcaa9389e42e
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: ff07af00e1e647255ac56318c0685552823f510c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832122"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653514"
 ---
-# <a name="store-data-in-a-local-sqlitenet-database"></a>將資料儲存在本機的 SQLite.NET 資料庫
+# <a name="store-data-in-a-local-sqlitenet-database"></a>將資料儲存在本機 SQLite.NET 資料庫中
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
 
-在本快速入門中，您將了解如何：
+在本快速入門中, 您將瞭解如何:
 
-- 將 NuGet 套件新增至專案中使用 NuGet 套件管理員。
-- SQLite.NET 資料庫中的本機儲存資料。
+- 使用 NuGet 套件管理員, 將 NuGet 套件新增至專案。
+- 將資料儲存在本機 SQLite.NET 資料庫中。
 
-快速入門逐步解說如何將資料儲存在本機的 SQLite.NET 資料庫。 最終的應用程式如下所示：
+本快速入門會逐步解說如何將資料儲存在本機 SQLite.NET 資料庫中。 最終的應用程式如下所示：
 
-[![](database-images/screenshots1-sml.png "備忘稿")](database-images/screenshots1.png#lightbox "備忘稿")
-[![](database-images/screenshots2-sml.png "附註項目頁面")](database-images/screenshots2.png#lightbox "附註項目頁面")
+[附注] 頁面[ ![(database-images/screenshots1-sml.png "")] ][(database-images/screenshots1.png#lightbox "附注] 頁面")附注輸入頁面(database-images/screenshots2.png#lightbox "便箋輸入頁面") [ ![(database-images/screenshots2-sml.png "")] ] 
+
 
 ### <a name="prerequisites"></a>必要條件
 
-您應該已成功完成[先前的快速入門](multi-page.md)之前嘗試本快速入門。 或者，下載[先前的快速入門範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)並使用它做為起點，在本快速入門。
+您應該先成功完成[先前的快速入門](multi-page.md), 再嘗試進行本快速入門。 或者, 下載[先前的快速入門範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/), 並使用它做為本快速入門的起點。
 
 ::: zone pivot="windows"
 
 ## <a name="update-the-app-with-visual-studio"></a>使用 Visual Studio 更新應用程式
 
-1. 啟動 Visual Studio，並開啟備忘稿方案。
+1. 啟動 Visual Studio 並開啟 [附注] 解決方案。
 
-2. 在 [**方案總管] 中**，選取**備忘稿**專案，以滑鼠右鍵按一下並選取**管理 NuGet 套件...** :
+2. 在**方案總管**中, 選取 [ **Notes** ] 專案, 按一下滑鼠右鍵, 然後選取 [**管理 NuGet 套件 ...** ]:
 
     ![](database-images/vs/add-nuget-packages.png "新增 NuGet 套件")    
 
 3. 在 [NuGet 套件管理員]  中選取 [瀏覽]  索引標籤，搜尋 **sqlite-net-pcl** NuGet 套件並加以選取，然後按一下 [安裝]  按鈕，將其新增至專案：
 
-    ![](database-images/vs/add-package.png "新增套件")
+    ![](database-images/vs/add-package.png "新增封裝")
 
     > [!NOTE]
     > 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
@@ -58,7 +58,7 @@ ms.locfileid: "67832122"
 
     此套件會用來將資料庫作業併入應用程式。
 
-4. 在 [**方案總管] 中**，請在**備忘稿**專案中，開啟**Note.cs**中**模型**資料夾，並將現有程式碼下列程式碼：
+4. 在**方案總管**的**Notes**專案中, 開啟 [**模型**] 資料夾中的**Note.cs** , 並以下列程式碼取代現有的程式碼:
 
     ```csharp
     using System;
@@ -76,18 +76,18 @@ ms.locfileid: "67832122"
     }
     ```
 
-    這個類別會定義`Note`會儲存應用程式中的每一個筆記相關資料的模型。 `ID`屬性標記著`PrimaryKey`並`AutoIncrement`屬性，以確保每個`Note`SQLite.NET 資料庫中的執行個體都會有 SQLite.NET 所提供的唯一識別碼。
+    這個類別會定義`Note`一個模型, 以儲存應用程式中每個便箋的相關資料。 屬性會以`PrimaryKey`和屬性標示`AutoIncrement` , 以確保 SQLite.NET 資料庫`Note`中的每個實例都具有 SQLite.NET 所提供的唯一識別碼。 `ID`
 
-    變更儲存到**Note.cs**藉由按下**CTRL + S**，並關閉檔案。
+    按下**CTRL + S**, 將變更儲存到**Note.cs** , 然後關閉檔案。
 
     > [!WARNING]
-    > 嘗試建置應用程式現在將會產生將在後續步驟中修正的錯誤。
+    > 此時嘗試建立應用程式將會導致在後續步驟中修正的錯誤。
 
-5. 在 [**方案總管] 中**，加入新的資料夾，名為**資料**來**備忘稿**專案。
+5. 在**方案總管**中, 將名為**Data**的新資料夾新增至**Notes**專案。
 
-6. 中**方案總管**，請在**備忘稿**專案，加入新的類別，名為**NoteDatabase**至**資料**資料夾。
+6. 在**方案總管**的**Notes**專案中, 將名為**NoteDatabase**的新類別新增至**Data**資料夾。
 
-7. 在  **NoteDatabase.cs**，以下列程式碼取代現有的程式碼：
+7. 在**NoteDatabase.cs**中, 將現有的程式碼取代為下列程式碼:
 
     ```csharp
     using System.Collections.Generic;
@@ -139,14 +139,14 @@ ms.locfileid: "67832122"
     }
     ```
 
-    這個類別包含程式碼，以建立資料庫、 資料讀取、 寫入資料，和刪除資料。 此程式碼會使用非同步 SQLite.Net API，以將資料庫作業移至背景執行緒。 此外，`NoteDatabase` 建構函式會採用資料庫檔案的路徑作為引數。 此路徑會由`App`下一個步驟中的類別。
+    此類別包含用來建立資料庫、讀取資料、將資料寫入其中, 以及刪除資料的程式碼。 此程式碼會使用非同步 SQLite.Net API，以將資料庫作業移至背景執行緒。 此外，`NoteDatabase` 建構函式會採用資料庫檔案的路徑作為引數。 在下一個步驟中, `App`類別會提供此路徑。
 
-    變更儲存到**NoteDatabase.cs**藉由按下**CTRL + S**，並關閉檔案。
+    按下**CTRL + S**, 將變更儲存到**NoteDatabase.cs** , 然後關閉檔案。
 
     > [!WARNING]
-    > 嘗試建置應用程式現在將會產生將在後續步驟中修正的錯誤。
+    > 此時嘗試建立應用程式將會導致在後續步驟中修正的錯誤。
 
-8. 在 [**方案總管] 中**，請在**備忘稿**專案中，按兩下**App.xaml.cs**加以開啟。 然後以下列程式碼取代現有的程式碼：
+8. 在**方案總管**的**Notes**專案中, 按兩下 [ **App.xaml.cs** ] 將其開啟。 然後將現有的程式碼取代為下列程式碼:
 
     ```csharp
     using System;
@@ -196,14 +196,14 @@ ms.locfileid: "67832122"
     }
     ```
 
-    此程式碼定義`Database`建立新的屬性`NoteDatabase`為單一性，做為引數傳入的資料庫檔名的執行個體`NoteDatabase`建構函式。 將資料庫公開為唯一資料庫的優點為，所建立的單一資料庫連線會在應用程式執行時保持開啟，因此可避免每次執行資料庫作業時開啟和關閉資料庫檔案的費用。
+    這段程式碼`Database`會定義一個屬性, `NoteDatabase`它會建立新的實例作為 singleton, 傳入資料庫的檔案名`NoteDatabase`做為此函式的引數。 將資料庫公開為唯一資料庫的優點為，所建立的單一資料庫連線會在應用程式執行時保持開啟，因此可避免每次執行資料庫作業時開啟和關閉資料庫檔案的費用。
 
     按下 **CTRL+S** 以將變更儲存到 **App.xaml.cs**，然後關閉檔案。
 
     > [!WARNING]
-    > 嘗試建置應用程式現在將會產生將在後續步驟中修正的錯誤。
+    > 此時嘗試建立應用程式將會導致在後續步驟中修正的錯誤。
 
-9. 在 [**方案總管] 中**，請在**備忘稿**專案中，按兩下**NotesPage.xaml.cs**加以開啟。 然後取代`OnAppearing`為下列程式碼的方法：
+9. 在**方案總管**的**Notes**專案中, 按兩下 [ **NotesPage.xaml.cs** ] 將其開啟。 然後, 將`OnAppearing`方法取代為下列程式碼:
 
     ```csharp
     protected override async void OnAppearing()
@@ -214,14 +214,14 @@ ms.locfileid: "67832122"
     }
     ```    
 
-    此程式碼會填入[ `ListView` ](xref:Xamarin.Forms.ListView)與儲存在資料庫中的任何附註。
+    此程式碼會[`ListView`](xref:Xamarin.Forms.ListView)將儲存在資料庫中的任何附注填入其中。
 
-    變更儲存到**NotesPage.xaml.cs**藉由按下**CTRL + S**，並關閉檔案。
+    按下**CTRL + S**, 將變更儲存到**NotesPage.xaml.cs** , 然後關閉檔案。
 
     > [!WARNING]
-    > 嘗試建置應用程式現在將會產生將在後續步驟中修正的錯誤。
+    > 此時嘗試建立應用程式將會導致在後續步驟中修正的錯誤。
 
-10. 在 [**方案總管] 中**，按兩下**NoteEntryPage.xaml.cs**加以開啟。 然後取代`OnSaveButtonClicked`和`OnDeleteButtonClicked`為下列程式碼的方法：
+10. 在**方案總管**中, 按兩下**NoteEntryPage.xaml.cs**以將其開啟。 然後使用下列`OnSaveButtonClicked`程式`OnDeleteButtonClicked`代碼來取代和方法:
 
       ```csharp
       async void OnSaveButtonClicked(object sender, EventArgs e)
@@ -240,30 +240,30 @@ ms.locfileid: "67832122"
       }
       ```    
 
-      `NoteEntryPage`儲存`Note`執行個體，代表單一附註，這[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)的頁面。 當`OnSaveButtonClicked`事件處理常式會執行，`Note`執行個體儲存至資料庫和應用程式向後巡覽至上一頁。 當`OnDeleteButtonClicked`事件處理常式會執行，`Note`從資料庫刪除執行個體和應用程式向後巡覽至上一頁。
+      會在頁面`Note`的中[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) ,儲存代表單一便箋的實例。`NoteEntryPage` `Note`當執行`OnSaveButtonClicked`事件處理常式時, 實例會儲存至資料庫, 而應用程式會流覽回到上一頁。 `Note`當執行`OnDeleteButtonClicked`事件處理常式時, 實例會從資料庫中刪除, 而應用程式會流覽回到前一頁。
 
-      變更儲存到**NoteEntryPage.xaml.cs**藉由按下**CTRL + S**，並關閉檔案。
+      按下**CTRL + S**, 將變更儲存到**NoteEntryPage.xaml.cs** , 然後關閉檔案。
 
-11. 建置並執行專案，每個平台。 如需詳細資訊，請參閱 <<c0> [ 建置快速入門](single-page.md#building-the-quickstart)。
+11. 在每個平臺上建立並執行專案。 如需詳細資訊, 請參閱[建立快速入門](single-page.md#building-the-quickstart)。
 
-    在上**NotesPage**按下 **+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 儲存記事應用程式將會瀏覽回到之後**NotesPage**。
+    在上**NotesPage**按下 **+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 儲存便箋之後, 應用程式會流覽回**NotesPage**。
 
-    輸入資訊，以觀察應用程式行為的不同長度的數的字。
+    輸入一些不同長度的附注, 以觀察應用程式行為。
 
 ::: zone-end
 ::: zone pivot="macos"
 
 ## <a name="update-the-app-with-visual-studio-for-mac"></a>使用 Visual Studio for Mac 更新應用程式
 
-1. 啟動 Visual Studio for Mac，並開啟備忘稿專案。
+1. 啟動 Visual Studio for Mac 並開啟 [Notes] 專案。
 
-2. 在  **Solution Pad**，選取**備忘稿**專案，以滑鼠右鍵按一下並選取**新增 > 新增 NuGet 套件...** :
+2. 在 [ **Solution Pad**中, 選取 [ **Notes** ] 專案, 按一下滑鼠右鍵, 然後選取 [**新增] > 新增 NuGet 套件 ...** ]:
 
     ![](database-images/vsmac/add-nuget-packages.png "新增 NuGet 套件")    
 
 3. 在 [新增套件]  視窗中，搜尋 **sqlite-net-pcl** NuGet 套件並加以選取，然後按一下 [新增套件]  按鈕，將其新增至專案：
 
-    ![](database-images/vsmac/add-package.png "新增套件")
+    ![](database-images/vsmac/add-package.png "新增封裝")
 
     > [!NOTE]
     > 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
@@ -275,7 +275,7 @@ ms.locfileid: "67832122"
 
     此套件會用來將資料庫作業併入應用程式。
 
-4. 在  **Solution Pad**，請在**備忘稿**專案中，開啟**Note.cs**中**模型**資料夾，並將現有的程式碼，以下列程式碼：
+4. 在**Solution Pad**的**Notes**專案中, 開啟 [**模型**] 資料夾中的**Note.cs** , 並以下列程式碼取代現有的程式碼:
 
     ```csharp
     using System;
@@ -293,18 +293,18 @@ ms.locfileid: "67832122"
     }
     ```
 
-    這個類別會定義`Note`會儲存應用程式中的每一個筆記相關資料的模型。 `ID`屬性標記著`PrimaryKey`並`AutoIncrement`屬性，以確保每個`Note`SQLite.NET 資料庫中的執行個體都會有 SQLite.NET 所提供的唯一識別碼。
+    這個類別會定義`Note`一個模型, 以儲存應用程式中每個便箋的相關資料。 屬性會以`PrimaryKey`和屬性標示`AutoIncrement` , 以確保 SQLite.NET 資料庫`Note`中的每個實例都具有 SQLite.NET 所提供的唯一識別碼。 `ID`
 
-    變更儲存到**Note.cs**選擇**檔案 > 儲存**(或按下 **&#8984; + S**)，然後關閉檔案。
+    選擇 [檔案] **> [儲存**] (或按 **&#8984; + S**), 將變更儲存到**Note.cs** , 然後關閉檔案。
 
     > [!WARNING]
-    > 嘗試建置應用程式現在將會產生將在後續步驟中修正的錯誤。
+    > 此時嘗試建立應用程式將會導致在後續步驟中修正的錯誤。
 
-5. 在  **Solution Pad**，加入新的資料夾，名為**資料**來**備忘稿**專案。
+5. 在  **Solution Pad**中, 將名為**Data**的新資料夾新增至**Notes**專案。
 
-6. 在  **Solution Pad**，請在**備忘稿**專案，加入新的類別，名為**NoteDatabase**來**資料**資料夾。
+6. 在**Solution Pad**的**Notes**專案中, 將名為**NoteDatabase**的新類別新增至**Data**資料夾。
 
-7. 在  **NoteDatabase.cs**，以下列程式碼取代現有的程式碼：
+7. 在**NoteDatabase.cs**中, 將現有的程式碼取代為下列程式碼:
 
     ```csharp
     using System.Collections.Generic;
@@ -356,14 +356,14 @@ ms.locfileid: "67832122"
     }
     ```
 
-    這個類別包含程式碼，以建立資料庫、 資料讀取、 寫入資料，和刪除資料。 此程式碼會使用非同步 SQLite.Net API，以將資料庫作業移至背景執行緒。 此外，`NoteDatabase` 建構函式會採用資料庫檔案的路徑作為引數。 此路徑會由`App`下一個步驟中的類別。
+    此類別包含用來建立資料庫、讀取資料、將資料寫入其中, 以及刪除資料的程式碼。 此程式碼會使用非同步 SQLite.Net API，以將資料庫作業移至背景執行緒。 此外，`NoteDatabase` 建構函式會採用資料庫檔案的路徑作為引數。 在下一個步驟中, `App`類別會提供此路徑。
 
-    變更儲存到**NoteDatabase.cs**選擇**檔案 > 儲存**(或按下 **&#8984; + S**)，然後關閉檔案。
+    選擇 [檔案] **> [儲存**] (或按 **&#8984; + S**), 將變更儲存到**NoteDatabase.cs** , 然後關閉檔案。
 
     > [!WARNING]
-    > 嘗試建置應用程式現在將會產生將在後續步驟中修正的錯誤。
+    > 此時嘗試建立應用程式將會導致在後續步驟中修正的錯誤。
 
-8. 在  **Solution Pad**，請在**備忘稿**專案中，按兩下**App.xaml.cs**加以開啟。 然後以下列程式碼取代現有的程式碼：
+8. 在  **Solution Pad**的**Notes**專案中, 按兩下  **App.xaml.cs**  將其開啟。 然後將現有的程式碼取代為下列程式碼:
 
     ```csharp
     using System;
@@ -413,14 +413,14 @@ ms.locfileid: "67832122"
     }
     ```
 
-    此程式碼定義`Database`建立新的屬性`NoteDatabase`為單一性，做為引數傳入的資料庫檔名的執行個體`NoteDatabase`建構函式。 將資料庫公開為唯一資料庫的優點為，所建立的單一資料庫連線會在應用程式執行時保持開啟，因此可避免每次執行資料庫作業時開啟和關閉資料庫檔案的費用。
+    這段程式碼`Database`會定義一個屬性, `NoteDatabase`它會建立新的實例作為 singleton, 傳入資料庫的檔案名`NoteDatabase`做為此函式的引數。 將資料庫公開為唯一資料庫的優點為，所建立的單一資料庫連線會在應用程式執行時保持開啟，因此可避免每次執行資料庫作業時開啟和關閉資料庫檔案的費用。
 
     選擇 [檔案] > [儲存]  (或按下 **&#8984; + S**) 以將變更儲存到 **App.xaml.cs**，然後關閉檔案。
 
     > [!WARNING]
-    > 嘗試建置應用程式現在將會產生將在後續步驟中修正的錯誤。
+    > 此時嘗試建立應用程式將會導致在後續步驟中修正的錯誤。
 
-9. 在  **Solution Pad**，請在**備忘稿**專案中，按兩下**NotesPage.xaml.cs**加以開啟。 然後取代`OnAppearing`為下列程式碼的方法：
+9. 在  **Solution Pad**的**Notes**專案中, 按兩下  **NotesPage.xaml.cs**  將其開啟。 然後, 將`OnAppearing`方法取代為下列程式碼:
 
     ```csharp
     protected override async void OnAppearing()
@@ -431,14 +431,14 @@ ms.locfileid: "67832122"
     }
     ```    
 
-    此程式碼會填入[ `ListView` ](xref:Xamarin.Forms.ListView)與儲存在資料庫中的任何附註。
+    此程式碼會[`ListView`](xref:Xamarin.Forms.ListView)將儲存在資料庫中的任何附注填入其中。
 
-    變更儲存到**NotesPage.xaml.cs**選擇**檔案 > 儲存**(或按下 **&#8984; + S**)，然後關閉檔案。
+    選擇 [檔案] **> [儲存**] (或按 **&#8984; + S**), 將變更儲存到**NotesPage.xaml.cs** , 然後關閉檔案。
 
     > [!WARNING]
-    > 嘗試建置應用程式現在將會產生將在後續步驟中修正的錯誤。
+    > 此時嘗試建立應用程式將會導致在後續步驟中修正的錯誤。
 
-10. 在  **Solution Pad**，按兩下**NoteEntryPage.xaml.cs**加以開啟。 然後取代`OnSaveButtonClicked`和`OnDeleteButtonClicked`為下列程式碼的方法：
+10. 在  **Solution Pad**中, 按兩下**NoteEntryPage.xaml.cs**以將其開啟。 然後使用下列`OnSaveButtonClicked`程式`OnDeleteButtonClicked`代碼來取代和方法:
 
       ```csharp
       async void OnSaveButtonClicked(object sender, EventArgs e)
@@ -457,31 +457,31 @@ ms.locfileid: "67832122"
       }
       ```    
 
-      `NoteEntryPage`儲存`Note`執行個體，代表單一附註，這[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)的頁面。 當`OnSaveButtonClicked`事件處理常式會執行，`Note`執行個體儲存至資料庫和應用程式向後巡覽至上一頁。 當`OnDeleteButtonClicked`事件處理常式會執行，`Note`從資料庫刪除執行個體和應用程式向後巡覽至上一頁。
+      會在頁面`Note`的中[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) ,儲存代表單一便箋的實例。`NoteEntryPage` `Note`當執行`OnSaveButtonClicked`事件處理常式時, 實例會儲存至資料庫, 而應用程式會流覽回到上一頁。 `Note`當執行`OnDeleteButtonClicked`事件處理常式時, 實例會從資料庫中刪除, 而應用程式會流覽回到前一頁。
 
-      變更儲存到**NoteEntryPage.xaml.cs**選擇**檔案 > 儲存**(或按下 **&#8984; + S**)，然後關閉檔案。
+      選擇 [檔案] **> [儲存**] (或按 **&#8984; + S**), 將變更儲存到**NoteEntryPage.xaml.cs** , 然後關閉檔案。
 
-11. 建置並執行專案，每個平台。 如需詳細資訊，請參閱 <<c0> [ 建置快速入門](single-page.md#building-the-quickstart)。
+11. 在每個平臺上建立並執行專案。 如需詳細資訊, 請參閱[建立快速入門](single-page.md#building-the-quickstart)。
 
-    在上**NotesPage**按下 **+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 儲存記事應用程式將會瀏覽回到之後**NotesPage**。
+    在上**NotesPage**按下 **+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 儲存便箋之後, 應用程式會流覽回**NotesPage**。
 
-    輸入資訊，以觀察應用程式行為的不同長度的數的字。
+    輸入一些不同長度的附注, 以觀察應用程式行為。
 
 ::: zone-end
 
 ## <a name="next-steps"></a>後續步驟
 
-在此快速入門中，您已了解如何：
+在本快速入門中, 您已瞭解如何:
 
-- 將 NuGet 套件新增至專案中使用 NuGet 套件管理員。
-- SQLite.NET 資料庫中的本機儲存資料。
+- 使用 NuGet 套件管理員, 將 NuGet 套件新增至專案。
+- 將資料儲存在本機 SQLite.NET 資料庫中。
 
-若要設定應用程式使用 XAML 樣式的樣式，繼續下一個快速入門。
+若要使用 XAML 樣式將應用程式設為樣式, 請繼續進行下一個快速入門。
 
 > [!div class="nextstepaction"]
 > [下一個](styling.md)
 
 ## <a name="related-links"></a>相關連結
 
-- [Notes (範例)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
-- [Xamarin.Forms 快速入門深入探討](deepdive.md)
+- [Notes (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
+- [Xamarin. 表單快速入門深入探討](deepdive.md)

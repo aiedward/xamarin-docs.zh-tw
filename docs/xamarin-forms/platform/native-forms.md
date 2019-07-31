@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/03/2019
-ms.openlocfilehash: dad68f5daaf3a4c85f130ee219472b867163fd71
-ms.sourcegitcommit: 9a2a21974d35353c3765eb683ef2fd7161c1d94a
+ms.openlocfilehash: 88483f151852e882d6bac42a2d0c3fd0857060fb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68329990"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653241"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>在 Xamarin 原生專案中的 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Native2Forms/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)
 
 Xamarin.Forms 應用程式通常包含一或多個頁面衍生自[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)，，而這些頁面時，可共用所有平台上，.NET Standard 程式庫專案或共用專案中。 不過，原生格式可讓`ContentPage`-衍生直接加入原生的 Xamarin.iOS、 Xamarin.Android 和 UWP 應用程式的頁面。 相較於具有原生專案取用`ContentPage`-衍生的頁面，從.NET Standard 程式庫專案或共用專案中，直接將頁面加入原生專案中的優點是頁面可以使用原生檢視來延伸。 可以再使用 XAML 中名為原生檢視`x:Name`和參考從程式碼後置。 如需有關原生檢視的詳細資訊，請參閱[原生檢視](~/xamarin-forms/platform/native-views/index.md)。
 
@@ -372,5 +372,5 @@ void OnNavigated(object sender, NavigationEventArgs e)
 
 ## <a name="related-links"></a>相關連結
 
-- [NativeForms （範例）](https://developer.xamarin.com/samples/xamarin-forms/Native2Forms/)
+- [NativeForms （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)
 - [原生檢視](~/xamarin-forms/platform/native-views/index.md)

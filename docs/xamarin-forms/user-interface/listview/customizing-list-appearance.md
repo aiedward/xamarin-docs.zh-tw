@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: 270191890e8747ecad7d250fb0fe18ce253d3823
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 49bb3f901f2b1f8ed4ae26650cb0509aabfd2369
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61169817"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647622"
 ---
 # <a name="customizing-listview-appearance"></a>自訂 ListView 的外觀
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
 
-[`ListView`](xref:Xamarin.Forms.ListView) 能夠控制的清單中，除了[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)每個資料列在清單中的執行個體。
+[`ListView`](xref:Xamarin.Forms.ListView)除了清單中每個資料列的[`ViewCell`](xref:Xamarin.Forms.ViewCell)實例之外, 還能夠控制清單的呈現方式。
 
 <a name="Grouping" />
 
@@ -78,7 +78,7 @@ static PageTypeGroup()
 }
 ```
 
-在上述程式碼中，我們也可以呼叫`Add`上的項目`groups`，這是類型的執行個體`PageTypeGroup`。 這可能是因為`PageTypeGroup`繼承自`List<PageModel>`。 這是清單的先前所述的清單模式的範例。
+在上述程式碼中, 我們也可以`Add`呼叫的`groups`元素, 這是類型`PageTypeGroup`的實例。 這可能是因為`PageTypeGroup`繼承自`List<PageModel>`。 這是清單的先前所述的清單模式的範例。
 
 以下是 XAML 來顯示群組的清單：
 
@@ -203,11 +203,11 @@ ListView HeaderList = new ListView() {
 
 ## <a name="scrollbar-visibility"></a>捲軸可見度
 
-[`ListView`](xref:Xamarin.Forms.ListView) 已`HorizontalScrollBarVisibility`並`VerticalScrollBarVisibility`屬性，取得或設定[ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility)值，表示水平的或垂直捲軸為可見時。 這兩個屬性可以設定為下列值：
+[`ListView`](xref:Xamarin.Forms.ListView)具有`HorizontalScrollBarVisibility`和`VerticalScrollBarVisibility`屬性[,`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility)可取得或設定表示水準或垂直捲動條何時可見的值。 這兩個屬性都可以設定為下列值:
 
-- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) 表示捲軸列預設平台，且與的預設值`HorizontalScrollBarVisibility`和`VerticalScrollBarVisibility`屬性。
-- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) 表示捲軸將會顯示，即使將內容放入檢視。
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) 指出，捲軸列將不會顯示，即使內容不放在檢視中。
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)表示平臺的預設捲軸行為, 而是`HorizontalScrollBarVisibility`和`VerticalScrollBarVisibility`屬性的預設值。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)表示捲軸會顯示出來, 即使內容適合在視圖中也一樣。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)表示即使內容無法放在視圖中, 也不會顯示捲軸。
 
 <a name="Row_Separators" />
 
@@ -219,7 +219,7 @@ ListView HeaderList = new ListView() {
 
 預設的可見性：
 
-C#: 
+C#:
 
 ```csharp
 SepratorDemoListView.SeparatorVisibility = SeparatorVisibility.Default;
@@ -235,7 +235,7 @@ XAML:
 
 None:
 
-C#: 
+C#:
 
 ```csharp
 SepratorDemoListView.SeparatorVisibility = SeparatorVisibility.None;
@@ -251,7 +251,7 @@ XAML:
 
 您也可以設定透過分隔線的色彩`SeparatorColor`屬性：
 
-C#: 
+C#:
 
 ```csharp
 SepratorDemoListView.SeparatorColor = Color.Green;
@@ -280,7 +280,7 @@ XAML:
 
 ### <a name="custom-fixed-row-height"></a>自訂的固定資料列高度
 
-C#: 
+C#:
 
 ```csharp
 RowHeightDemoListView.RowHeight = 100;
@@ -301,7 +301,7 @@ XAML:
 請注意，資料列高度也不需要手動設定一次`HasUnevenRows`已設為`true`，因為由 Xamarin.Forms 會自動計算高度。
 
 
-C#: 
+C#:
 
 ```csharp
 RowHeightDemoListView.HasUnevenRows = true;
@@ -342,8 +342,8 @@ void OnImageTapped (object sender, EventArgs args)
 
 ## <a name="related-links"></a>相關連結
 
-- [群組 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
-- [自訂轉譯器檢視 （範例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
-- [動態調整大小的資料列 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/DynamicUnevenListCells/)
+- [群組 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+- [自訂轉譯器檢視 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
+- [動態調整大小的資料列 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-dynamicunevenlistcells)
 - [1.4 的版本資訊](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
 - [1.3 的版本資訊](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

@@ -7,16 +7,16 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: ee1df713315559c076fbfaed6f5a34057940ff36
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e0af5188dd34e76b419b4cd5bf8d604fb059b7d3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61083069"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642751"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp 路徑效果
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索各種路徑效果可讓用於繪製，並填入的路徑_
 
@@ -418,13 +418,13 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 `y = a · cosh(x / a)`
 
-*Cosh*是雙曲線餘弦函數。 針對*x*等於 0， *cosh*為零並*y*等於。 這是 catenary 的中心。 像是*餘弦函數*函式*cosh*要*甚至*，這表示*cosh(–x)* 等於*cosh(x)*，並增加正數或負數的引數的值增加。 這些值描述構成 catenary 側邊的曲線。
+*Cosh*是雙曲線餘弦函數。 針對*x*等於 0， *cosh*為零並*y*等於  。 這是 catenary 的中心。 像是*餘弦函數*函式*cosh*要*甚至*，這表示*cosh(–x)* 等於*cosh(x)* ，並增加正數或負數的引數的值增加。 這些值描述構成 catenary 側邊的曲線。
 
-尋找適當的值成維度的手機上的頁面 catenary 不是直接的計算。 如果*w*並*h*是最佳的值是矩形的高度與寬度滿足下列方程式：
+尋找適當的值  成維度的手機上的頁面 catenary 不是直接的計算。 如果*w*並*h*是最佳的值是矩形的高度與寬度  滿足下列方程式：
 
 `cosh(w / 2 / a) = 1 + h / a`
 
-中的下列方法[ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)類別會併入該等號比較，藉由參考兩個運算式的左側和右側為等號`left`和`right`。 值較小，`left`大於`right`; 對於大型值，`left`是小於`right`。 `while`迴圈中的最佳值縮減:
+中的下列方法[ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)類別會併入該等號比較，藉由參考兩個運算式的左側和右側為等號`left`和`right`。 值較小  ，`left`大於`right`; 對於大型值  ，`left`是小於`right`。 `while`迴圈中的最佳值縮減  :
 
 ```csharp
 float FindOptimumA(float width, float height)
@@ -501,7 +501,7 @@ public class LinkedChainPage : ContentPage
 }
 ```
 
-主要工作`PaintSurface`處理常式是建立 catenary 本身的路徑。 如果之後決定最佳並將它儲存在`optA`變數時，它也需要計算從視窗頂端的位移。 然後，它可以累積一堆`SKPoint`catenary，值為一個路徑，此功能，以及繪製的路徑，以先前建立`SKPaint`物件：
+主要工作`PaintSurface`處理常式是建立 catenary 本身的路徑。 如果之後決定最佳  並將它儲存在`optA`變數時，它也需要計算從視窗頂端的位移。 然後，它可以累積一堆`SKPoint`catenary，值為一個路徑，此功能，以及繪製的路徑，以先前建立`SKPaint`物件：
 
 ```csharp
 public class LinkedChainPage : ContentPage
@@ -794,13 +794,13 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-如果您仔細看一下結果，您會看到紅色和藍色的規劃線條不精確地限制圓角矩形。 （這是很顯然是基礎 Skia 程式碼的特性）。如果這是令人滿意，斜對角影線格線，以綠色顯示的替代方法：圓角的矩形當做裁剪路徑，並規劃線條會繪製整個頁面上。
+如果您仔細看一下結果，您會看到紅色和藍色的規劃線條不精確地限制圓角矩形。 （這是很顯然是基礎 Skia 程式碼的特性）。如果不滿意, 則會以綠色顯示對角影線線的替代方法:圓角矩形會當做裁剪路徑使用, 而影線線條則會在整個頁面上繪製。
 
 `PaintSurface`處理常式的呼叫，以便您可以看到紅色和藍色的規劃線條與差異，只是繪製圓角的矩形，結束：
 
 [![](effects-images/hatchfill-small.png "規劃圖樣填滿頁面的三個螢幕擷取畫面")](effects-images/hatchfill-large.png#lightbox "規劃圖樣填滿頁面的三個螢幕擷取畫面")
 
-Android 的畫面真的看起來不像這樣：螢幕擷取畫面的縮放比例造成的精簡型的紅線和細的空間，以彙總成看似更廣的紅線和更多的空間。
+Android 畫面看起來不像這樣:螢幕擷取畫面的縮放會導致精簡的紅線和精簡空間合併成看似較寬的紅線和更寬的空間。
 
 ## <a name="filling-with-a-path"></a>路徑填滿
 
@@ -1086,7 +1086,7 @@ public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resS
 
 只需要前兩個引數。 方法會存取所參考的路徑`src`引數，修改路徑資料中的筆劃屬性為基礎`SKPaint`物件 (包括`PathEffect`屬性)，然後將結果載入`dst`路徑。 `resScale`參數可讓您可建立較小的目的地路徑的有效位數減少和`cullRect`引數可以排除外部矩形的輪廓。
 
-一個基本的用法，此方法不會不包含路徑效果：如果`SKPaint`物件都有其`Style`屬性設定為`SKPaintStyle.Stroke`，並*不*有其`PathEffect`設定，然後`GetFillPath`建立路徑，表示*大綱*的來源路徑，如果有 [小畫家] 屬性將描邊。
+此方法的其中一個基本用法並不包含路徑效果:`Style` `SKPaintStyle.Stroke` `PathEffect` `GetFillPath`如果物件將其屬性設定為, 而且沒有其設定, 則會建立代表來源路徑*外框*的路徑, 如同已由`SKPaint`繪製屬性。
 
 例如，如果`src`路徑是簡單的圓形的半徑 500，而`SKPaint`物件會指定筆劃寬度為 100，則`dst`路徑會變成兩個的同心圓，其中一個半徑為 450，而另一個半徑為 550。 方法會呼叫`GetFillPath`因為填入此`dst`路徑等同於繪製`src`路徑。 但您也可以繪製`dst`查看路徑外框輪廓的路徑。
 
@@ -1418,4 +1418,4 @@ public class DashedHatchLinesPage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

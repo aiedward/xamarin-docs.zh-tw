@@ -1,42 +1,42 @@
 ---
-title: 應用程式內購買在 Xamarin.iOS 中
-description: 本文件說明如何成功銷售數位產品和服務使用 StoreKit Api。 它會連結到討論組態、 可取用產品、 非取用產品、 交易、 訂用帳戶，以及更多的指南。
+title: Xamarin 中的應用程式內購買
+description: 本檔說明如何使用 StoreKit Api 銷售數位產品和服務。 它會連結到討論設定、取用產品、非可耗用產品、交易、訂閱等等的指南。
 ms.prod: xamarin
 ms.assetid: B41929D8-47E4-466D-1F09-6CC3C09C83B2
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: b4165f9e6c3088a41d6bd746b1912a64570c553a
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 2320aa9a611a44d654bcbae18bb2664797054e50
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832561"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647913"
 ---
-# <a name="in-app-purchasing-in-xamarinios"></a>應用程式內購買在 Xamarin.iOS 中
+# <a name="in-app-purchasing-in-xamarinios"></a>Xamarin 中的應用程式內購買
 
-iOS 應用程式可以銷售數位產品或服務使用 StoreKit – 一組以進行使用者透過其 Apple id。 與財務交易 Apple 伺服器進行通訊的 iOS 所提供的 Api StoreKit Api 會擷取產品資訊和進行交易與 – 沒有任何使用者介面元件。 實作應用程式內購買的應用程式必須建置自己的使用者介面，並追蹤自訂程式碼，以提供必要的產品或服務給使用者的購買項目。
+iOS 應用程式可以使用 StoreKit 來銷售數位產品或服務– iOS 所提供的一組 Api, 可與 Apple 的伺服器通訊, 透過其 Apple ID 與使用者進行財務交易。 StoreKit Api 主要是與抓取產品資訊並進行交易相關, 而不是使用者介面元件。 執行應用程式內購買的應用程式必須建立自己的使用者介面, 並以自訂程式碼追蹤購買的專案, 為使用者提供必要的產品或服務。
 
-提供應用程式內購買功能，需要幾個步驟：
+提供應用程式內購買功能需要幾個步驟:
 
--  **設定您的應用程式**– 應用程式的佈建設定檔必須設定正確。
--  **建立產品**– 在 iTunes Connect 入口網站中，則必須建立產品描述和價格。
--  **實作 StoreKit** – StoreKit API 必須根據銷售的產品類型實作。
--  **建置使用者介面及本身之產品**– 產品必須實作，包括追蹤每一次購買和備份/還原它們適當的機制。
--  **監視銷售和接收資金**– 使用 iTunes Connect 所提供的資訊來監視銷售趨勢，並追蹤您的收益。
+-  設定**應用**程式–應用程式的布建設定檔必須正確設定。
+-  **建立產品**–您必須在 iTunes Connect 入口網站中建立產品描述和價格。
+-  **執行 StoreKit** – StoreKit API 必須根據所銷售的產品類型來執行。
+-  **建立使用者介面和產品本身**–必須實行產品, 包括追蹤每項購買和備份/還原的機制 (如果適用的話)。
+-  **監視銷售和接收資金**–使用 iTunes Connect 提供的資訊來監視銷售趨勢並追蹤您的收入。
 
-本文件說明如何完成上述所有步驟，提供應用程式內購買使用 Xamarin.iOS。
+本檔說明如何完成所有這些步驟, 以使用 Xamarin 來提供應用程式內購買。
 
 ## <a name="requirements"></a>需求
 
-若要支援應用程式內購買中，您必須使用 Xamarin.iOS 5.0 或更新版本與 Xcode 7 和更新版本。
+若要支援應用程式內購買, 您必須使用包含 Xcode 7 和更新版本的 Xamarin. iOS 5.0 或更新版本。
 
 ## <a name="contents"></a>內容
 
 * [App 內購買基本概念和設定](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
 
-* [StoreKit 概觀與擷取產品資訊](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
+* [StoreKit 總覽並獲取產品資訊](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
 
 * [購買可取用產品](~/ios/platform/in-app-purchasing/purchasing-consumable-products.md)
 
@@ -48,25 +48,25 @@ iOS 應用程式可以銷售數位產品或服務使用 StoreKit – 一組以�
 
 ## <a name="summary"></a>總結
 
-這篇文章已導入的應用程式內購買的概念，說明如何設定您的應用程式，以利用它，並使用 Xamarin.iOS 範例。 它涵蓋：
+本文已介紹應用程式內購買的概念, 並概述如何設定您的應用程式, 以利用 Xamarin. iOS 來使用它和呈現的範例。 其中涵蓋:
 
--  **iOS 佈建入口網站**– 指導方針，以啟用應用程式內購買的功能。
--  **iTunes Connect** -設定要在您的應用程式內銷售的產品。
--  **儲存套件**– 說明用來建置應用程式內購買功能的類別。
--  **您購買的應用程式程式碼撰寫**– 範例，示範如何在 Xamarin.iOS 應用程式中建置應用程式內購買。
--  **報告**– 可透過 iTunes Connect 的統計資料的概觀。
+-  **iOS 布建入口網站**–啟用應用程式內購買功能的指導方針。
+-  **ITunes Connect** –設定要在您的應用程式中銷售的產品。
+-  **商店套件**–用來建立應用程式內購買功能之類別的說明。
+-  **編碼您的應用程式以進行購買**–範例說明如何將應用程式內建購買至 Xamarin iOS 應用程式。
+-  **報告**–概述透過 iTunes Connect 提供的統計資料。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [InAppPurchaseSample](https://developer.xamarin.com/samples/StoreKit/)
-- [在應用程式內購買程式設計指南](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Introduction.html)
+- [InAppPurchaseSample](https://docs.microsoft.com/en-us/samples/xamarin/ios-samples/storekit/)
+- [在應用程式購買程式設計指南中](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Introduction.html)
 - [iTunes Connect 開發人員指南](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/iTunesConnect_Guide.pdf)
-- [儲存套件的 Framework 參考](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/StoreKit_Collection/StoreKit_Collection.pdf)
-- [問與答的應用程式內購買的產品識別碼](https://developer.apple.com/library/ios/#qa/qa1329/_index.html)
-- [在應用程式內購買的技術提示](https://developer.apple.com/library/ios/#technotes/tn2259/_index.html)
-- [您的第一個應用程式市集提交](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
-- [應用程式市集資源中心](https://developer.apple.com/appstore/index.html)
+- [Store 套件架構參考](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/StoreKit_Collection/StoreKit_Collection.pdf)
+- [應用程式內購買產品識別碼問 &](https://developer.apple.com/library/ios/#qa/qa1329/_index.html)
+- [應用程式內購買技術提示](https://developer.apple.com/library/ios/#technotes/tn2259/_index.html)
+- [您的第一個 App Store 提交](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
+- [App Store 資源中心](https://developer.apple.com/appstore/index.html)
 - [App Store 提交提示](https://developer.apple.com/appstore/resources/submission/tips.html)
 - [App Store 審查指導方針](https://developer.apple.com/appstore/resources/approval/guidelines.html)
 - [管理您的應用程式](https://developer.apple.com/appstore/resources/managing/index.html)

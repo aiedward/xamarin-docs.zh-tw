@@ -7,16 +7,16 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/01/2017
-ms.openlocfilehash: 366a6e9585817c5a47ba5bec14fb2f238ab23a6b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d38391f3fd0f02dda8bfd92fce650c557bda0153
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61022000"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645219"
 ---
 # <a name="paths-and-text-in-skiasharp"></a>路徑及 SkiaSharp 中的文字
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索路徑及文字的交集_
 
@@ -30,7 +30,7 @@ _探索路徑及文字的交集_
 
 在上一篇文章中上[**路徑效果**](effects.md)，您已看到如何[ `GetFillPath` ](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,SkiaSharp.SKRect,System.Single))方法`SKPaint`可以取得繪製路徑的外框。 您也可以使用這個方法，以衍生自字元外框輪廓的路徑。
 
-最後，本文會示範另一個的路徑及文字的交集：[ `DrawTextOnPath` ](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint))方法`SKCanvas`可讓您顯示的文字字串，以便基準線的文字後面的彎曲的路徑。
+最後, 本文將示範路徑和文字的另一個交集:[`DrawTextOnPath`](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint)) 的`SKCanvas`方法可讓您顯示文字字串, 讓文字的基準遵循彎曲的路徑。
 
 ## <a name="text-to-path-conversion"></a>路徑轉換成文字
 
@@ -128,7 +128,7 @@ public class ClippingTextPage : ContentPage
 
 [![](text-paths-images/textpatheffect-small.png "文字路徑效果頁面的三個螢幕擷取畫面")](text-paths-images/textpatheffect-large.png#lightbox "文字路徑效果頁面的三個螢幕擷取畫面")
 
-太多的工作[ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs)類別中的欄位和建構函式，就會發生。 這兩個`SKPaint`物件定義為欄位用於兩個不同的用途：第一個 (名為`textPathPaint`) 用來將轉換與連字號`TextSize`的 50%到 1d 路徑效果的路徑。 第二個 (`textPaint`) 用來顯示與該路徑效果連字號的較大版本。 基於這個理由，`Style`物件設定為此第二個小畫家`Stroke`，但`StrokeWidth`因為使用 1d 路徑效果時，不需要該屬性未設定屬性：
+太多的工作[ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs)類別中的欄位和建構函式，就會發生。 定義為`SKPaint`欄位的兩個物件會用於兩個不同的用途:第一個 (名`textPathPaint`為) 是用來將`TextSize`具有50的連字號轉換成1d 路徑效果的路徑。 第二個 (`textPaint`) 用來顯示與該路徑效果連字號的較大版本。 基於這個理由，`Style`物件設定為此第二個小畫家`Stroke`，但`StrokeWidth`因為使用 1d 路徑效果時，不需要該屬性未設定屬性：
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -285,7 +285,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 public Void DrawTextOnPath (String text, SKPath path, Single hOffset, Single vOffset, SKPaint paint)
 ```
 
-第一個引數中指定的文字對執行做為第二個引數所指定的路徑。 您可以開始使用做為路徑開頭的位移文字`hOffset`引數。 正常路徑 form 基準線的文字：文字包含上格其中一端的路徑，而文字的伸尾部分其他。 但您可以位移之路徑的文字基準`vOffset`引數。
+第一個引數中指定的文字對執行做為第二個引數所指定的路徑。 您可以開始使用做為路徑開頭的位移文字`hOffset`引數。 通常路徑會形成文字的基準:文字 ascenders 位於路徑的一端, 而文字下行則在另一端。 但您可以位移之路徑的文字基準`vOffset`引數。
 
 這個方法沒有任何設備可提供設定的指引`TextSize`屬性`SKPaint`，使大小完全執行路徑的開頭到結尾的文字。 有時候您找出您自己的文字大小。 有時候，您必須使用路徑測量函式中的下一篇文章上所述[**路徑資訊和列舉型別**](information.md)。
 
@@ -326,9 +326,9 @@ public class CircularTextPage : ContentPage
 
 [![](text-paths-images/circulartext-small.png "循環的文字頁面的三個螢幕擷取畫面")](text-paths-images/circulartext-large.png#lightbox "循環的文字頁面的三個螢幕擷取畫面")
 
-選擇文字本身也是有點循環：Word"circle"是兩個句子的主旨和前置詞片語的物件。
+文字本身也已選擇稍微迴圈:「圓形」一詞同時為句子的主旨和介係詞片語的物件。
 
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

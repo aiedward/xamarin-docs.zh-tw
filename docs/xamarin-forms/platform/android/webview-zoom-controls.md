@@ -1,24 +1,24 @@
 ---
-title: 在 Android 上的 WebView 縮放
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用 Android 平台特定，可讓 web 檢視的 顯示比例。
+title: Android 上的 Web 視圖縮放
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 Android 平臺特定的來啟用 Web 工作的顯示方式。
 ms.prod: xamarin
 ms.assetid: DC1A3762-6A42-4298-929C-445F416C3E60
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: 0e180ca5019bd4e5d1351cfb2f7a8c28ade2afe2
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 2142882add91d613263d11fa4c1e6d7ad142c7c7
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971640"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655987"
 ---
-# <a name="webview-zoom-on-android"></a>在 Android 上的 WebView 縮放
+# <a name="webview-zoom-on-android"></a>Android 上的 Web 視圖縮放
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 平台特定啟用縮小-放大和縮放控制項上[ `WebView` ](xref:Xamarin.Forms.WebView)。 它由在 XAML 中設定`WebView.EnableZoomControls`並`WebView.DisplayZoomControls`可繫結的屬性，以`boolean`值：
+此 Android 平臺特定可在上[`WebView`](xref:Xamarin.Forms.WebView)啟用縮小縮放和縮放控制項。 它會在 XAML 中使用, 方法`WebView.EnableZoomControls`是`WebView.DisplayZoomControls`將和可`boolean`系結屬性設定為值:
 
 ```xaml
 <ContentPage ...
@@ -29,9 +29,9 @@ ms.locfileid: "65971640"
 </ContentPage>
 ```
 
-`WebView.EnableZoomControls`可繫結的屬性會控制上是否已啟用縮小-放大[ `WebView` ](xref:Xamarin.Forms.WebView)，而`WebView.DisplayZoomControls`可繫結的屬性會控制是否在上重疊縮放控制項`WebView`。
+可系結屬性會控制是否[`WebView`](xref:Xamarin.Forms.WebView)在上啟用縮小至縮放比例, 而`WebView.DisplayZoomControls`可系結屬性則`WebView`控制是否在上重迭縮放控制項。 `WebView.EnableZoomControls`
 
-或者，使用特定平台，從C#使用 fluent API:
+或者, 您也可以C#使用 Fluent API 來取用平臺特定:
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -43,18 +43,18 @@ webView.On<Android>()
     .DisplayZoomControls(true);
 ```
 
-`WebView.On<Android>`方法可讓您指定這個平台專屬只會在 Android 上執行。 `WebView.EnableZoomControls`方法，請在[ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)命名空間，可用來控制是否啟用捏合以縮放[ `WebView` ](xref:Xamarin.Forms.WebView)。 `WebView.DisplayZoomControls`方法，在相同的命名空間，來控制是否在上重疊縮放控制項`WebView`。 颾魤 ㄛ`WebView.ZoomControlsEnabled`和`WebView.ZoomControlsDisplayed`方法可以用來傳回是否縮小-放大和縮放控制項已啟用，分別。
+`WebView.On<Android>`方法可讓您指定這個平台專屬只會在 Android 上執行。 命名空間`WebView.EnableZoomControls`中的方法是用來控制是否在上啟用[`WebView`](xref:Xamarin.Forms.WebView)縮小至縮放比例。 [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 相同`WebView.DisplayZoomControls`命名空間中的方法可用來控制縮放控制項是否會`WebView`在上重迭。 此外, `WebView.ZoomControlsEnabled`您還可以`WebView.ZoomControlsDisplayed`使用和方法, 分別傳回是否要啟用縮小縮放比例控制項。
 
-結果是可在啟用該捏合縮放[ `WebView` ](xref:Xamarin.Forms.WebView)，並會縮放控制項可以顯示在`WebView`:
+結果是可以在上[`WebView`](xref:Xamarin.Forms.WebView)啟用縮小到縮放比例, 縮放控制項可以在`WebView`上重迭:
 
-[![在 Android 上的縮放 WebView 的螢幕擷取畫面](webview-zoom-controls-images/webview-zoom.png "放大 WebView")](webview-zoom-controls-images/webview-zoom-large.png#lightbox "放大的 web 檢視")
+[ ![Android 縮放的 web 上縮放的 web 快照](webview-zoom-controls-images/webview-zoom.png " ") ](webview-zoom-controls-images/webview-zoom-large.png#lightbox "縮放的 Web 視圖")
 
 > [!IMPORTANT]
-> 縮放控制項必須同時啟用並顯示，請透過各自可繫結的屬性或方法，以便在重疊[ `WebView` ](xref:Xamarin.Forms.WebView)。
+> 縮放控制項必須透過個別的可系結屬性或方法來啟用和顯示, 以在上[`WebView`](xref:Xamarin.Forms.WebView)重迭。
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

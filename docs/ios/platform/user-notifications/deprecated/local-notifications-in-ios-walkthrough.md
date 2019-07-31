@@ -1,36 +1,36 @@
 ---
-title: 逐步解說-在 Xamarin.iOS 中使用本機通知
-description: 這一節我們將逐步解說如何在 Xamarin.iOS 應用程式中使用本機通知。 它將示範如何建立和發行通知，就會出現警示時收到由應用程式的基本概念。
+title: 逐步解說-在 Xamarin 中使用本機通知
+description: 在本節中, 我們將逐步解說如何在 Xamarin iOS 應用程式中使用本機通知。 它會示範建立和發佈通知的基本概念, 而當應用程式收到警示時, 將會顯示警示。
 ms.prod: xamarin
 ms.assetid: 32B9C6F0-2BB3-4295-99CB-A75418969A62
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 7589784563906d60fc8026feac9ea16362463bfa
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f7290d8284f90db4f53a38dc89f7b5a1a10213c0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085107"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655542"
 ---
-# <a name="walkthrough---using-local-notifications-in-xamarinios"></a>逐步解說-在 Xamarin.iOS 中使用本機通知
+# <a name="walkthrough---using-local-notifications-in-xamarinios"></a>逐步解說-在 Xamarin 中使用本機通知
 
-_這一節我們將逐步解說如何在 Xamarin.iOS 應用程式中使用本機通知。它將示範如何建立和發行通知，就會出現警示時收到由應用程式的基本概念。_
+_在本節中, 我們將逐步解說如何在 Xamarin iOS 應用程式中使用本機通知。它會示範建立和發佈通知的基本概念, 而當應用程式收到警示時, 將會顯示警示。_
 
 > [!IMPORTANT]
-> 在本節中的資訊適用於 iOS 9 和之前，它已保留這裡以支援較舊 iOS 版本。 適用於 iOS 10 及更新版本，請參閱[使用者通知架構指南](~/ios/platform/user-notifications/index.md)支援 iOS 裝置上的本機和遠端的通知。
+> 本節中的資訊適用于 iOS 9 和之前的版本, 它已留在這裡以支援舊版 iOS。 針對 iOS 10 和更新版本, 請參閱[使用者通知架構指南](~/ios/platform/user-notifications/index.md), 以在 ios 裝置上同時支援本機和遠端通知。
 
 ## <a name="walkthrough"></a>逐步解說
 
-可讓建立簡單的應用程式，將會顯示作用中的本機通知。 此應用程式上會有單一的按鈕。 當我們按一下按鈕時，它會建立本機的通知。 指定時間期限之後，我們會看到通知出現。
+讓我們建立一個簡單的應用程式, 以顯示本機通知的實際運作方式。 此應用程式將會有單一按鈕。 當我們按一下按鈕時, 它會建立本機通知。 經過指定的時間週期之後, 我們會看到通知出現。
 
 
-1. 在 Visual Studio for Mac，請在建立新的單一檢視 iOS 方案，並為它`Notifications`。
-1. 開啟`Main.storyboard`檔案，並將按鈕拖曳至檢視。 將按鈕 **按鈕** ，並為它提供標題 **新增通知**。 您也可以設定一些[條件約束](~/ios/user-interface/designer/designer-auto-layout.md)此時的按鈕： 
+1. 在 Visual Studio for Mac 中, 建立新的單一視圖 iOS 解決方案並呼叫`Notifications`它。
+1. `Main.storyboard`開啟檔案, 然後將按鈕拖曳到視圖上。 將按鈕 **按鈕** ，並為它提供標題 **新增通知**。 此時, 您可能也會想要在按鈕上設定一些[條件約束](~/ios/user-interface/designer/designer-auto-layout.md): 
 
-    ![](local-notifications-in-ios-walkthrough-images/image3.png "設定在按鈕上的某些條件約束")
-1. 編輯`ViewController`類別，並將下列事件處理常式新增至 ViewDidLoad 方法：
+    ![](local-notifications-in-ios-walkthrough-images/image3.png "在按鈕上設定一些條件約束")
+1. `ViewController`編輯類別, 並將下列事件處理常式新增至 ViewDidLoad 方法:
 
     ```csharp
     button.TouchUpInside += (sender, e) =>
@@ -56,9 +56,9 @@ _這一節我們將逐步解說如何在 Xamarin.iOS 應用程式中使用本機
     };
     ```
 
-    此程式碼會建立使用音效、 設定的圖示徽章值為 1，並向使用者顯示警示的通知。
+    此程式碼會建立使用音效的通知、將圖示徽章的值設定為 1, 並向使用者顯示警示。
 
-1. 接下來編輯檔案`AppDelegate.cs`，先將下列程式碼`FinishedLaunching`方法。 我們已檢查，以查看裝置是否正在執行 iOS 8 中，如果我們**必要**尋求以接收通知的使用者的權限：
+1. 接著`AppDelegate.cs`, 編輯檔案, 先將下列程式碼新增`FinishedLaunching`至方法。 我們已檢查裝置是否正在執行 iOS 8, 如果需要, 我們**必須**要求使用者取得通知的許可權:
 
     ```csharp
     if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
@@ -70,7 +70,7 @@ _這一節我們將逐步解說如何在 Xamarin.iOS 應用程式中使用本機
         }
     ```
 
-1. 仍在`AppDelegate.cs`，新增下列方法將會收到通知時所呼叫：
+1. 仍然在`AppDelegate.cs`中, 新增下列方法, 這會在收到通知時呼叫:
 
     ```csharp
     public override void ReceivedLocalNotification(UIApplication application, UILocalNotification notification)
@@ -87,7 +87,7 @@ _這一節我們將逐步解說如何在 Xamarin.iOS 應用程式中使用本機
 
     ```
 
-1. 我們需要處理，因為本機通知啟動通知的情況。 編輯此方法`FinishedLaunching`在`AppDelegate`包含下列程式碼片段：
+1. 我們需要處理由於本機通知而啟動通知的情況。 `FinishedLaunching` 編輯`AppDelegate`中的方法, 以包含下列程式碼片段:
 
 
     ```csharp
@@ -114,16 +114,16 @@ _這一節我們將逐步解說如何在 Xamarin.iOS 應用程式中使用本機
 
     ```
 
-1. 最後，執行應用程式。 在 iOS 8 您將會提示允許通知。 按一下 [ **[確定]** ，然後按一下**加入通知**] 按鈕。 在之後短暫的暫停中，您應該看到警示對話方塊中，如下列螢幕擷取畫面所示：
+1. 最後, 執行應用程式。 在 iOS 8 上, 系統會提示您允許通知。 按一下 **[確定]** , 然後按一下 [**新增通知**] 按鈕。 短暫暫停之後, 您應該會看到 [警示] 對話方塊, 如下列螢幕擷取畫面所示:
 
     ![](local-notifications-in-ios-walkthrough-images/image0.png "確認能夠傳送通知") ![](local-notifications-in-ios-walkthrough-images/image1.png "加入通知按鈕") ![](local-notifications-in-ios-walkthrough-images/image2.png "通知的警示對話方塊")
 
 ## <a name="summary"></a>總結
 
-本逐步解說示範如何建立及發行通知在 iOS 中使用各種不同的 API。 它也會示範如何使用徽章，以提供給使用者的某些應用程式特定的意見反應更新應用程式圖示。
+本逐步解說示範如何使用各種 API, 在 iOS 中建立和發佈通知。 同時也示範如何以徽章更新應用程式圖示, 以提供一些應用程式特定的意見反應給使用者。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [本機通知 （範例）](https://developer.xamarin.com/samples/monotouch/LocalNotifications)
+- [本機通知 (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/localnotifications)
 - [本機和推播通知程式設計指南](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)

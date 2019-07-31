@@ -7,16 +7,16 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/27/2018
-ms.openlocfilehash: 17ca8ec481b8af5ad0515e6544613864f0a66271
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2417d6400faf80ad9b3b24a032046e7e867814f5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61342092"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655480"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 標記延伸
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _XAML 標記延伸模組組成允許屬性設為物件或間接參考來自其他來源的值的 XAML 中的重要功能。XAML 標記延伸是特別重要，共用物件，以及參考整個應用程式，所使用的常數，但他們在資料繫結中找到其最大的公用程式。_
 
@@ -105,7 +105,7 @@ _XAML 標記延伸模組組成允許屬性設為物件或間接參考來自其�
 </ContentPage>
 ```
 
-現在物件的各種類型的值可以新增至資源字典。 這些類型必須是可具現化。 它們不能是抽象類別，例如。 這些類型也必須有公用的無參數建構函式。 每個項目需要使用指定的字典索引鍵`x:Key`屬性。 例如: 
+現在物件的各種類型的值可以新增至資源字典。 這些類型必須是可具現化。 它們不能是抽象類別，例如。 這些類型也必須有公用的無參數建構函式。 每個項目需要使用指定的字典索引鍵`x:Key`屬性。 例如:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -403,7 +403,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 請注意，關鍵字`clr-namespace`後面接著冒號及.NET 命名空間名稱，後面接著一個分號，關鍵字`assembly`，等號，以及組件名稱。
 
-是的之後要加冒號`clr-namespace`等號後面，但`assembly`。 語法已定義在此刻意方式：大部分的 XML 命名空間宣告參考的 URI，例如開始一個 URI 配置名稱`http`，這一律後接冒號。 `clr-namespace`這個字串的一部分要模擬這個慣例。
+是的之後要加冒號`clr-namespace`等號後面，但`assembly`。 語法是故意以這種方式定義的:大部分的 XML 命名空間宣告都會參考開始 uri 配置名稱的 uri `http`, 例如, 其後面一律會接著冒號。 `clr-namespace`這個字串的一部分要模擬這個慣例。
 
 中包含下列命名空間宣告**StaticConstantsPage**範例。 請注意，`BoxView`維度會設為`Math.PI`和`Math.E`，但縮放為 100 倍：
 
@@ -547,7 +547,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-可能是此範例中，您應該採取最重要的一課是標記延伸語法：沒有引號必須出現在標記延伸的大括號中。 鍵入時標記延伸在 XAML 檔案中，很自然地想要以引號括住屬性的值。 抵禦常見的錯誤 ！
+這可能是您從這個範例中最重要的課程, 就是標記延伸的語法:標記延伸的大括弧內不能出現引號。 鍵入時標記延伸在 XAML 檔案中，很自然地想要以引號括住屬性的值。 抵禦常見的錯誤 ！
 
 以下是執行的程式：
 
@@ -561,7 +561,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 ## <a name="related-links"></a>相關連結
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第 1 部分：開始使用 XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [第 2 部分：基本 XAML 語法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [第 4 部分：資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

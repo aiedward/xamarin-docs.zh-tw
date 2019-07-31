@@ -1,28 +1,28 @@
 ---
-title: 在 Windows 上的 VisualElement 存取金鑰
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用 Windows 平台特定，VisualElement 指定便捷鍵。
+title: Windows 上的 VisualElement 存取金鑰
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用指定 VisualElement 存取金鑰的 Windows 平臺特定。
 ms.prod: xamarin
 ms.assetid: 771AF785-76B8-4372-89F5-E4D521D21E0C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: c480f398c37ce43b634e0ec1c955b965466757f1
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: ce1d682678c17bb24e7a4fd528c84554465c4fa6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926848"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656830"
 ---
-# <a name="visualelement-access-keys-on-windows"></a>在 Windows 上的 VisualElement 存取金鑰
+# <a name="visualelement-access-keys-on-windows"></a>Windows 上的 VisualElement 存取金鑰
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-存取金鑰會藉由提供應用程式的顯示 UI，透過觸控式鍵盤而不是透過使用者快速瀏覽並與其互動以直覺的方式改善可用性和協助工具應用程式在通用 Windows 平台 (UWP) 中的鍵盤快速鍵或滑鼠。 也就是一或多個英數字元的索引鍵，通常依序按下 Alt 鍵的組合。 鍵盤快速鍵自動支援使用單一的英數字元的存取金鑰。
+存取金鑰是鍵盤快速鍵, 可提供直覺的方式, 讓使用者透過鍵盤 (而非觸控) 快速流覽並與應用程式的可見 UI 互動, 藉此改善通用 Windows 平臺 (UWP) 上應用程式的可用性和協助工具或滑鼠。 也就是一或多個英數字元的索引鍵，通常依序按下 Alt 鍵的組合。 鍵盤快速鍵自動支援使用單一的英數字元的存取金鑰。
 
 存取金鑰祕訣則浮動的控制項，包括存取金鑰旁邊顯示的徽章。 每個存取金鑰的提示包含英數字元的索引鍵的啟動相關聯的控制項。 當使用者按下 Alt 鍵時，則會顯示存取金鑰祕訣。
 
-此 UWP 平台專屬用來指定存取金鑰[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 它由在 XAML 中設定[ `VisualElement.AccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyProperty)為英數字元值，並選擇性地設定附加屬性[ `VisualElement.AccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyPlacementProperty)附加屬性值為[ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement)列舉[ `VisualElement.AccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyHorizontalOffsetProperty) ; 附加屬性`double`，而[ `VisualElement.AccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyVerticalOffsetProperty) ;附加屬性`double`:
+此 UWP 平臺特定是用來指定的[`VisualElement`](xref:Xamarin.Forms.VisualElement)存取金鑰。 它由在 XAML 中設定[ `VisualElement.AccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyProperty)為英數字元值，並選擇性地設定附加屬性[ `VisualElement.AccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyPlacementProperty)附加屬性值為[ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement)列舉[ `VisualElement.AccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyHorizontalOffsetProperty) ; 附加屬性`double`，而[ `VisualElement.AccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyVerticalOffsetProperty) ;附加屬性`double`:
 
 ```xaml
 <TabbedPage ...
@@ -104,6 +104,6 @@ button4.On<Windows>()
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: c7bf7ca28200004e2383631c68cdaa4299348ecb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 11bca4bc74316f87ab7b329c897efcd4b768bc03
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61174548"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657111"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分。 從資料繫結至 MVVM
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _記住，使用 XAML 發明的 Model View ViewModel (MVVM) 架構模式。此模式會強制執行三個軟體層之間的區隔，XAML 使用者介面，稱為檢視;基礎資料，稱為模型;而檢視與模型之間的媒介稱為 ViewModel。檢視和 ViewModel 通常是透過 XAML 檔案中定義的資料繫結連接。檢視 BindingContext 通常是 ViewModel 的執行個體。_
 
@@ -35,7 +35,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 <StackLayout BindingContext="{x:Static sys:DateTime.Now}" …>
 ```
 
-`BindingContext` 是非常特殊的屬性：當您將設定`BindingContext`項目，它會繼承該元素的所有子系。 這表示所有子系`StackLayout`具有此相同`BindingContext`，而且可以包含簡單的繫結，該物件的屬性。
+`BindingContext`是非常特殊的屬性:當您在專案`BindingContext`上設定時, 該專案的所有子系都會繼承此專案。 這表示所有子系`StackLayout`具有此相同`BindingContext`，而且可以包含簡單的繫結，該物件的屬性。
 
 在  **One-Shot DateTime**程式中，子系的兩個包含該屬性的繫結`DateTime`值，但兩個其他子系包含繫結似乎遺漏繫結路徑。 這表示`DateTime`本身的值會用於`StringFormat`:
 
@@ -298,7 +298,7 @@ namespace XamlSamples
 
 ## <a name="commanding-with-viewmodels"></a>Viewmodel 的命令執行
 
-在許多情況下，MVVM 模式是限制為操作資料的項目：檢視中的使用者介面物件的平行資料物件中的 ViewModel。
+在許多情況下, MVVM 模式僅限於運算元據項:ViewModel 中 View parallel data 物件的使用者介面物件。
 
 不過，有時候必須檢視包含觸發程序中的 ViewModel 的各種動作的按鈕。 但不是能包含 ViewModel`Clicked`按鈕處理常式因為，會將繫結至特定的使用者介面典範 ViewModel。
 
@@ -581,7 +581,7 @@ void Download ()
 
 ## <a name="implementing-a-navigation-menu"></a>實作導覽功能表
 
-[XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)包含在這一系列的文章中的所有原始程式碼的程式會使用 ViewModel 其首頁。 此 ViewModel 是簡短的類別具有名為的三個屬性的定義`Type`， `Title`，和`Description`包含的範例網頁、 標題和簡短描述每個型別。 此外，ViewModel 定義靜態屬性，名為`All`也就是在程式中的所有分頁的集合：
+[XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)包含在這一系列的文章中的所有原始程式碼的程式會使用 ViewModel 其首頁。 此 ViewModel 是簡短的類別具有名為的三個屬性的定義`Type`， `Title`，和`Description`包含的範例網頁、 標題和簡短描述每個型別。 此外，ViewModel 定義靜態屬性，名為`All`也就是在程式中的所有分頁的集合：
 
 ```csharp
 public class PageDataViewModel
@@ -702,7 +702,7 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 > [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
 
-**Xamarin Evolve 2016:使用 Xamarin.Forms 和角柱 MVVM**
+**Xamarin 演進 2016:MVVM 透過 Xamarin 和 Prism 變得簡單**
 
 ## <a name="summary"></a>總結
 
@@ -711,7 +711,7 @@ XAML 是功能強大的工具，來定義使用者介面，在 Xamarin.Forms 應
 
 ## <a name="related-links"></a>相關連結
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第 1 部分：開始使用 XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [第 2 部分：基本 XAML 語法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [第 3 部分：XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)

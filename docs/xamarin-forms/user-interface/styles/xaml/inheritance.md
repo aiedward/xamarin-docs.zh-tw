@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: c5fa46a67496123eb105ae12404d5607032f5ac1
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 24f6eac93dd3095df70bbb326388cd9ed47f395c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971154"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657063"
 ---
 # <a name="style-inheritance-in-xamarinforms"></a>在 Xamarin.Forms 中的樣式繼承
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _若要減少重複，並啟用重複使用其他樣式可以繼承樣式。_
 
-## <a name="style-inheritance-in-xaml"></a>在 XAML 中的樣式繼承
+## <a name="style-inheritance-in-xaml"></a>XAML 中的樣式繼承
 
 樣式繼承藉由設定[ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn)屬性的現有[ `Style` ](xref:Xamarin.Forms.Style)。 在 XAML，做法是藉由設定`BasedOn`屬性，以`StaticResource`參考先前建立的標記延伸`Style`。 在 C# 中，做法是藉由設定`BasedOn`屬性設`Style`執行個體。
 
@@ -69,7 +69,7 @@ _若要減少重複，並啟用重複使用其他樣式可以繼承樣式。_
 > [!NOTE]
 > 隱含樣式可以衍生自明確的樣式，但明確樣式無法衍生自隱含樣式。
 
-### <a name="respecting-the-inheritance-chain"></a>尊重繼承鏈結
+### <a name="respecting-the-inheritance-chain"></a>尊重繼承鏈
 
 樣式只可以繼承樣式，在相同的層級，或以上版本，檢視階層中。 這表示：
 
@@ -108,7 +108,7 @@ _若要減少重複，並啟用重複使用其他樣式可以繼承樣式。_
 
 在此範例中，`labelStyle`並`buttonStyle`是控制層級的資源，而`baseStyle`是頁面層級的資源。 不過，雖然`labelStyle`並`buttonStyle`繼承自`baseStyle`，不可能`baseStyle`繼承`labelStyle`或`buttonStyle`，因為它們各自的位置，檢視階層中。
 
-## <a name="style-inheritance-in-c35"></a>在 C 中的樣式繼承&#35;
+## <a name="style-inheritance-in-c35"></a>C 中的樣式繼承&#35;
 
 對等的 C# 頁面，其中[ `Style` ](xref:Xamarin.Forms.Style)執行個體直接指派給[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)所需的控制項的屬性會顯示在下列程式碼範例：
 
@@ -158,8 +158,8 @@ public class StyleInheritancePageCS : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [基本的樣式 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
-- [使用樣式 （範例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [基本的樣式 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [使用樣式 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [樣式](xref:Xamarin.Forms.Style)
 - [Setter](xref:Xamarin.Forms.Setter)

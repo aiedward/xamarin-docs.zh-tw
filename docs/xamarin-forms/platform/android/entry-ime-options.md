@@ -1,24 +1,24 @@
 ---
-title: 在 Android 上的項目輸入法編輯器選項
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用 Android 平台特定設定的輸入的法編輯器選項的螢幕小鍵盤的項目。
+title: Android 上的專案輸入法方法編輯器選項
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 Android 平臺特定的, 為專案設定螢幕小鍵盤的輸入法選項。
 ms.prod: xamarin
 ms.assetid: 7909C738-04B2-4476-9A3B-A6D79BC3B9B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 4da446cf342065ce7766f8df0c71008ab47c31c4
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 3711e85bd30deb06f351f4539c5ffc7e4236efb6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926826"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653595"
 ---
-# <a name="entry-input-method-editor-options-on-android"></a>在 Android 上的項目輸入法編輯器選項
+# <a name="entry-input-method-editor-options-on-android"></a>Android 上的專案輸入法方法編輯器選項
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 平台特定設定的輸入的法編輯器 (IME) 選項的螢幕小鍵盤[ `Entry` ](xref:Xamarin.Forms.Entry)。 這包括設定使用者的 [動作] 按鈕，在螢幕小鍵盤和與互動的角`Entry`。 它由在 XAML 中設定[ `Entry.ImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.ImeOptionsProperty)附加屬性的值[ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)列舉型別：
+此 Android 平臺特定會為[`Entry`](xref:Xamarin.Forms.Entry)的螢幕小鍵盤設定輸入法編輯器 (IME) 選項。 這包括設定使用者的 [動作] 按鈕，在螢幕小鍵盤和與互動的角`Entry`。 它由在 XAML 中設定[ `Entry.ImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.ImeOptionsProperty)附加屬性的值[ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)列舉型別：
 
 ```xaml
 <ContentPage ...
@@ -62,7 +62,7 @@ entry.On<Android>().SetImeOptions(ImeFlags.Send);
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

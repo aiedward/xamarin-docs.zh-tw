@@ -1,306 +1,306 @@
 ---
-title: 在 Xamarin.iOS 中統一的分鏡腳本
-description: 本文件說明在 Xamarin.iOS 中統一的分鏡腳本。 統一的分鏡腳本讓開發人員支援多種螢幕大小與單一的介面定義。
+title: Xamarin 中的整合分鏡腳本
+description: 本檔說明 Xamarin 中的整合分鏡腳本。 統一的分鏡腳本可讓開發人員以單一介面定義支援多個螢幕大小。
 ms.prod: xamarin
 ms.assetid: F6F70374-FC2A-4401-A712-A16D0F9B340F
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: c9d98d9d3052f52dc7860ba513756e3a33d1dc58
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 02bc6fe7109f13629e776c800657846fca02641e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831914"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657137"
 ---
-# <a name="unified-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中統一的分鏡腳本
+# <a name="unified-storyboards-in-xamarinios"></a>Xamarin 中的整合分鏡腳本
 
-iOS 8 包含新的、 簡單易用的機制，來建立使用者介面，統一的分鏡腳本。 單一分鏡腳本可以涵蓋各種不同的硬體螢幕大小，以快速且回應迅速的檢視中可建立 「 設計-一次的使用對多 」 樣式。
+iOS 8 包含新的、更簡單易用的機制, 可建立使用者介面, 也就是整合的分鏡腳本。 透過單一分鏡腳本來涵蓋所有不同的硬體螢幕大小, 您可以在「設計一次, 使用-多」的樣式中建立快速且回應迅速的觀點。
 
-開發人員不再需要建立適用於 iPhone 和 iPad 裝置的個別和特定分鏡腳本，因為它們會有彈性地設計應用程式使用的通用介面，然後再自訂該介面的大小不同類別。 在這種方式，可調整應用程式，每個表單係數的長處，可以微調的每個使用者介面，以提供最佳體驗。
+由於開發人員不再需要為 iPhone 和 iPad 裝置建立個別的特定分鏡腳本, 因此他們可以彈性地使用通用介面來設計應用程式, 然後針對不同大小的類別自訂該介面。 如此一來, 應用程式可以調整為每個外型規格的優勢, 而且每個使用者介面都可以微調以提供最佳的體驗。
 
 <a name="size-classes" />
 
 ## <a name="size-classes"></a>大小類別
 
-在 iOS 8 之前，開發人員會使用`UIInterfaceOrientation`和`UIInterfaceIdiom`區分直向和橫向模式，以及 iPhone 與 iPad 裝置之間。 在 iOS8 方向和裝置由決定是使用*大小類別*。
+在 iOS 8 之前, 開發人員使用`UIInterfaceOrientation`和`UIInterfaceIdiom`來區分直向和橫向模式, 以及 iPhone 與 iPad 裝置之間的區別。 在 iOS8 中, 會使用*大小類別*來決定方向和裝置。
 
-裝置由大小類別定義中同時顯示垂直與水平軸，並有兩種類型的大小在 iOS 8 中的類別：
+裝置是由大小類別以垂直和水準軸定義, 而 iOS 8 中有兩種大小類別:
 
--  **一般**– 這是大型的螢幕大小 （例如 iPad) 或一個大型的印象小工具 (例如 `UIScrollView`
--  **Compact** – 這是較小的裝置 （例如 iPhone)。 此大小會考慮到裝置的方向。
+-  **一般**–這適用于大型螢幕大小 (例如 iPad) 或小工具, 可提供大大小的印象 (例如`UIScrollView`
+-  **Compact** –這適用于較小的裝置 (例如 iPhone)。 此大小會考慮裝置的方向。
 
 
-如果兩個概念會搭配使用，結果會是一個 2x2 方格，其中定義可用於這兩個不同的方向，不同的可能大小，如下圖所示：
+如果同時使用這兩個概念, 結果會是 2 x 2 方格, 定義可用於不同方向的各種可能大小, 如下圖所示:
 
- [![](unified-storyboards-images/sizeclassgrid.png "在一般和 Compact 方向定義可以用不同的可能大小 2x2 方格")](unified-storyboards-images/sizeclassgrid.png#lightbox)
+ [![](unified-storyboards-images/sizeclassgrid.png "2 x 2 方格, 定義可用於一般和精簡方向的各種可能大小")](unified-storyboards-images/sizeclassgrid.png#lightbox)
 
-開發人員可以建立會使用四個可能性 （如同所見，如上圖所示），會導致不同的版面配置的任何一個檢視控制器。
+開發人員可以建立一個使用可能會導致不同版面配置 (如上圖所示) 之四種可能性的視圖控制器。
 
 ### <a name="ipad-size-classes"></a>iPad 大小類別
 
-IPad，因為大小，而具有**一般**類別針對這兩個方向的大小。
+由於大小的緣故, iPad 具有這兩個方向的**一般**類別大小。
 
  [![](unified-storyboards-images/image1.png "iPad 大小類別")](unified-storyboards-images/image1.png#lightbox)
 
 
 ### <a name="iphone-size-classes"></a>iPhone 大小類別
 
-IPhone 具有不同的大小類別，根據裝置的方向：
+IPhone 根據裝置的方向而有不同大小的類別:
 
  [![](unified-storyboards-images/iphonesizeclasses.png "iPhone 大小類別")](unified-storyboards-images/iphonesizeclasses.png#lightbox)
 
--  當裝置處於直向模式時，畫面會有**compact**水平類別和**規則**垂直
--  裝置在橫向模式中時，畫面類別會反轉從直向模式中。
+-  當裝置處於直向模式時, 螢幕會水準且垂直地具有**精簡**類別 
+-  當裝置處於橫向模式時, 螢幕類別會從直向模式反轉。
 
-### <a name="iphone-6-plus-size-classes"></a>iPhone 6 Plus 大小類別
+### <a name="iphone-6-plus-size-classes"></a>iPhone 6 加上大小類別
 
-大小是在直向，但使用不同架構中較早的 Iphone 相同：
+大小與較舊的 Iphone 在直向時相同, 但在橫向中不同:
 
-[![](unified-storyboards-images/iphone6sizeclasses.png "iPhone 6 Plus 大小類別")](unified-storyboards-images/iphone6sizeclasses.png#lightbox)
+[![](unified-storyboards-images/iphone6sizeclasses.png "iPhone 6 加上大小類別")](unified-storyboards-images/iphone6sizeclasses.png#lightbox)
 
-因為 iPhone 6 Plus 已經夠大的螢幕，就能夠以橫向模式擁有一般寬度大小類別。
+由於 iPhone 6 Plus 具有夠大的螢幕, 因此在橫向模式中可以有一般寬度大小的類別。
 
-### <a name="support-for-a-new-screen-scale"></a>支援新的螢幕縮放比例
+### <a name="support-for-a-new-screen-scale"></a>支援新的螢幕縮放
 
-IPhone 6 Plus 將新的 Retina HD 顯示使用 3.0 （三次原始 iPhone 螢幕解析度） 畫面縮放比例。 若要在這些裝置上提供最佳的使用經驗，包括新的插圖這個畫面規模而設計的。 在 Xcode 6 及更新版本，資產目錄可包含 1 x，2 倍，以及 3 x 大小; 的影像只需新增 新的影像資產和 iOS 會選擇正確的資產在 iPhone 6 上執行時加上。
+IPhone 6 Plus 使用新的 Retina HD 顯示器, 螢幕縮放比例為 3.0 (原始 iPhone 螢幕解析度的三倍)。 若要在這些裝置上提供最佳的體驗, 請加入專為此螢幕縮放而設計的新作品。 在 Xcode 6 和更新版本中, 資產目錄可以包含介於1x、2x 和3倍的影像;只要新增影像資產, iOS 就會在 iPhone 6 Plus 上執行時, 選擇正確的資產。
 
-映像載入在 iOS 中的行為也會辨識`@3x`映像檔上的後置詞。 例如，如果開發人員在應用程式的套件組合，使用下列的檔案名稱中包含 （在不同的解決方式） 的影像資產： `MonkeyIcon.png`， `MonkeyIcon@2x.png`，和`MonkeyIcon@3x.png`。 在 iphone 6 Plus`MonkeyIcon@3x.png`如果開發人員載入映像使用下列程式碼映像也會自動使用：
+IOS 中的映射載入行為也會辨識`@3x`影像檔案的尾碼。 例如, 如果開發人員在應用程式的配套中包含具有下列檔案名的影像資產 (以不同的解析度): `MonkeyIcon.png`、 `MonkeyIcon@2x.png`和`MonkeyIcon@3x.png`。 在 iPhone 6 加上, `MonkeyIcon@3x.png`如果開發人員使用下列程式碼載入影像, 就會自動使用此影像:
 
 ```csharp
 UIImage icon = UIImage.FromFile("MonkeyImage.png");
 ```
-或如果他們將映像指派給使用 iOS 的 UI 項目做為設計工具`MonkeyIcon.png`，則`MonkeyIcon@3x.png`將會使用，自動重新 iPhone 6 上加上。
+`MonkeyIcon.png`或者`MonkeyIcon@3x.png` , 如果使用 iOS 設計工具將影像指派給 UI 元素, 則會在 iPhone 6 Plus 上再次使用。
 
 <a name="dynamic-launch-screens" />
 
 ### <a name="dynamic-launch-screens"></a>動態啟動畫面
 
-啟動畫面檔案會顯示為啟動顯示畫面中，當 iOS 應用程式，就啟動應用程式會實際啟動增加的使用者提供意見反應。 在 iOS 8 之前，開發人員必須包含多個`Default.png`映像的應用程式會在執行每個裝置類型、 方向和螢幕解析度的資產。
+啟動畫面檔案會在 iOS 應用程式啟動時顯示為啟動顯示畫面, 以提供對使用者實際啟動應用程式的意見反應。 在 iOS 8 之前, 開發人員必須針對應用程式執行`Default.png`所在的每種裝置類型、方向和螢幕解析度, 包含多個映射資產。
 
-新增至 iOS 8、 開發人員可以建立單一、 不可部分完成`.xib`檔案中使用自動版面配置和大小類別建立的 Xcode*動態啟動螢幕*，適用於每個裝置、 解析度和方向。 這不僅減少的工作所需的開發人員建立並維護所有必要的影像資產，但可減少應用程式的已安裝的套件組合的大小。
+IOS 8 的新手, 開發人員可以在 Xcode 中建立單一`.xib` 、不可部分完成的檔案, 該檔案使用自動設定和大小類別來建立*動態啟動畫面*, 適用于每個裝置、解析度和方向。 這不僅能減少開發人員建立和維護所有必要映射資產所需的工作量, 還能減少應用程式已安裝的配套大小。
 
 ## <a name="traits"></a>特性
 
-特性是可用來判斷如何配置變更為其環境變更的屬性。 它們包含一組屬性 (`HorizontalSizeClass`並`VerticalSizeClass`根據`UIUserInterfaceSizeClass`)，以及介面的慣用語 ( `UIUserInterfaceIdiom`) 和 顯示縮放比例。
+特性是可以用來判斷版面配置如何隨著環境變更而變更的屬性。 其包含一組屬性`HorizontalSizeClass` (和`VerticalSizeClass`以為基礎`UIUserInterfaceSizeClass`), 以及介面的用法 ( `UIUserInterfaceIdiom`) 和顯示比例。
 
-所有上述的狀態會包裝在 Apple 將稱為特性集合的容器 ( `UITraitCollection`)，其中包含不只屬性，但其值。
+上述所有狀態都會包裝在 Apple 視為特性集合 ( `UITraitCollection`) 的容器中, 其中不僅包含屬性, 還包含其值。
 
 ## <a name="trait-environment"></a>特性環境
 
-特性環境的新的介面，在 iOS 8 中，而且能夠傳回特性集合中的下列物件：
+特性環境是 iOS 8 中的新介面, 而且能夠傳回下列物件的特性集合:
 
 -  畫面 ( `UIScreens` )。
 -  Windows ( `UIWindows` )。
--  檢視控制器 ( `UIViewController` )。
--  檢視 ( `UIView` )。
--  展示控制站 ( `UIPresentationController` )。
+-  視圖控制器 ( `UIViewController` )。
+-  Views ( `UIView` )。
+-  展示控制器 ( `UIPresentationController` )。
 
 
-開發人員會使用以判斷如何使用者介面應該配置特性環境所傳回的特徵集合。
+開發人員使用特性環境所傳回的特性集合, 以決定應該如何配置使用者介面。
 
-所有的特性環境會使階層架構，如下圖所示：
+所有特性環境都會構成階層, 如下圖所示:
 
- [![](unified-storyboards-images/viewhierarchy.png "特性環境階層架構圖表")](unified-storyboards-images/viewhierarchy.png#lightbox)
+ [![](unified-storyboards-images/viewhierarchy.png "特性環境階層圖")](unified-storyboards-images/viewhierarchy.png#lightbox)
 
-特性集合，每個上述特性環境有流動，根據預設，從父代的子系的環境。
+根據預設, 上述每個特性環境都有的特性集合會從父系流向子環境。
 
-取得目前的特性集合，除了特性環境具有`TraitCollectionDidChange`可以檢視或檢視控制器的子類別中覆寫的方法。 開發人員可以使用這個方法來修改任何取決於特性，這些特性已變更時的 UI 項目。
+除了取得目前的特性集合之外, 特性環境還具有方法, `TraitCollectionDidChange`可以在 view 或 view Controller 子類別中覆寫。 開發人員可以使用這個方法, 在這些特性變更時, 修改相依于特性的任何 UI 元素。
 
 ## <a name="typical-trait-collections"></a>一般特性集合
 
-本節將討論使用 iOS 8 時，使用者會體驗的特性集合的一般類型。
+本節將涵蓋使用者在使用 iOS 8 時將會經歷的一般特性集合類型。
 
-以下是開發人員可能會看到在 iPhone 的一般特性集合：
+以下是開發人員可能會在 iPhone 上看到的一般特性集合:
 
 |屬性|值|
 |--- |--- |
-|`HorizontalSizeClass`|壓縮|
+|`HorizontalSizeClass`|小巧|
 |`VerticalSizeClass`|Regular|
 |`UserInterfaceIdom`|Phone|
 |`DisplayScale`|2.0|
 
-上述的設定會代表完整限定特性集合，因為它具有所有其特性屬性的值。
+上述集合會代表完整的特性集合, 因為它有其所有特性屬性的值。
 
-它也可擁有遺失它的某些值的特徵集合 (Apple 為指向*未指定*):
+特性集合也可能缺少某些值 (Apple 將其稱為*未指定*):
 
 |屬性|值|
 |--- |--- |
-|`HorizontalSizeClass`|壓縮|
+|`HorizontalSizeClass`|小巧|
 |`VerticalSizeClass`|未指定|
 |`UserInterfaceIdom`|未指定|
 |`DisplayScale`|未指定|
 
-一般而言，不過，當開發人員會要求其特性集合特性環境，它會傳回完整的集合在上述範例所示。
+不過, 一般而言, 當開發人員詢問特性環境的特性集合時, 它會傳回完整的集合, 如上述範例所示。
 
-如果特性環境 （例如，檢視或檢視控制器） 不是在目前的檢視階層架構內，開發人員可能會得到未指定的值的一個或多個特性屬性。
+如果特性環境 (例如視圖或視圖控制器) 不在目前的視圖階層內, 開發人員可能會針對一或多個特性屬性傳回未指定的值。
 
-如果它們使用其中一個這類 Apple，提供建立方法，開發人員也會取得部分限定的特性集合`UITraitCollection.FromHorizontalSizeClass`，以建立新的集合。
+如果開發人員使用 Apple 提供的其中一種建立方法 (例如`UITraitCollection.FromHorizontalSizeClass`) 來建立新的集合, 則也會取得部分合格的特性集合。
 
-可以在多個特性集合執行的一項作業會比較它們彼此，其中包含要求一個特性集合是否包含另一個。 代表什麼意思*內含項目*是，針對第二個集合中指定的任何特性，值必須完全符合的第一個集合中的值。
+可以在多個特性集合上執行的一項作業, 是將它們彼此進行比較, 包括詢問一個特性集合 (如果它包含另一個特性)。 內含專案的意義  是, 針對第二個集合中指定的任何特性, 此值必須與第一個集合中的值完全相符。
 
-若要測試使用兩種特點`Contains`方法的`UITraitCollection`傳入要測試之特性的值。
+若要測試兩個特性`Contains` , 請使用`UITraitCollection`傳入要測試之特徵值的方法。
 
-開發人員可以手動執行比較，來判斷程式碼中如何配置檢視或檢視控制器。 不過，`UIKit`提供其中一些功能，如同外觀 Proxy，例如在內部使用這個方法。
+開發人員可以在程式碼中手動執行比較, 以決定如何配置視圖或視圖控制器。 不過, `UIKit`會在內部使用此方法來提供部分功能, 例如外觀 Proxy。
 
 ## <a name="appearance-proxy"></a>外觀 Proxy
 
-外觀 Proxy 引進了在舊版 iOS，讓開發人員可以自訂其檢視的屬性。 它已經過擴充，在 iOS 8，以支援特性的集合。
+外觀 Proxy 是在舊版 iOS 中引進, 可讓開發人員自訂其 Views 的屬性。 它已在 iOS 8 中擴充, 以支援特性集合。
 
-外觀 Proxy 現在包含新的方法， `AppearanceForTraitCollection`，傳入的給定特性集合傳回新的外觀 Proxy。 開發人員可以執行的任何自訂項目外觀 Proxy 才會生效符合檢視表上指定的特徵集合。
+外觀 Proxy 現在包含新的方法, `AppearanceForTraitCollection`它會針對已傳入的指定特性集合傳回新的外觀 Proxy。 開發人員在該外觀 Proxy 上執行的任何自訂, 只會在符合指定特性集合的視圖上生效。
 
-通常開發人員將會傳入部分指定特性集合`AppearanceForTraitCollection`方法，例如剛才所指定水平大小類別的壓縮，以便他們可以自訂任何檢視會水平精簡應用程式中的其中一個。
+一般而言, 開發人員會將部分指定的特性集合傳遞給`AppearanceForTraitCollection`方法, 例如, 只指定 compact 的水準大小類別, 以便在應用程式中自訂水準精簡的任何視圖。
 
 ## <a name="uiimage"></a>UIImage
 
-Apple 已新增特性集合的另一個類別`UIImage`。 在過去，開發人員就必須指定@1X和@2x它們要在應用程式 （例如圖示） 中包含任何點陣圖圖形資產的版本。
+另一個 Apple 已新增特性集合的類別為`UIImage`。 在過去, 開發人員必須指定要包含@1X在@2x應用程式中的任何點陣圖圖形資產的和版本 (例如圖示)。
 
-iOS 8 已經過擴充，以允許開發人員根據特性集合映像目錄中包含多個版本的映像。 比方說，開發人員可能包含較小的影像，來使用 Compact 特性類別和完整大小的影像，為任何其他集合。
+iOS 8 已擴充為可讓開發人員根據特性集合, 在影像目錄中包含多個版本的映射。 例如, 開發人員可能會包含較小的影像, 以使用精簡的特性類別和任何其他集合的完整大小影像。
 
-一個映像內的使用時機`UIImageView`映像檢視的類別，會自動顯示其特性集合的映像的正確版本。 如果特性環境變更 （例如使用者切換從直向裝置為橫向），映像檢視將會自動選取新的影像大小，以符合新的特徵集合，並變更其大小以符合目前版本的映像顯示此項目。
+在`UIImageView`類別內使用其中一個影像時, 影像視圖會自動顯示其特性集合的正確映射版本。 如果特性環境變更 (例如使用者將裝置從直向垂直切換到橫向), 則影像視圖會自動選取新的影像大小以符合新的特性集合, 並變更其大小以符合目前的映射版本看到.
 
 ## <a name="uiimageasset"></a>UIImageAsset
 
-Apple 已新增一個新類別至 iOS 8 `UIImageAsset` ，讓開發人員更多控制映像選取項目。
+Apple 已將新的類別新增至 iOS 8 `UIImageAsset` , 稱為, 讓開發人員更充分掌控影像選取專案。
 
-影像資產包裝所有不同版本的映像，並可讓開發人員，尋求特定的映像符合傳入的特徵集合。 可以新增或移除映像資產，從映像上即時。
+影像資產會匯總映射的所有不同版本, 並可讓開發人員要求符合已傳入之特性集合的特定影像。 影像資產可以即時新增或移除映射。
 
-如需有關影像資產的詳細資訊，請參閱 Apple [UIImageAsset](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIImageAsset_Ref/index.html#//apple_ref/occ/cl/UIImageAsset)文件。
+如需影像資產的詳細資訊, 請參閱 Apple 的[UIImageAsset](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIImageAsset_Ref/index.html#//apple_ref/occ/cl/UIImageAsset)檔。
 
 ## <a name="combining-trait-collections"></a>結合特性集合
 
-相加兩個可為開發人員可以執行特性集合的另一個函式會導致結合的集合，其中一個集合中未指定的值會取代的第二個指定的值。 這是使用`FromTraitsFromCollections`方法的`UITraitCollection`類別。
+開發人員可以在特性集合上執行的另一個函式, 是將會產生合併集合的兩個函式相加, 其中一個集合中未指定的值會由第二個集合中的指定值所取代。 這是使用`FromTraitsFromCollections` `UITraitCollection`類別的方法來完成。
 
-如上所述，如果任何特性其中一個特性集合沒有指定，而且在另一個指定，值會設定為指定的版本。 不過，如果有指定的值，指定多個版本，從最後一個值特性集合會所使用的值。
+如上所述, 如果其中一個特性集合中未指定任何特徵, 而且指定于另一個, 則值將會設定為指定的版本。 不過, 如果指定的值有多個版本, 則最後一個特性集合中的值將會是所使用的值。
 
-## <a name="adaptive-view-controllers"></a>調適性的檢視控制器
+## <a name="adaptive-view-controllers"></a>調適型視圖控制器
 
-本節將討論如何檢視和檢視控制器的 iOS 已採用的特性和大小類別自動更具彈性的開發人員應用程式中的概念的詳細資料。
+本節將涵蓋 iOS 視圖和視圖控制器如何採用特性和大小類別的概念, 以在開發人員的應用程式中自動增加彈性的詳細資訊。
 
-### <a name="split-view-controller"></a>分割檢視控制器
+### <a name="split-view-controller"></a>分割視圖控制器
 
-其中一個最多可以在 iOS 8 中已變更的檢視控制器類別是`UISplitViewController`類別。 在過去，開發人員通常會使用分割檢視控制器 iPad 版的應用程式，則必須以完全不同的版本，其檢視階層架構的應用程式的 iPhone 版本。
+在 iOS 8 中已變更最大的其中一個 View Controller 類別就是`UISplitViewController`類別。 在過去, 開發人員通常會在 iPad 版的應用程式上使用分割視圖控制器, 然後他們必須針對 iPhone 版本的應用程式提供完全不同版本的視圖階層。
 
-在 iOS 8`UISplitViewController`類別有兩種平台 （iPad 和 iPhone），可讓開發人員建立一個將 iPhone 與 iPad 函式的檢視控制器階層。
+在 iOS 8 `UISplitViewController`中, 類別適用于兩種平臺 (iPad 和 iPhone), 可讓開發人員建立一個可在 iPhone 和 iPad 上運作的視圖控制器階層。
 
-在橫向 iPhone 時，分割檢視控制器將會顯示其檢視-並存，就如同顯示在 iPad 上時。
+當 iPhone 處於橫向時, 分割視圖控制器會並排顯示其 Views, 就如同在 iPad 上顯示一樣。
 
 ### <a name="overriding-traits"></a>覆寫特性
 
 特徵環境從父容器向下級聯到子容器，如下圖所示，以橫向顯示iPad上的分割視圖控制器：
 
- [![](unified-storyboards-images/cascadingclasses01.png "分割檢視控制器上以橫向 iPad")](unified-storyboards-images/cascadingclasses01.png#lightbox)
+ [![](unified-storyboards-images/cascadingclasses01.png "IPad 上的分割視圖控制器 (橫向)")](unified-storyboards-images/cascadingclasses01.png#lightbox)
 
-因為 iPad 具有一般的大小類別中的水平和垂直的方向，分割檢視會顯示在主要和詳細資料檢視。
+由於 iPad 具有水準和垂直方向的一般大小類別, 因此分割視圖會同時顯示主要和詳細資料檢視。
 
-在 iPhone 中，其中大小類別是在這兩個方向 compact，分割檢視控制器只會顯示詳細資料 檢視中，如下所示：
+在 iPhone 上, [大小] 類別在兩個方向都是精簡的, 分割視圖控制器只會顯示詳細資料檢視, 如下所示:
 
- [![](unified-storyboards-images/cascadingclasses02.png "分割檢視控制器只會顯示詳細資料檢視")](unified-storyboards-images/cascadingclasses02.png#lightbox)
+ [![](unified-storyboards-images/cascadingclasses02.png "分割視圖控制器只會顯示詳細資料檢視")](unified-storyboards-images/cascadingclasses02.png#lightbox)
 
-在開發人員希望在橫向顯示iPhone上的主視圖和詳細視圖的應用程序中，開發人員必須為分割視圖控制器插入父容器並覆蓋特徵集合。 下圖所示：
+在開發人員希望在橫向顯示iPhone上的主視圖和詳細視圖的應用程序中，開發人員必須為分割視圖控制器插入父容器並覆蓋特徵集合。 如下圖所示:
 
- [![](unified-storyboards-images/cascadingclasses03.png "開發人員必須分割檢視控制器中插入的父容器，並覆寫特性集合")](unified-storyboards-images/cascadingclasses03.png#lightbox)
+ [![](unified-storyboards-images/cascadingclasses03.png "開發人員必須插入分割視圖控制器的父容器, 並覆寫特性集合")](unified-storyboards-images/cascadingclasses03.png#lightbox)
 
-A`UIView`設定為分割檢視控制器的父系和`SetOverrideTraitCollection`檢視傳入新的特徵集合與目標分割檢視控制器上呼叫方法。 新的特徵集合將覆蓋`HorizontalSizeClass`，設置為`Regular`，以便分割視圖控制器將以橫向顯示iPhone上的主視圖和詳細視圖。
+會設定為分割視圖控制器的父系`SetOverrideTraitCollection` , 並在此視圖上呼叫方法, 傳入新的特性集合, 並以分割視圖控制器為目標。 `UIView` 新的特徵集合將覆蓋`HorizontalSizeClass`，設置為`Regular`，以便分割視圖控制器將以橫向顯示iPhone上的主視圖和詳細視圖。
 
-請注意，`VerticalSizeClass`已設為`unspecified`，這可讓新的特徵集合，可以加入至父項、 特性集合導致`Compact VerticalSizeClass`子分割檢視控制器。
+請注意, `unspecified` `Compact VerticalSizeClass`已設定為, 允許將新的特性集合加入至父代上的特性集合, 進而產生子分割視圖控制器的。 `VerticalSizeClass`
 
 ### <a name="trait-changes"></a>特性變更
 
-此區段會看，在詳細的說明，如何特性集合轉換特性環境變更時。 例如，當裝置從旋轉直向變成橫向。
+本節將詳細說明特性集合在特性環境變更時的轉換方式。 例如, 當裝置從直向直向橫向旋轉時。
 
- [![](unified-storyboards-images/traittransitions01.png "直向變成橫向特性變更概觀")](unified-storyboards-images/traittransitions01.png#lightbox)
+ [![](unified-storyboards-images/traittransitions01.png "直向橫向特徵變更總覽")](unified-storyboards-images/traittransitions01.png#lightbox)
 
-首先，iOS 8 會執行某些安裝程式，以準備進行轉換。 接下來，系統以動畫顯示轉換狀態。 最後，iOS 8 清除在轉換期間所需的任何暫存狀態。
+首先, iOS 8 會進行一些設定, 以準備進行轉換。 接下來, 系統會以動畫呈現轉換狀態。 最後, iOS 8 會清除轉換期間所需的任何暫時性狀態。
 
-iOS 8 提供數個開發人員可以使用下表所示，參與特性變更的回呼：
+iOS 8 提供幾個回呼, 讓開發人員可以用來參與特性變更, 如下表所示:
 
 |Phase|回呼|描述|
 |--- |--- |--- |
-|安裝程式|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>特性集合取得設為其新值之前，取得特性變更開頭呼叫這個方法。</li><li>特性集合的值變更時，但任何動畫發生之前，會呼叫方法。</li></ul>|
-|動畫|`WillTransitionToTraitCollection`|取得傳遞至這個方法轉換協調器`AnimateAlongside`屬性，可讓開發人員加入將會執行，以及預設動畫的動畫。|
-|清除|`WillTransitionToTraitCollection`|提供適用於開發人員，以轉換之後包含自己的清除程式碼的方法。|
+|安裝程式|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>在特徵集合設定為新值之前, 會在特性變更的開頭呼叫這個方法。</li><li>當特性集合的值已變更, 但在任何動畫發生之前, 會呼叫方法。</li></ul>|
+|動畫|`WillTransitionToTraitCollection`|傳遞至這個方法的轉換協調器具有`AnimateAlongside`屬性, 可讓開發人員加入將與預設動畫一起執行的動畫。|
+|清理|`WillTransitionToTraitCollection`|提供一種方法, 讓開發人員在轉換之後加入自己的清除程式碼。|
 
-`WillTransitionToTraitCollection`方法適合用來建立檢視控制器動畫以及特性集合變更。 `WillTransitionToTraitCollection`方法才可以使用檢視控制器 ( `UIViewController`) 而不是在其他特性的環境，例如`UIViews`。
+`WillTransitionToTraitCollection`方法非常適合用來以動畫顯示視圖控制器以及特性集合變更。 方法僅適用于 View controller ( `UIViewController`), 而不適用於其他特性環境 (例如`UIViews`)。 `WillTransitionToTraitCollection`
 
-`TraitCollectionDidChange`很適合使用`UIView`類別，開發人員，想要更新 UI，如特性會變更。
+非常適合用來處理`UIView`類別, 而開發人員想要在特性變更時`TraitCollectionDidChange`更新 UI。
 
-### <a name="collapsing-the-split-view-controllers"></a>摺疊分割檢視控制器
+### <a name="collapsing-the-split-view-controllers"></a>折迭分割視圖控制器
 
-現在讓我們來仔細瞧瞧發生於分割檢視控制器選取範圍摺疊兩個資料行從一個資料行檢視。 隨著這項變更的詳細資訊，有兩個要發生的處理序：
+現在讓我們仔細看一下, 當分割視圖控制器從兩個數據行折迭到一個資料行視圖時, 會發生什麼事。 在這項變更中, 有兩個需要進行的進程:
 
--  根據預設，分割檢視控制器會使用主要檢視控制器與檢視摺疊發生之後。 開發人員可以藉由覆寫項目覆寫這個行為`GetPrimaryViewControllerForCollapsingSplitViewController`方法的`UISplitViewControllerDelegate`並提供他們想要在摺疊的狀態中顯示任何檢視控制器。
--  次要的檢視控制器，就必須取得合併到主要的檢視控制器。 通常開發人員不需要採取任何動作，此步驟中;分割檢視控制器包含自動處理基礎硬體裝置上的這個階段。 不過，可能有一些特殊的情況下，開發人員會希望這項變更進行互動。 呼叫`CollapseSecondViewController`方法的`UISplitViewControllerDelegate`允許摺疊的發生，而不是詳細資料檢視時要顯示的主版檢視控制器。
-
-
-### <a name="expanding-the-split-view-controller"></a>展開 分割檢視控制器
-
-現在讓我們來仔細瞧瞧時會分割檢視控制器會展開與摺疊的狀態。 同樣地，有必要進行的兩個階段：
-
--  首先，定義新的主要檢視控制器。 根據預設，分割檢視控制器會自動使用主要的檢視控制器，從摺疊的檢視。 同樣地，開發人員可以覆寫這個行為使用`GetPrimaryViewControllerForExpandingSplitViewController`方法的`UISplitViewControllerDelegate`。
--  一旦選擇主要的檢視控制器，就必須重新建立次要的檢視控制器。 同樣地，分割檢視控制器包含自動處理基礎硬體裝置上的這個階段。 開發人員可以藉由呼叫項目覆寫這個行為`SeparateSecondaryViewController`方法的`UISplitViewControllerDelegate`。
+-  根據預設, 分割視圖控制器會在折迭發生後, 使用主要視圖控制器做為視圖。 開發人員可以覆寫這個行為`GetPrimaryViewControllerForCollapsingSplitViewController` `UISplitViewControllerDelegate` , 其方式是覆寫的方法, 並提供他們想要在折迭狀態中顯示的任何視圖控制器。
+-  次要視圖控制器必須合併到主要視圖控制器。 開發人員通常不需要針對此步驟採取任何動作;分割視圖控制器包含以硬體裝置為基礎的此階段自動處理。 不過, 在某些特殊情況下, 開發人員可能會想要與這種變更進行互動。 呼叫的`UISplitViewControllerDelegate`方法, 可在折迭發生時顯示主要視圖控制器, 而不是詳細資料檢視。 `CollapseSecondViewController`
 
 
-在分割檢視控制器中，主要的檢視控制器來扮演一個展開和摺疊的檢視，藉由實作`CollapseSecondViewController`並`SeparateSecondaryViewController`方法`UISplitViewControllerDelegate`。 `UINavigationController` 實作這些方法會自動推入和彈出次要的檢視控制器。
+### <a name="expanding-the-split-view-controller"></a>展開分割視圖控制器
 
-### <a name="showing-view-controllers"></a>顯示檢視控制器
+現在讓我們進一步瞭解當分割視圖控制器從折迭狀態展開時, 會發生什麼事。 同樣地, 需要進行兩個階段:
 
-Apple 對 iOS 8 的另一項變更是，開發人員會顯示檢視控制器的方式。 在過去，如果應用程式有分葉檢視控制器 （例如資料表檢視控制器），而且開發人員示範了 （比方說，為了回應使用者點選的儲存格上），另一個應用程式會透過控制器階層，以達到瀏覽檢視控制器，以及呼叫`PushViewController`方法比對以顯示新的檢視。
-
-這顯示瀏覽控制器與環境中執行之間非常緊密結合。 在 iOS 8 中，Apple 已分離這藉由提供兩種新方法：
-
--  `ShowViewController` – 適應顯示新的檢視控制器，根據其環境而定。 例如，在`UINavigationController`它只會將推送至堆疊的新檢視。 在分割檢視控制器中，新的檢視控制器將會顯示在左邊為新的主要檢視控制器。 如果沒有容器檢視控制器，則新的檢視會顯示為強制回應的檢視控制器中。
--  `ShowDetailViewController` -運作方式類似與`ShowViewController`，但實作來取代傳入新的檢視控制器的詳細資料檢視分割檢視控制器上。 如果分割檢視控制器會摺疊 （可能會看到在 iPhone 應用程式），呼叫將會重新導向至`ShowViewController`方法和新的檢視會顯示為主要的檢視控制器。 同樣地，如果沒有容器檢視控制器，則新的檢視會顯示為強制回應的檢視控制器。
+-  首先, 定義新的主要視圖控制器。 根據預設, 分割視圖控制器會自動從折迭的視圖使用主要視圖控制器。 同樣地, 開發人員可以使用`GetPrimaryViewControllerForExpandingSplitViewController`的方法`UISplitViewControllerDelegate`來覆寫此行為。
+-  選擇主要視圖控制器後, 就必須重新建立次要視圖控制器。 同樣地, 分割視圖控制器包含以硬體裝置為基礎的此階段自動處理。 開發人員可以藉由呼叫`SeparateSecondaryViewController`的方法`UISplitViewControllerDelegate`來覆寫此行為。
 
 
-這些方法開始分葉檢視控制器來處理，而且走向檢視階層，直到他們發現正確的容器檢視控制器來處理新的檢視顯示。
+在分割視圖控制器中, 主要視圖控制器會藉由執行`CollapseSecondViewController`的和`SeparateSecondaryViewController`方法`UISplitViewControllerDelegate`, 在展開和折迭的瀏覽器中播放部分。 `UINavigationController`會執行這些方法, 以自動推送和彈出次要視圖控制器。
 
-開發人員可以實作`ShowViewController`並`ShowDetailViewController`自己自訂的檢視控制器，以取得在相同自動化功能，`UINavigationController`和`UISplitViewController`提供。
+### <a name="showing-view-controllers"></a>顯示視圖控制器
 
-### <a name="how-it-works"></a>它的運作方式
+Apple 對 iOS 8 所做的另一項變更, 就是開發人員顯示視圖控制器的方式。 在過去, 如果應用程式有分葉視圖控制器 (例如資料表視圖控制器), 而開發人員顯示了不同的控制項 (例如, 回應使用者按下資料格), 則應用程式會透過控制器階層回到流覽視圖控制器並對其`PushViewController`呼叫方法, 以顯示新的視圖。
 
-在本節中，我們要看看如何實作這些方法會實際在 iOS 8 中。 第一個讓我們看看新`GetTargetForAction`方法：
+這在流覽控制器與其執行所在的環境之間呈現非常緊密的結合。 在 iOS 8 中, Apple 藉由提供兩種新方法來將其解除耦合:
+
+-  `ShowViewController`–調整以根據其環境顯示新的視圖控制器。 例如, 在中`UINavigationController` , 它只會將新的視圖推送至堆疊上。 在分割視圖控制器中, 新的視圖控制器會顯示在左側, 做為新的主要視圖控制器。 如果沒有容器視圖控制器存在, 新的視圖會顯示為強制回應視圖控制器。
+-  `ShowDetailViewController`-的運作方式與類似`ShowViewController`, 但會在分割視圖控制器上執行, 以將詳細資料檢視取代為傳入的新視圖控制器。 如果分割視圖控制器已折迭 (如 iPhone 應用程式中所示), 則會將呼叫重新導向至`ShowViewController`方法, 而新的視圖會顯示為主要視圖控制器。 同樣地, 如果沒有容器視圖控制器存在, 新的視圖就會顯示為強制回應視圖控制器。
+
+
+這些方法的運作方式是從分葉視圖控制器開始, 並向上切入視圖階層, 直到找到正確的容器視圖控制器來處理新視圖的顯示為止。
+
+開發人員可以`ShowViewController`在`ShowDetailViewController`自己`UINavigationController`的自訂視圖控制器中執行和, 以取得與所`UISplitViewController`提供的相同自動化功能。
+
+### <a name="how-it-works"></a>運作方式
+
+在本節中, 我們將探討如何在 iOS 8 中實際實作為這些方法。 首先, 我們來看一下新`GetTargetForAction`方法:
 
  [![](unified-storyboards-images/gettargetforaction.png "新的 GetTargetForAction 方法")](unified-storyboards-images/gettargetforaction.png#lightbox)
 
-這個方法會逐步引導的階層鏈結，直到找到正確的容器檢視控制器。 例如：
+這個方法會逐步引導階層鏈, 直到找到正確的容器視圖控制器為止。 例如：
 
-1.  如果`ShowViewController`呼叫方法時，第一個檢視控制器會實作這個方法鏈結中，瀏覽控制器，它正做為新檢視的父系。
-1.  如果`ShowDetailViewController`改為呼叫方法，分割檢視控制器是第一個檢視控制器以進行實作，所以它會使用與父代。
+1.  如果呼叫`ShowViewController`方法, 則執行此方法之鏈中的第一個 View 控制器是「流覽控制器」, 因此它會當做新視圖的父系使用。
+1.  如果改為呼叫方法,分割視圖控制器就是第一個要執行它的viewcontroller,因此它會當做父系使用。`ShowDetailViewController`
 
 
-`GetTargetForAction`方法的運作方式是尋找檢視控制器會實作指定的動作，然後要求該檢視控制器，如果它要接收該動作。 這個方法是公用的因為開發人員可以建立自己的自訂方法的函式就像內建`ShowViewController`和`ShowDetailViewController`方法。
+`GetTargetForAction`方法的運作方式是尋找可執行指定動作的視圖控制器, 然後在它想要接收該動作時, 詢問該視圖控制器。 因為此方法是公用的, 所以開發人員可以建立自己的自訂方法, 其運作`ShowViewController`方式`ShowDetailViewController`就像內建和方法一樣。
 
-## <a name="adaptive-presentation"></a>自適性簡報
+## <a name="adaptive-presentation"></a>調適型簡報
 
-在 iOS 8 中，Apple 已 Popover 簡報 ( `UIPopoverPresentationController`) 自動調整以及。 因此 Popover 簡報檢視控制器會自動將會顯示在一般的大小類別中，標準的 Popover 檢視，但是會顯示它的全螢幕中水平 compact 的大小類別 (例如在 iPhone 上)。
+在 iOS 8 中, Apple 也製作了 Popover `UIPopoverPresentationController`簡報 () 的自動調整功能。 因此, Popover 簡報視圖控制器會自動在一般大小類別中呈現一般的 Popover 視圖, 但會在水準壓縮大小類別 (例如 iPhone) 中以全螢幕顯示。
 
-為了符合統一的分鏡腳本系統內的變更，新的控制器物件建立來管理呈現的檢視控制器 — `UIPresentationController`。 此控制站會建立從檢視控制器會關閉的時間。 如同管理的類別，它可以視為超級類別透過檢視控制器回應裝置的變更會影響到檢視控制器 （例如方向），哪些則檢視控制器送回簡報控制站會控制。
+為了配合整合的分鏡腳本系統內的變更, 已建立一個新的控制器物件來管理呈現的視圖`UIPresentationController`控制器—。 此控制器會從顯示視圖控制器的時間建立, 直到其關閉為止。 當它是管理類別時, 可以將其視為超級類別, 因為它會回應影響視圖控制器的裝置變更 (例如方向), 然後再送回給簡報控制器所控制的視圖控制器。
 
-開發人員提供的檢視控制器 using`PresentViewController`方法，在呈現程序管理交付給`UIKit`。 UIKit 處理 （還有其他項目） 所建立的樣式為正確的控制器，但唯一的例外狀況時正在檢視控制器有樣式設為`UIModalPresentationCustom`。 在這裡，應用程式可以提供自己 PresentationController，而非使用時會很`UIKit`控制站。
+當開發人員使用`PresentViewController`方法呈現視圖控制器時, 會將呈現流程的管理`UIKit`交給。 UIKit 會處理所建立之樣式的正確控制器, 唯一的例外是當視圖控制器的樣式設定為`UIModalPresentationCustom`時。 在這裡, 應用程式可以提供它自己的 PresentationController, 而不`UIKit`是使用控制器。
 
-### <a name="custom-presentation-styles"></a>自訂的展示樣式
+### <a name="custom-presentation-styles"></a>自訂呈現樣式
 
-使用自訂的展示樣式、 開發人員可以選擇使用自訂的簡報控制器。 此自訂的控制站可用來修改外觀和行為，它要結盟的檢視。
+使用自訂的呈現樣式, 開發人員可以選擇使用自訂的呈現控制器。 這個自訂控制器可以用來修改所 allied 之視圖的外觀和行為。
 
 <a name="size-classes"/>
 
 ## <a name="working-with-size-classes"></a>使用大小類別
 
-調適性的相片 Xamarin 專案隨附這篇文章提供 iOS 8 整合介面應用程式中使用大小類別和調適性的檢視控制器的工作範例。
+本文中所包含的調適型相片 Xamarin 專案, 提供在 iOS 8 整合介面應用程式中使用大小類別和適應性視圖控制器的實用範例。
 
-雖然應用程式建立其 UI 完全從程式碼，而不是使用 IOS 設計工具，並建立統一的分鏡腳本，請套用相同的技術。 稍後在本文中，我們將示範如何使用統一的分鏡腳本和 iOS 的 Xamarin 應用程式中的設計工具中使用大小類別。
+雖然應用程式會從程式碼完全建立其 UI, 而不是使用 IOS 設計工具和建立整合的分鏡腳本, 但同樣的技術也適用。 在本文稍後, 我們將示範如何在 Xamarin 應用程式中搭配使用大小類別與整合的腳本和 iOS 設計工具。
 
-現在讓我們看看如何調適性的相片專案會實作數個大小類別功能在 iOS 8 建立自適性應用程式中。
+現在讓我們進一步瞭解調適型相片專案如何在 iOS 8 中執行數種大小類別功能, 以建立彈性應用程式。
 
-### <a name="adapting-to-trait-environment-changes"></a>調整特性環境的變更
+### <a name="adapting-to-trait-environment-changes"></a>適應特性環境變更
 
-當使用者旋轉裝置從直向變成橫向時，請在 iPhone 中，執行自動調整的相片應用程式，分割檢視控制器會顯示在主要和詳細資料檢視：
+在 iPhone 上執行調適型相片應用程式時, 當使用者將裝置從直向直向橫向時, 分割視圖控制器會同時顯示 [主要] 和 [詳細資料] 視圖:
 
- [![](unified-storyboards-images/rotation.png "分割檢視控制器會顯示這兩個主要和詳細資料檢視，如下所示")](unified-storyboards-images/rotation.png#lightbox)
+ [![](unified-storyboards-images/rotation.png "分割視圖控制器會同時顯示 [主要] 和 [詳細資料] 視圖, 如下所示")](unified-storyboards-images/rotation.png#lightbox)
 
-這可以藉由覆寫`UpdateConstraintsForTraitCollection`的檢視控制器，並調整條件約束的方法為基礎的值`VerticalSizeClass`。 例如：
+這是藉由覆寫`UpdateConstraintsForTraitCollection` View Controller 的方法來完成, 並根據的值`VerticalSizeClass`來調整條件約束。 例如：
 
 ```csharp
 public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
@@ -354,9 +354,9 @@ public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
 }
 ```
 
-### <a name="adding-transition-animations"></a>新增轉換動畫
+### <a name="adding-transition-animations"></a>加入轉換動畫
 
-分割檢視控制器的自適性應用程式會從的相簿摺疊時為擴充，動畫會新增至預設動畫覆寫`WillTransitionToTraitCollection`檢視控制器方法。 例如：
+調適型相片應用程式中的分割視圖控制器從折迭到展開時, 會覆寫 View 控制器的`WillTransitionToTraitCollection`方法, 以將動畫新增至預設動畫。 例如：
 
 ```csharp
 public override void WillTransitionToTraitCollection (UITraitCollection traitCollection, IUIViewControllerTransitionCoordinator coordinator)
@@ -372,9 +372,9 @@ public override void WillTransitionToTraitCollection (UITraitCollection traitCol
 
 ### <a name="overriding-the-trait-environment"></a>覆寫特性環境
 
-如上面所示，調適性的相片應用程式時，會強制顯示同時詳細資料分割檢視控制器和主版檢視 iPhone 裝置為橫向檢視。
+如上所示, 調適型相片應用程式會強制「分割視圖控制器」在 iPhone 裝置位於橫向視圖時, 同時顯示詳細資料和主要視圖。
 
-這是在檢視控制器中使用下列程式碼來完成：
+這是在 View Controller 中使用下列程式碼來完成:
 
 ```csharp
 private UITraitCollection forcedTraitCollection = new UITraitCollection ();
@@ -409,9 +409,9 @@ public void UpdateForcedTraitCollection ()
 }
 ```
 
-### <a name="expanding-and-collapsing-the-split-view-controller"></a>展開和摺疊分割檢視控制器
+### <a name="expanding-and-collapsing-the-split-view-controller"></a>展開和折迭分割視圖控制器
 
-下一步來看看如何在 Xamarin 中實作分割檢視控制器的展開和摺疊行為。 在  `AppDelegate`、 建立分割檢視控制器時，其委派指派給處理這些變更：
+接下來, 我們將探討如何在 Xamarin 中實作為分割視圖控制器的展開和折迭行為。 在中`AppDelegate`, 建立分割視圖控制器時, 會指派其委派來處理這些變更:
 
 ```csharp
 public class SplitViewControllerDelegate : UISplitViewControllerDelegate
@@ -460,13 +460,13 @@ public class SplitViewControllerDelegate : UISplitViewControllerDelegate
 }
 ```
 
-`SeparateSecondaryViewController`方法不會測試以查看相片是否正在顯示，而會依據該狀態的動作。 如果沒有相片顯示它摺疊次要的檢視控制器，以便顯示主版檢視控制器。
+`SeparateSecondaryViewController`方法會測試是否顯示相片, 並根據該狀態採取動作。 如果沒有顯示任何相片, 它會折迭次要視圖控制器, 以顯示主要視圖控制器。
 
-`CollapseSecondViewController`方法來擴充分割檢視控制器時是否在堆疊上，是否存在任何讓它回到該檢視會摺疊。
+`CollapseSecondViewController`方法是在展開分割視圖控制器時使用, 以查看是否有任何相片存在於堆疊上, 如果是, 則會折迭回到該視圖。
 
-### <a name="moving-between-view-controllers"></a>檢視控制器之間移動
+### <a name="moving-between-view-controllers"></a>在視圖控制器之間移動
 
-接下來，讓我們看看如何調適性的相片應用程式檢視控制器之間移動時。 在 `AAPLConversationViewController`類別，在使用者從資料表中，選取該儲存格`ShowDetailViewController`方法呼叫，以顯示詳細資料檢視：
+接下來, 我們來看一下, 調適型相片應用程式如何在視圖控制器之間移動。 在類別中, 當使用者從資料表選取儲存格時, 會`ShowDetailViewController`呼叫方法來顯示詳細資料檢視: `AAPLConversationViewController`
 
 ```csharp
 public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
@@ -484,7 +484,7 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 
 ### <a name="displaying-disclosure-indicators"></a>顯示洩漏指示器
 
-自適性相片應用程式中有數個位置其中洩漏指示器會隱藏或顯示根據變更特性環境。 這被處理為下列程式碼：
+在調適型相片應用程式中, 有幾個地方會根據特性環境的變更隱藏或顯示洩漏指示器。 這會使用下列程式碼來處理:
 
 ```csharp
 public bool Aapl_willShowingViewControllerPushWithSender ()
@@ -516,9 +516,9 @@ public bool Aapl_willShowingDetailViewControllerPushWithSender ()
 }
 ```
 
-這些會實使用`GetTargetViewControllerForAction`詳細上面討論的方法。
+這些會使用上述詳細`GetTargetViewControllerForAction`討論的方法來執行。
 
-資料表檢視控制器會顯示資料時，它會使用以查看發生，即將推播，以及要顯示或隱藏洩漏指示器據此實作上述的方法：
+當資料表視圖控制器顯示資料時, 它會使用上述的方法來查看是否要進行推播, 以及是否要據以顯示或隱藏洩漏指示器:
 
 ```csharp
 public override void WillDisplay (UITableView tableView, UITableViewCell cell, NSIndexPath indexPath)
@@ -533,11 +533,11 @@ public override void WillDisplay (UITableView tableView, UITableViewCell cell, N
 }
 ```
 
-### <a name="new-showdetailtargetdidchangenotification-type"></a>新`ShowDetailTargetDidChangeNotification`類型
+### <a name="new-showdetailtargetdidchangenotification-type"></a>新增`ShowDetailTargetDidChangeNotification`類型
 
-Apple 已為使用大小類別和特性環境內分割檢視控制器，新增新的通知類型`ShowDetailTargetDidChangeNotification`。 每次變更目標分割檢視控制器的詳細資料檢視，例如控制器時展開或摺疊時，取得傳送此通知。
+Apple 新增了一種新的通知類型, `ShowDetailTargetDidChangeNotification`可讓您從分割視圖控制器內使用大小類別和特性環境。 每當分割視圖控制器的目標詳細資料檢視變更時, 例如當控制器展開或折迭時, 就會傳送此通知。
 
-自適性相片應用程式會使用這項通知詳細資料檢視控制器變更時更新洩漏指標的狀態：
+調適型相片應用程式會在詳細資料檢視控制器變更時, 使用此通知來更新洩漏指示器的狀態:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -550,226 +550,225 @@ public override void ViewDidLoad ()
 }
 ```
 
-仔細看看調適性的相片應用程式，若要查看的各種方式的大小類別，可用來輕鬆建立在 Xamarin.iOS 中的 整合的應用程式特性集合和調適性的檢視控制器。
+進一步瞭解彈性相片應用程式, 以查看大小類別、特性集合和調適型視圖控制器的所有方式, 可以用來輕鬆地在 Xamarin 中建立整合應用程式。
 
 ## <a name="unified-storyboards"></a>整合的 Storyboard
 
-新增至 iOS 8、 統一的分鏡腳本可讓開發人員建立一個，統一的分鏡腳本檔案可以顯示在 iPhone 和 iPad 裝置上，將目標設為多個大小類別。 藉由使用統一的分鏡腳本，開發人員撰寫較少 UI 特定的程式碼，並具有建立和維護的只有一個介面設計。
+IOS 8 的新手, 整合的分鏡腳本可讓開發人員建立一個整合的分鏡腳本檔案, 並以多個大小類別為目標, 在 iPhone 和 iPad 裝置上顯示。 藉由使用統一的分鏡腳本, 開發人員會撰寫較少的 UI 特定程式碼, 而且只有一個介面設計可供建立和維護。
 
-統一的分鏡腳本的主要優點如下：
+整合分鏡腳本的主要優點如下:
 
--  IPhone 與 iPad，使用相同的分鏡腳本檔案。
--  部署至 iOS 6 和 iOS 7 的回溯。
--  預覽不同裝置、 方向和 OS 版本所有的 Xamarin iOS 設計工具內的版面配置。
+-  針對 iPhone 和 iPad 使用相同的分鏡腳本檔案。
+-  向 iOS 6 和 iOS 7 回溯部署。
+-  在 Xamarin iOS 設計工具內, 預覽不同裝置、方向和 OS 版本的版面配置。
 
-這項功能完全支援 Visual Studio for Mac
+這項功能在 Visual Studio for Mac 中受到完整支援
 
 <a name="enabling-size-classes" />
 
 ### <a name="enabling-size-classes"></a>啟用大小類別
 
-根據預設，任何新的 Xamarin.iOS 專案將使用大小類別。 若要從較舊的專案分鏡腳本內使用大小類別和設定 Segue 的自適性，它必須先轉換成 iOS 設計工具內的 從 Xcode 6 統一的分鏡腳本格式。
+根據預設, 任何新的 Xamarin iOS 專案都會調整類別的大小。 若要在較舊的專案中使用分鏡腳本內的大小類別和調適型 Segue, 必須先從 iOS 設計工具中將它轉換成 Xcode 6 整合分鏡腳本格式。
 
-若要執行這會開啟要轉換在設計工具並檢查 iOS 分鏡腳本**使用大小類別**核取方塊：
+若要這麼做, 請在 iOS 設計工具中開啟要轉換的分鏡腳本, 並核取 [**使用大小類別**] 核取方塊:
 
- [![](unified-storyboards-images/sizeclass01.png "使用大小類別 核取方塊")](unified-storyboards-images/sizeclass01.png#lightbox)
+ [![](unified-storyboards-images/sizeclass01.png "[使用大小類別] 核取方塊")](unified-storyboards-images/sizeclass01.png#lightbox)
 
-IOS 設計工具將會確認開發人員想要轉換的使用大小類別將分鏡腳本格式：
+IOS 設計工具會確認開發人員想要將分鏡腳本的格式轉換成使用大小類別:
 
  [![](unified-storyboards-images/sizeclass02.png "使用大小類別警示")](unified-storyboards-images/sizeclass02.png#lightbox)
 
 > [!IMPORTANT]
-> 自動配置也必須檢查大小類別才能正常運作。
+> 自動設定也必須檢查大小類別, 才能正常運作。
 
-### <a name="generic-device-types"></a>泛型裝置類型
+### <a name="generic-device-types"></a>一般裝置類型
 
-一旦將分鏡腳本已轉換成使用大小類別，它將會重新顯示在設計介面中，**檢視為**裝置將會是泛型：
+將分鏡腳本轉換成使用大小類別之後, 它會在 Design Surface 中重新**顯示**, 而裝置將會是一般的:
 
- [![](unified-storyboards-images/sizeclass03.png "檢視為泛用的裝置類型")](unified-storyboards-images/sizeclass03.png#lightbox)
+ [![](unified-storyboards-images/sizeclass03.png "以一般裝置類型的形式顯示")](unified-storyboards-images/sizeclass03.png#lightbox)
 
-選取的泛用的裝置類型時，所有的檢視控制器會調整大小為 600 x 600 方形。 此方塊代表任何寬度和高度的大小。 當 iOS 設計工具在此模式中，任何的編輯會套用至所有大小類別。
+選取 [一般] 裝置類型時, 所有視圖控制器都會調整大小為 600 x 600 正方形。 此正方形代表任何寬度和任何高度的大小。 當 iOS 設計工具處於此模式時, 所有的編輯都將套用至所有大小類別。
 
-開發人員也可以選擇檢視為 iPhone 的設計介面：
+開發人員也可以選擇以 iPhone 的形式來觀看設計介面:
 
- [![](unified-storyboards-images/sizeclass04.png "IPhone 檢視的設計介面")](unified-storyboards-images/sizeclass04.png#lightbox)
+ [![](unified-storyboards-images/sizeclass04.png "以 iPhone 的形式查看設計介面")](unified-storyboards-images/sizeclass04.png#lightbox)
 
-或者，檢視為 iPad:
+或者, 以 iPad 的形式來觀看:
 
- [![](unified-storyboards-images/sizeclass05.png "IPad 檢視的設計介面")](unified-storyboards-images/sizeclass05.png#lightbox)
+ [![](unified-storyboards-images/sizeclass05.png "以 iPad 的形式來觀看設計介面")](unified-storyboards-images/sizeclass05.png#lightbox)
 
-### <a name="select-a-size-class"></a>選取的大小類別
+### <a name="select-a-size-class"></a>選取大小類別
 
-大小類別選取器按鈕位於設計介面 （靠近檢視方式 下拉式清單中） 的左上角。 它可讓開發人員選取目前正在編輯的大小類別：
+[大小] 類別選取器按鈕位於 Design Surface 的左上角 (靠近視圖的下拉式清單)。 它可讓開發人員選取目前正在編輯的大小類別:
 
- [![](unified-storyboards-images/sizeclass06.png "選取的大小類別")](unified-storyboards-images/sizeclass06.png#lightbox)
+ [![](unified-storyboards-images/sizeclass06.png "選取大小類別")](unified-storyboards-images/sizeclass06.png#lightbox)
 
-選取器會提供為 3x3 的方格的大小類別選取項目。 每一個方格中的平方代表類別寬度和高度類別的組合。 中央的矩形會選取任何 Width/Any 高度大小 （也就是統一的分鏡腳本的預設檢視）。 選取此方塊時，開發人員就編輯預設的版面配置，該層會繼承的所有其他設定。
+選取器會以 3 x 3 方格的形式呈現大小類別選取範圍。 方格中的每個方塊都代表 Width 類別和 Height 類別的組合。 中間方形會選取 [任何寬度]/[任何高度大小] 類別 (這是統一分鏡腳本的預設視圖)。 選取此方塊時, 開發人員會編輯預設的配置, 這會由所有其他設定繼承。
 
-在方格的左上角正方形代表 Compact 的 Compact 寬度/高度的大小類別：
+方格左上角的正方形代表 Compact Width/Compact Height Size 類別:
 
- [![](unified-storyboards-images/sizeclass07.png "Compact 的寬度/Compact 高度大小類別")](unified-storyboards-images/sizeclass07.png#lightbox)
+ [![](unified-storyboards-images/sizeclass07.png "精簡寬度/壓縮高度大小類別")](unified-storyboards-images/sizeclass07.png#lightbox)
 
-此模式對應於橫向的iPhone。 在方格的右下角正方形代表規則一般寬度/高度的大小類別，其代表 iPad:
+此模式對應於橫向的iPhone。 方格右下角的正方形代表一般寬度/一般高度大小類別, 代表 iPad:
 
- [![](unified-storyboards-images/sizeclass08.png "一般的寬度/一般高度大小類別")](unified-storyboards-images/sizeclass08.png#lightbox)
+ [![](unified-storyboards-images/sizeclass08.png "一般寬度/一般高度大小類別")](unified-storyboards-images/sizeclass08.png#lightbox)
 
-若要編輯適用於 iPhone 的將縱向列印版面配置，請在左下角選取平方。 這代表 Compact 的一般寬度/高度的大小類別：
+若要在垂直方向編輯 iPhone 的版面配置, 請選取左下角的正方形。 這代表精簡寬度/一般高度大小的類別:
 
- [![](unified-storyboards-images/sizeclass09.png "Compact 的寬度/一般高度大小類別")](unified-storyboards-images/sizeclass09.png#lightbox)
+ [![](unified-storyboards-images/sizeclass09.png "精簡寬度/一般高度大小類別")](unified-storyboards-images/sizeclass09.png#lightbox)
 
-按一下以選取它的矩形，並在設計介面，將檢視控制器，以符合新的選取範圍的大小：
+按一下方形加以選取, Design Surface 將會變更視圖控制器的大小, 以符合新的選取專案:
 
- [![](unified-storyboards-images/sizeclass10.png "在設計介面，將檢視控制器，以符合新的選取範圍，如所示的大小")](unified-storyboards-images/sizeclass10.png#lightbox)
+ [![](unified-storyboards-images/sizeclass10.png "Design Surface 會變更視圖控制器的大小, 使其符合新的選取專案, 如下所示")](unified-storyboards-images/sizeclass10.png#lightbox)
 
-大小類別和它們如何影響適用於 Iphone 和 Ipad 的版面配置，請參閱這篇文章，如需詳細資訊的大小類別一節。
+如需大小類別的詳細資訊, 以及它們如何影響 Iphone 和 Ipad 的版面配置, 請參閱本文的 Size 類別一節。
 
-### <a name="adaptive-segue-types"></a>自適性 Segue 類型
+### <a name="adaptive-segue-types"></a>適應性 Segue 類型
 
-如果開發人員已使用分鏡腳本，則將其與現有的 segue 類型的熟悉**推播**，**強制回應**並**Popover**。 當統一的分鏡腳本檔案上啟用大小類別時，都可使用下列自適性 Segue 類型 （對應至新的檢視控制器 API 上面所討論）：**顯示**並**顯示詳細資料**。
+如果開發人員之前已使用過分鏡腳本, 則會熟悉**推送、強制**回應和**Popover**的  現有 segue 類型。 在統一的分鏡腳本檔案上啟用大小類別時, 會提供下列調適型 Segue 類型 (對應至上面討論的新 View Controller API):**顯示**並**顯示詳細資料**。
 
 > [!IMPORTANT]
-> 啟用大小類別時，任何現有的 segue 會轉換成新的類型。
+> 當啟用大小類別時, 任何現有的 segue 都會轉換成新的類型。
 
-取得範例 iOS 8 的應用程式會使用分割檢視控制器在主版檢視具有簡單的遊戲導覽功能表中的統一的分鏡腳本。 如果使用者按一下功能表按鈕上，選取的項目檢視控制器時，應該顯示在分割檢視控制器的詳細資料區段在 iPad 上執行。 在 iPhone 上的項目檢視控制器應該推送到導覽堆疊上。
+採用 iOS 8 應用程式的範例, 其使用整合的分鏡腳本, 其具有主要視圖中具有簡單遊戲導覽功能表的分割視圖控制器。 如果使用者按一下功能表按鈕, 則在 iPad 上執行時, 會在分割視圖控制器的 [詳細資料] 區段中顯示所選取專案的 View Controller。 在 iPhone 上, 應將專案的 View Controller 推送到導覽堆疊上。
 
-若要達成這個效果，iOS 設計工具中控制項-按一下按鈕，將一條線拖曳至要顯示檢視控制器。 當放開滑鼠按鈕時，選取`Show Detail`Segue 類型快顯功能表：
+若要達到此效果, 請在 iOS 設計工具控制項中按一下按鈕, 並將線條拖曳至要顯示的視圖控制器。 放開滑鼠按鍵時, 從 [Segue `Show Detail`類型] 快顯功能表中選取:
 
- [![](unified-storyboards-images/segue01.png "從 Segue 類型快顯功能表中選取 顯示詳細資料")](unified-storyboards-images/segue01.png#lightbox)
+ [![](unified-storyboards-images/segue01.png "從 [Segue 類型] 快顯功能表中選取 [顯示詳細資料]")](unified-storyboards-images/segue01.png#lightbox)
 
-按鈕和檢視控制器之間，將會建立新的 segue。 現在在 iPhone 模擬器中執行應用程式，將會顯示主功能表：
+新的 segue 將會建立在按鈕和視圖控制器之間。 現在, 在 iPhone 模擬器中執行應用程式, 將會顯示主功能表:
 
- [![](unified-storyboards-images/segue02.png "在主功能表")](unified-storyboards-images/segue02.png#lightbox)
+ [![](unified-storyboards-images/segue02.png "主功能表")](unified-storyboards-images/segue02.png#lightbox)
 
-按一下 **選取遊戲**按鈕和項目的檢視控制器會推送到導覽堆疊上：
+按一下 [**選取遊戲**] 按鈕, 即會將專案的 View Controller 推送至導覽堆疊:
 
- [![](unified-storyboards-images/segue03.png "將檢視控制器的項目推送到導覽堆疊上所示")](unified-storyboards-images/segue03.png#lightbox)
+ [![](unified-storyboards-images/segue03.png "[專案] 視圖控制器將會推送到導覽堆疊上, 如下所示")](unified-storyboards-images/segue03.png#lightbox)
 
-停止模擬器 iPhone 和 iPad 模擬器中執行應用程式。 切換至 橫印 」 和 「 主功能表會再次顯示：
+停止 iPhone 模擬器, 然後在 iPad 模擬器中執行應用程式。 切換至 [橫向], 並再次顯示主功能表:
 
- [![](unified-storyboards-images/segue04.png "顯示在主功能表")](unified-storyboards-images/segue04.png#lightbox)
+ [![](unified-storyboards-images/segue04.png "顯示的主功能表")](unified-storyboards-images/segue04.png#lightbox)
 
-同樣地，按一下**選取遊戲**按鈕和項目的檢視控制器會顯示在分割檢視控制器的詳細資料區段中：
+同樣地, 按一下 [**選取遊戲**] 按鈕, 專案的 view controller 會顯示在分割視圖控制器的 [詳細資料] 區段中:
 
- [![](unified-storyboards-images/segue05.png "項目顯示在分割檢視控制器的詳細資料區段中的檢視控制器")](unified-storyboards-images/segue05.png#lightbox)
+ [![](unified-storyboards-images/segue05.png "分割視圖控制器的 [詳細資料] 區段中顯示的專案視圖控制器")](unified-storyboards-images/segue05.png#lightbox)
 
-### <a name="excluding-an-element-from-a-size-class"></a>排除的大小類別中的項目
+### <a name="excluding-an-element-from-a-size-class"></a>從大小類別中排除元素
 
-有指定的項目 （例如檢視、 控制項或條件約束） 時不需要在特定的大小類別內的時間。 若要排除大小類別中的項目，請選取 所需的項目中排除**設計介面**。 捲動至底部**屬性總管**然後按一下**齒輪**下拉式功能表。 選取的組合**寬度**並**高度**排除項目：
+有時候特定的大小類別內不需要指定的元素 (例如 View、Control 或 Constraint)。 若要從大小類別中排除元素, 請選取要在**Design Surface**中排除的所需專案。 流覽至 [**屬性瀏覽器**] 的底部, 然後按一下**齒輪**下拉式功能表。 選取 [**寬度**] 和 [**高度**] 的組合, 以排除專案:
 
 [![](unified-storyboards-images/exclude-a.png "選取寬度和高度的組合")](unified-storyboards-images/exclude-a.png#lightbox)
 
-新*排除案例*下方的項目將會加入**屬性總管**。 接下來，取消核取**已安裝**核取方塊，指定的大小類別：
+新的*排除案例*將會加入至**屬性瀏覽器**底部的元素中。 接下來, 取消核取指定大小類別的 [**已安裝**] 核取方塊:
 
-[![](unified-storyboards-images/exclude-b.png "取消核取 已安裝的核取方塊")](unified-storyboards-images/exclude-b.png#lightbox)
+[![](unified-storyboards-images/exclude-b.png "取消核取 [已安裝] 核取方塊")](unified-storyboards-images/exclude-b.png#lightbox)
 
-切換至 項目已從排除的高度與寬度的設計介面，它已從指定的大小類別，但不是完整的 UI 設計：
+將 Design Surface 切換為排除專案的寬度和高度, 它已從指定的大小類別中移除, 但不是整個 UI 設計:
 
- [![](unified-storyboards-images/exclude02.png "切換至 項目已從排除的高度與寬度的設計介面")](unified-storyboards-images/exclude02.png#lightbox)
+ [![](unified-storyboards-images/exclude02.png "將 Design Surface 切換為排除專案的寬度和高度")](unified-storyboards-images/exclude02.png#lightbox)
 
-切換回到 Any Width/Any 高度大小類別和項目仍在：
+切換回 [任何寬度]/[任何高度大小] 類別, 而元素仍在原地:
 
- [![](unified-storyboards-images/exclude03.png "切換回 Any Width/Any 高度大小類別")](unified-storyboards-images/exclude03.png#lightbox)
+ [![](unified-storyboards-images/exclude03.png "切換回任何寬度/任何高度大小的類別")](unified-storyboards-images/exclude03.png#lightbox)
 
-在 iPad 模擬器中執行應用程式時，會出現的項目：
+當應用程式在 iPad 模擬器中執行時, 會顯示元素:
 
- [![](unified-storyboards-images/exclude04.png "時所顯示的項目在 iPad 模擬器中執行的應用程式")](unified-storyboards-images/exclude04.png#lightbox)
+ [![](unified-storyboards-images/exclude04.png "在 iPad 模擬器中執行的應用程式時所顯示的元素")](unified-storyboards-images/exclude04.png#lightbox)
 
-並在 iPhone 模擬器上執行應用程式時，遺漏的元素：
+而當應用程式在 iPhone 模擬器上執行時, 缺少元素:
 
- [![](unified-storyboards-images/exclude05.png "當遺失的項目在 iPhone 模擬器中執行的應用程式")](unified-storyboards-images/exclude05.png#lightbox)
+ [![](unified-storyboards-images/exclude05.png "IPhone 模擬器中執行中的應用程式時, 遺漏元素")](unified-storyboards-images/exclude05.png#lightbox)
 
-若要移除的項目排除情況下，只需選取中的項目**設計介面**，捲動到底部**屬性總管**然後按一下 **-** 大小寫，以移除旁邊的按鈕。
+若要從專案中移除排除案例, 只要選取  **Design Surface**中的專案, **-** 然後在 **屬性瀏覽器** 的底部按一下按鈕, 即可移除。
 
-若要查看實作統一的分鏡腳本，看看`UnifiedStoryboard`範例 Xamarin iOS 8 應用程式連接到這份文件。
+若要查看整合的分鏡腳本的執行, `UnifiedStoryboard`請查看附加到本檔的範例 Xamarin iOS 8 應用程式。
 
 ## <a name="dynamic-launch-screens"></a>動態啟動畫面
 
-啟動畫面檔案會顯示為啟動顯示畫面中，當 iOS 應用程式，就啟動應用程式會實際啟動增加的使用者提供意見反應。 在 iOS 8 之前，開發人員必須包含多個`Default.png`映像的應用程式會在執行每個裝置類型、 方向和螢幕解析度的資產。 例如， `Default@2x.png`， `Default-Landscape@2x~ipad.png`，`Default-Portrait@2x~ipad.png`等等。
+啟動畫面檔案會在 iOS 應用程式啟動時顯示為啟動顯示畫面, 以提供對使用者實際啟動應用程式的意見反應。 在 iOS 8 之前, 開發人員必須針對應用程式執行`Default.png`所在的每種裝置類型、方向和螢幕解析度, 包含多個映射資產。 例如, `Default@2x.png` `Default-Landscape@2x~ipad.png`、 、等。`Default-Portrait@2x~ipad.png`
 
-將新的 iPhone 6 和 iPhone 6 加上裝置 （和即將推出的 Apple Watch） 與所有現有的 iPhone 和 iPad 裝置，這表示大型陣列的不同大小、 方向和解析度的`Default.png`必須的啟動螢幕影像資產建立與維護。 此外，這些檔案可能相當大，並將"膨脹 」 交付項目應用程式套件組合，增加的時間才能從 iTunes App Store （可能使其能夠透過行動電話通訊網路傳遞） 下載應用程式和提高使用者的裝置上所需的儲存體數量。
+在新的 iphone 6 和 iPhone 6 Plus 裝置 (以及即將推出的 Apple Watch) 中, 使用所有現有的 iphone 和 iPad 裝置來進行分解, 這代表的是一大組大小`Default.png` 、方向以及啟動畫面影像資產的解析度, 必須建立和維護。 此外, 這些檔案可能相當大, 而且會「膨脹」交付物應用程式套件組合, 以增加從 iTunes App Store 下載應用程式所需的時間 (可能會讓它無法透過行動電話通訊網路傳遞)並增加使用者裝置上所需的儲存體數量。
 
-新增至 iOS 8、 開發人員可以建立單一、 不可部分完成`.xib`檔案中使用自動版面配置和大小類別建立的 Xcode*動態啟動螢幕*，適用於每個裝置、 解析度和方向。 這不僅能減輕開發人員建立和維護的所有必要的影像資產，所需的工作量，但可大幅降低應用程式的已安裝的套件組合的大小。
+IOS 8 的新手, 開發人員可以在 Xcode 中建立單一`.xib` 、不可部分完成的檔案, 該檔案使用自動設定和大小類別來建立*動態啟動畫面*, 適用于每個裝置、解析度和方向。 這不僅能減少開發人員建立和維護所有必要映射資產所需的工作量, 還能大幅減少應用程式已安裝的配套大小。
 
 
-動態啟動畫面有下列限制與考量：
+動態啟動畫面具有下列限制和考慮:
 
-- 僅使用`UIKit`類別。
-- 使用的單一根檢視`UIView`或`UIViewController`物件。
-- 不要讓任何連線到應用程式的程式碼 (不要加上**動作**或是**輸出**)。
-- 不要新增`UIWebView`物件。
-- 請勿使用任何自訂的類別。
-- 請勿使用執行階段屬性。
+- 僅`UIKit`使用類別。
+- 使用屬於`UIView`或`UIViewController`物件的單一根視圖。
+- 不要對應用程式的程式碼進行任何連接 (不要新增**動作**或**輸出**)。
+- 不要加入`UIWebView`物件。
+- 請勿使用任何自訂類別。
+- 請勿使用執行時間屬性。
 
-記住上述指導方針，讓我們看看新增至現有的 Xamarin iOS 8 專案的動態的啟動螢幕。
+考慮上述指導方針之後, 讓我們來看一下如何將動態啟動畫面新增至現有的 Xamarin iOS 8 專案。
 
 請執行下列動作：
 
-1. 開啟**Visual Studio for Mac**並載入**解決方案**新增至動態啟動螢幕。
-2. 在 [**方案總管] 中**，以滑鼠右鍵按一下`MainStoryboard.storyboard`檔案，然後選取**開啟** > **Xcode Interface Builder**:
+1. 開啟**Visual Studio for Mac**並載入**方案**, 以將動態啟動畫面新增至。
+2. 在 **方案總管**中, 以滑鼠右鍵`MainStoryboard.storyboard`按一下檔案, 然後選取 **以** >  **Xcode Interface Builder**開啟:
 
-    [![](unified-storyboards-images/dls01.png "Xcode 介面產生器開啟")](unified-storyboards-images/dls01.png#lightbox)
-3. 在 Xcode 中，選取**檔案** > **新增** > **檔案...** :
+    [![](unified-storyboards-images/dls01.png "使用 Xcode 開啟 Interface Builder")](unified-storyboards-images/dls01.png#lightbox)
+3. 在 Xcode 中,  > 選取 [檔案] [**新增** > 檔案 **...** ]:
 
-    [![](unified-storyboards-images/dls02.png "選取檔案 / 新增")](unified-storyboards-images/dls02.png#lightbox)
-4. 選取 [ **iOS** > **使用者介面** > **啟動畫面**然後按一下**下一步]** 按鈕：
+    [![](unified-storyboards-images/dls02.png "選取檔案/新增")](unified-storyboards-images/dls02.png#lightbox)
+4. 選取 [ **iOS**  > **使用者介面** > **啟動畫面**], 然後按 [**下一步]** 按鈕:
 
-    [![](unified-storyboards-images/dls03.png "選取 iOS / 使用者介面 / 啟動畫面")](unified-storyboards-images/dls03.png#lightbox)
-5. 將檔案命名`LaunchScreen.xib`，按一下 **建立**按鈕：
+    [![](unified-storyboards-images/dls03.png "選取 iOS/使用者介面/啟動畫面")](unified-storyboards-images/dls03.png#lightbox)
+5. 將`LaunchScreen.xib`檔案命名為, 然後按一下 [**建立**] 按鈕:
 
-    [![](unified-storyboards-images/dls04.png "將檔案命名為 LaunchScreen.xib")](unified-storyboards-images/dls04.png#lightbox)
-6. 請編輯啟動螢幕的設計藉由新增圖形元素，並使用指定的裝置、 方向和螢幕大小往的版面配置條件約束：
+    [![](unified-storyboards-images/dls04.png "將檔案命名為 LaunchScreen. xib")](unified-storyboards-images/dls04.png#lightbox)
+6. 藉由新增圖形元素並使用版面配置條件約束, 針對指定的裝置、方向和螢幕大小, 來編輯啟動畫面的設計:
 
-    [![](unified-storyboards-images/dls05.png "編輯啟動螢幕的設計")](unified-storyboards-images/dls05.png#lightbox)
-7. 變更儲存到`LaunchScreen.xib`。
-8. 選取 [**應用程式目標**並**一般**] 索引標籤：
+    [![](unified-storyboards-images/dls05.png "編輯啟動畫面的設計")](unified-storyboards-images/dls05.png#lightbox)
+7. 將變更儲存至`LaunchScreen.xib`。
+8. 選取 [**應用程式] 目標**和 [**一般**] 索引標籤:
 
-    [![](unified-storyboards-images/dls06.png "選取應用程式目標和 [一般] 索引標籤")](unified-storyboards-images/dls06.png#lightbox)
-9. 按一下 **選擇 Info.plist**按鈕，選取`Info.plist`Xamarin 應用程式，然後按一下 **選擇**按鈕：
+    [![](unified-storyboards-images/dls06.png "選取 [應用程式] 目標和 [一般] 索引標籤")](unified-storyboards-images/dls06.png#lightbox)
+9. 按一下 [**選擇 plist** ] 按鈕, 選取 [ `Info.plist`針對 Xamarin 應用程式], 然後按一下 [**選擇**] 按鈕:
 
-    [![](unified-storyboards-images/dls07.png "選取 Xamarin 應用程式的 Info.plist")](unified-storyboards-images/dls07.png#lightbox)
-10. 在 **應用程式圖示和啟動影像**區段中，開啟**啟動螢幕檔案**下拉式清單中，然後選擇 `LaunchScreen.xib`上面所建立：
+    [![](unified-storyboards-images/dls07.png "選取 Xamarin 應用程式的 plist")](unified-storyboards-images/dls07.png#lightbox)
+10. 在 [**應用程式圖示和啟動映射**] 區段中, 開啟 [**啟動畫面**檔案] `LaunchScreen.xib`下拉式清單, 然後選擇上面所建立的:
 
-    [![](unified-storyboards-images/dls08.png "選擇 LaunchScreen.xib")](unified-storyboards-images/dls08.png#lightbox)
-11. 將變更儲存至檔案，並返回 Visual Studio for mac。
-12. 等候 Visual Studio for Mac 將會完成同步處理與 Xcode 的變更。
-13. 在 [**方案總管] 中**，以滑鼠右鍵按一下**資源**資料夾，然後選取**新增** > **新增檔案...** :
+    [![](unified-storyboards-images/dls08.png "選擇 [LaunchScreen] xib。")](unified-storyboards-images/dls08.png#lightbox)
+11. 將變更儲存至檔案, 並返回 Visual Studio for Mac。
+12. 等候 Visual Studio for Mac 完成與 Xcode 同步變更。
+13. 在 **方案總管**中, 以滑鼠右鍵按一下 **資源** 資料夾, 然後選取 **新增** >  **新增檔案 ...** :
 
-    [![](unified-storyboards-images/dls09.png "選取新增/新增檔案...")](unified-storyboards-images/dls09.png#lightbox)
-14. 選取 `LaunchScreen.xib`上面所建立的檔案，然後按一下**開啟**按鈕：
+    [![](unified-storyboards-images/dls09.png "選取 [新增/新增檔案 ...]")](unified-storyboards-images/dls09.png#lightbox)
+14. 選取上方`LaunchScreen.xib`建立的檔案, 然後按一下 [**開啟**] 按鈕:
 
-    [![](unified-storyboards-images/dls10.png "選取 LaunchScreen.xib 檔案")](unified-storyboards-images/dls10.png#lightbox)
+    [![](unified-storyboards-images/dls10.png "選取 LaunchScreen xib 檔案")](unified-storyboards-images/dls10.png#lightbox)
 15. 建置應用程式。
 
 ### <a name="testing-the-dynamic-launch-screen"></a>測試動態啟動畫面
 
-在 Visual Studio for Mac 中，選取 iPhone 4 Retina 模擬器並執行應用程式。 [動態] 啟動畫面會顯示在正確的格式和方向：
+在 Visual Studio for Mac 中, 選取 [iPhone 4 Retina 模擬器] 並執行應用程式。 動態啟動畫面將以正確的格式和方向顯示:
 
-[![](unified-storyboards-images/dls11.png "顯示在垂直方向動態啟動螢幕")](unified-storyboards-images/dls11.png#lightbox)
+[![](unified-storyboards-images/dls11.png "以垂直方向顯示的動態啟動畫面")](unified-storyboards-images/dls11.png#lightbox)
 
-停止在 Visual Studio for Mac 的應用程式，然後選取 iPad iOS 8 裝置。 執行應用程式，並在啟動畫面將會正確格式化此裝置和方向：
+在 Visual Studio for Mac 中停止應用程式, 然後選取 iPad iOS 8 裝置。 執行應用程式, 系統會針對此裝置和方向正確地格式化啟動畫面:
 
-[![](unified-storyboards-images/dls12.png "顯示在水平方向的動態啟動畫面")](unified-storyboards-images/dls12.png#lightbox)
+[![](unified-storyboards-images/dls12.png "以水準方向顯示的動態啟動畫面")](unified-storyboards-images/dls12.png#lightbox)
 
-返回 Visual Studio for Mac，並停止執行的應用程式。
+返回 Visual Studio for Mac, 並停止執行應用程式。
 
 ### <a name="working-with-ios-7"></a>使用 iOS 7
 
-若要維護回溯相容性的 iOS 7，只包含一般`Default.png`映像平常一樣在 iOS 8 應用程式的資產。 iOS 會返回先前的行為，並在 iOS 7 裝置上執行時，使用這些檔案為啟動螢幕。
+為了維持與 ios 7 的回溯相容性, 只要在`Default.png` ios 8 應用程式中納入一般的映射資產就可以了。 iOS 會回到先前的行為, 並在 iOS 7 裝置上執行時, 使用這些檔案作為啟動畫面。
 
-若要查看的動態啟動螢幕，在 Xamarin 中實作，看看[動態啟動畫面](https://developer.xamarin.com/samples/monotouch/ios8/DynamicLaunchScreen/)範例 iOS 8 應用程式連接到這份文件。
+若要在 Xamarin 中查看動態啟動畫面的執行, 請查看附加到本檔的[動態啟動畫面](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)範例 iOS 8 應用程式。
 
 ## <a name="summary"></a>總結
 
-這篇文章介紹了快速大小類別和它們如何影響 iPhone 和 iPad 裝置中的版面配置。 它討論特性、 特性環境和特性集合如何使用大小類別建立統一的介面。 花費的調適性的檢視控制器的概要以及如何使用統一的介面內的大小類別。 它探討實作大小類別和統一的介面，完全從C#Xamarin iOS 8 應用程式內的程式碼。
+本文快速查看大小類別, 以及它們如何影響 iPhone 和 iPad 裝置的版面配置。 它討論了特性、特性環境和特性集合如何搭配大小類別來建立整合介面。 它會稍微瞭解調適型視圖控制器, 以及它們如何與整合介面內的大小類別搭配使用。 它探討了如何完全從C# Xamarin iOS 8 應用程式中的程式碼來執行大小類別和整合介面。
 
-最後，本文涵蓋使用 Xamarin iOS 設計工具，可在 iOS 裝置上建立統一的分鏡腳本的基本概念，並建立一個動態啟動螢幕會顯示為每個 iOS 8 裝置上的啟動螢幕。
+最後, 本文涵蓋了使用 Xamarin iOS 設計工具建立整合的分鏡腳本的基本概念, 可在 iOS 裝置上工作, 並建立單一的動態啟動畫面, 在每個 iOS 8 裝置上顯示為啟動畫面。
 
 ## <a name="related-links"></a>相關連結
 
-- [自適性相片 （範例）](https://developer.xamarin.com/samples/monotouch/ios8/AdaptivePhotos/)
-- [StoryboardIntro 範例](https://developer.xamarin.com/samples/monotouch/StoryboardIntro/)
-- [動態啟動畫面 （範例）](https://developer.xamarin.com/samples/monotouch/ios8/DynamicLaunchScreen/)
+- [調適型相片 (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-adaptivephotos)
+- [動態啟動畫面 (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)
 - [iOS 8 簡介](~/ios/platform/introduction-to-ios8.md)
-- [IOS8-發展 2014 （影片） 中的動態配置](http://youtu.be/f3mMGlS-lM4)
+- [IOS8 中的動態版面配置-進化 2014 (影片)](http://youtu.be/f3mMGlS-lM4)
 - [UIPresentationController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPresentationController_class/)
 - [UIImageAsset](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIImageAsset_Ref/index.html#//apple_ref/occ/cl/UIImageAsset)

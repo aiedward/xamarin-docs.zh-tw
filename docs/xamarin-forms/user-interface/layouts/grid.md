@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 78a84fd8d4f380739a9f080a1a5aad7c5942d0c9
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 38206812fbd746a63c5bff18111779c25deedc66
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511872"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648527"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms 方格
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 [`Grid`](xref:Xamarin.Forms.Grid) 排列成資料列和資料行的檢視表的支援。 資料列和資料行，都可以設定成比例的大小或絕對的大小。 `Grid`版面配置不應混淆與傳統的資料表，而不是呈現表格式資料。 `Grid` 沒有資料列、 資料行或資料格的格式化概念。 不同於 HTML 資料表，`Grid`純粹是用來配置內容。
 
@@ -384,5 +384,5 @@ public CalculatorGridCode ()
 
 - [使用 Xamarin.Forms 時，第 17 章建立行動應用程式](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
 - [格線](xref:Xamarin.Forms.Grid)
-- [版面配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [BusinessTumble 範例 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
+- [版面配置 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 範例 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

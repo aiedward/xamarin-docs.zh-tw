@@ -1,141 +1,141 @@
 ---
-title: 使用 tvOS 的進度指示器，在 Xamarin 中
-description: 本文件說明如何使用 Xamarin 建置的 tvOS 應用程式中的進度指標使用。 它討論進度列和活動的指標。
+title: 在 Xamarin 中使用 tvOS 進度指示器
+description: 本檔說明如何在以 Xamarin 建立的 tvOS 應用程式中使用進度指示器。 同時討論進度列和活動指示器。
 ms.prod: xamarin
 ms.assetid: 582B6D0C-1F16-4299-A9A6-5651E76009FE
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/25/2018
-ms.openlocfilehash: cbd2b2de237a5bb22d1dc0242569b96b12bca070
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6ab1b4ad5493075e8806190e77f6d234354af9ff
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61180518"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648965"
 ---
-# <a name="working-with-tvos-progress-indicators-in-xamarin"></a>使用 tvOS 的進度指示器，在 Xamarin 中
+# <a name="working-with-tvos-progress-indicators-in-xamarin"></a>在 Xamarin 中使用 tvOS 進度指示器
 
-_本文章涵蓋設計和使用 Xamarin.tvOS 應用程式內的進度指示器。_
+_本文涵蓋在 tvOS 應用程式內設計和使用進度指示器。_
 
-可能有 Xamarin.tvOS 應用程式需要時載入新的內容，或執行耗時的處理作業的時間。 在這段時間，您應該呈現活動指示器或進度列讓使用者知道應用程式仍在執行，並給予一些指示，指出工作正在執行的長度。
+有時候, 您的 tvOS 應用程式可能需要載入新的內容, 或執行冗長的處理作業。 在這段期間, 您應該會顯示活動指示器或進度列, 讓使用者知道應用程式仍在執行中, 並提供一些指示來指出所執行之工作的長度。
 
-![範例的進度指示器](progress-indicators-images/intro01.png "範例進度指標")
+![範例進度指示器](progress-indicators-images/intro01.png "範例進度指示器")
 
-## <a name="about-activity-indicators"></a>相關活動的指標
+## <a name="about-activity-indicators"></a>關於活動指示器
 
-活動指示器呈現旋轉齒輪，並用來表示長度不明的工作。 啟動工作，並在工作完成時就會消失時，會顯示指標。
+活動指標會呈現為旋轉齒輪, 用來表示不確定長度的工作。 當工作開始時, 即會顯示指標, 而當工作完成時, 則會消失。
 
-Apple 會有下列建議使用活動的指標：
+Apple 對於使用活動指示器有下列建議:
 
-- **可能的話，請改用進度列**-因為需要的任何意見反應來選擇長時間執行的程序的使用者，活動指示器提供一律使用進度列，如果長度為已知 （例如，若要下載檔案中的多少個位元組）。
-- **保留以動畫顯示的指示器**-使用者與 「 定態的活動指標是已停止的應用程式，因此您應該一律以動畫顯示指標時所顯示。
-- **描述工作正在處理**-只顯示本身的活動指標仍嫌不足，使用者必須以瞭解它們要等待的程序。 包含有意義的標籤 （通常是一個單一、 完整句子），以清楚定義的工作。
+- **可能的話, 請改為使用進度**列, 因為活動指示器會提供使用者對執行的程式所需時間的任何意見反應, 如果知道長度 (例如, 要在檔案中下載多少個位元組), 請一律使用進度列。
+- **將指標保持動畫**-使用者會將固定的活動指示器與停止的應用程式產生關聯, 因此, 您應該一律在顯示指標時製作動畫。
+- **描述正在處理的工作**-只顯示活動指示器本身還不夠;使用者必須知道他們正在等候的進程。 包含清楚定義工作的有意義標籤 (通常是單一、完整的句子)。
 
 ## <a name="about-progress-bars"></a>關於進度列
 
-進度列顯示為線條，以填滿色彩，以指出狀態和長度耗時的工作。 工作長度已知或可計算時，應該一律使用進度列。
+進度列會顯示為填滿色彩的線條, 以指出耗時工作的狀態和長度。 當已知的工作長度或可以計算時, 應該一律使用進度列。
 
-Apple 有進度列所使用的下列建議：
+Apple 具有下列使用進度列的建議:
 
-- **準確地回報進度**-進度列應永遠存在的精確表示完成工作所需的時間。 永遠不會無法正確地表示若要讓應用程式出現忙碌的時間。
-- **用於定義完善的持續時間**-放置，橫條圖不應該只顯示正在漫長的工作的進度，但讓使用者和指出多少工作已完成，然後估計剩餘時間。
+- **正確地報告進度**列: 進度列應一律呈現完成工作所需時間的精確表示。 絕對不要將讓應用程式顯示為忙碌的時間。
+- 用於**定義良好的持續**時間-進度列不應該只會顯示有較長的工作正在進行中, 而是讓使用者和指示工作的完成程度和剩餘時間的估計。
 
-## <a name="progress-indicators-and-storyboards"></a>進度指標和分鏡腳本
+## <a name="progress-indicators-and-storyboards"></a>進度指示器和分鏡腳本
 
-使用進度列指示器 Xamarin.tvOS 應用程式中的最簡單方式是將它新增至使用 iOS 設計工具的應用程式的 UI。
+在 tvOS 應用程式中使用進度列指示器最簡單的方式, 就是使用 iOS 設計工具將它新增至應用程式的 UI。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
     
-1. 在  **Solution Pad**，按兩下**Main.storyboard**檔案，並開啟它進行編輯。
+1. 在  **Solution Pad**中, 按兩下**主要**的分鏡腳本檔案, 並將其開啟以進行編輯。
 
-2. 拖曳**活動指示器**從**工具箱**並將它放在檢視上： 
+2. 從 [**工具箱**] 將**活動指標**拖曳至 [view]: 
 
-    ![活動指示器](progress-indicators-images/activity01.png "活動指示器")
+    ![活動指標](progress-indicators-images/activity01.png "活動指標")
 
-3. 在  **Widget**索引標籤**Properties Pad**，您可以調整活動指示器的數個屬性，例如其**樣式**，**行為**，並**名稱**: 
+3. 在  **Properties Pad**的  **Widget**  索引標籤中, 您可以調整活動指標的數個屬性, 例如其**樣式**、**行為**和**名稱**: 
 
-    ![小工具 索引標籤，為活動指示器](progress-indicators-images/activity02.png "的活動指標的小工具 索引標籤")
+    ![活動指標的 [Widget]]索引標籤(progress-indicators-images/activity02.png "活動指標的 [Widget]")索引標籤
     
-    **名稱**判斷屬性表示中的活動指標的名稱C#程式碼。
+    **名稱**會決定以C#程式碼表示活動指標的屬性名稱。
 
-4. 拖曳**進度檢視**從**工具箱**並將它放在檢視上： 
+4. 從 [**工具箱**] 拖曳**進度視圖**, 並將其放置在視圖上: 
 
-    ![進度檢視](progress-indicators-images/activity03.png "進度檢視")
+    ![進度視圖](progress-indicators-images/activity03.png "進度視圖")
 
-5. 在 [ **Widget** ] 索引標籤**屬性總管**，您可以調整的進度檢視數個屬性，例如其**樣式**，**進度**（完成的百分比），並**名稱**: 
+5. 在 [**屬性瀏覽器**] 的 [ **Widget** ] 索引標籤中, 您可以調整進度視圖的數個屬性, 例如其**樣式**、**進度**(完成百分比) 和**名稱**: 
 
-    ![小工具 索引標籤，進行檢視](progress-indicators-images/activity04.png "進度檢視 索引標籤上的小工具")
+    ![進度視圖的 [Widget]]索引標籤(progress-indicators-images/activity04.png "進度視圖的 [Widget]")索引標籤
     
-    **名稱**判斷屬性表示中的 [進度] 檢視的名稱C#程式碼。
+    **名稱**會決定以C#程式碼表示進度視圖的屬性名稱。
 
 6. 儲存您的變更。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
     
-1. 在 **方案總管**，按兩下**Main.storyboard**檔案，並開啟它進行編輯。
+1. 在 **方案總管**中, 按兩下**主要**的分鏡腳本檔案, 並將其開啟以進行編輯。
 
-2. 拖曳**活動指示器**從**工具箱**並將它放在檢視上： 
+2. 從 [**工具箱**] 將**活動指標**拖曳至 [view]: 
 
-    ![活動指示器](progress-indicators-images/activity01-vs.png
-    "活動指示器")
+    ![活動指標活動指標](progress-indicators-images/activity01-vs.png
+    "")
 
-3. 在  **Widget**索引標籤**屬性總管**，您可以調整活動指示器的數個屬性，例如其**樣式**，**行為**，並**名稱**: 
+3. 在 [**屬性] Explorer**的 [ **Widget** ] 索引標籤中, 您可以調整活動指標的數個屬性, 例如其**樣式**、**行為**和**名稱**: 
 
-    ![小工具 索引標籤，為活動指示器](progress-indicators-images/activity02-vs.png "的活動指標的小工具 索引標籤")
+    ![活動指標的 [Widget]]索引標籤(progress-indicators-images/activity02-vs.png "活動指標的 [Widget]")索引標籤
 
-    **名稱**判斷屬性表示中的活動指標的名稱C#程式碼。
+    **名稱**會決定以C#程式碼表示活動指標的屬性名稱。
 
-4. 拖曳**進度檢視**從**工具箱**並將它放在檢視上： 
+4. 從 [**工具箱**] 拖曳**進度視圖**, 並將其放置在視圖上: 
 
-   ![進度檢視](progress-indicators-images/activity03-vs.png "進度檢視")
+   ![進度視圖](progress-indicators-images/activity03-vs.png "進度視圖")
 
-5. 在 [ **Widget** ] 索引標籤**屬性總管**，您可以調整的進度檢視數個屬性，例如其**樣式**，**進度**（完成的百分比），並**名稱**: 
+5. 在 [**屬性瀏覽器**] 的 [ **Widget** ] 索引標籤中, 您可以調整進度視圖的數個屬性, 例如其**樣式**、**進度**(完成百分比) 和**名稱**: 
 
-    ![小工具 索引標籤，進行檢視](progress-indicators-images/activity04-vs.png "進度檢視 索引標籤上的小工具")
+    ![進度視圖的 [Widget]]索引標籤(progress-indicators-images/activity04-vs.png "進度視圖的 [Widget]")索引標籤
     
-    **名稱**判斷屬性表示中的 [進度] 檢視的名稱C#程式碼。
+    **名稱**會決定以C#程式碼表示進度視圖的屬性名稱。
 
 6. 儲存您的變更。
 
 -----
 
-如需有關使用分鏡腳本的詳細資訊，請參閱我們[Hello，tvOS 快速入門指南](~/ios/tvos/get-started/hello-tvos.md)。 
+如需使用分鏡腳本的詳細資訊, 請參閱我們的[Hello, tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)。 
 
-## <a name="working-with-activity-indicators"></a>使用活動的指標
+## <a name="working-with-activity-indicators"></a>使用活動指示器
 
-如上所述，當您的應用程式正在執行的不定長度較長的處理序時，應該會顯示活動的指標。
+如上所述, 當您的應用程式執行長時間不定的進程時, 應該會顯示活動指示器。
 
-在任何時間點，您可以看到一個活動標記為動畫形式藉由檢查其`IsAnimating`屬性。 如果`HidesWhenStopped`屬性是`true`，停止它的動畫時，將會自動隱藏活動指示器。
+在任何時間點, 您都可以藉由檢查活動指標的屬性來`IsAnimating`查看其是否為動畫。 如果屬性為`true`, 則活動指標會在其動畫停止時自動隱藏。 `HidesWhenStopped`
 
-您可以使用下列程式碼，以啟動動畫： 
+您可以使用下列程式碼來啟動動畫: 
 
 ```csharp
 ActivityIndicator.StartAnimating();
 ```
 
-與下列命令會停止動畫：
+而下列動作會停止動畫:
 
 ```csharp
 ActivityIndicator.StopAnimating();
 ```
 
 > [!NOTE]
-> 這些程式碼片段假設活動指標**名稱**已設為**ActivityIndicator**中**Widget** iOS 設計工具 索引標籤。
+> 這些程式碼片段假設活動指示器的**名稱**在 IOS 設計工具的 [ **Widget** ] 索引標籤中設定為 [ **ActivityIndicator** ]。
 
 ## <a name="working-with-progress-bars"></a>使用進度列
 
-同樣地，進度列也應該使用您的應用程式正在執行長時間執行的工作，已知的持續任何的時間時間。 
+同樣地, 每當您的應用程式執行已知持續時間的長時間執行工作時, 都應該使用進度列。 
 
-`Progress`屬性用來設定工作已完成從 0%到 100%(0.0 到 1.0) 的數量。 使用`ProgressTintColor`屬性來設定已完成的金額列的色彩和`TrackTintColor`屬性來設定背景色彩 （未完成的數量）。
+`Progress`屬性是用來將已完成的工作量從 0% 設定為 100% (0.0 到 1.0)。 您可以使用`TrackTintColor` 屬性來設定[已完成的數量]列和屬性的色彩,以設定背景色彩(未完成`ProgressTintColor`的金額)。
 
 ## <a name="summary"></a>總結
 
-這篇文章已涵蓋設計和使用 Xamarin.tvOS 應用程式內的進度指示器。
+本文涵蓋在 tvOS 應用程式內設計和使用進度指示器。
 
 ## <a name="related-links"></a>相關連結
 
-- [tvOS 範例](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvOS 人性化介面指南](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [Tvos 應用程式設計指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [tvOS 人力介面指南](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [TvOS 應用程式設計指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

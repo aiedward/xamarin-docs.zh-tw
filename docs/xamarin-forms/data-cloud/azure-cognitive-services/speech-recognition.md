@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: f854ac363fe3e5b9dc3df046c9fab592b97bc962
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 97997a527647ae972eadff47da8c1321d5d55daa
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675253"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655464"
 ---
 # <a name="speech-recognition-using-the-microsoft-speech-api"></a>使用 Microsoft Speech API 的語音辨識
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft Speech API 是以雲端為基礎的 API，可口語的語言處理演算法。這篇文章說明如何使用 Microsoft 語音辨識的 REST API 將轉換成在 Xamarin.Forms 應用程式中的文字。_
 
@@ -114,7 +114,7 @@ string GenerateRequestUri(string speechEndpoint)
 }
 ```
 
-所執行的主要組態`GenerateRequestUri`方法是將音訊內容的地區設定。 如需支援的地區設定的清單，請參閱 <<c0> [ 支援的語言](/azure/cognitive-services/speech/api-reference-rest/supportedlanguages/)。
+所執行的主要組態`GenerateRequestUri`方法是將音訊內容的地區設定。 如需支援的地區設定清單, 請參閱[支援的語言](/azure/cognitive-services/speech/api-reference-rest/supportedlanguages/)。
 
 ### <a name="sending-the-request"></a>傳送要求
 
@@ -171,4 +171,4 @@ API 回應會傳回 JSON 格式，與已辨識的文字中包含`name`標記。 
 
 - [Microsoft Speech API 文件](/azure/cognitive-services/speech/home/)。
 - [使用 RESTful Web 服務](~/xamarin-forms/data-cloud/web-services/rest.md)
-- [待辦事項 Cognitive Services （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [待辦事項 Cognitive Services （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

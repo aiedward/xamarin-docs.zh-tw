@@ -7,16 +7,16 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 9bc320273df192f9daf2520f451601335731e7b0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2e9259bed6ad0ae5a926cb75ea74c1f379897220
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61189107"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649280"
 ---
 # <a name="the-scale-transform"></a>縮放轉換
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索 SkiaSharp 縮放轉換，調整以各種不同大小的物件_
 
@@ -102,7 +102,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-您可能會好奇：縮放比例如何影響從傳回的值`MeasureText`方法的`SKPaint`？ 答案是：完全不用。 `Scale` 是一種方法的`SKCanvas`。 它不會影響您做的任何項目`SKPaint`物件，直到您使用該物件來轉譯在畫布上的項目。
+您可能會想:縮放因素如何影響的`MeasureText` `SKPaint`方法所傳回的值？ 答案如下:完全不用。 `Scale` 是一種方法的`SKCanvas`。 它不會影響您做的任何項目`SKPaint`物件，直到您使用該物件來轉譯在畫布上的項目。
 
 如您所見，所有項目後繪製`Scale`按比例呼叫增加：
 
@@ -251,7 +251,7 @@ using (SKPaint strokePaint = new SKPaint
 
 [![](scale-images/anisotropicscaling-small.png "非等向性調整頁面的三個螢幕擷取畫面")](scale-images/anisotropicscaling-large.png#lightbox "非等向性調整頁面的三個螢幕擷取畫面")
 
-另一種方式可以思考`Scale`和`Translate`呼叫是要判斷在反向序列的效果：`Translate`呼叫移位的路徑，讓它成為完整可見但導向畫布左上角。 `Scale`方法接著會該星號左上角相對較大。
+另一種您可以思考`Scale`和`Translate`呼叫的方法, 是以反向順序來判斷效果:此`Translate`呼叫會移動路徑, 使其變成完全可見, 但會在畫布的左上角導向。 `Scale`方法接著會該星號左上角相對較大。
 
 事實上，它會出現星號是稍微大於畫布。 問題在於筆觸粗細。 `Bounds`屬性`SKPath`表示維度的座標編碼在路徑中，而這就是程式會使用調整其規模。 轉譯路徑時使用特定的筆劃的寬度，呈現的路徑。 大於畫布。
 
@@ -294,7 +294,7 @@ using (SKPaint textPaint = new SKPaint
 
 [![](scale-images/anisotropictext-small.png "非等向性測試頁的三個螢幕擷取畫面")](scale-images/anisotropictext-large.png#lightbox "的非等向性測試頁的三個螢幕擷取畫面")
 
-如果您需要保留的圖形物件的外觀比例，您會想要使用 dbi100 縮放。 **Dbi100 調整**頁面所示範的是此為 11 星形。 就概念而言，具有 dbi100 調整頁面的中央顯示圖形物件的步驟如下：
+如果您需要保留的圖形物件的外觀比例，您會想要使用 dbi100 縮放。           **Dbi100 調整**頁面所示範的是此為 11 星形。 就概念而言，具有 dbi100 調整頁面的中央顯示圖形物件的步驟如下：
 
 - 轉譯圖形物件左上角的中心。
 - 縮放的水平和垂直頁面尺寸除以 圖形物件維度的最小值為基礎的物件。
@@ -347,4 +347,4 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

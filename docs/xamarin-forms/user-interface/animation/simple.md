@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: 46c2280717b39160a4ce1b44d0a63382ed0b283f
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: d3046479282ef1535677f6712e487ab80bbf9d1b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926471"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656796"
 ---
 # <a name="simple-animations-in-xamarinforms"></a>在 Xamarin.Forms 中的簡單動畫
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Animation/Basic/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
 
 _ViewExtensions 類別提供可用來建構簡單的動畫的擴充方法。本文示範如何建立和取消使用 ViewExtensions 類別的動畫。_
 
@@ -234,5 +234,5 @@ ViewExtensions.CancelAnimations (image);
 ## <a name="related-links"></a>相關連結
 
 - [非同步支援概觀](~/cross-platform/platform/async.md)
-- [基本動畫 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Animation/Basic/)
+- [基本動畫 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
 - [ViewExtensions](xref:Xamarin.Forms.ViewExtensions)

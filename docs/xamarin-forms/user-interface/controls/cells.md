@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: c4d73f131b8b20f17c5a3df13a3c4590f4ca926c
-ms.sourcegitcommit: 4f8dc5298a95d591a59e97cdd347fd82858a1019
+ms.openlocfilehash: 1e003a80b58f783829f5af3b74801fc3c91c88e9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66469503"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655610"
 ---
 # <a name="xamarinforms-cells"></a>Xamarin.Forms 資料格
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _Xamarin.Forms 資料格可以加入至 Listview 和 TableViews。_
 
@@ -48,7 +48,7 @@ Xamarin.Forms 可支援下列資料格類型：
 
 |     |     |
 | --- | --- |
-| [ `SwitchCell` ](xref:Xamarin.Forms.SwitchCell)包含文字設有[ `Text` ](xref:Xamarin.Forms.SwitchCell.Text)屬性和 on/off 開關一開始設定與布林值[ `On` ](xref:Xamarin.Forms.SwitchCell.On)屬性。 處理[ `OnChanged` ](xref:Xamarin.Forms.SwitchCell.OnChanged)事件時收到通知`On`屬性變更。<br /><br />[API 文件](xref:Xamarin.Forms.SwitchCell) / [指南](~/xamarin-forms/user-interface/tableview.md#switchcell) | [![SwitchCell 範例](cells-images/SwitchCell.png "SwitchCell 範例")](cells-images/SwitchCell-Large.png#lightbox "SwitchCell 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchCellDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchCellDemoPage.xaml) |
+| 包含具有屬性的文字集, 以及一開始設定了布林值[`On`](xref:Xamarin.Forms.SwitchCell.On)屬性的開啟/關閉參數。 [`Text`](xref:Xamarin.Forms.SwitchCell.Text) [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) 處理[ `OnChanged` ](xref:Xamarin.Forms.SwitchCell.OnChanged)事件時收到通知`On`屬性變更。<br /><br />[API 文件](xref:Xamarin.Forms.SwitchCell) / [指南](~/xamarin-forms/user-interface/tableview.md#switchcell) | [![SwitchCell 範例](cells-images/SwitchCell.png "SwitchCell 範例")](cells-images/SwitchCell-Large.png#lightbox "SwitchCell 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchCellDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchCellDemoPage.xaml) |
 |     |     |
 
 ### <a name="entrycell"></a>EntryCell
@@ -61,6 +61,6 @@ Xamarin.Forms 可支援下列資料格類型：
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.Forms FormsGallery 範例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
-- [Xamarin.Forms 範例](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [Xamarin.Forms FormsGallery 範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+- [Xamarin.Forms 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [Xamarin.Forms API 文件](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

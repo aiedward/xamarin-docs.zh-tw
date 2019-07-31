@@ -1,6 +1,6 @@
 ---
 title: 建立單頁 Xamarin.Forms 應用程式
-description: 這篇文章說明如何建立單一頁面跨平台 Xamarin.Forms 應用程式，可讓您輸入的附註，然後將它保存裝置儲存空間。
+description: 本文說明如何建立單一頁面跨平臺 Xamarin 應用程式, 這可讓您輸入附注並將它保存在裝置儲存體中。
 zone_pivot_groups: platform-dev16
 ms.topic: quickstart
 ms.prod: xamarin
@@ -9,24 +9,24 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 83c71962ceb4a30c2e05d44fffe4d64b54e4883d
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 48af81856ebe92a712b5d41d8d856bb00a526982
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831987"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655001"
 ---
-# <a name="create-a-single-page-xamarinforms-application"></a>建立單一頁面 Xamarin.Forms 應用程式
+# <a name="create-a-single-page-xamarinforms-application"></a>建立單一頁面 Xamarin. Forms 應用程式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
 
-在本快速入門中，您將了解如何：
+在本快速入門中, 您將瞭解如何:
 
-- 建立跨平台 Xamarin.Forms 應用程式。
-- 定義使用可延伸應用程式標記語言 (XAML) 頁面的使用者介面。
-- 與 XAML 使用者介面項目，從程式碼互動。
+- 建立跨平臺的 Xamarin Forms 應用程式。
+- 使用可延伸應用程式標記語言 (XAML) 來定義頁面的使用者介面。
+- 從程式碼與 XAML 使用者介面元素互動。
 
-快速入門逐步解說如何建立可讓您輸入的附註，並將它保存到裝置的儲存體的跨平台 Xamarin.Forms 應用程式。 最終的應用程式如下所示：
+本快速入門會逐步解說如何建立跨平臺的 Xamarin Forms 應用程式, 讓您輸入附注, 並將它保存到裝置存放裝置。 最終的應用程式如下所示：
 
 [![](single-page-images/screenshots-sml.png "Notes 應用程式")](single-page-images/screenshots.png#lightbox "Notes 應用程式")
 
@@ -34,30 +34,30 @@ ms.locfileid: "67831987"
 
 ### <a name="prerequisites"></a>必要條件
 
-- Visual Studio 2019 （最新版本） 中，使用**使用.NET 進行行動開發**安裝工作負載。
-- 知識庫的C#。
-- （選擇性）配對的 Mac 建置 ios 應用程式。
+- Visual Studio 2019 (最新版本), 並已安裝**具有 .net**工作負載的行動裝置開發。
+- 的C#知識。
+- 選擇性在 iOS 上建立應用程式的配對 Mac。
 
-如需有關這些必要條件的詳細資訊，請參閱 <<c0> [ 安裝 Xamarin](~/get-started/installation/index.md)。 如需有關將 Visual Studio 2019 連線至 Mac 建置主機的相關資訊，請參閱[為 Xamarin.iOS 開發與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+如需這些必要條件的詳細資訊, 請參閱[安裝 Xamarin](~/get-started/installation/index.md)。 如需有關將 Visual Studio 2019 連線至 Mac 建置主機的相關資訊，請參閱[為 Xamarin.iOS 開發與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 
 ## <a name="get-started-with-visual-studio-2019"></a>開始使用 Visual Studio 2019
 
-1. 啟動 Visual Studio 2019，並在 [開始] 視窗中按一下**建立新的專案**建立新的專案：
+1. 啟動 Visual Studio 2019, 然後在 [開始] 視窗中, 按一下 [**建立新專案**] 來建立新的專案:
 
     ![](single-page-images/vs/new-solution-2019.png "新增專案")
 
-2. 在 [**建立新的專案**視窗中，選取**Mobile**中**專案類型**下拉式清單中，選取**行動應用程式 (Xamarin.Forms**範本），然後按一下**下一步]** 按鈕：
+2. 在 [**建立新專案**] 視窗的 [ **專案類型**] 下拉式選單中, 選取 [行動**應用程式 (Xamarin** ] 範本), 然後按 [**下一步]** 按鈕:
 
     ![](single-page-images/vs/new-project-2019.png "跨平台專案範本")
 
-3. 在 **設定新專案**視窗中，將**專案名稱**來**備忘稿**、 選擇專案的合適位置，然後按一下 **建立**按鈕：
+3. 在 [設定**您的新專案**] 視窗中, 將 [**專案名稱**] 設為 [**附注**], 選擇專案的適當位置, 然後按一下 [**建立**] 按鈕:
 
     ![](single-page-images/vs/configure-project.png "設定您的專案")
 
     > [!IMPORTANT]
     > 本快速入門中的 C# 和 XAML 程式碼片段，要求將解決方案命名為 **Notes**。 當您從本快速入門將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
 
-4. 在**新的跨平台應用程式** 對話方塊中，按一下**空白應用程式**，然後按一下**確定**按鈕：
+4. 在 [**新增跨平臺應用程式**] 對話方塊中, 按一下 [**空白應用程式**], 然後按一下 [**確定]** 按鈕:
 
     ![](single-page-images/vs/new-app-2019.png "新增跨平台應用程式")
 
@@ -96,7 +96,7 @@ ms.locfileid: "67831987"
     </ContentPage>
     ```
 
-    此程式碼以宣告方式定義頁面上，其中包含的使用者介面[ `Label` ](xref:Xamarin.Forms.Label)來顯示文字、 [ `Editor` ](xref:Xamarin.Forms.Editor)文字輸入和兩個[ `Button`](xref:Xamarin.Forms.Button)儲存或刪除的檔案將應用程式導向的執行個體。 兩個 `Button` 執行個體以水平方式配置在 [`Grid`](xref:Xamarin.Forms.Grid) 中，而 `Label`、`Editor` 和 `Grid` 以垂直方式配置在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中。 如需建立使用者介面的詳細資訊，請參閱[使用者介面](deepdive.md#user-interface)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    此程式碼會以宣告的方式定義頁面的使用者介面, 其中[`Label`](xref:Xamarin.Forms.Label)包含要顯示文字的[`Editor`](xref:Xamarin.Forms.Editor) 、文字輸入的, 以及[`Button`](xref:Xamarin.Forms.Button)指示應用程式儲存或刪除檔案的兩個實例。 兩個 `Button` 執行個體以水平方式配置在 [`Grid`](xref:Xamarin.Forms.Grid) 中，而 `Label`、`Editor` 和 `Grid` 以垂直方式配置在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中。 如需建立使用者介面的詳細資訊, 請參閱 Xamarin 中的[使用者介面](deepdive.md#user-interface)[快速入門深入探討](deepdive.md)。
 
     按下 **CTRL+S** 以將變更儲存到 **MainPage.xaml**，然後關閉檔案。
 
@@ -144,7 +144,7 @@ ms.locfileid: "67831987"
     }
     ```
 
-    此程式碼定義了 `_fileName` 欄位，這個欄位會參考名為 `notes.txt` 的檔案，以將附註資料儲存在應用程式的本機應用程式資料夾中。 執行頁面建構函式時會讀取檔案 (如果存在的話)，並將其顯示在[`Editor`](xref:Xamarin.Forms.Editor)中。 當按下 [儲存]  [`Button`](xref:Xamarin.Forms.Button)時，即會執行 `OnSaveButtonClicked` 事件處理常式，這會將`Editor`的內容儲存到檔案。 當按下 [刪除]  `Button`時，即會執行 `OnDeleteButtonClicked` 事件處理常式，這會刪除檔案 (假設檔案存在)，並從`Editor`中移除任何文字。 如需使用者互動的詳細資訊，請參閱[回應使用者互動](deepdive.md#responding-to-user-interaction)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    此程式碼定義了 `_fileName` 欄位，這個欄位會參考名為 `notes.txt` 的檔案，以將附註資料儲存在應用程式的本機應用程式資料夾中。 執行頁面建構函式時會讀取檔案 (如果存在的話)，並將其顯示在[`Editor`](xref:Xamarin.Forms.Editor)中。 當按下 [儲存]  [`Button`](xref:Xamarin.Forms.Button)時，即會執行 `OnSaveButtonClicked` 事件處理常式，這會將`Editor`的內容儲存到檔案。 當按下 [刪除]  `Button`時，即會執行 `OnDeleteButtonClicked` 事件處理常式，這會刪除檔案 (假設檔案存在)，並從`Editor`中移除任何文字。 如需使用者互動的詳細資訊, 請參閱在 Xamarin 中[回應使用者互動](deepdive.md#responding-to-user-interaction)[快速深入探討](deepdive.md)。
 
     按下 **CTRL+S** 以將變更儲存到 **MainPage.xaml.cs**，然後關閉檔案。
 
@@ -160,11 +160,11 @@ ms.locfileid: "67831987"
 
     ![](single-page-images/vs/android-start.png "Visual Studio Android 工具列")
 
-    [![](single-page-images/vs/notes-android.png "在 Android 模擬器中的資訊")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
+    [![](single-page-images/vs/notes-android.png "Android Emulator 中的附注")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     輸入附註，然後按 [儲存]  按鈕。
 
-    如需有關如何在每個平台上，啟動應用程式的詳細資訊，請參閱 <<c0> [ 啟動每個平台上的應用程式](deepdive.md#launching-the-application-on-each-platform)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    如需有關如何在每個平臺上啟動應用程式的詳細資訊, 請參閱在 Xamarin 中的[每個平臺上啟動應用程式](deepdive.md#launching-the-application-on-each-platform) [。表單快速入門深入探討](deepdive.md)。
 
     > [!NOTE]
     > 只有在您[配對的 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) 符合 Xamarin.Forms 開發的系統需求時，才應該執行下列步驟。
@@ -177,26 +177,26 @@ ms.locfileid: "67831987"
 
     ![](single-page-images/vs/ios-start.png "Visual Studio iOS 工具列")
 
-    [![](single-page-images/vs/notes-ios.png "IOS 模擬器中的附註")](single-page-images/vs/notes-ios-large.png#lightbox "iOS 模擬器中的資訊")
+    [IOS 模擬器中的附注![(single-page-images/vs/notes-ios.png "")] ](single-page-images/vs/notes-ios-large.png#lightbox "IOS 模擬器中的附注")
 
     輸入附註，然後按 [儲存]  按鈕。
 
-    如需有關如何在每個平台上，啟動應用程式的詳細資訊，請參閱 <<c0> [ 啟動每個平台上的應用程式](deepdive.md#launching-the-application-on-each-platform)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    如需有關如何在每個平臺上啟動應用程式的詳細資訊, 請參閱在 Xamarin 中的[每個平臺上啟動應用程式](deepdive.md#launching-the-application-on-each-platform) [。表單快速入門深入探討](deepdive.md)。
 
 ::: zone-end
 ::: zone pivot="win-vs2017"
 
 ### <a name="prerequisites"></a>必要條件
 
-- Visual Studio 2017 中，使用**使用.NET 進行行動開發**安裝工作負載。
-- 知識庫的C#。
-- （選擇性）配對的 Mac 建置 ios 應用程式。
+- Visual Studio 2017, 已安裝**具有 .net**工作負載的行動裝置開發。
+- 的C#知識。
+- 選擇性在 iOS 上建立應用程式的配對 Mac。
 
-如需有關這些必要條件的詳細資訊，請參閱 <<c0> [ 安裝 Xamarin](~/get-started/installation/index.md)。 如需有關將 Visual Studio 2019 連線至 Mac 建置主機的相關資訊，請參閱[為 Xamarin.iOS 開發與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+如需這些必要條件的詳細資訊, 請參閱[安裝 Xamarin](~/get-started/installation/index.md)。 如需有關將 Visual Studio 2019 連線至 Mac 建置主機的相關資訊，請參閱[為 Xamarin.iOS 開發與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 
 ## <a name="get-started-with-visual-studio-2017"></a>開始使用 Visual Studio 2017
 
-1. 啟動 Visual Studio 2017，並在 開始 頁面上按一下 **建立新專案...** 來建立新的專案：
+1. 啟動 Visual Studio 2017, 然後在 [開始] 頁面上, 按一下 [**建立新專案**] 以建立新的專案:
 
     ![](single-page-images/vs/new-solution.png "新增專案")
 
@@ -246,7 +246,7 @@ ms.locfileid: "67831987"
     </ContentPage>
     ```
 
-    此程式碼以宣告方式定義頁面上，其中包含的使用者介面[ `Label` ](xref:Xamarin.Forms.Label)來顯示文字、 [ `Editor` ](xref:Xamarin.Forms.Editor)文字輸入和兩個[ `Button`](xref:Xamarin.Forms.Button)儲存或刪除的檔案將應用程式導向的執行個體。 兩個 `Button` 執行個體以水平方式配置在 [`Grid`](xref:Xamarin.Forms.Grid) 中，而 `Label`、`Editor` 和 `Grid` 以垂直方式配置在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中。 如需建立使用者介面的詳細資訊，請參閱[使用者介面](deepdive.md#user-interface)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    此程式碼會以宣告的方式定義頁面的使用者介面, 其中[`Label`](xref:Xamarin.Forms.Label)包含要顯示文字的[`Editor`](xref:Xamarin.Forms.Editor) 、文字輸入的, 以及[`Button`](xref:Xamarin.Forms.Button)指示應用程式儲存或刪除檔案的兩個實例。 兩個 `Button` 執行個體以水平方式配置在 [`Grid`](xref:Xamarin.Forms.Grid) 中，而 `Label`、`Editor` 和 `Grid` 以垂直方式配置在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中。 如需建立使用者介面的詳細資訊, 請參閱 Xamarin 中的[使用者介面](deepdive.md#user-interface)[快速入門深入探討](deepdive.md)。
 
     按下 **CTRL+S** 以將變更儲存到 **MainPage.xaml**，然後關閉檔案。
 
@@ -294,7 +294,7 @@ ms.locfileid: "67831987"
     }
     ```
 
-    此程式碼定義了 `_fileName` 欄位，這個欄位會參考名為 `notes.txt` 的檔案，以將附註資料儲存在應用程式的本機應用程式資料夾中。 執行頁面建構函式時會讀取檔案 (如果存在的話)，並將其顯示在[`Editor`](xref:Xamarin.Forms.Editor)中。 當按下 [儲存]  [`Button`](xref:Xamarin.Forms.Button)時，即會執行 `OnSaveButtonClicked` 事件處理常式，這會將`Editor`的內容儲存到檔案。 當按下 [刪除]  `Button`時，即會執行 `OnDeleteButtonClicked` 事件處理常式，這會刪除檔案 (假設檔案存在)，並從`Editor`中移除任何文字。 如需使用者互動的詳細資訊，請參閱[回應使用者互動](deepdive.md#responding-to-user-interaction)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    此程式碼定義了 `_fileName` 欄位，這個欄位會參考名為 `notes.txt` 的檔案，以將附註資料儲存在應用程式的本機應用程式資料夾中。 執行頁面建構函式時會讀取檔案 (如果存在的話)，並將其顯示在[`Editor`](xref:Xamarin.Forms.Editor)中。 當按下 [儲存]  [`Button`](xref:Xamarin.Forms.Button)時，即會執行 `OnSaveButtonClicked` 事件處理常式，這會將`Editor`的內容儲存到檔案。 當按下 [刪除]  `Button`時，即會執行 `OnDeleteButtonClicked` 事件處理常式，這會刪除檔案 (假設檔案存在)，並從`Editor`中移除任何文字。 如需使用者互動的詳細資訊, 請參閱在 Xamarin 中[回應使用者互動](deepdive.md#responding-to-user-interaction)[快速深入探討](deepdive.md)。
 
     按下 **CTRL+S** 以將變更儲存到 **MainPage.xaml.cs**，然後關閉檔案。
 
@@ -310,11 +310,11 @@ ms.locfileid: "67831987"
 
     ![](single-page-images/vs/android-start.png "Visual Studio Android 工具列")
 
-    [![](single-page-images/vs/notes-android.png "在 Android 模擬器中的資訊")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
+    [![](single-page-images/vs/notes-android.png "Android Emulator 中的附注")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     輸入附註，然後按 [儲存]  按鈕。
 
-    如需有關如何在每個平台上，啟動應用程式的詳細資訊，請參閱 <<c0> [ 啟動每個平台上的應用程式](deepdive.md#launching-the-application-on-each-platform)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    如需有關如何在每個平臺上啟動應用程式的詳細資訊, 請參閱在 Xamarin 中的[每個平臺上啟動應用程式](deepdive.md#launching-the-application-on-each-platform) [。表單快速入門深入探討](deepdive.md)。
 
     > [!NOTE]
     > 只有在您[配對的 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) 符合 Xamarin.Forms 開發的系統需求時，才應該執行下列步驟。
@@ -327,26 +327,26 @@ ms.locfileid: "67831987"
 
     ![](single-page-images/vs/ios-start.png "Visual Studio iOS 工具列")
 
-    [![](single-page-images/vs/notes-ios.png "IOS 模擬器中的附註")](single-page-images/vs/notes-ios-large.png#lightbox "iOS 模擬器中的資訊")
+    [IOS 模擬器中的附注![(single-page-images/vs/notes-ios.png "")] ](single-page-images/vs/notes-ios-large.png#lightbox "IOS 模擬器中的附注")
 
     輸入附註，然後按 [儲存]  按鈕。
 
-    如需有關如何在每個平台上，啟動應用程式的詳細資訊，請參閱 <<c0> [ 啟動每個平台上的應用程式](deepdive.md#launching-the-application-on-each-platform)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    如需有關如何在每個平臺上啟動應用程式的詳細資訊, 請參閱在 Xamarin 中的[每個平臺上啟動應用程式](deepdive.md#launching-the-application-on-each-platform) [。表單快速入門深入探討](deepdive.md)。
 
 ::: zone-end
 ::: zone pivot="macos"
 
 ### <a name="prerequisites"></a>必要條件
 
-- Visual Studio for Mac （最新版本）、 iOS 和 Android 平台安裝的支援。
-- Xcode （最新版本）。
-- 知識庫的C#。
+- Visual Studio for Mac (最新版本), 並已安裝 iOS 和 Android 平臺支援。
+- Xcode (最新版本)。
+- 的C#知識。
 
-如需有關這些必要條件的詳細資訊，請參閱 <<c0> [ 安裝 Xamarin](~/get-started/installation/index.md)。
+如需這些必要條件的詳細資訊, 請參閱[安裝 Xamarin](~/get-started/installation/index.md)。
 
 ## <a name="get-started-with-visual-studio-for-mac"></a>Visual Studio for Mac 使用者入門
 
-1. 啟動 Visual Studio for Mac，然後在 [開始] 視窗中按一下**新增**建立新的專案：
+1. 啟動 Visual Studio for Mac, 然後在 [開始] 視窗中按一下 [**新增**], 以建立新的專案:
 
     ![](single-page-images/vsmac/new-project.png "新增方案")
 
@@ -400,7 +400,7 @@ ms.locfileid: "67831987"
     </ContentPage>
     ```
 
-    此程式碼以宣告方式定義頁面上，其中包含的使用者介面[ `Label` ](xref:Xamarin.Forms.Label)來顯示文字、 [ `Editor` ](xref:Xamarin.Forms.Editor)文字輸入和兩個[ `Button`](xref:Xamarin.Forms.Button)儲存或刪除的檔案將應用程式導向的執行個體。 兩個 `Button` 執行個體以水平方式配置在 [`Grid`](xref:Xamarin.Forms.Grid) 中，而 `Label`、`Editor` 和 `Grid` 以垂直方式配置在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中。 如需建立使用者介面的詳細資訊，請參閱[使用者介面](deepdive.md#user-interface)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    此程式碼會以宣告的方式定義頁面的使用者介面, 其中[`Label`](xref:Xamarin.Forms.Label)包含要顯示文字的[`Editor`](xref:Xamarin.Forms.Editor) 、文字輸入的, 以及[`Button`](xref:Xamarin.Forms.Button)指示應用程式儲存或刪除檔案的兩個實例。 兩個 `Button` 執行個體以水平方式配置在 [`Grid`](xref:Xamarin.Forms.Grid) 中，而 `Label`、`Editor` 和 `Grid` 以垂直方式配置在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中。 如需建立使用者介面的詳細資訊, 請參閱 Xamarin 中的[使用者介面](deepdive.md#user-interface)[快速入門深入探討](deepdive.md)。
 
     選擇 [檔案] > [儲存]  (或按下 **&#8984; + S**) 以將變更儲存到 **MainPage.xaml**，然後關閉檔案。
 
@@ -448,7 +448,7 @@ ms.locfileid: "67831987"
     }
     ```
 
-    此程式碼定義了 `_fileName` 欄位，這個欄位會參考名為 `notes.txt` 的檔案，以將附註資料儲存在應用程式的本機應用程式資料夾中。 執行頁面建構函式時會讀取檔案 (如果存在的話)，並將其顯示在[`Editor`](xref:Xamarin.Forms.Editor)中。 當按下 [儲存]  [`Button`](xref:Xamarin.Forms.Button)時，即會執行 `OnSaveButtonClicked` 事件處理常式，這會將`Editor`的內容儲存到檔案。 當按下 [刪除]  `Button`時，即會執行 `OnDeleteButtonClicked` 事件處理常式，這會刪除檔案 (假設檔案存在)，並從`Editor`中移除任何文字。 如需使用者互動的詳細資訊，請參閱[回應使用者互動](deepdive.md#responding-to-user-interaction)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    此程式碼定義了 `_fileName` 欄位，這個欄位會參考名為 `notes.txt` 的檔案，以將附註資料儲存在應用程式的本機應用程式資料夾中。 執行頁面建構函式時會讀取檔案 (如果存在的話)，並將其顯示在[`Editor`](xref:Xamarin.Forms.Editor)中。 當按下 [儲存]  [`Button`](xref:Xamarin.Forms.Button)時，即會執行 `OnSaveButtonClicked` 事件處理常式，這會將`Editor`的內容儲存到檔案。 當按下 [刪除]  `Button`時，即會執行 `OnDeleteButtonClicked` 事件處理常式，這會刪除檔案 (假設檔案存在)，並從`Editor`中移除任何文字。 如需使用者互動的詳細資訊, 請參閱在 Xamarin 中[回應使用者互動](deepdive.md#responding-to-user-interaction)[快速深入探討](deepdive.md)。
 
     選擇 [檔案] > [儲存]  (或按下 **&#8984; + S**) 以將變更儲存到 **MainPage.xaml.cs**，然後關閉檔案。
 
@@ -460,7 +460,7 @@ ms.locfileid: "67831987"
 
     如果發生錯誤，請重複上述步驟並更正任何錯誤，直到專案建置成功為止。
 
-2. 在  **Solution Pad**，選取**Notes.iOS**專案、 按一下滑鼠右鍵，然後選取**設定為啟始專案**:
+2. 在  **Solution Pad**中, 選取 **記事** 專案, 按一下滑鼠右鍵, 然後選取 **設定為啟始專案**:
 
       ![](single-page-images/vsmac/set-startup-project-ios.png "將 iOS 設定為啟始專案")
 
@@ -468,40 +468,40 @@ ms.locfileid: "67831987"
 
       ![](single-page-images/vsmac/start.png "Visual Studio for Mac 工具列")
 
-      [![](single-page-images/vsmac/notes-ios.png "IOS 模擬器中的附註")](single-page-images/vsmac/notes-ios-large.png#lightbox "iOS 模擬器中的資訊")
+      [IOS 模擬器中的附注![(single-page-images/vsmac/notes-ios.png "")] ](single-page-images/vsmac/notes-ios-large.png#lightbox "IOS 模擬器中的附注")
 
     輸入附註，然後按 [儲存]  按鈕。
 
-    如需有關如何在每個平台上，啟動應用程式的詳細資訊，請參閱 <<c0> [ 啟動每個平台上的應用程式](deepdive.md#launching-the-application-on-each-platform)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    如需有關如何在每個平臺上啟動應用程式的詳細資訊, 請參閱在 Xamarin 中的[每個平臺上啟動應用程式](deepdive.md#launching-the-application-on-each-platform) [。表單快速入門深入探討](deepdive.md)。
 
-4. 在  **Solution Pad**，選取**Notes.Droid**專案、 按一下滑鼠右鍵，然後選取**設定為啟始專案**:
+4. 在  **Solution Pad**中, 選取**Droid**專案、按一下滑鼠右鍵, 然後選取 **設定為啟始專案**:
 
       ![](single-page-images/vsmac/set-startup-project-android.png "將 Android 設定為啟始專案")
 
 5. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選擇 Android Emulator 內的應用程式：
 
-      [![](single-page-images/vsmac/notes-android.png "在 Android 模擬器中的資訊")](single-page-images/vsmac/notes-android-large.png#lightbox "Notes in the Android Simulator")
+      [![](single-page-images/vsmac/notes-android.png "Android Emulator 中的附注")](single-page-images/vsmac/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     輸入附註，然後按 [儲存]  按鈕。
 
-    如需有關如何在每個平台上，啟動應用程式的詳細資訊，請參閱 <<c0> [ 啟動每個平台上的應用程式](deepdive.md#launching-the-application-on-each-platform)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    如需有關如何在每個平臺上啟動應用程式的詳細資訊, 請參閱在 Xamarin 中的[每個平臺上啟動應用程式](deepdive.md#launching-the-application-on-each-platform) [。表單快速入門深入探討](deepdive.md)。
 
 ::: zone-end
 
 ## <a name="next-steps"></a>後續步驟
 
-在此快速入門中，您已了解如何：
+在本快速入門中, 您已瞭解如何:
 
-- 建立跨平台 Xamarin.Forms 應用程式。
-- 定義使用可延伸應用程式標記語言 (XAML) 頁面的使用者介面。
-- 與 XAML 使用者介面項目，從程式碼互動。
+- 建立跨平臺的 Xamarin Forms 應用程式。
+- 使用可延伸應用程式標記語言 (XAML) 來定義頁面的使用者介面。
+- 從程式碼與 XAML 使用者介面元素互動。
 
-若要開啟此到多頁的應用程式的單一頁面應用程式，請繼續下一個快速入門。
+若要將此單一頁面應用程式轉換成多頁應用程式, 請繼續進行下一個快速入門。
 
 > [!div class="nextstepaction"]
 > [下一個](multi-page.md)
 
 ## <a name="related-links"></a>相關連結
 
-- [Notes (範例)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
-- [Xamarin.Forms 快速入門深入探討](deepdive.md)
+- [Notes (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
+- [Xamarin. 表單快速入門深入探討](deepdive.md)

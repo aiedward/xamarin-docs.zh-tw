@@ -1,50 +1,50 @@
 ---
-title: 建立 Xamarin.iOS 應用程式使用元素 API
-description: 這篇文章以 MonoTouch 對話方塊文章簡介所述的資訊時。 它會呈現的逐步解說，示範如何使用 MonoTouch.Dialog (MTD） 項目 API 可以快速地開始建置 MT 的應用程式D.
+title: 使用 Elements API 建立 Xamarin iOS 應用程式
+description: 本文是根據 [MonoTouch 簡介] 對話方塊文章中所呈現的資訊來建立。 它會提供逐步解說, 說明如何使用 MonoTouch (MT)。D) Elements API, 快速開始使用 MT 來建立應用程式。D.
 ms.prod: xamarin
 ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 1b4263e37e6d95c03e88905319cfe0ee167cb30b
-ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
+ms.openlocfilehash: 82320b069156828101d17e79ca48a8933b8a8777
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67039700"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655087"
 ---
-# <a name="creating-a-xamarinios-application-using-the-elements-api"></a>建立 Xamarin.iOS 應用程式使用元素 API
+# <a name="creating-a-xamarinios-application-using-the-elements-api"></a>使用 Elements API 建立 Xamarin iOS 應用程式
 
-_這篇文章以 MonoTouch 對話方塊文章簡介所述的資訊時。它會呈現的逐步解說，示範如何使用 MonoTouch.Dialog (MTD） 項目 API 可以快速地開始建置 MT 的應用程式D._
+_本文是根據 [MonoTouch 簡介] 對話方塊文章中所呈現的資訊來建立。它會提供逐步解說, 說明如何使用 MonoTouch (MT)。D) Elements API, 快速開始使用 MT 來建立應用程式。D._
 
-在本逐步解說中，我們將使用 mt。若要建立主版詳細資料的樣式來顯示工作清單應用程式 D 項目 API。 當使用者選取<span class="ui"> + </span>按鈕在導覽列中，新的資料列會加入至工作表。 選取的資料列會巡覽至詳細資料畫面，可讓我們將更新的工作描述和到期日，如下所示：
+在本逐步解說中, 我們將使用 MT。D Elements API, 用來建立顯示工作清單之應用程式的主版詳細資料樣式。 當使用者選取導覽列<span class="ui">+</span>中的按鈕時, 新的資料列就會加入至工作的資料表。 選取資料列將會流覽至 [詳細資料] 畫面, 讓我們更新工作描述和到期日, 如下所示:
 
- [![](elements-api-walkthrough-images/01-task-list-app.png "選取的資料列會巡覽至詳細資料畫面，可讓我們將更新的工作描述和到期日")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
+ [![](elements-api-walkthrough-images/01-task-list-app.png "選取資料列將會流覽至 [詳細資料] 畫面, 讓我們更新工作描述和到期日")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
- ## <a name="setting-up-mtd"></a>MT 的設定D
+ ## <a name="setting-up-mtd"></a>設定 MT。D
 
-MTD Xamarin.iOS 一起散發。 若要使用它，以滑鼠右鍵按一下**參考**節點的 Xamarin.iOS 專案在 Visual Studio 2017 或 Visual Studio for Mac，並加入參考**MonoTouch.Dialog 1**組件。 然後，新增`using MonoTouch.Dialog`視您在來源中的陳述式的程式碼。
+MT.D 與 Xamarin 一起散發。 若要使用它, 請以滑鼠右鍵按一下 Visual Studio 2017 或 Visual Studio for Mac 中之 Xamarin 專案的 [**參考**] 節點, 然後新增**MonoTouch**元件的參考。 然後, 視`using MonoTouch.Dialog`需要在您的原始程式碼中新增語句。
 
-## <a name="elements-api-walkthrough"></a>項目 API 逐步解說
+## <a name="elements-api-walkthrough"></a>Elements API 逐步解說
 
-在  [MonoTouch 對話方塊簡介](~/ios/user-interface/monotouch.dialog/index.md)文章中，我們便可獲得具備深厚的 MT 的不同部分D. 若要將它們一起放入應用程式，讓我們使用元素 API。
+在[MonoTouch 的簡介對話](~/ios/user-interface/monotouch.dialog/index.md)文章中, 我們對 MT 的不同部分有深刻的瞭解。D. 讓我們使用 Elements API 將它們全部整合到一個應用程式中。
 
-## <a name="setting-up-the-multi-screen-application"></a>設定多重畫面應用程式
+## <a name="setting-up-the-multi-screen-application"></a>設定多畫面應用程式
 
-若要開始檢測建立程序，建立 MonoTouch.Dialog `DialogViewController`，然後加入`RootElement`。
+若要啟動畫面建立程式, MonoTouch 會建立`DialogViewController`, 然後`RootElement`新增。
 
-若要建立 MonoTouch.Dialog 多重畫面應用程式，我們需要：
+若要使用 MonoTouch 建立多畫面應用程式, 我們需要:
 
-1.  建立 `UINavigationController.`
-1.  建立 `DialogViewController.`
-1.  新增`DialogViewController`作為根目錄  `UINavigationController.` 
-1.  新增`RootElement`至  `DialogViewController.`
-1.  新增`Sections`和`Elements`至  `RootElement.` 
+1.  建立`UINavigationController.`
+1.  建立`DialogViewController.`
+1.  將新增`DialogViewController`為的根目錄`UINavigationController.` 
+1.  將新增`RootElement`至`DialogViewController.`
+1.  將`Sections` 和`Elements`新增至`RootElement.` 
 
 ### <a name="using-a-uinavigationcontroller"></a>使用 UINavigationController
 
-若要建立導覽樣式的應用程式，我們需要建立`UINavigationController`，然後將它做為新增`RootViewController`中`FinishedLaunching`方法`AppDelegate`。 若要讓`UINavigationController`使用 MonoTouch.Dialog，我們將新增`DialogViewController`來`UINavigationController`，如下所示：
+若要建立導覽樣式應用程式, `UINavigationController`我們需要建立, 然後`RootViewController` `AppDelegate`在的`FinishedLaunching`方法中將它新增為。 若要使用`UINavigationController` MonoTouch 來進行工作, 我們`DialogViewController`將新增至`UINavigationController` , 如下所示:
 
 ```csharp
 public override bool FinishedLaunching (UIApplication app, NSDictionary options)
@@ -64,27 +64,27 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 }
 ```
 
-上述程式碼建立的執行個體`RootElement`，並將傳遞到`DialogViewController`。 `DialogViewController`一律會有`RootElement`及其階層的頂端。 在此範例中，`RootElement`建立字串 「 待辦事項清單，"作為巡覽控制器的導覽列中的項目。 此時，執行應用程式會造成畫面如下所示：
+上述程式碼會建立的實例`RootElement` , 並將它傳遞`DialogViewController`至。 在其階層的`RootElement`頂端一律會有。`DialogViewController` 在此範例中, `RootElement`是使用「待辦事項清單」字串來建立, 這可作為導覽控制器導覽列中的標題。 此時, 執行應用程式會顯示如下所示的畫面:
 
- [![](elements-api-walkthrough-images/02-to-do-list-screen-.png "執行應用程式將會顯示如下所示的畫面")](elements-api-walkthrough-images/02-to-do-list-screen-.png#lightbox)
+ [![](elements-api-walkthrough-images/02-to-do-list-screen-.png "執行應用程式將會顯示此處所示的畫面")](elements-api-walkthrough-images/02-to-do-list-screen-.png#lightbox)
 
-我們來看看如何使用 MonoTouch.Dialog 的階層式結構`Sections`和`Elements`新增更多畫面。
+讓我們看看如何使用 MonoTouch 的階層式結構`Sections`和`Elements`來新增更多螢幕。
 
 ### <a name="creating-the-dialog-screens"></a>建立對話方塊畫面
 
-A`DialogViewController`是`UITableViewController`MonoTouch.Dialog 用來將畫面新增子類別。 MonoTouch.Dialog 建立畫面加上`RootElement`至`DialogViewController`，如我們所見上方。 `RootElement`可以有`Section`執行個體，表示資料表的區段。
-下列各組成項目、 其他區段，或甚至是其他`RootElements`。 巢狀結構由`RootElements`，MonoTouch.Dialog 會自動建立導覽樣式的應用程式，如接下來，我們所見。
+是 MonoTouch 的`UITableViewController`子類別, 用來加入螢幕。 `DialogViewController` MonoTouch 會藉由將加入`RootElement` `DialogViewController`至來建立畫面, 如前文所述。 `RootElement`可以有`Section`代表資料表區段的實例。
+這些區段是由元素、其他區段, 或甚至是其他`RootElements`專案所組成。 藉由使用 [MonoTouch] ,對話方塊會自動建立導覽樣式應用程式,如下所示。`RootElements`
 
 ### <a name="using-dialogviewcontroller"></a>使用 DialogViewController
 
-`DialogViewController`，正在`UITableViewController`子類別，有`UITableView`作為它的檢視。 在此範例中，我們想要將項目加入至資料表每次<span class="ui"> + </span>點選按鈕時。 由於`DialogViewController`已新增至`UINavigationController`，我們可以使用`NavigationItem`的`RightBarButton`屬性，即可加入<span class="ui"> + </span>按鈕，如下所示：
+做為子`DialogViewController` `UITableViewController`類別的是, 具有做為其 view。 `UITableView` 在此範例中, 我們想要在每次按<span class="ui">+</span>下按鈕時, 將專案加入至資料表。 `UINavigationController` `RightBarButton` <span class="ui">+</span>因為已新增至`NavigationItem`, 所以我們可以使用的屬性來新增按鈕, 如下所示: `DialogViewController`
 
 ```csharp
 _addButton = new UIBarButtonItem (UIBarButtonSystemItem.Add);
 _rootVC.NavigationItem.RightBarButtonItem = _addButton;
 ```
 
-我們在建立時`RootElement`更早版本，我們傳遞給它的單一`Section`執行個體，以便我們可以新增項目<span class="ui"> + </span>使用者點選按鈕時。 若要在事件完成按鈕處理常式，我們可以使用下列程式碼：
+當我們稍`RootElement`早建立時, 我們會將單一`Section`實例傳遞給它, 讓我們<span class="ui">+</span>可以加入專案, 因為使用者會按下按鈕。 我們可以使用下列程式碼, 在按鈕的事件處理常式中完成這項操作:
 
 ```csharp
 _addButton.Clicked += (sender, e) => {                
@@ -104,7 +104,7 @@ _addButton.Clicked += (sender, e) => {
 };
 ```
 
-此程式碼會建立新`Task`物件每次點選按鈕時。 下圖顯示簡單的實作`Task`類別：
+這段程式碼會`Task`在每次按下按鈕時建立新的物件。 以下顯示`Task`類別的簡單實作為方式:
 
 ```csharp
 public class Task
@@ -121,33 +121,33 @@ public class Task
 }
 ```
 
-工作的`Name`屬性用來建立`RootElement`的標題，以及名為計數器變數`n`，就會遞增每個新的工作。 MonoTouch.Dialog 會變成加入的資料列中的項目`TableView`時每個`taskElement`加入。
+工作的`Name`屬性會用來`RootElement`建立的標題, 以及名`n`為的計數器變數, 這會針對每個新工作遞增。 MonoTouch 會將元素轉換成每個`TableView` `taskElement`加入時加入的資料列。
 
 ## <a name="presenting-and-managing-dialog-screens"></a>呈現和管理對話方塊畫面
 
-我們使用`RootElement`以便 MonoTouch.Dialog 會自動建立一個新的畫面，如每個工作的詳細資訊並選取一個資料列時，瀏覽至它。
+我們使用了`RootElement` , 如此一來, MonoTouch 就會自動為每個工作的詳細資料建立新的畫面, 並在選取資料列時加以流覽。
 
-工作詳細資料畫面本身是由兩個區段所組成下列各節包含單一項目。 從建立第一個項目`EntryElement`提供工作的可編輯的資料列`Description`屬性。 選取的項目時，文字編輯鍵盤會如下所示：
+工作詳細資料畫面本身包含兩個區段:每個區段都包含單一元素。 第一個專案是從`EntryElement`建立, 以便為工作的`Description`屬性提供可編輯的資料列。 選取元素時, 會顯示文字編輯的鍵盤, 如下所示:
 
- [![](elements-api-walkthrough-images/03-create-task.png "文字編輯鍵盤選取項目時，會顯示所示")](elements-api-walkthrough-images/03-create-task.png#lightbox)
+ [![](elements-api-walkthrough-images/03-create-task.png "選取元素時, 會顯示文字編輯的鍵盤, 如下所示")](elements-api-walkthrough-images/03-create-task.png#lightbox)
 
-第二個區段包含`DateElement`，可讓我們管理工作的`DueDate`屬性。 選取的日期會自動載入日期選擇器，如所示：
+第二個區段包含`DateElement` , 可讓我們管理工作的`DueDate`屬性。 選取日期會自動載入日期選擇器, 如下所示:
 
- [![](elements-api-walkthrough-images/04-date-picker.png "選取的日期會自動載入做為日期選擇器")](elements-api-walkthrough-images/04-date-picker.png#lightbox)
+ [![](elements-api-walkthrough-images/04-date-picker.png "選取日期會自動將日期選擇器載入為")](elements-api-walkthrough-images/04-date-picker.png#lightbox)
 
-在這兩`EntryElement`和`DateElement`情況下 （或任何輸入資料中的項目 MonoTouch.Dialog），會自動保留為值的任何變更。 我們可以示範此編輯日期，然後 [根] 畫面和各種不同的工作詳細資料，其中保留的詳細資料畫面中的值之間來回巡覽。
+`EntryElement`在和`DateElement`案例中 (或 MonoTouch 中的任何資料輸入元素), 都會自動保留對值所做的任何變更。 我們可以藉由編輯日期來示範, 然後在根畫面和各種工作詳細資料之間來回導覽, 其中會保留詳細資料畫面中的值。
 
 ## <a name="summary"></a>總結
 
-這篇文章所呈現的逐步解說，示範了如何使用 MonoTouch.Dialog 項目 API。 它涵蓋建立 MT 的多重畫面應用程式的基本步驟D，包括如何使用`DialogViewController`以及如何新增項目和區段，來建立螢幕。 此外，它示範了如何使用 MT搭配 D `UINavigationController`。
+本文提供的逐步解說示範如何使用 MonoTouch 元素 API。 其中涵蓋了使用 MT 建立多畫面應用程式的基本步驟。D, 包括如何使用`DialogViewController` , 以及如何新增專案和區段來建立畫面。 此外, 它也示範了如何使用 MT。D 與搭配使用`UINavigationController`。
 
 ## <a name="related-links"></a>相關連結
 
-- [MTDWalkthrough （範例）](https://developer.xamarin.com/samples/monotouch/MTDWalkthrough/)
-- [MonoTouch.Dialog 簡介](~/ios/user-interface/monotouch.dialog/index.md)
+- [MTDWalkthrough (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/mtdwalkthrough)
+- [MonoTouch 簡介](~/ios/user-interface/monotouch.dialog/index.md)
 - [反映 API 逐步解說](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
-- [JSON 元素的逐步解說](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
-- [在 Github 上的 MonoTouch 對話方塊](https://github.com/migueldeicaza/MonoTouch.Dialog)
+- [JSON 元素逐步解說](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
+- [Github 上的 MonoTouch 對話方塊](https://github.com/migueldeicaza/MonoTouch.Dialog)
 - [TweetStation 應用程式](https://github.com/migueldeicaza/TweetStation)
 - [UITableViewController 類別參考](https://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
 - [UINavigationController 類別參考](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)
